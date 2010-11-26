@@ -27,7 +27,10 @@
     SUBDIR += edonkey-gui-gtk
     SUBDIR += edonkey-gui-gtk-urlslave
     SUBDIR += edonkey-tool-hash
-    SUBDIR += eiskaltdc
+    SUBDIR += eiskaltdcpp-data
+    SUBDIR += eiskaltdcpp-gtk
+    SUBDIR += eiskaltdcpp-lib
+    SUBDIR += eiskaltdcpp-qt
     SUBDIR += fcptools
     SUBDIR += fidelio
     SUBDIR += frost

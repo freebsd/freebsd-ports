@@ -1,0 +1,125 @@
+bin/eiskaltdcpp-qt
+share/applications/eiskaltdcpp-qt.desktop
+share/eiskaltdcpp/qt/icons/appl/default/adls.png
+share/eiskaltdcpp/qt/icons/appl/default/application-exit.png
+share/eiskaltdcpp/qt/icons/appl/default/application-x-archive.png
+share/eiskaltdcpp/qt/icons/appl/default/application-x-executable.png
+share/eiskaltdcpp/qt/icons/appl/default/audio-x-generic.png
+share/eiskaltdcpp/qt/icons/appl/default/ball_green.png
+share/eiskaltdcpp/qt/icons/appl/default/bookmark-new.png
+share/eiskaltdcpp/qt/icons/appl/default/chat.png
+share/eiskaltdcpp/qt/icons/appl/default/configure.png
+share/eiskaltdcpp/qt/icons/appl/default/console.png
+share/eiskaltdcpp/qt/icons/appl/default/default.qrc
+share/eiskaltdcpp/qt/icons/appl/default/dialog-close.png
+share/eiskaltdcpp/qt/icons/appl/default/document-edit.png
+share/eiskaltdcpp/qt/icons/appl/default/download.png
+share/eiskaltdcpp/qt/icons/appl/default/edit-clear-locationbar-rtl.png
+share/eiskaltdcpp/qt/icons/appl/default/edit-clear.png
+share/eiskaltdcpp/qt/icons/appl/default/edit-copy.png
+share/eiskaltdcpp/qt/icons/appl/default/edit-delete.png
+share/eiskaltdcpp/qt/icons/appl/default/edit-find.png
+share/eiskaltdcpp/qt/icons/appl/default/eraser.png
+share/eiskaltdcpp/qt/icons/appl/default/face-smile.png
+share/eiskaltdcpp/qt/icons/appl/default/fav.png
+share/eiskaltdcpp/qt/icons/appl/default/favadd.png
+share/eiskaltdcpp/qt/icons/appl/default/favrem.png
+share/eiskaltdcpp/qt/icons/appl/default/favserver.png
+share/eiskaltdcpp/qt/icons/appl/default/favusers.png
+share/eiskaltdcpp/qt/icons/appl/default/find.png
+share/eiskaltdcpp/qt/icons/appl/default/folder-blue.png
+share/eiskaltdcpp/qt/icons/appl/default/freespace.png
+share/eiskaltdcpp/qt/icons/appl/default/go-down-search.png
+share/eiskaltdcpp/qt/icons/appl/default/go-down.png
+share/eiskaltdcpp/qt/icons/appl/default/go-up-search.png
+share/eiskaltdcpp/qt/icons/appl/default/go-up.png
+share/eiskaltdcpp/qt/icons/appl/default/gui.png
+share/eiskaltdcpp/qt/icons/appl/default/hashing.png
+share/eiskaltdcpp/qt/icons/appl/default/hubmsg.png
+share/eiskaltdcpp/qt/icons/appl/default/icon_appl.png
+share/eiskaltdcpp/qt/icons/appl/default/icon_appl_big.png
+share/eiskaltdcpp/qt/icons/appl/default/icon_msg.png
+share/eiskaltdcpp/qt/icons/appl/default/im-user-away.png
+share/eiskaltdcpp/qt/icons/appl/default/image-x-generic.png
+share/eiskaltdcpp/qt/icons/appl/default/list-add.png
+share/eiskaltdcpp/qt/icons/appl/default/log_file.png
+share/eiskaltdcpp/qt/icons/appl/default/message.png
+share/eiskaltdcpp/qt/icons/appl/default/network-connect.png
+share/eiskaltdcpp/qt/icons/appl/default/network-disconnect.png
+share/eiskaltdcpp/qt/icons/appl/default/openlist.png
+share/eiskaltdcpp/qt/icons/appl/default/own_filelist.png
+share/eiskaltdcpp/qt/icons/appl/default/plugin.png
+share/eiskaltdcpp/qt/icons/appl/default/pmmsg.png
+share/eiskaltdcpp/qt/icons/appl/default/qt-logo.png
+share/eiskaltdcpp/qt/icons/appl/default/reconnect.png
+share/eiskaltdcpp/qt/icons/appl/default/refrlist.png
+share/eiskaltdcpp/qt/icons/appl/default/reload.png
+share/eiskaltdcpp/qt/icons/appl/default/server.png
+share/eiskaltdcpp/qt/icons/appl/default/spam.png
+share/eiskaltdcpp/qt/icons/appl/default/spy.png
+share/eiskaltdcpp/qt/icons/appl/default/status.png
+share/eiskaltdcpp/qt/icons/appl/default/text-x-generic.png
+share/eiskaltdcpp/qt/icons/appl/default/transfer.png
+share/eiskaltdcpp/qt/icons/appl/default/unknown.png
+share/eiskaltdcpp/qt/icons/appl/default/users.png
+share/eiskaltdcpp/qt/icons/appl/default/video-x-generic.png
+share/eiskaltdcpp/qt/icons/appl/default/view-close.png
+share/eiskaltdcpp/qt/icons/appl/default/view-filter.png
+share/eiskaltdcpp/qt/icons/appl/default/zoom-in.png
+share/eiskaltdcpp/qt/icons/appl/default/zoom-out.png
+share/eiskaltdcpp/qt/icons/user/default/usericons.png
+share/eiskaltdcpp/qt/icons/user/valknut/usericons.png
+%%QTSCRIPT%%share/eiskaltdcpp/qt/qtscripts/amarok_nowplay/amarok.png
+%%QTSCRIPT%%share/eiskaltdcpp/qt/qtscripts/amarok_nowplay/amarok.sh
+%%QTSCRIPT%%share/eiskaltdcpp/qt/qtscripts/amarok_nowplay/main.js
+%%QTSCRIPT%%share/eiskaltdcpp/qt/qtscripts/amarok_nowplay/script.desc
+%%QTSCRIPT%%share/eiskaltdcpp/qt/qtscripts/gnome/commands.ru_RU.UTF-8.php
+%%QTSCRIPT%%share/eiskaltdcpp/qt/qtscripts/gnome/gnome.png
+%%QTSCRIPT%%share/eiskaltdcpp/qt/qtscripts/gnome/main.js
+%%QTSCRIPT%%share/eiskaltdcpp/qt/qtscripts/gnome/script.desc
+%%QTSCRIPT%%share/eiskaltdcpp/qt/qtscripts/konsole/konsole.png
+%%QTSCRIPT%%share/eiskaltdcpp/qt/qtscripts/konsole/main.js
+%%QTSCRIPT%%share/eiskaltdcpp/qt/qtscripts/konsole/script.desc
+%%QTSCRIPT%%share/eiskaltdcpp/qt/qtscripts/logmanager/log_file.png
+%%QTSCRIPT%%share/eiskaltdcpp/qt/qtscripts/logmanager/main.js
+%%QTSCRIPT%%share/eiskaltdcpp/qt/qtscripts/logmanager/script.desc
+%%QTSCRIPT%%share/eiskaltdcpp/qt/qtscripts/tic-tac-toe/content/Button.qml
+%%QTSCRIPT%%share/eiskaltdcpp/qt/qtscripts/tic-tac-toe/content/TicTac.qml
+%%QTSCRIPT%%share/eiskaltdcpp/qt/qtscripts/tic-tac-toe/content/pics/board.png
+%%QTSCRIPT%%share/eiskaltdcpp/qt/qtscripts/tic-tac-toe/content/pics/o.png
+%%QTSCRIPT%%share/eiskaltdcpp/qt/qtscripts/tic-tac-toe/content/pics/x.png
+%%QTSCRIPT%%share/eiskaltdcpp/qt/qtscripts/tic-tac-toe/content/tic-tac-toe.js
+%%QTSCRIPT%%share/eiskaltdcpp/qt/qtscripts/tic-tac-toe/script.desc
+%%QTSCRIPT%%share/eiskaltdcpp/qt/qtscripts/tic-tac-toe/tic-tac-toe.qml
+%%QTSCRIPT%%share/eiskaltdcpp/qt/qtscripts/tic-tac-toe/tic-tac-toe.qmlproject
+%%QTSCRIPT%%share/eiskaltdcpp/qt/qtscripts/tic-tac-toe/x.png
+share/eiskaltdcpp/qt/resources/default.rcc
+share/eiskaltdcpp/qt/ts/be.qm
+share/eiskaltdcpp/qt/ts/bg.qm
+share/eiskaltdcpp/qt/ts/en.qm
+share/eiskaltdcpp/qt/ts/es.qm
+share/eiskaltdcpp/qt/ts/fr.qm
+share/eiskaltdcpp/qt/ts/hu.qm
+share/eiskaltdcpp/qt/ts/pl.qm
+share/eiskaltdcpp/qt/ts/ru.qm
+share/eiskaltdcpp/qt/ts/sr.qm
+share/eiskaltdcpp/qt/ts/sk.qm
+share/eiskaltdcpp/qt/ts/uk.qm
+%%QTSCRIPT%%@dirrm share/eiskaltdcpp/qt/qtscripts/amarok_nowplay
+%%QTSCRIPT%%@dirrm share/eiskaltdcpp/qt/qtscripts/gnome
+%%QTSCRIPT%%@dirrm share/eiskaltdcpp/qt/qtscripts/logmanager
+%%QTSCRIPT%%@dirrm share/eiskaltdcpp/qt/qtscripts/tic-tac-toe/content/pics
+%%QTSCRIPT%%@dirrm share/eiskaltdcpp/qt/qtscripts/tic-tac-toe/content
+%%QTSCRIPT%%@dirrm share/eiskaltdcpp/qt/qtscripts/tic-tac-toe
+%%QTSCRIPT%%@dirrm share/eiskaltdcpp/qt/qtscripts/konsole
+%%QTSCRIPT%%@dirrm share/eiskaltdcpp/qt/qtscripts
+@dirrm share/eiskaltdcpp/qt/icons/appl/default
+@dirrm share/eiskaltdcpp/qt/icons/appl
+@dirrm share/eiskaltdcpp/qt/icons/user/default
+@dirrm share/eiskaltdcpp/qt/icons/user/valknut
+@dirrm share/eiskaltdcpp/qt/icons/user
+@dirrm share/eiskaltdcpp/qt/icons
+@dirrm share/eiskaltdcpp/qt/ts
+@dirrm share/eiskaltdcpp/qt/resources
+@dirrm share/eiskaltdcpp/qt
+@dirrmtry share/applications
