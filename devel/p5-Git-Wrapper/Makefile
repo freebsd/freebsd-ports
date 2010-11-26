@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	Git-Wrapper
-PORTVERSION=	0.013
+PORTVERSION=	0.014
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	gslin@gslin.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Wrap git(7) command-line interface
 
 BUILD_DEPENDS=	git>=0:${PORTSDIR}/devel/git
