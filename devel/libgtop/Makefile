@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	libgtop
-PORTVERSION=	2.28.1
-PORTREVISION=	3
+PORTVERSION=	2.28.2
 CATEGORIES=	devel gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -25,7 +24,7 @@ USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	libtool:22
 CONFIGURE_ARGS=	--disable-gtk-doc \
 		--with-html-dir=${PREFIX}/share/doc
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -DHAVE_NET_IF_VAR_H" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
 INFO=		libgtop2
