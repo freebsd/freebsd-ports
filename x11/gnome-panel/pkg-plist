@@ -19,7 +19,7 @@ lib/girepository-1.0/PanelApplet-3.0.typelib
 %%BONOBO%%lib/gnome-panel/modules/libpanel-applets-bonobo.a
 %%BONOBO%%lib/gnome-panel/modules/libpanel-applets-bonobo.la
 %%BONOBO%%lib/gnome-panel/modules/libpanel-applets-bonobo.so
-@exec %%LOCALBASE%%/bin/gio-querymodules %D/lib/gnome-panel/modules 2>1/dev/null || /usr/bin/true
+@exec %%LOCALBASE%%/bin/gio-querymodules %D/lib/gnome-panel/modules 2>/dev/null || /usr/bin/true
 @unexec /bin/rm -f %D/lib/gnome-panel/modules/giomodule.cache
 %%BONOBO%%lib/libpanel-applet-2.a
 %%BONOBO%%lib/libpanel-applet-2.la
