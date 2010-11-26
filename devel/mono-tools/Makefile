@@ -41,5 +41,4 @@ post-patch:
 		's|@datadir@/man/man1|@mandir@/man1|g'
 
 .include "${PORTSDIR}/lang/mono/bsd.mono.mk"
-.include "${PORTSDIR}/www/mozilla/bsd.gecko.mk"
 .include <bsd.port.post.mk>
