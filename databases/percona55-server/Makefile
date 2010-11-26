@@ -44,12 +44,6 @@ CONFIGURE_ARGS+=--with-charset=${WITH_CHARSET}
 .if defined(WITH_XCHARSET) && ${WITH_XCHARSET} != ""
 CONFIGURE_ARGS+=--with-extra-charsets=${WITH_XCHARSET}
 .endif
-.if defined(WITH_DTRACE)
-CONFIGURE_ARGS+=--enable-dtrace
-CONFIGURE_ENV+=	LDFLAGS=-lelf
-.else
-CONFIGURE_ARGS+=--disable-dtrace
-.endif
 .if defined(WITH_OPENSSL)
 .if !defined(WITHOUT_YASSL)
 CONFIGURE_ARGS+=--with-ssl=bundled
@@ -72,6 +66,13 @@ CONFIGURE_ARGS+=--with-collation=${WITH_COLLATION}
 .endif
 
 .include <bsd.port.pre.mk>
+
+.if defined(WITH_DTRACE) && ${OSVERSION} >= 900021
+CONFIGURE_ARGS+=--enable-dtrace
+CONFIGURE_ENV+=	LDFLAGS=-lelf
+.else
+CONFIGURE_ARGS+=--disable-dtrace
+.endif
 
 .if ${ARCH} == "i386"
 CONFIGURE_ARGS+=--enable-assembler
@@ -132,7 +133,9 @@ pre-fetch:
 	@${ECHO} "	WITH_CHARSET=charset	Define the primary built-in charset (latin1)."
 	@${ECHO} "	WITH_XCHARSET=list	Define other built-in charsets (may be 'all')."
 	@${ECHO} "	WITH_COLLATION=collate	Define default collation (latin1_swedish_ci)."
+.if ${OSVERSION} >= 900021
 	@${ECHO} "	WITH_DTRACE=yes		Enable DTrace."
+.endif
 	@${ECHO} "	WITH_OPENSSL=yes	Enable secure connections"
 	@${ECHO} "				(define WITHOUT_YASSL for backward compatibility)."
 	@${ECHO} "	WITH_LINUXTHREADS=yes	Use the linuxthreads pthread library."
