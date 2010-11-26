@@ -157,6 +157,7 @@
     SUBDIR += koffice-kde4-l10n-tr
     SUBDIR += koffice-kde4-l10n-wa
     SUBDIR += komodo-edit
+    SUBDIR += komodo-ide
     SUBDIR += kxmleditor
     SUBDIR += lazarus
     SUBDIR += le
