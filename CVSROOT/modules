@@ -4236,7 +4236,7 @@ gdal                            ports/graphics/gdal
 gdal-grass                      ports/graphics/gdal-grass
 gdam                            ports/audio/gdam
 gdb53-act                       ports/devel/gdb53-act
-gdb6                            ports/devel/gdb6
+gdb66                           ports/devel/gdb66
 gdbm                            ports/databases/gdbm
 gdbmods                         ports/devel/gdbmods
 gdc                             ports/lang/gdc
@@ -10604,6 +10604,8 @@ openal-soft                     ports/audio/openal-soft
 openalchemist                   ports/games/openalchemist
 openam                          ports/net/openam
 openarena                       ports/games/openarena
+openarena-data                  ports/games/openarena-data
+openarena-oax                   ports/games/openarena-oax
 openark-kit                     ports/databases/openark-kit
 openastromenace                 ports/games/openastromenace
 openbabel                       ports/science/openbabel
@@ -13133,6 +13135,7 @@ p5-Moose-Policy                 ports/devel/p5-Moose-Policy
 p5-MooseX-Aliases               ports/devel/p5-MooseX-Aliases
 p5-MooseX-App-Cmd               ports/devel/p5-MooseX-App-Cmd
 p5-MooseX-Async                 ports/devel/p5-MooseX-Async
+p5-MooseX-Attribute-ENV         ports/devel/p5-MooseX-Attribute-ENV
 p5-MooseX-AttributeHelpers      ports/devel/p5-MooseX-AttributeHelpers
 p5-MooseX-ClassAttribute        ports/devel/p5-MooseX-ClassAttribute
 p5-MooseX-Clone                 ports/devel/p5-MooseX-Clone
@@ -17158,6 +17161,7 @@ p5-moose-policy                 ports/devel/p5-Moose-Policy
 p5-moosex-aliases               ports/devel/p5-MooseX-Aliases
 p5-moosex-app-cmd               ports/devel/p5-MooseX-App-Cmd
 p5-moosex-async                 ports/devel/p5-MooseX-Async
+p5-moosex-attribute-env         ports/devel/p5-MooseX-Attribute-ENV
 p5-moosex-attributehelpers      ports/devel/p5-MooseX-AttributeHelpers
 p5-moosex-classattribute        ports/devel/p5-MooseX-ClassAttribute
 p5-moosex-clone                 ports/devel/p5-MooseX-Clone
@@ -22188,6 +22192,7 @@ redland-bindings                ports/textproc/redland-bindings
 redland-bindings-python         ports/textproc/redland-bindings-python
 redmine                         ports/www/redmine
 redmine-basecamp                ports/www/redmine-basecamp
+redshift                        ports/accessibility/redshift
 ree                             ports/misc/ree
 reed                            ports/sysutils/reed
 reed-solomon                    ports/math/reed-solomon
@@ -25542,6 +25547,7 @@ webfonts                        ports/x11-fonts/webfonts
 webfs                           ports/www/webfs
 webfwlog                        ports/security/webfwlog
 webglimpse                      ports/www/webglimpse
+webgo                           ports/www/webgo
 webinject                       ports/www/webinject
 webjob                          ports/sysutils/webjob
 webkit-gtk2                     ports/www/webkit-gtk2
