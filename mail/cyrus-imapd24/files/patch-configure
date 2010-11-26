@@ -1,8 +1,17 @@
 Index: configure
 diff -u configure.orig configure
---- configure.orig	2010-10-18 23:52:21.754710579 +0900
-+++ configure	2010-10-18 23:53:29.402517775 +0900
-@@ -10372,7 +10372,7 @@
+--- configure.orig	2010-11-26 15:06:26.419690432 +0900
++++ configure	2010-11-26 15:27:39.897910842 +0900
+@@ -7162,7 +7162,7 @@
+ 
+ done
+ 
+-	if test "$ac_cv_header_pcreposix_h" == "yes"; then
++	if test "$ac_cv_header_pcreposix_h" = "yes"; then
+ 		LIBS="$LIBS -lpcre -lpcreposix";
+ 
+ $as_echo "#define ENABLE_REGEX /**/" >>confdefs.h
+@@ -10411,7 +10411,7 @@
      PERL_SUBDIRS="imap"
      PERL="${with_perl}"
      case "${target_os}" in

@@ -7,7 +7,7 @@
 
 PORTNAME=	cyrus-imapd
 PORTVERSION=	2.3.16
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	mail ipv6
 MASTER_SITES=	ftp://ftp.andrew.cmu.edu/pub/cyrus/ \
 		http://ftp.andrew.cmu.edu/pub/cyrus/ \
@@ -17,7 +17,8 @@ MASTER_SITES=	ftp://ftp.andrew.cmu.edu/pub/cyrus/ \
 MAINTAINER=	ume@FreeBSD.org
 COMMENT=	The cyrus mail server, supporting POP3 and IMAP4 protocols
 
-LIB_DEPENDS=	sasl2.2:${PORTSDIR}/security/cyrus-sasl2
+LIB_DEPENDS=	sasl2.2:${PORTSDIR}/security/cyrus-sasl2 \
+		pcre.0:${PORTSDIR}/devel/pcre
 
 CONFLICTS=	cyrus-1.* cyrus-imapd-2.[^3].*
 
@@ -36,6 +37,7 @@ CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc \
 		--with-com_err \
 		--with-openssl=${OPENSSLBASE} \
 		--with-perl=${PERL5}
+CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" LIBS="-L${LOCALBASE}/lib"
 MAKE_JOBS_UNSAFE=	yes
 
 OPTIONS=	AUTOCREATE	"Use autocreate INBOX patch (UoA)"	off \
