@@ -1,6 +1,6 @@
-# New ports collection makefile for: mt-daapd-devel
-# Date created:                26 Nov 2007
-# Whom:                        Mark Foster <mark@foster.cc>
+# New ports collection makefile for:	mt-daapd-devel
+# Date created:				26 Nov 2007
+# Whom:					Mark Foster <mark@foster.cc>
 # $FreeBSD$
 #
 
@@ -26,14 +26,13 @@ LIB_DEPENDS=	ogg:${PORTSDIR}/audio/libogg \
 CONFLICTS=	mt-daapd-0.2.*
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CFLAGS="${CFLAGS} ${PTHREAD_CFLAGS}" \
+CONFIGURE_ENV=	CFLAGS+="${PTHREAD_CFLAGS}" \
 		CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" \
 		LIBS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ARGS=		--prefix=${LOCALBASE} --with-id3tag=${PREFIX} --enable-sqlite3 --enable-oggvorbis --enable-flac
-
-#USE_AUTOTOOLS=	autoheader:261 autoconf:261:env
+CONFIGURE_ARGS=		--prefix=${PREFIX} --with-id3tag=${PREFIX} \
+			--enable-sqlite3 --enable-oggvorbis --enable-flac
 
 DAAPD_USER?=	daapd
 DAAPD_GROUP?=	daapd
@@ -41,7 +40,9 @@ DAAPD_DBDIR?=	${PREFIX}/var/db/${PORTNAME}
 USE_RC_SUBR=	mt-daapd
 
 PLIST_SUB+=	DAAPD_DBDIR=${DAAPD_DBDIR}
-SUB_LIST+=	USER=${DAAPD_USER} GROUP=${DAAPD_GROUP} DAAPD_DBDIR=${DAAPD_DBDIR}
+SUB_LIST+=	USER=${DAAPD_USER}\
+		GROUP=${DAAPD_GROUP}\
+		DAAPD_DBDIR=${DAAPD_DBDIR}
 SUB_FILES+=	pkg-install pkg-deinstall
 
 USE_LDCONFIG=	yes
@@ -76,9 +77,6 @@ post-install:
 	@${CHMOD} 0755 ${DATADIR}
 	@${CHOWN} ${DAAPD_USER}:${DAAPD_GROUP} ${DAAPD_DBDIR}
 	@${CHOWN} ${DAAPD_USER}:${DAAPD_GROUP} ${DATADIR}
-	${LN} -sf ${PREFIX}/lib/mt-daapd/plugins/libout-daap.so.0.0 ${PREFIX}/lib/mt-daapd/plugins/libout-daap.so
-	${LN} -sf ${PREFIX}/lib/mt-daapd/plugins/librsp.so.0.0 ${PREFIX}/lib/mt-daapd/plugins/librsp.so
-	${LN} -sf ${PREFIX}/lib/mt-daapd/plugins/libssc-script.so.0.0 ${PREFIX}/lib/mt-daapd/plugins/libssc-script.so
 
 	@${ECHO_MSG} "This port installs a sample configuration file in"
 	@${ECHO_MSG} "${LOCALBASE}/etc/mt-daapd.conf.sample"

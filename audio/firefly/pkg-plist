@@ -2,9 +2,6 @@
 bin/mt-daapd-ssc.sh
 bin/wavstreamer
 etc/mt-daapd.conf.sample
-lib/mt-daapd/plugins/libout-daap.so
-lib/mt-daapd/plugins/librsp.so
-lib/mt-daapd/plugins/libssc-script.so
 lib/mt-daapd/plugins/out-daap.a
 lib/mt-daapd/plugins/out-daap.la
 lib/mt-daapd/plugins/out-daap.so
@@ -78,3 +75,7 @@ share/mt-daapd/admin-root/zlib-license.txt
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrmtry lib/mt-daapd/plugins
 @dirrmtry lib/mt-daapd
+@rmtry var/db/firefly/songs3.db
+@dirrmtry var/db/firefly
+@dirrmtry var/db
+@dirrmtry var
