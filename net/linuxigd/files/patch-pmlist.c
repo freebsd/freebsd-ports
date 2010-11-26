@@ -1,6 +1,12 @@
---- pmlist.c.orig	Sun Oct  1 23:58:32 2006
-+++ pmlist.c	Sat Jun 16 19:55:22 2007
-@@ -8,10 +8,6 @@
+--- pmlist.c.orig	2010-11-26 17:45:26.000000000 +0300
++++ pmlist.c	2010-11-26 17:49:30.000000000 +0300
+@@ -1,3 +1,5 @@
++#include <stdio.h>
++#include <string.h>
+ #include <stdlib.h>
+ #include <sys/wait.h>
+ #include <unistd.h>
+@@ -8,10 +10,6 @@
  #include "gatedevice.h"
  #include "util.h"
  
@@ -11,7 +17,7 @@
  struct portMap* pmlist_NewNode(int enabled, long int duration, char *remoteHost,
  			       char *externalPort, char *internalPort,
  			       char *protocol, char *internalClient, char *desc)
-@@ -233,55 +229,18 @@
+@@ -233,55 +231,18 @@
  {
      if (enabled)
      {
@@ -77,7 +83,7 @@
      }
      return 1;
  }
-@@ -290,52 +249,18 @@
+@@ -290,52 +251,18 @@
  {
      if (enabled)
      {
