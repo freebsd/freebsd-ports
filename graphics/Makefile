@@ -53,6 +53,7 @@
     SUBDIR += bmp-rootvis
     SUBDIR += bmp2html
     SUBDIR += box
+    SUBDIR += boxer
     SUBDIR += bugle
     SUBDIR += c-a-i-r
     SUBDIR += cadubi
