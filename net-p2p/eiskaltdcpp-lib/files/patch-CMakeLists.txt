@@ -1,0 +1,15 @@
+--- ./CMakeLists.txt.orig	2010-11-22 00:38:14.000000000 +0200
++++ ./CMakeLists.txt	2010-11-22 01:35:58.000000000 +0200
+@@ -493,3 +493,12 @@
+   install (FILES icons/icon_128x128.png DESTINATION ${SHARE_DIR}/pixmaps/ RENAME eiskaltdcpp.png)
+ endif (APPLE)
+ endif (USE_QT OR USE_GTK)
++
++if (INSTALL_HEADERS)
++	message(STATUS "DCPP headers will be installed")
++	file(GLOB DCPP_HEADERS dcpp/*.h)
++	INSTALL(FILES ${DCPP_HEADERS}
++		DESTINATION "include/eiskaltdcpp/dcpp")
++else (INSTALL_HEADERS)
++	message(STATUS "DCPP headers will not be installed")
++endif (INSTALL_HEADERS)

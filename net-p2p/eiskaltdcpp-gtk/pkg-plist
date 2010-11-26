@@ -1,0 +1,126 @@
+bin/eiskaltdcpp-gtk
+share/applications/eiskaltdcpp-gtk.desktop
+share/eiskaltdcpp/gtk/glade/adlsearch.glade
+share/eiskaltdcpp/gtk/glade/downloadqueue.glade
+share/eiskaltdcpp/gtk/glade/favoritehubs.glade
+share/eiskaltdcpp/gtk/glade/favoriteusers.glade
+share/eiskaltdcpp/gtk/glade/finishedtransfers.glade
+share/eiskaltdcpp/gtk/glade/hash.glade
+share/eiskaltdcpp/gtk/glade/hub.glade
+share/eiskaltdcpp/gtk/glade/mainwindow.glade
+share/eiskaltdcpp/gtk/glade/privatemessage.glade
+share/eiskaltdcpp/gtk/glade/publichubs.glade
+share/eiskaltdcpp/gtk/glade/search.glade
+share/eiskaltdcpp/gtk/glade/searchspy.glade
+share/eiskaltdcpp/gtk/glade/settingsdialog.glade
+share/eiskaltdcpp/gtk/glade/sharebrowser.glade
+share/eiskaltdcpp/gtk/glade/transfers.glade
+share/eiskaltdcpp/gtk/icons/hicolor/128x128/apps/eiskaltdcpp.png
+share/eiskaltdcpp/gtk/icons/hicolor/16x16/status/eiskaltdcpp-dc++-fw-op.png
+share/eiskaltdcpp/gtk/icons/hicolor/16x16/status/eiskaltdcpp-dc++-fw.png
+share/eiskaltdcpp/gtk/icons/hicolor/16x16/status/eiskaltdcpp-dc++-op.png
+share/eiskaltdcpp/gtk/icons/hicolor/16x16/status/eiskaltdcpp-dc++.png
+share/eiskaltdcpp/gtk/icons/hicolor/16x16/status/eiskaltdcpp-normal-fw-op.png
+share/eiskaltdcpp/gtk/icons/hicolor/16x16/status/eiskaltdcpp-normal-fw.png
+share/eiskaltdcpp/gtk/icons/hicolor/16x16/status/eiskaltdcpp-normal-op.png
+share/eiskaltdcpp/gtk/icons/hicolor/16x16/status/eiskaltdcpp-normal.png
+share/eiskaltdcpp/gtk/icons/hicolor/22x22/apps/eiskaltdcpp.png
+share/eiskaltdcpp/gtk/icons/hicolor/22x22/categories/eiskaltdcpp-adls.png
+share/eiskaltdcpp/gtk/icons/hicolor/22x22/categories/eiskaltdcpp-application-exit.png
+share/eiskaltdcpp/gtk/icons/hicolor/22x22/categories/eiskaltdcpp-configure.png
+share/eiskaltdcpp/gtk/icons/hicolor/22x22/categories/eiskaltdcpp-download.png
+share/eiskaltdcpp/gtk/icons/hicolor/22x22/categories/eiskaltdcpp-edit-find.png
+share/eiskaltdcpp/gtk/icons/hicolor/22x22/categories/eiskaltdcpp-favserver.png
+share/eiskaltdcpp/gtk/icons/hicolor/22x22/categories/eiskaltdcpp-favusers.png
+share/eiskaltdcpp/gtk/icons/hicolor/22x22/categories/eiskaltdcpp-find.png
+share/eiskaltdcpp/gtk/icons/hicolor/22x22/categories/eiskaltdcpp-folder-blue.png
+share/eiskaltdcpp/gtk/icons/hicolor/22x22/categories/eiskaltdcpp-go-down-search.png
+share/eiskaltdcpp/gtk/icons/hicolor/22x22/categories/eiskaltdcpp-go-up-search.png
+share/eiskaltdcpp/gtk/icons/hicolor/22x22/categories/eiskaltdcpp-gui.png
+share/eiskaltdcpp/gtk/icons/hicolor/22x22/categories/eiskaltdcpp-hashing.png
+share/eiskaltdcpp/gtk/icons/hicolor/22x22/categories/eiskaltdcpp-network-connect.png
+share/eiskaltdcpp/gtk/icons/hicolor/22x22/categories/eiskaltdcpp-openlist.png
+share/eiskaltdcpp/gtk/icons/hicolor/22x22/categories/eiskaltdcpp-own_filelist.png
+share/eiskaltdcpp/gtk/icons/hicolor/22x22/categories/eiskaltdcpp-reconnect.png
+share/eiskaltdcpp/gtk/icons/hicolor/22x22/categories/eiskaltdcpp-refrlist.png
+share/eiskaltdcpp/gtk/icons/hicolor/22x22/categories/eiskaltdcpp-server.png
+share/eiskaltdcpp/gtk/icons/hicolor/22x22/categories/eiskaltdcpp-spy.png
+share/eiskaltdcpp/gtk/icons/hicolor/22x22/emotes/face-smile.png
+share/eiskaltdcpp/gtk/icons/hicolor/22x22/status/eiskaltdcpp-go-down.png
+share/eiskaltdcpp/gtk/icons/hicolor/22x22/status/eiskaltdcpp-go-up.png
+share/eiskaltdcpp/gtk/icons/hicolor/22x22/status/eiskaltdcpp-server-red.png
+share/eiskaltdcpp/gtk/icons/hicolor/22x22/status/eiskaltdcpp-server.png
+share/eiskaltdcpp/gtk/icons/hicolor/22x22/status/eiskaltdcpp-users-red.png
+share/eiskaltdcpp/gtk/icons/hicolor/22x22/status/eiskaltdcpp-users.png
+share/eiskaltdcpp/gtk/icons/hicolor/22x22/status/icon_msg.png
+share/eiskaltdcpp/gtk/themes/bw.theme
+share/eiskaltdcpp/gtk/themes/gtk-theme.theme
+share/eiskaltdcpp/gtk/themes/hicolor/16x16/status/humanity-dc++-fw-op.svg
+share/eiskaltdcpp/gtk/themes/hicolor/16x16/status/humanity-dc++-fw.svg
+share/eiskaltdcpp/gtk/themes/hicolor/16x16/status/humanity-dc++-op.svg
+share/eiskaltdcpp/gtk/themes/hicolor/16x16/status/humanity-dc++.svg
+share/eiskaltdcpp/gtk/themes/hicolor/16x16/status/humanity-normal-fw-op.svg
+share/eiskaltdcpp/gtk/themes/hicolor/16x16/status/humanity-normal-fw.svg
+share/eiskaltdcpp/gtk/themes/hicolor/16x16/status/humanity-normal-op.svg
+share/eiskaltdcpp/gtk/themes/hicolor/16x16/status/humanity-normal.svg
+share/eiskaltdcpp/gtk/themes/hicolor/22x22/status/linuxdcpp-dc++-fw-op.png
+share/eiskaltdcpp/gtk/themes/hicolor/22x22/status/linuxdcpp-dc++-fw.png
+share/eiskaltdcpp/gtk/themes/hicolor/22x22/status/linuxdcpp-dc++-op.png
+share/eiskaltdcpp/gtk/themes/hicolor/22x22/status/linuxdcpp-dc++.png
+share/eiskaltdcpp/gtk/themes/hicolor/22x22/status/linuxdcpp-download.png
+share/eiskaltdcpp/gtk/themes/hicolor/22x22/status/linuxdcpp-normal-fw-op.png
+share/eiskaltdcpp/gtk/themes/hicolor/22x22/status/linuxdcpp-normal-fw.png
+share/eiskaltdcpp/gtk/themes/hicolor/22x22/status/linuxdcpp-normal-op.png
+share/eiskaltdcpp/gtk/themes/hicolor/22x22/status/linuxdcpp-normal.png
+share/eiskaltdcpp/gtk/themes/hicolor/22x22/status/linuxdcpp-upload.png
+share/eiskaltdcpp/gtk/themes/hicolor/32x32/categories/applications.png
+share/eiskaltdcpp/gtk/themes/hicolor/32x32/categories/away.png
+share/eiskaltdcpp/gtk/themes/hicolor/32x32/categories/bw-connect.png
+share/eiskaltdcpp/gtk/themes/hicolor/32x32/categories/bw-favorite-hubs.png
+share/eiskaltdcpp/gtk/themes/hicolor/32x32/categories/bw-finished-downloads.png
+share/eiskaltdcpp/gtk/themes/hicolor/32x32/categories/bw-finished-uploads.png
+share/eiskaltdcpp/gtk/themes/hicolor/32x32/categories/bw-hash.png
+share/eiskaltdcpp/gtk/themes/hicolor/32x32/categories/bw-preferences.png
+share/eiskaltdcpp/gtk/themes/hicolor/32x32/categories/bw-public-hubs.png
+share/eiskaltdcpp/gtk/themes/hicolor/32x32/categories/bw-queue.png
+share/eiskaltdcpp/gtk/themes/hicolor/32x32/categories/bw-quit.png
+share/eiskaltdcpp/gtk/themes/hicolor/32x32/categories/bw-search.png
+share/eiskaltdcpp/gtk/themes/hicolor/32x32/categories/check.png
+share/eiskaltdcpp/gtk/themes/hicolor/32x32/categories/close.png
+share/eiskaltdcpp/gtk/themes/hicolor/32x32/categories/down1.png
+share/eiskaltdcpp/gtk/themes/hicolor/32x32/categories/favorites.png
+share/eiskaltdcpp/gtk/themes/hicolor/32x32/categories/go.png
+share/eiskaltdcpp/gtk/themes/hicolor/32x32/categories/group.png
+share/eiskaltdcpp/gtk/themes/hicolor/32x32/categories/paste.png
+share/eiskaltdcpp/gtk/themes/hicolor/32x32/categories/reconect.png
+share/eiskaltdcpp/gtk/themes/hicolor/32x32/categories/report.png
+share/eiskaltdcpp/gtk/themes/hicolor/32x32/categories/up1.png
+share/eiskaltdcpp/gtk/themes/hicolor/32x32/categories/user_black.png
+share/eiskaltdcpp/gtk/themes/hicolor/32x32/categories/web.png
+share/eiskaltdcpp/gtk/themes/hicolor/32x32/categories/zoom.png
+share/eiskaltdcpp/gtk/themes/hicolor/32x32/categories/zoom1.png
+share/eiskaltdcpp/gtk/themes/humanity.theme
+share/eiskaltdcpp/gtk/themes/linuxdcpp.theme
+share/eiskaltdcpp/gtk/themes/mankthemedark.theme
+@dirrm share/eiskaltdcpp/gtk/glade
+@dirrm share/eiskaltdcpp/gtk/icons/hicolor/16x16/status
+@dirrm share/eiskaltdcpp/gtk/icons/hicolor/16x16
+@dirrm share/eiskaltdcpp/gtk/icons/hicolor/22x22/emotes
+@dirrm share/eiskaltdcpp/gtk/icons/hicolor/22x22/categories
+@dirrm share/eiskaltdcpp/gtk/icons/hicolor/22x22/status
+@dirrm share/eiskaltdcpp/gtk/icons/hicolor/22x22/apps
+@dirrm share/eiskaltdcpp/gtk/icons/hicolor/22x22
+@dirrm share/eiskaltdcpp/gtk/icons/hicolor/128x128/apps
+@dirrm share/eiskaltdcpp/gtk/icons/hicolor/128x128
+@dirrm share/eiskaltdcpp/gtk/icons/hicolor
+@dirrm share/eiskaltdcpp/gtk/icons
+@dirrm share/eiskaltdcpp/gtk/themes/hicolor/22x22/status
+@dirrm share/eiskaltdcpp/gtk/themes/hicolor/22x22
+@dirrm share/eiskaltdcpp/gtk/themes/hicolor/32x32/categories
+@dirrm share/eiskaltdcpp/gtk/themes/hicolor/32x32
+@dirrm share/eiskaltdcpp/gtk/themes/hicolor/16x16/status
+@dirrm share/eiskaltdcpp/gtk/themes/hicolor/16x16
+@dirrm share/eiskaltdcpp/gtk/themes/hicolor
+@dirrm share/eiskaltdcpp/gtk/themes
+@dirrm share/eiskaltdcpp/gtk
+@dirrmtry share/applications

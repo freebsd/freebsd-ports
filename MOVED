@@ -4683,3 +4683,4 @@ x11-toolkits/gir-repository-gtksourceview2|x11-toolkits/gtksourceview2|2010-11-2
 security/gir-repository-gnome-keyring||2010-11-20|Not buildable
 devel/gir-repository-dbus|devel/gobject-introspection|2010-11-20|merged into gobject-introspection
 devel/gdb6|devel/gdb66|2010-11-24|Directory renamed
+net-p2p/eiskaltdc|net-p2p/eiskaltdcpp-qt|2010-11-26|GUI ports separated
