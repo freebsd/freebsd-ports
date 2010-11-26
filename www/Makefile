@@ -575,6 +575,7 @@
     SUBDIR += monast
     SUBDIR += monkey
     SUBDIR += moodle
+    SUBDIR += moodle2
     SUBDIR += moonshine
     SUBDIR += mozex
     SUBDIR += mozilla
