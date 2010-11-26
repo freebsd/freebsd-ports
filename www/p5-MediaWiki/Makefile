@@ -8,8 +8,7 @@
 PORTNAME=	MediaWiki
 PORTVERSION=	1.13
 CATEGORIES=	www perl5
-MASTER_SITES=	CPAN
-MASTER_SITE_SUBDIR=	../../authors/id/S/SP/SPECTRUM/
+MASTER_SITES=	http://backpan.perl.org/authors/id/S/SP/SPECTRUM/
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	clsung@FreeBSD.org
