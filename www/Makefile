@@ -1525,6 +1525,7 @@
     SUBDIR += red5
     SUBDIR += redmine
     SUBDIR += redmine-basecamp
+    SUBDIR += redmine-http-auth
     SUBDIR += rejik
     SUBDIR += rekonq
     SUBDIR += reportmagic
