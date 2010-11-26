@@ -97,6 +97,7 @@
     SUBDIR += p5-Net-DNS
     SUBDIR += p5-Net-DNS-Async
     SUBDIR += p5-Net-DNS-Codes
+    SUBDIR += p5-Net-DNS-Lite
     SUBDIR += p5-Net-DNS-RR-SRV-Helper
     SUBDIR += p5-Net-DNS-Resolver-Programmable
     SUBDIR += p5-Net-DNS-SEC
