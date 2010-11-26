@@ -244,7 +244,7 @@ php-ini:
 # non-version specific components
 _USE_PHP_ALL=	apc bcmath bitset bz2 calendar ctype curl dba \
 		exif fileinfo fribidi ftp gd gettext gmp \
-		hash iconv imap interbase json ldap mbstring mcrypt \
+		hash iconv imap interbase intl json ldap mbstring mcrypt \
 		memcache mssql mysql odbc \
 		openssl pcntl pcre pdf pgsql posix \
 		pspell radius readline recode session shmop snmp \
@@ -285,6 +285,7 @@ gmp_DEPENDS=	math/php${PHP_VER}-gmp
 iconv_DEPENDS=	converters/php${PHP_VER}-iconv
 imap_DEPENDS=	mail/php${PHP_VER}-imap
 interbase_DEPENDS=	databases/php${PHP_VER}-interbase
+intl_DEPENDS=	devel/pecl-intl
 ldap_DEPENDS=	net/php${PHP_VER}-ldap
 mbstring_DEPENDS=	converters/php${PHP_VER}-mbstring
 mcal_DEPENDS=	misc/php${PHP_VER}-mcal
