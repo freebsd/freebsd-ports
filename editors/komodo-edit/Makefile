@@ -13,6 +13,8 @@ DISTNAME=	Komodo-Edit-${PORTVERSION}-4343-linux-libcpp6-x86
 MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	Multi-language editor from ActiveState
 
+CONFLICTS=      komodo-ide-*
+
 ONLY_FOR_ARCHS=	i386 amd64
 NO_BUILD=	yes
 USE_LINUX=	f10
