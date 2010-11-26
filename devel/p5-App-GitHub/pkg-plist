@@ -1,0 +1,7 @@
+@comment $FreeBSD$
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/App/GitHub/.packlist
+%%SITE_PERL%%/App/GitHub.pm
+bin/github.pl
+@dirrmtry %%SITE_PERL%%/App
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/App/GitHub
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/App
