@@ -8,9 +8,9 @@
 PORTNAME=	dnscheck
 PORTVERSION=	1.3
 CATEGORIES=	dns
-MASTER_SITES=	http://www.netleader.com.au/projects/dnscheck/download/
+MASTER_SITES=	http://www.downtools.com.au/~jarrod/projects/dnscheck/download/
 
-MAINTAINER=	jarrod@netleader.com.au
+MAINTAINER=	jarrod@downtools.com.au
 COMMENT=	DNS zone sanity checker
 
 USE_PERL5=	yes
