@@ -74,6 +74,7 @@ shellinabox:*:139:
 amanda:*:140:operator
 ladvd:*:142:
 dovecot:*:143:
+dovenull:*:144:
 rbldns:*:153:
 sfs:*:171:
 agk:*:172:

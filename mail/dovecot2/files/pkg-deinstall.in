@@ -1,0 +1,65 @@
+#! /bin/sh
+#
+#	$FreeBSD: /tmp/pcvs/ports/mail/dovecot2/files/pkg-deinstall.in,v 1.1 2010-11-27 05:53:35 glewis Exp $
+#
+
+PKG_PREFIX=${PKG_PREFIX:=/usr/local}
+
+ask() {
+	local question default answer
+
+	question=$1
+	default=$2
+	if [ -z "${PACKAGE_BUILDING}" -a -z "${BATCH}" ]; then
+		read -p "${question} [${default}]? " answer
+	fi
+	echo ${answer:-${default}}
+}
+
+yesno() {
+	local question default answer
+
+	question=$1
+	default=$2
+	while :; do
+		answer=$(ask "${question}" "${default}")
+		case "${answer}" in
+		[Yy]*)	return 0;;
+		[Nn]*)	return 1;;
+		esac
+		echo "Please answer yes or no."
+	done
+}
+
+delete_account() {
+	local port user uid group gid
+
+	port=$1
+	user=${2%:*}
+	uid=${2#*:}
+	group=${3%:*}
+	gid=${3#*:}
+
+	echo "If you do not intend to reinstall ${port}, you should manually"
+	echo "remove user '${user}' (uid='${uid}') and group '${group}' (gid='${gid}')."
+}
+
+case $2 in
+
+DEINSTALL)
+	if ps -axc | grep -qw dovecot; then
+		if yesno "Dovecot is still running. Shall I stop it?" y; then
+			${PKG_PREFIX}/etc/rc.d/dovecot stop
+			sleep 2
+		else
+			echo "OK ... I hope you know what you are doing."
+		fi
+	fi
+
+	delete_account Dovecot dovecot:${DOVECOT_UID:-%%DOVECOT_UID%%} dovecot:${DOVECOT_GID:-%%DOVECOT_GID%%}
+	delete_account Dovecot dovenull:${DOVENULL_UID:-%%DOVENULL_UID%%} dovenull:${DOVENULL_GID:-%%DOVENULL_GID%%}
+
+	echo "Also manually 'rm -rf /var/db/dovecot' if anything was stored there."
+	;;
+
+esac

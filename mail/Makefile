@@ -100,6 +100,7 @@
     SUBDIR += dovecot-antispam
     SUBDIR += dovecot-managesieve
     SUBDIR += dovecot-sieve
+    SUBDIR += dovecot2
     SUBDIR += drac
     SUBDIR += drbl
     SUBDIR += dsbl-testers
