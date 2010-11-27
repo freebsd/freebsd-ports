@@ -16,7 +16,7 @@ COMMENT=	OnScreenDisplay messages in licq
 
 LIB_DEPENDS=	xosd.4:${PORTSDIR}/misc/xosd \
 		boost_regex.4:${PORTSDIR}/devel/boost-libs
-RUN_DEPENDS=	${LOCALBASE}/lib/licq/licq_qt-gui.so:${PORTSDIR}/net-im/licq-qt-gui
+RUN_DEPENDS=	${LOCALBASE}/lib/licq/licq_qt4-gui.so:${PORTSDIR}/${LICQ_PORT}-qt-gui
 # run dependency may be too strict, delete it if you use another
 # plugin (gtk+) and wish run osd with it. i've not tested with
 # plugins other than qt-gui
