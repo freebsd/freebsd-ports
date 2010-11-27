@@ -13,30 +13,28 @@ DISTNAME=	${PORTNAME}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	dunkyp@gmail.com
-COMMENT=	A simple wrapped for creating executables with sbcl
-
-BUILD_DEPENDS=	sbcl:${PORTSDIR}/lang/sbcl
-RUN_DEPENDS=	${BUILD_DEPENDS}
+COMMENT=	A simple wrapper for creating executables with sbcl
 
 LICENSE=	BSD
-LICENSE_FILE=	${WRKSRC}/doc/LICENSE-buildapp
+LICENSE_FILE=	${WRKSRC}/doc/LICENSE
 
-PLIST_FILES=	bin/buildapp
-PORTDOCS=	*
+USE_SBCL=	yes
 
 WRKSRC=		${WRKDIR}/${DISTNAME}-${PORTVERSION}
 ALL_TARGET=
 
-post-extract:
-	@${MV} ${WRKSRC}/doc/LICENSE ${WRKSRC}/doc/LICENSE-buildapp
+PLIST_FILES=	bin/buildapp
+PORTDOCS=	*
+
+post-patch:	.SILENT
+	${REINPLACE_CMD} 's|sbcl|${SBCL}|' ${WRKSRC}/Makefile
 
 do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin/
-
-post-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	@(cd ${WRKSRC}/doc && ${COPYTREE_SHARE} \* ${DOCSDIR} "! -name LICENSE*")
+	${MKDIR} ${DOCSDIR}
+	(cd ${WRKSRC}/doc && ${COPYTREE_SHARE} \* ${DOCSDIR} "! -name LICENSE*")
 .endif
 
+.include "${.CURDIR}/../../devel/cl-asdf/bsd.cl-asdf.mk"
 .include <bsd.port.mk>
