@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	telepathy-salut
-PORTVERSION=	0.3.13
+PORTVERSION=	0.4.0
 CATEGORIES=	net-im
 MASTER_SITES=	http://telepathy.freedesktop.org/releases/${PORTNAME}/
 
@@ -37,7 +37,6 @@ MAN8=		telepathy-salut.8
 post-patch:
 	@${REINPLACE_CMD} -e 's|make -C|${GMAKE} -C|g' \
 		${WRKSRC}/src/Makefile.in \
-		${WRKSRC}/tests/Makefile.in \
-		${WRKSRC}/lib/gibber/examples/Makefile.in
+		${WRKSRC}/tests/Makefile.in
 
 .include <bsd.port.mk>
