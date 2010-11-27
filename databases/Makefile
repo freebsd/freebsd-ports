@@ -623,6 +623,7 @@
     SUBDIR += py-cmemcache
     SUBDIR += py-dbf
     SUBDIR += py-dbutils
+    SUBDIR += py-flask-sqlalchemy
     SUBDIR += py-forgetsql
     SUBDIR += py-gdbm
     SUBDIR += py-memcached
