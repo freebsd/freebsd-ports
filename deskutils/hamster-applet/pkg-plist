@@ -191,6 +191,7 @@ share/gnome/help/hamster-applet/zh_TW/merge.page
 share/gnome/help/hamster-applet/zh_TW/reports.page
 share/gnome/help/hamster-applet/zh_TW/statistics.page
 share/gnome/help/hamster-applet/zh_TW/tracking.page
+share/gnome-control-center/keybindings/90-hamster-applet.xml
 %%DATADIR%%/Hamster_Applet.xml
 %%DATADIR%%/applet.ui
 %%DATADIR%%/art/hamster-applet.png
@@ -289,6 +290,12 @@ share/locale/zh_TW/LC_MESSAGES/hamster-applet.mo
 @dirrm share/gnome/help/hamster-applet/cs
 @dirrm share/gnome/help/hamster-applet/C
 @dirrm share/gnome/help/hamster-applet
+@dirrm share/docky/helpers/metadata
+@dirrm share/docky/helpers
+@dirrm share/docky
+@dirrm share/dockmanager/scripts
+@dirrm share/dockmanager/metadata
+@dirrm share/dockmanager
 @dirrmtry share/locale/zh_HK/LC_MESSAGES
 @dirrmtry share/locale/zh_HK
 @dirrmtry share/locale/te/LC_MESSAGES
