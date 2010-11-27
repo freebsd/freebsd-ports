@@ -1131,6 +1131,7 @@
     SUBDIR += rubygem-nokogiri
     SUBDIR += rubygem-opml
     SUBDIR += rubygem-rak
+    SUBDIR += rubygem-rchardet
     SUBDIR += rubygem-rdiscount
     SUBDIR += rubygem-sax-machine
     SUBDIR += rubygem-spreadsheet
