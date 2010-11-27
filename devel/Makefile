@@ -3012,6 +3012,7 @@
     SUBDIR += root
     SUBDIR += root-doc
     SUBDIR += ros
+    SUBDIR += ros-common
     SUBDIR += ros_tutorials
     SUBDIR += rote
     SUBDIR += rpc2
