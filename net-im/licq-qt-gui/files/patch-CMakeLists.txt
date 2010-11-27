@@ -1,0 +1,12 @@
+--- CMakeLists.txt.orig	2010-09-25 09:40:23.000000000 +0200
++++ CMakeLists.txt	2010-10-15 12:55:29.000000000 +0200
+@@ -32,7 +32,9 @@
+ 
+   set(CMAKE_REQUIRED_LIBRARIES ${X11_LIBRARIES})
+   check_library_exists(Xss XScreenSaverRegister "" HAVE_LIBXSS)
++  set(HAVE_LIBXSS 1)
+   check_include_file(X11/extensions/scrnsaver.h HAVE_SCRNSAVER_H)
++  set(HAVE_SCRNSAVER_H 1)
+   set(CMAKE_REQUIRED_LIBRARIES)
+ 
+   if (HAVE_SCRNSAVER_H AND HAVE_LIBXSS)

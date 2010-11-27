@@ -18,16 +18,18 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/libsocks5.a:${PORTSDIR}/net/socks5
 .endif
 LIB_DEPENDS=	boost_regex.4:${PORTSDIR}/devel/boost-libs
 
+LICENSE=	GPLv2
+
 USE_ICONV=	yes
+USE_CMAKE=	yes
 WRKSRC=		${WRKDIR}/${DISTNAME}
 LICQ_PORT?=	net-im/licq
 
 # workaround for installed autoconf/automake
-CONFIGURE_ARGS+=--program-transform-name=s,y,y,
-CONFIGURE_ENV+=	LDFLAGS="${LDFLAGS}" CPPFLAGS="${CPPFLAGS}"
-LDFLAGS+=	${PTHREAD_LIBS} -L${LOCALBASE}/lib -liconv
+LDFLAGS+=	${PTHREAD_LIBS} -L${LOCALBASE}/lib -liconv -Wl,--export-dynamic
 CPPFLAGS+=	-I${LOCALBASE}/include
 CFLAGS+=	-I${LOCALBASE}/include
+CXXFLAGS+=	-Wl,--export-dynamic
 
 .if defined(WITH_SOCKS)
 SOCKS_SUFFIX=	-socks
@@ -47,24 +49,16 @@ CONFIGURE_ARGS+=--with-openssl-lib=${OPENSSLLIB}
 .endif
 
 .if defined(WITHOUT_NLS)
-CONFIGURE_ARGS+=--disable-nls
+CMAKE_ARGS+=	-DENABLE_NLS:BOOL=OFF
 PLIST_SUB+=	NLS="@comment "
 .else
+USE_GETTEXT=	yes
 PLIST_SUB+=	NLS=""
 .endif
 
 pre-configure:
-	${REINPLACE_CMD} -e 's=/usr/share/licq=${PREFIX}/share/licq=' \
-		${WRKSRC}/src/licq.conf.h
-	@${ECHO_MSG} Ignoring existing libgnugetopt
 	${REINPLACE_CMD} -e 's=!/bin/bash=!${LOCALBASE}/bin/bash=' \
 		${WRKSRC}/bin/sidclean.sh
-	${REINPLACE_CMD} -e 's=getopt.h==' \
-		-e 's=FLAGS -D_THREAD_SAFE=FLAGS ${PTHREAD_CFLAGS}=' \
-		-e 's=FLAGS -pthread=FLAGS ${PTHREAD_CFLAGS}=' \
-		-e "s=-lc_r=${PTHREAD_LIBS}=" \
-		-e 's=-lc *$$LIBS=$$LIBS=' \
-		${WRKSRC}/configure
 
 post-install:
 	@${MKDIR} ${PREFIX}/lib/licq
@@ -72,6 +66,7 @@ post-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/bin/sidclean.sh ${PREFIX}/bin/sidclean.bash
 
 .include <bsd.port.pre.mk>
+
 .include "${PORTSDIR}/${LICQ_PORT}/Makefile.inc"
 
 .include <bsd.port.post.mk>

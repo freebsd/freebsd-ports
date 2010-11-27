@@ -1,0 +1,12 @@
+--- CMakeLists.txt.orig	2010-09-19 16:53:59.000000000 +0200
++++ CMakeLists.txt	2010-10-15 10:59:24.000000000 +0200
+@@ -170,7 +170,9 @@
+ 
+ add_subdirectory(cmake)
+ add_subdirectory(include)
++if (ENABLE_NLS)
+ add_subdirectory(po)
++endif (ENABLE_NLS)
+ add_subdirectory(share)
+ add_subdirectory(src)
+ 
