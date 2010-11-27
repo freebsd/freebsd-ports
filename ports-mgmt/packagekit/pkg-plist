@@ -23,6 +23,7 @@ include/PackageKit/packagekit-glib2/packagekit.h
 include/PackageKit/packagekit-glib2/pk-bitfield.h
 include/PackageKit/packagekit-glib2/pk-catalog.h
 include/PackageKit/packagekit-glib2/pk-category.h
+include/PackageKit/packagekit-glib2/pk-client-helper.h
 include/PackageKit/packagekit-glib2/pk-client-sync.h
 include/PackageKit/packagekit-glib2/pk-client.h
 include/PackageKit/packagekit-glib2/pk-common.h
@@ -275,7 +276,6 @@ share/PackageKit/website/pk-using.html
 share/PackageKit/website/style.css
 share/dbus-1/system-services/org.freedesktop.PackageKit.service
 share/gir-1.0/PackageKitGlib-1.0.gir
-share/gtk-doc/html/PackageKit/PackageKit-egg-debug.html
 share/gtk-doc/html/PackageKit/PackageKit-pk-bitfield.html
 share/gtk-doc/html/PackageKit/PackageKit-pk-client-sync.html
 share/gtk-doc/html/PackageKit/PackageKit-pk-common.html
