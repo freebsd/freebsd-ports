@@ -1,6 +1,6 @@
---- configure.orig	2009-11-24 16:31:47.000000000 +0100
-+++ configure	2009-11-24 16:32:35.000000000 +0100
-@@ -13586,6 +13586,7 @@
+--- configure.orig	2010-11-27 12:59:51.000000000 -0500
++++ configure	2010-11-27 13:00:33.000000000 -0500
+@@ -13773,6 +13773,7 @@ $as_echo_n "checking whether to check fo
     check_inconsistencies=yes
     case "${host_cpu}-${host_os}" in
       *-darwin*) check_inconsistencies=no ;;
@@ -8,16 +8,16 @@
     esac
     if test x"$GCC" != xyes -o "x$check_inconsistencies" != xyes ; then
        { $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
-@@ -18007,7 +18008,7 @@
+@@ -18300,7 +18301,7 @@ _ACEOF
  
  else
  
--   as_fn_error "*** libatomic-ops headers not found" "$LINENO" 5
-+#   as_fn_error "*** libatomic-ops headers not found" "$LINENO" 5
+-   as_fn_error $? "*** libatomic-ops headers not found" "$LINENO" 5
++#   as_fn_error $? "*** libatomic-ops headers not found" "$LINENO" 5
  
  fi
  
-@@ -18015,9 +18016,9 @@
+@@ -18308,9 +18309,9 @@ done
  
  
     # Win32 does not need the lib and breaks horribly if we try to include it
