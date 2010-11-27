@@ -20,6 +20,8 @@ PATCH_DIST_STRIP=	-p1
 MAINTAINER=	toni.viemero@iki.fi
 COMMENT=	Random password generator
 
+LICENSE=	GPLv1
+
 NO_BUILD=	yes
 USE_PERL5_RUN=	yes
 
