@@ -6,10 +6,9 @@
 #   $MCom: ports/multimedia/clutter-gst/Makefile,v 1.6 2010/06/29 21:14:02 kwm Exp $
 
 PORTNAME=	clutter-gst
-PORTVERSION=	1.0.0
-PORTREVISION=	1
+PORTVERSION=	1.3.2
 CATEGORIES=	multimedia
-MASTER_SITES=	http://www.clutter-project.org/sources/${PORTNAME}/${PORTVERSION:R}/
+MASTER_SITES=	http://source.clutter-project.org/sources/${PORTNAME}/${PORTVERSION:R}/
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Clutter GStreamer integration
