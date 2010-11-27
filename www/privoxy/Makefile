@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	privoxy
-PORTVERSION=	3.0.16
-PORTREVISION=	2
+PORTVERSION=	3.0.17
 CATEGORIES=	www ipv6
 MASTER_SITES=	SF/ijbswa/Sources/${PORTVERSION}%20%28stable%29
 DISTNAME=	privoxy-${PORTVERSION}-stable-src
@@ -78,6 +77,7 @@ post-patch:
 		-e 's,^\(confdir\) \.,\1 ${PREFIX}/etc/privoxy,' \
 		-e 's,^\(logdir\) \.,\1 /var/log/privoxy,' \
 		-e 's,^\(actionsfile user\),#\1,' \
+		-e 's,^\(filterfile user\),#\1,' \
 	${WRKSRC}/config
 .if !defined(NOPORTDOCS)
 	${REINPLACE_CMD} \
@@ -86,9 +86,6 @@ post-patch:
 .endif
 	${REINPLACE_CMD} \
 		-e 's,\(/etc/privoxy\),${PREFIX}\1,' ${WRKSRC}/tools/uagen.pl
-# Effectivly apply revision 1.208 to fix a regression test.
-	${REINPLACE_CMD} \
-		-e 's,\(-fast-redirects -hide-refer\),\1r,' ${WRKSRC}/default.action.master
 
 pre-configure:
 	@cd ${WRKSRC}; ${AUTOHEADER}
