@@ -3,12 +3,11 @@
 # Whom:					Joe Marcus Clarke <marcus@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports-stable/deskutils/hamster-applet/Makefile,v 1.2 2010/06/24 21:30:14 mezz Exp $
+#   $MCom: ports/deskutils/hamster-applet/Makefile,v 1.42 2010/06/06 11:27:47 kwm Exp $
 #
 
 PORTNAME=	hamster-applet
-PORTVERSION=	2.30.2
-PORTREVISION=	2
+PORTVERSION=	2.32.1
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -26,8 +25,7 @@ USE_GMAKE=	yes
 USE_PYTHON=	yes
 USE_XORG=	xscrnsaver
 USE_GNOME=	gnomeprefix intlhack gnomehack pygnomedesktop \
-		gnomecontrolcenter2
-GNU_CONFIGURE=	yes
+		gnomecontrolcenter2 gnomedocutils
 INSTALLS_OMF=	yes
 INSTALLS_ICONS=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
@@ -35,4 +33,23 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 
 GCONF_SCHEMAS=	hamster-applet.schemas
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+# WAF needs that
+CONFIGURE_ENV+=	CC="${CC}"
+
+do-configure:
+	@cd ${WRKSRC} && ./waf --prefix=${PREFIX} configure
+
+do-build:
+	@cd ${WRKSRC} && ./waf build
+
+do-install:
+	@cd ${WRKSRC} && dbus-launch ./waf install
+# -O -Qold
+	@${PYTHON_CMD} -Qold ${PYTHON_LIBDIR}/compileall.py -q \
+		${PYTHON_SITELIBDIR:S|${LOCALBASE}|${PREFIX}|}/hamster
+	@${PYTHON_CMD} -O ${PYTHON_LIBDIR}/compileall.py -q \
+		${PYTHON_SITELIBDIR:S|${LOCALBASE}|${PREFIX}|}/hamster
+
+.include <bsd.port.post.mk>
