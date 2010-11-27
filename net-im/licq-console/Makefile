@@ -15,28 +15,26 @@ COMMENT=	Ncurses-based console plugin for Licq
 LIB_DEPENDS=	cdk.5:${PORTSDIR}/devel/cdk \
 		boost_regex.4:${PORTSDIR}/devel/boost-libs
 
-GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" \
-		LDFLAGS="${LDFLAGS}" \
-		LIBS="${PTHREAD_LIBS}"
-LICQ_PORT?=	net-im/licq
-CPPFLAGS+=	${PTHREAD_CFLAGS}
-CPPFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/cdk
-LDFLAGS+=	-L${LOCALBASE}/lib
+LICENSE=	GPLv2
 
-PLIST_FILES=	lib/licq/licq_console.la \
-		lib/licq/licq_console.so
+USE_CMAKE=	yes
+DOCSDIR=	${PREFIX}/share/doc/${PKGNAMEPREFIX}${PORTNAME}
+
+DOCFILES=	README
+PLIST_FILES=	lib/licq/licq_console.so \
+		%%PORTDOCS%%%%DOCSDIR%%/README
+PLIST_DIRS=	%%PORTDOCS%%%%DOCSDIR%%
+
+LICQ_PORT?=	net-im/licq
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "alpha"
-BROKEN=		gp-relative relocation against dynamic symbol
-.endif
-
 .include "${PORTSDIR}/${LICQ_PORT}/Makefile.inc"
 
-post-patch:
-	${REINPLACE_CMD} -e "s|/usr/local/|${LOCALBASE}/|g" \
-		${WRKSRC}/configure
+.if !defined(NOPORTDOCS)
+post-install:
+	${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}/
+.endif
 
 .include <bsd.port.post.mk>
