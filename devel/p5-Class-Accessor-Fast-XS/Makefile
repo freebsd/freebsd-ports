@@ -7,6 +7,7 @@
 
 PORTNAME=	Class-Accessor-Fast-XS
 PORTVERSION=	0.03
+PORTREVISION=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,7 +15,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	XS replacement for Class::Accessor::Fast
 
-BUILD_DEPENDS=	p5-AutoXS-Header>=0.03:${PORTSDIR}/devel/p5-AutoXS-Header
+BUILD_DEPENDS=	p5-AutoXS-Header>=0.03:${PORTSDIR}/devel/p5-AutoXS-Header \
+		p5-Class-Accessor>0:${PORTSDIR}/devel/p5-Class-Accessor
+RUN_DEPENDS=	p5-Class-Accessor>0:${PORTSDIR}/devel/p5-Class-Accessor
 
 PERL_CONFIGURE=	yes
 
