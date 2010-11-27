@@ -1,0 +1,8 @@
+%%APACHEMODDIR%%/%%AP_MODULE%%
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tsa.conf
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/firebird_create.sql
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/firebird_destroy.sql
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/mysql_create.sql
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/mysql_destroy.sql
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/pgsql_create.sql
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/pgsql_destroy.sql

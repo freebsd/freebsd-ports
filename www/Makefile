@@ -559,6 +559,7 @@
     SUBDIR += mod_traf_thief
     SUBDIR += mod_transform
     SUBDIR += mod_trigger
+    SUBDIR += mod_tsa
     SUBDIR += mod_tsunami
     SUBDIR += mod_uid
     SUBDIR += mod_vdbh
