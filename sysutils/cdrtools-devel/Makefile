@@ -22,8 +22,7 @@
 ###########################################################################
 
 PORTNAME=	cdrtools
-PORTVERSION=	2.01.01a79
-PORTREVISION=	2
+PORTVERSION=	3.01a01
 PORTEPOCH=	1
 CATEGORIES=	sysutils audio
 MASTER_SITES=	ftp://ftp.berlios.de/pub/cdrecord/alpha/ \
@@ -143,8 +142,6 @@ post-patch:
 .if !defined(WITH_RSCSI)
 	@${RM} ${WRKSRC}/TARGETS/55rscsi
 .endif
-	@${REINPLACE_CMD} -e 's|\/opt\/schily\/bin\/|${PREFIX}\/etc\/|g' \
-		${WRKSRC}/cdda2wav/cdda2ogg.1
 .for i in DEFAULTS/Defaults.freebsd btcflash/btcflash.1 cdda2wav/cdda2mp3 \
 	cdda2wav/cdda2ogg cdda2wav/cdda2ogg.1 cdda2wav/cdda2wav.1 \
 	cdrecord/README.rscsi cdrecord/cdrecord.1 cdrecord/cdrecord.dfl \
