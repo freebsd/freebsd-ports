@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	dkimproxy
-PORTVERSION=	1.2
+PORTVERSION=	1.3
 CATEGORIES=	mail
 MASTER_SITES=	SF
 
@@ -18,13 +18,23 @@ BUILD_DEPENDS=	${SITE_PERL}/Mail/DKIM.pm:${PORTSDIR}/mail/p5-Mail-DKIM \
 		${SITE_PERL}/Error.pm:${PORTSDIR}/lang/p5-Error
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
+LICENSE=	GPLv2
+
 GNU_CONFIGURE=	yes
 USE_PERL5=	yes
 USE_RC_SUBR=	dkimproxy_in dkimproxy_out
 
-USERS=		dkimproxy
-GROUPS=		dkimproxy
+DKIMPROXYUSER=	dkimproxy
+USERS=		${DKIMPROXYUSER}
+GROUPS=		${DKIMPROXYUSER}
 
 MAN8=		dkimproxy_in.8 dkimproxy_out.8
+
+SUB_LIST+=	PERL=${PERL} \
+		DKIMPROXYUSER=${DKIMPROXYUSER}
+
+post-patch:
+	@${GREP} -Ril 'perl' ${WRKDIR} | ${XARGS} ${REINPLACE_CMD} -i '' \
+		-e 's|/usr/bin/perl|${PERL}|' -e 's|@PERL@|${PERL}|'
 
 .include <bsd.port.mk>

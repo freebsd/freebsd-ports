@@ -12,75 +12,42 @@
 #
 # dkimproxy_out_enable="YES"
 #
-# Before you enable dkimproxy.out, you also need to make your domainkey to
-# set it to DNS and configurate dkimproxy_out_flags.
-#
+# Before you enable dkimproxy.out you also have to 
+# - create your domainkey
+# - create domainkey records in DNS 
+# - configure %%PREFIX%%/etc/dkimproxy_out.conf
 
 . /etc/rc.subr
 
-name="dkimproxy_out"
+name=dkimproxy_out
 rcvar=`set_rcvar`
 
 # set defaults
-
 : ${dkimproxy_out_enable="NO"}
-: ${dkimproxy_out_flags="--conf_file=/usr/local/etc/dkimproxy_out.conf"}
-: ${dkimproxy_out_pidfile="/var/run/dkimproxy_out.pid"}
-: ${dkimproxy_out_user="dkimproxy"}
 
-start_cmd="dkimproxy_out_start"
-stop_cmd="dkimproxy_out_stop"
+command_interpreter=%%PERL%%
+command=%%PREFIX%%/bin/dkimproxy.out
+required_files=%%PREFIX%%/etc/${name}.conf
+dkimproxy_out_user=%%DKIMPROXYUSER%%
+command_args="--conf_file=${required_files} --user=${dkimproxy_out_user} --daemonize"
 
-dkimproxy_out_start()
-{
-	if [ -f ${dkimproxy_out_pidfile} ]; then
-		echo "${name} already running?"
-		exit 1
-	fi 
-	if pw user show "${dkimproxy_out_user}" > /dev/null 2>&1; then else
-		echo "dkimproxy_out_user: ${dkimproxy_out_user} not found"
-		exit 1
-	fi
-	echo "Starting ${name}"
-	logger -t ${name} "Starting ${name}"
-	touch ${dkimproxy_out_pidfile}
-	chown ${dkimproxy_out_user} ${dkimproxy_out_pidfile}
-	tmpfile=`mktemp /tmp/${name}.XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX`
-	su -m ${dkimproxy_out_user} -c "daemon -c -p ${dkimproxy_out_pidfile} \
-		%%PREFIX%%/bin/dkimproxy.out ${dkimproxy_out_flags}" \
-		> /dev/null 2> ${tmpfile}
-	# wait until dkimproxy start.
-	while true
-	do
-		filesize=`ls -l ${tmpfile}|awk '{print $5}'`
-		if [ ${filesize} -gt 0 ]; then
-			break
-		fi
-	done
+start_postcmd=start_postcmd
+stop_postcmd=stop_postcmd
 
-	logger -t ${name} "`cat ${tmpfile}`"
-	err=`grep Error ${tmpfile}`
-	if [ "${err}" ]; then
-		echo "Failed to start ${name}."
-		echo "${err}"
-		rm -f ${dkimproxy_out_pidfile}
+# dkimproxy_in/out return 0 even if startup failed
+start_postcmd(){
+	pid=$( check_process ${command} ${command_interpreter} )
+	if [ -n "${pid}" ]; then
+		echo "Starting ${name} done."
+		logger -t ${name} "Starting ${name}"
 	else
-		# To prevent DoS attack by dkimproxy_out_user.
-		chown root:wheel ${dkimproxy_out_pidfile}
+		echo "Starting ${name} failed."
+		logger -t ${name} "Starting ${name} failed"
 	fi
-	rm -f ${tmpfile}
 }
 
-dkimproxy_out_stop()
-{
-	if [ ! -f ${dkimproxy_out_pidfile} ]; then
-		echo "${name} not running?"
-		exit 1
-	fi
-	echo "Stopping ${name}"
-	logger -t ${name} "Stopping ${name}"
-	kill `cat ${dkimproxy_out_pidfile}`
-	rm -f ${dkimproxy_out_pidfile}
+stop_postcmd(){
+	logger -t ${name} "Stopped ${name}"
 }
 
 load_rc_config $name
