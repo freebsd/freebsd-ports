@@ -173,6 +173,7 @@ CONFIGURE_ARGS+=	--enable-dnssd \
 			--with-dnssd-libs=${LOCALBASE}/lib/ \
 			--with-dnssd-includes=${LOCALBASE}/include/avahi-compat-libdns_sd/
 LIB_DEPENDS+=		dns_sd:${PORTSDIR}/net/avahi-libdns
+BROKEN=			missing function, see http://www.avahi.org/ticket/303
 .else
 CONFIGURE_ARGS+=	--disable-dnssd
 .endif
