@@ -2,9 +2,9 @@ $FreeBSD$
 
 Don't install lib/charset.alias.
 
---- gnu/Makefile.in.orig	2010-03-17 21:55:42.000000000 +0100
-+++ gnu/Makefile.in	2010-03-17 21:56:32.000000000 +0100
-@@ -1860,7 +1860,7 @@ langinfo.h: langinfo.in.h $(CXXDEFS_H) $
+--- gnu/Makefile.in.orig	2010-11-07 14:53:46.000000000 +0100
++++ gnu/Makefile.in	2010-11-27 21:07:28.000000000 +0100
+@@ -1957,7 +1957,7 @@ langinfo.h: langinfo.in.h $(CXXDEFS_H) $
  # avoid installing it.
  
  all-local: charset.alias ref-add.sed ref-del.sed
