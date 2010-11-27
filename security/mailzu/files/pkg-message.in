@@ -9,6 +9,11 @@ Please read: %%DOCSDIR%%/INSTALL
 Then, create and edit %%WWWDIR%%/config/config.php
 An example is provided in %%WWWDIR%%/config/config.php.sample 
 
+Also, please note that MailZu needs PHP's short_open_tag
+boolean to be "on" (this is detault in typical installations
+of PHP). To be certain, you can set "short_open_tag = on" in
+%%LOCALBASE%%/etc/php.ini. 
+
 Finally, make MailZu available through your web site.  An 
 example for httpd.conf:
 
@@ -21,4 +26,3 @@ Alias /mailzu/ "%%WWWDIR%%/"
     Deny from all
     Allow from 127.0.0.1 .example.org
 </Directory>
-
