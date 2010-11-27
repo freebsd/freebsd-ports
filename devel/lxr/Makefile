@@ -12,7 +12,7 @@ CATEGORIES=	devel
 MASTER_SITES=	SF/${PORTNAME}/stable/${PORTNAME}-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	rea-fbsd@codelabs.ru
+MAINTAINER=	rea@FreeBSD.org
 COMMENT=	Source code indexer and cross-referencer
 
 BUILD_DEPENDS=	exctags:${PORTSDIR}/devel/ctags \

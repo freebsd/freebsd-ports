@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_BERLIOS:S/$/:old_themes/g} \
 MASTER_SITE_SUBDIR=	slim
 DISTFILES=
 
-MAINTAINER=	rea-fbsd@codelabs.ru
+MAINTAINER=	rea@FreeBSD.org
 COMMENT=	Theme pack for SLiM login app
 
 # But that's not all, see below.
