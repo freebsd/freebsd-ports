@@ -5,6 +5,22 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20101127:
+  AFFECTS: users of mail/postfix, mail/postfix2[56]
+  AUTHOR: sahil@FreeBSD.org
+
+  As of Postfix 2.7.2, 2.6.8, 2.5.11:
+ 
+  Postfix no longer automatically appends the system default CA
+  (certificate authority) certificates, when it reads the CA
+  certificates specified with {smtp, lmtp, smtpd}_tls_CAfile or
+  with {smtp, lmtp, smtpd}_tls_CApath.  This prevents third-party
+  certificates from getting mail relay permission with the
+  permit_tls_all_clientcerts feature.  Unfortunately, this change
+  may cause compatibility problems with configurations that rely
+  on certificate verification for other purposes.  To get the old
+  behavior, specify "tls_append_default_CA = yes". 
+
 20101124:
   AFFECTS: users of www/py-flexget
   AUTHOR: lioux@FreeBSD.org
