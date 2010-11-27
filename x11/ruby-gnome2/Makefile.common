@@ -1,6 +1,6 @@
 # $FreeBSD$
 
-RUBY_GNOME_VERSION=		0.90.2
+RUBY_GNOME_VERSION=		0.90.5
 #RUBY_GNOME_SNAPSHOTDATE=	20061130
 .if defined(RUBY_GNOME_SNAPSHOTDATE)
 RUBY_GNOME_PORTVERSION=		${RUBY_GNOME_VERSION}.${RUBY_GNOME_SNAPSHOTDATE}
@@ -28,7 +28,3 @@ DISTINFO_FILE=		${RUBY_GNOME_PORTDIR}/distinfo
 general-patch:
 	@${FIND} ${WRKDIR} -name mkmf-gnome2.rb | ${XARGS} ${REINPLACE_CMD} -e \
 		's|CFLAGS}|CFLAGS} -I${LOCALBASE}/lib/ruby/site_ruby/${RUBY_VER}/${RUBY_ARCH}|g'
-
-general-configure:
-	@${FIND} ${WRKDIR} -name Makefile | ${XARGS} ${REINPLACE_CMD} -e \
-		's|$(libdir)/pkgconfig|$(libdir)data/pkgconfig|g'

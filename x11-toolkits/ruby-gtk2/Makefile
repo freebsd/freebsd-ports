@@ -8,7 +8,6 @@
 
 PORTNAME=	gtk2
 PORTVERSION=	${RUBY_GNOME_PORTVERSION}
-PORTREVISION=	1
 CATEGORIES=	x11-toolkits ruby
 MASTER_SITES=	${RUBY_GNOME_MASTER_SITES}
 MASTER_SITE_SUBDIR=	${RUBY_GNOME_MASTER_SITE_SUBDIR}
@@ -28,6 +27,7 @@ RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR:S/${PREFIX}/${LOCALBASE}/}/atk.so:${PORTSDIR}
 USE_RUBY=	yes
 USE_GNOME=	gtk20
 USE_RUBY_EXTCONF=	yes
+CONFIGURE_ARGS=	--with-pkg-config-dir=${LOCALBASE}/libdata/pkgconfig
 
 .include "${.CURDIR}/../../x11/ruby-gnome2/Makefile.common"
 
@@ -44,8 +44,6 @@ post-patch: general-patch
 	@${REINPLACE_CMD} -e 's|/usr/local/share|${LOCALBASE}/share|g' \
 			${WRKSRC}/sample/testgtk/testgtk*
 	@${FIND} ${WRKSRC} -name '*.bak' -delete
-
-post-configure: general-configure
 
 # Have to do that to generate ruby-glib's glib-enum-types.h or
 # it will not build.

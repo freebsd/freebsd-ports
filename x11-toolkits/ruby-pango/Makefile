@@ -27,6 +27,7 @@ RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR:S/${PREFIX}/${LOCALBASE}/}/glib2.so:${PORTSDI
 USE_RUBY=	yes
 USE_GNOME=	pango
 USE_RUBY_EXTCONF=	yes
+CONFIGURE_ARGS=	--with-pkg-config-dir=${LOCALBASE}/libdata/pkgconfig
 
 .include "${.CURDIR}/../../x11/ruby-gnome2/Makefile.common"
 
@@ -40,7 +41,6 @@ post-patch: general-patch
 		${WRKSRC}/sample/layout.rb
 	@${FIND} ${WRKSRC} -name '*.bak' -delete
 
-post-configure: general-configure
 post-install:
 .if !defined(NOPORTEXAMPLES)
 	@${MKDIR} ${RUBY_MODEXAMPLESDIR}

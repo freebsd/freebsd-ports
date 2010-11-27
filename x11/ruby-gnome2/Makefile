@@ -24,6 +24,7 @@ RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR:S/${PREFIX}/${LOCALBASE}/}/gnomecanvas2.so:${
 USE_RUBY=	yes
 USE_GNOME=	libgnomeui
 USE_RUBY_EXTCONF=	yes
+CONFIGURE_ARGS=	--with-pkg-config-dir=${LOCALBASE}/libdata/pkgconfig
 
 .include "${.CURDIR}/Makefile.common"
 
@@ -33,7 +34,6 @@ INSTALL_TARGET=	site-install
 DOCS_EN=	AUTHORS COPYING.LIB ChangeLog README README.gnome2-all
 
 post-patch: general-patch
-post-configure: general-configure
 
 post-build:
 	@${CP} ${RUBY_GNOME_WRKSRC}/AUTHORS ${WRKSRC}/AUTHORS
