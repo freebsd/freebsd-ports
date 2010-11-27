@@ -24,6 +24,7 @@ RUN_DEPENDS+=	${BUILD_DEPENDS}
 USE_RUBY=	yes
 USE_GNOME=	glib20
 USE_RUBY_EXTCONF=	yes
+CONFIGURE_ARGS=	--with-pkg-config-dir=${LOCALBASE}/libdata/pkgconfig
 
 .include "${.CURDIR}/../../x11/ruby-gnome2/Makefile.common"
 
@@ -34,8 +35,6 @@ DOCS=		COPYING.LIB ChangeLog README
 
 post-patch: general-patch
 	@${RM} ${WRKSRC}/lib/gnome2-win32-binary-downloader.rb
-
-post-configure: general-configure
 
 post-install:
 .if !defined(NOPORTEXAMPLES)

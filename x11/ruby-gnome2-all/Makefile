@@ -18,15 +18,19 @@ MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	The "meta-port" for Ruby/GNOME2
 
 RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR:S/${PREFIX}/${LOCALBASE}/}/gconf2.so:${PORTSDIR}/devel/ruby-gconf2 \
-		${RUBY_SITEARCHLIBDIR:S/${PREFIX}/${LOCALBASE}/}/gtkhtml2.so:${PORTSDIR}/www/ruby-gtkhtml2 \
-		${RUBY_SITEARCHLIBDIR:S/${PREFIX}/${LOCALBASE}/}/gtkmozembed.so:${PORTSDIR}/www/ruby-gtkmozembed \
-		${RUBY_SITEARCHLIBDIR:S/${PREFIX}/${LOCALBASE}/}/gnomevfs.so:${PORTSDIR}/devel/ruby-gnomevfs \
-		${RUBY_SITEARCHLIBDIR:S/${PREFIX}/${LOCALBASE}/}/rsvg2.so:${PORTSDIR}/graphics/ruby-rsvg2 \
-		${RUBY_SITEARCHLIBDIR:S/${PREFIX}/${LOCALBASE}/}/gtkglext.so:${PORTSDIR}/x11-toolkits/ruby-gtkglext \
-		${RUBY_SITEARCHLIBDIR:S/${PREFIX}/${LOCALBASE}/}/gtksourceview.so:${PORTSDIR}/x11-toolkits/ruby-gtksourceview \
 		${RUBY_SITEARCHLIBDIR:S/${PREFIX}/${LOCALBASE}/}/gnomeprintui2.so:${PORTSDIR}/x11-toolkits/ruby-gnomeprintui \
+		${RUBY_SITEARCHLIBDIR:S/${PREFIX}/${LOCALBASE}/}/gnomevfs.so:${PORTSDIR}/devel/ruby-gnomevfs \
+		${RUBY_SITEARCHLIBDIR:S/${PREFIX}/${LOCALBASE}/}/goocanvas.so:${PORTSDIR}/x11-toolkits/ruby-goocanvas \
+		${RUBY_SITEARCHLIBDIR:S/${PREFIX}/${LOCALBASE}/}/gst.so:${PORTSDIR}/x11-toolkits/ruby-gstreamer \
+		${RUBY_SITEARCHLIBDIR:S/${PREFIX}/${LOCALBASE}/}/gtkglext.so:${PORTSDIR}/x11-toolkits/ruby-gtkglext \
+		${RUBY_SITEARCHLIBDIR:S/${PREFIX}/${LOCALBASE}/}/gtkhtml2.so:${PORTSDIR}/www/ruby-gtkhtml2 \
+		${RUBY_SITEARCHLIBDIR:S/${PREFIX}/${LOCALBASE}/}/gtksourceview2.so:${PORTSDIR}/x11-toolkits/ruby-gtksourceview2 \
+		${RUBY_SITEARCHLIBDIR:S/${PREFIX}/${LOCALBASE}/}/gtkmozembed.so:${PORTSDIR}/www/ruby-gtkmozembed \
+		${RUBY_SITEARCHLIBDIR:S/${PREFIX}/${LOCALBASE}/}/libglade2.so:${PORTSDIR}/devel/ruby-libglade2 \
 		${RUBY_SITEARCHLIBDIR:S/${PREFIX}/${LOCALBASE}/}/panelapplet2.so:${PORTSDIR}/x11-toolkits/ruby-panelapplet \
-		${RUBY_SITEARCHLIBDIR:S/${PREFIX}/${LOCALBASE}/}/libglade2.so:${PORTSDIR}/devel/ruby-libglade2
+		${RUBY_SITEARCHLIBDIR:S/${PREFIX}/${LOCALBASE}/}/poppler.so:${PORTSDIR}/x11-toolkits/ruby-poppler \
+		${RUBY_SITEARCHLIBDIR:S/${PREFIX}/${LOCALBASE}/}/rsvg2.so:${PORTSDIR}/graphics/ruby-rsvg2 \
+		${RUBY_SITEARCHLIBDIR:S/${PREFIX}/${LOCALBASE}/}/vte.so:${PORTSDIR}/x11-toolkits/ruby-vte
 
 USE_RUBY=	yes
 

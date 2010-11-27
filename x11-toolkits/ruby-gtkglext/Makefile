@@ -25,6 +25,7 @@ RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR:S/${PREFIX}/${LOCALBASE}/}/gtk2.so:${PORTSDIR
 
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes
+CONFIGURE_ARGS=	--with-pkg-config-dir=${LOCALBASE}/libdata/pkgconfig
 
 .include "${.CURDIR}/../../x11/ruby-gnome2/Makefile.common"
 
@@ -34,7 +35,6 @@ INSTALL_TARGET=	site-install
 DOCS=		ChangeLog README
 
 post-patch: general-patch
-post-configure: general-configure
 
 post-install:
 .if !defined(NOPORTEXAMPLES)

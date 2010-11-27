@@ -26,6 +26,7 @@ LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg \
 USE_RUBY=	yes
 USE_GNOME=	libartlgpl2
 USE_RUBY_EXTCONF=	yes
+CONFIGURE_ARGS=	--with-pkg-config-dir=${LOCALBASE}/libdata/pkgconfig
 
 .include "${.CURDIR}/../../x11/ruby-gnome2/Makefile.common"
 
@@ -35,7 +36,6 @@ INSTALL_TARGET=	site-install
 DOCS=		COPYING.LIB ChangeLog README
 
 post-patch: general-patch
-post-configure: general-configure
 
 post-install:
 .if !defined(NOPORTEXAMPLES)

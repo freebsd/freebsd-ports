@@ -24,6 +24,7 @@ RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR:S/${PREFIX}/${LOCALBASE}/}/glib2.so:${PORTSDI
 USE_RUBY=	yes
 USE_GNOME=	gnomevfs2
 USE_RUBY_EXTCONF=	yes
+CONFIGURE_ARGS=	--with-pkg-config-dir=${LOCALBASE}/libdata/pkgconfig
 
 .include "${.CURDIR}/../../x11/ruby-gnome2/Makefile.common"
 
@@ -36,8 +37,6 @@ post-patch: general-patch
 	@${REINPLACE_CMD} -e 's|/bin/ruby -w|/bin/env ruby|g' \
 		${WRKSRC}/tests/*.rb
 	@${FIND} ${WRKSRC} -name '*.bak' -delete
-
-post-configure: general-configure
 
 post-install:
 .if !defined(NOPORTEXAMPLES)

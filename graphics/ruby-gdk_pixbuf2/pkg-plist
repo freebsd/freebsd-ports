@@ -1,4 +1,4 @@
-libdata/pkgconfig/ruby-gdkpixbuf2.pc
+libdata/pkgconfig/ruby-gdk-pixbuf2.pc
 %%RUBY_SITELIBDIR%%/gdk_pixbuf2.rb
 %%RUBY_SITEARCHLIBDIR%%/gdk_pixbuf2.so
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/COPYING.LIB
