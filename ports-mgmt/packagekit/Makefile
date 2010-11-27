@@ -6,7 +6,7 @@
 #   $MCom: ports/ports-mgmt/packagekit/Makefile,v 1.26 2010/10/10 15:49:51 marcus Exp $
 
 PORTNAME=	PackageKit
-PORTVERSION=	0.6.9
+PORTVERSION=	0.6.10
 PORTREVISION?=	0
 CATEGORIES=	ports-mgmt sysutils
 MASTER_SITES=	http://www.packagekit.org/releases/
