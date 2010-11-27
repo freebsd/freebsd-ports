@@ -83,6 +83,7 @@ amanda:*:140:140::0:0:Amanda Daemon:/nonexistent:/usr/sbin/nologin
 cricket:*:141:80::0:0:Cricket Monitoring User:/usr/local/cricket:/usr/sbin/nologin
 ladvd:*:142:142::0:0:Ladvd User:/var/empty:/usr/sbin/nologin
 dovecot:*:143:143::0:0:Dovecot User:/var/empty:/usr/sbin/nologin
+dovenull:*:144:144::0:0:Dovecot login User:/var/empty:/usr/sbin/nologin
 rbldns:*:153:153::0:0:rbldnsd pseudo-user:/nonexistent:/usr/sbin/nologin
 sfs:*:171:171::0:0:Self-Certifying File System:/nonexistent:/usr/sbin/nologin
 agk:*:172:172::0:0:AquaGateKeeper:/nonexistent:/nonexistent
