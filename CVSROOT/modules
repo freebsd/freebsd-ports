@@ -1205,7 +1205,9 @@ bouml                           ports/devel/bouml
 bouml-doc                       ports/devel/bouml-doc
 bounce                          ports/net/bounce
 bouncycastle                    ports/java/bouncycastle
+box                             ports/graphics/box
 boxbackup                       ports/sysutils/boxbackup
+boxer                           ports/graphics/boxer
 boxes                           ports/misc/boxes
 boxquote.el                     ports/misc/boxquote.el
 boxtools                        ports/x11-wm/boxtools
@@ -2964,7 +2966,10 @@ eigen                           ports/math/eigen
 eigen2                          ports/math/eigen2
 eights                          ports/games/eights
 einstein                        ports/games/einstein
-eiskaltdc                       ports/net-p2p/eiskaltdc
+eiskaltdcpp-data                ports/net-p2p/eiskaltdcpp-data
+eiskaltdcpp-gtk                 ports/net-p2p/eiskaltdcpp-gtk
+eiskaltdcpp-lib                 ports/net-p2p/eiskaltdcpp-lib
+eiskaltdcpp-qt                  ports/net-p2p/eiskaltdcpp-qt
 eispack                         ports/math/eispack
 ejabberd                        ports/net-im/ejabberd
 eject                           ports/sysutils/eject
@@ -6550,8 +6555,6 @@ ja-tomoe                        ports/japanese/tomoe
 ja-trac                         ports/japanese/trac
 ja-typist                       ports/japanese/typist
 ja-uim-anthy                    ports/japanese/uim-anthy
-ja-uim-canna                    ports/japanese/uim-canna
-ja-uim-prime                    ports/japanese/uim-prime
 ja-uim-tomoe-gtk                ports/japanese/uim-tomoe-gtk
 ja-vera-fpw                     ports/japanese/vera-fpw
 ja-vflib                        ports/japanese/vflib
@@ -7432,6 +7435,7 @@ koffice-kde4-l10n-wa            ports/editors/koffice-kde4-l10n-wa
 kojoney                         ports/net/kojoney
 komclean                        ports/net-im/komclean
 komodo-edit                     ports/editors/komodo-edit
+komodo-ide                      ports/editors/komodo-ide
 komparator                      ports/sysutils/komparator
 kompmgr                         ports/x11-wm/kompmgr
 kompose                         ports/deskutils/kompose
@@ -9622,6 +9626,7 @@ montecarlo_fonts                ports/x11-fonts/montecarlo_fonts
 moo                             ports/math/moo
 moodin                          ports/x11-themes/moodin
 moodle                          ports/www/moodle
+moodle2                         ports/www/moodle2
 moodriver                       ports/net-p2p/moodriver
 moon-buggy                      ports/games/moon-buggy
 moonlander                      ports/games/moonlander
@@ -21950,6 +21955,9 @@ qt4-scripttools                 ports/devel/qt4-scripttools
 qt4-sql                         ports/databases/qt4-sql
 qt4-sqlite-plugin               ports/databases/qt4-sqlite-plugin
 qt4-sqlite3-plugin              ports/databases/qt4-sqlite3-plugin
+qt4-style-float                 ports/x11-themes/qt4-style-float
+qt4-style-phase                 ports/x11-themes/qt4-style-phase
+qt4-style-quantumstyle          ports/x11-themes/qt4-style-quantumstyle
 qt4-svg                         ports/graphics/qt4-svg
 qt4-uic                         ports/devel/qt4-uic
 qt4-uic3                        ports/devel/qt4-uic3
@@ -22192,6 +22200,7 @@ redland-bindings                ports/textproc/redland-bindings
 redland-bindings-python         ports/textproc/redland-bindings-python
 redmine                         ports/www/redmine
 redmine-basecamp                ports/www/redmine-basecamp
+redmine-http-auth               ports/www/redmine-http-auth
 redshift                        ports/accessibility/redshift
 ree                             ports/misc/ree
 reed                            ports/sysutils/reed
@@ -25092,6 +25101,7 @@ uim-el-xemacs21-mule            ports/textproc/uim-el-xemacs21-mule
 uim-gnome                       ports/textproc/uim-gnome
 uim-gtk                         ports/textproc/uim-gtk
 uim-kde                         ports/textproc/uim-kde
+uim-kde4                        ports/textproc/uim-kde4
 uim-m17nlib                     ports/textproc/uim-m17nlib
 uim-qt                          ports/textproc/uim-qt
 uim-qt4                         ports/textproc/uim-qt4
