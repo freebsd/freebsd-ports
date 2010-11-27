@@ -1,47 +1,63 @@
 bin/licq
 bin/sidclean.bash
-bin/viewurl-firefox.sh
-bin/viewurl-lynx.sh
-bin/viewurl-mozilla.sh
-bin/viewurl-ncftp.sh
-bin/viewurl-netscape.sh
-bin/viewurl-opera.sh
-bin/viewurl-seamonkey.sh
-bin/viewurl-w3m.sh
-include/licq/licq_backgroundcodes.h
-include/licq/licq_buffer.h
-include/licq/licq_chat.h
-include/licq/licq_color.h
-include/licq/licq_constants.h
-include/licq/licq_countrycodes.h
-include/licq/licq_events.h
-include/licq/licq_file.h
-include/licq/licq_filetransfer.h
-include/licq/licq_history.h
-include/licq/licq_homepagecodes.h
-include/licq/licq_icq.h
-include/licq/licq_icqd.h
-include/licq/licq_interestcodes.h
-include/licq/licq_languagecodes.h
-include/licq/licq_log.h
-include/licq/licq_message.h
-include/licq/licq_mutex.h
-include/licq/licq_occupationcodes.h
-include/licq/licq_onevent.h
-include/licq/licq_organizationcodes.h
-include/licq/licq_packets.h
-include/licq/licq_plugin.h
-include/licq/licq_plugind.h
-include/licq/licq_protoplugin.h
-include/licq/licq_protoplugind.h
-include/licq/licq_providers.h
-include/licq/licq_proxy.h
-include/licq/licq_sar.h
-include/licq/licq_sighandler.h
-include/licq/licq_socket.h
-include/licq/licq_translate.h
-include/licq/licq_user.h
-include/licq/licq_utility.h
+include/licq/buffer.h
+include/licq/byteorder.h
+include/licq/color.h
+include/licq/contactlist/group.h
+include/licq/contactlist/owner.h
+include/licq/contactlist/user.h
+include/licq/contactlist/usermanager.h
+include/licq/conversation.h
+include/licq/daemon.h
+include/licq/event.h
+include/licq/exceptions/exception.h
+include/licq/gpghelper.h
+include/licq/icq.h
+include/licq/icqchat.h
+include/licq/icqcodes.h
+include/licq/icqdefines.h
+include/licq/icqfiletransfer.h
+include/licq/inifile.h
+include/licq/licqversion.h
+include/licq/logging/log.h
+include/licq/logging/logservice.h
+include/licq/logging/logsink.h
+include/licq/logging/logutils.h
+include/licq/logging/pluginlogsink.h
+include/licq/macro.h
+include/licq/md5.h
+include/licq/oneventmanager.h
+include/licq/packet.h
+include/licq/pipe.h
+include/licq/plugin.h
+include/licq/pluginbase.h
+include/licq/pluginmanager.h
+include/licq/pluginsignal.h
+include/licq/protocolbase.h
+include/licq/protocolmanager.h
+include/licq/protocolsignal.h
+include/licq/proxy.h
+include/licq/sarmanager.h
+include/licq/socket.h
+include/licq/socketmanager.h
+include/licq/statistics.h
+include/licq/thread/condition.h
+include/licq/thread/lockable.h
+include/licq/thread/mutex.h
+include/licq/thread/mutexlocker.h
+include/licq/thread/readwritemutex.h
+include/licq/thread/threadspecificdata.h
+include/licq/translator.h
+include/licq/userevents.h
+include/licq/userid.h
+include/licq/utility.h
+include/licq/version.h
+share/licq/cmake/FindLicq.cmake
+share/licq/cmake/LicqCommonCompilerFlags.cmake
+share/licq/cmake/LicqConfig.cmake
+share/licq/cmake/LicqPaths.cmake
+share/licq/cmake/Modules/FindIconv.cmake
+share/licq/cmake/cmake_uninstall.cmake.in
 share/licq/sounds/Monty-Python.wav
 share/licq/sounds/fun/Auth.wav
 share/licq/sounds/fun/Chat.wav
@@ -101,7 +117,6 @@ share/licq/utilities/gftp.utility
 share/licq/utilities/hostname.utility
 share/licq/utilities/kmail.utility
 share/licq/utilities/mutt.utility
-share/licq/utilities/netscape.utility
 share/licq/utilities/nmap.utility
 share/licq/utilities/pine.utility
 share/licq/utilities/ping.utility
@@ -114,12 +129,18 @@ share/licq/utilities/xtraceroute.utility
 %%NLS%%share/locale/be/LC_MESSAGES/licq.mo
 %%NLS%%share/locale/de/LC_MESSAGES/licq.mo
 %%NLS%%share/locale/es/LC_MESSAGES/licq.mo
-@dirrm include/licq
 @exec mkdir -p %D/lib/licq
 @dirrm lib/licq
-@dirrm share/licq/sounds/fun
-@dirrm share/licq/sounds/icq
-@dirrm share/licq/sounds
-@dirrm share/licq/translations
 @dirrm share/licq/utilities
+@dirrm share/licq/translations
+@dirrm share/licq/sounds/icq
+@dirrm share/licq/sounds/fun
+@dirrm share/licq/sounds
+@dirrm share/licq/cmake/Modules
+@dirrm share/licq/cmake
 @dirrm share/licq
+@dirrm include/licq/thread
+@dirrm include/licq/logging
+@dirrm include/licq/exceptions
+@dirrm include/licq/contactlist
+@dirrm include/licq
