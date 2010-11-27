@@ -30,5 +30,6 @@
 @dirrmtry %%SITE_PERL%%/MooseX/Storage/Engine
 @dirrmtry %%SITE_PERL%%/MooseX/Storage/Base
 @dirrmtry %%SITE_PERL%%/MooseX/Storage
+@dirrmtry %%SITE_PERL%%/MooseX
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX/Storage
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX
