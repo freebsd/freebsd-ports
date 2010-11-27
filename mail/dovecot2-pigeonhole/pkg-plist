@@ -1,0 +1,71 @@
+bin/sieve-dump
+bin/sieve-test
+bin/sievec
+include/dovecot/sieve/pigeonhole-config.h
+include/dovecot/sieve/rfc2822.h
+include/dovecot/sieve/sieve-actions.h
+include/dovecot/sieve/sieve-address-parts.h
+include/dovecot/sieve/sieve-address.h
+include/dovecot/sieve/sieve-ast.h
+include/dovecot/sieve/sieve-binary-dumper.h
+include/dovecot/sieve/sieve-binary-private.h
+include/dovecot/sieve/sieve-binary.h
+include/dovecot/sieve/sieve-code-dumper.h
+include/dovecot/sieve/sieve-code.h
+include/dovecot/sieve/sieve-commands.h
+include/dovecot/sieve/sieve-common.h
+include/dovecot/sieve/sieve-comparators.h
+include/dovecot/sieve/sieve-config.h
+include/dovecot/sieve/sieve-dump.h
+include/dovecot/sieve/sieve-error-private.h
+include/dovecot/sieve/sieve-error.h
+include/dovecot/sieve/sieve-ext-enotify.h
+include/dovecot/sieve/sieve-ext-environment.h
+include/dovecot/sieve/sieve-ext-variables.h
+include/dovecot/sieve/sieve-extensions.h
+include/dovecot/sieve/sieve-generator.h
+include/dovecot/sieve/sieve-interpreter.h
+include/dovecot/sieve/sieve-lexer.h
+include/dovecot/sieve/sieve-limits.h
+include/dovecot/sieve/sieve-match-types.h
+include/dovecot/sieve/sieve-match.h
+include/dovecot/sieve/sieve-message.h
+include/dovecot/sieve/sieve-objects.h
+include/dovecot/sieve/sieve-parser.h
+include/dovecot/sieve/sieve-plugins.h
+include/dovecot/sieve/sieve-result.h
+include/dovecot/sieve/sieve-runtime-trace.h
+include/dovecot/sieve/sieve-runtime.h
+include/dovecot/sieve/sieve-script-private.h
+include/dovecot/sieve/sieve-script.h
+include/dovecot/sieve/sieve-settings.h
+include/dovecot/sieve/sieve-smtp.h
+include/dovecot/sieve/sieve-stringlist.h
+include/dovecot/sieve/sieve-types.h
+include/dovecot/sieve/sieve-validator.h
+include/dovecot/sieve/sieve.h
+lib/dovecot/lib90_sieve_plugin.a
+lib/dovecot/lib90_sieve_plugin.la
+lib/dovecot/lib90_sieve_plugin.so
+lib/dovecot/libdovecot-sieve.a
+lib/dovecot/libdovecot-sieve.la
+lib/dovecot/libdovecot-sieve.so
+lib/dovecot/libdovecot-sieve.so.0
+lib/dovecot/settings/libmanagesieve_login_settings.a
+lib/dovecot/settings/libmanagesieve_login_settings.la
+lib/dovecot/settings/libmanagesieve_login_settings.so
+lib/dovecot/settings/libmanagesieve_settings.a
+lib/dovecot/settings/libmanagesieve_settings.la
+lib/dovecot/settings/libmanagesieve_settings.so
+libexec/dovecot/managesieve
+libexec/dovecot/managesieve-login
+share/doc/dovecot/example-config/conf.d/20-managesieve.conf
+share/doc/dovecot/example-config/conf.d/90-sieve.conf
+@dirrmtry share/doc/dovecot/example-config/conf.d
+@dirrmtry share/doc/dovecot/example-config
+@dirrmtry share/doc/dovecot
+@dirrmtry libexec/dovecot
+@dirrm lib/dovecot/settings
+@dirrmtry lib/dovecot
+@dirrm include/dovecot/sieve
+@dirrmtry include/dovecot
