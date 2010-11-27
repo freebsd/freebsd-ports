@@ -13,7 +13,7 @@ MASTER_SITES=	http://dist.codelabs.ru/fbsd/
 PKGNAMEPREFIX=	trac-
 DISTNAME=	trackeywordsplugin-r${REL}
 
-MAINTAINER=	rea-fbsd@codelabs.ru
+MAINTAINER=	rea@FreeBSD.org
 COMMENT=	A plugin for using pre-configured keywords
 
 BUILD_DEPENDS+=	easy_install:${PORTSDIR}/devel/py-setuptools

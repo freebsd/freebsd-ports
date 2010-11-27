@@ -10,7 +10,7 @@ PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://ftp.drupal.org/files/projects/
 
-MAINTAINER=	rea-fbsd@codelabs.ru
+MAINTAINER=	rea@FreeBSD.org
 COMMENT=	Drupal 6 module that add printer-friendly pages
 
 DRUPAL6_MODULE=	yes

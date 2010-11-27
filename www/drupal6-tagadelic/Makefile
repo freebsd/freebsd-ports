@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://ftp.drupal.org/files/projects/
 
-MAINTAINER=	rea-fbsd@codelabs.ru
+MAINTAINER=	rea@FreeBSD.org
 COMMENT=	Tagadelic module for Drupal 6
 
 DRUPAL6_MODULE=	yes

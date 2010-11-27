@@ -17,7 +17,7 @@ DISTFILES=	${PORTNAME}-${PORTVERSION}.tgz:openbsd \
 DIST_SUBDIR=	${PORTNAME}
 EXTRACT_ONLY=	${PORTNAME}-${PORTVERSION}.tgz
 
-MAINTAINER=	rea-fbsd@codelabs.ru
+MAINTAINER=	rea@FreeBSD.org
 COMMENT=	Free implementation of the Open Shortest Path First Protocol
 
 LIB_DEPENDS=	event-1.4:${PORTSDIR}/devel/libevent

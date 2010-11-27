@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	ghostscript/${PORTVERSION}
 DISTNAME=	espgs-${ESPGS_VER}-source
 DIST_SUBDIR=	ghostscript
 
-MAINTAINER=	rea-fbsd@codelabs.ru
+MAINTAINER=	rea@FreeBSD.org
 COMMENT=	Postscript interpreter for CUPS printing to non-PS printers
 
 LIB_DEPENDS=	cupsimage.2:${PORTSDIR}/print/cups-image

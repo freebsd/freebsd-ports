@@ -9,7 +9,7 @@ PORTNAME=	views
 DISTVERSION=	6.x-2.11
 CATEGORIES=	www
 
-MAINTAINER=	rea-fbsd@codelabs.ru
+MAINTAINER=	rea@FreeBSD.org
 COMMENT=	Controls how content lists are generated
 
 DRUPAL6_MODULE=	yes

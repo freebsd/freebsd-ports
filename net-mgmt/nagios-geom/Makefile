@@ -13,7 +13,7 @@ MASTER_SITES=	http://codelabs.ru/fbsd/distfiles/ \
 PKGNAMEPREFIX=	nagios-
 DISTNAME=	check_geom-${PORTVERSION}
 
-MAINTAINER=	rea-fbsd@codelabs.ru
+MAINTAINER=	rea@FreeBSD.org
 COMMENT=	Nagios plug-in to get geom(8) components status
 
 USE_PERL5=	yes
