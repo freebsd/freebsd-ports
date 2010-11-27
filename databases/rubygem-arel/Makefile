@@ -7,7 +7,7 @@
 # XXX: rails,active* require exact versions of arel arel, *sigh*
 
 PORTNAME=	arel
-PORTVERSION=	2.0.3
+PORTVERSION=	2.0.4
 CATEGORIES=	databases rubygems
 MASTER_SITES=	RG
 
