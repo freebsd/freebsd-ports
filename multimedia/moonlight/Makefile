@@ -52,7 +52,7 @@ USE_WEBPLUGINS=		gecko19
 WEBPLUGINS_DIR=		${PREFIX}/lib/moonlight/plugin
 WEBPLUGINS_FILES=	libmoonloader.so \
 			libmoonplugin.so \
-			libmoonplugin-ff3bridge.so
+			libmoonplugin-ff36bridge.so
 
 OPTIONS=	PULSEAUDIO "Build with PA (needed for sound support)" on
 
