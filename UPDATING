@@ -136,9 +136,9 @@ you update your ports collection, before attempting any port upgrades.
   AUTHOR: Timur Bakeyev <timur@FreeBSD.org>
 
   This is the latest stable release of the Samba3 distribution. It has
-  been extended with the experimetal support of the NFS4-like ACLs on
+  been extended with the experimental support of the NFS4-like ACLs on
   ZFS partitions, thanks to the sysutils/libsunacl library by Edward
-  Tomasz Napierala(trasz). This support haven't been tested throrughly,
+  Tomasz Napierala(trasz). This support haven't been tested thoroughly,
   so try it on your own risk.
 
   This port reverted back to the pre- net/samba34 layout of the
