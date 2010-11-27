@@ -14,7 +14,7 @@ DISTNAME=	${PORTNAME}-0_21-src
 MAINTAINER=	g.veniamin@googlemail.com
 COMMENT=	HFSExplorer read Mac-formatted harddisks and disk images
 
-RUN_DEPENDS=	ant:${PORTSDIR}/devel/apache-ant
+BUILD_DEPENDS=	ant:${PORTSDIR}/devel/apache-ant
 
 LICENSE=	GPLv3
 
