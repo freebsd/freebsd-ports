@@ -7,6 +7,7 @@
 
 PORTNAME=	mailzu
 DISTVERSION=	0.8rc3
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/MailZu%200.8RC3
 DISTNAME=	MailZu_${DISTVERSION:S/rc/RC/}
@@ -63,7 +64,8 @@ PORTDOCS=	*
 do-install:
 	@${INSTALL} -d -o ${WWWOWN} -g ${WWWGRP} -m 755 ${WWWDIR}
 	@${INSTALL_DATA} ${WRKSRC}/*.php* ${WRKSRC}/*.js* ${WRKSRC}/*.css* ${WWWDIR}
-	@cd ${WRKSRC} && ${COPYTREE_SHARE} "config contrib img lang lib templates" ${WWWDIR}
+	@cd ${WRKSRC} && ${COPYTREE_SHARE} "config contrib img lang lib templates" \
+		${WWWDIR} "! -name *.orig"
 	@cd ${WRKSRC} && ${COPYTREE_BIN} scripts ${WWWDIR}
 
 post-install:
