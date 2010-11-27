@@ -16,6 +16,8 @@ COMMENT=	A turn-based strategy engine inspired by Panzer General
 
 RUN_DEPENDS=	lgeneral:${PORTSDIR}/games/lgeneral
 
+BROKEN=		bad plist
+
 GNU_CONFIGURE=	yes
 
 .include <bsd.port.mk>
