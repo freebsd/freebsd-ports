@@ -7,7 +7,7 @@
 #
 
 PORTNAME?=	xscreensaver-gnome
-PORTVERSION=	5.11
+PORTVERSION=	5.12
 PORTREVISION?=	0
 CATEGORIES=	x11 gnome
 MASTER_SITES=	http://www.jwz.org/xscreensaver/
@@ -19,7 +19,7 @@ COMMENT=	Save your screen while you entertain your cat (for GNOME users)
 LIB_DEPENDS=	gle.4:${PORTSDIR}/graphics/gle \
 		jpeg.11:${PORTSDIR}/graphics/jpeg
 
-CONFLICTS?=	xscreensaver-[0-9]* xscreensaver-gnome-hacks-[0-9]*
+#CONFLICTS?=	xscreensaver-[0-9]* xscreensaver-gnome-hacks-[0-9]*
 
 USE_XORG=	x11 xpm
 USE_GL=		gl
@@ -35,7 +35,8 @@ CONFIGURE_ARGS=	--with-gtk --with-gl --with-gle --with-pixbuf --with-xpm \
 		--with-dpms-ext --with-xinerama-ext --with-xf86vmode-ext \
 		--with-xf86gamma-ext --with-randr-ext --enable-locking
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+		LDFLAGS="-L${LOCALBASE}/lib" \
+		LIBS="-lintl"
 
 OPTIONS?=	PAM "Pluggable Authentication Module support" on \
 		KEYRING "Enable GnomeKeyring integration (needs PAM)" on \
