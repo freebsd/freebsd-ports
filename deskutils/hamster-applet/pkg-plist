@@ -1,5 +1,7 @@
 bin/gnome-time-tracker
-bin/hamster-standalone
+bin/hamster-cli
+bin/hamster-service
+bin/hamster-time-tracker
 lib/hamster-applet/hamster-applet
 %%PYTHON_SITELIBDIR%%/hamster/__init__.py
 %%PYTHON_SITELIBDIR%%/hamster/__init__.pyc
@@ -13,6 +15,9 @@ lib/hamster-applet/hamster-applet
 %%PYTHON_SITELIBDIR%%/hamster/charting.py
 %%PYTHON_SITELIBDIR%%/hamster/charting.pyc
 %%PYTHON_SITELIBDIR%%/hamster/charting.pyo
+%%PYTHON_SITELIBDIR%%/hamster/client.py
+%%PYTHON_SITELIBDIR%%/hamster/client.pyc
+%%PYTHON_SITELIBDIR%%/hamster/client.pyo
 %%PYTHON_SITELIBDIR%%/hamster/configuration.py
 %%PYTHON_SITELIBDIR%%/hamster/configuration.pyc
 %%PYTHON_SITELIBDIR%%/hamster/configuration.pyo
@@ -22,41 +27,30 @@ lib/hamster-applet/hamster-applet
 %%PYTHON_SITELIBDIR%%/hamster/defs.py
 %%PYTHON_SITELIBDIR%%/hamster/defs.pyc
 %%PYTHON_SITELIBDIR%%/hamster/defs.pyo
-%%PYTHON_SITELIBDIR%%/hamster/dispatcher.py
-%%PYTHON_SITELIBDIR%%/hamster/dispatcher.pyc
-%%PYTHON_SITELIBDIR%%/hamster/dispatcher.pyo
 %%PYTHON_SITELIBDIR%%/hamster/edit_activity.py
 %%PYTHON_SITELIBDIR%%/hamster/edit_activity.pyc
 %%PYTHON_SITELIBDIR%%/hamster/edit_activity.pyo
-%%PYTHON_SITELIBDIR%%/hamster/eds.py
-%%PYTHON_SITELIBDIR%%/hamster/eds.pyc
-%%PYTHON_SITELIBDIR%%/hamster/eds.pyo
+%%PYTHON_SITELIBDIR%%/hamster/external.py
+%%PYTHON_SITELIBDIR%%/hamster/external.pyc
+%%PYTHON_SITELIBDIR%%/hamster/external.pyo
 %%PYTHON_SITELIBDIR%%/hamster/graphics.py
 %%PYTHON_SITELIBDIR%%/hamster/graphics.pyc
 %%PYTHON_SITELIBDIR%%/hamster/graphics.pyo
-%%PYTHON_SITELIBDIR%%/hamster/hamsterdbus.py
-%%PYTHON_SITELIBDIR%%/hamster/hamsterdbus.pyc
-%%PYTHON_SITELIBDIR%%/hamster/hamsterdbus.pyo
 %%PYTHON_SITELIBDIR%%/hamster/i18n.py
 %%PYTHON_SITELIBDIR%%/hamster/i18n.pyc
 %%PYTHON_SITELIBDIR%%/hamster/i18n.pyo
 %%PYTHON_SITELIBDIR%%/hamster/idle.py
 %%PYTHON_SITELIBDIR%%/hamster/idle.pyc
 %%PYTHON_SITELIBDIR%%/hamster/idle.pyo
-%%PYTHON_SITELIBDIR%%/hamster/keybinder/__init__.py
-%%PYTHON_SITELIBDIR%%/hamster/keybinder/__init__.pyc
-%%PYTHON_SITELIBDIR%%/hamster/keybinder/__init__.pyo
-%%PYTHON_SITELIBDIR%%/hamster/keybinder/_keybinder.la
-%%PYTHON_SITELIBDIR%%/hamster/keybinder/_keybinder.so
+%%PYTHON_SITELIBDIR%%/hamster/overview.py
+%%PYTHON_SITELIBDIR%%/hamster/overview.pyc
+%%PYTHON_SITELIBDIR%%/hamster/overview.pyo
 %%PYTHON_SITELIBDIR%%/hamster/overview_activities.py
 %%PYTHON_SITELIBDIR%%/hamster/overview_activities.pyc
 %%PYTHON_SITELIBDIR%%/hamster/overview_activities.pyo
 %%PYTHON_SITELIBDIR%%/hamster/overview_totals.py
 %%PYTHON_SITELIBDIR%%/hamster/overview_totals.pyc
 %%PYTHON_SITELIBDIR%%/hamster/overview_totals.pyo
-%%PYTHON_SITELIBDIR%%/hamster/overview.py
-%%PYTHON_SITELIBDIR%%/hamster/overview.pyc
-%%PYTHON_SITELIBDIR%%/hamster/overview.pyo
 %%PYTHON_SITELIBDIR%%/hamster/preferences.py
 %%PYTHON_SITELIBDIR%%/hamster/preferences.pyc
 %%PYTHON_SITELIBDIR%%/hamster/preferences.pyo
@@ -90,6 +84,9 @@ lib/hamster-applet/hamster-applet
 %%PYTHON_SITELIBDIR%%/hamster/widgets/facttree.py
 %%PYTHON_SITELIBDIR%%/hamster/widgets/facttree.pyc
 %%PYTHON_SITELIBDIR%%/hamster/widgets/facttree.pyo
+%%PYTHON_SITELIBDIR%%/hamster/widgets/rangepick.py
+%%PYTHON_SITELIBDIR%%/hamster/widgets/rangepick.pyc
+%%PYTHON_SITELIBDIR%%/hamster/widgets/rangepick.pyo
 %%PYTHON_SITELIBDIR%%/hamster/widgets/reportchooserdialog.py
 %%PYTHON_SITELIBDIR%%/hamster/widgets/reportchooserdialog.pyc
 %%PYTHON_SITELIBDIR%%/hamster/widgets/reportchooserdialog.pyo
@@ -103,7 +100,97 @@ lib/hamster-applet/hamster-applet
 %%PYTHON_SITELIBDIR%%/hamster/widgets/timeinput.pyc
 %%PYTHON_SITELIBDIR%%/hamster/widgets/timeinput.pyo
 libdata/bonobo/servers/Hamster_Applet.server
-share/gnome-control-center/keybindings/99-hamster-applet.xml
+share/applications/hamster-applet.desktop
+share/applications/hamster-time-tracker.desktop
+share/dbus-1/services/org.gnome.hamster.service
+share/dockmanager/metadata/hamster_control.py.info
+share/dockmanager/scripts/hamster_control.py
+share/docky/helpers/hamster_control.py
+share/docky/helpers/metadata/hamster_control.py.info
+share/gnome/help/hamster-applet/C/backup.page
+share/gnome/help/hamster-applet/C/index.page
+share/gnome/help/hamster-applet/C/input.page
+share/gnome/help/hamster-applet/C/merge.page
+share/gnome/help/hamster-applet/C/reports.page
+share/gnome/help/hamster-applet/C/statistics.page
+share/gnome/help/hamster-applet/C/tracking.page
+share/gnome/help/hamster-applet/cs/backup.page
+share/gnome/help/hamster-applet/cs/index.page
+share/gnome/help/hamster-applet/cs/input.page
+share/gnome/help/hamster-applet/cs/merge.page
+share/gnome/help/hamster-applet/cs/reports.page
+share/gnome/help/hamster-applet/cs/statistics.page
+share/gnome/help/hamster-applet/cs/tracking.page
+share/gnome/help/hamster-applet/de/backup.page
+share/gnome/help/hamster-applet/de/index.page
+share/gnome/help/hamster-applet/de/input.page
+share/gnome/help/hamster-applet/de/merge.page
+share/gnome/help/hamster-applet/de/reports.page
+share/gnome/help/hamster-applet/de/statistics.page
+share/gnome/help/hamster-applet/de/tracking.page
+share/gnome/help/hamster-applet/el/backup.page
+share/gnome/help/hamster-applet/el/index.page
+share/gnome/help/hamster-applet/el/input.page
+share/gnome/help/hamster-applet/el/merge.page
+share/gnome/help/hamster-applet/el/reports.page
+share/gnome/help/hamster-applet/el/statistics.page
+share/gnome/help/hamster-applet/el/tracking.page
+share/gnome/help/hamster-applet/es/backup.page
+share/gnome/help/hamster-applet/es/index.page
+share/gnome/help/hamster-applet/es/input.page
+share/gnome/help/hamster-applet/es/merge.page
+share/gnome/help/hamster-applet/es/reports.page
+share/gnome/help/hamster-applet/es/statistics.page
+share/gnome/help/hamster-applet/es/tracking.page
+share/gnome/help/hamster-applet/fr/backup.page
+share/gnome/help/hamster-applet/fr/index.page
+share/gnome/help/hamster-applet/fr/input.page
+share/gnome/help/hamster-applet/fr/merge.page
+share/gnome/help/hamster-applet/fr/reports.page
+share/gnome/help/hamster-applet/fr/statistics.page
+share/gnome/help/hamster-applet/fr/tracking.page
+share/gnome/help/hamster-applet/gl/backup.page
+share/gnome/help/hamster-applet/gl/index.page
+share/gnome/help/hamster-applet/gl/input.page
+share/gnome/help/hamster-applet/gl/merge.page
+share/gnome/help/hamster-applet/gl/reports.page
+share/gnome/help/hamster-applet/gl/statistics.page
+share/gnome/help/hamster-applet/gl/tracking.page
+share/gnome/help/hamster-applet/hu/backup.page
+share/gnome/help/hamster-applet/hu/index.page
+share/gnome/help/hamster-applet/hu/input.page
+share/gnome/help/hamster-applet/hu/merge.page
+share/gnome/help/hamster-applet/hu/reports.page
+share/gnome/help/hamster-applet/hu/statistics.page
+share/gnome/help/hamster-applet/hu/tracking.page
+share/gnome/help/hamster-applet/sv/backup.page
+share/gnome/help/hamster-applet/sv/index.page
+share/gnome/help/hamster-applet/sv/input.page
+share/gnome/help/hamster-applet/sv/merge.page
+share/gnome/help/hamster-applet/sv/reports.page
+share/gnome/help/hamster-applet/sv/statistics.page
+share/gnome/help/hamster-applet/sv/tracking.page
+share/gnome/help/hamster-applet/zh_CN/backup.page
+share/gnome/help/hamster-applet/zh_CN/index.page
+share/gnome/help/hamster-applet/zh_CN/input.page
+share/gnome/help/hamster-applet/zh_CN/merge.page
+share/gnome/help/hamster-applet/zh_CN/reports.page
+share/gnome/help/hamster-applet/zh_CN/statistics.page
+share/gnome/help/hamster-applet/zh_CN/tracking.page
+share/gnome/help/hamster-applet/zh_HK/backup.page
+share/gnome/help/hamster-applet/zh_HK/index.page
+share/gnome/help/hamster-applet/zh_HK/input.page
+share/gnome/help/hamster-applet/zh_HK/merge.page
+share/gnome/help/hamster-applet/zh_HK/reports.page
+share/gnome/help/hamster-applet/zh_HK/statistics.page
+share/gnome/help/hamster-applet/zh_HK/tracking.page
+share/gnome/help/hamster-applet/zh_TW/backup.page
+share/gnome/help/hamster-applet/zh_TW/index.page
+share/gnome/help/hamster-applet/zh_TW/input.page
+share/gnome/help/hamster-applet/zh_TW/merge.page
+share/gnome/help/hamster-applet/zh_TW/reports.page
+share/gnome/help/hamster-applet/zh_TW/statistics.page
+share/gnome/help/hamster-applet/zh_TW/tracking.page
 %%DATADIR%%/Hamster_Applet.xml
 %%DATADIR%%/applet.ui
 %%DATADIR%%/art/hamster-applet.png
@@ -116,72 +203,9 @@ share/gnome-control-center/keybindings/99-hamster-applet.xml
 %%DATADIR%%/overview.ui
 %%DATADIR%%/overview_totals.ui
 %%DATADIR%%/preferences.ui
+%%DATADIR%%/range_pick.ui
+%%DATADIR%%/report_template.html
 %%DATADIR%%/stats.ui
-share/applications/hamster-standalone.desktop
-share/gnome/help/hamster-applet/C/backup.page
-share/gnome/help/hamster-applet/C/figures/hamster-logo.png
-share/gnome/help/hamster-applet/C/index.page
-share/gnome/help/hamster-applet/C/input.page
-share/gnome/help/hamster-applet/C/legal.xml
-share/gnome/help/hamster-applet/C/merge.page
-share/gnome/help/hamster-applet/C/reports.page
-share/gnome/help/hamster-applet/C/statistics.page
-share/gnome/help/hamster-applet/cs/backup.page
-share/gnome/help/hamster-applet/cs/figures/hamster-logo.png
-share/gnome/help/hamster-applet/cs/index.page
-share/gnome/help/hamster-applet/cs/input.page
-share/gnome/help/hamster-applet/cs/legal.xml
-share/gnome/help/hamster-applet/cs/merge.page
-share/gnome/help/hamster-applet/cs/reports.page
-share/gnome/help/hamster-applet/cs/statistics.page
-share/gnome/help/hamster-applet/de/backup.page
-share/gnome/help/hamster-applet/de/figures/hamster-logo.png
-share/gnome/help/hamster-applet/de/index.page
-share/gnome/help/hamster-applet/de/input.page
-share/gnome/help/hamster-applet/de/legal.xml
-share/gnome/help/hamster-applet/de/merge.page
-share/gnome/help/hamster-applet/de/reports.page
-share/gnome/help/hamster-applet/de/statistics.page
-share/gnome/help/hamster-applet/el/backup.page
-share/gnome/help/hamster-applet/el/figures/hamster-logo.png
-share/gnome/help/hamster-applet/el/index.page
-share/gnome/help/hamster-applet/el/input.page
-share/gnome/help/hamster-applet/el/legal.xml
-share/gnome/help/hamster-applet/el/merge.page
-share/gnome/help/hamster-applet/el/reports.page
-share/gnome/help/hamster-applet/el/statistics.page
-share/gnome/help/hamster-applet/es/backup.page
-share/gnome/help/hamster-applet/es/figures/hamster-logo.png
-share/gnome/help/hamster-applet/es/index.page
-share/gnome/help/hamster-applet/es/input.page
-share/gnome/help/hamster-applet/es/legal.xml
-share/gnome/help/hamster-applet/es/merge.page
-share/gnome/help/hamster-applet/es/reports.page
-share/gnome/help/hamster-applet/es/statistics.page
-share/gnome/help/hamster-applet/fr/backup.page
-share/gnome/help/hamster-applet/fr/figures/hamster-logo.png
-share/gnome/help/hamster-applet/fr/index.page
-share/gnome/help/hamster-applet/fr/input.page
-share/gnome/help/hamster-applet/fr/legal.xml
-share/gnome/help/hamster-applet/fr/merge.page
-share/gnome/help/hamster-applet/fr/reports.page
-share/gnome/help/hamster-applet/fr/statistics.page
-share/gnome/help/hamster-applet/zh_HK/backup.page
-share/gnome/help/hamster-applet/zh_HK/figures/hamster-logo.png
-share/gnome/help/hamster-applet/zh_HK/index.page
-share/gnome/help/hamster-applet/zh_HK/input.page
-share/gnome/help/hamster-applet/zh_HK/legal.xml
-share/gnome/help/hamster-applet/zh_HK/merge.page
-share/gnome/help/hamster-applet/zh_HK/reports.page
-share/gnome/help/hamster-applet/zh_HK/statistics.page
-share/gnome/help/hamster-applet/zh_TW/backup.page
-share/gnome/help/hamster-applet/zh_TW/figures/hamster-logo.png
-share/gnome/help/hamster-applet/zh_TW/index.page
-share/gnome/help/hamster-applet/zh_TW/input.page
-share/gnome/help/hamster-applet/zh_TW/legal.xml
-share/gnome/help/hamster-applet/zh_TW/merge.page
-share/gnome/help/hamster-applet/zh_TW/reports.page
-share/gnome/help/hamster-applet/zh_TW/statistics.page
 share/icons/hicolor/16x16/apps/hamster-applet.png
 share/icons/hicolor/22x22/apps/hamster-applet.png
 share/icons/hicolor/32x32/apps/hamster-applet.png
@@ -199,8 +223,8 @@ share/locale/cs/LC_MESSAGES/hamster-applet.mo
 share/locale/da/LC_MESSAGES/hamster-applet.mo
 share/locale/de/LC_MESSAGES/hamster-applet.mo
 share/locale/el/LC_MESSAGES/hamster-applet.mo
-share/locale/en_GB/LC_MESSAGES/hamster-applet.mo
 share/locale/en@shaw/LC_MESSAGES/hamster-applet.mo
+share/locale/en_GB/LC_MESSAGES/hamster-applet.mo
 share/locale/es/LC_MESSAGES/hamster-applet.mo
 share/locale/et/LC_MESSAGES/hamster-applet.mo
 share/locale/eu/LC_MESSAGES/hamster-applet.mo
@@ -211,6 +235,7 @@ share/locale/gu/LC_MESSAGES/hamster-applet.mo
 share/locale/he/LC_MESSAGES/hamster-applet.mo
 share/locale/hi/LC_MESSAGES/hamster-applet.mo
 share/locale/hu/LC_MESSAGES/hamster-applet.mo
+share/locale/id/LC_MESSAGES/hamster-applet.mo
 share/locale/it/LC_MESSAGES/hamster-applet.mo
 share/locale/ja/LC_MESSAGES/hamster-applet.mo
 share/locale/kn/LC_MESSAGES/hamster-applet.mo
@@ -249,24 +274,19 @@ share/locale/zh_TW/LC_MESSAGES/hamster-applet.mo
 @dirrm %%DATADIR%%/art
 @dirrm %%DATADIR%%
 @dirrm %%PYTHON_SITELIBDIR%%/hamster/widgets
-@dirrm %%PYTHON_SITELIBDIR%%/hamster/keybinder
 @dirrm %%PYTHON_SITELIBDIR%%/hamster
 @dirrm lib/hamster-applet
-@dirrm share/gnome/help/hamster-applet/zh_TW/figures
 @dirrm share/gnome/help/hamster-applet/zh_TW
-@dirrm share/gnome/help/hamster-applet/zh_HK/figures
 @dirrm share/gnome/help/hamster-applet/zh_HK
-@dirrm share/gnome/help/hamster-applet/fr/figures
+@dirrm share/gnome/help/hamster-applet/zh_CN
+@dirrm share/gnome/help/hamster-applet/sv
+@dirrm share/gnome/help/hamster-applet/hu
+@dirrm share/gnome/help/hamster-applet/gl
 @dirrm share/gnome/help/hamster-applet/fr
-@dirrm share/gnome/help/hamster-applet/es/figures
 @dirrm share/gnome/help/hamster-applet/es
-@dirrm share/gnome/help/hamster-applet/el/figures
 @dirrm share/gnome/help/hamster-applet/el
-@dirrm share/gnome/help/hamster-applet/de/figures
 @dirrm share/gnome/help/hamster-applet/de
-@dirrm share/gnome/help/hamster-applet/cs/figures
 @dirrm share/gnome/help/hamster-applet/cs
-@dirrm share/gnome/help/hamster-applet/C/figures
 @dirrm share/gnome/help/hamster-applet/C
 @dirrm share/gnome/help/hamster-applet
 @dirrmtry share/locale/zh_HK/LC_MESSAGES
