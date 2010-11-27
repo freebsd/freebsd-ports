@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	postfix
-PORTVERSION=	2.6.7
+PORTVERSION=	2.6.8
 PORTEPOCH=	1
 CATEGORIES=	mail ipv6
 MASTER_SITES=	ftp://ftp.porcupine.org/mirrors/postfix-release/official/ \
@@ -23,7 +23,7 @@ COMMENT=	A secure alternative to widely-used Sendmail
 
 VDAVERSION=	2.6.5
 CONFLICTS=	courier-0.* postfix-1.* postfix-2.[0-57-9].* postfix-current-2.* \
-		sendmail-8.* sendmail-*-8.* smail-3.* zmailer-2.*
+		sendmail-8.* sendmail+*-8.* smail-3.* zmailer-2.*
 
 NO_LATEST_LINK=	yes
 USE_SUBMAKE=	yes
