@@ -6320,7 +6320,7 @@ install-desktop-entries:
 		${ECHO_CMD} "@cwd ${DESKTOPDIR}" >> ${TMPPLIST}; \
 	fi; \
 	while [ $$# -gt 6 ]; do \
-		filename="$$4.desktop"; \
+		filename="`${ECHO_CMD} "$$4" | ${TR} -cd [:alnum:]`.desktop"; \
 		pathname="${DESKTOPDIR}/$$filename"; \
 		categories="$$5"; \
 		if [ -z "$$categories" ]; then \
