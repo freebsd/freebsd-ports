@@ -53,12 +53,15 @@ bin/SABnzbd.py
 %%DATADIR%%/language/email-de-de.tmpl
 %%DATADIR%%/language/email-fr-fr.tmpl
 %%DATADIR%%/language/email-nl-du.tmpl
+%%DATADIR%%/language/email-no-no.tmpl
 %%DATADIR%%/language/email-sv-se.tmpl
 %%DATADIR%%/language/email-us-en.tmpl
 %%DATADIR%%/language/fr-fr.txt
 %%DATADIR%%/language/nl-du.txt
+%%DATADIR%%/language/no-no.txt
 %%DATADIR%%/language/sv-se.txt
 %%DATADIR%%/language/us-en.txt
+%%DATADIR%%/language/rss-no-no.tmpl
 %%DATADIR%%/interfaces/wizard/README.TXT
 %%DATADIR%%/interfaces/wizard/inc_top.tmpl
 %%DATADIR%%/interfaces/wizard/three.html
@@ -72,6 +75,7 @@ bin/SABnzbd.py
 %%DATADIR%%/interfaces/wizard/language/de-de.txt
 %%DATADIR%%/interfaces/wizard/language/us-en.txt
 %%DATADIR%%/interfaces/wizard/language/fr-fr.txt
+%%DATADIR%%/interfaces/wizard/language/no-no.txt
 %%DATADIR%%/interfaces/wizard/static/style.css
 %%DATADIR%%/interfaces/wizard/static/javascript/checkserver.js
 %%DATADIR%%/interfaces/wizard/static/javascript/jquery.js
@@ -85,6 +89,7 @@ bin/SABnzbd.py
 %%DATADIR%%/interfaces/wizard/static/images/flags/dk-da.png
 %%DATADIR%%/interfaces/wizard/static/images/flags/sv-se.png
 %%DATADIR%%/interfaces/wizard/static/images/flags/fr-fr.png
+%%DATADIR%%/interfaces/wizard/static/images/flags/no-no.png
 %%DATADIR%%/interfaces/wizard/static/images/icon_sab.png
 %%DATADIR%%/interfaces/wizard/static/images/favicon.ico
 %%DATADIR%%/interfaces/wizard/static/images/classic-th.png
@@ -104,6 +109,7 @@ bin/SABnzbd.py
 %%DATADIR%%/interfaces/Mobile/language/dk-da.txt
 %%DATADIR%%/interfaces/Mobile/language/us-en.txt
 %%DATADIR%%/interfaces/Mobile/language/fr-fr.txt
+%%DATADIR%%/interfaces/Mobile/language/no-no.txt
 %%DATADIR%%/interfaces/Mobile/templates/static/javascripts/mobile.js
 %%DATADIR%%/interfaces/Mobile/templates/static/images/sab.png
 %%DATADIR%%/interfaces/Mobile/templates/static/images/dark/whiteButton.png
@@ -227,6 +233,7 @@ bin/SABnzbd.py
 %%DATADIR%%/interfaces/smpl/language/dk-da.txt
 %%DATADIR%%/interfaces/smpl/language/us-en.txt
 %%DATADIR%%/interfaces/smpl/language/fr-fr.txt
+%%DATADIR%%/interfaces/smpl/language/no-no.txt
 %%DATADIR%%/interfaces/smpl/templates/config_scheduling.tmpl
 %%DATADIR%%/interfaces/smpl/templates/config_sorting.tmpl
 %%DATADIR%%/interfaces/smpl/templates/config_rss.tmpl
