@@ -1,0 +1,19 @@
+This stack contains tools built on top of ROS core which are commonly used
+throughout the ROS ecosystem. It contains three types of packages:
+
+Filtering:
+* bfl: the Bayesian Filtering Library from the Orocos project
+* filters: a standardized C++ API for filters. It also has a class to chain
+  filters at runtime based on parameters.
+
+Helper libraries:
+* actionlib: provides C++ and Python libraries for interacting with the Action
+  API used by the executive.
+* nodelet: a way to run multiple algorithms within the same process abstracted
+  with a ROS interface.
+* pluginlib: providea a C++ API for dynamically loading plugin classes.
+
+Parsers:
+* tinyxml: a C interface to the third-party tinyxml parser for ROS.
+* xacro: an XML macro language.
+* yaml_cpp: a C++ to the third-party YAML parser for ROS.

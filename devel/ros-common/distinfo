@@ -1,0 +1,6 @@
+SHA256 (ros/common-1.2.1.tar.bz2) = e6c4f639e216f14184a95773856094fd68bd3131286bbeee1356b23119129c79
+SIZE (ros/common-1.2.1.tar.bz2) = 209248
+SHA256 (ros/bfl-31655.tar.gz) = e051a4c88e23d584ac1320711805b25daf392e582658742a0ffbdf3a20fcc433
+SIZE (ros/bfl-31655.tar.gz) = 273389
+SHA256 (ros/yaml-cpp-0.2.2.tar.gz) = a3060ee48d723924bcd1d80c36a7cdccb4bc010226c77abd9f057f8986cfa807
+SIZE (ros/yaml-cpp-0.2.2.tar.gz) = 63108

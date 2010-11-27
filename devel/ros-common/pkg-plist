@@ -1,0 +1,625 @@
+lib/libactionlib.so
+lib/libboost_fs_wrapper.so
+lib/libincrement.so
+lib/libmean.so
+lib/libmedian.so
+lib/libnodelet_math.so
+lib/libnodeletlib.so
+lib/liborocos-bfl.so
+lib/libparams.so
+lib/libpoco_lite.so
+lib/libtest_nodelet.so
+lib/libtinyxml.so
+lib/libtransfer_function.so
+lib/libyaml-cpp.so
+lib/libyaml-cpp.so.0.2
+lib/libyaml-cpp.so.0.2.2
+libdata/pkgconfig/orocos-bfl.pc
+libdata/pkgconfig/yaml-cpp.pc
+ros/stacks/common/CMakeLists.txt
+ros/stacks/common/Makefile
+ros/stacks/common/actionlib/CMakeLists.txt
+ros/stacks/common/actionlib/Makefile
+ros/stacks/common/actionlib/ROS_NOBUILD
+ros/stacks/common/actionlib/action/Test.action
+ros/stacks/common/actionlib/bin/action_client_destruction_test
+ros/stacks/common/actionlib/bin/ref_server
+ros/stacks/common/actionlib/bin/server_goal_handle_destruction
+ros/stacks/common/actionlib/bin/simple_client_allocator_test
+ros/stacks/common/actionlib/bin/simple_client_test
+ros/stacks/common/actionlib/bin/simple_client_wait_test
+ros/stacks/common/actionlib/bin/simple_execute_ref_server
+ros/stacks/common/actionlib/cmake/actionbuild.cmake
+ros/stacks/common/actionlib/docs/action_interface.svg
+ros/stacks/common/actionlib/docs/cancel_policy.svg
+ros/stacks/common/actionlib/docs/server_states_detailed.svg
+ros/stacks/common/actionlib/docs/simple_goal_reception.svg
+ros/stacks/common/actionlib/genaction.py
+ros/stacks/common/actionlib/include/actionlib/action_definition.h
+ros/stacks/common/actionlib/include/actionlib/client/action_client.h
+ros/stacks/common/actionlib/include/actionlib/client/client_goal_handle_imp.h
+ros/stacks/common/actionlib/include/actionlib/client/client_helpers.h
+ros/stacks/common/actionlib/include/actionlib/client/comm_state.h
+ros/stacks/common/actionlib/include/actionlib/client/comm_state_machine_imp.h
+ros/stacks/common/actionlib/include/actionlib/client/connection_monitor.h
+ros/stacks/common/actionlib/include/actionlib/client/goal_manager_imp.h
+ros/stacks/common/actionlib/include/actionlib/client/simple_action_client.h
+ros/stacks/common/actionlib/include/actionlib/client/simple_client_goal_state.h
+ros/stacks/common/actionlib/include/actionlib/client/simple_goal_state.h
+ros/stacks/common/actionlib/include/actionlib/client/terminal_state.h
+ros/stacks/common/actionlib/include/actionlib/client_goal_status.h
+ros/stacks/common/actionlib/include/actionlib/destruction_guard.h
+ros/stacks/common/actionlib/include/actionlib/enclosure_deleter.h
+ros/stacks/common/actionlib/include/actionlib/goal_id_generator.h
+ros/stacks/common/actionlib/include/actionlib/managed_list.h
+ros/stacks/common/actionlib/include/actionlib/one_shot_timer.h
+ros/stacks/common/actionlib/include/actionlib/server/action_server.h
+ros/stacks/common/actionlib/include/actionlib/server/action_server_imp.h
+ros/stacks/common/actionlib/include/actionlib/server/handle_tracker_deleter.h
+ros/stacks/common/actionlib/include/actionlib/server/handle_tracker_deleter_imp.h
+ros/stacks/common/actionlib/include/actionlib/server/server_goal_handle.h
+ros/stacks/common/actionlib/include/actionlib/server/server_goal_handle_imp.h
+ros/stacks/common/actionlib/include/actionlib/server/simple_action_server.h
+ros/stacks/common/actionlib/include/actionlib/server/simple_action_server_imp.h
+ros/stacks/common/actionlib/include/actionlib/server/status_tracker.h
+ros/stacks/common/actionlib/include/actionlib/server/status_tracker_imp.h
+ros/stacks/common/actionlib/mainpage.dox
+ros/stacks/common/actionlib/manifest.xml
+ros/stacks/common/actionlib/msg/TestAction.msg
+ros/stacks/common/actionlib/msg/TestActionFeedback.msg
+ros/stacks/common/actionlib/msg/TestActionGoal.msg
+ros/stacks/common/actionlib/msg/TestActionResult.msg
+ros/stacks/common/actionlib/msg/TestFeedback.msg
+ros/stacks/common/actionlib/msg/TestGoal.msg
+ros/stacks/common/actionlib/msg/TestResult.msg
+ros/stacks/common/actionlib/msg/lisp/actionlib/.TestAction.asd-dep
+ros/stacks/common/actionlib/msg/lisp/actionlib/.TestActionFeedback.asd-dep
+ros/stacks/common/actionlib/msg/lisp/actionlib/.TestActionGoal.asd-dep
+ros/stacks/common/actionlib/msg/lisp/actionlib/.TestActionResult.asd-dep
+ros/stacks/common/actionlib/msg/lisp/actionlib/.TestFeedback.asd-dep
+ros/stacks/common/actionlib/msg/lisp/actionlib/.TestGoal.asd-dep
+ros/stacks/common/actionlib/msg/lisp/actionlib/.TestResult.asd-dep
+ros/stacks/common/actionlib/msg/lisp/actionlib/TestAction.lisp
+ros/stacks/common/actionlib/msg/lisp/actionlib/TestActionFeedback.lisp
+ros/stacks/common/actionlib/msg/lisp/actionlib/TestActionGoal.lisp
+ros/stacks/common/actionlib/msg/lisp/actionlib/TestActionResult.lisp
+ros/stacks/common/actionlib/msg/lisp/actionlib/TestFeedback.lisp
+ros/stacks/common/actionlib/msg/lisp/actionlib/TestGoal.lisp
+ros/stacks/common/actionlib/msg/lisp/actionlib/TestResult.lisp
+ros/stacks/common/actionlib/msg/lisp/actionlib/_package.lisp
+ros/stacks/common/actionlib/msg/lisp/actionlib/_package_TestAction.lisp
+ros/stacks/common/actionlib/msg/lisp/actionlib/_package_TestActionFeedback.lisp
+ros/stacks/common/actionlib/msg/lisp/actionlib/_package_TestActionGoal.lisp
+ros/stacks/common/actionlib/msg/lisp/actionlib/_package_TestActionResult.lisp
+ros/stacks/common/actionlib/msg/lisp/actionlib/_package_TestFeedback.lisp
+ros/stacks/common/actionlib/msg/lisp/actionlib/_package_TestGoal.lisp
+ros/stacks/common/actionlib/msg/lisp/actionlib/_package_TestResult.lisp
+ros/stacks/common/actionlib/msg/lisp/actionlib/actionlib-msg.asd
+ros/stacks/common/actionlib/msg_gen/cpp/include/actionlib/TestAction.h
+ros/stacks/common/actionlib/msg_gen/cpp/include/actionlib/TestActionFeedback.h
+ros/stacks/common/actionlib/msg_gen/cpp/include/actionlib/TestActionGoal.h
+ros/stacks/common/actionlib/msg_gen/cpp/include/actionlib/TestActionResult.h
+ros/stacks/common/actionlib/msg_gen/cpp/include/actionlib/TestFeedback.h
+ros/stacks/common/actionlib/msg_gen/cpp/include/actionlib/TestGoal.h
+ros/stacks/common/actionlib/msg_gen/cpp/include/actionlib/TestResult.h
+ros/stacks/common/actionlib/msg_gen/generated
+ros/stacks/common/actionlib/src/actionlib/__init__.py
+ros/stacks/common/actionlib/src/actionlib/action_client.py
+ros/stacks/common/actionlib/src/actionlib/action_server.py
+ros/stacks/common/actionlib/src/actionlib/exceptions.py
+ros/stacks/common/actionlib/src/actionlib/goal_id_generator.py
+ros/stacks/common/actionlib/src/actionlib/handle_tracker_deleter.py
+ros/stacks/common/actionlib/src/actionlib/msg/_TestAction.py
+ros/stacks/common/actionlib/src/actionlib/msg/_TestActionFeedback.py
+ros/stacks/common/actionlib/src/actionlib/msg/_TestActionGoal.py
+ros/stacks/common/actionlib/src/actionlib/msg/_TestActionResult.py
+ros/stacks/common/actionlib/src/actionlib/msg/_TestFeedback.py
+ros/stacks/common/actionlib/src/actionlib/msg/_TestGoal.py
+ros/stacks/common/actionlib/src/actionlib/msg/_TestResult.py
+ros/stacks/common/actionlib/src/actionlib/msg/__init__.py
+ros/stacks/common/actionlib/src/actionlib/server_goal_handle.py
+ros/stacks/common/actionlib/src/actionlib/simple_action_client.py
+ros/stacks/common/actionlib/src/actionlib/simple_action_server.py
+ros/stacks/common/actionlib/src/actionlib/status_tracker.py
+ros/stacks/common/actionlib/src/connection_monitor.cpp
+ros/stacks/common/actionlib/src/goal_id_generator.cpp
+ros/stacks/common/actionlib/test/action_client_destruction_test.cpp
+ros/stacks/common/actionlib/test/destruction_guard_test.cpp
+ros/stacks/common/actionlib/test/ref_server.cpp
+ros/stacks/common/actionlib/test/ref_server.py
+ros/stacks/common/actionlib/test/ref_server_test.launch
+ros/stacks/common/actionlib/test/ref_simple_server.py
+ros/stacks/common/actionlib/test/server_goal_handle_destruction.cpp
+ros/stacks/common/actionlib/test/simple_client_allocator_test.cpp
+ros/stacks/common/actionlib/test/simple_client_test.cpp
+ros/stacks/common/actionlib/test/simple_client_wait_test.cpp
+ros/stacks/common/actionlib/test/simple_execute_ref_server.cpp
+ros/stacks/common/actionlib/test/simple_execute_ref_server_test.launch
+ros/stacks/common/actionlib/test/simple_python_client_test.py
+ros/stacks/common/actionlib/test/test_cpp_action_client_destruction.launch
+ros/stacks/common/actionlib/test/test_cpp_simple_client_allocator.launch
+ros/stacks/common/actionlib/test/test_imports.launch
+ros/stacks/common/actionlib/test/test_imports.py
+ros/stacks/common/actionlib/test/test_python_server.launch
+ros/stacks/common/actionlib/test/test_python_server2.launch
+ros/stacks/common/actionlib/test/test_python_server3.launch
+ros/stacks/common/actionlib/test/test_python_server_components.launch
+ros/stacks/common/actionlib/test/test_python_simple_client.launch
+ros/stacks/common/actionlib/test/test_python_simple_server.launch
+ros/stacks/common/actionlib/test/test_ref_action_server.py
+ros/stacks/common/actionlib/test/test_ref_simple_action_server.py
+ros/stacks/common/actionlib/test/test_server_components.py
+ros/stacks/common/actionlib/test/test_server_goal_handle_destruction.launch
+ros/stacks/common/actionlib/tools/axclient.py
+ros/stacks/common/actionlib/tools/axserver.py
+ros/stacks/common/actionlib/tools/dynamic_action.py
+ros/stacks/common/actionlib/tools/library.py
+ros/stacks/common/bfl/Makefile
+ros/stacks/common/bfl/ROS_NOBUILD
+ros/stacks/common/bfl/bfl-31655.tar.gz.md5sum
+ros/stacks/common/bfl/bfl-boost/bin/bfl/test_compare_filters
+ros/stacks/common/bfl/bfl-boost/bin/bfl/test_discrete_filter
+ros/stacks/common/bfl/bfl-boost/bin/bfl/test_kalman_smoother
+ros/stacks/common/bfl/bfl-boost/bin/bfl/test_linear_kalman
+ros/stacks/common/bfl/bfl-boost/bin/bfl/test_nonlinear_kalman
+ros/stacks/common/bfl/bfl-boost/bin/bfl/test_nonlinear_particle
+ros/stacks/common/bfl/bfl-boost/include/bfl/bfl_constants.h
+ros/stacks/common/bfl/bfl-boost/include/bfl/bfl_err.h
+ros/stacks/common/bfl/bfl-boost/include/bfl/filter/EKparticlefilter.h
+ros/stacks/common/bfl/bfl-boost/include/bfl/filter/SRiteratedextendedkalmanfilter.h
+ros/stacks/common/bfl/bfl-boost/include/bfl/filter/asirfilter.cpp
+ros/stacks/common/bfl/bfl-boost/include/bfl/filter/asirfilter.h
+ros/stacks/common/bfl/bfl-boost/include/bfl/filter/bootstrapfilter.cpp
+ros/stacks/common/bfl/bfl-boost/include/bfl/filter/bootstrapfilter.h
+ros/stacks/common/bfl/bfl-boost/include/bfl/filter/extendedkalmanfilter.h
+ros/stacks/common/bfl/bfl-boost/include/bfl/filter/filter.cpp
+ros/stacks/common/bfl/bfl-boost/include/bfl/filter/filter.h
+ros/stacks/common/bfl/bfl-boost/include/bfl/filter/histogramfilter.cpp
+ros/stacks/common/bfl/bfl-boost/include/bfl/filter/histogramfilter.h
+ros/stacks/common/bfl/bfl-boost/include/bfl/filter/innovationCheck.h
+ros/stacks/common/bfl/bfl-boost/include/bfl/filter/iteratedextendedkalmanfilter.h
+ros/stacks/common/bfl/bfl-boost/include/bfl/filter/kalmanfilter.h
+ros/stacks/common/bfl/bfl-boost/include/bfl/filter/mixtureBootstrapFilter.cpp
+ros/stacks/common/bfl/bfl-boost/include/bfl/filter/mixtureBootstrapFilter.h
+ros/stacks/common/bfl/bfl-boost/include/bfl/filter/mixtureParticleFilter.cpp
+ros/stacks/common/bfl/bfl-boost/include/bfl/filter/mixtureParticleFilter.h
+ros/stacks/common/bfl/bfl-boost/include/bfl/filter/particlefilter.cpp
+ros/stacks/common/bfl/bfl-boost/include/bfl/filter/particlefilter.h
+ros/stacks/common/bfl/bfl-boost/include/bfl/model/analyticmeasurementmodel_gaussianuncertainty.h
+ros/stacks/common/bfl/bfl-boost/include/bfl/model/analyticsystemmodel_gaussianuncertainty.h
+ros/stacks/common/bfl/bfl-boost/include/bfl/model/discretesystemmodel.h
+ros/stacks/common/bfl/bfl-boost/include/bfl/model/linearanalyticmeasurementmodel_gaussianuncertainty.h
+ros/stacks/common/bfl/bfl-boost/include/bfl/model/linearanalyticmeasurementmodel_gaussianuncertainty_implicit.h
+ros/stacks/common/bfl/bfl-boost/include/bfl/model/linearanalyticsystemmodel_gaussianuncertainty.h
+ros/stacks/common/bfl/bfl-boost/include/bfl/model/measurementmodel.cpp
+ros/stacks/common/bfl/bfl-boost/include/bfl/model/measurementmodel.h
+ros/stacks/common/bfl/bfl-boost/include/bfl/model/systemmodel.cpp
+ros/stacks/common/bfl/bfl-boost/include/bfl/model/systemmodel.h
+ros/stacks/common/bfl/bfl-boost/include/bfl/pdf/EKF_proposaldensity.h
+ros/stacks/common/bfl/bfl-boost/include/bfl/pdf/analyticconditionalgaussian.h
+ros/stacks/common/bfl/bfl-boost/include/bfl/pdf/analyticconditionalgaussian_additivenoise.h
+ros/stacks/common/bfl/bfl-boost/include/bfl/pdf/conditionalgaussian.h
+ros/stacks/common/bfl/bfl-boost/include/bfl/pdf/conditionalgaussian_additivenoise.h
+ros/stacks/common/bfl/bfl-boost/include/bfl/pdf/conditionalpdf.h
+ros/stacks/common/bfl/bfl-boost/include/bfl/pdf/discreteconditionalpdf.h
+ros/stacks/common/bfl/bfl-boost/include/bfl/pdf/discretepdf.h
+ros/stacks/common/bfl/bfl-boost/include/bfl/pdf/filterproposaldensity.h
+ros/stacks/common/bfl/bfl-boost/include/bfl/pdf/gaussian.h
+ros/stacks/common/bfl/bfl-boost/include/bfl/pdf/linearanalyticconditionalgaussian.h
+ros/stacks/common/bfl/bfl-boost/include/bfl/pdf/mcpdf.cpp
+ros/stacks/common/bfl/bfl-boost/include/bfl/pdf/mcpdf.h
+ros/stacks/common/bfl/bfl-boost/include/bfl/pdf/mixture.cpp
+ros/stacks/common/bfl/bfl-boost/include/bfl/pdf/mixture.h
+ros/stacks/common/bfl/bfl-boost/include/bfl/pdf/pdf.h
+ros/stacks/common/bfl/bfl-boost/include/bfl/pdf/uniform.h
+ros/stacks/common/bfl/bfl-boost/include/bfl/sample/sample.cpp
+ros/stacks/common/bfl/bfl-boost/include/bfl/sample/sample.h
+ros/stacks/common/bfl/bfl-boost/include/bfl/sample/weightedsample.h
+ros/stacks/common/bfl/bfl-boost/include/bfl/smoother/backwardfilter.cpp
+ros/stacks/common/bfl/bfl-boost/include/bfl/smoother/backwardfilter.h
+ros/stacks/common/bfl/bfl-boost/include/bfl/smoother/particlesmoother.cpp
+ros/stacks/common/bfl/bfl-boost/include/bfl/smoother/particlesmoother.h
+ros/stacks/common/bfl/bfl-boost/include/bfl/smoother/rauchtungstriebel.h
+ros/stacks/common/bfl/bfl-boost/include/bfl/wrappers/config.h
+ros/stacks/common/bfl/bfl-boost/include/bfl/wrappers/matrix/matrix_BOOST.h
+ros/stacks/common/bfl/bfl-boost/include/bfl/wrappers/matrix/matrix_LTI.h
+ros/stacks/common/bfl/bfl-boost/include/bfl/wrappers/matrix/matrix_NEWMAT.h
+ros/stacks/common/bfl/bfl-boost/include/bfl/wrappers/matrix/matrix_wrapper.h
+ros/stacks/common/bfl/bfl-boost/include/bfl/wrappers/matrix/vector_BOOST.h
+ros/stacks/common/bfl/bfl-boost/include/bfl/wrappers/matrix/vector_LTI.h
+ros/stacks/common/bfl/bfl-boost/include/bfl/wrappers/matrix/vector_NEWMAT.h
+ros/stacks/common/bfl/bfl-boost/include/bfl/wrappers/matrix/vector_wrapper.h
+ros/stacks/common/bfl/bfl-boost/include/bfl/wrappers/rng/rng.h
+ros/stacks/common/bfl/installed
+ros/stacks/common/bfl/manifest.xml
+ros/stacks/common/bfl/total.patch
+ros/stacks/common/filters/CMakeLists.txt
+ros/stacks/common/filters/Makefile
+ros/stacks/common/filters/ROS_BUILD_BLACKLIST_OSX
+ros/stacks/common/filters/ROS_NOBUILD
+ros/stacks/common/filters/default_plugins.xml
+ros/stacks/common/filters/include/filters/filter_base.h
+ros/stacks/common/filters/include/filters/filter_chain.h
+ros/stacks/common/filters/include/filters/increment.h
+ros/stacks/common/filters/include/filters/mean.h
+ros/stacks/common/filters/include/filters/median.h
+ros/stacks/common/filters/include/filters/param_test.h
+ros/stacks/common/filters/include/filters/realtime_circular_buffer.h
+ros/stacks/common/filters/include/filters/transfer_function.h
+ros/stacks/common/filters/mainpage.dox
+ros/stacks/common/filters/manifest.xml
+ros/stacks/common/filters/src/increment.cpp
+ros/stacks/common/filters/src/mean.cpp
+ros/stacks/common/filters/src/median.cpp
+ros/stacks/common/filters/src/test_params.cpp
+ros/stacks/common/filters/src/transfer_function.cpp
+ros/stacks/common/filters/test/test_chain.cpp
+ros/stacks/common/filters/test/test_chain.launch
+ros/stacks/common/filters/test/test_chain.yaml
+ros/stacks/common/filters/test/test_mean.cpp
+ros/stacks/common/filters/test/test_mean.launch
+ros/stacks/common/filters/test/test_mean.yaml
+ros/stacks/common/filters/test/test_median.cpp
+ros/stacks/common/filters/test/test_median.launch
+ros/stacks/common/filters/test/test_median.yaml
+ros/stacks/common/filters/test/test_params.cpp
+ros/stacks/common/filters/test/test_params.launch
+ros/stacks/common/filters/test/test_params.yaml
+ros/stacks/common/filters/test/test_realtime_circular_buffer.cpp
+ros/stacks/common/filters/test/test_transfer_function.cpp
+ros/stacks/common/filters/test/test_transfer_function.launch
+ros/stacks/common/filters/test/test_transfer_function.yaml
+ros/stacks/common/nodelet/CMakeLists.txt
+ros/stacks/common/nodelet/Makefile
+ros/stacks/common/nodelet/ROS_NOBUILD
+ros/stacks/common/nodelet/bin/nodelet
+ros/stacks/common/nodelet/include/nodelet/detail/callback_queue.h
+ros/stacks/common/nodelet/include/nodelet/detail/callback_queue_manager.h
+ros/stacks/common/nodelet/include/nodelet/exception.h
+ros/stacks/common/nodelet/include/nodelet/loader.h
+ros/stacks/common/nodelet/include/nodelet/nodelet.h
+ros/stacks/common/nodelet/mainpage.dox
+ros/stacks/common/nodelet/manifest.xml
+ros/stacks/common/nodelet/scripts/list_nodelets
+ros/stacks/common/nodelet/src/callback_queue.cpp
+ros/stacks/common/nodelet/src/callback_queue_manager.cpp
+ros/stacks/common/nodelet/src/loader.cpp
+ros/stacks/common/nodelet/src/nodelet.cpp
+ros/stacks/common/nodelet/src/nodelet/__init__.py
+ros/stacks/common/nodelet/src/nodelet/srv/_NodeletList.py
+ros/stacks/common/nodelet/src/nodelet/srv/_NodeletLoad.py
+ros/stacks/common/nodelet/src/nodelet/srv/_NodeletUnload.py
+ros/stacks/common/nodelet/src/nodelet/srv/__init__.py
+ros/stacks/common/nodelet/src/nodelet_class.cpp
+ros/stacks/common/nodelet/srv/NodeletList.srv
+ros/stacks/common/nodelet/srv/NodeletLoad.srv
+ros/stacks/common/nodelet/srv/NodeletUnload.srv
+ros/stacks/common/nodelet/srv/lisp/nodelet/.NodeletList.asd-dep
+ros/stacks/common/nodelet/srv/lisp/nodelet/.NodeletLoad.asd-dep
+ros/stacks/common/nodelet/srv/lisp/nodelet/.NodeletUnload.asd-dep
+ros/stacks/common/nodelet/srv/lisp/nodelet/NodeletList.lisp
+ros/stacks/common/nodelet/srv/lisp/nodelet/NodeletLoad.lisp
+ros/stacks/common/nodelet/srv/lisp/nodelet/NodeletUnload.lisp
+ros/stacks/common/nodelet/srv/lisp/nodelet/_package.lisp
+ros/stacks/common/nodelet/srv/lisp/nodelet/_package_NodeletList.lisp
+ros/stacks/common/nodelet/srv/lisp/nodelet/_package_NodeletLoad.lisp
+ros/stacks/common/nodelet/srv/lisp/nodelet/_package_NodeletUnload.lisp
+ros/stacks/common/nodelet/srv/lisp/nodelet/nodelet-srv.asd
+ros/stacks/common/nodelet/srv_gen/cpp/include/nodelet/NodeletList.h
+ros/stacks/common/nodelet/srv_gen/cpp/include/nodelet/NodeletLoad.h
+ros/stacks/common/nodelet/srv_gen/cpp/include/nodelet/NodeletUnload.h
+ros/stacks/common/nodelet/srv_gen/generated
+ros/stacks/common/nodelet_topic_tools/CMakeLists.txt
+ros/stacks/common/nodelet_topic_tools/Makefile
+ros/stacks/common/nodelet_topic_tools/ROS_NOBUILD
+ros/stacks/common/nodelet_topic_tools/include/nodelet_topic_tools/nodelet_demux.h
+ros/stacks/common/nodelet_topic_tools/include/nodelet_topic_tools/nodelet_mux.h
+ros/stacks/common/nodelet_topic_tools/mainpage.dox
+ros/stacks/common/nodelet_topic_tools/manifest.xml
+ros/stacks/common/nodelet_tutorial_math/CMakeLists.txt
+ros/stacks/common/nodelet_tutorial_math/Makefile
+ros/stacks/common/nodelet_tutorial_math/ROS_NOBUILD
+ros/stacks/common/nodelet_tutorial_math/mainpage.dox
+ros/stacks/common/nodelet_tutorial_math/manifest.xml
+ros/stacks/common/nodelet_tutorial_math/nodelet_math.xml
+ros/stacks/common/nodelet_tutorial_math/plus.launch
+ros/stacks/common/nodelet_tutorial_math/plus_default.yaml
+ros/stacks/common/nodelet_tutorial_math/src/plus.cpp
+ros/stacks/common/pluginlib/CMakeLists.txt
+ros/stacks/common/pluginlib/Makefile
+ros/stacks/common/pluginlib/ROS_NOBUILD
+ros/stacks/common/pluginlib/include/Poco/ASCIIEncoding.h
+ros/stacks/common/pluginlib/include/Poco/AtomicCounter.h
+ros/stacks/common/pluginlib/include/Poco/Buffer.h
+ros/stacks/common/pluginlib/include/Poco/Bugcheck.h
+ros/stacks/common/pluginlib/include/Poco/ByteOrder.h
+ros/stacks/common/pluginlib/include/Poco/ClassLibrary.h
+ros/stacks/common/pluginlib/include/Poco/ClassLoader.h
+ros/stacks/common/pluginlib/include/Poco/Config.h
+ros/stacks/common/pluginlib/include/Poco/Debugger.h
+ros/stacks/common/pluginlib/include/Poco/DirectoryIterator.h
+ros/stacks/common/pluginlib/include/Poco/DirectoryIterator_UNIX.h
+ros/stacks/common/pluginlib/include/Poco/DirectoryIterator_VMS.h
+ros/stacks/common/pluginlib/include/Poco/DirectoryIterator_WIN32.h
+ros/stacks/common/pluginlib/include/Poco/DirectoryIterator_WIN32U.h
+ros/stacks/common/pluginlib/include/Poco/Environment.h
+ros/stacks/common/pluginlib/include/Poco/Environment_UNIX.h
+ros/stacks/common/pluginlib/include/Poco/Environment_VMS.h
+ros/stacks/common/pluginlib/include/Poco/Environment_WIN32.h
+ros/stacks/common/pluginlib/include/Poco/Environment_WIN32U.h
+ros/stacks/common/pluginlib/include/Poco/Exception.h
+ros/stacks/common/pluginlib/include/Poco/File.h
+ros/stacks/common/pluginlib/include/Poco/File_UNIX.h
+ros/stacks/common/pluginlib/include/Poco/File_VMS.h
+ros/stacks/common/pluginlib/include/Poco/File_WIN32.h
+ros/stacks/common/pluginlib/include/Poco/File_WIN32U.h
+ros/stacks/common/pluginlib/include/Poco/Foundation.h
+ros/stacks/common/pluginlib/include/Poco/Latin1Encoding.h
+ros/stacks/common/pluginlib/include/Poco/Latin9Encoding.h
+ros/stacks/common/pluginlib/include/Poco/Manifest.h
+ros/stacks/common/pluginlib/include/Poco/MetaObject.h
+ros/stacks/common/pluginlib/include/Poco/Mutex.h
+ros/stacks/common/pluginlib/include/Poco/Mutex_POSIX.h
+ros/stacks/common/pluginlib/include/Poco/Mutex_WIN32.h
+ros/stacks/common/pluginlib/include/Poco/Path.h
+ros/stacks/common/pluginlib/include/Poco/Path_UNIX.h
+ros/stacks/common/pluginlib/include/Poco/Path_VMS.h
+ros/stacks/common/pluginlib/include/Poco/Path_WIN32.h
+ros/stacks/common/pluginlib/include/Poco/Path_WIN32U.h
+ros/stacks/common/pluginlib/include/Poco/Platform.h
+ros/stacks/common/pluginlib/include/Poco/Platform_POSIX.h
+ros/stacks/common/pluginlib/include/Poco/Platform_VMS.h
+ros/stacks/common/pluginlib/include/Poco/Platform_WIN32.h
+ros/stacks/common/pluginlib/include/Poco/RWLock.h
+ros/stacks/common/pluginlib/include/Poco/RWLock_POSIX.h
+ros/stacks/common/pluginlib/include/Poco/ScopedLock.h
+ros/stacks/common/pluginlib/include/Poco/SharedLibrary.h
+ros/stacks/common/pluginlib/include/Poco/SharedLibrary_HPUX.h
+ros/stacks/common/pluginlib/include/Poco/SharedLibrary_UNIX.h
+ros/stacks/common/pluginlib/include/Poco/SharedLibrary_VMS.h
+ros/stacks/common/pluginlib/include/Poco/SharedLibrary_WIN32.h
+ros/stacks/common/pluginlib/include/Poco/SharedLibrary_WIN32U.h
+ros/stacks/common/pluginlib/include/Poco/SharedPtr.h
+ros/stacks/common/pluginlib/include/Poco/SingletonHolder.h
+ros/stacks/common/pluginlib/include/Poco/String.h
+ros/stacks/common/pluginlib/include/Poco/StringTokenizer.h
+ros/stacks/common/pluginlib/include/Poco/SyslogChannel.h
+ros/stacks/common/pluginlib/include/Poco/TextConverter.h
+ros/stacks/common/pluginlib/include/Poco/TextEncoding.h
+ros/stacks/common/pluginlib/include/Poco/TextIterator.h
+ros/stacks/common/pluginlib/include/Poco/Timestamp.h
+ros/stacks/common/pluginlib/include/Poco/Types.h
+ros/stacks/common/pluginlib/include/Poco/UTF16Encoding.h
+ros/stacks/common/pluginlib/include/Poco/UTF8Encoding.h
+ros/stacks/common/pluginlib/include/Poco/UnWindows.h
+ros/stacks/common/pluginlib/include/Poco/UnicodeConverter.h
+ros/stacks/common/pluginlib/include/Poco/Windows1252Encoding.h
+ros/stacks/common/pluginlib/include/pluginlib/boost_fs_wrapper.h
+ros/stacks/common/pluginlib/include/pluginlib/class_desc.h
+ros/stacks/common/pluginlib/include/pluginlib/class_list_macros.h
+ros/stacks/common/pluginlib/include/pluginlib/class_loader.h
+ros/stacks/common/pluginlib/include/pluginlib/class_loader_imp.h
+ros/stacks/common/pluginlib/mainpage.dox
+ros/stacks/common/pluginlib/manifest.xml
+ros/stacks/common/pluginlib/src/ASCIIEncoding.cpp
+ros/stacks/common/pluginlib/src/AtomicCounter.cpp
+ros/stacks/common/pluginlib/src/Bugcheck.cpp
+ros/stacks/common/pluginlib/src/Debugger.cpp
+ros/stacks/common/pluginlib/src/DirectoryIterator.cpp
+ros/stacks/common/pluginlib/src/DirectoryIterator_UNIX.cpp
+ros/stacks/common/pluginlib/src/DirectoryIterator_VMS.cpp
+ros/stacks/common/pluginlib/src/DirectoryIterator_WIN32.cpp
+ros/stacks/common/pluginlib/src/DirectoryIterator_WIN32U.cpp
+ros/stacks/common/pluginlib/src/Environment.cpp
+ros/stacks/common/pluginlib/src/Environment_UNIX.cpp
+ros/stacks/common/pluginlib/src/Environment_VMS.cpp
+ros/stacks/common/pluginlib/src/Environment_WIN32.cpp
+ros/stacks/common/pluginlib/src/Environment_WIN32U.cpp
+ros/stacks/common/pluginlib/src/Exception.cpp
+ros/stacks/common/pluginlib/src/File.cpp
+ros/stacks/common/pluginlib/src/File_UNIX.cpp
+ros/stacks/common/pluginlib/src/File_VMS.cpp
+ros/stacks/common/pluginlib/src/File_WIN32.cpp
+ros/stacks/common/pluginlib/src/File_WIN32U.cpp
+ros/stacks/common/pluginlib/src/Latin1Encoding.cpp
+ros/stacks/common/pluginlib/src/Latin9Encoding.cpp
+ros/stacks/common/pluginlib/src/Manifest.cpp
+ros/stacks/common/pluginlib/src/Mutex.cpp
+ros/stacks/common/pluginlib/src/Mutex_POSIX.cpp
+ros/stacks/common/pluginlib/src/Mutex_WIN32.cpp
+ros/stacks/common/pluginlib/src/Path.cpp
+ros/stacks/common/pluginlib/src/Path_UNIX.cpp
+ros/stacks/common/pluginlib/src/Path_VMS.cpp
+ros/stacks/common/pluginlib/src/Path_WIN32.cpp
+ros/stacks/common/pluginlib/src/Path_WIN32U.cpp
+ros/stacks/common/pluginlib/src/RWLock.cpp
+ros/stacks/common/pluginlib/src/RWLock_POSIX.cpp
+ros/stacks/common/pluginlib/src/RWLock_WIN32.cpp
+ros/stacks/common/pluginlib/src/SharedLibrary.cpp
+ros/stacks/common/pluginlib/src/SharedLibrary_HPUX.cpp
+ros/stacks/common/pluginlib/src/SharedLibrary_UNIX.cpp
+ros/stacks/common/pluginlib/src/SharedLibrary_VMS.cpp
+ros/stacks/common/pluginlib/src/SharedLibrary_WIN32.cpp
+ros/stacks/common/pluginlib/src/SharedLibrary_WIN32U.cpp
+ros/stacks/common/pluginlib/src/StringTokenizer.cpp
+ros/stacks/common/pluginlib/src/TextConverter.cpp
+ros/stacks/common/pluginlib/src/TextEncoding.cpp
+ros/stacks/common/pluginlib/src/TextIterator.cpp
+ros/stacks/common/pluginlib/src/Timestamp.cpp
+ros/stacks/common/pluginlib/src/UTF16Encoding.cpp
+ros/stacks/common/pluginlib/src/UTF8Encoding.cpp
+ros/stacks/common/pluginlib/src/UnicodeConverter.cpp
+ros/stacks/common/pluginlib/src/Windows1252Encoding.cpp
+ros/stacks/common/pluginlib/src/boost_fs_wrapper.cpp
+ros/stacks/common/rosdep.yaml
+ros/stacks/common/stack.xml
+ros/stacks/common/test_nodelet/CMakeLists.txt
+ros/stacks/common/test_nodelet/Makefile
+ros/stacks/common/test_nodelet/ROS_NOBUILD
+ros/stacks/common/test_nodelet/mainpage.dox
+ros/stacks/common/test_nodelet/manifest.xml
+ros/stacks/common/test_nodelet/plus_default.yaml
+ros/stacks/common/test_nodelet/src/plus.cpp
+ros/stacks/common/test_nodelet/src/test_callback_queue_manager.cpp
+ros/stacks/common/test_nodelet/test/plus_local.py
+ros/stacks/common/test_nodelet/test/test_loader.py
+ros/stacks/common/test_nodelet/test_loader.launch
+ros/stacks/common/test_nodelet/test_local.launch
+ros/stacks/common/test_nodelet/test_nodelet.xml
+ros/stacks/common/tinyxml/CMakeLists.txt
+ros/stacks/common/tinyxml/Makefile
+ros/stacks/common/tinyxml/ROS_NOBUILD
+ros/stacks/common/tinyxml/include/tinyxml/tinystr.h
+ros/stacks/common/tinyxml/include/tinyxml/tinyxml.h
+ros/stacks/common/tinyxml/manifest.xml
+ros/stacks/common/tinyxml/readme.txt
+ros/stacks/common/tinyxml/tinystr.cpp
+ros/stacks/common/tinyxml/tinyxml.cpp
+ros/stacks/common/tinyxml/tinyxmlerror.cpp
+ros/stacks/common/tinyxml/tinyxmlparser.cpp
+ros/stacks/common/xacro/CMakeLists.txt
+ros/stacks/common/xacro/Makefile
+ros/stacks/common/xacro/ROS_NOBUILD
+ros/stacks/common/xacro/cmake/xacro.cmake
+ros/stacks/common/xacro/mainpage.dox
+ros/stacks/common/xacro/manifest.xml
+ros/stacks/common/xacro/src/xacro.py
+ros/stacks/common/xacro/test/test_xacro.py
+ros/stacks/common/xacro/xacro.py
+ros/stacks/common/yaml_cpp/Makefile
+ros/stacks/common/yaml_cpp/ROS_NOBUILD
+ros/stacks/common/yaml_cpp/manifest.xml
+ros/stacks/common/yaml_cpp/yaml-cpp/include/yaml-cpp/conversion.h
+ros/stacks/common/yaml_cpp/yaml-cpp/include/yaml-cpp/crt.h
+ros/stacks/common/yaml_cpp/yaml-cpp/include/yaml-cpp/emitter.h
+ros/stacks/common/yaml_cpp/yaml-cpp/include/yaml-cpp/emittermanip.h
+ros/stacks/common/yaml_cpp/yaml-cpp/include/yaml-cpp/exceptions.h
+ros/stacks/common/yaml_cpp/yaml-cpp/include/yaml-cpp/iterator.h
+ros/stacks/common/yaml_cpp/yaml-cpp/include/yaml-cpp/mark.h
+ros/stacks/common/yaml_cpp/yaml-cpp/include/yaml-cpp/node.h
+ros/stacks/common/yaml_cpp/yaml-cpp/include/yaml-cpp/nodeimpl.h
+ros/stacks/common/yaml_cpp/yaml-cpp/include/yaml-cpp/nodereadimpl.h
+ros/stacks/common/yaml_cpp/yaml-cpp/include/yaml-cpp/nodeutil.h
+ros/stacks/common/yaml_cpp/yaml-cpp/include/yaml-cpp/noncopyable.h
+ros/stacks/common/yaml_cpp/yaml-cpp/include/yaml-cpp/null.h
+ros/stacks/common/yaml_cpp/yaml-cpp/include/yaml-cpp/ostream.h
+ros/stacks/common/yaml_cpp/yaml-cpp/include/yaml-cpp/parser.h
+ros/stacks/common/yaml_cpp/yaml-cpp/include/yaml-cpp/parserstate.h
+ros/stacks/common/yaml_cpp/yaml-cpp/include/yaml-cpp/stlemitter.h
+ros/stacks/common/yaml_cpp/yaml-cpp/include/yaml-cpp/yaml.h
+@exec mkdir -p %D/ros/stacks/common/yaml_cpp/yaml-cpp/lib/pkgconfig
+@dirrm ros/stacks/common/yaml_cpp/yaml-cpp/lib/pkgconfig
+@dirrm ros/stacks/common/yaml_cpp/yaml-cpp/lib
+@dirrm ros/stacks/common/yaml_cpp/yaml-cpp/include/yaml-cpp
+@dirrm ros/stacks/common/yaml_cpp/yaml-cpp/include
+@dirrm ros/stacks/common/yaml_cpp/yaml-cpp
+@dirrm ros/stacks/common/yaml_cpp
+@dirrm ros/stacks/common/xacro/test
+@dirrm ros/stacks/common/xacro/src
+@dirrm ros/stacks/common/xacro/cmake
+@exec mkdir -p %D/ros/stacks/common/xacro/bin
+@dirrm ros/stacks/common/xacro/bin
+@dirrm ros/stacks/common/xacro
+@dirrm ros/stacks/common/tinyxml/include/tinyxml
+@dirrm ros/stacks/common/tinyxml/include
+@exec mkdir -p %D/ros/stacks/common/tinyxml/bin
+@dirrm ros/stacks/common/tinyxml/bin
+@dirrm ros/stacks/common/tinyxml
+@dirrm ros/stacks/common/test_nodelet/test
+@dirrm ros/stacks/common/test_nodelet/src
+@exec mkdir -p %D/ros/stacks/common/test_nodelet/lib
+@dirrm ros/stacks/common/test_nodelet/lib
+@exec mkdir -p %D/ros/stacks/common/test_nodelet/bin
+@dirrm ros/stacks/common/test_nodelet/bin
+@dirrm ros/stacks/common/test_nodelet
+@dirrm ros/stacks/common/pluginlib/src
+@exec mkdir -p %D/ros/stacks/common/pluginlib/lib
+@dirrm ros/stacks/common/pluginlib/lib
+@dirrm ros/stacks/common/pluginlib/include/pluginlib
+@dirrm ros/stacks/common/pluginlib/include/Poco
+@dirrm ros/stacks/common/pluginlib/include
+@exec mkdir -p %D/ros/stacks/common/pluginlib/bin
+@dirrm ros/stacks/common/pluginlib/bin
+@dirrm ros/stacks/common/pluginlib
+@dirrm ros/stacks/common/nodelet_tutorial_math/src
+@exec mkdir -p %D/ros/stacks/common/nodelet_tutorial_math/lib
+@dirrm ros/stacks/common/nodelet_tutorial_math/lib
+@exec mkdir -p %D/ros/stacks/common/nodelet_tutorial_math/include/nodelet_tutorial_math
+@dirrm ros/stacks/common/nodelet_tutorial_math/include/nodelet_tutorial_math
+@dirrm ros/stacks/common/nodelet_tutorial_math/include
+@exec mkdir -p %D/ros/stacks/common/nodelet_tutorial_math/bin
+@dirrm ros/stacks/common/nodelet_tutorial_math/bin
+@dirrm ros/stacks/common/nodelet_tutorial_math
+@dirrm ros/stacks/common/nodelet_topic_tools/include/nodelet_topic_tools
+@dirrm ros/stacks/common/nodelet_topic_tools/include
+@exec mkdir -p %D/ros/stacks/common/nodelet_topic_tools/bin
+@dirrm ros/stacks/common/nodelet_topic_tools/bin
+@dirrm ros/stacks/common/nodelet_topic_tools
+@dirrm ros/stacks/common/nodelet/srv_gen/cpp/include/nodelet
+@dirrm ros/stacks/common/nodelet/srv_gen/cpp/include
+@dirrm ros/stacks/common/nodelet/srv_gen/cpp
+@dirrm ros/stacks/common/nodelet/srv_gen
+@dirrm ros/stacks/common/nodelet/srv/lisp/nodelet
+@dirrm ros/stacks/common/nodelet/srv/lisp
+@dirrm ros/stacks/common/nodelet/srv
+@dirrm ros/stacks/common/nodelet/src/nodelet/srv
+@dirrm ros/stacks/common/nodelet/src/nodelet
+@dirrm ros/stacks/common/nodelet/src
+@dirrm ros/stacks/common/nodelet/scripts
+@exec mkdir -p %D/ros/stacks/common/nodelet/lib
+@dirrm ros/stacks/common/nodelet/lib
+@dirrm ros/stacks/common/nodelet/include/nodelet/detail
+@dirrm ros/stacks/common/nodelet/include/nodelet
+@dirrm ros/stacks/common/nodelet/include
+@dirrm ros/stacks/common/nodelet/bin
+@dirrm ros/stacks/common/nodelet
+@dirrm ros/stacks/common/filters/test
+@dirrm ros/stacks/common/filters/src
+@exec mkdir -p %D/ros/stacks/common/filters/lib
+@dirrm ros/stacks/common/filters/lib
+@dirrm ros/stacks/common/filters/include/filters
+@dirrm ros/stacks/common/filters/include
+@exec mkdir -p %D/ros/stacks/common/filters/bin
+@dirrm ros/stacks/common/filters/bin
+@dirrm ros/stacks/common/filters
+@exec mkdir -p %D/ros/stacks/common/bfl/bfl-boost/lib/pkgconfig
+@dirrm ros/stacks/common/bfl/bfl-boost/lib/pkgconfig
+@dirrm ros/stacks/common/bfl/bfl-boost/lib
+@dirrm ros/stacks/common/bfl/bfl-boost/include/bfl/wrappers/rng
+@dirrm ros/stacks/common/bfl/bfl-boost/include/bfl/wrappers/matrix
+@dirrm ros/stacks/common/bfl/bfl-boost/include/bfl/wrappers
+@dirrm ros/stacks/common/bfl/bfl-boost/include/bfl/smoother
+@dirrm ros/stacks/common/bfl/bfl-boost/include/bfl/sample
+@dirrm ros/stacks/common/bfl/bfl-boost/include/bfl/pdf
+@dirrm ros/stacks/common/bfl/bfl-boost/include/bfl/model
+@dirrm ros/stacks/common/bfl/bfl-boost/include/bfl/filter
+@dirrm ros/stacks/common/bfl/bfl-boost/include/bfl
+@dirrm ros/stacks/common/bfl/bfl-boost/include
+@dirrm ros/stacks/common/bfl/bfl-boost/bin/bfl
+@dirrm ros/stacks/common/bfl/bfl-boost/bin
+@dirrm ros/stacks/common/bfl/bfl-boost
+@dirrm ros/stacks/common/bfl
+@dirrm ros/stacks/common/actionlib/tools
+@dirrm ros/stacks/common/actionlib/test
+@dirrm ros/stacks/common/actionlib/src/actionlib/msg
+@dirrm ros/stacks/common/actionlib/src/actionlib
+@dirrm ros/stacks/common/actionlib/src
+@dirrm ros/stacks/common/actionlib/msg_gen/cpp/include/actionlib
+@dirrm ros/stacks/common/actionlib/msg_gen/cpp/include
+@dirrm ros/stacks/common/actionlib/msg_gen/cpp
+@dirrm ros/stacks/common/actionlib/msg_gen
+@dirrm ros/stacks/common/actionlib/msg/lisp/actionlib
+@dirrm ros/stacks/common/actionlib/msg/lisp
+@dirrm ros/stacks/common/actionlib/msg
+@exec mkdir -p %D/ros/stacks/common/actionlib/lib
+@dirrm ros/stacks/common/actionlib/lib
+@dirrm ros/stacks/common/actionlib/include/actionlib/server
+@dirrm ros/stacks/common/actionlib/include/actionlib/client
+@dirrm ros/stacks/common/actionlib/include/actionlib
+@dirrm ros/stacks/common/actionlib/include
+@dirrm ros/stacks/common/actionlib/docs
+@dirrm ros/stacks/common/actionlib/cmake
+@dirrm ros/stacks/common/actionlib/bin
+@dirrm ros/stacks/common/actionlib/action
+@dirrm ros/stacks/common/actionlib
+@dirrm ros/stacks/common
