@@ -20,6 +20,9 @@ lib/farsight2-0.0/libnice-transmitter.so
 lib/farsight2-0.0/librawudp-transmitter.a
 lib/farsight2-0.0/librawudp-transmitter.la
 lib/farsight2-0.0/librawudp-transmitter.so
+lib/farsight2-0.0/libshm-transmitter.a
+lib/farsight2-0.0/libshm-transmitter.la
+lib/farsight2-0.0/libshm-transmitter.so
 lib/gstreamer-0.10/libfsfunnel.a
 lib/gstreamer-0.10/libfsfunnel.la
 lib/gstreamer-0.10/libfsfunnel.so
