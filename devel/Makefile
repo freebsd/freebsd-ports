@@ -2803,6 +2803,7 @@
     SUBDIR += py-logilab-common
     SUBDIR += py-lxml
     SUBDIR += py-magic
+    SUBDIR += py-mercurialserver
     SUBDIR += py-mez_xml
     SUBDIR += py-mock
     SUBDIR += py-mongoengine
