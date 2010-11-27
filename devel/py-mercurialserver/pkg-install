@@ -1,0 +1,43 @@
+#!/bin/sh
+
+# $FreeBSD: /tmp/pcvs/ports/devel/py-mercurialserver/Attic/pkg-install,v 1.1 2010-11-27 02:07:50 pgollucci Exp $
+
+PATH=/bin:/usr/bin:/usr/sbin
+
+case $2 in
+PRE-INSTALL)
+	HGUSER=${HGUSER:-hg}
+	HGGROUP=${HGGROUP:-hg}
+	HGHOME=${HGHOME:-${PKG_PREFIX}/${HGUSER}}
+	UID=212
+	GID=212
+
+	if pw group show "${HGGROUP}" 2>/dev/null; then
+		echo "You already have a group \"${HGGROUP}\", so I will use it."
+	else
+		if pw groupadd ${HGGROUP} -g ${GID}; then
+			echo "Added group \"${HGGROUP}\"."
+		else
+			echo "Adding group \"${HGGROUP}\" failed..."
+			exit 1
+		fi
+	fi
+
+	if pw user show "${HGUSER}" 2>/dev/null; then
+		echo "You already have a user \"${HGUSER}\", so I will use it."
+	else
+		if pw useradd ${HGUSER} -u ${UID} -g ${HGGROUP} -h - -d ${HGHOME} \
+			-c "mercurial-server user"
+		then
+			echo "Added user \"${HGUSER}\"."
+		else
+			echo "Adding user \"${HGUSER}\" failed..."
+			exit 1
+		fi
+	fi
+
+	if ! [ -x ~${HGUSER} ] ; then
+		install -m 755 -o ${HGUSER} -g ${HGGROUP} -d ${HGHOME}
+	fi
+	;;
+esac
