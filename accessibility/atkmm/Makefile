@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	atkmm
-PORTVERSION=	2.22.0
+PORTVERSION=	2.22.1
 CATEGORIES=	accessibility gnome
 MASTER_SITES=	GNOME
 
