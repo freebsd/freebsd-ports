@@ -101,6 +101,7 @@
     SUBDIR += dovecot-managesieve
     SUBDIR += dovecot-sieve
     SUBDIR += dovecot2
+    SUBDIR += dovecot2-pigeonhole
     SUBDIR += drac
     SUBDIR += drbl
     SUBDIR += dsbl-testers
