@@ -2599,6 +2599,8 @@ dovecot                         ports/mail/dovecot
 dovecot-antispam                ports/mail/dovecot-antispam
 dovecot-managesieve             ports/mail/dovecot-managesieve
 dovecot-sieve                   ports/mail/dovecot-sieve
+dovecot2                        ports/mail/dovecot2
+dovecot2-pigeonhole             ports/mail/dovecot2-pigeonhole
 downtime                        ports/sysutils/downtime
 doxygen                         ports/devel/doxygen
 doxymacs                        ports/editors/doxymacs
@@ -9577,6 +9579,7 @@ mod_tidy                        ports/www/mod_tidy
 mod_traf_thief                  ports/www/mod_traf_thief
 mod_transform                   ports/www/mod_transform
 mod_trigger                     ports/www/mod_trigger
+mod_tsa                         ports/www/mod_tsa
 mod_tsunami                     ports/www/mod_tsunami
 mod_uid                         ports/www/mod_uid
 mod_vdbh                        ports/www/mod_vdbh
@@ -10969,6 +10972,7 @@ p5-App-Cache                    ports/devel/p5-App-Cache
 p5-App-Cmd                      ports/devel/p5-App-Cmd
 p5-App-Control                  ports/devel/p5-App-Control
 p5-App-GitGot                   ports/devel/p5-App-GitGot
+p5-App-GitHub                   ports/devel/p5-App-GitHub
 p5-App-Info                     ports/devel/p5-App-Info
 p5-App-Nopaste                  ports/www/p5-App-Nopaste
 p5-App-Options                  ports/devel/p5-App-Options
@@ -13243,6 +13247,7 @@ p5-Net-DLookup                  ports/net/p5-Net-DLookup
 p5-Net-DNS                      ports/dns/p5-Net-DNS
 p5-Net-DNS-Async                ports/dns/p5-Net-DNS-Async
 p5-Net-DNS-Codes                ports/dns/p5-Net-DNS-Codes
+p5-Net-DNS-Lite                 ports/dns/p5-Net-DNS-Lite
 p5-Net-DNS-RR-SRV-Helper        ports/dns/p5-Net-DNS-RR-SRV-Helper
 p5-Net-DNS-Resolver-Programmable  ports/dns/p5-Net-DNS-Resolver-Programmable
 p5-Net-DNS-SEC                  ports/dns/p5-Net-DNS-SEC
@@ -14956,6 +14961,7 @@ p5-app-cmd                      ports/devel/p5-App-Cmd
 p5-app-control                  ports/devel/p5-App-Control
 p5-app-cpanminus                ports/devel/p5-App-cpanminus
 p5-app-gitgot                   ports/devel/p5-App-GitGot
+p5-app-github                   ports/devel/p5-App-GitHub
 p5-app-info                     ports/devel/p5-App-Info
 p5-app-nopaste                  ports/www/p5-App-Nopaste
 p5-app-options                  ports/devel/p5-App-Options
@@ -17281,6 +17287,7 @@ p5-net-dlookup                  ports/net/p5-Net-DLookup
 p5-net-dns                      ports/dns/p5-Net-DNS
 p5-net-dns-async                ports/dns/p5-Net-DNS-Async
 p5-net-dns-codes                ports/dns/p5-Net-DNS-Codes
+p5-net-dns-lite                 ports/dns/p5-Net-DNS-Lite
 p5-net-dns-resolver-programmable  ports/dns/p5-Net-DNS-Resolver-Programmable
 p5-net-dns-rr-srv-helper        ports/dns/p5-Net-DNS-RR-SRV-Helper
 p5-net-dns-sec                  ports/dns/p5-Net-DNS-SEC
@@ -21048,6 +21055,10 @@ py-feedparser                   ports/textproc/py-feedparser
 py-filelike                     ports/sysutils/py-filelike
 py-fileutils                    ports/devel/py-fileutils
 py-flakes                       ports/devel/py-flakes
+py-flask                        ports/www/py-flask
+py-flask-babel                  ports/devel/py-flask-babel
+py-flask-sqlalchemy             ports/databases/py-flask-sqlalchemy
+py-flask-uploads                ports/www/py-flask-uploads
 py-flexget                      ports/www/py-flexget
 py-flowtools                    ports/net-mgmt/py-flowtools
 py-fltk                         ports/x11-toolkits/py-fltk
@@ -21211,6 +21222,7 @@ py-medusa                       ports/net/py-medusa
 py-meld                         ports/www/py-meld
 py-meld3                        ports/www/py-meld3
 py-memcached                    ports/databases/py-memcached
+py-mercurialserver              ports/devel/py-mercurialserver
 py-metar                        ports/astro/py-metar
 py-mez_xml                      ports/devel/py-mez_xml
 py-mhash                        ports/security/py-mhash
@@ -22340,6 +22352,7 @@ root                            ports/devel/root
 root-doc                        ports/devel/root-doc
 roottail                        ports/sysutils/roottail
 ros                             ports/devel/ros
+ros-common                      ports/devel/ros-common
 ros_tutorials                   ports/devel/ros_tutorials
 rosegarden                      ports/audio/rosegarden
 rospell                         ports/editors/rospell
@@ -22638,17 +22651,19 @@ ruby-gnomeprintui               ports/x11-toolkits/ruby-gnomeprintui
 ruby-gnomevfs                   ports/devel/ruby-gnomevfs
 ruby-gnuplot                    ports/math/ruby-gnuplot
 ruby-gnustep                    ports/devel/ruby-gnustep
+ruby-goocanvas                  ports/x11-toolkits/ruby-goocanvas
 ruby-google                     ports/www/ruby-google
 ruby-gpgme                      ports/security/ruby-gpgme
 ruby-gphys                      ports/science/ruby-gphys
 ruby-graph                      ports/graphics/ruby-graph
 ruby-gsl                        ports/math/ruby-gsl
+ruby-gstreamer                  ports/x11-toolkits/ruby-gstreamer
 ruby-gtk                        ports/x11-toolkits/ruby-gtk
 ruby-gtk2                       ports/x11-toolkits/ruby-gtk2
 ruby-gtkglext                   ports/x11-toolkits/ruby-gtkglext
 ruby-gtkhtml2                   ports/www/ruby-gtkhtml2
 ruby-gtkmozembed                ports/www/ruby-gtkmozembed
-ruby-gtksourceview              ports/x11-toolkits/ruby-gtksourceview
+ruby-gtksourceview2             ports/x11-toolkits/ruby-gtksourceview2
 ruby-gtktrayicon                ports/x11/ruby-gtktrayicon
 ruby-hmac                       ports/security/ruby-hmac
 ruby-html-fillinform            ports/textproc/ruby-html-fillinform
@@ -22724,6 +22739,7 @@ ruby-perl                       ports/lang/ruby-perl
 ruby-pg                         ports/databases/ruby-pg
 ruby-pgplot                     ports/graphics/ruby-pgplot
 ruby-poll                       ports/devel/ruby-poll
+ruby-poppler                    ports/x11-toolkits/ruby-poppler
 ruby-postgres                   ports/databases/ruby-postgres
 ruby-programmingruby            ports/lang/ruby-programmingruby
 ruby-progressbar                ports/misc/ruby-progressbar
@@ -22794,6 +22810,7 @@ ruby-tzfile                     ports/devel/ruby-tzfile
 ruby-usersguide                 ports/lang/ruby-usersguide
 ruby-vorbisfile                 ports/audio/ruby-vorbisfile
 ruby-vpim                       ports/misc/ruby-vpim
+ruby-vte                        ports/x11-toolkits/ruby-vte
 ruby-wgettsv                    ports/www/ruby-wgettsv
 ruby-wirble                     ports/devel/ruby-wirble
 ruby-wx                         ports/x11-toolkits/ruby-wx
@@ -23013,6 +23030,7 @@ rubygem-ramaze                  ports/www/rubygem-ramaze
 rubygem-rapt                    ports/devel/rubygem-rapt
 rubygem-rascut                  ports/devel/rubygem-rascut
 rubygem-rbase                   ports/databases/rubygem-rbase
+rubygem-rchardet                ports/textproc/rubygem-rchardet
 rubygem-rcov                    ports/devel/rubygem-rcov
 rubygem-rdiscount               ports/textproc/rubygem-rdiscount
 rubygem-redcloth                ports/www/rubygem-redcloth
