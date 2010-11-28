@@ -5,6 +5,13 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20101129:
+  AFFECTS: users of sysutils/radmind
+  AUTHOR: ohauer@FreeBSD.org
+
+  The radmind user and group is created automatically during installation.
+  The owner of $RADMIND_BASE_DIR changes from root to radmind.
+
 20101128:
   AFFECTS: users of net/asterisk, net/asterisk-addons
   AUTHOR: Florian Smeets <flo@smeets.im>
