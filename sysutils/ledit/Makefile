@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	ledit
-PORTVERSION=	2.01
+PORTVERSION=	2.02
 CATEGORIES=	sysutils
 MASTER_SITES=	http://cristal.inria.fr/~ddr/ledit/distrib/src/ \
 		http://pauillac.inria.fr/~ddr/ledit/distrib/src/
@@ -24,6 +24,7 @@ USE_OCAML=	yes
 ALL_TARGET=	all ledit.opt
 
 PLIST_FILES=	bin/ledit
+MAKE_JOBS_UNSAFE=	yes
 
 MAN1=		ledit.1
 PORTDOCS=	CHANGES LICENSE README
