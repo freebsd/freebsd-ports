@@ -40,6 +40,12 @@
 %%DOCSDIR%%/%%DOCLANG%%/articles/new-users/other.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/new-users/printing-files-from-dos.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/new-users/your-working-environment.html
+%%DOCSDIR%%/%%DOCLANG%%/articles/solid-state/TRADEMARKS.html
+%%DOCSDIR%%/%%DOCLANG%%/articles/solid-state/index.html
+%%DOCSDIR%%/%%DOCLANG%%/articles/solid-state/kernel.html
+%%DOCSDIR%%/%%DOCLANG%%/articles/solid-state/ro-fs.html
+%%DOCSDIR%%/%%DOCLANG%%/articles/solid-state/strategies.html
+%%DOCSDIR%%/%%DOCLANG%%/articles/solid-state/x95.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/version-guide/TRADEMARKS.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/version-guide/conclusion.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/version-guide/decision-points.html
@@ -66,11 +72,9 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/developers-handbook/kerneldebug-ddd.html
 %%DOCSDIR%%/%%DOCLANG%%/books/developers-handbook/kerneldebug-deadlocks.html
 %%DOCSDIR%%/%%DOCLANG%%/books/developers-handbook/kerneldebug-gdb.html
-%%DOCSDIR%%/%%DOCLANG%%/books/developers-handbook/kerneldebug-kld.html
 %%DOCSDIR%%/%%DOCLANG%%/books/developers-handbook/kerneldebug-online-ddb.html
 %%DOCSDIR%%/%%DOCLANG%%/books/developers-handbook/kerneldebug-online-gdb.html
 %%DOCSDIR%%/%%DOCLANG%%/books/developers-handbook/kerneldebug-options.html
-%%DOCSDIR%%/%%DOCLANG%%/books/developers-handbook/kerneldebug-post-mortem.html
 %%DOCSDIR%%/%%DOCLANG%%/books/developers-handbook/kerneldebug.html
 %%DOCSDIR%%/%%DOCLANG%%/books/developers-handbook/l10n.html
 %%DOCSDIR%%/%%DOCLANG%%/books/developers-handbook/policies-contributed.html
@@ -501,7 +505,6 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/dads-rerolling-distfiles.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/dads-sh-exec.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/dads-sysctl.html
-%%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/dads-workarounds.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/distfile-survey.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/freebsd-versions.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/index.html

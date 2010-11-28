@@ -1066,7 +1066,6 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/dads-rerolling-distfiles.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/dads-sh-exec.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/dads-sysctl.html
-%%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/dads-workarounds.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/distfile-survey.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/freebsd-versions.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/index.html
