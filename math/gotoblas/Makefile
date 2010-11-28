@@ -8,11 +8,12 @@
 PORTNAME=	gotoblas
 PORTVERSION=	2.${GOTOBLAS2VER}
 CATEGORIES=	math
-MASTER_SITES=	ftp://ftp.netlib.org/lapack/:lapack \
+MASTER_SITES=	${MASTER_SITE_LOCAL:S|%SUBDIR%|maho/gotoblas|} \
+		ftp://ftp.netlib.org/lapack/:lapack \
 		ftp://ftp.netlib.org/lapack/timing/:lapack_tmg \
 		ftp://ftp.netlib.no/netlib/lapack/:lapack \
 		ftp://ftp.netlib.no/netlib/lapack/timing/:lapack_tmg
-DISTFILES=	GotoBLAS2-${GOTOBLAS2VER}.tar.gz lapack-3.1.1.tgz:lapack large.tgz:lapack_tmg timing.tgz:lapack_tmg
+DISTFILES=	GotoBLAS2-${GOTOBLAS2VER}_bsd.tar.gz lapack-3.1.1.tgz:lapack large.tgz:lapack_tmg timing.tgz:lapack_tmg
 EXTRACT_ONLY=   ${GOTOBLAS2_SRCFILE}
 
 MAINTAINER=	maho@FreeBSD.org
@@ -20,14 +21,13 @@ COMMENT=	A fast implementation of Basic Linear Algebra Subprograms
 
 DIST_SUBDIR=	gotoblas
 GOTOBLAS2VER=	1.13
-GOTOBLAS2_SRCFILE=	GotoBLAS2-${GOTOBLAS2VER}.tar.gz
+GOTOBLAS2_SRCFILE=	GotoBLAS2-${GOTOBLAS2VER}_bsd.tar.gz
 LAPACK_SRCFILE=	lapack-3.1.1.tgz
 LARGE_FILE=	large.tgz
 TIMING_FILE=	timing.tgz
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 RESTRICTED=	Redistribution not permitted
-MANUAL_PACKAGE_BUILD=	Please obtain the source code manyally from http://www.tacc.utexas.edu/tacc-projects/
 WRKSRC=		${WRKDIR}/GotoBLAS2
 
 USE_PERL5_BUILD=	yes
@@ -65,13 +65,6 @@ MAKE_FLAGS+=	F_COMPILER=PGI
 MAKE_FLAGS+=	F_COMPILER=PATHF90
 .elif defined(WITH_XLF)
 MAKE_FLAGS+=	F_COMPILER=IBM
-.endif
-
-.if !defined(PACKAGE_BUILDING) && !exists(${DISTDIR}/${DIST_SUBDIR}/${GOTOBLAS2_SRCFILE})
-do-fetch:
-	@${ECHO_CMD} "You need to fetch ${GOTOBLAS2_SRCFILE} from:"
-	@${ECHO_CMD} "http://www.tacc.utexas.edu/tacc-projects/"
-	@${ECHO_CMD} "and put it in ${DISTDIR}/gotoblas."
 .endif
 
 pre-build::
