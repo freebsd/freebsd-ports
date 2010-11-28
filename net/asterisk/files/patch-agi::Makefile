@@ -1,0 +1,13 @@
+--- ./agi/Makefile.orig	2010-07-23 15:26:41.000000000 +0200
++++ ./agi/Makefile	2010-11-06 14:54:36.000000000 +0100
+@@ -16,7 +16,9 @@
+ 
+ .PHONY: clean all uninstall
+ 
+-AGIS=$(MENUSELECT_AGIS)
++AGIS_BIN=eagi-test eagi-sphinx-test
++AGIS_SCR=agi-test.agi jukebox.agi
++AGIS=$(AGIS_SCR) $(AGIS_BIN)
+ 
+ ifeq ($(OSARCH),SunOS)
+   LIBS+=-lsocket -lnsl

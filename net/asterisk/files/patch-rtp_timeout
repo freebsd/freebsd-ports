@@ -1,0 +1,25 @@
+--- channels/chan_sip.c.orig	2009-04-14 08:58:13.000000000 +0100
++++ channels/chan_sip.c	2009-04-14 09:00:58.000000000 +0100
+@@ -16287,7 +16287,6 @@
+ restartsearch:		
+ 		/* Check for interfaces needing to be killed */
+ 		ast_mutex_lock(&iflock);
+-		t = time(NULL);
+ 		/* don't scan the interface list if it hasn't been a reasonable period
+ 		   of time since the last time we did it (when MWI is being sent, we can
+ 		   get back to this point every millisecond or less)
+@@ -16306,12 +16305,14 @@
+ 			    (sip->owner->_state == AST_STATE_UP) &&
+ 			    !sip->redirip.sin_addr.s_addr &&
+ 			    sip->t38.state != T38_ENABLED) {
++				t = time(NULL);
+ 				if (sip->lastrtptx &&
+ 				    ast_rtp_get_rtpkeepalive(sip->rtp) &&
+ 				    (t > sip->lastrtptx + ast_rtp_get_rtpkeepalive(sip->rtp))) {
+ 					/* Need to send an empty RTP packet */
+ 					sip->lastrtptx = time(NULL);
+ 					ast_rtp_sendcng(sip->rtp, 0);
++					t = time(NULL);
+ 				}
+ 				if (sip->lastrtprx &&
+ 					(ast_rtp_get_rtptimeout(sip->rtp) || ast_rtp_get_rtpholdtimeout(sip->rtp)) &&
