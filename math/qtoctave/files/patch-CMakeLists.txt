@@ -1,10 +1,16 @@
---- ./CMakeLists.txt.orig	2008-09-21 13:00:30.000000000 +0400
-+++ ./CMakeLists.txt	2009-02-18 20:25:44.000000000 +0300
-@@ -10,7 +10,6 @@
+--- ./CMakeLists.txt.orig	2010-01-25 16:19:48.000000000 +0300
++++ ./CMakeLists.txt	2010-11-28 19:09:57.665396912 +0300
+@@ -28,13 +28,6 @@
  
- SET(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${CMAKE_SOURCE_DIR}/cmake-modules/)
+ include(UseQt4)
  
--set(CMAKE_BUILD_TYPE Release)
+-if( NOT ${QT_VERSION_MAJOR} EQUAL 4 OR NOT ${QT_VERSION_MINOR} EQUAL 6   )
+-	MESSAGE (FATAL_ERROR 
+-			"Qt version 4.6 required.\n"
+-			"Qt version installed is: ${QT_VERSION_MAJOR}.${QT_VERSION_MINOR}\n"
+-			"Please install required version.\n"
+-		)
+-endif( NOT ${QT_VERSION_MAJOR} EQUAL 4 OR NOT ${QT_VERSION_MINOR} EQUAL 6   )
  
- #Uncoment to Verbose mode
- #set(CMAKE_VERBOSE_MAKEFILE TRUE)
+ add_subdirectory (qtoctave_pkg/src)
+ add_subdirectory (xmlwidget/qt4)
