@@ -4,17 +4,18 @@ etc/groonga/init.d/redhat/sysconfig/groonga
 etc/groonga/init.d/redhat/groonga
 etc/groonga/groonga.conf
 include/groonga/groonga.h
-lib/groonga/modules/suggest/suggest.so
-lib/groonga/modules/suggest/suggest.la
-lib/groonga/modules/suggest/suggest.a
+include/groonga/groonga/plugin.h
+lib/groonga/plugins/suggest/suggest.so
+lib/groonga/plugins/suggest/suggest.la
+lib/groonga/plugins/suggest/suggest.a
+%%MECAB%%lib/groonga/plugins/tokenizers/mecab.a
+%%MECAB%%lib/groonga/plugins/tokenizers/mecab.la
+%%MECAB%%lib/groonga/plugins/tokenizers/mecab.so
 lib/libgroonga.a
 lib/libgroonga.la
 lib/libgroonga.so
 lib/libgroonga.so.0
 libdata/pkgconfig/groonga.pc
-%%MECAB%%lib/groonga/modules/tokenizers/mecab.a
-%%MECAB%%lib/groonga/modules/tokenizers/mecab.la
-%%MECAB%%lib/groonga/modules/tokenizers/mecab.so
 %%DATADIR%%/admin_html/css/admin.css
 %%DATADIR%%/admin_html/css/ui-lightness/images/ui-bg_diagonals-thick_18_b81900_40x40.png
 %%DATADIR%%/admin_html/css/ui-lightness/images/ui-bg_diagonals-thick_20_666666_40x40.png
@@ -337,10 +338,11 @@ libdata/pkgconfig/groonga.pc
 %%DATADIR%%/munin/plugins/groonga_memory
 %%DATADIR%%/munin/plugins/groonga_n_records
 %%DATADIR%%/munin/plugins/groonga_query_performance
-@dirrm lib/groonga/modules/tokenizers
-@dirrm lib/groonga/modules/suggest
-@dirrm lib/groonga/modules
+@dirrm lib/groonga/plugins/tokenizers
+@dirrm lib/groonga/plugins/suggest
+@dirrm lib/groonga/plugins
 @dirrm lib/groonga
+@dirrm include/groonga/groonga
 @dirrm include/groonga
 @dirrm etc/groonga/init.d/redhat/sysconfig
 @dirrm etc/groonga/init.d/redhat
