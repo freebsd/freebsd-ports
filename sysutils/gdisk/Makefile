@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gdisk
-PORTVERSION=	0.6.11
+PORTVERSION=	0.6.13
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	gptfdisk/gptfdisk/${PORTVERSION}
@@ -23,7 +23,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 FETCH_ARGS=	-Rr
 
-ONLY_FOR_ARCHS=	i386
+ONLY_FOR_ARCHS=	i386 amd64
 
 .include <bsd.port.pre.mk>
 
@@ -34,6 +34,9 @@ IGNORE=		is unsupported on FreeBSD 7.1-RELEASE or earlier
 MAKEFILE=	Makefile.freebsd
 
 MAN8=		gdisk.8 sgdisk.8
+
+post-patch:
+	${REINPLACE_CMD} -e 's|/usr/include/||' ${WRKSRC}/guid.h
 
 do-install:
 .if !defined(NOPORTDOCS)

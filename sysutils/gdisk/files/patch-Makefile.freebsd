@@ -1,0 +1,10 @@
+--- ./Makefile.freebsd.orig	2010-11-21 19:20:03.000000000 +0100
++++ ./Makefile.freebsd	2010-11-21 19:20:31.000000000 +0100
+@@ -1,5 +1,5 @@
+-CC=gcc
+-CXX=g++
++CC?=gcc
++CXX?=g++
+ CFLAGS+=-D_FILE_OFFSET_BITS=64
+ CXXFLAGS+=-Wall -D_FILE_OFFSET_BITS=64 -I/usr/local/include
+ LDFLAGS+=
