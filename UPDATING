@@ -5,6 +5,38 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20101128:
+  AFFECTS: users of net/asterisk, net/asterisk-addons
+  AUTHOR: Florian Smeets <flo@smeets.im>
+
+  If you want to upgrade to 1.8.0 first remove asterisk-addons by running
+
+  # pkg_delete -f asterisk-addons\*
+
+  after that you can run one of the following
+
+  # portmaster asterisk
+  or
+  # portupgrade asterisk
+
+  You need to update your config files as the step from 1.4.x to 1.8.x is 
+  quite big. First you need to look at what changed between 1.4 and 1.6
+
+  http://svnview.digium.com/svn/asterisk/branches/1.8/UPGRADE-1.6.txt
+  
+  After that you also need to take into account what chagne between 
+  1.6 and 1.8
+
+  http://svnview.digium.com/svn/asterisk/branches/1.8/UPGRADE.txt
+
+  If you want to stay with asterisk 1.4.x please run
+
+  # portmaster -o net/asterisk14 net/asterisk
+  # portmaster -o net/asterisk14-addons net/asterisk-addons
+  or
+  # portupgrade -o net/asterisk14 net/asterisk
+  # portupgrade -o net/asterisk14-addons net/asterisk-addons
+
 20101127:
   AFFECTS: users of mail/postfix, mail/postfix2[56]
   AUTHOR: sahil@FreeBSD.org
