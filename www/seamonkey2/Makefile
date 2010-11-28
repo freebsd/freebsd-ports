@@ -7,6 +7,7 @@
 
 PORTNAME=	seamonkey
 DISTVERSION=	2.0.10
+PORTREVISION=	1
 CATEGORIES?=	www ipv6
 MASTER_SITES=	${MASTER_SITE_MOZILLA_EXTENDED}
 MASTER_SITE_SUBDIR=	seamonkey/releases/${DISTVERSION}/source
@@ -37,9 +38,8 @@ MOZ_OPTIONS+=	--with-default-mozilla-five-home=${PREFIX}/lib/${MOZILLA} \
 		--enable-svg \
 		--enable-application=suite	\
 		--enable-svg-renderer=cairo	\
-		--enable-system-cairo		\
 		--enable-canvas
-USE_MOZILLA=	-png -dbm -jpeg -xft
+USE_MOZILLA=	-png -dbm -jpeg -xft -cairo
 MOZ_TOOLKIT=	cairo-gtk2
 MOZILLA_PLIST_DIRS=	bin lib
 MOZ_PKGCONFIG_FILES=
