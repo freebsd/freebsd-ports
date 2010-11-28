@@ -401,6 +401,7 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/freebsd-glossary.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/fs-acl.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/geom-ggate.html
+%%DOCSDIR%%/%%DOCLANG%%/books/handbook/geom-gjournal.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/geom-glabel.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/geom-intro.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/geom-mirror.html
