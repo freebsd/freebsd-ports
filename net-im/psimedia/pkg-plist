@@ -1,0 +1,4 @@
+lib/psi/plugins/libgstprovider.so
+%%DEBUG%%lib/psi/plugins/libgstprovider.so.debug
+@dirrmtry lib/psi/plugins
+@dirrmtry lib/psi
