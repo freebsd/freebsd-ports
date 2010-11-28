@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	qca
-PORTVERSION=	2.0.2
+PORTVERSION=	2.0.3
 CATEGORIES=	devel
 MASTER_SITES=	http://delta.affinix.com/download/qca/2.0/
 DISTNAME=	qca-${PORTVERSION}
