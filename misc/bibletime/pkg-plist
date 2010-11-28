@@ -138,6 +138,50 @@ share/applications/bibletime.desktop
 %%DATADIR%%/docs/handbook/en/ss_searchanal.png
 %%DATADIR%%/docs/handbook/en/ss_searchopts.png
 %%DATADIR%%/docs/handbook/en/ss_shortcuts.png
+%%DATADIR%%/docs/handbook/es/hdbk-config.html
+%%DATADIR%%/docs/handbook/es/hdbk-intro.html
+%%DATADIR%%/docs/handbook/es/hdbk-op-bookshelfmanager.html
+%%DATADIR%%/docs/handbook/es/hdbk-op-output.html
+%%DATADIR%%/docs/handbook/es/hdbk-op-parts.html
+%%DATADIR%%/docs/handbook/es/hdbk-op-search.html
+%%DATADIR%%/docs/handbook/es/hdbk-op.html
+%%DATADIR%%/docs/handbook/es/hdbk-reference-shortcuts.html
+%%DATADIR%%/docs/handbook/es/hdbk-reference-works.html
+%%DATADIR%%/docs/handbook/es/hdbk-reference.html
+%%DATADIR%%/docs/handbook/es/hdbk-start-firstrun.html
+%%DATADIR%%/docs/handbook/es/hdbk-term.html
+%%DATADIR%%/docs/handbook/es/i_back.png
+%%DATADIR%%/docs/handbook/es/i_bible.png
+%%DATADIR%%/docs/handbook/es/i_bible_add.png
+%%DATADIR%%/docs/handbook/es/i_bibletime.png
+%%DATADIR%%/docs/handbook/es/i_book.png
+%%DATADIR%%/docs/handbook/es/i_book_add.png
+%%DATADIR%%/docs/handbook/es/i_cascade.png
+%%DATADIR%%/docs/handbook/es/i_commentary.png
+%%DATADIR%%/docs/handbook/es/i_commentary_add.png
+%%DATADIR%%/docs/handbook/es/i_configure.png
+%%DATADIR%%/docs/handbook/es/i_configuresword.png
+%%DATADIR%%/docs/handbook/es/i_contents2.png
+%%DATADIR%%/docs/handbook/es/i_displayconfig.png
+%%DATADIR%%/docs/handbook/es/i_exit.png
+%%DATADIR%%/docs/handbook/es/i_fileclose.png
+%%DATADIR%%/docs/handbook/es/i_find.png
+%%DATADIR%%/docs/handbook/es/i_forward.png
+%%DATADIR%%/docs/handbook/es/i_lexicon.png
+%%DATADIR%%/docs/handbook/es/i_lexicon_add.png
+%%DATADIR%%/docs/handbook/es/i_sync.png
+%%DATADIR%%/docs/handbook/es/i_tile.png
+%%DATADIR%%/docs/handbook/es/i_tile_horiz.png
+%%DATADIR%%/docs/handbook/es/i_tile_vert.png
+%%DATADIR%%/docs/handbook/es/i_view_index.png
+%%DATADIR%%/docs/handbook/es/i_view_mag.png
+%%DATADIR%%/docs/handbook/es/i_window_fullscreen.png
+%%DATADIR%%/docs/handbook/es/index.html
+%%DATADIR%%/docs/handbook/es/ss_configfonts.png
+%%DATADIR%%/docs/handbook/es/ss_mainterms.png
+%%DATADIR%%/docs/handbook/es/ss_searchanal.png
+%%DATADIR%%/docs/handbook/es/ss_searchopts.png
+%%DATADIR%%/docs/handbook/es/ss_shortcuts.png
 %%DATADIR%%/docs/handbook/fi/hdbk-config.html
 %%DATADIR%%/docs/handbook/fi/hdbk-intro.html
 %%DATADIR%%/docs/handbook/fi/hdbk-op-bookshelfmanager.html
@@ -402,6 +446,26 @@ share/applications/bibletime.desktop
 %%DATADIR%%/docs/handbook/pt_BR/ss_searchanal.png
 %%DATADIR%%/docs/handbook/pt_BR/ss_searchopts.png
 %%DATADIR%%/docs/handbook/pt_BR/ss_shortcuts.png
+%%DATADIR%%/docs/howto/ar/h2-basics-approaches.html
+%%DATADIR%%/docs/howto/ar/h2-basics-expository.html
+%%DATADIR%%/docs/howto/ar/h2-basics-interpretation.html
+%%DATADIR%%/docs/howto/ar/h2-basics-types.html
+%%DATADIR%%/docs/howto/ar/h2-basics-worksheet.html
+%%DATADIR%%/docs/howto/ar/h2-basics.html
+%%DATADIR%%/docs/howto/ar/h2-importance-breathed.html
+%%DATADIR%%/docs/howto/ar/h2-importance-exhortations.html
+%%DATADIR%%/docs/howto/ar/h2-importance-liberates.html
+%%DATADIR%%/docs/howto/ar/h2-importance-once.html
+%%DATADIR%%/docs/howto/ar/h2-importance-supplement.html
+%%DATADIR%%/docs/howto/ar/h2-importance-wars.html
+%%DATADIR%%/docs/howto/ar/h2-importance-works.html
+%%DATADIR%%/docs/howto/ar/h2-importance.html
+%%DATADIR%%/docs/howto/ar/h2-rules-context.html
+%%DATADIR%%/docs/howto/ar/h2-rules-hcontest.html
+%%DATADIR%%/docs/howto/ar/h2-rules-normal.html
+%%DATADIR%%/docs/howto/ar/h2-rules-parables.html
+%%DATADIR%%/docs/howto/ar/h2-rules.html
+%%DATADIR%%/docs/howto/ar/index.html
 %%DATADIR%%/docs/howto/bg/h2-basics-approaches.html
 %%DATADIR%%/docs/howto/bg/h2-basics-expository.html
 %%DATADIR%%/docs/howto/bg/h2-basics-interpretation.html
@@ -734,6 +798,7 @@ share/applications/bibletime.desktop
 %%DATADIR%%/icons/lexicon.svg
 %%DATADIR%%/icons/lexicon_add.svg
 %%DATADIR%%/icons/lexicon_locked.svg
+%%DATADIR%%/icons/light_bulb.svg
 %%DATADIR%%/icons/map.svg
 %%DATADIR%%/icons/pencil.svg
 %%DATADIR%%/icons/plus.svg
@@ -766,6 +831,7 @@ share/applications/bibletime.desktop
 %%DATADIR%%/icons/window_fullscreen.svg
 %%DATADIR%%/javascript/bthtml.js
 %%DATADIR%%/license/license.html
+%%DATADIR%%/locale/bibletime_ui_ar.qm
 %%DATADIR%%/locale/bibletime_ui_cs.qm
 %%DATADIR%%/locale/bibletime_ui_da.qm
 %%DATADIR%%/locale/bibletime_ui_de.qm
@@ -783,6 +849,7 @@ share/applications/bibletime.desktop
 %%DATADIR%%/locale/bibletime_ui_ro.qm
 %%DATADIR%%/locale/bibletime_ui_ru.qm
 %%DATADIR%%/locale/bibletime_ui_sk.qm
+%%DATADIR%%/locale/bibletime_ui_zh_TW.qm
 %%DATADIR%%/pics/startuplogo.png
 %%DATADIR%%/pics/startuplogo_christmas.png
 share/icons/bibletime.svg
@@ -806,6 +873,7 @@ share/icons/bibletime.svg
 @dirrm %%DATADIR%%/docs/howto/da
 @dirrm %%DATADIR%%/docs/howto/cs
 @dirrm %%DATADIR%%/docs/howto/bg
+@dirrm %%DATADIR%%/docs/howto/ar
 @dirrm %%DATADIR%%/docs/howto
 @dirrm %%DATADIR%%/docs/handbook/pt_BR
 @dirrm %%DATADIR%%/docs/handbook/nl
@@ -813,6 +881,7 @@ share/icons/bibletime.svg
 @dirrm %%DATADIR%%/docs/handbook/hu
 @dirrm %%DATADIR%%/docs/handbook/fr
 @dirrm %%DATADIR%%/docs/handbook/fi
+@dirrm %%DATADIR%%/docs/handbook/es
 @dirrm %%DATADIR%%/docs/handbook/en
 @dirrm %%DATADIR%%/docs/handbook/de
 @dirrm %%DATADIR%%/docs/handbook/cs
