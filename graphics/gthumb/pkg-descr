@@ -1,5 +1,4 @@
-This is a port of gThumb for GNOME 2, a fast and small image browser and viewer.
-It creates thumbnailes, caches them and has support for most popular
-image formats.
+gThumb is an image viewer and browser for the GNOME Desktop. It also includes
+an importer tool for transferring photos from cameras.
 
-WWW: http://gthumb.sourceforge.net/
+WWW: http://live.gnome.org/gthumb
