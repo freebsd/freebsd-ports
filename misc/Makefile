@@ -345,7 +345,6 @@
     SUBDIR += libmcal
     SUBDIR += libmetalink
     SUBDIR += libpri
-    SUBDIR += libpri-bristuff
     SUBDIR += libutf
     SUBDIR += lifelines
     SUBDIR += lingoteach
