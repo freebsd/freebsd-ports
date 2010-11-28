@@ -134,6 +134,7 @@
     SUBDIR += pork
     SUBDIR += prosody
     SUBDIR += psi
+    SUBDIR += psimedia
     SUBDIR += pwytter
     SUBDIR += py-jabber
     SUBDIR += py-jabberbot
