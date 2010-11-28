@@ -19,6 +19,7 @@ sbin/radmind
 @exec mkdir -p -m 755 %%RADMIND_BASE_DIR%%/client
 @exec mkdir -p -m 755 %%RADMIND_BASE_DIR%%/preapply
 @exec mkdir -p -m 755 %%RADMIND_BASE_DIR%%/postapply
+@exec chown -R radmind:radmind %%RADMIND_BASE_DIR%%
 @cwd /
 @dirrmtry %%RADMIND_BASE_DIR%%/transcript
 @dirrmtry %%RADMIND_BASE_DIR%%/tmp/transcript

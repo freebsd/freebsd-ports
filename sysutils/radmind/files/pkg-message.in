@@ -1,0 +1,16 @@
+####################
+
+Important Note:
+The radmind daemon now runs as user "%%RADMINUSER%%"
+by default.
+If you have installed an older version of
+the radmind port you may need to chown
+%%RADMIND_BASE_DIR%% appropriately.
+
+
+You may restore the previous behavior by
+setting
+	radmind_user="root"
+in /etc/rc.conf 
+
+####################
