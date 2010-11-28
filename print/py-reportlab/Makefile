@@ -11,8 +11,9 @@ PORTREVISION=	2
 CATEGORIES=	print python
 MASTER_SITES=	http://www.reportlab.org/ftp/ \
 		ftp://ftp.reportlab.org/ \
-		http://people.freebsd.org/~erwin/distfiles/:accel \
+		${MASTER_SITE_LOCAL:S/$/:accel/} \
 		http://www.cs.nctu.edu.tw/~lwhsu/ports/distfiles/:accel
+MASTER_SITE_SUBDIR=	erwin/:accel
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTFILES=	ReportLab_${PORTVERSION:S/./_/g}.tgz \
 		rl_accel-3004.tgz:accel
