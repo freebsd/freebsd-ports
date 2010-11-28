@@ -49,7 +49,7 @@ do-install:
 	${INSTALL_PROGRAM} ${_DISTDIR}/p4d ${PREFIX}/sbin/
 
 post-install:
-	@${CAT} pkg-message
+	@${CAT} ${PKGMESSAGE}
 	${MKDIR} ${DESTDIR}${P4ROOT}
 	${CHOWN} p4admin:p4admin ${DESTDIR}${P4ROOT}
 	${CHMOD} 750 ${DESTDIR}${P4ROOT}
