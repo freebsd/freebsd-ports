@@ -1,0 +1,5 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx/Skinny/Mixin/DBHResolver/.packlist
+%%SITE_PERL%%/DBIx/Skinny/Mixin/DBHResolver.pm
+@dirrmtry %%SITE_PERL%%/DBIx/Skinny/Mixin
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx/Skinny/Mixin/DBHResolver
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx/Skinny/Mixin
