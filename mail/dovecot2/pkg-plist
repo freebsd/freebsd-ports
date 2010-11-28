@@ -1,7 +1,7 @@
 bin/doveadm
 bin/doveconf
 bin/dsync
-etc/dovecot/README
+%%PORTDOCS%%etc/dovecot/README
 include/dovecot/abspath.h
 include/dovecot/access-lookup.h
 include/dovecot/anvil-client.h
