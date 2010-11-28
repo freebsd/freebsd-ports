@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	sphinx
-PORTVERSION=	1.0.4
+PORTVERSION=	1.0.5
 CATEGORIES=	textproc python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -15,6 +15,8 @@ DIST_SUBDIR=	python
 
 MAINTAINER=	lwhsu@FreeBSD.org
 COMMENT=	Python documentation generator
+
+LICENSE=	BSD
 
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}pygments>=0.8:${PORTSDIR}/textproc/py-pygments \
 		${PYTHON_PKGNAMEPREFIX}Jinja2>=2.1:${PORTSDIR}/devel/py-Jinja2 \
