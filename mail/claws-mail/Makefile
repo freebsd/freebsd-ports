@@ -7,12 +7,14 @@
 
 PORTNAME=	claws-mail
 PORTVERSION=	3.7.7
+PORTREVISION=	1
 CATEGORIES=	mail news ipv6
 MASTER_SITES=	SF/sylpheed-claws/Claws%20Mail/${PORTVERSION}
 
 MAINTAINER=	netchild@FreeBSD.org
 COMMENT=	A lightweight and very featureful GTK+ based e-mail and news client
 
+BUILD_DEPENDS=	${LOCALBASE}/bin/docbook2html:${PORTSDIR}/textproc/docbook-utils
 LIB_DEPENDS=	etpan:${PORTSDIR}/mail/libetpan \
 		cairo:${PORTSDIR}/graphics/cairo \
 		expat:${PORTSDIR}/textproc/expat2 \
