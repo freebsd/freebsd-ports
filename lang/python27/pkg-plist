@@ -735,10 +735,12 @@ lib/lib%%PYTHON_VERSION%%.so.1
 %%PYTHON_LIBDIR%%/json/tool.py
 %%PYTHON_LIBDIR%%/keyword.py
 %%PYTHON_LIBDIR%%/lib2to3/Grammar.txt
-%%PYTHON_LIBDIR%%/lib2to3/Grammar2.7.0.final.0.pickle
+%%PYTHON_LIBDIR%%/lib2to3/Grammar2.7.1.final.0.pickle
 %%PYTHON_LIBDIR%%/lib2to3/PatternGrammar.txt
-%%PYTHON_LIBDIR%%/lib2to3/PatternGrammar2.7.0.final.0.pickle
+%%PYTHON_LIBDIR%%/lib2to3/PatternGrammar2.7.1.final.0.pickle
 %%PYTHON_LIBDIR%%/lib2to3/__init__.py
+%%PYTHON_LIBDIR%%/lib2to3/btm_matcher.py
+%%PYTHON_LIBDIR%%/lib2to3/btm_utils.py
 %%PYTHON_LIBDIR%%/lib2to3/fixer_base.py
 %%PYTHON_LIBDIR%%/lib2to3/fixer_util.py
 %%PYTHON_LIBDIR%%/lib2to3/fixes/__init__.py
@@ -833,7 +835,7 @@ lib/lib%%PYTHON_VERSION%%.so.1
 %%PYTHON_LIBDIR%%/lib2to3/tests/test_pytree.py
 %%PYTHON_LIBDIR%%/lib2to3/tests/test_refactor.py
 %%PYTHON_LIBDIR%%/lib2to3/tests/test_util.py
-%%PYTHON_LIBDIR%%/lib-dynload/Python-%%PYVER%%-py%%PYVER%%.egg-info
+%%PYTHON_LIBDIR%%/lib-dynload/Python-2.7.1-py%%PYVER%%.egg-info
 %%PYTHON_LIBDIR%%/lib-dynload/_bisect.so
 %%PYTHON_LIBDIR%%/lib-dynload/_codecs_cn.so
 %%PYTHON_LIBDIR%%/lib-dynload/_codecs_hk.so
@@ -865,7 +867,6 @@ lib/lib%%PYTHON_VERSION%%.so.1
 %%PYTHON_LIBDIR%%/lib-dynload/_ssl.so
 %%PYTHON_LIBDIR%%/lib-dynload/_struct.so
 %%PYTHON_LIBDIR%%/lib-dynload/_testcapi.so
-%%PYTHON_LIBDIR%%/lib-dynload/_weakref.so
 %%PYTHON_LIBDIR%%/lib-dynload/array.so
 %%PYTHON_LIBDIR%%/lib-dynload/audioop.so
 %%PYTHON_LIBDIR%%/lib-dynload/binascii.so
@@ -1078,6 +1079,7 @@ lib/lib%%PYTHON_VERSION%%.so.1
 %%PYTHON_LIBDIR%%/test/cjkencodings_test.py
 %%PYTHON_LIBDIR%%/test/cmath_testcases.txt
 %%PYTHON_LIBDIR%%/test/curses_tests.py
+%%PYTHON_LIBDIR%%/test/data/README
 %%PYTHON_LIBDIR%%/test/decimaltestdata/abs.decTest
 %%PYTHON_LIBDIR%%/test/decimaltestdata/add.decTest
 %%PYTHON_LIBDIR%%/test/decimaltestdata/and.decTest
@@ -1529,7 +1531,6 @@ lib/lib%%PYTHON_VERSION%%.so.1
 %%PYTHON_LIBDIR%%/test/test_pprint.py
 %%PYTHON_LIBDIR%%/test/test_print.py
 %%PYTHON_LIBDIR%%/test/test_profile.py
-%%PYTHON_LIBDIR%%/test/test_profilehooks.py
 %%PYTHON_LIBDIR%%/test/test_property.py
 %%PYTHON_LIBDIR%%/test/test_pstats.py
 %%PYTHON_LIBDIR%%/test/test_pty.py
@@ -1547,6 +1548,7 @@ lib/lib%%PYTHON_VERSION%%.so.1
 %%PYTHON_LIBDIR%%/test/test_resource.py
 %%PYTHON_LIBDIR%%/test/test_rfc822.py
 %%PYTHON_LIBDIR%%/test/test_richcmp.py
+%%PYTHON_LIBDIR%%/test/test_rlcompleter.py
 %%PYTHON_LIBDIR%%/test/test_robotparser.py
 %%PYTHON_LIBDIR%%/test/test_runpy.py
 %%PYTHON_LIBDIR%%/test/test_sax.py
@@ -1591,6 +1593,8 @@ lib/lib%%PYTHON_VERSION%%.so.1
 %%PYTHON_LIBDIR%%/test/test_syntax.py
 %%PYTHON_LIBDIR%%/test/test_sys.py
 %%PYTHON_LIBDIR%%/test/test_sysconfig.py
+%%PYTHON_LIBDIR%%/test/test_sys_setprofile.py
+%%PYTHON_LIBDIR%%/test/test_sys_settrace.py
 %%PYTHON_LIBDIR%%/test/test_tarfile.py
 %%PYTHON_LIBDIR%%/test/test_tcl.py
 %%PYTHON_LIBDIR%%/test/test_telnetlib.py
@@ -1669,6 +1673,8 @@ lib/lib%%PYTHON_VERSION%%.so.1
 %%PYTHON_LIBDIR%%/test/threaded_import_hangers.py
 %%PYTHON_LIBDIR%%/test/time_hashlib.py
 %%PYTHON_LIBDIR%%/test/tokenize_tests.txt
+%%PYTHON_LIBDIR%%/test/tracedmodules/__init__.py
+%%PYTHON_LIBDIR%%/test/tracedmodules/testmod.py
 %%PYTHON_LIBDIR%%/test/warning_tests.py
 %%PYTHON_LIBDIR%%/test/wrongcert.pem
 %%PYTHON_LIBDIR%%/test/xmltests.py
@@ -1790,8 +1796,6 @@ lib/libpython2.7.a
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/embed/demo.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/embed/importexc.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/embed/loop.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/imputil/importers.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/imputil/knee.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/md5test/README
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/md5test/foo
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/md5test/md5driver.py
@@ -2310,7 +2314,6 @@ lib/libpython2.7.a
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/newmetaclasses
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/metaclasses
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/md5test
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/imputil
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/embed
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/curses
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/comparisons
@@ -2327,6 +2330,7 @@ lib/libpython2.7.a
 @dirrm %%PYTHON_LIBDIR%%/unittest
 @dirrm %%PYTHON_LIBDIR%%/test/data
 @dirrm %%PYTHON_LIBDIR%%/test/decimaltestdata
+@dirrm %%PYTHON_LIBDIR%%/test/tracedmodules
 @dirrm %%PYTHON_LIBDIR%%/test/xmltestdata
 @dirrm %%PYTHON_LIBDIR%%/test
 @dirrm %%PYTHON_LIBDIR%%/sqlite3/test
