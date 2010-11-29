@@ -1,0 +1,21 @@
+Violet is a UML editor with these benefits:
+* It is very easy to learn and use
+* It draws nice-looking class, sequence, state, object and use-case diagrams
+* It is completely free (distributed under the GNU General Public License)
+* It is cross-platform
+
+Violet is intended for students, teachers, and authors who need to produce
+simple UML diagrams quickly.  It is not intended as an industrial strength
+tool.  Here are some of the features that industrial-strength UML programs have
+and that Violet does not have:
+* Code generation.  Violet does not generate any source code from UML diagrams.
+* Reverse engineering.  Violet does not generate UML diagrams from source code
+* Semantic checking of models.  You can use Violet to draw contradictory
+  diagrams XMI export or import.  Violet does not generate files that can be
+  imported into other UML tools, nor can it read model files from other tools
+
+If you just want to draw simple UML diagrams without too much fuss, chances
+are you'll like Violet. If you have more serious needs, check out one of the
+other programs.
+
+WWW: http://horstmann.com/violet/
