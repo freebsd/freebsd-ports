@@ -166,6 +166,7 @@ include/libgoffice-%%SHORT_VER%%/goffice/utils/regutf8.h
 lib/goffice/%%VERSION%%/plugins/plot_barcol/barcol.a
 lib/goffice/%%VERSION%%/plugins/plot_barcol/barcol.la
 lib/goffice/%%VERSION%%/plugins/plot_barcol/barcol.so
+lib/goffice/%%VERSION%%/plugins/plot_barcol/gog-area-prefs.ui
 lib/goffice/%%VERSION%%/plugins/plot_barcol/gog-barcol-prefs.ui
 lib/goffice/%%VERSION%%/plugins/plot_barcol/gog-minmax-prefs.ui
 lib/goffice/%%VERSION%%/plugins/plot_barcol/plot-types.xml
@@ -187,6 +188,7 @@ lib/goffice/%%VERSION%%/plugins/plot_pie/pie.so
 lib/goffice/%%VERSION%%/plugins/plot_pie/plot-types.xml
 lib/goffice/%%VERSION%%/plugins/plot_pie/plugin.xml
 lib/goffice/%%VERSION%%/plugins/plot_radar/gog-color-polar-prefs.ui
+lib/goffice/%%VERSION%%/plugins/plot_radar/gog-polar-prefs.ui
 lib/goffice/%%VERSION%%/plugins/plot_radar/plot-types.xml
 lib/goffice/%%VERSION%%/plugins/plot_radar/plugin.xml
 lib/goffice/%%VERSION%%/plugins/plot_radar/radar.a
@@ -201,6 +203,7 @@ lib/goffice/%%VERSION%%/plugins/plot_surface/surface.la
 lib/goffice/%%VERSION%%/plugins/plot_surface/surface.so
 lib/goffice/%%VERSION%%/plugins/plot_xy/gog-bubble-prefs.ui
 lib/goffice/%%VERSION%%/plugins/plot_xy/gog-xy-color-prefs.ui
+lib/goffice/%%VERSION%%/plugins/plot_xy/gog-xy-prefs.ui
 lib/goffice/%%VERSION%%/plugins/plot_xy/gog-xy-series-prefs.ui
 lib/goffice/%%VERSION%%/plugins/plot_xy/plot-types.xml
 lib/goffice/%%VERSION%%/plugins/plot_xy/plugin.xml
@@ -400,6 +403,7 @@ share/locale/ast/LC_MESSAGES/goffice-%%VERSION%%.mo
 share/locale/az/LC_MESSAGES/goffice-%%VERSION%%.mo
 share/locale/bg/LC_MESSAGES/goffice-%%VERSION%%.mo
 share/locale/ca/LC_MESSAGES/goffice-%%VERSION%%.mo
+share/locale/ca@valencia/LC_MESSAGES/goffice-%%VERSION%%.mo
 share/locale/cs/LC_MESSAGES/goffice-%%VERSION%%.mo
 share/locale/da/LC_MESSAGES/goffice-%%VERSION%%.mo
 share/locale/de/LC_MESSAGES/goffice-%%VERSION%%.mo
@@ -598,5 +602,7 @@ share/pixmaps/goffice/%%VERSION%%/surface.xpm
 @dirrmtry share/locale/oc
 @dirrmtry share/locale/mr/LC_MESSAGES
 @dirrmtry share/locale/mr
+@dirrmtry share/locale/ca@valencia/LC_MESSAGES
+@dirrmtry share/locale/ca@valencia
 @dirrmtry share/locale/ast/LC_MESSAGES
 @dirrmtry share/locale/ast
