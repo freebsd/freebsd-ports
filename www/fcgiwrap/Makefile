@@ -7,7 +7,7 @@
 
 PORTNAME=	fcgiwrap
 PORTVERSION=	1.0.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www
 MASTER_SITES=	http://cloud.github.com/downloads/gnosek/fcgiwrap/
 
