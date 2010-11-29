@@ -1200,16 +1200,16 @@
 %%WWWDIR%%/test/helper_testcase.rb
 %%WWWDIR%%/test/integration/account_test.rb
 %%WWWDIR%%/test/integration/admin_test.rb
-%%WWWDIR%%/test/integration/api_token_login_test.rb
+%%WWWDIR%%/test/integration/api_test/disabled_rest_api_test.rb
+%%WWWDIR%%/test/integration/api_test/http_basic_login_test.rb
+%%WWWDIR%%/test/integration/api_test/http_basic_login_with_api_token_test.rb
+%%WWWDIR%%/test/integration/api_test/issues_test.rb
+%%WWWDIR%%/test/integration/api_test/projects_test.rb
+%%WWWDIR%%/test/integration/api_test/token_authentication_test.rb
 %%WWWDIR%%/test/integration/application_test.rb
-%%WWWDIR%%/test/integration/disabled_rest_api_test.rb
-%%WWWDIR%%/test/integration/http_basic_login_test.rb
-%%WWWDIR%%/test/integration/http_basic_login_with_api_token_test.rb
-%%WWWDIR%%/test/integration/issues_api_test.rb
 %%WWWDIR%%/test/integration/issues_test.rb
 %%WWWDIR%%/test/integration/layout_test.rb
 %%WWWDIR%%/test/integration/lib/redmine/menu_manager_test.rb
-%%WWWDIR%%/test/integration/projects_api_test.rb
 %%WWWDIR%%/test/integration/projects_test.rb
 %%WWWDIR%%/test/integration/routing_test.rb
 %%WWWDIR%%/test/mocks/open_id_authentication_mock.rb
@@ -1647,8 +1647,6 @@
 %%WWWDIR%%/vendor/plugins/ruby-net-ldap-0.0.4/tests/testldap.rb
 %%WWWDIR%%/vendor/plugins/ruby-net-ldap-0.0.4/tests/testldif.rb
 %%WWWDIR%%/vendor/plugins/ruby-net-ldap-0.0.4/tests/testpsw.rb
-%%WWWDIR%%/vendor/rails/.gitignore
-%%WWWDIR%%/vendor/rails/REVISION_3cf85fb4fcdae65a4d5a1a5c418492ea0cf9ad6d
 %%WWWDIR%%/vendor/rails/actionmailer/CHANGELOG
 %%WWWDIR%%/vendor/rails/actionmailer/MIT-LICENSE
 %%WWWDIR%%/vendor/rails/actionmailer/README
@@ -2002,7 +2000,6 @@
 %%WWWDIR%%/vendor/rails/actionpack/test/fixtures/layout_tests/layouts/item.rhtml
 %%WWWDIR%%/vendor/rails/actionpack/test/fixtures/layout_tests/layouts/layout_test.rhtml
 %%WWWDIR%%/vendor/rails/actionpack/test/fixtures/layout_tests/layouts/multiple_extensions.html.erb
-%%WWWDIR%%/vendor/rails/actionpack/test/fixtures/layout_tests/layouts/symlinked
 %%WWWDIR%%/vendor/rails/actionpack/test/fixtures/layout_tests/layouts/third_party_template_library.mab
 %%WWWDIR%%/vendor/rails/actionpack/test/fixtures/layout_tests/views/hello.rhtml
 %%WWWDIR%%/vendor/rails/actionpack/test/fixtures/layouts/_column.html.erb
@@ -2186,45 +2183,10 @@
 %%WWWDIR%%/vendor/rails/actionpack/test/testing_sandbox.rb
 %%WWWDIR%%/vendor/rails/actionpack/test/view/safe_buffer_test.rb
 %%WWWDIR%%/vendor/rails/actionpack/test/view/test_case_test.rb
-%%WWWDIR%%/vendor/rails/activemodel/CHANGES
-%%WWWDIR%%/vendor/rails/activemodel/README
-%%WWWDIR%%/vendor/rails/activemodel/Rakefile
-%%WWWDIR%%/vendor/rails/activemodel/lib/active_model.rb
-%%WWWDIR%%/vendor/rails/activemodel/lib/active_model/base.rb
-%%WWWDIR%%/vendor/rails/activemodel/lib/active_model/callbacks.rb
-%%WWWDIR%%/vendor/rails/activemodel/lib/active_model/core.rb
-%%WWWDIR%%/vendor/rails/activemodel/lib/active_model/deprecated_error_methods.rb
-%%WWWDIR%%/vendor/rails/activemodel/lib/active_model/errors.rb
-%%WWWDIR%%/vendor/rails/activemodel/lib/active_model/observing.rb
-%%WWWDIR%%/vendor/rails/activemodel/lib/active_model/state_machine.rb
-%%WWWDIR%%/vendor/rails/activemodel/lib/active_model/state_machine/event.rb
-%%WWWDIR%%/vendor/rails/activemodel/lib/active_model/state_machine/machine.rb
-%%WWWDIR%%/vendor/rails/activemodel/lib/active_model/state_machine/state.rb
-%%WWWDIR%%/vendor/rails/activemodel/lib/active_model/state_machine/state_transition.rb
-%%WWWDIR%%/vendor/rails/activemodel/lib/active_model/validations.rb
-%%WWWDIR%%/vendor/rails/activemodel/lib/active_model/validations/acceptance.rb
-%%WWWDIR%%/vendor/rails/activemodel/lib/active_model/validations/associated.rb
-%%WWWDIR%%/vendor/rails/activemodel/lib/active_model/validations/confirmation.rb
-%%WWWDIR%%/vendor/rails/activemodel/lib/active_model/validations/exclusion.rb
-%%WWWDIR%%/vendor/rails/activemodel/lib/active_model/validations/format.rb
-%%WWWDIR%%/vendor/rails/activemodel/lib/active_model/validations/inclusion.rb
-%%WWWDIR%%/vendor/rails/activemodel/lib/active_model/validations/length.rb
-%%WWWDIR%%/vendor/rails/activemodel/lib/active_model/validations/numericality.rb
-%%WWWDIR%%/vendor/rails/activemodel/lib/active_model/validations/presence.rb
-%%WWWDIR%%/vendor/rails/activemodel/lib/active_model/validations/uniqueness.rb
-%%WWWDIR%%/vendor/rails/activemodel/test/observing_test.rb
-%%WWWDIR%%/vendor/rails/activemodel/test/state_machine/event_test.rb
-%%WWWDIR%%/vendor/rails/activemodel/test/state_machine/machine_test.rb
-%%WWWDIR%%/vendor/rails/activemodel/test/state_machine/state_test.rb
-%%WWWDIR%%/vendor/rails/activemodel/test/state_machine/state_transition_test.rb
-%%WWWDIR%%/vendor/rails/activemodel/test/state_machine_test.rb
-%%WWWDIR%%/vendor/rails/activemodel/test/test_helper.rb
 %%WWWDIR%%/vendor/rails/activerecord/CHANGELOG
-%%WWWDIR%%/vendor/rails/activerecord/MIT-LICENSE
 %%WWWDIR%%/vendor/rails/activerecord/README
 %%WWWDIR%%/vendor/rails/activerecord/RUNNING_UNIT_TESTS
 %%WWWDIR%%/vendor/rails/activerecord/Rakefile
-%%WWWDIR%%/vendor/rails/activerecord/examples/.gitignore
 %%WWWDIR%%/vendor/rails/activerecord/examples/associations.png
 %%WWWDIR%%/vendor/rails/activerecord/examples/performance.rb
 %%WWWDIR%%/vendor/rails/activerecord/install.rb
@@ -2388,7 +2350,6 @@
 %%WWWDIR%%/vendor/rails/activerecord/test/connections/native_sqlite3/connection.rb
 %%WWWDIR%%/vendor/rails/activerecord/test/connections/native_sqlite3/in_memory_connection.rb
 %%WWWDIR%%/vendor/rails/activerecord/test/connections/native_sybase/connection.rb
-%%WWWDIR%%/vendor/rails/activerecord/test/fixtures/.gitignore
 %%WWWDIR%%/vendor/rails/activerecord/test/fixtures/accounts.yml
 %%WWWDIR%%/vendor/rails/activerecord/test/fixtures/all/developers.yml
 %%WWWDIR%%/vendor/rails/activerecord/test/fixtures/all/people.csv
@@ -2414,6 +2375,10 @@
 %%WWWDIR%%/vendor/rails/activerecord/test/fixtures/developers_projects.yml
 %%WWWDIR%%/vendor/rails/activerecord/test/fixtures/edges.yml
 %%WWWDIR%%/vendor/rails/activerecord/test/fixtures/entrants.yml
+%%WWWDIR%%/vendor/rails/activerecord/test/fixtures/fixture_database.sqlite
+%%WWWDIR%%/vendor/rails/activerecord/test/fixtures/fixture_database.sqlite3
+%%WWWDIR%%/vendor/rails/activerecord/test/fixtures/fixture_database_2.sqlite
+%%WWWDIR%%/vendor/rails/activerecord/test/fixtures/fixture_database_2.sqlite3
 %%WWWDIR%%/vendor/rails/activerecord/test/fixtures/fk_test_has_fk.yml
 %%WWWDIR%%/vendor/rails/activerecord/test/fixtures/fk_test_has_pk.yml
 %%WWWDIR%%/vendor/rails/activerecord/test/fixtures/funny_jokes.yml
@@ -2553,7 +2518,6 @@
 %%WWWDIR%%/vendor/rails/activerecord/test/schema/schema2.rb
 %%WWWDIR%%/vendor/rails/activerecord/test/schema/sqlite_specific_schema.rb
 %%WWWDIR%%/vendor/rails/activeresource/CHANGELOG
-%%WWWDIR%%/vendor/rails/activeresource/MIT-LICENSE
 %%WWWDIR%%/vendor/rails/activeresource/README
 %%WWWDIR%%/vendor/rails/activeresource/Rakefile
 %%WWWDIR%%/vendor/rails/activeresource/lib/active_resource.rb
@@ -2576,6 +2540,7 @@
 %%WWWDIR%%/vendor/rails/activeresource/test/base_errors_test.rb
 %%WWWDIR%%/vendor/rails/activeresource/test/base_test.rb
 %%WWWDIR%%/vendor/rails/activeresource/test/connection_test.rb
+%%WWWDIR%%/vendor/rails/activeresource/test/debug.log
 %%WWWDIR%%/vendor/rails/activeresource/test/fixtures/beast.rb
 %%WWWDIR%%/vendor/rails/activeresource/test/fixtures/customer.rb
 %%WWWDIR%%/vendor/rails/activeresource/test/fixtures/person.rb
@@ -2584,11 +2549,7 @@
 %%WWWDIR%%/vendor/rails/activeresource/test/format_test.rb
 %%WWWDIR%%/vendor/rails/activeresource/test/setter_trap.rb
 %%WWWDIR%%/vendor/rails/activesupport/CHANGELOG
-%%WWWDIR%%/vendor/rails/activesupport/MIT-LICENSE
 %%WWWDIR%%/vendor/rails/activesupport/README
-%%WWWDIR%%/vendor/rails/activesupport/Rakefile
-%%WWWDIR%%/vendor/rails/activesupport/bin/generate_tables
-%%WWWDIR%%/vendor/rails/activesupport/install.rb
 %%WWWDIR%%/vendor/rails/activesupport/lib/active_support.rb
 %%WWWDIR%%/vendor/rails/activesupport/lib/active_support/all.rb
 %%WWWDIR%%/vendor/rails/activesupport/lib/active_support/backtrace_cleaner.rb
@@ -2934,117 +2895,6 @@
 %%WWWDIR%%/vendor/rails/activesupport/lib/active_support/xml_mini/nokogiri.rb
 %%WWWDIR%%/vendor/rails/activesupport/lib/active_support/xml_mini/rexml.rb
 %%WWWDIR%%/vendor/rails/activesupport/lib/activesupport.rb
-%%WWWDIR%%/vendor/rails/activesupport/test/abstract_unit.rb
-%%WWWDIR%%/vendor/rails/activesupport/test/autoloading_fixtures/a/b.rb
-%%WWWDIR%%/vendor/rails/activesupport/test/autoloading_fixtures/a/c/d.rb
-%%WWWDIR%%/vendor/rails/activesupport/test/autoloading_fixtures/a/c/e/f.rb
-%%WWWDIR%%/vendor/rails/activesupport/test/autoloading_fixtures/application.rb
-%%WWWDIR%%/vendor/rails/activesupport/test/autoloading_fixtures/class_folder.rb
-%%WWWDIR%%/vendor/rails/activesupport/test/autoloading_fixtures/class_folder/class_folder_subclass.rb
-%%WWWDIR%%/vendor/rails/activesupport/test/autoloading_fixtures/class_folder/inline_class.rb
-%%WWWDIR%%/vendor/rails/activesupport/test/autoloading_fixtures/class_folder/nested_class.rb
-%%WWWDIR%%/vendor/rails/activesupport/test/autoloading_fixtures/conflict.rb
-%%WWWDIR%%/vendor/rails/activesupport/test/autoloading_fixtures/counting_loader.rb
-%%WWWDIR%%/vendor/rails/activesupport/test/autoloading_fixtures/cross_site_dependency.rb
-%%WWWDIR%%/vendor/rails/activesupport/test/autoloading_fixtures/e.rb
-%%WWWDIR%%/vendor/rails/activesupport/test/autoloading_fixtures/module_folder/inline_class.rb
-%%WWWDIR%%/vendor/rails/activesupport/test/autoloading_fixtures/module_folder/nested_class.rb
-%%WWWDIR%%/vendor/rails/activesupport/test/autoloading_fixtures/module_folder/nested_sibling.rb
-%%WWWDIR%%/vendor/rails/activesupport/test/autoloading_fixtures/module_with_custom_const_missing/a/b.rb
-%%WWWDIR%%/vendor/rails/activesupport/test/autoloading_fixtures/multiple_constant_file.rb
-%%WWWDIR%%/vendor/rails/activesupport/test/autoloading_fixtures/raises_name_error.rb
-%%WWWDIR%%/vendor/rails/activesupport/test/autoloading_fixtures/raises_no_method_error.rb
-%%WWWDIR%%/vendor/rails/activesupport/test/buffered_logger_test.rb
-%%WWWDIR%%/vendor/rails/activesupport/test/caching_test.rb
-%%WWWDIR%%/vendor/rails/activesupport/test/callbacks_test.rb
-%%WWWDIR%%/vendor/rails/activesupport/test/clean_backtrace_test.rb
-%%WWWDIR%%/vendor/rails/activesupport/test/clean_logger_test.rb
-%%WWWDIR%%/vendor/rails/activesupport/test/core_ext/array_ext_test.rb
-%%WWWDIR%%/vendor/rails/activesupport/test/core_ext/base64_ext_test.rb
-%%WWWDIR%%/vendor/rails/activesupport/test/core_ext/bigdecimal.rb
-%%WWWDIR%%/vendor/rails/activesupport/test/core_ext/blank_test.rb
-%%WWWDIR%%/vendor/rails/activesupport/test/core_ext/cgi_ext_test.rb
-%%WWWDIR%%/vendor/rails/activesupport/test/core_ext/class/attribute_accessor_test.rb
-%%WWWDIR%%/vendor/rails/activesupport/test/core_ext/class/class_inheritable_attributes_test.rb
-%%WWWDIR%%/vendor/rails/activesupport/test/core_ext/class/delegating_attributes_test.rb
-%%WWWDIR%%/vendor/rails/activesupport/test/core_ext/class_test.rb
-%%WWWDIR%%/vendor/rails/activesupport/test/core_ext/date_ext_test.rb
-%%WWWDIR%%/vendor/rails/activesupport/test/core_ext/date_time_ext_test.rb
-%%WWWDIR%%/vendor/rails/activesupport/test/core_ext/duplicable_test.rb
-%%WWWDIR%%/vendor/rails/activesupport/test/core_ext/duration_test.rb
-%%WWWDIR%%/vendor/rails/activesupport/test/core_ext/enumerable_test.rb
-%%WWWDIR%%/vendor/rails/activesupport/test/core_ext/exception_test.rb
-%%WWWDIR%%/vendor/rails/activesupport/test/core_ext/file_test.rb
-%%WWWDIR%%/vendor/rails/activesupport/test/core_ext/float_ext_test.rb
-%%WWWDIR%%/vendor/rails/activesupport/test/core_ext/hash_ext_test.rb
-%%WWWDIR%%/vendor/rails/activesupport/test/core_ext/integer_ext_test.rb
-%%WWWDIR%%/vendor/rails/activesupport/test/core_ext/kernel_test.rb
-%%WWWDIR%%/vendor/rails/activesupport/test/core_ext/load_error_test.rb
-%%WWWDIR%%/vendor/rails/activesupport/test/core_ext/module/attr_accessor_with_default_test.rb
-%%WWWDIR%%/vendor/rails/activesupport/test/core_ext/module/attr_internal_test.rb
-%%WWWDIR%%/vendor/rails/activesupport/test/core_ext/module/attribute_accessor_test.rb
-%%WWWDIR%%/vendor/rails/activesupport/test/core_ext/module/attribute_aliasing_test.rb
-%%WWWDIR%%/vendor/rails/activesupport/test/core_ext/module/model_naming_test.rb
-%%WWWDIR%%/vendor/rails/activesupport/test/core_ext/module/synchronization_test.rb
-%%WWWDIR%%/vendor/rails/activesupport/test/core_ext/module_test.rb
-%%WWWDIR%%/vendor/rails/activesupport/test/core_ext/name_error_test.rb
-%%WWWDIR%%/vendor/rails/activesupport/test/core_ext/numeric_ext_test.rb
-%%WWWDIR%%/vendor/rails/activesupport/test/core_ext/object_and_class_ext_test.rb
-%%WWWDIR%%/vendor/rails/activesupport/test/core_ext/object_ext_test.rb
-%%WWWDIR%%/vendor/rails/activesupport/test/core_ext/pathname_test.rb
-%%WWWDIR%%/vendor/rails/activesupport/test/core_ext/proc_test.rb
-%%WWWDIR%%/vendor/rails/activesupport/test/core_ext/range_ext_test.rb
-%%WWWDIR%%/vendor/rails/activesupport/test/core_ext/string_ext_test.rb
-%%WWWDIR%%/vendor/rails/activesupport/test/core_ext/symbol_test.rb
-%%WWWDIR%%/vendor/rails/activesupport/test/core_ext/time_ext_test.rb
-%%WWWDIR%%/vendor/rails/activesupport/test/core_ext/time_with_zone_test.rb
-%%WWWDIR%%/vendor/rails/activesupport/test/core_ext/uri_ext_test.rb
-%%WWWDIR%%/vendor/rails/activesupport/test/dependencies/check_warnings.rb
-%%WWWDIR%%/vendor/rails/activesupport/test/dependencies/conflict.rb
-%%WWWDIR%%/vendor/rails/activesupport/test/dependencies/cross_site_depender.rb
-%%WWWDIR%%/vendor/rails/activesupport/test/dependencies/mutual_one.rb
-%%WWWDIR%%/vendor/rails/activesupport/test/dependencies/mutual_two.rb
-%%WWWDIR%%/vendor/rails/activesupport/test/dependencies/raises_exception.rb
-%%WWWDIR%%/vendor/rails/activesupport/test/dependencies/requires_nonexistent0.rb
-%%WWWDIR%%/vendor/rails/activesupport/test/dependencies/requires_nonexistent1.rb
-%%WWWDIR%%/vendor/rails/activesupport/test/dependencies/service_one.rb
-%%WWWDIR%%/vendor/rails/activesupport/test/dependencies/service_two.rb
-%%WWWDIR%%/vendor/rails/activesupport/test/dependencies_test.rb
-%%WWWDIR%%/vendor/rails/activesupport/test/deprecation_test.rb
-%%WWWDIR%%/vendor/rails/activesupport/test/flush_cache_on_private_memoization_test.rb
-%%WWWDIR%%/vendor/rails/activesupport/test/gzip_test.rb
-%%WWWDIR%%/vendor/rails/activesupport/test/i18n_test.rb
-%%WWWDIR%%/vendor/rails/activesupport/test/inflector_test.rb
-%%WWWDIR%%/vendor/rails/activesupport/test/inflector_test_cases.rb
-%%WWWDIR%%/vendor/rails/activesupport/test/json/decoding_test.rb
-%%WWWDIR%%/vendor/rails/activesupport/test/json/encoding_test.rb
-%%WWWDIR%%/vendor/rails/activesupport/test/memoizable_test.rb
-%%WWWDIR%%/vendor/rails/activesupport/test/message_encryptor_test.rb
-%%WWWDIR%%/vendor/rails/activesupport/test/message_verifier_test.rb
-%%WWWDIR%%/vendor/rails/activesupport/test/multibyte_chars_test.rb
-%%WWWDIR%%/vendor/rails/activesupport/test/multibyte_conformance.rb
-%%WWWDIR%%/vendor/rails/activesupport/test/multibyte_test_helpers.rb
-%%WWWDIR%%/vendor/rails/activesupport/test/multibyte_unicode_database_test.rb
-%%WWWDIR%%/vendor/rails/activesupport/test/multibyte_utils_test.rb
-%%WWWDIR%%/vendor/rails/activesupport/test/option_merger_test.rb
-%%WWWDIR%%/vendor/rails/activesupport/test/ordered_hash_test.rb
-%%WWWDIR%%/vendor/rails/activesupport/test/ordered_options_test.rb
-%%WWWDIR%%/vendor/rails/activesupport/test/rescuable_test.rb
-%%WWWDIR%%/vendor/rails/activesupport/test/secure_random_test.rb
-%%WWWDIR%%/vendor/rails/activesupport/test/string_inquirer_test.rb
-%%WWWDIR%%/vendor/rails/activesupport/test/test_test.rb
-%%WWWDIR%%/vendor/rails/activesupport/test/time_zone_test.rb
-%%WWWDIR%%/vendor/rails/activesupport/test/whiny_nil_test.rb
-%%WWWDIR%%/vendor/rails/activesupport/test/xml_mini/jdom_engine_test.rb
-%%WWWDIR%%/vendor/rails/activesupport/test/xml_mini/nokogiri_engine_test.rb
-%%WWWDIR%%/vendor/rails/activesupport/test/xml_mini/rexml_engine_test.rb
-%%WWWDIR%%/vendor/rails/ci/ci_build.rb
-%%WWWDIR%%/vendor/rails/ci/ci_setup_notes.txt
-%%WWWDIR%%/vendor/rails/ci/cruise_config.rb
-%%WWWDIR%%/vendor/rails/ci/geminstaller.yml
-%%WWWDIR%%/vendor/rails/ci/site.css
-%%WWWDIR%%/vendor/rails/ci/site_config.rb
-%%WWWDIR%%/vendor/rails/doc/template/horo.rb
 %%WWWDIR%%/vendor/rails/railties/CHANGELOG
 %%WWWDIR%%/vendor/rails/railties/MIT-LICENSE
 %%WWWDIR%%/vendor/rails/railties/README
@@ -3364,187 +3214,6 @@
 %%WWWDIR%%/vendor/rails/railties/lib/tasks/tmp.rake
 %%WWWDIR%%/vendor/rails/railties/lib/test_help.rb
 %%WWWDIR%%/vendor/rails/railties/lib/webrick_server.rb
-%%WWWDIR%%/vendor/rails/railties/test/abstract_unit.rb
-%%WWWDIR%%/vendor/rails/railties/test/backtrace_cleaner_test.rb
-%%WWWDIR%%/vendor/rails/railties/test/boot_test.rb
-%%WWWDIR%%/vendor/rails/railties/test/console_app_test.rb
-%%WWWDIR%%/vendor/rails/railties/test/fcgi_dispatcher_test.rb
-%%WWWDIR%%/vendor/rails/railties/test/fixtures/about_yml_plugins/bad_about_yml/about.yml
-%%WWWDIR%%/vendor/rails/railties/test/fixtures/about_yml_plugins/bad_about_yml/init.rb
-%%WWWDIR%%/vendor/rails/railties/test/fixtures/about_yml_plugins/plugin_without_about_yml/init.rb
-%%WWWDIR%%/vendor/rails/railties/test/fixtures/eager/zoo.rb
-%%WWWDIR%%/vendor/rails/railties/test/fixtures/eager/zoo/reptile_house.rb
-%%WWWDIR%%/vendor/rails/railties/test/fixtures/environment_with_constant.rb
-%%WWWDIR%%/vendor/rails/railties/test/fixtures/lib/generators/missing_class/missing_class_generator.rb
-%%WWWDIR%%/vendor/rails/railties/test/fixtures/lib/generators/missing_class/templates/.gitignore
-%%WWWDIR%%/vendor/rails/railties/test/fixtures/lib/generators/missing_generator/templates/.gitignore
-%%WWWDIR%%/vendor/rails/railties/test/fixtures/lib/generators/missing_templates/.gitignore
-%%WWWDIR%%/vendor/rails/railties/test/fixtures/lib/generators/working/working_generator.rb
-%%WWWDIR%%/vendor/rails/railties/test/fixtures/metal/multiplemetals/app/metal/metal_a.rb
-%%WWWDIR%%/vendor/rails/railties/test/fixtures/metal/multiplemetals/app/metal/metal_b.rb
-%%WWWDIR%%/vendor/rails/railties/test/fixtures/metal/pluralmetal/app/metal/legacy_routes.rb
-%%WWWDIR%%/vendor/rails/railties/test/fixtures/metal/singlemetal/app/metal/foo_metal.rb
-%%WWWDIR%%/vendor/rails/railties/test/fixtures/metal/subfolders/app/metal/Folder/metal_a.rb
-%%WWWDIR%%/vendor/rails/railties/test/fixtures/metal/subfolders/app/metal/Folder/metal_b.rb
-%%WWWDIR%%/vendor/rails/railties/test/fixtures/plugins/alternate/a/generators/a_generator/a_generator.rb
-%%WWWDIR%%/vendor/rails/railties/test/fixtures/plugins/alternate/a/lib/.gitignore
-%%WWWDIR%%/vendor/rails/railties/test/fixtures/plugins/default/acts/acts_as_chunky_bacon/lib/.gitignore
-%%WWWDIR%%/vendor/rails/railties/test/fixtures/plugins/default/empty/.gitignore
-%%WWWDIR%%/vendor/rails/railties/test/fixtures/plugins/default/gemlike/init.rb
-%%WWWDIR%%/vendor/rails/railties/test/fixtures/plugins/default/gemlike/lib/gemlike.rb
-%%WWWDIR%%/vendor/rails/railties/test/fixtures/plugins/default/gemlike/rails/init.rb
-%%WWWDIR%%/vendor/rails/railties/test/fixtures/plugins/default/plugin_with_no_lib_dir/init.rb
-%%WWWDIR%%/vendor/rails/railties/test/fixtures/plugins/default/stubby/about.yml
-%%WWWDIR%%/vendor/rails/railties/test/fixtures/plugins/default/stubby/generators/stubby_generator/stubby_generator.rb
-%%WWWDIR%%/vendor/rails/railties/test/fixtures/plugins/default/stubby/init.rb
-%%WWWDIR%%/vendor/rails/railties/test/fixtures/plugins/default/stubby/lib/stubby_mixin.rb
-%%WWWDIR%%/vendor/rails/railties/test/fixtures/plugins/engines/engine/app/controllers/engine_controller.rb
-%%WWWDIR%%/vendor/rails/railties/test/fixtures/plugins/engines/engine/app/metal/engine_metal.rb
-%%WWWDIR%%/vendor/rails/railties/test/fixtures/plugins/engines/engine/app/models/engine_model.rb
-%%WWWDIR%%/vendor/rails/railties/test/fixtures/plugins/engines/engine/config/locales/en.yml
-%%WWWDIR%%/vendor/rails/railties/test/fixtures/plugins/engines/engine/config/routes.rb
-%%WWWDIR%%/vendor/rails/railties/test/fixtures/plugins/engines/engine/init.rb
-%%WWWDIR%%/vendor/rails/railties/test/fixtures/public/foo/bar.html
-%%WWWDIR%%/vendor/rails/railties/test/fixtures/public/foo/index.html
-%%WWWDIR%%/vendor/rails/railties/test/fixtures/public/index.html
-%%WWWDIR%%/vendor/rails/railties/test/gem_dependency_test.rb
-%%WWWDIR%%/vendor/rails/railties/test/generator_lookup_test.rb
-%%WWWDIR%%/vendor/rails/railties/test/generators/generator_test_helper.rb
-%%WWWDIR%%/vendor/rails/railties/test/generators/rails_controller_generator_test.rb
-%%WWWDIR%%/vendor/rails/railties/test/generators/rails_helper_generator_test.rb
-%%WWWDIR%%/vendor/rails/railties/test/generators/rails_mailer_generator_test.rb
-%%WWWDIR%%/vendor/rails/railties/test/generators/rails_model_generator_test.rb
-%%WWWDIR%%/vendor/rails/railties/test/generators/rails_resource_generator_test.rb
-%%WWWDIR%%/vendor/rails/railties/test/generators/rails_scaffold_generator_test.rb
-%%WWWDIR%%/vendor/rails/railties/test/generators/rails_template_runner_test.rb
-%%WWWDIR%%/vendor/rails/railties/test/initializer_test.rb
-%%WWWDIR%%/vendor/rails/railties/test/metal_test.rb
-%%WWWDIR%%/vendor/rails/railties/test/mocks/routes.rb
-%%WWWDIR%%/vendor/rails/railties/test/plugin_loader_test.rb
-%%WWWDIR%%/vendor/rails/railties/test/plugin_locator_test.rb
-%%WWWDIR%%/vendor/rails/railties/test/plugin_test.rb
-%%WWWDIR%%/vendor/rails/railties/test/plugin_test_helper.rb
-%%WWWDIR%%/vendor/rails/railties/test/rack_static_test.rb
-%%WWWDIR%%/vendor/rails/railties/test/rails_generator_test.rb
-%%WWWDIR%%/vendor/rails/railties/test/rails_info_controller_test.rb
-%%WWWDIR%%/vendor/rails/railties/test/rails_info_test.rb
-%%WWWDIR%%/vendor/rails/railties/test/secret_key_generation_test.rb
-%%WWWDIR%%/vendor/rails/railties/test/vendor/gems/dummy-gem-a-0.4.0/.specification
-%%WWWDIR%%/vendor/rails/railties/test/vendor/gems/dummy-gem-a-0.4.0/lib/dummy-gem-a.rb
-%%WWWDIR%%/vendor/rails/railties/test/vendor/gems/dummy-gem-b-0.4.0/.specification
-%%WWWDIR%%/vendor/rails/railties/test/vendor/gems/dummy-gem-b-0.4.0/lib/dummy-gem-b.rb
-%%WWWDIR%%/vendor/rails/railties/test/vendor/gems/dummy-gem-b-0.6.0/.specification
-%%WWWDIR%%/vendor/rails/railties/test/vendor/gems/dummy-gem-b-0.6.0/lib/dummy-gem-b.rb
-%%WWWDIR%%/vendor/rails/railties/test/vendor/gems/dummy-gem-c-0.4.0/.specification
-%%WWWDIR%%/vendor/rails/railties/test/vendor/gems/dummy-gem-c-0.4.0/lib/dummy-gem-c.rb
-%%WWWDIR%%/vendor/rails/railties/test/vendor/gems/dummy-gem-c-0.6.0/.specification
-%%WWWDIR%%/vendor/rails/railties/test/vendor/gems/dummy-gem-c-0.6.0/lib/dummy-gem-c.rb
-%%WWWDIR%%/vendor/rails/railties/test/vendor/gems/dummy-gem-d-1.0.0/lib/dummy-gem-d.rb
-%%WWWDIR%%/vendor/rails/railties/test/vendor/gems/dummy-gem-e-1.0.0/.specification
-%%WWWDIR%%/vendor/rails/railties/test/vendor/gems/dummy-gem-e-1.0.0/lib/dummy-gem-e.rb
-%%WWWDIR%%/vendor/rails/railties/test/vendor/gems/dummy-gem-f-1.0.0/.specification
-%%WWWDIR%%/vendor/rails/railties/test/vendor/gems/dummy-gem-f-1.0.0/lib/dummy-gem-f.rb
-%%WWWDIR%%/vendor/rails/railties/test/vendor/gems/dummy-gem-g-1.0.0/.specification
-%%WWWDIR%%/vendor/rails/railties/test/vendor/gems/dummy-gem-g-1.0.0/lib/dummy-gem-g.rb
-%%WWWDIR%%/vendor/rails/railties/test/vendor/gems/dummy-gem-h-1.0.0/.specification
-%%WWWDIR%%/vendor/rails/railties/test/vendor/gems/dummy-gem-h-1.0.0/lib/dummy-gem-h.rb
-%%WWWDIR%%/vendor/rails/railties/test/vendor/gems/dummy-gem-i-1.0.0/.specification
-%%WWWDIR%%/vendor/rails/railties/test/vendor/gems/dummy-gem-i-1.0.0/ext/dummy-gem-i/Makefile
-%%WWWDIR%%/vendor/rails/railties/test/vendor/gems/dummy-gem-i-1.0.0/lib/dummy-gem-i.rb
-%%WWWDIR%%/vendor/rails/railties/test/vendor/gems/dummy-gem-j-1.0.0/.specification
-%%WWWDIR%%/vendor/rails/railties/test/vendor/gems/dummy-gem-j-1.0.0/lib/dummy-gem-j.rb
-%%WWWDIR%%/vendor/rails/railties/test/vendor/gems/dummy-gem-k-1.0.0/.specification
-%%WWWDIR%%/vendor/rails/railties/test/vendor/gems/dummy-gem-k-1.0.0/lib/dummy-gem-k.rb
-@dirrm %%WWWDIR%%/vendor/rails/railties/test/vendor/gems/dummy-gem-k-1.0.0/lib
-@dirrm %%WWWDIR%%/vendor/rails/railties/test/vendor/gems/dummy-gem-k-1.0.0
-@dirrm %%WWWDIR%%/vendor/rails/railties/test/vendor/gems/dummy-gem-j-1.0.0/lib
-@dirrm %%WWWDIR%%/vendor/rails/railties/test/vendor/gems/dummy-gem-j-1.0.0
-@dirrm %%WWWDIR%%/vendor/rails/railties/test/vendor/gems/dummy-gem-i-1.0.0/lib
-@dirrm %%WWWDIR%%/vendor/rails/railties/test/vendor/gems/dummy-gem-i-1.0.0/ext/dummy-gem-i
-@dirrm %%WWWDIR%%/vendor/rails/railties/test/vendor/gems/dummy-gem-i-1.0.0/ext
-@dirrm %%WWWDIR%%/vendor/rails/railties/test/vendor/gems/dummy-gem-i-1.0.0
-@dirrm %%WWWDIR%%/vendor/rails/railties/test/vendor/gems/dummy-gem-h-1.0.0/lib
-@dirrm %%WWWDIR%%/vendor/rails/railties/test/vendor/gems/dummy-gem-h-1.0.0
-@dirrm %%WWWDIR%%/vendor/rails/railties/test/vendor/gems/dummy-gem-g-1.0.0/lib
-@dirrm %%WWWDIR%%/vendor/rails/railties/test/vendor/gems/dummy-gem-g-1.0.0
-@dirrm %%WWWDIR%%/vendor/rails/railties/test/vendor/gems/dummy-gem-f-1.0.0/lib
-@dirrm %%WWWDIR%%/vendor/rails/railties/test/vendor/gems/dummy-gem-f-1.0.0
-@dirrm %%WWWDIR%%/vendor/rails/railties/test/vendor/gems/dummy-gem-e-1.0.0/lib
-@dirrm %%WWWDIR%%/vendor/rails/railties/test/vendor/gems/dummy-gem-e-1.0.0
-@dirrm %%WWWDIR%%/vendor/rails/railties/test/vendor/gems/dummy-gem-d-1.0.0/lib
-@dirrm %%WWWDIR%%/vendor/rails/railties/test/vendor/gems/dummy-gem-d-1.0.0
-@dirrm %%WWWDIR%%/vendor/rails/railties/test/vendor/gems/dummy-gem-c-0.6.0/lib
-@dirrm %%WWWDIR%%/vendor/rails/railties/test/vendor/gems/dummy-gem-c-0.6.0
-@dirrm %%WWWDIR%%/vendor/rails/railties/test/vendor/gems/dummy-gem-c-0.4.0/lib
-@dirrm %%WWWDIR%%/vendor/rails/railties/test/vendor/gems/dummy-gem-c-0.4.0
-@dirrm %%WWWDIR%%/vendor/rails/railties/test/vendor/gems/dummy-gem-b-0.6.0/lib
-@dirrm %%WWWDIR%%/vendor/rails/railties/test/vendor/gems/dummy-gem-b-0.6.0
-@dirrm %%WWWDIR%%/vendor/rails/railties/test/vendor/gems/dummy-gem-b-0.4.0/lib
-@dirrm %%WWWDIR%%/vendor/rails/railties/test/vendor/gems/dummy-gem-b-0.4.0
-@dirrm %%WWWDIR%%/vendor/rails/railties/test/vendor/gems/dummy-gem-a-0.4.0/lib
-@dirrm %%WWWDIR%%/vendor/rails/railties/test/vendor/gems/dummy-gem-a-0.4.0
-@dirrm %%WWWDIR%%/vendor/rails/railties/test/vendor/gems
-@dirrm %%WWWDIR%%/vendor/rails/railties/test/vendor
-@dirrm %%WWWDIR%%/vendor/rails/railties/test/mocks
-@dirrm %%WWWDIR%%/vendor/rails/railties/test/generators
-@dirrm %%WWWDIR%%/vendor/rails/railties/test/fixtures/public/foo
-@dirrm %%WWWDIR%%/vendor/rails/railties/test/fixtures/public
-@dirrm %%WWWDIR%%/vendor/rails/railties/test/fixtures/plugins/engines/engine/config/locales
-@dirrm %%WWWDIR%%/vendor/rails/railties/test/fixtures/plugins/engines/engine/config
-@dirrm %%WWWDIR%%/vendor/rails/railties/test/fixtures/plugins/engines/engine/app/models
-@dirrm %%WWWDIR%%/vendor/rails/railties/test/fixtures/plugins/engines/engine/app/metal
-@dirrm %%WWWDIR%%/vendor/rails/railties/test/fixtures/plugins/engines/engine/app/controllers
-@dirrm %%WWWDIR%%/vendor/rails/railties/test/fixtures/plugins/engines/engine/app
-@dirrm %%WWWDIR%%/vendor/rails/railties/test/fixtures/plugins/engines/engine
-@dirrm %%WWWDIR%%/vendor/rails/railties/test/fixtures/plugins/engines
-@dirrm %%WWWDIR%%/vendor/rails/railties/test/fixtures/plugins/default/stubby/lib
-@dirrm %%WWWDIR%%/vendor/rails/railties/test/fixtures/plugins/default/stubby/generators/stubby_generator
-@dirrm %%WWWDIR%%/vendor/rails/railties/test/fixtures/plugins/default/stubby/generators
-@dirrm %%WWWDIR%%/vendor/rails/railties/test/fixtures/plugins/default/stubby
-@dirrm %%WWWDIR%%/vendor/rails/railties/test/fixtures/plugins/default/plugin_with_no_lib_dir
-@dirrm %%WWWDIR%%/vendor/rails/railties/test/fixtures/plugins/default/gemlike/rails
-@dirrm %%WWWDIR%%/vendor/rails/railties/test/fixtures/plugins/default/gemlike/lib
-@dirrm %%WWWDIR%%/vendor/rails/railties/test/fixtures/plugins/default/gemlike
-@dirrm %%WWWDIR%%/vendor/rails/railties/test/fixtures/plugins/default/empty
-@dirrm %%WWWDIR%%/vendor/rails/railties/test/fixtures/plugins/default/acts/acts_as_chunky_bacon/lib
-@dirrm %%WWWDIR%%/vendor/rails/railties/test/fixtures/plugins/default/acts/acts_as_chunky_bacon
-@dirrm %%WWWDIR%%/vendor/rails/railties/test/fixtures/plugins/default/acts
-@dirrm %%WWWDIR%%/vendor/rails/railties/test/fixtures/plugins/default
-@dirrm %%WWWDIR%%/vendor/rails/railties/test/fixtures/plugins/alternate/a/lib
-@dirrm %%WWWDIR%%/vendor/rails/railties/test/fixtures/plugins/alternate/a/generators/a_generator
-@dirrm %%WWWDIR%%/vendor/rails/railties/test/fixtures/plugins/alternate/a/generators
-@dirrm %%WWWDIR%%/vendor/rails/railties/test/fixtures/plugins/alternate/a
-@dirrm %%WWWDIR%%/vendor/rails/railties/test/fixtures/plugins/alternate
-@dirrm %%WWWDIR%%/vendor/rails/railties/test/fixtures/plugins
-@dirrm %%WWWDIR%%/vendor/rails/railties/test/fixtures/metal/subfolders/app/metal/Folder
-@dirrm %%WWWDIR%%/vendor/rails/railties/test/fixtures/metal/subfolders/app/metal
-@dirrm %%WWWDIR%%/vendor/rails/railties/test/fixtures/metal/subfolders/app
-@dirrm %%WWWDIR%%/vendor/rails/railties/test/fixtures/metal/subfolders
-@dirrm %%WWWDIR%%/vendor/rails/railties/test/fixtures/metal/singlemetal/app/metal
-@dirrm %%WWWDIR%%/vendor/rails/railties/test/fixtures/metal/singlemetal/app
-@dirrm %%WWWDIR%%/vendor/rails/railties/test/fixtures/metal/singlemetal
-@dirrm %%WWWDIR%%/vendor/rails/railties/test/fixtures/metal/pluralmetal/app/metal
-@dirrm %%WWWDIR%%/vendor/rails/railties/test/fixtures/metal/pluralmetal/app
-@dirrm %%WWWDIR%%/vendor/rails/railties/test/fixtures/metal/pluralmetal
-@dirrm %%WWWDIR%%/vendor/rails/railties/test/fixtures/metal/multiplemetals/app/metal
-@dirrm %%WWWDIR%%/vendor/rails/railties/test/fixtures/metal/multiplemetals/app
-@dirrm %%WWWDIR%%/vendor/rails/railties/test/fixtures/metal/multiplemetals
-@dirrm %%WWWDIR%%/vendor/rails/railties/test/fixtures/metal
-@dirrm %%WWWDIR%%/vendor/rails/railties/test/fixtures/lib/generators/working
-@dirrm %%WWWDIR%%/vendor/rails/railties/test/fixtures/lib/generators/missing_templates
-@dirrm %%WWWDIR%%/vendor/rails/railties/test/fixtures/lib/generators/missing_generator/templates
-@dirrm %%WWWDIR%%/vendor/rails/railties/test/fixtures/lib/generators/missing_generator
-@dirrm %%WWWDIR%%/vendor/rails/railties/test/fixtures/lib/generators/missing_class/templates
-@dirrm %%WWWDIR%%/vendor/rails/railties/test/fixtures/lib/generators/missing_class
-@dirrm %%WWWDIR%%/vendor/rails/railties/test/fixtures/lib/generators
-@dirrm %%WWWDIR%%/vendor/rails/railties/test/fixtures/lib
-@dirrm %%WWWDIR%%/vendor/rails/railties/test/fixtures/eager/zoo
-@dirrm %%WWWDIR%%/vendor/rails/railties/test/fixtures/eager
-@dirrm %%WWWDIR%%/vendor/rails/railties/test/fixtures/about_yml_plugins/plugin_without_about_yml
-@dirrm %%WWWDIR%%/vendor/rails/railties/test/fixtures/about_yml_plugins/bad_about_yml
-@dirrm %%WWWDIR%%/vendor/rails/railties/test/fixtures/about_yml_plugins
-@dirrm %%WWWDIR%%/vendor/rails/railties/test/fixtures
-@dirrm %%WWWDIR%%/vendor/rails/railties/test
 @dirrm %%WWWDIR%%/vendor/rails/railties/lib/tasks
 @dirrm %%WWWDIR%%/vendor/rails/railties/lib/rails_generator/scripts
 @dirrm %%WWWDIR%%/vendor/rails/railties/lib/rails_generator/generators/components/session_migration/templates
@@ -3613,24 +3282,6 @@
 @dirrm %%WWWDIR%%/vendor/rails/railties/bin/performance
 @dirrm %%WWWDIR%%/vendor/rails/railties/bin
 @dirrm %%WWWDIR%%/vendor/rails/railties
-@dirrm %%WWWDIR%%/vendor/rails/doc/template
-@dirrm %%WWWDIR%%/vendor/rails/doc
-@dirrm %%WWWDIR%%/vendor/rails/ci
-@dirrm %%WWWDIR%%/vendor/rails/activesupport/test/xml_mini
-@dirrm %%WWWDIR%%/vendor/rails/activesupport/test/json
-@dirrm %%WWWDIR%%/vendor/rails/activesupport/test/dependencies
-@dirrm %%WWWDIR%%/vendor/rails/activesupport/test/core_ext/module
-@dirrm %%WWWDIR%%/vendor/rails/activesupport/test/core_ext/class
-@dirrm %%WWWDIR%%/vendor/rails/activesupport/test/core_ext
-@dirrm %%WWWDIR%%/vendor/rails/activesupport/test/autoloading_fixtures/module_with_custom_const_missing/a
-@dirrm %%WWWDIR%%/vendor/rails/activesupport/test/autoloading_fixtures/module_with_custom_const_missing
-@dirrm %%WWWDIR%%/vendor/rails/activesupport/test/autoloading_fixtures/module_folder
-@dirrm %%WWWDIR%%/vendor/rails/activesupport/test/autoloading_fixtures/class_folder
-@dirrm %%WWWDIR%%/vendor/rails/activesupport/test/autoloading_fixtures/a/c/e
-@dirrm %%WWWDIR%%/vendor/rails/activesupport/test/autoloading_fixtures/a/c
-@dirrm %%WWWDIR%%/vendor/rails/activesupport/test/autoloading_fixtures/a
-@dirrm %%WWWDIR%%/vendor/rails/activesupport/test/autoloading_fixtures
-@dirrm %%WWWDIR%%/vendor/rails/activesupport/test
 @dirrm %%WWWDIR%%/vendor/rails/activesupport/lib/active_support/xml_mini
 @dirrm %%WWWDIR%%/vendor/rails/activesupport/lib/active_support/vendor/tzinfo-0.3.12/tzinfo/definitions/Pacific
 @dirrm %%WWWDIR%%/vendor/rails/activesupport/lib/active_support/vendor/tzinfo-0.3.12/tzinfo/definitions/Europe
@@ -3687,7 +3338,6 @@
 @dirrm %%WWWDIR%%/vendor/rails/activesupport/lib/active_support/cache
 @dirrm %%WWWDIR%%/vendor/rails/activesupport/lib/active_support
 @dirrm %%WWWDIR%%/vendor/rails/activesupport/lib
-@dirrm %%WWWDIR%%/vendor/rails/activesupport/bin
 @dirrm %%WWWDIR%%/vendor/rails/activesupport
 @dirrm %%WWWDIR%%/vendor/rails/activeresource/test/fixtures
 @dirrm %%WWWDIR%%/vendor/rails/activeresource/test/base
@@ -3748,13 +3398,6 @@
 @dirrm %%WWWDIR%%/vendor/rails/activerecord/lib
 @dirrm %%WWWDIR%%/vendor/rails/activerecord/examples
 @dirrm %%WWWDIR%%/vendor/rails/activerecord
-@dirrm %%WWWDIR%%/vendor/rails/activemodel/test/state_machine
-@dirrm %%WWWDIR%%/vendor/rails/activemodel/test
-@dirrm %%WWWDIR%%/vendor/rails/activemodel/lib/active_model/validations
-@dirrm %%WWWDIR%%/vendor/rails/activemodel/lib/active_model/state_machine
-@dirrm %%WWWDIR%%/vendor/rails/activemodel/lib/active_model
-@dirrm %%WWWDIR%%/vendor/rails/activemodel/lib
-@dirrm %%WWWDIR%%/vendor/rails/activemodel
 @dirrm %%WWWDIR%%/vendor/rails/actionpack/test/view
 @dirrm %%WWWDIR%%/vendor/rails/actionpack/test/template
 @dirrm %%WWWDIR%%/vendor/rails/actionpack/test/fixtures/topics
@@ -4058,6 +3701,7 @@
 @dirrm %%WWWDIR%%/test/mocks
 @dirrm %%WWWDIR%%/test/integration/lib/redmine
 @dirrm %%WWWDIR%%/test/integration/lib
+@dirrm %%WWWDIR%%/test/integration/api_test
 @dirrm %%WWWDIR%%/test/integration
 @dirrm %%WWWDIR%%/test/functional
 @dirrm %%WWWDIR%%/test/fixtures/repositories
