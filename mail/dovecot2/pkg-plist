@@ -427,3 +427,4 @@ share/aclocal/dovecot.m4
 @dirrm lib/dovecot
 @dirrm include/dovecot
 @dirrmtry etc/dovecot
+@dirrmtry %%DOCSDIR%%
