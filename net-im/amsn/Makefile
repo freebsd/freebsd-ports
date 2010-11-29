@@ -50,6 +50,7 @@ CONFIGURE_ENV+=	CFLAGS+="-I${LOCALBASE}/include" \
 post-patch:
 	@${FIND} ${WRKSRC} -name '*.c' -or -name '*.h' | ${XARGS} ${REINPLACE_CMD} -e 's|||'
 	@${FIND} ${WRKSRC} -name '*.bak' -delete
+	${REINPLACE_CMD} -e 's|Linux|FreeBSD|g' ${WRKSRC}/amsn.desktop
 
 post-install:
 	@${CHMOD} +x ${DATADIR}/amsn
