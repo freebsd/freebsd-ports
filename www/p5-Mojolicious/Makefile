@@ -5,13 +5,12 @@
 # $FreeBSD$
 #
 
-PORTNAME=	Mojo
+PORTNAME=	Mojolicious
 PORTVERSION=	0.999941
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	Mojolicious
 PKGNAMEPREFIX=	p5-
-DISTNAME=	Mojolicious-${PORTVERSION}
 
 MAINTAINER=	mopsfelder@gmail.com
 COMMENT=	A high level MVC web framework written in Perl
