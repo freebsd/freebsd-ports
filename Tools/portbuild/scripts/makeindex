@@ -10,6 +10,9 @@ export INDEX_QUIET=1
 # Concurrency of index build
 export INDEX_JOBS=6
 
+# For debugging purposes only
+#export INDEX_VERBOSE=1
+
 pb=/var/portbuild
 
 usage () {
