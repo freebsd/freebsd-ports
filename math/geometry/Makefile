@@ -67,7 +67,7 @@ do-install:
 .for d in angles bullet eigen eigen_conversions kdl tf tf_conversions
 	${FIND} ${WRKSRC}/${d} -name build -type d -or -name \*.bak -type f \
 	    -or -name .svnignore -type f -or -name .cvsignore -type f \
-	    -or -name \*.orig -type f -or name \*.pc -type f | ${XARGS} ${RM} -rf
+	    -or -name \*.orig -type f -or -name \*.pc -type f | ${XARGS} ${RM} -rf
 	(cd ${WRKSRC} ; ${COPYTREE_SHARE} ${d} ${PREFIX}/ros/stacks/${PORTNAME})
 .endfor
 .for f in CMakeLists.txt Makefile stack.xml rosdep.yaml
