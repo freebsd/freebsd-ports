@@ -14,12 +14,6 @@
 +void * (*f) () = $ac_func;
  #endif
  #ifdef __cplusplus
-@@ -6305,5 +6305,4 @@
-                  generic/utf8conv.c  \
-                  generic/dom.c       \
--                 generic/domalloc.c  \
-                  generic/domhtml.c   \
-                  generic/domxpath.c  \
 @@ -7263,5 +7262,5 @@
      if test "$GCC" = "yes" ; then
  	CFLAGS_OPTIMIZE=-O2

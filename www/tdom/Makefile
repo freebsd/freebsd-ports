@@ -6,13 +6,12 @@
 #
 
 PORTNAME=	tDOM
-PORTVERSION=	0.8.2
-PORTREVISION=	1
+PORTVERSION=	0.8.3
 CATEGORIES=	www
-MASTER_SITES=	http://www.tdom.org/files/
+MASTER_SITES=	https://cloud.github.com/downloads/tDOM/tdom/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	mm@FreeBSD.org
+MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	High performance XML data processing with Tcl (ARGS for OpenACS)
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/unix
