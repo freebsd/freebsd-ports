@@ -1,0 +1,59 @@
+#!/bin/sh
+
+# $FreeBSD$
+#
+# cblog.fcgi startup script
+#
+# PROVIDE: cblog
+# REQUIRE: login
+# KEYWORK: shutdown
+
+# Add the following to /etc/rc.conf[.local] to enable this service
+#
+# cblog_enable=YES
+#
+# You can fine tune others variables too:
+# cblog_fib="NONE"
+# cblog_socket="unix:/var/run/cblog/cblog.sock"
+# syntax can be : 
+# unix:/patch/to/socket
+# tcp:IP:PORT (ipv6 and ipv4 supported)
+# Use cblog_user to run cblog as user
+
+cblog_setfib() {
+	sysctl net.fibs >/dev/null 2>&1 || return 0
+
+	case "$cblog_fib" in
+	[Nn][Oo][Nn][Ee])
+		;;
+	*)
+		command="setfib -F ${cblog_fib} ${command}"
+		;;
+	esac
+}
+
+cblog_precmd() {
+	cblog_setfib
+
+	test -d /var/run/cblog || mkdir -p /var/run/cblog
+	if [ -n "${cblog_user}" ]; then
+		chown -R ${cblog_user} /var/run/cblog
+	fi
+}
+
+. /etc/rc.subr
+
+name="cblog"
+rcvar=`set_rcvar`
+
+command="%%PREFIX%%/libexec/cblog.fcgi"
+start_precmd="cblog_precmd"
+
+load_rc_config $name
+cblog_enable=${cblog_enable:-"NO"}
+cblog_fib=${cblog_fib:-"NONE"}
+cblog_socket=${cblog_socker:-"unix:/var/run/cblog/cblog.sock"}
+
+command_args=${cblog_socket}
+
+run_rc_command "$1"

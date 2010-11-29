@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	cblog
-PORTVERSION=	0.1.2
+PORTVERSION=	0.1.5
 CATEGORIES=	www
-MASTER_SITES=	http://cloud.github.com/downloads/bapt/cblog/
+MASTER_SITES=	http://git.etoilebsd.net/cblog/snapshot/ \
+		LOCAL/bapt
 
 MAINTAINER=	bapt@FreeBSD.org
 COMMENT=	Simple weblog in C using markdown
@@ -18,6 +19,8 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/libneo_cs.a:${PORTSDIR}/www/clearsilver \
 LIB_DEPENDS=	fcgi.0:${PORTSDIR}/www/fcgi
 
 LICENSE=	BSD
+
+USE_RC_SUBR=	cblog
 
 PLIST_FILES=	libexec/cblog.fcgi \
 		bin/cblogctl \
