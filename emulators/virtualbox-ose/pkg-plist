@@ -15,6 +15,8 @@ bin/VBoxXPCOMIPCD
 lib/virtualbox/VBoxDD.so
 lib/virtualbox/VBoxDD2.so
 lib/virtualbox/VBoxDDU.so
+lib/virtualbox/VBoxEFI32.fd
+lib/virtualbox/VBoxEFI64.fd
 lib/virtualbox/VBoxGuestControlSvc.so
 lib/virtualbox/VBoxGuestPropSvc.so
 lib/virtualbox/VBoxHeadless

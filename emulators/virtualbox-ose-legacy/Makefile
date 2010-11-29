@@ -7,7 +7,7 @@
 
 PORTNAME=	virtualbox-ose
 DISTVERSION=	3.2.10
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	emulators
 MASTER_SITES=	http://tmp.chruetertee.ch/ \
 		http://freebsd.unixfreunde.de/sources/ \
@@ -236,7 +236,7 @@ do-install:
 	(cd ${WRKSRC}/out/${KMK_ARCH}/${KMK_BUILDTYPE}/bin/sdk/bindings/xpcom/include && ${COPYTREE_SHARE} "*" ${PREFIX}/include/virtualbox)
 
 	${MKDIR} ${PREFIX}/lib/virtualbox
-	(cd ${WRKSRC}/out/${KMK_ARCH}/${KMK_BUILDTYPE}/bin && ${COPYTREE_SHARE} "*.so *.gc *.r0 components" ${PREFIX}/lib/virtualbox)
+	(cd ${WRKSRC}/out/${KMK_ARCH}/${KMK_BUILDTYPE}/bin && ${COPYTREE_SHARE} "*.so *.gc *.r0 *.fd components" ${PREFIX}/lib/virtualbox)
 
 .if !defined(WITHOUT_NLS)
 	${MKDIR} ${DATADIR}/nls
