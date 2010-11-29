@@ -63,6 +63,7 @@ ros/stacks/common/actionlib/include/actionlib/server/simple_action_server.h
 ros/stacks/common/actionlib/include/actionlib/server/simple_action_server_imp.h
 ros/stacks/common/actionlib/include/actionlib/server/status_tracker.h
 ros/stacks/common/actionlib/include/actionlib/server/status_tracker_imp.h
+ros/stacks/common/actionlib/lib/libactionlib.so
 ros/stacks/common/actionlib/mainpage.dox
 ros/stacks/common/actionlib/manifest.xml
 ros/stacks/common/actionlib/msg/TestAction.msg
@@ -230,6 +231,7 @@ ros/stacks/common/bfl/bfl-boost/include/bfl/wrappers/matrix/vector_LTI.h
 ros/stacks/common/bfl/bfl-boost/include/bfl/wrappers/matrix/vector_NEWMAT.h
 ros/stacks/common/bfl/bfl-boost/include/bfl/wrappers/matrix/vector_wrapper.h
 ros/stacks/common/bfl/bfl-boost/include/bfl/wrappers/rng/rng.h
+ros/stacks/common/bfl/bfl-boost/lib/liborocos-bfl.so
 ros/stacks/common/bfl/installed
 ros/stacks/common/bfl/manifest.xml
 ros/stacks/common/bfl/total.patch
@@ -246,6 +248,12 @@ ros/stacks/common/filters/include/filters/median.h
 ros/stacks/common/filters/include/filters/param_test.h
 ros/stacks/common/filters/include/filters/realtime_circular_buffer.h
 ros/stacks/common/filters/include/filters/transfer_function.h
+ros/stacks/common/filters/lib/libincrement.so
+ros/stacks/common/filters/lib/libmean.so
+ros/stacks/common/filters/lib/libmedian.so
+ros/stacks/common/filters/lib/libparams.so
+ros/stacks/common/filters/lib/libtransfer_function.so
+ros/stacks/common/nodelet/lib/libnodeletlib.so
 ros/stacks/common/filters/mainpage.dox
 ros/stacks/common/filters/manifest.xml
 ros/stacks/common/filters/src/increment.cpp
@@ -319,6 +327,7 @@ ros/stacks/common/nodelet_topic_tools/manifest.xml
 ros/stacks/common/nodelet_tutorial_math/CMakeLists.txt
 ros/stacks/common/nodelet_tutorial_math/Makefile
 ros/stacks/common/nodelet_tutorial_math/ROS_NOBUILD
+ros/stacks/common/nodelet_tutorial_math/lib/libnodelet_math.so
 ros/stacks/common/nodelet_tutorial_math/mainpage.dox
 ros/stacks/common/nodelet_tutorial_math/manifest.xml
 ros/stacks/common/nodelet_tutorial_math/nodelet_math.xml
@@ -399,6 +408,8 @@ ros/stacks/common/pluginlib/include/pluginlib/class_desc.h
 ros/stacks/common/pluginlib/include/pluginlib/class_list_macros.h
 ros/stacks/common/pluginlib/include/pluginlib/class_loader.h
 ros/stacks/common/pluginlib/include/pluginlib/class_loader_imp.h
+ros/stacks/common/pluginlib/lib/libboost_fs_wrapper.so
+ros/stacks/common/pluginlib/lib/libpoco_lite.so
 ros/stacks/common/pluginlib/mainpage.dox
 ros/stacks/common/pluginlib/manifest.xml
 ros/stacks/common/pluginlib/src/ASCIIEncoding.cpp
@@ -456,6 +467,7 @@ ros/stacks/common/stack.xml
 ros/stacks/common/test_nodelet/CMakeLists.txt
 ros/stacks/common/test_nodelet/Makefile
 ros/stacks/common/test_nodelet/ROS_NOBUILD
+ros/stacks/common/test_nodelet/lib/libtest_nodelet.so
 ros/stacks/common/test_nodelet/mainpage.dox
 ros/stacks/common/test_nodelet/manifest.xml
 ros/stacks/common/test_nodelet/plus_default.yaml
@@ -471,6 +483,7 @@ ros/stacks/common/tinyxml/Makefile
 ros/stacks/common/tinyxml/ROS_NOBUILD
 ros/stacks/common/tinyxml/include/tinyxml/tinystr.h
 ros/stacks/common/tinyxml/include/tinyxml/tinyxml.h
+ros/stacks/common/tinyxml/libtinyxml.so
 ros/stacks/common/tinyxml/manifest.xml
 ros/stacks/common/tinyxml/readme.txt
 ros/stacks/common/tinyxml/tinystr.cpp
@@ -507,6 +520,9 @@ ros/stacks/common/yaml_cpp/yaml-cpp/include/yaml-cpp/parser.h
 ros/stacks/common/yaml_cpp/yaml-cpp/include/yaml-cpp/parserstate.h
 ros/stacks/common/yaml_cpp/yaml-cpp/include/yaml-cpp/stlemitter.h
 ros/stacks/common/yaml_cpp/yaml-cpp/include/yaml-cpp/yaml.h
+ros/stacks/common/yaml_cpp/yaml-cpp/lib/libyaml-cpp.so.0.2.2
+ros/stacks/common/yaml_cpp/yaml-cpp/lib/libyaml-cpp.so.0.2
+ros/stacks/common/yaml_cpp/yaml-cpp/lib/libyaml-cpp.so
 @exec mkdir -p %D/ros/stacks/common/yaml_cpp/yaml-cpp/lib/pkgconfig
 @dirrm ros/stacks/common/yaml_cpp/yaml-cpp/lib/pkgconfig
 @dirrm ros/stacks/common/yaml_cpp/yaml-cpp/lib
@@ -527,13 +543,11 @@ ros/stacks/common/yaml_cpp/yaml-cpp/include/yaml-cpp/yaml.h
 @dirrm ros/stacks/common/tinyxml
 @dirrm ros/stacks/common/test_nodelet/test
 @dirrm ros/stacks/common/test_nodelet/src
-@exec mkdir -p %D/ros/stacks/common/test_nodelet/lib
 @dirrm ros/stacks/common/test_nodelet/lib
 @exec mkdir -p %D/ros/stacks/common/test_nodelet/bin
 @dirrm ros/stacks/common/test_nodelet/bin
 @dirrm ros/stacks/common/test_nodelet
 @dirrm ros/stacks/common/pluginlib/src
-@exec mkdir -p %D/ros/stacks/common/pluginlib/lib
 @dirrm ros/stacks/common/pluginlib/lib
 @dirrm ros/stacks/common/pluginlib/include/pluginlib
 @dirrm ros/stacks/common/pluginlib/include/Poco
@@ -542,7 +556,6 @@ ros/stacks/common/yaml_cpp/yaml-cpp/include/yaml-cpp/yaml.h
 @dirrm ros/stacks/common/pluginlib/bin
 @dirrm ros/stacks/common/pluginlib
 @dirrm ros/stacks/common/nodelet_tutorial_math/src
-@exec mkdir -p %D/ros/stacks/common/nodelet_tutorial_math/lib
 @dirrm ros/stacks/common/nodelet_tutorial_math/lib
 @exec mkdir -p %D/ros/stacks/common/nodelet_tutorial_math/include/nodelet_tutorial_math
 @dirrm ros/stacks/common/nodelet_tutorial_math/include/nodelet_tutorial_math
@@ -566,7 +579,6 @@ ros/stacks/common/yaml_cpp/yaml-cpp/include/yaml-cpp/yaml.h
 @dirrm ros/stacks/common/nodelet/src/nodelet
 @dirrm ros/stacks/common/nodelet/src
 @dirrm ros/stacks/common/nodelet/scripts
-@exec mkdir -p %D/ros/stacks/common/nodelet/lib
 @dirrm ros/stacks/common/nodelet/lib
 @dirrm ros/stacks/common/nodelet/include/nodelet/detail
 @dirrm ros/stacks/common/nodelet/include/nodelet
@@ -575,7 +587,6 @@ ros/stacks/common/yaml_cpp/yaml-cpp/include/yaml-cpp/yaml.h
 @dirrm ros/stacks/common/nodelet
 @dirrm ros/stacks/common/filters/test
 @dirrm ros/stacks/common/filters/src
-@exec mkdir -p %D/ros/stacks/common/filters/lib
 @dirrm ros/stacks/common/filters/lib
 @dirrm ros/stacks/common/filters/include/filters
 @dirrm ros/stacks/common/filters/include
@@ -611,7 +622,6 @@ ros/stacks/common/yaml_cpp/yaml-cpp/include/yaml-cpp/yaml.h
 @dirrm ros/stacks/common/actionlib/msg/lisp/actionlib
 @dirrm ros/stacks/common/actionlib/msg/lisp
 @dirrm ros/stacks/common/actionlib/msg
-@exec mkdir -p %D/ros/stacks/common/actionlib/lib
 @dirrm ros/stacks/common/actionlib/lib
 @dirrm ros/stacks/common/actionlib/include/actionlib/server
 @dirrm ros/stacks/common/actionlib/include/actionlib/client

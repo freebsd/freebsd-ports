@@ -17,3 +17,5 @@ Parsers:
 * tinyxml: a C interface to the third-party tinyxml parser for ROS.
 * xacro: an XML macro language.
 * yaml_cpp: a C++ to the third-party YAML parser for ROS.
+
+WWW: http://www.ros.org/wiki/common

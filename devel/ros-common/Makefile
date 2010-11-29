@@ -6,6 +6,7 @@
 
 PORTNAME=	ros-common
 PORTVERSION=	1.2.1
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	ftp://rene-ladan.nl/pub/distfiles/ros/
 DISTFILES=	common-${PORTVERSION}.tar.bz2 bfl-31655.tar.gz \
@@ -40,7 +41,7 @@ MAKE_ENV+=	CPATH=${LOCALBASE}/include \
 		LIBRARY_PATH=${LOCALBASE}/lib \
 		MAKE=${LOCALBASE}/bin/gmake \
 		ROS_ROOT=${LOCALBASE}/ros/ros \
-		ROS_PACKAGE_PATH=${LOCALBASE}/ros/stacks/common_msgs:${WRKDIR} \
+		ROS_PACKAGE_PATH=${LOCALBASE}/ros/stacks/common_msgs:${WRKSRC} \
 		PYTHONPATH=${LOCALBASE}/ros/ros/core/roslib/src
 
 MAKE_ARGS=	-i --no-rosdep --status-rate=0 --disable-logging
@@ -91,7 +92,7 @@ do-install:
 	${LOCALBASE}/bin/chrpath -d ${PREFIX}/ros/stacks/${STACKNAME}/${f}
 	${CHMOD} 0555 ${PREFIX}/ros/stacks/${STACKNAME}/${f}
 .endfor
-# strip and move ELF libaries
+# strip and symlink ELF libaries
 .for f in actionlib/lib/libactionlib.so bfl/bfl-boost/lib/liborocos-bfl.so \
     filters/lib/libincrement.so filters/lib/libmean.so \
     filters/lib/libmedian.so filters/lib/libparams.so \
@@ -102,37 +103,24 @@ do-install:
     yaml_cpp/yaml-cpp/lib/libyaml-cpp.so.0.2.2
 	${STRIP_CMD} ${PREFIX}/ros/stacks/${STACKNAME}/${f}
 	${LOCALBASE}/bin/chrpath -d ${PREFIX}/ros/stacks/${STACKNAME}/${f}
-	${MV} ${PREFIX}/ros/stacks/${STACKNAME}/${f} ${PREFIX}/lib
+	${LN} -s ${PREFIX}/ros/stacks/${STACKNAME}/${f} ${PREFIX}/lib
 .endfor
-# move symbolic links to libaries
+# copy symbolic links to libaries
 .for f in yaml_cpp/yaml-cpp/lib/libyaml-cpp.so.0.2 \
     yaml_cpp/yaml-cpp/lib/libyaml-cpp.so
-	${MV} ${PREFIX}/ros/stacks/${STACKNAME}/${f} ${PREFIX}/lib
+	${LN} -s ${PREFIX}/ros/stacks/${STACKNAME}/${f} ${PREFIX}/lib
 .endfor
 # make scripts executable
-.for f in actionlib/genaction.py actionlib/src/actionlib/action_client.py \
-    actionlib/src/actionlib/action_server.py \
-    actionlib/src/actionlib/exceptions.py \
-    actionlib/src/actionlib/goal_id_generator.py \
-    actionlib/src/actionlib/msg/_TestAction.py \
-    actionlib/src/actionlib/msg/_TestActionFeedback.py \
-    actionlib/src/actionlib/msg/_TestActionGoal.py \
-    actionlib/src/actionlib/msg/_TestActionResult.py \
-    actionlib/src/actionlib/msg/_TestFeedback.py \
-    actionlib/src/actionlib/msg/_TestGoal.py \
-    actionlib/src/actionlib/msg/_TestResult.py \
-    actionlib/src/actionlib/simple_action_client.py \
-    actionlib/src/actionlib/simple_action_server.py \
+.for f in actionlib/genaction.py \
     actionlib/test/test_imports.py actionlib/test/test_ref_action_server.py \
     actionlib/test/ref_server.py actionlib/test/ref_simple_server.py \
     actionlib/test/simple_python_client_test.py \
     actionlib/test/test_ref_simple_action_server.py \
     actionlib/test/test_server_components.py actionlib/tools/axclient.py \
     actionlib/tools/axserver.py actionlib/tools/dynamic_action.py \
-    nodelet/scripts/list_nodelets nodelet/src/nodelet/srv/_NodeletList.py \
-    nodelet/src/nodelet/srv/_NodeletLoad.py \
-    nodelet/src/nodelet/srv/_NodeletUnload.py test_nodelet/test/plus_local.py \
-    test_nodelet/test/test_loader.py xacro/src/xacro.py \
+    nodelet/scripts/list_nodelets \
+    test_nodelet/test/plus_local.py \
+    test_nodelet/test/test_loader.py \
     xacro/test/test_xacro.py xacro/xacro.py
 	${CHMOD} 0555 ${PREFIX}/ros/stacks/${STACKNAME}/${f}
 .endfor
