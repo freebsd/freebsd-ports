@@ -8,7 +8,7 @@
 PORTNAME=	cblog
 PORTVERSION=	0.1.5
 CATEGORIES=	www
-MASTER_SITES=	http://git.etoilebsd.net/cblog/snapshot/ \
+MASTER_SITES=	http://files.etoilebsd.net/cblog/ \
 		LOCAL/bapt
 
 MAINTAINER=	bapt@FreeBSD.org
