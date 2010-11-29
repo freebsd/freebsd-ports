@@ -1,0 +1,4 @@
+Libraries from processing laser data, including converting laser data into 3D
+representations.
+
+WWW: http://www.ros.org/wiki/laser_pipeline
