@@ -45,6 +45,7 @@ include/libgda-%%VERSION%%/libgda-report/libgda-report.h
 %%UI%%include/libgda-%%VERSION%%/libgda-ui/gdaui-provider-selector.h
 %%UI%%include/libgda-%%VERSION%%/libgda-ui/gdaui-raw-form.h
 %%UI%%include/libgda-%%VERSION%%/libgda-ui/gdaui-raw-grid.h
+%%UI%%include/libgda-%%VERSION%%/libgda-ui/gdaui-rt-editor.h
 %%UI%%include/libgda-%%VERSION%%/libgda-ui/gdaui-server-operation.h
 %%UI%%include/libgda-%%VERSION%%/libgda-ui/gdaui-tree-store.h
 %%UI%%include/libgda-%%VERSION%%/libgda-ui/libgda-ui.h
