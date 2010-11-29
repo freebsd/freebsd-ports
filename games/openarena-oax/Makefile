@@ -25,9 +25,11 @@ NO_BUILD=	yes
 
 OABASE=		${DISTNAME}
 
+post-extract:
+	${UNZIP_CMD} -j ${DISTDIR}/${DISTFILES} -d ${WRKSRC}
+
 do-install:
-	@${MKDIR} ${DATADIR}
-	@${UNZIP_CMD} ${DISTDIR}/${DISTFILES} -d ${OADIR}
-	@${CHMOD} -R o-w ${DATADIR}
+	${MKDIR} ${DATADIR}
+	(cd ${WRKSRC} && ${COPYTREE_SHARE} \* ${DATADIR})
 
 .include "../openarena/Makefile.include"
