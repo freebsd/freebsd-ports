@@ -6,6 +6,7 @@
 
 PORTNAME=	common_msgs
 PORTVERSION=	1.2.2
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	ftp://rene-ladan.nl/pub/distfiles/ros/
 DIST_SUBDIR=	ros
@@ -31,7 +32,7 @@ MAKE_ENV+=	CPATH=${LOCALBASE}/include \
 		LIBRARY_PATH=${LOCALBASE}/lib \
 		MAKE=${LOCALBASE}/bin/gmake \
 		ROS_ROOT=${LOCALBASE}/ros/ros \
-		ROS_PACKAGE_PATH=${WRKDIR} \
+		ROS_PACKAGE_PATH=${WRKSRC} \
 		PYTHONPATH=${LOCALBASE}/ros/ros/core/roslib/src
 
 MAKE_ARGS=	-i --no-rosdep --status-rate=0 --disable-logging
@@ -52,59 +53,12 @@ do-install:
 .for f in CMakeLists.txt Makefile stack.xml
 	${INSTALL_DATA} ${WRKSRC}/${f} ${PREFIX}/ros/stacks/${PORTNAME}
 .endfor
-#move and strip ELF libaries
-	${MV} ${PREFIX}/ros/stacks/${PORTNAME}/sensor_msgs/lib/libsensor_msgs.so \
+#strip and symlink ELF libraries
+	${STRIP_CMD} ${PREFIX}/ros/stacks/${PORTNAME}/sensor_msgs/lib/libsensor_msgs.so
+	${LN} -s ${PREFIX}/ros/stacks/${PORTNAME}/sensor_msgs/lib/libsensor_msgs.so \
 	    ${PREFIX}/lib
-	${STRIP_CMD} ${PREFIX}/lib/libsensor_msgs.so
-#make scripts executable
+# make scripts executable
 .for f in actionlib_msgs/genaction.py \
-    actionlib_msgs/src/actionlib_msgs/msg/_GoalID.py \
-    actionlib_msgs/src/actionlib_msgs/msg/_GoalStatus.py \
-    actionlib_msgs/src/actionlib_msgs/msg/_GoalStatusArray.py \
-    diagnostic_msgs/src/diagnostic_msgs/msg/_DiagnosticArray.py \
-    diagnostic_msgs/src/diagnostic_msgs/msg/_DiagnosticStatus.py \
-    diagnostic_msgs/src/diagnostic_msgs/msg/_KeyValue.py \
-    diagnostic_msgs/src/diagnostic_msgs/srv/_SelfTest.py \
-    geometry_msgs/src/geometry_msgs/msg/_Point.py \
-    geometry_msgs/src/geometry_msgs/msg/_Point32.py \
-    geometry_msgs/src/geometry_msgs/msg/_PointStamped.py \
-    geometry_msgs/src/geometry_msgs/msg/_Polygon.py \
-    geometry_msgs/src/geometry_msgs/msg/_PolygonStamped.py \
-    geometry_msgs/src/geometry_msgs/msg/_Pose.py \
-    geometry_msgs/src/geometry_msgs/msg/_Pose2D.py \
-    geometry_msgs/src/geometry_msgs/msg/_PoseArray.py \
-    geometry_msgs/src/geometry_msgs/msg/_PoseStamped.py \
-    geometry_msgs/src/geometry_msgs/msg/_PoseWithCovariance.py \
-    geometry_msgs/src/geometry_msgs/msg/_PoseWithCovarianceStamped.py \
-    geometry_msgs/src/geometry_msgs/msg/_Quaternion.py \
-    geometry_msgs/src/geometry_msgs/msg/_QuaternionStamped.py \
-    geometry_msgs/src/geometry_msgs/msg/_Transform.py \
-    geometry_msgs/src/geometry_msgs/msg/_TransformStamped.py \
-    geometry_msgs/src/geometry_msgs/msg/_Twist.py \
-    geometry_msgs/src/geometry_msgs/msg/_TwistStamped.py \
-    geometry_msgs/src/geometry_msgs/msg/_TwistWithCovariance.py \
-    geometry_msgs/src/geometry_msgs/msg/_TwistWithCovarianceStamped.py \
-    geometry_msgs/src/geometry_msgs/msg/_Vector3.py \
-    geometry_msgs/src/geometry_msgs/msg/_Vector3Stamped.py \
-    geometry_msgs/src/geometry_msgs/msg/_Wrench.py \
-    geometry_msgs/src/geometry_msgs/msg/_WrenchStamped.py \
-    nav_msgs/src/nav_msgs/msg/_GridCells.py \
-    nav_msgs/src/nav_msgs/msg/_MapMetaData.py \
-    nav_msgs/src/nav_msgs/msg/_OccupancyGrid.py \
-    nav_msgs/src/nav_msgs/msg/_Odometry.py nav_msgs/src/nav_msgs/msg/_Path.py \
-    nav_msgs/src/nav_msgs/srv/_GetMap.py nav_msgs/src/nav_msgs/srv/_GetPlan.py \
-    sensor_msgs/src/sensor_msgs/msg/_CameraInfo.py \
-    sensor_msgs/src/sensor_msgs/msg/_ChannelFloat32.py \
-    sensor_msgs/src/sensor_msgs/msg/_CompressedImage.py \
-    sensor_msgs/src/sensor_msgs/msg/_Image.py \
-    sensor_msgs/src/sensor_msgs/msg/_Imu.py \
-    sensor_msgs/src/sensor_msgs/msg/_JointState.py \
-    sensor_msgs/src/sensor_msgs/msg/_LaserScan.py \
-    sensor_msgs/src/sensor_msgs/msg/_PointCloud.py \
-    sensor_msgs/src/sensor_msgs/msg/_PointCloud2.py \
-    sensor_msgs/src/sensor_msgs/msg/_PointField.py \
-    sensor_msgs/src/sensor_msgs/msg/_RegionOfInterest.py \
-    sensor_msgs/src/sensor_msgs/srv/_SetCameraInfo.py \
     test_common_msgs/test/test_common_msgs_migration.py
 	${CHMOD} 0555 ${PREFIX}/ros/stacks/${PORTNAME}/${f}
 .endfor
