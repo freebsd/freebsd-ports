@@ -694,9 +694,9 @@ asr-utils                       ports/sysutils/asr-utils
 asr10                           ports/converters/asr10
 assaultcube                     ports/games/assaultcube
 assp                            ports/mail/assp
+asterisk                        ports/net/asterisk
 asterisk-app-ldap               ports/net/asterisk-app-ldap
 asterisk-app-notify             ports/net/asterisk-app-notify
-asterisk-bristuff               ports/net/asterisk-bristuff
 asterisk-fop                    ports/www/asterisk-fop
 asterisk-gui                    ports/www/asterisk-gui
 asterisk-oh323                  ports/net/asterisk-oh323
@@ -8191,7 +8191,6 @@ libpperl                        ports/devel/libpperl
 libprelude                      ports/security/libprelude
 libpreludedb                    ports/security/libpreludedb
 libpri                          ports/misc/libpri
-libpri-bristuff                 ports/misc/libpri-bristuff
 libproplist                     ports/devel/libPropList
 libproxy                        ports/net/libproxy
 libproxy-gnome                  ports/net/libproxy-gnome
@@ -11815,6 +11814,7 @@ p5-DBIx-Sequence                ports/databases/p5-DBIx-Sequence
 p5-DBIx-Simple                  ports/databases/p5-DBIx-Simple
 p5-DBIx-Skinny                  ports/databases/p5-DBIx-Skinny
 p5-DBIx-Skinny-InflateColumn-DateTime  ports/databases/p5-DBIx-Skinny-InflateColumn-DateTime
+p5-DBIx-Skinny-Mixin-DBHResolver  ports/databases/p5-DBIx-Skinny-Mixin-DBHResolver
 p5-DBIx-Skinny-Pager            ports/databases/p5-DBIx-Skinny-Pager
 p5-DBIx-Skinny-Schema-Loader    ports/databases/p5-DBIx-Skinny-Schema-Loader
 p5-DBIx-Table                   ports/databases/p5-DBIx-Table
@@ -15981,6 +15981,7 @@ p5-dbix-sequence                ports/databases/p5-DBIx-Sequence
 p5-dbix-simple                  ports/databases/p5-DBIx-Simple
 p5-dbix-skinny                  ports/databases/p5-DBIx-Skinny
 p5-dbix-skinny-inflatecolumn-datetime  ports/databases/p5-DBIx-Skinny-InflateColumn-DateTime
+p5-dbix-skinny-mixin-dbhresolver  ports/databases/p5-DBIx-Skinny-Mixin-DBHResolver
 p5-dbix-skinny-pager            ports/databases/p5-DBIx-Skinny-Pager
 p5-dbix-skinny-schema-loader    ports/databases/p5-DBIx-Skinny-Schema-Loader
 p5-dbix-sqlengine               ports/databases/p5-DBIx-SQLEngine
@@ -20735,6 +20736,7 @@ psi3                            ports/science/psi3
 psi88                           ports/biology/psi88
 psiconv                         ports/converters/psiconv
 psim-freebsd                    ports/emulators/psim-freebsd
+psimedia                        ports/net-im/psimedia
 pslib                           ports/print/pslib
 pslist                          ports/sysutils/pslist
 psmark                          ports/print/psmark
