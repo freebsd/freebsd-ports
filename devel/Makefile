@@ -1570,6 +1570,7 @@
     SUBDIR += p5-Devel-TraceUse
     SUBDIR += p5-Devel-ebug
     SUBDIR += p5-Devel-ptkdb
+    SUBDIR += p5-Device-USB
     SUBDIR += p5-Dialog
     SUBDIR += p5-Digest-TransformPath
     SUBDIR += p5-Dir-Project
@@ -2443,7 +2444,6 @@
     SUBDIR += p5-threads
     SUBDIR += p5-threads-shared
     SUBDIR += p5-uni-perl
-    SUBDIR += p5-usb
     SUBDIR += p5-version
     SUBDIR += p65
     SUBDIR += paexec
