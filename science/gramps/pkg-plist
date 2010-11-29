@@ -77,6 +77,9 @@ share/applications/gramps.desktop
 %%DATADIR%%/DateHandler/_Date_sk.py
 %%DATADIR%%/DateHandler/_Date_sk.pyc
 %%DATADIR%%/DateHandler/_Date_sk.pyo
+%%DATADIR%%/DateHandler/_Date_sl.py
+%%DATADIR%%/DateHandler/_Date_sl.pyc
+%%DATADIR%%/DateHandler/_Date_sl.pyo
 %%DATADIR%%/DateHandler/_Date_sr.py
 %%DATADIR%%/DateHandler/_Date_sr.pyc
 %%DATADIR%%/DateHandler/_Date_sr.pyo
@@ -2443,6 +2446,9 @@ share/applications/gramps.desktop
 %%DATADIR%%/plugins/rel/rel_sk.py
 %%DATADIR%%/plugins/rel/rel_sk.pyc
 %%DATADIR%%/plugins/rel/rel_sk.pyo
+%%DATADIR%%/plugins/rel/rel_sl.py
+%%DATADIR%%/plugins/rel/rel_sl.pyc
+%%DATADIR%%/plugins/rel/rel_sl.pyo
 %%DATADIR%%/plugins/rel/rel_sv.py
 %%DATADIR%%/plugins/rel/rel_sv.pyc
 %%DATADIR%%/plugins/rel/rel_sv.pyo
