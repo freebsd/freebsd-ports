@@ -1,11 +1,20 @@
---- ./configure.orig	2010-04-04 02:02:40.000000000 -0700
-+++ ./configure	2010-11-17 11:11:33.000000000 -0800
-@@ -324,7 +324,7 @@
- add_var target "stab: configure for arch" ""
+--- ./configure.orig	2010-04-04 11:02:40.000000000 +0200
++++ ./configure	2010-11-22 19:41:52.000000000 +0100
+@@ -92,7 +92,7 @@
+ {
+     local var val A
  
- # N.B. order is important
--add_var prefix "install architecture-independent files" /usr
-+add_var prefix "install architecture-independent files" '${PREFIX}'
- add_var eprefix "install architecture-dependent files" '$prefix'
- add_var bindir "user executables" '$eprefix/bin'
- add_var sbindir "system executables" '$eprefix/sbin'
+-    [ "$(sed -e 's/--[^=]\+=[^=]*/AA/' <<< $1)" != AA ] && return 1
++    [ "$(sed -E -e 's/--[^=]+=[^=]*/AA/' <<< $1)" != AA ] && return 1
+ 
+     A=${1:2}
+     var=${A%%=*}
+@@ -167,7 +167,7 @@
+ 
+ function check_feature ()
+ {
+-    [ "$(sed  -e 's/--\(enable\|disable\)-.\+/AA/' <<< $1)" != AA ] && return 1
++    [ "$(sed -E -e 's/--(enable|disable)-.+/AA/' <<< $1)" != AA ] && return 1
+     A=${1:2}
+     var=${A#*-}
+     val=${A%%-*}
