@@ -71,6 +71,9 @@ buildenv () {
     branch=$3
     builddir=$4
 
+    # Don't pick up host OPTIONS
+    export PORT_DBDIR=/nonexistent
+
     buildenv.common ${pb} ${arch} ${branch} ${builddir}
 
     # override things destined for bsd.port.mk
@@ -104,9 +107,6 @@ buildenv.client() {
     builddir=$4
 
     buildenv.common ${pb} ${arch} ${branch} ${builddir}
-
-    # Don't pick up host OPTIONS
-    export PORT_DBDIR=/nonexistent
 
     # manually override results of uname(1)
     export UNAME_m=${ARCH}
