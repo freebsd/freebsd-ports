@@ -661,6 +661,7 @@ ros/ros/3rdparty/xmlrpcpp/ROS_NOBUILD
 ros/ros/3rdparty/xmlrpcpp/XmlRpc.sln
 ros/ros/3rdparty/xmlrpcpp/XmlRpc.vcproj
 ros/ros/3rdparty/xmlrpcpp/export.cmake
+ros/ros/3rdparty/xmlrpcpp/lib/libXmlRpc.so
 ros/ros/3rdparty/xmlrpcpp/manifest.xml
 ros/ros/3rdparty/xmlrpcpp/src/Doxyfile
 ros/ros/3rdparty/xmlrpcpp/src/XmlRpc.h
@@ -803,6 +804,7 @@ ros/ros/core/message_filters/include/message_filters/synchronizer.h
 ros/ros/core/message_filters/include/message_filters/time_sequencer.h
 ros/ros/core/message_filters/include/message_filters/time_synchronizer.h
 ros/ros/core/message_filters/index.rst
+ros/ros/core/message_filters/lib/libmessage_filters.so
 ros/ros/core/message_filters/mainpage.dox
 ros/ros/core/message_filters/manifest.xml
 ros/ros/core/message_filters/rosdoc.yaml
@@ -865,6 +867,7 @@ ros/ros/core/rosconsole/include/ros/assert.h
 ros/ros/core/rosconsole/include/ros/console.h
 ros/ros/core/rosconsole/include/ros/static_assert.h
 ros/ros/core/rosconsole/include/rosconsole/macros_generated.h
+ros/ros/core/rosconsole/lib/librosconsole.so
 ros/ros/core/rosconsole/mainpage.dox
 ros/ros/core/rosconsole/manifest.xml
 ros/ros/core/rosconsole/scripts/generate_macros.py
@@ -949,6 +952,7 @@ ros/ros/core/roscpp/include/ros/transport_subscriber_link.h
 ros/ros/core/roscpp/include/ros/wall_timer.h
 ros/ros/core/roscpp/include/ros/wall_timer_options.h
 ros/ros/core/roscpp/include/ros/xmlrpc_manager.h
+ros/ros/core/roscpp/lib/libros.so
 ros/ros/core/roscpp/manifest.xml
 ros/ros/core/roscpp/msg/Logger.msg
 ros/ros/core/roscpp/msg/lisp/roscpp/.Logger.asd-dep
@@ -1068,6 +1072,7 @@ ros/ros/core/roslib/include/ros/serialized_message.h
 ros/ros/core/roslib/include/ros/service_traits.h
 ros/ros/core/roslib/include/ros/time.h
 ros/ros/core/roslib/include/ros/types.h
+ros/ros/core/roslib/lib/libroslib.so
 ros/ros/core/roslib/mainpage.dox
 ros/ros/core/roslib/manifest.xml
 ros/ros/core/roslib/msg/Clock.msg
@@ -1546,6 +1551,7 @@ ros/ros/test/performance/perf_roscpp/ROS_NOBUILD
 ros/ros/test/performance/perf_roscpp/bin/intra_suite
 ros/ros/test/performance/perf_roscpp/include/perf_roscpp/inter.h
 ros/ros/test/performance/perf_roscpp/include/perf_roscpp/intra.h
+ros/ros/test/performance/perf_roscpp/lib/libperf_roscpp.so
 ros/ros/test/performance/perf_roscpp/manifest.xml
 ros/ros/test/performance/perf_roscpp/msg/LatencyMessage.msg
 ros/ros/test/performance/perf_roscpp/msg/ThroughputMessage.msg
@@ -3016,6 +3022,7 @@ ros/ros/tools/rosbag/include/rosbag/stream.h
 ros/ros/tools/rosbag/include/rosbag/structures.h
 ros/ros/tools/rosbag/include/rosbag/time_translator.h
 ros/ros/tools/rosbag/include/rosbag/view.h
+ros/ros/tools/rosbag/lib/librosbag.so
 ros/ros/tools/rosbag/mainpage.dox
 ros/ros/tools/rosbag/manifest.xml
 ros/ros/tools/rosbag/rosdoc.yaml
@@ -3246,6 +3253,8 @@ ros/ros/tools/rospack/Makefile
 ros/ros/tools/rospack/ROS_NOBUILD
 ros/ros/tools/rospack/include/rospack/rospack.h
 ros/ros/tools/rospack/include/rospack/rosstack.h
+ros/ros/tools/rospack/lib/librospack.so
+ros/ros/tools/rospack/lib/librosstack.so
 ros/ros/tools/rospack/main.cpp
 ros/ros/tools/rospack/manifest.xml
 ros/ros/tools/rospack/markstack
@@ -3286,6 +3295,7 @@ ros/ros/tools/rosrecord/include/rosrecord/Recorder.h
 ros/ros/tools/rosrecord/include/rosrecord/constants.h
 ros/ros/tools/rosrecord/include/rosrecord/rosplay.h
 ros/ros/tools/rosrecord/include/rosrecord/time_publisher.h
+ros/ros/tools/rosrecord/lib/librosrecorder.so
 ros/ros/tools/rosrecord/mainpage.dox
 ros/ros/tools/rosrecord/manifest.xml
 ros/ros/tools/rosrecord/rosdoc.yaml
@@ -3408,7 +3418,9 @@ ros/ros/tools/rxtools/icons/delete-filter-16.png
 ros/ros/tools/rxtools/icons/pause-16.png
 ros/ros/tools/rxtools/icons/play-16.png
 ros/ros/tools/rxtools/icons/stop-16.png
+ros/ros/tools/rxtools/lib/librxtools.so
 ros/ros/tools/rxtools/lib/rxtoolscpp.py
+ros/ros/tools/rxtools/lib/_rxtoolscpp.so
 ros/ros/tools/rxtools/mainpage.dox
 ros/ros/tools/rxtools/manifest.xml
 ros/ros/tools/rxtools/nodes/rxplot
@@ -3466,6 +3478,7 @@ ros/ros/tools/topic_tools/demos/test_relay
 ros/ros/tools/topic_tools/demos/test_throttle
 ros/ros/tools/topic_tools/include/topic_tools/parse.h
 ros/ros/tools/topic_tools/include/topic_tools/shape_shifter.h
+ros/ros/tools/topic_tools/lib/libtopic_tools.so
 ros/ros/tools/topic_tools/manifest.xml
 ros/ros/tools/topic_tools/scripts/mux_add
 ros/ros/tools/topic_tools/scripts/mux_delete
@@ -3536,6 +3549,7 @@ ros/ros/tools/xdot/src/xdot/wxxdot.py
 ros/ros/tools/xdot/src/xdot/xdot.py
 @dirrm ros/ros/tools/xdot/src/xdot
 @dirrm ros/ros/tools/xdot/src
+@exec mkdir -p %D/ros/ros/tools/xdot/bin
 @dirrm ros/ros/tools/xdot/bin
 @dirrm ros/ros/tools/xdot
 @dirrm ros/ros/tools/topic_tools/test
@@ -3568,6 +3582,7 @@ ros/ros/tools/xdot/src/xdot/xdot.py
 @dirrm ros/ros/tools/rxtools
 @dirrm ros/ros/tools/rxgraph/src/rxgraph
 @dirrm ros/ros/tools/rxgraph/src
+@exec mkdir -p %D/ros/ros/tools/rxgraph/bin
 @dirrm ros/ros/tools/rxgraph/bin
 @dirrm ros/ros/tools/rxgraph
 @dirrm ros/ros/tools/rxdeps/src
@@ -3578,6 +3593,7 @@ ros/ros/tools/xdot/src/xdot/xdot.py
 @dirrm ros/ros/tools/rxbag/src
 @dirrm ros/ros/tools/rxbag/scripts
 @dirrm ros/ros/tools/rxbag/icons
+@exec mkdir -p %D/ros/ros/tools/rxbag/bin
 @dirrm ros/ros/tools/rxbag/bin
 @dirrm ros/ros/tools/rxbag
 @dirrm ros/ros/tools/roswtf/src/roswtf
@@ -3602,21 +3618,25 @@ ros/ros/tools/xdot/src/xdot/xdot.py
 @dirrm ros/ros/tools/rosrecord/bin
 @dirrm ros/ros/tools/rosrecord
 @dirrm ros/ros/tools/rosparam/src
+@exec mkdir -p %D/ros/ros/tools/rosparam/bin
 @dirrm ros/ros/tools/rosparam/bin
 @dirrm ros/ros/tools/rosparam
 @dirrm ros/ros/tools/rospack/tinyxml-2.5.3
 @dirrm ros/ros/tools/rospack/lib
 @dirrm ros/ros/tools/rospack/include/rospack
 @dirrm ros/ros/tools/rospack/include
+@exec mkdir -p %D/ros/ros/tools/rospack/bin
 @dirrm ros/ros/tools/rospack/bin
 @dirrm ros/ros/tools/rospack
 @dirrm ros/ros/tools/rosnode/src
+@exec mkdir -p %D/ros/ros/tools/rosnode/bin
 @dirrm ros/ros/tools/rosnode/bin
 @dirrm ros/ros/tools/rosnode
 @dirrm ros/ros/tools/rosmsg/src
 @dirrm ros/ros/tools/rosmsg
 @dirrm ros/ros/tools/rosmake/src/rosmake
 @dirrm ros/ros/tools/rosmake/src
+@exec mkdir -p %D/ros/ros/tools/rosmake/bin
 @dirrm ros/ros/tools/rosmake/bin
 @dirrm ros/ros/tools/rosmake
 @dirrm ros/ros/tools/roslaunch/src/roslaunch
@@ -3627,6 +3647,7 @@ ros/ros/tools/xdot/src/xdot/xdot.py
 @dirrm ros/ros/tools/rosgraph/src/rosgraph
 @dirrm ros/ros/tools/rosgraph/src
 @dirrm ros/ros/tools/rosgraph/nodes
+@exec mkdir -p %D/ros/ros/tools/rosgraph/bin
 @dirrm ros/ros/tools/rosgraph/bin
 @dirrm ros/ros/tools/rosgraph
 @dirrm ros/ros/tools/rosemacs
@@ -3639,13 +3660,16 @@ ros/ros/tools/xdot/src/xdot/xdot.py
 @dirrm ros/ros/tools/rosdep/src
 @dirrm ros/ros/tools/rosdep/scripts
 @dirrm ros/ros/tools/rosdep/installers
+@exec mkdir -p %D/ros/ros/tools/rosdep/bin
 @dirrm ros/ros/tools/rosdep/bin
 @dirrm ros/ros/tools/rosdep
 @dirrm ros/ros/tools/roscreate/src/roscreate
 @dirrm ros/ros/tools/roscreate/src
+@exec mkdir -p %D/ros/ros/tools/roscreate/bin
 @dirrm ros/ros/tools/roscreate/bin
 @dirrm ros/ros/tools/roscreate
 @dirrm ros/ros/tools/rosclean/src
+@exec mkdir -p %D/ros/ros/tools/rosclean/bin
 @dirrm ros/ros/tools/rosclean/bin
 @dirrm ros/ros/tools/rosclean
 @dirrm ros/ros/tools/rosboost_cfg/src/rosboost_cfg
@@ -3668,6 +3692,7 @@ ros/ros/tools/xdot/src/xdot/xdot.py
 @dirrm ros/ros/tools/rosbag
 @dirrm ros/ros/tools
 @dirrm ros/ros/test/test_rxplot/test
+@exec mkdir -p %D/ros/ros/test/test_rxplot/bin
 @dirrm ros/ros/test/test_rxplot/bin
 @dirrm ros/ros/test/test_rxplot
 @dirrm ros/ros/test/test_rxdeps/test/test_packages/pkg5
@@ -3677,12 +3702,15 @@ ros/ros/tools/xdot/src/xdot/xdot.py
 @dirrm ros/ros/test/test_rxdeps/test/test_packages/pkg1
 @dirrm ros/ros/test/test_rxdeps/test/test_packages
 @dirrm ros/ros/test/test_rxdeps/test
+@exec mkdir -p %D/ros/ros/test/test_rxdeps/bin
 @dirrm ros/ros/test/test_rxdeps/bin
 @dirrm ros/ros/test/test_rxdeps
 @dirrm ros/ros/test/test_roswtf/test
+@exec mkdir -p %D/ros/ros/test/test_roswtf/bin
 @dirrm ros/ros/test/test_roswtf/bin
 @dirrm ros/ros/test/test_roswtf
 @dirrm ros/ros/test/test_rostopic/test
+@exec mkdir -p %D/ros/ros/test/test_rostopic/bin
 @dirrm ros/ros/test/test_rostopic/bin
 @dirrm ros/ros/test/test_rostopic
 @dirrm ros/ros/test/test_rosservice/test
@@ -3697,6 +3725,7 @@ ros/ros/tools/xdot/src/xdot/xdot.py
 @dirrm ros/ros/test/test_rosservice/src/test_rosservice
 @dirrm ros/ros/test/test_rosservice/src
 @dirrm ros/ros/test/test_rosservice/nodes
+@exec mkdir -p %D/ros/ros/test/test_rosservice/bin
 @dirrm ros/ros/test/test_rosservice/bin
 @dirrm ros/ros/test/test_rosservice
 @dirrm ros/ros/test/test_rosrecord/test
@@ -3711,6 +3740,7 @@ ros/ros/tools/xdot/src/xdot/xdot.py
 @dirrm ros/ros/test/test_rosrecord/msg/lisp/test_rosrecord
 @dirrm ros/ros/test/test_rosrecord/msg/lisp
 @dirrm ros/ros/test/test_rosrecord/msg
+@exec mkdir -p %D/ros/ros/test/test_rosrecord/bin
 @dirrm ros/ros/test/test_rosrecord/bin
 @dirrm ros/ros/test/test_rosrecord
 @dirrm ros/ros/test/test_rospy/test
@@ -3733,13 +3763,17 @@ ros/ros/tools/xdot/src/xdot/xdot.py
 @dirrm ros/ros/test/test_rospy/msg/lisp/test_rospy
 @dirrm ros/ros/test/test_rospy/msg/lisp
 @dirrm ros/ros/test/test_rospy/msg
+@exec mkdir -p %D/ros/ros/test/test_rospy/lib
 @dirrm ros/ros/test/test_rospy/lib
 @dirrm ros/ros/test/test_rospy/doc
+@exec mkdir -p %D/ros/ros/test/test_rospy/bin
 @dirrm ros/ros/test/test_rospy/bin
 @dirrm ros/ros/test/test_rospy
 @dirrm ros/ros/test/test_rosparam/test
+@exec mkdir -p %D/ros/ros/test/test_rosparam/bin
 @dirrm ros/ros/test/test_rosparam/bin
 @dirrm ros/ros/test/test_rosparam
+@exec mkdir -p %D/ros/ros/test/test_rospack/test_empty
 @dirrm ros/ros/test/test_rospack/test_empty
 @dirrm ros/ros/test/test_rospack/test_circular/cycle2/friend3
 @dirrm ros/ros/test/test_rospack/test_circular/cycle2/friend2
@@ -3796,8 +3830,10 @@ ros/ros/tools/xdot/src/xdot/xdot.py
 @dirrm ros/ros/test/test_rospack/structure_test/subdir2/subdir2_1
 @dirrm ros/ros/test/test_rospack/structure_test/subdir2
 @dirrm ros/ros/test/test_rospack/structure_test/subdir1/subdir1_1/package5
+@exec mkdir -p %D/ros/ros/test/test_rospack/structure_test/subdir1/subdir1_1/package4/not_a_package1
 @dirrm ros/ros/test/test_rospack/structure_test/subdir1/subdir1_1/package4/not_a_package1
 @dirrm ros/ros/test/test_rospack/structure_test/subdir1/subdir1_1/package4
+@exec mkdir -p %D/ros/ros/test/test_rospack/structure_test/subdir1/subdir1_1/not_a_package_1_1
 @dirrm ros/ros/test/test_rospack/structure_test/subdir1/subdir1_1/not_a_package_1_1
 @dirrm ros/ros/test/test_rospack/structure_test/subdir1/subdir1_1
 @dirrm ros/ros/test/test_rospack/structure_test/subdir1/package3
@@ -3812,11 +3848,15 @@ ros/ros/tools/xdot/src/xdot/xdot.py
 @dirrm ros/ros/test/test_rospack/stack_install/stack/package
 @dirrm ros/ros/test/test_rospack/stack_install/stack
 @dirrm ros/ros/test/test_rospack/stack_install
+@exec mkdir -p %D/ros/ros/test/test_rospack/bin
 @dirrm ros/ros/test/test_rospack/bin
 @dirrm ros/ros/test/test_rospack
 @dirrm ros/ros/test/test_rosnode/test
+@exec mkdir -p %D/ros/ros/test/test_rosnode/src/test_rosnode
 @dirrm ros/ros/test/test_rosnode/src/test_rosnode
+@exec mkdir -p %D/ros/ros/test/test_rosnode/src
 @dirrm ros/ros/test/test_rosnode/src
+@exec mkdir -p %D/ros/ros/test/test_rosnode/bin
 @dirrm ros/ros/test/test_rosnode/bin
 @dirrm ros/ros/test/test_rosnode
 @dirrm ros/ros/test/test_rosmsg/test
@@ -3838,12 +3878,15 @@ ros/ros/tools/xdot/src/xdot/xdot.py
 @dirrm ros/ros/test/test_rosmsg/msg/lisp/test_rosmsg
 @dirrm ros/ros/test/test_rosmsg/msg/lisp
 @dirrm ros/ros/test/test_rosmsg/msg
+@exec mkdir -p %D/ros/ros/test/test_rosmsg/bin
 @dirrm ros/ros/test/test_rosmsg/bin
 @dirrm ros/ros/test/test_rosmsg
 @dirrm ros/ros/test/test_rosmaster/test
+@exec mkdir -p %D/ros/ros/test/test_rosmaster/bin
 @dirrm ros/ros/test/test_rosmaster/bin
 @dirrm ros/ros/test/test_rosmaster
 @dirrm ros/ros/test/test_rosmake/test
+@exec mkdir -p %D/ros/ros/test/test_rosmake/bin
 @dirrm ros/ros/test/test_rosmake/bin
 @dirrm ros/ros/test/test_rosmake
 @dirrm ros/ros/test/test_roslib/test/stack_tests2
@@ -3876,16 +3919,20 @@ ros/ros/tools/xdot/src/xdot/xdot.py
 @dirrm ros/ros/test/test_roslib/msg/lisp/test_roslib
 @dirrm ros/ros/test/test_roslib/msg/lisp
 @dirrm ros/ros/test/test_roslib/msg
+@exec mkdir -p %D/ros/ros/test/test_roslib/bin
 @dirrm ros/ros/test/test_roslib/bin
 @dirrm ros/ros/test/test_roslib
 @dirrm ros/ros/test/test_roslaunch/test/xml
 @dirrm ros/ros/test/test_roslaunch/test
+@exec mkdir -p %D/ros/ros/test/test_roslaunch/bin
 @dirrm ros/ros/test/test_roslaunch/bin
 @dirrm ros/ros/test/test_roslaunch
 @dirrm ros/ros/test/test_rosgraph/test
+@exec mkdir -p %D/ros/ros/test/test_rosgraph/bin
 @dirrm ros/ros/test/test_rosgraph/bin
 @dirrm ros/ros/test/test_rosgraph
 @dirrm ros/ros/test/test_rosdep/test
+@exec mkdir -p %D/ros/ros/test/test_rosdep/bin
 @dirrm ros/ros/test/test_rosdep/bin
 @dirrm ros/ros/test/test_rosdep
 @dirrm ros/ros/test/test_roscreate/test/fake-pkg/stack2/depends_stack1
@@ -3894,6 +3941,7 @@ ros/ros/tools/xdot/src/xdot/xdot.py
 @dirrm ros/ros/test/test_roscreate/test/fake-pkg/stack1
 @dirrm ros/ros/test/test_roscreate/test/fake-pkg
 @dirrm ros/ros/test/test_roscreate/test
+@exec mkdir -p %D/ros/ros/test/test_roscreate/bin
 @dirrm ros/ros/test/test_roscreate/bin
 @dirrm ros/ros/test/test_roscreate
 @dirrm ros/ros/test/test_roscpp_serialization/test
@@ -3938,6 +3986,7 @@ ros/ros/tools/xdot/src/xdot/xdot.py
 @dirrm ros/ros/test/test_rosbagmigration/msg_gen2
 @dirrm ros/ros/test/test_rosbagmigration/msg_gen1
 @dirrm ros/ros/test/test_rosbagmigration/msg_current
+@exec mkdir -p %D/ros/ros/test/test_rosbagmigration/bin
 @dirrm ros/ros/test/test_rosbagmigration/bin
 @dirrm ros/ros/test/test_rosbagmigration
 @dirrm ros/ros/test/test_rosbag/test
@@ -3948,6 +3997,7 @@ ros/ros/tools/xdot/src/xdot/xdot.py
 @dirrm ros/ros/test/test_rosbag/msg_gen2
 @dirrm ros/ros/test/test_rosbag/msg_gen1
 @dirrm ros/ros/test/test_rosbag/msg_current
+@exec mkdir -p %D/ros/ros/test/test_rosbag/bin
 @dirrm ros/ros/test/test_rosbag/bin
 @dirrm ros/ros/test/test_rosbag
 @dirrm ros/ros/test/test_ros/test
@@ -3970,8 +4020,10 @@ ros/ros/tools/xdot/src/xdot/xdot.py
 @dirrm ros/ros/test/test_ros/msg/lisp/test_ros
 @dirrm ros/ros/test/test_ros/msg/lisp
 @dirrm ros/ros/test/test_ros/msg
+@exec mkdir -p %D/ros/ros/test/test_ros/lib
 @dirrm ros/ros/test/test_ros/lib
 @dirrm ros/ros/test/test_ros/doc
+@exec mkdir -p %D/ros/ros/test/test_ros/bin
 @dirrm ros/ros/test/test_ros/bin
 @dirrm ros/ros/test/test_ros
 @dirrm ros/ros/test/test_results
@@ -3985,6 +4037,7 @@ ros/ros/tools/xdot/src/xdot/xdot.py
 @dirrm ros/ros/test/test_crosspackage/msg/lisp/test_crosspackage
 @dirrm ros/ros/test/test_crosspackage/msg/lisp
 @dirrm ros/ros/test/test_crosspackage/msg
+@exec mkdir -p %D/ros/ros/test/test_crosspackage/bin
 @dirrm ros/ros/test/test_crosspackage/bin
 @dirrm ros/ros/test/test_crosspackage
 @dirrm ros/ros/test/rostest/test
@@ -4005,6 +4058,7 @@ ros/ros/tools/xdot/src/xdot/xdot.py
 @dirrm ros/ros/test/performance/test_roscpp_serialization_perf/msg/lisp/test_roscpp_serialization_perf
 @dirrm ros/ros/test/performance/test_roscpp_serialization_perf/msg/lisp
 @dirrm ros/ros/test/performance/test_roscpp_serialization_perf/msg
+@exec mkdir -p %D/ros/ros/test/performance/test_roscpp_serialization_perf/bin
 @dirrm ros/ros/test/performance/test_roscpp_serialization_perf/bin
 @dirrm ros/ros/test/performance/test_roscpp_serialization_perf
 @dirrm ros/ros/test/performance/perf_roscpp/src/perf_roscpp/msg
@@ -4034,6 +4088,7 @@ ros/ros/tools/xdot/src/xdot/xdot.py
 @dirrm ros/ros/std_srvs/src/std_srvs/srv
 @dirrm ros/ros/std_srvs/src/std_srvs
 @dirrm ros/ros/std_srvs/src
+@exec mkdir -p %D/ros/ros/std_srvs/bin
 @dirrm ros/ros/std_srvs/bin
 @dirrm ros/ros/std_srvs
 @dirrm ros/ros/std_msgs/src/std_msgs/msg
@@ -4048,24 +4103,31 @@ ros/ros/tools/xdot/src/xdot/xdot.py
 @dirrm ros/ros/std_msgs/msg
 @dirrm ros/ros/std_msgs/include/std_msgs
 @dirrm ros/ros/std_msgs/include
+@exec mkdir -p %D/ros/ros/std_msgs/bin
 @dirrm ros/ros/std_msgs/bin
 @dirrm ros/ros/std_msgs
+@exec mkdir -p %D/ros/ros/core/rospy/test
 @dirrm ros/ros/core/rospy/test
 @dirrm ros/ros/core/rospy/src/rospy/impl
 @dirrm ros/ros/core/rospy/src/rospy
 @dirrm ros/ros/core/rospy/src
 @dirrm ros/ros/core/rospy/scripts
 @dirrm ros/ros/core/rospy/cmake
+@exec mkdir -p %D/ros/ros/core/rospy/bin
 @dirrm ros/ros/core/rospy/bin
 @dirrm ros/ros/core/rospy
+@exec mkdir -p %D/ros/ros/core/rosout/bin
 @dirrm ros/ros/core/rosout/bin
 @dirrm ros/ros/core/rosout
 @dirrm ros/ros/core/rosmaster/src/rosmaster
 @dirrm ros/ros/core/rosmaster/src
+@exec mkdir -p %D/ros/ros/core/rosmaster/bin
 @dirrm ros/ros/core/rosmaster/bin
 @dirrm ros/ros/core/rosmaster
 @dirrm ros/ros/core/roslisp/utils
+@exec mkdir -p %D/ros/ros/core/roslisp/test
 @dirrm ros/ros/core/roslisp/test
+@exec mkdir -p %D/ros/ros/core/roslisp/srv
 @dirrm ros/ros/core/roslisp/srv
 @dirrm ros/ros/core/roslisp/src
 @dirrm ros/ros/core/roslisp/scripts
@@ -4078,9 +4140,11 @@ ros/ros/tools/xdot/src/xdot/xdot.py
 @dirrm ros/ros/core/roslisp/s-xml-rpc
 @dirrm ros/ros/core/roslisp/s-xml
 @dirrm ros/ros/core/roslisp/roslisp-msg-protocol
+@exec mkdir -p %D/ros/ros/core/roslisp/msg
 @dirrm ros/ros/core/roslisp/msg
 @dirrm ros/ros/core/roslisp/load-manifest
 @dirrm ros/ros/core/roslisp/cmake
+@exec mkdir -p %D/ros/ros/core/roslisp/bin
 @dirrm ros/ros/core/roslisp/bin
 @dirrm ros/ros/core/roslisp/asdf
 @dirrm ros/ros/core/roslisp
@@ -4101,6 +4165,7 @@ ros/ros/tools/xdot/src/xdot/xdot.py
 @dirrm ros/ros/core/roslib/lib
 @dirrm ros/ros/core/roslib/include/ros
 @dirrm ros/ros/core/roslib/include
+@exec mkdir -p %D/ros/ros/core/roslib/bin
 @dirrm ros/ros/core/roslib/bin
 @dirrm ros/ros/core/roslib
 @dirrm ros/ros/core/roslang
@@ -4131,9 +4196,11 @@ ros/ros/tools/xdot/src/xdot/xdot.py
 @dirrm ros/ros/core/roscpp/include/ros
 @dirrm ros/ros/core/roscpp/include
 @dirrm ros/ros/core/roscpp/cmake
+@exec mkdir -p %D/ros/ros/core/roscpp/bin
 @dirrm ros/ros/core/roscpp/bin
 @dirrm ros/ros/core/roscpp
 @dirrm ros/ros/core/roscore_migration_rules/migration_rules
+@exec mkdir -p %D/ros/ros/core/roscore_migration_rules/bin
 @dirrm ros/ros/core/roscore_migration_rules/bin
 @dirrm ros/ros/core/roscore_migration_rules
 @dirrm ros/ros/core/rosconsole/test
@@ -4145,6 +4212,7 @@ ros/ros/tools/xdot/src/xdot/xdot.py
 @dirrm ros/ros/core/rosconsole/include/ros
 @dirrm ros/ros/core/rosconsole/include
 @dirrm ros/ros/core/rosconsole/examples
+@exec mkdir -p %D/ros/ros/core/rosconsole/bin
 @dirrm ros/ros/core/rosconsole/bin
 @dirrm ros/ros/core/rosconsole
 @dirrm ros/ros/core/rosbuild/tests
@@ -4158,9 +4226,11 @@ ros/ros/tools/xdot/src/xdot/xdot.py
 @dirrm ros/ros/core/message_filters/include/message_filters/sync_policies
 @dirrm ros/ros/core/message_filters/include/message_filters
 @dirrm ros/ros/core/message_filters/include
+@exec mkdir -p %D/ros/ros/core/message_filters/bin
 @dirrm ros/ros/core/message_filters/bin
 @dirrm ros/ros/core/message_filters
 @dirrm ros/ros/core/genmsg_cpp/test
+@exec mkdir -p %D/ros/ros/core/genmsg_cpp/bin
 @dirrm ros/ros/core/genmsg_cpp/bin
 @dirrm ros/ros/core/genmsg_cpp
 @dirrm ros/ros/core
@@ -4168,6 +4238,7 @@ ros/ros/tools/xdot/src/xdot/xdot.py
 @dirrm ros/ros/3rdparty/xmlrpcpp/test
 @dirrm ros/ros/3rdparty/xmlrpcpp/src
 @dirrm ros/ros/3rdparty/xmlrpcpp/lib
+@exec mkdir -p %D/ros/ros/3rdparty/xmlrpcpp/bin
 @dirrm ros/ros/3rdparty/xmlrpcpp/bin
 @dirrm ros/ros/3rdparty/xmlrpcpp
 @dirrm ros/ros/3rdparty/wxswig/share/swig/1.3.29/uffi

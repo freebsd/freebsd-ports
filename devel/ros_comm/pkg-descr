@@ -9,9 +9,6 @@ not limited to:
 
 This port provides the core part of ROS: the base system and the tools
 to develop additional nodes. These additional nodes can be installed
-manually by using something like:
-% svn co `roslocate svn nodename` nodename
-  (or git clone `roslocate svn nodename` nodename)
-% rosmake nodename
+manually or via the Ports Collection.
 
 WWW: http://www.ros.org/wiki/

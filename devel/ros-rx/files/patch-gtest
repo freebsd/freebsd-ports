@@ -4,11 +4,10 @@
  all: gtest
  
 -TARBALL = build/gtest-1.3.0.tar.gz
--TARBALL_URL = http://pr.willowgarage.com/downloads/gtest-1.3.0.tar.gz
++TARBALL = build/gtest-1.5.0.tar.gz
+ TARBALL_URL = http://pr.willowgarage.com/downloads/gtest-1.3.0.tar.gz
 -SOURCE_DIR = build/gtest-1.3.0
 -MD5SUM_FILE = gtest-1.3.0.tar.gz.md5sum
-+TARBALL = build/gtest-1.5.0.tar.gz
-+TARBALL_URL = ftp://rene-ladan.nl/not-fetchable/gtest-1.5.0.tar.gz
 +SOURCE_DIR = build/gtest-1.5.0
 +MD5SUM_FILE = gtest-1.5.0.tar.gz.md5sum
  include $(shell rospack find mk)/download_unpack_build.mk

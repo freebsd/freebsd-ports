@@ -6,7 +6,7 @@
 
 PORTNAME=	ros
 PORTVERSION=	1.2.4
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	devel
 MASTER_SITES=	ftp://rene-ladan.nl/pub/distfiles/ros/
 DISTFILES=	ros-${PORTVERSION}.tar.bz2 SWIG-1.3.29-wx.tar.gz \
@@ -35,6 +35,7 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/matplotlib/__init__.py:${PORTSDIR}/math/py-mat
 		${PYTHON_SITELIBDIR}/yaml/__init__.py:${PORTSDIR}/devel/py-yaml \
 		bash:${PORTSDIR}/shells/bash \
 		cmake:${PORTSDIR}/devel/cmake \
+		cppunit-config:${PORTSDIR}/devel/cppunit \
 		doxygen:${PORTSDIR}/devel/doxygen \
 		epydoc:${PORTSDIR}/devel/epydoc \
 		f2py:${PORTSDIR}/math/py-numpy \
@@ -78,11 +79,6 @@ SUB_LIST=	LOCALBASE=${LOCALBASE} \
 PORTDOCS=	AUTHORS README
 
 post-extract:
-	# fix path to the wx configure tool and bash
-	${REINPLACE_CMD} -E -e "s|wx-config|${WX_CONFIG}|" \
-	    ${WRKSRC}/3rdparty/wxswig/manifest.xml
-	${GREP} -l -r "^#\!/bin/bash" ${WRKSRC} | ${XARGS} \
-	    ${REINPLACE_CMD} -E -e "s|#!/bin/bash|#!${LOCALBASE}/bin/bash|"
 	# move 3rdparty distfiles into place
 	${MKDIR} ${WRKSRC}/3rdparty/gtest/build
 	${CP} ${_DISTDIR}/gtest-1.5.0.tar.gz ${WRKSRC}/3rdparty/gtest/build
@@ -90,6 +86,11 @@ post-extract:
 	${CP} ${_DISTDIR}/SWIG-1.3.29-wx.tar.gz ${WRKSRC}/3rdparty/wxswig/build
 
 post-patch:
+	# fix path to the wx configure tool and bash
+	${REINPLACE_CMD} -E -e "s|wx-config|${WX_CONFIG}|" \
+	    ${WRKSRC}/3rdparty/wxswig/manifest.xml
+	${GREP} -l -r "^#\!/bin/bash" ${WRKSRC} | ${XARGS} \
+	    ${REINPLACE_CMD} -E -e "s|#!/bin/bash|#!${LOCALBASE}/bin/bash|"
 	# temporarily alter how ROS is built for the port build
 	${REINPLACE_CMD} -E -e "s|--rosdep-install|--no-rosdep -i --disable-logging|" \
 	    ${WRKSRC}/Makefile
@@ -142,7 +143,7 @@ do-install:
 	    -or -name \*.orig | ${XARGS} ${RM} -rf
 	(cd ${WRKSRC} && ${COPYTREE_SHARE} ${d} ${PREFIX}/ros/ros)
 .endfor
-# strip and move libraries to PREFIX/lib (except gtest)
+# strip and symlink libraries to PREFIX/lib (except gtest)
 .for f in core/message_filters/lib/libmessage_filters.so \
     core/rosconsole/lib/librosconsole.so core/roscpp/lib/libros.so \
     core/roslib/lib/libroslib.so \
@@ -153,7 +154,7 @@ do-install:
     tools/topic_tools/lib/libtopic_tools.so 3rdparty/xmlrpcpp/lib/libXmlRpc.so
 	${STRIP_CMD} ${PREFIX}/ros/ros/${f}
 	${LOCALBASE}/bin/chrpath -d ${PREFIX}/ros/ros/${f}
-	${MV} ${PREFIX}/ros/ros/${f} ${PREFIX}/lib
+	${LN} -s ${PREFIX}/ros/ros/${f} ${PREFIX}/lib
 .endfor
 # strip gtest libraries
 .for f in 3rdparty/gtest/gtest/lib/libgtest.so.0 \
