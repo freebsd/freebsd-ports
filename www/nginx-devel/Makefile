@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	nginx
-PORTVERSION=	0.8.53
-PORTREVISION=	1
+PORTVERSION=	0.9.0
 CATEGORIES=	www
 MASTER_SITES=	http://sysoev.ru/nginx/
 MASTER_SITES+=	${MASTER_SITE_LOCAL}
@@ -94,8 +93,6 @@ USE_RC_SUBR=	nginx.sh
 SUB_LIST+=	WWWOWN=${WWWOWN}
 .if !defined(NO_INSTALL_MANPAGES)
 MAN8=		nginx.8
-SUB_FILES+=	nginx.8
-SUB_LIST+=	NGINX_ERRORLOG=${NGINX_ERRORLOG} NGINX_RUNDIR=${NGINX_RUNDIR}
 .endif
 
 HAS_CONFIGURE=	yes
@@ -516,7 +513,7 @@ post-install:
 	${ECHO_CMD} @dirrm ${SITE_PERL_REL}/${PERL_ARCH}/auto/nginx >> ${TMPPLIST}
 .endif
 .if !defined(NO_INSTALL_MANPAGES)
-	@${INSTALL_MAN} ${WRKDIR}/nginx.8 ${MAN8PREFIX}/man/man8
+	@${INSTALL_MAN} ${WRKSRC}/objs/nginx.8 ${MAN8PREFIX}/man/man8
 .endif
 
 .include <bsd.port.post.mk>
