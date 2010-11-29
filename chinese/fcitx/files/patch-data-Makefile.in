@@ -1,0 +1,20 @@
+--- data/Makefile.in.orig	2010-11-27 20:20:50.990507459 +0800
++++ data/Makefile.in	2010-11-27 20:21:11.099145804 +0800
+@@ -702,16 +702,9 @@
+ tools: 
+ 	$(MAKE) -C ../tools
+ 
+-$(pyorg_data): $(py_tar) md5check
++$(pyorg_data):
+ 	cd $(srcdir) && $(TAR) xzvf $(py_tar)
+ 
+-$(py_tar):
+-	$(WGET) -O $(py_tar) $(py_url)
+-	$(WGET) -O $(py_tar).md5 $(py_url).md5
+-
+-md5check: $(py_tar)
+-	cd $(srcdir) && $(MD5SUM) -c $(py_tar).md5 || ( $(RM) $(py_tar); exit 1 )
+-
+ all-local: tools  $(py_data)
+ 	rm -f pyERROR
+ 	rm -f pyPhrase.ok

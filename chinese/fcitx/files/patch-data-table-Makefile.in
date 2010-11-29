@@ -1,0 +1,20 @@
+--- data/table/Makefile.in.orig	2010-11-27 19:49:38.241629454 +0800
++++ data/table/Makefile.in	2010-11-27 19:50:12.259003812 +0800
+@@ -487,16 +487,9 @@
+ 
+ $(txt_m_data): cj.txt ;
+ 
+-cj.txt: $(table_tar) md5check
++cj.txt:
+ 	$(TAR) xzvf $(table_tar)
+ 
+-$(table_tar):
+-	$(WGET) -O $(table_tar) $(table_url)
+-	$(WGET) -O $(table_tar).md5 $(table_url).md5
+-
+-md5check: $(table_tar)
+-	cd $(srcdir) && $(MD5SUM) -c $(table_tar).md5 || ( $(RM) $(table_tar); exit 1)
+-
+ all-local: tools $(txt_data) $(mb_data)
+ 
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
