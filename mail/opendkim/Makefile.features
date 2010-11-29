@@ -7,6 +7,10 @@
 # $FreeBSD$
 #
 
+.if defined(WITH_ADSP_LISTS) && !defined(WITHOUT_ADSP_LISTS)
+CONFIGURE_ARGS+=	--enable-adsp_lists
+.endif
+
 .if defined(WITH_ALLSYMBOLS) && !defined(WITHOUT_ALLSYMBOLS)
 CONFIGURE_ARGS+=	--enable-allsymbols
 .endif
@@ -23,6 +27,10 @@ CONFIGURE_ARGS+=	--enable-capture_unknown_errors
 CONFIGURE_ARGS+=	--enable-codecoverage
 .endif
 
+.if defined(WITH_DEFAULT_SENDER) && !defined(WITHOUT_DEFAULT_SENDER)
+CONFIGURE_ARGS+=	--enable-default_sender
+.endif
+
 .if defined(WITH_DIFFHEADERS) && !defined(WITHOUT_DIFFHEADERS)
 CONFIGURE_ARGS+=	--enable-diffheaders
 LIB_DEPENDS+=		tre:${PORTSDIR}/textproc/libtre
@@ -30,10 +38,6 @@ LIB_DEPENDS+=		tre:${PORTSDIR}/textproc/libtre
 
 .if defined(WITH_DKIM_REPUTATION) && !defined(WITHOUT_DKIM_REPUTATION)
 CONFIGURE_ARGS+=	--enable-dkim_reputation
-.endif
-
-.if defined(WITH_DNS_UPGRADE) && !defined(WITHOUT_DNS_UPGRADE)
-CONFIGURE_ARGS+=	--enable-dnsupgrade
 .endif
 
 .if defined(WITH_IDENTITY_HEADER) && !defined(WITHOUT_IDENTITY_HEADER)
@@ -78,7 +82,7 @@ CONFIGURE_ARGS+=	--enable-selector_header
 CONFIGURE_ARGS+=	--enable-sender_macro
 .endif
 
-.if defined(WITH_STATS) && !defined(WITHOUT_STATS)
+.if defined(WITH_STATS) || defined(WITH_STATS_I) || defined(WITH_STATSEXT)
 CONFIGURE_ARGS+=	--enable-stats
 MAN8+=			opendkim-stats.8
 PLIST_SUB+=		STATS=""
@@ -86,10 +90,14 @@ PLIST_SUB+=		STATS=""
 PLIST_SUB+=		STATS="@comment "
 .endif
 
-.if defined(WITH_VBR) && !defined(WITHOUT_VBR)
-CONFIGURE_ARGS+=	--enable-vbr
+.if defined(WITH_STATS_I) && !defined(WITHOUT_STATS_I)
+CONFIGURE_ARGS+=	--enable-stats_i
 .endif
 
-.if defined(WITH_ZTAGS) && !defined(WITHOUT_ZTAGS)
-CONFIGURE_ARGS+=	--enable-ztags
+.if defined(WITH_STATSEXT) && !defined(WITHOUT_STATSEXT)
+CONFIGURE_ARGS+=	--enable-statsext
+.endif
+
+.if defined(WITH_VBR) && !defined(WITHOUT_VBR)
+CONFIGURE_ARGS+=	--enable-vbr
 .endif

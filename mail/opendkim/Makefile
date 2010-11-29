@@ -6,13 +6,20 @@
 #
 
 PORTNAME=	opendkim
-PORTVERSION=	2.1.3
+PORTVERSION=	2.2.2
 CATEGORIES=	mail security
 MASTER_SITES=	SF/opendkim
 
 MAINTAINER=	umq@ueo.co.jp
 COMMENT=	DKIM library and milter implimentation
 
+LICENSE=	BSD SENDMAIL
+LICENSE_COMB=	multi
+LICENSE_FILE=	${WRKSRC}/LICENSE
+LICENSE_FILE_SENDMAIL=	${WRKSRC}/LICENSE.Sendmail
+LICENSE_GROUPS_SENDMAIL=	FSF OSI
+LICENSE_NAME_SENDMAIL=	Sendmail Open Source License
+LICENSE_PERMS_SENDMAIL=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 GNU_CONFIGURE=	yes
 USE_OPENSSL=	yes
 USE_RC_SUBR=	milter-opendkim
@@ -74,7 +81,6 @@ CONFIGURE_ARGS+=	--with-db-incdir=${BDB_INCLUDE_DIR} \
 USE_BDB=		41+
 .endif
 .if defined(WITH_UNBOUND) && !defined(WITHOUT_UNBOUND)
-BROKEN=		configure fails since arlib cannot be disabled
 .if defined(WITH_ARLIB)
 IGNORE=		libar cannot be used simultaneously with libunbound
 .endif
@@ -106,7 +112,7 @@ LIB_DEPENDS+=		opendbx:${PORTSDIR}/databases/opendbx
 CONFIGURE_ARGS+=	--with-openldap
 USE_OPENLDAP=		yes
 .endif
-.if defined(WITH_LUA)
+.if defined(WITH_LUA) || defined(WITH_STATSEXT)
 CONFIGURE_ARGS+=	--with-lua
 MAN3+=			opendkim-lua.3
 MAN8+=			miltertest.8
