@@ -41,8 +41,8 @@ OPTIONS=	DEBUG "Enable Debugging" Off \
 		GPAC "Enable MPEG-4 Output" On \
 		X11_OUTPUT "Enable X11 Output" Off
 
-CONFIGURE_ARGS+=	--extra-cflags="${CPPFLAGS} ${CFLAGS} -fPIC -I${LOCALBASE}/include -I${LOCALBASE}/include" \
-			--extra-ldflags="${LDFLAGS} -L${LOCALBASE}/lib -L${LOCALBASE}/lib" \
+CONFIGURE_ARGS+=	--extra-cflags="${CPPFLAGS} ${CFLAGS} -fPIC -I${LOCALBASE}/include" \
+			--extra-ldflags="${LDFLAGS} -L${LOCALBASE}/lib" \
 			--enable-shared
 
 CONFIGURE_ENV+=		COMPILER_PATH=${LOCALBASE}/bin
