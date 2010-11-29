@@ -182,7 +182,7 @@ pre-everything::
 .if ${ARCH} == "amd64"
 .if !exists(/usr/lib32)
 	@${ECHO} 'Requires 32-bit libraries installed under /usr/lib32.'
-	@${ECHO} 'Do: cd /usr/src; make build32 install32; ldconfig -v -m -R /usr/lib32'
+	@${ECHO} 'Do: cd /usr/src; make build32 install32; /etc/rc.d/ldconfig restart'
 	@${FALSE}
 .endif
 .endif
