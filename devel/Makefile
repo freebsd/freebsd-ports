@@ -3013,6 +3013,8 @@
     SUBDIR += root-doc
     SUBDIR += ros
     SUBDIR += ros-common
+    SUBDIR += ros-image_common
+    SUBDIR += ros-laser_pipeline
     SUBDIR += ros_tutorials
     SUBDIR += rote
     SUBDIR += rpc2
