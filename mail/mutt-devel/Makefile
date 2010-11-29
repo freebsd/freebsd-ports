@@ -168,6 +168,40 @@ CONFIGURE_ARGS+=	${MUTT_CONFIGURE_ARGS}
 USE_AUTOTOOLS=	automake:111 autoconf:268
 USE_OPENSSL=	yes
 
+.if !defined (MUTT_LITE)
+OPTIONS=	MUTT_ASPELL			"Enable aspell support"		off \
+		MUTT_COMPRESSED_FOLDERS		"Enable compressed folders"	on \
+		MUTT_CYRUS_SASL2		"Enable SASL2 authentication"	off \
+		MUTT_DEBUG			"Enable debugging capabilities"	off \
+		MUTT_FLOCK			"Enable flock() usage"		off \
+		MUTT_GPGME			"Enable gpgme interface"	off \
+		MUTT_GREETING_PATCH		"Enable greeting"		off \
+		MUTT_HTML			"Enable HTML documentation"	on \
+		MUTT_ICONV			"Enable iconv support"		on  \
+		MUTT_IDN			"Enable idn support"		off \
+		MUTT_IFDEF_PATCH		"Enable ifdef feature"		off \
+		MUTT_IMAP_HEADER_CACHE		"Enable imap header cache"	off \
+		MUTT_ISPELL			"Enable ispell support"		off \
+		MUTT_LOCALES_FIX		"Enable locales fix"		off \
+		MUTT_MAILBOX_MANPAGES		"Install mbox.5/mdf.8 manpages"	on  \
+		MUTT_MAILDIR_HEADER_CACHE	"Enable maildir header cache"	off \
+		MUTT_MAILDIR_MTIME_PATCH	"Enable Maildir mtime patch"	off \
+		MUTT_MBOX_HOOK_PATCH		"Enable enhanced mbox-hook"	off \
+		MUTT_NCURSES			"Enable ncurses support"	on \
+		MUTT_NCURSES_PORT		"Use ncurses from port"		off \
+		MUTT_NNTP			"Enable news reader"		off \
+		MUTT_PARENT_CHILD_MATCH		"Enable parent/child match"	off \
+		MUTT_QUOTE_PATCH		"Enable extended quoting"	on  \
+		MUTT_REVERSE_REPLY_PATCH	"Enable reverse_reply"		off \
+		MUTT_SGMLFORMAT			"Enable sgml support"		on  \
+		MUTT_SIDEBAR_PATCH		"Enable sidebar"		off \
+		MUTT_SIGNATURE_MENU		"Enable signature menu"		off \
+		MUTT_SLANG			"Enable slang support"		off \
+		MUTT_SMIME_OUTLOOK_COMPAT	"SMIME outlook compatible"	on \
+		MUTT_SMTP			"Enable SMTP relay support"	off \
+		MUTT_XML			"Use XML tools for documentation"		on 
+.endif
+
 PLIST=		${WRKDIR}/PLIST
 PKGMESSAGE=	${WRKDIR}/pkg-message
 SCRIPTS_ENV=	WRKDIR="${WRKDIR}"
@@ -194,11 +228,6 @@ AC_PATCH_VERSION=	${PORTVERSION}
 .endif
 .if defined(WITH_MUTT_MAILDIR_HEADER_CACHE)
 WITH_MUTT_IMAP_HEADER_CACHE=	yes
-.endif
-.if ${OSVERSION} >= 700033 || (${OSVERSION} < 700000 && ${OSVERSION} >= 602107)
-NCURSES_IS_DEFAULT=	yes
-.else
-SLANG_IS_DEFAULT=	yes
 .endif
 
 .if defined (MUTT_LITE)
@@ -253,11 +282,7 @@ MUTT_USES_SLANG=	yes
 MUTT_USES_NCURSES=	yes
 .endif
 .if !defined(MUTT_USES_SLANG) && !defined(WITHOUT_MUTT_SLANG) && !defined(MUTT_USES_NCURSES)
-.if defined(SLANG_IS_DEFAULT)
-MUTT_USES_SLANG=	yes
-.elif defined(NCURSES_IS_DEFAULT)
 MUTT_USES_NCURSES=	yes
-.endif
 .endif
 .if defined(WITHOUT_MUTT_SGMLFORMAT)
 XML_USED=	no
