@@ -4692,3 +4692,4 @@ misc/libpri-bristuff||2010-11-28|Superseded by asterisk 1.8
 net/asterisk-bristuff||2010-11-28|Superseded by asterisk 1.8
 www/p5-Mojo|www/p5-Mojolicious|2010-11-29|Project distname was renamed
 shells/bash-completion-classic|shells/bash-completion|2010-11-29|amd64 workaround no longer required
+devel/p5-usb|devel/p5-Device-USB|2010-11-29|Directory renamed
