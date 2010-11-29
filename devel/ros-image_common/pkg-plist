@@ -1,0 +1,105 @@
+lib/libcamera_calibration_parsers.so
+lib/libimage_transport.so
+lib/libpolled_camera.so
+ros/stacks/image_common/CMakeLists.txt
+ros/stacks/image_common/Makefile
+ros/stacks/image_common/camera_calibration_parsers/CMakeLists.txt
+ros/stacks/image_common/camera_calibration_parsers/Makefile
+ros/stacks/image_common/camera_calibration_parsers/ROS_NOBUILD
+ros/stacks/image_common/camera_calibration_parsers/bin/convert
+ros/stacks/image_common/camera_calibration_parsers/include/camera_calibration_parsers/parse.h
+ros/stacks/image_common/camera_calibration_parsers/include/camera_calibration_parsers/parse_ini.h
+ros/stacks/image_common/camera_calibration_parsers/include/camera_calibration_parsers/parse_yml.h
+ros/stacks/image_common/camera_calibration_parsers/lib/libcamera_calibration_parsers.so
+ros/stacks/image_common/camera_calibration_parsers/mainpage.dox
+ros/stacks/image_common/camera_calibration_parsers/manifest.xml
+ros/stacks/image_common/camera_calibration_parsers/src/convert.cpp
+ros/stacks/image_common/camera_calibration_parsers/src/parse.cpp
+ros/stacks/image_common/camera_calibration_parsers/src/parse_ini.cpp
+ros/stacks/image_common/camera_calibration_parsers/src/parse_yml.cpp
+ros/stacks/image_common/image_transport/CMakeLists.txt
+ros/stacks/image_common/image_transport/Makefile
+ros/stacks/image_common/image_transport/ROS_NOBUILD
+ros/stacks/image_common/image_transport/bin/list_transports
+ros/stacks/image_common/image_transport/bin/republish
+ros/stacks/image_common/image_transport/default_plugins.xml
+ros/stacks/image_common/image_transport/include/image_transport/camera_common.h
+ros/stacks/image_common/image_transport/include/image_transport/camera_publisher.h
+ros/stacks/image_common/image_transport/include/image_transport/camera_subscriber.h
+ros/stacks/image_common/image_transport/include/image_transport/exception.h
+ros/stacks/image_common/image_transport/include/image_transport/image_transport.h
+ros/stacks/image_common/image_transport/include/image_transport/loader_fwds.h
+ros/stacks/image_common/image_transport/include/image_transport/publisher.h
+ros/stacks/image_common/image_transport/include/image_transport/publisher_plugin.h
+ros/stacks/image_common/image_transport/include/image_transport/raw_publisher.h
+ros/stacks/image_common/image_transport/include/image_transport/raw_subscriber.h
+ros/stacks/image_common/image_transport/include/image_transport/simple_publisher_plugin.h
+ros/stacks/image_common/image_transport/include/image_transport/simple_subscriber_plugin.h
+ros/stacks/image_common/image_transport/include/image_transport/single_subscriber_publisher.h
+ros/stacks/image_common/image_transport/include/image_transport/subscriber.h
+ros/stacks/image_common/image_transport/include/image_transport/subscriber_filter.h
+ros/stacks/image_common/image_transport/include/image_transport/subscriber_plugin.h
+ros/stacks/image_common/image_transport/include/image_transport/transport_hints.h
+ros/stacks/image_common/image_transport/lib/libimage_transport.so
+ros/stacks/image_common/image_transport/mainpage.dox
+ros/stacks/image_common/image_transport/manifest.xml
+ros/stacks/image_common/image_transport/src/camera_common.cpp
+ros/stacks/image_common/image_transport/src/camera_publisher.cpp
+ros/stacks/image_common/image_transport/src/camera_subscriber.cpp
+ros/stacks/image_common/image_transport/src/image_transport.cpp
+ros/stacks/image_common/image_transport/src/list_transports.cpp
+ros/stacks/image_common/image_transport/src/manifest.cpp
+ros/stacks/image_common/image_transport/src/publisher.cpp
+ros/stacks/image_common/image_transport/src/republish.cpp
+ros/stacks/image_common/image_transport/src/single_subscriber_publisher.cpp
+ros/stacks/image_common/image_transport/src/subscriber.cpp
+ros/stacks/image_common/polled_camera/CMakeLists.txt
+ros/stacks/image_common/polled_camera/Makefile
+ros/stacks/image_common/polled_camera/ROS_NOBUILD
+ros/stacks/image_common/polled_camera/bin/poller
+ros/stacks/image_common/polled_camera/include/polled_camera/publication_server.h
+ros/stacks/image_common/polled_camera/lib/libpolled_camera.so
+ros/stacks/image_common/polled_camera/mainpage.dox
+ros/stacks/image_common/polled_camera/manifest.xml
+ros/stacks/image_common/polled_camera/src/polled_camera/__init__.py
+ros/stacks/image_common/polled_camera/src/polled_camera/srv/_GetPolledImage.py
+ros/stacks/image_common/polled_camera/src/polled_camera/srv/__init__.py
+ros/stacks/image_common/polled_camera/src/poller.cpp
+ros/stacks/image_common/polled_camera/src/publication_server.cpp
+ros/stacks/image_common/polled_camera/srv/GetPolledImage.srv
+ros/stacks/image_common/polled_camera/srv/lisp/polled_camera/.GetPolledImage.asd-dep
+ros/stacks/image_common/polled_camera/srv/lisp/polled_camera/GetPolledImage.lisp
+ros/stacks/image_common/polled_camera/srv/lisp/polled_camera/_package.lisp
+ros/stacks/image_common/polled_camera/srv/lisp/polled_camera/_package_GetPolledImage.lisp
+ros/stacks/image_common/polled_camera/srv/lisp/polled_camera/polled_camera-srv.asd
+ros/stacks/image_common/polled_camera/srv_gen/cpp/include/polled_camera/GetPolledImage.h
+ros/stacks/image_common/polled_camera/srv_gen/generated
+ros/stacks/image_common/stack.xml
+@dirrm ros/stacks/image_common/polled_camera/srv_gen/cpp/include/polled_camera
+@dirrm ros/stacks/image_common/polled_camera/srv_gen/cpp/include
+@dirrm ros/stacks/image_common/polled_camera/srv_gen/cpp
+@dirrm ros/stacks/image_common/polled_camera/srv_gen
+@dirrm ros/stacks/image_common/polled_camera/srv/lisp/polled_camera
+@dirrm ros/stacks/image_common/polled_camera/srv/lisp
+@dirrm ros/stacks/image_common/polled_camera/srv
+@dirrm ros/stacks/image_common/polled_camera/src/polled_camera/srv
+@dirrm ros/stacks/image_common/polled_camera/src/polled_camera
+@dirrm ros/stacks/image_common/polled_camera/src
+@dirrm ros/stacks/image_common/polled_camera/lib
+@dirrm ros/stacks/image_common/polled_camera/include/polled_camera
+@dirrm ros/stacks/image_common/polled_camera/include
+@dirrm ros/stacks/image_common/polled_camera/bin
+@dirrm ros/stacks/image_common/polled_camera
+@dirrm ros/stacks/image_common/image_transport/src
+@dirrm ros/stacks/image_common/image_transport/lib
+@dirrm ros/stacks/image_common/image_transport/include/image_transport
+@dirrm ros/stacks/image_common/image_transport/include
+@dirrm ros/stacks/image_common/image_transport/bin
+@dirrm ros/stacks/image_common/image_transport
+@dirrm ros/stacks/image_common/camera_calibration_parsers/src
+@dirrm ros/stacks/image_common/camera_calibration_parsers/lib
+@dirrm ros/stacks/image_common/camera_calibration_parsers/include/camera_calibration_parsers
+@dirrm ros/stacks/image_common/camera_calibration_parsers/include
+@dirrm ros/stacks/image_common/camera_calibration_parsers/bin
+@dirrm ros/stacks/image_common/camera_calibration_parsers
+@dirrm ros/stacks/image_common

@@ -1,0 +1,15 @@
+Common code for working with images in ROS:
+
+camera_calibration_parsers contains routines for reading and writing camera
+calibration parameters.
+
+image_transport should always be used to subscribe to and publish images. It
+provides transparent support for transporting images in low-bandwidth
+compressed formats. Examples (provided by separate plugin packages) include
+JPEG/PNG compression and Theora streaming video.
+
+polled_camera contains a service and C++ helper classes for implementing a
+polled camera driver node and requesting images from it. The package is
+currently for internal use as the API is still under development.
+
+WWW: http://www.ros.org/wiki/image_common
