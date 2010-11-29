@@ -1,17 +1,26 @@
 Index: configure
 diff -u configure.orig configure
---- configure.orig	2010-11-26 15:06:26.419690432 +0900
-+++ configure	2010-11-26 15:27:39.897910842 +0900
-@@ -7162,7 +7162,7 @@
+--- configure.orig	2010-11-30 03:25:07.756687818 +0900
++++ configure	2010-11-30 03:26:18.670893394 +0900
+@@ -7156,7 +7156,7 @@
+ fi
  
- done
  
 -	if test "$ac_cv_header_pcreposix_h" == "yes"; then
 +	if test "$ac_cv_header_pcreposix_h" = "yes"; then
+ 		{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for utf8 enabled pcre" >&5
+ $as_echo_n "checking for utf8 enabled pcre... " >&6; }
+ 		if test "${cyrus_cv_pcre_utf8+set}" = set; then :
+@@ -7182,7 +7182,7 @@
+ 	else
+ 		cyrus_cv_pcre_utf8="no"
+ 	fi
+-	if test "$cyrus_cv_pcre_utf8" == "yes"; then
++	if test "$cyrus_cv_pcre_utf8" = "yes"; then
  		LIBS="$LIBS -lpcre -lpcreposix";
  
  $as_echo "#define ENABLE_REGEX /**/" >>confdefs.h
-@@ -10411,7 +10411,7 @@
+@@ -10446,7 +10446,7 @@
      PERL_SUBDIRS="imap"
      PERL="${with_perl}"
      case "${target_os}" in
