@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	apache-ant
-PORTVERSION=	1.7.1
+PORTVERSION=	1.8.1
 CATEGORIES=	devel java
 MASTER_SITES=	${MASTER_SITE_APACHE:S,%SUBDIR%/,ant/binaries/:bin,} \
-		${MASTER_SITE_LOCAL:S,%SUBDIR%/,hq/:man,} \
-		http://www.esil.univ-mrs.fr/~hquiroz/:man
+		LOCAL/hq:man
 DISTFILES=	${ANT_DISTFILE}:bin \
 		${MANPAGE_DISTFILE}:man
 EXTRACT_ONLY=	${ANT_DISTFILE}
@@ -19,6 +18,8 @@ MAINTAINER=	java@FreeBSD.org
 COMMENT=	Java- and XML-based build tool, conceptually similar to make
 
 RUN_DEPENDS=	classpath:${PORTSDIR}/java/javavmwrapper
+
+LICENSE=	ASL
 
 ANT_DISTFILE=	${PORTNAME}-${PORTVERSION}-bin.tar.bz2
 MANPAGE_DISTFILE=	${PORTNAME}-manpage-${MANPAGE_VERSION}.tgz
@@ -30,12 +31,10 @@ JAVA_VERSION=	1.2+
 NO_BUILD=	YES
 DATADIR=	${JAVASHAREDIR}/${PORTNAME}
 
-PLIST_SUB+=	ANT_VERSION="${PORTVERSION}"
-
 READMES=	LICENSE README WHATSNEW
 
 .if !defined(NOPORTDOCS)
-PORTDOCS=	* .htaccess
+PORTDOCS=	*
 .endif
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
