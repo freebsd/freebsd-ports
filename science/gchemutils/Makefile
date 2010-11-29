@@ -7,6 +7,7 @@
 
 PORTNAME=	gchemutils
 PORTVERSION=	0.12.3
+PORTREVISION=	1
 CATEGORIES=	science
 MASTER_SITES=	${MASTER_SITE_SAVANNAH}
 MASTER_SITE_SUBDIR=	${PORTNAME}/0.12
@@ -39,7 +40,7 @@ GCONF_SCHEMAS=	gcrystal.schemas gchempaint.schemas gchempaint-arrows.schemas \
 MAN1=		gchem3d.1 gchemcalc.1 gchempaint.1 gchemtable.1 gcrystal.1 \
 		gspectrum.1
 
-PLIST_SUB=	VER=0.12 GOFFICE=0.8.11 GNUMERIC_VER=1.10.11
+PLIST_SUB=	VER=0.12 GOFFICE=0.8.12 GNUMERIC_VER=1.10.12
 
 OPTIONS=	XUL "Build browser plugin (requires Xulrunner)" off
 
