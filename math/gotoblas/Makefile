@@ -7,6 +7,7 @@
 
 PORTNAME=	gotoblas
 PORTVERSION=	2.${GOTOBLAS2VER}
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	${MASTER_SITE_LOCAL:S|%SUBDIR%|maho/gotoblas|} \
 		ftp://ftp.netlib.org/lapack/:lapack \
@@ -27,7 +28,6 @@ LARGE_FILE=	large.tgz
 TIMING_FILE=	timing.tgz
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
-RESTRICTED=	Redistribution not permitted
 WRKSRC=		${WRKDIR}/GotoBLAS2
 
 USE_PERL5_BUILD=	yes
