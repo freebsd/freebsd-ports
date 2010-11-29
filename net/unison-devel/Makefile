@@ -23,7 +23,8 @@ USE_GMAKE=	yes
 MAKE_ARGS=	CFLAGS=""
 CONFLICTS=	unison-[0-9]* unison-nox11-[0-9]*
 
-MAKE_JOBS_UNSAFE=yes
+MAKE_JOBS_SAFE=	yes
+ALL_TARGET=	unison all
 
 .include <bsd.port.pre.mk>
 
