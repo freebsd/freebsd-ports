@@ -278,23 +278,18 @@ share/applications/claws-mail.desktop
 %%PORTDOCS%%%%DOCSDIR%%/RELEASE_NOTES
 %%PORTDOCS%%%%DOCSDIR%%/TODO
 %%DOCSDIR%%/manual/de/claws-mail-manual.html
-%%DOCSDIR%%/manual/de/claws-mail-manual.pdf
 %%DOCSDIR%%/manual/de/claws-mail-manual.ps
 %%DOCSDIR%%/manual/de/claws-mail-manual.txt
 %%DOCSDIR%%/manual/en/claws-mail-manual.html
-%%DOCSDIR%%/manual/en/claws-mail-manual.pdf
 %%DOCSDIR%%/manual/en/claws-mail-manual.ps
 %%DOCSDIR%%/manual/en/claws-mail-manual.txt
 %%DOCSDIR%%/manual/es/claws-mail-manual.html
-%%DOCSDIR%%/manual/es/claws-mail-manual.pdf
 %%DOCSDIR%%/manual/es/claws-mail-manual.ps
 %%DOCSDIR%%/manual/es/claws-mail-manual.txt
 %%DOCSDIR%%/manual/fr/claws-mail-manual.html
-%%DOCSDIR%%/manual/fr/claws-mail-manual.pdf
 %%DOCSDIR%%/manual/fr/claws-mail-manual.ps
 %%DOCSDIR%%/manual/fr/claws-mail-manual.txt
 %%DOCSDIR%%/manual/pl/claws-mail-manual.html
-%%DOCSDIR%%/manual/pl/claws-mail-manual.pdf
 %%DOCSDIR%%/manual/pl/claws-mail-manual.ps
 %%DOCSDIR%%/manual/pl/claws-mail-manual.txt
 share/icons/hicolor/128x128/apps/claws-mail-128x128.png
@@ -342,4 +337,5 @@ share/pixmaps/claws-mail.png
 @dirrm include/claws-mail/gtk
 @dirrm include/claws-mail/etpan
 @dirrm include/claws-mail/common
+@dirrmtry include/claws-mail/plugins
 @dirrmtry include/claws-mail
