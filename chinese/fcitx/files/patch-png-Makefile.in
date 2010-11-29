@@ -1,0 +1,11 @@
+--- png/Makefile.in.orig	2010-11-27 21:49:04.591697974 +0800
++++ png/Makefile.in	2010-11-27 21:50:06.021645318 +0800
+@@ -228,7 +228,7 @@
+ top_build_prefix = @top_build_prefix@
+ top_builddir = @top_builddir@
+ top_srcdir = @top_srcdir@
+-pngdir = $(datadir)/pixmaps
++pngdir = $(datadir)/pixmaps/@PACKAGE@
+ png_DATA = \
+ 		   fcitx.png \
+ 		   fcitx-cangjie.png \

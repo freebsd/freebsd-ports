@@ -1,0 +1,33 @@
+--- configure.orig      2010-11-17 16:45:30.000000000 +0100
++++ configure   2010-11-29 19:17:00.000000000 +0100
+@@ -12635,7 +12635,7 @@
+ case "$host" in
+     *-*-*freebsd*)
+     HOST_LIBS="-lexecinfo -pthread"
+-    md5prog=gmd5sum
++    md5prog=md5
+     ;;
+     *-*-linux*)
+     HOST_LIBS="-ldl -lpthread"
+@@ -12691,11 +12691,6 @@
+ done
+ test -n "$WGET" || WGET="no"
+ 
+-if test "x$WGET" = "xno";
+-then
+-    as_fn_error $? "You need to install wget" "$LINENO" 5
+-fi
+-
+ for ac_prog in tar
+ do
+   # Extract the first word of "$ac_prog", so it can be a program name with args.
+@@ -14550,6 +14545,9 @@
+ fi
+ 
+     ;;
++       *-*-*freebsd*)
++       DATADIRNAME=share
++       ;;
+     *)
+     DATADIRNAME=lib
+     ;;

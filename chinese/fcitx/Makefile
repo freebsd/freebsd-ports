@@ -6,23 +6,28 @@
 #
 
 PORTNAME=	fcitx
-PORTVERSION=	3.6.3
+PORTVERSION=	4.0.0
 CATEGORIES=	chinese x11
-MASTER_SITES=	http://www.fcitx.org/download/ \
-		ftp://mirrors.redv.com/pub/fcitx/
+MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} pinyin.tar.gz table.tar.gz
+EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	darcsis@gmail.com
 COMMENT=	A simple and fast GBK Chinese XIM server
 
+LIB_DEPENDS=	execinfo.1:${PORTSDIR}/devel/libexecinfo
+
 LICENSE=	GPLv2
 
-USE_BZIP2=	yes
+DIST_SUBDIR=	fcitx
+USE_GNOME=	pango intltool
 USE_XORG=	xpm x11 xtst
-USE_ICONV=	yes
+USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 
 OPTIONS=	XFT		"Use Xft for Freetype font support" on \
+		TRAY		"Enable system tray support" on \
 		DBUS		"Enable D-Bus for KIMPanel support" off \
 		RECORDING	"Enable recording of user input"    off \
 		DEBUG		"Enable debug build with logging"   off \
@@ -33,6 +38,10 @@ OPTIONS=	XFT		"Use Xft for Freetype font support" on \
 LIB_DEPENDS+=	Xft.2:${PORTSDIR}/x11-fonts/libXft
 .else
 CONFIGURE_ARGS+=	--disable-xft
+.endif
+
+.if defined(WITHOUT_TRAY)
+CONFIGURE_ARGS+=	--disable-tray
 .endif
 
 .if defined(WITH_DBUS)
@@ -50,10 +59,8 @@ CONFIGURE_ARGS+=	--enable-debug --enable-log
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's#zh_CN.GB2312#zh_CN.eucCN#g' \
-		${WRKSRC}/src/xim.c
-	@${REINPLACE_CMD} -e 's#zh_CN.gb2312#zh_CN.eucCN#g' \
-		${WRKSRC}/src/ui.c ${WRKSRC}/src/tools.c
+	@${CP} ${DISTDIR}/${DIST_SUBDIR}/pinyin.tar.gz ${WRKSRC}/data
+	@${CP} ${DISTDIR}/${DIST_SUBDIR}/table.tar.gz ${WRKSRC}/data/table
 
 pre-install:
 	@${CHMOD} +x ${WRKSRC}/install-sh
