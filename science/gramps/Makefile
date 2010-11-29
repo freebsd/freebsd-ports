@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	gramps
-PORTVERSION=	3.2.4
+PORTVERSION=	3.2.5
 CATEGORIES=	science gnome python
 MASTER_SITES=	SF/${PORTNAME}/Stable/${PORTVERSION}
 
@@ -16,7 +16,7 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/_bsddb.so:${PORTSDIR}/databases/py-bsddb \
 		${PYTHON_SITELIBDIR}/_xmlplus/__init__.py:${PORTSDIR}/textproc/py-xml
 
 LICENSE=	GPLv2
-LICENSE_FILE_GPLv2=	${WRKSRC}/COPYING
+LICENSE_FILE=	${WRKSRC}/COPYING
 USE_BDB=	43
 USE_PYTHON=	yes
 USE_GETTEXT=	yes
@@ -45,13 +45,6 @@ RUN_DEPENDS+=${PYTHON_PKGNAMEPREFIX}webkitgtk>=0:${PORTSDIR}/www/py-webkitgtk
 .if defined(WITH_GRAPHVIZ)
 RUN_DEPENDS+=${PYTHON_PKGNAMEPREFIX}graphviz>-0:${PORTSDIR}/graphics/py-graphviz
 .endif
-
-pre-everything::
-	@${ECHO_MSG} "WARNING: The on-disk structure of the databases has"
-	@${ECHO_MSG} "changed since version 2.2.x."
-	@${ECHO_MSG} "Cancel this installation now and export your databases"
-	@${ECHO_MSG} "to GRAMPS XML file format as gedcom if you have not"
-	@${ECHO_MSG} "already have done so."
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
