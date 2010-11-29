@@ -3,19 +3,17 @@
 # Whom:			Michael Johnson <ahze@FreeBSD.org>
 #
 # $FreeBSD$
-#      $Id: Makefile 30 2006-10-30 22:15:26Z buhnux $
 
 PORTNAME=	x264
-PORTVERSION=	0.0.20101128
-PORTREVISION=	1
+PORTVERSION=	0.110.1804
 CATEGORIES=	multimedia
 MASTER_SITES=	http://downloads.videolan.org/pub/videolan/x264/snapshots/ \
 		http://samples.mplayerhq.hu/yuv4mpeg2/:pgo
 PKGNAMESUFFIX=	-devel
-DISTNAME=	${PORTNAME}-snapshot-${PORTVERSION:S/0.0.//}-2245
-DISTFILES=	${PORTNAME}-snapshot-${PORTVERSION:S/0.0.//}-2245${EXTRACT_SUFX}
+DISTNAME=	${PORTNAME}-snapshot-${X264_SNAPSHOT}-2245
+DISTFILES=	${PORTNAME}-snapshot-${X264_SNAPSHOT}-2245${EXTRACT_SUFX}
 DIST_SUBDIR=	x264
-EXTRACT_ONLY=	${PORTNAME}-snapshot-${PORTVERSION:S/0.0.//}-2245${EXTRACT_SUFX}
+EXTRACT_ONLY=	${PORTNAME}-snapshot-${X264_SNAPSHOT}-2245${EXTRACT_SUFX}
 
 MAINTAINER=	mm@FreeBSD.org
 COMMENT=	Library and tool for encoding H.264/AVC video streams
@@ -23,9 +21,11 @@ COMMENT=	Library and tool for encoding H.264/AVC video streams
 BUILD_DEPENDS=	yasm>=0.6.0:${PORTSDIR}/devel/yasm \
 		${LOCALBASE}/bin/as:${PORTSDIR}/devel/binutils
 
-CONFLICTS=	x264-0*
+CONFLICTS=	x264-0.*
 
 LATEST_LINK=	x264-devel
+
+X264_SNAPSHOT=	20101128
 
 USE_BZIP2=	yes
 EXTRACT_AFTER_ARGS?=	| ${TAR} -xf - --exclude .svn
@@ -61,13 +61,10 @@ USE_GCC?=	4.4+
 LDFLAGS+=	-fstack-protector
 .endif
 
-.if ${ARCH}=="i386"
-MAKE_ENV+=	ARCH_X86="1"
-.elif ${ARCH} == "powerpc"
-MAKE_ENV+=	ARCH_PPC="1"
-.endif
-
-MAKE_ENV+=	ARCH=${ARCH}
+CONFIGURE_ENV+=	ARCH= \
+		TARGET_ARCH=
+MAKE_ENV+=	ARCH= \
+		TARGET_ARCH=
 
 .if defined(WITH_DEBUG)
 CONFIGURE_ARGS+=	--enable-debug
@@ -89,9 +86,9 @@ RESTRICTED_FILES=	${Y4M_VIDEO_DISTFILE}
 .if !defined(WITHOUT_GPAC)
 BUILD_DEPENDS+=		gpac-libgpac>=0.4.5,1:${PORTSDIR}/multimedia/gpac-libgpac
 LIB_DEPENDS+=		gpac.1:${PORTSDIR}/multimedia/gpac-libgpac
-CONFIGURE_ARGS+=	--enable-mp4-output
+CONFIGURE_ARGS+=	--enable-gpac
 .else
-CONFIGURE_ARGS+=	--disable-mp4-output
+CONFIGURE_ARGS+=	--disable-gpac
 .endif
 
 .if defined(WITH_X11_OUTPUT)
