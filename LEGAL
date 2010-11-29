@@ -711,3 +711,5 @@ taetgen-*		math/tetgen		Academic or personal use only
 giac-*			math/giacxcas		The french documentation is for non commercial only use
 libaacplus-*		audio/libaacplus	Unclear legal status
 26410-800.zip		audio/libaacplus	Unclear legal status
+dmd-*			lang/dmd		No redistribution of non
+						validated binaries
