@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	ros_tutorials
-PORTVERSION=	0.2.2
-PORTREVISION=	1
+PORTVERSION=	0.2.3
 CATEGORIES=	devel
 MASTER_SITES=	ftp://rene-ladan.nl/pub/distfiles/ros/
 DIST_SUBDIR=	ros
@@ -23,7 +22,6 @@ RUN_DEPENDS=	roscore:${PORTSDIR}/devel/ros
 USE_WX=		2.8
 USE_PYTHON=	yes
 USE_BZIP2=	yes
-USE_LDCONFIG=	yes
 
 # rosmake does its own threading
 MAKE_JOBS_UNSAFE=	yes
@@ -34,7 +32,7 @@ MAKE_ENV+=	CPATH=${LOCALBASE}/include \
 		LIBRARY_PATH=${LOCALBASE}/lib \
 		MAKE=${LOCALBASE}/bin/gmake \
 		ROS_ROOT=${LOCALBASE}/ros/ros \
-		ROS_PACKAGE_PATH=${WRKDIR} \
+		ROS_PACKAGE_PATH=${WRKSRC} \
 		PYTHONPATH=${LOCALBASE}/ros/ros/core/roslib/src
 
 MAKE_ARGS=	-i --no-rosdep --status-rate=0 --disable-logging
