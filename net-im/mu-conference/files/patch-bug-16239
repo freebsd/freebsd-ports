@@ -1,0 +1,152 @@
+--- src/jcomp/jcr_main_stream_error.c.orig	2010-11-25 19:20:57.000000000 +0300
++++ src/jcomp/jcr_main_stream_error.c	2010-11-25 19:22:05.000000000 +0300
+@@ -60,7 +60,6 @@ void jcr_main_close_stream(void) {
+   g_source_remove(jcr->gmain_watch_source);
+   g_io_channel_shutdown(jcr->gio, TRUE, NULL);
+   g_io_channel_unref(jcr->gio);
+-  g_io_channel_unref(jcr->gio);
+   close(jcr->fd);
+   
+ 
+--- src/jcomp/jcr_deliver.c.orig	2010-11-26 16:16:52.000000000 +0300
++++ src/jcomp/jcr_deliver.c	2010-11-26 16:21:34.000000000 +0300
+@@ -33,7 +33,7 @@ void deliver(dpacket d, void *a) {
+     sleep(1);
+   }
+ 
+-  log_debug(JDBG, "queued %d bytes : >>> %s <<<", strlen(xmlnode2str(d->x)), xmlnode2str(d->x));
++  log_debug(JDBG, "queued %lu bytes : >>> %s <<<", strlen(xmlnode2str(d->x)), xmlnode2str(d->x));
+   g_async_queue_push(jcr->dqueue, d);
+ }
+ 
+@@ -90,7 +90,7 @@ void jcr_queue_deliver(void *a) {
+         log_warn(JDBG, "Send packet failed, dropping packet");
+       }
+ 
+-      log_debug(JDBG, "wrote %d packets of %d bytes", pkts, bytes);
++      log_debug(JDBG, "wrote %d packets of %lu bytes", pkts, bytes);
+       //    fprintf(stderr, "wrote %d packets of %d bytes\n", pkts, bytes);
+       if (left==0){
+         //queue is empty, flushing the socket
+@@ -99,7 +99,7 @@ void jcr_queue_deliver(void *a) {
+     }
+   }
+   log_warn(JDBG, "packet delivery thread exiting.");
+-  log_warn(JDBG, "  Last DvryQ Buffer='%.*s'", buffer->len, buffer->str);
++  log_warn(JDBG, "  Last DvryQ Buffer='%.*s'", (int)buffer->len, buffer->str);
+   g_string_free(buffer, TRUE);
+ }
+ 
+--- src/jcomp/jcr_log.c.orig	2010-11-26 14:40:12.000000000 +0300
++++ src/jcomp/jcr_log.c	2010-11-26 14:41:46.000000000 +0300
+@@ -79,8 +79,8 @@ void log_alert(char *zone, const char *f
+   g_static_mutex_lock(&_jcr_log_lock);
+   va_start(ap, fmt);
+   vsnprintf(logmsg, 512, fmt, ap);
+-  g_log(G_LOG_DOMAIN, G_LOG_LEVEL_CRITICAL, "%s: %s", zone, logmsg);
+   va_end(ap);
++  g_log(G_LOG_DOMAIN, G_LOG_LEVEL_CRITICAL, "%s: %s", zone, logmsg);
+   g_static_mutex_unlock(&_jcr_log_lock);
+ }
+ 
+@@ -92,8 +92,8 @@ void log_error(char *zone, const char *f
+   g_static_mutex_lock(&_jcr_log_lock);
+   va_start(ap, fmt);
+   vsnprintf(logmsg, 512, fmt, ap);
+-  g_log(G_LOG_DOMAIN, G_LOG_LEVEL_ERROR, "%s: %s", zone, logmsg);
+   va_end(ap);
++  g_log(G_LOG_DOMAIN, G_LOG_LEVEL_ERROR, "%s: %s", zone, logmsg);
+   g_static_mutex_unlock(&_jcr_log_lock);
+ }
+ 
+@@ -105,8 +105,8 @@ void log_notice(char *zone, const char *
+   g_static_mutex_lock(&_jcr_log_lock);
+   va_start(ap, fmt);
+   vsnprintf(logmsg, 512, fmt, ap);
+-  g_log(G_LOG_DOMAIN, G_LOG_LEVEL_MESSAGE, "%s: %s", zone, logmsg);
+   va_end(ap);
++  g_log(G_LOG_DOMAIN, G_LOG_LEVEL_MESSAGE, "%s: %s", zone, logmsg);
+   g_static_mutex_unlock(&_jcr_log_lock);
+ }
+ 
+@@ -118,8 +118,8 @@ void log_warn(char *zone, const char *fm
+   g_static_mutex_lock(&_jcr_log_lock);
+   va_start(ap, fmt);
+   vsnprintf(logmsg, 512, fmt, ap);
+-  g_log(G_LOG_DOMAIN, G_LOG_LEVEL_WARNING, "%s: %s", zone, logmsg);
+   va_end(ap);
++  g_log(G_LOG_DOMAIN, G_LOG_LEVEL_WARNING, "%s: %s", zone, logmsg);
+   g_static_mutex_unlock(&_jcr_log_lock);
+ }
+ 
+@@ -131,7 +131,7 @@ void log_debug(char *zone, const char *f
+   g_static_mutex_lock(&_jcr_log_lock);
+   va_start(ap, fmt);
+   vsnprintf(logmsg, 512, fmt, ap);
+-  g_log(G_LOG_DOMAIN, G_LOG_LEVEL_DEBUG, "%s: %s", zone, logmsg);
+   va_end(ap);
++  g_log(G_LOG_DOMAIN, G_LOG_LEVEL_DEBUG, "%s: %s", zone, logmsg);
+   g_static_mutex_unlock(&_jcr_log_lock);
+ }
+--- src/jcomp/jcr_elements.c.orig	2007-11-10 13:37:38.000000000 +0300
++++ src/jcomp/jcr_elements.c	2010-11-26 16:25:23.000000000 +0300
+@@ -172,7 +172,7 @@ gboolean jcr_read_data(GIOChannel *src, 
+     if (rc != G_IO_STATUS_NORMAL) {
+       if (gerr != NULL) {
+         log_warn(JDBG, "Main Channel Error: rc=%d, %d '%s' '%s'", rc,
+-          gerr->code, gerr->domain, gerr->message);
++          gerr->code, g_quark_to_string(gerr->domain), gerr->message);
+         g_error_free(gerr);
+       } else {
+         log_warn(JDBG, "Main Channel Error: rc=%d", rc);
+@@ -186,7 +186,7 @@ gboolean jcr_read_data(GIOChannel *src, 
+ 
+     if (XML_Parse(jcr->parser, jcr->recv_buffer, bytes_read, 0) == 0) {
+       log_warn(JDBG, "XML Parsing Error: '%s'", (char *)XML_ErrorString(XML_GetErrorCode(jcr->parser)));
+-      log_warn(JDBG, "   Last Rcvd Buffer='%.*s'", bytes_read, jcr->recv_buffer);
++      log_warn(JDBG, "   Last Rcvd Buffer='%.*s'", (int)bytes_read, jcr->recv_buffer);
+       jcr_main_close_stream();
+       return FALSE;
+     }
+--- ./src/jcomp/jcr_base_connect.c.orig	2010-11-26 16:40:01.000000000 +0300
++++ ./src/jcomp/jcr_base_connect.c	2010-11-26 16:40:15.000000000 +0300
+@@ -84,7 +84,7 @@ void jcr_send_start_stream(void) {
+   if (rc != G_IO_STATUS_NORMAL) {
+     log_warn(JDBG, "Opening XML stream failed, rc=%d", rc);
+   } else {
+-    log_debug(JDBG, "Opening XML stream: sent %d bytes", bytes);
++    log_debug(JDBG, "Opening XML stream: sent %lu bytes", bytes);
+   }
+ 
+ }
+--- ./src/conference.c.orig	2010-11-26 16:41:33.000000000 +0300
++++ ./src/conference.c	2010-11-26 16:42:53.000000000 +0300
+@@ -1079,7 +1079,7 @@ void conference(instance i, xmlnode x)
+   tp = pool_new();
+ 
+   /* Allocate space for cni struct and link to instance */
+-  log_debug(NAME, "[%s] Malloc: _cni=%d", FZONE, sizeof(_cni));
++  log_debug(NAME, "[%s] Malloc: _cni=%lu", FZONE, sizeof(_cni));
+   master = pmalloco(i->p, sizeof(_cni));
+ 
+   master->i = i;
+--- ./src/conference_room.c.orig	2010-11-26 16:44:18.000000000 +0300
++++ ./src/conference_room.c	2010-11-26 16:44:37.000000000 +0300
+@@ -1426,7 +1426,7 @@ cnr con_room_new(cni master, jid roomid,
+   /* Create pool for room struct */
+   p = pool_new(); 
+   room = pmalloco(p, sizeof(_cnr));
+-  log_debug(NAME, "[%s] Malloc: _cnr = %d", FZONE, sizeof(_cnr));
++  log_debug(NAME, "[%s] Malloc: _cnr = %lu", FZONE, sizeof(_cnr));
+   room->p = p;
+   room->master = master;
+ 
+@@ -1448,7 +1448,7 @@ cnr con_room_new(cni master, jid roomid,
+ 
+   /* Initialise room history */
+   room->history = pmalloco(p, sizeof(_cnh) * master->history); /* make array of xmlnodes */
+-  log_debug(NAME, "[%s] Malloc: history = %d", FZONE, sizeof(_cnh) * master->history);
++  log_debug(NAME, "[%s] Malloc: history = %lu", FZONE, sizeof(_cnh) * master->history);
+ 
+   /* Room time */
+   room->start = now;
