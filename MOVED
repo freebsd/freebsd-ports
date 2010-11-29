@@ -4690,3 +4690,4 @@ www/google_shortcuts|www/xpi-google_shortcuts|2010-11-26|Use www/xpi-google_shor
 x11-toolkits/ruby-gtksourceview||2010-11-27|Removed
 misc/libpri-bristuff||2010-11-28|Superseded by asterisk 1.8
 net/asterisk-bristuff||2010-11-28|Superseded by asterisk 1.8
+www/p5-Mojo|www/p5-Mojolicious|2010-11-29|Project distname was renamed
