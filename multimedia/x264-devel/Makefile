@@ -7,9 +7,11 @@
 
 PORTNAME=	x264
 PORTVERSION=	0.0.20101128
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	http://downloads.videolan.org/pub/videolan/x264/snapshots/ \
 		http://samples.mplayerhq.hu/yuv4mpeg2/:pgo
+PKGNAMESUFFIX=	-devel
 DISTNAME=	${PORTNAME}-snapshot-${PORTVERSION:S/0.0.//}-2245
 DISTFILES=	${PORTNAME}-snapshot-${PORTVERSION:S/0.0.//}-2245${EXTRACT_SUFX}
 DIST_SUBDIR=	x264
@@ -21,7 +23,7 @@ COMMENT=	Library and tool for encoding H.264/AVC video streams
 BUILD_DEPENDS=	yasm>=0.6.0:${PORTSDIR}/devel/yasm \
 		${LOCALBASE}/bin/as:${PORTSDIR}/devel/binutils
 
-CONFLICTS=	x264-0.0.2009* x264-0.0.20100[1-9]* x264-0.0.201010*
+CONFLICTS=	x264-0*
 
 LATEST_LINK=	x264-devel
 
