@@ -33,6 +33,12 @@ PORTDOCS=	*
 PORTEXAMPLES=	*
 PLIST_FILES=	bin/burrTxt bin/burrTxt2 bin/burrGui
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 700000
+BROKEN=		does not build on 6.X
+.endif
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/burrTxt ${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKSRC}/src/burrTxt2 ${PREFIX}/bin
@@ -48,4 +54,4 @@ do-install:
 	@(cd ${WRKSRC}/examples; ${COPYTREE_SHARE} . ${EXAMPLESDIR})
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
