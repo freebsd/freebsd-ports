@@ -3357,6 +3357,7 @@
     SUBDIR += varconf
     SUBDIR += vb2c
     SUBDIR += viewvc
+    SUBDIR += violet
     SUBDIR += vstr
     SUBDIR += vtcl
     SUBDIR += vxlog
