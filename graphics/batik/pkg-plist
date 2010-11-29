@@ -1,0 +1,36 @@
+%%DATADIR%%/batik-rasterizer.jar
+%%DATADIR%%/batik-slideshow.jar
+%%DATADIR%%/batik-squiggle.jar
+%%DATADIR%%/batik-svgpp.jar
+%%DATADIR%%/batik-ttf2svg.jar
+%%DATADIR%%/batik.jar
+%%DATADIR%%/extensions/batik-rasterizer-ext.jar
+%%DATADIR%%/extensions/batik-squiggle-ext.jar
+%%DATADIR%%/lib/batik-all.jar
+%%DATADIR%%/lib/batik-anim.jar
+%%DATADIR%%/lib/batik-awt-util.jar
+%%DATADIR%%/lib/batik-bridge.jar
+%%DATADIR%%/lib/batik-codec.jar
+%%DATADIR%%/lib/batik-css.jar
+%%DATADIR%%/lib/batik-dom.jar
+%%DATADIR%%/lib/batik-ext.jar
+%%DATADIR%%/lib/batik-extension.jar
+%%DATADIR%%/lib/batik-gui-util.jar
+%%DATADIR%%/lib/batik-gvt.jar
+%%DATADIR%%/lib/batik-parser.jar
+%%DATADIR%%/lib/batik-script.jar
+%%DATADIR%%/lib/batik-svg-dom.jar
+%%DATADIR%%/lib/batik-svggen.jar
+%%DATADIR%%/lib/batik-swing.jar
+%%DATADIR%%/lib/batik-transcoder.jar
+%%DATADIR%%/lib/batik-util.jar
+%%DATADIR%%/lib/batik-xml.jar
+%%DATADIR%%/lib/js.jar
+%%DATADIR%%/lib/pdf-transcoder.jar
+%%DATADIR%%/lib/xalan-2.6.0.jar
+%%DATADIR%%/lib/xerces_2_5_0.jar
+%%DATADIR%%/lib/xml-apis-ext.jar
+%%DATADIR%%/lib/xml-apis.jar
+@dirrm %%DATADIR%%/lib
+@dirrm %%DATADIR%%/extensions
+@dirrm %%DATADIR%%
