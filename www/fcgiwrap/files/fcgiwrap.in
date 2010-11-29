@@ -38,7 +38,7 @@ fcgiwrap_precmd() {
 	fcgiwrap_setfib
 
 	test -d /var/run/fcgiwrap || mkdir -p /var/run/fcgiwrap
-	if [ -n ${fcgiwrap_user} ]; then
+	if [ -n "${fcgiwrap_user}" ]; then
 		chown -R ${fcgiwrap_user} /var/run/fcgiwrap
 	fi
 }
