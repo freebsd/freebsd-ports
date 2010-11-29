@@ -4,7 +4,6 @@ ros/stacks/common_msgs/Makefile
 ros/stacks/common_msgs/actionlib_msgs/CMakeLists.txt
 ros/stacks/common_msgs/actionlib_msgs/Makefile
 ros/stacks/common_msgs/actionlib_msgs/ROS_NOBUILD
-@exec mkdir -p %D/ros/stacks/common_msgs/actionlib_msgs/bin
 ros/stacks/common_msgs/actionlib_msgs/cmake/actionbuild.cmake
 ros/stacks/common_msgs/actionlib_msgs/genaction.py
 ros/stacks/common_msgs/actionlib_msgs/manifest.xml
@@ -34,7 +33,6 @@ ros/stacks/common_msgs/actionlib_msgs/src/actionlib_msgs/msg/__init__.py
 ros/stacks/common_msgs/diagnostic_msgs/CMakeLists.txt
 ros/stacks/common_msgs/diagnostic_msgs/Makefile
 ros/stacks/common_msgs/diagnostic_msgs/ROS_NOBUILD
-@exec mkdir -p %D/ros/stacks/common_msgs/diagnostic_msgs/bin
 ros/stacks/common_msgs/diagnostic_msgs/mainpage.dox
 ros/stacks/common_msgs/diagnostic_msgs/manifest.xml
 ros/stacks/common_msgs/diagnostic_msgs/migration_rules/diagnostic_msgs.bmr
@@ -74,7 +72,6 @@ ros/stacks/common_msgs/diagnostic_msgs/srv_gen/generated
 ros/stacks/common_msgs/geometry_msgs/CMakeLists.txt
 ros/stacks/common_msgs/geometry_msgs/Makefile
 ros/stacks/common_msgs/geometry_msgs/ROS_NOBUILD
-@exec mkdir -p %D/ros/stacks/common_msgs/geometry_msgs/bin
 ros/stacks/common_msgs/geometry_msgs/mainpage.dox
 ros/stacks/common_msgs/geometry_msgs/manifest.xml
 ros/stacks/common_msgs/geometry_msgs/migration_rules/geometry_msgs.bmr
@@ -224,7 +221,6 @@ ros/stacks/common_msgs/geometry_msgs/src/geometry_msgs/msg/__init__.py
 ros/stacks/common_msgs/nav_msgs/CMakeLists.txt
 ros/stacks/common_msgs/nav_msgs/Makefile
 ros/stacks/common_msgs/nav_msgs/ROS_NOBUILD
-@exec mkdir -p %D/ros/stacks/common_msgs/nav_msgs/bin
 ros/stacks/common_msgs/nav_msgs/mainpage.dox
 ros/stacks/common_msgs/nav_msgs/manifest.xml
 ros/stacks/common_msgs/nav_msgs/migration_rules/nav_msgs.bmr
@@ -282,10 +278,10 @@ ros/stacks/common_msgs/nav_msgs/srv_gen/generated
 ros/stacks/common_msgs/sensor_msgs/CMakeLists.txt
 ros/stacks/common_msgs/sensor_msgs/Makefile
 ros/stacks/common_msgs/sensor_msgs/ROS_NOBUILD
-@exec mkdir -p %D/ros/stacks/common_msgs/sensor_msgs/bin
 ros/stacks/common_msgs/sensor_msgs/include/sensor_msgs/fill_image.h
 ros/stacks/common_msgs/sensor_msgs/include/sensor_msgs/image_encodings.h
 ros/stacks/common_msgs/sensor_msgs/include/sensor_msgs/point_cloud_conversion.h
+ros/stacks/common_msgs/sensor_msgs/lib/libsensor_msgs.so
 ros/stacks/common_msgs/sensor_msgs/mainpage.dox
 ros/stacks/common_msgs/sensor_msgs/manifest.xml
 ros/stacks/common_msgs/sensor_msgs/migration_rules/sensor_msgs.bmr
@@ -378,7 +374,6 @@ ros/stacks/common_msgs/stack.xml
 ros/stacks/common_msgs/test_common_msgs/CMakeLists.txt
 ros/stacks/common_msgs/test_common_msgs/Makefile
 ros/stacks/common_msgs/test_common_msgs/ROS_NOBUILD
-@exec mkdir -p %D/ros/stacks/common_msgs/test_common_msgs/bin
 ros/stacks/common_msgs/test_common_msgs/mainpage.dox
 ros/stacks/common_msgs/test_common_msgs/manifest.xml
 ros/stacks/common_msgs/test_common_msgs/test/saved/Acceleration.saved
@@ -420,6 +415,7 @@ ros/stacks/common_msgs/test_common_msgs/test/saved/Wrench.saved
 ros/stacks/common_msgs/test_common_msgs/test/test_common_msgs_migration.py
 @dirrm ros/stacks/common_msgs/test_common_msgs/test/saved
 @dirrm ros/stacks/common_msgs/test_common_msgs/test
+@exec mkdir -p %D/ros/stacks/common_msgs/test_common_msgs/bin
 @dirrm ros/stacks/common_msgs/test_common_msgs/bin
 @dirrm ros/stacks/common_msgs/test_common_msgs
 @dirrm ros/stacks/common_msgs/sensor_msgs/srv_gen/cpp/include/sensor_msgs
@@ -445,6 +441,7 @@ ros/stacks/common_msgs/test_common_msgs/test/test_common_msgs_migration.py
 @dirrm ros/stacks/common_msgs/sensor_msgs/lib
 @dirrm ros/stacks/common_msgs/sensor_msgs/include/sensor_msgs
 @dirrm ros/stacks/common_msgs/sensor_msgs/include
+@exec mkdir -p %D/ros/stacks/common_msgs/sensor_msgs/bin
 @dirrm ros/stacks/common_msgs/sensor_msgs/bin
 @dirrm ros/stacks/common_msgs/sensor_msgs
 @dirrm ros/stacks/common_msgs/nav_msgs/srv_gen/cpp/include/nav_msgs
@@ -466,6 +463,7 @@ ros/stacks/common_msgs/test_common_msgs/test/test_common_msgs_migration.py
 @dirrm ros/stacks/common_msgs/nav_msgs/msg/lisp
 @dirrm ros/stacks/common_msgs/nav_msgs/msg
 @dirrm ros/stacks/common_msgs/nav_msgs/migration_rules
+@exec mkdir -p %D/ros/stacks/common_msgs/nav_msgs/bin
 @dirrm ros/stacks/common_msgs/nav_msgs/bin
 @dirrm ros/stacks/common_msgs/nav_msgs
 @dirrm ros/stacks/common_msgs/geometry_msgs/src/geometry_msgs/msg
@@ -479,6 +477,7 @@ ros/stacks/common_msgs/test_common_msgs/test/test_common_msgs_migration.py
 @dirrm ros/stacks/common_msgs/geometry_msgs/msg/lisp
 @dirrm ros/stacks/common_msgs/geometry_msgs/msg
 @dirrm ros/stacks/common_msgs/geometry_msgs/migration_rules
+@exec mkdir -p %D/ros/stacks/common_msgs/geometry_msgs/bin
 @dirrm ros/stacks/common_msgs/geometry_msgs/bin
 @dirrm ros/stacks/common_msgs/geometry_msgs
 @dirrm ros/stacks/common_msgs/diagnostic_msgs/srv_gen/cpp/include/diagnostic_msgs
@@ -500,6 +499,7 @@ ros/stacks/common_msgs/test_common_msgs/test/test_common_msgs_migration.py
 @dirrm ros/stacks/common_msgs/diagnostic_msgs/msg/lisp
 @dirrm ros/stacks/common_msgs/diagnostic_msgs/msg
 @dirrm ros/stacks/common_msgs/diagnostic_msgs/migration_rules
+@exec mkdir -p %D/ros/stacks/common_msgs/diagnostic_msgs/bin
 @dirrm ros/stacks/common_msgs/diagnostic_msgs/bin
 @dirrm ros/stacks/common_msgs/diagnostic_msgs
 @dirrm ros/stacks/common_msgs/actionlib_msgs/src/actionlib_msgs/msg
@@ -513,6 +513,7 @@ ros/stacks/common_msgs/test_common_msgs/test/test_common_msgs_migration.py
 @dirrm ros/stacks/common_msgs/actionlib_msgs/msg/lisp
 @dirrm ros/stacks/common_msgs/actionlib_msgs/msg
 @dirrm ros/stacks/common_msgs/actionlib_msgs/cmake
+@exec mkdir -p %D/ros/stacks/common_msgs/actionlib_msgs/bin
 @dirrm ros/stacks/common_msgs/actionlib_msgs/bin
 @dirrm ros/stacks/common_msgs/actionlib_msgs
 @dirrm ros/stacks/common_msgs

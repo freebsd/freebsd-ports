@@ -219,6 +219,14 @@ ros/stacks/geometry/bullet/include/LinearMath/btVector3.h
 ros/stacks/geometry/bullet/include/btBulletCollisionCommon.h
 ros/stacks/geometry/bullet/include/btBulletDynamicsCommon.h
 ros/stacks/geometry/bullet/installed
+ros/stacks/geometry/bullet/lib/libBulletCollision.so
+ros/stacks/geometry/bullet/lib/libBulletCollision.so.2.76
+ros/stacks/geometry/bullet/lib/libBulletDynamics.so
+ros/stacks/geometry/bullet/lib/libBulletDynamics.so.2.76
+ros/stacks/geometry/bullet/lib/libBulletSoftBody.so
+ros/stacks/geometry/bullet/lib/libBulletSoftBody.so.2.76
+ros/stacks/geometry/bullet/lib/libLinearMath.so
+ros/stacks/geometry/bullet/lib/libLinearMath.so.2.76
 ros/stacks/geometry/bullet/manifest.xml
 ros/stacks/geometry/bullet/no_extras_build.patch
 ros/stacks/geometry/bullet/quaternion.patch
@@ -375,6 +383,7 @@ ros/stacks/geometry/eigen_conversions/Makefile
 ros/stacks/geometry/eigen_conversions/ROS_NOBUILD
 ros/stacks/geometry/eigen_conversions/include/eigen_conversions/eigen_kdl.h
 ros/stacks/geometry/eigen_conversions/include/eigen_conversions/eigen_msg.h
+ros/stacks/geometry/eigen_conversions/lib/libeigen_conversions.so
 ros/stacks/geometry/eigen_conversions/mainpage.dox
 ros/stacks/geometry/eigen_conversions/manifest.xml
 ros/stacks/geometry/eigen_conversions/src/eigen_kdl.cpp
@@ -462,6 +471,10 @@ ros/stacks/geometry/kdl/include/kdl/velocityprofile_trap.hpp
 ros/stacks/geometry/kdl/include/kdl/velocityprofile_traphalf.hpp
 ros/stacks/geometry/kdl/index.rst
 ros/stacks/geometry/kdl/installed
+ros/stacks/geometry/kdl/lib/PyKDL.so
+ros/stacks/geometry/kdl/lib/liborocos-kdl.so
+ros/stacks/geometry/kdl/lib/liborocos-kdl.so.1.0
+ros/stacks/geometry/kdl/lib/liborocos-kdl.so.1.0.99
 ros/stacks/geometry/kdl/kdl-31715.tar.gz.md5sum
 ros/stacks/geometry/kdl/kinematic_chains.rst
 ros/stacks/geometry/kdl/kinematic_solvers.rst
@@ -490,6 +503,8 @@ ros/stacks/geometry/tf/include/tf/transform_broadcaster.h
 ros/stacks/geometry/tf/include/tf/transform_datatypes.h
 ros/stacks/geometry/tf/include/tf/transform_listener.h
 ros/stacks/geometry/tf/index.rst
+ros/stacks/geometry/tf/lib/_tf.so
+ros/stacks/geometry/tf/lib/libtf.so
 ros/stacks/geometry/tf/mainpage.dox
 ros/stacks/geometry/tf/manifest.xml
 ros/stacks/geometry/tf/msg/lisp/tf/.tfMessage.asd-dep
@@ -566,6 +581,7 @@ ros/stacks/geometry/tf_conversions/include/tf_conversions/mainpage.dox
 ros/stacks/geometry/tf_conversions/include/tf_conversions/tf_eigen.h
 ros/stacks/geometry/tf_conversions/include/tf_conversions/tf_kdl.h
 ros/stacks/geometry/tf_conversions/index.rst
+ros/stacks/geometry/tf_conversions/lib/libtf_conversions.so
 ros/stacks/geometry/tf_conversions/manifest.xml
 ros/stacks/geometry/tf_conversions/rosdoc.yaml
 ros/stacks/geometry/tf_conversions/src/tf_conversions/__init__.py
@@ -580,6 +596,7 @@ ros/stacks/geometry/tf_conversions/test/test_eigen_tf.cpp
 @dirrm ros/stacks/geometry/tf_conversions/lib
 @dirrm ros/stacks/geometry/tf_conversions/include/tf_conversions
 @dirrm ros/stacks/geometry/tf_conversions/include
+@exec mkdir -p %D/ros/stacks/geometry/tf_conversions/bin
 @dirrm ros/stacks/geometry/tf_conversions/bin
 @dirrm ros/stacks/geometry/tf_conversions
 @dirrm ros/stacks/geometry/tf/test
@@ -609,9 +626,11 @@ ros/stacks/geometry/tf_conversions/test/test_eigen_tf.cpp
 @dirrm ros/stacks/geometry/tf/bin
 @dirrm ros/stacks/geometry/tf
 @dirrm ros/stacks/geometry/kdl/share/orocos-kdl
+@exec mkdir -p %D/ros/stacks/geometry/kdl/share/doc/liborocos-kdl
 @dirrm ros/stacks/geometry/kdl/share/doc/liborocos-kdl
 @dirrm ros/stacks/geometry/kdl/share/doc
 @dirrm ros/stacks/geometry/kdl/share
+@exec mkdir -p %D/ros/stacks/geometry/kdl/lib/pkgconfig
 @dirrm ros/stacks/geometry/kdl/lib/pkgconfig
 @dirrm ros/stacks/geometry/kdl/lib
 @dirrm ros/stacks/geometry/kdl/include/kdl/utilities
@@ -622,6 +641,7 @@ ros/stacks/geometry/tf_conversions/test/test_eigen_tf.cpp
 @dirrm ros/stacks/geometry/eigen_conversions/lib
 @dirrm ros/stacks/geometry/eigen_conversions/include/eigen_conversions
 @dirrm ros/stacks/geometry/eigen_conversions/include
+@exec mkdir -p %D/ros/stacks/geometry/eigen_conversions/bin
 @dirrm ros/stacks/geometry/eigen_conversions/bin
 @dirrm ros/stacks/geometry/eigen_conversions
 @dirrm ros/stacks/geometry/eigen/include/Eigen/src/Sparse
@@ -642,6 +662,7 @@ ros/stacks/geometry/tf_conversions/test/test_eigen_tf.cpp
 @dirrm ros/stacks/geometry/eigen/include
 @dirrm ros/stacks/geometry/eigen
 @dirrm ros/stacks/geometry/bullet/test
+@exec mkdir -p %D/ros/stacks/geometry/bullet/src
 @dirrm ros/stacks/geometry/bullet/src
 @dirrm ros/stacks/geometry/bullet/lib
 @dirrm ros/stacks/geometry/bullet/include/LinearMath
@@ -658,22 +679,13 @@ ros/stacks/geometry/tf_conversions/test/test_eigen_tf.cpp
 @dirrm ros/stacks/geometry/bullet/include/BulletCollision/BroadphaseCollision
 @dirrm ros/stacks/geometry/bullet/include/BulletCollision
 @dirrm ros/stacks/geometry/bullet/include
+@exec mkdir -p %D/ros/stacks/geometry/bullet/bin
 @dirrm ros/stacks/geometry/bullet/bin
 @dirrm ros/stacks/geometry/bullet
 @dirrm ros/stacks/geometry/angles/test
 @dirrm ros/stacks/geometry/angles/include/angles
 @dirrm ros/stacks/geometry/angles/include
+@exec mkdir -p %D/ros/stacks/geometry/angles/bin
 @dirrm ros/stacks/geometry/angles/bin
 @dirrm ros/stacks/geometry/angles
 @dirrm ros/stacks/geometry
-@exec mkdir -p %D/ros/stacks/geometry/tf_conversions/lib
-@exec mkdir -p %D/ros/stacks/geometry/tf_conversions/bin
-@exec mkdir -p %D/ros/stacks/geometry/tf/lib
-@exec mkdir -p %D/ros/stacks/geometry/kdl/share/doc/liborocos-kdl
-@exec mkdir -p %D/ros/stacks/geometry/kdl/lib/pkgconfig
-@exec mkdir -p %D/ros/stacks/geometry/eigen_conversions/lib
-@exec mkdir -p %D/ros/stacks/geometry/eigen_conversions/bin
-@exec mkdir -p %D/ros/stacks/geometry/bullet/src
-@exec mkdir -p %D/ros/stacks/geometry/bullet/lib
-@exec mkdir -p %D/ros/stacks/geometry/bullet/bin
-@exec mkdir -p %D/ros/stacks/geometry/angles/bin
