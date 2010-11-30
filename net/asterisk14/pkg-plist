@@ -8,6 +8,8 @@ etc/asterisk/agents.conf-dist
 etc/asterisk/alarmreceiver.conf-dist
 @unexec if cmp -s %D/etc/asterisk/alsa.conf %D/etc/asterisk/alsa.conf-dist; then rm -f %D/etc/asterisk/alsa.conf; fi
 etc/asterisk/alsa.conf-dist
+@unexec if cmp -s %D/etc/asterisk/amd.conf %D/etc/asterisk/amd.conf-dist; then rm -f %D/etc/asterisk/amd.conf; fi
+etc/asterisk/amd.conf-dist
 @unexec if cmp -s %D/etc/asterisk/asterisk.adsi %D/etc/asterisk/asterisk.adsi-dist; then rm -f %D/etc/asterisk/asterisk.adsi; fi
 etc/asterisk/asterisk.adsi-dist
 @unexec if cmp -s %D/etc/asterisk/asterisk.conf %D/etc/asterisk/asterisk.conf-dist; then rm -f %D/etc/asterisk/asterisk.conf; fi
@@ -24,6 +26,8 @@ etc/asterisk/cdr_odbc.conf-dist
 etc/asterisk/cdr_pgsql.conf-dist
 @unexec if cmp -s %D/etc/asterisk/cdr_tds.conf %D/etc/asterisk/cdr_tds.conf-dist; then rm -f %D/etc/asterisk/cdr_tds.conf; fi
 etc/asterisk/cdr_tds.conf-dist
+@unexec if cmp -s %D/etc/asterisk/chan_dahdi.conf %D/etc/asterisk/chan_dahdi.conf-dist; then rm -f %D/etc/asterisk/chan_dahdi.conf; fi
+etc/asterisk/chan_dahdi.conf-dist
 @unexec if cmp -s %D/etc/asterisk/codecs.conf %D/etc/asterisk/codecs.conf-dist; then rm -f %D/etc/asterisk/codecs.conf; fi
 etc/asterisk/codecs.conf-dist
 @unexec if cmp -s %D/etc/asterisk/dnsmgr.conf %D/etc/asterisk/dnsmgr.conf-dist; then rm -f %D/etc/asterisk/dnsmgr.conf; fi
@@ -42,12 +46,24 @@ etc/asterisk/extensions.conf-dist
 etc/asterisk/features.conf-dist
 @unexec if cmp -s %D/etc/asterisk/festival.conf %D/etc/asterisk/festival.conf-dist; then rm -f %D/etc/asterisk/festival.conf; fi
 etc/asterisk/festival.conf-dist
+@unexec if cmp -s %D/etc/asterisk/followme.conf %D/etc/asterisk/followme.conf-dist; then rm -f %D/etc/asterisk/followme.conf; fi
+etc/asterisk/followme.conf-dist
+@unexec if cmp -s %D/etc/asterisk/func_odbc.conf %D/etc/asterisk/func_odbc.conf-dist; then rm -f %D/etc/asterisk/func_odbc.conf; fi
+etc/asterisk/func_odbc.conf-dist
+@unexec if cmp -s %D/etc/asterisk/gtalk.conf %D/etc/asterisk/gtalk.conf-dist; then rm -f %D/etc/asterisk/gtalk.conf; fi
+etc/asterisk/gtalk.conf-dist
+@unexec if cmp -s %D/etc/asterisk/h323.conf %D/etc/asterisk/h323.conf-dist; then rm -f %D/etc/asterisk/h323.conf; fi
+etc/asterisk/h323.conf-dist
+@unexec if cmp -s %D/etc/asterisk/http.conf %D/etc/asterisk/http.conf-dist; then rm -f %D/etc/asterisk/http.conf; fi
+etc/asterisk/http.conf-dist
 @unexec if cmp -s %D/etc/asterisk/iax.conf %D/etc/asterisk/iax.conf-dist; then rm -f %D/etc/asterisk/iax.conf; fi
 etc/asterisk/iax.conf-dist
 @unexec if cmp -s %D/etc/asterisk/iaxprov.conf %D/etc/asterisk/iaxprov.conf-dist; then rm -f %D/etc/asterisk/iaxprov.conf; fi
 etc/asterisk/iaxprov.conf-dist
 @unexec if cmp -s %D/etc/asterisk/indications.conf %D/etc/asterisk/indications.conf-dist; then rm -f %D/etc/asterisk/indications.conf; fi
 etc/asterisk/indications.conf-dist
+@unexec if cmp -s %D/etc/asterisk/jabber.conf %D/etc/asterisk/jabber.conf-dist; then rm -f %D/etc/asterisk/jabber.conf; fi
+etc/asterisk/jabber.conf-dist
 @unexec if cmp -s %D/etc/asterisk/logger.conf %D/etc/asterisk/logger.conf-dist; then rm -f %D/etc/asterisk/logger.conf; fi
 etc/asterisk/logger.conf-dist
 @unexec if cmp -s %D/etc/asterisk/manager.conf %D/etc/asterisk/manager.conf-dist; then rm -f %D/etc/asterisk/manager.conf; fi
@@ -62,6 +78,8 @@ etc/asterisk/misdn.conf-dist
 etc/asterisk/modules.conf-dist
 @unexec if cmp -s %D/etc/asterisk/musiconhold.conf %D/etc/asterisk/musiconhold.conf-dist; then rm -f %D/etc/asterisk/musiconhold.conf; fi
 etc/asterisk/musiconhold.conf-dist
+@unexec if cmp -s %D/etc/asterisk/muted.conf %D/etc/asterisk/muted.conf-dist; then rm -f %D/etc/asterisk/muted.conf; fi
+etc/asterisk/muted.conf-dist
 @unexec if cmp -s %D/etc/asterisk/osp.conf %D/etc/asterisk/osp.conf-dist; then rm -f %D/etc/asterisk/osp.conf; fi
 etc/asterisk/osp.conf-dist
 @unexec if cmp -s %D/etc/asterisk/oss.conf %D/etc/asterisk/oss.conf-dist; then rm -f %D/etc/asterisk/oss.conf; fi
@@ -72,61 +90,44 @@ etc/asterisk/phone.conf-dist
 etc/asterisk/privacy.conf-dist
 @unexec if cmp -s %D/etc/asterisk/queues.conf %D/etc/asterisk/queues.conf-dist; then rm -f %D/etc/asterisk/queues.conf; fi
 etc/asterisk/queues.conf-dist
-@unexec if cmp -s %D/etc/asterisk/res_pgsql.conf %D/etc/asterisk/res_pgsql.conf-dist; then rm -f %D/etc/asterisk/res_pgsql.conf; fi
-etc/asterisk/res_pgsql.conf-dist
 @unexec if cmp -s %D/etc/asterisk/res_odbc.conf %D/etc/asterisk/res_odbc.conf-dist; then rm -f %D/etc/asterisk/res_odbc.conf; fi
 etc/asterisk/res_odbc.conf-dist
+@unexec if cmp -s %D/etc/asterisk/res_pgsql.conf %D/etc/asterisk/res_pgsql.conf-dist; then rm -f %D/etc/asterisk/res_pgsql.conf; fi
+etc/asterisk/res_pgsql.conf-dist
+@unexec if cmp -s %D/etc/asterisk/res_snmp.conf %D/etc/asterisk/res_snmp.conf-dist; then rm -f %D/etc/asterisk/res_snmp.conf; fi
+etc/asterisk/res_snmp.conf-dist
 @unexec if cmp -s %D/etc/asterisk/rpt.conf %D/etc/asterisk/rpt.conf-dist; then rm -f %D/etc/asterisk/rpt.conf; fi
 etc/asterisk/rpt.conf-dist
 @unexec if cmp -s %D/etc/asterisk/rtp.conf %D/etc/asterisk/rtp.conf-dist; then rm -f %D/etc/asterisk/rtp.conf; fi
 etc/asterisk/rtp.conf-dist
+@unexec if cmp -s %D/etc/asterisk/say.conf %D/etc/asterisk/say.conf-dist; then rm -f %D/etc/asterisk/say.conf; fi
+etc/asterisk/say.conf-dist
 @unexec if cmp -s %D/etc/asterisk/sip.conf %D/etc/asterisk/sip.conf-dist; then rm -f %D/etc/asterisk/sip.conf; fi
 etc/asterisk/sip.conf-dist
 @unexec if cmp -s %D/etc/asterisk/sip_notify.conf %D/etc/asterisk/sip_notify.conf-dist; then rm -f %D/etc/asterisk/sip_notify.conf; fi
 etc/asterisk/sip_notify.conf-dist
 @unexec if cmp -s %D/etc/asterisk/skinny.conf %D/etc/asterisk/skinny.conf-dist; then rm -f %D/etc/asterisk/skinny.conf; fi
 etc/asterisk/skinny.conf-dist
+@unexec if cmp -s %D/etc/asterisk/sla.conf %D/etc/asterisk/sla.conf-dist; then rm -f %D/etc/asterisk/sla.conf; fi
+etc/asterisk/sla.conf-dist
+@unexec if cmp -s %D/etc/asterisk/smdi.conf %D/etc/asterisk/smdi.conf-dist; then rm -f %D/etc/asterisk/smdi.conf; fi
+etc/asterisk/smdi.conf-dist
 @unexec if cmp -s %D/etc/asterisk/telcordia-1.adsi %D/etc/asterisk/telcordia-1.adsi-dist; then rm -f %D/etc/asterisk/telcordia-1.adsi; fi
 etc/asterisk/telcordia-1.adsi-dist
-@unexec if cmp -s %D/etc/asterisk/voicemail.conf %D/etc/asterisk/voicemail.conf-dist; then rm -f %D/etc/asterisk/voicemail.conf; fi
-etc/asterisk/voicemail.conf-dist
-@unexec if cmp -s %D/etc/asterisk/vpb.conf %D/etc/asterisk/vpb.conf-dist; then rm -f %D/etc/asterisk/vpb.conf; fi
-etc/asterisk/vpb.conf-dist
-@unexec if cmp -s %D/etc/asterisk/chan_dahdi.conf %D/etc/asterisk/chan_dahdi.conf-dist; then rm -f %D/etc/asterisk/chan_dahdi.conf; fi
-etc/asterisk/chan_dahdi.conf-dist
 @unexec if cmp -s %D/etc/asterisk/udptl.conf %D/etc/asterisk/udptl.conf-dist; then rm -f %D/etc/asterisk/udptl.conf; fi
 etc/asterisk/udptl.conf-dist
 @unexec if cmp -s %D/etc/asterisk/users.conf %D/etc/asterisk/users.conf-dist; then rm -f %D/etc/asterisk/users.conf; fi
 etc/asterisk/users.conf-dist
-@unexec if cmp -s %D/etc/asterisk/smdi.conf %D/etc/asterisk/smdi.conf-dist; then rm -f %D/etc/asterisk/smdi.conf; fi
-etc/asterisk/smdi.conf-dist
-@unexec if cmp -s %D/etc/asterisk/sla.conf %D/etc/asterisk/sla.conf-dist; then rm -f %D/etc/asterisk/sla.conf; fi
-etc/asterisk/sla.conf-dist
-@unexec if cmp -s %D/etc/asterisk/say.conf %D/etc/asterisk/say.conf-dist; then rm -f %D/etc/asterisk/say.conf; fi
-etc/asterisk/say.conf-dist
-@unexec if cmp -s %D/etc/asterisk/res_snmp.conf %D/etc/asterisk/res_snmp.conf-dist; then rm -f %D/etc/asterisk/res_snmp.conf; fi
-etc/asterisk/res_snmp.conf-dist
-@unexec if cmp -s %D/etc/asterisk/muted.conf %D/etc/asterisk/muted.conf-dist; then rm -f %D/etc/asterisk/muted.conf; fi
-etc/asterisk/muted.conf-dist
-@unexec if cmp -s %D/etc/asterisk/jabber.conf %D/etc/asterisk/jabber.conf-dist; then rm -f %D/etc/asterisk/jabber.conf; fi
-etc/asterisk/jabber.conf-dist
-@unexec if cmp -s %D/etc/asterisk/http.conf %D/etc/asterisk/http.conf-dist; then rm -f %D/etc/asterisk/http.conf; fi
-etc/asterisk/http.conf-dist
-@unexec if cmp -s %D/etc/asterisk/h323.conf %D/etc/asterisk/h323.conf-dist; then rm -f %D/etc/asterisk/h323.conf; fi
-etc/asterisk/h323.conf-dist
-@unexec if cmp -s %D/etc/asterisk/gtalk.conf %D/etc/asterisk/gtalk.conf-dist; then rm -f %D/etc/asterisk/gtalk.conf; fi
-etc/asterisk/gtalk.conf-dist
-@unexec if cmp -s %D/etc/asterisk/func_odbc.conf %D/etc/asterisk/func_odbc.conf-dist; then rm -f %D/etc/asterisk/func_odbc.conf; fi
-etc/asterisk/func_odbc.conf-dist
-@unexec if cmp -s %D/etc/asterisk/followme.conf %D/etc/asterisk/followme.conf-dist; then rm -f %D/etc/asterisk/followme.conf; fi
-etc/asterisk/followme.conf-dist
-@unexec if cmp -s %D/etc/asterisk/amd.conf %D/etc/asterisk/amd.conf-dist; then rm -f %D/etc/asterisk/amd.conf; fi
-etc/asterisk/amd.conf-dist
+@unexec if cmp -s %D/etc/asterisk/voicemail.conf %D/etc/asterisk/voicemail.conf-dist; then rm -f %D/etc/asterisk/voicemail.conf; fi
+etc/asterisk/voicemail.conf-dist
+@unexec if cmp -s %D/etc/asterisk/vpb.conf %D/etc/asterisk/vpb.conf-dist; then rm -f %D/etc/asterisk/vpb.conf; fi
+etc/asterisk/vpb.conf-dist
 @exec if test ! -e %D/etc/asterisk/adsi.conf; then cp -p %D/etc/asterisk/adsi.conf-dist %D/etc/asterisk/adsi.conf; fi
 @exec if test ! -e %D/etc/asterisk/adtranvofr.conf; then cp -p %D/etc/asterisk/adtranvofr.conf-dist %D/etc/asterisk/adtranvofr.conf; fi
 @exec if test ! -e %D/etc/asterisk/agents.conf; then cp -p %D/etc/asterisk/agents.conf-dist %D/etc/asterisk/agents.conf; fi
 @exec if test ! -e %D/etc/asterisk/alarmreceiver.conf; then cp -p %D/etc/asterisk/alarmreceiver.conf-dist %D/etc/asterisk/alarmreceiver.conf; fi
 @exec if test ! -e %D/etc/asterisk/alsa.conf; then cp -p %D/etc/asterisk/alsa.conf-dist %D/etc/asterisk/alsa.conf; fi
+@exec if test ! -e %D/etc/asterisk/amd.conf; then cp -p %D/etc/asterisk/amd.conf-dist %D/etc/asterisk/amd.conf; fi
 @exec if test ! -e %D/etc/asterisk/asterisk.adsi; then cp -p %D/etc/asterisk/asterisk.adsi-dist %D/etc/asterisk/asterisk.adsi; fi
 @exec if test ! -e %D/etc/asterisk/asterisk.conf; then cp -p %D/etc/asterisk/asterisk.conf-dist %D/etc/asterisk/asterisk.conf; fi
 @exec if test ! -e %D/etc/asterisk/cdr.conf; then cp -p %D/etc/asterisk/cdr.conf-dist %D/etc/asterisk/cdr.conf; fi
@@ -135,6 +136,7 @@ etc/asterisk/amd.conf-dist
 @exec if test ! -e %D/etc/asterisk/cdr_odbc.conf; then cp -p %D/etc/asterisk/cdr_odbc.conf-dist %D/etc/asterisk/cdr_odbc.conf; fi
 @exec if test ! -e %D/etc/asterisk/cdr_pgsql.conf; then cp -p %D/etc/asterisk/cdr_pgsql.conf-dist %D/etc/asterisk/cdr_pgsql.conf; fi
 @exec if test ! -e %D/etc/asterisk/cdr_tds.conf; then cp -p %D/etc/asterisk/cdr_tds.conf-dist %D/etc/asterisk/cdr_tds.conf; fi
+@exec if test ! -e %D/etc/asterisk/chan_dahdi.conf; then cp -p %D/etc/asterisk/chan_dahdi.conf-dist %D/etc/asterisk/chan_dahdi.conf; fi
 @exec if test ! -e %D/etc/asterisk/codecs.conf; then cp -p %D/etc/asterisk/codecs.conf-dist %D/etc/asterisk/codecs.conf; fi
 @exec if test ! -e %D/etc/asterisk/dnsmgr.conf; then cp -p %D/etc/asterisk/dnsmgr.conf-dist %D/etc/asterisk/dnsmgr.conf; fi
 @exec if test ! -e %D/etc/asterisk/dundi.conf; then cp -p %D/etc/asterisk/dundi.conf-dist %D/etc/asterisk/dundi.conf; fi
@@ -144,9 +146,15 @@ etc/asterisk/amd.conf-dist
 @exec if test ! -e %D/etc/asterisk/extensions.conf; then cp -p %D/etc/asterisk/extensions.conf-dist %D/etc/asterisk/extensions.conf; fi
 @exec if test ! -e %D/etc/asterisk/features.conf; then cp -p %D/etc/asterisk/features.conf-dist %D/etc/asterisk/features.conf; fi
 @exec if test ! -e %D/etc/asterisk/festival.conf; then cp -p %D/etc/asterisk/festival.conf-dist %D/etc/asterisk/festival.conf; fi
+@exec if test ! -e %D/etc/asterisk/followme.conf; then cp -p %D/etc/asterisk/followme.conf-dist %D/etc/asterisk/followme.conf; fi
+@exec if test ! -e %D/etc/asterisk/func_odbc.conf; then cp -p %D/etc/asterisk/func_odbc.conf-dist %D/etc/asterisk/func_odbc.conf; fi
+@exec if test ! -e %D/etc/asterisk/gtalk.conf; then cp -p %D/etc/asterisk/gtalk.conf-dist %D/etc/asterisk/gtalk.conf; fi
+@exec if test ! -e %D/etc/asterisk/h323.conf; then cp -p %D/etc/asterisk/h323.conf-dist %D/etc/asterisk/h323.conf; fi
+@exec if test ! -e %D/etc/asterisk/http.conf; then cp -p %D/etc/asterisk/http.conf-dist %D/etc/asterisk/http.conf; fi
 @exec if test ! -e %D/etc/asterisk/iax.conf; then cp -p %D/etc/asterisk/iax.conf-dist %D/etc/asterisk/iax.conf; fi
 @exec if test ! -e %D/etc/asterisk/iaxprov.conf; then cp -p %D/etc/asterisk/iaxprov.conf-dist %D/etc/asterisk/iaxprov.conf; fi
 @exec if test ! -e %D/etc/asterisk/indications.conf; then cp -p %D/etc/asterisk/indications.conf-dist %D/etc/asterisk/indications.conf; fi
+@exec if test ! -e %D/etc/asterisk/jabber.conf; then cp -p %D/etc/asterisk/jabber.conf-dist %D/etc/asterisk/jabber.conf; fi
 @exec if test ! -e %D/etc/asterisk/logger.conf; then cp -p %D/etc/asterisk/logger.conf-dist %D/etc/asterisk/logger.conf; fi
 @exec if test ! -e %D/etc/asterisk/manager.conf; then cp -p %D/etc/asterisk/manager.conf-dist %D/etc/asterisk/manager.conf; fi
 @exec if test ! -e %D/etc/asterisk/meetme.conf; then cp -p %D/etc/asterisk/meetme.conf-dist %D/etc/asterisk/meetme.conf; fi
@@ -154,36 +162,28 @@ etc/asterisk/amd.conf-dist
 @exec if test ! -e %D/etc/asterisk/misdn.conf; then cp -p %D/etc/asterisk/misdn.conf-dist %D/etc/asterisk/misdn.conf; fi
 @exec if test ! -e %D/etc/asterisk/modules.conf; then cp -p %D/etc/asterisk/modules.conf-dist %D/etc/asterisk/modules.conf; fi
 @exec if test ! -e %D/etc/asterisk/musiconhold.conf; then cp -p %D/etc/asterisk/musiconhold.conf-dist %D/etc/asterisk/musiconhold.conf; fi
+@exec if test ! -e %D/etc/asterisk/muted.conf; then cp -p %D/etc/asterisk/muted.conf-dist %D/etc/asterisk/muted.conf; fi
 @exec if test ! -e %D/etc/asterisk/osp.conf; then cp -p %D/etc/asterisk/osp.conf-dist %D/etc/asterisk/osp.conf; fi
 @exec if test ! -e %D/etc/asterisk/oss.conf; then cp -p %D/etc/asterisk/oss.conf-dist %D/etc/asterisk/oss.conf; fi
 @exec if test ! -e %D/etc/asterisk/phone.conf; then cp -p %D/etc/asterisk/phone.conf-dist %D/etc/asterisk/phone.conf; fi
 @exec if test ! -e %D/etc/asterisk/privacy.conf; then cp -p %D/etc/asterisk/privacy.conf-dist %D/etc/asterisk/privacy.conf; fi
 @exec if test ! -e %D/etc/asterisk/queues.conf; then cp -p %D/etc/asterisk/queues.conf-dist %D/etc/asterisk/queues.conf; fi
-@exec if test ! -e %D/etc/asterisk/res_pgsql.conf; then cp -p %D/etc/asterisk/res_pgsql.conf-dist %D/etc/asterisk/res_pgsql.conf; fi
 @exec if test ! -e %D/etc/asterisk/res_odbc.conf; then cp -p %D/etc/asterisk/res_odbc.conf-dist %D/etc/asterisk/res_odbc.conf; fi
+@exec if test ! -e %D/etc/asterisk/res_pgsql.conf; then cp -p %D/etc/asterisk/res_pgsql.conf-dist %D/etc/asterisk/res_pgsql.conf; fi
+@exec if test ! -e %D/etc/asterisk/res_snmp.conf; then cp -p %D/etc/asterisk/res_snmp.conf-dist %D/etc/asterisk/res_snmp.conf; fi
 @exec if test ! -e %D/etc/asterisk/rpt.conf; then cp -p %D/etc/asterisk/rpt.conf-dist %D/etc/asterisk/rpt.conf; fi
 @exec if test ! -e %D/etc/asterisk/rtp.conf; then cp -p %D/etc/asterisk/rtp.conf-dist %D/etc/asterisk/rtp.conf; fi
+@exec if test ! -e %D/etc/asterisk/say.conf; then cp -p %D/etc/asterisk/say.conf-dist %D/etc/asterisk/say.conf; fi
 @exec if test ! -e %D/etc/asterisk/sip.conf; then cp -p %D/etc/asterisk/sip.conf-dist %D/etc/asterisk/sip.conf; fi
 @exec if test ! -e %D/etc/asterisk/sip_notify.conf; then cp -p %D/etc/asterisk/sip_notify.conf-dist %D/etc/asterisk/sip_notify.conf; fi
 @exec if test ! -e %D/etc/asterisk/skinny.conf; then cp -p %D/etc/asterisk/skinny.conf-dist %D/etc/asterisk/skinny.conf; fi
+@exec if test ! -e %D/etc/asterisk/sla.conf; then cp -p %D/etc/asterisk/sla.conf-dist %D/etc/asterisk/sla.conf; fi
+@exec if test ! -e %D/etc/asterisk/smdi.conf; then cp -p %D/etc/asterisk/smdi.conf-dist %D/etc/asterisk/smdi.conf; fi
 @exec if test ! -e %D/etc/asterisk/telcordia-1.adsi; then cp -p %D/etc/asterisk/telcordia-1.adsi-dist %D/etc/asterisk/telcordia-1.adsi; fi
-@exec if test ! -e %D/etc/asterisk/voicemail.conf; then cp -p %D/etc/asterisk/voicemail.conf-dist %D/etc/asterisk/voicemail.conf; fi
-@exec if test ! -e %D/etc/asterisk/vpb.conf; then cp -p %D/etc/asterisk/vpb.conf-dist %D/etc/asterisk/vpb.conf; fi
-@exec if test ! -e %D/etc/asterisk/chan_dahdi.conf; then cp -p %D/etc/asterisk/chan_dahdi.conf-dist %D/etc/asterisk/chan_dahdi.conf; fi
 @exec if test ! -e %D/etc/asterisk/udptl.conf; then cp -p %D/etc/asterisk/udptl.conf-dist %D/etc/asterisk/udptl.conf; fi
 @exec if test ! -e %D/etc/asterisk/users.conf; then cp -p %D/etc/asterisk/users.conf-dist %D/etc/asterisk/users.conf; fi
-@exec if test ! -e %D/etc/asterisk/smdi.conf; then cp -p %D/etc/asterisk/smdi.conf-dist %D/etc/asterisk/smdi.conf; fi
-@exec if test ! -e %D/etc/asterisk/sla.conf; then cp -p %D/etc/asterisk/sla.conf-dist %D/etc/asterisk/sla.conf; fi
-@exec if test ! -e %D/etc/asterisk/say.conf; then cp -p %D/etc/asterisk/say.conf-dist %D/etc/asterisk/say.conf; fi
-@exec if test ! -e %D/etc/asterisk/res_snmp.conf; then cp -p %D/etc/asterisk/res_snmp.conf-dist %D/etc/asterisk/res_snmp.conf; fi
-@exec if test ! -e %D/etc/asterisk/muted.conf; then cp -p %D/etc/asterisk/muted.conf-dist %D/etc/asterisk/muted.conf; fi
-@exec if test ! -e %D/etc/asterisk/jabber.conf; then cp -p %D/etc/asterisk/jabber.conf-dist %D/etc/asterisk/jabber.conf; fi
-@exec if test ! -e %D/etc/asterisk/http.conf; then cp -p %D/etc/asterisk/http.conf-dist %D/etc/asterisk/http.conf; fi
-@exec if test ! -e %D/etc/asterisk/h323.conf; then cp -p %D/etc/asterisk/h323.conf-dist %D/etc/asterisk/h323.conf; fi
-@exec if test ! -e %D/etc/asterisk/gtalk.conf; then cp -p %D/etc/asterisk/gtalk.conf-dist %D/etc/asterisk/gtalk.conf; fi
-@exec if test ! -e %D/etc/asterisk/func_odbc.conf; then cp -p %D/etc/asterisk/func_odbc.conf-dist %D/etc/asterisk/func_odbc.conf; fi
-@exec if test ! -e %D/etc/asterisk/followme.conf; then cp -p %D/etc/asterisk/followme.conf-dist %D/etc/asterisk/followme.conf; fi
-@exec if test ! -e %D/etc/asterisk/amd.conf; then cp -p %D/etc/asterisk/amd.conf-dist %D/etc/asterisk/amd.conf; fi
+@exec if test ! -e %D/etc/asterisk/voicemail.conf; then cp -p %D/etc/asterisk/voicemail.conf-dist %D/etc/asterisk/voicemail.conf; fi
+@exec if test ! -e %D/etc/asterisk/vpb.conf; then cp -p %D/etc/asterisk/vpb.conf-dist %D/etc/asterisk/vpb.conf; fi
 include/asterisk.h
 include/asterisk/abstract_jb.h
 include/asterisk/acl.h
@@ -255,6 +255,7 @@ include/asterisk/res_odbc.h
 include/asterisk/rtp.h
 include/asterisk/say.h
 include/asterisk/sched.h
+include/asterisk/select.h
 include/asterisk/sha1.h
 include/asterisk/slinfactory.h
 include/asterisk/smdi.h
@@ -264,6 +265,7 @@ include/asterisk/stringfields.h
 include/asterisk/strings.h
 include/asterisk/tdd.h
 include/asterisk/term.h
+include/asterisk/test.h
 include/asterisk/threadstorage.h
 include/asterisk/time.h
 include/asterisk/tonezone_compat.h
@@ -283,6 +285,9 @@ lib/asterisk/modules/app_chanisavail.so
 lib/asterisk/modules/app_channelredirect.so
 lib/asterisk/modules/app_chanspy.so
 lib/asterisk/modules/app_controlplayback.so
+%%WITH_DAHDI%%lib/asterisk/modules/app_dahdibarge.so
+%%WITH_DAHDI%%lib/asterisk/modules/app_dahdiras.so
+%%WITH_DAHDI%%lib/asterisk/modules/app_dahdiscan.so
 lib/asterisk/modules/app_db.so
 lib/asterisk/modules/app_dial.so
 lib/asterisk/modules/app_dictate.so
@@ -294,6 +299,7 @@ lib/asterisk/modules/app_echo.so
 lib/asterisk/modules/app_exec.so
 lib/asterisk/modules/app_externalivr.so
 lib/asterisk/modules/app_festival.so
+%%WITH_DAHDI%%lib/asterisk/modules/app_flash.so
 lib/asterisk/modules/app_followme.so
 lib/asterisk/modules/app_forkcdr.so
 lib/asterisk/modules/app_getcpeid.so
@@ -303,11 +309,13 @@ lib/asterisk/modules/app_image.so
 lib/asterisk/modules/app_lookupblacklist.so
 lib/asterisk/modules/app_lookupcidname.so
 lib/asterisk/modules/app_macro.so
+%%WITH_DAHDI%%lib/asterisk/modules/app_meetme.so
 lib/asterisk/modules/app_milliwatt.so
 lib/asterisk/modules/app_mixmonitor.so
 lib/asterisk/modules/app_morsecode.so
 lib/asterisk/modules/app_mp3.so
 lib/asterisk/modules/app_nbscat.so
+%%WITH_DAHDI%%lib/asterisk/modules/app_page.so
 lib/asterisk/modules/app_parkandannounce.so
 lib/asterisk/modules/app_playback.so
 lib/asterisk/modules/app_privacy.so
@@ -342,11 +350,15 @@ lib/asterisk/modules/app_zapateller.so
 lib/asterisk/modules/cdr_csv.so
 lib/asterisk/modules/cdr_custom.so
 lib/asterisk/modules/cdr_manager.so
+%%WITH_ODBC%%lib/asterisk/modules/cdr_odbc.so
 %%WITH_POSTGRES%%lib/asterisk/modules/cdr_pgsql.so
 %%WITH_RADIUS%%lib/asterisk/modules/cdr_radius.so
 %%WITH_SQLITE%%lib/asterisk/modules/cdr_sqlite.so
+%%WITH_FREETDS%%lib/asterisk/modules/cdr_tds.so
 lib/asterisk/modules/chan_agent.so
+%%WITH_DAHDI%%lib/asterisk/modules/chan_dahdi.so
 %%WITH_JABBER%%lib/asterisk/modules/chan_gtalk.so
+%%WITH_H323%%lib/asterisk/modules/chan_h323.so
 lib/asterisk/modules/chan_iax2.so
 lib/asterisk/modules/chan_local.so
 lib/asterisk/modules/chan_mgcp.so
@@ -356,6 +368,7 @@ lib/asterisk/modules/chan_skinny.so
 lib/asterisk/modules/codec_a_mu.so
 lib/asterisk/modules/codec_adpcm.so
 lib/asterisk/modules/codec_alaw.so
+%%WITH_DAHDI%%lib/asterisk/modules/codec_dahdi.so
 lib/asterisk/modules/codec_g726.so
 lib/asterisk/modules/codec_gsm.so
 %%WITH_ILBC%%lib/asterisk/modules/codec_ilbc.so
@@ -409,6 +422,7 @@ lib/asterisk/modules/pbx_spool.so
 lib/asterisk/modules/res_adsi.so
 lib/asterisk/modules/res_agi.so
 lib/asterisk/modules/res_clioriginate.so
+%%WITH_ODBC%%lib/asterisk/modules/res_config_odbc.so
 %%WITH_POSTGRES%%lib/asterisk/modules/res_config_pgsql.so
 lib/asterisk/modules/res_convert.so
 lib/asterisk/modules/res_crypto.so
@@ -417,6 +431,7 @@ lib/asterisk/modules/res_indications.so
 %%WITH_JABBER%%lib/asterisk/modules/res_jabber.so
 lib/asterisk/modules/res_monitor.so
 lib/asterisk/modules/res_musiconhold.so
+%%WITH_ODBC%%lib/asterisk/modules/res_odbc.so
 lib/asterisk/modules/res_smdi.so
 %%WITH_SNMP%%lib/asterisk/modules/res_snmp.so
 lib/asterisk/modules/res_speech.so
@@ -438,7 +453,7 @@ share/asterisk/agi-bin/jukebox.agi
 share/asterisk/images/asterisk-intro.jpg
 share/asterisk/keys/freeworlddialup.pub
 share/asterisk/keys/iaxtel.pub
-share/asterisk/moh/.asterisk-moh-opsound-wav
+share/asterisk/moh/.asterisk-moh-opsound-wav-2.03
 share/asterisk/moh/CHANGES-asterisk-moh-opsound-wav
 share/asterisk/moh/CREDITS-asterisk-moh-opsound-wav
 share/asterisk/moh/LICENSE-asterisk-moh-opsound-wav
@@ -447,10 +462,10 @@ share/asterisk/moh/macroform-robot_dity.wav
 share/asterisk/moh/macroform-the_simplicity.wav
 share/asterisk/moh/manolo_camp-morning_coffee.wav
 share/asterisk/moh/reno_project-system.wav
-share/asterisk/sounds/.asterisk-core-sounds-en-gsm-1.4.17
-share/asterisk/sounds/CHANGES-asterisk-core-en-1.4.17
-share/asterisk/sounds/CREDITS-asterisk-core-en-1.4.17
-share/asterisk/sounds/LICENSE-asterisk-core-en-1.4.17
+share/asterisk/sounds/.asterisk-core-sounds-en-gsm-1.4.19
+share/asterisk/sounds/CHANGES-asterisk-core-en-1.4.19
+share/asterisk/sounds/CREDITS-asterisk-core-en-1.4.19
+share/asterisk/sounds/LICENSE-asterisk-core-en-1.4.19
 share/asterisk/sounds/agent-alreadyon.gsm
 share/asterisk/sounds/agent-incorrect.gsm
 share/asterisk/sounds/agent-loggedoff.gsm
@@ -458,25 +473,13 @@ share/asterisk/sounds/agent-loginok.gsm
 share/asterisk/sounds/agent-newlocation.gsm
 share/asterisk/sounds/agent-pass.gsm
 share/asterisk/sounds/agent-user.gsm
+share/asterisk/sounds/ascending-2tone.gsm
 share/asterisk/sounds/auth-incorrect.gsm
 share/asterisk/sounds/auth-thankyou.gsm
 share/asterisk/sounds/beep.gsm
 share/asterisk/sounds/beeperr.gsm
-share/asterisk/sounds/conf-nonextended.gsm
-share/asterisk/sounds/conf-usermenu-162.gsm
-share/asterisk/sounds/dir-usingkeypad.gsm
-share/asterisk/sounds/dir-welcome.gsm
-share/asterisk/sounds/spy-dahdi.gsm
-share/asterisk/sounds/vm-Urgent.gsm
-share/asterisk/sounds/vm-forward-multiple.gsm
-share/asterisk/sounds/vm-invalid-password.gsm
-share/asterisk/sounds/vm-marked-nonurgent.gsm
-share/asterisk/sounds/vm-marked-urgent.gsm
-share/asterisk/sounds/vm-record-prepend.gsm
-share/asterisk/sounds/vm-review-nonurgent.gsm
-share/asterisk/sounds/vm-review-urgent.gsm
-share/asterisk/sounds/conf-adminmenu.gsm
 share/asterisk/sounds/conf-adminmenu-162.gsm
+share/asterisk/sounds/conf-adminmenu.gsm
 share/asterisk/sounds/conf-enteringno.gsm
 share/asterisk/sounds/conf-errormenu.gsm
 share/asterisk/sounds/conf-extended.gsm
@@ -493,13 +496,19 @@ share/asterisk/sounds/conf-locked.gsm
 share/asterisk/sounds/conf-lockednow.gsm
 share/asterisk/sounds/conf-muted.gsm
 share/asterisk/sounds/conf-noempty.gsm
+share/asterisk/sounds/conf-nonextended.gsm
+share/asterisk/sounds/conf-now-muted.gsm
+share/asterisk/sounds/conf-now-recording.gsm
+share/asterisk/sounds/conf-now-unmuted.gsm
 share/asterisk/sounds/conf-onlyone.gsm
 share/asterisk/sounds/conf-onlyperson.gsm
 share/asterisk/sounds/conf-otherinparty.gsm
 share/asterisk/sounds/conf-placeintoconf.gsm
+share/asterisk/sounds/conf-roll-callcomplete.gsm
 share/asterisk/sounds/conf-thereare.gsm
 share/asterisk/sounds/conf-unlockednow.gsm
 share/asterisk/sounds/conf-unmuted.gsm
+share/asterisk/sounds/conf-usermenu-162.gsm
 share/asterisk/sounds/conf-usermenu.gsm
 share/asterisk/sounds/conf-userswilljoin.gsm
 share/asterisk/sounds/conf-userwilljoin.gsm
@@ -515,6 +524,7 @@ share/asterisk/sounds/demo-moreinfo.gsm
 share/asterisk/sounds/demo-nogo.gsm
 share/asterisk/sounds/demo-nomatch.gsm
 share/asterisk/sounds/demo-thanks.gsm
+share/asterisk/sounds/descending-2tone.gsm
 share/asterisk/sounds/dictate/both_help.gsm
 share/asterisk/sounds/dictate/enter_filename.gsm
 share/asterisk/sounds/dictate/forhelp.gsm
@@ -557,6 +567,7 @@ share/asterisk/sounds/digits/9.gsm
 share/asterisk/sounds/digits/90.gsm
 share/asterisk/sounds/digits/a-m.gsm
 share/asterisk/sounds/digits/at.gsm
+share/asterisk/sounds/digits/billion.gsm
 share/asterisk/sounds/digits/day-0.gsm
 share/asterisk/sounds/digits/day-1.gsm
 share/asterisk/sounds/digits/day-2.gsm
@@ -581,11 +592,21 @@ share/asterisk/sounds/digits/h-20.gsm
 share/asterisk/sounds/digits/h-3.gsm
 share/asterisk/sounds/digits/h-30.gsm
 share/asterisk/sounds/digits/h-4.gsm
+share/asterisk/sounds/digits/h-40.gsm
 share/asterisk/sounds/digits/h-5.gsm
+share/asterisk/sounds/digits/h-50.gsm
 share/asterisk/sounds/digits/h-6.gsm
+share/asterisk/sounds/digits/h-60.gsm
 share/asterisk/sounds/digits/h-7.gsm
+share/asterisk/sounds/digits/h-70.gsm
 share/asterisk/sounds/digits/h-8.gsm
+share/asterisk/sounds/digits/h-80.gsm
 share/asterisk/sounds/digits/h-9.gsm
+share/asterisk/sounds/digits/h-90.gsm
+share/asterisk/sounds/digits/h-billion.gsm
+share/asterisk/sounds/digits/h-hundred.gsm
+share/asterisk/sounds/digits/h-million.gsm
+share/asterisk/sounds/digits/h-thousand.gsm
 share/asterisk/sounds/digits/hundred.gsm
 share/asterisk/sounds/digits/million.gsm
 share/asterisk/sounds/digits/minus.gsm
@@ -623,6 +644,8 @@ share/asterisk/sounds/dir-multi9.gsm
 share/asterisk/sounds/dir-nomatch.gsm
 share/asterisk/sounds/dir-nomore.gsm
 share/asterisk/sounds/dir-pls-enter.gsm
+share/asterisk/sounds/dir-usingkeypad.gsm
+share/asterisk/sounds/dir-welcome.gsm
 share/asterisk/sounds/followme/call-from.gsm
 share/asterisk/sounds/followme/no-recording.gsm
 share/asterisk/sounds/followme/options.gsm
@@ -696,6 +719,7 @@ share/asterisk/sounds/letters/zed.gsm
 share/asterisk/sounds/minutes.gsm
 share/asterisk/sounds/pbx-invalid.gsm
 share/asterisk/sounds/pbx-invalidpark.gsm
+share/asterisk/sounds/pbx-parkingfailed.gsm
 share/asterisk/sounds/pbx-transfer.gsm
 share/asterisk/sounds/phonetic/9_p.gsm
 share/asterisk/sounds/phonetic/a_p.gsm
@@ -735,6 +759,7 @@ share/asterisk/sounds/privacy-unident.gsm
 share/asterisk/sounds/queue-callswaiting.gsm
 share/asterisk/sounds/queue-holdtime.gsm
 share/asterisk/sounds/queue-less-than.gsm
+share/asterisk/sounds/queue-minute.gsm
 share/asterisk/sounds/queue-minutes.gsm
 share/asterisk/sounds/queue-periodic-announce.gsm
 share/asterisk/sounds/queue-quantity1.gsm
@@ -758,6 +783,7 @@ share/asterisk/sounds/silence/8.gsm
 share/asterisk/sounds/silence/9.gsm
 share/asterisk/sounds/spy-agent.gsm
 share/asterisk/sounds/spy-console.gsm
+share/asterisk/sounds/spy-dahdi.gsm
 share/asterisk/sounds/spy-h323.gsm
 share/asterisk/sounds/spy-iax.gsm
 share/asterisk/sounds/spy-iax2.gsm
@@ -788,6 +814,7 @@ share/asterisk/sounds/vm-Family.gsm
 share/asterisk/sounds/vm-Friends.gsm
 share/asterisk/sounds/vm-INBOX.gsm
 share/asterisk/sounds/vm-Old.gsm
+share/asterisk/sounds/vm-Urgent.gsm
 share/asterisk/sounds/vm-Work.gsm
 share/asterisk/sounds/vm-advopts.gsm
 share/asterisk/sounds/vm-and.gsm
@@ -801,6 +828,7 @@ share/asterisk/sounds/vm-enter-num-to-call.gsm
 share/asterisk/sounds/vm-extension.gsm
 share/asterisk/sounds/vm-first.gsm
 share/asterisk/sounds/vm-for.gsm
+share/asterisk/sounds/vm-forward-multiple.gsm
 share/asterisk/sounds/vm-forward.gsm
 share/asterisk/sounds/vm-forwardoptions.gsm
 share/asterisk/sounds/vm-from-extension.gsm
@@ -812,6 +840,7 @@ share/asterisk/sounds/vm-incorrect-mailbox.gsm
 share/asterisk/sounds/vm-incorrect.gsm
 share/asterisk/sounds/vm-instructions.gsm
 share/asterisk/sounds/vm-intro.gsm
+share/asterisk/sounds/vm-invalid-password.gsm
 share/asterisk/sounds/vm-invalidpassword.gsm
 share/asterisk/sounds/vm-isonphone.gsm
 share/asterisk/sounds/vm-isunavail.gsm
@@ -819,6 +848,8 @@ share/asterisk/sounds/vm-last.gsm
 share/asterisk/sounds/vm-leavemsg.gsm
 share/asterisk/sounds/vm-login.gsm
 share/asterisk/sounds/vm-mailboxfull.gsm
+share/asterisk/sounds/vm-marked-nonurgent.gsm
+share/asterisk/sounds/vm-marked-urgent.gsm
 share/asterisk/sounds/vm-message.gsm
 share/asterisk/sounds/vm-messages.gsm
 share/asterisk/sounds/vm-minutes.gsm
@@ -834,11 +865,11 @@ share/asterisk/sounds/vm-nobox.gsm
 share/asterisk/sounds/vm-nomore.gsm
 share/asterisk/sounds/vm-nonumber.gsm
 share/asterisk/sounds/vm-num-i-have.gsm
-share/asterisk/sounds/vm-onefor.gsm
 share/asterisk/sounds/vm-onefor-full.gsm
+share/asterisk/sounds/vm-onefor.gsm
 share/asterisk/sounds/vm-options.gsm
-share/asterisk/sounds/vm-opts.gsm
 share/asterisk/sounds/vm-opts-full.gsm
+share/asterisk/sounds/vm-opts.gsm
 share/asterisk/sounds/vm-passchanged.gsm
 share/asterisk/sounds/vm-password.gsm
 share/asterisk/sounds/vm-pls-try-again.gsm
@@ -850,8 +881,11 @@ share/asterisk/sounds/vm-rec-name.gsm
 share/asterisk/sounds/vm-rec-temp.gsm
 share/asterisk/sounds/vm-rec-unv.gsm
 share/asterisk/sounds/vm-received.gsm
+share/asterisk/sounds/vm-record-prepend.gsm
 share/asterisk/sounds/vm-reenterpassword.gsm
 share/asterisk/sounds/vm-repeat.gsm
+share/asterisk/sounds/vm-review-nonurgent.gsm
+share/asterisk/sounds/vm-review-urgent.gsm
 share/asterisk/sounds/vm-review.gsm
 share/asterisk/sounds/vm-saved.gsm
 share/asterisk/sounds/vm-savedto.gsm
@@ -888,19 +922,6 @@ share/asterisk/static-http/ajamdemo.html
 share/asterisk/static-http/astman.css
 share/asterisk/static-http/astman.js
 share/asterisk/static-http/prototype.js
-%%WITH_ZAPTEL%%lib/asterisk/modules/app_flash.so
-%%WITH_ZAPTEL%%lib/asterisk/modules/app_meetme.so
-%%WITH_ZAPTEL%%lib/asterisk/modules/app_page.so
-%%WITH_ZAPTEL%%lib/asterisk/modules/app_dahdibarge.so
-%%WITH_ZAPTEL%%lib/asterisk/modules/app_dahdiras.so
-%%WITH_ZAPTEL%%lib/asterisk/modules/app_dahdiscan.so
-%%WITH_ZAPTEL%%lib/asterisk/modules/codec_dahdi.so
-%%WITH_ODBC%%lib/asterisk/modules/cdr_odbc.so
-%%WITH_FREETDS%%lib/asterisk/modules/cdr_tds.so
-%%WITH_H323%%lib/asterisk/modules/chan_h323.so
-%%WITH_ZAPTEL%%lib/asterisk/modules/chan_dahdi.so
-%%WITH_ODBC%%lib/asterisk/modules/res_config_odbc.so
-%%WITH_ODBC%%lib/asterisk/modules/res_odbc.so
 @dirrm share/asterisk/static-http
 @dirrm share/asterisk/sounds/silence
 @dirrm share/asterisk/sounds/phonetic
@@ -929,22 +950,22 @@ spool/asterisk/voicemail/default/1234/busy.gsm
 spool/asterisk/voicemail/default/1234/unavail.gsm
 @exec mkdir -p %D/log/asterisk/cdr-csv
 @exec mkdir -p %D/log/asterisk/cdr-custom
-@exec mkdir -p %D/spool/asterisk/voicemail/default/1234/INBOX
 @exec mkdir -p %D/spool/asterisk/dictate
 @exec mkdir -p %D/spool/asterisk/meetme
 @exec mkdir -p %D/spool/asterisk/monitor
 @exec mkdir -p %D/spool/asterisk/system
 @exec mkdir -p %D/spool/asterisk/tmp
-@dirrm spool/asterisk/dictate
-@dirrm spool/asterisk/meetme
-@dirrm spool/asterisk/monitor
-@dirrm spool/asterisk/system
+@exec mkdir -p %D/spool/asterisk/voicemail/default/1234/INBOX
 @dirrm spool/asterisk/voicemail/default/1234/INBOX
 @dirrm spool/asterisk/voicemail/default/1234
 @dirrm spool/asterisk/voicemail/default
 @dirrm spool/asterisk/voicemail
 @dirrm spool/asterisk/tmp
+@dirrm spool/asterisk/system
+@dirrm spool/asterisk/monitor
+@dirrm spool/asterisk/meetme
+@dirrm spool/asterisk/dictate
 @dirrm spool/asterisk
-@dirrm log/asterisk/cdr-csv
 @dirrm log/asterisk/cdr-custom
+@dirrm log/asterisk/cdr-csv
 @dirrm log/asterisk

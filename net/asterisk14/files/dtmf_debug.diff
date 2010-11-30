@@ -60,9 +60,9 @@
  static int rtcpstats;			/*!< Are we debugging RTCP? */
  static int rtcpinterval = RTCP_DEFAULT_INTERVALMS; /*!< Time between rtcp reports in millisecs */
 @@ -170,6 +171,8 @@
+ 	struct ast_codec_pref pref;
  	struct ast_rtp *bridged;        /*!< Who we are Packet bridged to */
  	int set_marker_bit:1;           /*!< Whether to set the marker bit or not */
- 	unsigned int constantssrc:1;
 +        char chan_name[100];
 +        char chan_id[100];
  };
@@ -82,7 +82,7 @@
 @@ -691,12 +694,25 @@
  	}
  	if (rtp->resp && (rtp->resp != resp)) {
- 		f = send_dtmf(rtp, AST_FRAME_DTMF_END);
+ 		f = create_dtmf_frame(rtp, AST_FRAME_DTMF_END);
 +                ast_log(LOG_DEBUG, "Channel: %s %s Cisco DTMF event: %c\n", rtp->chan_name, rtp->chan_id, rtp->resp);
  	}
  	rtp->resp = resp;
@@ -141,20 +141,15 @@
  				data = rtp->rawdata + AST_FRIENDLY_OFFSET + hdrlen;
  				event = ntohl(*((unsigned int *)(data)));
  				event >>= 24;
-@@ -1319,9 +1336,12 @@
+@@ -1319,7 +1336,7 @@
  				event_end >>= 24;
  				duration = ntohl(*((unsigned int *)(data)));
  				duration &= 0xFFFF;
 -				ast_verbose("Got  RTP RFC2833 from   %s:%u (type %-2.2d, seq %-6.6u, ts %-6.6u, len %-6.6u, mark %d, event %08x, end %d, duration %-5.5d) \n", ast_inet_ntoa(sin.sin_addr), ntohs(sin.sin_port), payloadtype, seqno, timestamp, res - hdrlen, (mark?1:0), event, ((event_end & 0x80)?1:0), duration);
-+
 +				ast_verbose("Channel: %s %s Got RTP RFC2833 from %s:%u to %s:%u (type %-2.2d, seq %-6.6u, ts %-6.6u, len %-6.6u, mark %d, event %08x, end %d, duration %-5.5d)\n", rtp->chan_name, rtp->chan_id, ast_inet_ntoa(sin.sin_addr), ntohs(sin.sin_port), ast_inet_ntoa(rtp->us.sin_addr), ntohs(rtp->us.sin_port), payloadtype, seqno, timestamp, res - hdrlen, (mark?1:0), event, ((event_end & 0x80)?1:0), duration);
  			}
- 			f = process_rfc2833(rtp, rtp->rawdata + AST_FRIENDLY_OFFSET + hdrlen, res - hdrlen, seqno, timestamp);
-+			if (rtpdebugdtmf && f)
-+				ast_verbose("Channel: %s %s Got RFC2833 DTMF event %c of type %s\n", rtp->chan_name, rtp->chan_id, f->subclass, (f->frametype == AST_FRAME_DTMF_BEGIN ? "DTMF BEGIN" : (f->frametype == AST_FRAME_DTMF_END ? "DTMF_END" : "UNKNOWN")));
- 		} else if (rtpPT.code == AST_RTP_CISCO_DTMF) {
- 			/* It's really special -- process it the Cisco way */
- 			if (rtp->lastevent <= seqno || (rtp->lastevent >= 65530 && seqno <= 6)) {
+ 			/* process_rfc2833 may need to return multiple frames. We do this
+ 			 * by passing the pointer to the frame list to it so that the method
 @@ -2287,8 +2307,9 @@
  			ast_log(LOG_ERROR, "RTP Transmission error to %s:%u: %s\n",
  				ast_inet_ntoa(rtp->them.sin_addr),
