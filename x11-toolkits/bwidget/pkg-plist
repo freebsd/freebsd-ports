@@ -50,6 +50,10 @@ lib/bwidget/lang/de.rc
 lib/bwidget/lang/en.rc
 lib/bwidget/lang/es.rc
 lib/bwidget/lang/fr.rc
+lib/bwidget/lang/hu.rc
+lib/bwidget/lang/nl.rc
+lib/bwidget/lang/no.rc
+lib/bwidget/lang/pl.rc
 lib/bwidget/listbox.tcl
 lib/bwidget/mainframe.tcl
 lib/bwidget/messagedlg.tcl
@@ -73,45 +77,6 @@ lib/bwidget/utils.tcl
 lib/bwidget/widget.tcl
 lib/bwidget/wizard.tcl
 lib/bwidget/xpm2image.tcl
-%%PORTDOCS%%%%DOCSDIR%%/ArrowButton.html
-%%PORTDOCS%%%%DOCSDIR%%/BWidget.html
-%%PORTDOCS%%%%DOCSDIR%%/Button.html
-%%PORTDOCS%%%%DOCSDIR%%/ButtonBox.html
-%%PORTDOCS%%%%DOCSDIR%%/ComboBox.html
-%%PORTDOCS%%%%DOCSDIR%%/Dialog.html
-%%PORTDOCS%%%%DOCSDIR%%/DragSite.html
-%%PORTDOCS%%%%DOCSDIR%%/DropSite.html
-%%PORTDOCS%%%%DOCSDIR%%/DynamicHelp.html
-%%PORTDOCS%%%%DOCSDIR%%/Entry.html
-%%PORTDOCS%%%%DOCSDIR%%/Label.html
-%%PORTDOCS%%%%DOCSDIR%%/LabelEntry.html
-%%PORTDOCS%%%%DOCSDIR%%/LabelFrame.html
-%%PORTDOCS%%%%DOCSDIR%%/ListBox.html
-%%PORTDOCS%%%%DOCSDIR%%/MainFrame.html
-%%PORTDOCS%%%%DOCSDIR%%/MessageDlg.html
-%%PORTDOCS%%%%DOCSDIR%%/NoteBook.html
-%%PORTDOCS%%%%DOCSDIR%%/PagesManager.html
-%%PORTDOCS%%%%DOCSDIR%%/PanedWindow.html
-%%PORTDOCS%%%%DOCSDIR%%/PanelFrame.html
-%%PORTDOCS%%%%DOCSDIR%%/PasswdDlg.html
-%%PORTDOCS%%%%DOCSDIR%%/ProgressBar.html
-%%PORTDOCS%%%%DOCSDIR%%/ProgressDlg.html
-%%PORTDOCS%%%%DOCSDIR%%/ScrollView.html
-%%PORTDOCS%%%%DOCSDIR%%/ScrollableFrame.html
-%%PORTDOCS%%%%DOCSDIR%%/ScrolledWindow.html
-%%PORTDOCS%%%%DOCSDIR%%/SelectColor.html
-%%PORTDOCS%%%%DOCSDIR%%/SelectFont.html
-%%PORTDOCS%%%%DOCSDIR%%/Separator.html
-%%PORTDOCS%%%%DOCSDIR%%/SpinBox.html
-%%PORTDOCS%%%%DOCSDIR%%/StatusBar.html
-%%PORTDOCS%%%%DOCSDIR%%/TitleFrame.html
-%%PORTDOCS%%%%DOCSDIR%%/Tree.html
-%%PORTDOCS%%%%DOCSDIR%%/Widget.html
-%%PORTDOCS%%%%DOCSDIR%%/contents.html
-%%PORTDOCS%%%%DOCSDIR%%/index.html
-%%PORTDOCS%%%%DOCSDIR%%/navtree.html
-%%PORTDOCS%%%%DOCSDIR%%/options.htm
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm lib/bwidget/lang
 @dirrm lib/bwidget/images
 @dirrm lib/bwidget
