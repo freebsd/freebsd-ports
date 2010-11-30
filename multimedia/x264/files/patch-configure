@@ -1,38 +1,25 @@
---- configure.orig	2010-06-24 22:45:07.000000000 +0200
-+++ configure	2010-07-18 22:56:20.252020411 +0200
-@@ -1,4 +1,4 @@
--#!/bin/bash
-+#!/bin/sh
- 
- if test x"$1" = x"-h" -o x"$1" = x"--help" ; then
- 
-@@ -297,11 +297,15 @@
-     ARCH="X86"
-     AS="yasm"
-     ASFLAGS="$ASFLAGS -O2"
--    if [[ "$asm" == auto && "$CFLAGS" != *-march* ]]; then
--      CFLAGS="$CFLAGS -march=i686"
--    fi
--    if [[ "$asm" == auto && "$CFLAGS" != *-mfpmath* ]]; then
--      CFLAGS="$CFLAGS -mfpmath=sse -msse"
-+    if [ "$asm" = yes ]; then
-+      case "$CFLAGS" in
-+      *-march*) ;;
-+      *) CFLAGS="$CFLAGS -march=i686" ;;
-+      esac
-+      case "$CFLAGS" in
-+      *-mfpmath*) ;;
-+      *) CFLAGS="$CFLAGS -mfpmath=sse -msse" ;;
-+      esac
-     fi
-     if [ "$SYS" = MACOSX ]; then
-       ASFLAGS="$ASFLAGS -f macho -DPREFIX"
-@@ -572,7 +576,7 @@
-     [ -n "$LAVF_CFLAGS" ] && CFLAGS="$CFLAGS $LAVF_CFLAGS"
- fi
- 
--GPAC_LIBS="-lgpac_static"
-+GPAC_LIBS="-lgpac"
- if [ $SYS = MINGW ]; then
-     GPAC_LIBS="$GPAC_LIBS -lwinmm"
- fi
+--- configure.orig	2010-11-28 22:45:04.000000000 +0100
++++ configure	2010-11-29 22:51:09.651506774 +0100
+@@ -350,12 +350,16 @@
+         ARCH="X86"
+         AS="yasm"
+         ASFLAGS="$ASFLAGS -O2"
+-        if [[ "$asm" == auto && "$CFLAGS" != *-march* ]]; then
+-            CFLAGS="$CFLAGS -march=i686"
+-        fi
+-        if [[ "$asm" == auto && "$CFLAGS" != *-mfpmath* ]]; then
+-            CFLAGS="$CFLAGS -mfpmath=sse -msse"
+-        fi
++	if [ "$asm" = yes ]; then
++	    case "$CFLAGS" in
++	    *-march*) ;;
++	    *) CFLAGS="$CFLAGS -march=i686" ;;
++	    esac
++	    case "$CFLAGS" in
++	    *-mfpmath*) ;;
++	    *) CFLAGS="$CFLAGS -mfpmath=sse -msse" ;;
++	    esac
++	fi
+         if [ "$SYS" = MACOSX ]; then
+             ASFLAGS="$ASFLAGS -f macho -DPREFIX"
+         elif [ "$SYS" = MINGW ]; then
