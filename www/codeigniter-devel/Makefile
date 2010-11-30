@@ -26,6 +26,8 @@ WRKSRC=	${WRKDIR}/codeigniter
 WWWDIR=	${PREFIX}/www/codeigniter
 PORTDOCS=	*
 
+LATEST_LINK=	codeigniter-devel
+
 # These are all user-configurable files that we'll install
 CI_CONF_FILES=	index.php ${CI_CONF_DIR}/autoload.php \
 		${CI_CONF_DIR}/config.php ${CI_CONF_DIR}/constants.php \
