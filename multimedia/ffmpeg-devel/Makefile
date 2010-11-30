@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	ffmpeg
-DISTVERSION=	2010-07-25
-PORTREVISION=	5
+DISTVERSION=	2010-11-30
 CATEGORIES=	multimedia audio ipv6 net
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	mm
@@ -24,7 +23,7 @@ LATEST_LINK=	ffmpeg-devel
 WRKSRC=		${WRKDIR}/ffmpeg-export-${DISTVERSION}
 HAS_CONFIGURE=	yes
 CONFIGURE_LOG=	config.err
-USE_BZIP2=	yes
+USE_XZ=		yes
 USE_GMAKE=	yes
 MAKE_JOBS_SAFE=	yes
 WANT_SDL=	yes
@@ -35,18 +34,20 @@ OPTIONS=	ALSA	"Enable alsa input/output device" off \
 		DIRAC	"Dirac codec via libdirac" off \
 		FAAC	"FAAC mp4/aac audio encoder" off \
 		FFSERVER "Build and install ffserver" on \
+		FREI0R	"Frei0r wrapper filter" off \
 		GSM	"GSM audio codec" off \
 		LAME	"LAME MP3 encoder" off \
+		OPENCV	"OpenCV video filtering support" off \
 		OPENJPEG	"JPEG 2000 decoder" off \
 		OPTIMIZED_CFLAGS "Additional optimizations" off \
 		SCHROEDINGER	"Dirac codec via libschroedinger" on \
 		SDL	"SDL support (build ffplay)" off \
 		SPEEX	"Speex audio decoder" off \
-		SSSE3	"Enable ssse3 support" on \
+		SSSE3	"SSSE3 support" on \
 		THEORA	"Theora encoder (implies OGG)" on \
 		VORBIS	"Vorbis encoder via libvorbis (implies OGG)" on \
 		VP8	"VP8 codec via libvpx" on \
-		X264	"H.264 encoder" off \
+		X264	"H.264 encoder" on \
 		XVID	"Xvid encoder via xvidcore" on
 
 COMPAT_HEADERS=libavcodec/avcodec.h \
@@ -88,7 +89,6 @@ CONFIGURE_ARGS+=--prefix="${PREFIX}" \
 		--enable-gpl \
 		--enable-postproc \
 		--enable-avfilter \
-		--enable-avfilter-lavf \
 		--enable-pthreads \
 		--enable-x11grab \
 		--enable-memalign-hack \
@@ -202,6 +202,14 @@ PLIST_SUB+=	FFSERVER="@comment "
 CONFIGURE_ARGS+=	--disable-ffserver
 .endif
 
+# frei0r
+.ifdef(WITH_FREI0R)
+BUILD_DEPENDS+=	${LOCALBASE}/include/frei0r.h:${PORTSDIR}/graphics/frei0r
+CONFIGURE_ARGS+=	--enable-frei0r
+.else
+CONFIGURE_ARGS+=	--disable-frei0r
+.endif
+
 # gsm
 .ifdef(WITH_GSM)
 LIB_DEPENDS+=	gsm.1:${PORTSDIR}/audio/gsm
@@ -216,6 +224,14 @@ LIB_DEPENDS+=	mp3lame.0:${PORTSDIR}/audio/lame
 CONFIGURE_ARGS+=	--enable-libmp3lame
 .else
 CONFIGURE_ARGS+=	--disable-libmp3lame
+.endif
+
+# opencv
+.ifdef(WITH_OPENCV)
+LIB_DEPENDS+=	cv.2:${PORTSDIR}/graphics/opencv
+CONFIGURE_ARGS+=	--enable-libopencv
+.else
+CONFIGURE_ARGS+=	--disable-libopencv
 .endif
 
 # openjpeg
