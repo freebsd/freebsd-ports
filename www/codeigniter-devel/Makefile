@@ -4,66 +4,69 @@
 #
 # $FreeBSD$
 #
-
 PORTNAME=	codeigniter
-PORTVERSION=	1.7.2
-PORTREVISION=	1
+PORTVERSION=	2.0
 CATEGORIES=	www
-MASTER_SITES=	http://codeigniter.com/download_files/ \
-		LOCAL/glarkin
-DISTNAME=	CodeIgniter_${PORTVERSION}
+MASTER_SITES=	http://bitbucket.org/ellislab/codeigniter/get/ \
+		http://www.codeigniter.org.tw/download_files/
+DISTNAME=	98b57d21e524
+PKG_SUFX=	-devel
 
-MAINTAINER=	glarkin@FreeBSD.org
+MAINTAINER=	appleboy.tw@gmail.com
 COMMENT=	A framework for developing PHP web applications
 
 USE_ZIP=	yes
-
 NO_BUILD=	yes
 USE_PHP=	session pcre
-WANT_PHP_WEB=	yes
+NT_PHP_WEB=	yes
 
 CI_SYS_DIR=	system
-CI_CONF_DIR=	${CI_SYS_DIR}/application/config
+CI_CONF_DIR=	application/config
+WRKSRC=	${WRKDIR}/codeigniter
+WWWDIR=	${PREFIX}/www/codeigniter
+PORTDOCS=	*
 
 # These are all user-configurable files that we'll install
-# a .sample copy for each.
 CI_CONF_FILES=	index.php ${CI_CONF_DIR}/autoload.php \
 		${CI_CONF_DIR}/config.php ${CI_CONF_DIR}/constants.php \
 		${CI_CONF_DIR}/database.php \
+		${CI_CONF_DIR}/doctypes.php \
+		${CI_CONF_DIR}/foreign_chars.php \
+		${CI_CONF_DIR}/profiler.php \
 		${CI_CONF_DIR}/hooks.php ${CI_CONF_DIR}/mimes.php \
 		${CI_CONF_DIR}/routes.php ${CI_CONF_DIR}/smileys.php \
 		${CI_CONF_DIR}/user_agents.php
 
 # This is the rest of the CodeIgniter installation that doesn't change
 STD_BITS=	${CI_CONF_DIR}/index.html \
-		${CI_SYS_DIR}/application/controllers \
-		${CI_SYS_DIR}/application/errors \
-		${CI_SYS_DIR}/application/helpers \
-		${CI_SYS_DIR}/application/hooks \
-		${CI_SYS_DIR}/application/index.html \
-		${CI_SYS_DIR}/application/language \
-		${CI_SYS_DIR}/application/libraries \
-		${CI_SYS_DIR}/application/models \
-		${CI_SYS_DIR}/application/views \
+		application/controllers \
+		application/core \
+		application/errors \
+		application/helpers \
+		application/hooks \
+		application/index.html \
+		application/language \
+		application/libraries \
+		application/models \
+		application/views \
+		application/third_party \
 		${CI_SYS_DIR}/cache \
-		${CI_SYS_DIR}/codeigniter \
+		${CI_SYS_DIR}/core \
 		${CI_SYS_DIR}/database \
 		${CI_SYS_DIR}/fonts \
 		${CI_SYS_DIR}/helpers \
 		${CI_SYS_DIR}/language \
 		${CI_SYS_DIR}/libraries \
-		${CI_SYS_DIR}/logs \
-		${CI_SYS_DIR}/plugins \
-		${CI_SYS_DIR}/scaffolding
+		${CI_SYS_DIR}/logs
 
 OPTIONS=	APACHE "Configure for Apache-2.x" off \
-		PROD "Install for production server (see: make confighelp)" Off \
-		MSSQL "Install MSSQL support for PHP" Off \
-		MYSQL "Install MySQL support for PHP" Off \
-		MYSQLI "Install MySQLi support for PHP" Off \
-		ODBC "Install ODBC support for PHP" Off \
-		PGSQL "Install PostgreSQL support for PHP" Off \
-		SQLITE "Install SQLite support for PHP" Off
+	PROD "Install for production server (see: make confighelp)" Off \
+	MSSQL "Install MSSQL support for PHP" Off \
+	MYSQL "Install MySQL support for PHP" Off \
+	MYSQLI "Install MySQLi support for PHP" Off \
+	ODBC "Install ODBC support for PHP" Off \
+	PGSQL "Install PostgreSQL support for PHP" Off \
+	SQLITE "Install SQLite support for PHP" Off
 
 .include <bsd.port.pre.mk>
 
@@ -149,9 +152,6 @@ confighelp:
 	@${ECHO_MSG} "http://codeigniter.com/user_guide/installation/index.html"
 	@${ECHO_MSG} ""
 
-post-patch:
-	@cd ${WRKSRC} && ${RM} system/libraries/Upload.php.orig
-
 do-install:
 	@cd ${WRKSRC} && ${COPYTREE_SHARE} "${STD_BITS}" ${WWWDIR}
 	@for i in ${CI_CONF_FILES}; do \
@@ -191,7 +191,7 @@ post-install:
 	fi
 .endif
 .if !defined(NOPORTDOCS)
-	@cd ${WRKSRC}/user_guide/ && ${COPYTREE_SHARE} . ${DOCSDIR}
+	@cd ${WRKSRC}/user_guide && ${COPYTREE_SHARE} . ${DOCSDIR}
 .endif
 
 	@${CAT} ${PKGMESSAGE}
