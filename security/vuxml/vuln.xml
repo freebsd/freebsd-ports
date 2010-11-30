@@ -34,6 +34,39 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="753f8185-5ba9-42a4-be02-3f55ee580093">
+    <topic>phpMyAdmin -- XSS attack in database search</topic>
+    <affects>
+      <package>
+	<name>phpMyAdmin</name>
+	<range><lt>3.3.8.1</lt></range>
+      </package>
+      <package>
+	<name>phpMyAdmin211</name>
+	<range><lt>2.11.11.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>phpMyAdmin team reports:</p>
+	<blockquote cite="http://www.phpmyadmin.net/home_page/security/PMASA-2010-8.php">
+	  <p>It was possible to conduct a XSS attack using spoofed request on the
+	    db search script.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+	  <freebsdpr>ports/152685</freebsdpr>
+	  <freebsdpr>ports/152686</freebsdpr>
+	  <cvename>CVE-2010-4329</cvename>
+	  <url>http://www.phpmyadmin.net/home_page/security/PMASA-2010-8.php</url>
+    </references>
+    <dates>
+      <discovery>2010-11-29</discovery>
+      <entry>2010-11-30</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="f154a3c7-f7f4-11df-b617-00e0815b8da8">
     <topic>isc-dhcp-server -- Empty link-address denial of service</topic>
     <affects>
