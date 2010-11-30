@@ -106,6 +106,7 @@
     SUBDIR += cntlm
     SUBDIR += cocoon
     SUBDIR += codeigniter
+    SUBDIR += codeigniter-devel
     SUBDIR += comclear
     SUBDIR += commonist
     SUBDIR += contenido
