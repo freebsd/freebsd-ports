@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	lapack
-PORTVERSION=	3.2.2
-PORTREVISION=	1
+PORTVERSION=	3.3.0
 CATEGORIES=	math
 MASTER_SITES=	ftp://ftp.netlib.org/lapack/ \
 		http://netlib.org/lapack/ \
@@ -77,6 +76,7 @@ post-patch:
 			  -e 's;%%BLAS%%;${BLAS};g' \
 				${WRKSRC}/make.inc
 	@${CP} -r ${WRKSRC} ${WRKSRC_SHARED}
+	@(cd ${WRKSRC_SHARED}; ${PATCH} <${FILESDIR}/shared-patch-SRC+Makefile)
 .if !(defined(NOPROFILE) || defined(NO_PROFILE) || defined(WITHOUT_PROFILE))
 	@${CP} -r ${WRKSRC} ${WRKSRC_PROFILE}
 .endif

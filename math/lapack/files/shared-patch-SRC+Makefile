@@ -1,0 +1,20 @@
+--- SRC/Makefile.org	2009-04-13 15:49:29.000000000 +0900
++++ SRC/Makefile	2009-04-13 15:49:36.000000000 +0900
+@@ -146,7 +146,7 @@
+    sgeequb.o ssyequb.o spoequb.o sgbequb.o \
+    sbbcsd.o slapmr.o sorbdb.o sorcsd.o
+ 
+-DSLASRC = spotrs.o sgetrs.o spotrf.o sgetrf.o 
++DSLASRC = #spotrs.o sgetrs.o spotrf.o sgetrf.o 
+ 
+ SXLASRC = sgesvxx.o sgerfsx.o sla_gerfsx_extended.o sla_geamv.o		\
+    sla_gercond.o sla_rpvgrw.o ssysvxx.o ssyrfsx.o			\
+@@ -227,7 +227,7 @@
+    cla_hercond_c.o cla_hercond_x.o cla_herpvgrw.o \
+    cla_lin_berr.o clarscl2.o clascl2.o cla_wwaddw.o
+ 
+-ZCLASRC = cpotrs.o cgetrs.o cpotrf.o cgetrf.o 
++ZCLASRC = #cpotrs.o cgetrs.o cpotrf.o cgetrf.o 
+ 
+ DLASRC = \
+    dgbbrd.o dgbcon.o dgbequ.o dgbrfs.o dgbsv.o  \
