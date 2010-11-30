@@ -1,0 +1,13 @@
+--- Makefile.pre.in.orig	2010-11-30 09:05:24.000000000 +0800
++++ Makefile.pre.in	2010-11-30 09:05:48.000000000 +0800
+@@ -105,8 +105,8 @@
+ 
+ # Symbols used for using shared libraries
+ SO=		@SO@
+-LDSHARED=	@LDSHARED@ $(LDFLAGS)
+-BLDSHARED=	@BLDSHARED@ $(LDFLAGS)
++LDSHARED=	@LDSHARED@
++BLDSHARED=	@BLDSHARED@
+ LDCXXSHARED=	@LDCXXSHARED@
+ DESTSHARED=	$(BINLIBDEST)/lib-dynload
+ 
