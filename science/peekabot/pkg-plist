@@ -2,11 +2,10 @@ bin/obj2pbmf
 bin/peekabot
 include/peekabot.hh
 include/peekabot/Action.hh
+include/peekabot/Any.hh
 include/peekabot/Deprecated.hh
-include/peekabot/Matrix.hh
 include/peekabot/PathIdentifier.hh
 include/peekabot/Types.hh
-include/peekabot/Vector.hh
 include/peekabot/Visibility.hh
 include/peekabot/Version.hh
 include/peekabot/client/DelayedDispatch.hh
@@ -17,7 +16,6 @@ include/peekabot/client/PeekabotClient.hh
 include/peekabot/client/Recording.hh
 include/peekabot/client/Result.hh
 include/peekabot/client/Status.hh
-include/peekabot/client/any_dl.hpp
 include/peekabot/client/proxies/CameraProxy.hh
 include/peekabot/client/proxies/CircleProxy.hh
 include/peekabot/client/proxies/CubeProxy.hh
@@ -39,48 +37,46 @@ include/peekabot/client/proxies/ScalableProxy.hh
 include/peekabot/client/proxies/SliderProxy.hh
 include/peekabot/client/proxies/SphereProxy.hh
 include/peekabot/client/proxies/VertexBasedProxy.hh
+include/peekabot/client/proxies/OccupancyGrid3DProxy.hh
+include/peekabot/client/proxies/TriMeshProxy.hh
+include/peekabot/client/proxies/PolylineProxy.hh
 lib/libpeekabot.a
 lib/libpeekabot.la
 lib/libpeekabot.so
-lib/libpeekabot.so.5
+lib/libpeekabot.so.6
+libdata/pkgconfig/peekabot.pc
 %%DATADIR%%/data/default_scene.xml
 %%DATADIR%%/fonts/COPYING
 %%DATADIR%%/fonts/FreeSerif.ttf
-%%DATADIR%%/images/add_camera.png
-%%DATADIR%%/images/camera_object.png
-%%DATADIR%%/images/camera_object2.png
-%%DATADIR%%/images/camera_object3.png
-%%DATADIR%%/images/circle_object.png
-%%DATADIR%%/images/cont_snapshot.png
-%%DATADIR%%/images/cube_object.png
-%%DATADIR%%/images/cube_object_aa.png
-%%DATADIR%%/images/cylinder_object.png
-%%DATADIR%%/images/cylinder_object_aa.png
-%%DATADIR%%/images/dof.png
-%%DATADIR%%/images/grid.png
-%%DATADIR%%/images/groundplane.png
-%%DATADIR%%/images/group_object.png
-%%DATADIR%%/images/label.png
-%%DATADIR%%/images/light_object.png
-%%DATADIR%%/images/line_cloud.png
-%%DATADIR%%/images/locked.png
-%%DATADIR%%/images/move.png
-%%DATADIR%%/images/occupancy_grid_2d.png
-%%DATADIR%%/images/ortho_mode.png
-%%DATADIR%%/images/ortho_mode_aa.png
-%%DATADIR%%/images/perspective_mode.png
-%%DATADIR%%/images/perspective_mode_aa.png
-%%DATADIR%%/images/point_cloud.png
-%%DATADIR%%/images/polygon_object.png
-%%DATADIR%%/images/polyline_object.png
-%%DATADIR%%/images/polyline_object_aa.png
-%%DATADIR%%/images/rotate.png
-%%DATADIR%%/images/snapshot.png
-%%DATADIR%%/images/snapshot_disabled.png
-%%DATADIR%%/images/sphere_object.png
-%%DATADIR%%/images/teapot.png
-%%DATADIR%%/images/topdown.png
-%%DATADIR%%/images/topdown_aa.png
+%%DATADIR%%/icons/objects/camera-16.png
+%%DATADIR%%/icons/objects/circle-16.png
+%%DATADIR%%/icons/objects/cube-16.png
+%%DATADIR%%/icons/objects/cylinder-16.png
+%%DATADIR%%/icons/objects/dof-16.png
+%%DATADIR%%/icons/objects/grid-16.png
+%%DATADIR%%/icons/objects/label-16.png
+%%DATADIR%%/icons/objects/line-cloud-16.png
+%%DATADIR%%/icons/objects/model-16.png
+%%DATADIR%%/icons/objects/og2d-16.png
+%%DATADIR%%/icons/objects/og3d-16.png
+%%DATADIR%%/icons/objects/point-cloud-16.png
+%%DATADIR%%/icons/objects/polygon-16.png
+%%DATADIR%%/icons/objects/polyline-16.png
+%%DATADIR%%/icons/objects/sphere-16.png
+%%DATADIR%%/icons/objects/tri-mesh-16.png
+%%DATADIR%%/icons/log-22.png
+%%DATADIR%%/icons/log-error-22.png
+%%DATADIR%%/icons/move-tool-16.png
+%%DATADIR%%/icons/move-tool-22.png
+%%DATADIR%%/icons/navigate-tool-22.png
+%%DATADIR%%/icons/ortho-16.png
+%%DATADIR%%/icons/ortho-22.png
+%%DATADIR%%/icons/rotate-tool-16.png
+%%DATADIR%%/icons/rotate-tool-22.png
+%%DATADIR%%/icons/screenshot-16.png
+%%DATADIR%%/icons/screenshot-22.png
+%%DATADIR%%/icons/top-down-16.png
+%%DATADIR%%/icons/top-down-22.png
 %%DATADIR%%/schemas/basic_types.xsd
 %%DATADIR%%/schemas/camera.xsd
 %%DATADIR%%/schemas/circle.xsd
@@ -100,10 +96,15 @@ lib/libpeekabot.so.5
 %%DATADIR%%/schemas/scene_object.xsd
 %%DATADIR%%/schemas/slider.xsd
 %%DATADIR%%/schemas/sphere.xsd
+%%DATADIR%%/schemas/tri_mesh.xsd
+%%DATADIR%%/schemas/polyline.xsd
+%%DATADIR%%/peekabot.ui
 @dirrm %%DATADIR%%/schemas
 @dirrm %%DATADIR%%/images
 @dirrm %%DATADIR%%/fonts
 @dirrm %%DATADIR%%/data
+@dirrm %%DATADIR%%/icons/objects
+@dirrm %%DATADIR%%/icons
 @dirrm %%DATADIR%%
 @dirrm include/peekabot/client/proxies
 @dirrm include/peekabot/client
