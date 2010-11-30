@@ -7,7 +7,7 @@
 
 PORTNAME=	cyrus-imapd
 PORTVERSION=	2.4.5
-#PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	mail ipv6
 MASTER_SITES=	ftp://ftp.cyrusimap.org/cyrus-imapd/
 
@@ -40,8 +40,8 @@ MAKE_JOBS_UNSAFE=	yes
 LICENSE=	BSD
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 
-OPTIONS=	AUTOCREATE	"Use autocreate INBOX patch (UoA)"	on \
-		AUTOSIEVE	"Use autosievefolder patch (UoA)"	on \
+OPTIONS=	AUTOCREATE	"Use autocreate INBOX patch (UoA)"	off \
+		AUTOSIEVE	"Use autosievefolder patch (UoA)"	off \
 		BDB		"Use Berkeley DB"			on \
 		DRAC		"Enable DRAC support"			off \
 		IDLED		"Enable IMAP idled support"		off \
