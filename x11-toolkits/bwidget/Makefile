@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	bwidget
-PORTVERSION=	1.8.0
-PORTREVISION=	2
+PORTVERSION=	1.9.2
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	SF/tcllib/BWidget/${PORTVERSION}
 DISTNAME=	BWidget-${PORTVERSION}
@@ -19,15 +18,22 @@ USE_TK_RUN=	84+
 
 NO_BUILD=	yes
 
+.if !defined(NOPORTDOCS)
+PORTDOCS=	*
+.endif
+
 do-install:
 	@$(MKDIR) ${PREFIX}/lib/bwidget
 	${INSTALL_DATA} ${WRKSRC}/*.tcl ${PREFIX}/lib/bwidget
 	${TAR} -C ${WRKSRC} -cf - images lang | \
-		${TAR} -C ${PREFIX}/lib/bwidget --unlink -xf -
+		${TAR} -v -C ${PREFIX}/lib/bwidget --unlink -xf -
 	@${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/lib/bwidget
 .if !defined(NOPORTDOCS)
-	@$(MKDIR) ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/BWman/*.htm* ${DOCSDIR}
+	@$(MKDIR) ${DOCSDIR}/BWman
+	${INSTALL_DATA} ${WRKSRC}/BWman/*.html ${DOCSDIR}/BWman
+. for FILE in CHANGES.txt ChangeLog LICENSE.txt README.txt 
+	${INSTALL_DATA} ${WRKSRC}/${FILE} ${DOCSDIR}/${FILE}
+. endfor
 .endif
 
 .include <bsd.port.mk>
