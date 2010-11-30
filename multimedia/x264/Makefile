@@ -5,19 +5,23 @@
 # $FreeBSD$
 
 PORTNAME=	x264
-PORTVERSION=	0.0.20100624
+PORTVERSION=	0.${X264_BUILD}.${X264_REV}
 CATEGORIES=	multimedia
 MASTER_SITES=	http://downloads.videolan.org/pub/videolan/x264/snapshots/ \
 		http://samples.mplayerhq.hu/yuv4mpeg2/:pgo
-DISTNAME=	${PORTNAME}-snapshot-${PORTVERSION:S/0.0.//}-2245
-DISTFILES=	${PORTNAME}-snapshot-${PORTVERSION:S/0.0.//}-2245${EXTRACT_SUFX}
+DISTNAME=	${PORTNAME}-snapshot-${X264_SNAPSHOT}-2245
+DISTFILES=	${PORTNAME}-snapshot-${X264_SNAPSHOT}-2245${EXTRACT_SUFX}
 DIST_SUBDIR=	x264
-EXTRACT_ONLY=	${PORTNAME}-snapshot-${PORTVERSION:S/0.0.//}-2245${EXTRACT_SUFX}
+EXTRACT_ONLY=	${PORTNAME}-snapshot-${X264_SNAPSHOT}-2245${EXTRACT_SUFX}
 
 MAINTAINER=	mm@FreeBSD.org
 COMMENT?=	Library and tool for encoding H.264/AVC video streams
 
 BUILD_DEPENDS=	yasm>=0.6.0:${PORTSDIR}/devel/yasm
+
+X264_BUILD=	110
+X264_REV=	1804
+X264_SNAPSHOT=	20101128
 
 USE_BZIP2=	yes
 EXTRACT_AFTER_ARGS?=	| ${TAR} -xf - --exclude .svn
@@ -37,6 +41,8 @@ OPTIONS=	ASM "Assembly optimizations (devel/binutils)" On \
 CONFIGURE_ARGS+=	--extra-cflags="${CPPFLAGS} ${CFLAGS} -fPIC -I${LOCALBASE}/include" \
 			--extra-ldflags="${LDFLAGS} -L${LOCALBASE}/lib" \
 			--enable-shared
+
+PLIST_SUB+=	X264_BUILD=${X264_BUILD}
 
 .include <bsd.port.pre.mk>
 
@@ -84,7 +90,6 @@ RESTRICTED_FILES=	${Y4M_VIDEO_DISTFILE}
 .if !defined(WITHOUT_GPAC)
 BUILD_DEPENDS+=		gpac-libgpac>=0.4.5,1:${PORTSDIR}/multimedia/gpac-libgpac
 LIB_DEPENDS+=		gpac.1:${PORTSDIR}/multimedia/gpac-libgpac
-CONFIGURE_ARGS+=	--enable-gpac
 .else
 CONFIGURE_ARGS+=	--disable-gpac
 .endif
@@ -101,8 +106,11 @@ post-extract:
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local|${PREFIX}|; \
-		s|-lpthread |${PTHREAD_LIBS} |g;' \
+		s|-lpthread|${PTHREAD_LIBS}|g; \
+		s|bash|sh|; \
+		s|gpac_static|gpac|g' \
 		${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|bash|sh|' ${WRKSRC}/version.sh
 	@${REINPLACE_CMD} -e 's|$$(libdir)/pkgconfig|${PREFIX}/libdata/pkgconfig|; \
 		s|$${libdir}/pkgconfig|${PREFIX}/libdata/pkgconfig|' \
 		${WRKSRC}/Makefile
