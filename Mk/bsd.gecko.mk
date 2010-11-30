@@ -53,9 +53,9 @@ Gecko_Pre_Include=			bsd.gecko.mk
 #  will be the default. In the above example, www/libxul will be used
 #  as a gecko backend unless WITH_GECKO=seamonkey is defined by the user.
 #
-# USE_GECKO= firefox-devel<->firefox
-#  This will sed -e 's/firefox/firefox-devel/' on Makefile.in's and configure 
-#  if ${GECKO}=="firefox-devel"
+# USE_GECKO= libxul-devel<->libxul
+#  This will sed -e 's/libxul/libxul-devel/' on Makefile.in's and configure 
+#  if ${GECKO}=="libxul-devel"
 #
 #  Example:
 #  USE_GECKO= libxul seamonkey
@@ -259,7 +259,7 @@ FAKEDIR?=	${WRKDIR}/fake
 PLIST?=		${WRKDIR}/plist
 PLISTD?=	${WRKDIR}/plist_dirs
 PLISTF?=	${WRKDIR}/plist_files
-MASTER_DIR?=	${.CURDIR}/../../www/mozilla
+MASTER_DIR?=	${.CURDIR}/../../www/seamonkey
 
 KRB5_HOME?=	/usr
 MOZ_PIS_DIR?=		lib/${MOZILLA}/init.d
@@ -267,14 +267,14 @@ MOZ_PIS_DIR?=		lib/${MOZILLA}/init.d
 ESD_LIB?=	libesd.so.2
 FREETYPE_LIB?=	libfreetype.so.9
 
-GENERIC_MOZCONFIG?=	${.CURDIR}/../../www/mozilla/files/mozconfig-generic.in
+GENERIC_MOZCONFIG?=	${.CURDIR}/../../www/seamonkey/files/mozconfig-generic.in
 PORT_MOZCONFIG?=	${FILESDIR}/mozconfig.in
 MOZCONFIG?=		${WRKSRC}/.mozconfig
 MOZILLA_PLIST_DIRS?=	bin include lib share/idl
 GECKO_PTHREAD_LIBS!=${CC} -dumpspecs | ${GREP} -m 1 pthread: | ${SED} -e 's|^.*%{\!pg: %{pthread:|| ; s|}.*$$||' || ${TRUE}
 PKGINSTALL?=	${WRKDIR}/pkg-install
 PKGDEINSTALL?=	${WRKDIR}/pkg-deinstall
-MASTER_MOZDIR?=	${PORTSDIR}/www/mozilla
+MASTER_MOZDIR?=	${PORTSDIR}/www/seamonkey
 PKGINSTALL_INC?=	${MASTER_MOZDIR}/pkg-install.in
 PKGDEINSTALL_INC?=	${MASTER_MOZDIR}/pkg-deinstall.in
 
