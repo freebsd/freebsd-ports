@@ -341,6 +341,9 @@ include/fxt/haar/transposedhaarnn.h
 include/fxt/haar/transposedhaarrevnn.h
 include/fxt/jjassert.h
 include/fxt/matrix-all.h
+include/fxt/matrix/matrix.h
+include/fxt/matrix/mmult.h
+include/fxt/matrix/vector.h
 include/fxt/mod-all.h
 include/fxt/mod/binarygcd.h
 include/fxt/mod/chebyshev.h
@@ -1167,6 +1170,7 @@ lib/libfxt.a
 @dirrm include/fxt/perm
 @dirrm include/fxt/ntt
 @dirrm include/fxt/mult
+@dirrm include/fxt/matrix
 @dirrm include/fxt/mod
 @dirrm include/fxt/haar
 @dirrm include/fxt/graph
