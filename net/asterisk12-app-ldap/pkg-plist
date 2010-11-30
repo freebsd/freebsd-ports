@@ -1,2 +1,0 @@
-lib/asterisk/modules/app_ldap.so
-etc/asterisk/ldap.conf.sample
