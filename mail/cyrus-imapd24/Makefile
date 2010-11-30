@@ -40,7 +40,9 @@ MAKE_JOBS_UNSAFE=	yes
 LICENSE=	BSD
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 
-OPTIONS=	BDB		"Use Berkeley DB"			on \
+OPTIONS=	AUTOCREATE	"Use autocreate INBOX patch (UoA)"	on \
+		AUTOSIEVE	"Use autosievefolder patch (UoA)"	on \
+		BDB		"Use Berkeley DB"			on \
 		DRAC		"Enable DRAC support"			off \
 		IDLED		"Enable IMAP idled support"		off \
 		LDAP		"Use LDAP (experimental)"		off \
@@ -54,6 +56,27 @@ OPTIONS=	BDB		"Use Berkeley DB"			on \
 		SQLITE		"Use SQLite"				off
 
 .include <bsd.port.pre.mk>
+
+# Autocreate Inbox and Autosieve patches from UoA
+# http://email.uoa.gr/projects/cyrus/
+# http://blog.vx.sk/archives/13-Cyrus-IMAP-UoA.html
+
+.if defined(WITH_AUTOCREATE) || defined(WITH_AUTOSIEVE)
+PATCH_DIST_STRIP=	-p1
+PATCH_SITES+=		${MASTER_SITE_LOCAL}
+PATCH_SITE_SUBDIR=	mm
+.endif
+
+.if defined(WITH_AUTOCREATE)
+AUTOCREATE_VERSION=	0.10-0
+PATCHFILES+=	${PORTNAME}-2.4.4-autocreate-${AUTOCREATE_VERSION}.patch
+PLIST_FILES+=	cyrus/bin/compile_sieve
+.endif
+
+.if defined(WITH_AUTOSIEVE)
+AUTOSIEVE_VERSION=	0.6.0
+PATCHFILES+=	${PORTNAME}-2.4.4-autosieve-${AUTOSIEVE_VERSION}.patch
+.endif
 
 .if defined(WITHOUT_BDB)
 BDB_LIB_NAME=	no
