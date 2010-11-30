@@ -1,9 +1,7 @@
 * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
 Punjab has been installed.
 
-Please read the html documentation and tutorial at:
-%%EXAMPLESDIR%% for setup and use.
-
-Docs are also installed in %%DOCSDIR%%
+Please read the documentation and tutorial at:
+%%DOCSDIR%% for setup and use.
 
 * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *

@@ -6,43 +6,36 @@
 #
 
 PORTNAME=	punjab
-PORTVERSION=	0.12
+PORTVERSION=	0.14
 CATEGORIES=	net-im python
-MASTER_SITES=	http://butterfat.net/punjab/
+MASTER_SITES=	http://code.stanziq.com/punjab/releases/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	HTTP-polling and HTTP-binding gateway for Jabber
+MAINTAINER=	ports@c0decafe.net
+COMMENT=	HTTP XMPP client interface
 
 USE_PYTHON=	2.4+
-USE_PYDISTUTILS=	yes
+USE_PYDISTUTILS=yes
 USE_TWISTED=	words web conch names
 
-RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/SOAPpy/__init__.py:${PORTSDIR}/net/py-soappy
-
-PORTDOCS=	README.txt INSTALL.txt NOTES.txt PKG-INFO
+PORTDOCS=	README.txt INSTALL.txt PKG-INFO
 
 USE_RC_SUBR=	punjab.sh
-SUB_LIST+=	"PYTHON_CMD=${PYTHONBASE}/bin/${PYTHON_VERSION}"
 
-SUB_FILES=	pkg-message
+SUB_FILES=	pkg-message punjab.tac
+SUB_LIST+=	"PYTHON_CMD=${PYTHON_CMD}"
 
 .include <bsd.port.pre.mk>
 
 post-install:
 	@${INSTALL} -d ${WWWDIR}
+	@cd ${WRKSRC}/html && ${COPYTREE_SHARE} . ${WWWDIR}
+	@${INSTALL} ${WRKDIR}/punjab.tac ${PREFIX}/libexec/
 	@${CAT} ${PKGMESSAGE}
 
 .if !defined(NOPORTDOCS)
 	@${INSTALL} -d ${DOCSDIR}
 	@cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
-.endif
-
-.if !defined(NOPORTEXAMPLES)
-	@cd ${WRKSRC}/html && ${COPYTREE_SHARE} . ${EXAMPLESDIR}
-PLIST_SUB+=	PORTEXAMPLES=""
-.else
-PLIST_SUB+=	PORTEXAMPLES="@comment "
 .endif
 
 .include <bsd.port.post.mk>

@@ -1,9 +1,8 @@
-PunJab is a HTTP jabber client interface. It is a SOAP, XMLRPC, 
-JEP-0025 or JEP-0124 server that allows persistent client connections
-to a jabber server. It can be used for many things, but its main 
-purpose is to allow for stateless applications (ie web) a stateful 
-connection to jabber.
+Punjab is a HTTP jabber client interface.
 
-For more information about punjab see the following URL :
+It is a BOSH or XEP-0124 connection manager that allows persistent client
+connections to an XMPP server.
 
-WWW: http://www.butterfat.net/wiki/Projects/PunJab
+Supporting XMPP over BOSH or XEP-0206
+
+WWW:	http://code.stanziq.com/punjab/
