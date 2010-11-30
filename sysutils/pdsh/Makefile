@@ -7,19 +7,21 @@
 
 PORTNAME=	pdsh
 PORTVERSION=	2.23
+PORTREVISION=	1
 CATEGORIES=	sysutils
-MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
+MASTER_SITES=	GOOGLE_CODE
 
 MAINTAINER=	i@levsha.me
 COMMENT=	Parallel Distributed Shell
 
 LICENSE=	GPLv2
 
+CONFIGURE_ARGS=	--with-ssh
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
-USE_PERL5_BUILD=	yes
+USE_PERL5_BUILD=yes
 
-MAN1=	dshbak.1 pdcp.1 pdsh.1
-MLINKS=	pdcp.1 rpdcp.1
+MAN1=		dshbak.1 pdcp.1 pdsh.1
+MLINKS=		pdcp.1 rpdcp.1
 
 .include <bsd.port.mk>
