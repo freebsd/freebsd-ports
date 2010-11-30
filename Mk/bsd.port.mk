@@ -5931,6 +5931,7 @@ fake-pkg:
 		fi; \
 		if [ -f ${PKGMESSAGE} ]; then \
 			${CP} ${PKGMESSAGE} ${PKG_DBDIR}/${PKGNAME}/+DISPLAY; \
+			${ECHO_CMD} "@display +DISPLAY" >> ${PKG_DBDIR}/${PKGNAME}/+CONTENTS; \
 		fi; \
 		for dep in `${PKG_INFO} -qf ${PKGNAME} | ${AWK} '/^@pkgdep / {print $$2}' | ${SORT} -u`; do \
 			if [ -d ${PKG_DBDIR}/$$dep -a -z `${ECHO_CMD} $$dep | ${GREP} -E ${PKG_IGNORE_DEPENDS}` ]; then \
