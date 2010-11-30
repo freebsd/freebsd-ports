@@ -1394,10 +1394,10 @@
     SUBDIR += phpsysinfo-dev
     SUBDIR += phpvirtualbox
     SUBDIR += phpwebapp
-    SUBDIR += phpwebgallery
     SUBDIR += phpwiki
     SUBDIR += phpwiki13
     SUBDIR += pivot-weblog
+    SUBDIR += piwigo
     SUBDIR += piwik
     SUBDIR += planet
     SUBDIR += pligg
