@@ -907,7 +907,6 @@ base                            ports/security/base
 base64                          ports/converters/base64
 bash                            ports/shells/bash
 bash-completion                 ports/shells/bash-completion
-bash-completion-classic         ports/shells/bash-completion-classic
 bash-static                     ports/shells/bash-static
 bash3                           ports/shells/bash3
 bash3-static                    ports/shells/bash3-static
@@ -2492,6 +2491,7 @@ dma                             ports/mail/dma
 dmachine                        ports/ftp/dmachine
 dmake                           ports/devel/dmake
 dmalloc                         ports/devel/dmalloc
+dmd                             ports/lang/dmd
 dmenu                           ports/x11/dmenu
 dmg2img                         ports/sysutils/dmg2img
 dmidecode                       ports/sysutils/dmidecode
@@ -12057,6 +12057,7 @@ p5-Devel-ptkdb                  ports/devel/p5-Devel-ptkdb
 p5-Device-Gsm                   ports/comms/p5-Device-Gsm
 p5-Device-Modem                 ports/comms/p5-Device-Modem
 p5-Device-SerialPort            ports/comms/p5-Device-SerialPort
+p5-Device-USB                   ports/devel/p5-Device-USB
 p5-Dialog                       ports/devel/p5-Dialog
 p5-Digest                       ports/security/p5-Digest
 p5-Digest-Adler32               ports/security/p5-Digest-Adler32
@@ -13134,8 +13135,8 @@ p5-Module-Versions              ports/devel/p5-Module-Versions
 p5-Module-Versions-Report       ports/devel/p5-Module-Versions-Report
 p5-MogileFS-Client              ports/sysutils/p5-MogileFS-Client
 p5-MogileFS-Utils               ports/sysutils/p5-MogileFS-Utils
-p5-Mojo                         ports/www/p5-Mojo
 p5-MojoMojo                     ports/www/p5-MojoMojo
+p5-Mojolicious                  ports/www/p5-Mojolicious
 p5-Mon                          ports/net-mgmt/p5-Mon
 p5-MongoDB                      ports/databases/p5-MongoDB
 p5-Moose                        ports/devel/p5-Moose
@@ -16060,6 +16061,7 @@ p5-devel-traceuse               ports/devel/p5-Devel-TraceUse
 p5-device-gsm                   ports/comms/p5-Device-Gsm
 p5-device-modem                 ports/comms/p5-Device-Modem
 p5-device-serialport            ports/comms/p5-Device-SerialPort
+p5-device-usb                   ports/devel/p5-Device-USB
 p5-dialog                       ports/devel/p5-Dialog
 p5-digest                       ports/security/p5-Digest
 p5-digest-adler32               ports/security/p5-Digest-Adler32
@@ -17163,7 +17165,7 @@ p5-module-versions-report       ports/devel/p5-Module-Versions-Report
 p5-mogilefs-client              ports/sysutils/p5-MogileFS-Client
 p5-mogilefs-server              ports/sysutils/p5-mogilefs-server
 p5-mogilefs-utils               ports/sysutils/p5-MogileFS-Utils
-p5-mojo                         ports/www/p5-Mojo
+p5-mojolicious                  ports/www/p5-Mojolicious
 p5-mojomojo                     ports/www/p5-MojoMojo
 p5-mon                          ports/net-mgmt/p5-Mon
 p5-mongodb                      ports/databases/p5-MongoDB
@@ -18601,7 +18603,6 @@ p5-uri-template                 ports/net/p5-URI-Template
 p5-uri-template-restrict        ports/net/p5-URI-Template-Restrict
 p5-uri-title                    ports/www/p5-URI-Title
 p5-uri-todisk                   ports/www/p5-URI-ToDisk
-p5-usb                          ports/devel/p5-usb
 p5-user                         ports/sysutils/p5-User
 p5-user-identity                ports/devel/p5-User-Identity
 p5-uuid-tiny                    ports/devel/p5-UUID-Tiny
@@ -22355,6 +22356,8 @@ root-doc                        ports/devel/root-doc
 roottail                        ports/sysutils/roottail
 ros                             ports/devel/ros
 ros-common                      ports/devel/ros-common
+ros-image_common                ports/devel/ros-image_common
+ros-laser_pipeline              ports/devel/ros-laser_pipeline
 ros_tutorials                   ports/devel/ros_tutorials
 rosegarden                      ports/audio/rosegarden
 rospell                         ports/editors/rospell
@@ -25392,6 +25395,7 @@ vinagre                         ports/net/vinagre
 vindaloo                        ports/graphics/vindaloo
 vinetto                         ports/security/vinetto
 vino                            ports/net/vino
+violet                          ports/devel/violet
 violetland                      ports/games/violetland
 vipec                           ports/cad/vipec
 vips                            ports/graphics/vips
