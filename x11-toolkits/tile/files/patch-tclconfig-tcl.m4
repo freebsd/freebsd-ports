@@ -1,42 +1,38 @@
---- tclconfig/tcl.m4.orig	2007-12-16 19:19:16.000000000 +0100
-+++ tclconfig/tcl.m4	2009-02-14 11:22:54.000000000 +0100
-@@ -3513,7 +3513,7 @@
- AC_DEFUN([TEA_PRIVATE_TCL_HEADERS], [
+--- tclconfig/tcl.m4.orig	2010-11-13 19:12:50.000000000 +0100
++++ tclconfig/tcl.m4	2010-11-30 15:43:29.209843513 +0100
+@@ -3360,7 +3360,7 @@
+     AC_REQUIRE([TEA_PUBLIC_TCL_HEADERS])
      AC_MSG_CHECKING([for Tcl private include files])
  
 -    TCL_SRC_DIR_NATIVE=`${CYGPATH} ${TCL_SRC_DIR}`
 +    TCL_SRC_DIR_NATIVE=`${CYGPATH} ${TCL_INCLUDEDIR}`
      TCL_TOP_DIR_NATIVE=\"${TCL_SRC_DIR_NATIVE}\"
-     TCL_GENERIC_DIR_NATIVE=\"${TCL_SRC_DIR_NATIVE}/generic\"
-     TCL_UNIX_DIR_NATIVE=\"${TCL_SRC_DIR_NATIVE}/unix\"
-@@ -3541,8 +3541,8 @@
- 	        ;;
- 	esac
-     else
--	if test ! -f "${TCL_SRC_DIR}/generic/tclInt.h" ; then
--	    AC_MSG_ERROR([Cannot find private header tclInt.h in ${TCL_SRC_DIR}])
-+	if test ! -f "${TCL_INCLUDEDIR}/generic/tclInt.h" ; then
-+	    AC_MSG_ERROR([yes])
- 	fi
-     fi
  
-@@ -3671,7 +3671,7 @@
- AC_DEFUN([TEA_PRIVATE_TK_HEADERS], [
+     # Check to see if tcl<Plat>Port.h isn't already with the public headers
+@@ -3399,7 +3399,7 @@
+ 	    esac
+ 	    result="Using ${TCL_INCLUDES}"
+ 	else
+-	    if test ! -f "${TCL_SRC_DIR}/generic/tclInt.h" ; then
++	    if test ! -f "${TCL_INCLUDEDIR}/generic/tclInt.h" ; then
+ 		AC_MSG_ERROR([Cannot find private header tclInt.h in ${TCL_SRC_DIR}])
+ 	    fi
+ 	    result="Using srcdir found in tclConfig.sh: ${TCL_SRC_DIR}"
+@@ -3527,7 +3527,7 @@
+     AC_REQUIRE([TEA_PUBLIC_TK_HEADERS])
      AC_MSG_CHECKING([for Tk private include files])
  
 -    TK_SRC_DIR_NATIVE=`${CYGPATH} ${TK_SRC_DIR}`
 +    TK_SRC_DIR_NATIVE=`${CYGPATH} ${TK_INCLUDEDIR}`
      TK_TOP_DIR_NATIVE=\"${TK_SRC_DIR_NATIVE}\"
-     TK_UNIX_DIR_NATIVE=\"${TK_SRC_DIR_NATIVE}/unix\"
-     TK_WIN_DIR_NATIVE=\"${TK_SRC_DIR_NATIVE}/win\"
-@@ -3706,8 +3706,8 @@
- 	        ;;
- 	esac
-     else
--	if test ! -f "${TK_SRC_DIR}/generic/tkInt.h" ; then
--	    AC_MSG_ERROR([Cannot find private header tkInt.h in ${TK_SRC_DIR}])
-+	if test ! -f "${TK_INCLUDEDIR}/generic/tkInt.h" ; then
-+	    AC_MSG_ERROR([yes])
- 	fi
-     fi
  
+     # Check to see if tk<Plat>Port.h isn't already with the public headers
+@@ -3577,7 +3577,7 @@
+ 	    esac
+ 	    result="Using ${TK_INCLUDES}"
+ 	else
+-	    if test ! -f "${TK_SRC_DIR}/generic/tkInt.h" ; then
++	    if test ! -f "${TK_INCLUDEDIR}/generic/tkInt.h" ; then
+ 	       AC_MSG_ERROR([Cannot find private header tkInt.h in ${TK_SRC_DIR}])
+ 	    fi
+ 	    result="Using srcdir found in tkConfig.sh: ${TK_SRC_DIR}"
