@@ -4,80 +4,72 @@ bin/rpm2cpio
 bin/rpmbuild
 bin/rpmconstant
 
-include/rpm/argv.h
 include/rpm/db.h
-include/rpm/envvar.h
-include/rpm/fs.h
-include/rpm/fts.h
 include/rpm/mire.h
-include/rpm/misc.h
 include/rpm/pkgio.h
 include/rpm/rpm4compat.h
-include/rpm/rpmal.h
-include/rpm/rpmbc.h
+include/rpm/rpm46compat.h
 include/rpm/rpmbuild.h
 include/rpm/rpmcb.h
 include/rpm/rpmcli.h
 include/rpm/rpmconstant.h
-include/rpm/rpmdav.h
 include/rpm/rpmdb.h
-include/rpm/rpmdpkg.h
 include/rpm/rpmds.h
 include/rpm/rpmevr.h
-include/rpm/rpmfc.h
 include/rpm/rpmfi.h
-include/rpm/rpmgi.h
-include/rpm/rpmhash.h
-include/rpm/rpmio-stub.h
 include/rpm/rpmio.h
-include/rpm/rpmlib.h
+include/rpm/rpmiotypes.h
 include/rpm/rpmlog.h
 include/rpm/rpmmacro.h
-include/rpm/rpmmg.h
 include/rpm/rpmns.h
-include/rpm/rpmnss.h
 include/rpm/rpmpgp.h
 include/rpm/rpmps.h
+include/rpm/rpmrc.h
 include/rpm/rpmspec.h
-include/rpm/rpmsq.h
-include/rpm/rpmssl.h
 include/rpm/rpmsw.h
 include/rpm/rpmsx.h
 include/rpm/rpmtag.h
 include/rpm/rpmte.h
 include/rpm/rpmts.h
-include/rpm/rpmurl.h
+include/rpm/rpmtypes.h
 include/rpm/rpmversion.h
-include/rpm/rpmwf.h
-include/rpm/rpmxar.h
-include/rpm/signature.h
-include/rpm/stringbuf.h
-include/rpm/ugid.h
+include/rpm/rpmzlog.h
+include/rpm/yarn.h
 
-lib/librpm-5.0.so
+lib/librpm-5.2.so
 lib/librpm.a
 lib/librpm.la
 lib/librpm.so
-lib/librpmbuild-5.0.so
+lib/librpmbuild-5.2.so
 lib/librpmbuild.a
 lib/librpmbuild.la
 lib/librpmbuild.so
-lib/librpmconstant-5.0.so
+lib/librpmconstant-5.2.so
 lib/librpmconstant.a
 lib/librpmconstant.la
 lib/librpmconstant.so
-lib/librpmdb-5.0.so
+lib/librpmdb-5.2.so
 lib/librpmdb.a
 lib/librpmdb.la
 lib/librpmdb.so
-lib/librpmio-5.0.so
+lib/librpmio-5.2.so
 lib/librpmio.a
 lib/librpmio.la
 lib/librpmio.so
-lib/librpmmisc-5.0.so
+lib/librpmmisc-5.2.so
 lib/librpmmisc.a
 lib/librpmmisc.la
 lib/librpmmisc.so
+lib/rpm/bin/rpmcache
+lib/rpm/bin/rpmdigest
+lib/rpm/bin/grep
+lib/rpm/bin/mtree
+lib/rpm/bin/rpmrepo
+lib/rpm/bin/rpmspecdump
+lib/rpm/bin/wget
+lib/rpm/bin/rpmcmp
+lib/rpm/bin/rpmdeps
+lib/rpm/bin/txar
 lib/rpm/brp-compress
 lib/rpm/brp-java-gcjcompile
 lib/rpm/brp-nobuildrootpath
@@ -88,6 +80,7 @@ lib/rpm/brp-strip-comment-note
 lib/rpm/brp-strip-shared
 lib/rpm/brp-strip-static-archive
 lib/rpm/check-files
+lib/rpm/cpuinfo.yaml
 lib/rpm/cross-build
 lib/rpm/executabledeps.sh
 lib/rpm/find-debuginfo.sh
@@ -97,6 +90,7 @@ lib/rpm/find-provides.perl
 lib/rpm/find-req.pl
 lib/rpm/find-requires.perl
 lib/rpm/getpo.sh
+lib/rpm/helpers/makeshlibs
 lib/rpm/http.req
 lib/rpm/install-sh
 lib/rpm/javadeps.sh
@@ -113,18 +107,29 @@ lib/rpm/php.prov
 lib/rpm/php.req
 lib/rpm/pkgconfigdeps.sh
 lib/rpm/pythondeps.sh
+lib/rpm/qf/deb_Packages
+lib/rpm/qf/deb_Sources
+lib/rpm/qf/deb_control
+lib/rpm/qf/deb_md5sums
+lib/rpm/qf/deb_postinst
+lib/rpm/qf/deb_postrm
+lib/rpm/qf/deb_preinst
+lib/rpm/qf/deb_prerm
+lib/rpm/qf/wnh_filelists_yaml
+lib/rpm/qf/wnh_other_yaml
+lib/rpm/qf/wnh_primary_yaml
+lib/rpm/qf/yum_filelists_sqlite
+lib/rpm/qf/yum_other_sqlite
+lib/rpm/qf/yum_primary_sqlite
+lib/rpm/qf/yum_filelists_xml
+lib/rpm/qf/yum_other_xml
+lib/rpm/qf/yum_primary_xml
 lib/rpm/rpm.daily
 lib/rpm/rpm.log
 lib/rpm/rpm.xinetd
 lib/rpm/rpm2cpio
-lib/rpm/rpmcache
-lib/rpm/rpmcmp
 lib/rpm/rpmdb_loadcvt
-lib/rpm/rpmdeps
-lib/rpm/rpmdigest
 lib/rpm/rpmpopt
-lib/rpm/symclash.py
-lib/rpm/symclash.sh
 lib/rpm/tgpg
 lib/rpm/u_pkg.sh
 lib/rpm/vcheck
@@ -208,6 +213,9 @@ man/sk/man8/rpm.8
 @dirrmtry man/ru
 @dirrmtry man/sk
 
+@dirrm lib/rpm/bin
+@dirrm lib/rpm/helpers
+@dirrm lib/rpm/qf
 @dirrm lib/rpm
 %%PERL%%@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/RPM
 %%PYTHON%%@dirrm %%PYTHON_SITELIBDIR%%/rpm
