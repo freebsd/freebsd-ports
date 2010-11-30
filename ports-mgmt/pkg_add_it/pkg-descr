@@ -4,7 +4,7 @@ It's goal is to make easier the process of finding and installing
 new packages, and is useful for both - novice users, 
 and system administrators as well.
 
-pkg_add_it can be used as well as a "browser" to the INDEX file,
+pkg_add_it(1) can be used as well as a "browser" to the INDEX file,
 allowing you to get the information you need about a package.
 
 An example output of package dependencies list created by pkg_add_it(1):
