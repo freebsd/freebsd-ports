@@ -1,6 +1,6 @@
---- configure.orig	2010-07-21 20:28:42.000000000 +0200
-+++ configure	2010-08-01 21:21:24.326222886 +0200
-@@ -1517,7 +1517,7 @@
+--- configure.orig	2010-11-04 11:38:39.000000000 +0100
++++ configure	2010-11-30 13:49:43.509425851 +0100
+@@ -1556,7 +1556,7 @@
  nm_opts='-g'
  
  # machine
@@ -9,7 +9,7 @@
  cpu="generic"
  
  # OS
-@@ -2717,8 +2717,8 @@
+@@ -2824,8 +2824,8 @@
      fi
  fi
  
@@ -20,10 +20,10 @@
  check_header sys/videoio.h
  
  check_func_headers "windows.h vfw.h" capCreateCaptureWindow "$vfwcap_indev_extralibs"
-@@ -3020,7 +3020,7 @@
- SRC_PATH="$source_path"
+@@ -3144,7 +3144,7 @@
  SRC_PATH_BARE=$source_path
  BUILD_ROOT="$PWD"
+ CC_IDENT=$cc_ident
 -ARCH=$arch
 +FFMPEG_ARCH=$arch
  CC=$cc

@@ -1,0 +1,11 @@
+--- libavfilter/Makefile.orig	2010-11-30 14:35:44.372975001 +0100
++++ libavfilter/Makefile	2010-11-30 14:35:50.292359891 +0100
+@@ -50,7 +50,7 @@
+ 
+ OBJS-$(CONFIG_NULLSINK_FILTER)               += vsink_nullsink.o
+ 
+--include $(SUBDIR)$(ARCH)/Makefile
++-include $(SUBDIR)$(FFMPEG_ARCH)/Makefile
+ 
+ DIRS = x86
+ 
