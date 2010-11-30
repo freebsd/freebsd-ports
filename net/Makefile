@@ -364,6 +364,7 @@
     SUBDIR += ltm
     SUBDIR += lua50-luasocket
     SUBDIR += luasocket
+    SUBDIR += lvwimax
     SUBDIR += lyntin
     SUBDIR += mDNSResponder
     SUBDIR += mad_fcl
