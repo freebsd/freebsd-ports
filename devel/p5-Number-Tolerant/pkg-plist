@@ -1,3 +1,4 @@
+%%SITE_PERL%%/Test/Tolerant.pm
 %%SITE_PERL%%/Number/Tolerant.pm
 %%SITE_PERL%%/Number/Tolerant/Constant.pm
 %%SITE_PERL%%/Number/Tolerant/Type.pm
@@ -18,3 +19,4 @@
 @dirrm %%SITE_PERL%%/Number/Tolerant/Type
 @dirrm %%SITE_PERL%%/Number/Tolerant
 @dirrmtry %%SITE_PERL%%/Number
+@dirrmtry %%SITE_PERL%%/Test
