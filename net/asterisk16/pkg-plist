@@ -321,6 +321,7 @@ include/asterisk/privacy.h
 include/asterisk/res_odbc.h
 include/asterisk/rtp.h
 include/asterisk/say.h
+include/asterisk/select.h
 include/asterisk/sched.h
 include/asterisk/sha1.h
 include/asterisk/slin.h
