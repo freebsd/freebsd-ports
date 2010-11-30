@@ -30,7 +30,8 @@ CONFIGURE_ENV=	JPEG_CFLAGS="-I${LOCALBASE}/include" \
 		PTHREAD_LIBS="${PTHREAD_LIBS}" \
 		LOCALBASE="${LOCALBASE}" \
 		CXX="${CXX}"
-CONFIGURE_ARGS=	--enable-threads=pthread --enable-shared
+CONFIGURE_ARGS=	--enable-threads=pthread --enable-shared \
+		--enable-djview
 USE_LDCONFIG=	yes
 
 INSTALL_TARGET=	install-gui install-i18n
