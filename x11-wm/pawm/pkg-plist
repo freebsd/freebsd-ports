@@ -1,10 +1,11 @@
 bin/pawm
 etc/pawm.conf
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
-%%PORTDOCS%%%%DOCSDIR%%/Changelog
+%%PORTDOCS%%%%DOCSDIR%%/Changelog.old
 %%PORTDOCS%%%%DOCSDIR%%/GPL
 %%PORTDOCS%%%%DOCSDIR%%/INSTALL
 %%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/TODO
 %%DATADIR%%/icons/close_d.xpm
 %%DATADIR%%/icons/close_d_256.xpm
 %%DATADIR%%/icons/close_h.xpm
