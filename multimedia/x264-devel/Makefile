@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	x264
-PORTVERSION=	0.110.1804
+PORTVERSION=	0.${X264_BUILD}.${X264_REV}
 CATEGORIES=	multimedia
 MASTER_SITES=	http://downloads.videolan.org/pub/videolan/x264/snapshots/ \
 		http://samples.mplayerhq.hu/yuv4mpeg2/:pgo
@@ -25,6 +25,8 @@ CONFLICTS=	x264-0.*
 
 LATEST_LINK=	x264-devel
 
+X264_BUILD=	110
+X264_REV=	1804
 X264_SNAPSHOT=	20101128
 
 USE_BZIP2=	yes
@@ -47,6 +49,8 @@ CONFIGURE_ARGS+=	--extra-cflags="${CPPFLAGS} ${CFLAGS} -fPIC -I${LOCALBASE}/incl
 
 CONFIGURE_ENV+=		COMPILER_PATH=${LOCALBASE}/bin
 MAKE_ENV+=		COMPILER_PATH=${LOCALBASE}/bin
+
+PLIST_SUB+=		X264_BUILD=${X264_BUILD}
 
 .include <bsd.port.pre.mk>
 
