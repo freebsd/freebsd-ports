@@ -57,6 +57,10 @@ OPTIONS=	OGGVORBIS	"Enable Ogg Vorbis support" on \
 
 .include <bsd.port.pre.mk>
 
+.if ${PREFIX} == ${LOCALBASE}
+CONFIGURE_ARGS+=--localstatedir=/var
+.endif
+
 .if ${ARCH} == "i386" || ${ARCH} == "amd64" || ${ARCH} == "sparc64"
 OPTIONS+=	DAHDI		"Enable DAHDI support" on
 
