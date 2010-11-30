@@ -7,6 +7,7 @@
 
 PORTNAME=	lvwimax
 PORTVERSION=	0.1
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.ipt.ru/pub/download/ \
 		${MASTER_SITE_LOCAL}
@@ -18,7 +19,6 @@ LICENSE=	GPLv2
 
 USE_RC_SUBR=	lvwimax
 
-PLIST_DIRSTRY=	etc/devd
 PLIST_FILES=	etc/devd/lvwimax.conf sbin/lvwimax
 
 .include <bsd.port.pre.mk>
