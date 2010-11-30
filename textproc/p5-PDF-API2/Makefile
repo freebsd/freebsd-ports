@@ -17,7 +17,6 @@ MAINTAINER=	perl@FreeBSD.org
 COMMENT=	'The Next Generation' of Text::PDF::API
 
 PERL_CONFIGURE=	5.8.0+
-PERL_SITELIBDIR=	${SITE_PERL}
 
 .include <bsd.port.pre.mk>
 
