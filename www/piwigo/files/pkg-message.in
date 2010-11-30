@@ -1,13 +1,15 @@
 ****************************************************************
-The PHPWebGallery Photo Gallery has been installed in the directory
-%%WWWDIR%%, 
-the documentation at 
+The Piwigo Photo Gallery has been installed in the directory
+%%WWWDIR%% 
+with the documentation at 
 %%DOCSDIR%% 
 and the content of the tools directory at 
 %%EXAMPLESDIR%%.
 
 If this is a new installation, don't forget to verify that your
 PHP configuration is OK and that you have an mySQL database.
+The local.sample directory contains the empty structure 
+used to store local configuration.
 
 You must add appropriate configuration directives to your
 apache configuration file (%%PREFIX%%/etc/apache/httpd.conf).

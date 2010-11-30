@@ -5,10 +5,10 @@
 # $FreeBSD$
 #
 
-PORTNAME=	phpwebgallery
-PORTVERSION=	1.7.3
+PORTNAME=	piwigo
+PORTVERSION=	2.1.3
 CATEGORIES=	www
-MASTER_SITES=	http://download.gna.org/phpwebgallery/release/1.7/${PORTVERSION}/
+MASTER_SITES=	SF/${PORTNAME}/Piwigo/${PORTVERSION}
 
 MAINTAINER=	glz@hidden-powers.com
 COMMENT=	A PHP based Web Gallery
@@ -19,14 +19,12 @@ USE_PHP=	filter hash json pcre calendar sockets exif recode openssl posix \
 WANT_PHP_WEB=	yes
 
 NO_BUILD=	yes
-USE_BZIP2=	yes
+USE_ZIP=	yes
+WRKSRC=		${WRKDIR}/${PORTNAME}
 
 SUB_FILES+=	pkg-message pkg-deinstall
 
-PORTDOCS=	COPYING ChangeLog README_en.txt README_fr.txt
-PORTEXAMPLES=	config_local.inc.php create_listing_file.php fill_history.pl index.php \
-		local-layout.css metadata.php prototype.js ws.htm
-CFGFILE_MYSQL=	mysql.inc.php
+PORTDOCS=	COPYING README_en.txt README_fr.txt
 
 post-extract:
 	@${CHMOD} -R o-w ${WRKSRC}
@@ -38,23 +36,25 @@ do-install:
 .endif
 .if !defined(NOPORTEXAMPLES)
 	@${INSTALL} -d ${EXAMPLESDIR}
-	@cd ${WRKSRC}/tools && ${INSTALL_DATA} ${PORTEXAMPLES} ${EXAMPLESDIR}
+	@cd ${WRKSRC}/tools && ${COPYTREE_SHARE} . ${EXAMPLESDIR}
 .endif
+
+# Own version with our owners and we also have to protect if 
+# galleries is read-only.
+
 	@cd ${WRKSRC} && ${RM} -rf doc
 	@cd ${WRKSRC} && ${RM} -rf tools
-	@cd ${WRKSRC}/include && ${MV} ${CFGFILE_MYSQL} ${CFGFILE_MYSQL}.sample
-	@cd ${WRKSRC} && ${COPYTREE_SHARE} . ${WWWDIR}
-	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${WWWDIR}
-	@${ECHO_CMD} '@exec ${CHOWN} -R ${WWWOWN}:${WWWGRP} \
-		${WWWDIR:S|^${PREFIX}/|%D/|}' >> ${TMPPLIST}
-	@${FIND} ${WWWDIR} -type f -print0 | ${XARGS} -0 ${CHMOD} 644
-	@${ECHO_CMD} '@exec ${FIND} ${WWWDIR} -type f -print0 | \
-		${XARGS} -0 ${CHMOD} 644' >> ${TMPPLIST}
-	@${FIND} ${WWWDIR} -type d -print0 | ${XARGS} -0 ${CHMOD} 755
-	@${ECHO_CMD} '@exec ${FIND} ${WWWDIR} -type d -print0 | \
-		${XARGS} -0 ${CHMOD} 755' >> ${TMPPLIST}
+	@cd ${WRKSRC} && ${MV} local local.sample
+	@cd ${WRKSRC} && ${COPYTREE_WWW} . ${WWWDIR}
+	@${CHMOD} 0777 ${WWWDIR}/_data
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
+
+COPYTREE_WWW= ${SH} -c '(${FIND} -d $$0 $$2 | ${CPIO} -dumpl $$1 >/dev/null \
+                                    2>&1) && \
+                                    ${CHOWN} -fR ${WWWOWN}:${WWWGRP} $$1 && \
+                                     ${FIND} -d $$0 $$2 -type d -exec ${CHMOD} -f 755 $$1/{} \; && \
+                                     ${FIND} -d $$0 $$2 -type f -exec ${CHMOD} -f 644 $$1/{} \;' --
 
 .include <bsd.port.mk>

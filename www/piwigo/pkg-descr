@@ -1,4 +1,8 @@
-PhpWebGallery is a free and open source software used
+Piwigo is a free and open source software used
 to present photo collections on your web site.
 
-WWW: http://www.phpwebgallery.net/
+If you are upgrading, alwyas read the documentation
+on the site. There may be special steps you need to
+bring your site to a new version.
+
+WWW: http://piwigo.org/
