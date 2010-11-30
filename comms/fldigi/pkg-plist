@@ -1,7 +1,10 @@
+bin/flarq
 bin/fldigi
+share/applications/flarq.desktop
 share/applications/fldigi.desktop
 share/locale/cs/LC_MESSAGES/fldigi.mo
 share/locale/fr/LC_MESSAGES/fldigi.mo
+share/pixmaps/flarq.xpm
 share/pixmaps/fldigi.xpm
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%@dirrm %%DOCSDIR%%

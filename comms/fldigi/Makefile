@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	fldigi
-PORTVERSION=	3.11
-PORTREVISION=	7
+PORTVERSION=	3.12.5
 CATEGORIES=	comms hamradio
 MASTER_SITES=	http://www.w1hkj.com/fldigi-distro/ \
 		${MASTER_SITE_LOCAL}
@@ -28,7 +27,7 @@ USE_GMAKE=	yes
 USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes
 
-MAN1=		fldigi.1
+MAN1=		fldigi.1 flarq.1
 
 .include <bsd.port.pre.mk>
 .if ${OSVERSION} < 700000
