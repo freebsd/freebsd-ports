@@ -1,6 +1,5 @@
 include/tkTheme.h
 include/ttkDecls.h
-lib/%%TKPKG%%/lib%%TKPKG%%.so
 lib/libttkstub.a
 lib/%%TKPKG%%/altTheme.tcl
 lib/%%TKPKG%%/aquaTheme.tcl
@@ -23,9 +22,12 @@ lib/%%TKPKG%%/progress.tcl
 lib/%%TKPKG%%/scale.tcl
 lib/%%TKPKG%%/scrollbar.tcl
 lib/%%TKPKG%%/sizegrip.tcl
+lib/%%TKPKG%%/spinbox.tcl
+lib/%%TKPKG%%/tile.so
 lib/%%TKPKG%%/tile.tcl
 lib/%%TKPKG%%/treeview.tcl
 lib/%%TKPKG%%/utils.tcl
+lib/%%TKPKG%%/vistaTheme.tcl
 lib/%%TKPKG%%/winTheme.tcl
 lib/%%TKPKG%%/xpTheme.tcl
 @dirrm lib/%%TKPKG%%
