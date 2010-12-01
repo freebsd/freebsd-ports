@@ -65,6 +65,7 @@ shift 4
 nice=0
 
 . ${pb}/${arch}/client.conf
+. ${pb}/${arch}/common.conf
 # note: should NOT need anything from server.conf
 . ${pb}/${arch}/portbuild.conf
 . ${pb}/${arch}/portbuild.$(hostname)
@@ -117,6 +118,9 @@ BD=$4
 RD=$5
 
 builddir=${pb}/${arch}/${branch}/builds/${buildid}
+
+# has to be here to affect the setup of OSVERSION and BRANCH in buildenv.client
+export SRC_BASE=${CLIENT_SRCBASE}
 buildenv.client ${pb} ${arch} ${branch} ${builddir}
 
 # Want to use the /etc/make.conf in the chroot
@@ -141,7 +145,6 @@ export PACKAGES=${CLIENT_PACKAGES_LOCATION}
 # don't pass -j, -k etc. to sub-makes
 unset MAKEFLAGS
 unset PORTSDIR
-export SRCBASE=${CLIENT_SRCBASE}
 
 # wait 2 hours before killing build with no output
 export BUILD_TIMEOUT=${CLIENT_BUILD_TIMEOUT}
@@ -275,11 +278,13 @@ done
 set x $ED $FD $PD $BD $RD
 shift 1
 while [ $# -gt 0 ]; do
+  # XXX MCL more hard-coding
   if [ ! -f ${chroot}/tmp/depends/$1 ]; then
     echo "copying package $1 for ${pkgname}"
     copypkg ${pb} ${CLIENT_UPLOAD_HOST} $1 ${chroot}/tmp/depends "${http_proxy}"
 
     # Test for copy failure and bail
+    # XXX MCL more hard-coding
     if [ ! -f ${chroot}/tmp/depends/$1 ]; then
       echo "ERROR: Couldn't copy $1" | tee -a ${chroot}/tmp/${pkgname}.log
       bailout ${chroot} ${clean} 255 ${pkgname}
