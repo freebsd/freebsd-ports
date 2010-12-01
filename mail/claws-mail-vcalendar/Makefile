@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	vcalendar
-PORTVERSION=	2.0.8
-PORTREVISION=	2
+PORTVERSION=	2.0.9
 CATEGORIES=	mail
 MASTER_SITES=	http://www.claws-mail.org/downloads/plugins/ \
 		${MASTER_SITE_LOCAL}
@@ -18,12 +17,15 @@ MAINTAINER=	c0rn@o2.pl
 COMMENT=	vCalendar plugin for claws-mail
 
 LIB_DEPENDS=	curl:${PORTSDIR}/ftp/curl
-BUILD_DEPENDS=	claws-mail>=3.7.6:${PORTSDIR}/mail/claws-mail
-RUN_DEPENDS=	claws-mail>=3.7.6:${PORTSDIR}/mail/claws-mail
+BUILD_DEPENDS=	claws-mail>=3.7.7:${PORTSDIR}/mail/claws-mail
+RUN_DEPENDS=	claws-mail>=3.7.7:${PORTSDIR}/mail/claws-mail
+
+LICENSE=	GPLv3
 
 USE_GMAKE=	yes
 USE_ICONV=	yes
 USE_AUTOTOOLS=	autoconf:268
+MAKE_JOBS_SAFE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
