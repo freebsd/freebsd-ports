@@ -5,7 +5,7 @@
 # fcgiwrap startup script
 #
 # PROVIDE: fcgiwrap
-# REQUIRE: login
+# REQUIRE: LOGIN
 # KEYWORD: shutdown
 
 #
@@ -36,11 +36,7 @@ fcgiwrap_setfib() {
 
 fcgiwrap_precmd() {
 	fcgiwrap_setfib
-
-	test -d /var/run/fcgiwrap || mkdir -p /var/run/fcgiwrap
-	if [ -n "${fcgiwrap_user}" ]; then
-		chown -R ${fcgiwrap_user} /var/run/fcgiwrap
-	fi
+	install -d -o $fcgiwrap_user -m 755 /var/run/fcgiwrap
 }
 
 fcgiwrap_cleansocket() {
@@ -50,7 +46,7 @@ fcgiwrap_cleansocket() {
 		test -S ${fcgiwrap_socket#unix:} && rm -f ${fcgiwrap_socket#unix:}
 		;;
 	esac
-	
+	rm -f $pidfile
 }
 
 . /etc/rc.subr
@@ -68,6 +64,7 @@ load_rc_config $name
 
 fcgiwrap_enable=${fcgiwrap_enable:-"NO"}
 fcgiwrap_fib=${fcgiwrap_fib:-"NONE"}
+fcgiwrap_user=${fcgiwrap_user:-"root"}
 fcgiwrap_socket=${fcgiwrap_socket:-"unix:/var/run/fcgiwrap/fcgiwrap.sock"}
 
 command_args="-f -p ${pidfile} ${procname} -s ${fcgiwrap_socket}"
