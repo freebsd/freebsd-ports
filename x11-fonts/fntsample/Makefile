@@ -6,16 +6,18 @@
 #
 
 PORTNAME?=	fntsample
-PORTVERSION=	3.1
-PORTREVISION?=	1
+PORTVERSION=	3.2
+PORTREVISION?=	0
 CATEGORIES?=	x11-fonts
-MASTER_SITES=	SF/fntsample/fntsample/${PORTVERSION} http://unicode.org/Public/5.1.0/ucd/:unidata
+MASTER_SITES=	SF/fntsample/fntsample/${PORTVERSION} http://unicode.org/Public/6.0.0/ucd/:unidata
 DISTNAME=	fntsample-${PORTVERSION}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} Blocks.txt:unidata
 EXTRACT_ONLY=	${DISTFILES:M*gz}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT?=	Show Unicode coverage of a font
+
+LICENSE=	GPLv3
 
 USE_PERL5_RUN=	yes
 
