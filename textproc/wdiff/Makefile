@@ -7,6 +7,7 @@
 
 PORTNAME=	wdiff
 PORTVERSION=	0.6.4
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	wdiff
@@ -18,6 +19,7 @@ GNU_CONFIGURE=	yes
 
 MAN1=		wdiff.1
 INFO=		wdiff
-PLIST_FILES=	bin/wdiff
+PLIST_FILES=	bin/wdiff \
+		lib/charset.alias
 
 .include <bsd.port.mk>
