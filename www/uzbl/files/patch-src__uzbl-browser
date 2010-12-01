@@ -1,0 +1,11 @@
+--- src/uzbl-browser.orig	2010-12-01 00:06:50.000000000 +0100
++++ src/uzbl-browser	2010-12-01 00:07:09.000000000 +0100
+@@ -74,7 +74,7 @@
+ DAEMON_SOCKET="$XDG_CACHE_HOME"/uzbl/event_daemon
+ #if [ ! -f "$DAEMON_SOCKET".pid ]
+ #then
+-	${UZBL_EVENT_MANAGER:-uzbl-event-manager -va start}
++	${UZBL_EVENT_MANAGER:-uzbl-event-manager} -va start
+ #fi
+ 
+ exec uzbl-core "$@" ${config_file:+--config "$config_file"} --connect-socket $DAEMON_SOCKET

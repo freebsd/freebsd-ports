@@ -20,8 +20,8 @@ USE_GNOME=	gtk20
 USE_LDCONFIG=	yes
 USE_GMAKE=	yes
 
-GITDATE=	2010.08.05
-GITVERSION=	9cc39cb
+GITDATE=	2010.11.25
+GITVERSION=	5180049
 
 WRKSRC=		${WRKDIR}/Dieterbe-uzbl-${GITVERSION}
 
@@ -30,7 +30,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 .if !defined(NOPORTDOCS)
 PORTDOCS=	AUTHORS README COMMUNITY CONTRIBUTING FAQ INSTALL TODO config-syntax \
-		multiple-instances-management performance url-editing config.h
+		multiple-instances-management performance url-editing config.h vim README.cookies
 .endif
 
 .if !defined(NOPORTDATA)
@@ -54,6 +54,7 @@ post-build:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/uzbl-core ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/uzbl-cookie-manager ${PREFIX}/bin
 	${INSTALL_SCRIPT} ${WRKSRC}/src/uzbl-browser ${PREFIX}/bin
 .for f in uzbl-event-manager uzbl-cookie-daemon uzbl-tabbed
 	${INSTALL_SCRIPT} ${WRKSRC}/examples/data/scripts/${f} ${PREFIX}/bin
@@ -62,17 +63,17 @@ do-install:
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/src/config.h ${DOCSDIR}
 .for f in COMMUNITY CONTRIBUTING FAQ INSTALL TODO config-syntax \
-		multiple-instances-management performance url-editing
+		multiple-instances-management performance url-editing README.cookies
 	${INSTALL_DATA} ${WRKSRC}/docs/${f} ${DOCSDIR}/${f}
 .endfor
 .for f in AUTHORS README
 	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}/${f}
 .endfor
+	(cd ${WRKSRC}/extras && ${COPYTREE_SHARE} vim ${DOCSDIR})
 .endif
 .if !defined(NOPORTDATA)
 	${MKDIR} ${DATADIR}/examples/data/dforms ${DATADIR}/examples/config
-.for f in config/cookies \
-	data/bookmarks \
+.for f in data/bookmarks \
 	data/dforms/bbs.archlinux.org \
 	data/style.css data/uzbl.png
 		${INSTALL_DATA} ${WRKSRC}/examples/${f} ${DATADIR}/examples/${f}
