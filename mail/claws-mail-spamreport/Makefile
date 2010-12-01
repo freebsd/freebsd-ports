@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	spamreport
-PORTVERSION=	0.3.11
-PORTREVISION=	2
+PORTVERSION=	0.3.12
 CATEGORIES=	mail
 MASTER_SITES=	http://www.claws-mail.org/downloads/plugins/
 PKGNAMEPREFIX=	claws-mail-
@@ -17,12 +16,15 @@ MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	SpamReport plugin for claws-mail
 
 LIB_DEPENDS=	curl.6:${PORTSDIR}/ftp/curl
-BUILD_DEPENDS=	claws-mail>=3.7.6:${PORTSDIR}/mail/claws-mail
-RUN_DEPENDS=	claws-mail>=3.7.6:${PORTSDIR}/mail/claws-mail
+BUILD_DEPENDS=	claws-mail>=3.7.7:${PORTSDIR}/mail/claws-mail
+RUN_DEPENDS=	claws-mail>=3.7.7:${PORTSDIR}/mail/claws-mail
+
+LICENSE=	GPLv3
 
 USE_GMAKE=	yes
 USE_XORG=	x11
 USE_AUTOTOOLS=	autoconf:268
+MAKE_JOBS_SAFE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 

@@ -14,3 +14,4 @@ lib/claws-mail/plugins/spamreport.so
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/spam_report.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/spam_report.mo
 %%NLS%%share/locale/sk/LC_MESSAGES/spam_report.mo
+%%NLS%%share/locale/uk/LC_MESSAGES/spam_report.mo
