@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	numpy
-PORTVERSION=	1.5.0
+PORTVERSION=	1.5.1
 PORTEPOCH=	1
 CATEGORIES=	math python
 MASTER_SITES=	http://docs.scipy.org/doc/${DISTNAME:C/\..$/.x/}/:doc \
