@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	oax
-PORTVERSION=	B45
+PORTVERSION=	B47
 CATEGORIES=	games
 MASTER_SITES=	http://files.poulsander.com/~poul19/public_files/eliminationSource/
 DISTNAME=	${PORTNAME}${PORTVERSION}

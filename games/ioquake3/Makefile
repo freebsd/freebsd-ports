@@ -7,12 +7,12 @@
 
 PORTNAME?=	ioquake3
 DISTVERSION?=	1.36
-PORTREVISION?=	6
+PORTREVISION?=	7
 CATEGORIES=	games
 MASTER_SITES?=	http://ioquake3.org/files/${DISTVERSION}/
 
 MAINTAINER?=	kamikaze@bsdforen.de
-COMMENT?=	Cleaned-up and enhaced version of Quake 3
+COMMENT?=	Cleaned-up and enhanced version of Quake 3
 
 USE_ZIP?=	yes
 # Allow slave ports to turn off zip.
@@ -31,7 +31,7 @@ OPTIONS+=	CLIENT "Build client" on \
 
 MAKE_ARGS+=	DEFAULT_BASEDIR="${Q3DIR}" \
 		DEFAULT_LIBDIR="${LIBDIR}" \
-		HOMEPATH="/.${PORTNAME}" \
+		HOMEPATH="${HOMEPATH}" \
 		VERSION="${DISTVERSION}" \
 		ARCH="${ARCH}"
 PLIST_SUB+=	LIBDIR="${LIBDIR:S/${PREFIX}\///}" \
@@ -43,6 +43,7 @@ MAKE_JOBS_SAFE=	yes
 LIBDIR=		${PREFIX}/lib/${PORTNAME}
 BUILDDIR=	${WRKSRC}/build/release-${OPSYS:L}-${ARCH}
 BINSUFFIX?=
+HOMEPATH?=	/.${PORTNAME}
 Q3CLIENT?=	ioquake3
 Q3SERVER?=	ioq3ded
 Q3TOOLS?=	q3asm \
@@ -51,6 +52,7 @@ Q3TOOLS?=	q3asm \
 		q3rcc
 Q3BASE?=	baseq3 \
 		missionpack
+Q3ICON?=	${PREFIX}/share/pixmaps/quake3.xpm
 Q3INSTALL?=
 
 ONLY_FOR_ARCHS=	amd64 i386
@@ -61,8 +63,21 @@ MACHINE_ARCH=	${ARCH}
 
 .include <bsd.port.options.mk>
 
+.if !defined(DESKTOP_ENTRIES)
+.if defined(WITH_CLIENT)
+DESKTOP_ENTRIES+=	"${Q3CLIENT} ${DISTVERSION}" "${COMMENT}"  \
+		"${Q3ICON}" \
+		"${Q3CLIENT}${BINSUFFIX}" "Application;Game;" false
+.endif
+.if defined(WITH_SMP)
+DESKTOP_ENTRIES+=	"${Q3CLIENT} ${DISTVERSION} SMP" "${COMMENT}" \
+		"${Q3ICON}" \
+		"${Q3CLIENT}-smp${BINSUFFIX}" "Application;Game;" false
+.endif
+.endif
+
 .if defined(WITHOUT_CLIENT) && defined(WITHOUT_DEDICATED) && \
-    defined(WITHOUT_SMP)
+    !defined(WITH_SMP)
 IGNORE=		needs at least one of CLIENT, DEDICATED and SMP options
 .endif
 

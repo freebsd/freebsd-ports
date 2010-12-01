@@ -1,17 +1,8 @@
 ==============================================================================
 
-If you have sound problems with SDL try setting the variable "s_sdlSpeed" to
-"44100". It will be saved to the configuration file.
-
-If you have sound problems with OpenAL recompile without it. Also the OPENAL
-option causes the program to omit restoring gamma and mouse sensivity after
-exitting.
-
-The configuration files are saved to ~/.ioUrbanTerror instead of ~/.q3a
-because they have additional variables which would be removed if other engines
-overwrite them. But you can safely copy the original directory to the new one
-for the first time.
-
-If you enabled CELLSHADING, check files/extra-patch-cellshading for variables.
+Note, that the port was switched over to use the original ioquake project
+source code instead of code provided by the UrbanTerror project. The
+UrbanTerror project is switching to a closed source licensing model:
+	http://www.urbanterror.info/news/texts/285/
 
 ==============================================================================

@@ -7,10 +7,10 @@
 
 PORTNAME=	openarena
 PORTVERSION=	0.8.5
-DISTVERSION=	1.36_SVN1783+${PORTVERSION}
-PORTREVISION=	0
+DISTVERSION=	1.36_SVN1788+${PORTVERSION}
+PORTREVISION=	1
 MASTER_SITES=	http://files.poulsander.com/~poul19/public_files/oa/dev081/
-DISTNAME=	${PORTNAME}-engine-source-0.8.x-15
+DISTNAME=	${PORTNAME}-engine-source-0.8.x-18
 
 MAINTAINER=	kamikaze@bsdforen.de
 COMMENT=	Quake3 total conversion based on the ioquake3 engine
@@ -28,5 +28,7 @@ Q3SERVER=	oa_ded
 Q3TOOLS=
 Q3BASE=		baseoa
 Q3DIR=		${DATADIR}
+# No icon included with OpenArena
+Q3ICON=
 
 .include "../ioquake3/Makefile"
