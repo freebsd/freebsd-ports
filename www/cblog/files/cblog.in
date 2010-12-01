@@ -5,7 +5,7 @@
 # cblog.fcgi startup script
 #
 # PROVIDE: cblog
-# REQUIRE: login
+# REQUIRE: LOGIN
 # KEYWORK: shutdown
 
 # Add the following to /etc/rc.conf[.local] to enable this service
@@ -35,10 +35,7 @@ cblog_setfib() {
 cblog_precmd() {
 	cblog_setfib
 
-	test -d /var/run/cblog || mkdir -p /var/run/cblog
-	if [ -n "${cblog_user}" ]; then
-		chown -R ${cblog_user} /var/run/cblog
-	fi
+	install -d -o $cblog_user -m 755 /var/run/cblog
 }
 
 . /etc/rc.subr
@@ -52,6 +49,7 @@ start_precmd="cblog_precmd"
 load_rc_config $name
 cblog_enable=${cblog_enable:-"NO"}
 cblog_fib=${cblog_fib:-"NONE"}
+cblog_user=${cblog_user:-"root"}
 cblog_socket=${cblog_socker:-"unix:/var/run/cblog/cblog.sock"}
 
 command_args=${cblog_socket}
