@@ -174,7 +174,7 @@ PLIST_SUB+=	I386="@comment "
 EXTRA_PATCHES+=	${FILESDIR}/extrapatch-include-iprt-string.h
 .endif
 
-.if ${OSVERSION} > 900020
+.if ${OSVERSION} > 900020 || ${OSVERSION} < 900000 && ${OSVERSION} > 801500
 EXTRA_PATCHES+=	${FILESDIR}/extrapatch-src-VBox-Devices-PC-vbox.dsl
 .endif
 
