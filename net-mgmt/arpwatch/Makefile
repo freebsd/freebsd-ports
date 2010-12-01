@@ -7,7 +7,7 @@
 
 PORTNAME=	arpwatch
 PORTVERSION=	2.1.a15
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	net-mgmt
 MASTER_SITES=	ftp://ftp.ee.lbl.gov/ \
 		${MASTER_SITE_GENTOO}
@@ -25,6 +25,7 @@ MAKE_ENV+=	BINOWN="${BINOWN}" BINGRP="${BINGRP}"
 INSTALL_TARGET=	install install-man
 MAN8=		arpwatch.8 arpsnmp.8
 
+SUB_FILES=	pkg-message
 USE_RC_SUBR=	arpwatch.sh
 
 .ifdef ARPDIR
@@ -39,9 +40,12 @@ post-install:
 	fi
 	${TOUCH} ${PREFIX}/arpwatch/arp.dat
 	${CHMOD} 644 ${PREFIX}/arpwatch/arp.dat
-	for files in ethercodes.dat d.awk e.awk p.awk; do		\
+	for files in ethercodes.dat d.awk duplicates.awk euppertolower.awk e.awk p.awk; do \
 		${INSTALL_DATA} ${WRKSRC}/$$files ${PREFIX}/arpwatch;	\
 	done
 	${INSTALL_SCRIPT} ${WRKSRC}/arp2ethers ${PREFIX}/arpwatch
+	${INSTALL_SCRIPT} ${WRKSRC}/massagevendor ${PREFIX}/arpwatch
+
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>

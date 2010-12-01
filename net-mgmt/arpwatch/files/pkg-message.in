@@ -1,0 +1,10 @@
+
+
+You can update the ethercodes.dat file executing the following steps
+
+cd %%PREFIX%%/arpwatch
+fetch http://standards.ieee.org/regauth/oui/oui.txt
+./massagevendor oui.txt > ethercodes.dat
+rm oui.txt
+
+
