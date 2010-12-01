@@ -14,8 +14,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}.src
 MAINTAINER=	dhn@FreeBSD.org
 COMMENT=	Is a modification of XMPP/Jabber client Tkabber
 
-RUN_DEPENDS=	wish8.4:${PORTSDIR}/x11-toolkits/tk84 \
-		dtplite:${PORTSDIR}/devel/tcllib \
+RUN_DEPENDS=	dtplite:${PORTSDIR}/devel/tcllib \
 		${LOCALBASE}/lib/tls/pkgIndex.tcl:${PORTSDIR}/devel/tcltls \
 		${LOCALBASE}/lib/bwidget/pkgIndex.tcl:${PORTSDIR}/x11-toolkits/bwidget
 
@@ -23,11 +22,15 @@ WRKSRC=		${WRKDIR}/${DISTNAME}
 USE_BZIP2=	yes
 NO_BUILD=	yes
 
+USE_TK_RUN=	84+
+
 SUBDIRS=	contrib emoticons ifacetk jabberlib mclistbox \
 		msgs pixmaps plugins sounds tclxml trans
 
+.include <bsd.port.pre.mk>
+
 do-install:
-	${ECHO} -e "#!/bin/sh\nexec wish8.4 ${DATADIR}/tkabbur.tcl \
+	${ECHO} -e "#!/bin/sh\nexec ${WISH} ${DATADIR}/tkabbur.tcl \
 		-name tkabbur \"\$$@\"\n" > ${PREFIX}/bin/tkabbur
 	${CHMOD} +x ${PREFIX}/bin/tkabbur
 	${CHMOD} 755 ${WRKSRC}/*.tcl
@@ -38,4 +41,4 @@ do-install:
 	${CP} -R ${WRKSRC}/${i} ${DATADIR}
 .endfor
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
