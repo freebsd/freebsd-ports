@@ -19,4 +19,6 @@ PLIST=		${.CURDIR}/pkg-plist
 
 LIBGDA4_SLAVE=	bdb
 
+BROKEN=		does not build
+
 .include "${MASTERDIR}/Makefile"
