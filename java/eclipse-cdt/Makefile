@@ -19,6 +19,8 @@ COMMENT=	C/C++ plugin for Eclipse IDE
 
 RUN_DEPENDS=	eclipse:${PORTSDIR}/java/eclipse
 
+BROKEN=		bad plist
+
 USE_ZIP=	YES
 USE_JAVA=	YES
 JAVA_OS=	native
