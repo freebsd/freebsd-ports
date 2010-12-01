@@ -70,6 +70,7 @@ OPTIONS=	DEBUG			"Enable nginx debugging" off \
 		HTTP_UPSTREAM_KEEPALIVE "3rd party upstream keepalive module" off \
 		HTTP_ZIP_MODULE		"3rd party http_zip module" off \
 		MEMC_MODULE		"3rd party memc (memcached) module" off \
+		PASSENGER_MODULE	"3rd party passenger module" off \
 		SLOWFS_CACHE_MODULE	"3rd party slowfs_cache module" off \
 		SUPERVISORD_MODULE	"3rd party supervisord module" off \
 		UDPLOG_MODULE		"3rd party udplog (syslog) module" off
@@ -78,6 +79,12 @@ WANT_GNOME=	yes
 MAKE_JOBS_SAFE=	yes
 
 .include <bsd.port.options.mk>
+
+.if defined(WITH_PASSENGER_MODULE)
+CATEGORIES+=	ruby
+USE_RUBY=	yes
+USE_RAKE=	yes
+.endif
 
 NGINX_VARDIR?=	/var
 NGINX_LOGDIR?=	${NGINX_VARDIR}/log
@@ -387,6 +394,14 @@ LIB_DEPENDS+=	pcre.0:${PORTSDIR}/devel/pcre
 CONFIGURE_ARGS+=--with-pcre
 .endif
 
+.if defined(WITH_PASSENGER_MODULE)
+PASSENGER_VERSION=	3.0.0
+MASTER_SITES+=	RF/passenger/:passenger
+DISTFILES+=	passenger-${PASSENGER_VERSION}.tar.gz:passenger
+CONFIGURE_ARGS+=--add-module=${WRKDIR}/passenger-${PASSENGER_VERSION}/ext/nginx
+EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-passenger::build::nginx.rb
+.endif
+
 .if defined(WITH_SLOWFS_CACHE_MODULE)
 NGINX_SLOWFS_CACHE_MODULE_VERSION=	1.5
 MASTER_SITES+=	http://labs.frickle.com/files/:slowfs_cache
@@ -450,6 +465,9 @@ pre-everything::
 .if defined(WITH_HTTP_UPSTREAM_FAIR)
 	@${ECHO_MSG} "Enable http_ssl module to build upstream_fair with SSL support"
 .endif
+.if defined(WITH_PASSENGER_MODULE)
+	@${ECHO_MSG} "This port install Passenger module only"
+.endif
 	@${ECHO_MSG}
 
 post-patch:
@@ -460,6 +478,17 @@ post-patch:
 	@${REINPLACE_CMD} \
 		's!$$HTTP_ACCESSKEY_MODULE!ngx_http_accesskey_module!' \
 		${WRKDIR}/nginx-accesskey-${NGINX_ACCESSKEY_MODULE_VERSION}/config
+.endif
+.if defined(WITH_PASSENGER_MODULE)
+	@${REINPLACE_CMD} 's!-lpthread!${PTHREAD_LIBS}!g' \
+		${WRKDIR}/passenger-${PASSENGER_VERSION}/ext/nginx/config
+	@${REINPLACE_CMD} 's!-Wall!!g; \
+		s!#{PlatformInfo.debugging_cflags}!${CFLAGS}!g; \
+		s!-O2!!g; \
+		35s!true!false!' \
+		${WRKDIR}/passenger-${PASSENGER_VERSION}/build/config.rb
+	@${REINPLACE_CMD} 's!-lpthread!${PTHREAD_LIBS}!g' \
+		${WRKDIR}/passenger-${PASSENGER_VERSION}/lib/phusion_passenger/platform_info/compiler.rb
 .endif
 .if defined(WITH_SUPERVISORD_MODULE)
 	( cd ${WRKDIR}/nginx_upstream_fair-${NGINX_UPSTREAM_FAIR_VERSION} && \
