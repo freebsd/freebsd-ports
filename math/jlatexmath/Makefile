@@ -7,6 +7,7 @@
 
 PORTNAME=	jlatexmath
 PORTVERSION=	0.9.3
+PORTREVISION=	1
 CATEGORIES=	math java
 MASTER_SITES=	http://forge.scilab.org/upload/jlatexmath/files/ \
 		http://www.predatorlabs.net/dl/
@@ -31,15 +32,15 @@ OPTIONS=	FOP "textproc/fop plugin (required for math/scilab)" ON
 .if defined(WITHOUT_FOP)
 PLIST_SUB+=	FOP="@comment "
 .else
-BUILD_DEPENDS+=	fop:${PORTSDIR}/textproc/fop \
+BUILD_DEPENDS=	fop:${PORTSDIR}/textproc/fop \
 		${JAVALIBDIR}/xmlgraphics-commons.jar:${PORTSDIR}/graphics/xmlgraphics-commons \
-		${LOCALBASE}/share/java/batik/batik.jar:${PORTSDIR}/graphics/batik \
+		${JAVASHAREDIR}/batik/batik.jar:${PORTSDIR}/graphics/batik \
 		${JAVALIBDIR}/avalon-framework.jar:${PORTSDIR}/devel/avalon-framework \
 		${JAVALIBDIR}/commons-io.jar:${PORTSDIR}/devel/jakarta-commons-io \
 		${JAVALIBDIR}/commons-logging.jar:${PORTSDIR}/java/jakarta-commons-logging \
 		${JAVALIBDIR}/xml-apis-ext.jar:${PORTSDIR}/textproc/xml-commons
 
-RUN_DEPENDS+=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 ALL_TARGET+=	fop
 
@@ -54,7 +55,7 @@ post-patch:
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/dist/jlatexmath-${PORTVERSION}.jar ${JAVAJARDIR}/jlatexmath.jar
 	${INSTALL_DATA} ${WRKSRC}/dist/jlatexmath-fop-${PORTVERSION}.jar ${JAVAJARDIR}/jlatexmath-fop.jar
-.if !defined(NOPORTDOCS)
+.if !defined(NOPORTEXAMPLES)
 	(cd ${WRKSRC}/examples/ && ${COPYTREE_SHARE} \* ${EXAMPLESDIR})
 .endif
 
