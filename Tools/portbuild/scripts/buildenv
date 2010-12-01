@@ -71,19 +71,46 @@ buildenv () {
     branch=$3
     builddir=$4
 
-    # Don't pick up host OPTIONS
+    # set up things for INDEX/duds builds
+
+    # first, don't pick up host OPTIONS
     export PORT_DBDIR=/nonexistent
+
+    # Have to use realpath because 'make index' doesn't deal with
+    # symlinks in PORTSDIR - kk 020311
+    if [ -d ${builddir}/ports/ ]; then
+	export PORTSDIR=$(realpath ${builddir}/ports)
+    else
+	export PORTSDIR=/nonexistent
+    fi
+
+    if [ -d ${builddir}/src/ ]; then
+	export SRC_BASE=$(realpath ${builddir}/src)
+    else
+	export SRC_BASE=/nonexistent
+    fi
+
+    # for archs that support COMPAT_IA32, set some flags for INDEX.
+    # Client kernels should be built appropriately.
+    for i in ${ARCHS_SUPPORTING_COMPAT_IA32}; do
+	if [ ${i} = ${arch} ]; then
+	    export HAVE_COMPAT_IA32_KERN="yes"
+	    export HAVE_COMPAT_IA32_LIBS="yes"
+	    break
+	fi
+    done
+    for i in ${ARCHS_REQUIRING_LINPROCFS}; do
+	if [ ${i} = ${arch} ]; then
+	    export LINUX_OSRELEASE=${DEFAULT_LINUX_OSRELEASE}
+	    break
+	fi
+    done
 
     buildenv.common ${pb} ${arch} ${branch} ${builddir}
 
     # override things destined for bsd.port.mk
-    export LOCALBASE=/usr/local
     export DISTDIR=${builddir}/distfiles
     export PACKAGES=${builddir}/packages
-    export PKGSUFFIX=.tbz
-
-    # now unused:
-    # export PKGZIPCMD=bzip2
 
     branchbase=$(get_branch_base ${branch})
     if [ -z "${branchbase}" ]; then
@@ -126,25 +153,12 @@ buildenv.common() {
     branch=$3
     builddir=$4
 
-    # Have to use realpath because 'make index' doesn't deal with
-    # symlinks in PORTSDIR - kk 020311
-    if [ -d ${builddir}/ports/ ]; then
-	export PORTSDIR=$(realpath ${builddir}/ports)
-    else
-	export PORTSDIR=/nonexistent
+    if [ -f ${SRC_BASE}/sys/sys/param.h ]; then
+	export OSVERSION=$(awk '/^#define __FreeBSD_version/ {print $3}' < ${SRC_BASE}/sys/sys/param.h)
     fi
-    if [ -d ${builddir}/src/ ]; then
-	export SRCBASE=$(realpath ${builddir}/src)
-    else
-	export SRCBASE=/nonexistent
-    fi
-
-    if [ -f ${SRCBASE}/sys/sys/param.h ]; then
-	export OSVERSION=$(awk '/^#define __FreeBSD_version/ {print $3}' < ${SRCBASE}/sys/sys/param.h)
-    fi
-    if [ -f ${SRCBASE}/sys/conf/newvers.sh ]; then
-	export OSREL=$(awk 'BEGIN {FS="\""}; /^REVISION/ {print $2}' < ${SRCBASE}/sys/conf/newvers.sh)
-	export BRANCH=$(awk 'BEGIN {FS="\""}; /^BRANCH/ {print $2}' < ${SRCBASE}/sys/conf/newvers.sh)
+    if [ -f ${SRC_BASE}/sys/conf/newvers.sh ]; then
+	export OSREL=$(awk 'BEGIN {FS="\""}; /^REVISION/ {print $2}' < ${SRC_BASE}/sys/conf/newvers.sh)
+	export BRANCH=$(awk 'BEGIN {FS="\""}; /^BRANCH/ {print $2}' < ${SRC_BASE}/sys/conf/newvers.sh)
     fi
 
     export ARCH=${arch}
