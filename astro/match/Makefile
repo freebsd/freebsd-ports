@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	match
-PORTVERSION=	0.11
+PORTVERSION=	0.13
 CATEGORIES=	astro
 MASTER_SITES=	http://spiff.rit.edu/match/ \
 		http://www.c-s.li/ports/
@@ -18,6 +18,8 @@ COMMENT=	A program for matching star lists
 LICENSE=	GPLv2
 
 GNU_CONFIGURE=	yes
+
+MAN1=		match.1
 
 PLIST_FILES=	bin/apply_match bin/match bin/project_coords
 
