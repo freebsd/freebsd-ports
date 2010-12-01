@@ -138,6 +138,7 @@
 %%WWWDIR%%/claroline/auth/login.php
 %%WWWDIR%%/claroline/auth/lostPassword.php
 %%WWWDIR%%/claroline/auth/profile.php
+%%WWWDIR%%/claroline/backends/ajaxbroker.php
 %%WWWDIR%%/claroline/backends/download.php
 %%WWWDIR%%/claroline/backends/ical.php
 %%WWWDIR%%/claroline/backends/linker.php
@@ -629,16 +630,6 @@
 %%WWWDIR%%/claroline/inc/lib/auth/authdrivers.lib.php
 %%WWWDIR%%/claroline/inc/lib/auth/authmanager.lib.php
 %%WWWDIR%%/claroline/inc/lib/backlog.class.php
-%%WWWDIR%%/claroline/inc/lib/cas/CAS.php
-%%WWWDIR%%/claroline/inc/lib/cas/PGTStorage/pgt-db.php
-%%WWWDIR%%/claroline/inc/lib/cas/PGTStorage/pgt-file.php
-%%WWWDIR%%/claroline/inc/lib/cas/PGTStorage/pgt-main.php
-%%WWWDIR%%/claroline/inc/lib/cas/client.php
-%%WWWDIR%%/claroline/inc/lib/cas/domxml-php4-php5.php
-%%WWWDIR%%/claroline/inc/lib/cas/languages/english.php
-%%WWWDIR%%/claroline/inc/lib/cas/languages/french.php
-%%WWWDIR%%/claroline/inc/lib/cas/languages/greek.php
-%%WWWDIR%%/claroline/inc/lib/cas/languages/languages.php
 %%WWWDIR%%/claroline/inc/lib/claroCourse.class.php
 %%WWWDIR%%/claroline/inc/lib/claro_main.lib.php
 %%WWWDIR%%/claroline/inc/lib/claro_utils.lib.php
@@ -715,6 +706,7 @@
 %%WWWDIR%%/claroline/inc/lib/module/manifest.lib.php
 %%WWWDIR%%/claroline/inc/lib/module.lib.php
 %%WWWDIR%%/claroline/inc/lib/pager.lib.php
+%%WWWDIR%%/claroline/inc/lib/password.lib.php
 %%WWWDIR%%/claroline/inc/lib/path.lib.php
 %%WWWDIR%%/claroline/inc/lib/right/constants.inc.php
 %%WWWDIR%%/claroline/inc/lib/right/courseProfileToolAction.class.php
@@ -732,6 +724,20 @@
 %%WWWDIR%%/claroline/inc/lib/statsUtils.lib.inc.php
 %%WWWDIR%%/claroline/inc/lib/textzone.lib.php
 %%WWWDIR%%/claroline/inc/lib/thirdparty/JSON.php
+%%WWWDIR%%/claroline/inc/lib/thirdparty/cas/CAS/PGTStorage/pgt-db.php
+%%WWWDIR%%/claroline/inc/lib/thirdparty/cas/CAS/PGTStorage/pgt-file.php
+%%WWWDIR%%/claroline/inc/lib/thirdparty/cas/CAS/PGTStorage/pgt-main.php
+%%WWWDIR%%/claroline/inc/lib/thirdparty/cas/CAS/client.php
+%%WWWDIR%%/claroline/inc/lib/thirdparty/cas/CAS/domxml-php4-to-php5.php
+%%WWWDIR%%/claroline/inc/lib/thirdparty/cas/CAS/languages/catalan.php
+%%WWWDIR%%/claroline/inc/lib/thirdparty/cas/CAS/languages/english.php
+%%WWWDIR%%/claroline/inc/lib/thirdparty/cas/CAS/languages/french.php
+%%WWWDIR%%/claroline/inc/lib/thirdparty/cas/CAS/languages/german.php
+%%WWWDIR%%/claroline/inc/lib/thirdparty/cas/CAS/languages/greek.php
+%%WWWDIR%%/claroline/inc/lib/thirdparty/cas/CAS/languages/japanese.php
+%%WWWDIR%%/claroline/inc/lib/thirdparty/cas/CAS/languages/languages.php
+%%WWWDIR%%/claroline/inc/lib/thirdparty/cas/CAS/languages/spanish.php
+%%WWWDIR%%/claroline/inc/lib/thirdparty/cas/CAS.php
 %%WWWDIR%%/claroline/inc/lib/thirdparty/icalendar/class.iCal.inc.php
 %%WWWDIR%%/claroline/inc/lib/thirdparty/icalendar/class.iCalAlarm.inc.php
 %%WWWDIR%%/claroline/inc/lib/thirdparty/icalendar/class.iCalBase.inc.php
@@ -758,7 +764,9 @@
 %%WWWDIR%%/claroline/inc/lib/thirdparty/nusoap/nusoap.lib.php
 %%WWWDIR%%/claroline/inc/lib/thirdparty/nusoap/nusoap.php
 %%WWWDIR%%/claroline/inc/lib/thirdparty/nusoap/nusoapmime.php
+%%WWWDIR%%/claroline/inc/lib/thirdparty/pclzip/gnu-lgpl.txt
 %%WWWDIR%%/claroline/inc/lib/thirdparty/pclzip/pclzip.lib.php
+%%WWWDIR%%/claroline/inc/lib/thirdparty/pclzip/readme.txt
 %%WWWDIR%%/claroline/inc/lib/thirdparty/pear/Auth/Auth.php
 %%WWWDIR%%/claroline/inc/lib/thirdparty/pear/Auth/Container/DB.php
 %%WWWDIR%%/claroline/inc/lib/thirdparty/pear/Auth/Container/File.php
@@ -800,6 +808,7 @@
 %%WWWDIR%%/claroline/inc/lib/thirdparty/pear/XML/Util.php
 %%WWWDIR%%/claroline/inc/lib/thirdparty/phpmailer/class.phpmailer.php
 %%WWWDIR%%/claroline/inc/lib/thirdparty/phpmailer/class.smtp.php
+%%WWWDIR%%/claroline/inc/lib/thirdparty/tcpdf/LICENSE.TXT
 %%WWWDIR%%/claroline/inc/lib/thirdparty/tcpdf/config/lang/eng.php
 %%WWWDIR%%/claroline/inc/lib/thirdparty/tcpdf/config/lang/ita.php
 %%WWWDIR%%/claroline/inc/lib/thirdparty/tcpdf/config/tcpdf_config.php
@@ -815,7 +824,6 @@
 %%WWWDIR%%/claroline/inc/lib/thirdparty/tcpdf/fonts/timesbi.php
 %%WWWDIR%%/claroline/inc/lib/thirdparty/tcpdf/fonts/timesi.php
 %%WWWDIR%%/claroline/inc/lib/thirdparty/tcpdf/htmlcolors.php
-%%WWWDIR%%/claroline/inc/lib/thirdparty/tcpdf/LICENSE.TXT
 %%WWWDIR%%/claroline/inc/lib/thirdparty/tcpdf/tcpdf.php
 %%WWWDIR%%/claroline/inc/lib/thirdparty/tcpdf/unicode_data.php
 %%WWWDIR%%/claroline/inc/lib/thumbnails.lib.php
@@ -843,7 +851,6 @@
 %%WWWDIR%%/claroline/inc/templates/course_index.tpl.php
 %%WWWDIR%%/claroline/inc/templates/document_create.tpl.php
 %%WWWDIR%%/claroline/inc/templates/footer.tpl.php
-%%WWWDIR%%/claroline/inc/templates/forum_viewtopic.tpl.php
 %%WWWDIR%%/claroline/inc/templates/header.tpl.php
 %%WWWDIR%%/claroline/inc/templates/help_claroline.tpl.php
 %%WWWDIR%%/claroline/inc/templates/help_document.tpl.php
@@ -868,6 +875,9 @@
 %%WWWDIR%%/claroline/install/installer.class.php
 %%WWWDIR%%/claroline/install/uninstall.sql
 %%WWWDIR%%/claroline/lang/.htaccess
+%%WWWDIR%%/claroline/lang/albanian/complete.lang.php
+%%WWWDIR%%/claroline/lang/albanian/install.lang.php
+%%WWWDIR%%/claroline/lang/albanian/locale_settings.php
 %%WWWDIR%%/claroline/lang/arabic/complete.lang.php
 %%WWWDIR%%/claroline/lang/arabic/locale_settings.php
 %%WWWDIR%%/claroline/lang/arabic/missing.install.lang.php
@@ -947,7 +957,10 @@
 %%WWWDIR%%/claroline/lang/italian/locale_settings.php
 %%WWWDIR%%/claroline/lang/italian/missing.install.lang.php
 %%WWWDIR%%/claroline/lang/italian/missing.lang.php
+%%WWWDIR%%/claroline/lang/japanese/README_sjis.txt
+%%WWWDIR%%/claroline/lang/japanese/README_utf8.txt
 %%WWWDIR%%/claroline/lang/japanese/complete.lang.php
+%%WWWDIR%%/claroline/lang/japanese/install.lang.php
 %%WWWDIR%%/claroline/lang/japanese/locale_settings.php
 %%WWWDIR%%/claroline/lang/japanese/missing.install.lang.php
 %%WWWDIR%%/claroline/lang/japanese/missing.lang.php
@@ -1019,6 +1032,7 @@
 %%WWWDIR%%/claroline/lang/zh_tw/locale_settings.php
 %%WWWDIR%%/claroline/lang/zh_tw/missing.install.lang.php
 %%WWWDIR%%/claroline/lang/zh_tw/missing.lang.php
+%%WWWDIR%%/claroline/learnPath/conf/def/CLLNP.def.conf.inc.php
 %%WWWDIR%%/claroline/learnPath/connector/eventlistener.cnr.php
 %%WWWDIR%%/claroline/learnPath/connector/mergeuser.cnr.php
 %%WWWDIR%%/claroline/learnPath/export/APIWrapper.js
@@ -1074,6 +1088,7 @@
 %%WWWDIR%%/claroline/messaging/lib/displaymessage.lib.php
 %%WWWDIR%%/claroline/messaging/lib/message/internalmessage.lib.php
 %%WWWDIR%%/claroline/messaging/lib/message/messagetosend.lib.php
+%%WWWDIR%%/claroline/messaging/lib/message/platformmessagetosend.lib.php
 %%WWWDIR%%/claroline/messaging/lib/message/receivedmessage.lib.php
 %%WWWDIR%%/claroline/messaging/lib/message/sentmessage.lib.php
 %%WWWDIR%%/claroline/messaging/lib/message/storedmessage.lib.php
@@ -1112,6 +1127,7 @@
 %%WWWDIR%%/claroline/messaging/trashboxcontroler.inc.php
 %%WWWDIR%%/claroline/phpbb/admin.php
 %%WWWDIR%%/claroline/phpbb/conf/def/CLFRM.def.conf.inc.php
+%%WWWDIR%%/claroline/phpbb/connector/cllp.linker.cnr.php
 %%WWWDIR%%/claroline/phpbb/connector/eventlistener.cnr.php
 %%WWWDIR%%/claroline/phpbb/connector/linker.cnr.php
 %%WWWDIR%%/claroline/phpbb/connector/mergeuser.cnr.php
@@ -1139,6 +1155,8 @@
 %%WWWDIR%%/claroline/phpbb/setup/course_install.php
 %%WWWDIR%%/claroline/phpbb/setup/course_install.sql
 %%WWWDIR%%/claroline/phpbb/setup/course_uninstall.sql
+%%WWWDIR%%/claroline/phpbb/templates/forum_export.tpl.php
+%%WWWDIR%%/claroline/phpbb/templates/forum_viewtopic.tpl.php
 %%WWWDIR%%/claroline/phpbb/viewforum.php
 %%WWWDIR%%/claroline/phpbb/viewsearch.php
 %%WWWDIR%%/claroline/phpbb/viewtopic.php
@@ -1182,6 +1200,7 @@
 %%WWWDIR%%/claroline/user/userInfo.php
 %%WWWDIR%%/claroline/user/user_add.php
 %%WWWDIR%%/claroline/wiki/conf/def/CLWIKI.def.conf.inc.php
+%%WWWDIR%%/claroline/wiki/connector/cllp.linker.cnr.php
 %%WWWDIR%%/claroline/wiki/connector/eventlistener.cnr.php
 %%WWWDIR%%/claroline/wiki/connector/linker.cnr.php
 %%WWWDIR%%/claroline/wiki/connector/mergeuser.cnr.php
@@ -1242,11 +1261,14 @@
 %%WWWDIR%%/claroline/wiki/setup/course_uninstall.sql
 %%WWWDIR%%/claroline/wiki/wiki.php
 %%WWWDIR%%/claroline/work/conf/def/CLWRK.def.conf.inc.php
+%%WWWDIR%%/claroline/work/connector/cllp.linker.cnr.php
 %%WWWDIR%%/claroline/work/connector/eventlistener.cnr.php
 %%WWWDIR%%/claroline/work/connector/ical.write.cnr.php
+%%WWWDIR%%/claroline/work/connector/linker.cnr.php
 %%WWWDIR%%/claroline/work/connector/mergeuser.cnr.php
 %%WWWDIR%%/claroline/work/connector/tracking.cnr.php
 %%WWWDIR%%/claroline/work/css/clwrk.css
+%%WWWDIR%%/claroline/work/export.php
 %%WWWDIR%%/claroline/work/feedback.php
 %%WWWDIR%%/claroline/work/icon.png
 %%WWWDIR%%/claroline/work/img/assignment.png
@@ -1259,9 +1281,10 @@
 %%WWWDIR%%/claroline/work/setup/course_install.php
 %%WWWDIR%%/claroline/work/setup/course_install.sql
 %%WWWDIR%%/claroline/work/setup/course_uninstall.sql
-%%WWWDIR%%/claroline/work/userWork.php
+%%WWWDIR%%/claroline/work/user_work.php
 %%WWWDIR%%/claroline/work/work.php
-%%WWWDIR%%/claroline/work/workList.php
+%%WWWDIR%%/claroline/work/work_list.php
+%%WWWDIR%%/claroline/work/work_settings.php
 %%WWWDIR%%/index.php
 %%WWWDIR%%/module/CLCHAT/ajaxHandler.php
 %%WWWDIR%%/module/CLCHAT/conf/def/CLCHAT.def.conf.inc.php
@@ -1413,8 +1436,8 @@
 %%WWWDIR%%/web/img/question.png
 %%WWWDIR%%/web/img/replymessage.png
 %%WWWDIR%%/web/img/save.png
-%%WWWDIR%%/web/img/select.png
 %%WWWDIR%%/web/img/search.png
+%%WWWDIR%%/web/img/select.png
 %%WWWDIR%%/web/img/settings.png
 %%WWWDIR%%/web/img/spoiler.png
 %%WWWDIR%%/web/img/statistics.png
@@ -1478,9 +1501,9 @@
 @dirrm %%WWWDIR%%/claroline/announcements/lib
 @dirrm %%WWWDIR%%/claroline/announcements/setup
 @dirrm %%WWWDIR%%/claroline/announcements
+@dirrm %%WWWDIR%%/claroline/auth/extauth/cas
 @dirrm %%WWWDIR%%/claroline/auth/extauth/shibboleth/conf
 @dirrm %%WWWDIR%%/claroline/auth/extauth/shibboleth
-@dirrm %%WWWDIR%%/claroline/auth/extauth/cas
 @dirrm %%WWWDIR%%/claroline/auth/extauth
 @dirrm %%WWWDIR%%/claroline/auth
 @dirrm %%WWWDIR%%/claroline/backends/sso
@@ -1528,8 +1551,8 @@
 @dirrm %%WWWDIR%%/claroline/editor/tiny_mce/tiny_mce/plugins/advlink/js
 @dirrm %%WWWDIR%%/claroline/editor/tiny_mce/tiny_mce/plugins/advlink/langs
 @dirrm %%WWWDIR%%/claroline/editor/tiny_mce/tiny_mce/plugins/advlink
-@dirrm %%WWWDIR%%/claroline/editor/tiny_mce/tiny_mce/plugins/autosave
 @dirrm %%WWWDIR%%/claroline/editor/tiny_mce/tiny_mce/plugins/autoresize
+@dirrm %%WWWDIR%%/claroline/editor/tiny_mce/tiny_mce/plugins/autosave
 @dirrm %%WWWDIR%%/claroline/editor/tiny_mce/tiny_mce/plugins/bbcode
 @dirrm %%WWWDIR%%/claroline/editor/tiny_mce/tiny_mce/plugins/claroimage/css
 @dirrm %%WWWDIR%%/claroline/editor/tiny_mce/tiny_mce/plugins/claroimage/img
@@ -1664,9 +1687,6 @@
 @dirrm %%WWWDIR%%/claroline/inc/conf
 @dirrm %%WWWDIR%%/claroline/inc/lib/admin
 @dirrm %%WWWDIR%%/claroline/inc/lib/auth
-@dirrm %%WWWDIR%%/claroline/inc/lib/cas/PGTStorage
-@dirrm %%WWWDIR%%/claroline/inc/lib/cas/languages
-@dirrm %%WWWDIR%%/claroline/inc/lib/cas
 @dirrm %%WWWDIR%%/claroline/inc/lib/core
 @dirrm %%WWWDIR%%/claroline/inc/lib/database
 @dirrm %%WWWDIR%%/claroline/inc/lib/display
@@ -1674,6 +1694,10 @@
 @dirrm %%WWWDIR%%/claroline/inc/lib/module
 @dirrm %%WWWDIR%%/claroline/inc/lib/right
 @dirrm %%WWWDIR%%/claroline/inc/lib/sso
+@dirrm %%WWWDIR%%/claroline/inc/lib/thirdparty/cas/CAS/PGTStorage
+@dirrm %%WWWDIR%%/claroline/inc/lib/thirdparty/cas/CAS/languages
+@dirrm %%WWWDIR%%/claroline/inc/lib/thirdparty/cas/CAS
+@dirrm %%WWWDIR%%/claroline/inc/lib/thirdparty/cas
 @dirrm %%WWWDIR%%/claroline/inc/lib/thirdparty/icalendar
 @dirrm %%WWWDIR%%/claroline/inc/lib/thirdparty/lastRSS
 @dirrm %%WWWDIR%%/claroline/inc/lib/thirdparty/mimetex
@@ -1688,11 +1712,11 @@
 @dirrm %%WWWDIR%%/claroline/inc/lib/thirdparty/pear/XML
 @dirrm %%WWWDIR%%/claroline/inc/lib/thirdparty/pear
 @dirrm %%WWWDIR%%/claroline/inc/lib/thirdparty/phpmailer
-@dirrm %%WWWDIR%%/claroline/inc/lib/thirdparty/tcpdf/images
-@dirrm %%WWWDIR%%/claroline/inc/lib/thirdparty/tcpdf/fonts
+@dirrm %%WWWDIR%%/claroline/inc/lib/thirdparty/tcpdf/cache
 @dirrm %%WWWDIR%%/claroline/inc/lib/thirdparty/tcpdf/config/lang
 @dirrm %%WWWDIR%%/claroline/inc/lib/thirdparty/tcpdf/config
-@dirrm %%WWWDIR%%/claroline/inc/lib/thirdparty/tcpdf/cache
+@dirrm %%WWWDIR%%/claroline/inc/lib/thirdparty/tcpdf/fonts
+@dirrm %%WWWDIR%%/claroline/inc/lib/thirdparty/tcpdf/images
 @dirrm %%WWWDIR%%/claroline/inc/lib/thirdparty/tcpdf
 @dirrm %%WWWDIR%%/claroline/inc/lib/thirdparty
 @dirrm %%WWWDIR%%/claroline/inc/lib/utils
@@ -1701,6 +1725,7 @@
 @dirrm %%WWWDIR%%/claroline/inc/templates
 @dirrm %%WWWDIR%%/claroline/inc
 @dirrm %%WWWDIR%%/claroline/install
+@dirrm %%WWWDIR%%/claroline/lang/albanian
 @dirrm %%WWWDIR%%/claroline/lang/arabic
 @dirrm %%WWWDIR%%/claroline/lang/brazilian
 @dirrm %%WWWDIR%%/claroline/lang/bulgarian
@@ -1738,6 +1763,8 @@
 @dirrm %%WWWDIR%%/claroline/lang/vietnamese
 @dirrm %%WWWDIR%%/claroline/lang/zh_tw
 @dirrm %%WWWDIR%%/claroline/lang
+@dirrm %%WWWDIR%%/claroline/learnPath/conf/def
+@dirrm %%WWWDIR%%/claroline/learnPath/conf
 @dirrm %%WWWDIR%%/claroline/learnPath/connector
 @dirrm %%WWWDIR%%/claroline/learnPath/export
 @dirrm %%WWWDIR%%/claroline/learnPath/img
@@ -1761,6 +1788,7 @@
 @dirrm %%WWWDIR%%/claroline/phpbb/img
 @dirrm %%WWWDIR%%/claroline/phpbb/lib
 @dirrm %%WWWDIR%%/claroline/phpbb/setup
+@dirrm %%WWWDIR%%/claroline/phpbb/templates
 @dirrm %%WWWDIR%%/claroline/phpbb
 @dirrm %%WWWDIR%%/claroline/right
 @dirrm %%WWWDIR%%/claroline/rss
@@ -1803,7 +1831,6 @@
 @dirrm %%WWWDIR%%/module/CLCHAT/setup
 @dirrm %%WWWDIR%%/module/CLCHAT
 @dirrm %%WWWDIR%%/module
-@dirrm %%WWWDIR%%/platform
 @dirrm %%WWWDIR%%/web/css/classic/img
 @dirrm %%WWWDIR%%/web/css/classic
 @dirrm %%WWWDIR%%/web/css
