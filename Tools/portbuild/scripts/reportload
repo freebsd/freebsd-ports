@@ -22,6 +22,13 @@ for i in squid disk; do
   fi
 done
 
+# XXX MCL DEBUG 20100727
+# on occasion, a machine winds up with a huge number (> 300) of chroots.
+# When this happens, the following command takes more than a minute, and
+# pointyhat will pound it to death, resulting in 'kern.ipc.maxpipekva
+# exceeded; see tuning(7)'.  So, as a workaround until the reason for the
+# stale chroots is understood, limit the time we allow this to run.
+ulimit -t 10
 num=$(echo $(ls -1d ${scratchdir}/*/*/*/used ${scratchdir}/*/*/chroot/*/used 2>/dev/null| wc -l))
 
 echo "arch=${arch}"
