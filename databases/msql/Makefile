@@ -10,7 +10,7 @@ PORTVERSION=	2.0.12
 PORTREVISION=	4
 CATEGORIES=	databases
 
-MAINTAINER=	anray@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The Mini SQL server, version 2
 
 CONFLICTS=	msql-3*

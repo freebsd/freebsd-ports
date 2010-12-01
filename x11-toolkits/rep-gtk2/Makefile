@@ -13,7 +13,7 @@ CATEGORIES=	x11-toolkits
 MASTER_SITES=	SF/rep-gtk/rep-gtk/${PORTVERSION}
 DISTNAME=	rep-gtk-${PORTVERSION}
 
-MAINTAINER=	anray@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GTK+-2 binding for rep Lisp interpreter
 
 LIB_DEPENDS=	rep.13:${PORTSDIR}/lang/librep

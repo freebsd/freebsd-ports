@@ -12,7 +12,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	http://dl.bytesex.org/releases/fbida/
 DISTNAME=	fbida-${PORTVERSION}
 
-MAINTAINER=	anray@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Small and fast motif-based image viewer and editor
 
 LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg \

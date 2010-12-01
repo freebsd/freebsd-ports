@@ -13,7 +13,7 @@ MASTER_SITES=	http://files.jabberstudio.org/kf/ \
 		http://jabberstudio.rediris.es/kf/ \
 		http://freebsd.unixfreunde.de/sources/
 
-MAINTAINER=	anray@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A simple Jabber client using the GTK+ 2.0 toolkit
 
 LIB_DEPENDS=	loudmouth-1.0:${PORTSDIR}/net-im/loudmouth
