@@ -7,7 +7,7 @@
 
 PORTNAME=	dnsperf
 PORTVERSION=	1.0.1.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	dns benchmarks net
 MASTER_SITES=	ftp://ftp.nominum.com/pub/nominum/${PORTNAME}/${PORTVERSION}/
 DISTNAME=	${PORTNAME}-src-${PORTVERSION}-1
@@ -15,7 +15,7 @@ DISTNAME=	${PORTNAME}-src-${PORTVERSION}-1
 MAINTAINER=	edwin@mavetju.org
 COMMENT=	DNSPerf and ResPerf deliver accurate performance metrics of Domain Name Services
 
-BUILD_DEPENDS=	isc-config.sh:${PORTSDIR}/dns/bind9
+BUILD_DEPENDS=	isc-config.sh:${PORTSDIR}/dns/bind97
 
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX}
