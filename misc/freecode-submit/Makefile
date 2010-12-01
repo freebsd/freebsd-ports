@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	freshmeat-submit
-PORTVERSION=	2.1
+PORTVERSION=	2.2
 CATEGORIES=	misc
 MASTER_SITES=	http://www.catb.org/~esr/freshmeat-submit/ \
 		http://www.c-s.li/ports/
