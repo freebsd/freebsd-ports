@@ -52,6 +52,7 @@ datestamp=$4
 shift 4
 
 . ${pb}/conf/server.conf
+. ${pb}/conf/common.conf
 . ${pb}/scripts/buildenv
 validate_env ${arch} ${branch} || usage
 
@@ -479,9 +480,9 @@ if [ "$skipstart" = 0 ]; then
     if [ ${nosrc} -eq 0 ]; then
 	if [ -L ${builddir}/src -o ${srccvs} -eq 1 ]; then
 	    echo "================================================"
-	    echo "running cvs update -PAd on ${SRCBASE}"
+	    echo "running cvs update -PAd on ${SRC_BASE}"
 	    echo "================================================"
-	    cd ${SRCBASE}
+	    cd ${SRC_BASE}
 	    if [ -z "${updated}" ]; then
 		# Don't overwrite/create .updated if we didn't set it
 		# with the ports update
@@ -557,6 +558,7 @@ if [ "$skipstart" = 0 ]; then
     olderrors=$(readlink ${builddir}/errors)
     oldlogs=$(readlink ${builddir}/logs)
     
+    # XXX MCL hardcoding of archive/errorlogs
     newerrors=${pb}/${arch}/archive/errorlogs/e.${branch}.${buildid}
     newlogs=${pb}/${arch}/archive/errorlogs/a.${branch}.${buildid}
     
