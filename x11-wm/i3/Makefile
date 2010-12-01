@@ -21,7 +21,7 @@ LIB_DEPENDS=	xcb.2:${PORTSDIR}/x11/libxcb \
 		yajl.1:${PORTSDIR}/devel/yajl
 
 USE_XORG=	x11
-USE_BISON=	yes
+USE_BISON=	build
 USE_XLIB=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes

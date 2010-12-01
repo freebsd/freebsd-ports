@@ -24,7 +24,7 @@ LIB_DEPENDS=	MagickWand.4:${PORTSDIR}/graphics/ImageMagick \
 		xslt.2:${PORTSDIR}/textproc/libxslt \
 		ggi.2:${PORTSDIR}/graphics/libggi
 
-USE_BISON=	yes
+USE_BISON=	build
 USE_ICONV=	yes
 USE_TK=		84
 USE_LDCONFIG=	yes
