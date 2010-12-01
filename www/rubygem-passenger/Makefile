@@ -34,7 +34,7 @@ USE_APACHE=	2.2+
 .endif
 
 .if defined(WITH_NGINXPORT)
-BUILD_DEPENDS+=	nginx>=0.7.64:${PORTSDIR}/www/nginx
+BUILD_DEPENDS+=	nginx>=0.8.53:${PORTSDIR}/www/nginx
 .endif
 
 BUILD_DEPENDS+=	rubygem-fastthread>=1.0.1:${PORTSDIR}/devel/rubygem-fastthread \
@@ -85,9 +85,7 @@ post-install:
 .endif
 
 .if defined(WITH_NGINXPORT)
-	${REINPLACE_CMD} '62d;65d' \
-		${PREFIX}/${GEM_LIB_DIR}/Rakefile
-	(cd ${PREFIX}/${GEM_LIB_DIR} && ${RAKE_BIN})
+	(cd ${PREFIX}/${GEM_LIB_DIR} && ${RAKE_BIN} nginx)
 .endif
 
 	${FIND} ${PREFIX}/${GEM_LIB_DIR} -name '*.o' -delete
