@@ -37,6 +37,7 @@
 %%WWWDIR%%/admin/admin_page.php
 %%WWWDIR%%/admin/admin_user_validate.php
 %%WWWDIR%%/admin/admin_users.php
+%%WWWDIR%%/admin/admin_widgets.php
 %%WWWDIR%%/admin/backup/index.htm
 %%WWWDIR%%/admin/edit_page.php
 %%WWWDIR%%/admin/index.php
@@ -51,6 +52,7 @@
 %%WWWDIR%%/avatars/groups_uploaded/user_uploaded/index.html
 %%WWWDIR%%/avatars/index.htm
 %%WWWDIR%%/avatars/user_uploaded/index.htm
+%%WWWDIR%%/bannedips.txt.default
 %%WWWDIR%%/begin_gzip.php
 %%WWWDIR%%/cache/admin_c/index.html
 %%WWWDIR%%/cache/index.html
@@ -214,7 +216,7 @@
 %%WWWDIR%%/live_comments.php
 %%WWWDIR%%/live_published.php
 %%WWWDIR%%/live_unpublished.php
-%%WWWDIR%%/local-antispam.txt
+%%WWWDIR%%/local-antispam.txt.default
 %%WWWDIR%%/login.php
 %%WWWDIR%%/module.php
 %%WWWDIR%%/modules/admin_help_english/admin_help_english_init.php
@@ -284,6 +286,37 @@
 %%WWWDIR%%/modules/admin_snippet/templates/admin_snippet_javascript.tpl
 %%WWWDIR%%/modules/admin_snippet/templates/admin_snippet_main.tpl
 %%WWWDIR%%/modules/admin_snippet/templates/index.html
+%%WWWDIR%%/modules/akismet/_akismet_main.php
+%%WWWDIR%%/modules/akismet/akismet_cron.php
+%%WWWDIR%%/modules/akismet/akismet_init.php
+%%WWWDIR%%/modules/akismet/akismet_install.php
+%%WWWDIR%%/modules/akismet/akismet_main.php
+%%WWWDIR%%/modules/akismet/akismet_readme.htm
+%%WWWDIR%%/modules/akismet/akismet_settings.php
+%%WWWDIR%%/modules/akismet/images/exclamation.png
+%%WWWDIR%%/modules/akismet/images/index.html
+%%WWWDIR%%/modules/akismet/images/key.png
+%%WWWDIR%%/modules/akismet/images/page_white_delete.png
+%%WWWDIR%%/modules/akismet/images/page_white_error.png
+%%WWWDIR%%/modules/akismet/images/shield.png
+%%WWWDIR%%/modules/akismet/images/tick.png
+%%WWWDIR%%/modules/akismet/images/wrench.png
+%%WWWDIR%%/modules/akismet/index.html
+%%WWWDIR%%/modules/akismet/lang.conf
+%%WWWDIR%%/modules/akismet/lang_russian.conf
+%%WWWDIR%%/modules/akismet/libs/Akismet.class_4.php
+%%WWWDIR%%/modules/akismet/libs/Akismet.class_5.php
+%%WWWDIR%%/modules/akismet/libs/akismet.class.php
+%%WWWDIR%%/modules/akismet/libs/index.html
+%%WWWDIR%%/modules/akismet/story.php
+%%WWWDIR%%/modules/akismet/templates/akismet_admin_main_link.tpl
+%%WWWDIR%%/modules/akismet/templates/index.html
+%%WWWDIR%%/modules/akismet/templates/main.tpl
+%%WWWDIR%%/modules/akismet/templates/manageKey.tpl
+%%WWWDIR%%/modules/akismet/templates/manageSettings.tpl
+%%WWWDIR%%/modules/akismet/templates/manageSpam.tpl
+%%WWWDIR%%/modules/akismet/templates/manageSpamcomments.tpl
+%%WWWDIR%%/modules/akismet/templates/spam_link_in_menu.tpl
 %%WWWDIR%%/modules/anonymous/anonymous_init.php
 %%WWWDIR%%/modules/anonymous/anonymous_install.php
 %%WWWDIR%%/modules/anonymous/anonymous_main.php
@@ -319,6 +352,7 @@
 %%WWWDIR%%/modules/auto_update/auto_update_main.php
 %%WWWDIR%%/modules/auto_update/auto_update_readme.htm
 %%WWWDIR%%/modules/auto_update/auto_update_settings.php
+%%WWWDIR%%/modules/auto_update/images/error.gif
 %%WWWDIR%%/modules/auto_update/images/loader.gif
 %%WWWDIR%%/modules/auto_update/lang.conf
 %%WWWDIR%%/modules/auto_update/templates/auto_update.tpl
@@ -331,12 +365,6 @@
 %%WWWDIR%%/modules/auto_update/templates/auto_update_step6.tpl
 %%WWWDIR%%/modules/auto_update/upload.php
 %%WWWDIR%%/modules/auto_update/zip.class.php
-%%WWWDIR%%/modules/blocker/blocker_init.php
-%%WWWDIR%%/modules/blocker/blocker_install.php
-%%WWWDIR%%/modules/blocker/blocker_readme.htm
-%%WWWDIR%%/modules/blocker/blocker_settings.php
-%%WWWDIR%%/modules/blocker/lang.conf
-%%WWWDIR%%/modules/blocker/templates/blocker_index.tpl
 %%WWWDIR%%/modules/captcha/captcha_init.php
 %%WWWDIR%%/modules/captcha/captcha_install.php
 %%WWWDIR%%/modules/captcha/captcha_main.php
@@ -405,20 +433,6 @@
 %%WWWDIR%%/modules/codemirror/templates/codemirror_end.tpl
 %%WWWDIR%%/modules/codemirror/templates/codemirror_start.tpl
 %%WWWDIR%%/modules/codemirror/templates/index.html
-%%WWWDIR%%/modules/friends_activity/friends_activity_init.php
-%%WWWDIR%%/modules/friends_activity/friends_activity_install.php
-%%WWWDIR%%/modules/friends_activity/friends_activity_main.php
-%%WWWDIR%%/modules/friends_activity/friends_activity_readme.htm
-%%WWWDIR%%/modules/friends_activity/friends_activity_settings.php
-%%WWWDIR%%/modules/friends_activity/index.html
-%%WWWDIR%%/modules/friends_activity/lang.conf
-%%WWWDIR%%/modules/friends_activity/lang_russian.conf
-%%WWWDIR%%/modules/friends_activity/templates/background.gif
-%%WWWDIR%%/modules/friends_activity/templates/friend.gif
-%%WWWDIR%%/modules/friends_activity/templates/friends_activity.tpl
-%%WWWDIR%%/modules/friends_activity/templates/friends_activity_end.tpl
-%%WWWDIR%%/modules/friends_activity/templates/friends_activity_start.tpl
-%%WWWDIR%%/modules/friends_activity/templates/index.html
 %%WWWDIR%%/modules/hello_world/hello_world_init.php
 %%WWWDIR%%/modules/hello_world/hello_world_install.php
 %%WWWDIR%%/modules/hello_world/hello_world_main.php
@@ -431,6 +445,18 @@
 %%WWWDIR%%/modules/hello_world/templates/index.html
 %%WWWDIR%%/modules/hello_world/templates/smiley.png
 %%WWWDIR%%/modules/index.html
+%%WWWDIR%%/modules/karma/index.html
+%%WWWDIR%%/modules/karma/karma.gif
+%%WWWDIR%%/modules/karma/karma_init.php
+%%WWWDIR%%/modules/karma/karma_install.php
+%%WWWDIR%%/modules/karma/karma_main.php
+%%WWWDIR%%/modules/karma/karma_readme.htm
+%%WWWDIR%%/modules/karma/karma_settings.php
+%%WWWDIR%%/modules/karma/lang.conf
+%%WWWDIR%%/modules/karma/templates/index.html
+%%WWWDIR%%/modules/karma/templates/karma_admin_link.tpl
+%%WWWDIR%%/modules/karma/templates/karma_admin_main_link.tpl
+%%WWWDIR%%/modules/karma/templates/karma_main.tpl
 %%WWWDIR%%/modules/links/index.html
 %%WWWDIR%%/modules/links/lang.conf
 %%WWWDIR%%/modules/links/links_init.php
@@ -444,28 +470,6 @@
 %%WWWDIR%%/modules/links/templates/links_main.tpl
 %%WWWDIR%%/modules/modules_init.php
 %%WWWDIR%%/modules/modules_libs.php
-%%WWWDIR%%/modules/multibox_admin/css/images/close.png
-%%WWWDIR%%/modules/multibox_admin/css/images/left.png
-%%WWWDIR%%/modules/multibox_admin/css/images/leftDisabled.png
-%%WWWDIR%%/modules/multibox_admin/css/images/loader.gif
-%%WWWDIR%%/modules/multibox_admin/css/images/right.png
-%%WWWDIR%%/modules/multibox_admin/css/images/rightDisabled.png
-%%WWWDIR%%/modules/multibox_admin/css/index.html
-%%WWWDIR%%/modules/multibox_admin/css/multibox.css
-%%WWWDIR%%/modules/multibox_admin/index.html
-%%WWWDIR%%/modules/multibox_admin/js/index.html
-%%WWWDIR%%/modules/multibox_admin/js/mootools.js
-%%WWWDIR%%/modules/multibox_admin/js/multibox.js
-%%WWWDIR%%/modules/multibox_admin/js/overlay.js
-%%WWWDIR%%/modules/multibox_admin/js/swfobject.js
-%%WWWDIR%%/modules/multibox_admin/multibox_admin_init.php
-%%WWWDIR%%/modules/multibox_admin/multibox_admin_install.php
-%%WWWDIR%%/modules/multibox_admin/multibox_admin_readme.htm
-%%WWWDIR%%/modules/multibox_admin/multibox_admin_settings.php
-%%WWWDIR%%/modules/multibox_admin/templates/blank.tpl
-%%WWWDIR%%/modules/multibox_admin/templates/index.html
-%%WWWDIR%%/modules/multibox_admin/templates/multibox_admin_body_end.tpl
-%%WWWDIR%%/modules/multibox_admin/templates/multibox_admin_head_start.tpl
 %%WWWDIR%%/modules/send_announcement/index.html
 %%WWWDIR%%/modules/send_announcement/lang.conf
 %%WWWDIR%%/modules/send_announcement/send_announcement_init.php
@@ -500,12 +504,6 @@
 %%WWWDIR%%/modules/sidebar_saved/sidebar_saved_readme.htm
 %%WWWDIR%%/modules/sidebar_saved/sidebar_saved_settings.php
 %%WWWDIR%%/modules/sidebar_saved/templates/sidebar_saved_index.tpl
-%%WWWDIR%%/modules/sidebar_stats/lang.conf
-%%WWWDIR%%/modules/sidebar_stats/sidebar_stats_init.php
-%%WWWDIR%%/modules/sidebar_stats/sidebar_stats_install.php
-%%WWWDIR%%/modules/sidebar_stats/sidebar_stats_readme.htm
-%%WWWDIR%%/modules/sidebar_stats/sidebar_stats_settings.php
-%%WWWDIR%%/modules/sidebar_stats/templates/sidebar_stats.tpl
 %%WWWDIR%%/modules/sidebar_stories/lang.conf
 %%WWWDIR%%/modules/sidebar_stories/sidebar_stories_init.php
 %%WWWDIR%%/modules/sidebar_stories/sidebar_stories_install.php
@@ -580,34 +578,12 @@
 %%WWWDIR%%/modules/spam_trigger/spam_trigger_settings.php
 %%WWWDIR%%/modules/spam_trigger/templates/comments.tpl
 %%WWWDIR%%/modules/spam_trigger/templates/index.html
-%%WWWDIR%%/modules/spam_trigger/templates/spam_trigger.css
 %%WWWDIR%%/modules/spam_trigger/templates/spam_trigger.gif
 %%WWWDIR%%/modules/spam_trigger/templates/spam_trigger_admin_link.tpl
 %%WWWDIR%%/modules/spam_trigger/templates/spam_trigger_admin_main_link.tpl
 %%WWWDIR%%/modules/spam_trigger/templates/spam_trigger_css.tpl
 %%WWWDIR%%/modules/spam_trigger/templates/spam_trigger_main.tpl
-%%WWWDIR%%/modules/spam_trigger/templates/spam_trigger_notify.tpl
 %%WWWDIR%%/modules/spam_trigger/templates/story.tpl
-%%WWWDIR%%/modules/submit_antispam/css/index.html
-%%WWWDIR%%/modules/submit_antispam/css/submit_antispam.css
-%%WWWDIR%%/modules/submit_antispam/images/error_stop.png
-%%WWWDIR%%/modules/submit_antispam/images/index.html
-%%WWWDIR%%/modules/submit_antispam/images/tab_back.png
-%%WWWDIR%%/modules/submit_antispam/index.html
-%%WWWDIR%%/modules/submit_antispam/js/countdown.js
-%%WWWDIR%%/modules/submit_antispam/js/index.html
-%%WWWDIR%%/modules/submit_antispam/lang.conf
-%%WWWDIR%%/modules/submit_antispam/lang_cs.conf
-%%WWWDIR%%/modules/submit_antispam/submit_antispam_init.php
-%%WWWDIR%%/modules/submit_antispam/submit_antispam_install.php
-%%WWWDIR%%/modules/submit_antispam/submit_antispam_main.php
-%%WWWDIR%%/modules/submit_antispam/submit_antispam_readme.htm
-%%WWWDIR%%/modules/submit_antispam/submit_antispam_settings.php
-%%WWWDIR%%/modules/submit_antispam/templates/index.html
-%%WWWDIR%%/modules/submit_antispam/templates/story.php
-%%WWWDIR%%/modules/submit_antispam/templates/submit_error.tpl
-%%WWWDIR%%/modules/submit_antispam/templates/submit_info.tpl
-%%WWWDIR%%/modules/submit_antispam/templates/submit_step_3.tpl
 %%WWWDIR%%/modules/upload/attachments/index.html
 %%WWWDIR%%/modules/upload/attachments/thumbs/index.html
 %%WWWDIR%%/modules/upload/index.html
@@ -673,25 +649,49 @@
 %%WWWDIR%%/modules/welcome_privmsg/welcome_privmsg_settings.php
 %%WWWDIR%%/out.php
 %%WWWDIR%%/page.php
+%%WWWDIR%%/plugins/block.capture.php
+%%WWWDIR%%/plugins/block.strip.php
+%%WWWDIR%%/plugins/block.textformat.php
+%%WWWDIR%%/plugins/compiler.debug.php
+%%WWWDIR%%/plugins/compiler.tplheader.php
 %%WWWDIR%%/plugins/function.adsense.php
 %%WWWDIR%%/plugins/function.checkActionsTpl.php
 %%WWWDIR%%/plugins/function.checkForCss.php
 %%WWWDIR%%/plugins/function.checkForJs.php
+%%WWWDIR%%/plugins/function.counter.php
+%%WWWDIR%%/plugins/function.cycle.php
+%%WWWDIR%%/plugins/function.db_function_call.php
+%%WWWDIR%%/plugins/function.db_result_call.php
 %%WWWDIR%%/plugins/function.eipItem.php
 %%WWWDIR%%/plugins/function.embedvideos.php
 %%WWWDIR%%/plugins/function.eval.php
+%%WWWDIR%%/plugins/function.html_checkboxes.php
+%%WWWDIR%%/plugins/function.html_hidden.php
+%%WWWDIR%%/plugins/function.html_image.php
+%%WWWDIR%%/plugins/function.html_input.php
 %%WWWDIR%%/plugins/function.html_options.php
+%%WWWDIR%%/plugins/function.html_radios.php
+%%WWWDIR%%/plugins/function.html_select_date.php
+%%WWWDIR%%/plugins/function.html_select_time.php
+%%WWWDIR%%/plugins/function.html_table.php
+%%WWWDIR%%/plugins/function.html_textbox.php
+%%WWWDIR%%/plugins/function.in_array.php
 %%WWWDIR%%/plugins/function.mailto.php
 %%WWWDIR%%/plugins/function.math.php
+%%WWWDIR%%/plugins/function.popup.php
+%%WWWDIR%%/plugins/function.popup_init.php
 %%WWWDIR%%/plugins/function.resize_image.php
-%%WWWDIR%%/plugins/function.ypn.php
 %%WWWDIR%%/plugins/index.html
+%%WWWDIR%%/plugins/modifier.bbcode2html.php
 %%WWWDIR%%/plugins/modifier.capitalize.php
 %%WWWDIR%%/plugins/modifier.cat.php
 %%WWWDIR%%/plugins/modifier.count_characters.php
 %%WWWDIR%%/plugins/modifier.count_paragraphs.php
 %%WWWDIR%%/plugins/modifier.count_sentences.php
 %%WWWDIR%%/plugins/modifier.count_words.php
+%%WWWDIR%%/plugins/modifier.date.php
+%%WWWDIR%%/plugins/modifier.date_format.php
+%%WWWDIR%%/plugins/modifier.debug_print_var.php
 %%WWWDIR%%/plugins/modifier.default.php
 %%WWWDIR%%/plugins/modifier.escape.php
 %%WWWDIR%%/plugins/modifier.indent.php
@@ -705,7 +705,13 @@
 %%WWWDIR%%/plugins/modifier.strip.php
 %%WWWDIR%%/plugins/modifier.truncate.php
 %%WWWDIR%%/plugins/modifier.upper.php
+%%WWWDIR%%/plugins/outputfilter.gzip.php
+%%WWWDIR%%/plugins/outputfilter.trimwhitespace.php
+%%WWWDIR%%/plugins/postfilter.showtemplatevars.php
+%%WWWDIR%%/plugins/prefilter.jstrip.php
+%%WWWDIR%%/plugins/prefilter.showinfoheader.php
 %%WWWDIR%%/plugins/shared.escape_chars.php
+%%WWWDIR%%/plugins/shared.make_timestamp.php
 %%WWWDIR%%/profile.php
 %%WWWDIR%%/query.log
 %%WWWDIR%%/readme.html
@@ -738,18 +744,42 @@
 %%WWWDIR%%/templates/admin/admin_main_center.tpl
 %%WWWDIR%%/templates/admin/admin_modules_center.tpl
 %%WWWDIR%%/templates/admin/admin_page.tpl
+%%WWWDIR%%/templates/admin/admin_widgets_center.tpl
 %%WWWDIR%%/templates/admin/backup_main_center.tpl
 %%WWWDIR%%/templates/admin/category_manager.tpl
-%%WWWDIR%%/templates/admin/css/MooEditable.css
+%%WWWDIR%%/templates/admin/css/admin_home.css
+%%WWWDIR%%/templates/admin/css/coda-slider-2.0.css
+%%WWWDIR%%/templates/admin/css/colorbox/border.png
+%%WWWDIR%%/templates/admin/css/colorbox/controls.png
+%%WWWDIR%%/templates/admin/css/colorbox/loading.gif
+%%WWWDIR%%/templates/admin/css/colorbox/loading_background.png
+%%WWWDIR%%/templates/admin/css/colorbox.css
 %%WWWDIR%%/templates/admin/css/fraxi.css
 %%WWWDIR%%/templates/admin/css/help.css
 %%WWWDIR%%/templates/admin/css/ie6.css
 %%WWWDIR%%/templates/admin/css/iepngfix.htc
+%%WWWDIR%%/templates/admin/css/images/background.jpg
+%%WWWDIR%%/templates/admin/css/images/page_bg.gif
+%%WWWDIR%%/templates/admin/css/images/ui-bg_flat_0_aaaaaa_40x100.png
+%%WWWDIR%%/templates/admin/css/images/ui-bg_flat_75_ffffff_40x100.png
+%%WWWDIR%%/templates/admin/css/images/ui-bg_glass_55_fbf9ee_1x400.png
+%%WWWDIR%%/templates/admin/css/images/ui-bg_glass_65_ffffff_1x400.png
+%%WWWDIR%%/templates/admin/css/images/ui-bg_glass_75_dadada_1x400.png
+%%WWWDIR%%/templates/admin/css/images/ui-bg_glass_75_e6e6e6_1x400.png
+%%WWWDIR%%/templates/admin/css/images/ui-bg_glass_95_fef1ec_1x400.png
+%%WWWDIR%%/templates/admin/css/images/ui-bg_highlight-soft_75_cccccc_1x100.png
+%%WWWDIR%%/templates/admin/css/images/ui-icons_222222_256x240.png
+%%WWWDIR%%/templates/admin/css/images/ui-icons_2e83ff_256x240.png
+%%WWWDIR%%/templates/admin/css/images/ui-icons_454545_256x240.png
+%%WWWDIR%%/templates/admin/css/images/ui-icons_888888_256x240.png
+%%WWWDIR%%/templates/admin/css/images/ui-icons_cd0a0a_256x240.png
 %%WWWDIR%%/templates/admin/css/index.html
+%%WWWDIR%%/templates/admin/css/jquery.ui.theme.css
 %%WWWDIR%%/templates/admin/edit_page.tpl
 %%WWWDIR%%/templates/admin/editor_center.tpl
 %%WWWDIR%%/templates/admin/help.tpl
 %%WWWDIR%%/templates/admin/images/add.gif
+%%WWWDIR%%/templates/admin/images/ajax-loader.gif
 %%WWWDIR%%/templates/admin/images/ajax-loading.gif
 %%WWWDIR%%/templates/admin/images/backup_avatars.gif
 %%WWWDIR%%/templates/admin/images/backup_db.gif
@@ -764,6 +794,7 @@
 %%WWWDIR%%/templates/admin/images/cat_up.gif
 %%WWWDIR%%/templates/admin/images/delete.png
 %%WWWDIR%%/templates/admin/images/downarrow.png
+%%WWWDIR%%/templates/admin/images/edit_user.gif
 %%WWWDIR%%/templates/admin/images/email.gif
 %%WWWDIR%%/templates/admin/images/error.gif
 %%WWWDIR%%/templates/admin/images/formula_add.gif
@@ -798,12 +829,14 @@
 %%WWWDIR%%/templates/admin/images/manage_lang.gif
 %%WWWDIR%%/templates/admin/images/manage_mods.gif
 %%WWWDIR%%/templates/admin/images/manage_user.gif
+%%WWWDIR%%/templates/admin/images/manage_widgets.gif
+%%WWWDIR%%/templates/admin/images/module_install.gif
+%%WWWDIR%%/templates/admin/images/module_settings.gif
+%%WWWDIR%%/templates/admin/images/module_uninstall.gif
 %%WWWDIR%%/templates/admin/images/new_cat.gif
 %%WWWDIR%%/templates/admin/images/news_manage.gif
 %%WWWDIR%%/templates/admin/images/page.gif
 %%WWWDIR%%/templates/admin/images/paypal.gif
-%%WWWDIR%%/templates/admin/images/pligg.gif
-%%WWWDIR%%/templates/admin/images/pligg_logo.gif
 %%WWWDIR%%/templates/admin/images/pre_install.png
 %%WWWDIR%%/templates/admin/images/rss.gif
 %%WWWDIR%%/templates/admin/images/save_link.gif
@@ -823,6 +856,15 @@
 %%WWWDIR%%/templates/admin/index.html
 %%WWWDIR%%/templates/admin/js/accordian.pack.js
 %%WWWDIR%%/templates/admin/js/index.html
+%%WWWDIR%%/templates/admin/js/jquery-1.4.2.min.js
+%%WWWDIR%%/templates/admin/js/jquery.coda-slider-2.0.js
+%%WWWDIR%%/templates/admin/js/jquery.colorbox.js
+%%WWWDIR%%/templates/admin/js/jquery.easing.1.3.js
+%%WWWDIR%%/templates/admin/js/jquery.flip.min.js
+%%WWWDIR%%/templates/admin/js/jquery.ui.core.js
+%%WWWDIR%%/templates/admin/js/jquery.ui.mouse.js
+%%WWWDIR%%/templates/admin/js/jquery.ui.sortable.js
+%%WWWDIR%%/templates/admin/js/jquery.ui.widget.js
 %%WWWDIR%%/templates/admin/js/move.js
 %%WWWDIR%%/templates/admin/js/simpleedit.js
 %%WWWDIR%%/templates/admin/js/zebrastripe.js
@@ -841,8 +883,6 @@
 %%WWWDIR%%/templates/admin/user_listall_center.tpl
 %%WWWDIR%%/templates/admin/user_password_reset_center.tpl
 %%WWWDIR%%/templates/admin/user_show_center.tpl
-%%WWWDIR%%/templates/admin/user_view_comments_center.tpl
-%%WWWDIR%%/templates/admin/user_view_links_center.tpl
 %%WWWDIR%%/templates/blank.tpl
 %%WWWDIR%%/templates/bookmarklet.tpl
 %%WWWDIR%%/templates/htaccess.default
@@ -850,107 +890,6 @@
 %%WWWDIR%%/templates/meta.tpl
 %%WWWDIR%%/templates/no_database.tpl
 %%WWWDIR%%/templates/templates.tpl
-%%WWWDIR%%/templates/thestandard/LICENSE.txt
-%%WWWDIR%%/templates/thestandard/README.txt
-%%WWWDIR%%/templates/thestandard/blank.tpl
-%%WWWDIR%%/templates/thestandard/comment_errors.tpl
-%%WWWDIR%%/templates/thestandard/comment_form.tpl
-%%WWWDIR%%/templates/thestandard/comment_show.tpl
-%%WWWDIR%%/templates/thestandard/css/categories.css
-%%WWWDIR%%/templates/thestandard/css/index.html
-%%WWWDIR%%/templates/thestandard/css/star_rating/alt_star.gif
-%%WWWDIR%%/templates/thestandard/css/star_rating/star.css
-%%WWWDIR%%/templates/thestandard/css/style.css
-%%WWWDIR%%/templates/thestandard/css/wick.css
-%%WWWDIR%%/templates/thestandard/edit_comment_center.tpl
-%%WWWDIR%%/templates/thestandard/edit_group_center.tpl
-%%WWWDIR%%/templates/thestandard/editlink_edit_center.tpl
-%%WWWDIR%%/templates/thestandard/footer.tpl
-%%WWWDIR%%/templates/thestandard/group_center.tpl
-%%WWWDIR%%/templates/thestandard/group_story_center.tpl
-%%WWWDIR%%/templates/thestandard/header.tpl
-%%WWWDIR%%/templates/thestandard/images/add.gif
-%%WWWDIR%%/templates/thestandard/images/arrow_down.gif
-%%WWWDIR%%/templates/thestandard/images/arrow_down_voted.gif
-%%WWWDIR%%/templates/thestandard/images/arrow_up.gif
-%%WWWDIR%%/templates/thestandard/images/arrow_up_voted.gif
-%%WWWDIR%%/templates/thestandard/images/bg-shine.jpg
-%%WWWDIR%%/templates/thestandard/images/bg.jpg
-%%WWWDIR%%/templates/thestandard/images/comment-bottom-main.gif
-%%WWWDIR%%/templates/thestandard/images/comment-bottom.gif
-%%WWWDIR%%/templates/thestandard/images/comment-left-main.gif
-%%WWWDIR%%/templates/thestandard/images/comment-left.gif
-%%WWWDIR%%/templates/thestandard/images/comment-top-main.gif
-%%WWWDIR%%/templates/thestandard/images/comment-top.gif
-%%WWWDIR%%/templates/thestandard/images/delete.gif
-%%WWWDIR%%/templates/thestandard/images/dropdown_linkbg.gif
-%%WWWDIR%%/templates/thestandard/images/edit.gif
-%%WWWDIR%%/templates/thestandard/images/folder_images.gif
-%%WWWDIR%%/templates/thestandard/images/friends.png
-%%WWWDIR%%/templates/thestandard/images/friends2.png
-%%WWWDIR%%/templates/thestandard/images/green_check.gif
-%%WWWDIR%%/templates/thestandard/images/group_large.gif
-%%WWWDIR%%/templates/thestandard/images/group_small.gif
-%%WWWDIR%%/templates/thestandard/images/index.html
-%%WWWDIR%%/templates/thestandard/images/join.gif
-%%WWWDIR%%/templates/thestandard/images/l1_down.gif
-%%WWWDIR%%/templates/thestandard/images/l1_over.gif
-%%WWWDIR%%/templates/thestandard/images/nav_bg.png
-%%WWWDIR%%/templates/thestandard/images/nav_bg_hover.png
-%%WWWDIR%%/templates/thestandard/images/rss.gif
-%%WWWDIR%%/templates/thestandard/images/sidebar_headline.gif
-%%WWWDIR%%/templates/thestandard/images/subnav_btn.gif
-%%WWWDIR%%/templates/thestandard/images/topnav_bg.gif
-%%WWWDIR%%/templates/thestandard/images/topnav_hover.gif
-%%WWWDIR%%/templates/thestandard/images/unjoin.gif
-%%WWWDIR%%/templates/thestandard/images/user_add.png
-%%WWWDIR%%/templates/thestandard/images/user_delete.png
-%%WWWDIR%%/templates/thestandard/images/user_message.png
-%%WWWDIR%%/templates/thestandard/index.html
-%%WWWDIR%%/templates/thestandard/index_center.tpl
-%%WWWDIR%%/templates/thestandard/js/index.html
-%%WWWDIR%%/templates/thestandard/js/tag_data.js
-%%WWWDIR%%/templates/thestandard/js/wick.js
-%%WWWDIR%%/templates/thestandard/link_summary.tpl
-%%WWWDIR%%/templates/thestandard/live_center.tpl
-%%WWWDIR%%/templates/thestandard/live_comments_center.tpl
-%%WWWDIR%%/templates/thestandard/live_js.tpl
-%%WWWDIR%%/templates/thestandard/live_published_center.tpl
-%%WWWDIR%%/templates/thestandard/live_unpublished_center.tpl
-%%WWWDIR%%/templates/thestandard/login_center.tpl
-%%WWWDIR%%/templates/thestandard/page_center.tpl
-%%WWWDIR%%/templates/thestandard/pligg.tpl
-%%WWWDIR%%/templates/thestandard/profile_center.tpl
-%%WWWDIR%%/templates/thestandard/recommend_small.tpl
-%%WWWDIR%%/templates/thestandard/register_center.tpl
-%%WWWDIR%%/templates/thestandard/register_step_1.tpl
-%%WWWDIR%%/templates/thestandard/rssfeeds.tpl
-%%WWWDIR%%/templates/thestandard/search_advanced_center.tpl
-%%WWWDIR%%/templates/thestandard/search_center.tpl
-%%WWWDIR%%/templates/thestandard/settemplate_center.tpl
-%%WWWDIR%%/templates/thestandard/sidebar.tpl
-%%WWWDIR%%/templates/thestandard/sidebar2.tpl
-%%WWWDIR%%/templates/thestandard/sidebar_modules/about_box.tpl
-%%WWWDIR%%/templates/thestandard/sidebar_modules/categories.tpl
-%%WWWDIR%%/templates/thestandard/sidebar_modules/index.html
-%%WWWDIR%%/templates/thestandard/sidebar_modules/login.tpl
-%%WWWDIR%%/templates/thestandard/sidebar_modules/tags.tpl
-%%WWWDIR%%/templates/thestandard/sidebar_modules/wrapper.tpl
-%%WWWDIR%%/templates/thestandard/sidebar_modules/wrapper2.tpl
-%%WWWDIR%%/templates/thestandard/story_center.tpl
-%%WWWDIR%%/templates/thestandard/submit_errors.tpl
-%%WWWDIR%%/templates/thestandard/submit_extra_fields.tpl
-%%WWWDIR%%/templates/thestandard/submit_groups.tpl
-%%WWWDIR%%/templates/thestandard/submit_step_1.tpl
-%%WWWDIR%%/templates/thestandard/submit_step_2.tpl
-%%WWWDIR%%/templates/thestandard/submit_step_3.tpl
-%%WWWDIR%%/templates/thestandard/tag_cloud_center.tpl
-%%WWWDIR%%/templates/thestandard/template_details.php
-%%WWWDIR%%/templates/thestandard/topusers_center.tpl
-%%WWWDIR%%/templates/thestandard/topusers_data.tpl
-%%WWWDIR%%/templates/thestandard/upcoming_center.tpl
-%%WWWDIR%%/templates/thestandard/user_center.tpl
-%%WWWDIR%%/templates/thestandard/validation.tpl
 %%WWWDIR%%/templates/wistie/README.txt
 %%WWWDIR%%/templates/wistie/blank.tpl
 %%WWWDIR%%/templates/wistie/comment_errors.tpl
@@ -967,6 +906,7 @@
 %%WWWDIR%%/templates/wistie/css/star_rating/star.css
 %%WWWDIR%%/templates/wistie/css/style.css
 %%WWWDIR%%/templates/wistie/css/wick.css
+%%WWWDIR%%/templates/wistie/date_picker.tpl
 %%WWWDIR%%/templates/wistie/edit_comment_center.tpl
 %%WWWDIR%%/templates/wistie/edit_group_center.tpl
 %%WWWDIR%%/templates/wistie/editlink_edit_center.tpl
@@ -989,8 +929,8 @@
 %%WWWDIR%%/templates/wistie/images/l1_over.gif
 %%WWWDIR%%/templates/wistie/images/rss.gif
 %%WWWDIR%%/templates/wistie/images/unjoin.gif
-%%WWWDIR%%/templates/wistie/images/user_add.png
-%%WWWDIR%%/templates/wistie/images/user_delete.png
+%%WWWDIR%%/templates/wistie/images/user_add.gif
+%%WWWDIR%%/templates/wistie/images/user_delete.gif
 %%WWWDIR%%/templates/wistie/images/user_message.png
 %%WWWDIR%%/templates/wistie/index.html
 %%WWWDIR%%/templates/wistie/index_center.tpl
@@ -1051,6 +991,55 @@
 %%WWWDIR%%/validation.php
 %%WWWDIR%%/vote.php
 %%WWWDIR%%/vote_total.php
+%%WWWDIR%%/widgets/akismet/index.html
+%%WWWDIR%%/widgets/akismet/init.php
+%%WWWDIR%%/widgets/akismet/lang.conf
+%%WWWDIR%%/widgets/akismet/templates/index.html
+%%WWWDIR%%/widgets/akismet/templates/settings.tpl
+%%WWWDIR%%/widgets/akismet/templates/widget.tpl
+%%WWWDIR%%/widgets/module_settings/index.html
+%%WWWDIR%%/widgets/module_settings/init.php
+%%WWWDIR%%/widgets/module_settings/module_settings_readme.htm
+%%WWWDIR%%/widgets/module_settings/templates/index.html
+%%WWWDIR%%/widgets/module_settings/templates/widget.tpl
+%%WWWDIR%%/widgets/new_products/index.html
+%%WWWDIR%%/widgets/new_products/init.php
+%%WWWDIR%%/widgets/new_products/lang.conf
+%%WWWDIR%%/widgets/new_products/new_products_readme.htm
+%%WWWDIR%%/widgets/new_products/templates/index.html
+%%WWWDIR%%/widgets/new_products/templates/settings.tpl
+%%WWWDIR%%/widgets/new_products/templates/widget.tpl
+%%WWWDIR%%/widgets/panel_tools/index.html
+%%WWWDIR%%/widgets/panel_tools/init.php
+%%WWWDIR%%/widgets/panel_tools/panel_tools_readme.htm
+%%WWWDIR%%/widgets/panel_tools/templates/index.html
+%%WWWDIR%%/widgets/panel_tools/templates/widget.tpl
+%%WWWDIR%%/widgets/pligg_cms/index.html
+%%WWWDIR%%/widgets/pligg_cms/init.php
+%%WWWDIR%%/widgets/pligg_cms/pligg_cms_readme.htm
+%%WWWDIR%%/widgets/pligg_cms/templates/index.html
+%%WWWDIR%%/widgets/pligg_cms/templates/settings.tpl
+%%WWWDIR%%/widgets/pligg_cms/templates/widget.tpl
+%%WWWDIR%%/widgets/pligg_news/index.html
+%%WWWDIR%%/widgets/pligg_news/init.php
+%%WWWDIR%%/widgets/pligg_news/lang.conf
+%%WWWDIR%%/widgets/pligg_news/pligg_news_readme.htm
+%%WWWDIR%%/widgets/pligg_news/templates/index.html
+%%WWWDIR%%/widgets/pligg_news/templates/settings.tpl
+%%WWWDIR%%/widgets/pligg_news/templates/widget.tpl
+%%WWWDIR%%/widgets/spam_trigger/index.html
+%%WWWDIR%%/widgets/spam_trigger/init.php
+%%WWWDIR%%/widgets/spam_trigger/lang.conf
+%%WWWDIR%%/widgets/spam_trigger/spam_trigger_readme.htm
+%%WWWDIR%%/widgets/spam_trigger/templates/index.html
+%%WWWDIR%%/widgets/spam_trigger/templates/widget.tpl
+%%WWWDIR%%/widgets/statistics/index.html
+%%WWWDIR%%/widgets/statistics/init.php
+%%WWWDIR%%/widgets/statistics/lang.conf
+%%WWWDIR%%/widgets/statistics/statistics_readme.htm
+%%WWWDIR%%/widgets/statistics/templates/index.html
+%%WWWDIR%%/widgets/statistics/templates/settings.tpl
+%%WWWDIR%%/widgets/statistics/templates/widget.tpl
 @dirrm %%WWWDIR%%/3rdparty/API
 @dirrm %%WWWDIR%%/3rdparty/kmessaging
 @dirrm %%WWWDIR%%/3rdparty/speller/server-scripts
@@ -1089,6 +1078,10 @@
 @dirrm %%WWWDIR%%/modules/admin_language
 @dirrm %%WWWDIR%%/modules/admin_snippet/templates
 @dirrm %%WWWDIR%%/modules/admin_snippet
+@dirrm %%WWWDIR%%/modules/akismet/images
+@dirrm %%WWWDIR%%/modules/akismet/libs
+@dirrm %%WWWDIR%%/modules/akismet/templates
+@dirrm %%WWWDIR%%/modules/akismet
 @dirrm %%WWWDIR%%/modules/anonymous/templates
 @dirrm %%WWWDIR%%/modules/anonymous
 @dirrm %%WWWDIR%%/modules/anonymous_comments/templates
@@ -1098,8 +1091,6 @@
 @dirrm %%WWWDIR%%/modules/auto_update/images
 @dirrm %%WWWDIR%%/modules/auto_update/templates
 @dirrm %%WWWDIR%%/modules/auto_update
-@dirrm %%WWWDIR%%/modules/blocker/templates
-@dirrm %%WWWDIR%%/modules/blocker
 @dirrm %%WWWDIR%%/modules/captcha/captchas/WhiteHat
 @dirrm %%WWWDIR%%/modules/captcha/captchas/math
 @dirrm %%WWWDIR%%/modules/captcha/captchas/reCaptcha/libs
@@ -1111,17 +1102,12 @@
 @dirrm %%WWWDIR%%/modules/codemirror/source
 @dirrm %%WWWDIR%%/modules/codemirror/templates
 @dirrm %%WWWDIR%%/modules/codemirror
-@dirrm %%WWWDIR%%/modules/friends_activity/templates
-@dirrm %%WWWDIR%%/modules/friends_activity
 @dirrm %%WWWDIR%%/modules/hello_world/templates
 @dirrm %%WWWDIR%%/modules/hello_world
+@dirrm %%WWWDIR%%/modules/karma/templates
+@dirrm %%WWWDIR%%/modules/karma
 @dirrm %%WWWDIR%%/modules/links/templates
 @dirrm %%WWWDIR%%/modules/links
-@dirrm %%WWWDIR%%/modules/multibox_admin/css/images
-@dirrm %%WWWDIR%%/modules/multibox_admin/css
-@dirrm %%WWWDIR%%/modules/multibox_admin/js
-@dirrm %%WWWDIR%%/modules/multibox_admin/templates
-@dirrm %%WWWDIR%%/modules/multibox_admin
 @dirrm %%WWWDIR%%/modules/send_announcement/templates
 @dirrm %%WWWDIR%%/modules/send_announcement
 @dirrm %%WWWDIR%%/modules/share_revenue/images
@@ -1132,8 +1118,6 @@
 @dirrm %%WWWDIR%%/modules/sidebar_comments
 @dirrm %%WWWDIR%%/modules/sidebar_saved/templates
 @dirrm %%WWWDIR%%/modules/sidebar_saved
-@dirrm %%WWWDIR%%/modules/sidebar_stats/templates
-@dirrm %%WWWDIR%%/modules/sidebar_stats
 @dirrm %%WWWDIR%%/modules/sidebar_stories/templates
 @dirrm %%WWWDIR%%/modules/sidebar_stories
 @dirrm %%WWWDIR%%/modules/sidebar_stories_u/templates
@@ -1146,11 +1130,6 @@
 @dirrm %%WWWDIR%%/modules/social_bookmark
 @dirrm %%WWWDIR%%/modules/spam_trigger/templates
 @dirrm %%WWWDIR%%/modules/spam_trigger
-@dirrm %%WWWDIR%%/modules/submit_antispam/css
-@dirrm %%WWWDIR%%/modules/submit_antispam/images
-@dirrm %%WWWDIR%%/modules/submit_antispam/js
-@dirrm %%WWWDIR%%/modules/submit_antispam/templates
-@dirrm %%WWWDIR%%/modules/submit_antispam
 @dirrm %%WWWDIR%%/modules/upload/attachments/thumbs
 @dirrm %%WWWDIR%%/modules/upload/attachments
 @dirrm %%WWWDIR%%/modules/upload/js
@@ -1163,16 +1142,12 @@
 @dirrm %%WWWDIR%%/modules/welcome_privmsg
 @dirrm %%WWWDIR%%/modules
 @dirrm %%WWWDIR%%/plugins
+@dirrm %%WWWDIR%%/templates/admin/css/colorbox
+@dirrm %%WWWDIR%%/templates/admin/css/images
 @dirrm %%WWWDIR%%/templates/admin/css
 @dirrm %%WWWDIR%%/templates/admin/images
 @dirrm %%WWWDIR%%/templates/admin/js
 @dirrm %%WWWDIR%%/templates/admin
-@dirrm %%WWWDIR%%/templates/thestandard/css/star_rating
-@dirrm %%WWWDIR%%/templates/thestandard/css
-@dirrm %%WWWDIR%%/templates/thestandard/images
-@dirrm %%WWWDIR%%/templates/thestandard/js
-@dirrm %%WWWDIR%%/templates/thestandard/sidebar_modules
-@dirrm %%WWWDIR%%/templates/thestandard
 @dirrm %%WWWDIR%%/templates/wistie/css/images
 @dirrm %%WWWDIR%%/templates/wistie/css/star_rating
 @dirrm %%WWWDIR%%/templates/wistie/css
@@ -1182,4 +1157,21 @@
 @dirrm %%WWWDIR%%/templates/wistie/sidebar_modules
 @dirrm %%WWWDIR%%/templates/wistie
 @dirrm %%WWWDIR%%/templates
+@dirrm %%WWWDIR%%/widgets/akismet/templates
+@dirrm %%WWWDIR%%/widgets/akismet
+@dirrm %%WWWDIR%%/widgets/module_settings/templates
+@dirrm %%WWWDIR%%/widgets/module_settings
+@dirrm %%WWWDIR%%/widgets/new_products/templates
+@dirrm %%WWWDIR%%/widgets/new_products
+@dirrm %%WWWDIR%%/widgets/panel_tools/templates
+@dirrm %%WWWDIR%%/widgets/panel_tools
+@dirrm %%WWWDIR%%/widgets/pligg_cms/templates
+@dirrm %%WWWDIR%%/widgets/pligg_cms
+@dirrm %%WWWDIR%%/widgets/pligg_news/templates
+@dirrm %%WWWDIR%%/widgets/pligg_news
+@dirrm %%WWWDIR%%/widgets/spam_trigger/templates
+@dirrm %%WWWDIR%%/widgets/spam_trigger
+@dirrm %%WWWDIR%%/widgets/statistics/templates
+@dirrm %%WWWDIR%%/widgets/statistics
+@dirrm %%WWWDIR%%/widgets
 @dirrm %%WWWDIR%%
