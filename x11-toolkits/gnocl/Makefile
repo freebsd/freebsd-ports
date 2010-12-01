@@ -21,6 +21,8 @@ USE_GNOME=	gtk20 libglade2 gtksourceview2 gtkhtml3 gnomelibs
 USE_TCL=	84
 USE_LDCONFIG=	yes
 
+BROKEN=		does not compile
+
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 BUILD_WRKSRC=	${WRKSRC}/src
 CFLAGS+=	-I${LOCALBASE}/include/tcl8.4
