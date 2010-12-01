@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	embedded_innodb
-PORTVERSION=	1.0.3.5325
+PORTVERSION=	1.0.6.6750
 CATEGORIES=	databases
 MASTER_SITES=	http://www.innodb.com/download/embedded_innodb/
 
