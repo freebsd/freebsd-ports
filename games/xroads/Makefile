@@ -12,7 +12,7 @@ CATEGORIES=	games
 MASTER_SITES=	http://math.missouristate.edu/~erik/files/fbsd/
 DISTNAME=	${PORTNAME}-v${PORTVERSION}
 
-MAINTAINER=	erik@smluc.org
+MAINTAINER=	erik@bz.bzflag.bz
 COMMENT=	Commodore 64 "Crossroads"-like video game for X Window System
 
 USE_XORG=	x11 xpm xext

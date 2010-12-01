@@ -11,7 +11,7 @@ PORTREVISION=	5
 CATEGORIES=	graphics
 MASTER_SITES=	http://bzflag.bz/~erik/files/
 
-MAINTAINER=	erik@smluc.org
+MAINTAINER=	erik@bz.bzflag.bz
 COMMENT=	An image viewer for X
 
 USE_SDL=	image

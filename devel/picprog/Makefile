@@ -10,7 +10,7 @@ PORTVERSION=	1.9.0
 CATEGORIES=	devel
 MASTER_SITES=	http://hyvatti.iki.fi/~jaakko/pic/
 
-MAINTAINER=	erik@smluc.org
+MAINTAINER=	erik@bz.bzflag.bz
 COMMENT=	Serial port pic16c84 programmer
 
 USE_GMAKE=	yes

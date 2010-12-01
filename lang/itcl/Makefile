@@ -11,7 +11,7 @@ CATEGORIES=	lang tcl
 MASTER_SITES=	SF/incrtcl/%5BIncr%20Tcl_Tk%5D-source/3.4
 DISTNAME=	itcl${PORTVERSION}
 
-MAINTAINER=	erik@smluc.org
+MAINTAINER=	erik@bz.bzflag.bz
 COMMENT=	Object-oriented extension to Tcl [incr Tcl]
 
 USE_TCL=	84+

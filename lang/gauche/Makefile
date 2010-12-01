@@ -12,7 +12,7 @@ MASTER_SITES=	SF/${PORTNAME}/Gauche/
 DISTNAME=	Gauche-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	erik@smluc.org
+MAINTAINER=	erik@bz.bzflag.bz
 COMMENT=	Scheme script interpreter with multibyte character handling
 
 # Choices are: "pthreads" and "no"

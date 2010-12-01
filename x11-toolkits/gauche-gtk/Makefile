@@ -14,7 +14,7 @@ PKGNAMESUFFIX=	-gtk
 DISTNAME=	Gauche${PKGNAMESUFFIX}-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	erik@smluc.org
+MAINTAINER=	erik@bz.bzflag.bz
 COMMENT=	GTK2 binding for Gauche
 
 BUILD_DEPENDS=	gosh:${PORTSDIR}/lang/gauche

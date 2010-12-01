@@ -16,7 +16,7 @@ DISTFILES=${DISTNAME}${EXTRACT_SUFX} tnt120doc.zip
 DIST_SUBDIR=	tnt
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
-MAINTAINER=	erik@smluc.org
+MAINTAINER=	erik@bz.bzflag.bz
 COMMENT=	Template Numerical Toolkit
 
 BUILD_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
