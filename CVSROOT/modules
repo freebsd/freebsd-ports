@@ -701,8 +701,6 @@ asterisk-fop                    ports/www/asterisk-fop
 asterisk-gui                    ports/www/asterisk-gui
 asterisk-oh323                  ports/net/asterisk-oh323
 asterisk-stat                   ports/www/asterisk-stat
-asterisk12                      ports/net/asterisk12
-asterisk12-app-ldap             ports/net/asterisk12-app-ldap
 asterisk14                      ports/net/asterisk14
 asterisk14-addons               ports/net/asterisk14-addons
 asterisk16                      ports/net/asterisk16
@@ -1795,6 +1793,7 @@ code2html                       ports/textproc/code2html
 codeblocks                      ports/devel/codeblocks
 codeeditor                      ports/editors/codeeditor
 codeigniter                     ports/www/codeigniter
+codeigniter-devel               ports/www/codeigniter-devel
 codelite                        ports/editors/codelite
 codeworker                      ports/devel/codeworker
 cog                             ports/sysutils/cog
@@ -8965,6 +8964,7 @@ luxrender                       ports/graphics/luxrender
 lv                              ports/misc/lv
 lv-aspell                       ports/textproc/lv-aspell
 lv2core                         ports/audio/lv2core
+lvwimax                         ports/net/lvwimax
 lwm                             ports/x11-wm/lwm
 lwp                             ports/devel/lwp
 lxappearance                    ports/x11-themes/lxappearance
