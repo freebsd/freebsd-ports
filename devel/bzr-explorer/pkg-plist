@@ -232,6 +232,9 @@
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/tests/__init__.py
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/tests/__init__.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/tests/__init__.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/tests/test_new.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/tests/test_new.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/tests/test_new.pyo
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/tests/test_test_suite.py
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/tests/test_test_suite.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/tests/test_test_suite.pyo
