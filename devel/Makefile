@@ -2712,6 +2712,7 @@
     SUBDIR += py-astng
     SUBDIR += py-babel
     SUBDIR += py-bison
+    SUBDIR += py-bitstring
     SUBDIR += py-boto
     SUBDIR += py-cclib
     SUBDIR += py-celementtree
