@@ -65,6 +65,7 @@ if [ ! -f ${builddir}/.ready ]; then
 fi
 
 . ${pb}/${arch}/client.conf
+. ${pb}/${arch}/common.conf
 . ${pb}/${arch}/portbuild.conf
 . ${pb}/${arch}/portbuild.$(hostname)
 
