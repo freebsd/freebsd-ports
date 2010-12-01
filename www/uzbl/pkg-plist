@@ -1,5 +1,6 @@
 bin/uzbl-core
 bin/uzbl-browser
 bin/uzbl-cookie-daemon
+bin/uzbl-cookie-manager
 bin/uzbl-event-manager
 bin/uzbl-tabbed
