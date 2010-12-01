@@ -25,7 +25,7 @@ PKGNAMESUFFIX+=	-canna
 DISTNAME=	xemacs-${XEMACS_VER}
 DIST_SUBDIR=	xemacs
 
-MAINTAINER?=	anray@FreeBSD.org
+MAINTAINER?=	ports@FreeBSD.org
 COMMENT?=	XEmacs(stable version) text editor with mule(Only the executables)
 
 CONFLICTS=	emacs-19.* emacs-21.* \

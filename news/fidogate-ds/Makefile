@@ -12,7 +12,7 @@ MASTER_SITES=		SF/rus${PORTNAME}/${PORTNAME}-stable/${PORTNAME}%20${PORTVERSION}
 PKGNAMESUFFIX=		-ds
 DISTNAME=		fidogate${PORTVERSION}ds
 
-MAINTAINER=		anray@FreeBSD.org
+MAINTAINER=		ports@FreeBSD.org
 COMMENT=		Fido-Internet Gateway and Tosser
 
 .if !defined(WITHOUT_INN)

@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	news
 MASTER_SITES=	http://www.lost.org.uk/
 
-MAINTAINER=	anray@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple news server for hosts with one or two users
 
 LIB_DEPENDS=	gdbm.3:${PORTSDIR}/databases/gdbm

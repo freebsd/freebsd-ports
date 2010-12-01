@@ -9,7 +9,7 @@ PORTNAME=	msql
 PORTVERSION=	3.8
 CATEGORIES=	databases
 
-MAINTAINER=	anray@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Version 3 of the Mini SQL relational database system
 
 CONFLICTS=	msql-2*

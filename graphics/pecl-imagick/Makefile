@@ -13,7 +13,7 @@ PKGNAMEPREFIX=	pecl-
 EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	PECL
 
-MAINTAINER=	anray@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Provides a wrapper to the ImageMagick/GraphicsMagick library
 
 LIB_DEPENDS=	MagickWand.4:${PORTSDIR}/graphics/ImageMagick

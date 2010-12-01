@@ -13,7 +13,7 @@ DISTNAME=	${PORTNAME}
 EXTRACT_SUFX=	# empty
 EXTRACT_ONLY=	# empty
 
-MAINTAINER=	anray@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Quote text with a semi-box in Emacs/XEmacs
 
 NO_BUILD=	yes

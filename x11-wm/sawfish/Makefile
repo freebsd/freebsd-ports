@@ -14,7 +14,7 @@ CATEGORIES=	x11-wm
 MASTER_SITES=	SF/sawmill/${PORTNAME}/${PORTVERSION}
 DIST_SUBDIR=	gnome2
 
-MAINTAINER=	anray@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Lisp configurable window manager
 
 LIB_DEPENDS=	rep.13:${PORTSDIR}/lang/librep \

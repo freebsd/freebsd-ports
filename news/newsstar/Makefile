@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	news
 MASTER_SITES=	SF
 
-MAINTAINER=	anray@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Transfer news between a local NNTP server (INN, sn, s-news)
 
 LIB_DEPENDS=	gdbm.3:${PORTSDIR}/databases/gdbm
