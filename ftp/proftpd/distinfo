@@ -1,5 +1,5 @@
-SHA256 (proftpd-1.3.3c.tar.bz2) = ea7f02e21f81e6ce79ebde8bbbd334bd269a039ac9137196a35309f791b24db1
-SIZE (proftpd-1.3.3c.tar.bz2) = 4166609
+SHA256 (proftpd-1.3.3c.tar.bz2) = d56d6d643534fe618b26807948b3cfe43c02b3f7abf7f4a073778c9c1666d1eb
+SIZE (proftpd-1.3.3c.tar.bz2) = 4203030
 SHA256 (mod_sql_tds-4.13.tar.bz2) = b32b1d4539b1b2e7e4f44161d12ab81a56ddf292ccd125307a9b2900fdd000a8
 SIZE (mod_sql_tds-4.13.tar.bz2) = 11207
 SHA256 (mod_clamav-0.11rc.tar.gz) = 87630eb1866066d6320ee711897d8998b8f4915c0498b2e78cc0464abd34855a
