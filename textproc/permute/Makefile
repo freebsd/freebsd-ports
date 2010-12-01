@@ -10,7 +10,7 @@ PORTVERSION=	1.0
 CATEGORIES=	textproc
 MASTER_SITES=	http://atlas.kennesaw.edu/~rbentley/
 
-MAINTAINER=	erik@smluc.org
+MAINTAINER=	erik@bz.bzflag.bz
 COMMENT=	Generate all permutations of lines from stdin
 
 PLIST_FILES=	bin/${PORTNAME}

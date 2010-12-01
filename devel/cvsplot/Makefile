@@ -12,7 +12,7 @@ PORTREVISION=	3
 CATEGORIES=	devel perl5
 MASTER_SITES=	SF
 
-MAINTAINER=	erik@smluc.org
+MAINTAINER=	erik@bz.bzflag.bz
 COMMENT=	A perl script which analyses the history of a CVS-managed project
 
 RUN_DEPENDS=	${SITE_PERL}/Date/Manip.pm:${PORTSDIR}/devel/p5-Date-Manip \

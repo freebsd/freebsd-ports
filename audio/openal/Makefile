@@ -12,7 +12,7 @@ CATEGORIES=	audio
 MASTER_SITES=	http://openal.org/openal_webstf/downloads/
 DISTVERSION=	0.0.8
 
-MAINTAINER=	erik@smluc.org
+MAINTAINER=	erik@bz.bzflag.bz
 COMMENT=	A 3D positional spatialized sound library
 
 CONFLICTS=	openal-soft-[0-9]*

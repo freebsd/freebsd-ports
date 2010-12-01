@@ -14,7 +14,7 @@ PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DISTFILES=	${DISTNAME}-source${EXTRACT_SUFX}
 DIST_SUBDIR=	ruby
 
-MAINTAINER=	erik@smluc.org
+MAINTAINER=	erik@bz.bzflag.bz
 COMMENT=	A high level library to use SDL from Ruby
 
 USE_SDL=	gfx image mixer ttf sdl

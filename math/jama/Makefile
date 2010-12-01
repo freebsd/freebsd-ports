@@ -16,7 +16,7 @@ DISTFILES=${DISTNAME}${EXTRACT_SUFX} jama102doc.zip
 DIST_SUBDIR=	tnt
 EXTRACT_ONLY=
 
-MAINTAINER=	erik@smluc.org
+MAINTAINER=	erik@bz.bzflag.bz
 COMMENT=	Java-like Matrix C++ Templates
 
 BUILD_DEPENDS=	${LOCALBASE}/include/tnt/tnt.h:${PORTSDIR}/devel/tnt \

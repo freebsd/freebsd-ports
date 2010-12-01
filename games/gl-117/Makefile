@@ -13,7 +13,7 @@ PORTREVISION=	6
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/GL-117%20Source
 
-MAINTAINER=	erik@smluc.org
+MAINTAINER=	erik@bz.bzflag.bz
 COMMENT=	An OpenGL & SDL action flight simulator
 
 USE_GL=		glut

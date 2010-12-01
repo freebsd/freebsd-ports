@@ -13,7 +13,7 @@ MASTER_SITES=	http://michaelvess.com/files/
 DISTNAME=	${PORTFAKENAME}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	erik@smluc.org
+MAINTAINER=	erik@bz.bzflag.bz
 COMMENT=	Scheme script interpreter with multibyte character handling
 
 BUILD_DEPENDS=	gosh:${PORTSDIR}/lang/gauche \

@@ -12,7 +12,7 @@ MASTER_SITES=	# none
 PKGNAMEPREFIX=	gauche-
 DISTFILES=	# none
 
-MAINTAINER=	erik@smluc.org
+MAINTAINER=	erik@bz.bzflag.bz
 COMMENT=	GDBM interface for Gauche
 
 BUILD_DEPENDS=	gosh:${PORTSDIR}/lang/gauche \

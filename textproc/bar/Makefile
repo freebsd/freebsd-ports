@@ -11,7 +11,7 @@ CATEGORIES=	textproc
 MASTER_SITES=	http://www.theiling.de/downloads/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
-MAINTAINER=	erik@smluc.org
+MAINTAINER=	erik@bz.bzflag.bz
 COMMENT=	Cat with ASCII progress bar
 
 USE_BZIP2=	yes

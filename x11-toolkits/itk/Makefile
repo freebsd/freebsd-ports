@@ -12,7 +12,7 @@ CATEGORIES=	x11-toolkits tk
 MASTER_SITES=	SF/incrtcl/%5BIncr%20Tcl_Tk%5D-source/${PORTVERSION}-RC
 DISTNAME=	${PORTNAME}${PORTVERSION}
 
-MAINTAINER=	erik@smluc.org
+MAINTAINER=	erik@bz.bzflag.bz
 COMMENT=	Object-oriented extension to Tk [incr Tk]
 
 LIB_DEPENDS=	itcl.${MAJOR}:${PORTSDIR}/lang/itcl

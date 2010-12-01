@@ -12,7 +12,7 @@ PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	SF
 
-MAINTAINER=	erik@smluc.org
+MAINTAINER=	erik@bz.bzflag.bz
 COMMENT=	GNU Triangulated Surface Library
 
 USE_GNOME=	glib20 gnometarget pkgconfig
