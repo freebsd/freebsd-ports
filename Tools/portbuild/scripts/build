@@ -48,6 +48,8 @@ do_create() {
     shift 3
 
     archivedir=${pb}/${arch}/archive
+
+    # create directory for all build logs
     buildlogsdir=${archivedir}/buildlogs
     if [ ! -d ${buildlogsdir} ]; then
 	mkdir -p ${buildlogsdir} || exit 1
@@ -55,30 +57,47 @@ do_create() {
 	chmod -R g+w ${archivedir}
     fi
 
-    archdir=${pbab}/builds
-    if [ ! -d ${archdir} ]; then
-	mkdir -p ${archdir} || exit 1
+    # create directory for all builds for buildenv
+    buildsdir=${pbab}/builds
+    if [ ! -d ${buildsdir} ]; then
+	mkdir -p ${buildsdir} || exit 1
 	chown -R ports-${arch}:portmgr ${pbab}
 	chmod -R g+w ${pbab}
     fi
 
-    builddir=$(realpath ${archdir})/${buildid}
+    # create directory for latest build for buildenv
+    builddir=$(realpath ${buildsdir})/${buildid}
     if [ -d ${builddir} ]; then
 	echo "Can't create ${builddir}, it already exists"
 	exit 1
     fi
 
+    # create zfs instance for latest build on buildenv
     mountpoint=${builddir}
     newfs=${ZFS_VOLUME}/portbuild/${arch}/${buildid}
     zfs create -o mountpoint=${mountpoint} ${newfs} || exit 1
     chown -R ports-${arch}:portmgr ${mountpoint}
     chmod -R g+w ${mountpoint}
 
+    # populate ports for latest build on buildenv
     do_portsupdate_inner ${arch} ${branch} ${buildid} ${builddir} $@
 
+    # populate src for latest build on buildenv
     do_srcupdate_inner ${arch} ${branch} ${buildid} ${builddir} $@
 
+    # create the link for building packages for latest build
     ln -sf ${builddir} ${pbab}/builds/latest
+
+    # create the links for the webserver
+    # XXX MCL hardcoding
+    errorlogs=/var/portbuild/errorlogs
+
+    ln -s ${buildsdir}/latest/bak/errors ${errorlogs}/${arch}-${branch}-previous
+    ln -s ${buildsdir}/latest/bak/logs ${errorlogs}/${arch}-${branch}-previous-logs
+    ln -s ${buildsdir}/latest/errors ${errorlogs}/${arch}-${branch}-latest
+    ln -s ${buildsdir}/latest/logs ${errorlogs}/${arch}-${branch}-latest-logs
+    ln -s ${buildsdir}/latest/bak/packages ${errorlogs}/${arch}-${branch}-packages-previous
+    ln -s ${buildsdir}/latest/packages ${errorlogs}/${arch}-${branch}-packages-latest
 
     echo "New build ID is ${buildid}"
 }
