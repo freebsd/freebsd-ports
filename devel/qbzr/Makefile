@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	qbzr
-PORTVERSION=	0.19.2
+PORTVERSION=	0.19.3
 CATEGORIES=	devel
-MASTER_SITES=	http://launchpadlibrarian.net/56409219/ \
+MASTER_SITES=	http://launchpadlibrarian.net/59658922/ \
 		http://www.c-s.li/ports/
 
 MAINTAINER=	c-s@c-s.li
