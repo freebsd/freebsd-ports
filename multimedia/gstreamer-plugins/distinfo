@@ -6,5 +6,5 @@ SHA256 (gst-plugins-bad-0.10.20.tar.bz2) = 1031dff866df976a957f34039addbab4c0753
 SIZE (gst-plugins-bad-0.10.20.tar.bz2) = 3209622
 SHA256 (gst-plugins-ugly-0.10.16.tar.bz2) = d7fc7636001e78736540c628ad889888cb85ea722f08d1c6813b16682dd9c09c
 SIZE (gst-plugins-ugly-0.10.16.tar.bz2) = 1041297
-SHA256 (gst-plugins-good-0.10.25.tar.bz2) = b5d5750c12412c47d85ba9391c842f6f02cad9511876695e48b15fb37e4699f6
-SIZE (gst-plugins-good-0.10.25.tar.bz2) = 2949205
+SHA256 (gst-plugins-good-0.10.26.tar.bz2) = ceb3bbea5ce18463b8fe470d34786bc846469e800305c436d799af9fe22bdcc4
+SIZE (gst-plugins-good-0.10.26.tar.bz2) = 3011746

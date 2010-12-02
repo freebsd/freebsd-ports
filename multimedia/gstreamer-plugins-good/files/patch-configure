@@ -1,6 +1,15 @@
---- configure.orig	2010-02-11 17:29:54.000000000 +0100
-+++ configure	2010-02-11 17:34:38.000000000 +0100
-@@ -24271,7 +24271,7 @@ if test "${with_default_audiosink+set}" 
+--- configure.orig	2010-12-01 19:16:00.000000000 +0100
++++ configure	2010-12-02 15:39:17.000000000 +0100
+@@ -23961,7 +23961,7 @@ $as_echo "$as_me: Using $PLUGINDIR as th
+             if ( echo yes | grep -e '^201-90-9-0-10-9-0-30-9' >/dev/null ) ; then
+       GST_PACKAGE_RELEASE_DATETIME=yes
+     else
+-            YYYY_MM_DD=`. "${srcdir}/common/extract-release-date-from-doap-file"  $PACKAGE_VERSION_MAJOR.$PACKAGE_VERSION_MINOR.$PACKAGE_VERSION_MICRO   "${srcdir}/gst-plugins-good.doap" `;
++            YYYY_MM_DD=`./"${srcdir}/common/extract-release-date-from-doap-file"  $PACKAGE_VERSION_MAJOR.$PACKAGE_VERSION_MINOR.$PACKAGE_VERSION_MICRO   "${srcdir}/gst-plugins-good.doap" `;
+       if test "x$YYYY_MM_DD" != "x"; then
+         GST_PACKAGE_RELEASE_DATETIME=$YYYY_MM_DD
+       else
+@@ -24955,7 +24955,7 @@ if test "${with_default_audiosink+set}" 
  
  else
  
@@ -9,7 +18,7 @@
  
  fi
  
-@@ -26653,6 +26653,8 @@ $as_echo_n "checking Checking for up to 
+@@ -27516,6 +27516,8 @@ $as_echo_n "checking Checking for up to 
  #ifdef __sun /* Solaris */
  #include <sys/types.h>
  #include <sys/videodev2.h>
@@ -18,7 +27,7 @@
  #else /* Linux */
  #include <linux/types.h>
  #define _LINUX_TIME_H
-@@ -26726,6 +26728,8 @@ $as_echo_n "checking struct v4l2_buffer 
+@@ -27589,6 +27591,8 @@ $as_echo_n "checking struct v4l2_buffer 
  #ifdef __sun /* Solaris */
  #include <sys/types.h>
  #include <sys/videodev2.h>
