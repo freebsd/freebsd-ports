@@ -7,7 +7,7 @@
 
 PORTNAME=	softflowd
 PORTVERSION=	0.9.8
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-mgmt ipv6
 MASTER_SITES=	http://www2.mindrot.org/files/softflowd/
 
