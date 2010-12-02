@@ -6,6 +6,16 @@ You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
 20101202:
+  AFFECTS: users of multmidia/gstreamer-plugins
+  AUTHOR: multimedia@FreeBSD.org
+
+  If during the upgrade of gstreamer-plugins the following error happens:
+  GstAudio-0.10.gir: Incompatible version 1.0 (supported: 1.2)
+  Use the following command to upgrade:
+
+  cd ports/multimedia/gstreamer-plugins && make deinstall clean install
+
+20101202:
   AFFECTS: users of www/wordpress
   AUTHOR: sunpoet@FreeBSD.org
 
