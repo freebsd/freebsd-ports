@@ -1,6 +1,5 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx/Skinny/.packlist
 %%SITE_PERL%%/DBIx/Skinny.pm
-%%SITE_PERL%%/DBIx/Skinny/Accessor.pm
 %%SITE_PERL%%/DBIx/Skinny/DBD.pm
 %%SITE_PERL%%/DBIx/Skinny/DBD/Base.pm
 %%SITE_PERL%%/DBIx/Skinny/DBD/Oracle.pm

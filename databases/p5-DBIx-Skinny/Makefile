@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	DBIx-Skinny
-PORTVERSION=	0.0727
+PORTVERSION=	0.0729
 CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -16,8 +16,9 @@ COMMENT=	Perl extension for simple DBI wrapper/ORMapper
 
 RUN_DEPENDS=	\
 	p5-DBI>0:${PORTSDIR}/databases/p5-DBI \
-	p5-Digest-SHA1>0:${PORTSDIR}/security/p5-Digest-SHA1 \
-	p5-UNIVERSAL-require>0:${PORTSDIR}/devel/p5-UNIVERSAL-require
+	p5-UNIVERSAL-require>0:${PORTSDIR}/devel/p5-UNIVERSAL-require \
+	p5-Class-Accessor-Lite>0:${PORTSDIR}/devel/p5-Class-Accessor-Lite \
+	p5-Try-Tiny>0:${PORTSDIR}/lang/p5-Try-Tiny
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
