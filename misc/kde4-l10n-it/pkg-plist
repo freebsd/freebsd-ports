@@ -208,6 +208,7 @@ share/doc/HTML/it/juk/index.docbook
 share/doc/HTML/it/kajongg/common
 share/doc/HTML/it/kajongg/index.cache.bz2
 share/doc/HTML/it/kajongg/index.docbook
+share/doc/HTML/it/kalgebra/commands.docbook
 share/doc/HTML/it/kalgebra/common
 share/doc/HTML/it/kalgebra/index.cache.bz2
 share/doc/HTML/it/kalgebra/index.docbook
@@ -280,9 +281,6 @@ share/doc/HTML/it/kbruch/common
 share/doc/HTML/it/kbruch/index.cache.bz2
 share/doc/HTML/it/kbruch/index.docbook
 share/doc/HTML/it/kbruch/man-kbruch.1.docbook
-share/doc/HTML/it/kbugbuster/common
-share/doc/HTML/it/kbugbuster/index.cache.bz2
-share/doc/HTML/it/kbugbuster/index.docbook
 share/doc/HTML/it/kcachegrind/common
 share/doc/HTML/it/kcachegrind/index.cache.bz2
 share/doc/HTML/it/kcachegrind/index.docbook
@@ -572,6 +570,9 @@ share/doc/HTML/it/khangman/index.cache.bz2
 share/doc/HTML/it/khangman/index.docbook
 share/doc/HTML/it/khangman/man-khangman.6.docbook
 share/doc/HTML/it/khelpcenter/common
+share/doc/HTML/it/khelpcenter/documentationnotfound/common
+share/doc/HTML/it/khelpcenter/documentationnotfound/index.cache.bz2
+share/doc/HTML/it/khelpcenter/documentationnotfound/index.docbook
 share/doc/HTML/it/khelpcenter/glossary/common
 share/doc/HTML/it/khelpcenter/glossary/index.cache.bz2
 share/doc/HTML/it/khelpcenter/glossary/index.docbook
@@ -651,6 +652,9 @@ share/doc/HTML/it/kioslave/man/index.docbook
 share/doc/HTML/it/kioslave/mbox/common
 share/doc/HTML/it/kioslave/mbox/index.cache.bz2
 share/doc/HTML/it/kioslave/mbox/index.docbook
+share/doc/HTML/it/kioslave/nepomuksearch/common
+share/doc/HTML/it/kioslave/nepomuksearch/index.cache.bz2
+share/doc/HTML/it/kioslave/nepomuksearch/index.docbook
 share/doc/HTML/it/kioslave/network/common
 share/doc/HTML/it/kioslave/network/index.cache.bz2
 share/doc/HTML/it/kioslave/network/index.docbook
@@ -791,23 +795,6 @@ share/doc/HTML/it/kommander/widgets.docbook
 share/doc/HTML/it/kompare/common
 share/doc/HTML/it/kompare/index.cache.bz2
 share/doc/HTML/it/kompare/index.docbook
-share/doc/HTML/it/konqueror/basics.docbook
-share/doc/HTML/it/konqueror/bookmarks.docbook
-share/doc/HTML/it/konqueror/browser.docbook
-share/doc/HTML/it/konqueror/commands.docbook
-share/doc/HTML/it/konqueror/common
-share/doc/HTML/it/konqueror/config.docbook
-share/doc/HTML/it/konqueror/credits.docbook
-share/doc/HTML/it/konqueror/faq.docbook
-share/doc/HTML/it/konqueror/filemanager.docbook
-share/doc/HTML/it/konqueror/index.cache.bz2
-share/doc/HTML/it/konqueror/index.docbook
-share/doc/HTML/it/konqueror/introduction.docbook
-share/doc/HTML/it/konqueror/man-kbookmarkmerger.1.docbook
-share/doc/HTML/it/konqueror/path-complete.docbook
-share/doc/HTML/it/konqueror/plugins.docbook
-share/doc/HTML/it/konqueror/save-settings.docbook
-share/doc/HTML/it/konqueror/sidebar.docbook
 share/doc/HTML/it/konquest/common
 share/doc/HTML/it/konquest/index.cache.bz2
 share/doc/HTML/it/konquest/index.docbook
@@ -1031,6 +1018,9 @@ share/doc/HTML/it/onlinehelp/index.docbook
 share/doc/HTML/it/palapeli/common
 share/doc/HTML/it/palapeli/index.cache.bz2
 share/doc/HTML/it/palapeli/index.docbook
+share/doc/HTML/it/parley/common
+share/doc/HTML/it/parley/index.cache.bz2
+share/doc/HTML/it/parley/index.docbook
 share/doc/HTML/it/plasma-desktop/common
 share/doc/HTML/it/plasma-desktop/index.cache.bz2
 share/doc/HTML/it/plasma-desktop/index.docbook
@@ -1661,6 +1651,7 @@ share/locale/it/entry.desktop
 @dirrm share/doc/HTML/it/rocs
 @dirrm share/doc/HTML/it/printer-applet
 @dirrm share/doc/HTML/it/plasma-desktop
+@dirrm share/doc/HTML/it/parley
 @dirrm share/doc/HTML/it/palapeli
 @dirrm share/doc/HTML/it/onlinehelp
 @dirrm share/doc/HTML/it/okular
@@ -1699,7 +1690,6 @@ share/locale/it/entry.desktop
 @dirrm share/doc/HTML/it/kopete
 @dirrm share/doc/HTML/it/konsole
 @dirrm share/doc/HTML/it/konquest
-@dirrm share/doc/HTML/it/konqueror
 @dirrm share/doc/HTML/it/kompare
 @dirrm share/doc/HTML/it/kommander
 @dirrm share/doc/HTML/it/kolourpaint
@@ -1736,6 +1726,7 @@ share/locale/it/entry.desktop
 @dirrm share/doc/HTML/it/kioslave/nntp
 @dirrm share/doc/HTML/it/kioslave/nfs
 @dirrm share/doc/HTML/it/kioslave/network
+@dirrm share/doc/HTML/it/kioslave/nepomuksearch
 @dirrm share/doc/HTML/it/kioslave/mbox
 @dirrm share/doc/HTML/it/kioslave/man
 @dirrm share/doc/HTML/it/kioslave/mailto
@@ -1762,6 +1753,7 @@ share/locale/it/entry.desktop
 @dirrm share/doc/HTML/it/kigo
 @dirrm share/doc/HTML/it/kig
 @dirrm share/doc/HTML/it/khelpcenter/glossary
+@dirrm share/doc/HTML/it/khelpcenter/documentationnotfound
 @dirrm share/doc/HTML/it/khelpcenter
 @dirrm share/doc/HTML/it/khangman
 @dirrm share/doc/HTML/it/kgpg
@@ -1856,7 +1848,6 @@ share/locale/it/entry.desktop
 @dirrm share/doc/HTML/it/kcharselect
 @dirrm share/doc/HTML/it/kcalc
 @dirrm share/doc/HTML/it/kcachegrind
-@dirrm share/doc/HTML/it/kbugbuster
 @dirrm share/doc/HTML/it/kbruch
 @dirrm share/doc/HTML/it/kbreakout
 @dirrm share/doc/HTML/it/kbounce

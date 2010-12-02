@@ -53,7 +53,9 @@ USE_GETTEXT=	yes
 USE_ICONV=	yes
 MAKE_JOBS_SAFE=	yes
 
-MAN1=		plasmaengineexplorer.1
+MAN1=		plasmaengineexplorer.1 \
+		plasmapkg.1 \
+		plasmoidviewer.1
 
 CONFLICTS=	kde4-windeco-aurorae-* kdebase-runtime-4.4.*
 

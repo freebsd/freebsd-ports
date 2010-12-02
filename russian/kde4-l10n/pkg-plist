@@ -1,4 +1,78 @@
 share/apps/katepart/syntax/logohighlightstyle.ru.xml
+share/apps/klettres/ru/sounds.xml
+share/apps/ktuberling/sounds/ru.soundtheme
+share/apps/ktuberling/sounds/ru/ball.ogg
+share/apps/ktuberling/sounds/ru/bow.ogg
+share/apps/ktuberling/sounds/ru/coat.ogg
+share/apps/ktuberling/sounds/ru/ear.ogg
+share/apps/ktuberling/sounds/ru/earring.ogg
+share/apps/ktuberling/sounds/ru/egypt_arch.ogg
+share/apps/ktuberling/sounds/ru/egypt_birds.ogg
+share/apps/ktuberling/sounds/ru/egypt_boy.ogg
+share/apps/ktuberling/sounds/ru/egypt_bridge.ogg
+share/apps/ktuberling/sounds/ru/egypt_camel.ogg
+share/apps/ktuberling/sounds/ru/egypt_cart.ogg
+share/apps/ktuberling/sounds/ru/egypt_column.ogg
+share/apps/ktuberling/sounds/ru/egypt_donkey.ogg
+share/apps/ktuberling/sounds/ru/egypt_girl.ogg
+share/apps/ktuberling/sounds/ru/egypt_grass.ogg
+share/apps/ktuberling/sounds/ru/egypt_man.ogg
+share/apps/ktuberling/sounds/ru/egypt_oasis.ogg
+share/apps/ktuberling/sounds/ru/egypt_palmtree.ogg
+share/apps/ktuberling/sounds/ru/egypt_pyramid.ogg
+share/apps/ktuberling/sounds/ru/egypt_road.ogg
+share/apps/ktuberling/sounds/ru/egypt_sphynx.ogg
+share/apps/ktuberling/sounds/ru/egypt_well.ogg
+share/apps/ktuberling/sounds/ru/egypt_woman.ogg
+share/apps/ktuberling/sounds/ru/eye.ogg
+share/apps/ktuberling/sounds/ru/eyebrow.ogg
+share/apps/ktuberling/sounds/ru/flowers.ogg
+share/apps/ktuberling/sounds/ru/hair.ogg
+share/apps/ktuberling/sounds/ru/hat.ogg
+share/apps/ktuberling/sounds/ru/moon_alien.ogg
+share/apps/ktuberling/sounds/ru/moon_astronaut.ogg
+share/apps/ktuberling/sounds/ru/moon_earth.ogg
+share/apps/ktuberling/sounds/ru/moon_fallingstar.ogg
+share/apps/ktuberling/sounds/ru/moon_hotel.ogg
+share/apps/ktuberling/sounds/ru/moon_monster.ogg
+share/apps/ktuberling/sounds/ru/moon_moonwalker.ogg
+share/apps/ktuberling/sounds/ru/moon_planet.ogg
+share/apps/ktuberling/sounds/ru/moon_radar.ogg
+share/apps/ktuberling/sounds/ru/moon_rocket.ogg
+share/apps/ktuberling/sounds/ru/moon_satellite.ogg
+share/apps/ktuberling/sounds/ru/moon_sign.ogg
+share/apps/ktuberling/sounds/ru/moon_star.ogg
+share/apps/ktuberling/sounds/ru/moon_ufo.ogg
+share/apps/ktuberling/sounds/ru/moustache.ogg
+share/apps/ktuberling/sounds/ru/mouth.ogg
+share/apps/ktuberling/sounds/ru/nose.ogg
+share/apps/ktuberling/sounds/ru/pizzeria_anchovy.ogg
+share/apps/ktuberling/sounds/ru/pizzeria_bacon.ogg
+share/apps/ktuberling/sounds/ru/pizzeria_broccolli.ogg
+share/apps/ktuberling/sounds/ru/pizzeria_cheese.ogg
+share/apps/ktuberling/sounds/ru/pizzeria_cucumber.ogg
+share/apps/ktuberling/sounds/ru/pizzeria_mushroom.ogg
+share/apps/ktuberling/sounds/ru/pizzeria_olive.ogg
+share/apps/ktuberling/sounds/ru/pizzeria_onion.ogg
+share/apps/ktuberling/sounds/ru/pizzeria_oregano.ogg
+share/apps/ktuberling/sounds/ru/pizzeria_pepper.ogg
+share/apps/ktuberling/sounds/ru/pizzeria_pepperoni.ogg
+share/apps/ktuberling/sounds/ru/pizzeria_pineapple.ogg
+share/apps/ktuberling/sounds/ru/pizzeria_salami.ogg
+share/apps/ktuberling/sounds/ru/pizzeria_tomato.ogg
+share/apps/ktuberling/sounds/ru/shoe.ogg
+share/apps/ktuberling/sounds/ru/shorts.ogg
+share/apps/ktuberling/sounds/ru/skirt.ogg
+share/apps/ktuberling/sounds/ru/spectacles.ogg
+share/apps/ktuberling/sounds/ru/stick.ogg
+share/apps/ktuberling/sounds/ru/sunglasses.ogg
+share/apps/ktuberling/sounds/ru/tie.ogg
+share/apps/ktuberling/sounds/ru/tv_bicycle.ogg
+share/apps/ktuberling/sounds/ru/tv_car.ogg
+share/apps/ktuberling/sounds/ru/tv_cyclist.ogg
+share/apps/ktuberling/sounds/ru/tv_train.ogg
+share/apps/ktuberling/sounds/ru/tv_tree.ogg
+share/apps/ktuberling/sounds/ru/umbrella.ogg
 share/apps/kturtle/data/logokeywords.ru.xml
 share/apps/kturtle/examples/ru/arrow.logo
 share/apps/kturtle/examples/ru/curly.logo
@@ -71,9 +145,6 @@ share/doc/HTML/ru/kblackbox/index.docbook
 share/doc/HTML/ru/kbounce/common
 share/doc/HTML/ru/kbounce/index.cache.bz2
 share/doc/HTML/ru/kbounce/index.docbook
-share/doc/HTML/ru/kbugbuster/common
-share/doc/HTML/ru/kbugbuster/index.cache.bz2
-share/doc/HTML/ru/kbugbuster/index.docbook
 share/doc/HTML/ru/kcachegrind/common
 share/doc/HTML/ru/kcachegrind/index.cache.bz2
 share/doc/HTML/ru/kcachegrind/index.docbook
@@ -190,8 +261,24 @@ share/doc/HTML/ru/kgeography/common
 share/doc/HTML/ru/kgeography/index.cache.bz2
 share/doc/HTML/ru/kgeography/index.docbook
 share/doc/HTML/ru/kget/common
+share/doc/HTML/ru/kget/file.png
+share/doc/HTML/ru/kget/import_link.png
 share/doc/HTML/ru/kget/index.cache.bz2
 share/doc/HTML/ru/kget/index.docbook
+share/doc/HTML/ru/kget/kget_Advanced.png
+share/doc/HTML/ru/kget/kget_Appearance.png
+share/doc/HTML/ru/kget/kget_Network.png
+share/doc/HTML/ru/kget/kget_Web_Interface.png
+share/doc/HTML/ru/kget/kget_drop_target.png
+share/doc/HTML/ru/kget/kget_group.png
+share/doc/HTML/ru/kget/kget_groups.png
+share/doc/HTML/ru/kget/kget_plugins.png
+share/doc/HTML/ru/kget/kget_transfer_hostory.png
+share/doc/HTML/ru/kget/kget_verification.png
+share/doc/HTML/ru/kget/metalink0.png
+share/doc/HTML/ru/kget/metalink1.png
+share/doc/HTML/ru/kget/metalink2.png
+share/doc/HTML/ru/kget/metalink3.png
 share/doc/HTML/ru/khelpcenter/common
 share/doc/HTML/ru/khelpcenter/documentationnotfound/common
 share/doc/HTML/ru/khelpcenter/documentationnotfound/index.cache.bz2
@@ -323,9 +410,21 @@ share/doc/HTML/ru/knetattach/index.docbook
 share/doc/HTML/ru/kolf/common
 share/doc/HTML/ru/kolf/index.cache.bz2
 share/doc/HTML/ru/kolf/index.docbook
+share/doc/HTML/ru/kolourpaint/KolourPaint.png
 share/doc/HTML/ru/kolourpaint/common
+share/doc/HTML/ru/kolourpaint/image_balance.png
+share/doc/HTML/ru/kolourpaint/image_emboss.png
+share/doc/HTML/ru/kolourpaint/image_flatten.png
+share/doc/HTML/ru/kolourpaint/image_flip.png
+share/doc/HTML/ru/kolourpaint/image_invert.png
+share/doc/HTML/ru/kolourpaint/image_reduce_colors.png
+share/doc/HTML/ru/kolourpaint/image_resize_scale.png
+share/doc/HTML/ru/kolourpaint/image_rotate.png
+share/doc/HTML/ru/kolourpaint/image_skew.png
+share/doc/HTML/ru/kolourpaint/image_soften_sharpen.png
 share/doc/HTML/ru/kolourpaint/index.cache.bz2
 share/doc/HTML/ru/kolourpaint/index.docbook
+share/doc/HTML/ru/kolourpaint/view_thumbnails.png
 share/doc/HTML/ru/kompare/common
 share/doc/HTML/ru/kompare/index.cache.bz2
 share/doc/HTML/ru/kompare/index.docbook
@@ -471,6 +570,9 @@ share/doc/HTML/ru/kstars/tools.docbook
 share/doc/HTML/ru/kstars/utime.docbook
 share/doc/HTML/ru/kstars/wut.docbook
 share/doc/HTML/ru/kstars/zenith.docbook
+share/doc/HTML/ru/ksudoku/common
+share/doc/HTML/ru/ksudoku/index.cache.bz2
+share/doc/HTML/ru/ksudoku/index.docbook
 share/doc/HTML/ru/ksysguard/common
 share/doc/HTML/ru/ksysguard/index.cache.bz2
 share/doc/HTML/ru/ksysguard/index.docbook
@@ -513,6 +615,9 @@ share/doc/HTML/ru/lokalize/index.docbook
 share/doc/HTML/ru/lskat/common
 share/doc/HTML/ru/lskat/index.cache.bz2
 share/doc/HTML/ru/lskat/index.docbook
+share/doc/HTML/ru/palapeli/common
+share/doc/HTML/ru/palapeli/index.cache.bz2
+share/doc/HTML/ru/palapeli/index.docbook
 share/doc/HTML/ru/sonnet/common
 share/doc/HTML/ru/sonnet/index.cache.bz2
 share/doc/HTML/ru/sonnet/index.docbook
@@ -1001,6 +1106,7 @@ share/locale/ru/LC_MESSAGES/plasma_applet_unitconverter.mo
 share/locale/ru/LC_MESSAGES/plasma_applet_weather.mo
 share/locale/ru/LC_MESSAGES/plasma_applet_weatherstation.mo
 share/locale/ru/LC_MESSAGES/plasma_applet_webbrowser.mo
+share/locale/ru/LC_MESSAGES/plasma_applet_webslice.mo
 share/locale/ru/LC_MESSAGES/plasma_applet_windowlist.mo
 share/locale/ru/LC_MESSAGES/plasma_appletscriptengine_dashboard.mo
 share/locale/ru/LC_MESSAGES/plasma_appletscriptengine_qedjescripts.mo
@@ -1097,6 +1203,7 @@ share/locale/ru/entry.desktop
 @dirrm share/locale/ru/LC_SCRIPTS/kdelibs4
 @dirrm share/locale/ru/LC_SCRIPTS
 @dirrm share/doc/HTML/ru/sonnet
+@dirrm share/doc/HTML/ru/palapeli
 @dirrm share/doc/HTML/ru/lskat
 @dirrm share/doc/HTML/ru/lokalize
 @dirrm share/doc/HTML/ru/kwrite
@@ -1109,6 +1216,7 @@ share/locale/ru/entry.desktop
 @dirrm share/doc/HTML/ru/ktimer
 @dirrm share/doc/HTML/ru/kteatime
 @dirrm share/doc/HTML/ru/ksysguard
+@dirrm share/doc/HTML/ru/ksudoku
 @dirrm share/doc/HTML/ru/kstars
 @dirrm share/doc/HTML/ru/kspaceduel
 @dirrm share/doc/HTML/ru/ksnapshot
@@ -1203,7 +1311,6 @@ share/locale/ru/entry.desktop
 @dirrm share/doc/HTML/ru/kcharselect
 @dirrm share/doc/HTML/ru/kcalc
 @dirrm share/doc/HTML/ru/kcachegrind
-@dirrm share/doc/HTML/ru/kbugbuster
 @dirrm share/doc/HTML/ru/kbounce
 @dirrm share/doc/HTML/ru/kblackbox
 @dirrm share/doc/HTML/ru/kbattleship
@@ -1226,6 +1333,11 @@ share/locale/ru/entry.desktop
 @dirrm share/apps/kturtle/examples
 @dirrm share/apps/kturtle/data
 @dirrm share/apps/kturtle
+@dirrm share/apps/ktuberling/sounds/ru
+@dirrm share/apps/ktuberling/sounds
+@dirrm share/apps/ktuberling
+@dirrm share/apps/klettres/ru
+@dirrm share/apps/klettres
 @dirrmtry man/ru/man6
 @dirrmtry man/ru/man1
 @dirrmtry man/ru

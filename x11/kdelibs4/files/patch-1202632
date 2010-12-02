@@ -1,0 +1,37 @@
+--- ./kdoctools/customization/el/user.entities	2010/06/27 18:59:06	1143427
++++ ./kdoctools/customization/el/user.entities	2010/12/01 17:35:40	1202632
+@@ -6,3 +6,34 @@
+      names (which if they occur will cost you a _lot_ of time)
+  -->
+ 
++<!ENTITY Alt	"<keycap>Alt</keycap>">
++<!ENTITY Backspace	"<keycap>Backspace</keycap>">
++<!ENTITY cdrom	'<hardware>συσκευή CD-ROM</hardware>'>
++<!ENTITY Ctrl	"<keycap>Ctrl</keycap>">
++<!ENTITY dpi	'<acronym>dpi</acronym>'>
++<!ENTITY eg     "<abbrev>π.χ.</abbrev>">
++<!ENTITY Enter	"<keycap>Enter</keycap>">
++<!ENTITY Esc	"<keycap>Esc</keycap>">
++<!ENTITY etc    "<abbrev>κλπ.</abbrev>">
++<!ENTITY FAQ	'<acronym>FAQ</acronym>'>
++<!ENTITY ie     "<abbrev>i.e.</abbrev>">
++<!ENTITY infocenter	"<application>Κέντρο πληροφοριών</application>">
++<!ENTITY kcontrolcenter	"<application>Κέντρο ελέγχου του &kde;</application>">
++<!ENTITY kicon	"<guiicon>
++<inlinemediaobject>
++ <objectinfo><title>&kde;'s K-icon</title></objectinfo>
++ <imageobject><imagedata fileref='common/kmenu.png' format='PNG'/></imageobject>
++ <textobject><phrase>K</phrase></textobject>
++</inlinemediaobject>
++</guiicon> icon"><!-- if image is localised, then entityref should be used 
++                      instead of fileref -->
++<!ENTITY kmenu  "<guimenu>K</guimenu> menu">
++<!ENTITY LMB    "<mousebutton>αριστερό</mousebutton> κλικ ποντικιού">
++<!ENTITY MMB    "<mousebutton>μεσαίο</mousebutton> κλικ ποντικιού">
++<!ENTITY OS	"λειτουργικό σύστημα"><!-- <acronym>OS</acronym>-->
++<!ENTITY partman "<application>Διαχειριστής κατατμήσεων του KDE</application>">
++<!ENTITY RMB    "<mousebutton>δεξί</mousebutton> κλικ ποντικιού">
++<!ENTITY Shift	"<keycap>Shift</keycap>">
++<!ENTITY systemsettings	"<application>Ρυθμίσεις συστήματος</application>">
++<!ENTITY systemtray "<application>πλαίσιο συστήματος</application>">
++<!ENTITY Tab	"<keycap>Tab</keycap>">

@@ -246,9 +246,6 @@ share/doc/HTML/da/common/fdl-translated.html
 share/doc/HTML/da/common/gpl-translated.html
 share/doc/HTML/da/common/kde-localised.css
 share/doc/HTML/da/common/lgpl-translated.html
-share/doc/HTML/da/kbugbuster/common
-share/doc/HTML/da/kbugbuster/index.cache.bz2
-share/doc/HTML/da/kbugbuster/index.docbook
 share/doc/HTML/da/kdesu/common
 share/doc/HTML/da/kdesu/index.cache.bz2
 share/doc/HTML/da/kdesu/index.docbook
@@ -1011,7 +1008,6 @@ share/locale/da/entry.desktop
 @dirrm share/doc/HTML/da/khelpcenter
 @dirrm share/doc/HTML/da/kfilereplace
 @dirrm share/doc/HTML/da/kdesu
-@dirrm share/doc/HTML/da/kbugbuster
 @dirrm share/doc/HTML/da/common
 @dirrm share/apps/kvtml/da
 @dirrm share/apps/kvtml

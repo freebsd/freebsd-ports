@@ -230,6 +230,8 @@ share/apps/kconf_update/kopete-pluginloader.pl
 share/apps/kconf_update/kopete-pluginloader.upd
 share/apps/kconf_update/kopete-pluginloader2.sh
 share/apps/kconf_update/kopete-pluginloader2.upd
+share/apps/kconf_update/kopete-update_icq_server.pl
+share/apps/kconf_update/kopete-update_icq_server.upd
 share/apps/kconf_update/kopete-update_yahoo_server.pl
 share/apps/kconf_update/kopete-update_yahoo_server.upd
 share/apps/kget/content_fetch_scripts/youtubedl/kget_youtubedl.py

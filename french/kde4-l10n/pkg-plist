@@ -214,9 +214,6 @@ share/doc/HTML/fr/kbruch/index.docbook
 share/doc/HTML/fr/kbruch/man-kbruch.1.docbook
 share/doc/HTML/fr/kbruch/reduced.png
 share/doc/HTML/fr/kbruch/settings.png
-share/doc/HTML/fr/kbugbuster/common
-share/doc/HTML/fr/kbugbuster/index.cache.bz2
-share/doc/HTML/fr/kbugbuster/index.docbook
 share/doc/HTML/fr/kcachegrind/common
 share/doc/HTML/fr/kcachegrind/index.cache.bz2
 share/doc/HTML/fr/kcachegrind/index.docbook
@@ -285,6 +282,9 @@ share/doc/HTML/fr/kcontrol/fontinst/index.docbook
 share/doc/HTML/fr/kcontrol/fonts/common
 share/doc/HTML/fr/kcontrol/fonts/index.cache.bz2
 share/doc/HTML/fr/kcontrol/fonts/index.docbook
+share/doc/HTML/fr/kcontrol/history/common
+share/doc/HTML/fr/kcontrol/history/index.cache.bz2
+share/doc/HTML/fr/kcontrol/history/index.docbook
 share/doc/HTML/fr/kcontrol/icons/common
 share/doc/HTML/fr/kcontrol/icons/index.cache.bz2
 share/doc/HTML/fr/kcontrol/icons/index.docbook
@@ -393,6 +393,9 @@ share/doc/HTML/fr/kcontrol/smb/index.docbook
 share/doc/HTML/fr/kcontrol/solid-actions/common
 share/doc/HTML/fr/kcontrol/solid-actions/index.cache.bz2
 share/doc/HTML/fr/kcontrol/solid-actions/index.docbook
+share/doc/HTML/fr/kcontrol/solid-device-automounter/common
+share/doc/HTML/fr/kcontrol/solid-device-automounter/index.cache.bz2
+share/doc/HTML/fr/kcontrol/solid-device-automounter/index.docbook
 share/doc/HTML/fr/kcontrol/solid-hardware/common
 share/doc/HTML/fr/kcontrol/solid-hardware/index.cache.bz2
 share/doc/HTML/fr/kcontrol/solid-hardware/index.docbook
@@ -1063,6 +1066,9 @@ share/doc/HTML/fr/kuser/kuser.png
 share/doc/HTML/fr/kwallet/common
 share/doc/HTML/fr/kwallet/index.cache.bz2
 share/doc/HTML/fr/kwallet/index.docbook
+share/doc/HTML/fr/kwordquiz/common
+share/doc/HTML/fr/kwordquiz/index.cache.bz2
+share/doc/HTML/fr/kwordquiz/index.docbook
 share/doc/HTML/fr/kwrite/common
 share/doc/HTML/fr/kwrite/index.cache.bz2
 share/doc/HTML/fr/kwrite/index.docbook
@@ -1713,6 +1719,7 @@ share/locale/fr/entry.desktop
 @dirrm share/doc/HTML/fr/lskat
 @dirrm share/doc/HTML/fr/lokalize
 @dirrm share/doc/HTML/fr/kwrite
+@dirrm share/doc/HTML/fr/kwordquiz
 @dirrm share/doc/HTML/fr/kwallet
 @dirrm share/doc/HTML/fr/kuser
 @dirrm share/doc/HTML/fr/kubrick
@@ -1823,6 +1830,7 @@ share/locale/fr/entry.desktop
 @dirrm share/doc/HTML/fr/kcontrol/splashscreen
 @dirrm share/doc/HTML/fr/kcontrol/spellchecking
 @dirrm share/doc/HTML/fr/kcontrol/solid-hardware
+@dirrm share/doc/HTML/fr/kcontrol/solid-device-automounter
 @dirrm share/doc/HTML/fr/kcontrol/solid-actions
 @dirrm share/doc/HTML/fr/kcontrol/smb
 @dirrm share/doc/HTML/fr/kcontrol/screensaver
@@ -1859,6 +1867,7 @@ share/locale/fr/entry.desktop
 @dirrm share/doc/HTML/fr/kcontrol/kamera
 @dirrm share/doc/HTML/fr/kcontrol/joystick
 @dirrm share/doc/HTML/fr/kcontrol/icons
+@dirrm share/doc/HTML/fr/kcontrol/history
 @dirrm share/doc/HTML/fr/kcontrol/fonts
 @dirrm share/doc/HTML/fr/kcontrol/fontinst
 @dirrm share/doc/HTML/fr/kcontrol/filetypes
@@ -1882,7 +1891,6 @@ share/locale/fr/entry.desktop
 @dirrm share/doc/HTML/fr/kcharselect
 @dirrm share/doc/HTML/fr/kcalc
 @dirrm share/doc/HTML/fr/kcachegrind
-@dirrm share/doc/HTML/fr/kbugbuster
 @dirrm share/doc/HTML/fr/kbruch
 @dirrm share/doc/HTML/fr/kbreakout
 @dirrm share/doc/HTML/fr/kbounce
