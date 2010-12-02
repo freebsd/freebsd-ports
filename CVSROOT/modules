@@ -20131,7 +20131,6 @@ phpua-ut2003                    ports/games/phpua-ut2003
 phpvirtualbox                   ports/www/phpvirtualbox
 phpwebapp                       ports/www/phpwebapp
 phpwebftp                       ports/ftp/phpwebftp
-phpwebgallery                   ports/www/phpwebgallery
 phpwiki                         ports/www/phpwiki
 phpwiki13                       ports/www/phpwiki13
 phrap                           ports/biology/phrap
@@ -20262,6 +20261,7 @@ pire                            ports/devel/pire
 pisg                            ports/irc/pisg
 pitivi                          ports/multimedia/pitivi
 pivot-weblog                    ports/www/pivot-weblog
+piwigo                          ports/www/piwigo
 piwik                           ports/www/piwik
 pixelize                        ports/graphics/pixelize
 pixen                           ports/graphics/pixen
@@ -21011,6 +21011,7 @@ py-django-devel                 ports/www/py-django-devel
 py-django-extensions            ports/www/py-django-extensions
 py-django-keyedcache            ports/www/py-django-keyedcache
 py-django-livesettings          ports/www/py-django-livesettings
+py-django-profiles              ports/www/py-django-profiles
 py-django-registration          ports/www/py-django-registration
 py-django-signals-ahoy          ports/www/py-django-signals-ahoy
 py-django-tagging               ports/www/py-django-tagging
