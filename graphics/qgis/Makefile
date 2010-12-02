@@ -7,6 +7,7 @@
 
 PORTNAME=	qgis
 PORTVERSION=	1.5.0
+PORTREVISION=	1
 CATEGORIES=	graphics geography
 MASTER_SITES=	http://download.osgeo.org/qgis/src/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
@@ -36,7 +37,7 @@ USE_LDCONFIG=	yes
 
 OPTIONS=	GRASS "Enable GRASS support" Off \
 		POSTGIS "Enable PostGIS support" Off \
-		PYTHON "Enable Python (broken with sip-4.10)" On
+		PYTHON "Enable Python (broken with sip-4.11)" Off
 
 .include <bsd.port.pre.mk>
 
@@ -65,6 +66,7 @@ PLIST_SUB+=	PGSQL="@comment "
 .if defined(WITHOUT_PYTHON)
 PLIST_SUB+=	QGIS_PYTHON="@comment "
 .else
+BROKEN=		does not compile with sip-4.11
 PLIST_SUB+=	QGIS_PYTHON=""
 BUILD_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}sip>=4.8.2:${PORTSDIR}/devel/py-sip \
 		${PYTHON_PKGNAMEPREFIX}qt4-gui>=4.5.4:${PORTSDIR}/x11-toolkits/py-qt4-gui \
