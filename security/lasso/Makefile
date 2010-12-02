@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://labs.libre-entreprise.org/frs/download.php/594/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	tom@tomjudge.com
 COMMENT=	Free Liberty Alliance Implementation
 
 RUN_DEPENDS=	xmlsec1:${PORTSDIR}/security/xmlsec1
@@ -23,6 +23,12 @@ USE_GNOME=	gnomehack glib20 libxml2
 USE_LDCONFIG=	yes
 USE_OPENSSL=	yes
 USE_PYTHON_BUILD=	yes
+
+OPTIONS=	PERL	"Enable Perl Bindings"		Off \
+		PHP5	"Enable PHP5 Bindings"		Off \
+		PYTHON	"Enable Python Bindings"	Off
+
+.include <bsd.port.options.mk>
 
 .ifdef(WITH_PERL)
 CONFIGURE_ARGS+=	--enable-perl
