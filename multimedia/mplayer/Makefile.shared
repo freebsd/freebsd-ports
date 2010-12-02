@@ -2,7 +2,7 @@
 # mplayer and mencoder....the variables that we need to set
 # before we include bsd.port.pre.mk
 
-MPLAYER_SNAPSHOT_DATE=	2010-07-17
+MPLAYER_SNAPSHOT_DATE=	2010-11-06
 MPLAYER_PORT_VERSION=	1.0.r${MPLAYER_SNAPSHOT_DATE:S/-//g}
 CATEGORIES?=	multimedia audio
 MASTER_SITES=	http://freebsd.unixfreunde.de/sources/ \
@@ -16,6 +16,8 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	png.6:${PORTSDIR}/graphics/png \
 		freetype.9:${PORTSDIR}/print/freetype2
+
+BUILD_DEPENDS=	${LOCALBASE}/bin/yasm:${PORTSDIR}/devel/yasm
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes

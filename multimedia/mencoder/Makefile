@@ -6,7 +6,7 @@
 
 PORTNAME=	mencoder
 PORTVERSION=	${MPLAYER_PORT_VERSION}
-PORTREVISION=	3
+PORTREVISION=	0
 COMMENT=	Convenient video file and movie encoder
 RESTRICTED=	Port has restricted dependencies
 
@@ -79,6 +79,7 @@ CONFIGURE_ARGS+=	--disable-mplayer \
 			--disable-joystick \
 			--disable-directfb \
 			--disable-ssse3 \
+			--disable-mpg123 \
 			--disable-musepack
 
 ALL_TARGET=	mencoder
@@ -130,10 +131,13 @@ post-patch:
 		'/CFLAGS.*-D_LARGEFILE64_SOURCE/ s/-D_LARGEFILE64_SOURCE/-D_FILE_OFFSET_BITS=64/' \
 		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
 .endif
-	@${REINPLACE_CMD} -e 's|/dev/dvd|${DEFAULT_DVD_DEVICE}|; \
+	@${REINPLACE_CMD} \
+		-e 's|/dev/dvd|${DEFAULT_DVD_DEVICE}|; \
 		s|/dev/cdrom|${DEFAULT_CDROM_DEVICE}|' \
-		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
-	@${REINPLACE_CMD} -e 's!/usr/local!${PREFIX}!' \
+		-e 's|/usr/local|${LOCALBASE}|' \
+		-e 's|-lbz2|/usr/lib/libbz2.so|' \
+		-e 's|-L$$_prefix/lib|-L${LOCALBASE}/lib|' \
+		-e 's|-I$$_prefix/include|-I${LOCALBASE}/include|' \
 		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
 	@${FIND} -E ${WRKSRC} -type f \
 		-iregex ".*(configure|.sh|Makefile)" -print0 | \
@@ -147,11 +151,15 @@ post-patch:
 		's|/usr/\\:local/\\:etc/\\:mplayer|${DATADIR:S/\//\/\\\:/g}|g ; \
 		 s|/dev/\\:(dvd[[:alnum:]]*[[:>:]])|${DEFAULT_DVD_DEVICE:S/dev\//dev\/\\\:/}|g ; \
 		 s|/dev/\\:(cdrom[[:alnum:]]*[[:>:]])|${DEFAULT_CDROM_DEVICE:S/dev\//dev\/\\\:/}|g'
-	@cd ${WRKSRC}/libavcodec && ${LN} -s x86 i386 && ${LN} -s x86 amd64
 
 post-configure:
 	@${REINPLACE_CMD} -e 's#-pthread#${PTHREAD_LIBS}#g' \
 		${WRKSRC}/config.mak
+	@${REINPLACE_CMD} \
+		-e 's#HAVE_FAST_CMOV 1#HAVE_FAST_CMOV 0#g' \
+		-e 's#HAVE_LOG2 1#HAVE_LOG2 0#g' \
+		-e 's#HAVE_LOG2F 1#HAVE_LOG2F 0#g' \
+		${WRKSRC}/config.h
 
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/mencoder ${PREFIX}/bin

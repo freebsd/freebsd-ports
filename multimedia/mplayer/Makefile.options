@@ -103,7 +103,7 @@ CONFIGURE_ARGS+=	--disable-speex
 .endif
 
 .if defined(WITH_LIVEMEDIA)
-RUN_DEPENDS+=		${LOCALBASE}/live/liveMedia/libliveMedia.a:${PORTSDIR}/net/liveMedia
+#RUN_DEPENDS+=		${LOCALBASE}/live/liveMedia/libliveMedia.a:${PORTSDIR}/net/liveMedia
 BUILD_DEPENDS+=		${LOCALBASE}/live/liveMedia/libliveMedia.a:${PORTSDIR}/net/liveMedia
 .else
 CONFIGURE_ARGS+=	--disable-live
@@ -122,8 +122,6 @@ CONFIGURE_ARGS+=	--disable-nas
 .endif
 
 .if defined(WITH_OPENAL)
-#TODO: test this
-#LIB_DEPENDS+=	openal.1:${PORTSDIR}/audio/openal-soft
 USE_OPENAL=	soft
 .else
 CONFIGURE_ARGS+=	--disable-openal
