@@ -9,12 +9,16 @@ PORTNAME=	nexuiz
 PORTVERSION=	2.5.2
 PORTREVISION=	7
 CATEGORIES=	games
-MASTER_SITES=	SF/${PORTNAME}/NexuizRelease/Nexuiz%20${PORTVERSION}
+MASTER_SITES=	SF/${PORTNAME}/NexuizRelease/Nexuiz%20${PORTVERSION} \
+		SF/${PORTNAME}/mappack/nexmappack_r2:mappack
+
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.//g}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	A fast-paced, chaotic, and intense multiplayer first person shooter
+
+LICENSE=	GPLv2
 
 # Package size below is for default set of OPTIONS
 NO_PACKAGE=	Package will be 942MB, set FORCE_PACKAGE if you really want it
@@ -41,7 +45,7 @@ IGNORE=		requires at least one of [SDL_]CLIENT or SERVER options
 .endif
 
 .if !defined(WITHOUT_MAPPACK)
-DISTFILES+=	nexmappack_r2${EXTRACT_SUFX}
+DISTFILES+=	nexmappack_r2${EXTRACT_SUFX}:mappack
 PLIST_SUB+=	MAPPACK=""
 .else
 PLIST_SUB+=	MAPPACK="@comment "
