@@ -13,7 +13,7 @@ MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	Data
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	hideo@lastamericanempire.com
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Container class for currency conversion/formatting
 
 BUILD_DEPENDS=	${SITE_PERL}/Locale/Currency/Format.pm:${PORTSDIR}/finance/p5-Locale-Currency-Format \

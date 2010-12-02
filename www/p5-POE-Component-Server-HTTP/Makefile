@@ -12,7 +12,7 @@ CATEGORIES=	www devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	hideo@lastamericanempire.com
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	POE Component to create HTTP Servers
 
 BUILD_DEPENDS=	${SITE_PERL}/POE.pm:${PORTSDIR}/devel/p5-POE \

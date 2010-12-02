@@ -13,7 +13,7 @@ MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	XML/RHUNDT
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	hideo@lastamericanempire.com
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Meta-Model Driven Object Persistance with Multiple Inheritance
 
 BUILD_DEPENDS=	${SITE_PERL}/SQL/Abstract.pm:${PORTSDIR}/databases/p5-SQL-Abstract \

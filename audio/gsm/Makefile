@@ -16,7 +16,7 @@ MASTER_SITES=	http://user.cs.tu-berlin.de/~jutta/gsm/ \
 		ftp://ftp.gin.cz/pub/mirrors/ftp.digium.com/pub/telephony/gnophone/ \
 		ftp://ftp.ip.pt/.disk1/finkmirrors/distfiles/
 
-MAINTAINER=	hideo@lastamericanempire.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Audio converter and library for converting u-law to gsm encoding
 
 WRKSRC=		${WRKDIR}/gsm-1.0-pl13

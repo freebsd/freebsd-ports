@@ -12,7 +12,7 @@ CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER= hideo@lastamericanempire.com
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Catalyst::View::GraphViz - GraphViz View Class
 
 BUILD_DEPENDS=	${SITE_PERL}/Catalyst/Plugin/SubRequest.pm:${PORTSDIR}/www/p5-Catalyst-Plugin-SubRequest \

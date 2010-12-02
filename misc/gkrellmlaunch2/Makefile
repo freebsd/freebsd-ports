@@ -12,7 +12,7 @@ CATEGORIES=	misc
 MASTER_SITES=	SF
 PKGNAMESUFFIX=	2
 
-MAINTAINER= 	hideo@lastamericanempire.com
+MAINTAINER= 	ports@FreeBSD.org
 COMMENT=	An application launcher plugin for GKrellM2
 
 BUILD_DEPENDS=	${LOCALBASE}/include/gkrellm2/gkrellm.h:${PORTSDIR}/sysutils/gkrellm2

@@ -12,7 +12,7 @@ CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	hideo@lastamericanempire.com
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	DateTime helper functions and objects
 
 BUILD_DEPENDS=	p5-Rose-Object>=0.82:${PORTSDIR}/devel/p5-Rose-Object \

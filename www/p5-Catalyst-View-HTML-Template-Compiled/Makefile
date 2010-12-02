@@ -11,7 +11,7 @@ CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	hideo@lastamericanempire.com
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	HTML::Template::Compiled View Class
 
 BUILD_DEPENDS=	p5-HTML-Template-Compiled>=0.74:${PORTSDIR}/www/p5-HTML-Template-Compiled \

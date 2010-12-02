@@ -12,7 +12,7 @@ PORTREVISION=	3
 CATEGORIES=	news
 MASTER_SITES=	http://www.lottanzb.org/releases/
 
-MAINTAINER=	hideo@lastamericanempire.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A pyGTK usenet frontend for hellanzb
 
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/kiwi:${PORTSDIR}/x11-toolkits/py-kiwi

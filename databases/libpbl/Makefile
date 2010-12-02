@@ -11,7 +11,7 @@ CATEGORIES=	databases
 MASTER_SITES=	http://www.mission-base.com/peter/source/
 DISTNAME=	pbl_${PORTVERSION:S/./_/g}
 
-MAINTAINER=	hideo@lastamericanempire.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Peter Graf's Program Base Library
 
 MAKEFILE=	makefile
