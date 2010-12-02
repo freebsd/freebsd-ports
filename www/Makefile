@@ -197,6 +197,7 @@
     SUBDIR += drush
     SUBDIR += dtse
     SUBDIR += dummyflash
+    SUBDIR += dwoo
     SUBDIR += e107
     SUBDIR += eaccelerator
     SUBDIR += efront
