@@ -33,7 +33,7 @@ OPTIONS=	NTPSNMPD "Build and install ntpsnmpd" OFF \
 		RAWDCF "Enable RAWDCF option" OFF \
 		SSL "Enable SSL" ON
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if defined(WITH_RAWDCF)
 CONFIGURE_ARGS+=	--enable-RAWDCF
@@ -71,4 +71,4 @@ post-install:
 		${CPIO} -pdu -R ${SHAREOWN}:${SHAREGRP} --quiet ${DOCSDIR}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
