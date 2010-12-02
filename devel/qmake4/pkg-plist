@@ -7,15 +7,41 @@ share/qt4/mkspecs/aix-xlc-64/qmake.conf
 share/qt4/mkspecs/aix-xlc-64/qplatformdefs.h
 share/qt4/mkspecs/aix-xlc/qmake.conf
 share/qt4/mkspecs/aix-xlc/qplatformdefs.h
+share/qt4/mkspecs/common/aix/qplatformdefs.h
+share/qt4/mkspecs/common/armcc.conf
+share/qt4/mkspecs/common/c89/qplatformdefs.h
+share/qt4/mkspecs/common/clang.conf
 share/qt4/mkspecs/common/g++.conf
 share/qt4/mkspecs/common/linux.conf
 share/qt4/mkspecs/common/llvm.conf
 share/qt4/mkspecs/common/mac-g++.conf
 share/qt4/mkspecs/common/mac-llvm.conf
 share/qt4/mkspecs/common/mac.conf
+share/qt4/mkspecs/common/posix/qplatformdefs.h
 share/qt4/mkspecs/common/qws.conf
+share/qt4/mkspecs/common/symbian/header-wrappers/AknBitmapAnimation.h
+share/qt4/mkspecs/common/symbian/header-wrappers/AknDoc.h
+share/qt4/mkspecs/common/symbian/header-wrappers/AknFontAccess.h
+share/qt4/mkspecs/common/symbian/header-wrappers/AknInputLanguageInfo.h
+share/qt4/mkspecs/common/symbian/header-wrappers/AknLayoutFont.h
+share/qt4/mkspecs/common/symbian/header-wrappers/AknPopupFader.h
+share/qt4/mkspecs/common/symbian/header-wrappers/AknServerApp.h
+share/qt4/mkspecs/common/symbian/header-wrappers/AknUtils.h
+share/qt4/mkspecs/common/symbian/header-wrappers/AknsBasicBackgroundControlContext.h
+share/qt4/mkspecs/common/symbian/header-wrappers/AknsConstants.h
+share/qt4/mkspecs/common/symbian/header-wrappers/AknsDrawUtils.h
+share/qt4/mkspecs/common/symbian/header-wrappers/AknsItemID.h
+share/qt4/mkspecs/common/symbian/header-wrappers/AknsSkinInstance.h
+share/qt4/mkspecs/common/symbian/header-wrappers/AknsUtils.h
+share/qt4/mkspecs/common/symbian/header-wrappers/ApAccessPointItem.h
+share/qt4/mkspecs/common/symbian/header-wrappers/ApDataHandler.h
+share/qt4/mkspecs/common/symbian/header-wrappers/ApUtils.h
+share/qt4/mkspecs/common/symbian/header-wrappers/CDirectoryLocalizer.h
+share/qt4/mkspecs/common/symbian/header-wrappers/DocumentHandler.h
 share/qt4/mkspecs/common/symbian/qplatformdefs.h
 share/qt4/mkspecs/common/symbian/stl-off/new
+share/qt4/mkspecs/common/symbian/symbian-makefile.conf
+share/qt4/mkspecs/common/symbian/symbian-mmp.conf
 share/qt4/mkspecs/common/symbian/symbian.conf
 share/qt4/mkspecs/common/unix.conf
 share/qt4/mkspecs/common/wince/qmake.conf
@@ -25,7 +51,6 @@ share/qt4/mkspecs/cygwin-g++/qplatformdefs.h
 share/qt4/mkspecs/darwin-g++/qmake.conf
 share/qt4/mkspecs/darwin-g++/qplatformdefs.h
 share/qt4/mkspecs/default
-share/qt4/mkspecs/features/assistant.prf
 share/qt4/mkspecs/features/build_pass.prf
 share/qt4/mkspecs/features/dbusadaptors.prf
 share/qt4/mkspecs/features/dbusinterfaces.prf
@@ -73,16 +98,27 @@ share/qt4/mkspecs/features/symbian/add_mmp_rules.prf
 share/qt4/mkspecs/features/symbian/application_icon.prf
 share/qt4/mkspecs/features/symbian/armcc_warnings.prf
 share/qt4/mkspecs/features/symbian/data_caging_paths.prf
+share/qt4/mkspecs/features/symbian/debug.prf
 share/qt4/mkspecs/features/symbian/def_files.prf
 share/qt4/mkspecs/features/symbian/def_files_disabled.prf
 share/qt4/mkspecs/features/symbian/default_post.prf
 share/qt4/mkspecs/features/symbian/default_pre.prf
+share/qt4/mkspecs/features/symbian/do_not_build_as_thumb.prf
 share/qt4/mkspecs/features/symbian/epocallowdlldata.prf
 share/qt4/mkspecs/features/symbian/moc.prf
+share/qt4/mkspecs/features/symbian/nested_exceptions.prf
+share/qt4/mkspecs/features/symbian/opengl.prf
 share/qt4/mkspecs/features/symbian/platform_paths.prf
 share/qt4/mkspecs/features/symbian/qt.prf
+share/qt4/mkspecs/features/symbian/qt_config.prf
+share/qt4/mkspecs/features/symbian/release.prf
+share/qt4/mkspecs/features/symbian/run_on_phone.prf
+share/qt4/mkspecs/features/symbian/sis_targets.prf
 share/qt4/mkspecs/features/symbian/stl.prf
 share/qt4/mkspecs/features/symbian/stl_off.prf
+share/qt4/mkspecs/features/symbian/symbian_building.prf
+share/qt4/mkspecs/features/symbian/thread.prf
+share/qt4/mkspecs/features/testcase.prf
 share/qt4/mkspecs/features/uic.prf
 share/qt4/mkspecs/features/uitools.prf
 share/qt4/mkspecs/features/unix/bsymbolic_functions.prf
@@ -110,6 +146,7 @@ share/qt4/mkspecs/features/win32/embed_manifest_exe.prf
 share/qt4/mkspecs/features/win32/exceptions.prf
 share/qt4/mkspecs/features/win32/exceptions_off.prf
 share/qt4/mkspecs/features/win32/ltcg.prf
+share/qt4/mkspecs/features/win32/msvc_mp.prf
 share/qt4/mkspecs/features/win32/opengl.prf
 share/qt4/mkspecs/features/win32/openvg.prf
 share/qt4/mkspecs/features/win32/qaxcontainer.prf
@@ -123,14 +160,26 @@ share/qt4/mkspecs/features/win32/thread.prf
 share/qt4/mkspecs/features/win32/thread_off.prf
 share/qt4/mkspecs/features/win32/windows.prf
 share/qt4/mkspecs/features/yacc.prf
+share/qt4/mkspecs/freebsd-clang/qmake.conf
+share/qt4/mkspecs/freebsd-clang/qplatformdefs.h
 share/qt4/mkspecs/freebsd-g++/qmake.conf
 share/qt4/mkspecs/freebsd-g++/qplatformdefs.h
 share/qt4/mkspecs/freebsd-g++34/qmake.conf
 share/qt4/mkspecs/freebsd-g++34/qplatformdefs.h
-share/qt4/mkspecs/freebsd-g++40/qmake.conf
-share/qt4/mkspecs/freebsd-g++40/qplatformdefs.h
+share/qt4/mkspecs/freebsd-g++42/qmake.conf
+share/qt4/mkspecs/freebsd-g++42/qplatformdefs.h
+share/qt4/mkspecs/freebsd-g++43/qmake.conf
+share/qt4/mkspecs/freebsd-g++43/qplatformdefs.h
+share/qt4/mkspecs/freebsd-g++44/qmake.conf
+share/qt4/mkspecs/freebsd-g++44/qplatformdefs.h
+share/qt4/mkspecs/freebsd-g++45/qmake.conf
+share/qt4/mkspecs/freebsd-g++45/qplatformdefs.h
+share/qt4/mkspecs/freebsd-g++46/qmake.conf
+share/qt4/mkspecs/freebsd-g++46/qplatformdefs.h
 share/qt4/mkspecs/freebsd-icc/qmake.conf
 share/qt4/mkspecs/freebsd-icc/qplatformdefs.h
+share/qt4/mkspecs/freebsd-llvm/qmake.conf
+share/qt4/mkspecs/freebsd-llvm/qplatformdefs.h
 share/qt4/mkspecs/hpux-acc-64/qmake.conf
 share/qt4/mkspecs/hpux-acc-64/qplatformdefs.h
 share/qt4/mkspecs/hpux-acc-o64/qmake.conf
@@ -212,6 +261,7 @@ share/qt4/mkspecs/macx-xcode/qmake.conf
 share/qt4/mkspecs/macx-xcode/qplatformdefs.h
 share/qt4/mkspecs/macx-xlc/qmake.conf
 share/qt4/mkspecs/macx-xlc/qplatformdefs.h
+share/qt4/mkspecs/modules/README
 share/qt4/mkspecs/netbsd-g++/qmake.conf
 share/qt4/mkspecs/netbsd-g++/qplatformdefs.h
 share/qt4/mkspecs/openbsd-g++/qmake.conf
@@ -220,6 +270,8 @@ share/qt4/mkspecs/qws/freebsd-generic-g++/qmake.conf
 share/qt4/mkspecs/qws/freebsd-generic-g++/qplatformdefs.h
 share/qt4/mkspecs/qws/linux-arm-g++/qmake.conf
 share/qt4/mkspecs/qws/linux-arm-g++/qplatformdefs.h
+share/qt4/mkspecs/qws/linux-arm-gnueabi-g++/qmake.conf
+share/qt4/mkspecs/qws/linux-arm-gnueabi-g++/qplatformdefs.h
 share/qt4/mkspecs/qws/linux-armv6-g++/qmake.conf
 share/qt4/mkspecs/qws/linux-armv6-g++/qplatformdefs.h
 share/qt4/mkspecs/qws/linux-avr32-g++/qmake.conf
@@ -283,6 +335,12 @@ share/qt4/mkspecs/symbian-sbsv2/flm/qt/qmake_store_build.flm
 share/qt4/mkspecs/symbian-sbsv2/flm/qt/qt.xml
 share/qt4/mkspecs/symbian-sbsv2/qmake.conf
 share/qt4/mkspecs/symbian-sbsv2/qplatformdefs.h
+share/qt4/mkspecs/symbian/linux-armcc/features/default_post.prf
+share/qt4/mkspecs/symbian/linux-armcc/qmake.conf
+share/qt4/mkspecs/symbian/linux-armcc/qplatformdefs.h
+share/qt4/mkspecs/symbian/linux-gcce/features/default_post.prf
+share/qt4/mkspecs/symbian/linux-gcce/qmake.conf
+share/qt4/mkspecs/symbian/linux-gcce/qplatformdefs.h
 share/qt4/mkspecs/tru64-cxx/qmake.conf
 share/qt4/mkspecs/tru64-cxx/qplatformdefs.h
 share/qt4/mkspecs/tru64-g++/qmake.conf
@@ -297,6 +355,8 @@ share/qt4/mkspecs/unsupported/linux-scratchbox2-g++/qmake.conf
 share/qt4/mkspecs/unsupported/linux-scratchbox2-g++/qplatformdefs.h
 share/qt4/mkspecs/unsupported/qnx-g++/qmake.conf
 share/qt4/mkspecs/unsupported/qnx-g++/qplatformdefs.h
+share/qt4/mkspecs/unsupported/qws/qnx-641/qmake.conf
+share/qt4/mkspecs/unsupported/qws/qnx-641/qplatformdefs.h
 share/qt4/mkspecs/unsupported/qws/qnx-generic-g++/qmake.conf
 share/qt4/mkspecs/unsupported/qws/qnx-generic-g++/qplatformdefs.h
 share/qt4/mkspecs/unsupported/qws/qnx-i386-g++/qmake.conf
@@ -311,26 +371,22 @@ share/qt4/mkspecs/unsupported/vxworks-simpentium-dcc/qmake.conf
 share/qt4/mkspecs/unsupported/vxworks-simpentium-dcc/qplatformdefs.h
 share/qt4/mkspecs/unsupported/vxworks-simpentium-g++/qmake.conf
 share/qt4/mkspecs/unsupported/vxworks-simpentium-g++/qplatformdefs.h
+share/qt4/mkspecs/unsupported/win32-g++-cross/qmake.conf
+share/qt4/mkspecs/unsupported/win32-g++-cross/qplatformdefs.h
 share/qt4/mkspecs/win32-borland/qmake.conf
 share/qt4/mkspecs/win32-borland/qplatformdefs.h
 share/qt4/mkspecs/win32-g++/qmake.conf
 share/qt4/mkspecs/win32-g++/qplatformdefs.h
 share/qt4/mkspecs/win32-icc/qmake.conf
 share/qt4/mkspecs/win32-icc/qplatformdefs.h
-share/qt4/mkspecs/win32-msvc.net/qmake.conf
-share/qt4/mkspecs/win32-msvc.net/qplatformdefs.h
-share/qt4/mkspecs/win32-msvc/features/incremental.prf
-share/qt4/mkspecs/win32-msvc/features/incremental_off.prf
-share/qt4/mkspecs/win32-msvc/qmake.conf
-share/qt4/mkspecs/win32-msvc/qplatformdefs.h
-share/qt4/mkspecs/win32-msvc2002/qmake.conf
-share/qt4/mkspecs/win32-msvc2002/qplatformdefs.h
 share/qt4/mkspecs/win32-msvc2003/qmake.conf
 share/qt4/mkspecs/win32-msvc2003/qplatformdefs.h
 share/qt4/mkspecs/win32-msvc2005/qmake.conf
 share/qt4/mkspecs/win32-msvc2005/qplatformdefs.h
 share/qt4/mkspecs/win32-msvc2008/qmake.conf
 share/qt4/mkspecs/win32-msvc2008/qplatformdefs.h
+share/qt4/mkspecs/win32-msvc2010/qmake.conf
+share/qt4/mkspecs/win32-msvc2010/qplatformdefs.h
 share/qt4/mkspecs/wince50standard-armv4i-msvc2005/default_post.prf
 share/qt4/mkspecs/wince50standard-armv4i-msvc2005/qmake.conf
 share/qt4/mkspecs/wince50standard-armv4i-msvc2005/qplatformdefs.h
@@ -413,16 +469,14 @@ share/qt4/mkspecs/wincewm65professional-msvc2008/qplatformdefs.h
 @dirrm share/qt4/mkspecs/wince50standard-mipsii-msvc2005
 @dirrm share/qt4/mkspecs/wince50standard-armv4i-msvc2008
 @dirrm share/qt4/mkspecs/wince50standard-armv4i-msvc2005
+@dirrm share/qt4/mkspecs/win32-msvc2010
 @dirrm share/qt4/mkspecs/win32-msvc2008
 @dirrm share/qt4/mkspecs/win32-msvc2005
 @dirrm share/qt4/mkspecs/win32-msvc2003
-@dirrm share/qt4/mkspecs/win32-msvc2002
-@dirrm share/qt4/mkspecs/win32-msvc/features
-@dirrm share/qt4/mkspecs/win32-msvc.net
-@dirrm share/qt4/mkspecs/win32-msvc
 @dirrm share/qt4/mkspecs/win32-icc
 @dirrm share/qt4/mkspecs/win32-g++
 @dirrm share/qt4/mkspecs/win32-borland
+@dirrm share/qt4/mkspecs/unsupported/win32-g++-cross
 @dirrm share/qt4/mkspecs/unsupported/vxworks-simpentium-g++
 @dirrm share/qt4/mkspecs/unsupported/vxworks-simpentium-dcc
 @dirrm share/qt4/mkspecs/unsupported/vxworks-ppc-g++
@@ -430,6 +484,7 @@ share/qt4/mkspecs/wincewm65professional-msvc2008/qplatformdefs.h
 @dirrm share/qt4/mkspecs/unsupported/qws/qnx-ppc-g++
 @dirrm share/qt4/mkspecs/unsupported/qws/qnx-i386-g++
 @dirrm share/qt4/mkspecs/unsupported/qws/qnx-generic-g++
+@dirrm share/qt4/mkspecs/unsupported/qws/qnx-641
 @dirrm share/qt4/mkspecs/unsupported/qws
 @dirrm share/qt4/mkspecs/unsupported/qnx-g++
 @dirrm share/qt4/mkspecs/unsupported/linux-scratchbox2-g++
@@ -439,10 +494,15 @@ share/qt4/mkspecs/wincewm65professional-msvc2008/qplatformdefs.h
 @dirrm share/qt4/mkspecs/unixware-cc
 @dirrm share/qt4/mkspecs/tru64-g++
 @dirrm share/qt4/mkspecs/tru64-cxx
+@dirrm share/qt4/mkspecs/symbian/linux-gcce/features
+@dirrm share/qt4/mkspecs/symbian/linux-gcce
+@dirrm share/qt4/mkspecs/symbian/linux-armcc/features
+@dirrm share/qt4/mkspecs/symbian/linux-armcc
 @dirrm share/qt4/mkspecs/symbian-sbsv2/flm/qt
 @dirrm share/qt4/mkspecs/symbian-sbsv2/flm
 @dirrm share/qt4/mkspecs/symbian-sbsv2
 @dirrm share/qt4/mkspecs/symbian-abld
+@dirrm share/qt4/mkspecs/symbian
 @dirrm share/qt4/mkspecs/solaris-g++-64
 @dirrm share/qt4/mkspecs/solaris-g++
 @dirrm share/qt4/mkspecs/solaris-cc-stlport
@@ -470,11 +530,13 @@ share/qt4/mkspecs/wincewm65professional-msvc2008/qplatformdefs.h
 @dirrm share/qt4/mkspecs/qws/linux-cellon-g++
 @dirrm share/qt4/mkspecs/qws/linux-avr32-g++
 @dirrm share/qt4/mkspecs/qws/linux-armv6-g++
+@dirrm share/qt4/mkspecs/qws/linux-arm-gnueabi-g++
 @dirrm share/qt4/mkspecs/qws/linux-arm-g++
 @dirrm share/qt4/mkspecs/qws/freebsd-generic-g++
 @dirrm share/qt4/mkspecs/qws
 @dirrm share/qt4/mkspecs/openbsd-g++
 @dirrm share/qt4/mkspecs/netbsd-g++
+@dirrm share/qt4/mkspecs/modules
 @dirrm share/qt4/mkspecs/macx-xlc
 @dirrm share/qt4/mkspecs/macx-xcode
 @dirrm share/qt4/mkspecs/macx-pbuilder
@@ -510,10 +572,16 @@ share/qt4/mkspecs/wincewm65professional-msvc2008/qplatformdefs.h
 @dirrm share/qt4/mkspecs/hpux-acc-o64
 @dirrm share/qt4/mkspecs/hpux-acc-64
 @dirrm share/qt4/mkspecs/hpux-acc
+@dirrm share/qt4/mkspecs/freebsd-llvm
 @dirrm share/qt4/mkspecs/freebsd-icc
-@dirrm share/qt4/mkspecs/freebsd-g++40
+@dirrm share/qt4/mkspecs/freebsd-g++46
+@dirrm share/qt4/mkspecs/freebsd-g++45
+@dirrm share/qt4/mkspecs/freebsd-g++44
+@dirrm share/qt4/mkspecs/freebsd-g++43
+@dirrm share/qt4/mkspecs/freebsd-g++42
 @dirrm share/qt4/mkspecs/freebsd-g++34
 @dirrm share/qt4/mkspecs/freebsd-g++
+@dirrm share/qt4/mkspecs/freebsd-clang
 @dirrm share/qt4/mkspecs/features/win32
 @dirrm share/qt4/mkspecs/features/unix
 @dirrm share/qt4/mkspecs/features/symbian
@@ -523,7 +591,11 @@ share/qt4/mkspecs/wincewm65professional-msvc2008/qplatformdefs.h
 @dirrm share/qt4/mkspecs/cygwin-g++
 @dirrm share/qt4/mkspecs/common/wince
 @dirrm share/qt4/mkspecs/common/symbian/stl-off
+@dirrm share/qt4/mkspecs/common/symbian/header-wrappers
 @dirrm share/qt4/mkspecs/common/symbian
+@dirrm share/qt4/mkspecs/common/posix
+@dirrm share/qt4/mkspecs/common/c89
+@dirrm share/qt4/mkspecs/common/aix
 @dirrm share/qt4/mkspecs/common
 @dirrm share/qt4/mkspecs/aix-xlc-64
 @dirrm share/qt4/mkspecs/aix-xlc

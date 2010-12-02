@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	phonon
-PORTVERSION=	${QT4_VERSION}
+DISTVERSION=	${QT4_VERSION}
 CATEGORIES?=	multimedia
 PKGNAMEPREFIX=	qt4-
 PKGNAMESUFFIX=	-gst
@@ -46,7 +46,7 @@ INSTALL_WRKSRC=	${BUILD_WRKSRC}
 EXTRA_PATCHES=	${.CURDIR}/../../devel/qt4/files/patch-configure
 
 .if !defined(WITH_QT_PHONON)
-IGNORE=		conflicts with multimedia/phonon-gstreamer. You have defined WITH_KDE_PHONON to override Qt4 phonon
+IGNORE=		conflicts with multimedia/phonon-gstreamer. Define WITH_QT_PHONON to install Qt 4 phonon
 .endif
 
 pre-configure:

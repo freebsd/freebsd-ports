@@ -43,14 +43,22 @@ include/qt4/QtWebKit/qwebpluginfactory.h
 include/qt4/QtWebKit/qwebsecurityorigin.h
 include/qt4/QtWebKit/qwebsettings.h
 include/qt4/QtWebKit/qwebview.h
+lib/qt4/imports/QtWebKit/libqmlwebkitplugin.so
+%%DEBUG%%lib/qt4/imports/QtWebKit/libqmlwebkitplugin.so.debug
+lib/qt4/imports/QtWebKit/qmldir
 lib/qt4/libQtWebKit.la
 lib/qt4/libQtWebKit.prl
 lib/qt4/libQtWebKit.so
 lib/qt4/libQtWebKit.so.4
 lib/qt4/libQtWebKit.so.%%SHLIB_SHVER%%
 lib/qt4/libQtWebKit.so.%%SHLIB_VER%%
-@comment %%DEBUG%%lib/qt4/libQtWebKit.so.%%SHLIB_VER%%.debug
 libdata/pkgconfig/QtWebKit.pc
+share/qt4/mkspecs/modules/qt_webkit_version.pri
+@dirrmtry share/qt4/mkspecs/modules
+@dirrmtry share/qt4/mkspecs
+@dirrmtry share/qt4
+@dirrm lib/qt4/imports/QtWebKit
+@dirrmtry lib/qt4/imports
 @dirrmtry lib/qt4
 @dirrm include/qt4/QtWebKit
 @dirrmtry include/qt4/Qt

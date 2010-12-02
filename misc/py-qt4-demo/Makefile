@@ -17,7 +17,7 @@ COMMENT=	Python bindings for the Qt4 toolkit, Qt demo and examples
 
 USE_PYTHON=	yes
 
-OPTIONS=	PYQT4	"Install any missing PyQt4 components" on
+OPTIONS=	PYQT4	"Install any missing PyQt4 components" off
 
 OPTIONSFILE=	${PORT_DBDIR}/py-qt4-${PORTNAME}/options
 EXAMPLESDIR=	${PREFIX}/share/examples/py-qt4
@@ -36,6 +36,7 @@ RUN_DEPENDS+=	${PKGNAMEPREFIX}core>=${PYQT4_VERSION}:${PORTSDIR}/devel/py-qt4-co
 		${PKGNAMEPREFIX}sql>=${PYQT4_VERSION}:${PORTSDIR}/databases/py-qt4-sql \
 		${PKGNAMEPREFIX}svg>=${PYQT4_VERSION}:${PORTSDIR}/graphics/py-qt4-svg \
 		${PKGNAMEPREFIX}test>=${PYQT4_VERSION}:${PORTSDIR}/devel/py-qt4-test \
+		${PKGNAMEPREFIX}declarative>=${PYQT4_VERSION}:${PORTSDIR}/devel/py-qt4-declarative \
 		${PKGNAMEPREFIX}designer>=${PYQT4_VERSION}:${PORTSDIR}/devel/py-qt4-designer \
 		${PKGNAMEPREFIX}designerplugin>=${PYQT4_VERSION}:${PORTSDIR}/devel/py-qt4-designerplugin \
 		${PKGNAMEPREFIX}dbus>=${PYQT4_VERSION}:${PORTSDIR}/devel/py-qt4-dbus \
@@ -43,26 +44,17 @@ RUN_DEPENDS+=	${PKGNAMEPREFIX}core>=${PYQT4_VERSION}:${PORTSDIR}/devel/py-qt4-co
 		${PKGNAMEPREFIX}help>=${PYQT4_VERSION}:${PORTSDIR}/devel/py-qt4-help \
 		${PKGNAMEPREFIX}webkit>=${PYQT4_VERSION}:${PORTSDIR}/www/py-qt4-webkit \
 		${PKGNAMEPREFIX}phonon>=${PYQT4_VERSION}:${PORTSDIR}/multimedia/py-qt4-phonon
-.if !defined(NOPORTDOCS)
-RUN_DEPENDS+=	${PKGNAMEPREFIX}doc>=${PYQT4_VERSION}:${PORTSDIR}/misc/py-qt4-doc
-.endif
 .endif
 
 do-build:
-.if !defined(NOPORTEXAMPLES)
 	cd ${WRKSRC}/examples &&\
 		${PYTHON_CMD} ${PYTHON_LIBDIR}/py_compile.py\
 		`ls */*.py */*/*.py */*/*/*.py`
-.endif
 
 do-install:
-.if !defined(NOPORTEXAMPLES)
 	${RM} -f ${WRKSRC}/examples/designer/plugins/plugins.py.orig
 	${RM} -f ${WRKSRC}/examples/activeqt/webbrowser/webbrowser.py.orig
 	${MKDIR} ${EXAMPLESDIR}
 	cd ${WRKSRC}/examples && ${COPYTREE_SHARE} \* ${EXAMPLESDIR}
-.else
-	@${ECHO} "NOPORTEXAMPLES is set -- installing nothing."
-.endif
 
 .include <bsd.port.mk>

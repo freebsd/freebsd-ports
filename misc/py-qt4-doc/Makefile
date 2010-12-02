@@ -21,7 +21,6 @@ USE_PYTHON=	2.5+
 DOCSDIR=	${PREFIX}/share/doc/py-qt4
 
 do-install:
-.if !defined(NOPORTDOCS)
 	cd ${WRKSRC} &&\
 		${MKDIR} ${DOCSDIR} &&\
 		${INSTALL_DATA} GPL_EXCEPTION.TXT\
@@ -30,9 +29,6 @@ do-install:
 				OPENSOURCE-NOTICE.TXT README THANKS\
 			${DOCSDIR}
 	cd ${WRKSRC}/doc && ${COPYTREE_SHARE} \* ${DOCSDIR}
-.else
-	@${ECHO} "NOPORTDOCS is set -- installing nothing."
-.endif
 
 .include "../../devel/py-sip/files/bsd.pyqt.mk"
 .include <bsd.port.mk>

@@ -8,13 +8,13 @@
 # QT_DIST		- Package being built is part of the Qt distribution.
 #
 # Global switches (add this to /etc/make.conf):
-# WITH_KDE_PHONON	- If set, standalone phonon will be used instead of Qt.
-#				Required for KDE 4.4.0
+# WITH_QT_PHONON	- If set, Qt phonon will be used instead of standalone.
+#				Qt phonon doesn't work with KDE 4.4.
 # QT4_OPTIONS		- A list of options, can be CUPS, NAS and/or QGTKSTYLE.
 #				If set, Qt will be built with support for:
-#				- Common UNIX Printing System (CUPS)
-#				- Network Audio System (NAS)
-#				- Qt style that renders using GTK (QGTKSTYLE)
+#				- Common UNIX Printing System (CUPS);
+#				- Network Audio System (NAS);
+#				- Qt style that renders using GTK (QGTKSTYLE).
 
 .if !defined(_POSTMKINCLUDED) && !defined(Qt_Pre_Include)
 Qt_Include_MAINTAINER=	kde@FreeBSD.org
@@ -37,6 +37,11 @@ DISTNAME=	qt-everywhere-opensource-src-${QT4_VERSION}
 DIST_SUBDIR=	KDE
 #CONFLICTS+=	Currently there are no conflicts \o/
 
+# Let configure handle its well known compilers defined in the mkspecs
+# (i.e. `cc` and `c++` are not supported by configure tests).
+CONFIGURE_ENV+=	CC="" CXX=""
+
+# Keep in sync with devel/qmake4/files/qconfig.cpp
 CONFIGURE_ARGS+=-fast -platform ${QMAKESPEC} \
 		-L${PREFIX}/${QT_LIBDIR_REL} \
 		-qt-gif -system-libjpeg -system-libpng \
@@ -49,14 +54,15 @@ CONFIGURE_ARGS+=-fast -platform ${QMAKESPEC} \
 		-docdir ${PREFIX}/share/doc/qt4 \
 		-headerdir ${PREFIX}/${QT_INCDIR_REL} \
 		-plugindir ${PREFIX}/${QT_PLUGINDIR_REL} \
+		-importdir ${PREFIX}/${QT_LIBDIR_REL}/imports \
 		-datadir ${PREFIX}/share/qt4 \
 		-translationdir ${PREFIX}/share/qt4/translations \
 		-sysconfdir ${PREFIX}/etc/xdg \
 		-examplesdir ${PREFIX}/share/examples/qt4/examples \
 		-demosdir ${PREFIX}/share/examples/qt4/demos
 
-PLIST_SUB+=	SHLIB_VER=${QT4_VERSION} \
-		SHLIB_SHVER=${QT4_VERSION:C/.[0-9]+$//}
+PLIST_SUB+=	SHLIB_VER=${QT4_VERSION:C/-.*//} \
+		SHLIB_SHVER=${QT4_VERSION:R}
 
 .if defined(PACKAGE_BUILDING)
 CONFIGURE_ARGS+=-no-mmx -no-3dnow -no-sse -no-sse2
@@ -67,7 +73,7 @@ CONFIGURE_ARGS+=-no-mmx -no-3dnow -no-sse -no-sse2
 # .endif
 
 .if defined(WANT_QT_DEBUG) || defined(WITH_DEBUG)
-CONFIGURE_ARGS+=-debug
+CONFIGURE_ARGS+=-debug -separate-debug-info
 PLIST_SUB+=	DEBUG=""
 .else
 CONFIGURE_ARGS+=-release -no-separate-debug-info
@@ -95,12 +101,40 @@ MOC?=		${QT_PREFIX}/bin/moc-qt4
 UIC?=		${QT_PREFIX}/bin/uic-qt4
 RCC?=		${QT_PREFIX}/bin/rcc
 QMAKE?=		${QT_PREFIX}/bin/qmake-qt4
-QMAKESPEC?=	${QT_PREFIX}/share/qt4/mkspecs/freebsd-g++
-QMAKEFLAGS+=	QMAKE_CC="${CC}" QMAKE_CXX="${CXX}" QMAKE_LINK_SHLIB="${CXX}" \
-		QMAKE_LINK="${CXX}" QMAKE_CFLAGS="${CFLAGS}" \
-		QMAKE_CXXFLAGS="${CXXFLAGS}" \
+QMAKEFLAGS+=	QMAKE_CC="${CC}" QMAKE_CXX="${CXX}" \
+		QMAKE_LINK="${CXX}" QMAKE_LINK_SHLIB="${CXX}" \
+		QMAKE_LINK_C="${CC}" QMAKE_LINK_C_SHLIB="${CC}" \
+		QMAKE_CFLAGS="${CFLAGS}" QMAKE_CXXFLAGS="${CXXFLAGS}" \
 		QMAKE_CFLAGS_THREAD="${PTHREAD_CFLAGS}" \
 		QMAKE_LFLAGS_THREAD="${PTHREAD_LIBS}"
+
+#
+# Translate `c++` to its real name and select the appropriate mkspec.
+#
+QMAKE_BASE_COMPILER!=	cc --version | head -1 | sed -E 's/.+\(([^)]+)\).+/\1/' | cut -d " " -f 1
+.if ${QMAKE_BASE_COMPILER:L} == "gcc"
+QMAKE_BASE_COMPILER=	g++
+.endif
+.if ${CXX} == "c++"
+# Why CXX instead of CXX:T? Because if you're setting the full path of
+# `c++` you probably want to define QMAKESPEC by hand too.
+QMAKE_COMPILER=	${QMAKE_BASE_COMPILER}
+.elif ${CXX:T} == "clang++"
+QMAKE_COMPILER=	clang
+.elif ${CXX:C/c\+\+/g++/:T} == "llvm-g++"
+QMAKE_COMPILER=	llvm
+.elif ${CXX:T} == "icpc"
+QMAKE_COMPILER=	icc
+.else
+# Handle all the other cases (mainly g++*).
+QMAKE_COMPILER=	${CXX:C/c\+\+/g++/:T}
+.endif
+.if exists(${QT_PREFIX}/share/qt4/mkspecs/freebsd-${QMAKE_COMPILER})
+QMAKESPEC?=	${QT_PREFIX}/share/qt4/mkspecs/freebsd-${QMAKE_COMPILER}
+.else
+# If something went wrong, default to the base configuration.
+QMAKESPEC?=	${QT_PREFIX}/share/qt4/mkspecs/freebsd-${QMAKE_BASE_COMPILER}
+.endif
 
 .if ${OSVERSION} < 700042 && ${ARCH} == "amd64"
 QTCPPFLAGS?=	-fno-gcse
@@ -115,16 +149,19 @@ QTCGFLIBS?=
 # QT4 version
 # Don't forget to update ${PORTSDIR}/devel/qt4/files/patch-configure !
 #
-QT4_VERSION?=		4.6.3
+QT4_VERSION?=		4.7.1
 
 _QT_COMPONENTS_ALL=	accessible assistant assistant-adp assistantclient \
 			clucene codecs-cn codecs-jp codecs-kr codecs-tw corelib \
-			dbus demo designer doc help help-tools gui iconengines imageformats \
-			inputmethods linguist l10n makeqpf moc multimedia network \
-			opengl pixeltool porting phonon phonon-gst qdbusviewer qdoc3 \
-			qmake qt3support qtconfig qtestlib qvfb rcc script scripttools \
-			sql sql-ibase sql-mysql sql-odbc sql-pgsql sql-sqlite2 sql-sqlite3 \
-			svg uic uic3 webkit xml xmlpatterns xmlpatterns-tool
+			dbus declarative demo designer doc \
+			graphicssystems-opengl gui help help-tools \
+			iconengines imageformats inputmethods \
+			linguist l10n makeqpf moc multimedia network opengl \
+			pixeltool porting phonon phonon-gst \
+			qdbusviewer qdoc3 qmake qt3support qtconfig qtestlib \
+			qvfb rcc script scripttools sql sql-ibase sql-mysql \
+			sql-odbc sql-pgsql sql-sqlite2 sql-sqlite3 svg uic uic3 \
+			webkit xml xmlpatterns xmlpatterns-tool
 
 accessible_PORT=	accessibility/qt4-accessible
 accessible_DEPENDS=	${QT_PLUGINDIR}/accessible/libqtaccessiblewidgets.so
@@ -159,6 +196,9 @@ corelib_DEPENDS=	${QT_LIBDIR}/libQtCore.so
 dbus_PORT=	devel/dbus-qt4
 dbus_DEPENDS=	${QT_LIBDIR}/libQtDBus.so
 
+declarative_PORT=	devel/qt4-declarative
+declarative_DEPENDS=	${QT_LIBDIR}/libQtDeclarative.so
+
 demo_PORT=	misc/qt4-qtdemo
 demo_DEPENDS=	${QT_PREFIX}/bin/qtdemo
 
@@ -167,6 +207,9 @@ designer_DEPENDS=	${QT_PREFIX}/bin/designer-qt4
 
 doc_PORT=	misc/qt4-doc
 doc_DEPENDS=	qt4-doc>=4
+
+graphicssystems-opengl_PORT=	x11/qt4-graphicssystems-opengl
+graphicssystems-opengl_DEPENDS=	${QT_PLUGINDIR}/graphicssystems/libqglgraphicssystem.so
 
 gui_PORT=	x11-toolkits/qt4-gui
 gui_DEPENDS=	${QT_LIBDIR}/libQtGui.so

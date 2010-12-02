@@ -146,6 +146,7 @@
 %%SIP%%share/py-sip/QtGui/qstackedlayout.sip
 %%SIP%%share/py-sip/QtGui/qstackedwidget.sip
 %%SIP%%share/py-sip/QtGui/qstandarditemmodel.sip
+%%SIP%%share/py-sip/QtGui/qstatictext.sip
 %%SIP%%share/py-sip/QtGui/qstatusbar.sip
 %%SIP%%share/py-sip/QtGui/qstringlistmodel.sip
 %%SIP%%share/py-sip/QtGui/qstyle.sip

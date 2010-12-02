@@ -2861,6 +2861,7 @@
     SUBDIR += py-qt4-assistant
     SUBDIR += py-qt4-core
     SUBDIR += py-qt4-dbus
+    SUBDIR += py-qt4-declarative
     SUBDIR += py-qt4-designer
     SUBDIR += py-qt4-designerplugin
     SUBDIR += py-qt4-help
@@ -2972,6 +2973,7 @@
     SUBDIR += qt4-assistant
     SUBDIR += qt4-assistant-adp
     SUBDIR += qt4-corelib
+    SUBDIR += qt4-declarative
     SUBDIR += qt4-designer
     SUBDIR += qt4-help
     SUBDIR += qt4-help-tools

@@ -1,6 +1,6 @@
---- configure.orig	2009-09-21 14:25:12.859259834 +0200
-+++ configure	2009-09-21 14:47:16.335016833 +0200
-@@ -5886,7 +5886,6 @@
+--- configure.orig	2010-05-10 13:47:34.842989306 +0200
++++ configure	2010-05-10 13:51:54.767296452 +0200
+@@ -6291,7 +6291,6 @@
          QT_CONFIG="$QT_CONFIG phonon-backend"
      fi
  else
@@ -8,7 +8,7 @@
  fi
  
  # disable accessibility
-@@ -5925,7 +5924,6 @@
+@@ -6343,7 +6342,6 @@
  
  # enable opengl
  if [ "$CFG_OPENGL" = "no" ]; then
@@ -16,7 +16,7 @@
  else
      QT_CONFIG="$QT_CONFIG opengl"
  fi
-@@ -6355,7 +6353,6 @@
+@@ -6812,7 +6810,6 @@
  if [ "$CFG_XMLPATTERNS" = "yes" ]; then
      QT_CONFIG="$QT_CONFIG xmlpatterns"
  else
@@ -24,10 +24,10 @@
  fi
  
  if [ "$CFG_MULTIMEDIA" = "no" ]; then
-@@ -6864,10 +6861,8 @@
- [ "$CFG_JPEG" != "yes" ]     && QCONFIG_FLAGS="$QCONFIG_FLAGS QT_NO_IMAGEFORMAT_JPEG"
+@@ -7364,10 +7361,8 @@
  [ "$CFG_MNG" != "yes" ]      && QCONFIG_FLAGS="$QCONFIG_FLAGS QT_NO_IMAGEFORMAT_MNG"
  [ "$CFG_ZLIB" != "yes" ]     && QCONFIG_FLAGS="$QCONFIG_FLAGS QT_NO_ZLIB"
+ [ "$CFG_S60" != "yes" ]      && QCONFIG_FLAGS="$QCONFIG_FLAGS QT_NO_S60"
 -[ "$CFG_EXCEPTIONS" = "no" ] && QCONFIG_FLAGS="$QCONFIG_FLAGS QT_NO_EXCEPTIONS"
  [ "$CFG_IPV6" = "no" ]       && QCONFIG_FLAGS="$QCONFIG_FLAGS QT_NO_IPV6"
  [ "$CFG_SXE" = "no" ]        && QCONFIG_FLAGS="$QCONFIG_FLAGS QT_NO_SXE"
@@ -35,7 +35,7 @@
  
  if [ "$PLATFORM_QWS" != "yes" ]; then
      [ "$CFG_GRAPHICS_SYSTEM" = "raster" ] && QCONFIG_FLAGS="$QCONFIG_FLAGS QT_GRAPHICSSYSTEM_RASTER"
-@@ -6876,34 +6871,21 @@
+@@ -7376,35 +7371,21 @@
  fi
  
  # X11/Unix/Mac only configs
@@ -68,6 +68,7 @@
 -[ "$CFG_XRENDER" = "no" ]    && QCONFIG_FLAGS="$QCONFIG_FLAGS QT_NO_XRENDER"
 -[ "$CFG_MITSHM" = "no" ]    && QCONFIG_FLAGS="$QCONFIG_FLAGS QT_NO_MITSHM"
 -[ "$CFG_XSHAPE" = "no" ]     && QCONFIG_FLAGS="$QCONFIG_FLAGS QT_NO_SHAPE"
+-[ "$CFG_XVIDEO" = "no" ]     && QCONFIG_FLAGS="$QCONFIG_FLAGS QT_NO_XVIDEO"
 -[ "$CFG_XSYNC" = "no" ]     && QCONFIG_FLAGS="$QCONFIG_FLAGS QT_NO_XSYNC"
 -[ "$CFG_XINPUT" = "no" ]     && QCONFIG_FLAGS="$QCONFIG_FLAGS QT_NO_XINPUT QT_NO_TABLET"
  

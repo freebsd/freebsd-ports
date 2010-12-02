@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	qt4
-PORTVERSION=	${QT4_VERSION}
+DISTVERSION=	${QT4_VERSION}
 CATEGORIES=	devel
 MASTER_SITES=	# empty
 DISTFILES=	# none
@@ -21,11 +21,14 @@ OPTIONS=	CODECS "Enable support for CN, JP, KR, TW" off \
 		DEMO "Install demonstration and example programs" off
 
 USE_QT_VER=	4
-QT_COMPONENTS=	accessible assistant assistant-adp assistantclient \
-		clucene corelib dbus designer doc help gui iconengines \
-		imageformats inputmethods multimedia network opengl \
-		qdbusviewer qt3support qtconfig qtestlib qvfb script \
-		scripttools sql svg webkit xml xmlpatterns xmlpatterns-tool
+QT_COMPONENTS=	accessible assistant clucene corelib \
+		dbus declarative designer doc \
+		graphicssystems-opengl gui help \
+		iconengines imageformats inputmethods \
+		multimedia network opengl phonon phonon-gst \
+		qdbusviewer qt3support qtconfig qtestlib qvfb \
+		script scripttools sql svg webkit \
+		xml xmlpatterns xmlpatterns-tool
 
 NO_BUILD=	yes
 

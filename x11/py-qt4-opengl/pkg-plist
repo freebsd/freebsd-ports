@@ -2,6 +2,7 @@
 %%SIP%%share/py-sip/QtOpenGL/QtOpenGLmod.sip
 %%SIP%%share/py-sip/QtOpenGL/opengl_types.sip
 %%SIP%%share/py-sip/QtOpenGL/qgl.sip
+%%SIP%%share/py-sip/QtOpenGL/qglbuffer.sip
 %%SIP%%share/py-sip/QtOpenGL/qglcolormap.sip
 %%SIP%%share/py-sip/QtOpenGL/qglframebufferobject.sip
 %%SIP%%share/py-sip/QtOpenGL/qglpixelbuffer.sip

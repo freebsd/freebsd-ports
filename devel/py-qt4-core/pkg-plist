@@ -57,12 +57,12 @@ bin/pyuic4
 %%PYTHON_SITELIBDIR%%/PyQt4/uic/port_v2/__init__.py
 %%PYTHON_SITELIBDIR%%/PyQt4/uic/port_v2/__init__.pyc
 %%PYTHON_SITELIBDIR%%/PyQt4/uic/port_v2/__init__.pyo
+%%PYTHON_SITELIBDIR%%/PyQt4/uic/port_v2/as_string.py
+%%PYTHON_SITELIBDIR%%/PyQt4/uic/port_v2/as_string.pyc
+%%PYTHON_SITELIBDIR%%/PyQt4/uic/port_v2/as_string.pyo
 %%PYTHON_SITELIBDIR%%/PyQt4/uic/port_v2/ascii_upper.py
 %%PYTHON_SITELIBDIR%%/PyQt4/uic/port_v2/ascii_upper.pyc
 %%PYTHON_SITELIBDIR%%/PyQt4/uic/port_v2/ascii_upper.pyo
-%%PYTHON_SITELIBDIR%%/PyQt4/uic/port_v2/encode_utf8.py
-%%PYTHON_SITELIBDIR%%/PyQt4/uic/port_v2/encode_utf8.pyc
-%%PYTHON_SITELIBDIR%%/PyQt4/uic/port_v2/encode_utf8.pyo
 %%PYTHON_SITELIBDIR%%/PyQt4/uic/port_v2/invoke.py
 %%PYTHON_SITELIBDIR%%/PyQt4/uic/port_v2/invoke.pyc
 %%PYTHON_SITELIBDIR%%/PyQt4/uic/port_v2/invoke.pyo
@@ -84,8 +84,8 @@ bin/pyuic4
 %%PYTHON_SITELIBDIR%%/PyQt4/uic/uiparser.py
 %%PYTHON_SITELIBDIR%%/PyQt4/uic/uiparser.pyc
 %%PYTHON_SITELIBDIR%%/PyQt4/uic/uiparser.pyo
-%%PYTHON_SITELIBDIR%%/PyQt4/uic/widget-plugins/phonon.pyc
 %%PYTHON_SITELIBDIR%%/PyQt4/uic/widget-plugins/phonon.py
+%%PYTHON_SITELIBDIR%%/PyQt4/uic/widget-plugins/phonon.pyc
 %%PYTHON_SITELIBDIR%%/PyQt4/uic/widget-plugins/phonon.pyo
 %%PYTHON_SITELIBDIR%%/PyQt4/uic/widget-plugins/qaxcontainer.py
 %%PYTHON_SITELIBDIR%%/PyQt4/uic/widget-plugins/qaxcontainer.pyc
@@ -93,6 +93,9 @@ bin/pyuic4
 %%PYTHON_SITELIBDIR%%/PyQt4/uic/widget-plugins/qscintilla.py
 %%PYTHON_SITELIBDIR%%/PyQt4/uic/widget-plugins/qscintilla.pyc
 %%PYTHON_SITELIBDIR%%/PyQt4/uic/widget-plugins/qscintilla.pyo
+%%PYTHON_SITELIBDIR%%/PyQt4/uic/widget-plugins/qtdeclarative.py
+%%PYTHON_SITELIBDIR%%/PyQt4/uic/widget-plugins/qtdeclarative.pyc
+%%PYTHON_SITELIBDIR%%/PyQt4/uic/widget-plugins/qtdeclarative.pyo
 %%PYTHON_SITELIBDIR%%/PyQt4/uic/widget-plugins/qtwebkit.py
 %%PYTHON_SITELIBDIR%%/PyQt4/uic/widget-plugins/qtwebkit.pyc
 %%PYTHON_SITELIBDIR%%/PyQt4/uic/widget-plugins/qtwebkit.pyo
@@ -118,6 +121,7 @@ bin/pyuic4
 %%SIP%%share/py-sip/QtCore/qdir.sip
 %%SIP%%share/py-sip/QtCore/qdiriterator.sip
 %%SIP%%share/py-sip/QtCore/qeasingcurve.sip
+%%SIP%%share/py-sip/QtCore/qelapsedtimer.sip
 %%SIP%%share/py-sip/QtCore/qeventloop.sip
 %%SIP%%share/py-sip/QtCore/qeventtransition.sip
 %%SIP%%share/py-sip/QtCore/qfile.sip

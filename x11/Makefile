@@ -243,6 +243,7 @@
     SUBDIR += props
     SUBDIR += py-qt4-opengl
     SUBDIR += qimageblitz
+    SUBDIR += qt4-graphicssystems-opengl
     SUBDIR += qt4-inputmethods
     SUBDIR += qt4-opengl
     SUBDIR += randrproto

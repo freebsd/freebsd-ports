@@ -207,6 +207,7 @@ include/qt4/Qt/qsplitter.h
 include/qt4/Qt/qstackedlayout.h
 include/qt4/Qt/qstackedwidget.h
 include/qt4/Qt/qstandarditemmodel.h
+include/qt4/Qt/qstatictext.h
 include/qt4/Qt/qstatusbar.h
 include/qt4/Qt/qstringlistmodel.h
 include/qt4/Qt/qstyle.h
@@ -571,8 +572,15 @@ include/qt4/QtGui/QResizeEvent
 include/qt4/QtGui/QRgb
 include/qt4/QtGui/QRubberBand
 include/qt4/QtGui/QS60MainAppUi
+include/qt4/QtGui/QS60MainAppUiBase
 include/qt4/QtGui/QS60MainApplication
+include/qt4/QtGui/QS60MainApplicationBase
 include/qt4/QtGui/QS60MainDocument
+include/qt4/QtGui/QS60MainDocumentBase
+include/qt4/QtGui/QS60StubAknAppUi
+include/qt4/QtGui/QS60StubAknAppUiBase
+include/qt4/QtGui/QS60StubMAknTouchPaneObserver
+include/qt4/QtGui/QS60StubMEikStatusPaneObserver
 include/qt4/QtGui/QS60Style
 include/qt4/QtGui/QScreen
 include/qt4/QtGui/QScreenCursor
@@ -600,6 +608,7 @@ include/qt4/QtGui/QStackedWidget
 include/qt4/QtGui/QStandardItem
 include/qt4/QtGui/QStandardItemEditorCreator
 include/qt4/QtGui/QStandardItemModel
+include/qt4/QtGui/QStaticText
 include/qt4/QtGui/QStatusBar
 include/qt4/QtGui/QStatusTipEvent
 include/qt4/QtGui/QStringListModel
@@ -662,8 +671,8 @@ include/qt4/QtGui/QTableWidget
 include/qt4/QtGui/QTableWidgetItem
 include/qt4/QtGui/QTableWidgetSelectionRange
 include/qt4/QtGui/QTabletEvent
-include/qt4/QtGui/QTapGesture
 include/qt4/QtGui/QTapAndHoldGesture
+include/qt4/QtGui/QTapGesture
 include/qt4/QtGui/QTextBlock
 include/qt4/QtGui/QTextBlockFormat
 include/qt4/QtGui/QTextBlockGroup
@@ -995,6 +1004,7 @@ include/qt4/QtGui/qsplitter.h
 include/qt4/QtGui/qstackedlayout.h
 include/qt4/QtGui/qstackedwidget.h
 include/qt4/QtGui/qstandarditemmodel.h
+include/qt4/QtGui/qstatictext.h
 include/qt4/QtGui/qstatusbar.h
 include/qt4/QtGui/qstringlistmodel.h
 include/qt4/QtGui/qstyle.h

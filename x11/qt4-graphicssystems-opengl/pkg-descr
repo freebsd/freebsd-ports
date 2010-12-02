@@ -1,0 +1,11 @@
+Qt provides a platform-independent API to all central platform
+functionality: GUI, database access, networking, file handling,
+etc.
+
+This port provides OpenGL graphics backend, which is used for
+on-screen widgets and QPixmaps. See for details:
+
+http://doc.qt.nokia.com/4.7/qapplication.html#setGraphicsSystem
+http://labs.qt.nokia.com/2008/10/22/so-long-and-thanks-for-the-blit/
+
+WWW:	http://qt.nokia.com/products/qt/index.html

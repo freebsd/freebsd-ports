@@ -1,8 +1,6 @@
-diff --git src/corelib/io/qfilesystemwatcher_kqueue.cpp src/corelib/io/qfilesystemwatcher_kqueue.cpp
-index 99c165e..ce79cf7 100644
---- src/corelib/io/qfilesystemwatcher_kqueue.cpp
-+++ src/corelib/io/qfilesystemwatcher_kqueue.cpp
-@@ -133,6 +133,14 @@ QStringList QKqueueFileSystemWatcherEngine::addPaths(const QStringList &paths,
+--- src/corelib/io/qfilesystemwatcher_kqueue.cpp.orig	2010-11-06 04:55:18.000000000 +0300
++++ src/corelib/io/qfilesystemwatcher_kqueue.cpp	2010-11-11 00:05:11.550910992 +0300
+@@ -133,6 +133,14 @@
              perror("QKqueueFileSystemWatcherEngine::addPaths: open");
              continue;
          }
@@ -17,7 +15,7 @@ index 99c165e..ce79cf7 100644
  
          QT_STATBUF st;
          if (QT_FSTAT(fd, &st) == -1) {
-@@ -157,7 +165,7 @@ QStringList QKqueueFileSystemWatcherEngine::addPaths(const QStringList &paths,
+@@ -157,7 +165,7 @@
          EV_SET(&kev,
                 fd,
                 EVFILT_VNODE,
@@ -26,7 +24,7 @@ index 99c165e..ce79cf7 100644
                 NOTE_DELETE | NOTE_WRITE | NOTE_EXTEND | NOTE_ATTRIB | NOTE_RENAME | NOTE_REVOKE,
                 0,
                 0);
-@@ -180,6 +188,8 @@ QStringList QKqueueFileSystemWatcherEngine::addPaths(const QStringList &paths,
+@@ -180,6 +188,8 @@
          idToPath.insert(id, path);
      }
  
@@ -35,7 +33,7 @@ index 99c165e..ce79cf7 100644
      if (!isRunning())
          start();
      else
-@@ -203,19 +213,7 @@ QStringList QKqueueFileSystemWatcherEngine::removePaths(const QStringList &paths
+@@ -203,19 +213,7 @@
          if (x.isEmpty() || x != path)
              continue;
  
@@ -56,13 +54,13 @@ index 99c165e..ce79cf7 100644
  
          it.remove();
          if (id < 0)
-@@ -225,11 +223,11 @@ QStringList QKqueueFileSystemWatcherEngine::removePaths(const QStringList &paths
+@@ -225,11 +223,11 @@
      }
  
      if (pathToID.isEmpty()) {
-+        locker.unlock();
-         stop();
--        locker.unlock();
+-        stop();
+         locker.unlock();
++        stop();
          wait();
 -        locker.relock();
      } else {
@@ -70,7 +68,7 @@ index 99c165e..ce79cf7 100644
          write(kqpipe[1], "@", 1);
      }
  
-@@ -243,19 +241,18 @@ void QKqueueFileSystemWatcherEngine::stop()
+@@ -243,19 +241,18 @@
  
  void QKqueueFileSystemWatcherEngine::run()
  {
@@ -95,7 +93,7 @@ index 99c165e..ce79cf7 100644
              int fd = kev.ident;
  
              DEBUG() << "QKqueueFileSystemWatcherEngine: processing kevent" << kev.ident << kev.filter;
-@@ -287,6 +284,8 @@ void QKqueueFileSystemWatcherEngine::run()
+@@ -287,6 +284,8 @@
                      break;
                  }
              } else {
@@ -104,7 +102,22 @@ index 99c165e..ce79cf7 100644
                  int id = fd;
                  QString path = idToPath.value(id);
                  if (path.isEmpty()) {
-@@ -315,30 +314,15 @@ void QKqueueFileSystemWatcherEngine::run()
+@@ -295,12 +294,12 @@
+                     path = idToPath.value(id);
+                     if (path.isEmpty()) {
+                         DEBUG() << "QKqueueFileSystemWatcherEngine: received a kevent for a file we're not watching";
+-                        goto process_next_event;
++                        continue;
+                     }
+                 }
+                 if (kev.filter != EVFILT_VNODE) {
+                     DEBUG() << "QKqueueFileSystemWatcherEngine: received a kevent with the wrong filter";
+-                    goto process_next_event;
++                    continue;
+                 }
+ 
+                 if ((kev.fflags & (NOTE_DELETE | NOTE_REVOKE | NOTE_RENAME)) != 0) {
+@@ -315,31 +314,15 @@
                      else
                          emit fileChanged(path, true);
                  } else {
@@ -131,6 +144,7 @@ index 99c165e..ce79cf7 100644
              }
 -
 -            // are there any more?
+-process_next_event:
 -            r = kevent(kqfd, 0, 0, &kev, 1, &ZeroTimeout);
 -        } while (r > 0);
 +        }

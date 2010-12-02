@@ -45,8 +45,8 @@
 %%QT_INCDIR_REL%%/Qsci/qscistyledtext.h
 %%QT_LIBDIR_REL%%/libqscintilla2.so
 %%QT_LIBDIR_REL%%/libqscintilla2.so.5
-%%QT_LIBDIR_REL%%/libqscintilla2.so.5.3
-%%QT_LIBDIR_REL%%/libqscintilla2.so.5.3.0
+%%QT_LIBDIR_REL%%/libqscintilla2.so.5.4
+%%QT_LIBDIR_REL%%/libqscintilla2.so.5.4.1
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/Scintilla/Design.html
@@ -157,8 +157,8 @@
 %%PORTDOCS%%%%DOCSDIR%%/html/classQsciStyledText-members.html
 %%PORTDOCS%%%%DOCSDIR%%/html/classQsciStyledText.html
 %%PORTDOCS%%%%DOCSDIR%%/html/classes.html
-%%PORTDOCS%%%%DOCSDIR%%/html/dir_2b8548572807eceec6720569394e58d6.html
-%%PORTDOCS%%%%DOCSDIR%%/html/dir_247b66aa290261b71b593aa2827bed18.html
+%%PORTDOCS%%%%DOCSDIR%%/html/dir_932a03c217234c6de0e43dd88967b856.html
+%%PORTDOCS%%%%DOCSDIR%%/html/dir_f096b17edcc96dd7c2d14ba22ae31afc.html
 %%PORTDOCS%%%%DOCSDIR%%/html/dirs.html
 %%PORTDOCS%%%%DOCSDIR%%/html/doxygen.css
 %%PORTDOCS%%%%DOCSDIR%%/html/doxygen.png

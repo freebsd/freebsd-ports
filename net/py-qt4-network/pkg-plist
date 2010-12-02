@@ -9,6 +9,8 @@
 %%SIP%%share/py-sip/QtNetwork/qhttp.sip
 %%SIP%%share/py-sip/QtNetwork/qlocalserver.sip
 %%SIP%%share/py-sip/QtNetwork/qlocalsocket.sip
+%%SIP%%share/py-sip/QtNetwork/qnetworkconfigmanager.sip
+%%SIP%%share/py-sip/QtNetwork/qnetworkconfiguration.sip
 %%SIP%%share/py-sip/QtNetwork/qnetworkaccessmanager.sip
 %%SIP%%share/py-sip/QtNetwork/qnetworkcookie.sip
 %%SIP%%share/py-sip/QtNetwork/qnetworkcookiejar.sip
@@ -17,6 +19,7 @@
 %%SIP%%share/py-sip/QtNetwork/qnetworkproxy.sip
 %%SIP%%share/py-sip/QtNetwork/qnetworkreply.sip
 %%SIP%%share/py-sip/QtNetwork/qnetworkrequest.sip
+%%SIP%%share/py-sip/QtNetwork/qnetworksession.sip
 %%SIP%%share/py-sip/QtNetwork/qssl.sip
 %%SIP%%share/py-sip/QtNetwork/qsslcertificate.sip
 %%SIP%%share/py-sip/QtNetwork/qsslcipher.sip

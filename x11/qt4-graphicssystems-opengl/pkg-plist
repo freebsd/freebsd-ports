@@ -1,0 +1,4 @@
+%%QT_PLUGINDIR_REL%%/graphicssystems/libqglgraphicssystem.so
+%%DEBUG%%%%QT_PLUGINDIR_REL%%/graphicssystems/libqglgraphicssystem.so.debug
+@dirrmtry %%QT_PLUGINDIR_REL%%/graphicssystems
+@dirrmtry %%QT_PLUGINDIR_REL%%

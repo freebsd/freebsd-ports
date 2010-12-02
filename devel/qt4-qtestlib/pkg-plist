@@ -1,5 +1,6 @@
 include/qt4/Qt/QtTest
 include/qt4/Qt/qbenchmark.h
+include/qt4/Qt/qbenchmarkmetric.h
 include/qt4/Qt/qsignalspy.h
 include/qt4/Qt/qtest.h
 include/qt4/Qt/qtest_global.h
@@ -50,6 +51,7 @@ include/qt4/QtTest/QTestXunitStreamer
 include/qt4/QtTest/QtTest
 include/qt4/QtTest/QtTestGui
 include/qt4/QtTest/qbenchmark.h
+include/qt4/QtTest/qbenchmarkmetric.h
 include/qt4/QtTest/qsignalspy.h
 include/qt4/QtTest/qtest.h
 include/qt4/QtTest/qtest_global.h

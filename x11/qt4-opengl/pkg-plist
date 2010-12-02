@@ -1,10 +1,12 @@
 include/qt4/Qt/QtOpenGL
 include/qt4/Qt/qgl.h
+include/qt4/Qt/qglbuffer.h
 include/qt4/Qt/qglcolormap.h
 include/qt4/Qt/qglframebufferobject.h
 include/qt4/Qt/qglpixelbuffer.h
 include/qt4/Qt/qglscreen_qws.h
 include/qt4/Qt/qglshaderprogram.h
+include/qt4/QtOpenGL/QGLBuffer
 include/qt4/QtOpenGL/QGLColormap
 include/qt4/QtOpenGL/QGLContext
 include/qt4/QtOpenGL/QGLFormat
@@ -22,6 +24,7 @@ include/qt4/QtOpenGL/QMacCompatGLuint
 include/qt4/QtOpenGL/QMacGLCompatTypes
 include/qt4/QtOpenGL/QtOpenGL
 include/qt4/QtOpenGL/qgl.h
+include/qt4/QtOpenGL/qglbuffer.h
 include/qt4/QtOpenGL/qglcolormap.h
 include/qt4/QtOpenGL/qglframebufferobject.h
 include/qt4/QtOpenGL/qglpixelbuffer.h

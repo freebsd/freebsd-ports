@@ -20,6 +20,10 @@ try:
 except ImportError:
     pass
 try:
+    from PyQt4.QtDeclarative import *
+except ImportError:
+    pass
+try:
     from PyQt4.QtDesigner import *
 except ImportError:
     pass
