@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	DBIx-Skinny-Schema-Loader
-PORTVERSION=	0.17
+PORTVERSION=	0.18
 CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -15,7 +15,7 @@ MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Perl extension to load schema for DBIx::Skinny
 
 RUN_DEPENDS=	\
-	p5-DBIx-Skinny>=0.0714:${PORTSDIR}/databases/p5-DBIx-Skinny
+	p5-DBIx-Skinny>=0.0728:${PORTSDIR}/databases/p5-DBIx-Skinny
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
