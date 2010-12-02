@@ -4,7 +4,7 @@
 #
 # $FreeBSD$
 
-MAINTAINER=     david@wood2.org.uk
+MAINTAINER=     rpsfa@rit.edu
 COMMENT=        A free RADIUS server implementation with MySQL support
 
 # Set the necessary (private) knob before handing off to the master port
