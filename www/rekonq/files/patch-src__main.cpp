@@ -1,20 +1,11 @@
---- ./src/main.cpp.orig	2010-07-06 01:13:01.000000000 +0400
-+++ ./src/main.cpp	2010-07-06 22:29:53.933972524 +0400
-@@ -23,8 +23,6 @@
- *
- * ============================================================ */
+--- ./src/main.cpp.orig	2010-10-05 18:03:58.000000000 +0400
++++ ./src/main.cpp	2010-11-07 16:58:54.850117314 +0300
+@@ -191,7 +191,7 @@
+     }
+ #if defined(Q_WS_X11)
+     // On X11, the raster engine gives better performance than native.
+-    QApplication::setGraphicsSystem(QString::fromLatin1("raster"));
++    // QApplication::setGraphicsSystem(QString::fromLatin1("raster"));
+ #endif
+     Application app;
  
--// workaround for recent flashplugins
--#include <gtk/gtk.h>
- 
- // version include
- #include "../version.h"
-@@ -45,8 +43,6 @@
- 
- extern "C" KDE_EXPORT int kdemain(int argc, char **argv)
- {
--    // just a hackisch workaround for recent flashplugins
--    gtk_init(&argc, &argv);
- 
-     KAboutData about("rekonq",
-                      0,
