@@ -14,7 +14,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 PKGNAMEPREFIX2=	${PYTHON_PKGNAMEPREFIX}${PORTNAME}-
 
 MAINTAINER=	kde@FreeBSD.org
-COMMENT?=	The "meta-port" for PyQt4
+COMMENT=	The "meta-port" for PyQt4
 
 USE_PYTHON=	yes
 
@@ -32,6 +32,7 @@ RUN_DEPENDS+=	${PKGNAMEPREFIX2}core>=${PYQT4_VERSION}:${PORTSDIR}/devel/py-qt4-c
 		${PKGNAMEPREFIX2}sql>=${PYQT4_VERSION}:${PORTSDIR}/databases/py-qt4-sql \
 		${PKGNAMEPREFIX2}svg>=${PYQT4_VERSION}:${PORTSDIR}/graphics/py-qt4-svg \
 		${PKGNAMEPREFIX2}test>=${PYQT4_VERSION}:${PORTSDIR}/devel/py-qt4-test \
+		${PKGNAMEPREFIX2}declarative>=${PYQT4_VERSION}:${PORTSDIR}/devel/py-qt4-declarative \
 		${PKGNAMEPREFIX2}designer>=${PYQT4_VERSION}:${PORTSDIR}/devel/py-qt4-designer \
 		${PKGNAMEPREFIX2}designerplugin>=${PYQT4_VERSION}:${PORTSDIR}/devel/py-qt4-designerplugin \
 		${PKGNAMEPREFIX2}dbus>=${PYQT4_VERSION}:${PORTSDIR}/devel/py-qt4-dbus \

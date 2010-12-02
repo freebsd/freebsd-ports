@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	gui
-PORTVERSION=	${QT4_VERSION}
+DISTVERSION=	${QT4_VERSION}
 CATEGORIES?=	x11-toolkits
 PKGNAMEPREFIX=	qt4-
 
@@ -18,12 +18,11 @@ LIB_DEPENDS=	png:${PORTSDIR}/graphics/png \
 		fontconfig.1:${PORTSDIR}/x11-fonts/fontconfig
 RUN_DEPENDS=	xdg-open:${PORTSDIR}/devel/xdg-utils
 
-MAKE_JOBS_SAFE=	yes
-
 USE_QT_VER=	4
 QT_COMPONENTS=	qmake_build moc_build rcc_build uic_build corelib
 QT_NONSTANDARD=	yes
 QT_DIST=	yes
+MAKE_JOBS_SAFE=	yes
 
 HAS_CONFIGURE=	yes
 USE_LDCONFIG=	${PREFIX}/lib/qt4
@@ -51,7 +50,8 @@ EXTRACT_AFTER_ARGS+=	--exclude '${DISTNAME}/${dne}'
 BUILD_WRKSRC=	${WRKSRC}/src/${PORTNAME}
 INSTALL_WRKSRC=	${BUILD_WRKSRC}
 
-CONFIGURE_ARGS+=	-I../../include/Qt -I../../include
+CONFIGURE_ARGS+=	-I../../include/QtCore -I../../include/QtGui \
+			-I../../include/Qt -I../../include
 
 EXTRA_PATCHES=	${.CURDIR}/../../devel/qt4/files/patch-configure
 

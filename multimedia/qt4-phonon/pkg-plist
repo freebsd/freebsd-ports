@@ -7,6 +7,8 @@ include/qt4/phonon/AudioCaptureDevice
 include/qt4/phonon/AudioCaptureDeviceModel
 include/qt4/phonon/AudioChannelDescription
 include/qt4/phonon/AudioChannelDescriptionModel
+include/qt4/phonon/AudioDataOutput
+include/qt4/phonon/AudioDataOutputInterface
 include/qt4/phonon/AudioOutput
 include/qt4/phonon/AudioOutputDevice
 include/qt4/phonon/AudioOutputDeviceModel
@@ -22,6 +24,7 @@ include/qt4/phonon/EffectInterface
 include/qt4/phonon/EffectParameter
 include/qt4/phonon/EffectWidget
 include/qt4/phonon/Global
+include/qt4/phonon/GlobalConfig
 include/qt4/phonon/MediaController
 include/qt4/phonon/MediaNode
 include/qt4/phonon/MediaObject
@@ -34,6 +37,7 @@ include/qt4/phonon/ObjectDescriptionModelData
 include/qt4/phonon/Path
 include/qt4/phonon/Phonon
 include/qt4/phonon/PlatformPlugin
+include/qt4/phonon/PulseSupport
 include/qt4/phonon/SeekSlider
 include/qt4/phonon/StreamInterface
 include/qt4/phonon/SubtitleDescription
@@ -41,6 +45,8 @@ include/qt4/phonon/SubtitleDescriptionModel
 include/qt4/phonon/VideoPlayer
 include/qt4/phonon/VideoWidget
 include/qt4/phonon/VideoWidgetInterface
+include/qt4/phonon/VideoWidgetInterface44
+include/qt4/phonon/VideoWidgetInterfaceLatest
 include/qt4/phonon/VolumeFaderEffect
 include/qt4/phonon/VolumeFaderInterface
 include/qt4/phonon/VolumeSlider
@@ -48,6 +54,8 @@ include/qt4/phonon/abstractaudiooutput.h
 include/qt4/phonon/abstractmediastream.h
 include/qt4/phonon/abstractvideooutput.h
 include/qt4/phonon/addoninterface.h
+include/qt4/phonon/audiodataoutput.h
+include/qt4/phonon/audiodataoutputinterface.h
 include/qt4/phonon/audiooutput.h
 include/qt4/phonon/audiooutputinterface.h
 include/qt4/phonon/backendcapabilities.h
@@ -56,6 +64,7 @@ include/qt4/phonon/effect.h
 include/qt4/phonon/effectinterface.h
 include/qt4/phonon/effectparameter.h
 include/qt4/phonon/effectwidget.h
+include/qt4/phonon/globalconfig.h
 include/qt4/phonon/mediacontroller.h
 include/qt4/phonon/medianode.h
 include/qt4/phonon/mediaobject.h
@@ -69,6 +78,7 @@ include/qt4/phonon/phonon_export.h
 include/qt4/phonon/phonondefs.h
 include/qt4/phonon/phononnamespace.h
 include/qt4/phonon/platformplugin.h
+include/qt4/phonon/pulsesupport.h
 include/qt4/phonon/seekslider.h
 include/qt4/phonon/streaminterface.h
 include/qt4/phonon/videoplayer.h
@@ -81,9 +91,9 @@ lib/qt4/libphonon.la
 lib/qt4/libphonon.prl
 lib/qt4/libphonon.so
 lib/qt4/libphonon.so.4
-lib/qt4/libphonon.so.4.3
-lib/qt4/libphonon.so.4.3.1
-%%DEBUG%%lib/qt4/libphonon.so.4.3.1.debug
+lib/qt4/libphonon.so.4.4
+lib/qt4/libphonon.so.4.4.0
+%%DEBUG%%lib/qt4/libphonon.so.4.4.0.debug
 libdata/pkgconfig/phonon.pc
 @dirrmtry lib/qt4
 @dirrm include/qt4/phonon

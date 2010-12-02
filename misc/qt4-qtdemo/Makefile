@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	qtdemo
-PORTVERSION=	${QT4_VERSION}
+DISTVERSION=	${QT4_VERSION}
 CATEGORIES?=	misc
 PKGNAMEPREFIX=	qt4-
 
@@ -15,12 +15,13 @@ MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Qt demonstration and example programs
 
 USE_QT_VER=	4
-QT_COMPONENTS=	qmake_build moc_build rcc_build uic_build assistantclient \
-		corelib designer gui network opengl sql svg qtestlib xml \
-		imageformats_run dbus script webkit phonon help assistant_run \
-		phonon-gst scripttools xmlpatterns multimedia
+QT_COMPONENTS=	qmake_build moc_build rcc_build uic_build corelib designer \
+		gui network opengl sql svg qtestlib xml imageformats_run dbus \
+		script webkit phonon help assistant_run phonon-gst scripttools \
+		xmlpatterns multimedia
 QT_NONSTANDARD=	yes
 QT_DIST=	yes
+MAKE_JOBS_SAFE=	yes
 
 HAS_CONFIGURE=	yes
 
@@ -51,7 +52,7 @@ post-patch:
 		${WRKSRC}/examples/help/simpletextviewer/assistant.cpp
 
 pre-configure:
-	${MKDIR} ${WRKSRC}/mkspecs
+	${MKDIR} ${WRKSRC}/mkspecs/modules
 	${LN} -sf ${LOCALBASE}/bin/qmake-qt4 ${WRKSRC}/bin/qmake
 	${LN} -sf ${LOCALBASE}/bin/moc-qt4 ${WRKSRC}/bin/moc
 	${LN} -sf ${LOCALBASE}/bin/uic-qt4 ${WRKSRC}/bin/uic
@@ -62,5 +63,6 @@ post-build:
 
 post-install:
 	cd ${WRKSRC}/examples && ${SETENV} MAKEOBJDIR=. ${MAKE} install
+	${FIND} -E ${PREFIX}/share/examples/qt4/examples/declarative/cppextensions -regex ".*\.(moc|obj|pch|rcc)" -type d | ${XARGS} ${RM} -r
 
 .include <bsd.port.mk>

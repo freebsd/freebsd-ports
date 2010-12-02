@@ -5,10 +5,13 @@ include/qt4/QtAssistant/qassistantclient_global.h
 lib/qt4/libQtAssistantClient.prl
 lib/qt4/libQtAssistantClient.so
 lib/qt4/libQtAssistantClient.so.4
-lib/qt4/libQtAssistantClient.so.%%SHLIB_SHVER%%
-lib/qt4/libQtAssistantClient.so.%%SHLIB_VER%%
-%%DEBUG%%lib/qt4/libQtAssistantClient.so.%%SHLIB_VER%%.debug
+lib/qt4/libQtAssistantClient.so.4.6
+lib/qt4/libQtAssistantClient.so.4.6.3
 libdata/pkgconfig/QtAssistantClient.pc
+share/qt4/mkspecs/features/assistant.prf
+@dirrmtry share/qt4/mkspecs/features
+@dirrmtry share/qt4/mkspecs
+@dirrmtry share/qt4
 @dirrmtry lib/qt4
 @dirrm include/qt4/QtAssistant
 @dirrmtry include/qt4

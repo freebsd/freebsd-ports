@@ -186,6 +186,169 @@ share/examples/qt4/demos/composition/composition.qrc
 share/examples/qt4/demos/composition/flower.jpg
 share/examples/qt4/demos/composition/flower_alpha.jpg
 share/examples/qt4/demos/composition/main.cpp
+share/examples/qt4/demos/declarative/calculator/Core/Button.qml
+share/examples/qt4/demos/declarative/calculator/Core/Display.qml
+share/examples/qt4/demos/declarative/calculator/Core/calculator.js
+share/examples/qt4/demos/declarative/calculator/Core/images/button-.png
+share/examples/qt4/demos/declarative/calculator/Core/images/button-blue.png
+share/examples/qt4/demos/declarative/calculator/Core/images/button-green.png
+share/examples/qt4/demos/declarative/calculator/Core/images/button-purple.png
+share/examples/qt4/demos/declarative/calculator/Core/images/button-red.png
+share/examples/qt4/demos/declarative/calculator/Core/images/display.png
+share/examples/qt4/demos/declarative/calculator/Core/qmldir
+share/examples/qt4/demos/declarative/calculator/calculator.qml
+share/examples/qt4/demos/declarative/calculator/calculator.qmlproject
+share/examples/qt4/demos/declarative/flickr/common/Progress.qml
+share/examples/qt4/demos/declarative/flickr/common/RssModel.qml
+share/examples/qt4/demos/declarative/flickr/common/ScrollBar.qml
+share/examples/qt4/demos/declarative/flickr/common/Slider.qml
+share/examples/qt4/demos/declarative/flickr/common/qmldir
+share/examples/qt4/demos/declarative/flickr/flickr-90.qml
+share/examples/qt4/demos/declarative/flickr/flickr.qml
+share/examples/qt4/demos/declarative/flickr/flickr.qmlproject
+share/examples/qt4/demos/declarative/flickr/mobile/Button.qml
+share/examples/qt4/demos/declarative/flickr/mobile/GridDelegate.qml
+share/examples/qt4/demos/declarative/flickr/mobile/ImageDetails.qml
+share/examples/qt4/demos/declarative/flickr/mobile/ListDelegate.qml
+share/examples/qt4/demos/declarative/flickr/mobile/TitleBar.qml
+share/examples/qt4/demos/declarative/flickr/mobile/ToolBar.qml
+share/examples/qt4/demos/declarative/flickr/mobile/images/gloss.png
+share/examples/qt4/demos/declarative/flickr/mobile/images/lineedit.png
+share/examples/qt4/demos/declarative/flickr/mobile/images/lineedit.sci
+share/examples/qt4/demos/declarative/flickr/mobile/images/quit.png
+share/examples/qt4/demos/declarative/flickr/mobile/images/stripes.png
+share/examples/qt4/demos/declarative/flickr/mobile/images/titlebar.png
+share/examples/qt4/demos/declarative/flickr/mobile/images/titlebar.sci
+share/examples/qt4/demos/declarative/flickr/mobile/images/toolbutton.png
+share/examples/qt4/demos/declarative/flickr/mobile/images/toolbutton.sci
+share/examples/qt4/demos/declarative/minehunt/MinehuntCore/Explosion.qml
+share/examples/qt4/demos/declarative/minehunt/MinehuntCore/Tile.qml
+share/examples/qt4/demos/declarative/minehunt/MinehuntCore/pics/back.png
+share/examples/qt4/demos/declarative/minehunt/MinehuntCore/pics/background.png
+share/examples/qt4/demos/declarative/minehunt/MinehuntCore/pics/bomb-color.png
+share/examples/qt4/demos/declarative/minehunt/MinehuntCore/pics/bomb.png
+share/examples/qt4/demos/declarative/minehunt/MinehuntCore/pics/face-sad.png
+share/examples/qt4/demos/declarative/minehunt/MinehuntCore/pics/face-smile-big.png
+share/examples/qt4/demos/declarative/minehunt/MinehuntCore/pics/face-smile.png
+share/examples/qt4/demos/declarative/minehunt/MinehuntCore/pics/flag-color.png
+share/examples/qt4/demos/declarative/minehunt/MinehuntCore/pics/flag.png
+share/examples/qt4/demos/declarative/minehunt/MinehuntCore/pics/front.png
+share/examples/qt4/demos/declarative/minehunt/MinehuntCore/pics/quit.png
+share/examples/qt4/demos/declarative/minehunt/MinehuntCore/pics/star.png
+share/examples/qt4/demos/declarative/minehunt/MinehuntCore/qmldir
+share/examples/qt4/demos/declarative/minehunt/minehunt
+%%DEBUG%%share/examples/qt4/demos/declarative/minehunt/minehunt.debug
+share/examples/qt4/demos/declarative/minehunt/minehunt.pro
+share/examples/qt4/demos/declarative/minehunt/minehunt.qml
+share/examples/qt4/demos/declarative/photoviewer/PhotoViewerCore/AlbumDelegate.qml
+share/examples/qt4/demos/declarative/photoviewer/PhotoViewerCore/BusyIndicator.qml
+share/examples/qt4/demos/declarative/photoviewer/PhotoViewerCore/Button.qml
+share/examples/qt4/demos/declarative/photoviewer/PhotoViewerCore/EditableButton.qml
+share/examples/qt4/demos/declarative/photoviewer/PhotoViewerCore/PhotoDelegate.qml
+share/examples/qt4/demos/declarative/photoviewer/PhotoViewerCore/ProgressBar.qml
+share/examples/qt4/demos/declarative/photoviewer/PhotoViewerCore/RssModel.qml
+share/examples/qt4/demos/declarative/photoviewer/PhotoViewerCore/Tag.qml
+share/examples/qt4/demos/declarative/photoviewer/PhotoViewerCore/images/box-shadow.png
+share/examples/qt4/demos/declarative/photoviewer/PhotoViewerCore/images/busy.png
+share/examples/qt4/demos/declarative/photoviewer/PhotoViewerCore/images/cardboard.png
+share/examples/qt4/demos/declarative/photoviewer/PhotoViewerCore/qmldir
+share/examples/qt4/demos/declarative/photoviewer/PhotoViewerCore/script/script.js
+share/examples/qt4/demos/declarative/photoviewer/i18n/base.ts
+share/examples/qt4/demos/declarative/photoviewer/i18n/qml_fr.qm
+share/examples/qt4/demos/declarative/photoviewer/i18n/qml_fr.ts
+share/examples/qt4/demos/declarative/photoviewer/photoviewer.qml
+share/examples/qt4/demos/declarative/photoviewer/photoviewer.qmlproject
+share/examples/qt4/demos/declarative/rssnews/content/BusyIndicator.qml
+share/examples/qt4/demos/declarative/rssnews/content/CategoryDelegate.qml
+share/examples/qt4/demos/declarative/rssnews/content/NewsDelegate.qml
+share/examples/qt4/demos/declarative/rssnews/content/RssFeeds.qml
+share/examples/qt4/demos/declarative/rssnews/content/ScrollBar.qml
+share/examples/qt4/demos/declarative/rssnews/content/images/busy.png
+share/examples/qt4/demos/declarative/rssnews/content/images/scrollbar.png
+share/examples/qt4/demos/declarative/rssnews/rssnews.qml
+share/examples/qt4/demos/declarative/rssnews/rssnews.qmlproject
+share/examples/qt4/demos/declarative/samegame/SamegameCore/BoomBlock.qml
+share/examples/qt4/demos/declarative/samegame/SamegameCore/Button.qml
+share/examples/qt4/demos/declarative/samegame/SamegameCore/Dialog.qml
+share/examples/qt4/demos/declarative/samegame/SamegameCore/pics/background.png
+share/examples/qt4/demos/declarative/samegame/SamegameCore/pics/blueStar.png
+share/examples/qt4/demos/declarative/samegame/SamegameCore/pics/blueStone.png
+share/examples/qt4/demos/declarative/samegame/SamegameCore/pics/greenStar.png
+share/examples/qt4/demos/declarative/samegame/SamegameCore/pics/greenStone.png
+share/examples/qt4/demos/declarative/samegame/SamegameCore/pics/redStar.png
+share/examples/qt4/demos/declarative/samegame/SamegameCore/pics/redStone.png
+share/examples/qt4/demos/declarative/samegame/SamegameCore/pics/star.png
+share/examples/qt4/demos/declarative/samegame/SamegameCore/pics/yellowStone.png
+share/examples/qt4/demos/declarative/samegame/SamegameCore/qmldir
+share/examples/qt4/demos/declarative/samegame/SamegameCore/samegame.js
+share/examples/qt4/demos/declarative/samegame/highscores/README
+share/examples/qt4/demos/declarative/samegame/highscores/score_data.xml
+share/examples/qt4/demos/declarative/samegame/highscores/score_style.xsl
+share/examples/qt4/demos/declarative/samegame/highscores/scores.php
+share/examples/qt4/demos/declarative/samegame/samegame.qml
+share/examples/qt4/demos/declarative/samegame/samegame.qmlproject
+share/examples/qt4/demos/declarative/snake/content/Button.qml
+share/examples/qt4/demos/declarative/snake/content/Cookie.qml
+share/examples/qt4/demos/declarative/snake/content/HighScoreModel.qml
+share/examples/qt4/demos/declarative/snake/content/Link.qml
+share/examples/qt4/demos/declarative/snake/content/Skull.qml
+share/examples/qt4/demos/declarative/snake/content/pics/README
+share/examples/qt4/demos/declarative/snake/content/pics/background.png
+share/examples/qt4/demos/declarative/snake/content/pics/blueStar.png
+share/examples/qt4/demos/declarative/snake/content/pics/blueStone.png
+share/examples/qt4/demos/declarative/snake/content/pics/cookie.png
+share/examples/qt4/demos/declarative/snake/content/pics/eyes.svg
+share/examples/qt4/demos/declarative/snake/content/pics/head.png
+share/examples/qt4/demos/declarative/snake/content/pics/head.svg
+share/examples/qt4/demos/declarative/snake/content/pics/redStar.png
+share/examples/qt4/demos/declarative/snake/content/pics/redStone.png
+share/examples/qt4/demos/declarative/snake/content/pics/skull.png
+share/examples/qt4/demos/declarative/snake/content/pics/snake.jpg
+share/examples/qt4/demos/declarative/snake/content/pics/star.png
+share/examples/qt4/demos/declarative/snake/content/pics/stoneShadow.png
+share/examples/qt4/demos/declarative/snake/content/pics/yellowStar.png
+share/examples/qt4/demos/declarative/snake/content/pics/yellowStone.png
+share/examples/qt4/demos/declarative/snake/content/snake.js
+share/examples/qt4/demos/declarative/snake/snake.qml
+share/examples/qt4/demos/declarative/snake/snake.qmlproject
+share/examples/qt4/demos/declarative/twitter/TwitterCore/Button.qml
+share/examples/qt4/demos/declarative/twitter/TwitterCore/FatDelegate.qml
+share/examples/qt4/demos/declarative/twitter/TwitterCore/Input.qml
+share/examples/qt4/demos/declarative/twitter/TwitterCore/Loading.qml
+share/examples/qt4/demos/declarative/twitter/TwitterCore/MultiTitleBar.qml
+share/examples/qt4/demos/declarative/twitter/TwitterCore/RssModel.qml
+share/examples/qt4/demos/declarative/twitter/TwitterCore/SearchView.qml
+share/examples/qt4/demos/declarative/twitter/TwitterCore/TitleBar.qml
+share/examples/qt4/demos/declarative/twitter/TwitterCore/ToolBar.qml
+share/examples/qt4/demos/declarative/twitter/TwitterCore/UserModel.qml
+share/examples/qt4/demos/declarative/twitter/TwitterCore/images/gloss.png
+share/examples/qt4/demos/declarative/twitter/TwitterCore/images/lineedit.png
+share/examples/qt4/demos/declarative/twitter/TwitterCore/images/lineedit.sci
+share/examples/qt4/demos/declarative/twitter/TwitterCore/images/loading.png
+share/examples/qt4/demos/declarative/twitter/TwitterCore/images/quit.png
+share/examples/qt4/demos/declarative/twitter/TwitterCore/images/stripes.png
+share/examples/qt4/demos/declarative/twitter/TwitterCore/images/titlebar.png
+share/examples/qt4/demos/declarative/twitter/TwitterCore/images/titlebar.sci
+share/examples/qt4/demos/declarative/twitter/TwitterCore/images/toolbutton.png
+share/examples/qt4/demos/declarative/twitter/TwitterCore/images/toolbutton.sci
+share/examples/qt4/demos/declarative/twitter/TwitterCore/qmldir
+share/examples/qt4/demos/declarative/twitter/twitter.qml
+share/examples/qt4/demos/declarative/twitter/twitter.qmlproject
+share/examples/qt4/demos/declarative/webbrowser/content/Button.qml
+share/examples/qt4/demos/declarative/webbrowser/content/FlickableWebView.qml
+share/examples/qt4/demos/declarative/webbrowser/content/Header.qml
+share/examples/qt4/demos/declarative/webbrowser/content/ScrollBar.qml
+share/examples/qt4/demos/declarative/webbrowser/content/UrlInput.qml
+share/examples/qt4/demos/declarative/webbrowser/content/pics/display.png
+share/examples/qt4/demos/declarative/webbrowser/content/pics/edit-delete.png
+share/examples/qt4/demos/declarative/webbrowser/content/pics/go-jump-locationbar.png
+share/examples/qt4/demos/declarative/webbrowser/content/pics/go-next-view.png
+share/examples/qt4/demos/declarative/webbrowser/content/pics/go-previous-view.png
+share/examples/qt4/demos/declarative/webbrowser/content/pics/scrollbar.png
+share/examples/qt4/demos/declarative/webbrowser/content/pics/titlebar-bg.png
+share/examples/qt4/demos/declarative/webbrowser/content/pics/view-refresh.png
+share/examples/qt4/demos/declarative/webbrowser/webbrowser.qml
+share/examples/qt4/demos/declarative/webbrowser/webbrowser.qmlproject
 share/examples/qt4/demos/deform/deform
 %%DEBUG%%share/examples/qt4/demos/deform/deform.debug
 share/examples/qt4/demos/deform/deform.pro
@@ -644,32 +807,6 @@ share/examples/qt4/examples/animation/stickman/stickman.cpp
 share/examples/qt4/examples/animation/stickman/stickman.h
 share/examples/qt4/examples/animation/stickman/stickman.pro
 share/examples/qt4/examples/animation/stickman/stickman.qrc
-share/examples/qt4/examples/assistant/README
-share/examples/qt4/examples/assistant/assistant.pro
-share/examples/qt4/examples/assistant/simpletextviewer/documentation/about.txt
-share/examples/qt4/examples/assistant/simpletextviewer/documentation/browse.html
-share/examples/qt4/examples/assistant/simpletextviewer/documentation/filedialog.html
-share/examples/qt4/examples/assistant/simpletextviewer/documentation/findfile.html
-share/examples/qt4/examples/assistant/simpletextviewer/documentation/images/browse.png
-share/examples/qt4/examples/assistant/simpletextviewer/documentation/images/fadedfilemenu.png
-share/examples/qt4/examples/assistant/simpletextviewer/documentation/images/filedialog.png
-share/examples/qt4/examples/assistant/simpletextviewer/documentation/images/handbook.png
-share/examples/qt4/examples/assistant/simpletextviewer/documentation/images/mainwindow.png
-share/examples/qt4/examples/assistant/simpletextviewer/documentation/images/open.png
-share/examples/qt4/examples/assistant/simpletextviewer/documentation/images/wildcard.png
-share/examples/qt4/examples/assistant/simpletextviewer/documentation/index.html
-share/examples/qt4/examples/assistant/simpletextviewer/documentation/intro.html
-share/examples/qt4/examples/assistant/simpletextviewer/documentation/openfile.html
-share/examples/qt4/examples/assistant/simpletextviewer/documentation/simpletextviewer.adp
-share/examples/qt4/examples/assistant/simpletextviewer/documentation/wildcardmatching.html
-share/examples/qt4/examples/assistant/simpletextviewer/findfiledialog.cpp
-share/examples/qt4/examples/assistant/simpletextviewer/findfiledialog.h
-share/examples/qt4/examples/assistant/simpletextviewer/main.cpp
-share/examples/qt4/examples/assistant/simpletextviewer/mainwindow.cpp
-share/examples/qt4/examples/assistant/simpletextviewer/mainwindow.h
-share/examples/qt4/examples/assistant/simpletextviewer/simpletextviewer
-%%DEBUG%%share/examples/qt4/examples/assistant/simpletextviewer/simpletextviewer.debug
-share/examples/qt4/examples/assistant/simpletextviewer/simpletextviewer.pro
 share/examples/qt4/examples/dbus/chat/chat.cpp
 share/examples/qt4/examples/dbus/chat/chat.h
 share/examples/qt4/examples/dbus/chat/chat_adaptor.cpp
@@ -717,11 +854,11 @@ share/examples/qt4/examples/dbus/remotecontrolledcar/car/car.h
 share/examples/qt4/examples/dbus/remotecontrolledcar/car/car.pro
 share/examples/qt4/examples/dbus/remotecontrolledcar/car/car.xml
 share/examples/qt4/examples/dbus/remotecontrolledcar/car/car_adaptor.cpp
-share/examples/qt4/examples/dbus/remotecontrolledcar/car/car_adaptor_p.h
+share/examples/qt4/examples/dbus/remotecontrolledcar/car/car_adaptor.h
 share/examples/qt4/examples/dbus/remotecontrolledcar/car/main.cpp
 share/examples/qt4/examples/dbus/remotecontrolledcar/controller/car.xml
 share/examples/qt4/examples/dbus/remotecontrolledcar/controller/car_interface.cpp
-share/examples/qt4/examples/dbus/remotecontrolledcar/controller/car_interface_p.h
+share/examples/qt4/examples/dbus/remotecontrolledcar/controller/car_interface.h
 share/examples/qt4/examples/dbus/remotecontrolledcar/controller/controller
 share/examples/qt4/examples/dbus/remotecontrolledcar/controller/controller.cpp
 %%DEBUG%%share/examples/qt4/examples/dbus/remotecontrolledcar/controller/controller.debug
@@ -730,6 +867,509 @@ share/examples/qt4/examples/dbus/remotecontrolledcar/controller/controller.pro
 share/examples/qt4/examples/dbus/remotecontrolledcar/controller/controller.ui
 share/examples/qt4/examples/dbus/remotecontrolledcar/controller/main.cpp
 share/examples/qt4/examples/dbus/remotecontrolledcar/remotecontrolledcar.pro
+share/examples/qt4/examples/declarative/animation/animation.qmlproject
+share/examples/qt4/examples/declarative/animation/basics/basics.qmlproject
+share/examples/qt4/examples/declarative/animation/basics/color-animation.qml
+share/examples/qt4/examples/declarative/animation/basics/images/face-smile.png
+share/examples/qt4/examples/declarative/animation/basics/images/moon.png
+share/examples/qt4/examples/declarative/animation/basics/images/shadow.png
+share/examples/qt4/examples/declarative/animation/basics/images/star.png
+share/examples/qt4/examples/declarative/animation/basics/images/sun.png
+share/examples/qt4/examples/declarative/animation/basics/property-animation.qml
+share/examples/qt4/examples/declarative/animation/behaviors/SideRect.qml
+share/examples/qt4/examples/declarative/animation/behaviors/behavior-example.qml
+share/examples/qt4/examples/declarative/animation/behaviors/behaviors.qmlproject
+share/examples/qt4/examples/declarative/animation/easing/content/QuitButton.qml
+share/examples/qt4/examples/declarative/animation/easing/content/quit.png
+share/examples/qt4/examples/declarative/animation/easing/easing.qml
+share/examples/qt4/examples/declarative/animation/easing/easing.qmlproject
+share/examples/qt4/examples/declarative/animation/states/qt-logo.png
+share/examples/qt4/examples/declarative/animation/states/states.qml
+share/examples/qt4/examples/declarative/animation/states/states.qmlproject
+share/examples/qt4/examples/declarative/animation/states/transitions.qml
+share/examples/qt4/examples/declarative/cppextensions/Makefile
+share/examples/qt4/examples/declarative/cppextensions/cppextensions.pro
+share/examples/qt4/examples/declarative/cppextensions/cppextensions.qmlproject
+share/examples/qt4/examples/declarative/cppextensions/imageprovider/ImageProviderCore/libqmlimageproviderplugin.so
+%%DEBUG%%share/examples/qt4/examples/declarative/cppextensions/imageprovider/ImageProviderCore/libqmlimageproviderplugin.so.debug
+share/examples/qt4/examples/declarative/cppextensions/imageprovider/ImageProviderCore/qmldir
+share/examples/qt4/examples/declarative/cppextensions/imageprovider/Makefile
+share/examples/qt4/examples/declarative/cppextensions/imageprovider/imageprovider-example.qml
+share/examples/qt4/examples/declarative/cppextensions/imageprovider/imageprovider.cpp
+share/examples/qt4/examples/declarative/cppextensions/imageprovider/imageprovider.pro
+share/examples/qt4/examples/declarative/cppextensions/imageprovider/imageprovider.qmlproject
+share/examples/qt4/examples/declarative/cppextensions/networkaccessmanagerfactory/Makefile
+share/examples/qt4/examples/declarative/cppextensions/networkaccessmanagerfactory/main.cpp
+share/examples/qt4/examples/declarative/cppextensions/networkaccessmanagerfactory/networkaccessmanagerfactory
+%%DEBUG%%share/examples/qt4/examples/declarative/cppextensions/networkaccessmanagerfactory/networkaccessmanagerfactory.debug
+share/examples/qt4/examples/declarative/cppextensions/networkaccessmanagerfactory/networkaccessmanagerfactory.pro
+share/examples/qt4/examples/declarative/cppextensions/networkaccessmanagerfactory/networkaccessmanagerfactory.qmlproject
+share/examples/qt4/examples/declarative/cppextensions/networkaccessmanagerfactory/networkaccessmanagerfactory.qrc
+share/examples/qt4/examples/declarative/cppextensions/networkaccessmanagerfactory/view.qml
+share/examples/qt4/examples/declarative/cppextensions/plugins/Makefile
+share/examples/qt4/examples/declarative/cppextensions/plugins/README
+share/examples/qt4/examples/declarative/cppextensions/plugins/com/nokia/TimeExample/Clock.qml
+share/examples/qt4/examples/declarative/cppextensions/plugins/com/nokia/TimeExample/center.png
+share/examples/qt4/examples/declarative/cppextensions/plugins/com/nokia/TimeExample/clock.png
+share/examples/qt4/examples/declarative/cppextensions/plugins/com/nokia/TimeExample/hour.png
+share/examples/qt4/examples/declarative/cppextensions/plugins/com/nokia/TimeExample/libqmlqtimeexampleplugin.so
+%%DEBUG%%share/examples/qt4/examples/declarative/cppextensions/plugins/com/nokia/TimeExample/libqmlqtimeexampleplugin.so.debug
+share/examples/qt4/examples/declarative/cppextensions/plugins/com/nokia/TimeExample/minute.png
+share/examples/qt4/examples/declarative/cppextensions/plugins/com/nokia/TimeExample/qmldir
+share/examples/qt4/examples/declarative/cppextensions/plugins/plugin.cpp
+share/examples/qt4/examples/declarative/cppextensions/plugins/plugins.pro
+share/examples/qt4/examples/declarative/cppextensions/plugins/plugins.qml
+share/examples/qt4/examples/declarative/cppextensions/plugins/plugins.qmlproject
+share/examples/qt4/examples/declarative/cppextensions/qgraphicslayouts/Makefile
+share/examples/qt4/examples/declarative/cppextensions/qgraphicslayouts/layoutitem/Makefile
+share/examples/qt4/examples/declarative/cppextensions/qgraphicslayouts/layoutitem/layoutitem
+%%DEBUG%%share/examples/qt4/examples/declarative/cppextensions/qgraphicslayouts/layoutitem/layoutitem.debug
+share/examples/qt4/examples/declarative/cppextensions/qgraphicslayouts/layoutitem/layoutitem.pro
+share/examples/qt4/examples/declarative/cppextensions/qgraphicslayouts/layoutitem/layoutitem.qml
+share/examples/qt4/examples/declarative/cppextensions/qgraphicslayouts/layoutitem/layoutitem.qmlproject
+share/examples/qt4/examples/declarative/cppextensions/qgraphicslayouts/layoutitem/layoutitem.qrc
+share/examples/qt4/examples/declarative/cppextensions/qgraphicslayouts/layoutitem/main.cpp
+share/examples/qt4/examples/declarative/cppextensions/qgraphicslayouts/qgraphicsgridlayout/Makefile
+share/examples/qt4/examples/declarative/cppextensions/qgraphicslayouts/qgraphicsgridlayout/gridlayout.cpp
+share/examples/qt4/examples/declarative/cppextensions/qgraphicslayouts/qgraphicsgridlayout/gridlayout.h
+share/examples/qt4/examples/declarative/cppextensions/qgraphicslayouts/qgraphicsgridlayout/gridlayout.qrc
+share/examples/qt4/examples/declarative/cppextensions/qgraphicslayouts/qgraphicsgridlayout/main.cpp
+share/examples/qt4/examples/declarative/cppextensions/qgraphicslayouts/qgraphicsgridlayout/qgraphicsgridlayout
+%%DEBUG%%share/examples/qt4/examples/declarative/cppextensions/qgraphicslayouts/qgraphicsgridlayout/qgraphicsgridlayout.debug
+share/examples/qt4/examples/declarative/cppextensions/qgraphicslayouts/qgraphicsgridlayout/qgraphicsgridlayout.pro
+share/examples/qt4/examples/declarative/cppextensions/qgraphicslayouts/qgraphicsgridlayout/qgraphicsgridlayout.qml
+share/examples/qt4/examples/declarative/cppextensions/qgraphicslayouts/qgraphicslayouts.pro
+share/examples/qt4/examples/declarative/cppextensions/qgraphicslayouts/qgraphicslayouts.qmlproject
+share/examples/qt4/examples/declarative/cppextensions/qgraphicslayouts/qgraphicslinearlayout/Makefile
+share/examples/qt4/examples/declarative/cppextensions/qgraphicslayouts/qgraphicslinearlayout/linearlayout.cpp
+share/examples/qt4/examples/declarative/cppextensions/qgraphicslayouts/qgraphicslinearlayout/linearlayout.h
+share/examples/qt4/examples/declarative/cppextensions/qgraphicslayouts/qgraphicslinearlayout/linearlayout.qrc
+share/examples/qt4/examples/declarative/cppextensions/qgraphicslayouts/qgraphicslinearlayout/main.cpp
+share/examples/qt4/examples/declarative/cppextensions/qgraphicslayouts/qgraphicslinearlayout/qgraphicslinearlayout
+%%DEBUG%%share/examples/qt4/examples/declarative/cppextensions/qgraphicslayouts/qgraphicslinearlayout/qgraphicslinearlayout.debug
+share/examples/qt4/examples/declarative/cppextensions/qgraphicslayouts/qgraphicslinearlayout/qgraphicslinearlayout.pro
+share/examples/qt4/examples/declarative/cppextensions/qgraphicslayouts/qgraphicslinearlayout/qgraphicslinearlayout.qml
+share/examples/qt4/examples/declarative/cppextensions/qwidgets/Makefile
+share/examples/qt4/examples/declarative/cppextensions/qwidgets/QWidgets/libqmlqwidgetsplugin.so
+%%DEBUG%%share/examples/qt4/examples/declarative/cppextensions/qwidgets/QWidgets/libqmlqwidgetsplugin.so.debug
+share/examples/qt4/examples/declarative/cppextensions/qwidgets/QWidgets/qmldir
+share/examples/qt4/examples/declarative/cppextensions/qwidgets/README
+share/examples/qt4/examples/declarative/cppextensions/qwidgets/qwidgets.cpp
+share/examples/qt4/examples/declarative/cppextensions/qwidgets/qwidgets.pro
+share/examples/qt4/examples/declarative/cppextensions/qwidgets/qwidgets.qml
+share/examples/qt4/examples/declarative/cppextensions/qwidgets/qwidgets.qmlproject
+share/examples/qt4/examples/declarative/cppextensions/referenceexamples/Makefile
+share/examples/qt4/examples/declarative/cppextensions/referenceexamples/adding/Makefile
+share/examples/qt4/examples/declarative/cppextensions/referenceexamples/adding/adding
+%%DEBUG%%share/examples/qt4/examples/declarative/cppextensions/referenceexamples/adding/adding.debug
+share/examples/qt4/examples/declarative/cppextensions/referenceexamples/adding/adding.pro
+share/examples/qt4/examples/declarative/cppextensions/referenceexamples/adding/adding.qrc
+share/examples/qt4/examples/declarative/cppextensions/referenceexamples/adding/example.qml
+share/examples/qt4/examples/declarative/cppextensions/referenceexamples/adding/main.cpp
+share/examples/qt4/examples/declarative/cppextensions/referenceexamples/adding/person.cpp
+share/examples/qt4/examples/declarative/cppextensions/referenceexamples/adding/person.h
+share/examples/qt4/examples/declarative/cppextensions/referenceexamples/attached/Makefile
+share/examples/qt4/examples/declarative/cppextensions/referenceexamples/attached/attached
+%%DEBUG%%share/examples/qt4/examples/declarative/cppextensions/referenceexamples/attached/attached.debug
+share/examples/qt4/examples/declarative/cppextensions/referenceexamples/attached/attached.pro
+share/examples/qt4/examples/declarative/cppextensions/referenceexamples/attached/attached.qrc
+share/examples/qt4/examples/declarative/cppextensions/referenceexamples/attached/birthdayparty.cpp
+share/examples/qt4/examples/declarative/cppextensions/referenceexamples/attached/birthdayparty.h
+share/examples/qt4/examples/declarative/cppextensions/referenceexamples/attached/example.qml
+share/examples/qt4/examples/declarative/cppextensions/referenceexamples/attached/main.cpp
+share/examples/qt4/examples/declarative/cppextensions/referenceexamples/attached/person.cpp
+share/examples/qt4/examples/declarative/cppextensions/referenceexamples/attached/person.h
+share/examples/qt4/examples/declarative/cppextensions/referenceexamples/binding/Makefile
+share/examples/qt4/examples/declarative/cppextensions/referenceexamples/binding/binding
+%%DEBUG%%share/examples/qt4/examples/declarative/cppextensions/referenceexamples/binding/binding.debug
+share/examples/qt4/examples/declarative/cppextensions/referenceexamples/binding/binding.pro
+share/examples/qt4/examples/declarative/cppextensions/referenceexamples/binding/binding.qrc
+share/examples/qt4/examples/declarative/cppextensions/referenceexamples/binding/birthdayparty.cpp
+share/examples/qt4/examples/declarative/cppextensions/referenceexamples/binding/birthdayparty.h
+share/examples/qt4/examples/declarative/cppextensions/referenceexamples/binding/example.qml
+share/examples/qt4/examples/declarative/cppextensions/referenceexamples/binding/happybirthdaysong.cpp
+share/examples/qt4/examples/declarative/cppextensions/referenceexamples/binding/happybirthdaysong.h
+share/examples/qt4/examples/declarative/cppextensions/referenceexamples/binding/main.cpp
+share/examples/qt4/examples/declarative/cppextensions/referenceexamples/binding/person.cpp
+share/examples/qt4/examples/declarative/cppextensions/referenceexamples/binding/person.h
+share/examples/qt4/examples/declarative/cppextensions/referenceexamples/coercion/Makefile
+share/examples/qt4/examples/declarative/cppextensions/referenceexamples/coercion/birthdayparty.cpp
+share/examples/qt4/examples/declarative/cppextensions/referenceexamples/coercion/birthdayparty.h
+share/examples/qt4/examples/declarative/cppextensions/referenceexamples/coercion/coercion
+%%DEBUG%%share/examples/qt4/examples/declarative/cppextensions/referenceexamples/coercion/coercion.debug
+share/examples/qt4/examples/declarative/cppextensions/referenceexamples/coercion/coercion.pro
+share/examples/qt4/examples/declarative/cppextensions/referenceexamples/coercion/coercion.qrc
+share/examples/qt4/examples/declarative/cppextensions/referenceexamples/coercion/example.qml
+share/examples/qt4/examples/declarative/cppextensions/referenceexamples/coercion/main.cpp
+share/examples/qt4/examples/declarative/cppextensions/referenceexamples/coercion/person.cpp
+share/examples/qt4/examples/declarative/cppextensions/referenceexamples/coercion/person.h
+share/examples/qt4/examples/declarative/cppextensions/referenceexamples/default/Makefile
+share/examples/qt4/examples/declarative/cppextensions/referenceexamples/default/birthdayparty.cpp
+share/examples/qt4/examples/declarative/cppextensions/referenceexamples/default/birthdayparty.h
+share/examples/qt4/examples/declarative/cppextensions/referenceexamples/default/default
+%%DEBUG%%share/examples/qt4/examples/declarative/cppextensions/referenceexamples/default/default.debug
+share/examples/qt4/examples/declarative/cppextensions/referenceexamples/default/default.pro
+share/examples/qt4/examples/declarative/cppextensions/referenceexamples/default/default.qrc
+share/examples/qt4/examples/declarative/cppextensions/referenceexamples/default/example.qml
+share/examples/qt4/examples/declarative/cppextensions/referenceexamples/default/main.cpp
+share/examples/qt4/examples/declarative/cppextensions/referenceexamples/default/person.cpp
+share/examples/qt4/examples/declarative/cppextensions/referenceexamples/default/person.h
+share/examples/qt4/examples/declarative/cppextensions/referenceexamples/extended/Makefile
+share/examples/qt4/examples/declarative/cppextensions/referenceexamples/extended/example.qml
+share/examples/qt4/examples/declarative/cppextensions/referenceexamples/extended/extended
+%%DEBUG%%share/examples/qt4/examples/declarative/cppextensions/referenceexamples/extended/extended.debug
+share/examples/qt4/examples/declarative/cppextensions/referenceexamples/extended/extended.pro
+share/examples/qt4/examples/declarative/cppextensions/referenceexamples/extended/extended.qrc
+share/examples/qt4/examples/declarative/cppextensions/referenceexamples/extended/lineedit.cpp
+share/examples/qt4/examples/declarative/cppextensions/referenceexamples/extended/lineedit.h
+share/examples/qt4/examples/declarative/cppextensions/referenceexamples/extended/main.cpp
+share/examples/qt4/examples/declarative/cppextensions/referenceexamples/grouped/Makefile
+share/examples/qt4/examples/declarative/cppextensions/referenceexamples/grouped/birthdayparty.cpp
+share/examples/qt4/examples/declarative/cppextensions/referenceexamples/grouped/birthdayparty.h
+share/examples/qt4/examples/declarative/cppextensions/referenceexamples/grouped/example.qml
+share/examples/qt4/examples/declarative/cppextensions/referenceexamples/grouped/grouped
+%%DEBUG%%share/examples/qt4/examples/declarative/cppextensions/referenceexamples/grouped/grouped.debug
+share/examples/qt4/examples/declarative/cppextensions/referenceexamples/grouped/grouped.pro
+share/examples/qt4/examples/declarative/cppextensions/referenceexamples/grouped/grouped.qrc
+share/examples/qt4/examples/declarative/cppextensions/referenceexamples/grouped/main.cpp
+share/examples/qt4/examples/declarative/cppextensions/referenceexamples/grouped/person.cpp
+share/examples/qt4/examples/declarative/cppextensions/referenceexamples/grouped/person.h
+share/examples/qt4/examples/declarative/cppextensions/referenceexamples/methods/Makefile
+share/examples/qt4/examples/declarative/cppextensions/referenceexamples/methods/birthdayparty.cpp
+share/examples/qt4/examples/declarative/cppextensions/referenceexamples/methods/birthdayparty.h
+share/examples/qt4/examples/declarative/cppextensions/referenceexamples/methods/example.qml
+share/examples/qt4/examples/declarative/cppextensions/referenceexamples/methods/main.cpp
+share/examples/qt4/examples/declarative/cppextensions/referenceexamples/methods/methods
+%%DEBUG%%share/examples/qt4/examples/declarative/cppextensions/referenceexamples/methods/methods.debug
+share/examples/qt4/examples/declarative/cppextensions/referenceexamples/methods/methods.pro
+share/examples/qt4/examples/declarative/cppextensions/referenceexamples/methods/methods.qrc
+share/examples/qt4/examples/declarative/cppextensions/referenceexamples/methods/person.cpp
+share/examples/qt4/examples/declarative/cppextensions/referenceexamples/methods/person.h
+share/examples/qt4/examples/declarative/cppextensions/referenceexamples/properties/Makefile
+share/examples/qt4/examples/declarative/cppextensions/referenceexamples/properties/birthdayparty.cpp
+share/examples/qt4/examples/declarative/cppextensions/referenceexamples/properties/birthdayparty.h
+share/examples/qt4/examples/declarative/cppextensions/referenceexamples/properties/example.qml
+share/examples/qt4/examples/declarative/cppextensions/referenceexamples/properties/main.cpp
+share/examples/qt4/examples/declarative/cppextensions/referenceexamples/properties/person.cpp
+share/examples/qt4/examples/declarative/cppextensions/referenceexamples/properties/person.h
+share/examples/qt4/examples/declarative/cppextensions/referenceexamples/properties/properties
+%%DEBUG%%share/examples/qt4/examples/declarative/cppextensions/referenceexamples/properties/properties.debug
+share/examples/qt4/examples/declarative/cppextensions/referenceexamples/properties/properties.pro
+share/examples/qt4/examples/declarative/cppextensions/referenceexamples/properties/properties.qrc
+share/examples/qt4/examples/declarative/cppextensions/referenceexamples/referenceexamples.pro
+share/examples/qt4/examples/declarative/cppextensions/referenceexamples/referenceexamples.qmlproject
+share/examples/qt4/examples/declarative/cppextensions/referenceexamples/signal/Makefile
+share/examples/qt4/examples/declarative/cppextensions/referenceexamples/signal/birthdayparty.cpp
+share/examples/qt4/examples/declarative/cppextensions/referenceexamples/signal/birthdayparty.h
+share/examples/qt4/examples/declarative/cppextensions/referenceexamples/signal/example.qml
+share/examples/qt4/examples/declarative/cppextensions/referenceexamples/signal/main.cpp
+share/examples/qt4/examples/declarative/cppextensions/referenceexamples/signal/person.cpp
+share/examples/qt4/examples/declarative/cppextensions/referenceexamples/signal/person.h
+share/examples/qt4/examples/declarative/cppextensions/referenceexamples/signal/signal
+%%DEBUG%%share/examples/qt4/examples/declarative/cppextensions/referenceexamples/signal/signal.debug
+share/examples/qt4/examples/declarative/cppextensions/referenceexamples/signal/signal.pro
+share/examples/qt4/examples/declarative/cppextensions/referenceexamples/signal/signal.qrc
+share/examples/qt4/examples/declarative/cppextensions/referenceexamples/valuesource/Makefile
+share/examples/qt4/examples/declarative/cppextensions/referenceexamples/valuesource/birthdayparty.cpp
+share/examples/qt4/examples/declarative/cppextensions/referenceexamples/valuesource/birthdayparty.h
+share/examples/qt4/examples/declarative/cppextensions/referenceexamples/valuesource/example.qml
+share/examples/qt4/examples/declarative/cppextensions/referenceexamples/valuesource/happybirthdaysong.cpp
+share/examples/qt4/examples/declarative/cppextensions/referenceexamples/valuesource/happybirthdaysong.h
+share/examples/qt4/examples/declarative/cppextensions/referenceexamples/valuesource/main.cpp
+share/examples/qt4/examples/declarative/cppextensions/referenceexamples/valuesource/person.cpp
+share/examples/qt4/examples/declarative/cppextensions/referenceexamples/valuesource/person.h
+share/examples/qt4/examples/declarative/cppextensions/referenceexamples/valuesource/valuesource
+%%DEBUG%%share/examples/qt4/examples/declarative/cppextensions/referenceexamples/valuesource/valuesource.debug
+share/examples/qt4/examples/declarative/cppextensions/referenceexamples/valuesource/valuesource.pro
+share/examples/qt4/examples/declarative/cppextensions/referenceexamples/valuesource/valuesource.qrc
+share/examples/qt4/examples/declarative/extending/adding/adding
+%%DEBUG%%share/examples/qt4/examples/declarative/extending/adding/adding.debug
+share/examples/qt4/examples/declarative/extending/adding/adding.pro
+share/examples/qt4/examples/declarative/extending/adding/adding.qrc
+share/examples/qt4/examples/declarative/extending/adding/main.cpp
+share/examples/qt4/examples/declarative/extending/adding/person.cpp
+share/examples/qt4/examples/declarative/extending/adding/person.h
+share/examples/qt4/examples/declarative/extending/attached/attached
+%%DEBUG%%share/examples/qt4/examples/declarative/extending/attached/attached.debug
+share/examples/qt4/examples/declarative/extending/attached/attached.pro
+share/examples/qt4/examples/declarative/extending/attached/attached.qrc
+share/examples/qt4/examples/declarative/extending/attached/birthdayparty.cpp
+share/examples/qt4/examples/declarative/extending/attached/birthdayparty.h
+share/examples/qt4/examples/declarative/extending/attached/main.cpp
+share/examples/qt4/examples/declarative/extending/attached/person.cpp
+share/examples/qt4/examples/declarative/extending/attached/person.h
+share/examples/qt4/examples/declarative/extending/binding/binding
+%%DEBUG%%share/examples/qt4/examples/declarative/extending/binding/binding.debug
+share/examples/qt4/examples/declarative/extending/binding/binding.pro
+share/examples/qt4/examples/declarative/extending/binding/binding.qrc
+share/examples/qt4/examples/declarative/extending/binding/birthdayparty.cpp
+share/examples/qt4/examples/declarative/extending/binding/birthdayparty.h
+share/examples/qt4/examples/declarative/extending/binding/happybirthdaysong.cpp
+share/examples/qt4/examples/declarative/extending/binding/happybirthdaysong.h
+share/examples/qt4/examples/declarative/extending/binding/main.cpp
+share/examples/qt4/examples/declarative/extending/binding/person.cpp
+share/examples/qt4/examples/declarative/extending/binding/person.h
+share/examples/qt4/examples/declarative/extending/coercion/birthdayparty.cpp
+share/examples/qt4/examples/declarative/extending/coercion/birthdayparty.h
+share/examples/qt4/examples/declarative/extending/coercion/coercion
+%%DEBUG%%share/examples/qt4/examples/declarative/extending/coercion/coercion.debug
+share/examples/qt4/examples/declarative/extending/coercion/coercion.pro
+share/examples/qt4/examples/declarative/extending/coercion/coercion.qrc
+share/examples/qt4/examples/declarative/extending/coercion/main.cpp
+share/examples/qt4/examples/declarative/extending/coercion/person.cpp
+share/examples/qt4/examples/declarative/extending/coercion/person.h
+share/examples/qt4/examples/declarative/extending/default/birthdayparty.cpp
+share/examples/qt4/examples/declarative/extending/default/birthdayparty.h
+share/examples/qt4/examples/declarative/extending/default/default
+%%DEBUG%%share/examples/qt4/examples/declarative/extending/default/default.debug
+share/examples/qt4/examples/declarative/extending/default/default.pro
+share/examples/qt4/examples/declarative/extending/default/default.qrc
+share/examples/qt4/examples/declarative/extending/default/main.cpp
+share/examples/qt4/examples/declarative/extending/default/person.cpp
+share/examples/qt4/examples/declarative/extending/default/person.h
+share/examples/qt4/examples/declarative/extending/extended/extended
+%%DEBUG%%share/examples/qt4/examples/declarative/extending/extended/extended.debug
+share/examples/qt4/examples/declarative/extending/extended/extended.pro
+share/examples/qt4/examples/declarative/extending/extended/extended.qrc
+share/examples/qt4/examples/declarative/extending/extended/lineedit.cpp
+share/examples/qt4/examples/declarative/extending/extended/lineedit.h
+share/examples/qt4/examples/declarative/extending/extended/main.cpp
+share/examples/qt4/examples/declarative/extending/grouped/birthdayparty.cpp
+share/examples/qt4/examples/declarative/extending/grouped/birthdayparty.h
+share/examples/qt4/examples/declarative/extending/grouped/grouped
+%%DEBUG%%share/examples/qt4/examples/declarative/extending/grouped/grouped.debug
+share/examples/qt4/examples/declarative/extending/grouped/grouped.pro
+share/examples/qt4/examples/declarative/extending/grouped/grouped.qrc
+share/examples/qt4/examples/declarative/extending/grouped/main.cpp
+share/examples/qt4/examples/declarative/extending/grouped/person.cpp
+share/examples/qt4/examples/declarative/extending/grouped/person.h
+share/examples/qt4/examples/declarative/extending/methods/birthdayparty.cpp
+share/examples/qt4/examples/declarative/extending/methods/birthdayparty.h
+share/examples/qt4/examples/declarative/extending/methods/main.cpp
+share/examples/qt4/examples/declarative/extending/methods/methods
+%%DEBUG%%share/examples/qt4/examples/declarative/extending/methods/methods.debug
+share/examples/qt4/examples/declarative/extending/methods/methods.pro
+share/examples/qt4/examples/declarative/extending/methods/methods.qrc
+share/examples/qt4/examples/declarative/extending/methods/person.cpp
+share/examples/qt4/examples/declarative/extending/methods/person.h
+share/examples/qt4/examples/declarative/extending/properties/birthdayparty.cpp
+share/examples/qt4/examples/declarative/extending/properties/birthdayparty.h
+share/examples/qt4/examples/declarative/extending/properties/main.cpp
+share/examples/qt4/examples/declarative/extending/properties/person.cpp
+share/examples/qt4/examples/declarative/extending/properties/person.h
+share/examples/qt4/examples/declarative/extending/properties/properties
+%%DEBUG%%share/examples/qt4/examples/declarative/extending/properties/properties.debug
+share/examples/qt4/examples/declarative/extending/properties/properties.pro
+share/examples/qt4/examples/declarative/extending/properties/properties.qrc
+share/examples/qt4/examples/declarative/extending/signal/birthdayparty.cpp
+share/examples/qt4/examples/declarative/extending/signal/birthdayparty.h
+share/examples/qt4/examples/declarative/extending/signal/main.cpp
+share/examples/qt4/examples/declarative/extending/signal/person.cpp
+share/examples/qt4/examples/declarative/extending/signal/person.h
+share/examples/qt4/examples/declarative/extending/signal/signal
+%%DEBUG%%share/examples/qt4/examples/declarative/extending/signal/signal.debug
+share/examples/qt4/examples/declarative/extending/signal/signal.pro
+share/examples/qt4/examples/declarative/extending/signal/signal.qrc
+share/examples/qt4/examples/declarative/extending/valuesource/birthdayparty.cpp
+share/examples/qt4/examples/declarative/extending/valuesource/birthdayparty.h
+share/examples/qt4/examples/declarative/extending/valuesource/happybirthdaysong.cpp
+share/examples/qt4/examples/declarative/extending/valuesource/happybirthdaysong.h
+share/examples/qt4/examples/declarative/extending/valuesource/main.cpp
+share/examples/qt4/examples/declarative/extending/valuesource/person.cpp
+share/examples/qt4/examples/declarative/extending/valuesource/person.h
+share/examples/qt4/examples/declarative/extending/valuesource/valuesource
+%%DEBUG%%share/examples/qt4/examples/declarative/extending/valuesource/valuesource.debug
+share/examples/qt4/examples/declarative/extending/valuesource/valuesource.pro
+share/examples/qt4/examples/declarative/extending/valuesource/valuesource.qrc
+share/examples/qt4/examples/declarative/i18n/i18n.qml
+share/examples/qt4/examples/declarative/i18n/i18n.qmlproject
+share/examples/qt4/examples/declarative/i18n/i18n/base.ts
+share/examples/qt4/examples/declarative/i18n/i18n/qml_en_AU.qm
+share/examples/qt4/examples/declarative/i18n/i18n/qml_en_AU.ts
+share/examples/qt4/examples/declarative/i18n/i18n/qml_fr.qm
+share/examples/qt4/examples/declarative/i18n/i18n/qml_fr.ts
+share/examples/qt4/examples/declarative/imageelements/borderimage/borderimage.qml
+share/examples/qt4/examples/declarative/imageelements/borderimage/borderimage.qmlproject
+share/examples/qt4/examples/declarative/imageelements/borderimage/content/MyBorderImage.qml
+share/examples/qt4/examples/declarative/imageelements/borderimage/content/ShadowRectangle.qml
+share/examples/qt4/examples/declarative/imageelements/borderimage/content/bw.png
+share/examples/qt4/examples/declarative/imageelements/borderimage/content/colors-round.sci
+share/examples/qt4/examples/declarative/imageelements/borderimage/content/colors-stretch.sci
+share/examples/qt4/examples/declarative/imageelements/borderimage/content/colors.png
+share/examples/qt4/examples/declarative/imageelements/borderimage/content/shadow.png
+share/examples/qt4/examples/declarative/imageelements/borderimage/shadows.qml
+share/examples/qt4/examples/declarative/imageelements/image/ImageCell.qml
+share/examples/qt4/examples/declarative/imageelements/image/image.qml
+share/examples/qt4/examples/declarative/imageelements/image/image.qmlproject
+share/examples/qt4/examples/declarative/imageelements/image/qt-logo.png
+share/examples/qt4/examples/declarative/imageelements/imageelements.qmlproject
+share/examples/qt4/examples/declarative/imageprovider/ImageProviderCore/libqmlimageproviderplugin.so
+%%DEBUG%%share/examples/qt4/examples/declarative/imageprovider/ImageProviderCore/libqmlimageproviderplugin.so.debug
+share/examples/qt4/examples/declarative/imageprovider/ImageProviderCore/qmldir
+share/examples/qt4/examples/declarative/imageprovider/imageprovider.cpp
+share/examples/qt4/examples/declarative/imageprovider/imageprovider.pro
+share/examples/qt4/examples/declarative/keyinteraction/focus/Core/ContextMenu.qml
+share/examples/qt4/examples/declarative/keyinteraction/focus/Core/GridMenu.qml
+share/examples/qt4/examples/declarative/keyinteraction/focus/Core/ListMenu.qml
+share/examples/qt4/examples/declarative/keyinteraction/focus/Core/ListViewDelegate.qml
+share/examples/qt4/examples/declarative/keyinteraction/focus/Core/images/arrow.png
+share/examples/qt4/examples/declarative/keyinteraction/focus/Core/images/qt-logo.png
+share/examples/qt4/examples/declarative/keyinteraction/focus/focus.qml
+share/examples/qt4/examples/declarative/keyinteraction/focus/focus.qmlproject
+share/examples/qt4/examples/declarative/keyinteraction/keyinteraction.qmlproject
+share/examples/qt4/examples/declarative/objectlistmodel/dataobject.cpp
+share/examples/qt4/examples/declarative/objectlistmodel/dataobject.h
+share/examples/qt4/examples/declarative/objectlistmodel/main.cpp
+share/examples/qt4/examples/declarative/objectlistmodel/objectlistmodel
+%%DEBUG%%share/examples/qt4/examples/declarative/objectlistmodel/objectlistmodel.debug
+share/examples/qt4/examples/declarative/objectlistmodel/objectlistmodel.pro
+share/examples/qt4/examples/declarative/objectlistmodel/objectlistmodel.qrc
+share/examples/qt4/examples/declarative/objectlistmodel/view.qml
+share/examples/qt4/examples/declarative/plugins/README
+share/examples/qt4/examples/declarative/plugins/com/nokia/TimeExample/Clock.qml
+share/examples/qt4/examples/declarative/plugins/com/nokia/TimeExample/center.png
+share/examples/qt4/examples/declarative/plugins/com/nokia/TimeExample/clock.png
+share/examples/qt4/examples/declarative/plugins/com/nokia/TimeExample/hour.png
+share/examples/qt4/examples/declarative/plugins/com/nokia/TimeExample/libqmlqtimeexampleplugin.so
+%%DEBUG%%share/examples/qt4/examples/declarative/plugins/com/nokia/TimeExample/libqmlqtimeexampleplugin.so.debug
+share/examples/qt4/examples/declarative/plugins/com/nokia/TimeExample/minute.png
+share/examples/qt4/examples/declarative/plugins/com/nokia/TimeExample/qmldir
+share/examples/qt4/examples/declarative/plugins/libqmlqwidgetsplugin.so
+%%DEBUG%%share/examples/qt4/examples/declarative/plugins/libqmlqwidgetsplugin.so.debug
+share/examples/qt4/examples/declarative/plugins/plugin.cpp
+share/examples/qt4/examples/declarative/plugins/plugins.pro
+share/examples/qt4/examples/declarative/plugins/plugins.qml
+share/examples/qt4/examples/declarative/plugins/qwidgets.cpp
+share/examples/qt4/examples/declarative/plugins/qwidgets.pro
+share/examples/qt4/examples/declarative/plugins/qwidgets.qml
+share/examples/qt4/examples/declarative/positioners/Button.qml
+share/examples/qt4/examples/declarative/positioners/add.png
+share/examples/qt4/examples/declarative/positioners/del.png
+share/examples/qt4/examples/declarative/positioners/positioners.qml
+share/examples/qt4/examples/declarative/positioners/positioners.qmlproject
+share/examples/qt4/examples/declarative/positioners/positioners.qmlproject.user
+share/examples/qt4/examples/declarative/sqllocalstorage/hello.qml
+share/examples/qt4/examples/declarative/sqllocalstorage/sqllocalstorage.qmlproject
+share/examples/qt4/examples/declarative/text/fonts/availableFonts.qml
+share/examples/qt4/examples/declarative/text/fonts/banner.qml
+share/examples/qt4/examples/declarative/text/fonts/fonts.qml
+share/examples/qt4/examples/declarative/text/fonts/fonts.qmlproject
+share/examples/qt4/examples/declarative/text/fonts/fonts/tarzeau_ocr_a.ttf
+share/examples/qt4/examples/declarative/text/fonts/hello.qml
+share/examples/qt4/examples/declarative/text/text.qmlproject
+share/examples/qt4/examples/declarative/text/textselection/pics/endHandle.png
+share/examples/qt4/examples/declarative/text/textselection/pics/endHandle.sci
+share/examples/qt4/examples/declarative/text/textselection/pics/startHandle.png
+share/examples/qt4/examples/declarative/text/textselection/pics/startHandle.sci
+share/examples/qt4/examples/declarative/text/textselection/textselection.qml
+share/examples/qt4/examples/declarative/text/textselection/textselection.qmlproject
+share/examples/qt4/examples/declarative/threading/threadedlistmodel/dataloader.js
+share/examples/qt4/examples/declarative/threading/threadedlistmodel/threadedlistmodel.qmlproject
+share/examples/qt4/examples/declarative/threading/threadedlistmodel/timedisplay.qml
+share/examples/qt4/examples/declarative/threading/threading.qmlproject
+share/examples/qt4/examples/declarative/threading/workerscript/workerscript.js
+share/examples/qt4/examples/declarative/threading/workerscript/workerscript.qml
+share/examples/qt4/examples/declarative/threading/workerscript/workerscript.qmlproject
+share/examples/qt4/examples/declarative/touchinteraction/gestures/experimental-gestures.qml
+share/examples/qt4/examples/declarative/touchinteraction/gestures/gestures.qmlproject
+share/examples/qt4/examples/declarative/touchinteraction/mousearea/mousearea-example.qml
+share/examples/qt4/examples/declarative/touchinteraction/mousearea/mousearea.qmlproject
+share/examples/qt4/examples/declarative/touchinteraction/touchinteraction.qmlproject
+share/examples/qt4/examples/declarative/toys/README
+share/examples/qt4/examples/declarative/toys/clocks/clocks.qml
+share/examples/qt4/examples/declarative/toys/clocks/clocks.qmlproject
+share/examples/qt4/examples/declarative/toys/clocks/content/Clock.qml
+share/examples/qt4/examples/declarative/toys/clocks/content/QuitButton.qml
+share/examples/qt4/examples/declarative/toys/clocks/content/background.png
+share/examples/qt4/examples/declarative/toys/clocks/content/center.png
+share/examples/qt4/examples/declarative/toys/clocks/content/clock-night.png
+share/examples/qt4/examples/declarative/toys/clocks/content/clock.png
+share/examples/qt4/examples/declarative/toys/clocks/content/hour.png
+share/examples/qt4/examples/declarative/toys/clocks/content/minute.png
+share/examples/qt4/examples/declarative/toys/clocks/content/quit.png
+share/examples/qt4/examples/declarative/toys/clocks/content/second.png
+share/examples/qt4/examples/declarative/toys/corkboards/Day.qml
+share/examples/qt4/examples/declarative/toys/corkboards/cork.jpg
+share/examples/qt4/examples/declarative/toys/corkboards/corkboards.qml
+share/examples/qt4/examples/declarative/toys/corkboards/corkboards.qmlproject
+share/examples/qt4/examples/declarative/toys/corkboards/note-yellow.png
+share/examples/qt4/examples/declarative/toys/corkboards/tack.png
+share/examples/qt4/examples/declarative/toys/dynamicscene/dynamicscene.qml
+share/examples/qt4/examples/declarative/toys/dynamicscene/dynamicscene.qmlproject
+share/examples/qt4/examples/declarative/toys/dynamicscene/images/NOTE
+share/examples/qt4/examples/declarative/toys/dynamicscene/images/face-smile.png
+share/examples/qt4/examples/declarative/toys/dynamicscene/images/moon.png
+share/examples/qt4/examples/declarative/toys/dynamicscene/images/rabbit_brown.png
+share/examples/qt4/examples/declarative/toys/dynamicscene/images/rabbit_bw.png
+share/examples/qt4/examples/declarative/toys/dynamicscene/images/star.png
+share/examples/qt4/examples/declarative/toys/dynamicscene/images/sun.png
+share/examples/qt4/examples/declarative/toys/dynamicscene/images/tree_s.png
+share/examples/qt4/examples/declarative/toys/dynamicscene/qml/Button.qml
+share/examples/qt4/examples/declarative/toys/dynamicscene/qml/GenericSceneItem.qml
+share/examples/qt4/examples/declarative/toys/dynamicscene/qml/PaletteItem.qml
+share/examples/qt4/examples/declarative/toys/dynamicscene/qml/PerspectiveItem.qml
+share/examples/qt4/examples/declarative/toys/dynamicscene/qml/Sun.qml
+share/examples/qt4/examples/declarative/toys/dynamicscene/qml/itemCreation.js
+share/examples/qt4/examples/declarative/toys/tic-tac-toe/content/Button.qml
+share/examples/qt4/examples/declarative/toys/tic-tac-toe/content/TicTac.qml
+share/examples/qt4/examples/declarative/toys/tic-tac-toe/content/pics/board.png
+share/examples/qt4/examples/declarative/toys/tic-tac-toe/content/pics/o.png
+share/examples/qt4/examples/declarative/toys/tic-tac-toe/content/pics/x.png
+share/examples/qt4/examples/declarative/toys/tic-tac-toe/content/tic-tac-toe.js
+share/examples/qt4/examples/declarative/toys/tic-tac-toe/tic-tac-toe.qml
+share/examples/qt4/examples/declarative/toys/tic-tac-toe/tic-tac-toe.qmlproject
+share/examples/qt4/examples/declarative/toys/toys.qmlproject
+share/examples/qt4/examples/declarative/toys/tvtennis/tvtennis.qml
+share/examples/qt4/examples/declarative/toys/tvtennis/tvtennis.qmlproject
+share/examples/qt4/examples/declarative/ui-components/README
+share/examples/qt4/examples/declarative/ui-components/dialcontrol/content/Dial.qml
+share/examples/qt4/examples/declarative/ui-components/dialcontrol/content/QuitButton.qml
+share/examples/qt4/examples/declarative/ui-components/dialcontrol/content/background.png
+share/examples/qt4/examples/declarative/ui-components/dialcontrol/content/needle.png
+share/examples/qt4/examples/declarative/ui-components/dialcontrol/content/needle_shadow.png
+share/examples/qt4/examples/declarative/ui-components/dialcontrol/content/overlay.png
+share/examples/qt4/examples/declarative/ui-components/dialcontrol/content/quit.png
+share/examples/qt4/examples/declarative/ui-components/dialcontrol/dialcontrol.qml
+share/examples/qt4/examples/declarative/ui-components/dialcontrol/dialcontrol.qmlproject
+share/examples/qt4/examples/declarative/ui-components/flipable/content/5_heart.png
+share/examples/qt4/examples/declarative/ui-components/flipable/content/9_club.png
+share/examples/qt4/examples/declarative/ui-components/flipable/content/Card.qml
+share/examples/qt4/examples/declarative/ui-components/flipable/content/back.png
+share/examples/qt4/examples/declarative/ui-components/flipable/flipable.qml
+share/examples/qt4/examples/declarative/ui-components/flipable/flipable.qmlproject
+share/examples/qt4/examples/declarative/ui-components/progressbar/content/ProgressBar.qml
+share/examples/qt4/examples/declarative/ui-components/progressbar/content/background.png
+share/examples/qt4/examples/declarative/ui-components/progressbar/main.qml
+share/examples/qt4/examples/declarative/ui-components/progressbar/progressbar.qmlproject
+share/examples/qt4/examples/declarative/ui-components/scrollbar/ScrollBar.qml
+share/examples/qt4/examples/declarative/ui-components/scrollbar/main.qml
+share/examples/qt4/examples/declarative/ui-components/scrollbar/pics/niagara_falls.jpg
+share/examples/qt4/examples/declarative/ui-components/scrollbar/scrollbar.qmlproject
+share/examples/qt4/examples/declarative/ui-components/searchbox/SearchBox.qml
+share/examples/qt4/examples/declarative/ui-components/searchbox/images/clear.png
+share/examples/qt4/examples/declarative/ui-components/searchbox/images/lineedit-bg-focus.png
+share/examples/qt4/examples/declarative/ui-components/searchbox/images/lineedit-bg.png
+share/examples/qt4/examples/declarative/ui-components/searchbox/main.qml
+share/examples/qt4/examples/declarative/ui-components/searchbox/searchbox.qmlproject
+share/examples/qt4/examples/declarative/ui-components/slideswitch/content/Switch.qml
+share/examples/qt4/examples/declarative/ui-components/slideswitch/content/background.svg
+share/examples/qt4/examples/declarative/ui-components/slideswitch/content/knob.svg
+share/examples/qt4/examples/declarative/ui-components/slideswitch/slideswitch.qml
+share/examples/qt4/examples/declarative/ui-components/slideswitch/slideswitch.qmlproject
+share/examples/qt4/examples/declarative/ui-components/spinner/content/Spinner.qml
+share/examples/qt4/examples/declarative/ui-components/spinner/content/spinner-bg.png
+share/examples/qt4/examples/declarative/ui-components/spinner/content/spinner-select.png
+share/examples/qt4/examples/declarative/ui-components/spinner/main.qml
+share/examples/qt4/examples/declarative/ui-components/spinner/spinner.qmlproject
+share/examples/qt4/examples/declarative/ui-components/tabwidget/TabWidget.qml
+share/examples/qt4/examples/declarative/ui-components/tabwidget/main.qml
+share/examples/qt4/examples/declarative/ui-components/tabwidget/tab.png
+share/examples/qt4/examples/declarative/ui-components/tabwidget/tabwidget.qmlproject
+share/examples/qt4/examples/declarative/ui-components/ui-components.qmlproject
+share/examples/qt4/examples/declarative/xml/xml.qmlproject
+share/examples/qt4/examples/declarative/xml/xmlhttprequest/data.xml
+share/examples/qt4/examples/declarative/xml/xmlhttprequest/xmlhttprequest-example.qml
+share/examples/qt4/examples/declarative/xml/xmlhttprequest/xmlhttprequest.qmlproject
 share/examples/qt4/examples/designer/README
 share/examples/qt4/examples/designer/calculatorbuilder/calculatorbuilder
 %%DEBUG%%share/examples/qt4/examples/designer/calculatorbuilder/calculatorbuilder.debug
@@ -1024,7 +1664,9 @@ share/examples/qt4/examples/graphicsview/elasticnodes/main.cpp
 share/examples/qt4/examples/graphicsview/elasticnodes/node.cpp
 share/examples/qt4/examples/graphicsview/elasticnodes/node.h
 share/examples/qt4/examples/graphicsview/graphicsview.pro
-share/examples/qt4/examples/graphicsview/padnavigator/backside.ui
+share/examples/qt4/examples/graphicsview/padnavigator/flippablepad.cpp
+share/examples/qt4/examples/graphicsview/padnavigator/flippablepad.h
+share/examples/qt4/examples/graphicsview/padnavigator/form.ui
 share/examples/qt4/examples/graphicsview/padnavigator/images/artsfftscope.png
 share/examples/qt4/examples/graphicsview/padnavigator/images/blue_angle_swirl.jpg
 share/examples/qt4/examples/graphicsview/padnavigator/images/kontact_contacts.png
@@ -1036,11 +1678,11 @@ share/examples/qt4/examples/graphicsview/padnavigator/images/metacontact_online.
 share/examples/qt4/examples/graphicsview/padnavigator/images/minitools.png
 share/examples/qt4/examples/graphicsview/padnavigator/main.cpp
 share/examples/qt4/examples/graphicsview/padnavigator/padnavigator
+share/examples/qt4/examples/graphicsview/padnavigator/padnavigator.cpp
 %%DEBUG%%share/examples/qt4/examples/graphicsview/padnavigator/padnavigator.debug
+share/examples/qt4/examples/graphicsview/padnavigator/padnavigator.h
 share/examples/qt4/examples/graphicsview/padnavigator/padnavigator.pro
 share/examples/qt4/examples/graphicsview/padnavigator/padnavigator.qrc
-share/examples/qt4/examples/graphicsview/padnavigator/panel.cpp
-share/examples/qt4/examples/graphicsview/padnavigator/panel.h
 share/examples/qt4/examples/graphicsview/padnavigator/roundrectitem.cpp
 share/examples/qt4/examples/graphicsview/padnavigator/roundrectitem.h
 share/examples/qt4/examples/graphicsview/padnavigator/splashitem.cpp
@@ -1658,24 +2300,6 @@ share/examples/qt4/examples/multimedia/videowidget/videowidget.h
 share/examples/qt4/examples/multimedia/videowidget/videowidget.pro
 share/examples/qt4/examples/multimedia/videowidget/videowidgetsurface.cpp
 share/examples/qt4/examples/multimedia/videowidget/videowidgetsurface.h
-share/examples/qt4/examples/multitouch/fingerpaint/fingerpaint
-%%DEBUG%%share/examples/qt4/examples/multitouch/fingerpaint/fingerpaint.debug
-share/examples/qt4/examples/multitouch/fingerpaint/fingerpaint.pro
-share/examples/qt4/examples/multitouch/fingerpaint/main.cpp
-share/examples/qt4/examples/multitouch/fingerpaint/mainwindow.cpp
-share/examples/qt4/examples/multitouch/fingerpaint/mainwindow.h
-share/examples/qt4/examples/multitouch/fingerpaint/scribblearea.cpp
-share/examples/qt4/examples/multitouch/fingerpaint/scribblearea.h
-share/examples/qt4/examples/multitouch/pinchzoom/graphicsview.cpp
-share/examples/qt4/examples/multitouch/pinchzoom/graphicsview.h
-share/examples/qt4/examples/multitouch/pinchzoom/images/cheese.jpg
-share/examples/qt4/examples/multitouch/pinchzoom/main.cpp
-share/examples/qt4/examples/multitouch/pinchzoom/mice.qrc
-share/examples/qt4/examples/multitouch/pinchzoom/mouse.cpp
-share/examples/qt4/examples/multitouch/pinchzoom/mouse.h
-share/examples/qt4/examples/multitouch/pinchzoom/pinchzoom
-%%DEBUG%%share/examples/qt4/examples/multitouch/pinchzoom/pinchzoom.debug
-share/examples/qt4/examples/multitouch/pinchzoom/pinchzoom.pro
 share/examples/qt4/examples/network/README
 share/examples/qt4/examples/network/blockingfortuneclient/blockingclient.cpp
 share/examples/qt4/examples/network/blockingfortuneclient/blockingclient.h
@@ -2020,30 +2644,6 @@ share/examples/qt4/examples/phonon/qmusicplayer/mainwindow.h
 share/examples/qt4/examples/phonon/qmusicplayer/qmusicplayer
 %%DEBUG%%share/examples/qt4/examples/phonon/qmusicplayer/qmusicplayer.debug
 share/examples/qt4/examples/phonon/qmusicplayer/qmusicplayer.pro
-share/examples/qt4/examples/qtconcurrent/README
-share/examples/qt4/examples/qtconcurrent/imagescaling/imagescaling
-share/examples/qt4/examples/qtconcurrent/imagescaling/imagescaling.cpp
-%%DEBUG%%share/examples/qt4/examples/qtconcurrent/imagescaling/imagescaling.debug
-share/examples/qt4/examples/qtconcurrent/imagescaling/imagescaling.h
-share/examples/qt4/examples/qtconcurrent/imagescaling/imagescaling.pro
-share/examples/qt4/examples/qtconcurrent/imagescaling/main.cpp
-share/examples/qt4/examples/qtconcurrent/map/main.cpp
-share/examples/qt4/examples/qtconcurrent/map/map.pro
-share/examples/qt4/examples/qtconcurrent/map/mapdemo
-%%DEBUG%%share/examples/qt4/examples/qtconcurrent/map/mapdemo.debug
-share/examples/qt4/examples/qtconcurrent/progressdialog/main.cpp
-share/examples/qt4/examples/qtconcurrent/progressdialog/progressdialog
-%%DEBUG%%share/examples/qt4/examples/qtconcurrent/progressdialog/progressdialog.debug
-share/examples/qt4/examples/qtconcurrent/progressdialog/progressdialog.pro
-share/examples/qt4/examples/qtconcurrent/qtconcurrent.pro
-share/examples/qt4/examples/qtconcurrent/runfunction/main.cpp
-share/examples/qt4/examples/qtconcurrent/runfunction/runfunction
-%%DEBUG%%share/examples/qt4/examples/qtconcurrent/runfunction/runfunction.debug
-share/examples/qt4/examples/qtconcurrent/runfunction/runfunction.pro
-share/examples/qt4/examples/qtconcurrent/wordcount/main.cpp
-share/examples/qt4/examples/qtconcurrent/wordcount/wordcount
-%%DEBUG%%share/examples/qt4/examples/qtconcurrent/wordcount/wordcount.debug
-share/examples/qt4/examples/qtconcurrent/wordcount/wordcount.pro
 share/examples/qt4/examples/qtestlib/README
 share/examples/qt4/examples/qtestlib/qtestlib.pro
 share/examples/qt4/examples/qtestlib/tutorial1/testqstring.cpp
@@ -2180,7 +2780,6 @@ share/examples/qt4/examples/script/qstetrix/tetrixboard.h
 share/examples/qt4/examples/script/qstetrix/tetrixboard.js
 share/examples/qt4/examples/script/qstetrix/tetrixpiece.js
 share/examples/qt4/examples/script/qstetrix/tetrixwindow.js
-share/examples/qt4/examples/script/qstetrix/tetrixwindow.ui
 share/examples/qt4/examples/script/script.pro
 share/examples/qt4/examples/sql/README
 share/examples/qt4/examples/sql/cachedtable/cachedtable
@@ -2310,8 +2909,8 @@ share/examples/qt4/examples/tools/completer/completer
 %%DEBUG%%share/examples/qt4/examples/tools/completer/completer.debug
 share/examples/qt4/examples/tools/completer/completer.pro
 share/examples/qt4/examples/tools/completer/completer.qrc
-share/examples/qt4/examples/tools/completer/dirmodel.cpp
-share/examples/qt4/examples/tools/completer/dirmodel.h
+share/examples/qt4/examples/tools/completer/fsmodel.cpp
+share/examples/qt4/examples/tools/completer/fsmodel.h
 share/examples/qt4/examples/tools/completer/main.cpp
 share/examples/qt4/examples/tools/completer/mainwindow.cpp
 share/examples/qt4/examples/tools/completer/mainwindow.h
@@ -2473,6 +3072,35 @@ share/examples/qt4/examples/tools/undoframework/undoframework
 %%DEBUG%%share/examples/qt4/examples/tools/undoframework/undoframework.debug
 share/examples/qt4/examples/tools/undoframework/undoframework.pro
 share/examples/qt4/examples/tools/undoframework/undoframework.qrc
+share/examples/qt4/examples/touch/dials/dials
+%%DEBUG%%share/examples/qt4/examples/touch/dials/dials.debug
+share/examples/qt4/examples/touch/dials/dials.pro
+share/examples/qt4/examples/touch/dials/dials.ui
+share/examples/qt4/examples/touch/dials/main.cpp
+share/examples/qt4/examples/touch/fingerpaint/fingerpaint
+%%DEBUG%%share/examples/qt4/examples/touch/fingerpaint/fingerpaint.debug
+share/examples/qt4/examples/touch/fingerpaint/fingerpaint.pro
+share/examples/qt4/examples/touch/fingerpaint/main.cpp
+share/examples/qt4/examples/touch/fingerpaint/mainwindow.cpp
+share/examples/qt4/examples/touch/fingerpaint/mainwindow.h
+share/examples/qt4/examples/touch/fingerpaint/scribblearea.cpp
+share/examples/qt4/examples/touch/fingerpaint/scribblearea.h
+share/examples/qt4/examples/touch/knobs/knob.cpp
+share/examples/qt4/examples/touch/knobs/knob.h
+share/examples/qt4/examples/touch/knobs/knobs
+%%DEBUG%%share/examples/qt4/examples/touch/knobs/knobs.debug
+share/examples/qt4/examples/touch/knobs/knobs.pro
+share/examples/qt4/examples/touch/knobs/main.cpp
+share/examples/qt4/examples/touch/pinchzoom/graphicsview.cpp
+share/examples/qt4/examples/touch/pinchzoom/graphicsview.h
+share/examples/qt4/examples/touch/pinchzoom/images/cheese.jpg
+share/examples/qt4/examples/touch/pinchzoom/main.cpp
+share/examples/qt4/examples/touch/pinchzoom/mice.qrc
+share/examples/qt4/examples/touch/pinchzoom/mouse.cpp
+share/examples/qt4/examples/touch/pinchzoom/mouse.h
+share/examples/qt4/examples/touch/pinchzoom/pinchzoom
+%%DEBUG%%share/examples/qt4/examples/touch/pinchzoom/pinchzoom.debug
+share/examples/qt4/examples/touch/pinchzoom/pinchzoom.pro
 share/examples/qt4/examples/tutorials/README
 share/examples/qt4/examples/tutorials/addressbook/README
 share/examples/qt4/examples/tutorials/addressbook/addressbook.pro
@@ -2524,6 +3152,51 @@ share/examples/qt4/examples/tutorials/addressbook/part7/main.cpp
 share/examples/qt4/examples/tutorials/addressbook/part7/part7
 %%DEBUG%%share/examples/qt4/examples/tutorials/addressbook/part7/part7.debug
 share/examples/qt4/examples/tutorials/addressbook/part7/part7.pro
+share/examples/qt4/examples/tutorials/modelview/1_readonly/1_readonly.pro
+share/examples/qt4/examples/tutorials/modelview/1_readonly/main.cpp
+share/examples/qt4/examples/tutorials/modelview/1_readonly/mv_readonly
+%%DEBUG%%share/examples/qt4/examples/tutorials/modelview/1_readonly/mv_readonly.debug
+share/examples/qt4/examples/tutorials/modelview/1_readonly/mymodel.cpp
+share/examples/qt4/examples/tutorials/modelview/1_readonly/mymodel.h
+share/examples/qt4/examples/tutorials/modelview/2_formatting/2_formatting.pro
+share/examples/qt4/examples/tutorials/modelview/2_formatting/main.cpp
+share/examples/qt4/examples/tutorials/modelview/2_formatting/mv_formatting
+%%DEBUG%%share/examples/qt4/examples/tutorials/modelview/2_formatting/mv_formatting.debug
+share/examples/qt4/examples/tutorials/modelview/2_formatting/mymodel.cpp
+share/examples/qt4/examples/tutorials/modelview/2_formatting/mymodel.h
+share/examples/qt4/examples/tutorials/modelview/3_changingmodel/3_changingmodel.pro
+share/examples/qt4/examples/tutorials/modelview/3_changingmodel/main.cpp
+share/examples/qt4/examples/tutorials/modelview/3_changingmodel/mv_changingmodel
+%%DEBUG%%share/examples/qt4/examples/tutorials/modelview/3_changingmodel/mv_changingmodel.debug
+share/examples/qt4/examples/tutorials/modelview/3_changingmodel/mymodel.cpp
+share/examples/qt4/examples/tutorials/modelview/3_changingmodel/mymodel.h
+share/examples/qt4/examples/tutorials/modelview/4_headers/4_headers.pro
+share/examples/qt4/examples/tutorials/modelview/4_headers/main.cpp
+share/examples/qt4/examples/tutorials/modelview/4_headers/mv_headers
+%%DEBUG%%share/examples/qt4/examples/tutorials/modelview/4_headers/mv_headers.debug
+share/examples/qt4/examples/tutorials/modelview/4_headers/mymodel.cpp
+share/examples/qt4/examples/tutorials/modelview/4_headers/mymodel.h
+share/examples/qt4/examples/tutorials/modelview/5_edit/5_edit.pro
+share/examples/qt4/examples/tutorials/modelview/5_edit/main.cpp
+share/examples/qt4/examples/tutorials/modelview/5_edit/mainwindow.cpp
+share/examples/qt4/examples/tutorials/modelview/5_edit/mainwindow.h
+share/examples/qt4/examples/tutorials/modelview/5_edit/mv_edit
+%%DEBUG%%share/examples/qt4/examples/tutorials/modelview/5_edit/mv_edit.debug
+share/examples/qt4/examples/tutorials/modelview/5_edit/mymodel.cpp
+share/examples/qt4/examples/tutorials/modelview/5_edit/mymodel.h
+share/examples/qt4/examples/tutorials/modelview/6_treeview/6_treeview.pro
+share/examples/qt4/examples/tutorials/modelview/6_treeview/main.cpp
+share/examples/qt4/examples/tutorials/modelview/6_treeview/mainwindow.cpp
+share/examples/qt4/examples/tutorials/modelview/6_treeview/mainwindow.h
+share/examples/qt4/examples/tutorials/modelview/6_treeview/mv_tree
+%%DEBUG%%share/examples/qt4/examples/tutorials/modelview/6_treeview/mv_tree.debug
+share/examples/qt4/examples/tutorials/modelview/7_selections/7_selections.pro
+share/examples/qt4/examples/tutorials/modelview/7_selections/main.cpp
+share/examples/qt4/examples/tutorials/modelview/7_selections/mainwindow.cpp
+share/examples/qt4/examples/tutorials/modelview/7_selections/mainwindow.h
+share/examples/qt4/examples/tutorials/modelview/7_selections/mv_selections
+%%DEBUG%%share/examples/qt4/examples/tutorials/modelview/7_selections/mv_selections.debug
+share/examples/qt4/examples/tutorials/modelview/modelview.pro
 share/examples/qt4/examples/tutorials/tutorials.pro
 share/examples/qt4/examples/uitools/multipleinheritance/calculatorform.cpp
 share/examples/qt4/examples/uitools/multipleinheritance/calculatorform.h
@@ -2568,8 +3241,8 @@ share/examples/qt4/examples/webkit/formextractor/main.cpp
 share/examples/qt4/examples/webkit/formextractor/mainwindow.cpp
 share/examples/qt4/examples/webkit/formextractor/mainwindow.h
 share/examples/qt4/examples/webkit/framecapture/framecapture
-%%DEBUG%%share/examples/qt4/examples/webkit/framecapture/framecapture.debug
 share/examples/qt4/examples/webkit/framecapture/framecapture.cpp
+%%DEBUG%%share/examples/qt4/examples/webkit/framecapture/framecapture.debug
 share/examples/qt4/examples/webkit/framecapture/framecapture.h
 share/examples/qt4/examples/webkit/framecapture/main.cpp
 share/examples/qt4/examples/webkit/googlechat/form.ui
@@ -3028,6 +3701,14 @@ share/examples/qt4/examples/xmlpatterns/xquery/xquery.pro
 @dirrm share/examples/qt4/examples/uitools/textfinder
 @dirrm share/examples/qt4/examples/uitools/multipleinheritance
 @dirrm share/examples/qt4/examples/uitools
+@dirrm share/examples/qt4/examples/tutorials/modelview/7_selections
+@dirrm share/examples/qt4/examples/tutorials/modelview/6_treeview
+@dirrm share/examples/qt4/examples/tutorials/modelview/5_edit
+@dirrm share/examples/qt4/examples/tutorials/modelview/4_headers
+@dirrm share/examples/qt4/examples/tutorials/modelview/3_changingmodel
+@dirrm share/examples/qt4/examples/tutorials/modelview/2_formatting
+@dirrm share/examples/qt4/examples/tutorials/modelview/1_readonly
+@dirrm share/examples/qt4/examples/tutorials/modelview
 @dirrm share/examples/qt4/examples/tutorials/addressbook/part7
 @dirrm share/examples/qt4/examples/tutorials/addressbook/part6
 @dirrm share/examples/qt4/examples/tutorials/addressbook/part5
@@ -3037,6 +3718,12 @@ share/examples/qt4/examples/xmlpatterns/xquery/xquery.pro
 @dirrm share/examples/qt4/examples/tutorials/addressbook/part1
 @dirrm share/examples/qt4/examples/tutorials/addressbook
 @dirrm share/examples/qt4/examples/tutorials
+@dirrm share/examples/qt4/examples/touch/pinchzoom/images
+@dirrm share/examples/qt4/examples/touch/pinchzoom
+@dirrm share/examples/qt4/examples/touch/knobs
+@dirrm share/examples/qt4/examples/touch/fingerpaint
+@dirrm share/examples/qt4/examples/touch/dials
+@dirrm share/examples/qt4/examples/touch
 @dirrm share/examples/qt4/examples/tools/undoframework/images
 @dirrm share/examples/qt4/examples/tools/undoframework
 @dirrm share/examples/qt4/examples/tools/treemodelcompleter/resources
@@ -3109,12 +3796,6 @@ share/examples/qt4/examples/xmlpatterns/xquery/xquery.pro
 @dirrm share/examples/qt4/examples/qtestlib/tutorial2
 @dirrm share/examples/qt4/examples/qtestlib/tutorial1
 @dirrm share/examples/qt4/examples/qtestlib
-@dirrm share/examples/qt4/examples/qtconcurrent/wordcount
-@dirrm share/examples/qt4/examples/qtconcurrent/runfunction
-@dirrm share/examples/qt4/examples/qtconcurrent/progressdialog
-@dirrm share/examples/qt4/examples/qtconcurrent/map
-@dirrm share/examples/qt4/examples/qtconcurrent/imagescaling
-@dirrm share/examples/qt4/examples/qtconcurrent
 @dirrm share/examples/qt4/examples/phonon/qmusicplayer
 @dirrm share/examples/qt4/examples/phonon/capabilities
 @dirrm share/examples/qt4/examples/phonon
@@ -3161,10 +3842,6 @@ share/examples/qt4/examples/xmlpatterns/xquery/xquery.pro
 @dirrm share/examples/qt4/examples/network/broadcastreceiver
 @dirrm share/examples/qt4/examples/network/blockingfortuneclient
 @dirrm share/examples/qt4/examples/network
-@dirrm share/examples/qt4/examples/multitouch/pinchzoom/images
-@dirrm share/examples/qt4/examples/multitouch/pinchzoom
-@dirrm share/examples/qt4/examples/multitouch/fingerpaint
-@dirrm share/examples/qt4/examples/multitouch
 @dirrm share/examples/qt4/examples/multimedia/videowidget
 @dirrm share/examples/qt4/examples/multimedia/videographicsitem
 @dirrm share/examples/qt4/examples/multimedia/audiooutput
@@ -3288,6 +3965,111 @@ share/examples/qt4/examples/xmlpatterns/xquery/xquery.pro
 @dirrm share/examples/qt4/examples/designer/calculatorform
 @dirrm share/examples/qt4/examples/designer/calculatorbuilder
 @dirrm share/examples/qt4/examples/designer
+@dirrm share/examples/qt4/examples/declarative/xml/xmlhttprequest
+@dirrm share/examples/qt4/examples/declarative/xml
+@dirrm share/examples/qt4/examples/declarative/ui-components/tabwidget
+@dirrm share/examples/qt4/examples/declarative/ui-components/spinner/content
+@dirrm share/examples/qt4/examples/declarative/ui-components/spinner
+@dirrm share/examples/qt4/examples/declarative/ui-components/slideswitch/content
+@dirrm share/examples/qt4/examples/declarative/ui-components/slideswitch
+@dirrm share/examples/qt4/examples/declarative/ui-components/searchbox/images
+@dirrm share/examples/qt4/examples/declarative/ui-components/searchbox
+@dirrm share/examples/qt4/examples/declarative/ui-components/scrollbar/pics
+@dirrm share/examples/qt4/examples/declarative/ui-components/scrollbar
+@dirrm share/examples/qt4/examples/declarative/ui-components/progressbar/content
+@dirrm share/examples/qt4/examples/declarative/ui-components/progressbar
+@dirrm share/examples/qt4/examples/declarative/ui-components/flipable/content
+@dirrm share/examples/qt4/examples/declarative/ui-components/flipable
+@dirrm share/examples/qt4/examples/declarative/ui-components/dialcontrol/content
+@dirrm share/examples/qt4/examples/declarative/ui-components/dialcontrol
+@dirrm share/examples/qt4/examples/declarative/ui-components
+@dirrm share/examples/qt4/examples/declarative/toys/tvtennis
+@dirrm share/examples/qt4/examples/declarative/toys/tic-tac-toe/content/pics
+@dirrm share/examples/qt4/examples/declarative/toys/tic-tac-toe/content
+@dirrm share/examples/qt4/examples/declarative/toys/tic-tac-toe
+@dirrm share/examples/qt4/examples/declarative/toys/dynamicscene/qml
+@dirrm share/examples/qt4/examples/declarative/toys/dynamicscene/images
+@dirrm share/examples/qt4/examples/declarative/toys/dynamicscene
+@dirrm share/examples/qt4/examples/declarative/toys/corkboards
+@dirrm share/examples/qt4/examples/declarative/toys/clocks/content
+@dirrm share/examples/qt4/examples/declarative/toys/clocks
+@dirrm share/examples/qt4/examples/declarative/toys
+@dirrm share/examples/qt4/examples/declarative/touchinteraction/mousearea
+@dirrm share/examples/qt4/examples/declarative/touchinteraction/gestures
+@dirrm share/examples/qt4/examples/declarative/touchinteraction
+@dirrm share/examples/qt4/examples/declarative/threading/workerscript
+@dirrm share/examples/qt4/examples/declarative/threading/threadedlistmodel
+@dirrm share/examples/qt4/examples/declarative/threading
+@dirrm share/examples/qt4/examples/declarative/text/textselection/pics
+@dirrm share/examples/qt4/examples/declarative/text/textselection
+@dirrm share/examples/qt4/examples/declarative/text/fonts/fonts
+@dirrm share/examples/qt4/examples/declarative/text/fonts
+@dirrm share/examples/qt4/examples/declarative/text
+@dirrm share/examples/qt4/examples/declarative/sqllocalstorage
+@dirrm share/examples/qt4/examples/declarative/positioners
+@dirrm share/examples/qt4/examples/declarative/plugins/com/nokia/TimeExample
+@dirrm share/examples/qt4/examples/declarative/plugins/com/nokia
+@dirrm share/examples/qt4/examples/declarative/plugins/com
+@dirrm share/examples/qt4/examples/declarative/plugins
+@dirrm share/examples/qt4/examples/declarative/objectlistmodel
+@dirrm share/examples/qt4/examples/declarative/keyinteraction/focus/Core/images
+@dirrm share/examples/qt4/examples/declarative/keyinteraction/focus/Core
+@dirrm share/examples/qt4/examples/declarative/keyinteraction/focus
+@dirrm share/examples/qt4/examples/declarative/keyinteraction
+@dirrm share/examples/qt4/examples/declarative/imageprovider/ImageProviderCore
+@dirrm share/examples/qt4/examples/declarative/imageprovider
+@dirrm share/examples/qt4/examples/declarative/imageelements/image
+@dirrm share/examples/qt4/examples/declarative/imageelements/borderimage/content
+@dirrm share/examples/qt4/examples/declarative/imageelements/borderimage
+@dirrm share/examples/qt4/examples/declarative/imageelements
+@dirrm share/examples/qt4/examples/declarative/i18n/i18n
+@dirrm share/examples/qt4/examples/declarative/i18n
+@dirrm share/examples/qt4/examples/declarative/extending/valuesource
+@dirrm share/examples/qt4/examples/declarative/extending/signal
+@dirrm share/examples/qt4/examples/declarative/extending/properties
+@dirrm share/examples/qt4/examples/declarative/extending/methods
+@dirrm share/examples/qt4/examples/declarative/extending/grouped
+@dirrm share/examples/qt4/examples/declarative/extending/extended
+@dirrm share/examples/qt4/examples/declarative/extending/default
+@dirrm share/examples/qt4/examples/declarative/extending/coercion
+@dirrm share/examples/qt4/examples/declarative/extending/binding
+@dirrm share/examples/qt4/examples/declarative/extending/attached
+@dirrm share/examples/qt4/examples/declarative/extending/adding
+@dirrm share/examples/qt4/examples/declarative/extending
+@dirrm share/examples/qt4/examples/declarative/cppextensions/referenceexamples/valuesource
+@dirrm share/examples/qt4/examples/declarative/cppextensions/referenceexamples/signal
+@dirrm share/examples/qt4/examples/declarative/cppextensions/referenceexamples/properties
+@dirrm share/examples/qt4/examples/declarative/cppextensions/referenceexamples/methods
+@dirrm share/examples/qt4/examples/declarative/cppextensions/referenceexamples/grouped
+@dirrm share/examples/qt4/examples/declarative/cppextensions/referenceexamples/extended
+@dirrm share/examples/qt4/examples/declarative/cppextensions/referenceexamples/default
+@dirrm share/examples/qt4/examples/declarative/cppextensions/referenceexamples/coercion
+@dirrm share/examples/qt4/examples/declarative/cppextensions/referenceexamples/binding
+@dirrm share/examples/qt4/examples/declarative/cppextensions/referenceexamples/attached
+@dirrm share/examples/qt4/examples/declarative/cppextensions/referenceexamples/adding
+@dirrm share/examples/qt4/examples/declarative/cppextensions/referenceexamples
+@dirrm share/examples/qt4/examples/declarative/cppextensions/qwidgets/QWidgets
+@dirrm share/examples/qt4/examples/declarative/cppextensions/qwidgets
+@dirrm share/examples/qt4/examples/declarative/cppextensions/qgraphicslayouts/qgraphicslinearlayout
+@dirrm share/examples/qt4/examples/declarative/cppextensions/qgraphicslayouts/qgraphicsgridlayout
+@dirrm share/examples/qt4/examples/declarative/cppextensions/qgraphicslayouts/layoutitem
+@dirrm share/examples/qt4/examples/declarative/cppextensions/qgraphicslayouts
+@dirrm share/examples/qt4/examples/declarative/cppextensions/plugins/com/nokia/TimeExample
+@dirrm share/examples/qt4/examples/declarative/cppextensions/plugins/com/nokia
+@dirrm share/examples/qt4/examples/declarative/cppextensions/plugins/com
+@dirrm share/examples/qt4/examples/declarative/cppextensions/plugins
+@dirrm share/examples/qt4/examples/declarative/cppextensions/networkaccessmanagerfactory
+@dirrm share/examples/qt4/examples/declarative/cppextensions/imageprovider/ImageProviderCore
+@dirrm share/examples/qt4/examples/declarative/cppextensions/imageprovider
+@dirrm share/examples/qt4/examples/declarative/cppextensions
+@dirrm share/examples/qt4/examples/declarative/animation/states
+@dirrm share/examples/qt4/examples/declarative/animation/easing/content
+@dirrm share/examples/qt4/examples/declarative/animation/easing
+@dirrm share/examples/qt4/examples/declarative/animation/behaviors
+@dirrm share/examples/qt4/examples/declarative/animation/basics/images
+@dirrm share/examples/qt4/examples/declarative/animation/basics
+@dirrm share/examples/qt4/examples/declarative/animation
+@dirrm share/examples/qt4/examples/declarative
 @dirrm share/examples/qt4/examples/dbus/remotecontrolledcar/controller
 @dirrm share/examples/qt4/examples/dbus/remotecontrolledcar/car
 @dirrm share/examples/qt4/examples/dbus/remotecontrolledcar
@@ -3296,10 +4078,6 @@ share/examples/qt4/examples/xmlpatterns/xquery/xquery.pro
 @dirrm share/examples/qt4/examples/dbus/complexpingpong
 @dirrm share/examples/qt4/examples/dbus/chat
 @dirrm share/examples/qt4/examples/dbus
-@dirrm share/examples/qt4/examples/assistant/simpletextviewer/documentation/images
-@dirrm share/examples/qt4/examples/assistant/simpletextviewer/documentation
-@dirrm share/examples/qt4/examples/assistant/simpletextviewer
-@dirrm share/examples/qt4/examples/assistant
 @dirrm share/examples/qt4/examples/animation/stickman
 @dirrm share/examples/qt4/examples/animation/states
 @dirrm share/examples/qt4/examples/animation/moveblocks
@@ -3347,6 +4125,38 @@ share/examples/qt4/examples/xmlpatterns/xquery/xquery.pro
 @dirrm share/examples/qt4/demos/gradients
 @dirrm share/examples/qt4/demos/embeddeddialogs
 @dirrm share/examples/qt4/demos/deform
+@dirrm share/examples/qt4/demos/declarative/webbrowser/content/pics
+@dirrm share/examples/qt4/demos/declarative/webbrowser/content
+@dirrm share/examples/qt4/demos/declarative/webbrowser
+@dirrm share/examples/qt4/demos/declarative/twitter/TwitterCore/images
+@dirrm share/examples/qt4/demos/declarative/twitter/TwitterCore
+@dirrm share/examples/qt4/demos/declarative/twitter
+@dirrm share/examples/qt4/demos/declarative/snake/content/pics
+@dirrm share/examples/qt4/demos/declarative/snake/content
+@dirrm share/examples/qt4/demos/declarative/snake
+@dirrm share/examples/qt4/demos/declarative/samegame/highscores
+@dirrm share/examples/qt4/demos/declarative/samegame/SamegameCore/pics
+@dirrm share/examples/qt4/demos/declarative/samegame/SamegameCore
+@dirrm share/examples/qt4/demos/declarative/samegame
+@dirrm share/examples/qt4/demos/declarative/rssnews/content/images
+@dirrm share/examples/qt4/demos/declarative/rssnews/content
+@dirrm share/examples/qt4/demos/declarative/rssnews
+@dirrm share/examples/qt4/demos/declarative/photoviewer/i18n
+@dirrm share/examples/qt4/demos/declarative/photoviewer/PhotoViewerCore/script
+@dirrm share/examples/qt4/demos/declarative/photoviewer/PhotoViewerCore/images
+@dirrm share/examples/qt4/demos/declarative/photoviewer/PhotoViewerCore
+@dirrm share/examples/qt4/demos/declarative/photoviewer
+@dirrm share/examples/qt4/demos/declarative/minehunt/MinehuntCore/pics
+@dirrm share/examples/qt4/demos/declarative/minehunt/MinehuntCore
+@dirrm share/examples/qt4/demos/declarative/minehunt
+@dirrm share/examples/qt4/demos/declarative/flickr/mobile/images
+@dirrm share/examples/qt4/demos/declarative/flickr/mobile
+@dirrm share/examples/qt4/demos/declarative/flickr/common
+@dirrm share/examples/qt4/demos/declarative/flickr
+@dirrm share/examples/qt4/demos/declarative/calculator/Core/images
+@dirrm share/examples/qt4/demos/declarative/calculator/Core
+@dirrm share/examples/qt4/demos/declarative/calculator
+@dirrm share/examples/qt4/demos/declarative
 @dirrm share/examples/qt4/demos/composition
 @dirrm share/examples/qt4/demos/chip
 @dirrm share/examples/qt4/demos/browser/htmls

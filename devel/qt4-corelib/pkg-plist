@@ -56,6 +56,7 @@ include/qt4/Qt/qdebug.h
 include/qt4/Qt/qdir.h
 include/qt4/Qt/qdiriterator.h
 include/qt4/Qt/qeasingcurve.h
+include/qt4/Qt/qelapsedtimer.h
 include/qt4/Qt/qendian.h
 include/qt4/Qt/qeventloop.h
 include/qt4/Qt/qeventtransition.h
@@ -212,6 +213,7 @@ include/qt4/QtCore/QDir
 include/qt4/QtCore/QDirIterator
 include/qt4/QtCore/QDynamicPropertyChangeEvent
 include/qt4/QtCore/QEasingCurve
+include/qt4/QtCore/QElapsedTimer
 include/qt4/QtCore/QEvent
 include/qt4/QtCore/QEventLoop
 include/qt4/QtCore/QEventTransition
@@ -425,6 +427,7 @@ include/qt4/QtCore/QtCleanUpFunction
 include/qt4/QtCore/QtConcurrentFilter
 include/qt4/QtCore/QtConcurrentMap
 include/qt4/QtCore/QtConcurrentRun
+include/qt4/QtCore/QtConfig
 include/qt4/QtCore/QtContainerFwd
 include/qt4/QtCore/QtCore
 include/qt4/QtCore/QtDebug
@@ -490,6 +493,7 @@ include/qt4/QtCore/qdebug.h
 include/qt4/QtCore/qdir.h
 include/qt4/QtCore/qdiriterator.h
 include/qt4/QtCore/qeasingcurve.h
+include/qt4/QtCore/qelapsedtimer.h
 include/qt4/QtCore/qendian.h
 include/qt4/QtCore/qeventloop.h
 include/qt4/QtCore/qeventtransition.h

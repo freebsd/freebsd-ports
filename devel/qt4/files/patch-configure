@@ -1,18 +1,18 @@
---- ./configure.orig	2010-01-15 20:01:30.000000000 +0300
-+++ ./configure	2010-01-20 10:20:34.848078900 +0300
-@@ -2261,11 +2261,6 @@
-         chmod 755 "$outpath/bin/syncqt"
-     fi
+--- configure.old	2010-09-10 05:04:46.000000000 -0400
++++ configure	2010-09-28 00:52:09.000000000 -0400
+@@ -2351,11 +2351,6 @@
+         fi
+     done
  
 -    # symlink the mkspecs directory
 -    mkdir -p "$outpath/mkspecs"
--    rm -f "$outpath"/mkspecs/*
+-    rm -rf "$outpath"/mkspecs/*
 -    ln -s "$relpath"/mkspecs/* "$outpath/mkspecs"
 -    rm -f "$outpath/mkspecs/default"
  
-     # symlink the doc directory
-     rm -rf "$outpath/doc"
-@@ -2296,7 +2291,7 @@
+     # Special case for mkspecs/features directory.
+     # To be able to place .prf files into a shadow build directory,
+@@ -2394,7 +2389,7 @@
  # find a make command
  if [ -z "$MAKE" ]; then
      MAKE=
@@ -21,16 +21,7 @@
          if "$WHICH" $mk >/dev/null 2>&1; then
              MAKE=`"$WHICH" $mk`
              break
-@@ -2946,7 +2941,7 @@
- fi
- 
- QMAKE_CONF_COMPILER=`getQMakeConf "$XQMAKESPEC" | grep "^QMAKE_CXX[^_A-Z0-9]" | sed "s,.* *= *\(.*\)$,\1," | tail -1`
--TEST_COMPILER="$CC"
-+TEST_COMPILER="$CXX"
- [ -z "$TEST_COMPILER" ] && TEST_COMPILER=$QMAKE_CONF_COMPILER
- if [ -z "$TEST_COMPILER" ]; then
-     echo "ERROR: Cannot set the compiler for the configuration tests"
-@@ -4296,7 +4291,7 @@
+@@ -4466,7 +4461,7 @@
  }
  
  # build qmake
@@ -39,7 +30,7 @@
      echo "Creating qmake. Please wait..."
  
      OLD_QCONFIG_H=
-@@ -5059,14 +5054,6 @@
+@@ -5391,14 +5386,6 @@
          X11TESTS_FLAGS="$X11TESTS_FLAGS -fpermissive"
      fi
  
@@ -51,6 +42,6 @@
 -        echo " QMAKE_INCDIR_X11 and QMAKE_LIBDIR_X11 in ${XQMAKESPEC}."
 -        exit 1
 -    fi
+ fi
  
-     # auto-detect OpenGL support (es1 = OpenGL ES 1.x Common, es1cl = ES 1.x common lite, es2 = OpenGL ES 2.x)
-     if [ "$CFG_OPENGL" = "auto" ] || [ "$CFG_OPENGL" = "yes" ]; then
+ # X11/MINGW OpenGL

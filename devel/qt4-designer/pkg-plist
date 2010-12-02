@@ -98,6 +98,8 @@ lib/qt4/libQtUiTools.a
 lib/qt4/libQtUiTools.prl
 %%QT_PLUGINDIR_REL%%/designer/libphononwidgets.so
 %%DEBUG%%%%QT_PLUGINDIR_REL%%/designer/libphononwidgets.so.debug
+%%QT_PLUGINDIR_REL%%/designer/libqdeclarativeview.so
+%%DEBUG%%%%QT_PLUGINDIR_REL%%/designer/libqdeclarativeview.so.debug
 %%QT_PLUGINDIR_REL%%/designer/libqt3supportwidgets.so
 %%DEBUG%%%%QT_PLUGINDIR_REL%%/designer/libqt3supportwidgets.so.debug
 %%QT_PLUGINDIR_REL%%/designer/libqwebview.so

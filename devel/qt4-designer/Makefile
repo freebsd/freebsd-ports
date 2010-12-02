@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	designer
-PORTVERSION=	${QT4_VERSION}
+DISTVERSION=	${QT4_VERSION}
 CATEGORIES?=	devel
 PKGNAMEPREFIX=	qt4-
 
@@ -16,7 +16,8 @@ COMMENT=	Qt ui editor
 
 USE_QT_VER=	4
 QT_COMPONENTS=	qmake_build moc_build rcc_build uic_build assistant_run \
-		qt3support corelib gui network script sql xml webkit
+		qt3support corelib declarative gui network script sql xml \
+		webkit
 QT_NONSTANDARD=	yes
 QT_DIST=	yes
 MAKE_JOBS_SAFE=	yes
@@ -52,7 +53,7 @@ pre-configure:
 # fix build when previous version is installed
 	${REINPLACE_CMD} -e '/^CONFIG/s|depend_prl||' \
 		${BUILD_WRKSRC}/src/components/lib/lib.pro
-	${MKDIR} ${WRKSRC}/mkspecs
+	${MKDIR} ${WRKSRC}/mkspecs/modules
 	${LN} -sf ${LOCALBASE}/bin/qmake-qt4 ${WRKSRC}/bin/qmake
 	${LN} -sf ${LOCALBASE}/bin/moc-qt4 ${WRKSRC}/bin/moc
 	${LN} -sf ${LOCALBASE}/bin/uic-qt4 ${WRKSRC}/bin/uic

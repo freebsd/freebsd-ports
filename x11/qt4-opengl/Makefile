@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	opengl
-PORTVERSION=	${QT4_VERSION}
+DISTVERSION=	${QT4_VERSION}
 CATEGORIES?=	x11
 PKGNAMEPREFIX=	qt4-
 
@@ -46,7 +46,8 @@ EXTRACT_AFTER_ARGS+=	--exclude '${DISTNAME}/${dne}'
 BUILD_WRKSRC=	${WRKSRC}/src/${PORTNAME}
 INSTALL_WRKSRC=	${BUILD_WRKSRC}
 
-CONFIGURE_ARGS+=	-I../../include/Qt -I../../include
+CONFIGURE_ARGS+=	-I../../include/QtCore -I../../include/QtGui \
+			-I../../include/Qt -I../../include
 
 EXTRA_PATCHES=	${.CURDIR}/../../devel/qt4/files/patch-configure
 

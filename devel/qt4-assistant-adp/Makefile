@@ -6,10 +6,13 @@
 #
 
 PORTNAME=	assistant
-PORTVERSION=	${QT4_VERSION}
+PORTVERSION=	4.6.3
 CATEGORIES?=	devel
+MASTER_SITES=	${MASTER_SITE_QT}
 PKGNAMEPREFIX=	qt4-
 PKGNAMESUFFIX=	-adp
+DISTNAME=	qt-assistant-qassistantclient-library-compat-src-${PORTVERSION}
+DIST_SUBDIR=	KDE
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Qt documentation browser, adp compat version
@@ -17,40 +20,21 @@ COMMENT=	Qt documentation browser, adp compat version
 USE_QT_VER=	4
 QT_COMPONENTS=	qmake_build moc_build rcc_build uic_build corelib \
 		gui network xml doc dbus
-QT_NONSTANDARD=	yes
-QT_DIST=	yes
 MAKE_JOBS_SAFE=	yes
 
-HAS_CONFIGURE=	yes
-
 ALL_TARGET=	first
-CONFIGURE_ENV?=	QTDIR=${WRKSRC} PATH=${WRKSRC}/bin:$$PATH
-MAKE_ENV?=	QTDIR=${WRKSRC} LD_LIBRARY_PATH=${WRKSRC}/lib:$$LD_LIBRARY_PATH \
-		PATH=${WRKSRC}/bin:$$PATH
 
-DO_NOT_EXTRACT=	demos doc examples mkspecs qmake translations \
-		src/activeqt src/multimedia src/opengl src/openvg src/phonon \
-		src/qt3support src/s60installs src/s60main src/script \
-		src/scripttools src/sql src/svg src/testlib src/tools \
-		src/winmain src/xmlpatterns src/3rdparty/clucene \
-		src/3rdparty/freetype src/3rdparty/libjpeg src/3rdparty/libmng \
-		src/3rdparty/libpng src/3rdparty/libtiff src/3rdparty/phonon \
-		src/3rdparty/webkit
-EXTRACT_AFTER_ARGS=	| ${TAR} -xf -
-.for dne in ${DO_NOT_EXTRACT}
-EXTRACT_AFTER_ARGS+=	--exclude '${DISTNAME}/${dne}'
-.endfor
+WRKSRC=		${WRKDIR}/${DISTNAME:C/src/version/}
 
-BUILD_WRKSRC=	${WRKSRC}/tools/${PORTNAME}/compat
-INSTALL_WRKSRC=	${BUILD_WRKSRC}
-
-EXTRA_PATCHES=	${.CURDIR}/../../devel/qt4/files/patch-configure
+PLIST_FILES=	bin/assistant_adp
 
 pre-configure:
-	${MKDIR} ${WRKSRC}/mkspecs
-	${LN} -sf ${LOCALBASE}/bin/qmake-qt4 ${WRKSRC}/bin/qmake
-	${LN} -sf ${LOCALBASE}/bin/moc-qt4 ${WRKSRC}/bin/moc
-	${LN} -sf ${LOCALBASE}/bin/uic-qt4 ${WRKSRC}/bin/uic
-	${LN} -sf ${LOCALBASE}/bin/rcc ${WRKSRC}/bin/rcc
+	${REINPLACE_CMD} -e 's|$$$$\[QT_INSTALL_BINS]|${PREFIX}/bin|g' \
+		${WRKSRC}/compat.pro
+
+do-configure:
+	@cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} \
+		${QMAKE} -spec ${QMAKESPEC} QT_CONFIG+="dbus" \
+		QT_PRODUCT="OpenSource" ${QMAKEFLAGS}
 
 .include <bsd.port.mk>

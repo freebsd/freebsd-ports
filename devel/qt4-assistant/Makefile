@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	assistant
-PORTVERSION=	${QT4_VERSION}
+DISTVERSION=	${QT4_VERSION}
 CATEGORIES?=	devel
 PKGNAMEPREFIX=	qt4-
 
@@ -32,7 +32,7 @@ DO_NOT_EXTRACT=	demos doc examples mkspecs qmake translations \
 		src/activeqt src/dbus src/multimedia src/opengl src/openvg \
 		src/phonon src/qt3support src/s60installs src/s60main \
 		src/script src/scripttools src/svg src/testlib src/tools \
-		src/winmain src/xml src/xmlpatterns src/3rdparty/clucene \
+		src/winmain src/xmlpatterns src/3rdparty/clucene \
 		src/3rdparty/freetype src/3rdparty/libjpeg src/3rdparty/libmng \
 		src/3rdparty/libpng src/3rdparty/libtiff src/3rdparty/phonon
 EXTRACT_AFTER_ARGS=	| ${TAR} -xf -
@@ -49,7 +49,7 @@ pre-configure:
 	${REINPLACE_CMD} \
 		-e 's|^TARGET.*|TARGET=assistant-qt4|g' \
 		${BUILD_WRKSRC}/${PORTNAME}.pro
-	${MKDIR} ${WRKSRC}/mkspecs
+	${MKDIR} ${WRKSRC}/mkspecs/modules
 	${LN} -sf ${LOCALBASE}/bin/qmake-qt4 ${WRKSRC}/bin/qmake
 	${LN} -sf ${LOCALBASE}/bin/moc-qt4 ${WRKSRC}/bin/moc
 	${LN} -sf ${LOCALBASE}/bin/uic-qt4 ${WRKSRC}/bin/uic

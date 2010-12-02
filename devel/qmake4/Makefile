@@ -6,7 +6,7 @@
 # $FreeBSD$
 
 PORTNAME=	qmake
-PORTVERSION=	${QT4_VERSION}
+DISTVERSION=	${QT4_VERSION}
 CATEGORIES=	devel
 PKGNAMEPREFIX=	qt4-
 
@@ -20,7 +20,7 @@ WRKSRC=		${WRKDIR}/${DISTNAME}/${PORTNAME}
 MAKEFILE=	${FILESDIR}/Makefile.bsd
 MAKE_ENV+=	FILESDIR="${FILESDIR}"
 MAKE_JOBS_SAFE=	yes
-TODAY_CMD=		/bin/date +%Y-%m-%d
+TODAY_CMD=	/bin/date +%Y-%m-%d
 
 EXTRACT_AFTER_ARGS=| ${TAR} -xf - \
 	'${DISTNAME}/mkspecs' \
@@ -49,11 +49,23 @@ post-patch:
 		-e 's|-pthread|${PTHREAD_LIBS}|' \
 		-e 's|uic|uic-qt4|' \
 		-e 's|moc|moc-qt4|' \
-		${WRKSRC}/../mkspecs/freebsd-g++/qmake.conf \
-		${WRKSRC}/../mkspecs/freebsd-g++34/qmake.conf \
-		${WRKSRC}/../mkspecs/freebsd-g++40/qmake.conf \
-		${WRKSRC}/../mkspecs/freebsd-icc/qmake.conf
+		${WRKSRC}/../mkspecs/freebsd-*/qmake.conf
 	@${REINPLACE_CMD} -e 's|@QMAKE_QTOBJS@||g' ${WRKSRC}/Makefile.unix
+	# Add mkspecs for all the available compilers.
+	@${CP} ${WRKSRC}/../mkspecs/common/g++.conf ${WRKSRC}/../mkspecs/common/clang.conf
+	@${REINPLACE_CMD} -e 's|gcc|clang|g' -e 's|g++|clang++|g' \
+		${WRKSRC}/../mkspecs/common/clang.conf
+.for c in clang llvm
+	@${CP} -PpR ${WRKSRC}/../mkspecs/freebsd-g++ ${WRKSRC}/../mkspecs/freebsd-${c}
+	@${REINPLACE_CMD} -e 's|g++|${c}|g' \
+		${WRKSRC}/../mkspecs/freebsd-${c}/qmake.conf
+.endfor
+.for v in 42 43 44 45 46
+	@${CP} -PpR ${WRKSRC}/../mkspecs/freebsd-g++40 ${WRKSRC}/../mkspecs/freebsd-g++${v}
+	@${REINPLACE_CMD} -e 's|40|${v}|g' \
+		${WRKSRC}/../mkspecs/freebsd-g++${v}/qmake.conf
+.endfor
+	@${RM} -r ${WRKSRC}/../mkspecs/freebsd-g++40
 
 do-configure:
 	${SED} -e 's|/usr/local|${PREFIX}|g' \
@@ -61,7 +73,8 @@ do-configure:
 		< ${FILESDIR}/qconfig.cpp \
 		> ${WRKSRC:H}/src/corelib/global/qconfig.cpp
 	${ECHO} '/* empty */' > ${WRKSRC}/qconfig.h
-	${LN} ${WRKSRC}/qconfig.h ${WRKSRC}/../include/QtCore/qconfig.h
+#	${LN} ${WRKSRC}/qconfig.h ${WRKSRC}/../include/QtCore/qconfig.h
+	${LN} ${WRKSRC}/qconfig.h ${WRKSRC}/../src/corelib/global/qconfig.h
 
 .include <bsd.port.pre.mk>
 .include "${.CURDIR}/../../Mk/bsd.qt.mk"
@@ -75,6 +88,6 @@ CXXFLAGS+=	-fno-gcse
 .endif
 
 post-install:
-	${LN} -sf ${PREFIX}/share/qt4/mkspecs/freebsd-g++ ${PREFIX}/share/qt4/mkspecs/default
+	${LN} -sf ${PREFIX}/share/qt4/mkspecs/freebsd-${QMAKE_BASE_COMPILER} ${PREFIX}/share/qt4/mkspecs/default
 
 .include <bsd.port.post.mk>
