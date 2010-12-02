@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/mumble
 %%MUMBLE11X%%bin/mumble11x
 share/applications/mumble.desktop
