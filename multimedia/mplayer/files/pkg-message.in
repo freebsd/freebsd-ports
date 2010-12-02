@@ -6,7 +6,6 @@ It is auto-generated daily and can be found on the project
 homepage in the documentation section:
 
 http://www.mplayerhq.hu/design7/info.html#docs
-
 ===================================================================
 MPlayer's system-wide configuration dir is
 
@@ -17,5 +16,11 @@ in order to change mplayer's default settings for all users on
 your system, you find some examples in
 
 %%DATADIR%%/examples/etc
+===================================================================
+If seeking in streams causes the playback volume to be reset to
+the previous setting (on 8.x or newer system with VPC enabled),
+you and you dislike this behaviour, you have two options:
+- Use mplayer's -softvol command line option
+- Set the sysctl hw.snd.vpc_autoreset to 0
 ===================================================================
 

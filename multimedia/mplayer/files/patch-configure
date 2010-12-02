@@ -1,6 +1,6 @@
---- configure.orig	2010-07-14 15:49:08.000000000 +0200
-+++ configure	2010-07-17 12:50:00.937109688 +0200
-@@ -555,7 +555,7 @@
+--- configure.orig	2010-11-03 09:12:22.000000000 +0100
++++ configure	2010-11-06 18:21:38.162592186 +0100
+@@ -565,7 +565,7 @@
  _iwmmxt=auto
  _mtrr=auto
  _altivec=auto
@@ -9,7 +9,7 @@
  _ranlib=ranlib
  _windres=windres
  _cc=cc
-@@ -1385,7 +1385,6 @@
+@@ -1371,7 +1371,6 @@
  
    *)
      echo "Unknown parameter: $ac_option"
@@ -17,7 +17,7 @@
      ;;
  
    esac
-@@ -1494,8 +1493,8 @@
+@@ -1480,8 +1479,8 @@
  _timer=timer-linux.c
  _getch=getch2.c
  if freebsd ; then
@@ -28,7 +28,7 @@
  fi
  
  if netbsd || dragonfly ; then
-@@ -3618,22 +3617,10 @@
+@@ -3535,22 +3534,10 @@
  if linux ; then
    THREAD_CFLAGS=-D_REENTRANT
  elif freebsd || netbsd || openbsd || bsdos ; then
@@ -37,7 +37,7 @@
 -if test "$_pthreads" = auto ; then
 -cat > $TMPC << EOF
 -#include <pthread.h>
--void* func(void *arg) { return arg; }
+-static void *func(void *arg) { return arg; }
 -int main(void) { pthread_t tid; return pthread_create(&tid, 0, func, 0) == 0 ? 0 : 1; }
 -EOF
 -_pthreads=no
@@ -54,54 +54,39 @@
  if test "$_pthreads" = yes ; then
    test $_ld_pthread && res_comment="using $_ld_pthread"
    def_pthreads='#define HAVE_PTHREADS 1'
-@@ -3746,8 +3733,13 @@
- 
- 
- echocheck "sys/dvdio.h"
-+cat > $TMPC << EOF
-+#include <unistd.h>
-+#include <sys/dvdio.h>
-+int main(void) { return 0; }
-+EOF
- _dvdio=no
--header_check sys/dvdio.h && _dvdio=yes
-+cc_check && _dvdio=yes
- if test "$_dvdio" = yes ; then
-   def_dvdio='#define DVD_STRUCT_IN_SYS_DVDIO_H 1'
- else
-@@ -7800,7 +7792,7 @@
+@@ -3828,7 +3815,7 @@
+ #define _ISOC99_SOURCE
+ #include <stdarg.h>
+ #include <stdio.h>
+-int main(void) { va_list ap = NULL; vsscanf("foo", "bar", ap); return 0; }
++int main(void) { va_list ap; vsscanf("foo", "bar", ap); return 0; }
+ EOF
+ _vsscanf=no
+ cc_check && _vsscanf=yes
+@@ -7283,7 +7270,7 @@
+   def_muxers='#define CONFIG_MUXERS 1'
  else
    # mpeg1video for vf_lavc, snow for vf_uspp / vf_mcdeint,
-   # png for vf_screenshot, mjpeg for zr
--  libavencoders="MPEG1VIDEO_ENCODER SNOW_ENCODER"
-+  libavencoders="MPEG1VIDEO_ENCODER H263_ENCODER SNOW_ENCODER"
-   test "$_zlib" = yes && libavencoders="$libavencoders PNG_ENCODER"
-   test "$_zr" = yes && libavencoders="$libavencoders MJPEG_ENCODER"
+-  libavencoders="$mplayer_encoders MPEG1VIDEO_ENCODER SNOW_ENCODER"
++  libavencoders="$mplayer_encoders MPEG1VIDEO_ENCODER H263_ENCODER SNOW_ENCODER"
    libavmuxers=""
-@@ -8161,8 +8153,11 @@
+   def_muxers='#define CONFIG_MUXERS 0'
+ fi
+@@ -7645,8 +7632,11 @@
  if test "$_gui" = yes ; then
  
    # Required libraries
--  if test "$_libavcodec" != yes ||
+-  if test "$ffmpeg" != yes ||
 -      ! echo $libavdecoders | grep -q PNG_DECODER ; then
 +  # Work around a sh bug in FreeBSD < 8
-+  if test "$_libavcodec" != yes ; then
++  if test "$ffmpeg" != yes ; then
 +    die "The GUI requires libavcodec with PNG support (needs zlib)."
 +  fi
 +  if ! echo $libavdecoders | grep -q PNG_DECODER ; then
      die "The GUI requires libavcodec with PNG support (needs zlib)."
    fi
    test "$_freetype" = no && test "$_bitmap_font" = no && \
-@@ -8352,7 +8347,7 @@
- echocheck "joystick"
- def_joystick='#undef CONFIG_JOYSTICK'
- if test "$_joystick" = yes ; then
--  if linux ; then
-+  if linux || freebsd ; then
-     # TODO add some check
-     def_joystick='#define CONFIG_JOYSTICK 1'
-   else
-@@ -8560,7 +8555,7 @@
+@@ -8034,7 +8024,7 @@
  EXESUF      = $_exesuf
  EXESUFS_ALL = .exe
  
