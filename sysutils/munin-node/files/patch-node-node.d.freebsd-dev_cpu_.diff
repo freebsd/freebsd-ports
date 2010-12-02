@@ -1,0 +1,11 @@
+--- plugins/node.d.freebsd/dev_cpu_.in.orig	2009-09-16 12:04:17.000000000 +0200
++++ plugins/node.d.freebsd/dev_cpu_.in	2010-12-02 11:22:28.183558536 +0100
+@@ -109,7 +109,7 @@
+ 	reqcpus
+ 	for cpu in $cpus ; do
+ 		echo -n "CPU$cpu.value "
+-		sysctl -n "dev.cpu.$cpu.$func"
++		sysctl -n "dev.cpu.$cpu.$func" | tr -cd '0-9.'
+ 	done
+ }
+ 

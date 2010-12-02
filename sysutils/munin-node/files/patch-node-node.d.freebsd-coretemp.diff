@@ -1,0 +1,11 @@
+--- plugins/node.d.freebsd/coretemp.in.orig	2009-04-01 14:24:27.000000000 +0200
++++ plugins/node.d.freebsd/coretemp.in	2010-12-02 11:21:05.512573734 +0100
+@@ -75,7 +75,7 @@
+ 	reqcpus
+ 	for cpu in $cpus ; do
+ 		echo -n "CPU$cpu.value "
+-		sysctl -n dev.cpu.$cpu.temperature
++		sysctl -n dev.cpu.$cpu.temperature | tr -cd '0-9.'
+ 	done
+ }
+ 
