@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	wordpress
-PORTVERSION=	3.0.1
-PORTREVISION=	1
+PORTVERSION=	3.0.2
 CATEGORIES=	chinese www
-MASTER_SITES=	http://cn.wordpress.org/
+MASTER_SITES=	http://cn.wordpress.org/ \
+		http://mirror.joehorn.idv.tw/wordpress/
 PKGNAMESUFFIX=	-zh_CN
-DISTNAME=	wordpress-${PORTVERSION}${PKGNAMESUFFIX}
+DISTNAME=	${PORTNAME}-${PORTVERSION}${PKGNAMESUFFIX}
 
 MAINTAINER=	joehorn@gmail.com
 COMMENT=	A state-of-the-art semantic personal publishing platform
