@@ -5,6 +5,13 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20101202:
+  AFFECTS: users of www/wordpress
+  AUTHOR: sunpoet@FreeBSD.org
+
+  WordPress is now installed to WWWDIR (defaults to PREFIX/wordpress)
+  instead of WORDPRESS (defaults to PREFIX/www/data/wordpress).
+
 20101129:
   AFFECTS: users of sysutils/radmind
   AUTHOR: ohauer@FreeBSD.org
