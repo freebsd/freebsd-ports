@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	abgx360
-PORTVERSION=	1.0.3
+PORTVERSION=	1.0.4
 CATEGORIES=	sysutils
-MASTER_SITES=	http://freebsd.unixfreunde.de/sources/ \
-		http://abgx360.x-scene.com/
+MASTER_SITES=	http://abgx360.x-scene.com/
 
 MAINTAINER=	root@cooltrainer.org
 COMMENT=	Verify and repair Xbox 360 backup images
