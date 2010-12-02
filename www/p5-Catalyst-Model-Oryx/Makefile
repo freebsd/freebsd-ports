@@ -11,7 +11,7 @@ CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	hideo@lastamericanempire.com
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Oryx model component for Catalyst
 
 BUILD_DEPENDS=	${SITE_PERL}/Oryx.pm:${PORTSDIR}/databases/p5-Oryx \

@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	Rose
 PKGNAMEPREFIX=	p5-
 DISTNAME=	${PORTNAME}-${PORTVERSION:C/0$//}
 
-MAINTAINER=	hideo@lastamericanempire.com
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Extensible, high performance RDBMS-OO mapper
 
 BUILD_DEPENDS=	p5-Rose-DB>=0.753,1:${PORTSDIR}/databases/p5-Rose-DB \

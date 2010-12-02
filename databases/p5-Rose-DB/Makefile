@@ -14,7 +14,7 @@ MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	Rose
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	hideo@lastamericanempire.com
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	A DBI wrapper and abstraction layer
 
 BUILD_DEPENDS=	p5-Rose-DateTime>=0.532:${PORTSDIR}/devel/p5-Rose-DateTime \

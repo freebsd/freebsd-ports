@@ -11,7 +11,7 @@ CATEGORIES=	audio
 MASTER_SITES=	SF/${PORTNAME}/Kexis/${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	hideo@lastamericanempire.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Lossless WAV file compressor
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
