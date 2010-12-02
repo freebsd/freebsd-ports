@@ -6,28 +6,20 @@
 #
 
 PORTNAME=	wordpress
-PORTVERSION=	3.0.1
-PORTREVISION=	1
+PORTVERSION=	3.0.2
 PORTEPOCH=	1
 CATEGORIES=	www
-MASTER_SITES=	http://wordpress.org/ \
-		ftp://ftp.stu.edu.tw/pub/wordpress/ \
-		ftp://ftp.twaren.net/local-distfiles/wordpress/
-MASTER_SITE_SUBDIR=	cafelog
-#DISTNAME=		wordpress-${PORTVERSION:S/.0//}
+MASTER_SITES=	http://wordpress.org/
 
 MAINTAINER=	ychsiao@ychsiao.org
 COMMENT=	A state-of-the-art semantic personal publishing platform
 
+NO_BUILD=	yes
+USE_PHP=	gd mysql pcre tokenizer xml zip
+WANT_PHP_WEB=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-USE_PHP=	mysql pcre xml gd tokenizer zip
-NO_BUILD=	YES
-WANT_PHP_WEB=	YES
-WORDPRESS?=	www/data/wordpress
-PLIST_SUB+=	WORDPRESS=${WORDPRESS}
 PLIST=		${WRKDIR}/pkg-plist
-
 PORTDOCS=	license.txt readme.html
 
 pre-everything::
@@ -36,25 +28,18 @@ pre-everything::
 	@sleep 1
 
 pre-install:
-	cd ${WRKSRC} && ${FIND} -s * -type f | \
-		${SED} -e 's|^|${WORDPRESS}/|' > ${PLIST} \
-		&& ${FIND} -d * -type d | \
-		${SED} -e 's|^|@dirrm ${WORDPRESS}/|' >> ${PLIST} \
-		&& ${ECHO_CMD} @dirrm ${WORDPRESS} >> ${PLIST} \
-		&& ${ECHO_CMD} @dirrmtry www/data >> ${PLIST}
+	cd ${WRKSRC}/ && \
+		(${FIND} -s * -type f | ${SED} -e 's|^|%%WWWDIR%%/|'; \
+		${FIND} -d . -type d | ${SED} -e 's|^\.|@dirrm %%WWWDIR%%|') > ${PLIST}
 	if [ ! -f ${WRKSRC}/wp-config-sample.php ]; then ${CP} \
 		${WRKSRC}/wp-config.php.sample ${WRKSRC}/wp-config.php; fi
 
 do-install:
-	-@${MKDIR} ${PREFIX}/${WORDPRESS}
-	@${CHOWN} ${WWWOWN}:${WWWGRP} ${PREFIX}/${WORDPRESS}
-	@${CHMOD} 755 ${PREFIX}/${WORDPRESS}
-	${CP} -R ${WRKSRC}/ ${PREFIX}/${WORDPRESS}
+	${INSTALL} -d -g ${WWWGRP} -m 755 -o ${WWWOWN} ${WWWDIR}/
+	${CP} -R ${WRKSRC}/ ${WWWDIR}/
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-.for i in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}/${i}
-.endfor
+	${MKDIR} ${DOCSDIR}/
+	cd ${WRKSRC}/ && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}/
 .endif
 
 post-install:
