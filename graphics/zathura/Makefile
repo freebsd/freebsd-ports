@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	zathura
-PORTVERSION=	0.0.8.1
-PORTREVISION=	1
+PORTVERSION=	0.0.8.2
 CATEGORIES=	graphics print
-MASTER_SITES=	http://pwmt.org/attachments/download/10/
+MASTER_SITES=	http://pwmt.org/attachments/download/31/
 
 MAINTAINER=	acieroid@awesom.eu
 COMMENT=	Customizable lightweight pdf viewer
