@@ -51,14 +51,14 @@ delete_crontab_entries() {
 
 delnewsyslog() {
     tmp="/etc/#munin-node$$"
-    sed -e '/^\/var\/log\/munin-node.log[ 	]/d' /etc/newsyslog.conf >${tmp}
+    sed -e '/^\/var\/log\/munin\/munin-node.log[ 	]/d' /etc/newsyslog.conf >${tmp}
     cat ${tmp} > /etc/newsyslog.conf
     rm ${tmp}
 }
 
 newsyslog() {
-    ENTRY=`grep /var/log/munin-node.log /etc/newsyslog.conf`
-    DEFAULT='/var/log/munin-node.log			644  7	   *	@T00  Z	/var/run/munin/munin-node.pid'
+    ENTRY=`grep /var/log/munin/munin-node.log /etc/newsyslog.conf`
+    DEFAULT='/var/log/munin/munin-node.log			644  7	   *	@T00  Z	/var/run/munin/munin-node.pid'
     if [ -z "$ENTRY" ]; then
 	exit 0
     elif [ "$ENTRY" = "$DEFAULT" ]; then
