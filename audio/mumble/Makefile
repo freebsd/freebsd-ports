@@ -32,7 +32,7 @@ HAS_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
 
 CONFIG=		no-server no-alsa no-speechd no-bundled-speex no-bundled-celt no-update \
-		no-g15 no-portaudio no-pulseaudio no-xevie
+		no-g15 no-portaudio no-pulseaudio no-xevie no-embed-qt-translations
 
 OPTIONS=	DBUS "Enable D-Bus support" on \
 		BONJOUR "Enable Bonjour support" off \
