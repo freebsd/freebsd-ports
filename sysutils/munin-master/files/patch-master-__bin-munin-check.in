@@ -1,0 +1,20 @@
+--- master/_bin/munin-check.in.orig	2009-12-29 17:03:49.000000000 +0100
++++ master/_bin/munin-check.in	2010-12-02 23:48:25.854543201 +0100
+@@ -78,7 +78,7 @@
+     object=$1; shift || exit 1
+     correctowner=$1; shift || exit 1
+ 
+-    owner=$(stat -c%U $object)
++    owner=$(stat -f%Su $object)
+     if [ "$owner" != "$correctowner" ]; then
+ 	echo "# $object : Wrong owner ($owner != $correctowner)";
+ 	if [ "$PLEASE_FIXME" = "true" ]; then
+@@ -108,7 +108,7 @@
+     object=$1; shift || exit 1
+     correctperm=$1; shift || exit 1
+ 
+-    perm=$(stat -c%a $object)
++    perm=$(stat -f%OLp $object)
+     if [ "$perm" != "$correctperm" ]; then
+ 	echo "# $object : Wrong permissions ($perm != $correctperm)";
+ 	if [ "$PLEASE_FIXME" = "true" ]; then
