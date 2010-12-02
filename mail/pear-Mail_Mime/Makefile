@@ -6,17 +6,17 @@
 #
 
 PORTNAME=	Mail_Mime
-PORTVERSION=	1.8.0
+PORTVERSION=	1.8.1
 PORTEPOCH=	2
 CATEGORIES=	mail www pear
 
 MAINTAINER=	joehorn@gmail.com
 COMMENT=	PEAR classes to create and decode MIME messages
 
-LICENSE=	BSD
-
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
 RUN_DEPENDS=	${BUILD_DEPENDS}
+
+LICENSE=	BSD
 
 CATEGORY=	Mail
 FILES=		mime.php mimePart.php
@@ -31,9 +31,9 @@ TESTS=		class-filename.phpt encoding_case.phpt \
 		test_Bug_12411.phpt test_Bug_13444.phpt test_Bug_13962.phpt \
 		test_Bug_14529.phpt test_Bug_14779.phpt test_Bug_14780.phpt \
 		test_Bug_15320.phpt test_Bug_17025.phpt test_Bug_17175.phpt \
-		test_Bug_3513_1.phpt test_Bug_3513_2.phpt test_Bug_3513_3.phpt \
-		test_Bug_7561_1.phpt test_Bug_8386_1.phpt test_Bug_8541_1.phpt \
-		test_Bug_9558_1.phpt test_Bug_9722_1.phpt
+		test_Bug_18083.phpt test_Bug_3513_1.phpt test_Bug_3513_2.phpt \
+		test_Bug_3513_3.phpt test_Bug_7561_1.phpt test_Bug_8386_1.phpt \
+		test_Bug_8541_1.phpt test_Bug_9558_1.phpt test_Bug_9722_1.phpt
 
 post-extract:
 	${MV} ${WRKSRC}/scripts/phail.php ${WRKSRC}/pear-phail.php
