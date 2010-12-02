@@ -8,12 +8,13 @@
 PORTNAME=	scrubyt
 PORTVERSION=	0.4.11
 CATEGORIES=	www rubygems
-MASTER_SITES=	RG
+MASTER_SITES=	RF
 
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	A powerful web scraping toolkit written in Ruby
 
-RUN_DEPENDS=	rubygem-mechanize>=0.6.3:${PORTSDIR}/www/rubygem-mechanize
+RUN_DEPENDS=	rubygem-hpricot>=0.5:${PORTSDIR}/www/rubygem-hpricot \
+		rubygem-mechanize>=0.6.3:${PORTSDIR}/www/rubygem-mechanize
 
 GEM_NAME=	${PORTNAME}-0.4.1
 
