@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	rkhunter
-PORTVERSION=	1.3.6
+PORTVERSION=	1.3.8
 CATEGORIES=	security
 MASTER_SITES=	SF
 
@@ -21,12 +21,11 @@ RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Digest/SHA1.pm:${PORTSDIR}/security/p5-D
 
 USE_PERL5=	yes
 NO_BUILD=	yes
-SUB_FILES=	415.rkhunter
+SUB_FILES=	415.${PORTNAME}
 
-MAN8=		rkhunter.8
+MAN8=		${PORTNAME}.8
 MANCOMPRESSED=	no
 
-DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}-${PORTVERSION}
 PORTDOCS=	ACKNOWLEDGMENTS CHANGELOG FAQ LICENSE README
 
 .include <bsd.port.pre.mk>
@@ -45,10 +44,10 @@ post-patch:
 
 do-install:
 	cd ${WRKSRC} && ./installer.sh --layout custom ${PREFIX} --install
-	${INSTALL_MAN} ${WRKSRC}/files/rkhunter.8 \
+	${INSTALL_MAN} ${WRKSRC}/files/${PORTNAME}.8 \
 		${MAN8PREFIX}/man/man8
 	@${MKDIR} ${PREFIX}/etc/periodic/security
-	${INSTALL_SCRIPT} ${WRKDIR}/415.rkhunter ${PREFIX}/etc/periodic/security
+	${INSTALL_SCRIPT} ${WRKDIR}/415.${PORTNAME} ${PREFIX}/etc/periodic/security
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/files/|} ${DOCSDIR}
