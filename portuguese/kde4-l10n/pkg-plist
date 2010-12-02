@@ -135,9 +135,6 @@ share/doc/HTML/pt/kbruch/common
 share/doc/HTML/pt/kbruch/index.cache.bz2
 share/doc/HTML/pt/kbruch/index.docbook
 share/doc/HTML/pt/kbruch/man-kbruch.1.docbook
-share/doc/HTML/pt/kbugbuster/common
-share/doc/HTML/pt/kbugbuster/index.cache.bz2
-share/doc/HTML/pt/kbugbuster/index.docbook
 share/doc/HTML/pt/kcachegrind/common
 share/doc/HTML/pt/kcachegrind/index.cache.bz2
 share/doc/HTML/pt/kcachegrind/index.docbook
@@ -1668,7 +1665,6 @@ share/locale/pt/entry.desktop
 @dirrm share/doc/HTML/pt/kcharselect
 @dirrm share/doc/HTML/pt/kcalc
 @dirrm share/doc/HTML/pt/kcachegrind
-@dirrm share/doc/HTML/pt/kbugbuster
 @dirrm share/doc/HTML/pt/kbruch
 @dirrm share/doc/HTML/pt/kbreakout
 @dirrm share/doc/HTML/pt/kbounce

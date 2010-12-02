@@ -197,9 +197,6 @@ share/doc/HTML/ca/kate/menus.docbook
 share/doc/HTML/ca/kate/part.docbook
 share/doc/HTML/ca/kate/plugins.docbook
 share/doc/HTML/ca/kate/regular-expressions.docbook
-share/doc/HTML/ca/kbugbuster/common
-share/doc/HTML/ca/kbugbuster/index.cache.bz2
-share/doc/HTML/ca/kbugbuster/index.docbook
 share/doc/HTML/ca/kcharselect/common
 share/doc/HTML/ca/kcharselect/index.cache.bz2
 share/doc/HTML/ca/kcharselect/index.docbook
@@ -280,6 +277,10 @@ share/doc/HTML/ca/kdf/common
 share/doc/HTML/ca/kdf/index.cache.bz2
 share/doc/HTML/ca/kdf/index.docbook
 share/doc/HTML/ca/kdf/kdf_config.png
+share/doc/HTML/ca/kfind/common
+share/doc/HTML/ca/kfind/index.cache.bz2
+share/doc/HTML/ca/kfind/index.docbook
+share/doc/HTML/ca/kfind/man-kfind.1.docbook
 share/doc/HTML/ca/kget/common
 share/doc/HTML/ca/kget/index.cache.bz2
 share/doc/HTML/ca/kget/index.docbook
@@ -1088,6 +1089,7 @@ share/locale/ca/entry.desktop
 @dirrm share/doc/HTML/ca/kioslave
 @dirrm share/doc/HTML/ca/kimagemapeditor
 @dirrm share/doc/HTML/ca/kget
+@dirrm share/doc/HTML/ca/kfind
 @dirrm share/doc/HTML/ca/kdf
 @dirrm share/doc/HTML/ca/kdesu
 @dirrm share/doc/HTML/ca/kcron
@@ -1115,7 +1117,6 @@ share/locale/ca/entry.desktop
 @dirrm share/doc/HTML/ca/kcontrol/blockdevices
 @dirrm share/doc/HTML/ca/kcontrol
 @dirrm share/doc/HTML/ca/kcharselect
-@dirrm share/doc/HTML/ca/kbugbuster
 @dirrm share/doc/HTML/ca/kate
 @dirrm share/doc/HTML/ca/kapptemplate
 @dirrm share/doc/HTML/ca/jovie

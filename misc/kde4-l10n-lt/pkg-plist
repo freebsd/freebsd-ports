@@ -17,9 +17,6 @@ share/doc/HTML/lt/dolphin/preferences-viewmodes-icons.png
 share/doc/HTML/lt/dolphin/toolbar-navigation.png
 share/doc/HTML/lt/dolphin/toolbar-view-appearance.png
 share/doc/HTML/lt/dolphin/viewproperties-dialog.png
-share/doc/HTML/lt/kbugbuster/common
-share/doc/HTML/lt/kbugbuster/index.cache.bz2
-share/doc/HTML/lt/kbugbuster/index.docbook
 share/doc/HTML/lt/kcalc/commands.docbook
 share/doc/HTML/lt/kcalc/common
 share/doc/HTML/lt/kcalc/index.cache.bz2
@@ -683,7 +680,6 @@ share/locale/lt/entry.desktop
 @dirrm share/doc/HTML/lt/kcontrol/keyboard
 @dirrm share/doc/HTML/lt/kcontrol
 @dirrm share/doc/HTML/lt/kcalc
-@dirrm share/doc/HTML/lt/kbugbuster
 @dirrm share/doc/HTML/lt/dolphin
 @dirrm share/doc/HTML/lt/common
 @dirrmtry man/lt/man1

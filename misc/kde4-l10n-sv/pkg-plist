@@ -241,9 +241,6 @@ share/doc/HTML/sv/kbruch/index.docbook
 share/doc/HTML/sv/kbruch/man-kbruch.1.docbook
 share/doc/HTML/sv/kbruch/reduced.png
 share/doc/HTML/sv/kbruch/settings.png
-share/doc/HTML/sv/kbugbuster/common
-share/doc/HTML/sv/kbugbuster/index.cache.bz2
-share/doc/HTML/sv/kbugbuster/index.docbook
 share/doc/HTML/sv/kcachegrind/common
 share/doc/HTML/sv/kcachegrind/index.cache.bz2
 share/doc/HTML/sv/kcachegrind/index.docbook
@@ -2051,7 +2048,6 @@ share/locale/sv/entry.desktop
 @dirrm share/doc/HTML/sv/kcharselect
 @dirrm share/doc/HTML/sv/kcalc
 @dirrm share/doc/HTML/sv/kcachegrind
-@dirrm share/doc/HTML/sv/kbugbuster
 @dirrm share/doc/HTML/sv/kbruch
 @dirrm share/doc/HTML/sv/kbreakout
 @dirrm share/doc/HTML/sv/kbounce

@@ -19,9 +19,11 @@ include/smoke/phonon_smoke.h
 include/smoke/plasma_smoke.h
 include/smoke/qimageblitz_smoke.h
 include/smoke/qsci_smoke.h
+include/smoke/qt3support_smoke.h
 include/smoke/qtcore_smoke.h
 include/smoke/qtdbus_smoke.h
 include/smoke/qtgui_smoke.h
+include/smoke/qthelp_smoke.h
 include/smoke/qtmultimedia_smoke.h
 include/smoke/qtnetwork_smoke.h
 include/smoke/qtopengl_smoke.h
@@ -98,6 +100,9 @@ lib/libsmokeqimageblitz.so.3.0.0
 lib/libsmokeqsci.so
 lib/libsmokeqsci.so.3
 lib/libsmokeqsci.so.3.0.0
+lib/libsmokeqt3support.so
+lib/libsmokeqt3support.so.3
+lib/libsmokeqt3support.so.3.0.0
 lib/libsmokeqtcore.so
 lib/libsmokeqtcore.so.3
 lib/libsmokeqtcore.so.3.0.0
@@ -107,6 +112,9 @@ lib/libsmokeqtdbus.so.3.0.0
 lib/libsmokeqtgui.so
 lib/libsmokeqtgui.so.3
 lib/libsmokeqtgui.so.3.0.0
+lib/libsmokeqthelp.so
+lib/libsmokeqthelp.so.3
+lib/libsmokeqthelp.so.3.0.0
 lib/libsmokeqtmultimedia.so
 lib/libsmokeqtmultimedia.so.3
 lib/libsmokeqtmultimedia.so.3.0.0

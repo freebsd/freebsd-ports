@@ -383,9 +383,6 @@ share/doc/HTML/es/kbruch/percentage.png
 share/doc/HTML/es/kbruch/reduced.png
 share/doc/HTML/es/kbruch/settings.png
 share/doc/HTML/es/kbruch/statistics.png
-share/doc/HTML/es/kbugbuster/common
-share/doc/HTML/es/kbugbuster/index.cache.bz2
-share/doc/HTML/es/kbugbuster/index.docbook
 share/doc/HTML/es/kcachegrind/common
 share/doc/HTML/es/kcachegrind/index.cache.bz2
 share/doc/HTML/es/kcachegrind/index.docbook
@@ -2052,7 +2049,6 @@ share/locale/es/entry.desktop
 @dirrm share/doc/HTML/es/kcharselect
 @dirrm share/doc/HTML/es/kcalc
 @dirrm share/doc/HTML/es/kcachegrind
-@dirrm share/doc/HTML/es/kbugbuster
 @dirrm share/doc/HTML/es/kbruch
 @dirrm share/doc/HTML/es/kbreakout
 @dirrm share/doc/HTML/es/kbounce

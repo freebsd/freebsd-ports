@@ -77,9 +77,6 @@ share/doc/HTML/en_GB/common/fdl-translated.html
 share/doc/HTML/en_GB/common/gpl-translated.html
 share/doc/HTML/en_GB/common/kde-localised.css
 share/doc/HTML/en_GB/common/lgpl-translated.html
-share/doc/HTML/en_GB/kbugbuster/common
-share/doc/HTML/en_GB/kbugbuster/index.cache.bz2
-share/doc/HTML/en_GB/kbugbuster/index.docbook
 share/doc/HTML/en_GB/khelpcenter/glossary/common
 share/doc/HTML/en_GB/khelpcenter/glossary/index.cache.bz2
 share/doc/HTML/en_GB/khelpcenter/glossary/index.docbook
@@ -749,7 +746,6 @@ share/locale/en_GB/entry.desktop
 @dirrm share/doc/HTML/en_GB/kioslave
 @dirrm share/doc/HTML/en_GB/khelpcenter/glossary
 @dirrm share/doc/HTML/en_GB/khelpcenter
-@dirrm share/doc/HTML/en_GB/kbugbuster
 @dirrm share/doc/HTML/en_GB/common
 @dirrm share/apps/kvtml/en_GB
 @dirrm share/apps/kvtml
