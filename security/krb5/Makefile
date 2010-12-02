@@ -7,12 +7,13 @@
 
 PORTNAME=		krb5
 PORTVERSION=		1.8.3
-PORTREVISION=		1
+PORTREVISION=		2
 CATEGORIES=		security
 MASTER_SITES=		http://web.mit.edu/kerberos/dist/${PORTNAME}/${PORTVERSION:C/^[0-9]*\.[0-9]*/&X/:C/X\.[0-9]*$//:C/X//}/
 PATCH_SITES=		http://web.mit.edu/kerberos/advisories/
 DISTNAME=		${PORTNAME}-${PORTVERSION}-signed
 EXTRACT_SUFX=		.tar
+PATCHFILES=		2010-006-patch.txt 2010-007-patch.txt
 
 MAINTAINER=		cy@FreeBSD.org
 COMMENT=		An authentication system developed at MIT, successor to Kerberos IV
@@ -33,6 +34,7 @@ CONFIGURE_ARGS?=	--enable-shared
 CONFIGURE_ENV=		INSTALL="${INSTALL}" YACC=/usr/bin/yacc \
 			CFLAGS="${CFLAGS}"
 MAKE_ARGS=		INSTALL="${INSTALL}"
+PATCH_DIST_STRIP=	-p2
 
 OPTIONS=		KRB5_DOC "Build and install krb5 documentation" on \
 			WANT_HTML "Want HTML documentation too" on \
