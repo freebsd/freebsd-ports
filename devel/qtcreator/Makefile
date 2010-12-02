@@ -7,13 +7,13 @@
 #
 
 PORTNAME=	qtcreator
-PORTVERSION=	1.3.1
-PORTREVISION=	1
-CATEGORIES?=	devel
+PORTVERSION=	2.0.1
+CATEGORIES=	devel
 MASTER_SITES=	http://download.qt.nokia.com/qtcreator/
 DISTNAME=	qt-creator-${PORTVERSION}-src
+EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	kmoore@freebsd.org
+MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Qt4 IDE
 
 LIB_DEPENDS=	Imath.6:${PORTSDIR}/graphics/ilmbase \
@@ -28,7 +28,7 @@ QT_COMPONENTS=	qmake_build moc_build rcc_build uic_build \
 		sql svg xml webkit
 HAS_CONFIGURE=	yes
 
-QMAKE_ARGS=	-unix -recursive ${QMAKE_PRO}
+QMAKE_ARGS=	-recursive CONFIG+="configure" ${QMAKE_PRO}
 QMAKE_PRO=	qtcreator.pro
 
 MAKE_JOBS_SAFE=	yes
@@ -43,14 +43,14 @@ post-patch:
 
 do-configure:
 	@cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} \
-		${QMAKE} -unix CONFIG+="configure" ${QMAKE_PRO}
+		${QMAKE} ${QMAKEFLAGS} ${QMAKE_ARGS}
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/bin/qtcreator ${PREFIX}/bin/qtcreator
-	${INSTALL_PROGRAM} ${WRKSRC}/bin/qtcreator.bin ${PREFIX}/bin/qtcreator.bin
-	${INSTALL_SCRIPT} ${WRKSRC}/bin/qtcreator_process_stub ${PREFIX}/bin/qtcreator_process_stub
+	${MKDIR} ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/bin/qtcreator ${PREFIX}/bin/qtcreator
+	${INSTALL_PROGRAM} ${WRKSRC}/bin/qtcreator_process_stub ${PREFIX}/bin/qtcreator_process_stub
 	${MKDIR} ${PREFIX}/lib/
-	cd ${WRKSRC}/lib/ && ${FIND} -d qtcreator | ${CPIO} -dumpl ${PREFIX}/lib/ >/dev/null
+	cd ${WRKSRC}/lib/ && ${COPYTREE_SHARE} qtcreator ${PREFIX}/lib/
 	${MKDIR} ${PREFIX}/share/
 	cd ${WRKSRC}/share && ${COPYTREE_SHARE} qtcreator ${PREFIX}/share/
 	${MKDIR} ${PREFIX}/share/doc
