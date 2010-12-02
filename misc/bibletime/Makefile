@@ -7,6 +7,7 @@
 
 PORTNAME=	bibletime
 PORTVERSION=	2.8.0
+PORTREVISION=	1
 CATEGORIES=	misc kde
 MASTER_SITES=	SF/${PORTNAME}/BibleTime%202/BibleTime%202%20source%20code
 
@@ -17,8 +18,7 @@ LICENSE=	GPLv2
 
 RUN_DEPENDS=	${LOCALBASE}/lib/libsword-1.6.2.so:${PORTSDIR}/misc/sword
 BUILD_DEPENDS=	${RUN_DEPENDS}
-LIB_DEPENDS=	boost_python:${PORTSDIR}/devel/boost-python-libs \
-		clucene.0:${PORTSDIR}/textproc/clucene
+LIB_DEPENDS=	 clucene.0:${PORTSDIR}/textproc/clucene
 
 USE_BZIP2=	yes
 USE_OPENSSL=	yes
@@ -34,6 +34,6 @@ QT_COMPONENTS=	corelib dbus gui iconengines network phonon qtestlib script \
 CMAKE_USE_PTHREAD=	yes
 .endif
 
-CMAKE_BUILD_TYPE=	release
+CMAKE_BUILD_TYPE=	Release
 
 .include <bsd.port.post.mk>
