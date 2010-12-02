@@ -7,6 +7,7 @@
 
 PORTNAME=	kdebindings
 PORTVERSION=	${KDE4_VERSION}
+PORTREVISION=	1
 CATEGORIES=	devel kde python
 PKGNAMESUFFIX=	-kde
 
@@ -42,6 +43,7 @@ post-patch:
 	${REINPLACE_CMD} -e '/dlopen("kpythonpluginfactory.so"/s,RTLD_NOLOAD |,,' \
 		${PATCH_WRKSRC}/python/pykde4/kpythonpluginfactory/kpythonpluginfactory.cpp
 .endif
+	${FIND} -d ${PATCH_WRKSRC}/python/pykde4/sip -name "*.orig" -delete
 
 pre-configure:
 	${REINPLACE_CMD} -e 's,$${SIP_DEFAULT_SIP_DIR},${PREFIX}/${SIPDIR_REL},g' \
