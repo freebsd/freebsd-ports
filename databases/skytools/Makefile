@@ -29,7 +29,26 @@ CONFIGURE_ARGS=	--with-python=${PYTHON_CMD} \
 		--docdir=${EXAMPLESDIR} \
 		--with-pgconfig=${LOCALBASE}/bin/pg_config
 
+.include <bsd.port.pre.mk>
+
+# Setting/finding PostgreSQL version we want.
+.if exists(${LOCALBASE}/bin/postmaster)
+PGSQL_VER!=	${LOCALBASE}/bin/postmaster -V | \
+		${SED} -En 's/.*PostgreSQL[^0-9]*([0-9]+)\.([0-9]+)\..*/\1\2/p'
+.elif exists(${LOCALBASE}/bin/pg_config)
+PGSQL_VER!=	${LOCALBASE}/bin/pg_config --version | \
+		${SED} -En 's/PostgreSQL[^0-9]*([0-9]*)\.([0-9]+)\..*/\1\2/p'
+.else
+PGSQL_VER=	${DEFAULT_PGSQL_VER}
+.endif
+
+.if ${PGSQL_VER} > 82
+PLIST_SUB+=	TXID="@comment "
+.else
+PLIST_SUB+=	TXID=""
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's=share/doc=share/examples=' ${WRKSRC}/setup.py
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
