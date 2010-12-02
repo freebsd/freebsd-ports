@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	wordpress
-PORTVERSION=	3.0.1
+PORTVERSION=	3.0.2
 CATEGORIES=	chinese www
-MASTER_SITES=	http://tw.wordpress.org/
+MASTER_SITES=	http://tw.wordpress.org/ \
+		http://mirror.joehorn.idv.tw/wordpress/
 PKGNAMESUFFIX=	-zh_TW
 DISTNAME=	${PORTNAME}-${PORTVERSION}${PKGNAMESUFFIX}
 
