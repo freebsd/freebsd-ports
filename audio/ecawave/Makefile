@@ -17,6 +17,8 @@ COMMENT=	Simple graphical audio file editor
 BUILD_DEPENDS=	${LOCALBASE}/lib/libecasound.a:${PORTSDIR}/audio/ecasound
 
 BROKEN=		does not compile
+DEPRECATED=		has been broken for over one year
+EXPIRATION_DATE=	2011-02-01
 
 USE_QT_VER=	3
 USE_GMAKE=	yes
