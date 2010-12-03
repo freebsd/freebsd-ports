@@ -21,7 +21,7 @@ RUN_DEPENDS=	iso-codes>=0:${PORTSDIR}/misc/iso-codes \
 LICENSE=	GPLv3
 
 USE_BZIP2=	yes
-USE_GNOME=	pygtk2
+USE_GNOME=	pygtk2 desktopfileutils
 USE_PYTHON=	2.6+
 USE_PYDISTUTILS=yes
 INSTALLS_ICONS=	yes
