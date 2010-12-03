@@ -12,7 +12,7 @@
 # release you can generally build it cleanly from the source - Doug
 
 PORTNAME=	bind96
-PORTVERSION=	9.6.3.ESV.2
+PORTVERSION=	9.6.3.ESV.3
 CATEGORIES=	dns net ipv6
 MASTER_SITES=	${MASTER_SITE_ISC} \
 		http://dougbarton.us/Downloads/%SUBDIR%/
@@ -25,7 +25,7 @@ MAINTAINER=	dougb@FreeBSD.org
 COMMENT=	The BIND DNS suite with updated DNSSEC and threads
 
 # ISC releases things like 9.4.0b3, which our versioning doesn't like
-ISCVERSION=	9.6-ESV-R2
+ISCVERSION=	9.6-ESV-R3
 
 MAKE_JOBS_UNSAFE=	yes
 
@@ -33,7 +33,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--localstatedir=/var --disable-linux-caps \
 		--with-randomdev=/dev/random
 
-CONFLICTS=	bind9*-9.[3457].* bind9-sdb-* host-*
+CONFLICTS=	bind9*-9.[457].* bind9-sdb-* host-* bind-tools-9.*
 
 OPTIONS=	SSL "Building without OpenSSL removes DNSSEC" on \
 		LINKS "Create conf file symlinks in ${PREFIX}" on \
@@ -43,6 +43,7 @@ OPTIONS=	SSL "Building without OpenSSL removes DNSSEC" on \
 		LARGE_FILE "64-bit file support" off \
 		SIGCHASE "dig/host/nslookup will do DNSSEC validation" off \
 		IPV6 "IPv6 Support (autodetected by default)" off \
+		THREADS	"Compile with thread support" on \
 		DLZ_POSTGRESQL "DLZ Postgres driver" off \
 		DLZ_MYSQL "DLZ MySQL driver (single-threaded BIND)" off \
 		DLZ_BDB "DLZ BDB driver" off \
@@ -57,13 +58,6 @@ USE_OPENSSL=	yes
 
 .if (${ARCH} == "amd64")
 ARCH=		x86_64
-.endif
-
-# We are ok by default from 7.0-RELEASE on
-.if ${OSVERSION} >= 700055
-OPTIONS+=	THREADS	"Compile with thread support" on
-.else
-OPTIONS+=	THREADS	"Compile w/threads (Not Recommended <FreeBSD-7)" off
 .endif
 
 .if !defined(WITHOUT_SSL)
@@ -205,6 +199,7 @@ post-patch:
 		${WRKSRC}/bin/${FILE}.Dist > ${WRKSRC}/bin/${FILE}
 .endfor
 
+PKGINSTALL=	${.CURDIR}/../bind97/pkg-install
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/bin/rndc/rndc.conf \
 		${BIND_DESTETC}/rndc.conf.sample
@@ -219,12 +214,7 @@ post-install:
 	    ${DOCSDIR}/
 .endif
 .if !defined(WITHOUT_LINKS) && !defined(WITH_REPLACE_BASE)
-	${MKDIR} /var/named${PREFIX}/etc
-.for DIR in ${PREFIX}/etc /var/named${PREFIX}/etc
-.for FILE in named.conf rndc.key
-	${LN} -sf /etc/namedb/${FILE} ${DIR}/${FILE}
-.endfor
-.endfor
+	PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 .endif
 
 	@${CAT} ${PKGMESSAGE}
