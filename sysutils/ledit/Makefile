@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	ledit
-PORTVERSION=	2.02
+PORTVERSION=	2.02.1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://cristal.inria.fr/~ddr/ledit/distrib/src/ \
 		http://pauillac.inria.fr/~ddr/ledit/distrib/src/
@@ -17,6 +17,9 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Line editor to be used with interactive commands
 
 BUILD_DEPENDS=	camlp5r:${PORTSDIR}/devel/ocaml-camlp5
+
+LICENSE=	BSD
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USE_GMAKE=	yes
 USE_OCAML=	yes
