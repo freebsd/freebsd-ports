@@ -8,7 +8,7 @@
 PORTNAME=	bsnmp-jails
 PORTVERSION=	0.9
 CATEGORIES=	net-mgmt
-MASTER_SITES=	http://memberwebs.com/stef/software/bsnmp-jails/
+MASTER_SITES=	http://thewalter.net/stef/software/bsnmp-jails/
 
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	A bsnmpd module to measure statistics about jails
