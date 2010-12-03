@@ -22,6 +22,7 @@ LATEST_LINK=	gdb66
 
 OPTIONS=	INSIGHT "Build the Tcl/Tk GUI (experimental!)" off
 
+MAKE_JOBS_SAFE=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_GETTEXT=	yes
@@ -46,17 +47,19 @@ BROKEN=		Does not configure on ia64 or powerpc
 .endif
 
 .if defined(WITH_INSIGHT)
+USE_TK=	84+
+.include "${PORTSDIR}/Mk/bsd.tcl.mk"
 LIB_DEPENDS=	itk:${PORTSDIR}/x11-toolkits/itk
 RUN_DEPENDS=	${LOCALBASE}/lib/iwidgets:${PORTSDIR}/x11-toolkits/iwidgets
 DISTFILES+=	gdbtk-6.6${EXTRACT_SUFX}:gdbtk
 PLIST_SUB+=	INSIGHT=''
 EXTRA_PATCHES=	${FILESDIR}/itcl33-patch
 CONFIGURE_ARGS+=--enable-gdbtk \
-		--with-tclconfig=${LOCALBASE}/lib/tcl8.4 \
-		--with-tclinclude=${LOCALBASE}/include/tcl8.4/generic \
-		--with-tkconfig=${LOCALBASE}/lib/tk8.4 \
-		--with-tkinclude=${LOCALBASE}/include/tk8.4/generic \
-		--with-itclconfig=${LOCALBASE}/lib/itcl3.3 \
+		--with-tclconfig=${LOCALBASE}/lib/tcl${TCL_VER} \
+		--with-tclinclude=${LOCALBASE}/include/tcl${TCL_VER}/generic \
+		--with-tkconfig=${LOCALBASE}/lib/tk${TK_VER} \
+		--with-tkinclude=${LOCALBASE}/include/tk${TK_VER}/generic \
+		--with-itclconfig=${LOCALBASE}/lib/itcl3.4 \
 		--with-itkconfig=${LOCALBASE}/lib/itk3.3
 
 pre-everything::
@@ -68,7 +71,8 @@ pre-everything::
 
 pre-configure:
 	${MKDIR} ${WRKSRC}/itcl/generic
-	${LN} -s ${LOCALBASE}/include/it*3.3/*.h ${WRKSRC}/itcl/generic/
+	${LN} -s ${LOCALBASE}/include/itk3.3/*.h ${WRKSRC}/itcl/generic/
+	${LN} -s ${LOCALBASE}/include/itcl3.4/*.h ${WRKSRC}/itcl/generic/
 .else
 PLIST_SUB+=	INSIGHT='@comment '
 .endif

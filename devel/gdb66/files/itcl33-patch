@@ -187,3 +187,11 @@
 +  protected variable _widget {}
  
    constructor {config} {
+--- libgui/library/pkgIndex.tcl	2003-02-04 02:33:38.000000000 -0500
++++ libgui/library/pkgIndex.tcl	2010-12-02 23:33:05.000000000 -0500
+@@ -9,4 +9,4 @@
+ # full path name of this file's directory.
+ 
+-package ifneeded combobox 2.2.1 [list source [file join $dir combobox.tcl]]
++package ifneeded combobox 2.3 [list source [file join $dir combobox.tcl]]
+ package ifneeded debug 1.0 [list source [file join $dir debug.tcl]]
