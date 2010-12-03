@@ -5,8 +5,9 @@
 # $FreeBSD$
 #
 
-PORTNAME=	bind97
+PORTNAME?=	bind97
 PORTVERSION=	9.7.2.2
+PORTREVISION?=	0
 CATEGORIES=	dns net ipv6
 MASTER_SITES=	${MASTER_SITE_ISC} \
 		http://dougbarton.us/Downloads/%SUBDIR%/
@@ -16,7 +17,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${DISTNAME}${EXTRACT_SUFX}.asc
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	dougb@FreeBSD.org
-COMMENT=	The BIND DNS suite with updated DNSSEC and threads
+COMMENT?=	The BIND DNS suite with updated DNSSEC and threads
 
 # ISC releases things like 9.4.0b3, which our versioning doesn't like
 ISCVERSION=	9.7.2-P2
@@ -28,22 +29,25 @@ CONFIGURE_ARGS=	--localstatedir=/var --disable-linux-caps \
 		--disable-symtable \
 		--with-randomdev=/dev/random
 
-CONFLICTS=	bind9*-9.[3456].* bind9-sdb-* host-*
+CONFLICTS=	bind9*-9.[456].* bind9-sdb-* host-*
 
 OPTIONS=	SSL "Building without OpenSSL removes DNSSEC" on \
-		LINKS "Create conf file symlinks in ${PREFIX}" on \
-		XML "Support for xml statistics output" on \
 		IDN "Add IDN support to dig, host, etc." off \
 		REPLACE_BASE "Replace base BIND with this version" off \
 		LARGE_FILE "64-bit file support" off \
 		SIGCHASE "dig/host/nslookup will do DNSSEC validation" off \
 		IPV6 "IPv6 Support (autodetected by default)" off \
+		THREADS	"Compile with thread support" on
+.if !defined(BIND_TOOLS_SLAVE)
+OPTIONS+=	LINKS "Create conf file symlinks in ${PREFIX}" on \
+		XML "Support for xml statistics output" on \
 		DLZ_POSTGRESQL "DLZ Postgres driver" off \
 		DLZ_MYSQL "DLZ MySQL driver (single-threaded BIND)" off \
 		DLZ_BDB "DLZ BDB driver" off \
 		DLZ_LDAP "DLZ LDAP driver" off \
 		DLZ_FILESYSTEM "DLZ filesystem driver" off \
 		DLZ_STUB "DLZ stub driver" off
+.endif
 
 # Just in case
 USE_OPENSSL=	yes
@@ -54,13 +58,6 @@ USE_OPENSSL=	yes
 ARCH=		x86_64
 .endif
 
-# We are ok by default from 7.0-RELEASE on
-.if ${OSVERSION} >= 700055
-OPTIONS+=	THREADS	"Compile with thread support" on
-.else
-OPTIONS+=	THREADS	"Compile w/threads (Not Recommended <FreeBSD-7)" off
-.endif
-
 .if !defined(WITHOUT_SSL)
 CONFIGURE_ARGS+=	--with-openssl=${OPENSSLBASE}
 .else
@@ -68,7 +65,7 @@ CONFIGURE_ARGS+=	--disable-openssl-version-check
 CONFIGURE_ARGS+=	--without-openssl
 .endif
 
-.if !defined(WITHOUT_XML)
+.if !defined(WITHOUT_XML) && !defined(BIND_TOOLS_SLAVE)
 CONFIGURE_ARGS+=	--with-libxml2=${LOCALBASE}
 LIB_DEPENDS+=		xml2.5:${PORTSDIR}/textproc/libxml2
 .else
@@ -148,7 +145,8 @@ BIND_DESTETC=	${PREFIX}/etc
 
 PLIST_SUB+=	BIND_DESTETC="${BIND_DESTETC}"
 
-MAN1=	arpaname.1 dig.1 host.1 isc-config.sh.1 nslookup.1 nsupdate.1
+MAN1?=	arpaname.1 dig.1 host.1 isc-config.sh.1 nslookup.1 nsupdate.1
+.if !defined(BIND_TOOLS_SLAVE)
 MAN3=	lwres.3 lwres_addr_parse.3 lwres_buffer.3 lwres_buffer_add.3 \
 	lwres_buffer_back.3 lwres_buffer_clear.3 lwres_buffer_first.3 \
 	lwres_buffer_forward.3 lwres_buffer_getmem.3 lwres_buffer_getuint16.3 \
@@ -189,10 +187,12 @@ MAN8=	ddns-confgen.8 dnssec-dsfromkey.8 dnssec-keyfromlabel.8 \
 	isc-hmac-fixup.8 \
 	named-journalprint.8 named.8 nsec3hash.8 rndc-confgen.8 rndc.8
 MLINKS=	named-checkzone.8 named-compilezone.8
+.endif	# BIND_TOOLS_SLAVE
 
 verify:	checksum
 	gpg --verify ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX}.asc
 
+.if !defined(BIND_TOOLS_SLAVE)
 post-patch:
 .for FILE in check/named-checkconf.8 named/named.8 nsupdate/nsupdate.1 \
 	rndc/rndc.8
@@ -230,5 +230,6 @@ post-install:
 .endif
 
 	@${CAT} ${PKGMESSAGE}
+.endif	# BIND_TOOLS_SLAVE
 
 .include <bsd.port.post.mk>
