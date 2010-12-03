@@ -9,8 +9,6 @@ bin/gpodder-backup
 %%PYTHON_SITELIBDIR%%/gpodder/config.pyc
 %%PYTHON_SITELIBDIR%%/gpodder/console.py
 %%PYTHON_SITELIBDIR%%/gpodder/console.pyc
-%%PYTHON_SITELIBDIR%%/gpodder/corestats.py
-%%PYTHON_SITELIBDIR%%/gpodder/corestats.pyc
 %%PYTHON_SITELIBDIR%%/gpodder/dbsqlite.py
 %%PYTHON_SITELIBDIR%%/gpodder/dbsqlite.pyc
 %%PYTHON_SITELIBDIR%%/gpodder/dbusproxy.py
