@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	mcabber
-PORTVERSION=	0.10.0
-PORTREVISION=	2
+PORTVERSION=	0.10.1
 CATEGORIES=	net-im
 MASTER_SITES=	http://www.lilotux.net/~mikael/mcabber/files/ CENKES
 #DISTNAME=	${PORTNAME}-${PORTVERSION}-rc3
@@ -16,6 +15,8 @@ MAINTAINER=	dhn@FreeBSD.org
 COMMENT=	Small Jabber console client
 
 LIB_DEPENDS=	loudmouth:${PORTSDIR}/net-im/loudmouth
+
+LICENSE=	GPLv2
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
@@ -32,7 +33,8 @@ MAN1=		mcabber.1
 
 OPTIONS=	GPGME "Use security/gpgme for PGP support" off \
 		OTR "Off-the-record messaging support" off \
-		ASPELL "Use textproc/aspell for spell checking" off
+		ASPELL "Use textproc/aspell for spell checking" off \
+		ENCHANT "Use texproc/enchant for spell checking" off
 
 .include <bsd.port.pre.mk>
 
@@ -47,19 +49,28 @@ CONFIGURE_ARGS+=--enable-gpgme
 CONFIGURE_ARGS+=--disable-gpgme
 .endif
 
-.if defined(WITH_ASPELL)
+.if defined(WITH_ASPELL) && !defined(WITH_ENCHANT)
 LIB_DEPENDS+=	aspell.16:${PORTSDIR}/textproc/aspell
 CONFIGURE_ARGS+=--enable-aspell
 .else
 CONFIGURE_ARGS+=--disable-aspell
 .endif
 
+.if defined(WITH_ENCHANT)
+LIB_DEPENDS+=   enchant.1:${PORTSDIR}/textproc/enchant
+CONFIGURE_ARGS+=--enable-enchant
+.else
+CONFIGURE_ARGS+=--disable-enchant
+.endif
+
 .if defined(WITH_OTR)
 LIB_DEPENDS+=	otr.4:${PORTSDIR}/security/libotr \
 		gcrypt.17:${PORTSDIR}/security/libgcrypt
 CONFIGURE_ARGS+=--enable-otr
+PLIST_SUB+=	OTR=""
 .else
 CONFIGURE_ARGS+=--disable-otr
+PLIST_SUB+=	OTR="@comment "
 .endif
 
 post-patch:
