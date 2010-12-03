@@ -5,9 +5,9 @@
 # $FreeBSD$
 
 PORTNAME=	openvpn
-DISTVERSION=	2.2-beta3
+DISTVERSION=	2.2-beta5
 CATEGORIES=	security net
-MASTER_SITES=	http://build.openvpn.net/downloads/releases/
+MASTER_SITES=	http://swupdate.openvpn.net/community/releases/
 PKGNAMESUFFIX=	-beta
 
 MAINTAINER=	ecrist@secure-computing.net
