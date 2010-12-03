@@ -7,8 +7,8 @@
 
 PORTNAME=	${PLUGIN}
 PORTVERSION=	6.0.2
+PORTREVISION=	1
 CATEGORIES=	java devel
-#MASTER_SITES=	http://download.eclipse.org/
 MASTER_SITES=	${MASTER_SITE_ECLIPSE}
 MASTER_SITE_SUBDIR=tools/${PLUGIN}/releases/${ECLIPSE_CODENAME}/dist
 DISTNAME=	${PLUGIN}-master-${PORTVERSION}
@@ -18,8 +18,6 @@ MAINTAINER=	aldis@bsdroot.lv
 COMMENT=	C/C++ plugin for Eclipse IDE
 
 RUN_DEPENDS=	eclipse:${PORTSDIR}/java/eclipse
-
-BROKEN=		bad plist
 
 USE_ZIP=	YES
 USE_JAVA=	YES
@@ -75,8 +73,6 @@ do-patch:
 .endfor
 
 do-install:
-	@${MKDIR} ${PREFIX}/lib/eclipse/features/${PLUGIN}/
-	@${MKDIR} ${PREFIX}/lib/eclipse/plugins/${PLUGIN}/
 .for i in features plugins
 	@(cd ${WRKDIR}/${i} && ${COPYTREE_SHARE} \* ${PREFIX}/lib/eclipse/${i}/)
 .endfor
