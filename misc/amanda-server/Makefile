@@ -7,7 +7,7 @@
 
 PORTNAME=	amanda
 PORTVERSION=	3.2.0
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	misc
 MASTER_SITES=	SF/amanda/amanda%20-%20stable/${PORTVERSION}
@@ -77,6 +77,9 @@ RUN_DEPENDS+=	gtar:${PORTSDIR}/archivers/gtar
 
 # amanda-server part
 .if !defined(CLIENT_ONLY)
+
+SUB_FILES+=	pkg-install pkg-deinstall
+SUB_LIST+=	PERL=${PERL} SITE_PERL_REL=${SITE_PERL_REL}
 
 pre-everything::
 .if defined(AMANDA_TAPE)
@@ -158,7 +161,8 @@ PLIST_SUB+=	S3DEVICE='@comment '
 .endif
 
 post-install:
-	${CAT} ${PKGMESSAGE}
+	@${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
+	@${CAT} ${PKGMESSAGE}
 
 # amanda-client part
 .else
