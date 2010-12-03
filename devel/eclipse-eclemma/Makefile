@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	eclemma
-PORTVERSION=	1.5.0
+PORTVERSION=	1.5.1
 CATEGORIES=	java editors devel
 MASTER_SITES=	SF/${PORTNAME}/01_EclEmma_Releases/${PORTVERSION}
 
@@ -37,11 +37,11 @@ plist: build
 	@${TOUCH} ${PLIST}
 	@${RM} ${PLIST}
 .for _path in ${PLUGIN_PATHS}
-	@${FIND} ${WRKSRC}/${_path}/ -not -type d \
+	@${FIND} -ds ${WRKSRC}/${_path}/ -not -type d \
 		| ${SED} "s|${WRKSRC}|%%ECLIPSE%%|1" \
 		| ${SED} "s|${PORTVERSION}|%%VER%%|g" \
 		>> ${PLIST}
-	@${FIND} -d ${WRKSRC}/${_path}/ -mindepth 1 -type d \
+	@${FIND} -ds ${WRKSRC}/${_path}/ -mindepth 1 -type d \
 		| ${SED} "s|${WRKSRC}|@dirrm %%ECLIPSE%%|1" \
 		| ${SED} "s|${PORTVERSION}|%%VER%%|g" \
 		>> ${PLIST}
