@@ -159,6 +159,7 @@ share/Wammu/images/misc/phonewizard.png
 share/Wammu/images/misc/uparrow.png
 share/applications/wammu.desktop
 share/locale/af/LC_MESSAGES/wammu.mo
+share/locale/ar/LC_MESSAGES/wammu.mo
 share/locale/bg/LC_MESSAGES/wammu.mo
 share/locale/ca/LC_MESSAGES/wammu.mo
 share/locale/cs/LC_MESSAGES/wammu.mo
@@ -183,6 +184,7 @@ share/locale/ru/LC_MESSAGES/wammu.mo
 share/locale/sk/LC_MESSAGES/wammu.mo
 share/locale/sv/LC_MESSAGES/wammu.mo
 share/locale/sw/LC_MESSAGES/wammu.mo
+share/locale/tr/LC_MESSAGES/wammu.mo
 share/locale/zh_CN/LC_MESSAGES/wammu.mo
 share/locale/zh_TW/LC_MESSAGES/wammu.mo
 share/pixmaps/wammu.ico
@@ -191,7 +193,7 @@ share/pixmaps/wammu.svg
 share/pixmaps/wammu.xpm
 @dirrmtry share/locale/sw/LC_MESSAGES
 @dirrmtry share/locale/sw
-@dirrm share/applications
+@dirrmtry share/applications
 @dirrm share/Wammu/images/misc
 @dirrm share/Wammu/images/icons
 @dirrm share/Wammu/images
