@@ -22,6 +22,7 @@ LIB_DEPENDS=	png.6:${PORTSDIR}/graphics/png \
 USE_XORG=	x11 xt xext xmu xi
 USE_GL=		glu
 USE_GMAKE=	yes
+USE_GCC=	4.2+
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="`fltk-config --cxxflags`" \
 		LDFLAGS="`fltk-config --ldflags`"
@@ -34,10 +35,6 @@ PORTEXAMPLES=	*
 PLIST_FILES=	bin/burrTxt bin/burrTxt2 bin/burrGui
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 700000
-BROKEN=		does not build on 6.X
-.endif
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/burrTxt ${PREFIX}/bin
