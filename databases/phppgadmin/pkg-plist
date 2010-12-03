@@ -1,5 +1,4 @@
 %%PGADMDIR%%/CREDITS
-%%PGADMDIR%%/BUGS
 %%PGADMDIR%%/DEVELOPERS
 %%PGADMDIR%%/FAQ
 %%PGADMDIR%%/HISTORY
@@ -7,11 +6,12 @@
 %%PGADMDIR%%/LICENSE
 %%PGADMDIR%%/TODO
 %%PGADMDIR%%/TRANSLATORS
-%%PGADMDIR%%/aciur.js
+%%PGADMDIR%%/admin.php
+%%PGADMDIR%%/ajax-ac-insert.php
 %%PGADMDIR%%/aggregates.php
 %%PGADMDIR%%/all_db.php
-%%PGADMDIR%%/autocomplete.php
 %%PGADMDIR%%/browser.php
+%%PGADMDIR%%/build_tests.php
 %%PGADMDIR%%/casts.php
 %%PGADMDIR%%/classes/ArrayRecordSet.php
 %%PGADMDIR%%/classes/Gui.php
@@ -21,14 +21,12 @@
 %%PGADMDIR%%/classes/database/ADODB_base.php
 %%PGADMDIR%%/classes/database/Connection.php
 %%PGADMDIR%%/classes/database/Postgres.php
-%%PGADMDIR%%/classes/database/Postgres71.php
-%%PGADMDIR%%/classes/database/Postgres72.php
-%%PGADMDIR%%/classes/database/Postgres73.php
 %%PGADMDIR%%/classes/database/Postgres74.php
 %%PGADMDIR%%/classes/database/Postgres80.php
 %%PGADMDIR%%/classes/database/Postgres81.php
 %%PGADMDIR%%/classes/database/Postgres82.php
 %%PGADMDIR%%/classes/database/Postgres83.php
+%%PGADMDIR%%/classes/database/Postgres84.php
 %%PGADMDIR%%/classes/plugins/Plugin.php
 %%PGADMDIR%%/classes/plugins/Slony.php
 %%PGADMDIR%%/colproperties.php
@@ -49,16 +47,21 @@
 %%PGADMDIR%%/functions.php
 %%PGADMDIR%%/groups.php
 %%PGADMDIR%%/help.php
-%%PGADMDIR%%/help/PostgresDoc70.php
-%%PGADMDIR%%/help/PostgresDoc71.php
-%%PGADMDIR%%/help/PostgresDoc72.php
-%%PGADMDIR%%/help/PostgresDoc73.php
 %%PGADMDIR%%/help/PostgresDoc74.php
 %%PGADMDIR%%/help/PostgresDoc80.php
 %%PGADMDIR%%/help/PostgresDoc81.php
 %%PGADMDIR%%/help/PostgresDoc82.php
 %%PGADMDIR%%/help/PostgresDoc83.php
+%%PGADMDIR%%/help/PostgresDoc84.php
+%%PGADMDIR%%/help/PostgresDoc90.php
 %%PGADMDIR%%/history.php
+%%PGADMDIR%%/images/themes/cappuccino/Lminus.png
+%%PGADMDIR%%/images/themes/cappuccino/Lplus.png
+%%PGADMDIR%%/images/themes/cappuccino/Tminus.png
+%%PGADMDIR%%/images/themes/cappuccino/Tplus.png
+%%PGADMDIR%%/images/themes/cappuccino/inputbckg.png
+%%PGADMDIR%%/images/themes/cappuccino/openListe.png
+%%PGADMDIR%%/images/themes/cappuccino/title.png
 %%PGADMDIR%%/images/themes/default/AddArguments.png
 %%PGADMDIR%%/images/themes/default/Admin.png
 %%PGADMDIR%%/images/themes/default/Aggregate.png
@@ -200,6 +203,9 @@
 %%PGADMDIR%%/indexes.php
 %%PGADMDIR%%/info.php
 %%PGADMDIR%%/intro.php
+%%PGADMDIR%%/js/ac_insert_row.js
+%%PGADMDIR%%/js/database.js
+%%PGADMDIR%%/js/display.js
 %%PGADMDIR%%/lang/Makefile
 %%PGADMDIR%%/lang/afrikaans.php
 %%PGADMDIR%%/lang/arabic.php
@@ -214,7 +220,9 @@
 %%PGADMDIR%%/lang/dutch.php
 %%PGADMDIR%%/lang/english.php
 %%PGADMDIR%%/lang/french.php
+%%PGADMDIR%%/lang/galician.php
 %%PGADMDIR%%/lang/german.php
+%%PGADMDIR%%/lang/greek.php
 %%PGADMDIR%%/lang/hebrew.php
 %%PGADMDIR%%/lang/hungarian.php
 %%PGADMDIR%%/lang/italian.php
@@ -226,6 +234,7 @@
 %%PGADMDIR%%/lang/polish.php
 %%PGADMDIR%%/lang/portuguese-br.php
 %%PGADMDIR%%/lang/portuguese-pt.php
+%%PGADMDIR%%/lang/russian-utf8.php
 %%PGADMDIR%%/lang/recoded/README
 %%PGADMDIR%%/lang/recoded/afrikaans.php
 %%PGADMDIR%%/lang/recoded/arabic.php
@@ -239,7 +248,9 @@
 %%PGADMDIR%%/lang/recoded/dutch.php
 %%PGADMDIR%%/lang/recoded/english.php
 %%PGADMDIR%%/lang/recoded/french.php
+%%PGADMDIR%%/lang/recoded/galician.php
 %%PGADMDIR%%/lang/recoded/german.php
+%%PGADMDIR%%/lang/recoded/greek.php
 %%PGADMDIR%%/lang/recoded/hebrew.php
 %%PGADMDIR%%/lang/recoded/hungarian.php
 %%PGADMDIR%%/lang/recoded/italian.php
@@ -250,6 +261,7 @@
 %%PGADMDIR%%/lang/recoded/portuguese-pt.php
 %%PGADMDIR%%/lang/recoded/romanian.php
 %%PGADMDIR%%/lang/recoded/russian.php
+%%PGADMDIR%%/lang/recoded/russian-utf8.php
 %%PGADMDIR%%/lang/recoded/slovak.php
 %%PGADMDIR%%/lang/recoded/spanish.php
 %%PGADMDIR%%/lang/recoded/swedish.php
@@ -270,7 +282,6 @@
 %%PGADMDIR%%/libraries/adodb/adodb-error.inc.php
 %%PGADMDIR%%/libraries/adodb/adodb-iterator.inc.php
 %%PGADMDIR%%/libraries/adodb/adodb-lib.inc.php
-%%PGADMDIR%%/libraries/adodb/adodb-php4.inc.php
 %%PGADMDIR%%/libraries/adodb/adodb-time.inc.php
 %%PGADMDIR%%/libraries/adodb/adodb.inc.php
 %%PGADMDIR%%/libraries/adodb/drivers/adodb-postgres.inc.php
@@ -288,6 +299,7 @@
 %%PGADMDIR%%/libraries/adodb/lang/adodb-en.inc.php
 %%PGADMDIR%%/libraries/adodb/lang/adodb-es.inc.php
 %%PGADMDIR%%/libraries/adodb/lang/adodb-esperanto.inc.php
+%%PGADMDIR%%/libraries/adodb/lang/adodb-fa.inc.php
 %%PGADMDIR%%/libraries/adodb/lang/adodb-fr.inc.php
 %%PGADMDIR%%/libraries/adodb/lang/adodb-hu.inc.php
 %%PGADMDIR%%/libraries/adodb/lang/adodb-it.inc.php
@@ -297,6 +309,7 @@
 %%PGADMDIR%%/libraries/adodb/lang/adodb-ro.inc.php
 %%PGADMDIR%%/libraries/adodb/lang/adodb-ru1251.inc.php
 %%PGADMDIR%%/libraries/adodb/lang/adodb-sv.inc.php
+%%PGADMDIR%%/libraries/adodb/lang/adodb_th.inc.php
 %%PGADMDIR%%/libraries/adodb/lang/adodb-uk1251.inc.php
 %%PGADMDIR%%/libraries/adodb/license.txt
 %%PGADMDIR%%/libraries/adodb/readme.txt
@@ -305,6 +318,7 @@
 %%PGADMDIR%%/libraries/decorator.inc.php
 %%PGADMDIR%%/libraries/errorhandler.inc.php
 %%PGADMDIR%%/libraries/highlight.php
+%%PGADMDIR%%/libraries/js/jquery.js
 %%PGADMDIR%%/libraries/lib.inc.php
 %%PGADMDIR%%/links.js
 %%PGADMDIR%%/login.php
@@ -330,6 +344,10 @@
 %%PGADMDIR%%/tablespaces.php
 %%PGADMDIR%%/tblproperties.php
 %%PGADMDIR%%/themes/default/global.css
+%%PGADMDIR%%/themes/global.css
+%%PGADMDIR%%/themes/themes.php
+%%PGADMDIR%%/themes/cappuccino/global.css
+%%PGADMDIR%%/themes/gotar/global.css
 %%PGADMDIR%%/triggers.php
 %%PGADMDIR%%/types.php
 %%PGADMDIR%%/users.php
@@ -339,14 +357,19 @@
 %%PGADMDIR%%/xloadtree/xtree2.js
 @dirrm %%PGADMDIR%%/xloadtree
 @dirrm %%PGADMDIR%%/themes/default
+@dirrm %%PGADMDIR%%/themes/cappuccino
+@dirrm %%PGADMDIR%%/themes/gotar
 @dirrm %%PGADMDIR%%/themes
 @dirrm %%PGADMDIR%%/sql
 @dirrm %%PGADMDIR%%/libraries/adodb/lang
 @dirrm %%PGADMDIR%%/libraries/adodb/drivers
 @dirrm %%PGADMDIR%%/libraries/adodb
+@dirrm %%PGADMDIR%%/libraries/js
 @dirrm %%PGADMDIR%%/libraries
 @dirrm %%PGADMDIR%%/lang/recoded
 @dirrm %%PGADMDIR%%/lang
+@dirrm %%PGADMDIR%%/js
+@dirrm %%PGADMDIR%%/images/themes/cappuccino
 @dirrm %%PGADMDIR%%/images/themes/default
 @dirrm %%PGADMDIR%%/images/themes
 @dirrm %%PGADMDIR%%/images
