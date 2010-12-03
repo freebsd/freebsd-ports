@@ -1,0 +1,5 @@
+%%SITE_PERL%%/String/Flogger.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/String/Flogger/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/String/Flogger
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/String
+@dirrmtry %%SITE_PERL%%/String
