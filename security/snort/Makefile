@@ -61,7 +61,7 @@ LIBNET_LIBDIR=	${LIBNET_LIBS:M-L*:S/-L//}
 .endif
 
 .if !defined(WITHOUT_DYNAMIC)
-USE_AUTOTOOLS=	libtool:22
+USE_AUTOTOOLS+=	libtool:22
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS+=	--enable-dynamicplugin
 PLIST_SUB+=	DYNAMIC=""
@@ -126,7 +126,7 @@ CONFIGURE_ARGS+=	--enable-perfprofiling
 .endif
 
 .if defined(WITH_SNORTSAM)
-BUILD_DEPENDS+=		automake>=1.10.3:${PORTSDIR}/devel/automake110
+USE_AUTOTOOLS+=	automake:111
 PATCH_SITES+=http://www.snortsam.net/files/snort-plugin/:snortsam
 PATCHFILES+=snortsam-2.8.6.diff.gz:snortsam
 .endif
