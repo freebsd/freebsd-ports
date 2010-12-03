@@ -6,7 +6,7 @@
 #
 
 PORTNAME?=	bind97
-PORTVERSION=	9.7.2.2
+PORTVERSION=	9.7.2.3
 PORTREVISION?=	0
 CATEGORIES=	dns net ipv6
 MASTER_SITES=	${MASTER_SITE_ISC} \
@@ -20,7 +20,7 @@ MAINTAINER=	dougb@FreeBSD.org
 COMMENT?=	The BIND DNS suite with updated DNSSEC and threads
 
 # ISC releases things like 9.4.0b3, which our versioning doesn't like
-ISCVERSION=	9.7.2-P2
+ISCVERSION=	9.7.2-P3
 
 MAKE_JOBS_UNSAFE=	yes
 
@@ -47,6 +47,7 @@ OPTIONS+=	LINKS "Create conf file symlinks in ${PREFIX}" on \
 		DLZ_LDAP "DLZ LDAP driver" off \
 		DLZ_FILESYSTEM "DLZ filesystem driver" off \
 		DLZ_STUB "DLZ stub driver" off
+CONFLICTS+=	bind-tools-9.*
 .endif
 
 # Just in case
@@ -221,12 +222,7 @@ post-install:
 	    ${WRKSRC}/README* ${DOCSDIR}/
 .endif
 .if !defined(WITHOUT_LINKS) && !defined(WITH_REPLACE_BASE)
-	${MKDIR} /var/named${PREFIX}/etc
-.for DIR in ${PREFIX}/etc /var/named${PREFIX}/etc
-.for FILE in named.conf rndc.key
-	${LN} -sf /etc/namedb/${FILE} ${DIR}/${FILE}
-.endfor
-.endfor
+	PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 .endif
 
 	@${CAT} ${PKGMESSAGE}

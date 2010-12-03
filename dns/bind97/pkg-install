@@ -1,0 +1,13 @@
+#!/bin/sh
+
+[ "$2" = 'POST-INSTALL' ] || exit 0
+
+/bin/mkdir -p /var/named${PKG_PREFIX}/etc
+
+for DIR in ${PKG_PREFIX}/etc /var/named${PKG_PREFIX}/etc; do
+	for FILE in named.conf rndc.key; do
+		/bin/ln -sf /etc/namedb/${FILE} ${DIR}/${FILE}
+	done
+done
+
+exit 0
