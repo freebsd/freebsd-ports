@@ -8,7 +8,7 @@
 
 PORTNAME=	gdb
 PORTVERSION=	6.6
-PORTREVISION=	2
+PORTREVISION?=	2
 CATEGORIES=	devel
 MASTER_SITES=   ${MASTER_SITE_GNU:S,$,:gdb,}	\
 		http://aldan.algebra.com/~mi/:gdbtk
@@ -20,8 +20,11 @@ COMMENT=	GNU GDB of newer version than comes with the system
 
 LATEST_LINK=	gdb66
 
+.ifndef(WITH_INSIGHT)
 OPTIONS=	INSIGHT "Build the Tcl/Tk GUI (experimental!)" off
+.endif
 
+CONFLICTS=	gdb-*
 MAKE_JOBS_SAFE=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
@@ -47,6 +50,8 @@ BROKEN=		Does not configure on ia64 or powerpc
 .endif
 
 .if defined(WITH_INSIGHT)
+PKGNAMESUFFIX=	-insight
+PORTREVISION=	0
 USE_TK=	84+
 .include "${PORTSDIR}/Mk/bsd.tcl.mk"
 LIB_DEPENDS=	itk:${PORTSDIR}/x11-toolkits/itk
