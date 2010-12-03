@@ -637,6 +637,7 @@
     SUBDIR += p5-String-CamelCase
     SUBDIR += p5-String-Divert
     SUBDIR += p5-String-Escape
+    SUBDIR += p5-String-Flogger
     SUBDIR += p5-String-Format
     SUBDIR += p5-String-Fraction
     SUBDIR += p5-String-Koremutake
