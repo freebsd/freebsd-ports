@@ -1,0 +1,6 @@
+This perl module allows you to use generic config files in Perl applications.
+Syntax of the configuration file(s) to read is fully configurable including
+delimiters, maximum config size, ends of lines, and features include comments,
+associative arrays, types of variables with coercion
+
+WWW: http://search.cpan.org/dist/Parse-PlainConfig/
