@@ -8,8 +8,6 @@ bin/mkcamlp5
 bin/mkcamlp5.opt
 bin/ocpp5
 lib/ocaml/camlp5/META
-lib/ocaml/camlp5/ast2pt.cmi
-lib/ocaml/camlp5/ast2pt.mli
 lib/ocaml/camlp5/camlp5.a
 lib/ocaml/camlp5/camlp5.cma
 lib/ocaml/camlp5/camlp5.cmxa
@@ -83,6 +81,12 @@ lib/ocaml/camlp5/pa_macro.cmi
 lib/ocaml/camlp5/pa_macro.cmo
 lib/ocaml/camlp5/pa_macro.cmx
 lib/ocaml/camlp5/pa_macro.o
+lib/ocaml/camlp5/pa_mkast.cmo
+lib/ocaml/camlp5/pa_mkast.cmx
+lib/ocaml/camlp5/pa_mkast.o
+lib/ocaml/camlp5/pa_mktest.cmo
+lib/ocaml/camlp5/pa_mktest.cmx
+lib/ocaml/camlp5/pa_mktest.o
 lib/ocaml/camlp5/pa_o.cmo
 lib/ocaml/camlp5/pa_o.cmx
 lib/ocaml/camlp5/pa_o.o
@@ -103,6 +107,9 @@ lib/ocaml/camlp5/pa_pragma.o
 lib/ocaml/camlp5/pa_r.cmo
 lib/ocaml/camlp5/pa_r.cmx
 lib/ocaml/camlp5/pa_r.o
+lib/ocaml/camlp5/pa_reloc.cmo
+lib/ocaml/camlp5/pa_reloc.cmx
+lib/ocaml/camlp5/pa_reloc.o
 lib/ocaml/camlp5/pa_rp.cmo
 lib/ocaml/camlp5/pa_rp.cmx
 lib/ocaml/camlp5/pa_rp.o
@@ -187,4 +194,6 @@ lib/ocaml/camlp5/stdpp.mli
 lib/ocaml/camlp5/token.cmi
 lib/ocaml/camlp5/token.cmx
 lib/ocaml/camlp5/token.mli
+lib/ocaml/camlp5/versdep.cmi
+lib/ocaml/camlp5/versdep.cmx
 @dirrm lib/ocaml/camlp5
