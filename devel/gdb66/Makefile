@@ -24,7 +24,7 @@ LATEST_LINK=	gdb66
 OPTIONS=	INSIGHT "Build the Tcl/Tk GUI (experimental!)" off
 .endif
 
-CONFLICTS=	gdb-[7-9]*
+CONFLICTS?=	gdb-[7-9]*
 MAKE_JOBS_SAFE=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
