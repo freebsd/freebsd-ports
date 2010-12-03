@@ -16,7 +16,7 @@ MASTER_SITE_SUBDIR=gdb/:gdb
 DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}:gdb
 
 MAINTAINER=	mi@aldan.algebra.com
-COMMENT=	GNU GDB of newer version than comes with the system
+COMMENT?=	GNU GDB of newer version than comes with the system
 
 LATEST_LINK=	gdb66
 
@@ -43,17 +43,12 @@ VER=	${PORTVERSION:S/.//}
 PLIST_SUB=	VER=${VER}
 MAN1=	gdb${VER}.1
 
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == "ia64" || ${ARCH} == "powerpc"
-BROKEN=		Does not configure on ia64 or powerpc
-.endif
+.include <bsd.port.options.mk>
 
 .if defined(WITH_INSIGHT)
 PKGNAMESUFFIX=	-insight
 PORTREVISION=	0
 USE_TK=	84+
-.include "${PORTSDIR}/Mk/bsd.tcl.mk"
 LIB_DEPENDS=	itk:${PORTSDIR}/x11-toolkits/itk
 RUN_DEPENDS=	${LOCALBASE}/lib/iwidgets:${PORTSDIR}/x11-toolkits/iwidgets
 DISTFILES+=	gdbtk-6.6${EXTRACT_SUFX}:gdbtk
@@ -81,6 +76,12 @@ pre-configure:
 .else
 PLIST_SUB+=	INSIGHT='@comment '
 CONFLICTS+=	gdb-insight*
+.endif
+
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "ia64" || ${ARCH} == "powerpc"
+BROKEN=		Does not configure on ia64 or powerpc
 .endif
 
 .if ${ARCH} == "amd64"
