@@ -2043,6 +2043,7 @@
     SUBDIR += p5-Parse-Method-Signatures
     SUBDIR += p5-Parse-PerlConfig
     SUBDIR += p5-Parse-Pidl
+    SUBDIR += p5-Parse-PlainConfig
     SUBDIR += p5-Parse-RecDescent
     SUBDIR += p5-Parse-Yapp
     SUBDIR += p5-ParseLex
