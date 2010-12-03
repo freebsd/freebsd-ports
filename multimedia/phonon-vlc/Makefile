@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	phonon
-PORTVERSION=	0.2.0
-PORTREVISION=	1
+PORTVERSION=	0.3.1
 CATEGORIES=	multimedia kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/phonon-backend-vlc/${PORTVERSION}/src
@@ -20,6 +19,7 @@ COMMENT=	The VLC backend for Phonon
 
 LIB_DEPENDS=	vlc.7:${PORTSDIR}/multimedia/vlc
 
+USE_BZIP2=	yes
 USE_CMAKE=	yes
 USE_KDE4=	kdehier automoc4 kdeprefix
 USE_QT_VER=	4
