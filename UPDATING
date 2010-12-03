@@ -43,12 +43,12 @@ you update your ports collection, before attempting any port upgrades.
   or
   # portupgrade asterisk
 
-  You need to update your config files as the step from 1.4.x to 1.8.x is 
+  You need to update your config files as the step from 1.4.x to 1.8.x is
   quite big. First you need to look at what changed between 1.4 and 1.6
 
   http://svnview.digium.com/svn/asterisk/branches/1.8/UPGRADE-1.6.txt
-  
-  After that you also need to take into account what chagne between 
+
+  After that you also need to take into account what chagne between
   1.6 and 1.8
 
   http://svnview.digium.com/svn/asterisk/branches/1.8/UPGRADE.txt
@@ -66,7 +66,7 @@ you update your ports collection, before attempting any port upgrades.
   AUTHOR: sahil@FreeBSD.org
 
   As of Postfix 2.7.2, 2.6.8, 2.5.11:
- 
+
   Postfix no longer automatically appends the system default CA
   (certificate authority) certificates, when it reads the CA
   certificates specified with {smtp, lmtp, smtpd}_tls_CAfile or
@@ -75,7 +75,7 @@ you update your ports collection, before attempting any port upgrades.
   permit_tls_all_clientcerts feature.  Unfortunately, this change
   may cause compatibility problems with configurations that rely
   on certificate verification for other purposes.  To get the old
-  behavior, specify "tls_append_default_CA = yes". 
+  behavior, specify "tls_append_default_CA = yes".
 
 20101124:
   AFFECTS: users of www/py-flexget
@@ -130,7 +130,7 @@ you update your ports collection, before attempting any port upgrades.
   Transmission has been updated to 2.12. The following name of binaries and
   manpages have been renamed:
 
-  	transmissioncli -> transmission-cli
+	transmissioncli -> transmission-cli
 	transmission -> transmission-gtk
 
 20101117:
@@ -142,7 +142,7 @@ you update your ports collection, before attempting any port upgrades.
   3.1.1_1:
 
   /usr/local/share/doc/ccache/ccache-howto-freebsd.txt
-  
+
 20101110:
   AFFECTS: users of databases/mysql55-server
   AUTHOR: Alex Dupre <ale@FreeBSD.org>
@@ -305,8 +305,8 @@ you update your ports collection, before attempting any port upgrades.
 
   sysutils/cdrtools-cjk port has been removed, as the required functionality is
   now available in cdrtools 3.0.0 in the standard sysutils/cdrtools port.
- 
-20100915:
+
+ 20100915:
   AFFECTS: autoconf, automake
   AUTHOR: autotools@FreeBSD.org
 
@@ -468,7 +468,7 @@ you update your ports collection, before attempting any port upgrades.
   AUTHOR: ehaupt@FreeBSD.org
 
   Users upgrading from 2.4 release should clear the old cache directory with:
- 
+
         # ccache --clear
 
 20100730:
@@ -557,8 +557,8 @@ you update your ports collection, before attempting any port upgrades.
   AFFECTS: users of japanese/ibus-mozc
   AUTHOR: daichi@FreeBSD.org
 
-  The japanese/ibus-mozc port has been updated to version 0.11.383.102, 
-  and separated into 5 ports to cope with upcoming new port 
+  The japanese/ibus-mozc port has been updated to version 0.11.383.102,
+  and separated into 5 ports to cope with upcoming new port
   japanese/scim-mozc.
 
     o japanese/mozc-server
@@ -567,8 +567,8 @@ you update your ports collection, before attempting any port upgrades.
     o japanese/ibus-mozc
     o devel/py-gyp-devel
 
-  You can not upgrade with portupgrade or portmaster. To upgrade, you 
-  must deinstall japanese/ibus-mozc first and then install the new 
+  You can not upgrade with portupgrade or portmaster. To upgrade, you
+  must deinstall japanese/ibus-mozc first and then install the new
   japanese/ibus-mozc.
 
   For example:
