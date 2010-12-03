@@ -1,0 +1,120 @@
+#!/bin/sh
+#
+# Plugin return codes
+#
+# OK = 0
+# The plugin was able to check the service and it appeared to be
+# functioning properly
+#
+# Warning = 1
+# The plugin was able to check the service, but it appeared to be above
+# some "warning" threshold or did not appear to be working properly
+#
+# Critical = 2
+# The plugin detected that either the service was not running or it was
+# above some "critical" threshold
+#
+# Unknown = 3
+# Invalid command line arguments were supplied to the plugin or low-level
+# failures internal to the plugin (such as unable to fork, or open a tcp
+# socket) that prevent it from performing the specified operation.
+# Higher-level errors (such as name resolution errors, socket timeouts, etc)
+# are outside of the control of plugins and should generally NOT be reported
+# as UNKNOWN states.
+
+# default path
+PATH=/sbin:/usr/sbin:/bin:/usr/bin:/usr/local/sbin:/usr/local/bin
+
+ST_OK=0
+ST_WR=1
+ST_CR=2
+ST_UN=3
+
+# Plugin name
+PROGNAME=`basename $0`
+
+# Version
+VERSION="Version 1.0"
+
+# Author
+AUTHOR="Majo Jamrich"
+
+
+print_version() {
+    echo "$PROGNAME $VERSION $1"
+}
+
+print_help() {
+    print_version "($AUTHOR)"
+    echo ""
+    echo "$PROGNAME is a Nagios plugin to check CPU utilization."
+    echo ""
+    echo "Options:"
+    echo ""
+    echo "--warning | -w"
+    echo "--critical | -c"
+    echo "--help | --usage"
+    echo ""
+    echo "Usage:"
+    echo "./check_cpu_usage -w 80 -c 100"
+    echo ""
+    exit $ST_UN
+}
+
+case "$1" in
+    --help|-h|--usage|-u)
+        print_help
+        exit $ST_UN
+        ;;
+    --warning|-w)
+        host=$2
+        ;;
+    --critical|-c)
+        host=$2
+        ;;
+    -V)
+        print_version
+        exit
+        ;;
+    *)
+        echo "Unknown argument: $1"
+        echo "For more information please try -h or --help!"
+        exit $ST_UN
+        ;;
+esac
+shift
+
+if [ `uname` != "FreeBSD" ]; then
+    echo "This plugin is only for FreeBSD."
+fi
+
+if [ -z $1 ] || [ -z $3 ]; then
+    print_help
+    exit  $ST_UN
+fi
+
+if [ "$1" -ge "$3" ]; then
+    echo "Warning value must be greater than critical value!"
+    exit $ST_UN
+fi
+
+warn=$1
+crit=$3
+
+cpu_all=$( vmstat -c 2 -n 0 | tail -n 1 | awk '{print $15 " " $16 " " $17}' )
+cpu_user=$( echo $cpu_all | awk '{print $1}')
+cpu_sys=$(  echo $cpu_all | awk '{print $2}')
+cpu_idle=$( echo $cpu_all | awk '{print $3}')
+cpu_usage=$(( 100 - $cpu_idle )) 
+perfdata="cpu_usage=$cpu_usage%;$warn;$crit; cpu_user=$cpu_user%; cpu_system=$cpu_sys%;"
+
+if [ $( echo "$cpu_usage>$1" | bc ) -gt 0 ] && [ $( echo "$cpu_usage<$3" | bc ) -gt 0 ]; then
+    echo "WARNING - CPU usage is $cpu_usage% for server `hostname`. |$perfdata"
+    exit $ST_WR
+elif [ $( echo "$cpu_usage>$3" | bc ) -gt 0 ]; then
+    echo "CRITICAL - CPU usage is $cpu_usage% for server `hostname`. |$perfdata"
+    exit $ST_CR
+else
+    echo "OK - CPU usage is $cpu_usage% for server `hostname`. |$perfdata"
+    exit $ST_OK
+fi
