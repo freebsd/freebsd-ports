@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	camlp5
-PORTVERSION=	5.13
+PORTVERSION=	6.02.0
 CATEGORIES=	devel
 MASTER_SITES=	http://cristal.inria.fr/~ddr/camlp5/distrib/src/ \
 		http://pauillac.inria.fr/~ddr/camlp5/distrib/src/
@@ -16,6 +16,9 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	umq@ueo.co.jp
 COMMENT=	A preprocessor-pretty-printer of OCaml
+
+LICENSE=	BSD
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USE_OCAML=	yes
 HAS_CONFIGURE=	yes
@@ -36,10 +39,6 @@ MLINKS=		camlp5.1 camlp5o.1 camlp5.1 camlp5o.opt.1 camlp5.1 camlp5r.1 \
 PORTDOCS=	CHANGES DEVEL ICHANGES INSTALL LICENSE MODE README UPGRADING
 
 .include <bsd.port.pre.mk>
-
-post-patch:
-	${FIND} ${WRKSRC} -name "*.sh" -exec ${REINPLACE_CMD} -e "s,^#!/bin/bash,#!/bin/sh," {} \;
-	${REINPLACE_CMD} -e "s,^#!/bin/bash,#!/bin/sh," ${WRKSRC}/configure
 
 post-install:
 .if !defined(NOPORTDOCS)
