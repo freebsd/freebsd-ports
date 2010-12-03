@@ -4,8 +4,8 @@
 *************************************************
 
 Check the following directories for further info:
-  documentation:  '%%DOCSDIR%%/haproxy'   
-  examples:       '%%EXAMPLESDIR%%/haproxy'
+  documentation:  '%%DOCSDIR%%'
+  examples:       '%%EXAMPLESDIR%%'
 
 rc.conf variables listing can be found in:
   '%%PREFIX%%/etc/rc.d/haproxy'
