@@ -24,7 +24,7 @@ LATEST_LINK=	gdb66
 OPTIONS=	INSIGHT "Build the Tcl/Tk GUI (experimental!)" off
 .endif
 
-CONFLICTS=	gdb-*
+CONFLICTS=	gdb-[7-9]*
 MAKE_JOBS_SAFE=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
@@ -80,6 +80,7 @@ pre-configure:
 	${LN} -s ${LOCALBASE}/include/itcl3.4/*.h ${WRKSRC}/itcl/generic/
 .else
 PLIST_SUB+=	INSIGHT='@comment '
+CONFLICTS+=	gdb-insight*
 .endif
 
 .if ${ARCH} == "amd64"
