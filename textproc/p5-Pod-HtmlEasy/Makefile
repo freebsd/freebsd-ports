@@ -6,10 +6,11 @@
 #
 
 PORTNAME=	Pod-HtmlEasy
-PORTVERSION=	1.0107
+PORTVERSION=	1.0108
 CATEGORIES=	textproc devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
+EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Generate personalized HTML from PODs
