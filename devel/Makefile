@@ -653,6 +653,7 @@
     SUBDIR += imake
     SUBDIR += inilib
     SUBDIR += initutil
+    SUBDIR += insight
     SUBDIR += invitation_to_ruby
     SUBDIR += ioncube
     SUBDIR += ipython
