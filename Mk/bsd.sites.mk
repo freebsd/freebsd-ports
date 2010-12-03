@@ -668,7 +668,8 @@ MASTER_SITE_KDE+=	\
 	http://ftp.esat.net/mirrors/ftp.kde.org/pub/kde/%SUBDIR%/ \
 	ftp://kde.paralax.org/kde/%SUBDIR%/ \
 	ftp://ftp.cronyx.ru/pub/mirror/kde/%SUBDIR%/ \
-	ftp://linux.cis.nctu.edu.tw/X/wm/kde/%SUBDIR%/ \
+	http://kde.cs.nctu.edu.tw/KDE/%SUBDIR%/ \
+	http://ftp.twaren.net/Unix/X/KDE/%SUBDIR%/ \
 	ftp://ftp.na.kde.org/pub/kde/%SUBDIR%/ \
 	ftp://ftp.fu-berlin.de/pub/unix/X11/gui/kde/%SUBDIR%/ \
 	ftp://ftp.estpak.ee/pub/kde/%SUBDIR%/ \
