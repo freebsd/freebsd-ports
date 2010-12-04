@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	ExtUtils-Depends
-PORTVERSION=	0.302
+PORTVERSION=	0.303
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	culot@FreeBSD.org
 COMMENT=	Easily build XS extensions that depend on XS extensions
 
 PERL_CONFIGURE=	yes
