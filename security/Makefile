@@ -589,7 +589,6 @@
     SUBDIR += pam_require
     SUBDIR += pam_smb
     SUBDIR += pam_ssh_agent_auth
-    SUBDIR += pamsfs
     SUBDIR += pamtester
     SUBDIR += pantera
     SUBDIR += paperkey
