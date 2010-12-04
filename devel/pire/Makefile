@@ -22,6 +22,9 @@ USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 MAKE_JOBS_SAFE=	yes
 
+ONLY_FOR_ARCHS=	amd64 i386 ia64
+ONLY_FOR_ARCHS_REASON=	"not yet ported to big-endian platforms"
+
 OPTIONS=	UNITTEST "Compile with unittest support" off
 
 .include <bsd.port.options.mk>
