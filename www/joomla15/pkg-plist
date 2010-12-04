@@ -1776,6 +1776,9 @@
 %%WWWDIR%%/installation/language/bn-BD/bn-BD.ini
 %%WWWDIR%%/installation/language/bn-BD/bn-BD.xml
 %%WWWDIR%%/installation/language/bn-BD/index.html
+%%WWWDIR%%/installation/language/bs-BA/bs-BA.ini
+%%WWWDIR%%/installation/language/bs-BA/bs-BA.xml
+%%WWWDIR%%/installation/language/bs-BA/index.html
 %%WWWDIR%%/installation/language/ca-ES/ca-ES.ini
 %%WWWDIR%%/installation/language/ca-ES/ca-ES.xml
 %%WWWDIR%%/installation/language/ca-ES/index.html
@@ -1919,6 +1922,9 @@
 %%WWWDIR%%/installation/language/sy-IQ/index.html
 %%WWWDIR%%/installation/language/sy-IQ/sy-IQ.ini
 %%WWWDIR%%/installation/language/sy-IQ/sy-IQ.xml
+%%WWWDIR%%/installation/language/ta-IN/index.html
+%%WWWDIR%%/installation/language/ta-IN/ta-IN.ini
+%%WWWDIR%%/installation/language/ta-IN/ta-IN.xml
 %%WWWDIR%%/installation/language/ta-LK/index.html
 %%WWWDIR%%/installation/language/ta-LK/ta-LK.ini
 %%WWWDIR%%/installation/language/ta-LK/ta-LK.xml
@@ -3557,6 +3563,12 @@
 %%WWWDIR%%/plugins/system/legacy/user.php
 %%WWWDIR%%/plugins/system/log.php
 %%WWWDIR%%/plugins/system/log.xml
+%%WWWDIR%%/plugins/system/mtupgrade.php
+%%WWWDIR%%/plugins/system/mtupgrade.xml
+%%WWWDIR%%/plugins/system/mtupgrade/behavior.php
+%%WWWDIR%%/plugins/system/mtupgrade/index.html
+%%WWWDIR%%/plugins/system/mtupgrade/mootools-uncompressed.js
+%%WWWDIR%%/plugins/system/mtupgrade/mootools.js
 %%WWWDIR%%/plugins/system/remember.php
 %%WWWDIR%%/plugins/system/remember.xml
 %%WWWDIR%%/plugins/system/sef.php
@@ -4280,6 +4292,7 @@
 @dirrm %%WWWDIR%%/plugins/xmlrpc
 @dirrm %%WWWDIR%%/plugins/user
 @dirrm %%WWWDIR%%/plugins/tmp
+@dirrm %%WWWDIR%%/plugins/system/mtupgrade
 @dirrm %%WWWDIR%%/plugins/system/legacy
 @dirrm %%WWWDIR%%/plugins/system
 @dirrm %%WWWDIR%%/plugins/search
@@ -4626,6 +4639,7 @@
 @dirrm %%WWWDIR%%/installation/language/tl-PH
 @dirrm %%WWWDIR%%/installation/language/th-TH
 @dirrm %%WWWDIR%%/installation/language/ta-LK
+@dirrm %%WWWDIR%%/installation/language/ta-IN
 @dirrm %%WWWDIR%%/installation/language/sy-IQ
 @dirrm %%WWWDIR%%/installation/language/sv-SE
 @dirrm %%WWWDIR%%/installation/language/sr-YU
@@ -4674,6 +4688,7 @@
 @dirrm %%WWWDIR%%/installation/language/da-DK
 @dirrm %%WWWDIR%%/installation/language/cs-CZ
 @dirrm %%WWWDIR%%/installation/language/ca-ES
+@dirrm %%WWWDIR%%/installation/language/bs-BA
 @dirrm %%WWWDIR%%/installation/language/bn-BD
 @dirrm %%WWWDIR%%/installation/language/bg-BG
 @dirrm %%WWWDIR%%/installation/language/be-BY
