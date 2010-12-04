@@ -12,7 +12,7 @@ CATEGORIES=	ftp java
 MASTER_SITES=	SF/j-ftp/${PORTNAME}/${PORTVERSION}
 DISTNAME=	j-ftp-${PORTVERSION}
 
-MAINTAINER=	sahil@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Java Network Browser
 
 LICENSE=	GPLv2
