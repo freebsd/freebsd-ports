@@ -6,7 +6,7 @@
 
 PORTNAME=		tkxmlive
 PORTVERSION=		0.1.5
-PORTREVISION=	1
+PORTREVISION=		2
 CATEGORIES=		textproc
 MASTER_SITES=		SF
 DISTNAME=		tkxmlive-0.1.5-1
@@ -14,17 +14,15 @@ DISTNAME=		tkxmlive-0.1.5-1
 MAINTAINER=		nivit@FreeBSD.org
 COMMENT=		Tcl/Tk XML Intelligence Visual Editor
 
-RUN_DEPENDS+=		wish8.4:${PORTSDIR}/x11-toolkits/tk84 \
-			${LOCALBASE}/lib/bwidget/pkgIndex.tcl:${PORTSDIR}/x11-toolkits/bwidget
+RUN_DEPENDS+=		${LOCALBASE}/lib/bwidget/pkgIndex.tcl:${PORTSDIR}/x11-toolkits/bwidget
 
 NO_BUILD=		yes
+
+USE_TK_RUN=		84+
 
 WRKSRC=			${WRKDIR}/${PORTNAME}
 
 .include <bsd.port.pre.mk>
-
-TK_VER?=		8.4
-WISH=			wish${TK_VER}
 
 REPLACE_FILES=		${WRKSRC}/interface.tcl \
 			${WRKSRC}/tkxmlive
