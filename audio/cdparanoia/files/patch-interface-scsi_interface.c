@@ -1,11 +1,4 @@
 Index: interface/scsi_interface.c
-===================================================================
-RCS file: /home/cvs/cdparanoia/interface/scsi_interface.c,v
-retrieving revision 1.1.1.1
-retrieving revision 1.7
-diff -u -r1.1.1.1 -r1.7
---- interface/scsi_interface.c	2003/01/05 09:46:26	1.1.1.1
-+++ interface/scsi_interface.c	2003/01/18 15:42:15	1.7
 @@ -3,6 +3,8 @@
   * Original interface.c Copyright (C) 1994-1997 
   *            Eissfeldt heiko@colossus.escape.de
@@ -15,7 +8,7 @@ diff -u -r1.1.1.1 -r1.7
   * 
   * Generic SCSI interface specific code.
   *
-@@ -23,6 +25,7 @@
+@@ -23,6 +25,7 @@ static void tweak_SG_buffer(cdrom_drive 
    int table,reserved;
    char buffer[256];
  
@@ -23,7 +16,7 @@ diff -u -r1.1.1.1 -r1.7
    /* maximum transfer size? */
    if(ioctl(d->cdda_fd,SG_GET_RESERVED_SIZE,&reserved)){
      /* Up, guess not. */
-@@ -59,8 +62,17 @@
+@@ -59,8 +62,17 @@ static void tweak_SG_buffer(cdrom_drive 
      cdmessage(d,"\tCouldn't disable command queue!  Continuing anyway...\n");
    }
  
@@ -41,7 +34,7 @@ diff -u -r1.1.1.1 -r1.7
  static void reset_scsi(cdrom_drive *d){
    int arg;
    d->enable_cdda(d,0);
-@@ -74,6 +86,30 @@
+@@ -74,6 +86,30 @@ static void reset_scsi(cdrom_drive *d){
    d->enable_cdda(d,1);
  }
  
@@ -72,7 +65,7 @@ diff -u -r1.1.1.1 -r1.7
  static void clear_garbage(cdrom_drive *d){
    fd_set fdset;
    struct timeval tv;
-@@ -104,8 +140,10 @@
+@@ -104,8 +140,10 @@ static void clear_garbage(cdrom_drive *d
      flag=1;
    }
  }
@@ -83,7 +76,7 @@ diff -u -r1.1.1.1 -r1.7
  static int handle_scsi_cmd(cdrom_drive *d,
  			   unsigned int cmd_len, 
  			   unsigned int in_size, 
-@@ -284,6 +322,84 @@
+@@ -284,6 +322,84 @@ static int handle_scsi_cmd(cdrom_drive *
    return(0);
  }
  
@@ -168,7 +161,7 @@ diff -u -r1.1.1.1 -r1.7
  /* Group 1 (10b) command */
  
  static int mode_sense_atapi(cdrom_drive *d,int size,int page){ 
-@@ -833,30 +949,33 @@
+@@ -833,30 +949,33 @@ static long scsi_read_map (cdrom_drive *
    while(1) {
      if((err=map(d,(p?buffer:NULL),begin,sectors))){
        if(d->report_all){
@@ -211,7 +204,7 @@ diff -u -r1.1.1.1 -r1.7
        }
  
        if(!d->error_retry)return(-7);
-@@ -1307,6 +1426,7 @@
+@@ -1307,6 +1426,7 @@ static void check_fua_bit(cdrom_drive *d
    return;
  }
  
@@ -219,7 +212,7 @@ diff -u -r1.1.1.1 -r1.7
  static int check_atapi(cdrom_drive *d){
    int atapiret=-1;
    int fd = d->cdda_fd; /* this is the correct fd (not ioctl_fd), as the 
-@@ -1333,6 +1453,47 @@
+@@ -1333,6 +1453,53 @@ static int check_atapi(cdrom_drive *d){
    }
  }  
  
@@ -250,10 +243,16 @@ diff -u -r1.1.1.1 -r1.7
 +	/*
 +	 * if the bus device name is `ata', we're (obviously)
 +	 * running ATAPICAM.
++	 * same for the new ahci(4) and siis(4) drivers and future others
++	 * which use SATA transport too...
 +	 */
 +
-+	if (strncmp(d->ccb->cpi.dev_name, "ata", 3) == 0) {
-+		cdmessage(d, "\tDrive is ATAPI (using ATAPICAM)\n");
++	if (strncmp(d->ccb->cpi.dev_name, "ata", 3) == 0 ||
++#if __FreeBSD_version >= 800102
++	    d->ccb->cpi.transport == XPORT_SATA ||
++#endif
++	    d->ccb->cpi.transport == XPORT_ATA) {
++		cdmessage(d, "\tDrive is ATAPI (using ATAPICAM or direct CAM (S)ATA transport)\n");
 +		d->is_atapi = 1;
 +	} else {
 +		cdmessage(d, "\tDrive is SCSI\n");
@@ -267,7 +266,7 @@ diff -u -r1.1.1.1 -r1.7
  static int check_mmc(cdrom_drive *d){
    char *b;
    cdmessage(d,"\nChecking for MMC style command set...\n");
-@@ -1379,6 +1540,7 @@
+@@ -1379,6 +1546,7 @@ static void check_exceptions(cdrom_drive
    }
  }
  
@@ -275,7 +274,7 @@ diff -u -r1.1.1.1 -r1.7
  /* request vendor brand and model */
  unsigned char *scsi_inquiry(cdrom_drive *d){
    memcpy(d->sg_buffer,(char[]){ 0x12,0,0,0,56,0},6);
-@@ -1389,6 +1551,7 @@
+@@ -1389,6 +1557,7 @@ unsigned char *scsi_inquiry(cdrom_drive 
    }
    return (d->sg_buffer);
  }
@@ -283,7 +282,7 @@ diff -u -r1.1.1.1 -r1.7
  
  
  int scsi_init_drive(cdrom_drive *d){
-@@ -1458,8 +1621,12 @@
+@@ -1458,8 +1627,12 @@ int scsi_init_drive(cdrom_drive *d){
    check_fua_bit(d);
  
    d->error_retry=1;
