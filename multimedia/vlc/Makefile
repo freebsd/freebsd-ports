@@ -7,7 +7,7 @@
 
 PORTNAME=	vlc
 DISTVERSION=	1.1.5
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	3
 CATEGORIES=	multimedia audio ipv6 net www
 MASTER_SITES=	http://download.videolan.org/pub/videolan/${PORTNAME}/${DISTVERSION}/ \
@@ -97,9 +97,10 @@ PLIST=		${WRKDIR}/plist
 
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${FAKEDIR}/include -I${WRKSRC}/include ${CPPFLAGS} -I${LOCALBASE}/include -I${LOCALBASE}/ffmpeg ${PTHREAD_CFLAGS}" \
-		LDFLAGS="${LDFLAGS} -L${FAKEDIR}/lib -L${LOCALBASE}/lib ${PTHREAD_LIBS} -lc" \
-		LIBS="-lc"
+CONFIGURE_ENV=	CPPFLAGS="-I${FAKEDIR}/include -I${WRKSRC}/include \
+		${CPPFLAGS} -I${LOCALBASE}/include -I${LOCALBASE}/ffmpeg \
+		${PTHREAD_CFLAGS}" LDFLAGS="${LDFLAGS} -L${FAKEDIR}/lib \
+		-L${LOCALBASE}/lib ${PTHREAD_LIBS} -lc" LIBS="-lc"
 
 CONFIGURE_ARGS+=	--enable-vlc \
 			--enable-avcodec \
@@ -190,7 +191,7 @@ BROKEN=	Does not compile with perl ${PERL_VERSION}
 .endif
 
 .if ${ARCH} == "powerpc64"
-CONFIGURE_ARGS+= --enable-altivec # VLC's config script doesn't know to do this
+CONFIGURE_ARGS+=--enable-altivec # VLC's config script doesn't know to do this
 .endif
 
 # End OS specific hacks
@@ -458,6 +459,7 @@ CONFIGURE_ARGS+=--disable-portaudio
 .endif
 
 .if defined(WITH_PULSE)
+LIB_DEPENDS+=	pulse.0:${PORTSDIR}/audio/pulseaudio
 CONFIGURE_ARGS+=--enable-pulse
 .else
 CONFIGURE_ARGS+=--disable-pulse
@@ -676,16 +678,16 @@ pre-install:
 	${RM} -f ${FAKEDIR}/lib/vlc/plugins/services_discovery/libsap_plugin.la
 	${RM} -f ${FAKEDIR}/lib/vlc/plugins/services_discovery/libsap_plugin.so
 .endif
+	${MKDIR} ${FAKEDIR}/libdata
+	${MV} ${FAKEDIR}/lib/pkgconfig ${FAKEDIR}/libdata/pkgconfig
 	cd ${FAKEDIR}/lib && ${FIND} -s * -type f -o -type l| \
 		${SED} -e 's|^|lib/|' >> ${PLIST} \
 		&& ${FIND} -d * -type d | \
 		${SED} -e 's|^|@dirrmtry lib/|' >> ${PLIST}
-	if [ -d ${FAKEDIR}/libdata ]; then \
 	cd ${FAKEDIR}/libdata && ${FIND} -s * -type f -o -type l| \
 		${SED} -e 's|^|libdata/|' >> ${PLIST} \
 		&& ${FIND} -d * -type d | \
-		${SED} -e 's|^|@dirrmtry libdata/|' >> ${PLIST} ; \
-	fi
+		${SED} -e 's|^|@dirrmtry libdata/|' >> ${PLIST}
 .for dir in icons kde4 vlc
 	if [ -d ${FAKEDIR}/share/${dir} ]; then \
 	cd ${FAKEDIR}/share/${dir} && ${FIND} -s * -type f -o -type l | \
