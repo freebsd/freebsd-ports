@@ -18,6 +18,7 @@ bin/remote_api_shell.py
 %%PORTDOCS%%%%DOCSDIR%%/appengine/articles/create_restricted.png
 %%PORTDOCS%%%%DOCSDIR%%/appengine/articles/datastore/overview.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/articles/deferred.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/articles/django-nonrel.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/articles/django.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/articles/django10_zipimport.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/articles/djangoforms.html
@@ -105,16 +106,23 @@ bin/remote_api_shell.py
 %%PORTDOCS%%%%DOCSDIR%%/appengine/casestudies.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/community.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/css/local_extensions.css
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/adminconsole/index.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/adminconsole/instances.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/billing.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/domain.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/images/add_domain.png
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/images/add_new_urls.png
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/images/add_to_domain.png
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/images/authoptions.png
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/images/dev-web-server_download-app.png
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/images/instances_viewer.png
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/index.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/apis.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/blobstore/index.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/blobstore/overview.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/channel/index.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/channel/javascript.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/channel/overview.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/config/appconfig.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/config/cron.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/config/dos.html
@@ -130,9 +138,11 @@ bin/remote_api_shell.py
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/configyaml/queue.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/datastore/creatinggettinganddeletingdata.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/datastore/dataclasses.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/datastore/hr/index.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/datastore/images/1_choose_entity.png
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/datastore/images/2_enter_namespace.png
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/datastore/index.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/datastore/metadataqueries.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/datastore/overview.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/datastore/queriesandindexes.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/datastore/relationships.html
@@ -180,7 +190,15 @@ bin/remote_api_shell.py
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/javadoc/com/google/appengine/api/capabilities/package-frame.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/javadoc/com/google/appengine/api/capabilities/package-summary.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/javadoc/com/google/appengine/api/capabilities/package-tree.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/javadoc/com/google/appengine/api/channel/ChannelFailureException.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/javadoc/com/google/appengine/api/channel/ChannelMessage.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/javadoc/com/google/appengine/api/channel/ChannelService.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/javadoc/com/google/appengine/api/channel/ChannelServiceFactory.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/javadoc/com/google/appengine/api/channel/package-frame.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/javadoc/com/google/appengine/api/channel/package-summary.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/javadoc/com/google/appengine/api/channel/package-tree.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/javadoc/com/google/appengine/api/datastore/AsyncDatastoreService.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/javadoc/com/google/appengine/api/datastore/BaseDatastoreService.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/javadoc/com/google/appengine/api/datastore/Blob.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/javadoc/com/google/appengine/api/datastore/Category.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/javadoc/com/google/appengine/api/datastore/CommittedButStillApplyingException.html
@@ -190,6 +208,8 @@ bin/remote_api_shell.py
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/javadoc/com/google/appengine/api/datastore/DataTypeTranslator.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/javadoc/com/google/appengine/api/datastore/DataTypeUtils.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/javadoc/com/google/appengine/api/datastore/DatastoreApiHelper.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/javadoc/com/google/appengine/api/datastore/DatastoreAttributes.DatastoreType.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/javadoc/com/google/appengine/api/datastore/DatastoreAttributes.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/javadoc/com/google/appengine/api/datastore/DatastoreConfig.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/javadoc/com/google/appengine/api/datastore/DatastoreFailureException.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/javadoc/com/google/appengine/api/datastore/DatastoreNeedIndexException.html
@@ -251,22 +271,6 @@ bin/remote_api_shell.py
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/javadoc/com/google/appengine/api/images/package-frame.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/javadoc/com/google/appengine/api/images/package-summary.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/javadoc/com/google/appengine/api/images/package-tree.html
-%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/javadoc/com/google/appengine/api/labs/taskqueue/InternalFailureException.html
-%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/javadoc/com/google/appengine/api/labs/taskqueue/Queue.html
-%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/javadoc/com/google/appengine/api/labs/taskqueue/QueueConstants.html
-%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/javadoc/com/google/appengine/api/labs/taskqueue/QueueFactory.html
-%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/javadoc/com/google/appengine/api/labs/taskqueue/QueueFailureException.html
-%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/javadoc/com/google/appengine/api/labs/taskqueue/TaskAlreadyExistsException.html
-%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/javadoc/com/google/appengine/api/labs/taskqueue/TaskHandle.html
-%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/javadoc/com/google/appengine/api/labs/taskqueue/TaskOptions.Builder.html
-%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/javadoc/com/google/appengine/api/labs/taskqueue/TaskOptions.Method.html
-%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/javadoc/com/google/appengine/api/labs/taskqueue/TaskOptions.html
-%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/javadoc/com/google/appengine/api/labs/taskqueue/TransactionalTaskException.html
-%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/javadoc/com/google/appengine/api/labs/taskqueue/TransientFailureException.html
-%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/javadoc/com/google/appengine/api/labs/taskqueue/UnsupportedTranslationException.html
-%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/javadoc/com/google/appengine/api/labs/taskqueue/package-frame.html
-%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/javadoc/com/google/appengine/api/labs/taskqueue/package-summary.html
-%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/javadoc/com/google/appengine/api/labs/taskqueue/package-tree.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/javadoc/com/google/appengine/api/mail/MailService.Attachment.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/javadoc/com/google/appengine/api/mail/MailService.Message.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/javadoc/com/google/appengine/api/mail/MailService.html
@@ -308,6 +312,24 @@ bin/remote_api_shell.py
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/javadoc/com/google/appengine/api/quota/package-frame.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/javadoc/com/google/appengine/api/quota/package-summary.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/javadoc/com/google/appengine/api/quota/package-tree.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/javadoc/com/google/appengine/api/taskqueue/InternalFailureException.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/javadoc/com/google/appengine/api/taskqueue/Queue.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/javadoc/com/google/appengine/api/taskqueue/QueueConstants.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/javadoc/com/google/appengine/api/taskqueue/QueueFactory.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/javadoc/com/google/appengine/api/taskqueue/QueueFailureException.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/javadoc/com/google/appengine/api/taskqueue/RetryOptions.Builder.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/javadoc/com/google/appengine/api/taskqueue/RetryOptions.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/javadoc/com/google/appengine/api/taskqueue/TaskAlreadyExistsException.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/javadoc/com/google/appengine/api/taskqueue/TaskHandle.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/javadoc/com/google/appengine/api/taskqueue/TaskOptions.Builder.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/javadoc/com/google/appengine/api/taskqueue/TaskOptions.Method.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/javadoc/com/google/appengine/api/taskqueue/TaskOptions.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/javadoc/com/google/appengine/api/taskqueue/TransactionalTaskException.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/javadoc/com/google/appengine/api/taskqueue/TransientFailureException.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/javadoc/com/google/appengine/api/taskqueue/UnsupportedTranslationException.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/javadoc/com/google/appengine/api/taskqueue/package-frame.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/javadoc/com/google/appengine/api/taskqueue/package-summary.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/javadoc/com/google/appengine/api/taskqueue/package-tree.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/javadoc/com/google/appengine/api/urlfetch/FetchOptions.Builder.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/javadoc/com/google/appengine/api/urlfetch/FetchOptions.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/javadoc/com/google/appengine/api/urlfetch/HTTPHeader.html
@@ -484,6 +506,11 @@ bin/remote_api_shell.py
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/python/blobstore/functions.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/python/blobstore/index.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/python/blobstore/overview.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/python/channel/exceptions.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/python/channel/functions.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/python/channel/index.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/python/channel/javascript.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/python/channel/overview.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/python/config/appconfig.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/python/config/cron.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/python/config/dos.html
@@ -497,9 +524,12 @@ bin/remote_api_shell.py
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/python/datastore/functions.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/python/datastore/gqlqueryclass.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/python/datastore/gqlreference.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/python/datastore/hr/index.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/python/datastore/index.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/python/datastore/keyclass.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/python/datastore/keysandentitygroups.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/python/datastore/metadataqueries.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/python/datastore/metadataqueryclass.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/python/datastore/modelclass.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/python/datastore/overview.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/python/datastore/polymodelclass.html
@@ -611,7 +641,6 @@ bin/remote_api_shell.py
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/quotas.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/revision_history.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/roadmap.html
-%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/theadminconsole.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/whatisgoogleappengine.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/downloads.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/forum/downtime.html
@@ -626,6 +655,8 @@ bin/remote_api_shell.py
 %%PORTDOCS%%%%DOCSDIR%%/appengine/images/bestbuy-logo.jpg
 %%PORTDOCS%%%%DOCSDIR%%/appengine/images/buddypoke.gif
 %%PORTDOCS%%%%DOCSDIR%%/appengine/images/caucho-main-websafe.jpg
+%%PORTDOCS%%%%DOCSDIR%%/appengine/images/channel_overview01.png
+%%PORTDOCS%%%%DOCSDIR%%/appengine/images/channel_overview02.png
 %%PORTDOCS%%%%DOCSDIR%%/appengine/images/cloudstatus.gif
 %%PORTDOCS%%%%DOCSDIR%%/appengine/images/demo_video.gif
 %%PORTDOCS%%%%DOCSDIR%%/appengine/images/docs.gif
@@ -656,6 +687,7 @@ bin/remote_api_shell.py
 %%PORTDOCS%%%%DOCSDIR%%/appengine/kb/unappliedwrites.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/program_policies.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/terms.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/tools_tips.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/whyappengine.html
 %%PORTDOCS%%%%DOCSDIR%%/css/codesite.pack.04102009.css
 %%PORTDOCS%%%%DOCSDIR%%/css/iehacks.css
@@ -717,9 +749,6 @@ bin/remote_api_shell.py
 %%DATADIR%%/google/appengine/api/images/images_stub.py
 %%DATADIR%%/google/appengine/api/labs/__init__.py
 %%DATADIR%%/google/appengine/api/labs/taskqueue/__init__.py
-%%DATADIR%%/google/appengine/api/labs/taskqueue/taskqueue.py
-%%DATADIR%%/google/appengine/api/labs/taskqueue/taskqueue_service_pb.py
-%%DATADIR%%/google/appengine/api/labs/taskqueue/taskqueue_stub.py
 %%DATADIR%%/google/appengine/api/lib_config.py
 %%DATADIR%%/google/appengine/api/mail.py
 %%DATADIR%%/google/appengine/api/mail_errors.py
@@ -739,6 +768,10 @@ bin/remote_api_shell.py
 %%DATADIR%%/google/appengine/api/oauth/oauth_api.py
 %%DATADIR%%/google/appengine/api/queueinfo.py
 %%DATADIR%%/google/appengine/api/quota.py
+%%DATADIR%%/google/appengine/api/taskqueue/__init__.py
+%%DATADIR%%/google/appengine/api/taskqueue/taskqueue.py
+%%DATADIR%%/google/appengine/api/taskqueue/taskqueue_service_pb.py
+%%DATADIR%%/google/appengine/api/taskqueue/taskqueue_stub.py
 %%DATADIR%%/google/appengine/api/urlfetch.py
 %%DATADIR%%/google/appengine/api/urlfetch_errors.py
 %%DATADIR%%/google/appengine/api/urlfetch_service_pb.py
@@ -765,6 +798,8 @@ bin/remote_api_shell.py
 %%DATADIR%%/google/appengine/datastore/action_pb.py
 %%DATADIR%%/google/appengine/datastore/datastore_index.py
 %%DATADIR%%/google/appengine/datastore/datastore_pb.py
+%%DATADIR%%/google/appengine/datastore/datastore_query.py
+%%DATADIR%%/google/appengine/datastore/datastore_rpc.py
 %%DATADIR%%/google/appengine/datastore/datastore_sqlite_stub.py
 %%DATADIR%%/google/appengine/datastore/datastore_stub_util.py
 %%DATADIR%%/google/appengine/datastore/datastore_v3_pb.py
@@ -872,6 +907,7 @@ bin/remote_api_shell.py
 %%DATADIR%%/google/appengine/ext/datastore_admin/utils_test.py
 %%DATADIR%%/google/appengine/ext/db/__init__.py
 %%DATADIR%%/google/appengine/ext/db/djangoforms.py
+%%DATADIR%%/google/appengine/ext/db/metadata.py
 %%DATADIR%%/google/appengine/ext/db/polymodel.py
 %%DATADIR%%/google/appengine/ext/db/stats.py
 %%DATADIR%%/google/appengine/ext/deferred/__init__.py
@@ -945,6 +981,26 @@ bin/remote_api_shell.py
 %%DATADIR%%/google/net/proto/RawMessage.py
 %%DATADIR%%/google/net/proto/__init__.py
 %%DATADIR%%/google/net/proto/message_set.py
+%%DATADIR%%/google/net/proto2/__init__.py
+%%DATADIR%%/google/net/proto2/proto/__init__.py
+%%DATADIR%%/google/net/proto2/proto/descriptor_pb2.py
+%%DATADIR%%/google/net/proto2/python/__init__.py
+%%DATADIR%%/google/net/proto2/python/internal/__init__.py
+%%DATADIR%%/google/net/proto2/python/internal/api_implementation.py
+%%DATADIR%%/google/net/proto2/python/internal/containers.py
+%%DATADIR%%/google/net/proto2/python/internal/decoder.py
+%%DATADIR%%/google/net/proto2/python/internal/encoder.py
+%%DATADIR%%/google/net/proto2/python/internal/message_listener.py
+%%DATADIR%%/google/net/proto2/python/internal/python_message.py
+%%DATADIR%%/google/net/proto2/python/internal/type_checkers.py
+%%DATADIR%%/google/net/proto2/python/internal/wire_format.py
+%%DATADIR%%/google/net/proto2/python/public/__init__.py
+%%DATADIR%%/google/net/proto2/python/public/descriptor.py
+%%DATADIR%%/google/net/proto2/python/public/message.py
+%%DATADIR%%/google/net/proto2/python/public/reflection.py
+%%DATADIR%%/google/net/proto2/python/public/service.py
+%%DATADIR%%/google/net/proto2/python/public/service_reflection.py
+%%DATADIR%%/google/net/proto2/python/public/text_format.py
 %%DATADIR%%/google/pyglib/__init__.py
 %%DATADIR%%/google/pyglib/gexcept.py
 %%DATADIR%%/lib/antlr3/AUTHORS
@@ -1577,7 +1633,6 @@ bin/remote_api_shell.py
 %%DATADIR%%/lib/ipaddr/ipaddr/__init__.py
 %%DATADIR%%/lib/ipaddr/ipaddr/ipaddr_test.py
 %%DATADIR%%/lib/ipaddr/ipaddr/setup.py
-%%DATADIR%%/lib/webob/LICENSE
 %%DATADIR%%/lib/webob/PKG-INFO
 %%DATADIR%%/lib/webob/WebOb.egg-info/PKG-INFO
 %%DATADIR%%/lib/webob/WebOb.egg-info/SOURCES.txt
@@ -1852,6 +1907,11 @@ bin/remote_api_shell.py
 @dirrm %%DATADIR%%/lib/antlr3
 @dirrm %%DATADIR%%/lib
 @dirrm %%DATADIR%%/google/pyglib
+@dirrm %%DATADIR%%/google/net/proto2/python/public
+@dirrm %%DATADIR%%/google/net/proto2/python/internal
+@dirrm %%DATADIR%%/google/net/proto2/python
+@dirrm %%DATADIR%%/google/net/proto2/proto
+@dirrm %%DATADIR%%/google/net/proto2
 @dirrm %%DATADIR%%/google/net/proto
 @dirrm %%DATADIR%%/google/net
 @dirrm %%DATADIR%%/google/appengine/tools
@@ -1901,6 +1961,7 @@ bin/remote_api_shell.py
 @dirrm %%DATADIR%%/google/appengine/cron
 @dirrm %%DATADIR%%/google/appengine/base
 @dirrm %%DATADIR%%/google/appengine/api/xmpp
+@dirrm %%DATADIR%%/google/appengine/api/taskqueue
 @dirrm %%DATADIR%%/google/appengine/api/oauth
 @dirrm %%DATADIR%%/google/appengine/api/namespace_manager
 @dirrm %%DATADIR%%/google/appengine/api/memcache
@@ -1938,8 +1999,10 @@ bin/remote_api_shell.py
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/appengine/docs/python/images
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/appengine/docs/python/howto
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/appengine/docs/python/gettingstarted
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/appengine/docs/python/datastore/hr
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/appengine/docs/python/datastore
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/appengine/docs/python/config
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/appengine/docs/python/channel
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/appengine/docs/python/blobstore
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/appengine/docs/python
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/appengine/docs/java/xmpp
@@ -1988,6 +2051,7 @@ bin/remote_api_shell.py
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/appengine/docs/java/javadoc/com/google/appengine/api/utils
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/appengine/docs/java/javadoc/com/google/appengine/api/users
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/appengine/docs/java/javadoc/com/google/appengine/api/urlfetch
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/appengine/docs/java/javadoc/com/google/appengine/api/taskqueue
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/appengine/docs/java/javadoc/com/google/appengine/api/quota
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/appengine/docs/java/javadoc/com/google/appengine/api/oauth
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/appengine/docs/java/javadoc/com/google/appengine/api/memcache
@@ -1996,6 +2060,7 @@ bin/remote_api_shell.py
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/appengine/docs/java/javadoc/com/google/appengine/api/labs
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/appengine/docs/java/javadoc/com/google/appengine/api/images
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/appengine/docs/java/javadoc/com/google/appengine/api/datastore
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/appengine/docs/java/javadoc/com/google/appengine/api/channel
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/appengine/docs/java/javadoc/com/google/appengine/api/capabilities
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/appengine/docs/java/javadoc/com/google/appengine/api/blobstore
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/appengine/docs/java/javadoc/com/google/appengine/api
@@ -2007,12 +2072,15 @@ bin/remote_api_shell.py
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/appengine/docs/java/howto
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/appengine/docs/java/gettingstarted
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/appengine/docs/java/datastore/images
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/appengine/docs/java/datastore/hr
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/appengine/docs/java/datastore
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/appengine/docs/java/configyaml
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/appengine/docs/java/config
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/appengine/docs/java/channel
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/appengine/docs/java/blobstore
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/appengine/docs/java
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/appengine/docs/images
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/appengine/docs/adminconsole
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/appengine/docs
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/appengine/css
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/appengine/business
