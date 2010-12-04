@@ -18,7 +18,7 @@ DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}:gdb
 MAINTAINER=	mi@aldan.algebra.com
 COMMENT?=	GNU GDB of newer version than comes with the system
 
-LATEST_LINK=	gdb66
+LATEST_LINK?=	gdb66
 
 .ifndef(WITH_INSIGHT)
 OPTIONS=	INSIGHT "Build the Tcl/Tk GUI (experimental!)" off
