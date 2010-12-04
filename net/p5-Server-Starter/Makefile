@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Server-Starter
-PORTVERSION=	0.07
+PORTVERSION=	0.08
 CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -15,7 +15,8 @@ MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Perl extension of superdaemon for hot-deploying server programs
 
 RUN_DEPENDS=	\
-	p5-Proc-Wait3>0:${PORTSDIR}/devel/p5-Proc-Wait3
+	p5-Proc-Wait3>0:${PORTSDIR}/devel/p5-Proc-Wait3 \
+	p5-Scope-Guard>0:${PORTSDIR}/devel/p5-Scope-Guard
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
