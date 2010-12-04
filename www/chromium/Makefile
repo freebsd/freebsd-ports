@@ -35,6 +35,8 @@ LIB_DEPENDS=	execinfo.1:${PORTSDIR}/devel/libexecinfo	\
 
 RUN_DEPENDS=	${LOCALBASE}/lib/alsa-lib/libasound_module_pcm_oss.so:${PORTSDIR}/audio/alsa-plugins
 
+FORBIDDEN=		several security vulnerabilities
+
 ONLY_FOR_ARCHS=	i386 amd64
 USE_XZ=		yes
 USE_BISON=	build
