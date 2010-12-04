@@ -7,12 +7,11 @@
 #
 
 PORTNAME=	sng
-PORTVERSION=	1.0.2
-PORTREVISION=	3
+PORTVERSION=	1.0.5
 CATEGORIES=	graphics
-MASTER_SITES=	SF
+MASTER_SITES=	SF/${PORTNAME}/${PORTVERSION}/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	corky1951@comcast.net
 COMMENT=	Compiler/decompiler for Scriptable Network Graphics
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/X11/rgb.txt:${PORTSDIR}/x11/rgb
