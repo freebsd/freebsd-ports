@@ -1,0 +1,15 @@
+bin/tide
+%%X11%%bin/xtide
+bin/xttpd
+%%DATADIR%%/harmonics.tcd
+%%WVS%%%%DATADIR%%/wvs/wvs1.dat
+%%WVS%%%%DATADIR%%/wvs/wvs12.dat
+%%WVS%%%%DATADIR%%/wvs/wvs250k.dat
+%%WVS%%%%DATADIR%%/wvs/wvs3.dat
+%%WVS%%%%DATADIR%%/wvs/wvs43.dat
+%%WVS%%%%DATADIR%%/wvs/wvsfull.dat
+%%WVS%%@dirrm %%DATADIR%%/wvs
+@dirrm %%DATADIR%%
+@unexec if cmp -s %D/etc/xtide.conf.example %D/etc/xtide.conf; then rm -f %D/etc/xtide.conf; fi
+etc/xtide.conf.example
+@exec if [ ! -f %D/etc/xtide.conf ] ; then cp -p %D/%F %B/xtide.conf; fi
