@@ -31,5 +31,7 @@ post-patch:
 	    	's|-Wno-missing-field-initializers|#|g'
 	@${REINPLACE_CMD} -e 's|-Wno-missing-field-initializers|#|g' \
 	    	${WRKSRC}/common.mk
+	@${TOUCH} ${WRKSRC}/aclocal.m4 ${WRKSRC}/Makefile.in \
+			${WRKSRC}/Makefile ${WRKSRC}/configure
 
 .include <bsd.port.mk>
