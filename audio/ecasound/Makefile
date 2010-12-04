@@ -24,7 +24,7 @@ OPTIONS=	ARTS		"Enable aRts support"		off \
 		SAMPLERATE	"Enable libsamplerate support"	off
 
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	libtool:22
+USE_AUTOTOOLS=	libtool
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--disable-pyecasound \
 		--disable-rubyecasound \

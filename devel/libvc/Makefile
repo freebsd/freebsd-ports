@@ -14,7 +14,7 @@ MASTER_SITES=	SF/rolo/${PORTNAME}/${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A vCard library
 
-USE_AUTOTOOLS=	libtool:22
+USE_AUTOTOOLS=	libtool
 USE_BZIP2=	yes
 USE_BISON=	build
 GNU_CONFIGURE=	yes

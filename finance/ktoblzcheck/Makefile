@@ -15,7 +15,7 @@ COMMENT=	Check bank codes of German banks
 
 USE_GNOME=	gnomehack pkgconfig
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	libtool:22
+USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
 MAKE_JOBS_SAFE=	yes
 

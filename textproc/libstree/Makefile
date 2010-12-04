@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.icir.org/christian/downloads/
 MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	A Generic Suffix Tree Library
 
-USE_AUTOTOOLS=	libtool:22
+USE_AUTOTOOLS=	libtool
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes

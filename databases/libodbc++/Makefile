@@ -15,7 +15,7 @@ MAINTAINER=	fjoe@FreeBSD.org
 COMMENT=	A C++ class library and toolset for ODBC access to data sources
 
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	libtool:22
+USE_AUTOTOOLS=	libtool
 USE_GNOME=	pkgconfig
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--with-isqlxx

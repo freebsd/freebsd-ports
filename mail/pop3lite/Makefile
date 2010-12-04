@@ -14,7 +14,7 @@ MASTER_SITES=	SF
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A flexible, modular RFC-compliant POP3 daemon
 
-USE_AUTOTOOLS=	libtool:22 libltdl:22
+USE_AUTOTOOLS=	libtool libltdl
 USE_GNOME=	glib12
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes

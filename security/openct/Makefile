@@ -16,7 +16,7 @@ COMMENT=	A middleware framework for smart card terminals
 
 OPTIONS=	PCSC "Enable PC/SC support" off
 
-USE_AUTOTOOLS=	libltdl:22
+USE_AUTOTOOLS=	libltdl
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_GNOME=	pkgconfig

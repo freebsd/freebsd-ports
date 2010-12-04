@@ -21,7 +21,7 @@ OPTIONS+=	THREADS "With threading support" off
 GNU_CONFIGURE=	yes
 USE_GL=		gl
 USE_PERL5=	yes
-USE_AUTOTOOLS=	libltdl:22
+USE_AUTOTOOLS=	libltdl
 USE_LDCONFIG=	${PREFIX}/lib ${PREFIX}/lib/${PORTNAME}
 
 CONFIGURE_ARGS=--enable-ltdl-install=no

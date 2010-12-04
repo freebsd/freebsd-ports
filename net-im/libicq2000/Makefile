@@ -16,7 +16,7 @@ COMMENT=	An opensource C++ library to support icq2000/2001 protocol
 
 LIB_DEPENDS=	sigc.1:${PORTSDIR}/devel/libsigc++
 
-USE_AUTOTOOLS=	libtool:22
+USE_AUTOTOOLS=	libtool
 CONFIGURE_ARGS=	--disable-static
 USE_LDCONFIG=	yes
 

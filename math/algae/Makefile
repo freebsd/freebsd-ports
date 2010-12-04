@@ -15,7 +15,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A programming language for numerical analysis
 
 GNU_CONFIGURE=	yes
-USE_AUTOTOOLS=	autoconf:268
+USE_AUTOTOOLS=	autoconf
 
 ALGAE_VERSION=	${PORTVERSION}
 PLIST_SUB=	ALGAE_VERSION=${ALGAE_VERSION}

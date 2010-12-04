@@ -19,7 +19,7 @@ OPTIONS+=	THUNDERBIRD "Install Thunderbird 3.0" on \
 		SEAMONKEY "Install SeaMonkey 2.0" off
 
 CONFLICTS=	spidermonkey-1.[0-7]*
-USE_AUTOTOOLS=	autoconf:213 libtool:22
+USE_AUTOTOOLS=	autoconf213 libtool
 ALL_TARGET=	default
 CONFIGURE_ENV=	LOCALBASE=${LOCALBASE}
 MAKE_ENV=		PTHREAD_LDFLAGS="${PTHREAD_LIBS}"

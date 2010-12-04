@@ -16,7 +16,7 @@ MAINTAINER=	yzlin@FreeBSD.org
 COMMENT=	Securely execute PHP scripts under Apache
 
 GNU_CONFIGURE=	yes
-USE_AUTOTOOLS=	aclocal:111:env automake:111:env autoconf:268:env libtool:22:env
+USE_AUTOTOOLS=	aclocal:env automake:env autoconf:env libtool:env
 
 # Maintainer has not tested suPHP 0.6.x on Apache 1.3.
 USE_APACHE=	2.0+

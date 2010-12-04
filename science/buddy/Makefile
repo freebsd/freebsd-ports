@@ -14,7 +14,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/BuDDy%20${PORTVERSION}
 MAINTAINER=	llwang@infor.org
 COMMENT=	A Binary Decision Diagram library
 
-USE_AUTOTOOLS=	libtool:22
+USE_AUTOTOOLS=	libtool
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes

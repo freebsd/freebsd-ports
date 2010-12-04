@@ -18,7 +18,7 @@ MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	C API for reading and writing ArcView Shapefiles
 
 MAKE_JOBS_UNSAFE=	yes
-USE_AUTOTOOLS=	libtool:22:env
+USE_AUTOTOOLS=	libtool:env
 USE_LDCONFIG=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-${SHAPELIB_VER}
 

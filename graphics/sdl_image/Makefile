@@ -19,7 +19,7 @@ LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg \
 		png.6:${PORTSDIR}/graphics/png \
 		tiff.4:${PORTSDIR}/graphics/tiff
 
-USE_AUTOTOOLS=	libtool:22
+USE_AUTOTOOLS=	libtool
 USE_SDL=	sdl
 USE_GNOME=	pkgconfig gnomehack
 USE_GMAKE=	yes

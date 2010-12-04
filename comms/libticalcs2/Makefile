@@ -18,7 +18,7 @@ LIB_DEPENDS=	ticables2.4:${PORTSDIR}/comms/libticables2 \
 		ticonv.4:${PORTSDIR}/converters/libticonv \
 		tifiles2.6:${PORTSDIR}/devel/libtifiles2
 
-USE_AUTOTOOLS=	libtool:22
+USE_AUTOTOOLS=	libtool
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_GNOME=	glib20 gnomehack pkgconfig

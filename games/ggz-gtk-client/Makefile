@@ -14,7 +14,7 @@ CATEGORIES=	games
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	The GGZ Gaming Zone - GTK+ Frontend
 
-USE_AUTOTOOLS=	libtool:22
+USE_AUTOTOOLS=	libtool
 USE_GNOME=	gnometarget gtk20
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"

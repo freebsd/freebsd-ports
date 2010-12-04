@@ -21,7 +21,7 @@ LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg \
 		tiff.4:${PORTSDIR}/graphics/tiff \
 		ftgl.2:${PORTSDIR}/graphics/ftgl
 
-USE_AUTOTOOLS=	libtool:22
+USE_AUTOTOOLS=	libtool
 GNU_CONFIGURE=	yes
 USE_PYTHON=	yes
 USE_GNOME=	gtk12

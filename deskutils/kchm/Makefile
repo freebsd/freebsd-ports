@@ -20,6 +20,6 @@ LIB_DEPENDS=	chm.0:${PORTSDIR}/misc/chmlib
 USE_BZIP2=	yes
 USE_KDEBASE_VER=3
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	libtool:22
+USE_AUTOTOOLS=	libtool
 
 .include <bsd.port.mk>

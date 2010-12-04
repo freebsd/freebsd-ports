@@ -20,7 +20,7 @@ USE_MYSQL=	yes
 
 USE_KDELIBS_VER=3
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	libtool:22
+USE_AUTOTOOLS=	libtool
 CONFIGURE_ARGS+=--with-mysql-includes=${LOCALBASE}/include/mysql \
 		--with-mysql-libraries=${LOCALBASE}/lib/mysql
 MAKE_ENV+=	MOC="${MOC}" QTDIR="${QT_PREFIX}"

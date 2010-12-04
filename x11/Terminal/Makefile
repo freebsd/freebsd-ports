@@ -15,7 +15,7 @@ DIST_SUBDIR=	xfce4
 MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	Terminal emulator for the X windowing system
 
-USE_AUTOTOOLS=	libtool:22
+USE_AUTOTOOLS=	libtool
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS= yes
 USE_BZIP2=	yes

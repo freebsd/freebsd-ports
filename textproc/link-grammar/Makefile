@@ -15,7 +15,7 @@ COMMENT=	A grammar checking library
 
 USE_GNOME=	gnomehack gnometarget ltverhack
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	libtool:22
+USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
 USE_DOS2UNIX=	yes
 USE_CSTD=	gnu99

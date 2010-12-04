@@ -19,7 +19,7 @@ LIB_DEPENDS=	curl.6:${PORTSDIR}/ftp/curl
 RUN_DEPENDS=	osb-nrcore>=0.5.2:${PORTSDIR}/www/osb-nrcore
 
 USE_GNOME=	gnomehack gnometarget gtk20 librsvg2
-USE_AUTOTOOLS=	libtool:22
+USE_AUTOTOOLS=	libtool
 CONFGURE_ENV=	CPPFLAGS="${PTHREAD_CFLAGS}" \
 		LDFLAGS="${PTHREAD_LIBS}"
 USE_LDCONFIG=	yes

@@ -32,7 +32,7 @@ USE_BISON=	build
 USE_GMAKE=	yes
 HAS_CONFIGURE=	yes
 USE_XORG=	x11
-USE_AUTOTOOLS=	autoconf:213
+USE_AUTOTOOLS=	autoconf213
 # magic wand: set INSTALL to some absurd value, or else
 # mozart's configure will not find the right install
 # when configuring as root.

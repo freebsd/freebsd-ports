@@ -52,7 +52,7 @@ WANT_GSTREAMER=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_GNOME+=	gnomehack gnometarget pkgconfig ltverhack ltasneededhack
-USE_AUTOTOOLS=	libtool:22
+USE_AUTOTOOLS=	libtool
 GST_PLUGIN?=	base
 
 CONFIGURE_ARGS=	--disable-option-checking

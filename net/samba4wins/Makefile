@@ -20,7 +20,7 @@ CONFLICTS=		ja-samba-2.* ja-samba-4.* samba-2.* samba-4.* sharity-light-1.*
 USE_ICONV=		yes
 USE_PERL5=		yes
 GNU_CONFIGURE=		yes
-USE_AUTOTOOLS=		autoconf:268:env autoheader:268:env
+USE_AUTOTOOLS=		autoconf:env autoheader:env
 
 WRKSRC=			${WRKDIR}/${PORTNAME}/source
 

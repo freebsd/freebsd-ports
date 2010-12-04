@@ -13,7 +13,7 @@ MASTER_SITES=		SF
 MAINTAINER=		markus@FreeBSD.org
 COMMENT=		Drop stack applet for KDE
 
-USE_AUTOTOOLS=	libtool:22
+USE_AUTOTOOLS=	libtool
 USE_KDEBASE_VER=	3
 GNU_CONFIGURE=		yes
 USE_LDCONFIG=		yes

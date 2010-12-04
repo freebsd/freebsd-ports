@@ -26,7 +26,7 @@ LIB_DEPENDS=	tk83.1:${PORTSDIR}/x11-toolkits/tk83 \
 		gsm.1:${GSM_DIR}
 
 USE_XORG=	x11
-USE_AUTOTOOLS=	autoconf:213
+USE_AUTOTOOLS=	autoconf213
 CONFIGURE_ARGS=	--with-gsm=${GSM_WORK}
 INSTALL_TARGET=	install install-man
 MAN1=		vat.1

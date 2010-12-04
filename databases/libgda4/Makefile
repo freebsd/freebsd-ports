@@ -30,7 +30,7 @@ LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt \
 		json-glib-1.0.0:${PORTSDIR}/devel/json-glib
 RUN_DEPENDS=	${LOCALBASE}/lib/girepository-1.0/GObject-2.0.typelib:${PORTSDIR}/devel/gobject-introspection
 
-USE_AUTOTOOLS=	libtool:22
+USE_AUTOTOOLS=	libtool
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomeprefix gnomehack glib20 libxslt intlhack referencehack

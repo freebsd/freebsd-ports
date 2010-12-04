@@ -18,7 +18,7 @@ RUN_DEPENDS=	${LOCALBASE}/share/mime/packages/freedesktop.org.xml:${PORTSDIR}/mi
 
 PLIST_SUB+=	LOCALBASE=${LOCALBASE}
 
-USE_AUTOTOOLS=	autoconf:213
+USE_AUTOTOOLS=	autoconf213
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_XORG=	x11 sm xaw xproto

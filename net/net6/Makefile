@@ -18,7 +18,7 @@ LIB_DEPENDS=	sigc-2.0.0:${PORTSDIR}/devel/libsigc++20 \
 		gnutls.40:${PORTSDIR}/security/gnutls
 
 USE_GNOME=	gnomehack pkgconfig
-USE_AUTOTOOLS=	libtool:22
+USE_AUTOTOOLS=	libtool
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 MAKE_JOBS_SAFE=	yes
 USE_LDCONFIG=	yes

@@ -18,7 +18,7 @@ LIB_DEPENDS=	Xft.2:${PORTSDIR}/x11-fonts/libXft
 
 USE_XORG=	sm
 USE_GNOME=	gtk20 lthack
-USE_AUTOTOOLS=	libtool:22
+USE_AUTOTOOLS=	libtool
 LIBTOOLFILES=	configure kiklib/configure mkf/configure
 USE_PERL5_BUILD=yes
 USE_GETTEXT=	yes

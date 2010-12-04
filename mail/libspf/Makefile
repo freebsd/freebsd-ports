@@ -16,7 +16,7 @@ MAINTAINER=	mnag@FreeBSD.org
 COMMENT=	Sender Policy Framework (SPF) library and client
 
 USE_BZIP2=	yes
-USE_AUTOTOOLS=	libtool:22
+USE_AUTOTOOLS=	libtool
 GNU_CONFIGURE=	yes
 
 USE_LDCONFIG=	yes

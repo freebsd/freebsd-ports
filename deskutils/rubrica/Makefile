@@ -22,7 +22,7 @@ USE_BZIP2=	yes
 USE_GNOME=	gconf2 gnomehack gnomeprefix libglade2
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	libtool:22
+USE_AUTOTOOLS=	libtool
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 
 GCONF_SCHEMAS=	rubrica2.schemas

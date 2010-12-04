@@ -15,7 +15,7 @@ MASTER_SITES=	http://chinesecheckers.vegard2.no/ \
 MAINTAINER=	frank@dynamical-systems.org
 COMMENT=	An extensible chinese checkers game using SDL
 
-USE_AUTOTOOLS=	libtool:22
+USE_AUTOTOOLS=	libtool
 USE_SDL=	image mixer sdl
 GNU_CONFIGURE=	yes
 

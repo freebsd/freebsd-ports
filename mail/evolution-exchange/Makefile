@@ -21,7 +21,7 @@ RUN_DEPENDS=	${EVO_PC_FILE}:${PORTSDIR}/mail/evolution
 
 USE_BZIP2=	yes
 USE_GETTEXT=	yes
-USE_AUTOTOOLS=	libtool:22
+USE_AUTOTOOLS=	libtool
 USE_GMAKE=	yes
 USE_BDB=	41
 USE_OPENLDAP=	yes

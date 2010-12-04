@@ -15,7 +15,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} mcaldrivers-0.9.tar.gz
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	Modular Calendar Access Library
 
-USE_AUTOTOOLS=	libltdl:22
+USE_AUTOTOOLS=	libltdl
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 CONFIGURE_ARGS=	--with-mstore --with-icap \

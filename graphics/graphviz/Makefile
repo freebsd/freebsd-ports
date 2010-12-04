@@ -23,7 +23,7 @@ LIB_DEPENDS+=	jpeg.11:${PORTSDIR}/graphics/jpeg \
 
 USE_BISON=	build
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	libltdl:22 libtool:22
+USE_AUTOTOOLS=	libltdl libtool
 WANT_GNOME=	yes
 GNU_CONFIGURE=	yes
 LDFLAGS+=	-L${LOCALBASE}/lib

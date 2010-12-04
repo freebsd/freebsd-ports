@@ -15,7 +15,7 @@ MAINTAINER=	markus@FreeBSD.org
 COMMENT=	File manager for KDE
 
 USE_KDELIBS_VER=3
-USE_AUTOTOOLS=	libtool:22
+USE_AUTOTOOLS=	libtool
 USE_GMAKE=	yes
 
 post-patch:

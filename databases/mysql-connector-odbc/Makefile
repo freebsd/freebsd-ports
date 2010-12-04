@@ -21,7 +21,7 @@ USE_MYSQL=		yes
 IGNORE_WITH_MYSQL=	323
 
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	libtool:22 libltdl:22
+USE_AUTOTOOLS=	libtool libltdl
 USE_LDCONFIG=	yes
 CFLAGS+=		-L${LOCALBASE}/lib
 LDFLAGS=	-L${LOCALBASE}/lib

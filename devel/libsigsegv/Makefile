@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	libsigsegv
 MAINTAINER=	gaod@hychen.org
 COMMENT=	Handling page faults in user mode
 
-USE_AUTOTOOLS=	libtool:22
+USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
 
 .include <bsd.port.pre.mk>

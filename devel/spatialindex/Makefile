@@ -12,7 +12,7 @@ DISTNAME=	${PORTNAME}-src-${PORTVERSION}
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	A General Framework for Developing Spatial Indices
 
-USE_AUTOTOOLS=	libtool:22:env
+USE_AUTOTOOLS=	libtool:env
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes

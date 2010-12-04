@@ -37,7 +37,7 @@ AUTOCONF_ARGS=		${IPATHS}
 USE_GMAKE=		yes
 USE_ICONV=		yes
 GNU_CONFIGURE=		yes
-USE_AUTOTOOLS=		autoconf:268 autoheader:268
+USE_AUTOTOOLS=		autoconf autoheader
 # directories
 VARDIR?=		/var
 SAMBA_SPOOL?=		${VARDIR}/spool/${SAMBA_BASENAME}

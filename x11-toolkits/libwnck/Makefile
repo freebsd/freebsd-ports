@@ -30,7 +30,7 @@ USE_GMAKE=	yes
 USE_GNOME=	gnomehack gtk20 ltverhack referencehack intlhack
 USE_BISON=	build
 USE_LDCONFIG=	yes
-USE_AUTOTOOLS=	libtool:22
+USE_AUTOTOOLS=	libtool
 CONFIGURE_ARGS=	--with-html-dir=${PREFIX}/share/doc
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"

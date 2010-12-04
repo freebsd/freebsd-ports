@@ -1339,7 +1339,6 @@ sub checkmakefile {
 	my(@mopt, @oopt);
 	my($pkg_version, $versiondir, $versionfile) = ('', '', '');
 	my $useindex = 0;
-	my %autotools_deprecated = ();
 	my %deprecated = ();
 	my @deplist = ();
 	my %autocmdnames = ();
@@ -1736,25 +1735,6 @@ sub checkmakefile {
 	# whole file: check for deprecated commands
 	#
 	print "OK: checking for deprecated macros.\n" if $verbose;
-	%autotools_deprecated = (
-			USE_LIBTOOL			=> 'USE_AUTOTOOLS',
-			USE_AUTOCONF		=> 'USE_AUTOTOOLS',
-			USE_AUTOMAKE		=> 'USE_AUTOTOOLS',
-			WANT_LIBTOOL		=> 'USE_AUTOTOOLS',
-			WANT_AUTOCONF		=> 'USE_AUTOTOOLS',
-			WANT_AUTOMAKE		=> 'USE_AUTOTOOLS',
-			USE_LIBLTDL			=> 'USE_AUTOTOOLS',
-			USE_LIBTOOL_VER		=> 'USE_AUTOTOOLS',
-			WANT_LIBTOOL_VER	=> 'USE_AUTOTOOLS',
-			USE_INC_LIBTOOL_VER	=> 'USE_AUTOTOOLS',
-			WANT_AUTOMAKE_VER	=> 'USE_AUTOTOOLS',
-			USE_AUTOMAKE_VER	=> 'USE_AUTOTOOLS',
-			USE_ACLOCAL_VER		=> 'USE_AUTOTOOLS',
-			USE_AUTOHEADER_VER	=> 'USE_AUTOTOOLS',
-			USE_AUTOCONF_VER	=> 'USE_AUTOTOOLS',
-			WANT_AUTOCONF_VER	=> 'USE_AUTOTOOLS',
-			__HELP__			=> 'http://www.freebsd.org/doc/en_US.ISO8859-1/books/porters-handbook/using-autotools.html',
-	);
 
 	%deprecated = (
 			USE_MESA		=> 'USE_GL',
@@ -1763,7 +1743,7 @@ sub checkmakefile {
 			APACHE_COMPAT   => 'USE_APACHE',
 	);
 
-	@deplist = (\%autotools_deprecated, \%deprecated);
+	@deplist = (\%deprecated);
 
 	for my $dlst (@deplist) {
 		my $hurl = $dlst->{'__HELP__'};

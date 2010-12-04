@@ -32,7 +32,7 @@ USE_GMAKE=	yes
 PLIST_SUB=	SHLIB="@comment " NSHLIB=""
 CONFLICTS=	tidy-20000804* tidy-lib-[0-9]*
 .else
-USE_AUTOTOOLS=	automake:111 autoconf:268 libtool:22
+USE_AUTOTOOLS=	automake autoconf libtool
 AUTOMAKE_ARGS+=	-a -c --foreign
 USE_LDCONFIG=	yes
 PLIST_SUB=	SHLIB="" NSHLIB="@comment "
@@ -87,7 +87,7 @@ post-patch:
 . endfor
 .endif
 
-patch-autotools::
+patch-autotools-libtool::
 .if defined(WITH_SHLIB)
 	(cd ${WRKSRC}				\
 	&& ${LIBTOOLIZE} --force --copy		\

@@ -16,7 +16,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	marius@nuenneri.ch
 COMMENT=	The W3C Reference Library
 
-USE_AUTOTOOLS=	libtool:22
+USE_AUTOTOOLS=	libtool
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 CONFIGURE_ARGS=	--enable-shared --enable-static --with-zlib --with-ssl=${OPENSSLBASE}

@@ -13,7 +13,7 @@ MASTER_SITES=	SF
 MAINTAINER=	maho@FreeBSD.org
 COMMENT=	Enhanced Metafile Library
 
-USE_AUTOTOOLS=	libtool:22
+USE_AUTOTOOLS=	libtool
 GNU_CONFIGURE=	yes
 
 .include <bsd.port.pre.mk>

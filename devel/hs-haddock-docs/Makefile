@@ -13,7 +13,7 @@ CATEGORIES=	devel haskell
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Documentation for Haddock
 
-USE_AUTOTOOLS=	autoconf:268:env
+USE_AUTOTOOLS=	autoconf:env
 
 DOCUMENTATION=	yes
 XMLDOCS=	doc/haddock:users_guide

@@ -18,7 +18,7 @@ BUILD_DEPENDS=	docbook-xsl>=0:${PORTSDIR}/textproc/docbook-xsl \
 		xsltproc:${PORTSDIR}/textproc/libxslt
 
 USE_RC_SUBR=	gpsd
-USE_AUTOTOOLS=	libtool:22
+USE_AUTOTOOLS=	libtool
 GNU_CONFIGURE=	yes
 USE_GNOME=	gnomehack pkgconfig
 USE_LDCONFIG=	yes

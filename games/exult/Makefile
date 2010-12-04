@@ -20,7 +20,7 @@ RUN_DEPENDS=	timidity:${PORTSDIR}/audio/timidity
 USE_SDL=	sdl mixer
 USE_XORG=	x11
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	libtool:22
+USE_AUTOTOOLS=	libtool
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 MAKE_JOBS_UNSAFE=	yes

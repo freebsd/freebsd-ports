@@ -17,7 +17,7 @@ COMMENT=	KDE3-Version of your favorite frontend to the Ports
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_KDELIBS_VER=3
-USE_AUTOTOOLS=	libtool:22
+USE_AUTOTOOLS=	libtool
 CONFLICTS=	kports-0.[89]*
 
 RUN_DEPENDS+=	portupgrade:${PORTSDIR}/ports-mgmt/portupgrade

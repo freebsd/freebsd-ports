@@ -21,7 +21,7 @@ LIB_DEPENDS=	Xft.2:${PORTSDIR}/x11-fonts/libXft
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_GNOME=	glib20 libxml2 ltverhack
-USE_AUTOTOOLS=	libtool:22
+USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
 CONFIGURE_ENV=	CFLAGS+="-I${LOCALBASE}/include" \
 		LDFLAGS+="-L${LOCALBASE}/lib"

@@ -15,7 +15,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A library providing routines for paper size management
 
-USE_AUTOTOOLS=	libtool:22
+USE_AUTOTOOLS=	libtool
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 

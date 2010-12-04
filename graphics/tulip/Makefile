@@ -24,7 +24,7 @@ QT_COMPONENTS=	corelib moc_build uic_build rcc_build gui opengl xml network \
 USE_GL=		glew glut
 USE_GMAKE=	yes
 USE_GNOME=	libxml2
-USE_AUTOTOOLS=	libtool:22
+USE_AUTOTOOLS=	libtool
 
 USE_LDCONFIG=	yes
 

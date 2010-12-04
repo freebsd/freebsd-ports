@@ -25,7 +25,7 @@ USE_LDCONFIG=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_GETTEXT=	yes
-USE_AUTOTOOLS=	libtool:22
+USE_AUTOTOOLS=	libtool
 USE_GNOME=	gnomehack gnomeprefix intlhack gnomevfs2
 WANT_GNOME=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

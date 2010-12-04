@@ -18,7 +18,7 @@ COMMENT=	Decoder, encoder and replaygain for musepack (mpc)
 CONFLICTS=	libmpcdec-[0-9]*
 
 USE_LDCONFIG=	yes
-USE_AUTOTOOLS=	aclocal:111 autoheader:268 libtoolize automake:111 autoconf:268 libtool:22
+USE_AUTOTOOLS=	aclocal autoheader libtoolize automake autoconf libtool
 ACLOCAL_ARGS=	-I. -I ${LOCALBASE}/share/aclocal
 AUTOMAKE_ARGS=	--add-missing
 

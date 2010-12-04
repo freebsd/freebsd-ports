@@ -15,7 +15,7 @@ DISTNAME=	pure-db-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Set of libraries for creating and reading constant databases
 
-USE_AUTOTOOLS=	libtool:22
+USE_AUTOTOOLS=	libtool
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 

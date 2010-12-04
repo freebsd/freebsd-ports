@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.geocities.com/cprados/files/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	UNIX driver for Towitoko smartcard readers
 
-USE_AUTOTOOLS=	libtool:22
+USE_AUTOTOOLS=	libtool
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 

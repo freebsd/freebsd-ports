@@ -21,7 +21,7 @@ USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 USE_GNOME=	pkgconfig
-USE_AUTOTOOLS=	autoconf:268 autoheader:268 automake:111 aclocal:111 libtool:22
+USE_AUTOTOOLS=	autoconf autoheader automake aclocal libtool
 
 AUTOMAKE_ARGS+=	--add-missing --copy --foreign
 ACLOCAL_ARGS+=	-I ${LOCALBASE}/share/aclocal

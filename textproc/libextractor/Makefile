@@ -18,7 +18,7 @@ LIB_DEPENDS=	mpeg2:${PORTSDIR}/multimedia/libmpeg2
 
 USE_GNOME=	glib20
 USE_PYTHON=	yes
-USE_AUTOTOOLS=	libltdl:22
+USE_AUTOTOOLS=	libltdl
 USE_DOS2UNIX=	yes
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	${PREFIX}/lib/libextractor
@@ -62,7 +62,7 @@ PLIST_SUB+=	VORBIS=""
 PLIST_SUB+=	VORBIS="@comment "
 .endif
 
-patch-autotools::
+patch-autotools-libtool::
 	@(cd ${PATCH_WRKSRC}; \
 	for file in ${LIBTOOLFILES}; do \
 		${CP} $$file $$file.tmp; \

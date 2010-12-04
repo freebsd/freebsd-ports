@@ -23,7 +23,7 @@ USE_GNOME=	gnomehack gnometarget intlhack glib20 gtk20 ltverhack
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
-USE_AUTOTOOLS=	libtool:22
+USE_AUTOTOOLS=	libtool
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 

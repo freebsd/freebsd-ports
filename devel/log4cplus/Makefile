@@ -15,7 +15,7 @@ DISTFILES=	log4cplus-${PORTVERSION}.tar.gz log4cplus-${PORTVERSION}-docs.tar.gz
 MAINTAINER=	petri.totterman@hmv.fi
 COMMENT=	A logging library for C++
 
-USE_AUTOTOOLS=	libtool:22
+USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	CFLAGS="${CFLAGS} ${PTHREAD_CFLAGS}" \

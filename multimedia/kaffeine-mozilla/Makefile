@@ -23,7 +23,7 @@ USE_WEBPLUGINS=	native
 WEBPLUGINS_FILES=kaffeineplugin.so
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include"
-USE_AUTOTOOLS=	libtool:22
+USE_AUTOTOOLS=	libtool
 
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/www/firefox/Makefile.webplugins"

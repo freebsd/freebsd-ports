@@ -17,7 +17,7 @@ COMMENT=	Mozilla Thunderbird is standalone mail and news that stands above
 
 BUILD_DEPENDS=	nspr>=4.8:${PORTSDIR}/devel/nspr
 
-USE_AUTOTOOLS=	autoconf:213
+USE_AUTOTOOLS=	autoconf213
 LATEST_LINK=	thunderbird3
 USE_GECKO=	gecko
 CONFLICTS=	thunderbird-3.1*

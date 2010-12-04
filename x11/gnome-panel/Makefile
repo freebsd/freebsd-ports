@@ -34,7 +34,7 @@ USE_GNOME=	gnomeprefix gnomehack intlhack gnomedesktop libwnck gnomemenus \
 WANT_GNOME=	yes
 GNOME_DESKTOP_VERSION=2
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	libtool:22
+USE_AUTOTOOLS=	libtool
 CONFIGURE_ARGS=	--disable-network-manager \
 		--enable-polkit
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

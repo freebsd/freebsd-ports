@@ -23,6 +23,6 @@ GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gtk20
 CFLAGS+=	-I${LOCALBASE}/include/dssi
-USE_AUTOTOOLS=	libtool:22
+USE_AUTOTOOLS=	libtool
 
 .include <bsd.port.mk>

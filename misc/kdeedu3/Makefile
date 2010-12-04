@@ -26,7 +26,7 @@ PREFIX=		${KDE_PREFIX}
 USE_BZIP2=	yes
 USE_XORG=	xpm
 USE_GMAKE=	yes
-USE_AUTOTOOLS=  libtool:22
+USE_AUTOTOOLS=  libtool
 
 CONFIGURE_ARGS+=--enable-libusb=${LOCALBASE} \
 		--disable-ocamlsolver

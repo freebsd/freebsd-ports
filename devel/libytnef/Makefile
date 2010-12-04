@@ -15,7 +15,7 @@ MAINTAINER=	delphus@gmail.com
 COMMENT=	Unpack data in MS Outlook TNEF format
 
 GNU_CONFIGURE=	yes
-USE_AUTOTOOLS=	libtool:22
+USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
 
 PORTDOCS=	AUTHORS NEWS README

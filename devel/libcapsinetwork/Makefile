@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.robertjohnkaper.com/downloads/atlantik/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Network library aimed at easy development of C++ server daemons
 
-USE_AUTOTOOLS=	libtool:22
+USE_AUTOTOOLS=	libtool
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 MAKE_JOBS_UNSAFE=	yes

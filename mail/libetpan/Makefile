@@ -20,7 +20,7 @@ LIB_DEPENDS=	curl:${PORTSDIR}/ftp/curl \
 		sasl2.2:${PORTSDIR}/security/cyrus-sasl2
 
 USE_ICONV=	yes
-USE_AUTOTOOLS=	libtool:22 autoconf:268
+USE_AUTOTOOLS=	libtool autoconf
 USE_LDCONFIG=	yes
 USE_GMAKE=	yes
 MAKE_JOBS_SAFE=	yes

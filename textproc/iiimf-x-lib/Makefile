@@ -27,7 +27,7 @@ USE_GETTEXT=	yes
 USE_GMAKE=	yes
 USE_MOTIF=	yes
 USE_OPENSSL=	yes
-USE_AUTOTOOLS=	automake:111:env autoconf:268:env libtool:22:env
+USE_AUTOTOOLS=	automake:env autoconf:env libtool:env
 
 WRKSRC=		${WRKDIR}/${DISTNAME:S/src-//}
 BUILDDIR=	${WRKSRC}/iiimxcf/xiiimp.so

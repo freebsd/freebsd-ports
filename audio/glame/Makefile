@@ -24,7 +24,7 @@ USE_XORG=	xbitmaps x11
 USE_GNOME=	gnomehack gnomeprefix gnometarget libgnomeui
 USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes
-USE_AUTOTOOLS=	libltdl:22 libtool:22
+USE_AUTOTOOLS=	libltdl libtool
 USE_GMAKE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}" \
 		MAKEINFO="makeinfo --no-split"

@@ -26,7 +26,7 @@ OPTIONS=	GTK	"Build with GTK2+ GUI"	on \
 		PCRE	"Build with PCRE regexps in filters"	on
 
 WANT_GNOME=	yes
-USE_AUTOTOOLS=	libltdl:22
+USE_AUTOTOOLS=	libltdl
 GNU_CONFIGURE=	yes
 MAKE_JOBS_UNSAFE=	yes
 

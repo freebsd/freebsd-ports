@@ -14,7 +14,7 @@ MASTER_SITES=	http://kldp.net/frs/download.php/2808/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GTK+-2.0 hangul input module
 
-USE_AUTOTOOLS=	libtool:22
+USE_AUTOTOOLS=	libtool
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gtk20

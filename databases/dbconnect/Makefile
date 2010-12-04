@@ -17,7 +17,7 @@ COMMENT=	Use C++ object API to allow applications to connect to databases
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	autoconf:268
+USE_AUTOTOOLS=	autoconf
 USE_LDCONFIG=	yes
 
 CXXFLAGS+=	${PTHREAD_CFLAGS} -fPIC -DFREEBSD

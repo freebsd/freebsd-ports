@@ -14,7 +14,7 @@ MASTER_SITES=	SF/${PORTNAME}/OpenSLP/${PORTVERSION}
 MAINTAINER=	marcus@FreeBSD.org
 COMMENT=	Open-source implementation of the Service Location Protocol
 
-USE_AUTOTOOLS=	libtool:22
+USE_AUTOTOOLS=	libtool
 GNU_CONFIGURE=	yes
 USE_OPENSSL=	yes
 USE_LDCONFIG=	yes

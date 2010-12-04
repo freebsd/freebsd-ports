@@ -26,7 +26,7 @@ COMMENT=	A Tk extension (with shared libs)
 LIB_DEPENDS=	jpeg:${PORTSDIR}/graphics/jpeg
 
 USE_LDCONFIG=	yes
-USE_AUTOTOOLS=	libtool:22
+USE_AUTOTOOLS=	libtool
 
 WRKSRC=		${WRKDIR}/blt2.4z
 GNU_CONFIGURE=	yes

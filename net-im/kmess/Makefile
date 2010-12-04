@@ -16,7 +16,7 @@ MAINTAINER=	freebsd-ports@club-internet.fr
 COMMENT=	MSN Messenger Client for KDE3
 
 USE_KDELIBS_VER=3
-USE_AUTOTOOLS=	libtool:22
+USE_AUTOTOOLS=	libtool
 USE_GMAKE=	yes
 
 post-patch:

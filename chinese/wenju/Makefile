@@ -14,7 +14,7 @@ MASTER_SITES=	SF
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Collection of writing tools in Chinese
 
-USE_AUTOTOOLS=	libtool:22
+USE_AUTOTOOLS=	libtool
 USE_GNOME=	gtk20
 USE_LDCONFIG=	yes
 

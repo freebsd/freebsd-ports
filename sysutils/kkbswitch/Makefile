@@ -18,7 +18,7 @@ EXTRA_PATCHES=		${.CURDIR}/../../x11/kde3/files/extrapatch-old_configure
 
 USE_KDELIBS_VER=	3
 USE_GMAKE=		yes
-USE_AUTOTOOLS=		libtool:22
+USE_AUTOTOOLS=		libtool
 
 CONFIGURE_ARGS += 	--with-qt-dir=${QT_PREFIX} \
 			--with-extra-includes=${LOCALBASE}/include \

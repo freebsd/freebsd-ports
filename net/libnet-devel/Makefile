@@ -15,7 +15,7 @@ COMMENT=	A C library for creating IP packets (development version)
 
 LATEST_LINK=	${PORTNAME}${SHORT_VER}
 
-USE_AUTOTOOLS=	libtool:22
+USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-link-layer=${LIBNET_LINK}

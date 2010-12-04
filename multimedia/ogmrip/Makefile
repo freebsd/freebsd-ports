@@ -38,7 +38,7 @@ OPTIONS=	GUI      "Build the GTK+ GUI"                           on  \
 USE_GNOME=	glib20 gnomehack intlhack libxml2
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	libtool:22
+USE_AUTOTOOLS=	libtool
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 USE_LDCONFIG=	yes
 

@@ -31,7 +31,7 @@ USE_OPENSSL=	yes
 USE_GNOME=	gnomeprefix intlhack gnomehack libgnomeui gtkhtml3 \
 		libgnomeprintui
 USE_GETTEXT=	yes
-USE_AUTOTOOLS=	libltdl:22
+USE_AUTOTOOLS=	libltdl
 GNU_CONFIGURE=	yes
 USE_ICONV=	yes
 CONFIGURE_ARGS=	--enable-threads \

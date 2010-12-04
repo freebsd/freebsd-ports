@@ -16,7 +16,7 @@ COMMENT=	Panel applet to display the keyboard's LED states
 USE_BZIP2=	yes
 USE_KDELIBS_VER=3
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	libtool:22
+USE_AUTOTOOLS=	libtool
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-O2||g'	${WRKSRC}/${CONFIGURE_SCRIPT}

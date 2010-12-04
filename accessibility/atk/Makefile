@@ -25,7 +25,7 @@ BUILD_DEPENDS=	g-ir-scanner:${PORTSDIR}/devel/gobject-introspection
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
-USE_AUTOTOOLS=	libtool:22
+USE_AUTOTOOLS=	libtool
 USE_GNOME=	gnomehack glib20 ltverhack referencehack
 CONFIGURE_ARGS=	--enable-static \
 		--disable-gtk-doc \

@@ -32,7 +32,7 @@ OPTIONS=	IPV6	"Enable IPV6 support"				on \
 		CRACKLIB "Use CrackLib for password quality checking"	off \
 		X11	 "Build X11 utilies"				off
 
-USE_AUTOTOOLS=	autoconf:268 autoheader:268 libtool:22
+USE_AUTOTOOLS=	autoconf autoheader libtool
 USE_GNOME=	gnomehack pkgconfig
 USE_OPENSSL=	yes
 USE_GETTEXT=	yes

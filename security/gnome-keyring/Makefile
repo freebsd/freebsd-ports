@@ -22,7 +22,7 @@ USE_BZIP2=	yes
 USE_GNOME=	gnomehack gnomeprefix gtk20 ltverhack intlhack
 USE_GMAKE=	yes
 USE_GETTEXT=	yes
-USE_AUTOTOOLS=	libtool:22
+USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--with-pam-dir="${PREFIX}/lib" \
 		--with-root-certs="${LOCALBASE}/share/certs/ca-root-nss.crt"

@@ -18,7 +18,7 @@ BUILD_DEPENDS=	osb-nrcit>=0.5.2:${PORTSDIR}/www/osb-nrcit
 RUN_DEPENDS=	osb-nrcit>=0.5.2:${PORTSDIR}/www/osb-nrcit
 
 USE_GNOME=	gnomehack gnometarget libglade2
-USE_AUTOTOOLS=	libtool:22
+USE_AUTOTOOLS=	libtool
 
 .include <bsd.port.pre.mk>
 

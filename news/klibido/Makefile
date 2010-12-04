@@ -19,7 +19,7 @@ LIB_DEPENDS=		uu.3:${PORTSDIR}/converters/uulib \
 
 USE_KDELIBS_VER=	3
 USE_GMAKE=		yes
-USE_AUTOTOOLS=		libtool:22
+USE_AUTOTOOLS=		libtool
 INSTALLS_ICONS=		yes
 USE_GETTEXT=		yes
 

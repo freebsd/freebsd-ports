@@ -16,7 +16,7 @@ COMMENT=	Jabber/XMPP client library
 LIB_DEPENDS=	idn.16:${PORTSDIR}/dns/libidn \
 		gnutls.40:${PORTSDIR}/security/gnutls
 
-USE_AUTOTOOLS=	libtool:22
+USE_AUTOTOOLS=	libtool
 USE_BZIP2=	yes
 USE_GNOME=	gnomehack
 GNU_CONFIGURE=	yes

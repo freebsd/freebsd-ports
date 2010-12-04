@@ -30,7 +30,7 @@ USE_XORG=	x11 sm xtst ice
 USE_LDCONFIG=	yes
 USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes
-USE_AUTOTOOLS=	libltdl:22 libtool:22
+USE_AUTOTOOLS=	libltdl libtool
 USE_GMAKE=	yes
 MAKE_JOBS_UNSAFE=yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

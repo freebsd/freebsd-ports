@@ -15,7 +15,7 @@ MASTER_SITES=	http://yacas.sourceforge.net/backups/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Yet Another Computer Algebra System
 
-USE_AUTOTOOLS=	libtool:22
+USE_AUTOTOOLS=	libtool
 USE_PERL5_BUILD=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes

@@ -14,7 +14,7 @@ MASTER_SITES=	SF
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A library required by kicq (not libicq)
 
-USE_AUTOTOOLS=	libtool:22
+USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes

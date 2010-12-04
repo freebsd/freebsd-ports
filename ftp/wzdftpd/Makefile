@@ -14,7 +14,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-sources/${PORTNAME}-0.8
 MAINTAINER=	novel@FreeBSD.org
 COMMENT=	Modular FTP server configurable online using SITE commands
 
-USE_AUTOTOOLS=	libtool:22
+USE_AUTOTOOLS=	libtool
 USE_RC_SUBR=	wzdftpd.sh
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes

@@ -17,7 +17,7 @@ COMMENT=	Toolkit for converting data between 8-bit legacy encodings and Unicode
 
 LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2
 
-USE_AUTOTOOLS=	libtool:22
+USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"

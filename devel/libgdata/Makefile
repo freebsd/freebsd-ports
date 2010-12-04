@@ -22,7 +22,7 @@ USE_LDCONFIG=	yes
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
 MAKE_JOBS_SAFE=	yes
-USE_AUTOTOOLS=	libtool:22
+USE_AUTOTOOLS=	libtool
 USE_GNOME=	gnomehack intltool ltverhack glib20
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include " \
 		LDFLAGS="-L${LOCALBASE}/lib"

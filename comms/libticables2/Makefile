@@ -13,7 +13,7 @@ MASTER_SITES=	http://tijl.fastmail.fm/mirror/
 MAINTAINER=	tijl@coosemans.org
 COMMENT=	TI calculator link cables library
 
-USE_AUTOTOOLS=	libtool:22
+USE_AUTOTOOLS=	libtool
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_GNOME=	glib20 gnomehack pkgconfig

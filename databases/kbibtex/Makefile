@@ -18,7 +18,7 @@ LIB_DEPENDS=	yaz.4:${PORTSDIR}/net/yaz
 USE_BZIP2=	yes
 USE_KDELIBS_VER=3
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	libtool:22
+USE_AUTOTOOLS=	libtool
 
 MAN1=		kbibtex.1
 

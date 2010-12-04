@@ -27,7 +27,7 @@ PKGINSTALL=	${WRKDIR}/pkg-install
 OPTIONS+=	GMETAD "include gmetad" on
 
 USE_PYTHON=	yes
-USE_AUTOTOOLS=	libtool:22
+USE_AUTOTOOLS=	libtool
 LIBTOOLFILES=	configure libmetrics/configure
 
 GNU_CONFIGURE=	yes

@@ -29,7 +29,7 @@ USE_GNOME=	gnomeprefix gnomehack intlhack nautilus2 ltverhack \
 		desktopfileutils ltasneededhack eel2 libgnomeui
 USE_CDRTOOLS=	yes
 INSTALLS_ICONS=	yes
-USE_AUTOTOOLS=	libtool:22
+USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"

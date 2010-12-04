@@ -16,7 +16,7 @@ COMMENT=	An HTTP and WebDAV client library for Unix systems
 
 CONFLICTS=	neon2[6|8]-[0-9]*
 
-USE_AUTOTOOLS=	libtool:22
+USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
 
 USE_GNOME=	gnomehack ltverhack

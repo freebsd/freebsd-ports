@@ -14,7 +14,7 @@ DISTNAME=	${PORTNAME}-C++-${PORTVERSION:S/.r/rc/}
 MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	A C++ reference implementation of the Atlas protocol
 
-USE_AUTOTOOLS=	libtool:22
+USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	YES
 USE_BZIP2=	YES
 USE_GNOME=	gnomehack

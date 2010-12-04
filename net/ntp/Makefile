@@ -20,7 +20,7 @@ COMMENT=	The Network Time Protocol Distribution
 LATEST_LINK=	${PORTNAME}
 
 GNU_CONFIGURE=	yes
-USE_AUTOTOOLS=	automake:111 libtool:22
+USE_AUTOTOOLS=	automake libtool
 
 MAN1=		sntp.1 \
 		ntpd.1 \

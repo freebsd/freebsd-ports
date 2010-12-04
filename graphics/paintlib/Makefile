@@ -24,7 +24,7 @@ DEPRECATED=	does not compile with new tiff and no more maintained upstream
 EXPIRATION_DATE=	2010-12-30
 BROKEN=		does not compile with new tiff
 
-USE_AUTOTOOLS=	libtool:22
+USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-SDL --disable-dfb

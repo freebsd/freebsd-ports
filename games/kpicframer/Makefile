@@ -21,7 +21,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 USE_BZIP2=		yes
 USE_KDELIBS_VER=	3
-USE_AUTOTOOLS=		libtool:22
+USE_AUTOTOOLS=		libtool
 USE_GMAKE=		yes
 
 pre-build:

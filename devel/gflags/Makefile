@@ -14,7 +14,7 @@ MAINTAINER=	leeym@FreeBSD.org
 COMMENT=	Commandline flags module for C++
 
 PROJECTHOST=	google-gflags
-USE_AUTOTOOLS=	libtool:22
+USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 

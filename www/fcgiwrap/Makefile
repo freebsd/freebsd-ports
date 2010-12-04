@@ -21,7 +21,7 @@ LICENSE=	MIT
 
 USE_RC_SUBR=	fcgiwrap
 
-USE_AUTOTOOLS=	autoconf:268:env autoheader:268
+USE_AUTOTOOLS=	autoconf autoheader
 
 CFLAGS+=	-I${LOCALBASE}/include -L${LOCALBASE}/lib
 GNU_CONFIGURE=	yes

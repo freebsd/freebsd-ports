@@ -20,7 +20,7 @@ LIB_DEPENDS=	idn.16:${PORTSDIR}/dns/libidn \
 		gcrypt.17:${PORTSDIR}/security/libgcrypt \
 		gnutls.40:${PORTSDIR}/security/gnutls
 
-USE_AUTOTOOLS=	libtool:22
+USE_AUTOTOOLS=	libtool
 USE_PERL5_BUILD=	yes
 USE_GNOME=	gnomehack gnometarget pkgconfig
 USE_ICONV=	yes

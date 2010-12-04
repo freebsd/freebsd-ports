@@ -15,7 +15,7 @@ MAINTAINER=	otsuji@users.sourceforge.jp
 COMMENT=	Emacs Lisp for taiyaki-elisp, especially for the prime
 
 GNU_CONFIGURE=		yes
-USE_AUTOTOOLS=	automake:111 autoconf:268
+USE_AUTOTOOLS=	automake autoconf
 AUTOMAKE_ARGS=		-af
 
 pre-configure:

@@ -16,7 +16,7 @@ COMMENT=	A embedded SSL C-Library
 LICENSE=	GPLv2
 
 USE_ZIP=	yes
-USE_AUTOTOOLS=	libtool:22
+USE_AUTOTOOLS=	libtool
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-dependency-tracking
 CONFIGURE_ARGS+=	--enable-shared --enable-static

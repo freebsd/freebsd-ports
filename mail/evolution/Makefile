@@ -27,7 +27,7 @@ USE_GETTEXT=	yes
 USE_GNOME=	gnomeprefix gnomehack intlhack evolutiondataserver gtkhtml3 \
 		desktopfileutils gnomedocutils ltasneededhack gnomedesktop
 GNOME_DESKTOP_VERSION=2
-USE_AUTOTOOLS=	libtool:22
+USE_AUTOTOOLS=	libtool
 USE_GSTREAMER=	yes
 INSTALLS_OMF=	yes
 INSTALLS_ICONS=	yes

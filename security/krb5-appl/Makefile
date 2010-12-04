@@ -30,7 +30,7 @@ WITH_OPENSSL_PORT=	yes
 USE_GMAKE=		yes
 USE_PERL5_BUILD=	yes
 USE_LDCONFIG=		yes
-USE_AUTOTOOLS=		libtool:22
+USE_AUTOTOOLS=		libtool
 CONFIGURE_ARGS?=	--enable-shared --with-krb5=${PREFIX}/bin/krb5-config
 CONFIGURE_ENV=		INSTALL="${INSTALL}" YACC=/usr/bin/yacc \
 			CFLAGS="${CFLAGS}"

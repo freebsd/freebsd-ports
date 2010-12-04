@@ -16,7 +16,7 @@ COMMENT=	A KDE client for the popular online journal site LiveJournal
 
 USE_KDELIBS_VER=	3
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	libtool:22
+USE_AUTOTOOLS=	libtool
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-O2||g ; \

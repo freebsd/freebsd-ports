@@ -20,7 +20,7 @@ LIB_DEPENDS=	sndfile.1:${PORTSDIR}/audio/libsndfile \
 		ungif.5:${PORTSDIR}/graphics/libungif \
 		png.6:${PORTSDIR}/graphics/png
 
-USE_AUTOTOOLS=	libtool:22
+USE_AUTOTOOLS=	libtool
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	--with-mpeg2enc

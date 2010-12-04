@@ -17,7 +17,7 @@ USE_XORG=	x11 xmu
 USE_GNOME=	intltool
 USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes
-USE_AUTOTOOLS=	automake:111:env
+USE_AUTOTOOLS=	automake:env
 CONFIGURE_ARGS+=--prefix=${LOCALBASE} --sysconfdir=${LOCALBASE}/etc
 USE_GMAKE=	yes
 

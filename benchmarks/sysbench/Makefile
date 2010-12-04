@@ -13,7 +13,7 @@ MASTER_SITES=	SF
 MAINTAINER=	kris@FreeBSD.org
 COMMENT=	A modular, cross-platform and multi-threaded benchmark tool
 
-USE_AUTOTOOLS=	libtool:22
+USE_AUTOTOOLS=	libtool
 
 OPTIONS=	LARGEFILE "Enable Largefile support" on \
 		MYSQL "Enable MySQL support" on \

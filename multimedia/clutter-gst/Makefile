@@ -17,7 +17,7 @@ LIB_DEPENDS=	clutter-glx-1.0:${PORTSDIR}/graphics/clutter
 
 USE_GMAKE=	yes
 USE_BZIP2=	yes
-USE_AUTOTOOLS=	libtool:22
+USE_AUTOTOOLS=	libtool
 USE_GNOME=	gnomehack ltverhack gnomeprefix
 USE_GSTREAMER=	yes
 USE_XORG=	xp x11

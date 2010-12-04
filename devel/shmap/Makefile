@@ -17,7 +17,7 @@ COMMENT=	Shared-memory-based hashmaps
 
 LIB_DEPENDS=	mm.14:${PORTSDIR}/devel/mm
 
-USE_AUTOTOOLS=	libtool:22
+USE_AUTOTOOLS=	libtool
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"

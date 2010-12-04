@@ -16,7 +16,7 @@ COMMENT=	File server for Mac OS X
 
 LIB_DEPENDS=	gcrypt:${PORTSDIR}/security/libgcrypt
 
-USE_AUTOTOOLS=	libtool:22
+USE_AUTOTOOLS=	libtool
 USE_BDB=	46+
 USE_BZIP2=	yes
 USE_ICONV=	yes

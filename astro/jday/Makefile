@@ -12,7 +12,7 @@ MASTER_SITES=	SF
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Astronomical julian date calculator
 
-USE_AUTOTOOLS=	libtool:22
+USE_AUTOTOOLS=	libtool
 USE_GNOME=	gnomehack
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes

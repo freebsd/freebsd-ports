@@ -16,7 +16,7 @@ MAINTAINER=	lme@FreeBSD.org
 COMMENT=	C++ stream output interface for creating Postscript documents
 
 USE_GNOME=	pango pkgconfig
-USE_AUTOTOOLS=	libltdl:22
+USE_AUTOTOOLS=	libltdl
 PKG_CONFIG_PATH=	${PREFIX}/libdata/pkgconfig
 CONFIGURE_ENV+=	PKG_CONFIG_PATH=${PKG_CONFIG_PATH}
 

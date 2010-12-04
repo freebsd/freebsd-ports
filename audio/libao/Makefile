@@ -13,7 +13,7 @@ MASTER_SITES=	http://downloads.xiph.org/releases/ao/
 MAINTAINER=	naddy@FreeBSD.org
 COMMENT=	Portable audio output library
 
-USE_AUTOTOOLS=	libtool:22
+USE_AUTOTOOLS=	libtool
 WANT_GNOME=	yes
 USE_GNOME=	gnomehack pkgconfig
 GNU_CONFIGURE=	yes

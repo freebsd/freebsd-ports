@@ -13,7 +13,7 @@ MASTER_SITES=	SF/netdude/${PORTNAME}/${PORTVERSION}
 MAINTAINER=	brenton.chang@gmail.com
 COMMENT=	A libpcap wrapper library
 
-USE_AUTOTOOLS=	libtool:22
+USE_AUTOTOOLS=	libtool
 CONFIGURE_ARGS=	--disable-gtk-doc --with-html-dir=${DOCSDIR}
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes

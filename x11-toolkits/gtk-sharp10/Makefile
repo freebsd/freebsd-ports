@@ -26,7 +26,7 @@ USE_PERL5_RUN=	yes
 USE_GNOME=	gnomehack gtkhtml3 vte librsvg2 libgnomecanvas \
 		libgnomeprintui libglade2 libgnomeui
 
-USE_AUTOTOOLS=	libtool:22
+USE_AUTOTOOLS=	libtool
 
 post-patch:
 	@${FIND} ${WRKSRC} -name '*.pl' | ${XARGS} ${REINPLACE_CMD} -e \

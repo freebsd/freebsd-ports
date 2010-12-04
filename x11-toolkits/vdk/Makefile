@@ -15,7 +15,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C++ wrapper for GTK+ toolkit
 
 USE_GNOME=	gnomehack gtk20
-USE_AUTOTOOLS=	libtool:22
+USE_AUTOTOOLS=	libtool
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--enable-opt=no --enable-doc-html=no --enable-testvdk=no
 USE_LDCONFIG=	yes

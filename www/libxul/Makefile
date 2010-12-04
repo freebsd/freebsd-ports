@@ -20,7 +20,7 @@ CONFLICTS=	mozilla-[0-9]*
 GECKO_PLIST_PRE_DIRS=	lib/${MOZILLA}/bin lib/${MOZILLA}/idl \
 			lib/${MOZILLA}/include lib/${MOZILLA}/lib
 
-USE_AUTOTOOLS=	autoconf:213
+USE_AUTOTOOLS=	autoconf213
 WANT_GNOME=	yes
 WANT_PERL=	yes
 ALL_TARGET=	default

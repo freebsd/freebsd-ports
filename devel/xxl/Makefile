@@ -14,7 +14,7 @@ MASTER_SITES=	http://www.zork.org/software/
 MAINTAINER=	stas@FreeBSD.org
 COMMENT=	C/C++ library for exception handling and asset management
 
-USE_AUTOTOOLS=	libtool:22
+USE_AUTOTOOLS=	libtool
 GNU_CONFIGURE=	yes
 USE_GNOME=	gnometarget
 USE_LDCONFIG=	yes

@@ -20,7 +20,7 @@ LIB_DEPENDS=	dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib \
 		sqlite3.8:${PORTSDIR}/databases/sqlite3
 
 USE_BZIP2=	yes
-USE_AUTOTOOLS=	libtool:22
+USE_AUTOTOOLS=	libtool
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 USE_GNOME=	gnomehack pkgconfig glib20 intltool gnomedocutils ltverhack

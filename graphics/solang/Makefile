@@ -31,7 +31,7 @@ LIB_DEPENDS=	gegl-0.1:${PORTSDIR}/graphics/gegl \
 
 BROKEN=		bad plist
 
-USE_AUTOTOOLS=	autoconf:268
+USE_AUTOTOOLS=	autoconf
 USE_GMAKE=	yes
 USE_GNOME=	libgda4 intltool
 INSTALLS_ICONS=	yes

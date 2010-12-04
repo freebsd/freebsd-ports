@@ -13,7 +13,7 @@ MASTER_SITES=	http://swish-e.org/distribution/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple web indexing for humans - enhanced
 
-USE_AUTOTOOLS=	libtool:22
+USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
 USE_GNOME=	libxml2
 USE_GMAKE=	yes

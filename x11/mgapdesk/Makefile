@@ -20,7 +20,7 @@ IGNORE=		needs an old XFree86/X.org header file to build
 
 USE_GNOME=	gtk12
 USE_GMAKE=	YES
-USE_AUTOTOOLS=	autoconf:213
+USE_AUTOTOOLS=	autoconf213
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 

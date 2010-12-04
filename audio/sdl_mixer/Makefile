@@ -15,7 +15,7 @@ DISTNAME=	SDL_mixer-${PORTVERSION}
 MAINTAINER=	mva@FreeBSD.org
 COMMENT=	A sample multi-channel audio mixer library
 
-USE_AUTOTOOLS=	libtool:22
+USE_AUTOTOOLS=	libtool
 USE_SDL=	sdl
 USE_GNOME=	pkgconfig gnomehack
 USE_GMAKE=	yes

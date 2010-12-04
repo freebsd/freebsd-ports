@@ -16,7 +16,7 @@ MAINTAINER=	vlm@lionet.info
 COMMENT=	Handles CGI forms, MIME, templates, date conversions, etc
 
 USE_LDCONFIG=	yes
-USE_AUTOTOOLS=	libtool:22
+USE_AUTOTOOLS=	libtool
 CONFIGURE_ARGS=	--program-prefix=""
 
 MAN3=	\

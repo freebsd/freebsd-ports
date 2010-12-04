@@ -15,7 +15,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An open source Remote Desktop Protocol (RDP) server
 
 USE_XORG=	x11 xfixes
-USE_AUTOTOOLS=	autoconf:268:env automake:111:env libtool:22
+USE_AUTOTOOLS=	autoconf:env automake:env libtool
 GNU_CONFIGURE=	yes
 USE_RC_SUBR=	xrdp
 

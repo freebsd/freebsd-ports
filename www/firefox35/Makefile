@@ -18,7 +18,7 @@ COMMENT=	Web browser based on the browser portion of Mozilla
 
 BUILD_DEPENDS=	nspr>=4.8.6:${PORTSDIR}/devel/nspr
 
-USE_AUTOTOOLS=	autoconf:213:run
+USE_AUTOTOOLS=	autoconf213:env
 LATEST_LINK=	firefox35
 USE_GECKO=	gecko
 MOZ_PKGCONFIG_FILES=	# empty
@@ -81,7 +81,6 @@ LIB_DEPENDS+=	dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib
 .endif
 
 post-extract::
-	@(cd ${WRKSRC} && ${AUTOCONF})
 	@${SED} -e 's|@FIREFOX_ICON@|${FIREFOX_ICON}|' -e 's|@MOZILLA@|${MOZILLA}|' \
 		-e 's|@MOZILLA_NAME@|${MOZILLA_NAME}|' \
 		<${FILESDIR}/firefox.desktop.in >${WRKDIR}/${MOZILLA}.desktop
@@ -99,6 +98,9 @@ post-patch:
 		s|echo aout|echo elf|g ; \
 		s|/usr/X11R6|${LOCALBASE}|g' \
 		${WRKSRC}/js/src/configure
+
+pre-configure:
+	@(cd ${WRKSRC} && ${AUTOCONF})
 
 port-pre-install:
 #	${SED} -e 's|1.9a7|0|' ${WRKSRC}/dist/bin/application.ini ${FAKEDIR}/lib

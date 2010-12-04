@@ -16,7 +16,7 @@ COMMENT=	Graphics library that outputs text instead of pixels
 
 USE_GNOME=	gnomehack gnometarget ltverhack pkgconfig
 USE_LDCONFIG=	yes
-USE_AUTOTOOLS=	libtool:22
+USE_AUTOTOOLS=	libtool
 CONFIGURE_ARGS=	--disable-doc \
 		--enable-ncurses \
 		--disable-java \

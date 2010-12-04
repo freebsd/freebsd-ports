@@ -20,7 +20,7 @@ LIB_DEPENDS=	fuse.2:${PORTSDIR}/sysutils/fusefs-libs
 RUN_DEPENDS=	${LOCALBASE}/modules/fuse.ko:${PORTSDIR}/sysutils/fusefs-kmod
 
 USE_LDCONFIG=	yes
-USE_AUTOTOOLS=	libtool:22
+USE_AUTOTOOLS=	libtool
 USE_ICONV=	yes
 CONFIGURE_ARGS=	--exec-prefix=${PREFIX} --disable-mount-helper \
 		--disable-mtab --with-fuse=external

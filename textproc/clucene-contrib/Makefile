@@ -20,7 +20,7 @@ BUILD_DEPENDS=	${LOCALBASE}/include/iconv.h:${PORTSDIR}/converters/libiconv
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
 USE_LDCONFIG=	yes
-USE_AUTOTOOLS=	libtool:22
+USE_AUTOTOOLS=	libtool
 USE_DOS2UNIX=	yes
 
 .include <bsd.port.pre.mk>

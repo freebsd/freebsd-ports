@@ -19,7 +19,7 @@ LDFLAGS=	-L${LOCALBASE}/lib
 USE_XZ=		yes
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
-USE_AUTOTOOLS=	libtool:22
+USE_AUTOTOOLS=	libtool
 
 PORTDOCS=	libHX_Documentation.pdf
 

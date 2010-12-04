@@ -15,7 +15,7 @@ COMMENT=	Decompress data compressed with PKWARE Data Compression Library
 
 MAKE_JOBS_SAFE=	yes
 
-USE_AUTOTOOLS=	libtool:22
+USE_AUTOTOOLS=	libtool
 GNU_CONFIGURE=	yes
 USE_GNOME=	gnomehack
 USE_LDCONFIG=	yes

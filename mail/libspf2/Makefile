@@ -17,7 +17,7 @@ COMMENT=	Sender Rewriting Scheme 2 C Implementation
 
 CONFLICTS=	${PORTNAME}-1.0.*
 
-USE_AUTOTOOLS=	libtool:22
+USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 

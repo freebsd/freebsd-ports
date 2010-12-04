@@ -14,7 +14,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-codec/Dirac-${PORTVERSION}
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT?=	Open source video codec from the BBC
 
-USE_AUTOTOOLS=	libtool:22
+USE_AUTOTOOLS=	libtool
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 MAKE_JOBS_SAFE=	yes

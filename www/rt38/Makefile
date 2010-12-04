@@ -54,7 +54,7 @@ BUILD_DEPENDS+=	${CORE_DEPS} \
 RUN_DEPENDS+=	${BUILD_DEPENDS}
 
 USE_PERL5=	5.8.3+
-USE_AUTOTOOLS=	autoconf:268
+USE_AUTOTOOLS=	autoconf
 
 .include <bsd.port.pre.mk>
 .if defined(WITH_DEV)

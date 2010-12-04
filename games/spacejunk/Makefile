@@ -15,7 +15,7 @@ MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	A video game about traveling in 2D planetary systems
 
 USE_SDL=	sdl mixer image
-USE_AUTOTOOLS=	automake:111
+USE_AUTOTOOLS=	automake
 AUTOMAKE_ARGS=	-i --add-missing
 GNU_CONFIGURE=	yes
 MAKE_JOBS_SAFE=	yes

@@ -14,7 +14,7 @@ MAINTAINER=	kmoore@FreeBSD.org
 COMMENT=	The menu-cache portion of LXDE
 
 USE_GNOME=	gnomehack gtk20 pkgconfig
-USE_AUTOTOOLS=	libtool:22
+USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
 USE_GMAKE=	yes
 USE_FAM=	yes

@@ -45,7 +45,7 @@ OPTIONS=	ACQUIREIMAGES "scanner/screenshot plugin" on \
 PORTSCOUT=	limit:^0\.1\.
 
 USE_BZIP2=	yes
-USE_AUTOTOOLS=	libtool:22
+USE_AUTOTOOLS=	libtool
 USE_GMAKE=	yes
 USE_KDELIBS_VER=3
 USE_GETTEXT=	yes

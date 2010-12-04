@@ -128,7 +128,7 @@ CONFLICTS=		${PKGNAMEPREFIX}${PORTNAME}-sasl-client-2.*
 
 .endif
 
-USE_AUTOTOOLS=		libtool:22
+USE_AUTOTOOLS=		libtool
 
 DESCR=			${PKGDIR}/pkg-descr${OPENLDAP_PKGFILESUFX}
 PLIST=			${PKGDIR}/pkg-plist${OPENLDAP_PKGFILESUFX}
@@ -184,7 +184,7 @@ USE_RC_SUBR=		slapd.sh
 EXTRA_PATCHES+=		${FILESDIR}/extrapatch-Makefile.in
 
 .if defined(WITH_MODULES) || !defined(WITHOUT_DYNAMIC_BACKENDS) || defined(WITH_SLAPI)
-USE_AUTOTOOLS+=		libltdl:22
+USE_AUTOTOOLS+=		libltdl
 CONFIGURE_ARGS+=	--enable-modules
 PLIST_SUB+=		MODULES=""
 .else

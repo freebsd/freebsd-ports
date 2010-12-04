@@ -32,7 +32,7 @@ USE_BISON=	build
 USE_PYTHON=	yes
 INSTALLS_OMF=	yes
 USE_LDCONFIG=	yes
-USE_AUTOTOOLS=	libtool:22
+USE_AUTOTOOLS=	libtool
 CONFIGURE_ARGS=	--with-gnome-distributor="FreeBSD GNOME Project"
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"

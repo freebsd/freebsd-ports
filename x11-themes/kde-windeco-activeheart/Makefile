@@ -19,7 +19,7 @@ COMMENT=	Nice KDE window decoration with thin borders
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_KDEBASE_VER=3
-USE_AUTOTOOLS=	libtool:22
+USE_AUTOTOOLS=	libtool
 WRKSRC=		${WRKDIR}/kwin-${PORTNAME}-${PORTVERSION}
 
 .include <bsd.port.mk>

@@ -28,7 +28,7 @@ LICENSE=	GPLv2
 ONLY_FOR_ARCHS=	i386 amd64
 
 USE_BZIP2=	yes
-USE_AUTOTOOLS=	autoconf:268:env aclocal:111:env automake:111:env libtool:22
+USE_AUTOTOOLS=	autoconf:env aclocal:env automake:env libtool
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include

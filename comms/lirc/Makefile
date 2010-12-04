@@ -14,7 +14,7 @@ MASTER_SITES=	SF/${PORTNAME}/LIRC/${PORTVERSION}
 MAINTAINER=	doconnor@gsoft.com.au
 COMMENT=	Linux Infared Remote Control
 
-USE_AUTOTOOLS=	libtool:22
+USE_AUTOTOOLS=	libtool
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_XORG=	x11

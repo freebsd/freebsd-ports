@@ -17,7 +17,7 @@ COMMENT=	Default plugins for lineakd
 
 LIB_DEPENDS=	lineak.8:${PORTSDIR}/sysutils/lineakd
 
-USE_AUTOTOOLS=	libtool:22
+USE_AUTOTOOLS=	libtool
 GNU_CONFIGURE=	yes
 USE_XORG=       x11 xext xt xtst xfixes
 USE_GMAKE=	yes

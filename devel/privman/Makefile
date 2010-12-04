@@ -14,7 +14,7 @@ MASTER_SITES=	http://www.isso.sparta.com/opensource/privman/downloads/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library that makes it easy for programs to use privilege separation
 
-USE_AUTOTOOLS=	libtool:22
+USE_AUTOTOOLS=	libtool
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 

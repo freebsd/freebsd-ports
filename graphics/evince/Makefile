@@ -23,7 +23,7 @@ RUN_DEPENDS=	${LOCALBASE}/share/icons/gnome/index.theme:${PORTSDIR}/misc/gnome-i
 
 USE_LDCONFIG=	yes
 USE_BZIP2=	yes
-USE_AUTOTOOLS=	libtool:22
+USE_AUTOTOOLS=	libtool
 INSTALLS_ICONS=	yes
 USE_GETTEXT=	yes
 USE_GMAKE=	yes

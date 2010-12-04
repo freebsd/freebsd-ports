@@ -14,7 +14,7 @@ MASTER_SITES=	SF
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Shows information about Java class, dependencies and more
 
-USE_AUTOTOOLS=	libtool:22
+USE_AUTOTOOLS=	libtool
 USE_GNOME=	pkgconfig gnomehack
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes

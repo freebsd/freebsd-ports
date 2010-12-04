@@ -17,7 +17,7 @@ LIB_DEPENDS=	startup-notification-1:${PORTSDIR}/x11/startup-notification \
 		menu-cache.1:${PORTSDIR}/x11/menu-cache
 
 USE_GNOME=	gnomehack gtk20 pkgconfig
-USE_AUTOTOOLS=	libtool:22
+USE_AUTOTOOLS=	libtool
 USE_GMAKE=	yes
 USE_FAM=	yes
 USE_LDCONFIG=	yes

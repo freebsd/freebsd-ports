@@ -17,7 +17,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:sf,gnome
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Callback Framework for C++
 
-USE_AUTOTOOLS=	libtool:22
+USE_AUTOTOOLS=	libtool
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 USE_GNOME=	gnomehack

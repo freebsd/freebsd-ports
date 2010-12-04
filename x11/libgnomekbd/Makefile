@@ -19,7 +19,7 @@ LIB_DEPENDS=	xklavier.12:${PORTSDIR}/x11/libxklavier
 
 USE_BZIP2=	yes
 USE_GNOME=	gnomeprefix gnomehack ltverhack gconf2
-USE_AUTOTOOLS=	libtool:22
+USE_AUTOTOOLS=	libtool
 INSTALLS_ICONS=	yes
 USE_GETTEXT=	yes
 USE_LDCONFIG=	yes

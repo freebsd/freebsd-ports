@@ -27,7 +27,7 @@ GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 USE_PYTHON=	yes
-USE_AUTOTOOLS=	libtool:22
+USE_AUTOTOOLS=	libtool
 USE_GNOME=	gnomehack pkgconfig glib20 ltverhack
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"

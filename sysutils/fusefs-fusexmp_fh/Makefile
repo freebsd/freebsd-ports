@@ -18,7 +18,7 @@ COMMENT=	Dummy driver from fusefs-libs example
 LIB_DEPENDS=	fuse.2:${PORTSDIR}/sysutils/fusefs-libs
 RUN_DEPENDS=	${LOCALBASE}/modules/fuse.ko:${PORTSDIR}/sysutils/fusefs-kmod
 
-USE_AUTOTOOLS=	libtool:22
+USE_AUTOTOOLS=	libtool
 USE_GNOME=	pkgconfig
 USE_LDCONFIG=	yes
 USE_ICONV=	yes

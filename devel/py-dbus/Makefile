@@ -23,7 +23,7 @@ USE_GETTEXT=	yes
 USE_GNOME=	gnomehack gnometarget
 USE_PYTHON=	yes
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	libtool:22
+USE_AUTOTOOLS=	libtool
 CONFIGURE_ENV=	CPPFLAGS="-I${PYTHON_INCLUDEDIR}"
 CONFIGURE_ARGS=	--docdir=${DOCSDIR} \
 		--disable-api-docs

@@ -20,9 +20,9 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}
 USE_XZ=		yes
 USE_PERL5=	yes
 USE_GNOME=	gnomehack gnometarget pkgconfig
-USE_AUTOTOOLS=	libltdl:22
+USE_AUTOTOOLS=	libltdl
 # For some reason, using our libtool breaks the build into pieces:
-#USE_AUTOTOOLS+=	libtool:22
+#USE_AUTOTOOLS+=	libtool
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--enable-shared --without-dps

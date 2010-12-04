@@ -26,7 +26,7 @@ USE_GNOME=	gnomehack glib20 ltverhack
 USE_PYTHON=	yes
 USE_BISON=	both
 USE_GETTEXT=	yes
-USE_AUTOTOOLS=	libtool:22
+USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
 MAKE_JOBS_UNSAFE=yes
 

@@ -28,7 +28,7 @@ USE_BZIP2=	yes
 USE_XORG=	xpm
 USE_GMAKE=	yes
 USE_GETTEXT=	build
-USE_AUTOTOOLS=  libtool:22
+USE_AUTOTOOLS=  libtool
 
 .include <${.CURDIR}/../../x11/kde3/Makefile.kde>
 .include <bsd.port.mk>

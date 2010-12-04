@@ -32,7 +32,7 @@ USE_GNOME=	gnomeprefix gnomehack intlhack ltverhack ltasneededhack gconf2 \
 		libxml2
 GNOME_DESKTOP_VERSION=2
 USE_OPENLDAP=	yes
-USE_AUTOTOOLS=	libtool:22
+USE_AUTOTOOLS=	libtool
 USE_BDB=	41+
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--enable-static \

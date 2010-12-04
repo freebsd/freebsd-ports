@@ -25,15 +25,14 @@ LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre \
 		gdl-1.3:${PORTSDIR}/x11-toolkits/gdl
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash \
 		autogen:${PORTSDIR}/devel/autogen \
+		${LOCALBASE}/share/autotools:${PORTSDIR}/devel/autotools \
 		p5-Locale-gettext>=1.05:${PORTSDIR}/devel/p5-Locale-gettext \
-		libtool:${PORTSDIR}/devel/libtool22 \
 		${LOCALBASE}/libdata/pkgconfig/gnome-icon-theme.pc:${PORTSDIR}/misc/gnome-icon-theme \
 		exctags:${PORTSDIR}/devel/ctags \
 		gdb66:${PORTSDIR}/devel/gdb66 \
 		yelp:${PORTSDIR}/x11/yelp
 
 USE_BZIP2=	yes
-USE_AUTOTOOLS=	autotools:run
 USE_GMAKE=	yes
 USE_GETTEXT=	yes
 INSTALLS_OMF=	yes

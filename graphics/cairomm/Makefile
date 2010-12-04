@@ -19,7 +19,7 @@ LIB_DEPENDS=	xml\\+\\+-2.6:${PORTSDIR}/textproc/libxml++26 \
 
 LICENSE=	LGPL20
 LICENSE_FILE=	${WRKSRC}/COPYING
-USE_AUTOTOOLS=	libtool:22
+USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomehack gnometarget ltverhack

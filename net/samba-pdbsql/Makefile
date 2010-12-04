@@ -18,7 +18,7 @@ COMMENT=		Multiplexor, MySQL and PostgeSQL passdb backends for Samba3
 USE_GMAKE=		yes
 GNU_CONFIGURE=		yes
 # Add a build dependency for Samba port
-USE_AUTOTOOLS=		autoconf:268 autoheader:268
+USE_AUTOTOOLS=		autoconf autoheader
 
 SAMBA_PORT?=		net/samba34
 

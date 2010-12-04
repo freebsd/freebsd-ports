@@ -27,7 +27,7 @@ OPTIONS=	FFMPEG "FFMPEG decoder plugin" off \
 		RESAMPLER "Resampler processing plugin" on \
 		XIPH "FLAC/Speex/Vorbis decoder plugin" on
 
-USE_AUTOTOOLS=	libltdl:22 libtool:22
+USE_AUTOTOOLS=	libltdl libtool
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}

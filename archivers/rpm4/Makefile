@@ -20,7 +20,7 @@ BUILD_DEPENDS=	${LOCALBASE}/bin/gsed:${PORTSDIR}/textproc/gsed
 
 OPTIONS=	PYTHON "Build Python rpm module" Off
 
-USE_AUTOTOOLS=	libtool:22
+USE_AUTOTOOLS=	libtool
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_LUA=	5.1+

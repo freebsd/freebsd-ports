@@ -51,7 +51,7 @@ CONFLICTS=	apache+mod_ssl-1.* apache+mod_ssl+ipv6-1.* apache+mod_ssl+modsnmp-1.*
 #	THREADS                 "Enable threads in apr"                 Off
 
 USE_ICONV=		yes
-USE_AUTOTOOLS=		autoconf:268 libtool:22
+USE_AUTOTOOLS=		autoconf libtool
 USE_PERL5=		yes
 USE_RC_SUBR=		apache2
 USE_APACHE=		common20

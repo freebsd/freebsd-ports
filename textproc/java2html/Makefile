@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	apps/www/converters
 MAINTAINER=		mkamm@gmx.net
 COMMENT=	Java sources to HTML converter
 
-USE_AUTOTOOLS=	autoconf:213
+USE_AUTOTOOLS=	autoconf213
 
 MAN1=			java2html.1
 

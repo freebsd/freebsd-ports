@@ -17,7 +17,7 @@ COMMENT=	Light-weight GNOME based financial management program
 USE_XORG=	xpm sm
 USE_GNOME=	gnomehack gnomelibs gnomeprefix
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	libtool:22
+USE_AUTOTOOLS=	libtool
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"

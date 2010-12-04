@@ -16,6 +16,6 @@ MAINTAINER=	ale@FreeBSD.org
 COMMENT=	A free DICOM viewer for KDE
 
 USE_KDELIBS_VER=3
-USE_AUTOTOOLS=	libtool:22
+USE_AUTOTOOLS=	libtool
 
 .include <bsd.port.mk>

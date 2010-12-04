@@ -24,7 +24,7 @@ MAKE_JOBS_SAFE=	yes
 CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib" \
 		CXXFLAGS="-I${LOCALBASE}/include" \
 		PERL=${PERL}
-USE_AUTOTOOLS=	aclocal:14 automake:14 autoconf:213
+USE_AUTOTOOLS=	aclocal14 automake14 autoconf213
 
 USE_BDB=	yes
 CONFIGURE_ARGS=	--with-bdb-lib=-l${BDB_LIB_CXX_NAME} --with-bdb-incdir=${BDB_INCLUDE_DIR}

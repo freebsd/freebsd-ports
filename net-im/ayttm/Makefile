@@ -30,7 +30,7 @@ USE_XORG=	xpm xscrnsaver
 USE_GNOME=	gnometarget gtk20
 USE_OPENSSL=	yes
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	libltdl:22 libtool:22
+USE_AUTOTOOLS=	libltdl libtool
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--enable-oscar --disable-workwizu --enable-smtp --enable-lj
 

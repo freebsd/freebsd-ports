@@ -19,7 +19,7 @@ DISTNAME=	${PORTNAME}${PORTVERSION}
 MAINTAINER=	vd@FreeBSD.org
 COMMENT=	VIGRA stands for "Vision with Generic Algorithms"
 
-USE_AUTOTOOLS=	libtool:22
+USE_AUTOTOOLS=	libtool
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--docdir=${DOCSDIR}
 USE_GMAKE=	yes

@@ -18,7 +18,7 @@ COMMENT=	A low layer of SIP implementation
 CONFLICTS=	libosip2-2*
 
 USE_GNOME=	gnomehack gnometarget pkgconfig
-USE_AUTOTOOLS=	libtool:22
+USE_AUTOTOOLS=	libtool
 CONFIGURE_ARGS=	--disable-debug --disable-trace
 USE_LDCONFIG=	yes
 

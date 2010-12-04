@@ -18,7 +18,7 @@ PATCH_SITES=		http://www.qhull.org/download/
 PATCHFILES=		poly.c-qh_gethash.patch
 PATCH_DIST_STRIP=	-p2
 
-USE_AUTOTOOLS=	libtool:22
+USE_AUTOTOOLS=	libtool
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes

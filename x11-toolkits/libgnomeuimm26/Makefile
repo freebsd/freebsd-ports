@@ -25,7 +25,7 @@ BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4
 
 LATEST_LINK=	libgnomeuimm26
 
-USE_AUTOTOOLS=	libtool:22
+USE_AUTOTOOLS=	libtool
 USE_BZIP2=	yes
 USE_XORG=	x11
 USE_GMAKE=	yes

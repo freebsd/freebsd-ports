@@ -29,7 +29,7 @@ USE_GNOME=	gtk20
 USE_WX=		2.8+
 WX_CONF_ARGS=	absolute
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	libtool:22
+USE_AUTOTOOLS=	libtool
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--without-doc --disable-xyconvert
 USE_LDCONFIG=	yes

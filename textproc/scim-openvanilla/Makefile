@@ -21,7 +21,7 @@ BUILD_DEPENDS=	scim:${PORTSDIR}/textproc/scim	\
 RUN_DEPENDS=	scim:${PORTSDIR}/textproc/scim
 LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2
 
-USE_AUTOTOOLS=	libltdl:22
+USE_AUTOTOOLS=	libltdl
 WRKSRC=		${WRKDIR}/${DISTNAME}/Loaders/SCIM
 USE_GMAKE=	yes
 USE_GNOME=	pkgconfig

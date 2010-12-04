@@ -52,7 +52,7 @@ USE_RC_SUBR=	liquidsoap.sh
 USE_OCAML=	yes
 NO_OCAML_RUNDEPENDS=	yes
 
-USE_AUTOTOOLS=	autoconf:268:env automake:111:env
+USE_AUTOTOOLS=	autoconf:env automake:env
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 

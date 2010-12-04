@@ -14,7 +14,7 @@ MASTER_SITES=	http://lpg.ticalc.org/prj_tilp/download/ \
 MAINTAINER=	tijl@coosemans.org
 COMMENT=	TI calculator character set library
 
-USE_AUTOTOOLS=	libtool:22
+USE_AUTOTOOLS=	libtool
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_GNOME=	glib20 gnomehack pkgconfig

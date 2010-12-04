@@ -16,7 +16,7 @@ COMMENT=	C++ library to create, manipulate, and render SVG files
 LIB_DEPENDS+=	avformat.1:${PORTSDIR}/multimedia/ffmpeg
 
 USE_BZIP2=	yes
-USE_AUTOTOOLS=	automake:111
+USE_AUTOTOOLS=	automake
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--with-wx-config=${LOCALBASE}/bin/wxgtk2-2.8-config
@@ -25,7 +25,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 USE_GNOME=	libartlgpl2
 USE_GMAKE=	yes
 USE_WX=		2.8
-USE_AUTOTOOLS=	automake:111
+USE_AUTOTOOLS=	automake
 
 post-patch:
 	@cd ${WRKSRC} && \

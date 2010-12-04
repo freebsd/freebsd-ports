@@ -23,7 +23,7 @@ PM_BASE=	${SITE_PERL}
 USE_PERL5=	yes
 USE_ICONV=	yes
 USE_GETTEXT=	yes
-USE_AUTOTOOLS=	libtool:22
+USE_AUTOTOOLS=	libtool
 CONFIGURE_ARGS=	--with-perl5="${PERL}" \
 		--with-libintl-prefix=${LOCALBASE} \
 		--with-libiconv-prefix=${LOCALBASE}

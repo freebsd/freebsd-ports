@@ -23,7 +23,7 @@ COMMENT=	The Tk toolkit with a NeXTSTEP look and more
 LIB_DEPENDS=	tcl80jp.1:${PORTSDIR}/japanese/tcl80
 
 USE_XORG=	xpm
-USE_AUTOTOOLS=	autoconf:213
+USE_AUTOTOOLS=	autoconf213
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-gcc --enable-shared --enable-step \
 		--with-tcl=${PREFIX}/lib/tcl${TCLVERSION}jp \

@@ -20,7 +20,7 @@ LIB_DEPENDS=	sqlite3.8:${PORTSDIR}/databases/sqlite3 \
 
 USE_BZIP2=	yes
 USE_GNOME=	pkgconfig gtk20 gnomehack ltverhack:1
-USE_AUTOTOOLS=	libtool:22
+USE_AUTOTOOLS=	libtool
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes

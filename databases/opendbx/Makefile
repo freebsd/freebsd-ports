@@ -16,7 +16,7 @@ MAINTAINER=	tremere@cainites.net
 COMMENT=	A C library for accessing databases with a single API
 
 USE_GMAKE=	YES
-USE_AUTOTOOLS=	libtool:22
+USE_AUTOTOOLS=	libtool
 
 CPPFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
 LDFLAGS+=	${PTHREAD_LIBS} -L${WRKSRC}/lib -L${LOCALBASE}/lib

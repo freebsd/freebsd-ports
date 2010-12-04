@@ -14,7 +14,7 @@ MASTER_SITES=	SF \
 MAINTAINER=	netchild@FreeBSD.org
 COMMENT=	Fast MP3 encoder kit
 
-USE_AUTOTOOLS=	libtool:22
+USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes

@@ -19,7 +19,7 @@ USE_OPENAL=	al alut
 USE_GL=		glut
 USE_SDL=	sdl
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	libtool:22
+USE_AUTOTOOLS=	libtool
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	ac_cv_header_boost_test_unit_test_hpp=no \
 		ac_cv_lib_freeglut_glutGetModifiers=no

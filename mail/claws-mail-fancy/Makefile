@@ -22,7 +22,7 @@ RUN_DEPENDS=	claws-mail>=3.7.7:${PORTSDIR}/mail/claws-mail
 LICENSE=	GPLv3
 
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	autoconf:268
+USE_AUTOTOOLS=	autoconf
 USE_ICONV=	yes
 USE_GNOME=	gtk20
 MAKE_JOBS_SAFE=	yes

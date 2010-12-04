@@ -15,7 +15,7 @@ MASTER_SITES=	http://www.fishies.org.uk/ \
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Fly a little plane around and shoot things and drop bombs
 
-USE_AUTOTOOLS=	libtool:22
+USE_AUTOTOOLS=	libtool
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_SDL=	sdl

@@ -20,7 +20,7 @@ BROKEN=		Doesn't build with Glib-2.26
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	libtool:22
+USE_AUTOTOOLS=	libtool
 USE_QT_VER=	4
 QT_COMPONENTS=	corelib gui moc_build
 USE_GNOME=	gnomehack

@@ -32,7 +32,7 @@ PATCH_DIST_ARGS=-d ${TOPDIR} -E ${PATCH_DIST_STRIP}
 .else
 PATCH_DIST_ARGS=-d ${TOPDIR} --forward --quiet -E ${PATCH_DIST_STRIP}
 .endif
-USE_AUTOTOOLS=	autoconf:213
+USE_AUTOTOOLS=	autoconf213
 USE_XORG=	x11
 CONFIGURE_ARGS=	--enable-shared --with-tcl=${PREFIX}/lib/tcl${VERSION}jp \
 	--enable-xlibHack --enable-onTheSpot
