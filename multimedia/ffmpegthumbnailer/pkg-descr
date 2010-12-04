@@ -4,6 +4,6 @@ the video files, so supported videoformats depend on the configuration
 flags of ffmpeg.
 
 This thumbnailer was designed to be as fast and lightweight as possible.
-The only dependencies are ffmpeg and libpng.
+The only dependencies are ffmpeg, libjpeg and libpng.
 
 WWW: http://code.google.com/p/ffmpegthumbnailer/

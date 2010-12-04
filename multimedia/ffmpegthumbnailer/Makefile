@@ -5,10 +5,9 @@
 # $FreeBSD$
 
 PORTNAME=	ffmpegthumbnailer
-PORTVERSION=	2.0.2
-PORTREVISION=	1
+PORTVERSION=	2.0.4
 CATEGORIES=	multimedia graphics
-MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
+MASTER_SITES=	GOOGLE_CODE
 
 MAINTAINER=	dierk@blaxxtarz.de
 COMMENT=	Lightweight video thumbnailer that can be used by file managers
@@ -17,16 +16,18 @@ LIB_DEPENDS=	png:${PORTSDIR}/graphics/png \
 		swscale:${PORTSDIR}/multimedia/ffmpeg \
 		jpeg.11:${PORTSDIR}/graphics/jpeg
 
-USE_LDCONFIG=	yes
-
 CONFIGURE_ENV=	CPPFLAGS="${PTHREAD_CFLAGS} -I${LOCALBASE}/include" \
 		LDFLAGS="${PTHREAD_LIBS} -L${LOCALBASE}/lib"
-CONFIGURE_ARGS=	--with-pkgconfigdir=${LOCALBASE}/libdata/pkgconfig
+CONFIGURE_ARGS=	--with-pkgconfigdir=${PREFIX}/libdata/pkgconfig
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-USE_GNOME=	pkgconfig gnomehack
+USE_GNOME=	gnomehack pkgconfig
+USE_LDCONFIG=	yes
 
 MAN1=		ffmpegthumbnailer.1
+
+post-install:
+	cd ${WRKSRC}/ && ${SETENV} ${MAKE_ENV} ${MAKE} install-pkgconfigDATA
 
 .include <bsd.port.mk>
