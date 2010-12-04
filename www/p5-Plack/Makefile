@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Plack
-PORTVERSION=	0.9951
+PORTVERSION=	0.9952
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	../../authors/id/M/MI/MIYAGAWA
@@ -16,7 +16,7 @@ MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Perl extension of PSGI reference implementation and utilities
 
 RUN_DEPENDS=	\
-	p5-Devel-StackTrace>0:${PORTSDIR}/devel/p5-Devel-StackTrace \
+	p5-Devel-StackTrace>=1.23:${PORTSDIR}/devel/p5-Devel-StackTrace \
 	p5-Devel-StackTrace-AsHTML>=0.09:${PORTSDIR}/devel/p5-Devel-StackTrace-AsHTML \
 	p5-File-ShareDir>=1.00:${PORTSDIR}/devel/p5-File-ShareDir \
 	p5-Filesys-Notify-Simple>0:${PORTSDIR}/devel/p5-Filesys-Notify-Simple \
