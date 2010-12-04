@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Task-Plack
-PORTVERSION=	0.24
+PORTVERSION=	0.25
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -30,6 +30,7 @@ OPTIONS=FASTCGI	"FastCGI daemon and dispatcher" off \
 	CATALYST "Catalyst Engine" off \
 	SQUATTING "Squatting::On" off \
 	CGIAPP "CGI::Application::PSGI" off
+#OPTIONS:=${OPTIONS:C/off/on/g}
 
 .include <bsd.port.options.mk>
 
@@ -69,7 +70,9 @@ DEP+=	p5-POE-Component-Server-PSGI>=0.5:${PORTSDIR}/www/p5-POE-Component-Server-
 	p5-Plack-Handler-AnyEvent-ReverseHTTP>=0.04:${PORTSDIR}/www/p5-Plack-Handler-AnyEvent-ReverseHTTP \
 	p5-Plack-Handler-SCGI>=0.02:${PORTSDIR}/www/p5-Plack-Handler-SCGI \
 	p5-Plack-Handler-AnyEvent-SCGI>=0.02:${PORTSDIR}/www/p5-Plack-Handler-AnyEvent-SCGI \
-	p5-Plack-Handler-AnyEvent-HTTPD>=0.01:${PORTSDIR}/www/p5-Plack-Handler-AnyEvent-HTTPD
+	p5-Plack-Handler-AnyEvent-HTTPD>=0.01:${PORTSDIR}/www/p5-Plack-Handler-AnyEvent-HTTPD \
+	p5-Perlbal-Plugin-PSGI>=0.03:${PORTSDIR}/www/p5-Perlbal-Plugin-PSGI
+#	p5-Plack-Handler-Mongrel2>0:${PORTSDIR}/www/p5-Plack-Handler-Mongrel2
 .endif
 
 .if defined(WITH_MIDDLE)
@@ -85,11 +88,15 @@ DEP+=	p5-Plack-Middleware-Deflater>=0.03:${PORTSDIR}/www/p5-Plack-Middleware-Def
 
 .if defined(WITH_EXTRAMID)
 DEP+=	p5-Plack-Middleware-JSConcat>=0.29:${PORTSDIR}/www/p5-Plack-Middleware-JSConcat \
+	p5-Plack-Middleware-Throttle>=0.01:${PORTSDIR}/www/p5-Plack-Middleware-Throttle \
+	p5-Plack-Middleware-Status>=1.101150:${PORTSDIR}/www/p5-Plack-Middleware-Status \
+	p5-Plack-Middleware-AutoRefresh>=0.08:${PORTSDIR}/www/p5-Plack-Middleware-AutoRefresh \
 	p5-Plack-Middleware-File-Sass>=0.01:${PORTSDIR}/www/p5-Plack-Middleware-File-Sass
 .endif
 
 .if defined(WITH_TOOLS)
-DEP+=	p5-Test-WWW-Mechanize-PSGI>=0.35:${PORTSDIR}/devel/p5-Test-WWW-Mechanize-PSGI
+DEP+=	p5-Test-WWW-Mechanize-PSGI>=0.35:${PORTSDIR}/devel/p5-Test-WWW-Mechanize-PSGI \
+	p5-Flea>=0.02:${PORTSDIR}/www/p5-Flea
 .endif
 
 .if defined(WITH_CATALYST)
