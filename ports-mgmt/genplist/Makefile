@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	genplist
-PORTVERSION=	0.5
-PORTREVISION=	1
+PORTVERSION=	0.6
 CATEGORIES=	ports-mgmt
 MASTER_SITES=	http://personalpages.tds.net/~jwbacon/Ports/distfiles/ \
 		http://jbacon.dyndns.org/~bacon/Ports/distfiles/
@@ -24,8 +23,5 @@ MAN1=		genplist.1
 do-install:
 	@${INSTALL_SCRIPT} ${WRKSRC}/genplist ${PREFIX}/bin
 	@${INSTALL_MAN} ${WRKSRC}/genplist.1 ${PREFIX}/man/man1
-
-post-patch:
-	@${REINPLACE_CMD} 's|/etc/mtree|$${PORTSDIR=/usr/ports}/Templates|' ${WRKSRC}/genplist
 
 .include <bsd.port.mk>
