@@ -69,7 +69,6 @@
     SUBDIR += linux-f10-upx
     SUBDIR += linux-f8-ucl
     SUBDIR += linux-f8-upx
-    SUBDIR += linux-par2cmdline
     SUBDIR += linux-ucl
     SUBDIR += linux-upx
     SUBDIR += lzip

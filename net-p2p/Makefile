@@ -37,9 +37,6 @@
     SUBDIR += frostwire
     SUBDIR += gift
     SUBDIR += gift-ares
-    SUBDIR += gift-fasttrack
-    SUBDIR += gift-gnutella
-    SUBDIR += gift-openft
     SUBDIR += giftcurs
     SUBDIR += giftoxic
     SUBDIR += giftui
@@ -106,7 +103,6 @@
     SUBDIR += py-py2play
     SUBDIR += py-transmissionrpc
     SUBDIR += py-vertex
-    SUBDIR += pyslsk
     SUBDIR += qbittorrent-22
     SUBDIR += qbittorrent-23
     SUBDIR += qtella

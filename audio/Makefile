@@ -76,7 +76,6 @@
     SUBDIR += bmp-htmlplaylist
     SUBDIR += bmp-mac
     SUBDIR += bmp-modplug
-    SUBDIR += bmp-musepack
     SUBDIR += bmp-scrobbler
     SUBDIR += bmp-songchange
     SUBDIR += bmp-wma
@@ -386,7 +385,6 @@
     SUBDIR += libmodplug
     SUBDIR += libmp3-archive-perl
     SUBDIR += libmp3splt
-    SUBDIR += libmpcdec
     SUBDIR += libmpd
     SUBDIR += libmpdclient
     SUBDIR += libmtp
@@ -632,7 +630,6 @@
     SUBDIR += py-libtunepimp
     SUBDIR += py-mad
     SUBDIR += py-mpd
-    SUBDIR += py-musepack
     SUBDIR += py-musicbrainz
     SUBDIR += py-musicbrainz2
     SUBDIR += py-mutagen

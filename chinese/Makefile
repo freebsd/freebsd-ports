@@ -22,7 +22,6 @@
     SUBDIR += c2t
     SUBDIR += cce
     SUBDIR += celvis
-    SUBDIR += chinput3
     SUBDIR += chm2html
     SUBDIR += cless
     SUBDIR += cmexfonts

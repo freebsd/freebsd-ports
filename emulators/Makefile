@@ -30,7 +30,6 @@
     SUBDIR += doscmd
     SUBDIR += dtcyber
     SUBDIR += dynagen
-    SUBDIR += dynagen-devel
     SUBDIR += dynagui
     SUBDIR += dynamips
     SUBDIR += dynamips-devel
