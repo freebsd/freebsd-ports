@@ -21,7 +21,7 @@ LIB_DEPENDS=	xmms.4:${PORTSDIR}/multimedia/xmms \
 		ogg.7:${PORTSDIR}/audio/libogg \
 		xcb.2:${PORTSDIR}/x11/libxcb
 
-USE_AUTOTOOLS=	libtool:22
+USE_AUTOTOOLS=	libtool
 USE_GETTEXT=	yes
 USE_GNOME=	gtk12
 USE_ICONV=	yes

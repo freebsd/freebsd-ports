@@ -16,7 +16,7 @@ COMMENT=	A library (using libusb) to talk to FTDI chips
 
 OPTIONS=	BOOST	"Build with boost"	off
 
-USE_AUTOTOOLS=		autoconf:268 libtool:22 automake:111
+USE_AUTOTOOLS=		autoconf libtool automake
 GNU_CONFIGURE=		yes
 CONFIGURE_ENV=		CFLAGS="${CFLAGS} -I${LOCALBASE}/include"
 USE_LDCONFIG=		yes

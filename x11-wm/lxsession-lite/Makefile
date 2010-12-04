@@ -22,7 +22,7 @@ EXPIRATION_DATE=	2011-01-01
 CONFLICTS=	lxsession-[0-9]*
 
 USE_GNOME=	gtk20
-USE_AUTOTOOLS=	automake:111:env
+USE_AUTOTOOLS=	automake:env
 USE_GMAKE=	yes
 USE_ICONV=	yes
 GNU_CONFIGURE=	yes

@@ -52,7 +52,7 @@ USE_GCC=	4.4+
 CONFIGURE_ARGS+=	--disable-51
 PLIST_SUB+=		MCS51DS390="@comment "
 .else
-USE_AUTOTOOLS+=		autoconf:268
+USE_AUTOTOOLS+=		autoconf
 PLIST_SUB+=		MCS51DS390=""
 .endif
 
@@ -126,7 +126,7 @@ PLIST_SUB+=		DEVLIB=""
 CONFIGURE_ARGS+=	--disable-ucsim
 PLIST_SUB+=		UCSIM="@comment "
 .else
-USE_AUTOTOOLS+=		libtool:22
+USE_AUTOTOOLS+=		libtool
 LIBTOOLFILES=		sim/ucsim/configure
 PLIST_SUB+=		UCSIM=""
 .endif

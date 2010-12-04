@@ -23,7 +23,7 @@ USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 USE_RC_SUBR=	shibboleth-sp
-USE_AUTOTOOLS=	autoconf:268 automake:111:env libtool:22:env
+USE_AUTOTOOLS=	autoconf automake:env libtool:env
 WRKSRC=		${WRKDIR}/shibboleth-${PORTVERSION}
 
 LATEST_LINK=	shibboleth2-sp

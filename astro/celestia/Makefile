@@ -18,7 +18,7 @@ COMMENT=	Scriptable space flight simulator for X
 LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg \
 		png.6:${PORTSDIR}/graphics/png
 
-USE_AUTOTOOLS=	libtool:22
+USE_AUTOTOOLS=	libtool
 USE_GMAKE=	yes
 USE_GL=		gl
 USE_XORG=	x11 xt xext xmu xi

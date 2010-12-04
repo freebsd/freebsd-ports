@@ -24,7 +24,7 @@ OPTIONS=	XKLAVIER	"Keyboard layout settings"		off \
 		NLS		"Enable Native Language Support"	on
 
 CONFIGURE_ARGS=	--disable-sound-settings --disable-debug
-USE_AUTOTOOLS=	libtool:22
+USE_AUTOTOOLS=	libtool
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
 USE_BZIP2=	yes

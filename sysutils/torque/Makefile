@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.clusterresources.com/downloads/torque/
 MAINTAINER=	jwbacon@tds.net
 COMMENT=	Open source resource manager
 
-USE_AUTOTOOLS=	libtool:22
+USE_AUTOTOOLS=	libtool
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-rcp=scp
 USE_GMAKE=	yes

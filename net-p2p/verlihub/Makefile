@@ -23,7 +23,7 @@ RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
 
 USE_RC_SUBR=	verlihub
 USE_GCC=	4.2+
-USE_AUTOTOOLS=	libtool:22
+USE_AUTOTOOLS=	libtool
 USE_MYSQL=	yes
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes

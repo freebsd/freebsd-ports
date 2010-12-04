@@ -13,7 +13,7 @@ MASTER_SITES=	SF
 MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	Yet Another Part-of-Speech and Morphological Analyzer
 
-USE_AUTOTOOLS=	libtool:22
+USE_AUTOTOOLS=	libtool
 USE_ICONV=	yes
 USE_PERL5_BUILD=	5.8.0+
 GNU_CONFIGURE=	yes

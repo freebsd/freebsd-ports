@@ -16,7 +16,7 @@ MASTER_SITES=	SF/mad/${PORTNAME}/${PORTVERSION} \
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Libmad library (part of MAD project)
 
-USE_AUTOTOOLS=	libtool:22
+USE_AUTOTOOLS=	libtool
 GNU_CONFIGURE=	yes
 USE_GNOME=	pkgconfig
 USE_LDCONFIG=	yes

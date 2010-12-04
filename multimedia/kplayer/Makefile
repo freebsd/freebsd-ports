@@ -21,7 +21,7 @@ USE_GMAKE=	yes
 USE_KDELIBS_VER=3
 USE_GETTEXT=	yes
 USE_PERL5_BUILD=yes
-USE_AUTOTOOLS=	automake:111:env autoconf:268:env libtool:22
+USE_AUTOTOOLS=	automake:env autoconf:env libtool
 
 pre-configure:
 	@(cd ${WRKSRC} && ${SETENV} ${AUTOTOOLS_ENV} ${SH} admin/cvs.sh dist)

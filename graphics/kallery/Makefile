@@ -18,7 +18,7 @@ LIB_DEPENDS=	MagickCore.4:${PORTSDIR}/graphics/ImageMagick
 
 USE_KDELIBS_VER=3
 USE_BZIP2=	yes
-USE_AUTOTOOLS=	libtool:22
+USE_AUTOTOOLS=	libtool
 USE_GMAKE=	yes
 INSTALLS_ICONS=	yes
 

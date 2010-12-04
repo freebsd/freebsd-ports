@@ -30,7 +30,7 @@ ETCDIR?=	${EMACS_LIBDIR_WITH_VER}/etc/w3m
 
 INFO=		emacs-w3m-ja emacs-w3m
 
-USE_AUTOTOOLS=	autoconf:213
+USE_AUTOTOOLS=	autoconf213
 ALL_TARGET=	default
 
 PLIST_SUB+=	LISPDIR=${LISPDIR} \

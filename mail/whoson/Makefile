@@ -13,7 +13,7 @@ MASTER_SITES=	SF
 MAINTAINER=	sem@FreeBSD.org
 COMMENT=	Implementation of `WHO iS ONline' protocol
 
-USE_AUTOTOOLS=	libtool:22
+USE_AUTOTOOLS=	libtool
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=		--with-config=${PREFIX}/etc/whoson.conf
 USE_LDCONFIG=	yes

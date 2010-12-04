@@ -16,7 +16,7 @@ COMMENT=	Library for importing and converting Corel WordPerfect(tm) Graphics ima
 
 LIB_DEPENDS=	wpd-0.8.8:${PORTSDIR}/textproc/libwpd
 
-USE_AUTOTOOLS=	libtool:22
+USE_AUTOTOOLS=	libtool
 USE_GNOME=	gnomeprefix gnomehack ltverhack
 USE_PERL5=	yes
 USE_LDCONFIG=	yes

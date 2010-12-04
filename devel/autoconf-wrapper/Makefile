@@ -6,12 +6,12 @@
 #
 
 PORTNAME?=	autoconf-wrapper
-PORTVERSION=	20071109
+PORTVERSION=	20101119
 CATEGORIES=	devel
 MASTER_SITES=	# none
 DISTFILES=	# none
 
-MAINTAINER=	des@FreeBSD.org
+MAINTAINER=	autotools@FreeBSD.org
 COMMENT?=	Wrapper script for GNU autoconf
 
 WRKSRC=		${WRKDIR}

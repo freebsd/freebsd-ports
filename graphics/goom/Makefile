@@ -15,7 +15,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:S|.|-|}-src
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Visual effects library
 
-USE_AUTOTOOLS=	libtool:22
+USE_AUTOTOOLS=	libtool
 WRKSRC=		${WRKDIR}/${PORTNAME}${PORTVERSION:S|.|-|}
 USE_GNOME=	gnomehack gnometarget
 GNU_CONFIGURE=	yes

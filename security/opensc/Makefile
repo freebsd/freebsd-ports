@@ -22,7 +22,7 @@ OPTIONS=	OPENCT "Enable direct OpenCT backend support" on \
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USE_AUTOTOOLS=	libltdl:22
+USE_AUTOTOOLS=	libltdl
 USE_ICONV=	yes
 USE_OPENSSL=	yes
 USE_GMAKE=	yes

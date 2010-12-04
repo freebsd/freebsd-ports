@@ -14,7 +14,7 @@ MASTER_SITES=	SF/libsocket/${PORTNAME}-stable/${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A C++ wrapper library to the sockets
 
-USE_AUTOTOOLS=	libtool:22
+USE_AUTOTOOLS=	libtool
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 

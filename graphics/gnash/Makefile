@@ -31,7 +31,7 @@ USE_GCC=	4.2+	# triggers compiler error on gcc 3.4
 WANT_GSTREAMER=	yes
 USE_GNOME=	pkgconfig libxml2
 USE_XORG=	x11 xau xdmcp xext xi xinerama ice sm xv
-USE_AUTOTOOLS=	libltdl:22
+USE_AUTOTOOLS=	libltdl
 MAKE_JOBS_SAFE=	yes
 
 # jemalloc leads to infinite recursion on FreeBSD

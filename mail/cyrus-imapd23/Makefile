@@ -150,7 +150,7 @@ EXTRA_PATCHES+=	${FILESDIR}/extra-patch-configure.in \
 .if ${OSVERSION} >= 800037
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-cmulocal::sasl2.m4
 .endif
-USE_AUTOTOOLS=	autoconf:268 autoheader:268
+USE_AUTOTOOLS=	autoconf autoheader
 CONFIGURE_ARGS+=--with-drac=${LOCALBASE}
 BUILD_DEPENDS+=	${LOCALBASE}/lib/libdrac.a:${PORTSDIR}/mail/drac
 .endif

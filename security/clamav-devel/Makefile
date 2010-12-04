@@ -43,7 +43,7 @@ LOGDIR=		/var/log/clamav
 RUNDIR=		/var/run/clamav
 PLIST_SUB+=	DBDIR=${DBDIR} LOGDIR=${LOGDIR} RUNDIR=${RUNDIR}
 PY_NO_THREAD=	${WRKDIR}/.python-has-no-threads
-USE_AUTOTOOLS=	libltdl:22
+USE_AUTOTOOLS=	libltdl
 
 CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS}" \
 		LDFLAGS="${LDFLAGS}"

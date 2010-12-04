@@ -15,6 +15,6 @@ COMMENT=	X Test extension
 XORG_CAT=	lib
 USE_XORG=	x11 xext recordproto:both xextproto inputproto:both \
 		xi
-USE_AUTOTOOLS=	libtool:22
+USE_AUTOTOOLS=	libtool
 
 .include <bsd.port.mk>

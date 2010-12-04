@@ -19,8 +19,8 @@ ONLY_FOR_ARCHS=	i386 amd64
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
 USE_LDCONFIG=	yes
-USE_AUTOTOOLS=	aclocal:111 autoheader:268 automake:111 autoconf:268 \
-		libtoolize libtool:22
+USE_AUTOTOOLS=	aclocal autoheader automake autoconf \
+		libtoolize libtool
 ACLOCAL_ARGS=	-I . -I ${LOCALBASE}/share/aclocal
 AUTOMAKE_ARGS=	-c -a
 LIBTOOLFILES=	#empty

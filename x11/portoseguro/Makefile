@@ -17,7 +17,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Launch applications by clicking on an icon bar
 
 CONFIGURE_ENV=	GTKCONFIG=${GTK_CONFIG}
-USE_AUTOTOOLS=	autoconf:213
+USE_AUTOTOOLS=	autoconf213
 GNU_CONFIGURE=	yes
 USE_GNOME=	gtk12
 USE_XORG=	xpm

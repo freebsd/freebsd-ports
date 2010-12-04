@@ -27,7 +27,7 @@ RUN_DEPENDS=	${LOCALBASE}/lib/libplibsl.a:${PORTSDIR}/x11-toolkits/plib \
 
 LICENSE=	GPLv2
 
-USE_AUTOTOOLS=	aclocal:111 autoheader:268 automake:111 autoconf:268
+USE_AUTOTOOLS=	aclocal autoheader automake autoconf
 AUTOMAKE_ARGS=	--add-missing
 
 GNU_CONFIGURE=	yes

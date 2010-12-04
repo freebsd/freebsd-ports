@@ -16,7 +16,7 @@ COMMENT=	A QNX Photon like window decoration and widget style for KDE
 
 USE_KDEBASE_VER=3
 USE_BZIP2=	yes
-USE_AUTOTOOLS=	libtool:22
+USE_AUTOTOOLS=	libtool
 USE_GMAKE=	yes
 
 .include <bsd.port.mk>

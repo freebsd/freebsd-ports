@@ -14,7 +14,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}%202/${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A fork of mysql++ C++ API for MySQL
 
-USE_AUTOTOOLS=	libtool:22
+USE_AUTOTOOLS=	libtool
 USE_MYSQL=	yes
 USE_GNOME=	pkgconfig gnomehack
 GNU_CONFIGURE=	yes

@@ -13,7 +13,7 @@ LIB_DEPENDS=	uim.7:${PORTSDIR}/textproc/uim
 
 USE_QT_VER=	4
 QT_COMPONENTS=	qmake_build moc_build qt3support uic
-USE_AUTOTOOLS=	libtool:22
+USE_AUTOTOOLS=	libtool
 USE_ICONV=	yes
 
 MASTERDIR=	${.CURDIR}/../../textproc/uim

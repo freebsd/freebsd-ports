@@ -29,7 +29,7 @@ USE_BZIP2=	yes
 USE_XORG=	x11 xfixes sm
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	libtool:22
+USE_AUTOTOOLS=	libtool
 USE_GNOME=	gnomeprefix gnomehack intlhack gtk20 gconf2 gnomemenus \
 		gnomedesktop ltverhack libgnomeui librsvg2
 USE_GSTREAMER=	theora

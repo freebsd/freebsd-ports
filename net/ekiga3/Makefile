@@ -24,7 +24,7 @@ BUILD_DEPENDS=	intltoolize:${PORTSDIR}/textproc/intltool \
 CONFLICTS=	ekiga-2.*
 
 USE_PERL5=	yes
-USE_AUTOTOOLS=	libtool:22
+USE_AUTOTOOLS=	libtool
 GNU_CONFIGURE=	yes
 USE_GETTEXT=	yes
 USE_GMAKE=	yes

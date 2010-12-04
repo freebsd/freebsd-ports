@@ -32,7 +32,7 @@ APU_VERSION=	0.9.19
 NO_LATEST_LINK=	yes
 
 USE_ICONV=		yes
-USE_AUTOTOOLS=	automake:111 autoconf:268 libtool:22:env
+USE_AUTOTOOLS=	automake autoconf libtool:env
 USE_PERL5_BUILD=	yes
 USE_LDCONFIG=		yes
 GNU_CONFIGURE=		yes

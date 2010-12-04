@@ -24,7 +24,7 @@ CONFIGURE_ARGS+=--with-expat=${LOCALBASE} --disable-test
 
 USE_BZIP2=	yes
 USE_GNOME=	pkgconfig
-USE_AUTOTOOLS=	libtool:22
+USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
 
 post-patch:

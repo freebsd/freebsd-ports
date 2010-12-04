@@ -28,7 +28,7 @@ USE_RC_SUBR=	lisa
 USE_BZIP2=	yes
 USE_XORG=	xtst
 
-USE_AUTOTOOLS=	libtool:22
+USE_AUTOTOOLS=	libtool
 USE_GMAKE=	yes
 WRKSRC=		${WRKDIR}/kdenetwork-${PORTVERSION}
 

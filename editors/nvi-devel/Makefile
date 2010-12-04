@@ -20,7 +20,7 @@ OPTIONS=	WIDECHAR "Enable wide-character support (UTF-8)" On
 
 USE_BZIP2=		yes
 WRKSRC=			${WRKDIR}/${DISTNAME}/build.unix
-USE_AUTOTOOLS=		libtool:22
+USE_AUTOTOOLS=		libtool
 USE_LDCONFIG=		yes
 USE_ICONV=		yes
 USE_BDB=		3

@@ -19,7 +19,7 @@ RUN_DEPENDS=	${LOCALBASE}/bin/smbclient:${PORTSDIR}/${SAMBA_PORT}
 SAMBA_PORT?=	net/samba34
 
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	autoconf:268
+USE_AUTOTOOLS=	autoconf
 GNU_CONFIGURE=	yes
 USE_GNOME=	gtk20 pkgconfig
 

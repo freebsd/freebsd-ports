@@ -13,7 +13,7 @@ MASTER_SITES=	SF/mcrypt/Libmcrypt/${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Multi-cipher cryptographic library (used in PHP)
 
-USE_AUTOTOOLS=	libtool:22
+USE_AUTOTOOLS=	libtool
 CONFIGURE_ARGS=	--enable-static
 MAKE_JOBS_SAFE=	yes
 USE_LDCONFIG=	yes

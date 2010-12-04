@@ -20,7 +20,7 @@ USE_LDCONFIG=	yes
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	libtool:22 aclocal:111
+USE_AUTOTOOLS=	libtool aclocal
 ACLOCAL_ARGS=	# empty
 
 MAN1=		uprecords.1

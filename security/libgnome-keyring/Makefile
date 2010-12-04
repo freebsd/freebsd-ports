@@ -20,7 +20,7 @@ USE_BZIP2=	yes
 USE_GNOME=	gnomehack gnomeprefix ltverhack intlhack gconf2
 USE_GMAKE=	yes
 USE_GETTEXT=	yes
-USE_AUTOTOOLS=	libtool:22
+USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"

@@ -15,7 +15,7 @@ COMMENT=	RX helper program
 XORG_CAT=	app
 USE_XORG=	x11 xt xext xtrans xproxymngproto xau xaw
 USE_LDCONFIG=	yes
-USE_AUTOTOOLS=	libtool:22
+USE_AUTOTOOLS=	libtool
 
 MAN1=		xrx.1 libxrx.1
 

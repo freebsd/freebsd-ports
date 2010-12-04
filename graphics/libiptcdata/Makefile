@@ -13,7 +13,7 @@ MASTER_SITES=	SF
 MAINTAINER=	pav@FreeBSD.org
 COMMENT=	Library for manipulating IPTC metadata stored in image files
 
-USE_AUTOTOOLS=	libtool:22
+USE_AUTOTOOLS=	libtool
 USE_GNOME=	pkgconfig
 USE_ICONV=	yes
 USE_LDCONFIG=	yes

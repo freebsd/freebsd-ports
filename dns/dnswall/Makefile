@@ -15,7 +15,7 @@ MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	A daemon that filters out private IP addresses in DNS responses
 
 PROJECTHOST=	google-dnswall
-USE_AUTOTOOLS=	automake:111
+USE_AUTOTOOLS=	automake
 USE_DOS2UNIX=	yes
 MAKE_JOBS_SAFE=	yes
 

@@ -15,7 +15,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Very popular card game with variable skill levels
 
 PLIST_FILES=	bin/euchre
-USE_AUTOTOOLS=	automake:14 autoconf:213
+USE_AUTOTOOLS=	automake14 autoconf213
 USE_GNOME=	gtk12
 CFLAGS+=	-include "${FILESDIR}/std-namespace.h" -Werror
 MAKE_JOBS_SAFE=	yes

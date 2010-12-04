@@ -19,7 +19,7 @@ COMMENT=	The Notif2 GTK theme engine following the new Motif look and feel
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 USE_GNOME=	gtk12
-USE_AUTOTOOLS=	libtool:22
+USE_AUTOTOOLS=	libtool
 USE_GMAKE=	yes
 
 GTKVERSION=	1.2

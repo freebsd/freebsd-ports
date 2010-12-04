@@ -33,7 +33,7 @@ USE_GNOME=	glib20
 USE_OPENSSL=	yes
 USE_XORG=	xtst
 
-USE_AUTOTOOLS=	libtool:22
+USE_AUTOTOOLS=	libtool
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--with-ilbc=${LOCALBASE} \

@@ -17,7 +17,7 @@ COMMENT=	Lineakd is a daemon which enables special keys on internet keyboards
 
 USE_GMAKE=	yes
 USE_XORG=	x11 xext xt
-USE_AUTOTOOLS=	libtool:22
+USE_AUTOTOOLS=	libtool
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
 		LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
 USE_LDCONFIG=	yes

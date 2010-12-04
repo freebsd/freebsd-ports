@@ -21,7 +21,7 @@ RUN_DEPENDS=	transfig:${PORTSDIR}/print/transfig
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-1.7alpha15/
 USE_GNOME=	gtk20
-#USE_AUTOTOOLS=	autoconf:213
+#USE_AUTOTOOLS=	autoconf213
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_GETTEXT=	yes

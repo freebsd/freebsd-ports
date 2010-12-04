@@ -15,7 +15,7 @@ COMMENT=	A library for programs conforming to DNS RFCs and drafts
 
 LICENSE=	BSD
 
-USE_AUTOTOOLS=	libtool:22
+USE_AUTOTOOLS=	libtool
 USE_GMAKE=	yes
 USE_OPENSSL=	yes
 USE_LDCONFIG=	yes

@@ -27,7 +27,7 @@ PATCH_DIST_ARGS=-d ${TOPDIR} -E ${PATCH_DIST_STRIP}
 .else
 PATCH_DIST_ARGS=-d ${TOPDIR} --forward --quiet -E ${PATCH_DIST_STRIP}
 .endif
-USE_AUTOTOOLS=	autoconf:213
+USE_AUTOTOOLS=	autoconf213
 CONFIGURE_ARGS=	--enable-shared
 RANLIB=		ranlib
 PKGINSTALL=	${PORTSDIR}/lang/tcl82/pkg-install.tclsh

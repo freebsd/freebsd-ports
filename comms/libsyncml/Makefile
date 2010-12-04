@@ -19,7 +19,7 @@ LIB_DEPENDS=	wbxml2:${PORTSDIR}/textproc/wbxml2 \
 		openobex:${PORTSDIR}/comms/openobex \
 		soup-2.2.8:${PORTSDIR}/devel/libsoup22
 
-USE_AUTOTOOLS=	autoheader:268 automake:111 libtool:22
+USE_AUTOTOOLS=	autoheader automake libtool
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
 USE_GNOME=	glib20 libxml2

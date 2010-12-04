@@ -26,7 +26,7 @@ LIB_DEPENDS=	png.6:${PORTSDIR}/graphics/png \
 USE_XORG=	x11
 USE_FREETYPE=	yes
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	autoconf:213
+USE_AUTOTOOLS=	autoconf213
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--exec-prefix=${PREFIX} \
 		--includedir=${LOCALBASE}/include/ \

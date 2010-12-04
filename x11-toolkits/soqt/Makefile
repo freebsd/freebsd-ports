@@ -18,7 +18,7 @@ COMMENT=	Qt4 toolkit library for Coin
 
 LIB_DEPENDS=	Coin.61:${PORTSDIR}/graphics/Coin
 
-USE_AUTOTOOLS=	libtool:22
+USE_AUTOTOOLS=	libtool
 USE_GNOME=	gnomehack
 USE_QT_VER=	4
 QT_COMPONENTS=	corelib opengl moc_build

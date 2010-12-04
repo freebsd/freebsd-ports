@@ -27,7 +27,7 @@ USE_BZIP2=	yes
 USE_GMAKE=	yes
 INSTALLS_OMF=	yes
 INSTALLS_ICONS=	yes
-USE_AUTOTOOLS=	libtool:22
+USE_AUTOTOOLS=	libtool
 USE_GNOME=	gnomeprefix gnomehack intlhack libwnck \
 		gnomedocutils gnomepanel
 CONFIGURE_ARGS=	--with-doc-dir=${PREFIX}/share/doc \

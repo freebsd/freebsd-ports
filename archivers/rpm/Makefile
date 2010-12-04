@@ -22,7 +22,7 @@ CONFLICTS=	rpm-[45].*
 
 USE_GMAKE=	yes
 MAKE_JOBS_SAFE=	yes
-USE_AUTOTOOLS=	automake:14 autoconf:213 libtool:22
+USE_AUTOTOOLS=	automake14 autoconf213 libtool
 CONFIGURE_ARGS=	--with-glob
 USE_LDCONFIG=	yes
 MAKE_ENV=	OLD_PO_FILE_INPUT=1

@@ -26,7 +26,7 @@ USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_GNOME=	pkgconfig libxml2
 USE_OPENSSL=	yes
-USE_AUTOTOOLS=	automake:111:env autoconf:268:env libtool:22:env
+USE_AUTOTOOLS=	automake:env autoconf:env libtool:env
 
 WRKSRC=		${WRKDIR}/${DISTNAME:S/src-//}
 BUILDDIR=	${WRKSRC}/iiimsf

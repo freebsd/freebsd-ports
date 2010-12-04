@@ -17,7 +17,7 @@ MAINTAINER=	mbr@FreeBSD.org
 COMMENT=	POP3 Proxy Server derived from UP IMAP Proxy
 
 GNU_CONFIGURE=	YES
-USE_AUTOTOOLS=	autoconf:213
+USE_AUTOTOOLS=	autoconf213
 USE_RC_SUBR=	pop3proxyd
 
 SAMPLE_EXT=	sample

@@ -22,7 +22,7 @@ MASTER_SITE_SUBDIR=	. obsolete/4.x
 MAINTAINER=	roam@FreeBSD.org
 COMMENT=	SSL encryption wrapper for standard network daemons
 
-USE_AUTOTOOLS=	libtool:22
+USE_AUTOTOOLS=	libtool
 USE_RC_SUBR=	stunnel
 
 GNU_CONFIGURE=	yes

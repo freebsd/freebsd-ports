@@ -14,7 +14,7 @@ MASTER_SITES=	SF/lpr/${PORTNAME}/${PORTVERSION}
 MAINTAINER=	emss@free.fr
 COMMENT=	A library providing routines for ppd files
 
-USE_AUTOTOOLS=	libtool:22
+USE_AUTOTOOLS=	libtool
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	Yes
 USE_GNOME=	glib12

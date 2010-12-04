@@ -19,7 +19,7 @@ LIB_DEPENDS=	tspi.2:${PORTSDIR}/security/trousers
 USE_BZIP2=	YES
 USE_GMAKE=	YES
 USE_LDCONFIG=	YES
-USE_AUTOTOOLS=	autoconf:268 libtool:22 automake:111
+USE_AUTOTOOLS=	autoconf libtool automake
 HAS_CONFIGURE=	YES
 MAKE_JOBS_SAFE=	YES
 

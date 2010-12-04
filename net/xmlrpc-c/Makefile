@@ -26,7 +26,7 @@ CONFLICTS=	xmlrpc-epi-0.* xmlrpc-c-devel-[0-9]*
 USE_GNOME=	gnometarget
 USE_PERL5=	yes
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	libtool:22:env
+USE_AUTOTOOLS=	libtool:env
 GNU_CONFIGURE=	yes
 MAKEFILE=	GNUmakefile
 MAKE_ARGS=	LIBTOOL="${LIBTOOL}" \

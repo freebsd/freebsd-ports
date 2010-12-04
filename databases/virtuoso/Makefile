@@ -19,7 +19,7 @@ BUILD_DEPENDS=	gawk:${PORTSDIR}/lang/gawk\
 		htmldoc:${PORTSDIR}/textproc/htmldoc
 LIB_DEPENDS=	iodbc.3:${PORTSDIR}/databases/libiodbc
 
-USE_AUTOTOOLS=	libtool:22
+USE_AUTOTOOLS=	libtool
 CONFIGURE_ARGS=	--with-readline\
 		--without-jdk2\
 		--without-jdk3\

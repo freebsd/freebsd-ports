@@ -17,7 +17,7 @@ COMMENT=	Bittorrent client consisting of a daemon and client commands
 LICENSE=	BSD
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 
-USE_AUTOTOOLS=	autoconf:268 aclocal:111
+USE_AUTOTOOLS=	autoconf aclocal
 GNU_CONFIGURE=	yes
 USE_OPENSSL=	yes
 

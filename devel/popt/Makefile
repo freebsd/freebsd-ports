@@ -18,7 +18,7 @@ CONFIGURE_ARGS=	--with-libiconv-prefix=${LOCALBASE} \
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 GNU_CONFIGURE=	yes
-USE_AUTOTOOLS=	libtool:22
+USE_AUTOTOOLS=	libtool
 USE_GNOME=	gnomehack
 USE_ICONV=	yes
 USE_LDCONFIG=	yes

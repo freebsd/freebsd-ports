@@ -34,7 +34,7 @@ OPTIONS=	MYSQL	"Enable MySQL support"		on \
 USE_GNOME=	gnomehack libglade2
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	libltdl:22 libtool:22
+USE_AUTOTOOLS=	libltdl libtool
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--with-dialog=no \
 		--with-cdialog=no \

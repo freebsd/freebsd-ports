@@ -20,7 +20,7 @@ COMMENT=	Support for xscreensaver blankers in KDE
 
 USE_KDELIBS_VER=3
 USE_BZIP2=	yes
-USE_AUTOTOOLS=	libtool:22
+USE_AUTOTOOLS=	libtool
 USE_GMAKE=	yes
 WRKSRC=		${WRKDIR}/kdeartwork-${PORTVERSION}
 

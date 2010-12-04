@@ -17,7 +17,7 @@ COMMENT=	A real-time sound processor
 LIB_DEPENDS=	jack.0:${PORTSDIR}/audio/jack
 
 USE_BZIP2=	yes
-USE_AUTOTOOLS=	libtool:22
+USE_AUTOTOOLS=	libtool
 GNU_CONFIGURE=	yes
 USE_GETTEXT=	yes
 USE_KDELIBS_VER=	3

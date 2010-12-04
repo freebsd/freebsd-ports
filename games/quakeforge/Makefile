@@ -19,7 +19,7 @@ COMMENT=	Cleaned up copy of the GPLd Quake 1 source code
 
 NOT_FOR_ARCHS=	sparc64
 NOT_FOR_ARCHS_REASON=	generated Quake C compiler (qfcc) does not work
-USE_AUTOTOOLS=	libtool:22
+USE_AUTOTOOLS=	libtool
 USE_BZIP2=	yes
 USE_BISON=	build
 USE_GMAKE=	yes

@@ -25,7 +25,7 @@ RUN_DEPENDS=	kmflcomp:${PORTSDIR}/textproc/kmflcomp \
 		scim:${PORTSDIR}/textproc/scim
 
 USE_XORG=	x11 xkbfile xproto
-USE_AUTOTOOLS=	libtool:22
+USE_AUTOTOOLS=	libtool
 USE_GNOME=	glib20 gtk20 intlhack
 USE_GETTEXT=	yes
 USE_ICONV=	yes

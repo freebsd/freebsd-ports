@@ -16,7 +16,7 @@ COMMENT=	The C++ Debugging Support Library
 
 USE_GNOME=	gnomehack pkgconfig
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	libtool:22
+USE_AUTOTOOLS=	libtool
 CONFIGURE_ARGS=	--disable-alloc --disable-location --disable-threading \
 		--disable-pch
 USE_LDCONFIG=	yes

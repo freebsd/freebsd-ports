@@ -34,7 +34,7 @@ LIB_DEPENDS=	Xaw3d.${XAWVER}:${PORTSDIR}/x11-toolkits/Xaw3d \
 USE_XORG=	xpm
 .endif
 
-USE_AUTOTOOLS=	autoconf:213
+USE_AUTOTOOLS=	autoconf213
 USE_GMAKE=	yes
 
 CONFIGURE_TARGET=	${MACHINE_ARCH}--freebsd

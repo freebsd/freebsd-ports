@@ -17,7 +17,7 @@ MAINTAINER=	msciciel@dark-zone.eu
 COMMENT=	Detect suspicious network traffic
 
 HAS_CONFIGURE=	yes
-USE_AUTOTOOLS=	autoheader:268
+USE_AUTOTOOLS=	autoheader
 
 PLIST_FILES=	bin/dosdetector
 MAN1=		dosdetector.1

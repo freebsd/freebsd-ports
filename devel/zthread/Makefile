@@ -15,7 +15,7 @@ DISTNAME=	ZThread-${PORTVERSION}
 MAINTAINER=	glarkin@FreeBSD.org
 COMMENT=	A platform-independent object-oriented C++ threading library
 
-USE_AUTOTOOLS=	libtool:22
+USE_AUTOTOOLS=	libtool
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--without-ftime --disable-static
 USE_GMAKE=	yes

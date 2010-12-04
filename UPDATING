@@ -5,6 +5,22 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20101204:
+  AFFECTS: autotools
+  AUTHOR: autotools@FreeBSD.org
+
+  The next stage in the ongoing cleanup of autotools-using ports is
+  a refactoring of bsd.autotools.mk so that version numbers are no longer
+  needed within the USE_AUTOTOOLS stanza.  There is either
+  autoconf213/autoconf or automake14/automake (for the legacy versions,
+  and the currently available versions).  This will considerably reduce
+  the amount of tree-wide patching in future on an update.
+
+  IMPORTANT: if you have either devel/autoconf-wrapper or
+  devel/automake-wrapper installed on your system (and you most likely do)
+  PLEASE update these ports to their new versions before updating anything
+  else -- Bad Things[tm] are likely to happen otherwise.
+
 20101202:
   AFFECTS: users of multmidia/gstreamer-plugins
   AUTHOR: multimedia@FreeBSD.org

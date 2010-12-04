@@ -21,7 +21,7 @@ OPTIONS=	JACK "Enable Jack audio support" On \
 
 USE_GNOME=	glib20 gnomehack pkgconfig
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	libtool:22
+USE_AUTOTOOLS=	libtool
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--disable-alsa-support --disable-midishare \
 		--disable-coreaudio --disable-coremidi \

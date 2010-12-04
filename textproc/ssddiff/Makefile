@@ -14,7 +14,7 @@ MASTER_SITES=	http://alioth.debian.org/frs/download.php/1469/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A diff application for semistructured data such as XML files
 
-USE_AUTOTOOLS=	automake:14
+USE_AUTOTOOLS=	automake14
 USE_BZIP2=	yes
 USE_GNOME=	libxml2
 MAKE_ARGS=	CXX="${CXX}" CXXFLAGS="${CXXFLAGS}" \

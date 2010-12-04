@@ -13,7 +13,7 @@ MASTER_SITES=	SF/bjk/${PORTNAME}/${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Show information about local users
 
-USE_AUTOTOOLS=	libtool:22
+USE_AUTOTOOLS=	libtool
 GNU_CONFIGURE=	yes
 
 MAN1=		ui.1

@@ -18,6 +18,6 @@ PLIST_FILES=	bin/dkftpbench
 
 GNU_CONFIGURE=	yes
 
-USE_AUTOTOOLS=	automake:14 autoconf:268
+USE_AUTOTOOLS=	automake14 autoconf
 
 .include <bsd.port.mk>

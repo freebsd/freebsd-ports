@@ -22,7 +22,7 @@ LIB_DEPENDS=	unicode.0:${PORTSDIR}/devel/libunicode \
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash	\
 		${LOCALBASE}/lib/X11/fonts/freefont-ttf/FreeMono.ttf:${PORTSDIR}/x11-fonts/freefont-ttf
 
-USE_AUTOTOOLS=	libltdl:22
+USE_AUTOTOOLS=	libltdl
 USE_CMAKE=	yes
 USE_GMAKE=	yes
 USE_PERL5_BUILD=yes

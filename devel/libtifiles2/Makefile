@@ -16,7 +16,7 @@ COMMENT=	TI calculator file types library
 
 LIB_DEPENDS=	ticonv.4:${PORTSDIR}/converters/libticonv
 
-USE_AUTOTOOLS=	libtool:22
+USE_AUTOTOOLS=	libtool
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_GNOME=	glib20 gnomehack pkgconfig

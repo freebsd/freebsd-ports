@@ -53,7 +53,7 @@ PORTEXAMPLES=	ASCII.html CreateHome.html Filters.html SQL.html Umask.html \
 		FXP.html Regex.html Tracing.html
 
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	autoconf:268
+USE_AUTOTOOLS=	autoconf
 GNU_CONFIGURE=	yes
 
 CONFLICTS=	proftpd-1.[0-9].*

@@ -24,7 +24,7 @@ LICENSE=		GPLv2
 USE_TK =		84+
 USE_GMAKE=		yes
 USE_PERL5_BUILD=	yes
-USE_AUTOTOOLS=		aclocal:111 autoconf:268
+USE_AUTOTOOLS=		aclocal autoconf
 CONFIGURE_ARGS+=	--prefix=${PREFIX} \
 			--with-posix-shell=${LOCALBASE}/bin/bash \
 			--with-wish=${WISH} \

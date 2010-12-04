@@ -17,7 +17,7 @@ USE_GCC=	4.2+
 USE_KDE4=	kdelibs automoc4
 USE_QT_VER=	4
 QT_COMPONENTS=	qmake_build moc_build qt3support uic rcc
-USE_AUTOTOOLS=	libtool:22
+USE_AUTOTOOLS=	libtool
 
 MASTERDIR=	${.CURDIR}/../../textproc/uim
 PKGDIR=		${.CURDIR}

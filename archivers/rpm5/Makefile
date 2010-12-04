@@ -35,7 +35,7 @@ OPTIONS=	PERL "Build Perl RPM module" Off \
 
 DB_VERSION?=	47
 USE_BDB=	${DB_VERSION}
-USE_AUTOTOOLS=	libtool:22
+USE_AUTOTOOLS=	libtool
 LIBTOOLFILES=	configure db3/configure db/dist/configure \
 		file/configure xar/configure
 CONFIGURE_ARGS=	--without-js

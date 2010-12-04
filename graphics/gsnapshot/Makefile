@@ -14,7 +14,7 @@ MASTER_SITES=	SF/gould/${PORTNAME}/release%20${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A gtk+ based screen capture
 
-USE_AUTOTOOLS=	aclocal:111 autoheader:268 automake:111 autoconf:268 libtool:22
+USE_AUTOTOOLS=	aclocal autoheader automake autoconf libtool
 USE_GNOME=	pkgconfig gtk20 libwnck libxml2
 USE_XORG=	x11 xmu
 

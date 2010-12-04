@@ -20,7 +20,7 @@ EXPIRATION_DATE=	2010-11-24
 LIB_DEPENDS=	gift.0:${PORTSDIR}/net-p2p/gift \
 		db3.3:${PORTSDIR}/databases/db3
 
-USE_AUTOTOOLS=	libtool:22
+USE_AUTOTOOLS=	libtool
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes

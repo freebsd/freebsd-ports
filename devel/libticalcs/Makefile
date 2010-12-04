@@ -19,7 +19,7 @@ LIB_DEPENDS=	ticables.12:${PORTSDIR}/comms/libticables \
 
 USE_GETTEXT=	yes
 USE_GNOME=	gnomehack pkgconfig
-USE_AUTOTOOLS=	libtool:22
+USE_AUTOTOOLS=	libtool
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 

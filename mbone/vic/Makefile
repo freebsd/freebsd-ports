@@ -21,7 +21,7 @@ LIB_DEPENDS=	uclmmbase:${PORTSDIR}/devel/uclmmbase
 USE_TK=		84
 USE_TK_BUILD=	84
 
-USE_AUTOTOOLS=	autoconf:213
+USE_AUTOTOOLS=	autoconf213
 USE_XORG=	xext
 CONFIGURE_ARGS= -x-libraries=${LOCALBASE}/lib \
 		-x-includes=${LOCALBASE}/include \

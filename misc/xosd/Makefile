@@ -17,7 +17,7 @@ COMMENT=	X On-Screen-Display Library and XMMS plug-in
 XMMS_CONFIG?=	${LOCALBASE}/bin/xmms-config
 USE_GMAKE=	yes
 USE_XORG=	x11 xext xt sm ice
-USE_AUTOTOOLS=	libtool:22
+USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
 CONFIGURE_ENV=	LIBS=${PTHREAD_LIBS}' -L${LOCALBASE}/lib' \
 		CFLAGS='${CFLAGS}' LOCALBASE='${LOCALBASE}' \

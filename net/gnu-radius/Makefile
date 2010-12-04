@@ -19,7 +19,7 @@ CONFLICTS=	freeradius-0.* openradius-0.* radiusd-cistron-1.*
 USE_RC_SUBR=	radiusd.sh
 USE_SUBMAKE=	yes
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	libltdl:22 libtool:22
+USE_AUTOTOOLS=	libltdl libtool
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 

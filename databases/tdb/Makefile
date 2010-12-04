@@ -25,7 +25,7 @@ USE_GMAKE=		yes
 USE_LDCONFIG=		yes
 GNU_CONFIGURE=		yes
 USE_GNOME=		pkgconfig
-USE_AUTOTOOLS=		autoconf:268 autoheader:268
+USE_AUTOTOOLS=		autoconf autoheader
 
 LICENSE=		GPLv3
 MAKE_JOBS_SAFE=		yes

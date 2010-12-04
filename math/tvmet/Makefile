@@ -16,7 +16,7 @@ COMMENT=	Tiny Vector and Matrix template library
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	libtool:22
+USE_AUTOTOOLS=	libtool
 MAKE_ARGS=	CXX="${CXX}" CXXFLAGS="${CXXFLAGS}"
 
 MAN1=		tvmet-config.1

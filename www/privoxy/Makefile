@@ -19,7 +19,7 @@ LIB_DEPENDS=	pcre:${PORTSDIR}/devel/pcre
 WRKSRC=		${WRKDIR}/privoxy-${PORTVERSION}-stable
 
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	autoconf:268
+USE_AUTOTOOLS=	autoconf
 
 USE_RC_SUBR=	privoxy
 SUB_FILES=	pkg-message

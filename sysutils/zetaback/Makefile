@@ -16,7 +16,7 @@ COMMENT=	Zetaback ZFS backup and recovery management system
 
 USE_PERL5_RUN=	YES
 GNU_CONFIGURE=	yes
-USE_AUTOTOOLS=	autoconf:268
+USE_AUTOTOOLS=	autoconf
 
 MAN1=		zetaback.1 zetaback_agent.1
 

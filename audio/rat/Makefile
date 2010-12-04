@@ -17,7 +17,7 @@ COMMENT=	IPv4/v6 Multicast and unicast audio conferencing tool
 
 USE_TK=		yes
 USE_XORG=	x11 xext sm ice
-USE_AUTOTOOLS=	autoconf:213
+USE_AUTOTOOLS=	autoconf213
 USE_GMAKE=	yes
 CONFIGURE_ARGS=	--enable-ipv6
 

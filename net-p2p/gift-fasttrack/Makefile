@@ -19,7 +19,7 @@ EXPIRATION_DATE=	2010-11-24
 
 LIB_DEPENDS=	gift.0:${PORTSDIR}/net-p2p/gift
 
-USE_AUTOTOOLS=	libtool:22
+USE_AUTOTOOLS=	libtool
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_GNOME=	pkgconfig

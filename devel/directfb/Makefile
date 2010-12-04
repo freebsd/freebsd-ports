@@ -24,7 +24,7 @@ OPTIONS=	FREETYPE2	"Enable Freetype support" on \
 		TESTS		"Install test apps" off
 
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" LDFLAGS="${PTHREAD_LIBS}"
-USE_AUTOTOOLS=	libtool:22
+USE_AUTOTOOLS=	libtool
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomehack

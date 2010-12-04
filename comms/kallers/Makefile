@@ -17,7 +17,7 @@ USE_BZIP2=		yes
 USE_KDELIBS_VER=	3
 USE_GMAKE=		yes
 INSTALLS_ICONS=		yes
-USE_AUTOTOOLS=		libtool:22
+USE_AUTOTOOLS=		libtool
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|@CXXFLAGS@|@CXXFLAGS@ -fPIC|' \

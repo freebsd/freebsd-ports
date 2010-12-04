@@ -25,7 +25,7 @@ OPTIONS=	TCLTK "Enable Tcl/Tk binding" on \
 		PGSQL "PostgreSQL binding" on \
 		SDL "SDL binding" on
 
-USE_AUTOTOOLS=	libtool:22
+USE_AUTOTOOLS=	libtool
 USE_GNOME=	gnomehack gnometarget pkgconfig pango
 USE_ICONV=	yes
 USE_SQLITE=	yes

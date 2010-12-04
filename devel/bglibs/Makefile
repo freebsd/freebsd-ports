@@ -17,7 +17,7 @@ COMMENT=	One stop library package by Bruce Guenter
 NOT_FOR_ARCHS=	alpha
 
 USE_PERL5=	yes
-USE_AUTOTOOLS=	libtool:22:env
+USE_AUTOTOOLS=	libtool:env
 LDFLAGS?=	-s
 BGLIBS_INC=	${PREFIX}/include/${PORTNAME}
 BGLIBS_LIB=	${PREFIX}/lib/${PORTNAME}

@@ -15,7 +15,7 @@ COMMENT=	Connect and transmit data to an Icecast media streaming server
 
 CONFLICTS=	libshout2-*
 
-USE_AUTOTOOLS=	libtool:22
+USE_AUTOTOOLS=	libtool
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}-${PORTVERSION}

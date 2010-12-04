@@ -13,7 +13,7 @@ MAINTAINER=	mm@FreeBSD.org
 COMMENT=	Library and toolset to operate arrays of data
 
 USE_GNOME=	pkgconfig
-USE_AUTOTOOLS=	libtool:22
+USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
 USE_GMAKE=	yes
 

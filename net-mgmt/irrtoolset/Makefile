@@ -18,7 +18,7 @@ PLIST_FILES=	bin/rpslcheck bin/peval bin/rtconfig
 USE_BISON=	build
 USE_GMAKE=	yes
 GNU_CONFIGURE=	Yes
-USE_AUTOTOOLS=	libtool:22
+USE_AUTOTOOLS=	libtool
 MAKE_JOBS_SAFE=	yes
 
 MAN1=		rtconfig.1 peval.1 rpslcheck.1 irrtoolset-errors.1

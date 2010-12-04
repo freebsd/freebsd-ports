@@ -24,7 +24,7 @@ USE_XORG=	xscrnsaver
 USE_GNOME=	gnomehack gnomeprefix gtkhtml3 intlhack libgnomeui
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	libtool:22 libltdl:22
+USE_AUTOTOOLS=	libtool libltdl
 LIBTOOLFILES=	configure ../${QOF_DISTNAME}/configure
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}" \
 		LIBQOF_CFLAGS="${LIBQOF_CFLAGS}" LIBQOF_LIBS="${LIBQOF_LIBS}"

@@ -17,7 +17,7 @@ COMMENT=	A library of tools for doing computation in game theory
 USE_GNOME=	gnometarget gtk20
 WANT_UNICODE=	yes
 USE_WX=		2.6+
-USE_AUTOTOOLS=	libtool:22
+USE_AUTOTOOLS=	libtool
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS+=--with-wx-config=${WX_CONFIG}
 USE_LDCONFIG=	yes

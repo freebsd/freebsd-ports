@@ -28,7 +28,7 @@ CONFIGURE_ENV=	LDFLAGS="`net-snmp-config --libs`" \
 		CPPFLAGS="`net-snmp-config --cflags`"
 USE_MYSQL=	YES
 USE_OPENSSL=	YES
-USE_AUTOTOOLS=	libtool:22
+USE_AUTOTOOLS=	libtool
 
 post-patch:
 	@${REINPLACE_CMD} 's,#define\ *DEFAULT_CONF_FILE .*,#define DEFAULT_CONF_FILE "${PREFIX}/etc/spine.conf",' ${WRKSRC}/spine.h

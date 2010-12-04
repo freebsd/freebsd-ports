@@ -23,7 +23,7 @@ COMMENT=	A replacement ftp server for Un*x systems
 
 CONFLICTS=	wu-ftpd-[0-9]* heimdal-[0-9]*
 
-USE_AUTOTOOLS=	autoconf:213
+USE_AUTOTOOLS=	autoconf213
 CONFIGURE_ARGS=	--enable-rfc931 --disable-pasvip \
 		--enable-noop --disable-numericuid  --enable-nlst-dirs \
 		--enable-ipv6 \

@@ -17,7 +17,7 @@ MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Easy-to-use offline browser utility and website copier
 
 CONFIGURE_ARGS=	--docdir="${DOCSDIR}"
-USE_AUTOTOOLS=	libtool:22
+USE_AUTOTOOLS=	libtool
 USE_GMAKE=	yes
 USE_LDCONFIG=	${PREFIX}/lib
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}

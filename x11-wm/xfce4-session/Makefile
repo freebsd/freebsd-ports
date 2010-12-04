@@ -19,7 +19,7 @@ RUN_DEPENDS=	iceauth:${PORTSDIR}/x11/iceauth
 LIB_DEPENDS=	wnck-1.22:${PORTSDIR}/x11-toolkits/libwnck \
 		dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib
 
-USE_AUTOTOOLS=	libtool:22
+USE_AUTOTOOLS=	libtool
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
 USE_BZIP2=	yes

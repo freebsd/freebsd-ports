@@ -20,7 +20,7 @@ LIB_DEPENDS=	jpeg:${PORTSDIR}/graphics/jpeg
 
 LICENSE=	MIT
 
-USE_AUTOTOOLS=	libtool:22
+USE_AUTOTOOLS=	libtool
 USE_ZIP=	yes
 USE_GNOME=	gnometarget lthack
 GNU_CONFIGURE=	yes

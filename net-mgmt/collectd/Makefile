@@ -16,7 +16,7 @@ COMMENT=	Systems & network statistics collection daemon
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-USE_AUTOTOOLS=	libltdl:22
+USE_AUTOTOOLS=	libltdl
 WANT_GNOME=	yes
 
 OPTIONS=	CGI		"Install collection.cgi (requires RRDTOOL)" 	Off \

@@ -17,7 +17,7 @@ COMMENT=	Jigsaw puzzle game for KDE
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 USE_BZIP2=		yes
 USE_KDELIBS_VER=	3
-USE_AUTOTOOLS=		libtool:22
+USE_AUTOTOOLS=		libtool
 
 post-patch:
 	${REINPLACE_CMD} -e "s,malloc.h,stdlib.h," \

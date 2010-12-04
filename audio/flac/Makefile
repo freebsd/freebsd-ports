@@ -16,7 +16,7 @@ COMMENT=	Free lossless audio codec
 
 LIB_DEPENDS=	ogg.7:${PORTSDIR}/audio/libogg
 
-USE_AUTOTOOLS=	libtool:22
+USE_AUTOTOOLS=	libtool
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-sse \
 		--with-ogg="${LOCALBASE}" \

@@ -35,7 +35,7 @@ CONFLICTS=	emacs-19.* emacs-20.* emacs-22.* \
 
 WRKSRC=		${WRKDIR}/emacs-${EMACS_VER}
 
-USE_AUTOTOOLS=	autoconf:213
+USE_AUTOTOOLS=	autoconf213
 USE_GMAKE=	YES
 
 # Change these as you like.

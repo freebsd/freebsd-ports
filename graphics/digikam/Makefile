@@ -27,7 +27,7 @@ LIB_DEPENDS=	tiff.4:${PORTSDIR}/graphics/tiff \
 PORTSCOUT=	limit:^0\.9\.
 
 USE_BZIP2=	yes
-USE_AUTOTOOLS=	libtool:22
+USE_AUTOTOOLS=	libtool
 USE_GMAKE=	yes
 USE_KDELIBS_VER=3
 USE_GETTEXT=	yes

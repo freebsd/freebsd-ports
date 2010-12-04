@@ -15,7 +15,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A tool for capturing data transmitted as part of TCP connections
 
 HAS_CONFIGURE=	yes
-USE_AUTOTOOLS=	automake:14
+USE_AUTOTOOLS=	automake14
 
 MAN1=		tcpflow.1
 PLIST_FILES=	bin/tcpflow

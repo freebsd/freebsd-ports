@@ -18,7 +18,7 @@ COMMENT=	A lightweight fully POSIX compliant regexp matching library
 
 USE_BZIP2=	yes
 USE_GNOME=	gnomehack gnometarget pkgconfig
-USE_AUTOTOOLS=	libtool:22
+USE_AUTOTOOLS=	libtool
 CONFIGURE_ARGS+=	--enable-static
 CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS}"
 USE_LDCONFIG=	yes

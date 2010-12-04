@@ -22,7 +22,7 @@ PLIST_FILES=	bin/vdesk
 PLIST_FILES+=	share/doc/vdesk/${ii}
 .endfor
 .endif
-USE_AUTOTOOLS=	autoconf:268
+USE_AUTOTOOLS=	autoconf
 USE_XORG=	x11
 
 post-extract:

@@ -21,7 +21,7 @@ COMMENT=	Hierarchical Data Format library (from NCSA)
 CONFLICTS=	hdf5-1.8.*
 
 USE_LDCONFIG=	yes
-USE_AUTOTOOLS=	libtool:22
+USE_AUTOTOOLS=	libtool
 GNU_CONFIGURE=	yes
 LIBTOOLFILES=	configure c++/configure
 CONFIGURE_ARGS=	--disable-debug \

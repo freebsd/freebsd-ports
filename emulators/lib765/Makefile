@@ -15,7 +15,7 @@ COMMENT=	Emulation of uPD765a Floppy Disc Controller
 
 LICENSE=	LGPL20
 
-USE_AUTOTOOLS=	libtool:22
+USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
 
 OPTIONS=	LIBDSK "With LIBDSK support (recommended)" on

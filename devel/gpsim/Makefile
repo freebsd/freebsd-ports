@@ -18,7 +18,7 @@ LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt \
 		gtkextra-x11-2.0.1:${PORTSDIR}/x11-toolkits/gtkextra2
 RUN_DEPENDS=	gpasm:${PORTSDIR}/devel/gputils
 
-USE_AUTOTOOLS=	libtool:22
+USE_AUTOTOOLS=	libtool
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"

@@ -20,7 +20,7 @@ USE_PERL5_BUILD=	yes
 USE_XORG=	x11 ice xext sm inputproto xi
 USE_GNOME=	glib12
 USE_LDCONFIG=	yes
-USE_AUTOTOOLS=	libtool:22
+USE_AUTOTOOLS=	libtool
 CONFIGURE_ARGS=	--includedir=${PREFIX}/include/gtk12 --with-native-locale \
 		--with-xinput=xfree
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

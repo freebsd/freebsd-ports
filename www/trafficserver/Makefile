@@ -20,7 +20,7 @@ LIB_DEPENDS=	execinfo.1:${PORTSDIR}/devel/libexecinfo \
 		expat.6:${PORTSDIR}/textproc/expat2 \
 		pcre.0:${PORTSDIR}/devel/pcre
 
-USE_AUTOTOOLS=	autoconf:268 automake:111 libtool:22
+USE_AUTOTOOLS=	autoconf automake libtool
 USE_BZIP2=	yes
 USE_ICONV=	yes
 USE_OPENSSL=	yes

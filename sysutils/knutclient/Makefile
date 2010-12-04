@@ -19,7 +19,7 @@ MAKE_JOBS_UNSAFE=	yes
 
 USE_KDELIBS_VER=3
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	libtool:22 automake:111:env aclocal:111:env
+USE_AUTOTOOLS=	libtool automake:env aclocal:env
 CONFIGURE_ARGS=	--disable-fast-perl --enable-mt --program-transform-name=''
 
 post-patch:

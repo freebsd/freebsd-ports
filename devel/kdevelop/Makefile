@@ -20,7 +20,8 @@ COMMENT=	IDE for a wide variety of programming tasks
 BUILD_DEPENDS=	cervisia:${PORTSDIR}/devel/kdesdk3 \
 		dot:${PORTSDIR}/graphics/graphviz
 LIB_DEPENDS=	svn_client-1.0:${PORTSDIR}/devel/subversion
-RUN_DEPENDS=	extractrc:${PORTSDIR}/devel/kdesdk3 \
+RUN_DEPENDS=	${LOCALBASE}/share/autotools:${PORTSDIR}/devel/autotools \
+		extractrc:${PORTSDIR}/devel/kdesdk3 \
 		gdb66:${PORTSDIR}/devel/gdb66 \
 		gmake:${PORTSDIR}/devel/gmake
 
@@ -53,7 +54,7 @@ USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_GETTEXT=	build
 USE_BDB=	yes
-USE_AUTOTOOLS=	libtool:22 autotools:run
+USE_AUTOTOOLS=	libtool
 _NO_KDE_FINAL=	yes
 CONFIGURE_ARGS+=--with-qtdoc-dir=${LOCALBASE}/share/doc/qt/html \
 		--with-db-includedir=${BDB_INCLUDE_DIR} \

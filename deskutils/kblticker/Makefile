@@ -15,7 +15,7 @@ MASTER_SITES=		SF
 MAINTAINER=		mich@FreeBSD.org
 COMMENT=		KDE bloglines notifier
 
-USE_AUTOTOOLS=		libtool:22
+USE_AUTOTOOLS=		libtool
 USE_GMAKE=		yes
 USE_KDELIBS_VER=	3
 

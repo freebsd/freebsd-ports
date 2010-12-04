@@ -18,7 +18,7 @@ USE_LDCONFIG=	yes
 USE_PERL5=	yes
 USE_GNOME=	gnomehack \
 		pkgconfig
-USE_AUTOTOOLS=	libtool:22
+USE_AUTOTOOLS=	libtool
 HAS_CONFIGURE=	yes
 
 MAN1=		freehdl-config.1 \

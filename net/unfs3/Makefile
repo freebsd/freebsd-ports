@@ -14,7 +14,7 @@ MASTER_SITES=	SF
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A user-space implementation of the NFSv3 server specification
 
-USE_AUTOTOOLS=	autoconf:268
+USE_AUTOTOOLS=	autoconf
 USE_BISON=	build
 
 MAN7=		tags.7

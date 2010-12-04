@@ -14,7 +14,7 @@ MAINTAINER=	wenheping@gmail.com
 COMMENT=	C library for quantum computing and quantum simulation
 
 GNU_CONFIGURE=	yes
-USE_AUTOTOOLS=	libtool:22
+USE_AUTOTOOLS=	libtool
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 

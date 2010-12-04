@@ -20,7 +20,7 @@ LIB_DEPENDS=	tspi.2:${PORTSDIR}/security/trousers
 USE_GMAKE=	YES
 GNU_CONFIGURE=	YES
 MAKE_JOBS_SAFE=	YES
-USE_AUTOTOOLS=	autoconf:268 libtool:22
+USE_AUTOTOOLS=	autoconf libtool
 CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib"
 
 SUB_FILES=	pkg-message

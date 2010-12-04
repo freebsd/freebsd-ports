@@ -17,7 +17,7 @@ COMMENT=	Collection of high performance c-string transformations
 USE_PERL5=	yes
 HAS_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-USE_AUTOTOOLS=	libtool:22
+USE_AUTOTOOLS=	libtool
 
 .include <bsd.port.pre.mk>
 

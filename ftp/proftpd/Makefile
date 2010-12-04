@@ -34,7 +34,7 @@ PORTDOCS=	*
 
 USE_GMAKE=	yes
 USE_BZIP2=	yes
-USE_AUTOTOOLS=	autoconf:268
+USE_AUTOTOOLS=	autoconf
 GNU_CONFIGURE=	yes
 
 CONFLICTS=	proftpd-devel-1.[0-9].*

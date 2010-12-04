@@ -18,7 +18,7 @@ MASTER_SITES=	http://software.wise-guys.nl/download/
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	Language guessing by N-Gram-Based Text Categorization
 
-USE_AUTOTOOLS=	libtool:22
+USE_AUTOTOOLS=	libtool
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 

@@ -16,6 +16,6 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A clean-looking GTK Theme Engine
 
 USE_GNOME=	gtk12
-USE_AUTOTOOLS=	libtool:22
+USE_AUTOTOOLS=	libtool
 
 .include <bsd.port.mk>

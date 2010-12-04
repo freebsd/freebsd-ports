@@ -17,7 +17,7 @@ COMMENT=	Provides a non-blocking thread-safe API for resolving DNS names
 BUILD_DEPENDS=	${LOCALBASE}/lib/libevent.a:${PORTSDIR}/devel/libevent
 
 GNU_CONFIGURE=	yes
-USE_AUTOTOOLS=	libtool:22
+USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=--with-libevent=${LOCALBASE}
 MAKE_JOBS_UNSAFE=	yes

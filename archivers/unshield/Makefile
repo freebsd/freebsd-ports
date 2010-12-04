@@ -13,7 +13,7 @@ MASTER_SITES=	SF/synce/Unshield/${PORTVERSION}
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Extract data from InstallShield CAB files
 
-USE_AUTOTOOLS=	libtool:22
+USE_AUTOTOOLS=	libtool
 GNU_CONFIGURE=	yes
 USE_GNOME=	gnomehack gnometarget
 USE_LDCONFIG=	yes

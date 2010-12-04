@@ -14,7 +14,7 @@ MASTER_SITES=	SF
 MAINTAINER=	novel@FreeBSD.org
 COMMENT=	A library for playing audio CDs
 
-USE_AUTOTOOLS=	libtool:22
+USE_AUTOTOOLS=	libtool
 USE_GNOME=	gnomehack gnometarget pkgconfig
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes

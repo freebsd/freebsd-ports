@@ -23,7 +23,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 USE_GETTEXT=	yes
 USE_PERL5=	yes
-USE_AUTOTOOLS=	libtool:22
+USE_AUTOTOOLS=	libtool
 USE_GMAKE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CFLAGS} -I${LOCALBASE}/include -fpermissive" \
 		LIBS="-L${LOCALBASE}/lib -lintl -lmcrypt"

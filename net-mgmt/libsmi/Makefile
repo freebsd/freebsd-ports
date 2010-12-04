@@ -14,7 +14,7 @@ MASTER_SITES=	ftp://ftp.ibr.cs.tu-bs.de/pub/local/libsmi/ \
 MAINTAINER=	saper@saper.info
 COMMENT=	A library to access SMI MIB information
 
-USE_AUTOTOOLS=	libtool:22
+USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
 USE_GNOME=	pkgconfig gnomehack
 USE_GMAKE=	yes

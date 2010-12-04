@@ -15,7 +15,7 @@ MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	Java-based Scheme implementation
 
 USE_JAVA=	yes
-USE_AUTOTOOLS=	libtool:22
+USE_AUTOTOOLS=	libtool
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-kawa-frontend \
 		--with-java-source=${JAVA_PORT_VERSION} \

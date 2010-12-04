@@ -18,7 +18,7 @@ COMMENT=	A library for MPEG TS and DVB PSI tables decoding and generation
 
 USE_DOS2UNIX=	yes
 USE_BZIP2=	yes
-USE_AUTOTOOLS=	libtool:22
+USE_AUTOTOOLS=	libtool
 GNU_CONFIGURE=	yes
 .if defined(WITH_DEBUG)
 CONFIGURE_ARGS=		--enable-debug

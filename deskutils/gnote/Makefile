@@ -25,7 +25,7 @@ USE_GNOME=	gnomehack gnomeprefix gconf2 intltool ltverhack gnomepanel
 USE_GETTEXT=	yes
 INSTALLS_OMF=	yes
 GCONF_SCHEMAS=	gnote.schemas
-USE_AUTOTOOLS=	libtool:22
+USE_AUTOTOOLS=	libtool
 INSTALLS_ICONS=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

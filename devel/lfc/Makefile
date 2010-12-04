@@ -15,6 +15,6 @@ COMMENT=	A collection of basic c++ classes, used for databases/cego
 LICENSE=	GPLv2
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-USE_AUTOTOOLS=	autoconf:268:env
+USE_AUTOTOOLS=	autoconf:env
 
 .include <bsd.port.mk>

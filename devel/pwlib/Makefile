@@ -25,7 +25,7 @@ WRKSRC=		${WRKDIR}/ptlib_v${PORTVERSION:S/./_/g}
 
 USE_BISON=	build
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	autoconf:268
+USE_AUTOTOOLS=	autoconf
 USE_GNOME=	gnometarget
 WANT_GNOME=	yes
 WANT_SDL=	yes

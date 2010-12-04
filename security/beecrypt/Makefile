@@ -14,7 +14,7 @@ MASTER_SITES=	SF
 MAINTAINER=	corky1951@comcast.net
 COMMENT=	BeeCrypt is an open source cryptography library
 
-USE_AUTOTOOLS=	libtool:22
+USE_AUTOTOOLS=	libtool
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--without-java
 USE_LDCONFIG=	yes

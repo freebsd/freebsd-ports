@@ -21,7 +21,7 @@ LIB_DEPENDS=	gc.1:${PORTSDIR}/devel/boehm-gc \
 
 USE_ICONV=	yes
 USE_GNOME=	glib12
-USE_AUTOTOOLS=	libtool:22
+USE_AUTOTOOLS=	libtool
 LIBTOOLFILES=	configure liboop/configure
 USE_OPENSSL=	yes
 USE_LDCONFIG=	yes

@@ -15,7 +15,7 @@ COMMENT=	Yet Another Multipurpose CHunk Annotator
 
 BUILD_DEPENDS=	svm_learn:${PORTSDIR}/science/svmlight
 
-USE_AUTOTOOLS=	libtool:22
+USE_AUTOTOOLS=	libtool
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 USE_PERL5_BUILD=yes

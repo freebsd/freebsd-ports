@@ -33,7 +33,7 @@ USE_PYTHON=	2.4+
 USE_WX=		2.6+
 WX_COMPS=	wx wx:build wx:run python:build python:run
 USE_PERL5=	yes
-USE_AUTOTOOLS=	autoconf:268 libtool:22
+USE_AUTOTOOLS=	autoconf libtool
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
