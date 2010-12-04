@@ -26,9 +26,11 @@ bin/zf.php
 %%DOJO%%%%DATADIR%%/externals/dojo/dijit/_Calendar.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dijit/_Contained.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dijit/_Container.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dijit/_CssStateMixin.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dijit/_DialogMixin.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dijit/_HasDropDown.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dijit/_KeyNavContainer.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dijit/_PaletteMixin.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dijit/_Templated.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dijit/_TimePicker.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dijit/_Widget.js
@@ -105,6 +107,9 @@ bin/zf.php
 %%DOJO%%%%DATADIR%%/externals/dojo/dijit/_editor/nls/pt/FontChoice.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dijit/_editor/nls/pt/LinkDialog.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dijit/_editor/nls/pt/commands.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dijit/_editor/nls/ro/FontChoice.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dijit/_editor/nls/ro/LinkDialog.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dijit/_editor/nls/ro/commands.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dijit/_editor/nls/ru/FontChoice.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dijit/_editor/nls/ru/LinkDialog.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dijit/_editor/nls/ru/commands.js
@@ -238,6 +243,9 @@ bin/zf.php
 %%DOJO%%%%DATADIR%%/externals/dojo/dijit/form/nls/pt/ComboBox.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dijit/form/nls/pt/Textarea.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dijit/form/nls/pt/validate.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dijit/form/nls/ro/ComboBox.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dijit/form/nls/ro/Textarea.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dijit/form/nls/ro/validate.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dijit/form/nls/ru/ComboBox.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dijit/form/nls/ru/Textarea.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dijit/form/nls/ru/validate.js
@@ -274,6 +282,21 @@ bin/zf.php
 %%DOJO%%%%DATADIR%%/externals/dojo/dijit/form/templates/TextBox.html
 %%DOJO%%%%DATADIR%%/externals/dojo/dijit/form/templates/ValidationTextBox.html
 %%DOJO%%%%DATADIR%%/externals/dojo/dijit/form/templates/VerticalSlider.html
+%%DOJO%%%%DATADIR%%/externals/dojo/dijit/icons/commonIcons.css
+%%DOJO%%%%DATADIR%%/externals/dojo/dijit/icons/commonIcons_rtl.css
+%%DOJO%%%%DATADIR%%/externals/dojo/dijit/icons/editorIcons.css
+%%DOJO%%%%DATADIR%%/externals/dojo/dijit/icons/editorIcons_rtl.css
+%%DOJO%%%%DATADIR%%/externals/dojo/dijit/icons/images/commonIconsObjActDisabled.png
+%%DOJO%%%%DATADIR%%/externals/dojo/dijit/icons/images/commonIconsObjActDisabled_rtl.png
+%%DOJO%%%%DATADIR%%/externals/dojo/dijit/icons/images/commonIconsObjActEnabled.png
+%%DOJO%%%%DATADIR%%/externals/dojo/dijit/icons/images/commonIconsObjActEnabled8bit.png
+%%DOJO%%%%DATADIR%%/externals/dojo/dijit/icons/images/commonIconsObjActEnabled8bit_rtl.png
+%%DOJO%%%%DATADIR%%/externals/dojo/dijit/icons/images/commonIconsObjActEnabled_rtl.png
+%%DOJO%%%%DATADIR%%/externals/dojo/dijit/icons/images/editorIconsDisabled.png
+%%DOJO%%%%DATADIR%%/externals/dojo/dijit/icons/images/editorIconsDisabled_rtl.png
+%%DOJO%%%%DATADIR%%/externals/dojo/dijit/icons/images/editorIconsEnabled.png
+%%DOJO%%%%DATADIR%%/externals/dojo/dijit/icons/images/editorIconsEnabled_rtl.png
+%%DOJO%%%%DATADIR%%/externals/dojo/dijit/icons/images/loadingAnimation_rtl.gif
 %%DOJO%%%%DATADIR%%/externals/dojo/dijit/layout/AccordionContainer.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dijit/layout/AccordionPane.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dijit/layout/BorderContainer.js
@@ -333,6 +356,8 @@ bin/zf.php
 %%DOJO%%%%DATADIR%%/externals/dojo/dijit/nls/pt-pt/loading.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dijit/nls/pt/common.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dijit/nls/pt/loading.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dijit/nls/ro/common.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dijit/nls/ro/loading.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dijit/nls/ru/common.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dijit/nls/ru/loading.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dijit/nls/sk/common.js
@@ -372,9 +397,93 @@ bin/zf.php
 %%DOJO%%%%DATADIR%%/externals/dojo/dijit/tests/_data/countries.json
 %%DOJO%%%%DATADIR%%/externals/dojo/dijit/tests/_testCommon.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/a11y/README.txt
+%%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/a11y/colors3x4-rtl.png
 %%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/a11y/colors3x4.png
+%%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/a11y/colors7x10-rtl.png
 %%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/a11y/colors7x10.png
 %%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/a11y/indeterminate_progress.gif
+%%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/claro/Calendar.css
+%%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/claro/Calendar_rtl.css
+%%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/claro/ColorPalette.css
+%%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/claro/Common.css
+%%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/claro/Dialog.css
+%%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/claro/Dialog_rtl.css
+%%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/claro/Editor.css
+%%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/claro/Editor_rtl.css
+%%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/claro/InlineEditBox.css
+%%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/claro/Menu.css
+%%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/claro/Menu_rtl.css
+%%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/claro/ProgressBar.css
+%%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/claro/TimePicker.css
+%%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/claro/TimePicker_rtl.css
+%%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/claro/TitlePane.css
+%%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/claro/TitlePane_rtl.css
+%%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/claro/Toolbar.css
+%%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/claro/Tree.css
+%%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/claro/claro.css
+%%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/claro/claro_rtl.css
+%%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/claro/document.css
+%%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/claro/form/Button.css
+%%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/claro/form/Button_rtl.css
+%%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/claro/form/Checkbox.css
+%%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/claro/form/Common.css
+%%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/claro/form/Common_rtl.css
+%%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/claro/form/NumberSpinner.css
+%%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/claro/form/RadioButton.css
+%%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/claro/form/Select.css
+%%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/claro/form/Select_rtl.css
+%%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/claro/form/Slider.css
+%%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/claro/form/Slider_rtl.css
+%%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/claro/form/images/button.png
+%%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/claro/form/images/buttonArrows.png
+%%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/claro/form/images/button_grad_d.png
+%%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/claro/form/images/checkboxAndRadioButtons_IE6.png
+%%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/claro/form/images/checkboxRadioButtonStates.png
+%%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/claro/form/images/commonFormArrows.png
+%%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/claro/form/images/error.png
+%%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/claro/form/images/formHighlight.png
+%%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/claro/form/images/shadow.png
+%%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/claro/form/images/sliderHorizontal.png
+%%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/claro/form/images/sliderThumbs.png
+%%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/claro/form/images/sliderVertical.png
+%%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/claro/form/images/textBox_back.png
+%%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/claro/images/calendarArrows.png
+%%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/claro/images/calendarArrows8bit.png
+%%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/claro/images/calendarContainerImages.png
+%%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/claro/images/checkmarkNoBorder.gif
+%%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/claro/images/checkmarkNoBorder.png
+%%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/claro/images/commonHighlight.png
+%%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/claro/images/dialogCloseIcon.png
+%%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/claro/images/dialogCloseIcon8bit.png
+%%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/claro/images/dnd.png
+%%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/claro/images/loading.gif
+%%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/claro/images/loadingAnimation.gif
+%%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/claro/images/menuHighlight.png
+%%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/claro/images/progressBarAnim.gif
+%%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/claro/images/progressBarEmpty.png
+%%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/claro/images/progressBarFull.png
+%%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/claro/images/spriteArrows.png
+%%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/claro/images/titlebar.png
+%%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/claro/images/tooltip.png
+%%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/claro/images/tooltip8bit.png
+%%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/claro/images/tooltipGradient.png
+%%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/claro/images/treeExpandImages.png
+%%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/claro/images/treeExpandImages8bit.png
+%%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/claro/images/treeExpand_loading.gif
+%%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/claro/layout/AccordionContainer.css
+%%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/claro/layout/BorderContainer.css
+%%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/claro/layout/ContentPane.css
+%%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/claro/layout/TabContainer.css
+%%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/claro/layout/TabContainer_rtl.css
+%%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/claro/layout/images/accordion.png
+%%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/claro/layout/images/splitterHorizontalHover.png
+%%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/claro/layout/images/splitterVerticalHover.png
+%%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/claro/layout/images/tabBottom.png
+%%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/claro/layout/images/tabClose.png
+%%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/claro/layout/images/tabLeft.png
+%%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/claro/layout/images/tabNested.png
+%%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/claro/layout/images/tabRight.png
+%%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/claro/layout/images/tabTop.png
 %%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/dijit.css
 %%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/dijit_rtl.css
 %%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/nihilo/Calendar.css
@@ -389,6 +498,7 @@ bin/zf.php
 %%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/nihilo/Menu_rtl.css
 %%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/nihilo/ProgressBar.css
 %%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/nihilo/TimePicker.css
+%%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/nihilo/TimePicker_rtl.css
 %%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/nihilo/TitlePane.css
 %%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/nihilo/TitlePane_rtl.css
 %%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/nihilo/Toolbar.css
@@ -397,9 +507,7 @@ bin/zf.php
 %%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/nihilo/form/Button.css
 %%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/nihilo/form/Button_rtl.css
 %%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/nihilo/form/Checkbox.css
-%%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/nihilo/form/ComboBox.css
 %%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/nihilo/form/Common.css
-%%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/nihilo/form/Common_rtl.css
 %%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/nihilo/form/RadioButton.css
 %%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/nihilo/form/Select.css
 %%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/nihilo/form/Slider.css
@@ -414,10 +522,6 @@ bin/zf.php
 %%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/nihilo/images/dndMove.png
 %%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/nihilo/images/dndNoCopy.png
 %%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/nihilo/images/dndNoMove.png
-%%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/nihilo/images/editor.gif
-%%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/nihilo/images/editorDisabled.gif
-%%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/nihilo/images/editorDisabled_rtl.gif
-%%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/nihilo/images/editor_rtl.gif
 %%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/nihilo/images/no.gif
 %%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/nihilo/images/preciseSliderThumb.gif
 %%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/nihilo/images/preciseSliderThumb.png
@@ -495,101 +599,6 @@ bin/zf.php
 %%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/nihilo/layout/TabContainer_rtl.css
 %%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/nihilo/nihilo.css
 %%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/nihilo/nihilo_rtl.css
-%%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/noir/images/buttonActive-left.png
-%%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/noir/images/buttonActive-right.png
-%%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/noir/images/buttonActive-stretch.png
-%%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/noir/images/buttonDisabled-left.png
-%%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/noir/images/buttonDisabled-right.png
-%%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/noir/images/buttonDisabled-stretch.png
-%%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/noir/images/buttonEnabled-left.png
-%%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/noir/images/buttonEnabled-right.png
-%%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/noir/images/buttonEnabled-stretch.png
-%%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/noir/images/buttonHover-left.png
-%%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/noir/images/buttonHover-right.png
-%%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/noir/images/buttonHover-stretch.png
-%%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/noir/images/close.png
-%%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/noir/images/closeActive.png
-%%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/noir/images/closeHover.png
-%%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/noir/images/comboButtonArrowActive-left.png
-%%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/noir/images/comboButtonArrowActive-right.png
-%%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/noir/images/comboButtonArrowActive-stretch.png
-%%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/noir/images/comboButtonArrowHover-left.png
-%%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/noir/images/comboButtonArrowHover-right.png
-%%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/noir/images/comboButtonArrowHover-stretch.png
-%%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/noir/images/comboButtonBtnActive-left.png
-%%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/noir/images/comboButtonBtnActive-right.png
-%%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/noir/images/comboButtonBtnActive-stretch.png
-%%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/noir/images/comboButtonBtnHover-left.png
-%%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/noir/images/comboButtonBtnHover-right.png
-%%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/noir/images/comboButtonBtnHover-stretch.png
-%%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/noir/images/comboButtonDisabled-left.png
-%%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/noir/images/comboButtonDisabled-right.png
-%%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/noir/images/comboButtonDisabled-stretch.png
-%%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/noir/images/comboButtonEnabled-left.png
-%%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/noir/images/comboButtonEnabled-right.png
-%%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/noir/images/comboButtonEnabled-stretch.png
-%%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/noir/images/ddButtonActive-center.png
-%%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/noir/images/ddButtonActive-left.png
-%%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/noir/images/ddButtonActive-right.png
-%%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/noir/images/ddButtonActive-stretch.png
-%%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/noir/images/ddButtonDisabled-center.png
-%%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/noir/images/ddButtonDisabled-left.png
-%%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/noir/images/ddButtonDisabled-right.png
-%%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/noir/images/ddButtonDisabled-stretch.png
-%%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/noir/images/ddButtonEnabled-left.png
-%%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/noir/images/ddButtonEnabled-right-06.png
-%%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/noir/images/ddButtonEnabled-right.png
-%%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/noir/images/ddButtonEnabled-stretch.png
-%%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/noir/images/ddButtonHover-center.png
-%%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/noir/images/ddButtonHover-left.png
-%%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/noir/images/ddButtonHover-right.png
-%%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/noir/images/ddButtonHover-stretch.png
-%%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/noir/images/dndCopy.png
-%%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/noir/images/dndMove.png
-%%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/noir/images/dndNoCopy.png
-%%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/noir/images/dndNoMove.png
-%%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/noir/images/editor_rtl.gif
-%%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/noir/images/images.css
-%%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/noir/images/selectActive-left.png
-%%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/noir/images/selectActive-right.png
-%%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/noir/images/selectActive-stretch.png
-%%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/noir/images/selectDisabled-left.png
-%%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/noir/images/selectDisabled-right.png
-%%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/noir/images/selectDisabled-stretch.png
-%%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/noir/images/selectEnabled-left.png
-%%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/noir/images/selectEnabled-right.png
-%%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/noir/images/selectEnabled-stretch.png
-%%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/noir/images/selectHover-left.png
-%%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/noir/images/selectHover-right.png
-%%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/noir/images/selectHover-stretch.png
-%%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/noir/images/spinnerActive-bottom.png
-%%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/noir/images/spinnerActive-top.png
-%%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/noir/images/spinnerDisabled-bottom.png
-%%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/noir/images/spinnerDisabled-left.png
-%%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/noir/images/spinnerDisabled-stretch.png
-%%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/noir/images/spinnerDisabled-top.png
-%%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/noir/images/spinnerEnabled-bottom.png
-%%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/noir/images/spinnerEnabled-left.png
-%%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/noir/images/spinnerEnabled-stretch.png
-%%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/noir/images/spinnerEnabled-top.png
-%%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/noir/images/spinnerHover-bottom.png
-%%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/noir/images/spinnerHover-top.png
-%%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/noir/images/tabActive-left.png
-%%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/noir/images/tabActive-right.png
-%%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/noir/images/tabActive-stretch.png
-%%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/noir/images/tabDisabled-left.png
-%%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/noir/images/tabDisabled-right.png
-%%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/noir/images/tabDisabled-stretch.png
-%%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/noir/images/tabEnabled-left.png
-%%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/noir/images/tabEnabled-right.png
-%%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/noir/images/tabEnabled-stretch.png
-%%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/noir/images/tabHover-left.png
-%%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/noir/images/tabHover-right.png
-%%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/noir/images/tabHover-stretch.png
-%%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/noir/images/warning.png
-%%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/noir/noir.css
-%%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/noir/noir.html
-%%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/noir/noir.psd
 %%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/soria/Calendar.css
 %%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/soria/Calendar_rtl.css
 %%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/soria/ColorPalette.css
@@ -602,6 +611,7 @@ bin/zf.php
 %%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/soria/Menu_rtl.css
 %%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/soria/ProgressBar.css
 %%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/soria/TimePicker.css
+%%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/soria/TimePicker_rtl.css
 %%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/soria/TitlePane.css
 %%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/soria/TitlePane_rtl.css
 %%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/soria/Toolbar.css
@@ -610,9 +620,7 @@ bin/zf.php
 %%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/soria/form/Button.css
 %%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/soria/form/Button_rtl.css
 %%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/soria/form/Checkbox.css
-%%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/soria/form/ComboBox.css
 %%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/soria/form/Common.css
-%%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/soria/form/Common_rtl.css
 %%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/soria/form/RadioButton.css
 %%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/soria/form/Select.css
 %%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/soria/form/Slider.css
@@ -628,10 +636,6 @@ bin/zf.php
 %%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/soria/images/dndMove.png
 %%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/soria/images/dndNoCopy.png
 %%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/soria/images/dndNoMove.png
-%%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/soria/images/editor.gif
-%%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/soria/images/editorDisabled.gif
-%%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/soria/images/editorDisabled_rtl.gif
-%%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/soria/images/editor_rtl.gif
 %%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/soria/images/preciseSliderThumb.gif
 %%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/soria/images/preciseSliderThumb.png
 %%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/soria/images/preciseSliderThumbFocus.gif
@@ -710,7 +714,6 @@ bin/zf.php
 %%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/soria/layout/TabContainer_rtl.css
 %%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/soria/soria.css
 %%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/soria/soria_rtl.css
-%%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/templateThemeTest.html
 %%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/themeTester.html
 %%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/themeTesterImages/blackButtonEnabled.gif
 %%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/themeTesterImages/blackButtonHover.gif
@@ -727,6 +730,7 @@ bin/zf.php
 %%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/tundra/Menu_rtl.css
 %%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/tundra/ProgressBar.css
 %%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/tundra/TimePicker.css
+%%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/tundra/TimePicker_rtl.css
 %%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/tundra/TitlePane.css
 %%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/tundra/TitlePane_rtl.css
 %%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/tundra/Toolbar.css
@@ -735,7 +739,6 @@ bin/zf.php
 %%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/tundra/form/Button.css
 %%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/tundra/form/Checkbox.css
 %%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/tundra/form/Common.css
-%%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/tundra/form/Common_rtl.css
 %%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/tundra/form/RadioButton.css
 %%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/tundra/form/Select.css
 %%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/tundra/form/Slider.css
@@ -766,11 +769,6 @@ bin/zf.php
 %%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/tundra/images/dojoTundraGradientBg.png
 %%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/tundra/images/doubleArrowDown.png
 %%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/tundra/images/doubleArrowUp.png
-%%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/tundra/images/editor.gif
-%%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/tundra/images/editorDisabled.gif
-%%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/tundra/images/editorDisabled_rtl.gif
-%%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/tundra/images/editorMaster.png
-%%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/tundra/images/editor_rtl.gif
 %%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/tundra/images/folderClosed.gif
 %%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/tundra/images/folderOpened.gif
 %%DOJO%%%%DATADIR%%/externals/dojo/dijit/themes/tundra/images/i.gif
@@ -880,6 +878,7 @@ bin/zf.php
 %%DOJO%%%%DATADIR%%/externals/dojo/dojo/NodeList-manipulate.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojo/NodeList-traverse.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojo/OpenAjax.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojo/Stateful.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojo/_base.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojo/_base/Color.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojo/_base/Deferred.js
@@ -927,6 +926,7 @@ bin/zf.php
 %%DOJO%%%%DATADIR%%/externals/dojo/dojo/cldr/nls/ar/islamic-civil.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojo/cldr/nls/ar/islamic.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojo/cldr/nls/ar/number.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojo/cldr/nls/buddhist.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojo/cldr/nls/ca/currency.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojo/cldr/nls/ca/gregorian.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojo/cldr/nls/ca/number.js
@@ -937,7 +937,6 @@ bin/zf.php
 %%DOJO%%%%DATADIR%%/externals/dojo/dojo/cldr/nls/da/currency.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojo/cldr/nls/da/gregorian.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojo/cldr/nls/da/number.js
-%%DOJO%%%%DATADIR%%/externals/dojo/dojo/cldr/nls/de-de/number.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojo/cldr/nls/de/currency.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojo/cldr/nls/de/gregorian.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojo/cldr/nls/de/number.js
@@ -951,13 +950,9 @@ bin/zf.php
 %%DOJO%%%%DATADIR%%/externals/dojo/dojo/cldr/nls/en-ca/gregorian.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojo/cldr/nls/en-gb/gregorian.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojo/cldr/nls/en-gb/number.js
-%%DOJO%%%%DATADIR%%/externals/dojo/dojo/cldr/nls/en-us/currency.js
-%%DOJO%%%%DATADIR%%/externals/dojo/dojo/cldr/nls/en-us/number.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojo/cldr/nls/en/currency.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojo/cldr/nls/en/gregorian.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojo/cldr/nls/en/number.js
-%%DOJO%%%%DATADIR%%/externals/dojo/dojo/cldr/nls/es-es/gregorian.js
-%%DOJO%%%%DATADIR%%/externals/dojo/dojo/cldr/nls/es-es/number.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojo/cldr/nls/es/currency.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojo/cldr/nls/es/gregorian.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojo/cldr/nls/es/number.js
@@ -977,18 +972,13 @@ bin/zf.php
 %%DOJO%%%%DATADIR%%/externals/dojo/dojo/cldr/nls/hu/currency.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojo/cldr/nls/hu/gregorian.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojo/cldr/nls/hu/number.js
-%%DOJO%%%%DATADIR%%/externals/dojo/dojo/cldr/nls/islamic-civil.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojo/cldr/nls/islamic.js
-%%DOJO%%%%DATADIR%%/externals/dojo/dojo/cldr/nls/it-it/gregorian.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojo/cldr/nls/it/currency.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojo/cldr/nls/it/gregorian.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojo/cldr/nls/it/number.js
-%%DOJO%%%%DATADIR%%/externals/dojo/dojo/cldr/nls/ja-jp/number.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojo/cldr/nls/ja/currency.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojo/cldr/nls/ja/gregorian.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojo/cldr/nls/ja/number.js
-%%DOJO%%%%DATADIR%%/externals/dojo/dojo/cldr/nls/ko-kr/gregorian.js
-%%DOJO%%%%DATADIR%%/externals/dojo/dojo/cldr/nls/ko-kr/number.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojo/cldr/nls/ko/currency.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojo/cldr/nls/ko/gregorian.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojo/cldr/nls/ko/number.js
@@ -1002,7 +992,6 @@ bin/zf.php
 %%DOJO%%%%DATADIR%%/externals/dojo/dojo/cldr/nls/pl/currency.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojo/cldr/nls/pl/gregorian.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojo/cldr/nls/pl/number.js
-%%DOJO%%%%DATADIR%%/externals/dojo/dojo/cldr/nls/pt-br/gregorian.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojo/cldr/nls/pt-pt/gregorian.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojo/cldr/nls/pt-pt/number.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojo/cldr/nls/pt/currency.js
@@ -1027,11 +1016,8 @@ bin/zf.php
 %%DOJO%%%%DATADIR%%/externals/dojo/dojo/cldr/nls/tr/currency.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojo/cldr/nls/tr/gregorian.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojo/cldr/nls/tr/number.js
-%%DOJO%%%%DATADIR%%/externals/dojo/dojo/cldr/nls/zh-cn/gregorian.js
-%%DOJO%%%%DATADIR%%/externals/dojo/dojo/cldr/nls/zh-cn/number.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojo/cldr/nls/zh-tw/currency.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojo/cldr/nls/zh-tw/gregorian.js
-%%DOJO%%%%DATADIR%%/externals/dojo/dojo/cldr/nls/zh-tw/number.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojo/cldr/nls/zh/currency.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojo/cldr/nls/zh/gregorian.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojo/cldr/nls/zh/number.js
@@ -1094,6 +1080,7 @@ bin/zf.php
 %%DOJO%%%%DATADIR%%/externals/dojo/dojo/nls/pl/colors.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojo/nls/pt-pt/colors.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojo/nls/pt/colors.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojo/nls/ro/colors.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojo/nls/ru/colors.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojo/nls/sk/colors.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojo/nls/sl/colors.js
@@ -1123,6 +1110,8 @@ bin/zf.php
 %%DOJO%%%%DATADIR%%/externals/dojo/dojo/rpc/RpcService.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojo/string.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojo/tests.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojo/uacss.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojo/window.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/LICENSE
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/analytics.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/analytics/README
@@ -1224,6 +1213,10 @@ bin/zf.php
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/atom/widget/nls/pt/FeedEntryViewer.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/atom/widget/nls/pt/FeedViewerEntry.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/atom/widget/nls/pt/PeopleEditor.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/atom/widget/nls/ro/FeedEntryEditor.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/atom/widget/nls/ro/FeedEntryViewer.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/atom/widget/nls/ro/FeedViewerEntry.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/atom/widget/nls/ro/PeopleEditor.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/atom/widget/nls/ru/FeedEntryEditor.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/atom/widget/nls/ru/FeedEntryViewer.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/atom/widget/nls/ru/FeedViewerEntry.js
@@ -1298,6 +1291,7 @@ bin/zf.php
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/charting/Chart2D.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/charting/Chart3D.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/charting/DataChart.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/charting/DataSeries.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/charting/Element.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/charting/README
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/charting/Series.js
@@ -1310,6 +1304,7 @@ bin/zf.php
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/charting/action2d/Tooltip.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/charting/axis2d/Base.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/charting/axis2d/Default.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/charting/axis2d/Invisible.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/charting/axis2d/common.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/charting/plot2d/Areas.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/charting/plot2d/Bars.js
@@ -1332,6 +1327,7 @@ bin/zf.php
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/charting/plot2d/StackedBars.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/charting/plot2d/StackedColumns.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/charting/plot2d/StackedLines.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/charting/plot2d/_PlotEvents.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/charting/plot2d/common.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/charting/plot3d/Bars.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/charting/plot3d/Base.js
@@ -1343,35 +1339,45 @@ bin/zf.php
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/charting/themes/Algae.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/charting/themes/Bahamation.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/charting/themes/BlueDusk.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/charting/themes/Charged.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/charting/themes/Chris.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/charting/themes/CubanShirts.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/charting/themes/Desert.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/charting/themes/Distinctive.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/charting/themes/Dollar.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/charting/themes/ET/greys.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/charting/themes/Electric.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/charting/themes/Grasshopper.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/charting/themes/Grasslands.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/charting/themes/GreySkies.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/charting/themes/Harmony.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/charting/themes/IndigoNation.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/charting/themes/Ireland.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/charting/themes/Julie.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/charting/themes/MiamiNice.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/charting/themes/Midwest.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/charting/themes/Minty.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/charting/themes/PlotKit/README
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/charting/themes/PlotKit/base.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/charting/themes/PlotKit/blue.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/charting/themes/PlotKit/cyan.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/charting/themes/PlotKit/green.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/charting/themes/PlotKit/orange.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/charting/themes/PlotKit/purple.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/charting/themes/PlotKit/red.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/charting/themes/PrimaryColors.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/charting/themes/PurpleRain.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/charting/themes/README
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/charting/themes/Renkoo.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/charting/themes/RoyalPurples.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/charting/themes/SageToLime.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/charting/themes/Shrooms.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/charting/themes/ThreeD.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/charting/themes/Tom.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/charting/themes/Tufte.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/charting/themes/WatersEdge.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/charting/themes/Wetland.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/charting/themes/gradientGenerator.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/charting/widget/Chart2D.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/charting/widget/Legend.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/charting/widget/Sparkline.js
@@ -1402,6 +1408,7 @@ bin/zf.php
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/cometd/longPollTransportJsonEncoded.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/cometd/timestamp.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/cometd/timesync.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/css3/fx.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/data/AndOrReadStore.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/data/AndOrWriteStore.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/data/AppStore.js
@@ -1468,6 +1475,9 @@ bin/zf.php
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/date/zoneinfo/northamerica
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/date/zoneinfo/pacificnew
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/date/zoneinfo/southamerica
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/dnd/BoundingBoxController.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/dnd/README
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/dnd/Selector.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/drawing.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/drawing/Drawing.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/drawing/README
@@ -1557,30 +1567,42 @@ bin/zf.php
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/dtl/tag/misc.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/dtl/utils/date.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/README
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/Blockquote.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/Breadcrumb.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/CollapsibleToolbar.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/EntityPalette.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/FindReplace.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/InsertAnchor.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/InsertEntity.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/NormalizeIndentOutdent.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/NormalizeStyle.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/PageBreak.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/PasteFromWord.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/PrettyPrint.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/Preview.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/Save.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/ShowBlockNodes.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/Smiley.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/StatusBar.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/TablePlugins.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/TextColor.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/ToolbarLineBreak.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/UploadImage.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/_SmileyPalette.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/Blockquote.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/Breadcrumb.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/CollapsibleToolbar.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/FindReplace.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/InsertAnchor.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/InsertEntity.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/PageBreak.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/PasteFromWord.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/Preview.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/Save.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/ShowBlockNodes.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/Smiley.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/TableDialog.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/TextColor.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/ar/TableDialog.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/ca/TableDialog.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/cs/Breadcrumb.js
@@ -1691,6 +1713,21 @@ bin/zf.php
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/pt/Smiley.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/pt/TableDialog.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/pt/latinEntities.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/ro/Blockquote.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/ro/Breadcrumb.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/ro/CollapsibleToolbar.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/ro/FindReplace.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/ro/InsertAnchor.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/ro/InsertEntity.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/ro/PageBreak.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/ro/PasteFromWord.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/ro/Preview.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/ro/Save.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/ro/ShowBlockNodes.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/ro/Smiley.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/ro/TableDialog.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/ro/TextColor.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/ro/latinEntities.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/ru/Breadcrumb.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/ru/FindReplace.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/ru/InsertEntity.js
@@ -1726,14 +1763,20 @@ bin/zf.php
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/zh/Smiley.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/zh/TableDialog.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/zh/latinEntities.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/resources/css/Blockquote.css
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/resources/css/Breadcrumb.css
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/resources/css/CollapsibleToolbar.css
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/resources/css/FindReplace.css
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/resources/css/InsertAnchor.css
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/resources/css/InsertEntity.css
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/resources/css/PageBreak.css
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/resources/css/PasteFromWord.css
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/resources/css/Preview.css
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/resources/css/Save.css
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/resources/css/ShowBlockNodes.css
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/resources/css/Smiley.css
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/resources/css/StatusBar.css
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/resources/css/TextColor.css
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/resources/editorPlugins.css
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/resources/emoticons/emoticonAngel.gif
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/resources/emoticons/emoticonAngry.gif
@@ -1754,24 +1797,32 @@ bin/zf.php
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/resources/emoticons/emoticonTongue.gif
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/resources/emoticons/emoticonWink.gif
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/resources/emoticons/emoticonYes.gif
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/resources/icons/anchor.gif
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/resources/icons/anchorDisabled.gif
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/resources/icons/blockquote.gif
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/resources/icons/blockquoteDisabled.gif
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/resources/icons/breadcrumbDown.gif
-%%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/resources/icons/findIcon.gif
-%%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/resources/icons/findIconDisabled.gif
-%%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/resources/icons/findReplace.gif
-%%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/resources/icons/findReplaceDisabled.gif
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/resources/icons/claro/close.gif
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/resources/icons/editorIconsFindReplaceDisabled.png
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/resources/icons/editorIconsFindReplaceEnabled.png
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/resources/icons/insertEntity.gif
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/resources/icons/insertEntityDisabled.gif
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/resources/icons/nihilo/close.gif
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/resources/icons/pageBreak.gif
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/resources/icons/pageBreakDisabled.gif
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/resources/icons/pasteFromWord.gif
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/resources/icons/pasteFromWordDisabled.gif
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/resources/icons/preview.gif
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/resources/icons/previewDisabled.gif
-%%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/resources/icons/replaceIcon.gif
-%%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/resources/icons/replaceIconDisabled.gif
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/resources/icons/save.gif
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/resources/icons/saveDisabled.gif
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/resources/icons/showBlockNodes.gif
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/resources/icons/showBlockNodesDisabled.gif
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/resources/icons/smiley.gif
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/resources/icons/smileyDisabled.gif
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/resources/icons/soria/close.gif
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/resources/icons/tundra/close.gif
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/resources/images/anchor.gif
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/resources/images/blockelems/address.gif
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/resources/images/blockelems/blockquote.gif
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/resources/images/blockelems/button.gif
@@ -1804,7 +1855,18 @@ bin/zf.php
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/resources/images/busy.gif
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/resources/images/cellpad.png
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/resources/images/cellspace.png
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/resources/images/claro/collapse.gif
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/resources/images/claro/expand.gif
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/resources/images/nihilo/collapse.gif
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/resources/images/nihilo/expand.gif
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/resources/images/nihilo/sidebar.gif
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/resources/images/soria/collapse.gif
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/resources/images/soria/expand.gif
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/resources/images/soria/sidebar.gif
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/resources/images/tableIcons.png
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/resources/images/tundra/collapse.gif
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/resources/images/tundra/expand.gif
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/resources/images/tundra/sidebar.gif
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/resources/images/uploadImageIcon.gif
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/resources/insertTable.html
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/resources/modifyTable.html
@@ -1886,6 +1948,7 @@ bin/zf.php
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/form/nls/pl/PasswordValidator.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/form/nls/pt-pt/PasswordValidator.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/form/nls/pt/PasswordValidator.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/form/nls/ro/PasswordValidator.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/form/nls/ru/PasswordValidator.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/form/nls/sk/PasswordValidator.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/form/nls/sl/PasswordValidator.js
@@ -1921,12 +1984,15 @@ bin/zf.php
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/fx.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/fx/README
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/fx/Shadow.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/fx/Timeline.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/fx/_arg.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/fx/_base.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/fx/_core.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/fx/easing.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/fx/ext-dojo/NodeList-style.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/fx/ext-dojo/NodeList.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/fx/ext-dojo/complex.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/fx/ext-dojo/reverse.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/fx/flip.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/fx/resources/shadowB.png
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/fx/resources/shadowBL.png
@@ -1940,10 +2006,25 @@ bin/zf.php
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/fx/split.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/fx/style.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/fx/text.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/geo/README
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/geo/charting/Map.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/geo/charting/_Feature.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/geo/charting/_Marker.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/geo/charting/_base.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/geo/charting/resources/Map.css
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/geo/charting/resources/data/NOTICES
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/geo/charting/resources/data/USStates.json
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/geo/charting/resources/img/zoomin.gif
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/geo/charting/resources/img/zoomin.png
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/geo/charting/resources/img/zoomout.gif
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/geo/charting/resources/img/zoomout.png
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/geo/charting/resources/markers/USStates.json
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/geo/charting/widget/Legend.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/gfx.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/gfx/Moveable.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/gfx/Mover.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/gfx/README
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/gfx/README-svgweb
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/gfx/VectorText.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/gfx/_base.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/gfx/arc.js
@@ -1952,6 +2033,8 @@ bin/zf.php
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/gfx/canvas_attach.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/gfx/decompose.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/gfx/fx.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/gfx/gradient.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/gfx/gradutils.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/gfx/matrix.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/gfx/move.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/gfx/path.js
@@ -2006,7 +2089,9 @@ bin/zf.php
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/grid/compatGrid.tar.gz
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/grid/enhanced/_Builder.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/grid/enhanced/_Events.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/grid/enhanced/_Layout.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/grid/enhanced/_Plugin.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/grid/enhanced/_View.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/grid/enhanced/dnd/_DndBuilder.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/grid/enhanced/dnd/_DndEvents.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/grid/enhanced/dnd/_DndFocusManager.js
@@ -2016,25 +2101,42 @@ bin/zf.php
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/grid/enhanced/dnd/_DndRowSelector.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/grid/enhanced/dnd/_DndSelectingManager.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/grid/enhanced/nls/EnhancedGrid.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/grid/enhanced/nls/ar/EnhancedGrid.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/grid/enhanced/nls/ca/EnhancedGrid.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/grid/enhanced/nls/cs/EnhancedGrid.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/grid/enhanced/nls/da/EnhancedGrid.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/grid/enhanced/nls/de/EnhancedGrid.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/grid/enhanced/nls/el/EnhancedGrid.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/grid/enhanced/nls/es/EnhancedGrid.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/grid/enhanced/nls/fi/EnhancedGrid.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/grid/enhanced/nls/fr/EnhancedGrid.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/grid/enhanced/nls/he/EnhancedGrid.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/grid/enhanced/nls/hu/EnhancedGrid.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/grid/enhanced/nls/it/EnhancedGrid.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/grid/enhanced/nls/ja/EnhancedGrid.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/grid/enhanced/nls/ko/EnhancedGrid.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/grid/enhanced/nls/nb/EnhancedGrid.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/grid/enhanced/nls/nl/EnhancedGrid.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/grid/enhanced/nls/pl/EnhancedGrid.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/grid/enhanced/nls/pt-pt/EnhancedGrid.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/grid/enhanced/nls/pt/EnhancedGrid.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/grid/enhanced/nls/ro/EnhancedGrid.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/grid/enhanced/nls/ru/EnhancedGrid.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/grid/enhanced/nls/sk/EnhancedGrid.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/grid/enhanced/nls/sl/EnhancedGrid.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/grid/enhanced/nls/sv/EnhancedGrid.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/grid/enhanced/nls/th/EnhancedGrid.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/grid/enhanced/nls/tr/EnhancedGrid.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/grid/enhanced/nls/zh-tw/EnhancedGrid.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/grid/enhanced/nls/zh/EnhancedGrid.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/grid/enhanced/plugins/DnD.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/grid/enhanced/plugins/IndirectSelection.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/grid/enhanced/plugins/Menu.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/grid/enhanced/plugins/NestedSorting.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/grid/enhanced/plugins/_Mixin.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/grid/enhanced/resources/EnhancedGrid.css
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/grid/enhanced/resources/EnhancedGrid_rtl.css
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/grid/enhanced/resources/claroEnhancedGrid.css
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/grid/enhanced/resources/images/nestedSortArrows.png
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/grid/enhanced/resources/tundraEnhancedGrid.css
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/grid/resources/Expando.html
@@ -2042,11 +2144,16 @@ bin/zf.php
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/grid/resources/Grid_rtl.css
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/grid/resources/View.html
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/grid/resources/_Grid.html
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/grid/resources/claroGrid.css
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/grid/resources/images/grid_dx_gradient.gif
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/grid/resources/images/grid_sort_down.gif
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/grid/resources/images/grid_sort_up.gif
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/grid/resources/images/header.png
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/grid/resources/images/header_shadow.png
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/grid/resources/images/row_back.png
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/grid/resources/images/tabEnabled_rotated.png
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/grid/resources/images/tabHover_rotated.png
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/grid/resources/images/td_button_down.png
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/grid/resources/nihiloGrid.css
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/grid/resources/soriaGrid.css
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/grid/resources/tundraGrid.css
@@ -2065,7 +2172,9 @@ bin/zf.php
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/highlight/languages/css.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/highlight/languages/delphi.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/highlight/languages/django.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/highlight/languages/groovy.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/highlight/languages/html.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/highlight/languages/java.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/highlight/languages/javascript.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/highlight/languages/pygments/_html.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/highlight/languages/pygments/_www.js
@@ -2076,6 +2185,7 @@ bin/zf.php
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/highlight/languages/python.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/highlight/languages/sql.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/highlight/languages/xml.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/highlight/languages/xquery.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/highlight/resources/highlight.css
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/highlight/resources/pygments/autumn.css
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/highlight/resources/pygments/borland.css
@@ -2095,6 +2205,7 @@ bin/zf.php
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/html/_base.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/html/ellipsis.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/html/entities.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/html/ext-dojo/style.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/html/format.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/html/metrics.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/html/resources/ellipsis.css
@@ -2165,6 +2276,10 @@ bin/zf.php
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/lang/aspect/profiler.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/lang/aspect/timer.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/lang/aspect/tracer.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/lang/async.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/lang/async/event.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/lang/async/timeout.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/lang/async/topic.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/lang/docs.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/lang/functional.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/lang/functional/array.js
@@ -2198,6 +2313,7 @@ bin/zf.php
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/layout/ExpandoPane.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/layout/FloatingPane.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/layout/GridContainer.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/layout/GridContainerLite.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/layout/README
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/layout/RadioGroup.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/layout/ResizeHandle.js
@@ -2221,14 +2337,15 @@ bin/zf.php
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/layout/resources/ScrollPane.css
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/layout/resources/ScrollPane.html
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/layout/resources/ToggleSplitter.css
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/layout/resources/icons/gridcontainer_grip.gif
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/layout/resources/icons/grip_bg.gif
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/layout/resources/icons/pixel.gif
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/layout/resources/icons/resize.png
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/layout/resources/icons/resizeRtl.png
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/layout/resources/icons/rotator.png
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/math.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/math/BigInteger-ext.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/math/BigInteger.js
-%%DOJO%%%%DATADIR%%/externals/dojo/dojox/math/LICENSE-BigInteger
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/math/README
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/math/_base.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/math/curves.js
@@ -2238,6 +2355,86 @@ bin/zf.php
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/math/random/prng4.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/math/round.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/math/stats.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/mdnd/AreaManager.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/mdnd/AutoScroll.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/mdnd/DropIndicator.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/mdnd/LazyManager.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/mdnd/Moveable.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/mdnd/PureSource.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/mdnd/README
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/mdnd/adapter/DndFromDojo.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/mdnd/adapter/DndToDojo.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/mdnd/dropMode/DefaultDropMode.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/mdnd/dropMode/OverDropMode.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/mdnd/dropMode/VerticalDropMode.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/mdnd/resources/dnd.css
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/mobile.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/mobile/README
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/mobile/_base.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/mobile/app.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/mobile/app/AlertDialog.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/mobile/app/ImageThumbView.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/mobile/app/ImageView.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/mobile/app/List.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/mobile/app/ListSelector.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/mobile/app/SceneAssistant.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/mobile/app/SceneController.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/mobile/app/StageController.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/mobile/app/TextBox.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/mobile/app/_FormWidget.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/mobile/app/_Widget.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/mobile/app/_base.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/mobile/app/_event.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/mobile/app/compat.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/mobile/build/build.bat
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/mobile/build/build.sh
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/mobile/build/profiles/mobile-all.profile.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/mobile/build/profiles/mobile.profile.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/mobile/compat.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/mobile/parser.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/mobile/themes/android/android-compat.css
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/mobile/themes/android/android.css
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/mobile/themes/android/compat/arrow-button-bg.png
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/mobile/themes/android/compat/arrow-button-head.png
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/mobile/themes/android/compat/blue-button-bg.png
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/mobile/themes/android/compat/blue-button-sel-bg.png
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/mobile/themes/android/compat/gray-arrow.png
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/mobile/themes/android/compat/icon-content-heading-bg.png
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/mobile/themes/android/compat/switch-blue-bg.png
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/mobile/themes/android/compat/switch-gray-bg.png
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/mobile/themes/android/compat/switch-green-bg.png
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/mobile/themes/android/compat/switch-knob-bg.png
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/mobile/themes/android/compat/tab-button-bg.png
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/mobile/themes/android/compat/tab-orange-button-bg.png
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/mobile/themes/android/compat/tab-sel-button-bg.png
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/mobile/themes/buttons-compat.css
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/mobile/themes/buttons.css
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/mobile/themes/compat/check-off-button.png
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/mobile/themes/compat/check-on-button.png
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/mobile/themes/compat/small-blue-button-bg.png
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/mobile/themes/compat/small-darkblue-button-bg.png
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/mobile/themes/compat/small-red-button-bg.png
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/mobile/themes/iphone/compat/arrow-button-bg.png
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/mobile/themes/iphone/compat/arrow-button-head.png
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/mobile/themes/iphone/compat/blue-button-bg.png
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/mobile/themes/iphone/compat/blue-button-sel-bg.png
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/mobile/themes/iphone/compat/edge-categ-bg.png
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/mobile/themes/iphone/compat/gray-arrow.png
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/mobile/themes/iphone/compat/heading-bg.png
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/mobile/themes/iphone/compat/icon-content-heading-bg.png
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/mobile/themes/iphone/compat/switch-blue-bg.png
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/mobile/themes/iphone/compat/switch-gray-bg.png
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/mobile/themes/iphone/compat/switch-knob-bg.png
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/mobile/themes/iphone/compat/tab-button-bg.png
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/mobile/themes/iphone/compat/tab-sel-button-bg.png
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/mobile/themes/iphone/compat/white-arrow.png
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/mobile/themes/iphone/images/thumb-overlay.png
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/mobile/themes/iphone/iphone-app-compat.css
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/mobile/themes/iphone/iphone-app.css
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/mobile/themes/iphone/iphone-compat.css
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/mobile/themes/iphone/iphone.css
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/rails.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/rails/README
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/resources/README.template
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/resources/_modules.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/resources/explore.php
@@ -2347,6 +2544,7 @@ bin/zf.php
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/widget/ColorPicker/ColorPicker.html
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/widget/ColorPicker/images/hue.png
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/widget/ColorPicker/images/hueHandle.png
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/widget/ColorPicker/images/hueHandleA11y.png
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/widget/ColorPicker/images/pickerPointer.png
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/widget/ColorPicker/images/underlay.png
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/widget/DataPresentation.js
@@ -2417,28 +2615,34 @@ bin/zf.php
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/widget/nls/ColorPicker.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/widget/nls/FilePicker.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/widget/nls/Wizard.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/widget/nls/ar/ColorPicker.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/widget/nls/ar/FilePicker.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/widget/nls/ar/Wizard.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/widget/nls/ca/ColorPicker.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/widget/nls/ca/FilePicker.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/widget/nls/ca/Wizard.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/widget/nls/cs/ColorPicker.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/widget/nls/cs/FilePicker.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/widget/nls/cs/Wizard.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/widget/nls/da/ColorPicker.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/widget/nls/da/FilePicker.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/widget/nls/da/Wizard.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/widget/nls/de/ColorPicker.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/widget/nls/de/FilePicker.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/widget/nls/de/Wizard.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/widget/nls/el/ColorPicker.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/widget/nls/el/FilePicker.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/widget/nls/el/Wizard.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/widget/nls/es/ColorPicker.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/widget/nls/es/FilePicker.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/widget/nls/es/Wizard.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/widget/nls/fi/ColorPicker.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/widget/nls/fi/FilePicker.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/widget/nls/fi/Wizard.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/widget/nls/fr/ColorPicker.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/widget/nls/fr/FilePicker.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/widget/nls/fr/Wizard.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/widget/nls/he/ColorPicker.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/widget/nls/he/FilePicker.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/widget/nls/he/Wizard.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/widget/nls/hu/ColorPicker.js
@@ -2453,30 +2657,40 @@ bin/zf.php
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/widget/nls/ko/ColorPicker.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/widget/nls/ko/FilePicker.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/widget/nls/ko/Wizard.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/widget/nls/nb/ColorPicker.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/widget/nls/nb/FilePicker.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/widget/nls/nb/Wizard.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/widget/nls/nl/ColorPicker.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/widget/nls/nl/FilePicker.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/widget/nls/nl/Wizard.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/widget/nls/pl/ColorPicker.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/widget/nls/pl/FilePicker.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/widget/nls/pl/Wizard.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/widget/nls/pt-pt/ColorPicker.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/widget/nls/pt-pt/FilePicker.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/widget/nls/pt-pt/Wizard.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/widget/nls/pt/ColorPicker.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/widget/nls/pt/FilePicker.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/widget/nls/pt/Wizard.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/widget/nls/ro/ColorPicker.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/widget/nls/ro/FilePicker.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/widget/nls/ro/Wizard.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/widget/nls/ru/ColorPicker.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/widget/nls/ru/FilePicker.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/widget/nls/ru/Wizard.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/widget/nls/sk/ColorPicker.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/widget/nls/sk/FilePicker.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/widget/nls/sk/Wizard.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/widget/nls/sl/ColorPicker.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/widget/nls/sl/FilePicker.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/widget/nls/sl/Wizard.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/widget/nls/sv/ColorPicker.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/widget/nls/sv/FilePicker.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/widget/nls/sv/Wizard.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/widget/nls/th/ColorPicker.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/widget/nls/th/FilePicker.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/widget/nls/th/Wizard.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/widget/nls/tr/ColorPicker.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/widget/nls/tr/FilePicker.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/widget/nls/tr/Wizard.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/widget/nls/zh-tw/ColorPicker.js
@@ -2489,6 +2703,7 @@ bin/zf.php
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/widget/rotator/Fade.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/widget/rotator/Pan.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/widget/rotator/Slide.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/widget/rotator/ThumbnailController.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/widget/rotator/Wipe.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/wire.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/wire/CompositeWire.js
@@ -2532,6 +2747,7 @@ bin/zf.php
 %%DOJO%%%%DATADIR%%/externals/dojo/util/buildscripts/build.sh
 %%DOJO%%%%DATADIR%%/externals/dojo/util/buildscripts/build_notice.txt
 %%DOJO%%%%DATADIR%%/externals/dojo/util/buildscripts/build_release.sh
+%%DOJO%%%%DATADIR%%/externals/dojo/util/buildscripts/cdnBuild.sh
 %%DOJO%%%%DATADIR%%/externals/dojo/util/buildscripts/cdnBuild.txt
 %%DOJO%%%%DATADIR%%/externals/dojo/util/buildscripts/changeVersion.js
 %%DOJO%%%%DATADIR%%/externals/dojo/util/buildscripts/cldr/README
@@ -2546,7 +2762,6 @@ bin/zf.php
 %%DOJO%%%%DATADIR%%/externals/dojo/util/buildscripts/cldr/ldml/README
 %%DOJO%%%%DATADIR%%/externals/dojo/util/buildscripts/cldr/ldml/catalog
 %%DOJO%%%%DATADIR%%/externals/dojo/util/buildscripts/cldr/ldml/core.zip
-%%DOJO%%%%DATADIR%%/externals/dojo/util/buildscripts/cldr/ldml/ldml.dtd
 %%DOJO%%%%DATADIR%%/externals/dojo/util/buildscripts/cldr/lib/APL-2.0.html
 %%DOJO%%%%DATADIR%%/externals/dojo/util/buildscripts/cldr/lib/LICENSE
 %%DOJO%%%%DATADIR%%/externals/dojo/util/buildscripts/cldr/lib/MPL-1.0.html
@@ -2573,6 +2788,7 @@ bin/zf.php
 %%DOJO%%%%DATADIR%%/externals/dojo/util/buildscripts/makeDojoJsWeb.js
 %%DOJO%%%%DATADIR%%/externals/dojo/util/buildscripts/mk_branch.sh
 %%DOJO%%%%DATADIR%%/externals/dojo/util/buildscripts/profiles/base.profile.js
+%%DOJO%%%%DATADIR%%/externals/dojo/util/buildscripts/profiles/baseplus.profile.js
 %%DOJO%%%%DATADIR%%/externals/dojo/util/buildscripts/profiles/cometd.profile.js
 %%DOJO%%%%DATADIR%%/externals/dojo/util/buildscripts/profiles/demos-all.profile.js
 %%DOJO%%%%DATADIR%%/externals/dojo/util/buildscripts/profiles/dtkapi.profile.js
@@ -2627,6 +2843,7 @@ bin/zf.php
 %%DOJO%%%%DATADIR%%/externals/dojo/util/doh/runner.sh
 %%DOJO%%%%DATADIR%%/externals/dojo/util/doh/small_logo.png
 %%DOJO%%%%DATADIR%%/externals/dojo/util/doh/tests/robot.html
+%%DOJO%%%%DATADIR%%/externals/dojo/util/migration/dijitCss14to15.sed
 %%DOJO%%%%DATADIR%%/externals/dojo/util/shrinksafe/LICENSE
 %%DOJO%%%%DATADIR%%/externals/dojo/util/shrinksafe/MPL-1.1.html
 %%DOJO%%%%DATADIR%%/externals/dojo/util/shrinksafe/README
@@ -2647,6 +2864,7 @@ bin/zf.php
 %%DOJO%%%%DATADIR%%/externals/dojo/util/shrinksafe/tests/8974.js
 %%DOJO%%%%DATADIR%%/externals/dojo/util/shrinksafe/tests/9444.js
 %%DOJO%%%%DATADIR%%/externals/dojo/util/shrinksafe/tests/9676.js
+%%DOJO%%%%DATADIR%%/externals/dojo/util/shrinksafe/tests/escapeunicode.js
 %%DOJO%%%%DATADIR%%/externals/dojo/util/shrinksafe/tests/module.js
 %%DOJO%%%%DATADIR%%/externals/dojo/util/shrinksafe/tests/runner.sh
 %%DOJO%%%%DATADIR%%/externals/dojo/util/shrinksafe/tests/stripcomplex.js
@@ -2767,6 +2985,7 @@ bin/zf.php
 %%DATADIR%%/library/Zend/Application/Resource/Router.php
 %%DATADIR%%/library/Zend/Application/Resource/Session.php
 %%DATADIR%%/library/Zend/Application/Resource/Translate.php
+%%DATADIR%%/library/Zend/Application/Resource/Useragent.php
 %%DATADIR%%/library/Zend/Application/Resource/View.php
 %%DATADIR%%/library/Zend/Auth.php
 %%DATADIR%%/library/Zend/Auth/Adapter/DbTable.php
@@ -2788,6 +3007,7 @@ bin/zf.php
 %%DATADIR%%/library/Zend/Auth/Storage/Session.php
 %%DATADIR%%/library/Zend/Barcode.php
 %%DATADIR%%/library/Zend/Barcode/Exception.php
+%%DATADIR%%/library/Zend/Barcode/Object/Code128.php
 %%DATADIR%%/library/Zend/Barcode/Object/Code25.php
 %%DATADIR%%/library/Zend/Barcode/Object/Code25interleaved.php
 %%DATADIR%%/library/Zend/Barcode/Object/Code39.php
@@ -2810,6 +3030,7 @@ bin/zf.php
 %%DATADIR%%/library/Zend/Barcode/Renderer/Image.php
 %%DATADIR%%/library/Zend/Barcode/Renderer/Pdf.php
 %%DATADIR%%/library/Zend/Barcode/Renderer/RendererAbstract.php
+%%DATADIR%%/library/Zend/Barcode/Renderer/Svg.php
 %%DATADIR%%/library/Zend/Cache.php
 %%DATADIR%%/library/Zend/Cache/Backend.php
 %%DATADIR%%/library/Zend/Cache/Backend/Apc.php
@@ -2817,6 +3038,7 @@ bin/zf.php
 %%DATADIR%%/library/Zend/Cache/Backend/ExtendedInterface.php
 %%DATADIR%%/library/Zend/Cache/Backend/File.php
 %%DATADIR%%/library/Zend/Cache/Backend/Interface.php
+%%DATADIR%%/library/Zend/Cache/Backend/Libmemcached.php
 %%DATADIR%%/library/Zend/Cache/Backend/Memcached.php
 %%DATADIR%%/library/Zend/Cache/Backend/Sqlite.php
 %%DATADIR%%/library/Zend/Cache/Backend/Static.php
@@ -2844,6 +3066,37 @@ bin/zf.php
 %%DATADIR%%/library/Zend/Captcha/Image.php
 %%DATADIR%%/library/Zend/Captcha/ReCaptcha.php
 %%DATADIR%%/library/Zend/Captcha/Word.php
+%%DATADIR%%/library/Zend/Cloud/AbstractFactory.php
+%%DATADIR%%/library/Zend/Cloud/DocumentService/Adapter.php
+%%DATADIR%%/library/Zend/Cloud/DocumentService/Adapter/AbstractAdapter.php
+%%DATADIR%%/library/Zend/Cloud/DocumentService/Adapter/SimpleDb.php
+%%DATADIR%%/library/Zend/Cloud/DocumentService/Adapter/SimpleDb/Query.php
+%%DATADIR%%/library/Zend/Cloud/DocumentService/Adapter/WindowsAzure.php
+%%DATADIR%%/library/Zend/Cloud/DocumentService/Adapter/WindowsAzure/Query.php
+%%DATADIR%%/library/Zend/Cloud/DocumentService/Document.php
+%%DATADIR%%/library/Zend/Cloud/DocumentService/DocumentSet.php
+%%DATADIR%%/library/Zend/Cloud/DocumentService/Exception.php
+%%DATADIR%%/library/Zend/Cloud/DocumentService/Factory.php
+%%DATADIR%%/library/Zend/Cloud/DocumentService/Query.php
+%%DATADIR%%/library/Zend/Cloud/DocumentService/QueryAdapter.php
+%%DATADIR%%/library/Zend/Cloud/Exception.php
+%%DATADIR%%/library/Zend/Cloud/OperationNotAvailableException.php
+%%DATADIR%%/library/Zend/Cloud/QueueService/Adapter.php
+%%DATADIR%%/library/Zend/Cloud/QueueService/Adapter/AbstractAdapter.php
+%%DATADIR%%/library/Zend/Cloud/QueueService/Adapter/Sqs.php
+%%DATADIR%%/library/Zend/Cloud/QueueService/Adapter/WindowsAzure.php
+%%DATADIR%%/library/Zend/Cloud/QueueService/Adapter/ZendQueue.php
+%%DATADIR%%/library/Zend/Cloud/QueueService/Exception.php
+%%DATADIR%%/library/Zend/Cloud/QueueService/Factory.php
+%%DATADIR%%/library/Zend/Cloud/QueueService/Message.php
+%%DATADIR%%/library/Zend/Cloud/QueueService/MessageSet.php
+%%DATADIR%%/library/Zend/Cloud/StorageService/Adapter.php
+%%DATADIR%%/library/Zend/Cloud/StorageService/Adapter/FileSystem.php
+%%DATADIR%%/library/Zend/Cloud/StorageService/Adapter/Nirvanix.php
+%%DATADIR%%/library/Zend/Cloud/StorageService/Adapter/S3.php
+%%DATADIR%%/library/Zend/Cloud/StorageService/Adapter/WindowsAzure.php
+%%DATADIR%%/library/Zend/Cloud/StorageService/Exception.php
+%%DATADIR%%/library/Zend/Cloud/StorageService/Factory.php
 %%DATADIR%%/library/Zend/CodeGenerator/Abstract.php
 %%DATADIR%%/library/Zend/CodeGenerator/Exception.php
 %%DATADIR%%/library/Zend/CodeGenerator/Php/Abstract.php
@@ -2866,12 +3119,16 @@ bin/zf.php
 %%DATADIR%%/library/Zend/Config.php
 %%DATADIR%%/library/Zend/Config/Exception.php
 %%DATADIR%%/library/Zend/Config/Ini.php
+%%DATADIR%%/library/Zend/Config/Json.php
 %%DATADIR%%/library/Zend/Config/Writer.php
 %%DATADIR%%/library/Zend/Config/Writer/Array.php
 %%DATADIR%%/library/Zend/Config/Writer/FileAbstract.php
 %%DATADIR%%/library/Zend/Config/Writer/Ini.php
+%%DATADIR%%/library/Zend/Config/Writer/Json.php
 %%DATADIR%%/library/Zend/Config/Writer/Xml.php
+%%DATADIR%%/library/Zend/Config/Writer/Yaml.php
 %%DATADIR%%/library/Zend/Config/Xml.php
+%%DATADIR%%/library/Zend/Config/Yaml.php
 %%DATADIR%%/library/Zend/Console/Getopt.php
 %%DATADIR%%/library/Zend/Console/Getopt/Exception.php
 %%DATADIR%%/library/Zend/Controller/Action.php
@@ -2940,6 +3197,7 @@ bin/zf.php
 %%DATADIR%%/library/Zend/Crypt/Math/BigInteger/Interface.php
 %%DATADIR%%/library/Zend/Crypt/Math/Exception.php
 %%DATADIR%%/library/Zend/Crypt/Rsa.php
+%%DATADIR%%/library/Zend/Crypt/Rsa/Exception.php
 %%DATADIR%%/library/Zend/Crypt/Rsa/Key.php
 %%DATADIR%%/library/Zend/Crypt/Rsa/Key/Private.php
 %%DATADIR%%/library/Zend/Crypt/Rsa/Key/Public.php
@@ -3615,6 +3873,31 @@ bin/zf.php
 %%DATADIR%%/library/Zend/Http/Exception.php
 %%DATADIR%%/library/Zend/Http/Response.php
 %%DATADIR%%/library/Zend/Http/Response/Stream.php
+%%DATADIR%%/library/Zend/Http/UserAgent.php
+%%DATADIR%%/library/Zend/Http/UserAgent/AbstractDevice.php
+%%DATADIR%%/library/Zend/Http/UserAgent/Bot.php
+%%DATADIR%%/library/Zend/Http/UserAgent/Checker.php
+%%DATADIR%%/library/Zend/Http/UserAgent/Console.php
+%%DATADIR%%/library/Zend/Http/UserAgent/Desktop.php
+%%DATADIR%%/library/Zend/Http/UserAgent/Device.php
+%%DATADIR%%/library/Zend/Http/UserAgent/Email.php
+%%DATADIR%%/library/Zend/Http/UserAgent/Exception.php
+%%DATADIR%%/library/Zend/Http/UserAgent/Features/Adapter.php
+%%DATADIR%%/library/Zend/Http/UserAgent/Features/Adapter/DeviceAtlas.php
+%%DATADIR%%/library/Zend/Http/UserAgent/Features/Adapter/TeraWurfl.php
+%%DATADIR%%/library/Zend/Http/UserAgent/Features/Adapter/WurflApi.php
+%%DATADIR%%/library/Zend/Http/UserAgent/Features/Exception.php
+%%DATADIR%%/library/Zend/Http/UserAgent/Feed.php
+%%DATADIR%%/library/Zend/Http/UserAgent/Mobile.php
+%%DATADIR%%/library/Zend/Http/UserAgent/Offline.php
+%%DATADIR%%/library/Zend/Http/UserAgent/Probe.php
+%%DATADIR%%/library/Zend/Http/UserAgent/Spam.php
+%%DATADIR%%/library/Zend/Http/UserAgent/Storage.php
+%%DATADIR%%/library/Zend/Http/UserAgent/Storage/Exception.php
+%%DATADIR%%/library/Zend/Http/UserAgent/Storage/NonPersistent.php
+%%DATADIR%%/library/Zend/Http/UserAgent/Storage/Session.php
+%%DATADIR%%/library/Zend/Http/UserAgent/Text.php
+%%DATADIR%%/library/Zend/Http/UserAgent/Validator.php
 %%DATADIR%%/library/Zend/InfoCard.php
 %%DATADIR%%/library/Zend/InfoCard/Adapter/Default.php
 %%DATADIR%%/library/Zend/InfoCard/Adapter/Exception.php
@@ -3680,6 +3963,7 @@ bin/zf.php
 %%DATADIR%%/library/Zend/Ldap/Collection.php
 %%DATADIR%%/library/Zend/Ldap/Collection/Iterator/Default.php
 %%DATADIR%%/library/Zend/Ldap/Converter.php
+%%DATADIR%%/library/Zend/Ldap/Converter/Exception.php
 %%DATADIR%%/library/Zend/Ldap/Dn.php
 %%DATADIR%%/library/Zend/Ldap/Exception.php
 %%DATADIR%%/library/Zend/Ldap/Filter.php
@@ -4253,6 +4537,7 @@ bin/zf.php
 %%DATADIR%%/library/Zend/Mail/Storage/Writable/Maildir.php
 %%DATADIR%%/library/Zend/Mail/Transport/Abstract.php
 %%DATADIR%%/library/Zend/Mail/Transport/Exception.php
+%%DATADIR%%/library/Zend/Mail/Transport/File.php
 %%DATADIR%%/library/Zend/Mail/Transport/Sendmail.php
 %%DATADIR%%/library/Zend/Mail/Transport/Smtp.php
 %%DATADIR%%/library/Zend/Markup.php
@@ -4395,6 +4680,9 @@ bin/zf.php
 %%DATADIR%%/library/Zend/Pdf/Annotation/Link.php
 %%DATADIR%%/library/Zend/Pdf/Annotation/Markup.php
 %%DATADIR%%/library/Zend/Pdf/Annotation/Text.php
+%%DATADIR%%/library/Zend/Pdf/Canvas.php
+%%DATADIR%%/library/Zend/Pdf/Canvas/Abstract.php
+%%DATADIR%%/library/Zend/Pdf/Canvas/Interface.php
 %%DATADIR%%/library/Zend/Pdf/Cmap.php
 %%DATADIR%%/library/Zend/Pdf/Cmap/ByteEncoding.php
 %%DATADIR%%/library/Zend/Pdf/Cmap/ByteEncoding/Static.php
@@ -4462,6 +4750,8 @@ bin/zf.php
 %%DATADIR%%/library/Zend/Pdf/Parser.php
 %%DATADIR%%/library/Zend/Pdf/RecursivelyIteratableObjectsContainer.php
 %%DATADIR%%/library/Zend/Pdf/Resource.php
+%%DATADIR%%/library/Zend/Pdf/Resource/ContentStream.php
+%%DATADIR%%/library/Zend/Pdf/Resource/Extractor.php
 %%DATADIR%%/library/Zend/Pdf/Resource/Font.php
 %%DATADIR%%/library/Zend/Pdf/Resource/Font/CidFont.php
 %%DATADIR%%/library/Zend/Pdf/Resource/Font/CidFont/TrueType.php
@@ -4486,11 +4776,13 @@ bin/zf.php
 %%DATADIR%%/library/Zend/Pdf/Resource/Font/Simple/Standard/TimesRoman.php
 %%DATADIR%%/library/Zend/Pdf/Resource/Font/Simple/Standard/ZapfDingbats.php
 %%DATADIR%%/library/Zend/Pdf/Resource/Font/Type0.php
+%%DATADIR%%/library/Zend/Pdf/Resource/GraphicsState.php
 %%DATADIR%%/library/Zend/Pdf/Resource/Image.php
 %%DATADIR%%/library/Zend/Pdf/Resource/Image/Jpeg.php
 %%DATADIR%%/library/Zend/Pdf/Resource/Image/Png.php
 %%DATADIR%%/library/Zend/Pdf/Resource/Image/Tiff.php
 %%DATADIR%%/library/Zend/Pdf/Resource/ImageFactory.php
+%%DATADIR%%/library/Zend/Pdf/Resource/Unified.php
 %%DATADIR%%/library/Zend/Pdf/StringParser.php
 %%DATADIR%%/library/Zend/Pdf/Style.php
 %%DATADIR%%/library/Zend/Pdf/Target.php
@@ -4516,6 +4808,7 @@ bin/zf.php
 %%DATADIR%%/library/Zend/Queue/Adapter/Db/mysql.sql
 %%DATADIR%%/library/Zend/Queue/Adapter/Db/postgresql.sql
 %%DATADIR%%/library/Zend/Queue/Adapter/Db/queue_sqlite.sql
+%%DATADIR%%/library/Zend/Queue/Adapter/Db/sqlsrv.sql
 %%DATADIR%%/library/Zend/Queue/Adapter/Memcacheq.php
 %%DATADIR%%/library/Zend/Queue/Adapter/Null.php
 %%DATADIR%%/library/Zend/Queue/Adapter/PlatformJobQueue.php
@@ -4674,6 +4967,11 @@ bin/zf.php
 %%DATADIR%%/library/Zend/Service/Amazon.php
 %%DATADIR%%/library/Zend/Service/Amazon/Abstract.php
 %%DATADIR%%/library/Zend/Service/Amazon/Accessories.php
+%%DATADIR%%/library/Zend/Service/Amazon/Authentication.php
+%%DATADIR%%/library/Zend/Service/Amazon/Authentication/Exception.php
+%%DATADIR%%/library/Zend/Service/Amazon/Authentication/S3.php
+%%DATADIR%%/library/Zend/Service/Amazon/Authentication/V1.php
+%%DATADIR%%/library/Zend/Service/Amazon/Authentication/V2.php
 %%DATADIR%%/library/Zend/Service/Amazon/CustomerReview.php
 %%DATADIR%%/library/Zend/Service/Amazon/Ec2.php
 %%DATADIR%%/library/Zend/Service/Amazon/Ec2/Abstract.php
@@ -4703,6 +5001,11 @@ bin/zf.php
 %%DATADIR%%/library/Zend/Service/Amazon/S3/Exception.php
 %%DATADIR%%/library/Zend/Service/Amazon/S3/Stream.php
 %%DATADIR%%/library/Zend/Service/Amazon/SimilarProduct.php
+%%DATADIR%%/library/Zend/Service/Amazon/SimpleDb.php
+%%DATADIR%%/library/Zend/Service/Amazon/SimpleDb/Attribute.php
+%%DATADIR%%/library/Zend/Service/Amazon/SimpleDb/Exception.php
+%%DATADIR%%/library/Zend/Service/Amazon/SimpleDb/Page.php
+%%DATADIR%%/library/Zend/Service/Amazon/SimpleDb/Response.php
 %%DATADIR%%/library/Zend/Service/Amazon/Sqs.php
 %%DATADIR%%/library/Zend/Service/Amazon/Sqs/Exception.php
 %%DATADIR%%/library/Zend/Service/Audioscrobbler.php
@@ -4853,6 +5156,37 @@ bin/zf.php
 %%DATADIR%%/library/Zend/Service/DeveloperGarden/Wsdl/ccsPort.xsd
 %%DATADIR%%/library/Zend/Service/DeveloperGarden/Wsdl/localsearch.wsdl
 %%DATADIR%%/library/Zend/Service/DeveloperGarden/Wsdl/localsearch.xsd
+%%DATADIR%%/library/Zend/Service/Ebay/Abstract.php
+%%DATADIR%%/library/Zend/Service/Ebay/Exception.php
+%%DATADIR%%/library/Zend/Service/Ebay/Finding.php
+%%DATADIR%%/library/Zend/Service/Ebay/Finding/Abstract.php
+%%DATADIR%%/library/Zend/Service/Ebay/Finding/Aspect.php
+%%DATADIR%%/library/Zend/Service/Ebay/Finding/Aspect/Histogram/Container.php
+%%DATADIR%%/library/Zend/Service/Ebay/Finding/Aspect/Histogram/Value.php
+%%DATADIR%%/library/Zend/Service/Ebay/Finding/Aspect/Histogram/Value/Set.php
+%%DATADIR%%/library/Zend/Service/Ebay/Finding/Aspect/Set.php
+%%DATADIR%%/library/Zend/Service/Ebay/Finding/Category.php
+%%DATADIR%%/library/Zend/Service/Ebay/Finding/Category/Histogram.php
+%%DATADIR%%/library/Zend/Service/Ebay/Finding/Category/Histogram/Container.php
+%%DATADIR%%/library/Zend/Service/Ebay/Finding/Category/Histogram/Set.php
+%%DATADIR%%/library/Zend/Service/Ebay/Finding/Error/Data.php
+%%DATADIR%%/library/Zend/Service/Ebay/Finding/Error/Data/Set.php
+%%DATADIR%%/library/Zend/Service/Ebay/Finding/Error/Message.php
+%%DATADIR%%/library/Zend/Service/Ebay/Finding/Exception.php
+%%DATADIR%%/library/Zend/Service/Ebay/Finding/ListingInfo.php
+%%DATADIR%%/library/Zend/Service/Ebay/Finding/PaginationOutput.php
+%%DATADIR%%/library/Zend/Service/Ebay/Finding/Response/Abstract.php
+%%DATADIR%%/library/Zend/Service/Ebay/Finding/Response/Histograms.php
+%%DATADIR%%/library/Zend/Service/Ebay/Finding/Response/Items.php
+%%DATADIR%%/library/Zend/Service/Ebay/Finding/Response/Keywords.php
+%%DATADIR%%/library/Zend/Service/Ebay/Finding/Search/Item.php
+%%DATADIR%%/library/Zend/Service/Ebay/Finding/Search/Item/Set.php
+%%DATADIR%%/library/Zend/Service/Ebay/Finding/Search/Result.php
+%%DATADIR%%/library/Zend/Service/Ebay/Finding/SellerInfo.php
+%%DATADIR%%/library/Zend/Service/Ebay/Finding/SellingStatus.php
+%%DATADIR%%/library/Zend/Service/Ebay/Finding/Set/Abstract.php
+%%DATADIR%%/library/Zend/Service/Ebay/Finding/ShippingInfo.php
+%%DATADIR%%/library/Zend/Service/Ebay/Finding/Storefront.php
 %%DATADIR%%/library/Zend/Service/Exception.php
 %%DATADIR%%/library/Zend/Service/Flickr.php
 %%DATADIR%%/library/Zend/Service/Flickr/Image.php
@@ -4871,6 +5205,13 @@ bin/zf.php
 %%DATADIR%%/library/Zend/Service/ReCaptcha/MailHide.php
 %%DATADIR%%/library/Zend/Service/ReCaptcha/MailHide/Exception.php
 %%DATADIR%%/library/Zend/Service/ReCaptcha/Response.php
+%%DATADIR%%/library/Zend/Service/ShortUrl/AbstractShortener.php
+%%DATADIR%%/library/Zend/Service/ShortUrl/Exception.php
+%%DATADIR%%/library/Zend/Service/ShortUrl/IsGd.php
+%%DATADIR%%/library/Zend/Service/ShortUrl/JdemCz.php
+%%DATADIR%%/library/Zend/Service/ShortUrl/MetamarkNet.php
+%%DATADIR%%/library/Zend/Service/ShortUrl/Shortener.php
+%%DATADIR%%/library/Zend/Service/ShortUrl/TinyUrlCom.php
 %%DATADIR%%/library/Zend/Service/Simpy.php
 %%DATADIR%%/library/Zend/Service/Simpy/Link.php
 %%DATADIR%%/library/Zend/Service/Simpy/LinkQuery.php
@@ -5102,6 +5443,7 @@ bin/zf.php
 %%DATADIR%%/library/Zend/Tool/Framework/Provider/Abstract.php
 %%DATADIR%%/library/Zend/Tool/Framework/Provider/DocblockManifestable.php
 %%DATADIR%%/library/Zend/Tool/Framework/Provider/Exception.php
+%%DATADIR%%/library/Zend/Tool/Framework/Provider/Initializable.php
 %%DATADIR%%/library/Zend/Tool/Framework/Provider/Interactable.php
 %%DATADIR%%/library/Zend/Tool/Framework/Provider/Interface.php
 %%DATADIR%%/library/Zend/Tool/Framework/Provider/Pretendable.php
@@ -5348,6 +5690,7 @@ bin/zf.php
 %%DATADIR%%/library/Zend/View/Helper/FormSubmit.php
 %%DATADIR%%/library/Zend/View/Helper/FormText.php
 %%DATADIR%%/library/Zend/View/Helper/FormTextarea.php
+%%DATADIR%%/library/Zend/View/Helper/Gravatar.php
 %%DATADIR%%/library/Zend/View/Helper/HeadLink.php
 %%DATADIR%%/library/Zend/View/Helper/HeadMeta.php
 %%DATADIR%%/library/Zend/View/Helper/HeadScript.php
@@ -5383,8 +5726,10 @@ bin/zf.php
 %%DATADIR%%/library/Zend/View/Helper/Placeholder/Registry/Exception.php
 %%DATADIR%%/library/Zend/View/Helper/RenderToPlaceholder.php
 %%DATADIR%%/library/Zend/View/Helper/ServerUrl.php
+%%DATADIR%%/library/Zend/View/Helper/TinySrc.php
 %%DATADIR%%/library/Zend/View/Helper/Translate.php
 %%DATADIR%%/library/Zend/View/Helper/Url.php
+%%DATADIR%%/library/Zend/View/Helper/UserAgent.php
 %%DATADIR%%/library/Zend/View/Interface.php
 %%DATADIR%%/library/Zend/View/Stream.php
 %%DATADIR%%/library/Zend/Wildfire/Channel/HttpHeaders.php
@@ -5447,6 +5792,7 @@ bin/zf.php
 %%PORTDOCS%%%%DOCSDIR%%/manual/images/d481d625821a97b9a5eb2cec99dca50e-learning.quickstart.create-model.png
 %%PORTDOCS%%%%DOCSDIR%%/manual/images/d481d625821a97b9a5eb2cec99dca50e-learning.quickstart.intro.mvc.png
 %%PORTDOCS%%%%DOCSDIR%%/manual/images/d481d625821a97b9a5eb2cec99dca50e-zend.barcode.introduction.example-1.png
+%%PORTDOCS%%%%DOCSDIR%%/manual/images/d481d625821a97b9a5eb2cec99dca50e-zend.barcode.objects.details.code128.png
 %%PORTDOCS%%%%DOCSDIR%%/manual/images/d481d625821a97b9a5eb2cec99dca50e-zend.barcode.objects.details.code25.png
 %%PORTDOCS%%%%DOCSDIR%%/manual/images/d481d625821a97b9a5eb2cec99dca50e-zend.barcode.objects.details.ean13.png
 %%PORTDOCS%%%%DOCSDIR%%/manual/images/d481d625821a97b9a5eb2cec99dca50e-zend.barcode.objects.details.ean2.png
@@ -5475,6 +5821,7 @@ bin/zf.php
 %%PORTDOCS%%%%DOCSDIR%%/manual/images/d481d625821a97b9a5eb2cec99dca50e-zend.service.livedocx.mailmerge.bitmaps-documentpage1_zoom.png
 %%PORTDOCS%%%%DOCSDIR%%/manual/images/d481d625821a97b9a5eb2cec99dca50e-zend.service.livedocx.mailmerge.bitmaps-documentpage2_zoom.png
 %%PORTDOCS%%%%DOCSDIR%%/manual/images/d481d625821a97b9a5eb2cec99dca50e-zend.service.livedocx.mailmerge.generation-diabasic_zoom.png
+%%PORTDOCS%%%%DOCSDIR%%/manual/images/d481d625821a97b9a5eb2cec99dca50e-zend.service.livedocx.mailmerge.templates-imagemerge_zoom.png
 %%PORTDOCS%%%%DOCSDIR%%/manual/images/d481d625821a97b9a5eb2cec99dca50e-zend.service.livedocx.mailmerge.templates-msworddialog_zoom.png
 %%PORTDOCS%%%%DOCSDIR%%/manual/images/d481d625821a97b9a5eb2cec99dca50e-zend.service.livedocx.mailmerge.templates-msworddocument_zoom.png
 %%PORTDOCS%%%%DOCSDIR%%/manual/images/d481d625821a97b9a5eb2cec99dca50e-zend.service.livedocx.mailmerge.templates-mswordtemplatecropped_zoom.png
@@ -5600,12 +5947,18 @@ bin/zf.php
 %%PORTDOCS%%%%DOCSDIR%%/manual/zend.captcha.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/zend.captcha.introduction.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/zend.captcha.operation.html
+%%PORTDOCS%%%%DOCSDIR%%/manual/zend.cloud.documentservice.html
+%%PORTDOCS%%%%DOCSDIR%%/manual/zend.cloud.html
+%%PORTDOCS%%%%DOCSDIR%%/manual/zend.cloud.queueservice.html
+%%PORTDOCS%%%%DOCSDIR%%/manual/zend.cloud.storageservice.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/zend.codegenerator.examples.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/zend.codegenerator.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/zend.codegenerator.introduction.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/zend.codegenerator.reference.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/zend.config.adapters.ini.html
+%%PORTDOCS%%%%DOCSDIR%%/manual/zend.config.adapters.json.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/zend.config.adapters.xml.html
+%%PORTDOCS%%%%DOCSDIR%%/manual/zend.config.adapters.yaml.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/zend.config.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/zend.config.introduction.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/zend.config.theory_of_operation.html
@@ -5726,6 +6079,14 @@ bin/zf.php
 %%PORTDOCS%%%%DOCSDIR%%/manual/zend.http.cookies.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/zend.http.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/zend.http.response.html
+%%PORTDOCS%%%%DOCSDIR%%/manual/zend.http.user-agent-device.html
+%%PORTDOCS%%%%DOCSDIR%%/manual/zend.http.user-agent-features-device-atlas.html
+%%PORTDOCS%%%%DOCSDIR%%/manual/zend.http.user-agent-features-tera-wurfl.html
+%%PORTDOCS%%%%DOCSDIR%%/manual/zend.http.user-agent-features-wurfl.html
+%%PORTDOCS%%%%DOCSDIR%%/manual/zend.http.user-agent-features.html
+%%PORTDOCS%%%%DOCSDIR%%/manual/zend.http.user-agent-storage-session.html
+%%PORTDOCS%%%%DOCSDIR%%/manual/zend.http.user-agent-storage.html
+%%PORTDOCS%%%%DOCSDIR%%/manual/zend.http.user-agent.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/zend.infocard.basics.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/zend.infocard.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/zend.json.advanced.html
@@ -5876,12 +6237,15 @@ bin/zf.php
 %%PORTDOCS%%%%DOCSDIR%%/manual/zend.service.audioscrobbler.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/zend.service.delicious.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/zend.service.developergarden.html
+%%PORTDOCS%%%%DOCSDIR%%/manual/zend.service.ebay.finding.html
+%%PORTDOCS%%%%DOCSDIR%%/manual/zend.service.ebay.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/zend.service.flickr.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/zend.service.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/zend.service.introduction.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/zend.service.livedocx.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/zend.service.nirvanix.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/zend.service.recaptcha.html
+%%PORTDOCS%%%%DOCSDIR%%/manual/zend.service.short-url.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/zend.service.simpy.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/zend.service.slideshare.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/zend.service.strikeiron.advanced-uses.html
@@ -5889,7 +6253,11 @@ bin/zf.php
 %%PORTDOCS%%%%DOCSDIR%%/manual/zend.service.strikeiron.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/zend.service.technorati.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/zend.service.twitter.html
+%%PORTDOCS%%%%DOCSDIR%%/manual/zend.service.windowsazure.diagnostics.manager.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/zend.service.windowsazure.html
+%%PORTDOCS%%%%DOCSDIR%%/manual/zend.service.windowsazure.storage.blob.html
+%%PORTDOCS%%%%DOCSDIR%%/manual/zend.service.windowsazure.storage.queue.html
+%%PORTDOCS%%%%DOCSDIR%%/manual/zend.service.windowsazure.storage.table.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/zend.service.yahoo.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/zend.session.advanced_usage.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/zend.session.basic_usage.html
@@ -5965,7 +6333,38 @@ bin/zf.php
 %%PORTDOCS%%%%DOCSDIR%%/manual/zendx.jquery.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/zendx.jquery.introduction.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/zendx.jquery.view.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/Zend/Cloud/cloudexp/.zfproject.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/Zend/Cloud/cloudexp/README.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/Zend/Cloud/cloudexp/application/Bootstrap.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/Zend/Cloud/cloudexp/application/configs/application.ini.dist
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/Zend/Cloud/cloudexp/application/controllers/DocumentController.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/Zend/Cloud/cloudexp/application/controllers/ErrorController.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/Zend/Cloud/cloudexp/application/controllers/IndexController.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/Zend/Cloud/cloudexp/application/controllers/QueueController.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/Zend/Cloud/cloudexp/application/controllers/StorageController.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/Zend/Cloud/cloudexp/application/views/scripts/document/add-document.phtml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/Zend/Cloud/cloudexp/application/views/scripts/document/create.phtml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/Zend/Cloud/cloudexp/application/views/scripts/document/delete-document.phtml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/Zend/Cloud/cloudexp/application/views/scripts/document/index.phtml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/Zend/Cloud/cloudexp/application/views/scripts/document/show.phtml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/Zend/Cloud/cloudexp/application/views/scripts/error/error.phtml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/Zend/Cloud/cloudexp/application/views/scripts/index/index.phtml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/Zend/Cloud/cloudexp/application/views/scripts/queue/create.phtml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/Zend/Cloud/cloudexp/application/views/scripts/queue/index.phtml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/Zend/Cloud/cloudexp/application/views/scripts/queue/receive.phtml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/Zend/Cloud/cloudexp/application/views/scripts/queue/send.phtml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/Zend/Cloud/cloudexp/application/views/scripts/storage/get.phtml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/Zend/Cloud/cloudexp/application/views/scripts/storage/index.phtml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/Zend/Cloud/cloudexp/application/views/scripts/storage/upload.phtml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/Zend/Cloud/cloudexp/library/CloudExplorer/ResourceInjector.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/Zend/Cloud/cloudexp/public/.htaccess
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/Zend/Cloud/cloudexp/public/index.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/Zend/Feeds/consume-feed.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/Zend/Gdata/3LeggedOAuth/Gdata_OAuth_Helper.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/Zend/Gdata/3LeggedOAuth/data-api-72.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/Zend/Gdata/3LeggedOAuth/doclist-72.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/Zend/Gdata/3LeggedOAuth/index.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/Zend/Gdata/3LeggedOAuth/style.css
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/Zend/Gdata/Blogger.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/Zend/Gdata/BooksBrowser/books_browser.css
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/Zend/Gdata/BooksBrowser/index.php
@@ -6039,12 +6438,22 @@ bin/zf.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/Zend/Service/LiveDocx/MailMerge/bitmaps/generate-bitmaps.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/Zend/Service/LiveDocx/MailMerge/bitmaps/template-screenshot.png
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/Zend/Service/LiveDocx/MailMerge/bitmaps/template.docx
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/Zend/Service/LiveDocx/MailMerge/conference-pass/dailemaitre.jpg
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/Zend/Service/LiveDocx/MailMerge/conference-pass/generate-document.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/Zend/Service/LiveDocx/MailMerge/conference-pass/template.docx
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/Zend/Service/LiveDocx/MailMerge/constructors/credentials.ini
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/Zend/Service/LiveDocx/MailMerge/constructors/hosted-licensed.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/Zend/Service/LiveDocx/MailMerge/constructors/public-zend_config.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/Zend/Service/LiveDocx/MailMerge/constructors/public.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/Zend/Service/LiveDocx/MailMerge/convert/convert-document.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/Zend/Service/LiveDocx/MailMerge/convert/document.doc
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/Zend/Service/LiveDocx/MailMerge/images/delete-all.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/Zend/Service/LiveDocx/MailMerge/images/download.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/Zend/Service/LiveDocx/MailMerge/images/image-1.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/Zend/Service/LiveDocx/MailMerge/images/image-2.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/Zend/Service/LiveDocx/MailMerge/images/image-exists.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/Zend/Service/LiveDocx/MailMerge/images/list.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/Zend/Service/LiveDocx/MailMerge/images/upload.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/Zend/Service/LiveDocx/MailMerge/license-agreement/generate-document-concat.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/Zend/Service/LiveDocx/MailMerge/license-agreement/generate-document.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/Zend/Service/LiveDocx/MailMerge/license-agreement/template-screenshot.png
@@ -6118,6 +6527,7 @@ bin/zf.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/AllTests.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/AllTests/StreamWrapper/PhpInput.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Amf/Adobe/IntrospectorTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Amf/Adobe/TestAsset/ParameterHints.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Amf/Adobe/_files/ZendAmfAdobeIntrospectorTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Amf/Adobe/_files/ZendAmfAdobeIntrospectorTestType.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Amf/AllTests.php
@@ -6213,6 +6623,7 @@ bin/zf.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Application/Resource/RouterTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Application/Resource/SessionTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Application/Resource/TranslateTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Application/Resource/UseragentTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Application/Resource/ViewTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Application/Resource/_files/ZfAppBootstrapCustomView.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Application/Resource/mailTestCAsE.php
@@ -6226,8 +6637,10 @@ bin/zf.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Application/_files/ZfModuleBootstrap.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Application/_files/appconfig.inc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Application/_files/appconfig.ini
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Application/_files/appconfig.json
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Application/_files/appconfig.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Application/_files/appconfig.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Application/_files/appconfig.yaml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Application/_files/modules/bar/Bootstrap.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Application/_files/modules/bar/controllers/.placeholder
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Application/_files/modules/baz/controllers/.placeholder
@@ -6237,6 +6650,9 @@ bin/zf.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Application/_files/modules/foo/controllers/.placeholder
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Application/_files/modules/zfappbootstrap/controllers/ErrorController.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Application/_files/modules/zfappbootstrap/controllers/IndexController.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Application/_files/more_modules/bat/Bootstrap.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Application/_files/more_modules/bat/controllers/.placeholder
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Application/_files/more_modules/foobaz/controllers/.placeholder
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Application/_files/resources/Autoloaded.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Application/_files/resources/Baz.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Application/_files/resources/Foo.php
@@ -6267,6 +6683,7 @@ bin/zf.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/AuthTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Barcode/AllTests.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Barcode/FactoryTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Barcode/Object/Code128Test.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Barcode/Object/Code25Test.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Barcode/Object/Code25interleavedTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Barcode/Object/Code39Test.php
@@ -6287,6 +6704,13 @@ bin/zf.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Barcode/Object/_files/BarcodeNamespace.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Barcode/Object/_files/BarcodeNamespaceWithoutExtendingObjectAbstract.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Barcode/Object/_files/BarcodeTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Barcode/Object/_files/Code128Test.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Barcode/Object/_files/Code128_HI345678_border_instructions.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Barcode/Object/_files/Code128_HI345678_border_oriented_instructions.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Barcode/Object/_files/Code128_HI345678_instructions.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Barcode/Object/_files/Code128_HI345678_oriented_instructions.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Barcode/Object/_files/Code128_HI345678_stretchtext_instructions.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Barcode/Object/_files/Code128_HI345678_stretchtext_oriented_instructions.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Barcode/Object/_files/Code25_0123456789_border_instructions.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Barcode/Object/_files/Code25_0123456789_border_oriented_instructions.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Barcode/Object/_files/Code25_0123456789_instructions.php
@@ -6366,6 +6790,7 @@ bin/zf.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Barcode/Object/_fonts/Vera.ttf
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Barcode/Renderer/ImageTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Barcode/Renderer/PdfTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Barcode/Renderer/SvgTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Barcode/Renderer/TestCommon.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Barcode/Renderer/_files/RendererNamespace.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Barcode/Renderer/_files/RendererNamespaceWithoutExtendingRendererAbstract.php
@@ -6380,6 +6805,7 @@ bin/zf.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Cache/FileBackendTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Cache/FileFrontendTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Cache/FunctionFrontendTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Cache/LibmemcachedBackendTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Cache/ManagerTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Cache/MemcachedBackendTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Cache/OutputFrontendTest.php
@@ -6397,6 +6823,36 @@ bin/zf.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Captcha/FigletTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Captcha/ImageTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Captcha/ReCaptchaTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Cloud/AllTests.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Cloud/DocumentService/Adapter/AllTests.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Cloud/DocumentService/Adapter/SimpleDbTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Cloud/DocumentService/Adapter/WindowsAzureTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Cloud/DocumentService/AllTests.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Cloud/DocumentService/FactoryTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Cloud/DocumentService/TestCase.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Cloud/QueueService/Adapter/AllTests.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Cloud/QueueService/Adapter/SqsTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Cloud/QueueService/Adapter/WindowsAzureTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Cloud/QueueService/Adapter/ZendQueueTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Cloud/QueueService/AllTests.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Cloud/QueueService/FactoryTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Cloud/QueueService/TestCase.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Cloud/QueueService/_files/config/sqs.ini
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Cloud/QueueService/_files/config/windowsazure.ini
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Cloud/QueueService/_files/config/zendqueue.ini
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Cloud/StorageService/Adapter/AllTests.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Cloud/StorageService/Adapter/FileSystemTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Cloud/StorageService/Adapter/NirvanixTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Cloud/StorageService/Adapter/S3Test.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Cloud/StorageService/Adapter/WindowsAzureTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Cloud/StorageService/AllTests.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Cloud/StorageService/FactoryTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Cloud/StorageService/TestCase.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Cloud/StorageService/_files/config/filesystem.ini
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Cloud/StorageService/_files/config/nirvanix.ini
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Cloud/StorageService/_files/config/s3.ini
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Cloud/StorageService/_files/config/windowsazure.ini
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Cloud/StorageService/_files/data/dummy_data.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/CodeGenerator/AllTests.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/CodeGenerator/Php/AllTests.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/CodeGenerator/Php/ClassTest.php
@@ -6414,24 +6870,45 @@ bin/zf.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/CodeGenerator/Php/_files/TestSampleSingleClass.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Config/AllTests.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Config/IniTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Config/JsonTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Config/Writer/AllTests.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Config/Writer/ArrayTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Config/Writer/IniTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Config/Writer/JsonTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Config/Writer/XmlTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Config/Writer/YamlTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Config/Writer/files/allsections-pretty.json
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Config/Writer/files/allsections.ini
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Config/Writer/files/allsections.json
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Config/Writer/files/allsections.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Config/Writer/files/allsections.yaml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Config/XmlTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Config/YamlTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Config/_files/allsections.ini
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Config/_files/allsections.json
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Config/_files/allsections.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Config/_files/allsections.yaml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Config/_files/array.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Config/_files/array.yaml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Config/_files/badindentation.yaml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Config/_files/booleans.yaml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Config/_files/circular.ini
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Config/_files/circular.json
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Config/_files/circular.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Config/_files/circular.yaml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Config/_files/config.ini
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Config/_files/config.json
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Config/_files/config.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Config/_files/config.yaml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Config/_files/constants.yaml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Config/_files/invalid.ini
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Config/_files/invalid.json
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Config/_files/invalid.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Config/_files/invalid.yaml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Config/_files/multipleinheritance.ini
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Config/_files/multipleinheritance.json
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Config/_files/nosections.ini
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Config/_files/nosections.json
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Config/_files/onetoplevelstring.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Config/_files/separator.ini
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Config/_files/shortparamsone.xml
@@ -7185,6 +7662,10 @@ bin/zf.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Atom/generator/plain/atom10.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Atom/hubs/plain/atom03.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Atom/hubs/plain/atom10.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Atom/icon/plain/atom03.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Atom/icon/plain/atom10.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Atom/icon/plain/none/atom03.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Atom/icon/plain/none/atom10.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Atom/id/plain/atom03.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Atom/id/plain/atom10.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Atom/image/plain/atom03.xml
@@ -8001,6 +8482,7 @@ bin/zf.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Http/Client/SocketTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Http/Client/StaticTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Http/Client/TestAdapterTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Http/Client/_files/ZF10645-PutContentType.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Http/Client/_files/ZF2098-multibytepostdata.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Http/Client/_files/ZF4238-zerolineresponse.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Http/Client/_files/ZF7038-multipartarrayrequest.txt
@@ -8023,6 +8505,19 @@ bin/zf.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Http/CookieJarTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Http/CookieTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Http/ResponseTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Http/TestAsset/DesktopDevice.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Http/TestAsset/Device/Browser/Features/Adapter.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Http/TestAsset/Device/Desktop.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Http/TestAsset/InvalidDevice.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Http/TestAsset/InvalidPluginLoader.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Http/TestAsset/PopulatedStorage.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Http/TestAsset/TestPluginLoader.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Http/UserAgent/AbstractDeviceTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Http/UserAgent/AllTests.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Http/UserAgent/Features/Adapter/DeviceAtlasTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Http/UserAgent/Features/Adapter/TeraWurflTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Http/UserAgent/Features/Adapter/WurflApiTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Http/UserAgentTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Http/_files/body
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Http/_files/response_302
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Http/_files/response_302_iis
@@ -8042,6 +8537,9 @@ bin/zf.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Http/_files/response_unknown
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Http/_files/response_with_cookies
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Http/_files/response_with_single_cookie
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Http/_files/serialized_device.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Http/_files/var/cache/mobile/.placeholder
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Http/index.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/InfoCard/AllTests.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/InfoCard/AssertionTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/InfoCard/CipherTest.php
@@ -8151,14 +8649,17 @@ bin/zf.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Locale/MathTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/LocaleTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Log/AllTests.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Log/Filter/AllTests.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Log/Filter/ChainingTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Log/Filter/MessageTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Log/Filter/PriorityTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Log/Filter/SuppressTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Log/Formatter/AllTests.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Log/Formatter/SimpleTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Log/Formatter/XmlTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Log/LogTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Log/Writer/AbstractTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Log/Writer/AllTests.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Log/Writer/DbTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Log/Writer/FirebugTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Log/Writer/MailTest.php
@@ -8167,7 +8668,9 @@ bin/zf.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Log/Writer/StreamTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Log/Writer/SyslogTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Log/Writer/ZendMonitorTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Log/Writer/_files/layout.phtml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Mail/AllTests.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Mail/FileTransportTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Mail/ImapTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Mail/InterfaceTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Mail/MailTest.php
@@ -8180,6 +8683,7 @@ bin/zf.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Mail/MboxTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Mail/MessageTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Mail/Pop3Test.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Mail/SmtpOfflineTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Mail/SmtpTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Mail/_files/mail.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Mail/_files/test.maildir/maildir.tar
@@ -8502,6 +9006,12 @@ bin/zf.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/AllTests.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/Amazon/AbstractTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/Amazon/AllTests.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/Amazon/Authentication/AllTests.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/Amazon/Authentication/S3Test.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/Amazon/Authentication/V1Test.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/Amazon/Authentication/V2Test.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/Amazon/Authentication/_files/ec2_v2_return.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/Amazon/Authentication/_files/sqs_v2_get_return.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/Amazon/Ec2/AbstractTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/Amazon/Ec2/AllTests.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/Amazon/Ec2/AvailabilityzonesTest.php
@@ -8524,6 +9034,9 @@ bin/zf.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/Amazon/S3/StreamTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/Amazon/S3/_files/testdata
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/Amazon/S3/_files/testdata.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/Amazon/SimpleDb/AllTests.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/Amazon/SimpleDb/OfflineTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/Amazon/SimpleDb/OnlineTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/Amazon/Sqs/AllTests.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/Amazon/Sqs/OfflineTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/Amazon/Sqs/OnlineTest.php
@@ -8566,6 +9079,18 @@ bin/zf.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/DeveloperGarden/SendSmsTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/DeveloperGarden/SmsValidationTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/DeveloperGarden/VoiceCallTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/Ebay/AbstractTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/Ebay/AllTests.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/Ebay/Finding/AllTests.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/Ebay/Finding/OfflineTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/Ebay/Finding/OnlineTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/Ebay/Finding/_files/ClientCustom.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/Ebay/Finding/_files/error.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/Ebay/Finding/_files/find-items-advanced.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/Ebay/Finding/_files/get-search-keywords-recomendation.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/Ebay/Finding/_files/histogram-aspect.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/Ebay/Finding/_files/histogram-category.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/Ebay/_files/Concrete.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/Flickr/AllTests.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/Flickr/OfflineTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/Flickr/OnlineTest.php
@@ -8596,6 +9121,8 @@ bin/zf.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/Flickr/_files/testUserSearchExceptionUsernameInvalid.response
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/LiveDocx/AllTests.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/LiveDocx/LiveDocxTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/LiveDocx/MailMerge/image-01.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/LiveDocx/MailMerge/image-02.png
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/LiveDocx/MailMerge/phpunit-template-block-fields.doc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/LiveDocx/MailMerge/phpunit-template.docx
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/LiveDocx/MailMergeTest.php
@@ -8610,6 +9137,11 @@ bin/zf.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/ReCaptcha/MailHideTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/ReCaptcha/ReCaptchaTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/ReCaptcha/ResponseTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/ShortUrl/AllTests.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/ShortUrl/IsGdTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/ShortUrl/JdemCzTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/ShortUrl/MetamarkNetTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/ShortUrl/TinyUrlComTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/Simpy/AllTests.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/Simpy/BaseProxy.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/Simpy/BaseTests.php
@@ -8788,8 +9320,6 @@ bin/zf.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Soap/Wsdl/ArrayOfTypeSequenceStrategyTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Soap/Wsdl/CompositeStrategyTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Soap/Wsdl/DefaultComplexTypeTest.php
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Soap/Wsdl/ElementTest.php
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Soap/Wsdl/ParserTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Soap/WsdlTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Soap/_files/cert_file
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Soap/_files/commontypes.php
@@ -9098,6 +9628,7 @@ bin/zf.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/View/Helper/FormTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/View/Helper/FormTextTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/View/Helper/FormTextareaTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/View/Helper/GravatarTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/View/Helper/HeadLinkTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/View/Helper/HeadMetaTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/View/Helper/HeadScriptTest.php
@@ -9168,6 +9699,7 @@ bin/zf.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/View/Helper/PlaceholderTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/View/Helper/RenderToPlaceholderTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/View/Helper/ServerUrlTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/View/Helper/TinySrcTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/View/Helper/TranslateTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/View/Helper/UrlTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/View/Helper/_files/modules/default/controllers/ActionBarController.php
@@ -9405,6 +9937,7 @@ bin/zf.php
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Service/SlideShare
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Service/Simpy/_files
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Service/Simpy
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Service/ShortUrl
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Service/ReCaptcha
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Service/Nirvanix/Namespace
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Service/Nirvanix
@@ -9412,15 +9945,22 @@ bin/zf.php
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Service/LiveDocx
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Service/Flickr/_files
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Service/Flickr
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Service/Ebay/_files
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Service/Ebay/Finding/_files
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Service/Ebay/Finding
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Service/Ebay
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Service/DeveloperGarden
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Service/Delicious
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Service/Audioscrobbler/_files
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Service/Audioscrobbler
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Service/Amazon/_files
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Service/Amazon/Sqs
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Service/Amazon/SimpleDb
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Service/Amazon/S3/_files
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Service/Amazon/S3
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Service/Amazon/Ec2
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Service/Amazon/Authentication/_files
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Service/Amazon/Authentication
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Service/Amazon
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Service
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Server/Reflection
@@ -9514,6 +10054,7 @@ bin/zf.php
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Mail/_files/test.maildir
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Mail/_files
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Mail
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Log/Writer/_files
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Log/Writer
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Log/Formatter
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Log/Filter
@@ -9554,7 +10095,17 @@ bin/zf.php
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Json
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/InfoCard/_files
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/InfoCard
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Http/_files/var/cache/mobile
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Http/_files/var/cache
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Http/_files/var
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Http/_files
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Http/UserAgent/Features/Adapter
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Http/UserAgent/Features
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Http/UserAgent
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Http/TestAsset/Device/Browser/Features
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Http/TestAsset/Device/Browser
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Http/TestAsset/Device
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Http/TestAsset
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Http/Client/_files
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Http/Client
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Http
@@ -9705,6 +10256,9 @@ bin/zf.php
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Atom/image
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Atom/id/plain
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Atom/id
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Atom/icon/plain/none
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Atom/icon/plain
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Atom/icon
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Atom/hubs/plain
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Atom/hubs
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Atom/generator/plain
@@ -9962,6 +10516,18 @@ bin/zf.php
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/CodeGenerator/Php/Docblock
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/CodeGenerator/Php
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/CodeGenerator
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Cloud/StorageService/_files/data
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Cloud/StorageService/_files/config
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Cloud/StorageService/_files
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Cloud/StorageService/Adapter
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Cloud/StorageService
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Cloud/QueueService/_files/config
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Cloud/QueueService/_files
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Cloud/QueueService/Adapter
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Cloud/QueueService
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Cloud/DocumentService/Adapter
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Cloud/DocumentService
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Cloud
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Captcha
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Cache
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Barcode/Renderer/_files
@@ -9983,6 +10549,11 @@ bin/zf.php
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Auth/Adapter
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Auth
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Application/_files/resources
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Application/_files/more_modules/foobaz/controllers
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Application/_files/more_modules/foobaz
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Application/_files/more_modules/bat/controllers
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Application/_files/more_modules/bat
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Application/_files/more_modules
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Application/_files/modules/zfappbootstrap/controllers
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Application/_files/modules/zfappbootstrap
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Application/_files/modules/foo/controllers
@@ -10011,6 +10582,7 @@ bin/zf.php
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Amf/Request/mock
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Amf/Request
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Amf/Adobe/_files
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Amf/Adobe/TestAsset
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Amf/Adobe
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Amf
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/AllTests/StreamWrapper
@@ -10052,8 +10624,10 @@ bin/zf.php
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/demos/Zend/Service/LiveDocx/MailMerge/pdf-security
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/demos/Zend/Service/LiveDocx/MailMerge/metafiles
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/demos/Zend/Service/LiveDocx/MailMerge/license-agreement
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/demos/Zend/Service/LiveDocx/MailMerge/images
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/demos/Zend/Service/LiveDocx/MailMerge/convert
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/demos/Zend/Service/LiveDocx/MailMerge/constructors
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/demos/Zend/Service/LiveDocx/MailMerge/conference-pass
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/demos/Zend/Service/LiveDocx/MailMerge/bitmaps
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/demos/Zend/Service/LiveDocx/MailMerge
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/demos/Zend/Service/LiveDocx
@@ -10084,8 +10658,24 @@ bin/zf.php
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/demos/Zend/Gdata/YouTubeVideoApp
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/demos/Zend/Gdata/MyLibrary
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/demos/Zend/Gdata/BooksBrowser
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/demos/Zend/Gdata/3LeggedOAuth
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/demos/Zend/Gdata
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/demos/Zend/Feeds
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/demos/Zend/Cloud/cloudexp/public
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/demos/Zend/Cloud/cloudexp/library/CloudExplorer
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/demos/Zend/Cloud/cloudexp/library
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/demos/Zend/Cloud/cloudexp/application/views/scripts/storage
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/demos/Zend/Cloud/cloudexp/application/views/scripts/queue
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/demos/Zend/Cloud/cloudexp/application/views/scripts/index
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/demos/Zend/Cloud/cloudexp/application/views/scripts/error
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/demos/Zend/Cloud/cloudexp/application/views/scripts/document
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/demos/Zend/Cloud/cloudexp/application/views/scripts
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/demos/Zend/Cloud/cloudexp/application/views
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/demos/Zend/Cloud/cloudexp/application/controllers
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/demos/Zend/Cloud/cloudexp/application/configs
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/demos/Zend/Cloud/cloudexp/application
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/demos/Zend/Cloud/cloudexp
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/demos/Zend/Cloud
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/demos/Zend
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/demos
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
@@ -10187,12 +10777,26 @@ bin/zf.php
 @dirrm %%DATADIR%%/library/Zend/Service/StrikeIron
 @dirrm %%DATADIR%%/library/Zend/Service/SlideShare
 @dirrm %%DATADIR%%/library/Zend/Service/Simpy
+@dirrm %%DATADIR%%/library/Zend/Service/ShortUrl
 @dirrm %%DATADIR%%/library/Zend/Service/ReCaptcha/MailHide
 @dirrm %%DATADIR%%/library/Zend/Service/ReCaptcha
 @dirrm %%DATADIR%%/library/Zend/Service/Nirvanix/Namespace
 @dirrm %%DATADIR%%/library/Zend/Service/Nirvanix
 @dirrm %%DATADIR%%/library/Zend/Service/LiveDocx
 @dirrm %%DATADIR%%/library/Zend/Service/Flickr
+@dirrm %%DATADIR%%/library/Zend/Service/Ebay/Finding/Set
+@dirrm %%DATADIR%%/library/Zend/Service/Ebay/Finding/Search/Item
+@dirrm %%DATADIR%%/library/Zend/Service/Ebay/Finding/Search
+@dirrm %%DATADIR%%/library/Zend/Service/Ebay/Finding/Response
+@dirrm %%DATADIR%%/library/Zend/Service/Ebay/Finding/Error/Data
+@dirrm %%DATADIR%%/library/Zend/Service/Ebay/Finding/Error
+@dirrm %%DATADIR%%/library/Zend/Service/Ebay/Finding/Category/Histogram
+@dirrm %%DATADIR%%/library/Zend/Service/Ebay/Finding/Category
+@dirrm %%DATADIR%%/library/Zend/Service/Ebay/Finding/Aspect/Histogram/Value
+@dirrm %%DATADIR%%/library/Zend/Service/Ebay/Finding/Aspect/Histogram
+@dirrm %%DATADIR%%/library/Zend/Service/Ebay/Finding/Aspect
+@dirrm %%DATADIR%%/library/Zend/Service/Ebay/Finding
+@dirrm %%DATADIR%%/library/Zend/Service/Ebay
 @dirrm %%DATADIR%%/library/Zend/Service/DeveloperGarden/Wsdl
 @dirrm %%DATADIR%%/library/Zend/Service/DeveloperGarden/SecurityTokenServer
 @dirrm %%DATADIR%%/library/Zend/Service/DeveloperGarden/Response/VoiceButler
@@ -10220,9 +10824,11 @@ bin/zf.php
 @dirrm %%DATADIR%%/library/Zend/Service/DeveloperGarden
 @dirrm %%DATADIR%%/library/Zend/Service/Delicious
 @dirrm %%DATADIR%%/library/Zend/Service/Amazon/Sqs
+@dirrm %%DATADIR%%/library/Zend/Service/Amazon/SimpleDb
 @dirrm %%DATADIR%%/library/Zend/Service/Amazon/S3
 @dirrm %%DATADIR%%/library/Zend/Service/Amazon/Ec2/Instance
 @dirrm %%DATADIR%%/library/Zend/Service/Amazon/Ec2
+@dirrm %%DATADIR%%/library/Zend/Service/Amazon/Authentication
 @dirrm %%DATADIR%%/library/Zend/Service/Amazon
 @dirrm %%DATADIR%%/library/Zend/Service
 @dirrm %%DATADIR%%/library/Zend/Server/Reflection/Function
@@ -10299,6 +10905,7 @@ bin/zf.php
 @dirrm %%DATADIR%%/library/Zend/Pdf/Color
 @dirrm %%DATADIR%%/library/Zend/Pdf/Cmap/ByteEncoding
 @dirrm %%DATADIR%%/library/Zend/Pdf/Cmap
+@dirrm %%DATADIR%%/library/Zend/Pdf/Canvas
 @dirrm %%DATADIR%%/library/Zend/Pdf/Annotation
 @dirrm %%DATADIR%%/library/Zend/Pdf/Action
 @dirrm %%DATADIR%%/library/Zend/Pdf
@@ -10357,6 +10964,7 @@ bin/zf.php
 @dirrm %%DATADIR%%/library/Zend/Ldap/Node
 @dirrm %%DATADIR%%/library/Zend/Ldap/Ldif
 @dirrm %%DATADIR%%/library/Zend/Ldap/Filter
+@dirrm %%DATADIR%%/library/Zend/Ldap/Converter
 @dirrm %%DATADIR%%/library/Zend/Ldap/Collection/Iterator
 @dirrm %%DATADIR%%/library/Zend/Ldap/Collection
 @dirrm %%DATADIR%%/library/Zend/Ldap
@@ -10387,6 +10995,10 @@ bin/zf.php
 @dirrm %%DATADIR%%/library/Zend/InfoCard/Cipher
 @dirrm %%DATADIR%%/library/Zend/InfoCard/Adapter
 @dirrm %%DATADIR%%/library/Zend/InfoCard
+@dirrm %%DATADIR%%/library/Zend/Http/UserAgent/Storage
+@dirrm %%DATADIR%%/library/Zend/Http/UserAgent/Features/Adapter
+@dirrm %%DATADIR%%/library/Zend/Http/UserAgent/Features
+@dirrm %%DATADIR%%/library/Zend/Http/UserAgent
 @dirrm %%DATADIR%%/library/Zend/Http/Response
 @dirrm %%DATADIR%%/library/Zend/Http/Client/Adapter
 @dirrm %%DATADIR%%/library/Zend/Http/Client
@@ -10542,6 +11154,15 @@ bin/zf.php
 @dirrm %%DATADIR%%/library/Zend/CodeGenerator/Php/Docblock
 @dirrm %%DATADIR%%/library/Zend/CodeGenerator/Php
 @dirrm %%DATADIR%%/library/Zend/CodeGenerator
+@dirrm %%DATADIR%%/library/Zend/Cloud/StorageService/Adapter
+@dirrm %%DATADIR%%/library/Zend/Cloud/StorageService
+@dirrm %%DATADIR%%/library/Zend/Cloud/QueueService/Adapter
+@dirrm %%DATADIR%%/library/Zend/Cloud/QueueService
+@dirrm %%DATADIR%%/library/Zend/Cloud/DocumentService/Adapter/WindowsAzure
+@dirrm %%DATADIR%%/library/Zend/Cloud/DocumentService/Adapter/SimpleDb
+@dirrm %%DATADIR%%/library/Zend/Cloud/DocumentService/Adapter
+@dirrm %%DATADIR%%/library/Zend/Cloud/DocumentService
+@dirrm %%DATADIR%%/library/Zend/Cloud
 @dirrm %%DATADIR%%/library/Zend/Captcha
 @dirrm %%DATADIR%%/library/Zend/Cache/Frontend
 @dirrm %%DATADIR%%/library/Zend/Cache/Backend/ZendServer
@@ -10608,6 +11229,7 @@ bin/zf.php
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/util/shrinksafe/src/org
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/util/shrinksafe/src
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/util/shrinksafe
+%%DOJO%%@dirrm %%DATADIR%%/externals/dojo/util/migration
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/util/doh/tests
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/util/doh/robot
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/util/doh/_sounds
@@ -10651,6 +11273,7 @@ bin/zf.php
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/widget/nls/sl
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/widget/nls/sk
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/widget/nls/ru
+%%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/widget/nls/ro
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/widget/nls/pt-pt
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/widget/nls/pt
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/widget/nls/pl
@@ -10710,6 +11333,22 @@ bin/zf.php
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/rpc
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/robot
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/resources
+%%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/rails
+%%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/mobile/themes/iphone/images
+%%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/mobile/themes/iphone/compat
+%%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/mobile/themes/iphone
+%%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/mobile/themes/compat
+%%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/mobile/themes/android/compat
+%%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/mobile/themes/android
+%%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/mobile/themes
+%%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/mobile/build/profiles
+%%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/mobile/build
+%%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/mobile/app
+%%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/mobile
+%%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/mdnd/resources
+%%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/mdnd/dropMode
+%%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/mdnd/adapter
+%%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/mdnd
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/math/random
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/math
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/layout/resources/icons
@@ -10720,6 +11359,7 @@ bin/zf.php
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/layout
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/lang/oo
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/lang/functional
+%%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/lang/async
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/lang/aspect
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/lang
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/jsonPath
@@ -10731,6 +11371,7 @@ bin/zf.php
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/image/resources
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/image
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/html/resources
+%%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/html/ext-dojo
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/html
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/highlight/resources/pygments
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/highlight/resources
@@ -10745,17 +11386,32 @@ bin/zf.php
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/grid/enhanced/plugins
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/grid/enhanced/nls/zh-tw
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/grid/enhanced/nls/zh
+%%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/grid/enhanced/nls/tr
+%%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/grid/enhanced/nls/th
+%%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/grid/enhanced/nls/sv
+%%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/grid/enhanced/nls/sl
+%%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/grid/enhanced/nls/sk
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/grid/enhanced/nls/ru
+%%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/grid/enhanced/nls/ro
+%%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/grid/enhanced/nls/pt-pt
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/grid/enhanced/nls/pt
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/grid/enhanced/nls/pl
+%%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/grid/enhanced/nls/nl
+%%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/grid/enhanced/nls/nb
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/grid/enhanced/nls/ko
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/grid/enhanced/nls/ja
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/grid/enhanced/nls/it
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/grid/enhanced/nls/hu
+%%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/grid/enhanced/nls/he
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/grid/enhanced/nls/fr
+%%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/grid/enhanced/nls/fi
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/grid/enhanced/nls/es
+%%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/grid/enhanced/nls/el
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/grid/enhanced/nls/de
+%%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/grid/enhanced/nls/da
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/grid/enhanced/nls/cs
+%%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/grid/enhanced/nls/ca
+%%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/grid/enhanced/nls/ar
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/grid/enhanced/nls
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/grid/enhanced/dnd
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/grid/enhanced
@@ -10764,6 +11420,13 @@ bin/zf.php
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/gfx3d
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/gfx/resources
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/gfx
+%%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/geo/charting/widget
+%%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/geo/charting/resources/markers
+%%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/geo/charting/resources/img
+%%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/geo/charting/resources/data
+%%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/geo/charting/resources
+%%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/geo/charting
+%%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/geo
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/fx/resources
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/fx/ext-dojo
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/fx
@@ -10777,6 +11440,7 @@ bin/zf.php
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/form/nls/sl
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/form/nls/sk
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/form/nls/ru
+%%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/form/nls/ro
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/form/nls/pt-pt
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/form/nls/pt
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/form/nls/pl
@@ -10807,8 +11471,16 @@ bin/zf.php
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/embed/resources
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/embed/IE
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/embed
+%%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/editor/plugins/resources/images/tundra
+%%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/editor/plugins/resources/images/soria
+%%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/editor/plugins/resources/images/nihilo
+%%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/editor/plugins/resources/images/claro
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/editor/plugins/resources/images/blockelems
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/editor/plugins/resources/images
+%%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/editor/plugins/resources/icons/tundra
+%%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/editor/plugins/resources/icons/soria
+%%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/editor/plugins/resources/icons/nihilo
+%%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/editor/plugins/resources/icons/claro
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/editor/plugins/resources/icons
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/editor/plugins/resources/emoticons
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/editor/plugins/resources/css
@@ -10821,6 +11493,7 @@ bin/zf.php
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/sl
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/sk
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/ru
+%%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/ro
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/pt-pt
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/pt
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/pl
@@ -10865,6 +11538,7 @@ bin/zf.php
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/drawing/library
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/drawing/annotations
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/drawing
+%%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/dnd
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/date/zoneinfo
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/date/islamic
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/date/hebrew
@@ -10873,6 +11547,7 @@ bin/zf.php
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/data/util
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/data/s3
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/data
+%%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/css3
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/cometd
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/color
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/collections
@@ -10901,6 +11576,7 @@ bin/zf.php
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/atom/widget/nls/sl
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/atom/widget/nls/sk
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/atom/widget/nls/ru
+%%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/atom/widget/nls/ro
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/atom/widget/nls/pt-pt
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/atom/widget/nls/pt
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/atom/widget/nls/pl
@@ -10941,6 +11617,7 @@ bin/zf.php
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojo/nls/sl
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojo/nls/sk
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojo/nls/ru
+%%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojo/nls/ro
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojo/nls/pt-pt
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojo/nls/pt
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojo/nls/pl
@@ -10969,7 +11646,6 @@ bin/zf.php
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojo/data/api
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojo/data
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojo/cldr/nls/zh-tw
-%%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojo/cldr/nls/zh-cn
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojo/cldr/nls/zh
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojo/cldr/nls/tr
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojo/cldr/nls/th
@@ -10978,30 +11654,23 @@ bin/zf.php
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojo/cldr/nls/sk
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojo/cldr/nls/ru
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojo/cldr/nls/pt-pt
-%%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojo/cldr/nls/pt-br
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojo/cldr/nls/pt
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojo/cldr/nls/pl
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojo/cldr/nls/nl
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojo/cldr/nls/nb
-%%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojo/cldr/nls/ko-kr
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojo/cldr/nls/ko
-%%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojo/cldr/nls/ja-jp
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojo/cldr/nls/ja
-%%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojo/cldr/nls/it-it
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojo/cldr/nls/it
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojo/cldr/nls/hu
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojo/cldr/nls/he
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojo/cldr/nls/fr
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojo/cldr/nls/fi
-%%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojo/cldr/nls/es-es
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojo/cldr/nls/es
-%%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojo/cldr/nls/en-us
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojo/cldr/nls/en-gb
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojo/cldr/nls/en-ca
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojo/cldr/nls/en-au
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojo/cldr/nls/en
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojo/cldr/nls/el
-%%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojo/cldr/nls/de-de
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojo/cldr/nls/de
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojo/cldr/nls/da
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojo/cldr/nls/cs
@@ -11023,12 +11692,16 @@ bin/zf.php
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dijit/themes/soria/images
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dijit/themes/soria/form
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dijit/themes/soria
-%%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dijit/themes/noir/images
-%%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dijit/themes/noir
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dijit/themes/nihilo/layout
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dijit/themes/nihilo/images
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dijit/themes/nihilo/form
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dijit/themes/nihilo
+%%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dijit/themes/claro/layout/images
+%%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dijit/themes/claro/layout
+%%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dijit/themes/claro/images
+%%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dijit/themes/claro/form/images
+%%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dijit/themes/claro/form
+%%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dijit/themes/claro
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dijit/themes/a11y
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dijit/themes
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dijit/tests/_data
@@ -11043,6 +11716,7 @@ bin/zf.php
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dijit/nls/sl
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dijit/nls/sk
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dijit/nls/ru
+%%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dijit/nls/ro
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dijit/nls/pt-pt
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dijit/nls/pt
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dijit/nls/pl
@@ -11065,6 +11739,8 @@ bin/zf.php
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dijit/nls
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dijit/layout/templates
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dijit/layout
+%%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dijit/icons/images
+%%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dijit/icons
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dijit/form/templates
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dijit/form/nls/zh-tw
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dijit/form/nls/zh
@@ -11074,6 +11750,7 @@ bin/zf.php
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dijit/form/nls/sl
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dijit/form/nls/sk
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dijit/form/nls/ru
+%%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dijit/form/nls/ro
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dijit/form/nls/pt-pt
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dijit/form/nls/pt
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dijit/form/nls/pl
@@ -11105,6 +11782,7 @@ bin/zf.php
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dijit/_editor/nls/sl
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dijit/_editor/nls/sk
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dijit/_editor/nls/ru
+%%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dijit/_editor/nls/ro
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dijit/_editor/nls/pt-pt
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dijit/_editor/nls/pt
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dijit/_editor/nls/pl
