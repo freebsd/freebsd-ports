@@ -18,7 +18,7 @@ MASTER_SITES=	ftp://ftp.ntu.edu.tw/pub/MySQL/Downloads/Contrib/Old-Versions/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Programs to convert .dbf files to MySQL tables and vice versa
 
-LIB_DEPENDS=	mysqlclient.10:${PORTSDIR}/databases/mysql323-client
+USE_MYSQL=	yes
 
 PORTDOCS=	README
 
