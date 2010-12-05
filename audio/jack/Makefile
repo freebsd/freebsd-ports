@@ -18,7 +18,7 @@ COMMENT=	A low-latency audio server
 LIB_DEPENDS=	portaudio.0:${PORTSDIR}/audio/portaudio \
 		sndfile.1:${PORTSDIR}/audio/libsndfile \
 		samplerate.1:${PORTSDIR}/audio/libsamplerate \
-		libasound.2:${PORTSDIR}/audio/alsa-lib \
+		asound.2:${PORTSDIR}/audio/alsa-lib \
 		celt.0:${PORTSDIR}/audio/celt
 
 LATEST_LINK=	jack
