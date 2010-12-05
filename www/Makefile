@@ -91,7 +91,6 @@
     SUBDIR += chimera
     SUBDIR += choqok
     SUBDIR += chpasswd
-    SUBDIR += chromium
     SUBDIR += chtml
     SUBDIR += ckeditor
     SUBDIR += cl-lml
