@@ -1693,6 +1693,7 @@
     SUBDIR += tomcat6
     SUBDIR += tomcat7
     SUBDIR += trac
+    SUBDIR += trac-TracGoogleAnalytics
     SUBDIR += trac-accountmanager
     SUBDIR += trac-addcomment
     SUBDIR += trac-advancedticketworkflow
