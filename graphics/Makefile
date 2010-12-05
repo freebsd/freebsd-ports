@@ -419,6 +419,7 @@
     SUBDIR += lcdtest
     SUBDIR += lcms
     SUBDIR += lcms-python
+    SUBDIR += lcms2
     SUBDIR += leafpak
     SUBDIR += lensfun
     SUBDIR += leptonlib
