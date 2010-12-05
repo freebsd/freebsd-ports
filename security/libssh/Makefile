@@ -7,6 +7,7 @@
 
 PORTNAME=	libssh
 PORTVERSION=	0.4.6
+PORTREVISION=	1
 CATEGORIES=	security devel
 MASTER_SITES=	http://www.libssh.org/files/ \
 		LOCAL/avl
@@ -23,6 +24,7 @@ CMAKE_SOURCE_PATH=	${WRKSRC}
 CONFIGURE_WRKSRC=	${CMAKE_SOURCE_PATH}/build
 BUILD_WRKSRC=		${CONFIGURE_WRKSRC}
 INSTALL_WRKSRC?=	${BUILD_WRKSRC}
+CMAKE_ARGS+=	-DWITH_STATIC_LIB:BOOL=ON
 USE_LDCONFIG=	yes
 
 LICENSE=	GPLv2 BSD
@@ -52,5 +54,7 @@ post-patch:
 	@${RM} ${PATCH_WRKSRC}/cmake/Modules/UseDoxygen.cmake
 	@${REINPLACE_CMD} -e '/add_subdirectory.*s)/d' \
 		${PATCH_WRKSRC}/CMakeLists.txt
+	@${REINPLACE_CMD} -e 's|ssh_static|ssh|' \
+		${PATCH_WRKSRC}/libssh/CMakeLists.txt
 
 .include <bsd.port.mk>
