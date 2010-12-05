@@ -12,7 +12,7 @@ CATEGORIES=	www
 MASTER_SITES=	http://chromium.hybridsource.org/old/ports/ \
 		CRITICAL
 
-MAINTAINER=	chromium@hybridsource.org
+MAINTAINER=	rene@FreeBSD.org
 COMMENT=	A mostly BSD-licensed web browser based on WebKit and Gtk+
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/flex:${PORTSDIR}/textproc/flex		\
