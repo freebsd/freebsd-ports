@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	APC
-DISTVERSION=	3.1.4
+DISTVERSION=	3.1.6
 CATEGORIES=	www
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
