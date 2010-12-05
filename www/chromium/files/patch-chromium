@@ -509,7 +509,16 @@ index 8a9fd97..8f9abe4 100644
  
      # Set Thumb compilation flags.
      'arm_thumb%': 0,
-@@ -285,7 +285,7 @@
+@@ -279,13 +279,16 @@
+     # whether to compile in the sources for the GPU plugin / process.
+     'enable_gpu%': 1,
+ 
++    # Use GConf, the GNOME configuration system.
++    'use_gconf%': 1,
++
+     'conditions': [
+       ['OS=="linux" or OS=="freebsd" or OS=="openbsd"', {
+         # This will set gcc_version to XY if you are running gcc X.Y.*.
          # This is used to tweak build flags for gcc 4.4.
          'gcc_version%': '<!(python <(DEPTH)/build/compiler_version.py)',
          # Figure out the python architecture to decide if we build pyauto.
@@ -568,6 +577,22 @@ diff --git a/build/linux/system.gyp b/build/linux/system.gyp
 index 876579a..23d1c6c 100644
 --- build/linux/system.gyp
 +++ build/linux/system.gyp
+@@ -188,11 +188,14 @@
+       'target_name': 'gconf',
+       'type': 'settings',
+       'conditions': [
+-        ['_toolset=="target"', {
++        ['use_gconf==1 and _toolset=="target"', {
+           'direct_dependent_settings': {
+             'cflags': [
+               '<!@(<(pkg-config) --cflags gconf-2.0)',
+             ],
++            'defines': [
++              'USE_GCONF',
++            ],
+           },
+           'link_settings': {
+             'ldflags': [
 @@ -283,7 +283,6 @@
              }, {
                'link_settings': {
@@ -1174,6 +1199,104 @@ index a331f69..3d105d0 100644
    void OnGetViewXID(gfx::NativeViewId id, unsigned long* xid);
  #endif
  
+diff --git a/chrome/browser/gtk/browser_titlebar.cc b/chrome/browser/gtk/browser_titlebar.cc
+index dea24e6..77adb09 100644
+--- chrome/browser/gtk/browser_titlebar.cc
++++ chrome/browser/gtk/browser_titlebar.cc
+@@ -23,7 +23,9 @@
+ #include "chrome/browser/gtk/accelerators_gtk.h"
+ #include "chrome/browser/gtk/browser_window_gtk.h"
+ #include "chrome/browser/gtk/custom_button.h"
++#if defined(USE_GCONF)
+ #include "chrome/browser/gtk/gconf_titlebar_listener.h"
++#endif
+ #include "chrome/browser/gtk/gtk_theme_provider.h"
+ #include "chrome/browser/gtk/gtk_util.h"
+ #include "chrome/browser/gtk/menu_gtk.h"
+@@ -193,6 +195,9 @@ void PopupPageMenuModel::Build() {
+ ////////////////////////////////////////////////////////////////////////////////
+ // BrowserTitlebar
+ 
++// static
++const char BrowserTitlebar::kDefaultButtonString[] = ":minimize,maximize,close";
++
+ BrowserTitlebar::BrowserTitlebar(BrowserWindowGtk* browser_window,
+                                  GtkWindow* window)
+     : browser_window_(browser_window),
+@@ -299,9 +304,13 @@ void BrowserTitlebar::Init() {
+   gtk_box_pack_end(GTK_BOX(container_hbox_), titlebar_right_buttons_vbox_,
+                    FALSE, FALSE, 0);
+ 
++#if defined(USE_GCONF)
+   // Either read the gconf database and register for updates (on GNOME), or use
+   // the default value (anywhere else).
+   Singleton<GConfTitlebarListener>()->SetTitlebarButtons(this);
++#else
++  BuildButtons(kDefaultButtonString);
++#endif
+ 
+   // We use an alignment to control the titlebar height.
+   titlebar_alignment_ = gtk_alignment_new(0.0, 0.0, 1.0, 1.0);
+@@ -363,7 +372,9 @@ void BrowserTitlebar::Init() {
+ 
+ BrowserTitlebar::~BrowserTitlebar() {
+   ActiveWindowWatcherX::RemoveObserver(this);
++#if defined(USE_GCONF)
+   Singleton<GConfTitlebarListener>()->RemoveObserver(this);
++#endif
+ }
+ 
+ void BrowserTitlebar::BuildButtons(const std::string& button_string) {
+diff --git a/chrome/browser/gtk/browser_titlebar.h b/chrome/browser/gtk/browser_titlebar.h
+index c6da855..5cd30e6 100644
+--- chrome/browser/gtk/browser_titlebar.h
++++ chrome/browser/gtk/browser_titlebar.h
+@@ -31,6 +31,10 @@ class BrowserTitlebar : public NotificationObserver,
+                         public ActiveWindowWatcherX::Observer,
+                         public menus::SimpleMenuModel::Delegate {
+  public:
++  // A default button order string for when we aren't asking gconf for the
++  // metacity configuration.
++  static const char kDefaultButtonString[];
++
+   BrowserTitlebar(BrowserWindowGtk* browser_window, GtkWindow* window);
+   virtual ~BrowserTitlebar();
+ 
+diff --git a/chrome/browser/gtk/gconf_titlebar_listener.cc b/chrome/browser/gtk/gconf_titlebar_listener.cc
+index 81b5ef0..237332f 100644
+--- chrome/browser/gtk/gconf_titlebar_listener.cc
++++ chrome/browser/gtk/gconf_titlebar_listener.cc
+@@ -13,10 +13,6 @@
+ 
+ namespace {
+ 
+-// A default button order string for when we aren't asking gconf for the
+-// metacity configuration.
+-const char* kDefaultButtonPlacement = ":minimize,maximize,close";
+-
+ // The GConf key we read for the button placement string. Even through the key
+ // has "metacity" in it, it's shared between metacity and compiz.
+ const char* kButtonLayoutKey = "/apps/metacity/general/button_layout";
+@@ -34,7 +30,7 @@ void GConfTitlebarListener::SetTitlebarButtons(BrowserTitlebar* titlebar) {
+     titlebar->BuildButtons(current_value_);
+     titlebars_.insert(titlebar);
+   } else {
+-    titlebar->BuildButtons(kDefaultButtonPlacement);
++    titlebar->BuildButtons(BrowserTitlebar::kDefaultButtonString);
+   }
+ }
+ 
+@@ -113,8 +109,8 @@ bool GConfTitlebarListener::HandleGError(GError* error, const char* key) {
+ void GConfTitlebarListener::ParseAndStoreValue(GConfValue* gconf_value) {
+   if (gconf_value) {
+     const char* value = gconf_value_get_string(gconf_value);
+-    current_value_ = value ? value : kDefaultButtonPlacement;
++    current_value_ = value ? value : BrowserTitlebar::kDefaultButtonString;
+   } else {
+-    current_value_ = kDefaultButtonPlacement;
++    current_value_ = BrowserTitlebar::kDefaultButtonString;
+   }
+ }
 diff --git a/chrome/browser/memory_details.cc b/chrome/browser/memory_details.cc
 index 5c38d97..29a73d7 100644
 --- chrome/browser/memory_details.cc
@@ -2668,7 +2791,18 @@ diff --git a/chrome/chrome_browser.gypi b/chrome/chrome_browser.gypi
 index 05a38da..b64be85 100644
 --- chrome/chrome_browser.gypi
 +++ chrome/chrome_browser.gypi
-@@ -2862,7 +2862,7 @@
+@@ -2883,12 +2883,18 @@
+             ],
+           },
+         }],
++        ['use_gconf==0', {
++          'sources!': [
++            'browser/gtk/gconf_titlebar_listener.cc',
++            'browser/gtk/gconf_titlebar_listener.h',
++          ],
++        }],
+         ['touchui==0', {
+           'sources!': [
              # Nothing yet.
            ],
          }],

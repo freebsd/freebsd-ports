@@ -45,7 +45,7 @@ USE_PERL5_BUILD=yes
 USE_GMAKE=	yes
 MAN1=		chrome.1
 USE_XORG=	scrnsaverproto
-USE_GNOME=	glib20 gtk20 gconf2 libxslt
+USE_GNOME=	glib20 gtk20 dconf libxslt
 LICENSE_COMB=	multi
 LICENSE=	BSD LGPL21 MPL
 
@@ -65,18 +65,24 @@ GYP_DEFINES+=	use_system_libxml=1
 #GYP_DEFINES+=	use_system_zlib=1
 
 OPTIONS=	CODECS		"Compile and enable patented codecs like H.264" off \
-		VPX		"Use system libvpx for VP8 codec" on
-
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 700000
-BROKEN=		does not build on 6.X
-.endif
+		GCONF		"Use gconf2 for preferences"		on \
+		SSE2		"Use SSE2, disable this for PIII or older" on \
+		VPX		"Use system libvpx for VP8 codec"	on
 
 .if defined(WITH_CODECS)
 GYP_DEFINES+=	ffmpeg_branding=Chrome
 .else
 GYP_DEFINES+=	ffmpeg_branding=Chromium
+.endif
+
+.if defined(WITH_GCONF)
+USE_GNOME+=	gconf2
+.else
+GYP_DEFINES+=	use_gconf=0
+.endif
+
+.if defined(WITHOUT_SSE2)
+GYP_DEFINES+=	disable_sse2=1
 .endif
 
 .if defined(WITH_VPX)
@@ -142,4 +148,4 @@ do-install:
 	cd ${WRKSRC}/out/${BUILDTYPE} && ${COPYTREE_SHARE} "locales resources" ${DATADIR}
 	${LN} -sf ${DATADIR}/chrome ${PREFIX}/bin/
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
