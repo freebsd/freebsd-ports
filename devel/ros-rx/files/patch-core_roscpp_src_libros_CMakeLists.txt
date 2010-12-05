@@ -1,0 +1,17 @@
+--- core/roscpp/src/libros/CMakeLists.txt.orig	2010-03-13 00:27:34.000000000 +0100
++++ core/roscpp/src/libros/CMakeLists.txt	2010-12-03 18:53:09.000000000 +0100
+@@ -2,9 +2,12 @@
+ include(CheckFunctionExists)
+ 
+ # Not everybody has <ifaddrs.h> (e.g., embedded arm-linux)
+-CHECK_INCLUDE_FILES(ifaddrs.h HAVE_IFADDRS_H)
++#XXX ugly hack, should update the tests themselves
++#CHECK_INCLUDE_FILES(ifaddrs.h HAVE_IFADDRS_H)
++set(HAVE_IFADDRS_H true)
+ # Not everybody has trunc (e.g., Windows, embedded arm-linux)
+-CHECK_FUNCTION_EXISTS(trunc HAVE_TRUNC)
++#CHECK_FUNCTION_EXISTS(trunc HAVE_TRUNC)
++set(HAVE_TRUNC true)
+ 
+ # Output test results to config.h
+ CONFIGURE_FILE(${CMAKE_CURRENT_SOURCE_DIR}/config.h.in ${CMAKE_CURRENT_BINARY_DIR}/config.h)
