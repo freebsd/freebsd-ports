@@ -1,0 +1,11 @@
+--- config/objc-common.g.orig	2010-02-15 10:35:20.000000000 +0100
++++ config/objc-common.g	2010-11-12 15:19:46.000000000 +0100
+@@ -5,7 +5,7 @@
+ 
+ #include <objc/Object.h>
+ 
+-#ifndef NeXT_RUNTIME
++#if !defined(NeXT_RUNTIME) && !defined(__GNUSTEP_RUNTIME__)
+ #include <objc/NXConstStr.h>
+ @implementation NXConstantString
+ - (const char*) cString
