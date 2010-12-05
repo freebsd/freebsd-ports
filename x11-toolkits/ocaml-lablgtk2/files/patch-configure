@@ -1,0 +1,11 @@
+--- configure.orig	2010-01-15 14:55:24.866388457 +0100
++++ configure	2010-01-15 14:56:11.795951770 +0100
+@@ -2450,7 +2450,7 @@
+   test -z "$as_dir" && as_dir=.
+   for ac_exec_ext in '' $ac_executable_extensions; do
+   if { test -f "$as_dir/$ac_word$ac_exec_ext" && $as_test_x "$as_dir/$ac_word$ac_exec_ext"; }; then
+-    ac_cv_prog_CAMLP4O="camlp4o"
++    ac_cv_prog_CAMLP4O="camlp4 pa_o.cmo pa_op.cmo pr_dump.cmo"
+     $as_echo "$as_me:$LINENO: found $as_dir/$ac_word$ac_exec_ext" >&5
+     break 2
+   fi

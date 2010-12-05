@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	lablgtk2
-PORTVERSION=	2.14.0
-PORTREVISION=	2
+PORTVERSION=	2.14.2
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	ftp://ftp.kurims.kyoto-u.ac.jp/pub/lang/olabl/ \
 		http://wwwfun.kurims.kyoto-u.ac.jp/soft/olabl/dist/ \
@@ -17,8 +16,6 @@ DISTNAME=	lablgtk-${PORTVERSION}
 
 MAINTAINER=	stas@FreeBSD.org
 COMMENT=	An Objective Caml interface to GTK+ 2.x
-
-BROKEN=		Doesn't build with Glib 2.26
 
 USE_GMAKE=	yes
 USE_GNOME=	gtk20
