@@ -243,6 +243,10 @@ lib/ocaml/lablgtk2/gtkWindow.cmi
 lib/ocaml/lablgtk2/gtkWindow.cmx
 lib/ocaml/lablgtk2/gtkWindow.ml
 lib/ocaml/lablgtk2/gtk_tags.h
+lib/ocaml/lablgtk2/gutf8.cmi
+lib/ocaml/lablgtk2/gutf8.cmx
+lib/ocaml/lablgtk2/gutf8.ml
+lib/ocaml/lablgtk2/gutf8.mli
 %%GL%%lib/ocaml/lablgtk2/gtkgl_tags.h
 %%GLADE%%lib/ocaml/lablgtk2/lablglade.a
 %%GLADE%%lib/ocaml/lablgtk2/lablglade.cma
@@ -358,10 +362,12 @@ lib/ocaml/stublibs/dlllablgtk2.so
 %%PORTDOCS%%%%EXAMPLESDIR%%/combobox.ml
 %%PORTDOCS%%%%EXAMPLESDIR%%/counter.ml
 %%PORTDOCS%%%%EXAMPLESDIR%%/csview.ml
+%%PORTDOCS%%%%EXAMPLESDIR%%/curve.ml
 %%PORTDOCS%%%%EXAMPLESDIR%%/custom_list_generic.ml
 %%PORTDOCS%%%%EXAMPLESDIR%%/custom_tree.ml
 %%PORTDOCS%%%%EXAMPLESDIR%%/custom_tree_generic.ml
 %%PORTDOCS%%%%EXAMPLESDIR%%/dcalendar.ml
+%%PORTDOCS%%%%EXAMPLESDIR%%/dialog-thread.ml
 %%PORTDOCS%%%%EXAMPLESDIR%%/drawing.ml
 %%PORTDOCS%%%%EXAMPLESDIR%%/druid.ml
 %%PORTDOCS%%%%EXAMPLESDIR%%/editor.ml
