@@ -1,5 +1,5 @@
---- themer/main.c.orig	Sun Oct 29 18:57:14 2006
-+++ themer/main.c	Sun Oct 29 23:09:37 2006
+--- themer/main.c.orig	2009-10-13 20:56:23.000000000 -0400
++++ themer/main.c	2010-11-24 15:45:57.000000000 -0500
 @@ -7,6 +7,103 @@
  #include <emerald.h>
  #include <engine.h>
@@ -104,3 +104,19 @@
  #define LAST_COMPAT_VER "0.1.0"
  
  typedef struct _FetcherInfo
+@@ -264,6 +361,7 @@ static void info_dialog(gchar * val)
+             GTK_DIALOG_DESTROY_WITH_PARENT,
+             GTK_MESSAGE_INFO,
+             GTK_BUTTONS_CLOSE,
++            "%s",
+             val);
+     gtk_dialog_run(GTK_DIALOG(w));
+     gtk_widget_destroy(w);
+@@ -275,6 +373,7 @@ static void error_dialog(gchar * val)
+             GTK_DIALOG_DESTROY_WITH_PARENT,
+             GTK_MESSAGE_ERROR,
+             GTK_BUTTONS_CLOSE,
++            "%s",
+             val);
+     gtk_dialog_run(GTK_DIALOG(w));
+     gtk_widget_destroy(w);
