@@ -7,7 +7,7 @@
 
 PORTNAME?=	alpine
 PORTVERSION=	2.00
-PORTREVISION?=	1
+PORTREVISION?=	2
 CATEGORIES?=	mail news ipv6
 MASTER_SITES=	ftp://ftp.cac.washington.edu/alpine/ \
 		http://dougbarton.us/Downloads/alpine-${PORTVERSION}/
@@ -47,8 +47,6 @@ CONFIGURE_ARGS+=--with-system-pinerc=${PREFIX}/etc/alpine.conf \
 		--enable-background-post --without-krb5 --without-tcl
 .endif
 CONFIGURE_ARGS+=--with-debug-level=2
-
-CONFLICTS=	pico-4* pine4-4*
 
 USE_OPENSSL=	yes
 
@@ -182,8 +180,7 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/doc/tech-notes.txt ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/tech-notes/*.html ${DOCSDIR}/tech-notes
 .endif
-	${PREFIX}/bin/alpine -P ${PREFIX}/etc/alpine.conf -conf >${WRKSRC}/alpine.conf
-	${INSTALL_DATA} ${WRKSRC}/alpine.conf ${PREFIX}/etc/alpine.conf
+	PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
 	@${CAT} ${PKGMESSAGE}
 .endif	# !defined(PICO_ALPINE_SLAVE)

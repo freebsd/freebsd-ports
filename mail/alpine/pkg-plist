@@ -1,11 +1,8 @@
-@unexec %D/bin/alpine -conf >%D/etc/alpine.conf.tmp
-@unexec if cmp -s %D/etc/alpine.conf %D/etc/alpine.conf.tmp; then rm -f %D/etc/alpine.conf; fi
-@unexec rm -f %D/etc/alpine.conf.tmp
+@unexec /usr/bin/cmp -s %D/etc/alpine.conf %D/etc/alpine.conf.sample && /bin/unlink %D/etc/alpine.conf || true
 bin/alpine
 bin/rpdump
 bin/rpload
-@exec %D/bin/alpine -P %D/etc/alpine.conf -conf >%D/etc/alpine.conf.tmp
-@exec /bin/mv %D/etc/alpine.conf.tmp %D/etc/alpine.conf
+etc/alpine.conf.sample
 %%PORTDOCS%%%%DOCSDIR%%/LICENSE
 %%PORTDOCS%%%%DOCSDIR%%/NOTICE
 %%PORTDOCS%%%%DOCSDIR%%/README
