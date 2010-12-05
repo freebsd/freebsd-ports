@@ -6,7 +6,7 @@
 
 PORTNAME=	ros
 PORTVERSION=	1.2.4
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	devel
 MASTER_SITES=	ftp://rene-ladan.nl/pub/distfiles/ros/
 DISTFILES=	ros-${PORTVERSION}.tar.bz2 SWIG-1.3.29-wx.tar.gz \
@@ -50,12 +50,6 @@ USE_WX=		2.8
 WX_COMPS=	python:build python:run
 USE_BZIP2=	yes
 USE_LDCONFIG=	yes
-
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 700000
-BROKEN=Does not link, librt missing
-.endif
 
 # rosmake does its own threading
 MAKE_JOBS_UNSAFE=	yes
@@ -140,7 +134,7 @@ do-install:
 .for d in 3rdparty config core std_msgs std_srvs test tools
 	${FIND} ${WRKSRC}/${d} -name build -type d -or -name \*.bak -type f \
 	    -or -name .svnignore -type f -or -name .cvsignore -type f \
-	    -or -name \*.orig | ${XARGS} ${RM} -rf
+	    -or -name \*.orig -type f | ${XARGS} ${RM} -rf
 	(cd ${WRKSRC} && ${COPYTREE_SHARE} ${d} ${PREFIX}/ros/ros)
 .endfor
 # strip and symlink libraries to PREFIX/lib (except gtest)
@@ -353,4 +347,4 @@ do-install:
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

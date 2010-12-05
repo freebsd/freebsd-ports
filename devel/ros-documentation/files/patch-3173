@@ -1,0 +1,10 @@
+--- tools/rosbash/rosbash.orig	2010-06-28 22:22:33.000000000 +0200
++++ tools/rosbash/rosbash	2010-12-03 19:52:43.000000000 +0100
+@@ -1,6 +1,6 @@
+ 
+ function _rossed {
+-    if [[ `uname` == Darwin ]]; then
++    if [[ `uname` == Darwin || `uname` == FreeBSD ]]; then
+         sed -E "$@"
+     else
+         sed -r "$@"

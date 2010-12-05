@@ -1,0 +1,11 @@
+--- tools/rosmsg/src/rosmsg.py.orig	2010-08-13 02:20:15.000000000 +0200
++++ tools/rosmsg/src/rosmsg.py	2010-12-03 18:54:32.000000000 +0100
+@@ -81,7 +81,7 @@
+     return val
+ 
+ def make_find_command(path):
+-  if os.uname()[0] == 'Darwin':
++  if os.uname()[0] in ['Darwin', 'FreeBSD']:
+     return ["find", "-E", path]
+   else:
+     return ["find", path, "-regextype", "posix-egrep"]
