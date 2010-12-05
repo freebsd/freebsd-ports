@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	XML-Parser-encodings
-PORTVERSION=	1.02
+PORTVERSION=	1.03
 CATEGORIES=	russian textproc perl5
 PKGNAMEPREFIX=	p5-
 DISTFILES=
@@ -14,17 +14,15 @@ DISTFILES=
 MAINTAINER=	skv@FreeBSD.org
 COMMENT=	Additional russian encodings for XML::Parser
 
-RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/XML/Parser.pm:${PORTSDIR}/textproc/p5-XML-Parser
+RUN_DEPENDS=	p5-XML-Parser>=2.40:${PORTSDIR}/textproc/p5-XML-Parser
 BUILD_DEPENDS=	${RUN_DEPENDS} \
 		${SITE_PERL}/XML/Encoding.pm:${PORTSDIR}/textproc/p5-XML-Encoding \
 		${NONEXISTENT}:${PORTSDIR}/converters/iconv:extract \
 		${NONEXISTENT}:${PORTSDIR}/converters/iconv-extra:extract
 
-BROKEN=		bad plist
-
 NO_WRKSUBDIR=	YES
 USE_PERL5=	YES
-RUSSIANENC=	windows-1251 koi8-r cp1251 cp866 mac-cyrillic
+RUSSIANENC=	cp1251 cp866 mac-cyrillic
 
 post-extract:
 .for ICONVPORT in iconv iconv-extra
@@ -34,21 +32,17 @@ post-extract:
 .endfor
 
 do-configure:
-.for ENC in koi8-r cp866
-	@${CP} ${WRKSRC}/iconv/${ENC}.txt ${WRKDIR}
-.endfor
-.for ENC in mac-cyrillic windows-1251
-	@${CP} ${WRKSRC}/iconv-extra/${ENC}.txt ${WRKDIR}
-.endfor
-	@${CP} ${WRKDIR}/windows-1251.txt ${WRKDIR}/cp1251.txt
+	@${CP} ${WRKSRC}/iconv/cp866.txt ${WRKDIR}
+	@${CP} ${WRKSRC}/iconv-extra/windows-1251.txt ${WRKDIR}/cp1251.txt
+	@${CP} ${WRKSRC}/iconv-extra/mac-cyrillic.txt ${WRKDIR}
 	@${PERL} -pi -e 's/\r/\n/gm;' ${WRKDIR}/mac-cyrillic.txt
 
 do-build:
 .for ENC in ${RUSSIANENC}
-	@${PREFIX}/bin/make_encmap ${ENC} ${WRKDIR}/${ENC}.txt | \
+	@${LOCALBASE}/bin/make_encmap ${ENC} ${WRKDIR}/${ENC}.txt | \
 	${PERL} -pi -e "s/(?<=^<encmap name='${ENC}')()(?=>)/ expat='yes'/;" \
 		>${WRKDIR}/${ENC}.xml
-	@${PREFIX}/bin/compile_encoding \
+	@${LOCALBASE}/bin/compile_encoding \
 		-o ${WRKDIR}/${ENC}.enc ${WRKDIR}/${ENC}.xml
 .endfor
 
