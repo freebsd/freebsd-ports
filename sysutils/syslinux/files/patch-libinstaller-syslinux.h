@@ -1,6 +1,12 @@
 --- libinstaller/syslinux.h.orig	2010-10-20 21:25:38.000000000 +0200
-+++ libinstaller/syslinux.h	2010-11-16 15:03:24.279408609 +0100
-@@ -18,12 +18,12 @@
++++ libinstaller/syslinux.h	2010-12-05 14:34:43.252716727 +0100
+@@ -13,17 +13,18 @@
+ #ifndef SYSLINUX_H
+ #define SYSLINUX_H
+ 
++#include <sys/types.h>
+ #include <inttypes.h>
+ #include "advconst.h"
  #include "setadv.h"
  
  /* The standard boot sector and ldlinux image */
@@ -16,7 +22,7 @@
  extern const int syslinux_ldlinux_mtime;
  
  #define boot_sector	syslinux_bootsect
-@@ -31,7 +31,7 @@
+@@ -31,7 +32,7 @@
  #define boot_image	syslinux_ldlinux
  #define boot_image_len	syslinux_ldlinux_len
  

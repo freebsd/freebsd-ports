@@ -26,10 +26,6 @@ USE_PERL5_BUILD=	yes
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 700000
-BROKEN=		requires FreeBSD 7.x and higher
-.endif
-
 # utility target to build pkg-plist
 _A =	mbr/mbr.bin mbr/gptmbr.bin \
 	core/pxelinux.0 core/isolinux.bin gpxe/gpxelinux.0 \
