@@ -64,10 +64,14 @@ GYP_DEFINES+=	use_system_libxml=1
 #GYP_DEFINES+=	use_system_sqlite=0
 #GYP_DEFINES+=	use_system_zlib=1
 
+.include <bsd.port.options.mk>
+
 OPTIONS=	CODECS		"Compile and enable patented codecs like H.264" off \
 		GCONF		"Use gconf2 for preferences"		on \
 		SSE2		"Use SSE2, disable this for PIII or older" on \
 		VPX		"Use system libvpx for VP8 codec"	on
+
+.include <bsd.port.pre.mk>
 
 .if defined(WITH_CODECS)
 GYP_DEFINES+=	ffmpeg_branding=Chrome
@@ -148,4 +152,4 @@ do-install:
 	cd ${WRKSRC}/out/${BUILDTYPE} && ${COPYTREE_SHARE} "locales resources" ${DATADIR}
 	${LN} -sf ${DATADIR}/chrome ${PREFIX}/bin/
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
