@@ -35,7 +35,7 @@ PRE-INSTALL)
 ;;
 
 POST-INSTALL)
-	${PKG_PREFIX}/otrs/bin/SetPermissions.pl \
+	${PKG_PREFIX}/otrs/bin/otrs.SetPermissions.pl \
 		--web-user=${WWWOWN} --web-group=${WWWGRP} \
 		--otrs-user=${OTRS_USER} --otrs-group=${OTRS_GROUP} \
 		--admin-user=root --admin-group=wheel \

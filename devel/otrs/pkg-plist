@@ -2,27 +2,52 @@ otrs/.fetchmailrc.dist
 otrs/.mailfilter.dist
 otrs/.procmailrc.dist
 otrs/RELEASE
-otrs/bin/CheckDB.pl
-otrs/bin/CheckSum.pl
-otrs/bin/CleanUp.pl
 otrs/bin/Cron.sh
-otrs/bin/Cron4Win32.pl
-otrs/bin/CryptPassword.pl
-otrs/bin/DeleteSessionIDs.pl
-otrs/bin/GenericAgent.pl
-otrs/bin/PendingJobs.pl
-otrs/bin/PostMaster.pl
-otrs/bin/PostMasterClient.pl
-otrs/bin/PostMasterDaemon.pl
-otrs/bin/PostMasterMailbox.pl
-otrs/bin/PostMasterPOP3.pl
-otrs/bin/RebuildTicketIndex.pl
-otrs/bin/SetPermissions.pl
-otrs/bin/SetPermissions.sh
-otrs/bin/StatsExportToOPM.pl
-otrs/bin/UnitTest.pl
-otrs/bin/UnlockTickets.pl
-otrs/bin/XMLMaster.pl
+otrs/bin/otrs.AddCustomerUser.pl
+otrs/bin/otrs.AddGroup.pl
+otrs/bin/otrs.AddQueue.pl
+otrs/bin/otrs.AddRole.pl
+otrs/bin/otrs.AddRole2Group.pl
+otrs/bin/otrs.AddTicketType.pl
+otrs/bin/otrs.AddUser.pl
+otrs/bin/otrs.AddUser2Group.pl
+otrs/bin/otrs.AddUser2Role.pl
+otrs/bin/otrs.ArticleStorageSwitch.pl
+otrs/bin/otrs.CheckDB.pl
+otrs/bin/otrs.CheckModules.pl
+otrs/bin/otrs.CheckSum.pl
+otrs/bin/otrs.CleanTicketArchive.pl
+otrs/bin/otrs.CleanTicketIndex.pl
+otrs/bin/otrs.CleanUp.pl
+otrs/bin/otrs.CreateTranslationFile.pl
+otrs/bin/otrs.Cron4Win32.pl
+otrs/bin/otrs.CryptPassword.pl
+otrs/bin/otrs.DeleteCache.pl
+otrs/bin/otrs.DeleteSessionIDs.pl
+otrs/bin/otrs.ExportStatsToOPM.pl
+otrs/bin/otrs.FillDB.pl
+otrs/bin/otrs.GenerateStats.pl
+otrs/bin/otrs.GenericAgent.pl
+otrs/bin/otrs.GetConfig.pl
+otrs/bin/otrs.GetTicketThread.pl
+otrs/bin/otrs.LoaderCache.pl
+otrs/bin/otrs.MarkTicketAsSeen.pl
+otrs/bin/otrs.PackageManager.pl
+otrs/bin/otrs.PendingJobs.pl
+otrs/bin/otrs.PostMaster.pl
+otrs/bin/otrs.PostMasterClient.pl
+otrs/bin/otrs.PostMasterDaemon.pl
+otrs/bin/otrs.PostMasterMailbox.pl
+otrs/bin/otrs.PostMasterPOP3.pl
+otrs/bin/otrs.RebuildConfig.pl
+otrs/bin/otrs.RebuildEscalationIndex.pl
+otrs/bin/otrs.RebuildFulltextIndex.pl
+otrs/bin/otrs.RebuildTicketIndex.pl
+otrs/bin/otrs.SetPassword.pl
+otrs/bin/otrs.SetPermissions.pl
+otrs/bin/otrs.UnitTest.pl
+otrs/bin/otrs.UnlockTickets.pl
+otrs/bin/otrs.XMLMaster.pl
 otrs/bin/cgi-bin/customer.pl
 otrs/bin/cgi-bin/index.pl
 otrs/bin/cgi-bin/installer.pl
@@ -32,28 +57,8 @@ otrs/bin/fcgi-bin/customer.pl
 otrs/bin/fcgi-bin/index.pl
 otrs/bin/fcgi-bin/installer.pl
 otrs/bin/fcgi-bin/public.pl
-otrs/bin/mkStats.pl
-otrs/bin/opm.pl
-otrs/bin/otrs.ArticleStorageSwitch.pl
-otrs/bin/otrs.CacheDelete.pl
-otrs/bin/otrs.CleanTicketIndex.pl
-otrs/bin/otrs.CreateNewTranslationFile
-otrs/bin/otrs.RebuildConfig.pl
-otrs/bin/otrs.RebuildEscalationIndex.pl
-otrs/bin/otrs.RebuildFulltextIndex.pl
-otrs/bin/otrs.addGroup
-otrs/bin/otrs.addQueue
-otrs/bin/otrs.addRole
-otrs/bin/otrs.addRole2Group
-otrs/bin/otrs.addUser
-otrs/bin/otrs.addUser2Group
-otrs/bin/otrs.addUser2Role
-otrs/bin/otrs.checkModules
 otrs/bin/otrs.cleanup
-otrs/bin/otrs.getConfig
-otrs/bin/otrs.getTicketThread
-otrs/bin/otrs.setPassword
-otrs/bin/xml2sql.pl
+otrs/bin/otrs.xml2sql.pl
 otrs/scripts/DBUpdate-to-1.0.mysql.sql
 otrs/scripts/DBUpdate-to-1.0.postgresql.sql
 otrs/scripts/DBUpdate-to-1.1.mysql.sql
@@ -86,7 +91,6 @@ otrs/scripts/DBUpdate-to-2.3.mssql.sql
 otrs/scripts/DBUpdate-to-2.3.mysql.sql
 otrs/scripts/DBUpdate-to-2.3.oracle.sql
 otrs/scripts/DBUpdate-to-2.3.postgresql.sql
-otrs/scripts/DBUpdate-to-2.4.pl
 otrs/scripts/DBUpdate-to-2.4-post.db2.sql
 otrs/scripts/DBUpdate-to-2.4-post.ingres.sql
 otrs/scripts/DBUpdate-to-2.4-post.maxdb.sql
@@ -99,12 +103,23 @@ otrs/scripts/DBUpdate-to-2.4.ingres.sql
 otrs/scripts/DBUpdate-to-2.4.mssql.sql
 otrs/scripts/DBUpdate-to-2.4.mysql.sql
 otrs/scripts/DBUpdate-to-2.4.oracle.sql
+otrs/scripts/DBUpdate-to-2.4.pl
 otrs/scripts/DBUpdate-to-2.4.postgresql.sql
+otrs/scripts/DBUpdate-to-3.0-post.db2.sql
+otrs/scripts/DBUpdate-to-3.0.pl
+otrs/scripts/DBUpdate-to-3.0-post.ingres.sql
+otrs/scripts/DBUpdate-to-3.0-post.mssql.sql
+otrs/scripts/DBUpdate-to-3.0-post.mysql.sql
+otrs/scripts/DBUpdate-to-3.0-post.oracle.sql
+otrs/scripts/DBUpdate-to-3.0-post.postgresql.sql
+otrs/scripts/DBUpdate-to-3.0.db2.sql
+otrs/scripts/DBUpdate-to-3.0.ingres.sql
+otrs/scripts/DBUpdate-to-3.0.mssql.sql
+otrs/scripts/DBUpdate-to-3.0.mysql.sql
+otrs/scripts/DBUpdate-to-3.0.oracle.sql
+otrs/scripts/DBUpdate-to-3.0.postgresql.sql
 otrs/scripts/SystemStatsGeneric.pm
-otrs/scripts/apache-httpd.conf
-otrs/scripts/apache-httpd.include.conf
-otrs/scripts/apache-perl-startup.pl
-otrs/scripts/apache2-httpd-new.include.conf
+otrs/scripts/apache2-httpd.include.conf
 otrs/scripts/apache2-perl-startup.pl
 otrs/scripts/auto_build.sh
 otrs/scripts/auto_docbuild.sh
@@ -134,17 +149,21 @@ otrs/scripts/database/update/otrs-upgrade-to-2.3-post.xml
 otrs/scripts/database/update/otrs-upgrade-to-2.3.xml
 otrs/scripts/database/update/otrs-upgrade-to-2.4-post.xml
 otrs/scripts/database/update/otrs-upgrade-to-2.4.xml
+otrs/scripts/database/update/otrs-upgrade-to-3.0-post.xml
+otrs/scripts/database/update/otrs-upgrade-to-3.0.xml
 otrs/scripts/login.php
 otrs/scripts/login.pl
 otrs/scripts/restore.pl
 otrs/scripts/rpc-example.pl
-otrs/scripts/sync_node.sh
 otrs/scripts/syncuser_csv2otrs.pl
+otrs/scripts/test/Auth.t
 otrs/scripts/test/AuthSession.t
 otrs/scripts/test/AutoResponse.t
 otrs/scripts/test/CSV.t
 otrs/scripts/test/Cache.t
+otrs/scripts/test/CacheInternal.t
 otrs/scripts/test/CheckItem.t
+otrs/scripts/test/Config.t
 otrs/scripts/test/Crypt.t
 otrs/scripts/test/CustomerUser.t
 otrs/scripts/test/CustomerUserService.t
@@ -156,8 +175,11 @@ otrs/scripts/test/FileTemp.t
 otrs/scripts/test/GenericAgent.t
 otrs/scripts/test/Group.t
 otrs/scripts/test/HTMLUtils.t
+otrs/scripts/test/JSON.t
 otrs/scripts/test/Layout.t
 otrs/scripts/test/LinkObject.t
+otrs/scripts/test/Loader.t
+otrs/scripts/test/Lock.t
 otrs/scripts/test/MailAccount.t
 otrs/scripts/test/Main.t
 otrs/scripts/test/PDF.t
@@ -165,22 +187,27 @@ otrs/scripts/test/PID.t
 otrs/scripts/test/Package.t
 otrs/scripts/test/Performance.t
 otrs/scripts/test/PostMaster.t
+otrs/scripts/test/Priority.t
 otrs/scripts/test/Queue.t
 otrs/scripts/test/SLA.t
 otrs/scripts/test/SMIME.t
 otrs/scripts/test/Salutation.t
+otrs/scripts/test/Selenium.t
 otrs/scripts/test/Service.t
 otrs/scripts/test/Signature.t
+otrs/scripts/test/StandardResponse.t
 otrs/scripts/test/State.t
 otrs/scripts/test/Stats.t
 otrs/scripts/test/StdAttachment.t
-otrs/scripts/test/StdResponse.t
 otrs/scripts/test/SysConfig.t
+otrs/scripts/test/SystemAddress.t
 otrs/scripts/test/Ticket.t
 otrs/scripts/test/Time.t
 otrs/scripts/test/Type.t
 otrs/scripts/test/UnitTest.t
 otrs/scripts/test/User.t
+otrs/scripts/test/Valid.t
+otrs/scripts/test/VirtualFS.t
 otrs/scripts/test/WebUploadCache.t
 otrs/scripts/test/XML.t
 otrs/scripts/tools/base64.pl
@@ -191,6 +218,7 @@ otrs/scripts/tools/xml2html.pl
 otrs/scripts/webform.pl
 otrs/var/logo-otrs.png
 otrs/var/cron/aaa_base.dist
+otrs/var/cron/cache.dist
 otrs/var/cron/fetchmail.dist
 otrs/var/cron/generic_agent-database.dist
 otrs/var/cron/generic_agent.dist
@@ -200,804 +228,596 @@ otrs/var/cron/postmaster_mailbox.dist
 otrs/var/cron/rebuild_ticket_index.dist
 otrs/var/cron/session.dist
 otrs/var/cron/unlock.dist
-otrs/var/httpd/htdocs/css/Lite/agent.css
-otrs/var/httpd/htdocs/css/Lite/customer.css
-otrs/var/httpd/htdocs/css/Standard/agent.css
-otrs/var/httpd/htdocs/css/Standard/customer.css
 otrs/var/httpd/htdocs/index.html
-otrs/var/httpd/htdocs/images/Standard/admin.png
-otrs/var/httpd/htdocs/images/Standard/attach-small.png
-otrs/var/httpd/htdocs/images/Standard/attach.png
-otrs/var/httpd/htdocs/images/Standard/back.png
-otrs/var/httpd/htdocs/images/Standard/calendar-small.png
-otrs/var/httpd/htdocs/images/Standard/checkbox_arrow_left_up.png
-otrs/var/httpd/htdocs/images/Standard/close.png
-otrs/var/httpd/htdocs/images/Standard/collapse-up.png
-otrs/var/httpd/htdocs/images/Standard/collapse.png
-otrs/var/httpd/htdocs/images/Standard/contents.png
-otrs/var/httpd/htdocs/images/Standard/dashboard.png
-otrs/var/httpd/htdocs/images/Standard/desktop.png
-otrs/var/httpd/htdocs/images/Standard/disk-s.png
-otrs/var/httpd/htdocs/images/Standard/disk.png
-otrs/var/httpd/htdocs/images/Standard/down-big.png
-otrs/var/httpd/htdocs/images/Standard/down-small.png
-otrs/var/httpd/htdocs/images/Standard/down.png
-otrs/var/httpd/htdocs/images/Standard/edit-setting.png
-otrs/var/httpd/htdocs/images/Standard/edit.png
-otrs/var/httpd/htdocs/images/Standard/edittrash.png
-otrs/var/httpd/htdocs/images/Standard/empty.png
-otrs/var/httpd/htdocs/images/Standard/error.png
-otrs/var/httpd/htdocs/images/Standard/exit.png
-otrs/var/httpd/htdocs/images/Standard/expand-down.png
-otrs/var/httpd/htdocs/images/Standard/expand.png
-otrs/var/httpd/htdocs/images/Standard/fileopen.png
-otrs/var/httpd/htdocs/images/Standard/folder.png
-otrs/var/httpd/htdocs/images/Standard/folder_green.png
-otrs/var/httpd/htdocs/images/Standard/folder_grey.png
-otrs/var/httpd/htdocs/images/Standard/folder_yellow-small.png
-otrs/var/httpd/htdocs/images/Standard/folder_yellow.png
-otrs/var/httpd/htdocs/images/Standard/forward.png
-otrs/var/httpd/htdocs/images/Standard/grayled-small.png
-otrs/var/httpd/htdocs/images/Standard/grayled.png
-otrs/var/httpd/htdocs/images/Standard/greenled-small.png
-otrs/var/httpd/htdocs/images/Standard/greenled.png
-otrs/var/httpd/htdocs/images/Standard/group-small.png
-otrs/var/httpd/htdocs/images/Standard/group.png
-otrs/var/httpd/htdocs/images/Standard/h-line.png
-otrs/var/httpd/htdocs/images/Standard/help-small.png
-otrs/var/httpd/htdocs/images/Standard/help.png
-otrs/var/httpd/htdocs/images/Standard/history.png
-otrs/var/httpd/htdocs/images/Standard/home.png
-otrs/var/httpd/htdocs/images/Standard/import-s.png
-otrs/var/httpd/htdocs/images/Standard/import-sw-s.png
-otrs/var/httpd/htdocs/images/Standard/import.png
-otrs/var/httpd/htdocs/images/Standard/in.png
-otrs/var/httpd/htdocs/images/Standard/installer-start.png
-otrs/var/httpd/htdocs/images/Standard/installer.png
-otrs/var/httpd/htdocs/images/Standard/installer1.png
-otrs/var/httpd/htdocs/images/Standard/installer2.png
-otrs/var/httpd/htdocs/images/Standard/installer3.png
-otrs/var/httpd/htdocs/images/Standard/installer4.png
-otrs/var/httpd/htdocs/images/Standard/kcmpartitions.png
-otrs/var/httpd/htdocs/images/Standard/left-big.png
-otrs/var/httpd/htdocs/images/Standard/left-small.png
-otrs/var/httpd/htdocs/images/Standard/list.png
-otrs/var/httpd/htdocs/images/Standard/loading.gif
-otrs/var/httpd/htdocs/images/Standard/lock.png
-otrs/var/httpd/htdocs/images/Standard/mail_new.png
-otrs/var/httpd/htdocs/images/Standard/maps.png
-otrs/var/httpd/htdocs/images/Standard/misc.png
-otrs/var/httpd/htdocs/images/Standard/module_setting.png
-otrs/var/httpd/htdocs/images/Standard/network.png
-otrs/var/httpd/htdocs/images/Standard/network_local.png
-otrs/var/httpd/htdocs/images/Standard/new-message.png
-otrs/var/httpd/htdocs/images/Standard/new.png
-otrs/var/httpd/htdocs/images/Standard/note.png
-otrs/var/httpd/htdocs/images/Standard/notready-sw.png
-otrs/var/httpd/htdocs/images/Standard/notready.png
-otrs/var/httpd/htdocs/images/Standard/overview.png
-otrs/var/httpd/htdocs/images/Standard/overviewmedium-selected.png
-otrs/var/httpd/htdocs/images/Standard/overviewmedium.png
-otrs/var/httpd/htdocs/images/Standard/overviewpreview-selected.png
-otrs/var/httpd/htdocs/images/Standard/overviewpreview.png
-otrs/var/httpd/htdocs/images/Standard/overviewsmall-selected.png
-otrs/var/httpd/htdocs/images/Standard/overviewsmall.png
-otrs/var/httpd/htdocs/images/Standard/pdf.png
-otrs/var/httpd/htdocs/images/Standard/personal.png
-otrs/var/httpd/htdocs/images/Standard/phone-new.png
-otrs/var/httpd/htdocs/images/Standard/phppg.png
-otrs/var/httpd/htdocs/images/Standard/prefer.png
-otrs/var/httpd/htdocs/images/Standard/print.png
-otrs/var/httpd/htdocs/images/Standard/priority.png
-otrs/var/httpd/htdocs/images/Standard/product.ico
-otrs/var/httpd/htdocs/images/Standard/ready.png
-otrs/var/httpd/htdocs/images/Standard/redled-small.png
-otrs/var/httpd/htdocs/images/Standard/redled.png
-otrs/var/httpd/htdocs/images/Standard/reporting.png
-otrs/var/httpd/htdocs/images/Standard/right-big.png
-otrs/var/httpd/htdocs/images/Standard/right-small.png
-otrs/var/httpd/htdocs/images/Standard/screen-s.png
-otrs/var/httpd/htdocs/images/Standard/screen.png
-otrs/var/httpd/htdocs/images/Standard/search.png
-otrs/var/httpd/htdocs/images/Standard/spell.png
-otrs/var/httpd/htdocs/images/Standard/stats.png
-otrs/var/httpd/htdocs/images/Standard/stop.png
-otrs/var/httpd/htdocs/images/Standard/ticket.png
-otrs/var/httpd/htdocs/images/Standard/tickets.png
-otrs/var/httpd/htdocs/images/Standard/unknown.png
-otrs/var/httpd/htdocs/images/Standard/unlock.png
-otrs/var/httpd/htdocs/images/Standard/up-big.png
-otrs/var/httpd/htdocs/images/Standard/up-small.png
-otrs/var/httpd/htdocs/images/Standard/up.png
-otrs/var/httpd/htdocs/images/Standard/warning.png
-otrs/var/httpd/htdocs/images/Standard/watcher.png
-otrs/var/httpd/htdocs/images/Standard/xing.png
-otrs/var/httpd/htdocs/images/Standard/yellowled-small.png
-otrs/var/httpd/htdocs/images/Standard/yellowled.png
-otrs/var/httpd/htdocs/images/Standard/zoom.png
-otrs/var/httpd/htdocs/js/accordion.js
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/License-fckeditor.txt
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/_source/classes/fckcontextmenu.js
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/_source/classes/fckdataprocessor.js
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/_source/classes/fckdocumentfragment_gecko.js
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/_source/classes/fckdocumentfragment_ie.js
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/_source/classes/fckdomrange.js
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/_source/classes/fckdomrange_gecko.js
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/_source/classes/fckdomrange_ie.js
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/_source/classes/fckdomrangeiterator.js
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/_source/classes/fckeditingarea.js
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/_source/classes/fckelementpath.js
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/_source/classes/fckenterkey.js
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/_source/classes/fckevents.js
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/_source/classes/fckhtmliterator.js
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/_source/classes/fckicon.js
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/_source/classes/fckiecleanup.js
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/_source/classes/fckimagepreloader.js
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/_source/classes/fckkeystrokehandler.js
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/_source/classes/fckmenublock.js
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/_source/classes/fckmenublockpanel.js
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/_source/classes/fckmenuitem.js
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/_source/classes/fckpanel.js
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/_source/classes/fckplugin.js
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/_source/classes/fckspecialcombo.js
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/_source/classes/fckstyle.js
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/_source/classes/fcktoolbar.js
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/_source/classes/fcktoolbarbreak_gecko.js
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/_source/classes/fcktoolbarbreak_ie.js
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/_source/classes/fcktoolbarbutton.js
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/_source/classes/fcktoolbarbuttonui.js
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/_source/classes/fcktoolbarfontformatcombo.js
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/_source/classes/fcktoolbarfontscombo.js
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/_source/classes/fcktoolbarfontsizecombo.js
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/_source/classes/fcktoolbarpanelbutton.js
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/_source/classes/fcktoolbarspecialcombo.js
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/_source/classes/fcktoolbarstylecombo.js
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/_source/classes/fckw3crange.js
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/_source/classes/fckxml.js
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/_source/classes/fckxml_gecko.js
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/_source/classes/fckxml_ie.js
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/_source/commandclasses/fck_othercommands.js
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/_source/commandclasses/fckblockquotecommand.js
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/_source/commandclasses/fckcorestylecommand.js
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/_source/commandclasses/fckfitwindow.js
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/_source/commandclasses/fckindentcommands.js
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/_source/commandclasses/fckjustifycommands.js
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/_source/commandclasses/fcklistcommands.js
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/_source/commandclasses/fcknamedcommand.js
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/_source/commandclasses/fckpasteplaintextcommand.js
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/_source/commandclasses/fckpastewordcommand.js
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/_source/commandclasses/fckremoveformatcommand.js
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/_source/commandclasses/fckshowblocks.js
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/_source/commandclasses/fckspellcheckcommand_gecko.js
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/_source/commandclasses/fckspellcheckcommand_ie.js
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/_source/commandclasses/fckstylecommand.js
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/_source/commandclasses/fcktablecommand.js
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/_source/commandclasses/fcktextcolorcommand.js
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/_source/fckconstants.js
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/_source/fckeditorapi.js
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/_source/fckjscoreextensions.js
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/_source/fckscriptloader.js
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/_source/internals/fck.js
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/_source/internals/fck_contextmenu.js
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/_source/internals/fck_gecko.js
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/_source/internals/fck_ie.js
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/_source/internals/fckbrowserinfo.js
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/_source/internals/fckcodeformatter.js
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/_source/internals/fckcommands.js
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/_source/internals/fckconfig.js
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/_source/internals/fckdebug.js
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/_source/internals/fckdebug_empty.js
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/_source/internals/fckdialog.js
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/_source/internals/fckdocumentprocessor.js
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/_source/internals/fckdomtools.js
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/_source/internals/fcklanguagemanager.js
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/_source/internals/fcklisthandler.js
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/_source/internals/fcklistslib.js
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/_source/internals/fckplugins.js
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/_source/internals/fckregexlib.js
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/_source/internals/fckselection.js
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/_source/internals/fckselection_gecko.js
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/_source/internals/fckselection_ie.js
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/_source/internals/fckstyles.js
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/_source/internals/fcktablehandler.js
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/_source/internals/fcktablehandler_gecko.js
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/_source/internals/fcktablehandler_ie.js
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/_source/internals/fcktoolbaritems.js
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/_source/internals/fcktoolbarset.js
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/_source/internals/fcktools.js
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/_source/internals/fcktools_gecko.js
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/_source/internals/fcktools_ie.js
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/_source/internals/fckundo.js
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/_source/internals/fckurlparams.js
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/_source/internals/fckxhtml.js
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/_source/internals/fckxhtml_gecko.js
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/_source/internals/fckxhtml_ie.js
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/_source/internals/fckxhtmlentities.js
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/css/behaviors/disablehandles.htc
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/css/behaviors/showtableborders.htc
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/css/fck_editorarea.css
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/css/fck_internal.css
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/css/fck_showtableborders_gecko.css
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/css/images/block_address.png
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/css/images/block_blockquote.png
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/css/images/block_div.png
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/css/images/block_h1.png
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/css/images/block_h2.png
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/css/images/block_h3.png
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/css/images/block_h4.png
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/css/images/block_h5.png
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/css/images/block_h6.png
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/css/images/block_p.png
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/css/images/block_pre.png
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/css/images/fck_anchor.gif
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/css/images/fck_flashlogo.gif
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/css/images/fck_hiddenfield.gif
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/css/images/fck_pagebreak.gif
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/css/images/fck_plugin.gif
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/dialog/common/fck_dialog_common.css
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/dialog/common/fck_dialog_common.js
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/dialog/common/images/locked.gif
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/dialog/common/images/reset.gif
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/dialog/common/images/unlocked.gif
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/dialog/fck_about.html
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/dialog/fck_about/logo_fckeditor.gif
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/dialog/fck_about/logo_fredck.gif
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/dialog/fck_about/sponsors/spellchecker_net.gif
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/dialog/fck_anchor.html
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/dialog/fck_button.html
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/dialog/fck_checkbox.html
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/dialog/fck_colorselector.html
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/dialog/fck_div.html
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/dialog/fck_docprops.html
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/dialog/fck_docprops/fck_document_preview.html
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/dialog/fck_flash.html
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/dialog/fck_flash/fck_flash.js
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/dialog/fck_flash/fck_flash_preview.html
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/dialog/fck_form.html
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/dialog/fck_hiddenfield.html
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/dialog/fck_image.html
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/dialog/fck_image/fck_image.js
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/dialog/fck_image/fck_image_preview.html
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/dialog/fck_link.html
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/dialog/fck_link/fck_link.js
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/dialog/fck_listprop.html
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/dialog/fck_paste.html
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/dialog/fck_radiobutton.html
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/dialog/fck_replace.html
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/dialog/fck_select.html
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/dialog/fck_select/fck_select.js
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/dialog/fck_smiley.html
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/dialog/fck_source.html
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/dialog/fck_specialchar.html
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/dialog/fck_spellerpages.html
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/dialog/fck_spellerpages/spellerpages/blank.html
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/dialog/fck_spellerpages/spellerpages/controlWindow.js
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/dialog/fck_spellerpages/spellerpages/controls.html
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/dialog/fck_spellerpages/spellerpages/spellChecker.js
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/dialog/fck_spellerpages/spellerpages/spellchecker.html
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/dialog/fck_spellerpages/spellerpages/spellerStyle.css
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/dialog/fck_spellerpages/spellerpages/wordWindow.js
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/dialog/fck_table.html
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/dialog/fck_tablecell.html
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/dialog/fck_template.html
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/dialog/fck_template/images/template1.gif
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/dialog/fck_template/images/template2.gif
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/dialog/fck_template/images/template3.gif
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/dialog/fck_textarea.html
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/dialog/fck_textfield.html
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/fckdebug.html
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/fckdialog.html
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/fckeditor.html
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/fckeditor.original.html
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/images/anchor.gif
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/images/arrow_ltr.gif
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/images/arrow_rtl.gif
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/images/smiley/msn/angel_smile.gif
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/images/smiley/msn/angry_smile.gif
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/images/smiley/msn/broken_heart.gif
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/images/smiley/msn/cake.gif
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/images/smiley/msn/confused_smile.gif
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/images/smiley/msn/cry_smile.gif
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/images/smiley/msn/devil_smile.gif
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/images/smiley/msn/embaressed_smile.gif
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/images/smiley/msn/envelope.gif
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/images/smiley/msn/heart.gif
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/images/smiley/msn/kiss.gif
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/images/smiley/msn/lightbulb.gif
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/images/smiley/msn/omg_smile.gif
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/images/smiley/msn/regular_smile.gif
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/images/smiley/msn/sad_smile.gif
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/images/smiley/msn/shades_smile.gif
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/images/smiley/msn/teeth_smile.gif
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/images/smiley/msn/thumbs_down.gif
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/images/smiley/msn/thumbs_up.gif
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/images/smiley/msn/tounge_smile.gif
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/images/smiley/msn/whatchutalkingabout_smile.gif
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/images/smiley/msn/wink_smile.gif
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/images/spacer.gif
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/js/fckadobeair.js
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/js/fckeditorcode_gecko.js
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/js/fckeditorcode_ie.js
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/lang/_translationstatus.txt
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/lang/af.js
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/lang/ar.js
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/lang/bg.js
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/lang/bn.js
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/lang/bs.js
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/lang/ca.js
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/lang/cs.js
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/lang/da.js
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/lang/de.js
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/lang/el.js
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/lang/en-au.js
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/lang/en-ca.js
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/lang/en-uk.js
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/lang/en.js
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/lang/eo.js
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/lang/es.js
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/lang/et.js
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/lang/eu.js
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/lang/fa.js
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/lang/fi.js
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/lang/fo.js
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/lang/fr-ca.js
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/lang/fr.js
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/lang/gl.js
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/lang/gu.js
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/lang/he.js
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/lang/hi.js
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/lang/hr.js
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/lang/hu.js
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/lang/is.js
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/lang/it.js
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/lang/ja.js
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/lang/km.js
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/lang/ko.js
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/lang/lt.js
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/lang/lv.js
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/lang/mn.js
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/lang/ms.js
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/lang/nb.js
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/lang/nl.js
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/lang/no.js
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/lang/pl.js
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/lang/pt-br.js
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/lang/pt.js
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/lang/ro.js
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/lang/ru.js
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/lang/sk.js
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/lang/sl.js
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/lang/sr-latn.js
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/lang/sr.js
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/lang/sv.js
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/lang/th.js
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/lang/tr.js
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/lang/uk.js
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/lang/vi.js
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/lang/zh-cn.js
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/lang/zh.js
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/skins/_fckviewstrips.html
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/skins/default/fck_dialog.css
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/skins/default/fck_dialog_ie6.js
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/skins/default/fck_editor.css
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/skins/default/fck_strip.gif
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/skins/default/images/dialog.sides.gif
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/skins/default/images/dialog.sides.png
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/skins/default/images/dialog.sides.rtl.png
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/skins/default/images/sprites.gif
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/skins/default/images/sprites.png
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/skins/default/images/toolbar.arrowright.gif
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/skins/default/images/toolbar.buttonarrow.gif
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/skins/default/images/toolbar.collapse.gif
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/skins/default/images/toolbar.end.gif
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/skins/default/images/toolbar.expand.gif
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/skins/default/images/toolbar.separator.gif
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/skins/default/images/toolbar.start.gif
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/skins/office2003/fck_dialog.css
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/skins/office2003/fck_dialog_ie6.js
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/skins/office2003/fck_editor.css
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/skins/office2003/fck_strip.gif
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/skins/office2003/images/dialog.sides.gif
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/skins/office2003/images/dialog.sides.png
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/skins/office2003/images/dialog.sides.rtl.png
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/skins/office2003/images/sprites.gif
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/skins/office2003/images/sprites.png
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/skins/office2003/images/toolbar.arrowright.gif
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/skins/office2003/images/toolbar.bg.gif
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/skins/office2003/images/toolbar.buttonarrow.gif
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/skins/office2003/images/toolbar.collapse.gif
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/skins/office2003/images/toolbar.end.gif
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/skins/office2003/images/toolbar.expand.gif
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/skins/office2003/images/toolbar.separator.gif
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/skins/office2003/images/toolbar.start.gif
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/skins/silver/fck_dialog.css
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/skins/silver/fck_dialog_ie6.js
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/skins/silver/fck_editor.css
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/skins/silver/fck_strip.gif
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/skins/silver/images/dialog.sides.gif
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/skins/silver/images/dialog.sides.png
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/skins/silver/images/dialog.sides.rtl.png
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/skins/silver/images/sprites.gif
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/skins/silver/images/sprites.png
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/skins/silver/images/toolbar.arrowright.gif
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/skins/silver/images/toolbar.buttonarrow.gif
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/skins/silver/images/toolbar.buttonbg.gif
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/skins/silver/images/toolbar.collapse.gif
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/skins/silver/images/toolbar.end.gif
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/skins/silver/images/toolbar.expand.gif
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/skins/silver/images/toolbar.separator.gif
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/skins/silver/images/toolbar.start.gif
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/wsc/ciframe.html
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/wsc/tmpFrameset.html
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/wsc/w.html
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/fckconfig.js
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/fckeditor.js
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/fckstyles.xml
-otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/fcktemplates.xml
-otrs/var/httpd/htdocs/js/otrs.js
-otrs/var/httpd/htdocs/js/prototype.js
-otrs/var/httpd/htdocs/js/yui-image-uploader.js
-otrs/var/httpd/htdocs/yui/2.7.0/assets/YUIexamples.js
-otrs/var/httpd/htdocs/yui/2.7.0/assets/bg_hd.gif
-otrs/var/httpd/htdocs/yui/2.7.0/assets/dpSyntaxHighlighter.css
-otrs/var/httpd/htdocs/yui/2.7.0/assets/dpSyntaxHighlighter.js
-otrs/var/httpd/htdocs/yui/2.7.0/assets/example-hd-bg.gif
-otrs/var/httpd/htdocs/yui/2.7.0/assets/expressinstall.swf
-otrs/var/httpd/htdocs/yui/2.7.0/assets/title_h_bg.gif
-otrs/var/httpd/htdocs/yui/2.7.0/assets/yui-candy.jpg
-otrs/var/httpd/htdocs/yui/2.7.0/assets/yui.css
-otrs/var/httpd/htdocs/yui/2.7.0/assets/yui.gif
-otrs/var/httpd/htdocs/yui/2.7.0/assets/yuiDistribution.css
-otrs/var/httpd/htdocs/yui/2.7.0/assets/yuilib.jpg
-otrs/var/httpd/htdocs/yui/2.7.0/build/animation/animation-debug.js
-otrs/var/httpd/htdocs/yui/2.7.0/build/animation/animation-min.js
-otrs/var/httpd/htdocs/yui/2.7.0/build/animation/animation.js
-otrs/var/httpd/htdocs/yui/2.7.0/build/assets/skins/sam/ajax-loader.gif
-otrs/var/httpd/htdocs/yui/2.7.0/build/assets/skins/sam/asc.gif
-otrs/var/httpd/htdocs/yui/2.7.0/build/assets/skins/sam/autocomplete.css
-otrs/var/httpd/htdocs/yui/2.7.0/build/assets/skins/sam/bg-h.gif
-otrs/var/httpd/htdocs/yui/2.7.0/build/assets/skins/sam/bg-v.gif
-otrs/var/httpd/htdocs/yui/2.7.0/build/assets/skins/sam/blankimage.png
-otrs/var/httpd/htdocs/yui/2.7.0/build/assets/skins/sam/button.css
-otrs/var/httpd/htdocs/yui/2.7.0/build/assets/skins/sam/calendar.css
-otrs/var/httpd/htdocs/yui/2.7.0/build/assets/skins/sam/carousel.css
-otrs/var/httpd/htdocs/yui/2.7.0/build/assets/skins/sam/colorpicker.css
-otrs/var/httpd/htdocs/yui/2.7.0/build/assets/skins/sam/container.css
-otrs/var/httpd/htdocs/yui/2.7.0/build/assets/skins/sam/datatable.css
-otrs/var/httpd/htdocs/yui/2.7.0/build/assets/skins/sam/desc.gif
-otrs/var/httpd/htdocs/yui/2.7.0/build/assets/skins/sam/dt-arrow-dn.png
-otrs/var/httpd/htdocs/yui/2.7.0/build/assets/skins/sam/dt-arrow-up.png
-otrs/var/httpd/htdocs/yui/2.7.0/build/assets/skins/sam/editor-knob.gif
-otrs/var/httpd/htdocs/yui/2.7.0/build/assets/skins/sam/editor-sprite-active.gif
-otrs/var/httpd/htdocs/yui/2.7.0/build/assets/skins/sam/editor-sprite.gif
-otrs/var/httpd/htdocs/yui/2.7.0/build/assets/skins/sam/editor.css
-otrs/var/httpd/htdocs/yui/2.7.0/build/assets/skins/sam/header_background.png
-otrs/var/httpd/htdocs/yui/2.7.0/build/assets/skins/sam/hue_bg.png
-otrs/var/httpd/htdocs/yui/2.7.0/build/assets/skins/sam/imagecropper.css
-otrs/var/httpd/htdocs/yui/2.7.0/build/assets/skins/sam/layout.css
-otrs/var/httpd/htdocs/yui/2.7.0/build/assets/skins/sam/layout_sprite.png
-otrs/var/httpd/htdocs/yui/2.7.0/build/assets/skins/sam/loading.gif
-otrs/var/httpd/htdocs/yui/2.7.0/build/assets/skins/sam/logger.css
-otrs/var/httpd/htdocs/yui/2.7.0/build/assets/skins/sam/menu-button-arrow-disabled.png
-otrs/var/httpd/htdocs/yui/2.7.0/build/assets/skins/sam/menu-button-arrow.png
-otrs/var/httpd/htdocs/yui/2.7.0/build/assets/skins/sam/menu.css
-otrs/var/httpd/htdocs/yui/2.7.0/build/assets/skins/sam/menubaritem_submenuindicator.png
-otrs/var/httpd/htdocs/yui/2.7.0/build/assets/skins/sam/menubaritem_submenuindicator_disabled.png
-otrs/var/httpd/htdocs/yui/2.7.0/build/assets/skins/sam/menuitem_checkbox.png
-otrs/var/httpd/htdocs/yui/2.7.0/build/assets/skins/sam/menuitem_checkbox_disabled.png
-otrs/var/httpd/htdocs/yui/2.7.0/build/assets/skins/sam/menuitem_submenuindicator.png
-otrs/var/httpd/htdocs/yui/2.7.0/build/assets/skins/sam/menuitem_submenuindicator_disabled.png
-otrs/var/httpd/htdocs/yui/2.7.0/build/assets/skins/sam/paginator.css
-otrs/var/httpd/htdocs/yui/2.7.0/build/assets/skins/sam/picker_mask.png
-otrs/var/httpd/htdocs/yui/2.7.0/build/assets/skins/sam/profilerviewer.css
-otrs/var/httpd/htdocs/yui/2.7.0/build/assets/skins/sam/resize.css
-otrs/var/httpd/htdocs/yui/2.7.0/build/assets/skins/sam/simpleeditor.css
-otrs/var/httpd/htdocs/yui/2.7.0/build/assets/skins/sam/skin.css
-otrs/var/httpd/htdocs/yui/2.7.0/build/assets/skins/sam/slider.css
-otrs/var/httpd/htdocs/yui/2.7.0/build/assets/skins/sam/split-button-arrow-active.png
-otrs/var/httpd/htdocs/yui/2.7.0/build/assets/skins/sam/split-button-arrow-disabled.png
-otrs/var/httpd/htdocs/yui/2.7.0/build/assets/skins/sam/split-button-arrow-focus.png
-otrs/var/httpd/htdocs/yui/2.7.0/build/assets/skins/sam/split-button-arrow-hover.png
-otrs/var/httpd/htdocs/yui/2.7.0/build/assets/skins/sam/split-button-arrow.png
-otrs/var/httpd/htdocs/yui/2.7.0/build/assets/skins/sam/sprite.png
-otrs/var/httpd/htdocs/yui/2.7.0/build/assets/skins/sam/sprite.psd
-otrs/var/httpd/htdocs/yui/2.7.0/build/assets/skins/sam/tabview.css
-otrs/var/httpd/htdocs/yui/2.7.0/build/assets/skins/sam/treeview-loading.gif
-otrs/var/httpd/htdocs/yui/2.7.0/build/assets/skins/sam/treeview-sprite.gif
-otrs/var/httpd/htdocs/yui/2.7.0/build/assets/skins/sam/treeview.css
-otrs/var/httpd/htdocs/yui/2.7.0/build/assets/skins/sam/wait.gif
-otrs/var/httpd/htdocs/yui/2.7.0/build/assets/skins/sam/yuitest.css
-otrs/var/httpd/htdocs/yui/2.7.0/build/autocomplete/assets/autocomplete-core.css
-otrs/var/httpd/htdocs/yui/2.7.0/build/autocomplete/assets/skins/sam/autocomplete-skin.css
-otrs/var/httpd/htdocs/yui/2.7.0/build/autocomplete/assets/skins/sam/autocomplete.css
-otrs/var/httpd/htdocs/yui/2.7.0/build/autocomplete/autocomplete-debug.js
-otrs/var/httpd/htdocs/yui/2.7.0/build/autocomplete/autocomplete-min.js
-otrs/var/httpd/htdocs/yui/2.7.0/build/autocomplete/autocomplete.js
-otrs/var/httpd/htdocs/yui/2.7.0/build/base/base-min.css
-otrs/var/httpd/htdocs/yui/2.7.0/build/base/base.css
-otrs/var/httpd/htdocs/yui/2.7.0/build/button/assets/button-core.css
-otrs/var/httpd/htdocs/yui/2.7.0/build/button/assets/skins/sam/button-skin.css
-otrs/var/httpd/htdocs/yui/2.7.0/build/button/assets/skins/sam/button.css
-otrs/var/httpd/htdocs/yui/2.7.0/build/button/assets/skins/sam/menu-button-arrow-disabled.png
-otrs/var/httpd/htdocs/yui/2.7.0/build/button/assets/skins/sam/menu-button-arrow.png
-otrs/var/httpd/htdocs/yui/2.7.0/build/button/assets/skins/sam/split-button-arrow-active.png
-otrs/var/httpd/htdocs/yui/2.7.0/build/button/assets/skins/sam/split-button-arrow-disabled.png
-otrs/var/httpd/htdocs/yui/2.7.0/build/button/assets/skins/sam/split-button-arrow-focus.png
-otrs/var/httpd/htdocs/yui/2.7.0/build/button/assets/skins/sam/split-button-arrow-hover.png
-otrs/var/httpd/htdocs/yui/2.7.0/build/button/assets/skins/sam/split-button-arrow.png
-otrs/var/httpd/htdocs/yui/2.7.0/build/button/button-debug.js
-otrs/var/httpd/htdocs/yui/2.7.0/build/button/button-min.js
-otrs/var/httpd/htdocs/yui/2.7.0/build/button/button.js
-otrs/var/httpd/htdocs/yui/2.7.0/build/calendar/assets/calendar-core.css
-otrs/var/httpd/htdocs/yui/2.7.0/build/calendar/assets/calendar.css
-otrs/var/httpd/htdocs/yui/2.7.0/build/calendar/assets/calgrad.png
-otrs/var/httpd/htdocs/yui/2.7.0/build/calendar/assets/callt.gif
-otrs/var/httpd/htdocs/yui/2.7.0/build/calendar/assets/calrt.gif
-otrs/var/httpd/htdocs/yui/2.7.0/build/calendar/assets/calx.gif
-otrs/var/httpd/htdocs/yui/2.7.0/build/calendar/assets/skins/sam/calendar-skin.css
-otrs/var/httpd/htdocs/yui/2.7.0/build/calendar/assets/skins/sam/calendar.css
-otrs/var/httpd/htdocs/yui/2.7.0/build/calendar/calendar-debug.js
-otrs/var/httpd/htdocs/yui/2.7.0/build/calendar/calendar-min.js
-otrs/var/httpd/htdocs/yui/2.7.0/build/calendar/calendar.js
-otrs/var/httpd/htdocs/yui/2.7.0/build/carousel/assets/ajax-loader.gif
-otrs/var/httpd/htdocs/yui/2.7.0/build/carousel/assets/carousel-core.css
-otrs/var/httpd/htdocs/yui/2.7.0/build/carousel/assets/skins/sam/ajax-loader.gif
-otrs/var/httpd/htdocs/yui/2.7.0/build/carousel/assets/skins/sam/carousel-skin.css
-otrs/var/httpd/htdocs/yui/2.7.0/build/carousel/assets/skins/sam/carousel.css
-otrs/var/httpd/htdocs/yui/2.7.0/build/carousel/carousel-debug.js
-otrs/var/httpd/htdocs/yui/2.7.0/build/carousel/carousel-min.js
-otrs/var/httpd/htdocs/yui/2.7.0/build/carousel/carousel.js
-otrs/var/httpd/htdocs/yui/2.7.0/build/charts/assets/charts.swf
-otrs/var/httpd/htdocs/yui/2.7.0/build/charts/charts-debug.js
-otrs/var/httpd/htdocs/yui/2.7.0/build/charts/charts-min.js
-otrs/var/httpd/htdocs/yui/2.7.0/build/charts/charts.js
-otrs/var/httpd/htdocs/yui/2.7.0/build/colorpicker/assets/colorpicker-core.css
-otrs/var/httpd/htdocs/yui/2.7.0/build/colorpicker/assets/hue_thumb.png
-otrs/var/httpd/htdocs/yui/2.7.0/build/colorpicker/assets/picker_mask.png
-otrs/var/httpd/htdocs/yui/2.7.0/build/colorpicker/assets/picker_thumb.png
-otrs/var/httpd/htdocs/yui/2.7.0/build/colorpicker/assets/skins/sam/colorpicker-skin.css
-otrs/var/httpd/htdocs/yui/2.7.0/build/colorpicker/assets/skins/sam/colorpicker.css
-otrs/var/httpd/htdocs/yui/2.7.0/build/colorpicker/assets/skins/sam/hue_bg.png
-otrs/var/httpd/htdocs/yui/2.7.0/build/colorpicker/assets/skins/sam/picker_mask.png
-otrs/var/httpd/htdocs/yui/2.7.0/build/colorpicker/colorpicker-debug.js
-otrs/var/httpd/htdocs/yui/2.7.0/build/colorpicker/colorpicker-min.js
-otrs/var/httpd/htdocs/yui/2.7.0/build/colorpicker/colorpicker.js
-otrs/var/httpd/htdocs/yui/2.7.0/build/connection/connection-debug.js
-otrs/var/httpd/htdocs/yui/2.7.0/build/connection/connection-min.js
-otrs/var/httpd/htdocs/yui/2.7.0/build/connection/connection.js
-otrs/var/httpd/htdocs/yui/2.7.0/build/container/assets/alrt16_1.gif
-otrs/var/httpd/htdocs/yui/2.7.0/build/container/assets/blck16_1.gif
-otrs/var/httpd/htdocs/yui/2.7.0/build/container/assets/close12_1.gif
-otrs/var/httpd/htdocs/yui/2.7.0/build/container/assets/container-core.css
-otrs/var/httpd/htdocs/yui/2.7.0/build/container/assets/container.css
-otrs/var/httpd/htdocs/yui/2.7.0/build/container/assets/hlp16_1.gif
-otrs/var/httpd/htdocs/yui/2.7.0/build/container/assets/info16_1.gif
-otrs/var/httpd/htdocs/yui/2.7.0/build/container/assets/skins/sam/container-skin.css
-otrs/var/httpd/htdocs/yui/2.7.0/build/container/assets/skins/sam/container.css
-otrs/var/httpd/htdocs/yui/2.7.0/build/container/assets/tip16_1.gif
-otrs/var/httpd/htdocs/yui/2.7.0/build/container/assets/warn16_1.gif
-otrs/var/httpd/htdocs/yui/2.7.0/build/container/container-debug.js
-otrs/var/httpd/htdocs/yui/2.7.0/build/container/container-min.js
-otrs/var/httpd/htdocs/yui/2.7.0/build/container/container.js
-otrs/var/httpd/htdocs/yui/2.7.0/build/container/container_core-debug.js
-otrs/var/httpd/htdocs/yui/2.7.0/build/container/container_core-min.js
-otrs/var/httpd/htdocs/yui/2.7.0/build/container/container_core.js
-otrs/var/httpd/htdocs/yui/2.7.0/build/cookie/cookie-debug.js
-otrs/var/httpd/htdocs/yui/2.7.0/build/cookie/cookie-min.js
-otrs/var/httpd/htdocs/yui/2.7.0/build/cookie/cookie.js
-otrs/var/httpd/htdocs/yui/2.7.0/build/datasource/datasource-debug.js
-otrs/var/httpd/htdocs/yui/2.7.0/build/datasource/datasource-min.js
-otrs/var/httpd/htdocs/yui/2.7.0/build/datasource/datasource.js
-otrs/var/httpd/htdocs/yui/2.7.0/build/datatable/assets/datatable-core.css
-otrs/var/httpd/htdocs/yui/2.7.0/build/datatable/assets/datatable.css
-otrs/var/httpd/htdocs/yui/2.7.0/build/datatable/assets/skins/sam/datatable-skin.css
-otrs/var/httpd/htdocs/yui/2.7.0/build/datatable/assets/skins/sam/datatable.css
-otrs/var/httpd/htdocs/yui/2.7.0/build/datatable/assets/skins/sam/dt-arrow-dn.png
-otrs/var/httpd/htdocs/yui/2.7.0/build/datatable/assets/skins/sam/dt-arrow-up.png
-otrs/var/httpd/htdocs/yui/2.7.0/build/datatable/datatable-debug.js
-otrs/var/httpd/htdocs/yui/2.7.0/build/datatable/datatable-min.js
-otrs/var/httpd/htdocs/yui/2.7.0/build/datatable/datatable.js
-otrs/var/httpd/htdocs/yui/2.7.0/build/dom/dom-debug.js
-otrs/var/httpd/htdocs/yui/2.7.0/build/dom/dom-min.js
-otrs/var/httpd/htdocs/yui/2.7.0/build/dom/dom.js
-otrs/var/httpd/htdocs/yui/2.7.0/build/dragdrop/dragdrop-debug.js
-otrs/var/httpd/htdocs/yui/2.7.0/build/dragdrop/dragdrop-min.js
-otrs/var/httpd/htdocs/yui/2.7.0/build/dragdrop/dragdrop.js
-otrs/var/httpd/htdocs/yui/2.7.0/build/editor/assets/editor-core.css
-otrs/var/httpd/htdocs/yui/2.7.0/build/editor/assets/simpleeditor-core.css
-otrs/var/httpd/htdocs/yui/2.7.0/build/editor/assets/skins/sam/blankimage.png
-otrs/var/httpd/htdocs/yui/2.7.0/build/editor/assets/skins/sam/editor-knob.gif
-otrs/var/httpd/htdocs/yui/2.7.0/build/editor/assets/skins/sam/editor-skin.css
-otrs/var/httpd/htdocs/yui/2.7.0/build/editor/assets/skins/sam/editor-sprite-active.gif
-otrs/var/httpd/htdocs/yui/2.7.0/build/editor/assets/skins/sam/editor-sprite.gif
-otrs/var/httpd/htdocs/yui/2.7.0/build/editor/assets/skins/sam/editor.css
-otrs/var/httpd/htdocs/yui/2.7.0/build/editor/assets/skins/sam/simpleeditor-skin.css
-otrs/var/httpd/htdocs/yui/2.7.0/build/editor/assets/skins/sam/simpleeditor.css
-otrs/var/httpd/htdocs/yui/2.7.0/build/editor/editor-debug.js
-otrs/var/httpd/htdocs/yui/2.7.0/build/editor/editor-min.js
-otrs/var/httpd/htdocs/yui/2.7.0/build/editor/editor.js
-otrs/var/httpd/htdocs/yui/2.7.0/build/editor/simpleeditor-debug.js
-otrs/var/httpd/htdocs/yui/2.7.0/build/editor/simpleeditor-min.js
-otrs/var/httpd/htdocs/yui/2.7.0/build/editor/simpleeditor.js
-otrs/var/httpd/htdocs/yui/2.7.0/build/element/element-debug.js
-otrs/var/httpd/htdocs/yui/2.7.0/build/element/element-min.js
-otrs/var/httpd/htdocs/yui/2.7.0/build/element/element.js
-otrs/var/httpd/htdocs/yui/2.7.0/build/event/event-debug.js
-otrs/var/httpd/htdocs/yui/2.7.0/build/event/event-min.js
-otrs/var/httpd/htdocs/yui/2.7.0/build/event/event.js
-otrs/var/httpd/htdocs/yui/2.7.0/build/fonts/fonts-min.css
-otrs/var/httpd/htdocs/yui/2.7.0/build/fonts/fonts.css
-otrs/var/httpd/htdocs/yui/2.7.0/build/get/get-debug.js
-otrs/var/httpd/htdocs/yui/2.7.0/build/get/get-min.js
-otrs/var/httpd/htdocs/yui/2.7.0/build/get/get.js
-otrs/var/httpd/htdocs/yui/2.7.0/build/grids/grids-min.css
-otrs/var/httpd/htdocs/yui/2.7.0/build/grids/grids.css
-otrs/var/httpd/htdocs/yui/2.7.0/build/history/assets/blank.html
-otrs/var/httpd/htdocs/yui/2.7.0/build/history/history-debug.js
-otrs/var/httpd/htdocs/yui/2.7.0/build/history/history-min.js
-otrs/var/httpd/htdocs/yui/2.7.0/build/history/history.js
-otrs/var/httpd/htdocs/yui/2.7.0/build/imagecropper/assets/imagecropper-core.css
-otrs/var/httpd/htdocs/yui/2.7.0/build/imagecropper/assets/skins/sam/imagecropper-skin.css
-otrs/var/httpd/htdocs/yui/2.7.0/build/imagecropper/assets/skins/sam/imagecropper.css
-otrs/var/httpd/htdocs/yui/2.7.0/build/imagecropper/imagecropper-debug.js
-otrs/var/httpd/htdocs/yui/2.7.0/build/imagecropper/imagecropper-min.js
-otrs/var/httpd/htdocs/yui/2.7.0/build/imagecropper/imagecropper.js
-otrs/var/httpd/htdocs/yui/2.7.0/build/imageloader/imageloader-debug.js
-otrs/var/httpd/htdocs/yui/2.7.0/build/imageloader/imageloader-min.js
-otrs/var/httpd/htdocs/yui/2.7.0/build/imageloader/imageloader.js
-otrs/var/httpd/htdocs/yui/2.7.0/build/json/json-debug.js
-otrs/var/httpd/htdocs/yui/2.7.0/build/json/json-min.js
-otrs/var/httpd/htdocs/yui/2.7.0/build/json/json.js
-otrs/var/httpd/htdocs/yui/2.7.0/build/layout/assets/layout-core.css
-otrs/var/httpd/htdocs/yui/2.7.0/build/layout/assets/skins/sam/layout-skin.css
-otrs/var/httpd/htdocs/yui/2.7.0/build/layout/assets/skins/sam/layout.css
-otrs/var/httpd/htdocs/yui/2.7.0/build/layout/assets/skins/sam/layout_sprite.png
-otrs/var/httpd/htdocs/yui/2.7.0/build/layout/layout-debug.js
-otrs/var/httpd/htdocs/yui/2.7.0/build/layout/layout-min.js
-otrs/var/httpd/htdocs/yui/2.7.0/build/layout/layout.js
-otrs/var/httpd/htdocs/yui/2.7.0/build/logger/assets/logger-core.css
-otrs/var/httpd/htdocs/yui/2.7.0/build/logger/assets/logger.css
-otrs/var/httpd/htdocs/yui/2.7.0/build/logger/assets/skins/sam/logger-skin.css
-otrs/var/httpd/htdocs/yui/2.7.0/build/logger/assets/skins/sam/logger.css
-otrs/var/httpd/htdocs/yui/2.7.0/build/logger/logger-debug.js
-otrs/var/httpd/htdocs/yui/2.7.0/build/logger/logger-min.js
-otrs/var/httpd/htdocs/yui/2.7.0/build/logger/logger.js
-otrs/var/httpd/htdocs/yui/2.7.0/build/menu/assets/menu-core.css
-otrs/var/httpd/htdocs/yui/2.7.0/build/menu/assets/menu.css
-otrs/var/httpd/htdocs/yui/2.7.0/build/menu/assets/menu_down_arrow.png
-otrs/var/httpd/htdocs/yui/2.7.0/build/menu/assets/menu_down_arrow_disabled.png
-otrs/var/httpd/htdocs/yui/2.7.0/build/menu/assets/menu_up_arrow.png
-otrs/var/httpd/htdocs/yui/2.7.0/build/menu/assets/menu_up_arrow_disabled.png
-otrs/var/httpd/htdocs/yui/2.7.0/build/menu/assets/menubaritem_submenuindicator.png
-otrs/var/httpd/htdocs/yui/2.7.0/build/menu/assets/menubaritem_submenuindicator_disabled.png
-otrs/var/httpd/htdocs/yui/2.7.0/build/menu/assets/menubaritem_submenuindicator_selected.png
-otrs/var/httpd/htdocs/yui/2.7.0/build/menu/assets/menuitem_checkbox.png
-otrs/var/httpd/htdocs/yui/2.7.0/build/menu/assets/menuitem_checkbox_disabled.png
-otrs/var/httpd/htdocs/yui/2.7.0/build/menu/assets/menuitem_checkbox_selected.png
-otrs/var/httpd/htdocs/yui/2.7.0/build/menu/assets/menuitem_submenuindicator.png
-otrs/var/httpd/htdocs/yui/2.7.0/build/menu/assets/menuitem_submenuindicator_disabled.png
-otrs/var/httpd/htdocs/yui/2.7.0/build/menu/assets/menuitem_submenuindicator_selected.png
-otrs/var/httpd/htdocs/yui/2.7.0/build/menu/assets/skins/sam/menu-skin.css
-otrs/var/httpd/htdocs/yui/2.7.0/build/menu/assets/skins/sam/menu.css
-otrs/var/httpd/htdocs/yui/2.7.0/build/menu/assets/skins/sam/menubaritem_submenuindicator.png
-otrs/var/httpd/htdocs/yui/2.7.0/build/menu/assets/skins/sam/menubaritem_submenuindicator_disabled.png
-otrs/var/httpd/htdocs/yui/2.7.0/build/menu/assets/skins/sam/menuitem_checkbox.png
-otrs/var/httpd/htdocs/yui/2.7.0/build/menu/assets/skins/sam/menuitem_checkbox_disabled.png
-otrs/var/httpd/htdocs/yui/2.7.0/build/menu/assets/skins/sam/menuitem_submenuindicator.png
-otrs/var/httpd/htdocs/yui/2.7.0/build/menu/assets/skins/sam/menuitem_submenuindicator_disabled.png
-otrs/var/httpd/htdocs/yui/2.7.0/build/menu/menu-debug.js
-otrs/var/httpd/htdocs/yui/2.7.0/build/menu/menu-min.js
-otrs/var/httpd/htdocs/yui/2.7.0/build/menu/menu.js
-otrs/var/httpd/htdocs/yui/2.7.0/build/paginator/assets/paginator-core.css
-otrs/var/httpd/htdocs/yui/2.7.0/build/paginator/assets/skins/sam/paginator-skin.css
-otrs/var/httpd/htdocs/yui/2.7.0/build/paginator/assets/skins/sam/paginator.css
-otrs/var/httpd/htdocs/yui/2.7.0/build/paginator/paginator-debug.js
-otrs/var/httpd/htdocs/yui/2.7.0/build/paginator/paginator-min.js
-otrs/var/httpd/htdocs/yui/2.7.0/build/paginator/paginator.js
-otrs/var/httpd/htdocs/yui/2.7.0/build/profiler/profiler-debug.js
-otrs/var/httpd/htdocs/yui/2.7.0/build/profiler/profiler-min.js
-otrs/var/httpd/htdocs/yui/2.7.0/build/profiler/profiler.js
-otrs/var/httpd/htdocs/yui/2.7.0/build/profilerviewer/assets/profilerviewer-core.css
-otrs/var/httpd/htdocs/yui/2.7.0/build/profilerviewer/assets/skins/sam/asc.gif
-otrs/var/httpd/htdocs/yui/2.7.0/build/profilerviewer/assets/skins/sam/desc.gif
-otrs/var/httpd/htdocs/yui/2.7.0/build/profilerviewer/assets/skins/sam/header_background.png
-otrs/var/httpd/htdocs/yui/2.7.0/build/profilerviewer/assets/skins/sam/profilerviewer-skin.css
-otrs/var/httpd/htdocs/yui/2.7.0/build/profilerviewer/assets/skins/sam/profilerviewer.css
-otrs/var/httpd/htdocs/yui/2.7.0/build/profilerviewer/assets/skins/sam/wait.gif
-otrs/var/httpd/htdocs/yui/2.7.0/build/profilerviewer/profilerviewer-debug.js
-otrs/var/httpd/htdocs/yui/2.7.0/build/profilerviewer/profilerviewer-min.js
-otrs/var/httpd/htdocs/yui/2.7.0/build/profilerviewer/profilerviewer.js
-otrs/var/httpd/htdocs/yui/2.7.0/build/reset-fonts-grids/reset-fonts-grids.css
-otrs/var/httpd/htdocs/yui/2.7.0/build/reset-fonts/reset-fonts.css
-otrs/var/httpd/htdocs/yui/2.7.0/build/reset/reset-min.css
-otrs/var/httpd/htdocs/yui/2.7.0/build/reset/reset.css
-otrs/var/httpd/htdocs/yui/2.7.0/build/resize/assets/resize-core.css
-otrs/var/httpd/htdocs/yui/2.7.0/build/resize/assets/skins/sam/layout_sprite.png
-otrs/var/httpd/htdocs/yui/2.7.0/build/resize/assets/skins/sam/resize-skin.css
-otrs/var/httpd/htdocs/yui/2.7.0/build/resize/assets/skins/sam/resize.css
-otrs/var/httpd/htdocs/yui/2.7.0/build/resize/resize-debug.js
-otrs/var/httpd/htdocs/yui/2.7.0/build/resize/resize-min.js
-otrs/var/httpd/htdocs/yui/2.7.0/build/resize/resize.js
-otrs/var/httpd/htdocs/yui/2.7.0/build/selector/selector-debug.js
-otrs/var/httpd/htdocs/yui/2.7.0/build/selector/selector-min.js
-otrs/var/httpd/htdocs/yui/2.7.0/build/selector/selector.js
-otrs/var/httpd/htdocs/yui/2.7.0/build/slider/assets/bg-fader.gif
-otrs/var/httpd/htdocs/yui/2.7.0/build/slider/assets/bg-h.gif
-otrs/var/httpd/htdocs/yui/2.7.0/build/slider/assets/bg-v-e.gif
-otrs/var/httpd/htdocs/yui/2.7.0/build/slider/assets/bg-v.gif
-otrs/var/httpd/htdocs/yui/2.7.0/build/slider/assets/left-thumb.png
-otrs/var/httpd/htdocs/yui/2.7.0/build/slider/assets/right-thumb.png
-otrs/var/httpd/htdocs/yui/2.7.0/build/slider/assets/skins/sam/bg-h.gif
-otrs/var/httpd/htdocs/yui/2.7.0/build/slider/assets/skins/sam/bg-v.gif
-otrs/var/httpd/htdocs/yui/2.7.0/build/slider/assets/skins/sam/slider-skin.css
-otrs/var/httpd/htdocs/yui/2.7.0/build/slider/assets/skins/sam/slider.css
-otrs/var/httpd/htdocs/yui/2.7.0/build/slider/assets/slider-core.css
-otrs/var/httpd/htdocs/yui/2.7.0/build/slider/assets/slider-skin.css
-otrs/var/httpd/htdocs/yui/2.7.0/build/slider/assets/thumb-bar.gif
-otrs/var/httpd/htdocs/yui/2.7.0/build/slider/assets/thumb-e.gif
-otrs/var/httpd/htdocs/yui/2.7.0/build/slider/assets/thumb-fader.gif
-otrs/var/httpd/htdocs/yui/2.7.0/build/slider/assets/thumb-n.gif
-otrs/var/httpd/htdocs/yui/2.7.0/build/slider/assets/thumb-s.gif
-otrs/var/httpd/htdocs/yui/2.7.0/build/slider/assets/thumb-w.gif
-otrs/var/httpd/htdocs/yui/2.7.0/build/slider/slider-debug.js
-otrs/var/httpd/htdocs/yui/2.7.0/build/slider/slider-min.js
-otrs/var/httpd/htdocs/yui/2.7.0/build/slider/slider.js
-otrs/var/httpd/htdocs/yui/2.7.0/build/stylesheet/stylesheet-debug.js
-otrs/var/httpd/htdocs/yui/2.7.0/build/stylesheet/stylesheet-min.js
-otrs/var/httpd/htdocs/yui/2.7.0/build/stylesheet/stylesheet.js
-otrs/var/httpd/htdocs/yui/2.7.0/build/tabview/assets/border_tabs.css
-otrs/var/httpd/htdocs/yui/2.7.0/build/tabview/assets/loading.gif
-otrs/var/httpd/htdocs/yui/2.7.0/build/tabview/assets/skin-sam.css
-otrs/var/httpd/htdocs/yui/2.7.0/build/tabview/assets/skins/sam/tabview-skin.css
-otrs/var/httpd/htdocs/yui/2.7.0/build/tabview/assets/skins/sam/tabview.css
-otrs/var/httpd/htdocs/yui/2.7.0/build/tabview/assets/tabview-core.css
-otrs/var/httpd/htdocs/yui/2.7.0/build/tabview/assets/tabview.css
-otrs/var/httpd/htdocs/yui/2.7.0/build/tabview/tabview-debug.js
-otrs/var/httpd/htdocs/yui/2.7.0/build/tabview/tabview-min.js
-otrs/var/httpd/htdocs/yui/2.7.0/build/tabview/tabview.js
-otrs/var/httpd/htdocs/yui/2.7.0/build/treeview/assets/check0.gif
-otrs/var/httpd/htdocs/yui/2.7.0/build/treeview/assets/check1.gif
-otrs/var/httpd/htdocs/yui/2.7.0/build/treeview/assets/check2.gif
-otrs/var/httpd/htdocs/yui/2.7.0/build/treeview/assets/loading.gif
-otrs/var/httpd/htdocs/yui/2.7.0/build/treeview/assets/skins/sam/loading.gif
-otrs/var/httpd/htdocs/yui/2.7.0/build/treeview/assets/skins/sam/treeview-loading.gif
-otrs/var/httpd/htdocs/yui/2.7.0/build/treeview/assets/skins/sam/treeview-skin.css
-otrs/var/httpd/htdocs/yui/2.7.0/build/treeview/assets/skins/sam/treeview-sprite.gif
-otrs/var/httpd/htdocs/yui/2.7.0/build/treeview/assets/skins/sam/treeview.css
-otrs/var/httpd/htdocs/yui/2.7.0/build/treeview/assets/treeview-core.css
-otrs/var/httpd/htdocs/yui/2.7.0/build/treeview/assets/treeview-loading.gif
-otrs/var/httpd/htdocs/yui/2.7.0/build/treeview/assets/treeview-skin.css
-otrs/var/httpd/htdocs/yui/2.7.0/build/treeview/assets/treeview-sprite.gif
-otrs/var/httpd/htdocs/yui/2.7.0/build/treeview/treeview-debug.js
-otrs/var/httpd/htdocs/yui/2.7.0/build/treeview/treeview-min.js
-otrs/var/httpd/htdocs/yui/2.7.0/build/treeview/treeview.js
-otrs/var/httpd/htdocs/yui/2.7.0/build/uploader/assets/uploader.swf
-otrs/var/httpd/htdocs/yui/2.7.0/build/uploader/uploader-debug.js
-otrs/var/httpd/htdocs/yui/2.7.0/build/uploader/uploader-experimental-debug.js
-otrs/var/httpd/htdocs/yui/2.7.0/build/uploader/uploader-min.js
-otrs/var/httpd/htdocs/yui/2.7.0/build/uploader/uploader.js
-otrs/var/httpd/htdocs/yui/2.7.0/build/utilities/utilities.js
-otrs/var/httpd/htdocs/yui/2.7.0/build/yahoo-dom-event/yahoo-dom-event.js
-otrs/var/httpd/htdocs/yui/2.7.0/build/yahoo/yahoo-debug.js
-otrs/var/httpd/htdocs/yui/2.7.0/build/yahoo/yahoo-min.js
-otrs/var/httpd/htdocs/yui/2.7.0/build/yahoo/yahoo.js
-otrs/var/httpd/htdocs/yui/2.7.0/build/yuiloader-dom-event/yuiloader-dom-event.js
-otrs/var/httpd/htdocs/yui/2.7.0/build/yuiloader/yuiloader-debug.js
-otrs/var/httpd/htdocs/yui/2.7.0/build/yuiloader/yuiloader-min.js
-otrs/var/httpd/htdocs/yui/2.7.0/build/yuiloader/yuiloader.js
-otrs/var/httpd/htdocs/yui/2.7.0/build/yuitest/assets/skins/sam/yuitest-skin.css
-otrs/var/httpd/htdocs/yui/2.7.0/build/yuitest/assets/skins/sam/yuitest.css
-otrs/var/httpd/htdocs/yui/2.7.0/build/yuitest/assets/testlogger.css
-otrs/var/httpd/htdocs/yui/2.7.0/build/yuitest/assets/yuitest-core.css
-otrs/var/httpd/htdocs/yui/2.7.0/build/yuitest/yuitest-debug.js
-otrs/var/httpd/htdocs/yui/2.7.0/build/yuitest/yuitest-min.js
-otrs/var/httpd/htdocs/yui/2.7.0/build/yuitest/yuitest.js
-otrs/var/httpd/htdocs/yui/2.7.0/build/yuitest/yuitest_core-debug.js
-otrs/var/httpd/htdocs/yui/2.7.0/build/yuitest/yuitest_core-min.js
-otrs/var/httpd/htdocs/yui/2.7.0/build/yuitest/yuitest_core.js
-otrs/var/httpd/htdocs/yui/License-YUI.txt
-otrs/var/packages/Support-1.1.3.opm
-otrs/var/packages/iPhoneHandle-0.9.5.opm
+otrs/var/httpd/htdocs/js/Core.AJAX.js
+otrs/var/httpd/htdocs/js/Core.Agent.Admin.SysConfig.js
+otrs/var/httpd/htdocs/js/Core.Agent.CustomerSearch.js
+otrs/var/httpd/htdocs/js/Core.Agent.Dashboard.js
+otrs/var/httpd/htdocs/js/Core.Agent.Login.js
+otrs/var/httpd/htdocs/js/Core.Agent.Search.js
+otrs/var/httpd/htdocs/js/Core.Agent.Stats.js
+otrs/var/httpd/htdocs/js/Core.Agent.TicketAction.js
+otrs/var/httpd/htdocs/js/Core.Agent.TicketZoom.js
+otrs/var/httpd/htdocs/js/Core.Agent.js
+otrs/var/httpd/htdocs/js/Core.App.js
+otrs/var/httpd/htdocs/js/Core.Config.js
+otrs/var/httpd/htdocs/js/Core.Customer.Login.js
+otrs/var/httpd/htdocs/js/Core.Customer.TicketZoom.js
+otrs/var/httpd/htdocs/js/Core.Customer.js
+otrs/var/httpd/htdocs/js/Core.Data.js
+otrs/var/httpd/htdocs/js/Core.Debug.js
+otrs/var/httpd/htdocs/js/Core.Exception.js
+otrs/var/httpd/htdocs/js/Core.Form.ErrorTooltips.js
+otrs/var/httpd/htdocs/js/Core.Form.Validate.js
+otrs/var/httpd/htdocs/js/Core.Form.js
+otrs/var/httpd/htdocs/js/Core.Installer.js
+otrs/var/httpd/htdocs/js/Core.JSON.js
+otrs/var/httpd/htdocs/js/Core.JavaScriptEnhancements.js
+otrs/var/httpd/htdocs/js/Core.UI.Accessibility.js
+otrs/var/httpd/htdocs/js/Core.UI.Accordion.js
+otrs/var/httpd/htdocs/js/Core.UI.ActionRow.js
+otrs/var/httpd/htdocs/js/Core.UI.Chart.js
+otrs/var/httpd/htdocs/js/Core.UI.Datepicker.js
+otrs/var/httpd/htdocs/js/Core.UI.Dialog.js
+otrs/var/httpd/htdocs/js/Core.UI.DnD.js
+otrs/var/httpd/htdocs/js/Core.UI.IE7Fixes.js
+otrs/var/httpd/htdocs/js/Core.UI.Popup.js
+otrs/var/httpd/htdocs/js/Core.UI.Resizable.js
+otrs/var/httpd/htdocs/js/Core.UI.RichTextEditor.js
+otrs/var/httpd/htdocs/js/Core.UI.Table.Sort.js
+otrs/var/httpd/htdocs/js/Core.UI.Table.js
+otrs/var/httpd/htdocs/js/Core.UI.js
+otrs/var/httpd/htdocs/js/test/Core.Config.UnitTest.js
+otrs/var/httpd/htdocs/js/test/Core.Data.UnitTest.js
+otrs/var/httpd/htdocs/js/test/Core.Debug.UnitTest.js
+otrs/var/httpd/htdocs/js/test/Core.Form.UnitTest.js
+otrs/var/httpd/htdocs/js/test/Core.JSON.UnitTest.js
+otrs/var/httpd/htdocs/js/test/Core.JavaScriptEnhancements.UnitTest.js
+otrs/var/httpd/htdocs/js/test/Core.UI.Accessibility.UnitTest.js
+otrs/var/httpd/htdocs/js/test/JSUnitTest.html
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/.htaccess
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/CHANGES.html
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/INSTALL.html
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/LICENSE.html
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/OTRS-PATCHES.txt
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/ckeditor.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/ckeditor.pack
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/ckeditor_basic.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/ckeditor_basic_source.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/ckeditor_source.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/config.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/contents.css
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/adapters/jquery.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/images/spacer.gif
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/lang/_languages.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/lang/_translationstatus.txt
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/lang/af.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/lang/ar.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/lang/bg.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/lang/bn.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/lang/bs.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/lang/ca.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/lang/cs.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/lang/cy.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/lang/da.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/lang/de.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/lang/el.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/lang/en-au.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/lang/en-ca.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/lang/en-gb.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/lang/en.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/lang/eo.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/lang/es.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/lang/et.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/lang/eu.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/lang/fa.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/lang/fi.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/lang/fo.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/lang/fr-ca.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/lang/fr.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/lang/gl.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/lang/gu.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/lang/he.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/lang/hi.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/lang/hr.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/lang/hu.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/lang/is.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/lang/it.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/lang/ja.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/lang/km.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/lang/ko.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/lang/lt.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/lang/lv.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/lang/mn.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/lang/ms.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/lang/nb.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/lang/nl.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/lang/no.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/lang/pl.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/lang/pt-br.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/lang/pt.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/lang/ro.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/lang/ru.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/lang/sk.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/lang/sl.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/lang/sr-latn.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/lang/sr.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/lang/sv.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/lang/th.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/lang/tr.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/lang/uk.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/lang/vi.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/lang/zh-cn.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/lang/zh.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/plugins/a11yhelp/dialogs/a11yhelp.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/plugins/a11yhelp/lang/en.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/plugins/a11yhelp/lang/he.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/plugins/about/dialogs/about.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/plugins/about/dialogs/logo_ckeditor.png
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/plugins/aspell/dialogs/aspell.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/plugins/aspell/aspell.css
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/plugins/aspell/plugin.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/plugins/aspell/spellerpages/blank.html
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/plugins/aspell/spellerpages/controlWindow.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/plugins/aspell/spellerpages/controls.html
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/plugins/aspell/spellerpages/spellChecker.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/plugins/aspell/spellerpages/spellchecker.html
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/plugins/aspell/spellerpages/spellerStyle.css
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/plugins/aspell/spellerpages/wordWindow.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/plugins/autogrow/plugin.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/plugins/clipboard/dialogs/paste.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/plugins/colordialog/dialogs/colordialog.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/plugins/dialog/dialogDefinition.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/plugins/div/dialogs/div.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/plugins/find/dialogs/find.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/plugins/flash/dialogs/flash.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/plugins/flash/images/placeholder.png
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/plugins/forms/dialogs/button.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/plugins/forms/dialogs/checkbox.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/plugins/forms/dialogs/form.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/plugins/forms/dialogs/hiddenfield.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/plugins/forms/dialogs/radio.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/plugins/forms/dialogs/select.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/plugins/forms/dialogs/textarea.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/plugins/forms/dialogs/textfield.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/plugins/forms/images/hiddenfield.gif
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/plugins/iframedialog/plugin.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/plugins/image/dialogs/image.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/plugins/link/dialogs/anchor.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/plugins/link/dialogs/link.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/plugins/link/images/anchor.gif
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/plugins/liststyle/dialogs/liststyle.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/plugins/pagebreak/images/pagebreak.gif
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/plugins/pastefromword/filter/default.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/plugins/pastetext/dialogs/pastetext.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/plugins/scayt/dialogs/options.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/plugins/scayt/dialogs/toolbar.css
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/plugins/showblocks/images/block_address.png
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/plugins/showblocks/images/block_blockquote.png
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/plugins/showblocks/images/block_div.png
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/plugins/showblocks/images/block_h1.png
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/plugins/showblocks/images/block_h2.png
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/plugins/showblocks/images/block_h3.png
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/plugins/showblocks/images/block_h4.png
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/plugins/showblocks/images/block_h5.png
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/plugins/showblocks/images/block_h6.png
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/plugins/showblocks/images/block_p.png
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/plugins/showblocks/images/block_pre.png
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/plugins/smiley/dialogs/smiley.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/plugins/smiley/images/angel_smile.gif
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/plugins/smiley/images/angry_smile.gif
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/plugins/smiley/images/broken_heart.gif
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/plugins/smiley/images/confused_smile.gif
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/plugins/smiley/images/cry_smile.gif
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/plugins/smiley/images/devil_smile.gif
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/plugins/smiley/images/embaressed_smile.gif
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/plugins/smiley/images/envelope.gif
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/plugins/smiley/images/heart.gif
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/plugins/smiley/images/kiss.gif
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/plugins/smiley/images/lightbulb.gif
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/plugins/smiley/images/omg_smile.gif
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/plugins/smiley/images/regular_smile.gif
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/plugins/smiley/images/sad_smile.gif
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/plugins/smiley/images/shades_smile.gif
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/plugins/smiley/images/teeth_smile.gif
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/plugins/smiley/images/thumbs_down.gif
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/plugins/smiley/images/thumbs_up.gif
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/plugins/smiley/images/tounge_smile.gif
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/plugins/smiley/images/whatchutalkingabout_smile.gif
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/plugins/smiley/images/wink_smile.gif
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/plugins/specialchar/dialogs/specialchar.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/plugins/styles/styles/default.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/plugins/table/dialogs/table.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/plugins/tableresize/plugin.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/plugins/tabletools/dialogs/tableCell.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/plugins/uicolor/dialogs/uicolor.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/plugins/uicolor/plugin.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/plugins/uicolor/uicolor.gif
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/plugins/uicolor/lang/en.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/plugins/uicolor/lang/he.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/plugins/uicolor/yui/assets/hue_bg.png
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/plugins/uicolor/yui/assets/hue_thumb.png
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/plugins/uicolor/yui/assets/picker_mask.png
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/plugins/uicolor/yui/assets/picker_thumb.png
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/plugins/uicolor/yui/assets/yui.css
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/plugins/uicolor/yui/yui.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/plugins/templates/dialogs/templates.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/plugins/templates/templates/images/template1.gif
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/plugins/templates/templates/images/template2.gif
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/plugins/templates/templates/images/template3.gif
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/plugins/templates/templates/default.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/plugins/wsc/dialogs/ciframe.html
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/plugins/wsc/dialogs/tmpFrameset.html
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/plugins/wsc/dialogs/wsc.css
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/plugins/wsc/dialogs/wsc.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/skins/default/images/dialog_sides.gif
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/skins/default/images/dialog_sides.png
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/skins/default/images/dialog_sides_rtl.png
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/skins/default/images/mini.gif
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/skins/default/images/noimage.png
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/skins/default/images/sprites.png
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/skins/default/images/sprites_ie6.png
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/skins/default/images/toolbar_start.gif
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/skins/default/dialog.css
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/skins/default/editor.css
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/skins/default/icons.png
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/skins/default/skin.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/skins/default/templates.css
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/skins/kama/images/dialog_sides.gif
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/skins/kama/images/dialog_sides.png
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/skins/kama/images/dialog_sides_rtl.png
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/skins/kama/images/mini.gif
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/skins/kama/images/noimage.png
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/skins/kama/images/sprites.png
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/skins/kama/images/sprites_ie6.png
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/skins/kama/images/toolbar_start.gif
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/skins/kama/dialog.css
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/skins/kama/editor.css
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/skins/kama/icons.png
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/skins/kama/icons_rtl.png
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/skins/kama/skin.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/skins/kama/templates.css
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/skins/office2003/images/dialog_sides.gif
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/skins/office2003/images/dialog_sides.png
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/skins/office2003/images/dialog_sides_rtl.png
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/skins/office2003/images/mini.gif
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/skins/office2003/images/noimage.png
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/skins/office2003/images/sprites.png
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/skins/office2003/images/sprites_ie6.png
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/skins/office2003/dialog.css
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/skins/office2003/editor.css
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/skins/office2003/icons.png
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/skins/office2003/icons_rtl.png
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/skins/office2003/skin.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/skins/office2003/templates.css
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/skins/v2/images/dialog_sides.gif
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/skins/v2/images/dialog_sides.png
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/skins/v2/images/dialog_sides_rtl.png
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/skins/v2/images/mini.gif
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/skins/v2/images/noimage.png
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/skins/v2/images/sprites.png
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/skins/v2/images/sprites_ie6.png
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/skins/v2/images/toolbar_start.gif
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/skins/v2/dialog.css
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/skins/v2/editor.css
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/skins/v2/icons.png
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/skins/v2/icons_rtl.png
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/skins/v2/skin.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/skins/v2/templates.css
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/themes/default/theme.js
+otrs/var/httpd/htdocs/js/thirdparty/flot-0.6/excanvas.js
+otrs/var/httpd/htdocs/js/thirdparty/flot-0.6/jquery.flot.js
+otrs/var/httpd/htdocs/js/thirdparty/jquery-1.4.4/jquery.js
+otrs/var/httpd/htdocs/js/thirdparty/jquery-tablesorter-2.0.5/jquery.tablesorter.js
+otrs/var/httpd/htdocs/js/thirdparty/jquery-tooltip-1.3/jquery.tooltip.js
+otrs/var/httpd/htdocs/js/thirdparty/jquery-ui-1.8.5/jquery-ui.js
+otrs/var/httpd/htdocs/js/thirdparty/jquery-validate-1.7/jquery.validate.js
+otrs/var/httpd/htdocs/js/thirdparty/json/json2.js
+otrs/var/httpd/htdocs/js/thirdparty/qunit/qunit.css
+otrs/var/httpd/htdocs/js/thirdparty/qunit/qunit.js
+otrs/var/httpd/htdocs/js/thirdparty/stacktrace/stacktrace.js
+otrs/var/httpd/htdocs/skins/Agent/default/css/thirdparty/ui-lightness/images/ui-bg_diagonals-thick_18_b81900_40x40.png
+otrs/var/httpd/htdocs/skins/Agent/default/css/thirdparty/ui-lightness/images/ui-bg_diagonals-thick_20_666666_40x40.png
+otrs/var/httpd/htdocs/skins/Agent/default/css/thirdparty/ui-lightness/images/ui-bg_flat_10_000000_40x100.png
+otrs/var/httpd/htdocs/skins/Agent/default/css/thirdparty/ui-lightness/images/ui-bg_glass_100_f6f6f6_1x400.png
+otrs/var/httpd/htdocs/skins/Agent/default/css/thirdparty/ui-lightness/images/ui-bg_glass_100_fdf5ce_1x400.png
+otrs/var/httpd/htdocs/skins/Agent/default/css/thirdparty/ui-lightness/images/ui-bg_glass_65_ffffff_1x400.png
+otrs/var/httpd/htdocs/skins/Agent/default/css/thirdparty/ui-lightness/images/ui-bg_gloss-wave_35_f6a828_500x100.png
+otrs/var/httpd/htdocs/skins/Agent/default/css/thirdparty/ui-lightness/images/ui-bg_highlight-soft_100_eeeeee_1x100.png
+otrs/var/httpd/htdocs/skins/Agent/default/css/thirdparty/ui-lightness/images/ui-bg_highlight-soft_75_ffe45c_1x100.png
+otrs/var/httpd/htdocs/skins/Agent/default/css/thirdparty/ui-lightness/images/ui-icons_222222_256x240.png
+otrs/var/httpd/htdocs/skins/Agent/default/css/thirdparty/ui-lightness/images/ui-icons_228ef1_256x240.png
+otrs/var/httpd/htdocs/skins/Agent/default/css/thirdparty/ui-lightness/images/ui-icons_ef8c08_256x240.png
+otrs/var/httpd/htdocs/skins/Agent/default/css/thirdparty/ui-lightness/images/ui-icons_ffd27a_256x240.png
+otrs/var/httpd/htdocs/skins/Agent/default/css/thirdparty/ui-lightness/images/ui-icons_ffffff_256x240.png
+otrs/var/httpd/htdocs/skins/Agent/default/css/thirdparty/ui-lightness/jquery-ui.css
+otrs/var/httpd/htdocs/skins/Agent/default/css/thirdparty/ui-theme/images/ui-anim_basic_16x16.gif
+otrs/var/httpd/htdocs/skins/Agent/default/css/thirdparty/ui-theme/images/ui-bg_flat_0_aaaaaa_40x100.png
+otrs/var/httpd/htdocs/skins/Agent/default/css/thirdparty/ui-theme/images/ui-bg_flat_75_aaaaaa_40x100.png
+otrs/var/httpd/htdocs/skins/Agent/default/css/thirdparty/ui-theme/images/ui-bg_glass_100_f39c19_1x400.png
+otrs/var/httpd/htdocs/skins/Agent/default/css/thirdparty/ui-theme/images/ui-bg_glass_25_f39c19_1x400.png
+otrs/var/httpd/htdocs/skins/Agent/default/css/thirdparty/ui-theme/images/ui-bg_glass_55_fbf9ee_1x400.png
+otrs/var/httpd/htdocs/skins/Agent/default/css/thirdparty/ui-theme/images/ui-bg_glass_65_ffffff_1x400.png
+otrs/var/httpd/htdocs/skins/Agent/default/css/thirdparty/ui-theme/images/ui-bg_glass_70_dddddd_1x400.png
+otrs/var/httpd/htdocs/skins/Agent/default/css/thirdparty/ui-theme/images/ui-bg_glass_75_dadada_1x400.png
+otrs/var/httpd/htdocs/skins/Agent/default/css/thirdparty/ui-theme/images/ui-bg_glass_75_e6e6e6_1x400.png
+otrs/var/httpd/htdocs/skins/Agent/default/css/thirdparty/ui-theme/images/ui-bg_glass_75_ffffff_1x400.png
+otrs/var/httpd/htdocs/skins/Agent/default/css/thirdparty/ui-theme/images/ui-bg_highlight-hard_100_ffffff_1x100.png
+otrs/var/httpd/htdocs/skins/Agent/default/css/thirdparty/ui-theme/images/ui-bg_highlight-hard_65_fc5454_1x100.png
+otrs/var/httpd/htdocs/skins/Agent/default/css/thirdparty/ui-theme/images/ui-bg_highlight-hard_75_ffffff_1x100.png
+otrs/var/httpd/htdocs/skins/Agent/default/css/thirdparty/ui-theme/images/ui-bg_highlight-soft_75_cccccc_1x100.png
+otrs/var/httpd/htdocs/skins/Agent/default/css/thirdparty/ui-theme/images/ui-bg_inset-soft_100_eeeeee_1x100.png
+otrs/var/httpd/htdocs/skins/Agent/default/css/thirdparty/ui-theme/images/ui-bg_inset-soft_95_fef1ec_1x100.png
+otrs/var/httpd/htdocs/skins/Agent/default/css/thirdparty/ui-theme/images/ui-icons_000000_256x240.png
+otrs/var/httpd/htdocs/skins/Agent/default/css/thirdparty/ui-theme/images/ui-icons_222222_256x240.png
+otrs/var/httpd/htdocs/skins/Agent/default/css/thirdparty/ui-theme/images/ui-icons_2e83ff_256x240.png
+otrs/var/httpd/htdocs/skins/Agent/default/css/thirdparty/ui-theme/images/ui-icons_454545_256x240.png
+otrs/var/httpd/htdocs/skins/Agent/default/css/thirdparty/ui-theme/images/ui-icons_888888_256x240.png
+otrs/var/httpd/htdocs/skins/Agent/default/css/thirdparty/ui-theme/images/ui-icons_cd0a0a_256x240.png
+otrs/var/httpd/htdocs/skins/Agent/default/css/thirdparty/ui-theme/images/ui-icons_f39c19_256x240.png
+otrs/var/httpd/htdocs/skins/Agent/default/css/thirdparty/ui-theme/images/ui-icons_ffffff_256x240.png
+otrs/var/httpd/htdocs/skins/Agent/default/css/thirdparty/ui-theme/jquery-ui.css
+otrs/var/httpd/htdocs/skins/Agent/default/css/Core.Agent.Admin.PerformanceLog.css
+otrs/var/httpd/htdocs/skins/Agent/default/css/Core.Agent.Admin.SysConfig.css
+otrs/var/httpd/htdocs/skins/Agent/default/css/Core.Agent.Admin.css
+otrs/var/httpd/htdocs/skins/Agent/default/css/Core.Agent.AdminIE7.css
+otrs/var/httpd/htdocs/skins/Agent/default/css/Core.Agent.CustomerUser.Google.css
+otrs/var/httpd/htdocs/skins/Agent/default/css/Core.Agent.CustomerUser.GoogleMaps.css
+otrs/var/httpd/htdocs/skins/Agent/default/css/Core.Agent.CustomerUser.LinkedIn.css
+otrs/var/httpd/htdocs/skins/Agent/default/css/Core.Agent.CustomerUser.OpenTicket.css
+otrs/var/httpd/htdocs/skins/Agent/default/css/Core.Agent.CustomerUser.Xing.css
+otrs/var/httpd/htdocs/skins/Agent/default/css/Core.Agent.HTMLReference.css
+otrs/var/httpd/htdocs/skins/Agent/default/css/Core.Agent.Toolbar.FulltextSearch.css
+otrs/var/httpd/htdocs/skins/Agent/default/css/Core.AgentTicketQueue.css
+otrs/var/httpd/htdocs/skins/Agent/default/css/Core.Color.css
+otrs/var/httpd/htdocs/skins/Agent/default/css/Core.Default.IE7.css
+otrs/var/httpd/htdocs/skins/Agent/default/css/Core.Default.css
+otrs/var/httpd/htdocs/skins/Agent/default/css/Core.Dialog.IE7.css
+otrs/var/httpd/htdocs/skins/Agent/default/css/Core.Dialog.css
+otrs/var/httpd/htdocs/skins/Agent/default/css/Core.Footer.css
+otrs/var/httpd/htdocs/skins/Agent/default/css/Core.Form.IE7.css
+otrs/var/httpd/htdocs/skins/Agent/default/css/Core.Form.css
+otrs/var/httpd/htdocs/skins/Agent/default/css/Core.Header.IE7.css
+otrs/var/httpd/htdocs/skins/Agent/default/css/Core.Header.css
+otrs/var/httpd/htdocs/skins/Agent/default/css/Core.Installer.css
+otrs/var/httpd/htdocs/skins/Agent/default/css/Core.OverviewControl.IE7.css
+otrs/var/httpd/htdocs/skins/Agent/default/css/Core.OverviewControl.css
+otrs/var/httpd/htdocs/skins/Agent/default/css/Core.OverviewLarge.IE7.css
+otrs/var/httpd/htdocs/skins/Agent/default/css/Core.OverviewLarge.css
+otrs/var/httpd/htdocs/skins/Agent/default/css/Core.OverviewMedium.IE7.css
+otrs/var/httpd/htdocs/skins/Agent/default/css/Core.OverviewMedium.css
+otrs/var/httpd/htdocs/skins/Agent/default/css/Core.OverviewSmall.IE7.css
+otrs/var/httpd/htdocs/skins/Agent/default/css/Core.OverviewSmall.IE8.css
+otrs/var/httpd/htdocs/skins/Agent/default/css/Core.OverviewSmall.css
+otrs/var/httpd/htdocs/skins/Agent/default/css/Core.PageLayout.IE7.css
+otrs/var/httpd/htdocs/skins/Agent/default/css/Core.PageLayout.css
+otrs/var/httpd/htdocs/skins/Agent/default/css/Core.Print.css
+otrs/var/httpd/htdocs/skins/Agent/default/css/Core.Reset.css
+otrs/var/httpd/htdocs/skins/Agent/default/css/Core.Table.IE7.css
+otrs/var/httpd/htdocs/skins/Agent/default/css/Core.Table.css
+otrs/var/httpd/htdocs/skins/Agent/default/css/Core.TicketDetail.IE7.css
+otrs/var/httpd/htdocs/skins/Agent/default/css/Core.TicketDetail.css
+otrs/var/httpd/htdocs/skins/Agent/default/css/Core.Tooltip.IE7.css
+otrs/var/httpd/htdocs/skins/Agent/default/css/Core.Tooltip.css
+otrs/var/httpd/htdocs/skins/Agent/default/css/Core.Widget.IE7.css
+otrs/var/httpd/htdocs/skins/Agent/default/css/Core.Widget.css
+otrs/var/httpd/htdocs/skins/Agent/default/css/Core.WidgetMenu.IE7.css
+otrs/var/httpd/htdocs/skins/Agent/default/css/Core.WidgetMenu.css
+otrs/var/httpd/htdocs/skins/Agent/default/img/icons/calendar.png
+otrs/var/httpd/htdocs/skins/Agent/default/img/icons/cross.png
+otrs/var/httpd/htdocs/skins/Agent/default/img/icons/cross_sw.png
+otrs/var/httpd/htdocs/skins/Agent/default/img/icons/disk.png
+otrs/var/httpd/htdocs/skins/Agent/default/img/icons/document-pdf.png
+otrs/var/httpd/htdocs/skins/Agent/default/img/icons/drive-download.png
+otrs/var/httpd/htdocs/skins/Agent/default/img/icons/drive-upload.png
+otrs/var/httpd/htdocs/skins/Agent/default/img/icons/folder-small.png
+otrs/var/httpd/htdocs/skins/Agent/default/img/icons/greenled-small.png
+otrs/var/httpd/htdocs/skins/Agent/default/img/icons/in.png
+otrs/var/httpd/htdocs/skins/Agent/default/img/icons/maps.png
+otrs/var/httpd/htdocs/skins/Agent/default/img/icons/plus-button.png
+otrs/var/httpd/htdocs/skins/Agent/default/img/icons/product.ico
+otrs/var/httpd/htdocs/skins/Agent/default/img/icons/redled-small.png
+otrs/var/httpd/htdocs/skins/Agent/default/img/icons/reload.png
+otrs/var/httpd/htdocs/skins/Agent/default/img/icons/tick.png
+otrs/var/httpd/htdocs/skins/Agent/default/img/icons/trash-can.png
+otrs/var/httpd/htdocs/skins/Agent/default/img/icons/undo.png
+otrs/var/httpd/htdocs/skins/Agent/default/img/icons/xing.png
+otrs/var/httpd/htdocs/skins/Agent/default/img/GradientSmall.png
+otrs/var/httpd/htdocs/skins/Agent/default/img/GradientSmallBlack.png
+otrs/var/httpd/htdocs/skins/Agent/default/img/ProgressBarArrow.png
+otrs/var/httpd/htdocs/skins/Agent/default/img/ProgressBarArrowActive.png
+otrs/var/httpd/htdocs/skins/Agent/default/img/ProgressBarIsolator.png
+otrs/var/httpd/htdocs/skins/Agent/default/img/SmallDarkGradient.png
+otrs/var/httpd/htdocs/skins/Agent/default/img/action_hover.png
+otrs/var/httpd/htdocs/skins/Agent/default/img/actionrow_wrapper.png
+otrs/var/httpd/htdocs/skins/Agent/default/img/actions_line.png
+otrs/var/httpd/htdocs/skins/Agent/default/img/arrow_left.png
+otrs/var/httpd/htdocs/skins/Agent/default/img/arrow_outlined_left.png
+otrs/var/httpd/htdocs/skins/Agent/default/img/arrow_outlined_right.png
+otrs/var/httpd/htdocs/skins/Agent/default/img/arrow_right.png
+otrs/var/httpd/htdocs/skins/Agent/default/img/arrow_top.png
+otrs/var/httpd/htdocs/skins/Agent/default/img/arrows.png
+otrs/var/httpd/htdocs/skins/Agent/default/img/articlefilter.png
+otrs/var/httpd/htdocs/skins/Agent/default/img/articleview.png
+otrs/var/httpd/htdocs/skins/Agent/default/img/attachment_dummy1.jpg
+otrs/var/httpd/htdocs/skins/Agent/default/img/attachment_dummy2.jpg
+otrs/var/httpd/htdocs/skins/Agent/default/img/attachment_dummy3.jpg
+otrs/var/httpd/htdocs/skins/Agent/default/img/attachment_header.png
+otrs/var/httpd/htdocs/skins/Agent/default/img/attachment_sprite.png
+otrs/var/httpd/htdocs/skins/Agent/default/img/blank.gif
+otrs/var/httpd/htdocs/skins/Agent/default/img/bubble_tongueleft.png
+otrs/var/httpd/htdocs/skins/Agent/default/img/bubble_tongueright.png
+otrs/var/httpd/htdocs/skins/Agent/default/img/button_bg.gif
+otrs/var/httpd/htdocs/skins/Agent/default/img/contexthelp.png
+otrs/var/httpd/htdocs/skins/Agent/default/img/controlrow.png
+otrs/var/httpd/htdocs/skins/Agent/default/img/controlrow_isolator.png
+otrs/var/httpd/htdocs/skins/Agent/default/img/controlrow_sprite.png
+otrs/var/httpd/htdocs/skins/Agent/default/img/dialog_alert.png
+otrs/var/httpd/htdocs/skins/Agent/default/img/dialog_close.png
+otrs/var/httpd/htdocs/skins/Agent/default/img/dialog_content.png
+otrs/var/httpd/htdocs/skins/Agent/default/img/empty.png
+otrs/var/httpd/htdocs/skins/Agent/default/img/dialog_footer.png
+otrs/var/httpd/htdocs/skins/Agent/default/img/dialog_footer_em.png
+otrs/var/httpd/htdocs/skins/Agent/default/img/dialog_header.png
+otrs/var/httpd/htdocs/skins/Agent/default/img/direction_header.png
+otrs/var/httpd/htdocs/skins/Agent/default/img/direction_incoming.png
+otrs/var/httpd/htdocs/skins/Agent/default/img/direction_internal.png
+otrs/var/httpd/htdocs/skins/Agent/default/img/direction_outgoing.png
+otrs/var/httpd/htdocs/skins/Agent/default/img/dnd_placeholder_bg.png
+otrs/var/httpd/htdocs/skins/Agent/default/img/empty_background.png
+otrs/var/httpd/htdocs/skins/Agent/default/img/filter_add.png
+otrs/var/httpd/htdocs/skins/Agent/default/img/filter_add_hover.png
+otrs/var/httpd/htdocs/skins/Agent/default/img/filter_remove.png
+otrs/var/httpd/htdocs/skins/Agent/default/img/filter_remove_hover.png
+otrs/var/httpd/htdocs/skins/Agent/default/img/flag_shadow.png
+otrs/var/httpd/htdocs/skins/Agent/default/img/gradient_light.png
+otrs/var/httpd/htdocs/skins/Agent/default/img/gradient_lightdark.png
+otrs/var/httpd/htdocs/skins/Agent/default/img/handle.png
+otrs/var/httpd/htdocs/skins/Agent/default/img/header_bg.png
+otrs/var/httpd/htdocs/skins/Agent/default/img/loader.gif
+otrs/var/httpd/htdocs/skins/Agent/default/img/loginlogo_default.png
+otrs/var/httpd/htdocs/skins/Agent/default/img/logo_bg.png
+otrs/var/httpd/htdocs/skins/Agent/default/img/logout_sprite.png
+otrs/var/httpd/htdocs/skins/Agent/default/img/navigation_hover.png
+otrs/var/httpd/htdocs/skins/Agent/default/img/navigation_isolator.png
+otrs/var/httpd/htdocs/skins/Agent/default/img/navigation_shadow.png
+otrs/var/httpd/htdocs/skins/Agent/default/img/navigation_shadow_bottom.png
+otrs/var/httpd/htdocs/skins/Agent/default/img/navigation_shadow_top.png
+otrs/var/httpd/htdocs/skins/Agent/default/img/navigation_sprite.png
+otrs/var/httpd/htdocs/skins/Agent/default/img/navigation_underline_bg.png
+otrs/var/httpd/htdocs/skins/Agent/default/img/overviewcontrol_checkbox.png
+otrs/var/httpd/htdocs/skins/Agent/default/img/overviewcontrol_line.png
+otrs/var/httpd/htdocs/skins/Agent/default/img/search_bg.png
+otrs/var/httpd/htdocs/skins/Agent/default/img/small_border.png
+otrs/var/httpd/htdocs/skins/Agent/default/img/stars.png
+otrs/var/httpd/htdocs/skins/Agent/default/img/tab_isolator.png
+otrs/var/httpd/htdocs/skins/Agent/default/img/tab_isolator_light.png
+otrs/var/httpd/htdocs/skins/Agent/default/img/table_large_hover.png
+otrs/var/httpd/htdocs/skins/Agent/default/img/table_medium_hover.png
+otrs/var/httpd/htdocs/skins/Agent/default/img/table_medium_hover_bottom.png
+otrs/var/httpd/htdocs/skins/Agent/default/img/table_small_hover_bg.png
+otrs/var/httpd/htdocs/skins/Agent/default/img/tabs_active_bg.png
+otrs/var/httpd/htdocs/skins/Agent/default/img/tabs_active_door.png
+otrs/var/httpd/htdocs/skins/Agent/default/img/tabs_door_bg.png
+otrs/var/httpd/htdocs/skins/Agent/default/img/thead_isolator.png
+otrs/var/httpd/htdocs/skins/Agent/default/img/thead_sortdown_bg.png
+otrs/var/httpd/htdocs/skins/Agent/default/img/thead_sortdown_bg_rtl.png
+otrs/var/httpd/htdocs/skins/Agent/default/img/thead_sortup_bg.png
+otrs/var/httpd/htdocs/skins/Agent/default/img/thead_sortup_bg_rtl.png
+otrs/var/httpd/htdocs/skins/Agent/default/img/toggle_arrow.png
+otrs/var/httpd/htdocs/skins/Agent/default/img/toolbar_sprite.png
+otrs/var/httpd/htdocs/skins/Agent/default/img/triangle_bg.png
+otrs/var/httpd/htdocs/skins/Agent/default/img/widget_bg_100.png
+otrs/var/httpd/htdocs/skins/Agent/default/img/widget_close.png
+otrs/var/httpd/htdocs/skins/Agent/default/img/widget_settings.png
+otrs/var/httpd/htdocs/skins/Agent/default/img/zoom_active1.png
+otrs/var/httpd/htdocs/skins/Agent/default/img/zoom_active2.png
+otrs/var/httpd/htdocs/skins/Agent/default/img/zoom_sprite.png
+otrs/var/httpd/htdocs/skins/Agent/ivory/css/Core.Dialog.css
+otrs/var/httpd/htdocs/skins/Agent/ivory/img/action_hover.png
+otrs/var/httpd/htdocs/skins/Agent/ivory/img/attachment_sprite.png
+otrs/var/httpd/htdocs/skins/Agent/ivory/img/controlrow_sprite.png
+otrs/var/httpd/htdocs/skins/Agent/ivory/img/dialog_alert.png
+otrs/var/httpd/htdocs/skins/Agent/ivory/img/dialog_close.png
+otrs/var/httpd/htdocs/skins/Agent/ivory/img/logout_sprite.png
+otrs/var/httpd/htdocs/skins/Agent/ivory/img/navigation_hover.png
+otrs/var/httpd/htdocs/skins/Agent/ivory/img/navigation_sprite.png
+otrs/var/httpd/htdocs/skins/Agent/ivory/img/table_large_hover.png
+otrs/var/httpd/htdocs/skins/Agent/ivory/img/table_medium_hover.png
+otrs/var/httpd/htdocs/skins/Agent/ivory/img/table_medium_hover_bottom.png
+otrs/var/httpd/htdocs/skins/Agent/ivory/img/table_small_hover_bg.png
+otrs/var/httpd/htdocs/skins/Agent/ivory/img/toolbar_sprite.png
+otrs/var/httpd/htdocs/skins/Agent/slim/css/Core.Header.css
+otrs/var/httpd/htdocs/skins/Agent/slim/css/Core.Table.css
+otrs/var/httpd/htdocs/skins/Agent/slim/img/toolbar_sprite.png
+otrs/var/httpd/htdocs/skins/Customer/default/css/thirdparty/ui-lightness/images/ui-bg_diagonals-thick_18_b81900_40x40.png
+otrs/var/httpd/htdocs/skins/Customer/default/css/thirdparty/ui-lightness/images/ui-bg_diagonals-thick_20_666666_40x40.png
+otrs/var/httpd/htdocs/skins/Customer/default/css/thirdparty/ui-lightness/images/ui-bg_flat_10_000000_40x100.png
+otrs/var/httpd/htdocs/skins/Customer/default/css/thirdparty/ui-lightness/images/ui-bg_glass_100_f6f6f6_1x400.png
+otrs/var/httpd/htdocs/skins/Customer/default/css/thirdparty/ui-lightness/images/ui-bg_glass_100_fdf5ce_1x400.png
+otrs/var/httpd/htdocs/skins/Customer/default/css/thirdparty/ui-lightness/images/ui-bg_glass_65_ffffff_1x400.png
+otrs/var/httpd/htdocs/skins/Customer/default/css/thirdparty/ui-lightness/images/ui-bg_gloss-wave_35_f6a828_500x100.png
+otrs/var/httpd/htdocs/skins/Customer/default/css/thirdparty/ui-lightness/images/ui-bg_highlight-soft_100_eeeeee_1x100.png
+otrs/var/httpd/htdocs/skins/Customer/default/css/thirdparty/ui-lightness/images/ui-bg_highlight-soft_75_ffe45c_1x100.png
+otrs/var/httpd/htdocs/skins/Customer/default/css/thirdparty/ui-lightness/images/ui-icons_222222_256x240.png
+otrs/var/httpd/htdocs/skins/Customer/default/css/thirdparty/ui-lightness/images/ui-icons_228ef1_256x240.png
+otrs/var/httpd/htdocs/skins/Customer/default/css/thirdparty/ui-lightness/images/ui-icons_ef8c08_256x240.png
+otrs/var/httpd/htdocs/skins/Customer/default/css/thirdparty/ui-lightness/images/ui-icons_ffd27a_256x240.png
+otrs/var/httpd/htdocs/skins/Customer/default/css/thirdparty/ui-lightness/images/ui-icons_ffffff_256x240.png
+otrs/var/httpd/htdocs/skins/Customer/default/css/thirdparty/ui-lightness/jquery-ui.css
+otrs/var/httpd/htdocs/skins/Customer/default/css/thirdparty/ui-theme/images/ui-anim_basic_16x16.gif
+otrs/var/httpd/htdocs/skins/Customer/default/css/thirdparty/ui-theme/images/ui-bg_flat_0_aaaaaa_40x100.png
+otrs/var/httpd/htdocs/skins/Customer/default/css/thirdparty/ui-theme/images/ui-bg_flat_75_aaaaaa_40x100.png
+otrs/var/httpd/htdocs/skins/Customer/default/css/thirdparty/ui-theme/images/ui-bg_glass_100_f39c19_1x400.png
+otrs/var/httpd/htdocs/skins/Customer/default/css/thirdparty/ui-theme/images/ui-bg_glass_25_f39c19_1x400.png
+otrs/var/httpd/htdocs/skins/Customer/default/css/thirdparty/ui-theme/images/ui-bg_glass_55_fbf9ee_1x400.png
+otrs/var/httpd/htdocs/skins/Customer/default/css/thirdparty/ui-theme/images/ui-bg_glass_65_ffffff_1x400.png
+otrs/var/httpd/htdocs/skins/Customer/default/css/thirdparty/ui-theme/images/ui-bg_glass_70_dddddd_1x400.png
+otrs/var/httpd/htdocs/skins/Customer/default/css/thirdparty/ui-theme/images/ui-bg_glass_75_dadada_1x400.png
+otrs/var/httpd/htdocs/skins/Customer/default/css/thirdparty/ui-theme/images/ui-bg_glass_75_e6e6e6_1x400.png
+otrs/var/httpd/htdocs/skins/Customer/default/css/thirdparty/ui-theme/images/ui-bg_glass_75_ffffff_1x400.png
+otrs/var/httpd/htdocs/skins/Customer/default/css/thirdparty/ui-theme/images/ui-bg_highlight-hard_100_ffffff_1x100.png
+otrs/var/httpd/htdocs/skins/Customer/default/css/thirdparty/ui-theme/images/ui-bg_highlight-hard_65_fc5454_1x100.png
+otrs/var/httpd/htdocs/skins/Customer/default/css/thirdparty/ui-theme/images/ui-bg_highlight-hard_75_ffffff_1x100.png
+otrs/var/httpd/htdocs/skins/Customer/default/css/thirdparty/ui-theme/images/ui-bg_highlight-soft_75_cccccc_1x100.png
+otrs/var/httpd/htdocs/skins/Customer/default/css/thirdparty/ui-theme/images/ui-bg_inset-soft_100_eeeeee_1x100.png
+otrs/var/httpd/htdocs/skins/Customer/default/css/thirdparty/ui-theme/images/ui-bg_inset-soft_95_fef1ec_1x100.png
+otrs/var/httpd/htdocs/skins/Customer/default/css/thirdparty/ui-theme/images/ui-icons_000000_256x240.png
+otrs/var/httpd/htdocs/skins/Customer/default/css/thirdparty/ui-theme/images/ui-icons_222222_256x240.png
+otrs/var/httpd/htdocs/skins/Customer/default/css/thirdparty/ui-theme/images/ui-icons_2e83ff_256x240.png
+otrs/var/httpd/htdocs/skins/Customer/default/css/thirdparty/ui-theme/images/ui-icons_454545_256x240.png
+otrs/var/httpd/htdocs/skins/Customer/default/css/thirdparty/ui-theme/images/ui-icons_888888_256x240.png
+otrs/var/httpd/htdocs/skins/Customer/default/css/thirdparty/ui-theme/images/ui-icons_cd0a0a_256x240.png
+otrs/var/httpd/htdocs/skins/Customer/default/css/thirdparty/ui-theme/images/ui-icons_f39c19_256x240.png
+otrs/var/httpd/htdocs/skins/Customer/default/css/thirdparty/ui-theme/images/ui-icons_ffffff_256x240.png
+otrs/var/httpd/htdocs/skins/Customer/default/css/thirdparty/ui-theme/jquery-ui.css
+otrs/var/httpd/htdocs/skins/Customer/default/css/Core.Control.css
+otrs/var/httpd/htdocs/skins/Customer/default/css/Core.Default.css
+otrs/var/httpd/htdocs/skins/Customer/default/css/Core.Dialog.IE7.css
+otrs/var/httpd/htdocs/skins/Customer/default/css/Core.Dialog.css
+otrs/var/httpd/htdocs/skins/Customer/default/css/Core.Form.css
+otrs/var/httpd/htdocs/skins/Customer/default/css/Core.IE6.css
+otrs/var/httpd/htdocs/skins/Customer/default/css/Core.IE7.css
+otrs/var/httpd/htdocs/skins/Customer/default/css/Core.Login.css
+otrs/var/httpd/htdocs/skins/Customer/default/css/Core.Print.css
+otrs/var/httpd/htdocs/skins/Customer/default/css/Core.Reset.css
+otrs/var/httpd/htdocs/skins/Customer/default/css/Core.Table.css
+otrs/var/httpd/htdocs/skins/Customer/default/css/Core.TicketZoom.css
+otrs/var/httpd/htdocs/skins/Customer/default/css/Core.Tooltip.IE6.css
+otrs/var/httpd/htdocs/skins/Customer/default/css/Core.Tooltip.IE7.css
+otrs/var/httpd/htdocs/skins/Customer/default/css/Core.Tooltip.css
+otrs/var/httpd/htdocs/skins/Customer/default/img/icons/calendar.png
+otrs/var/httpd/htdocs/skins/Customer/default/img/GradientSmall.png
+otrs/var/httpd/htdocs/skins/Customer/default/img/accept.png
+otrs/var/httpd/htdocs/skins/Customer/default/img/actionrow_divider.png
+otrs/var/httpd/htdocs/skins/Customer/default/img/arrow_answer.png
+otrs/var/httpd/htdocs/skins/Customer/default/img/arrows.png
+otrs/var/httpd/htdocs/skins/Customer/default/img/body_bg.png
+otrs/var/httpd/htdocs/skins/Customer/default/img/bubble_tongueleft.png
+otrs/var/httpd/htdocs/skins/Customer/default/img/bubble_tongueright.png
+otrs/var/httpd/htdocs/skins/Customer/default/img/button.png
+otrs/var/httpd/htdocs/skins/Customer/default/img/button_bg.png
+otrs/var/httpd/htdocs/skins/Customer/default/img/controlrow.png
+otrs/var/httpd/htdocs/skins/Customer/default/img/controlrow_bg.png
+otrs/var/httpd/htdocs/skins/Customer/default/img/controlrow_isolator.png
+otrs/var/httpd/htdocs/skins/Customer/default/img/decline.png
+otrs/var/httpd/htdocs/skins/Customer/default/img/dialog_alert.png
+otrs/var/httpd/htdocs/skins/Customer/default/img/dialog_close.png
+otrs/var/httpd/htdocs/skins/Customer/default/img/logo.png
+otrs/var/httpd/htdocs/skins/Customer/default/img/paper-clip.png
+otrs/var/httpd/htdocs/skins/Customer/default/img/printer.png
+otrs/var/httpd/htdocs/skins/Customer/default/img/reply.png
+otrs/var/httpd/htdocs/skins/Customer/default/img/sortable_bg.png
+otrs/var/httpd/htdocs/skins/Customer/default/img/tab_isolator.png
+otrs/var/httpd/htdocs/skins/Customer/default/img/tabs_active_bg.png
+otrs/var/httpd/htdocs/skins/Customer/default/img/tabs_active_door.png
+otrs/var/httpd/htdocs/skins/Customer/default/img/tabs_isolator.png
+otrs/var/httpd/htdocs/skins/Customer/default/img/tr_bg.png
+otrs/var/httpd/htdocs/skins/Customer/default/img/tr_hover.png
+otrs/var/httpd/htdocs/skins/Customer/default/img/tr_hover_next_bg.png
+otrs/var/httpd/htdocs/skins/Customer/ivory/css/Core.Default.css
+otrs/var/packages/Support-1.2.5.opm
+otrs/var/packages/iPhoneHandle-1.0.2.opm
 otrs/var/stats/ListOfOpenTicketsSortedByTimeLeftUntilEscalationDeadlineExpires.de.xml
 otrs/var/stats/ListOfOpenTicketsSortedByTimeLeftUntilEscalationDeadlineExpires.en.xml
 otrs/var/stats/ListOfOpenTicketsSortedByTimeLeftUntilResponseDeadlineExpires.de.xml
@@ -1043,12 +863,14 @@ otrs/Kernel/Language/en.pm
 otrs/Kernel/Language/en_CA.pm
 otrs/Kernel/Language/en_GB.pm
 otrs/Kernel/Language/es.pm
+otrs/Kernel/Language/es_MX.pm
 otrs/Kernel/Language/et.pm
 otrs/Kernel/Language/fa.pm
 otrs/Kernel/Language/fi.pm
 otrs/Kernel/Language/fr.pm
 otrs/Kernel/Language/hu.pm
 otrs/Kernel/Language/it.pm
+otrs/Kernel/Language/ja.pm
 otrs/Kernel/Language/lv.pm
 otrs/Kernel/Language/nb_NO.pm
 otrs/Kernel/Language/nl.pm
@@ -1057,6 +879,8 @@ otrs/Kernel/Language/pt.pm
 otrs/Kernel/Language/pt_BR.pm
 otrs/Kernel/Language/ru.pm
 otrs/Kernel/Language/sk_SK.pm
+otrs/Kernel/Language/sr_Cyrl.pm
+otrs/Kernel/Language/sr_Latn.pm
 otrs/Kernel/Language/sv.pm
 otrs/Kernel/Language/tr.pm
 otrs/Kernel/Language/uk.pm
@@ -1109,17 +933,14 @@ otrs/Kernel/Modules/AdminUserGroup.pm
 otrs/Kernel/Modules/AgentBook.pm
 otrs/Kernel/Modules/AgentCustomerSearch.pm
 otrs/Kernel/Modules/AgentDashboard.pm
-otrs/Kernel/Modules/AgentTicketLockedView.pm
-otrs/Kernel/Modules/AgentTicketResponsibleView.pm
-otrs/Kernel/Modules/AgentTicketWatchView.pm
-otrs/Kernel/Modules/PictureUpload.pm
-otrs/Kernel/Modules/AgentCalendarSmall.pm
+otrs/Kernel/Modules/AgentHTMLReference.pm
 otrs/Kernel/Modules/AgentInfo.pm
 otrs/Kernel/Modules/AgentLinkObject.pm
-otrs/Kernel/Modules/AgentLookup.pm
 otrs/Kernel/Modules/AgentPreferences.pm
+otrs/Kernel/Modules/AgentSearch.pm
 otrs/Kernel/Modules/AgentSpelling.pm
 otrs/Kernel/Modules/AgentStats.pm
+otrs/Kernel/Modules/AgentTicketActionCommon.pm
 otrs/Kernel/Modules/AgentTicketAttachment.pm
 otrs/Kernel/Modules/AgentTicketBounce.pm
 otrs/Kernel/Modules/AgentTicketBulk.pm
@@ -1132,6 +953,7 @@ otrs/Kernel/Modules/AgentTicketForward.pm
 otrs/Kernel/Modules/AgentTicketFreeText.pm
 otrs/Kernel/Modules/AgentTicketHistory.pm
 otrs/Kernel/Modules/AgentTicketLock.pm
+otrs/Kernel/Modules/AgentTicketLockedView.pm
 otrs/Kernel/Modules/AgentTicketMailbox.pm
 otrs/Kernel/Modules/AgentTicketMerge.pm
 otrs/Kernel/Modules/AgentTicketMove.pm
@@ -1145,13 +967,15 @@ otrs/Kernel/Modules/AgentTicketPrint.pm
 otrs/Kernel/Modules/AgentTicketPriority.pm
 otrs/Kernel/Modules/AgentTicketQueue.pm
 otrs/Kernel/Modules/AgentTicketResponsible.pm
+otrs/Kernel/Modules/AgentTicketResponsibleView.pm
 otrs/Kernel/Modules/AgentTicketSearch.pm
 otrs/Kernel/Modules/AgentTicketStatusView.pm
+otrs/Kernel/Modules/AgentTicketWatchView.pm
 otrs/Kernel/Modules/AgentTicketWatcher.pm
 otrs/Kernel/Modules/AgentTicketZoom.pm
 otrs/Kernel/Modules/AgentZoom.pm
 otrs/Kernel/Modules/CustomerAccept.pm
-otrs/Kernel/Modules/CustomerCalendarSmall.pm
+otrs/Kernel/Modules/PictureUpload.pm
 otrs/Kernel/Modules/CustomerPreferences.pm
 otrs/Kernel/Modules/CustomerTicketAttachment.pm
 otrs/Kernel/Modules/CustomerTicketMessage.pm
@@ -1175,7 +999,9 @@ otrs/Kernel/Output/HTML/CustomerNewTicketQueueSelectionGeneric.pm
 otrs/Kernel/Output/HTML/CustomerUserGeneric.pm
 otrs/Kernel/Output/HTML/CustomerUserGenericTicket.pm
 otrs/Kernel/Output/HTML/DashboardCalendar.pm
+otrs/Kernel/Output/HTML/DashboardIFrame.pm
 otrs/Kernel/Output/HTML/DashboardImage.pm
+otrs/Kernel/Output/HTML/DashboardMOTD.pm
 otrs/Kernel/Output/HTML/DashboardProductNotify.pm
 otrs/Kernel/Output/HTML/DashboardRSS.pm
 otrs/Kernel/Output/HTML/DashboardTicketGeneric.pm
@@ -1185,28 +1011,16 @@ otrs/Kernel/Output/HTML/HeaderMetaRefresh.pm
 otrs/Kernel/Output/HTML/HeaderMetaTicketSearch.pm
 otrs/Kernel/Output/HTML/Layout.pm
 otrs/Kernel/Output/HTML/LayoutAJAX.pm
+otrs/Kernel/Output/HTML/LayoutDatepicker.pm
 otrs/Kernel/Output/HTML/LayoutLinkObject.pm
+otrs/Kernel/Output/HTML/LayoutLoader.pm
+otrs/Kernel/Output/HTML/LayoutPopup.pm
 otrs/Kernel/Output/HTML/LayoutTicket.pm
 otrs/Kernel/Output/HTML/LinkObjectTicket.pm
-otrs/Kernel/Output/HTML/Lite/AgentNavigationBar.dtl
-otrs/Kernel/Output/HTML/Lite/AgentTicketQueue.dtl
-otrs/Kernel/Output/HTML/Lite/Footer.dtl
-otrs/Kernel/Output/HTML/Lite/FooterSmall.dtl
-otrs/Kernel/Output/HTML/Lite/Header.dtl
-otrs/Kernel/Output/HTML/Lite/HeaderSmall.dtl
-otrs/Kernel/Output/HTML/Lite/Motd.dtl
-otrs/Kernel/Output/HTML/Lite/Notify.dtl
-otrs/Kernel/Output/HTML/Lite/Warning.dtl
 otrs/Kernel/Output/HTML/NavBarCustomerCompany.pm
-otrs/Kernel/Output/HTML/NavBarLockedTickets.pm
 otrs/Kernel/Output/HTML/NavBarModuleAdmin.pm
-otrs/Kernel/Output/HTML/NavBarTicketSearchFulltext.pm
-otrs/Kernel/Output/HTML/NavBarTicketSearchProfile.pm
-otrs/Kernel/Output/HTML/NavBarTicketWatcher.pm
 otrs/Kernel/Output/HTML/NotificationAgentOnline.pm
-otrs/Kernel/Output/HTML/NotificationAgentTicket.pm
 otrs/Kernel/Output/HTML/NotificationAgentTicketEscalation.pm
-otrs/Kernel/Output/HTML/NotificationAgentTicketSeen.pm
 otrs/Kernel/Output/HTML/NotificationCharsetCheck.pm
 otrs/Kernel/Output/HTML/NotificationCustomerOnline.pm
 otrs/Kernel/Output/HTML/NotificationUIDCheck.pm
@@ -1219,6 +1033,7 @@ otrs/Kernel/Output/HTML/PreferencesOutOfOffice.pm
 otrs/Kernel/Output/HTML/PreferencesPGP.pm
 otrs/Kernel/Output/HTML/PreferencesPassword.pm
 otrs/Kernel/Output/HTML/PreferencesSMIME.pm
+otrs/Kernel/Output/HTML/PreferencesSkin.pm
 otrs/Kernel/Output/HTML/PreferencesTheme.pm
 otrs/Kernel/Output/HTML/PreferencesTicketWatcher.pm
 otrs/Kernel/Output/HTML/PreferencesTimeZone.pm
@@ -1227,78 +1042,71 @@ otrs/Kernel/Output/HTML/SLAPreferencesGeneric.pm
 otrs/Kernel/Output/HTML/ServicePreferencesGeneric.pm
 otrs/Kernel/Output/HTML/Standard/AAABase.dtl
 otrs/Kernel/Output/HTML/Standard/AAAMonth.dtl
-otrs/Kernel/Output/HTML/Standard/AAANavBar.dtl
 otrs/Kernel/Output/HTML/Standard/AAAPreferences.dtl
 otrs/Kernel/Output/HTML/Standard/AAAStats.dtl
 otrs/Kernel/Output/HTML/Standard/AAATicket.dtl
 otrs/Kernel/Output/HTML/Standard/AAAWeekDay.dtl
-otrs/Kernel/Output/HTML/Standard/AJAX.dtl
-otrs/Kernel/Output/HTML/Standard/AdminAttachmentForm.dtl
-otrs/Kernel/Output/HTML/Standard/AdminAutoResponseForm.dtl
-otrs/Kernel/Output/HTML/Standard/AdminCustomerCompanyForm.dtl
-otrs/Kernel/Output/HTML/Standard/AdminCustomerUserForm.dtl
-otrs/Kernel/Output/HTML/Standard/AdminCustomerUserGroupChangeForm.dtl
-otrs/Kernel/Output/HTML/Standard/AdminCustomerUserGroupForm.dtl
+otrs/Kernel/Output/HTML/Standard/AdminAttachment.dtl
+otrs/Kernel/Output/HTML/Standard/AdminAutoResponse.dtl
+otrs/Kernel/Output/HTML/Standard/AdminCustomerCompany.dtl
+otrs/Kernel/Output/HTML/Standard/AdminCustomerUser.dtl
+otrs/Kernel/Output/HTML/Standard/AdminCustomerUserGroup.dtl
 otrs/Kernel/Output/HTML/Standard/AdminCustomerUserService.dtl
 otrs/Kernel/Output/HTML/Standard/AdminEmail.dtl
 otrs/Kernel/Output/HTML/Standard/AdminGenericAgent.dtl
-otrs/Kernel/Output/HTML/Standard/AdminGroupForm.dtl
+otrs/Kernel/Output/HTML/Standard/AdminGroup.dtl
 otrs/Kernel/Output/HTML/Standard/AdminLog.dtl
 otrs/Kernel/Output/HTML/Standard/AdminMailAccount.dtl
 otrs/Kernel/Output/HTML/Standard/AdminNavigationBar.dtl
-otrs/Kernel/Output/HTML/Standard/AdminNotificationEventForm.dtl
-otrs/Kernel/Output/HTML/Standard/AdminNotificationForm.dtl
-otrs/Kernel/Output/HTML/Standard/AdminPGPForm.dtl
+otrs/Kernel/Output/HTML/Standard/AdminNotification.dtl
+otrs/Kernel/Output/HTML/Standard/AdminNotificationEvent.dtl
+otrs/Kernel/Output/HTML/Standard/AdminPGP.dtl
 otrs/Kernel/Output/HTML/Standard/AdminPackageManager.dtl
 otrs/Kernel/Output/HTML/Standard/AdminPerformanceLog.dtl
 otrs/Kernel/Output/HTML/Standard/AdminPostMasterFilter.dtl
 otrs/Kernel/Output/HTML/Standard/AdminPriority.dtl
-otrs/Kernel/Output/HTML/Standard/AdminQueueAutoResponseForm.dtl
-otrs/Kernel/Output/HTML/Standard/AdminQueueForm.dtl
-otrs/Kernel/Output/HTML/Standard/AdminQueueResponsesChangeForm.dtl
-otrs/Kernel/Output/HTML/Standard/AdminQueueResponsesForm.dtl
-otrs/Kernel/Output/HTML/Standard/AdminResponseAttachmentChangeForm.dtl
-otrs/Kernel/Output/HTML/Standard/AdminResponseAttachmentForm.dtl
-otrs/Kernel/Output/HTML/Standard/AdminResponseForm.dtl
-otrs/Kernel/Output/HTML/Standard/AdminRoleForm.dtl
-otrs/Kernel/Output/HTML/Standard/AdminRoleGroupChangeForm.dtl
-otrs/Kernel/Output/HTML/Standard/AdminRoleGroupForm.dtl
-otrs/Kernel/Output/HTML/Standard/AdminRoleUserChangeForm.dtl
-otrs/Kernel/Output/HTML/Standard/AdminRoleUserForm.dtl
+otrs/Kernel/Output/HTML/Standard/AdminQueue.dtl
+otrs/Kernel/Output/HTML/Standard/AdminQueueAutoResponse.dtl
+otrs/Kernel/Output/HTML/Standard/AdminQueueResponses.dtl
+otrs/Kernel/Output/HTML/Standard/AdminResponse.dtl
+otrs/Kernel/Output/HTML/Standard/AdminResponseAttachment.dtl
+otrs/Kernel/Output/HTML/Standard/AdminRole.dtl
+otrs/Kernel/Output/HTML/Standard/AdminRoleGroup.dtl
+otrs/Kernel/Output/HTML/Standard/AdminRoleUser.dtl
 otrs/Kernel/Output/HTML/Standard/AdminSLA.dtl
-otrs/Kernel/Output/HTML/Standard/AdminSMIMEForm.dtl
-otrs/Kernel/Output/HTML/Standard/AdminSalutationForm.dtl
+otrs/Kernel/Output/HTML/Standard/AdminSMIME.dtl
+otrs/Kernel/Output/HTML/Standard/AdminSalutation.dtl
 otrs/Kernel/Output/HTML/Standard/AdminSecureMode.dtl
-otrs/Kernel/Output/HTML/Standard/AdminSelectBoxForm.dtl
+otrs/Kernel/Output/HTML/Standard/AdminSelectBox.dtl
 otrs/Kernel/Output/HTML/Standard/AdminService.dtl
 otrs/Kernel/Output/HTML/Standard/AdminSession.dtl
-otrs/Kernel/Output/HTML/Standard/AdminSignatureForm.dtl
-otrs/Kernel/Output/HTML/Standard/AdminStateForm.dtl
+otrs/Kernel/Output/HTML/Standard/AdminSignature.dtl
+otrs/Kernel/Output/HTML/Standard/AdminState.dtl
 otrs/Kernel/Output/HTML/Standard/AdminSysConfig.dtl
 otrs/Kernel/Output/HTML/Standard/AdminSysConfigEdit.dtl
-otrs/Kernel/Output/HTML/Standard/AdminSystemAddressForm.dtl
-otrs/Kernel/Output/HTML/Standard/AdminTypeForm.dtl
-otrs/Kernel/Output/HTML/Standard/AdminUserForm.dtl
-otrs/Kernel/Output/HTML/Standard/AdminUserGroupChangeForm.dtl
-otrs/Kernel/Output/HTML/Standard/AdminUserGroupForm.dtl
+otrs/Kernel/Output/HTML/Standard/AdminSystemAddress.dtl
+otrs/Kernel/Output/HTML/Standard/AdminType.dtl
+otrs/Kernel/Output/HTML/Standard/AdminUser.dtl
+otrs/Kernel/Output/HTML/Standard/AdminUserGroup.dtl
 otrs/Kernel/Output/HTML/Standard/AgentBook.dtl
-otrs/Kernel/Output/HTML/Standard/AgentCalendarSmall.dtl
-otrs/Kernel/Output/HTML/Standard/AgentCalendarSmallIcon.dtl
 otrs/Kernel/Output/HTML/Standard/AgentCustomerSearch.dtl
 otrs/Kernel/Output/HTML/Standard/AgentCustomerTableView.dtl
 otrs/Kernel/Output/HTML/Standard/AgentDashboard.dtl
 otrs/Kernel/Output/HTML/Standard/AgentDashboardCalendarOverview.dtl
+otrs/Kernel/Output/HTML/Standard/AgentDashboardIFrame.dtl
 otrs/Kernel/Output/HTML/Standard/AgentDashboardImage.dtl
 otrs/Kernel/Output/HTML/Standard/AgentDashboardProductNotify.dtl
 otrs/Kernel/Output/HTML/Standard/AgentDashboardRSSOverview.dtl
 otrs/Kernel/Output/HTML/Standard/AgentDashboardTicketGeneric.dtl
 otrs/Kernel/Output/HTML/Standard/AgentDashboardTicketStats.dtl
 otrs/Kernel/Output/HTML/Standard/AgentDashboardUserOnline.dtl
+otrs/Kernel/Output/HTML/Standard/AgentHTMLReferenceForms.dtl
+otrs/Kernel/Output/HTML/Standard/AgentHTMLReferenceOverview.dtl
+otrs/Kernel/Output/HTML/Standard/AgentHTMLReferencePageLayout.dtl
 otrs/Kernel/Output/HTML/Standard/AgentInfo.dtl
 otrs/Kernel/Output/HTML/Standard/AgentLinkObject.dtl
-otrs/Kernel/Output/HTML/Standard/AgentLookup.dtl
 otrs/Kernel/Output/HTML/Standard/AgentNavigationBar.dtl
-otrs/Kernel/Output/HTML/Standard/AgentPreferencesForm.dtl
+otrs/Kernel/Output/HTML/Standard/AgentPreferences.dtl
 otrs/Kernel/Output/HTML/Standard/AgentSpelling.dtl
 otrs/Kernel/Output/HTML/Standard/AgentStatsDelete.dtl
 otrs/Kernel/Output/HTML/Standard/AgentStatsEditRestrictions.dtl
@@ -1309,6 +1117,8 @@ otrs/Kernel/Output/HTML/Standard/AgentStatsImport.dtl
 otrs/Kernel/Output/HTML/Standard/AgentStatsOverview.dtl
 otrs/Kernel/Output/HTML/Standard/AgentStatsPrint.dtl
 otrs/Kernel/Output/HTML/Standard/AgentStatsView.dtl
+otrs/Kernel/Output/HTML/Standard/AgentTicketActionCommon.dtl
+otrs/Kernel/Output/HTML/Standard/AgentTicketActionPopupClose.dtl
 otrs/Kernel/Output/HTML/Standard/AgentTicketBounce.dtl
 otrs/Kernel/Output/HTML/Standard/AgentTicketBulk.dtl
 otrs/Kernel/Output/HTML/Standard/AgentTicketClose.dtl
@@ -1319,16 +1129,12 @@ otrs/Kernel/Output/HTML/Standard/AgentTicketEscalation.dtl
 otrs/Kernel/Output/HTML/Standard/AgentTicketForward.dtl
 otrs/Kernel/Output/HTML/Standard/AgentTicketFreeText.dtl
 otrs/Kernel/Output/HTML/Standard/AgentTicketHistory.dtl
-otrs/Kernel/Output/HTML/Standard/AgentTicketLocked.dtl
 otrs/Kernel/Output/HTML/Standard/AgentTicketMerge.dtl
 otrs/Kernel/Output/HTML/Standard/AgentTicketMove.dtl
 otrs/Kernel/Output/HTML/Standard/AgentTicketNote.dtl
 otrs/Kernel/Output/HTML/Standard/AgentTicketOverviewMedium.dtl
-otrs/Kernel/Output/HTML/Standard/AgentTicketOverviewMediumMeta.dtl
 otrs/Kernel/Output/HTML/Standard/AgentTicketOverviewNavBar.dtl
-otrs/Kernel/Output/HTML/Standard/AgentTicketOverviewNavBarSmall.dtl
 otrs/Kernel/Output/HTML/Standard/AgentTicketOverviewPreview.dtl
-otrs/Kernel/Output/HTML/Standard/AgentTicketOverviewPreviewMeta.dtl
 otrs/Kernel/Output/HTML/Standard/AgentTicketOverviewSmall.dtl
 otrs/Kernel/Output/HTML/Standard/AgentTicketOwner.dtl
 otrs/Kernel/Output/HTML/Standard/AgentTicketPending.dtl
@@ -1344,41 +1150,49 @@ otrs/Kernel/Output/HTML/Standard/AgentTicketSearchOpenSearchDescriptionFulltext.
 otrs/Kernel/Output/HTML/Standard/AgentTicketSearchOpenSearchDescriptionTicketNumber.dtl
 otrs/Kernel/Output/HTML/Standard/AgentTicketSearchResultPrint.dtl
 otrs/Kernel/Output/HTML/Standard/AgentTicketZoom.dtl
-otrs/Kernel/Output/HTML/Standard/AgentTicketZoomArticleFilterDialog.dtl
-otrs/Kernel/Output/HTML/Standard/AgentWindowTab.dtl
 otrs/Kernel/Output/HTML/Standard/AttachmentBlocker.dtl
 otrs/Kernel/Output/HTML/Standard/Copyright.dtl
 otrs/Kernel/Output/HTML/Standard/CustomerAccept.dtl
-otrs/Kernel/Output/HTML/Standard/CustomerCalendarSmallIcon.dtl
 otrs/Kernel/Output/HTML/Standard/CustomerError.dtl
 otrs/Kernel/Output/HTML/Standard/CustomerFooter.dtl
-otrs/Kernel/Output/HTML/Standard/CustomerFooterSmall.dtl
 otrs/Kernel/Output/HTML/Standard/CustomerHeader.dtl
-otrs/Kernel/Output/HTML/Standard/CustomerHeaderSmall.dtl
 otrs/Kernel/Output/HTML/Standard/CustomerLogin.dtl
 otrs/Kernel/Output/HTML/Standard/CustomerNavigationBar.dtl
-otrs/Kernel/Output/HTML/Standard/CustomerPreferencesForm.dtl
-otrs/Kernel/Output/HTML/Standard/CustomerStatusView.dtl
+otrs/Kernel/Output/HTML/Standard/CustomerPreferences.dtl
+otrs/Kernel/Output/HTML/Standard/CustomerRichTextEditor.dtl
 otrs/Kernel/Output/HTML/Standard/CustomerTicketMessage.dtl
+otrs/Kernel/Output/HTML/Standard/CustomerTicketOverView.dtl
 otrs/Kernel/Output/HTML/Standard/CustomerTicketPrint.dtl
 otrs/Kernel/Output/HTML/Standard/CustomerTicketSearch.dtl
 otrs/Kernel/Output/HTML/Standard/CustomerTicketSearchOpenSearchDescription.dtl
-otrs/Kernel/Output/HTML/Standard/CustomerTicketSearchResultCSV.dtl
 otrs/Kernel/Output/HTML/Standard/CustomerTicketSearchResultPrint.dtl
 otrs/Kernel/Output/HTML/Standard/CustomerTicketSearchResultShort.dtl
 otrs/Kernel/Output/HTML/Standard/CustomerTicketZoom.dtl
 otrs/Kernel/Output/HTML/Standard/CustomerWarning.dtl
+otrs/Kernel/Output/HTML/Standard/Datepicker.dtl
 otrs/Kernel/Output/HTML/Standard/Error.dtl
 otrs/Kernel/Output/HTML/Standard/Footer.dtl
+otrs/Kernel/Output/HTML/Standard/FooterJS.dtl
 otrs/Kernel/Output/HTML/Standard/FooterSmall.dtl
+otrs/Kernel/Output/HTML/Standard/HTMLHead.dtl
+otrs/Kernel/Output/HTML/Standard/HTMLHeadBlockEvents.dtl
 otrs/Kernel/Output/HTML/Standard/Header.dtl
 otrs/Kernel/Output/HTML/Standard/HeaderSmall.dtl
 otrs/Kernel/Output/HTML/Standard/Installer.dtl
+otrs/Kernel/Output/HTML/Standard/InstallerConfigureMail.dtl
+otrs/Kernel/Output/HTML/Standard/InstallerDBResult.dtl
+otrs/Kernel/Output/HTML/Standard/InstallerDBStart.dtl
+otrs/Kernel/Output/HTML/Standard/InstallerFinish.dtl
+otrs/Kernel/Output/HTML/Standard/InstallerLicense.dtl
+otrs/Kernel/Output/HTML/Standard/InstallerLicenseText.dtl
+otrs/Kernel/Output/HTML/Standard/InstallerSystem.dtl
 otrs/Kernel/Output/HTML/Standard/LinkObject.dtl
 otrs/Kernel/Output/HTML/Standard/Login.dtl
 otrs/Kernel/Output/HTML/Standard/Motd.dtl
 otrs/Kernel/Output/HTML/Standard/NoPermission.dtl
 otrs/Kernel/Output/HTML/Standard/Notify.dtl
+otrs/Kernel/Output/HTML/Standard/Pagination.dtl
+otrs/Kernel/Output/HTML/Standard/PictureUpload.dtl
 otrs/Kernel/Output/HTML/Standard/PrintFooter.dtl
 otrs/Kernel/Output/HTML/Standard/PrintHeader.dtl
 otrs/Kernel/Output/HTML/Standard/PublicDefault.dtl
@@ -1389,11 +1203,18 @@ otrs/Kernel/Output/HTML/Standard/Test.dtl
 otrs/Kernel/Output/HTML/Standard/Warning.dtl
 otrs/Kernel/Output/HTML/TicketMenuGeneric.pm
 otrs/Kernel/Output/HTML/TicketMenuLock.pm
+otrs/Kernel/Output/HTML/TicketMenuMove.pm
 otrs/Kernel/Output/HTML/TicketMenuResponsible.pm
 otrs/Kernel/Output/HTML/TicketMenuTicketWatcher.pm
 otrs/Kernel/Output/HTML/TicketOverviewMedium.pm
 otrs/Kernel/Output/HTML/TicketOverviewPreview.pm
 otrs/Kernel/Output/HTML/TicketOverviewSmall.pm
+otrs/Kernel/Output/HTML/ToolBarLink.pm
+otrs/Kernel/Output/HTML/ToolBarTicketLocked.pm
+otrs/Kernel/Output/HTML/ToolBarTicketResponsible.pm
+otrs/Kernel/Output/HTML/ToolBarTicketSearchFulltext.pm
+otrs/Kernel/Output/HTML/ToolBarTicketSearchProfile.pm
+otrs/Kernel/Output/HTML/ToolBarTicketWatcher.pm
 otrs/Kernel/System/Auth.pm
 otrs/Kernel/System/Auth/DB.pm
 otrs/Kernel/System/Auth/HTTPBasicAuth.pm
@@ -1403,13 +1224,13 @@ otrs/Kernel/System/Auth/Sync/LDAP.pm
 otrs/Kernel/System/AuthSession.pm
 otrs/Kernel/System/AuthSession/DB.pm
 otrs/Kernel/System/AuthSession/FS.pm
-otrs/Kernel/System/AuthSession/IPC.pm
 otrs/Kernel/System/AutoResponse.pm
 otrs/Kernel/System/CSV.pm
 otrs/Kernel/System/Cache.pm
-otrs/Kernel/System/Cache/File.pm
+otrs/Kernel/System/Cache/FileRaw.pm
+otrs/Kernel/System/Cache/FileStorable.pm
+otrs/Kernel/System/CacheInternal.pm
 otrs/Kernel/System/CheckItem.pm
-otrs/Kernel/System/Config.pm
 otrs/Kernel/System/Crypt.pm
 otrs/Kernel/System/Crypt/PGP.pm
 otrs/Kernel/System/Crypt/SMIME.pm
@@ -1435,9 +1256,11 @@ otrs/Kernel/System/Email.pm
 otrs/Kernel/System/Email/DoNotSendEmail.pm
 otrs/Kernel/System/Email/SMTP.pm
 otrs/Kernel/System/Email/SMTPS.pm
+otrs/Kernel/System/Email/SMTPTLS.pm
 otrs/Kernel/System/Email/Sendmail.pm
 otrs/Kernel/System/EmailParser.pm
 otrs/Kernel/System/Encode.pm
+otrs/Kernel/System/EventHandler.pm
 otrs/Kernel/System/FileTemp.pm
 otrs/Kernel/System/GenericAgent.pm
 otrs/Kernel/System/GenericAgent/AutoPriorityIncrease.pm
@@ -1445,8 +1268,10 @@ otrs/Kernel/System/GenericAgent/NotifyAgentGroupOfCustomQueue.pm
 otrs/Kernel/System/GenericAgent/NotifyAgentGroupWithWritePermission.pm
 otrs/Kernel/System/Group.pm
 otrs/Kernel/System/HTMLUtils.pm
+otrs/Kernel/System/JSON.pm
 otrs/Kernel/System/LinkObject.pm
 otrs/Kernel/System/LinkObject/Ticket.pm
+otrs/Kernel/System/Loader.pm
 otrs/Kernel/System/Lock.pm
 otrs/Kernel/System/Log.pm
 otrs/Kernel/System/Log/File.pm
@@ -1487,6 +1312,7 @@ otrs/Kernel/System/Service.pm
 otrs/Kernel/System/Service/PreferencesDB.pm
 otrs/Kernel/System/Signature.pm
 otrs/Kernel/System/Spelling.pm
+otrs/Kernel/System/StandardResponse.pm
 otrs/Kernel/System/State.pm
 otrs/Kernel/System/Stats.pm
 otrs/Kernel/System/Stats/Dynamic/Ticket.pm
@@ -1495,7 +1321,10 @@ otrs/Kernel/System/Stats/Dynamic/TicketList.pm
 otrs/Kernel/System/Stats/Dynamic/TicketSolutionResponseTime.pm
 otrs/Kernel/System/Stats/Static/StateAction.pm
 otrs/Kernel/System/StdAttachment.pm
-otrs/Kernel/System/StdResponse.pm
+otrs/Kernel/System/SysConfig.pm
+otrs/Kernel/System/SysConfig/PriorityValidate.pm
+otrs/Kernel/System/SysConfig/QueueValidate.pm
+otrs/Kernel/System/SysConfig/StateValidate.pm
 otrs/Kernel/System/SystemAddress.pm
 otrs/Kernel/System/TemplateGenerator.pm
 otrs/Kernel/System/Ticket.pm
@@ -1509,6 +1338,7 @@ otrs/Kernel/System/Ticket/Custom.pm.example
 otrs/Kernel/System/Ticket/CustomerPermission/CustomerIDCheck.pm
 otrs/Kernel/System/Ticket/CustomerPermission/CustomerUserIDCheck.pm
 otrs/Kernel/System/Ticket/CustomerPermission/GroupCheck.pm
+otrs/Kernel/System/Ticket/Event/ArchiveRestore.pm
 otrs/Kernel/System/Ticket/Event/ArticleSearchIndex.pm
 otrs/Kernel/System/Ticket/Event/ForceOwnerReset.pm
 otrs/Kernel/System/Ticket/Event/ForceState.pm
@@ -1519,6 +1349,8 @@ otrs/Kernel/System/Ticket/Event/Test.pm
 otrs/Kernel/System/Ticket/Event/TicketAcceleratorUpdate.pm
 otrs/Kernel/System/Ticket/Event/TicketEscalationIndex.pm
 otrs/Kernel/System/Ticket/Event/TicketFreeFieldDefault.pm
+otrs/Kernel/System/Ticket/Event/TicketNewMessageUpdate.pm
+otrs/Kernel/System/Ticket/Event/TicketPendingTimeReset.pm
 otrs/Kernel/System/Ticket/IndexAccelerator/RuntimeDB.pm
 otrs/Kernel/System/Ticket/IndexAccelerator/StaticDB.pm
 otrs/Kernel/System/Ticket/Number/AutoIncrement.pm
@@ -1532,9 +1364,13 @@ otrs/Kernel/System/Ticket/Permission/WatcherCheck.pm
 otrs/Kernel/System/Time.pm
 otrs/Kernel/System/Type.pm
 otrs/Kernel/System/UnitTest.pm
+otrs/Kernel/System/UnitTest/Selenium.pm
 otrs/Kernel/System/User.pm
 otrs/Kernel/System/User/Preferences/DB.pm
 otrs/Kernel/System/Valid.pm
+otrs/Kernel/System/VirtualFS.pm
+otrs/Kernel/System/VirtualFS/DB.pm
+otrs/Kernel/System/VirtualFS/FS.pm
 otrs/Kernel/System/Web/InterfaceAgent.pm
 otrs/Kernel/System/Web/InterfaceCustomer.pm
 otrs/Kernel/System/Web/InterfaceInstaller.pm
@@ -1546,12 +1382,12 @@ otrs/Kernel/System/Web/UploadCache/FS.pm
 otrs/Kernel/System/WebUserAgent.pm
 otrs/Kernel/System/XML.pm
 otrs/Kernel/System/XMLMaster.pm
-@dirrm otrs/Kernel/System/XMLMaster
 @dirrm otrs/Kernel/System/Web/UploadCache
 @dirrm otrs/Kernel/System/Web
 @dirrm otrs/Kernel/System/VirtualFS
 @dirrm otrs/Kernel/System/User/Preferences
 @dirrm otrs/Kernel/System/User
+@dirrm otrs/Kernel/System/UnitTest
 @dirrm otrs/Kernel/System/Ticket/Permission
 @dirrm otrs/Kernel/System/Ticket/Number
 @dirrm otrs/Kernel/System/Ticket/IndexAccelerator
@@ -1585,11 +1421,8 @@ otrs/Kernel/System/XMLMaster.pm
 @dirrm otrs/Kernel/System/Auth/Sync
 @dirrm otrs/Kernel/System/Auth
 @dirrm otrs/Kernel/System
-@dirrm otrs/Kernel/Output/XML
 @dirrm otrs/Kernel/Output/HTML/Standard
-@dirrm otrs/Kernel/Output/HTML/Lite
 @dirrm otrs/Kernel/Output/HTML
-@dirrm otrs/Kernel/Output/ASCII
 @dirrm otrs/Kernel/Output
 @dirrm otrs/Kernel/Modules
 @dirrm otrs/Kernel/Language
@@ -1600,174 +1433,131 @@ otrs/Kernel/System/XMLMaster.pm
 @dirrmtry otrs/var/tmp
 @dirrmtry otrs/var/spool
 @dirrmtry otrs/var/sessions
-@dirrm otrs/var/pics/stats
-@dirrm otrs/var/pics/images
-@dirrm otrs/var/pics
 @dirrmtry otrs/var/log
 @dirrmtry otrs/var/stats
 @dirrm otrs/var/packages
-@dirrm otrs/var/httpd/htdocs/yui/2.7.0/build/yuitest/assets/skins/sam
-@dirrm otrs/var/httpd/htdocs/yui/2.7.0/build/yuitest/assets/skins
-@dirrm otrs/var/httpd/htdocs/yui/2.7.0/build/yuitest/assets
-@dirrm otrs/var/httpd/htdocs/yui/2.7.0/build/yuitest
-@dirrm otrs/var/httpd/htdocs/yui/2.7.0/build/yuiloader-dom-event
-@dirrm otrs/var/httpd/htdocs/yui/2.7.0/build/yuiloader
-@dirrm otrs/var/httpd/htdocs/yui/2.7.0/build/yahoo-dom-event
-@dirrm otrs/var/httpd/htdocs/yui/2.7.0/build/yahoo
-@dirrm otrs/var/httpd/htdocs/yui/2.7.0/build/utilities
-@dirrm otrs/var/httpd/htdocs/yui/2.7.0/build/uploader/assets
-@dirrm otrs/var/httpd/htdocs/yui/2.7.0/build/uploader
-@dirrm otrs/var/httpd/htdocs/yui/2.7.0/build/treeview/assets/skins/sam
-@dirrm otrs/var/httpd/htdocs/yui/2.7.0/build/treeview/assets/skins
-@dirrm otrs/var/httpd/htdocs/yui/2.7.0/build/treeview/assets
-@dirrm otrs/var/httpd/htdocs/yui/2.7.0/build/treeview
-@dirrm otrs/var/httpd/htdocs/yui/2.7.0/build/tabview/assets/skins/sam
-@dirrm otrs/var/httpd/htdocs/yui/2.7.0/build/tabview/assets/skins
-@dirrm otrs/var/httpd/htdocs/yui/2.7.0/build/tabview/assets
-@dirrm otrs/var/httpd/htdocs/yui/2.7.0/build/tabview
-@dirrm otrs/var/httpd/htdocs/yui/2.7.0/build/stylesheet
-@dirrm otrs/var/httpd/htdocs/yui/2.7.0/build/slider/assets/skins/sam
-@dirrm otrs/var/httpd/htdocs/yui/2.7.0/build/slider/assets/skins
-@dirrm otrs/var/httpd/htdocs/yui/2.7.0/build/slider/assets
-@dirrm otrs/var/httpd/htdocs/yui/2.7.0/build/slider
-@dirrm otrs/var/httpd/htdocs/yui/2.7.0/build/selector
-@dirrm otrs/var/httpd/htdocs/yui/2.7.0/build/resize/assets/skins/sam
-@dirrm otrs/var/httpd/htdocs/yui/2.7.0/build/resize/assets/skins
-@dirrm otrs/var/httpd/htdocs/yui/2.7.0/build/resize/assets
-@dirrm otrs/var/httpd/htdocs/yui/2.7.0/build/resize
-@dirrm otrs/var/httpd/htdocs/yui/2.7.0/build/reset-fonts-grids
-@dirrm otrs/var/httpd/htdocs/yui/2.7.0/build/reset-fonts
-@dirrm otrs/var/httpd/htdocs/yui/2.7.0/build/reset
-@dirrm otrs/var/httpd/htdocs/yui/2.7.0/build/profilerviewer/assets/skins/sam
-@dirrm otrs/var/httpd/htdocs/yui/2.7.0/build/profilerviewer/assets/skins
-@dirrm otrs/var/httpd/htdocs/yui/2.7.0/build/profilerviewer/assets
-@dirrm otrs/var/httpd/htdocs/yui/2.7.0/build/profilerviewer
-@dirrm otrs/var/httpd/htdocs/yui/2.7.0/build/profiler
-@dirrm otrs/var/httpd/htdocs/yui/2.7.0/build/paginator/assets/skins/sam
-@dirrm otrs/var/httpd/htdocs/yui/2.7.0/build/paginator/assets/skins
-@dirrm otrs/var/httpd/htdocs/yui/2.7.0/build/paginator/assets
-@dirrm otrs/var/httpd/htdocs/yui/2.7.0/build/paginator
-@dirrm otrs/var/httpd/htdocs/yui/2.7.0/build/menu/assets/skins/sam
-@dirrm otrs/var/httpd/htdocs/yui/2.7.0/build/menu/assets/skins
-@dirrm otrs/var/httpd/htdocs/yui/2.7.0/build/menu/assets
-@dirrm otrs/var/httpd/htdocs/yui/2.7.0/build/menu
-@dirrm otrs/var/httpd/htdocs/yui/2.7.0/build/logger/assets/skins/sam
-@dirrm otrs/var/httpd/htdocs/yui/2.7.0/build/logger/assets/skins
-@dirrm otrs/var/httpd/htdocs/yui/2.7.0/build/logger/assets
-@dirrm otrs/var/httpd/htdocs/yui/2.7.0/build/logger
-@dirrm otrs/var/httpd/htdocs/yui/2.7.0/build/layout/assets/skins/sam
-@dirrm otrs/var/httpd/htdocs/yui/2.7.0/build/layout/assets/skins
-@dirrm otrs/var/httpd/htdocs/yui/2.7.0/build/layout/assets
-@dirrm otrs/var/httpd/htdocs/yui/2.7.0/build/layout
-@dirrm otrs/var/httpd/htdocs/yui/2.7.0/build/json
-@dirrm otrs/var/httpd/htdocs/yui/2.7.0/build/imageloader
-@dirrm otrs/var/httpd/htdocs/yui/2.7.0/build/imagecropper/assets/skins/sam
-@dirrm otrs/var/httpd/htdocs/yui/2.7.0/build/imagecropper/assets/skins
-@dirrm otrs/var/httpd/htdocs/yui/2.7.0/build/imagecropper/assets
-@dirrm otrs/var/httpd/htdocs/yui/2.7.0/build/imagecropper
-@dirrm otrs/var/httpd/htdocs/yui/2.7.0/build/history/assets
-@dirrm otrs/var/httpd/htdocs/yui/2.7.0/build/history
-@dirrm otrs/var/httpd/htdocs/yui/2.7.0/build/grids
-@dirrm otrs/var/httpd/htdocs/yui/2.7.0/build/get
-@dirrm otrs/var/httpd/htdocs/yui/2.7.0/build/fonts
-@dirrm otrs/var/httpd/htdocs/yui/2.7.0/build/event
-@dirrm otrs/var/httpd/htdocs/yui/2.7.0/build/element
-@dirrm otrs/var/httpd/htdocs/yui/2.7.0/build/editor/assets/skins/sam
-@dirrm otrs/var/httpd/htdocs/yui/2.7.0/build/editor/assets/skins
-@dirrm otrs/var/httpd/htdocs/yui/2.7.0/build/editor/assets
-@dirrm otrs/var/httpd/htdocs/yui/2.7.0/build/editor
-@dirrm otrs/var/httpd/htdocs/yui/2.7.0/build/dragdrop
-@dirrm otrs/var/httpd/htdocs/yui/2.7.0/build/dom
-@dirrm otrs/var/httpd/htdocs/yui/2.7.0/build/datatable/assets/skins/sam
-@dirrm otrs/var/httpd/htdocs/yui/2.7.0/build/datatable/assets/skins
-@dirrm otrs/var/httpd/htdocs/yui/2.7.0/build/datatable/assets
-@dirrm otrs/var/httpd/htdocs/yui/2.7.0/build/datatable
-@dirrm otrs/var/httpd/htdocs/yui/2.7.0/build/datasource
-@dirrm otrs/var/httpd/htdocs/yui/2.7.0/build/cookie
-@dirrm otrs/var/httpd/htdocs/yui/2.7.0/build/container/assets/skins/sam
-@dirrm otrs/var/httpd/htdocs/yui/2.7.0/build/container/assets/skins
-@dirrm otrs/var/httpd/htdocs/yui/2.7.0/build/container/assets
-@dirrm otrs/var/httpd/htdocs/yui/2.7.0/build/container
-@dirrm otrs/var/httpd/htdocs/yui/2.7.0/build/connection
-@dirrm otrs/var/httpd/htdocs/yui/2.7.0/build/colorpicker/assets/skins/sam
-@dirrm otrs/var/httpd/htdocs/yui/2.7.0/build/colorpicker/assets/skins
-@dirrm otrs/var/httpd/htdocs/yui/2.7.0/build/colorpicker/assets
-@dirrm otrs/var/httpd/htdocs/yui/2.7.0/build/colorpicker
-@dirrm otrs/var/httpd/htdocs/yui/2.7.0/build/charts/assets
-@dirrm otrs/var/httpd/htdocs/yui/2.7.0/build/charts
-@dirrm otrs/var/httpd/htdocs/yui/2.7.0/build/carousel/assets/skins/sam
-@dirrm otrs/var/httpd/htdocs/yui/2.7.0/build/carousel/assets/skins
-@dirrm otrs/var/httpd/htdocs/yui/2.7.0/build/carousel/assets
-@dirrm otrs/var/httpd/htdocs/yui/2.7.0/build/carousel
-@dirrm otrs/var/httpd/htdocs/yui/2.7.0/build/calendar/assets/skins/sam
-@dirrm otrs/var/httpd/htdocs/yui/2.7.0/build/calendar/assets/skins
-@dirrm otrs/var/httpd/htdocs/yui/2.7.0/build/calendar/assets
-@dirrm otrs/var/httpd/htdocs/yui/2.7.0/build/calendar
-@dirrm otrs/var/httpd/htdocs/yui/2.7.0/build/button/assets/skins/sam
-@dirrm otrs/var/httpd/htdocs/yui/2.7.0/build/button/assets/skins
-@dirrm otrs/var/httpd/htdocs/yui/2.7.0/build/button/assets
-@dirrm otrs/var/httpd/htdocs/yui/2.7.0/build/button
-@dirrm otrs/var/httpd/htdocs/yui/2.7.0/build/base
-@dirrm otrs/var/httpd/htdocs/yui/2.7.0/build/autocomplete/assets/skins/sam
-@dirrm otrs/var/httpd/htdocs/yui/2.7.0/build/autocomplete/assets/skins
-@dirrm otrs/var/httpd/htdocs/yui/2.7.0/build/autocomplete/assets
-@dirrm otrs/var/httpd/htdocs/yui/2.7.0/build/autocomplete
-@dirrm otrs/var/httpd/htdocs/yui/2.7.0/build/assets/skins/sam
-@dirrm otrs/var/httpd/htdocs/yui/2.7.0/build/assets/skins
-@dirrm otrs/var/httpd/htdocs/yui/2.7.0/build/assets
-@dirrm otrs/var/httpd/htdocs/yui/2.7.0/build/animation
-@dirrm otrs/var/httpd/htdocs/yui/2.7.0/build
-@dirrm otrs/var/httpd/htdocs/yui/2.7.0/assets
-@dirrm otrs/var/httpd/htdocs/yui/2.7.0
-@dirrm otrs/var/httpd/htdocs/yui
-@dirrm otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/wsc
-@dirrm otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/skins/silver/images
-@dirrm otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/skins/silver
-@dirrm otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/skins/office2003/images
-@dirrm otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/skins/office2003
-@dirrm otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/skins/default/images
-@dirrm otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/skins/default
-@dirrm otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/skins
-@dirrm otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/plugins
-@dirrm otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/lang
-@dirrm otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/js
-@dirrm otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/images/smiley/msn
-@dirrm otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/images/smiley
-@dirrm otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/images
-@dirrm otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/filemanager
-@dirrm otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/dtd
-@dirrm otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/dialog/fck_template/images
-@dirrm otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/dialog/fck_template
-@dirrm otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/dialog/fck_spellerpages/spellerpages/server-scripts
-@dirrm otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/dialog/fck_spellerpages/spellerpages
-@dirrm otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/dialog/fck_spellerpages
-@dirrm otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/dialog/fck_select
-@dirrm otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/dialog/fck_link
-@dirrm otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/dialog/fck_image
-@dirrm otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/dialog/fck_flash
-@dirrm otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/dialog/fck_docprops
-@dirrm otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/dialog/fck_about/sponsors
-@dirrm otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/dialog/fck_about
-@dirrm otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/dialog/common/images
-@dirrm otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/dialog/common
-@dirrm otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/dialog
-@dirrm otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/css/images
-@dirrm otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/css/behaviors
-@dirrm otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/css
-@dirrm otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/_source/internals
-@dirrm otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/_source/commandclasses
-@dirrm otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/_source/classes
-@dirrm otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/_source
-@dirrm otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor
-@dirrm otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1
+@dirrm otrs/var/httpd/htdocs/skins/Customer/ivory/css
+@dirrm otrs/var/httpd/htdocs/skins/Customer/ivory
+@dirrm otrs/var/httpd/htdocs/skins/Customer/default/img/icons
+@dirrm otrs/var/httpd/htdocs/skins/Customer/default/img
+@dirrm otrs/var/httpd/htdocs/skins/Customer/default/css/thirdparty/ui-theme/images
+@dirrm otrs/var/httpd/htdocs/skins/Customer/default/css/thirdparty/ui-theme
+@dirrm otrs/var/httpd/htdocs/skins/Customer/default/css/thirdparty/ui-lightness/images
+@dirrm otrs/var/httpd/htdocs/skins/Customer/default/css/thirdparty/ui-lightness
+@dirrm otrs/var/httpd/htdocs/skins/Customer/default/css/thirdparty
+@dirrm otrs/var/httpd/htdocs/skins/Customer/default/css
+@dirrm otrs/var/httpd/htdocs/skins/Customer/default
+@dirrm otrs/var/httpd/htdocs/skins/Customer
+@dirrm otrs/var/httpd/htdocs/skins/Agent/slim/img
+@dirrm otrs/var/httpd/htdocs/skins/Agent/slim/css
+@dirrm otrs/var/httpd/htdocs/skins/Agent/slim
+@dirrm otrs/var/httpd/htdocs/skins/Agent/ivory/img
+@dirrm otrs/var/httpd/htdocs/skins/Agent/ivory/css
+@dirrm otrs/var/httpd/htdocs/skins/Agent/ivory
+@dirrm otrs/var/httpd/htdocs/skins/Agent/default/img/icons
+@dirrm otrs/var/httpd/htdocs/skins/Agent/default/img
+@dirrm otrs/var/httpd/htdocs/skins/Agent/default/css/thirdparty/ui-theme/images
+@dirrm otrs/var/httpd/htdocs/skins/Agent/default/css/thirdparty/ui-theme
+@dirrm otrs/var/httpd/htdocs/skins/Agent/default/css/thirdparty/ui-lightness/images
+@dirrm otrs/var/httpd/htdocs/skins/Agent/default/css/thirdparty/ui-lightness
+@dirrm otrs/var/httpd/htdocs/skins/Agent/default/css/thirdparty
+@dirrm otrs/var/httpd/htdocs/skins/Agent/default/css
+@dirrm otrs/var/httpd/htdocs/skins/Agent/default
+@dirrm otrs/var/httpd/htdocs/skins/Agent
+@dirrm otrs/var/httpd/htdocs/skins
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/qunit
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/stacktrace
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/json
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/jquery-validate-1.7
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/jquery-ui-1.8.5
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/jquery-tooltip-1.3
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/jquery-tablesorter-2.0.5
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/jquery-1.4.4
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/flot-0.6
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/themes/default
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/themes
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/skins/v2/images
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/skins/v2
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/skins/office2003/images
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/skins/office2003
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/skins/kama/images
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/skins/kama
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/skins/default/images
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/skins/default
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/skins
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/plugins/wsc/dialogs
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/plugins/wsc
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/plugins/uicolor/yui/assets
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/plugins/uicolor/yui
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/plugins/uicolor/lang
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/plugins/uicolor/dialogs
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/plugins/uicolor
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/plugins/templates/templates/images
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/plugins/templates/templates
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/plugins/templates/dialogs
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/plugins/templates
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/plugins/tabletools/dialogs
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/plugins/tabletools
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/plugins/tableresize
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/plugins/table/dialogs
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/plugins/table
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/plugins/styles/styles
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/plugins/styles
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/plugins/specialchar/dialogs
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/plugins/specialchar
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/plugins/smiley/images
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/plugins/smiley/dialogs
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/plugins/smiley
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/plugins/showblocks/images
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/plugins/showblocks
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/plugins/scayt/dialogs
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/plugins/scayt
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/plugins/pastetext/dialogs
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/plugins/pastetext
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/plugins/pastefromword/filter
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/plugins/pastefromword
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/plugins/pagebreak/images
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/plugins/pagebreak
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/plugins/liststyle/dialogs
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/plugins/liststyle
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/plugins/link/images
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/plugins/link/dialogs
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/plugins/link
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/plugins/image/dialogs
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/plugins/image
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/plugins/iframedialog
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/plugins/forms/images
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/plugins/forms/dialogs
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/plugins/forms
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/plugins/flash/images
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/plugins/flash/dialogs
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/plugins/flash
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/plugins/find/dialogs
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/plugins/find
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/plugins/div/dialogs
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/plugins/div
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/plugins/dialog
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/plugins/colordialog/dialogs
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/plugins/colordialog
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/plugins/clipboard/dialogs
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/plugins/clipboard
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/plugins/autogrow
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/plugins/aspell/spellerpages
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/plugins/aspell/dialogs
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/plugins/aspell
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/plugins/about/dialogs
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/plugins/about
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/plugins/a11yhelp/lang
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/plugins/a11yhelp/dialogs
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/plugins/a11yhelp
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/plugins
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/lang
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/images
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/adapters
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2
+@dirrm otrs/var/httpd/htdocs/js/thirdparty
+@dirrm otrs/var/httpd/htdocs/js/test
 @dirrm otrs/var/httpd/htdocs/js
-@dirrm otrs/var/httpd/htdocs/images/Standard
-@dirrm otrs/var/httpd/htdocs/images
-@dirrm otrs/var/httpd/htdocs/css/Standard
-@dirrm otrs/var/httpd/htdocs/css/Lite
-@dirrm otrs/var/httpd/htdocs/css/overcast/images
-@dirrm otrs/var/httpd/htdocs/css/overcast
-@dirrm otrs/var/httpd/htdocs/css
 @dirrm otrs/var/httpd/htdocs
 @dirrm otrs/var/httpd
 @dirrm otrs/var/cron
@@ -1796,16 +1586,6 @@ otrs/Kernel/System/XMLMaster.pm
 %%PORTDOCS%%%%DOCSDIR%%/X-OTRS-Headers.txt
 %%PORTDOCS%%%%DOCSDIR%%/otrs-database.dia
 %%PORTDOCS%%%%DOCSDIR%%/otrs-database.png
-%%PORTDOCS%%%%DOCSDIR%%/test-email-1.box
-%%PORTDOCS%%%%DOCSDIR%%/test-email-10-ks_c_5601-1987.box
-%%PORTDOCS%%%%DOCSDIR%%/test-email-2.box
-%%PORTDOCS%%%%DOCSDIR%%/test-email-3.box
-%%PORTDOCS%%%%DOCSDIR%%/test-email-4-html.box
-%%PORTDOCS%%%%DOCSDIR%%/test-email-5-iso-8859-1.box
-%%PORTDOCS%%%%DOCSDIR%%/test-email-6-euro-utf-8.box
-%%PORTDOCS%%%%DOCSDIR%%/test-email-7-euro-iso-8859-15.box
-%%PORTDOCS%%%%DOCSDIR%%/test-email-8-bulgarian-cp1251.box
-%%PORTDOCS%%%%DOCSDIR%%/test-email-9-html-multicharset.box
 %%PORTDOCS%%%%DOCSDIR%%/manual/en/otrs_admin_book.pdf
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/manual/en
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/manual

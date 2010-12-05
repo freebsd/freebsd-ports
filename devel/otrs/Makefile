@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	otrs
-PORTVERSION=	2.4.9
+PORTVERSION=	3.0.3
 CATEGORIES=	devel
 MASTER_SITES=	http://ftp.otrs.org/pub/otrs/ \
 		ftp://ftp.samurai.com/pub/otrs/ \
@@ -20,14 +20,21 @@ BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Date/Pcalc.pm:${PORTSDIR}/devel/p5-Date
 		${SITE_PERL}/Date/Format.pm:${PORTSDIR}/devel/p5-TimeDate \
 		${SITE_PERL}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI \
 		${SITE_PERL}/Crypt/PasswdMD5.pm:${PORTSDIR}/security/p5-Crypt-PasswdMD5 \
+		p5-Digest-SHA>=0:${PORTSDIR}/security/p5-Digest-SHA \
 		${SITE_PERL}/LWP/UserAgent.pm:${PORTSDIR}/www/p5-libwww \
 		${SITE_PERL}/IO/Stringy.pm:${PORTSDIR}/devel/p5-IO-stringy \
 		${SITE_PERL}/Mail/Internet.pm:${PORTSDIR}/mail/p5-Mail-Tools \
 		p5-MIME-Tools>=5.427:${PORTSDIR}/mail/p5-MIME-Tools \
-		${SITE_PERL}/${PERL_ARCH}/Net/DNS.pm:${PORTSDIR}/dns/p5-Net-DNS \
+		p5-Net-DNS>=0.66:${PORTSDIR}/dns/p5-Net-DNS \
 		${SITE_PERL}/Algorithm/Diff.pm:${PORTSDIR}/devel/p5-Algorithm-Diff \
 		${SITE_PERL}/${PERL_ARCH}/XML/Parser.pm:${PORTSDIR}/textproc/p5-XML-Parser \
 		${SITE_PERL}/Text/CSV.pm:${PORTSDIR}/textproc/p5-Text-CSV \
+		p5-Text-CSV_XS>=0:${PORTSDIR}/textproc/p5-Text-CSV_XS \
+		p5-JSON>=0:${PORTSDIR}/converters/p5-JSON \
+		p5-JSON-XS>=0:${PORTSDIR}/converters/p5-JSON-XS \
+		p5-CSS-Minifier-XS>=0:${PORTSDIR}/textproc/p5-CSS-Minifier-XS \
+		p5-JavaScript-Minifier-XS>=0:${PORTSDIR}/textproc/p5-JavaScript-Minifier-XS \
+		p5-Apache-Reload>=0:${PORTSDIR}/www/p5-Apache-Reload \
 		${SITE_PERL}/Text/Diff.pm:${PORTSDIR}/textproc/p5-Text-Diff \
 		${SITE_PERL}/XML/FeedPP.pm:${PORTSDIR}/textproc/p5-XML-FeedPP
 RUN_DEPENDS=	${BUILD_DEPENDS}
@@ -62,12 +69,9 @@ DOCS_DIRS_LIST=	"" manual/en
 DOCS_FILES_LIST=	C[A-Z]* INSTALL RE* TODO UPGRADING
 
 SCRIPTS_DIRS_LIST=	"" database/update test tools
-CLEAN_FILES=	scripts/apache2-httpd.include.conf scripts/suse* scripts/redhat* \
-		var/httpd/htdocs/js/thirdparty var/httpd/htdocs/js/fckeditor-2.6.6 \
-		var/httpd/htdocs/js/js-cache var/httpd/htdocs/js/test \
-		var/httpd/htdocs/js_new var/httpd/htdocs/skins \
-		var/httpd/htdocs/yui/2.7.0/as-docs var/httpd/htdocs/yui/2.7.0/*.html \
-		var/httpd/htdocs/yui/2.7.0/releasenotes
+CLEAN_FILES=	scripts/suse* scripts/redhat* \
+		var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/_source \
+		var/httpd/htdocs/skins/Agent/*/img/source
 
 USE_APACHE=	1.3+
 USE_PERL5=	yes
@@ -92,15 +96,17 @@ RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/GD.pm:${PORTSDIR}/graphics/p5-GD \
 
 .ifdef WITH_SMTP
 RUN_DEPENDS+=	p5-Net-SMTP-SSL>=0:${PORTSDIR}/mail/p5-Net-SMTP-SSL \
+		p5-Net-SMTP-TLS>=0:${PORTSDIR}/mail/p5-Net-SMTP-TLS \
 		${SITE_PERL}/Authen/SASL.pm:${PORTSDIR}/security/p5-Authen-SASL
 .endif
 
 .ifdef WITH_POP3
-RUN_DEPENDS+=	${SITE_PERL}/Mail/POP3Client.pm:${PORTSDIR}/mail/p5-Mail-POP3Client
+RUN_DEPENDS+=	${SITE_PERL}/Mail/POP3Client.pm:${PORTSDIR}/mail/p5-Mail-POP3Client \
+		${SITE_PERL}/IO/Socket/SSL.pm:${PORTSDIR}/security/p5-IO-Socket-SSL
 .endif
 
 .ifdef WITH_IMAP
-RUN_DEPENDS+=	${SITE_PERL}/Net/IMAP/Simple.pm:${PORTSDIR}/mail/p5-Net-IMAP-Simple
+RUN_DEPENDS+=	p5-Net-IMAP-Simple-SSL>=0:${PORTSDIR}/mail/p5-Net-IMAP-Simple-SSL
 .endif
 
 .ifdef WITH_LDAP
@@ -130,12 +136,14 @@ RUN_DEPENDS+=	gpg:${PORTSDIR}/security/gnupg1
 IGNORE=	you only need 1 spell checker
 .endif
 
-do-build:
+post-patch:
 	@${FIND} ${WRKSRC} -name "*.orig" -delete
-	@${FIND} ${WRKSRC}/Kernel -type d | ${XARGS} ${CHMOD} 0755
-	@${FIND} ${WRKSRC}/Kernel -type f | ${XARGS} ${CHMOD} ${SHAREMODE}
 	@${RM} -rf ${WRKSRC}/Kernel/cpan-lib/ \
 		${CLEAN_FILES:S!^!${WRKSRC}/!}
+
+do-build:
+	@${FIND} ${WRKSRC}/Kernel -type d | ${XARGS} ${CHMOD} 0755
+	@${FIND} ${WRKSRC}/Kernel -type f | ${XARGS} ${CHMOD} ${SHAREMODE}
 	@${FIND} ${WRKSRC} -type f | ${XARGS} ${SED} -i '' \
 		-e "s=/opt/=${PREFIX}/=g;s=wwwrun=${WWWOWN}=g;"
 .ifdef WITH_ISPELL
