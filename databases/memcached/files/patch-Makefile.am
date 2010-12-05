@@ -1,8 +1,0 @@
---- Makefile.am.orig	2010-07-25 19:31:54.258163012 +0200
-+++ Makefile.am	2010-07-25 19:34:35.321075314 +0200
-@@ -1,5 +1,4 @@
- bin_PROGRAMS = memcached
--pkginclude_HEADERS = protocol_binary.h
- noinst_PROGRAMS = memcached-debug sizes testapp timedrun
- 
- BUILT_SOURCES=
