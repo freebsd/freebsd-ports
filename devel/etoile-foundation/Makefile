@@ -16,6 +16,7 @@ MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Etoile Project EtoileFoundation framework
 
 LICENSE=	BSD
+LICENSE_FILE=	${WRKSRC}/Frameworks/EtoileFoundation/COPYING
 
 USE_BZIP2=	yes
 USE_GNUSTEP=	yes
