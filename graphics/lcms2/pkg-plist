@@ -1,0 +1,14 @@
+%%JPEGICC%%bin/jpgicc
+bin/linkicc
+bin/psicc
+%%TIFFICC%%bin/tificc
+bin/transicc
+include/lcms2.h
+include/lcms2_plugin.h
+lib/liblcms2.so
+lib/liblcms2.so.2
+libdata/pkgconfig/lcms2.pc
+%%PORTDOCS%%%%DOCSDIR%%/LittleCMS2.1 API.pdf
+%%PORTDOCS%%%%DOCSDIR%%/LittleCMS2.1 Plugin API.pdf
+%%PORTDOCS%%%%DOCSDIR%%/LittleCMS2.1 tutorial.pdf
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
