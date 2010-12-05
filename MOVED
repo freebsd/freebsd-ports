@@ -4697,7 +4697,7 @@ www/phpwebgallery|www/piwigo|2010-11-29|Project renamed
 dns/bind9||2010-12-01|EOL - Update to dns/bind97 or dns/bind96
 archivers/linux-par2cmdline||2010-12-04|Has expired: Native version available
 audio/bmp-musepack||2010-12-04|Has expired: does not build with audio/musepack
-audio/libmpcdec||2010-12-04|Has expired: superseded by audio/musepack
+audio/libmpcdec|audio/musepack|2010-12-04|Has expired: superseded by audio/musepack
 audio/py-musepack||2010-12-04|Has expired: does not build with audio/musepack
 chinese/chinput3||2010-12-04|Has expired: Development has ceased.
 emulators/dynagen-devel||2010-12-04|Has expired: Please install emulators/dynagen instead
