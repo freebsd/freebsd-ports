@@ -5,6 +5,22 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20101205:
+  AFFECTS: users of www/py-flexget
+  AUTHOR: lioux@FreeBSD.org
+
+  Database schema changes. Please run:
+
+	$ sqlite3 db-config.sqlite "ALTER TABLE thetvdb_favorites ADD series_id VARCHAR;"
+	$ sqlite3 db-config.sqlite "ALTER TABLE imdb_movies ADD updated DateTime;"
+	$ sqlite3 db-config.sqlite "ALTER TABLE imdb_movies ADD mpaa_rating VARCHAR;"
+
+  inside flexget configuration directory (~/.flexget) for each
+  sqlite database you might have.
+
+  Replace "db-config.sqlite" with the appropriate name for your
+  sqlite database file.
+
 20101204:
   AFFECTS: autotools
   AUTHOR: autotools@FreeBSD.org
