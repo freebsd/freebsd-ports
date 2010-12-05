@@ -20,6 +20,8 @@ GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 MAN1=		cairo-clock.1
 
+BROKEN=		incomplete plist
+
 .if !defined(WITHOUT_NLS)
 USE_GETTEXT=	yes
 PLIST_SUB+=	NLS=""
