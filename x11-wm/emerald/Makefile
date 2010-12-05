@@ -7,7 +7,7 @@
 
 PORTNAME=	emerald
 PORTVERSION=	0.8.4
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://releases.compiz.org/${PORTVERSION}/
 
@@ -37,6 +37,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 # XXX - might want to change that
 post-patch:
 	@${REINPLACE_CMD} 's|icons/gnome|icons/hicolor|' ${WRKSRC}/misc/Makefile.in
-	@${REINPLACE_CMD} 's|#define GTK_DISABLE_DEPRECATED||g' ${WRKSRC}/include/emerald.h
+	@${REINPLACE_CMD} -e 's|#define GDK_DISABLE_DEPRECATED||g' \
+	    -e 's|#define GTK_DISABLE_DEPRECATED||g' ${WRKSRC}/include/emerald.h
 
 .include <bsd.port.mk>
