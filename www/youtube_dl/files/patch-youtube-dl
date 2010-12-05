@@ -1,0 +1,11 @@
+--- youtube-dl.orig	2010-11-21 16:27:42.000000000 +0000
++++ youtube-dl	2010-11-21 16:28:42.000000000 +0000
+@@ -509,7 +509,7 @@
+ 		# Download using rtmpdump. rtmpdump returns exit code 2 when
+ 		# the connection was interrumpted and resuming appears to be
+ 		# possible. This is part of rtmpdump's normal usage, AFAIK.
+-		basic_args = ['rtmpdump', '-q'] + [[], ['-W', player_url]][player_url is not None] + ['-r', url, '-o', filename]
++		basic_args = ['rtmpdump'] + [[], ['-q']][self.params.get('quiet', False)] + [[], ['-W', player_url]][player_url is not None] + ['-r', url, '-o', filename]
+ 		retval = subprocess.call(basic_args + [[], ['-e', '-k', '1']][self.params.get('continuedl', False)])
+ 		while retval == 2 or retval == 1:
+ 			prevsize = os.path.getsize(filename)

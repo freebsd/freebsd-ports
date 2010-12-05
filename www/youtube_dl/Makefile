@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	youtube_dl
-PORTVERSION=	2010.10.24
+PORTVERSION=	2010.11.19
 CATEGORIES=	www
-MASTER_SITES=	http://bitbucket.org/rg3/youtube-dl/raw/${PORTVERSION}/
+MASTER_SITES=	https://github.com/rg3/youtube-dl/raw/${PORTVERSION}/
 DISTNAME=	youtube-dl
 EXTRACT_SUFX=	# empty
 DIST_SUBDIR=	${PORTNAME}/${PORTVERSION}
@@ -22,6 +22,14 @@ NO_WRKSUBDIR=	yes
 USE_PYTHON_RUN=	2.5-2.7
 
 PLIST_FILES=	bin/youtube-dl
+
+OPTIONS=	RTMPDUMP	"Use RTMPDUMP to download rtmp video streams"	on
+
+.include <bsd.port.options.mk>
+
+.if defined(WITH_RTMPDUMP)
+RUN_DEPENDS+=	rtmpdump:${PORTSDIR}/multimedia/rtmpdump
+.endif
 
 post-extract:
 	@${CP} ${DISTDIR}/${DIST_SUBDIR}/${DISTNAME} ${WRKSRC}/youtube-dl
