@@ -1,22 +1,22 @@
-%%PORTEXAMPLES%%share/examples/piwigo/config.inc.php
-%%PORTEXAMPLES%%share/examples/piwigo/convert_language_to_2.1.pl
-%%PORTEXAMPLES%%share/examples/piwigo/convert_template_to_2.1.pl
-%%PORTEXAMPLES%%share/examples/piwigo/create_listing_file.php
-%%PORTEXAMPLES%%share/examples/piwigo/create_listing_file_local.inc.php
-%%PORTEXAMPLES%%share/examples/piwigo/fill_history.pl
-%%PORTEXAMPLES%%share/examples/piwigo/index.php
-%%PORTEXAMPLES%%share/examples/piwigo/key2value.php
-%%PORTEXAMPLES%%share/examples/piwigo/language/translation_validated.inc.php
-%%PORTEXAMPLES%%share/examples/piwigo/local-layout.css
-%%PORTEXAMPLES%%share/examples/piwigo/metadata.php
-%%PORTEXAMPLES%%share/examples/piwigo/missing_keys.pl
-%%PORTEXAMPLES%%share/examples/piwigo/piwigo_remote.pl
-%%PORTEXAMPLES%%share/examples/piwigo/prototype.js
-%%PORTEXAMPLES%%share/examples/piwigo/pwg_rel_create.sh
-%%PORTEXAMPLES%%share/examples/piwigo/release_creation.readme
-%%PORTEXAMPLES%%share/examples/piwigo/replace.php
-%%PORTEXAMPLES%%share/examples/piwigo/translation_analysis.php
-%%PORTEXAMPLES%%share/examples/piwigo/ws.htm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/config.inc.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/convert_language_to_2.1.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/convert_template_to_2.1.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/create_listing_file.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/create_listing_file_local.inc.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/fill_history.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/index.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/key2value.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/language/translation_validated.inc.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/local-layout.css
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/metadata.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/missing_keys.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/piwigo_remote.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/prototype.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/pwg_rel_create.sh
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/release_creation.readme
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/replace.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/translation_analysis.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ws.htm
 %%WWWDIR%%/_data/dummy.txt
 %%WWWDIR%%/about.php
 %%WWWDIR%%/action.php
@@ -773,6 +773,13 @@
 %%WWWDIR%%/language/fr_FR/install.lang.php
 %%WWWDIR%%/language/fr_FR/iso.txt
 %%WWWDIR%%/language/fr_FR/upgrade.lang.php
+%%WWWDIR%%/language/he_IL/about.html
+%%WWWDIR%%/language/he_IL/admin.lang.php
+%%WWWDIR%%/language/he_IL/common.lang.php
+%%WWWDIR%%/language/he_IL/he_IL.jpg
+%%WWWDIR%%/language/he_IL/help/help_add_photos.html
+%%WWWDIR%%/language/he_IL/install.lang.php
+%%WWWDIR%%/language/he_IL/iso.txt
 %%WWWDIR%%/language/hr_HR/about.html
 %%WWWDIR%%/language/hr_HR/admin.lang.php
 %%WWWDIR%%/language/hr_HR/common.lang.php
@@ -924,8 +931,14 @@
 %%WWWDIR%%/language/ka_GE/ka_GE.jpg
 %%WWWDIR%%/language/ka_GE/upgrade.lang.php
 %%WWWDIR%%/language/lv_LV/about.html
+%%WWWDIR%%/language/lv_LV/admin.lang.php
 %%WWWDIR%%/language/lv_LV/common.lang.php
+%%WWWDIR%%/language/lv_LV/help/help_add_photos.html
+%%WWWDIR%%/language/lv_LV/help/help_groups.html
+%%WWWDIR%%/language/lv_LV/help/help_permissions.html
+%%WWWDIR%%/language/lv_LV/help/photos_add_ftp.html
 %%WWWDIR%%/language/lv_LV/index.php
+%%WWWDIR%%/language/lv_LV/install.lang.php
 %%WWWDIR%%/language/lv_LV/iso.txt
 %%WWWDIR%%/language/lv_LV/lv_LV.jpg
 %%WWWDIR%%/language/mk_MK/common.lang.php
@@ -1060,25 +1073,60 @@
 %%WWWDIR%%/language/ru_RU/iso.txt
 %%WWWDIR%%/language/ru_RU/ru_RU.jpg
 %%WWWDIR%%/language/ru_RU/upgrade.lang.php
+%%WWWDIR%%/language/sh_RS/about.html
+%%WWWDIR%%/language/sh_RS/admin.lang.php
+%%WWWDIR%%/language/sh_RS/common.lang.php
+%%WWWDIR%%/language/sh_RS/help/help_add_photos.html
+%%WWWDIR%%/language/sh_RS/help/index.php
+%%WWWDIR%%/language/sh_RS/index.php
+%%WWWDIR%%/language/sh_RS/install.lang.php
+%%WWWDIR%%/language/sh_RS/iso.txt
+%%WWWDIR%%/language/sh_RS/sh_RS.jpg
+%%WWWDIR%%/language/sh_RS/upgrade.lang.php
+%%WWWDIR%%/language/sk_SK/about.html
+%%WWWDIR%%/language/sk_SK/admin.lang.php
+%%WWWDIR%%/language/sk_SK/common.lang.php
+%%WWWDIR%%/language/sk_SK/help/help_add_photos.html
+%%WWWDIR%%/language/sk_SK/help/help_groups.html
+%%WWWDIR%%/language/sk_SK/help/help_misc.html
+%%WWWDIR%%/language/sk_SK/help/help_permissions.html
+%%WWWDIR%%/language/sk_SK/help/help_user_upload.html
+%%WWWDIR%%/language/sk_SK/help/help_virtual_links.html
+%%WWWDIR%%/language/sk_SK/help/index.php
+%%WWWDIR%%/language/sk_SK/help/photos_add_ftp.html
+%%WWWDIR%%/language/sk_SK/index.php
+%%WWWDIR%%/language/sk_SK/install.lang.php
+%%WWWDIR%%/language/sk_SK/iso.txt
+%%WWWDIR%%/language/sk_SK/sk_SK.jpg
+%%WWWDIR%%/language/sk_SK/upgrade.lang.php
+%%WWWDIR%%/language/sl_SL/about.html
+%%WWWDIR%%/language/sl_SL/common.lang.php
+%%WWWDIR%%/language/sl_SL/iso.txt
+%%WWWDIR%%/language/sl_SL/sl_SL.jpg
 %%WWWDIR%%/language/sr_RS/about.html
 %%WWWDIR%%/language/sr_RS/admin.lang.php
 %%WWWDIR%%/language/sr_RS/common.lang.php
-%%WWWDIR%%/language/sr_RS/help/help_add_photos.html
-%%WWWDIR%%/language/sr_RS/help/index.php
 %%WWWDIR%%/language/sr_RS/index.php
 %%WWWDIR%%/language/sr_RS/install.lang.php
 %%WWWDIR%%/language/sr_RS/iso.txt
 %%WWWDIR%%/language/sr_RS/sr_RS.jpg
 %%WWWDIR%%/language/sr_RS/upgrade.lang.php
+%%WWWDIR%%/language/sv_SE/about.html
+%%WWWDIR%%/language/sv_SE/common.lang.php
+%%WWWDIR%%/language/sv_SE/iso.txt
+%%WWWDIR%%/language/sv_SE/sv_SE.jpg
 %%WWWDIR%%/language/tr_TR/about.html
 %%WWWDIR%%/language/tr_TR/admin.lang.php
 %%WWWDIR%%/language/tr_TR/common.lang.php
+%%WWWDIR%%/language/tr_TR/install.lang.php
 %%WWWDIR%%/language/tr_TR/iso.txt
 %%WWWDIR%%/language/tr_TR/tr_TR.jpg
+%%WWWDIR%%/language/tr_TR/upgrade.lang.php
 %%WWWDIR%%/language/vi_VN/README.txt
 %%WWWDIR%%/language/vi_VN/about.html
 %%WWWDIR%%/language/vi_VN/admin.lang.php
 %%WWWDIR%%/language/vi_VN/common.lang.php
+%%WWWDIR%%/language/vi_VN/help/help_add_photos.html
 %%WWWDIR%%/language/vi_VN/install.lang.php
 %%WWWDIR%%/language/vi_VN/iso.txt
 %%WWWDIR%%/language/vi_VN/upgrade.lang.php
@@ -1237,6 +1285,9 @@
 %%WWWDIR%%/plugins/LocalFilesEditor/editarea/template.html
 %%WWWDIR%%/plugins/LocalFilesEditor/functions.inc.php
 %%WWWDIR%%/plugins/LocalFilesEditor/index.php
+%%WWWDIR%%/plugins/LocalFilesEditor/language/cs_CZ/description.txt
+%%WWWDIR%%/plugins/LocalFilesEditor/language/cs_CZ/index.php
+%%WWWDIR%%/plugins/LocalFilesEditor/language/cs_CZ/plugin.lang.php
 %%WWWDIR%%/plugins/LocalFilesEditor/language/de_DE/description.txt
 %%WWWDIR%%/plugins/LocalFilesEditor/language/de_DE/index.php
 %%WWWDIR%%/plugins/LocalFilesEditor/language/de_DE/plugin.lang.php
@@ -1249,6 +1300,9 @@
 %%WWWDIR%%/plugins/LocalFilesEditor/language/fr_FR/description.txt
 %%WWWDIR%%/plugins/LocalFilesEditor/language/fr_FR/index.php
 %%WWWDIR%%/plugins/LocalFilesEditor/language/fr_FR/plugin.lang.php
+%%WWWDIR%%/plugins/LocalFilesEditor/language/he_IL/description.txt
+%%WWWDIR%%/plugins/LocalFilesEditor/language/he_IL/index.php
+%%WWWDIR%%/plugins/LocalFilesEditor/language/he_IL/plugin.lang.php
 %%WWWDIR%%/plugins/LocalFilesEditor/language/hr_HR/description.txt
 %%WWWDIR%%/plugins/LocalFilesEditor/language/hr_HR/index.php
 %%WWWDIR%%/plugins/LocalFilesEditor/language/hr_HR/plugin.lang.php
@@ -1262,12 +1316,29 @@
 %%WWWDIR%%/plugins/LocalFilesEditor/language/ja_JP/description.txt
 %%WWWDIR%%/plugins/LocalFilesEditor/language/ja_JP/index.php
 %%WWWDIR%%/plugins/LocalFilesEditor/language/ja_JP/plugin.lang.php
+%%WWWDIR%%/plugins/LocalFilesEditor/language/ka_GE/description.txt
+%%WWWDIR%%/plugins/LocalFilesEditor/language/ka_GE/index.php
+%%WWWDIR%%/plugins/LocalFilesEditor/language/ka_GE/plugin.lang.php
+%%WWWDIR%%/plugins/LocalFilesEditor/language/lv_LV/description.txt
+%%WWWDIR%%/plugins/LocalFilesEditor/language/lv_LV/index.php
+%%WWWDIR%%/plugins/LocalFilesEditor/language/lv_LV/plugin.lang.php
 %%WWWDIR%%/plugins/LocalFilesEditor/language/nl_NL/description.txt
 %%WWWDIR%%/plugins/LocalFilesEditor/language/nl_NL/index.php
 %%WWWDIR%%/plugins/LocalFilesEditor/language/nl_NL/plugin.lang.php
 %%WWWDIR%%/plugins/LocalFilesEditor/language/pl_PL/description.txt
 %%WWWDIR%%/plugins/LocalFilesEditor/language/pl_PL/index.php
 %%WWWDIR%%/plugins/LocalFilesEditor/language/pl_PL/plugin.lang.php
+%%WWWDIR%%/plugins/LocalFilesEditor/language/sk_SK/description.txt
+%%WWWDIR%%/plugins/LocalFilesEditor/language/sk_SK/index.php
+%%WWWDIR%%/plugins/LocalFilesEditor/language/sk_SK/plugin.lang.php
+%%WWWDIR%%/plugins/LocalFilesEditor/language/tr_TR/index.php
+%%WWWDIR%%/plugins/LocalFilesEditor/language/tr_TR/plugin.lang.php
+%%WWWDIR%%/plugins/LocalFilesEditor/language/vi_VN/description.txt
+%%WWWDIR%%/plugins/LocalFilesEditor/language/vi_VN/index.php
+%%WWWDIR%%/plugins/LocalFilesEditor/language/vi_VN/plugin.lang.php
+%%WWWDIR%%/plugins/LocalFilesEditor/language/zh_CN/description.txt
+%%WWWDIR%%/plugins/LocalFilesEditor/language/zh_CN/index.php
+%%WWWDIR%%/plugins/LocalFilesEditor/language/zh_CN/plugin.lang.php
 %%WWWDIR%%/plugins/LocalFilesEditor/locfiledit.css
 %%WWWDIR%%/plugins/LocalFilesEditor/main.inc.php
 %%WWWDIR%%/plugins/LocalFilesEditor/maintain.inc.php
@@ -1277,6 +1348,8 @@
 %%WWWDIR%%/plugins/admin_multi_view/controller.php
 %%WWWDIR%%/plugins/admin_multi_view/index.php
 %%WWWDIR%%/plugins/admin_multi_view/is_admin.inc.php
+%%WWWDIR%%/plugins/admin_multi_view/language/cs_CZ/description.txt
+%%WWWDIR%%/plugins/admin_multi_view/language/cs_CZ/index.php
 %%WWWDIR%%/plugins/admin_multi_view/language/de_DE/description.txt
 %%WWWDIR%%/plugins/admin_multi_view/language/de_DE/index.php
 %%WWWDIR%%/plugins/admin_multi_view/language/en_UK/description.txt
@@ -1285,6 +1358,8 @@
 %%WWWDIR%%/plugins/admin_multi_view/language/es_ES/index.php
 %%WWWDIR%%/plugins/admin_multi_view/language/fr_FR/description.txt
 %%WWWDIR%%/plugins/admin_multi_view/language/fr_FR/index.php
+%%WWWDIR%%/plugins/admin_multi_view/language/he_IL/description.txt
+%%WWWDIR%%/plugins/admin_multi_view/language/he_IL/index.php
 %%WWWDIR%%/plugins/admin_multi_view/language/hr_HR/description.txt
 %%WWWDIR%%/plugins/admin_multi_view/language/hr_HR/index.php
 %%WWWDIR%%/plugins/admin_multi_view/language/hu_HU/description.txt
@@ -1294,13 +1369,28 @@
 %%WWWDIR%%/plugins/admin_multi_view/language/it_IT/index.php
 %%WWWDIR%%/plugins/admin_multi_view/language/ja_JP/description.txt
 %%WWWDIR%%/plugins/admin_multi_view/language/ja_JP/index.php
+%%WWWDIR%%/plugins/admin_multi_view/language/ka_GE/description.txt
+%%WWWDIR%%/plugins/admin_multi_view/language/ka_GE/index.php
 %%WWWDIR%%/plugins/admin_multi_view/language/nl_NL/description.txt
 %%WWWDIR%%/plugins/admin_multi_view/language/nl_NL/index.php
 %%WWWDIR%%/plugins/admin_multi_view/language/pl_PL/description.txt
 %%WWWDIR%%/plugins/admin_multi_view/language/pl_PL/index.php
+%%WWWDIR%%/plugins/admin_multi_view/language/ru_RU/description.txt
+%%WWWDIR%%/plugins/admin_multi_view/language/ru_RU/index.php
+%%WWWDIR%%/plugins/admin_multi_view/language/sk_SK/description.txt
+%%WWWDIR%%/plugins/admin_multi_view/language/sk_SK/index.php
+%%WWWDIR%%/plugins/admin_multi_view/language/tr_TR/description.txt
+%%WWWDIR%%/plugins/admin_multi_view/language/tr_TR/index.php
+%%WWWDIR%%/plugins/admin_multi_view/language/vi_VN/description.txt
+%%WWWDIR%%/plugins/admin_multi_view/language/vi_VN/index.php
+%%WWWDIR%%/plugins/admin_multi_view/language/zh_CN/description.txt
+%%WWWDIR%%/plugins/admin_multi_view/language/zh_CN/index.php
 %%WWWDIR%%/plugins/admin_multi_view/main.inc.php
 %%WWWDIR%%/plugins/c13y_upgrade/index.php
 %%WWWDIR%%/plugins/c13y_upgrade/initialize.inc.php
+%%WWWDIR%%/plugins/c13y_upgrade/language/cs_CZ/description.txt
+%%WWWDIR%%/plugins/c13y_upgrade/language/cs_CZ/index.php
+%%WWWDIR%%/plugins/c13y_upgrade/language/cs_CZ/plugin.lang.php
 %%WWWDIR%%/plugins/c13y_upgrade/language/de_DE/description.txt
 %%WWWDIR%%/plugins/c13y_upgrade/language/de_DE/index.php
 %%WWWDIR%%/plugins/c13y_upgrade/language/de_DE/plugin.lang.php
@@ -1313,9 +1403,12 @@
 %%WWWDIR%%/plugins/c13y_upgrade/language/fr_FR/description.txt
 %%WWWDIR%%/plugins/c13y_upgrade/language/fr_FR/index.php
 %%WWWDIR%%/plugins/c13y_upgrade/language/fr_FR/plugin.lang.php
-%%WWWDIR%%/plugins/c13y_upgrade/language/hr-HR/description.txt
-%%WWWDIR%%/plugins/c13y_upgrade/language/hr-HR/index.php
-%%WWWDIR%%/plugins/c13y_upgrade/language/hr-HR/plugin.lang.php
+%%WWWDIR%%/plugins/c13y_upgrade/language/he_IL/description.txt
+%%WWWDIR%%/plugins/c13y_upgrade/language/he_IL/index.php
+%%WWWDIR%%/plugins/c13y_upgrade/language/he_IL/plugin.lang.php
+%%WWWDIR%%/plugins/c13y_upgrade/language/hr_HR/description.txt
+%%WWWDIR%%/plugins/c13y_upgrade/language/hr_HR/index.php
+%%WWWDIR%%/plugins/c13y_upgrade/language/hr_HR/plugin.lang.php
 %%WWWDIR%%/plugins/c13y_upgrade/language/hu_HU/description.txt
 %%WWWDIR%%/plugins/c13y_upgrade/language/hu_HU/index.php
 %%WWWDIR%%/plugins/c13y_upgrade/language/hu_HU/plugin.lang.php
@@ -1326,16 +1419,36 @@
 %%WWWDIR%%/plugins/c13y_upgrade/language/ja_JP/description.txt
 %%WWWDIR%%/plugins/c13y_upgrade/language/ja_JP/index.php
 %%WWWDIR%%/plugins/c13y_upgrade/language/ja_JP/plugin.lang.php
+%%WWWDIR%%/plugins/c13y_upgrade/language/ka_GE/description.txt
+%%WWWDIR%%/plugins/c13y_upgrade/language/ka_GE/index.php
+%%WWWDIR%%/plugins/c13y_upgrade/language/ka_GE/plugin.lang.php
 %%WWWDIR%%/plugins/c13y_upgrade/language/nl_NL/description.txt
 %%WWWDIR%%/plugins/c13y_upgrade/language/nl_NL/index.php
 %%WWWDIR%%/plugins/c13y_upgrade/language/nl_NL/plugin.lang.php
 %%WWWDIR%%/plugins/c13y_upgrade/language/pl_PL/description.txt
 %%WWWDIR%%/plugins/c13y_upgrade/language/pl_PL/index.php
 %%WWWDIR%%/plugins/c13y_upgrade/language/pl_PL/plugin.lang.php
+%%WWWDIR%%/plugins/c13y_upgrade/language/ru_RU/description.txt
+%%WWWDIR%%/plugins/c13y_upgrade/language/ru_RU/index.php
+%%WWWDIR%%/plugins/c13y_upgrade/language/ru_RU/plugin.lang.php
+%%WWWDIR%%/plugins/c13y_upgrade/language/sk_SK/description.txt
+%%WWWDIR%%/plugins/c13y_upgrade/language/sk_SK/index.php
+%%WWWDIR%%/plugins/c13y_upgrade/language/sk_SK/plugin.lang.php
+%%WWWDIR%%/plugins/c13y_upgrade/language/tr_TR/description.txt
+%%WWWDIR%%/plugins/c13y_upgrade/language/tr_TR/index.php
+%%WWWDIR%%/plugins/c13y_upgrade/language/tr_TR/plugin.lang.php
+%%WWWDIR%%/plugins/c13y_upgrade/language/vi_VN/description.txt
+%%WWWDIR%%/plugins/c13y_upgrade/language/vi_VN/index.php
+%%WWWDIR%%/plugins/c13y_upgrade/language/vi_VN/plugin.lang.php
+%%WWWDIR%%/plugins/c13y_upgrade/language/zh_CN/description.txt
+%%WWWDIR%%/plugins/c13y_upgrade/language/zh_CN/index.php
+%%WWWDIR%%/plugins/c13y_upgrade/language/zh_CN/plugin.lang.php
 %%WWWDIR%%/plugins/c13y_upgrade/main.inc.php
 %%WWWDIR%%/plugins/index.php
 %%WWWDIR%%/plugins/language_switch/flags.tpl
 %%WWWDIR%%/plugins/language_switch/index.php
+%%WWWDIR%%/plugins/language_switch/language/cs_CZ/description.txt
+%%WWWDIR%%/plugins/language_switch/language/cs_CZ/index.php
 %%WWWDIR%%/plugins/language_switch/language/de_DE/description.txt
 %%WWWDIR%%/plugins/language_switch/language/de_DE/index.php
 %%WWWDIR%%/plugins/language_switch/language/en_UK/description.txt
@@ -1344,6 +1457,8 @@
 %%WWWDIR%%/plugins/language_switch/language/es_ES/index.php
 %%WWWDIR%%/plugins/language_switch/language/fr_FR/description.txt
 %%WWWDIR%%/plugins/language_switch/language/fr_FR/index.php
+%%WWWDIR%%/plugins/language_switch/language/he_IL/description.txt
+%%WWWDIR%%/plugins/language_switch/language/he_IL/index.php
 %%WWWDIR%%/plugins/language_switch/language/hr_HR/description.txt
 %%WWWDIR%%/plugins/language_switch/language/hr_HR/index.php
 %%WWWDIR%%/plugins/language_switch/language/hu_HU/description.txt
@@ -1353,10 +1468,22 @@
 %%WWWDIR%%/plugins/language_switch/language/it_IT/index.php
 %%WWWDIR%%/plugins/language_switch/language/ja_JP/description.txt
 %%WWWDIR%%/plugins/language_switch/language/ja_JP/index.php
+%%WWWDIR%%/plugins/language_switch/language/ka_GE/description.txt
+%%WWWDIR%%/plugins/language_switch/language/ka_GE/index.php
 %%WWWDIR%%/plugins/language_switch/language/nl_NL/description.txt
 %%WWWDIR%%/plugins/language_switch/language/nl_NL/index.php
 %%WWWDIR%%/plugins/language_switch/language/pl_PL/description.txt
 %%WWWDIR%%/plugins/language_switch/language/pl_PL/index.php
+%%WWWDIR%%/plugins/language_switch/language/ru_RU/description.txt
+%%WWWDIR%%/plugins/language_switch/language/ru_RU/index.php
+%%WWWDIR%%/plugins/language_switch/language/sk_SK/description.txt
+%%WWWDIR%%/plugins/language_switch/language/sk_SK/index.php
+%%WWWDIR%%/plugins/language_switch/language/tr_TR/description.txt
+%%WWWDIR%%/plugins/language_switch/language/tr_TR/index.php
+%%WWWDIR%%/plugins/language_switch/language/vi_VN/description.txt
+%%WWWDIR%%/plugins/language_switch/language/vi_VN/index.php
+%%WWWDIR%%/plugins/language_switch/language/zh_CN/description.txt
+%%WWWDIR%%/plugins/language_switch/language/zh_CN/index.php
 %%WWWDIR%%/plugins/language_switch/language_switch-default.css
 %%WWWDIR%%/plugins/language_switch/language_switch-ie6.css
 %%WWWDIR%%/plugins/language_switch/language_switch.css
@@ -1735,6 +1862,7 @@
 %%WWWDIR%%/themes/index.php
 %%WWWDIR%%/upgrade.php
 %%WWWDIR%%/upgrade_feed.php
+%%WWWDIR%%/upload/.keepme
 %%WWWDIR%%/upload.php
 %%WWWDIR%%/ws.php
 @dirrmtry %%WWWDIR%%/upload
@@ -1768,52 +1896,84 @@
 @dirrm %%WWWDIR%%/template-extension/distributed/samples
 @dirrm %%WWWDIR%%/template-extension/distributed
 @dirrmtry %%WWWDIR%%/template-extension
+@dirrm %%WWWDIR%%/plugins/language_switch/language/zh_CN
+@dirrm %%WWWDIR%%/plugins/language_switch/language/vi_VN
+@dirrm %%WWWDIR%%/plugins/language_switch/language/tr_TR
+@dirrm %%WWWDIR%%/plugins/language_switch/language/sk_SK
+@dirrm %%WWWDIR%%/plugins/language_switch/language/ru_RU
 @dirrm %%WWWDIR%%/plugins/language_switch/language/pl_PL
 @dirrm %%WWWDIR%%/plugins/language_switch/language/nl_NL
+@dirrm %%WWWDIR%%/plugins/language_switch/language/ka_GE
 @dirrm %%WWWDIR%%/plugins/language_switch/language/ja_JP
 @dirrm %%WWWDIR%%/plugins/language_switch/language/it_IT
 @dirrm %%WWWDIR%%/plugins/language_switch/language/hu_HU
 @dirrm %%WWWDIR%%/plugins/language_switch/language/hr_HR
+@dirrm %%WWWDIR%%/plugins/language_switch/language/he_IL
 @dirrm %%WWWDIR%%/plugins/language_switch/language/fr_FR
 @dirrm %%WWWDIR%%/plugins/language_switch/language/es_ES
 @dirrm %%WWWDIR%%/plugins/language_switch/language/en_UK
 @dirrm %%WWWDIR%%/plugins/language_switch/language/de_DE
+@dirrm %%WWWDIR%%/plugins/language_switch/language/cs_CZ
 @dirrm %%WWWDIR%%/plugins/language_switch/language
 @dirrm %%WWWDIR%%/plugins/language_switch
+@dirrm %%WWWDIR%%/plugins/c13y_upgrade/language/zh_CN
+@dirrm %%WWWDIR%%/plugins/c13y_upgrade/language/vi_VN
+@dirrm %%WWWDIR%%/plugins/c13y_upgrade/language/tr_TR
+@dirrm %%WWWDIR%%/plugins/c13y_upgrade/language/sk_SK
+@dirrm %%WWWDIR%%/plugins/c13y_upgrade/language/ru_RU
 @dirrm %%WWWDIR%%/plugins/c13y_upgrade/language/pl_PL
 @dirrm %%WWWDIR%%/plugins/c13y_upgrade/language/nl_NL
+@dirrm %%WWWDIR%%/plugins/c13y_upgrade/language/ka_GE
 @dirrm %%WWWDIR%%/plugins/c13y_upgrade/language/ja_JP
 @dirrm %%WWWDIR%%/plugins/c13y_upgrade/language/it_IT
 @dirrm %%WWWDIR%%/plugins/c13y_upgrade/language/hu_HU
-@dirrm %%WWWDIR%%/plugins/c13y_upgrade/language/hr-HR
+@dirrm %%WWWDIR%%/plugins/c13y_upgrade/language/hr_HR
+@dirrm %%WWWDIR%%/plugins/c13y_upgrade/language/he_IL
 @dirrm %%WWWDIR%%/plugins/c13y_upgrade/language/fr_FR
 @dirrm %%WWWDIR%%/plugins/c13y_upgrade/language/es_ES
 @dirrm %%WWWDIR%%/plugins/c13y_upgrade/language/en_UK
 @dirrm %%WWWDIR%%/plugins/c13y_upgrade/language/de_DE
+@dirrm %%WWWDIR%%/plugins/c13y_upgrade/language/cs_CZ
 @dirrm %%WWWDIR%%/plugins/c13y_upgrade/language
 @dirrm %%WWWDIR%%/plugins/c13y_upgrade
+@dirrm %%WWWDIR%%/plugins/admin_multi_view/language/zh_CN
+@dirrm %%WWWDIR%%/plugins/admin_multi_view/language/vi_VN
+@dirrm %%WWWDIR%%/plugins/admin_multi_view/language/tr_TR
+@dirrm %%WWWDIR%%/plugins/admin_multi_view/language/sk_SK
+@dirrm %%WWWDIR%%/plugins/admin_multi_view/language/ru_RU
 @dirrm %%WWWDIR%%/plugins/admin_multi_view/language/pl_PL
 @dirrm %%WWWDIR%%/plugins/admin_multi_view/language/nl_NL
+@dirrm %%WWWDIR%%/plugins/admin_multi_view/language/ka_GE
 @dirrm %%WWWDIR%%/plugins/admin_multi_view/language/ja_JP
 @dirrm %%WWWDIR%%/plugins/admin_multi_view/language/it_IT
 @dirrm %%WWWDIR%%/plugins/admin_multi_view/language/hu_HU
 @dirrm %%WWWDIR%%/plugins/admin_multi_view/language/hr_HR
+@dirrm %%WWWDIR%%/plugins/admin_multi_view/language/he_IL
 @dirrm %%WWWDIR%%/plugins/admin_multi_view/language/fr_FR
 @dirrm %%WWWDIR%%/plugins/admin_multi_view/language/es_ES
 @dirrm %%WWWDIR%%/plugins/admin_multi_view/language/en_UK
 @dirrm %%WWWDIR%%/plugins/admin_multi_view/language/de_DE
+@dirrm %%WWWDIR%%/plugins/admin_multi_view/language/cs_CZ
 @dirrm %%WWWDIR%%/plugins/admin_multi_view/language
 @dirrm %%WWWDIR%%/plugins/admin_multi_view
+@dirrm %%WWWDIR%%/plugins/LocalFilesEditor/language/zh_CN
+@dirrm %%WWWDIR%%/plugins/LocalFilesEditor/language/vi_VN
+@dirrm %%WWWDIR%%/plugins/LocalFilesEditor/language/tr_TR
+@dirrm %%WWWDIR%%/plugins/LocalFilesEditor/language/sk_SK
 @dirrm %%WWWDIR%%/plugins/LocalFilesEditor/language/pl_PL
 @dirrm %%WWWDIR%%/plugins/LocalFilesEditor/language/nl_NL
+@dirrm %%WWWDIR%%/plugins/LocalFilesEditor/language/lv_LV
+@dirrm %%WWWDIR%%/plugins/LocalFilesEditor/language/ka_GE
 @dirrm %%WWWDIR%%/plugins/LocalFilesEditor/language/ja_JP
 @dirrm %%WWWDIR%%/plugins/LocalFilesEditor/language/it_IT
 @dirrm %%WWWDIR%%/plugins/LocalFilesEditor/language/hu_HU
 @dirrm %%WWWDIR%%/plugins/LocalFilesEditor/language/hr_HR
+@dirrm %%WWWDIR%%/plugins/LocalFilesEditor/language/he_IL
 @dirrm %%WWWDIR%%/plugins/LocalFilesEditor/language/fr_FR
 @dirrm %%WWWDIR%%/plugins/LocalFilesEditor/language/es_ES
 @dirrm %%WWWDIR%%/plugins/LocalFilesEditor/language/en_UK
 @dirrm %%WWWDIR%%/plugins/LocalFilesEditor/language/de_DE
+@dirrm %%WWWDIR%%/plugins/LocalFilesEditor/language/cs_CZ
 @dirrm %%WWWDIR%%/plugins/LocalFilesEditor/language
 @dirrm %%WWWDIR%%/plugins/LocalFilesEditor/editarea/reg_syntax
 @dirrm %%WWWDIR%%/plugins/LocalFilesEditor/editarea/plugins/test/langs
@@ -1837,10 +1997,16 @@
 @dirrmtry %%WWWDIR%%/local.sample
 @dirrm %%WWWDIR%%/language/zh_CN/help
 @dirrm %%WWWDIR%%/language/zh_CN
+@dirrm %%WWWDIR%%/language/vi_VN/help
 @dirrm %%WWWDIR%%/language/vi_VN
 @dirrm %%WWWDIR%%/language/tr_TR
-@dirrm %%WWWDIR%%/language/sr_RS/help
+@dirrm %%WWWDIR%%/language/sv_SE
 @dirrm %%WWWDIR%%/language/sr_RS
+@dirrm %%WWWDIR%%/language/sl_SL
+@dirrm %%WWWDIR%%/language/sk_SK/help
+@dirrm %%WWWDIR%%/language/sk_SK
+@dirrm %%WWWDIR%%/language/sh_RS/help
+@dirrm %%WWWDIR%%/language/sh_RS
 @dirrm %%WWWDIR%%/language/ru_RU/help
 @dirrm %%WWWDIR%%/language/ru_RU
 @dirrm %%WWWDIR%%/language/ro_RO
@@ -1853,6 +2019,7 @@
 @dirrm %%WWWDIR%%/language/nl_NL/help
 @dirrm %%WWWDIR%%/language/nl_NL
 @dirrm %%WWWDIR%%/language/mk_MK
+@dirrm %%WWWDIR%%/language/lv_LV/help
 @dirrm %%WWWDIR%%/language/lv_LV
 @dirrm %%WWWDIR%%/language/ka_GE/help
 @dirrm %%WWWDIR%%/language/ka_GE
@@ -1864,6 +2031,8 @@
 @dirrm %%WWWDIR%%/language/hu_HU
 @dirrm %%WWWDIR%%/language/hr_HR/help
 @dirrm %%WWWDIR%%/language/hr_HR
+@dirrm %%WWWDIR%%/language/he_IL/help
+@dirrm %%WWWDIR%%/language/he_IL
 @dirrm %%WWWDIR%%/language/fr_FR/help
 @dirrm %%WWWDIR%%/language/fr_FR
 @dirrm %%WWWDIR%%/language/fr_CA/help
@@ -1909,7 +2078,6 @@
 @dirrm %%WWWDIR%%/admin/include
 @dirrm %%WWWDIR%%/admin
 @dirrm %%WWWDIR%%/_data
-@dirrmtry %%WWWDIR%%/local
-@dirrm %%WWWDIR%%
-%%PORTEXAMPLES%%@dirrm share/examples/piwigo/language
-%%PORTEXAMPLES%%@dirrm share/examples/piwigo
+@dirrmtry %%WWWDIR%%
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/language
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
