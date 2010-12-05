@@ -1,6 +1,7 @@
 EtoileFoundation is the core framework for all Etoile projects, providing
 numerous convenience methods on top of the OpenStep foundation and
-significantly better support for reflection. Here is a summary of some the interesting features:
+significantly better support for reflection. Here is a summary of some the
+interesting features:
 - mixins and traits
 - restartable exceptions
 - collection class protocol and additions
@@ -17,5 +18,7 @@ Two sub-frameworks are bundled with it:
   in fragments.
 
 LICENSE: BSD
+Copyright (c) 2005-2008, Uli Kusterer, Quentin Mathe, David Chisnall,
+ Yen-Ju Chen All rights reserved.
 
 WWW: http://www.etoile-project.org/
