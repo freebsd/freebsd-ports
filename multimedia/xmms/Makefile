@@ -7,7 +7,7 @@
 
 PORTNAME=	xmms
 PORTVERSION=	1.2.11
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES+=	multimedia audio ipv6
 MASTER_SITES=	http://www.xmms.org/files/1.2.x/ \
 		LOCAL/beech
@@ -41,7 +41,7 @@ INPUT_PLUGINS=	cdaudio mpg123 tonegen wav
 OUTPUT_PLUGINS=	OSS disk_writer
 VISUALIZATION_PLUGINS=	blur_scope sanalyzer
 
-OPTIONS=	IPV6		"Enable ipv6" off \
+OPTIONS=	IPV6		"Enable ipv6" on \
 		MIKMOD		"Enable Mikemod Plugin" on \
 		SIMD		"Enable x86 SIMD (3DNow!/MMX)" on \
 		SPEC		"Visualization opengl_spectrum" off \
@@ -50,7 +50,7 @@ OPTIONS=	IPV6		"Enable ipv6" off \
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_IPV6)
+.if !defined(WITHOUT_IPV6)
 CONFIGURE_ARGS+=	--enable-ipv6
 .else
 CONFIGURE_ARGS+=	--disable-ipv6
