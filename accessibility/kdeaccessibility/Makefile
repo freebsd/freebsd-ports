@@ -17,12 +17,12 @@ MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Accessibility applications for KDE
 
 USE_KDELIBS_VER=3
-PREFIX=		${KDE_PREFIX}
 
 USE_XORG=	xtst
 USE_BZIP2=	yes
-USE_AUTOTOOLS=  libtool
+USE_AUTOTOOLS=	libtool
 USE_GMAKE=	yes
+CONFIGURE_ARGS=	--with-alsa=no
 
 .include "${.CURDIR}/../../x11/kde3/Makefile.kde"
 
