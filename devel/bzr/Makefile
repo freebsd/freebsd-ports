@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	bazaar-ng
-PORTVERSION=	2.2.1
+PORTVERSION=	2.2.2
 CATEGORIES=	devel
-MASTER_SITES=	https://launchpadlibrarian.net/55844926/
+MASTER_SITES=	https://launchpadlibrarian.net/59616932/
 DISTNAME=	bzr-${PORTVERSION}
 
 MAINTAINER=	fullermd@over-yonder.net
