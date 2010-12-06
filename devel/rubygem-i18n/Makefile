@@ -5,13 +5,13 @@
 # $FreeBSD$
 
 PORTNAME=	i18n
-PORTVERSION=	0.4.2
+PORTVERSION=	0.5.0
 PORTEPOCH=	1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
-COMMENT=	New wave Internationalization support for Ruby.
+COMMENT=	New wave Internationalization support for Ruby
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
