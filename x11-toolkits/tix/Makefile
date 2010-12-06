@@ -7,13 +7,14 @@
 
 PORTNAME=	tix
 PORTVERSION=	8.4.3
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits tk
 MASTER_SITES=	SF
+DISTNAME=	Tix${DISTVERSION}-src${DISTVERSIONSUFFIX}
 
 MAINTAINER=	doconnor@gsoft.com.au
 COMMENT=	An extension to the Tk toolkit
 
-DISTNAME=	Tix${DISTVERSION}-src${DISTVERSIONSUFFIX}
 WRKSRC=		${WRKDIR}/Tix${DISTVERSION}
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
@@ -38,6 +39,8 @@ MANN=		TixIntro.n compound.n pixmap.n tix.n tixBalloon.n \
 		tixScrolledWindow.n tixSelect.n tixStdButtonBox.n tixTList.n \
 		tixTree.n tixUtils.n
 
+TIX_LIB=	libTix${PORTVERSION}.so
+TIX_LIB_FILE=	${TIX_LIB}.0
 .include <bsd.port.pre.mk>
 
 pre-extract:
@@ -60,5 +63,16 @@ post-configure:
 
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/man/*.n ${PREFIX}/man/mann/
+	${RM} ${PREFIX}/lib/Tix${PORTVERSION}/${TIX_LIB}
+	${CP} -p ${WRKSRC}/${TIX_LIB} ${WRKSRC}/${TIX_LIB_FILE}
+	${INSTALL_LIB} ${WRKSRC}/${TIX_LIB_FILE} ${PREFIX}/lib
+	${LN} -fs ${PREFIX}/lib/${TIX_LIB_FILE} ${PREFIX}/lib/${TIX_LIB}
+	${LN} -fs ${PREFIX}/lib/${TIX_LIB_FILE} ${PREFIX}/lib/Tix${PORTVERSION}/${TIX_LIB}
+.for dir in generic unix
+	${MKDIR} ${PREFIX}/include/tix/${dir}
+	${INSTALL_DATA} ${WRKSRC}/${dir}/*.h ${PREFIX}/include/tix/${dir}
+.endfor
+	${LN} -sf ${PREFIX}/include/tix/generic/tix.h ${PREFIX}/include/tix.h
+	${RMDIR} ${PREFIX}/lib/Tix${PORTVERSION}/html
 
 .include <bsd.port.post.mk>
