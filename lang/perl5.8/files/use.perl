@@ -23,13 +23,17 @@ if [ "x$this" = "xuse.perl" ]; then
 		need_remove_links=%%LINK_USRBIN%%
 		need_create_links=%%LINK_USRBIN%%
 		need_cleanup_make_conf=yes
-		need_cleanup_manpath=yes
 		need_spam_make_conf=yes
-		need_spam_manpath=yes
+		if [ "${osreldate}" -lt 900022 ]; then
+			need_cleanup_manpath=yes
+			need_spam_manpath=yes
+		fi
 	elif [ "$1" = "system" ] ; then
 		need_remove_links=%%LINK_USRBIN%%
 		need_cleanup_make_conf=yes
-		need_cleanup_manpath=yes
+		if [ "${osreldate}" -lt 900022 ]; then
+			need_cleanup_manpath=yes
+		fi
 	else
 		echo "Usage:
 	${0##*/} port       -> /usr/bin/perl is the perl5 port
@@ -41,14 +45,18 @@ else
 		need_remove_links=yes
 		need_create_links=yes
 		need_cleanup_make_conf=yes
-		need_cleanup_manpath=yes
 		need_spam_make_conf=yes
-		need_spam_manpath=yes
 		need_post_install=yes
+		if [ "${osreldate}" -lt 900022 ]; then
+			need_cleanup_manpath=yes
+			need_spam_manpath=yes
+		fi
 	elif [ "$2" = "POST-DEINSTALL" ] ; then
 		need_remove_links=yes
 		need_cleanup_make_conf=yes
-		need_cleanup_manpath=yes
+		if [ "${osreldate}" -lt 900022 ]; then
+			need_cleanup_manpath=yes
+		fi
 	else
 		exit 0;
 	fi
