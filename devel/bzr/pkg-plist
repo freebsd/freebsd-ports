@@ -1430,6 +1430,7 @@ bin/bzr
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/ssl_certs/__init__.py
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/ssl_certs/__init__.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/ssl_certs/__init__.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/tests/ssl_certs/ca.crt
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/ssl_certs/create_ssls.py
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/ssl_certs/create_ssls.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/ssl_certs/create_ssls.pyo
