@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	print
 MASTER_SITES=	http://uwstopia.nl/geek/projects/gnome-specimen/releases/
 
-MAINTAINER=	steve@mouf.net
+MAINTAINER=	swills@FreeBSD.org
 COMMENT=	Gnome Specimen is a simple tool to preview and compare installed fonts
 
 GNU_CONFIGURE=	yes
