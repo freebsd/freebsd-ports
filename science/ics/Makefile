@@ -16,8 +16,8 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	Code_Saturne Graphical User Interface
 
-LIB_DEPENDS=	tix8184:${PORTSDIR}/x11-toolkits/tix
-RUN_DEPENDS=	${CS_HOME}/bin/info_cs:${PORTSDIR}/science/ncs	\
+RUN_DEPENDS=	${LOCALBASE}/lib/Tix8.4.3/Tix.tcl:${PORTSDIR}/x11-toolkits/tix \
+		${CS_HOME}/bin/info_cs:${PORTSDIR}/science/ncs	\
 		${PYTHON_SITELIBDIR}/_tkinter.so:${PORTSDIR}/x11-toolkits/py-tkinter
 
 NO_BUILD=	yes
