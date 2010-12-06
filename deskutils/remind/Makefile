@@ -6,22 +6,36 @@
 #
 
 PORTNAME=	remind
-PORTVERSION=	3.1.3
+PORTVERSION=	3.1.10
 CATEGORIES=	deskutils
 MASTER_SITES=	http://www.roaringpenguin.com/files/download/ \
 		http://freebsd.unixfreunde.de/sources/
-DISTNAME=	${PORTNAME}-03.01.03
+DISTNAME=	${PORTNAME}-03.01.10
 
 MAINTAINER=	jadawin@FreeBSD.org
 COMMENT=	Sophisticated calendar and alarm program
 
+LICENSE=	GPLv2
+
+OPTIONS=	TCLTK "Tcl/Tk support" off
+
 GNU_CONFIGURE=	yes
 MAKE_ARGS=	INSTALL_SCRIPT="${INSTALL_SCRIPT}"
 
-MAN1=		rem.1 rem2ps.1 remind.1 tkremind.1 cm2rem.1
+MAN1=		rem.1 rem2ps.1 remind.1
 
-PLIST_FILES=	bin/cm2rem.tcl bin/rem bin/rem2ps bin/remind \
-		bin/tkremind
+PLIST_FILES=	bin/rem bin/rem2ps bin/remind
+
+.include <bsd.port.options.mk>
+
+.if defined(WITH_TCLTK)
+USE_TK=		yes
+RUN_DEPENDS+=	dtplite:${PORTSDIR}/devel/tcllib
+MAN1+=		cm2rem.1 tkremind.1
+PLIST_FILES+=	bin/cm2rem.tcl bin/tkremind
+.endif
+
+.include <bsd.port.pre.mk>
 
 post-patch:
 # This seems more than a little ugly.
@@ -49,5 +63,24 @@ post-patch:
 .if defined(A4)
 	@${REINPLACE_CMD} -e 's#"Letter", 612, 792#"A4", 595, 842#' ${WRKSRC}/src/custom.h
 .endif
+.if defined(WITH_TCLTK)
+	@${REINPLACE_CMD} -e 's,wish,${WISH},' ${WRKSRC}/scripts/tkremind
+	@${REINPLACE_CMD} -e 's,tclsh,${TCLSH},' ${WRKSRC}/scripts/cm2rem.tcl
+.endif
 
-.include <bsd.port.mk>
+do-install:
+.for i in rem2ps remind
+	${INSTALL_PROGRAM} ${WRKSRC}/src/${i} ${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/man/${i}.1 ${PREFIX}/man/man1
+.endfor
+	${INSTALL_MAN} ${WRKSRC}/man/rem.1 ${PREFIX}/man/man1
+	${LN} -sf ${PREFIX}/bin/remind ${PREFIX}/bin/rem
+.if defined(WITH_TCLTK)
+	${INSTALL_SCRIPT} ${WRKSRC}/scripts/cm2rem.tcl ${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/scripts/tkremind ${PREFIX}/bin
+.for i in cm2rem tkremind
+	${INSTALL_MAN} ${WRKSRC}/man/${i}.1 ${PREFIX}/man/man1
+.endfor
+.endif
+
+.include <bsd.port.post.mk>
