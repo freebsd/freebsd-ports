@@ -1,15 +1,18 @@
 --- ../passenger-3.0.0/build/nginx.rb.orig	2010-10-01 14:22:34.000000000 +0400
-+++ ../passenger-3.0.0/build/nginx.rb	2010-12-01 11:52:32.000000000 +0300
-@@ -17,8 +17,6 @@
++++ ../passenger-3.0.0/build/nginx.rb	2010-12-04 15:27:45.000000000 +0300
+@@ -16,10 +16,7 @@
+ 
  desc "Build Nginx helper agent"
  task :nginx => [
- 	'agents/nginx/PassengerHelperAgent',
+-	'agents/nginx/PassengerHelperAgent',
 -	'agents/PassengerWatchdog',
 -	'agents/PassengerLoggingAgent',
- 	:native_support
+-	:native_support
++	'agents/nginx/PassengerHelperAgent'
  ]
  
-@@ -44,17 +42,7 @@
+ dependencies = [
+@@ -44,17 +41,7 @@
  	LIBCOMMON,
  ]
  file 'agents/nginx/PassengerHelperAgent' => dependencies do
