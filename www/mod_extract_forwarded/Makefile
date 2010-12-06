@@ -7,6 +7,7 @@
 
 PORTNAME=	mod_extract_forwarded
 PORTVERSION=	2.0.2
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://www.openinfo.co.uk/apache/
 DISTNAME=	extract_forwarded-${DISTVERSION}
@@ -17,8 +18,8 @@ COMMENT=	An Apache module that can make proxied requests appear with client IP
 USE_APACHE=	20+
 WRKSRC=		${WRKDIR}/extract_forwarded
 PORTDOCS=	INSTALL README
-MAKE_JOBS_SAFE=  yes
-CONFLICTS=	mod_extract_forwarded-1.* mod_extract_forwarded2-0.*
+MAKE_JOBS_SAFE=	yes
+CONFLICTS=	mod_extract_forwarded-1.*
 
 AP_FAST_BUILD=	yes
 AP_GENPLIST=	yes
