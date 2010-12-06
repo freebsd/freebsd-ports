@@ -1,0 +1,11 @@
+--- util-src/Makefile.orig	2010-12-06 12:33:26.434094017 -0800
++++ util-src/Makefile	2010-12-06 12:33:39.599095155 -0800
+@@ -16,7 +16,7 @@
+ 
+ .o.so:
+ 	MACOSX_DEPLOYMENT_TARGET="10.3"; export MACOSX_DEPLOYMENT_TARGET;
+-	$(LD) $(LDFLAGS) -o $@ $< -L$(LUA_LIBDIR) -llua$(LUA_SUFFIX) -lidn -lcrypto
++	$(LD) $(LDFLAGS) -o $@ $< -L$(LUA_LIBDIR) -L${LOCALBASE}/lib -llua$(LUA_SUFFIX) -lidn -lcrypto
+ 
+ all: encodings.so hashes.so pposix.so signal.so
+ 
