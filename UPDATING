@@ -34,7 +34,7 @@ you update your ports collection, before attempting any port upgrades.
 	# portmaster -r musepack-
   
   Portupgrade user:
-	# env DISABLE_CONFLICTS=1 portupgrade -o audio/libmpcdec -f libmpcdec-\*
+	# env DISABLE_CONFLICTS=1 portupgrade -o audio/musepack -f libmpcdec-\*
 	# pkgdb -Ff
 	# portupgrade -rf musepack-\*
 
