@@ -13,7 +13,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 #DISTNAME=	${PORTNAME}-${PORTVERSION:C/\.(..)$/\1/}
 
-MAINTAINER=	clsung@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Build and install Perl modules
 
 RUN_DEPENDS=	p5-YAML-Tiny>=1.40:${PORTSDIR}/textproc/p5-YAML-Tiny \

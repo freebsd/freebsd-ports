@@ -11,7 +11,7 @@ CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	clsung@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Provides access to SQLite3 databases through the DBI
 
 LIB_DEPENDS=	sqlite3.8:${PORTSDIR}/databases/sqlite3

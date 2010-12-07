@@ -12,7 +12,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 DISTNAME=	${PORTNAME}-${PORTVERSION:C/.$//}
 
-MAINTAINER=	clsung@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	JSON serialising/deserialising, done correctly and fast
 
 RUN_DEPENDS=	p5-common-sense>0:${PORTSDIR}/devel/p5-common-sense

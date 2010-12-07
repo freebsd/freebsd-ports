@@ -11,7 +11,7 @@ CATEGORIES=	www perl5
 MASTER_SITES=	http://backpan.perl.org/authors/id/S/SP/SPECTRUM/
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	clsung@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	OOP MediaWiki engine client
 
 RUN_DEPENDS=	${SITE_PERL}/Config/IniHash.pm:${PORTSDIR}/devel/p5-Config-IniHash \
