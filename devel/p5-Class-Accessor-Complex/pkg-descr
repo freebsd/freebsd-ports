@@ -1,0 +1,13 @@
+This module generates accessors for your class in the same spirit as
+Class::Accessor does. While the latter deals with accessors for
+scalar values, this module provides accessor makers for arrays,
+hashes, integers, booleans, sets and more.
+
+As seen in the synopsis, you can chain calls to the accessor makers.
+Also, because this module inherits from Class::Accessor, you can put
+a call to one of its accessor makers at the end of the chain.
+
+The accessor generators also generate documentation ready to be used
+with Sub::Documentation.
+
+WWW:	http://search.cpan.org/~marcel/Class-Accessor-Complex-1.100880/
