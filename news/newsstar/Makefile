@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	newsstar
-PORTVERSION=	1.5.3
-PORTREVISION=	1
+PORTVERSION=	1.5.4
 CATEGORIES=	news
 MASTER_SITES=	SF
 
@@ -18,12 +17,10 @@ LIB_DEPENDS=	gdbm.3:${PORTSDIR}/databases/gdbm
 BUILD_DEPENDS=	xmlto:${PORTSDIR}/textproc/xmlto \
 		${LOCALBASE}/share/xml/docbook/4.5/docbookx.dtd:${PORTSDIR}/textproc/docbook-xml
 
-BROKEN=		does not build
-
 USE_PERL5=	yes
-HAS_CONFIGURE=	yes
+GNU_CONFIGURE=	yes
 USE_ICONV=	yes
-USE_AUTOTOOLS=	automake autoconf aclocal
+MAKE_JOBS_SAFE=	yes
 
 CONFIGURE_ARGS+=--prefix=${PREFIX} \
 		--with-conf-dir=${PREFIX}/etc/newsstar \
@@ -66,12 +63,14 @@ DOCS=		AUTHORS INSTALL NEWS README TODO docs/QuickStart docs/manual.txt \
 EX_CONFIGS=	cf.server.sample curses.cf.sample filter.pl.sample main.cf.sample \
 		master.ignore.sample master.score.sample newsrc.sample
 
-.if !defined(NOPORTDOCS)
 post-install:
+.if !defined(NOPORTEXAMPLES)
 	${MKDIR} ${EXAMPLESDIR}
 .for i in ${EX_CONFIGS}
 	${INSTALL_DATA} ${WRKSRC}/sample_config/${i} ${EXAMPLESDIR}
 .endfor
+.endif
+.if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 .for i in ${DOCS}
 	${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
@@ -81,4 +80,5 @@ post-install:
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/share/sgml/docbook/dtd/xml|${LOCALBASE}/share/xml/docbook|' ${WRKSRC}/docs/manual.xml
 	@${REINPLACE_CMD} -e 's|/usr/share/sgml/docbook/dtd/xml|${LOCALBASE}/share/xml/docbook|' ${WRKSRC}/docs/news.xml
+
 .include <bsd.port.post.mk>
