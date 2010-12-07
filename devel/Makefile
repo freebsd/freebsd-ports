@@ -2157,6 +2157,7 @@
     SUBDIR += p5-Shell-Parser
     SUBDIR += p5-Shell-Source
     SUBDIR += p5-ShipIt
+    SUBDIR += p5-ShipIt-Step-Manifest
     SUBDIR += p5-Smart-Comments
     SUBDIR += p5-Sort-Array
     SUBDIR += p5-Sort-ArrayOfArrays
