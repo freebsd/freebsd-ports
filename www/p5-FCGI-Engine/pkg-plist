@@ -1,0 +1,27 @@
+%%SITE_PERL%%/FCGI/Engine.pm
+%%SITE_PERL%%/FCGI/Engine/Core.pm
+%%SITE_PERL%%/FCGI/Engine/Manager.pm
+%%SITE_PERL%%/FCGI/Engine/Manager/Server.pm
+%%SITE_PERL%%/FCGI/Engine/Manager/Server/FreeBSD6.pm
+%%SITE_PERL%%/FCGI/Engine/Manager/Server/Plackup.pm
+%%SITE_PERL%%/FCGI/Engine/PSGI.pm
+%%SITE_PERL%%/FCGI/Engine/ProcManager.pm
+%%SITE_PERL%%/FCGI/Engine/Types.pm
+%%SITE_PERL%%/Plack/Handler/FCGI/Engine.pm
+%%SITE_PERL%%/Plack/Handler/FCGI/Engine/ProcManager.pm
+%%SITE_PERL%%/Plack/Server/FCGI/Engine.pm
+%%SITE_PERL%%/Plack/Server/FCGI/Engine/ProcManager.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/FCGI/Engine/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/FCGI/Engine
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/FCGI
+@dirrmtry %%SITE_PERL%%/Plack/Server/FCGI/Engine
+@dirrmtry %%SITE_PERL%%/Plack/Server/FCGI
+@dirrmtry %%SITE_PERL%%/Plack/Server
+@dirrmtry %%SITE_PERL%%/Plack/Handler/FCGI/Engine
+@dirrmtry %%SITE_PERL%%/Plack/Handler/FCGI
+@dirrmtry %%SITE_PERL%%/Plack/Handler
+@dirrmtry %%SITE_PERL%%/Plack
+@dirrmtry %%SITE_PERL%%/FCGI/Engine/Manager/Server
+@dirrmtry %%SITE_PERL%%/FCGI/Engine/Manager
+@dirrmtry %%SITE_PERL%%/FCGI/Engine
+@dirrmtry %%SITE_PERL%%/FCGI
