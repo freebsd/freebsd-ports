@@ -71,11 +71,10 @@
 
 PORTNAME=	scponly
 PORTVERSION=	4.8
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	shells security
 MASTER_SITES=	http://www.sublimation.org/scponly/ \
 		SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
-
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	rfarmer@predatorlabs.net
