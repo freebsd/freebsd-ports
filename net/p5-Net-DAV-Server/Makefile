@@ -6,27 +6,27 @@
 #
 
 PORTNAME=	Net-DAV-Server
-PORTVERSION=	1.29
+PORTVERSION=	1.30.2
 CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
+DISTNAME=	${PORTNAME}-1.302
 
-MAINTAINER=	gslin@gslin.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Provide a DAV Server
 
-RUN_DEPENDS=	${SITE_PERL}/Class/Accessor/Fast.pm:${PORTSDIR}/devel/p5-Class-Accessor \
-		${SITE_PERL}/File/Find/Rule/Filesys/Virtual.pm:${PORTSDIR}/devel/p5-File-Find-Rule-Filesys-Virtual \
-		${SITE_PERL}/File/Slurp.pm:${PORTSDIR}/devel/p5-File-Slurp \
-		${SITE_PERL}/HTTP/Date.pm:${PORTSDIR}/devel/p5-DateTime-Format-HTTP \
-		${SITE_PERL}/HTTP/Headers.pm:${PORTSDIR}/www/p5-libwww \
-		${SITE_PERL}/HTTP/Request.pm:${PORTSDIR}/www/p5-libwww \
-		${SITE_PERL}/HTTP/Response.pm:${PORTSDIR}/www/p5-libwww \
-		${SITE_PERL}/URI.pm:${PORTSDIR}/net/p5-URI \
-		${SITE_PERL}/URI/Escape.pm:${PORTSDIR}/net/p5-URI \
-		${SITE_PERL}/${PERL_ARCH}/XML/LibXML.pm:${PORTSDIR}/textproc/p5-XML-LibXML
+RUN_DEPENDS=	p5-DBD-SQLite>=0:${PORTSDIR}/databases/p5-DBD-SQLite \
+		p5-DBI>=0:${PORTSDIR}/databases/p5-DBI \
+		p5-Digest-SHA1>=0:${PORTSDIR}/security/p5-Digest-SHA1 \
+		p5-File-Find-Rule-Filesys-Virtual>=0:${PORTSDIR}/devel/p5-File-Find-Rule-Filesys-Virtual \
+		p5-File-Slurp>=0:${PORTSDIR}/devel/p5-File-Slurp \
+		p5-URI>=0:${PORTSDIR}/net/p5-URI \
+		p5-XML-LibXML>=1.62000:${PORTSDIR}/textproc/p5-XML-LibXML \
+		p5-libwww>=0:${PORTSDIR}/www/p5-libwww
 
-PERL_CONFIGURE=	yes
+PERL_MODBUILD=	yes
 
-MAN3=		Net::DAV::Server.3
+MAN3=		Net::DAV::LockManager.3 \
+		Net::DAV::Server.3
 
 .include <bsd.port.mk>
