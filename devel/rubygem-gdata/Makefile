@@ -9,7 +9,7 @@ PORTVERSION=	1.1.1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	clsung@FreeBSD.org
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Assist Ruby developers in working with Google Data APIs
 
 RUN_DEPENDS=	rubygem-rails>=2.2.2:${PORTSDIR}/www/rubygem-rails

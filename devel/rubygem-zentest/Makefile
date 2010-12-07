@@ -12,7 +12,7 @@ CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 DISTNAME=	ZenTest-${PORTVERSION}
 
-MAINTAINER=	clsung@FreeBSD.org
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Ruby Unit Testing Utility
 
 RUN_DEPENDS=	rubygem-hoe>=1.5.0:${PORTSDIR}/devel/rubygem-hoe

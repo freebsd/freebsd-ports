@@ -10,7 +10,7 @@ PORTREVISION=	1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	clsung@FreeBSD.org
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Define abstract method in Ruby
 
 USE_RUBY=	yes

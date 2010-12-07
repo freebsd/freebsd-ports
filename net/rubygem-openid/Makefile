@@ -11,7 +11,7 @@ CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 DISTNAME=	ruby-${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	clsung@FreeBSD.org
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	An OpenID library written in pure Ruby
 
 RUN_DEPENDS=	rubygem-yadis>=0.3.4:${PORTSDIR}/net/rubygem-yadis

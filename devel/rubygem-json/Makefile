@@ -10,7 +10,7 @@ PORTVERSION=	1.2.4
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	clsung@FreeBSD.org
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Parse JSON texts and generate them from ruby data structures
 
 USE_RUBY=	yes

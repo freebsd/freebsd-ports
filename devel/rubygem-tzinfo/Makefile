@@ -10,7 +10,7 @@ PORTVERSION=	0.3.23
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	clsung@FreeBSD.org
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Daylight-savings aware timezone support for Ruby
 
 USE_RUBY=	yes

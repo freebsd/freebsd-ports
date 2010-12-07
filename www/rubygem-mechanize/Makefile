@@ -10,7 +10,7 @@ PORTREVISION=	1
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	clsung@FreeBSD.org
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	WWW::Mechanize, a handy web browsing ruby object
 
 RUN_DEPENDS=	rubygem-nokogiri>=1.2.1:${PORTSDIR}/textproc/rubygem-nokogiri

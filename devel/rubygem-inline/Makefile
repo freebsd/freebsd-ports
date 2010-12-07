@@ -14,7 +14,7 @@ CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 DISTNAME=	RubyInline-${PORTVERSION}
 
-MAINTAINER=	clsung@FreeBSD.org
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Inline::C allows you to embed C/Ruby directly in ruby scripts
 
 RUN_DEPENDS=	sow:${PORTSDIR}/devel/rubygem-hoe \

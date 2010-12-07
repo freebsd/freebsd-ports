@@ -9,7 +9,7 @@ PORTVERSION=	0.9.9
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	clsung@FreeBSD.org
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	A library for mocking and stubbing syntax like JMock, and SchMock
 
 USE_RUBY=	yes
