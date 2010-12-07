@@ -81,6 +81,7 @@ include/parrot/%%PARROT_VER%%/parrot/string.h
 include/parrot/%%PARROT_VER%%/parrot/string_funcs.h
 include/parrot/%%PARROT_VER%%/parrot/string_primitives.h
 include/parrot/%%PARROT_VER%%/parrot/sub.h
+include/parrot/%%PARROT_VER%%/parrot/sysmem.h
 include/parrot/%%PARROT_VER%%/parrot/thr_pthread.h
 include/parrot/%%PARROT_VER%%/parrot/thr_windows.h
 include/parrot/%%PARROT_VER%%/parrot/thread.h
@@ -284,6 +285,8 @@ lib/parrot/%%PARROT_VER%%/library/Data/Dumper/Default.pbc
 lib/parrot/%%PARROT_VER%%/library/Data/Dumper/Default.pir
 lib/parrot/%%PARROT_VER%%/library/Digest/MD5.pbc
 lib/parrot/%%PARROT_VER%%/library/Digest/MD5.pir
+lib/parrot/%%PARROT_VER%%/library/Digest/sha256.pbc
+lib/parrot/%%PARROT_VER%%/library/Digest/sha256.pir
 lib/parrot/%%PARROT_VER%%/library/Getopt/Obj.pbc
 lib/parrot/%%PARROT_VER%%/library/Getopt/Obj.pir
 lib/parrot/%%PARROT_VER%%/library/HLL.pbc
@@ -492,6 +495,7 @@ lib/parrot/%%PARROT_VER%%/tools/lib/Parrot/Docs/Section/Perl.pm
 lib/parrot/%%PARROT_VER%%/tools/lib/Parrot/Docs/Section/Tests.pm
 lib/parrot/%%PARROT_VER%%/tools/lib/Parrot/Docs/Section/Tools.pm
 lib/parrot/%%PARROT_VER%%/tools/lib/Parrot/Docs/Text2HTML.pm
+lib/parrot/%%PARROT_VER%%/tools/lib/Parrot/Git/Describe.pm
 lib/parrot/%%PARROT_VER%%/tools/lib/Parrot/H2inc.pm
 lib/parrot/%%PARROT_VER%%/tools/lib/Parrot/Harness/DefaultTests.pm
 lib/parrot/%%PARROT_VER%%/tools/lib/Parrot/Harness/Options.pm
@@ -527,6 +531,7 @@ lib/parrot/%%PARROT_VER%%/tools/lib/Parrot/Pmc2c/Pmc2cMain.pm
 lib/parrot/%%PARROT_VER%%/tools/lib/Parrot/Pmc2c/UtilFunctions.pm
 lib/parrot/%%PARROT_VER%%/tools/lib/Parrot/Pmc2c/VTable.pm
 lib/parrot/%%PARROT_VER%%/tools/lib/Parrot/Revision.pm
+lib/parrot/%%PARROT_VER%%/tools/lib/Parrot/SHA1.pm
 lib/parrot/%%PARROT_VER%%/tools/lib/Parrot/SearchOps.pm
 lib/parrot/%%PARROT_VER%%/tools/lib/Parrot/Test.pm
 lib/parrot/%%PARROT_VER%%/tools/lib/Parrot/Test/Harness.pm
@@ -653,6 +658,7 @@ src/parrot/%%PARROT_VER%%/vtable.tbl
 @dirrm lib/parrot/%%PARROT_VER%%/tools/lib/Parrot/Pmc2c
 @dirrm lib/parrot/%%PARROT_VER%%/tools/lib/Parrot/IO
 @dirrm lib/parrot/%%PARROT_VER%%/tools/lib/Parrot/Harness
+@dirrm lib/parrot/%%PARROT_VER%%/tools/lib/Parrot/Git
 @dirrm lib/parrot/%%PARROT_VER%%/tools/lib/Parrot/Docs/Section
 @dirrm lib/parrot/%%PARROT_VER%%/tools/lib/Parrot/Docs
 @dirrm lib/parrot/%%PARROT_VER%%/tools/lib/Parrot/Configure/Step
