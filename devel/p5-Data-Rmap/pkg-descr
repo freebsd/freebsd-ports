@@ -1,0 +1,26 @@
+Recursively evaluate a BLOCK over a list of data structures (locally
+setting $_ to each element) and return the list composed of the
+results of such evaluations. $_ can be used to modify the elements.
+
+Data::Rmap currently traverses HASH, ARRAY, SCALAR and GLOB reference
+types and ignores others. Depending on which rmap_* wrapper is used,
+the BLOCK is called for only scalar values, arrays, hashes,
+references, all elements or a customizable combination.
+
+The list of data structures is traversed pre-order in a depth-first
+fashion. That is, the BLOCK is called for the container reference
+before is it called for it's elements (although see "recurse" below
+for post-order). The values of a hash are traversed in the usual
+"values" order which may affect some applications.
+
+If the "cut" subroutine is called in the BLOCK then the traversal
+stops for that branch, say if you "cut" an array then the code is
+never called for it's elements (or their sub-elements). To
+simultaneously return values and cut, simply pass the return list to
+cut: cut('add','to','returned');
+
+The first parameter to the BLOCK is an object which maintains the
+state of the traversal. Methods available on this object are
+described in "State Object" below.
+
+WWW:	http://search.cpan.org/dist/Data-Rmap/
