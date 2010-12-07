@@ -7,7 +7,7 @@
 
 PORTNAME=		opencascade
 PORTVERSION=		6.3
-PORTREVISION=	9
+PORTREVISION=		10
 CATEGORIES=		cad science
 MASTER_SITES=		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	thierry
@@ -21,15 +21,15 @@ RUN_DEPENDS=	${LOCALBASE}/include/stlport/algorithm:${PORTSDIR}/devel/stlport	\
 		${LIB_TCLX}:${PORTSDIR}/lang/tclX
 LIB_DEPENDS=	itcl.${ITCL_VER}:${PORTSDIR}/lang/itcl		\
 		itk.${ITK_VER}:${PORTSDIR}/x11-toolkits/itk	\
-		tix${TIX_VER}:${PORTSDIR}/x11-toolkits/tix	\
+		Tix${TIX_VER}:${PORTSDIR}/x11-toolkits/tix	\
 		fltk.1:${PORTSDIR}/x11-toolkits/fltk		\
 		dps.0:${PORTSDIR}/x11/dgs
 
 USE_BZIP2=	yes
 USE_BISON=	build
-USE_TK=		84
-USE_TCL_BUILD=	84
-USE_TCL_RUN=	84
+USE_TK=		84+
+USE_TCL_BUILD=	84+
+USE_TCL_RUN=	84+
 USE_TCL_THREADS=yes
 USE_JAVA=	yes
 USE_XORG=	xmu
@@ -43,9 +43,10 @@ ITCL_VER=	3
 ITCL_MM=	3.3
 ITK_VER=	3
 ITK_MM=		3.3
-TIX_VER=	8184.1
-TIX_MM=		8.1
-LIB_TCLX=	${LOCALBASE}/lib/tclx${TCL_VER}/libtclx${TCL_VER}.so
+TIX_VER=	8.4.3
+TIX_MM=		8.4.3
+TCLX_VER=	8.4
+LIB_TCLX=	${LOCALBASE}/lib/tclx${TCLX_VER}/libtclx${TCLX_VER}.so
 
 PATCH_WRKSRC=	${WRKDIR}/OpenCASCADE${PORTVERSION}.0
 WRKSRC=		${PATCH_WRKSRC}/ros

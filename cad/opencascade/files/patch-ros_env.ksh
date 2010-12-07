@@ -44,7 +44,7 @@
 +elif [ $OS_NAME = "FreeBSD" ]; then
 +      export ITK_LIBRARY=$TCLLIBPATH/itk%%ITKMM%%
 +      export ITCL_LIBRARY=$TCLLIBPATH/itcl%%ITCLMM%%
-+      export TIX_LIBRARY=$TCLLIBPATH/tix%%TIX_MM%%
++      export TIX_LIBRARY=$TCLLIBPATH/Tix%%TIX_MM%%
 +      export TK_LIBRARY=%%TK_LIBDIR%%
 +      export TCL_LIBRARY=%%TCL_LIBDIR%%
  elif [ $OS_NAME = "Linux" ]; then

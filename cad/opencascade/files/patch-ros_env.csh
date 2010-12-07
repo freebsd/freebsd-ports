@@ -40,7 +40,7 @@
 +else if ( $OS_NAME == "FreeBSD" ) then
 +      setenv ITK_LIBRARY $TCLLIBPATH/itk%%ITKMM%%
 +      setenv ITCL_LIBRARY $TCLLIBPATH/itcl%%ITCLMM%%
-+      setenv TIX_LIBRARY $TCLLIBPATH/tix%%TIX_MM%%
++      setenv TIX_LIBRARY $TCLLIBPATH/Tix%%TIX_MM%%
 +      setenv TK_LIBRARY %%TK_LIBDIR%%
 +      setenv TCL_LIBRARY %%TCL_LIBDIR%%
  else if ( $OS_NAME == "Linux" ) then
