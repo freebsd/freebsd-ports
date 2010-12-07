@@ -10,6 +10,3 @@ This module provides an efficient XS-based implementation of n-gram
 spectrum analysis.
 
 WWW:	http://search.cpan.org/dist/Text-Ngram/
-
-- Cheng-Lung Sung
-clsung@FreeBSD.org
