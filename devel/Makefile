@@ -1414,6 +1414,7 @@
     SUBDIR += p5-Data-Range-Compare
     SUBDIR += p5-Data-Recursive-Encode
     SUBDIR += p5-Data-Remember
+    SUBDIR += p5-Data-Rmap
     SUBDIR += p5-Data-RoundRobin
     SUBDIR += p5-Data-Rx
     SUBDIR += p5-Data-Section
