@@ -6,18 +6,18 @@
 #
 
 PORTNAME=	opencart
-PORTVERSION=	1.3.0
+PORTVERSION=	1.4.9.1
 CATEGORIES=	www misc
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 DISTNAME=	${PORTNAME}_v${PORTVERSION}
 
-MAINTAINER=	wenheping@gmail.com
+MAINTAINER=	wen@FreeBSD.org
 COMMENT=	An open source PHP-based online shopping cart system
 
 #PROJECTHOST=	open-cart
 USE_ZIP=	yes
 USE_PHP=	mysql gd session pcre
-WRKSRC=		${WRKDIR}/${DISTNAME}/upload
+WRKSRC=		${WRKDIR}/upload
 
 NO_BUILD=	yes
 SUB_FILES=	pkg-message
@@ -26,14 +26,14 @@ SUB_FILES=	pkg-message
 
 do-install:
 	@cd ${WRKSRC} && ${COPYTREE_SHARE} . ${WWWDIR}
-	@${CHOWN} ${WWWOWN}:${WWWGRP} ${WWWDIR}
+	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${WWWDIR}
 	@${ECHO_CMD} '@exec ${CHOWN} -R ${WWWOWN}:${WWWGRP} ${WWWDIR}' \
 		>> ${TMPPLIST}
 	@${CHMOD} -R 0755 ${WWWDIR}/image/
 	@${ECHO_CMD} '@exec ${CHMOD} -R 0755 ${WWWDIR}/image/' \
 		>> ${TMPPLIST}
-	@${CHMOD} -R 0755 ${WWWDIR}/cache/
-	@${ECHO_CMD} '@exec ${CHMOD} -R 0755 ${WWWDIR}/cache/' \
+	@${CHMOD} -R 0755 ${WWWDIR}/system/cache/
+	@${ECHO_CMD} '@exec ${CHMOD} -R 0755 ${WWWDIR}/system/cache/' \
 		>> ${TMPPLIST}
 	@${CHMOD} -R 0755 ${WWWDIR}/download/
 	@${ECHO_CMD} '@exec ${CHMOD} -R 0755 ${WWWDIR}/download/' \
