@@ -8,6 +8,8 @@ lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/Config/INI.pir
 lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/Config/INI.pm
 lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/Config/INI/Writer.pir
 lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/Config/INI/Writer.pm
+lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/Configure.pir
+lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/Configure.pm
 lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/Digest/MD5.pir
 lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/Digest/MD5.pm
 lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/File/Copy.pir
@@ -30,6 +32,8 @@ lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/Form/NumberFormatting.pir
 lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/Form/NumberFormatting.pm
 lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/Form/TextFormatting.pir
 lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/Form/TextFormatting.pm
+lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/HTTP/Daemon.pir
+lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/HTTP/Daemon.pm
 lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/JSON/Tiny.pir
 lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/JSON/Tiny.pm
 lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/JSON/Tiny/Actions.pir
@@ -82,6 +86,10 @@ lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/Term/ANSIColor.pir
 lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/Term/ANSIColor.pm
 lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/Test.pir
 lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/Test.pm
+lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/Test/Differences.pir
+lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/Test/Differences.pm
+lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/Test/Harness.pir
+lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/Test/Harness.pm
 lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/Test/Mock.pir
 lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/Test/Mock.pm
 lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/XML/Writer.pir
@@ -116,6 +124,7 @@ lib/parrot/%%PARROT_VERSION%%/languages/perl6/perl6.pbc
 @dirrm lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/LWP
 @dirrm lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/JSON/Tiny
 @dirrm lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/JSON
+@dirrm lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/HTTP
 @dirrm lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/Form
 @dirrm lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/File
 @dirrm lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/Digest
