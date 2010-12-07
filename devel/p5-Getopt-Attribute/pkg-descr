@@ -1,0 +1,10 @@
+This module provides an attribute wrapper around Getopt::Long.
+Instead of declaring the options in a hash with references to the
+variables and subroutines affected by the options, you can use the
+Getopt attribute on the variables and subroutines directly.
+
+As you can see from the Synopsis, the attribute takes an argument of
+the same format as you would give as the hash key for Getopt::Long.
+See the Getopt::Long manpage for details.
+
+WWW:	http://search.cpan.org/dist/Getopt-Attribute/

@@ -1,0 +1,6 @@
+@comment $FreeBSD$
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Getopt/Attribute/.packlist
+%%SITE_PERL%%/Getopt/Attribute.pm
+@dirrmtry %%SITE_PERL%%/Getopt
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Getopt/Attribute
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Getopt
