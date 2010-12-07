@@ -6,11 +6,9 @@
 #
 
 PORTNAME=	qgis
-PORTVERSION=	1.5.0
-PORTREVISION=	1
+PORTVERSION=	1.6.0
 CATEGORIES=	graphics geography
 MASTER_SITES=	http://download.osgeo.org/qgis/src/
-DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Geographical Information System (GIS) data viewer
@@ -18,8 +16,10 @@ COMMENT=	Geographical Information System (GIS) data viewer
 LIB_DEPENDS=	geos:${PORTSDIR}/graphics/geos \
 		proj:${PORTSDIR}/graphics/proj \
 		gsl.15:${PORTSDIR}/math/gsl \
+		qwt.5:${PORTSDIR}/x11-toolkits/qwt5 \
 		gdal:${PORTSDIR}/graphics/gdal
 
+USE_BZIP2=	yes
 USE_PYTHON=	yes
 USE_BISON=	build
 USE_CMAKE=	yes
@@ -37,7 +37,8 @@ USE_LDCONFIG=	yes
 
 OPTIONS=	GRASS "Enable GRASS support" Off \
 		POSTGIS "Enable PostGIS support" Off \
-		PYTHON "Enable Python (broken with sip-4.11)" Off
+		MAPSERVER "Enable MapServer support" off \
+		PYTHON "Enable Python support" On
 
 .include <bsd.port.pre.mk>
 
@@ -63,10 +64,16 @@ CONFIGURE_ARGS+=--without-postgresql
 PLIST_SUB+=	PGSQL="@comment "
 .endif
 
+.if defined(WITH_MAPSERVER)
+PLIST_SUB+=	QGIS_FCGI=""
+LIB_DEPENDS+=	fcgi.0:${PORTSDIR}/www/fcgi
+.else
+PLIST_SUB+=	QGIS_FCGI="@comment "
+.endif
+
 .if defined(WITHOUT_PYTHON)
 PLIST_SUB+=	QGIS_PYTHON="@comment "
 .else
-BROKEN=		does not compile with sip-4.11
 PLIST_SUB+=	QGIS_PYTHON=""
 BUILD_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}sip>=4.8.2:${PORTSDIR}/devel/py-sip \
 		${PYTHON_PKGNAMEPREFIX}qt4-gui>=4.5.4:${PORTSDIR}/x11-toolkits/py-qt4-gui \
@@ -82,6 +89,11 @@ MAN1=		qgis.1 qgis_help.1
 post-patch:
 		${REINPLACE_CMD} -e 's# dl##g' \
 			${WRKSRC}/src/core/CMakeLists.txt
+
+.if !defined(WITH_MAPSERVER)
+		${REINPLACE_CMD} -e 's#WITH_MAPSERVER TRUE#WITH_MAPSERVER FALSE#g' \
+			${WRKSRC}/CMakeLists.txt
+.endif
 
 .if defined(WITHOUT_PYTHON)
 		${REINPLACE_CMD} -e 's#WITH_BINDINGS TRUE#WITH_BINDINGS FALSE#g' \
