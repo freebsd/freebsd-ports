@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ibus-el
-PORTVERSION=	0.2.0
+PORTVERSION=	0.2.1
 #PORTREVISION=	0
 CATEGORIES=	textproc elisp
 MASTER_SITES=	http://www11.atwiki.jp/s-irie/pub/emacs/ibus/
@@ -24,10 +24,9 @@ USE_PYTHON_RUN=	yes
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/doc/COPYING
 
-PLIST_DIRS=	${EMACS_VERSION_SITE_LISPDIR}/${PORTNAME} share/${PORTNAME}
-PLIST_FILES=	${EMACS_VERSION_SITE_LISPDIR}/${PORTNAME}/ibus.el \
-		${EMACS_VERSION_SITE_LISPDIR}/${PORTNAME}/ibus.elc \
-		share/${PORTNAME}/ibus-el-agent
+PLIST_FILES=	${EMACS_VERSION_SITE_LISPDIR}/ibus.el \
+		${EMACS_VERSION_SITE_LISPDIR}/ibus.elc \
+		libexec/ibus-el-agent
 PORTDOCS=	README
 
 do-build:
@@ -35,13 +34,11 @@ do-build:
 		-f batch-byte-compile ibus.el
 
 do-install:
-	@${MKDIR} ${PREFIX}/${EMACS_VERSION_SITE_LISPDIR}/${PORTNAME}
 	@${INSTALL_DATA} ${WRKSRC}/ibus.el \
-		${PREFIX}/${EMACS_VERSION_SITE_LISPDIR}/${PORTNAME}
+		${PREFIX}/${EMACS_VERSION_SITE_LISPDIR}
 	@${INSTALL_DATA} ${WRKSRC}/ibus.elc \
-		${PREFIX}/${EMACS_VERSION_SITE_LISPDIR}/${PORTNAME}
-	@${MKDIR} ${PREFIX}/share/${PORTNAME}
-	@${INSTALL_SCRIPT} ${WRKSRC}/ibus-el-agent ${PREFIX}/share/${PORTNAME}
+		${PREFIX}/${EMACS_VERSION_SITE_LISPDIR}
+	@${INSTALL_SCRIPT} ${WRKSRC}/ibus-el-agent ${PREFIX}/libexec
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	@cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
