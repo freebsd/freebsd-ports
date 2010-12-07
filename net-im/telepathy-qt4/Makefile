@@ -40,6 +40,8 @@ BROKEN=		does not build on 6.X
 .endif
 
 pre-configure:
+	${REINPLACE_CMD} -e '/add_subdirectory(tests)/ d' \
+		${WRKSRC}/CMakeLists.txt
 	${REINPLACE_CMD} -e '/TelepathyQt4.*\.pc/ s|pkgconfig|../libdata/pkgconfig|' \
 		${WRKSRC}/TelepathyQt4/CMakeLists.txt
 	${REINPLACE_CMD} -e '/$${LIBXML2_INCLUDE_DIR}/ s|$$| ${LOCALBASE}/include|' \
