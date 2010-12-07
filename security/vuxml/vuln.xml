@@ -34,6 +34,105 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="6887828f-0229-11e0-b84d-00262d5ed8ee">
+    <topic>chromium -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>chromium</name>
+	<range><lt>8.0.552.215</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Google Chrome Releases reports:</p>
+     	<blockquote cite="http://googlechromereleases.blogspot.com/search/label/Stable%20updates">
+	  <p>Fixed in 8.0.552.215:<br/>
+	    [17655] Low Possible pop-up blocker bypass. Credit to Google Chrome
+	      Security Team (SkyLined).<br/>
+	    [55745] Medium Cross-origin video theft with canvas. Credit to
+	      Nirankush Panchbhai and Microsoft Vulnerability Research
+	      (MSVR).<br/>
+	    [56237] Low Browser crash with HTML5 databases. Credit to Google
+	      Chrome Security Team (Inferno).<br/>
+	    [58319] Low Prevent excessive file dialogs, possibly leading to
+	      browser crash. Credit to Cezary Tomczak (gosu.pl).<br/>
+	    [59554] High Use after free in history handling. Credit to Stefan
+	      Troger.<br/>
+	    [Linux / Mac] [59817] Medium Make sure the "dangerous file types"
+	      list is uptodate with the Windows platforms. Credit to Billy Rios
+	      of the Google Security Team.<br/>
+	    [61701] Low Browser crash with HTTP proxy authentication. Credit to
+	      Mohammed Bouhlel.<br/>
+	    [61653] Medium Out-of-bounds read regression in WebM video support.
+	      Credit to Google Chrome Security Team (Chris Evans), based on
+	      earlier testcases from Mozilla and Microsoft (MSVR).<br/>
+	    [62127] High Crash due to bad indexing with malformed video. Credit
+	      to miaubiz.<br/>
+	    [62168] Medium Possible browser memory corruption via malicious
+	      privileged extension. Credit to kuzzcc.<br/>
+	    [62401] High Use after free with SVG animations. Credit to Slawomir
+	      Blazek.<br/>
+	    [63051] Medium Use after free in mouse dragging event handling.
+	      Credit to kuzzcc.<br/>
+	    [63444] High Double free in XPath handling. Credit to Yang Dingning
+	      from NCNIPC, Graduate University of Chinese Academy of Sciences.</p>
+
+	    <p>Fixed in 7.0.517.44:<br/>
+	    [51602] High Use-after-free in text editing. Credit to David Bloom
+	      of the Google Security Team, Google Chrome Security Team (Inferno)
+	      and Google Chrome Security Team (Cris Neckar).<br/>
+	    [55257] High Memory corruption with enormous text area. Credit to
+	      wushi of team509.<br/>
+	    [58657] High Bad cast with the SVG use element. Credit to the
+	      kuzzcc.<br/>
+	    [58731] High Invalid memory read in XPath handling. Credit to Bui
+	      Quang Minh from Bkis (www.bkis.com).<br/>
+	    [58741] High Use-after-free in text control selections. Credit to
+	      "vkouchna".<br/>
+	    [Linux only] [59320] High Integer overflows in font handling. Credit
+	      to Aki Helin of OUSPG.<br/>
+	    [60055] High Memory corruption in libvpx. Credit to Christoph
+	      Diehl.<br/>
+	    [60238] High Bad use of destroyed frame object. Credit to various
+	      developers, including "gundlach".<br/>
+	    [60327] [60769] [61255] High Type confusions with event objects.
+	      Credit to "fam.lam" and Google Chrome Security Team
+	      (Inferno).<br/>
+	    [60688] High Out-of-bounds array access in SVG handling. Credit to
+	      wushi of team509.</p>
+
+	    <p>Fixed in 7.0.517.43:<br/>
+	    [48225] [51727] Medium Possible autofill / autocomplete profile
+	      spamming. Credit to Google Chrome Security Team (Inferno).<br/>
+	    [48857] High Crash with forms. Credit to the Chromium development
+	      community.<br/>
+	    [50428] Critical Browser crash with form autofill. Credit to the
+	      Chromium development community.<br/>
+	    [51680] High Possible URL spoofing on page unload. Credit to kuzzcc;
+	      plus independent discovery by Jordi Chancel.<br/>
+	    [53002] Low Pop-up block bypass. Credit to kuzzcc.<br/>
+	    [53985] Medium Crash on shutdown with Web Sockets. Credit to the
+	      Chromium development community.<br/>
+	    [Linux only] [54132] Low Bad construction of PATH variable. Credit
+	      to Dan Rosenberg, Virtual Security Research.<br/>
+	    [54500] High Possible memory corruption with animated GIF. Credit to
+	      Simon Schaak.<br/>
+	    [Linux only] [54794] High Failure to sandbox worker processes on
+	      Linux. Credit to Google Chrome Security Team (Chris Evans).<br/>
+	    [56451] High Stale elements in an element map. Credit to Michal
+	      Zalewski of the Google Security Team.</p>
+	</blockquote> 
+      </body>
+    </description>
+    <references>
+      <url>http://googlechromereleases.blogspot.com/search/label/Stable%20updates</url>
+    </references>
+    <dates>
+      <discovery>2010-10-19</discovery>
+      <entry>2010-12-07</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="ed7fa1b4-ff59-11df-9759-080027284eaa">
     <topic>proftpd -- Compromised source packages backdoor</topic>
     <affects>
