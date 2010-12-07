@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	POE-Test-Loops
-PORTVERSION=	1.035
+PORTVERSION=	1.036
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	perl@FreeBSD.org
+MAINTAINER=	freebsd@beardz.net
 COMMENT=	Reusable tests for POE Loop authors
 
 PERL_CONFIGURE=	yes
