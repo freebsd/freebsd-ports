@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	Config-Model
-PORTVERSION=	1.222
+PORTVERSION=	1.224
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -42,6 +42,7 @@ MAN3=		Config::Model.3 \
 		Config::Model::Cookbook::CreateModelFromDoc.3 \
 		Config::Model::DumpAsData.3 Config::Model::Dumper.3 \
 		Config::Model::Exception.3 Config::Model::HashId.3 \
+		Config::Model::FuseUI.3 \
 		Config::Model::IdElementReference.3 Config::Model::Instance.3 \
 		Config::Model::ListId.3 Config::Model::Loader.3 \
 		Config::Model::Manual::ModelCreationAdvanced.3 \
