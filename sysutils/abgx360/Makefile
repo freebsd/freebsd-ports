@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	abgx360
-PORTVERSION=	1.0.4
+PORTVERSION=	1.0.5
 CATEGORIES=	sysutils
 MASTER_SITES=	http://abgx360.x-scene.com/
 
