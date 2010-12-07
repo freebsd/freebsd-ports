@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gnuls
-PORTVERSION=	8.4
+PORTVERSION=	8.5
 CATEGORIES=	misc
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	coreutils
@@ -15,6 +15,7 @@ DISTNAME=	coreutils-${PORTVERSION}
 MAINTAINER=	bmc@clapper.org
 COMMENT=	GNU colorized 'ls'
 
+USE_XZ=		yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-nls
 MAN1=		gnuls.1 dircolors.1 dir.1 vdir.1
