@@ -28,6 +28,7 @@
     SUBDIR += apache20
     SUBDIR += apache22
     SUBDIR += apache22-peruser-mpm
+    SUBDIR += apache22-prefork-mpm
     SUBDIR += apercu
     SUBDIR += aria
     SUBDIR += aria2
