@@ -7,6 +7,7 @@
 
 PORTNAME=	llvm
 PORTVERSION=	2.8
+PORTREVISION=	1
 CATEGORIES=	devel lang
 MASTER_SITES=	http://llvm.org/releases/${PORTVERSION}/
 EXTRACT_SUFX=	.tgz
