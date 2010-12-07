@@ -1,5 +1,5 @@
 bin/newsstar
-libexec/newsstar.bin
+lib/newsstar/newsstar.bin
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/INSTALL
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
@@ -20,13 +20,14 @@ libexec/newsstar.bin
 %%PORTDOCS%%%%DOCSDIR%%/ar01s10.html
 %%PORTDOCS%%%%DOCSDIR%%/ar01s11.html
 %%PORTDOCS%%%%DOCSDIR%%/ar01s12.html
-%%PORTDOCS%%%%EXAMPLESDIR%%/cf.server.sample
-%%PORTDOCS%%%%EXAMPLESDIR%%/curses.cf.sample
-%%PORTDOCS%%%%EXAMPLESDIR%%/filter.pl.sample
-%%PORTDOCS%%%%EXAMPLESDIR%%/main.cf.sample
-%%PORTDOCS%%%%EXAMPLESDIR%%/master.ignore.sample
-%%PORTDOCS%%%%EXAMPLESDIR%%/master.score.sample
-%%PORTDOCS%%%%EXAMPLESDIR%%/newsrc.sample
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cf.server.sample
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/curses.cf.sample
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/filter.pl.sample
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/main.cf.sample
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/master.ignore.sample
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/master.score.sample
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/newsrc.sample
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm lib/newsstar
 @dirrm etc/newsstar
