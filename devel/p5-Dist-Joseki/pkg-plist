@@ -1,0 +1,28 @@
+@comment $FreeBSD$
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Dist/Joseki/.packlist
+%%SITE_PERL%%/Dist/Joseki.pm
+%%SITE_PERL%%/Dist/Joseki/Base.pm
+%%SITE_PERL%%/Dist/Joseki/Cmd.pm
+%%SITE_PERL%%/Dist/Joseki/Cmd/Command.pm
+%%SITE_PERL%%/Dist/Joseki/Cmd/Multiplexable.pm
+%%SITE_PERL%%/Dist/Joseki/Command/clean.pm
+%%SITE_PERL%%/Dist/Joseki/Command/install.pm
+%%SITE_PERL%%/Dist/Joseki/Command/manifest.pm
+%%SITE_PERL%%/Dist/Joseki/Command/props.pm
+%%SITE_PERL%%/Dist/Joseki/Command/test.pm
+%%SITE_PERL%%/Dist/Joseki/Command/version.pm
+%%SITE_PERL%%/Dist/Joseki/DistType.pm
+%%SITE_PERL%%/Dist/Joseki/DistType/Base.pm
+%%SITE_PERL%%/Dist/Joseki/DistType/MakeMaker.pm
+%%SITE_PERL%%/Dist/Joseki/DistType/ModuleBuild.pm
+%%SITE_PERL%%/Dist/Joseki/Find.pm
+%%SITE_PERL%%/Dist/Joseki/Version.pm
+bin/dist
+bin/distfind
+@dirrmtry %%SITE_PERL%%/Dist/Joseki/DistType
+@dirrmtry %%SITE_PERL%%/Dist/Joseki/Command
+@dirrmtry %%SITE_PERL%%/Dist/Joseki/Cmd
+@dirrmtry %%SITE_PERL%%/Dist/Joseki
+@dirrmtry %%SITE_PERL%%/Dist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Dist/Joseki
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Dist
