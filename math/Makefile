@@ -324,6 +324,7 @@
     SUBDIR += p5-Math-Bezier
     SUBDIR += p5-Math-Bezier-Convert
     SUBDIR += p5-Math-BigInt
+    SUBDIR += p5-Math-BigInt-FastCalc
     SUBDIR += p5-Math-BigInt-GMP
     SUBDIR += p5-Math-BigInt-Pari
     SUBDIR += p5-Math-BigRat
