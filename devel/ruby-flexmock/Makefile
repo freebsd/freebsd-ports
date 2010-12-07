@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	flexmock
-PORTVERSION=	0.8.6
+PORTVERSION=	0.8.11
 CATEGORIES=	devel rubygems
-MASTER_SITES=	RF
+MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	A simple mock object for Ruby
