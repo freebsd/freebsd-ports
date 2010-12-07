@@ -3,6 +3,7 @@
 %%SITE_PERL%%/AnyEvent.pm
 %%SITE_PERL%%/AnyEvent/Debug.pm
 %%SITE_PERL%%/AnyEvent/DNS.pm
+%%SITE_PERL%%/AnyEvent/FAQ.pod
 %%SITE_PERL%%/AnyEvent/Handle.pm
 %%SITE_PERL%%/AnyEvent/Impl/EV.pm
 %%SITE_PERL%%/AnyEvent/Impl/Event.pm

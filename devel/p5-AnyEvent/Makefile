@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	AnyEvent
-PORTVERSION=	5.271
+PORTVERSION=	5.28
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -20,6 +20,7 @@ PERL_CONFIGURE=	5.8.1+
 MAN3=		AnyEvent.3 \
 		AE.3 \
 		AnyEvent::Debug.3 \
+		AnyEvent::FAQ.3 \
 		AnyEvent::DNS.3 AnyEvent::Handle.3 \
 		AnyEvent::Impl::EventLib.3 \
 		AnyEvent::Impl::Irssi.3 \
