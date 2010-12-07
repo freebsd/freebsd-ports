@@ -1,0 +1,10 @@
+"Joseki" is a japanese term from the game Go and means "a formulaic
+sequence of moves which is established for giving equal outcomes to
+both players", but it has come into general use to describe any fixed
+form of behaviour.
+
+Dist::Joseki offers you tools that help you in developing Perl module
+distributions if you stick to a certain formulaic style of
+structuring your distributions.
+
+WWW:	http://search.cpan.org/dist/Dist-Joseki/
