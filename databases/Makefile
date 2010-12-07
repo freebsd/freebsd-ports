@@ -364,6 +364,7 @@
     SUBDIR += p5-DBIx-HA
     SUBDIR += p5-DBIx-Log4perl
     SUBDIR += p5-DBIx-MySQLSequence
+    SUBDIR += p5-DBIx-NoSQL
     SUBDIR += p5-DBIx-Password
     SUBDIR += p5-DBIx-Perlish
     SUBDIR += p5-DBIx-Recordset
