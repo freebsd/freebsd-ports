@@ -3137,6 +3137,7 @@
     SUBDIR += rubygem-i18n
     SUBDIR += rubygem-icalendar
     SUBDIR += rubygem-igraph
+    SUBDIR += rubygem-image_science
     SUBDIR += rubygem-inline
     SUBDIR += rubygem-jruby-jars
     SUBDIR += rubygem-json
