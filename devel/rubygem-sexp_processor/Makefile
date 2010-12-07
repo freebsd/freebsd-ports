@@ -9,7 +9,7 @@ PORTVERSION=	3.0.5
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	clsung@FreeBSD.org
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Generic sexp processing tools
 
 RUN_DEPENDS=	rubygem-hoe>=1.8.2:${PORTSDIR}/devel/rubygem-hoe

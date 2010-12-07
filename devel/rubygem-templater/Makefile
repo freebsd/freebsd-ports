@@ -10,7 +10,7 @@ PORTVERSION=	1.0.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	clsung@FreeBSD.org
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Ruby code generation framework
 
 RUN_DEPENDS=	rubygem-highline>=1.4.0:${PORTSDIR}/devel/rubygem-highline \

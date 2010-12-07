@@ -9,7 +9,7 @@ PORTVERSION=	0.8.3
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	clsung@FreeBSD.org
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	A Fast, Enjoyable HTML Parser for Ruby
 
 USE_RUBY=	yes

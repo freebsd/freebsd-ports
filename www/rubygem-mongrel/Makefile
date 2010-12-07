@@ -11,7 +11,7 @@ CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 DISTFILES=	${PATCHNAME}${EXTRACT_SUFX} ${DISTNAME}${EXTRACT_SUFX}
 
-MAINTAINER=	clsung@FreeBSD.org
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Fast HTTP 1.1 library and server for Ruby web applications
 
 RUN_DEPENDS=	rubygem-gem_plugin>=0.2.3:${PORTSDIR}/devel/rubygem-gem_plugin \

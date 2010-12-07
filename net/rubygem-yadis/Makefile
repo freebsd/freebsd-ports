@@ -11,7 +11,7 @@ CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 DISTNAME=	ruby-${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	clsung@FreeBSD.org
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	A Yadis Service discovery library written in pure Ruby
 
 USE_RUBY=	yes

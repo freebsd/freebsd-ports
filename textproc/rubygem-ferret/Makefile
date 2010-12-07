@@ -10,7 +10,7 @@ PORTVERSION=	0.11.6
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	clsung@FreeBSD.org
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Ferret is a ruby port of Lucene
 
 USE_RUBY=	yes
