@@ -19,6 +19,7 @@ bin/config-edit
 %%SITE_PERL%%/Config/Model/DumpAsData.pm
 %%SITE_PERL%%/Config/Model/Dumper.pm
 %%SITE_PERL%%/Config/Model/Exception.pm
+%%SITE_PERL%%/Config/Model/FuseUI.pm
 %%SITE_PERL%%/Config/Model/HashId.pm
 %%SITE_PERL%%/Config/Model/IdElementReference.pm
 %%SITE_PERL%%/Config/Model/Instance.pm
