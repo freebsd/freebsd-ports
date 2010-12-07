@@ -1403,6 +1403,7 @@
     SUBDIR += p5-Data-Lazy
     SUBDIR += p5-Data-Localize
     SUBDIR += p5-Data-MessagePack
+    SUBDIR += p5-Data-Miscellany
     SUBDIR += p5-Data-Model
     SUBDIR += p5-Data-ObjectDriver
     SUBDIR += p5-Data-OptList

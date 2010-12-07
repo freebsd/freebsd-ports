@@ -1,0 +1,8 @@
+This is a collection of miscellaneous subroutines useful in wide but
+varying scenarios; a catch-all module for things that don't obviously
+belong anywhere else. Obviously what's useful differs from person to
+person, but this particular collection should be useful in
+object-oriented frameworks, such as Class::Scaffold and
+Data::Conveyor.
+
+WWW:	http://search.cpan.org/dist/Data-Miscellany/
