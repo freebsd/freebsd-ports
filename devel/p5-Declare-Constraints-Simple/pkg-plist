@@ -1,0 +1,21 @@
+%%SITE_PERL%%/Declare/Constraints/Simple.pm
+%%SITE_PERL%%/Declare/Constraints/Simple/Library.pm
+%%SITE_PERL%%/Declare/Constraints/Simple/Library/Array.pm
+%%SITE_PERL%%/Declare/Constraints/Simple/Library/Base.pm
+%%SITE_PERL%%/Declare/Constraints/Simple/Library/Exportable.pm
+%%SITE_PERL%%/Declare/Constraints/Simple/Library/General.pm
+%%SITE_PERL%%/Declare/Constraints/Simple/Library/Hash.pm
+%%SITE_PERL%%/Declare/Constraints/Simple/Library/Numerical.pm
+%%SITE_PERL%%/Declare/Constraints/Simple/Library/OO.pm
+%%SITE_PERL%%/Declare/Constraints/Simple/Library/Operators.pm
+%%SITE_PERL%%/Declare/Constraints/Simple/Library/Referencial.pm
+%%SITE_PERL%%/Declare/Constraints/Simple/Library/Scalar.pm
+%%SITE_PERL%%/Declare/Constraints/Simple/Result.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Declare/Constraints/Simple/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Declare/Constraints/Simple
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Declare/Constraints
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Declare
+@dirrmtry %%SITE_PERL%%/Declare/Constraints/Simple/Library
+@dirrmtry %%SITE_PERL%%/Declare/Constraints/Simple
+@dirrmtry %%SITE_PERL%%/Declare/Constraints
+@dirrmtry %%SITE_PERL%%/Declare
