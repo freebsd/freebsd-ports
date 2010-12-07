@@ -28,6 +28,7 @@
     SUBDIR += apache20
     SUBDIR += apache22
     SUBDIR += apache22-event-mpm
+    SUBDIR += apache22-itk-mpm
     SUBDIR += apache22-peruser-mpm
     SUBDIR += apache22-prefork-mpm
     SUBDIR += apache22-worker-mpm
