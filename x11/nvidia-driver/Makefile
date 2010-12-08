@@ -91,10 +91,10 @@ LIB_DEPENDS+=	m.3:${PORTSDIR}/misc/compat5x
 
 post-patch: .SILENT
 # We should support -CURRENT: kill the check
-	${REINPLACE_CMD} '24,26d' ${WRKSRC}/src/nv-freebsd.h
+	${REINPLACE_CMD} -e '24,26d' ${WRKSRC}/src/nv-freebsd.h
 # Adjust for updated d_mmap() in recent -CURRENT
 .if ${OSVERSION} > 900005 && ${NVVERSION} < 1952200
-	${REINPLACE_CMD} 's/vm_offset_t offset/vm_ooffset_t offset/ ; \
+	${REINPLACE_CMD} -e 's/vm_offset_t offset/vm_ooffset_t offset/ ; \
 		s/vm_offset_t \*address/vm_paddr_t *address/ ; \
 		s/int nprot/&, vm_memattr_t *memattr/' \
 			${WRKSRC}/src/nvidia_dev.c
@@ -118,7 +118,7 @@ post-patch: .SILENT
 	${REINPLACE_CMD} -e '/exists/s/$$/ \&\& !defined(WITHOUT_LINUX)/' \
 		${WRKSRC}/lib/Makefile
 .if ${NVVERSION} >= 1802900
-	@${REINPLACE_CMD} -e '/libvdpau[[:blank:]_][^n]/d ; \
+	${REINPLACE_CMD} -e '/libvdpau[[:blank:]_][^n]/d ; \
 		s/name libvdpau/&_nvidia/' ${WRKSRC}/lib/Makefile
 .endif
 # Don't build any binaries (nvidia-settings and nvidia-xconfig) and manuals
@@ -127,7 +127,7 @@ post-patch: .SILENT
 .else
 	${REINPLACE_CMD} -E 's/(lib).*/\1/' ${WRKSRC}/x11/Makefile
 .endif
-	${REINPLACE_CMD} '/bin/d ; /man/d' ${WRKSRC}/x11/Makefile
+	${REINPLACE_CMD} -e '/bin/d ; /man/d' ${WRKSRC}/x11/Makefile
 # Conditionally install documentation (but you generally want it)
 .if defined(NOPORTDOCS)
 	${REINPLACE_CMD} -E 's/(x11).*/\1/ ; /doc/d' ${WRKSRC}/Makefile
@@ -139,28 +139,28 @@ pre-su-install:
 # XXX This port silently assumes PREFIX == LOCALBASE XXX
 	@${MKDIR} ${PREFIX}/${MODULESDIR}/drivers
 
-post-install:
+post-install: .SILENT
 # pkg-plist is already overbloated, so use these hacks instead of PLIST_SUB's
 .if ${NVVERSION} < 817400
-	@${REINPLACE_CMD} '/libnvidia-cfg/d' ${TMPPLIST}
+	${REINPLACE_CMD} -e '/libnvidia-cfg/d' ${TMPPLIST}
 .endif
 .if ${NVVERSION} < 974600 || ${NVVERSION} >= 1952200
-	@${REINPLACE_CMD} '/wfb/d' ${TMPPLIST}
+	${REINPLACE_CMD} -e '/wfb/d' ${TMPPLIST}
 .endif
 .if ${NVVERSION} < 1802900
-	@${REINPLACE_CMD} '/vdpau/d' ${TMPPLIST}
+	${REINPLACE_CMD} -e '/vdpau/d' ${TMPPLIST}
 .endif
 .if ${NVVERSION} < 1851829
-	@${REINPLACE_CMD} '/libcuda/d' ${TMPPLIST}
+	${REINPLACE_CMD} -e '/libcuda/d' ${TMPPLIST}
 .endif
 .if ${NVVERSION} >= 2565300
-	@${REINPLACE_CMD} -E 's/libGLcore/libnvidia-glcore/ ; \
+	${REINPLACE_CMD} -E 's/libGLcore/libnvidia-glcore/ ; \
 		/usr.*(glcore|tls).*so\.1$$/d' ${TMPPLIST}
 .endif
 # Some applications need this symlink (see PR ports/72877)
-	@${LN} -sf libXvMCNVIDIA.so.1 ${PREFIX}/lib/libXvMCNVIDIA_dynamic.so.1
-	@${ECHO_MSG}
-	@${CAT} ${PKGMESSAGE}
-	@${ECHO_MSG}
+	${LN} -sf libXvMCNVIDIA.so.1 ${PREFIX}/lib/libXvMCNVIDIA_dynamic.so.1
+	${ECHO_MSG}
+	${CAT} ${PKGMESSAGE}
+	${ECHO_MSG}
 
 .include <bsd.port.post.mk>
