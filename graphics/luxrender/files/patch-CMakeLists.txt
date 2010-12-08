@@ -1,0 +1,56 @@
+--- CMakeLists.txt.orig
++++ CMakeLists.txt
+@@ -842,18 +841,6 @@
+ 
+ #############################################################################
+ #############################################################################
+-###########################      Find OpenGL       ##########################
+-#############################################################################
+-#############################################################################
+-SET(OPENGL_LIBRARY ${CMAKE_ROOT}/Modules/FindOpenGL.cmake)
+-INCLUDE(${CMAKE_ROOT}/Modules/FindOpenGL.cmake)
+-
+-MESSAGE(STATUS "OpenGL include directory: " ${OPENGL_INCLUDE_DIR})
+-
+-INCLUDE_DIRECTORIES(SYSTEM ${OPENGL_INCLUDE_DIR})
+-
+-#############################################################################
+-#############################################################################
+ ######################### wxWidgets LIBRARIES SETUP #########################
+ #############################################################################
+ #############################################################################
+@@ -864,6 +851,11 @@
+ FIND_PACKAGE(wxWidgets)
+ 
+ IF(wxWidgets_FOUND)
++	SET(OPENGL_LIBRARY ${CMAKE_ROOT}/Modules/FindOpenGL.cmake)
++	INCLUDE(${CMAKE_ROOT}/Modules/FindOpenGL.cmake)
++	MESSAGE(STATUS "OpenGL include directory: " ${OPENGL_INCLUDE_DIR})
++	INCLUDE_DIRECTORIES(SYSTEM ${OPENGL_INCLUDE_DIR})
++
+ 	# Include wxWidgets macros
+ 	INCLUDE(${wxWidgets_USE_FILE})
+ 	MESSAGE( STATUS "wxWidgets include directory: " ${wxWidgets_INCLUDE_DIRS} )
+@@ -955,16 +947,14 @@
+ 
+ #############################################################################
+ 
+-#Install target
++#Install targets
+ IF(wxWidgets_FOUND)
+-	INSTALL(TARGETS luxrender luxrenderwx luxconsole luxmerger
+-      	  RUNTIME DESTINATION bin
+-	)
+-ELSE(wxWidgets_FOUND)
+-	INSTALL(TARGETS luxrender luxconsole luxmerger
+-      	  RUNTIME DESTINATION bin
+-	)
++	INSTALL(TARGETS luxrenderwx RUNTIME DESTINATION bin)
+ ENDIF(wxWidgets_FOUND)
++IF(QT4_FOUND)
++	INSTALL(TARGETS luxrender RUNTIME DESTINATION bin)
++ENDIF(QT4_FOUND)
++INSTALL(TARGETS luxconsole luxmerger RUNTIME DESTINATION bin)
+ 
+ #Install API/Library
+ INSTALL(FILES ${CMAKE_SOURCE_DIR}/core/api.h DESTINATION include/luxrender/)
