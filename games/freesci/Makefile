@@ -60,7 +60,7 @@ CONFIGURE_ARGS+=	--without-sdl
 .endif
 
 .if defined(WITH_DIRECTFB) && !defined(WITHOUT_DIRECTFB)
-LIB_DEPENDS+=	directfb-1.4.3:${PORTSDIR}/devel/directfb
+LIB_DEPENDS+=	directfb-1.4.5:${PORTSDIR}/devel/directfb
 CONFIGURE_ARGS+=	--with-directfb-include=${LOCALBASE}/include/directfb \
 			--with-directfb-libraries=${LOCALBASE}/lib
 .else
