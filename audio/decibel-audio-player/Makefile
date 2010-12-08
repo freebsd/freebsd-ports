@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	decibel-audio-player
-PORTVERSION=	1.05
+PORTVERSION=	1.06
 CATEGORIES=	audio multimedia gnome python
 MASTER_SITES=	http://decibel.silent-blade.org/uploads/Main/
 
@@ -27,7 +27,8 @@ NO_BUILD=	yes
 MAN1=		decibel-audio-player.1 decibel-audio-player-remote.1
 
 #Audio gstreamer plugins
-OPTIONS=	FLAC "FLAC support" on \
+OPTIONS=	AUDIOCD "AudioCD support" on \
+		FLAC "FLAC support" on \
 		MP3 "MP3 support" on \
 		MPEG4IP "AAC/MP4P support" on \
 		OGG "OGG support" on \
@@ -39,6 +40,12 @@ OPTIONS=	FLAC "FLAC support" on \
 OPTIONS+=	EXTRAS "Extra dependencies for plugins" on
 
 .include <bsd.port.pre.mk>
+
+.if !defined(WITHOUT_AUDIOCD)
+RUN_DEPENDS+=	cd-discid>=0.9:${PORTSDIR}/audio/cd-discid \
+		py*-cddb>=1.4:${PORTSDIR}/audio/py-cddb \
+		gstreamer-plugins-cdio>=0.10.16:${PORTSDIR}/sysutils/gstreamer-plugins-cdio
+.endif
 
 .if !defined(WITHOUT_EXTRAS)
 RUN_DEPENDS+=	py*-imaging>=1.1.6:${PORTSDIR}/graphics/py-imaging \
