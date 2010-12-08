@@ -13,7 +13,7 @@ MASTER_SITES=	RG
 MAINTAINER=	freebsdports@chillibear.com
 COMMENT=	Construct absolute paths and full URLs for a Sinatra application
 
-RUN_DEPENDS=	rubygem-sinatra>=0.9.1:${PORTSDIR}/www/rubygem-sinatra
+RUN_DEPENDS=	rubygem-sinatra>=0.9.1.1:${PORTSDIR}/www/rubygem-sinatra
 
 USE_RUBY=		yes
 USE_RUBYGEMS=		yes

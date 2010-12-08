@@ -14,7 +14,7 @@ MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	An installer for Rails apps
 
 RUN_DEPENDS=	rubygem-sqlite3>=1.1.0:${PORTSDIR}/databases/rubygem-sqlite3 \
-		rubygem-mongrel>=0.3.13:${PORTSDIR}/www/rubygem-mongrel \
+		rubygem-mongrel>=0.3.13.3:${PORTSDIR}/www/rubygem-mongrel \
 		rubygem-mongrel_cluster>=0.2.0:${PORTSDIR}/www/rubygem-mongrel_cluster
 
 USE_RUBY=	yes

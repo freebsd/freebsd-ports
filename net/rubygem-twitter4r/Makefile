@@ -14,7 +14,7 @@ MASTER_SITES=	RG
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Twitter client API in pure Ruby
 
-RUN_DEPENDS=	rubygem-json>=0.4.3:${PORTSDIR}/devel/rubygem-json
+RUN_DEPENDS=	rubygem-json>=1.1.1:${PORTSDIR}/devel/rubygem-json
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes

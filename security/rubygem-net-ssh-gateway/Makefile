@@ -14,7 +14,7 @@ MASTER_SITES=	RG
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Establish Net::SSH connections through firewalls
 
-RUN_DEPENDS=	rubygem-net-ssh>=2.0.0:${PORTSDIR}/security/rubygem-net-ssh
+RUN_DEPENDS=	rubygem-net-ssh>=1.99.1:${PORTSDIR}/security/rubygem-net-ssh
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes

@@ -13,8 +13,8 @@ MASTER_SITES=	RG
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	TweetStream provides simple Ruby access to Twitter\'s Streaming API
 
-RUN_DEPENDS=	rubygem-twitter-stream>=0.0:${PORTSDIR}/net/rubygem-twitter-stream \
-		rubygem-daemons>=0.0.0:${PORTSDIR}/devel/rubygem-daemons \
+RUN_DEPENDS=	rubygem-twitter-stream>=0:${PORTSDIR}/net/rubygem-twitter-stream \
+		rubygem-daemons>=0:${PORTSDIR}/devel/rubygem-daemons \
 		rubygem-json>=0.0.0:${PORTSDIR}/devel/rubygem-json
 
 USE_RUBY=	yes

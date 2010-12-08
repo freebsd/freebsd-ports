@@ -14,7 +14,7 @@ MASTER_SITES=	RG
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	A Rails plugin for Japanese mobile-phones
 
-RUN_DEPENDS=	rubygem-rails>=3.0.0:${PORTSDIR}/www/rubygem-rails
+RUN_DEPENDS=	rubygem-rails>=3.0.1:${PORTSDIR}/www/rubygem-rails
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes

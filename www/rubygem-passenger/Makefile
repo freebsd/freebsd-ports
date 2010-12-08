@@ -38,9 +38,9 @@ BUILD_DEPENDS+=	nginx>=0.8.53:${PORTSDIR}/www/nginx
 .endif
 
 BUILD_DEPENDS+=	rubygem-fastthread>=1.0.1:${PORTSDIR}/devel/rubygem-fastthread \
-		rubygem-rack>=1.0.0:${PORTSDIR}/www/rubygem-rack \
+		rubygem-rack>=0:${PORTSDIR}/www/rubygem-rack \
 		rubygem-daemon_controller>=0.2.5:${PORTSDIR}/devel/rubygem-daemon_controller \
-		rubygem-file-tail>0:${PORTSDIR}/devel/rubygem-file-tail \
+		rubygem-file-tail>=0:${PORTSDIR}/devel/rubygem-file-tail \
 		curl>=7.20.0:${PORTSDIR}/ftp/curl
 
 SUB_LIST+=	RUBY=${RUBY}
