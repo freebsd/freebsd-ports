@@ -9,7 +9,9 @@ PORTNAME=	mythtv
 PORTVERSION=	0.23.1
 CATEGORIES=	multimedia
 MASTER_SITES=	http://ftp.osuosl.org/pub/mythtv/ \
-		http://ftp.oregonstate.edu/pub/mythtv/
+		http://ftp.osuosl.org/pub/mythtv/old_releases/ \
+		http://ftp.oregonstate.edu/pub/mythtv/ \
+		http://ftp.oregonstate.edu/pub/mythtv/old_releases/
 PKGNAMESUFFIX=	-themes
 DISTNAME=	myththemes-${PORTVERSION}
 
