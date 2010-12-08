@@ -1082,7 +1082,6 @@ net-mgmt/dhcpconf||2004-06-03|Obsolete and no longer maintained
 net/samba-devel|net/samba3|2004-06-07|considered stable
 chinese/mkisofs|sysutils/cdrtools-cjk|2004-06-07|replaced by a superset
 chinese/cdrtools|sysutils/cdrtools-cjk|2004-06-07|replaced by a superset
-devel/libltdl|devel/libltdl15|2004-06-08|autotools cleanup
 www/httperf|benchmarks/httperf|2004-06-10|moved to more accurate category
 japanese/xdvik-vflib-pk118|japanese/xdvik-vflib|2004-06-18|no longer maintained
 japanese/xdvik-vflib-pk240|japanese/xdvik-vflib|2004-06-18|no longer maintained
@@ -4087,8 +4086,6 @@ security/smtpmap||2009-07-28|Has expired: depends on GCC 2.95 which has not been
 devel/boost|devel/boost-libs|2009-07-28|Boost ports were split and sliced
 devel/boost-python|devel/boost-python-libs|2009-07-28|Boost ports were split and sliced
 www/xpi-firegpg||2009-07-31|Removed
-devel/libtool15|devel/libtool22|2009-08-02|Update to libtool22
-devel/libltdl15|devel/libltdl22|2009-08-02|Update to libltdl22
 editors/koffice-i18n-sr@Latn|editors/koffice-i18n-sr_Latn|2009-08-02|Use editors/koffice-i18n-sr_Latn
 misc/kde3-i18n-sr@Latn|misc/kde3-i18n-sr_Latn|2009-08-02|Use misc/kde3-i18n-sr_Latn
 lang/tinycobol||2009-08-08|Has expired: no longer being developed; consider using lang/open-cobol instead
