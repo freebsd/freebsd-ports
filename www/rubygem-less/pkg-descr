@@ -1,0 +1,5 @@
+LESS extends CSS with: variables, mixins, operations and nested rules.
+Best of all, LESS uses existing CSS syntax. This means you can rename
+your current .css files to .less and they'll just work.
+
+WWW:	http://lesscss.org/
