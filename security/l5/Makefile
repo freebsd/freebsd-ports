@@ -23,4 +23,8 @@ do-install:
 	${MKDIR} ${PREFIX}/share/doc/${PORTNAME}
 	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/${PORTNAME}
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+.if ${ARCH} == 'amd64'
+BROKEN=	incorrect runtime output
+.endif
+.include <bsd.port.post.mk>
