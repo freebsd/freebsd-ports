@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	speech-dispatcher
-PORTVERSION=	0.7
+PORTVERSION=	0.7.1
 CATEGORIES=	accessibility audio
 MASTER_SITES=	http://www.freebsoft.org/pub/projects/speechd/
 
@@ -36,7 +36,7 @@ CONFFILES=	clients/emacs.conf clients/gnome-speech.conf \
 
 PORTDOCS=	AUTHORS ChangeLog INSTALL NEWS README TODO
 
-INFO=		spd-say ${PORTNAME}-cs ${PORTNAME} ssip
+INFO=		spd-say ${PORTNAME} ssip
 
 OPTIONS=	ALSA	"ALSA support" off \
 		ESPEAK	"eSpeak output module" on \
@@ -95,9 +95,11 @@ CONFIGURE_ARGS+=	--without-nas
 .endif
 
 .ifdef(WITH_PYTHON)
-USE_PYTHON=	yes
+USE_PYTHON=	2.4+
+CONFIGURE_ARGS+=	--enable-python
 PLIST_SUB+=	PYTHON=""
 .else
+CONFIGURE_ARGS+=	--disable-python
 PLIST_SUB+=	PYTHON="@comment "
 .endif
 
@@ -112,21 +114,8 @@ CONFIGURE_ARGS+=	--without-pulse
 PLIST_SUB+=	GNOMEHIER=""
 .endif
 
-.if ${OSVERSION} < 800067
-.if ${ARCH} == "amd64"
+.if ${OSVERSION} < 800067 && ${ARCH} == "amd64"
 CFLAGS+=	-fPIC
-.endif
-EXTRA_PATCHES=	${FILESDIR}/extrapatch-*
-.endif
-
-post-extract:
-.if ${OSVERSION} < 800067
-	${CP} ${FILESDIR}/getline.h ${WRKSRC}/src
-.if ${OSVERSION} < 701101
-	${CP} ${FILESDIR}/getline_strndup.c ${WRKSRC}/src/freebsd.c
-.else
-	${CP} ${FILESDIR}/getline.c ${WRKSRC}/src/freebsd.c
-.endif
 .endif
 
 post-patch:
@@ -139,10 +128,6 @@ post-patch:
 		${WRKSRC}/src/c/clients/spdsend/Makefile.in \
 		${WRKSRC}/src/modules/Makefile.in \
 		${WRKSRC}/src/server/Makefile.in
-.ifndef(WITH_PYTHON)
-	${REINPLACE_CMD} -e 's/python[^ ]*//g' \
-		${WRKSRC}/src/Makefile.in
-.endif
 
 post-install:
 .for f in ${CONFFILES}
