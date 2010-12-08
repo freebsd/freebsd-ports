@@ -1,0 +1,12 @@
+File::Inplace is a Perl module intended to ease the common task of
+editing a file in-place. Inspired by variations of Perl's -i option,
+this module is intended for somewhat more structured and reusable
+editing than command line Perl typically allows.
+
+File::Inplace endeavors to guarantee file integrity; that is, either
+all of the changes made will be saved to the file, or none will.
+It also offers functionality such as backup creation, automatic
+field splitting per-line, automatic chomping/unchomping, and aborting
+edits partially through without affecting the original file.
+
+WWW:    http://search.cpan.org/dist/File-Inplace/
