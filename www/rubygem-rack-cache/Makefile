@@ -13,7 +13,7 @@ MASTER_SITES=	RG
 MAINTAINER=	freebsdports@chillibear.com
 COMMENT=	A piece of rack middleware to enable HTTP caching
 
-RUN_DEPENDS=	rubygem-rack>=0.4.0:${PORTSDIR}/www/rubygem-rack
+RUN_DEPENDS=	rubygem-rack>=0.4:${PORTSDIR}/www/rubygem-rack
 
 USE_RUBY=		yes
 USE_RUBYGEMS=		yes

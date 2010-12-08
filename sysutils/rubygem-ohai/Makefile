@@ -19,7 +19,7 @@ RUN_DEPENDS=	rubygem-mixlib-log>=0:${PORTSDIR}/devel/rubygem-mixlib-log \
 		rubygem-mixlib-cli>=0:${PORTSDIR}/devel/rubygem-mixlib-cli \
 		rubygem-systemu>=0:${PORTSDIR}/devel/rubygem-systemu \
 		rubygem-extlib>=0:${PORTSDIR}/devel/rubygem-extlib \
-		rubygem-json>=1.1.9:${PORTSDIR}/devel/rubygem-json
+		rubygem-json>=1.4.4:${PORTSDIR}/devel/rubygem-json
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes

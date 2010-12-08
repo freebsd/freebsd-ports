@@ -13,7 +13,7 @@ MASTER_SITES=	RG
 MAINTAINER=	freebsdports@chillibear.com
 COMMENT=	A respond_to style Rails block for Sinatra
 
-RUN_DEPENDS=	rubygem-sinatra>=1.0:${PORTSDIR}/www/rubygem-sinatra
+RUN_DEPENDS=	rubygem-sinatra>=1.1:${PORTSDIR}/www/rubygem-sinatra
 
 USE_RUBY=		yes
 USE_RUBYGEMS=		yes

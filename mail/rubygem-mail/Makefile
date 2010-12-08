@@ -13,10 +13,10 @@ MASTER_SITES=	RG
 MAINTAINER=	freebsdports@chillibear.com
 COMMENT=	A Ruby email handler
 
-RUN_DEPENDS=	rubygem-treetop>=1.4.5:${PORTSDIR}/devel/rubygem-treetop \
-		rubygem-mime-types>=0:${PORTSDIR}/misc/rubygem-mime-types \
+RUN_DEPENDS=	rubygem-treetop>=1.4.8:${PORTSDIR}/devel/rubygem-treetop \
+		rubygem-mime-types>=1.16:${PORTSDIR}/misc/rubygem-mime-types \
 		rubygem-activesupport>=2.3.6:${PORTSDIR}/devel/rubygem-activesupport \
-		rubygem-i18n>=0.4.1:${PORTSDIR}/devel/rubygem-i18n
+		rubygem-i18n>=0.4.0:${PORTSDIR}/devel/rubygem-i18n
 
 USE_RUBY=		yes
 USE_RUBYGEMS=		yes

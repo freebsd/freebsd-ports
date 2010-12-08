@@ -18,7 +18,7 @@ RUN_DEPENDS=	rubygem-activesupport>=${PORTVERSION}:${PORTSDIR}/devel/rubygem-act
 		rubygem-actionmailer>=${PORTVERSION}:${PORTSDIR}/mail/rubygem-actionmailer \
 		rubygem-activeresource>=${PORTVERSION}:${PORTSDIR}/www/rubygem-activeresource \
 		rubygem-railties>=${PORTVERSION}:${PORTSDIR}/www/rubygem-railties \
-		rubygem-bundler>=1.0.0:${PORTSDIR}/sysutils/rubygem-bundler
+		rubygem-bundler>=1.0:${PORTSDIR}/sysutils/rubygem-bundler
 
 # XXX: rails3 gem no longer has a lib/ dir
 # XXX: which breaks devel/ruby-gems specification.

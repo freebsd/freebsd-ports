@@ -12,7 +12,7 @@ MASTER_SITES=	RG
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	A classy web development framework in ruby
 
-RUN_DEPENDS=	rubygem-rack>=0.9.1:${PORTSDIR}/www/rubygem-rack
+RUN_DEPENDS=	rubygem-rack>=1.1:${PORTSDIR}/www/rubygem-rack
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
