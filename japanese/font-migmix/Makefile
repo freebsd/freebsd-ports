@@ -45,9 +45,9 @@ do-install:
 	${MKDIR} ${PREFIX}/${LOCAL_FONTSDIR}/TTF
 	${LN} -s -f ${DATADIR}/MigMix*.ttf \
 		${LOCALBASE}/${LOCAL_FONTSDIR}/TTF/
-	${MKDIR} ${LOCALBASE}/${X_FONTSDIR}/TTF
+	${MKDIR} ${PREFIX}/${X_FONTSDIR}/TTF
 	${LN} -s -f ${DATADIR}/MigMix*.ttf \
-		${LOCALBASE}/${X_FONTSDIR}/TTF/
+		${PREFIX}/${X_FONTSDIR}/TTF/
 	${INSTALL_DATA} ${FILESDIR}/20-unhint-migmix.conf \
 		${FILESDIR}/62-fonts-migmix.conf \
 		${PREFIX}/etc/fonts/conf.avail
@@ -61,7 +61,7 @@ do-install:
 .endif
 
 post-install:
-	${LOCALBASE}/bin/fc-cache -s -f -v ${LOCALBASE}/${X_FONTSDIR}/TTF
+	${LOCALBASE}/bin/fc-cache -s -f -v ${PREFIX}/${X_FONTSDIR}/TTF
 	${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
 .include <bsd.port.mk>

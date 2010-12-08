@@ -8,10 +8,8 @@
 @dirrmtry %%LOCAL_FONTSDIR%%
 etc/fonts/conf.avail/20-unhint-vlgothic.conf
 etc/fonts/conf.avail/62-fonts-vlgothic.conf
-@exec ln -s -f ../conf.avail/20-unhint-vlgothic.conf %D/etc/fonts/conf.d/20-unhint-vlgothic.conf
-@exec ln -s -f ../conf.avail/62-fonts-vlgothic.conf %D/etc/fonts/conf.d/62-fonts-vlgothic.conf
-@unexec rm -f %D/etc/fonts/conf.d/20-unhint-vlgothic.conf
-@unexec rm -f %D/etc/fonts/conf.d/62-fonts-vlgothic.conf
+etc/fonts/conf.d/20-unhint-vlgothic.conf
+etc/fonts/conf.d/62-fonts-vlgothic.conf
 %%X_FONTSDIR%%/TTF/VL-PGothic-Regular.ttf
 %%X_FONTSDIR%%/TTF/VL-Gothic-Regular.ttf
 @exec %%LOCALBASE%%/bin/fc-cache -s -f -v %D/%%X_FONTSDIR%%/TTF || true
