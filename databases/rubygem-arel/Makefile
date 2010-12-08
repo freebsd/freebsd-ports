@@ -4,8 +4,6 @@
 #
 # $FreeBSD$
 
-# XXX: rails,active* require exact versions of arel arel, *sigh*
-
 PORTNAME=	arel
 PORTVERSION=	2.0.5
 CATEGORIES=	databases rubygems
