@@ -20,10 +20,8 @@
 @dirrmtry %%LOCAL_FONTSDIR%%
 etc/fonts/conf.avail/20-unhint-migmix.conf
 etc/fonts/conf.avail/62-fonts-migmix.conf
-@exec ln -s -f ../conf.avail/20-unhint-migmix.conf %D/etc/fonts/conf.d/20-unhint-migmix.conf
-@exec ln -s -f ../conf.avail/62-fonts-migmix.conf %D/etc/fonts/conf.d/62-fonts-migmix.conf
-@unexec rm -f %D/etc/fonts/conf.d/20-unhint-migmix.conf
-@unexec rm -f %D/etc/fonts/conf.d/62-fonts-migmix.conf
+etc/fonts/conf.d/20-unhint-migmix.conf
+etc/fonts/conf.d/62-fonts-migmix.conf
 %%X_FONTSDIR%%/TTF/MigMix-1M-Bold.ttf
 %%X_FONTSDIR%%/TTF/MigMix-1M-Regular.ttf
 %%X_FONTSDIR%%/TTF/MigMix-1P-Bold.ttf
