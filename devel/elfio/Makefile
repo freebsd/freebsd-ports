@@ -16,7 +16,7 @@ DISTNAME=	${PORTNAME:U}-${PORTVERSION}
 MAINTAINER=	stas@FreeBSD.org
 COMMENT=	C++ library for reading and generating files in the ELF binary format
 
-BUILD_DEPENDS=	libtoolize:${PORTSDIR}/devel/libtool22
+BUILD_DEPENDS=	libtool:${PORTSDIR}/devel/libtool
 
 GNU_CONFIGURE=	yes
 USE_GNOME=	gnometarget

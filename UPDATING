@@ -5,6 +5,23 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20101208:
+  AFFECTS: autotools
+  AUTHOR: autotools@FreeBSD.org
+
+  Another stage in the autotools cleanup that reduces tree churn whilst
+  updating components, a number of ports have now moved to non-versioned
+  locations since there is now only the concept of legacy and current
+  versions.
+
+  # portmaster -o devel/autoconf devel/autoconf268
+  # portmaster -o devel/automake devel/automake111
+  # portmaster -o devel/libtool devel/libtool22
+  # portmaster -o devel/libltdl devel/libltdl22
+
+  substitute 'portupgrade' for 'portmaster' accordingly if that's your
+  your upgrade tool of choice.
+
 20101205:
   AFFECTS: users of www/py-flexget
   AUTHOR: lioux@FreeBSD.org

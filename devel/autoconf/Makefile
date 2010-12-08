@@ -1,4 +1,4 @@
-# New ports collection makefile for:	autoconf268
+# New ports collection makefile for:	autoconf
 # Date created:		7th December 2006
 # Whom:			ade@FreeBSD.org
 #

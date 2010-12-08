@@ -99,8 +99,8 @@ CONFIGURE_ARGS+= --without-odbc
 .else
 PLIST_SUB+=	WITH_ODBC=""
 CONFIGURE_ARGS+= --with-odbc --with-ltdl
-LIB_DEPENDS+=	odbc.1:${PORTSDIR}/databases/unixODBC \
-		ltdl.7:${PORTSDIR}/devel/libltdl22
+USE_AUTOTOOLS+=	libltdl
+LIB_DEPENDS+=	odbc.1:${PORTSDIR}/databases/unixODBC
 .endif
 
 .if !defined(WITH_FREETDS)

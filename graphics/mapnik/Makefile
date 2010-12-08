@@ -16,7 +16,6 @@ COMMENT=	A Free Toolkit For Developing Mapping Applications
 
 LIB_DEPENDS=	geos:${PORTSDIR}/graphics/geos \
 		proj:${PORTSDIR}/graphics/proj \
-		ltdl:${PORTSDIR}/devel/libltdl22 \
 		png:${PORTSDIR}/graphics/png \
 		tiff:${PORTSDIR}/graphics/tiff \
 		cairo.2:${PORTSDIR}/graphics/cairo \
@@ -34,6 +33,7 @@ USE_BZIP2=	yes
 NO_BUILD=	yes
 USE_PYTHON=	2.4+
 USE_LDCONFIG=	yes
+USE_AUTOTOOLS=	libltdl
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 .include <bsd.port.pre.mk>

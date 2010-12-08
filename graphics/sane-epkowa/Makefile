@@ -60,12 +60,12 @@ WRKSRC=${WRKDIR}/iscan-${PORTVERSION}
 MAN5=		sane-epkowa.5
 
 # We use LIB_DEPENDS, but the dependency is also at build time
-LIB_DEPENDS+=	ltdl:${PORTSDIR}/devel/libltdl22
+LIB_DEPENDS+=	ltdl:${PORTSDIR}/devel/libltdl
 LIB_DEPENDS+=	usb:${PORTSDIR}/devel/libusb
 LIB_DEPENDS+=	getline:${PORTSDIR}/devel/libgetline
 LIB_DEPENDS+=	sane.1:${PORTSDIR}/graphics/sane-backends
 
-#BUILD_DEPENDS+=	${LOCALBASE}/lib/libltdl.so:${PORTSDIR}/devel/libltdl22
+#BUILD_DEPENDS+=	${LOCALBASE}/lib/libltdl.so:${PORTSDIR}/devel/libltdl
 
 # gtk libraries are used by the frontend, which we do not build, however
 # the configure script relies on that and fails if not present, so as

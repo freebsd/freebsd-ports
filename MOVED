@@ -369,7 +369,6 @@ mail/evolution-devel|mail/evolution|2003-06-11|rolled into evolution
 misc/wmessage|x11/wmessage|2003-06-12|accurate category
 net/mldonkey-src|net/mldonkey|2003-06-15|no longer needed
 news/straw||2003-06-20|port was broken with no sign of a fix
-devel/libtool|devel/libtool13|2003-06-26|move to versioned libtool portnames
 www/mozilla-vendor|www/mozilla|2003-07-01|vendor tree in sync with 1.4
 www/mozilla-embedded-vendor|www/mozilla-embedded|2003-07-01|vendor tree in sync with 1.4
 www/mozilla-headers-vendor|www/mozilla-headers|2003-07-01|vendor tree in sync with 1.4
@@ -1154,8 +1153,6 @@ net/zebra-devel|net/zebra|2004-07-27|The same as net/zebra for some time
 mail/pear-mailparse|mail/pecl-mailparse|2004-07-30|Renamed
 security/lcrzo|net/netwib|2004-08-01|The project has been renamed and port moved to better category
 security/lcrzoex|net-mgmt/netwox|2004-08-01|The project has been renamed and port moved to better category
-devel/autoconf|devel/autoconf253|2004-08-03|autotools cleanup
-devel/automake|devel/automake15|2004-08-03|autotools cleanup
 mail/balsa2|mail/balsa|2004-08-06|Balsa 2.x has been moved to the balsa port
 net/pdtpd|net/squall|2004-08-08|The project has been renamed
 sysutils/fastresolve|dns/fastresolve|2004-08-08|Move to the right category
@@ -4707,3 +4704,7 @@ net-p2p/gift-openft||2010-12-04|Has expired: unmaintained upstream
 net-p2p/pyslsk||2010-12-04|Has expired: unmantaind upstream, use net-p2p/nicotine-plus
 security/pamsfs||2010-12-04|Has expired: SFS is dead, this project is dead, and site is gone
 www/p5-Catalyst-Plugin-CommandLine||2010-12-04|Has expired: The module is not needed any more. With new Catalyst (at least 5.7014) it works out of the box.
+devel/autoconf268|devel/autoconf|2010-12-08|Autotools cleanup
+devel/automake111|devel/automake|2010-12-08|Autotools cleanup
+devel/libtool22|devel/libtool|2010-12-08|Autotools cleanup
+devel/libltdl22|devel/libltdl|2010-12-08|Autotools cleanup

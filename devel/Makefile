@@ -61,15 +61,15 @@
     SUBDIR += atlas
     SUBDIR += atlas-devel
     SUBDIR += autobook
+    SUBDIR += autoconf
     SUBDIR += autoconf-archive
     SUBDIR += autoconf-wrapper
     SUBDIR += autoconf213
-    SUBDIR += autoconf268
     SUBDIR += autodia
     SUBDIR += autodist
     SUBDIR += autogen
+    SUBDIR += automake
     SUBDIR += automake-wrapper
-    SUBDIR += automake111
     SUBDIR += automake14
     SUBDIR += automoc4
     SUBDIR += autotools
@@ -820,8 +820,7 @@
     SUBDIR += liblogging
     SUBDIR += liblouis
     SUBDIR += liblouisxml
-    SUBDIR += libltdl22
-    SUBDIR += libltdl24
+    SUBDIR += libltdl
     SUBDIR += libmaa
     SUBDIR += libmatheval
     SUBDIR += libmba
@@ -890,8 +889,7 @@
     SUBDIR += libticalcs
     SUBDIR += libtifiles
     SUBDIR += libtifiles2
-    SUBDIR += libtool22
-    SUBDIR += libtool24
+    SUBDIR += libtool
     SUBDIR += libtpl
     SUBDIR += libublio
     SUBDIR += libukcprog
