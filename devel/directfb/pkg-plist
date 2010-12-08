@@ -12,6 +12,8 @@ bin/dfbproxy
 bin/dfbscreen
 %%TESTS%%bin/dfbtest_blit
 %%TESTS%%bin/dfbtest_blit2
+%%TESTS%%bin/dfbtest_fillrect
+%%TESTS%%bin/dfbtest_font
 %%TESTS%%bin/dfbtest_mirror
 %%TESTS%%bin/dfbtest_reinit
 %%TESTS%%bin/dfbtest_scale
@@ -22,13 +24,16 @@ bin/dfbscreen
 %%TESTS%%bin/direct_test
 bin/directfb-config
 bin/directfb-csource
+%%TESTS%%bin/fusion_call
 %%TESTS%%bin/fusion_fork
 %%TESTS%%bin/fusion_reactor
 %%TESTS%%bin/fusion_skirmish
 %%TESTS%%bin/fusion_stream
 bin/mkdfiff
 %%FREETYPE2%%bin/mkdgiff
+bin/mkdgifft
 %%UNIQUE%%bin/uwmdump
+bin/voodooplay
 include/directfb-internal/core/clipboard.h
 include/directfb-internal/core/colorhash.h
 include/directfb-internal/core/core.h
@@ -69,6 +74,7 @@ include/directfb-internal/display/idirectfbscreen.h
 include/directfb-internal/display/idirectfbsurface.h
 include/directfb-internal/display/idirectfbsurface_layer.h
 include/directfb-internal/display/idirectfbsurface_window.h
+include/directfb-internal/dummy/dummy.h
 include/directfb-internal/gfx/clip.h
 include/directfb-internal/gfx/convert.h
 include/directfb-internal/gfx/generic/generic.h
@@ -87,6 +93,7 @@ include/directfb-internal/windows/idirectfbwindow.h
 include/directfb/dfb_types.h
 include/directfb/dfiff.h
 include/directfb/dgiff.h
+%%ARCH_ARM%%include/directfb/direct/armasm_memcpy.h
 include/directfb/direct/build.h
 include/directfb/direct/clock.h
 include/directfb/direct/conf.h
@@ -97,10 +104,13 @@ include/directfb/direct/interface.h
 include/directfb/direct/interface_implementation.h
 include/directfb/direct/list.h
 include/directfb/direct/log.h
+include/directfb/direct/map.h
 include/directfb/direct/mem.h
 include/directfb/direct/memcpy.h
 include/directfb/direct/messages.h
 include/directfb/direct/modules.h
+%%ARCH_POWERPC%%include/directfb/direct/ppc_asm.h
+%%ARCH_POWERPC%%include/directfb/direct/ppcasm_memcpy.h
 include/directfb/direct/serial.h
 include/directfb/direct/signals.h
 include/directfb/direct/stream.h
@@ -112,6 +122,7 @@ include/directfb/direct/types.h
 include/directfb/direct/utf8.h
 include/directfb/direct/util.h
 include/directfb/directfb.h
+include/directfb/directfb_build.h
 include/directfb/directfb_keyboard.h
 include/directfb/directfb_keynames.h
 include/directfb/directfb_strings.h
@@ -154,6 +165,7 @@ include/directfb/voodoo/conf.h
 include/directfb/voodoo/interface.h
 include/directfb/voodoo/manager.h
 include/directfb/voodoo/message.h
+include/directfb/voodoo/play.h
 include/directfb/voodoo/server.h
 include/directfb/voodoo/types.h
 %%SDL%%lib/directfb-%%DIRECTFB_RELEASE%%-%%DIRECTFB_BIN%%/gfxdrivers/libdirectfb_sdlgraphics.a
@@ -186,9 +198,6 @@ lib/directfb-%%DIRECTFB_RELEASE%%-%%DIRECTFB_BIN%%/interfaces/IDirectFBEventBuff
 lib/directfb-%%DIRECTFB_RELEASE%%-%%DIRECTFB_BIN%%/interfaces/IDirectFBEventBuffer/libidirectfbeventbuffer_requestor.a
 lib/directfb-%%DIRECTFB_RELEASE%%-%%DIRECTFB_BIN%%/interfaces/IDirectFBEventBuffer/libidirectfbeventbuffer_requestor.la
 lib/directfb-%%DIRECTFB_RELEASE%%-%%DIRECTFB_BIN%%/interfaces/IDirectFBEventBuffer/libidirectfbeventbuffer_requestor.so
-lib/directfb-%%DIRECTFB_RELEASE%%-%%DIRECTFB_BIN%%/interfaces/IDirectFBFont/libidirectfbfont_default.a
-lib/directfb-%%DIRECTFB_RELEASE%%-%%DIRECTFB_BIN%%/interfaces/IDirectFBFont/libidirectfbfont_default.la
-lib/directfb-%%DIRECTFB_RELEASE%%-%%DIRECTFB_BIN%%/interfaces/IDirectFBFont/libidirectfbfont_default.so
 lib/directfb-%%DIRECTFB_RELEASE%%-%%DIRECTFB_BIN%%/interfaces/IDirectFBFont/libidirectfbfont_dgiff.a
 lib/directfb-%%DIRECTFB_RELEASE%%-%%DIRECTFB_BIN%%/interfaces/IDirectFBFont/libidirectfbfont_dgiff.la
 lib/directfb-%%DIRECTFB_RELEASE%%-%%DIRECTFB_BIN%%/interfaces/IDirectFBFont/libidirectfbfont_dgiff.so
@@ -255,6 +264,9 @@ lib/directfb-%%DIRECTFB_RELEASE%%-%%DIRECTFB_BIN%%/interfaces/IDirectFBWindow/li
 lib/directfb-%%DIRECTFB_RELEASE%%-%%DIRECTFB_BIN%%/systems/libdirectfb_devmem.a
 lib/directfb-%%DIRECTFB_RELEASE%%-%%DIRECTFB_BIN%%/systems/libdirectfb_devmem.la
 lib/directfb-%%DIRECTFB_RELEASE%%-%%DIRECTFB_BIN%%/systems/libdirectfb_devmem.so
+lib/directfb-%%DIRECTFB_RELEASE%%-%%DIRECTFB_BIN%%/systems/libdirectfb_dummy.a
+lib/directfb-%%DIRECTFB_RELEASE%%-%%DIRECTFB_BIN%%/systems/libdirectfb_dummy.la
+lib/directfb-%%DIRECTFB_RELEASE%%-%%DIRECTFB_BIN%%/systems/libdirectfb_dummy.so
 %%SDL%%lib/directfb-%%DIRECTFB_RELEASE%%-%%DIRECTFB_BIN%%/systems/libdirectfb_sdl.a
 %%SDL%%lib/directfb-%%DIRECTFB_RELEASE%%-%%DIRECTFB_BIN%%/systems/libdirectfb_sdl.la
 %%SDL%%lib/directfb-%%DIRECTFB_RELEASE%%-%%DIRECTFB_BIN%%/systems/libdirectfb_sdl.so
@@ -328,6 +340,7 @@ libdata/pkgconfig/voodoo.pc
 @dirrm include/directfb-internal/input
 @dirrm include/directfb-internal/gfx/generic
 @dirrm include/directfb-internal/gfx
+@dirrm include/directfb-internal/dummy
 @dirrm include/directfb-internal/display
 @dirrm include/directfb-internal/devmem
 @dirrm include/directfb-internal/core
