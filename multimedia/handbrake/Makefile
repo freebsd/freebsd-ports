@@ -40,7 +40,7 @@ USE_GMAKE=	yes
 
 USE_AUTOTOOLS=	libtool aclocal
 
-LIBTOOLFILES=	${WRKSRC}/configure
+LIBTOOLFILES=	configure
 
 WRKSRC=		${WRKDIR}/HandBrake-0.9.3
 PLIST_FILES=	bin/handbrake
