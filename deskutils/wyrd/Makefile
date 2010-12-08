@@ -6,15 +6,17 @@
 #
 
 PORTNAME=	wyrd
-PORTVERSION=	1.4.4
+PORTVERSION=	1.4.5
 CATEGORIES=	deskutils
 MASTER_SITES=	http://pessimization.com/software/wyrd/
 
-MAINTAINER=	raj@csub.edu
+MAINTAINER=	h.skuhra@gmail.com
 COMMENT=	A curses front end to remind
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/ocamlc:${PORTSDIR}/lang/ocaml
 RUN_DEPENDS=	${LOCALBASE}/bin/remind:${PORTSDIR}/deskutils/remind
+
+LICENSE=	GPLv2
 
 OPTIONS=	UTF8 "Enable UTF-8 support" off
 
