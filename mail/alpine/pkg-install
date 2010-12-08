@@ -2,6 +2,13 @@
 
 [ "$2" = 'POST-INSTALL' ] || exit 0
 
+case "$1" in
+alpine*) ;;
+*)	exit 0 ;;
+esac
+
+[ -x "${PKG_PREFIX}/bin/alpine" ] || exit 1
+
 PATH=/bin:/usr/bin
 export PATH
 
@@ -18,7 +25,7 @@ install -o root -g wheel -m 444 ${TDIR}/alpine.conf.sample ${PKG_PREFIX}/etc/alp
 
 ${PKG_PREFIX}/bin/alpine -conf > ${TDIR}/alpine.conf
 
-if [ -e "${PKG_PREFIX}/etc/alpine.conf" ]; then
+if [ -s "${PKG_PREFIX}/etc/alpine.conf" ]; then
 	if ! cmp -s ${TDIR}/alpine.conf ${PKG_PREFIX}/etc/alpine.conf; then
 		unlink ${PKG_PREFIX}/etc/alpine.conf
 		install -o root -g wheel -m 444 ${TDIR}/alpine.conf ${PKG_PREFIX}/etc/alpine.conf
