@@ -3,4 +3,5 @@ bin/pnuke
 bin/pslurp
 bin/pssh
 bin/pscp
+bin/pssh-askpass
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%
