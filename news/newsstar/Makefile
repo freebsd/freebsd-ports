@@ -32,6 +32,10 @@ CONFIGURE_ARGS+=--prefix=${PREFIX} \
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
 
+.if defined(NOPORTDOCS)
+INSTALL_TARGET=	install-am
+.endif
+
 .if defined(WITHOUT_SSL)
 CONFIGURE_ARGS+=--disable-ssl
 .else
@@ -77,10 +81,14 @@ post-install:
 .for i in ${DOCS}
 	${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
 .endfor
+.else
+	${GMAKE} -C ${WRKSRC}/src install
+	${GMAKE} -C ${WRKSRC}/docs install-man
 .endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/share/sgml/docbook/dtd/xml|${LOCALBASE}/share/xml/docbook|' ${WRKSRC}/docs/manual.xml
 	@${REINPLACE_CMD} -e 's|/usr/share/sgml/docbook/dtd/xml|${LOCALBASE}/share/xml/docbook|' ${WRKSRC}/docs/news.xml
+	@${REINPLACE_CMD} -e 's|install-data-local: install-docs|install-data-local:|' ${WRKSRC}/Makefile.in
 
 .include <bsd.port.post.mk>
