@@ -7,7 +7,7 @@
 
 PORTNAME=	dbf2mysql
 PORTVERSION=	1.14
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	databases
 MASTER_SITES=	ftp://ftp.ntu.edu.tw/pub/MySQL/Downloads/Contrib/Old-Versions/ \
 		ftp://ftp.ip.pt/pub/mysql/Downloads/Contrib/Old-Versions/ \
@@ -25,7 +25,9 @@ PORTDOCS=	README
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/dbf2mysql ${PREFIX}/bin
 	${INSTALL_SCRIPT} ${WRKSRC}/mysql2dbf ${PREFIX}/bin
-	-${MKDIR} ${PREFIX}/share/doc/dbf2mysql
-	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/dbf2mysql
+.if !defined(NOPORTDOCS)
+	-${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
+.endif
 
 .include <bsd.port.mk>
