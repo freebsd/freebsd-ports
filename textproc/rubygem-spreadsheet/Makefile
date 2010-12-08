@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	avl@FreeBSD.org
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	A Ruby module to generate Microsoft Excel compatible files
 
 RUN_DEPENDS=	rubygem-ruby-ole>=0:${PORTSDIR}/devel/rubygem-ruby-ole

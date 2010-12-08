@@ -10,7 +10,7 @@ PORTREVISION=	2
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	avl@FreeBSD.org
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Manages multiple Mongrel processes
 
 RUN_DEPENDS=	rubygem-mongrel>=1.0.2:${PORTSDIR}/www/rubygem-mongrel

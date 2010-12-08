@@ -10,7 +10,7 @@ PORTVERSION=	1.2.11.1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	avl@FreeBSD.org
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	A library for easy read/write access to OLE compound documents
 
 USE_RUBY=	yes

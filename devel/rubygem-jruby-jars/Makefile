@@ -9,7 +9,7 @@ PORTVERSION=	1.5.6
 CATEGORIES=	devel rubygems java
 MASTER_SITES=	RG
 
-MAINTAINER=	avl@FreeBSD.org
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	JAR files from the JRuby distribution
 
 USE_JAVA=	yes

@@ -9,7 +9,7 @@ PORTVERSION=	1.0.7
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	avl@FreeBSD.org
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Optimized replacement for thread.rb primitives
 
 USE_RUBY=	yes

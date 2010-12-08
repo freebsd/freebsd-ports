@@ -9,7 +9,7 @@ PORTVERSION=	0.9.8
 CATEGORIES=	benchmarks rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	avl@FreeBSD.org
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Scripts designed for benchmarking of Rails applications
 
 RUN_DEPENDS=	rubygem-hoe>=1.2.0:${PORTSDIR}/devel/rubygem-hoe
