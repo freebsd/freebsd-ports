@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	osmosis
-PORTVERSION=	0.37
+PORTVERSION=	0.38
 CATEGORIES=	astro java
 MASTER_SITES=	http://bretth.dev.openstreetmap.org/osmosis-build/
 EXTRACT_SUFX=	.tgz
@@ -32,18 +32,18 @@ JARFILES=	aopalliance-1.0.jar \
 		jpf-1.5.jar \
 		mysql-connector-java-5.1.10.jar \
 		osmbin-1.0-6d760534.jar \
-		osmosis-apidb-0.37.jar \
-		osmosis-areafilter-0.37.jar \
-		osmosis-binary-0.37.jar \
-		osmosis-core-0.37.jar \
-		osmosis-dataset-0.37.jar \
-		osmosis-extract-0.37.jar \
+		osmosis-apidb-${PORTVERSION}.jar \
+		osmosis-areafilter-${PORTVERSION}.jar \
+		osmosis-binary-${PORTVERSION}.jar \
+		osmosis-core-${PORTVERSION}.jar \
+		osmosis-dataset-${PORTVERSION}.jar \
+		osmosis-extract-${PORTVERSION}.jar \
 		osmosis-hstore-0.2.jar \
-		osmosis-pgsnapshot-0.37.jar \
-		osmosis-replication-0.37.jar \
-		osmosis-set-0.37.jar \
-		osmosis-tagfilter-0.37.jar \
-		osmosis-xml-0.37.jar \
+		osmosis-pgsnapshot-${PORTVERSION}.jar \
+		osmosis-replication-${PORTVERSION}.jar \
+		osmosis-set-${PORTVERSION}.jar \
+		osmosis-tagfilter-${PORTVERSION}.jar \
+		osmosis-xml-${PORTVERSION}.jar \
 		plexus-classworlds-2.2.2.jar \
 		postgis-jdbc-1.3.3.jar \
 		postgresql-8.4-701.jdbc4.jar \
@@ -60,8 +60,7 @@ JARFILES=	aopalliance-1.0.jar \
 		woodstox-core-lgpl-4.0.3.jar \
 		xercesImpl-2.9.1.jar
 
-CONFFILES=	plexus.conf \
-		osmosis-plugins.conf
+CONFFILES=	plexus.conf
 
 do-install:
 	@${MKDIR} ${DATADIR}/lib/default
