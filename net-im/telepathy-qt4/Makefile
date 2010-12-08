@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	telepathy-qt4
-PORTVERSION=	0.3.14
+PORTVERSION=	0.4.0
 CATEGORIES=	net-im
 MASTER_SITES=	http://telepathy.freedesktop.org/releases/${PORTNAME}/
 
@@ -28,7 +28,7 @@ MAKE_JOBS_SAFE=	yes
 USE_CMAKE=	yes
 USE_LDCONFIG=	yes
 
-PORTDOCS=	AUTHORS ChangeLog HACKING NEWS README html
+PORTDOCS=	AUTHORS ChangeLog HACKING NEWS README TODO html
 
 PORTEXAMPLES=	Makefile accounts extensions \
 		file-transfer protocols roster
@@ -42,6 +42,10 @@ BROKEN=		does not build on 6.X
 pre-configure:
 	${REINPLACE_CMD} -e '/add_subdirectory(tests)/ d' \
 		${WRKSRC}/CMakeLists.txt
+.ifdef(NOPORTEXAMPLES)
+	${REINPLACE_CMD} -e '/add_subdirectory(examples)/ d' \
+		${WRKSRC}/CMakeLists.txt
+.endif
 	${REINPLACE_CMD} -e '/TelepathyQt4.*\.pc/ s|pkgconfig|../libdata/pkgconfig|' \
 		${WRKSRC}/TelepathyQt4/CMakeLists.txt
 	${REINPLACE_CMD} -e '/$${LIBXML2_INCLUDE_DIR}/ s|$$| ${LOCALBASE}/include|' \
@@ -60,6 +64,7 @@ post-install:
 .endfor
 .endif
 .ifndef(NOPORTEXAMPLES)
+	cd ${WRKSRC}/examples && ${RM} -rf */CMakeFiles */*.cmake */Makefile
 	${MKDIR} ${EXAMPLESDIR}
 .for f in ${PORTEXAMPLES}
 	cd ${WRKSRC}/examples && ${COPYTREE_SHARE} ${f} ${EXAMPLESDIR}
