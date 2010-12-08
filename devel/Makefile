@@ -3116,6 +3116,7 @@
     SUBDIR += rubygem-eventmachine
     SUBDIR += rubygem-extlib
     SUBDIR += rubygem-facets
+    SUBDIR += rubygem-fast-stemmer
     SUBDIR += rubygem-fastercsv
     SUBDIR += rubygem-fastthread
     SUBDIR += rubygem-fattr
