@@ -8,7 +8,8 @@
 PORTNAME=	qgis
 PORTVERSION=	1.6.0
 CATEGORIES=	graphics geography
-MASTER_SITES=	http://download.osgeo.org/qgis/src/
+MASTER_SITES=	http://qgis.org/downloads/ \
+		http://download.osgeo.org/qgis/src/
 
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Geographical Information System (GIS) data viewer
