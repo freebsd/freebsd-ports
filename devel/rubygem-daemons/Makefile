@@ -9,7 +9,7 @@ PORTVERSION=	1.1.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	avl@FreeBSD.org
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	A toolkit to convert your script to a controllable daemon
 
 USE_RUBY=	yes

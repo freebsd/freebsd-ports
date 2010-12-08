@@ -9,7 +9,7 @@ PORTVERSION=	5.0.4
 CATEGORIES=	databases rubygems java
 MASTER_SITES=	RG
 
-MAINTAINER=	avl@FreeBSD.org
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	MySQL JDBC driver for JRuby
 
 RUN_DEPENDS=	jruby:${PORTSDIR}/lang/jruby

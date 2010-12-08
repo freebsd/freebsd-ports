@@ -10,7 +10,7 @@ PORTREVISION=	2
 CATEGORIES=	databases rubygems java
 MASTER_SITES=	RG
 
-MAINTAINER=	avl@FreeBSD.org
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	An ActiveRecord driver for MySQL using JDBC running under JRuby
 
 RUN_DEPENDS=	rubygem-jdbc-mysql>=5.0.4:${PORTSDIR}/databases/rubygem-jdbc-mysql \

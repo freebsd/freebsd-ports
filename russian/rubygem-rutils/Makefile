@@ -9,7 +9,7 @@ PORTVERSION=	1.0.3
 CATEGORIES=	russian devel rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	avl@FreeBSD.org
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Simple processing of russian strings
 
 USE_RUBY=	yes

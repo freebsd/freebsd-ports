@@ -9,7 +9,7 @@ PORTVERSION=	0.12.10
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	avl@FreeBSD.org
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	A fast, simple event-processing library for Ruby programs
 
 USE_RUBY=	yes

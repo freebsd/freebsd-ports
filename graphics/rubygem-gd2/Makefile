@@ -10,7 +10,7 @@ PORTREVISION=	3
 CATEGORIES=	graphics rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	avl@FreeBSD.org
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Ruby binding for Thomas Boutell's gd 2.x graphics library #'
 
 LIB_DEPENDS=	gd.4:${PORTSDIR}/graphics/gd

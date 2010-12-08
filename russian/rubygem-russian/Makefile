@@ -9,7 +9,7 @@ PORTVERSION=	0.2.7
 CATEGORIES=	russian devel rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	avl@FreeBSD.org
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Russian language support for Ruby and Rails, based on I18n library
 
 USE_RUBY=	yes

@@ -8,7 +8,7 @@ CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 DISTNAME=	BlueCloth-${PORTVERSION}
 
-MAINTAINER=	avl@FreeBSD.org
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Ruby implementation of Markdown, a text-to-HTML conversion tool
 
 GEM_NAME=	${DISTNAME}

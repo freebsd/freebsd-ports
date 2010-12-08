@@ -9,7 +9,7 @@ PORTVERSION=	0.1.3
 CATEGORIES=	databases rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	avl@FreeBSD.org
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Library to create/read/write to XBase databases (*.DBF files)
 
 USE_RUBY=	yes

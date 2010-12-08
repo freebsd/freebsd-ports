@@ -9,7 +9,7 @@ PORTVERSION=	0.9.2
 CATEGORIES=	databases rubygems java
 MASTER_SITES=	RG
 
-MAINTAINER=	avl@FreeBSD.org
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	JDBC adapter for ActiveRecord, for use within JRuby on Rails
 
 RUN_DEPENDS=	jruby:${PORTSDIR}/lang/jruby

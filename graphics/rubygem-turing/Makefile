@@ -10,7 +10,7 @@ PORTREVISION=	3
 CATEGORIES=	graphics rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	avl@FreeBSD.org
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Easy to use and customize/extend implementation of captcha
 
 RUN_DEPENDS=	rubygem-gd2>=1.0:${PORTSDIR}/graphics/rubygem-gd2

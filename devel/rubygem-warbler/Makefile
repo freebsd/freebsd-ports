@@ -10,7 +10,7 @@ PORTREVISION=	2
 CATEGORIES=	devel rubygems java
 MASTER_SITES=	RG
 
-MAINTAINER=	avl@FreeBSD.org
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	A constructor of .war files of Rails applications
 
 RUN_DEPENDS=	jruby:${PORTSDIR}/lang/jruby \
