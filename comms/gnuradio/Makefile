@@ -7,7 +7,7 @@
 
 PORTNAME=	gnuradio
 PORTVERSION=	3.1.3
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	comms astro hamradio
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	gnuradio
@@ -16,7 +16,7 @@ DIST_SUBDIR=	${PORTNAME}
 MAINTAINER=	db@FreeBSD.org
 COMMENT=	Amateur Radio Software defined radio
 
-BUILD_DEPENDS=	sdcc:${PORTSDIR}/lang/sdcc \
+BUILD_DEPENDS=	sdcc>=3.0.0:${PORTSDIR}/lang/sdcc \
 		sdl-config:${PORTSDIR}/devel/sdl12 \
 		swig:${PORTSDIR}/devel/swig13 \
 		cppunit-config:${PORTSDIR}/devel/cppunit \
@@ -26,8 +26,6 @@ LIB_DEPENDS=	fftw3:${PORTSDIR}/math/fftw3 \
 		boost_python:${PORTSDIR}/devel/boost-python-libs
 RUN_DEPENDS=	${PYNUMPY} \
 		${PYTHON_SITELIBDIR}/ephem/__init__.py:${PORTSDIR}/astro/pyephem
-
-BROKEN=		does not configure
 
 USE_PYTHON=	2.4+
 USE_WX=		2.6+
