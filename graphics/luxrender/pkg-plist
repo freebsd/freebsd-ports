@@ -1,6 +1,5 @@
 bin/luxconsole
 bin/luxmerger
-bin/luxrender
 include/luxrender/api.h
 @dirrm include/luxrender
 lib/liblux.a
