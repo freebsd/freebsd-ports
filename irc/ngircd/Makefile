@@ -6,15 +6,17 @@
 #
 
 PORTNAME=	ngircd
-PORTVERSION=	0.15
+PORTVERSION=	0.17
 CATEGORIES=	irc ipv6
 MASTER_SITES=	${MASTER_SITE_BERLIOS} \
 		ftp://ngircd.barton.de/pub/%SUBDIR%/
 MASTER_SITE_SUBDIR=	${PORTNAME}
-DISTNAME=	${PORTNAME}-15
+DISTVERSION=	${PORTVERSION:C/0.//1}
 
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Free open source daemon for Internet Relay Chat (IRC)
+
+LICENSE=	GPLv2
 
 USE_RC_SUBR=	ngircd
 GNU_CONFIGURE=	yes

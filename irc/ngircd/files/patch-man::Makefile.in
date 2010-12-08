@@ -1,6 +1,6 @@
---- man/Makefile.in.orig	Mon Dec 11 18:26:34 2006
-+++ man/Makefile.in	Mon Dec 11 18:26:51 2006
-@@ -40,7 +40,6 @@
+--- man/Makefile.in.orig	2010-11-07 08:25:30.000000000 -0800
++++ man/Makefile.in	2010-12-07 12:38:35.848917613 -0800
+@@ -36,7 +36,6 @@
  install_sh_PROGRAM = $(install_sh) -c
  install_sh_SCRIPT = $(install_sh) -c
  INSTALL_HEADER = $(INSTALL_DATA)
