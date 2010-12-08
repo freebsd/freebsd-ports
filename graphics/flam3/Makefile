@@ -22,8 +22,6 @@ LIB_DEPENDS=	png.6:${PORTSDIR}/graphics/png \
 MAN1=		flam3-animate.1 flam3-genome.1 flam3-render.1 flam3-convert.1
 MANCOMPRESSED=	no
 
-PORTDATA=	flam3-palettes.xml
-
 GNU_CONFIGURE=	yes
 USE_GZIP=	yes
 USE_GMAKE=	yes
