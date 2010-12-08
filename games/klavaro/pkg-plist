@@ -54,8 +54,12 @@
 %%DATADIR%%/hands_9.png
 %%DATADIR%%/hu.paragraphs
 %%DATADIR%%/hu.words
+%%DATADIR%%/jtsuken_kk.kbd
 %%DATADIR%%/jtsuken_ru.kbd
+%%DATADIR%%/jtsuken_ru_typewriter.kbd
 %%DATADIR%%/key.png
+%%DATADIR%%/kk.paragraphs
+%%DATADIR%%/kk.words
 %%DATADIR%%/klavaro.ui
 %%DATADIR%%/klavaro_96x96.png
 %%DATADIR%%/nb.paragraphs
@@ -71,6 +75,7 @@
 %%DATADIR%%/qwerty_ar.kbd
 %%DATADIR%%/qwerty_br.kbd
 %%DATADIR%%/qwerty_br_abnt2.kbd
+%%DATADIR%%/qwerty_ca_multling.kbd
 %%DATADIR%%/qwerty_cz.kbd
 %%DATADIR%%/qwerty_dk.kbd
 %%DATADIR%%/qwerty_es.kbd
@@ -118,6 +123,7 @@ share/locale/es/LC_MESSAGES/klavaro.mo
 share/locale/fr/LC_MESSAGES/klavaro.mo
 share/locale/gl/LC_MESSAGES/klavaro.mo
 share/locale/hu/LC_MESSAGES/klavaro.mo
+share/locale/kk/LC_MESSAGES/klavaro.mo
 share/locale/nb/LC_MESSAGES/klavaro.mo
 share/locale/nl/LC_MESSAGES/klavaro.mo
 share/locale/pl/LC_MESSAGES/klavaro.mo
