@@ -14,7 +14,7 @@ DIST_SUBDIR=	KDE
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KDE Software Development Kit
 
-BUILD_DEPENDS=	${LOCALBASE}/include/ltdl.h:${PORTSDIR}/devel/libltdl22 \
+BUILD_DEPENDS=	${LOCALBASE}/include/ltdl.h:${PORTSDIR}/devel/libltdl \
 		${LOCALBASE}/share/xml/docbook/4.2/docbookx.dtd:${PORTSDIR}/textproc/docbook-xml
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
 LIB_DEPENDS=	svn_client-1.0:${PORTSDIR}/devel/subversion \

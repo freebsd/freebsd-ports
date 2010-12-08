@@ -14,7 +14,7 @@ DISTNAME=	libgexiv2-${PORTVERSION}
 MAINTAINER=	lioux@FreeBSD.org
 COMMENT=	GObject-based wrapper around the Exiv2 library
 
-BUILD_DEPENDS=	libtool:${PORTSDIR}/devel/libtool22 \
+BUILD_DEPENDS=	libtool:${PORTSDIR}/devel/libtool \
 		gm4:${PORTSDIR}/devel/m4 \
 		pkg-config:${PORTSDIR}/devel/pkg-config
 LIB_DEPENDS=	exiv2:${PORTSDIR}/graphics/exiv2

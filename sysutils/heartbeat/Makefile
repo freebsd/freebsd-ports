@@ -22,7 +22,7 @@ LIB_DEPENDS=	gnutls:${PORTSDIR}/security/gnutls \
 		net-1.1.5:${PORTSDIR}/net/libnet-devel \
 		uuid:${PORTSDIR}/misc/e2fsprogs-libuuid \
 		xml2:${PORTSDIR}/textproc/libxml2
-PATCH_DEPENDS=	${LOCALBASE}/bin/libtoolize:${PORTSDIR}/devel/libtool22
+PATCH_DEPENDS=	libtool:${PORTSDIR}/devel/libtool
 
 USE_AUTOTOOLS=	autoconf autoheader automake aclocal libtool libltdl
 AUTOMAKE_ARGS+=	--add-missing --include-deps --copy

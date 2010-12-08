@@ -1,4 +1,4 @@
-# New ports collection makefile for:	automake111
+# New ports collection makefile for:	automake
 # Date created:		5th December 2006
 # Whom:			Ade Lovett <ade@FreeBSD.org>
 #

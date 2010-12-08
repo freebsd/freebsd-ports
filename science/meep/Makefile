@@ -20,6 +20,7 @@ USE_FORTRAN=	yes
 USE_GCC=	4.4+
 USE_ICONV=	yes
 USE_GETTEXT=	yes
+USE_AUTOTOOLS+=	libltdl
 CPPFLAGS+=	-I${LOCALBASE}/include
 LD_LIBRARY_PATH=	-L${LOCALBASE}/lib -L/usr/lib
 LDFLAGS+=	-L${LOCALBASE}/lib
@@ -30,8 +31,7 @@ BUILD_DEPENDS+=	bash:${PORTSDIR}/shells/bash \
 LIB_DEPENDS+=	guile.20:${PORTSDIR}/lang/guile \
 		blas.2:${PORTSDIR}/math/blas \
 		ctl.4:${PORTSDIR}/science/libctl \
-		hdf5.0:${PORTSDIR}/science/hdf5 \
-		ltdl.7:${PORTSDIR}/devel/libltdl22
+		hdf5.0:${PORTSDIR}/science/hdf5
 RUN_DEPENDS+=	harminv:${PORTSDIR}/science/harminv
 
 .include <bsd.port.mk>

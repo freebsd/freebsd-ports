@@ -21,8 +21,7 @@ CONFLICTS=	GraphicsMagick-1.[13].*
 LIB_DEPENDS=	freetype:${PORTSDIR}/print/freetype2	\
 		jbig:${PORTSDIR}/graphics/jbigkit	\
 		wmflite:${PORTSDIR}/graphics/libwmf	\
-		xml2:${PORTSDIR}/textproc/libxml2	\
-		ltdl:${PORTSDIR}/devel/libltdl22
+		xml2:${PORTSDIR}/textproc/libxml2
 OTHERGRAPHICS=	jasper jpeg lcms png tiff
 LIB_DEPENDS+=	${OTHERGRAPHICS:C|(.+)|\1:${PORTSDIR}/graphics/\1|}
 OPTIONS=	Q8BIT "Use 8-bit pixels (speed) instead of 16 (quality)" off \
@@ -34,7 +33,7 @@ OPTIONS=	Q8BIT "Use 8-bit pixels (speed) instead of 16 (quality)" off \
 		TESTS "Run bundled self-tests after build" on
 
 USE_ICONV=	yes
-USE_AUTOTOOLS=	libtool
+USE_AUTOTOOLS=	libtool libltdl
 USE_BZIP2=	yes
 USE_GHOSTSCRIPT=yes
 GNU_CONFIGURE=	yes

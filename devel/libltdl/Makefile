@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libltdl
-MASTERDIR=	${.CURDIR}/../../devel/libtool22
+MASTERDIR=	${.CURDIR}/../../devel/libtool
 
 COMMENT=	System independent dlopen wrapper
 
@@ -23,7 +23,6 @@ BUILD_WRKSRC=	${CONFIGURE_WRKSRC}
 INSTALL_WRKSRC=	${CONFIGURE_WRKSRC}
 DESCR=		${.CURDIR}/pkg-descr
 PLIST=		${.CURDIR}/pkg-plist
-LATEST_LINK=	libltdl22
 INFO=		# empty
 
 .include "${MASTERDIR}/Makefile"
