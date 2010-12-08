@@ -6,17 +6,17 @@
 #
 
 PORTNAME=	freeswitch-core
-PORTVERSION=	1.0.6
-PORTREVISION=	5
+PORTVERSION=	201044
 CATEGORIES=	net
-MASTER_SITES=	http://files.freeswitch.org/:1 \
+MASTER_SITES=	ftp://ftp.secure-computing.net/pub/freeswitch/ \
+		ftp://ftp2.secure-computing.net/pub/freeswitch/ \
 		http://files.freeswitch.org/downloads/libs/:2
-DISTFILES=	${BASE_PORTNAME}-${PORTVERSION}.tar.gz:1 \
+DISTFILES=	${BASE_PORTNAME}-${PORTVERSION}.tar.gz \
 		celt-0.7.1.tar.gz:2 \
 		flite-1.3.99-latest.tar.gz:2 \
-		json-c-0.9.tar.gz \
+		json-c-0.9.tar.gz:2 \
 		lame-3.97.tar.gz:2 \
-		libmemcached-0.32.tar.gz \
+		libmemcached-0.32.tar.gz:2 \
 		libshout-2.2.2.tar.gz:2 \
 		mpg123.tar.gz:2 \
 		openldap-2.4.11.tar.gz:2 \
@@ -24,6 +24,7 @@ DISTFILES=	${BASE_PORTNAME}-${PORTVERSION}.tar.gz:1 \
 		soundtouch-1.3.1.tar.gz:2 \
 		sphinxbase-0.4.99-20091212.tar.gz:2 \
 		communicator_semi_6000_20080321.tar.gz:2
+DIST_SUBDIR=	${BASE_PORTNAME}
 EXTRACT_ONLY=	${BASE_PORTNAME}-${PORTVERSION}.tar.gz
 
 MAINTAINER=	r.neese@gmail.com
@@ -52,8 +53,8 @@ CONFIGURE_ARGS=	--prefix=${PREFIX} \
 		--sysconfdir=${PREFIX}/etc/${BASE_PORTNAME}/conf \
 		--includedir=${PREFIX}/include/${BASE_PORTNAME} \
 		--libdir=${PREFIX}/lib/${BASE_PORTNAME}/lib \
+		--localstatedir="${VARBASE}" \
 		--with-modinstdir=${PREFIX}/lib/${BASE_PORTNAME}/mod \
-		--with-rundir=${VARBASE}/run/${BASE_PORTNAME} \
 		--with-libgnutls-prefix=${LOCALBASE} \
 		--with-ogg=${LOCALBASE} \
 		--with-ogg-libraries=${LOCALBASE}/lib \
@@ -66,14 +67,15 @@ CPPFLAGS+=	-I${PREFIX}/include
 
 FREESWITCH_USER=	freeswitch
 FREESWITCH_GROUP=	${FREESWITCH_USER}
-BASE_PORTNAME=	${FREESWITCH_USER}
 
 SUB_LIST=	FREESWITCH_USER=${FREESWITCH_USER} FREESWITCH_GROUP=${FREESWITCH_GROUP}
 
+BASE_PORTNAME=	${FREESWITCH_USER}
+
 OPTIONS=	MODSHOUT        "Enable mod_shout (streaming audio/mp3)" on \
 		MODFLITE	"Enable mod_flite (Text to Speech)" on \
-		MODUNIMRCP	"Enable mod_unimrcp tts (new testing)" off \
-		MODTTSCMDLINE	"Enable mod_tts_commandline (testing)" off \
+		MODUNIMRCP	"Enable mod_unimrcp tts" off \
+		MODTTSCMDLINE	"Enable mod_tts_commandline" off \
 		MODPOCKETSPHINX	"Enable mod_pockectsphinx (voice control)" on \
 		MODCIDLOOKUP	"Enable mod_cidlookup" on \
 		MODDPDIRECTORY	"Enable mod_dialplan_directory" off \
@@ -86,36 +88,39 @@ OPTIONS=	MODSHOUT        "Enable mod_shout (streaming audio/mp3)" on \
 		MODSOUNDTOUCH	"Enable mod_soundtouch" on \
 		MODRSS		"Enable mod_rss (rss feed reader)" on \
 		MODSNOM		"Enable mod_snom (snom control)" off \
+		MODAVMD		"Enable mod_avmd (Adavced v-mail detection)" on \
 		MODVMD		"Enable mod_vmd (voice mail detection)" on \
 		MODSPY		"Enable mod_spy" on \
 		MODAMRWB	"Enable mod_amrwb (amrwb codec)" on \
-		MODCELT		"Enable mod_celt (celt codec)" on \
+		MODCELT		"Enable mod_celt (celt 48k  codec)" on \
 		MODSILK		"Enable mod_silk (New Silk Codec)" on \
-		MODOPENZAP	"Enable mod_openzap dahdi support" off \
-		MODSKINNY	"Enable mod_skinny Skinny Support (Beta)" off \
+		MODCODEC2	"Enable mod_codec2 (new codec)" on \
+		MODFREETDM	"Enable mod_freetdm dahdi support (Testing)" off \
+		MODSKINNY	"Enable mod_skinny Skinny Support" on \
 		MODMEMCACHE	"Enable mod_memcache" on \
 		MODMULTICAST	"Enable mod_event_multicast" on \
-		MODNIBBLEBILL   "Enable mod_nibblebill(billing)" on \
+		MODNIBBLEBILL   "Enable mod_nibblebill (billing)" on \
 		MODPORTAUDIO    "Enable mod_portaudio" on \
 		MODPASTREAM	"Enable mod_portaudio_stream (new)" on \
-		MODSHELLSTREAM	"Enable mod_SHELL_stream (New)" on \
+		MODSHELLSTREAM	"Enable mod_shell_stream (new)" on \
 		MODPERL		"Enable mod_perl (perl support)" off \
-		MODPYTHON	"Enable mod_python (python lang)" off \
+		MODPYTHON	"Enable mod_python (python)" off \
 		MODCURL		"Enable mod_curl" off \
 		MODXMLCURL	"Enable mod_xml_curl" off \
-		MODDISTRIBUTOR	"Enable mod_distributor (testing)" off \
+		MODDISTRIBUTOR	"Enable mod_distributor " off \
 		MODSNAPSHOT	"Enable mod_snapshot (testing)" off \
 		MODSAYDE	"Enable mod_say_de (German support)" off \
 		MODSAYES	"Enable mod_say_se (Spanish support)" off \
 		MODSAYEN	"Enable mod_say_en (English support)" on \
-		MODSAYHU	"Enable mod_say_hu (Hungarian support(new)" off \
+		MODSAYHU	"Enable mod_say_hu (Hungarian support)" off \
 		MODSAYFR	"Enable mod_say_fr (French support)" off \
 		MODSAYIT	"Enable mod_say_it (Italian support)" off \
 		MODSAYNL	"Enable mod_say_nl (Dutch support)" off \
 		MODSAYRU	"Enable mod_say_ru (Russian support)" on \
-		MODSAYTH	"Enable mod_say_th (Thi support(new)" off \
+		MODSAYTH	"Enable mod_say_th (Thi support)" off \
 		MODSAYZH	"Enable mod_say_zh (Chinese support)" off \
-		EXTENSIONS	"Include Default User Extensions" off
+		EXTENSIONS	"Include Default User Extensions" off \
+		MODCALLCENTER	"Enable mod_callcenter (new)(test)" on
 
 .include <bsd.port.options.mk>
 
@@ -128,10 +133,10 @@ CFLAGS+=	-fPIC
 .endif
 
 .for i in MODFLITE MODPOCKETSPHINX MODCIDLOOKUP MODDPDIRECTORY MODEASYROUTE MODLCR MODSOUNDTOUCH \
-	MODRSS MODSNOM MODVMD MODSPY MODAMRWB MODCELT MODMULTICAST MODPORTAUDIO MODCURL MODXMLCURL \
+	MODRSS MODSNOM MODAVMD MODVMD MODSPY MODAMRWB MODCELT MODMULTICAST MODPORTAUDIO MODCURL MODXMLCURL \
 	MODSAYDE MODSAYEN MODSAYES MODSAYFR MODSAYHU MODSAYIT MODSAYNL MODSAYRU MODSAYTH MODSAYZH \
-	MODNIBBLEBILL MODDINGALING MODDIRECTORY MODMEMCACHE MODPASTREAM MODSHELLSTREAM \
-	MODSILK MODUNIMRCP MODTTSCMDLINE MODDISTRIBUTOR MODSNAPSHOT MODSKINNY EXTENSIONS
+	MODNIBBLEBILL MODDINGALING MODDIRECTORY MODMEMCACHE MODPYTHON MODPASTREAM MODSHELLSTREAM \
+	MODSILK MODUNIMRCP MODTTSCMDLINE MODDISTRIBUTOR MODSNAPSHOT MODSKINNY EXTENSIONS MODCALLCENTER MODCODEC2
 .if !defined(WITH_${i})
 PLIST_SUB+=	WITH_${i}="@comment "
 .else
@@ -139,25 +144,18 @@ PLIST_SUB+=	WITH_${i}=""
 .endif
 .endfor
 
-.if !defined(WITH_MODOPENZAP)
-PLIST_SUB+=	WITH_MODOPENZAP="@comment "
+.if !defined(WITH_MODFREETDM)
+PLIST_SUB+=	 WITH_MODFREETDM="@comment "
 .else
 .if ${OSVERSION} < 703000 || (${OSVERSION} >= 800000 && ${OSVERSION} < 800108)
-IGNORE=		sorry you can not use mod_openzap on this version of freebsd ( dahdi support broken ) please update
+IGNORE=	sorry you can not use mod_freetdm on this version of freebsd ( dahdi support broken ) please update
 .endif
-PLIST_SUB+=	WITH_MODOPENZAP=""
+PLIST_SUB+=	WITH_MODFREETDM=""
 CONFIGURE_ARGS+=	--with-libpri
 BUILD_DEPENDS+=	libpri>=1.2.0:${PORTSDIR}/misc/libpri \
 		${LOCALBASE}/include/dahdi/wctdm_user.h:${PORTSDIR}/misc/dahdi
 LIB_DEPENDS+=	pri:${PORTSDIR}/misc/libpri
 RUN_DEPENDS+=	${LOCALBASE}/include/dahdi/wctdm_user.h:${PORTSDIR}/misc/dahdi
-.endif
-
-.if !defined(WITH_MODPYTHON)
-PLIST_SUB+=	WITH_MODPYTHON="@comment "
-.else
-PLIST_SUB+=	WITH_MODPYTHON=""
-USE_PYTHON=	yes
 .endif
 
 .if !defined(WITH_MODSHOUT)
@@ -190,17 +188,11 @@ BUILD_DEPENDS+=	${LOCALBASE}/lib/erlang/usr/include/erl_driver.h:${PORTSDIR}/lan
 .endif
 
 pre-configure:
-	cd ${WRKSRC} && ./rebootstrap.sh
 	@${REINPLACE_CMD} -e 's|pkgconfigdir = $$(libdir)/pkgconfig|pkgconfigdir = ${PREFIX}/libdata/pkgconfig|g' ${WRKSRC}/libs/*/Makefile.am
-	@${REINPLACE_CMD} -e 's|pkgconfigdir = $$(libdir)/pkgconfig|pkgconfigdir = ${PREFIX}/libdata/pkgconfig|g' ${WRKSRC}/libs/*/Makefile.in
+	@${REINPLACE_CMD} -e 's|pkgconfigdir   = $$(libdir)/pkgconfig|pkgconfigdir = ${PREFIX}/libdata/pkgconfig|g' ${WRKSRC}/libs/*/Makefile.am
 	@${REINPLACE_CMD} -e 's|pkgconfigdir = $$(libdir)/pkgconfig|pkgconfigdir = ${PREFIX}/libdata/pkgconfig|g' ${WRKSRC}/Makefile.am
-	@${REINPLACE_CMD} -e 's|pkgconfigdir = $$(libdir)/pkgconfig|pkgconfigdir = ${PREFIX}/libdata/pkgconfig|g' ${WRKSRC}/Makefile.in
-	@${REINPLACE_CMD} -e 's|base=http://files.freeswitch.org/downloads/libs/|base=file://${DISTDIR}/|g' ${WRKSRC}/build/getlib.sh.in
-
-.if defined(WITH_VOICEMAILPATCH)
-	@${REINPLACE_CMD} -e 's|${storage_dir}/|${voicemail_dir}|g' ${WRKSRC}/src/mod/applications/mod_voicemail/mod_voicemail.c
-	@${REINPLACE_CMD} -e 's|<!--<param name="storage-dir" value="/tmp"/>-->|<!--<param name="voicemail-dir" value="/var/spool/freeswitch/voicemail"/>-->|g' ${WRKSRC}/conf/autoload_configs/voicemail.conf.xml
-.endif
+	@${REINPLACE_CMD} -e 's|base=http://files.freeswitch.org/downloads/libs/|base=file://${DISTDIR}/${DIST_SUBDIR}/|g' ${WRKSRC}/build/getlib.sh.in
+	cd ${WRKSRC} && ./rebootstrap.sh
 
 post-configure:
 .for i in mod_unimrcp mod_flite mod_pocketsphinx
@@ -212,13 +204,13 @@ post-configure:
 	@${REINPLACE_CMD} -e 's|#asr_tts/mod_tts_commandline|asr_tts/mod_tts_commandline|g' ${WRKSRC}/modules.conf
 .endif
 .for i in mod_cidlookup mod_easyroute mod_fax mod_lcr mod_soundtouch mod_rss mod_snom \
-	mod_vmd mod_spy mod_curl mod_nibblebill mod_memcache mod_directory mod_distributor \
-	mod_snapshot
+	mod_vmd mod_avmd mod_spy mod_curl mod_nibblebill mod_memcache mod_directory mod_distributor \
+	mod_snapshot mod_callcenter
 .if defined(WITH_${i:C/_//g:U})
 	@${REINPLACE_CMD} -e 's|#\(applications/${i}\)|\1|g' ${WRKSRC}/modules.conf
 .endif
 .endfor
-.for i in mod_amrwb mod_celt mod_silk
+.for i in mod_amrwb mod_celt mod_silk mod_codec2
 .if defined(WITH_${i:C/_//g:U})
 	@${REINPLACE_CMD} -e 's|#\(codecs/${i}\)|\1|g' ${WRKSRC}/modules.conf
 .endif
@@ -249,8 +241,8 @@ post-configure:
 .if defined(WITH_MODDPDIRECTORY)
 	@${REINPLACE_CMD} -e 's|#dialplans/mod_dialplan_directory|dialplans/mod_dialplan_directory|g' ${WRKSRC}/modules.conf
 .endif
-.if defined(WITH_MODOPENZAP)
-	@${REINPLACE_CMD} -e 's|#../../libs/openzap/mod_openzap|../../libs/openzap/mod_openzap|g' ${WRKSRC}/modules.conf
+.if defined(WITH_MODFREETDM)
+	@${REINPLACE_CMD} -e 's|#../../libs/freetdm/mod_freetdm|../../libs/freetdm/mod_freetdm|g' ${WRKSRC}/modules.conf
 .endif
 .if defined(WITH_MODMULTICAST)
 	@${REINPLACE_CMD} -e 's|#event_handlers/mod_event_multicast|event_handlers/mod_event_multicast|g' ${WRKSRC}/modules.conf
@@ -282,10 +274,13 @@ post-install:
 	@${CHOWN} -R ${FREESWITCH_USER}:${FREESWITCH_GROUP} ${VARBASE}/run/${BASE_PORTNAME}
 	@${CHOWN} -R ${FREESWITCH_USER}:${FREESWITCH_GROUP} ${VARBASE}/spool/${BASE_PORTNAME}
 	@for i in $$(${FIND} ${PREFIX}/etc/${BASE_PORTNAME}/conf/ -type f -name '*.sample'); do if [ ! -f $${i%.sample} ]; then ${CP} -p $$i $${i%.sample}; fi; done
-	@${CAT} ${PKGMESSAGE}
+	@${CHMOD} -R 775 ${PREFIX}/etc/${BASE_PORTNAME}/conf
+	@${CHMOD} -R 775 ${VARBASE}/log/${BASE_PORTNAME}
+	@${CHMOD} -R 775 ${VARBASE}/${BASE_PORTNAME}
 	@${ECHO_MSG} "This port chown -R various directories ${FREESWITCH_USER}:${FREESWITCH_GROUP} "
 	@${ECHO_MSG} "this is for port security . in the event something should stop working."
 	@${ECHO_MSG} "Please take the time to check chownership of the dir's"
 	@${ECHO_MSG} "${VARBASE}/db/${BASE_PORTNAME} ${VARBASE}/log/${BASE_PORTNAME} ${VARBASE}/${BASE_PORTNAME} ${PREFIX}/etc/${BASE_PORTNAME}"
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
