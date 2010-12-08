@@ -14,7 +14,7 @@ PKGNAMEPREFIX=	trac-
 MAINTAINER=	douglas@douglasthrift.net
 COMMENT=	Trac plugin to enable logging by Google Analytics
 
-RUN_DEPENDS=	tracd:${PORTSDIR}/www/trac
+BUILD_DEPENDS=	tracd:${PORTSDIR}/www/trac
 
 LICENSE=	BSD
 
