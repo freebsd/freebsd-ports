@@ -12,7 +12,7 @@ MASTER_SITES=	CPAN/Glib SF/gtk2-perl/Glib/${PORTVERSION}
 PKGNAMEPREFIX=	p5-
 DISTNAME=	Glib-${PORTVERSION}
 
-MAINTAINER=	clsung@FreeBSD.org
+MAINTAINER=	swills@FreeBSD.org
 COMMENT=	This module provides access to Glib and GObject libraries
 
 BUILD_DEPENDS=	${SITE_PERL}/ExtUtils/PkgConfig.pm:${PORTSDIR}/devel/p5-ExtUtils-PkgConfig \

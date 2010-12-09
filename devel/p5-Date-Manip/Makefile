@@ -11,7 +11,7 @@ CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	clsung@FreeBSD.org
+MAINTAINER=	swills@FreeBSD.org
 COMMENT=	Perl5 module containing date manipulation routines
 
 PERL_CONFIGURE=	YES

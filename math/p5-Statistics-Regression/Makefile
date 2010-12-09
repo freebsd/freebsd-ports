@@ -11,7 +11,7 @@ CATEGORIES=	math perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	clsung@FreeBSD.org
+MAINTAINER=	swills@FreeBSD.org
 COMMENT=	Perl module to perform weighted linear regression
 
 PERL_CONFIGURE=	yes

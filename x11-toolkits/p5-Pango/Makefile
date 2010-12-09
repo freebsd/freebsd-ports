@@ -13,7 +13,7 @@ MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	../../authors/id/T/TS/TSCH
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	clsung@FreeBSD.org
+MAINTAINER=	swills@FreeBSD.org
 COMMENT=	Perl module for layout and render i18n text
 
 BUILD_DEPENDS=	${SITE_PERL}/ExtUtils/Depends.pm:${PORTSDIR}/devel/p5-ExtUtils-Depends \

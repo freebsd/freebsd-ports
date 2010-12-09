@@ -12,7 +12,7 @@ CATEGORIES=	databases
 MASTER_SITES=	${MASTER_SITE_MYSQL}
 MASTER_SITE_SUBDIR=	MySQL-Proxy
 
-MAINTAINER=	clsung@FreeBSD.org
+MAINTAINER=	swills@FreeBSD.org
 COMMENT=	Monitor, analyze or transform the communication of MySQL
 
 LIB_DEPENDS=	event-1.4:${PORTSDIR}/devel/libevent \
