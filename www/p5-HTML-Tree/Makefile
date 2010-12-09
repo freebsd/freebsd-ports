@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	HTML-Tree
-PORTVERSION=	3.23
+PORTVERSION=	4.1
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,11 +14,12 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	A collection of modules to manupulate HTML syntax trees
 
-BUILD_DEPENDS=	p5-HTML-Parser>=2.19:${PORTSDIR}/www/p5-HTML-Parser \
+BUILD_DEPENDS=	p5-HTML-Parser>=3.46:${PORTSDIR}/www/p5-HTML-Parser \
 		p5-HTML-Tagset>=3.02:${PORTSDIR}/www/p5-HTML-Tagset
 RUN_DEPENDS=	${BUILD_DEPENDS}
+TEST_DEPENDS=	p5-Test-Exception>=0:${PORTSDIR}/devel/p5-Test-Exception
 
-PERL_CONFIGURE=	yes
+PERL_MODBUILD=	yes
 
 MAN3=		HTML::Parse.3 HTML::TreeBuilder.3 HTML::AsSubs.3 \
 		HTML::Element.3 HTML::Element::traverse.3 HTML::Tree.3 \
