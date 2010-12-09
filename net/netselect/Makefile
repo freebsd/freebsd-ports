@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_GENTOO} \
 		http://www.worldvisions.ca/~apenwarr/netselect/
 MASTER_SITE_SUBDIR=	distfiles
 
-MAINTAINER=	drizzt@gufi.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Ultrafast implementation of ping
 
 PLIST_FILES=	bin/${PORTNAME}
