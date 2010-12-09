@@ -327,7 +327,7 @@ post-patch:
 	@${REINPLACE_CMD} s/@PTHREAD_LIBS@// ${WRKSRC}/src/Makefile.global.in
 .  if defined(WITH_ICU) || defined(WITH_ICU4)
 	@${REINPLACE_CMD} -E -e \
-		"s|^(m4_if.*)2.6[0-9](.*Autoconf version )2.6[0-9]|\1${AUTOCONF_VERSION:S/2/2./}\2${AUTOCONF_VERSION:S/2/2./}|g" \
+		"s|^(m4_if.*)2.6[0-9](.*Autoconf version )2.6[0-9]|\1${AUTOCONF_VERSION}\2${AUTOCONF_VERSION}|g" \
 		${WRKSRC}/configure.in
 .  endif
 
