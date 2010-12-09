@@ -17,9 +17,6 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	A Ruby interface to termios
 
-.if ${RUBY_VER} == 1.9
-BROKEN=	does not compile with ruby 1.9
-.endif
 
 MAKE_JOBS_UNSAFE=	yes
 
@@ -35,6 +32,10 @@ DOCS=		ChangeLog	README \
 		${RUBY_RD_HTML_FILES}
 
 .include <bsd.port.pre.mk>
+
+.if ${RUBY_VER} == 1.9
+BROKEN=	does not compile with ruby 1.9
+.endif
 
 post-patch:
 	${RUBY} -i -pe 'gsub(/ttyS\d/, "cuaa0")' ${WRKSRC}/examples/*.rb
