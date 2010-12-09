@@ -61,7 +61,7 @@ PLIST_SUB+=	WITH_MODPERL2="@comment "
 .include <bsd.port.pre.mk>
 
 .if ${APACHE_VERSION} == 20
-SHLIB_MAJOR=	9
+SHLIB_MAJOR=	10
 .else
 SHLIB_MAJOR=	11
 .endif
