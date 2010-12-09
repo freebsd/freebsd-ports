@@ -22,6 +22,10 @@ RUBYGEM_AUTOPLIST=  yes
 
 .include <bsd.port.pre.mk>
 
+.if ${RUBY_VER} == 1.9
+BROKEN= does not work with ruby 1.9
+.endif
+
 .if ${OSVERSION} < 700000
 BROKEN=		does not compile on 6.X
 .endif
