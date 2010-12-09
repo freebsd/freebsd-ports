@@ -3403,6 +3403,7 @@
 %%WWWDIR%%/pkgs/state.js
 %%WWWDIR%%/pkgs/window-debug.js
 %%WWWDIR%%/pkgs/window.js
+%%WWWDIR%%/release-notes.html
 %%WWWDIR%%/resources/charts.swf
 %%WWWDIR%%/resources/css/README.txt
 %%WWWDIR%%/resources/css/debug.css
@@ -3476,6 +3477,7 @@
 %%WWWDIR%%/resources/css/theme-gray/list-view.css
 %%WWWDIR%%/resources/css/theme-gray/menu.css
 %%WWWDIR%%/resources/css/theme-gray/panel.css
+%%WWWDIR%%/resources/css/theme-gray/pivotgrid.css
 %%WWWDIR%%/resources/css/theme-gray/progress.css
 %%WWWDIR%%/resources/css/theme-gray/qtips.css
 %%WWWDIR%%/resources/css/theme-gray/resizable.css
@@ -3952,6 +3954,7 @@
 %%WWWDIR%%/resources/images/gray/grid/row-expand-sprite.gif
 %%WWWDIR%%/resources/images/gray/grid/sort_asc.gif
 %%WWWDIR%%/resources/images/gray/grid/sort_desc.gif
+%%WWWDIR%%/resources/images/gray/grid/sort-hd.gif
 %%WWWDIR%%/resources/images/gray/menu/group-checked.gif
 %%WWWDIR%%/resources/images/gray/menu/item-over-disabled.gif
 %%WWWDIR%%/resources/images/gray/menu/item-over.gif
@@ -4395,6 +4398,7 @@
 %%WWWDIR%%/src/ext-core/test/yui_2.6.0/yui/build/yahoo-dom-event/yahoo-dom-event.js
 %%WWWDIR%%/src/ext-core/test/yui_2.6.0/yui/build/yuitest/yuitest-min.js
 %%WWWDIR%%/src/locale/ext-lang-af.js
+%%WWWDIR%%/src/locale/ext-lang-am.js
 %%WWWDIR%%/src/locale/ext-lang-bg.js
 %%WWWDIR%%/src/locale/ext-lang-ca.js
 %%WWWDIR%%/src/locale/ext-lang-cs.js

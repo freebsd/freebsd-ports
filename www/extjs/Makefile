@@ -6,16 +6,19 @@
 #
 
 PORTNAME=	extjs
-PORTVERSION=	3.3.0
+PORTVERSION=	3.3.1
 CATEGORIES=	www
 MASTER_SITES=	http://downloads.sencha.com/extjs/ \
-		http://mirror.joehorn.idv.tw/
+		http://mirror.joehorn.idv.tw/extjs/
 DISTNAME=	ext-${PORTVERSION}
 
 MAINTAINER=	joehorn@gmail.com
 COMMENT=	A JavaScript platform for rapid development of cross-browser web apps
 
 WRKSRC=		${WRKDIR}/${DISTNAME}
+
+LICENSE=	GPLv3
+LICENSE_FILE=	${WRKSRC}/license.txt
 
 USE_ZIP=	yes
 NO_BUILD=	yes
@@ -25,7 +28,7 @@ OPTIONS=	DOC	"Install with documents" on \
 
 WWW_SUB=	"INCLUDE_ORDER.txt adapter ext-all-debug-w-comments.js \
 		 ext-all-debug.js ext-all.js ext.jsb2 gpl-3.0.txt index.html \
-		 license.txt pkgs resources src test welcome"
+		 license.txt pkgs release-notes.html resources src test welcome"
 
 .include <bsd.port.pre.mk>
 
