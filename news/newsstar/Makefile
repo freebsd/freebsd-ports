@@ -82,8 +82,8 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
 .endfor
 .else
-	${GMAKE} -C ${WRKSRC}/src install
-	${GMAKE} -C ${WRKSRC}/docs install-man
+	${MAKE} -C ${WRKSRC}/src install
+	${MAKE} -C ${WRKSRC}/docs install-man
 .endif
 
 post-patch:
