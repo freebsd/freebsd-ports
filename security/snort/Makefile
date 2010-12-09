@@ -26,7 +26,8 @@ OPTIONS=	DYNAMIC "Enable dynamic plugin support" on \
 		POSTGRESQL "Enable PostgreSQL support" off \
 		PRELUDE "Enable Prelude NIDS integration" off \
 		PERPROFILE "Enable Performance Profiling" off \
-		SNORTSAM "Enable output plugin to SnortSam" off
+		SNORTSAM "Enable output plugin to SnortSam" off \
+		IPV6 "Enable IPv6 support" off
 
 USE_RC_SUBR=	snort.sh
 SUB_FILES=	pkg-message
@@ -129,6 +130,10 @@ CONFIGURE_ARGS+=	--enable-perfprofiling
 USE_AUTOTOOLS+=	automake
 PATCH_SITES+=http://www.snortsam.net/files/snort-plugin/:snortsam
 PATCHFILES+=snortsam-2.8.6.diff.gz:snortsam
+.endif
+
+.if defined(WITH_IPV6)
+CONFIGURE_ARGS+=	--enable-ipv6
 .endif
 
 post-patch:
