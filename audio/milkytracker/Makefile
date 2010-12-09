@@ -7,6 +7,7 @@
 
 PORTNAME=	milkytracker
 PORTVERSION=	0.90.85
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://www.milkytracker.org/files/ \
 		CRITICAL/${PORTNAME}/${PORTVERSION}/${PORTREVISION}
@@ -25,7 +26,7 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
 CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
-CONFIGURE_ARGS+=	--disable-alsatest
+CONFIGURE_ARGS+=	--disable-alsatest --without-alsa
 
 PLIST_FILES=	bin/milkytracker share/pixmaps/milkytracker.ico \
 		share/pixmaps/milkytracker.png
