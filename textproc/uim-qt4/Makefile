@@ -11,6 +11,8 @@ COMMENT=	Qt4 modules of uim input method
 
 LIB_DEPENDS=	uim.7:${PORTSDIR}/textproc/uim
 
+BROKEN=		bad plist
+
 USE_QT_VER=	4
 QT_COMPONENTS=	qmake_build moc_build qt3support uic
 USE_AUTOTOOLS=	libtool

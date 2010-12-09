@@ -13,6 +13,8 @@ BUILD_DEPENDS=	cmake:${PORTSDIR}/devel/cmake
 LIB_DEPENDS=	uim.7:${PORTSDIR}/textproc/uim
 RUN_DEPENDS=	uim-pref-qt4:${PORTSDIR}/textproc/uim-qt
 
+BROKEN=		does not compile
+
 USE_GCC=	4.2+
 USE_KDE4=	kdelibs automoc4
 USE_QT_VER=	4
