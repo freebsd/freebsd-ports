@@ -1,3 +1,4 @@
+bin/CTK-run
 bin/cget
 bin/cherokee-config
 bin/cherokee-panic
@@ -297,7 +298,6 @@ share/aclocal/cherokee.m4
 %%ADMIN%%%%DATADIR%%/admin/market/InstallUtil.py
 %%ADMIN%%%%DATADIR%%/admin/market/Install_Log.py
 %%ADMIN%%%%DATADIR%%/admin/market/Menu.py
-%%ADMIN%%%%DATADIR%%/admin/market/Package.py
 %%ADMIN%%%%DATADIR%%/admin/market/PageApp.py
 %%ADMIN%%%%DATADIR%%/admin/market/PageCategory.py
 %%ADMIN%%%%DATADIR%%/admin/market/PageIndex.py
@@ -323,7 +323,6 @@ share/aclocal/cherokee.m4
 %%ADMIN%%%%DATADIR%%/admin/market/Maintenance.pyc
 %%ADMIN%%%%DATADIR%%/admin/market/ows_consts.pyc
 %%ADMIN%%%%DATADIR%%/admin/market/CommandProgress.pyc
-%%ADMIN%%%%DATADIR%%/admin/market/Package.pyc
 %%ADMIN%%%%DATADIR%%/admin/CTK/CTK/Init.py
 %%ADMIN%%%%DATADIR%%/admin/CTK/CTK/Paginator.py
 %%ADMIN%%%%DATADIR%%/admin/CTK/CTK/StarRating.py
@@ -566,6 +565,7 @@ share/aclocal/cherokee.m4
 %%ADMIN%%%%DATADIR%%/admin/CTK/static/images/carousel-left-arrow.png
 %%ADMIN%%%%DATADIR%%/admin/CTK/static/images/carousel-right-arrow.png
 %%ADMIN%%%%DATADIR%%/admin/CTK/static/js/StarRating.js
+%%ADMIN%%%%DATADIR%%/admin/static/images/other/latest.png
 %%ADMIN%%%%DATADIR%%/admin/static/images/other/linkedin.png
 %%ADMIN%%%%DATADIR%%/admin/static/images/other/irc.png
 %%ADMIN%%%%DATADIR%%/admin/static/images/other/left.png
@@ -1005,6 +1005,10 @@ share/aclocal/cherokee.m4
 %%DATADIR%%/themes/plain/footer.html
 %%DATADIR%%/themes/plain/header.html
 %%DATADIR%%/themes/plain/theme.css
+%%DATADIR%%/themes/white/header.html
+%%DATADIR%%/themes/white/footer.html
+%%DATADIR%%/themes/white/entry.html
+%%DATADIR%%/themes/white/theme.css
 www/cherokee/images/cherokee-logo.png
 www/cherokee/images/default-bg.png
 www/cherokee/images/favicon.ico
@@ -1014,6 +1018,7 @@ www/cherokee/index.html
 @dirrm www/cherokee
 %%NLS%%@dirrmtry share/locale/sv_SE/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/sv_SE
+@dirrm %%DATADIR%%/themes/white
 @dirrm %%DATADIR%%/themes/plain
 @dirrm %%DATADIR%%/themes/firefox3
 @dirrm %%DATADIR%%/themes/default
