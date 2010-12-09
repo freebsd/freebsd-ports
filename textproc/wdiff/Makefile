@@ -6,14 +6,15 @@
 #
 
 PORTNAME=	wdiff
-PORTVERSION=	0.6.4
-PORTREVISION=	2
+PORTVERSION=	0.6.5
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	wdiff
 
 MAINTAINER=	sanpei@FreeBSD.org
 COMMENT=	Display word differences between text files
+
+LICENSE=	GPLv3
 
 GNU_CONFIGURE=	yes
 
