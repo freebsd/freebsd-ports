@@ -11,8 +11,8 @@ PORTREVISION=	3
 CATEGORIES=	sysutils parallel
 MASTER_SITES=	http://gridengine.sunsource.net/files/documents/7/169/:src \
 		http://gridengine.sunsource.net/download/SGE61/:bin \
-		${MASTER_SITE_LOCAL}:src,bin
-MASTER_SITE_SUBDIR=	brooks
+		${MASTER_SITE_LOCAL:S/$/:src,bin/}
+MASTER_SITE_SUBDIR=	brooks/:src,bin
 DISTNAME=	ge-V${SGE_RELEASE:S/.//}_TAG-src
 DISTFILES=	${DISTNAME}.tar.gz:src \
 		ge-${SGE_RELEASE}-common.tar.gz:bin
