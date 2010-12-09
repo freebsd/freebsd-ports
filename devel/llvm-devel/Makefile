@@ -7,6 +7,7 @@
 
 PORTNAME=	llvm
 DISTVERSION=	2.9.r${SVN_REV}
+PORTREVISION=	1
 CATEGORIES=	devel lang
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	brooks
@@ -49,9 +50,7 @@ CONFIGURE_ARGS+=	--enable-bindings=none
 OPTIONS=	ASSERTS "Enable assertions (thread unsafe)" off
 
 .if defined(NOPORTDOCS)
-DOCSRCDIR=
-.else
-DOCSRCDIR=	docs
+CONFIGURE_ARGS+=	--disable-docs
 .endif
 
 .if !defined(NOPORTDOCS)
@@ -109,8 +108,6 @@ post-patch:
 	    ${WRKSRC}/Makefile.config.in
 	${REINPLACE_CMD} -e 's|\(PROJ_mandir.*:=\).*$$|\1${MANPREFIX}/man|g' \
 	    ${WRKSRC}/Makefile.config.in
-	${REINPLACE_CMD} -e 's|%%DOCSRCDIR%%|${DOCSRCDIR}|' \
-	    ${WRKSRC}/Makefile
 
 TEST_CMD=	'(cd ${WRKSRC}/test; ${SETENV} ${MAKE_ENV} ${GMAKE} check-local-lit)'
 regression-test: ${BUILD_COOKIE}
