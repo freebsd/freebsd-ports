@@ -17,7 +17,7 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	A Ruby interface to termios
 
-.if ${RUBY_VER} = 1.9
+.if ${RUBY_VER} == 1.9
 BROKEN=	does not compile with ruby 1.9
 .endif
 
