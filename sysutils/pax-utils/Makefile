@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	pax-utils
-PORTVERSION=	0.1.15
+PORTVERSION=	0.2.1
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_GENTOO} \
-		http://dev.gentoo.org/~solar/pax/ \
 		http://dev.gentoo.org/~vapier/dist/
 MASTER_SITE_SUBDIR=	distfiles
 
@@ -19,16 +18,18 @@ COMMENT=	Various ELF related utils for ELF32, ELF64 binaries
 USE_BZIP2=	true
 USE_GMAKE=	true
 
-PLIST_FILES=	bin/dumpelf bin/pspax bin/scanelf
+PLIST_FILES=	bin/dumpelf bin/pspax bin/scanelf bin/scanmacho
 
-DOCS=		BUGS README TODO
+PORTDOCS=	BUGS README TODO
 
-MAN1=		dumpelf.1 pspax.1 scanelf.1
+MAN1=		${PLIST_FILES:S,bin/,,:S,$,.1,}
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/dumpelf ${PREFIX}/bin
-	${INSTALL_SCRIPT} ${WRKSRC}/pspax ${PREFIX}/bin
-	${INSTALL_SCRIPT} ${WRKSRC}/scanelf ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/man/* ${PREFIX}/man/man1
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${DOCSDIR}
+.endif
+	${INSTALL_SCRIPT} ${PLIST_FILES:S,bin/,,:S,^,${WRKSRC}/,} ${PREFIX}/bin
+	${INSTALL_MAN} ${MAN1:S,^,${WRKSRC}/man/,} ${PREFIX}/man/man1
 
 .include <bsd.port.mk>
