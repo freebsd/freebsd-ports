@@ -6,7 +6,7 @@ $FreeBSD$
 @@ -31,7 +31,7 @@
    OPTIONAL_DIRS :=
  else
-   DIRS := lib/System lib/Support utils lib/VMCore lib tools/llvm-shlib \
+   DIRS := lib/Support utils lib/VMCore lib tools/llvm-shlib \
 -          tools/llvm-config tools runtime docs unittests
 +          tools/llvm-config tools runtime %%DOCSRCDIR%% unittests
    OPTIONAL_DIRS := projects bindings

@@ -12,6 +12,7 @@ include/clang/AST/ASTConsumer.h
 include/clang/AST/ASTContext.h
 include/clang/AST/ASTDiagnostic.h
 include/clang/AST/ASTImporter.h
+include/clang/AST/ASTMutationListener.h
 include/clang/AST/ASTVector.h
 include/clang/AST/Attr.h
 include/clang/AST/AttrImpl.inc
@@ -37,7 +38,6 @@ include/clang/AST/Expr.h
 include/clang/AST/ExprCXX.h
 include/clang/AST/ExprObjC.h
 include/clang/AST/ExternalASTSource.h
-include/clang/AST/FullExpr.h
 include/clang/AST/NestedNameSpecifier.h
 include/clang/AST/OperationKinds.h
 include/clang/AST/ParentMap.h
@@ -60,7 +60,6 @@ include/clang/AST/TemplateBase.h
 include/clang/AST/TemplateName.h
 include/clang/AST/Type.h
 include/clang/AST/TypeLoc.h
-include/clang/AST/TypeLocBuilder.h
 include/clang/AST/TypeLocNodes.def
 include/clang/AST/TypeLocVisitor.h
 include/clang/AST/TypeNodes.def
@@ -101,10 +100,13 @@ include/clang/Basic/DiagnosticCommonKinds.inc
 include/clang/Basic/DiagnosticDriverKinds.inc
 include/clang/Basic/DiagnosticFrontendKinds.inc
 include/clang/Basic/DiagnosticGroups.inc
+include/clang/Basic/DiagnosticIDs.h
 include/clang/Basic/DiagnosticLexKinds.inc
 include/clang/Basic/DiagnosticParseKinds.inc
 include/clang/Basic/DiagnosticSemaKinds.inc
 include/clang/Basic/FileManager.h
+include/clang/Basic/FileSystemOptions.h
+include/clang/Basic/FileSystemStatCache.h
 include/clang/Basic/IdentifierTable.h
 include/clang/Basic/LangOptions.h
 include/clang/Basic/Linkage.h
@@ -139,6 +141,7 @@ include/clang/Basic/TokenKinds.h
 include/clang/Basic/TypeTraits.h
 include/clang/Basic/Version.h
 include/clang/Basic/Version.inc
+include/clang/Basic/Visibility.h
 include/clang/Basic/arm_neon.inc
 include/clang/Checker/AnalysisConsumer.h
 include/clang/Checker/BugReporter/BugReporter.h
@@ -159,24 +162,21 @@ include/clang/Checker/PathSensitive/CheckerVisitor.h
 include/clang/Checker/PathSensitive/ConstraintManager.h
 include/clang/Checker/PathSensitive/Environment.h
 include/clang/Checker/PathSensitive/ExplodedGraph.h
-include/clang/Checker/PathSensitive/GRAuditor.h
 include/clang/Checker/PathSensitive/GRBlockCounter.h
 include/clang/Checker/PathSensitive/GRCoreEngine.h
 include/clang/Checker/PathSensitive/GRExprEngine.h
 include/clang/Checker/PathSensitive/GRExprEngineBuilders.h
-include/clang/Checker/PathSensitive/GRSimpleAPICheck.h
 include/clang/Checker/PathSensitive/GRState.h
 include/clang/Checker/PathSensitive/GRStateTrait.h
 include/clang/Checker/PathSensitive/GRSubEngine.h
 include/clang/Checker/PathSensitive/GRTransferFuncs.h
 include/clang/Checker/PathSensitive/GRWorkList.h
 include/clang/Checker/PathSensitive/MemRegion.h
+include/clang/Checker/PathSensitive/SValBuilder.h
 include/clang/Checker/PathSensitive/SVals.h
-include/clang/Checker/PathSensitive/SValuator.h
 include/clang/Checker/PathSensitive/Store.h
 include/clang/Checker/PathSensitive/SummaryManager.h
 include/clang/Checker/PathSensitive/SymbolManager.h
-include/clang/Checker/PathSensitive/ValueManager.h
 include/clang/CodeGen/BackendUtil.h
 include/clang/CodeGen/CodeGenAction.h
 include/clang/CodeGen/ModuleBuilder.h
@@ -251,6 +251,7 @@ include/clang/Index/Program.h
 include/clang/Index/STLExtras.h
 include/clang/Index/SelectorMap.h
 include/clang/Index/TranslationUnit.h
+include/clang/Lex/AttrSpellings.inc
 include/clang/Lex/CodeCompletionHandler.h
 include/clang/Lex/DirectoryLookup.h
 include/clang/Lex/ExternalPreprocessorSource.h
@@ -268,6 +269,7 @@ include/clang/Lex/Pragma.h
 include/clang/Lex/PreprocessingRecord.h
 include/clang/Lex/Preprocessor.h
 include/clang/Lex/PreprocessorLexer.h
+include/clang/Lex/Release+Asserts/AttrSpellings.inc.tmp
 include/clang/Lex/ScratchBuffer.h
 include/clang/Lex/Token.h
 include/clang/Lex/TokenConcatenation.h
@@ -311,6 +313,7 @@ include/clang/Sema/TemplateDeduction.h
 include/clang/Serialization/ASTBitCodes.h
 include/clang/Serialization/ASTDeserializationListener.h
 include/clang/Serialization/ASTReader.h
+include/clang/Serialization/ASTSerializationListener.h
 include/clang/Serialization/ASTWriter.h
 include/clang/Serialization/AttrPCHRead.inc
 include/clang/Serialization/AttrPCHWrite.inc
@@ -373,6 +376,7 @@ lib/libclangSerialization.a
 @dirrm include/clang/Sema
 @dirrm include/clang/Rewrite
 @dirrm include/clang/Parse
+@dirrm include/clang/Lex/Release+Asserts
 @dirrm include/clang/Lex
 @dirrm include/clang/Index
 @dirrm include/clang/FrontendTool
