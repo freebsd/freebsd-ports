@@ -1,0 +1,10 @@
+bin/xmlrewrite
+%%SITE_PERL%%/XML/Rewrite.pm
+%%SITE_PERL%%/XML/Rewrite.pod
+%%SITE_PERL%%/XML/Rewrite/Schema.pm
+%%SITE_PERL%%/XML/Rewrite/Schema.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Rewrite/.packlist
+@dirrmtry %%SITE_PERL%%/XML/Rewrite
+@dirrmtry %%SITE_PERL%%/XML
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Rewrite
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML
