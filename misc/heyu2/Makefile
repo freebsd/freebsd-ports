@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	heyu2
-PORTVERSION=	2.9.1
+PORTVERSION=	2.9.2
 CATEGORIES=	misc
 MASTER_SITES=	http://www.heyu.org/download/
 DISTNAME=	heyu-${PORTVERSION}
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	mstowe@chicago.us.mensa.org
 COMMENT=	Control a CM11A interface from the command line
