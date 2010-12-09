@@ -81,8 +81,14 @@ CONFIGURE_ARGS+=	--enable-sniffer
 CONFIGURE_ARGS+=	--enable-debug
 .endif
 
-post-install:
+.if defined(NOPORTDOCS)
+post-patch:
+	${REINPLACE_CMD} -e 's|SUBDIRS = doc src|SUBDIRS = src|' \
+		${WRKSRC}/Makefile.in
+.endif
+
 .if !defined(NOPORTDOCS)
+post-install:
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
 .endif
