@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_GENTOO} \
 		http://dev.gentoo.org/~vapier/dist/
 MASTER_SITE_SUBDIR=	distfiles
 
-MAINTAINER=	drizzt@gufi.org
+MAINTAINER=	sbrabez@gmail.com
 COMMENT=	Various ELF related utils for ELF32, ELF64 binaries
 
 USE_BZIP2=	true
