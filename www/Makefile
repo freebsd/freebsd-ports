@@ -281,6 +281,7 @@
     SUBDIR += gnustep-ticker
     SUBDIR += google-appengine
     SUBDIR += google-sitemapgen
+    SUBDIR += googlebook_dl
     SUBDIR += goose
     SUBDIR += grails
     SUBDIR += gregarius
