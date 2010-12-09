@@ -10,8 +10,8 @@ PORTVERSION=	${SGE_VERSION}
 PORTREVISION=	2
 CATEGORIES=	sysutils parallel
 MASTER_SITES=	http://gridengine.sunsource.net/files/documents/7/197/:src \
-		${MASTER_SITE_LOCAL}:src
-MASTER_SITE_SUBDIR=	brooks
+		${MASTER_SITE_LOCAL:S/$/:src/}
+MASTER_SITE_SUBDIR=	brooks/:src
 DISTNAME=	ge-V${SGE_RELEASE:S/.//}_TAG-src
 DISTFILES=	${DISTNAME}.tar.gz:src
 EXTRACT_ONLY=	${DISTNAME}.tar.gz
