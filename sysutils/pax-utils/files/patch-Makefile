@@ -1,6 +1,6 @@
---- Makefile.orig	Wed May 17 23:48:10 2006
-+++ Makefile	Thu Jul 20 20:51:39 2006
-@@ -20,7 +20,7 @@
+--- ./Makefile.orig	2010-02-14 19:14:16.000000000 +0100
++++ ./Makefile	2010-11-12 00:49:47.000000000 +0100
+@@ -21,7 +21,7 @@
  LDFLAGS   +=
  LIBS      :=
  DESTDIR    =
@@ -9,21 +9,22 @@
  STRIP     := strip
  MKDIR     := mkdir -p
  CP        := cp
-@@ -98,7 +98,7 @@
+@@ -97,15 +97,15 @@
  	$(STRIP) --strip-unneeded $(TARGETS)
  
  install: all
--	-$(MKDIR) $(PREFIX)/bin/ $(PREFIX)/share/man/man1/
-+	-$(MKDIR) $(PREFIX)/bin/ $(MANPREFIX)/man/man1/
- 	$(CP) $(TARGETS) $(PREFIX)/bin/
+-	$(MKDIR) $(PREFIX)/bin/ $(PREFIX)/share/man/man1/
++	$(MKDIR) $(PREFIX)/bin/ $(MANPREFIX)/share/man/man1/
+ 	for sh in *.sh ; do $(INS_EXE) $$sh $(PREFIX)/bin/$${sh%.sh} || exit $$? ; done
+ 	$(INS_EXE) $(TARGETS) $(PREFIX)/bin/
  ifeq ($(S),)
- 	-$(MKDIR) $(PREFIX)/share/doc/pax-utils/
-@@ -106,7 +106,7 @@
+ 	$(MKDIR) $(PREFIX)/share/doc/pax-utils/
+ 	$(CP) README BUGS TODO $(PREFIX)/share/doc/pax-utils/
+-	-$(INS_DATA) $(MPAGES) $(PREFIX)/share/man/man1/
++	-$(INS_DATA) $(MPAGES) $(MANPREFIX)/share/man/man1/
+ else
+-	$(INS_DATA) $(MPAGES) $(PREFIX)/share/man/man1/
++	$(INS_DATA) $(MPAGES) $(MANPREFIX)/share/man/man1/
  endif
- 	for mpage in $(MPAGES) ; do \
- 		[ -e $$mpage ] \
--			&& cp $$mpage $(PREFIX)/share/man/man1/ || : ;\
-+			&& cp $$mpage $(MANPREFIX)/man/man1/ || : ;\
- 	done
  
- dist: distclean
+ dist:
