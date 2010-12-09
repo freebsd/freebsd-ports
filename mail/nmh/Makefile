@@ -100,7 +100,7 @@ OPTIONS=	SASL2 "Cyrus SASL2" OFF
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 90007
+.if ${OSVERSION} >= 900007
 BROKEN=		does not build
 .endif
 
