@@ -6,6 +6,7 @@
 
 PORTNAME=	gramps
 PORTVERSION=	3.2.5
+PORTREVISION=	1
 CATEGORIES=	science gnome python
 MASTER_SITES=	SF/${PORTNAME}/Stable/${PORTVERSION}
 
@@ -14,8 +15,6 @@ COMMENT=	A GTK/GNOME-based genealogy program
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/_bsddb.so:${PORTSDIR}/databases/py-bsddb \
 		${PYTHON_SITELIBDIR}/_xmlplus/__init__.py:${PORTSDIR}/textproc/py-xml
-
-BROKEN=		incorrect plist
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
