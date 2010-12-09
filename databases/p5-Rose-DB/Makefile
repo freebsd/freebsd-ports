@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	Rose-DB
-PORTVERSION=	0.758
-PORTREVISION=	1
+PORTVERSION=	0.762
 PORTEPOCH=	1
 CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
@@ -22,7 +21,7 @@ BUILD_DEPENDS=	p5-Rose-DateTime>=0.532:${PORTSDIR}/devel/p5-Rose-DateTime \
 		${SITE_PERL}/${PERL_ARCH}/Bit/Vector/Overload.pm:${PORTSDIR}/math/p5-Bit-Vector \
 		${SITE_PERL}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI \
 		${SITE_PERL}/DateTime/Format/MySQL.pm:${PORTSDIR}/devel/p5-DateTime-Format-MySQL \
-		${SITE_PERL}/DateTime/Format/Pg.pm:${PORTSDIR}/devel/p5-DateTime-Format-Pg \
+		p5-DateTime-Format-Pg>=0.11:${PORTSDIR}/devel/p5-DateTime-Format-Pg \
 		${SITE_PERL}/Clone/PP.pm:${PORTSDIR}/devel/p5-Clone-PP \
     		${SITE_PERL}/Time/Clock.pm:${PORTSDIR}/devel/p5-Time-Clock \
 		${SITE_PERL}/${PERL_ARCH}/YAML/Syck.pm:${PORTSDIR}/textproc/p5-YAML-Syck
