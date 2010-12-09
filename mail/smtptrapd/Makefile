@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	smtptrapd
-PORTVERSION=	1.5
+PORTVERSION=	1.6
 CATEGORIES=	mail
 MASTER_SITES=	SF
 
@@ -20,10 +20,10 @@ USE_RC_SUBR=	smtptrapd.sh
 PLIST_FILES=	bin/smtptrapd
 
 do-build:
-	(cd ${WRKSRC} && ${CC} ${CFLAGS} -o smtptrapd smtptrapd.c)
+	@cd ${WRKSRC} && ${CC} ${CFLAGS} -o smtptrapd smtptrapd.c
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/smtptrapd ${PREFIX}/bin/
+	@${INSTALL_PROGRAM} ${WRKSRC}/smtptrapd ${PREFIX}/bin/
 	@${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
 .include <bsd.port.mk>
