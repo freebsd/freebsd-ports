@@ -41,19 +41,26 @@ MAKE_ARGS+=		REQUIRES_RTTI=1
 .if defined(MAINTAINER_MODE)
 CONFIGURE_ARGS+=	--with-f2c=${LOCALBASE}
 .else
-CONFIGURE_ARGS+=	--disable-assertions \
-			--enable-optimized
+CONFIGURE_ARGS+=	--enable-optimized
 .endif
 
 CONFIGURE_ARGS+=	--enable-bindings=none
 
 OPTIONS=	ASSERTS "Enable assertions (thread unsafe)" off
 
-MAN1=		bugpoint.1 lit.1 llc.1 lli.1 llvmc.1 llvm-ar.1 \
+.if defined(NOPORTDOCS)
+DOCSRCDIR=
+.else
+DOCSRCDIR=	docs
+.endif
+
+.if !defined(NOPORTDOCS)
+MAN1=		bugpoint.1 lit.1 llc.1 lli.1 llvm-ar.1 \
 		llvm-as.1 llvm-bcanalyzer.1 llvm-config.1 llvm-diff.1 \
 		llvm-dis.1 llvm-extract.1 llvm-ld.1 llvm-link.1 llvm-nm.1 \
-		llvm-prof.1 llvm-ranlib.1 llvmgcc.1 \
+		llvm-prof.1 llvm-ranlib.1 llvmc.1 llvmgcc.1 \
 		llvmgxx.1 opt.1 tblgen.1
+.endif
 
 .include <bsd.port.pre.mk>
 
@@ -64,10 +71,8 @@ SVN_REV!=	svn info http://llvm.org/svn/llvm-project/ | ${GREP} Revision | cut -d
 .include "Makefile.svn_rev"
 .endif
 
-.if ${OSVERSION} < 700000 && ${ARCH} == "amd64"
-BROKEN=		does not compile
-.elif ${ARCH} == "sparc64"
-BROKEN=		Does not compile on sparc64
+.if ${ARCH} == "sparc64"
+BROKEN=		does not compile on sparc64
 .endif
 
 .if ${ARCH} == "amd64" || ${ARCH} == "ia64"
@@ -100,10 +105,12 @@ do-fetch:
 .endif
 
 post-patch:
-	${REINPLACE_CMD} -e 's,\(PROJ_docsdir.*:=\).*$$,\1${DOCSDIR},g' \
-		${WRKSRC}/Makefile.config.in
-	${REINPLACE_CMD} -e 's,\(PROJ_mandir.*:=\).*$$,\1${MANPREFIX}/man,g' \
-		${WRKSRC}/Makefile.config.in
+	${REINPLACE_CMD} -e 's|\(PROJ_docsdir.*:=\).*$$|\1${DOCSDIR}|g' \
+	    ${WRKSRC}/Makefile.config.in
+	${REINPLACE_CMD} -e 's|\(PROJ_mandir.*:=\).*$$|\1${MANPREFIX}/man|g' \
+	    ${WRKSRC}/Makefile.config.in
+	${REINPLACE_CMD} -e 's|%%DOCSRCDIR%%|${DOCSRCDIR}|' \
+	    ${WRKSRC}/Makefile
 
 TEST_CMD=	'(cd ${WRKSRC}/test; ${SETENV} ${MAKE_ENV} ${GMAKE} check-local-lit)'
 regression-test: ${BUILD_COOKIE}
@@ -118,6 +125,7 @@ PLIST_FILE_LIST=	bin/bugpoint \
 			bin/llc \
 			bin/lli \
 			bin/llvm* \
+			bin/macho-dumpx \
 			bin/opt \
 			bin/tblgen \
 			lib/libBugpointPasses.so \
