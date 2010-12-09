@@ -1,3 +1,4 @@
+bin/htmltree
 %%SITE_PERL%%/HTML/AsSubs.pm
 %%SITE_PERL%%/HTML/Element.pm
 %%SITE_PERL%%/HTML/Parse.pm
@@ -7,8 +8,6 @@
 %%SITE_PERL%%/HTML/Tree/AboutObjects.pod
 %%SITE_PERL%%/HTML/Tree/AboutTrees.pod
 %%SITE_PERL%%/HTML/Tree/Scanning.pod
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML-Tree/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML-Tree
 @dirrm %%SITE_PERL%%/HTML/Element
 @dirrm %%SITE_PERL%%/HTML/Tree
 @dirrmtry %%SITE_PERL%%/HTML
