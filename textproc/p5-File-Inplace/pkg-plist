@@ -1,4 +1,5 @@
 %%SITE_PERL%%/File/Inplace.pm
+@dirrmtry %%SITE_PERL%%/File
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/File/Inplace/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/File/Inplace
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/File
