@@ -26,7 +26,8 @@ NSLCD_SOCKET?=		/var/run/nslcd.ctl
 
 OPTIONS=		NSS_COMPAT	"Enable nss_ldap compatibility" on \
 			SASL		"Enable SASL" off \
-			PAM		"Build pam_ldap" on
+			PAM		"Build pam_ldap" on \
+			PROMPT  "Display only Password: instaed of LDAP Password:" off
 
 USERS=			nslcd
 GROUPS=			nslcd
@@ -90,6 +91,11 @@ CONFIGURE_ARGS+=	--enable-nslcd
 PLIST_SUB+=		NSLCD=""
 MAN5+=			nslcd.conf.5
 MAN8+=			nslcd.8
+.endif
+
+.if defined(WITH_PROMPT)
+post-patch:
+	@${REINPLACE_CMD} -e 's|i==0?"Password: ":"LDAP Password: "|"Password: "|' ${WRKSRC}/pam/pam.c
 .endif
 
 post-extract:
