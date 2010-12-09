@@ -18,7 +18,7 @@ EXTRACT_SUFX=	.c
 PATCH_SITES=	http://utenti.gufi.org/~drizzt/codes/irssi-dcc_send_limiter/
 PATCHFILES=	${DISTFILES}.diff
 
-MAINTAINER=	drizzt@gufi.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Irssi plugin to limit the transmit speed of DCC sends
 
 BUILD_DEPENDS=	irssi:${PORTSDIR}/irc/irssi
