@@ -15,6 +15,8 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Open-source J2EE application server (4.x family)
 
+BROKEN=		does not build with new ant
+
 LATEST_LINK=	jboss4
 USE_JAVA=	yes
 JAVA_VERSION=	1.5
