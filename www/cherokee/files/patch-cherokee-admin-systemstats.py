@@ -1,12 +1,19 @@
---- admin/SystemStats.py-orig	2010-11-03 13:54:15.000000000 -0300
-+++ admin/SystemStats.py	2010-11-17 20:21:01.000000000 -0300
-@@ -42,6 +42,9 @@
+--- admin/SystemStats.py-orig	2010-11-18 07:53:18.000000000 -0300
++++ admin/SystemStats.py	2010-11-25 20:38:23.000000000 -0300
+@@ -23,6 +23,7 @@
+ #
+ 
+ import os
++import popen
+ import re
+ import sys
+ import time
+@@ -42,6 +43,8 @@
              _stats = System_stats__Linux()
          elif sys.platform == 'darwin':
              _stats = System_stats__Darwin()
-+        elif sys.platform.rstrip('987') == 'freebsd' :
++        elif sys.platform.startswith ('freebsd'):
 +            _stats = System_stats__FreeBSD()
-+        
  
      assert _stats, "Not implemented"
      return _stats
@@ -15,121 +22,121 @@
  
  
 +
-+# FreeBSD implementation	
++# FreeBSD implementation
 +class System_stats__FreeBSD (Thread, System_stats):
 +    CHECK_INTERVAL = 2
 +
 +    def __init__ (self):
 +        Thread.__init__ (self)
 +        System_stats.__init__ (self)
++        
++        self.vmstat_fd = subprocess.Popen ("/usr/bin/vmstat -H -w%d" %(self.CHECK_INTERVAL),
++                                            shell=True, stdout = subprocess.PIPE, close_fds=True )
 +
-+        self.cpu._user_prev = 0
-+        self.cpu._sys_prev  = 0
-+        self.cpu._nice_prev = 0
-+        self.cpu._idle_prev = 0
++	#first,second = self.vmstat_fd.stdout.readline(),self.vmstat_fd.stdout.readline()
++
 +
 +        # Read valid values
 +        self._read_hostname()
 +        self._read_cpu()
 +        self._read_memory()
-+        self._read_cpu_info()
++        self._read_cpu_and_mem_info()
 +
 +        self.start()
 +
 +    def _read_hostname (self):
-+        import os
++        # First try: uname()
++	self.hostname = os.uname()[1]
++        if self.hostname:
++            return
 +
-+	hname = os.uname()[1]
++        # Second try: sysctl()
++        ret = popen.popen_sync ("/sbin/sysctl -n kern.hostname")
++        self.hostname = ret['stdout'].rstrip()
++        if self.hostname:
++            return
 +
-+	if not hname:
-+          # Execute sysctl 
-+          fd = subprocess.Popen ("/sbin/sysctl -n kern.hostname", shell=True, stdout = subprocess.PIPE)
-+          hname = fd.stdout.readline().strip()
++        # Could not figure it out
++        self.hostname = "Unknown"
 +
-+        self.hostname=hname
++    def _read_cpu_and_mem_info (self):
++        # Execute sysctl
++        ret = popen.popen_sync ("/sbin/sysctl hw.ncpu hw.clockrate kern.threads.virtual_cpu hw.pagesize vm.stats.vm.v_page_count")
++        lines = filter (lambda x: x, ret['stdout'].split('\n'))
 +
-+    def _read_cpu_info (self):
-+	    
-+	fd = subprocess.Popen("/sbin/sysctl hw.ncpu  hw.clockrate  kern.threads.virtual_cpu", shell=True, stdout =subprocess.PIPE)    
-+        lines = fd.stdout.readlines()
-+     
++        # Parse output
++	
++	# cpu related
++        ncpus = 0
++        vcpus = 0
++	clock = ''
 +
-+        ncpus=0
-+        vcpus=0 
-+	clock=''
++        # mem related
++	psize  = 0
++	pcount = 0
 +
 +	for line in lines:
 +	    parts = line.split()
 +	    if parts[0] == 'hw.ncpu:':
 +		ncpus = int(parts[1])
 +            elif parts[0] == 'hw.clockrate:':
-+		clock = parts[1] 
++		clock = parts[1]
 +            elif parts[0] == 'kern.threads.virtual_cpu:':
-+		vcpus = parts[1] 
++		vcpus = parts[1]
++            elif parts[0] == 'vm.stats.vm.v_page_count:':
++		pcount = int(parts[1])
++            elif parts[0] == 'hw.pagesize:':
++		psize = int(parts[1])
 +
++	# Deal with cores
++        if vcpus:
++            self.cpu.num   = str (int(vcpus) / int(ncpus))
++            self.cpu.cores = vcpus
++        else:
++            self.cpu.num   = int (ncpus)
++            self.cpu.cores = int (ncpus)
 +
-+	# FIXME: Is this reliable?
-+	self.cpu.num=str(int(vcpus)/int(ncpus))
-+ 	self.cpu.cores=vcpus
-+        
++        # Global speed
 +	self.cpu.speed = '%s MHz' %(clock)
 +
++
++	# Physical mem
++	self.mem.total = (psize * pcount) / 1024 
++
 +    def _read_cpu (self):
-+	fd = subprocess.Popen("/sbin/sysctl -n kern.cp_time", shell=True, stdout =subprocess.PIPE)    
++
++	# Read a new line
++        line = self.vmstat_fd.stdout.readline().rstrip('\n')
++
++        # Skip headers
++	if len(filter (lambda x: x not in " .0123456789", line)):
++	    return
 +        
-+	fields = fd.stdout.readline().split()
++        # Parse
++	parts = filter (lambda x: x, line.split(' '))
 +
-+        user = float(fields[0])
-+        sys  = float(fields[1])
-+        nice = float(fields[2])
-+#	intr = float(fields[3]) # 4th is interrupts, not used
-+        idle = float(fields[4])
++	if not len(parts) == 18:
++		return
 +
-+        total = ((user - self.cpu._user_prev) + (sys - self.cpu._sys_prev) + (nice - self.cpu._nice_prev) + (idle - self.cpu._idle_prev))
-+        self.cpu.usage = int(100.0 * ((user + sys + nice) - (self.cpu._user_prev + self.cpu._sys_prev + self.cpu._nice_prev)) / (total + 0.001) + 0.5)
-+
-+        if (self.cpu.usage > 100):
-+            self.cpu.usage = 100
-+
-+        self.cpu.idle = 100 - self.cpu.usage
-+
-+        self.cpu._user_prev = user
-+        self.cpu._sys_prev  = sys
-+        self.cpu._nice_prev = nice
-+        self.cpu._idle_prev = idle
++	self.cpu.idle  = int(parts[17])
++	self.cpu.usage = 100 - self.cpu.idle
 +
 +    def _read_memory (self):
 +
-+	# What we need from sysctl:
-+	#  * vm.stats.vm.v_free_count
-+        #  * vm.stats.vm.v_page_count
-+        #  * hw.pagesize
++        line = self.vmstat_fd.stdout.readline().rstrip('\n')
 +
-+        # physical memory free = v_free_count*page_size;
-+        # physical memory size = v_page_count*page_size;
-+        # physical memory used = size - free space
++        # Skip headers
++        if len(filter (lambda x: x not in " .0123456789", line)):
++            return
 +
-+	fd = subprocess.Popen("/sbin/sysctl vm.stats.vm.v_active_count vm.stats.vm.v_page_count hw.pagesize", shell=True, stdout =subprocess.PIPE)    
-+	lines = fd.stdout.readlines()
++        # Parse
++        values = filter (lambda x: x, line.split(' '))
 +
-+        pagesize  = 0
-+        pagecount = 0
-+        activecount = 0
++	if not len(values)==18:
++		return 
 +
-+	for line in lines:
-+	    parts = line.split()
-+	    if   parts[0] == 'hw.pagesize:':
-+               pagesize = int(parts[1])
-+            elif parts[0] == 'vm.stats.vm.v_active_count:':   
-+               activecount = int(parts[1])
-+            elif parts[0] == 'vm.stats.vm.v_page_count:':   
-+	       pagecount = int(parts[1])
-+
-+
-+        self.mem.total = (pagesize * pagecount) / 1024
-+        self.mem.free  = (pagesize * (pagecount-activecount)) / 1024
-+        self.mem.used  = (pagesize * activecount) / 1024
-+
++        self.mem.free  = int(values[4]) 
++        self.mem.used  = self.mem.total - self.mem.free
 +
 +    def run (self):
 +        while True:
@@ -141,9 +148,3 @@
  if __name__ == '__main__':
      sys_stats = get_system_stats()
  
-@@ -305,3 +432,5 @@
-         print 'free',  sys_stats.mem.free
- 
-         time.sleep(1)
-+
-+
