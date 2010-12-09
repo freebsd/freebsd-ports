@@ -12,7 +12,7 @@ CATEGORIES=	x11-toolkits lang perl5
 MASTER_SITES=	CPAN SF/${PORTNAME:L}-perl/${PORTNAME}/${PORTVERSION}
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	clsung@FreeBSD.org
+MAINTAINER=	swills@FreeBSD.org
 COMMENT=	Perl module for Gtk+ 2.x graphical user interface library
 
 BUILD_DEPENDS=	${SITE_PERL}/ExtUtils/Depends.pm:${PORTSDIR}/devel/p5-ExtUtils-Depends \

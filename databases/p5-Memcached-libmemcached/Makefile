@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	../../authors/id/T/TI/TIMB
 PKGNAMEPREFIX=	p5-
 DISTNAME=	${PORTNAME}-${PORTVERSION:R}${PORTVERSION:E}
 
-MAINTAINER=	clsung@FreeBSD.org
+MAINTAINER=	swills@FreeBSD.org
 COMMENT=	Report on and update an SQLite database
 
 LIB_DEPENDS=	memcached:${PORTSDIR}/databases/libmemcached
