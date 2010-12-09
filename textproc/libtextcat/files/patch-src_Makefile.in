@@ -1,5 +1,5 @@
---- src/Makefile.in.orig	Thu May 22 13:39:52 2003
-+++ src/Makefile.in	Thu Aug 23 23:11:20 2007
+--- src/Makefile.in.orig	2003-05-22 13:39:52.000000000 +0200
++++ src/Makefile.in	2010-12-09 21:29:22.000000000 +0100
 @@ -126,18 +126,18 @@
  
  WARNS = -W -Wall -Wshadow -Wpointer-arith 
@@ -31,3 +31,24 @@
  libtextcat_la_OBJECTS = $(am_libtextcat_la_OBJECTS)
  bin_PROGRAMS = createfp$(EXEEXT)
  noinst_PROGRAMS = testtextcat$(EXEEXT)
+@@ -264,6 +264,11 @@
+ 	  else :; fi; \
+ 	done
+ 
++install-HEADERS:
++	@$(NORMAL_INSTALL)
++	$(mkinstalldirs) $(DESTDIR)$(pkgincludedir)
++	$(INSTALL_HEADER) $(HEADERS) $(DESTDIR)$(pkgincludedir)
++
+ uninstall-binPROGRAMS:
+ 	@$(NORMAL_UNINSTALL)
+ 	@list='$(bin_PROGRAMS)'; for p in $$list; do \
+@@ -490,7 +495,7 @@
+ 
+ install-data-am:
+ 
+-install-exec-am: install-binPROGRAMS install-libLTLIBRARIES
++install-exec-am: install-binPROGRAMS install-libLTLIBRARIES install-HEADERS
+ 
+ install-info: install-info-am
+ 

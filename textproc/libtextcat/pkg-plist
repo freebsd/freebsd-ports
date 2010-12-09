@@ -1,4 +1,10 @@
 bin/createfp
+include/libtextcat/common.h
+include/libtextcat/constants.h
+include/libtextcat/fingerprint.h
+include/libtextcat/textcat.h
+include/libtextcat/utf8misc.h
+include/libtextcat/wg_mempool.h
 include/textcat.h
 lib/libtextcat.a
 lib/libtextcat.la
@@ -83,3 +89,4 @@ lib/libtextcat.so.0
 %%DATADIR%%/conf.txt
 @dirrm %%DATADIR%%/LM
 @dirrm %%DATADIR%%
+@dirrm include/libtextcat
