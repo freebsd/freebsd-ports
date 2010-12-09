@@ -36,6 +36,10 @@ LIB_DEPENDS+=	gd.4:${PORTSDIR}/graphics/gd
 
 .include <bsd.port.pre.mk>
 
+.if ${RUBY_VER} == 1.9
+BROKEN= does not work with ruby 1.9
+.endif
+
 # Hmm, GREP and TRUE seem to be defined in the bsd.port.post.mk stage.
 .if exists(${LOCALBASE}/bin/gd2topng)
 WITH_X11_CHECK!=	ldd ${LOCALBASE}/bin/gd2topng | grep -w 'libX11\.so' || true

@@ -19,4 +19,8 @@ USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=  yes
 PLIST_FILES=	bin/ferret-browser
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+.if ${RUBY_VER} == 1.9
+BROKEN= does not compile with ruby 1.9
+.endif
+.include <bsd.port.post.mk>
