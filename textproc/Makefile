@@ -869,6 +869,7 @@
     SUBDIR += p5-XML-RSSLite
     SUBDIR += p5-XML-Reader
     SUBDIR += p5-XML-RegExp
+    SUBDIR += p5-XML-Rewrite
     SUBDIR += p5-XML-Rules
     SUBDIR += p5-XML-SAX
     SUBDIR += p5-XML-SAX-Expat

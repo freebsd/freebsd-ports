@@ -1,0 +1,15 @@
+Often, XML messages and schemas are created by automatic tools.  These
+tools may provide very nice user interfaces, but tend to produce
+horrible XML.  If you have to read these ugly products, you are in for
+pain.  The purpose of this module (and the script "xmlrewrite" which is
+part of this distribution) is to be able to rewrite XML messages and
+Schema's into something maintainable.
+
+The main difference between this module and other beautifiers is that
+the clean-up is based on schema rules.  For instance, it is permitted
+to remove blanks around and inside integers, but not in strings.
+Beautifiers which do not look into the schema have only limited
+possibilities for cleanup, or may accidentally change the message
+content.
+
+WWW:	http://search.cpan.org/dist/XML-Rewrite/
