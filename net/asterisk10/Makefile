@@ -45,7 +45,8 @@ MAN8=		asterisk.8 astgenkey.8 autosupport.8 safe_asterisk.8
 CONFLICTS=	asterisk*-1.2* asterisk*-1.4* asterisk*-1.6*
 
 OPTIONS=	OGGVORBIS	"Enable Ogg Vorbis support" on \
-		ODBC		"Enable ODBC support" on \
+		IODBC		"Enable iODBC support" off \
+		UODBC		"Enable unixODBC support" on \
 		POSTGRES	"Enable PostgreSQL support" on \
 		RADIUS		"Enable RADIUS accounting support" on \
 		SNMP		"Enable SNMP support" on \
@@ -69,6 +70,10 @@ GROUPS=	${ASTERISK_GROUP} dahdi
 
 .if ${ARCH} == "i386" || ${ARCH} == "amd64"
 OPTIONS+=	DAHDI		"Enable DAHDI support" on
+
+.if defined(WITH_IODBC) && defined(WITH_UODBC)
+IGNORE= please select only one of iodbc or unixODBC
+.endif
 
 # Include this since we have altered OPTIONS.
 .include <bsd.port.options.mk>
@@ -103,14 +108,25 @@ RUN_DEPENDS+=	${LOCALBASE}/lib/dahdi/dahdi.ko:${PORTSDIR}/misc/dahdi
 #
 # WITH_FREETDS, WITH_PGSQL and WITH_SQLITE can also be added to MAKE_ENV
 # similarly
-.if !defined(WITH_ODBC)
-PLIST_SUB+=	WITH_ODBC="@comment "
+.if !defined(WITH_UODBC)
 CONFIGURE_ARGS+=	--without-unixodbc
-.else
+.endif
+.if !defined(WITH_IODBC)
+CONFIGURE_ARGS+=	--without-iodbc
+.endif
+.if !defined(WITH_UODBC) && !defined(WITH_IODBC)
+PLIST_SUB+=	WITH_ODBC="@comment "
+.endif
+.if defined(WITH_UODBC) || defined(WITH_IODBC)
 PLIST_SUB+=	WITH_ODBC=""
+USE_AUTOTOOLS=	libltdl
+.if defined(WITH_UODBC)
 CONFIGURE_ARGS+=	--with-unixodbc --with-ltdl
 LIB_DEPENDS+=	odbc.1:${PORTSDIR}/databases/unixODBC
-USE_AUTOTOOLS=	libltdl
+.elif defined(WITH_IODBC)
+CONFIGURE_ARGS+=	--with-iodbc --with-ltdl
+LIB_DEPENDS+=	iodbc.3:${PORTSDIR}/databases/libiodbc
+.endif
 .endif
 
 .if !defined(WITH_FREETDS)
