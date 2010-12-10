@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ldns
-PORTVERSION=	1.6.6
+PORTVERSION=	1.6.7
 CATEGORIES=	dns
 MASTER_SITES=	http://www.nlnetlabs.nl/downloads/ldns/
 
@@ -22,7 +22,8 @@ USE_LDCONFIG=	yes
 
 OPTIONS=	DOCS "With documentation" Off \
 		EXAMPLES "With example programs" Off \
-		GOST "With GOST signing enabled (requires openssl 1.0.0)" Off
+		GOST "GOST signatures enabled (requires openssl >= 1.0.0)" Off \
+		ECDSA "With highly experimental ECDSA support" Off
 
 .include <bsd.port.pre.mk>
 
@@ -223,7 +224,8 @@ MAN3=	ldns_bget_token.3 ldns_bgetc.3 ldns_bskipcs.3 ldns_buffer.3 \
 
 .if defined(WITH_GOST)
 BUILD_DEPENDS+=	openssl>=1.0:${PORTSDIR}/security/openssl
-CONFIGURE_ARGS+=	--enable-gost
+.else
+CONFIGURE_ARGS+=	--disable-gost
 .endif
 
 .if defined(WITH_EXAMPLES)
@@ -248,6 +250,10 @@ post-install:
 	@(cd ${WRKSRC}/examples; ${GMAKE} install)
 .else
 PLIST_SUB+=		EXAMPLES="@comment "
+.endif
+
+.if defined(WITH_ECDSA) && ${OSVERSION} > 700000
+CONFIGURE_ARGS+=	--enable-ecdsa
 .endif
 
 .if ${OSVERSION} < 700000
