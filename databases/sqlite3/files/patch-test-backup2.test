@@ -1,0 +1,11 @@
+--- test/backup2.test.orig	2010-12-09 13:44:49.000000000 +0300
++++ test/backup2.test	2010-12-09 13:45:39.000000000 +0300
+@@ -155,7 +155,7 @@
+     file mkdir bu3.db
+     set rc [catch {db restore temp bu3.db} res]
+     lappend rc $res
+-  } {1 {cannot open source database: disk I/O error}}
++  } {1 {restore failed: file is encrypted or is not a database}}
+ }
+ 
+ # Try to restore from something that is not a database file.
