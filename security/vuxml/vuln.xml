@@ -34,6 +34,94 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="1d8ff4a2-0445-11e0-8e32-000f20797ede">
+    <topic>mozilla -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>firefox</name>
+	<range><gt>3.6.*,1</gt><lt>3.6.13,1</lt></range>
+	<range><gt>3.5.*,1</gt><lt>3.5.16,1</lt></range>
+      </package>
+      <package>
+	<name>libxul</name>
+	<range><gt>1.9.2.*</gt><lt>1.9.2.13</lt></range>
+      </package>
+      <package>
+	<name>linux-firefox</name>
+	<range><lt>3.6.13,1</lt></range>
+      </package>
+      <package>
+	<name>linux-firefox-devel</name>
+	<range><lt>3.5.16</lt></range>
+      </package>
+      <package>
+	<name>linux-seamonkey</name>
+	<range><gt>2.0.*</gt><lt>2.0.11</lt></range>
+      </package>
+      <package>
+	<name>linux-thunderbird</name>
+	<range><ge>3.1</ge><lt>3.1.7</lt></range>
+      </package>
+      <package>
+	<name>seamonkey</name>
+	<range><gt>2.0.*</gt><lt>2.0.11</lt></range>
+      </package>
+      <package>
+	<name>thunderbird</name>
+	<range><ge>3.0</ge><lt>3.0.11</lt></range>
+	<range><ge>3.1</ge><lt>3.1.7</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Mozilla Project reports:</p>
+	<blockquote cite="http://www.mozilla.org/security/known-vulnerabilities/">
+	  <p>MFSA 2010-74 Miscellaneous memory safety hazards (rv:1.9.2.13/ 1.9.1.16)</p>
+	  <p>MFSA 2010-75 Buffer overflow while line breaking after document.write with long string</p>
+	  <p>MFSA 2010-76 Chrome privilege escalation with window.open and isindex element</p>
+	  <p>MFSA 2010-77 Crash and remote code execution using HTML tags inside a XUL tree</p>
+	  <p>MFSA 2010-78 Add support for OTS font sanitizer</p>
+	  <p>MFSA 2010-79 Java security bypass from LiveConnect loaded via data: URL meta refresh</p>
+	  <p>MFSA 2010-80 Use-after-free error with nsDOMAttribute MutationObserver</p>
+	  <p>MFSA 2010-81 Integer overflow vulnerability in NewIdArray</p>
+	  <p>MFSA 2010-82 Incomplete fix for CVE-2010-0179</p>
+	  <p>MFSA 2010-83 Location bar SSL spoofing using network error page</p>
+	  <p>MFSA 2010-84 XSS hazard in multiple character encodings</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2010-3766</cvename>
+      <cvename>CVE-2010-3767</cvename>
+      <cvename>CVE-2010-3768</cvename>
+      <cvename>CVE-2010-3769</cvename>
+      <cvename>CVE-2010-3770</cvename>
+      <cvename>CVE-2010-3771</cvename>
+      <cvename>CVE-2010-3772</cvename>
+      <cvename>CVE-2010-3773</cvename>
+      <cvename>CVE-2010-3774</cvename>
+      <cvename>CVE-2010-3775</cvename>
+      <cvename>CVE-2010-3776</cvename>
+      <cvename>CVE-2010-3777</cvename>
+      <cvename>CVE-2010-3778</cvename>
+      <url>http://www.mozilla.org/security/announce/2010/mfsa2010-74.html</url>
+      <url>http://www.mozilla.org/security/announce/2010/mfsa2010-75.html</url>
+      <url>http://www.mozilla.org/security/announce/2010/mfsa2010-76.html</url>
+      <url>http://www.mozilla.org/security/announce/2010/mfsa2010-77.html</url>
+      <url>http://www.mozilla.org/security/announce/2010/mfsa2010-78.html</url>
+      <url>http://www.mozilla.org/security/announce/2010/mfsa2010-79.html</url>
+      <url>http://www.mozilla.org/security/announce/2010/mfsa2010-80.html</url>
+      <url>http://www.mozilla.org/security/announce/2010/mfsa2010-81.html</url>
+      <url>http://www.mozilla.org/security/announce/2010/mfsa2010-82.html</url>
+      <url>http://www.mozilla.org/security/announce/2010/mfsa2010-83.html</url>
+      <url>http://www.mozilla.org/security/announce/2010/mfsa2010-84.html</url>
+    </references>
+    <dates>
+      <discovery>2010-12-09</discovery>
+      <entry>2010-12-10</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="4ccbd40d-03f7-11e0-bf50-001a926c7637">
     <topic>krb5 -- client impersonation vulnerability</topic>
     <affects>
