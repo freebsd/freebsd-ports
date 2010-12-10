@@ -1,0 +1,8 @@
+check_hdd_health is a Nagios plug-in written in shell to check HDD health.
+This script check HDD from S.M.A.R.T this values:
+- Spin Retry Count
+- Reallocated Sector Ct
+- Reallocated Event Count
+- Current Pending Sector
+- Offline Uncorrectable
+- Total health test
