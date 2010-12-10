@@ -13,6 +13,9 @@ MASTER_SITES=	http://miniupnp.free.fr/files/
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT?=	UPnP IGD client lightweight library
 
+LICENSE=	BSD
+LICENSE_FILE=	${WRKSRC}/LICENCE
+
 HAS_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
