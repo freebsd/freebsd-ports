@@ -1,5 +1,5 @@
 PORTNAME?=	rsyslog
-PORTVERSION?=	3.22.2
+PORTVERSION?=	3.22.3
 CATEGORIES?=	sysutils
 MASTER_SITES?=	http://www.rsyslog.com/files/download/rsyslog/
 MAINTAINER?=	miwi@FreeBSD.org
