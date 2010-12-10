@@ -26,6 +26,7 @@ HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix ${PREFIX}
 CONFIGURE_ARGS+=--emacslib ${PREFIX}/share/emacs/site-lisp
 CONFIGURE_ARGS+=--opt
+PATCH_STRIP=	-p1
 
 .ifdef	NOPORTDOCS
 CONFIGURE_ARGS+=--with-doc none
