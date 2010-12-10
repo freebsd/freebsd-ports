@@ -7,7 +7,7 @@
 
 PORTNAME=	llvm
 PORTVERSION=	2.8
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel lang
 MASTER_SITES=	http://llvm.org/releases/${PORTVERSION}/
 EXTRACT_SUFX=	.tgz
@@ -47,19 +47,15 @@ DOCSRCDIR=
 DOCSRCDIR=	docs
 .endif
 
-.if !defined(NOPORTDOCS)
 MAN1=		bugpoint.1 lit.1 llc.1 lli.1 llvm-ar.1 \
 		llvm-as.1 llvm-bcanalyzer.1 llvm-config.1 llvm-diff.1 \
 		llvm-dis.1 llvm-extract.1 llvm-ld.1 llvm-link.1 llvm-nm.1 \
 		llvm-prof.1 llvm-ranlib.1 llvmc.1 llvmgcc.1 \
 		llvmgxx.1 opt.1 tblgen.1
-.endif
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 700000 && ${ARCH} == "amd64"
-BROKEN=		does not compile
-.elif ${ARCH} == "sparc64"
+.if ${ARCH} == "sparc64"
 BROKEN=		does not compile on sparc64
 .endif
 
@@ -85,7 +81,18 @@ post-patch:
 	${REINPLACE_CMD} -e 's|%%DOCSRCDIR%%|${DOCSRCDIR}|' \
 	    ${WRKSRC}/Makefile
 
-TEST_CMD=	'(cd ${WRKSRC}/test; ${SETENV} ${MAKE_ENV} ${GMAKE} check)'
+.if defined(NOPORTDOCS)
+post-build:
+	@cd ${WRKSRC}/docs/CommandGuide && ${GMAKE} ${MAN1}
+
+post-install:
+.for man in ${MAN1}
+	@${INSTALL_MAN} ${WRKSRC}/docs/CommandGuide/${man} \
+	     ${MANPREFIX}/man/man1/
+.endfor
+.endif
+
+TEST_CMD=	'(cd ${WRKSRC}/test; ${SETENV} ${MAKE_ENV} ${GMAKE} check-local-lit)'
 regression-test: ${BUILD_COOKIE}
 	if [ `${ID} -u` = 0 ]; then \
 		${CHOWN} -R nobody ${WRKSRC}/test; \
@@ -115,9 +122,6 @@ build-plist:
 	cd ${PREFIX} && \
 	    (ls ${PLIST_FILE_LIST}; ${FIND} ${PLIST_DIR_LIST} -type f) | \
 	    ${SORT} >> ${PLIST}
-#	${FIND} ${DATADIR} ${DOCSDIR} -type f | \
-#	    ${SED} -e 's|${DATADIR}|%%DATADIR%%|' \
-#	     -e 's|${DOCSDIR}|%%PORTDOCS%%%%DOCSDIR%%|' | ${SORT} >> ${PLIST}
 	${FIND} ${DOCSDIR} -type f | \
 	    ${SED} -e 's|${DOCSDIR}|%%PORTDOCS%%%%DOCSDIR%%|' | \
 	    ${SORT} >> ${PLIST}
@@ -125,8 +129,7 @@ build-plist:
 	    ${FIND} ${PLIST_DIR_LIST} -type d | \
 	    ${SORT} -r | ${SED} -e 's|^|@dirrm |' >> ${PLIST}
 	${FIND} ${DOCSDIR} -type d | ${SORT} -r | \
-	    ${SED} -e 's|${DATADIR}|%%DATADIR%%|' \
-	     -e 's|${DOCSDIR}|%%DOCSDIR%%|' \
+	    ${SED} -e 's|${DOCSDIR}|%%DOCSDIR%%|' \
 	     -e 's|^|%%PORTDOCS%%@dirrm |' >> ${PLIST}
 
 .include <bsd.port.post.mk>
