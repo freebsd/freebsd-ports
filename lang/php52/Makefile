@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	php52
-PORTVERSION=	5.2.14
-PORTREVISION=	1
+PORTVERSION=	5.2.15
 CATEGORIES?=	lang devel www
 MASTER_SITES=	${MASTER_SITE_PHP}
 MASTER_SITE_SUBDIR=	distributions
@@ -60,7 +59,7 @@ PATCH_DIST_STRIP=	-p1
 . if defined(WITHOUT_FASTCGI)
 IGNORE=		FPM requires FastCGI support
 . endif
-PATCHFILES+=	php-${PORTVERSION}-fpm-0.5.14-freebsd.patch.gz
+PATCHFILES+=	php-5.2.14-fpm-0.5.14-freebsd.patch.gz
 PATCH_SITES+=	${MASTER_SITE_LOCAL}
 PATCH_SITE_SUBDIR+=	mm
 LIB_DEPENDS+=	event-1.4:${PORTSDIR}/devel/libevent
@@ -88,7 +87,7 @@ PLIST_SUB+=	FPM="@comment "
 .endif
 
 .if !defined(WITHOUT_SUHOSIN)
-PATCHFILES+=	suhosin-patch-${PORTVERSION}-0.9.7.patch.gz:suhosin
+PATCHFILES+=	suhosin-patch-5.2.14-0.9.7.patch.gz:suhosin
 PATCH_SITES+=	http://download.suhosin.org/:suhosin
 PLIST_SUB+=	SUHOSIN=""
 .else
