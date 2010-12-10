@@ -14,6 +14,7 @@
     SUBDIR += audiopreview
     SUBDIR += avbin
     SUBDIR += avidemux2
+    SUBDIR += avidemux2-plugins
     SUBDIR += avifile
     SUBDIR += avinfo
     SUBDIR += bangarang

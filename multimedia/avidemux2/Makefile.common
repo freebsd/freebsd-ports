@@ -1,0 +1,247 @@
+# $FreeBSD$
+#
+
+AVIDEMUX2_VERSION=	2.5.4
+MASTER_SITES=	${MASTER_SITE_BERLIOS} \
+		SF/avidemux/avidemux/${PORTVERSION}
+DISTNAME=	avidemux_${PORTVERSION}
+
+BUILD_DEPENDS+=	yasm:${PORTSDIR}/devel/yasm
+LIB_DEPENDS+=	mp3lame.0:${PORTSDIR}/audio/lame \
+		mad.2:${PORTSDIR}/audio/libmad \
+		a52.0:${PORTSDIR}/audio/liba52 \
+		png.6:${PORTSDIR}/graphics/png \
+		samplerate.1:${PORTSDIR}/audio/libsamplerate \
+		dca.0:${PORTSDIR}/multimedia/libdca \
+		execinfo.1:${PORTSDIR}/devel/libexecinfo
+
+CONFLICTS=	avidemux2-2.[0-46-9].*
+
+USE_GNOME=	libxml2
+USE_QT_VER=	4
+QT_COMPONENTS=
+
+USE_GMAKE=	yes
+USE_ICONV=	yes
+WANT_SDL=	yes
+USE_CMAKE=	yes
+CMAKE_USE_PTHREAD=yes
+CMAKE_ARGS+=	-DTHREADS_HAVE_PTHREAD_ARG:STRING="${PTHREAD_LIBS}"
+CMAKE_OUTSOURCE=	yes
+MAKE_JOBS_SAFE=	yes
+
+BUILD_DEPENDS+=	${LOCALBASE}/bin/as:${PORTSDIR}/devel/binutils
+CONFIGURE_ENV+=	COMPILER_PATH=${LOCALBASE}/bin
+MAKE_ENV+=	COMPILER_PATH=${LOCALBASE}/bin
+
+OPTIONS=	GTK "GTK+ GUI" on \
+		QT4 "QT4 GUI (Experimental)" off \
+		FREETYPE "TrueType font rendering engine" on \
+		FONTCONFIG "Font configuration API for X" on \
+		OSS "OSS audio device" on \
+		ESD "ESOUND audio device" off \
+		JACK "JACK audio device" off \
+		PULSE "PULSE audio device" off \
+		XVIDEO "X Video Extension library" on \
+		FAAC "FAAC (mpeg4/aac encoder)" on \
+		FAAD "FAAD (mpeg4/aac decoder)" on \
+		X264 "H.264 encoding" on \
+		VPX "VP8 decoding" on \
+		XVID "Xvid video" on \
+		SDL "SDL audio/video framework" on \
+		AMRNB "3GPP AMR Speech Codec" on \
+		AMRWB "3GPP AMR-WB Speech Codec" on \
+		VORBIS "OGG/Vorbis audio support" on \
+		NLS "Native languages support" on
+
+.include <bsd.port.pre.mk>
+
+# Package server cannot distribute these
+.if defined(PACKAGE_BUILDING)
+WITHOUT_LAME=	yes
+WITHOUT_FAAC=	yes
+WITHOUT_AMRNB=	yes
+WITHOUT_AMRWB=	yes
+.endif
+
+# We haven't ALSA(Never) & Aften(Yet) on FreeBSD
+CMAKE_ARGS+=	-DARTS:BOOL=OFF -DALSA:BOOL=OFF -DAFTEN:BOOL=OFF
+
+.if !defined(WITH_GTK) && !defined(WITH_QT4)
+CMAKE_ARGS+=	-DX11:BOOL=OFF -DGTK:BOOL=OFF -DQT4:BOOL=OFF
+.endif
+
+.if defined(WITHOUT_GTK)
+CMAKE_ARGS+=	-DGTK:BOOL=OFF
+PLIST_SUB+=	GTK="@comment "
+.else
+USE_GNOME+=	gnomeprefix gnomehack gtk20
+PLIST_SUB+=	GTK=""
+.endif
+
+.if defined(WITHOUT_QT4)
+CMAKE_ARGS+=	-DQT4:BOOL=OFF
+PLIST_SUB+=	QT4="@comment "
+.else
+CMAKE_ARGS+=	-DLRELEASE_EXECUTABLE=${LOCALBASE}/bin/lrelease-qt4
+QT_COMPONENTS=	qmake_build moc_build rcc_build uic_build linguist_build gui
+PLIST_SUB+=	QT4=""
+.endif
+
+.if defined(WITH_GTK) || defined(WITH_QT4)
+USE_GNOME+=	libxslt desktopfileutils
+.endif
+
+.if defined(WITHOUT_OSS)
+CMAKE_ARGS+=	-DOSS_SUPPORT:BOOL=OFF
+.else
+CMAKE_ARGS+=	-DOSS_SUPPORT:BOOL=ON
+.endif
+
+.if defined(WITHOUT_ESD)
+CMAKE_ARGS+=	-DESD:BOOL=OFF
+PLIST_SUB+=	ESD="@comment "
+.else
+USE_GNOME+=	esound
+PLIST_SUB+=	ESD=""
+.endif
+
+.if defined(WITHOUT_JACK)
+CMAKE_ARGS+=	-DJACK:BOOL=OFF
+PLIST_SUB+=	JACK="@comment "
+.else
+LIB_DEPENDS+=	jack.0:${PORTSDIR}/audio/jack
+PLIST_SUB+=	JACK=""
+.endif
+
+.if defined(WITHOUT_PULSE)
+CMAKE_ARGS+=	-DPULSEAUDIOSIMPLE:BOOL=OFF
+PLIST_SUB+=	PULSE="@comment "
+.else
+LIB_DEPENDS+=	pulse.0:${PORTSDIR}/audio/pulseaudio
+PLIST_SUB+=	PULSE=""
+.endif
+
+.if defined(WITHOUT_FREETYPE)
+CMAKE_ARGS+=	-DFREETYPE2:BOOL=OFF
+PLIST_SUB+=	FREETYPE="@comment "
+.else
+LIB_DEPENDS+=	freetype.9:${PORTSDIR}/print/freetype2
+PLIST_SUB+=	FREETYPE=""
+.endif
+
+.if defined(WITHOUT_FONTCONFIG)
+CMAKE_ARGS+=	-DFONTCONFIG:BOOL=OFF
+.else
+LIB_DEPENDS+=	fontconfig.1:${PORTSDIR}/x11-fonts/fontconfig
+.endif
+
+.if defined(WITHOUT_XVIDEO)
+CMAKE_ARGS+=	-DXVIDEO:BOOL=OFF
+.else
+LIB_DEPENDS+=	Xv.1:${PORTSDIR}/x11/libXv
+.endif
+
+.if defined(WITHOUT_FAAC)
+CMAKE_ARGS+=	-DFAAC:BOOL=OFF
+PLIST_SUB+=	FAAC="@comment "
+.else
+LIB_DEPENDS+=	faac.0:${PORTSDIR}/audio/faac
+PLIST_SUB+=	FAAC=""
+.endif
+
+.if defined(WITHOUT_FAAD)
+CMAKE_ARGS+=	-DFAAD:BOOL=OFF -DNeAAC:BOOL=OFF
+PLIST_SUB+=	FAAD="@comment "
+.else
+LIB_DEPENDS+=	faad.2:${PORTSDIR}/audio/faad
+PLIST_SUB+=	FAAD=""
+.endif
+
+.if defined(WITHOUT_X264)
+CMAKE_ARGS+=	-DX264:BOOL=OFF
+PLIST_SUB+=	X264="@comment "
+.else
+LIB_DEPENDS+=	x264.110:${PORTSDIR}/multimedia/x264
+PLIST_SUB+=	X264=""
+.endif
+
+.if defined(WITHOUT_VPX)
+CMAKE_ARGS+=	-DVPXDEC:BOOL=OFF
+.else
+LIB_DEPENDS+=	vpx.0:${PORTSDIR}/multimedia/libvpx
+.endif
+
+.if defined(WITHOUT_XVID)
+CMAKE_ARGS+=	-DXVID:BOOL=OFF
+PLIST_SUB+=	XVID="@comment "
+.else
+LIB_DEPENDS+=	xvidcore.4:${PORTSDIR}/multimedia/xvid
+PLIST_SUB+=	XVID=""
+.endif
+
+.if defined(WITHOUT_SDL)
+CMAKE_ARGS+=	-DSDL:BOOL=OFF
+PLIST_SUB+=	SDL="@comment "
+.else
+USE_SDL=	sdl
+PLIST_SUB+=	SDL=""
+.endif
+
+.if defined(WITHOUT_VORBIS)
+CMAKE_ARGS+=	-DVORBIS:BOOL=OFF
+PLIST_SUB+=	VORBIS="@comment "
+.else
+LIB_DEPENDS+=	vorbis.4:${PORTSDIR}/audio/libvorbis
+PLIST_SUB+=	VORBIS=""
+.endif
+
+.if defined(WITHOUT_AMRNB)
+CMAKE_ARGS+=	-DOPENCORE_AMRNB:BOOL=OFF
+PLIST_SUB+=	AMRNB="@comment "
+.else
+LIB_DEPENDS+=	amrnb.3:${PORTSDIR}/audio/libamrnb
+PLIST_SUB+=	AMRNB=""
+.endif
+
+.if defined(WITHOUT_AMRWB)
+CMAKE_ARGS+=	-DOPENCORE_AMRWB:BOOL=OFF
+PLIST_SUB+=	AMRWB="@comment "
+.else
+LIB_DEPENDS+=	amrnb.3:${PORTSDIR}/audio/libamrwb
+PLIST_SUB+=	AMRWB=""
+.endif
+
+.if defined(WITHOUT_NLS)
+CMAKE_ARGS+=	-DNO_NLS:BOOL=ON
+PLIST_SUB+=	NLS="@comment " QT_NLS="@comment "
+.else
+USE_GETTEXT=	yes
+PLIST_SUB+=	NLS=""
+. 	if !defined(WITH_QT4)
+PLIST_SUB+=	QT_NLS="@comment "
+.	else
+PLIST_SUB+=	QT_NLS=""
+.	endif
+.endif
+
+.if ${ARCH} == "sparc64"
+BROKEN=		Does not compile on sparc64
+.endif
+
+post-extract:
+	@${REINPLACE_CMD} -e 's/[[:cntrl:]]*$$//' \
+		${WRKSRC}/avidemux/ADM_libraries/ADM_mplex/ADM_mplexout.cpp
+
+post-patch:
+	@${REINPLACE_CMD} 's|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/*/*/Makefile
+	@${CP} ${FILESDIR}/execinfo.cpp ${WRKSRC}/cmake_compile_check/
+	@${REINPLACE_CMD} "s|%%DATADIR%%|${DATADIR}|g" \
+	    ${WRKSRC}/avidemux/ADM_userInterfaces/ADM_QT4/ui_support.cpp \
+	    ${WRKSRC}/cmake/Ts.cmake
+	@${CP} ${FILESDIR}/*.patch ${WRKSRC}/cmake/patches/
+	@${MKDIR} ${CONFIGURE_WRKSRC}/config
+	@${LN} -s ${LOCALBASE}/include/iconv.h ${CONFIGURE_WRKSRC}/config
+
+post-configure-common:
+	@${FIND} ${WRKDIR}/.build/avidemux -name link.txt -print0 |${XARGS} -0 ${REINPLACE_CMD} 's|-ldl||'

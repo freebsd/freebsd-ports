@@ -1,0 +1,35 @@
+--- plugins/ADM_videoEncoder/ADM_vidEnc_x264/x264Options.cpp.orig
++++ plugins/ADM_videoEncoder/ADM_vidEnc_x264/x264Options.cpp
+@@ -1386,8 +1386,8 @@
+ 		case X264_WEIGHTP_NONE:
+ 			strcpy((char*)xmlBuffer, "none");
+ 			break;
+-		case X264_WEIGHTP_BLIND:
+-			strcpy((char*)xmlBuffer, "blind");
++		case X264_WEIGHTP_SIMPLE:
++			strcpy((char*)xmlBuffer, "simple");
+ 			break;
+ 		case X264_WEIGHTP_SMART:
+ 			strcpy((char*)xmlBuffer, "smart");
+@@ -1895,8 +1895,8 @@
+ 			{
+ 				int weightedPredPFrames = X264_WEIGHTP_NONE;
+ 
+-				if (strcmp(content, "blind") == 0)
+-					weightedPredPFrames = X264_WEIGHTP_BLIND;
++				if (strcmp(content, "simple") == 0)
++					weightedPredPFrames = X264_WEIGHTP_SIMPLE;
+ 				else if (strcmp(content, "smart") == 0)
+ 					weightedPredPFrames = X264_WEIGHTP_SMART;
+ 
+--- plugins/ADM_videoEncoder/ADM_vidEnc_x264/x264Param.xsd.orig
++++ plugins/ADM_videoEncoder/ADM_vidEnc_x264/x264Param.xsd
+@@ -335,7 +335,7 @@
+                       <xs:simpleType>
+                         <xs:restriction base="xs:string">
+                           <xs:enumeration value="none"/>
+-                          <xs:enumeration value="blind"/>
++                          <xs:enumeration value="simple"/>
+                           <xs:enumeration value="smart"/>
+                         </xs:restriction>
+                       </xs:simpleType>
