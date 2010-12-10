@@ -116,6 +116,7 @@
     SUBDIR += nagios-check_bacula
     SUBDIR += nagios-check_clamav
     SUBDIR += nagios-check_cpu_usage
+    SUBDIR += nagios-check_hdd_health
     SUBDIR += nagios-check_ice
     SUBDIR += nagios-check_kumofs
     SUBDIR += nagios-check_memcached_paranoid
