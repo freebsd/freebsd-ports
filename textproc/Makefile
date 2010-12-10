@@ -535,6 +535,7 @@
     SUBDIR += p5-Makefile-Parser
     SUBDIR += p5-Markapl
     SUBDIR += p5-MathML-Entities
+    SUBDIR += p5-Net-IDN-Encode
     SUBDIR += p5-Net-YASA
     SUBDIR += p5-NetAddr-IP-Find
     SUBDIR += p5-Number-Format
