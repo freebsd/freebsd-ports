@@ -26,4 +26,13 @@ PERL_CONFIGURE=	yes
 
 MAN3=	Bundle::DBD::mysql.3 DBD::mysql.3 DBD::mysql::INSTALL.3
 
+OPTIONS=	SSL	"build with OpenSSL support" off
+
+.include <bsd.port.options.mk>
+
+.if defined(WITH_SSL)
+CONFIGURE_ARGS+=	--ssl
+RUN_DEPENDS+=		p5-security/p5-Crypt-SSLeay>=0:${PORTSDIR}/security/p5-Crypt-SSLeay
+.endif
+
 .include <bsd.port.mk>
