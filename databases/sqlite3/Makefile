@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	sqlite3
-PORTVERSION=	3.7.3
-PORTREVISION=	1
+PORTVERSION=	3.7.4
 CATEGORIES=	databases
 MASTER_SITES=	http://www.sqlite.org/ http://www2.sqlite.org/
-DISTNAME=	sqlite-${PORTVERSION}
+DISTNAME=	sqlite-src-3070400
 
 MAINTAINER=	pavelivolkov@googlemail.com
 COMMENT=	An SQL database engine in a C library
@@ -22,6 +21,7 @@ LICENSE_TEXT=	Description of the license can be obtained from the following URL:
 
 CONFLICTS=	sqlite34-[0-9]*
 
+USE_ZIP=	YES
 USE_GMAKE=	YES
 USE_GNOME=	pkgconfig gnomehack
 USE_LDCONFIG=	YES
@@ -38,7 +38,7 @@ RAMTABLE?=	yes
 
 # Compilation Options For SQLite http://www.sqlite.org/compile.html
 OPTIONS=	\
-		FTS3		"Enable FTS3 (Full Text Search) module"	on \
+		FTS3		"Enable FTS3/4 (Full Text Search) module" on \
 		ICU		"Enable built with \"ICU\""		off \
 		RTREE		"Enable R*Tree module"			off \
 		RAMTABLE	"Store temporary tables in RAM = ${RAMTABLE}" off \
@@ -78,6 +78,12 @@ CFLAGS+=		-Wall
 .if defined(WITH_GCOV)
 CONFIGURE_ARGS+=	--enable-gcov
 LDFLAGS+=		-fstack-protector
+.endif
+
+# This macro sets the default size of the page-cache for temporary files
+# created by SQLite to store intermediate results, in pages.
+.ifdef TEMP_CACHE_SIZE
+CFLAGS+=		-DSQLITE_DEFAULT_TEMP_CACHE_SIZE=${TEMP_CACHE_SIZE}
 .endif
 
 .if defined(WITH_MEMMAN)
@@ -161,11 +167,28 @@ MAKE_ENV+=		CPPFLAGS="-I. -I./src ${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 .include <bsd.port.pre.mk>
 
 .if ${TCL_VER} > 8.4
-BUILD_DEPENDS+=		${LOCALBASE}/lib/tcl8/8.5/msgcat-1.4.3.tm:${PORTSDIR}/lang/tcl-modules
+BUILD_DEPENDS+=		${LOCALBASE}/lib/tcl8/${TCL_VER}:${PORTSDIR}/lang/tcl-modules
 .if defined(WITH_TCLWRAPPER)
-RUN_DEPENDS+=		${LOCALBASE}/lib/tcl8/8.5/msgcat-1.4.3.tm:${PORTSDIR}/lang/tcl-modules
+RUN_DEPENDS+=		${LOCALBASE}/lib/tcl8/${TCL_VER}:${PORTSDIR}/lang/tcl-modules
 .endif
 .endif
+
+# To test you must specify the value of TESTUSER variable.
+# It must correspond to a normal (not root) user, from which it will be tested.
+# Execute: make TESTUSER=ordinary_user_login_name test
+.ifmake test
+.ifndef TESTUSER
+IGNORE=	set the value of the variable TESTUSER corresponding normal (not root) user, from which will be tested
+.endif
+.endif
+
+test: build
+	@(cd ${WRKSRC} && ${CHOWN} ${TESTUSER} ${WRKSRC} && su ${TESTUSER} -c "${MAKE} test"; ${CHOWN} ${USER} ${WRKSRC})
+
+post-build:
+	@${ECHO_CMD}
+	@${ECHO_CMD} "You can test sqlite using supplied with the him tests."
+	@${ECHO_CMD} "Execute: make TESTUSER=ordinary_user_login_name test"
 
 post-install:
 .if defined(WITH_TCLWRAPPER)
