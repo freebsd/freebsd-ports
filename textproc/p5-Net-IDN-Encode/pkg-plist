@@ -1,0 +1,11 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/Net/IDN/Encode.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Net/IDN/Punycode.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Net/IDN/Punycode/PP.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/IDN/Punycode/Punycode.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/IDN/Punycode/Punycode.so
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/IDN/Punycode
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/IDN
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Net/IDN/Punycode
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Net/IDN
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Net
