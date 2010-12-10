@@ -64,6 +64,12 @@ WITHOUT_AMRNB=	yes
 WITHOUT_AMRWB=	yes
 .endif
 
+# for libexecinfo: (so that __builtin_frame_address() finds the top
+# of the stack)
+.if ${ARCH} == "amd64"
+CFLAGS+=	-fno-omit-frame-pointer
+.endif
+
 # We haven't ALSA(Never) & Aften(Yet) on FreeBSD
 CMAKE_ARGS+=	-DARTS:BOOL=OFF -DALSA:BOOL=OFF -DAFTEN:BOOL=OFF
 
@@ -236,12 +242,9 @@ post-extract:
 post-patch:
 	@${REINPLACE_CMD} 's|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/*/*/Makefile
 	@${CP} ${FILESDIR}/execinfo.cpp ${WRKSRC}/cmake_compile_check/
-	@${REINPLACE_CMD} "s|%%DATADIR%%|${DATADIR}|g" \
-	    ${WRKSRC}/avidemux/ADM_userInterfaces/ADM_QT4/ui_support.cpp \
-	    ${WRKSRC}/cmake/Ts.cmake
 	@${CP} ${FILESDIR}/*.patch ${WRKSRC}/cmake/patches/
 	@${MKDIR} ${CONFIGURE_WRKSRC}/config
 	@${LN} -s ${LOCALBASE}/include/iconv.h ${CONFIGURE_WRKSRC}/config
 
 post-configure-common:
-	@${FIND} ${WRKDIR}/.build/avidemux -name link.txt -print0 |${XARGS} -0 ${REINPLACE_CMD} 's|-ldl||'
+	@${FIND} ${CONFIGURE_WRKSRC}/avidemux -name link.txt -print0 |${XARGS} -0 ${REINPLACE_CMD} 's|-ldl||'
