@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	openvpn
-DISTVERSION=	201041
+DISTVERSION=	201049
 CATEGORIES=	security net
 MASTER_SITES=	ftp://ftp.secure-computing.net/pub/FreeBSD/ports/openvpn-devel/ \
 		ftp://ftp2.secure-computing.net/pub/FreeBSD/ports/openvpn-devel/
@@ -16,6 +16,7 @@ MAINTAINER=	ecrist@secure-computing.net
 COMMENT=	Secure IP/Ethernet tunnel daemon
 
 WRKSRC=		${WRKDIR}/${PORTNAME}${PKGNAMESUFFIX}
+LICENSE=	GPLv2
 
 CONFLICTS=	openvpn-2.0* openvpn-beta-[0-9]*
 
