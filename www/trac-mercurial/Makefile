@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	${PYDISTUTILS_PKGNAME:S;^Trac;;:L}
-PORTVERSION=	0.11.0.9
+PORTVERSION=	0.12.0.1
 CATEGORIES=	www devel python
-MASTER_SITES=	${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	brooks
+MASTER_SITES=	LOCAL/pgollucci
 PKGNAMEPREFIX=	trac-
 DISTNAME=	${PORTNAME}plugin-${PORTVERSION}
 DIST_SUBDIR=	trac
@@ -32,7 +31,7 @@ PLIST_FILES=	%%PYTHON_SITELIBDIR%%/${PYDISTUTILS_PKGNAME}-${PORTVERSION}-py${PYT
 .if defined(BOOTSTRAP)
 do-fetch:
 	${MKDIR} ${WRKDIR}
-	svn export http://svn.edgewall.org/repos/trac/plugins/0.11/mercurial-plugin ${WRKSRC}
+	svn export http://svn.edgewall.org/repos/trac/plugins/0.12/mercurial-plugin ${WRKSRC}
 	${MKDIR} ${_DISTDIR}
 	cd ${WRKDIR} && \
 	    tar cfvz ${_DISTDIR}/${DISTNAME}.tar.gz ${DISTNAME}
