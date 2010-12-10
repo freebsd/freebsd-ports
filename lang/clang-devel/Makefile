@@ -58,9 +58,7 @@ CONFIGURE_ARGS+=	--enable-optimized
 .endif
 
 .if defined(NOPORTDOCS)
-DOCSRCDIR=
-.else
-DOCSRCDIR=	docs
+CONFIGURE_ARGS+=	--disable-docs
 .endif
 
 MAN1=		clang.1
@@ -97,8 +95,6 @@ post-patch:
 	    ${WRKSRC}/Makefile.config.in
 	${REINPLACE_CMD} -e 's|\(PROJ_mandir.*:=\).*$$|\1${MANPREFIX}/man|g' \
 	    ${WRKSRC}/Makefile.config.in
-	${REINPLACE_CMD} -e 's|%%DOCSRCDIR%%|${DOCSRCDIR}|' \
-	    ${WRKSRC}/Makefile ${WRKSRC}/tools/clang/Makefile
 	${REINPLACE_CMD} -e 's|/usr/bin/env perl|${PERL}|' \
 	    -e 's|%%DATADIR%%|${DATADIR}|' \
 	    ${WRKSRC}/tools/clang/tools/scan-build/ccc-analyzer \
