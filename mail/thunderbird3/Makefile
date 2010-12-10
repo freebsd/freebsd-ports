@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	thunderbird
-DISTVERSION=	3.0.10
+DISTVERSION=	3.0.11
 CATEGORIES=	mail ipv6
 MASTER_SITES=	${MASTER_SITE_MOZILLA}
 MASTER_SITE_SUBDIR=	${PORTNAME}/releases/${DISTVERSION}/source/
@@ -20,7 +20,7 @@ BUILD_DEPENDS=	nspr>=4.8:${PORTSDIR}/devel/nspr
 USE_AUTOTOOLS=	autoconf213
 LATEST_LINK=	thunderbird3
 USE_GECKO=	gecko
-CONFLICTS=	thunderbird-3.1*
+CONFLICTS_INSTALL=	thunderbird-3.1*
 USE_MOZILLA=	-png -nss -dbm -jpeg -xft
 MOZ_TOOLKIT=	cairo-gtk2
 
