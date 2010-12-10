@@ -21,6 +21,14 @@ CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 MAN1=	msmtp.1
 INFO=	msmtp
 
+OPTIONS=       GNUTLS "Adds GnuTLS support" off \
+               OPENSSL "Adds support for SSL (Secure Socket Layer)" off \
+               GSASL "Adds GSASL support" off \
+               NLS "Native Language Support via gettext utilities" on \
+               IDN "Enable Internationalized Domain Names" on \
+
+.include       <bsd.port.options.mk>
+
 .if defined(WITH_GNUTLS)
 LIB_DEPENDS+=	gnutls.40:${PORTSDIR}/security/gnutls
 CONFIGURE_ARGS+=	--with-ssl=gnutls
