@@ -15,12 +15,3 @@
  
  IF (WIN32)
  	SET(BIN_DIR .)
-@@ -104,7 +104,7 @@ SET(VERSION 2.5.4)
- # since it uses the minimum set of required libraries and CMake will 
- # fail if these aren't met.
- SET(ADM_UI_GTK 1)
--SET(ADM_UI_QT4 1)
-+# SET(ADM_UI_QT4 1)
- 
- SET(ADM_INSTALL_DIR "${CMAKE_INSTALL_PREFIX}")
- 
