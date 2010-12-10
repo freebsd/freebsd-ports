@@ -9,7 +9,7 @@ PORTNAME=	aqbubble
 PORTVERSION=	0.3
 PORTREVISION=	10
 CATEGORIES=	games
-MASTER_SITES=	http://www.losersjuegos.com.ar/juegos/aqbubble/descargas/
+MASTER_SITES=	http://www.losersjuegos.com.ar/_media/juegos/aqbubble/descargas/
 
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Game similar to snow bros
