@@ -11,7 +11,7 @@ CATEGORIES=	irc ipv6
 MASTER_SITES=	${MASTER_SITE_BERLIOS} \
 		ftp://ngircd.barton.de/pub/%SUBDIR%/
 MASTER_SITE_SUBDIR=	${PORTNAME}
-DISTVERSION=	${PORTVERSION:C/0.//1}
+DISTVERSION=	${PORTVERSION:S/0.//}
 
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Free open source daemon for Internet Relay Chat (IRC)
