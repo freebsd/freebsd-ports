@@ -19,6 +19,8 @@ BUILD_DEPENDS=	${LOCALBASE}/bin/rrdtool:${PORTSDIR}/databases/rrdtool
 RUN_DEPENDS=	${LOCALBASE}/bin/rrdtool:${PORTSDIR}/databases/rrdtool \
 		nagios:${PORTSDIR}/net-mgmt/nagios
 
+MAKE_JOBS_UNSAFE=	yes
+
 OPTIONS=	PDF "Use built-in fpdf library to produce PDF views" ON
 
 .include <bsd.port.options.mk>
