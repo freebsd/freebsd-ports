@@ -44,6 +44,7 @@ RUN_DEPENDS+=	p5-DBD-SQLite>=0:${PORTSDIR}/databases/p5-DBD-SQLite
 .endif
 .if defined(WITH_MYSQL)
 USE_MYSQL=	yes
+RUN_DEPENDS+=	p5-DBD-mysql>=0:${PORTSDIR}/databases/p5-DBD-mysql
 .endif
 .if defined(WITH_POSTGRES)
 USE_PGSQL=	83
