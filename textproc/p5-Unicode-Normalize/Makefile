@@ -10,12 +10,13 @@ PORTVERSION=	1.07
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN/../../authors/id/S/SA/SADAHIRO
 PKGNAMEPREFIX=	p5-
+DISTFILES=	${DISTNAME}-withoutworldwriteables${EXTRACT_SUFX}
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Unicode Normalization Forms
 
 PERL_CONFIGURE=	yes
 
-MAN3=	Unicode::Normalize.3
+MAN3=		Unicode::Normalize.3
 
 .include <bsd.port.mk>
