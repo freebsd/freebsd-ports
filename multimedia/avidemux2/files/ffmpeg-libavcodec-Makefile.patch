@@ -1,0 +1,11 @@
+--- libavcodec/Makefile.orig
++++ libavcodec/Makefile
+@@ -619,7 +619,7 @@ OBJS-$(CONFIG_MLIB)                    +
+ # well.
+ OBJS-$(!CONFIG_SMALL)                  += inverse.o
+ 
+--include $(SUBDIR)$(ARCH)/Makefile
++-include $(SUBDIR)$(FFMPEG_ARCH)/Makefile
+ 
+ SKIPHEADERS                             = %_tablegen.h
+ SKIPHEADERS-$(CONFIG_DXVA2)            += dxva2.h dxva2_internal.h
