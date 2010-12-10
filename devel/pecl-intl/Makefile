@@ -7,6 +7,7 @@
 
 PORTNAME=	intl
 PORTVERSION=	1.1.2
+PORTREVISION=	1
 CATEGORIES=	devel pear
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
@@ -16,7 +17,7 @@ DIST_SUBDIR=	PECL
 MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	A PECL extension to support Internationalization(ICU)
 
-BUILD_DEPENDS=	${LOCALBASE}/bin/icu-config:${PORTSDIR}/devel/icu
+LIB_DEPENDS=	icui18n.38:${PORTSDIR}/devel/icu
 
 USE_PHP=	yes
 USE_PHPEXT=	yes
