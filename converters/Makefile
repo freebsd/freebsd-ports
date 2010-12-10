@@ -93,6 +93,7 @@
     SUBDIR += p5-Text-Bidi
     SUBDIR += p5-Text-Iconv
     SUBDIR += p5-Text-Unidecode
+    SUBDIR += p5-URI-UTF8-Punycode
     SUBDIR += p5-Unicode-IMAPUtf7
     SUBDIR += p5-Unicode-Lite
     SUBDIR += p5-Unicode-Map
