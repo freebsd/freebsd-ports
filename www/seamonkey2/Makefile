@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	seamonkey
-DISTVERSION=	2.0.10
-PORTREVISION=	1
+DISTVERSION=	2.0.11
 CATEGORIES?=	www ipv6
 MASTER_SITES=	${MASTER_SITE_MOZILLA_EXTENDED}
 MASTER_SITE_SUBDIR=	seamonkey/releases/${DISTVERSION}/source
@@ -16,7 +15,8 @@ DISTNAME=	seamonkey-${DISTVERSION}.source
 MAINTAINER=	gecko@FreeBSD.org
 COMMENT=	The open source, standards compliant web browser
 
-CONFLICTS=	seamonkey-1* spidermonkey-1.[0-7]*
+CONFLICTS_BUILD=	spidermonkey-1.[0-7]*
+CONFLICTS_INSTALL=	seamonkey-1*
 LATEST_LINK=	seamonkey2
 USE_BZIP2=	yes
 USE_GMAKE=	yes
