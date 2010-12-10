@@ -1,0 +1,398 @@
+www/nagiosql/admin.php
+www/nagiosql/admin/administration.php
+www/nagiosql/admin/alarming.php
+www/nagiosql/admin/cgicfg.php
+www/nagiosql/admin/checkcommands.php
+www/nagiosql/admin/commandline.php
+www/nagiosql/admin/commands.php
+www/nagiosql/admin/contactgroups.php
+www/nagiosql/admin/contacts.php
+www/nagiosql/admin/contacttemplates.php
+www/nagiosql/admin/delbackup.php
+www/nagiosql/admin/domain.php
+www/nagiosql/admin/download.php
+www/nagiosql/admin/errorsite.php
+www/nagiosql/admin/helpedit.php
+www/nagiosql/admin/hostdependencies.php
+www/nagiosql/admin/hostescalations.php
+www/nagiosql/admin/hostextinfo.php
+www/nagiosql/admin/hostgroups.php
+www/nagiosql/admin/hosts.php
+www/nagiosql/admin/hosttemplates.php
+www/nagiosql/admin/import.php
+www/nagiosql/admin/index.html
+www/nagiosql/admin/info.php
+www/nagiosql/admin/logbook.php
+www/nagiosql/admin/menuaccess.php
+www/nagiosql/admin/monitoring.php
+www/nagiosql/admin/mutdialog.php
+www/nagiosql/admin/nagioscfg.php
+www/nagiosql/admin/password.php
+www/nagiosql/admin/searchhosts.php
+www/nagiosql/admin/servicedependencies.php
+www/nagiosql/admin/serviceescalations.php
+www/nagiosql/admin/serviceextinfo.php
+www/nagiosql/admin/servicegroups.php
+www/nagiosql/admin/services.php
+www/nagiosql/admin/servicetemplates.php
+www/nagiosql/admin/settings.php
+www/nagiosql/admin/specials.php
+www/nagiosql/admin/templatedefinitions.php
+www/nagiosql/admin/timedefinitions.php
+www/nagiosql/admin/timeperiods.php
+www/nagiosql/admin/tools.php
+www/nagiosql/admin/user.php
+www/nagiosql/admin/variabledefinitions.php
+www/nagiosql/admin/verify.php
+www/nagiosql/config/fieldvars.php
+www/nagiosql/config/locale/de_DE/LC_MESSAGES/de_DE.mo
+www/nagiosql/config/locale/de_DE/LC_MESSAGES/index.html
+www/nagiosql/config/locale/de_DE/index.html
+www/nagiosql/config/locale/en_GB/LC_MESSAGES/en_GB.mo
+www/nagiosql/config/locale/en_GB/LC_MESSAGES/index.html
+www/nagiosql/config/locale/en_GB/index.html
+www/nagiosql/config/locale/es_ES/LC_MESSAGES/es_ES.mo
+www/nagiosql/config/locale/es_ES/LC_MESSAGES/index.html
+www/nagiosql/config/locale/es_ES/index.html
+www/nagiosql/config/locale/fr_FR/LC_MESSAGES/fr_FR.mo
+www/nagiosql/config/locale/fr_FR/LC_MESSAGES/index.html
+www/nagiosql/config/locale/fr_FR/index.html
+www/nagiosql/config/locale/it_IT/LC_MESSAGES/index.html
+www/nagiosql/config/locale/it_IT/LC_MESSAGES/it_IT.mo
+www/nagiosql/config/locale/it_IT/index.html
+www/nagiosql/config/locale/ja_JP/LC_MESSAGES/index.html
+www/nagiosql/config/locale/ja_JP/LC_MESSAGES/ja_JP.mo
+www/nagiosql/config/locale/ja_JP/index.html
+www/nagiosql/config/locale/pl_PL/LC_MESSAGES/index.html
+www/nagiosql/config/locale/pl_PL/LC_MESSAGES/pl_PL.mo
+www/nagiosql/config/locale/pl_PL/index.html
+www/nagiosql/config/locale/pt_BR/LC_MESSAGES/index.html
+www/nagiosql/config/locale/pt_BR/LC_MESSAGES/pt_BR.mo
+www/nagiosql/config/locale/pt_BR/index.html
+www/nagiosql/config/locale/ru_RU/LC_MESSAGES/index.html
+www/nagiosql/config/locale/ru_RU/LC_MESSAGES/ru_RU.mo
+www/nagiosql/config/locale/ru_RU/index.html
+www/nagiosql/config/locale/zh_CN/LC_MESSAGES/index.html
+www/nagiosql/config/locale/zh_CN/LC_MESSAGES/zh_CN.mo
+www/nagiosql/config/locale/zh_CN/index.html
+www/nagiosql/config/main.css
+www/nagiosql/favicon.ico
+www/nagiosql/functions/common.js
+www/nagiosql/functions/config_class.php
+www/nagiosql/functions/data_class.php
+www/nagiosql/functions/import_class.php
+www/nagiosql/functions/mysql_class.php
+www/nagiosql/functions/nag_class.php
+www/nagiosql/functions/prepend_adm.php
+www/nagiosql/functions/supportive.php
+www/nagiosql/functions/tinyMCE/jscripts/tiny_mce/langs/en.js
+www/nagiosql/functions/tinyMCE/jscripts/tiny_mce/license.txt
+www/nagiosql/functions/tinyMCE/jscripts/tiny_mce/plugins/contextmenu/editor_plugin.js
+www/nagiosql/functions/tinyMCE/jscripts/tiny_mce/plugins/safari/blank.htm
+www/nagiosql/functions/tinyMCE/jscripts/tiny_mce/plugins/safari/editor_plugin.js
+www/nagiosql/functions/tinyMCE/jscripts/tiny_mce/plugins/searchreplace/css/searchreplace.css
+www/nagiosql/functions/tinyMCE/jscripts/tiny_mce/plugins/searchreplace/editor_plugin.js
+www/nagiosql/functions/tinyMCE/jscripts/tiny_mce/plugins/searchreplace/js/searchreplace.js
+www/nagiosql/functions/tinyMCE/jscripts/tiny_mce/plugins/searchreplace/langs/en_dlg.js
+www/nagiosql/functions/tinyMCE/jscripts/tiny_mce/plugins/searchreplace/searchreplace.htm
+www/nagiosql/functions/tinyMCE/jscripts/tiny_mce/plugins/table/cell.htm
+www/nagiosql/functions/tinyMCE/jscripts/tiny_mce/plugins/table/css/cell.css
+www/nagiosql/functions/tinyMCE/jscripts/tiny_mce/plugins/table/css/row.css
+www/nagiosql/functions/tinyMCE/jscripts/tiny_mce/plugins/table/css/table.css
+www/nagiosql/functions/tinyMCE/jscripts/tiny_mce/plugins/table/editor_plugin.js
+www/nagiosql/functions/tinyMCE/jscripts/tiny_mce/plugins/table/js/cell.js
+www/nagiosql/functions/tinyMCE/jscripts/tiny_mce/plugins/table/js/merge_cells.js
+www/nagiosql/functions/tinyMCE/jscripts/tiny_mce/plugins/table/js/row.js
+www/nagiosql/functions/tinyMCE/jscripts/tiny_mce/plugins/table/js/table.js
+www/nagiosql/functions/tinyMCE/jscripts/tiny_mce/plugins/table/langs/en_dlg.js
+www/nagiosql/functions/tinyMCE/jscripts/tiny_mce/plugins/table/merge_cells.htm
+www/nagiosql/functions/tinyMCE/jscripts/tiny_mce/plugins/table/row.htm
+www/nagiosql/functions/tinyMCE/jscripts/tiny_mce/plugins/table/table.htm
+www/nagiosql/functions/tinyMCE/jscripts/tiny_mce/themes/advanced/about.htm
+www/nagiosql/functions/tinyMCE/jscripts/tiny_mce/themes/advanced/anchor.htm
+www/nagiosql/functions/tinyMCE/jscripts/tiny_mce/themes/advanced/charmap.htm
+www/nagiosql/functions/tinyMCE/jscripts/tiny_mce/themes/advanced/color_picker.htm
+www/nagiosql/functions/tinyMCE/jscripts/tiny_mce/themes/advanced/editor_template.js
+www/nagiosql/functions/tinyMCE/jscripts/tiny_mce/themes/advanced/image.htm
+www/nagiosql/functions/tinyMCE/jscripts/tiny_mce/themes/advanced/img/colorpicker.jpg
+www/nagiosql/functions/tinyMCE/jscripts/tiny_mce/themes/advanced/img/icons.gif
+www/nagiosql/functions/tinyMCE/jscripts/tiny_mce/themes/advanced/js/about.js
+www/nagiosql/functions/tinyMCE/jscripts/tiny_mce/themes/advanced/js/anchor.js
+www/nagiosql/functions/tinyMCE/jscripts/tiny_mce/themes/advanced/js/charmap.js
+www/nagiosql/functions/tinyMCE/jscripts/tiny_mce/themes/advanced/js/color_picker.js
+www/nagiosql/functions/tinyMCE/jscripts/tiny_mce/themes/advanced/js/image.js
+www/nagiosql/functions/tinyMCE/jscripts/tiny_mce/themes/advanced/js/link.js
+www/nagiosql/functions/tinyMCE/jscripts/tiny_mce/themes/advanced/js/source_editor.js
+www/nagiosql/functions/tinyMCE/jscripts/tiny_mce/themes/advanced/langs/en.js
+www/nagiosql/functions/tinyMCE/jscripts/tiny_mce/themes/advanced/langs/en_dlg.js
+www/nagiosql/functions/tinyMCE/jscripts/tiny_mce/themes/advanced/link.htm
+www/nagiosql/functions/tinyMCE/jscripts/tiny_mce/themes/advanced/skins/default/content.css
+www/nagiosql/functions/tinyMCE/jscripts/tiny_mce/themes/advanced/skins/default/dialog.css
+www/nagiosql/functions/tinyMCE/jscripts/tiny_mce/themes/advanced/skins/default/img/buttons.png
+www/nagiosql/functions/tinyMCE/jscripts/tiny_mce/themes/advanced/skins/default/img/items.gif
+www/nagiosql/functions/tinyMCE/jscripts/tiny_mce/themes/advanced/skins/default/img/menu_arrow.gif
+www/nagiosql/functions/tinyMCE/jscripts/tiny_mce/themes/advanced/skins/default/img/menu_check.gif
+www/nagiosql/functions/tinyMCE/jscripts/tiny_mce/themes/advanced/skins/default/img/progress.gif
+www/nagiosql/functions/tinyMCE/jscripts/tiny_mce/themes/advanced/skins/default/img/tabs.gif
+www/nagiosql/functions/tinyMCE/jscripts/tiny_mce/themes/advanced/skins/default/ui.css
+www/nagiosql/functions/tinyMCE/jscripts/tiny_mce/themes/advanced/skins/o2k7/content.css
+www/nagiosql/functions/tinyMCE/jscripts/tiny_mce/themes/advanced/skins/o2k7/dialog.css
+www/nagiosql/functions/tinyMCE/jscripts/tiny_mce/themes/advanced/skins/o2k7/img/button_bg.png
+www/nagiosql/functions/tinyMCE/jscripts/tiny_mce/themes/advanced/skins/o2k7/img/button_bg_black.png
+www/nagiosql/functions/tinyMCE/jscripts/tiny_mce/themes/advanced/skins/o2k7/img/button_bg_silver.png
+www/nagiosql/functions/tinyMCE/jscripts/tiny_mce/themes/advanced/skins/o2k7/ui.css
+www/nagiosql/functions/tinyMCE/jscripts/tiny_mce/themes/advanced/skins/o2k7/ui_black.css
+www/nagiosql/functions/tinyMCE/jscripts/tiny_mce/themes/advanced/skins/o2k7/ui_silver.css
+www/nagiosql/functions/tinyMCE/jscripts/tiny_mce/themes/advanced/source_editor.htm
+www/nagiosql/functions/tinyMCE/jscripts/tiny_mce/tiny_mce.js
+www/nagiosql/functions/tinyMCE/jscripts/tiny_mce/tiny_mce_popup.js
+www/nagiosql/functions/tinyMCE/jscripts/tiny_mce/utils/editable_selects.js
+www/nagiosql/functions/tinyMCE/jscripts/tiny_mce/utils/form_utils.js
+www/nagiosql/functions/tinyMCE/jscripts/tiny_mce/utils/mctabs.js
+www/nagiosql/functions/tinyMCE/jscripts/tiny_mce/utils/validate.js
+www/nagiosql/functions/translator.php
+www/nagiosql/functions/yui/build/assets/skins/sam/sprite.png
+www/nagiosql/functions/yui/build/button/assets/skins/sam/button.css
+www/nagiosql/functions/yui/build/button/assets/skins/sam/menu-button-arrow-disabled.png
+www/nagiosql/functions/yui/build/button/assets/skins/sam/menu-button-arrow.png
+www/nagiosql/functions/yui/build/button/assets/skins/sam/split-button-arrow-active.png
+www/nagiosql/functions/yui/build/button/assets/skins/sam/split-button-arrow-disabled.png
+www/nagiosql/functions/yui/build/button/assets/skins/sam/split-button-arrow-focus.png
+www/nagiosql/functions/yui/build/button/assets/skins/sam/split-button-arrow-hover.png
+www/nagiosql/functions/yui/build/button/assets/skins/sam/split-button-arrow.png
+www/nagiosql/functions/yui/build/button/button-min.js
+www/nagiosql/functions/yui/build/calendar/assets/skins/sam/calendar.css
+www/nagiosql/functions/yui/build/calendar/calendar-min.js
+www/nagiosql/functions/yui/build/connection/connection-min.js
+www/nagiosql/functions/yui/build/container/assets/skins/sam/container.css
+www/nagiosql/functions/yui/build/container/container-min.js
+www/nagiosql/functions/yui/build/element/element-beta-min.js
+www/nagiosql/functions/yui/build/fonts/fonts-min.css
+www/nagiosql/functions/yui/build/tabview/assets/skins/sam/tabview.css
+www/nagiosql/functions/yui/build/tabview/tabview-min.js
+www/nagiosql/functions/yui/build/utilities/utilities.js
+www/nagiosql/functions/yui/build/yahoo-dom-event/yahoo-dom-event.js
+www/nagiosql/images/admin.png
+www/nagiosql/images/bg_menu_aktiv.png
+www/nagiosql/images/bg_menu_inaktiv.png
+www/nagiosql/images/bg_submenu.png
+www/nagiosql/images/bg_top.png
+www/nagiosql/images/calbtn.gif
+www/nagiosql/images/copy.gif
+www/nagiosql/images/del.png
+www/nagiosql/images/delete.gif
+www/nagiosql/images/down.gif
+www/nagiosql/images/download.gif
+www/nagiosql/images/edit.gif
+www/nagiosql/images/info.gif
+www/nagiosql/images/input.png
+www/nagiosql/images/inputlock.png
+www/nagiosql/images/inputmust.png
+www/nagiosql/images/left.gif
+www/nagiosql/images/login-form.png
+www/nagiosql/images/logo_top.png
+www/nagiosql/images/lupe.gif
+www/nagiosql/images/menu.gif
+www/nagiosql/images/menu_bg.png
+www/nagiosql/images/menu_bg2.png
+www/nagiosql/images/menusub_bg.png
+www/nagiosql/images/mut.gif
+www/nagiosql/images/nagiosql_logo.png
+www/nagiosql/images/pfeil_l.gif
+www/nagiosql/images/pfeil_r.gif
+www/nagiosql/images/pixel.gif
+www/nagiosql/images/right.gif
+www/nagiosql/images/tip.gif
+www/nagiosql/images/tip.png
+www/nagiosql/images/titel_v2.png
+www/nagiosql/images/up.gif
+www/nagiosql/images/upArrow.png
+www/nagiosql/images/write.gif
+www/nagiosql/index.php
+www/nagiosql/install/css/index.html
+www/nagiosql/install/css/install.css
+www/nagiosql/install/doc/INSTALLATION_deDE.txt
+www/nagiosql/install/doc/INSTALLATION_enGB.txt
+www/nagiosql/install/functions/func_installer.php
+www/nagiosql/install/images/background.png
+www/nagiosql/install/images/body_background.png
+www/nagiosql/install/images/favicon.ico
+www/nagiosql/install/images/index-install.png
+www/nagiosql/install/images/index-update.png
+www/nagiosql/install/images/index.html
+www/nagiosql/install/images/install.png
+www/nagiosql/install/images/invalid.png
+www/nagiosql/install/images/minus.png
+www/nagiosql/install/images/nagiosql.png
+www/nagiosql/install/images/next.png
+www/nagiosql/install/images/pixel.gif
+www/nagiosql/install/images/plus.png
+www/nagiosql/install/images/previous.png
+www/nagiosql/install/images/reload.png
+www/nagiosql/install/images/skip.png
+www/nagiosql/install/images/step1_active.png
+www/nagiosql/install/images/step1_deactive.png
+www/nagiosql/install/images/step2_active.png
+www/nagiosql/install/images/step2_deactive.png
+www/nagiosql/install/images/step3_active.png
+www/nagiosql/install/images/step3_deactive.png
+www/nagiosql/install/images/update.png
+www/nagiosql/install/images/valid.png
+www/nagiosql/install/images/warning.png
+www/nagiosql/install/index.php
+www/nagiosql/install/install.php
+www/nagiosql/install/js/functions.js
+www/nagiosql/install/js/index.html
+www/nagiosql/install/js/prototype.js
+www/nagiosql/install/js/validation.js
+www/nagiosql/install/sql/import_nagios_sample.sql
+www/nagiosql/install/sql/index.html
+www/nagiosql/install/sql/nagiosQL_v3_db_mysql.sql
+www/nagiosql/install/sql/update_200_202.sql
+www/nagiosql/install/sql/update_202_303.sql
+www/nagiosql/install/sql/update_300_301.sql
+www/nagiosql/install/sql/update_300b1_300b2.sql
+www/nagiosql/install/sql/update_300b2_300rc1.sql
+www/nagiosql/install/sql/update_300rc1_300.sql
+www/nagiosql/install/sql/update_301_302.sql
+www/nagiosql/install/sql/update_302_303.sql
+www/nagiosql/install/sql/update_303_304.sql
+www/nagiosql/install/status.php
+www/nagiosql/install/step1.php
+www/nagiosql/install/step2.php
+www/nagiosql/install/step3.php
+www/nagiosql/templates/admin/admin_master.tpl.htm
+www/nagiosql/templates/admin/checkcommands.tpl.htm
+www/nagiosql/templates/admin/contactgroups.tpl.htm
+www/nagiosql/templates/admin/contacts.tpl.htm
+www/nagiosql/templates/admin/contacttemplates.tpl.htm
+www/nagiosql/templates/admin/delbackup.tpl.htm
+www/nagiosql/templates/admin/domain.tpl.htm
+www/nagiosql/templates/admin/helpedit.tpl.htm
+www/nagiosql/templates/admin/hostdependencies.tpl.htm
+www/nagiosql/templates/admin/hostescalations.tpl.htm
+www/nagiosql/templates/admin/hostextinfo.tpl.htm
+www/nagiosql/templates/admin/hostgroups.tpl.htm
+www/nagiosql/templates/admin/hosts.tpl.htm
+www/nagiosql/templates/admin/hosttemplates.tpl.htm
+www/nagiosql/templates/admin/import.tpl.htm
+www/nagiosql/templates/admin/mainpages.tpl.htm
+www/nagiosql/templates/admin/mutdialog.tpl.htm
+www/nagiosql/templates/admin/nagioscfg.tpl.htm
+www/nagiosql/templates/admin/servicedependencies.tpl.htm
+www/nagiosql/templates/admin/serviceescalations.tpl.htm
+www/nagiosql/templates/admin/serviceextinfo.tpl.htm
+www/nagiosql/templates/admin/servicegroups.tpl.htm
+www/nagiosql/templates/admin/services.tpl.htm
+www/nagiosql/templates/admin/servicetemplates.tpl.htm
+www/nagiosql/templates/admin/settings.tpl.htm
+www/nagiosql/templates/admin/timeperiods.tpl.htm
+www/nagiosql/templates/admin/user.tpl.htm
+www/nagiosql/templates/admin/verify.tpl.htm
+www/nagiosql/templates/files/commands.tpl.dat
+www/nagiosql/templates/files/contactgroups.tpl.dat
+www/nagiosql/templates/files/contacts.tpl.dat
+www/nagiosql/templates/files/contacttemplates.tpl.dat
+www/nagiosql/templates/files/hostdependencies.tpl.dat
+www/nagiosql/templates/files/hostescalations.tpl.dat
+www/nagiosql/templates/files/hostextinfo.tpl.dat
+www/nagiosql/templates/files/hostgroups.tpl.dat
+www/nagiosql/templates/files/hosts.tpl.dat
+www/nagiosql/templates/files/hosttemplates.tpl.dat
+www/nagiosql/templates/files/servicedependencies.tpl.dat
+www/nagiosql/templates/files/serviceescalations.tpl.dat
+www/nagiosql/templates/files/serviceextinfo.tpl.dat
+www/nagiosql/templates/files/servicegroups.tpl.dat
+www/nagiosql/templates/files/services.tpl.dat
+www/nagiosql/templates/files/servicetemplates.tpl.dat
+www/nagiosql/templates/files/timeperiods.tpl.dat
+www/nagiosql/templates/index.tpl.htm
+www/nagiosql/templates/main.tpl.htm
+@dirrm www/nagiosql/templates/files
+@dirrm www/nagiosql/templates/admin
+@dirrm www/nagiosql/templates
+@dirrm www/nagiosql/install/sql
+@dirrm www/nagiosql/install/js
+@dirrm www/nagiosql/install/images
+@dirrm www/nagiosql/install/functions
+@dirrm www/nagiosql/install/doc
+@dirrm www/nagiosql/install/css
+@dirrm www/nagiosql/install
+@dirrm www/nagiosql/images
+@dirrm www/nagiosql/functions/yui/build/yahoo-dom-event
+@dirrm www/nagiosql/functions/yui/build/utilities
+@dirrm www/nagiosql/functions/yui/build/tabview/assets/skins/sam
+@dirrm www/nagiosql/functions/yui/build/tabview/assets/skins
+@dirrm www/nagiosql/functions/yui/build/tabview/assets
+@dirrm www/nagiosql/functions/yui/build/tabview
+@dirrm www/nagiosql/functions/yui/build/fonts
+@dirrm www/nagiosql/functions/yui/build/element
+@dirrm www/nagiosql/functions/yui/build/container/assets/skins/sam
+@dirrm www/nagiosql/functions/yui/build/container/assets/skins
+@dirrm www/nagiosql/functions/yui/build/container/assets
+@dirrm www/nagiosql/functions/yui/build/container
+@dirrm www/nagiosql/functions/yui/build/connection
+@dirrm www/nagiosql/functions/yui/build/calendar/assets/skins/sam
+@dirrm www/nagiosql/functions/yui/build/calendar/assets/skins
+@dirrm www/nagiosql/functions/yui/build/calendar/assets
+@dirrm www/nagiosql/functions/yui/build/calendar
+@dirrm www/nagiosql/functions/yui/build/button/assets/skins/sam
+@dirrm www/nagiosql/functions/yui/build/button/assets/skins
+@dirrm www/nagiosql/functions/yui/build/button/assets
+@dirrm www/nagiosql/functions/yui/build/button
+@dirrm www/nagiosql/functions/yui/build/assets/skins/sam
+@dirrm www/nagiosql/functions/yui/build/assets/skins
+@dirrm www/nagiosql/functions/yui/build/assets
+@dirrm www/nagiosql/functions/yui/build
+@dirrm www/nagiosql/functions/yui
+@dirrm www/nagiosql/functions/tinyMCE/jscripts/tiny_mce/utils
+@dirrm www/nagiosql/functions/tinyMCE/jscripts/tiny_mce/themes/advanced/skins/o2k7/img
+@dirrm www/nagiosql/functions/tinyMCE/jscripts/tiny_mce/themes/advanced/skins/o2k7
+@dirrm www/nagiosql/functions/tinyMCE/jscripts/tiny_mce/themes/advanced/skins/default/img
+@dirrm www/nagiosql/functions/tinyMCE/jscripts/tiny_mce/themes/advanced/skins/default
+@dirrm www/nagiosql/functions/tinyMCE/jscripts/tiny_mce/themes/advanced/skins
+@dirrm www/nagiosql/functions/tinyMCE/jscripts/tiny_mce/themes/advanced/langs
+@dirrm www/nagiosql/functions/tinyMCE/jscripts/tiny_mce/themes/advanced/js
+@dirrm www/nagiosql/functions/tinyMCE/jscripts/tiny_mce/themes/advanced/img
+@dirrm www/nagiosql/functions/tinyMCE/jscripts/tiny_mce/themes/advanced
+@dirrm www/nagiosql/functions/tinyMCE/jscripts/tiny_mce/themes
+@dirrm www/nagiosql/functions/tinyMCE/jscripts/tiny_mce/plugins/table/langs
+@dirrm www/nagiosql/functions/tinyMCE/jscripts/tiny_mce/plugins/table/js
+@dirrm www/nagiosql/functions/tinyMCE/jscripts/tiny_mce/plugins/table/css
+@dirrm www/nagiosql/functions/tinyMCE/jscripts/tiny_mce/plugins/table
+@dirrm www/nagiosql/functions/tinyMCE/jscripts/tiny_mce/plugins/searchreplace/langs
+@dirrm www/nagiosql/functions/tinyMCE/jscripts/tiny_mce/plugins/searchreplace/js
+@dirrm www/nagiosql/functions/tinyMCE/jscripts/tiny_mce/plugins/searchreplace/css
+@dirrm www/nagiosql/functions/tinyMCE/jscripts/tiny_mce/plugins/searchreplace
+@dirrm www/nagiosql/functions/tinyMCE/jscripts/tiny_mce/plugins/safari
+@dirrm www/nagiosql/functions/tinyMCE/jscripts/tiny_mce/plugins/contextmenu
+@dirrm www/nagiosql/functions/tinyMCE/jscripts/tiny_mce/plugins
+@dirrm www/nagiosql/functions/tinyMCE/jscripts/tiny_mce/langs
+@dirrm www/nagiosql/functions/tinyMCE/jscripts/tiny_mce
+@dirrm www/nagiosql/functions/tinyMCE/jscripts
+@dirrm www/nagiosql/functions/tinyMCE
+@dirrm www/nagiosql/functions
+@dirrm www/nagiosql/config/locale/zh_CN/LC_MESSAGES
+@dirrm www/nagiosql/config/locale/zh_CN
+@dirrm www/nagiosql/config/locale/ru_RU/LC_MESSAGES
+@dirrm www/nagiosql/config/locale/ru_RU
+@dirrm www/nagiosql/config/locale/pt_BR/LC_MESSAGES
+@dirrm www/nagiosql/config/locale/pt_BR
+@dirrm www/nagiosql/config/locale/pl_PL/LC_MESSAGES
+@dirrm www/nagiosql/config/locale/pl_PL
+@dirrm www/nagiosql/config/locale/ja_JP/LC_MESSAGES
+@dirrm www/nagiosql/config/locale/ja_JP
+@dirrm www/nagiosql/config/locale/it_IT/LC_MESSAGES
+@dirrm www/nagiosql/config/locale/it_IT
+@dirrm www/nagiosql/config/locale/fr_FR/LC_MESSAGES
+@dirrm www/nagiosql/config/locale/fr_FR
+@dirrm www/nagiosql/config/locale/es_ES/LC_MESSAGES
+@dirrm www/nagiosql/config/locale/es_ES
+@dirrm www/nagiosql/config/locale/en_GB/LC_MESSAGES
+@dirrm www/nagiosql/config/locale/en_GB
+@dirrm www/nagiosql/config/locale/de_DE/LC_MESSAGES
+@dirrm www/nagiosql/config/locale/de_DE
+@dirrm www/nagiosql/config/locale
+@dirrm www/nagiosql/config
+@dirrm www/nagiosql/admin
+@dirrm www/nagiosql
