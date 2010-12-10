@@ -22,7 +22,7 @@
 +    """ For python version >= 2.6 """
 +    def _SHA(some): return hashlib.sha1(some)
 +    def HH(some): return hashlib.md5(some).hexdigest()
-+    def h(some): return hashlib.md5(some).digest()
++    def H(some): return hashlib.md5(some).digest()
 +
 +
  class NonSASL(PlugIn):
