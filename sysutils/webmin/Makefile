@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	webmin
-PORTVERSION=	1.520
+PORTVERSION=	1.530
 CATEGORIES=	sysutils
 MASTER_SITES=	http://download.webmin.com/updates/:up \
 		SF/webadmin/${PORTNAME}/${PORTVERSION}:sf \
@@ -26,7 +26,7 @@ USE_RC_SUBR=	webmin.sh
 SUB_LIST=	PERL5=${PERL}
 SUB_FILES=	pkg-message
 
-WEBMIN_MODULES=
+WEBMIN_MODULES=	status-1.530-1.wbm.gz
 
 post-extract:
 	@if [ "${WEBMIN_MODULES}" != "" ]; then \
