@@ -64,7 +64,7 @@ CONFIGURE_ARGS=	-sde -Dprefix=${PREFIX} \
 LOCALE_CLEANUP=	LANG="" LC_ALL="" LC_COLLATE="" LC_CTYPE="" \
 		LC_MESSAGES="" LC_MONETARY="" LC_NUMERIC="" \
 		LC_TIME=""
-CONFIGURE_ENV+=	${LOCALE_CLEANUP}
+CONFIGURE_ENV+=	${LOCALE_CLEANUP} UNAME_v="$$(uname -v | sed 'y/=/ /')"
 MAKE_ENV+=	${LOCALE_CLEANUP}
 
 .include "Makefile.man"
