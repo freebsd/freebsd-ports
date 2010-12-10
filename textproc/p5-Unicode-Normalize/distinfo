@@ -1,3 +1,2 @@
-MD5 (Unicode-Normalize-1.07.tar.gz) = da829faf023a6fbb9342b08e1276c76b
-SHA256 (Unicode-Normalize-1.07.tar.gz) = 503dff3c0e6ab9171391f52b04b5f7f24d23340872988a56991d536018044568
-SIZE (Unicode-Normalize-1.07.tar.gz) = 26252
+SHA256 (Unicode-Normalize-1.07-withoutworldwriteables.tar.gz) = bafc8692c2fd4a8905111b90db8bbebf419bc2a6713dc44ae588b3082b49b989
+SIZE (Unicode-Normalize-1.07-withoutworldwriteables.tar.gz) = 26422
