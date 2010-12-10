@@ -29,7 +29,7 @@ MAN1=		linuxsampler.1
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 700000
+.if ${OSVERSION} < 700000 || ${OSVERSION} >= 900000
 BROKEN=		Does not compile
 .endif
 
