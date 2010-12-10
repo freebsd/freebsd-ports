@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	thrift
-PORTVERSION=	0.3.0
-PORTREVISION=	2
+PORTVERSION=	0.4.0
 PORTEPOCH=	1
 CATEGORIES=	devel
 MASTER_SITES=	APACHE
@@ -45,6 +44,7 @@ CONFIGURE_ARGS+=	\
 		--without-erlang \
 		--without-java \
 		--without-perl \
+		--without-php \
 		--without-py \
 		--without-ruby
 
