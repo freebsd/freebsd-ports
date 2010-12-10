@@ -3228,6 +3228,7 @@
     SUBDIR += sabre
     SUBDIR += safe-iop
     SUBDIR += safestr
+    SUBDIR += scalatest
     SUBDIR += scandoc
     SUBDIR += scons
     SUBDIR += scsh-install-lib
