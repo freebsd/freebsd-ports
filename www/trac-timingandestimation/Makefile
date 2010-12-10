@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	timingandestimation
-PORTVERSION=	0.9.0b
-PORTREVISION=	2
+PORTVERSION=	1.0.6b
 CATEGORIES=	www devel python
 MASTER_SITES=	http://www.sourcehosting.net/freebsd/distfiles/ \
 		LOCAL/glarkin
