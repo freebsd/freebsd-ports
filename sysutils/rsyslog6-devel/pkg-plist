@@ -50,6 +50,7 @@ sbin/rsyslogd
 %%PORTDOCS%%%%DOCSDIR%%/imgssapi.html
 %%PORTDOCS%%%%DOCSDIR%%/imklog.html
 %%PORTDOCS%%%%DOCSDIR%%/imptcp.html
+%%PORTDOCS%%%%DOCSDIR%%/impstats.html
 %%PORTDOCS%%%%DOCSDIR%%/imrelp.html
 %%PORTDOCS%%%%DOCSDIR%%/imsolaris.html
 %%PORTDOCS%%%%DOCSDIR%%/imtcp.html

@@ -69,7 +69,6 @@ sbin/rsyslogd
 %%PORTDOCS%%%%DOCSDIR%%/omoracle.html
 %%PORTDOCS%%%%DOCSDIR%%/omrelp.html
 %%PORTDOCS%%%%DOCSDIR%%/omsnmp.html
-%%PORTDOCS%%%%DOCSDIR%%/professional_support.html
 %%PORTDOCS%%%%DOCSDIR%%/property_replacer.html
 %%PORTDOCS%%%%DOCSDIR%%/queueWorkerLogic.jpg
 %%PORTDOCS%%%%DOCSDIR%%/queueWorkerLogic_small.jpg

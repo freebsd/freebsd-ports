@@ -49,6 +49,7 @@ sbin/rsyslogd
 %%PORTDOCS%%%%DOCSDIR%%/imfile.html
 %%PORTDOCS%%%%DOCSDIR%%/imgssapi.html
 %%PORTDOCS%%%%DOCSDIR%%/imklog.html
+%%PORTDOCS%%%%DOCSDIR%%/imptcp.html
 %%PORTDOCS%%%%DOCSDIR%%/imrelp.html
 %%PORTDOCS%%%%DOCSDIR%%/imtcp.html
 %%PORTDOCS%%%%DOCSDIR%%/imuxsock.html
@@ -70,7 +71,7 @@ sbin/rsyslogd
 %%PORTDOCS%%%%DOCSDIR%%/omoracle.html
 %%PORTDOCS%%%%DOCSDIR%%/omrelp.html
 %%PORTDOCS%%%%DOCSDIR%%/omsnmp.html
-%%PORTDOCS%%%%DOCSDIR%%/professional_support.html
+%%PORTDOCS%%%%DOCSDIR%%/omuxsock.html
 %%PORTDOCS%%%%DOCSDIR%%/property_replacer.html
 %%PORTDOCS%%%%DOCSDIR%%/queueWorkerLogic.jpg
 %%PORTDOCS%%%%DOCSDIR%%/queueWorkerLogic_small.jpg
