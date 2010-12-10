@@ -23,7 +23,7 @@ RUN_DEPENDS=	java:${PORTSDIR}/java/javavmwrapper
 
 CONFLICTS=	jogl-1.*
 
-MAKE_ENV+=	_JAVA_OPTIONS="-Xmx256m"
+MAKE_ENV+=	_JAVA_OPTIONS="-Xmx512m"
 NO_WRKSUBDIR=	yes
 WRKSRC=		${WRKDIR}
 
