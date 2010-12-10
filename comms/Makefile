@@ -145,6 +145,7 @@
     SUBDIR += twpsk
     SUBDIR += uhso-kmod
     SUBDIR += uird
+    SUBDIR += umcs7840
     SUBDIR += unixcw
     SUBDIR += uticom
     SUBDIR += viewfax
