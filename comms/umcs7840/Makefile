@@ -19,7 +19,7 @@ USE_BZIP2=	yes
 NO_PACKAGE=	should be recompiled for a particular FreeBSD kernel
 
 MAINVERSION=1.0
-VERSIONDATE=20101210.56
+VERSIONDATE=20101210.57
 
 KMODDIR?=	/boot/modules
 PLIST_SUB+=	KMODDIR=${KMODDIR}
