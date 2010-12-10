@@ -7,6 +7,7 @@
 
 PORTNAME=	libnet
 PORTVERSION=	1.1.5
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	SF/libnet-dev
 
@@ -52,7 +53,7 @@ LIBNET_LINK=	bpf
 
 post-patch:
 	${REINPLACE_CMD} \
-	 -e 's|@LIBNET_CONFIG_LIBS@|@LIBNET_CONFIG_LIBS@ -I@prefix@/include/${SHORT_NAME}|' \
+	 -e 's|@LIBNET_CONFIG_LIBS@|@LIBNET_CONFIG_LIBS@ -L@prefix@/lib/${SHORT_NAME}|' \
 	 -e 's|@LIBNET_CONFIG_CFLAGS@|@LIBNET_CONFIG_CFLAGS@ -I@prefix@/include/${SHORT_NAME}|' \
 		${WRKSRC}/libnet-config.in
 	${REINPLACE_CMD} -e 's|^includedir =.*|includedir = @includedir@/${SHORT_NAME}|' \
