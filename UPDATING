@@ -5,6 +5,14 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20101210:
+  AFFECTS: users of multimedia/avidemux2
+  AUTHOR: nox@FreeBSD.org
+
+  The port has been updated to 2.5.4 which now installs plugins seperately
+  and I had to make a slave port for them, multimedia/avidemux2-plugins.
+  So you'll now have to install that port too for the app to become useful.
+
 20101208:
   AFFECTS: autotools
   AUTHOR: autotools@FreeBSD.org
