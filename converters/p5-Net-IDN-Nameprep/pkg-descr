@@ -1,0 +1,9 @@
+This module implements the nameprep specification, which describes how
+to prepare internationalized domain name (IDN) labels in order to
+increase the likelihood that name input and name comparison work in
+ways that make sense for typical users throughout the world.  Nameprep
+is a profile of the stringprep protocol and is used as part of a suite
+of on-the-wire protocols for internationalizing the Domain Name System
+(DNS).
+
+WWW: http://search.cpan.org/dist/Net-IDN-Nameprep/
