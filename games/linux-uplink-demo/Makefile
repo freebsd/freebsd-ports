@@ -16,7 +16,7 @@ EXTRACT_SUFX=	.sh
 MAINTAINER=	mva@FreeBSD.org
 COMMENT=	High tech computer crime and industrial espionage on the Internet
 
-ONLY_FOR_ARCHS=	i386
+ONLY_FOR_ARCHS=	i386 amd64
 USE_LINUX=	yes
 USE_LINUX_APPS=	sdl12 jpeg sdlmixer mikmod libvorbis xorglibs
 USE_LDCONFIG=	yes

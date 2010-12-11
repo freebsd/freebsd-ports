@@ -16,7 +16,7 @@ EXTRACT_SUFX=	.sh
 MAINTAINER=	mva@FreeBSD.org
 COMMENT=	Real-time action strategy with programs
 
-ONLY_FOR_ARCHS=	i386
+ONLY_FOR_ARCHS=	i386 amd64
 USE_LINUX=	yes
 USE_LINUX_APPS=	sdl12 libogg libvorbis xorglibs
 NO_CDROM=	Redistribution is limited, see license
