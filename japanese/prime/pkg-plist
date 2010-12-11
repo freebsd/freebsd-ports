@@ -57,13 +57,13 @@ etc/prime/Custom_prime.rb
 @dirrmtry %%RUBY_SITELIBDIR%%/prime/grammar
 @dirrmtry %%RUBY_SITELIBDIR%%/prime/makedict
 @dirrmtry %%RUBY_SITELIBDIR%%/prime
-%%PORTDOCS%%%%DOCSDIR%%/examples/Custom_prime.rb
+%%DOCSDIR%%/examples/Custom_prime.rb
 %%PORTDOCS%%%%DOCSDIR%%/figures/dict-format.png
 %%PORTDOCS%%%%DOCSDIR%%/figures/predictive-input.png
 %%PORTDOCS%%%%DOCSDIR%%/figures/tan-bunsetsu.png
-%%PORTDOCS%%%%DOCSDIR%%/uim/prime-custom.scm
-%%PORTDOCS%%%%DOCSDIR%%/uim/prime-key-custom.scm
-%%PORTDOCS%%%%DOCSDIR%%/uim/prime.scm
+%%DOCSDIR%%/uim/prime-custom.scm
+%%DOCSDIR%%/uim/prime-key-custom.scm
+%%DOCSDIR%%/uim/prime.scm
 %%PORTDOCS%%%%DOCSDIR%%/uim_prime.html
 %%PORTDOCS%%%%DOCSDIR%%/dictionary.html
 %%PORTDOCS%%%%DOCSDIR%%/index.html
@@ -72,7 +72,7 @@ etc/prime/Custom_prime.rb
 %%PORTDOCS%%%%DOCSDIR%%/usage.html
 %%PORTDOCS%%%%DOCSDIR%%/taiyaki.css
 %%PORTDOCS%%%%DOCSDIR%%/taiyaki.png
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/examples
+@dirrmtry %%DOCSDIR%%/examples
 %%PORTDOCS%%@dirrmtry %%DOCSDIR%%/figures
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/uim
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%
+@dirrmtry %%DOCSDIR%%/uim
+@dirrmtry %%DOCSDIR%%
