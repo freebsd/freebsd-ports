@@ -82,15 +82,7 @@ CONFIGURE_ARGS+=	--enable-debug
 .endif
 
 .if defined(NOPORTDOCS)
-post-patch:
-	${REINPLACE_CMD} -e 's|SUBDIRS = doc src|SUBDIRS = src|' \
-		${WRKSRC}/Makefile.in
-.endif
-
-.if !defined(NOPORTDOCS)
-post-install:
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
+MAKE_ARGS+=		NOPORTDOCS=yes
 .endif
 
 .include <bsd.port.post.mk>

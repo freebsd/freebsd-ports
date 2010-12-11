@@ -1,11 +1,21 @@
---- doc/Makefile.in.orig	2010-12-07 12:16:28.085145000 -0800
-+++ doc/Makefile.in	2010-12-07 12:30:19.023013888 -0800
-@@ -505,7 +505,7 @@
+--- doc/Makefile.in.orig	2010-11-07 17:25:30.000000000 +0100
++++ doc/Makefile.in	2010-12-11 06:14:18.000000000 +0100
+@@ -505,8 +505,9 @@
  install-data-hook: $(static_docs) $(toplevel_docs) $(generated_docs)
  	$(mkinstalldirs) $(DESTDIR)$(sysconfdir)
  	if [ ! -f $(DESTDIR)$(sysconfdir)/ngircd.conf ]; then \
 -	  $(INSTALL) -m 600 -c sample-ngircd.conf $(DESTDIR)$(sysconfdir)/ngircd.conf; \
 +	  $(INSTALL) -m 600 -c sample-ngircd.conf $(DESTDIR)$(sysconfdir)/ngircd.conf.sample; \
  	 fi
++.if !defined(NOPORTDOCS)
  	$(mkinstalldirs) $(DESTDIR)$(docdir)
  	for f in $(static_docs) $(toplevel_docs); do \
+ 	  $(INSTALL) -m 644 -c $(srcdir)/$$f $(DESTDIR)$(docdir)/; \
+@@ -514,6 +515,7 @@
+ 	for f in $(generated_docs); do \
+ 	  $(INSTALL) -m 644 -c $$f $(DESTDIR)$(docdir)/; \
+ 	 done
++.endif
+ 
+ uninstall-hook:
+ 	rm -rf $(DESTDIR)$(docdir)
