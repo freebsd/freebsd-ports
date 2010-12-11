@@ -19,7 +19,9 @@ RUN_DEPENDS=	rubygem-mixlib-log>=0:${PORTSDIR}/devel/rubygem-mixlib-log \
 		rubygem-mixlib-cli>=0:${PORTSDIR}/devel/rubygem-mixlib-cli \
 		rubygem-systemu>=0:${PORTSDIR}/devel/rubygem-systemu \
 		rubygem-extlib>=0:${PORTSDIR}/devel/rubygem-extlib \
-		rubygem-json>=1.4.4:${PORTSDIR}/devel/rubygem-json
+		rubygem-json<=1.4.2:${PORTSDIR}/devel/rubygem-json
+
+BROKEN=	requires lower version of devel/rubygem-json then the port is currently at
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
