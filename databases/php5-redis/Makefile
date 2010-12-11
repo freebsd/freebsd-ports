@@ -6,19 +6,23 @@
 #
 
 PORTNAME=	redis
-PORTVERSION=	1.2.0
+PORTVERSION=	2.0.12
 CATEGORIES=	databases
-MASTER_SITES=	http://ports.niessen.ch/ \
-		LOCAL/glarkin
+MASTER_SITES=	https://github.com/owlient/phpredis/tarball/${PORTVERSION}/
 PKGNAMEPREFIX=	php5-
-DISTNAME=	${PKGNAMEPREFIX}${PORTNAME}-${PORTVERSION}
+DISTNAME=	owlient-phpredis-${PORTVERSION}-0-g${GITVERSION}
 
 MAINTAINER=	ports@niessen.ch
 COMMENT=	PHP5-Extension for Redis
 
-USE_PHP=	yes
-DEFAULT_PHP_VER=5
+GITVERSION=	44f048c
+FETCH_ARGS=	-pRr
+WRKSRC=		${WRKDIR}/owlient-phpredis-${GITVERSION}
+
+USE_PHP=	session
+USE_PHP_BUILD=	yes
 USE_PHPEXT=	yes
+DEFAULT_PHP_VER=5
 
 PHP_MODNAME=	redis
 
