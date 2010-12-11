@@ -1,0 +1,15 @@
+@comment $FreeBSD$
+%%SITE_PERL%%/Perlanet.pm
+%%SITE_PERL%%/Perlanet/Entry.pm
+%%SITE_PERL%%/Perlanet/Feed.pm
+%%SITE_PERL%%/Perlanet/Simple.pm
+%%SITE_PERL%%/Perlanet/Trait/Cache.pm
+%%SITE_PERL%%/Perlanet/Trait/FeedFile.pm
+%%SITE_PERL%%/Perlanet/Trait/OPML.pm
+%%SITE_PERL%%/Perlanet/Trait/Scrubber.pm
+%%SITE_PERL%%/Perlanet/Trait/TemplateToolkit.pm
+%%SITE_PERL%%/Perlanet/Trait/Tidy.pm
+%%SITE_PERL%%/Perlanet/Trait/YAMLConfig.pm
+bin/perlanet
+@dirrmtry %%SITE_PERL%%/Perlanet/Trait
+@dirrmtry %%SITE_PERL%%/Perlanet
