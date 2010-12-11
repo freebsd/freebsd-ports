@@ -15,6 +15,9 @@ DISTNAME=	netbeans-3_6
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A full-featured integrated environment for Java
 
+DEPRECATED=	old, unmaintained
+EXPIRATION_DATE=2011-03-31
+
 USE_BZIP2=	yes
 USE_JAVA=	yes
 JAVA_VERSION=	1.4+
