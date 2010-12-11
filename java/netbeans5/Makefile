@@ -16,6 +16,10 @@ DISTNAME=	netbeans-5_0
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A free and open-source IDE for Java
 
+BROKEN=		doesn't fetch
+DEPRECATED=	old, unmaintained
+EXPIRATION_DATE=2011-03-31
+
 USE_BZIP2=	yes
 USE_JAVA=	yes
 JAVA_VERSION=	1.4+
