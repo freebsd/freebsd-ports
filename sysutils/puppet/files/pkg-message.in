@@ -8,7 +8,7 @@ To enable the puppetmaster, add the following to /etc/rc.conf:
 	puppetmaster_enable="YES"
 
 Individual config files such as %%PREFIX%%/etc/puppetmasterd.conf are
-deprecated. Use a single file, %%PREFIX%%/etc/puppet/puppet.conf.
+deprecated. Use a single file, %%ETCDIR%%/puppet.conf.
 
 The default PID directory is %%PUPPET_RUNDIR%%.
 
