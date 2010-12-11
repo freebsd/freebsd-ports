@@ -332,6 +332,7 @@
     SUBDIR += gpkgdep
     SUBDIR += gpte
     SUBDIR += graft
+    SUBDIR += graid
     SUBDIR += graphicboot
     SUBDIR += graveman
     SUBDIR += grok
