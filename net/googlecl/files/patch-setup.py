@@ -1,14 +1,14 @@
---- setup.py.orig	2010-07-24 10:30:33.000000000 +0800
-+++ setup.py	2010-08-24 21:11:15.000000000 +0800
-@@ -12,10 +12,7 @@
- # See the License for the specific language governing permissions and
- # limitations under the License.
+--- ./setup.py.orig	2010-12-11 00:04:45.000000000 +0100
++++ ./setup.py	2010-12-11 00:04:57.000000000 +0100
+@@ -14,10 +14,7 @@
+ 
+ from __future__ import with_statement
  
 -try:
 -  from setuptools import setup
 -except ImportError:
 -  from distutils.core import setup
 +from distutils.core import setup
+ import os
+ import shutil
  packages =['googlecl',
-            'googlecl.blogger',
-            'googlecl.calendar',
