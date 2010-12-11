@@ -7,14 +7,14 @@
 
 PORTNAME=	netgen
 PORTVERSION=	4.9.13
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	cad
 MASTER_SITES=	SF/netgen-mesher/netgen-mesher/${PORTVERSION}/
 
 MAINTAINER=	stephen@missouri.edu
 COMMENT=	An automatic 3D tetrahedral mesh generator
 
-LIB_DEPENDS=	tix8184:${PORTSDIR}/x11-toolkits/tix \
+LIB_DEPENDS=	Tix8.4.3:${PORTSDIR}/x11-toolkits/tix \
 		jpeg.11:${PORTSDIR}/graphics/jpeg \
 		togl.1:${PORTSDIR}/graphics/togl
 
