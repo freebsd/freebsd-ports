@@ -1,0 +1,9 @@
+Tatsumaki is a toy port of Tornado for Perl using Plack (with
+non-blocking extensions) and AnyEvent.
+
+It allows you to write a web application that does a immediate
+response with template rendering, IO-bound delayed response (like
+fetching third party API or XML feeds), server push streaming and
+long-poll Comet in a clean unified API.
+
+WWW:	http://search.cpan.org/dist/Tatsumaki/
