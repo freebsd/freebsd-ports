@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	googlecl
-PORTVERSION=	0.9.10
-PORTREVISION=	1
+PORTVERSION=	0.9.11
 CATEGORIES=	net www python
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 
@@ -21,12 +20,16 @@ USE_PYDISTUTILS=	yes
 
 LICENSE=	ASL
 
+.if !defined(NO_INSTALL_MANPAGES)
 MAN1=		google.1
+.endif
 
 PORTDOCS=	*
 
 post-install:
+.if !defined(NO_INSTALL_MANPAGES)
 	${INSTALL_MAN} ${WRKSRC}/man/google.1 ${MANPREFIX}/man/man1
+.endif
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README.* ${DOCSDIR}
