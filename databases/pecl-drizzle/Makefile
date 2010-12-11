@@ -18,8 +18,11 @@ COMMENT=	A PHP wrapper for the libdrizzle library
 
 LIB_DEPENDS=	drizzle.0:${PORTSDIR}/databases/libdrizzle
 
+LICENSE=	PHP301
+
 USE_PHP=	yes
 USE_PHPEXT=	yes
+IGNORE_WITH_PHP=4
 
 .if !defined(NOPORTDOCS)
 PORTDOCS=	README EXPERIMENTAL ChangeLog CREDITS
