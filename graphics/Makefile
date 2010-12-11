@@ -862,6 +862,7 @@
     SUBDIR += rubygem-graphviz
     SUBDIR += rubygem-gruff
     SUBDIR += rubygem-imagesize
+    SUBDIR += rubygem-image_science
     SUBDIR += rubygem-objectdetect
     SUBDIR += rubygem-railroad
     SUBDIR += rubygem-scruffy
