@@ -1529,6 +1529,7 @@
     SUBDIR += pylot
     SUBDIR += pyweblib
     SUBDIR += qdecoder
+    SUBDIR += qooxdoo
     SUBDIR += qt4-webkit
     SUBDIR += quickie
     SUBDIR += quixote
