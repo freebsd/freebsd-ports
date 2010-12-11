@@ -24,6 +24,7 @@ bin/tex2lyx
 %%NLS%%share/locale/ro/LC_MESSAGES/lyx.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/lyx.mo
 %%NLS%%share/locale/sk/LC_MESSAGES/lyx.mo
+%%NLS%%share/locale/sr/LC_MESSAGES/lyx.mo
 %%NLS%%share/locale/tr/LC_MESSAGES/lyx.mo
 %%NLS%%share/locale/uk/LC_MESSAGES/lyx.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/lyx.mo
@@ -361,6 +362,7 @@ bin/tex2lyx
 %%DATADIR%%/examples/sl/primer_surov.lyx
 %%DATADIR%%/examples/sl/splash.lyx
 %%DATADIR%%/examples/splash.lyx
+%%DATADIR%%/examples/sr/splash.lyx
 %%DATADIR%%/examples/tufte-book.lyx
 %%DATADIR%%/examples/tufte-handout.lyx
 %%DATADIR%%/examples/uk/splash.lyx
@@ -565,6 +567,8 @@ bin/tex2lyx
 %%DATADIR%%/images/math/dashrightarrow.png
 %%DATADIR%%/images/math/dashv.png
 %%DATADIR%%/images/math/ddagger.png
+%%DATADIR%%/images/math/ddddot.png
+%%DATADIR%%/images/math/dddot.png
 %%DATADIR%%/images/math/ddot.png
 %%DATADIR%%/images/math/ddots.png
 %%DATADIR%%/images/math/delim.png
@@ -1078,6 +1082,7 @@ bin/tex2lyx
 %%DATADIR%%/layouts/agu_stdtitle.inc
 %%DATADIR%%/layouts/agums.layout
 %%DATADIR%%/layouts/aguplus.inc
+%%DATADIR%%/layouts/agutex.layout
 %%DATADIR%%/layouts/amsart.layout
 %%DATADIR%%/layouts/amsbook.layout
 %%DATADIR%%/layouts/amsdefs.inc
@@ -1109,6 +1114,7 @@ bin/tex2lyx
 %%DATADIR%%/layouts/docbook.layout
 %%DATADIR%%/layouts/doublecol-new.layout
 %%DATADIR%%/layouts/dtk.layout
+%%DATADIR%%/layouts/ectaart.layout
 %%DATADIR%%/layouts/egs.layout
 %%DATADIR%%/layouts/elsart.layout
 %%DATADIR%%/layouts/elsarticle.layout
@@ -1123,6 +1129,7 @@ bin/tex2lyx
 %%DATADIR%%/layouts/figs-within-sections.module
 %%DATADIR%%/layouts/foils.layout
 %%DATADIR%%/layouts/foottoend.module
+%%DATADIR%%/layouts/frletter.layout
 %%DATADIR%%/layouts/g-brief-de.layout
 %%DATADIR%%/layouts/g-brief-en.layout
 %%DATADIR%%/layouts/g-brief2.layout
@@ -1144,6 +1151,7 @@ bin/tex2lyx
 %%DATADIR%%/layouts/kluwer.layout
 %%DATADIR%%/layouts/latex8.layout
 %%DATADIR%%/layouts/letter.layout
+%%DATADIR%%/layouts/lettre.layout
 %%DATADIR%%/layouts/linguistics.module
 %%DATADIR%%/layouts/literate-article.layout
 %%DATADIR%%/layouts/literate-book.layout
@@ -1351,14 +1359,17 @@ bin/tex2lyx
 %%DATADIR%%/templates/aa.lyx
 %%DATADIR%%/templates/aastex.lyx
 %%DATADIR%%/templates/agu_article.lyx
+%%DATADIR%%/templates/agutex.lyx
 %%DATADIR%%/templates/apa.lyx
 %%DATADIR%%/templates/beamer-conference-ornate-20min.lyx
 %%DATADIR%%/templates/de_beamer-conference-ornate-20min.lyx
 %%DATADIR%%/templates/dinbrief.lyx
 %%DATADIR%%/templates/docbook_article.lyx
+%%DATADIR%%/templates/ectaart.lyx
 %%DATADIR%%/templates/elsarticle.lyx
 %%DATADIR%%/templates/es_beamer-conference-ornate-20min.lyx
 %%DATADIR%%/templates/fr_beamer-conference-ornate-20min.lyx
+%%DATADIR%%/templates/frletter.lyx
 %%DATADIR%%/templates/g-brief-de.lyx
 %%DATADIR%%/templates/g-brief-en.lyx
 %%DATADIR%%/templates/g-brief2.lyx
@@ -1370,6 +1381,7 @@ bin/tex2lyx
 %%DATADIR%%/templates/koma-letter2.lyx
 %%DATADIR%%/templates/latex8.lyx
 %%DATADIR%%/templates/letter.lyx
+%%DATADIR%%/templates/lettre.lyx
 %%DATADIR%%/templates/revtex.lyx
 %%DATADIR%%/templates/revtex4.lyx
 %%DATADIR%%/templates/slides.lyx
@@ -1401,6 +1413,7 @@ bin/tex2lyx
 @dirrm %%DATADIR%%/images
 @dirrm %%DATADIR%%/fonts
 @dirrm %%DATADIR%%/examples/uk
+@dirrm %%DATADIR%%/examples/sr
 @dirrm %%DATADIR%%/examples/sl
 @dirrm %%DATADIR%%/examples/sk
 @dirrm %%DATADIR%%/examples/ru
@@ -1416,9 +1429,9 @@ bin/tex2lyx
 @dirrm %%DATADIR%%/examples/gl
 @dirrm %%DATADIR%%/examples/fr
 @dirrm %%DATADIR%%/examples/fa
-@dirrm %%DATADIR%%/examples/el
 @dirrm %%DATADIR%%/examples/eu
 @dirrm %%DATADIR%%/examples/es
+@dirrm %%DATADIR%%/examples/el
 @dirrm %%DATADIR%%/examples/de
 @dirrm %%DATADIR%%/examples/da
 @dirrm %%DATADIR%%/examples/cs
@@ -1447,10 +1460,10 @@ bin/tex2lyx
 @dirrm %%DATADIR%%/doc/gl
 @dirrm %%DATADIR%%/doc/fr/clipart
 @dirrm %%DATADIR%%/doc/fr
-@dirrm %%DATADIR%%/doc/el
 @dirrm %%DATADIR%%/doc/eu
 @dirrm %%DATADIR%%/doc/es/clipart
 @dirrm %%DATADIR%%/doc/es
+@dirrm %%DATADIR%%/doc/el
 @dirrm %%DATADIR%%/doc/de/clipart
 @dirrm %%DATADIR%%/doc/de
 @dirrm %%DATADIR%%/doc/da
