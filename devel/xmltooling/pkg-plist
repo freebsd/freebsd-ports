@@ -1,9 +1,9 @@
-%%DOCSDIR%%/CURL.LICENSE
-%%DOCSDIR%%/LICENSE.txt
-%%DOCSDIR%%/LOG4CPP.LICENSE
-%%DOCSDIR%%/NOTICE.txt
-%%DOCSDIR%%/OPENSSL.LICENSE
-%%DOCSDIR%%/README.txt
+%%PORTDOCS%%%%DOCSDIR%%/CURL.LICENSE
+%%PORTDOCS%%%%DOCSDIR%%/LICENSE.txt
+%%PORTDOCS%%%%DOCSDIR%%/LOG4CPP.LICENSE
+%%PORTDOCS%%%%DOCSDIR%%/NOTICE.txt
+%%PORTDOCS%%%%DOCSDIR%%/OPENSSL.LICENSE
+%%PORTDOCS%%%%DOCSDIR%%/README.txt
 include/xmltooling/AbstractAttributeExtensibleXMLObject.h
 include/xmltooling/AbstractComplexElement.h
 include/xmltooling/AbstractDOMCachingXMLObject.h
@@ -93,7 +93,7 @@ share/xml/xmltooling/xenc-schema.xsd
 share/xml/xmltooling/xml.xsd
 share/xml/xmltooling/xmldsig-core-schema.xsd
 share/xml/xmltooling/xmltooling.xsd
-@dirrm %%DOCSDIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrmtry include/xmltooling/encryption
 @dirrmtry include/xmltooling/impl
 @dirrmtry include/xmltooling/io
