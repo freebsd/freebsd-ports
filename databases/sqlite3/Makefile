@@ -53,7 +53,7 @@ OPTIONS=	\
 		EXTENSION	"Allow loadable extensions"		on \
 		TCLWRAPPER	"Enable TCL wrapper"			off \
 		DEBUG		"Enable debugging & verbose explain"	off \
-		GCOV		"Enable coverage testing using gcov"	off \
+		GCOV		"Enable coverage testing using gcov (broken)"	off \
 
 .include <bsd.port.options.mk>
 
@@ -76,6 +76,7 @@ CFLAGS+=		-Wall
 .endif
 
 .if defined(WITH_GCOV)
+BROKEN=	WITH_GCOV breaks security/nss
 CONFIGURE_ARGS+=	--enable-gcov
 LDFLAGS+=		-fstack-protector
 .endif
