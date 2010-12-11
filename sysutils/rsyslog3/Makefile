@@ -16,6 +16,7 @@ SUB_FILES=	pkg-message
 MAN8=	rsyslogd.8
 MAN5=	rsyslog.conf.5
 
+
 CONFIGURE_ARGS+=--enable-klog --disable-static --enable-mail \
 		--enable-imfile --enable-imtemplate --enable-gnutls
 .ifdef WITH_DEBUG
@@ -39,4 +40,8 @@ post-install:
 
 .include "${.CURDIR}/bsd.rsyslog.mk"
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+.if ${OSVERSION} >= 900007
+EXTRA_PATCHES=	${FILESDIR}/extra-patch-tools__omusrmsg.c
+.endif
+.include <bsd.port.post.mk>
