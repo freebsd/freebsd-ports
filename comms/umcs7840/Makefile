@@ -28,9 +28,11 @@ MAKE_ENV+=	KMODDIR=${KMODDIR}
 MANCOMPRESSED=	yes
 MAN4=		${PORTNAME}.4
 
+.include <bsd.port.pre.mk>
+
 .if !exists(/usr/src/sys/Makefile)
 IGNORE=	requires kernel source files
-.eliif ${OSVERSION} <= 800063
+.elif ${OSVERSION} <= 800063
 IGNORE=	requires FreeBSD 8.0 or later, please try driver from vendor site
 .endif
 
@@ -40,4 +42,4 @@ post-install:
 post-deinstall:
 	kldxref ${KMODDIR}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
