@@ -50,7 +50,8 @@ RUN_DEPENDS+=	rubygem-mongrel>=0:${PORTSDIR}/www/rubygem-mongrel
 .include <bsd.port.pre.mk>
 
 post-patch:
-	@${REINPLACE_CMD} -e "s|/etc/puppet|${PREFIX}/etc/puppet|" \
+	@${REINPLACE_CMD} -e "s|/etc/puppet|${ETCDIR}|" \
+		${WRKSRC}/install.rb \
 		${WRKSRC}/lib/puppet/reference/configuration.rb \
 		${WRKSRC}/lib/puppet/defaults.rb \
 		${WRKSRC}/lib/puppet/util/run_mode.rb
@@ -66,16 +67,16 @@ pre-install:
 	@${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 
 do-install:
-	@cd ${WRKSRC} && ${SETENV} PREFIX=${PREFIX} ${RUBY} ${WRKSRC}/install.rb
+	@cd ${WRKSRC} && ${SETENV} PREFIX=${PREFIX} ${RUBY} ${WRKSRC}/install.rb --no-configs
 
 post-install:
-	${INSTALL} -d ${PREFIX}/etc/${PORTNAME}
+	${INSTALL} -d ${ETCDIR}
 	${RUBY} -I ${RUBY_SITELIBDIR} ${PREFIX}/sbin/puppetmasterd \
-		--confdir=${PREFIX}/etc/${PORTNAME} \
+		--confdir=${ETCDIR} \
 		--rundir=${PUPPET_RUNDIR} \
 		--genconfig | \
 		${SED} -e 's/genconfig = true/# genconfig = false/' \
-		> ${PREFIX}/etc/${PORTNAME}/puppet.conf-dist
+		> ${ETCDIR}/puppet.conf-dist
 	@${ECHO} ${RUBY_SITELIBDIR}/puppet.rb | \
 		${SED} 's,^${PREFIX}/,,' >> ${TMPPLIST}
 	@${FIND} ${RUBY_SITELIBDIR}/${PORTNAME} -type f | \
@@ -89,6 +90,7 @@ post-install:
 .endif
 .if !defined(NOPORTEXAMPLES)
 	cd ${WRKSRC}/examples/ && ${COPYTREE_SHARE} . ${EXAMPLESDIR}
+	${INSTALL} ${WRKSRC}/conf/auth.conf ${EXAMPLESDIR}/etc
 .endif
 	@${CAT} ${PKGMESSAGE}
 
