@@ -1,5 +1,3 @@
 %%SITE_PERL%%/XML/TreeBuilder.pm
 %%SITE_PERL%%/XML/Element.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/XML-TreeBuilder/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML-TreeBuilder
 @dirrmtry %%SITE_PERL%%/XML
