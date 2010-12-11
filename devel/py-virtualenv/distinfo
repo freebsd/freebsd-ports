@@ -1,3 +1,4 @@
-MD5 (virtualenv-1.5.1.tar.gz) = 3daa1f449d5d2ee03099484cecb1c2b7
 SHA256 (virtualenv-1.5.1.tar.gz) = e2bbc4e80164e1ad83afba698559c2923f4bb7e61197b885c0a0befb29533438
 SIZE (virtualenv-1.5.1.tar.gz) = 1424650
+SHA256 (setuptools-0.6c11-py2.7.egg) = 0d58908ff49d88391082f701c4baa43f1246abde920a5f91ce78edcc1aa67262
+SIZE (setuptools-0.6c11-py2.7.egg) = 332005
