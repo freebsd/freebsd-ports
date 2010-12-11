@@ -48,7 +48,7 @@ post-patch:
 		${WRKSRC}/mk/beforeauto.mk.in
 
 post-install:
-.if !defined(NOPORTDOCS)
+.if !defined(NOPORTEXAMPLES)
 	@${MKDIR} ${EXAMPLESDIR}
 	@cd ${WRKSRC}/examples && ${FIND} . -not -name .cvsignore \
 	  | ${CPIO} --quiet -pdum -R ${SHAREOWN}:${SHAREGRP} ${EXAMPLESDIR}
