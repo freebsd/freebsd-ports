@@ -10,7 +10,7 @@
 # want fetchmailconf to work, define WITH_X11
 
 PORTNAME=	fetchmail
-PORTVERSION=	6.3.18
+PORTVERSION=	6.3.19
 CATEGORIES=	mail ipv6
 MASTER_SITES=	${MASTER_SITE_BERLIOS} \
 		http://mandree.home.pages.de/fetchmail/:ma \
@@ -30,7 +30,7 @@ FETCHMAILRC=	${PREFIX}/etc/fetchmailrc
 SUB_FILES=	pkg-message
 PATCH_STRIP=	-p1
 
-USE_BZIP2=	yes
+USE_XZ=		yes
 USE_GMAKE=	yes
 MAKE_JOBS_SAFE=	yes
 GNU_CONFIGURE=	yes
