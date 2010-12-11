@@ -40,18 +40,21 @@ BROKEN=		Does not compile on sparc64 (needs -fPIC)
 
 CONFIGURE_ARGS+=--without-gtk
 
+DOCSDIR=	${PREFIX}/share/doc/bitchx
+DATADIR=	${PREFIX}/share/bx
+
 post-patch:
 	${TOUCH} ${WRKSRC}/configure
 
 post-install:
 	@(${LN} -sf ${PREFIX}/bin/BitchX ${PREFIX}/bin/bx)
+	${MKDIR} ${DATADIR}/help/
+	${CP} -r ${WRKSRC}/bitchx-docs/* ${DATADIR}/help
+	${RMDIR} ${DATADIR}/help/4_Misc/fset
+	${RMDIR} ${DATADIR}/help/4_Misc/wset
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/share/bx/help
-	${MKDIR} ${PREFIX}/share/doc/bitchx
-	${CP} -r ${WRKSRC}/bitchx-docs/* ${PREFIX}/share/bx/help
-	${INSTALL_DATA} ${WRKSRC}/doc/bxfaq.html ${PREFIX}/share/doc/bitchx
-	${RMDIR} ${PREFIX}/share/bx/help/4_Misc/fset
-	${RMDIR} ${PREFIX}/share/bx/help/4_Misc/wset
+	${MKDIR} ${DOCSDIR}/
+	${INSTALL_DATA} ${WRKSRC}/doc/bxfaq.html ${DOCSDIR}/
 .endif
 
 .include <bsd.port.post.mk>
