@@ -16,7 +16,7 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	knu@FreeBSD.org
 COMMENT=	Ruby (1.9.1+) binding to Kyoto Cabinet
 
-LIB_DEPENDS=	kyotocabinet.2:${PORTSDIR}/databases/kyotocabinet
+LIB_DEPENDS=	kyotocabinet.4:${PORTSDIR}/databases/kyotocabinet
 
 RUBY_VER=	1.9
 USE_RUBY=	yes
