@@ -8,7 +8,7 @@
 PORTNAME=	kyotocabinet
 PORTVERSION=	1.2.7
 CATEGORIES=	databases
-MASTER_SITES=	http://fallabs.com/kyotocabinet/
+MASTER_SITES=	http://fallabs.com/kyotocabinet/pkg/
 
 MAINTAINER=	knu@FreeBSD.org
 COMMENT=	A straightforward implementation of DBM

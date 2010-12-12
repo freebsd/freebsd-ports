@@ -8,7 +8,7 @@
 PORTNAME=	kyotocabinet
 PORTVERSION=	1.11
 CATEGORIES=	databases ruby
-MASTER_SITES=	http://1978th.net/kyotocabinet/rubypkg/
+MASTER_SITES=	http://fallabs.com/kyotocabinet/rubypkg/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DISTNAME=	${PORTNAME}-ruby-${PORTVERSION}
 DIST_SUBDIR=	ruby
