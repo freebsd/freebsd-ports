@@ -1,0 +1,12 @@
+#
+# $FreeBSD$
+#
+
+CONFLICTS=	bugzilla-2.*
+
+PORTSCOUT=	limitw:1,even
+
+WWWDIR=	${PREFIX}/www/bugzilla
+
+NO_BUILD=	yes
+

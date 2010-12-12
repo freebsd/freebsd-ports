@@ -6,14 +6,33 @@
 #
 
 PORTNAME=	bugzilla
-PORTVERSION=	3.6.2
-PORTREVISION=	1
+PORTVERSION=	3.6.3
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_MOZILLA}
 MASTER_SITE_SUBDIR=	webtools webtools/archived
 
 MAINTAINER=	skv@FreeBSD.org
 COMMENT=	Bug-tracking system developed by Mozilla Project
+
+RUN_DEPENDS=	\
+		${SITE_PERL}/Date/Parse.pm:${PORTSDIR}/devel/p5-TimeDate \
+		p5-DBI>=1.41:${PORTSDIR}/databases/p5-DBI \
+		p5-Template-Toolkit>=2.22:${PORTSDIR}/www/p5-Template-Toolkit \
+		p5-DateTime>=0.28:${PORTSDIR}/devel/p5-DateTime \
+		p5-DateTime-TimeZone>=0.71:${PORTSDIR}/devel/p5-DateTime-TimeZone \
+		p5-URI>=0:${PORTSDIR}/net/p5-URI \
+		p5-Email-Send>=2.00:${PORTSDIR}/mail/p5-Email-Send \
+		p5-Email-MIME>=1.861:${PORTSDIR}/mail/p5-Email-MIME
+
+USE_PERL5=	yes
+
+BINMODE=	700
+
+SUB_FILES=	pkg-message
+
+DATA_DIRS_LIST=	images js skins
+
+.include "${.CURDIR}/Makefile.common"
 
 OPTIONS=	MYSQL "MySQL database support" off \
 		PGSQL "PostgreSQL database support" off \
@@ -33,41 +52,6 @@ OPTIONS=	MYSQL "MySQL database support" off \
 		CONTRIB	"Install user-contributed scripts" off \
 		LDAP "LDAP Authentication" off \
 		RADIUS "RADIUS Authentication" off
-
-RUN_DEPENDS+=	\
-		${SITE_PERL}/Date/Parse.pm:${PORTSDIR}/devel/p5-TimeDate \
-		p5-DBI>=1.41:${PORTSDIR}/databases/p5-DBI \
-		p5-Template-Toolkit>=2.22:${PORTSDIR}/www/p5-Template-Toolkit \
-		p5-DateTime>=0.28:${PORTSDIR}/devel/p5-DateTime \
-		p5-DateTime-TimeZone>=0.71:${PORTSDIR}/devel/p5-DateTime-TimeZone \
-		p5-URI>=0:${PORTSDIR}/net/p5-URI \
-		p5-Email-Send>=2.00:${PORTSDIR}/mail/p5-Email-Send \
-		p5-Email-MIME>=1.861:${PORTSDIR}/mail/p5-Email-MIME
-
-CONFLICTS=	bugzilla-2.*
-
-PORTSCOUT=	limitw:1,even
-
-USE_PERL5=	yes
-
-BINMODE=	700
-PKGMESSAGE=	${WRKDIR}/pkg-message
-
-.ifndef BUGZILLADIR
-.ifdef APACHE_DATADIR
-BUGZILLADIR=	${APACHE_DATADIR}/data/bugzilla
-.else
-BUGZILLADIR=	${PREFIX}/www/data/bugzilla
-.endif
-.endif
-
-SUB_FILES=	pkg-message
-SUB_LIST=	BUGZILLADIR=${BUGZILLADIR}
-PLIST_SUB+=	BUGZILLADIR=${BUGZILLADIR:S!^${PREFIX}/!!}
-
-DATA_DIRS_LIST=	images js skins
-
-NO_BUILD=
 
 .include <bsd.port.pre.mk>
 
@@ -175,29 +159,29 @@ post-patch:
 .endif
 	@${FIND} ${WRKSRC} \( -name "CVS" -or -name ".cvsignore" -or -name "*.orig" \
 		-or -name ".bzr*" -or -name "README.docs" \) | ${XARGS} ${RM} -rf
-	${FIND} ${WRKSRC} -type f -exec ${REINPLACE_CMD} -i '' \
+	@${FIND} ${WRKSRC} -type f -exec ${REINPLACE_CMD} -i '' \
 		-e 's!/usr/lib/sendmail!/usr/sbin/sendmail!g; s=/usr/bin/perl=${PERL}=g' {} \+
 	@${FIND} ${WRKSRC}/docs -type f | \
-		${XARGS} ${REINPLACE_CMD} -i '' -e "s!/var/www/html/bugzilla!${BUGZILLADIR}!"
+		${XARGS} ${REINPLACE_CMD} -i '' -e "s!/var/www/html/bugzilla!${WWWDIR}!"
 
-do-install:
-	${MKDIR} ${BUGZILLADIR}
+do-install:	.SILENT
+	${MKDIR} ${WWWDIR}
 	${FIND} ${WRKSRC} \! -type d -maxdepth 1 \! -name "UPGRADING*" -exec \
-		${INSTALL_SCRIPT} {} ${BUGZILLADIR} \;
-	@${MKDIR} ${DATA_DIRS_LIST:S!^!${BUGZILLADIR}/!}
+		${INSTALL_SCRIPT} {} ${WWWDIR} \;
+	@${MKDIR} ${DATA_DIRS_LIST:S!^!${WWWDIR}/!}
 .for D in ${DATA_DIRS_LIST}
-	(cd ${WRKSRC}/${D} && ${COPYTREE_SHARE} . ${BUGZILLADIR}/${D})
+	(cd ${WRKSRC}/${D} && ${COPYTREE_SHARE} . ${WWWDIR}/${D})
 .endfor
-	${TAR} -C ${WRKSRC} -cf - Bugzilla template | ${TAR} --unlink -C ${BUGZILLADIR} -xf -
+	${TAR} -C ${WRKSRC} -cf - Bugzilla template | ${TAR} --unlink -C ${WWWDIR} -xf -
 .ifndef NOPORTDOCS
 	${MKDIR} ${DOCSDIR}
 	(cd ${WRKSRC}/docs/ && ${COPYTREE_SHARE} . ${DOCSDIR}/)
 .endif
 .ifdef WITH_CONTRIB
-	${MKDIR} ${BUGZILLADIR}/contrib
+	${MKDIR} ${WWWDIR}/contrib
 	@cd ${WRKSRC}/contrib && \
-		${FIND} . -type d -exec ${MKDIR} "${BUGZILLADIR}/contrib/{}" \; && \
-		${FIND} . -type f -exec ${INSTALL_DATA} "{}" "${BUGZILLADIR}/contrib/{}" \;
+		${FIND} . -type d -exec ${MKDIR} "${WWWDIR}/contrib/{}" \; && \
+		${FIND} . -type f -exec ${INSTALL_DATA} "{}" "${WWWDIR}/contrib/{}" \;
 .endif
 .if !defined(BATCH)
 	@${ECHO_MSG}
