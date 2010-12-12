@@ -1,0 +1,251 @@
+diff -u a/src/core/nginx.c b/src/core/nginx.c
+index 80a5d18..fdad5d5 100644
+--- src/core/nginx.c.orig
++++ src/core/nginx.c
+@@ -8,6 +8,9 @@
+ #include <ngx_core.h>
+ #include <nginx.h>
+ 
++#ifdef USE_SYSLOG
++#include <syslog.h>
++#endif
+ 
+ static ngx_int_t ngx_add_inherited_sockets(ngx_cycle_t *cycle);
+ static ngx_int_t ngx_get_options(int argc, char *const *argv);
+@@ -278,6 +281,11 @@ main(int argc, char *const *argv)
+     ngx_ssl_init(log);
+ #endif
+ 
++    /* SYSLOG SUPPORT */
++#ifdef USE_SYSLOG
++    openlog("nginx", LOG_NDELAY, SYSLOG_FACILITY);
++#endif
++
+     /*
+      * init_cycle->log is required for signal handlers and
+      * ngx_process_options()
+@@ -396,6 +404,10 @@ main(int argc, char *const *argv)
+         ngx_master_process_cycle(cycle);
+     }
+ 
++#ifdef USE_SYSLOG
++    closelog();
++#endif
++
+     return 0;
+ }
+ 
+diff -u a/src/core/ngx_conf_file.c b/src/core/ngx_conf_file.c
+index 83c1073..1817627 100644
+--- src/core/ngx_conf_file.c.orig
++++ src/core/ngx_conf_file.c
+@@ -907,6 +907,12 @@ ngx_conf_open_file(ngx_cycle_t *cycle, ngx_str_t *name)
+     ngx_str_null(&full);
+ #endif
+ 
++#ifdef USE_SYSLOG
++    if (name->len) {
++      name->len = 0;
++    }
++#endif
++
+     if (name->len) {
+         full = *name;
+ 
+diff -u a/src/core/ngx_log.c b/src/core/ngx_log.c
+index c0485c6..b4ae00a 100644
+--- src/core/ngx_log.c.orig
++++ src/core/ngx_log.c
+@@ -7,6 +7,9 @@
+ #include <ngx_config.h>
+ #include <ngx_core.h>
+ 
++#ifdef USE_SYSLOG
++#include <syslog.h>
++#endif
+ 
+ static char *ngx_error_log(ngx_conf_t *cf, ngx_command_t *cmd, void *conf);
+ 
+@@ -90,9 +93,11 @@ ngx_log_error_core(ngx_uint_t level, ngx_log_t *log, ngx_err_t err,
+     u_char  *p, *last, *msg;
+     u_char   errstr[NGX_MAX_ERROR_STR];
+ 
++#ifndef USE_SYSLOG
+     if (log->file->fd == NGX_INVALID_FILE) {
+         return;
+     }
++#endif
+ 
+     last = errstr + NGX_MAX_ERROR_STR;
+ 
+@@ -139,7 +144,21 @@ ngx_log_error_core(ngx_uint_t level, ngx_log_t *log, ngx_err_t err,
+ 
+     ngx_linefeed(p);
+ 
++#ifdef USE_SYSLOG
++    /* allocate a string which can hold the error message */
++    char *syslogstr;
++
++    if ((syslogstr = calloc((p - errstr + 1), sizeof(char))) != NULL) {
++      strncpy(syslogstr, errstr, p - errstr);
++
++      /* write to syslog */
++      syslog(LOG_CRIT, "%s", syslogstr);
++
++      free(syslogstr);
++    }
++#else
+     (void) ngx_write_fd(log->file->fd, errstr, p - errstr);
++#endif
+ 
+     if (!ngx_use_stderr
+         || level > NGX_LOG_WARN
+@@ -428,6 +447,10 @@ ngx_error_log(ngx_conf_t *cf, ngx_command_t *cmd, void *conf)
+ 
+     value = cf->args->elts;
+ 
++#ifdef USE_SYSLOG
++    value[1].data = "stderr";
++#endif
++
+     if (ngx_strcmp(value[1].data, "stderr") == 0) {
+         ngx_str_null(&name);
+ 
+diff -u a/src/http/modules/ngx_http_log_module.c b/src/http/modules/ngx_http_log_module.c
+index 5f356c3..5232ad6 100644
+--- src/http/modules/ngx_http_log_module.c.orig
++++ src/http/modules/ngx_http_log_module.c
+@@ -8,6 +8,9 @@
+ #include <ngx_core.h>
+ #include <ngx_http.h>
+ 
++#ifdef USE_SYSLOG
++#include <syslog.h>
++#endif
+ 
+ typedef struct ngx_http_log_op_s  ngx_http_log_op_t;
+ 
+@@ -310,6 +313,19 @@ static void
+ ngx_http_log_write(ngx_http_request_t *r, ngx_http_log_t *log, u_char *buf,
+     size_t len)
+ {
++#ifdef USE_SYSLOG
++  /* allocate a string which can hold the error message */
++  char *syslogstr;
++
++  if ((syslogstr = calloc((len + 1), sizeof(char))) != NULL) {
++    strncpy(syslogstr, buf, len);
++
++    /* write to syslog */
++    syslog(LOG_NOTICE, "%s", syslogstr);
++
++    free(syslogstr);
++  }
++#else
+     u_char     *name;
+     time_t      now;
+     ssize_t     n;
+@@ -354,6 +370,7 @@ ngx_http_log_write(ngx_http_request_t *r, ngx_http_log_t *log, u_char *buf,
+ 
+         log->error_log_time = now;
+     }
++#endif
+ }
+ 
+ 
+@@ -818,7 +835,11 @@ ngx_http_log_merge_loc_conf(ngx_conf_t *cf, void *parent, void *child)
+         return NGX_CONF_ERROR;
+     }
+ 
++#ifdef USE_SYSLOG
++    ngx_http_access_log.data = "";
++#endif
+     log->file = ngx_conf_open_file(cf->cycle, &ngx_http_access_log);
++
+     if (log->file == NULL) {
+         return NGX_CONF_ERROR;
+     }
+@@ -883,7 +904,11 @@ ngx_http_log_set_log(ngx_conf_t *cf, ngx_command_t *cmd, void *conf)
+     n = ngx_http_script_variables_count(&value[1]);
+ 
+     if (n == 0) {
++#ifdef USE_SYSLOG
++        value[1].data = "";
++#endif
+         log->file = ngx_conf_open_file(cf->cycle, &value[1]);
++
+         if (log->file == NULL) {
+             return NGX_CONF_ERROR;
+         }
+-- 
+1.6.3.3
+
+--- auto/summary.orig	2010-07-08 19:57:36.000000000 +0400
++++ auto/summary	2010-12-08 12:25:16.000000000 +0300
+@@ -73,6 +73,11 @@
+     *)     echo "  + using libatomic_ops library: $NGX_LIBATOMIC" ;;
+ esac
+ 
++case $USE_SYSLOG in
++    YES)   echo "  + using syslog with $SYSLOG_FACILITY facility" ;;
++    *)     echo "  + syslog is not used" ;;
++esac
++
+ echo
+ 
+ 
+--- auto/make.orig	2009-05-12 17:15:43.000000000 +0400
++++ auto/make	2010-12-08 12:32:25.000000000 +0300
+@@ -15,6 +15,13 @@
+ ngx_objs_dir=$NGX_OBJS$ngx_regex_dirsep
+ ngx_use_pch=`echo $NGX_USE_PCH | sed -e "s/\//$ngx_regex_dirsep/g"`
+ 
++#SYSLOG
++if test -z "${SYSLOG_FACILITY}"; then
++    SYSLOG_FACILITY="LOG_DAEMON"
++fi
++if test "${USE_SYSLOG}" = "YES"; then
++    CFLAGS="$CFLAGS -DUSE_SYSLOG -DSYSLOG_FACILITY=${SYSLOG_FACILITY}"
++fi
+ 
+ cat << END                                                     > $NGX_MAKEFILE
+ 
+--- auto/options.orig	2010-06-18 19:51:14.000000000 +0400
++++ auto/options	2010-12-08 13:00:42.000000000 +0300
+@@ -118,6 +118,8 @@
+ MD5_OPT=
+ MD5_ASM=NO
+ 
++USE_SYSLOG=NO
++
+ USE_SHA1=NO
+ SHA1=NONE
+ SHA1_OPT=
+@@ -270,6 +272,9 @@
+         --with-md5-opt=*)                MD5_OPT="$value"           ;;
+         --with-md5-asm)                  MD5_ASM=YES                ;;
+ 
++	--with-syslog)			 USE_SYSLOG=YES		    ;;
++        --with-syslog-facility=*)        SYSLOG_FACILITY="$value"  ;;
++
+         --with-sha1=*)                   SHA1="$value"              ;;
+         --with-sha1-opt=*)               SHA1_OPT="$value"          ;;
+         --with-sha1-asm)                 SHA1_ASM=YES               ;;
+@@ -410,6 +415,9 @@
+   --with-md5-opt=OPTIONS             set additional options for md5 building
+   --with-md5-asm                     use md5 assembler sources
+ 
++  --with-syslog			     use syslog instead of files to log messages
++  --with-syslog-facility=FACILITY    set syslog facility
++
+   --with-sha1=DIR                    set path to sha1 library sources
+   --with-sha1-opt=OPTIONS            set additional options for sha1 building
+   --with-sha1-asm                    use sha1 assembler sources
+@@ -427,6 +435,7 @@
+   --with-openssl-opt=OPTIONS         set additional options for OpenSSL building
+ 
+   --with-debug                       enable the debugging logging
++  
+ 
+ END
+ 

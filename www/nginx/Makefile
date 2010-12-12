@@ -73,6 +73,7 @@ OPTIONS=	DEBUG			"Enable nginx debugging" off \
 		PASSENGER_MODULE	"3rd party passenger module" off \
 		SLOWFS_CACHE_MODULE	"3rd party slowfs_cache module" off \
 		SUPERVISORD_MODULE	"3rd party supervisord module" off \
+		SYSLOG_SUPPORT          "3rd party syslog support" off \
 		UDPLOG_MODULE		"3rd party udplog (syslog) module" off
 
 WANT_GNOME=	yes
@@ -418,6 +419,12 @@ NGINX_SUPERVISORD_MODULE_VERSION=	1.4
 MASTER_SITES+=	http://labs.frickle.com/files/:supervisord
 DISTFILES+=	ngx_supervisord-${NGINX_SUPERVISORD_MODULE_VERSION}.tar.gz:supervisord
 CONFIGURE_ARGS+=--add-module=${WRKDIR}/ngx_supervisord-${NGINX_SUPERVISORD_MODULE_VERSION}
+.endif
+
+.if defined(WITH_SYSLOG_SUPPORT)
+NGINX_SYSLOG_SUPPORT_FACILITY?=	LOG_DAEMON
+CONFIGURE_ARGS+=--with-syslog --with-syslog-facility=${NGINX_SYSLOG_SUPPORT_FACILITY}
+EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-syslog_support
 .endif
 
 .if defined(WITH_UDPLOG_MODULE)
