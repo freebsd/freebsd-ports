@@ -1,23 +1,24 @@
---- ../passenger-3.0.0/build/nginx.rb.orig	2010-10-01 14:22:34.000000000 +0400
-+++ ../passenger-3.0.0/build/nginx.rb	2010-12-04 15:27:45.000000000 +0300
-@@ -16,10 +16,7 @@
+--- ../passenger-3.0.1/build/nginx.rb.orig	2010-12-07 13:57:32.000000000 +0300
++++ ../passenger-3.0.1/build/nginx.rb	2010-12-07 13:58:13.000000000 +0300
+@@ -23,10 +23,7 @@
  
  desc "Build Nginx helper agent"
  task :nginx => [
--	'agents/nginx/PassengerHelperAgent',
--	'agents/PassengerWatchdog',
--	'agents/PassengerLoggingAgent',
+-	AGENT_OUTPUT_DIR + 'nginx/PassengerHelperAgent',
+-	AGENT_OUTPUT_DIR + 'PassengerWatchdog',
+-	AGENT_OUTPUT_DIR + 'PassengerLoggingAgent',
 -	:native_support
-+	'agents/nginx/PassengerHelperAgent'
++	AGENT_OUTPUT_DIR + 'nginx/PassengerHelperAgent'
  ]
  
  dependencies = [
-@@ -44,17 +41,7 @@
+@@ -51,18 +48,7 @@
  	LIBCOMMON,
  ]
- file 'agents/nginx/PassengerHelperAgent' => dependencies do
--	sh "mkdir -p agents/nginx" if !File.directory?("agents/nginx")
--	create_executable "agents/nginx/PassengerHelperAgent",
+ file AGENT_OUTPUT_DIR + 'nginx/PassengerHelperAgent' => dependencies do
+-	output_dir = "#{AGENT_OUTPUT_DIR}nginx"
+-	sh "mkdir -p #{output_dir}" if !File.directory?(output_dir)
+-	create_executable "#{output_dir}/PassengerHelperAgent",
 -		'ext/nginx/HelperAgent.cpp',
 -		"-Iext -Iext/common " <<
 -		"#{PlatformInfo.portability_cflags} " <<
