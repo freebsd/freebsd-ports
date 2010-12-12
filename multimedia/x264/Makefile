@@ -20,8 +20,8 @@ COMMENT?=	Library and tool for encoding H.264/AVC video streams
 BUILD_DEPENDS=	yasm>=0.6.0:${PORTSDIR}/devel/yasm
 
 X264_BUILD=	110
-X264_REV=	1804
-X264_SNAPSHOT=	20101128
+X264_REV=	1820
+X264_SNAPSHOT=	20101211
 
 USE_BZIP2=	yes
 EXTRACT_AFTER_ARGS?=	| ${TAR} -xf - --exclude .svn
