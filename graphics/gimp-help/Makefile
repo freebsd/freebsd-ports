@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gimp-help
-PORTVERSION=	2.6.0
+PORTVERSION=	2.6.1
 CATEGORIES=	graphics
 MASTER_SITES=	# empty
 PKGNAMESUFFIX=	-html
@@ -15,6 +15,8 @@ EXTRACT_ONLY=	# empty
 
 MAINTAINER=	liangtai.s4@gmail.com
 COMMENT=	The meta port for GIMP User Manual
+
+LICENSE=	GFDL
 
 NO_BUILD=	yes
 

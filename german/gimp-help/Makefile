@@ -13,6 +13,6 @@ COMMENT=	The GIMP User Manual in German
 MASTERDIR=	${.CURDIR}/../../misc/gimp-help-en
 
 DOCLANG=	de
-AMPLE=	""
+AMPLE=	"@comment "
 
 .include "${MASTERDIR}/Makefile"
