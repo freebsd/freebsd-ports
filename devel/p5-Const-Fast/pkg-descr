@@ -1,0 +1,9 @@
+This module was written because I stumbled on some serious issues of Readonly
+that aren't easily fixable without breaking backwards compatibility in subtle
+ways. In particular Readonly's use of ties is a source of subtle bugs and bad
+performance. Instead, this module uses the builtin readonly feature of perl,
+making access to the variables just as fast as any normal variable without
+the weird side-effects of ties. Readonly can do the same for scalars when
+Readonly::XS is installed, but chooses not to do so in the most common case.
+
+WWW: http://search.cpan.org/dist/Const-Fast/
