@@ -7,13 +7,16 @@
 
 PORTNAME=	tomcat
 PORTVERSION=	5.5.31
+PORTREVISION=	1
 CATEGORIES=	www java
 MASTER_SITES=	${MASTER_SITE_APACHE}
 MASTER_SITE_SUBDIR=	tomcat/tomcat-5/v${PORTVERSION}/bin
 DISTFILES=	apache-tomcat-${PORTVERSION}.tar.gz
 
-MAINTAINER=	jgh@experts-exchange.com
+MAINTAINER=	jhelfman@experts-exchange.com
 COMMENT=	Open-source Java web server by Apache, 5.5.x branch
+
+OPTIONS=	CRONOLOG "Use Cronolog for Tomcat Log Processing" Off
 
 USE_JAVA=	yes
 JAVA_VERSION?=	1.4+
@@ -38,7 +41,8 @@ AJP_1_3_PORT?=	8009
 STDOUT_LOG=	${LOG_DIR}/stdout.log
 STDERR_LOG=	${LOG_DIR}/stderr.log
 PID_FILE=	/var/run/${APP_SHORTNAME}.pid
-REPLACE_FILES=	${WRKSRC}/conf/server.xml
+REPLACE_FILES=	${WRKSRC}/bin/catalina.sh \
+		${WRKSRC}/conf/server.xml
 REPLACE_LIST_TEMP=	${SUB_LIST:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/}
 JAR_FILE=	bin/bootstrap.jar
 WRKDIR?=	${WRKDIRPREFIX}${.CURDIR}/work
@@ -77,6 +81,18 @@ PLIST_SUB+=	JAVA14=""
 PLIST_SUB+=	JAVA14="@comment "
 .endif
 
+.if defined(WITH_CRONOLOG)
+REDIRECT?=     "2\>\&1"
+SUB_LIST+=     LOG_PROCESSOR=${LOG_PROCESSOR} \
+	       LOG_PROCESSOR_DIRECTIVES=${LOG_PROCESSOR_DIRECTIVES} \
+	       LOG_PROCESSOR_OPTS=${LOG_PROCESSOR_OPTS} \
+	       REDIRECT=${REDIRECT}
+RUN_DEPENDS+=	cronolog:${PORTSDIR}/sysutils/cronolog
+LOG_PROCESSOR_DIRECTIVES?= "\$$CATALINA_OUT \$$CATALINA_BASE/logs/catalina.out.\%Y_\%m_\%d.out"
+LOG_PROCESSOR?= ${LOCALBASE}/sbin/cronolog 
+LOG_PROCESSOR_OPTS?= --link
+.endif
+
 pre-patch:
 	@${ECHO_MSG} "Installation settings:"
 	@${ECHO_MSG} "   Destination directory:    ${APP_HOME}"
@@ -90,6 +106,10 @@ pre-patch:
 	@${ECHO_MSG} "   Logfile stderr:           ${STDERR_LOG}"
 
 post-patch:
+.if defined(WITH_CRONOLOG)
+	@cd ${WRKSRC} && ${PATCH} --quiet < ${FILESDIR}/logprocessor-cronolog
+.endif
+
 	@${ECHO_MSG} -n ">> Removing unneeded files..."
 	@${FIND} ${WRKSRC} -type f \( -name '*.bak' -or -name '*.bat' -or -name '*.dll' -or -name '*.exe' -or -name '*.orig' \) -delete
 	@${RMDIR} ${WRKSRC}/bin/[i,x]64
@@ -109,6 +129,7 @@ do-install:
 
 	@${ECHO_MSG} ">> Copying files to destination directory..."
 	@${CP} ${WRKDIR}/server.xml ${WRKSRC}/conf/
+	@${CP} ${WRKDIR}/catalina.sh ${WRKSRC}/bin/
 	@(cd ${WRKSRC};${FIND} conf -type f | ${SED} -e '/${CONF_EXT}/d') \
 		| while read a; do \
 			${MV} ${WRKSRC}/$$a ${WRKSRC}/$$a.${CONF_EXT}; \
