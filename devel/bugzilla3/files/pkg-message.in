@@ -14,7 +14,7 @@
            owner; <host> is a host there bugzilla is being setup;
            <password> is a database owner's password;
 
-  2. Change working directory to %%BUGZILLADIR%%
+  2. Change working directory to %%WWWDIR%%
   3. Run "./checksetup.pl" script as root user
   4. Read output carefully and follow all instructions
 
@@ -25,7 +25,7 @@
 
 For upgrades:
   0. Back up your data.
-  1. Run "./checksetup.pl" inside %%BUGZILLADIR%%.  You may need to
+  1. Run "./checksetup.pl" inside %%WWWDIR%%.  You may need to
      run it several times.
   2. Restart your Web server, especially if you're using mod_perl: this
      will save you from a number of troubles.
