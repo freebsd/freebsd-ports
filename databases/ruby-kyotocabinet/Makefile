@@ -18,6 +18,8 @@ COMMENT=	Ruby (1.9.1+) binding to Kyoto Cabinet
 
 LIB_DEPENDS=	kyotocabinet.4:${PORTSDIR}/databases/kyotocabinet
 
+BROKEN=	does not compile
+
 RUBY_VER=	1.9
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes
