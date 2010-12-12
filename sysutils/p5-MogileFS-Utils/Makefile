@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	MogileFS-Utils
-PORTVERSION=	2.16
-PORTREVISION=	1
+PORTVERSION=	2.18
 CATEGORIES=	sysutils net perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	../../authors/id/D/DO/DORMANDO
@@ -17,7 +16,7 @@ MAINTAINER=	perl@FreeBSD.org
 COMMENT=	MogileFS tools
 
 RUN_DEPENDS=	${SITE_PERL}/LWP/Simple.pm:${PORTSDIR}/www/p5-libwww \
-		${SITE_PERL}/MogileFS/Client.pm:${PORTSDIR}/sysutils/p5-MogileFS-Client
+	p5-MogileFS-Client>=1.13:${PORTSDIR}/sysutils/p5-MogileFS-Client
 
 PERL_CONFIGURE=	yes
 
