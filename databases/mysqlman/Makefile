@@ -8,7 +8,7 @@ PORTNAME=	mysqlman
 PORTVERSION=	1.09
 PORTREVISION=	2
 CATEGORIES=	databases www
-MASTER_SITES=	http://www.gossamer-threads.com/scripts/source/
+MASTER_SITES=	http://www.gossamer-threads.com/products/source/
 DISTNAME=	${PORTNAME}
 
 MAINTAINER=	janos.mohacsi@bsd.hu
