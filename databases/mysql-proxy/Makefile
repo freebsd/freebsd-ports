@@ -29,6 +29,6 @@ USE_LDCONFIG=	yes
 USE_LUA=	5.1+
 USE_MYSQL=	yes
 USE_RC_SUBR=	mysql-proxy.sh
-IGNORE_WITH_MYSQL=	323 40
+IGNORE_WITH_MYSQL=	323 40 41
 
 .include <bsd.port.mk>
