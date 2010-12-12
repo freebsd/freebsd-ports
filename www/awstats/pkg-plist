@@ -6,6 +6,10 @@
 %%PORTDOCS%%%%DOCSDIR%%/awstats_compare.html
 %%PORTDOCS%%%%DOCSDIR%%/awstats_config.html
 %%PORTDOCS%%%%DOCSDIR%%/awstats_contrib.html
+%%PORTDOCS%%%%DOCSDIR%%/awstats_dev_plugins.html
+%%PORTDOCS%%%%DOCSDIR%%/awstats_dev_plugins_graphs.html
+%%PORTDOCS%%%%DOCSDIR%%/awstats_dev_plugins_hooks.html
+%%PORTDOCS%%%%DOCSDIR%%/awstats_dolibarr.html
 %%PORTDOCS%%%%DOCSDIR%%/awstats_extra.html
 %%PORTDOCS%%%%DOCSDIR%%/awstats_faq.html
 %%PORTDOCS%%%%DOCSDIR%%/awstats_glossary.html
@@ -45,7 +49,6 @@
 %%PORTDOCS%%%%DOCSDIR%%/images/awstats.png
 %%PORTDOCS%%%%DOCSDIR%%/images/awstats.gif
 %%PORTDOCS%%%%DOCSDIR%%/index.html
-%%PORTDOCS%%%%DOCSDIR%%/pad_awstats.htm
 %%PORTDOCS%%%%DOCSDIR%%/pad_awstats.xml
 %%PORTDOCS%%%%DOCSDIR%%/styles.css
 www/awstats/cgi-bin/awredir.pl
@@ -101,6 +104,7 @@ www/awstats/cgi-bin/lang/awstats-lt.txt
 www/awstats/cgi-bin/lang/tooltips_f/awstats-tt-br.txt
 www/awstats/cgi-bin/lang/tooltips_f/awstats-tt-cz.txt
 www/awstats/cgi-bin/lang/tooltips_f/awstats-tt-en.txt
+www/awstats/cgi-bin/lang/tooltips_f/awstats-tt-gl.txt
 www/awstats/cgi-bin/lang/tooltips_f/awstats-tt-gr.txt
 www/awstats/cgi-bin/lang/tooltips_f/awstats-tt-is.txt
 www/awstats/cgi-bin/lang/tooltips_f/awstats-tt-it.txt
@@ -109,6 +113,7 @@ www/awstats/cgi-bin/lang/tooltips_m/awstats-tt-br.txt
 www/awstats/cgi-bin/lang/tooltips_m/awstats-tt-cz.txt
 www/awstats/cgi-bin/lang/tooltips_m/awstats-tt-en.txt
 www/awstats/cgi-bin/lang/tooltips_m/awstats-tt-fr.txt
+www/awstats/cgi-bin/lang/tooltips_m/awstats-tt-gl.txt
 www/awstats/cgi-bin/lang/tooltips_m/awstats-tt-gr.txt
 www/awstats/cgi-bin/lang/tooltips_m/awstats-tt-is.txt
 www/awstats/cgi-bin/lang/tooltips_m/awstats-tt-it.txt
@@ -162,12 +167,14 @@ www/awstats/cgi-bin/plugins/decodeutfkeys.pm
 www/awstats/cgi-bin/plugins/example/example.pm
 www/awstats/cgi-bin/plugins/export_to_csv.pm
 www/awstats/cgi-bin/plugins/geoip.pm
+www/awstats/cgi-bin/plugins/geoip_asn_maxmind.pm
 www/awstats/cgi-bin/plugins/geoip_city_maxmind.pm
 www/awstats/cgi-bin/plugins/geoip_isp_maxmind.pm
 www/awstats/cgi-bin/plugins/geoip_org_maxmind.pm
 www/awstats/cgi-bin/plugins/geoip_region_maxmind.pm
 www/awstats/cgi-bin/plugins/geoipfree.pm
 www/awstats/cgi-bin/plugins/graphapplet.pm
+www/awstats/cgi-bin/plugins/graphgooglechartapi.pm
 www/awstats/cgi-bin/plugins/hashfiles.pm
 www/awstats/cgi-bin/plugins/hostinfo.pm
 www/awstats/cgi-bin/plugins/ipv6.pm
@@ -515,6 +522,7 @@ www/awstats/icons/flags/py.png
 www/awstats/icons/flags/qa.png
 www/awstats/icons/flags/re.png
 www/awstats/icons/flags/ro.png
+www/awstats/icons/flags/rs.png
 www/awstats/icons/flags/ru.png
 www/awstats/icons/flags/rw.png
 www/awstats/icons/flags/sa.png
@@ -575,16 +583,23 @@ www/awstats/icons/flags/zw.png
 www/awstats/icons/mime/ai.png
 www/awstats/icons/mime/archive.png
 www/awstats/icons/mime/audio.png
+www/awstats/icons/mime/crystal.png
 www/awstats/icons/mime/css.png
 www/awstats/icons/mime/doc.png
+www/awstats/icons/mime/dotnet.png
+www/awstats/icons/mime/encrypt.png
 www/awstats/icons/mime/flash.png
 www/awstats/icons/mime/html.png
 www/awstats/icons/mime/image.png
 www/awstats/icons/mime/jnlp.png
 www/awstats/icons/mime/jscript.png
+www/awstats/icons/mime/library.png
 www/awstats/icons/mime/lit.png
+www/awstats/icons/mime/mdb.png
 www/awstats/icons/mime/notavailable.png
+www/awstats/icons/mime/ooffice.png
 www/awstats/icons/mime/other.png
+www/awstats/icons/mime/page.png
 www/awstats/icons/mime/pdf.png
 www/awstats/icons/mime/php.png
 www/awstats/icons/mime/phshop.png
@@ -592,7 +607,9 @@ www/awstats/icons/mime/pl.png
 www/awstats/icons/mime/ppt.png
 www/awstats/icons/mime/quicktime.png
 www/awstats/icons/mime/rar.png
+www/awstats/icons/mime/readme.txt
 www/awstats/icons/mime/real.png
+www/awstats/icons/mime/rss.png
 www/awstats/icons/mime/script.png
 www/awstats/icons/mime/svg.png
 www/awstats/icons/mime/text.png
@@ -626,6 +643,8 @@ www/awstats/icons/os/hpux.png
 www/awstats/icons/os/ibm.png
 www/awstats/icons/os/imode.png
 www/awstats/icons/os/inferno.png
+www/awstats/icons/os/ios.png
+www/awstats/icons/os/iphone.png
 www/awstats/icons/os/irix.png
 www/awstats/icons/os/j2me.png
 www/awstats/icons/os/java.png
@@ -666,6 +685,7 @@ www/awstats/icons/os/vms.png
 www/awstats/icons/os/webtv.png
 www/awstats/icons/os/wii.png
 www/awstats/icons/os/win.png
+www/awstats/icons/os/win7.png
 www/awstats/icons/os/win16.png
 www/awstats/icons/os/win2000.png
 www/awstats/icons/os/win2003.png
@@ -715,7 +735,6 @@ www/awstats/tools/awstats_updateall.pl
 www/awstats/tools/logresolvemerge.pl
 www/awstats/tools/maillogconvert.pl
 www/awstats/tools/urlaliasbuilder.pl
-www/awstats/tools/webmin/awstats-1.8.wbm
 www/awstats/tools/xslt/README.txt
 www/awstats/tools/xslt/awstats.datademo1.xml
 www/awstats/tools/xslt/awstats.datademo1.xslt
