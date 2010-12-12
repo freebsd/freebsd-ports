@@ -15,7 +15,7 @@ DISTNAME=	${PORTNAME}-v${PORTVERSION}
 MAINTAINER=	mva@FreeBSD.org
 COMMENT=	Defcon for Linux
 
-ONLY_FOR_ARCHS=	i386
+ONLY_FOR_ARCHS=	i386 amd64
 USE_LINUX=	yes
 USE_LINUX_APPS=	sdl12 libogg libvorbis xorglibs
 NO_CDROM=	Redistribution is limited, see license
