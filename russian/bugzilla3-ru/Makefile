@@ -5,37 +5,24 @@
 # $FreeBSD$
 #
 
-PORTNAME=	bugzilla-ru
-DISTVERSION=	3.6.2-ru-20100809
+PORTNAME=	bugzilla
+DISTVERSION=	3.6.3-ru-20101117
 CATEGORIES=	russian
 MASTER_SITES=	http://ftp.mozilla-russia.org/bugzilla/
-DISTNAME=	bugzilla-${DISTVERSION}
+PKGNAMESUFFIX=	-ru
 
 MAINTAINER=	skv@FreeBSD.org
 COMMENT=	Russian localization for Bugzilla
 
-RUN_DEPENDS=	bugzilla>=3.6.2:${PORTSDIR}/devel/bugzilla
+RUN_DEPENDS=	bugzilla>=${PORTVERSION}:${PORTSDIR}/devel/bugzilla
 
-CONFLICTS=	bugzilla-2.*
-
-PORTSCOUT=	limitw:1,even
-
-.ifndef BUGZILLADIR
-.ifdef APACHE_DATADIR
-BUGZILLADIR=	${APACHE_DATADIR}/data/bugzilla
-.else
-BUGZILLADIR=	${PREFIX}/www/data/bugzilla
-.endif
-.endif
-
-PLIST_SUB+=	BUGZILLADIR=${BUGZILLADIR:S!^${PREFIX}/!!}
-
-NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 
+.include "${.CURDIR}/../../devel/bugzilla/Makefile.common"
+
 do-install:
-	${MKDIR} ${BUGZILLADIR}
-	(cd ${WRKSRC} && ${PAX} -r -w * ${BUGZILLADIR})
+	${MKDIR} ${WWWDIR}
+	(cd ${WRKSRC} && ${PAX} -r -w * ${WWWDIR})
 .if !defined(BATCH)
 	@${ECHO_MSG}
 	@${CAT} ${PKGMESSAGE}
