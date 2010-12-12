@@ -24,6 +24,12 @@ include/chassis-path.h
 include/chassis-filemode.h
 include/chassis-limits.h
 include/chassis-event-thread.h
+include/chassis-gtimeval.h
+include/chassis-shutdown-hooks.h
+include/chassis-frontend.h
+include/chassis-options.h
+include/chassis-win32-service.h
+include/chassis-unix-daemon.h
 include/glib-ext.h
 include/glib-ext-ref.h
 include/string-len.h
@@ -52,9 +58,13 @@ lib/libmysql-chassis.la
 lib/libmysql-chassis-timing.so.0
 lib/libmysql-chassis-timing.so
 lib/libmysql-chassis-timing.la
+lib/libmysql-chassis-glibext.so.0
+lib/libmysql-chassis-glibext.so
+lib/libmysql-chassis-glibext.la
 lib/libmysql-proxy.so.0
 lib/libmysql-proxy.so
 lib/libmysql-proxy.la
+lib/mysql-proxy/lua/admin.lua
 lib/mysql-proxy/lua/lfs.so
 lib/mysql-proxy/lua/lfs.la
 lib/mysql-proxy/lua/glib2.so

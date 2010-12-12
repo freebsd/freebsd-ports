@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $FreeBSD: /tmp/pcvs/ports/databases/mysql-proxy/files/Attic/mysql-proxy.sh.in,v 1.4 2010-03-27 00:12:46 dougb Exp $
+# $FreeBSD$
 #
 
 # PROVIDE: mysql-proxy
