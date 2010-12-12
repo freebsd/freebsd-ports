@@ -16,6 +16,9 @@ COMMENT=	Apache2 module to wrap served pages with a header and/or footer
 
 MAKE_JOBS_SAFE=	yes
 
+DEPRECATED=	will be unsupported by ASF when 2.4.0 is release, migrate to 2.2.x+ now
+EXPIRATION_DATE=	2011-05-01
+
 LATEST_LINK=	mod_layout2
 CONFLICTS=	mod_layout-3.* mod_layout-5.*
 PORTSCOUT=	limit:4^

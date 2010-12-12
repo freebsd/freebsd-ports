@@ -18,7 +18,7 @@ MAKE_JOBS_SAFE=  yes
 
 USE_APACHE=	2.0
 
-DEPRECATED=	upstream is gone
+DEPRECATED=	upstream is gone and will be unsupported by ASF when 2.4.0 is release, migrate to 2.2.x+ now
 EXPIRATION_DATE=	2011-01-02
 
 WRKSRC=		${WRKDIR}/${PORTNAME}

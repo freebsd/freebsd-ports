@@ -17,6 +17,9 @@ COMMENT=	A single sign-on system for websites (apache module)
 
 MAKE_JOBS_UNSAFE=	yes
 
+DEPRECATED=	will be unsupported by ASF when 2.4.0 is release, migrate to 2.2.x+ now
+EXPIRATION_DATE=	2011-05-01
+
 CONFLICTS=	pubcookie-login-server-[0-9]*
 
 FILESDIR=	${.CURDIR}/../pubcookie-login-server/files

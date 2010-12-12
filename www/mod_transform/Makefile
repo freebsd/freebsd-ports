@@ -16,6 +16,9 @@ COMMENT=	An XSLT and XIncludes Filter module for Apache 2.0
 
 MAKE_JOBS_SAFE=  yes
 
+DEPRECATED=	will be unsupported by ASF when 2.4.0 is release, migrate to 2.2.x+ now
+EXPIRATION_DATE=	2011-05-01
+
 USE_APACHE=	2.0
 USE_AUTOTOOLS=	libtool
 HAS_CONFIGURE=	yes
