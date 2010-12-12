@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gimp-help
-PORTVERSION=	2.6.0
+PORTVERSION=	2.6.1
 CATEGORIES?=	misc graphics
 MASTER_SITES=	ftp://ftp.gimp.org/pub/%SUBDIR%/ \
 		http://gimp.mirrors.hoobly.com/%SUBDIR%/ \
@@ -21,16 +21,16 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}${PKGNAMESUFFIX}-${DOCLANG}
 MAINTAINER=	liangtai.s4@gmail.com
 COMMENT?=	The GIMP User Manual in English
 
+LICENSE=	GFDL
+
 USE_BZIP2=	YES
 NO_BUILD=	YES
 PLIST_SUB=	GIMPDATA=${GIMPDATADIR:S,^${PREFIX}/,,} \
 		AMPLE=${AMPLE} DOCLANG=${DOCLANG}
 
-# Though this is document, to be used by the context help system
-# of GIMP.  That's why this is not set PORTDOC.
 GIMPDATADIR?=	${PREFIX}/share/gimp
 DOCLANG?=	en
-AMPLE?=	""
+AMPLE?=	"@comment "
 
 do-install:
 	@ ${MKDIR} ${GIMPDATADIR}/help ; \

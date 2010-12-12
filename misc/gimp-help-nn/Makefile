@@ -13,6 +13,6 @@ COMMENT=	The GIMP User Manual in Norwegian:Ninorsk
 MASTERDIR=	${.CURDIR}/../gimp-help-en
 
 DOCLANG=	nn
-AMPLE=	"@comment "
+AMPLE=	""
 
 .include "${MASTERDIR}/Makefile"
