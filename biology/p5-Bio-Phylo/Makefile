@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Bio-Phylo
-PORTVERSION=	0.31
+PORTVERSION=	0.32
 CATEGORIES=	biology perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -61,9 +61,12 @@ MAN3=		Bio::Phylo.3 \
 		Bio::Phylo::NeXML::DOM::Element::Libxml.3 \
 		Bio::Phylo::NeXML::DOM::Element.3 \
 		Bio::Phylo::NeXML::Meta::XMLLiteral.3 \
+		Bio::Phylo::Parsers::Abstract.3 \
+		Bio::Phylo::Parsers::Fasta.3 \
 		Bio::Phylo::Parsers::Newick.3 \
 		Bio::Phylo::Parsers::Nexml.3 \
 		Bio::Phylo::Parsers::Nexus.3 \
+		Bio::Phylo::Parsers::Phylip.3 \
 		Bio::Phylo::Parsers::Table.3 \
 		Bio::Phylo::Parsers::Taxlist.3 \
 		Bio::Phylo::Parsers::Tolweb.3 \
@@ -82,6 +85,7 @@ MAN3=		Bio::Phylo.3 \
 		Bio::Phylo::Treedrawer::Png.3 \
 		Bio::Phylo::Treedrawer::Swf.3 \
 		Bio::Phylo::Treedrawer::Svg.3 \
+		Bio::Phylo::Unparsers::Abstract.3 \
 		Bio::Phylo::Unparsers::Mrp.3 \
 		Bio::Phylo::Unparsers::Newick.3 \
 		Bio::Phylo::Unparsers::Nexml.3 \
