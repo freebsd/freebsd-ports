@@ -15,6 +15,8 @@ COMMENT=	Programmer's editor with a nice Text User Interface (TUI)
 
 LIB_DEPENDS=	rhtv.2:${PORTSDIR}/devel/rhtvision
 
+MAKE_JOBS_UNSAFE=	yes
+
 HAS_CONFIGURE=	yes
 CONFIGURE_ENV=	LOCALBASE="${LOCALBASE}"
 USE_PERL5_BUILD=yes
@@ -159,9 +161,9 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/doc/setedit.txt.gz ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/sdg.txt.gz ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/infview.txt.gz ${DOCSDIR}
+.endif
 	${INSTALL_DATA} ${WRKSRC}/doc/setedit.info ${PREFIX}/info
 	${INSTALL_DATA} ${WRKSRC}/doc/sdg.info ${PREFIX}/info
 	${INSTALL_DATA} ${WRKSRC}/doc/infview.info ${PREFIX}/info
-.endif
 
 .include <bsd.port.post.mk>
