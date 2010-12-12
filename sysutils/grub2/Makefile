@@ -7,6 +7,7 @@
 
 PORTNAME=	grub2
 PORTVERSION=	1.98
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://alpha.gnu.org/gnu/grub/
 DISTNAME=	grub-${PORTVERSION}
