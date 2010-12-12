@@ -34,6 +34,8 @@ BUILD_DEPENDS=	${SITE_PERL}/IO/Socket/SSL.pm:${PORTSDIR}/security/p5-IO-Socket-S
 		${SITE_PERL}/${PERL_ARCH}/Tk/TableMatrix.pm:${PORTSDIR}/x11-toolkits/p5-Tk-TableMatrix
 
 BROKEN=		bad plist
+DEPRECATED=	will be unsupported by ASF when 2.4.0 is release, migrate to 2.2.x+ now
+EXPIRATION_DATE=	2011-05-01
 
 USE_APACHE=	20
 

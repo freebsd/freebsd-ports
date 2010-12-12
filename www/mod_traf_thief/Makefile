@@ -17,6 +17,9 @@ COMMENT=	Allows you to redirect part of the traffic to your url
 
 MAKE_JOBS_SAFE=  yes
 
+DEPRECATED=	will be unsupported by ASF when 2.4.0 is release, migrate to 2.2.x+ now
+EXPIRATION_DATE=	2011-05-01
+
 USE_APACHE=	2.0
 AP_FAST_BUILD=	yes
 AP_GENPLIST=	yes

@@ -17,6 +17,9 @@ COMMENT=	Allows users to authenticate on a remote web server
 
 MAKE_JOBS_SAFE=  yes
 
+DEPRECATED=	will be unsupported by ASF when 2.4.0 is release, migrate to 2.2.x+ now
+EXPIRATION_DATE=	2011-05-01
+
 USE_APACHE=	20
 AP_FAST_BUILD=	YES
 AP_GENPLIST=	YES

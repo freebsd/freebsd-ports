@@ -15,6 +15,9 @@ COMMENT=	Apache 2.0.x module for use macros in config files
 
 MAKE_JOBS_SAFE=	yes
 
+DEPRECATED=	will be unsupported by ASF when 2.4.0 is release, migrate to 2.2.x+ now
+EXPIRATION_DATE=	2011-05-01
+
 PORTSCOUT=	limit:^1.1.6
 
 USE_APACHE=	20
