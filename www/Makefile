@@ -1146,6 +1146,7 @@
     SUBDIR += p5-Plack-Middleware-Session
     SUBDIR += p5-Plack-Middleware-Status
     SUBDIR += p5-Plack-Middleware-Throttle
+    SUBDIR += p5-Plack-Middleware-XForwardedFor
     SUBDIR += p5-Plack-Server-Coro
     SUBDIR += p5-Plack-Server-POE
     SUBDIR += p5-Plack-Server-ReverseHTTP
