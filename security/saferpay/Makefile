@@ -7,7 +7,7 @@
 
 PORTNAME=	saferpay
 PORTVERSION=	1.3.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security
 MASTER_SITES=	http://www.saferpay.com/download/
 DISTFILES=	${PORTNAME}_${PORTVERSION}_linux-g++_src.tar.gz
@@ -49,7 +49,7 @@ post-install:
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 700042
-.if ${ARCH} == "amd64" || ${ARCH} == "sparc64"
+.if ${ARCH} == "sparc64"
 BROKEN=		Does not compile with GCC 4.2
 .endif
 .endif
