@@ -703,6 +703,7 @@
     SUBDIR += ruby-msql
     SUBDIR += ruby-mysql
     SUBDIR += ruby-o_dbm
+    SUBDIR += ruby-oci8
     SUBDIR += ruby-odbc
     SUBDIR += ruby-pg
     SUBDIR += ruby-postgres
