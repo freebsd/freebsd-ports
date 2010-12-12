@@ -51,15 +51,16 @@ WRKSRC=		${WRKDIR}/${DISTNAME}
 
 .if defined(WITH_EMULATOR)
 PKGNAMESUFFIX+=	-no_tddl
-LIB_DEPENDS+=	tddl:${PORTSDIR}/emulators/tpm-emulator
+LIB_DEPENDS+=	tddl.1:${PORTSDIR}/emulators/tpm-emulator
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|\.\./tddl/libtddl\.a|${LOCALBASE}/lib/libtddl\.a|g' ${WRKSRC}/src/tcs/Makefile.am
-	@${REINPLACE_CMD} -e 's|\.\./tddl/libtddl\.a|${LOCALBASE}/lib/libtddl\.a|g' ${WRKSRC}/src/tcs/Makefile.in
-	@${REINPLACE_CMD} -e 's|\.\./tddl/libtddl\.a|${LOCALBASE}/lib/libtddl\.a|g' ${WRKSRC}/src/tcsd/Makefile.am
-	@${REINPLACE_CMD} -e 's|\.\./tddl/libtddl\.a|${LOCALBASE}/lib/libtddl\.a|g' ${WRKSRC}/src/tcsd/Makefile.in
-	@${REINPLACE_CMD} -e 's|libtddl\.a||g' ${WRKSRC}/src/tddl/Makefile.in
-	@${REINPLACE_CMD} -e 's|libtddl\.a||g' ${WRKSRC}/src/tddl/Makefile.am
+	@${REINPLACE_CMD} -e \
+		's|$${top_builddir}/src/tddl/libtddl.a|${LOCALBASE}/lib/libtddl.a|' \
+			${WRKSRC}/src/tcs/Makefile.am \
+			${WRKSRC}/src/tcsd/Makefile.am
+	@${REINPLACE_CMD} -e \
+		's|libtddl\.a||g' \
+			${WRKSRC}/src/tddl/Makefile.am
 
 # The emulator has already a libttddl.so, so comment out trousers' libtddl in the pkg-plist
 PLIST_SUB+=	TDDL="@comment "
