@@ -19,9 +19,14 @@ rcvar=`set_rcvar`
 command=%%PREFIX%%/sbin/webcamd
 command_args="-B"
 
-if [ -n "$hald_enable" ]; then
+start_precmd="${name}_prestart"
+
+webcamd_prestart()
+{
+  if checkyesno hald_enable ; then
 	command_args="$command_args -H"
-fi
+  fi
+}
 
 pidfile="/var/run/webcamd.*.0.pid"
 
@@ -29,5 +34,6 @@ load_rc_config $name
 if [ $# -gt 1 ]; then
 	pidfile="webcamd.dummy"
 	command_args="$command_args -d $2 -i 0"
+	# Only run the rc command if the appropriate arguments are specified:	
+	run_rc_command $1
 fi
-run_rc_command $1
