@@ -6,53 +6,44 @@
 #
 
 PORTNAME=	commons-cli
-PORTVERSION=	1.0
-PORTREVISION=	2
+PORTVERSION=	1.2
 PORTEPOCH=	1
 CATEGORIES=	java devel
-MASTER_SITES=	${MASTER_SITE_APACHE_COMMONS_SOURCE}
+MASTER_SITES=	${MASTER_SITE_APACHE_COMMONS_BINARIES}
 MASTER_SITE_SUBDIR=	${PORTNAME:S,commons-,,}
 PKGNAMEPREFIX=	jakarta-
-DISTNAME=	cli-${PORTVERSION}-src
+DISTNAME=	${PORTNAME}-${PORTVERSION}-bin
 
 MAINTAINER=	hq@FreeBSD.org
 COMMENT=	Java library for command line arguments and options
 
-BUILD_DEPENDS=	${JAVALIBDIR}/commons-lang.jar:${PORTSDIR}/java/jakarta-commons-lang
+LICENSE=	ASL
 
 USE_JAVA=	yes
 JAVA_VERSION=	1.2+
+NO_BUILD=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-USE_ANT=	yes
-MAKE_ENV+=	ANT_INCLUDE_SHARED_JARS=YES
-MAKE_ARGS=	-Dnoget=yes
-ALL_TARGET=	jar
-.if !defined(NOPORTDOCS)
-ALL_TARGET+=	javadoc
-.endif
-
-JARFILE=	${PORTNAME}-${PORTVERSION}-beta-2-dev.jar
+JARFILE=	${PORTNAME}-${PORTVERSION}.jar
 DESTJARFILE=	${PORTNAME}.jar
 PLIST_FILES=	%%JAVAJARDIR%%/${DESTJARFILE}
 .if !defined(NOPORTDOCS)
-PORTDOCS=	apidocs LICENSE.txt
+PORTDOCS=	*
+DOC_FILES=	LICENSE.txt NOTICE.txt RELEASE-NOTES.txt
 .endif
-
-post-extract:
-	@${MKDIR} ${WRKSRC}/lib
 
 do-install:
 	@${ECHO_MSG} -n ">> Installing JAR as ${JAVAJARDIR}/${DESTJARFILE}..."
-	@${INSTALL_DATA} ${WRKSRC}/target/${JARFILE} ${JAVAJARDIR}/${DESTJARFILE}
+	@${INSTALL_DATA} ${WRKSRC}/${JARFILE} ${JAVAJARDIR}/${DESTJARFILE}
 	@${ECHO_MSG} " [ DONE ]"
 .if !defined(NOPORTDOCS)
 	@${ECHO_MSG} -n ">> Installing documentation in ${DOCSDIR}..."
-	@cd ${WRKSRC}/target/docs \
-	  && ${FIND} apidocs -type d -exec ${MKDIR} ${DOCSDIR}/{} \; \
-	  && ${FIND} apidocs -type f -exec ${INSTALL_DATA} {} ${DOCSDIR}/{} \;
-	@${INSTALL_DATA} ${WRKSRC}/LICENSE.txt ${DOCSDIR}/
+	@-${MKDIR} ${DOCSDIR}
+	@cd ${WRKSRC} && ${COPYTREE_SHARE} apidocs ${DOCSDIR}
+.for f in ${DOC_FILES}
+	@${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}/
+.endfor
 	@${ECHO_MSG} " [ DONE ]"
 .endif
 
