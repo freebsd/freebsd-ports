@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/ShipIt/Step/Manifest/.packlist
 %%SITE_PERL%%/ShipIt/Step/Manifest.pm
 @dirrmtry %%SITE_PERL%%/ShipIt/Step
