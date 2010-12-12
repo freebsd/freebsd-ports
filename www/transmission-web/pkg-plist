@@ -12,6 +12,7 @@
 %%DATADIR%%/web/images/buttons/info_peers.png
 %%DATADIR%%/web/images/buttons/info_trackers.png
 %%DATADIR%%/web/images/buttons/tab_backgrounds.png
+%%DATADIR%%/web/images/buttons/tab_backgrounds_highlight.png
 %%DATADIR%%/web/images/buttons/toolbar_buttons.png
 %%DATADIR%%/web/images/buttons/torrent_buttons.png
 %%DATADIR%%/web/images/favicon.ico
