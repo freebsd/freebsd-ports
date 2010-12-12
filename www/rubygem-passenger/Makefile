@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	passenger
-PORTVERSION=	3.0.0
+PORTVERSION=	3.0.1
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 PKGNAMEPREFIX=	rubygem-
@@ -37,13 +37,14 @@ USE_APACHE=	2.2+
 BUILD_DEPENDS+=	nginx>=0.8.53:${PORTSDIR}/www/nginx
 .endif
 
+LIB_DEPENDS+=	ev.3:${PORTSDIR}/devel/libev \
+		curl.6:${PORTSDIR}/ftp/curl
 BUILD_DEPENDS+=	rubygem-fastthread>=1.0.1:${PORTSDIR}/devel/rubygem-fastthread \
 		rubygem-rack>=0:${PORTSDIR}/www/rubygem-rack \
 		rubygem-daemon_controller>=0.2.5:${PORTSDIR}/devel/rubygem-daemon_controller \
-		rubygem-file-tail>=0:${PORTSDIR}/devel/rubygem-file-tail \
-		curl>=7.20.0:${PORTSDIR}/ftp/curl
+		rubygem-file-tail>=0:${PORTSDIR}/devel/rubygem-file-tail
 
-SUB_LIST+=	RUBY=${RUBY}
+SUB_LIST+=	GEM_LIB_DIR=${GEM_LIB_DIR} RUBY=${RUBY}
 SUB_FILES=	pkg-message
 
 PLIST_FILES=	bin/passenger \
@@ -52,7 +53,6 @@ PLIST_FILES=	bin/passenger \
 		bin/passenger-make-enterprisey \
 		bin/passenger-memory-stats \
 		bin/passenger-status \
-		bin/passenger-stress-test \
 		bin/passenger-install-nginx-module
 .if defined(WITH_SYMLINK)
 PLIST_FILES+=	${GEMS_DIR}/${PORTNAME}
@@ -72,12 +72,27 @@ pre-patch:
 .endif
 
 post-install:
-	${REINPLACE_CMD} 's!g++!${CXX}!; \
-		s!gcc!${CC}!;' \
-		${PREFIX}/${GEM_LIB_DIR}/Rakefile
-	${REINPLACE_CMD} '377s!-g!${CXXFLAGS}!; \
-		s!-lpthread!${PTHREAD_LIBS}!g' \
-		${PREFIX}/${GEM_LIB_DIR}/lib/phusion_passenger/platform_info.rb
+	@${REINPLACE_CMD} \
+		's!-lpthread!${PTHREAD_LIBS}!g' \
+		${PREFIX}/${GEM_LIB_DIR}/ext/nginx/config
+	@${REINPLACE_CMD} \
+		's!-Wall!!g; \
+		s!gcc!${CC}!g; \
+		s!g++!${CXX}!g; \
+		s!#{PlatformInfo.debugging_cflags}!${CFLAGS}!g; \
+		s!-O2!!g; \
+		42s!true!false!' \
+		${PREFIX}/${GEM_LIB_DIR}/build/config.rb
+	@${REINPLACE_CMD} \
+		's!-lpthread!${PTHREAD_LIBS}!g' \
+		${PREFIX}/${GEM_LIB_DIR}/lib/phusion_passenger/platform_info/compiler.rb
+	@${REINPLACE_CMD} \
+		's!#{LIBEV_LIBS}!-L${LOCALBASE}/lib -lev!g' \
+		${PREFIX}/${GEM_LIB_DIR}/build/agents.rb
+	@${REINPLACE_CMD} \
+		'258s!/usr/include/libev!${LOCALBASE}/include!; \
+		259s!-lev!-L${LOCALBASE}/lib -lev!' \
+		${PREFIX}/${GEM_LIB_DIR}/build/common_library.rb
 
 .if !defined(WITHOUT_APACHEPORT)
 	(${PREFIX}/bin/passenger-install-apache2-module --auto)
@@ -90,7 +105,6 @@ post-install:
 
 	${FIND} ${PREFIX}/${GEM_LIB_DIR} -name '*.o' -delete
 	${FIND} ${PREFIX}/${GEM_LIB_DIR} -name '*.bak' -delete
-	${RM} ${PREFIX}/${GEM_LIB_DIR}/ext/libev/.libs/libev.la
 .if defined(WITH_SYMLINK)
 	${LN} -s ${PREFIX}/${GEM_LIB_DIR} ${PREFIX}/${GEMS_DIR}/${PORTNAME}
 .endif
