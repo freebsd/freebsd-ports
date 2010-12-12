@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Number-Phone-JP
-PORTVERSION=	0.03
+PORTVERSION=	0.12
 CATEGORIES=	japanese perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	ja-p5-
@@ -14,19 +14,11 @@ PKGNAMEPREFIX=	ja-p5-
 MAINTAINER=	nork@FreeBSD.org
 COMMENT=	Perl5 module to validate Japanese phone numbers
 
+RUN_DEPENDS=	p5-UNIVERSAL-require>=0:${PORTSDIR}/devel/p5-UNIVERSAL-require
+
 PERL_CONFIGURE=	yes
 
 MAN3=		Number::Phone::JP.3 \
 		Number::Phone::JP::Table.3 \
-		Number::Phone::JP::Table::Class1.3 \
-		Number::Phone::JP::Table::Class2.3 \
-		Number::Phone::JP::Table::Freedial.3 \
-		Number::Phone::JP::Table::Home.3 \
-		Number::Phone::JP::Table::Ipphone.3 \
-		Number::Phone::JP::Table::Mobile.3 \
-		Number::Phone::JP::Table::Pager.3 \
-		Number::Phone::JP::Table::Phs.3 \
-		Number::Phone::JP::Table::Q2.3 \
-		Number::Phone::JP::Table::United.3
 
 .include <bsd.port.mk>
