@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	assp
-PORTVERSION=	1.8.1.5
+PORTVERSION=	1.8.1.6
 CATEGORIES=	mail
 MASTER_SITES=	SF/${PORTNAME}/ASSP%20Installation/${PORTNAME:U}%20${PORTVERSION}/
 DISTNAME=	${PORTNAME:U}_${PORTVERSION}-Install
@@ -29,7 +29,7 @@ ASSP_LOG=	/var/log/assp
 
 PLIST_SUB=	ASSP_HOME="${ASSP_HOME}" ASSP_LOG="${ASSP_LOG}"
 
-SUB_FILES=	assp.8 assplog.8 assplog.pl periodic-assp.sh
+SUB_FILES=	assp.8 assplog.8 assplog.pl periodic-assp
 SUB_LIST=	ASSP_USER="${ASSP_USER}" ASSP_GROUP="${ASSP_GROUP}" \
 		ASSP_HOME="${ASSP_HOME}" ASSP_LOG="${ASSP_LOG}" \
 		DATADIR="${DATADIR}" PERL="${PERL}"
@@ -181,7 +181,7 @@ do-install:
 	${LN} -s ${ASSP_LOG} ${ASSP_HOME}/logs
 
 	${MKDIR} ${PREFIX}/etc/periodic/daily
-	${INSTALL_SCRIPT} ${WRKDIR}/periodic-assp.sh ${PREFIX}/etc/periodic/daily/510.assp
+	${INSTALL_SCRIPT} ${WRKDIR}/periodic-assp ${PREFIX}/etc/periodic/daily/510.assp
 
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
