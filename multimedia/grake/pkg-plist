@@ -1,0 +1,4 @@
+@comment $FreeBSD$
+bin/grake
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/grake/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/grake
