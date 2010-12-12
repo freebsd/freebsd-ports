@@ -237,6 +237,6 @@ etc/sippy/dictionary
 %%PYTHON_SITELIBDIR%%/sippy/b2bua_simple.pyo
 @dirrm etc/sippy
 @dirrm %%PYTHON_SITELIBDIR%%/sippy
-%%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%DOCSDIR%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm %%DOCSDIR%%
