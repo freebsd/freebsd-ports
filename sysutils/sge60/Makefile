@@ -17,14 +17,6 @@ DISTNAME=	ge-V60u12_TAG-src
 MAINTAINER=	brooks@FreeBSD.org
 COMMENT=	Sun Grid Engine, a batch queueing system
 
-# MASTER_SITE requires cookies, which fetch does not support
-FETCH_DEPENDS=	wget:${PORTSDIR}/ftp/wget
-
-# We have to use wget because the master site required cookies to
-# download the file.
-DISABLE_SIZE=	yes
-FETCH_CMD=	wget -c
-
 OPTIONS=	BDB "Use DB based spooler" on \
 		JAVA "Support Java DRMAA API" on \
 		X11 "Qmon X11 GUI" on \
