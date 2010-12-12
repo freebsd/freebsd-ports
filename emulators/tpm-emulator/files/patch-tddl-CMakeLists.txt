@@ -1,12 +1,13 @@
 --- tddl/CMakeLists.txt.orig	2010-07-06 06:21:20.000000000 +0900
-+++ tddl/CMakeLists.txt	2010-10-25 02:56:43.620555878 +0900
++++ tddl/CMakeLists.txt	2010-12-11 04:00:11.868033375 +0900
 @@ -5,18 +5,21 @@
  
  set(tddl_SRCS "tddl.c" "tddl.h")
  add_library(tddl SHARED ${tddl_SRCS})
 +add_library(tddlStatic STATIC ${tddl_SRCS})
  if(UNIX)
-   set_target_properties(tddl PROPERTIES SOVERSION "1.2"
+-  set_target_properties(tddl PROPERTIES SOVERSION "1.2"
++  set_target_properties(tddl PROPERTIES SOVERSION "1"
      VERSION "1.2.${${PROJECT_NAME}_VERSION_MAJOR}.${${PROJECT_NAME}_VERSION_MINOR}")
 +  set_target_properties(tddlStatic PROPERTIES OUTPUT_NAME tddl)
  elseif(WIN32)
