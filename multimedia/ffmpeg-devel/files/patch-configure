@@ -1,5 +1,5 @@
 --- configure.orig	2010-11-04 11:38:39.000000000 +0100
-+++ configure	2010-11-30 13:49:43.509425851 +0100
++++ configure	2010-12-13 00:26:47.034162631 +0100
 @@ -1556,7 +1556,7 @@
  nm_opts='-g'
  
@@ -9,6 +9,24 @@
  cpu="generic"
  
  # OS
+@@ -1603,7 +1603,7 @@
+ 
+ CC_O='-o $@'
+ 
+-host_cflags='-D_ISOC99_SOURCE -D_POSIX_C_SOURCE=200112 -O3 -g -Wall'
++host_cflags='-D_ISOC99_SOURCE -O3 -g -Wall'
+ host_libs='-lm'
+ 
+ target_path='$(CURDIR)'
+@@ -2249,7 +2249,7 @@
+     die "C compiler test failed."
+ fi
+ 
+-add_cppflags -D_ISOC99_SOURCE -D_POSIX_C_SOURCE=200112
++add_cppflags -D_ISOC99_SOURCE
+ check_cflags -std=c99
+ check_cc -D_FILE_OFFSET_BITS=64 <<EOF && add_cppflags -D_FILE_OFFSET_BITS=64
+ #include <stdlib.h>
 @@ -2824,8 +2824,8 @@
      fi
  fi
