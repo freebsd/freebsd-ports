@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	awstats
-PORTVERSION=	6.95
+PORTVERSION=	7.0
 PORTEPOCH=	1
 CATEGORIES=	www
 MASTER_SITES=	SF/${PORTNAME}/AWStats/${PORTVERSION}
@@ -15,6 +15,9 @@ MAINTAINER=	samm@os2.kiev.ua
 COMMENT=	Free real-time logfile analyzer to get advanced web statistics
 
 RUN_DEPENDS=	${SITE_PERL}/Net/XWhois.pm:${PORTSDIR}/net/p5-Net-XWhois
+
+LICENSE=        GPLv2
+LICENSE_FILE=   ${WRKSRC}/docs/LICENSE.TXT
 
 NO_BUILD=	yes
 USE_PERL5_RUN=	yes
@@ -82,7 +85,6 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/tools/logresolvemerge.pl ${PREFIX}/www/awstats/tools
 	${INSTALL_SCRIPT} ${WRKSRC}/tools/maillogconvert.pl ${PREFIX}/www/awstats/tools
 	${INSTALL_SCRIPT} ${WRKSRC}/tools/urlaliasbuilder.pl ${PREFIX}/www/awstats/tools
-	${INSTALL_DATA} ${WRKSRC}/tools/webmin/awstats-1.8.wbm ${PREFIX}/www/awstats/tools/webmin
 	${INSTALL_DATA} ${WRKSRC}/tools/xslt/* ${PREFIX}/www/awstats/tools/xslt
 	${INSTALL_SCRIPT} ${WRKSRC}/wwwroot/cgi-bin/awredir.pl ${PREFIX}/www/awstats/cgi-bin
 	${INSTALL_DATA} ${WRKSRC}/wwwroot/cgi-bin/awstats.model.conf ${PREFIX}/www/awstats/cgi-bin
