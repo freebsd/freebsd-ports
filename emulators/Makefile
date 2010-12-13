@@ -117,7 +117,6 @@
     SUBDIR += mupen64plus-core
     SUBDIR += mupen64plus-input-sdl
     SUBDIR += mupen64plus-rsp-hle
-    SUBDIR += mupen64plus-sdlinput
     SUBDIR += mupen64plus-ui-console
     SUBDIR += mupen64plus-video-rice
     SUBDIR += nonpareil
