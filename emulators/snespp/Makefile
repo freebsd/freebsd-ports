@@ -15,6 +15,8 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}
 MAINTAINER=	timbob@bigpond.com
 COMMENT=	Kernel module for SNES controllers on a parallel port
 
+BROKEN=	does not compile
+
 KMODDIR=	/boot/modules
 
 NO_PACKAGE=	this port should be recompiled for a particular FreeBSD kernel
