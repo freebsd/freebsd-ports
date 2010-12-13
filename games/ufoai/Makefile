@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	ufoai
-PORTVERSION=	2.3
-PORTREVISION=	1
+PORTVERSION=	2.3.1
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/UFO_AI%202.x/${PORTVERSION}
 DISTNAME=	${PORTNAME:S/$/-/}${PORTVERSION}-source
@@ -80,6 +79,9 @@ PLIST_SUB+=	UFORADIANT=""
 CONFIGURE_ARGS+=--disable-uforadiant
 PLIST_SUB+=	UFORADIANT="@comment "
 .endif
+
+post-extract:
+	@${MKDIR} ${WRKSRC}/base/maps ${WRKSRC}/base/models
 
 # Resolve name collision with jpeg-8 amd API png
 post-patch:
