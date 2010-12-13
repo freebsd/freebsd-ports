@@ -4715,3 +4715,4 @@ emulators/mupen64plus-dummyaudio||2010-12-13|Port was removed, now it is obsolet
 emulators/mupen64plus-dummyvideo||2010-12-13|Port was removed, now it is obsolete
 emulators/mupen64plus-glide||2010-12-13|Port was removed, now it is obsolete
 emulators/mupen64plus-gln64||2010-12-13|Port was removed, now it is obsolete
+emulators/mupen64plus-input||2010-12-13|Port was removed, now it is obsolete
