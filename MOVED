@@ -4707,3 +4707,5 @@ devel/libtool22|devel/libtool|2010-12-08|Autotools cleanup
 devel/libltdl22|devel/libltdl|2010-12-08|Autotools cleanup
 devel/rubygem-image_science|graphics/rubygem-image_science|2010-12-11|Moved category
 emulators/mupen64plus-base|emulators/mupen64plus-core|2010-12-13|Port was renamed
+emulators/mupen64plus-sdlaudio|emulators/mupen64plus-audio-sdl|2010-12-13|Port was renamed
+
