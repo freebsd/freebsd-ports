@@ -116,7 +116,6 @@
     SUBDIR += mupen64plus-audio-sdl
     SUBDIR += mupen64plus-base
     SUBDIR += mupen64plus-core
-    SUBDIR += mupen64plus-dummyaudio
     SUBDIR += mupen64plus-dummyvideo
     SUBDIR += mupen64plus-glide
     SUBDIR += mupen64plus-gln64
