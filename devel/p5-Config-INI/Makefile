@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Config-INI
-PORTVERSION=	0.016
+PORTVERSION=	0.017
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,9 +14,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	bapt@FreeBSD.org
 COMMENT=	Simple .ini files emitter and parser for Perl
 
-BUILD_DEPENDS=	${SITE_PERL}/Mixin/Linewise/Readers.pm:${PORTSDIR}/devel/p5-Mixin-Linewise
-
-RUN_DEPENDS+=	${SITE_PERL}/Mixin/Linewise/Readers.pm:${PORTSDIR}/devel/p5-Mixin-Linewise
+RUN_DEPENDS+=   p5-Mixin-Linewise>=0:${PORTSDIR}/devel/p5-Mixin-Linewise \
+		p5-IO-String>=0:${PORTSDIR}/devel/p5-IO-String
 
 PERL_CONFIGURE=	yes
 
