@@ -4709,3 +4709,4 @@ devel/rubygem-image_science|graphics/rubygem-image_science|2010-12-11|Moved cate
 emulators/mupen64plus-base|emulators/mupen64plus-core|2010-12-13|Port was renamed
 emulators/mupen64plus-sdlaudio|emulators/mupen64plus-audio-sdl|2010-12-13|Port was renamed
 emulators/mupen64plus-sdlinput|emulators/mupen64plus-input-sdl|2010-12-13|Port was renamed
+emulators/mupen64plus-rsp|emulators/mupen64plus-rsp-hle|2010-12-13|Port was renamed
