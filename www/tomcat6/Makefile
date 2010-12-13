@@ -70,8 +70,7 @@ pre-patch:
 
 post-patch:
 	@${REINPLACE_CMD} ${SUB_LIST:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} ${WRKSRC}/conf/server.xml
-	@${RM} -f `${FIND} ${WRKSRC} -name '*.bat'` `${FIND} ${WRKSRC} -name '*.exe'` \
-		`${FIND} ${WRKSRC} -name '*.orig'` `${FIND} ${WRKSRC} -name '*.bak'`
+	@${FIND} ${WRKSRC} -type f \( -name '*.bak' -or -name '*.bat' -or -name '*.dll' -or -name '*.exe' -or -name '*.orig' \) -delete
 .for f in ${CONF_FILES}
 	@${MV} ${WRKSRC}/conf/${f} ${WRKSRC}/conf/${f}.${CONF_EXT}
 .endfor
