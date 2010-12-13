@@ -9,15 +9,13 @@ PORTNAME=	gtkguitune
 PORTVERSION=	0.8
 PORTREVISION=	2
 CATEGORIES=	audio
-MASTER_SITES=	http://www.geocities.com/harpin_floh/mysoft/
+MASTER_SITES=	http://www.oocities.com/harpin_floh/mysoft/
 DISTNAME=	${PORTNAME}-gtk2-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A guitar (and other instruments) tuner for GTK
 
 LIB_DEPENDS=	gtkmm-2.4.1:${PORTSDIR}/x11-toolkits/gtkmm24
-
-BROKEN=		does not fetch
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
