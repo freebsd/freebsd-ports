@@ -229,6 +229,7 @@
 %%MPIDIR%%/share/openmpi/help-mca-param.txt
 %%MPIDIR%%/share/openmpi/help-mpi-api.txt
 %%MPIDIR%%/share/openmpi/help-mpi-btl-base.txt
+%%MPIDIR%%/share/openmpi/help-mpi-btl-tcp.txt
 %%MPIDIR%%/share/openmpi/help-mpi-common-sm.txt
 %%MPIDIR%%/share/openmpi/help-mpi-errors.txt
 %%MPIDIR%%/share/openmpi/help-mpi-runtime.txt
@@ -272,6 +273,7 @@
 %%MPIDIR%%/share/openmpi/mpif77-wrapper-data.txt
 %%MPIDIR%%/share/openmpi/mpif90-vt-wrapper-data.txt
 %%MPIDIR%%/share/openmpi/mpif90-wrapper-data.txt
+%%MPIDIR%%/share/openmpi/openmpi-valgrind.supp
 %%MPIDIR%%/share/vampirtrace/FILTER.SPEC
 %%MPIDIR%%/share/vampirtrace/GROUPS.SPEC
 %%MPIDIR%%/share/vampirtrace/METRICS.SPEC
@@ -283,7 +285,6 @@
 %%MPIDIR%%/share/vampirtrace/doc/opari/LICENSE
 %%MPIDIR%%/share/vampirtrace/doc/opari/Readme.html
 %%MPIDIR%%/share/vampirtrace/doc/opari/lacsi01.pdf
-%%MPIDIR%%/share/vampirtrace/doc/opari/lacsi01.ps.gz
 %%MPIDIR%%/share/vampirtrace/doc/opari/opari-logo-100.gif
 %%MPIDIR%%/share/vampirtrace/doc/otf/ChangeLog
 %%MPIDIR%%/share/vampirtrace/doc/otf/LICENSE
@@ -307,11 +308,9 @@
 %%MPIDIR%%/bin/mpif90
 %%MPIDIR%%/bin/mpif90-vt
 %%MPIDIR%%/bin/mpirun
-%%MPIDIR%%/bin/ompi-checkpoint
 %%MPIDIR%%/bin/ompi-clean
 %%MPIDIR%%/bin/ompi-iof
 %%MPIDIR%%/bin/ompi-ps
-%%MPIDIR%%/bin/ompi-restart
 %%MPIDIR%%/bin/otfdecompress
 %%MPIDIR%%/lib/libmca_common_sm.so
 %%MPIDIR%%/lib/libmpi.so
