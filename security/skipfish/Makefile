@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	skipfish
-PORTVERSION=	1.67b
+PORTVERSION=	1.81b
 CATEGORIES=	security www
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 EXTRACT_SUFX=	.tgz
@@ -30,7 +30,7 @@ BROKEN=		does not build on 6.x yet
 .endif
 
 post-patch:
-	 @${REINPLACE_CMD} -e 's:"skipfish.wl":"${DATADIR}/dictionaries/default.wl":' \
+	@${REINPLACE_CMD} -e 's:"skipfish.wl":"${DATADIR}/dictionaries/complete.wl":' \
 		-e 's:"assets":"${DATADIR}/assets":' ${WRKSRC}/config.h
 
 do-install:

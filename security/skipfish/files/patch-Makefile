@@ -1,6 +1,13 @@
---- ./Makefile.orig	2010-03-30 17:53:01.000000000 +0200
-+++ ./Makefile	2010-04-11 19:05:39.000000000 +0200
-@@ -30,7 +30,7 @@
+--- Makefile.orig	2010-11-29 16:59:49.000000000 -0500
++++ Makefile	2010-12-12 19:24:29.000000000 -0500
+@@ -26,12 +26,13 @@
+ INCFILES   = alloc-inl.h string-inl.h debug.h types.h http_client.h \
+              database.h crawler.h analysis.h config.h report.h
+ 
+-CFLAGS_GEN = -Wall -funsigned-char -g -ggdb -I/usr/local/include/ \
++_LOCALBASE ?= ${LOCALBASE}
++CFLAGS_GEN = -Wall -funsigned-char -g -ggdb -I$(LOCALBASE)/include/ \
+              -I/opt/local/include/ $(CFLAGS) -DVERSION=\"$(VERSION)\"
  CFLAGS_DBG = -DLOG_STDERR=1 -DDEBUG_ALLOCATOR=1 $(CFLAGS_GEN) 
  CFLAGS_OPT = -O3 -Wno-format $(CFLAGS_GEN)
  
@@ -9,7 +16,7 @@
  LIBS      += -lcrypto -lssl -lidn -lz
  
  all: $(PROGNAME)
-@@ -38,12 +38,12 @@
+@@ -39,12 +40,12 @@
  $(PROGNAME): $(PROGNAME).c $(OBJFILES) $(INCFILES)
  	$(CC) $(LDFLAGS) $(PROGNAME).c -o $(PROGNAME) $(CFLAGS_OPT) \
  	      $(OBJFILES) $(LIBS)

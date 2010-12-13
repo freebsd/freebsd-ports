@@ -25,7 +25,7 @@ bin/skipfish
 %%DATADIR%%/assets/sf_name.png
 %%DATADIR%%/dictionaries/README-FIRST
 %%DATADIR%%/dictionaries/complete.wl
-%%DATADIR%%/dictionaries/default.wl
+%%DATADIR%%/dictionaries/medium.wl
 %%DATADIR%%/dictionaries/extensions-only.wl
 %%DATADIR%%/dictionaries/minimal.wl
 @dirrm %%DATADIR%%/dictionaries
