@@ -2,8 +2,10 @@ bin/addr2line
 bin/ar
 bin/as
 bin/c++filt
+bin/elfedit
 bin/gprof
 bin/ld
+bin/ld.bfd
 bin/nm
 bin/objcopy
 bin/objdump
