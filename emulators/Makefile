@@ -116,7 +116,6 @@
     SUBDIR += mupen64plus-audio-sdl
     SUBDIR += mupen64plus-base
     SUBDIR += mupen64plus-core
-    SUBDIR += mupen64plus-input
     SUBDIR += mupen64plus-input-sdl
     SUBDIR += mupen64plus-rice
     SUBDIR += mupen64plus-rsp
