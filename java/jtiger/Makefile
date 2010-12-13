@@ -8,7 +8,7 @@
 PORTNAME=	jtiger
 PORTVERSION=	2.1.0376
 CATEGORIES=	java devel
-MASTER_SITES=	http://jtiger.org/download/
+MASTER_SITES=	http://kaiwitte.org/jtiger/
 
 MAINTAINER=	wenheping@gmail.com
 COMMENT=	A Unit Test Framework and Tools for the Java2 Platform
