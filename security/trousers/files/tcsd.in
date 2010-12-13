@@ -3,7 +3,8 @@
 # $FreeBSD$
 #
 # PROVIDE: tcsd
-# REQUIRE: LOGIN
+# REQUIRE: SERVER tpmd
+# BEFORE:  named hastd kerberos
 # KEYWORD: shutdown
 #
 # Add the following lines to /etc/rc.conf.local or /etc/rc.conf
