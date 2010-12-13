@@ -8,15 +8,16 @@ take effect, you -must- backup and then remove ~/.mupen64plus first. After you
 have removed the directory, run 'mupen64plus' to re-create it. Then, manually 
 copy back your save files/other data you need from the backup if necessary.
 
-2) This port install gui or no-gui version of Mupen64Plus
+2) This port installs core, command-line ui and plugins (audio, input, rsp and 
+video) of Mupen64Plus and
 
-   Run gui or no-gui version
+   Run command-line version
 
    # mupen64plus
 
-3) You can see an use manual about mupen64plus at
+3) Also, you can see the mupen64plus man page
 
-  # %%DOCSDIR%%/readme.pdf
+  # man mupen64plus
 
 4) Enjoy it ;)
 
