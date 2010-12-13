@@ -7,7 +7,7 @@
 
 PORTNAME=	visualboyadvance-m
 PORTVERSION=	1.8.0r${SVN_REV}
-PORTREVISION=	1
+PORTREVISION=	0
 CATEGORIES=	emulators
 MASTER_SITES=	http://update.cooltrainer.org/emulators/visualboyadvance-m/
 
@@ -30,7 +30,7 @@ USE_GL=		gl glu
 USE_SDL=	sdl
 USE_CMAKE=	yes
 CMAKE_ARGS+=	-DVERSION:STRING="${PORTVERSION}" -DSYSCONFDIR:STRING="${PREFIX}/etc"
-SVN_REV=	945
+SVN_REV=	966
 
 .include <bsd.port.pre.mk>
 
