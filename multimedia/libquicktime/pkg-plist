@@ -1,7 +1,7 @@
 %%GTK%%bin/libquicktime_config
-bin/lqt-config
 bin/lqt_transcode
 bin/lqtplay
+bin/lqtremux
 bin/qt2text
 bin/qtdechunk
 bin/qtdump
@@ -10,6 +10,7 @@ bin/qtrechunk
 bin/qtstreamize
 bin/qtyuv4toyuv
 include/lqt/colormodels.h
+include/lqt/compression.h
 include/lqt/lqt.h
 include/lqt/lqt_atoms.h
 include/lqt/lqt_codecinfo.h
@@ -44,7 +45,6 @@ lib/libquicktime/lqt_vorbis.so
 %%X264%%lib/libquicktime/lqt_x264.la
 %%X264%%lib/libquicktime/lqt_x264.so
 libdata/pkgconfig/libquicktime.pc
-share/aclocal/lqt.m4
 share/locale/de/LC_MESSAGES/libquicktime.mo
 @dirrm lib/libquicktime
 @dirrm include/lqt
