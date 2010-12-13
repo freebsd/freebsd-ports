@@ -1,21 +1,17 @@
-# New ports collection makefile for:	mupen64plus-sdlaudio
+# New ports collection makefile for:	mupen64plus-audio-sdl
 # Date created:		2008-05-16
 # Whom:			Jose Alonso Cardenas Marquez <acm@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
-PKGNAMESUFFIX=	-sdlaudio
+PKGNAMESUFFIX=	-audio-sdl
 
-COMMENT=	JttL's SDL audio plugin for Mupen64plus
+COMMENT=	Mupen64plus audio sdl plugin
 
 USE_SDL=	sdl
 
-FIXFILES=	#
-
-PLUGIN_NAME=	jttl_audio
-
-MASTERDIR=	${.CURDIR}/../mupen64plus-base
+MASTERDIR=	${.CURDIR}/../mupen64plus-core
 
 OPTIONS=	#
 
