@@ -14,7 +14,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Sphinx search engine API Perl client
 
-RUN_DEPENDS=	p5-Class-Accessor-Fast>=0:${PORTSDIR}/devel/p5-Class-Accessor-Fast \
+RUN_DEPENDS=	p5-Class-Accessor>=0:${PORTSDIR}/devel/p5-Class-Accessor \
   p5-DBI>=0:${PORTSDIR}/databases/p5-DBI \
   p5-File-SearchPath>=0:${PORTSDIR}/devel/p5-File-SearchPath \
   p5-Path-Class>=0:${PORTSDIR}/devel/p5-Path-Class
