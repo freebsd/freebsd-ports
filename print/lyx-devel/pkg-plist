@@ -1,9 +1,12 @@
 bin/lyx
 bin/lyxclient
 bin/tex2lyx
+
 %%NLS%%share/locale/ar/LC_MESSAGES/lyx.mo
+%%NLS%%share/locale/bg/LC_MESSAGES/lyx.mo
 %%NLS%%share/locale/ca/LC_MESSAGES/lyx.mo
 %%NLS%%share/locale/cs/LC_MESSAGES/lyx.mo
+%%NLS%%share/locale/da/LC_MESSAGES/lyx.mo
 %%NLS%%share/locale/de/LC_MESSAGES/lyx.mo
 %%NLS%%share/locale/el/LC_MESSAGES/lyx.mo
 %%NLS%%share/locale/en/LC_MESSAGES/lyx.mo
@@ -17,17 +20,24 @@ bin/tex2lyx
 %%NLS%%share/locale/id/LC_MESSAGES/lyx.mo
 %%NLS%%share/locale/it/LC_MESSAGES/lyx.mo
 %%NLS%%share/locale/ja/LC_MESSAGES/lyx.mo
+%%NLS%%share/locale/ko/LC_MESSAGES/lyx.mo
 %%NLS%%share/locale/nb/LC_MESSAGES/lyx.mo
+%%NLS%%share/locale/nl/LC_MESSAGES/lyx.mo
 %%NLS%%share/locale/nn/LC_MESSAGES/lyx.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/lyx.mo
 %%NLS%%share/locale/pt/LC_MESSAGES/lyx.mo
 %%NLS%%share/locale/ro/LC_MESSAGES/lyx.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/lyx.mo
 %%NLS%%share/locale/sk/LC_MESSAGES/lyx.mo
+%%NLS%%share/locale/sl/LC_MESSAGES/lyx.mo
+%%NLS%%share/locale/sr/LC_MESSAGES/lyx.mo
+%%NLS%%share/locale/sv/LC_MESSAGES/lyx.mo
 %%NLS%%share/locale/tr/LC_MESSAGES/lyx.mo
 %%NLS%%share/locale/uk/LC_MESSAGES/lyx.mo
+%%NLS%%share/locale/wa/LC_MESSAGES/lyx.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/lyx.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/lyx.mo
+
 %%DATADIR%%/CREDITS
 %%DATADIR%%/bind/aqua.bind
 %%DATADIR%%/bind/broadway.bind
@@ -283,7 +293,6 @@ bin/tex2lyx
 %%DATADIR%%/examples/el/splash.lyx
 %%DATADIR%%/examples/es/Braille.lyx
 %%DATADIR%%/examples/es/ItemizeBullets.lyx
-%%DATADIR%%/examples/es/beamer-conference-ornate20min.lyx
 %%DATADIR%%/examples/es/ejemplo_con_lyx.lyx
 %%DATADIR%%/examples/es/ejemplo_sin_lyx.lyx
 %%DATADIR%%/examples/es/linguistics.lyx
@@ -364,6 +373,8 @@ bin/tex2lyx
 %%DATADIR%%/examples/sl/primer_surov.lyx
 %%DATADIR%%/examples/sl/splash.lyx
 %%DATADIR%%/examples/splash.lyx
+%%DATADIR%%/examples/sr/Braille.lyx
+%%DATADIR%%/examples/sr/splash.lyx
 %%DATADIR%%/examples/sweave.lyx
 %%DATADIR%%/examples/tufte-book.lyx
 %%DATADIR%%/examples/tufte-handout.lyx
@@ -395,11 +406,13 @@ bin/tex2lyx
 %%DATADIR%%/images/buffer-close.png
 %%DATADIR%%/images/buffer-export.png
 %%DATADIR%%/images/buffer-export_dvi.png
+%%DATADIR%%/images/buffer-export_dvi3.png
 %%DATADIR%%/images/buffer-export_latex.png
 %%DATADIR%%/images/buffer-export_pdf.png
 %%DATADIR%%/images/buffer-export_pdf2.png
 %%DATADIR%%/images/buffer-export_pdf3.png
 %%DATADIR%%/images/buffer-export_pdf4.png
+%%DATADIR%%/images/buffer-export_pdf5.png
 %%DATADIR%%/images/buffer-export_ps.png
 %%DATADIR%%/images/buffer-export_text.png
 %%DATADIR%%/images/buffer-new.png
@@ -407,17 +420,21 @@ bin/tex2lyx
 %%DATADIR%%/images/buffer-toggle-output-sync.png
 %%DATADIR%%/images/buffer-update.png
 %%DATADIR%%/images/buffer-update_dvi.png
+%%DATADIR%%/images/buffer-update_dvi3.png
 %%DATADIR%%/images/buffer-update_pdf.png
 %%DATADIR%%/images/buffer-update_pdf2.png
 %%DATADIR%%/images/buffer-update_pdf3.png
 %%DATADIR%%/images/buffer-update_pdf4.png
+%%DATADIR%%/images/buffer-update_pdf5.png
 %%DATADIR%%/images/buffer-update_ps.png
 %%DATADIR%%/images/buffer-view.png
 %%DATADIR%%/images/buffer-view_dvi.png
+%%DATADIR%%/images/buffer-view_dvi3.png
 %%DATADIR%%/images/buffer-view_pdf.png
 %%DATADIR%%/images/buffer-view_pdf2.png
 %%DATADIR%%/images/buffer-view_pdf3.png
 %%DATADIR%%/images/buffer-view_pdf4.png
+%%DATADIR%%/images/buffer-view_pdf5.png
 %%DATADIR%%/images/buffer-view_ps.png
 %%DATADIR%%/images/buffer-write-as.png
 %%DATADIR%%/images/buffer-write.png
@@ -963,19 +980,30 @@ bin/tex2lyx
 %%DATADIR%%/images/math/upsilon2.png
 %%DATADIR%%/images/math/upuparrows.png
 %%DATADIR%%/images/math/urcorner.png
+%%DATADIR%%/images/math/varDelta.png
+%%DATADIR%%/images/math/varGamma.png
+%%DATADIR%%/images/math/varLambda.png
+%%DATADIR%%/images/math/varOmega.png
+%%DATADIR%%/images/math/varPsi.png
+%%DATADIR%%/images/math/varUpsilon.png
+%%DATADIR%%/images/math/varXi.png
 %%DATADIR%%/images/math/varepsilon.png
 %%DATADIR%%/images/math/varkappa.png
 %%DATADIR%%/images/math/varnothing.png
 %%DATADIR%%/images/math/varphi.png
+%%DATADIR%%/images/math/varphi2.png
 %%DATADIR%%/images/math/varpi.png
+%%DATADIR%%/images/math/varpi2.png
 %%DATADIR%%/images/math/varpropto.png
 %%DATADIR%%/images/math/varrho.png
 %%DATADIR%%/images/math/varsigma.png
+%%DATADIR%%/images/math/varsigma2.png
 %%DATADIR%%/images/math/varsubsetneq.png
 %%DATADIR%%/images/math/varsubsetneqq.png
 %%DATADIR%%/images/math/varsupsetneq.png
 %%DATADIR%%/images/math/varsupsetneqq.png
 %%DATADIR%%/images/math/vartheta.png
+%%DATADIR%%/images/math/vartheta2.png
 %%DATADIR%%/images/math/vartriangle.png
 %%DATADIR%%/images/math/vartriangleleft.png
 %%DATADIR%%/images/math/vartriangleright.png
@@ -1008,6 +1036,8 @@ bin/tex2lyx
 %%DATADIR%%/images/psnfss4.png
 %%DATADIR%%/images/redo.png
 %%DATADIR%%/images/reload.png
+%%DATADIR%%/images/script-insert_subscript.png
+%%DATADIR%%/images/script-insert_superscript.png
 %%DATADIR%%/images/split-view_horizontal.png
 %%DATADIR%%/images/split-view_vertical.png
 %%DATADIR%%/images/standard.png
@@ -1150,6 +1180,7 @@ bin/tex2lyx
 %%DATADIR%%/layouts/elsarticle.layout
 %%DATADIR%%/layouts/endnotes.module
 %%DATADIR%%/layouts/entcs.layout
+%%DATADIR%%/layouts/enumitem.module
 %%DATADIR%%/layouts/eqs-within-sections.module
 %%DATADIR%%/layouts/europecv.layout
 %%DATADIR%%/layouts/extarticle.layout
@@ -1157,6 +1188,7 @@ bin/tex2lyx
 %%DATADIR%%/layouts/extletter.layout
 %%DATADIR%%/layouts/extreport.layout
 %%DATADIR%%/layouts/figs-within-sections.module
+%%DATADIR%%/layouts/fixltx2e.module
 %%DATADIR%%/layouts/foils.layout
 %%DATADIR%%/layouts/foottoend.module
 %%DATADIR%%/layouts/frletter.layout
@@ -1474,6 +1506,7 @@ bin/tex2lyx
 %%DATADIR%%/ui/stdmenus.inc
 %%DATADIR%%/ui/stdtoolbars.inc
 %%DATADIR%%/unicodesymbols
+
 @dirrm %%DATADIR%%/ui
 @dirrm %%DATADIR%%/tex
 @dirrm %%DATADIR%%/templates/thesis
@@ -1487,6 +1520,7 @@ bin/tex2lyx
 @dirrm %%DATADIR%%/images
 @dirrm %%DATADIR%%/fonts
 @dirrm %%DATADIR%%/examples/uk
+@dirrm %%DATADIR%%/examples/sr
 @dirrm %%DATADIR%%/examples/sl
 @dirrm %%DATADIR%%/examples/sk
 @dirrm %%DATADIR%%/examples/ru
