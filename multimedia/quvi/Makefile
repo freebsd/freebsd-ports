@@ -6,15 +6,15 @@
 #
 
 PORTNAME=	quvi
-PORTVERSION=	0.2.8
+PORTVERSION=	0.2.10
 CATEGORIES=	multimedia devel
-MASTER_SITES=	GOOGLE_CODE
+MASTER_SITES=	GOOGLE_CODE \
+		SF/${PORTNAME}/${PORTVERSION:R}/
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Query video library for Youtube like websites
 
-LIB_DEPENDS=	curl.6:${PORTSDIR}/ftp/curl \
-		pcre.0:${PORTSDIR}/devel/pcre
+LIB_DEPENDS=	curl.6:${PORTSDIR}/ftp/curl
 
 LICENSE=	GPLv3
 
