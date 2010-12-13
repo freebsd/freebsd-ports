@@ -4712,3 +4712,4 @@ emulators/mupen64plus-sdlinput|emulators/mupen64plus-input-sdl|2010-12-13|Port w
 emulators/mupen64plus-rsp|emulators/mupen64plus-rsp-hle|2010-12-13|Port was renamed
 emulators/mupen64plus-rice|emulators/mupen64plus-video-rice|2010-12-13|Port was renamed
 emulators/mupen64plus-dummyaudio||2010-12-13|Port was removed, now it is obsolete
+emulators/mupen64plus-dummyvideo||2010-12-13|Port was removed, now it is obsolete
