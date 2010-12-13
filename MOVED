@@ -4706,3 +4706,4 @@ devel/automake111|devel/automake|2010-12-08|Autotools cleanup
 devel/libtool22|devel/libtool|2010-12-08|Autotools cleanup
 devel/libltdl22|devel/libltdl|2010-12-08|Autotools cleanup
 devel/rubygem-image_science|graphics/rubygem-image_science|2010-12-11|Moved category
+emulators/mupen64plus-base|emulators/mupen64plus-core|2010-12-13|Port was renamed
