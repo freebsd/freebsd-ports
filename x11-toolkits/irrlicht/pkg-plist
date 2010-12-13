@@ -2,6 +2,8 @@ include/irrlicht/CDynamicMeshBuffer.h
 include/irrlicht/CIndexBuffer.h
 include/irrlicht/CMeshBuffer.h
 include/irrlicht/CVertexBuffer.h
+include/irrlicht/EAttributes.h
+include/irrlicht/EShaderTypes.h
 include/irrlicht/ECullingTypes.h
 include/irrlicht/EDebugSceneTypes.h
 include/irrlicht/EDeviceTypes.h
@@ -14,6 +16,7 @@ include/irrlicht/EMaterialFlags.h
 include/irrlicht/EMaterialTypes.h
 include/irrlicht/EMeshWriterEnums.h
 include/irrlicht/EMessageBoxFlags.h
+include/irrlicht/EPrimitiveTypes.h
 include/irrlicht/ESceneNodeAnimatorTypes.h
 include/irrlicht/ESceneNodeTypes.h
 include/irrlicht/ETerrainElements.h
@@ -143,11 +146,13 @@ include/irrlicht/SParticle.h
 include/irrlicht/SSharedMeshBuffer.h
 include/irrlicht/SSkinMeshBuffer.h
 include/irrlicht/SVertexIndex.h
+include/irrlicht/SVertexManipulator.h
 include/irrlicht/SViewFrustum.h
 include/irrlicht/SceneParameters.h
 include/irrlicht/aabbox3d.h
 include/irrlicht/coreutil.h
 include/irrlicht/dimension2d.h
+include/irrlicht/driverChoice.h
 include/irrlicht/fast_atof.h
 include/irrlicht/heapsort.h
 include/irrlicht/irrAllocator.h
@@ -230,6 +235,8 @@ lib/libIrrlicht.so.%%SHARED_LIB_VER%%
 %%EXAMPLES%%%%EXAMPLESDIR%%/media/019shot.jpg
 %%EXAMPLES%%%%EXAMPLESDIR%%/media/020shot.jpg
 %%EXAMPLES%%%%EXAMPLESDIR%%/media/021shot.jpg
+%%EXAMPLES%%%%EXAMPLESDIR%%/media/022shot.jpg
+%%EXAMPLES%%%%EXAMPLESDIR%%/media/023shot.jpg
 %%EXAMPLES%%%%EXAMPLESDIR%%/media/2ddemo.png
 %%EXAMPLES%%%%EXAMPLESDIR%%/media/Faerie5.BMP
 %%EXAMPLES%%%%EXAMPLESDIR%%/media/IrrlichtTheme.ogg
