@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Email-Abstract
-PORTVERSION=	3.002
+PORTVERSION=	3.003
 CATEGORIES=	mail perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	Email
@@ -15,9 +15,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	lth@FreeBSD.org
 COMMENT=	Unified interface to mail representations
 
-RUN_DEPENDS=	p5-Class-ISA>=0.20:${PORTSDIR}/devel/p5-Class-ISA \
-		p5-Email-Simple>=1.91:${PORTSDIR}/mail/p5-Email-Simple \
-		p5-Module-Pluggable>=1.5:${PORTSDIR}/devel/p5-Module-Pluggable
+RUN_DEPENDS=	p5-Email-Simple>=1.91:${PORTSDIR}/mail/p5-Email-Simple \
+		p5-Module-Pluggable>=1.5:${PORTSDIR}/devel/p5-Module-Pluggable \
+		p5-MRO-Compat>=0:${PORTSDIR}/devel/p5-MRO-Compat
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
