@@ -17,6 +17,7 @@ COMMENT=		Trusted Platform Module (TPM) emulator
 LIB_DEPENDS=		gmp.10:${PORTSDIR}/math/gmp
 
 USE_CMAKE=		YES
+USE_RC_SUBR=		tpmd
 USE_LDCONFIG=		YES
 MAKE_JOBS_SAFE=		YES
 
