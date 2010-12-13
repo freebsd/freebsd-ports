@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	clive
-PORTVERSION=	2.2.16
+PORTVERSION=	2.2.19
 CATEGORIES=	multimedia
-MASTER_SITES=	GOOGLE_CODE
+MASTER_SITES=	SF/${PORTNAME}/2.2
 
 MAINTAINER=	geekounet@poildetroll.net
 COMMENT=	Command line video extraction tool for YouTube and others
@@ -31,7 +31,6 @@ OPTIONS=	CACHE	 "With video page cache" off \
 MAN1=		clive.1
 
 PERL_CONFIGURE=	yes
-USE_BZIP2=	yes
 
 .include <bsd.port.pre.mk>
 
