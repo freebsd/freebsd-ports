@@ -5,7 +5,7 @@
      echo "*** The Phusion Passenger support files are not yet compiled. Compiling them for you... ***"
      echo "*** Running 'rake nginx RELEASE=yes' in $ngx_addon_dir... ***"
 -    if ! cd $ngx_addon_dir; then
-+    if ! (cd $ngx_addon_dir; rake nginx RELEASE=yes); then
++    if ! (cd $ngx_addon_dir; rake nginx); then
          exit 1
 +    else
 +        echo "*** Phusion Passenger support files have been successfully compiled. ***"
