@@ -33,9 +33,6 @@ bin/gaeogen
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/oildrum/gaeo/controller/helper.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/oildrum/gaeo/controller/helper.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/oildrum/gaeo/controller/helper.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/oildrum/gaeo/controller/jsonencoder.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/oildrum/gaeo/controller/jsonencoder.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/oildrum/gaeo/controller/jsonencoder.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/oildrum/gaeo/dispatch/__init__.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/oildrum/gaeo/dispatch/__init__.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/oildrum/gaeo/dispatch/__init__.pyo
@@ -51,6 +48,9 @@ bin/gaeogen
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/oildrum/gaeo/session/__init__.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/oildrum/gaeo/session/__init__.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/oildrum/gaeo/session/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/oildrum/gaeo/session/datastore.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/oildrum/gaeo/session/datastore.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/oildrum/gaeo/session/datastore.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/oildrum/gaeo/session/memcache.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/oildrum/gaeo/session/memcache.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/oildrum/gaeo/session/memcache.pyo
@@ -66,6 +66,9 @@ bin/gaeogen
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/oildrum/gaeo/view/helper/form.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/oildrum/gaeo/view/helper/form.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/oildrum/gaeo/view/helper/form.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/oildrum/libs/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/oildrum/libs/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/oildrum/libs/__init__.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/oildrum/main-sample.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/oildrum/main-sample.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/oildrum/main-sample.pyo
@@ -73,6 +76,7 @@ bin/gaeogen
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/oildrum/plugins/__init__.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/oildrum/plugins/__init__.pyo
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/oildrum/plugins
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/oildrum/libs
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/oildrum/gaeo/view/helper
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/oildrum/gaeo/view
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/oildrum/gaeo/session
