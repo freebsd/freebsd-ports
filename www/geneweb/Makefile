@@ -17,6 +17,8 @@ COMMENT=	An advanced genealogy software
 BUILD_DEPENDS=	ocamlc:${PORTSDIR}/lang/ocaml \
 		camlp5:${PORTSDIR}/devel/ocaml-camlp5
 
+BROKEN=		does not build
+
 HAS_CONFIGURE=	yes
 
 MAN1=		ged2gwb.1 gwb2ged.1 gwc.1 gwc2.1 gwu.1 gwd.1 consang.1 gwsetup.1
