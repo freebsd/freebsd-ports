@@ -114,7 +114,6 @@
     SUBDIR += mupen64-tr64
     SUBDIR += mupen64plus
     SUBDIR += mupen64plus-audio-sdl
-    SUBDIR += mupen64plus-base
     SUBDIR += mupen64plus-core
     SUBDIR += mupen64plus-input-sdl
     SUBDIR += mupen64plus-rice
