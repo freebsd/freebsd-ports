@@ -13,6 +13,8 @@ MASTER_SITES=	http://www.netxms.org/download/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	NetXMS - network monitoring system
 
+BROKEN=	does not compile with gcc 4.2
+
 NO_PACKAGE=	yes
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
