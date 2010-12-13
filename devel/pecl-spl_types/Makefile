@@ -18,10 +18,13 @@ DIST_SUBDIR=	PECL
 MAINTAINER=	glarkin@FreeBSD.org
 COMMENT=	A PECL extension of a collection of special typehandling classes
 
+LICENSE=	PHP301
+
 USE_PHP=	spl
 USE_PHP_BUILD=	yes
 USE_PHPEXT=	yes
 PHP_MODNAME=	spl_types
+IGNORE_WITH_PHP=4
 
 CONFIGURE_ARGS=	--enable-spl-types
 CFLAGS+=	-I${LOCALBASE}/include
