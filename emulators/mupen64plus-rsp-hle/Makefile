@@ -1,19 +1,15 @@
-# New ports collection makefile for:	mupen64plus-rsp
+# New ports collection makefile for:	mupen64plus-rsp-hle
 # Date created:		2008-05-16
 # Whom:			Jose Alonso Cardenas Marquez <acm@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
-PKGNAMESUFFIX=	-rsp
+PKGNAMESUFFIX=	-rsp-hle
 
 COMMENT=	RSP plugin for Mupen64plus
 
-FIXFILES=	#
-
-PLUGIN_NAME=	mupen64_hle_rsp_azimer
-
-MASTERDIR=	${.CURDIR}/../mupen64plus-base
+MASTERDIR=	${.CURDIR}/../mupen64plus-core
 
 OPTIONS=	#
 
