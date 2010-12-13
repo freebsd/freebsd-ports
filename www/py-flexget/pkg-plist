@@ -2,9 +2,15 @@ bin/flexget
 %%PYTHON_SITELIBDIR%%/flexget/__init__.py
 %%PYTHON_SITELIBDIR%%/flexget/__init__.pyc
 %%PYTHON_SITELIBDIR%%/flexget/__init__.pyo
+%%PYTHON_SITELIBDIR%%/flexget/event.py
+%%PYTHON_SITELIBDIR%%/flexget/event.pyc
+%%PYTHON_SITELIBDIR%%/flexget/event.pyo
 %%PYTHON_SITELIBDIR%%/flexget/feed.py
 %%PYTHON_SITELIBDIR%%/flexget/feed.pyc
 %%PYTHON_SITELIBDIR%%/flexget/feed.pyo
+%%PYTHON_SITELIBDIR%%/flexget/logger.py
+%%PYTHON_SITELIBDIR%%/flexget/logger.pyc
+%%PYTHON_SITELIBDIR%%/flexget/logger.pyo
 %%PYTHON_SITELIBDIR%%/flexget/manager.py
 %%PYTHON_SITELIBDIR%%/flexget/manager.pyc
 %%PYTHON_SITELIBDIR%%/flexget/manager.pyo
@@ -368,6 +374,9 @@ bin/flexget
 %%PYTHON_SITELIBDIR%%/flexget/validator.py
 %%PYTHON_SITELIBDIR%%/flexget/validator.pyc
 %%PYTHON_SITELIBDIR%%/flexget/validator.pyo
+%%PYTHON_SITELIBDIR%%/flexget/webui.py
+%%PYTHON_SITELIBDIR%%/flexget/webui.pyc
+%%PYTHON_SITELIBDIR%%/flexget/webui.pyo
 @dirrm %%PYTHON_SITELIBDIR%%/flexget/utils/titles
 @dirrm %%PYTHON_SITELIBDIR%%/flexget/utils
 @dirrm %%PYTHON_SITELIBDIR%%/flexget/plugins
