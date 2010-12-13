@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	binutils
-PORTVERSION=	2.20.1
-PORTREVISION=	3
+PORTVERSION=	2.21
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEWARE}
 MASTER_SITE_SUBDIR=	binutils/releases
@@ -29,6 +28,7 @@ OPTIONS=	NLS "Enable National Language Support" off
 CFLAGS+=	-I${LOCALBASE}/include
 CONFIGURE_ENV+=	LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS+=	--with-system-zlib \
+			--disable-werror \
 			--with-gmp=${LOCALBASE} \
 			--with-mpfr=${LOCALBASE}
 
@@ -38,6 +38,7 @@ MAN1=		addr2line.1 \
 		c++filt.1 \
 		gprof.1 \
 		dlltool.1 \
+		elfedit.1 \
 		ld.1 \
 		nlmconv.1 \
 		nm.1 \
