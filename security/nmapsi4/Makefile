@@ -17,6 +17,8 @@ COMMENT=	GUI frontend for the nmap scanning utility
 
 RUN_DEPENDS=	${LOCALBASE}/bin/nmap:${PORTSDIR}/security/nmap
 
+BROKEN=		does not compile
+
 USE_CMAKE=	yes
 CMAKE_USE_PTHREAD=	yes
 USE_QT_VER=	4
