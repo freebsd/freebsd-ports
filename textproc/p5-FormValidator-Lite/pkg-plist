@@ -10,6 +10,7 @@
 %%SITE_PERL%%/FormValidator/Lite/Messages/ja.pm
 %%SITE_PERL%%/FormValidator/Lite/Upload/CGI.pm
 %%SITE_PERL%%/FormValidator/Lite/Upload/HTTPEngine.pm
+%%SITE_PERL%%/FormValidator/Lite/Upload/PlackRequest.pm
 %%SITE_PERL%%/FormValidator/Lite/Constraint.pm
 %%SITE_PERL%%/FormValidator/Lite/Upload.pm
 %%SITE_PERL%%/FormValidator/Lite.pm
