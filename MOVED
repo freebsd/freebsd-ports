@@ -4710,3 +4710,4 @@ emulators/mupen64plus-base|emulators/mupen64plus-core|2010-12-13|Port was rename
 emulators/mupen64plus-sdlaudio|emulators/mupen64plus-audio-sdl|2010-12-13|Port was renamed
 emulators/mupen64plus-sdlinput|emulators/mupen64plus-input-sdl|2010-12-13|Port was renamed
 emulators/mupen64plus-rsp|emulators/mupen64plus-rsp-hle|2010-12-13|Port was renamed
+emulators/mupen64plus-rice|emulators/mupen64plus-video-rice|2010-12-13|Port was renamed
