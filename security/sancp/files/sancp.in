@@ -75,6 +75,6 @@ load_rc_config $name
 : ${sancp_conf="%%PREFIX%%/etc/sancp.conf"}
 : ${sancp_interface=""}
 
-command_args="${sancp_flags} -c ${sancp_conf} -i ${sancp_interface}"
+command_args="-c ${sancp_conf} -i ${sancp_interface}"
 
 run_rc_command "$1"
