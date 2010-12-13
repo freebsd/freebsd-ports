@@ -16,11 +16,12 @@ DIST_SUBDIR=	PECL
 MAINTAINER=	jille@quis.cx
 COMMENT=	A PECL extension for ncurses
 
+LICENSE=	PHP301
+
 USE_PHP=	yes
 USE_PHP_BUILD=	yes
 USE_PHPEXT=	yes
 WANT_PHP_CLI=	yes
-
-CONFLICTS=	php52-[0-9]
+IGNORE_WITH_PHP=4 52
 
 .include <bsd.port.mk>
