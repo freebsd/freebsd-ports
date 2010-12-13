@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	SQL-Translator
-PORTVERSION=	0.11006
+PORTVERSION=	0.11007
 CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -30,8 +30,7 @@ BUILD_DEPENDS=	p5-Class-Base>=0:${PORTSDIR}/devel/p5-Class-Base \
 		p5-IO-stringy>=0:${PORTSDIR}/devel/p5-IO-stringy \
 		p5-Spreadsheet-ParseExcel>=0.41:${PORTSDIR}/textproc/p5-Spreadsheet-ParseExcel \
 		p5-Text-RecordParser>=0.02:${PORTSDIR}/textproc/p5-Text-RecordParser \
-		p5-XML-Writer>=0.500:${PORTSDIR}/textproc/p5-XML-Writer \
-		p5-YAML>=0.66:${PORTSDIR}/textproc/p5-YAML
+		p5-XML-Writer>=0.500:${PORTSDIR}/textproc/p5-XML-Writer
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
@@ -109,4 +108,10 @@ MAN3=		SQL::Translator.3 \
 post-patch:
 	@${FIND} ${WRKSRC} -name "*.orig" -delete
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500703
+BUILD_DEPENDS+=	p5-Scalar-List-Utils>=0:${PORTSDIR}/lang/p5-Scalar-List-Utils
+.endif
+
+.include <bsd.port.post.mk>
