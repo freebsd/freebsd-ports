@@ -21,6 +21,10 @@ PLIST=			${WRKDIR}/pkg-plist
 MAN6=	mupen64plus.6
 .endif
 
+.if ${PKGNAMESUFFIX} == "-video-rice"
+LIB_DEPENDS+=		png.6:${PORTSDIR}/graphics/png
+.endif
+
 .if ${PKGNAMESUFFIX} != "-core"
 post-extract:
 .	if ${PKGNAMESUFFIX} == "-ui-console"
