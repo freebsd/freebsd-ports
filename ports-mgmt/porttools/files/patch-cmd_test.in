@@ -1,0 +1,11 @@
+--- cmd_test.in	2009-09-09 23:59:59.000000000 +0400
++++ cmd_test.in	2010-11-10 13:57:10.000000000 +0300
+@@ -189,7 +189,7 @@
+ 		sed -e "s,^${PREFIX}/,,"
+ 	sudo find ${LOCALBASE}/ -type d | sed "s,^${LOCALBASE}/,," | sort > ${PREFIX}.PLIST_DIRS.before
+ 	sudo find ${PREFIX}/ -type d | sed "s,^${PREFIX}/,," | sort > ${PREFIX}.PLIST_DIRS.after
+-	comm -13 ${PREFIX}.PLIST_DIRS.before ${PREFIX}.PLIST_DIRS.after | sort -r | awk '{print "@dirrmtry "$1}'
++	comm -13 ${PREFIX}.PLIST_DIRS.before ${PREFIX}.PLIST_DIRS.after | sort -r | awk '{print "@dirrmtry "$0}'
+ fi
+ 
+ # Finish with a clean workspace
