@@ -4684,6 +4684,8 @@ www/google_shortcuts|www/xpi-google_shortcuts|2010-11-26|Use www/xpi-google_shor
 x11-toolkits/ruby-gtksourceview||2010-11-27|Removed
 misc/libpri-bristuff||2010-11-28|Superseded by asterisk 1.8
 net/asterisk-bristuff||2010-11-28|Superseded by asterisk 1.8
+net/asterisk12||2010-11-30|EOL'ed upstream on 21 Nov 2010
+net/asterisk12-app-ldap||2010-11-30|EOL'ed upstream on 21 Nov 2010
 www/p5-Mojo|www/p5-Mojolicious|2010-11-29|Project distname was renamed
 shells/bash-completion-classic|shells/bash-completion|2010-11-29|amd64 workaround no longer required
 devel/p5-usb|devel/p5-Device-USB|2010-11-29|Directory renamed
@@ -4716,3 +4718,4 @@ emulators/mupen64plus-dummyvideo||2010-12-13|Port was removed, now it is obsolet
 emulators/mupen64plus-glide||2010-12-13|Port was removed, now it is obsolete
 emulators/mupen64plus-gln64||2010-12-13|Port was removed, now it is obsolete
 emulators/mupen64plus-input||2010-12-13|Port was removed, now it is obsolete
+misc/zaptel||2010-12-14|Superseded by misc/dahdi
