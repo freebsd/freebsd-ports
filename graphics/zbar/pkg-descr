@@ -1,0 +1,16 @@
+ZBar is an open source software suite for reading bar codes from various
+sources, such as video streams, image files and raw intensity sensors. It
+supports many popular symbologies (types of bar codes) including EAN-13/UPC-A,
+UPC-E, EAN-8, Code 128, Code 39, Interleaved 2 of 5 and QR Code.
+
+The flexible, layered implementation facilitates bar code scanning and decoding
+for any application: use it stand-alone with the included GUI and command line
+programs, easily integrate a bar code scanning widget into your Qt, GTK+ or
+PyGTK GUI application, leverage one of the script or programming interfaces
+(Python, Perl, C++) ...all the way down to a streamlined C library suitable for
+embedded use.
+
+ZBar is licensed under the GNU LGPL 2.1 to enable development of both open
+source and commercial projects.
+
+WWW: http://zbar.sourceforge.net
