@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	libserver
-PORTVERSION=	1.1
+PORTVERSION=	1.2
 CATEGORIES=	devel
 MASTER_SITES=	http://www.mammothcheese.ca/
 
 MAINTAINER=	jimmy@mammothcheese.ca
-COMMENT=	generic TCP server in a library
+COMMENT=	Generic TCP server in a library
 
 MAN8=		libserver.8
 MANCOMPRESSED=	yes
