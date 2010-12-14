@@ -1,0 +1,203 @@
+--- Output/OSS/OSS.h.orig	Tue Jun 19 04:16:56 2007
++++ Output/OSS/OSS.h	Tue Jun 19 04:17:00 2007
+@@ -37,7 +37,19 @@
+ #include <stdio.h>
+ #include <string.h>
+ 
++#ifdef __FreeBSD__
++#include <sys/soundcard.h>
++#else
+ #include "soundcard.h"
++#endif
++
++#ifndef SNDCTL_DSP_GETPLAYVOL
++#define SNDCTL_DSP_GETPLAYVOL	SOUND_MIXER_READ_PCM
++#endif
++
++#ifndef SNDCTL_DSP_SETPLAYVOL
++#define SNDCTL_DSP_SETPLAYVOL	SOUND_MIXER_WRITE_PCM
++#endif
+ 
+ #include "xmms/plugin.h"
+ #include "libxmms/configfile.h"
+@@ -81,6 +93,8 @@
+ int oss_get_output_time(void);
+ int oss_get_written_time(void);
+ void oss_set_audio_params(void);
++
++int oss_get_fd(void);
+ 
+ void oss_free_convert_buffer(void);
+ int (*oss_get_convert_func(int output, int input))(void **, int);
+--- Output/OSS/audio.c.orig	Tue Jun 19 04:17:17 2007
++++ Output/OSS/audio.c	Tue Jun 19 04:17:20 2007
+@@ -23,7 +23,7 @@
+ 
+ #define NFRAGS		32
+ 
+-static gint fd = 0;
++static gint fd = -1;
+ static char *buffer;
+ static gboolean going, prebuffer, paused, unpause, do_pause, remove_prebuffer;
+ static gint device_buffer_used, buffer_size, prebuffer_size, blk_size;
+@@ -273,8 +273,10 @@
+ 	{
+ 		output_time_offset += (output_bytes * 1000) / output.bps;
+ 		output_bytes = 0;
++#ifndef __FreeBSD__
+ 		close(fd);
+ 		fd = open(device_name,O_WRONLY);
++#endif
+ 		oss_setup_format(new_format, new_frequency, new_channels);
+ 	}
+ 	if (effects_enabled() && ep && ep->mod_samples)
+@@ -480,6 +482,7 @@
+ 	{
+ 		ioctl(fd, SNDCTL_DSP_RESET, 0);
+ 		close(fd);
++		fd = -1;
+ 	}
+ 	g_free(device_name);
+ 	oss_free_convert_buffer();
+@@ -498,8 +501,10 @@
+ 	else
+ 	{
+ 		ioctl(fd, SNDCTL_DSP_RESET, 0);
++#ifndef __FreeBSD__
+ 		close(fd);
+ 		fd = open(device_name, O_WRONLY);
++#endif
+ 		oss_set_audio_params();
+ 		output_time_offset = time;
+ 		written = ((guint64)time * input.bps) / 1000;
+@@ -568,8 +573,10 @@
+ 		else if (unpause && paused)
+ 		{
+ 			unpause = FALSE;
++#ifndef __FreeBSD__
+ 			close(fd);
+ 			fd = open(device_name, O_WRONLY);
++#endif
+ 			oss_set_audio_params();
+ 			paused = FALSE;
+ 		}
+@@ -583,8 +590,10 @@
+ 			 */
+ 
+ 			ioctl(fd, SNDCTL_DSP_RESET, 0);
++#ifndef __FreeBSD__
+ 			close(fd);
+ 			fd = open(device_name, O_WRONLY);
++#endif
+ 			oss_set_audio_params();
+ 			output_time_offset = flush;
+ 			written = ((guint64)flush * input.bps) / 1000;
+@@ -597,6 +606,7 @@
+ 
+ 	ioctl(fd, SNDCTL_DSP_RESET, 0);
+ 	close(fd);
++	fd = -1;
+ 	g_free(buffer);
+ 	pthread_exit(NULL);
+ }
+@@ -706,4 +716,9 @@
+ 	if (!realtime)
+ 		pthread_create(&buffer_thread, NULL, oss_loop, NULL);
+ 	return 1;
++}
++
++int oss_get_fd(void)
++{
++	return fd;
+ }
+--- Output/OSS/mixer.c.orig	Tue Jun 19 04:21:32 2007
++++ Output/OSS/mixer.c	Tue Jun 19 04:21:38 2007
+@@ -34,13 +34,20 @@
+ 
+ void oss_get_volume(int *l, int *r)
+ {
+-	int fd, v, devs;
++	int fd, v, devs, dspfd;
+ 	long cmd;
+ 	gchar *devname;
+ 
+-	devname = get_mixer_device();
+-	fd = open(devname, O_RDONLY);
+-	g_free(devname);
++	dspfd = oss_get_fd();
++	if (oss_cfg.use_master == 0 && dspfd != -1) {
++		fd = dspfd;
++		dspfd = 1;
++	} else {
++		devname = get_mixer_device();
++		fd = open(devname, O_RDONLY);
++		g_free(devname);
++		dspfd = 0;
++	}
+ 
+ 	/*
+ 	 * We dont show any errors if this fails, as this is called
+@@ -50,29 +57,40 @@
+ 	{
+ 		ioctl(fd, SOUND_MIXER_READ_DEVMASK, &devs);
+ 		if ((devs & SOUND_MASK_PCM) && (oss_cfg.use_master==0))
+-			cmd = SOUND_MIXER_READ_PCM;
++			cmd = (dspfd != 0) ? SNDCTL_DSP_GETPLAYVOL :
++			    SOUND_MIXER_READ_PCM;
+ 		else if ((devs & SOUND_MASK_VOLUME) && (oss_cfg.use_master==1))
+ 			cmd = SOUND_MIXER_READ_VOLUME;
+ 		else
+ 		{
+-			close(fd);
++			if (dspfd == 0)
++				close(fd);
+ 			return;
+ 		}
+ 		ioctl(fd, cmd, &v);
+ 		*r = (v & 0xFF00) >> 8;
+ 		*l = (v & 0x00FF);
+-		close(fd);
++		if (dspfd == 0)
++			close(fd);
+ 	}
+ }
+ 
+ void oss_set_volume(int l, int r)
+ {
+-	int fd, v, devs;
++	int fd, v, devs, dspfd;
+ 	long cmd;
+ 	gchar *devname;
+ 
+-	devname = get_mixer_device();
+-	fd = open(devname, O_RDONLY);
++	dspfd = oss_get_fd();
++	if (oss_cfg.use_master == 0 && dspfd != -1) {
++		fd = dspfd;
++		dspfd = 1;
++		devname = g_strdup("<OSS FD>");
++	} else {
++		devname = get_mixer_device();
++		fd = open(devname, O_RDONLY);
++		dspfd = 0;
++	}
+ 
+ 	if (fd != -1)
+ 	{
+@@ -83,12 +101,14 @@
+ 			cmd = SOUND_MIXER_WRITE_VOLUME;
+ 		else
+ 		{
+-			close(fd);
++			if (dspfd == 0)
++				close(fd);
+ 			return;
+ 		}
+ 		v = (r << 8) | l;
+ 		ioctl(fd, cmd, &v);
+-		close(fd);
++		if (dspfd == 0)
++			close(fd);
+ 	}
+ 	else
+ 		g_warning("oss_set_volume(): Failed to open mixer device (%s): %s",
