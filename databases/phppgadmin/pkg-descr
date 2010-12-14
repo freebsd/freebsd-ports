@@ -14,4 +14,6 @@ Features include:
  - administer multiple servers 
  - administer postgres users and groups 
 
+LICENSE: GPL2 or later
+
 WWW: http://phppgadmin.sourceforge.net/
