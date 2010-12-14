@@ -6,30 +6,37 @@
 #
 
 PORTNAME=	freeswitch-pizza
-PORTVERSION=	1.0.6
+PORTVERSION=	201044
 CATEGORIES=	misc
-MASTER_SITES=	http://files.freeswitch.org/
+MASTER_SITES=	ftp://ftp.secure-computing.net/pub/freeswitch/ \
+		ftp://ftp2.secure-computing.net/pub/freeswitch/ \
+		http://files.freeswitch.org/:2
 DISTFILES=	${BASE_PORTNAME}-${PORTVERSION}.tar.gz \
-		pizza_gram.tar.gz \
-		pizza_sounds.tar.gz
-#EXTRACT_ONLY=	${BASE_PORTNAME}-${PORTVERSION}.tar.gz
+		pizza_gram.tar.gz:2 \
+		pizza_sounds.tar.gz:2
+DIST_SUBDIR=	${BASE_PORTNAME}
 
 MAINTAINER=	r.neese@gmail.com
 COMMENT=	FreeSwitch pizza demo
 
-RUN_DEPENDS=	${LOCALBASE}/bin/freeswitch:${PORTSDIR}/net/freeswitch-core
+RUN_DEPENDS=    ${LOCALBASE}/bin/freeswitch:${PORTSDIR}/net/freeswitch-core \
+		${LOCALBASE}/share/${BASE_PORTNAME}/sounds/.freeswitch-sounds:${PORTSDIR}/audio/freeswitch-sounds
 
 NO_BUILD=	yes
 
 BASE_PORTNAME=	freeswitch
 
-WRKSRC=		${WRKDIR}/${BASE_PORTNAME}-${PORTVERSION}/scripts/javascript
+WRKSRC=	${WRKDIR}/${BASE_PORTNAME}-${PORTVERSION}/scripts/javascript
+
+pre-install:
+	@${REINPLACE_CMD} -r 's|include("js_modules/SpeechTools.jm")|include("javascript/js_modules/SpeechTools.jm")|g' ${WRKSRC}/ps_pizza.js
+	@${REINPLACE_CMD} -r 's|asr.setAudioBase("/root/pizza)|asr.setAudioBase("${PREFIX}/share/${BASE_PORTNAME}/sounds/en/us/callie/pizza/8000")|g' ${WRKSRC}/ps_pizza.js
 
 do-install:
 	@cd ${WRKDIR}; ${FIND} *.gram \
 		| ${CPIO} -pdm -R freeswitch:freeswitch ${PREFIX}/etc/${BASE_PORTNAME}/grammar/
-	@cd ${WRKDIR}; ${FIND} pizza \
-		| ${CPIO} -pdm -R freeswitch:freeswitch ${PREFIX}/share/${BASE_PORTNAME}/sounds/
+	@cd ${WRKDIR}/pizza/; ${FIND} *.wav \
+		| ${CPIO} -pdm -R freeswitch:freeswitch ${PREFIX}/share/${BASE_PORTNAME}/sounds/en/us/callie/pizza/8000
 	${TOUCH} ${PREFIX}/share/${BASE_PORTNAME}/sounds/.pizza
 	@${MKDIR} ${PREFIX}/etc/${BASE_PORTNAME}/scripts/javascript
 	@cd ${WRKSRC}; ${FIND} ps_pizza.js \
