@@ -7,23 +7,23 @@
 #
 
 PORTNAME=	emotion
-PORTVERSION=	0.1.0.042
-PORTREVISION=	5
+PORTVERSION=	0.2.0.52995
 PORTEPOCH=	1
-CATEGORIES=	multimedia
-MASTER_SITES=	ftp://ftp.springdaemons.com/pub/snapshots/e17/ \
-		http://download.enlightenment.org/snapshots/2008-01-25/
+CATEGORIES=	multimedia enlightenment
+MASTER_SITES=	http://files.roorback.net/e17/2010-10-03/extra/
 
 MAINTAINER=	stas@FreeBSD.org
 COMMENT=	Video playback wrapper library for Enlightenment
 
+LICENSE=	BSD
+DIST_SUBDIR=	e17
+GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gnomehack pkgconfig gnometarget
-USE_EFL=	ecore edje eet embryo evas
+USE_EFL=	ecore edje eet embryo evas libtool_hack modarch_hack
 USE_EFL_EVAS_LOADERS=	png jpeg
+USE_GNOME=	gnomehack pkgconfig gnometarget
 USE_LDCONFIG=	yes
-GNU_CONFIGURE=	yes
 
 OPTIONS=	XINE "Build Xine module" on \
 		GST "Build GStreamer module" on

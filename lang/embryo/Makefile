@@ -6,18 +6,20 @@
 #
 
 PORTNAME=	embryo
-PORTVERSION=	0.9.1.042
-PORTREVISION=	0
+DISTVERSION=	1.0.0.beta
 PORTEPOCH=	2
-CATEGORIES=	lang
-MASTER_SITES=	ftp://ftp.springdaemons.com/pub/snapshots/e17/ \
-		http://download.enlightenment.org/snapshots/2008-01-25/
+CATEGORIES=	lang enlightenment
+MASTER_SITES=	http://download.enlightenment.org/releases/ \
+		http://files.roorback.net/e17/2010-10-03/base/
 
 MAINTAINER=	stas@FreeBSD.org
 COMMENT=	A C like scripting language used in Enlightenment
 
-GNU_CONFIGURE=	yes
+LICENSE=	BSD
+DIST_SUBDIR=	e17
 USE_BZIP2=	yes
+GNU_CONFIGURE=	yes
+USE_EFL=	libtool_hack librt_hack
 USE_GNOME=	gnomehack pkgconfig gnometarget
 USE_LDCONFIG=	yes
 

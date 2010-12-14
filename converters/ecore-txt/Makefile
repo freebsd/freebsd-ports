@@ -26,6 +26,10 @@ USE_ICONV=	yes
 BUILD_WRKSRC=	${WRKSRC}/src/lib/ecore_txt
 INSTALL_WRKSRC=	${BUILD_WRKSRC}
 
+BROKEN=		does not compile
+DEPRECATED=	abandoned upstream
+EXPIRATION_DATE=	2011-01-01
+
 CONFIGURE_ARGS=	--disable-ecore-con \
 		--disable-ecore-config \
 		--disable-ecore-desktop \

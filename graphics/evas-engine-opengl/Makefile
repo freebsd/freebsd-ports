@@ -6,49 +6,33 @@
 #
 
 PORTNAME=	engine-opengl
-PORTVERSION=	0.9.9.042
-PORTREVISION=	2
-CATEGORIES=	graphics
-MASTER_SITES=	ftp://ftp.springdaemons.com/pub/snapshots/e17/ \
-		http://download.enlightenment.org/snapshots/2008-01-25/
+DISTVERSION=	1.0.0.beta
+PORTREVISION=	0
+CATEGORIES=	graphics enlightenment
+MASTER_SITES=	http://download.enlightenment.org/releases/ \
+		http://files.roorback.net/e17/2010-10-03/base/
 PKGNAMEPREFIX=	evas-
-DISTNAME=	evas-${PORTVERSION}
+DISTNAME=	evas-${DISTVERSION}
 
 MAINTAINER=	stas@FreeBSD.org
 COMMENT=	A hardware accelerated canvas API (OpenGL engine)
 
 LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2
 
+LICENSE=	BSD
+DIST_SUBDIR=	e17
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 USE_GNOME=	gnomehack pkgconfig gnometarget
-USE_EFL=	evas
-USE_XORG=	x11 xext
+USE_EFL=	evas librt_hack libtool_hack
+USE_XORG=	x11 xext xrender
 USE_GL=		gl glu
 BUILD_WRKSRC=	${WRKSRC}/src/modules/engines/gl_x11
 INSTALL_WRKSRC=	${BUILD_WRKSRC}
 
-CONFIGURE_ARGS=	--disable-software-x11 \
-		--disable-software-16-x11 \
-		--disable-software-xcb \
-		--disable-directfb \
-		--disable-sdl \
-		--disable-buffer \
-		--disable-software-qtopia \
-		--enable-gl-x11 \
-		--disable-cairo-x11 \
-		--disable-xrender-x11 \
-		--disable-xrender-xcb \
-		--disable-glitz-x11 \
-		--disable-image-loader-gif \
-		--disable-image-loader-png \
-		--disable-image-loader-jpeg \
-		--disable-image-loader-eet \
-		--disable-image-loader-edb \
-		--disable-image-loader-tiff \
-		--disable-image-loader-xpm \
-		--disable-image-loader-svg
+.include "../evas-core/Makefile.inc"
+CONFIGURE_ARGS+=	--enable-gl-x11
 
 post-patch:
 	@${REINPLACE_CMD} -E \

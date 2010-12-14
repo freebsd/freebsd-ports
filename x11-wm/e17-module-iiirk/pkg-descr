@@ -1,0 +1,22 @@
+This module act like a taskbar for selected applications only. The purpose of
+this, is having a module behaving like a tray would dock some icons. Due to the
+status of the system tray specification this module don't rely on it, but on
+.desktop and netwm icons only instead.
+
+It's highly recommended to make sure a .desktop match the border you want to
+dock in this module. See http://wiki.enlightenment.org/index.php/E17_and_Efreet#Border_Icons
+for further explanation on how do this matching.
+
+In order to add an icon to the module you have two ways. You can either drag and
+drop the border icon on it, or configure the "Iiirk source". Which is a list of
+.desktop to match automatically.
+
+Once the icon is in the module, a click on it will toggle show/hide on the
+corresponding window. Don't close your windows, what does the window when
+closed is up to the application, not to the module. Use the minimize instead.
+If the option "Hide window from any list when iconified" is enabled, minimize it
+even by using the border button will active the skip window list on it.
+
+Drop an icon outside the box will remove the match on the corresponding .desktop.
+
+WWW:	http://www.enlightenment.org/

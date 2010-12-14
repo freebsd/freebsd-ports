@@ -21,6 +21,10 @@ USE_RUBY=	yes
 USE_RAKE=	yes
 USE_EFL=	evas
 
+BROKEN=		does not compile
+DEPRECATED=	abandoned upstream
+EXPIRATION_DATE=	2011-01-01
+
 .include <bsd.port.pre.mk>
 
 do-build:

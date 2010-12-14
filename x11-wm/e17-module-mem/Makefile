@@ -6,25 +6,25 @@
 #
 
 PORTNAME=	mem
-PORTVERSION=	20080223
-PORTREVISION=	5
+PORTVERSION=	20101003
 PORTEPOCH=	1
-CATEGORIES=	x11-wm
-MASTER_SITES=	ftp://ftp.springdaemons.com/pub/snapshots/e17/
+CATEGORIES=	x11-wm enlightenment
+MASTER_SITES=	http://files.roorback.net/e17/2010-10-03/modules/
 PKGNAMEPREFIX=	e17-module-
 DISTNAME=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	stas@FreeBSD.org
 COMMENT=	An e17 memory monitoring module
 
-BUILD_DEPENDS=	enlightenment-config:${PORTSDIR}/x11-wm/enlightenment
-RUN_DEPENDS=	enlightenment-config:${PORTSDIR}/x11-wm/enlightenment
+BUILD_DEPENDS=	enlightenment:${PORTSDIR}/x11-wm/enlightenment
+RUN_DEPENDS=	enlightenment:${PORTSDIR}/x11-wm/enlightenment
 
+DIST_SUBDIR=	e17
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnometarget pkgconfig
-USE_EFL=	edje
+USE_EFL=	edje libtool_hack modarch_hack
 
 .if !defined(WITHOUT_NLS)
 USE_GETTEXT=	yes

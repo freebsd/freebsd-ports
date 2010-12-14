@@ -7,19 +7,21 @@
 #
 
 PORTNAME=	edje_viewer
-PORTVERSION=	20080223
-PORTREVISION=	4
-CATEGORIES=	graphics
-MASTER_SITES=	ftp://ftp.springdaemons.com/pub/snapshots/e17/
+PORTVERSION=	20101003
+PORTREVISION=	1
+CATEGORIES=	graphics enlightenment
+MASTER_SITES=	http://files.roorback.net/e17/2010-10-03/extra/
 
 MAINTAINER=	stas@FreeBSD.org
 COMMENT=	A simple viewer for .edj files
 
+DIST_SUBDIR=	e17
 USE_BZIP2=	yes
-USE_GMAKE=	yes
-USE_GNOME=	gnomehack pkgconfig gnometarget
-USE_EFL=	evas ecore edje etk
-USE_EFL_ECORE=	config
 GNU_CONFIGURE=	yes
+USE_EFL=	evas ecore edje elementary
+USE_EFL_ECORE=	file
+USE_GNOME=	gnomehack pkgconfig gnometarget
+USE_GMAKE=	yes
+USE_LDCONFIG=	yes
 
 .include <bsd.port.mk>

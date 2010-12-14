@@ -26,6 +26,10 @@ USE_EFL_ECORE=	ipc con
 BUILD_WRKSRC=	${WRKSRC}/src/lib/ecore_config
 INSTALL_WRKSRC=	${BUILD_WRKSRC}
 
+BROKEN=		does not compile
+DEPRECATED=	abandoned upstream
+EXPIRATION_DATE=	2011-01-01
+
 CONFIGURE_ARGS=	--enable-ecore-con \
 		--enable-ecore-config \
 		--disable-ecore-desktop \

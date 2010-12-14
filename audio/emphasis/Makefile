@@ -24,4 +24,8 @@ USE_EFL=	ecore enhance etk
 USE_EFL_ECORE=	config
 GNU_CONFIGURE=	yes
 
+BROKEN=		does not compile
+DEPRECATED=	abandoned upstream
+EXPIRATION_DATE=	2011-01-01
+
 .include <bsd.port.mk>

@@ -23,6 +23,10 @@ USE_EFL_ECORE=	evas file
 WANT_EFL=	yes
 GNU_CONFIGURE=	yes
 
+BROKEN=		does not compile
+DEPRECATED=	abandoned upstream
+EXPIRATION_DATE=	2011-01-01
+
 OPTIONS=	ENGRAVE "Enable E17 desktop wallpaper support" on \
 		ENLIGHTENMENT "Enable e17 desktop integration" off
 

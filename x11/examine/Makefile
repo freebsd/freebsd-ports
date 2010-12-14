@@ -24,4 +24,8 @@ USE_EFL_ECORE=	ipc config
 
 PLIST_FILES=	bin/examine bin/exsh
 
+BROKEN=		does not compile
+DEPRECATED=	abandoned upstream
+EXPIRATION_DATE=	2011-01-01
+
 .include <bsd.port.mk>

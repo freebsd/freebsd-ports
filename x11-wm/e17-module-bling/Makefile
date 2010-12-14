@@ -23,7 +23,11 @@ GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnometarget pkgconfig
-USE_EFL=	edje
+USE_EFL=	edje libtool_hack modarch_hack
 USE_XORG=	xcomposite xext xrender xdamage xfixes
+
+BROKEN=		does not compile
+DEPRECATED=	abandoned upstream
+EXPIRATION_DATE=	2011-01-01
 
 .include <bsd.port.mk>

@@ -6,43 +6,42 @@
 #
 
 PORTNAME=	con
-PORTVERSION=	0.9.9.042
-PORTREVISION=	4
-CATEGORIES=	net
-MASTER_SITES=	ftp://ftp.springdaemons.com/pub/snapshots/e17/ \
-		http://download.enlightenment.org/snapshots/2008-01-25/
+DISTVERSION=	1.0.0.beta
+CATEGORIES=	net enlightenment
+MASTER_SITES=	http://download.enlightenment.org/releases/ \
+		http://files.roorback.net/e17/2010-10-03/base/
 PKGNAMEPREFIX=	ecore-
-DISTNAME=	ecore-${PORTVERSION}
+DISTNAME=	ecore-${DISTVERSION}
 
 MAINTAINER=	stas@FreeBSD.org
 COMMENT=	Enlightenment core abstraction library (con module)
 
-GNU_CONFIGURE=	yes
+LICENSE=	BSD
+DIST_SUBDIR=	e17
 USE_BZIP2=	yes
+GNU_CONFIGURE=	yes
+USE_EFL=	ecore libtool_hack
 USE_GNOME=	gnomehack pkgconfig gnometarget
 USE_LDCONFIG=	yes
-USE_EFL=	ecore
 BUILD_WRKSRC=	${WRKSRC}/src/lib/ecore_con
 INSTALL_WRKSRC=	${BUILD_WRKSRC}
 
-CONFIGURE_ARGS=	--enable-ecore-con \
-		--disable-ecore-config \
-		--disable-ecore-desktop \
-		--disable-ecore-directfb \
-		--disable-ecore-evas \
-		--disable-ecore-file \
-		--disable-ecore-ipc \
-		--disable-ecore-job \
-		--disable-ecore-sdl \
-		--disable-ecore-txt \
-		--disable-ecore-x \
-		--disable-ecore-imf \
-		--disable-ecore-imf_evas
+.include <../../devel/ecore-main/Makefile.inc>
 
-OPTIONS=	CURL	"Enable Curl support"	on \
+CONFIGURE_ARGS+=	--enable-ecore-con
+
+OPTIONS=	CARES	"Enable async DNS resolving via c-ares" on \
+		CURL	"Enable Curl support"	on \
 		SSL	"Enable SSL support"	on
 
 .include <bsd.port.pre.mk>
+
+.if !defined(WITHOUT_CARES)
+CONFIGURE_ARGS+=	--enable-cares
+LIB_DEPENDS+=		cares.2:${PORTSDIR}/dns/c-ares
+.else
+CONFIGURE_ARGS+=	--disable-cares
+.endif
 
 .if !defined(WITHOUT_CURL)
 CONFIGURE_ARGS+=	--enable-curl

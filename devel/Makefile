@@ -350,6 +350,7 @@
     SUBDIR += egypt
     SUBDIR += eieio
     SUBDIR += eiffelstudio
+    SUBDIR += eina
     SUBDIR += elf
     SUBDIR += elfio
     SUBDIR += elfkickers

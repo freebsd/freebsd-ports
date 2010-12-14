@@ -1,0 +1,90 @@
+lib/enlightenment/modules/forecasts/forecasts.edj
+lib/enlightenment/modules/forecasts/module.desktop
+lib/enlightenment/modules/forecasts/e-module-forecasts.edj
+lib/enlightenment/modules/forecasts/%%E17_ARCH%%/module.so
+%%NLS%%lib/enlightenment/modules/forecasts/locale/hu/LC_MESSAGES/forecasts.mo
+%%NLS%%lib/enlightenment/modules/forecasts/locale/es/LC_MESSAGES/forecasts.mo
+%%NLS%%lib/enlightenment/modules/forecasts/locale/pl/LC_MESSAGES/forecasts.mo
+%%NLS%%lib/enlightenment/modules/forecasts/locale/bg/LC_MESSAGES/forecasts.mo
+%%NLS%%lib/enlightenment/modules/forecasts/locale/hr/LC_MESSAGES/forecasts.mo
+%%NLS%%lib/enlightenment/modules/forecasts/locale/nb/LC_MESSAGES/forecasts.mo
+%%NLS%%lib/enlightenment/modules/forecasts/locale/nl/LC_MESSAGES/forecasts.mo
+%%NLS%%lib/enlightenment/modules/forecasts/locale/fr/LC_MESSAGES/forecasts.mo
+%%NLS%%lib/enlightenment/modules/forecasts/locale/lt/LC_MESSAGES/forecasts.mo
+%%NLS%%lib/enlightenment/modules/forecasts/locale/he/LC_MESSAGES/forecasts.mo
+%%NLS%%lib/enlightenment/modules/forecasts/locale/ar/LC_MESSAGES/forecasts.mo
+%%NLS%%lib/enlightenment/modules/forecasts/locale/cs/LC_MESSAGES/forecasts.mo
+%%NLS%%lib/enlightenment/modules/forecasts/locale/zh_CN/LC_MESSAGES/forecasts.mo
+%%NLS%%lib/enlightenment/modules/forecasts/locale/ru/LC_MESSAGES/forecasts.mo
+%%NLS%%lib/enlightenment/modules/forecasts/locale/pt/LC_MESSAGES/forecasts.mo
+%%NLS%%lib/enlightenment/modules/forecasts/locale/ko/LC_MESSAGES/forecasts.mo
+%%NLS%%lib/enlightenment/modules/forecasts/locale/sv/LC_MESSAGES/forecasts.mo
+%%NLS%%lib/enlightenment/modules/forecasts/locale/fi/LC_MESSAGES/forecasts.mo
+%%NLS%%lib/enlightenment/modules/forecasts/locale/el/LC_MESSAGES/forecasts.mo
+%%NLS%%lib/enlightenment/modules/forecasts/locale/uk/LC_MESSAGES/forecasts.mo
+%%NLS%%lib/enlightenment/modules/forecasts/locale/ja/LC_MESSAGES/forecasts.mo
+%%NLS%%lib/enlightenment/modules/forecasts/locale/de/LC_MESSAGES/forecasts.mo
+%%NLS%%lib/enlightenment/modules/forecasts/locale/tr/LC_MESSAGES/forecasts.mo
+%%NLS%%lib/enlightenment/modules/forecasts/locale/sk/LC_MESSAGES/forecasts.mo
+%%NLS%%lib/enlightenment/modules/forecasts/locale/pt_BR/LC_MESSAGES/forecasts.mo
+%%NLS%%lib/enlightenment/modules/forecasts/locale/eo/LC_MESSAGES/forecasts.mo
+%%NLS%%lib/enlightenment/modules/forecasts/locale/it/LC_MESSAGES/forecasts.mo
+%%NLS%%@dirrm lib/enlightenment/modules/forecasts/locale/it/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/forecasts/locale/it
+%%NLS%%@dirrm lib/enlightenment/modules/forecasts/locale/eo/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/forecasts/locale/eo
+%%NLS%%@dirrm lib/enlightenment/modules/forecasts/locale/pt_BR/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/forecasts/locale/pt_BR
+%%NLS%%@dirrm lib/enlightenment/modules/forecasts/locale/sk/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/forecasts/locale/sk
+%%NLS%%@dirrm lib/enlightenment/modules/forecasts/locale/tr/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/forecasts/locale/tr
+%%NLS%%@dirrm lib/enlightenment/modules/forecasts/locale/de/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/forecasts/locale/de
+%%NLS%%@dirrm lib/enlightenment/modules/forecasts/locale/ja/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/forecasts/locale/ja
+%%NLS%%@dirrm lib/enlightenment/modules/forecasts/locale/uk/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/forecasts/locale/uk
+%%NLS%%@dirrm lib/enlightenment/modules/forecasts/locale/el/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/forecasts/locale/el
+%%NLS%%@dirrm lib/enlightenment/modules/forecasts/locale/fi/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/forecasts/locale/fi
+%%NLS%%@dirrm lib/enlightenment/modules/forecasts/locale/sv/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/forecasts/locale/sv
+%%NLS%%@dirrm lib/enlightenment/modules/forecasts/locale/ko/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/forecasts/locale/ko
+%%NLS%%@dirrm lib/enlightenment/modules/forecasts/locale/pt/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/forecasts/locale/pt
+%%NLS%%@dirrm lib/enlightenment/modules/forecasts/locale/ru/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/forecasts/locale/ru
+%%NLS%%@dirrm lib/enlightenment/modules/forecasts/locale/zh_CN/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/forecasts/locale/zh_CN
+%%NLS%%@dirrm lib/enlightenment/modules/forecasts/locale/cs/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/forecasts/locale/cs
+%%NLS%%@dirrm lib/enlightenment/modules/forecasts/locale/ar/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/forecasts/locale/ar
+%%NLS%%@dirrm lib/enlightenment/modules/forecasts/locale/he/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/forecasts/locale/he
+%%NLS%%@dirrm lib/enlightenment/modules/forecasts/locale/lt/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/forecasts/locale/lt
+%%NLS%%@dirrm lib/enlightenment/modules/forecasts/locale/fr/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/forecasts/locale/fr
+%%NLS%%@dirrm lib/enlightenment/modules/forecasts/locale/nl/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/forecasts/locale/nl
+%%NLS%%@dirrm lib/enlightenment/modules/forecasts/locale/nb/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/forecasts/locale/nb
+%%NLS%%@dirrm lib/enlightenment/modules/forecasts/locale/hr/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/forecasts/locale/hr
+%%NLS%%@dirrm lib/enlightenment/modules/forecasts/locale/bg/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/forecasts/locale/bg
+%%NLS%%@dirrm lib/enlightenment/modules/forecasts/locale/pl/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/forecasts/locale/pl
+%%NLS%%@dirrm lib/enlightenment/modules/forecasts/locale/es/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/forecasts/locale/es
+%%NLS%%@dirrm lib/enlightenment/modules/forecasts/locale/hu/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/forecasts/locale/hu
+%%NLS%%@dirrm lib/enlightenment/modules/forecasts/locale
+@dirrm lib/enlightenment/modules/forecasts/%%E17_ARCH%%
+@dirrm lib/enlightenment/modules/forecasts
+@dirrmtry lib/enlightenment/modules
+@dirrmtry lib/enlightenment

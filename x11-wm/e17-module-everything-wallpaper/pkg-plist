@@ -1,0 +1,7 @@
+lib/enlightenment/modules/everything-wallpaper/module.desktop
+lib/enlightenment/modules/everything-wallpaper/e-module.edj
+lib/enlightenment/modules/everything-wallpaper/%%E17_ARCH%%/module.so
+@dirrm lib/enlightenment/modules/everything-wallpaper/%%E17_ARCH%%
+@dirrm lib/enlightenment/modules/everything-wallpaper
+@dirrmtry lib/enlightenment/modules
+@dirrmtry lib/enlightenment

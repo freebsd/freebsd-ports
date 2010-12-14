@@ -30,6 +30,10 @@ OPTIONS=	XTRACT "Enable metadata extraction via libextractor" on \
 
 DATADIR=	${PREFIX}/share/entropy
 
+BROKEN=		does not compile
+DEPRECATED=	abandoned upstream
+EXPIRATION_DATE=	2011-01-01
+
 .include <bsd.port.pre.mk>
 
 .if !defined(WITHOUT_XTRACT)

@@ -26,6 +26,10 @@ USE_EFL_ECORE=	x11 con job evas
 
 RUBY_SA=	${RUBY_SITEARCHLIBDIR}
 
+BROKEN=		does not compile
+DEPRECATED=	abandoned upstream
+EXPIRATION_DATE=	2011-01-01
+
 .include <bsd.port.pre.mk>
 
 do-build:

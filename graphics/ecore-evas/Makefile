@@ -6,38 +6,32 @@
 #
 
 PORTNAME=	evas
-PORTVERSION=	0.9.9.042
-PORTREVISION=	2
-CATEGORIES=	graphics
-MASTER_SITES=	ftp://ftp.springdaemons.com/pub/snapshots/e17/ \
-		http://download.enlightenment.org/snapshots/2008-01-25/
+DISTVERSION=	1.0.0.beta
+CATEGORIES=	graphics enlightenment
+MASTER_SITES=	http://download.enlightenment.org/releases/ \
+		http://files.roorback.net/e17/2010-10-03/base/
 PKGNAMEPREFIX=	ecore-
-DISTNAME=	ecore-${PORTVERSION}
+DISTNAME=	ecore-${DISTVERSION}
 
 MAINTAINER=	stas@FreeBSD.org
 COMMENT=	Enlightenment core abstraction library (evas module)
 
-GNU_CONFIGURE=	yes
+LICENSE=	BSD
+DIST_SUBDIR=	e17
 USE_BZIP2=	yes
+GNU_CONFIGURE=	yes
+USE_EFL=	evas ecore libtool_hack
+USE_EFL_ECORE=	input input_evas sdl
 USE_GNOME=	gnomehack pkgconfig gnometarget
 USE_LDCONFIG=	yes
-USE_EFL=	ecore evas
 BUILD_WRKSRC=	${WRKSRC}/src/lib/ecore_evas
 INSTALL_WRKSRC=	${BUILD_WRKSRC}
 
-CONFIGURE_ARGS=	--disable-ecore-con \
-		--disable-ecore-config \
-		--disable-ecore-desktop \
-		--disable-ecore-directfb \
-		--enable-ecore-evas \
-		--disable-ecore-file \
-		--disable-ecore-ipc \
-		--disable-ecore-job \
-		--disable-ecore-sdl \
-		--disable-ecore-txt \
-		--disable-ecore-x \
-		--disable-ecore-imf \
-		--disable-ecore-imf_evas
+.include <../../devel/ecore-main/Makefile.inc>
+
+CONFIGURE_ARGS+=	--enable-ecore-evas \
+			--enable-ecore-input \
+			--enable-ecore-input_evas
 
 OPTIONS=	X11	"Enable Evas X11 support"	on \
 		GL	"Enable Evas GL support"	on \
@@ -48,22 +42,22 @@ OPTIONS=	X11	"Enable Evas X11 support"	on \
 .include <bsd.port.pre.mk>
 
 .if !defined(WITHOUT_GL)
-CONFIGURE_ARGS+=	--enable-ecore-evas-gl
+CONFIGURE_ARGS+=	--enable-ecore-evas-opengl-x11
 USE_EFL_EVAS_ENGINES+=	opengl
-USE_X=			yes
+WITH_X=			yes
 .else
-CONFIGURE_ARGS+=	--disable-ecore-evas-gl
+CONFIGURE_ARGS+=	--disable-ecore-evas-opengl-x11
 .endif
 
 .if !defined(WITHOUT_XRENDER)
-CONFIGURE_ARGS+=	--enable-ecore-evas-xrender
+CONFIGURE_ARGS+=	--enable-ecore-evas-xrender-x11
 USE_EFL_EVAS_ENGINES+=	xrender
-USE_X=			yes
+WITH_X=			yes
 .else
-CONFIGURE_ARGS+=	--disable-ecore-evas-xrender
+CONFIGURE_ARGS+=	--disable-ecore-evas-xrender-x11
 .endif
 
-.if !defined(WITHOUT_X11) || defined(USE_X)
+.if !defined(WITHOUT_X11) || defined(WITH_X)
 CONFIGURE_ARGS+=	--enable-ecore-x
 USE_EFL_ECORE+=		x11
 USE_EFL_EVAS_ENGINES+=	x11
@@ -72,18 +66,18 @@ CONFIGURE_ARGS+=	--disable-ecore-x
 .endif
 
 .if !defined(WITHOUT_BUFFER)
-CONFIGURE_ARGS+=	--enable-ecore-evas-buffer
+CONFIGURE_ARGS+=	--enable-ecore-evas-software-buffer
 USE_EFL_EVAS_ENGINES+=	buffer
 .else
-CONFIGURE_ARGS+=	--disable-ecore-evas-buffer
+CONFIGURE_ARGS+=	--disable-ecore-evas-software-buffer
 .endif
 
 .if !defined(WITHOUT_SDL)
-CONFIGURE_ARGS+=	--enable-ecore-evas-sdl
+CONFIGURE_ARGS+=	--enable-ecore-evas-software-sdl --enable-ecore-sdl
 USE_EFL_EVAS_ENGINES+=	sdl
 USE_EFL_ECORE+=	sdl
 .else
-CONFIGURE_ARGS+=	--disable-ecore-evas-sdl
+CONFIGURE_ARGS+=	--disable-ecore-evas-software-sdl --enable-ecore-sdl
 .endif
 
 post-patch:
@@ -91,9 +85,13 @@ post-patch:
 		-e 's,\$$\(top_builddir\)/src/lib/ecore/\.libs,${LOCALBASE}/lib,'\
 		-e 's,\$$\(top_builddir\)/src/lib/ecore_x/\.libs,${LOCALBASE}/lib,'\
 		-e 's,\$$\(top_builddir\)/src/lib/ecore_sdl/\.libs,${LOCALBASE}/lib,'\
+		-e 's,\$$\(top_builddir\)/src/lib/ecore_input/\.libs,${LOCALBASE}/lib,'\
+		-e 's,\$$\(top_builddir\)/src/lib/ecore_input_evas/\.libs,${LOCALBASE}/lib,'\
 		-e 's,\$$\(top_builddir\)/src/lib/ecore/libecore\.la,-lecore,'\
 		-e 's,\$$\(top_builddir\)/src/lib/ecore_x/libecore_x\.la,-lecore_x,'\
 		-e 's,\$$\(top_builddir\)/src/lib/ecore_sdl/libecore_sdl\.la,-lecore_sdl,'\
+		-e 's,\$$\(top_builddir\)/src/lib/ecore_input/libecore_input\.la,-lecore_input,'\
+		-e 's,\$$\(top_builddir\)/src/lib/ecore_input_evas/libecore_input_evas\.la,-lecore_input_evas,'\
 		${BUILD_WRKSRC}/Makefile.in
 
 post-install:

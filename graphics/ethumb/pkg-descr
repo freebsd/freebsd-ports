@@ -1,0 +1,7 @@
+Ethumb -- thumbnail generation library for e17.
+
+Create thumbnails with a predefined frame (possibly an edje frame).
+Have an option to create fdo-like thumbnails.
+Have a client/server utility.
+
+WWW: http://www.enlightenment.org/

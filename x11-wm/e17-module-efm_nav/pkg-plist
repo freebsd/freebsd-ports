@@ -1,0 +1,89 @@
+lib/enlightenment/modules/efm_nav/module.desktop
+lib/enlightenment/modules/efm_nav/e-module-efm_nav.edj
+lib/enlightenment/modules/efm_nav/%%E17_ARCH%%/module.so
+%%NLS%%lib/enlightenment/modules/efm_nav/locale/fr/LC_MESSAGES/efm_nav.mo
+%%NLS%%lib/enlightenment/modules/efm_nav/locale/nl/LC_MESSAGES/efm_nav.mo
+%%NLS%%lib/enlightenment/modules/efm_nav/locale/cs/LC_MESSAGES/efm_nav.mo
+%%NLS%%lib/enlightenment/modules/efm_nav/locale/ar/LC_MESSAGES/efm_nav.mo
+%%NLS%%lib/enlightenment/modules/efm_nav/locale/he/LC_MESSAGES/efm_nav.mo
+%%NLS%%lib/enlightenment/modules/efm_nav/locale/lt/LC_MESSAGES/efm_nav.mo
+%%NLS%%lib/enlightenment/modules/efm_nav/locale/es/LC_MESSAGES/efm_nav.mo
+%%NLS%%lib/enlightenment/modules/efm_nav/locale/pl/LC_MESSAGES/efm_nav.mo
+%%NLS%%lib/enlightenment/modules/efm_nav/locale/hu/LC_MESSAGES/efm_nav.mo
+%%NLS%%lib/enlightenment/modules/efm_nav/locale/nb/LC_MESSAGES/efm_nav.mo
+%%NLS%%lib/enlightenment/modules/efm_nav/locale/hr/LC_MESSAGES/efm_nav.mo
+%%NLS%%lib/enlightenment/modules/efm_nav/locale/bg/LC_MESSAGES/efm_nav.mo
+%%NLS%%lib/enlightenment/modules/efm_nav/locale/zh_CN/LC_MESSAGES/efm_nav.mo
+%%NLS%%lib/enlightenment/modules/efm_nav/locale/sk/LC_MESSAGES/efm_nav.mo
+%%NLS%%lib/enlightenment/modules/efm_nav/locale/tr/LC_MESSAGES/efm_nav.mo
+%%NLS%%lib/enlightenment/modules/efm_nav/locale/da/LC_MESSAGES/efm_nav.mo
+%%NLS%%lib/enlightenment/modules/efm_nav/locale/it/LC_MESSAGES/efm_nav.mo
+%%NLS%%lib/enlightenment/modules/efm_nav/locale/eo/LC_MESSAGES/efm_nav.mo
+%%NLS%%lib/enlightenment/modules/efm_nav/locale/sv/LC_MESSAGES/efm_nav.mo
+%%NLS%%lib/enlightenment/modules/efm_nav/locale/fi/LC_MESSAGES/efm_nav.mo
+%%NLS%%lib/enlightenment/modules/efm_nav/locale/ko/LC_MESSAGES/efm_nav.mo
+%%NLS%%lib/enlightenment/modules/efm_nav/locale/ru/LC_MESSAGES/efm_nav.mo
+%%NLS%%lib/enlightenment/modules/efm_nav/locale/pt_BR/LC_MESSAGES/efm_nav.mo
+%%NLS%%lib/enlightenment/modules/efm_nav/locale/ja/LC_MESSAGES/efm_nav.mo
+%%NLS%%lib/enlightenment/modules/efm_nav/locale/de/LC_MESSAGES/efm_nav.mo
+%%NLS%%lib/enlightenment/modules/efm_nav/locale/uk/LC_MESSAGES/efm_nav.mo
+%%NLS%%lib/enlightenment/modules/efm_nav/locale/el/LC_MESSAGES/efm_nav.mo
+%%NLS%%@dirrm lib/enlightenment/modules/efm_nav/locale/el/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/efm_nav/locale/el
+%%NLS%%@dirrm lib/enlightenment/modules/efm_nav/locale/uk/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/efm_nav/locale/uk
+%%NLS%%@dirrm lib/enlightenment/modules/efm_nav/locale/de/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/efm_nav/locale/de
+%%NLS%%@dirrm lib/enlightenment/modules/efm_nav/locale/ja/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/efm_nav/locale/ja
+%%NLS%%@dirrm lib/enlightenment/modules/efm_nav/locale/pt_BR/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/efm_nav/locale/pt_BR
+%%NLS%%@dirrm lib/enlightenment/modules/efm_nav/locale/ru/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/efm_nav/locale/ru
+%%NLS%%@dirrm lib/enlightenment/modules/efm_nav/locale/ko/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/efm_nav/locale/ko
+%%NLS%%@dirrm lib/enlightenment/modules/efm_nav/locale/fi/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/efm_nav/locale/fi
+%%NLS%%@dirrm lib/enlightenment/modules/efm_nav/locale/sv/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/efm_nav/locale/sv
+%%NLS%%@dirrm lib/enlightenment/modules/efm_nav/locale/eo/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/efm_nav/locale/eo
+%%NLS%%@dirrm lib/enlightenment/modules/efm_nav/locale/it/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/efm_nav/locale/it
+%%NLS%%@dirrm lib/enlightenment/modules/efm_nav/locale/da/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/efm_nav/locale/da
+%%NLS%%@dirrm lib/enlightenment/modules/efm_nav/locale/tr/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/efm_nav/locale/tr
+%%NLS%%@dirrm lib/enlightenment/modules/efm_nav/locale/sk/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/efm_nav/locale/sk
+%%NLS%%@dirrm lib/enlightenment/modules/efm_nav/locale/zh_CN/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/efm_nav/locale/zh_CN
+%%NLS%%@dirrm lib/enlightenment/modules/efm_nav/locale/bg/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/efm_nav/locale/bg
+%%NLS%%@dirrm lib/enlightenment/modules/efm_nav/locale/hr/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/efm_nav/locale/hr
+%%NLS%%@dirrm lib/enlightenment/modules/efm_nav/locale/nb/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/efm_nav/locale/nb
+%%NLS%%@dirrm lib/enlightenment/modules/efm_nav/locale/hu/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/efm_nav/locale/hu
+%%NLS%%@dirrm lib/enlightenment/modules/efm_nav/locale/pl/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/efm_nav/locale/pl
+%%NLS%%@dirrm lib/enlightenment/modules/efm_nav/locale/es/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/efm_nav/locale/es
+%%NLS%%@dirrm lib/enlightenment/modules/efm_nav/locale/lt/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/efm_nav/locale/lt
+%%NLS%%@dirrm lib/enlightenment/modules/efm_nav/locale/he/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/efm_nav/locale/he
+%%NLS%%@dirrm lib/enlightenment/modules/efm_nav/locale/ar/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/efm_nav/locale/ar
+%%NLS%%@dirrm lib/enlightenment/modules/efm_nav/locale/cs/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/efm_nav/locale/cs
+%%NLS%%@dirrm lib/enlightenment/modules/efm_nav/locale/nl/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/efm_nav/locale/nl
+%%NLS%%@dirrm lib/enlightenment/modules/efm_nav/locale/fr/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/efm_nav/locale/fr
+%%NLS%%@dirrm lib/enlightenment/modules/efm_nav/locale
+@dirrm lib/enlightenment/modules/efm_nav/%%E17_ARCH%%
+@dirrm lib/enlightenment/modules/efm_nav
+@dirrmtry lib/enlightenment/modules
+@dirrmtry lib/enlightenment

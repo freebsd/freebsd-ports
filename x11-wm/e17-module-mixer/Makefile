@@ -22,8 +22,12 @@ RUN_DEPENDS=	enlightenment-config:${PORTSDIR}/x11-wm/enlightenment
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnometarget pkgconfig
-USE_EFL=	edje
+USE_EFL=	edje libtool_hack modarch_hack
 GNU_CONFIGURE=	yes
+
+BROKEN=		does not compile
+DEPRECATED=	abandoned upstream
+EXPIRATION_DATE=	2011-01-01
 
 .if !defined(WITHOUT_NLS)
 USE_GETTEXT=	yes

@@ -17,6 +17,10 @@ DISTNAME=	ecore-${PORTVERSION}
 MAINTAINER=	stas@FreeBSD.org
 COMMENT=	Enlightenment core abstraction library (desktop module)
 
+BROKEN=		does not compile
+DEPRECATED=	abandoned upstream
+EXPIRATION_DATE=	2011-01-01
+
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
 USE_GNOME=	gnomehack pkgconfig gnometarget

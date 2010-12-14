@@ -6,26 +6,32 @@
 #
 
 PORTNAME=	e_dbus
-PORTVERSION=	20080223
-PORTREVISION=	2
-CATEGORIES=	devel
-MASTER_SITES=	ftp://ftp.springdaemons.com/pub/snapshots/e17/ \
-		http://download.enlightenment.org/snapshots/2008-01-25/
+DISTVERSION=	1.0.0.beta
+PORTEPOCH=	1
+CATEGORIES=	devel enlightenment
+MASTER_SITES=	http://download.enlightenment.org/releases/ \
+		http://files.roorback.net/e17/2010-10-03/base/
 
 MAINTAINER=	stas@FreeBSD.org
 COMMENT=	EFL DBUS connectivity library
 
 LIB_DEPENDS=	dbus-1.3:${PORTSDIR}/devel/dbus
 
-GNU_CONFIGURE=	yes
+LICENSE=	BSD
+DIST_SUBDIR=	e17
 USE_BZIP2=	yes
+GNU_CONFIGURE=	yes
+USE_EFL=	eina ecore libtool_hack librt_hack
 USE_GNOME=	gnomehack gnometarget pkgconfig
-USE_EFL=	ecore
 USE_LDCONFIG=	yes
 
-OPTIONS=	EHAL	"Build E HAL module"	on \
-		ENM	"Build E NM module"	on \
-		ENOT	"Build E notify module" on
+CONFIGURE_ARGS=	--disable-ebluez  # Linux specific ??
+
+OPTIONS=	EHAL	"Build E HAL module"	 on \
+		EUKIT	"Build E upower module"	 on \
+		ECONNM	"Build E connman module" on \
+		EOFONO	"Build E oFono module"   on \
+		ENOT	"Build E notify module"  on
 
 .include <bsd.port.pre.mk>
 
@@ -37,12 +43,28 @@ CONFIGURE_ARGS+=	--disable-ehal
 PLIST_SUB+=	EHAL="@comment "
 .endif
 
-.if !defined(WITHOUT_ENM)
-CONFIGURE_ARGS+=	--enable-enm
-PLIST_SUB+=	ENM=""
+.if !defined(WITHOUT_EUKIT)
+CONFIGURE_ARGS+=	--enable-eukit
+PLIST_SUB+=	EUKIT=""
 .else
-CONFIGURE_ARGS+=	--disable-enm
-PLIST_SUB+=	ENM="@comment "
+CONFIGURE_ARGS+=	--disable-eukit
+PLIST_SUB+=	EUKIT="@comment "
+.endif
+
+.if !defined(WITHOUT_ECONNM)
+CONFIGURE_ARGS+=	--enable-econnman
+PLIST_SUB+=	ECONNM=""
+.else
+CONFIGURE_ARGS+=	--disable-econnman
+PLIST_SUB+=	ECONNM="@comment "
+.endif
+
+.if !defined(WITHOUT_EOFONO)
+CONFIGURE_ARGS+=	--enable-eofono
+PLIST_SUB+=	EOFONO=""
+.else
+CONFIGURE_ARGS+=	--disable-eofono
+PLIST_SUB+=	EOFONO="@comment "
 .endif
 
 .if !defined(WITHOUT_ENOT)

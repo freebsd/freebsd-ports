@@ -1,7 +1,6 @@
 bin/eet
-include/Eet.h
-lib/libeet.a
-lib/libeet.la
+include/eet-1/Eet.h
 lib/libeet.so
-lib/libeet.so.9
+lib/libeet.so.5
 libdata/pkgconfig/eet.pc
+@dirrm include/eet-1

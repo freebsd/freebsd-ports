@@ -6,40 +6,32 @@
 #
 
 PORTNAME=	x11
-PORTVERSION=	0.9.9.042
-PORTREVISION=	0
-CATEGORIES=	x11
-MASTER_SITES=	ftp://ftp.springdaemons.com/pub/snapshots/e17/ \
-		http://download.enlightenment.org/snapshots/2008-01-25/
+DISTVERSION=	1.0.0.beta
+CATEGORIES=	x11 enlightenment
+MASTER_SITES=	http://download.enlightenment.org/releases/ \
+		http://files.roorback.net/e17/2010-10-03/base/
 PKGNAMEPREFIX=	ecore-
-DISTNAME=	ecore-${PORTVERSION}
+DISTNAME=	ecore-${DISTVERSION}
 
 MAINTAINER=	stas@FreeBSD.org
 COMMENT=	Enlightenment core abstraction library (x11 module)
 
-GNU_CONFIGURE=	yes
+LICENSE=	BSD
+DIST_SUBDIR=	e17
 USE_BZIP2=	yes
+GNU_CONFIGURE=	yes
+USE_EFL=	ecore libtool_hack
+USE_EFL_ECORE=	input
 USE_GNOME=	gnomehack pkgconfig gnometarget
 USE_LDCONFIG=	yes
-USE_EFL=	ecore
-USE_EFL_ECORE=	txt
 BUILD_WRKSRC=	${WRKSRC}/src/lib/ecore_x
 INSTALL_WRKSRC=	${BUILD_WRKSRC}
 XEXTDIR=	${LOCALBASE}/include/X11/extensions
 
-CONFIGURE_ARGS=	--disable-ecore-con \
-		--disable-ecore-config \
-		--disable-ecore-desktop \
-		--disable-ecore-directfb \
-		--disable-ecore-evas \
-		--disable-ecore-file \
-		--disable-ecore-ipc \
-		--disable-ecore-job \
-		--disable-ecore-sdl \
-		--disable-ecore-txt \
-		--enable-ecore-x \
-		--disable-ecore-imf \
-		--disable-ecore-imf_evas
+.include <../../devel/ecore-main/Makefile.inc>
+
+CONFIGURE_ARGS+=	--enable-ecore-x \
+			--enable-ecore-input
 
 OPTIONS=	XDAMAGE		"Enable Xdamage support (requires X11)" on \
 		XDPMS		"Enable Xdpms support (requires X11)" on \
@@ -102,10 +94,12 @@ WITH_X11=	yes
 post-patch:
 	@${REINPLACE_CMD} -E \
 		-e 's,\$$\(top_builddir\)/src/lib/ecore/\.libs,${LOCALBASE}/lib,'\
-		-e 's,\$$\(top_builddir\)/src/lib/ecore_txt/\.libs,${LOCALBASE}/lib,'\
+		-e 's,\$$\(top_builddir\)/src/lib/ecore_input/\.libs,${LOCALBASE}/lib,'\
 		-e 's,\$$\(top_builddir\)/src/lib/ecore/libecore\.la,-lecore,'\
-		-e 's,\$$\(top_builddir\)/src/lib/ecore_txt/libecore_txt\.la,-lecore_txt,'\
-		${BUILD_WRKSRC}/Makefile.in
+		-e 's,\$$\(top_builddir\)/src/lib/ecore_input/libecore_input\.la,-lecore_input,'\
+		${BUILD_WRKSRC}/Makefile.in \
+		${BUILD_WRKSRC}/xcb/Makefile.in \
+		${BUILD_WRKSRC}/xlib/Makefile.in
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/ecore-x.pc \

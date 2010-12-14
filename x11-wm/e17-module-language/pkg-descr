@@ -1,4 +1,3 @@
-This e17 module allows users to switch current XKB language in efficient way.
+AN e17 gadget to control active keyboard, keyboard layout, and layout variant.
 
-Author:	Aleksej 'sndev' Struk <astruk@gmail.com>
 WWW:	http://www.enlightenment.org/

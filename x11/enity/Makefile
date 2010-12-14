@@ -21,6 +21,10 @@ USE_GNOME=	gnomehack pkgconfig gnometarget
 USE_EFL=	etk
 GNU_CONFIGURE=	yes
 
+BROKEN=		does not compile
+DEPRECATED=	abandoned upstream
+EXPIRATION_DATE=	2011-01-01
+
 PLIST_FILES=	bin/enity
 
 .include <bsd.port.pre.mk>

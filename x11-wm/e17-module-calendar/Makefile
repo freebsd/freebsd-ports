@@ -6,26 +6,25 @@
 #
 
 PORTNAME=	calendar
-PORTVERSION=	20080223
-PORTREVISION=	5
+PORTVERSION=	20101003
 PORTEPOCH=	1
-CATEGORIES=	x11-wm
-MASTER_SITES=	ftp://ftp.springdaemons.com/pub/snapshots/e17/
+CATEGORIES=	x11-wm enlightenment
+MASTER_SITES=	http://files.roorback.net/e17/2010-10-03/modules/
 PKGNAMEPREFIX=	e17-module-
 DISTNAME=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	stas@FreeBSD.org
 COMMENT=	Nice calendar module for e17
 
-BUILD_DEPENDS=	enlightenment-config:${PORTSDIR}/x11-wm/enlightenment
-RUN_DEPENDS=	enlightenment-config:${PORTSDIR}/x11-wm/enlightenment
+BUILD_DEPENDS=	enlightenment:${PORTSDIR}/x11-wm/enlightenment
+RUN_DEPENDS=	enlightenment:${PORTSDIR}/x11-wm/enlightenment
 
+DIST_SUBDIR=	e17
+GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnometarget pkgconfig
-USE_EFL=	ecore evas edje eet
-USE_EFL_ESMART=	trans_x11
-GNU_CONFIGURE=	yes
+USE_EFL=	ecore evas edje eet libtool_hack modarch_hack
 
 .if !defined(WITHOUT_NLS)
 USE_GETTEXT=	yes

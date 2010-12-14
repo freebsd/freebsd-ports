@@ -1,0 +1,90 @@
+lib/enlightenment/modules/net/module.desktop
+lib/enlightenment/modules/net/net.edj
+lib/enlightenment/modules/net/%%E17_ARCH%%/module.so
+lib/enlightenment/modules/net/e-module-net.edj
+%%NLS%%lib/enlightenment/modules/net/locale/cs/LC_MESSAGES/net.mo
+%%NLS%%lib/enlightenment/modules/net/locale/lt/LC_MESSAGES/net.mo
+%%NLS%%lib/enlightenment/modules/net/locale/he/LC_MESSAGES/net.mo
+%%NLS%%lib/enlightenment/modules/net/locale/zh_CN/LC_MESSAGES/net.mo
+%%NLS%%lib/enlightenment/modules/net/locale/ar/LC_MESSAGES/net.mo
+%%NLS%%lib/enlightenment/modules/net/locale/fr/LC_MESSAGES/net.mo
+%%NLS%%lib/enlightenment/modules/net/locale/nl/LC_MESSAGES/net.mo
+%%NLS%%lib/enlightenment/modules/net/locale/nb/LC_MESSAGES/net.mo
+%%NLS%%lib/enlightenment/modules/net/locale/bg/LC_MESSAGES/net.mo
+%%NLS%%lib/enlightenment/modules/net/locale/hr/LC_MESSAGES/net.mo
+%%NLS%%lib/enlightenment/modules/net/locale/fo/LC_MESSAGES/net.mo
+%%NLS%%lib/enlightenment/modules/net/locale/hu/LC_MESSAGES/net.mo
+%%NLS%%lib/enlightenment/modules/net/locale/pl/LC_MESSAGES/net.mo
+%%NLS%%lib/enlightenment/modules/net/locale/es/LC_MESSAGES/net.mo
+%%NLS%%lib/enlightenment/modules/net/locale/it/LC_MESSAGES/net.mo
+%%NLS%%lib/enlightenment/modules/net/locale/pt/LC_MESSAGES/net.mo
+%%NLS%%lib/enlightenment/modules/net/locale/pt_BR/LC_MESSAGES/net.mo
+%%NLS%%lib/enlightenment/modules/net/locale/eo/LC_MESSAGES/net.mo
+%%NLS%%lib/enlightenment/modules/net/locale/tr/LC_MESSAGES/net.mo
+%%NLS%%lib/enlightenment/modules/net/locale/sk/LC_MESSAGES/net.mo
+%%NLS%%lib/enlightenment/modules/net/locale/uk/LC_MESSAGES/net.mo
+%%NLS%%lib/enlightenment/modules/net/locale/de/LC_MESSAGES/net.mo
+%%NLS%%lib/enlightenment/modules/net/locale/ja/LC_MESSAGES/net.mo
+%%NLS%%lib/enlightenment/modules/net/locale/el/LC_MESSAGES/net.mo
+%%NLS%%lib/enlightenment/modules/net/locale/fi/LC_MESSAGES/net.mo
+%%NLS%%lib/enlightenment/modules/net/locale/sv/LC_MESSAGES/net.mo
+%%NLS%%lib/enlightenment/modules/net/locale/ru/LC_MESSAGES/net.mo
+%%NLS%%@dirrm lib/enlightenment/modules/net/locale/ru/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/net/locale/ru
+%%NLS%%@dirrm lib/enlightenment/modules/net/locale/sv/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/net/locale/sv
+%%NLS%%@dirrm lib/enlightenment/modules/net/locale/fi/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/net/locale/fi
+%%NLS%%@dirrm lib/enlightenment/modules/net/locale/el/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/net/locale/el
+%%NLS%%@dirrm lib/enlightenment/modules/net/locale/ja/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/net/locale/ja
+%%NLS%%@dirrm lib/enlightenment/modules/net/locale/de/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/net/locale/de
+%%NLS%%@dirrm lib/enlightenment/modules/net/locale/uk/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/net/locale/uk
+%%NLS%%@dirrm lib/enlightenment/modules/net/locale/sk/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/net/locale/sk
+%%NLS%%@dirrm lib/enlightenment/modules/net/locale/tr/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/net/locale/tr
+%%NLS%%@dirrm lib/enlightenment/modules/net/locale/eo/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/net/locale/eo
+%%NLS%%@dirrm lib/enlightenment/modules/net/locale/pt_BR/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/net/locale/pt_BR
+%%NLS%%@dirrm lib/enlightenment/modules/net/locale/pt/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/net/locale/pt
+%%NLS%%@dirrm lib/enlightenment/modules/net/locale/it/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/net/locale/it
+%%NLS%%@dirrm lib/enlightenment/modules/net/locale/es/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/net/locale/es
+%%NLS%%@dirrm lib/enlightenment/modules/net/locale/pl/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/net/locale/pl
+%%NLS%%@dirrm lib/enlightenment/modules/net/locale/hu/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/net/locale/hu
+%%NLS%%@dirrm lib/enlightenment/modules/net/locale/fo/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/net/locale/fo
+%%NLS%%@dirrm lib/enlightenment/modules/net/locale/hr/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/net/locale/hr
+%%NLS%%@dirrm lib/enlightenment/modules/net/locale/bg/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/net/locale/bg
+%%NLS%%@dirrm lib/enlightenment/modules/net/locale/nb/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/net/locale/nb
+%%NLS%%@dirrm lib/enlightenment/modules/net/locale/nl/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/net/locale/nl
+%%NLS%%@dirrm lib/enlightenment/modules/net/locale/fr/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/net/locale/fr
+%%NLS%%@dirrm lib/enlightenment/modules/net/locale/ar/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/net/locale/ar
+%%NLS%%@dirrm lib/enlightenment/modules/net/locale/zh_CN/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/net/locale/zh_CN
+%%NLS%%@dirrm lib/enlightenment/modules/net/locale/he/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/net/locale/he
+%%NLS%%@dirrm lib/enlightenment/modules/net/locale/lt/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/net/locale/lt
+%%NLS%%@dirrm lib/enlightenment/modules/net/locale/cs/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/net/locale/cs
+%%NLS%%@dirrm lib/enlightenment/modules/net/locale
+@dirrm lib/enlightenment/modules/net/%%E17_ARCH%%
+@dirrm lib/enlightenment/modules/net
+@dirrmtry lib/enlightenment/modules
+@dirrmtry lib/enlightenment

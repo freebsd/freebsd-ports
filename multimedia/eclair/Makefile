@@ -26,4 +26,8 @@ USE_EFL_ECORE=	x11 evas file
 USE_EFL_ESMART=	draggies
 USE_SQLITE=	3
 
+BROKEN=		does not compile
+DEPRECATED=	abandoned upstream
+EXPIRATION_DATE=	2011-01-01
+
 .include <bsd.port.mk>

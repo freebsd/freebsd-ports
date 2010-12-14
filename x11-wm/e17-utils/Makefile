@@ -26,6 +26,10 @@ USE_GNOME=	gnometarget pkgconfig
 USE_EFL=	imlib2 engrave ecore
 USE_EFL_ECORE=	evas file config
 
+BROKEN=		does not compile
+DEPRECATED=	abandoned upstream
+EXPIRATION_DATE=	2011-01-01
+
 OPTIONS=	SETROOT		"Build e17setroot"	on \
 		ENTANGLE	"Build entangle"	on \
 		EXIGE		"Build exige"		on

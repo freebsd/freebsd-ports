@@ -1,0 +1,12 @@
+This is the ITask Application module for Enlightenment.
+
+It will hold all of your open applications for fast switching.
+
+There are three basic functionalities that you don't want to miss:
+1. If you click on an icon it will be shown and raised to the top
+   and if its on another desk, then you will be switched to it. 
+2. If you drag an icon out of ITask the App will be shown on the
+   current desktop.
+3. Drag an icon to a pagers desk to send it.
+
+WWW:	http://www.enlightenment.org/

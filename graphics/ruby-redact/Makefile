@@ -22,6 +22,10 @@ USE_RUBY=	yes
 USE_RAKE=	yes
 NO_BUILD=	yes
 
+BROKEN=		does not compile
+DEPRECATED=	abandoned upstream
+EXPIRATION_DATE=	2011-01-01
+
 .include <bsd.port.pre.mk>
 
 do-install:

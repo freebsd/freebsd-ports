@@ -1,0 +1,17 @@
+lib/enlightenment/modules/evry-mpris/e-module.edj
+lib/enlightenment/modules/evry-mpris/%%E17_ARCH%%/module.so
+lib/enlightenment/modules/evry-mpris/module.desktop
+%%NLS%%lib/enlightenment/modules/evry-mpris/locale/fr/LC_MESSAGES/evry-mpris.mo
+%%NLS%%lib/enlightenment/modules/evry-mpris/locale/it/LC_MESSAGES/evry-mpris.mo
+%%NLS%%lib/enlightenment/modules/evry-mpris/locale/el/LC_MESSAGES/evry-mpris.mo
+%%NLS%%@dirrm lib/enlightenment/modules/evry-mpris/locale/el/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/evry-mpris/locale/el
+%%NLS%%@dirrm lib/enlightenment/modules/evry-mpris/locale/it/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/evry-mpris/locale/it
+%%NLS%%@dirrm lib/enlightenment/modules/evry-mpris/locale/fr/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/evry-mpris/locale/fr
+%%NLS%%@dirrm lib/enlightenment/modules/evry-mpris/locale
+@dirrm lib/enlightenment/modules/evry-mpris/%%E17_ARCH%%
+@dirrm lib/enlightenment/modules/evry-mpris
+@dirrmtry lib/enlightenment/modules
+@dirrmtry lib/enlightenment

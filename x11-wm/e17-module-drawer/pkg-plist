@@ -1,0 +1,68 @@
+include/drawer/Drawer.h
+libdata/pkgconfig/drawer.pc
+lib/enlightenment/modules/drawer/%%E17_ARCH%%/plugins/views/grid.so
+lib/enlightenment/modules/drawer/%%E17_ARCH%%/plugins/views/list.so
+lib/enlightenment/modules/drawer/%%E17_ARCH%%/plugins/views/grid.desktop
+lib/enlightenment/modules/drawer/%%E17_ARCH%%/plugins/views/list.desktop
+lib/enlightenment/modules/drawer/%%E17_ARCH%%/plugins/sources/directory_watcher.desktop
+lib/enlightenment/modules/drawer/%%E17_ARCH%%/plugins/sources/launcher.so
+lib/enlightenment/modules/drawer/%%E17_ARCH%%/plugins/sources/history.desktop
+lib/enlightenment/modules/drawer/%%E17_ARCH%%/plugins/sources/directory_watcher.so
+lib/enlightenment/modules/drawer/%%E17_ARCH%%/plugins/sources/history.so
+lib/enlightenment/modules/drawer/%%E17_ARCH%%/plugins/sources/winlist.desktop
+lib/enlightenment/modules/drawer/%%E17_ARCH%%/plugins/sources/winlist.so
+lib/enlightenment/modules/drawer/%%E17_ARCH%%/plugins/sources/launcher.desktop
+lib/enlightenment/modules/drawer/%%E17_ARCH%%/module.so
+lib/enlightenment/modules/drawer/e-module-drawer.edj
+lib/enlightenment/modules/drawer/module.desktop
+%%NLS%%lib/enlightenment/modules/drawer/locale/tr/LC_MESSAGES/drawer.mo
+%%NLS%%lib/enlightenment/modules/drawer/locale/eo/LC_MESSAGES/drawer.mo
+%%NLS%%lib/enlightenment/modules/drawer/locale/it/LC_MESSAGES/drawer.mo
+%%NLS%%lib/enlightenment/modules/drawer/locale/pt_BR/LC_MESSAGES/drawer.mo
+%%NLS%%lib/enlightenment/modules/drawer/locale/pt/LC_MESSAGES/drawer.mo
+%%NLS%%lib/enlightenment/modules/drawer/locale/fi/LC_MESSAGES/drawer.mo
+%%NLS%%lib/enlightenment/modules/drawer/locale/el/LC_MESSAGES/drawer.mo
+%%NLS%%lib/enlightenment/modules/drawer/locale/uk/LC_MESSAGES/drawer.mo
+%%NLS%%lib/enlightenment/modules/drawer/locale/fr/LC_MESSAGES/drawer.mo
+%%NLS%%lib/enlightenment/modules/drawer/locale/lt/LC_MESSAGES/drawer.mo
+%%NLS%%lib/enlightenment/modules/drawer/locale/cs/LC_MESSAGES/drawer.mo
+%%NLS%%lib/enlightenment/modules/drawer/locale/zh_CN/LC_MESSAGES/drawer.mo
+%%NLS%%lib/enlightenment/modules/drawer/locale/es/LC_MESSAGES/drawer.mo
+%%NLS%%lib/enlightenment/modules/drawer/locale/hr/LC_MESSAGES/drawer.mo
+%%NLS%%@dirrm lib/enlightenment/modules/drawer/locale/hr/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/drawer/locale/hr
+%%NLS%%@dirrm lib/enlightenment/modules/drawer/locale/es/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/drawer/locale/es
+%%NLS%%@dirrm lib/enlightenment/modules/drawer/locale/zh_CN/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/drawer/locale/zh_CN
+%%NLS%%@dirrm lib/enlightenment/modules/drawer/locale/cs/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/drawer/locale/cs
+%%NLS%%@dirrm lib/enlightenment/modules/drawer/locale/lt/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/drawer/locale/lt
+%%NLS%%@dirrm lib/enlightenment/modules/drawer/locale/fr/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/drawer/locale/fr
+%%NLS%%@dirrm lib/enlightenment/modules/drawer/locale/uk/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/drawer/locale/uk
+%%NLS%%@dirrm lib/enlightenment/modules/drawer/locale/el/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/drawer/locale/el
+%%NLS%%@dirrm lib/enlightenment/modules/drawer/locale/fi/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/drawer/locale/fi
+%%NLS%%@dirrm lib/enlightenment/modules/drawer/locale/pt/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/drawer/locale/pt
+%%NLS%%@dirrm lib/enlightenment/modules/drawer/locale/pt_BR/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/drawer/locale/pt_BR
+%%NLS%%@dirrm lib/enlightenment/modules/drawer/locale/it/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/drawer/locale/it
+%%NLS%%@dirrm lib/enlightenment/modules/drawer/locale/eo/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/drawer/locale/eo
+%%NLS%%@dirrm lib/enlightenment/modules/drawer/locale/tr/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/drawer/locale/tr
+%%NLS%%@dirrm lib/enlightenment/modules/drawer/locale
+@dirrm include/drawer
+@dirrm lib/enlightenment/modules/drawer/%%E17_ARCH%%/plugins/sources
+@dirrm lib/enlightenment/modules/drawer/%%E17_ARCH%%/plugins/views
+@dirrm lib/enlightenment/modules/drawer/%%E17_ARCH%%/plugins
+@dirrm lib/enlightenment/modules/drawer/%%E17_ARCH%%
+@dirrm lib/enlightenment/modules/drawer
+@dirrmtry lib/enlightenment/modules
+@dirrmtry lib/enlightenment

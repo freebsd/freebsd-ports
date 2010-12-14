@@ -19,6 +19,10 @@ EXTRACT_SUFX=	.edj
 MAINTAINER=	stas@FreeBSD.org
 COMMENT=	Logo splash screen for e17 window manager
 
+BROKEN=		does not work with recent e17
+DEPRECATED=	abandoned upstream
+EXPIRATION_DATE=	2011-01-01
+
 RUN_DEPENDS=	enlightenment-config:${PORTSDIR}/x11-wm/enlightenment
 
 NO_BUILD=	yes

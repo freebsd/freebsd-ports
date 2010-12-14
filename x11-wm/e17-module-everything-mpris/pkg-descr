@@ -1,0 +1,8 @@
+Everything-mpris plugin is a frontend for mediaplayers that support mpris.
+
+Supported players/daemons:
+  - Amarok, Audacious, Exaile, Totem...
+  - corn, simple sound server: http://incise.org/corn.html.
+  - xmms2, via xmms2-mpris-bridge.
+
+WWW:	http://www.enlightenment.org/
