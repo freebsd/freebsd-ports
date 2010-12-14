@@ -44,12 +44,11 @@ OPTIONS+=	off
 .include <bsd.port.options.mk>
 
 .for M in ${MODULES}
-MODULEOPT=	${M:U:S,-,_,g}
-. if !defined(${MODULEOPT}_PATH)
-${MODULEOPT}_PATH=	${M}
+. if !defined(${M:U:S,-,_,g}_PATH)
+${M:U:S,-,_,g}_PATH=	${M}
 . endif
-. if defined(WITH_${MODULEOPT})
-RUN_DEPENDS+=	${LOCALBASE}/lib/enlightenment/modules/${{MODULEOPT}_PATH}/${E17_ARCH}/module.so:${PORTSDIR}/x11-wm/e17-module-${M}
+. if defined(WITH_${M:U:S,-,_,g})
+RUN_DEPENDS+=	${LOCALBASE}/lib/enlightenment/modules/${${M:U:S,-,_,g}_PATH}/${E17_ARCH}/module.so:${PORTSDIR}/x11-wm/e17-module-${M}
 . endif
 .endfor
 
