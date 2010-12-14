@@ -890,6 +890,7 @@
     SUBDIR += wipe
     SUBDIR += xca
     SUBDIR += xinetd
+    SUBDIR += xml-security
     SUBDIR += xmlsec
     SUBDIR += xmlsec1
     SUBDIR += xorsearch

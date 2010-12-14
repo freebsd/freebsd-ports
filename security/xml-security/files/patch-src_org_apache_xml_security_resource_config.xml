@@ -1,0 +1,147 @@
+--- src/org/apache/xml/security/resource/config.xml.orig	2010-11-11 10:38:26.000000000 +0100
++++ src/org/apache/xml/security/resource/config.xml	2010-12-14 12:40:29.000000000 +0100
+@@ -78,6 +78,12 @@
+                           JAVACLASS="org.apache.xml.security.algorithms.implementations.SignatureBaseRSA$SignatureRSASHA512" />
+       <SignatureAlgorithm URI="http://www.w3.org/2001/04/xmldsig-more#ecdsa-sha1"
+                           JAVACLASS="org.apache.xml.security.algorithms.implementations.SignatureECDSA$SignatureECDSASHA1" />
++      <SignatureAlgorithm URI="http://www.w3.org/2001/04/xmldsig-more#ecdsa-sha256"
++                          JAVACLASS="org.apache.xml.security.algorithms.implementations.SignatureECDSA$SignatureECDSASHA256" />
++      <SignatureAlgorithm URI="http://www.w3.org/2001/04/xmldsig-more#ecdsa-sha384"
++                          JAVACLASS="org.apache.xml.security.algorithms.implementations.SignatureECDSA$SignatureECDSASHA384" />
++      <SignatureAlgorithm URI="http://www.w3.org/2001/04/xmldsig-more#ecdsa-sha512"
++                          JAVACLASS="org.apache.xml.security.algorithms.implementations.SignatureECDSA$SignatureECDSASHA512" />
+ 
+       <SignatureAlgorithm URI="http://www.w3.org/2001/04/xmldsig-more#hmac-md5"
+                           JAVACLASS="org.apache.xml.security.algorithms.implementations.IntegrityHmac$IntegrityHmacMD5" />
+@@ -97,7 +103,7 @@
+                     Description="MD5 message digest from RFC 1321"
+                     AlgorithmClass="MessageDigest"
+                     RequirementLevel="NOT RECOMMENDED"
+-                    SpecificationURL="http://www.ietf.org/internet-drafts/draft-eastlake-xmldsig-uri-02.txt"
++                    SpecificationURL="http://www.ietf.org/rfc/rfc4051.txt"
+                     JCEName="MD5"/>
+ 
+          <Algorithm URI="http://www.w3.org/2001/04/xmlenc#ripemd160"
+@@ -122,7 +128,7 @@
+                     Description="SHA message digest with 384 bit"
+                     AlgorithmClass="MessageDigest"
+                     RequirementLevel="OPTIONAL"
+-                    SpecificationURL="http://www.ietf.org/internet-drafts/draft-eastlake-xmldsig-uri-02.txt"
++                    SpecificationURL="http://www.ietf.org/rfc/rfc4051.txt"
+                     JCEName="SHA-384"/>
+ 
+          <Algorithm URI="http://www.w3.org/2001/04/xmlenc#sha512"
+@@ -142,14 +148,14 @@
+                     Description="RSA Signature with MD5 message digest"
+                     AlgorithmClass="Signature"
+                     RequirementLevel="NOT RECOMMENDED"
+-                    SpecificationURL="http://www.ietf.org/internet-drafts/draft-eastlake-xmldsig-uri-02.txt"
++                    SpecificationURL="http://www.ietf.org/rfc/rfc4051.txt"
+                     JCEName="MD5withRSA"/>
+ 
+          <Algorithm URI="http://www.w3.org/2001/04/xmldsig-more#rsa-ripemd160"
+                     Description="RSA Signature with RIPEMD-160 message digest"
+                     AlgorithmClass="Signature"
+                     RequirementLevel="OPTIONAL"
+-                    SpecificationURL="http://www.ietf.org/internet-drafts/draft-eastlake-xmldsig-uri-02.txt"
++                    SpecificationURL="http://www.ietf.org/rfc/rfc4051.txt"
+                     JCEName="RIPEMD160withRSA"/>
+ 
+          <Algorithm URI="http://www.w3.org/2000/09/xmldsig#rsa-sha1"
+@@ -162,43 +168,64 @@
+                     Description="RSA Signature with SHA-256 message digest"
+                     AlgorithmClass="Signature"
+                     RequirementLevel="OPTIONAL"
+-                    SpecificationURL="http://www.ietf.org/internet-drafts/draft-eastlake-xmldsig-uri-02.txt"
++                    SpecificationURL="http://www.ietf.org/rfc/rfc4051.txt"
+                     JCEName="SHA256withRSA"/>
+ 
+          <Algorithm URI="http://www.w3.org/2001/04/xmldsig-more#rsa-sha384"
+                     Description="RSA Signature with SHA-384 message digest"
+                     AlgorithmClass="Signature"
+                     RequirementLevel="OPTIONAL"
+-                    SpecificationURL="http://www.ietf.org/internet-drafts/draft-eastlake-xmldsig-uri-02.txt"
++                    SpecificationURL="http://www.ietf.org/rfc/rfc4051.txt"
+                     JCEName="SHA384withRSA"/>
+ 
+          <Algorithm URI="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"
+                     Description="RSA Signature with SHA-512 message digest"
+                     AlgorithmClass="Signature"
+                     RequirementLevel="OPTIONAL"
+-                    SpecificationURL="http://www.ietf.org/internet-drafts/draft-eastlake-xmldsig-uri-02.txt"
++                    SpecificationURL="http://www.ietf.org/rfc/rfc4051.txt"
+                     JCEName="SHA512withRSA"/>
+                     
+          <Algorithm URI="http://www.w3.org/2001/04/xmldsig-more#ecdsa-sha1"
+                     Description="ECDSA Signature with SHA-1 message digest"
+                     AlgorithmClass="Signature"
+                     RequirementLevel="OPTIONAL"
+-                    SpecificationURL="http://www.ietf.org/internet-drafts/draft-eastlake-xmldsig-uri-02.txt"
+-                    JCEName="ECDSAwithSHA1"/>
++                    SpecificationURL="http://www.ietf.org/rfc/rfc4051.txt"
++                    JCEName="SHA1withECDSA"/>
++
++         <Algorithm URI="http://www.w3.org/2001/04/xmldsig-more#ecdsa-sha256"
++                    Description="ECDSA Signature with SHA-256 message digest"
++                    AlgorithmClass="Signature"
++                    RequirementLevel="OPTIONAL"
++                    SpecificationURL="http://www.ietf.org/rfc/rfc4051.txt"
++                    JCEName="SHA256withECDSA"/>
++
++         <Algorithm URI="http://www.w3.org/2001/04/xmldsig-more#ecdsa-sha384"
++                    Description="ECDSA Signature with SHA-384 message digest"
++                    AlgorithmClass="Signature"
++                    RequirementLevel="OPTIONAL"
++                    SpecificationURL="http://www.ietf.org/rfc/rfc4051.txt"
++                    JCEName="SHA384withECDSA"/>
++
++         <Algorithm URI="http://www.w3.org/2001/04/xmldsig-more#ecdsa-sha512"
++                    Description="ECDSA Signature with SHA-512 message digest"
++                    AlgorithmClass="Signature"
++                    RequirementLevel="OPTIONAL"
++                    SpecificationURL="http://www.ietf.org/rfc/rfc4051.txt"
++                    JCEName="SHA512withECDSA"/>
+ 
+          <!-- MAC Algorithms -->
+          <Algorithm URI="http://www.w3.org/2001/04/xmldsig-more#hmac-md5"
+                     Description="Message Authentication code using MD5"
+                     AlgorithmClass="Mac"
+                     RequirementLevel="NOT RECOMMENDED"
+-                    SpecificationURL="http://www.ietf.org/internet-drafts/draft-eastlake-xmldsig-uri-02.txt"
++                    SpecificationURL="http://www.ietf.org/rfc/rfc4051.txt"
+                     JCEName="HmacMD5"/>
+ 
+          <Algorithm URI="http://www.w3.org/2001/04/xmldsig-more#hmac-ripemd160"
+                     Description="Message Authentication code using RIPEMD-160"
+                     AlgorithmClass="Mac"
+                     RequirementLevel="OPTIONAL"
+-                    SpecificationURL="http://www.ietf.org/internet-drafts/draft-eastlake-xmldsig-uri-02.txt"
++                    SpecificationURL="http://www.ietf.org/rfc/rfc4051.txt"
+                     JCEName="HMACRIPEMD160"/>
+ 
+          <Algorithm URI="http://www.w3.org/2000/09/xmldsig#hmac-sha1"
+@@ -211,21 +238,21 @@
+                     Description="Message Authentication code using SHA-256"
+                     AlgorithmClass="Mac"
+                     RequirementLevel="OPTIONAL"
+-                    SpecificationURL="http://www.ietf.org/internet-drafts/draft-eastlake-xmldsig-uri-02.txt"
++                    SpecificationURL="http://www.ietf.org/rfc/rfc4051.txt"
+                     JCEName="HmacSHA256"/>
+ 
+          <Algorithm URI="http://www.w3.org/2001/04/xmldsig-more#hmac-sha384"
+                     Description="Message Authentication code using SHA-384"
+                     AlgorithmClass="Mac"
+                     RequirementLevel="OPTIONAL"
+-                    SpecificationURL="http://www.ietf.org/internet-drafts/draft-eastlake-xmldsig-uri-02.txt"
++                    SpecificationURL="http://www.ietf.org/rfc/rfc4051.txt"
+                     JCEName="HmacSHA384"/>
+ 
+          <Algorithm URI="http://www.w3.org/2001/04/xmldsig-more#hmac-sha512"
+                     Description="Message Authentication code using SHA-512"
+                     AlgorithmClass="Mac"
+                     RequirementLevel="OPTIONAL"
+-                    SpecificationURL="http://www.ietf.org/internet-drafts/draft-eastlake-xmldsig-uri-02.txt"
++                    SpecificationURL="http://www.ietf.org/rfc/rfc4051.txt"
+                     JCEName="HmacSHA512"/>
+ 
+          <!-- Block encryption Algorithms -->

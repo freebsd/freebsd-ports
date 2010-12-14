@@ -1,0 +1,13 @@
+The Apache-XML-Security-J supports XML-Signature Syntax and Processing,
+W3C Recommendation 12 February 2002 and XML Encryption Syntax and
+Processing, W3C Recommendation 10 December 2002.
+
+The Java library supports the standard Java API JSR-105: XML Digital
+Signature APIs for creating and validating XML Signatures. A standard
+Java API for XML Encryption JSR-106: XML Digital Encryption APIs is
+in progress and is not final, so this API is not yet supported.
+
+WWW: http://santuario.apache.org/Java/
+
+- Alex Dupre
+ale@FreeBSD.org
