@@ -1,0 +1,44 @@
+--- Kernel/System/CustomerUser/DB.pm.orig	2010-12-03 07:59:29.000000000 +0000
++++ Kernel/System/CustomerUser/DB.pm	2010-12-03 08:00:38.000000000 +0000
+@@ -15,7 +15,7 @@
+ use warnings;
+ 
+ use Crypt::PasswdMD5 qw(unix_md5_crypt);
+-use Digest::SHA::PurePerl qw(sha1_hex sha256_hex);
++use Digest::SHA qw(sha1_hex sha256_hex);
+ 
+ use Kernel::System::CheckItem;
+ use Kernel::System::Valid;
+--- Kernel/System/CustomerAuth/DB.pm.orig	2010-12-03 07:59:41.000000000 +0000
++++ Kernel/System/CustomerAuth/DB.pm	2010-12-03 08:00:47.000000000 +0000
+@@ -15,7 +15,7 @@
+ use warnings;
+ 
+ use Crypt::PasswdMD5 qw(unix_md5_crypt);
+-use Digest::SHA::PurePerl qw(sha1_hex sha256_hex);
++use Digest::SHA qw(sha1_hex sha256_hex);
+ 
+ use vars qw($VERSION);
+ $VERSION = qw($Revision: 1.32 $) [1];
+--- Kernel/System/User.pm.orig	2010-12-03 07:59:51.000000000 +0000
++++ Kernel/System/User.pm	2010-12-03 08:00:56.000000000 +0000
+@@ -15,7 +15,7 @@
+ use warnings;
+ 
+ use Crypt::PasswdMD5 qw(unix_md5_crypt);
+-use Digest::SHA::PurePerl qw(sha1_hex sha256_hex);
++use Digest::SHA qw(sha1_hex sha256_hex);
+ 
+ use Kernel::System::CheckItem;
+ use Kernel::System::Valid;
+--- Kernel/System/Auth/DB.pm.orig	2010-12-03 08:00:03.000000000 +0000
++++ Kernel/System/Auth/DB.pm	2010-12-03 08:01:02.000000000 +0000
+@@ -15,7 +15,7 @@
+ use warnings;
+ 
+ use Crypt::PasswdMD5 qw(unix_md5_crypt);
+-use Digest::SHA::PurePerl qw(sha1_hex sha256_hex);
++use Digest::SHA qw(sha1_hex sha256_hex);
+ 
+ use Kernel::System::Valid;
+ 
