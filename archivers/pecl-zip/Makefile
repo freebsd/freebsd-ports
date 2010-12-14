@@ -14,13 +14,15 @@ EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	PECL
 
 MAINTAINER=	ale@FreeBSD.org
-COMMENT=	A PECL extension to create and read zip files
+COMMENT=	A PECL extension to create and read zip files (PHP 4 only)
+
+LICENSE=	PHP301
 
 USE_PHP=	pcre
 USE_PHP_BUILD=	yes
 USE_PHPEXT=	yes
 DEFAULT_PHP_VER=4
-IGNORE_WITH_PHP=5
+IGNORE_WITH_PHP=5 52
 
 CONFIGURE_ARGS=	--enable-zip --with-zlib-dir=/usr
 
