@@ -43,7 +43,6 @@ OPTIONS=	X11 "Build GUI client; yate-gtk2" on \
 		MYSQL "MySQL Database support" off \
 		PGSQL "PostgreSQL Database support" on \
 		H323 "H323 software channel/protocol support" on \
-		ZAPTEL "Zaptel hardware channel/driver support" on \
 		FAX "Fax software channel/driver support" off
 
 DOCSDIR=	${LOCALBASE}/share/doc/yate
@@ -99,17 +98,17 @@ PLIST_SUB+=	WITH_H323=""
 PLIST_SUB+=	WITH_H323="@comment "
 .endif
 
-.if !defined(WITHOUT_ZAPTEL)
-BUILD_DEPENDS+=	libpri>=1.2.0:${PORTSDIR}/misc/libpri \
-		${LOCALBASE}/include/zaptel/zaptel.h:${PORTSDIR}/misc/zaptel
-LIB_DEPENDS+=	pri.1:${PORTSDIR}/misc/libpri
-RUN_DEPENDS+=	ztcfg:${PORTSDIR}/misc/zaptel
-MAKE_ENV+=	WITH_ZAPTEL=1
-PLIST_SUB+=	WITH_ZAPTEL=""
-.else
+#.if !defined(WITHOUT_ZAPTEL)
+#BUILD_DEPENDS+=	libpri>=1.2.0:${PORTSDIR}/misc/libpri \
+#		${LOCALBASE}/include/zaptel/zaptel.h:${PORTSDIR}/misc/zaptel
+#LIB_DEPENDS+=	pri.1:${PORTSDIR}/misc/libpri
+#RUN_DEPENDS+=	ztcfg:${PORTSDIR}/misc/zaptel
+#MAKE_ENV+=	WITH_ZAPTEL=1
+#PLIST_SUB+=	WITH_ZAPTEL=""
+#.else
 MAKE_ENV+=	WITHOUT_ZAPTEL=1
 PLIST_SUB+=	WITH_ZAPTEL="@comment "
-.endif
+#.endif
 
 .if !defined(WITHOUT_FAX)
 BROKEN=		does not compile
