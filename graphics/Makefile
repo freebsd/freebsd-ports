@@ -141,6 +141,7 @@
     SUBDIR += epstool
     SUBDIR += esmart
     SUBDIR += eterm-bg
+    SUBDIR += ethumb
     SUBDIR += evas
     SUBDIR += evas-core
     SUBDIR += evas-engine-buffer
