@@ -7,7 +7,7 @@
 
 PORTNAME=	trousers
 PORTVERSION=	0.3.6
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	security
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}
 
@@ -86,15 +86,16 @@ post-install:
 		${WRKSRC}/dist/tcsd.conf ${EXAMPLESDIR}/tcsd.conf
 	@[ -f ${PREFIX}/etc/tcsd.conf ] || \
 		${CP} -p ${EXAMPLESDIR}/tcsd.conf ${PREFIX}/etc/tcsd.conf
-	@${INSTALL} -d -o root -g ${GROUPS} -m 0700 /var/run/tpm
-	@${INSTALL} -d -o root -g ${GROUPS} -m 0700 /var/run/ima
-	@${INSTALL} -d -o root -g ${GROUPS} -m 0700 ${PREFIX}/var/lib/tpm
+	@${INSTALL} -d -o ${USERS} -g ${GROUPS} -m 0700 /var/run/tpm
+	@${INSTALL} -d -o ${USERS} -g ${GROUPS} -m 0700 /var/run/ima
+	@${INSTALL} -d -o ${USERS} -g ${GROUPS} -m 0700 ${PREFIX}/var/lib/tpm
 	@${CAT} ${PKGMESSAGE}
 
 add-plist-post:
-	@${ECHO_CMD} "@unexec ${RMDIR} /var/run/tpm 2>/dev/null || true"		>> ${TMPPLIST}
-	@${ECHO_CMD} "@exec ${INSTALL} -d -o root -g ${GROUPS} -m 0700 /var/run/tpm"	>> ${TMPPLIST}
-	@${ECHO_CMD} "@unexec ${RMDIR} /var/run/ima 2>/dev/null || true"		>> ${TMPPLIST}
-	@${ECHO_CMD} "@exec ${INSTALL} -d -o root -g ${GROUPS} -m 0700 /var/run/ima"	>> ${TMPPLIST}
+	@${ECHO_CMD} "@cwd /"								>> ${TMPPLIST}
+	@${ECHO_CMD} "@unexec ${RMDIR} var/run/tpm 2>/dev/null || true"			>> ${TMPPLIST}
+	@${ECHO_CMD} "@exec ${INSTALL} -d -o ${USERS} -g ${GROUPS} -m 0700 var/run/tpm"	>> ${TMPPLIST}
+	@${ECHO_CMD} "@unexec ${RMDIR} var/run/ima 2>/dev/null || true"			>> ${TMPPLIST}
+	@${ECHO_CMD} "@exec ${INSTALL} -d -o ${USERS} -g ${GROUPS} -m 0700 var/run/ima"	>> ${TMPPLIST}
 
 .include <bsd.port.post.mk>
