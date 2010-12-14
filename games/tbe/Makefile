@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	tbe
-PORTVERSION=	M7
+PORTVERSION=	8.2
 CATEGORIES=	games
-MASTER_SITES=	SF
-MASTER_SITE_SUBDIR=	${PORTNAME}/Milestone%20${PORTVERSION:S/M//}
-DISTNAME=	TheButterflyEffect-${PORTVERSION}.src
+MASTER_SITES=	SF/${PORTNAME}/Milestone%20${PORTVERSION}
+DISTNAME=	TheButterflyEffect-m${PORTVERSION}.src
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	johans@FreeBSD.org
@@ -20,22 +19,28 @@ BUILD_DEPENDS=	${LOCALBASE}/bin/unzip:${PORTSDIR}/archivers/unzip
 
 USE_GMAKE=	yes
 USE_QT_VER=	4
-QT_COMPONENTS=	qmake corelib gui moc rcc svg uic xml
-WRKSRC=		${WRKDIR}/TheButterflyEffect-${PORTVERSION}
+QT_COMPONENTS=	qmake_build corelib gui moc_build rcc_build svg uic_build xml
+MAKE_JOBS_SAFE=	yes
+WRKSRC=		${WRKDIR}/TheButterflyEffect-m${PORTVERSION}
+
+DESKTOP_ENTRIES="The Butterfly Effect" "Inspired by The Incredible Machine" \
+		"${DATADIR}/images/tbe-icon.png" \
+		"${PREFIX}/bin/tbe" "Application;LogicGame;Game;" false
 
 post-patch:
 		@${REINPLACE_CMD} 's/ make/ ${GMAKE}/' \
 			${WRKSRC}/3rdParty/Makefile
 		@${REINPLACE_CMD} 's/debug/release link_prl/' ${WRKSRC}/tbe.pro
-		@${REINPLACE_CMD} 's:BINARY_DIRECTORY+":"${DATADIR}:' \
-			${WRKSRC}/src/tbe_global.h
+		@${SED} 's:%%DATADIR:QString("${DATADIR}"):'  \
+			${WRKSRC}/src/tbe_global.h.in > ${WRKSRC}/src/tbe_global.h
 
 pre-build:
 		# This is supposedly done by the ./configure script
 		@cd ${WRKSRC}/3rdParty && ${GMAKE}
-		@cd ${WRKSRC} && ${QMAKE}
+		@cd ${WRKSRC} && ${QMAKE} ${QMAKEFLAGS}
 
 do-install:
+		@${MKDIR} ${PREFIX}/bin
 		@${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin/
 		@${MKDIR} ${DATADIR}
 		@cd ${WRKSRC} && ${PAX} -rw images levels ${DATADIR}
