@@ -6,7 +6,7 @@
 
 PORTNAME=	rpm
 PORTVERSION=	4.8.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	archivers
 MASTER_SITES=	http://rpm.org/releases/rpm-${PORTVERSION:R}.x/ \
 		ftp://ftp.mirrorservice.org/sites/ftp.rpm.org/pub/rpm/dist/rpm-${PORTVERSION:E}.x/
@@ -18,7 +18,7 @@ LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt \
 		nss3:${PORTSDIR}/security/nss
 BUILD_DEPENDS=	${LOCALBASE}/bin/gsed:${PORTSDIR}/textproc/gsed
 
-OPTIONS=	PYTHON "Build Python rpm module" Off
+OPTIONS=	PYTHON "Build Python rpm module" On
 
 USE_AUTOTOOLS=	libtool
 USE_BZIP2=	yes
@@ -37,7 +37,11 @@ CONFIGURE_ARGS+=--with-external-db
 
 .include <bsd.port.options.mk>
 
-.ifdef	WITH_PYTHON
+.if ${OSVERSION} < 800505 || (${OSVERSION} >= 900000 && ${OSVERSION} < 900012)
+LIB_DEPENDS+=   lzma.0:${PORTSDIR}/archivers/xz
+.endif
+
+.ifndef	WITHOUT_PYTHON
 CONFIGURE_ARGS+=--enable-python
 USE_PYTHON=	2.6+
 PLIST_SUB+=	PYTHON=""
