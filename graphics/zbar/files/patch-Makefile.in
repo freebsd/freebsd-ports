@@ -1,0 +1,11 @@
+--- Makefile.in.orig	2010-12-09 17:52:23.862954369 +0000
++++ Makefile.in	2010-12-09 17:53:00.865045766 +0000
+@@ -697,7 +697,7 @@
+ 	perl/t/Scanner.t perl/t/pod.t perl/t/pod-coverage.t
+ pkgconfigdir = $(libdir)/pkgconfig
+ pkgconfig_DATA = zbar.pc $(am__append_44) $(am__append_52)
+-dist_doc_DATA = COPYING HACKING INSTALL LICENSE NEWS README TODO \
++dist_doc_DATA = HACKING INSTALL NEWS README TODO \
+ 	$(am__append_61)
+ zincludedir = $(includedir)/zbar
+ include_HEADERS = include/zbar.h

@@ -1027,6 +1027,7 @@
     SUBDIR += yed
     SUBDIR += yukon
     SUBDIR += zathura
+    SUBDIR += zbar
     SUBDIR += zgv
     SUBDIR += zimg
     SUBDIR += zint
