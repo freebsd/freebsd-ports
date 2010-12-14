@@ -2291,6 +2291,7 @@
     SUBDIR += p5-Test-Reporter
     SUBDIR += p5-Test-Requires
     SUBDIR += p5-Test-Script
+    SUBDIR += p5-Test-Script-Run
     SUBDIR += p5-Test-SharedFork
     SUBDIR += p5-Test-Simple
     SUBDIR += p5-Test-Singleton
