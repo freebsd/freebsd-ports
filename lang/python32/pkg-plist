@@ -125,7 +125,6 @@ libdata/pkgconfig/python-3.1.pc
 %%PYTHON_LIBDIR%%/bdb.py
 %%PYTHON_LIBDIR%%/binhex.py
 %%PYTHON_LIBDIR%%/bisect.py
-%%PYTHON_LIBDIR%%/build_class.py
 %%PYTHON_LIBDIR%%/cProfile.py
 %%PYTHON_LIBDIR%%/calendar.py
 %%PYTHON_LIBDIR%%/cgi.py
@@ -314,6 +313,7 @@ libdata/pkgconfig/python-3.1.pc
 %%PYTHON_LIBDIR%%/distutils/tests/test_install_headers.py
 %%PYTHON_LIBDIR%%/distutils/tests/test_install_lib.py
 %%PYTHON_LIBDIR%%/distutils/tests/test_install_scripts.py
+%%PYTHON_LIBDIR%%/distutils/tests/test_log.py
 %%PYTHON_LIBDIR%%/distutils/tests/test_msvc9compiler.py
 %%PYTHON_LIBDIR%%/distutils/tests/test_register.py
 %%PYTHON_LIBDIR%%/distutils/tests/test_sdist.py
@@ -747,10 +747,12 @@ libdata/pkgconfig/python-3.1.pc
 %%PYTHON_LIBDIR%%/lib-dynload/unicodedata.so
 %%PYTHON_LIBDIR%%/lib-dynload/zlib.so
 %%PYTHON_LIBDIR%%/lib2to3/Grammar.txt
-%%PYTHON_LIBDIR%%/lib2to3/Grammar3.1.2.final.0.pickle
+%%PYTHON_LIBDIR%%/lib2to3/Grammar3.1.3.final.0.pickle
 %%PYTHON_LIBDIR%%/lib2to3/PatternGrammar.txt
-%%PYTHON_LIBDIR%%/lib2to3/PatternGrammar3.1.2.final.0.pickle
+%%PYTHON_LIBDIR%%/lib2to3/PatternGrammar3.1.3.final.0.pickle
 %%PYTHON_LIBDIR%%/lib2to3/__init__.py
+%%PYTHON_LIBDIR%%/lib2to3/btm_matcher.py
+%%PYTHON_LIBDIR%%/lib2to3/btm_utils.py
 %%PYTHON_LIBDIR%%/lib2to3/fixer_base.py
 %%PYTHON_LIBDIR%%/lib2to3/fixer_util.py
 %%PYTHON_LIBDIR%%/lib2to3/fixes/__init__.py
@@ -762,6 +764,7 @@ libdata/pkgconfig/python-3.1.pc
 %%PYTHON_LIBDIR%%/lib2to3/fixes/fix_except.py
 %%PYTHON_LIBDIR%%/lib2to3/fixes/fix_exec.py
 %%PYTHON_LIBDIR%%/lib2to3/fixes/fix_execfile.py
+%%PYTHON_LIBDIR%%/lib2to3/fixes/fix_exitfunc.py
 %%PYTHON_LIBDIR%%/lib2to3/fixes/fix_filter.py
 %%PYTHON_LIBDIR%%/lib2to3/fixes/fix_funcattrs.py
 %%PYTHON_LIBDIR%%/lib2to3/fixes/fix_future.py
@@ -1156,7 +1159,9 @@ libdata/pkgconfig/python-3.1.pc
 %%PYTHON_LIBDIR%%/test/relimport.py
 %%PYTHON_LIBDIR%%/test/reperf.py
 %%PYTHON_LIBDIR%%/test/sample_doctest.py
+%%PYTHON_LIBDIR%%/test/script_helper.py
 %%PYTHON_LIBDIR%%/test/seq_tests.py
+%%PYTHON_LIBDIR%%/test/sha256.pem
 %%PYTHON_LIBDIR%%/test/sgml_input.html
 %%PYTHON_LIBDIR%%/test/sortperf.py
 %%PYTHON_LIBDIR%%/test/ssl_cert.pem
@@ -1392,7 +1397,6 @@ libdata/pkgconfig/python-3.1.pc
 %%PYTHON_LIBDIR%%/test/test_pprint.py
 %%PYTHON_LIBDIR%%/test/test_print.py
 %%PYTHON_LIBDIR%%/test/test_profile.py
-%%PYTHON_LIBDIR%%/test/test_profilehooks.py
 %%PYTHON_LIBDIR%%/test/test_property.py
 %%PYTHON_LIBDIR%%/test/test_pstats.py
 %%PYTHON_LIBDIR%%/test/test_pty.py
@@ -1409,6 +1413,7 @@ libdata/pkgconfig/python-3.1.pc
 %%PYTHON_LIBDIR%%/test/test_reprlib.py
 %%PYTHON_LIBDIR%%/test/test_resource.py
 %%PYTHON_LIBDIR%%/test/test_richcmp.py
+%%PYTHON_LIBDIR%%/test/test_rlcompleter.py
 %%PYTHON_LIBDIR%%/test/test_robotparser.py
 %%PYTHON_LIBDIR%%/test/test_runpy.py
 %%PYTHON_LIBDIR%%/test/test_sax.py
@@ -1424,6 +1429,7 @@ libdata/pkgconfig/python-3.1.pc
 %%PYTHON_LIBDIR%%/test/test_slice.py
 %%PYTHON_LIBDIR%%/test/test_smtplib.py
 %%PYTHON_LIBDIR%%/test/test_smtpnet.py
+%%PYTHON_LIBDIR%%/test/test_sndhdr.py
 %%PYTHON_LIBDIR%%/test/test_socket.py
 %%PYTHON_LIBDIR%%/test/test_socketserver.py
 %%PYTHON_LIBDIR%%/test/test_sort.py
@@ -1440,11 +1446,14 @@ libdata/pkgconfig/python-3.1.pc
 %%PYTHON_LIBDIR%%/test/test_structmembers.py
 %%PYTHON_LIBDIR%%/test/test_structseq.py
 %%PYTHON_LIBDIR%%/test/test_subprocess.py
+%%PYTHON_LIBDIR%%/test/test_sunau.py
 %%PYTHON_LIBDIR%%/test/test_sundry.py
 %%PYTHON_LIBDIR%%/test/test_super.py
 %%PYTHON_LIBDIR%%/test/test_symtable.py
 %%PYTHON_LIBDIR%%/test/test_syntax.py
 %%PYTHON_LIBDIR%%/test/test_sys.py
+%%PYTHON_LIBDIR%%/test/test_sys_setprofile.py
+%%PYTHON_LIBDIR%%/test/test_sys_settrace.py
 %%PYTHON_LIBDIR%%/test/test_syslog.py
 %%PYTHON_LIBDIR%%/test/test_tarfile.py
 %%PYTHON_LIBDIR%%/test/test_tcl.py
@@ -1519,6 +1528,8 @@ libdata/pkgconfig/python-3.1.pc
 %%PYTHON_LIBDIR%%/test/tokenize_tests-utf8-coding-cookie-and-no-utf8-bom-sig.txt
 %%PYTHON_LIBDIR%%/test/tokenize_tests-utf8-coding-cookie-and-utf8-bom-sig.txt
 %%PYTHON_LIBDIR%%/test/tokenize_tests.txt
+%%PYTHON_LIBDIR%%/test/tracedmodules/__init__.py
+%%PYTHON_LIBDIR%%/test/tracedmodules/testmod.py
 %%PYTHON_LIBDIR%%/test/warning_tests.py
 %%PYTHON_LIBDIR%%/test/xmltests.py
 %%PYTHON_LIBDIR%%/test/zipdir.zip
@@ -1645,7 +1656,6 @@ libdata/pkgconfig/python-3.1.pc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/embed/demo.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/embed/importexc.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/embed/loop.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/imputil/knee.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/md5test/README
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/md5test/foo
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/md5test/md5driver.py
@@ -1780,10 +1790,7 @@ libdata/pkgconfig/python-3.1.pc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tix/samples/Tree.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tix/tixwidgets.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tkinter/README
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tkinter/guido/AttrDialog.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tkinter/guido/ManPage.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tkinter/guido/MimeViewer.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tkinter/guido/ShellWindow.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tkinter/guido/attr_dialog.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tkinter/guido/brownian.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tkinter/guido/brownian2.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tkinter/guido/canvasevents.py
@@ -1795,11 +1802,14 @@ libdata/pkgconfig/python-3.1.pc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tkinter/guido/imageview.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tkinter/guido/kill.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tkinter/guido/listtree.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tkinter/guido/manpage.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tkinter/guido/mbox.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tkinter/guido/mimeviewer.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tkinter/guido/newmenubardemo.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tkinter/guido/optionmenu.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tkinter/guido/paint.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tkinter/guido/rmt.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tkinter/guido/shell_window.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tkinter/guido/solitaire.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tkinter/guido/sortvisu.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tkinter/guido/ss1.py
@@ -2096,10 +2106,6 @@ libdata/pkgconfig/python-3.1.pc
 %%PORTDATA%%%%DATADIR%%/Tools/unicode/python-mappings/CP1140.TXT
 %%PORTDATA%%%%DATADIR%%/Tools/unicode/python-mappings/KOI8-U.TXT
 %%PORTDATA%%%%DATADIR%%/Tools/unicode/python-mappings/TIS-620.TXT
-%%PORTDATA%%%%DATADIR%%/Tools/versioncheck/README
-%%PORTDATA%%%%DATADIR%%/Tools/versioncheck/_checkversion.py
-%%PORTDATA%%%%DATADIR%%/Tools/versioncheck/checkversions.py
-%%PORTDATA%%%%DATADIR%%/Tools/versioncheck/pyversioncheck.py
 %%PORTDATA%%%%DATADIR%%/Tools/webchecker/README
 %%PORTDATA%%%%DATADIR%%/Tools/webchecker/tktools.py
 %%PORTDATA%%%%DATADIR%%/Tools/webchecker/wcgui.py
@@ -2111,7 +2117,6 @@ libdata/pkgconfig/python-3.1.pc
 %%PORTDATA%%%%DATADIR%%/Tools/world/world
 %%PORTDATA%%@dirrm %%DATADIR%%/Tools/world
 %%PORTDATA%%@dirrm %%DATADIR%%/Tools/webchecker
-%%PORTDATA%%@dirrm %%DATADIR%%/Tools/versioncheck
 %%PORTDATA%%@dirrm %%DATADIR%%/Tools/unicode/python-mappings
 %%PORTDATA%%@dirrm %%DATADIR%%/Tools/unicode
 %%PORTDATA%%@dirrm %%DATADIR%%/Tools/ssl
@@ -2151,7 +2156,6 @@ libdata/pkgconfig/python-3.1.pc
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/parser
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/newmetaclasses
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/md5test
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/imputil
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/embed
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/distutils/test2to3/test2to3
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/distutils/test2to3/test
@@ -2175,6 +2179,7 @@ libdata/pkgconfig/python-3.1.pc
 @dirrm %%PYTHON_LIBDIR%%/tkinter/test
 @dirrm %%PYTHON_LIBDIR%%/tkinter
 @dirrm %%PYTHON_LIBDIR%%/test/decimaltestdata
+@dirrm %%PYTHON_LIBDIR%%/test/tracedmodules
 @dirrm %%PYTHON_LIBDIR%%/test
 @dirrm %%PYTHON_LIBDIR%%/sqlite3/test
 @dirrm %%PYTHON_LIBDIR%%/sqlite3
