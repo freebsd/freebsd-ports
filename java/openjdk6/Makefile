@@ -70,7 +70,7 @@ JTREGFILE=	jtreg-4_0-bin-${JTREGVERSION}-31_mar_2009.zip
 
 # do not depend on devel/apache-ant to avoid circular dependency, but
 # use .tar.bz2 distfile to avoid duplicated downloads
-ANTVERSION=	1.7.1
+ANTVERSION=	1.8.1
 ANTFILE=	apache-ant-${ANTVERSION}-bin.tar.bz2
 
 # rely on bsdtar ability to extract .gz, .bz2 and .zip archives
@@ -148,7 +148,7 @@ OPENJDK_OSARCH=	bsd-${ARCH:S/i386/i586/}
 DISTFILES+=	${ICEDTEAFILE}:icedtea
 EXTRACT_ONLY+=	${ICEDTEAFILE}
 EXTRA_PATCHES+=	${FILESDIR}/icedtea.patch ${FILESDIR}/plugin.patch
-BUILD_DEPENDS+= ${LOCALBASE}/bin/pkg-config:${PORTSDIR}/devel/pkg-config \
+BUILD_DEPENDS+=	${LOCALBASE}/bin/pkg-config:${PORTSDIR}/devel/pkg-config \
 		${LOCALBASE}/libdata/pkgconfig/glib-2.0.pc:${PORTSDIR}/devel/glib20 \
 		${LOCALBASE}/libdata/pkgconfig/gtk+-2.0.pc:${PORTSDIR}/x11-toolkits/gtk20 \
 		${LOCALBASE}/libdata/pkgconfig/mozilla-plugin.pc:${PORTSDIR}/www/libxul
