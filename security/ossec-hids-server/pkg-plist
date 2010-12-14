@@ -21,7 +21,9 @@
 %%PORTNAME%%/bin/ossec-logcollector
 %%PORTNAME%%/bin/ossec-logtest
 %%PORTNAME%%/bin/ossec-maild
+%%PORTNAME%%/bin/ossec-makelists
 %%PORTNAME%%/bin/ossec-monitord
+%%PORTNAME%%/bin/ossec-regex
 %%PORTNAME%%/bin/ossec-remoted
 %%PORTNAME%%/bin/ossec-reportd
 %%PORTNAME%%/bin/ossec-syscheckd
