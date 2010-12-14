@@ -85,6 +85,7 @@ share/applications/freeciv-server.desktop
 %%X11%%%%DATADIR%%/buildings/temple.png
 %%X11%%%%DATADIR%%/buildings/university.png
 %%DATADIR%%/civ1/buildings.ruleset
+%%DATADIR%%/civ1/cities.ruleset
 %%DATADIR%%/civ1/effects.ruleset
 %%DATADIR%%/civ1/game.ruleset
 %%DATADIR%%/civ1/governments.ruleset
