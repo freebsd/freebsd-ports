@@ -1,0 +1,91 @@
+bin/elementary_config
+bin/elementary_quicklaunch
+bin/elementary_run
+bin/elementary_test
+bin/elementary_testql
+include/elementary-0/Elementary.h
+include/elementary-0/Elementary_Cursor.h
+include/elementary-0/elm_widget.h
+lib/libelementary.so
+lib/libelementary.so.7
+lib/edje/modules/elm/%%E17_ARCH%%/module.so
+lib/elementary_testql.so
+lib/elementary/modules/test_entry/%%E17_ARCH%%/module.so
+libdata/pkgconfig/elementary.pc
+share/applications/elementary_config.desktop
+share/applications/elementary_test.desktop
+share/icons/elementary.png
+%%DATADIR%%/config/default/base.cfg
+%%DATADIR%%/config/default/icon.png
+%%DATADIR%%/config/default/profile.desktop
+%%DATADIR%%/config/illume/base.cfg
+%%DATADIR%%/config/illume/icon.png
+%%DATADIR%%/config/illume/profile.desktop
+%%DATADIR%%/config/profile.cfg
+%%DATADIR%%/config/standard/base.cfg
+%%DATADIR%%/config/standard/icon.png
+%%DATADIR%%/config/standard/profile.desktop
+%%DATADIR%%/edje_externals/icons.edj
+%%DATADIR%%/images/bubble.png
+%%DATADIR%%/images/bubble_sh.png
+%%DATADIR%%/images/icon_00.png
+%%DATADIR%%/images/icon_01.png
+%%DATADIR%%/images/icon_02.png
+%%DATADIR%%/images/icon_03.png
+%%DATADIR%%/images/icon_04.png
+%%DATADIR%%/images/icon_05.png
+%%DATADIR%%/images/icon_06.png
+%%DATADIR%%/images/icon_07.png
+%%DATADIR%%/images/icon_08.png
+%%DATADIR%%/images/icon_09.png
+%%DATADIR%%/images/icon_10.png
+%%DATADIR%%/images/icon_11.png
+%%DATADIR%%/images/icon_12.png
+%%DATADIR%%/images/icon_13.png
+%%DATADIR%%/images/icon_14.png
+%%DATADIR%%/images/icon_15.png
+%%DATADIR%%/images/icon_16.png
+%%DATADIR%%/images/icon_17.png
+%%DATADIR%%/images/icon_18.png
+%%DATADIR%%/images/icon_19.png
+%%DATADIR%%/images/icon_20.png
+%%DATADIR%%/images/icon_21.png
+%%DATADIR%%/images/icon_22.png
+%%DATADIR%%/images/icon_23.png
+%%DATADIR%%/images/logo.png
+%%DATADIR%%/images/logo_small.png
+%%DATADIR%%/images/mystrale.jpg
+%%DATADIR%%/images/mystrale_2.jpg
+%%DATADIR%%/images/panel_01.jpg
+%%DATADIR%%/images/parking.png
+%%DATADIR%%/images/plant_01.jpg
+%%DATADIR%%/images/rock_01.jpg
+%%DATADIR%%/images/rock_02.jpg
+%%DATADIR%%/images/sky_01.jpg
+%%DATADIR%%/images/sky_02.jpg
+%%DATADIR%%/images/sky_03.jpg
+%%DATADIR%%/images/sky_04.jpg
+%%DATADIR%%/images/wood_01.jpg
+%%DATADIR%%/objects/multip.edj
+%%DATADIR%%/objects/test.edj
+%%DATADIR%%/themes/default.edj
+@dirrm include/elementary-0
+@dirrm lib/edje/modules/elm/%%E17_ARCH%%
+@dirrm lib/edje/modules/elm
+@dirrmtry lib/edje/modules
+@dirrmtry lib/edje
+@dirrm lib/elementary/modules/test_entry/%%E17_ARCH%%
+@dirrm lib/elementary/modules/test_entry
+@dirrm lib/elementary/modules
+@dirrm lib/elementary
+@dirrm %%DATADIR%%/themes
+@dirrm %%DATADIR%%/objects
+@dirrm %%DATADIR%%/images
+@dirrm %%DATADIR%%/edje_externals
+@dirrm %%DATADIR%%/config/standard
+@dirrm %%DATADIR%%/config/illume
+@dirrm %%DATADIR%%/config/default
+@dirrm %%DATADIR%%/config
+@dirrm %%DATADIR%%
+@dirrmtry share/applications
+@dirrmtry share/icons

@@ -6,22 +6,21 @@
 #
 
 PORTNAME=	efreet
-PORTVERSION=	0.0.3.042
-CATEGORIES=	x11
-MASTER_SITES=	ftp://ftp.springdaemons.com/pub/snapshots/e17/ \
-		http://download.enlightenment.org/snapshots/2008-01-25/
+DISTVERSION=	1.0.0.beta
+CATEGORIES=	x11 enlightenment
+MASTER_SITES=	http://download.enlightenment.org/releases/ \
+		http://files.roorback.net/e17/2010-10-03/base/
 
 MAINTAINER=	stas@FreeBSD.org
 COMMENT=	Freedesktop.org EFL compatiblity layer
 
-GNU_CONFIGURE=	yes
+LICENSE=	BSD
+DIST_SUBDIR=	e17
 USE_BZIP2=	yes
-USE_GNOME=	gnomehack gnometarget pkgconfig
-USE_EFL=	ecore
+GNU_CONFIGURE=	yes
+USE_EFL=	eet eina ecore libtool_hack librt_hack
 USE_EFL_ECORE=	file
+USE_GNOME=	gnomehack gnometarget pkgconfig
 USE_LDCONFIG=	yes
-
-post-patch:
-	@${REINPLACE_CMD} -E -e 's,-g -O0,,g' ${WRKSRC}/src/lib/Makefile.in
 
 .include <bsd.port.mk>

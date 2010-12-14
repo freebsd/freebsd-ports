@@ -1,0 +1,86 @@
+lib/enlightenment/modules/penguins/themes/lemmings.edj
+lib/enlightenment/modules/penguins/themes/default.edj
+lib/enlightenment/modules/penguins/%%E17_ARCH%%/module.so
+lib/enlightenment/modules/penguins/module.desktop
+lib/enlightenment/modules/penguins/e-module-penguins.edj
+%%NLS%%lib/enlightenment/modules/penguins/locale/hr/LC_MESSAGES/penguins.mo
+%%NLS%%lib/enlightenment/modules/penguins/locale/bg/LC_MESSAGES/penguins.mo
+%%NLS%%lib/enlightenment/modules/penguins/locale/pl/LC_MESSAGES/penguins.mo
+%%NLS%%lib/enlightenment/modules/penguins/locale/es/LC_MESSAGES/penguins.mo
+%%NLS%%lib/enlightenment/modules/penguins/locale/hu/LC_MESSAGES/penguins.mo
+%%NLS%%lib/enlightenment/modules/penguins/locale/zh_CN/LC_MESSAGES/penguins.mo
+%%NLS%%lib/enlightenment/modules/penguins/locale/ar/LC_MESSAGES/penguins.mo
+%%NLS%%lib/enlightenment/modules/penguins/locale/he/LC_MESSAGES/penguins.mo
+%%NLS%%lib/enlightenment/modules/penguins/locale/lt/LC_MESSAGES/penguins.mo
+%%NLS%%lib/enlightenment/modules/penguins/locale/cs/LC_MESSAGES/penguins.mo
+%%NLS%%lib/enlightenment/modules/penguins/locale/nl/LC_MESSAGES/penguins.mo
+%%NLS%%lib/enlightenment/modules/penguins/locale/fr/LC_MESSAGES/penguins.mo
+%%NLS%%lib/enlightenment/modules/penguins/locale/el/LC_MESSAGES/penguins.mo
+%%NLS%%lib/enlightenment/modules/penguins/locale/de/LC_MESSAGES/penguins.mo
+%%NLS%%lib/enlightenment/modules/penguins/locale/ja/LC_MESSAGES/penguins.mo
+%%NLS%%lib/enlightenment/modules/penguins/locale/uk/LC_MESSAGES/penguins.mo
+%%NLS%%lib/enlightenment/modules/penguins/locale/ru/LC_MESSAGES/penguins.mo
+%%NLS%%lib/enlightenment/modules/penguins/locale/pt_BR/LC_MESSAGES/penguins.mo
+%%NLS%%lib/enlightenment/modules/penguins/locale/fi/LC_MESSAGES/penguins.mo
+%%NLS%%lib/enlightenment/modules/penguins/locale/sv/LC_MESSAGES/penguins.mo
+%%NLS%%lib/enlightenment/modules/penguins/locale/pt/LC_MESSAGES/penguins.mo
+%%NLS%%lib/enlightenment/modules/penguins/locale/eo/LC_MESSAGES/penguins.mo
+%%NLS%%lib/enlightenment/modules/penguins/locale/it/LC_MESSAGES/penguins.mo
+%%NLS%%lib/enlightenment/modules/penguins/locale/sk/LC_MESSAGES/penguins.mo
+%%NLS%%lib/enlightenment/modules/penguins/locale/tr/LC_MESSAGES/penguins.mo
+%%NLS%%@dirrm lib/enlightenment/modules/penguins/locale/tr/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/penguins/locale/tr
+%%NLS%%@dirrm lib/enlightenment/modules/penguins/locale/sk/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/penguins/locale/sk
+%%NLS%%@dirrm lib/enlightenment/modules/penguins/locale/it/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/penguins/locale/it
+%%NLS%%@dirrm lib/enlightenment/modules/penguins/locale/eo/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/penguins/locale/eo
+%%NLS%%@dirrm lib/enlightenment/modules/penguins/locale/pt/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/penguins/locale/pt
+%%NLS%%@dirrm lib/enlightenment/modules/penguins/locale/sv/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/penguins/locale/sv
+%%NLS%%@dirrm lib/enlightenment/modules/penguins/locale/fi/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/penguins/locale/fi
+%%NLS%%@dirrm lib/enlightenment/modules/penguins/locale/pt_BR/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/penguins/locale/pt_BR
+%%NLS%%@dirrm lib/enlightenment/modules/penguins/locale/ru/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/penguins/locale/ru
+%%NLS%%@dirrm lib/enlightenment/modules/penguins/locale/uk/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/penguins/locale/uk
+%%NLS%%@dirrm lib/enlightenment/modules/penguins/locale/ja/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/penguins/locale/ja
+%%NLS%%@dirrm lib/enlightenment/modules/penguins/locale/de/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/penguins/locale/de
+%%NLS%%@dirrm lib/enlightenment/modules/penguins/locale/el/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/penguins/locale/el
+%%NLS%%@dirrm lib/enlightenment/modules/penguins/locale/fr/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/penguins/locale/fr
+%%NLS%%@dirrm lib/enlightenment/modules/penguins/locale/nl/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/penguins/locale/nl
+%%NLS%%@dirrm lib/enlightenment/modules/penguins/locale/cs/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/penguins/locale/cs
+%%NLS%%@dirrm lib/enlightenment/modules/penguins/locale/lt/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/penguins/locale/lt
+%%NLS%%@dirrm lib/enlightenment/modules/penguins/locale/he/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/penguins/locale/he
+%%NLS%%@dirrm lib/enlightenment/modules/penguins/locale/ar/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/penguins/locale/ar
+%%NLS%%@dirrm lib/enlightenment/modules/penguins/locale/zh_CN/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/penguins/locale/zh_CN
+%%NLS%%@dirrm lib/enlightenment/modules/penguins/locale/hu/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/penguins/locale/hu
+%%NLS%%@dirrm lib/enlightenment/modules/penguins/locale/es/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/penguins/locale/es
+%%NLS%%@dirrm lib/enlightenment/modules/penguins/locale/pl/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/penguins/locale/pl
+%%NLS%%@dirrm lib/enlightenment/modules/penguins/locale/bg/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/penguins/locale/bg
+%%NLS%%@dirrm lib/enlightenment/modules/penguins/locale/hr/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/penguins/locale/hr
+%%NLS%%@dirrm lib/enlightenment/modules/penguins/locale
+@dirrm lib/enlightenment/modules/penguins/%%E17_ARCH%%
+@dirrm lib/enlightenment/modules/penguins/themes
+@dirrm lib/enlightenment/modules/penguins
+@dirrmtry lib/enlightenment/modules
+@dirrmtry lib/enlightenment

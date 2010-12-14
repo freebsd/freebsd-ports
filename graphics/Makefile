@@ -148,12 +148,15 @@
     SUBDIR += evas-engine-sdl
     SUBDIR += evas-engine-x11
     SUBDIR += evas-engine-xrender
+    SUBDIR += evas-loader-bmp
     SUBDIR += evas-loader-edb
     SUBDIR += evas-loader-eet
     SUBDIR += evas-loader-gif
     SUBDIR += evas-loader-jpeg
+    SUBDIR += evas-loader-pmaps
     SUBDIR += evas-loader-png
     SUBDIR += evas-loader-svg
+    SUBDIR += evas-loader-tga
     SUBDIR += evas-loader-tiff
     SUBDIR += evas-loader-xpm
     SUBDIR += evince

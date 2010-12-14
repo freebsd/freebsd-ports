@@ -1,0 +1,74 @@
+lib/enlightenment/modules/tiling/module.desktop
+lib/enlightenment/modules/tiling/%%E17_ARCH%%/module.so
+lib/enlightenment/modules/tiling/e-module-tiling.edj
+%%NLS%%lib/enlightenment/modules/tiling/locale/it/LC_MESSAGES/tiling.mo
+%%NLS%%lib/enlightenment/modules/tiling/locale/eo/LC_MESSAGES/tiling.mo
+%%NLS%%lib/enlightenment/modules/tiling/locale/tr/LC_MESSAGES/tiling.mo
+%%NLS%%lib/enlightenment/modules/tiling/locale/sk/LC_MESSAGES/tiling.mo
+%%NLS%%lib/enlightenment/modules/tiling/locale/ja/LC_MESSAGES/tiling.mo
+%%NLS%%lib/enlightenment/modules/tiling/locale/uk/LC_MESSAGES/tiling.mo
+%%NLS%%lib/enlightenment/modules/tiling/locale/pt_BR/LC_MESSAGES/tiling.mo
+%%NLS%%lib/enlightenment/modules/tiling/locale/el/LC_MESSAGES/tiling.mo
+%%NLS%%lib/enlightenment/modules/tiling/locale/sv/LC_MESSAGES/tiling.mo
+%%NLS%%lib/enlightenment/modules/tiling/locale/pt/LC_MESSAGES/tiling.mo
+%%NLS%%lib/enlightenment/modules/tiling/locale/ru/LC_MESSAGES/tiling.mo
+%%NLS%%lib/enlightenment/modules/tiling/locale/cs/LC_MESSAGES/tiling.mo
+%%NLS%%lib/enlightenment/modules/tiling/locale/he/LC_MESSAGES/tiling.mo
+%%NLS%%lib/enlightenment/modules/tiling/locale/ar/LC_MESSAGES/tiling.mo
+%%NLS%%lib/enlightenment/modules/tiling/locale/lt/LC_MESSAGES/tiling.mo
+%%NLS%%lib/enlightenment/modules/tiling/locale/fr/LC_MESSAGES/tiling.mo
+%%NLS%%lib/enlightenment/modules/tiling/locale/nl/LC_MESSAGES/tiling.mo
+%%NLS%%lib/enlightenment/modules/tiling/locale/hr/LC_MESSAGES/tiling.mo
+%%NLS%%lib/enlightenment/modules/tiling/locale/zh_CN/LC_MESSAGES/tiling.mo
+%%NLS%%lib/enlightenment/modules/tiling/locale/pl/LC_MESSAGES/tiling.mo
+%%NLS%%lib/enlightenment/modules/tiling/locale/es/LC_MESSAGES/tiling.mo
+%%NLS%%lib/enlightenment/modules/tiling/locale/hu/LC_MESSAGES/tiling.mo
+%%NLS%%@dirrm lib/enlightenment/modules/tiling/locale/hu/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/tiling/locale/hu
+%%NLS%%@dirrm lib/enlightenment/modules/tiling/locale/es/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/tiling/locale/es
+%%NLS%%@dirrm lib/enlightenment/modules/tiling/locale/pl/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/tiling/locale/pl
+%%NLS%%@dirrm lib/enlightenment/modules/tiling/locale/zh_CN/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/tiling/locale/zh_CN
+%%NLS%%@dirrm lib/enlightenment/modules/tiling/locale/hr/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/tiling/locale/hr
+%%NLS%%@dirrm lib/enlightenment/modules/tiling/locale/nl/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/tiling/locale/nl
+%%NLS%%@dirrm lib/enlightenment/modules/tiling/locale/fr/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/tiling/locale/fr
+%%NLS%%@dirrm lib/enlightenment/modules/tiling/locale/lt/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/tiling/locale/lt
+%%NLS%%@dirrm lib/enlightenment/modules/tiling/locale/ar/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/tiling/locale/ar
+%%NLS%%@dirrm lib/enlightenment/modules/tiling/locale/he/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/tiling/locale/he
+%%NLS%%@dirrm lib/enlightenment/modules/tiling/locale/cs/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/tiling/locale/cs
+%%NLS%%@dirrm lib/enlightenment/modules/tiling/locale/ru/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/tiling/locale/ru
+%%NLS%%@dirrm lib/enlightenment/modules/tiling/locale/pt/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/tiling/locale/pt
+%%NLS%%@dirrm lib/enlightenment/modules/tiling/locale/sv/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/tiling/locale/sv
+%%NLS%%@dirrm lib/enlightenment/modules/tiling/locale/el/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/tiling/locale/el
+%%NLS%%@dirrm lib/enlightenment/modules/tiling/locale/pt_BR/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/tiling/locale/pt_BR
+%%NLS%%@dirrm lib/enlightenment/modules/tiling/locale/uk/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/tiling/locale/uk
+%%NLS%%@dirrm lib/enlightenment/modules/tiling/locale/ja/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/tiling/locale/ja
+%%NLS%%@dirrm lib/enlightenment/modules/tiling/locale/sk/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/tiling/locale/sk
+%%NLS%%@dirrm lib/enlightenment/modules/tiling/locale/tr/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/tiling/locale/tr
+%%NLS%%@dirrm lib/enlightenment/modules/tiling/locale/eo/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/tiling/locale/eo
+%%NLS%%@dirrm lib/enlightenment/modules/tiling/locale/it/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/tiling/locale/it
+%%NLS%%@dirrm lib/enlightenment/modules/tiling/locale
+@dirrm lib/enlightenment/modules/tiling/%%E17_ARCH%%
+@dirrm lib/enlightenment/modules/tiling
+@dirrmtry lib/enlightenment/modules
+@dirrmtry lib/enlightenment

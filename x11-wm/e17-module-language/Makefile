@@ -1,31 +1,31 @@
 # New ports collection makefile for:	e17-module-language
-# Date created:		23 June 2006
-# Whom:			Stanislav Sedov <ssedov@mbsd.msk.ru>
+# Date created:		21 August 2010
+# Whom:			Grzegorz Blach <magik@roorback.net>
 #
 # $FreeBSD$
 #
 
 PORTNAME=	language
-PORTVERSION=	20080223
-PORTREVISION=	5
-CATEGORIES=	x11-wm
-MASTER_SITES=	ftp://ftp.springdaemons.com/pub/snapshots/e17/
+PORTVERSION=	20101003
+CATEGORIES=	x11-wm enlightenment
+MASTER_SITES=	http://files.roorback.net/e17/2010-10-03/modules/
 PKGNAMEPREFIX=	e17-module-
 DISTNAME=	${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	stas@FreeBSD.org
-COMMENT=	An e17 module to switch XKB input language
+MAINTAINER=	magik@roorback.net
+COMMENT=	An e17 XKB language/layout control module
 
-BUILD_DEPENDS=	enlightenment-config:${PORTSDIR}/x11-wm/enlightenment
-RUN_DEPENDS=	enlightenment-config:${PORTSDIR}/x11-wm/enlightenment
+BUILD_DEPENDS=	enlightenment:${PORTSDIR}/x11-wm/enlightenment
+RUN_DEPENDS=	enlightenment:${PORTSDIR}/x11-wm/enlightenment
 
+DIST_SUBDIR=	e17
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnometarget pkgconfig
-USE_EFL=	edje exml
-USE_XORG=	x11 xkbfile
+USE_XORG=	xkbfile
+USE_EFL=	edje libtool_hack modarch_hack
 
 .if !defined(WITHOUT_NLS)
 USE_GETTEXT=	yes

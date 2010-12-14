@@ -1,0 +1,62 @@
+lib/enlightenment/modules/places/module.desktop
+lib/enlightenment/modules/places/%%E17_ARCH%%/module.so
+lib/enlightenment/modules/places/e-module-places.edj
+%%NLS%%lib/enlightenment/modules/places/locale/zh_CN/LC_MESSAGES/places.mo
+%%NLS%%lib/enlightenment/modules/places/locale/ru/LC_MESSAGES/places.mo
+%%NLS%%lib/enlightenment/modules/places/locale/el/LC_MESSAGES/places.mo
+%%NLS%%lib/enlightenment/modules/places/locale/uk/LC_MESSAGES/places.mo
+%%NLS%%lib/enlightenment/modules/places/locale/de/LC_MESSAGES/places.mo
+%%NLS%%lib/enlightenment/modules/places/locale/tr/LC_MESSAGES/places.mo
+%%NLS%%lib/enlightenment/modules/places/locale/eo/LC_MESSAGES/places.mo
+%%NLS%%lib/enlightenment/modules/places/locale/it/LC_MESSAGES/places.mo
+%%NLS%%lib/enlightenment/modules/places/locale/ca/LC_MESSAGES/places.mo
+%%NLS%%lib/enlightenment/modules/places/locale/hu/LC_MESSAGES/places.mo
+%%NLS%%lib/enlightenment/modules/places/locale/pl/LC_MESSAGES/places.mo
+%%NLS%%lib/enlightenment/modules/places/locale/pt/LC_MESSAGES/places.mo
+%%NLS%%lib/enlightenment/modules/places/locale/pt_BR/LC_MESSAGES/places.mo
+%%NLS%%lib/enlightenment/modules/places/locale/es/LC_MESSAGES/places.mo
+%%NLS%%lib/enlightenment/modules/places/locale/hr/LC_MESSAGES/places.mo
+%%NLS%%lib/enlightenment/modules/places/locale/fr/LC_MESSAGES/places.mo
+%%NLS%%lib/enlightenment/modules/places/locale/lt/LC_MESSAGES/places.mo
+%%NLS%%lib/enlightenment/modules/places/locale/cs/LC_MESSAGES/places.mo
+%%NLS%%@dirrm lib/enlightenment/modules/places/locale/cs/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/places/locale/cs
+%%NLS%%@dirrm lib/enlightenment/modules/places/locale/lt/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/places/locale/lt
+%%NLS%%@dirrm lib/enlightenment/modules/places/locale/fr/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/places/locale/fr
+%%NLS%%@dirrm lib/enlightenment/modules/places/locale/hr/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/places/locale/hr
+%%NLS%%@dirrm lib/enlightenment/modules/places/locale/es/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/places/locale/es
+%%NLS%%@dirrm lib/enlightenment/modules/places/locale/pt/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/places/locale/pt
+%%NLS%%@dirrm lib/enlightenment/modules/places/locale/pt_BR/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/places/locale/pt_BR
+%%NLS%%@dirrm lib/enlightenment/modules/places/locale/pl/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/places/locale/pl
+%%NLS%%@dirrm lib/enlightenment/modules/places/locale/hu/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/places/locale/hu
+%%NLS%%@dirrm lib/enlightenment/modules/places/locale/ca/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/places/locale/ca
+%%NLS%%@dirrm lib/enlightenment/modules/places/locale/it/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/places/locale/it
+%%NLS%%@dirrm lib/enlightenment/modules/places/locale/eo/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/places/locale/eo
+%%NLS%%@dirrm lib/enlightenment/modules/places/locale/tr/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/places/locale/tr
+%%NLS%%@dirrm lib/enlightenment/modules/places/locale/de/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/places/locale/de
+%%NLS%%@dirrm lib/enlightenment/modules/places/locale/uk/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/places/locale/uk
+%%NLS%%@dirrm lib/enlightenment/modules/places/locale/el/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/places/locale/el
+%%NLS%%@dirrm lib/enlightenment/modules/places/locale/ru/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/places/locale/ru
+%%NLS%%@dirrm lib/enlightenment/modules/places/locale/zh_CN/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/places/locale/zh_CN
+%%NLS%%@dirrm lib/enlightenment/modules/places/locale
+@dirrm lib/enlightenment/modules/places/%%E17_ARCH%%
+@dirrm lib/enlightenment/modules/places
+@dirrmtry lib/enlightenment/modules
+@dirrmtry lib/enlightenment

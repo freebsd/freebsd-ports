@@ -1,6 +1,5 @@
-include/Ecore_Con.h
-lib/libecore_con.a
-lib/libecore_con.la
+include/ecore-1/Ecore_Con.h
 lib/libecore_con.so
-lib/libecore_con.so.9
+lib/libecore_con.so.1
 libdata/pkgconfig/ecore-con.pc
+@dirrmtry include/ecore-1

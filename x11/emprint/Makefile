@@ -6,18 +6,19 @@
 #
 
 PORTNAME=	emprint
-PORTVERSION=	20080223
-PORTREVISION=	3
-CATEGORIES=	x11
-MASTER_SITES=	ftp://ftp.springdaemons.com/pub/snapshots/e17/
+PORTVERSION=	20101003
+CATEGORIES=	x11 enlightenment
+MASTER_SITES=	http://files.roorback.net/e17/2010-10-03/extra/
 
 MAINTAINER=	stas@FreeBSD.org
 COMMENT=	Utility for taking screenshots for E17
 
-GNU_CONFIGURE=	yes
+DIST_SUBDIR=	e17
 USE_BZIP2=	yes
-USE_GNOME=	gnomehack gnometarget pkgconfig
+GNU_CONFIGURE=	yes
 USE_EFL=	ecore evas edje imlib2
 USE_EFL_ECORE=	file x11 evas
+USE_GNOME=	gnomehack gnometarget pkgconfig
+USE_LDCONFIG=	yes
 
 .include <bsd.port.mk>

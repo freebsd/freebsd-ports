@@ -6,44 +6,39 @@
 #
 
 PORTNAME=	sdl
-PORTVERSION=	0.9.9.042
-PORTREVISION=	0
-CATEGORIES=	graphics
-MASTER_SITES=	ftp://ftp.springdaemons.com/pub/snapshots/e17/ \
-		http://download.enlightenment.org/snapshots/2008-01-25/
+DISTVERSION=	1.0.0.beta
+CATEGORIES=	graphics enlightenment
+MASTER_SITES=	http://download.enlightenment.org/releases/ \
+		http://files.roorback.net/e17/2010-10-03/base/
 PKGNAMEPREFIX=	ecore-
-DISTNAME=	ecore-${PORTVERSION}
+DISTNAME=	ecore-${DISTVERSION}
 
 MAINTAINER=	stas@FreeBSD.org
 COMMENT=	Enlightenment core abstraction library (sdl module)
 
-GNU_CONFIGURE=	yes
+LICENSE=	BSD
+DIST_SUBDIR=	e17
 USE_BZIP2=	yes
+GNU_CONFIGURE=	yes
+USE_SDL=	sdl
+USE_EFL=	ecore libtool_hack
+USE_EFL_ECORE=	input
 USE_GNOME=	gnomehack pkgconfig gnometarget
 USE_LDCONFIG=	yes
-USE_EFL=	ecore
-USE_SDL=	sdl
 BUILD_WRKSRC=	${WRKSRC}/src/lib/ecore_sdl
 INSTALL_WRKSRC=	${BUILD_WRKSRC}
 
-CONFIGURE_ARGS=	--disable-ecore-con \
-		--disable-ecore-config \
-		--disable-ecore-desktop \
-		--disable-ecore-directfb \
-		--disable-ecore-evas \
-		--disable-ecore-file \
-		--disable-ecore-ipc \
-		--disable-ecore-job \
-		--enable-ecore-sdl \
-		--disable-ecore-txt \
-		--disable-ecore-x \
-		--disable-ecore-imf \
-		--disable-ecore-imf_evas
+.include <../../devel/ecore-main/Makefile.inc>
+
+CONFIGURE_ARGS+=	--enable-ecore-sdl \
+			--enable-ecore-input
 
 post-patch:
-	@${REINPLACE_CMD} -E -e \
-		's,\$$\(top_builddir\)/src/lib/ecore/\.libs,${LOCALBASE}/lib,'\
+	@${REINPLACE_CMD} -E \
+		-e 's,\$$\(top_builddir\)/src/lib/ecore/\.libs,${LOCALBASE}/lib,'\
+		-e 's,\$$\(top_builddir\)/src/lib/ecore_input/\.libs,${LOCALBASE}/lib,'\
 		-e 's,\$$\(top_builddir\)/src/lib/ecore/libecore\.la,-lecore,'\
+		-e 's,\$$\(top_builddir\)/src/lib/ecore_input/libecore_input\.la,-lecore_input,'\
 		${BUILD_WRKSRC}/Makefile.in
 
 post-install:

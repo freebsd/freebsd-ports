@@ -1,10 +1,9 @@
 bin/embryo_cc
-include/Embryo.h
-lib/libembryo.a
-lib/libembryo.la
+include/embryo-1/Embryo.h
 lib/libembryo.so
-lib/libembryo.so.9
+lib/libembryo.so.1
 libdata/pkgconfig/embryo.pc
 %%DATADIR%%/include/default.inc
 @dirrm %%DATADIR%%/include
 @dirrm %%DATADIR%%
+@dirrm include/embryo-1

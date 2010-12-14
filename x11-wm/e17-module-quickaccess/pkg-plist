@@ -1,0 +1,7 @@
+lib/enlightenment/modules/quickaccess/module.desktop
+lib/enlightenment/modules/quickaccess/e-module-quickaccess.edj
+lib/enlightenment/modules/quickaccess/%%E17_ARCH%%/module.so
+@dirrm lib/enlightenment/modules/quickaccess/%%E17_ARCH%%
+@dirrm lib/enlightenment/modules/quickaccess
+@dirrmtry lib/enlightenment/modules
+@dirrmtry lib/enlightenment

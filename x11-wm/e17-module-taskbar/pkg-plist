@@ -1,0 +1,96 @@
+lib/enlightenment/modules/taskbar/taskbar.edj
+lib/enlightenment/modules/taskbar/module.desktop
+lib/enlightenment/modules/taskbar/%%E17_ARCH%%/module.so
+lib/enlightenment/modules/taskbar/e-module-taskbar.edj
+%%NLS%%lib/enlightenment/modules/taskbar/locale/uk/LC_MESSAGES/taskbar.mo
+%%NLS%%lib/enlightenment/modules/taskbar/locale/vi/LC_MESSAGES/taskbar.mo
+%%NLS%%lib/enlightenment/modules/taskbar/locale/de/LC_MESSAGES/taskbar.mo
+%%NLS%%lib/enlightenment/modules/taskbar/locale/pt/LC_MESSAGES/taskbar.mo
+%%NLS%%lib/enlightenment/modules/taskbar/locale/pt_BR/LC_MESSAGES/taskbar.mo
+%%NLS%%lib/enlightenment/modules/taskbar/locale/ja/LC_MESSAGES/taskbar.mo
+%%NLS%%lib/enlightenment/modules/taskbar/locale/el/LC_MESSAGES/taskbar.mo
+%%NLS%%lib/enlightenment/modules/taskbar/locale/fi/LC_MESSAGES/taskbar.mo
+%%NLS%%lib/enlightenment/modules/taskbar/locale/sv/LC_MESSAGES/taskbar.mo
+%%NLS%%lib/enlightenment/modules/taskbar/locale/ru/LC_MESSAGES/taskbar.mo
+%%NLS%%lib/enlightenment/modules/taskbar/locale/it/LC_MESSAGES/taskbar.mo
+%%NLS%%lib/enlightenment/modules/taskbar/locale/eo/LC_MESSAGES/taskbar.mo
+%%NLS%%lib/enlightenment/modules/taskbar/locale/sk/LC_MESSAGES/taskbar.mo
+%%NLS%%lib/enlightenment/modules/taskbar/locale/tr/LC_MESSAGES/taskbar.mo
+%%NLS%%lib/enlightenment/modules/taskbar/locale/da/LC_MESSAGES/taskbar.mo
+%%NLS%%lib/enlightenment/modules/taskbar/locale/nb/LC_MESSAGES/taskbar.mo
+%%NLS%%lib/enlightenment/modules/taskbar/locale/bg/LC_MESSAGES/taskbar.mo
+%%NLS%%lib/enlightenment/modules/taskbar/locale/zh_CN/LC_MESSAGES/taskbar.mo
+%%NLS%%lib/enlightenment/modules/taskbar/locale/hr/LC_MESSAGES/taskbar.mo
+%%NLS%%lib/enlightenment/modules/taskbar/locale/hu/LC_MESSAGES/taskbar.mo
+%%NLS%%lib/enlightenment/modules/taskbar/locale/fo/LC_MESSAGES/taskbar.mo
+%%NLS%%lib/enlightenment/modules/taskbar/locale/pl/LC_MESSAGES/taskbar.mo
+%%NLS%%lib/enlightenment/modules/taskbar/locale/es/LC_MESSAGES/taskbar.mo
+%%NLS%%lib/enlightenment/modules/taskbar/locale/cs/LC_MESSAGES/taskbar.mo
+%%NLS%%lib/enlightenment/modules/taskbar/locale/lt/LC_MESSAGES/taskbar.mo
+%%NLS%%lib/enlightenment/modules/taskbar/locale/ar/LC_MESSAGES/taskbar.mo
+%%NLS%%lib/enlightenment/modules/taskbar/locale/he/LC_MESSAGES/taskbar.mo
+%%NLS%%lib/enlightenment/modules/taskbar/locale/fr/LC_MESSAGES/taskbar.mo
+%%NLS%%lib/enlightenment/modules/taskbar/locale/nl/LC_MESSAGES/taskbar.mo
+%%NLS%%@dirrm lib/enlightenment/modules/taskbar/locale/nl/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/taskbar/locale/nl
+%%NLS%%@dirrm lib/enlightenment/modules/taskbar/locale/fr/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/taskbar/locale/fr
+%%NLS%%@dirrm lib/enlightenment/modules/taskbar/locale/he/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/taskbar/locale/he
+%%NLS%%@dirrm lib/enlightenment/modules/taskbar/locale/ar/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/taskbar/locale/ar
+%%NLS%%@dirrm lib/enlightenment/modules/taskbar/locale/lt/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/taskbar/locale/lt
+%%NLS%%@dirrm lib/enlightenment/modules/taskbar/locale/cs/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/taskbar/locale/cs
+%%NLS%%@dirrm lib/enlightenment/modules/taskbar/locale/es/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/taskbar/locale/es
+%%NLS%%@dirrm lib/enlightenment/modules/taskbar/locale/pl/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/taskbar/locale/pl
+%%NLS%%@dirrm lib/enlightenment/modules/taskbar/locale/fo/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/taskbar/locale/fo
+%%NLS%%@dirrm lib/enlightenment/modules/taskbar/locale/hu/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/taskbar/locale/hu
+%%NLS%%@dirrm lib/enlightenment/modules/taskbar/locale/hr/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/taskbar/locale/hr
+%%NLS%%@dirrm lib/enlightenment/modules/taskbar/locale/zh_CN/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/taskbar/locale/zh_CN
+%%NLS%%@dirrm lib/enlightenment/modules/taskbar/locale/bg/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/taskbar/locale/bg
+%%NLS%%@dirrm lib/enlightenment/modules/taskbar/locale/nb/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/taskbar/locale/nb
+%%NLS%%@dirrm lib/enlightenment/modules/taskbar/locale/da/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/taskbar/locale/da
+%%NLS%%@dirrm lib/enlightenment/modules/taskbar/locale/tr/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/taskbar/locale/tr
+%%NLS%%@dirrm lib/enlightenment/modules/taskbar/locale/sk/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/taskbar/locale/sk
+%%NLS%%@dirrm lib/enlightenment/modules/taskbar/locale/eo/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/taskbar/locale/eo
+%%NLS%%@dirrm lib/enlightenment/modules/taskbar/locale/it/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/taskbar/locale/it
+%%NLS%%@dirrm lib/enlightenment/modules/taskbar/locale/ru/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/taskbar/locale/ru
+%%NLS%%@dirrm lib/enlightenment/modules/taskbar/locale/sv/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/taskbar/locale/sv
+%%NLS%%@dirrm lib/enlightenment/modules/taskbar/locale/fi/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/taskbar/locale/fi
+%%NLS%%@dirrm lib/enlightenment/modules/taskbar/locale/el/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/taskbar/locale/el
+%%NLS%%@dirrm lib/enlightenment/modules/taskbar/locale/ja/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/taskbar/locale/ja
+%%NLS%%@dirrm lib/enlightenment/modules/taskbar/locale/pt_BR/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/taskbar/locale/pt_BR
+%%NLS%%@dirrm lib/enlightenment/modules/taskbar/locale/pt/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/taskbar/locale/pt
+%%NLS%%@dirrm lib/enlightenment/modules/taskbar/locale/de/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/taskbar/locale/de
+%%NLS%%@dirrm lib/enlightenment/modules/taskbar/locale/vi/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/taskbar/locale/vi
+%%NLS%%@dirrm lib/enlightenment/modules/taskbar/locale/uk/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/taskbar/locale/uk
+%%NLS%%@dirrm lib/enlightenment/modules/taskbar/locale
+@dirrm lib/enlightenment/modules/taskbar/%%E17_ARCH%%
+@dirrm lib/enlightenment/modules/taskbar
+@dirrmtry lib/enlightenment/modules
+@dirrmtry lib/enlightenment

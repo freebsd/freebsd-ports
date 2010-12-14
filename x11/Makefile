@@ -49,6 +49,8 @@
     SUBDIR += ecore-desktop
     SUBDIR += ecore-imf
     SUBDIR += ecore-imf_evas
+    SUBDIR += ecore-input
+    SUBDIR += ecore-input_evas
     SUBDIR += ecore-x11
     SUBDIR += editres
     SUBDIR += efreet

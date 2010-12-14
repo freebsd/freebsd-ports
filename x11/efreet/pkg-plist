@@ -3,23 +3,25 @@ bin/efreet_cache_test
 bin/efreet_menu_alloc
 bin/efreet_spec_test
 bin/efreet_test
-include/efreet/Efreet.h
-include/efreet/Efreet_Mime.h
-include/efreet/efreet_base.h
-include/efreet/efreet_desktop.h
-include/efreet/efreet_icon.h
-include/efreet/efreet_ini.h
-include/efreet/efreet_menu.h
-include/efreet/efreet_utils.h
-lib/libefreet.a
-lib/libefreet.la
+include/efreet-1/Efreet.h
+include/efreet-1/Efreet_Mime.h
+include/efreet-1/Efreet_Trash.h
+include/efreet-1/efreet_base.h
+include/efreet-1/efreet_desktop.h
+include/efreet-1/efreet_icon.h
+include/efreet-1/efreet_ini.h
+include/efreet-1/efreet_menu.h
+include/efreet-1/efreet_uri.h
+include/efreet-1/efreet_utils.h
 lib/libefreet.so
-lib/libefreet.so.0
-lib/libefreet_mime.a
-lib/libefreet_mime.la
+lib/libefreet.so.1
 lib/libefreet_mime.so
-lib/libefreet_mime.so.0
+lib/libefreet_mime.so.1
+lib/libefreet_trash.so
+lib/libefreet_trash.so.1
+lib/efreet/efreet_desktop_cache_create
 libdata/pkgconfig/efreet-mime.pc
+libdata/pkgconfig/efreet-trash.pc
 libdata/pkgconfig/efreet.pc
 %%DATADIR%%/test/entry
 %%DATADIR%%/test/entry.png
@@ -29,9 +31,11 @@ libdata/pkgconfig/efreet.pc
 %%DATADIR%%/test/test.desktop
 %%DATADIR%%/test/test.ini
 %%DATADIR%%/test/test.menu
+%%DATADIR%%/test/test_garbage
 %%DATADIR%%/test/test_menu_slash_bad.menu
 %%DATADIR%%/test/test_type.desktop
 @dirrm %%DATADIR%%/test/sub
 @dirrm %%DATADIR%%/test
 @dirrm %%DATADIR%%
-@dirrm include/efreet
+@dirrm lib/efreet
+@dirrm include/efreet-1

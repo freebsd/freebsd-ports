@@ -22,4 +22,8 @@ USE_LDCONFIG=	yes
 USE_EFL=	ecore etk exml
 GNU_CONFIGURE=	yes
 
+BROKEN=		does not compile
+DEPRECATED=	abandoned upstream
+EXPIRATION_DATE=	2011-01-01
+
 .include <bsd.port.mk>

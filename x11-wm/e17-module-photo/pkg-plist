@@ -1,0 +1,68 @@
+lib/enlightenment/modules/photo/%%E17_ARCH%%/module.so
+lib/enlightenment/modules/photo/photo.edj
+lib/enlightenment/modules/photo/module.desktop
+lib/enlightenment/modules/photo/e-module-photo.edj
+lib/enlightenment/modules/photo/images/photo_logo.png
+%%NLS%%lib/enlightenment/modules/photo/locale/hu/LC_MESSAGES/photo.mo
+%%NLS%%lib/enlightenment/modules/photo/locale/es/LC_MESSAGES/photo.mo
+%%NLS%%lib/enlightenment/modules/photo/locale/pl/LC_MESSAGES/photo.mo
+%%NLS%%lib/enlightenment/modules/photo/locale/bg/LC_MESSAGES/photo.mo
+%%NLS%%lib/enlightenment/modules/photo/locale/hr/LC_MESSAGES/photo.mo
+%%NLS%%lib/enlightenment/modules/photo/locale/fr/LC_MESSAGES/photo.mo
+%%NLS%%lib/enlightenment/modules/photo/locale/lt/LC_MESSAGES/photo.mo
+%%NLS%%lib/enlightenment/modules/photo/locale/he/LC_MESSAGES/photo.mo
+%%NLS%%lib/enlightenment/modules/photo/locale/cs/LC_MESSAGES/photo.mo
+%%NLS%%lib/enlightenment/modules/photo/locale/pt/LC_MESSAGES/photo.mo
+%%NLS%%lib/enlightenment/modules/photo/locale/sv/LC_MESSAGES/photo.mo
+%%NLS%%lib/enlightenment/modules/photo/locale/fi/LC_MESSAGES/photo.mo
+%%NLS%%lib/enlightenment/modules/photo/locale/el/LC_MESSAGES/photo.mo
+%%NLS%%lib/enlightenment/modules/photo/locale/uk/LC_MESSAGES/photo.mo
+%%NLS%%lib/enlightenment/modules/photo/locale/de/LC_MESSAGES/photo.mo
+%%NLS%%lib/enlightenment/modules/photo/locale/tr/LC_MESSAGES/photo.mo
+%%NLS%%lib/enlightenment/modules/photo/locale/eo/LC_MESSAGES/photo.mo
+%%NLS%%lib/enlightenment/modules/photo/locale/it/LC_MESSAGES/photo.mo
+%%NLS%%lib/enlightenment/modules/photo/locale/zh_CN/LC_MESSAGES/photo.mo
+%%NLS%%@dirrm lib/enlightenment/modules/photo/locale/zh_CN/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/photo/locale/zh_CN
+%%NLS%%@dirrm lib/enlightenment/modules/photo/locale/it/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/photo/locale/it
+%%NLS%%@dirrm lib/enlightenment/modules/photo/locale/eo/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/photo/locale/eo
+%%NLS%%@dirrm lib/enlightenment/modules/photo/locale/tr/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/photo/locale/tr
+%%NLS%%@dirrm lib/enlightenment/modules/photo/locale/de/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/photo/locale/de
+%%NLS%%@dirrm lib/enlightenment/modules/photo/locale/uk/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/photo/locale/uk
+%%NLS%%@dirrm lib/enlightenment/modules/photo/locale/el/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/photo/locale/el
+%%NLS%%@dirrm lib/enlightenment/modules/photo/locale/fi/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/photo/locale/fi
+%%NLS%%@dirrm lib/enlightenment/modules/photo/locale/sv/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/photo/locale/sv
+%%NLS%%@dirrm lib/enlightenment/modules/photo/locale/pt/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/photo/locale/pt
+%%NLS%%@dirrm lib/enlightenment/modules/photo/locale/cs/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/photo/locale/cs
+%%NLS%%@dirrm lib/enlightenment/modules/photo/locale/he/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/photo/locale/he
+%%NLS%%@dirrm lib/enlightenment/modules/photo/locale/lt/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/photo/locale/lt
+%%NLS%%@dirrm lib/enlightenment/modules/photo/locale/fr/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/photo/locale/fr
+%%NLS%%@dirrm lib/enlightenment/modules/photo/locale/hr/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/photo/locale/hr
+%%NLS%%@dirrm lib/enlightenment/modules/photo/locale/bg/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/photo/locale/bg
+%%NLS%%@dirrm lib/enlightenment/modules/photo/locale/pl/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/photo/locale/pl
+%%NLS%%@dirrm lib/enlightenment/modules/photo/locale/es/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/photo/locale/es
+%%NLS%%@dirrm lib/enlightenment/modules/photo/locale/hu/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/photo/locale/hu
+%%NLS%%@dirrm lib/enlightenment/modules/photo/locale
+@dirrm lib/enlightenment/modules/photo/images
+@dirrm lib/enlightenment/modules/photo/%%E17_ARCH%%
+@dirrm lib/enlightenment/modules/photo
+@dirrmtry lib/enlightenment/modules
+@dirrmtry lib/enlightenment

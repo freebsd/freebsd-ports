@@ -16,7 +16,6 @@ MASTER_SITES=	ftp://ftp.springdaemons.com/pub/snapshots/e17/ \
 MAINTAINER=	stas@FreeBSD.org
 COMMENT=	Evas smart objects development libraries
 
-
 GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	libltdl
 USE_BZIP2=	yes
@@ -25,5 +24,9 @@ USE_EFL=	ecore evas epsilon edje imlib2
 USE_EFL_ECORE=	x11 evas
 USE_EFL_EVAS_LOADERS=	png jpeg
 USE_LDCONFIG=	yes
+
+BROKEN=		does not compile
+DEPRECATED=	abandoned upstream
+EXPIRATION_DATE=	2011-01-01
 
 .include <bsd.port.mk>

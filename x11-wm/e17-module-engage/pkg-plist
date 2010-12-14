@@ -1,0 +1,19 @@
+lib/enlightenment/modules/itask-ng/itask-ng.edj
+lib/enlightenment/modules/itask-ng/module_icon.png
+lib/enlightenment/modules/itask-ng/%%E17_ARCH%%/module.so
+lib/enlightenment/modules/itask-ng/module.desktop
+lib/enlightenment/modules/itask-ng/e-module-ng.edj
+%%NLS%%lib/enlightenment/modules/itask-ng/locale/fr/LC_MESSAGES/itask-ng.mo
+%%NLS%%lib/enlightenment/modules/itask-ng/locale/de/LC_MESSAGES/itask-ng.mo
+%%NLS%%lib/enlightenment/modules/itask-ng/locale/it/LC_MESSAGES/itask-ng.mo
+%%NLS%%@dirrm lib/enlightenment/modules/itask-ng/locale/it/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/itask-ng/locale/it
+%%NLS%%@dirrm lib/enlightenment/modules/itask-ng/locale/de/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/itask-ng/locale/de
+%%NLS%%@dirrm lib/enlightenment/modules/itask-ng/locale/fr/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/itask-ng/locale/fr
+%%NLS%%@dirrm lib/enlightenment/modules/itask-ng/locale
+@dirrm lib/enlightenment/modules/itask-ng/%%E17_ARCH%%
+@dirrm lib/enlightenment/modules/itask-ng
+@dirrmtry lib/enlightenment/modules
+@dirrmtry lib/enlightenment

@@ -1,8 +1,12 @@
-include/Ecore.h
-include/Ecore_Data.h
-include/Ecore_Str.h
-lib/libecore.a
-lib/libecore.la
+include/ecore-1/Ecore.h
+include/ecore-1/Ecore_Getopt.h
 lib/libecore.so
-lib/libecore.so.9
+lib/libecore.so.1
 libdata/pkgconfig/ecore.pc
+share/locale/cs/LC_MESSAGES/ecore.mo
+share/locale/de/LC_MESSAGES/ecore.mo
+share/locale/el/LC_MESSAGES/ecore.mo
+share/locale/fr/LC_MESSAGES/ecore.mo
+share/locale/it/LC_MESSAGES/ecore.mo
+share/locale/pt/LC_MESSAGES/ecore.mo
+@dirrmtry include/ecore-1

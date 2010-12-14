@@ -1,0 +1,7 @@
+lib/enlightenment/modules/exebuf/%%E17_ARCH%%/module.so
+lib/enlightenment/modules/exebuf/module.desktop
+lib/enlightenment/modules/exebuf/e-module-exebuf.edj
+@dirrm lib/enlightenment/modules/exebuf/%%E17_ARCH%%
+@dirrm lib/enlightenment/modules/exebuf
+@dirrmtry lib/enlightenment/modules
+@dirrmtry lib/enlightenment

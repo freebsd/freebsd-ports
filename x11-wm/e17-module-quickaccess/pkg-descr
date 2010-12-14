@@ -1,0 +1,12 @@
+This module aims to provide quick access to some applications given
+its name/class pair.
+
+It is based on the widely known "yakuake" (http://yakuake.uv.ro/),
+that drops konsole (kde's terminal emulator) instances from top just
+like Quake did.
+
+Unlike yakuake, this module should be extensible and fit any
+application, like urxvt to provide same functionality, but could also
+fit emacs/gvim, firefox or similar.
+
+WWW:	http://www.enlightenment.org/

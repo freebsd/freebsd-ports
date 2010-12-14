@@ -9,7 +9,7 @@
 PORTNAME=	elicit
 PORTVERSION=	20080223
 PORTREVISION=	3
-CATEGORIES=	x11
+CATEGORIES=	x11 enlightenment
 MASTER_SITES=	ftp://ftp.springdaemons.com/pub/snapshots/e17/
 
 MAINTAINER=	stas@FreeBSD.org
@@ -22,6 +22,10 @@ USE_GNOME=	gnometarget pkgconfig
 USE_EFL=	ecore eet edje evas imlib2
 USE_EFL_ESMART=	draggies container
 USE_EFL_ECORE=	evas file config
+
+BROKEN=		does not compile
+DEPRECATED=	abandoned upstream
+EXPIRATION_DATE=	2011-01-01
 
 .include <bsd.port.pre.mk>
 .if ${ARCH} == "ia64"

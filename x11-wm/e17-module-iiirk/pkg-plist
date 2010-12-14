@@ -1,0 +1,56 @@
+lib/enlightenment/modules/iiirk/e-module-iiirk.edj
+lib/enlightenment/modules/iiirk/%%E17_ARCH%%/module.so
+lib/enlightenment/modules/iiirk/module.desktop
+%%NLS%%lib/enlightenment/modules/iiirk/locale/nl/LC_MESSAGES/iiirk.mo
+%%NLS%%lib/enlightenment/modules/iiirk/locale/fr/LC_MESSAGES/iiirk.mo
+%%NLS%%lib/enlightenment/modules/iiirk/locale/lt/LC_MESSAGES/iiirk.mo
+%%NLS%%lib/enlightenment/modules/iiirk/locale/he/LC_MESSAGES/iiirk.mo
+%%NLS%%lib/enlightenment/modules/iiirk/locale/cs/LC_MESSAGES/iiirk.mo
+%%NLS%%lib/enlightenment/modules/iiirk/locale/hu/LC_MESSAGES/iiirk.mo
+%%NLS%%lib/enlightenment/modules/iiirk/locale/pl/LC_MESSAGES/iiirk.mo
+%%NLS%%lib/enlightenment/modules/iiirk/locale/es/LC_MESSAGES/iiirk.mo
+%%NLS%%lib/enlightenment/modules/iiirk/locale/hr/LC_MESSAGES/iiirk.mo
+%%NLS%%lib/enlightenment/modules/iiirk/locale/tr/LC_MESSAGES/iiirk.mo
+%%NLS%%lib/enlightenment/modules/iiirk/locale/eo/LC_MESSAGES/iiirk.mo
+%%NLS%%lib/enlightenment/modules/iiirk/locale/it/LC_MESSAGES/iiirk.mo
+%%NLS%%lib/enlightenment/modules/iiirk/locale/el/LC_MESSAGES/iiirk.mo
+%%NLS%%lib/enlightenment/modules/iiirk/locale/pt/LC_MESSAGES/iiirk.mo
+%%NLS%%lib/enlightenment/modules/iiirk/locale/uk/LC_MESSAGES/iiirk.mo
+%%NLS%%lib/enlightenment/modules/iiirk/locale/zh_CN/LC_MESSAGES/iiirk.mo
+%%NLS%%@dirrm lib/enlightenment/modules/iiirk/locale/zh_CN/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/iiirk/locale/zh_CN
+%%NLS%%@dirrm lib/enlightenment/modules/iiirk/locale/uk/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/iiirk/locale/uk
+%%NLS%%@dirrm lib/enlightenment/modules/iiirk/locale/pt/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/iiirk/locale/pt
+%%NLS%%@dirrm lib/enlightenment/modules/iiirk/locale/el/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/iiirk/locale/el
+%%NLS%%@dirrm lib/enlightenment/modules/iiirk/locale/it/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/iiirk/locale/it
+%%NLS%%@dirrm lib/enlightenment/modules/iiirk/locale/eo/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/iiirk/locale/eo
+%%NLS%%@dirrm lib/enlightenment/modules/iiirk/locale/tr/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/iiirk/locale/tr
+%%NLS%%@dirrm lib/enlightenment/modules/iiirk/locale/hr/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/iiirk/locale/hr
+%%NLS%%@dirrm lib/enlightenment/modules/iiirk/locale/es/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/iiirk/locale/es
+%%NLS%%@dirrm lib/enlightenment/modules/iiirk/locale/pl/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/iiirk/locale/pl
+%%NLS%%@dirrm lib/enlightenment/modules/iiirk/locale/hu/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/iiirk/locale/hu
+%%NLS%%@dirrm lib/enlightenment/modules/iiirk/locale/cs/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/iiirk/locale/cs
+%%NLS%%@dirrm lib/enlightenment/modules/iiirk/locale/he/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/iiirk/locale/he
+%%NLS%%@dirrm lib/enlightenment/modules/iiirk/locale/lt/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/iiirk/locale/lt
+%%NLS%%@dirrm lib/enlightenment/modules/iiirk/locale/fr/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/iiirk/locale/fr
+%%NLS%%@dirrm lib/enlightenment/modules/iiirk/locale/nl/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/iiirk/locale/nl
+%%NLS%%@dirrm lib/enlightenment/modules/iiirk/locale
+@dirrm lib/enlightenment/modules/iiirk/%%E17_ARCH%%
+@dirrm lib/enlightenment/modules/iiirk
+@dirrmtry lib/enlightenment/modules
+@dirrmtry lib/enlightenment

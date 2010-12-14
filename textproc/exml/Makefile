@@ -20,4 +20,8 @@ USE_GNOME=	libxml2 libxslt gnomehack gnometarget pkgconfig
 USE_EFL=	ecore
 USE_LDCONFIG=	yes
 
+BROKEN=		does not compile
+DEPRECATED=	abandoned upstream
+EXPIRATION_DATE=	2011-01-01
+
 .include <bsd.port.mk>

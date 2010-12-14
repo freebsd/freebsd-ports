@@ -1,0 +1,90 @@
+lib/enlightenment/modules/tclock/module.desktop
+lib/enlightenment/modules/tclock/tclock.edj
+lib/enlightenment/modules/tclock/%%E17_ARCH%%/module.so
+lib/enlightenment/modules/tclock/e-module-tclock.edj
+%%NLS%%lib/enlightenment/modules/tclock/locale/ar/LC_MESSAGES/tclock.mo
+%%NLS%%lib/enlightenment/modules/tclock/locale/he/LC_MESSAGES/tclock.mo
+%%NLS%%lib/enlightenment/modules/tclock/locale/lt/LC_MESSAGES/tclock.mo
+%%NLS%%lib/enlightenment/modules/tclock/locale/cs/LC_MESSAGES/tclock.mo
+%%NLS%%lib/enlightenment/modules/tclock/locale/nl/LC_MESSAGES/tclock.mo
+%%NLS%%lib/enlightenment/modules/tclock/locale/fr/LC_MESSAGES/tclock.mo
+%%NLS%%lib/enlightenment/modules/tclock/locale/hr/LC_MESSAGES/tclock.mo
+%%NLS%%lib/enlightenment/modules/tclock/locale/bg/LC_MESSAGES/tclock.mo
+%%NLS%%lib/enlightenment/modules/tclock/locale/nb/LC_MESSAGES/tclock.mo
+%%NLS%%lib/enlightenment/modules/tclock/locale/zh_CN/LC_MESSAGES/tclock.mo
+%%NLS%%lib/enlightenment/modules/tclock/locale/es/LC_MESSAGES/tclock.mo
+%%NLS%%lib/enlightenment/modules/tclock/locale/pl/LC_MESSAGES/tclock.mo
+%%NLS%%lib/enlightenment/modules/tclock/locale/hu/LC_MESSAGES/tclock.mo
+%%NLS%%lib/enlightenment/modules/tclock/locale/fo/LC_MESSAGES/tclock.mo
+%%NLS%%lib/enlightenment/modules/tclock/locale/eo/LC_MESSAGES/tclock.mo
+%%NLS%%lib/enlightenment/modules/tclock/locale/it/LC_MESSAGES/tclock.mo
+%%NLS%%lib/enlightenment/modules/tclock/locale/sk/LC_MESSAGES/tclock.mo
+%%NLS%%lib/enlightenment/modules/tclock/locale/tr/LC_MESSAGES/tclock.mo
+%%NLS%%lib/enlightenment/modules/tclock/locale/el/LC_MESSAGES/tclock.mo
+%%NLS%%lib/enlightenment/modules/tclock/locale/ja/LC_MESSAGES/tclock.mo
+%%NLS%%lib/enlightenment/modules/tclock/locale/de/LC_MESSAGES/tclock.mo
+%%NLS%%lib/enlightenment/modules/tclock/locale/uk/LC_MESSAGES/tclock.mo
+%%NLS%%lib/enlightenment/modules/tclock/locale/ru/LC_MESSAGES/tclock.mo
+%%NLS%%lib/enlightenment/modules/tclock/locale/sv/LC_MESSAGES/tclock.mo
+%%NLS%%lib/enlightenment/modules/tclock/locale/fi/LC_MESSAGES/tclock.mo
+%%NLS%%lib/enlightenment/modules/tclock/locale/pt/LC_MESSAGES/tclock.mo
+%%NLS%%lib/enlightenment/modules/tclock/locale/pt_BR/LC_MESSAGES/tclock.mo
+%%NLS%%@dirrm lib/enlightenment/modules/tclock/locale/pt_BR/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/tclock/locale/pt_BR
+%%NLS%%@dirrm lib/enlightenment/modules/tclock/locale/pt/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/tclock/locale/pt
+%%NLS%%@dirrm lib/enlightenment/modules/tclock/locale/fi/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/tclock/locale/fi
+%%NLS%%@dirrm lib/enlightenment/modules/tclock/locale/sv/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/tclock/locale/sv
+%%NLS%%@dirrm lib/enlightenment/modules/tclock/locale/ru/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/tclock/locale/ru
+%%NLS%%@dirrm lib/enlightenment/modules/tclock/locale/uk/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/tclock/locale/uk
+%%NLS%%@dirrm lib/enlightenment/modules/tclock/locale/de/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/tclock/locale/de
+%%NLS%%@dirrm lib/enlightenment/modules/tclock/locale/ja/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/tclock/locale/ja
+%%NLS%%@dirrm lib/enlightenment/modules/tclock/locale/el/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/tclock/locale/el
+%%NLS%%@dirrm lib/enlightenment/modules/tclock/locale/tr/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/tclock/locale/tr
+%%NLS%%@dirrm lib/enlightenment/modules/tclock/locale/sk/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/tclock/locale/sk
+%%NLS%%@dirrm lib/enlightenment/modules/tclock/locale/it/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/tclock/locale/it
+%%NLS%%@dirrm lib/enlightenment/modules/tclock/locale/eo/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/tclock/locale/eo
+%%NLS%%@dirrm lib/enlightenment/modules/tclock/locale/fo/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/tclock/locale/fo
+%%NLS%%@dirrm lib/enlightenment/modules/tclock/locale/hu/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/tclock/locale/hu
+%%NLS%%@dirrm lib/enlightenment/modules/tclock/locale/pl/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/tclock/locale/pl
+%%NLS%%@dirrm lib/enlightenment/modules/tclock/locale/es/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/tclock/locale/es
+%%NLS%%@dirrm lib/enlightenment/modules/tclock/locale/zh_CN/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/tclock/locale/zh_CN
+%%NLS%%@dirrm lib/enlightenment/modules/tclock/locale/nb/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/tclock/locale/nb
+%%NLS%%@dirrm lib/enlightenment/modules/tclock/locale/bg/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/tclock/locale/bg
+%%NLS%%@dirrm lib/enlightenment/modules/tclock/locale/hr/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/tclock/locale/hr
+%%NLS%%@dirrm lib/enlightenment/modules/tclock/locale/fr/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/tclock/locale/fr
+%%NLS%%@dirrm lib/enlightenment/modules/tclock/locale/nl/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/tclock/locale/nl
+%%NLS%%@dirrm lib/enlightenment/modules/tclock/locale/cs/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/tclock/locale/cs
+%%NLS%%@dirrm lib/enlightenment/modules/tclock/locale/lt/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/tclock/locale/lt
+%%NLS%%@dirrm lib/enlightenment/modules/tclock/locale/he/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/tclock/locale/he
+%%NLS%%@dirrm lib/enlightenment/modules/tclock/locale/ar/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/tclock/locale/ar
+%%NLS%%@dirrm lib/enlightenment/modules/tclock/locale
+@dirrm lib/enlightenment/modules/tclock/%%E17_ARCH%%
+@dirrm lib/enlightenment/modules/tclock
+@dirrmtry lib/enlightenment/modules
+@dirrmtry lib/enlightenment

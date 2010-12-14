@@ -22,4 +22,6 @@ USE_EFL=	evas ecore
 USE_EFL_ECORE=	evas job
 GNU_CONFIGURE=	yes
 
+BROKEN=		does not compile
+
 .include <bsd.port.mk>

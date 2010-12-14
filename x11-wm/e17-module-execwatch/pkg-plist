@@ -1,0 +1,8 @@
+lib/enlightenment/modules/execwatch/e-module-execwatch.edj
+lib/enlightenment/modules/execwatch/execwatch.edj
+lib/enlightenment/modules/execwatch/%%E17_ARCH%%/module.so
+lib/enlightenment/modules/execwatch/module.desktop
+@dirrm lib/enlightenment/modules/execwatch/%%E17_ARCH%%
+@dirrm lib/enlightenment/modules/execwatch
+@dirrmtry lib/enlightenment/modules
+@dirrmtry lib/enlightenment

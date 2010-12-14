@@ -6,30 +6,27 @@
 #
 
 PORTNAME=	edje
-PORTVERSION=	0.5.0.042
-PORTREVISION=	3
+DISTVERSION=	1.0.0.beta
 PORTEPOCH=	2
-CATEGORIES=	graphics
-MASTER_SITES=	ftp://ftp.springdaemons.com/pub/snapshots/e17/ \
-		http://download.enlightenment.org/snapshots/2008-01-25/
+CATEGORIES=	graphics enlightenment
+MASTER_SITES=	http://download.enlightenment.org/releases/ \
+		http://files.roorback.net/e17/2010-10-03/base/
 
 MAINTAINER=	stas@FreeBSD.org
 COMMENT=	Edje is a complex graphical design and layout engine
 
-GNU_CONFIGURE=	yes
+LIB_DEPENDS=	lua-5.1:${PORTSDIR}/lang/lua
+
+LICENSE=	BSD
+DIST_SUBDIR=	e17
 USE_BZIP2=	yes
+GNU_CONFIGURE=	yes
+USE_EFL=	eet evas ecore embryo libtool_hack librt_hack
+USE_EFL_EVAS_LOADERS=	eet jpeg png
+USE_EFL_ECORE=	evas file imf imf_evas
 USE_GNOME=	gnomehack pkgconfig gnometarget
-USE_EFL=	embryo eet evas ecore imlib2
-USE_EFL_ECORE=	evas job
-USE_EVAS_LOADERS=	edb eet jpeg png
 USE_LDCONFIG=	yes
 
 CONFIGURE_ARGS+=	--without-vim
 
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == "ia64"
-BROKEN=		edje is broken on ia64
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

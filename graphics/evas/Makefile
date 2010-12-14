@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	evas
-PORTVERSION=	0.9.9.042
-PORTREVISION=	4
+DISTVERSION=	1.0.0.beta
+PORTREVISION=	0
 PORTEPOCH=	2
-CATEGORIES=	graphics
+CATEGORIES=	graphics enlightenment
 MASTER_SITES=	# none
 DISTFILES=	# none
 EXTRACT_ONLY=	# none
@@ -21,7 +21,7 @@ NO_BUILD=	yes
 USE_EFL=	evas
 
 EVAS_ENGINES=	buffer opengl sdl x11 xrender
-EVAS_LOADERS=	edb eet gif jpeg png svg tiff xpm
+EVAS_LOADERS=	bmp eet gif jpeg png pmaps svg tga tiff xpm
 
 .for NODE in ${EVAS_ENGINES}
 OPTIONS+=	${NODE:U} "Install ${NODE} evas engine" on

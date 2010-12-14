@@ -1,7 +1,4 @@
 bin/edje_viewer
-%%DATADIR%%/data/images/bg.png
-%%DATADIR%%/data/images/border.png
-%%DATADIR%%/data/images/shadow.png
-@dirrm %%DATADIR%%/data/images
-@dirrm %%DATADIR%%/data
+share/applications/edje_viewer.desktop
+%%DATADIR%%/edje_viewer.edj
 @dirrm %%DATADIR%%

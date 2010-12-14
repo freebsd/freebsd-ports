@@ -1,12 +1,17 @@
 bin/edje_cc
+bin/edje_convert
 bin/edje_decc
 bin/edje_recc
-include/Edje.h
-lib/libedje.a
-lib/libedje.la
+bin/edje_player
+include/edje-1/Edje.h
+include/edje-1/Edje_Edit.h
 lib/libedje.so
-lib/libedje.so.5
+lib/libedje.so.1
 libdata/pkgconfig/edje.pc
 %%DATADIR%%/include/edje.inc
+share/mime/packages/edje.xml
+@dirrmtry share/mime/packages
+@dirrmtry share/mime
+@dirrm include/edje-1
 @dirrm %%DATADIR%%/include
 @dirrm %%DATADIR%%

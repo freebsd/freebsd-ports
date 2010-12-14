@@ -39,8 +39,9 @@ EFL_Include_MAINTAINER=	stas@FreeBSD.org
 #
 # Define all supported libraries
 #
-_USE_EFL_ALL=	ecore edb edje eet efreet embryo emotion engrave enhance epeg \
-		epsilon etk etox evas evfs ewl exml imlib2 edbus
+_USE_EFL_ALL=	ecore edb edbus edje eet efreet eina elementary embryo emotion \
+		engrave enhance epeg epsilon etk etox evas evfs ewl exml \
+		imlib2
 
 # For each library supported we define the following variables:
 #	_%%LIB%%_CATEGORY	- category the port belongs to
@@ -53,93 +54,84 @@ _USE_EFL_ALL=	ecore edb edje eet efreet embryo emotion engrave enhance epeg \
 #
 
 _ecore_CATEGORY=	devel
+_ecore_DEPENDS=		eina
 _ecore_PORTNAME=	ecore-main
-_ecore_PREFIX=		${LOCALBASE}
-_ecore_VERSION=		9
+_ecore_VERSION=		1
 
 _edb_CATEGORY=		databases
-_edb_PREFIX=		${LOCALBASE}
 _edb_VERSION=		1
 
 _edbus_CATEGORY=	devel
 _edbus_PORTNAME=	e_dbus
-_edbus_PREFIX=		${LOCALBASE}
 _edbus_VERSION=		1
 
 _eet_CATEGORY=		devel
-_eet_PREFIX=		${LOCALBASE}
-_eet_VERSION=		9
+_eet_DEPENDS=		eina
+_eet_VERSION=		5
 
 _efreet_CATEGORY=	x11
-_efreet_DEPENDS=	ecore
-_efreet_PREFIX=		${LOCALBASE}
-_efreet_VERSION=	0
+_efreet_DEPENDS=	ecore eina
+_efreet_VERSION=	1
 
 _edje_CATEGORY=		graphics
-_edje_DEPENDS=		embryo eet imlib2 evas ecore
-_edje_PREFIX=		${LOCALBASE}
-_edje_VERSION=		5
+_edje_DEPENDS=		ecore eet embryo evas
+_edje_VERSION=		1
+
+_eina_CATEGORY=		devel
+_eina_VERSION=		1
+
+_elementary_CATEGORY=	x11-toolkits
+_elementary_DEPENDS=	ecore embryo edje
+_elementary_VERSION=	7
 
 _embryo_CATEGORY=	lang
-_embryo_PREFIX=		${LOCALBASE}
-_embryo_VERSION=	9
+_embryo_VERSION=	1
 
 _emotion_CATEGORY=	multimedia
 _emotion_DEPENDS=	ecore edje eet embryo evas
-_emotion_PREFIX=	${LOCALBASE}
-_emotion_VERSION=	1
+_emotion_VERSION=	2
 
 _engrave_CATEGORY=	devel
 _engrave_DEPENDS=	ecore evas
-_engrave_PREFIX=	${LOCALBASE}
 _engrave_VERSION=	1
 
 _enhance_CATEGORY=	x11-toolkits
 _enhance_DEPENDS=	ecore etk exml
-_enhance_PREFIX=	${LOCALBASE}
 _enhance_VERSION=	0
 
 _epeg_CATEGORY=		graphics
-_epeg_PREFIX=		${LOCALBASE}
 _epeg_VERSION=		9
 
 _epsilon_CATEGORY=	graphics
 _epsilon_DEPENDS=	epeg edje imlib2 ecore
-_epsilon_PREFIX=	${LOCALBASE}
 _epsilon_VERSION=	3
 
 _etk_CATEGORY=		x11-toolkits
 _etk_DEPENDS=		evas ecore edje
-_etk_PREFIX=		${LOCALBASE}
 _etk_VERSION=		1
 
 _etox_CATEGORY=		x11-toolkits
 _etox_DEPENDS=		edb evas ecore
-_etox_PREFIX=		${LOCALBASE}
 _etox_VERSION=		0
 
 _evas_CATEGORY=		graphics
+_evas_DEPENDS=		eina eet
 _evas_PORTNAME=		evas-core
-_evas_PREFIX=		${LOCALBASE}
-_evas_VERSION=		9
+_evas_VERSION=		1
 
 _evfs_CATEGORY=		devel
 _evfs_DEPENDS=		eet ecore
-_evfs_PREFIX=		${LOCALBASE}
 _evfs_VERSION=		0
 
 _ewl_CATEGORY=		x11-toolkits
 _ewl_DEPENDS=		evas ecore edje epsilon
-_ewl_PREFIX=		${LOCALBASE}
 _ewl_VERSION=		1
 
 _exml_CATEGORY=		textproc
 _exml_DEPENDS=		ecore
-_exml_PREFIX=		${LOCALBASE}
 _exml_VERSION=		1
 
 _imlib2_CATEGORY=	graphics
-_imlib2_PREFIX=		${LOCALBASE}
 _imlib2_VERSION=	5
 _imlib2_SLIB=		Imlib2
 
@@ -155,6 +147,9 @@ _${LIB}_SLIB=${LIB}
 . endif
 . if !defined(_${LIB}_PORTNAME)
 _${LIB}_PORTNAME=${LIB}
+. endif
+. if !defined(_${LIB}_PREFIX)
+_${LIB}_PREFIX=${LOCALBASE}
 . endif
 .endfor
 
@@ -216,7 +211,7 @@ _esmart_${COMP}_VERSION=	${_EFL_ESMART_VERSION}
 
 # All components that are currently supported
 _EFL_EVAS_ENGINES_ALL= buffer opengl sdl x11 xrender
-_EFL_EVAS_LOADERS_ALL= edb eet gif jpeg png svg tiff xpm
+_EFL_EVAS_LOADERS_ALL= bmp edb eet gif jpeg png pmaps svg tga tiff xpm
 
 #
 # Generic evas engines definitions
@@ -272,7 +267,8 @@ _evas_loader_${COMP}_DIR=	${COMP}
 #
 
 # All components that are currently supported
-_EFL_ECORE_ALL=	con config desktop evas file ipc job sdl txt x11 imf imf_evas
+_EFL_ECORE_ALL=	con config desktop evas file imf imf_evas input \
+		input_evas ipc job sdl txt x11
 
 #
 # Generic ecore definitions
@@ -292,6 +288,8 @@ _ecore_sdl_CATEGORY=		graphics
 _ecore_txt_CATEGORY=		converters
 _ecore_imf_CATEGORY=		x11
 _ecore_imf_evas_CATEGORY=	x11
+_ecore_input_CATEGORY=		x11
+_ecore_input_evas_CATEGORY=	x11
 _ecore_x11_CATEGORY=		x11
 _ecore_x11_NAME=		ecore_x
 
@@ -484,12 +482,22 @@ EFL_Include_post=	bsd.efl.mk
 #
 # Check if we have all libraries requiested and build depends list
 #
+.if ${USE_EFL:Mlibrt_hack}
+_USE_EFL_LIBRT_HACK=	yes
+.endif
+.if ${USE_EFL:Mmodarch_hack}
+_USE_EFL_MODARCH_HACK=	yes
+.endif
+.if ${USE_EFL:Mlibtool_hack}
+_USE_EFL_LIBTOOL_HACK=	yes
+.endif
 _USE_EFL=	#empty
-.for LIB in ${USE_EFL}
+.for LIB in ${USE_EFL:Nlibrt_hack:Nmodarch_hack:Nlibtool_hack}
 . if ${_USE_EFL_ALL:M${LIB}}==""
 IGNORE=	cannot install: unknown library ${LIB}
-. endif
+. else
 _USE_EFL+=	${_${LIB}_DEPENDS} ${LIB}
+. endif
 .endfor
 
 #
@@ -517,6 +525,39 @@ CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib ${LDFLAGS}"
 
 PLIST_SUB+=	E17_ARCH=freebsd${OSREL}-${ARCH}
+
+.if defined(_USE_EFL_LIBRT_HACK)
+#
+# Don't use librt
+#
+post-patch: efl_drop_librt
+efl_drop_librt:
+	@${REINPLACE_CMD} -E \
+	    -e '/^[[:space:]]+freebsd\*/,/^[[:space:]];;/s/-lrt//g' \
+	    ${WRKSRC}/configure
+.endif
+
+.if defined(_USE_EFL_MODARCH_HACK)
+#
+# Use correct module arch path
+#
+post-patch: efl_patch_modarch
+efl_patch_modarch:
+	@${REINPLACE_CMD} -E \
+	    -e 's/(MODULE_ARCH="\$$host_os-\$$host_cpu)-[^"]+"/\1"/g' \
+	    -e 's/(MODULE_EDJE="\$$host_os-\$$host_cpu)-[^"]+"/\1"/g' \
+	    ${WRKSRC}/configure
+.endif
+
+.if defined(_USE_EFL_LIBTOOL_HACK)
+#
+# Get rid of .la and static library files
+#
+post-configure: efl_drop_la
+efl_drop_la:
+	${REINPLACE_CMD} -E -e \
+	    '/Install the pseudo-library/,/staticlibs=/s,^,#,' ${WRKSRC}/libtool
+.endif
 
 .endif #USE_EFL
 

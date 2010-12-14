@@ -1,0 +1,5 @@
+Shows the last state of a periodically executed command.
+Useful as an update checker or for checking if a remote host
+is available (through ping).
+
+WWW:	http://www.enlightenment.org/

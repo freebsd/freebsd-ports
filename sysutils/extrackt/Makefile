@@ -21,4 +21,8 @@ USE_GNOME=	gnomehack pkgconfig gnometarget
 USE_EFL=	evas ecore eet etk enhance
 GNU_CONFIGURE=	yes
 
+BROKEN=		does not compile
+DEPRECATED=	abandoned upstream
+EXPIRATION_DATE=	2011-01-01
+
 .include <bsd.port.mk>

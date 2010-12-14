@@ -6,47 +6,32 @@
 #
 
 PORTNAME=	core
-PORTVERSION=	0.9.9.042
-PORTREVISION=	2
-CATEGORIES=	graphics
-MASTER_SITES=	ftp://ftp.springdaemons.com/pub/snapshots/e17/ \
-		http://download.enlightenment.org/snapshots/2008-01-25/
+DISTVERSION=	1.0.0.beta
+PORTREVISION=	0
+CATEGORIES=	graphics enlightenment
+MASTER_SITES=	http://download.enlightenment.org/releases/ \
+		http://files.roorback.net/e17/2010-10-03/base/
 PKGNAMEPREFIX=	evas-
-DISTNAME=	evas-${PORTVERSION}
+DISTNAME=	evas-${DISTVERSION}
 
 MAINTAINER=	stas@FreeBSD.org
 COMMENT=	A hardware accelerated canvas API (core library)
 
 LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2
 
+LICENSE=	BSD
+DIST_SUBDIR=	e17
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 USE_GNOME=	gnomehack pkgconfig gnometarget
+USE_EFL=	librt_hack libtool_hack
+DATADIR=	${PREFIX}/share/evas
 
-CONFIGURE_ARGS=	--disable-software-x11 \
-		--disable-software-16-x11 \
-		--disable-software-xcb \
-		--disable-directfb \
-		--disable-sdl \
-		--disable-buffer \
-		--disable-software-qtopia \
-		--disable-gl-x11 \
-		--disable-cairo-x11 \
-		--disable-xrender-x11 \
-		--disable-xrender-xcb \
-		--disable-glitz-x11 \
-		--disable-image-loader-gif \
-		--disable-image-loader-png \
-		--disable-image-loader-jpeg \
-		--disable-image-loader-eet \
-		--disable-image-loader-edb \
-		--disable-image-loader-tiff \
-		--disable-image-loader-xpm \
-		--disable-image-loader-svg \
-		--disable-pthreads
+.include "Makefile.inc"
 
 OPTIONS=	FONTCONFIG	"Enable fontconfig support" on \
+		FRIBIDI	"Enable bidirectional text support" on \
 		EET		"Enable EET font loader" on
 
 .include <bsd.port.pre.mk>
@@ -56,6 +41,13 @@ CONFIGURE_ARGS+=	--enable-fontconfig
 LIB_DEPENDS+=	fontconfig.1:${PORTSDIR}/x11-fonts/fontconfig
 .else
 CONFIGURE_ARGS+=	--disable-fontconfig
+.endif
+
+.if !defined(WITHOUT_FRIBIDI)
+CONFIGURE_ARGS+=	--enable-fribidi 
+LIB_DEPENDS+=		fribidi.3:${PORTSDIR}/converters/fribidi
+.else
+CONFIGURE_ARGS+=	--disable-fribidi 
 .endif
 
 .if !defined(WITHOUT_EET)

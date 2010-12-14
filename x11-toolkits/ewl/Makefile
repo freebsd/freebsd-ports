@@ -25,6 +25,10 @@ USE_EFL_ECORE=	txt file
 WANT_EFL=	yes
 USE_LDCONFIG=	yes
 
+BROKEN=		does not compile
+DEPRECATED=	abandoned upstream
+EXPIRATION_DATE=	2011-01-01
+
 CONFIGURE_ARGS=	--disable-tests
 
 OPTIONS=	EPSILON	"Enable Epsilon Support for Ewl_Image" on \

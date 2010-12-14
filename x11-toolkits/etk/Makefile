@@ -26,6 +26,10 @@ USE_EFL_ECORE=	file x11 imf imf_evas
 USE_EFL_EVAS_LOADERS=	png jpeg
 USE_LDCONFIG=	yes
 
+BROKEN=		does not compile
+DEPRECATED=	abandoned upstream
+EXPIRATION_DATE=	2011-01-01
+
 # NLS is mandatory
 USE_GETTEXT=	yes
 LDFLAGS=	"-lintl"

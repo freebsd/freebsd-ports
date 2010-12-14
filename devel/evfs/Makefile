@@ -29,6 +29,10 @@ OPTIONS=	SAMBA	"Build samba plugin" off \
 		TAGLIB	"Use taglib for audio metadata extraction" on \
 		XTRACT "Enable extended metadata extraction via libextractor" on
 
+BROKEN=		does not compile
+DEPRECATED=	abandoned upstream
+EXPIRATION_DATE=	2011-01-01
+
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_SAMBA)

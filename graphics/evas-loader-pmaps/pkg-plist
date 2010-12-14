@@ -1,0 +1,6 @@
+lib/evas/modules/loaders/pmaps/%%E17_ARCH%%/module.so
+@dirrm lib/evas/modules/loaders/pmaps/%%E17_ARCH%%
+@dirrm lib/evas/modules/loaders/pmaps
+@dirrmtry lib/evas/modules/loaders
+@dirrmtry lib/evas/modules
+@dirrmtry lib/evas

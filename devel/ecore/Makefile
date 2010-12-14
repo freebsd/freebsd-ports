@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	ecore
-PORTVERSION=	0.9.9.042
-PORTREVISION=	2
+DISTVERSION=	1.0.0.beta
 PORTEPOCH=	2
-CATEGORIES=	devel
+CATEGORIES=	devel enlightenment
 MASTER_SITES=	# none
 DISTFILES=	# none
 EXTRACT_ONLY=	# none
@@ -20,7 +19,7 @@ COMMENT=	Enlightenment core abstraction library (meta port)
 NO_BUILD=	yes
 USE_EFL=	ecore
 
-ECORE_MODULES=	con config desktop evas file ipc job sdl txt x11 imf imf_evas
+ECORE_MODULES=	con evas file imf imf_evas input input_evas ipc sdl x11
 ECORE_sdl_off=	yes
 
 .for NODE in ${ECORE_MODULES}

@@ -1,60 +1,47 @@
---- src/lib/canvas/evas_main.c.orig	2007-10-08 23:06:27.000000000 +0400
-+++ src/lib/canvas/evas_main.c	2008-02-23 18:03:58.000000000 +0300
-@@ -702,58 +702,23 @@
- {
-    Evas_List *methods = NULL;
- 
--   /* FIXME: get from modules - this is currently coded-in */
--#ifdef BUILD_ENGINE_SOFTWARE_DDRAW
-    methods = evas_list_append(methods, strdup("software_ddraw"));
--#endif
--#ifdef BUILD_ENGINE_SOFTWARE_16_DDRAW
-    methods = evas_list_append(methods, strdup("software_16_ddraw"));
--#endif
--#ifdef BUILD_ENGINE_DIRECT3D
-    methods = evas_list_append(methods, strdup("direct3d"));
--#endif
+--- src/lib/canvas/evas_main.c.orig	2010-12-11 14:16:03.000000000 -0800
++++ src/lib/canvas/evas_main.c	2010-12-11 14:17:30.000000000 -0800
+@@ -808,45 +808,29 @@
+ #ifdef BUILD_ENGINE_SOFTWARE_16_WINCE
+    methods = eina_list_append(methods, "software_16_wince");
+ #endif
 -#ifdef BUILD_ENGINE_SOFTWARE_X11
-    methods = evas_list_append(methods, strdup("software_x11"));
+    methods = eina_list_append(methods, "software_x11");
 -#endif
 -#ifdef BUILD_ENGINE_XRENDER_X11
-    methods = evas_list_append(methods, strdup("xrender_x11"));
--#endif
--#ifdef BUILD_ENGINE_SOFTWARE_XCB
-    methods = evas_list_append(methods, strdup("software_xcb"));
+    methods = eina_list_append(methods, "xrender_x11");
 -#endif
 -#ifdef BUILD_ENGINE_XRENDER_XCB
-    methods = evas_list_append(methods, strdup("xrender_xcb"));
+    methods = eina_list_append(methods, "xrender_xcb");
 -#endif
 -#ifdef BUILD_ENGINE_SOFTWARE_16_X11
-    methods = evas_list_append(methods, strdup("software_16_x11"));
+    methods = eina_list_append(methods, "software_16_x11");
 -#endif
 -#ifdef BUILD_ENGINE_GL_X11
-    methods = evas_list_append(methods, strdup("gl_x11"));
+    methods = eina_list_append(methods, "gl_x11");
 -#endif
--#ifdef BUILD_ENGINE_GL_GLEW
-    methods = evas_list_append(methods, strdup("gl_glew"));
--#endif
+ #ifdef BUILD_ENGINE_GL_GLEW
+    methods = eina_list_append(methods, "gl_glew");
+ #endif
 -#ifdef BUILD_ENGINE_CAIRO_X11
-    methods = evas_list_append(methods, strdup("cairo_x11"));
+    methods = eina_list_append(methods, "cairo_x11");
 -#endif
--#ifdef BUILD_ENGINE_DIRECTFB
-    methods = evas_list_append(methods, strdup("directfb"));
--#endif
--#ifdef BUILD_ENGINE_FB
-    methods = evas_list_append(methods, strdup("fb"));
--#endif
+ #ifdef BUILD_ENGINE_DIRECTFB
+    methods = eina_list_append(methods, "directfb");
+ #endif
+ #ifdef BUILD_ENGINE_FB
+    methods = eina_list_append(methods, "fb");
+ #endif
 -#ifdef BUILD_ENGINE_BUFFER
-    methods = evas_list_append(methods, strdup("buffer"));
+    methods = eina_list_append(methods, "buffer");
 -#endif
--#ifdef BUILD_ENGINE_SOFTWARE_WIN32_GDI
-    methods = evas_list_append(methods, strdup("software_win32_gdi"));
--#endif
--#ifdef BUILD_ENGINE_SOFTWARE_QTOPIA
-    methods = evas_list_append(methods, strdup("software_qtopia"));
--#endif
--#ifdef BUILD_ENGINE_SDL
-    methods = evas_list_append(methods, strdup("software_sdl"));
+ #ifdef BUILD_ENGINE_SOFTWARE_WIN32_GDI
+    methods = eina_list_append(methods, "software_win32_gdi");
+ #endif
+ #ifdef BUILD_ENGINE_SOFTWARE_QTOPIA
+    methods = eina_list_append(methods, "software_qtopia");
+ #endif
+-#ifdef BUILD_ENGINE_SOFTWARE_SDL
+    methods = eina_list_append(methods, "software_sdl");
 -#endif
  
     return methods;

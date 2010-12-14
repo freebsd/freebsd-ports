@@ -1,0 +1,7 @@
+lib/enlightenment/modules/diskio/e-module-diskio.edj
+lib/enlightenment/modules/diskio/module.desktop
+lib/enlightenment/modules/diskio/%%E17_ARCH%%/module.so
+@dirrm lib/enlightenment/modules/diskio/%%E17_ARCH%%
+@dirrm lib/enlightenment/modules/diskio
+@dirrmtry lib/enlightenment/modules
+@dirrmtry lib/enlightenment

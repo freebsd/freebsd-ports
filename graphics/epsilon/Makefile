@@ -23,6 +23,10 @@ USE_EFL=	edje imlib2 ecore
 USE_EFL_ECORE=	file ipc
 USE_LDCONFIG=	yes
 
+BROKEN=		does not compile
+DEPRECATED=	abandoned upstream
+EXPIRATION_DATE=	2011-01-01
+
 OPTIONS=	PNG	"Enable PNG thumbnailer" on \
 		EPEG	"Enable Epeg thumbnailer" on \
 		XINE	"Enable Xine thumbnailer" off
