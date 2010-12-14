@@ -6,13 +6,15 @@
 #
 
 PORTNAME=	phppgadmin
-PORTVERSION=	5.0
+PORTVERSION=	5.0.1
 CATEGORIES=	databases www
-MASTER_SITES=	SF/${PORTNAME}/phpPgAdmin%20%5Bstable%5D/phpPgAdmin-${PORTVERSION}
+MASTER_SITES=	SF/${PORTNAME}/phpPgAdmin%20%5Bstable%5D/phpPgAdmin-5.0
 DISTNAME=	phpPgAdmin-${PORTVERSION}
 
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Web Based Postgres Administration
+
+LICENSE=	GPLv2
 
 USE_BZIP2=	YES
 .if !defined(WITHOUT_PHP_DEPENDS)
