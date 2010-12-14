@@ -10,7 +10,4 @@ PyGTK GUI application, leverage one of the script or programming interfaces
 (Python, Perl, C++) ...all the way down to a streamlined C library suitable for
 embedded use.
 
-ZBar is licensed under the GNU LGPL 2.1 to enable development of both open
-source and commercial projects.
-
 WWW: http://zbar.sourceforge.net
