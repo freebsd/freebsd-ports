@@ -117,6 +117,7 @@
     SUBDIR += gtk-murrine-engine
     SUBDIR += gtk-murrine-themes
     SUBDIR += gtk-nodoka-engine
+    SUBDIR += gtk-oxygen-engine
     SUBDIR += gtk-qn-x11-theme
     SUBDIR += gtk-qnxtheme
     SUBDIR += gtk-qt-engine
