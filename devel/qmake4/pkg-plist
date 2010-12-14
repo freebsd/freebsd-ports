@@ -536,7 +536,7 @@ share/qt4/mkspecs/wincewm65professional-msvc2008/qplatformdefs.h
 @dirrm share/qt4/mkspecs/qws
 @dirrm share/qt4/mkspecs/openbsd-g++
 @dirrm share/qt4/mkspecs/netbsd-g++
-@dirrm share/qt4/mkspecs/modules
+@dirrmtry share/qt4/mkspecs/modules
 @dirrm share/qt4/mkspecs/macx-xlc
 @dirrm share/qt4/mkspecs/macx-xcode
 @dirrm share/qt4/mkspecs/macx-pbuilder
