@@ -22,8 +22,8 @@ command="%%PREFIX%%/bin/${name}"
 load_rc_config $name
 
 tpmd_enable=${tpmd_enable-"NO"}
-tpmd_user=${tpmd_user-"_tss"}
-tpmd_group=${tpmd_group-"_tss"}
+tpmd_user=${tpmd_user-"%%USERS%%"}
+tpmd_group=${tpmd_group-"%%GROUPS%%"}
 
 command_args="-o ${tpmd_user} -g ${tpmd_group}"
 unset tpmd_user tpmd_group
