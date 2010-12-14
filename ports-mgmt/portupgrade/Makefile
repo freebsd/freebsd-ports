@@ -7,7 +7,7 @@
 
 PORTNAME=	portupgrade
 PORTVERSION=	2.4.8
-PORTREVISION=	0
+PORTREVISION=	1
 PORTEPOCH=	2
 CATEGORIES=	ports-mgmt
 MASTER_SITES=	ftp://ftp.SpringDaemons.com/soft/
