@@ -6,5 +6,5 @@ SHA256 (jdk7-jaxws2_2-2010_08_19.zip) = b8877aafbb15a348babcaee4ee372fb3e2ea0282
 SIZE (jdk7-jaxws2_2-2010_08_19.zip) = 5893692
 SHA256 (jdk7-jaf-2010_08_19.zip) = e6aefedfdbb4673e8019583d1344fb162b94e1b10382c362364dbbfd5889c09e
 SIZE (jdk7-jaf-2010_08_19.zip) = 70613
-SHA256 (apache-ant-1.7.1-bin.zip) = 879a6ae22ae022a944a43f6dea21acfdec0acb30175e743664536f89626c0281
-SIZE (apache-ant-1.7.1-bin.zip) = 11657986
+SHA256 (apache-ant-1.8.1-bin.zip) = 3716d8e991dbaabbd81c9744a77754cc3264c4a61563c4b587a4c4aa03608fb1
+SIZE (apache-ant-1.8.1-bin.zip) = 10835815

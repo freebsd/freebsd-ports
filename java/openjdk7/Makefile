@@ -41,7 +41,7 @@ JDK_BUILD_DATE=		04_nov_2010
 JDK_SRC_DISTFILE=	${PORTNAME}-${JDK_MAJOR_VERSION}-ea-src-b${JDK_BUILD_NUMBER}-${JDK_BUILD_DATE}
 
 # Use our own version of ant to avoid circular dependencies
-ANT_VERSION=		1.7.1
+ANT_VERSION=		1.8.1
 ANT_DISTFILE=		apache-ant-${ANT_VERSION}-bin
 
 LATEST_LINK=		openjdk7
