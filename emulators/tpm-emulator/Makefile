@@ -7,6 +7,7 @@
 
 PORTNAME=		tpm-emulator
 PORTVERSION=		0.7.1
+PORTREVISION=		1
 CATEGORIES=		emulators security
 MASTER_SITES=		BERLIOS/${PORTNAME}
 DISTNAME=		${PORTNAME:S/-/_/}-${PORTVERSION}
@@ -46,5 +47,14 @@ WRKSRC=			${WRKDIR}/${DISTNAME}
 
 post-extract:
 	@${MKDIR} ${WRKSRC}/build
+
+post-install:
+	@${INSTALL} -d -o ${USERS} -g ${GROUPS} -m 0700 ${PREFIX}/var/lib/tpm
+	@${INSTALL} -d -o ${USERS} -g ${GROUPS} -m 0700          /var/run/tpm
+
+add-plist-post:
+	@${ECHO_CMD} "@cwd /"								>> ${TMPPLIST}
+	@${ECHO_CMD} "@unexec ${RMDIR} var/run/tpm 2>/dev/null || true"			>> ${TMPPLIST}
+	@${ECHO_CMD} "@exec ${INSTALL} -d -o ${USERS} -g ${GROUPS} -m 0700 var/run/tpm"	>> ${TMPPLIST}
 
 .include <bsd.port.mk>

@@ -1,6 +1,11 @@
 --- CMakeLists.txt.orig	2010-07-06 06:21:20.000000000 +0900
-+++ CMakeLists.txt	2010-12-15 07:24:08.279834034 +0900
-@@ -36,7 +36,7 @@
++++ CMakeLists.txt	2010-12-15 07:33:54.234887143 +0900
+@@ -32,11 +32,11 @@
+ else()
+ set(TPM_LOG_FILE "/var/log/tpmd.log")
+ set(TPM_SOCKET_NAME "/var/run/tpm/tpmd_socket:0")
+-set(TPM_STORAGE_NAME "/var/lib/tpm/tpm_emulator-1_2_${${PROJECT_NAME}_VERSION_MAJOR}_${${PROJECT_NAME}_VERSION_MINOR}")
++set(TPM_STORAGE_NAME "$ENV{PREFIX}/var/lib/tpm/tpm_emulator-1_2_${${PROJECT_NAME}_VERSION_MAJOR}_${${PROJECT_NAME}_VERSION_MINOR}")
  set(TPM_DEVICE_NAME "/dev/tpm")
  endif()
  configure_file(${CMAKE_CURRENT_SOURCE_DIR}/config.h.in ${CMAKE_CURRENT_BINARY_DIR}/config.h)
