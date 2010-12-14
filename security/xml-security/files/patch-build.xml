@@ -1,0 +1,39 @@
+--- build.xml.orig	2010-11-11 10:38:24.000000000 +0100
++++ build.xml	2010-12-14 13:05:00.000000000 +0100
+@@ -276,7 +276,7 @@
+         <javac target="1.4" source="1.4" srcdir="${dir.src}"
+                destdir="${dir.build.bin}"
+                debug="${build.compile.debug}"
+-               includeAntRuntime="false">
++               includeAntRuntime="yes">
+             <classpath refid="id.classpath" />
+             <include name="**/org/apache/xml/security/**/*.java" />
+             <include name="**/javax/xml/crypto/**/*.java" />
+@@ -789,6 +789,19 @@
+ 	</jar>
+     </target>
+ 
++    <target name="jar"
++            depends="manifest,build.src">
++
++        <!-- Main Library -->
++        <jar basedir="${dir.build.bin}"
++             excludes="org/apache/xml/security/temp/**"
++             includes="org/apache/**, org/jcp/**, javax/xml/crypto/**"
++             destfile="${jar.library}"
++             manifest="${jar.manifest}">
++          <metainf file="${dir.manifest}/*.txt"/>
++        </jar>
++    </target>
++
+     <target name="build.src.jar"
+ 	    depends="manifest,build.src">
+ 
+@@ -811,7 +824,6 @@
+     <target name="docs"             depends="build.docs" />
+     <target name="xdocs"            depends="build.xdocs" />
+     <target name="javadoc"          depends="build.docs" />
+-    <target name="jar"              depends="build.jar" />
+     <target name="dist"             depends="build.dist" />
+     <target name="clean"            depends="env.rm.dirs,env.rm.files"/>
+     <target name="gump"		    depends="clean, docs, jar, test"/>
