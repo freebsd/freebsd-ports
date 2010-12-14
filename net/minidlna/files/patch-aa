@@ -1,0 +1,11 @@
+--- tagutils/tagutils.c	2010-12-13 01:41:52.000000000 -0500
++++ tagutils/tagutils.c	2010-12-13 17:28:29.000000000 -0500
+@@ -36,6 +36,7 @@
+ #include <vorbis/codec.h>
+ #include <FLAC/metadata.h>
++#include <libgen.h>
+ 
+-#include "../config.h"
++#include "config.h"
+ #ifdef HAVE_ICONV_H
+ #include <iconv.h>

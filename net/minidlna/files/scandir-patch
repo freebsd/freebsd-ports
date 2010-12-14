@@ -1,0 +1,38 @@
+--- scanner.c	17 Nov 2009 19:13:00 -0000	1.53
++++ scanner.c	9 Jan 2010 13:19:49 -0000
+@@ -629,7 +633,7 @@
+ }
+ 
+ int
+-filter_audio(const struct dirent *d)
++filter_audio(struct dirent *d)
+ {
+ 	return ( (*d->d_name != '.') &&
+ 	         ((d->d_type == DT_DIR) ||
+@@ -641,7 +645,7 @@
+ }
+ 
+ int
+-filter_video(const struct dirent *d)
++filter_video(struct dirent *d)
+ {
+ 	return ( (*d->d_name != '.') &&
+ 	         ((d->d_type == DT_DIR) ||
+@@ -653,7 +657,7 @@
+ }
+ 
+ int
+-filter_images(const struct dirent *d)
++filter_images(struct dirent *d)
+ {
+ 	return ( (*d->d_name != '.') &&
+ 	         ((d->d_type == DT_DIR) ||
+@@ -665,7 +669,7 @@
+ }
+ 
+ int
+-filter_media(const struct dirent *d)
++filter_media(struct dirent *d)
+ {
+ 	return ( (*d->d_name != '.') &&
+ 	         ((d->d_type == DT_DIR) ||

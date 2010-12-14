@@ -1,0 +1,36 @@
+PROG=	minidlna
+NO_MAN=	Ha-ha...
+
+OS!=	uname
+VERS!=	uname -r
+
+CFLAGS+=-I${FILESDIR} -I${.CURDIR} -I${LOCALBASE}/include -I${LOCALBASE}/include/ffmpeg
+CFLAGS+=-I${LOCALBASE}/include/libavutil
+CFLAGS+=-DPREFIX='"${PREFIX}"' -DOS='"${OS}"' -DOSVERSION='"${VERS}"'
+CFLAGS+=-Wformat -Werror
+
+LDADD+=	-L${LOCALBASE}/lib
+LDADD+=	-lsqlite3 -ljpeg -lexif -lid3tag -logg -lvorbis -lFLAC -lavformat
+
+SRCS=	albumart.c daemonize.c getifaddr.c image_utils.c log.c    	\
+	metadata.c minidlna.c minissdp.c minixml.c options.c playlist.c	\
+	scanner.c sql.c upnpdescgen.c upnpevents.c upnpglobalvars.c	\
+	upnphttp.c upnpreplyparse.c upnpsoap.c utils.c uuid.c
+
+# TiVo-related sources still need massaging to compile on BSD:
+# SRCS+=	tivo_beacon.c tivo_commands.c tivo_utils.c
+
+.PATH:	${FILESDIR} ${.CURDIR}/tagutils
+
+SRCS+=	misc.c tagutils.c textutils.c
+
+WARNS=	2
+
+BINDIR=	${PREFIX}/sbin
+
+beforeinstall:
+	${INSTALL_DATA} ${.CURDIR}/minidlna.conf ${PREFIX}/etc/minidlna.conf.sample
+	test -e ${PREFIX}/etc/minidlna.conf ||	\
+		${INSTALL_DATA} ${.CURDIR}/minidlna.conf ${PREFIX}/etc/minidlna.conf
+
+.include <bsd.prog.mk>

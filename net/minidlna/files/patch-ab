@@ -1,0 +1,9 @@
+--- tagutils/tagutils-misc.c	2010-12-13 01:41:52.000000000 -0500
++++ tagutils/tagutils-misc.c	2010-12-13 17:31:49.000000000 -0500
+@@ -34,5 +34,5 @@
+ static iconv_result
+ do_iconv(const char* to_ces, const char* from_ces,
+-	 char *inbuf,  size_t inbytesleft,
++	 const char *inbuf,  size_t inbytesleft,
+ 	 char *outbuf_orig, size_t outbytesleft_orig)
+ {

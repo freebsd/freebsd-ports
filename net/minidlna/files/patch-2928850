@@ -1,0 +1,639 @@
+Based on patch by jayp from:
+
+	http://sourceforge.net/tracker/?func=detail&aid=2989136&group_id=243163&atid=1121518
+
+with some modifications...
+
+--- TODO	25 Feb 2009 21:16:51 -0000	1.5
++++ TODO	9 Jan 2010 13:19:49 -0000
+@@ -7,3 +7,7 @@
+ 
+ Wishlist:
+ * Transcoding
++
++Dominik:
++* send buffer size needs optimizations
++* inotify stuff
+--- albumart.c	19 Nov 2009 03:22:35 -0000	1.24
++++ albumart.c	9 Jan 2010 13:19:49 -0000
+@@ -21,6 +21,10 @@
+ #include <unistd.h>
+ #include <dirent.h>
+ #include <sys/stat.h>
++#include <sys/param.h>
++#if defined(__APPLE__) || defined(BSD)
++#include <sys/limits.h>
++#endif
+ #include <libgen.h>
+ #include <setjmp.h>
+ #include <errno.h>
+@@ -37,7 +41,11 @@
+ int
+ art_cache_exists(const char * orig_path, char ** cache_file)
+ {
+-	asprintf(cache_file, "%s/art_cache%s", db_path, orig_path);
++	int ret=asprintf(cache_file, "%s/art_cache%s", db_path, orig_path);
++        if( ret == -1 ) {
++            DPRINTF(E_DEBUG, L_METADATA, "asprintf error :: error no. %d [%s]\n", errno, strerror(errno));
++            return -1;
++        }
+ 	strcpy(strchr(*cache_file, '\0')-4, ".jpg");
+ 
+ 	return (!access(*cache_file, F_OK));
+@@ -130,7 +138,8 @@
+ 			break;
+ 	}
+ 
+-	dir = dirname(strdup(path));
++	char *pathdup=strdup(path);
++	dir = dirname(pathdup);
+ 	dh = opendir(dir);
+ 	if( !dh )
+ 		return;
+@@ -143,7 +152,10 @@
+ 				break;
+ 			case DT_LNK:
+ 			case DT_UNKNOWN:
+-				asprintf(&file, "%s/%s", dir, dp->d_name);
++				if(-1==asprintf(&file, "%s/%s", dir, dp->d_name)) {
++                                    DPRINTF(E_DEBUG, L_METADATA, "asprintf error :: error no. %d [%s]\n", errno, strerror(errno));
++                                    return;
++                                }
+ 				type = resolve_unknown_type(file, ALL_MEDIA);
+ 				free(file);
+ 				break;
+@@ -158,7 +170,9 @@
+ 		    (album_art_name || strncmp(dp->d_name, match, ncmp) == 0) )
+ 		{
+ 			DPRINTF(E_DEBUG, L_METADATA, "New file %s looks like cover art for %s\n", path, dp->d_name);
+-			asprintf(&file, "%s/%s", dir, dp->d_name);
++			if(-1==asprintf(&file, "%s/%s", dir, dp->d_name)) {
++                            DPRINTF(E_DEBUG, L_METADATA, "asprintf error :: error no. %d [%s]\n", errno, strerror(errno));
++                        }
+ 			art_id = find_album_art(file, NULL, 0);
+ 			if( sql_exec(db, "UPDATE DETAILS set ALBUM_ART = %lld where PATH = '%q'", art_id, file) != SQLITE_OK )
+ 				DPRINTF(E_WARN, L_METADATA, "Error setting %s as cover art for %s\n", match, dp->d_name);
+@@ -167,7 +181,7 @@
+ 	}
+ 	closedir(dh);
+ 	
+-	free(dir);
++	free(pathdup);
+ 	free(match);
+ }
+ 
+--- image_utils.c	6 Nov 2009 19:03:55 -0000	1.10
++++ image_utils.c	9 Jan 2010 13:19:49 -0000
+@@ -33,7 +33,11 @@
+ #include <sys/types.h>
+ #include <setjmp.h>
+ #include <jpeglib.h>
++#ifdef __linux__
+ #include <endian.h>
++#else
++#include <machine/endian.h>
++#endif
+ 
+ #include "upnpreplyparse.h"
+ #include "image_utils.h"
+--- metadata.c	10 Nov 2009 20:11:50 -0000	1.52
++++ metadata.c	9 Jan 2010 13:19:49 -0000
+@@ -25,6 +25,7 @@
+ #include <sys/types.h>
+ #include <sys/stat.h>
+ #include <fcntl.h>
++#include <libgen.h>
+ 
+ #include <libexif/exif-loader.h>
+ #include "image_utils.h"
+@@ -616,7 +617,7 @@
+ 	{
+ 		av_close_input_file(ctx);
+ 		if( !is_audio(path) )
+-			DPRINTF(E_DEBUG, L_METADATA, "File %s does not contain a video stream.\n", basename(path));
++			DPRINTF(E_DEBUG, L_METADATA, "File %s does not contain a video stream.\n", basename((char*)path));
+ 		return 0;
+ 	}
+ 	if( audio_stream >= 0 )
+@@ -709,7 +710,7 @@
+ 	}
+ 	if( video_stream >= 0 )
+ 	{
+-		DPRINTF(E_DEBUG, L_METADATA, "Container: '%s' [%s]\n", ctx->iformat->name, basename(path));
++		DPRINTF(E_DEBUG, L_METADATA, "Container: '%s' [%s]\n", ctx->iformat->name, basename((char*)path));
+ 		asprintf(&m.resolution, "%dx%d", ctx->streams[video_stream]->codec->width, ctx->streams[video_stream]->codec->height);
+ 		if( ctx->bit_rate > 8 )
+ 			asprintf(&m.bitrate, "%u", ctx->bit_rate / 8);
+@@ -738,7 +739,7 @@
+ 			case CODEC_ID_MPEG2VIDEO:
+ 				if( strcmp(ctx->iformat->name, "mpegts") == 0 )
+ 				{
+-					DPRINTF(E_DEBUG, L_METADATA, "Stream %d of %s is %s MPEG2 TS\n", video_stream, basename(path), m.resolution);
++					DPRINTF(E_DEBUG, L_METADATA, "Stream %d of %s is %s MPEG2 TS\n", video_stream, basename((char*)path), m.resolution);
+ 					char res;
+ 					tsinfo_t * ts = ctx->priv_data;
+ 					if( ts->packet_size == 192 )
+@@ -759,7 +760,7 @@
+ 				}
+ 				else if( strcmp(ctx->iformat->name, "mpeg") == 0 )
+ 				{
+-					DPRINTF(E_DEBUG, L_METADATA, "Stream %d of %s is %s MPEG2 PS\n", video_stream, basename(path), m.resolution);
++					DPRINTF(E_DEBUG, L_METADATA, "Stream %d of %s is %s MPEG2 PS\n", video_stream, basename((char*)path), m.resolution);
+ 					char region[5];
+ 					if( (ctx->streams[video_stream]->codec->height == 576) ||
+ 					    (ctx->streams[video_stream]->codec->height == 288) )
+@@ -771,7 +772,7 @@
+ 				}
+ 				else
+ 				{
+-					DPRINTF(E_DEBUG, L_METADATA, "Stream %d of %s [UNKNOWN CONTAINER] is %s MPEG2\n", video_stream, basename(path), m.resolution);
++					DPRINTF(E_DEBUG, L_METADATA, "Stream %d of %s [UNKNOWN CONTAINER] is %s MPEG2\n", video_stream, basename((char*)path), m.resolution);
+ 				}
+ 				break;
+ 			case CODEC_ID_H264:
+@@ -811,7 +812,7 @@
+ 									ts_timestamp==NONE?"_ISO" : ts_timestamp==VALID?"_T":"", dlna_no_conv);
+ 								break;
+ 							default:
+-								DPRINTF(E_DEBUG, L_METADATA, "No DLNA profile found for TS/AVC/%cD file %s\n", res, basename(path));
++								DPRINTF(E_DEBUG, L_METADATA, "No DLNA profile found for TS/AVC/%cD file %s\n", res, basename((char*)path));
+ 								break;
+ 						}
+ 						if( m.dlna_pn && (ts_timestamp != NONE) )
+@@ -842,27 +843,27 @@
+ 								asprintf(&m.dlna_pn, "AVC_MP4_MP_SD_AAC_MULT5;%s", dlna_no_conv);
+ 								break;
+ 							default:
+-								DPRINTF(E_DEBUG, L_METADATA, "No DLNA profile found for MP4/AVC/SD file %s\n", basename(path));
++								DPRINTF(E_DEBUG, L_METADATA, "No DLNA profile found for MP4/AVC/SD file %s\n", basename((char*)path));
+ 								break;
+ 						}
+ 					}
+ 				}
+-				DPRINTF(E_DEBUG, L_METADATA, "Stream %d of %s is h.264\n", video_stream, basename(path));
++				DPRINTF(E_DEBUG, L_METADATA, "Stream %d of %s is h.264\n", video_stream, basename((char*)path));
+ 				break;
+ 			case CODEC_ID_MPEG4:
+ 				if( ctx->streams[video_stream]->codec->codec_tag == get_fourcc("XVID") )
+ 				{
+-					DPRINTF(E_DEBUG, L_METADATA, "Stream %d of %s is %s XViD\n", video_stream, basename(path), m.resolution);
++					DPRINTF(E_DEBUG, L_METADATA, "Stream %d of %s is %s XViD\n", video_stream, basename((char*)path), m.resolution);
+ 					asprintf(&m.artist, "DiVX");
+ 				}
+ 				else if( ctx->streams[video_stream]->codec->codec_tag == get_fourcc("DX50") )
+ 				{
+-					DPRINTF(E_DEBUG, L_METADATA, "Stream %d of %s is %s DiVX5\n", video_stream, basename(path), m.resolution);
++					DPRINTF(E_DEBUG, L_METADATA, "Stream %d of %s is %s DiVX5\n", video_stream, basename((char*)path), m.resolution);
+ 					asprintf(&m.artist, "DiVX");
+ 				}
+ 				else if( ctx->streams[video_stream]->codec->codec_tag == get_fourcc("DIVX") )
+ 				{
+-					DPRINTF(E_DEBUG, L_METADATA, "Stream %d of %s is DiVX\n", video_stream, basename(path));
++					DPRINTF(E_DEBUG, L_METADATA, "Stream %d of %s is DiVX\n", video_stream, basename((char*)path));
+ 					asprintf(&m.artist, "DiVX");
+ 				}
+ 				else if( ends_with(path, ".3gp") && (strcmp(ctx->iformat->name, "mov,mp4,m4a,3gp,3g2,mj2") == 0) )
+@@ -878,18 +879,18 @@
+ 							break;
+ 						default:
+ 							DPRINTF(E_DEBUG, L_METADATA, "No DLNA profile found for MPEG4-P2 3GP/0x%X file %s\n",
+-							        ctx->streams[audio_stream]->codec->codec_id, basename(path));
++							        ctx->streams[audio_stream]->codec->codec_id, basename((char*)path));
+ 							break;
+ 					}
+ 				}
+ 				else
+ 				{
+-					DPRINTF(E_DEBUG, L_METADATA, "Stream %d of %s is MPEG4 [%X]\n", video_stream, basename(path), ctx->streams[video_stream]->codec->codec_tag);
++					DPRINTF(E_DEBUG, L_METADATA, "Stream %d of %s is MPEG4 [%X]\n", video_stream, basename((char*)path), ctx->streams[video_stream]->codec->codec_tag);
+ 				}
+ 				break;
+ 			case CODEC_ID_WMV3:
+ 			case CODEC_ID_VC1:
+-				DPRINTF(E_DEBUG, L_METADATA, "Stream %d of %s is VC1\n", video_stream, basename(path));
++				DPRINTF(E_DEBUG, L_METADATA, "Stream %d of %s is VC1\n", video_stream, basename((char*)path));
+ 				char profile[5]; profile[0] = '\0';
+ 				asprintf(&m.mime, "video/x-ms-wmv");
+ 				if( (ctx->streams[video_stream]->codec->width  <= 352) &&
+@@ -905,7 +906,7 @@
+ 							asprintf(&m.dlna_pn, "WMVSPML_BASE;%s", dlna_no_conv);
+ 							break;
+ 						default:
+-							DPRINTF(E_DEBUG, L_METADATA, "No DLNA profile found for WMVSPML/0x%X file %s\n", audio_profile, basename(path));
++							DPRINTF(E_DEBUG, L_METADATA, "No DLNA profile found for WMVSPML/0x%X file %s\n", audio_profile, basename((char*)path));
+ 							break;
+ 					}
+ 				}
+@@ -925,7 +926,7 @@
+ 							asprintf(&m.dlna_pn, "WMVMED_BASE;%s", dlna_no_conv);
+ 							break;
+ 						default:
+-							DPRINTF(E_DEBUG, L_METADATA, "No DLNA profile found for WMVMED/0x%X file %s\n", audio_profile, basename(path));
++							DPRINTF(E_DEBUG, L_METADATA, "No DLNA profile found for WMVMED/0x%X file %s\n", audio_profile, basename((char*)path));
+ 							break;
+ 					}
+ 				}
+@@ -942,7 +943,7 @@
+ 							asprintf(&m.dlna_pn, "WMVHIGH_FULL;%s", dlna_no_conv);
+ 							break;
+ 						default:
+-							DPRINTF(E_DEBUG, L_METADATA, "No DLNA profile found for WMVHIGH/0x%X file %s\n", audio_profile, basename(path));
++							DPRINTF(E_DEBUG, L_METADATA, "No DLNA profile found for WMVHIGH/0x%X file %s\n", audio_profile, basename((char*)path));
+ 							break;
+ 					}
+ 				}
+@@ -950,7 +951,7 @@
+ 			case CODEC_ID_MSMPEG4V3:
+ 				asprintf(&m.mime, "video/x-msvideo");
+ 			default:
+-				DPRINTF(E_DEBUG, L_METADATA, "Stream %d of %s is %s [type %d]\n", video_stream, basename(path), m.resolution, ctx->streams[video_stream]->codec->codec_id);
++				DPRINTF(E_DEBUG, L_METADATA, "Stream %d of %s is %s [type %d]\n", video_stream, basename((char*)path), m.resolution, ctx->streams[video_stream]->codec->codec_id);
+ 				break;
+ 		}
+ 	}
+--- minidlna.c	19 Nov 2009 03:22:35 -0000	1.55
++++ minidlna.c	9 Jan 2010 13:19:49 -0000
+@@ -13,6 +13,7 @@
+ #include <string.h>
+ #include <stdio.h>
+ #include <ctype.h>
++#include <sys/stat.h>
+ #include <sys/types.h>
+ #include <sys/socket.h>
+ #include <netinet/in.h>
+@@ -652,7 +653,7 @@
+ 	}
+ 
+ 	/* set signal handler */
+-	signal(SIGCLD, SIG_IGN);
++	signal(SIGCHLD, SIG_IGN);
+ 	memset(&sa, 0, sizeof(struct sigaction));
+ 	sa.sa_handler = sigterm;
+ 	if (sigaction(SIGTERM, &sa, NULL))
+@@ -725,7 +726,8 @@
+ 	{
+ 		updateID = sql_get_int_field(db, "SELECT UPDATE_ID from SETTINGS");
+ 	}
+-	if( sql_get_int_field(db, "pragma user_version") != DB_VERSION )
++        int user_version=sql_get_int_field(db, "pragma user_version");
++	if( user_version != DB_VERSION )
+ 	{
+ 		if( new_db )
+ 		{
+@@ -733,7 +735,7 @@
+ 		}
+ 		else
+ 		{
+-			DPRINTF(E_WARN, L_GENERAL, "Database version mismatch; need to recreate...\n");
++			DPRINTF(E_WARN, L_GENERAL, "Database version mismatch: user_version is %d, DB_VERSION is %d; need to recreate...\n", user_version, DB_VERSION);
+ 		}
+ 		sqlite3_close(db);
+ 		char *cmd;
+--- minidlna.conf	19 Nov 2009 03:22:35 -0000	1.14
++++ minidlna.conf	9 Jan 2010 13:19:49 -0000
+@@ -11,13 +11,14 @@
+ #   + "A" for audio  (eg. media_dir=A,/home/jmaggard/Music)
+ #   + "V" for video  (eg. media_dir=V,/home/jmaggard/Videos)
+ #   + "P" for images (eg. media_dir=P,/home/jmaggard/Pictures)
+-media_dir=/opt
++media_dir=/Volumes/Data/dominik/Filme/minidlna
++#media_dir=/Volumes/Data/dominik/Unfug
+ 
+ # set this if you want to customize the name that shows up on your clients
+-#friendly_name=My DLNA Server
++friendly_name=sesam minidlna
+ 
+ # set this if you would like to specify the directory where you want MiniDLNA to store its database and album art cache
+-#db_dir=/var/cache/minidlna
++db_dir=/var/db/minidlna
+ 
+ # this should be a list of file names to check for when searching for album art
+ # note: names should be delimited with a forward slash ("/")
+@@ -25,7 +26,7 @@
+ 
+ # set this to no to disable inotify monitoring to automatically discover new files
+ # note: the default is yes
+-inotify=yes
++inotify=no
+ 
+ # set this to yes to enable support for streaming .jpg and .mp3 files to a TiVo supporting HMO
+ enable_tivo=no
+--- scanner.c	17 Nov 2009 19:13:00 -0000	1.53
++++ scanner.c	9 Jan 2010 13:19:49 -0000
+@@ -25,6 +25,10 @@
+ #include <sys/stat.h>
+ #include <sys/time.h>
+ #include <sys/resource.h>
++#include <sys/param.h>
++#if defined(__APPLE__) || defined(BSD)
++#include <sys/limits.h>
++#endif
+ 
+ #include <sqlite3.h>
+ 
+@@ -399,8 +403,8 @@
+ 
+ 	if( refID )
+ 	{
+- 		dir = strdup(path);
+-		dir = dirname(dir);
++ 		char *pathdup = strdup(path);
++		dir = dirname(pathdup);
+ 		asprintf(&id_buf, "%s%s$%X", base, parentID, objectID);
+ 		asprintf(&parent_buf, "%s%s", base, parentID);
+ 		while( !found )
+@@ -436,7 +440,7 @@
+ 		free(refID);
+ 		free(parent_buf);
+ 		free(id_buf);
+-		free(dir);
++		free(pathdup);
+ 		return 1;
+ 	}
+ 
+@@ -779,13 +783,15 @@
+ 	if( flag )
+ 		fclose(flag);
+ #endif
+-	freopen("/dev/null", "a", stderr);
++        // TAG_CHANGED_UPSTREAM_CODE_SEMANTICALLY
++        //int saved_stderr=dup(2);
++	//freopen("/dev/null", "a", stderr);
+ 	while( media_path )
+ 	{
+ 		ScanDirectory(media_path->path, NULL, media_path->type);
+ 		media_path = media_path->next;
+ 	}
+-	freopen("/proc/self/fd/2", "a", stderr);
++        //dup2(saved_stderr, 2);
+ #ifdef READYNAS
+ 	if( access("/ramfs/.rescan_done", F_OK) == 0 )
+ 		system("/bin/sh /ramfs/.rescan_done");
+--- upnpglobalvars.c	19 Nov 2009 03:22:35 -0000	1.14
++++ upnpglobalvars.c	9 Jan 2010 13:19:49 -0000
+@@ -12,7 +12,11 @@
+  */
+ #include <sys/types.h>
+ #include <netinet/in.h>
++#ifdef __linux__
+ #include <linux/limits.h>
++#else
++#include <limits.h>
++#endif
+ 
+ #include "config.h"
+ #include "upnpglobalvars.h"
+@@ -22,6 +26,9 @@
+ 
+ /* startup time */
+ time_t startup_time = 0;
++#ifdef __APPLE__
++unsigned long long startup_time_ns = 0;
++#endif
+ 
+ struct runtime_vars_s runtime_vars;
+ int runtime_flags = INOTIFY_MASK;
+--- upnpglobalvars.h	19 Nov 2009 03:22:35 -0000	1.44
++++ upnpglobalvars.h	9 Jan 2010 13:19:49 -0000
+@@ -14,7 +14,13 @@
+ #define __UPNPGLOBALVARS_H__
+ 
+ #include <time.h>
++#ifdef HAVE_LINUX_TYPES_H
+ #include <linux/types.h> // Defines __u32
++#else
++#include <sys/types.h>
++typedef u_int32_t __u32;
++typedef int32_t __s32;
++#endif
+ 
+ #include "minidlnatypes.h"
+ #include "config.h"
+@@ -79,6 +85,7 @@
+ 
+ /* statup time */
+ extern time_t startup_time;
++extern unsigned long long startup_time_ns;
+ 
+ extern struct runtime_vars_s runtime_vars;
+ /* runtime boolean flags */
+--- upnpsoap.c	17 Dec 2009 18:55:44 -0000	1.64
++++ upnpsoap.c	9 Jan 2010 13:19:50 -0000
+@@ -1136,14 +1136,6 @@
+ 			newSearchCriteria = modifyString(strdup(SearchCriteria), "@id", "OBJECT_ID", 0);
+ 			SearchCriteria = newSearchCriteria;
+ 		}
+-		if( strstr(SearchCriteria, "res is ") )
+-		{
+-			if( newSearchCriteria )
+-				newSearchCriteria = modifyString(newSearchCriteria, "res is ", "MIME is ", 0);
+-			else
+-				newSearchCriteria = modifyString(strdup(SearchCriteria), "res is ", "MIME is ", 0);
+-			SearchCriteria = newSearchCriteria;
+-		}
+ 		#if 0 // Does 360 need this?
+ 		if( strstr(SearchCriteria, "&amp;") )
+ 		{
+--- utils.c	25 Nov 2009 00:03:09 -0000	1.19
++++ utils.c	9 Jan 2010 13:19:50 -0000
+@@ -19,7 +19,11 @@
+ #include <ctype.h>
+ #include <string.h>
+ #include <stdlib.h>
++#ifdef __linux
+ #include <linux/limits.h>
++#else
++#include <limits.h>
++#endif
+ #include <sys/stat.h>
+ #include <unistd.h>
+ #include <sys/types.h>
+@@ -187,7 +191,7 @@
+ 		if (mkdir(path, mode) < 0) {
+ 			/* If we failed for any other reason than the directory
+ 			 * already exists, output a diagnostic and return -1.*/
+-			if (errno != EEXIST
++			if ( (errno != EEXIST && errno != EISDIR)
+ 			    || (stat(path, &st) < 0 || !S_ISDIR(st.st_mode))) {
+ 				break;
+ 			}
+@@ -200,7 +204,7 @@
+ 
+ 	} while (1);
+ 
+-	DPRINTF(E_WARN, L_GENERAL, "make_dir: cannot create directory '%s'\n", path);
++	DPRINTF(E_WARN, L_GENERAL, "make_dir: cannot create directory '%s'. errno=%d, error=%s\n", path, errno, strerror(errno));
+ 	return -1;
+ }
+ 
+--- uuid.c	28 Oct 2009 19:26:38 -0000	1.4
++++ uuid.c	9 Jan 2010 13:19:50 -0000
+@@ -11,34 +11,86 @@
+  */
+ #include <stdio.h>
+ #include <stdlib.h>
+-#include <time.h>
+ #include <fcntl.h>
+ #include <unistd.h>
+ #include <sys/syscall.h>
+ #include <string.h>
+-#include <net/if.h>
+ #include <sys/ioctl.h>
+-#include <sys/time.h>
++#include <sys/param.h>
+ #include <errno.h>
++#if defined(__APPLE__) || defined(BSD)
++#include <sys/socket.h>
++#endif
++
++#include <net/if.h>
++
++#if defined __linux__
++#include <time.h>
++#elif defined(__APPLE__)
++#include <sys/time.h>
++#include <mach/mach_time.h>
++#elif defined BSD
++#include <sys/time.h>
++#include <sys/timespec.h>
++#endif
+ 
+ #include "getifaddr.h"
+ #include "log.h"
+ 
+ #define ETH_ALEN 6
++#ifdef NSEC_PER_SEC
++#undef NSEC_PER_SEC
+ #define NSEC_PER_SEC 1000000000L
++#endif
+ #define NSEC_PER_MSEC 1000000L
+ 
+ static u_int32_t clock_seq;
+ static const u_int32_t clock_seq_max = 0x3fff; /* 14 bits */
+ static int clock_seq_initialized;
+ 
+-unsigned long long
+-monotonic_us(void)
+-{
+-	struct timespec ts;
+-
+-	syscall(__NR_clock_gettime, CLOCK_MONOTONIC, &ts);
+-	return ts.tv_sec * 1000000ULL + ts.tv_nsec / 1000;
++u_int64_t clocktime_ns() {
++#ifdef __APPLE__
++   u_int64_t tm;
++
++   static mach_timebase_info_data_t timebase_info= {0,0};
++   if (timebase_info.denom == 0) (void) mach_timebase_info(&timebase_info);
++
++   static u_int64_t startup_time_usec=0;
++   static u_int64_t startup_time_nsec=0;
++   if (startup_time_usec==0) {
++      struct timeval tp;
++      gettimeofday(&tp, 0);
++      startup_time_usec = tp.tv_sec * 1000000ULL + tp.tv_usec;
++      tm=mach_absolute_time();
++      startup_time_nsec = (tm * timebase_info.numer) / timebase_info.denom;
++   }
++   tm=mach_absolute_time();
++   return (tm * timebase_info.numer) / timebase_info.denom - startup_time_nsec + 1000ULL * startup_time_usec;
++#elif defined(BSD) || defined(__linux__)
++   struct timespec ts;
++   clock_gettime(CLOCK_REALTIME, &ts); // Works on Linux
++   return ts.tv_sec*1000000000ULL+ts.tv_nsec;
++#else
++#error unsupported OS for clocktime_ns, please port or bug report.
++#endif
++}
++
++u_int64_t monotonic_ns() {
++#ifdef __APPLE__
++   u_int64_t tm;
++
++   static mach_timebase_info_data_t timebase_info= {0,0};
++   if (timebase_info.denom == 0) (void) mach_timebase_info(&timebase_info);
++
++   tm=mach_absolute_time();
++   return (tm * timebase_info.numer) / timebase_info.denom;
++#elif defined(BSD) || defined(__linux__)
++   struct timespec ts;
++   clock_gettime(CLOCK_MONOTONIC, &ts);
++   return ts.tv_sec*1000000000ULL+ts.tv_nsec;
++#else
++#error unsupported OS for clocktime_ns, please port or bug report.
++#endif
+ }
+ 
+ int
+@@ -79,7 +131,7 @@
+ 	/* Paranoia. /dev/urandom may be missing.
+ 	 * rand() is guaranteed to generate at least [0, 2^15) range,
+ 	 * but lowest bits in some libc are not so "random".  */
+-	srand(monotonic_us());
++	srand(monotonic_ns());
+ 	pid = getpid();
+ 	while(1)
+ 	{
+@@ -110,7 +162,6 @@
+ 	static unsigned int clock_seq_started;
+ 	static char last_node[6] = { 0, 0, 0, 0, 0, 0 };
+ 
+-	struct timespec ts;
+ 	u_int64_t time_all;
+ 	int inc_clock_seq = 0;
+ 
+@@ -148,10 +199,9 @@
+ 	 * nanosecond intervals since 00:00:00.00, 15 October 1582 (the date of
+ 	 * Gregorian reform to the Christian calendar).
+ 	 */
+-	syscall(__NR_clock_gettime, CLOCK_REALTIME, &ts);
+-	time_all = ((u_int64_t)ts.tv_sec) * (NSEC_PER_SEC / 100);
+-	time_all += ts.tv_nsec / 100;
+ 
++        // time in (100ns) since 1970
++        time_all = clocktime_ns()/100;
+ 	/* add offset from Gregorian Calendar to Jan 1 1970 */
+ 	time_all += 12219292800000ULL * (NSEC_PER_MSEC / 100);
+ 	time_all &= 0x0fffffffffffffffULL; /* limit to 60 bits */
+--- tagutils/misc.c	25 Feb 2009 21:16:51 -0000	1.1
++++ tagutils/misc.c	9 Jan 2010 13:19:50 -0000
+@@ -22,7 +22,11 @@
+ 
+ #include <stdio.h>
+ #include <string.h>
++#ifdef __linux__
+ #include <endian.h>
++#else
++#include <machine/endian.h>
++#endif
+ 
+ #include "misc.h"
+ 
+--- tagutils/tagutils-asf.h	25 Feb 2009 21:16:51 -0000	1.1
++++ tagutils/tagutils-asf.h	9 Jan 2010 13:19:50 -0000
+@@ -24,7 +24,11 @@
+ 
+ #define __PACKED__  __attribute__((packed))
+ 
++#ifdef __linux__
+ #include <endian.h>
++#else
++#include <machine/endian.h>
++#endif
+ 
+ typedef struct _GUID {
+ 	__u32 l;
+--- tagutils/tagutils-mp3.c	27 May 2009 23:09:11 -0000	1.5
++++ tagutils/tagutils-mp3.c	9 Jan 2010 13:19:50 -0000
+@@ -25,6 +25,11 @@
+  * This file is derived from mt-daap project.
+  */
+ 
++#ifdef __APPLE__
++// detue: recheck this on osx: on linux, it makes compilation break oO
++#include <libgen.h>
++#endif
++
+ static int
+ _get_mp3tags(char *file, struct song_metadata *psong)
+ {

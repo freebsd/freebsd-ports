@@ -1,0 +1,34 @@
+#!/bin/sh
+# $FreeBSD$
+#
+# PROVIDE: minidlna
+# REQUIRE: DAEMON
+#
+# Add the following line to /etc/rc.conf[.local] to enable minidlna:
+#
+# minidlna_enable="YES"
+#
+
+. /etc/rc.subr
+
+minidlna_enable=${minidlna_enable-"NO"}
+minidlna_uid=${minidlna_uid-"%%USER%%"}
+
+name=minidlna
+rcvar=`set_rcvar`
+command=%%PREFIX%%/sbin/minidlna
+
+pidfile="/var/run/minidlna.pid"
+
+start_precmd=rmpid
+stop_postcmd=rmpid
+rmpid()
+{
+	rm -f $pidfile
+}
+
+load_rc_config $name
+command_args="$command_args -P $pidfile -u $minidlna_uid"
+required_dirs="/var/db/minidlna"
+
+run_rc_command $1
