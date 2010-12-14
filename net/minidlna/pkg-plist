@@ -1,0 +1,4 @@
+sbin/minidlna
+@unexec if cmp -s %D/etc/minidlna.conf %D/etc/minidlna.conf.sample; then rm -f %D/etc/minidlna.conf; fi
+etc/minidlna.conf.sample
+@exec [ -f %D/etc/minidlna.conf ] || cp -p %D/etc/minidlna.conf.sample %D/etc/minidlna.conf

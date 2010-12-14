@@ -376,6 +376,7 @@
     SUBDIR += mgen
     SUBDIR += micro_inetd
     SUBDIR += micro_proxy
+    SUBDIR += minidlna
     SUBDIR += minisapserver
     SUBDIR += minissdpd
     SUBDIR += miniupnpc

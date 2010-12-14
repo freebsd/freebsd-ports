@@ -1,0 +1,95 @@
+--- upnphttp.c	2010-12-13 01:41:52.000000000 -0500
++++ upnphttp.c	2010-12-13 17:28:08.000000000 -0500
+@@ -66,5 +66,4 @@
+ #include <fcntl.h>
+ #include <errno.h>
+-#include <sys/sendfile.h>
+ #include <arpa/inet.h>
+ 
+@@ -80,10 +79,16 @@
+ #include "tivo_commands.h"
+ #endif
++#ifdef __linux__
+ //#define MAX_BUFFER_SIZE 4194304 // 4MB -- Too much?
+ #define MAX_BUFFER_SIZE 2147483647 // 2GB -- Too much?
+ #define MIN_BUFFER_SIZE 65536
++#endif
+ 
+ #include "icons.c"
+ 
++#ifndef MSG_MORE	/* A Linux-only flag for send(2) */
++#     define MSG_MORE 0
++#endif
++
+ struct upnphttp * 
+ New_upnphttp(int s)
+@@ -1115,6 +1120,7 @@
+ }
+ 
+-void
++static void
+ send_file(struct upnphttp * h, int sendfd, off_t offset, off_t end_offset)
++#if defined(__linux__)
+ {
+ 	off_t send_size;
+@@ -1166,4 +1172,25 @@
+ 		free(buf);
+ }
++#elif defined(__FreeBSD__) || defined(__NetBSD__) || \
++    defined(__OpenBSD__) || defined(__DragonFlyBSD__)
++{
++
++	off_t	sent;
++
++	while (offset < end_offset)
++	{
++		if (sendfile(sendfd, h->socket, offset,
++		    end_offset - offset + 1, NULL, &sent, SF_MNOWAIT) == -1) {
++			DPRINTF(E_ERROR, L_HTTP,
++			    "sendfile error :: error no. %d [%s]\n",
++			    errno, strerror(errno));
++			if (errno != EAGAIN)
++				break;
++		}
++		offset += sent;
++
++	}
++}
++#endif
+ 
+ void
+@@ -1287,5 +1314,5 @@
+ 				"contentFeatures.dlna.org: DLNA.ORG_PN=JPEG_TN\r\n"
+ 				"Server: " MINIDLNA_SERVER_STRING "\r\n",
+-				size, date);
++				(intmax_t)size, date);
+ 
+ 		if( h->reqflags & FLAG_XFERBACKGROUND )
+@@ -1355,5 +1382,5 @@
+ 	                                       "EXT:\r\n"
+ 	                                       "Server: " MINIDLNA_SERVER_STRING "\r\n\r\n",
+-	                                       size, date);
++	                                       (intmax_t)size, date);
+ 
+ 	if( (send_data(h, header, ret, MSG_MORE) == 0) && (h->req_command != EHead) && (sendfh > 0) )
+@@ -1813,5 +1840,5 @@
+ 			sprintf(hdr_buf, "Content-Length: %jd\r\n"
+ 					 "Content-Range: bytes %jd-%jd/%jd\r\n",
+-					 total, h->req_RangeStart, h->req_RangeEnd, size);
++					 (intmax_t)total, (intmax_t)h->req_RangeStart, (intmax_t)h->req_RangeEnd, (intmax_t)size);
+ 		}
+ 		else
+@@ -1821,5 +1848,5 @@
+ 			sprintf(hdr_buf, "Content-Length: %jd\r\n"
+ 					 "Content-Range: bytes %jd-%jd/%jd\r\n",
+-					 total, h->req_RangeStart, size-1, size);
++					 (intmax_t)total, (intmax_t)h->req_RangeStart, (intmax_t)(size-1), (intmax_t)size);
+ 		}
+ 	}
+@@ -1828,5 +1855,5 @@
+ 		h->req_RangeEnd = size;
+ 		total = size;
+-		sprintf(hdr_buf, "Content-Length: %jd\r\n", total);
++		sprintf(hdr_buf, "Content-Length: %jd\r\n", (intmax_t)total);
+ 	}
+ 	strcat(header, hdr_buf);
