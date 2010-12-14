@@ -13,7 +13,7 @@ PKGNAMEPREFIX=	pecl-
 EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	PECL
 
-MAINTAINER=	jille@quis.cx
+MAINTAINER=	tom@tomjudge.com
 COMMENT=	A PECL extension for ncurses
 
 LICENSE=	PHP301
