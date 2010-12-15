@@ -1,0 +1,18 @@
+--- common-beacon.patch.orig	2005-06-15 18:46:40.000000000 -0700
++++ common-beacon.patch	2010-07-30 17:34:45.000000000 -0700
+@@ -46,3 +46,15 @@
+  
+  #if !defined(WORDS_BIGENDIAN) && !defined(WORDS_SMALLENDIAN)
+  #error RTP library requires WORDS_BIGENDIAN or WORDS_SMALLENDIAN to be defined.
++--- common/src/net_udp.c	2004-06-29 09:21:37.000000000 -0700
+++++ common-beacon/src/net_udp.c	2010-07-30 17:28:06.000000000 -0700
++@@ -44,7 +44,9 @@
++ #include "debug.h"
++ #include "memory.h"
++ #include "inet_pton.h"
+++#ifndef HAVE_INET_NTOP
++ #include "inet_ntop.h"
+++#endif
++ #include "vsnprintf.h"
++ #include "net_udp.h"
++ 

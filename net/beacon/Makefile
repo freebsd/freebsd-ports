@@ -7,16 +7,15 @@
 
 PORTNAME=	beacon
 PORTVERSION=	1.3
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	net perl5 mbone ipv6
 MASTER_SITES=	http://dast.nlanr.net/Projects/Beacon/releases/
-DISTNAME=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	janos.mohacsi@bsd.hu
 COMMENT=	Beacon active measurement tool to monitor multicast
 
 BUILD_DEPENDS=	${SITE_PERL}/Net/Domain.pm:${PORTSDIR}/net/p5-Net
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS=	${SITE_PERL}/Net/Domain.pm:${PORTSDIR}/net/p5-Net
 
 WWW_DIR?=	${PREFIX}/www/
 PLIST_SUB+=	VERSION=${PORTVERSION}
@@ -35,17 +34,12 @@ CONFIGURE_ARGS+=	--enable-ipv6
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} != "i386"
-BROKEN=		Does not compile on !i386
-.endif
-
 post-install:
-	@${ECHO} "Sample config installed at \
-	${PREFIX}/etc/beacon.conf.sample"
+	@${ECHO} "Sample config installed at ${PREFIX}/etc/beacon.conf.sample"
 	@${ECHO} "Copy the customised version to ${PREFIX}/etc/beacon.conf"
 .ifndef(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
+	@${MKDIR} ${DOCSDIR}/
+	@${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}/
 .endif
 
 .include <bsd.port.post.mk>
