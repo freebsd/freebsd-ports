@@ -6,20 +6,23 @@
 #
 
 PORTNAME=	aptana
-PORTVERSION=	1.2.2.024747
-PORTREVISION=	2
-PORTEPOCH=	1
+PORTVERSION=	2.0.5.1278522500
+#PORTREVISION=	0
 CATEGORIES=	java devel
-MASTER_SITES=	http://update1.aptana.org/studio/3.2/024747/
+MASTER_SITES=	http://nivi.interfree.it/distfiles/eclipse-aptana2/
 PKGNAMEPREFIX=	eclipse-
-DISTNAME=	aptana_update_${PORTVERSION:E}
+DISTNAME=	com.aptana.ide.feature.studio-${PORTVERSION}-5-7857HJ97CFF61HN1HZHtem5tN7
 
 MAINTAINER=	nivit@FreeBSD.org
-COMMENT=	Aptana Web Development Tools (Eclipse plugin)
+COMMENT=	Aptana Studio 2 Web Development Tools (Eclipse plugin)
 
 RUN_DEPENDS=	${LOCALBASE}/bin/eclipse:${PORTSDIR}/java/eclipse
 
+CONFLICTS_INSTALL=	eclipse-aptana-1*
+
 JAVA_VERSION=	1.5+
+
+LATEST_LINK?=	${PKGNAMEPREFIX}aptana2
 
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
