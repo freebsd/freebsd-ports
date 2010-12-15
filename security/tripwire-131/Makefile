@@ -8,6 +8,8 @@
 PORTNAME=	tripwire
 PORTVERSION=	1.3.1
 CATEGORIES=	security
+MASTER_SITES=	ftp://ftp.cc.uoc.gr/system/security/tools/tripwire/ \
+		ftp://ftp.uni-potsdam.de/pub/unix/tools/
 DISTNAME=	Tripwire-${PORTVERSION}-1
 
 MAINTAINER=	cy@FreeBSD.org
@@ -23,10 +25,6 @@ WRKSRC=		${WRKDIR}/tw_ASR_1.3.1_src
 TWCONFIG?=	${FILESDIR}/tw.conf.freebsd2
 
 .include <bsd.port.pre.mk>
-
-.if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX})
-IGNORE='Please read http://www.tripwiresecurity.com/ for details of how to obtain the Tripwire source.  Put the file ${DISTNAME}${EXTRACT_SUFX} into the directory ${DISTDIR} and run make again.'
-.endif
 
 pre-configure:
 	@ ${CP} ${FILESDIR}/conf-freebsd2.h ${WRKSRC}/configs
