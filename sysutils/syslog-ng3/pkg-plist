@@ -1,7 +1,7 @@
 @unexec %D/etc/rc.d/syslog-ng.sh stop > /dev/null 2>&1 || true
 etc/modules.conf
 etc/scl.conf
-etc/syslog-ng.conf
+@unexec if cmp -s %D/etc/syslog-ng.conf %D/etc/syslog-ng.conf.sample; then rm -f %D/etc/syslog-ng.conf; fi
 etc/syslog-ng.conf.sample
 bin/update-patterndb
 bin/loggen
