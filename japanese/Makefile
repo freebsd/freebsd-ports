@@ -199,7 +199,6 @@
     SUBDIR += mozc-additions
     SUBDIR += mozc-server
     SUBDIR += mozc-tool
-    SUBDIR += mozilla-jlp
     SUBDIR += mtools
     SUBDIR += multiskkserv
     SUBDIR += mutt
