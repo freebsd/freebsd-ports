@@ -1,4 +1,4 @@
 SHA256 (john-1.7.6.tar.bz2) = 4fdfebebdc1523869f3c64a2993ff7041c8af47e9c58309575d1fdef54636c0f
 SIZE (john-1.7.6.tar.bz2) = 669568
-SHA256 (john-1.7.6-jumbo-7.diff.gz) = 910d6daa21ee52fa201bccb61beda420d7fb07096046699ecd0915984356697d
-SIZE (john-1.7.6-jumbo-7.diff.gz) = 214468
+SHA256 (john-1.7.6-jumbo-9.diff.gz) = ee37cb3dc341348a573f6c3c2f43b136c0e6a173430863bd3b6527e6b1143368
+SIZE (john-1.7.6-jumbo-9.diff.gz) = 218658
