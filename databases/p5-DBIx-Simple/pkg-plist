@@ -1,7 +1,9 @@
 %%SITE_PERL%%/DBIx/Simple.pm
 %%SITE_PERL%%/DBIx/Simple/Comparison.pod
 %%SITE_PERL%%/DBIx/Simple/Examples.pod
+%%SITE_PERL%%/DBIx/Simple/Result/RowObject.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx/Simple/.packlist
+@dirrm %%SITE_PERL%%/DBIx/Simple/Result
 @dirrm %%SITE_PERL%%/DBIx/Simple
 @dirrmtry %%SITE_PERL%%/DBIx
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx/Simple

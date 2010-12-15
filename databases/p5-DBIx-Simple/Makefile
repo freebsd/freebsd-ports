@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	DBIx-Simple
-PORTVERSION=	1.32
+PORTVERSION=	1.34
 CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -16,7 +16,7 @@ COMMENT=	Simplified object oriented interface to Perl DBI
 
 RUN_DEPENDS=	p5-DBI>=1.21:${PORTSDIR}/databases/p5-DBI
 
-OPTIONS=	SQL_INTERP "Interpolate Perl variables into SQL with DBI" off \
+OPTIONS=	SQL_INTERP "Interpolate Perl variables into SQL" off \
 		SQL_ABSTRACT "Generate SQL from Perl data structures" off \
 		DBIX_XHTML_TABLE "Create XHTML tables from SQL queries" off \
 		TEXT_TABLE "Create plain text table from data" off
@@ -25,7 +25,8 @@ PERL_CONFIGURE=	yes
 
 MAN3=	DBIx::Simple.3 \
 	DBIx::Simple::Examples.3 \
-	DBIx::Simple::Comparison.3
+	DBIx::Simple::Comparison.3 \
+	DBIx::Simple::Result::RowObject.3
 
 .include <bsd.port.pre.mk>
 
