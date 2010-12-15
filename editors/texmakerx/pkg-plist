@@ -58,5 +58,20 @@ share/applications/texmakerx.desktop
 %%DATADIR%%/th_en_US_v2.dat
 %%DATADIR%%/th_fr_FR_v2.dat
 %%DATADIR%%/th_de_DE_v2.dat
+%%DATADIR%%/configure_completion.png
+%%DATADIR%%/configure_customizeMenu.png
+%%DATADIR%%/configure_customToolbar.png
+%%DATADIR%%/configure_editor.png
+%%DATADIR%%/configure_general.png
+%%DATADIR%%/configure_shortcuts.png
+%%DATADIR%%/configure_svn.png
+%%DATADIR%%/template.png
+%%DATADIR%%/thesaurus.png
+%%DATADIR%%/texmakerx_cs.qm
+%%DATADIR%%/texmakerx_hu.qm
+%%DATADIR%%/qt_hu.qm
+%%DATADIR%%/qt_cs.qm
+%%DATADIR%%/en_US.aff
+%%DATADIR%%/en_US.dic
 @dirrm %%DATADIR%%
 @dirrmtry share/applications

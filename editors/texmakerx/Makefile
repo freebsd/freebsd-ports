@@ -6,20 +6,20 @@
 #
 
 PORTNAME=	texmakerx
-PORTVERSION=	1.9.9
-PORTREVISION=	1
+PORTVERSION=	2.0.0
 CATEGORIES=	editors
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/TexMakerX%20${PORTVERSION}
-DISTNAME=	${PORTNAME}${PORTVERSION}
+DISTNAME=	${PORTNAME}-${PORTVERSION:S:.0::}
 
 MAINTAINER=	lx@FreeBSD.org
 COMMENT=	A LaTeX IDE derived from Texmaker
 
+LIB_DEPENDS=	poppler.6:${PORTSDIR}/graphics/poppler \
+		poppler-qt4.3:${PORTSDIR}/graphics/poppler-qt4
 RUN_DEPENDS=	latex:${PORTSDIR}/print/teTeX-base \
 		dvips:${PORTSDIR}/print/dvipsk-tetex \
 		${LOCALBASE}/share/icons/hicolor/index.theme:${PORTSDIR}/misc/hicolor-icon-theme
 
-WRKSRC=		${WRKDIR}/${PORTVERSION}
 USE_GHOSTSCRIPT=yes
 USE_QT_VER=	4
 QT_COMPONENTS=	gui network xml moc_build qmake_build rcc_build \
@@ -30,8 +30,6 @@ MAKE_JOBS_UNSAFE=	yes
 
 OPTIONS=	XDVI "view dvi with xdvi" On \
 		GV "view ps with gv" On
-
-#WRKSRC=		${WRKDIR}/runk
 
 .include <bsd.port.pre.mk>
 
@@ -45,10 +43,12 @@ RUN_DEPENDS+=	gv:${PORTSDIR}/print/gv
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,^\(utilities.path =\).*,\1 ${DATADIR},' \
+		-e 's,/usr/include,${LOCALBASE}/include,g' \
+		-e 's,/usr/lib,${LOCALBASE}/lib,g' \
 		${WRKSRC}/${PORTNAME}.pro
 
 do-configure:
 	@cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} \
-		${QMAKE} -unix PREFIX=${PREFIX} ${PORTNAME}.pro
+		${QMAKE} PREFIX=${PREFIX} ${PORTNAME}.pro
 
 .include <bsd.port.post.mk>

@@ -1,0 +1,10 @@
+--- texmaker.qrc.orig	2010-12-15 21:30:17.000000000 +0300
++++ texmaker.qrc	2010-12-15 21:30:32.000000000 +0300
+@@ -1411,7 +1411,6 @@
+         <file>symbols/wasysym/img111wasysym.png</file>
+         <file>symbols/wasysym/img112wasysym.png</file>
+         <file>templates/template_Article.tex</file>
+-        <file>templates/template_Article(French).tex</file>
+         <file>templates/template_Beamer.tex</file>
+         <file>templates/template_Book.tex</file>
+         <file>templates/template_HA-prosper.tex</file>
