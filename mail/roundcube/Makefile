@@ -6,31 +6,31 @@
 #
 
 PORTNAME=	roundcube
-DISTVERSION=	0.4.2
+DISTVERSION=	0.5-beta
 PORTEPOCH=	1
 CATEGORIES?=	mail www
-MASTER_SITES=	SF/${PORTNAME}mail/${PORTNAME}mail/${DISTVERSION}
+MASTER_SITES=	SF/${PORTNAME}mail/${PORTNAME}mail-beta/${DISTVERSION}
 DISTNAME=	${PORTNAME}mail-${DISTVERSION}
 
 MAINTAINER?=	ale@FreeBSD.org
 COMMENT=	Fully skinnable XHTML/CSS webmail written in PHP
 
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
 NO_BUILD=	yes
 CONFLICTS=	ja-roundcube-[0-9]*
 
-RCUBECOMP=	SQL config index.php logs plugins program robots.txt skins temp
-PORTDOCS=	CHANGELOG INSTALL LICENSE README UPGRADING
+RCUBECOMP=	.htaccess SQL config index.php installer logs plugins program robots.txt skins temp
+PORTDOCS=	CHANGELOG INSTALL README UPGRADING
 
 SCRIPTS_ENV=	SHAREOWN=${SHAREOWN} SHAREGRP=${SHAREGRP} \
 		WWWOWN=${WWWOWN} WWWGRP=${WWWGRP} \
 		WWWDIR=${WWWDIR}
 
 WANT_PHP_WEB=	yes
-USE_PHP=	pcre mbstring session iconv dom xml json
+USE_PHP=	pcre mbstring session iconv dom xml json intl
 IGNORE_WITH_PHP=4
-
-SUB_FILES=	pkg-install
-PKGDEINSTALL=	${PKGINSTALL}
 
 REINPLACE_ARGS=	-i ""
 .if defined(WITH_REPLACE_MAIL_URL) && !empty(WITH_REPLACE_MAIL_URL)
@@ -46,8 +46,7 @@ OPTIONS=	MYSQL "Use MySQL backend" on \
 		SSL "Enable SSL support (imaps or google spellcheck)" off \
 		LDAP "Enable LDAP support (address book)" off \
 		PSPELL "Enable PSpell support (internal spellcheck)" off \
-		NSC "Install network spellchecker" off \
-		AUTOCOMP "Enable autocomplete in login form" off
+		NSC "Install network spellchecker" off
 
 .include <bsd.port.pre.mk>
 
@@ -94,10 +93,6 @@ post-extract:
 
 post-patch:
 	@${FIND} ${WRKSRC} -name \*.orig -type f -delete
-.if defined(WITH_AUTOCOMP)
-	@${REINPLACE_CMD} "s/ autocomplete=\"off\"//g" \
-		${WRKSRC}/skins/default/templates/login.html
-.endif
 .if defined(WITH_REPLACE_MAIL_URL)
 	@${REINPLACE_CMD} "s/'mail'/'${MAIL}'/g" ${WRKSRC}/index.php \
 		${WRKSRC}/plugins/*/*.php \
@@ -133,6 +128,7 @@ post-patch:
 
 do-install:
 	-${MKDIR} ${WWWDIR}
+	@cd ${WRKSRC} && ${COPYTREE_BIN} bin ${WWWDIR}
 .for i in ${RCUBECOMP}
 	@cd ${WRKSRC} && ${COPYTREE_SHARE} ${i} ${WWWDIR}
 .endfor
@@ -142,14 +138,13 @@ do-install:
 	@${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}/
 .endfor
 .endif
-	@(cd ${WRKSRC}; ${FIND} ${RCUBECOMP} -not -type d) | ${SORT} | \
+	@(cd ${WRKSRC}; ${FIND} bin ${RCUBECOMP} -not -type d) | ${SORT} | \
 		${SED} -ne 's,^,${WWWDIR_REL}/,p' >> ${TMPPLIST}
-	@(cd ${WRKSRC}; ${FIND} ${RCUBECOMP} -type d) | ${SORT} -r | \
+	@(cd ${WRKSRC}; ${FIND} bin ${RCUBECOMP} -type d) | ${SORT} -r | \
 		${SED} -ne 's,^,@dirrm ${WWWDIR_REL}/,p' >> ${TMPPLIST}
 	@${ECHO_CMD} '@dirrm ${WWWDIR_REL}' >> ${TMPPLIST}
 
 post-install:
-	@${SCRIPTS_ENV} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
