@@ -2,7 +2,7 @@
 
 PORTNAME=	remmina-plugin
 
-MASTER_SITES=	SF/remmina/0.8
+MASTER_SITES=	SF/remmina/0.9
 DISTNAME=	remmina-plugins-${PORTVERSION}
 DISTFILES=	${DISTNAME}.tar.gz
 
