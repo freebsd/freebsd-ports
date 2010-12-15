@@ -19,6 +19,8 @@ COMMENT=	Aptana Web Development Tools (Eclipse plugin)
 
 RUN_DEPENDS=	${LOCALBASE}/bin/eclipse:${PORTSDIR}/java/eclipse
 
+CONFLICTS_INSTALL=	eclipse-aptana-[2-9]*
+
 JAVA_VERSION=	1.5+
 
 NO_BUILD=	yes
