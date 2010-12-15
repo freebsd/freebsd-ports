@@ -1,5 +1,5 @@
 The Xerces Java Parser is a complete implementation of the parser related
-portions of JAXP 1.3 and also brings Xerces into compliance with SAX 2.0.2, the
+portions of JAXP 1.4 and also brings Xerces into compliance with SAX 2.0.2, the
 DOM Level 3 Core and Load/Save W3C Recommendations, the XML Inclusions
 (XInclude) Version 1.0 W3C Recommendation and the XML Schema 1.0 Structures and
 Datatypes Second Edition W3C Recommendations.
@@ -13,4 +13,7 @@ The Apache Xerces2 parser is the reference implementation of XNI but other
 parser components, configurations, and parsers can be written using the Xerces
 Native Interface.
 
-WWW: http://xml.apache.org/xerces2-j/
+WWW: http://xerces.apache.org/xerces2-j/
+
+- Alex Dupre
+ale@FreeBSD.org
