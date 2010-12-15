@@ -3,5 +3,5 @@ include/ksba.h
 lib/libksba.a
 lib/libksba.la
 lib/libksba.so
-lib/libksba.so.17
+lib/libksba.so.18
 share/aclocal/ksba.m4
