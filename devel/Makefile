@@ -3029,6 +3029,7 @@
     SUBDIR += ros-common
     SUBDIR += ros-image_common
     SUBDIR += ros-laser_pipeline
+    SUBDIR += ros-nxt
     SUBDIR += ros_tutorials
     SUBDIR += rote
     SUBDIR += rpc2
