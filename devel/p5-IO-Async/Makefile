@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	IO-Async
-PORTVERSION=	0.29
+PORTVERSION=	0.31
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -34,9 +34,13 @@ MAN3=		IO::Async.3 \
 		IO::Async::LoopTests.3 \
 		IO::Async::MergePoint.3 \
 		IO::Async::Notifier.3 \
+		IO::Async::PID.3 \
+		IO::Async::Protocol.3 \
+		IO::Async::Protocol::Stream.3 \
 		IO::Async::Resolver.3 \
 		IO::Async::Sequencer.3 \
 		IO::Async::Signal.3 \
+		IO::Async::Socket.3 \
 		IO::Async::Stream.3 \
 		IO::Async::Test.3 \
 		IO::Async::Timer.3 \

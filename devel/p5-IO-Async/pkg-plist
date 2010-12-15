@@ -16,15 +16,20 @@
 %%SITE_PERL%%/IO/Async/LoopTests.pm
 %%SITE_PERL%%/IO/Async/MergePoint.pm
 %%SITE_PERL%%/IO/Async/Notifier.pm
+%%SITE_PERL%%/IO/Async/PID.pm
+%%SITE_PERL%%/IO/Async/Protocol.pm
+%%SITE_PERL%%/IO/Async/Protocol/Stream.pm
 %%SITE_PERL%%/IO/Async/Resolver.pm
 %%SITE_PERL%%/IO/Async/Sequencer.pm
 %%SITE_PERL%%/IO/Async/Signal.pm
 %%SITE_PERL%%/IO/Async/Stream.pm
+%%SITE_PERL%%/IO/Async/Socket.pm
 %%SITE_PERL%%/IO/Async/Test.pm
 %%SITE_PERL%%/IO/Async/Timer.pm
 %%SITE_PERL%%/IO/Async/Timer/Countdown.pm
 %%SITE_PERL%%/IO/Async/Timer/Periodic.pm
 @dirrmtry %%SITE_PERL%%/IO/Async/Timer
+@dirrmtry %%SITE_PERL%%/IO/Async/Protocol
 @dirrmtry %%SITE_PERL%%/IO/Async/Loop
 @dirrmtry %%SITE_PERL%%/IO/Async/Internals
 @dirrmtry %%SITE_PERL%%/IO/Async/DetachedCode
