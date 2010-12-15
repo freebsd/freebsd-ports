@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	yawp
-PORTVERSION=	0.3.5
+PORTVERSION=	0.3.6
 CATEGORIES=	deskutils kde
 MASTER_SITES=	SF
 PKGNAMEPREFIX=	plasma-applet-
