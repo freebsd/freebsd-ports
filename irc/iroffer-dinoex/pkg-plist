@@ -1,5 +1,6 @@
 bin/iroffer
 bin/de-iroffer
+bin/fr-iroffer
 bin/it-iroffer
 %%PORTDOCS%%%%DOCSDIR%%/LICENSE
 %%PORTDOCS%%%%DOCSDIR%%/LIESMICH.modDinoex
@@ -9,9 +10,11 @@ bin/it-iroffer
 %%PORTDOCS%%%%DOCSDIR%%/TODO
 %%PORTDOCS%%%%DOCSDIR%%/help-admin-de.txt
 %%PORTDOCS%%%%DOCSDIR%%/help-admin-en.txt
+%%PORTDOCS%%%%DOCSDIR%%/help-admin-fr.txt
 %%PORTDOCS%%%%DOCSDIR%%/help-admin-it.txt
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/beispiel.config
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/exemple.config
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/footer.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/header.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/iroffer.cron
