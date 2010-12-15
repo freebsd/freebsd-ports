@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	icu
-PORTVERSION=	3.8.1
-PORTREVISION=	3
+PORTVERSION=	4.6
+
 CATEGORIES=	devel
-MASTER_SITES=	SF/${PORTNAME}/ICU4C/${PORTVERSION}
+MASTER_SITES=	http://download.icu-project.org/files/icu4c/${PORTVERSION}/
 DISTNAME=	icu4c-${PORTVERSION:S/./_/g}
 EXTRACT_SUFX=	-src.tgz
 
@@ -17,7 +17,8 @@ MAINTAINER=	bapt@FreeBSD.org
 COMMENT=	International Components for Unicode (from IBM)
 
 OPTIONS=	THREADS "Build thread-safe version of the library" on
-CONFLICTS=	icu2-[0-9]* icu-4*
+CONFLICTS=	icu2-[0-9]* icu-4.4*
+
 
 USE_LDCONFIG=		yes
 
@@ -29,8 +30,11 @@ CONFIGURE_ARGS+=	${OPSYS}
 CONFIGURE_ARGS+=	--enable-shared
 CONFIGURE_ARGS+=	--enable-static
 CONFIGURE_ARGS+=	--enable-samples=no
+CONFIGURE_ARGS+=	--mandir=${MANPREFIX}/man
+MAKE_JOBS_SAFE=	yes
 
 USE_GMAKE=		yes
+INSTALL_TARGET=		install install-manx
 
 MAN1+=	derb.1
 MAN1+=	genbrk.1
@@ -45,39 +49,40 @@ MAN8+=	icupkg.8
 MAN8+=	genccode.8
 MAN8+=	gencmn.8
 MAN8+=	gensprep.8
-MAN8+=	genuca.8
 
 ICUMAJOR=	${PORTVERSION:S/.//:R}
-PLIST_SUB+=	ICUMAJOR=${ICUMAJOR} ICUMINOR=1
-PLIST_SUB+=	ICUVER=${PORTVERSION}
+ICUMINOR=	${PORTVERSION:S/.//:E}
+.if ${ICUMINOR} == ""
+ICUMINOR=	0
+.endif
+PLIST_SUB+=	ICUMAJOR=${ICUMAJOR} ICUMINOR=${ICUMINOR} ICUVER=${PORTVERSION}
 
 .include <bsd.port.pre.mk>
 
-.if ${CC:T} == "cc"
-CFLAGS:=	${CFLAGS:N-funroll-loops:N-O*:N-*strict-aliasing} -O2 -fno-strict-aliasing
+.if ${ARCH} == "sparc64"
+BROKEN=		Does not install on sparc64: fails 3 iotests
 .endif
-.if ${CXX:T} == "c++"
-CXXFLAGS:=	${CXXFLAGS:N-funroll-loops:N-O*:N-*strict-aliasing} -O2 -fno-strict-aliasing
-.endif
-CONFIGURE_ENV+=	CFLAGS="${CFLAGS}" CXXFLAGS="${CXXFLAGS}"
 
 .if defined(WITHOUT_THREADS)
 CONFIGURE_ARGS+=	--enable-threads=no
 .else
 # This builds thread-safe, but not the thread-using version:
 CONFIGURE_ARGS+=	--enable-weak-threads
-post-patch:
-	${REINPLACE_CMD} -e 's,\(THREADSC.*FLAGS\).*,\1=${PTHREAD_CFLAGS},g' ${WRKSRC}/config/mh-bsd-gcc
 .endif
 
+post-patch:
+.if defined(WITHOUT_THREADS)
+	@${REINPLACE_CMD} -e 's,\(THREADSC.*FLAGS\).*,\1=${PTHREAD_CFLAGS},g' ${WRKSRC}/config/mh-bsd-gcc
+.endif
+	@${REINPLACE_CMD} -e 's,$$(libdir)/pkgconfig,${PREFIX}/libdata/pkgconfig,g' ${WRKSRC}/Makefile.in
+
 iotest cintltst intltest:
-.if ${ARCH} == "amd64" || ${ARCH} == "i386"
+	# Performing the ${.TARGET} test
 	-${GMAKE} -C ${WRKSRC}/test
 	cd ${WRKSRC}/test/${.TARGET} && ${SETENV} \
 	    LD_LIBRARY_PATH=${WRKSRC}/lib:${WRKSRC}/tools/ctestfw \
 	    ./${.TARGET}
-.endif
 
-post-build test: iotest cintltst intltest
+post-build test regression-test: iotest cintltst intltest
 
 .include <bsd.port.post.mk>

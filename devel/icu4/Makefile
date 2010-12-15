@@ -13,11 +13,13 @@ MASTER_SITES=	http://download.icu-project.org/files/icu4c/${PORTVERSION}/
 DISTNAME=	icu4c-${PORTVERSION:S/./_/g}
 EXTRACT_SUFX=	-src.tgz
 
-MAINTAINER=	bapt@FreeBSD.org
+MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	International Components for Unicode (from IBM)
 
+DEPRECATED=	devel/icu is now following 4.x version
+
 OPTIONS=	THREADS "Build thread-safe version of the library" on
-CONFLICTS=	icu2-[0-9]* icu-3*
+CONFLICTS=	icu2-[0-9]* icu-4.6*
 LATEST_LINK=	icu4
 
 USE_LDCONFIG=	yes
