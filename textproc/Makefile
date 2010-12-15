@@ -926,6 +926,7 @@
     SUBDIR += par
     SUBDIR += pardiff
     SUBDIR += pcrs
+    SUBDIR += pdfgrep
     SUBDIR += pdfoutline
     SUBDIR += pdftohtml
     SUBDIR += pear-File_Fortune
