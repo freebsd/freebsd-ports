@@ -6,7 +6,7 @@
 #
 
 PORTNAME?=	remmina-plugins
-PORTVERSION=	0.8.4
+PORTVERSION=	0.9.0
 CATEGORIES=	net gnome
 MASTER_SITES=	# Empty
 DISTFILES?=	# Empty
