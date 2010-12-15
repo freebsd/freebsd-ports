@@ -1,0 +1,32 @@
+--- SECURITY.orig	2010-12-10 15:03:24.950162769 -0800
++++ SECURITY	2010-12-10 15:03:31.669374009 -0800
+@@ -28,6 +28,10 @@
+ 
+ 	  svn, svnserve, rsync, and unison
+ 
++	  Note specifically that rsync uses popt for parsing command line arguments
++	  and popt explicitly checks /etc/popt and $HOME/.popt for aliases. Thus,
++	  users can likely bypass argument checking for rsync.
++
+ 4) Make sure that all files required for the chroot have the IMMUTABLE and
+    UNDELETABLE bits set.  Other bits might also be prudent. See: man 1 chattr.
+ 
+@@ -39,13 +43,16 @@
+    ~/.ssh, ~/.unison, ~/.subversion
+ 
+    NOTE: depending on file permissions in the above, ssh, unison, and
+-   subversion may not work correctly.
++   subversion may not work correctly.  Also note that the location of the
++   above directories is sometimes system dependent, so please check the
++   documentation specific to your system.
+ 
+ 7) Make sure that every directory the users have write permissions to are
+    on a filesystem that is mounted NODEV, NOEXEC.  Eg. Make sure that they
+    cannot execute files that they have permissions to upload.  They should
+    also not need permissions to create any devices.  If the user can't execute
+-   any files that he has access to upload, then you need not worry about the
++   any files that he has access to upload and the executable files on the
++   system are not considered harmful, then you need not worry about the
+    security problems referencing svn/svnserve above!
+ 
+ 8) Monitor your logs!  If you start to see something funny, odd, or strange in
