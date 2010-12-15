@@ -15,10 +15,10 @@ DISTNAME=	${PORTNAME}-src-${PORTVERSION:S/./_/g}
 MAINTAINER=	ale@FreeBSD.org
 COMMENT=	A Java library for XML Signature and Encryption
 
-BUILD_DEPENDS=	${JAVAJARDIR}/commons-logging.jar:${PORTSDIR}/java/jakarta-commons-logging \
-		${JAVAJARDIR}/xalan.jar:${PORTSDIR}/textproc/xalan-j
-RUN_DEPENDS=	${JAVAJARDIR}/commons-logging.jar:${PORTSDIR}/java/jakarta-commons-logging \
-		${JAVAJARDIR}/xalan.jar:${PORTSDIR}/textproc/xalan-j
+BUILD_DEPENDS=	${JAVALIBDIR}/commons-logging.jar:${PORTSDIR}/java/jakarta-commons-logging \
+		${JAVALIBDIR}/xalan.jar:${PORTSDIR}/textproc/xalan-j
+RUN_DEPENDS=	${JAVALIBDIR}/commons-logging.jar:${PORTSDIR}/java/jakarta-commons-logging \
+		${JAVALIBDIR}/xalan.jar:${PORTSDIR}/textproc/xalan-j
 
 LICENSE=	ASL
 LICENSE_FILE=	${WRKSRC}/LICENSE
