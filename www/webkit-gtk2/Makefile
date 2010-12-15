@@ -57,7 +57,7 @@ OPTIONS=	VIDEO "Enable video support" on \
 LIB_DEPENDS+=	icutu.44:${PORTSDIR}/devel/icu4
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-WebCore_platform_text_TextBreakIterator.h
 .else
-LIB_DEPENDS+=	icutu.38:${PORTSDIR}/devel/icu
+LIB_DEPENDS+=	icutu.46:${PORTSDIR}/devel/icu
 .endif
 
 .if defined(WITH_VIDEO)

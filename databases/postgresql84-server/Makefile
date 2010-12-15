@@ -97,8 +97,8 @@ OPTIONS+=	DEBUG "Builds with debugging symbols" off
 OPTIONS+=	GSSAPI "BUild with GSSAPI support" on
 
 # See http://people.freebsd.org/~girgen/postgresql-icu/README.html for more info
-OPTIONS+=	ICU	"Use ICU 3.x for unicode collation (server)" off
-OPTIONS+=	ICU4	"Use ICU 4.x for unicode collation (server)" off
+OPTIONS+=	ICU	"Use ICU 4.6 for unicode collation (server)" off
+OPTIONS+=	ICU4	"Use ICU 4.4 for unicode collation (server)" off
 
 # See http://www.freebsd.org/cgi/query-pr.cgi?pr=ports/76999 for more info
 # (requires dump/restore if modified.)
@@ -117,7 +117,7 @@ PATCHFILES+=	pg-840-icu-2009-09-15.diff.gz:icu
 LIB_DEPENDS+=	icudata.44:${PORTSDIR}/devel/icu4
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-icu4
 .   else
-LIB_DEPENDS+=	icudata.38:${PORTSDIR}/devel/icu
+LIB_DEPENDS+=	icudata.46:${PORTSDIR}/devel/icu
 .   endif
 .  endif
 
