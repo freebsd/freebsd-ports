@@ -58,7 +58,7 @@ MAKE_JOBS_SAFE=	yes
 
 USE_JAVA=	yes
 JAVA_BUILD=	jdk
-JAVA_VENDOR=	freebsd bsdjava openjdk
+JAVA_VENDOR?=	freebsd bsdjava openjdk
 .if (${OSVERSION} >= 700000)
 JAVA_VERSION=	1.5 1.6
 .else
@@ -143,6 +143,7 @@ CONFIGURE_ARGS+=	--with-gnu-cp=${LOCALBASE}/bin/gcp		\
 			--with-system-zlib				\
 			--with-system-stdlibs				\
 			--with-epm=internal				\
+			--with-vendor=FreeBSD-port			\
 			--enable-hids					\
 			--enable-minimizer 				\
 			--enable-presenter-console			\
