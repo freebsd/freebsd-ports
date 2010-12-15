@@ -7,6 +7,7 @@
 
 PORTNAME=	avr-libc
 PORTVERSION=	1.7.0
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SAVANNAH}
@@ -22,10 +23,8 @@ RUN_DEPENDS=	avr-as:${PORTSDIR}/devel/avr-binutils \
 		avr-ld:${PORTSDIR}/devel/avr-binutils \
 		avr-gcc:${PORTSDIR}/devel/avr-gcc
 
-BROKEN=		does not build
-
 .if !defined(NOPORTDOCS)
-OPTIONS=	AVRLIBCDOCS "Build avr-libc documents" on
+OPTIONS=	AVRLIBCDOCS "Build avr-libc documents" off
 .endif
 
 .include <bsd.port.options.mk>
@@ -33,6 +32,8 @@ OPTIONS=	AVRLIBCDOCS "Build avr-libc documents" on
 .if defined(WITHOUT_AVRLIBCDOCS) || defined(NOPORTDOCS)
 WITHOUT_AVRLIBCDOCS=	true
 .undef WITH_AVRLIBCDOCS
+.else
+BROKEN=		does not build with AVRLIBCDOCS enabled
 .endif
 
 .if defined(WITH_AVRLIBCDOCS)
