@@ -1,7 +1,26 @@
 bin/cython
+bin/cygdb
 %%PYTHON_SITELIBDIR%%/cython.py
 %%PYTHON_SITELIBDIR%%/cython.pyc
 %%PYTHON_SITELIBDIR%%/cython.pyo
+%%PYTHON_SITELIBDIR%%/Cython/Build/__init__.py
+%%PYTHON_SITELIBDIR%%/Cython/Build/__init__.pyc
+%%PYTHON_SITELIBDIR%%/Cython/Build/__init__.pyo
+%%PYTHON_SITELIBDIR%%/Cython/Build/Dependencies.py
+%%PYTHON_SITELIBDIR%%/Cython/Build/Dependencies.pyc
+%%PYTHON_SITELIBDIR%%/Cython/Build/Dependencies.pyo
+%%PYTHON_SITELIBDIR%%/Cython/Build/Inline.py
+%%PYTHON_SITELIBDIR%%/Cython/Build/Inline.pyc
+%%PYTHON_SITELIBDIR%%/Cython/Build/Inline.pyo
+%%PYTHON_SITELIBDIR%%/Cython/Build/Tests/__init__.py
+%%PYTHON_SITELIBDIR%%/Cython/Build/Tests/__init__.pyc
+%%PYTHON_SITELIBDIR%%/Cython/Build/Tests/__init__.pyo
+%%PYTHON_SITELIBDIR%%/Cython/Build/Tests/TestInline.py
+%%PYTHON_SITELIBDIR%%/Cython/Build/Tests/TestInline.pyc
+%%PYTHON_SITELIBDIR%%/Cython/Build/Tests/TestInline.pyo
+%%PYTHON_SITELIBDIR%%/Cython/Build/Tests/TestStripLiterals.py
+%%PYTHON_SITELIBDIR%%/Cython/Build/Tests/TestStripLiterals.pyc
+%%PYTHON_SITELIBDIR%%/Cython/Build/Tests/TestStripLiterals.pyo
 %%PYTHON_SITELIBDIR%%/Cython/CodeWriter.py
 %%PYTHON_SITELIBDIR%%/Cython/CodeWriter.pyc
 %%PYTHON_SITELIBDIR%%/Cython/CodeWriter.pyo
@@ -26,6 +45,8 @@ bin/cython
 %%PYTHON_SITELIBDIR%%/Cython/Compiler/Code.py
 %%PYTHON_SITELIBDIR%%/Cython/Compiler/Code.pyc
 %%PYTHON_SITELIBDIR%%/Cython/Compiler/Code.pyo
+%%PYTHON_SITELIBDIR%%/Cython/Compiler/Code.pxd
+%%PYTHON_SITELIBDIR%%/Cython/Compiler/Code.so
 %%PYTHON_SITELIBDIR%%/Cython/Compiler/CodeGeneration.py
 %%PYTHON_SITELIBDIR%%/Cython/Compiler/CodeGeneration.pyc
 %%PYTHON_SITELIBDIR%%/Cython/Compiler/CodeGeneration.pyo
@@ -53,6 +74,7 @@ bin/cython
 %%PYTHON_SITELIBDIR%%/Cython/Compiler/Lexicon.py
 %%PYTHON_SITELIBDIR%%/Cython/Compiler/Lexicon.pyc
 %%PYTHON_SITELIBDIR%%/Cython/Compiler/Lexicon.pyo
+%%PYTHON_SITELIBDIR%%/Cython/Compiler/Lexicon.so
 %%PYTHON_SITELIBDIR%%/Cython/Compiler/Main.py
 %%PYTHON_SITELIBDIR%%/Cython/Compiler/Main.pyc
 %%PYTHON_SITELIBDIR%%/Cython/Compiler/Main.pyo
@@ -74,6 +96,7 @@ bin/cython
 %%PYTHON_SITELIBDIR%%/Cython/Compiler/ParseTreeTransforms.py
 %%PYTHON_SITELIBDIR%%/Cython/Compiler/ParseTreeTransforms.pyc
 %%PYTHON_SITELIBDIR%%/Cython/Compiler/ParseTreeTransforms.pyo
+%%PYTHON_SITELIBDIR%%/Cython/Compiler/ParseTreeTransforms.pxd
 %%PYTHON_SITELIBDIR%%/Cython/Compiler/Parsing.pxd
 %%PYTHON_SITELIBDIR%%/Cython/Compiler/Parsing.py
 %%PYTHON_SITELIBDIR%%/Cython/Compiler/Parsing.pyc
@@ -140,6 +163,33 @@ bin/cython
 %%PYTHON_SITELIBDIR%%/Cython/Debugging.py
 %%PYTHON_SITELIBDIR%%/Cython/Debugging.pyc
 %%PYTHON_SITELIBDIR%%/Cython/Debugging.pyo
+%%PYTHON_SITELIBDIR%%/Cython/Debugger/__init__.py
+%%PYTHON_SITELIBDIR%%/Cython/Debugger/__init__.pyc
+%%PYTHON_SITELIBDIR%%/Cython/Debugger/__init__.pyo
+%%PYTHON_SITELIBDIR%%/Cython/Debugger/Cygdb.py
+%%PYTHON_SITELIBDIR%%/Cython/Debugger/Cygdb.pyc
+%%PYTHON_SITELIBDIR%%/Cython/Debugger/Cygdb.pyo
+%%PYTHON_SITELIBDIR%%/Cython/Debugger/DebugWriter.py
+%%PYTHON_SITELIBDIR%%/Cython/Debugger/DebugWriter.pyc
+%%PYTHON_SITELIBDIR%%/Cython/Debugger/DebugWriter.pyo
+%%PYTHON_SITELIBDIR%%/Cython/Debugger/libcython.py
+%%PYTHON_SITELIBDIR%%/Cython/Debugger/libcython.pyc
+%%PYTHON_SITELIBDIR%%/Cython/Debugger/libcython.pyo
+%%PYTHON_SITELIBDIR%%/Cython/Debugger/libpython.py
+%%PYTHON_SITELIBDIR%%/Cython/Debugger/libpython.pyc
+%%PYTHON_SITELIBDIR%%/Cython/Debugger/libpython.pyo
+%%PYTHON_SITELIBDIR%%/Cython/Debugger/Tests/__init__.py
+%%PYTHON_SITELIBDIR%%/Cython/Debugger/Tests/__init__.pyc
+%%PYTHON_SITELIBDIR%%/Cython/Debugger/Tests/__init__.pyo
+%%PYTHON_SITELIBDIR%%/Cython/Debugger/Tests/TestLibCython.py
+%%PYTHON_SITELIBDIR%%/Cython/Debugger/Tests/TestLibCython.pyc
+%%PYTHON_SITELIBDIR%%/Cython/Debugger/Tests/TestLibCython.pyo
+%%PYTHON_SITELIBDIR%%/Cython/Debugger/Tests/test_libcython_in_gdb.py
+%%PYTHON_SITELIBDIR%%/Cython/Debugger/Tests/test_libcython_in_gdb.pyc
+%%PYTHON_SITELIBDIR%%/Cython/Debugger/Tests/test_libcython_in_gdb.pyo
+%%PYTHON_SITELIBDIR%%/Cython/Debugger/Tests/test_libpython_in_gdb.py
+%%PYTHON_SITELIBDIR%%/Cython/Debugger/Tests/test_libpython_in_gdb.pyc
+%%PYTHON_SITELIBDIR%%/Cython/Debugger/Tests/test_libpython_in_gdb.pyo
 %%PYTHON_SITELIBDIR%%/Cython/Distutils/__init__.py
 %%PYTHON_SITELIBDIR%%/Cython/Distutils/__init__.pyc
 %%PYTHON_SITELIBDIR%%/Cython/Distutils/__init__.pyo
@@ -225,6 +275,7 @@ bin/cython
 %%PYTHON_SITELIBDIR%%/Cython/Includes/libc/float.pxd
 %%PYTHON_SITELIBDIR%%/Cython/Includes/libc/limits.pxd
 %%PYTHON_SITELIBDIR%%/Cython/Includes/libc/locale.pxd
+%%PYTHON_SITELIBDIR%%/Cython/Includes/libc/math.pxd
 %%PYTHON_SITELIBDIR%%/Cython/Includes/libc/signal.pxd
 %%PYTHON_SITELIBDIR%%/Cython/Includes/libc/stddef.pxd
 %%PYTHON_SITELIBDIR%%/Cython/Includes/libc/stdint.pxd
@@ -239,6 +290,7 @@ bin/cython
 %%PYTHON_SITELIBDIR%%/Cython/Includes/libcpp/queue.pxd
 %%PYTHON_SITELIBDIR%%/Cython/Includes/libcpp/set.pxd
 %%PYTHON_SITELIBDIR%%/Cython/Includes/libcpp/stack.pxd
+%%PYTHON_SITELIBDIR%%/Cython/Includes/libcpp/utility.pxd
 %%PYTHON_SITELIBDIR%%/Cython/Includes/libcpp/vector.pxd
 %%PYTHON_SITELIBDIR%%/Cython/Includes/numpy.pxd
 %%PYTHON_SITELIBDIR%%/Cython/Includes/posix/__init__.pxd
@@ -247,6 +299,8 @@ bin/cython
 %%PYTHON_SITELIBDIR%%/Cython/Plex/Actions.py
 %%PYTHON_SITELIBDIR%%/Cython/Plex/Actions.pyc
 %%PYTHON_SITELIBDIR%%/Cython/Plex/Actions.pyo
+%%PYTHON_SITELIBDIR%%/Cython/Plex/Actions.pxd
+%%PYTHON_SITELIBDIR%%/Cython/Plex/Actions.so
 %%PYTHON_SITELIBDIR%%/Cython/Plex/DFA.py
 %%PYTHON_SITELIBDIR%%/Cython/Plex/DFA.pyc
 %%PYTHON_SITELIBDIR%%/Cython/Plex/DFA.pyo
@@ -296,6 +350,9 @@ bin/cython
 %%PYTHON_SITELIBDIR%%/Cython/Tests/TestCodeWriter.py
 %%PYTHON_SITELIBDIR%%/Cython/Tests/TestCodeWriter.pyc
 %%PYTHON_SITELIBDIR%%/Cython/Tests/TestCodeWriter.pyo
+%%PYTHON_SITELIBDIR%%/Cython/Tests/TestStringIOTree.py
+%%PYTHON_SITELIBDIR%%/Cython/Tests/TestStringIOTree.pyc
+%%PYTHON_SITELIBDIR%%/Cython/Tests/TestStringIOTree.pyo
 %%PYTHON_SITELIBDIR%%/Cython/Tests/__init__.py
 %%PYTHON_SITELIBDIR%%/Cython/Tests/__init__.pyc
 %%PYTHON_SITELIBDIR%%/Cython/Tests/__init__.pyo
@@ -317,8 +374,12 @@ bin/cython
 %%PYTHON_SITELIBDIR%%/pyximport/pyxbuild.py
 %%PYTHON_SITELIBDIR%%/pyximport/pyxbuild.pyc
 %%PYTHON_SITELIBDIR%%/pyximport/pyxbuild.pyo
+@dirrm %%PYTHON_SITELIBDIR%%/Cython/Build/Tests
+@dirrm %%PYTHON_SITELIBDIR%%/Cython/Build
 @dirrm %%PYTHON_SITELIBDIR%%/Cython/Compiler/Tests
 @dirrm %%PYTHON_SITELIBDIR%%/Cython/Compiler
+@dirrm %%PYTHON_SITELIBDIR%%/Cython/Debugger/Tests
+@dirrm %%PYTHON_SITELIBDIR%%/Cython/Debugger
 @dirrm %%PYTHON_SITELIBDIR%%/Cython/Distutils
 @dirrm %%PYTHON_SITELIBDIR%%/Cython/Includes/Deprecated
 @dirrm %%PYTHON_SITELIBDIR%%/Cython/Includes/cpython
