@@ -1,0 +1,23 @@
+--- Makefile.orig	2010-10-23 00:28:54.000000000 +0000
++++ Makefile	2010-10-23 00:31:39.000000000 +0000
+@@ -18,9 +18,9 @@
+ #
+ 
+ INSTALL_PREFIX :=
+-INSTALL_MODULES_DIR := $(INSTALL_PREFIX)/usr/lib/asterisk/modules
++INSTALL_MODULES_DIR := $(INSTALL_PREFIX)/${LOCALBASE}/lib/asterisk/modules
+ 
+-ASTERISK_INCLUDE_DIR ?= ../asterisk/include
++ASTERISK_INCLUDE_DIR ?= ${LOCALBASE}/include
+ 
+ RELEASE = 1.5
+ 
+@@ -157,7 +157,7 @@
+ 	$(RM) $(TARGET)
+ 
+ $(TARGET): $(OBJS)
+-	$(CC) -pg $(SOLINK) -o $@ $(OBJS)
++	$(CC) $(SOLINK) -o $@ $(OBJS)
+ 
+ vad_test: vad_test.o libspeex/preprocess.o libspeex/misc.o libspeex/smallft.o
+ 	$(CC) $(PROFILE) -o $@ $^ -lm

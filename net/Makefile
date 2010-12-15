@@ -18,6 +18,7 @@
     SUBDIR += amqp08
     SUBDIR += aoe
     SUBDIR += apinger
+    SUBDIR += appkonference
     SUBDIR += arp-scan
     SUBDIR += arp-sk
     SUBDIR += arpdig
