@@ -101,7 +101,8 @@ BUILD_JOBS_NUMBER=	`${SYSCTL} -n kern.smp.cpus`
 MAKE_ENV+=	HOTSPOT_BUILD_JOBS=${BUILD_JOBS_NUMBER}
 .endif
 
-BOOTSTRAP_JDKS=	${LOCALBASE}/openjdk6 \
+BOOTSTRAP_JDKS=	${LOCALBASE}/openjdk7 \
+		${LOCALBASE}/openjdk6 \
 		${LOCALBASE}/jdk1.6.0 \
 		${LOCALBASE}/diablo-jdk1.6.0
 
