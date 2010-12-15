@@ -1,13 +1,13 @@
 # $FreeBSD$
 
-MAN1=	epmd.1 \
+MAN1=	ct_run.1 \
+	epmd.1 \
 	erl.1 \
 	erl_call.1 \
 	erlc.1 \
 	erlsrv.1 \
 	escript.1 \
 	run_erl.1 \
-	run_test.1 \
 	start.1 \
 	start_erl.1 \
 	start_webtool.1 \
@@ -558,6 +558,7 @@ MAN3=	CosEventChannelAdmin.3 \
 	wxStyledTextCtrl.3 \
 	wxStyledTextEvent.3 \
 	wxSysColourChangedEvent.3 \
+	wxSystemSettings.3 \
 	wxTextAttr.3 \
 	wxTextCtrl.3 \
 	wxTextDataObject.3 \
