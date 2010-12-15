@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	imlib2_loaders
-PORTVERSION=	1.4.1.000
-PORTREVISION=	4
+PORTVERSION=	1.4.4
+PORTREVISION=	0
 PORTEPOCH=	2
 CATEGORIES=	graphics enlightenment
-MASTER_SITES=	ftp://ftp.springdaemons.com/pub/snapshots/e17/ \
-		http://download.enlightenment.org/snapshots/2008-01-25/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	enlightenment/imlib2-src/${PORTVERSION}
 
 MAINTAINER=	stas@FreeBSD.org
 COMMENT=	Extra image loader plugins for Imlib 2
@@ -19,7 +19,7 @@ COMMENT=	Extra image loader plugins for Imlib 2
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
 USE_GNOME=	gnomehack gnometarget
-USE_EFL=	edb eet imlib2
+USE_EFL=	edb eet imlib2 libtool_hack
 
 OPTIONS=	EDB	"Enable edb loader" on \
 		EET	"Enable eet loader" on \
