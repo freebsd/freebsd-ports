@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	texmacs
-PORTVERSION=	1.0.7.6
+PORTVERSION=	1.0.7.8
 CATEGORIES=	editors print
 MASTER_SITES=	ftp://ftp.texmacs.org/pub/TeXmacs/%SUBDIR%/ \
 		http://www.predatorlabs.net/dl/
@@ -45,19 +45,16 @@ CONFIGURE_ARGS+=	--with-imlib2
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 700000
-BROKEN=		does not compile
-.endif
-
 post-patch:
 	@${GREP} -lR "#!/bin/bash" ${WRKSRC} | ${XARGS} ${REINPLACE_CMD} -e \
 		 's|#!/bin/bash|#!/bin/sh|g'
-	@${REINPLACE_CMD} -e 's|type -p maxima|which maxima|g' \
-		${WRKSRC}/plugins/maxima/bin/maxima_detect
+	@${FIND} ${WRKSRC} -name \*.bak -delete
 	@${REINPLACE_CMD} -e 's|ICONV_LDFLAGS/-liconv|ICONV_LDFLAGS|' \
 		${WRKSRC}/configure
 
 post-install:
+	${MKDIR} ${DESKTOPDIR}
+	${INSTALL_DATA} ${WRKSRC}/TeXmacs/misc/mime/texmacs.desktop ${DESKTOPDIR}/
 	${CHOWN} -R ${LIBOWN}:${LIBGRP} ${PREFIX}/libexec/TeXmacs
 	${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/share/TeXmacs
 
