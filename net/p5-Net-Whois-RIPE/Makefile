@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	Net-Whois-RIPE
-PORTVERSION=	1.31
+PORTVERSION=	2.00002
 CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -15,10 +15,10 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	mich@FreeBSD.org
 COMMENT=	Implementation of RIPE Whois
 
-PERL_MODBUILD=	yes
+RUN_DEPENDS=	p5-Iterator-Util>=0:${PORTSDIR}/devel/p5-Iterator-Util
 
-MAN3=	Net::Whois::RIPE::Iterator.3 \
-	Net::Whois::RIPE::Object.3 \
-	Net::Whois::RIPE.3
+PERL_CONFIGURE=	yes
+
+MAN3=	Net::Whois::RIPE.3
 
 .include <bsd.port.mk>

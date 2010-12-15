@@ -1,11 +1,7 @@
 %%SITE_PERL%%/Net/Whois/RIPE.pm
-%%SITE_PERL%%/Net/Whois/RIPE.pod
-%%SITE_PERL%%/Net/Whois/RIPE/Iterator.pm
-%%SITE_PERL%%/Net/Whois/RIPE/Iterator.pod
-%%SITE_PERL%%/Net/Whois/RIPE/Object.pm
-%%SITE_PERL%%/Net/Whois/RIPE/Object.pod
-%%SITE_PERL%%/Net/Whois/RIPE/Object/Template.pm
-@dirrm %%SITE_PERL%%/Net/Whois/RIPE/Object
-@dirrm %%SITE_PERL%%/Net/Whois/RIPE
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Whois/RIPE/.packlist
 @dirrmtry %%SITE_PERL%%/Net/Whois
 @dirrmtry %%SITE_PERL%%/Net
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Whois/RIPE
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Whois
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net
