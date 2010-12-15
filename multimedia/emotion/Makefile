@@ -28,6 +28,10 @@ USE_LDCONFIG=	yes
 OPTIONS=	XINE "Build Xine module" on \
 		GST "Build GStreamer module" on
 
+# emotion's vlc plugin needs updating due to libvlc API changes
+# details: http://trac.enlightenment.org/e/ticket/601
+CONFIGURE_ARGS=	--disable-vlc
+
 .include <bsd.port.pre.mk>
 
 .if defined(WITHOUT_XINE) && defined(WITHOUT_GST)
