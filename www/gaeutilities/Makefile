@@ -6,13 +6,12 @@
 #
 
 PORTNAME=	gaeutilities
-PORTVERSION=	1.3
-PORTREVISION=	1
+PORTVERSION=	1.4
+PORTREVISION=	0
 CATEGORIES=	www devel
-MASTER_SITES=	GOOGLE_CODE \
+MASTER_SITES=	http://cloud.github.com/downloads/joerussbowman/${PORTNAME}/ \
 		http://nivi.interfree.it/distfiles/${PORTNAME}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	Utility classes to make working with Google App Engine easier
@@ -21,6 +20,8 @@ RUN_DEPENDS=	google-appengine>=1.2.4_1:${PORTSDIR}/www/google-appengine
 
 MANUAL_PACKAGE_BUILD=	uses Python 2.5
 USE_PYTHON=	2.5 # same as www/google-appengine
+
+WRKSRC=	${WRKDIR}/joerussbowman-gaeutilities-ea3f7e1
 
 do-build:
 	${PYTHON_CMD} -m compileall -f ${WRKSRC}/appengine_utilities

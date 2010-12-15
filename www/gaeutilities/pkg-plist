@@ -43,7 +43,6 @@
 %%PYTHON_SITELIBDIR%%/appengine_utilities/interface/templates/404.html
 %%PYTHON_SITELIBDIR%%/appengine_utilities/interface/templates/base.html
 %%PYTHON_SITELIBDIR%%/appengine_utilities/interface/templates/scheduler_form.html
-%%PYTHON_SITELIBDIR%%/appengine_utilities/paginator.pyc
 %%PYTHON_SITELIBDIR%%/appengine_utilities/rotmodel.py
 %%PYTHON_SITELIBDIR%%/appengine_utilities/rotmodel.pyc
 %%PYTHON_SITELIBDIR%%/appengine_utilities/rotmodel.pyo
