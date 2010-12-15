@@ -6,12 +6,10 @@
 #
 
 PORTNAME=	pdfjam
-PORTVERSION=	1.21
-PORTREVISION=	4
+PORTVERSION=	2.08
 CATEGORIES=	print
 MASTER_SITES=	http://www2.warwick.ac.uk/fac/sci/statistics/staff/academic/firth/software/pdfjam/ \
-		http://www.it.ca/~paul/src/
-DISTNAME=	${PORTNAME}_${PORTVERSION}
+		ftp://ftp.stack.nl/pub/users/johans/pdfjam/
 
 MAINTAINER=	johans@FreeBSD.org
 COMMENT=	Shell scripts to manipulate PDF files
@@ -20,25 +18,24 @@ RUN_DEPENDS=	pdflatex:${PORTSDIR}/print/teTeX-base
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-MAN1=		pdfjoin.1 pdf90.1 pdfnup.1
-PLIST_FILES=	bin/pdfjoin bin/pdf90 bin/pdfnup
+PROGS=		pdf90 pdf180 pdf270 pdfbook pdfflip pdfjam \
+		pdfjam-pocketmod pdfjam-slides3up pdfjam-slides6up \
+		pdfjoin pdfnup pdfpun
+MAN1=		${PROGS:S/$/.1/}
+PLIST_FILES=	${PROGS:S/^/bin\//} etc/pdfjam.conf.dist
 PORTDOCS=	PDFjam-README.html pdfdroplets.png
 
 NO_BUILD=	yes
 
-post-patch:
-	cd ${WRKSRC} && \
-	${REINPLACE_CMD} -e"s,^#!/bin/bash,#!/bin/sh," \
-		${PLIST_FILES:C/bin/scripts/}
-
 do-install:
-.for FILE in ${PLIST_FILES}
-	cd ${WRKSRC} && ${INSTALL_SCRIPT} ${FILE:C/bin/scripts/} ${PREFIX}/bin
+.for FILE in ${PROGS}
+	${INSTALL_SCRIPT} ${WRKSRC}/bin/${FILE} ${PREFIX}/bin
 .endfor
 .for FILE in ${MAN1}
 	${INSTALL_MAN} ${WRKSRC}/man1/${FILE} ${MAN1PREFIX}/man/man1
 .endfor
-.if !defined(NOPORTDOCS)
+	${INSTALL_DATA} ${WRKSRC}/pdfjam.conf ${PREFIX}/etc/pdfjam.conf.dist
+.ifndef NOPORTDOCS
 	${MKDIR} ${DOCSDIR}
 .for FILE in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/${FILE} ${DOCSDIR}
