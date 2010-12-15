@@ -7,6 +7,7 @@
 
 PORTNAME=	arping
 PORTVERSION=	2.09
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://www.habets.pp.se/synscan/files/
 
