@@ -26,7 +26,7 @@ LIB_DEPENDS=	MagickWand.4:${PORTSDIR}/graphics/ImageMagick \
 
 USE_BISON=	build
 USE_ICONV=	yes
-USE_TK=		84
+USE_TK=		84+
 USE_LDCONFIG=	yes
 
 CFLAGS+=	-I${LOCALBASE}/include
