@@ -1,18 +1,22 @@
---- runConfigureICU	Fri Jan 16 17:26:40 2004
-+++ runConfigureICU	Mon Nov 15 11:05:50 2004
-@@ -289,7 +289,7 @@
+--- ./runConfigureICU.orig	2010-08-30 21:24:42.000000000 +0200
++++ ./runConfigureICU	2010-12-08 14:02:08.891252920 +0100
+@@ -277,10 +277,10 @@
+         DEBUG_CXXFLAGS='-g -O0'
+         ;;
      *BSD)
 -        THE_OS="BSD"
-+        THE_OS="$platform"
 -        THE_COMP="the GNU C++"
 -        CC=gcc; export CC
 -        CXX=g++; export CXX
++        THE_OS="$plateform"
 +        CC=${CC:=cc}; export CC
 +        CXX=${CXX:=c++}; export CXX
-+        THE_COMP="`$CC -v | fgrep -i ver`" # works with icc and gcc at least
++        THE_COMP="`$CC -v | fgrep -i ver`"
+         DEBUG_CFLAGS='-g -O0'
+         DEBUG_CXFLAGS='-g -O0'
          ;;
-     QNX)
-@@ -358,12 +358,4 @@
+@@ -327,14 +327,6 @@
+ 
  if test $release -eq 1
  then
 -    if test "$RELEASE_CFLAGS" = ""
@@ -25,3 +29,4 @@
 -    fi
      if test "$RELEASE_CFLAGS" != ""
      then
+         CFLAGS="$CFLAGS $RELEASE_CFLAGS"
