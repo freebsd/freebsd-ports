@@ -7,7 +7,7 @@
 
 PORTNAME=	mod_tsa
 PORTVERSION=	1.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	http://am.nesiac.org/static/ \
   http://ubique.spb.ru/src/
@@ -36,6 +36,8 @@ AP_EXTRAS+=	-DMOD_TSA_VERSION=\\\"mod_tsa/${PORTVERSION}\\\"
 AP_FAST_BUILD=	yes
 AP_GENPLIST=	yes
 SRC_FILE=	mod_tsa.c tsa_util.c
+AP_INC=	${LOCALBASE}/include
+AP_LIB=	${LOCALBASE}/lib
 
 PORTEXAMPLES=	*.sql tsa.conf
 
@@ -45,18 +47,22 @@ PORTEXAMPLES=	*.sql tsa.conf
 USE_MYSQL=	yes
 CONFIGURE_ARGS+=	--enable-mysql=yes
 SRC_FILE+=	db_mysql.c
+AP_INC+=	-I${LOCALBASE}/include/mysql
+AP_LIB+=	-L${LOCALBASE}/lib/mysql -lmysqlclient
 .endif
 
 .if defined(WITH_PGSQL)
 USE_PGSQL=	yes
 CONFIGURE_ARGS+=	--enable-pgsql=yes
 SRC_FILE+=	db_postgresql.c
+AP_LIB+=	-lpq
 .endif
 
 .if defined(WITH_FIREBIRD)
 USE_FIREBIRD=	yes
 CONFIGURE_ARGS+=	--enable-firebird=yes
 SRC_FILE+=	db_firebird.c	
+AP_LIB+=	-lgds
 .endif
 
 .if defined(WITH_DEBUG)
