@@ -613,6 +613,7 @@
 %%WWWDIR%%/claroline/inc/conf/extauth/ganesha.conf.php
 %%WWWDIR%%/claroline/inc/conf/extauth/generic-db.conf.php
 %%WWWDIR%%/claroline/inc/conf/extauth/ldap.conf.php
+%%WWWDIR%%/claroline/inc/conf/extauth/ldap2.conf.php
 %%WWWDIR%%/claroline/inc/conf/extauth/mambo.conf.php
 %%WWWDIR%%/claroline/inc/conf/extauth/moodle.conf.php
 %%WWWDIR%%/claroline/inc/conf/extauth/phpnuke.conf.php
@@ -629,6 +630,8 @@
 %%WWWDIR%%/claroline/inc/lib/admin.lib.inc.php
 %%WWWDIR%%/claroline/inc/lib/auth/authdrivers.lib.php
 %%WWWDIR%%/claroline/inc/lib/auth/authmanager.lib.php
+%%WWWDIR%%/claroline/inc/lib/auth/ldapauthdriver.lib.php
+%%WWWDIR%%/claroline/inc/lib/auth/ldap.lib.php
 %%WWWDIR%%/claroline/inc/lib/backlog.class.php
 %%WWWDIR%%/claroline/inc/lib/claroCourse.class.php
 %%WWWDIR%%/claroline/inc/lib/claro_main.lib.php
@@ -1125,6 +1128,7 @@
 %%WWWDIR%%/claroline/messaging/receivedmessageboxview.inc.php
 %%WWWDIR%%/claroline/messaging/sendmessage.php
 %%WWWDIR%%/claroline/messaging/trashboxcontroler.inc.php
+%%WWWDIR%%/claroline/notification_date.php
 %%WWWDIR%%/claroline/phpbb/admin.php
 %%WWWDIR%%/claroline/phpbb/conf/def/CLFRM.def.conf.inc.php
 %%WWWDIR%%/claroline/phpbb/connector/cllp.linker.cnr.php
