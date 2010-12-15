@@ -1,0 +1,7 @@
+bin/mgridgen
+bin/parmgridgen
+lib/libmgrid.a
+lib/libparmgrid.a
+include/mgridgen.h
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

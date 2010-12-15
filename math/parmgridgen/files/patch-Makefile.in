@@ -1,0 +1,49 @@
+--- Makefile.in.orig	2001-12-05 06:30:33.000000000 +0600
++++ Makefile.in	2010-12-15 09:45:04.000000000 +0600
+@@ -9,17 +9,17 @@
+ PARCC = cc
+ 
+ # What optimization level to use
+-OPTFLAGS = -O3
++OPTFLAGS = 
+ 
+ # What options to be used by the compiler
+-COPTIONS = 
++COPTIONS = ${PTHREAD_CFLAGS}
+ 
+ # Which loader to use
+ LD = cc
+ PARLD = cc
+ 
+ # What options to be used by the loader
+-LDOPTIONS = -O3
++LDOPTIONS = 
+ 
+ # Where to put the executable 
+ BINDIR = ../..
+@@ -29,18 +29,21 @@
+ IMLIBDIR = ../../MGridGen/IMlib
+ 
+ # Include directories for the compiler
+-INCDIR = 
++INCDIR = -I${LOCALBASE}/include \
++	-I${LOCALBASE}/mpi/openmpi/include
+ 
+ # In which directories to look for any additional libraries
+ LIBDIR = -L../.. \
+-         -L/usr/lib32/
++         -L/usr/lib/ \
++         -L/${LOCALBASE}/lib/ \
++         -L/${LOCALBASE}/mpi/openmpi/lib 
+ 
+ # Set some flags
+ DEBUGFLAGS =
+ 
+ # What additional libraries to link the programs with (eg., -lmpi)
+-LIBS = -lmgrid -lm
+-PARLIBS = -lparmgrid -lmgrid -lmpi -lm
++LIBS = -lmgrid -lm -pthread
++PARLIBS = -lparmgrid -lmgrid -lmpi -lm -pthread
+ 
+ 
+ # What archiving to use
