@@ -64,6 +64,9 @@ CUPS_DEVS= cups
 .undef WITH_GS_${D}
 .elif defined(WITH_GS_${D})
 _CUPS_DEVS+= ${D}
+.elif ${OPTIONS_CUPS_DEFAULT} == "on"
+_CUPS_DEVS+= ${D}
+WITH_GS_${D}=yes
 .endif
 .endfor
 
@@ -83,6 +86,9 @@ VGA_DEVS= lvga256 vgalib
 .undef WITH_GS_${D}
 .elif defined(WITH_GS_${D})
 _VGA_DEVS+= ${D}
+.elif ${OPTIONS_SVGALIB_DEFAULT} == "on"
+_VGA_DEVS+= ${D}
+WITH_GS_${D}=yes
 .endif
 .endfor
 
@@ -100,6 +106,9 @@ X11_DEVS= x11 x11alpha x11cmyk x11cmyk2 x11cmyk4 x11cmyk8 x11gray2	\
 . undef WITH_GS_${D}
 .elif defined(WITH_GS_${D})
 _X11_DEVS+= ${D}
+.elif ${OPTIONS_X11_DEFAULT} == "on"
+_X11_DEVS+= ${D}
+WITH_GS_${D}=yes
 .endif
 .endfor
 
@@ -130,6 +139,9 @@ ICONV_DEVS= oprp opvp
 .undef WITH_GS_${D}
 .elif defined(WITH_GS_${D})
 _ICONV_DEVS+= ${D}
+.elif ${OPTIONS_ICONV_DEFAULT} == "on"
+_ICONV_DEVS+= ${D}
+WITH_GS_${D}=yes
 .endif
 .endfor
 
