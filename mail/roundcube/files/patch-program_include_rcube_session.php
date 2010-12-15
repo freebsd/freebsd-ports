@@ -1,6 +1,6 @@
---- program/include/rcube_session.php.orig	2010-04-26 14:50:34.000000000 +0200
-+++ program/include/rcube_session.php	2010-04-26 15:02:46.000000000 +0200
-@@ -25,7 +25,6 @@
+--- program/include/rcube_session.php.orig	2010-11-27 14:59:05.000000000 +0100
++++ program/include/rcube_session.php	2010-12-13 17:50:47.000000000 +0100
+@@ -32,7 +32,6 @@
    private $db;
    private $ip;
    private $changed;
@@ -8,43 +8,60 @@
    private $gc_handlers = array();
    private $start;
    private $vars = false;
-@@ -100,13 +99,6 @@
+@@ -82,7 +81,7 @@
+     if ($sql_arr = $this->db->fetch_assoc($sql_result)) {
+       $this->changed = $sql_arr['changed'];
+       $this->ip      = $sql_arr['ip'];
+-      $this->vars    = base64_decode($sql_arr['vars']);
++      $this->vars    = $sql_arr['vars'];
+       $this->key     = $key;
+ 
+       if (!empty($this->vars))
+@@ -107,17 +106,6 @@
      }
-     
+ 
      if ($oldvars !== false) {
--      $a_oldvars = $this->unserialize($oldvars); 
--      foreach ((array)$this->unsets as $k)
--        unset($a_oldvars[$k]);
+-      $a_oldvars = $this->unserialize($oldvars);
+-      if (is_array($a_oldvars)) {
+-        foreach ((array)$this->unsets as $k)
+-          unset($a_oldvars[$k]);
 -
--      $newvars = $this->serialize(array_merge(
--        (array)$a_oldvars, (array)$this->unserialize($vars)));
+-        $newvars = $this->serialize(array_merge(
+-          (array)$a_oldvars, (array)$this->unserialize($vars)));
+-      }
+-      else
+-        $newvars = $vars;
 -
-       if ($this->keep_alive>0) {
- 	$timeout = min($this->lifetime * 0.5, 
- 		       $this->lifetime - $this->keep_alive);
-@@ -114,11 +106,11 @@
- 	$timeout = 0;
+       if (!$this->lifetime) {
+         $timeout = 600;
+       }
+@@ -127,11 +115,11 @@
+         $timeout = 0;
        }
  
 -      if (!($newvars === $oldvars) || ($ts - $this->changed > $timeout)) {
 +      if (!($vars === $oldvars) || ($ts - $this->changed > $timeout)) {
          $this->db->query(
- 	  sprintf("UPDATE %s SET vars = ?, changed = %s WHERE sess_id = ?",
- 	    get_table_name('session'), $now),
--	  $newvars, $key);
-+	  $vars, $key);
+           sprintf("UPDATE %s SET vars = ?, changed = %s WHERE sess_id = ?",
+             get_table_name('session'), $now),
+-          base64_encode($newvars), $key);
++          $vars, $key);
        }
      }
      else {
-@@ -129,7 +121,6 @@
-         $key, $vars, (string)$_SERVER['REMOTE_ADDR']);
+@@ -139,10 +127,9 @@
+         sprintf("INSERT INTO %s (sess_id, vars, ip, created, changed) ".
+           "VALUES (?, ?, ?, %s, %s)",
+           get_table_name('session'), $now, $now),
+-        $key, base64_encode($vars), (string)$_SERVER['REMOTE_ADDR']);
++        $key, $vars, (string)$_SERVER['REMOTE_ADDR']);
      }
  
 -    $this->unsets = array();
      return true;
    }
  
-@@ -199,112 +190,12 @@
+@@ -212,112 +199,12 @@
      if (empty($var))
        return $this->destroy(session_id());
  

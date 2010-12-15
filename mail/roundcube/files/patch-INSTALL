@@ -1,0 +1,10 @@
+--- INSTALL.orig	2010-12-13 17:37:36.000000000 +0100
++++ INSTALL	2010-12-13 17:37:44.000000000 +0100
+@@ -25,7 +25,6 @@
+    - file_uploads enabled (for attachment upload features)
+    - session.auto_start disabled
+    - zend.ze1_compatibility_mode disabled
+-   - suhosin.session.encrypt disabled
+    - mbstring.func_overload disabled
+ * PHP compiled with OpenSSL to connect to IMAPS and to use the spell checker
+ * A MySQL (4.0.8 or newer), PostgreSQL, MSSQL database engine
