@@ -67,6 +67,13 @@ USE_GNOME=	gtk20
 USE_KDE4=	kdelibs
 .endif
 
+.if defined(WITH_GTK) || defined(WITH_KDE4)
+USE_GNOME+=	desktopfileutils
+PLIST_SUB+=	MIME=""
+.else
+PLIST_SUB+=	MIME="@comment "
+.endif
+
 .include <bsd.port.pre.mk>
 
 ONLY_FOR_ARCHS=	i386 amd64

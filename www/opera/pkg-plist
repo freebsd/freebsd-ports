@@ -44,6 +44,8 @@ share/icons/hicolor/scalable/apps/opera-browser.svg
 share/icons/hicolor/scalable/apps/opera-widget-manager.svg
 share/icons/hicolor/scalable/apps/opera-widget.svg
 share/icons/hicolor/scalable/mimetypes/opera-unite-application.svg
+%%MIME%%share/mime/application/x-opera-uniteapplication.xml
+%%MIME%%share/mime/application/x-opera-widgets.xml
 share/mime/packages/opera-unite-application.xml
 share/mime/packages/opera-widget.xml
 %%DATADIR%%/defaults/bookmarks.adr
