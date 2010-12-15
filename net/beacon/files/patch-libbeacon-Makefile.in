@@ -1,0 +1,11 @@
+--- libbeacon/Makefile.in.orig	2010-07-30 17:13:05.000000000 -0700
++++ libbeacon/Makefile.in	2010-07-30 17:13:12.000000000 -0700
+@@ -45,7 +45,7 @@
+ AWK = @AWK@
+ CC = @CC@
+ CCDEPMODE = @CCDEPMODE@
+-CFLAGS = @CFLAGS@
++CFLAGS = @CFLAGS@ -fPIC
+ CPP = @CPP@
+ CPPFLAGS = @CPPFLAGS@
+ CYGPATH_W = @CYGPATH_W@
