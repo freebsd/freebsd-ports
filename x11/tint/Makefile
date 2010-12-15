@@ -38,8 +38,9 @@ PORTDOCS=	AUTHORS ChangeLog README
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_PYCONF)
+.if !defined(WITHOUT_PYCONF)
 USE_PYTHON=	yes
+USE_GNOME=	gtk20
 CMAKE_ARGS+=	-DENABLE_TINT2CONF:BOOL=ON
 PLIST_FILES+=	bin/tint2conf bin/tintwizard.py \
 		share/applications/tint2conf.desktop \
@@ -50,7 +51,7 @@ PYCONF_SRC=	${WRKSRC}/src/tint2conf
 CMAKE_ARGS+=	-DENABLE_TINT2CONF:BOOL=OFF
 .endif
 
-.if defined(WITH_PYCONF)
+.if !defined(WITHOUT_PYCONF)
 post-patch:
 	@${MV} ${PYCONF_SRC}/tintwizard.py ${PYCONF_SRC}/tintwizard.py.Dist
 	@${SED} -e 's#pidof#pgrep#g' ${PYCONF_SRC}/tintwizard.py.Dist \
