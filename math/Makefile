@@ -425,6 +425,7 @@
     SUBDIR += p5-bignum
     SUBDIR += pari
     SUBDIR += parmetis
+    SUBDIR += parmgridgen
     SUBDIR += pear-Math_Combinatorics
     SUBDIR += pecl-big_int
     SUBDIR += pecl-bitset
