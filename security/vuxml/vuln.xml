@@ -34,6 +34,40 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="d560b346-08a2-11e0-bcca-0050568452ac">
+    <topic>YUI JavaScript library -- JavaScript injection exploits in Flash components</topic>
+    <affects>
+      <package>
+	<name>yahoo-ui</name>
+	<range><lt>2.8.2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The YUI team reports:</p>
+	<blockquote cite="http://yuilibrary.com/support/2.8.2/">
+	  <p>A security-related defect was introduced in the YUI 2 Flash
+	    component infrastructure beginning with the YUI 2.4.0 release.
+	    This defect allows JavaScript injection exploits to be created
+	    against domains that host affected YUI .swf files.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2010-4207</cvename>
+      <cvename>CVE-2010-4208</cvename>
+      <cvename>CVE-2010-4209</cvename>
+      <url>http://www.yuiblog.com/blog/2010/10/25/yui-2-8-2-security-update/</url>
+      <url>http://secunia.com/advisories/41955</url>
+      <url>http://www.openwall.com/lists/oss-security/2010/11/07/1</url>
+      <url>http://yuilibrary.com/support/2.8.2/</url>
+    </references>
+    <dates>
+      <discovery>2010-10-25</discovery>
+      <entry>2010-12-15</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="b2a6fc0e-070f-11e0-a6e9-00215c6a37bb">
     <topic>php -- multiple vulnerabilities</topic>
     <affects>
