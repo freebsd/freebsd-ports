@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	iroffer
-PORTVERSION=	3.24
+PORTVERSION=	3.25
 CATEGORIES=	irc
 MASTER_SITES=	http://iroffer.dinoex.net/
 PKGNAMESUFFIX=	-dinoex${PKGNAMESUFFIX2}
@@ -35,15 +35,15 @@ OPTIONS=	CURL	"build ftp/http support"	on \
 LIB_DEPENDS+=	curl:${PORTSDIR}/ftp/curl
 CONFIGURE_ARGS+=	-curl
 .endif
-.if defined(WITH_GEOIP)
+.if !defined(WITHOUT_GEOIP)
 LIB_DEPENDS+=	GeoIP:${PORTSDIR}/net/GeoIP
 CONFIGURE_ARGS+=	-geoip
 .endif
-.if defined(WITH_UPNP)
+.if !defined(WITHOUT_UPNP)
 LIB_DEPENDS+=	miniupnpc.4:${PORTSDIR}/net/miniupnpc
 CONFIGURE_ARGS+=	-upnp
 .endif
-.if defined(WITH_RUBY)
+.if !defined(WITHOUT_RUBY)
 USE_RUBY=	yes
 CONFIGURE_ARGS+=	-ruby
 .include "${PORTSDIR}/Mk/bsd.ruby.mk"
@@ -59,12 +59,17 @@ post-build:
 	@cd ${WRKSRC} && ./Lang it
 	@cd ${WRKSRC} && ${MAKE}
 	${MV} ${WRKSRC}/iroffer ${WRKSRC}/it-iroffer
+	${RM} -rf ${WRKSRC}/obj
+	@cd ${WRKSRC} && ./Lang fr
+	@cd ${WRKSRC} && ${MAKE}
+	${MV} ${WRKSRC}/iroffer ${WRKSRC}/fr-iroffer
 	${MV} ${WRKSRC}/en-iroffer ${WRKSRC}/iroffer
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/iroffer ${PREFIX}/bin/
 	${INSTALL_PROGRAM} ${WRKSRC}/de-iroffer ${PREFIX}/bin/
 	${INSTALL_PROGRAM} ${WRKSRC}/it-iroffer ${PREFIX}/bin/
+	${INSTALL_PROGRAM} ${WRKSRC}/fr-iroffer ${PREFIX}/bin/
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README-iroffer.txt ${DOCSDIR}/
@@ -76,12 +81,14 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/help-admin-en.txt ${DOCSDIR}/
 	${INSTALL_DATA} ${WRKSRC}/help-admin-de.txt ${DOCSDIR}/
 	${INSTALL_DATA} ${WRKSRC}/help-admin-it.txt ${DOCSDIR}/
+	${INSTALL_DATA} ${WRKSRC}/help-admin-fr.txt ${DOCSDIR}/
 .endif
 .if !defined(NOPORTEXAMPLES)
 	${MKDIR} ${EXAMPLESDIR}/htdocs
 	${INSTALL_DATA} ${WRKSRC}/iroffer.cron ${EXAMPLESDIR}/
 	${INSTALL_DATA} ${WRKSRC}/sample.config ${EXAMPLESDIR}/
 	${INSTALL_DATA} ${WRKSRC}/beispiel.config ${EXAMPLESDIR}/
+	${INSTALL_DATA} ${WRKSRC}/exemple.config ${EXAMPLESDIR}/
 	${INSTALL_DATA} ${WRKSRC}/header.html ${EXAMPLESDIR}/
 	${INSTALL_DATA} ${WRKSRC}/footer.html ${EXAMPLESDIR}/
 	${INSTALL_DATA} ${WRKSRC}/ruby-sample.rb ${EXAMPLESDIR}/
