@@ -5,6 +5,24 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20101214:
+  AFFECTS: users of devel/icu
+  AUTHOR: bapt@FreeBSD.org
+
+  icu has been updated to version 4.6. Please rebuild all ports that depends
+  on it.
+
+  If you use portmaster: 
+  # portmaster -r icu
+
+  If you use portupgrade:
+  # portupgrade -fr devel/icu
+
+  Note that devel/icu4 is now deprecated consider replacing it by devel/icu
+  # portmaster -o devel/icu devel/icu4
+  or
+  # env DISABLE_CONFLICTS=1 portupgrade -o devel/icu -f icu-4\*
+  
 20101211:
   AFFECTS: users of devel/bugzilla, japanese/bugzilla and russian/bugzilla-ru
   AUTHOR: tota@FreeBSD.org
