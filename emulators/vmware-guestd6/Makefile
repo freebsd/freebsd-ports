@@ -25,9 +25,7 @@ IGNOREFILES=	${DISTFILES}
 WRKSRC=		${WRKDIR}/vmware-tools-distrib
 
 ONLY_FOR_ARCHS=	i386 amd64
-.if !defined(BATCH)
 IS_INTERACTIVE=	yes
-.endif
 
 RESTRICTED=	"Not sure if we can redistribute this."
 NO_PACKAGE=	${RESTRICTED}

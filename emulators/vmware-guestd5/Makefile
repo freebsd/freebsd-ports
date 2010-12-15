@@ -27,9 +27,7 @@ IGNOREFILES=	${DISTFILES}
 WRKSRC=		${WRKDIR}/vmware-tools-distrib
 
 ONLY_FOR_ARCHS=	i386 amd64
-.if !defined(BATCH)
 IS_INTERACTIVE=	yes
-.endif
 .if defined(VMWARE_X_PORTS)
 USE_XORG=	x11
 NO_BUILD=	yes
