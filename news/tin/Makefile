@@ -7,7 +7,7 @@
 
 PORTNAME=	tin
 PORTVERSION=	1.8.3
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES+=	news ipv6
 MASTER_SITES=	ftp://ftp.tin.org/pub/news/clients/tin/stable/ \
 		ftp://ftp.sunet.se/pub/news/readers/tin/stable/ \

@@ -8,7 +8,7 @@
 
 PORTNAME=	maia
 PORTVERSION=	1.0.2a
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	security
 MASTER_SITES=	http://www.purplehat.org/downloads/maia/
 

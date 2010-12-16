@@ -7,6 +7,7 @@
 
 PORTNAME=	isbg
 PORTVERSION=	0.99
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://cloud.github.com/downloads/ook/isbg/ \
 		http://home.bluelife.at/ports/distfiles/

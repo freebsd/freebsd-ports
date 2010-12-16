@@ -7,7 +7,7 @@
 
 PORTNAME=	bazaar
 PORTVERSION=	1.4.2
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	devel
 MASTER_SITES=	http://bazaar-vcs.org/releases/src/obsolete/
 DISTNAME=	bazaar_${PORTVERSION}

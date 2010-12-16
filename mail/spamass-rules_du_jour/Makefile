@@ -7,7 +7,7 @@
 
 PORTNAME=	rules_du_jour
 PORTVERSION=	1.29b
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	mail
 MASTER_SITES=	http://www.ranner.jawa.at/stuff/
 PKGNAMEPREFIX=	spamass-

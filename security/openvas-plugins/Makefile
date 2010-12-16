@@ -7,7 +7,7 @@
 
 PORTNAME=	openvas-plugins
 PORTVERSION=	1.0.7
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security
 MASTER_SITES=	http://wald.intevation.org/frs/download.php/588/
 

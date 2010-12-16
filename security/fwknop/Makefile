@@ -8,7 +8,7 @@
 
 PORTNAME=	fwknop
 PORTVERSION=	1.8.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security
 MASTER_SITES=	http://www.cipherdyne.org/fwknop/download/
 

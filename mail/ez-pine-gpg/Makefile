@@ -6,6 +6,7 @@
 
 PORTNAME=	ez-pine-gpg
 DISTVERSION=	0.4h
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://business-php.com/opensource/ez-pine-gpg/
 DISTNAME=	${PORTNAME}_v${DISTVERSION}
