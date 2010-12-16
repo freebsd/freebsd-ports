@@ -5,6 +5,21 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20101216:
+  AFFECTS: users of databases/akonadi
+  AUTHOR: avilla@FreeBSD.org
+
+  With SQLite 3 installed, Akonadi used to build its plugin and
+  install it in a wrong place, without it being listed in plist. To
+  remove the orphaned file, run the following commands PRIOR TO the
+  Akonadi upgrade:
+
+  # cd /usr/ports/databases/akonadi
+  # rm `make -V KDE4_PREFIX`/`make -V QT_PLUGINDIR_REL`/sqldrivers/libqsqlite3.so
+  # rmdir `make -V KDE4_PREFIX`/`make -V QT_PLUGINDIR_REL`/sqldrivers \
+    `make -V KDE4_PREFIX`/`make -V QT_PLUGINDIR_REL` \
+    `make -V KDE4_PREFIX`/`make -V QT_LIBDIR_REL`
+
 20101214:
   AFFECTS: users of devel/icu
   AUTHOR: bapt@FreeBSD.org
