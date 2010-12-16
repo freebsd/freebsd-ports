@@ -1,0 +1,105 @@
+.\" -*- coding: us-ascii -*-
+.if \n(.g .ds T< \\FC
+.if \n(.g .ds T> \\F[\n[.fam]]
+.de URL
+\\$2 \(la\\$1\(ra\\$3
+..
+.if \n(.g .mso www.tmac
+.TH parallel 1 2009-07-02 "" ""
+.SH NAME
+parallel \- run programs in parallel
+.SH SYNOPSIS
+'nh
+.fi
+.ad l
+\fBparallel\fR \kx
+.if (\nx>(\n(.l/2)) .nr x (\n(.l/5)
+'in \n(.iu+\nxu
+[options] [command] \fB--\fR [argument ...]
+'in \n(.iu-\nxu
+.ad b
+'hy
+'nh
+.fi
+.ad l
+\fBparallel\fR \kx
+.if (\nx>(\n(.l/2)) .nr x (\n(.l/5)
+'in \n(.iu+\nxu
+[options] \fB--\fR [command ...]
+'in \n(.iu-\nxu
+.ad b
+'hy
+.SH DESCRIPTION
+\fBparallel\fR runs the specified command,
+passing it a single one of the specified arguments. This is
+repeated for each argument. Jobs may be run in
+parallel. The default is to run one job per CPU.
+.PP
+If no command is specified before the --,
+the commands after it are instead run in parallel.
+.SH OPTIONS
+.TP 
+\*(T<\fB\-j maxjobs\fR\*(T>
+Use to limit the number of jobs
+that are run at the same time.
+.TP 
+\*(T<\fB\-l maxload\fR\*(T>
+Avoid starting new jobs when
+the system's load average is not below
+the specified limit.
+.TP 
+\*(T<\fB\-i\fR\*(T>
+Normally the command is passed the
+argument at the end of its command line. With
+this option, the first instance of "{}" in
+the command is replaced with the argument.
+.TP 
+\*(T<\fB\-n\fR\*(T>
+Number of arguments to pass to a
+command at a time. Default is 1.
+Incompatible with -i
+.SH EXAMPLE
+'nh
+.fi
+.ad l
+\fBparallel sh -c "echo hi; sleep 2; echo bye" -- 1 2 3\fR \kx
+.if (\nx>(\n(.l/2)) .nr x (\n(.l/5)
+'in \n(.iu+\nxu
+'in \n(.iu-\nxu
+.ad b
+'hy
+.PP
+This runs three subshells that each print a message, delay,
+and print another message. If your system has multiple
+CPUs, parallel will run some of the jobs in parallel,
+which should be clear from the order the messages are
+output.
+.PP
+'nh
+.fi
+.ad l
+\fBparallel -j 3 ufraw -o processed -- *.NEF\fR \kx
+.if (\nx>(\n(.l/2)) .nr x (\n(.l/5)
+'in \n(.iu+\nxu
+'in \n(.iu-\nxu
+.ad b
+'hy
+.PP
+This runs three ufraw processes at the same time until
+all of the NEF files have been processed.
+.PP
+'nh
+.fi
+.ad l
+\fBparallel -j 3 -- ls df "echo hi"\fR \kx
+.if (\nx>(\n(.l/2)) .nr x (\n(.l/5)
+'in \n(.iu+\nxu
+'in \n(.iu-\nxu
+.ad b
+'hy
+.PP
+This runs three independent commands in parallel.
+.SH "EXIT STATUS"
+Its exit status is the combination of the exit statuses of each
+command ran, ORed together. (Thus, if any one command
+exits nonzero, \fBparallel\fR as a whole will exit nonzero.)

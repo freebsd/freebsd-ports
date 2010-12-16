@@ -1,0 +1,10 @@
+The 'parallel' utility from the moreutils suite. Runs multiple jobs
+at once.
+
+Made available as a seperate port so the rest of the suite can be
+installed without conflicting with sysutils/parallel.
+
+moreutils is a growing collection of the unix tools that nobody
+thought to write thirty years ago.
+
+WWW: http://kitenet.net/~joey/code/moreutils/
