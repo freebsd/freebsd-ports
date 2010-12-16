@@ -38,7 +38,7 @@ CONFIGURE_ARGS+=--with-external-db
 .include <bsd.port.options.mk>
 
 .if ${OSVERSION} < 800505 || (${OSVERSION} >= 900000 && ${OSVERSION} < 900012)
-LIB_DEPENDS+=   lzma.0:${PORTSDIR}/archivers/xz
+LIB_DEPENDS+=   lzma.5:${PORTSDIR}/archivers/xz
 .endif
 
 .ifndef	WITHOUT_PYTHON
