@@ -65,7 +65,7 @@ do-install:
 	${INSTALL_MAN} ${WRKSRC}/doc/tint2.1 ${MANPREFIX}/man/man1
 .if defined(WITH_PYCONF)
 	${INSTALL_PROGRAM} ${PYCONF_SRC}/tint2conf ${PREFIX}/bin
-	${INSTALL_PROGRAM} ${PYCONF_SRC}/tintwizard.py ${PREFIX}/bin
+	${INSTALL_SCRIPT} ${PYCONF_SRC}/tintwizard.py ${PREFIX}/bin
 	${MKDIR} ${PREFIX}/share/applications
 	${INSTALL_DATA} ${PYCONF_SRC}/tint2conf.desktop ${PREFIX}/share/applications
 	${INSTALL_DATA} ${PYCONF_SRC}/tint2conf.png ${PREFIX}/share/pixmaps
