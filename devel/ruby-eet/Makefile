@@ -15,7 +15,7 @@ DISTNAME=	ruby-eet-${PORTVERSION}
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Ruby support for reading and writing EET files
 
-LIB_DEPENDS=	eet.9:${PORTSDIR}/devel/eet
+LIB_DEPENDS=	eet.5:${PORTSDIR}/devel/eet
 
 USE_RUBY=	yes
 USE_RAKE=	yes
