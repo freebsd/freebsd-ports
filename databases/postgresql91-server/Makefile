@@ -97,27 +97,18 @@ OPTIONS+=	DEBUG "Builds with debugging symbols" off
 OPTIONS+=	GSSAPI "BUild with GSSAPI support" on
 
 # See http://people.freebsd.org/~girgen/postgresql-icu/README.html for more info
-OPTIONS+=	ICU	"Use ICU 4.6 for unicode collation (server)" off
-OPTIONS+=	ICU4	"Use ICU 4.4 for unicode collation (server)" off
+OPTIONS+=	ICU	"Use ICU for unicode collation (server)" off
 
 # See http://www.freebsd.org/cgi/query-pr.cgi?pr=ports/76999 for more info
 # (requires dump/restore if modified.)
 OPTIONS+=	INTDATE "Builds with 64-bit date/time type (server)" on
 
-.  if defined(WITH_ICU) && defined(WITH_ICU4)
-IGNORE=		options WITH_ICU and WITH_ICU4 are mutually exclusive
-.  endif
-
-.  if (defined(SERVER_ONLY) && (defined(WITH_ICU) || defined(WITH_ICU4))) || make(makesum)
+.  if (defined(SERVER_ONLY) && defined(WITH_ICU)) || make(makesum)
 USE_AUTOTOOLS=	autoconf
 CONFIGURE_ARGS+=--with-icu
 PATCH_SITES+=	http://people.freebsd.org/~girgen/postgresql-icu/:icu
 PATCHFILES+=	pg-900-icu-2010-09-19.diff.gz:icu
-.   if defined(WITH_ICU4)
-LIB_DEPENDS+=	icudata.44:${PORTSDIR}/devel/icu4
-.   else
 LIB_DEPENDS+=	icudata.46:${PORTSDIR}/devel/icu
-.   endif
 .  endif
 
 PATCH_DIST_STRIP=-p1
@@ -325,9 +316,10 @@ pre-su-install:
 .if !defined(NO_BUILD)
 post-patch:
 	@${REINPLACE_CMD} s/@PTHREAD_LIBS@// ${WRKSRC}/src/Makefile.global.in
-.  if defined(WITH_ICU) || defined(WITH_ICU4)
+.  if defined(WITH_ICU)
 	@${REINPLACE_CMD} -E -e \
 		"s|^(m4_if.*)2.6[0-9](.*Autoconf version )2.6[0-9]|\1${AUTOCONF_VERSION}\2${AUTOCONF_VERSION}|g" \
+		-e "s|_44|_46|g" \
 		${WRKSRC}/configure.in
 .  endif
 

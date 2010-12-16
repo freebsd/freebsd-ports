@@ -7,7 +7,7 @@
 
 PORTNAME=	icu
 PORTVERSION=	1.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel python
 MASTER_SITES=	${MASTER_SITE_CHEESESHOP}
 MASTER_SITE_SUBDIR=	source/P/PyICU
@@ -28,14 +28,6 @@ MAKE_ENV+= \
 	PYICU_LFLAGS="-L${PREFIX}/lib" \
 	PYICU_LIBRARIES="icui18n:icuuc:icudata"
 
-OPTIONS=		ICU4		"Use ICU 4.x instead of 4.6"	off
-
-.include <bsd.port.pre.mk>
-
-.if defined(WITH_ICU4) || exists(${LOCALBASE}/lib/libicudata.so.44)
-LIB_DEPENDS+=	icudata:${PORTSDIR}/devel/icu4
-.else
 LIB_DEPENDS+=	icudata:${PORTSDIR}/devel/icu
-.endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

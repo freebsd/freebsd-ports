@@ -8,7 +8,7 @@
 
 PORTNAME=	webkit
 PORTVERSION=	1.2.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	http://webkitgtk.org/
 PKGNAMESUFFIX=	-gtk2
@@ -21,7 +21,8 @@ BUILD_DEPENDS=	${LOCALBASE}/bin/flex:${PORTSDIR}/textproc/flex \
 LIB_DEPENDS=	enchant.1:${PORTSDIR}/textproc/enchant \
 		curl.6:${PORTSDIR}/ftp/curl \
 		sqlite3.8:${PORTSDIR}/databases/sqlite3 \
-		soup-2.4.1:${PORTSDIR}/devel/libsoup
+		soup-2.4.1:${PORTSDIR}/devel/libsoup \
+		icutu.46:${PORTSDIR}/devel/icu
 
 USE_GETTEXT=	yes
 WANT_GSTREAMER=	yes
@@ -52,13 +53,6 @@ OPTIONS=	VIDEO "Enable video support" on \
 		STATIC "Enable building static library" off
 
 .include <bsd.port.pre.mk>
-
-.if exists (${LOCALBASE}/lib/libicutu.so.44)
-LIB_DEPENDS+=	icutu.44:${PORTSDIR}/devel/icu4
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-WebCore_platform_text_TextBreakIterator.h
-.else
-LIB_DEPENDS+=	icutu.46:${PORTSDIR}/devel/icu
-.endif
 
 .if defined(WITH_VIDEO)
 USE_GSTREAMER+=	yes
