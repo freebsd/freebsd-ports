@@ -7,6 +7,7 @@
 
 PORTNAME=	parallel
 PORTVERSION=	20101202
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	GNU
 
@@ -15,7 +16,7 @@ COMMENT=	GNU parallel is a shell tool for executing jobs in parallel
 
 LICENSE=	GPLv3
 
-CONFLICTS=	moreutils-[0-9]*
+CONFLICTS=	moreutils-parallel-[0-9]*
 
 CONFIGURE_ARGS=	--docdir="${DOCSDIR}"
 GNU_CONFIGURE=	yes
