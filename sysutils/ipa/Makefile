@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ipa
-PORTVERSION=	2.0.7
+PORTVERSION=	2.0.8
 CATEGORIES=	sysutils
 MASTER_SITES=	SF/ipa-system
 
@@ -22,12 +22,9 @@ OPTIONS=	AUTORULES "Enable dynamic rules support" on \
 		LIMITS "Enable limits support" on \
 		SUBLIMITS "Enable sublimits support" on \
 		THRESHOLDS "Enable thresholds support" on \
-		CTL_CREDS "Enable ipactl's messages credentials" off \
-		MEMFUNC_DEBUG "Enable ipa_memfunc debugging" off \
-		DEBUG_INFO "Produce debugging information" off \
-		MAN_KOI8_R "Install Russian manual pages" off
+		CTL_CREDS "Enable ipactl's messages credentials" off
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if defined(WITHOUT_AUTORULES)
 CONFIGURE_ARGS+=	--disable-autorules
@@ -53,28 +50,14 @@ CONFIGURE_ARGS+=	--disable-thresholds
 CONFIGURE_ARGS+=	--enable-ctl-creds
 .endif
 
-.if defined(WITH_MEMFUNC_DEBUG)
-CONFIGURE_ARGS+=	--enable-memfunc-debug
-.endif
-
-.if defined(WITH_DEBUG_INFO)
-STRIP=		# empty
-CFLAGS+=	-g
-.endif
-
 MAN3=		ipa_mod.3
 MAN5=		ipa.conf.5 ipastat.conf.5
 MAN8=		ipa.8 ipactl.8 ipastat.8
-MANLANG=	""
-.if defined(WITH_MAN_KOI8_R)
-MANLANG+=	ru.KOI8-R
-.endif
+MANLANG=	"" ru.KOI8-R
 
 do-install:
 	cd ${WRKSRC}/src && ${MAKE} install
 	cd ${WRKSRC}/man && ${MAKE} install-am
-.if defined(WITH_MAN_KOI8_R)
 	cd ${WRKSRC}/man/ru.KOI8-R && ${MAKE} install
-.endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
