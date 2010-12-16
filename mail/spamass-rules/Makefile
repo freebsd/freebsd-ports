@@ -7,6 +7,7 @@
 
 PORTNAME=	spamass-rules
 PORTVERSION=	20101112
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://www.ranner.eu/stuff/
 

@@ -7,6 +7,7 @@
 
 PORTNAME=	knights
 PORTVERSION=	2.0
+PORTREVISION=	1
 CATEGORIES=	games kde
 MASTER_SITES=   http://www.kde-look.org/CONTENT/content-files/
 DISTNAME=       122046-${PORTNAME}-${PORTVERSION}-src

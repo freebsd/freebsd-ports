@@ -6,7 +6,7 @@
 #
 
 PORTVERSION=	0.96.0
-PORTREVISION=	1
+PORTREVISION=	2
 
 COMMENT=	A GnuPG extension for the Seamonkey mail client
 
