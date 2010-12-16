@@ -294,6 +294,7 @@
     SUBDIR += habari
     SUBDIR += harvest
     SUBDIR += hastymail
+    SUBDIR += hastymail2
     SUBDIR += havp
     SUBDIR += helixplugin
     SUBDIR += helma
