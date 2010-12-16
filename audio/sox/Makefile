@@ -32,7 +32,8 @@ _LAME=	off
 _LAME=	on
 .endif
 
-OPTIONS=	AO "Enable libao output" on \
+OPTIONS=	ALSA "ALSA output driver" off \
+		AO "Enable libao output" on \
 		AMRNB "AMR Speech Codec (Narrowband)" off \
 		AMRWB "AMR Speech Codec (Wideband)" off \
 		FFMPEG "Enable ffmpeg en/decoding" on \
@@ -54,6 +55,14 @@ LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS+=	--with-pkgconfigdir="${PREFIX}/libdata/pkgconfig"
 CONFIGURE_ARGS+=	--with-distro="${CONFIGURE_TARGET} ${PKGNAME}"
+
+.if defined(WITH_ALSA)
+LIB_DEPENDS+=		asound.2:${PORTSDIR}/audio/alsa-lib
+RUN_DEPENDS+=		${LOCALBASE}/lib/alsa-lib/libasound_module_pcm_oss.so:${PORTSDIR}/audio/alsa-plugins
+CONFIGURE_ARGS+=	--with-alsa
+.else
+CONFIGURE_ARGS+=	--without-alsa
+.endif
 
 .if defined(WITH_AO)
 CONFIGURE_ARGS+=	--with-ao
