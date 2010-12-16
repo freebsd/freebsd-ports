@@ -49,8 +49,7 @@ OPTIONS=	GTK "GTK+ GUI" on \
 		VPX "VP8 decoding" on \
 		XVID "Xvid video" on \
 		SDL "SDL audio/video framework" on \
-		AMRNB "3GPP AMR Speech Codec" on \
-		AMRWB "3GPP AMR-WB Speech Codec" on \
+		AMR "OpenCORE AMR 3GPP Speech Codecs" on \
 		VORBIS "OGG/Vorbis audio support" on \
 		NLS "Native languages support" on
 
@@ -60,8 +59,7 @@ OPTIONS=	GTK "GTK+ GUI" on \
 .if defined(PACKAGE_BUILDING)
 WITHOUT_LAME=	yes
 WITHOUT_FAAC=	yes
-WITHOUT_AMRNB=	yes
-WITHOUT_AMRWB=	yes
+WITHOUT_AMR=	yes
 .endif
 
 # for libexecinfo: (so that __builtin_frame_address() finds the top
@@ -202,19 +200,14 @@ LIB_DEPENDS+=	vorbis.4:${PORTSDIR}/audio/libvorbis
 PLIST_SUB+=	VORBIS=""
 .endif
 
-.if defined(WITHOUT_AMRNB)
+.if defined(WITHOUT_AMR)
 CMAKE_ARGS+=	-DOPENCORE_AMRNB:BOOL=OFF
 PLIST_SUB+=	AMRNB="@comment "
-.else
-LIB_DEPENDS+=	amrnb.3:${PORTSDIR}/audio/libamrnb
-PLIST_SUB+=	AMRNB=""
-.endif
-
-.if defined(WITHOUT_AMRWB)
 CMAKE_ARGS+=	-DOPENCORE_AMRWB:BOOL=OFF
 PLIST_SUB+=	AMRWB="@comment "
 .else
-LIB_DEPENDS+=	amrnb.3:${PORTSDIR}/audio/libamrwb
+LIB_DEPENDS+=	opencore-amrnb.0:${PORTSDIR}/audio/opencore-amr
+PLIST_SUB+=	AMRNB=""
 PLIST_SUB+=	AMRWB=""
 .endif
 
