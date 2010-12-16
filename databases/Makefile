@@ -160,6 +160,7 @@
     SUBDIR += libgdamm
     SUBDIR += libgnomedb
     SUBDIR += libgnomedb-reference
+    SUBDIR += libhsclient
     SUBDIR += libiodbc
     SUBDIR += libmemcache
     SUBDIR += libmemcached

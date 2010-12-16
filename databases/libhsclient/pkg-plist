@@ -1,0 +1,19 @@
+@comment $FreeBSD$
+include/handlersocket/allocator.hpp
+include/handlersocket/config.hpp
+include/handlersocket/mutex.hpp
+include/handlersocket/string_util.hpp
+include/handlersocket/auto_addrinfo.hpp
+include/handlersocket/escape.hpp
+include/handlersocket/socket.hpp
+include/handlersocket/thread.hpp
+include/handlersocket/auto_file.hpp
+include/handlersocket/fatal.hpp
+include/handlersocket/string_buffer.hpp
+include/handlersocket/util.hpp
+include/handlersocket/auto_ptrcontainer.hpp
+include/handlersocket/hstcpcli.hpp
+include/handlersocket/string_ref.hpp
+lib/libhsclient.la
+lib/libhsclient.a
+@dirrmtry include/handlersocket
