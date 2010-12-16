@@ -26,15 +26,13 @@ CFLAGS+=	-fPIC
 
 .include <bsd.port.pre.mk>
 
-.if !defined(SLAVE_PORT)
-MAN3=		miniupnpc.3
-.endif
-
 .if defined(WITH_DEBUG)
 CFLAGS+=	-DDEBUG
 .endif
 
-.if !defined(SLAVE_PORT)
+.if ${SLAVE_PORT} == no
+MAN3=		miniupnpc.3
+
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/man3/miniupnpc.3 ${PREFIX}/man/man3/
 .endif
