@@ -24,6 +24,8 @@ LATEST_LINK=	rsyslog5-devel-${MNAME}
 LATEST_LINK=	rsyslog5-devel
 .endif
 
+PORTSCOUT=	limit:^5.7
+
 CONFLICTS=	rsyslog-devel-[!5].[!7].[0-9]*
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib

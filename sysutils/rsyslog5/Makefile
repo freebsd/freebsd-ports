@@ -24,6 +24,8 @@ LATEST_LINK=	rsyslog5-${MNAME}
 LATEST_LINK=	rsyslog5
 .endif
 
+PORTSCOUT=	limit:^5.6
+
 .ifdef WITH_MYSQL_MICROSECONDS
 EXTRA_PATCHES+= ${FILESDIR}/extra-patch-mysql-microseconds
 .endif

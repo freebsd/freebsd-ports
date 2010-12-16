@@ -24,6 +24,8 @@ LATEST_LINK=	rsyslog4-${MNAME}
 LATEST_LINK=	rsyslog4
 .endif
 
+PORTSCOUT=	limit:^4.6
+
 CONFLICTS=	rsyslog-[!4].[!6].[0-9]*
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
