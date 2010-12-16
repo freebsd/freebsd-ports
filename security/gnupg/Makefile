@@ -7,7 +7,7 @@
 
 PORTNAME=	gnupg
 PORTVERSION=	2.0.16
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_GNUPG}
 MASTER_SITE_SUBDIR=	gnupg
@@ -21,7 +21,7 @@ BUILD_DEPENDS=	libksba>=1.0.7:${PORTSDIR}/security/libksba
 LIB_DEPENDS=	assuan.0:${PORTSDIR}/security/libassuan \
 		gcrypt.17:${PORTSDIR}/security/libgcrypt \
 		gpg-error:${PORTSDIR}/security/libgpg-error \
-		ksba.17:${PORTSDIR}/security/libksba \
+		ksba.18:${PORTSDIR}/security/libksba \
 		pth.20:${PORTSDIR}/devel/pth
 
 LICENSE=	GPLv3 LGPL3
