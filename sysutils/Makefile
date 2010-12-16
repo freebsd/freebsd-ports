@@ -515,6 +515,7 @@
     SUBDIR += moosefs-client
     SUBDIR += moosefs-master
     SUBDIR += moreutils
+    SUBDIR += moreutils-parallel
     SUBDIR += most
     SUBDIR += mount.app
     SUBDIR += mountsmb2
