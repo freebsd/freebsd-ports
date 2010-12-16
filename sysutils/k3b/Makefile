@@ -18,6 +18,8 @@ RUN_DEPENDS=	cdrdao:${PORTSDIR}/sysutils/cdrdao
 LIB_DEPENDS=	tag:${PORTSDIR}/audio/taglib \
 		samplerate:${PORTSDIR}/audio/libsamplerate
 
+BROKEN=		bad plist
+
 USE_BZIP2=	yes
 USE_AUTOTOOLS=	libtool
 CONFIGURE_ARGS=	--with-k3bsetup=no \
