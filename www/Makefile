@@ -1863,6 +1863,7 @@
     SUBDIR += webstats
     SUBDIR += webstone
     SUBDIR += webstone-ssl
+    SUBDIR += webtrees
     SUBDIR += wget4web
     SUBDIR += wgetpaste
     SUBDIR += wikicalc
