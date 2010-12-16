@@ -7,6 +7,7 @@
 
 PORTNAME=	tnef
 PORTVERSION=	0.3.9
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://www.claws-mail.org/downloads/plugins/
 PKGNAMEPREFIX=	claws-mail-
@@ -15,9 +16,8 @@ DISTNAME=	tnef_parse-${PORTVERSION}
 MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	TNEF parser plugin for claws-mail
 
-BUILD_DEPENDS=	claws-mail>=3.7.7:${PORTSDIR}/mail/claws-mail
-RUN_DEPENDS=	claws-mail>=3.7.7:${PORTSDIR}/mail/claws-mail
-LIB_DEPENDS=	ytnef.0:${PORTSDIR}/devel/libytnef
+BUILD_DEPENDS=	claws-mail>=3.7.8:${PORTSDIR}/mail/claws-mail
+RUN_DEPENDS=	claws-mail>=3.7.8:${PORTSDIR}/mail/claws-mail
 
 LICENSE=	GPLv3
 
