@@ -16,7 +16,8 @@ MAINTAINER=	brooks@FreeBSD.org
 COMMENT=	Low Level Virtual Machine
 
 .if defined(PACKAGE_BUILDING) || defined(MAINTAINER_MODE)
-BUILD_DEPENDS=	runtest:${PORTSDIR}/misc/dejagnu
+USE_PYTHON_BUILD=	yes
+BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash
 .endif
 .if defined(MAINTAINER_MODE)
 BUILD_DEPENDS+=	f2c:${PORTSDIR}/lang/f2c
