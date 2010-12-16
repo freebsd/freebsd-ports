@@ -136,7 +136,7 @@ rm -f ${builddir}/errors/${pkgname}.log ${builddir}/errors/${pkgname}.log.bz2
     
 ${pb}/scripts/ptimeout.host $timeout ${ssh_cmd} -a -n ${client_user}@${host} ${sudo_cmd} ${command} ${arch} ${branch} ${buildid} ${chroot} ${flags} \"$ED\" \"$PD\" \"$FD\" \"$BD\" \"$RD\" ${args} 2>&1
 error=$?
-        
+
 # Pull in the results of the build from the client
     
 ${scp_cmd} ${client_user}@${host}:${chroot}/tmp/${pkgname}.log ${builddir}/logs/${pkgname}.log
@@ -174,17 +174,22 @@ if [ "${error}" = 0 ]; then
     fi
 else
     log=${builddir}/errors/${pkgname}.log
-    ${scp_cmd} ${client_user}@${host}:${chroot}/tmp/${pkgname}.log ${log} || (echo ${chroot}@${host}; ${ssh_cmd} -a -n ${client_user}@${host} ls -laR ${chroot}/tmp) | mail -s "${pkgname} logfile not found" ${mailto}
-    if ! grep -q "even though it is marked BROKEN" ${log}; then
-	buildlogdir=$(realpath ${builddir}/logs/)
-	baselogdir=$(basename ${buildlogdir})
-	if [ $(wc -l ${log} | awk '{print $1}') -le $((loglength + hdrlength)) ]; then
-	    (echo "You can also find this build log at"; echo; echo "  http://${MASTER_URL}/errorlogs/${arch}-errorlogs/${baselogdir}/$(basename $log)";echo;cat ${log}) | mail -s "${pkgname} failed on ${arch} ${branch}" ${mailto}
-	else
-	    (echo "Excerpt from the build log at"; echo; echo "  http://${MASTER_URL}/errorlogs/${arch}-errorlogs/${baselogdir}/$(basename $log)";echo;sed -e '/^build started/,$d' $log;echo;echo "  [... lines trimmed ...]";echo;tail -${loglength} ${log}) | mail -s "${pkgname} failed on ${arch} ${branch}" ${mailto}
+    ${scp_cmd} ${client_user}@${host}:${chroot}/tmp/${pkgname}.log ${log}
+    result=$?
+    if [ $result -ne 0 ]; then
+	(echo ${chroot}@${host}; echo "huh? ${client_user}"; ${ssh_cmd} -a -n ${client_user}@${host} ls -laR ${chroot}/tmp) | mail -s "${pkgname} logfile not found" ${mailto}
+    else
+	if ! grep -q "even though it is marked BROKEN" ${log}; then
+	    buildlogdir=$(realpath ${builddir}/logs/)
+	    baselogdir=$(basename ${buildlogdir})
+	    if [ $(wc -l ${log} | awk '{print $1}') -le $((loglength + hdrlength)) ]; then
+		(echo "You can also find this build log at"; echo; echo "  http://${MASTER_URL}/errorlogs/${arch}-errorlogs/${baselogdir}/$(basename $log)";echo;cat ${log}) | mail -s "${pkgname} failed on ${arch} ${branch}" ${mailto}
+	    else
+		(echo "Excerpt from the build log at"; echo; echo "  http://${MASTER_URL}/errorlogs/${arch}-errorlogs/${baselogdir}/$(basename $log)";echo;sed -e '/^build started/,$d' $log;echo;echo "  [... lines trimmed ...]";echo;tail -${loglength} ${log}) | mail -s "${pkgname} failed on ${arch} ${branch}" ${mailto}
+	    fi
 	fi
+	lockf -k ${pbab}/failure.lock ${pb}/scripts/buildfailure ${arch} ${branch} ${buildid} ${pkgname}
     fi
-    lockf -k ${pbab}/failure.lock ${pb}/scripts/buildfailure ${arch} ${branch} ${buildid} ${pkgname}
 fi
 
 ${ssh_cmd} -a -n ${client_user}@${host} ${sudo_cmd} ${pb}/scripts/clean-chroot ${arch} ${branch} ${buildid} ${chroot} ${clean}
