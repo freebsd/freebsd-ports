@@ -26,6 +26,7 @@ USE_GHOSTSCRIPT=	yes
 USE_AUTOTOOLS=	libtool
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 USE_LDCONFIG=	yes
+MAKE_JOBS_UNSAFE=	yes
 
 MAN1=		pstoedit.1
 
@@ -34,7 +35,7 @@ CPPFLAGS=	-I${LOCALBASE}/include/ming -I${LOCALBASE}/include \
 		-I${LOCALBASE}/include
 LDFLAGS=	-L${LOCALBASE}/lib
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if defined(WITHOUT_IMAGEMAGICK)
 CONFIGURE_ARGS+=	--without-magick
@@ -83,4 +84,4 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/doc/*.htm ${DOCSDIR}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
