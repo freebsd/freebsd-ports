@@ -647,7 +647,6 @@
     SUBDIR += ice
     SUBDIR += icmake
     SUBDIR += icu
-    SUBDIR += icu2
     SUBDIR += icu4
     SUBDIR += id-utils
     SUBDIR += ifd-test

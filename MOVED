@@ -4720,3 +4720,4 @@ emulators/mupen64plus-gln64||2010-12-13|Port was removed, now it is obsolete
 emulators/mupen64plus-input||2010-12-13|Port was removed, now it is obsolete
 misc/zaptel||2010-12-14|Superseded by misc/dahdi
 japanese/mozilla-jlp||2010-12-15|Has expired: Depends on obsolete port www/mozilla
+devel/icu2|devel/icu|2010-12-16|Removed: now obsolete and unused please use newer devel/icu instead
