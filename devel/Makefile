@@ -1966,6 +1966,7 @@
     SUBDIR += p5-MooseX-Types-DateTime-ButMaintained
     SUBDIR += p5-MooseX-Types-DateTimeX
     SUBDIR += p5-MooseX-Types-Path-Class
+    SUBDIR += p5-MooseX-Types-Signal
     SUBDIR += p5-MooseX-Types-Structured
     SUBDIR += p5-Mouse
     SUBDIR += p5-MouseX-AttributeHelpers
