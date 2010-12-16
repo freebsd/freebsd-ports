@@ -6,6 +6,29 @@ You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
 20101216:
+  AFFECTS: users of security/libksba
+  AUTHOR: glarkin@FreeBSD.org
+
+  libksba has been updated to 1.1.0, and the shared library version has
+  increased from .17 to .18.
+
+  Directly- and indirectly-dependent ports have had their PORTREVISION
+  bumped to facilitate rebuilding.  Please rebuild the dependent ports
+  with your preferred upgrading tool:
+
+	# portupgrade -rf security/libksba
+  -or-
+	# portmaster -w -r security/libksba
+
+  If there are still ports on your system that require ksba.so.17 (either
+  in ${LOCALBASE}/lib/compat/pkg, or non-existent), _please_ file a PR so
+  that a correct direct dependency can be added.
+
+  Once you are satisfied that no ports still depend on the old shared
+  library version (libksba.so.17), you can safely delete it from the
+  ${LOCALBASE}/lib/compat/pkg directory if it is present there.
+
+20101216:
   AFFECTS: users of databases/akonadi
   AUTHOR: avilla@FreeBSD.org
 
