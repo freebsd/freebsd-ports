@@ -52,7 +52,7 @@ MAKE_ENV+=	VERBOSE=1
 .endif
 MAKE_JOBS_UNSAFE=	yes
 
-CONFLICTS=	lam-7.* mpiexec-0.*
+CONFLICTS=	lam-7.* mpiexec-0.* musicpd-0.*
 
 USE_FORTRAN=	yes
 FCFLAGS+=	${FFLAGS}

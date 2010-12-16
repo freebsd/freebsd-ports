@@ -19,6 +19,8 @@ LIB_DEPENDS+=	mad.2:${PORTSDIR}/audio/libmad \
 
 LICENSE=	GPLv2
 
+CONFLICTS_INSTALL=	mpich2-[1-9]*
+
 USE_GMAKE=	yes
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
