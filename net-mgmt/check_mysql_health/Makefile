@@ -10,7 +10,7 @@ PORTVERSION=	2.1.3
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://labs.consol.de/wp-content/uploads/2010/10/
 
-MAINTAINER=	pgollucci@FreeBSD.org
+MAINTAINER=	ssanders@taximagic.com
 COMMENT=	Nagios plugin to check various parameters of a MySQL database
 
 RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/DBD/mysql.pm:${PORTSDIR}/databases/p5-DBD-mysql
