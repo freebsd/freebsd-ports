@@ -19,14 +19,13 @@ MAN8=	k8temp.8
 
 PLIST_FILES=	sbin/k8temp
 
+post-patch:
+	@${REINPLACE_CMD} -e 's|WARNS=.*[6-9]|WARNS=5|g' ${WRKSRC}/Makefile
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/k8temp ${PREFIX}/sbin
 	${INSTALL_MAN} ${WRKSRC}/k8temp.8 ${PREFIX}/man/man8
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.mk>
 
-.if ${OSVERSION} >= 900000
-BROKEN=		does not build
-.endif
-
-.include <bsd.port.post.mk>
+WARNS= 6
