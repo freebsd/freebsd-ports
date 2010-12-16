@@ -8,14 +8,13 @@
 
 PORTNAME=	moreutils
 PORTVERSION=	0.43
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_DEBIAN_POOL}
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	corky1951@comcast.net
 COMMENT=	Additional Unix utilities
-
-CONFLICTS=	parallel-[0-9]*
 
 RUN_DEPENDS=	${SITE_PERL}/IPC/Run.pm:${PORTSDIR}/devel/p5-IPC-Run
 
@@ -27,7 +26,6 @@ PLIST_FILES=	bin/chronic \
 		bin/isutf8 \
 		bin/lckdo \
 		bin/mispipe \
-		bin/parallel \
 		bin/pee \
 		bin/sponge \
 		bin/ts \
@@ -40,30 +38,22 @@ ALL_TARGET=	bins
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 .if !defined(NO_INSTALL_MANPAGES)
-MAN1=		chronic.1 \
-		combine.1 \
-		ifne.1 \
-		isutf8.1 \
-		lckdo.1 \
-		mispipe.1 \
-		parallel.1 \
-		pee.1 \
-		sponge.1 \
-		ts.1 \
-		vidir.1 \
-		vipe.1 \
-		zrun.1
-
 ALL_TARGET+=	mans extraman
-MANCOMPRESSED=	no
 
 CANNED_MAN=	ifne.1 \
 		isutf8.1 \
 		lckdo.1 \
 		mispipe.1 \
-		parallel.1 \
 		pee.1 \
 		sponge.1
+MAN1=		chronic.1 \
+		combine.1 \
+		ts.1 \
+		vidir.1 \
+		vipe.1 \
+		zrun.1 \
+		${CANNED_MAN}
+MANCOMPRESSED=	no
 
 post-patch:
 	cd ${FILESDIR} && ${CP} ${CANNED_MAN} ${WRKSRC}/
