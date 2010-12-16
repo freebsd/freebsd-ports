@@ -73,7 +73,6 @@ CONFIGURE_ARGS+=	--disable-apl
 # EBCDIC double-byte character set support is disabled by default
 .if defined(WITH_DBCS) && !defined(WITHOUT_DBCS)
 CONFIGURE_ARGS+=	--enable-dbcs
-BUILD_DEPENDS+=	${LOCALBASE}/include/unicode/ucnv.h:${PORTSDIR}/devel/icu2:install
 PLIST_SUB+=	DBCS=""
 .else
 PLIST_SUB+=	DBCS="@comment "
@@ -101,13 +100,6 @@ CONFIGURE_ARGS+=	--disable-tn3270e
 
 .if defined(WITHOUT_TRACE) && !defined(WITH_TRACE)
 CONFIGURE_ARGS+=	--disable-trace
-.endif
-
-pre-patch:
-# icu2-2.8 gets choked with subchar1 tags
-.if defined(WITH_DBCS) && !defined(WITHOUT_DBCS)
-	${REINPLACE_CMD} -e 's/^<subchar1>/#<subchar1>/g' \
-		${WRKSRC}/*.ucm
 .endif
 
 post-install:
