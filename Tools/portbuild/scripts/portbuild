@@ -119,14 +119,12 @@ RD=$5
 
 builddir=${pb}/${arch}/${branch}/builds/${buildid}
 
-# has to be here to affect the setup of OSVERSION and BRANCH in buildenv.client
-export SRC_BASE=${CLIENT_SRCBASE}
-buildenv.client ${pb} ${arch} ${branch} ${builddir}
+buildenv.common
 
 # Want to use the /etc/make.conf in the chroot
 unset __MAKE_CONF
 
-pkgname=$(basename $6 ${CLIENT_PKGSUFFIX})
+pkgname=$(basename $6 ${PKGSUFFIX})
 dirname=$7
 shift 2
 
@@ -136,8 +134,9 @@ echo $dirname
 # set overrides for bsd.port.mk variables
 export WRKDIRPREFIX=${CLIENT_WRKDIRPREFIX}
 export DISTDIR=${CLIENT_DISTDIR}
-export LOCALBASE=${CLIENT_LOCALBASE}
+export LOCALBASE=${LOCALBASE}
 export PACKAGES=${CLIENT_PACKAGES_LOCATION}
+export SRC_BASE=${CLIENT_SRCBASE}
 
 # to catch missing dependencies
 #export DEPENDS_TARGET=/usr/bin/true
@@ -226,7 +225,10 @@ ln -sf ../a/ports ${chroot}/usr/ports
 
 mkdir -p ${chroot}/usr/src 
 
-mount_fs ${builddir}/src ${chroot}/usr/src ${CLIENT_NFS_MASTER}
+mount_fs ${builddir}/src ${chroot}${CLIENT_SRCBASE} ${CLIENT_NFS_MASTER}
+
+# set overrides for uname
+buildenv.client ${chroot}${CLIENT_SRCBASE}
 
 mount -t devfs foo ${chroot}/dev
 umount -f ${chroot}/compat/linux/proc > /dev/null 2>&1
