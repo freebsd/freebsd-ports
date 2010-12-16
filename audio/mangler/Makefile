@@ -26,7 +26,7 @@ USE_LDCONFIG=	yes
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 800000 && ${ARCH} == "amd64"
+.if ${OSVERSION} < 800000
 BROKEN=		does not build
 .endif
 
