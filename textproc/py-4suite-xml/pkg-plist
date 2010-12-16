@@ -846,8 +846,8 @@
 %%DATADIR%%/Schemata/xhtml1-transitional.dtd
 %%DATADIR%%/Schemata/xsa.dtd
 %%DATADIR%%/default.cat
-%%DOCSDIR%%/COPYRIGHT
-%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/COPYRIGHT
+%%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/html/COPYRIGHT.html
 %%PORTDOCS%%%%DOCSDIR%%/html/CoreManual.html
 %%PORTDOCS%%%%DOCSDIR%%/html/HowTos/4SuiteCVS.html
