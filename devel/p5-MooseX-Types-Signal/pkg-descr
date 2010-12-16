@@ -1,0 +1,10 @@
+MooseX::Types::Signal exports a type, Signal, that recognizes valid signals
+on your platform. The underlying type is a non-negative number, but there is
+a coercion from strings to numbers that recognizes signals by name.
+
+There are also more restrictive types, PerlSignal and UnixSignal. UnixSignal
+only understands signals that are in your system's signal.h header file.
+PerlSignal only understands signals that are in Perl's %Config hash. Signal
+is either/or, with preference to UnixSignal over PerlSignal when coercing.
+
+WWW: http://search.cpan.org/dist/MooseX-Types-Signal/
