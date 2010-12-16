@@ -6,13 +6,16 @@
 
 PORTNAME=	akonadi
 PORTVERSION=	1.4.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	databases kde ipv6
-MASTER_SITES=	http://download.akonadi-project.org/
+MASTER_SITES=	http://download.${PORTNAME}-project.org/
 DIST_SUBDIR=	KDE
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Storage server for kdepim
+
+LICENSE=	LGPL21
+LICENSE_FILE=	${WRKSRC}/lgpl-license
 
 LIB_DEPENDS=	boost_thread:${PORTSDIR}/devel/boost-libs \
 		soprano.4:${PORTSDIR}/textproc/soprano
@@ -22,15 +25,20 @@ RUN_DEPENDS=	${QT_PREFIX}/lib/qt4/plugins/sqldrivers/libqsqlmysql.so:${PORTSDIR}
 
 # Let process generate meaningful backtrace on core dump
 LIB_DEPENDS+=	execinfo.1:${PORTSDIR}/devel/libexecinfo
-CMAKE_ARGS+=	-DCMAKE_REQUIRED_INCLUDES:STRING="${LOCALBASE}/include"
+CMAKE_ARGS+=	-DAKONADI_BUILD_TESTS:BOOL=FALSE \
+		-DINSTALL_QSQLITE_IN_QT_PREFIX:BOOL=TRUE \
+		-DCMAKE_REQUIRED_INCLUDES:STRING="${LOCALBASE}/include"
 
 USE_BZIP2=	yes
+USE_SQLITE=	3
 USE_QT_VER=	4
 QT_COMPONENTS=	corelib network qtestlib dbus sql \
 		qmake_build moc_build rcc_build uic_build
 USE_MYSQL=	server
 USE_KDE4=	kdeprefix kdehier automoc4 sharedmime
 KDE4_BUILDENV=	yes
+
+PLIST_SUB+=	QT_PREFIX=${QT_PREFIX}
 
 post-patch:
 	${REINPLACE_CMD} -e '/akonadi.pc/s|pkgconfig|../libdata/pkgconfig|' \
