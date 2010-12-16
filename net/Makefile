@@ -849,6 +849,7 @@
     SUBDIR += py-impacket
     SUBDIR += py-iplib
     SUBDIR += py-ldap2
+    SUBDIR += py-libcloud
     SUBDIR += py-libdnet
     SUBDIR += py-libnet
     SUBDIR += py-medusa
