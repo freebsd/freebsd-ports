@@ -22,6 +22,8 @@ LIB_DEPENDS=	GiGi.0:${PORTSDIR}/x11-toolkits/gigi \
 RUN_DEPENDS=	${LOCALBASE}/lib/libLinearMath.a:${PORTSDIR}/devel/bullet
 BUILD_DEPENDS=	${LOCALBASE}/lib/libLinearMath.a:${PORTSDIR}/devel/bullet
 
+BROKEN=		does not build
+
 USE_GCC=	4.4+
 USE_BZIP2=	yes
 USE_PYTHON=	yes
