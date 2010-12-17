@@ -1,0 +1,2 @@
+bin/htsql-ctl
+%%PYTHON_SITELIBDIR%%/HTSQL-2.0.0b5-py2.6.egg
