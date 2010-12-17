@@ -1,0 +1,4 @@
+Due to licensing issues this plugin does not link against any libraries
+from clamav. The plugin therefore requires a running clamav daemon running
+on either localhost or somewhere else which allows the plugin access via
+a unix or a TCP socket.

@@ -1,0 +1,9 @@
+his plugin uses Clam AntiVirus to scan all messages that are
+received from an IMAP, LOCAL or POP account.
+
+When a message attachment is found to contain a virus it can be
+deleted or saved in a specially designated folder.
+
+Options can be found in /Configuration/Preferences/Plugins/Clam AntiVirus.
+
+WWW:	http://www.claws-mail.org/plugins.php
