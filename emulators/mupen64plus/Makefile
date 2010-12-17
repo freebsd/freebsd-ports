@@ -27,7 +27,7 @@ RUN_DEPENDS+=	${LOCALBASE}/lib/mupen64plus-input-sdl.so:${PORTSDIR}/emulators/mu
 RUN_DEPENDS+=	${LOCALBASE}/lib/mupen64plus-rsp-hle.so:${PORTSDIR}/emulators/mupen64plus-rsp-hle
 
 # Graphics plugins
-RUN_DEPENDS+=	${LOCALBASE}/lib/muen64plus-video-rice.so:${PORTSDIR}/emulators/mupen64plus-video-rice
+RUN_DEPENDS+=	${LOCALBASE}/lib/mupen64plus-video-rice.so:${PORTSDIR}/emulators/mupen64plus-video-rice
 
 NO_MTREE=	yes
 NO_BUILD=	yes
