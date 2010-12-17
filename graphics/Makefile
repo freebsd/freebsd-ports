@@ -546,6 +546,7 @@
     SUBDIR += lprof-devel
     SUBDIR += luminance
     SUBDIR += luxrender
+    SUBDIR += mahotas
     SUBDIR += makehuman
     SUBDIR += mapnik
     SUBDIR += mapserver
