@@ -1,0 +1,7 @@
+@comment $FreeBSD$
+bin/jwasm
+%%PORTDOCS%%%%DOCSDIR%%/History.txt.gz
+%%PORTDOCS%%%%DOCSDIR%%/License.txt.gz
+%%PORTDOCS%%%%DOCSDIR%%/Manual.txt.gz
+%%PORTDOCS%%%%DOCSDIR%%/Readme.txt.gz
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

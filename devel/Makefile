@@ -685,6 +685,7 @@
     SUBDIR += jtag
     SUBDIR += jude-community
     SUBDIR += judy
+    SUBDIR += jwasm
     SUBDIR += jzmq
     SUBDIR += k8048
     SUBDIR += kBuild
