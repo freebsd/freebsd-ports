@@ -633,6 +633,7 @@
     SUBDIR += py-flask-sqlalchemy
     SUBDIR += py-forgetsql
     SUBDIR += py-gdbm
+    SUBDIR += py-htsql
     SUBDIR += py-memcached
     SUBDIR += py-migrate
     SUBDIR += py-mssql
