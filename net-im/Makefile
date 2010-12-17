@@ -92,6 +92,7 @@
     SUBDIR += mu-conference
     SUBDIR += naim
     SUBDIR += newsbot
+    SUBDIR += openfetion
     SUBDIR += openfire
     SUBDIR += p5-AnyEvent-XMPP
     SUBDIR += p5-DJabberd
