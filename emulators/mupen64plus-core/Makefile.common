@@ -9,8 +9,6 @@ EXTRACT_AFTER_ARGS=	| ${TAR} -xf - "${DISTNAME}/source/${PORTNAME}-core/*" \
 				"${DISTNAME}/source/${PORTNAME}${PKGNAMESUFFIX}/*"
 
 .if ${PKGNAMESUFFIX} == "-core"
-USE_SDL=		sdl
-
 LIB_DEPENDS+=		freetype.9:${PORTSDIR}/print/freetype2 \
 			png.6:${PORTSDIR}/graphics/png
 .else
@@ -42,7 +40,8 @@ pre-install:
 .	endif
 
 .	if ${PKGNAMESUFFIX} != "-ui-console"
-		@${ECHO_CMD} "lib/${PORTNAME}${PKGNAMESUFFIX}.so" >> ${PLIST}
+		@${ECHO_CMD} "lib/${PORTNAME}/${PORTNAME}${PKGNAMESUFFIX}.so" >> ${PLIST}
+		@${ECHO_CMD} "@dirrmtry lib/${PORTNAME}" >> ${PLIST}
 		@${ECHO_CMD} "@dirrmtry %%DATADIR%%" >> ${PLIST}
 .	else
 		@${ECHO_CMD} "bin/${PORTNAME}" >> ${PLIST}
@@ -84,6 +83,7 @@ do-install:
 .	endif
 
 .	if ${PKGNAMESUFFIX} != "-ui-console"
+		@${MKDIR} ${PREFIX}/lib/${PORTNAME}
 		${INSTALL_PROGRAM} ${BUILD_WRKSRC}/${PORTNAME}${PKGNAMESUFFIX}.so ${PREFIX}/lib
 .	else
 		${INSTALL_PROGRAM} ${BUILD_WRKSRC}/${PORTNAME} ${PREFIX}/bin

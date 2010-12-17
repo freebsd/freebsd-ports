@@ -5,6 +5,8 @@
 # $FreeBSD$
 #
 
+PORTREVISION=	1
+
 PKGNAMESUFFIX=	-rsp-hle
 
 COMMENT=	RSP plugin for Mupen64plus

@@ -7,7 +7,7 @@
 
 PORTNAME=	mupen64plus
 PORTVERSION?=	1.99.4
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES=	emulators
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 PKGNAMESUFFIX?=	-core
@@ -17,7 +17,7 @@ MAINTAINER?=	acm@FreeBSD.org
 COMMENT?=	A fork of Mupen64 Nintendo 64 emulator
 
 USE_GL?=	yes
-USE_SDL?=	#
+USE_SDL?=	yes
 USE_GMAKE=	yes
 USE_LDCONFIG?=	yes
 ONLY_FOR_ARCHS=	i386 amd64
