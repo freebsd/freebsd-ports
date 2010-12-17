@@ -15,8 +15,8 @@ PKGNAMESUFFIX=	-kmod
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A plasma-effect screensaver kernel module
 
-.if !exists(/usr/src/sys/dev/syscons/syscons.h)
-IGNORE=		requires kernel source (/usr/src/sys) to build
+.if !exists(${SRC_BASE}/sys/dev/syscons/syscons.h)
+IGNORE=		requires kernel source (in ${SRC_BASE}) to build
 .endif
 PLIST_FILES=	lib/plasma_saver.ko
 SUB_FILES=	pkg-message
