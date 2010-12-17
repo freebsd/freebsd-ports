@@ -20,7 +20,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} != "i386"
-.if exists(/usr/lib32)
+.if defined(HAVE_COMPAT_IA32_LIBS)
 CFLAGS=		-m32 -L/usr/lib32 -B/usr/lib32
 .else
 IGNORE=		requires 32-bit libraries installed under /usr/lib32
