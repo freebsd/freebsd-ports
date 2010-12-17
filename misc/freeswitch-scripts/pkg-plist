@@ -29,12 +29,14 @@ etc/freeswitch/scripts/.freeswitch-scripts
 %%WITH_PERL%%etc/freeswitch/scripts/perl/POE-Filter-FSSocket/examples/poetest.pl
 %%WITH_PERL%%etc/freeswitch/scripts/perl/POE-Filter-FSSocket/lib/POE/Filter/FSSocket.pm
 %%WITH_PERL%%etc/freeswitch/scripts/perl/POE-Filter-FSSocket/t/01_basic.t
+%%WITH_PERL%%etc/freeswitch/scripts/perl/blacklist.pl
 %%WITH_PERL%%etc/freeswitch/scripts/perl/call.cgi
 %%WITH_PERL%%etc/freeswitch/scripts/perl/combineconf.pl
 %%WITH_PERL%%etc/freeswitch/scripts/perl/dhcp-inform.pl
 %%WITH_PERL%%etc/freeswitch/scripts/perl/extract_log_range.pl
 %%WITH_PERL%%etc/freeswitch/scripts/perl/fs.pl
 %%WITH_PERL%%etc/freeswitch/scripts/perl/fsconsole.pl
+%%WITH_PERL%%etc/freeswitch/scripts/perl/honeypot.pl
 %%WITH_PERL%%etc/freeswitch/scripts/perl/multicast/recv.pl
 %%WITH_PERL%%etc/freeswitch/scripts/perl/multicast/send.pl
 %%WITH_PERL%%etc/freeswitch/scripts/perl/mwi_event.pl
@@ -88,3 +90,5 @@ etc/freeswitch/scripts/.freeswitch-scripts
 %%WITH_LUA%%@dirrm etc/freeswitch/scripts/lua
 %%WITH_JAVASCRIPT%%@dirrm etc/freeswitch/scripts/javascript/aadir
 %%WITH_JAVASCRIPT%%@dirrm etc/freeswitch/scripts/javascript
+@dirrmtry etc/freeswitch/scripts
+@dirrmtry etc/freeswitch
