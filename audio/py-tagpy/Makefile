@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	tagpy
-PORTVERSION=	0.94.7
-PORTREVISION=	1
+PORTVERSION=	0.94.8
+PORTREVISION=	0
 CATEGORIES=	audio python
 MASTER_SITES=	CHEESESHOP \
 		http://nivi.interfree.it/distfiles/${PORTNAME}/
