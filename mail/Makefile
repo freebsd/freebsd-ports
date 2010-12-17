@@ -46,6 +46,7 @@
     SUBDIR += chk4mail
     SUBDIR += clamfilter
     SUBDIR += claws-mail
+    SUBDIR += claws-mail-address_keeper
     SUBDIR += claws-mail-archiver
     SUBDIR += claws-mail-att_remover
     SUBDIR += claws-mail-attach_warner
