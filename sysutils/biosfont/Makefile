@@ -27,7 +27,7 @@ MAKE_ENV+=	KMODDIR=${KMODDIR}
 
 .include <bsd.port.pre.mk>
 
-.if !exists(/usr/src/sys/Makefile)
+.if !exists(${SRC_BASE}/sys/Makefile)
 IGNORE=		requires kernel source files
 .endif
 
