@@ -37,6 +37,7 @@
 #  # optional
 #  imq_data="/var/spool/imq"
 #  imq_vmargs="-Xms192m -Xmx192m -Xss128k -XX:MaxGCPauseMillis=5000"
+#  imq_brokerlist="hostname1:7676,hostname2:7676"
 
 name="imq"
 . /etc/rc.subr
@@ -86,6 +87,14 @@ if [ -n $autoargs ]; then
        command_args="$command_args -varhome $imq_data $autoargs"
    else
        command_args="$command_args $autoargs"
+   fi
+fi
+
+#add brokerlist if not yet defined
+if [ -n "$imq_brokerlist" ]; then
+   echo "$command_args" | grep -q -- '-cluster '
+   if [ ! $? -eq 0 ]; then
+      command_args="$command_args -cluster $imq_brokerlist"
    fi
 fi
 

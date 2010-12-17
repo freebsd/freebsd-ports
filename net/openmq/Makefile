@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	openmq
-PORTVERSION=	4.4.u1.b7
+PORTVERSION=	4.5.b.21
 PORTEPOCH=	1
 CATEGORIES=	net java
-MASTER_SITES=	http://download.java.net/mq/open-mq/4.4u1/b7-final/ \
-		http://download.java.net/maven/2/javax/javaee-api/6.0-SNAPSHOT/:2 \
+MASTER_SITES=	http://download.java.net/mq/open-mq/4.5/b21/ \
+	 	http://download.java.net/maven/2/javax/javaee-api/6.0/:2 \
 		http://download.java.net/maven/2/com/sun/grizzly/grizzly-nio-framework/1.9.18a/:3 \
 		http://download.java.net/maven/2/com/sun/woodstock/dependlibs/jhall/2.0/:4
 DISTFILES=	${SRCDIST} ${BOOTJARS}
@@ -19,8 +19,11 @@ EXTRACT_ONLY=	${SRCDIST}
 MAINTAINER=	hsn@sendmail.cz
 COMMENT=	Open Message Queue - Java Message Service Broker ${CLIENT_COMMENT}
 
-SRCDIST=	openmq4_4-source.zip
-BOOTJARS=	javaee-api-6.0-SNAPSHOT.jar:2 \
+LICENSE=	GPLv2 CDDL
+LICENSE_COMB=	dual
+
+SRCDIST=	openmq4_5-source.zip
+BOOTJARS=	javaee-api-6.0.jar:2 \
 		grizzly-nio-framework-1.9.18a.jar:3 \
 		jhall-2.0.jar:4
 
@@ -44,7 +47,7 @@ SUB_FILES=	pkg-message
 # target in the Ant file.
 pre-build:
 		@${MKDIR} ${WRKSRC}/extlib
-		@${CP} ${DISTDIR}/javaee-api-6.0-SNAPSHOT.jar \
+		@${CP} ${DISTDIR}/javaee-api-6.0.jar \
 			${WRKSRC}/extlib/javaee-api-6.0.jar
 		@${CP} ${DISTDIR}/grizzly-nio-framework-1.9.18a.jar \
 			${WRKSRC}/extlib/grizzly.jar
