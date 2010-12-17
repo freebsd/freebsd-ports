@@ -17,31 +17,31 @@ COMMENT=	An X11 based previewer for groff output
 MAN1=		gxditview.1
 PLIST_FILES=	bin/gxditview lib/X11/app-defaults/GXditview
 
-.if !exists(/usr/src/contrib/groff/src)
-IGNORE=		requires /usr/src/contrib/groff/src to build
+.if !exists(${SRC_BASE}/contrib/groff/src)
+IGNORE=		requires ${SRC_BASE}/contrib/groff/src to build
 GXDVVERSION=	1.16
 GXDVREVISION=	.1
 .else
-GXDVVERSION!=	cat /usr/src/contrib/groff/VERSION
-GXDVREVISION!=	sed -e 's/^0$$//' -e 's/^[1-9].*$$/.&/' /usr/src/contrib/groff/REVISION
+GXDVVERSION!=	cat ${SRC_BASE}/contrib/groff/VERSION
+GXDVREVISION!=	sed -e 's/^0$$//' -e 's/^[1-9].*$$/.&/' ${SRC_BASE}/contrib/groff/REVISION
 .endif
 
-.if exists(/usr/src/contrib/groff/src/devices/xditview) && \
-    exists(/usr/src/gnu/usr.bin/groff/src/devices/xditview)
+.if exists(${SRC_BASE}/contrib/groff/src/devices/xditview) && \
+    exists(${SRC_BASE}/gnu/usr.bin/groff/src/devices/xditview)
 USE_XORG=	x11 xproto xt xmu xaw
 MANCOMPRESSED=	maybe
-WRKSRC=		/usr/src/gnu/usr.bin/groff/src/devices/xditview
+WRKSRC=		${SRC_BASE}/gnu/usr.bin/groff/src/devices/xditview
 MAKE_ENV=	MAKEOBJDIR=${WRKDIR}
 
 pre-configure-script:
 	@${DO_NADA}
-.elif exists(/usr/src/contrib/groff/src/xditview)
+.elif exists(${SRC_BASE}/contrib/groff/src/xditview)
 USE_IMAKE=	yes
 
 do-extract:
 	@${RM} -rf ${WRKDIR}
 	@${MKDIR} ${WRKSRC}
-	${CP} -rp /usr/src/contrib/groff/src/xditview/* ${WRKSRC}
+	${CP} -rp ${SRC_BASE}/contrib/groff/src/xditview/* ${WRKSRC}
 .endif
 
 .include <bsd.port.mk>
