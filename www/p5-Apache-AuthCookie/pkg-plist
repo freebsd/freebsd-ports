@@ -1,4 +1,5 @@
 %%SITE_PERL%%/Apache/AuthCookie.pm
+%%SITE_PERL%%/Apache/AuthCookie/FAQ.pod
 %%SITE_PERL%%/Apache/AuthCookie/Util.pm
 %%SITE_PERL%%/Apache2/AuthCookie.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Apache/AuthCookie/.packlist

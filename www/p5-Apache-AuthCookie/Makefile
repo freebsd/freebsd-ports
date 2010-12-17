@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Apache-AuthCookie
-PORTVERSION=	3.14
+PORTVERSION=	3.15
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -34,6 +34,6 @@ CONFIGURE_ENV+=	APACHE="${HTTPD}" \
 		TESTGRP="${CURGRP}" \
 		TESTPORT="${TESTPORT}"
 
-MAN3=		Apache::AuthCookie.3 Apache2::AuthCookie.3 Apache::AuthCookie::Util.3
+MAN3=		Apache::AuthCookie.3 Apache2::AuthCookie.3 Apache::AuthCookie::Util.3 Apache::AuthCookie::FAQ.3
 
 .include <bsd.port.mk>
