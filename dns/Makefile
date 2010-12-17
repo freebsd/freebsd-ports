@@ -14,6 +14,7 @@
     SUBDIR += bind95
     SUBDIR += bind96
     SUBDIR += bind97
+    SUBDIR += bind98
     SUBDIR += bindgraph
     SUBDIR += c-ares
     SUBDIR += checkdns
