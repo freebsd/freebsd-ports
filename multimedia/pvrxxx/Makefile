@@ -46,16 +46,16 @@ IGNORE=         You need the file HcwMakoA.ROM from the CD coming with the PVR-1
 ake again. Check http://ivtvdriver.org/index.php/Firmware for the recommended version.
 .endif
 
-.if !exists(/usr/src/sys/dev/iicbus/iicbb.c)
+.if !exists(${SRC_BASE}/sys/dev/iicbus/iicbb.c)
 IGNORE=		You need the kernel sources installed to build this module.
 .endif
 
 patch-iicbb:
-	@if [ -z "`${GREP} cxm_iic /usr/src/sys/dev/iicbus/iicbb.c`" ]; then \
+	@if [ -z "`${GREP} cxm_iic ${SRC_BASE}/sys/dev/iicbus/iicbb.c`" ]; then \
 	    ${PATCH} -d/sys <${WRKDIR}/dev/cxm/Patch.iicbb-fbsd5; \
-	    ${ECHO_CMD} "Patched /usr/src/sys/dev/iicbus/iicbb.c"; \
+	    ${ECHO_CMD} "Patched ${SRC_BASE}/sys/dev/iicbus/iicbb.c"; \
 	else \
-	    ${ECHO_CMD} "/usr/src/sys/dev/iicbus/iicbb.c was already patched"; \
+	    ${ECHO_CMD} "${SRC_BASE}/sys/dev/iicbus/iicbb.c was already patched"; \
 	fi
 
 do-extract:

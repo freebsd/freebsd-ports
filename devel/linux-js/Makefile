@@ -33,7 +33,7 @@ MAKE_ENV=	WITHOUT_DEBUG=yes
 BROKEN=	does not build
 .endif
 
-.if !exists(/usr/src/sys/Makefile)
+.if !exists(${SRC_BASE}/sys/Makefile)
 IGNORE=		requires kernel source files
 .endif
 

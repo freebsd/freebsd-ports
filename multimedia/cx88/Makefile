@@ -28,7 +28,7 @@ MAKE_JOBS_UNSAFE=	yes
 IGNORE=		requires FreeBSD 7.0-RELEASE or later
 .endif
 
-.if !exists(/usr/src/sys/Makefile)
+.if !exists(${SRC_BASE}/sys/Makefile)
 IGNORE=		requires kernel source files
 .endif
 
