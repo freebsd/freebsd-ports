@@ -48,6 +48,7 @@
 @dirrmtry %%PORTNAME%%/queue/syscheck
 @dirrmtry %%PORTNAME%%/queue/rids
 @dirrmtry %%PORTNAME%%/queue/ossec
+@dirrmtry %%PORTNAME%%/queue/diff
 @dirrmtry %%PORTNAME%%/queue/alerts
 @dirrmtry %%PORTNAME%%/queue
 @dirrmtry %%PORTNAME%%/logs
