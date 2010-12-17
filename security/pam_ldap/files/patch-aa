@@ -1,6 +1,6 @@
---- Makefile.in.orig	2010-01-08 12:09:42.124679000 +0000
-+++ Makefile.in	2010-01-08 12:16:10.000000000 +0000
-@@ -594,24 +594,20 @@
+--- Makefile.in.orig	2010-12-17 14:34:23.708132000 -0500
++++ Makefile.in	2010-12-17 14:35:48.000000000 -0500
+@@ -594,17 +594,13 @@ uninstall-man: uninstall-man5
  
  install-exec-local: pam_ldap.so
  	@$(NORMAL_INSTALL)
@@ -21,11 +21,3 @@
  	fi
  
  uninstall-local:
- 	@$(NORMAL_UNINSTALL)
- 
- vers.c: $(top_srcdir)/CVSVersionInfo.txt
--	CVSVERSIONDIR=$(top_srcdir) vers_string -v
-+	CVSVERSIONDIR=$(top_srcdir) $(top_srcdir)/vers_string -v
- # Tell versions [3.59,3.63) of GNU make to not export all variables.
- # Otherwise a system limit (for SysV at least) may be exceeded.
- .NOEXPORT:
