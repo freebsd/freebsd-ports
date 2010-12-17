@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	opera
-PORTVERSION=	${OPERA_VER}.${OPERA_BUILD}
+PORTVERSION=	${OPERA_VER}
 CATEGORIES=	www ipv6
 MASTER_SITES=	ftp://ftp.opera.com/pub/opera/${MASTER_SITES_VER_PATH}/ \
 		ftp://opera.inode.at/${MASTER_SITES_VER_PATH}/ \
@@ -30,13 +30,16 @@ COMMENT=	Blazingly fast, full-featured, standards-compliant browser
 
 LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2 \
 		fontconfig.1:${PORTSDIR}/x11-fonts/fontconfig
+BUILD_DEPENDS=	${LOCALBASE}/bin/update-mime-database:${PORTSDIR}/misc/shared-mime-info
+RUN_DEPENDS=	${LOCALBASE}/bin/update-mime-database:${PORTSDIR}/misc/shared-mime-info
 
-OPERA_VER=	10.63
-OPERA_BUILD=	6450
+OPERA_VER=	11.00
+OPERA_BUILD=	1156
 MASTER_SITES_VER_PATH=	unix/${OPERA_VER:S/.//}
 
-USE_BZIP2=	yes
+USE_XZ=		yes
 USE_XORG=	x11 xext sm ice xft xrender
+USE_GNOME=	desktopfileutils
 INSTALLS_ICONS=	yes
 
 MAN1=		opera.1 opera-widget-manager.1
@@ -56,22 +59,15 @@ LIB_DEPENDS+=	cups.2:${PORTSDIR}/print/cups-client
 .endif
 
 .if !defined(WITHOUT_VIDEO)
-USE_GSTREAMER=	vorbis ogg theora
+USE_GSTREAMER+=	vorbis ogg theora
 .endif
 
 .if defined(WITH_GTK)
-USE_GNOME=	gtk20
+USE_GNOME+=	gtk20
 .endif
 
 .if defined(WITH_KDE4)
-USE_KDE4=	kdelibs
-.endif
-
-.if defined(WITH_GTK) || defined(WITH_KDE4)
-USE_GNOME+=	desktopfileutils
-PLIST_SUB+=	MIME=""
-.else
-PLIST_SUB+=	MIME="@comment "
+USE_KDE4+=	kdelibs
 .endif
 
 .include <bsd.port.pre.mk>
@@ -84,8 +80,10 @@ OPERA_ARCH=	${ARCH:S,i386,intel,}
 IGNORE=		Only for FreeBSD 7.x and higher
 .endif
 
-do-install:
+post-extract:
 	@${MV} ${WRKSRC}/share/man ${WRKSRC}/man
+
+do-install:
 	@${INSTALL_MAN} ${WRKSRC}/man/man1/${PORTNAME}.1.gz ${MANPREFIX}/man/man1/
 	@${INSTALL_MAN} ${WRKSRC}/man/man1/${PORTNAME}-widget-manager.1.gz ${MANPREFIX}/man/man1/
 	@${REINPLACE_CMD} -e 's|/usr/local|${PREFIX}|g' ${WRKSRC}/install
@@ -96,5 +94,7 @@ do-install:
 	@${RM} ${DATADIR}/defaults/pluginpath.ini.bak
 	@${CP} ${LOCALBASE}/lib/opera/operapluginwrapper ${LOCALBASE}/lib/opera/operapluginwrapper.freebsd
 	@${INSTALL_SCRIPT} ${PATCHDIR}/operapluginwrapper ${LOCALBASE}/lib/opera/
+	-${LOCALBASE}/bin/update-desktop-database
+	-${LOCALBASE}/bin/update-mime-database ${LOCALBASE}/share/mime
 
 .include <bsd.port.post.mk>
