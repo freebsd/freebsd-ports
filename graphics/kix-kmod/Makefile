@@ -18,7 +18,7 @@ COMMENT=	A graphical screensaver kernel module
 
 SYSDIR?=	${SRC_BASE}/sys
 .if !exists(${SYSDIR}/dev/syscons/syscons.h)
-IGNORE=		requires kernel source (/usr/src/sys) to build
+IGNORE=		requires kernel source (in ${SYSDIR}) to build
 .endif
 MAKE_ENV+=	WERROR=
 PLIST_FILES=	lib/kix_saver.ko
