@@ -1,0 +1,14 @@
+--- source/mupen64plus-video-rice/projects/unix/Makefile	2010-12-17 00:32:33.000000000 -0500
++++ source/mupen64plus-video-rice/projects/unix/Makefile	2010-12-17 00:34:09.000000000 -0500
+@@ -111,6 +111,11 @@
+ ifeq ($(OS),FREEBSD)
+   LDFLAGS += -lGL $(shell pkg-config --libs libpng)
+   CFLAGS += $(shell pkg-config --cflags libpng)
++  ifeq ($(CPU), X86)
++    ifeq ($(ARCH_DETECTED), 32BITS)
++      CFLAGS += -pipe -mmmx -msse -fomit-frame-pointer
++    endif
++  endif
+ endif
+ ifeq ($(OS), LINUX)
+   LDFLAGS += -ldl -lGL
