@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	paraview
-PORTVERSION=	3.8.0
+PORTVERSION=	3.8.1
 CATEGORIES=	science graphics
 MASTER_SITES=	http://www.paraview.org/files/v3.8/
 DISTNAME=	ParaView-${PORTVERSION}
 
 MAINTAINER=	devel@stasyan.com
-COMMENT=	ParaView is a powerful scientific data visualization application
+COMMENT=	Powerful scientific data visualization application
 
 LIB_DEPENDS=	hdf5.0:${PORTSDIR}/science/hdf5 \
 		png.6:${PORTSDIR}/graphics/png \
@@ -31,7 +31,7 @@ USE_XORG=	x11 xt
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 USE_CMAKE=	yes
-CONFLICTS=	vtk-5.*
+#CONFLICTS=	vtk-5.*
 CMAKE_ARGS+=	-DPARAVIEW_USE_SYSTEM_HDF5=1 \
 		-DBUILD_SHARED_LIBS="ON" \
 		-DVTK_USE_SYSTEM_PNG="ON" \
@@ -45,29 +45,33 @@ CMAKE_ARGS+=	-DPARAVIEW_USE_SYSTEM_HDF5=1 \
 		-DQT_ASSISTANT_EXECUTABLE="${LOCALBASE}/bin/assistant-qt4" \
 		-DVTK_INSTALL_QT_PLUGIN_DIR="${PREFIX}/${QT_PLUGINDIR_REL}/designer" \
 		-DPARAVIEW_INSTALL_DEVELOPMENT="ON" \
-		-DPV_INSTALL_DOC_DIR=${DOCSDIR}
+		-DPV_INSTALL_DOC_DIR=${DOCSDIR} \
+		-DPARAVIEW_INSTALL_THIRD_PARTY_LIBRARIES="OFF"
 #		-DVTK_PYTHON_INCLUDE_PATH=${PYTHON_INCLUDEDIR} \
 #		-DPYTHON_INCLUDE_PATH:FILEPATH=${PYTHON_INCLUDEDIR} \
 #		-DVTK_WRAP_PYTHON:BOOL=ON \
 #		-DPARAVIEW_ENABLE_PYTHON:BOOL=ON
 #		-DVTK_PYTHON_SETUP_ARGS:STRING='--prefix="${PREFIX}"' \
 
-OPTIONS=	MANGLEDMESA	"Use off-screen (Mangled) Mesa" Off
+OPTIONS=	OSMESA	"Use Mesa for off-screen rendering" Off \
+		GL2PS		"Install support conversion OpenGL to PostScript" On
 #		VTKMPEG2	"Install patented MPEG2 encoder module" Off \
-#		GL2PS           "Install support conversion OpenGL to PostScript" On
 
-.if defined(WITH_MANGLEDMESA)
-LIB_DEPENDS+=	MesaGL.14:${PORTSDIR}/graphics/mesagl
-CMAKE_ARGS+=	-DVTK_OPENGL_HAS_OSMESA:BOOL=OFF	\
-		-DVTK_USE_MANGLED_MESA:BOOL=ON \
-		-DMANGLED_MESA_INCLUDE_DIR:PATH=${LOCALBASE}/include/Mesa \
-		-DMANGLED_MESA_LIBRARY:FILEPATH=${LOCALBASE}/lib/libMesaGL.so \
-		-DMANGLED_OSMESA_INCLUDE_DIR:PATH=${LOCALBASE}/include/Mesa \
-		-DMANGLED_OSMESA_LIBRARY:FILEPATH=${LOCALBASE}/lib/libMesaOSMesa.so
-.else
-LIB_DEPENDS+=	OSMesa.7:${PORTSDIR}/graphics/libosmesa
+.include <bsd.port.options.mk>
+
+.if defined(WITH_OSMESA)
+LIB_DEPENDS+=	OSMesa32.7:${PORTSDIR}/graphics/libosmesa
 CMAKE_ARGS+=	-DVTK_OPENGL_HAS_OSMESA:BOOL=ON \
-		-DOSMESA_LIBRARY:FILEPATH=${LOCALBASE}/lib/libOSMesa.so
+		-DOSMESA_INCLUDE_DIR:PATH=${LOCALBASE}/include/Mesa \
+		-DOSMESA_LIBRARY:FILEPATH=${LOCALBASE}/lib/libOSMesa32.so
+.endif
+
+.if defined(WITH_GL2PS)
+LIB_DEPENDS+=	gl2ps.1:${PORTSDIR}/print/gl2ps
+CMAKE_ARGS+=	-DVTK_USE_GL2PS:BOOL=ON
+PLIST_SUB+=	GL2PS=""
+.else
+PLIST_SUB+=	GL2PS="@comment "
 .endif
 
 MAKE_JOBS_SAFE=	yes
@@ -80,7 +84,7 @@ LIB_INSTDIR=	${PREFIX}/lib/${PORTNAME}-${PORTVERSION:R}
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 700000
+.if ${OSVERSION} < 700042
 BROKEN=		does not build on 6.x
 .endif
 
