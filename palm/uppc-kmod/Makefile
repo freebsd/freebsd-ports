@@ -18,8 +18,8 @@ COMMENT=	USB device driver for Windows CE handhelds
 MAN4=		uppc.4
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-.if !exists(/usr/src/sys/dev/usb/usb.h)
-IGNORE=		Requires kernel source (/usr/src/sys) to build
+.if !exists(${SRC_BASE}/sys/dev/usb/usb.h)
+IGNORE=		Requires kernel source (in ${SRC_BASE}) to build
 .endif
 
 .include <bsd.port.pre.mk>

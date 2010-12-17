@@ -46,7 +46,7 @@ PLIST_SUB=	MODULESDIR=${MODULESDIR}
 IGNORE=		You need the file hcwPVRP2.sys from the CD coming with the PVR-250/350 card. Please place this file in ${DISTDIR} and run make again.
 .endif
 
-.if !exists(/usr/src/sys/dev/iicbus/iicbb.c)
+.if !exists(${SRC_BASE}/sys/dev/iicbus/iicbb.c)
 IGNORE=		You need the kernel sources installed to build this module.
 .endif
 
