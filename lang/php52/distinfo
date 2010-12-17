@@ -1,5 +1,5 @@
-SHA256 (php-5.2.15.tar.bz2) = ecae6d397b929181233f7bf0294662c066e2d2b05fb61b69af1e50b9e28b585b
-SIZE (php-5.2.15.tar.bz2) = 9089791
+SHA256 (php-5.2.16.tar.bz2) = 790c4aeb77064a17e3c985fac0fbd7ac3635bc53c7ce7c80bd7c39239e338603
+SIZE (php-5.2.16.tar.bz2) = 9090930
 SHA256 (php-5.2.14-fpm-0.5.14-freebsd.patch.gz) = 354ce451417d14ef47761ae55147e9cee30fa0ff6f59447da021194c539f4d7f
 SIZE (php-5.2.14-fpm-0.5.14-freebsd.patch.gz) = 43550
 SHA256 (suhosin-patch-5.2.14-0.9.7.patch.gz) = bd03ade44673f7e6fa116d746350f16c60be7170d6c41816a2d51faaeb5a31ae
