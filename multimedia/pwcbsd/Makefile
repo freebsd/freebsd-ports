@@ -41,7 +41,7 @@ EXTRA_PATCHES=	${FILESDIR}/extra-patch-Makefile.kld \
 		${FILESDIR}/extra-patch-pwc.h
 .endif
 
-.if !exists(/usr/src/sys/Makefile)
+.if !exists(${SRC_BASE}/sys/Makefile)
 IGNORE=		requires kernel source files
 .endif
 
