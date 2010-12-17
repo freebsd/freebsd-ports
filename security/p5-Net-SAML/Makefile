@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Net-SAML
-PORTVERSION=	0.70
+PORTVERSION=	0.72
 CATEGORIES=	security perl5
 MASTER_SITES=	CPAN/../../authors/id/S/SA/SAMPO/ \
 		http://zxid.org/
