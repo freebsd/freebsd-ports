@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	prawn-security
-PORTVERSION=	0.1.1
+PORTVERSION=	0.8.4
 CATEGORIES=	print rubygems
 MASTER_SITES=	RG
 
