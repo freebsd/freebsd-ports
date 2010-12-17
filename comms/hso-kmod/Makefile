@@ -57,7 +57,7 @@ PLIST_SUB+=	PL_DEVD="@comment "
 EXTRA_PATCHES+=	${PATCHDIR}/HSO-DEBUG-patch-Makefile
 .endif
 
-.if !exists(/usr/src/sys/Makefile)
+.if !exists(${SRC_BASE}/sys/Makefile)
 IGNORE=	requires kernel source files
 .elif ${OSVERSION} < 700055
 IGNORE=	requires FreeBSD 7.0 or superior

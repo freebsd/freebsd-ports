@@ -34,7 +34,7 @@ MAN4=		uhso.4
 
 .include <bsd.port.pre.mk>
 
-.if !exists(/usr/src/sys/Makefile)
+.if !exists(${SRC_BASE}/sys/Makefile)
 IGNORE=		requires kernel source files
 .elif ${OSVERSION} <= 800063
 IGNORE=		requires FreeBSD 8.0 or later, please try comms/hso-kmod instead
