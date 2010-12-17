@@ -17,6 +17,8 @@ COMMENT=	Open Source IdM for the Masses - SAML SSO
 
 LIB_DEPENDS=	curl:${PORTSDIR}/ftp/curl
 
+MAKE_JOBS_UNSAFE=	yes
+
 MAKE_ARGS+=	CC="${CC}" CURL_ROOT="${LOCALBASE}" LD="${CC}" \
 		PREFIX="${PREFIX}" OPENSSL_ROOT="${OPENSSLBASE}"
 USE_GMAKE=	yes
