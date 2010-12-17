@@ -322,6 +322,7 @@
     SUBDIR += rubygem-prawn-js
     SUBDIR += rubygem-prawn-layout
     SUBDIR += rubygem-prawn-security
+    SUBDIR += rubygem-prawn-svg
     SUBDIR += scribus
     SUBDIR += sgf2tex
     SUBDIR += splix
