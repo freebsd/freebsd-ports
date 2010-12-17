@@ -177,7 +177,7 @@ else
     ${scp_cmd} ${client_user}@${host}:${chroot}/tmp/${pkgname}.log ${log}
     result=$?
     if [ $result -ne 0 ]; then
-	(echo ${chroot}@${host}; echo "huh? ${client_user}"; ${ssh_cmd} -a -n ${client_user}@${host} ls -laR ${chroot}/tmp) | mail -s "${pkgname} logfile not found" ${mailto}
+	(echo ${chroot}@${host}; ${ssh_cmd} -a -n ${client_user}@${host} ls -laR ${chroot}/tmp) | mail -s "${pkgname} logfile not found" ${mailto}
     else
 	if ! grep -q "even though it is marked BROKEN" ${log}; then
 	    buildlogdir=$(realpath ${builddir}/logs/)
