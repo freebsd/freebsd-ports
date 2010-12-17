@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	passenger
-PORTVERSION=	3.0.1
+PORTVERSION=	3.0.2
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 PKGNAMEPREFIX=	rubygem-
@@ -90,8 +90,8 @@ post-install:
 		's!#{LIBEV_LIBS}!-L${LOCALBASE}/lib -lev!g' \
 		${PREFIX}/${GEM_LIB_DIR}/build/agents.rb
 	@${REINPLACE_CMD} \
-		'258s!/usr/include/libev!${LOCALBASE}/include!; \
-		259s!-lev!-L${LOCALBASE}/lib -lev!' \
+		'259s!/usr/include/libev!${LOCALBASE}/include!; \
+		260s!-lev!-L${LOCALBASE}/lib -lev!' \
 		${PREFIX}/${GEM_LIB_DIR}/build/common_library.rb
 
 .if !defined(WITHOUT_APACHEPORT)
