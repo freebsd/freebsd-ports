@@ -1,10 +1,10 @@
---- pam_ldap.c.orig	Sun Oct 31 02:42:54 2004
-+++ pam_ldap.c	Sun Oct 31 02:48:03 2004
+--- pam_ldap.c.orig	2010-12-17 14:36:11.105528000 -0500
++++ pam_ldap.c	2010-12-17 14:38:42.000000000 -0500
 @@ -131,12 +131,7 @@
  #include "pam_ldap.h"
  #include "md5.h"
  
--#if defined(HAVE_SECURITY_PAM_MISC_H) || defined(HAVE_PAM_PAM_MISC_H)
+-#if defined(HAVE_SECURITY_PAM_MISC_H) || defined(HAVE_PAM_PAM_MISC_H) || defined(OPENPAM)
 - /* FIXME: is there something better to check? */
  #define CONST_ARG const
 -#else
@@ -13,7 +13,7 @@
  
  #ifndef HAVE_LDAP_MEMFREE
  #define ldap_memfree(x)	free(x)
-@@ -3137,7 +3132,7 @@
+@@ -3411,7 +3406,7 @@ pam_sm_authenticate (pam_handle_t * pamh
    int rc;
    const char *username;
    char *p;
@@ -22,7 +22,7 @@
    int i;
    pam_ldap_session_t *session = NULL;
    const char *configFile = NULL;
-@@ -3158,6 +3153,8 @@
+@@ -3432,6 +3427,8 @@ pam_sm_authenticate (pam_handle_t * pamh
  	;
        else if (!strcmp (argv[i], "debug"))
  	;
@@ -31,7 +31,7 @@
        else
  	syslog (LOG_ERR, "illegal option %s", argv[i]);
      }
-@@ -3171,6 +3168,22 @@
+@@ -3445,6 +3442,22 @@ pam_sm_authenticate (pam_handle_t * pamh
      return rc;
  
    rc = pam_get_item (pamh, PAM_AUTHTOK, (CONST_ARG void **) &p);
@@ -54,23 +54,7 @@
    if (rc == PAM_SUCCESS && (use_first_pass || try_first_pass))
      {
        rc = _do_authentication (pamh, session, username, p);
-@@ -3419,11 +3432,11 @@
- 		    {
- 		      _conv_sendmsg (appconv, "Password change aborted",
- 				     PAM_ERROR_MSG, no_warn);
--#ifdef PAM_AUTHTOK_RECOVERY_ERR
--		      return PAM_AUTHTOK_RECOVERY_ERR;
--#else
-+#ifdef PAM_AUTHTOK_RECOVER_ERR
- 		      return PAM_AUTHTOK_RECOVER_ERR;
--#endif /* PAM_AUTHTOK_RECOVERY_ERR */
-+#else
-+		      return PAM_AUTHTOK_RECOVERY_ERR;
-+#endif
- 		    }
- 		  else
- 		    {
-@@ -3437,7 +3450,7 @@
+@@ -3721,7 +3734,7 @@ pam_sm_chauthtok (pam_handle_t * pamh, i
  	  if (curpass == NULL)
  	    return PAM_MAXTRIES;	/* maximum tries exceeded */
  	  else
@@ -79,67 +63,3 @@
  	}
        else
  	{
-@@ -3465,11 +3478,11 @@
-       syslog (LOG_ERR,
- 	      "pam_ldap: error getting old authentication token (%s)",
- 	      pam_strerror (pamh, rc));
--#ifdef PAM_AUTHTOK_RECOVERY_ERR
--      return PAM_AUTHTOK_RECOVERY_ERR;
--#else
-+#ifdef PAM_AUTHTOK_RECOVER_ERR
-       return PAM_AUTHTOK_RECOVER_ERR;
--#endif /* PAM_AUTHTOK_RECOVERY_ERR */
-+#else
-+      return PAM_AUTHTOK_RECOVERY_ERR;
-+#endif /* PAM_AUTHTOK_RECOVER_ERR */
-     }
- 
-   if (try_first_pass || use_first_pass)
-@@ -3479,11 +3492,11 @@
- 	newpass = NULL;
- 
-       if (use_first_pass && newpass == NULL)
--#ifdef PAM_AUTHTOK_RECOVERY_ERR
--	return PAM_AUTHTOK_RECOVERY_ERR;
--#else
-+#ifdef PAM_AUTHTOK_RECOVER_ERR
- 	return PAM_AUTHTOK_RECOVER_ERR;
--#endif /* PAM_AUTHTOK_RECOVERY_ERR */
-+#else
-+	return PAM_AUTHTOK_RECOVERY_ERR;
-+#endif /* PAM_AUTHTOK_RECOVER_ERR */
-     }
- 
-   tries = 0;
-@@ -3533,11 +3546,11 @@
- 	}
-       else
- 	{
--#ifdef PAM_AUTHTOK_RECOVERY_ERR
--	  return PAM_AUTHTOK_RECOVERY_ERR;
--#else
-+#ifdef PAM_AUTHTOK_RECOVER_ERR
- 	  return PAM_AUTHTOK_RECOVER_ERR;
--#endif /* PAM_AUTHTOK_RECOVERY_ERR */
-+#else
-+	  return PAM_AUTHTOK_RECOVERY_ERR;
-+#endif /* PAM_AUTHTOK_RECOVER_ERR */
- 	}
- 
-       if (cmiscptr == NULL)
-@@ -3569,11 +3582,11 @@
- 		{
- 		  _conv_sendmsg (appconv, "Password change aborted",
- 				 PAM_ERROR_MSG, no_warn);
--#ifdef PAM_AUTHTOK_RECOVERY_ERR
--		  return PAM_AUTHTOK_RECOVERY_ERR;
--#else
-+#ifdef PAM_AUTHTOK_RECOVER_ERR
- 		  return PAM_AUTHTOK_RECOVER_ERR;
--#endif /* PAM_AUTHTOK_RECOVERY_ERR */
-+#else
-+		  return PAM_AUTHTOK_RECOVERY_ERR;
-+#endif /* PAM_AUTHTOK_RECOVER_ERR */
- 		}
- 	    }
- 	  else if (!strcmp (newpass, miscptr))
