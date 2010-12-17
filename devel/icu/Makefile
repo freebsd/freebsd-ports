@@ -17,12 +17,15 @@ MAINTAINER=	bapt@FreeBSD.org
 COMMENT=	International Components for Unicode (from IBM)
 
 OPTIONS=	THREADS "Build thread-safe version of the library" on
-CONFLICTS=	icu2-[0-9]* icu-4.4*
-
 
 USE_LDCONFIG=		yes
 
 WRKSRC=			${WRKDIR}/icu/source
+
+LICENSE=	ICU
+LICENSE_NAME=	ICU license
+LICENSE_PERMS=	${_LICENSE_PERMS_DEFAULT}
+LICENSE_FILE=	${WRKSRC}/../unicode-license.txt
 
 GNU_CONFIGURE=		yes
 CONFIGURE_SCRIPT=	runConfigureICU
