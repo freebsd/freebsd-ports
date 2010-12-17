@@ -9,7 +9,7 @@ You can define how the items are called to some program: each item
 some music) or processed in a list, calling one item after each
 other waiting for the previouse item to finish.
 
-FileShelfs help you keep track of your data spread out
+FileShelfs help you to keep track of your data spread out
 over the whole filesystem, but also belonging together such as
 configfiles.
 
