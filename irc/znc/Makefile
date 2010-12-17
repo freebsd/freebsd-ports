@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	znc
-PORTVERSION=	0.094
+PORTVERSION=	0.096
 CATEGORIES=	irc ipv6
 MASTER_SITES=	SF
 
@@ -54,10 +54,11 @@ PLIST_SUB+=		OPENSSL="@comment "
 .endif
 
 .if defined(WITH_PERL)
+CONFIGURE_ARGS+=	--enable-perl
 USE_PERL5=		yes
 PLIST_SUB+=		PERL=""
+BUILD_DEPENDS+=		swig>0:${PORTSDIR}/devel/swig13
 .else
-CONFIGURE_ARGS+=	--disable-perl
 PLIST_SUB+=		PERL="@comment "
 .endif
 
