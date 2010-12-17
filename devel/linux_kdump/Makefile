@@ -24,18 +24,15 @@ PLIST_FILES=	bin/linux_kdump
 
 .include <bsd.port.pre.mk>
 
-.ifndef(SRCDIR)
-SRCDIR=		/usr/src
 pre-everything::
-	@${ECHO_MSG} '===> Using the FreeBSD source tree under /usr/src'
-	@${ECHO_MSG} '===> Set SRCDIR to use an alternate source tree'
-.endif
+	@${ECHO_MSG} '===> Using the FreeBSD source tree under ${SRC_BASE}'
+	@${ECHO_MSG} '===> Set SRC_BASE to use an alternate source tree'
 
-.if !exists(${SRCDIR}/sys/i386/linux/syscalls.master)
-IGNORE=	requires kernel source present in ${SRCDIR}/sys
+.if !exists(${SRC_BASE}/sys/i386/linux/syscalls.master)
+IGNORE=	requires kernel source present in ${SRC_BASE}/sys
 .endif
-.if !exists(${SRCDIR}/usr.bin/ktrace/subr.c)
-IGNORE=	requires ktrace source present in ${SRCDIR}/usr.bin/ktrace
+.if !exists(${SRC_BASE}/usr.bin/ktrace/subr.c)
+IGNORE=	requires ktrace source present in ${SRC_BASE}/usr.bin/ktrace
 .endif
 .if exists(${LINUXBASE}/etc/fedora-release)
 IGNORE=	does not build with the default linux base, use the package instead
