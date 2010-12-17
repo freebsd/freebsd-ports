@@ -9,7 +9,7 @@ PORTNAME=	klat4
 PORTVERSION=	0.6.1
 PORTREVISION=	6
 CATEGORIES=	editors
-MASTER_SITES=	http://www.algebraic.ru/klat4/
+MASTER_SITES=	http://klat.algebraic.ru/
 
 MAINTAINER=	laddassm@gmail.com
 COMMENT=	A LaTeX source editor for KDE4
