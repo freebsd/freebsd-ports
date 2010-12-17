@@ -35,7 +35,6 @@ lib/znc/autoreply.so
 lib/znc/awaynick.so
 lib/znc/blockuser.so
 lib/znc/buffextras.so
-lib/znc/certauth.so
 lib/znc/chansaver.so
 lib/znc/clientnotify.so
 lib/znc/disconkick.so
@@ -97,10 +96,13 @@ share/znc/webskins/ice/pub/favicon.ico
 share/znc/webskins/ice/pub/pagebg.gif
 share/znc/webskins/ice/pub/ice.css
 share/znc/webskins/ice/pub/linkbg.jpg
+share/znc/blockuser/tmpl/blockuser_WebadminUser.tmpl
 share/znc/lastseen/tmpl/index.tmpl
+share/znc/lastseen/tmpl/lastseen_WebadminUser.tmpl
 share/znc/notes/tmpl/index.tmpl
 share/znc/notes/files/trash.gif
 share/znc/stickychan/tmpl/index.tmpl
+share/znc/stickychan/tmpl/stickychan_WebadminChan.tmpl
 share/znc/webadmin/tmpl/listusers.tmpl
 share/znc/webadmin/tmpl/settings.tmpl
 share/znc/webadmin/tmpl/traffic.tmpl
@@ -112,6 +114,7 @@ share/znc/webadmin/tmpl/add_edit_chan.tmpl
 %%EXTRA%%lib/znc/autovoice.so
 %%EXTRA%%lib/znc/block_motd.so
 %%EXTRA%%lib/znc/charset.so
+%%EXTRA%%lib/znc/clearbufferonmsg.so
 %%EXTRA%%lib/znc/ctcpflood.so
 %%EXTRA%%lib/znc/droproot.so
 %%EXTRA%%lib/znc/email.so
@@ -125,17 +128,23 @@ share/znc/webadmin/tmpl/add_edit_chan.tmpl
 %%EXTRA%%lib/znc/send_raw.so
 %%EXTRA%%lib/znc/shell.so
 %%OPENSSL%%lib/znc/away.so
+%%OPENSSL%%lib/znc/certauth.so
 %%OPENSSL%%lib/znc/crypt.so
 %%OPENSSL%%lib/znc/savebuff.so
 %%OPENSSL%%lib/znc/schat.so
-%%PERL%%lib/znc/modperl.pm
 %%PERL%%lib/znc/modperl.so
+%%PERL%%lib/znc/modperl/startup.pl
+%%PERL%%lib/znc/modperl/ZNC.pm
+%%PERL%%lib/znc/modperl/ZNC.so
 %%SASL%%lib/znc/saslauth.so
 %%TCL%%lib/znc/modtcl.so
 %%TCL%%share/znc/modtcl/modtcl.tcl
 %%TCL%%share/znc/modtcl/binds.tcl
 @dirrm include/znc
+@dirrmtry lib/znc/modperl
 @dirrmtry lib/znc
+@dirrmtry share/znc/blockuser/tmpl
+@dirrmtry share/znc/blockuser
 @dirrmtry share/znc/lastseen/tmpl
 @dirrmtry share/znc/lastseen
 @dirrmtry share/znc/modtcl
