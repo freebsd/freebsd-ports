@@ -1,15 +1,10 @@
 Index: bin/googleearth
-@@ -34,11 +34,21 @@ FindPath()
-     dirname $fullpath
- }
- 
-+ulimit -s 32768 2>/dev/null
-+
- # Set the home if not already set.
- if [ "${GOOGLEEARTH_DATA_PATH}" = "" ]; then
-     GOOGLEEARTH_DATA_PATH="`FindPath $0`"
+@@ -8,6 +8,16 @@ if [ "${GOOGLEEARTH_DATA_PATH}" = "" ]; 
+   GOOGLEEARTH_DATA_PATH="$(dirname "$(readlink -f "$0")")"
  fi
  
++ulimit -s 32768 2>/dev/null
++ 
 +# For browser wrapper script (to use original LD_LIBRARY_PATH)
 +if [ -n "${BROWSER}" ]
 +then

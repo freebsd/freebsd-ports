@@ -6,13 +6,12 @@
 #
 
 PORTNAME=	google-earth
-PORTVERSION=	5.1.3535.3218
-PORTEPOCH=	1
+PORTVERSION=	6.0.1.2032
 CATEGORIES=	astro deskutils geography
-MASTER_SITES=	http://dl.google.com/earth/client/advanced/previous/
-DISTNAME=	GoogleEarthLinux
-EXTRACT_SUFX=	.bin
-DIST_SUBDIR=    ${PORTNAME}/${PORTVERSION}
+MASTER_SITES=	http://dl.google.com/earth/client/advanced/previous/:previous \
+		http://dl.google.com/earth/client/current/:current
+DISTFILES=	GoogleEarthLinux.bin:current
+DIST_SUBDIR=	${PORTNAME}/${PORTVERSION}
 EXTRACT_ONLY=	# none
 
 MAINTAINER=	nox@FreeBSD.org
@@ -28,6 +27,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:C/\..*//g}/
 USE_LINUX=	yes
 USE_LINUX_APPS=	xorglibs
 USE_GNOME=	desktopfileutils
+USE_PERL5_BUILD=	yes
 
 .include <bsd.port.pre.mk>
 
@@ -40,7 +40,7 @@ USE_LINUX_APPS+=	dri
 .endif
 
 .if ${OSVERSION}<700055
-IGNORE=	FreeBSD>=7.X is needed with Linux emulation 2.6.x.
+IGNORE=	FreeBSD>=7.X is needed with Linux emulation 2.6.x
 .elif ${OSVERSION}<800076 && \
 	(! defined (OVERRIDE_LINUX_NONBASE_PORTS) || \
 	 ! (${OVERRIDE_LINUX_NONBASE_PORTS} == f10))
@@ -49,8 +49,8 @@ IGNORE=	needs non-default linux ports (define OVERRIDE_LINUX_BASE_PORT=f10 and O
 
 do-extract:
 	@${MKDIR} ${WRKSRC}
-	@${CP} ${DISTDIR}/${DIST_SUBDIR}/${DISTFILES} ${WRKSRC}
-	@cd ${WRKSRC} && ${UNMAKESELF} ${DISTFILES} && ${RM} -f ${DISTFILES}
+	@${CP} ${DISTDIR}/${DIST_SUBDIR}/${_DISTFILES} ${WRKSRC}
+	@cd ${WRKSRC} && ${UNMAKESELF} ${_DISTFILES} && ${RM} -f ${_DISTFILES}
 	@cd ${WRKSRC} && ${TAR} xf googleearth-data.tar && ${RM} -f googleearth-data.tar
 	@cd ${WRKSRC} && ${TAR} xf googleearth-linux-x86.tar && ${RM} -f googleearth-linux-x86.tar
 
@@ -60,6 +60,7 @@ post-patch:
 	@${REINPLACE_CMD} -i "" -e 's/^TMPPATH.*/exit 0/' ${WRKSRC}/postinstall.sh
 	@${REINPLACE_CMD} -i "" -e 's|\"\$$SETUP_INSTALLPATH/|\"${WRKSRC}/|' ${WRKSRC}/postinstall.sh
 	@${REINPLACE_CMD} -i "" -e 's|\$$SETUP_INSTALLPATH/googleearth |${PREFIX}/bin/googleearth |' ${WRKSRC}/postinstall.sh
+	${PERL} -i -pe 's|/lib/ld-lsb.so.3\0\0\0|/lib/ld-linux.so.2\0|' ${WRKSRC}/googleearth-bin
 
 do-build:
 	@${SETENV} SETUP_INSTALLPATH=${DATADIR} ${WRKSRC}/postinstall.sh
