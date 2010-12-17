@@ -23,6 +23,9 @@ bin/flexget
 %%PYTHON_SITELIBDIR%%/flexget/plugins/__init__.py
 %%PYTHON_SITELIBDIR%%/flexget/plugins/__init__.pyc
 %%PYTHON_SITELIBDIR%%/flexget/plugins/__init__.pyo
+%%PYTHON_SITELIBDIR%%/flexget/plugins/cli_performance.py
+%%PYTHON_SITELIBDIR%%/flexget/plugins/cli_performance.pyc
+%%PYTHON_SITELIBDIR%%/flexget/plugins/cli_performance.pyo
 %%PYTHON_SITELIBDIR%%/flexget/plugins/cli_plugins.py
 %%PYTHON_SITELIBDIR%%/flexget/plugins/cli_plugins.pyc
 %%PYTHON_SITELIBDIR%%/flexget/plugins/cli_plugins.pyo
