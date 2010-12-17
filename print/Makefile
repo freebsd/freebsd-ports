@@ -318,6 +318,7 @@
     SUBDIR += rubygem-prawn-core
     SUBDIR += rubygem-prawn-flexible-table
     SUBDIR += rubygem-prawn-format
+    SUBDIR += rubygem-prawn-graph
     SUBDIR += rubygem-prawn-layout
     SUBDIR += rubygem-prawn-security
     SUBDIR += scribus
