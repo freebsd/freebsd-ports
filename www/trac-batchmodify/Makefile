@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	batchmodify
-PORTVERSION=	0.7.0.8250
+PORTVERSION=	0.8.0.9694
 CATEGORIES=	www devel python
 MASTER_SITES=	http://www.sourcehosting.net/freebsd/distfiles/ \
 		LOCAL/glarkin
