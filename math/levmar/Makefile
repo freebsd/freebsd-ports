@@ -7,6 +7,7 @@
 
 PORTNAME=	levmar
 PORTVERSION=	2.5
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	http://www.ics.forth.gr/~lourakis/levmar/
 EXTRACT_SUFX=	.tgz
@@ -19,7 +20,11 @@ LICENSE=	GPLv2
 USE_LDCONFIG=	yes
 USE_FORTRAN=	yes
 
-.if exists(${LOCALBASE}/lib/libatlas.so)
+.include <bsd.port.pre.mk>
+
+.if exists(${LOCALBASE}/lib/libgoto2.so)
+WITH_BLAS?=	gotoblas
+.elif exists(${LOCALBASE}/lib/libatlas_r.so)
 WITH_BLAS?=	atlas
 .else
 WITH_BLAS?=	reference
@@ -27,13 +32,18 @@ WITH_BLAS?=	reference
 
 .if ${WITH_BLAS} == "reference"
 LIB_DEPENDS=	blas.2:${PORTSDIR}/math/blas \
-	lapack.4:${PORTSDIR}/math/lapack
-BLAS=	-lblas
-LAPACK =	-llapack
+		lapack.4:${PORTSDIR}/math/lapack
+BLAS=		-lblas
+LAPACK=		-llapack
+.elif ${WITH_BLAS} == "gotoblas"
+LIB_DEPENDS=	goto2:${PORTSDIR}/math/gotoblas \
+		lapack.4:${PORTSDIR}/math/lapack
+BLAS=		-lpthread -lgoto2p
+LAPACK=		-lpthread -lgoto2p
 .elif ${WITH_BLAS} == "atlas"
 LIB_DEPENDS=	atlas:${PORTSDIR}/math/atlas
-BLAS=	-lf77blas -lcblas -latlas
-LAPACK =	-lalapack
+BLAS=		-pthread -lptf77blas -lptcblas -latlas_r
+LAPACK=		-pthread -lalapack_r
 .endif
 
 LDFLAGS+=	-L${LOCALBASE}/lib
@@ -78,4 +88,4 @@ post-install:
 	@(cd ${WRKSRC}/ && ${INSTALL_DATA} ${PORTEXAMPLES} ${EXAMPLESDIR})
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
