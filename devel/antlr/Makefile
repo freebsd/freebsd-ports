@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	antlr
-PORTVERSION=	2.7.6
-PORTREVISION=	2
+PORTVERSION=	2.7.7
 CATEGORIES=	devel java
-MASTER_SITES=	http://www.antlr.org/download/
+MASTER_SITES=	http://www.antlr2.org/download/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	ANother Tool for Language Recognition
