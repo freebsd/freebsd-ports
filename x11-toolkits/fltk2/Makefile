@@ -28,7 +28,7 @@ BUILD_DEPENDS=	xprop:${PORTSDIR}/x11/xprop
 LIB_DEPENDS=	png.6:${PORTSDIR}/graphics/png \
 		jpeg.11:${PORTSDIR}/graphics/jpeg
 
-SNAPSHOT=	r7513
+SNAPSHOT=	r7725
 
 OPTIONS=	FLTK_THREADS "Install with threads support" on \
 		FLTK_CAIRO "Use cairo as graphics backend" off \
