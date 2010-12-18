@@ -168,6 +168,261 @@ gecko-post-patch:
 .endif
 .endif
 
+.elif !defined(_POSTMKINCLUDED) && !defined(Gecko_Pre_Include) && (defined(USE_FIREFOX) || defined(USE_FIREFOX_BUILD) || defined(USE_SEAMONKEY) || defined(USE_SEAMONKEY_BUILD) || defined(USE_THUNDERBIRD) || defined(USE_THUNDERBIRD_BUILD))
+Gecko_Pre_Include=			bsd.gecko.mk
+
+# Ports can use the following:
+#
+# USE_FIREFOX             Add runtime dependency on Firefox. If no version
+#                         is given by the maintainer via the port or by the
+#                         user via defined variable try to find the highest
+#                         stable installed version.
+#                         Available values: yes 36+ 35+ 36 35
+#                         NOTE:
+#                         default value 36 is used in case of USE_FIREFOX=yes
+#
+# USE_FIREFOX_BUILD       Add buildtime dependency on Firefox.
+#                         Available values: see USE_FIREFOX
+#
+# USE_SEAMONKEY           Add runtime dependency on SeaMonkey. If no
+#                         version is given by the maintainer via the port 
+#                         or by the user via defined variable try to find
+#                         the highest stable installed version.
+#                         Available values: yes 11+ 20+ 11 20
+#                         NOTE:
+#                         default value 20 is used in case of USE_SEAMONKEY=yes
+#
+# USE_SEAMONKEY_BUILD     Add buildtime dependency on SeaMonkey.
+#                         Available values: see USE_SEAMONKEY
+#
+# USE_THUNDERBIRD         Add runtime dependency on Thunderbird. If no 
+#                         version is given by the maintainer via the port 
+#                         or by the user via defined variable try to find 
+#                         the highest stable installed version.
+#                         Available values: yes 31+ 30+ 31 30
+#                         NOTE:
+#                         default value 31 is used in case of USE_THUNDERBIRD=yes
+#
+# USE_THUNDERBIRD_BUILD   Add buildtime dependency on Thunderbird.
+#                         Available values: see USE_THUNDERBIRD
+#
+
+#
+# Firefox part
+#
+.if defined(USE_FIREFOX) || defined(USE_FIREFOX_BUILD)
+
+# Process USE_FIREFOX_BUILD
+.if defined(USE_FIREFOX_BUILD)
+USE_FIREFOX:=				${USE_FIREFOX_BUILD}
+_FIREFOX_BUILD_DEPENDS=		yes
+.endif
+
+_FIREFOX_DEFAULT_VERSION=	36
+_FIREFOX_VERSIONS=			36 35
+_FIREFOX_RANGE_VERSIONS=	36+ 35+
+
+# For specifying [36, 35, ..]+
+_FIREFOX_35P=	35 ${_FIREFOX_36P}
+_FIREFOX_36P=	36
+
+# Set the default Firefox version and check if USE_FIREFOX=yes was given
+.if ${USE_FIREFOX} == "yes"
+USE_FIREFOX=	${_FIREFOX_DEFAULT_VERSION}
+.endif
+
+# Setting/finding Firefox version we want.
+.if exists(${LOCALBASE}/bin/firefox3)
+_FIREFOX_VER!=	${LOCALBASE}/bin/firefox3 --version | ${SED} -e 's/Mozilla Firefox \([0-9]\)\.\([0-9]*\).*/\1\2/'
+.elif exists(${LOCALBASE}/bin/firefox)
+_FIREFOX_VER!=	${LOCALBASE}/bin/firefox --version | ${SED} -e 's/Mozilla Firefox \([0-9]\)\.\([0-9]*\).*/\1\2/'
+.endif
+
+# Check if installed Firefox version matches the wanted one
+.if defined(_FIREFOX_VER)
+_SUPFIREFOX=		no
+.if ${USE_FIREFOX:C/[0-9][0-9]//} == "+"
+.for ver in ${_FIREFOX_RANGE_VERSIONS}
+.if ${USE_FIREFOX} == "${ver}"
+_MATCHED_FIREFOX_VER:=	${ver:S/+//}
+.for firefox in ${_FIREFOX_${_MATCHED_FIREFOX_VER}P}
+.if ${_FIREFOX_VER} == ${firefox}
+_SUPFIREFOX=		yes
+USE_FIREFOX=		${_FIREFOX_VER}
+.endif
+.endfor
+.endif
+.endfor
+.else
+.if ${_FIREFOX_VER} == ${USE_FIREFOX}
+_SUPFIREFOX=		yes
+.endif
+.endif
+.if ${_SUPFIREFOX} == no
+IGNORE=			cannot install: Firefox versions mismatch: firefox-${_FIREFOX_VER:C/([0-9])([0-9])/\1.\2/} is installed and wanted version is firefox-${USE_FIREFOX:C/([0-9])([0-9])/\1.\2/}
+.endif
+.endif
+
+.if !defined(_FIREFOX_${USE_FIREFOX:S/+//}P)
+IGNORE=			cannot install: unknown Firefox version: firefox-${USE_FIREFOX:C/([0-9])([0-9])/\1.\2/}
+.endif
+
+# Dependence lines for different Firefox versions
+36_DEPENDS=		${LOCALBASE}/lib/firefox3/firefox:${PORTSDIR}/www/firefox
+35_DEPENDS=		${LOCALBASE}/lib/firefox3/firefox:${PORTSDIR}/www/firefox35
+
+# Add dependencies
+.if defined(USE_FIREFOX)
+.if defined(_FIREFOX_BUILD_DEPENDS)
+BUILD_DEPENDS+= ${${USE_FIREFOX}_DEPENDS}
+.endif
+RUN_DEPENDS+=	${${USE_FIREFOX}_DEPENDS}
+.endif
+
+.endif # defined(USE_FIREFOX)
+#
+# SeaMonkey part
+#
+.if defined(USE_SEAMONKEY) || defined(USE_SEAMONKEY_BUILD)
+
+# Process USE_SEAMONKEY_BUILD
+.if defined(USE_SEAMONKEY_BUILD)
+USE_SEAMONKEY:=				${USE_SEAMONKEY_BUILD}
+_SEAMONKEY_BUILD_DEPENDS=	yes
+.endif
+
+_SEAMONKEY_DEFAULT_VERSION=	20
+_SEAMONKEY_VERSIONS=		11 20
+_SEAMONKEY_RANGE_VERSIONS=	11+ 20+
+
+# For specifying [20, 11, ..]+
+_SEAMONKEY_11P=	11 ${_SEAMONKEY_20P}
+_SEAMONKEY_20P=	20
+
+# Set the default SeaMonkey version and check if USE_SEAMONKEY=yes was given
+.if ${USE_SEAMONKEY} == "yes"
+USE_SEAMONKEY=	${_SEAMONKEY_DEFAULT_VERSION}
+.endif
+
+# Setting/finding SeaMonkey version we want.
+.if exists(${LOCALBASE}/bin/seamonkey)
+_SEAMONKEY_VER!=	${LOCALBASE}/bin/seamonkey --version | ${SED} -e 's/Mozilla SeaMonkey \([0-9]\)\.\([0-9]*\).*/\1\2/'
+.endif
+
+# Check if installed SeaMonkey version matches the wanted one
+.if defined(_SEAMONKEY_VER)
+_SUPSEAMONKEY=		no
+.if ${USE_SEAMONKEY:C/[0-9][0-9]//} == "+"
+.for ver in ${_SEAMONKEY_RANGE_VERSIONS}
+.if ${USE_SEAMONKEY} == "${ver}"
+_MATCHED_SEAMONKEY_VER:=	${ver:S/+//}
+.for seamonkey in ${_SEAMONKEY_${_MATCHED_SEAMONKEY_VER}P}
+.if ${_SEAMONKEY_VER} == ${seamonkey}
+_SUPSEAMONKEY=		yes
+USE_SEAMONKEY=		${_SEAMONKEY_VER}
+.endif
+.endfor
+.endif
+.endfor
+.else
+.if ${_SEAMONKEY_VER} == ${USE_SEAMONKEY}
+_SUPSEAMONKEY=		yes
+.endif
+.endif
+.if ${_SUPSEAMONKEY} == no
+IGNORE=			cannot install: SeaMonkey versions mismatch: seamonkey-${_SEAMONKEY_VER:C/([0-9])([0-9])/\1.\2/} is installed and wanted version is seamonkey-${USE_SEAMONKEY:C/([0-9])([0-9])/\1.\2/}
+.endif
+.endif
+
+.if !defined(_SEAMONKEY_${USE_SEAMONKEY:S/+//}P)
+IGNORE=			cannot install: unknown SeaMonkey version: seamonkey-${USE_SEAMONKEY:C/([0-9])([0-9])/\1.\2/}
+.endif
+
+# Dependence lines for different SeaMonkey versions
+11_DEPENDS=		${LOCALBASE}/lib/seamonkey/seamonkey-bin:${PORTSDIR}/www/seamonkey
+20_DEPENDS=		${LOCALBASE}/lib/seamonkey/seamonkey:${PORTSDIR}/www/seamonkey2
+
+# Add dependencies
+.if defined(USE_SEAMONKEY)
+.if defined(_SEAMONKEY_BUILD_DEPENDS)
+BUILD_DEPENDS+= ${${USE_SEAMONKEY}_DEPENDS}
+.endif
+RUN_DEPENDS+=	${${USE_SEAMONKEY}_DEPENDS}
+.endif
+
+.endif # defined(USE_SEAMONKEY)
+#
+# Thunderbird part
+#
+.if defined(USE_THUNDERBIRD) || defined(USE_THUNDERBIRD_BUILD)
+
+# Process USE_THUNDERBIRD_BUILD
+.if defined(USE_THUNDERBIRD_BUILD)
+USE_THUNDERBIRD:=			${USE_THUNDERBIRD_BUILD}
+_THUNDERBIRD_BUILD_DEPENDS=		yes
+.endif
+
+_THUNDERBIRD_DEFAULT_VERSION=	31
+_THUNDERBIRD_VERSIONS=			31 30
+_THUNDERBIRD_RANGE_VERSIONS=	31+ 30+
+
+# For specifying [31, 30, ..]+
+_THUNDERBIRD_30P=	30 ${_THUNDERBIRD_31P}
+_THUNDERBIRD_31P=	31
+
+# Set the default Thunderbird version and check if USE_THUNDERBIRD=yes was given
+.if ${USE_THUNDERBIRD} == "yes"
+USE_THUNDERBIRD=	${_THUNDERBIRD_DEFAULT_VERSION}
+.endif
+
+# Setting/finding Thunderbird version we want.
+.if exists(${LOCALBASE}/bin/thunderbird)
+_THUNDERBIRD_VER!=	${LOCALBASE}/bin/thunderbird --version | ${SED} -e 's/ Thunderbird \([0-9]\)\.\([0-9]*\).*/\1\2/'
+.endif
+
+# Check if installed Thunderbird version matches the wanted one
+.if defined(_THUNDERBIRD_VER)
+_SUPTHUNDERBIRD=		no
+.if ${USE_THUNDERBIRD:C/[0-9][0-9]//} == "+"
+.for ver in ${_THUNDERBIRD_RANGE_VERSIONS}
+.if ${USE_THUNDERBIRD} == "${ver}"
+_MATCHED_THUNDERBIRD_VER:=	${ver:S/+//}
+.for thunderbird in ${_THUNDERBIRD_${_MATCHED_THUNDERBIRD_VER}P}
+.if ${_THUNDERBIRD_VER} == ${thunderbird}
+_SUPTHUNDERBIRD=		yes
+USE_THUNDERBIRD=		${_THUNDERBIRD_VER}
+.endif
+.endfor
+.endif
+.endfor
+.else
+.if ${_THUNDERBIRD_VER} == ${USE_THUNDERBIRD}
+_SUPTHUNDERBIRD=		yes
+.endif
+.endif
+.if ${_SUPTHUNDERBIRD} != yes
+IGNORE=			cannot install: Thunderbird versions mismatch: thunderbird-${_THUNDERBIRD_VER:C/([0-9])([0-9])/\1.\2/} is installed and wanted version is thunderbird-${USE_THUNDERBIRD:C/([0-9])([0-9])/\1.\2/}
+.endif
+.endif
+
+.if !defined(_THUNDERBIRD_${USE_THUNDERBIRD:S/+//}P)
+IGNORE=			cannot install: unknown Thunderbird version: thunderbird-${USE_THUNDERBIRD:C/([0-9])([0-9])/\1.\2/}
+.endif
+
+# Dependence lines for different Thunderbird versions
+31_DEPENDS=		${LOCALBASE}/lib/thunderbird/thunderbird:${PORTSDIR}/mail/thunderbird
+30_DEPENDS=		${LOCALBASE}/lib/thunderbird/thunderbird:${PORTSDIR}/mail/thunderbird3
+
+# Add dependencies
+.if defined(USE_THUNDERBIRD)
+.if defined(_THUNDERBIRD_BUILD_DEPENDS)
+BUILD_DEPENDS+= ${${USE_THUNDERBIRD}_DEPENDS}
+.endif
+RUN_DEPENDS+=	${${USE_THUNDERBIRD}_DEPENDS}
+.endif
+
+.endif # defined(USE_THUNDERBIRD)
+
 .else # split
 
 .if !defined(_POSTMKINCLUDED) && !defined(Gecko_Pre_Include)
