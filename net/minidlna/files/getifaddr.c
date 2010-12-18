@@ -4,6 +4,8 @@
  *
  * Copyright (c) 2006, Thomas Bernard
  * All rights reserved.
+ * 
+ * Adapted to BSD by jayp and Mikhail T. -- 2010
  *
  * Redistribution and use in source and binary forms, with or without
  * modification, are permitted provided that the following conditions are met:
@@ -39,9 +41,6 @@
 #include <netinet/in.h>
 #include <netdb.h>
 #include <errno.h>
-#if defined(sun)
-#include <sys/sockio.h>
-#endif
 
 #include <netinet/in.h>
 #include <sys/types.h>
@@ -54,12 +53,7 @@
 
 #include <ifaddrs.h>
 #include <sys/param.h>
-#if defined(BSD) || defined(__APPLE__)
 #include <net/if_dl.h>
-#endif
-#ifdef __linux__
-#define AF_LINK AF_PACKET
-#endif
 
 #include "getifaddr.h"
 #include "log.h"
@@ -97,192 +91,115 @@ getifaddr(const char * ifname, char * buf, int len)
 	return 0;
 }
 
-#if 0
 int
 getsysaddr(char * buf, int len)
 {
-	int i;
-	int s = socket(PF_INET, SOCK_STREAM, 0);
-	struct sockaddr_in addr;
-	struct ifreq ifr;
-	int ret = -1;
+	int rv=-1;
+	struct ifaddrs *ifap = NULL;
+	struct ifaddrs *ifnr;
 
-	for (i=1; i > 0; i++)
-	{
-		// de hack: uncomment this out: ifr.ifr_ifindex = i;
-		if( ioctl(s, SIOCGIFNAME, &ifr) < 0 )
-			break;
-		if(ioctl(s, SIOCGIFADDR, &ifr, sizeof(struct ifreq)) < 0)
-			continue;
-		memcpy(&addr, &ifr.ifr_addr, sizeof(addr));
-		if(strncmp(inet_ntoa(addr.sin_addr), "127.", 4) == 0)
-			continue;
-		if(!inet_ntop(AF_INET, &addr.sin_addr, buf, len))
-		{
-			DPRINTF(E_ERROR, L_GENERAL, "inet_ntop(): %s\n", strerror(errno));
-			close(s);
+	if (getifaddrs(&ifap) != 0)
+		err(1, "getifaddrs");
+
+	for (ifnr = ifap; ifnr != NULL; ifnr = ifnr->ifa_next) {
+		if (ifnr->ifa_addr->sa_family == AF_INET) {
+			struct sockaddr_in *addr_in =
+			    (struct sockaddr_in *)ifnr->ifa_addr;
+
+			unsigned a =
+			    (htonl(addr_in->sin_addr.s_addr) >> 0x18) & 0xFF;
+
+			if (a==127)
+				continue;
+
+			if(!inet_ntop(AF_INET, &addr_in->sin_addr, buf, len)) {
+				warn("inet_ntop()");
+				break;
+			}
+			rv=0;
 			break;
 		}
-		ret = 0;
-		break;
+		rv=0;
 	}
-	close(s);
-
-	return(ret);
+	freeifaddrs(ifap);
+	return rv;
 }
-#else
-int 
-getsysaddr(char * buf, int len) {
-    int rv=-1;
-    struct ifaddrs * ifap = 0;
 
-    int res = getifaddrs( & ifap );
-    if ( 0 != res ) {
-        printf( "%s\n", strerror( errno ) );
-        exit( -1 );
-    }
+static int
+getsysifname(char * buf, size_t len)
+{
+	int rv=-1;
+	struct ifaddrs *ifap = NULL;
+	struct ifaddrs *ifnr;
 
-    struct ifaddrs *ifnr;
-    for (ifnr = ifap; ( void * ) 0 != ifnr; ifnr = ifnr->ifa_next ) {
-        if ( AF_INET == ifnr->ifa_addr->sa_family ) {
-            struct sockaddr_in *addr_in = ( struct sockaddr_in * ) ifnr->ifa_addr;
+	if (getifaddrs(&ifap) != 0)
+		err(1, "getifaddrs");
 
-            unsigned a = ( htonl( addr_in->sin_addr.s_addr ) >> 0x18 ) & 0xFF;
-            if (a==127) continue;
+	for (ifnr = ifap; ifnr != NULL; ifnr = ifnr->ifa_next) {
+		if (ifnr->ifa_addr->sa_family == AF_INET) {
+			char *ifname=ifnr->ifa_name;
+			struct sockaddr_in *addr_in =
+			    (struct sockaddr_in *)ifnr->ifa_addr;
 
-            if(!inet_ntop(AF_INET, &addr_in->sin_addr, buf, len)) {
-                printf("inet_ntop(): %s\n", strerror(errno));
-                break;  
-            }   
+			unsigned a =
+			    (htonl(addr_in->sin_addr.s_addr) >> 0x18) & 0xFF;
 
-            rv=0;
-            break;
-        }
-        rv=0;
-    }
+			if (a == 127)
+				continue;
 
-    freeifaddrs( ifap );
-    return rv;
+			if(!inet_ntop(AF_INET, &addr_in->sin_addr, buf, len)) {
+				warn("inet_ntop()");
+				break;
+			}
+			strncpy(buf, ifname, len);
+			break;
+		}
+		rv=0;
+	}
+
+	freeifaddrs(ifap);
+	return rv;
 }
-#endif
- 
-int 
-getsysifname(char * buf, size_t len) { 
-    int rv=-1; 
-    struct ifaddrs * ifap = 0;  
- 
-    int res = getifaddrs( & ifap ); 
-    if ( 0 != res ) { 
-        printf( "%s\n", strerror( errno ) ); 
-        exit( -1 ); 
-    } 
- 
-    struct ifaddrs *ifnr; 
-    for (ifnr = ifap; ( void * ) 0 != ifnr; ifnr = ifnr->ifa_next ) { 
-        if ( AF_INET == ifnr->ifa_addr->sa_family ) { 
-            char *ifname=ifnr->ifa_name; 
-            struct sockaddr_in *addr_in = ( struct sockaddr_in * ) ifnr->ifa_addr; 
- 
-            unsigned a = ( htonl( addr_in->sin_addr.s_addr ) >> 0x18 ) & 0xFF;  
-            if (a==127) continue; 
- 
-            if(!inet_ntop(AF_INET, &addr_in->sin_addr, buf, len)) { 
-                printf("inet_ntop(): %s\n", strerror(errno)); 
-                break;
-            }
 
-            rv=0;
-            strncpy(buf, ifname, len);
-            break;
-        }
-        rv=0;
-    }
-
-    freeifaddrs( ifap );
-
-    return rv;
-}
- 
 int
 getsyshwaddr(char *buf, int len)
 {
-    struct ifaddrs *ifap;
-    char sysifname[256];
-    int rv=-1;
-    uint8_t node[6];
-
-    getsysifname(sysifname, sizeof(sysifname));
-    if (getifaddrs(&ifap) == 0) {
+	struct ifaddrs *ifap;
+	char sysifname[256];
+	int rv=-1;
+	uint8_t node[6];
         struct ifaddrs *p;
-        for (p = ifap; p; p = p->ifa_next) {
-            if (p->ifa_addr->sa_family == AF_LINK) {
-                char *ifname=p->ifa_name;
-                if(strncmp(sysifname, ifname, sizeof(sysifname))) continue;
-#ifdef __linux__
-		// Linux
-		struct ifreq ifr;
 
-		int fd = socket(AF_INET, SOCK_DGRAM, 0);
+	if (getsysifname(sysifname, sizeof(sysifname)) != 0)
+		return rv;
 
-		ifr.ifr_addr.sa_family = AF_INET;
-		strcpy(ifr.ifr_name, ifname);
-		ioctl(fd, SIOCGIFHWADDR, &ifr);
-		close(fd);
+	if (getifaddrs(&ifap) != 0)
+		err(1, "getifaddrs");
 
-                memcpy(node, ifr.ifr_hwaddr.sa_data, 6);
-#else
-                struct sockaddr_dl* sdp = (struct sockaddr_dl*) p->ifa_addr;
-                memcpy(node, sdp->sdl_data + sdp->sdl_nlen, 6);
-#endif
-                if(len>12)
-                    sprintf(buf, "%02x%02x%02x%02x%02x%02x", node[0], node[1], node[2], node[3], node[4], node[5]);
-                else
-                    memmove(buf, node, 6);
-                rv=0;
-                break;
-            }
-        }
-        freeifaddrs(ifap);
-    }
-    return rv;
-}
+	for (p = ifap; p != NULL; p = p->ifa_next) {
+		if (p->ifa_addr->sa_family == AF_LINK) {
+			char *ifname=p->ifa_name;
+			struct sockaddr_dl* sdp;
 
-#ifdef __linux__
-int
-get_remote_mac(struct in_addr ip_addr, unsigned char * mac)
-{
-	struct in_addr arp_ent;
-	FILE * arp;
-	char remote_ip[16];
-	int matches, hwtype, flags;
-	memset(mac, 0xFF, 6);
+			if (strncmp(sysifname, ifname, sizeof(sysifname)))
+				continue;
 
- 	arp = fopen("/proc/net/arp", "r");
-	if( !arp )
-		return 1;
-	while( !feof(arp) )
-	{
-	        matches = fscanf(arp, "%s 0x%X 0x%X %hhx:%hhx:%hhx:%hhx:%hhx:%hhx",
-		                      remote_ip, &hwtype, &flags,
-		                      &mac[0], &mac[1], &mac[2], &mac[3], &mac[4], &mac[5]);
-		if( matches != 9 )
-			continue;
-		inet_pton(AF_INET, remote_ip, &arp_ent);
-		if( ip_addr.s_addr == arp_ent.s_addr )
+			sdp = (struct sockaddr_dl*) p->ifa_addr;
+			memcpy(node, sdp->sdl_data + sdp->sdl_nlen, 6);
+			if (len>12)
+				sprintf(buf, "%02x%02x%02x%02x%02x%02x",
+				    node[0], node[1], node[2],
+				    node[3], node[4], node[5]);
+			else
+				memmove(buf, node, 6);
+			rv=0;
 			break;
-		mac[0] = 0xFF;
+		}
 	}
-	fclose(arp);
-
-	if( mac[0] == 0xFF )
-	{
-		memset(mac, 0xFF, 6);
-		return 1;
-	}
-
-	return 0;
+        freeifaddrs(ifap);
+	return rv;
 }
-#else
+
 int
 get_remote_mac(struct in_addr ip_addr, unsigned char *mac)
 {
@@ -320,8 +237,9 @@ get_remote_mac(struct in_addr ip_addr, unsigned char *mac)
                         break;
                 }
         }
-        if(!found_entry) memset(mac, 0xFF, 6);
-        //free(buf);
+
+        if(!found_entry)
+		memset(mac, 0xFF, 6);
+        free(buf);
         return !found_entry;
 }
-#endif
