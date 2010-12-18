@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	discount
-PORTVERSION=	2.0.1
+PORTVERSION=	2.0.3
 CATEGORIES=	textproc devel
 MASTER_SITES=	http://www.pell.portland.or.us/~orc/Code/markdown/
 
@@ -16,6 +16,7 @@ COMMENT=	A C implementation of the Markdown markup language
 LICENSE=	BSD
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 
+USE_BZIP2=	yes
 HAS_CONFIGURE=	yes
 CONFIGURE_SCRIPT=configure.sh
 CONFIGURE_ARGS=	--prefix=${PREFIX} \
