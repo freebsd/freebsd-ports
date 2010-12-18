@@ -21,14 +21,14 @@ RUN_DEPENDS+=	${LOCALBASE}/lib/libmupen64plus.so.2:${PORTSDIR}/emulators/mupen64
 RUN_DEPENDS+=	mupen64plus:${PORTSDIR}/emulators/mupen64plus-ui-console
 
 # Audio plugins
-RUN_DEPENDS+=	${LOCALBASE}/lib/mupen64plus-audio-sdl.so:${PORTSDIR}/emulators/mupen64plus-audio-sdl
+RUN_DEPENDS+=	${LOCALBASE}/lib/${PORTNAME}/mupen64plus-audio-sdl.so:${PORTSDIR}/emulators/mupen64plus-audio-sdl
 
 # Input plugins
-RUN_DEPENDS+=	${LOCALBASE}/lib/mupen64plus-input-sdl.so:${PORTSDIR}/emulators/mupen64plus-input-sdl
-RUN_DEPENDS+=	${LOCALBASE}/lib/mupen64plus-rsp-hle.so:${PORTSDIR}/emulators/mupen64plus-rsp-hle
+RUN_DEPENDS+=	${LOCALBASE}/lib/${PORTNAME}/mupen64plus-input-sdl.so:${PORTSDIR}/emulators/mupen64plus-input-sdl
+RUN_DEPENDS+=	${LOCALBASE}/lib/${PORTNAME}/mupen64plus-rsp-hle.so:${PORTSDIR}/emulators/mupen64plus-rsp-hle
 
 # Graphics plugins
-RUN_DEPENDS+=	${LOCALBASE}/lib/mupen64plus-video-rice.so:${PORTSDIR}/emulators/mupen64plus-video-rice
+RUN_DEPENDS+=	${LOCALBASE}/lib/${PORTNAME}/mupen64plus-video-rice.so:${PORTSDIR}/emulators/mupen64plus-video-rice
 
 NO_MTREE=	yes
 NO_BUILD=	yes
