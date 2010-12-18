@@ -36,8 +36,8 @@ WANT_GNOME=	yes
 
 NO_BUILD=	yes
 
-OPERA_VER=	10.63
-OPERA_BUILD=	6450
+OPERA_VER=	11.00
+OPERA_BUILD=	1156
 DATADIR=	${PREFIX}/share/${UNIQUENAME}
 DOCSDIR=	${PREFIX}/share/doc/${UNIQUENAME}
 
@@ -49,6 +49,7 @@ RENAME=		opera opera-widget-manager lib/opera \
 		share/applications/opera-widget-manager.desktop \
 		share/doc/opera share/opera man/man1/opera.1 \
 		man/man1/opera-widget-manager.1 \
+		share/mime/packages/opera-extension.xml \
 		share/mime/packages/opera-unite-application.xml \
 		share/mime/packages/opera-widget.xml
 
@@ -77,6 +78,13 @@ post-extract:
 		linux=`${ECHO_CMD} $${_f} | \
 		       ${SED} -e 's|opera|${UNIQUENAME}|g'`; \
 		${MV} ${WRKSRC}/$${_f} ${WRKSRC}/$${linux}; \
+	done; \
+	for _l in `find ${WRKSRC}/share/icons -name opera-widget.png | \
+		   sed -e 's|/opera-widget\.png||g'`; do \
+		${RM} $${_l}/opera-widget.png; \
+		cd $${_l}; \
+		${LN} -s ../mimetypes/${UNIQUENAME}-widget.png \
+			$${_l}/${UNIQUENAME}-widget.png; \
 	done
 
 post-patch:
@@ -118,7 +126,7 @@ post-patch:
 		s|B opera@@|B ${UNIQUENAME}@@|g ; \
 		/standards-compliant/s|opera|${UNIQUENAME}|g' \
 			${WRKSRC}/man/man1/*.1
-	@${REINPLACE_CMD} -e '/<icon/s|opera|${UNIQUENAME}|g' \
+	@${REINPLACE_CMD} -e '/<generic-icon/s|opera|${UNIQUENAME}|g' \
 			${WRKSRC}/share/mime/packages/*.xml
 	@${FIND} ${WRKSRC} -name '*.orig' -delete
 	@${FIND} ${WRKSRC} -name '*.bak' -delete
