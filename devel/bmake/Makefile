@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bmake
-PORTVERSION=	20101101
+PORTVERSION=	20101210
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.netbsd.org/pub/NetBSD/misc/sjg/ \
 		http://www.gtlib.cc.gatech.edu/pub/NetBSD/misc/sjg/ \
