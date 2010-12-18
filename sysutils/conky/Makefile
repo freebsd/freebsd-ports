@@ -25,7 +25,8 @@ USE_GNOME?=	pkgconfig
 USE_ICONV=	yes
 USE_GMAKE=	yes
 CONFIGURE_ARGS+=	--disable-portmon \
-			--disable-hddtemp
+			--disable-hddtemp \
+			--disable-alsa
 CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
 		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
 
