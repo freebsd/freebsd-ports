@@ -7,7 +7,7 @@
 
 PORTNAME=		vmd
 PORTVERSION=		1.8.7
-PORTREVISION=		2
+PORTREVISION=		3
 CATEGORIES=		science graphics python tcl tk
 MASTER_SITES=		http://jedi.ks.uiuc.edu/~johns/raytracer/files/0.98.7/:tachyon \
 			http://www.ks.uiuc.edu/Research/vmd/extsrcs/:stride
@@ -30,6 +30,8 @@ USE_PERL5_BUILD=	yes
 USE_GMAKE=		yes
 USE_GL=			glu
 USE_PYTHON=		yes
+
+ONLY_FOR_ARCHS=		i386 amd64
 
 RESTRICTED=		License has restrictions
 
