@@ -3,7 +3,7 @@ CFLAGS= %%CFLAGS%%
 LDFLAGS= %%LDFLAGS%%
 LAPACK= %%LAPACK%%
 BLAS= %%BLAS%%
-LIBS= -llevmar $(LAPACK) $(BLAS) -lm -lgfortran
+LIBS= -llevmar $(LAPACK) $(BLAS) -lm -lgcc_s -lgfortran
 
 DEMOBJS= lmdemo.o
 DEMOSRCS= lmdemo.c
@@ -11,7 +11,7 @@ DEMOSRCS= lmdemo.c
 all: lmdemo
 
 lmdemo: $(DEMOBJS)
-	$(CC) $(LDFLAGS) $(DEMOBJS) -o lmdemo $(LIBS)
+	$(CC) $(CFLAGS) $(LDFLAGS) $(DEMOBJS) -o lmdemo $(LIBS)
 
 clean:
 	@rm -f $(DEMOBJS)
