@@ -374,6 +374,7 @@
     SUBDIR += hex
     SUBDIR += hex-a-hop
     SUBDIR += hexalate
+    SUBDIR += hexglass
     SUBDIR += hexxagon
     SUBDIR += highmoon
     SUBDIR += hinversi
