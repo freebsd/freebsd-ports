@@ -6,48 +6,16 @@
 #
 
 PORTNAME=	xvile
-PORTVERSION=	9.7zg
+PORTVERSION=	9.8c
 CATEGORIES=	editors
 MASTER_SITES=	ftp://invisible-island.net/vile/ \
 		ftp://dickey.his.com/vile/ \
 		ftp://ftp.phred.org/pub/vile/
-DISTNAME=	vile-9.7
+DISTNAME=	vile-9.8c
 EXTRACT_SUFX=	.tgz
 
 PATCH_SITES=    ${MASTER_SITES:S,vile/,vile/patches/,g}
-PATCHFILES=	vile-9.7a.patch.gz \
-		vile-9.7b.patch.gz \
-		vile-9.7c.patch.gz \
-		vile-9.7d.patch.gz \
-		vile-9.7e.patch.gz \
-		vile-9.7f.patch.gz \
-		vile-9.7g.patch.gz \
-		vile-9.7h.patch.gz \
-		vile-9.7i.patch.gz \
-		vile-9.7j.patch.gz \
-		vile-9.7k.patch.gz \
-		vile-9.7l.patch.gz \
-		vile-9.7m.patch.gz \
-		vile-9.7n.patch.gz \
-		vile-9.7o.patch.gz \
-		vile-9.7p.patch.gz \
-		vile-9.7q.patch.gz \
-		vile-9.7r.patch.gz \
-		vile-9.7s.patch.gz \
-		vile-9.7t.patch.gz \
-		vile-9.7u.patch.gz \
-		vile-9.7v.patch.gz \
-		vile-9.7w.patch.gz \
-		vile-9.7x.patch.gz \
-		vile-9.7y.patch.gz \
-		vile-9.7z.patch.gz \
-		vile-9.7za.patch.gz \
-		vile-9.7zb.patch.gz \
-		vile-9.7zc.patch.gz \
-		vile-9.7zd.patch.gz \
-		vile-9.7ze.patch.gz \
-		vile-9.7zf.patch.gz \
-		vile-9.7zg.patch.gz
+PATCHFILES=
 
 MAINTAINER=	gj@FreeBSD.org
 COMMENT=	VI Like Emacs, X11 version -- a fully "X aware" vi work-alike
@@ -55,7 +23,6 @@ COMMENT=	VI Like Emacs, X11 version -- a fully "X aware" vi work-alike
 MAKEFILE=	makefile
 GNU_CONFIGURE=	yes
 USE_XORG=	x11 xpm xext
-USE_PERL5=	yes
 MAKE_JOBS_SAFE=	yes
 
 CONFIGURE_ARGS=	--prefix=${PREFIX} \
