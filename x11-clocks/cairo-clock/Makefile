@@ -7,6 +7,7 @@
 
 PORTNAME=	cairo-clock
 PORTVERSION=	0.3.4
+PORTREVISION=	1
 CATEGORIES=	x11-clocks net gnome
 MASTER_SITES=	http://macslow.thepimp.net/projects/cairo-clock/
 
@@ -19,8 +20,6 @@ USE_ICONV=	yes
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 MAN1=		cairo-clock.1
-
-BROKEN=		incomplete plist
 
 .if !defined(WITHOUT_NLS)
 USE_GETTEXT=	yes
