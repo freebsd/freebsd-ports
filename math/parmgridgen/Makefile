@@ -8,7 +8,9 @@
 PORTNAME=	parmgridgen
 PORTVERSION=	1.0
 CATEGORIES=	math science
-MASTER_SITES=	http://www.mgnet.org/mgnet/Codes/parmgridgen/
+MASTER_SITES=	http://www.mgnet.org/mgnet/Codes/parmgridgen/ \
+		http://www-users.cs.umn.edu/~moulitsa/download/ \
+		http://www.stasyan.com/devel/distfiles/
 DISTNAME=	ParMGridGen-${PORTVERSION}
 
 MAINTAINER=	devel@stasyan.com
