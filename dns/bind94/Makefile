@@ -27,13 +27,16 @@ COMMENT=	The BIND DNS suite with updated DNSSEC and threads
 # ISC releases things like 9.4.0b3, which our versioning doesn't like
 ISCVERSION=	9.4-ESV-R4
 
+DEPRECATED=		Reaches EOL May 2011
+EXPIRATION_DATE=	2011-04-30
+
 MAKE_JOBS_UNSAFE=	yes
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--localstatedir=/var --disable-linux-caps \
 		--with-randomdev=/dev/random
 
-CONFLICTS=	bind9*-9.[567].* bind9-sdb-* host-* bind-tools-9.*
+CONFLICTS=	bind9*-9.[5678].* bind9-sdb-* host-* bind-tools-9.*
 
 OPTIONS=	SSL "Building without OpenSSL removes DNSSEC" on \
 		LINKS "Create conf file symlinks in ${PREFIX}" on \
