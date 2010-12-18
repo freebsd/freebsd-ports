@@ -29,7 +29,7 @@ CONFIGURE_ARGS=	--localstatedir=/var --disable-linux-caps \
 		--disable-symtable \
 		--with-randomdev=/dev/random
 
-CONFLICTS=	bind9*-9.[456].* bind9-sdb-* host-*
+CONFLICTS=	bind9*-9.[4568].* bind9-sdb-* host-*
 
 OPTIONS=	SSL "Building without OpenSSL removes DNSSEC" on \
 		IDN "Add IDN support to dig, host, etc." off \

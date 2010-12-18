@@ -33,7 +33,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--localstatedir=/var --disable-linux-caps \
 		--with-randomdev=/dev/random
 
-CONFLICTS=	bind9*-9.[457].* bind9-sdb-* host-* bind-tools-9.*
+CONFLICTS=	bind9*-9.[4578].* bind9-sdb-* host-* bind-tools-9.*
 
 OPTIONS=	SSL "Building without OpenSSL removes DNSSEC" on \
 		LINKS "Create conf file symlinks in ${PREFIX}" on \
