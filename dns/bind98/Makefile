@@ -202,8 +202,12 @@ post-patch:
 		${WRKSRC}/bin/${FILE}.Dist > ${WRKSRC}/bin/${FILE}
 .endfor
 	@${MV} ${WRKSRC}/Makefile.in ${WRKSRC}/Makefile.in.Dist
-	@${SED} -e 's#.*INSTALL_DATA.*bind.keys.*##' \
-		${WRKSRC}/Makefile.in.Dist > ${WRKSRC}/Makefile.in
+	@${SED} -e 's#.*bind\.keys.*##' ${WRKSRC}/Makefile.in.Dist > \
+		${WRKSRC}/Makefile.in
+	@${MV} ${WRKSRC}/bin/named/Makefile.in ${WRKSRC}/bin/named/Makefile.in.Dist
+	@${SED} -e 's/$${PERL}/#/' -e 's/bind.keys.h/#/g' -e 's/bind9.xsl.h/#/g' \
+		${WRKSRC}/bin/named/Makefile.in.Dist > \
+		${WRKSRC}/bin/named/Makefile.in
 
 PKGMESSAGE=	${.CURDIR}/../bind97/pkg-message
 PKGINSTALL=	${.CURDIR}/../bind97/pkg-install
@@ -216,7 +220,7 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/doc/arm/Bv9ARM.pdf ${DOCSDIR}/
 	${INSTALL_DATA} ${WRKSRC}/doc/misc/[a-z]* ${DOCSDIR}/misc
 	${CP} ${WRKSRC}/CHANGES ${WRKSRC}/COPYRIGHT ${WRKSRC}/FAQ \
-	    ${WRKSRC}/HISTORY ${WRKSRC}/README ${DOCSDIR}/
+		${WRKSRC}/HISTORY ${WRKSRC}/README ${DOCSDIR}/
 .endif
 .if !defined(WITHOUT_LINKS) && !defined(WITH_REPLACE_BASE)
 	PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
