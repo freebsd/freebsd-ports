@@ -7,5 +7,5 @@
 -Icon=/usr/share/icons/qnapi-48.png
 +Icon=@PREFIX@/share/icons/qnapi.png
  Type=Application
- Categories=Application;Multimedia;AudioVideo;Utility;Qt;
+ Categories=AudioVideo;
  Comment=Program do pobierania napisów do filmów
