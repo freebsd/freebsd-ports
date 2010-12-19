@@ -1,6 +1,6 @@
 # New ports collection makefile for:	jupp
 # Date created:				2010-11-15
-# Whom:					magik@roorback.net
+# Whom:					Grzegorz Blach <magik@roorback.net>
 #
 # $FreeBSD$
 #
@@ -14,7 +14,9 @@ DISTNAME=	joe-3.1jupp14
 EXTRACT_SUFX=	.cpio.gz
 
 MAINTAINER=	magik@roorback.net
-COMMENT=	Portable version of JOE's Own Editor from MirBSD
+COMMENT=	Portable version of Joe's Own Editor from MirBSD
+
+LICENSE=	GPLv1
 
 CONFLICTS=	joe-[23]*
 
