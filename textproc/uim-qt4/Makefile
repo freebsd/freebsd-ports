@@ -6,12 +6,11 @@
 #
 
 PKGNAMESUFFIX=	-qt4
+PORTREVISION=	1
 
 COMMENT=	Qt4 modules of uim input method
 
 LIB_DEPENDS=	uim.7:${PORTSDIR}/textproc/uim
-
-BROKEN=		bad plist
 
 USE_QT_VER=	4
 QT_COMPONENTS=	qmake_build moc_build qt3support uic
@@ -22,7 +21,10 @@ MASTERDIR=	${.CURDIR}/../../textproc/uim
 PKGDIR=		${.CURDIR}
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--with-qt4 --with-qt4-immodule
-CONFIGURE_ENV=	LDFLAGS="${LDFLAGS} -L${X11BASE}/lib -L${LOCALBASE}/lib -I${LOCALBASE}/include "
+CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
+	CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
+	LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib" \
+	DATADIRNAME="share"
 UIM_SLAVE=	yes
 
 .if defined(WITHOUT_X11)
