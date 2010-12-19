@@ -26,11 +26,11 @@ WRKSRC=		${WRKDIR}/${STACKNAME}
 #LIB_DEPENDS=	${PYTHON_SITELIBDIR}/usb.so:${PORTSDIR}/devel/py-usb
 # XXX above does not work, send-pr?
 
+EXTRACT_DEPENDS=unzip:${PORTSDIR}/archivers/unzip
 BUILD_DEPENDS=	rosmake:${PORTSDIR}/devel/ros \
 		${LOCALBASE}/ros/stacks/common_msgs/stack.xml:${PORTSDIR}/devel/common_msgs \
 		${LOCALBASE}/ros/stacks/geometry/stack.xml:${PORTSDIR}/math/geometry \
-		chrpath:${PORTSDIR}/devel/chrpath \
-		unzip:${PORTSDIR}/archivers/unzip
+		chrpath:${PORTSDIR}/devel/chrpath
 RUN_DEPENDS=	roscore:${PORTSDIR}/devel/ros \
 		${LOCALBASE}/ros/stacks/common_msgs/stack.xml:${PORTSDIR}/devel/common_msgs \
 		${LOCALBASE}/ros/stacks/geometry/stack.xml:${PORTSDIR}/math/geometry \
@@ -63,7 +63,7 @@ post-extract:
 	${CP} ${_DISTDIR}/nxt-python-1.1.2.zip ${WRKSRC}/nxt_python/build
 	# already extract and mark as such because we have to patch it
 	(cd ${WRKSRC}/nxt_python/build ; \
-	 ${LOCALBASE}/bin/unzip nxt-python-1.1.2.zip ; \
+	 ${LOCALBASE}/bin/unzip -q nxt-python-1.1.2.zip ; \
 	 ${TOUCH} nxt-python-1.1.2/unpacked)
 	# remove nxt_rviz_plugin, it is unbuildable right now
 	# and keeping it here breaks rospack
