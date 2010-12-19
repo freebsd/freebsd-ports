@@ -200,6 +200,8 @@ libdata/pkgconfig/libcurl.pc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/simple.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/simplepost.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/simplessl.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/smooth-gtk-thread.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/smtp-multi.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/synctime.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/threaded-ssl.c
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%

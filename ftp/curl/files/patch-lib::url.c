@@ -1,11 +1,11 @@
 Description: Different handling of signals and threads.
 Forwarded: not-needed
 Author: Peter Pentchev <roam@FreeBSD.org>
-Last-Update: 2010-09-12
+Last-Update: 2010-12-18
 
 --- a/lib/url.c
 +++ b/lib/url.c
-@@ -842,6 +842,10 @@
+@@ -857,6 +857,10 @@
      data->progress.flags |= PGRS_HIDE;
      data->state.current_speed = -1; /* init to negative == impossible */
  

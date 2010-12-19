@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	curl
-PORTVERSION=	7.21.1
+PORTVERSION=	7.21.3
 CATEGORIES=	ftp ipv6 www
 MASTER_SITES=	http://curl.haxx.se/download/ \
 		ftp://ftp.sunet.se/pub/www/utilities/curl/ \
@@ -54,7 +54,7 @@ USE_PERL5_BUILD=	yes
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--enable-pop3 --enable-smtp --enable-imap --enable-rtsp \
-		--disable-threaded-resolver
+		--disable-threaded-resolver --disable-werror
 MAKE_JOBS_SAFE=	yes
 
 OPTIONS=	CARES "Asynchronous DNS resolution via c-ares" off \
@@ -71,8 +71,7 @@ OPTIONS=	CARES "Asynchronous DNS resolution via c-ares" off \
 		CA_BUNDLE "Install CA bundle for OpenSSL" on \
 		PROXY "Proxy support" on \
 		RTMP "RTMP streams support" off \
-		TRACKMEMORY "Enable curl memory diagnostic output" off \
-		WERROR "Treat compilation warnings as errors" on
+		TRACKMEMORY "Enable curl memory diagnostic output" off
 
 .include <bsd.port.pre.mk>
 
@@ -204,12 +203,7 @@ CONFIGURE_ARGS+=	--enable-proxy
 CONFIGURE_ARGS+=	--disable-proxy
 .endif
 
-.if defined(WITH_WERROR)
-CONFIGURE_ARGS+=	--enable-werror
-.else
-CONFIGURE_ARGS+=	--disable-werror
-.endif
-
+CONFIGURE_ENV+=	LOCALBASE="${LOCALBASE}"
 .if defined(ADDFLAGS)
 CONFIGURE_ENV+=	LDFLAGS="${LDFLAGS}"
 .endif

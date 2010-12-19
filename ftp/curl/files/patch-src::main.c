@@ -1,11 +1,11 @@
 Description: Use fstat() instead of stat() to avoid a race condition.
 Forwarded: not-needed
 Author: Peter Pentchev <roam@FreeBSD.org>
-Last-Update: 2010-09-12
+Last-Update: 2010-12-18
 
 --- a/src/main.c
 +++ b/src/main.c
-@@ -4842,33 +4842,34 @@
+@@ -4887,33 +4887,34 @@
              break;
            }
  
@@ -33,7 +33,7 @@ Last-Update: 2010-09-12
 -            outs.stream=(FILE *) fopen(outfile, config->resume_from?"ab":"wb");
 +	    /* (always open for appending, it has no effect on new files) */
 +            outs.stream=(FILE *) fopen(outfile, "ab");
-             if (!outs.stream) {
+             if(!outs.stream) {
                helpf(config->errors, "Can't open '%s'!\n", outfile);
                free(url);
                res = CURLE_WRITE_ERROR;
