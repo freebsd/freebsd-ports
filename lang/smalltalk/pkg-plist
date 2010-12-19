@@ -52,7 +52,6 @@ lib/smalltalk/iconv-%%VERSION%%.so
 lib/smalltalk/iconv.a
 lib/smalltalk/iconv.la
 lib/smalltalk/iconv.so
-lib/smalltalk/libc.la
 lib/smalltalk/sdl-%%VERSION%%.so
 lib/smalltalk/sdl.a
 lib/smalltalk/sdl.la
@@ -61,7 +60,9 @@ lib/smalltalk/zlib-%%VERSION%%.so
 lib/smalltalk/zlib.a
 lib/smalltalk/zlib.la
 lib/smalltalk/zlib.so
+lib/smalltalk/libc.la
 libdata/pkgconfig/gnu-smalltalk.pc
+libexec/smalltalk/gnutls-wrapper
 libexec/smalltalk/vfs/deb
 libexec/smalltalk/vfs/lslR
 libexec/smalltalk/vfs/mailfs
