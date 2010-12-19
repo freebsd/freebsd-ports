@@ -1,5 +1,5 @@
 --- usr/sbin/pkcsslotd/mutex.c.orig	2010-07-29 21:28:41.000000000 +0900
-+++ usr/sbin/pkcsslotd/mutex.c	2010-10-20 01:19:28.613984045 +0900
++++ usr/sbin/pkcsslotd/mutex.c	2010-12-19 12:13:34.837579374 +0900
 @@ -293,6 +293,26 @@
  
  #include "pkcsslotd.h"
@@ -27,11 +27,26 @@
  
  #if SYSVSEM
  #error "Caveat Emptor... this does not work"
-@@ -315,7 +335,6 @@
+@@ -315,7 +335,7 @@
  #include <sys/types.h>
  #include <sys/stat.h>
  #include <fcntl.h>
 -#include <sys/file.h>
++#include <grp.h>
  static int xplfd=-1;
  #endif
  
+@@ -349,6 +369,13 @@
+ #elif (SPINXPL)
+   
+  xplfd = open (XPL_FILE,O_CREAT|O_RDWR,S_IRWXU|S_IRWXG|S_IRWXO);
++ {
++	struct group *grp;
++	fchmod(xplfd,S_IRUSR|S_IWUSR|S_IRGRP|S_IWGRP|S_IROTH);
++	grp = getgrnam(PKCS11GROUP);
++	if (grp)
++		fchown(xplfd,getuid(),grp->gr_gid);
++ }
+ 
+ #elif (SYSVSEM)
+ #error "Caveat Emptor... this does not work"
