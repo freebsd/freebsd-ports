@@ -1,0 +1,16 @@
+Description: Fix a bashism in the -Werror test.
+Forwarded: https://github.com/bagder/c-ares/pull/3
+Author: Peter Pentchev <roam@ringlet.net>
+Last-Update: 2010-12-19
+
+--- configure.orig
++++ configure
+@@ -24718,7 +24718,7 @@
+ 
+ 
+ CARES_CFLAG_EXTRAS=""
+-if test X"$want_werror" == Xyes; then
++if test X"$want_werror" = Xyes; then
+   CARES_CFLAG_EXTRAS="-Werror"
+ fi
+ 

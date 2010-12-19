@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	c-ares
-PORTVERSION=	1.7.2
+PORTVERSION=	1.7.4
 CATEGORIES=	dns
 MASTER_SITES=	http://c-ares.haxx.se/
 
@@ -53,7 +53,7 @@ MAKE_ENV=	SHLIB_VER="${SHLIB_VER}"
 PLIST_SUB=	SHLIB_VER="${SHLIB_VER}"
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+=	--enable-shared
+CONFIGURE_ARGS+=	--enable-shared --disable-werror
 
 MAN3=	ares_cancel.3 \
 	ares_destroy.3 ares_dup.3 \
@@ -67,7 +67,9 @@ MAN3=	ares_cancel.3 \
 	ares_init.3 ares_init_options.3 \
 	ares_library_cleanup.3 ares_library_init.3 \
 	ares_mkquery.3 \
-	ares_parse_a_reply.3 ares_parse_aaaa_reply.3 ares_parse_ptr_reply.3 \
+	ares_parse_a_reply.3 ares_parse_aaaa_reply.3 \
+	ares_parse_mx_reply.3 \
+	ares_parse_ptr_reply.3 \
 	ares_parse_srv_reply.3 ares_parse_txt_reply.3 \
 	ares_process.3 \
 	ares_query.3 \
