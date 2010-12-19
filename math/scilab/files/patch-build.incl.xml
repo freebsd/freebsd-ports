@@ -1,11 +1,11 @@
---- build.incl.xml.orig	2010-10-18 22:52:49.000000000 -0700
-+++ build.incl.xml	2010-10-18 22:53:09.000000000 -0700
-@@ -86,6 +86,8 @@
+--- build.incl.xml.orig	2010-11-24 00:50:29.000000000 -0800
++++ build.incl.xml	2010-12-15 02:55:11.000000000 -0800
+@@ -116,6 +116,8 @@
  
- 		<pathelement location="${fop.jar}"/>
+     <pathelement location="${jlatexmath-fop.jar}"/>
  
-+		<pathelement location="${xmlgraphics-commons.jar}"/>
++    <pathelement location="${xmlgraphics-commons.jar}"/>
 +
- 		<pathelement location="${avalon-framework.jar}"/>
+     <pathelement location="${avalon-framework.jar}"/>
  
- 		<pathelement location="${avalon-framework-impl.jar}"/>
+     <pathelement location="${avalon-framework-impl.jar}"/>
