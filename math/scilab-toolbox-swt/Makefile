@@ -18,8 +18,6 @@ COMMENT=	Scilab 1-D and 2-D Wavelet Toolbox
 BUILD_DEPENDS=	${SCILAB_CMD}:${PORTSDIR}/math/scilab
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-IGNORE=		touches ${LOCALBASE}/share/scilab when building under superuser
-
 SCILAB_CMD=	${LOCALBASE}/bin/scilab
 CONTRIBDIR?=	share/scilab/contrib
 TOOLBOXDIR_REL?=	${CONTRIBDIR}/${PORTNAME}
