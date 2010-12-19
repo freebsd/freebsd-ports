@@ -6,13 +6,11 @@
 #
 
 PORTNAME=	scilab
-PORTVERSION=	5.2.2
-PORTREVISION=	4
+PORTVERSION=	5.3.0
 CATEGORIES=	math cad parallel java
 MASTER_SITES=	http://www.scilab.org/download/${PORTVERSION}/:scilab \
-		http://www.bayofrum.net/dist/jgraphx/:jgraphx \
-		http://cerberus.bayofrum.net/dist/jgraphx/:jgraphx \
-		http://www.predatorlabs.net/dl/:jgraphx
+		http://www.predatorlabs.net/dl/:jgraphx \
+		http://www.bayofrum.net/dist/jgraphx/:jgraphx
 DISTFILES=	${DISTNAME}-src.tar.gz:scilab
 EXTRACT_ONLY=	${DISTNAME}-src.tar.gz
 
@@ -22,8 +20,7 @@ COMMENT=	Scientific software package for numerical computations
 # A partial dependencies list can be found at:
 # http://wiki.scilab.org/Dependencies_of_Scilab_5.X
 LIB_DEPENDS=	xml2.5:${PORTSDIR}/textproc/libxml2 \
-		pcre.0:${PORTSDIR}/devel/pcre \
-		readline.6:${PORTSDIR}/devel/readline
+		pcre.0:${PORTSDIR}/devel/pcre
 
 MAKE_JOBS_SAFE=	yes
 
@@ -44,7 +41,7 @@ OPTIONS=	ATLAS "Use Atlas instead of Blas" OFF \
 		OCAML "Build ocaml modelica compiler (requires GUI)" OFF \
 		PVM "Parallel Virtual Machine support" OFF \
 		TK "TCL/TK support" OFF \
-		UMFPACK "Build with umfpack" ON
+		UMFPACK "Build with umfpack" OFF
 
 .include <bsd.port.options.mk>
 
@@ -69,14 +66,12 @@ PLIST_SUB+=	NLS=""
 
 .if defined(WITHOUT_TK)
 CONFIGURE_ARGS+=	--without-tk
-PLIST_SUB+=	TK="@comment "
 .else
 USE_TK=		yes
 CONFIGURE_ARGS+=	--with-tk-library=${LOCALBASE}/lib \
 			--with-tk-include=${TK_INCLUDEDIR} \
 			--with-tcl-library=${LOCALBASE}/lib \
 			--with-tcl-include=${TCL_INCLUDEDIR}
-PLIST_SUB+=	TK=""
 .endif
 
 .if defined(WITHOUT_GUI)
@@ -84,18 +79,16 @@ CONFIGURE_ARGS+=	--without-gui \
 			--without-javasci \
 			--without-hdf5 \
 			--disable-build-help
-PLIST_SUB+=	GUI="@comment "
-PLIST_SUB+=	NOGUI=""
-NOPORTDOCS=	YES
 .else
 DISTFILES+=	${JGRAPHX_JAR}:jgraphx
-JGRAPHX_VERSION=	1.3.0.0
+JGRAPHX_VERSION=	1.4.1.0
 JGRAPHX_JAR=	jgraphx-${JGRAPHX_VERSION:C/\./_/g}.jar
+
+EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-bin-JAVA_HOME
 
 LIB_DEPENDS+=	hdf5.6:${PORTSDIR}/science/hdf5-18
 
-BUILD_DEPENDS+=	ant:${PORTSDIR}/devel/apache-ant \
-		${JAVALIBDIR}/flexdock.jar:${PORTSDIR}/devel/flexdock \
+GUI_DEPENDS=	${JAVALIBDIR}/flexdock.jar:${PORTSDIR}/devel/flexdock \
 		${JAVALIBDIR}/jogl.jar:${PORTSDIR}/graphics/jogl \
 		${JAVALIBDIR}/commons-logging.jar:${PORTSDIR}/java/jakarta-commons-logging \
 		${JAVALIBDIR}/looks.jar:${PORTSDIR}/devel/looks \
@@ -104,7 +97,7 @@ BUILD_DEPENDS+=	ant:${PORTSDIR}/devel/apache-ant \
 		${JAVALIBDIR}/jhall.jar:${PORTSDIR}/java/javahelp \
 		${JAVALIBDIR}/jlatexmath.jar:${PORTSDIR}/math/jlatexmath \
 		fop:${PORTSDIR}/textproc/fop \
-		${LOCALBASE}/share/java/batik/batik.jar:${PORTSDIR}/graphics/batik \
+		${LOCALBASE}/share/java/batik/lib/batik-all.jar:${PORTSDIR}/graphics/batik \
 		foprep:${PORTSDIR}/math/jeuclid \
 		${JAVALIBDIR}/commons-io.jar:${PORTSDIR}/devel/jakarta-commons-io \
 		${JAVALIBDIR}/xmlgraphics-commons.jar:${PORTSDIR}/graphics/xmlgraphics-commons \
@@ -112,31 +105,23 @@ BUILD_DEPENDS+=	ant:${PORTSDIR}/devel/apache-ant \
 		${JAVALIBDIR}/avalon-framework.jar:${PORTSDIR}/devel/avalon-framework \
 		${LOCALBASE}/share/xsl/docbook/javahelp/javahelp.xsl:${PORTSDIR}/textproc/docbook-xsl \
 		xsltproc:${PORTSDIR}/textproc/libxslt \
-		swig:${PORTSDIR}/devel/swig13 \
-		${LOCALBASE}/share/examples/saxon/data/books.dtd:${PORTSDIR}/textproc/saxon \
-		${JAVALIBDIR}/jhdf5.jar:${PORTSDIR}/science/hdf-java
+		${JAVALIBDIR}/jhdf5.jar:${PORTSDIR}/science/hdf-java \
+		${JAVALIBDIR}/commons-beanutils.jar:${PORTSDIR}/java/jakarta-commons-beanutils
 
-RUN_DEPENDS+=	${JAVALIBDIR}/flexdock.jar:${PORTSDIR}/devel/flexdock \
-		${JAVALIBDIR}/jogl.jar:${PORTSDIR}/graphics/jogl \
-		${JAVALIBDIR}/commons-logging.jar:${PORTSDIR}/java/jakarta-commons-logging \
-		${JAVALIBDIR}/looks.jar:${PORTSDIR}/devel/looks \
-		${JAVALIBDIR}/skinlf.jar:${PORTSDIR}/x11-toolkits/skinlf \
-		${JAVALIBDIR}/jrosetta-API.jar:${PORTSDIR}/java/jrosetta \
-		${JAVALIBDIR}/jhall.jar:${PORTSDIR}/java/javahelp \
-		${JAVALIBDIR}/jlatexmath.jar:${PORTSDIR}/math/jlatexmath \
-		fop:${PORTSDIR}/textproc/fop \
-		${LOCALBASE}/share/java/batik/batik.jar:${PORTSDIR}/graphics/batik \
-		foprep:${PORTSDIR}/math/jeuclid \
-		${JAVALIBDIR}/commons-io.jar:${PORTSDIR}/devel/jakarta-commons-io \
-		${JAVALIBDIR}/xmlgraphics-commons.jar:${PORTSDIR}/graphics/xmlgraphics-commons \
-		${JAVALIBDIR}/xml-apis-ext.jar:${PORTSDIR}/textproc/xml-commons \
-		${JAVALIBDIR}/avalon-framework.jar:${PORTSDIR}/devel/avalon-framework \
-		${LOCALBASE}/share/xsl/docbook/javahelp/javahelp.xsl:${PORTSDIR}/textproc/docbook-xsl \
-		xsltproc:${PORTSDIR}/textproc/libxslt \
-		${JAVALIBDIR}/jhdf5.jar:${PORTSDIR}/science/hdf-java
+# Can't use USE_ANT because it overrides do-build target
+BUILD_DEPENDS+=	${GUI_DEPENDS} \
+		ant:${PORTSDIR}/devel/apache-ant \
+		swig:${PORTSDIR}/devel/swig13 \
+		${LOCALBASE}/share/examples/saxon/data/books.dtd:${PORTSDIR}/textproc/saxon
+
+RUN_DEPENDS+=	${GUI_DEPENDS}
 
 USE_JAVA=	yes
 JAVA_VERSION=	1.5+
+# bsdjava (ie java/jdk16) doesn't have some "extra" classes that aren't in
+# the standard java. namespace, but are required by scilab, such as
+# javax.xml.bind.annotation.XmlSeeAlso
+JAVA_VENDOR=	freebsd openjdk
 JAVA_BUILD=	yes
 JAVA_RUN=	yes
 USE_XORG=	x11
@@ -145,25 +130,20 @@ CONFIGURE_ARGS+=	--with-jdk=${JAVA_HOME} \
 			--with-docbook=${LOCALBASE}/share/xsl/docbook
 
 DESKTOP_ENTRIES=	"SciLab" \
-			"Scientific software package for numerical computations" \
+			"${COMMENT}" \
 			"${DATADIR}/icons/scilab.xpm" "scilab" \
 			"Application;Education;Math;" false
 
-PLIST_SUB+=	GUI=""
-PLIST_SUB+=	NOGUI="@comment "
 .endif
 
 .if defined(WITHOUT_FFTW)
 CONFIGURE_ARGS+=	--without-fftw
-PLIST_SUB+=	FFTW="@comment "
 .else
 LIB_DEPENDS+=	fftw3.5:${PORTSDIR}/math/fftw3
-PLIST_SUB+=	FFTW=""
 .endif
 
 .if defined(WITHOUT_PVM)
 CONFIGURE_ARGS+=	--without-pvm
-PLIST_SUB+=	PVM="@comment "
 .else
 BUILD_DEPENDS+=		pvm:${PORTSDIR}/net/pvm
 RUN_DEPENDS+=		pvm:${PORTSDIR}/net/pvm
@@ -173,26 +153,20 @@ CONFIGURE_ARGS+=	--with-pvm-include=${LOCALBASE}/include \
 
 CONFIGURE_ENV=	PVM_ROOT=${LOCALBASE} \
 		PVMGETARCH=${LOCALBASE}/lib/pvm/lib/pvmgetarch
-
-PLIST_SUB+=	PVM=""
 .endif
 
 .if defined(WITHOUT_UMFPACK)
 CONFIGURE_ARGS+=	--without-umfpack
-PLIST_SUB+=	UMFPACK="@comment "
 .else
 LIB_DEPENDS+=	amd.1:${PORTSDIR}/math/suitesparse
 CONFIGURE_ARGS+=	--with-umfpack-include=${LOCALBASE}/include \
 			--with-umfpack-library=${LOCALBASE}/lib
-PLIST_SUB+=	UMFPACK=""
 .endif
 
 .if defined(WITHOUT_MATIO)
 CONFIGURE_ARGS+=	--without-matio
-PLIST_SUB+=	MATIO="@comment "
 .else
 LIB_DEPENDS+=	matio.1:${PORTSDIR}/math/matio
-PLIST_SUB+=	MATIO=""
 .endif
 
 .if defined(WITHOUT_OCAML)
@@ -204,51 +178,76 @@ RUN_DEPENDS+=	ocaml:${PORTSDIR}/lang/ocaml
 PLIST_SUB+=	OCAML=""
 .endif
 
-post-patch:
-	# Configure fixes
-	${REINPLACE_CMD} -e 's|/usr/lib/java|${JAVALIBDIR}|g' ${WRKSRC}/configure
-	${REINPLACE_CMD} -e 's|/usr/lib64/jni|${LOCALBASE}/lib/|g' ${WRKSRC}/configure
-	${REINPLACE_CMD} -e 's|-ldl | |' ${WRKSRC}/configure
-	${REINPLACE_CMD} -e 's|-L$$with_umfpack_library|-L$$with_umfpack_library -lgfortran|' ${WRKSRC}/configure
-	${REINPLACE_CMD} -e 's|-lumfpack|-lumfpack -lamd -L$$with_umfpack_library -lgfortran|g' ${WRKSRC}/configure
-	${REINPLACE_CMD} -e 's|TCLTK_LIBS=" -ldl"|TCLTK_LIBS=" "|' ${WRKSRC}/configure
-	${REINPLACE_CMD} -e 's|$$jardir/batik.jar|${LOCALBASE}/share/java/batik/batik.jar|g' ${WRKSRC}/configure
-	${REINPLACE_CMD} -e 's|$$jardir/fop.jar|${LOCALBASE}/share/java/fop/build/fop.jar|' ${WRKSRC}/configure
-	${REINPLACE_CMD} -e 's|$$jardir/jeuclid-core*.jar|${LOCALBASE}/share/java/jeuclid/repo/jeuclid-core*.jar|' ${WRKSRC}/configure
-	${MKDIR} ${WRKSRC}/thirdparty
-.if !defined(WITHOUT_GUI)
-	${CP} ${DISTDIR}/${JGRAPHX_JAR} ${WRKSRC}/thirdparty/jgraphx.jar
-	${REINPLACE_CMD} -e 's|@JGRAPHX@|${DATADIR}/modules/jgraphx.jar|g' ${WRKSRC}/etc/classpath.xml.in
+.if defined(NOPORTDOCS)
+EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-NOPORTDOCS
 .endif
-	# Build fixes
-	${REINPLACE_CMD} -e 's|$$(CFLAGS:-O%=)|-I${LOCALBASE}/include -L${LOCALBASE}/lib|' ${WRKSRC}/modules/elementary_functions/Makefile.in
-	${REINPLACE_CMD} -e 's|freebsd|__FreeBSD__|g' ${WRKSRC}/modules/sparse/includes/spConfig.h
-	${REINPLACE_CMD} -e 's|exp10(|pow(10., |g' ${WRKSRC}/modules/graphics/src/c/Format.c \
+
+post-patch:
+	@# Configure fixes
+	@${REINPLACE_CMD} -e 's|-ldl | |' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|-L$$with_umfpack_library|-L$$with_umfpack_library -lgfortran|' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|-lumfpack|-lumfpack -lamd -L$$with_umfpack_library -lgfortran|g' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|TCLTK_LIBS=" -ldl"|TCLTK_LIBS=" "|' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|"x=" ==|"x" =|g' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|"x" ==|"x" =|g' ${WRKSRC}/configure
+	@# Build fixes
+	@${REINPLACE_CMD} -e 's|$$(CFLAGS:-O%=)|-I${LOCALBASE}/include -L${LOCALBASE}/lib|' ${WRKSRC}/modules/elementary_functions/Makefile.in
+	@${REINPLACE_CMD} -e 's|freebsd|__FreeBSD__|g' ${WRKSRC}/modules/sparse/includes/spConfig.h
+	@${REINPLACE_CMD} -e 's|exp10(|pow(10., |g' ${WRKSRC}/modules/graphics/src/c/Format.c \
 		${WRKSRC}/modules/graphics/src/c/getHandleProperty/set_log_flags_property.c
 	@# malloc.h -> stdlib.h conversions
 	@${GREP} -lr "<malloc.h>" ${WRKSRC} \
 		| ${XARGS} ${REINPLACE_CMD} -e \
 		's/[<"]malloc.h[>"]/<stdlib.h>/'
-	#Install fixes
-	${MV} ${WRKSRC}/modules/call_scilab/examples/call_scilab/NET/VB.NET/My\ Project/ \
-		${WRKSRC}/modules/call_scilab/examples/call_scilab/NET/VB.NET/My_Project/
-	${REINPLACE_CMD} -e 's|My Project|My_Project|g' ${WRKSRC}/modules/call_scilab/examples/call_scilab/NET/VB.NET/VB.NET.vbproj
-	${REINPLACE_CMD} -e 's|$$(libdir)/pkgconfig|${PREFIX}/libdata/pkgconfig|' ${WRKSRC}/Makefile.in
-	# Run fixes
-	${REINPLACE_CMD} -e 's|%%JAVALIBDIR%%|${JAVALIBDIR}|' ${WRKSRC}/etc/librarypath.xml
-	${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|' ${WRKSRC}/etc/librarypath.xml
-.if defined(NOPORTDOCS)
-	@${REINPLACE_CMD} -e '/%%PORTDOCS%%/d' ${WRKSRC}/Makefile.in
-.else
-	@${REINPLACE_CMD} -e 's/%%PORTDOCS%%//' ${WRKSRC}/Makefile.in
+	@# Install fixes
+	@${REINPLACE_CMD} -e 's|$$(libdir)/pkgconfig|${PREFIX}/libdata/pkgconfig|' ${WRKSRC}/Makefile.in
+	@# Run fixes
+	@${REINPLACE_CMD} -e 's|%%JAVALIBDIR%%|${JAVALIBDIR}|' ${WRKSRC}/etc/librarypath.xml
+	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|' ${WRKSRC}/etc/librarypath.xml
+.if !defined(WITHOUT_GUI)
+	@# Configure fixes
+	@${REINPLACE_CMD} -e 's|/usr/lib/java|${JAVALIBDIR}|g' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|/usr/lib64/jni|${LOCALBASE}/lib/|g' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|$$jardir/batik-all.jar|${LOCALBASE}/share/java/batik/lib/batik-all.jar|g' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|$$jardir/fop.jar|${LOCALBASE}/share/java/fop/build/fop.jar|' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|$$jardir/jeuclid-core*.jar|${LOCALBASE}/share/java/jeuclid/repo/jeuclid-core*.jar|' ${WRKSRC}/configure
+	@${MKDIR} ${WRKSRC}/thirdparty
+	@${CP} ${DISTDIR}/${JGRAPHX_JAR} ${WRKSRC}/thirdparty/jgraphx.jar
+	@${REINPLACE_CMD} -e 's|@JGRAPHX@|${DATADIR}/modules/jgraphx.jar|g' ${WRKSRC}/etc/classpath.xml.in
+	@# Run fixes
+	@${REINPLACE_CMD} -e 's|%%JAVALIBDIR%%|${JAVALIBDIR}|' ${WRKSRC}/etc/librarypath.xml
+	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|' ${WRKSRC}/etc/librarypath.xml
+	@${REINPLACE_CMD} -e 's|%%JAVA_HOME%%|${JAVA_HOME}|' ${WRKSRC}/bin/scilab \
+		${WRKSRC}/bin/scilab-adv-cli ${WRKSRC}/bin/scilab-cli
 .endif
 
 pre-install:
-	@${FIND} ${WRKSRC} -name \*.orig -delete
-	@${FIND} ${WRKSRC} -name \*.bak -delete
-	@${FIND} ${WRKSRC} -name .cvsignore -delete
 .if !defined(WITHOUT_GUI)
 	@${MKDIR} ${DATADIR}/modules && ${INSTALL_DATA} ${DISTDIR}/${JGRAPHX_JAR} ${DATADIR}/modules/jgraphx.jar
+	@${MKDIR} ${DATADIR}/.atoms
 .endif
+
+post-install:
+	@# Remove empty dirs in DATDIR/modules - they will be removed by the
+	@# toolbox uninstaller otherwise if 3rd party toolboxes are used
+	@${FIND} ${DATADIR}/modules -type d -empty -delete
+	@# plist for include/scilab
+	@${FIND} -s ${PREFIX}/include/scilab -not -type d | ${SORT} | \
+		${SED} -e 's#^${PREFIX}/##' >> ${TMPPLIST}
+	@${FIND} ${PREFIX}/include/scilab -type d | ${SORT} -r | \
+		${SED} -e 's,^${PREFIX}/,@dirrm ,' >> ${TMPPLIST}
+	@# plist for lib/scilab
+	@${FIND} -s ${PREFIX}/lib/scilab -not -type d | ${SORT} | \
+		${SED} -e 's#^${PREFIX}/##' >> ${TMPPLIST}
+	@${FIND} ${PREFIX}/lib/scilab -type d | ${SORT} -r | \
+		${SED} -e 's,^${PREFIX}/,@dirrm ,' >> ${TMPPLIST}
+	@# plist for share/scilab EXCEPT:
+	@# contrib and .atoms (3rd party toolboxes)
+	@${FIND} -s ${DATADIR} -not -type d -not -path ${DATADIR}/contrib\* | \
+		${SORT} | ${SED} -e 's#^${PREFIX}/##' >> ${TMPPLIST}
+	@${FIND} ${DATADIR} -type d -not -path ${DATADIR}/contrib\* \
+		-not -path ${DATADIR}/.atoms\* -not -path ${DATADIR} | \
+		${SORT} -r | ${SED} -e 's,^${PREFIX}/,@dirrm ,' >> ${TMPPLIST}
+	@${ECHO_CMD} "@unexec rmdir %D/share/scilab 2>/dev/null || true" >> ${TMPPLIST}
 
 .include <bsd.port.mk>
