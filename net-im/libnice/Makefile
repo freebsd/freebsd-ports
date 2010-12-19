@@ -7,7 +7,7 @@
 
 PORTNAME=	libnice
 PORTVERSION=	0.0.13
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-im devel
 MASTER_SITES=	http://nice.freedesktop.org/releases/
 
@@ -32,7 +32,6 @@ post-patch:
 	    	's|-Wno-missing-field-initializers|#|g'
 	@${REINPLACE_CMD} -e 's|-Wno-missing-field-initializers|#|g' \
 	    	${WRKSRC}/common.mk
-	@${TOUCH} ${WRKSRC}/aclocal.m4 ${WRKSRC}/Makefile.in \
-			${WRKSRC}/Makefile ${WRKSRC}/configure
+	@${FIND} ${WRKSRC} -type f | ${XARGS} ${TOUCH} -f
 
 .include <bsd.port.mk>
