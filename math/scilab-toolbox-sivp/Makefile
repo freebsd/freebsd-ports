@@ -18,8 +18,6 @@ BUILD_DEPENDS=	${SCILAB_CMD}:${PORTSDIR}/math/scilab
 LIB_DEPENDS=	cv.2:${PORTSDIR}/graphics/opencv
 RUN_DEPENDS=	${SCILAB_CMD}:${PORTSDIR}/math/scilab
 
-IGNORE=		touches ${LOCALBASE}/share/scilab when building under superuser
-
 USE_ZIP=	yes
 
 SCILAB_CMD=	${LOCALBASE}/bin/scilab
