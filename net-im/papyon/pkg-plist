@@ -7,6 +7,9 @@
 %%PYTHON_SITELIBDIR%%/papyon/conversation.py
 %%PYTHON_SITELIBDIR%%/papyon/conversation.pyc
 %%PYTHON_SITELIBDIR%%/papyon/conversation.pyo
+%%PYTHON_SITELIBDIR%%/papyon/errors.py
+%%PYTHON_SITELIBDIR%%/papyon/errors.pyc
+%%PYTHON_SITELIBDIR%%/papyon/errors.pyo
 %%PYTHON_SITELIBDIR%%/papyon/event/__init__.py
 %%PYTHON_SITELIBDIR%%/papyon/event/__init__.pyc
 %%PYTHON_SITELIBDIR%%/papyon/event/__init__.pyo
@@ -40,6 +43,9 @@
 %%PYTHON_SITELIBDIR%%/papyon/event/profile.py
 %%PYTHON_SITELIBDIR%%/papyon/event/profile.pyc
 %%PYTHON_SITELIBDIR%%/papyon/event/profile.pyo
+%%PYTHON_SITELIBDIR%%/papyon/event/session.py
+%%PYTHON_SITELIBDIR%%/papyon/event/session.pyc
+%%PYTHON_SITELIBDIR%%/papyon/event/session.pyo
 %%PYTHON_SITELIBDIR%%/papyon/event/webcam.py
 %%PYTHON_SITELIBDIR%%/papyon/event/webcam.pyc
 %%PYTHON_SITELIBDIR%%/papyon/event/webcam.pyo
@@ -49,6 +55,9 @@
 %%PYTHON_SITELIBDIR%%/papyon/gnet/constants.py
 %%PYTHON_SITELIBDIR%%/papyon/gnet/constants.pyc
 %%PYTHON_SITELIBDIR%%/papyon/gnet/constants.pyo
+%%PYTHON_SITELIBDIR%%/papyon/gnet/errors.py
+%%PYTHON_SITELIBDIR%%/papyon/gnet/errors.pyc
+%%PYTHON_SITELIBDIR%%/papyon/gnet/errors.pyo
 %%PYTHON_SITELIBDIR%%/papyon/gnet/io/__init__.py
 %%PYTHON_SITELIBDIR%%/papyon/gnet/io/__init__.pyc
 %%PYTHON_SITELIBDIR%%/papyon/gnet/io/__init__.pyo
@@ -187,9 +196,9 @@
 %%PYTHON_SITELIBDIR%%/papyon/msnp2p/constants.py
 %%PYTHON_SITELIBDIR%%/papyon/msnp2p/constants.pyc
 %%PYTHON_SITELIBDIR%%/papyon/msnp2p/constants.pyo
-%%PYTHON_SITELIBDIR%%/papyon/msnp2p/exceptions.py
-%%PYTHON_SITELIBDIR%%/papyon/msnp2p/exceptions.pyc
-%%PYTHON_SITELIBDIR%%/papyon/msnp2p/exceptions.pyo
+%%PYTHON_SITELIBDIR%%/papyon/msnp2p/errors.py
+%%PYTHON_SITELIBDIR%%/papyon/msnp2p/errors.pyc
+%%PYTHON_SITELIBDIR%%/papyon/msnp2p/errors.pyo
 %%PYTHON_SITELIBDIR%%/papyon/msnp2p/filetransfer.py
 %%PYTHON_SITELIBDIR%%/papyon/msnp2p/filetransfer.pyc
 %%PYTHON_SITELIBDIR%%/papyon/msnp2p/filetransfer.pyo
@@ -220,6 +229,12 @@
 %%PYTHON_SITELIBDIR%%/papyon/msnp2p/transport/base.py
 %%PYTHON_SITELIBDIR%%/papyon/msnp2p/transport/base.pyc
 %%PYTHON_SITELIBDIR%%/papyon/msnp2p/transport/base.pyo
+%%PYTHON_SITELIBDIR%%/papyon/msnp2p/transport/default.py
+%%PYTHON_SITELIBDIR%%/papyon/msnp2p/transport/default.pyc
+%%PYTHON_SITELIBDIR%%/papyon/msnp2p/transport/default.pyo
+%%PYTHON_SITELIBDIR%%/papyon/msnp2p/transport/nat_traversal.py
+%%PYTHON_SITELIBDIR%%/papyon/msnp2p/transport/nat_traversal.pyc
+%%PYTHON_SITELIBDIR%%/papyon/msnp2p/transport/nat_traversal.pyo
 %%PYTHON_SITELIBDIR%%/papyon/msnp2p/transport/notification.py
 %%PYTHON_SITELIBDIR%%/papyon/msnp2p/transport/notification.pyc
 %%PYTHON_SITELIBDIR%%/papyon/msnp2p/transport/notification.pyo
@@ -400,6 +415,9 @@
 %%PYTHON_SITELIBDIR%%/papyon/service/Spaces/__init__.py
 %%PYTHON_SITELIBDIR%%/papyon/service/Spaces/__init__.pyc
 %%PYTHON_SITELIBDIR%%/papyon/service/Spaces/__init__.pyo
+%%PYTHON_SITELIBDIR%%/papyon/service/Spaces/constants.py
+%%PYTHON_SITELIBDIR%%/papyon/service/Spaces/constants.pyc
+%%PYTHON_SITELIBDIR%%/papyon/service/Spaces/constants.pyo
 %%PYTHON_SITELIBDIR%%/papyon/service/Spaces/contactcardservice.py
 %%PYTHON_SITELIBDIR%%/papyon/service/Spaces/contactcardservice.pyc
 %%PYTHON_SITELIBDIR%%/papyon/service/Spaces/contactcardservice.pyo
@@ -532,6 +550,9 @@
 %%PYTHON_SITELIBDIR%%/papyon/service/description/__init__.py
 %%PYTHON_SITELIBDIR%%/papyon/service/description/__init__.pyc
 %%PYTHON_SITELIBDIR%%/papyon/service/description/__init__.pyo
+%%PYTHON_SITELIBDIR%%/papyon/service/errors.py
+%%PYTHON_SITELIBDIR%%/papyon/service/errors.pyc
+%%PYTHON_SITELIBDIR%%/papyon/service/errors.pyo
 %%PYTHON_SITELIBDIR%%/papyon/sip/__init__.py
 %%PYTHON_SITELIBDIR%%/papyon/sip/__init__.pyc
 %%PYTHON_SITELIBDIR%%/papyon/sip/__init__.pyo
@@ -604,6 +625,9 @@
 %%PYTHON_SITELIBDIR%%/papyon/util/__init__.py
 %%PYTHON_SITELIBDIR%%/papyon/util/__init__.pyc
 %%PYTHON_SITELIBDIR%%/papyon/util/__init__.pyo
+%%PYTHON_SITELIBDIR%%/papyon/util/async.py
+%%PYTHON_SITELIBDIR%%/papyon/util/async.pyc
+%%PYTHON_SITELIBDIR%%/papyon/util/async.pyo
 %%PYTHON_SITELIBDIR%%/papyon/util/debug.py
 %%PYTHON_SITELIBDIR%%/papyon/util/debug.pyc
 %%PYTHON_SITELIBDIR%%/papyon/util/debug.pyo
@@ -631,6 +655,9 @@
 %%PYTHON_SITELIBDIR%%/papyon/util/odict.py
 %%PYTHON_SITELIBDIR%%/papyon/util/odict.pyc
 %%PYTHON_SITELIBDIR%%/papyon/util/odict.pyo
+%%PYTHON_SITELIBDIR%%/papyon/util/parsing.py
+%%PYTHON_SITELIBDIR%%/papyon/util/parsing.pyc
+%%PYTHON_SITELIBDIR%%/papyon/util/parsing.pyo
 %%PYTHON_SITELIBDIR%%/papyon/util/queue.py
 %%PYTHON_SITELIBDIR%%/papyon/util/queue.pyc
 %%PYTHON_SITELIBDIR%%/papyon/util/queue.pyo
