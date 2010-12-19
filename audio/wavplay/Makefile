@@ -9,11 +9,13 @@ PORTNAME=	wavplay
 PORTVERSION=	1.4
 PORTREVISION=	3
 CATEGORIES=	audio
-MASTER_SITES=	${MASTER_SITE_SUNSITE}
-MASTER_SITE_SUBDIR=	apps/sound/players
+MASTER_SITES=	SUNSITE/apps/sound/players/
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	A wav player and recorder
+
+ONLY_FOR_ARCHS=	i386 amd64
+ONLY_FOR_ARCHS_REASON=Doesn't work on !i386 and amd64
 
 MAN1=		wavplay.1
 
