@@ -19,11 +19,10 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/libavcall.a:${PORTSDIR}/devel/ffcall\
 		${LOCALBASE}/lib/libgmp.a:${PORTSDIR}/math/gmp
 LIB_DEPENDS=	getline:${PORTSDIR}/devel/libgetline
 
+USE_PERL5_BUILD=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 PLIST_SUB+=	PORTVERSION="${PORTVERSION}"
-
-BROKEN=		fails to build
 
 CONFIGURE_ARGS=	--with-pcre-dir=${LOCALBASE}/lib \
 		--with-pcre-inc=${LOCALBASE}/include \
