@@ -1,9 +1,3 @@
-%%PYTHON_SITELIBDIR%%/butterfly/Channel_Interface_Conference.py
-%%PYTHON_SITELIBDIR%%/butterfly/Channel_Interface_Conference.pyc
-%%PYTHON_SITELIBDIR%%/butterfly/Channel_Interface_Conference.pyo
-%%PYTHON_SITELIBDIR%%/butterfly/Connection_Interface_Mail_Notification.py
-%%PYTHON_SITELIBDIR%%/butterfly/Connection_Interface_Mail_Notification.pyc
-%%PYTHON_SITELIBDIR%%/butterfly/Connection_Interface_Mail_Notification.pyo
 %%PYTHON_SITELIBDIR%%/butterfly/__init__.py
 %%PYTHON_SITELIBDIR%%/butterfly/__init__.pyc
 %%PYTHON_SITELIBDIR%%/butterfly/__init__.pyo
@@ -79,6 +73,9 @@
 %%PYTHON_SITELIBDIR%%/butterfly/media/stream_handler.py
 %%PYTHON_SITELIBDIR%%/butterfly/media/stream_handler.pyc
 %%PYTHON_SITELIBDIR%%/butterfly/media/stream_handler.pyo
+%%PYTHON_SITELIBDIR%%/butterfly/protocol.py
+%%PYTHON_SITELIBDIR%%/butterfly/protocol.pyc
+%%PYTHON_SITELIBDIR%%/butterfly/protocol.pyo
 %%PYTHON_SITELIBDIR%%/butterfly/util/__init__.py
 %%PYTHON_SITELIBDIR%%/butterfly/util/__init__.pyc
 %%PYTHON_SITELIBDIR%%/butterfly/util/__init__.pyo
