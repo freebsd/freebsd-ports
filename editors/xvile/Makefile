@@ -8,13 +8,13 @@
 PORTNAME=	xvile
 PORTVERSION=	9.8c
 CATEGORIES=	editors
-MASTER_SITES=	ftp://invisible-island.net/vile/ \
-		ftp://dickey.his.com/vile/ \
-		ftp://ftp.phred.org/pub/vile/
+MASTER_SITES=	ftp://invisible-island.net/vile/current/ \
+		ftp://dickey.his.com/vile/current/ \
+		ftp://ftp.phred.org/pub/vile/current/
 DISTNAME=	vile-9.8c
 EXTRACT_SUFX=	.tgz
 
-PATCH_SITES=    ${MASTER_SITES:S,vile/,vile/patches/,g}
+PATCH_SITES=    ${MASTER_SITES:S,vile/current/,vile/patches/,g}
 PATCHFILES=
 
 MAINTAINER=	gj@FreeBSD.org
