@@ -16,11 +16,14 @@ DIST_SUBDIR=	PECL
 MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	A PECL extension which allows running applications out of .phar files
 
+LICENSE=	PHP301
+
 USE_PHP=	hash spl pcre
 USE_PHP_BUILD=	yes
 USE_PHPEXT=	yes
 CFLAGS+=	"-I${LOCALBASE}/include"
 LDFLAGS+=	"-L${LOCALBASE}/lib"
+IGNORE_WITH_PHP=4
 
 OPTIONS=	BZ2		"Enable bz2 compression support" off \
 		ZLIB		"Enable gzip compression support" off
