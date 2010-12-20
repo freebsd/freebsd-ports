@@ -16,9 +16,12 @@ DIST_SUBDIR=	PECL
 MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	PHK is a PHP-oriented package/archive system
 
+LICENSE=	PHP301
+
 USE_PHP=	yes
 USE_PHP_BUILD=	yes
 USE_PHPEXT=	yes
+IGNORE_WITH_PHP=4
 
 CONFIGURE_ARGS=	--enable-phk
 
