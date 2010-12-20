@@ -1,0 +1,13 @@
+@comment $FreeBSD$
+lib/purple-2/libskype.so
+share/pixmaps/pidgin/protocols/16/skypeout.png
+share/pixmaps/pidgin/protocols/22/skypeout.png
+share/pixmaps/pidgin/protocols/48/skypeout.png
+share/pixmaps/pidgin/protocols/16/skype.png
+share/pixmaps/pidgin/protocols/22/skype.png
+share/pixmaps/pidgin/protocols/48/skype.png
+share/pixmaps/pidgin/emotes/skype/theme
+@dirrm share/pixmaps/pidgin/emotes/skype
+@dirrmtry share/pixmaps/pidgin/protocols/48
+@dirrmtry share/pixmaps/pidgin/protocols/22
+@dirrmtry share/pixmaps/pidgin/protocols/16
