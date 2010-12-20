@@ -1,0 +1,9 @@
+Web sites are often hosted on servers where bzr can't be installed.
+In other cases, the web site must not give access to its corresponding
+branch (for security reasons for example). Finally, web hosting
+providers often provides only ftp access to upload sites.
+
+This plugin uploads only the relevant changes in your working tree
+since the last upload using ftp or sftp protocols.
+
+WWW: http://wiki.bazaar.canonical.com/BazaarUploadForWebDev

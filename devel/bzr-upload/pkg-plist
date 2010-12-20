@@ -1,0 +1,19 @@
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/upload/__init__.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/upload/__init__.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/upload/__init__.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/upload/info.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/upload/info.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/upload/info.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/upload/tests/__init__.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/upload/tests/__init__.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/upload/tests/__init__.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/upload/tests/test_auto_upload_hook.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/upload/tests/test_auto_upload_hook.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/upload/tests/test_auto_upload_hook.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/upload/tests/test_upload.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/upload/tests/test_upload.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/upload/tests/test_upload.pyo
+@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/upload/tests
+@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/upload
+@dirrmtry %%PYTHON_SITELIBDIR%%/bzrlib/plugins
+@dirrmtry %%PYTHON_SITELIBDIR%%/bzrlib
