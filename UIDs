@@ -140,6 +140,7 @@ nullmail:*:522:522::0:0:Nullmailer Mail System:/var/spool/nullmailer:/bin/sh
 dkimproxy:*:525:525::0:0:DKIM Proxy Owner:/nonexistent:/usr/sbin/nologin
 pgbouncer:*:534:534::0:0:Pgbouncer Daemon:/nonexistent:/usr/sbin/nologin
 redis:*:535:535::0:0:Redis Daemon:/nonexistent:/usr/sbin/nologin
+_flowd:*:542:542::0:0:flowd privilege separation user:/var/empty:/usr/sbin/nologin
 ejabberd:*:543:543::0:0:ejabberd pseudo user:/var/spool/ejabberd:/bin/sh
 qtss:*:554:554::0:0:Darwin Streaming Server:/nonexistent:/usr/sbin/nologin
 ircdru:*:555:555::0:0:Russian hybrid IRC server:/nonexistent:/bin/sh
