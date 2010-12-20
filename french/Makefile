@@ -31,6 +31,7 @@
     SUBDIR += mozilla-flp
     SUBDIR += php_doc
     SUBDIR += plgrenouille
+    SUBDIR += tvdownloader
     SUBDIR += verbiste
     SUBDIR += xtel
 
