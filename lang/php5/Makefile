@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	php5
-PORTVERSION=	5.3.3
-PORTREVISION?=	2
+PORTVERSION=	5.3.4
+PORTREVISION?=	0
 CATEGORIES?=	lang devel www
 MASTER_SITES=	${MASTER_SITE_PHP}
 MASTER_SITE_SUBDIR=	distributions
@@ -59,7 +59,8 @@ MAN1=		php-config.1 phpize.1
 PATCH_DIST_STRIP=	-p1
 
 .if !defined(WITHOUT_SUHOSIN)
-PATCHFILES+=	suhosin-patch-${PORTVERSION}-0.9.10.patch.gz:suhosin
+#PATCHFILES+=	suhosin-patch-${PORTVERSION}-0.9.10.patch.gz:suhosin
+PATCHFILES+=	suhosin-patch-5.3.3-0.9.10.patch.gz:suhosin
 PATCH_SITES+=	http://download.suhosin.org/:suhosin
 PLIST_SUB+=	SUHOSIN=""
 .else
@@ -90,13 +91,11 @@ CONFIGURE_ARGS+=--disable-cgi
 
 .if defined(WITH_FPM)
 PHP_SAPI+=	fpm
-LIB_DEPENDS+=	event-1.4:${PORTSDIR}/devel/libevent
 MAN1+=		php-fpm.1
 USE_RC_SUBR+=	php-fpm
 CONFIGURE_ARGS+=--enable-fpm \
 		--with-fpm-user=${WWWOWN} \
-		--with-fpm-group=${WWWGRP} \
-		--with-libevent-dir=${LOCALBASE}
+		--with-fpm-group=${WWWGRP}
 PLIST_SUB+=	FPM=""
 .else
 PLIST_SUB+=	FPM="@comment "
@@ -157,6 +156,13 @@ CONFIGURE_ARGS+=--enable-zend-multibyte
 
 .if defined(WITHOUT_IPV6)
 CONFIGURE_ARGS+=--disable-ipv6
+.endif
+
+pre-patch:
+# To be removed after suhosin update
+.if !defined(WITHOUT_SUHOSIN)
+	@${REINPLACE_CMD} -E 's|REPORT_ERRORS TSRMLS_CC, "%s", error|REPORT_ERRORS TSRMLS_CC, error|' \
+		${WRKSRC}/ext/phar/stream.c
 .endif
 
 post-patch:
