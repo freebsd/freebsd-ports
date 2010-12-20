@@ -16,8 +16,12 @@ DIST_SUBDIR=	PECL
 MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	A PECL extension to create and read rar files
 
-USE_PHP=	yes
+LICENSE=	PHP301
+
+USE_PHP=	spl
 USE_PHPEXT=	yes
+USE_PHP_BUILD=	yes
+IGNORE_WITH_PHP=4
 
 CONFIGURE_ARGS=	--enable-rar
 
