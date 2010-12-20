@@ -1,5 +1,5 @@
---- lib/FXAtomic.cpp.orig	2010-09-18 00:09:37.000000000 +0000
-+++ lib/FXAtomic.cpp	2010-09-27 18:35:26.000000000 +0000
+--- lib/FXAtomic.cpp.orig	2010-12-20 09:35:19.000000000 +0000
++++ lib/FXAtomic.cpp	2010-12-20 09:35:58.000000000 +0000
 @@ -101,7 +101,7 @@
  // Have API to find out which.
  
