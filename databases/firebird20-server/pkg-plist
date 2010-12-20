@@ -2,12 +2,12 @@
 bin/fb_inet_server
 bin/fb_lock_mgr
 bin/fb_lock_print
+bin/fbstat
 bin/gbak
 bin/gdef
 bin/gds_drop
 bin/gfix
 bin/gsec
-bin/gstat
 bin/nbackup
 libexec/firebird/intl/fbintl
 libexec/firebird/intl/fbintl.conf
