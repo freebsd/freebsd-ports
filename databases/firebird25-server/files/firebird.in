@@ -1,0 +1,62 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+# PROVIDE: firebird
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+# Add the following line to /etc/rc.conf to enable Firebird Database:
+#
+# firebird_enable:	Set it to "YES" to enable firebird.
+#			Default is "NO".
+# firebird_flags:	Set options to run fbguard.
+#			Default is "-daemon".
+# firebird_pidfile:	Set full path to pid file.
+#			Default is "/var/run/firebird.pid".
+#
+
+. /etc/rc.subr
+
+name=firebird
+rcvar=`set_rcvar`
+
+load_rc_config $name
+
+firebird_enable=${firebird_enable:-"NO"}
+firebird_flags=${firebird_flags:-"-daemon"}
+firebird_pidfile=${firebird_pidfile:-"/var/run/${name}.pid"}
+firebird_user=firebird
+
+command_args="${firebird_flags}"
+command=%%PREFIX%%/bin/fbguard
+pidfile=${firebird_pidfile}
+start_precmd="start_precmd"
+start_postcmd="start_postcmd"
+stop_postcmd=stop_postcmd
+reload_postcmd=reload_postcmd
+
+start_precmd()
+{
+	touch ${firebird_pidfile}
+	chown "${firebird_user}:wheel" ${firebird_pidfile} ||
+		err 1 "Cannot chown ${firebird_pidfile}"
+}
+
+start_postcmd()
+{
+	pgrep -u ${firebird_user} fbguard > ${firebird_pidfile}
+}
+
+stop_postcmd()
+{
+        rm -f ${pidfile}
+}
+
+reload_postcmd()
+{
+        rm -f ${pidfile}
+        run_rc_command start
+}
+
+run_rc_command "$1"
