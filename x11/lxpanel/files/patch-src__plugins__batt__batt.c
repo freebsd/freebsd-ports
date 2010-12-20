@@ -76,7 +76,7 @@
  	if (alarmCanRun) {
  	    
 -	    alarm *a = (alarm *) malloc(sizeof(alarm));
-+	    lx_alarm *a = (lx_alarm *) malloc(sizeof(alarm));
++	    lx_alarm *a = (lx_alarm *) malloc(sizeof(lx_alarm));
  	    a->command = lx_b->alarmCommand;
  	    a->lock = &(lx_b->alarmProcessLock);
  	    
