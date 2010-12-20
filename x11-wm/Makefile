@@ -44,6 +44,7 @@
     SUBDIR += e17-module-efm_nav
     SUBDIR += e17-module-efm_path
     SUBDIR += e17-module-efm_pathbar
+    SUBDIR += e17-module-eooorg
     SUBDIR += e17-module-everything-mpris
     SUBDIR += e17-module-everything-pidgin
     SUBDIR += e17-module-everything-places
