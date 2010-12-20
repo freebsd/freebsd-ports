@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	WebService-GData
-PORTVERSION=	0.0305
+PORTVERSION=	0.0307
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 #MASTER_SITE_SUBDIR=	WebService
@@ -16,7 +16,8 @@ MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Google data protocol v2 base object to inherit from
 
 BUILD_DEPENDS=	p5-libwww>0:${PORTSDIR}/www/p5-libwww \
-		p5-JSON>=2.0:${PORTSDIR}/converters/p5-JSON
+		p5-JSON>=2.0:${PORTSDIR}/converters/p5-JSON \
+		p5-Test-Mock-LWP>=0.05:${PORTSDIR}/devel/p5-Test-Mock-LWP
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
