@@ -7,6 +7,7 @@
 
 PORTNAME=	roundcube
 DISTVERSION=	0.5-beta
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES?=	mail www
 MASTER_SITES=	SF/${PORTNAME}mail/${PORTNAME}mail-beta/${DISTVERSION}
@@ -132,6 +133,7 @@ do-install:
 .for i in ${RCUBECOMP}
 	@cd ${WRKSRC} && ${COPYTREE_SHARE} ${i} ${WWWDIR}
 .endfor
+	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${WWWDIR}/logs ${WWWDIR}/temp
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 .for i in ${PORTDOCS}
