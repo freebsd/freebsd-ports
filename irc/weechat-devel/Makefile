@@ -6,12 +6,11 @@
 #
 
 PORTNAME=	weechat
-PORTVERSION=	20100928
+PORTVERSION=	20101212
 CATEGORIES=	irc
-MASTER_SITES=	http://perturb.me.uk/distfiles/ \
-		http://freebsd.unixfreunde.de/sources/
+MASTER_SITES=	http://perturb.me.uk/distfiles/
 PKGNAMESUFFIX=	-devel
-DISTNAME=	weechat-devel-b3b0f2d31c4d3c6a31561c3793c61dd81287daa8
+DISTNAME=	weechat-devel-25d9d6e0fec88c9ee0377d08132fd394b4577bad
 
 MAINTAINER=	freebsd@beardz.net
 COMMENT=	A lightweight and user friendly ncurse based IRC client
@@ -38,7 +37,7 @@ OPTIONS=	RUBY		"Ruby scripting support."	Off	\
 		NLS		"NLS support."			On	\
 		DOCUMENTATION	"Build documentation."		Off
 
-WRKSRC=	${WRKDIR}/${PORTNAME}-b3b0f2d
+WRKSRC=	${WRKDIR}/${PORTNAME}-25d9d6e
 
 .include <bsd.port.options.mk>
 
@@ -70,7 +69,9 @@ PLIST_SUB+=	ASPELL="@comment "
 .endif
 
 .if defined(WITH_PYTHON)
-USE_PYTHON=	yes
+USE_PYTHON=	-2.7
+CMAKE_ARGS+=	-DBSD_PYTHON_CMD=${PYTHON_CMD} \
+		-DBSD_PYTHON_VER=${PYTHON_VERSION}
 PLIST_SUB+=	PYTHON=""
 .else
 CMAKE_ARGS+=	-DENABLE_PYTHON=no
@@ -79,6 +80,8 @@ PLIST_SUB+=	PYTHON="@comment "
 
 .if defined(WITH_RUBY)
 USE_RUBY=	yes
+CMAKE_ARGS+=	-DBSD_RUBY_CMD=${RUBY} \
+		-DBSD_RUBY_VER=${RUBY_NAME}
 PLIST_SUB+=	RUBY=""
 .else
 CMAKE_ARGS+=	-DENABLE_RUBY=no
@@ -102,6 +105,9 @@ PLIST_SUB+=	PERL="@comment "
 .if defined(WITH_TCL)
 USE_TCL=	83+
 .include "${PORTSDIR}/Mk/bsd.tcl.mk"
+CMAKE_ARGS+=	-DBSD_TCL_VER=${TCL_VER} \
+		-DBSD_TCL_LIBDIR=${LOCALBASE}/lib \
+		-DBSD_TCL_INCDIR=${TCL_INCLUDEDIR}
 PLIST_SUB+=	TCL=""
 .else
 CMAKE_ARGS+=	-DENABLE_TCL=no
@@ -110,6 +116,9 @@ PLIST_SUB+=	TCL="@comment "
 
 .if defined(WITH_LUA)
 USE_LUA=	5.0+
+CMAKE_ARGS+=	-DBSD_LUA_VER=${LUA_VER} \
+		-DBSD_LUA_LIBDIR=${LUA_LIBDIR} \
+		-DBSD_LUA_INCDIR=${LUA_INCDIR}
 PLIST_SUB+=	LUA=""
 .else
 CMAKE_ARGS+=	-DENABLE_LUA=no
@@ -137,6 +146,9 @@ post-extract:
 post-patch:
 	@${REINPLACE_CMD} -e 's|$${LIBDIR}/../pkgconfig|$${CMAKE_INSTALL_PREFIX}/libdata/pkgconfig|' ${WRKSRC}/CMakeLists.txt
 	@${REINPLACE_CMD} -e 's|INSTALL|#INSTALL|' ${WRKSRC}/doc/CMakeLists.txt
+.for f in src/CMakeLists.txt src/core/CMakeLists.txt cmake/*.cmake
+	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|' ${WRKSRC}/${f}
+.endfor
 .if defined(WITHOUT_BACKTRACE)
 	@${REINPLACE_CMD} -e '/IF.*FreeBSD/,/ENDIF.*FreeBSD/d' ${WRKSRC}/src/core/CMakeLists.txt
 .endif
