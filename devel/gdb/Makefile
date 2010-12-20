@@ -8,6 +8,7 @@
 
 PORTNAME=	gdb
 PORTVERSION=	7.1
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=   ${MASTER_SITE_GNU:S,$,:gdb,}
 MASTER_SITE_SUBDIR=gdb/:gdb
@@ -32,9 +33,7 @@ CONFIGURE_ARGS=	--program-suffix=${PORTVERSION:S/.//g} \
 		--enable-target=all \
 		--enable-tui
 CFLAGS:=	${CFLAGS:C/ +$//}	# blanks at EOL creep in sometimes
-CFLAGS+=	-I${LOCALBASE}/include
 CFLAGS+=	-DRL_NO_COMPAT
-LDFLAGS+=	-L${LOCALBASE}/lib
 EXCLUDE=	dejagnu expect readline sim texinfo intl
 EXTRACT_AFTER_ARGS=| ${TAR} -xf - ${EXCLUDE:S/^/--exclude /}
 VER=	${PORTVERSION:S/.//}
@@ -48,6 +47,8 @@ ONLY_FOR_ARCHS=	i386 amd64	# untested elsewhere, might work
 # XXX: add OSVERSION check after readline is removed from base
 .if exists(${LOCALBASE}/lib/libreadline.so)
 LIB_DEPENDS+=	readline.6:${PORTSDIR}/devel/readline
+CFLAGS+=	-isystem ${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 .endif
 
 .if ${ARCH} == "amd64"
