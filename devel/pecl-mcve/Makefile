@@ -19,9 +19,12 @@ COMMENT=	A PECL Extension for Interface the MCVE/Monetra API
 
 LIB_DEPENDS=	monetra.7:${PORTSDIR}/devel/libmonetra
 
+LICENSE=	PHP30
+
 USE_PHP=	yes
 USE_PHPEXT=	yes
 CONFIGURE_ARGS+=--with-mcve="${LOCALBASE}"
+IGNORE_WITH_PHP=4
 
 post-patch:
 	${REINPLACE_CMD} -e '/SEARCH_PATH/ s,=",="${LOCALBASE} ${PREFIX} ,' \
