@@ -143,6 +143,7 @@
     SUBDIR += bzr-pipeline
     SUBDIR += bzr-rewrite
     SUBDIR += bzr-svn
+    SUBDIR += bzr-upload
     SUBDIR += bzrtools
     SUBDIR += c2lib
     SUBDIR += c2man
