@@ -7,7 +7,7 @@
 
 PORTNAME=	wmctrl
 PORTVERSION=	1.07
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	x11
 MASTER_SITES=	http://sweb.cz/tripie/utils/wmctrl/dist/
 
