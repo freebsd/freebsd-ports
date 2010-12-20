@@ -1,6 +1,6 @@
---- ./src/dbusmenuexporter.cpp.orig	2010-09-23 10:08:35.000000000 +0000
-+++ ./src/dbusmenuexporter.cpp	2010-11-12 14:49:39.000000000 +0000
-@@ -79,6 +79,7 @@
+--- ./src/dbusmenuexporter.cpp.orig	2010-12-08 10:29:39.000000000 +0100
++++ ./src/dbusmenuexporter.cpp	2010-12-20 12:18:44.673410726 +0100
+@@ -84,6 +84,7 @@
  {
      QVariantMap map;
      map.insert("enabled", false);

@@ -6,14 +6,17 @@
 #
 
 PORTNAME=	libdbusmenu-qt
-PORTVERSION=	0.6.4
+PORTVERSION=	0.6.6
 CATEGORIES=	devel
-MASTER_SITES=	${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	avilla
+MASTER_SITES=	http://launchpad.net/${PORTNAME}/trunk/${PORTVERSION}/+download/
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Qt4 implementation of the DBusMenu protocol
 
+LICENSE=	LGPL20
+LICENSE_FILE=	${WRKSRC}/COPYING
+
+FETCH_ARGS=	-Fpr
 USE_BZIP2=	yes
 USE_CMAKE=	yes
 USE_QT_VER=	4
