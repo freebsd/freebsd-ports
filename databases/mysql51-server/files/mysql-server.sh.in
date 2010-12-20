@@ -32,13 +32,12 @@ load_rc_config $name
 : ${mysql_enable="NO"}
 : ${mysql_limits="NO"}
 : ${mysql_dbdir="/var/db/mysql"}
-: ${mysql_pidfile="${mysql_dbdir}/`/bin/hostname`.pid"}
-: ${mysql_args=""}
 
 mysql_user="mysql"
 mysql_limits_args="-e -U ${mysql_user}"
+pidfile=${mysql_pidfile:-"${mysql_dbdir}/`/bin/hostname`.pid"}
 command="/usr/sbin/daemon"
-command_args="-c -f %%PREFIX%%/bin/mysqld_safe --defaults-extra-file=${mysql_dbdir}/my.cnf --user=${mysql_user} --datadir=${mysql_dbdir} --pid-file=${mysql_pidfile} ${mysql_args}"
+command_args="-c -f %%PREFIX%%/bin/mysqld_safe --defaults-extra-file=${mysql_dbdir}/my.cnf --user=${mysql_user} --datadir=${mysql_dbdir} --pid-file=${pidfile} ${mysql_args}"
 procname="%%PREFIX%%/libexec/mysqld"
 start_precmd="${name}_prestart"
 start_postcmd="${name}_poststart"
