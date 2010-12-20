@@ -19,7 +19,10 @@ COMMENT=	A PECL extension to support Internationalization(ICU)
 
 LIB_DEPENDS=	icui18n.46:${PORTSDIR}/devel/icu
 
+LICENSE=	PHP301
+
 USE_PHP=	yes
 USE_PHPEXT=	yes
+IGNORE_WITH_PHP=4 52
 
 .include <bsd.port.mk>
