@@ -68,7 +68,6 @@ include/cyrus/cyrusdb.h
 include/cyrus/glob.h
 include/cyrus/gmtoff.h
 include/cyrus/hash.h
-include/cyrus/hmac-md5.h
 include/cyrus/imapopts.h
 include/cyrus/imapurl.h
 include/cyrus/imclient.h
