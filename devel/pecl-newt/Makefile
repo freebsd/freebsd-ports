@@ -18,11 +18,14 @@ COMMENT=	PHP language extension for RedHat Newt library
 
 LIB_DEPENDS=	newt.52:${PORTSDIR}/devel/newt
 
+LICENSE=	PHP301
+
 USE_PHP=	yes
 USE_PHPIZE=	yes
 USE_PHP_BUILD=	yes
 USE_PHPEXT=	yes
 PHP_MODNAME=	newt
+IGNORE_WITH_PHP=4
 
 post-patch:
 	@${REINPLACE_CMD} -e '/SEARCH_PATH/ s,=",="${LOCALBASE} ${PREFIX} ,' \
