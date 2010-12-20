@@ -17,11 +17,14 @@ DIST_SUBDIR=	PECL
 MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	A PECL extension for the mdbtools library
 
+LICENSE=	LGPL21
+
 USE_PHP=	yes
 USE_PHPEXT=	yes
 USE_PHP_BUILD=	yes
 BUILD_DEPENDS=	${LOCALBASE}/lib/libmdb.a:${PORTSDIR}/databases/mdbtools
 RUN_DEPENDS=	${LOCALBASE}/lib/libmdb.a:${PORTSDIR}/databases/mdbtools
+IGNORE_WITH_PHP=4
 
 CONFIGURE_ARGS=	--with-mdbtools=${LOCALBASE}
 
