@@ -18,8 +18,11 @@ COMMENT=	A Php Interface to the Spread Toolkit API
 
 BUILD_DEPENDS=	${LOCALBASE}/include/sp.h:${PORTSDIR}/net/spread4
 
+LICENSE=	PHP301
+
 USE_PHP=	yes
 USE_PHPEXT=	yes
+IGNORE_WITH_PHP=4
 
 CONFIGURE_ARGS+=--with-spread=${LOCALBASE}
 
