@@ -1,0 +1,31 @@
+--- builds/posix/make.defaults	2010-09-08 03:41:23.000000000 -0500
++++ builds/posix/make.defaults	2010-12-18 20:25:29.000000000 -0500
+@@ -127,7 +127,7 @@
+ CHMOD=			chmod
+ CHMOD_6=		chmod 666
+ CHMOD_7=		chmod 777
+-CHMOD_S7=		chmod 06777
++CHMOD_S7=		chmod 04555
+ MV=			mv -f
+ TOUCH=			touch
+ CP=			cp
+@@ -153,7 +153,7 @@
+ STATICEXE_LINK:= @CXX@ $(GLOB_OPTIONS)
+ 
+ LINK_LIBS = @LIBS@
+-ICU_LIBS = -licuuc -licudata -licui18n
++ICU_LIBS = `icu-config --ldflags-libsonly` `icu-config --ldflags-searchpath`
+ STATICLINK_LIBS = @LIBS@
+ SO_LINK_LIBS = @LIBS@
+ 
+@@ -230,10 +230,6 @@
+   endif
+ endif
+ 
+-LIBICU_SO = $(LIB)/$(LIB_PREFIX)icuuc*.$(SHRLIB_FOREIGN_EXT) \
+-			$(LIB)/$(LIB_PREFIX)icudata*.$(SHRLIB_FOREIGN_EXT) \
+-			$(LIB)/$(LIB_PREFIX)icui18n*.$(SHRLIB_FOREIGN_EXT)
+-
+ # Shared library name for usage inside of the UDF
+ IbUtilLibraryName = $(LIB_PREFIX)ib_util.$(SHRLIB_EXT)
+ LIBIBUTIL_SO = $(LIB)/$(IbUtilLibraryName)
