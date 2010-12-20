@@ -4,5 +4,5 @@
 
 JAVA_VERSION="%%JAVA_VERSION%%" \
 	exec "%%LOCALBASE%%/bin/java" \
-	-cp "%%JAVAJARDIR%%/checkstyle.jar:%%JAVAJARDIR%%/checkstyle-optional.jar" \
+	-cp "%%JAVAJARDIR%%/checkstyle.jar" \
 	com.puppycrawl.tools.checkstyle.Main "$@"

@@ -6,12 +6,11 @@
 #
 
 PORTNAME=	checkstyle
-PORTVERSION=	4.4
-PORTREVISION=	1
+PORTVERSION=	5.3
 CATEGORIES=	java devel
 MASTER_SITES=	SF
 PKGNAMEPREFIX=	java-
-DISTNAME=	${PORTNAME}-src-${PORTVERSION}
+DISTNAME=	${PORTNAME}-${PORTVERSION}-bin
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Java style checker
@@ -19,56 +18,42 @@ COMMENT=	Java style checker
 RUN_DEPENDS=	java:${PORTSDIR}/java/javavmwrapper
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.4+
-USE_ANT=	yes
-ALL_TARGET=	build.bindist
-USE_JIKES=	no
+JAVA_VERSION=	1.5+
+NO_BUILD=	yes
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-PLIST=	${WRKDIR}/PLIST
+JAR_FILE=	${PORTNAME}-${PORTVERSION}-all.jar
 
-DATADIR=	${JAVASHAREDIR}/${PORTNAME}
+PLIST_FILES=	bin/${PORTNAME} \
+		%%JAVAJARDIR%%/${PORTNAME}.jar
 
-PLIST_FILES=	bin/checkstyle %%JAVAJARDIR%%/${PORTNAME}.jar %%JAVAJARDIR%%/${PORTNAME}-optional.jar \
-		%%DATADIR%%/examples/conf/sun_checks.xml
-BUILDDIR=	${WRKSRC}/target/dist/${PORTNAME}-${PORTVERSION}
 .if !defined(NOPORTDOCS)
-PORTDOCS=	README LICENSE* RIGHTS* docs
+PORTDOCS=	*
 .endif
 
-SUB_FILES=	checkstyle.sh
+.if !defined(NOPORTEXAMPLES)
+PORTEXAMPLES=	*
+.endif
 
-pre-install:
-	@${RM} -f ${PLIST}
-	@${TOUCH} ${PLIST}
-	@${FIND} ${BUILDDIR}/contrib/ -type f -print | \
-		${SED} "s,^${BUILDDIR}/contrib,${DATADIR:S,${PREFIX}/,,}," >> ${PLIST}
-	@${FIND} ${BUILDDIR}/contrib/ -type d -print | ${SORT} -r | \
-		${SED} -e "s,^${BUILDDIR}/contrib,@dirrm ${DATADIR:S,${PREFIX}/,,}," >> ${PLIST}
+SUB_FILES=	${PORTNAME}.sh
 
-do-install: do-install-jar do-install-data do-install-apidocs \
-		do-install-script
-
-do-install-jar:
-	@${MKDIR} ${JAVAJARDIR}
-	@${INSTALL_DATA} ${BUILDDIR}/${PORTNAME}-all-${PORTVERSION}.jar ${JAVAJARDIR}/${PORTNAME}.jar
-	@${INSTALL_DATA} ${BUILDDIR}/${PORTNAME}-optional-${PORTVERSION}.jar ${JAVAJARDIR}/${PORTNAME}-optional.jar
-
-do-install-data:
-	@${MKDIR} ${DATADIR}
-	@${CP} -r ${BUILDDIR}/contrib/* ${DATADIR}
-	@${CHOWN} -h -R ${SHAREOWN}:${SHAREGRP} ${DATADIR}
-	@${INSTALL_DATA} ${WRKSRC}/sun_checks.xml ${DATADIR}/examples/conf/
-
-do-install-apidocs:
+do-install:
+	@-${MKDIR} ${JAVAJARDIR}
+	@${INSTALL_DATA} ${WRKSRC}/${JAR_FILE} ${JAVAJARDIR}/${PORTNAME}.jar
+	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME}.sh ${PREFIX}/bin/${PORTNAME}
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-.for DOCFILE in ${PORTDOCS}
-	@${CP} -r ${BUILDDIR}/${DOCFILE} ${DOCSDIR}/
+	@-${MKDIR} ${DOCSDIR}
+.for DOCFILE in LICENSE* README RIGHTS.antlr
+	@${INSTALL_DATA} ${WRKSRC}/${DOCFILE} ${DOCSDIR}/
 .endfor
-	@${CHOWN} -h -R ${SHAREOWN}:${SHAREGRP} ${DOCSDIR}
+	@cd ${WRKSRC} && ${COPYTREE_SHARE} site ${DOCSDIR}
 .endif
-
-do-install-script:
-	@${INSTALL_SCRIPT} ${WRKDIR}/checkstyle.sh ${PREFIX}/bin/checkstyle
+.if !defined(NOPORTEXAMPLES)
+	@-${MKDIR} ${EXAMPLESDIR}
+.for EXAMPLEFILE in checkstyle_checks import-control sun_checks suppressions
+	@${INSTALL_DATA} ${WRKSRC}/${EXAMPLEFILE}.xml ${EXAMPLESDIR}/
+.endfor
+	@cd ${WRKSRC} && ${COPYTREE_SHARE} contrib ${EXAMPLESDIR}
+.endif
 
 .include <bsd.port.mk>
