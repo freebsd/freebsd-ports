@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libecap
-PORTVERSION=	0.0.2
+PORTVERSION=	0.0.3
 CATEGORIES=	www security
 MASTER_SITES=	http://www.measurement-factory.com/tmp/ecap/
 
@@ -16,6 +16,9 @@ COMMENT=	Library for module based network content analysis
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 USE_GCC=	4.2+
+
+LICENSE=	BSD
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 PORTDOCS=	CREDITS LICENSE NOTICE README
 
