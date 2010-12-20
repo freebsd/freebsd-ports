@@ -57,7 +57,7 @@ BROKEN=		Does not install on sparc64
 do-extract:
 	@${RM} -rf ${WRKDIR}
 	@${MKDIR} ${WRKDIR}
-	@${CP} -R ${GECKO_WRKSRC} ${WRKDIR}
+	@${CP} -Rp ${GECKO_WRKSRC} ${WRKDIR}
 	@for f in ${EXTRACT_ONLY}; do \
 		cd ${WRKSRC}/mailnews/extensions && ${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${_DISTDIR}/$$f ${EXTRACT_AFTER_ARGS}; \
 	done
