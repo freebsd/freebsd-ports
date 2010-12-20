@@ -5,6 +5,13 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20101220:
+  AFFECTS: users of net-mgmt/flowd
+  AUTHOR: ohauer@FreeBSD.org
+
+  flowd use now a fix UID/GID (id 542) instead the next free UID.
+  Before updating the port use the command "pw userdel _flowd"
+
 20101216:
   AFFECTS: users of security/libksba
   AUTHOR: glarkin@FreeBSD.org
