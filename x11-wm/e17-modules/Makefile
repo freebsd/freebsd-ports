@@ -7,6 +7,7 @@
 
 PORTNAME=	e17-modules
 PORTVERSION=	20101003
+PORTREVISION=	1
 CATEGORIES=	x11-wm enlightenment
 MASTER_SITES=	# Empty
 DISTFILES=	# Empty
@@ -19,7 +20,7 @@ WANT_EFL=	yes
 E17_ARCH=	freebsd${OSREL}-${ARCH}
 
 MODULES=	alarm calendar cpu deskshow diskio \
-		drawer efm_nav efm_path efm_pathbar \
+		drawer efm_nav efm_path efm_pathbar eooorg \
 		everything-mpris everything-pidgin \
 		everything-places everything-wallpaper \
 		everything-websearch exebuf execwatch \
