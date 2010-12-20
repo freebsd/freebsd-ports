@@ -1,0 +1,9 @@
+#
+# List of known database aliases
+# ------------------------------
+#
+# Examples:
+#
+# employee = %%EXAMPLESDIR%%/employee.fdb
+# security = /var/db/firebird/security2.fdb
+#
