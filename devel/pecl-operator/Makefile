@@ -17,9 +17,11 @@ DIST_SUBDIR=	PECL
 MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	PHP extension that provides operator overloading for PHP objects
 
+LICENSE=	PHP30
+
 USE_PHP=	yes
 USE_PHPEXT=	yes
-DEFAULT_PHP_VER=	5
+DEFAULT_PHP_VER?=	5
 IGNORE_WITH_PHP=	4
 PHP_MODNAME=	${PORTNAME}
 
