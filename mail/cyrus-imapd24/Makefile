@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	cyrus-imapd
-PORTVERSION=	2.4.5
-PORTREVISION=	1
+PORTVERSION=	2.4.6
+#PORTREVISION=	0
 CATEGORIES=	mail ipv6
 MASTER_SITES=	ftp://ftp.cyrusimap.org/cyrus-imapd/
 
@@ -188,7 +188,7 @@ CYRUS_MAN8=	arbitron.8 chk_cyrus.8 nntpd.8 ctl_cyrusdb.8 ctl_deliver.8 \
 		smmapd.8 squatter.8 sync_client.8 sync_reset.8 sync_server.8 \
 		syncnews.8 timsieved.8 tls_prune.8 unexpunge.8
 
-DOCS=		altnamespace anoncvs bugs changes faq feedback index \
+DOCS=		ag altnamespace anoncvs bugs changes faq feedback index \
 		install install-admin-mb install-auth install-compile \
 		install-configure install-murder install-netnews \
 		install-perf install-prereq install-replication \
