@@ -8,15 +8,18 @@
 PORTNAME=	inclued
 PORTVERSION=	0.3
 CATEGORIES=	devel pear
-MASTER_SITES=	http://t3.dotgnu.info/code/ LOCAL/chinsan/PECL
+MASTER_SITES=	LOCAL/chinsan/PECL
 PKGNAMEPREFIX=	pecl-
 DIST_SUBDIR=	PECL
 
 MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	Inclued gives you a Clue for PHP inclusion check
 
+LICENSE=	PHP301
+
 USE_PHP=	yes
 USE_PHPEXT=	yes
+IGNORE_WITH_PHP=4
 
 CONFIGURE_ARGS=	--enable-inclued
 
