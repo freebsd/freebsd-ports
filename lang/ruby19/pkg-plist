@@ -1041,12 +1041,12 @@ include/ruby-1.9/ruby.h
 @dirrm %%GEMS_DIR%%/cache
 @dirrm %%GEMS_DIR%%/
 %%RUBY_SITEARCHLIBDIR%%/.keep_me
-@dirrmtry %%RUBY_SITEARCHLIBDIR%%
-@dirrmtry %%RUBY_SITELIBDIR%%
-@dirrmtry lib/ruby/site_ruby
+@dirrm %%RUBY_SITEARCHLIBDIR%%
+@dirrm %%RUBY_SITELIBDIR%%
+@dirrm lib/ruby/site_ruby
 %%RUBY_VENDORARCHLIBDIR%%/.keep_me
-@dirrmtry %%RUBY_VENDORARCHLIBDIR%%
-@dirrmtry %%RUBY_VENDORLIBDIR%%
-@dirrmtry lib/ruby/vendor_ruby
-@dirrmtry lib/ruby/gems
-@dirrmtry lib/ruby
+@dirrm %%RUBY_VENDORARCHLIBDIR%%
+@dirrm %%RUBY_VENDORLIBDIR%%
+@dirrm lib/ruby/vendor_ruby
+@dirrm lib/ruby/gems
+@dirrm lib/ruby

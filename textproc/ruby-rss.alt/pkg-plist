@@ -52,6 +52,3 @@
 @dirrm %%RUBY_SITELIBDIR%%/rss/dublincore
 @dirrm %%RUBY_SITELIBDIR%%/rss/content
 @dirrm %%RUBY_SITELIBDIR%%/rss
-@dirrmtry %%RUBY_SITELIBDIR%%
-@dirrmtry lib/ruby/site_ruby
-@dirrmtry lib/ruby

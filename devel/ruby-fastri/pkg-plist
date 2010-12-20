@@ -14,6 +14,3 @@ bin/ri-emacs
 %%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%
 %%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%
 @dirrm %%RUBY_SITELIBDIR%%/fastri
-@dirrmtry %%RUBY_SITELIBDIR%%
-@dirrmtry lib/ruby/site_ruby
-@dirrmtry lib/ruby

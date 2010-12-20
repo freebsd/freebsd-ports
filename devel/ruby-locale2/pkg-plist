@@ -43,6 +43,3 @@
 @dirrm %%RUBY_SITELIBDIR%%/locale/driver
 @dirrm %%RUBY_SITELIBDIR%%/locale/data
 @dirrm %%RUBY_SITELIBDIR%%/locale
-@dirrmtry %%RUBY_SITELIBDIR%%
-@dirrmtry lib/ruby/site_ruby
-@dirrmtry lib/ruby
