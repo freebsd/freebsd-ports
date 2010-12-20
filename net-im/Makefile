@@ -130,6 +130,7 @@
     SUBDIR += pidgin-privacy-please
     SUBDIR += pidgin-rhythmbox
     SUBDIR += pidgin-sipe
+    SUBDIR += pidgin-skype
     SUBDIR += pidgin-twitter
     SUBDIR += pino
     SUBDIR += pork
