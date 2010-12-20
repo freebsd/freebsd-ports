@@ -31,6 +31,8 @@ LICENSE=	GPLv2
 pre-configure:
 	${REINPLACE_CMD} -e 's|%%PYTHON_CMD%%|${PYTHON_CMD}|'	\
 		${WRKSRC}/tvdownloader.sh
+	${REINPLACE_CMD} -e 's|/usr/share|${PREFIX}/share|'	\
+		${WRKSRC}/tvdownload.desktop
 .if defined(NOPORTDOCS)
 	${REINPLACE_CMD} -e 's|%%DOC%%|#|' ${WRKSRC}/Makefile
 .else
