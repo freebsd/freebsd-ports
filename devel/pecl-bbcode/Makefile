@@ -16,9 +16,13 @@ DIST_SUBDIR=	PECL
 MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	A PECL extension which allows quick and efficient BBCode Parsing
 
+LICENSE=	PHP301 BSD
+LICENSE_COMB=	multi
+
 USE_PHP=	yes
 USE_PHP_BUILD=	yes
 USE_PHPEXT=	yes
+IGNORE_WITH_PHP=4
 
 CONFIGURE_ARGS=	--enable-bbcode
 
