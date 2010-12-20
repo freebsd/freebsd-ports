@@ -182,6 +182,8 @@ include/fox-%%MAJORVER%%/FXMDIButton.h
 include/fox-%%MAJORVER%%/FXMDIChild.h
 include/fox-%%MAJORVER%%/FXMDIClient.h
 include/fox-%%MAJORVER%%/FXMainWindow.h
+include/fox-%%MAJORVER%%/FXMat2d.h
+include/fox-%%MAJORVER%%/FXMat2f.h
 include/fox-%%MAJORVER%%/FXMat3d.h
 include/fox-%%MAJORVER%%/FXMat3f.h
 include/fox-%%MAJORVER%%/FXMat4d.h
@@ -219,6 +221,7 @@ include/fox-%%MAJORVER%%/FXPopup.h
 include/fox-%%MAJORVER%%/FXPrintDialog.h
 include/fox-%%MAJORVER%%/FXProgressBar.h
 include/fox-%%MAJORVER%%/FXProgressDialog.h
+include/fox-%%MAJORVER%%/FXPtrList.h
 include/fox-%%MAJORVER%%/FXPtrQueue.h
 include/fox-%%MAJORVER%%/FXQuatd.h
 include/fox-%%MAJORVER%%/FXQuatf.h
