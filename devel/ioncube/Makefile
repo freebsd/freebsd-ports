@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	ioncube
-DISTVERSION=	4.0.1
+DISTVERSION=	4.0.2
 CATEGORIES=	devel
 MASTER_SITES=	http://downloads2.ioncube.com/loader_downloads/ \
-		http://dl.dropbox.com/u/4211495/ioncube/4.0.1/
+		http://dl.dropbox.com/u/4211495/ioncube/4.0.2/
 DISTFILES=	${PORTNAME}_loaders_fre_${VER}_${ARCH_DIST}${EXTRACT_SUFX}
 
 MAINTAINER=	svyatoslav.lempert@gmail.com
@@ -23,20 +23,12 @@ SUB_FILES=	pkg-message
 
 .include <bsd.port.pre.mk>
 
-# ionCube have no build for PHP 5.3 FreeBSD 6.x amd64
-.if ${OSVERSION} < 700000 && ${ARCH} == amd64 && ${PHP_VER} == 5
-BROKEN=		Does not work with PHP 5.3 on FreeBSD 6 amd64
-.endif
-
 # Detect OS Version
 .if ${OSVERSION} >= 800000
 VER=		8
 .endif
 .if (${OSVERSION} >= 700000 && ${OSVERSION} < 800000)
 VER=		7
-.endif
-.if ${OSVERSION} < 700000
-VER=		6
 .endif
 
 # Detect OS Architecture
