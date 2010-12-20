@@ -67,6 +67,8 @@
     SUBDIR += fastdb
     SUBDIR += firebird20-client
     SUBDIR += firebird20-server
+    SUBDIR += firebird25-client
+    SUBDIR += firebird25-server
     SUBDIR += fireprofile
     SUBDIR += flamerobin
     SUBDIR += flare
