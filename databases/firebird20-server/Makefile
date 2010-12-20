@@ -6,15 +6,17 @@
 #
 
 PORTNAME?=	firebird
-PORTVERSION=	2.0.3
-PORTREVISION=	6
+PORTVERSION=	2.0.6
 CATEGORIES?=	databases
 MASTER_SITES=	SF/firebird/OldFiles
 PKGNAMESUFFIX?=	-server
-DISTNAME=	Firebird-2.0.3.12981-1
+DISTNAME=	${PORTNAME:S/f/F/}-${PORTVERSION}.13266-0
+DIST_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	acm@FreeBSD.org
 COMMENT?=	Firebird-2 relational database (server)
+
+LIB_DEPENDS=	icuuc:${PORTSDIR}/devel/icu
 
 LATEST_LINK=	${PORTNAME}20${PKGNAMESUFFIX}
 
@@ -40,8 +42,8 @@ LD=	${CC}
 STRIP=
 
 ONLY_FOR_ARCHS=	i386 amd64
-CONFLICTS+=	firebird-client-1* firebird-server-1* \
-		firebird-client-2.1* firebird-server-2.1*
+CONFLICTS+=	firebird-client-2.1* firebird-server-2.1* \
+		firebird-client-2.5* firebird-server-2.5*
 
 INSTALL_FB=	${INSTALL} ${COPY} -g firebird
 
@@ -53,7 +55,6 @@ IGNORE=		your system does not support sysvipc
 .if !defined(CLIENT_ONLY)
 # Server part stuff
 LIB_DEPENDS+=	fbembed.2:${PORTSDIR}/databases/firebird20-client
-
 AUTOGENARGS=	--with-lock-manager
 
 ALL_TARGET=	firebird_boot ref_databases msgs libfbembed intl otherfiles \
@@ -62,19 +63,15 @@ ALL_TARGET=	firebird_boot ref_databases msgs libfbembed intl otherfiles \
 
 SUB_FILES=	pkg-install pkg-message aliases.conf
 
-UTIL_BIN=	fb_inet_server fb_lock_print gbak gdef gfix gsec gstat nbackup
+UTIL_BIN=	fb_inet_server fb_lock_print fbstat gbak gdef gfix gsec nbackup
 UDF_SO=		ib_udf.so fbudf.so
 UDF_SQL=	src/extlib/ib_udf2.sql src/extlib/fbudf/fbudf.sql
 .else
 # Client part stuff
-LIB_DEPENDS=	icuuc:${PORTSDIR}/devel/icu
-
 AUTOGENARGS=	--with-editline
 
 ALL_TARGET=	firebird_basic libfbembed embed_isql embed_gpre \
 		embed_gdef embed_qli libfbclient extlib
-#ALL_TARGET=	firebird_basic libfbembed libfbclient \
-#		client_gpre client_gdef client_isql client_qli extlib
 
 USE_LDCONFIG=	yes
 CLIENT_BIN=	gpre isql-fb qli
@@ -103,22 +100,11 @@ post-patch:
 	@${MKDIR} ${WRKSRC}/m4
 	${CP} ${FILESDIR}/*.m4 ${WRKSRC}/m4
 	${FIND} ${WRKSRC} -name "*.sh" -exec ${CHMOD} +x {} \+
-.if defined(CLIENT_ONLY)
-	${REINPLACE_CMD} -e 's|/isql|/isql-fb|g' ${WRKSRC}/builds/posix/make.defaults
-.endif
+	${REINPLACE_CMD} -e \
+			's|/isql|/isql-fb|g' -e \
+			's|/gstat|/fbstat|g' ${WRKSRC}/builds/posix/make.defaults
 
 .include <bsd.port.pre.mk>
-
-.if !defined(CLIENT_ONLY)
-pre-everything::
-	@${ECHO_MSG} "WARNING: The on-disk structure of the databases has"
-	@${ECHO_MSG} "changed since version 1.x."
-	@${ECHO_MSG} "Cancel this installation now and backup your databases"
-	@${ECHO_MSG} "if you have not already done so."
-.if !defined(BATCH)
-	@sleep 2
-.endif
-.endif
 
 .if !defined(CLIENT_ONLY)
 pre-su-install:
