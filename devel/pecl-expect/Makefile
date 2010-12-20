@@ -18,8 +18,11 @@ COMMENT=	A PHP extension for expect library
 
 LIB_DEPENDS=	expect543:${PORTSDIR}/lang/expect
 
+LICENSE=	PHP301
+
 USE_PHP=	yes
 USE_PHPEXT=	yes
+IGNORE_WITH_PHP=4
 
 CONFIGURE_ARGS+=--with-expect=${LOCALBASE}
 
