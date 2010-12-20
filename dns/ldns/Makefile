@@ -7,10 +7,11 @@
 
 PORTNAME=	ldns
 PORTVERSION=	1.6.7
+PORTREVISION=	1
 CATEGORIES=	dns
 MASTER_SITES=	http://www.nlnetlabs.nl/downloads/ldns/
 
-MAINTAINER=	konstantin@saurbier.net
+MAINTAINER=	jaap@NLnetLabs.nl
 COMMENT=	A library for programs conforming to DNS RFCs and drafts
 
 LICENSE=	BSD
@@ -225,7 +226,8 @@ MAN3=	ldns_bget_token.3 ldns_bgetc.3 ldns_bskipcs.3 ldns_buffer.3 \
 .if defined(WITH_GOST)
 BUILD_DEPENDS+=	openssl>=1.0:${PORTSDIR}/security/openssl
 .else
-CONFIGURE_ARGS+=	--disable-gost
+NO_GOST=		--disable-gost
+CONFIGURE_ARGS+=	${NO_GOST}
 .endif
 
 .if defined(WITH_EXAMPLES)
@@ -241,7 +243,7 @@ MAN1=	ldns-chaos.1 ldns-compare-zones.1 ldns-dpa.1 ldns-key2ds.1 \
 post-configure:
 	@(cd ${WRKSRC}/examples; ./configure --prefix=${PREFIX} \
 		--infodir=${PREFIX}/${INFO_PATH} --mandir=${MANPREFIX}/man \
-		--build=${CONFIGURE_TARGET})
+		--build=${CONFIGURE_TARGET} ${NO_GOST} ${NO_SHA2})
 
 post-build:
 	@(cd ${WRKSRC}/examples; ${GMAKE})
@@ -257,7 +259,8 @@ CONFIGURE_ARGS+=	--enable-ecdsa
 .endif
 
 .if ${OSVERSION} < 700000
-CONFIGURE_ARGS+=	"--disable-sha2"
+NO_SHA2=		--disable-sha2
+CONFIGURE_ARGS+=	${NO_SHA2}
 .endif
 
 .include <bsd.port.post.mk>
