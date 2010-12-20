@@ -2,7 +2,3 @@
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/test.rb
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%
 %%PORTDOCS%%@dirrmtry %%RUBY_EXAMPLESDIR%%
-@dirrmtry %%RUBY_SITELIBDIR%%/%%RUBY_ARCH%%
-@dirrmtry %%RUBY_SITELIBDIR%%
-@dirrmtry lib/ruby/site_ruby
-@dirrmtry lib/ruby

@@ -75,6 +75,3 @@
 @dirrm %%RUBY_SITELIBDIR%%/smf/toy/macro
 @dirrm %%RUBY_SITELIBDIR%%/smf/toy
 @dirrm %%RUBY_SITELIBDIR%%/smf
-@dirrmtry %%RUBY_SITELIBDIR%%
-@dirrmtry lib/ruby/site_ruby
-@dirrmtry lib/ruby

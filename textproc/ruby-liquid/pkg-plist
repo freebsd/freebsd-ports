@@ -33,6 +33,3 @@
 @dirrm %%RUBY_SITELIBDIR%%/liquid/tags
 @dirrm %%RUBY_SITELIBDIR%%/liquid/extras
 @dirrm %%RUBY_SITELIBDIR%%/liquid
-@dirrmtry %%RUBY_SITELIBDIR%%
-@dirrmtry lib/ruby/site_ruby
-@dirrmtry lib/ruby

@@ -62,7 +62,3 @@
 %%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%
 %%PORTDOCS%%@dirrmtry %%RUBY_DOCDIR%%
 @dirrm %%RUBY_SITELIBDIR%%/ldap
-@dirrmtry %%RUBY_SITEARCHLIBDIR%%
-@dirrmtry %%RUBY_SITELIBDIR%%
-@dirrmtry lib/ruby/site_ruby
-@dirrmtry lib/ruby
