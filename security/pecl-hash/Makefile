@@ -14,11 +14,13 @@ EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	PECL
 
 MAINTAINER=	miwi@FreeBSD.org
-COMMENT=	HASH Message Digest Framework for PHP
+COMMENT=	HASH Message Digest Framework for PHP 4
+
+LICENSE=	PHP301
 
 USE_PHP=	yes
 USE_PHPEXT=	yes
 DEFAULT_PHP_VER=4
-IGNORE_WITH_PHP=5
+IGNORE_WITH_PHP=5 52
 
 .include <bsd.port.mk>
