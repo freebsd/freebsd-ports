@@ -16,10 +16,13 @@ DIST_SUBDIR=	PECL
 MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	A PECL extension offering a fast map-based autoloader
 
+LICENSE=	PHP301
+
 USE_PHP=	spl
 USE_PHP_BUILD=	yes
 USE_PHPEXT=	yes
 PHP_MODNAME=	automap
+IGNORE_WITH_PHP=4
 
 CONFIGURE_ARGS=	--enable-automap
 
