@@ -16,8 +16,11 @@ DIST_SUBDIR=	PECL
 MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	Constants for real
 
+LICENSE=	PHP301
+
 USE_PHP=	yes
 USE_PHPEXT=	yes
+IGNORE_WITH_PHP=4
 
 CONFIGURE_ARGS=	--enable-hidef
 
