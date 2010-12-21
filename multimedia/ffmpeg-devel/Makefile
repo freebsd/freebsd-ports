@@ -7,7 +7,7 @@
 
 PORTNAME=	ffmpeg
 DISTVERSION=	2010-11-30
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia audio ipv6 net
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	mm
@@ -32,6 +32,7 @@ WANT_SDL=	yes
 OPTIONS=	ALSA	"Enable alsa input/output device" off \
 		AMR_NB	"AMR Narrow Band encoder (opencore)" on \
 		AMR_WB	"AMR Wide Band decoder (opencore)" on \
+		CPUDETECT "Enable runtime CPU detection" on \
 		DIRAC	"Dirac codec via libdirac" off \
 		FAAC	"FAAC mp4/aac audio encoder" off \
 		FFSERVER "Build and install ffserver" on \
@@ -111,6 +112,10 @@ DOC_DOCFILES=	APIchanges TODO avutil.txt developer.html faq.html \
 		libavfilter.html optimization.txt rate_distortion.txt \
 		snow.txt soc.txt swscale.txt tablegen.txt viterbi.txt
 PORTDOCS=	*
+
+.if !defined(WITHOUT_CPUDETECT)
+CONFIGURE_ARGS+=	--enable-runtime-cpudetect
+.endif
 
 .if !defined(WITHOUT_SSSE3)
 BUILD_DEPENDS+=	${LOCALBASE}/bin/as:${PORTSDIR}/devel/binutils
