@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pidgin-skype
-PORTVERSION=	0.0.0.604
+PORTVERSION=	0.0.0.605
 CATEGORIES=	net-im
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	mandree
@@ -28,6 +28,7 @@ USE_XZ=		yes
 
 # this is a local target to build a tarball
 build-tarball: ${DISTFILES}
+${DISTFILES}:
 	${RM} -rf ${WRKSRC}
 	svn export -r${PORTVERSION:E} \
 	    http://skype4pidgin.googlecode.com/svn/trunk/ ${WRKSRC}
