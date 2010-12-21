@@ -909,6 +909,7 @@
     SUBDIR += p5-Corona
     SUBDIR += p5-DBIx-Class-HTMLWidget
     SUBDIR += p5-Dancer
+    SUBDIR += p5-Dancer-Plugin-DataFu
     SUBDIR += p5-Data-TreeDumper-Renderer-DHTML
     SUBDIR += p5-Data-Validate-URI
     SUBDIR += p5-FAQ-OMatic
