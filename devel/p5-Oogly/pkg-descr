@@ -1,0 +1,7 @@
+Oogly is a different approach to data validation, it attempts to simplify
+and centralize data validation rules to ensure DRY (don't repeat yourself)
+code. It is not the intent of this module to provide validation
+routines but instead to provide a simplistic validation flow-control and
+promote code reuse.
+
+WWW: http://search.cpan.org/~awncorp/Oogly/
