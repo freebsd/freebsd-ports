@@ -1,0 +1,31 @@
+bin/dancer-datafu
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Dancer/Plugin/DataFu/.packlist
+%%SITE_PERL%%/Dancer/Plugin/DataFu.pm
+%%SITE_PERL%%/Dancer/Plugin/DataFu/Form.pm
+%%SITE_PERL%%/Dancer/Plugin/DataFu/Grid.pm
+%%SITE_PERL%%/auto/Dancer/Plugin/DataFu/elements/select_multiple.tt
+%%SITE_PERL%%/auto/Dancer/Plugin/DataFu/elements/input_checkbox.tt
+%%SITE_PERL%%/auto/Dancer/Plugin/DataFu/elements/input_text.tt
+%%SITE_PERL%%/auto/Dancer/Plugin/DataFu/elements/select.tt
+%%SITE_PERL%%/auto/Dancer/Plugin/DataFu/elements/form.tt
+%%SITE_PERL%%/auto/Dancer/Plugin/DataFu/elements/trow.tt
+%%SITE_PERL%%/auto/Dancer/Plugin/DataFu/elements/table.tt
+%%SITE_PERL%%/auto/Dancer/Plugin/DataFu/elements/input_file.tt
+%%SITE_PERL%%/auto/Dancer/Plugin/DataFu/elements/tdata.tt
+%%SITE_PERL%%/auto/Dancer/Plugin/DataFu/elements/theader.tt
+%%SITE_PERL%%/auto/Dancer/Plugin/DataFu/elements/textarea.tt
+%%SITE_PERL%%/auto/Dancer/Plugin/DataFu/elements/input_radio.tt
+%%SITE_PERL%%/auto/Dancer/Plugin/DataFu/elements/tnavigation.tt
+%%SITE_PERL%%/auto/Dancer/Plugin/DataFu/elements/input_password.tt
+%%SITE_PERL%%/auto/Dancer/Plugin/DataFu/elements/input_hidden.tt
+%%SITE_PERL%%/auto/Dancer/Plugin/DataFu/elements/thead.tt
+@dirrmtry %%SITE_PERL%%/Dancer/Plugin/DataFu
+@dirrmtry %%SITE_PERL%%/Dancer/Plugin
+@dirrmtry %%SITE_PERL%%/Dancer
+@dirrmtry %%SITE_PERL%%/auto/Dancer/Plugin/DataFu/elements
+@dirrmtry %%SITE_PERL%%/auto/Dancer/Plugin/DataFu
+@dirrmtry %%SITE_PERL%%/auto/Dancer/Plugin
+@dirrmtry %%SITE_PERL%%/auto/Dancer
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Dancer/Plugin/DataFu
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Dancer/Plugin
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Dancer

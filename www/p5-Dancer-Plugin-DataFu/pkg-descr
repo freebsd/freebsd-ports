@@ -1,0 +1,4 @@
+Dancer::Plugin::DataFu is an HTML form and table rendering engine with data
+validation support.
+
+WWW: http://search.cpan.org/~awncorp/Dancer-Plugin-DataFu/
