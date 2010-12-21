@@ -1,11 +1,12 @@
---- audio.c.orig	Mon May  5 03:07:05 1997
-+++ audio.c	Wed Oct 25 19:33:27 2006
-@@ -36,7 +36,7 @@
+--- audio.c.orig	2004-08-15 16:07:55.000000000 +0200
++++ audio.c	2010-04-03 09:44:58.000000000 +0200
+@@ -45,6 +45,9 @@
+ #include <linux/sched.h>
  #include <linux/unistd.h>
  #endif
- #else /* FreeBSD? */
--#include <machine/soundcard.h>
++#elif defined(__FreeBSD__)
 +#include <sys/soundcard.h>
- #endif
- #include <unistd.h>
- #define LINUX_DEFAULT_FREQ (22050)
++#define SOUND_DEVICE "/dev/dsp"
+ #elif defined(__NetBSD__) || defined(__OpenBSD__)
+ /* NetBSD's Linux API emulation, require -lossaudio too */
+ #include <soundcard.h>
