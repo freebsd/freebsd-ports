@@ -1,0 +1,12 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Jonk/.packlist
+%%SITE_PERL%%/Jonk.pm
+%%SITE_PERL%%/Jonk/Client.pm
+%%SITE_PERL%%/Jonk/Cookbook.pod
+%%SITE_PERL%%/Jonk/Cookbook/Basic.pod
+%%SITE_PERL%%/Jonk/Cookbook/DequeueSpecificJob.pod
+%%SITE_PERL%%/Jonk/Cookbook/ErrorHandling.pod
+%%SITE_PERL%%/Jonk/Cookbook/ForkModel.pod
+%%SITE_PERL%%/Jonk/Worker.pm
+@dirrm %%SITE_PERL%%/Jonk/Cookbook
+@dirrm %%SITE_PERL%%/Jonk
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Jonk
