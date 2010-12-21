@@ -1,0 +1,25 @@
+--- paranoia/Makefile.in.orig
++++ paranoia/Makefile.in
+@@ -24,18 +24,14 @@
+ LIBS = ../interface/libcdda_interface.a -lm
+ export VERSION
+ 
+-all: lib slib
+-
+-debug: 
+-	$(MAKE) libcdda_paranoia.a CFLAGS="$(DEBUG)"
+-
+-lib:	
++all:
+ 	$(MAKE) libcdda_paranoia.a CFLAGS="$(OPT)" 
+-
+-slib:	
+ 	$(MAKE) lessmessy
+ 	$(MAKE) libcdda_paranoia.so CFLAGS="$(OPT) -fpic" 
+ 
++debug:
++	$(MAKE) libcdda_paranoia.a CFLAGS="$(DEBUG)"
++
+ #test:	$(TFILES)
+ #
+ 
