@@ -1,0 +1,33 @@
+--- configure.orig	2004-08-15 15:36:21.000000000 +0200
++++ configure	2010-04-03 09:57:44.000000000 +0200
+@@ -3989,6 +3990,30 @@
+ 	esac
+ 	copt="$copt -funroll-loops"
+ 	;;
++*freebsd*)
++	echo 'A FreeBSD box...'
++	case $t in
++	i*86-*)
++	  cat >>confdefs.h <<\_ACEOF
++#define NZREG "%ebx"
++_ACEOF
++
++	  cat >>confdefs.h <<\_ACEOF
++#define PCREG "%ebp"
++_ACEOF
++
++ 	  regs="-fomit-frame-pointer -ffixed-ebx -ffixed-ebp"
++	  ;;
++	*)
++	  regs=""
++	esac
++	# Most BSD systems support OSS audio, too:
++	cat >>confdefs.h <<\_ACEOF
++#define STONX_AUDIO_LINUX 1
++_ACEOF
++
++	libs=""
++ 	;;
+ *bsd*)
+  	echo 'A BSD box...'
+ 	case $t in

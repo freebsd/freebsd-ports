@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	stonx
-PORTVERSION=	0.6.7e
-PORTREVISION=	1
+PORTVERSION=	0.6.7e.6
 CATEGORIES=	emulators
-MASTER_SITES=	ftp://ftp.complang.tuwien.ac.at/pub/nino/stonx-current/
-DISTNAME=	STonX-0.6.7-epsilon
+MASTER_SITES=	SF/stonx/stonx/0.6.7.6
+DISTNAME=	STonX-0.6.7.6
 
 MAINTAINER=	treif@mayn.de
 COMMENT=	AtariST emulator
@@ -36,50 +35,37 @@ pre-build:
 # Installing
 #
 BINDIR=	${PREFIX}/bin
-LIBDIR=	${PREFIX}/lib/X11/STonX
 FNTDIR=	${PREFIX}/lib/X11/fonts/misc
 
-DATA=	tos.img cartridge.img Keysyms Keysyms.G atari/FLOPPY-4MB \
-	atari/bench1.pas atari/bench1.prg atari/final.tos
-DOCS=	../COPYING DEBUGGING FONTS INSTALL PROGRAMS README RELEASE_NOTES \
+DATA=	atari/bench1.pas atari/bench1.prg
+ETCFILES=	keysyms-alternative keysyms-german keysyms-spanish
+DOCS=	../COPYING AUTHORS DEBUGGING INSTALL README RELEASE_NOTES \
 	TOS-VERSIONS
 FONTS=	System0-iso.pcf System0.pcf System1-iso.pcf System1.pcf \
 	System2-iso.pcf System2.pcf
 
-pre-install:
-	@${ECHO_MSG} "#!/bin/sh" > ${WRKSRC}/stonx.script
-	@${ECHO_MSG} "cd ${LIBDIR}" >> ${WRKSRC}/stonx.script
-	@${ECHO_MSG} "${BINDIR}/stonx.bin -noaudio \
-		-disk A:FLOPPY-4MB -fs C:." >> ${WRKSRC}/stonx.script
-
-do-install:
-	@${ECHO_MSG} "===> Installing programs"
-	${INSTALL_SCRIPT} ${WRKSRC}/stonx.script ${BINDIR}/stonx
-	${INSTALL_PROGRAM} ${WRKSRC}/stonx ${BINDIR}/stonx.bin
-
-	@${ECHO_MSG} "===> Installing data"
-	@${MKDIR} ${LIBDIR}
-.for f in ${DATA}
-	${INSTALL_DATA} ${WRKSRC}/$f ${LIBDIR}
+post-install:
+.for f in ${ETCFILES}
+	${INSTALL_DATA} ${WRKSRC}/etc/$f ${ETCDIR}/
 .endfor
-
 	@${ECHO_MSG} "===> Installing fonts"
 .for f in ${FONTS}
-	${INSTALL_DATA} ${WRKSRC}/data/$f ${FNTDIR}
+	${INSTALL_DATA} ${WRKSRC}/data/$f ${FNTDIR}/
 	@${GZIP_CMD} ${FNTDIR}/$f
 .endfor
 	@mkfontdir ${FNTDIR}
-
 .if !defined(NOPORTDOCS)
 	@${ECHO_MSG} "===> Installing docs"
-	@${MKDIR} ${LIBDIR}/docs
+	@${MKDIR} ${DOCSDIR}
 .for f in ${DOCS}
-	${INSTALL_DATA} ${WRKSRC}/docs/$f ${LIBDIR}/docs
+	${INSTALL_DATA} ${WRKSRC}/docs/$f ${DOCSDIR}/
+.endfor
+	@${MKDIR} ${EXAMPLESDIR}
+.for f in ${DATA}
+	${INSTALL_DATA} ${WRKSRC}/$f ${EXAMPLESDIR}/
 .endfor
 .endif
-
 .if (defined(DISPLAY) && ${DISPLAY} != "")
-post-install:
 	@xset fp+ ${FNTDIR}
 	@xset fp rehash
 .endif
@@ -88,7 +74,7 @@ post-install:
 
 .if !exists(${DISTDIR}/${TOSIMG})
 IGNORE="Please get a ROM dump from your AtariST and save it as"\
-"\"${TOSIMG}\" in \"${DISTDIR}\" manually, and then make install again"
+"\"${TOSIMG}\" in \"${DISTDIR}\" manually, and then make again"
 .endif
 
 BUILD_DEPENDS+=		${LOCALBASE}/lib/X11/fonts/misc/10x20-ISO8859-1.pcf.gz:${PORTSDIR}/x11-fonts/font-misc-misc
