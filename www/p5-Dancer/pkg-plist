@@ -14,6 +14,7 @@ bin/dancer
 %%SITE_PERL%%/Dancer/GetOpt.pm
 %%SITE_PERL%%/Dancer/HTTP.pm
 %%SITE_PERL%%/Dancer/Handler.pm
+%%SITE_PERL%%/Dancer/Handler/Debug.pm
 %%SITE_PERL%%/Dancer/Handler/PSGI.pm
 %%SITE_PERL%%/Dancer/Handler/Standalone.pm
 %%SITE_PERL%%/Dancer/Helpers.pm
