@@ -11,7 +11,7 @@ CATEGORIES=	emulators
 MASTER_SITES=	SF/stonx/stonx/0.6.7.6
 DISTNAME=	STonX-0.6.7.6
 
-MAINTAINER=	treif@mayn.de
+MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	AtariST emulator
 
 BUILD_DEPENDS=	bdftopcf:${PORTSDIR}/x11-fonts/bdftopcf \
