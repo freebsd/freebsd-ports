@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Rose-DB-Object
-PORTVERSION=	0.7860
+PORTVERSION=	0.7920
 PORTEPOCH=	1
 CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
@@ -85,6 +85,7 @@ MAN3=	Rose::DB::Object.3 \
 	Rose::DB::Object::Metadata::Column::Text.3 \
 	Rose::DB::Object::Metadata::Column::Time.3 \
 	Rose::DB::Object::Metadata::Column::Timestamp.3 \
+	Rose::DB::Object::Metadata::Column::TimestampWithTimeZone.3 \
 	Rose::DB::Object::Metadata::Column::Varchar.3 \
 	Rose::DB::Object::Metadata::ForeignKey.3 \
 	Rose::DB::Object::Metadata::PrimaryKey.3 \
