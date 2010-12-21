@@ -18,10 +18,13 @@ COMMENT=	Gearman API
 
 LIB_DEPENDS=	gearman:${PORTSDIR}/devel/gearmand
 
+LICENSE=	PHP301
+
 CONFIGURE_ARGS=	--with-gearman
 PHP_MODNAME=	${PORTNAME}
 USE_PHP=	yes
 USE_PHPEXT=	yes
+IGNORE_WITH_PHP=4
 
 .include <bsd.port.pre.mk>
 
