@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Dancer
-PORTVERSION=	1.2000
+PORTVERSION=	1.2003
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	../../authors/id/X/XS/XSAWYERX
@@ -45,6 +45,7 @@ MAN3=	Dancer.3 \
 	Dancer::Error.3 \
 	Dancer::FileUtils.3 \
 	Dancer::HTTP.3 \
+	Dancer::Handler::Debug.3 \
 	Dancer::Introduction.3 \
 	Dancer::Logger.3 \
 	Dancer::Logger::Abstract.3 \
