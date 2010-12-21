@@ -16,6 +16,9 @@ COMMENT=	The wiki engine used by Wikipedia
 CONFLICTS=	mediawiki-1.[0-9].* mediawiki-1.1[0-24-9].*
 NO_LATEST_LINK=	yes
 
+DEPRECATED=	abandoned upstream
+EXPIRATION_DATE=2011-03-30
+
 USE_PHP=	iconv mbstring pcre session xml zlib readline dom
 IGNORE_WITH_PHP=	4
 WANT_PHP_WEB=	yes
