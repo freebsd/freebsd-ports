@@ -15,6 +15,9 @@ COMMENT=	The wiki engine used by Wikipedia
 
 CONFLICTS=	mediawiki-1.[0-57-9].* mediawiki-1.1[0-9].*
 
+DEPRECATED=	abandoned upstream
+EXPIRATION_DATE=2011-03-30
+
 NO_LATEST_LINK=	yes
 
 NO_BUILD=	yes
