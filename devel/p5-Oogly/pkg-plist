@@ -1,0 +1,3 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Oogly/.packlist
+%%SITE_PERL%%/Oogly.pm
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Oogly
