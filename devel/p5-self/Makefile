@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	self
-PORTVERSION=	0.32
+PORTVERSION=	0.34
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	../../authors/id/G/GU/GUGOD/
@@ -22,6 +22,6 @@ RUN_DEPENDS=	p5-B-Hooks-Parser>0:${PORTSDIR}/devel/p5-B-Hooks-Parser \
 
 PERL_CONFIGURE=	yes
 
-MAN3=		self.3
+MAN3=		self.3 self::implicit.3
 
 .include <bsd.port.mk>
