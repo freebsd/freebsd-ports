@@ -51,7 +51,6 @@ bin/plackup
 %%SITE_PERL%%/Plack/Middleware/Lint.pm
 %%SITE_PERL%%/Plack/Middleware/Log4perl.pm
 %%SITE_PERL%%/Plack/Middleware/LogDispatch.pm
-%%SITE_PERL%%/Plack/Middleware/MethodOverride.pm
 %%SITE_PERL%%/Plack/Middleware/NullLogger.pm
 %%SITE_PERL%%/Plack/Middleware/RearrangeHeaders.pm
 %%SITE_PERL%%/Plack/Middleware/Recursive.pm
@@ -86,6 +85,8 @@ bin/plackup
 %%SITE_PERL%%/Plack/Util/Accessor.pm
 %%SITE_PERL%%/auto/share/dist/Plack/baybridge.jpg
 %%SITE_PERL%%/auto/share/dist/Plack/face.jpg
+%%SITE_PERL%%/auto/share/dist/Plack/stuff../Hello.txt
+@dirrm %%SITE_PERL%%/auto/share/dist/Plack/stuff..
 @dirrm %%SITE_PERL%%/auto/share/dist/Plack
 @dirrm %%SITE_PERL%%/Plack/Util
 @dirrm %%SITE_PERL%%/Plack/Test

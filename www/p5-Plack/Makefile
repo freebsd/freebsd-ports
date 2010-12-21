@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	Plack
-PORTVERSION=	0.9952
+PORTVERSION=	0.9958
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
-MASTER_SITE_SUBDIR=	../../authors/id/M/MI/MIYAGAWA
+MASTER_SITE_SUBDIR=	Plack
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	kuriyama@FreeBSD.org
@@ -80,7 +80,6 @@ MAN3=	HTTP::Message::PSGI.3 \
 	Plack::Middleware::Lint.3 \
 	Plack::Middleware::Log4perl.3 \
 	Plack::Middleware::LogDispatch.3 \
-	Plack::Middleware::MethodOverride.3 \
 	Plack::Middleware::NullLogger.3 \
 	Plack::Middleware::RearrangeHeaders.3 \
 	Plack::Middleware::Recursive.3 \
