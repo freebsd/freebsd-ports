@@ -22,7 +22,31 @@ diff -u -r1.1.1.1 -r1.3
  CPPFLAGS+=-D_REENTRANT
  
  OFILES = scan_devices.o	common_interface.o cooked_interface.o interface.o\
-@@ -46,7 +46,7 @@
+@@ -23,19 +23,15 @@
+ 
+ export VERSION
+ 
+-all: lib slib
+-
+-debug: 
+-	$(MAKE) libcdda_interface.a CFLAGS="$(DEBUG)"
+-
+-lib:	
++all:
+ 	$(MAKE) libcdda_interface.a CFLAGS="$(OPT)" 
+-
+-slib:	
+ 	$(MAKE) lessmessy
+ 	$(MAKE) libcdda_interface.so CFLAGS="$(OPT) -fpic" 
+ 	[ -e libcdda_interface.so.0 ] || ln -s libcdda_interface.so libcdda_interface.so.0
+ 
++debug:
++	$(MAKE) libcdda_interface.a CFLAGS="$(DEBUG)"
++
+ test:	
+ 	$(MAKE) libcdda_interface.a CFLAGS="$(DEBUG)"
+ 	$(CC) $(DEBUG) -c test.c
+@@ -46,7 +42,7 @@
  	$(RANLIB) libcdda_interface.a
  
  libcdda_interface.so: 	$(OFILES)	

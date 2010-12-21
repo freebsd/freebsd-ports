@@ -1,5 +1,5 @@
 # New ports collection makefile for:	cdparanoia
-# Date created:		5 Jan 2003
+# Date created:				5 Jan 2003
 # Whom:			Simon 'corecode' Schubert <corecode@corecode.ath.cx>
 #
 # $FreeBSD$
@@ -13,13 +13,12 @@ MASTER_SITES=	http://www.xiph.org/paranoia/download/
 DISTNAME=	${PORTNAME}-${PORTVERSION:C/^3\./III-alpha/}
 EXTRACT_SUFX=	.src.tgz
 
-MAINTAINER=	markus@FreeBSD.org
+MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	A CDDA extraction tool (also known as ripper)
 
-USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-MAKE_JOBS_UNSAFE=	yes
+USE_LDCONFIG=	yes
 
 MAN1=		cdparanoia.1
 
