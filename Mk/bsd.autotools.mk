@@ -49,6 +49,10 @@ Autotools_Include_MAINTAINER=	autotools@FreeBSD.org
 # LIBTOOLFILES=<list-of-files>
 #	- A list of files to patch during libtool pre-configuration
 #
+# AUTOTOOLSFILES=<list-of-files>
+#	- A list of files to further patch with derived information
+#	  post-patching to reduce churn during component updates
+#
 #---------------------------------------------------------------------------
 
 #---------------------------------------------------------------------------
@@ -319,13 +323,15 @@ ${var:U}_ENV+=		${AUTOTOOLS_VARS}
 #---------------------------------------------------------------------------
 
 .if !target(run-autotools)
-.ORDER:			run-autotools run-autotools-aclocal patch-autotools-libtool \
-				run-autotools-autoheader run-autotools-libtoolize \
-				run-autotools-autoconf run-autotools-automake
+.ORDER:			run-autotools run-autotools-aclocal \
+				patch-autotools-libtool run-autotools-autoheader \
+				run-autotools-libtoolize run-autotools-autoconf \
+				run-autotools-automake
 
-run-autotools:: run-autotools-aclocal patch-autotools-libtool \
-				run-autotools-autoheader run-autotools-libtoolize \
-				run-autotools-autoconf run-autotools-automake
+run-autotools:: run-autotools-aclocal \
+				patch-autotools-libtool run-autotools-autoheader \
+				run-autotools-libtoolize run-autotools-autoconf \
+				run-autotools-automake
 .endif
 
 .if !target(run-autotools-aclocal)
@@ -393,13 +399,20 @@ patch-autotools-libtool::
 .endif
 
 #---------------------------------------------------------------------------
-# XXX:	Placeholder - to be implemented
-#		substitution of, eg: %%AUTOCONF%% with ${AUTOCONF}
-#		to reduce patch churn (patches in files/ will be doing
-#		replacement of specific versions to %%AUTOCONF%% then this
-#		target will handle the rest
+# Reduce patch churn by auto-substituting data from AUTOTOOLS_VARS
+# into the correct places.  Code shamelessly stolen from PLIST_SUB.
 
-.if !target(patch-autotools)
-patch-autotools::
+AUTOTOOLSFILES?=	# default to empty
+AUTOTOOLS_VARS?=	# empty if not already set
+
+.if !target(configure-autotools)
+configure-autotools::
+. if ${AUTOTOOLS_VARS}!="" && ${AUTOTOOLSFILES} != ""
+	@for file in ${AUTOTOOLSFILES}; do \
+		${REINPLACE_CMD} ${AUTOTOOLS_VARS:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
+			${WRKSRC}/$${file} ; \
+	done
+. else
 	@${DO_NADA}
+. endif
 .endif
