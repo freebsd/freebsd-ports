@@ -7,7 +7,7 @@
 
 PORTNAME=	libnet
 PORTVERSION=	1.1.2.1
-PORTREVISION=	2
+PORTREVISION=	3
 PORTEPOCH=	1
 CATEGORIES=	net
 MASTER_SITES=	http://www.packetfactory.net/libnet/dist/ \
@@ -19,6 +19,7 @@ MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	A C library for creating IP packets
 
 GNU_CONFIGURE=	yes
+CFLAGS+=	-fPIC
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}${PKGNAMESUFFIX}
