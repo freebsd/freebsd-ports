@@ -2015,6 +2015,7 @@
     SUBDIR += p5-POE-Component-Pluggable
     SUBDIR += p5-POE-Component-RSS
     SUBDIR += p5-POE-Component-RSSAggregator
+    SUBDIR += p5-POE-Component-Schedule
     SUBDIR += p5-POE-Component-Server-XMLRPC
     SUBDIR += p5-POE-Component-TSTP
     SUBDIR += p5-POE-Devel-Profiler
