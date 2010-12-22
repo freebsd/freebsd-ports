@@ -24,6 +24,7 @@ USE_GETTEXT=	yes
 USE_ICONV=	yes
 USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	automake autoconf libtool
+AUTOTOOLSFILES=	aclocal.m4
 AUTOMAKE_ARGS=	--add-missing
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib" \

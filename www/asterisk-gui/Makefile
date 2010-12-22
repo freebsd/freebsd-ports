@@ -19,6 +19,7 @@ RUN_DEPENDS=	asterisk:${PORTSDIR}/net/asterisk14 \
 
 PROJECTHOST=	asterisk-bsd
 USE_AUTOTOOLS=	autoconf automake
+AUTOTOOLSFILES=	bootstrap.sh
 USE_GMAKE=	yes
 SUB_FILES=	pkg-message
 

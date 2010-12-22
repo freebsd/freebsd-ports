@@ -33,7 +33,9 @@ PLIST_FILES=	lib/claws-mail/plugins/synce_plugin.a \
 	lib/claws-mail/plugins/synce_plugin.la \
 	lib/claws-mail/plugins/synce_plugin.so
 
+AUTOTOOLSFILES=	aclocal.m4
+
 post-patch:
-	@${REINPLACE_CMD} -e 's|2.61|2.68|g' ${WRKSRC}/aclocal.m4
+	@${REINPLACE_CMD} -e 's|2.63|%%AUTOCONF_VERSION%%|g' ${WRKSRC}/aclocal.m4
 
 .include <bsd.port.mk>

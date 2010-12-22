@@ -40,12 +40,16 @@ DESKTOP_ENTRIES=	"Spacejunk" \
 BROKEN=		Doesn't compile on sparc64"
 .endif
 
+AUTOTOOLSFILES=	aclocal.m4
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|malloc.h|stdlib.h|' ${WRKSRC}/src/gem-uta.c \
 		${WRKSRC}/libinfo/gem-uta.c
 	@${REINPLACE_CMD} -e 's|data/|${DATADIR}/&|' ${WRKSRC}/src/*.c*
 	@${RM} -f ${WRKSRC}/config.guess
-	@${REINPLACE_CMD} -e 's|1.10.1|1.11.1|' ${WRKSRC}/aclocal.m4
+	@${REINPLACE_CMD} -e 's|1.10.1|%%AUTOMAKE_APIVER%%|g' \
+			  -e 's|1.10|%%AUTOMAKE_VERSION%%|g' \
+			  ${WRKSRC}/aclocal.m4
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/spacejunk ${PREFIX}/libexec/

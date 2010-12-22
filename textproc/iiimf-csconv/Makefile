@@ -23,6 +23,7 @@ USE_ICONV=	yes
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	automake:env autoconf:env libtool:env
+AUTOTOOLSFILES=	Makefile
 
 WRKSRC=		${WRKDIR}/${DISTNAME:S/src-//}
 BUILDDIR=	${WRKSRC}/lib/CSConv

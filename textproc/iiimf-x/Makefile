@@ -26,6 +26,7 @@ USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_XORG=	x11 ice xt
 USE_AUTOTOOLS=	automake:env autoconf:env libtool:env
+AUTOTOOLSFILES=	Makefile
 
 WRKSRC=		${WRKDIR}/${DISTNAME:S/src-//}
 BUILDDIR=	${WRKSRC}/iiimxcf/htt_xbe

@@ -18,6 +18,7 @@ USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	automake autoconf libtool
+AUTOTOOLSFILES=	autogen.sh
 MAKE_JOBS_UNSAFE=	yes
 
 ALL_TARGET=	all check
@@ -27,7 +28,7 @@ MAN3=	libthai.3 thctype.3 wtt.3
 post-patch:
 	@${REINPLACE_CMD} -E 's,^(pkgconfigdir = ).*$$,\1$$(prefix)/libdata/pkgconfig,' \
 		${WRKSRC}/Makefile.am
-	@${REINPLACE_CMD} -e 's,15,-1.11,' -e 's,259,-2.68,' \
+	@${REINPLACE_CMD} -e 's,15,-%%AUTOMAKE_VERSION%%,' -e 's,259,-%%AUTOCONF_VERSION%%,' \
 		${WRKSRC}/autogen.sh
 
 pre-configure:

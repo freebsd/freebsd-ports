@@ -28,8 +28,10 @@ PORTDOCS=	AUTHORS README ChangeLog COPYING
 post-extract:
 	@${CP} ${FILESDIR}/crypt.h ${WRKSRC}/src/
 
+AUTOTOOLSFILES=	aclocal.m4
+
 post-patch:
-	@${REINPLACE_CMD} -e 's|2.61|2.68|g' ${WRKSRC}/aclocal.m4
+	@${REINPLACE_CMD} -e 's|2.61|%%AUTOCONF_VERSION%%|g' ${WRKSRC}/aclocal.m4
 
 post-configure:
 	@${REINPLACE_CMD} -e "s:\<crypt.h\>:\"crypt.h\":" ${WRKSRC}/src/functions.c

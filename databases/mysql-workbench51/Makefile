@@ -36,6 +36,7 @@ USE_LDCONFIG=	${PREFIX}/lib/mysql-workbench
 SUBDIRS=	ext/yassl/taocrypt ext/yassl .
 USE_DOS2UNIX=	yes
 DOS2UNIX_REGEX=	.*ext/yassl/.*(Makefile.am|configure.in)
+AUTOTOOLSFILES=	configure.in
 
 USE_GL=		gl glu
 USE_GNOME=	libglade2 intltool libgnome gtk20 pango orbit2

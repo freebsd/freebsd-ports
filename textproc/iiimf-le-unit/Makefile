@@ -28,6 +28,7 @@ USE_GMAKE=	yes
 USE_GNOME=	libxml2
 USE_XORG=	x11
 USE_AUTOTOOLS=	automake:env autoconf:env libtool:env
+AUTOTOOLSFILES=	Makefile
 
 WRKSRC=		${WRKDIR}/${DISTNAME:S/src-//}
 BUILDDIR=	${WRKSRC}/leif
