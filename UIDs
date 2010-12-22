@@ -188,5 +188,6 @@ nslcd:*:928:928::0:0:nslcd daemon:/nonexistent:/usr/sbin/nologin
 activemq:*:929:929::0:0:ActiveMQ Daemon:/nonexistent:/sbin/nologin
 ifgraph:*:930:930::0:0:ifGraph:/nonexistent:/sbin/nologin
 asterisk:*:931:931::0:0:Asterisk User:/nonexistent:/sbin/nologin
+torrus:*:932:932::0:0:torrus daemon:/nonexistent:/sbin/nologin
 sancp:*:932:932::0:0:SANCP Daemon:/var/log/sancp:/sbin/nologin
 dlna:*:933:933::0:0:DLNA Daemon:/nonexistent:/sbin/nologin

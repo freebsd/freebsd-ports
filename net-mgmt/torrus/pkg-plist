@@ -1,5 +1,4 @@
 bin/torrus
-etc/rc.d/torrus.sh
 etc/torrus/discovery/README
 @unexec if cmp -s %D/etc/torrus/conf/devdiscover-siteconfig.pl.sample %D/etc/torrus/conf/devdiscover-siteconfig.pl; then rm -f %D/etc/torrus/conf/devdiscover-siteconfig.pl; fi
 etc/torrus/conf/devdiscover-siteconfig.pl.sample
@@ -269,6 +268,8 @@ libexec/torrus/ttproclist
 %%SITE_PERL%%/Torrus/SQL/SrvExport.pm
 %%SITE_PERL%%/Torrus/SQL.pm
 %%SITE_PERL%%/Torrus/TimeStamp.pm
+@exec install -d -g %%TORRUS_USER%% -o %%TORRUS_USER%% -m 2775 /var/log/torrus 2>/dev/null || true
+@exec install -d -g %%TORRUS_USER%% -o %%TORRUS_USER%% -m 2775 /var/run/torrus 2>/dev/null || true
 @exec install -d -g %%TORRUS_USER%% -o %%TORRUS_USER%% -m 755 /var/torrus 2>/dev/null || true
 @exec install -d -g %%TORRUS_USER%% -o %%TORRUS_USER%% -m 2775 /var/torrus/cache 2>/dev/null || true
 @exec install -d -g %%TORRUS_USER%% -o %%TORRUS_USER%% -m 2775 /var/torrus/collector_rrd 2>/dev/null || true
@@ -321,4 +322,3 @@ libexec/torrus/ttproclist
 @dirrm %%SITE_PERL%%/Torrus/Collector
 @dirrm %%SITE_PERL%%/Torrus/ACL
 @dirrm %%SITE_PERL%%/Torrus
-@exec mkdir -p /var/log/torrus

@@ -1,0 +1,76 @@
+#!/bin/sh
+#
+# $FreeBSD $
+#
+# PROVIDE: torrus_monitor
+# REQUIRE: DAEMON
+#
+# Add the following lines to /etc/rc.conf to run torrus_monitor:
+#
+# torrus_monitor_enable (bool):	Set it to "YES" to enable torrus_monitor.
+#			Default is "NO".
+# torrus_monitor_flags (flags):	Set extra flags here. More options in torrus_monitor(1)
+#			Default is empty "".
+# torrus_monitor_user (user):	Set user to run torrus_monitor.
+#			Default is "torrus".
+#
+
+. /etc/rc.subr
+
+name="torrus_monitor"
+rcvar=${name}_enable
+
+load_rc_config ${name}
+
+: ${torrus_monitor_enable="NO"}
+: ${torrus_monitor_user="torrus"}
+
+start_cmd=${name}_start
+status_cmd=${name}_status
+stop_cmd=${name}_stop
+command=%%PREFIX%%/libexec/torrus/monitor
+
+torrus_monitor_init()
+{
+	eval trees_monitor=\"`/usr/bin/perl -e 'require "'%%PREFIX%%/share/torrus/conf_defaults/torrus-config.pl'";
+		while((my $key, $val) = each %Torrus::Global::treeConfig) {
+			print "$key " if $val->{run}{'monitor'};
+		};'`\"
+}
+
+torrus_monitor_start()
+{
+	start_cmd=""
+	torrus_monitor_init
+	eval trees=\"\$\{trees_monitor\}\"
+    	for t in ${trees}; do
+		echo "starting Torrus monitor for tree ${t}"
+		command_args="--tree=${t}"
+		run_rc_command "start"
+	done
+}
+
+torrus_monitor_status()
+{
+	status_cmd=""
+	torrus_monitor_init
+	eval trees=\"\$\{trees_monitor\}\"
+    	for t in ${trees}; do
+		pidfile="/var/run/torrus/monitor.${t}.pid"
+		run_rc_command "status"
+	done
+}
+
+torrus_monitor_stop()
+{
+	stop_cmd=""
+	torrus_monitor_init
+	eval trees=\"\$\{trees_monitor\}\"
+    	for t in ${trees}; do
+		pidfile="/var/run/torrus/monitor.${t}.pid"
+		echo "stopping Torrus monitor for tree ${t}"
+		run_rc_command "stop"
+	done
+}
+
+run_rc_command "$1"

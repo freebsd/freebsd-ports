@@ -180,5 +180,6 @@ nslcd:*:928:
 activemq:*:929:
 ifgraph:*:930:
 asterisk:*:931:
+torrus:*:932:www
 sancp:*:932:
 dlna:*:933:
