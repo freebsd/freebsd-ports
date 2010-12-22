@@ -7,6 +7,7 @@
 
 PORTNAME=	torrus
 PORTVERSION=	1.0.9
+PORTREVISION=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	SF
 
@@ -30,12 +31,14 @@ USE_GNOME=	libxml2
 USE_PERL5_RUN=	5.8.1+
 GNU_CONFIGURE=	YES
 
-TORRUS_USER?=	torrus
-PLIST_SUB=	TORRUS_USER=${TORRUS_USER}
+USERS=		torrus
+GROUPS=		torrus
+PLIST_SUB=	TORRUS_USER=${USERS}
+USE_RC_SUBR=	torrus_collector torrus_monitor
 
 CONFIGURE_ARGS=	--prefix=${PREFIX} \
-		var_user=${TORRUS_USER} var_group=${TORRUS_USER} \
-		torrus_user=${TORRUS_USER} \
+		var_user=${USERS} var_group=${USERS} \
+		torrus_user=${USERS} \
 		defrrddir=/var/torrus/collector_rrd \
 		pkghome=${DATADIR} \
 		pkgbindir=${PREFIX}/libexec/torrus \
@@ -58,20 +61,7 @@ MAN1=		torrus.1 torrus_acledit.1 torrus_buildsearchdb.1 \
 MAN7=		torrus_action_printemail.7 torrus_action_snmptrap.7 \
 		torrus_action_notify.7 torrus_install_plugin.7
 
-.include <bsd.port.pre.mk>
-
-pre-install:
-	@if ! pw groupshow ${TORRUS_USER}; then \
-		pw groupadd ${TORRUS_USER}; \
-	fi
-	@if ! pw usershow ${TORRUS_USER}; then \
-		pw useradd ${TORRUS_USER} -g ${TORRUS_USER} \
-			-h - -d ${PREFIX}/torrus -c "torrus daemon"; \
-		pw usermod www -G ${TORRUS_USER}; \
-	fi
-
 post-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/init.d/torrus ${PREFIX}/etc/rc.d/torrus.sh
 	@${CAT} pkg-message
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

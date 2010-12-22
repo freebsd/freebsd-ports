@@ -1,0 +1,94 @@
+#!/bin/sh
+#
+# $FreeBSD $
+#
+# PROVIDE: torrus_collector
+# REQUIRE: DAEMON
+#
+# Add the following lines to /etc/rc.conf to run torrus_collector:
+#
+# torrus_collector_enable (bool):	Set it to "YES" to enable torrus_collector.
+#			Default is "NO".
+# torrus_collector_flags (flags):	Set extra flags here. More options in torrus_collector(1)
+#			Default is empty "".
+# torrus_collector_user (user):	Set user to run torrus_collector.
+#			Default is "torrus".
+#
+
+. /etc/rc.subr
+
+name="torrus_collector"
+rcvar=${name}_enable
+
+load_rc_config ${name}
+
+: ${torrus_collector_enable="NO"}
+: ${torrus_collector_user="torrus"}
+
+start_cmd=${name}_start
+status_cmd=${name}_status
+stop_cmd=${name}_stop
+command=%%PREFIX%%/libexec/torrus/collector
+
+torrus_collector_init()
+{
+	eval trees_collector=\"`/usr/bin/perl -e 'require "'%%PREFIX%%/share/torrus/conf_defaults/torrus-config.pl'";
+		while((my $key, $val) = each %Torrus::Global::treeConfig) {
+			print "$key " if $val->{run}{'collector'};
+		};'`\"
+
+	# Get the collector instance numbers for each tree
+	eval trees=\"\$\{trees_collector\}\"  
+	for t in ${trees}; do
+		eval col_inst_${t}=\"`/usr/bin/perl -e 'require "'%%PREFIX%%/share/torrus/conf_defaults/torrus-config.pl'";
+			print join(" ",
+			(0 .. $Torrus::Global::treeConfig{'${t}'}{run}{collector}-1))'`\"
+	done
+}
+
+torrus_collector_start()
+{
+	start_cmd=""
+	torrus_collector_init
+	eval trees=\"\$\{trees_collector\}\"
+    	for t in ${trees}; do
+		eval instances=\"\$\{col_inst_${t}\}\"
+		for i in ${instances}; do
+			echo "starting Torrus collector instance ${i} for tree ${t}"
+			command_args="--tree=${t} --instance=${i}"
+			run_rc_command "start"
+		done
+	done
+}
+
+torrus_collector_status()
+{
+	status_cmd=""
+	torrus_collector_init
+	eval trees=\"\$\{trees_collector\}\"
+    	for t in ${trees}; do
+		eval instances=\"\$\{col_inst_${t}\}\"
+		for i in ${instances}; do
+			pidfile="/var/run/torrus/collector.${t}_${i}.pid"
+			run_rc_command "status"
+		done
+	done
+}
+
+torrus_collector_stop()
+{
+	stop_cmd=""
+	torrus_collector_init
+	eval trees=\"\$\{trees_collector\}\"
+    	for t in ${trees}; do
+		eval instances=\"\$\{col_inst_${t}\}\"
+		for i in ${instances}; do
+			pidfile="/var/run/torrus/collector.${t}_${i}.pid"
+			echo "stopping Torrus collector instance ${i} for tree ${t}"
+			stop_postcmd="if [ -f $pidfile ]; then /bin/rm $pidfile; fi"
+			run_rc_command "stop"
+		done
+	done
+}
+
+run_rc_command "$1"
