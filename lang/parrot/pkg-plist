@@ -70,6 +70,7 @@ include/parrot/%%PARROT_VER%%/parrot/platform_limits.h
 include/parrot/%%PARROT_VER%%/parrot/pmc.h
 include/parrot/%%PARROT_VER%%/parrot/pmc_freeze.h
 include/parrot/%%PARROT_VER%%/parrot/pobj.h
+include/parrot/%%PARROT_VER%%/parrot/pointer_array.h
 include/parrot/%%PARROT_VER%%/parrot/runcore_api.h
 include/parrot/%%PARROT_VER%%/parrot/runcore_profiling.h
 include/parrot/%%PARROT_VER%%/parrot/runcore_trace.h
@@ -98,7 +99,6 @@ include/parrot/%%PARROT_VER%%/pmc/pmc_bytebuffer.h
 include/parrot/%%PARROT_VER%%/pmc/pmc_callcontext.h
 include/parrot/%%PARROT_VER%%/pmc/pmc_capture.h
 include/parrot/%%PARROT_VER%%/pmc/pmc_class.h
-include/parrot/%%PARROT_VER%%/pmc/pmc_codestring.h
 include/parrot/%%PARROT_VER%%/pmc/pmc_complex.h
 include/parrot/%%PARROT_VER%%/pmc/pmc_continuation.h
 include/parrot/%%PARROT_VER%%/pmc/pmc_coroutine.h
@@ -130,6 +130,7 @@ include/parrot/%%PARROT_VER%%/pmc/pmc_key.h
 include/parrot/%%PARROT_VER%%/pmc/pmc_lexinfo.h
 include/parrot/%%PARROT_VER%%/pmc/pmc_lexpad.h
 include/parrot/%%PARROT_VER%%/pmc/pmc_managedstruct.h
+include/parrot/%%PARROT_VER%%/pmc/pmc_mappedbytearray.h
 include/parrot/%%PARROT_VER%%/pmc/pmc_multisub.h
 include/parrot/%%PARROT_VER%%/pmc/pmc_namespace.h
 include/parrot/%%PARROT_VER%%/pmc/pmc_nativepccmethod.h
@@ -181,7 +182,6 @@ lib/parrot/%%PARROT_VER%%/VERSION
 lib/parrot/%%PARROT_VER%%/bin/prove.pir
 lib/parrot/%%PARROT_VER%%/dynext/bit_ops.so
 lib/parrot/%%PARROT_VER%%/dynext/debug_ops.so
-lib/parrot/%%PARROT_VER%%/dynext/deprecated_ops.so
 lib/parrot/%%PARROT_VER%%/dynext/dynlexpad.so
 lib/parrot/%%PARROT_VER%%/dynext/file.so
 lib/parrot/%%PARROT_VER%%/dynext/gziphandle.so
@@ -500,6 +500,7 @@ lib/parrot/%%PARROT_VER%%/tools/lib/Parrot/H2inc.pm
 lib/parrot/%%PARROT_VER%%/tools/lib/Parrot/Harness/DefaultTests.pm
 lib/parrot/%%PARROT_VER%%/tools/lib/Parrot/Harness/Options.pm
 lib/parrot/%%PARROT_VER%%/tools/lib/Parrot/Harness/Smoke.pm
+lib/parrot/%%PARROT_VER%%/tools/lib/Parrot/Headerizer/Functions.pm
 lib/parrot/%%PARROT_VER%%/tools/lib/Parrot/Headerizer.pm
 lib/parrot/%%PARROT_VER%%/tools/lib/Parrot/IO/Directory.pm
 lib/parrot/%%PARROT_VER%%/tools/lib/Parrot/IO/File.pm
@@ -564,7 +565,6 @@ src/parrot/%%PARROT_VER%%/pmc/bytebuffer.dump
 src/parrot/%%PARROT_VER%%/pmc/callcontext.dump
 src/parrot/%%PARROT_VER%%/pmc/capture.dump
 src/parrot/%%PARROT_VER%%/pmc/class.dump
-src/parrot/%%PARROT_VER%%/pmc/codestring.dump
 src/parrot/%%PARROT_VER%%/pmc/complex.dump
 src/parrot/%%PARROT_VER%%/pmc/continuation.dump
 src/parrot/%%PARROT_VER%%/pmc/coroutine.dump
@@ -596,6 +596,7 @@ src/parrot/%%PARROT_VER%%/pmc/key.dump
 src/parrot/%%PARROT_VER%%/pmc/lexinfo.dump
 src/parrot/%%PARROT_VER%%/pmc/lexpad.dump
 src/parrot/%%PARROT_VER%%/pmc/managedstruct.dump
+src/parrot/%%PARROT_VER%%/pmc/mappedbytearray.dump
 src/parrot/%%PARROT_VER%%/pmc/multisub.dump
 src/parrot/%%PARROT_VER%%/pmc/namespace.dump
 src/parrot/%%PARROT_VER%%/pmc/nativepccmethod.dump
@@ -657,6 +658,7 @@ src/parrot/%%PARROT_VER%%/vtable.tbl
 @dirrm lib/parrot/%%PARROT_VER%%/tools/lib/Parrot/Pmc2c/PMC
 @dirrm lib/parrot/%%PARROT_VER%%/tools/lib/Parrot/Pmc2c
 @dirrm lib/parrot/%%PARROT_VER%%/tools/lib/Parrot/IO
+@dirrm lib/parrot/%%PARROT_VER%%/tools/lib/Parrot/Headerizer
 @dirrm lib/parrot/%%PARROT_VER%%/tools/lib/Parrot/Harness
 @dirrm lib/parrot/%%PARROT_VER%%/tools/lib/Parrot/Git
 @dirrm lib/parrot/%%PARROT_VER%%/tools/lib/Parrot/Docs/Section
