@@ -30,7 +30,7 @@ pre-configure:
 	@${ECHO_MSG} "*****************  NOTE  *****************"
 	@${ECHO_MSG} "*                                        *"
 	@${ECHO_MSG} "*  You can choose languages for asclock. *"
-	@${ECHO_MSG} "* 1) engligh [DEFAULT]                   *"
+	@${ECHO_MSG} "* 1) english [DEFAULT]                   *"
 	@${ECHO_MSG} "* 2) german                              *"
 	@${ECHO_MSG} "* 3) portuguese                          *"
 	@${ECHO_MSG} "* 4) dutch                               *"
