@@ -39,6 +39,7 @@ CONFIGURE_ARGS=	--with-apr-config=apr-1-config \
 
 USE_LDCONFIG=	yes
 MAN1=		rapidsvn.1
+AUTOTOOLSFILES=	aclocal.m4
 
 post-configure:
 	@${FIND} ${WRKSRC} -name Makefile -print | \

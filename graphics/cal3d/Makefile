@@ -21,6 +21,7 @@ USE_GNOME=	pkgconfig
 GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	automake autoheader libtool
 USE_LDCONFIG=	yes
+AUTOTOOLSFILES=	aclocal.m4
 
 MAN1=	cal3d_converter.1
 

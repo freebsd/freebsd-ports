@@ -55,8 +55,10 @@ CONFIGURE_ARGS=	--with-boost-include-dir="${LOCALBASE}/include/" \
 LIB_DEPENDS+=	usb:${PORTSDIR}/devel/libusb
 .endif
 
+AUTOTOOLSFILES=	aclocal.m4
+
 post-patch:
-	@${REINPLACE_CMD} -e 's|2.61|2.68|g' ${WRKSRC}/aclocal.m4
+	@${REINPLACE_CMD} -e 's|2.61|%%AUTOCONF_VERSION%%|g' ${WRKSRC}/aclocal.m4
 	@${REINPLACE_CMD} -e 's|^GR_FORTRAN||g' ${WRKSRC}/configure.ac
 	@${FIND} ${WRKSRC} -type f -name "Makefile.in" | ${XARGS} \
 		-n 10 ${REINPLACE_CMD} -E -e \

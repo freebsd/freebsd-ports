@@ -31,6 +31,7 @@ MAN8=		cvsbug.8
 INFO=		cvs cvsclient
 USE_AUTOTOOLS=	automake14:env autoconf:env
 MAKE_JOBS_UNSAFE=	yes
+AUTOTOOLSFILES=	make_configure
 
 .include <bsd.port.pre.mk>
 

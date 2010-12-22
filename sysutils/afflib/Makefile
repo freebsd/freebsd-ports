@@ -36,8 +36,10 @@ MAKE_JOBS_SAFE=	yes
 
 MAN1=		affcat.1
 
+AUTOTOOLSFILES=	aclocal.m4
+
 post-patch:
-	@${REINPLACE_CMD} -e 's|2.61|2.68|g' ${WRKSRC}/aclocal.m4
+	@${REINPLACE_CMD} -e 's|2.61|%%AUTOCONF_VERSION%%|g' ${WRKSRC}/aclocal.m4
 	@${REINPLACE_CMD} -e 's|(libdir)|(libdir)/lib|' \
 		 ${WRKSRC}/lib/Makefile.in
 	@${REINPLACE_CMD} -e 's|(libdir)|(libdir)/libdata|' \

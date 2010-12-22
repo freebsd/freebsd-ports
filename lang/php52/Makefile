@@ -21,6 +21,7 @@ USE_BZIP2=	yes
 MAKE_JOBS_SAFE=	yes
 .if !defined(PKGNAMESUFFIX)
 USE_AUTOTOOLS=	autoconf
+AUTOTOOLSFILES=	scripts/phpize.in
 
 CONFIGURE_ARGS=	\
 		--with-layout=GNU \

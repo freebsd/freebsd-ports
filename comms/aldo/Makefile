@@ -27,9 +27,12 @@ USE_GMAKE=	yes
 PLIST_FILES=	bin/aldo
 MAN1=	aldo.1
 
+AUTOTOOLSFILES=	aclocal.m4
+
 post-patch:
-	@${REINPLACE_CMD} -e 's|1.10|1.11.1|g' ${WRKSRC}/aclocal.m4
-	@${REINPLACE_CMD} -e 's|2.61|2.68|g' ${WRKSRC}/aclocal.m4
+	@${REINPLACE_CMD} -e 's|1.10|%%AUTOMAKE_APIVER%%|g' \
+			  -e 's|2.61|%%AUTOCONF_VERSION%%|g' \
+			  ${WRKSRC}/aclocal.m4
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/aldo ${PREFIX}/bin

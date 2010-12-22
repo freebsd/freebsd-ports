@@ -3749,8 +3749,8 @@ do-patch:
 	fi
 .endif
 
-.if !target(patch-autotools)
-patch-autotools:
+.if !target(configure-autotools)
+configure-autotools:
 	@${DO_NADA}
 .endif
 
@@ -4418,10 +4418,10 @@ _EXTRACT_SEQ=	check-build-conflicts extract-message checksum extract-depends \
 				post-extract post-extract-script
 _PATCH_DEP=		extract
 _PATCH_SEQ=		ask-license patch-message patch-depends patch-dos2unix pre-patch \
-				pre-patch-script do-patch patch-autotools post-patch post-patch-script
+				pre-patch-script do-patch post-patch post-patch-script
 _CONFIGURE_DEP=	patch
 _CONFIGURE_SEQ=	build-depends lib-depends configure-message \
-				pre-configure pre-configure-script \
+				configure-autotools pre-configure pre-configure-script \
 				run-autotools do-configure post-configure post-configure-script
 _BUILD_DEP=		configure
 _BUILD_SEQ=		build-message pre-build pre-build-script do-build \

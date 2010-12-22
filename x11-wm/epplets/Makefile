@@ -31,8 +31,10 @@ CONFIGURE_ARGS=	--disable-auto-respawn
 
 .include <bsd.port.pre.mk>
 
+AUTOTOOLSFILES=	aclocal.m4
+
 post-patch:
-	@${REINPLACE_CMD} -e 's|2.61|2.68|g' ${WRKSRC}/aclocal.m4
+	@${REINPLACE_CMD} -e 's|2.63|%%AUTOCONF_VERSION%%|g' ${WRKSRC}/aclocal.m4
 	@${REINPLACE_CMD} -e 's|<machine/soundcard\.h>|<sys/soundcard.h>|g' \
 		${WRKSRC}/epplets/Emix.c
 	@${REINPLACE_CMD} -e 's|<malloc\.h>|<stdlib.h>|g' \

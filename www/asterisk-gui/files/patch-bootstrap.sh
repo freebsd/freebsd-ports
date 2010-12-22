@@ -6,8 +6,8 @@
  if [ $? = 0 ] ; then	# FreeBSD case
 -	MY_AC_VER=259
 -	MY_AM_VER=19
-+	MY_AC_VER=-2.68
-+	MY_AM_VER=-1.11
++	MY_AC_VER=-%%AUTOCONF_VERSION%%
++	MY_AM_VER=-%%AUTOMAKE_VERSION%%
  else	# linux case
  	MY_AC_VER=
  	MY_AM_VER=

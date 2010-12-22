@@ -39,6 +39,8 @@ INFO=		goops guile-tut guile r5rs
 
 .include <bsd.port.pre.mk>
 
+AUTOTOOLSFILES=	aclocal.m4
+
 post-extract:
 	cd ${WRKSRC}; ${CHMOD} u+w ${REINPLACE_FILES}
 	@${FIND} ${WRKSRC}/doc -name "*.info*" -delete
@@ -46,6 +48,6 @@ post-extract:
 post-patch:
 	@cd ${WRKSRC} ; \
 	  ${REINPLACE_CMD} -e 's|<malloc\.h>|<stdlib.h>|g' ${REINPLACE_FILES}
-	@${REINPLACE_CMD} -e 's|2.61|2.68|g' ${WRKSRC}/aclocal.m4
+	@${REINPLACE_CMD} -e 's|2.63|%%AUTOCONF_VERSION%%|g' ${WRKSRC}/aclocal.m4
 
 .include <bsd.port.post.mk>

@@ -30,7 +30,7 @@ pre-configure:
 		`cd ${PORTSDIR}/x11/kdelibs3 && ${MAKE} -V WRKSRC`/admin \
 		${WRKSRC}/admin
 	${TOUCH} ${WRKSRC}/NEWS
-	@${REINPLACE_CMD} -e 's|1.10|1.11|' ${WRKSRC}/admin/cvs.sh
+	@${REINPLACE_CMD} -e 's|1.10|${AUTOMAKE_VERSION}|' ${WRKSRC}/admin/cvs.sh
 	cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${MAKE} -f admin/Makefile.common cvs
 
 .include <bsd.port.mk>

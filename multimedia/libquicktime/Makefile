@@ -152,8 +152,10 @@ CONFIGURE_ARGS+=	--without-schroedinger
 
 .endif
 
+AUTOTOOLSFILES=	aclocal.m4
+
 post-patch:
-	@${REINPLACE_CMD} -e 's|2.61|2.68|g' ${WRKSRC}/aclocal.m4
+	@${REINPLACE_CMD} -e 's|2.64|%%AUTOCONF_VERSION%%|g' ${WRKSRC}/aclocal.m4
 	@${REINPLACE_CMD} -e 's|stdint.h|inttypes.h|' \
 		${WRKSRC}/plugins/audiocodec/* \
 		${WRKSRC}/plugins/videocodec/*

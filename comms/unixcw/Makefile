@@ -35,6 +35,7 @@ MANCOMPRESSED=	yes
 USE_AUTOTOOLS=	autoconf
 USE_LDCONFIG=	yes
 USE_GMAKE=	yes
+AUTOTOOLSFILES=	configure.ac
 
 pre-extract:
 .if !defined(WITH_XCWCP)

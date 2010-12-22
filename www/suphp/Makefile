@@ -39,9 +39,13 @@ CONFIGURE_ARGS+=	--with-setid-mode=${WITH_SETID_MODE}
 
 CONFIGURE_ARGS+=	--with-apr=${LOCALBASE}
 
+AUTOTOOLSFILES=	aclocal.m4
+
 post-patch:
-	@${REINPLACE_CMD} -e 's|2.61|2.68|g' ${WRKSRC}/aclocal.m4
-	@${REINPLACE_CMD} -e 's|1.10.1|1.11.1|g' ${WRKSRC}/aclocal.m4
+	@${REINPLACE_CMD} -e 's|2.61|%%AUTOCONF_VERSION%%|g' \
+			  -e 's|1.10.1|%%AUTOMAKE_APIVER%%|g' \
+			  -e 's|1.10|%%AUTOMAKE_VERSION%%|g' \
+			  ${WRKSRC}/aclocal.m4
 	@${CHMOD} 755 ${WRKSRC}/config/install-sh
 
 post-install:

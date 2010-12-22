@@ -18,6 +18,7 @@ COMMENT=	NSS module implementing multicast DNS name resolution
 USE_AUTOTOOLS=	autoconf automake libtool
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
+AUTOTOOLSFILES=	aclocal.m4
 
 LIB_DEPENDS+=	avahi-client:${PORTSDIR}/net/avahi-app
 

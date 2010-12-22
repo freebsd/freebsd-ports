@@ -28,6 +28,7 @@ USE_GMAKE=	yes
 USE_MOTIF=	yes
 USE_OPENSSL=	yes
 USE_AUTOTOOLS=	automake:env autoconf:env libtool:env
+AUTOTOOLSFILES=	Makefile
 
 WRKSRC=		${WRKDIR}/${DISTNAME:S/src-//}
 BUILDDIR=	${WRKSRC}/iiimxcf/xiiimp.so
