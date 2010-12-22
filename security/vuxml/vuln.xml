@@ -34,6 +34,44 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="4bd33bc5-0cd6-11e0-bfa4-001676740879">
+    <topic>tor -- remote crash and potential remote code execution</topic>
+    <affects>
+      <package>
+	<name>tor</name>
+	<range><lt>0.2.1.28</lt></range>
+      </package>
+      <package>
+	<name>tor-devel</name>
+	<range><lt>0.2.2.20-alpha</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Tor Project reports:</p>
+	<blockquote cite="http://archives.seul.org/or/announce/Dec-2010/msg00000.html">
+	  <p>Remotely exploitable bug that could be used to crash instances
+	    of Tor remotely by overflowing on the heap. Remote-code execution
+	    hasn't been confirmed, but can't be ruled out. Everyone should
+	    upgrade.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <bid>45500</bid>
+      <cvename>CVE-2010-1676</cvename>
+      <freebsdpr>ports/153326</freebsdpr>
+      <mlist msgid="20101220135830.GU3300@moria.seul.org">http://archives.seul.org/or/announce/Dec-2010/msg00000.html</mlist>
+      <mlist msgid="20101220141526.GS3255@moria.seul.org">http://archives.seul.org/or/talk/Dec-2010/msg00167.html</mlist>
+      <url>https://gitweb.torproject.org/tor.git/blob/release-0.2.1:/ChangeLog</url>
+      <url>https://gitweb.torproject.org/tor.git/blob/release-0.2.2:/ChangeLog</url>
+    </references>
+    <dates>
+      <discovery>2010-12-17</discovery>
+      <entry>2010-12-22</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="d560b346-08a2-11e0-bcca-0050568452ac">
     <topic>YUI JavaScript library -- JavaScript injection exploits in Flash components</topic>
     <affects>
