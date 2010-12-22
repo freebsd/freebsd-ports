@@ -6,41 +6,55 @@
 #
 
 PORTNAME=	verbiste
-PORTVERSION=	0.1.31
+PORTVERSION=	0.1.32
 CATEGORIES=	french textproc
 MASTER_SITES=	http://perso.b2b2c.ca/sarrazip/dev/
 
 MAINTAINER=	dereckson@gmail.com
 COMMENT=	French verb conjugator/deconjugator
+
+OPTIONS=	GTK	"With GTK+ application"		no	\
+		GNOME	"With GNOME application"	no
+
 LICENSE=	GPLv2
 
-OPTIONS=	GNOMEGUI	"With gnome gui"		no
-
-USE_GETTEXT=	yes
-USE_GNOME=	gnomehack ltverhack libxml2
-USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool
+USE_GNOME=	gnomehack ltverhack libxml2
+USE_ICONV=	yes
+USE_LDCONFIG=	yes
 
 CPPFLAGS=	-I${LOCALBASE}/include
 LDFLAGS=	-L${LOCALBASE}/lib
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 
-.if defined(WITH_GNOMEGUI)
-CONFIGURE_ARGS=	--with-gnome-app
-USE_GNOME+=	gnomeprefix libgnomeui
-PLIST_SUB=	HASGUI=""
-.else
-PLIST_SUB=	HASGUI="@comment "
-.endif
-
-.if !defined(PKGNAMEPREFIX)
-
-USE_ICONV=	yes
-USE_LDCONFIG=	yes
-
 MAN1=		french-conjugator.1 french-deconjugator.1
 MAN3=		verbiste.3
 MANLANG=	"" fr
+
+.include <bsd.port.pre.mk>
+
+.if defined(WITH_GTK)
+CONFIGURE_ARGS+=--with-gtk-app
+USE_GNOME+=	gtk20
+PLIST_SUB+=	HASGTK=""
+.else
+PLIST_SUB+=	HASGTK="@comment "
+.endif
+
+.if defined(WITH_GNOME)
+CONFIGURE_ARGS+=--with-gnome-app
+USE_GNOME+=	gnomeprefix libgnomeui
+PLIST_SUB+=	HASGNOME=""
+.else
+PLIST_SUB+=	HASGNOME="@comment "
+.endif
+
+.if defined(WITH_GTK) || defined(WITH_GNOME)
+USE_GETTEXT=	yes
+PLIST_SUB+=	HASGUI=""
+.else
+PLIST_SUB+=	HASGUI="@comment "
+.endif
 
 post-install:
 	${MKDIR} ${EXAMPLESDIR}
@@ -49,6 +63,4 @@ post-install:
 .endfor
 	${INSTALL_SCRIPT} ${WRKSRC}/examples/*.pl ${EXAMPLESDIR}
 
-.endif
-
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
