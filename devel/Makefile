@@ -2006,6 +2006,7 @@
     SUBDIR += p5-POE-API-Hooks
     SUBDIR += p5-POE-API-Peek
     SUBDIR += p5-POE-Component-Child
+    SUBDIR += p5-POE-Component-Cron
     SUBDIR += p5-POE-Component-Daemon
     SUBDIR += p5-POE-Component-DebugShell
     SUBDIR += p5-POE-Component-DirWatch
