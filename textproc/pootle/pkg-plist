@@ -852,6 +852,7 @@ bin/updatetm
 %%DATADIR%%/mo/sr/LC_MESSAGES/django.mo
 %%DATADIR%%/mo/st/LC_MESSAGES/django.mo
 %%DATADIR%%/mo/sv/LC_MESSAGES/django.mo
+%%DATADIR%%/mo/sw/LC_MESSAGES/django.mo
 %%DATADIR%%/mo/ta/LC_MESSAGES/django.mo
 %%DATADIR%%/mo/te/LC_MESSAGES/django.mo
 %%DATADIR%%/mo/th/LC_MESSAGES/django.mo
@@ -967,6 +968,8 @@ bin/updatetm
 @dirrm %%DATADIR%%/mo/te
 @dirrm %%DATADIR%%/mo/ta/LC_MESSAGES
 @dirrm %%DATADIR%%/mo/ta
+@dirrm %%DATADIR%%/mo/sw/LC_MESSAGES
+@dirrm %%DATADIR%%/mo/sw
 @dirrm %%DATADIR%%/mo/sv/LC_MESSAGES
 @dirrm %%DATADIR%%/mo/sv
 @dirrm %%DATADIR%%/mo/st/LC_MESSAGES
