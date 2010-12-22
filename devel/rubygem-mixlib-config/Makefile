@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mixlib-config
-PORTVERSION=	1.1.0
+PORTVERSION=	1.1.2
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
