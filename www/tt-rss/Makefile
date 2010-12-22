@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tt-rss
-PORTVERSION=	1.4.3.1
+PORTVERSION=	1.5.0
 CATEGORIES=	www
 MASTER_SITES=	http://tt-rss.org/download/
 
@@ -15,7 +15,7 @@ COMMENT=	Tiny Tiny RSS: web-based news feed (RSS/Atom) aggregator
 
 NO_BUILD=	yes
 
-USE_PHP=	json mbstring pcntl session xmlrpc
+USE_PHP=	json mbstring pcntl posix session xmlrpc
 WANT_PHP_WEB=	yes
 WANT_PHP_CLI=	yes
 REINPLACE_ARGS=	-i ""
@@ -41,11 +41,9 @@ SUB_LIST=	DB=${DB}
 PLIST_SUB=	WWWOWN=${WWWOWN}:${WWWGRP}
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
-PHP2FIX=	config.php-dist update_daemon.php update_daemon2.php		\
-		update_daemon_loop.php update_feedbrowser.php update_feeds.php
+PHP2FIX=	config.php-dist update.php update_daemon2.php
 
-SCRIPTS=	update-translations.sh update_daemon.php update_daemon2.php	\
-		update_daemon_loop.php update_feedbrowser.php update_feeds.php
+SCRIPTS=	update.php update_daemon2.php
 
 pre-everything::
 	@${ECHO_MSG}
@@ -78,6 +76,7 @@ do-install:
 	(cd ${WRKSRC} && ${COPYTREE_SHARE} "*" ${WWWDIR} "! -name LICENSE")
 	${CHOWN} -R ${WWWOWN}:${WWWGRP} ${WWWDIR}
 	${CHMOD} ug+x ${SCRIPTS:S|^|${WWWDIR}/|}
+	${CHMOD} ug+x ${WWWDIR}/utils/*.sh ${WWWDIR}/utils/*.pl
 	${INSTALL_DATA} ${WRKDIR}/httpd-tt-rss.conf ${DATADIR}
 	if [ ! -f ${WWWDIR}/config.php ]; then \
 		${CP} -p ${WWWDIR}/config.php-dist ${WWWDIR}/config.php; \
