@@ -12,7 +12,7 @@ MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}-${PORTVERSION}-setup
 EXTRACT_SUFX=	.jar
 
-MAINTAINER=	gjb@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A game for learning Java[tm] programming language
 
 LICENSE=	EPL
