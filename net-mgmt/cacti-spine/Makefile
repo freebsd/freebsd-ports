@@ -30,6 +30,12 @@ USE_MYSQL=	YES
 USE_OPENSSL=	YES
 USE_AUTOTOOLS=	libtool
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 800040
+LDFLAGS+=	-fstack-protector
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} 's,#define\ *DEFAULT_CONF_FILE .*,#define DEFAULT_CONF_FILE "${PREFIX}/etc/spine.conf",' ${WRKSRC}/spine.h
 
@@ -43,4 +49,4 @@ do-install:
 	@[ -e ${PREFIX}/etc/spine.conf ] || \
 		${INSTALL_DATA} ${EXAMPLESDIR}/spine.conf ${PREFIX}/etc/spine.conf
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
