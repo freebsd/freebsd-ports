@@ -550,6 +550,7 @@
     SUBDIR += p5-PGP
     SUBDIR += p5-PGP-Sign
     SUBDIR += p5-POE-Component-SSLify
+    SUBDIR += p5-POE-Filter-SSL
     SUBDIR += p5-PerlCryptLib
     SUBDIR += p5-SAVI-Perl
     SUBDIR += p5-SHA
