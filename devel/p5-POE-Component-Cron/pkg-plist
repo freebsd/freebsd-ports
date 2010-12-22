@@ -1,0 +1,7 @@
+%%SITE_PERL%%/POE/Component/Cron.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Component/Cron/.packlist
+@dirrmtry %%SITE_PERL%%/POE/Component
+@dirrmtry %%SITE_PERL%%/POE
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Component/Cron
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Component
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE
