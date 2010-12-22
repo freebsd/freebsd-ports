@@ -7,7 +7,7 @@
 
 PORTNAME=	opensc
 PORTVERSION=	0.11.13
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security devel
 MASTER_SITES=	http://www.opensc-project.org/files/${PORTNAME}/ \
 		http://www.opensc-project.org/files/${PORTNAME}/testing/
@@ -79,7 +79,7 @@ CONFIGURE_ARGS+=--enable-pcsc
 .endif
 
 .if defined(WITH_SIGNER)
-LIB_DEPENDS+=	assuan.0:${PORTSDIR}/security/libassuan
+LIB_DEPENDS+=	assuan.1:${PORTSDIR}/security/libassuan
 PINENTRY?=	${LOCALBASE}/bin/pinentry
 PINENTRY_PORT?=	security/pinentry
 RUN_DEPENDS+=	pinentry:${PORTSDIR}/${PINENTRY_PORT}

@@ -7,14 +7,14 @@
 
 PORTNAME=	gpa
 PORTVERSION=	0.9.0
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	security
 MASTER_SITES=	http://wald.intevation.org/frs/download.php/603/
 
 MAINTAINER=	bsdkaffee@gmail.com
 COMMENT=	A graphical frontend for the GNU Privacy Guard
 
-LIB_DEPENDS=	assuan.0:${PORTSDIR}/security/libassuan \
+LIB_DEPENDS=	assuan.1:${PORTSDIR}/security/libassuan \
 		gpgme.18:${PORTSDIR}/security/gpgme
 BUILD_DEPENDS=	gpgv2:${PORTSDIR}/security/gnupg
 RUN_DEPENDS=	gpgv2:${PORTSDIR}/security/gnupg

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libassuan
-PORTVERSION=	2.0.0
+PORTVERSION=	2.0.1
 CATEGORIES=	security devel
 MASTER_SITES=	${MASTER_SITE_GNUPG}
 MASTER_SITE_SUBDIR=${PORTNAME}
@@ -19,14 +19,12 @@ COMMENT=	IPC library used by GnuPG and gpgme
 LIB_DEPENDS+=	pth.20:${PORTSDIR}/devel/pth \
 		gpg-error:${PORTSDIR}/security/libgpg-error
 
-CONFLICTS=	libassuan-1-1*
-
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 INFO=		assuan
 PLIST_FILES=	bin/libassuan-config include/assuan.h lib/libassuan.la \
-		lib/libassuan.so.0 lib/libassuan.so share/aclocal/libassuan.m4
+		lib/libassuan.so.1 lib/libassuan.so share/aclocal/libassuan.m4
 
 .include <bsd.port.pre.mk>
 
