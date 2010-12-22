@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	parallel
-PORTVERSION=	20101202
-PORTREVISION=	1
+PORTVERSION=	20101222
 CATEGORIES=	sysutils
 MASTER_SITES=	GNU
 
@@ -23,9 +22,9 @@ GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
 USE_PERL5=	yes
 
-MAN1=		parallel.1 sem.1 sql.1
-PLIST_FILES=	bin/parallel bin/sem bin/sql
-PORTDOCS=	parallel.html sem.html sql.html
+MAN1=		parallel.1 sem.1 sql.1 niceload.1
+PLIST_FILES=	bin/parallel bin/sem bin/sql bin/niceload
+PORTDOCS=	parallel.html sem.html sql.html niceload.html
 
 post-patch:
 .if defined(NOPORTDOCS)
