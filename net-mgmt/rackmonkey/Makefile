@@ -51,6 +51,12 @@ USE_PGSQL=	83
 RUN_DEPENDS+=	p5-DBD-Pg>=0:${PORTSDIR}/databases/p5-DBD-Pg
 .endif
 
+.if defined(INIT_DB)
+PLIST_SUB+=	INIT_DB=""
+.else
+PLIST_SUB+=	INIT_DB="@comment "
+.endif
+
 do-install:
 	${MKDIR} ${WWWDIR}/
 	${INSTALL} ${WRKSRC}/perl/rackmonkey.pl ${WRKSRC}/perl/rack2xls.pl ${WRKSRC}/perl/rackdns.pl ${WWWDIR}/

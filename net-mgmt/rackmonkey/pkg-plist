@@ -1,5 +1,5 @@
 %%WWWDIR%%/rackmonkey.pl
-%%WWWDIR%%/rackmonkey.db
+%%INIT_DB%%%%WWWDIR%%/rackmonkey.db
 %%WWWDIR%%/rack2xls.pl
 %%WWWDIR%%/rackdns.pl
 %%WWWDIR%%/graphics/favicon.ico
