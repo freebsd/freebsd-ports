@@ -14,7 +14,7 @@ MASTER_SITES=	ftp://ftp.uni-koeln.de/graph/mpeg/ \
 		ftp://ftp.u-aizu.ac.jp/pub/graphics/image/mpeg/mni.mcgill.ca/
 DISTNAME=	MPEGv${PORTVERSION}
 
-MAINTAINER=	treif@mayn.de
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PVRG's MPEG video stream encoder
 
 WRKSRC=		${WRKDIR}/mpegdir
