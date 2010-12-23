@@ -1,10 +1,10 @@
-%%WWWDIR%%/.hgignore
 %%WWWDIR%%/.project
 %%WWWDIR%%/CHANGELOG
 %%WWWDIR%%/Capfile
 %%WWWDIR%%/LICENSE
-%%WWWDIR%%/README
+%%WWWDIR%%/README.rdoc
 %%WWWDIR%%/Rakefile
+%%WWWDIR%%/TODO
 %%WWWDIR%%/app/controllers/application.rb
 %%WWWDIR%%/app/controllers/builds_controller.rb
 %%WWWDIR%%/app/controllers/documentation_controller.rb
@@ -14,6 +14,7 @@
 %%WWWDIR%%/app/helpers/documentation_helper.rb
 %%WWWDIR%%/app/helpers/projects_helper.rb
 %%WWWDIR%%/app/models/build.rb
+%%WWWDIR%%/app/models/build_log_parser.rb
 %%WWWDIR%%/app/models/build_mailer.rb
 %%WWWDIR%%/app/models/build_status.rb
 %%WWWDIR%%/app/models/builder_error.rb
@@ -21,12 +22,10 @@
 %%WWWDIR%%/app/models/change_in_source_control_trigger.rb
 %%WWWDIR%%/app/models/changeset_entry.rb
 %%WWWDIR%%/app/models/config_error.rb
-%%WWWDIR%%/app/models/log_parser.rb
 %%WWWDIR%%/app/models/polling_scheduler.rb
 %%WWWDIR%%/app/models/project.rb
 %%WWWDIR%%/app/models/project_config_tracker.rb
 %%WWWDIR%%/app/models/projects.rb
-%%WWWDIR%%/app/models/revision.rb
 %%WWWDIR%%/app/models/successful_build_trigger.rb
 %%WWWDIR%%/app/models/test_error_entry.rb
 %%WWWDIR%%/app/views/build_mailer/build_report.rhtml
@@ -61,7 +60,7 @@
 %%WWWDIR%%/app/views/documentation/troubleshooting.red
 %%WWWDIR%%/app/views/layouts/_footer.rhtml
 %%WWWDIR%%/app/views/layouts/_header.rhtml
-%%WWWDIR%%/app/views/layouts/default.rhtml
+%%WWWDIR%%/app/views/layouts/application.rhtml
 %%WWWDIR%%/app/views/layouts/documentation.rhtml
 %%WWWDIR%%/app/views/projects/_no_projects.rhtml
 %%WWWDIR%%/app/views/projects/_project.rhtml
@@ -83,6 +82,7 @@
 %%WWWDIR%%/config/environments/development.rb
 %%WWWDIR%%/config/environments/production.rb
 %%WWWDIR%%/config/environments/test.rb
+%%WWWDIR%%/config/initializers/fix_for_ruby_187.rb
 %%WWWDIR%%/config/recipes/cruisecontrol.rb
 %%WWWDIR%%/config/routes.rb
 %%WWWDIR%%/config/rubyforge.yml
@@ -92,7 +92,8 @@
 %%WWWDIR%%/cruise_config.rb
 %%WWWDIR%%/cruisecontrol.iml
 %%WWWDIR%%/cruisecontrol.ipr
-%%WWWDIR%%/daemon/cruise.sample
+%%WWWDIR%%/daemon/cruise
+%%WWWDIR%%/daemon/daemon_helper.rb
 %%WWWDIR%%/db/migrate/001_move_status_from_file_to_directory_name.rb
 %%WWWDIR%%/db/migrate/002_move_custom_files_to_directory_in_user_home.rb
 %%WWWDIR%%/doc/TW Contribution Agreement Final.doc
@@ -106,6 +107,7 @@
 %%WWWDIR%%/lib/builder_plugins/project_logger.rb
 %%WWWDIR%%/lib/command_line.rb
 %%WWWDIR%%/lib/commands/cruise_plugin.rb
+%%WWWDIR%%/lib/cruise_control/init.rb
 %%WWWDIR%%/lib/cruise_control/log.rb
 %%WWWDIR%%/lib/cruise_control/version.rb
 %%WWWDIR%%/lib/duration_formatter.rb
@@ -115,12 +117,25 @@
 %%WWWDIR%%/lib/projects_migration.rb
 %%WWWDIR%%/lib/redcloth.rb
 %%WWWDIR%%/lib/smtp_tls.rb
-%%WWWDIR%%/lib/subversion.rb
-%%WWWDIR%%/lib/subversion/changeset_log_parser.rb
-%%WWWDIR%%/lib/subversion/info_parser.rb
-%%WWWDIR%%/lib/subversion/log_parser.rb
-%%WWWDIR%%/lib/subversion/propget_parser.rb
-%%WWWDIR%%/lib/subversion/update_parser.rb
+%%WWWDIR%%/lib/source_control.rb
+%%WWWDIR%%/lib/source_control/abstract_adapter.rb
+%%WWWDIR%%/lib/source_control/abstract_revision.rb
+%%WWWDIR%%/lib/source_control/bazaar.rb
+%%WWWDIR%%/lib/source_control/bazaar/log_parser.rb
+%%WWWDIR%%/lib/source_control/bazaar/revision.rb
+%%WWWDIR%%/lib/source_control/git.rb
+%%WWWDIR%%/lib/source_control/git/log_parser.rb
+%%WWWDIR%%/lib/source_control/git/revision.rb
+%%WWWDIR%%/lib/source_control/mercurial.rb
+%%WWWDIR%%/lib/source_control/mercurial/log_parser.rb
+%%WWWDIR%%/lib/source_control/mercurial/revision.rb
+%%WWWDIR%%/lib/source_control/subversion.rb
+%%WWWDIR%%/lib/source_control/subversion/changeset_log_parser.rb
+%%WWWDIR%%/lib/source_control/subversion/info_parser.rb
+%%WWWDIR%%/lib/source_control/subversion/log_parser.rb
+%%WWWDIR%%/lib/source_control/subversion/propget_parser.rb
+%%WWWDIR%%/lib/source_control/subversion/revision.rb
+%%WWWDIR%%/lib/source_control/subversion/update_parser.rb
 %%WWWDIR%%/lib/tasks/capistrano.rake
 %%WWWDIR%%/lib/tasks/clear_database_prerequisites.rake
 %%WWWDIR%%/lib/tasks/cruise.rake
@@ -299,6 +314,7 @@
 %%WWWDIR%%/test/functional/builds_controller_test.rb
 %%WWWDIR%%/test/functional/documentation_controller_test.rb
 %%WWWDIR%%/test/functional/projects_controller_test.rb
+%%WWWDIR%%/test/geminstaller.yml
 %%WWWDIR%%/test/integration/builder_integration_test.rb
 %%WWWDIR%%/test/integration/subversion_integration_test.rb
 %%WWWDIR%%/test/performance/build-sample/build.log
@@ -307,6 +323,7 @@
 %%WWWDIR%%/test/performance/mass_builds_load_speed_test.rb
 %%WWWDIR%%/test/test_helper.rb
 %%WWWDIR%%/test/unit/application_helper_test.rb
+%%WWWDIR%%/test/unit/build_log_parser_test.rb
 %%WWWDIR%%/test/unit/build_mailer_test.rb
 %%WWWDIR%%/test/unit/build_serializer_test.rb
 %%WWWDIR%%/test/unit/build_status_test.rb
@@ -315,8 +332,9 @@
 %%WWWDIR%%/test/unit/builds_helper_test.rb
 %%WWWDIR%%/test/unit/change_in_source_control_trigger_test.rb
 %%WWWDIR%%/test/unit/command_line_test.rb
+%%WWWDIR%%/test/unit/cruise_control/init_test.rb
 %%WWWDIR%%/test/unit/file_lock_test.rb
-%%WWWDIR%%/test/unit/log_parser_test.rb
+%%WWWDIR%%/test/unit/platform_test.rb
 %%WWWDIR%%/test/unit/plugins/build_reaper_test.rb
 %%WWWDIR%%/test/unit/plugins/builder_status_test.rb
 %%WWWDIR%%/test/unit/plugins/email_notifier_test.rb
@@ -329,15 +347,24 @@
 %%WWWDIR%%/test/unit/projects_helper_test.rb
 %%WWWDIR%%/test/unit/projects_migration_test.rb
 %%WWWDIR%%/test/unit/projects_test.rb
-%%WWWDIR%%/test/unit/revision_test.rb
 %%WWWDIR%%/test/unit/routing_test.rb
 %%WWWDIR%%/test/unit/smtp_tls_test.rb
-%%WWWDIR%%/test/unit/subversion/changeset_log_parser_test.rb
-%%WWWDIR%%/test/unit/subversion/info_parser_test.rb
-%%WWWDIR%%/test/unit/subversion/log_parser_test.rb
-%%WWWDIR%%/test/unit/subversion/propget_parser_test.rb
-%%WWWDIR%%/test/unit/subversion/update_parser_test.rb
-%%WWWDIR%%/test/unit/subversion_test.rb
+%%WWWDIR%%/test/unit/source_control/abstract_adapter_test.rb
+%%WWWDIR%%/test/unit/source_control/bazaar/log_parser_test.rb
+%%WWWDIR%%/test/unit/source_control/bazaar_test.rb
+%%WWWDIR%%/test/unit/source_control/git/log_parser_test.rb
+%%WWWDIR%%/test/unit/source_control/git/revision_test.rb
+%%WWWDIR%%/test/unit/source_control/git_test.rb
+%%WWWDIR%%/test/unit/source_control/mercurial/log_parser_test.rb
+%%WWWDIR%%/test/unit/source_control/mercurial_test.rb
+%%WWWDIR%%/test/unit/source_control/subversion/changeset_log_parser_test.rb
+%%WWWDIR%%/test/unit/source_control/subversion/info_parser_test.rb
+%%WWWDIR%%/test/unit/source_control/subversion/log_parser_test.rb
+%%WWWDIR%%/test/unit/source_control/subversion/propget_parser_test.rb
+%%WWWDIR%%/test/unit/source_control/subversion/revision_test.rb
+%%WWWDIR%%/test/unit/source_control/subversion/update_parser_test.rb
+%%WWWDIR%%/test/unit/source_control/subversion_test.rb
+%%WWWDIR%%/test/unit/source_control_test.rb
 %%WWWDIR%%/test/unit/successful_build_trigger_test.rb
 %%WWWDIR%%/vendor/RAILS_VERSION
 %%WWWDIR%%/vendor/plugins/mocha-0.5.1/COPYING
@@ -1672,23 +1699,23 @@
 @dirrm %%WWWDIR%%/vendor/plugins/mocha-0.5.1
 @dirrm %%WWWDIR%%/vendor/plugins
 @dirrm %%WWWDIR%%/vendor
-@dirrm %%WWWDIR%%/test/unit/subversion
+@dirrm %%WWWDIR%%/test/unit/source_control/subversion
+@dirrm %%WWWDIR%%/test/unit/source_control/mercurial
+@dirrm %%WWWDIR%%/test/unit/source_control/git
+@dirrm %%WWWDIR%%/test/unit/source_control/bazaar
+@dirrm %%WWWDIR%%/test/unit/source_control
 @dirrm %%WWWDIR%%/test/unit/plugins
+@dirrm %%WWWDIR%%/test/unit/cruise_control
 @dirrm %%WWWDIR%%/test/unit
 @dirrm %%WWWDIR%%/test/performance/build-sample
 @dirrm %%WWWDIR%%/test/performance
-@dirrm %%WWWDIR%%/test/mocks/test
-@dirrm %%WWWDIR%%/test/mocks/development
-@dirrm %%WWWDIR%%/test/mocks
 @dirrm %%WWWDIR%%/test/integration
 @dirrm %%WWWDIR%%/test/functional
 @dirrm %%WWWDIR%%/test/fixtures/svn-repo/locks
 @dirrm %%WWWDIR%%/test/fixtures/svn-repo/hooks
-@dirrm %%WWWDIR%%/test/fixtures/svn-repo/db/transactions
 @dirrm %%WWWDIR%%/test/fixtures/svn-repo/db/revs
 @dirrm %%WWWDIR%%/test/fixtures/svn-repo/db/revprops
 @dirrm %%WWWDIR%%/test/fixtures/svn-repo/db
-@dirrm %%WWWDIR%%/test/fixtures/svn-repo/dav
 @dirrm %%WWWDIR%%/test/fixtures/svn-repo/conf
 @dirrm %%WWWDIR%%/test/fixtures/svn-repo
 @dirrm %%WWWDIR%%/test/fixtures/build_mailer
@@ -1706,7 +1733,11 @@
 @dirrm %%WWWDIR%%/public
 @dirrm %%WWWDIR%%/log
 @dirrm %%WWWDIR%%/lib/tasks
-@dirrm %%WWWDIR%%/lib/subversion
+@dirrm %%WWWDIR%%/lib/source_control/subversion
+@dirrm %%WWWDIR%%/lib/source_control/mercurial
+@dirrm %%WWWDIR%%/lib/source_control/git
+@dirrm %%WWWDIR%%/lib/source_control/bazaar
+@dirrm %%WWWDIR%%/lib/source_control
 @dirrm %%WWWDIR%%/lib/cruise_control
 @dirrm %%WWWDIR%%/lib/commands
 @dirrm %%WWWDIR%%/lib/builder_plugins
@@ -1716,6 +1747,7 @@
 @dirrm %%WWWDIR%%/db
 @dirrm %%WWWDIR%%/daemon
 @dirrm %%WWWDIR%%/config/recipes
+@dirrm %%WWWDIR%%/config/initializers
 @dirrm %%WWWDIR%%/config/environments
 @dirrm %%WWWDIR%%/config
 @dirrm %%WWWDIR%%/app/views/projects
