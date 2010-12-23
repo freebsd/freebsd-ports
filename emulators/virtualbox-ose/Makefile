@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	virtualbox-ose
-DISTVERSION=	3.2.10
-PORTREVISION=	2
+DISTVERSION=	3.2.12
 CATEGORIES=	emulators
 MASTER_SITES=	http://tmp.chruetertee.ch/ \
 		http://freebsd.unixfreunde.de/sources/ \
@@ -154,10 +153,6 @@ VBOX_WEB=	vboxwebsrv webtest
 PLIST_SUB+=	WEB=""
 .else
 PLIST_SUB+=	WEB="@comment "
-.endif
-
-.if ${OSVERSION} < 700000
-BROKEN=	Does not compile on FreeBSD 6.X
 .endif
 
 .if ${ARCH} == i386
