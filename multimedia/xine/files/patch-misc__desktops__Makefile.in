@@ -1,0 +1,11 @@
+--- ./misc/desktops/Makefile.in.orig	2010-03-06 04:34:49.000000000 +0300
++++ ./misc/desktops/Makefile.in	2010-12-23 00:13:47.494601700 +0300
+@@ -269,7 +269,7 @@
+ icon32_DATA = icons/32/xine.png
+ icon48_DATA = icons/48/xine.png
+ pixmap_DATA = xine.xpm
+-desktopdir = $(datadir)/xine/desktop
++desktopdir = $(datadir)/applications
+ desktop_DATA = xine.desktop
+ all: all-am
+ 
