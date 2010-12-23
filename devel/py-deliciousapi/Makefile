@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	deliciousapi
-PORTVERSION=	1.6.5
+PORTVERSION=	1.6.7
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -17,6 +17,9 @@ COMMENT=	Unofficial Python API for retrieving data from Delicious.com
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/BeautifulSoup.py:${PORTSDIR}/www/py-beautifulsoup \
     		${PYTHON_PKGNAMEPREFIX}simplejson>=1.7:${PORTSDIR}/devel/py-simplejson
+
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
