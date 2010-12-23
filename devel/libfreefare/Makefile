@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libfreefare
-PORTVERSION=	0.2.2
+PORTVERSION=	0.2.3
 CATEGORIES=	devel
 MASTER_SITES=	http://nfc-tools.googlecode.com/files/ \
 		http://romain.blogreen.org/distfiles/
@@ -122,5 +122,8 @@ MLINKS=		freefare.3 freefare_free_tags.3 \
 		mifare_ultralight.3 mifare_ultralight_write.3 \
 		tlv.3 tlv_decode.3 \
 		tlv.3 tlv_encode.3
+
+# Restrict to stable (even) versions, indicated by the second component.
+PORTSCOUT=	limitw:1,even
 
 .include <bsd.port.mk>
