@@ -5,20 +5,23 @@
 # $FreeBSD$
 
 PORTNAME=	kshutdown
-PORTVERSION=	1.0.4
-PORTREVISION=	3
+DISTVERSION=	2.0beta11
 CATEGORIES=	sysutils kde
-MASTER_SITES=	SF/${PORTNAME}/KShutdown/${PORTVERSION}%20for%20KDE%203
+MASTER_SITES=	SF/${PORTNAME}/KShutdown/2.0%20Beta%2011/
+DISTNAME=	${PORTNAME}-source-${DISTVERSION}
 
-MAINTAINER=	markus@FreeBSD.org
+MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Advanced shutdown utility for KDE
 
-USE_BZIP2=	yes
-USE_KDELIBS_VER=3
-USE_GMAKE=	yes
-USE_AUTOTOOLS=	libtool
+USE_ZIP=	yes
+USE_CMAKE=	yes
+USE_QT_VER=	4
+QT_COMPONENTS=	moc_build qmake_build rcc_build uic_build
+USE_KDE4=	automoc4 kdehier kdeprefix workspace
 
-post-patch:
-	@${REINPLACE_CMD} -e 's|-O2||g'	${WRKSRC}/${CONFIGURE_SCRIPT}
+MAKE_JOBS_SAFE=	yes
+LATEST_LINK=	${PORTNAME}-kde4
+
+WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}
 
 .include <bsd.port.mk>
