@@ -6,13 +6,12 @@
 #
 
 PORTNAME=	dovecot-managesieve
-PORTVERSION=	0.11.11
-PORTREVISION=	3
+PORTVERSION=	0.11.12
 CATEGORIES=	mail
 MASTER_SITES=	http://www.rename-it.nl/dovecot/${DOVECOTVERSION}/
 DISTNAME=	${PORTNAME:C/-/-${DOVECOTVERSION}-/}-${DISTVERSIONPREFIX}${DISTVERSION:C/:(.)/\1/g}${DISTVERSIONSUFFIX}
 
-MAINTAINER=	dgeo@ec-marseille.fr
+MAINTAINER=	dgeo@centrale-marseille.fr
 COMMENT=	Dovecot ManageSieve Server daemon
 
 BUILD_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/mail/dovecot:build \
