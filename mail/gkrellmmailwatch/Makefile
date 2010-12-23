@@ -12,7 +12,7 @@ CATEGORIES=	mail
 MASTER_SITES=	http://gkrellm.luon.net/files/
 DISTNAME=	mailwatch-${PORTVERSION}
 
-MAINTAINER=	treif@mayn.de
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GKrellM mailwatch plugin
 
 BUILD_DEPENDS=	${LOCALBASE}/include/gkrellm/gkrellm.h:${PORTSDIR}/sysutils/gkrellm

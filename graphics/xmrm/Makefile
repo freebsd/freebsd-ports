@@ -14,7 +14,7 @@ MASTER_SITES=	ftp://ftp.cg.tuwien.ac.at/pub/linux/xmrm/ \
 DISTNAME=	${PORTNAME}${PORTVERSION:S/.//}_sources
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	treif@mayn.de
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An image morphing/warping program
 
 RUN_DEPENDS=	mpeg:${PORTSDIR}/multimedia/mpeg \
