@@ -34,6 +34,39 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="584c506d-0e98-11e0-b59b-0050569b2d21">
+    <topic>redmine -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>redmine</name>
+	<range><lt>1.0.5</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Jean-Philippe Lang reports:</p>
+	<blockquote cite="http://www.redmine.org/news/49">
+	  <p>This release also fixes 3 security issues reported by joernchen of Phenoelit:</p>
+	  <ul>
+	    <li>logged in users may be able to access private data
+	     (affected versions: 1.0.x)</li>
+	    <li>persistent XSS vulnerability in textile formatter
+	     (affected versions: all previous releases)</li>
+	    <li>remote command execution in bazaar repository adapter
+	     (affected versions: 0.9.x, 1.0.x)</li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://www.redmine.org/news/49</url>
+    </references>
+    <dates>
+      <discovery>2010-12-23</discovery>
+      <entry>2010-12-23</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="4bd33bc5-0cd6-11e0-bfa4-001676740879">
     <topic>tor -- remote crash and potential remote code execution</topic>
     <affects>
