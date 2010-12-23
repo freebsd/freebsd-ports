@@ -6,24 +6,22 @@
 #
 
 PORTNAME=	qbittorrent
-PORTVERSION=	2.3.0.rc10
+PORTVERSION=	2.3.1
 CATEGORIES=	net-p2p ipv6
-MASTER_SITES=	http://cdnetworks-us-2.dl.sourceforge.net/project/qbittorrent/qbittorrent-unstable/
-
-DISTNAME=	qbittorrent-2.3.0rc10
-PKGNAMESUFFIX=	-devel
-NO_LATEST_LINK=	yes
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PKGNAME}/
 
 MAINTAINER=	dougb@FreeBSD.org
-COMMENT=	Bittorrent client using Qt4 and libtorrent-rasterbar (release candidate)
+COMMENT=	Bittorrent client using Qt4 and libtorrent-rasterbar
 
 LIB_DEPENDS=	execinfo.1:${PORTSDIR}/devel/libexecinfo \
 		torrent-rasterbar.6:${PORTSDIR}/net-p2p/libtorrent-rasterbar-15 \
 		GeoIP.5:${PORTSDIR}/net/GeoIP
 
+NO_LATEST_LINK=	yes
+
 MAKE_JOBS_SAFE=	yes
 
-CONFLICTS=	qbittorrent-2.2.*
+CONFLICTS=	qbittorrent-2.[2456789].*
 
 OPTIONS=	NOTIFY "Enable libnotify support" on
 
