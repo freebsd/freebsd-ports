@@ -46,7 +46,7 @@ LIB_DEPENDS+=	wraster:${PORTSDIR}/x11-wm/windowmaker
 LIB_DEPENDS+=	wraster:${PORTSDIR}/x11-wm/libwraster
 .endif
 
-WRKSRC=	${.CURDIR}/work/wmweather+-${PORTVERSION}
+WRKSRC=	${WRKDIR}/wmweather+-${PORTVERSION}
 
 post-patch:
 	@${CP} ${WRKSRC}/wmweather+.c ${WRKSRC}/wmweather+.c.dist
