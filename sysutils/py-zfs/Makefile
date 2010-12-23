@@ -7,7 +7,7 @@
 
 PORTNAME=	zfs
 PORTVERSION=	1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils python
 MASTER_SITES=	# none
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -44,19 +44,26 @@ exists(${SRCDIR}/cddl/contrib/opensolaris/lib/pyzfs/common/table.py)
 PYFILES+=	holds.py \
 		table.py
 PLIST_SUB+=	V28=""
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-util.py \
+		${FILESDIR}/extra-patch-userspace.py
 .else
 PLIST_SUB+=	V28="@comment "
 .endif
 
-post-patch:
+do-extract:
 	@${MKDIR} ${WRKSRC}
-	@${SED} -e "s|/usr/bin/python2.4|${PYTHON_CMD}|g" \
-		${SRCDIR}/cddl/contrib/opensolaris/cmd/pyzfs/pyzfs.py \
-		> ${WRKSRC}/pyzfs.py
+	@${CP} ${SRCDIR}/cddl/contrib/opensolaris/cmd/pyzfs/pyzfs.py \
+	${WRKSRC}/pyzfs.py
 .for PYFILE in ${PYFILES}
-	@${SED} -e "s|/usr/bin/python2.4|${PYTHON_CMD}|g" \
-		${SRCDIR}/cddl/contrib/opensolaris/lib/pyzfs/common/${PYFILE} \
-		> ${WRKSRC}/${PYFILE}
+	@${CP} ${SRCDIR}/cddl/contrib/opensolaris/lib/pyzfs/common/${PYFILE} \
+	${WRKSRC}/${PYFILE}
+.endfor
+
+post-patch:
+	
+.for PYFILE in pyzfs.py ${PYFILES}
+	@${REINPLACE_CMD} -e "s|#! /usr/bin/python.*|#! ${PYTHON_CMD}|g" \
+		${WRKSRC}/${PYFILE}
 .endfor
 
 do-install:
