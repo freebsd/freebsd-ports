@@ -6,9 +6,8 @@
 #
 
 PORTNAME=	xcowsay
-PORTVERSION=	1.2
-PORTREVISION=	3
-CATEGORIES=	games gnome
+PORTVERSION=	1.3
+CATEGORIES=	games
 MASTER_SITES=	http://www.nickg.me.uk/files/ \
 		http://www.predatorlabs.net/dl/
 
@@ -29,6 +28,7 @@ PLIST_FILES=	bin/xcowdream \
 		bin/xcowsay \
 		bin/xcowthink \
 		share/locale/pt_BR/LC_MESSAGES/xcowsay.mo \
+		share/locale/ru/LC_MESSAGES/xcowsay.mo \
 		%%DATADIR%%/cow_large.png \
 		%%DATADIR%%/cow_med.png \
 		%%DATADIR%%/cow_small.png
@@ -37,7 +37,7 @@ PLIST_DIRS=	%%DATADIR%%
 CPPFLAGS=	-I${LOCALBASE}/include
 LDFLAGS=	-L${LOCALBASE}/lib
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if defined(WITH_DBUS)
 LIB_DEPENDS+=	dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib
@@ -45,7 +45,4 @@ CFLAGS+=	-DWITH_DBUS
 CONFIGURE_ARGS+=	--enable-dbus
 .endif
 
-post-patch:
-	@${REINPLACE_CMD} -e 's|-DWITH_DBUS||g' ${WRKSRC}/configure
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
