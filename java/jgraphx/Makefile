@@ -6,13 +6,20 @@
 #
 
 PORTNAME=	jgraphx
-PORTVERSION=	1.4.0.9
+PORTVERSION=	1.5.0.2
 CATEGORIES=	java graphics
-MASTER_SITES=	http://www.bayofrum.net/dist/jgraphx/
-DISTNAME=	${PORTNAME}-${PORTVERSION:C/\./_/g}
+MASTER_SITES=	http://www.bayofrum.net/dist/jgraphx/ \
+		http://www.jgraph.com/downloads/jgraphx/archive/
+DISTNAME=	${PORTNAME}-${PORTVERSION:S/./_/g}
 
 MAINTAINER=	utisoft@gmail.com
 COMMENT=	The Java Graph Diagram Component version X (jgraph v6+)
+
+LICENSE=	jgraph
+LICENSE_PERMS=	# none
+LICENSE_NAME=	JGraph Ltd License
+LICENSE_FILE=	${WRKSRC}/license.txt
+MANUAL_PACKAGE_BUILD=	needs interactive license confirmation
 
 USE_ZIP=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
