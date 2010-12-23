@@ -6,14 +6,15 @@
 #
 
 PORTNAME=	dovecot
-PORTVERSION=	1.2.14
-PORTREVISION=	1
+PORTVERSION=	1.2.16
 CATEGORIES=	mail ipv6
 MASTER_SITES=	http://www.dovecot.org/releases/${DOVECOTVERSION}/ \
 		http://www.rename-it.nl/dovecot/${DOVECOTVERSION}/
 
 MAINTAINER=	yds@CoolRat.org
 COMMENT=	Secure and compact IMAP and POP3 servers
+
+CONFLICTS=	dovecot-2.*
 
 DOVECOTVERSION=	1.2
 
