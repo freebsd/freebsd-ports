@@ -91,7 +91,7 @@ CONFIGURE_ARGS+=--disable-cgi
 
 .if defined(WITH_FPM)
 PHP_SAPI+=	fpm
-MAN1+=		php-fpm.1
+MAN8+=		php-fpm.8
 USE_RC_SUBR+=	php-fpm
 CONFIGURE_ARGS+=--enable-fpm \
 		--with-fpm-user=${WWWOWN} \
