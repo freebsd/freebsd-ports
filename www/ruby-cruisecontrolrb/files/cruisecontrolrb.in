@@ -27,14 +27,17 @@ cruisecontrolrb_start() {
     ${command} start ${command_args}
 }
 cruisecontrolrb_stop() {
-    kill $(cat $pidfile)
+    if [ -f $pidfile ]; then
+        kill $(cat $pidfile)
+    fi
     ## also stop the builders
-    cd %%PREFIX%%/www/${name}/tmp/pids/builders/
-    for builder in $(ls); do 
-        kill $(cat $builder)
-        rm ${builder}
-    }
-    done
+    if [ -d %%PREFIX%%/www/${name}/tmp/pids/builders ]; then
+	cd %%PREFIX%%/www/${name}/tmp/pids/builders
+	for builder in $(ls); do 
+	    kill $(cat $builder)
+	    rm ${builder}
+	done
+    fi
 }
 
 load_rc_config $name
