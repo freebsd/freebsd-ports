@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libtorrent-rasterbar
-PORTVERSION=	0.15.1
+PORTVERSION=	0.15.4
 PORTREVISION?=	0
 CATEGORIES?=	net-p2p ipv6
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
@@ -52,10 +52,6 @@ CONFIGURE_ARGS+=	--enable-python-binding \
 			--with-boost-python=boost_python
 .else
 CONFIGURE_ARGS+=	--disable-python-binding
-.endif
-
-.if ${OSVERSION} < 700000
-BROKEN=		does not compile on 6.X
 .endif
 
 .if defined(SLAVE_PORT) && ${SLAVE_PORT:L}=="yes"
