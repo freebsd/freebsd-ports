@@ -20,6 +20,8 @@ RUN_DEPENDS=	${LOCALBASE}/include/fuse.h:${PORTSDIR}/sysutils/fusefs-libs
 BUILD_DEPENDS+=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
+PORTSCOUT=	skipv:0.09_4
+
 USE_GNOME=	pkgconfig
 
 MAN3=		Fuse.3

@@ -19,6 +19,8 @@ RUN_DEPENDS=	p5-Params-Validate>=0:${PORTSDIR}/devel/p5-Params-Validate \
 		p5-DateTime>=0.31:${PORTSDIR}/devel/p5-DateTime
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
+PORTSCOUT=	skipv:0.801
+
 PERL_MODBUILD=	yes
 
 MAN3=		DateTime::Format::Epoch.3 \

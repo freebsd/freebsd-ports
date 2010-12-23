@@ -18,6 +18,8 @@ COMMENT=	Test::Differences - Test strings and data structures for differences
 BUILD_DEPENDS=	${SITE_PERL}/Text/Diff.pm:${PORTSDIR}/textproc/p5-Text-Diff
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
+PORTSCOUT=	skipv:0.4801
+
 PERL_CONFIGURE=	yes
 
 MAN3=		Test::Differences.3

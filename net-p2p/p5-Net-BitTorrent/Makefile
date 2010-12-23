@@ -19,6 +19,8 @@ RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/version.pm:${PORTSDIR}/devel/p5-version
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/version.pm:${PORTSDIR}/devel/p5-version
 
 CONFIGURE_ARGS=	</dev/null
+PORTSCOUT=	skipv:0.074000_012	
+
 PERL_MODBUILD=	yes
 
 MAN1=		net-bittorrent.pl.1

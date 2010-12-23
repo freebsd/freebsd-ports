@@ -38,6 +38,8 @@ BUILD_DEPENDS=	p5-CGI-Simple>0:${PORTSDIR}/www/p5-CGI-Simple \
 		p5-libwww>0:${PORTSDIR}/www/p5-libwww
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
+PORTSCOUT=	skipv:2.121
+
 MAKE_JOBS_SAFE=  yes
 
 OPTIONS=	MODPERL "mod_perl support" on \

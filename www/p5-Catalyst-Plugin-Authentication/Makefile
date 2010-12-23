@@ -21,6 +21,8 @@ BUILD_DEPENDS=	p5-Catalyst-Runtime>=5.7000:${PORTSDIR}/www/p5-Catalyst-Runtime \
 		p5-MRO-Compat>=0:${PORTSDIR}/devel/p5-MRO-Compat
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
+PORTSCOUT=	skipv:0.100092
+
 PERL_CONFIGURE=	5.8.1+
 
 MAN3=	Catalyst::Authentication::Credential::Password.3 \

@@ -13,6 +13,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Framework for parsing Pod
 
+PORTSCOUT=	skipv:31337-0.02
+
 PERL_CONFIGURE=	yes
 
 MAN3=		Pod::Simple.3 \

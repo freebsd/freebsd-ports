@@ -14,6 +14,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	File::PathConvert - Various path conversion routines
 
+PORTSCOUT=	skipv:0.85
+
 PERL_CONFIGURE=	yes
 
 MAN3=	File::PathConvert.3

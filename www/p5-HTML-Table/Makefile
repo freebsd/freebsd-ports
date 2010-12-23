@@ -14,6 +14,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Generate HTML tables for CGI scripts
 
+PORTSCOUT=	skipv:2.08
+
 PERL_CONFIGURE=	yes
 
 MAN3=		HTML::Table.3

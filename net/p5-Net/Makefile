@@ -19,6 +19,8 @@ COMMENT=	Perl5 modules to access and use network protocols
 
 RUN_DEPENDS=	p5-Authen-SASL>=0:${PORTSDIR}/security/p5-Authen-SASL
 
+PORTSCOUT=	skipv:1.0901
+
 PERL_CONFIGURE=	yes
 
 MAN3=		Net::Cmd.3 \
