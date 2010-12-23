@@ -427,6 +427,7 @@
     SUBDIR += krename
     SUBDIR += krename-kde4
     SUBDIR += kshutdown
+    SUBDIR += kshutdown-kde4
     SUBDIR += ksynaptics
     SUBDIR += lavaps
     SUBDIR += lbl-cf
