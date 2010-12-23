@@ -37,8 +37,11 @@ include/gssrpc/svc_auth.h
 include/gssrpc/types.h
 include/gssrpc/xdr.h
 include/krb5.h
+include/krb5/kadm5_hook_plugin.h
 include/krb5/krb5.h
 include/krb5/locate_plugin.h
+include/krb5/plugin.h
+include/krb5/pwqual_plugin.h
 include/kadm5/admin.h
 include/kadm5/chpass_util_strings.h
 include/kadm5/kadm_err.h
@@ -54,12 +57,12 @@ lib/libk5crypto.so
 lib/libk5crypto.so.3
 lib/libkadm5clnt.so
 lib/libkadm5clnt_mit.so
-lib/libkadm5clnt_mit.so.7
+lib/libkadm5clnt_mit.so.8
 lib/libkadm5srv.so
 lib/libkadm5srv_mit.so
-lib/libkadm5srv_mit.so.7
+lib/libkadm5srv_mit.so.8
 lib/libkdb5.so
-lib/libkdb5.so.4
+lib/libkdb5.so.5
 lib/libkrb5.so
 lib/libkrb5.so.3
 lib/libkrb5support.so
