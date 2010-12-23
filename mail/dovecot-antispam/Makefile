@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	dovecot-antispam
-PORTVERSION=	1.2
-PORTREVISION=	6
+PORTVERSION=	1.3
 PORTEPOCH=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://johannes.sipsolutions.net/download/dovecot-antispam/ \
