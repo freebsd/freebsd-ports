@@ -22,6 +22,8 @@ RUN_DEPENDS=	p5-YAML-Tiny>=1.40:${PORTSDIR}/textproc/p5-YAML-Tiny \
 		p5-ExtUtils-Install>=1.54:${PORTSDIR}/devel/p5-ExtUtils-Install
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
+PORTSCOUT=	skipv:0.31012
+
 PERL_MODBUILD=	yes
 
 .if !defined(NOPORTDOCS)

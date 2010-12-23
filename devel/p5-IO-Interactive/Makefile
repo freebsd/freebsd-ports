@@ -18,6 +18,8 @@ COMMENT=	Utilities for interactive I/O
 BUILD_DEPENDS=	p5-version>=0:${PORTSDIR}/devel/p5-version
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
+PORTSCOUT=	skipv:0.01
+
 PERL_CONFIGURE=	YES
 MAN3=	IO::Interactive.3
 

@@ -17,6 +17,8 @@ COMMENT=	Perl extension for ICalendar date objects
 BUILD_DEPENDS=	${SITE_PERL}/Date/Leapyear.pm:${PORTSDIR}/devel/p5-Date-Leapyear
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
+PORTSCOUT=	skipv:1.366
+
 PERL_CONFIGURE=	yes
 
 MAN3=		Date::ICal.3 Date::ICal::Duration.3

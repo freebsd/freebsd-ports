@@ -16,6 +16,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	A selection of general-utility IO function
 
+PORTSCOUT=	skipv:1.48
+
 PERL_CONFIGURE=	yes
 
 MAN3=		IO::Util.3
