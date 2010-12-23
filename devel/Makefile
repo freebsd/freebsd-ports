@@ -907,6 +907,7 @@
     SUBDIR += libx86
     SUBDIR += libxalloc
     SUBDIR += libytnef
+    SUBDIR += libzrtp
     SUBDIR += libzrtpcpp
     SUBDIR += libzvbi
     SUBDIR += lightning
