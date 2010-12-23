@@ -1,5 +1,12 @@
---- Makefile.orig	Thu Aug  7 17:40:39 2003
-+++ Makefile	Sat Aug 23 00:18:35 2003
+Description: Add CrackLib support and conditionalize the build variables.
+Forwarded: no
+Author: Peter Pentchev <roam@FreeBSD.org>,
+	Dominic Marks <dominic_marks@btinternet.com>,
+	Roman Neuhauser <roman@bellavista.cz>
+Last-Update: 2010-12-23
+
+--- Makefile.orig
++++ Makefile
 @@ -44,10 +44,12 @@
  # If you want to use cracklib for password quality check then you
  # must uncomment the folowing 4 lines (you must not do this for WIN32)

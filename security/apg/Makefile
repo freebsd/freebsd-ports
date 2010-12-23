@@ -7,19 +7,24 @@
 
 PORTNAME=	apg
 PORTVERSION=	2.3.0b
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security
-MASTER_SITES=	http://www.adel.nursat.kz/apg/download/ \
-		${MASTER_SITE_PACKETSTORM}
+MASTER_SITES=	http://www.adel.nursat.kz/apg/download/
 MASTER_SITE_SUBDIR=	UNIX/misc
 
 MAINTAINER=	roam@FreeBSD.org
 COMMENT=	An automated password generator
 
+OPTIONS=	CRACKLIB "CrackLib support for password quality" off
+
+.include <bsd.port.options.mk>
+
 .if defined(WITH_CRACKLIB)
 LIB_DEPENDS=	crack.1:${PORTSDIR}/security/cracklib
 MAKE_ARGS=	-DWITH_CRACKLIB
 .endif
+
+LICENSE=	BSD
 
 MAN1=		apg.1 apgbfm.1
 MAN8=		apgd.8
