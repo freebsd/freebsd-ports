@@ -1,8 +1,3 @@
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/ChangeLog
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/NEWS
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/README.en
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/TODO
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/ja/README.ja
 %%RUBY_SITELIBDIR%%/refe/completiontable.rb
 %%RUBY_SITELIBDIR%%/refe/config.rb
 %%RUBY_SITELIBDIR%%/refe/database.rb
@@ -10,6 +5,7 @@
 %%RUBY_SITELIBDIR%%/refe/fileutils.rb
 %%RUBY_SITELIBDIR%%/refe/fsdbm.rb
 %%RUBY_SITELIBDIR%%/refe/info.rb
+%%RUBY_SITELIBDIR%%/refe/inheritancegraph.rb
 %%RUBY_SITELIBDIR%%/refe/lineinput.rb
 %%RUBY_SITELIBDIR%%/refe/mfrelationparser.rb
 %%RUBY_SITELIBDIR%%/refe/multilangdoc.rb
@@ -169,11 +165,9 @@ share/refe/class_document/-option-parser%3a%3a-switch
 share/refe/class_document/-option-parser%3a%3a-switch%3a%3a-no-argument
 share/refe/class_document/-option-parser%3a%3a-switch%3a%3a-optional-argument
 share/refe/class_document/-option-parser%3a%3a-switch%3a%3a-required-argument
-share/refe/class_document/-orphan
 share/refe/class_document/-p-p
 share/refe/class_document/-p-store
 share/refe/class_document/-p-t-y
-share/refe/class_document/-parse-date
 share/refe/class_document/-ping
 share/refe/class_document/-precision
 share/refe/class_document/-pretty-print
@@ -227,6 +221,7 @@ share/refe/class_document/-simple-delegator
 share/refe/class_document/-single-forwardable
 share/refe/class_document/-singleton
 share/refe/class_document/-sized-queue
+share/refe/class_document/-smtp
 share/refe/class_document/-socket
 share/refe/class_document/-socket%3a%3a-constants
 share/refe/class_document/-standard-error
@@ -285,13 +280,14 @@ share/refe/class_document/-u-r-i%3a%3a-l-d-a-p
 share/refe/class_document/-u-r-i%3a%3a-mail-to
 share/refe/class_document/-unbound-method
 share/refe/class_document/-vector
-share/refe/class_document/-version
 share/refe/class_document/-w-i-n32-o-l-e
 share/refe/class_document/-weak-ref
 share/refe/class_document/-weak-ref%3a%3a-ref-error
 share/refe/class_document/-win32%3a%3a-registry
 share/refe/class_document/-win32-a-p-i
+share/refe/class_document/-x-m-l-r-p-c
 share/refe/class_document/-zero-division-error
+share/refe/class_document/fatal
 share/refe/class_document/man
 share/refe/class_document_comp
 share/refe/function_document/-a-l-l-o-c-a/-n
@@ -1122,6 +1118,7 @@ share/refe/function_document/yyerror
 share/refe/function_document/yylex
 share/refe/function_document/yyparse
 share/refe/function_document_comp
+share/refe/inheritance_graph
 share/refe/method_document/-a-r-g-f%2e/file
 share/refe/method_document/-a-r-g-f%2e/filename
 share/refe/method_document/-a-r-g-f%2e/lineno
@@ -1131,6 +1128,7 @@ share/refe/method_document/-a-r-g-f%2e/to_s
 share/refe/method_document/-array%23/%26
 share/refe/method_document/-array%23/%2a
 share/refe/method_document/-array%23/%2b
+share/refe/method_document/-array%23/%2d
 share/refe/method_document/-array%23/%3c%3c
 share/refe/method_document/-array%23/%3c%3d%3e
 share/refe/method_document/-array%23/%3d%3d
@@ -1178,7 +1176,6 @@ share/refe/method_document/-array%23/reverse
 share/refe/method_document/-array%23/reverse%21
 share/refe/method_document/-array%23/reverse_each
 share/refe/method_document/-array%23/rindex
-share/refe/method_document/-array%23/self
 share/refe/method_document/-array%23/shift
 share/refe/method_document/-array%23/size
 share/refe/method_document/-array%23/slice
@@ -1268,10 +1265,10 @@ share/refe/method_document/-complex%23/%25
 share/refe/method_document/-complex%23/%2a
 share/refe/method_document/-complex%23/%2a%2a
 share/refe/method_document/-complex%23/%2b
+share/refe/method_document/-complex%23/%2d
 share/refe/method_document/-complex%23/%2f
 share/refe/method_document/-complex%23/%3c%3d%3e
 share/refe/method_document/-complex%23/%3d%3d
-share/refe/method_document/-complex%23/-
 share/refe/method_document/-complex%23/abs
 share/refe/method_document/-complex%23/abs2
 share/refe/method_document/-complex%23/arg
@@ -1360,52 +1357,6 @@ share/refe/method_document/-d-l%3a%3a-importable%3a%3a-struct%23/malloc
 share/refe/method_document/-d-l%3a%3a-importable%3a%3a-struct%23/new
 share/refe/method_document/-d-l%3a%3a-types%23/encode_type
 share/refe/method_document/-d-l%3a%3a-types%23/typealias
-share/refe/method_document/-data%23/%2b
-share/refe/method_document/-data%23/%3c%3c
-share/refe/method_document/-data%23/%3c%3d%3e
-share/refe/method_document/-data%23/%3d%3d%3d
-share/refe/method_document/-data%23/%3e%3e
-share/refe/method_document/-data%23/cwday
-share/refe/method_document/-data%23/cweek
-share/refe/method_document/-data%23/cwyear
-share/refe/method_document/-data%23/day
-share/refe/method_document/-data%23/downto
-share/refe/method_document/-data%23/england
-share/refe/method_document/-data%23/gregorian
-share/refe/method_document/-data%23/italy
-share/refe/method_document/-data%23/jd
-share/refe/method_document/-data%23/julian
-share/refe/method_document/-data%23/ld
-share/refe/method_document/-data%23/leap%3f
-share/refe/method_document/-data%23/mday
-share/refe/method_document/-data%23/mjd
-share/refe/method_document/-data%23/mon
-share/refe/method_document/-data%23/month
-share/refe/method_document/-data%23/newsg
-share/refe/method_document/-data%23/next
-share/refe/method_document/-data%23/self
-share/refe/method_document/-data%23/sg
-share/refe/method_document/-data%23/step
-share/refe/method_document/-data%23/succ
-share/refe/method_document/-data%23/tjd
-share/refe/method_document/-data%23/tjd2
-share/refe/method_document/-data%23/to_s
-share/refe/method_document/-data%23/upto
-share/refe/method_document/-data%23/wday
-share/refe/method_document/-data%23/yday
-share/refe/method_document/-data%23/year
-share/refe/method_document/-data%2e/exist%3f
-share/refe/method_document/-data%2e/exist2%3f
-share/refe/method_document/-data%2e/exist3%3f
-share/refe/method_document/-data%2e/existw%3f
-share/refe/method_document/-data%2e/new
-share/refe/method_document/-data%2e/new1
-share/refe/method_document/-data%2e/new2
-share/refe/method_document/-data%2e/new3
-share/refe/method_document/-data%2e/neww
-share/refe/method_document/-data%2e/today
-share/refe/method_document/-delegator%23/__getobj__
-share/refe/method_document/-delegator%23/initialize
 share/refe/method_document/-dir%23/close
 share/refe/method_document/-dir%23/each
 share/refe/method_document/-dir%23/pos
@@ -1427,7 +1378,6 @@ share/refe/method_document/-dir%2e/new
 share/refe/method_document/-dir%2e/open
 share/refe/method_document/-dir%2e/pwd
 share/refe/method_document/-dir%2e/rmdir
-share/refe/method_document/-dir%2e/tmpdir
 share/refe/method_document/-dir%2e/unlink
 share/refe/method_document/-e-n-v%23/%5b%5d
 share/refe/method_document/-e-n-v%23/%5b%5d%3d
@@ -1680,10 +1630,6 @@ share/refe/method_document/-file%2e/blockdev%3f
 share/refe/method_document/-file%2e/chardev%3f
 share/refe/method_document/-file%2e/chmod
 share/refe/method_document/-file%2e/chown
-share/refe/method_document/-file%2e/cmp
-share/refe/method_document/-file%2e/compare
-share/refe/method_document/-file%2e/copy
-share/refe/method_document/-file%2e/cp
 share/refe/method_document/-file%2e/ctime
 share/refe/method_document/-file%2e/delete
 share/refe/method_document/-file%2e/directory%3f
@@ -1698,17 +1644,12 @@ share/refe/method_document/-file%2e/fnmatch
 share/refe/method_document/-file%2e/fnmatch%3f
 share/refe/method_document/-file%2e/ftype
 share/refe/method_document/-file%2e/grpowned%3f
-share/refe/method_document/-file%2e/install
 share/refe/method_document/-file%2e/join
 share/refe/method_document/-file%2e/lchmod
 share/refe/method_document/-file%2e/lchown
 share/refe/method_document/-file%2e/link
 share/refe/method_document/-file%2e/lstat
-share/refe/method_document/-file%2e/makedirs
-share/refe/method_document/-file%2e/mkpath
-share/refe/method_document/-file%2e/move
 share/refe/method_document/-file%2e/mtime
-share/refe/method_document/-file%2e/mv
 share/refe/method_document/-file%2e/new
 share/refe/method_document/-file%2e/open
 share/refe/method_document/-file%2e/owned%3f
@@ -1717,8 +1658,6 @@ share/refe/method_document/-file%2e/readable%3f
 share/refe/method_document/-file%2e/readable_real%3f
 share/refe/method_document/-file%2e/readlink
 share/refe/method_document/-file%2e/rename
-share/refe/method_document/-file%2e/rm_f
-share/refe/method_document/-file%2e/safe_unlink
 share/refe/method_document/-file%2e/setgid%3f
 share/refe/method_document/-file%2e/setuid%3f
 share/refe/method_document/-file%2e/size
@@ -1842,6 +1781,7 @@ share/refe/method_document/-float%23/%25
 share/refe/method_document/-float%23/%2a
 share/refe/method_document/-float%23/%2a%2a
 share/refe/method_document/-float%23/%2b
+share/refe/method_document/-float%23/%2d
 share/refe/method_document/-float%23/%2f
 share/refe/method_document/-float%23/%3c
 share/refe/method_document/-float%23/%3c%3d
@@ -1852,7 +1792,6 @@ share/refe/method_document/-float%23/%3e%3d
 share/refe/method_document/-float%23/finite%3f
 share/refe/method_document/-float%23/infinite%3f
 share/refe/method_document/-float%23/nan%3f
-share/refe/method_document/-float%23/self
 share/refe/method_document/-float%23/to_f
 share/refe/method_document/-float%23/to_i
 share/refe/method_document/-float%23/truncate
@@ -1974,7 +1913,6 @@ share/refe/method_document/-i-o%23/each_byte
 share/refe/method_document/-i-o%23/each_line
 share/refe/method_document/-i-o%23/eof
 share/refe/method_document/-i-o%23/eof%3f
-share/refe/method_document/-i-o%23/expect
 share/refe/method_document/-i-o%23/fcntl
 share/refe/method_document/-i-o%23/fileno
 share/refe/method_document/-i-o%23/flush
@@ -1993,7 +1931,6 @@ share/refe/method_document/-i-o%23/printf
 share/refe/method_document/-i-o%23/putc
 share/refe/method_document/-i-o%23/puts
 share/refe/method_document/-i-o%23/read
-share/refe/method_document/-i-o%23/readbytes
 share/refe/method_document/-i-o%23/readchar
 share/refe/method_document/-i-o%23/readline
 share/refe/method_document/-i-o%23/readlines
@@ -2018,6 +1955,7 @@ share/refe/method_document/-i-o%2e/-s-e-e-k_-s-e-t
 share/refe/method_document/-i-o%2e/for_fd
 share/refe/method_document/-i-o%2e/foreach
 share/refe/method_document/-i-o%2e/new
+share/refe/method_document/-i-o%2e/open
 share/refe/method_document/-i-o%2e/pipe
 share/refe/method_document/-i-o%2e/popen
 share/refe/method_document/-i-o%2e/read
@@ -2037,8 +1975,8 @@ share/refe/method_document/-iconv%3a%3a-failure%23/failed
 share/refe/method_document/-iconv%3a%3a-failure%23/inspect
 share/refe/method_document/-iconv%3a%3a-failure%23/success
 share/refe/method_document/-included%23/%26
-share/refe/method_document/-included%23/%2b
-share/refe/method_document/-included%23/%2d
+share/refe/method_document/-included%23/%2b%40
+share/refe/method_document/-included%23/%2d%40
 share/refe/method_document/-included%23/%3c%3c
 share/refe/method_document/-included%23/%3d%3d
 share/refe/method_document/-included%23/%5e
@@ -2072,6 +2010,7 @@ share/refe/method_document/-integer%23/%26
 share/refe/method_document/-integer%23/%2a
 share/refe/method_document/-integer%23/%2a%2a
 share/refe/method_document/-integer%23/%2b
+share/refe/method_document/-integer%23/%2d
 share/refe/method_document/-integer%23/%2f
 share/refe/method_document/-integer%23/%3c
 share/refe/method_document/-integer%23/%3c%3c
@@ -2087,10 +2026,7 @@ share/refe/method_document/-integer%23/%7c
 share/refe/method_document/-integer%23/%7e
 share/refe/method_document/-integer%23/chr
 share/refe/method_document/-integer%23/downto
-share/refe/method_document/-integer%23/gcd2
 share/refe/method_document/-integer%23/next
-share/refe/method_document/-integer%23/prime_division
-share/refe/method_document/-integer%23/self
 share/refe/method_document/-integer%23/size
 share/refe/method_document/-integer%23/step
 share/refe/method_document/-integer%23/succ
@@ -2100,13 +2036,7 @@ share/refe/method_document/-integer%23/to_i
 share/refe/method_document/-integer%23/to_int
 share/refe/method_document/-integer%23/to_s
 share/refe/method_document/-integer%23/upto
-share/refe/method_document/-integer%2e/from_prime_division
 share/refe/method_document/-integer%2e/induced_from
-share/refe/method_document/-kconv%2e/guess
-share/refe/method_document/-kconv%2e/kconv
-share/refe/method_document/-kconv%2e/toeuc
-share/refe/method_document/-kconv%2e/tojis
-share/refe/method_document/-kconv%2e/tosjis
 share/refe/method_document/-kernel%23/%60
 share/refe/method_document/-kernel%23/-array
 share/refe/method_document/-kernel%23/-float
@@ -2238,7 +2168,6 @@ share/refe/method_document/-math%2e/hypot
 share/refe/method_document/-math%2e/ldexp
 share/refe/method_document/-math%2e/log
 share/refe/method_document/-math%2e/log10
-share/refe/method_document/-math%2e/rsqrt
 share/refe/method_document/-math%2e/sin
 share/refe/method_document/-math%2e/sinh
 share/refe/method_document/-math%2e/sqrt
@@ -2247,10 +2176,10 @@ share/refe/method_document/-math%2e/tanh
 share/refe/method_document/-matrix%23/%2a
 share/refe/method_document/-matrix%23/%2a%2a
 share/refe/method_document/-matrix%23/%2b
+share/refe/method_document/-matrix%23/%2d
 share/refe/method_document/-matrix%23/%2f
 share/refe/method_document/-matrix%23/%5b%5d
 share/refe/method_document/-matrix%23/%5b%5d%3d
-share/refe/method_document/-matrix%23/-
 share/refe/method_document/-matrix%23/collect
 share/refe/method_document/-matrix%23/column
 share/refe/method_document/-matrix%23/column_size
@@ -2520,8 +2449,8 @@ share/refe/method_document/-nil-class%23/to_i
 share/refe/method_document/-nil-class%23/to_s
 share/refe/method_document/-no-method-error%23/args
 share/refe/method_document/-no-method-error%2e/new
-share/refe/method_document/-numeric%23/%2b
-share/refe/method_document/-numeric%23/%2d
+share/refe/method_document/-numeric%23/%2b%40
+share/refe/method_document/-numeric%23/%2d%40
 share/refe/method_document/-numeric%23/abs
 share/refe/method_document/-numeric%23/ceil
 share/refe/method_document/-numeric%23/clone
@@ -2715,7 +2644,6 @@ share/refe/method_document/-p-store%23/root%3f
 share/refe/method_document/-p-store%23/roots
 share/refe/method_document/-p-store%23/transaction
 share/refe/method_document/-p-store%2e/new
-share/refe/method_document/-parse-date%2e/parsedate
 share/refe/method_document/-ping%2e/pingecho
 share/refe/method_document/-precision%23/prec
 share/refe/method_document/-precision%23/prec_f
@@ -2731,9 +2659,6 @@ share/refe/method_document/-pretty-print%23/text
 share/refe/method_document/-pretty-print%2e/format
 share/refe/method_document/-pretty-print%2e/new
 share/refe/method_document/-pretty-print%2e/singleline_format
-share/refe/method_document/-prime%23/each
-share/refe/method_document/-prime%23/succ
-share/refe/method_document/-prime%2e/new
 share/refe/method_document/-proc%23/%5b%5d
 share/refe/method_document/-proc%23/arity
 share/refe/method_document/-proc%23/binding
@@ -2797,9 +2722,30 @@ share/refe/method_document/-process%3a%3a-status%23/termsig
 share/refe/method_document/-process%3a%3a-status%23/to_i
 share/refe/method_document/-process%3a%3a-status%23/to_int
 share/refe/method_document/-process%3a%3a-status%23/to_s
-share/refe/method_document/-profiler__%2e/print_profile
-share/refe/method_document/-profiler__%2e/start_profile
-share/refe/method_document/-profiler__%2e/stop_profile
+share/refe/method_document/-process%3a%3a-sys%23/getegid
+share/refe/method_document/-process%3a%3a-sys%23/geteuid
+share/refe/method_document/-process%3a%3a-sys%23/getgid
+share/refe/method_document/-process%3a%3a-sys%23/getuid
+share/refe/method_document/-process%3a%3a-sys%23/issetugid
+share/refe/method_document/-process%3a%3a-sys%23/setegid
+share/refe/method_document/-process%3a%3a-sys%23/seteuid
+share/refe/method_document/-process%3a%3a-sys%23/setgid
+share/refe/method_document/-process%3a%3a-sys%23/setregid
+share/refe/method_document/-process%3a%3a-sys%23/setresgid
+share/refe/method_document/-process%3a%3a-sys%23/setresuid
+share/refe/method_document/-process%3a%3a-sys%23/setreuid
+share/refe/method_document/-process%3a%3a-sys%23/setrgid
+share/refe/method_document/-process%3a%3a-sys%23/setruid
+share/refe/method_document/-process%3a%3a-sys%23/setuid
+share/refe/method_document/-process%3a%3a-u-i-d%2e/change_privilege
+share/refe/method_document/-process%3a%3a-u-i-d%2e/eid
+share/refe/method_document/-process%3a%3a-u-i-d%2e/eid%3d
+share/refe/method_document/-process%3a%3a-u-i-d%2e/grant_privilege
+share/refe/method_document/-process%3a%3a-u-i-d%2e/re_exchange
+share/refe/method_document/-process%3a%3a-u-i-d%2e/re_exchangeable%3f
+share/refe/method_document/-process%3a%3a-u-i-d%2e/rid
+share/refe/method_document/-process%3a%3a-u-i-d%2e/sid_available%3f
+share/refe/method_document/-process%3a%3a-u-i-d%2e/switch
 share/refe/method_document/-queue%23/%3c%3c
 share/refe/method_document/-queue%23/clear
 share/refe/method_document/-queue%23/deq
@@ -2845,12 +2791,11 @@ share/refe/method_document/-rational%23/%25
 share/refe/method_document/-rational%23/%2a
 share/refe/method_document/-rational%23/%2a%2a
 share/refe/method_document/-rational%23/%2b
+share/refe/method_document/-rational%23/%2d
 share/refe/method_document/-rational%23/%2f
 share/refe/method_document/-rational%23/%3c%3d%3e
 share/refe/method_document/-rational%23/abs
 share/refe/method_document/-rational%23/divmod
-share/refe/method_document/-rational%23/power2
-share/refe/method_document/-rational%23/self
 share/refe/method_document/-rational%23/to_f
 share/refe/method_document/-rational%23/to_i
 share/refe/method_document/-rational%23/to_s
@@ -2962,9 +2907,6 @@ share/refe/method_document/-resolv%3a%3a-i-pv6%2e/create
 share/refe/method_document/-shellwords%2e/shellwords
 share/refe/method_document/-signal%2e/list
 share/refe/method_document/-signal%2e/trap
-share/refe/method_document/-simple-delegator%23/__getobj__
-share/refe/method_document/-simple-delegator%23/__setobj__
-share/refe/method_document/-simple-delegator%2e/new
 share/refe/method_document/-singleton%23/instance
 share/refe/method_document/-sized-queue%23/max
 share/refe/method_document/-sized-queue%23/max%3d
@@ -3069,7 +3011,6 @@ share/refe/method_document/-string%23/include%3f
 share/refe/method_document/-string%23/index
 share/refe/method_document/-string%23/insert
 share/refe/method_document/-string%23/intern
-share/refe/method_document/-string%23/kconv
 share/refe/method_document/-string%23/length
 share/refe/method_document/-string%23/ljust
 share/refe/method_document/-string%23/lstrip
@@ -3106,9 +3047,6 @@ share/refe/method_document/-string%23/to_i
 share/refe/method_document/-string%23/to_s
 share/refe/method_document/-string%23/to_str
 share/refe/method_document/-string%23/to_sym
-share/refe/method_document/-string%23/toeuc
-share/refe/method_document/-string%23/tojis
-share/refe/method_document/-string%23/tosjis
 share/refe/method_document/-string%23/tr
 share/refe/method_document/-string%23/tr%21
 share/refe/method_document/-string%23/tr_s
@@ -3585,7 +3523,6 @@ share/refe/method_document/-thread%2e/abort_on_exception%3d
 share/refe/method_document/-thread%2e/critical
 share/refe/method_document/-thread%2e/critical%3d
 share/refe/method_document/-thread%2e/current
-share/refe/method_document/-thread%2e/exclusive
 share/refe/method_document/-thread%2e/exit
 share/refe/method_document/-thread%2e/fork
 share/refe/method_document/-thread%2e/kill
@@ -3610,6 +3547,7 @@ share/refe/method_document/-threads-wait%23/threads
 share/refe/method_document/-threads-wait%2e/all_waits
 share/refe/method_document/-threads-wait%2e/new
 share/refe/method_document/-time%23/%2b
+share/refe/method_document/-time%23/%2d
 share/refe/method_document/-time%23/%3c%3d%3e
 share/refe/method_document/-time%23/asctime
 share/refe/method_document/-time%23/ctime
@@ -3623,18 +3561,13 @@ share/refe/method_document/-time%23/gmt_offset
 share/refe/method_document/-time%23/gmtime
 share/refe/method_document/-time%23/gmtoff
 share/refe/method_document/-time%23/hour
-share/refe/method_document/-time%23/httpdate
 share/refe/method_document/-time%23/isdst
-share/refe/method_document/-time%23/iso8601
 share/refe/method_document/-time%23/localtime
 share/refe/method_document/-time%23/mday
 share/refe/method_document/-time%23/min
 share/refe/method_document/-time%23/mon
 share/refe/method_document/-time%23/month
-share/refe/method_document/-time%23/rfc2822
-share/refe/method_document/-time%23/rfc822
 share/refe/method_document/-time%23/sec
-share/refe/method_document/-time%23/self
 share/refe/method_document/-time%23/strftime
 share/refe/method_document/-time%23/to_a
 share/refe/method_document/-time%23/to_f
@@ -3647,24 +3580,17 @@ share/refe/method_document/-time%23/utc
 share/refe/method_document/-time%23/utc%3f
 share/refe/method_document/-time%23/utc_offset
 share/refe/method_document/-time%23/wday
-share/refe/method_document/-time%23/xmlschema
 share/refe/method_document/-time%23/yday
 share/refe/method_document/-time%23/year
 share/refe/method_document/-time%23/zone
 share/refe/method_document/-time%2e/at
 share/refe/method_document/-time%2e/gm
-share/refe/method_document/-time%2e/httpdate
-share/refe/method_document/-time%2e/iso8601
 share/refe/method_document/-time%2e/local
 share/refe/method_document/-time%2e/mktime
 share/refe/method_document/-time%2e/new
 share/refe/method_document/-time%2e/now
-share/refe/method_document/-time%2e/parse
-share/refe/method_document/-time%2e/rfc2822
-share/refe/method_document/-time%2e/rfc822
 share/refe/method_document/-time%2e/times
 share/refe/method_document/-time%2e/utc
-share/refe/method_document/-time%2e/xmlschema
 share/refe/method_document/-tracer%2e/add_filter
 share/refe/method_document/-tracer%2e/off
 share/refe/method_document/-tracer%2e/on
@@ -3672,7 +3598,6 @@ share/refe/method_document/-tracer%2e/set_get_line_procs
 share/refe/method_document/-true-class%23/%26
 share/refe/method_document/-true-class%23/%5e
 share/refe/method_document/-true-class%23/%7c
-share/refe/method_document/-truncated-data-error%23/data
 share/refe/method_document/-u-d-p-socket%23/bind
 share/refe/method_document/-u-d-p-socket%23/connect
 share/refe/method_document/-u-d-p-socket%23/send
@@ -3706,8 +3631,8 @@ share/refe/method_document/-u-r-i%3a%3a-f-t-p%23/typecode%3d
 share/refe/method_document/-u-r-i%3a%3a-f-t-p%2e/build
 share/refe/method_document/-u-r-i%3a%3a-f-t-p%2e/new
 share/refe/method_document/-u-r-i%3a%3a-generic%23/%2b
+share/refe/method_document/-u-r-i%3a%3a-generic%23/%2d
 share/refe/method_document/-u-r-i%3a%3a-generic%23/%3d%3d
-share/refe/method_document/-u-r-i%3a%3a-generic%23/-
 share/refe/method_document/-u-r-i%3a%3a-generic%23/absolute%3f
 share/refe/method_document/-u-r-i%3a%3a-generic%23/component
 share/refe/method_document/-u-r-i%3a%3a-generic%23/default_port
@@ -3780,9 +3705,9 @@ share/refe/method_document/-unbound-method%23/to_proc
 share/refe/method_document/-unbound-method%23/unbind
 share/refe/method_document/-vector%23/%2a
 share/refe/method_document/-vector%23/%2b
+share/refe/method_document/-vector%23/%2d
 share/refe/method_document/-vector%23/%5b%5d
 share/refe/method_document/-vector%23/%5b%5d%3d
-share/refe/method_document/-vector%23/-
 share/refe/method_document/-vector%23/collect
 share/refe/method_document/-vector%23/collect2
 share/refe/method_document/-vector%23/covector
@@ -3844,17 +3769,10 @@ share/refe/method_document/-win32%3a%3a-registry%2e/-h-k-e-y_-p-e-r-f-o-r-m-a-n-
 share/refe/method_document/-win32-a-p-i%23/-call
 share/refe/method_document/-win32-a-p-i%23/call
 share/refe/method_document/-win32-a-p-i%2e/new
-share/refe/method_document/function%23/function%23-delegate-class
-share/refe/method_document/function%23/function%23b64encode
-share/refe/method_document/function%23/function%23decode64
-share/refe/method_document/function%23/function%23decode_b
-share/refe/method_document/function%23/function%23encode64
-share/refe/method_document/function%23/function%23timeout
 share/refe/method_document/man%2e/pack
 share/refe/method_document/man%2e/sprintf
 share/refe/method_document_comp
 @dirrm share/refe/method_document/man%2e
-@dirrm share/refe/method_document/function%23
 @dirrm share/refe/method_document/-win32-a-p-i%2e
 @dirrm share/refe/method_document/-win32-a-p-i%23
 @dirrm share/refe/method_document/-win32%3a%3a-registry%2e
@@ -3881,7 +3799,6 @@ share/refe/method_document_comp
 @dirrm share/refe/method_document/-u-n-i-x-server%23
 @dirrm share/refe/method_document/-u-d-p-socket%2e
 @dirrm share/refe/method_document/-u-d-p-socket%23
-@dirrm share/refe/method_document/-truncated-data-error%23
 @dirrm share/refe/method_document/-true-class%23
 @dirrm share/refe/method_document/-tracer%2e
 @dirrm share/refe/method_document/-time%2e
@@ -3942,8 +3859,6 @@ share/refe/method_document_comp
 @dirrm share/refe/method_document/-sized-queue%2e
 @dirrm share/refe/method_document/-sized-queue%23
 @dirrm share/refe/method_document/-singleton%23
-@dirrm share/refe/method_document/-simple-delegator%2e
-@dirrm share/refe/method_document/-simple-delegator%23
 @dirrm share/refe/method_document/-signal%2e
 @dirrm share/refe/method_document/-shellwords%2e
 @dirrm share/refe/method_document/-resolv%3a%3a-i-pv6%2e
@@ -3981,19 +3896,17 @@ share/refe/method_document_comp
 @dirrm share/refe/method_document/-r-u-n-i-t%3a%3a-assert%2e
 @dirrm share/refe/method_document/-queue%2e
 @dirrm share/refe/method_document/-queue%23
-@dirrm share/refe/method_document/-profiler__%2e
+@dirrm share/refe/method_document/-process%3a%3a-u-i-d%2e
+@dirrm share/refe/method_document/-process%3a%3a-sys%23
 @dirrm share/refe/method_document/-process%3a%3a-status%23
 @dirrm share/refe/method_document/-process%2e
 @dirrm share/refe/method_document/-proc%2e
 @dirrm share/refe/method_document/-proc%23
-@dirrm share/refe/method_document/-prime%2e
-@dirrm share/refe/method_document/-prime%23
 @dirrm share/refe/method_document/-pretty-print%2e
 @dirrm share/refe/method_document/-pretty-print%23
 @dirrm share/refe/method_document/-precision%2e
 @dirrm share/refe/method_document/-precision%23
 @dirrm share/refe/method_document/-ping%2e
-@dirrm share/refe/method_document/-parse-date%2e
 @dirrm share/refe/method_document/-p-store%2e
 @dirrm share/refe/method_document/-p-store%23
 @dirrm share/refe/method_document/-p-p%2e
@@ -4056,7 +3969,6 @@ share/refe/method_document_comp
 @dirrm share/refe/method_document/-local-jump-error%23
 @dirrm share/refe/method_document/-kernel%2e
 @dirrm share/refe/method_document/-kernel%23
-@dirrm share/refe/method_document/-kconv%2e
 @dirrm share/refe/method_document/-integer%2e
 @dirrm share/refe/method_document/-integer%23
 @dirrm share/refe/method_document/-included%2e
@@ -4100,9 +4012,6 @@ share/refe/method_document_comp
 @dirrm share/refe/method_document/-e-n-v%23
 @dirrm share/refe/method_document/-dir%2e
 @dirrm share/refe/method_document/-dir%23
-@dirrm share/refe/method_document/-delegator%23
-@dirrm share/refe/method_document/-data%2e
-@dirrm share/refe/method_document/-data%23
 @dirrm share/refe/method_document/-d-l%3a%3a-types%23
 @dirrm share/refe/method_document/-d-l%3a%3a-importable%3a%3a-struct%23
 @dirrm share/refe/method_document/-d-l%3a%3a-importable%3a%3a-memory%23
@@ -4561,5 +4470,3 @@ share/refe/method_document_comp
 @dirrm share/refe/class_document
 @dirrm share/refe
 @dirrm %%RUBY_SITELIBDIR%%/refe
-%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/ja
-%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%

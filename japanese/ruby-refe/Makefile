@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	refe
-PORTVERSION=	0.7.2
+PORTVERSION=	0.8.0
 CATEGORIES=	japanese lang ruby
-MASTER_SITES=	http://www.loveruby.net/archive/refe/
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	http://www.loveruby.net/archive/refe/${PORTNAME}/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DISTNAME=	${PORTNAME}-${PORTVERSION}-withdoc
 DIST_SUBDIR=	ruby
@@ -19,17 +18,12 @@ COMMENT=	Ruby Reference Referrer
 
 USE_RUBY=	yes
 USE_RUBY_SETUP=	yes
-RUBY_SETUP=	install.rb
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+WRKSRC=	${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 DOCS_EN=	ChangeLog	NEWS	TODO \
 		README.en
 DOCS_JA=	README.ja
-
-.include <bsd.port.pre.mk>
-
-PKGNAMEPREFIX:=	${PKGNAMEPREFIX}${RUBY_PKGNAMEPREFIX}
 
 post-install:
 .if !defined(NOPORTDOCS)
@@ -42,4 +36,4 @@ post-install:
 .endfor
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
