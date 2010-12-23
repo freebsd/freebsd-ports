@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	libtorrent-rasterbar
-PORTVERSION=	0.14.10
-PORTREVISION=	2
+PORTVERSION=	0.14.12
 CATEGORIES=	net-p2p ipv6
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 PROJECTHOST=	libtorrent
@@ -50,12 +49,6 @@ LDFLAGS=	${PTHREAD_LIBS}
 PORTDOCS=	*
 .endif
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 700000
-BROKEN=		does not compile on FreeBSD versions prior to 7.x
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|libdir)/pkgconfig|prefix)/libdata/pkgconfig|g' \
 		${WRKSRC}/Makefile.am
@@ -72,4 +65,4 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/docs/*.png ${DOCSDIR}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
