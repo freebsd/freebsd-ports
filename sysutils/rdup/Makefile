@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	rdup
-PORTVERSION=	1.1.8
+PORTVERSION=	1.1.10
 CATEGORIES=	sysutils
 MASTER_SITES=	http://miek.nl/projects/rdup/
 
