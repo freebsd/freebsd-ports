@@ -18,9 +18,14 @@ LICENSE:	GPLv2
 LIB_DEPENDS=	execinfo.1:${PORTSDIR}/devel/libexecinfo \
 		GeoIP.5:${PORTSDIR}/net/GeoIP
 
+NO_LATEST_LINK=	yes
+
 MAKE_JOBS_SAFE=	yes
 
-CONFLICTS=	qbittorrent*-2.3.*
+DEPRECATED=		Very stale version
+EXPIRATION_DATE=	2011-01-01
+
+CONFLICTS=	qbittorrent*-2.[3456789].*
 
 OPTIONS=	NOTIFY "Enable libnotify support" on \
 		LT_15 "Use 0.15 version of libtorrent-rasterbar" on
