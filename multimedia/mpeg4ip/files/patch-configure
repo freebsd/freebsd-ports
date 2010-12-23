@@ -1,6 +1,31 @@
---- configure.orig	Thu May 19 04:55:17 2005
-+++ configure	Thu May 19 04:56:09 2005
-@@ -26062,8 +26062,8 @@
+--- configure.orig	2010-12-09 12:24:43.000000000 -0800
++++ configure	2010-12-09 12:25:28.000000000 -0800
+@@ -24544,13 +24544,12 @@
+ fi
+ 
+ 
+-{ echo "$as_me:$LINENO: checking for getopt_long in -lgnugetopt" >&5
+-echo $ECHO_N "checking for getopt_long in -lgnugetopt... $ECHO_C" >&6; }
++{ echo "$as_me:$LINENO: checking for getopt_long in -lc" >&5
++echo $ECHO_N "checking for getopt_long in -lc... $ECHO_C" >&6; }
+ if test "${ac_cv_lib_gnugetopt_getopt_long+set}" = set; then
+   echo $ECHO_N "(cached) $ECHO_C" >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-lgnugetopt  $LIBS"
+ cat >conftest.$ac_ext <<_ACEOF
+ /* confdefs.h.  */
+ _ACEOF
+@@ -24610,8 +24609,6 @@
+ #define HAVE_LIBGNUGETOPT 1
+ _ACEOF
+ 
+-  LIBS="-lgnugetopt $LIBS"
+-
+ fi
+ 
+ { echo "$as_me:$LINENO: checking for library containing inet_addr" >&5
+@@ -26431,8 +26428,8 @@
    if test x$have_ffmpeg_arg = xtrue; then
       { echo "$as_me:$LINENO: have enable ffmpeg $enable_ffmpeg" >&5
  echo "$as_me: have enable ffmpeg $enable_ffmpeg" >&6;}
@@ -10,4 +35,4 @@
 +     FFMPEG_LIB="${enable_ffmpeg}/lib/libavcodec.a -lz"
       saveCFLAGS="$CFLAGS"
       CFLAGS="$CFLAGS $FFMPEG_INC"
-      echo "$as_me:$LINENO: checking for AVRational" >&5
+      { echo "$as_me:$LINENO: checking for AVRational" >&5
