@@ -7,6 +7,7 @@
 
 PORTNAME=	scilab
 PORTVERSION=	5.3.0
+PORTREVISION=	1
 CATEGORIES=	math cad parallel java
 MASTER_SITES=	http://www.scilab.org/download/${PORTVERSION}/:scilab \
 		http://www.predatorlabs.net/dl/:jgraphx \
@@ -35,7 +36,8 @@ FFLAGS+=	-fPIC
 
 OPTIONS=	ATLAS "Use Atlas instead of Blas" OFF \
 		FFTW "Use FFTW" ON \
-		GUI "Build GUI (requires Java and required for docs)" ON \
+		GUI "Build GUI (requires Java)" ON \
+		HELP "Help Browser (Java based, requires GUI)" ON \
 		NLS "Build localization" OFF \
 		MATIO "Matlab compatibility" OFF \
 		OCAML "Build ocaml modelica compiler (requires GUI)" OFF \
@@ -127,13 +129,18 @@ JAVA_RUN=	yes
 USE_XORG=	x11
 
 CONFIGURE_ARGS+=	--with-jdk=${JAVA_HOME} \
-			--with-docbook=${LOCALBASE}/share/xsl/docbook
+			--with-docbook=${LOCALBASE}/share/xsl/docbook \
+			--enable-build-help
 
 DESKTOP_ENTRIES=	"SciLab" \
 			"${COMMENT}" \
 			"${DATADIR}/icons/scilab.xpm" "scilab" \
 			"Application;Education;Math;" false
 
+.endif
+
+.if !defined(WITHOUT_HELP)
+ALL_TARGET=	all doc
 .endif
 
 .if defined(WITHOUT_FFTW)
@@ -213,7 +220,6 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|$$jardir/jeuclid-core*.jar|${LOCALBASE}/share/java/jeuclid/repo/jeuclid-core*.jar|' ${WRKSRC}/configure
 	@${MKDIR} ${WRKSRC}/thirdparty
 	@${CP} ${DISTDIR}/${JGRAPHX_JAR} ${WRKSRC}/thirdparty/jgraphx.jar
-	@${REINPLACE_CMD} -e 's|@JGRAPHX@|${DATADIR}/modules/jgraphx.jar|g' ${WRKSRC}/etc/classpath.xml.in
 	@# Run fixes
 	@${REINPLACE_CMD} -e 's|%%JAVALIBDIR%%|${JAVALIBDIR}|' ${WRKSRC}/etc/librarypath.xml
 	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|' ${WRKSRC}/etc/librarypath.xml
@@ -222,9 +228,10 @@ post-patch:
 .endif
 
 pre-install:
+	@${MKDIR} ${DATADIR}/.atoms
 .if !defined(WITHOUT_GUI)
 	@${MKDIR} ${DATADIR}/modules && ${INSTALL_DATA} ${DISTDIR}/${JGRAPHX_JAR} ${DATADIR}/modules/jgraphx.jar
-	@${MKDIR} ${DATADIR}/.atoms
+	@${REINPLACE_CMD} -e 's|${WRKSRC}/thirdparty/jgraphx.jar|${DATADIR}/modules/jgraphx.jar|g' ${WRKSRC}/etc/classpath.xml
 .endif
 
 post-install:
