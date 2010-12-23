@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	mlpy
-PORTVERSION=	2.2.1
-PORTREVISION=	1
+PORTVERSION=	2.2.2
 CATEGORIES=	science python
 MASTER_SITES=	https://mlpy.fbk.eu/download/src/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -16,11 +15,12 @@ DISTNAME=	MLPY-${PORTVERSION}
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	High performance Python package for predictive modeling
 
-BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/numpy:${PORTSDIR}/math/py-numpy
+BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/numpy:${PORTSDIR}/math/py-numpy \
+		cython>0:${PORTSDIR}/lang/cython
 RUN_DEPENDS=	${BUILD_DEPENDS}
 LIB_DEPENDS=	gsl.15:${PORTSDIR}/math/gsl
 
-CFLAGS+=	-I${LOCALBASE}/include
+CFLAGS+=	-I${LOCALBASE}/include -I${PYTHON_SITELIBDIR}/numpy/core
 LDFLAGS+=	-L${LOCALBASE}/lib
 MAKE_ENV+=	CFLAGS="${CFLAGS}" LDFLAGS="${LDFLAGS}"
 USE_PYTHON=	yes

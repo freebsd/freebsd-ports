@@ -50,6 +50,9 @@ bin/mlpy-test
 %%PYTHON_SITELIBDIR%%/mlpy/_irelief.py
 %%PYTHON_SITELIBDIR%%/mlpy/_irelief.pyc
 %%PYTHON_SITELIBDIR%%/mlpy/_irelief.pyo
+%%PYTHON_SITELIBDIR%%/mlpy/_iuwt.py
+%%PYTHON_SITELIBDIR%%/mlpy/_iuwt.pyc
+%%PYTHON_SITELIBDIR%%/mlpy/_iuwt.pyo
 %%PYTHON_SITELIBDIR%%/mlpy/_kernel.py
 %%PYTHON_SITELIBDIR%%/mlpy/_kernel.pyc
 %%PYTHON_SITELIBDIR%%/mlpy/_kernel.pyo
@@ -102,10 +105,13 @@ bin/mlpy-test
 %%PYTHON_SITELIBDIR%%/mlpy/elasticnet.so
 %%PYTHON_SITELIBDIR%%/mlpy/fssun.so
 %%PYTHON_SITELIBDIR%%/mlpy/hc.so
+%%PYTHON_SITELIBDIR%%/mlpy/irregularuwt.so
 %%PYTHON_SITELIBDIR%%/mlpy/gslpy.so
 %%PYTHON_SITELIBDIR%%/mlpy/kmeans.so
 %%PYTHON_SITELIBDIR%%/mlpy/kernel.so
 %%PYTHON_SITELIBDIR%%/mlpy/knn.so
+%%PYTHON_SITELIBDIR%%/mlpy/liblinear.so
+%%PYTHON_SITELIBDIR%%/mlpy/libsvm.so
 %%PYTHON_SITELIBDIR%%/mlpy/misc.so
 %%PYTHON_SITELIBDIR%%/mlpy/peaksd.so
 %%PYTHON_SITELIBDIR%%/mlpy/spectralreg.so
