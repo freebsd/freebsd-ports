@@ -5,6 +5,7 @@ bin/xine
 bin/xine-bugreport
 bin/xine-check
 bin/xine-remote
+share/applications/xine.desktop
 %%DOCSDIR%%/README.config_en
 %%DOCSDIR%%/README.cs.0.Introduction
 %%DOCSDIR%%/README.cs.10.Remote_control
@@ -63,7 +64,6 @@ share/icons/hicolor/48x48/apps/xine.png
 share/mime/packages/xine-ui.xml
 share/mime/text/x-xine.xml
 share/pixmaps/xine.xpm
-%%DATADIR%%/desktop/xine.desktop
 %%DATADIR%%/oxine/mainmenu
 %%DATADIR%%/oxine/mediamarks
 %%DATADIR%%/skins/xine-ui_logo.mpv
@@ -135,7 +135,6 @@ share/pixmaps/xine.xpm
 @dirrm %%DATADIR%%/skins/xinetic
 @dirrm %%DATADIR%%/skins
 @dirrm %%DATADIR%%/oxine
-@dirrm %%DATADIR%%/desktop
 @dirrmtry %%DATADIR%%
 @dirrmtry share/icons/hicolor/48x48/apps
 @dirrmtry share/icons/hicolor/48x48
@@ -149,6 +148,7 @@ share/pixmaps/xine.xpm
 @dirrmtry share/icons
 @dirrmtry share/doc/xitk
 @dirrm %%DOCSDIR%%
+@dirrmtry share/applications
 @dirrmtry man/pl/man1
 @dirrmtry man/pl
 @dirrmtry man/fr/man1
