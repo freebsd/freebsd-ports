@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	SQL-Abstract
-PORTVERSION=	1.71
+PORTVERSION=	1.72
 CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,7 +14,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension to generate SQL from Perl data structures
 
-BUILD_DEPENDS=	p5-Class-Accessor-Grouped>=0.09005:${PORTSDIR}/devel/p5-Class-Accessor-Grouped \
+BUILD_DEPENDS=	p5-Class-Accessor-Grouped>=0.10002:${PORTSDIR}/devel/p5-Class-Accessor-Grouped \
 		p5-Getopt-Long-Descriptive>=0.086:${PORTSDIR}/devel/p5-Getopt-Long-Descriptive \
 		p5-Hash-Merge>=0.12:${PORTSDIR}/textproc/p5-Hash-Merge
 RUN_DEPENDS:=	${BUILD_DEPENDS}
