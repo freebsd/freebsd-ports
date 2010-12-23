@@ -1,0 +1,4 @@
+@comment $FreeBSD$
+bin/downtimes
+sbin/downtimed
+@unexec /bin/rmdir /var/db/downtimed 2>/dev/null || true

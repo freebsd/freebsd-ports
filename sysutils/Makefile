@@ -171,6 +171,7 @@
     SUBDIR += dolly
     SUBDIR += dolly+
     SUBDIR += downtime
+    SUBDIR += downtimed
     SUBDIR += dt
     SUBDIR += dtc
     SUBDIR += dtpstree

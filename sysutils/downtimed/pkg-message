@@ -1,0 +1,13 @@
+===> IMPORTANT NOTE:
+
+    To set up downtimed, you need to edit one of the following
+    files:
+        /etc/rc.conf
+        /etc/rc.conf.local
+        /etc/rc.conf.d/downtimed
+
+    Add the following line to enable:
+        downtimed_enable="YES"
+
+    Add the following line to change the default options, see downtimed(8):
+        downtimed_flags="<set as needed>"
