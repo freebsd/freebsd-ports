@@ -199,3 +199,4 @@ libdata/pkgconfig/ruby-gtk2.pc
 %%PORTEXAMPLES%%@dirrmtry %%RUBY_EXAMPLESDIR%%
 %%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%
 %%PORTDOCS%%@dirrmtry %%RUBY_DOCDIR%%
+@dirrmtry %%RUBY_SITELIBDIR%%/gtk2
