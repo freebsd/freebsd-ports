@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Class-Accessor-Grouped
-PORTVERSION=	0.10000
+PORTVERSION=	0.10002
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -17,7 +17,7 @@ COMMENT=	Lets you build groups of accessors
 RUN_DEPENDS=	p5-Class-Inspector>=0:${PORTSDIR}/devel/p5-Class-Inspector \
 		p5-MRO-Compat>=0:${PORTSDIR}/devel/p5-MRO-Compat \
 		p5-Sub-Name>=0.05:${PORTSDIR}/devel/p5-Sub-Name \
-		p5-Class-XSAccessor>=1.06:${PORTSDIR}/devel/p5-Class-XSAccessor
+		p5-Class-XSAccessor>=1.11:${PORTSDIR}/devel/p5-Class-XSAccessor
 
 PERL_CONFIGURE=	5.8.0+
 
