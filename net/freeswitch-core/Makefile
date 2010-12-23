@@ -7,7 +7,7 @@
 
 PORTNAME=	freeswitch-core
 PORTVERSION=	201044
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.secure-computing.net/pub/freeswitch/ \
 		ftp://ftp2.secure-computing.net/pub/freeswitch/ \
@@ -82,7 +82,7 @@ OPTIONS=	MODSHOUT        "Enable mod_shout (streaming audio/mp3)" on \
 		MODDPDIRECTORY	"Enable mod_dialplan_directory" off \
 		MODDIRECTORY	"Enable mod_directory" on \
  		MODDINGALING	"Enable mod_dingaling(google talk)" on \
-		MODEASYROUTE	"Enable mod_easyroute(routeing tool)" on \
+		MODEASYROUTE	"Enable mod_easyroute(routing tool)" on \
 		MODERLANGEVENT  "Enable mod_erlang_event (Call Center Dist)" off \
 		MODFAX		"Enable mod_fax" on \
 		MODLCR		"Enable mod_lcr (least cost routing)" on \
@@ -121,7 +121,8 @@ OPTIONS=	MODSHOUT        "Enable mod_shout (streaming audio/mp3)" on \
 		MODSAYTH	"Enable mod_say_th (Thi support)" off \
 		MODSAYZH	"Enable mod_say_zh (Chinese support)" off \
 		EXTENSIONS	"Include Default User Extensions" off \
-		MODCALLCENTER	"Enable mod_callcenter (new)(test)" on
+		MODCALLCENTER	"Enable mod_callcenter (new)" on \
+		ZRTP		"ENABLE ZRTP (VOIP ENCRYPTION)(NEW)(TEST)" off
 
 .include <bsd.port.options.mk>
 
@@ -136,7 +137,7 @@ CFLAGS+=	-fPIC
 .for i in MODFLITE MODPOCKETSPHINX MODCIDLOOKUP MODDPDIRECTORY MODEASYROUTE MODLCR MODSOUNDTOUCH \
 	MODRSS MODSNOM MODAVMD MODVMD MODSPY MODAMRWB MODCELT MODMULTICAST MODPORTAUDIO MODCURL MODXMLCURL \
 	MODSAYDE MODSAYEN MODSAYES MODSAYFR MODSAYHU MODSAYIT MODSAYNL MODSAYRU MODSAYTH MODSAYZH \
-	MODNIBBLEBILL MODDINGALING MODDIRECTORY MODMEMCACHE MODPYTHON MODPASTREAM MODSHELLSTREAM \
+	MODNIBBLEBILL MODDINGALING MODDIRECTORY MODMEMCACHE MODPASTREAM MODSHELLSTREAM \
 	MODSILK MODUNIMRCP MODTTSCMDLINE MODDISTRIBUTOR MODSNAPSHOT MODSKINNY EXTENSIONS MODCALLCENTER MODCODEC2
 .if !defined(WITH_${i})
 PLIST_SUB+=	WITH_${i}="@comment "
@@ -186,6 +187,22 @@ PLIST_SUB+=	WITH_MODERLANGEVENT="@comment "
 .else
 PLIST_SUB+=	WITH_MODERLANGEVENT=""
 BUILD_DEPENDS+=	${LOCALBASE}/lib/erlang/usr/include/erl_driver.h:${PORTSDIR}/lang/erlang-lite
+.endif
+
+.if !defined(WITH_ZRTP)
+PLIST_SUB+=	WITH_ZRTP="@comment"
+.else
+PLIST_SUB+=	WITH_ZRTP=""
+CONFIGURE_ARGS+=	--enable-zrtp
+BUILD_DEPENDS+=	${LOCALBASE}/lib/libzrtp.a:${PORTSDIR}/devel/libzrtp
+RUN_DEPENDS+=	${LOCALBASE}/lib/libzrtp.a:${PORTSDIR}/devel/libzrtp
+.endif
+
+.if !defined(WITH_MODPYTHON)
+PLIST_SUB+=	WITH_MODPYTHON="@comment"
+.else
+PLIST_SUB+=	WITH_MODPYTHON=""
+USE_PYTHON=	yes
 .endif
 
 pre-configure:
