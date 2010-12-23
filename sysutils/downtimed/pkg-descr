@@ -1,0 +1,15 @@
+downtimed is a program that monitors operating system downtime, uptime,
+shutdowns and crashes and keeps records of those events.
+
+downtimed(8) is a daemon process which is intended to be started
+automatically from system boot scripts every time when the operating
+system of a server starts. First the daemon logs its findings about the
+previous downtime to a specified logging destination as well as in a
+database file which can be displayed with downtimes(1). After that the
+daemon just keeps waiting in the background and periodically updates
+a time stamp file on the disk.
+
+downtimes(1) is a command-line tool which can be used to inspect previous
+downtime records.
+
+WWW:	http://dist.epipe.com/downtimed/
