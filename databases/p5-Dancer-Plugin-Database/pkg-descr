@@ -1,0 +1,9 @@
+Dancer::Plugin::Database provides an easy way to obtain a connected DBI database
+handle by simply calling the database keyword within your Dancer application.
+
+Returns a Dancer::Plugin::Database::Handle object, which is a subclass of DBI's
+DBI::db connection handle object, so it does everything you'd expect to do with
+DBI, but also adds a few convenience methods. See the documentation for
+Dancer::Plugin::Database::Handle for full details of those.
+
+WWW: http://search.cpan.org/dist/Dancer-Plugin-Database
