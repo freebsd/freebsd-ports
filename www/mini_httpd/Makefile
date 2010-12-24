@@ -15,7 +15,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Small HTTP server with support for GET, HEAD, POST, CGI, SSL, IPv6
 
 .ifndef NO_SSL
-USE_OPENSSL=	YES
+MAKE_ARGS+=	-DUSE_OPENSSL
 .endif
 
 MAN8=		mini_httpd.8 htpasswd.8
