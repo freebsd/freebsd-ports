@@ -14,13 +14,15 @@ MASTER_SITES=	http://asm.sourceforge.net/asmutils/
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	A set of UNIX utilities written in x86 assembly language
 
+LICENSE=	GPLv2
+
 ONLY_FOR_ARCHS=	i386
 
 BUILD_DEPENDS=	nasm:${PORTSDIR}/devel/nasm
 
 USE_GMAKE=	yes
 
-# This will play merry hell with portlint
+# This will play merry hell with portlint(1)
 BINS=		bonus/asmutils basename cal cat chmod chown chroot cmp cp \
 		cpuinfo cut date dc dd deflate dirname du echo env \
 		bonus/execve extname factor fromdos ftpd getty grep head \
@@ -45,11 +47,8 @@ PORTDOCS=	*
 post-patch:
 	@${REINPLACE_CMD} -e 's,%%KERNEL%%,${OSREL:S/.//g},g' ${WRKSRC}/MCONFIG
 	@${REINPLACE_CMD} -e 's,^static ,,' ${WRKSRC}/lib/libm.c
-# Workaround for broken macro local labels in nasm v2.07+
-	@${REINPLACE_CMD} -e 's,%{$$strucname},&%+,' ${WRKSRC}/inc/elf.inc \
-		${WRKSRC}/inc/system.inc
 
-# Stripping binaries will break install
+# Stripping binaries will break installation
 STRIP=	#
 
 do-install:
@@ -79,7 +78,6 @@ do-install:
 		${LN} -sf fromdos todos && \
 		${LN} -sf mount umount && \
 		${LN} -sf sleep usleep)
-
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/[^i]* ${DOCSDIR}
