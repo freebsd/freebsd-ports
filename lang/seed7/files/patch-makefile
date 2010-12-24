@@ -1,8 +1,8 @@
---- makefile.orig	2009-07-04 13:27:03.000000000 +0200
-+++ makefile	2009-07-08 16:58:47.000000000 +0200
+--- makefile.orig	2010-12-13 23:22:07.000000000 +0000
++++ makefile	2010-12-24 10:11:19.000000000 +0000
 @@ -9,12 +9,12 @@
  # CFLAGS = -O2 -fomit-frame-pointer -Wall -Wstrict-prototypes -Winline -Wconversion -Wshadow -Wpointer-arith
- # CFLAGS = -O2 -fomit-frame-pointer -Wall -Wextra -Wswitch-default -Wswitch-enum -Wcast-qual -Waggregate-return -Wwrite-strings -Wstrict-prototypes -Winline -Wconversion -Wshadow -Wpointer-arith -Wmissing-noreturn -Wno-multichar
+ # CFLAGS = -O2 -g -Wall -Wextra -Wswitch-default -Wswitch-enum -Wcast-qual -Waggregate-return -Wwrite-strings -Wstrict-prototypes -Winline -Wconversion -Wshadow -Wpointer-arith -Wmissing-noreturn -Wno-multichar
  # CFLAGS = -O2 -fomit-frame-pointer -Wall -Wextra -Wswitch-default -Wcast-qual -Waggregate-return -Wwrite-strings -Winline -Wconversion -Wshadow -Wpointer-arith -Wmissing-noreturn -Wno-multichar
 -CFLAGS = -O2 -g -Wall -Wstrict-prototypes -Winline -Wconversion -Wshadow -Wpointer-arith
 +CFLAGS = -O2 -g -Wall -Wstrict-prototypes -Winline -Wconversion -Wshadow -Wpointer-arith -I%%LOCALBASE%%/include
@@ -10,8 +10,16 @@
  # CFLAGS = -O2 -g -pg -Wall -Wstrict-prototypes -Winline -Wconversion -Wshadow -Wpointer-arith
  # CFLAGS = -O2 -fomit-frame-pointer -funroll-loops -Wall
  # CFLAGS = -O2 -funroll-loops -Wall -pg
--LFLAGS =
-+LFLAGS = -L%%LOCALBASE%%/lib
- # LFLAGS = -pg
- # LFLAGS = -pg -lc_p
+-LDFLAGS =
++LDFLAGS = -L%%LOCALBASE%%/lib
+ # LDFLAGS = -pg
+ # LDFLAGS = -pg -lc_p
  # LIBS = /usr/Xlib/libX11.so -lncurses -lm
+@@ -102,6 +102,7 @@
+ 	$(MAKE) ../prg/hi
+ 	../bin/hi level
+ 
++.PHONY: hi
+ hi: ../bin/hi
+ 
+ ../prg/hi:

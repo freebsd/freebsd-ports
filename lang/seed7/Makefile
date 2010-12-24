@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	seed7
-DISTVERSION=	05_20101107
+DISTVERSION=	05_20101219
 CATEGORIES=	lang
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${DISTNAME}/
 DISTNAME=	${PORTNAME}_${DISTVERSION}
@@ -42,12 +42,12 @@ do-configure:
 	(cd ${WRKSRC} && ${GMAKE} depend)
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/hi ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/../bin/hi ${PREFIX}/bin
 	${INSTALL} -d ${PREFIX}/lib/${PORTNAME}
 	(cd ${WRKSRC}/../lib && ${COPYTREE_SHARE} \* ${PREFIX}/lib/${PORTNAME})
-	${INSTALL_DATA} ${WRKSRC}/s7_comp.a ${PREFIX}/lib/${PORTNAME}
-	${INSTALL_DATA} ${WRKSRC}/s7_data.a ${PREFIX}/lib/${PORTNAME}
-	${INSTALL_DATA} ${WRKSRC}/seed7_05.a ${PREFIX}/lib/${PORTNAME}
+	${INSTALL_DATA} ${WRKSRC}/../bin/s7_comp.a ${PREFIX}/lib/${PORTNAME}
+	${INSTALL_DATA} ${WRKSRC}/../bin/s7_data.a ${PREFIX}/lib/${PORTNAME}
+	${INSTALL_DATA} ${WRKSRC}/../bin/seed7_05.a ${PREFIX}/lib/${PORTNAME}
 
 post-install:
 .if !defined(NOPORTDOCS)
