@@ -9,6 +9,7 @@
 %%SITE_PERL%%/Font/TTF/Coverage.pm
 %%SITE_PERL%%/Font/TTF/Cvt_.pm
 %%SITE_PERL%%/Font/TTF/Delta.pm
+%%SITE_PERL%%/Font/TTF/DSIG.pm
 %%SITE_PERL%%/Font/TTF/Dumper.pm
 %%SITE_PERL%%/Font/TTF/EBDT.pm
 %%SITE_PERL%%/Font/TTF/EBLC.pm
@@ -56,6 +57,7 @@
 %%SITE_PERL%%/Font/TTF/Prep.pm
 %%SITE_PERL%%/Font/TTF/Prop.pm
 %%SITE_PERL%%/Font/TTF/Segarr.pm
+%%SITE_PERL%%/Font/TTF/Sill.pm
 %%SITE_PERL%%/Font/TTF/Table.pm
 %%SITE_PERL%%/Font/TTF/Ttc.pm
 %%SITE_PERL%%/Font/TTF/Ttopen.pm
