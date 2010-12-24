@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	activemq
-PORTVERSION=	5.4.1
+PORTVERSION=	5.4.2
 CATEGORIES=	net java
 MASTER_SITES=	http://www.sai.msu.su/apache/${MASTER_SITE_SUBDIR}/ \
 		${MASTER_SITE_APACHE}/${MASTER_SITE_SUBDIR}/
@@ -19,6 +19,7 @@ COMMENT=	Messaging and Integration Patterns provider
 NO_BUILD=	yes
 
 USE_JAVA=	yes
+LICENSE=	ASL
 JAVA_VERSION=	1.5+
 MQDATA=		${PREFIX}/lib/${PORTNAME}
 MQDB=		${PREFIX}/${PORTNAME}
