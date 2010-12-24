@@ -1399,6 +1399,7 @@
     SUBDIR += p5-Data-HashArray
     SUBDIR += p5-Data-HexDump
     SUBDIR += p5-Data-Hexdumper
+    SUBDIR += p5-Data-Hexify
     SUBDIR += p5-Data-Hierarchy
     SUBDIR += p5-Data-Integer
     SUBDIR += p5-Data-JavaScript-Anon
