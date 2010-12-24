@@ -1,0 +1,39 @@
+bin/gtkregcompare.pl
+bin/gtkregscope.pl
+bin/gtkregview.pl
+bin/regclassnames.pl
+bin/regdiff.pl
+bin/regdump.pl
+bin/regexport.pl
+bin/regfind.pl
+bin/regmultidiff.pl
+bin/regscan.pl
+bin/regsecurity.pl
+bin/regshell.pl
+bin/regstats.pl
+bin/regtimeline.pl
+bin/regtree.pl
+bin/wxregcompare.pl
+bin/wxregscope.pl
+bin/wxregview.pl
+%%SITE_PERL%%/Parse/Win32Registry.pm
+%%SITE_PERL%%/Parse/Win32Registry/Base.pm
+%%SITE_PERL%%/Parse/Win32Registry/Entry.pm
+%%SITE_PERL%%/Parse/Win32Registry/File.pm
+%%SITE_PERL%%/Parse/Win32Registry/Key.pm
+%%SITE_PERL%%/Parse/Win32Registry/Value.pm
+%%SITE_PERL%%/Parse/Win32Registry/Win95/File.pm
+%%SITE_PERL%%/Parse/Win32Registry/Win95/Key.pm
+%%SITE_PERL%%/Parse/Win32Registry/Win95/Value.pm
+%%SITE_PERL%%/Parse/Win32Registry/WinNT/Entry.pm
+%%SITE_PERL%%/Parse/Win32Registry/WinNT/File.pm
+%%SITE_PERL%%/Parse/Win32Registry/WinNT/Key.pm
+%%SITE_PERL%%/Parse/Win32Registry/WinNT/Security.pm
+%%SITE_PERL%%/Parse/Win32Registry/WinNT/Value.pm
+%%SITE_PERL%%/mach/auto/Parse/Win32Registry/.packlist
+@dirrm %%SITE_PERL%%/Parse/Win32Registry/Win95
+@dirrm %%SITE_PERL%%/Parse/Win32Registry/WinNT
+@dirrm %%SITE_PERL%%/Parse/Win32Registry
+@dirrmtry %%SITE_PERL%%/Parse
+@dirrm %%SITE_PERL%%/mach/auto/Parse/Win32Registry
+@dirrmtry %%SITE_PERL%%/mach/auto/Parse
