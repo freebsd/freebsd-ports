@@ -817,7 +817,6 @@ bin/django-admin.py
 %%PYTHON_SITELIBDIR%%/django/contrib/admin/templates/admin/prepopulated_fields_js.html
 %%PYTHON_SITELIBDIR%%/django/contrib/admin/templates/admin/search_form.html
 %%PYTHON_SITELIBDIR%%/django/contrib/admin/templates/admin/submit_line.html
-%%PYTHON_SITELIBDIR%%/django/contrib/admin/templates/admin/template_validator.html
 %%PYTHON_SITELIBDIR%%/django/contrib/admin/templates/registration/logged_out.html
 %%PYTHON_SITELIBDIR%%/django/contrib/admin/templates/registration/password_change_done.html
 %%PYTHON_SITELIBDIR%%/django/contrib/admin/templates/registration/password_change_form.html
@@ -856,9 +855,6 @@ bin/django-admin.py
 %%PYTHON_SITELIBDIR%%/django/contrib/admin/views/main.py
 %%PYTHON_SITELIBDIR%%/django/contrib/admin/views/main.pyc
 %%PYTHON_SITELIBDIR%%/django/contrib/admin/views/main.pyo
-%%PYTHON_SITELIBDIR%%/django/contrib/admin/views/template.py
-%%PYTHON_SITELIBDIR%%/django/contrib/admin/views/template.pyc
-%%PYTHON_SITELIBDIR%%/django/contrib/admin/views/template.pyo
 %%PYTHON_SITELIBDIR%%/django/contrib/admin/widgets.py
 %%PYTHON_SITELIBDIR%%/django/contrib/admin/widgets.pyc
 %%PYTHON_SITELIBDIR%%/django/contrib/admin/widgets.pyo
@@ -960,7 +956,9 @@ bin/django-admin.py
 %%PYTHON_SITELIBDIR%%/django/contrib/auth/tests/remote_user.py
 %%PYTHON_SITELIBDIR%%/django/contrib/auth/tests/remote_user.pyc
 %%PYTHON_SITELIBDIR%%/django/contrib/auth/tests/remote_user.pyo
+%%PYTHON_SITELIBDIR%%/django/contrib/auth/tests/templates/registration/logged_out.html
 %%PYTHON_SITELIBDIR%%/django/contrib/auth/tests/templates/registration/login.html
+%%PYTHON_SITELIBDIR%%/django/contrib/auth/tests/templates/registration/password_change_form.html
 %%PYTHON_SITELIBDIR%%/django/contrib/auth/tests/templates/registration/password_reset_complete.html
 %%PYTHON_SITELIBDIR%%/django/contrib/auth/tests/templates/registration/password_reset_confirm.html
 %%PYTHON_SITELIBDIR%%/django/contrib/auth/tests/templates/registration/password_reset_done.html
@@ -1413,6 +1411,9 @@ bin/django-admin.py
 %%PYTHON_SITELIBDIR%%/django/contrib/gis/geometry/regex.py
 %%PYTHON_SITELIBDIR%%/django/contrib/gis/geometry/regex.pyc
 %%PYTHON_SITELIBDIR%%/django/contrib/gis/geometry/regex.pyo
+%%PYTHON_SITELIBDIR%%/django/contrib/gis/geometry/test_data.py
+%%PYTHON_SITELIBDIR%%/django/contrib/gis/geometry/test_data.pyc
+%%PYTHON_SITELIBDIR%%/django/contrib/gis/geometry/test_data.pyo
 %%PYTHON_SITELIBDIR%%/django/contrib/gis/geos/__init__.py
 %%PYTHON_SITELIBDIR%%/django/contrib/gis/geos/__init__.pyc
 %%PYTHON_SITELIBDIR%%/django/contrib/gis/geos/__init__.pyo
@@ -1575,6 +1576,7 @@ bin/django-admin.py
 %%PYTHON_SITELIBDIR%%/django/contrib/gis/tests/data/counties/counties.dbf
 %%PYTHON_SITELIBDIR%%/django/contrib/gis/tests/data/counties/counties.shp
 %%PYTHON_SITELIBDIR%%/django/contrib/gis/tests/data/counties/counties.shx
+%%PYTHON_SITELIBDIR%%/django/contrib/gis/tests/data/geometries.json.gz
 %%PYTHON_SITELIBDIR%%/django/contrib/gis/tests/data/interstates/interstates.dbf
 %%PYTHON_SITELIBDIR%%/django/contrib/gis/tests/data/interstates/interstates.prj
 %%PYTHON_SITELIBDIR%%/django/contrib/gis/tests/data/interstates/interstates.shp
@@ -1592,9 +1594,6 @@ bin/django-admin.py
 %%PYTHON_SITELIBDIR%%/django/contrib/gis/tests/distapp/__init__.py
 %%PYTHON_SITELIBDIR%%/django/contrib/gis/tests/distapp/__init__.pyc
 %%PYTHON_SITELIBDIR%%/django/contrib/gis/tests/distapp/__init__.pyo
-%%PYTHON_SITELIBDIR%%/django/contrib/gis/tests/distapp/data.py
-%%PYTHON_SITELIBDIR%%/django/contrib/gis/tests/distapp/data.pyc
-%%PYTHON_SITELIBDIR%%/django/contrib/gis/tests/distapp/data.pyo
 %%PYTHON_SITELIBDIR%%/django/contrib/gis/tests/distapp/models.py
 %%PYTHON_SITELIBDIR%%/django/contrib/gis/tests/distapp/models.pyc
 %%PYTHON_SITELIBDIR%%/django/contrib/gis/tests/distapp/models.pyo
@@ -1619,7 +1618,7 @@ bin/django-admin.py
 %%PYTHON_SITELIBDIR%%/django/contrib/gis/tests/geoapp/feeds.py
 %%PYTHON_SITELIBDIR%%/django/contrib/gis/tests/geoapp/feeds.pyc
 %%PYTHON_SITELIBDIR%%/django/contrib/gis/tests/geoapp/feeds.pyo
-%%PYTHON_SITELIBDIR%%/django/contrib/gis/tests/geoapp/fixtures/initial_data.json
+%%PYTHON_SITELIBDIR%%/django/contrib/gis/tests/geoapp/fixtures/initial_data.json.gz
 %%PYTHON_SITELIBDIR%%/django/contrib/gis/tests/geoapp/models.py
 %%PYTHON_SITELIBDIR%%/django/contrib/gis/tests/geoapp/models.pyc
 %%PYTHON_SITELIBDIR%%/django/contrib/gis/tests/geoapp/models.pyo
@@ -1651,9 +1650,6 @@ bin/django-admin.py
 %%PYTHON_SITELIBDIR%%/django/contrib/gis/tests/geogapp/tests.py
 %%PYTHON_SITELIBDIR%%/django/contrib/gis/tests/geogapp/tests.pyc
 %%PYTHON_SITELIBDIR%%/django/contrib/gis/tests/geogapp/tests.pyo
-%%PYTHON_SITELIBDIR%%/django/contrib/gis/tests/geometries.py
-%%PYTHON_SITELIBDIR%%/django/contrib/gis/tests/geometries.pyc
-%%PYTHON_SITELIBDIR%%/django/contrib/gis/tests/geometries.pyo
 %%PYTHON_SITELIBDIR%%/django/contrib/gis/tests/layermap/__init__.py
 %%PYTHON_SITELIBDIR%%/django/contrib/gis/tests/layermap/__init__.pyc
 %%PYTHON_SITELIBDIR%%/django/contrib/gis/tests/layermap/__init__.pyo
@@ -1684,9 +1680,6 @@ bin/django-admin.py
 %%PYTHON_SITELIBDIR%%/django/contrib/gis/tests/test_spatialrefsys.py
 %%PYTHON_SITELIBDIR%%/django/contrib/gis/tests/test_spatialrefsys.pyc
 %%PYTHON_SITELIBDIR%%/django/contrib/gis/tests/test_spatialrefsys.pyo
-%%PYTHON_SITELIBDIR%%/django/contrib/gis/tests/urls.py
-%%PYTHON_SITELIBDIR%%/django/contrib/gis/tests/urls.pyc
-%%PYTHON_SITELIBDIR%%/django/contrib/gis/tests/urls.pyo
 %%PYTHON_SITELIBDIR%%/django/contrib/gis/tests/utils.py
 %%PYTHON_SITELIBDIR%%/django/contrib/gis/tests/utils.pyc
 %%PYTHON_SITELIBDIR%%/django/contrib/gis/tests/utils.pyo

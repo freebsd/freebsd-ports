@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	django
-PORTVERSION=	1.2.3
+PORTVERSION=	1.2.4
 CATEGORIES=	www python
 MASTER_SITES=	http://media.djangoproject.com/releases/${PORTVERSION:R}/ \
 		CHEESESHOP
@@ -67,12 +67,6 @@ RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}flup>0:${PORTSDIR}/www/py-flup
 .if defined(WITH_DOCS)
 BUILD_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}sphinx>0:${PORTSDIR}/textproc/py-sphinx
 PORTDOCS=	*
-.endif
-
-pre-patch:
-.if defined(WITH_DOCS)
-	${MKDIR} ${WRKSRC}/docs/_theme/djangodocs
-	${MKDIR} ${WRKSRC}/docs/_theme/static
 .endif
 
 post-build:
