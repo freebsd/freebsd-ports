@@ -700,6 +700,7 @@
 %%WWWDIR%%/config/constants.php
 %%WWWDIR%%/config/constants_ldap.php
 %%WWWDIR%%/config/database.php.original
+%%WWWDIR%%/config/ldap.php.original
 %%WWWDIR%%/contact.php
 %%WWWDIR%%/cron.verifyurls.php
 %%WWWDIR%%/docs/CHANGEDFILES
