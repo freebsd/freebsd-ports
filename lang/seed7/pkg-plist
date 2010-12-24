@@ -60,6 +60,7 @@ lib/seed7/stdfont24.s7i
 lib/seed7/strifile.s7i
 lib/seed7/stritext.s7i
 lib/seed7/syntax.s7i
+lib/seed7/tar.s7i
 lib/seed7/tee.s7i
 lib/seed7/time.s7i
 lib/seed7/upper.s7i
@@ -137,6 +138,7 @@ lib/seed7/zip.s7i
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/kbd.sd7
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/lander.sd7
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/mahjong.sd7
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/make7.sd7
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/mandelbr.sd7
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/mind.sd7
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ms.sd7
