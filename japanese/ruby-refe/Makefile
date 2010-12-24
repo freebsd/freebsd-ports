@@ -8,7 +8,8 @@
 PORTNAME=	refe
 PORTVERSION=	0.8.0
 CATEGORIES=	japanese lang ruby
-MASTER_SITES=	http://www.loveruby.net/archive/refe/${PORTNAME}/
+MASTER_SITES=	http://www.loveruby.net/archive/refe/${PORTNAME}/ \
+  LOCAL/pgollucci
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DISTNAME=	${PORTNAME}-${PORTVERSION}-withdoc
 DIST_SUBDIR=	ruby
