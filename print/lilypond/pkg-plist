@@ -145,7 +145,6 @@ lib/lilypond/%%PORTVERSION%%/python/midi.so
 %%DATADIR%%/%%PORTVERSION%%/ly/guile-debugger.ly
 %%DATADIR%%/%%PORTVERSION%%/ly/init.ly
 %%DATADIR%%/%%PORTVERSION%%/ly/italiano.ly
-%%DATADIR%%/%%PORTVERSION%%/ly/language-init.ly
 %%DATADIR%%/%%PORTVERSION%%/ly/lilypond-book-preamble.ly
 %%DATADIR%%/%%PORTVERSION%%/ly/makam.ly
 %%DATADIR%%/%%PORTVERSION%%/ly/midi-init.ly
@@ -219,6 +218,7 @@ lib/lilypond/%%PORTVERSION%%/python/midi.so
 %%DATADIR%%/%%PORTVERSION%%/scm/define-music-display-methods.scm
 %%DATADIR%%/%%PORTVERSION%%/scm/define-music-properties.scm
 %%DATADIR%%/%%PORTVERSION%%/scm/define-music-types.scm
+%%DATADIR%%/%%PORTVERSION%%/scm/define-note-names.scm
 %%DATADIR%%/%%PORTVERSION%%/scm/define-stencil-commands.scm
 %%DATADIR%%/%%PORTVERSION%%/scm/define-woodwind-diagrams.scm
 %%DATADIR%%/%%PORTVERSION%%/scm/display-lily.scm
