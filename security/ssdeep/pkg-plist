@@ -1,0 +1,6 @@
+bin/ssdeep
+include/fuzzy.h
+lib/libfuzzy.a
+lib/libfuzzy.la
+lib/libfuzzy.so
+lib/libfuzzy.so.2
