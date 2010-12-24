@@ -10,6 +10,7 @@ DISTVERSION=	1.3.1
 PORTEPOCH=	1
 CATEGORIES=	net-p2p python
 MASTER_SITES=	http://download.deluge-torrent.org/source/
+EXTRACT_SUFX=	.tar.lzma
 
 MAINTAINER=	lioux@FreeBSD.org
 COMMENT=	Bittorrent client using Python, GTK+2 and libtorrent-rasterbar
@@ -30,7 +31,7 @@ RUN_DEPENDS=	boost-python-libs>=1.41.0:${PORTSDIR}/devel/boost-python-libs \
 USE_RC_SUBR=	deluged
 SUB_LIST+=	PYTHON_CMD=${PYTHON_CMD}
 
-USE_BZIP2=	yes
+USE_XZ=		yes
 WANT_GNOME=	yes
 USE_GETTEXT=	yes
 USE_OPENSSL=	yes
