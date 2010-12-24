@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	Font-TTF
-PORTVERSION=	0.45
-PORTREVISION=	1
+PORTVERSION=	0.48
 CATEGORIES=	x11-fonts perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -75,6 +74,7 @@ MAN3=	\
 	Font::TTF::Prep.3 \
 	Font::TTF::Prop.3 \
 	Font::TTF::Segarr.3 \
+	Font::TTF::Sill.3 \
 	Font::TTF::Table.3 \
 	Font::TTF::Ttc.3 \
 	Font::TTF::Ttopen.3 \
