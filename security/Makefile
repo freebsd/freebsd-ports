@@ -819,6 +819,7 @@
     SUBDIR += srm
     SUBDIR += srp
     SUBDIR += sscep
+    SUBDIR += ssdeep
     SUBDIR += ssh
     SUBDIR += ssh-gui
     SUBDIR += ssh-multiadd

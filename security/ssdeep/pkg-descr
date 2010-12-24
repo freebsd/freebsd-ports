@@ -1,0 +1,6 @@
+ssdeep is a tool for computing context triggered piecewise hashes.
+Unlike other hash calculators such as md5, it supports partial match between
+the original file and modified/truncated files. It can also compute the
+degree of similarity between files.
+
+WWW: http://ssdeep.sourceforge.net/
