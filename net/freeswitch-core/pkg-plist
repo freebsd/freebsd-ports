@@ -351,6 +351,7 @@ lib/freeswitch/mod/mod_native_file.so
 %%WITH_MODPASTREAM%%lib/freeswitch/mod/mod_portaudio_stream.so
 %%WITH_MODPYTHON%%lib/freeswitch/mod/mod_python.la
 %%WITH_MODPYTHON%%lib/freeswitch/mod/mod_python.so
+%%WITH_MODPYTHON%%%%PYTHON_SITELIBDIR%%/freeswitch.py
 %%WITH_MODRSS%%lib/freeswitch/mod/mod_rss.la
 %%WITH_MODRSS%%lib/freeswitch/mod/mod_rss.so
 %%WITH_MODSAYDE%%lib/freeswitch/mod/mod_say_de.la

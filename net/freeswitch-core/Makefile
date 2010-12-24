@@ -7,7 +7,7 @@
 
 PORTNAME=	freeswitch-core
 PORTVERSION=	201044
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.secure-computing.net/pub/freeswitch/ \
 		ftp://ftp2.secure-computing.net/pub/freeswitch/ \
@@ -190,7 +190,7 @@ BUILD_DEPENDS+=	${LOCALBASE}/lib/erlang/usr/include/erl_driver.h:${PORTSDIR}/lan
 .endif
 
 .if !defined(WITH_ZRTP)
-PLIST_SUB+=	WITH_ZRTP="@comment"
+PLIST_SUB+=	WITH_ZRTP="@comment "
 .else
 PLIST_SUB+=	WITH_ZRTP=""
 CONFIGURE_ARGS+=	--enable-zrtp
@@ -199,7 +199,7 @@ RUN_DEPENDS+=	${LOCALBASE}/lib/libzrtp.a:${PORTSDIR}/devel/libzrtp
 .endif
 
 .if !defined(WITH_MODPYTHON)
-PLIST_SUB+=	WITH_MODPYTHON="@comment"
+PLIST_SUB+=	WITH_MODPYTHON="@comment "
 .else
 PLIST_SUB+=	WITH_MODPYTHON=""
 USE_PYTHON=	yes
