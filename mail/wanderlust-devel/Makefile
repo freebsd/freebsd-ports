@@ -9,12 +9,16 @@ PORTNAME=	wanderlust
 PORTVERSION=	2.15.9.b.${SNAPDATE}
 CATEGORIES=	mail elisp
 MASTER_SITES=	http://www.jpl.org/elips/wl/snapshots/ \
-	http://people.freebsd.org/~nobutaka/
+		${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	nobutaka
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
 DISTNAME=	wanderlust-${SNAPDATE}${SNAPTIME}
 
 MAINTAINER=	nobutaka@FreeBSD.org
 COMMENT=	Yet another message interface on Emacsen
+
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 USE_EMACS=	yes
 
