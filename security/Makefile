@@ -282,6 +282,7 @@
     SUBDIR += linux-openssl
     SUBDIR += linux-pam-docs
     SUBDIR += lockdown
+    SUBDIR += log2timeline
     SUBDIR += logcheck
     SUBDIR += lsh
     SUBDIR += luasec
