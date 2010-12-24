@@ -1,0 +1,5 @@
+%%SITE_PERL%%/Data/Hexify.pm
+%%SITE_PERL%%/mach/auto/Data/Hexify/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/Hexify
+@dirrmtry %%SITE_PERL%%/Data
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data
