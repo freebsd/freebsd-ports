@@ -89,7 +89,7 @@ you update your ports collection, before attempting any port upgrades.
   AFFECTS: users of multimedia/avidemux2
   AUTHOR: nox@FreeBSD.org
 
-  The port has been updated to 2.5.4 which now installs plugins seperately
+  The port has been updated to 2.5.4 which now installs plugins separately
   and I had to make a slave port for them, multimedia/avidemux2-plugins.
   So you'll now have to install that port too for the app to become useful.
 
