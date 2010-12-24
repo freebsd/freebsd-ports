@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	flightgear-mb339-pan
-PORTVERSION=	2.0
-PORTREVISION=	2
+PORTVERSION=	2.1
 CATEGORIES=	games
 MASTER_SITES=	http://hcilab.uniud.it/pan/downloads/
 DISTNAME=	mb339pan
