@@ -1,18 +1,18 @@
---- Makefile.orig	Thu Oct 30 22:53:07 2003
-+++ Makefile	Thu Oct 30 23:03:24 2003
-@@ -14,17 +14,18 @@
+--- Makefile.orig	2002-11-01 23:02:57.000000000 +0000
++++ Makefile	2010-12-23 14:02:54.000000000 +0000
+@@ -14,17 +14,20 @@
  # http://www.openssl.org/  Make sure the SSL_TREE definition points to the
  # tree with your OpenSSL installation - depending on how you installed it,
  # it may be in /usr/local instead of /usr/local/ssl.
-+.ifndef NO_OPENSSL
++.ifdef USE_OPENSSL
  #SSL_TREE =	/usr/local/ssl
 -#SSL_DEFS =	-DUSE_SSL
 +SSL_DEFS =	-DUSE_SSL
  #SSL_INC =	-I${SSL_TREE}/include
--#SSL_LIBS =	-L${SSL_TREE}/lib -lssl -lcrypto
--
+ #SSL_LIBS =	-L${SSL_TREE}/lib -lssl -lcrypto
 +SSL_LIBS =	-lssl -lcrypto
 +.endif
+ 
  
  BINDIR =	/usr/local/sbin
  MANDIR =	/usr/local/man
@@ -24,7 +24,7 @@
  #CFLAGS =	-g ${CDEFS}
  LDFLAGS =	-s
  #LDFLAGS =	-g
-@@ -76,9 +77,7 @@
+@@ -76,9 +79,7 @@
  	-mkdir -p ${BINDIR}
  	cp mini_httpd htpasswd ${BINDIR}
  	rm -f ${MANDIR}/man8/mini_httpd.8 ${MANDIR}/man1/htpasswd.1
