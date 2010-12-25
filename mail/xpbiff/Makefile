@@ -7,7 +7,7 @@
 
 PORTNAME?=	xpbiff
 PORTVERSION?=	1.27
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.ics.es.osaka-u.ac.jp/pub/xpbiff/
 DISTNAME=	xpbiff
@@ -29,10 +29,6 @@ YOUBINBINDIR=	${LOCALBASE}
 .endif
 
 .include <bsd.port.pre.mk>
-
-.if ${ARCH} != "i386"
-BROKEN=		Does not compile on !i386
-.endif
 
 do-extract:
 	@${RM} -rf ${WRKDIR}
