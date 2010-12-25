@@ -4,15 +4,9 @@
 #
 # $FreeBSD$
 #
-# Available KNOBs:
-#
-# WITH_DEBUG   - Enable debugging features.
-# WITH_IOPERM  - Use i386_set_ioperm(2) instead of io(4) to gain access
-#                to I/O ports (i386/amd64 only).
-#
 
 PORTNAME=	freeipmi
-PORTVERSION=	0.8.11
+PORTVERSION=	0.8.12
 CATEGORIES=	sysutils
 MASTER_SITES=	GNU/${PORTNAME}/ \
 		http://ftp.gluster.com/pub/${PORTNAME}/${PORTVERSION}/ \
