@@ -827,6 +827,10 @@ lib/libfxt.a
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/partition-gen-demo.cc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/pascal-demo.cc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/pascal-out.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/partition-lex-rec-out.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/partition-dist-lex-rec-demo.cc
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/partition-dist-lex-rec-out.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/partition-lex-rec-demo.cc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/pellgen-gray-demo.cc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/pellgen-gray-out.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/pellgray-rec-demo.cc
