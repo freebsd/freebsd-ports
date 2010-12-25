@@ -27,6 +27,9 @@ USE_JAVA=	yes
 JAVA_VERSION=	1.4+
 USE_ANT=	yes
 
+# Prevent out of memory error during build
+MAKE_ENV+=	"ANT_OPTS=-Xmx512m"
+
 post-extract:
 	@cd ${WRKDIR} && ${UNZIP_CMD} ${DISTDIR}/offo-hyphenation.zip
 	@${CP} ${WRKDIR}/offo-hyphenation/hyph/*.xml ${WRKSRC}/hyph
