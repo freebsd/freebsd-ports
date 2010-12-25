@@ -387,6 +387,7 @@
     SUBDIR += p5-DBIx-Skinny-Schema-Loader
     SUBDIR += p5-DBIx-Table
     SUBDIR += p5-DBIx-TableHash
+    SUBDIR += p5-DBIx-TransactionManager
     SUBDIR += p5-DBIx-Tree
     SUBDIR += p5-DBIx-VersionedDDL
     SUBDIR += p5-DBIx-XHTML_Table
