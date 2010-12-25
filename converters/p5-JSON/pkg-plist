@@ -1,10 +1,9 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/JSON/.packlist
 %%SITE_PERL%%/JSON.pm
-%%SITE_PERL%%/JSON/PP.pm
-%%SITE_PERL%%/JSON/PP56.pm
-%%SITE_PERL%%/JSON/PP58.pm
-%%SITE_PERL%%/JSON/PP5005.pm
-%%SITE_PERL%%/JSON/PP/Boolean.pm
+%%SITE_PERL%%/JSON/backportPP.pm
+%%SITE_PERL%%/JSON/backportPP/Boolean.pm
+%%SITE_PERL%%/JSON/backportPP/Compat5005.pm
+%%SITE_PERL%%/JSON/backportPP/Compat5006.pm
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/JSON
-@dirrmtry %%SITE_PERL%%/JSON/PP
+@dirrmtry %%SITE_PERL%%/JSON/backportPP
 @dirrmtry %%SITE_PERL%%/JSON
