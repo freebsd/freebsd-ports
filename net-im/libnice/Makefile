@@ -7,7 +7,7 @@
 
 PORTNAME=	libnice
 PORTVERSION=	0.0.13
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net-im devel
 MASTER_SITES=	http://nice.freedesktop.org/releases/
 
