@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ncid
-PORTVERSION=	0.78
+PORTVERSION=	0.80
 CATEGORIES=	comms
 MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
@@ -16,9 +16,9 @@ COMMENT=	Network based Caller ID package
 
 USE_TK=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
-MAN1=		ncid.1 ncidrotate.1 yac2ncid.1 ncidmodules.1 ncidtools.1
+MAN1=		ncid.1 ncid2ncid.1 ncidrotate.1 yac2ncid.1 ncidmodules.1 ncidtools.1
 MAN5=		ncid.conf.5 ncidmodules.conf.5 ncidd.alias.5 ncidrotate.conf.5 \
-		ncidsip.conf.5 sip2ncid.conf.5 ncidd.conf.5 yac2ncid.conf.5
+		ncidsip.conf.5 sip2ncid.conf.5 ncidd.conf.5 ncid2ncid.conf.5 yac2ncid.conf.5
 MAN8=		ncidd.8 ncidsip.8 sip2ncid.8
 
 USE_GMAKE=	yes
@@ -37,7 +37,7 @@ post-patch:
 	@${FIND} ${WRKSRC}/ -name Makefile|${XARGS} ${REINPLACE_CMD} -Ee\
 		'/install:/s,install-(etc|logrotate),,'
 	@${REINPLACE_CMD} -Ee '/mkdir.*(INIT|ROTATE|BIN|LOG|ETC)/d;\
-		/CFLAGS.*=/s|=|+=|;s|-O||' ${WRKSRC}/Makefile
+		/CFLAGS.*=/s|=|+=|' ${WRKSRC}/Makefile
 # Respect PREFIX/MANPREFIX/DATADIR
 	@${REINPLACE_CMD} -e's|prefix.*= /usr/local|prefix=$${PREFIX}|g' \
 		-e 's|$$(prefix)/bin|$${PREFIX}/bin|g' \
