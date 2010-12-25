@@ -7,10 +7,10 @@ lib/libquvi.so
 lib/libquvi.so.%%SHLIB_VER%%
 libdata/pkgconfig/libquvi.pc
 %%PORTDOCS%%%%DOCSDIR%%/CodingStyle
-%%PORTDOCS%%%%DOCSDIR%%/HowtoContributeCode
 %%PORTDOCS%%%%DOCSDIR%%/HowtoGetDevelopmentCode
 %%PORTDOCS%%%%DOCSDIR%%/HowtoHelp
 %%PORTDOCS%%%%DOCSDIR%%/HowtoSubmitPatches
+%%PORTDOCS%%%%DOCSDIR%%/HowtoWriteWebsiteScript
 %%DATADIR%%/lua/README
 %%DATADIR%%/lua/util/charset.lua
 %%DATADIR%%/lua/util/content_type.lua
@@ -21,7 +21,6 @@ libdata/pkgconfig/libquvi.pc
 %%DATADIR%%/lua/website/break.lua
 %%DATADIR%%/lua/website/buzzhumor.lua
 %%DATADIR%%/lua/website/cbsnews.lua
-%%DATADIR%%/lua/website/cctv.lua
 %%DATADIR%%/lua/website/charlierose.lua
 %%DATADIR%%/lua/website/clipfish.lua
 %%DATADIR%%/lua/website/collegehumor.lua
@@ -29,6 +28,7 @@ libdata/pkgconfig/libquvi.pc
 %%DATADIR%%/lua/website/funnyhub.lua
 %%DATADIR%%/lua/website/funnyordie.lua
 %%DATADIR%%/lua/website/gaskrank.lua
+%%DATADIR%%/lua/website/globo.lua
 %%DATADIR%%/lua/website/golem.lua
 %%DATADIR%%/lua/website/google.lua
 %%DATADIR%%/lua/website/liveleak.lua
