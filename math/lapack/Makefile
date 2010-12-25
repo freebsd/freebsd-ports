@@ -14,6 +14,7 @@ MASTER_SITES=	ftp://ftp.netlib.org/lapack/ \
 		http://scicomp.ewha.ac.kr/netlib/lapack/ \
 		http://service-spi.web.cern.ch/service-spi/external/tarFiles/
 DISTFILES=	lapack-${PORTVERSION}.tgz manpages-3.2.0.tgz
+DIST_SUBDIR=	lapack
 
 MAINTAINER=	maho@FreeBSD.org
 COMMENT=	A library of Fortran 77 subroutines for linear algebra
@@ -21,7 +22,6 @@ COMMENT=	A library of Fortran 77 subroutines for linear algebra
 LIB_DEPENDS=	blas.2:${PORTSDIR}/math/blas
 
 USE_FORTRAN=	yes
-DIST_SUBDIR=	lapack
 USE_LDCONFIG=	yes
 
 OPTIONS=	PROFILE "Build and install profiling libraries" Off
@@ -77,7 +77,6 @@ post-patch:
 			  -e 's;%%BLAS%%;${BLAS};g' \
 				${WRKSRC}/make.inc
 	@${CP} -r ${WRKSRC} ${WRKSRC_SHARED}
-	@(cd ${WRKSRC_SHARED}; ${PATCH} <${FILESDIR}/shared-patch-SRC+Makefile)
 .if !(defined(NOPROFILE) || defined(NO_PROFILE) || defined(WITHOUT_PROFILE))
 	@${CP} -r ${WRKSRC} ${WRKSRC_PROFILE}
 .endif
