@@ -6,6 +6,7 @@
 %%SITE_PERL%%/Facebook/Graph/Cookbook.pod
 %%SITE_PERL%%/Facebook/Graph/Cookbook/Recipe1.pod
 %%SITE_PERL%%/Facebook/Graph/Cookbook/Recipe2.pod
+%%SITE_PERL%%/Facebook/Graph/Exception.pm
 %%SITE_PERL%%/Facebook/Graph/Picture.pm
 %%SITE_PERL%%/Facebook/Graph/Publish.pm
 %%SITE_PERL%%/Facebook/Graph/Publish/Comment.pm

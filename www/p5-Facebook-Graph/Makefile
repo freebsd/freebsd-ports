@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Facebook-Graph
-PORTVERSION=	0.0705
+PORTVERSION=	1.0000
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	../../authors/id/R/RI/RIZEN
@@ -20,6 +20,7 @@ RUN_DEPENDS=	\
 	p5-Crypt-SSLeay>=0.57:${PORTSDIR}/security/p5-Crypt-SSLeay \
 	p5-DateTime>=0.61:${PORTSDIR}/devel/p5-DateTime \
 	p5-DateTime-Format-Strptime>=1.4000:${PORTSDIR}/devel/p5-DateTime-Format-Strptime \
+	p5-Exception-Class>=1.32:${PORTSDIR}/devel/p5-Exception-Class \
 	p5-JSON>=2.16:${PORTSDIR}/converters/p5-JSON \
 	p5-libwww>=5.836:${PORTSDIR}/www/p5-libwww \
 	p5-MIME-Base64-URLSafe>=0.01:${PORTSDIR}/converters/p5-MIME-Base64-URLSafe \
@@ -36,6 +37,7 @@ MAN3=	Facebook::Graph.3 \
 	Facebook::Graph::Cookbook.3 \
 	Facebook::Graph::Cookbook::Recipe1.3 \
 	Facebook::Graph::Cookbook::Recipe2.3 \
+	Facebook::Graph::Exception.3 \
 	Facebook::Graph::Picture.3 \
 	Facebook::Graph::Publish.3 \
 	Facebook::Graph::Publish::Comment.3 \
