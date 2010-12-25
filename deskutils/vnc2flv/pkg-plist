@@ -1,0 +1,26 @@
+bin/flvaddmp3.py
+bin/flvcat.py
+bin/flvdump.py
+bin/flvrec.py
+bin/flvsplit.py
+bin/recordwin.sh
+%%PYTHON_SITELIBDIR%%/flvscreen.so
+%%PYTHON_SITELIBDIR%%/vnc2flv/__init__.py
+%%PYTHON_SITELIBDIR%%/vnc2flv/__init__.pyc
+%%PYTHON_SITELIBDIR%%/vnc2flv/__init__.pyo
+%%PYTHON_SITELIBDIR%%/vnc2flv/audio.py
+%%PYTHON_SITELIBDIR%%/vnc2flv/audio.pyc
+%%PYTHON_SITELIBDIR%%/vnc2flv/audio.pyo
+%%PYTHON_SITELIBDIR%%/vnc2flv/d3des.py
+%%PYTHON_SITELIBDIR%%/vnc2flv/d3des.pyc
+%%PYTHON_SITELIBDIR%%/vnc2flv/d3des.pyo
+%%PYTHON_SITELIBDIR%%/vnc2flv/flv.py
+%%PYTHON_SITELIBDIR%%/vnc2flv/flv.pyc
+%%PYTHON_SITELIBDIR%%/vnc2flv/flv.pyo
+%%PYTHON_SITELIBDIR%%/vnc2flv/rfb.py
+%%PYTHON_SITELIBDIR%%/vnc2flv/rfb.pyc
+%%PYTHON_SITELIBDIR%%/vnc2flv/rfb.pyo
+%%PYTHON_SITELIBDIR%%/vnc2flv/video.py
+%%PYTHON_SITELIBDIR%%/vnc2flv/video.pyc
+%%PYTHON_SITELIBDIR%%/vnc2flv/video.pyo
+@dirrm %%PYTHON_SITELIBDIR%%/vnc2flv
