@@ -18,8 +18,8 @@
 %%DOCSDIR%%/%%DOCLANG%%/articles/dialup-firewall/kernel.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/dialup-firewall/rcconf.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/dialup-firewall/rules.html
-%%DOCSDIR%%/%%DOCLANG%%/articles/dialup-firewall/x73.html
-%%DOCSDIR%%/%%DOCLANG%%/articles/dialup-firewall/x94.html
+%%DOCSDIR%%/%%DOCLANG%%/articles/dialup-firewall/x72.html
+%%DOCSDIR%%/%%DOCLANG%%/articles/dialup-firewall/x93.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/explaining-bsd/TRADEMARKS.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/explaining-bsd/comparing-bsd-and-linux.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/explaining-bsd/index.html
@@ -63,7 +63,7 @@
 %%DOCSDIR%%/%%DOCLANG%%/articles/multi-os/ch5.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/multi-os/index.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/multi-os/sources.html
-%%DOCSDIR%%/%%DOCLANG%%/articles/multi-os/x220.html
+%%DOCSDIR%%/%%DOCLANG%%/articles/multi-os/x219.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/version-guide/TRADEMARKS.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/version-guide/conclusion.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/version-guide/decision-points.html
@@ -443,4 +443,4 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/x-xdm.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/x11-wm.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/x11.html
-%%DOCSDIR%%/%%DOCLANG%%/books/handbook/x45673.html
+%%DOCSDIR%%/%%DOCLANG%%/books/handbook/x45663.html
