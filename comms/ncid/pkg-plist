@@ -2,6 +2,7 @@ sbin/ncidd
 sbin/ncidsip
 sbin/sip2ncid
 bin/ncid
+bin/ncid2ncid
 bin/cidalias
 bin/cidcall
 bin/cidupdate
@@ -18,6 +19,7 @@ etc/rc.d/yac2ncid
 etc/rc.d/ncid-mythtv
 etc/rc.d/ncid-speak
 etc/rc.d/ncidd
+etc/rc.d/ncid2ncid
 etc/rc.d/sip2ncid
 %%DATADIR%%/ncid-initmodem
 %%DATADIR%%/ncidrotate
