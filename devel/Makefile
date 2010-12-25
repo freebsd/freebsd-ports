@@ -1478,6 +1478,7 @@
     SUBDIR += p5-DateTime-Event-Recurrence
     SUBDIR += p5-DateTime-Event-SolarTerm
     SUBDIR += p5-DateTime-Event-Sunrise
+    SUBDIR += p5-DateTime-Event-Zodiac
     SUBDIR += p5-DateTime-Fiscal-Year
     SUBDIR += p5-DateTime-Format-Baby
     SUBDIR += p5-DateTime-Format-Bork
