@@ -11,7 +11,7 @@ CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	skreuzer@freebsd.org
+MAINTAINER=	skreuzer@FreeBSD.org
 COMMENT=	Do interesting things with the contents of tables
 
 RUN_DEPENDS=	p5-HTML-Parser>=3.68:${PORTSDIR}/www/p5-HTML-Parser

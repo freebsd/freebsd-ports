@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	japanese
 MASTER_SITES=	http://www.yk.rim.or.jp/~kawagisi/
 
-MAINTAINER=	daichi@freebsd.org
+MAINTAINER=	daichi@FreeBSD.org
 COMMENT=	Yet another Honyaku-Damashii client with rich functionality
 
 RUN_DEPENDS=	${LOCALBASE}/bin/wish8.0jp:${PORTSDIR}/japanese/tk80

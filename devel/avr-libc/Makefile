@@ -13,7 +13,7 @@ CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SAVANNAH}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	joerg@freebsd.org
+MAINTAINER=	joerg@FreeBSD.org
 COMMENT=	A C and math library for the Atmel AVR controller family
 
 BUILD_DEPENDS=	avr-as:${PORTSDIR}/devel/avr-binutils \

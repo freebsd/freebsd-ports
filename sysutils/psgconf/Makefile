@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://ftp-dev.cites.uiuc.edu/pub/psgconf/
 
-MAINTAINER=	pirzyk@freebsd.org
+MAINTAINER=	pirzyk@FreeBSD.org
 COMMENT=	Controls system configuration
 
 BUILD_DEPENDS=	${SITE_PERL}/Config/Objective.pm:${PORTSDIR}/devel/p5-Config-Objective \

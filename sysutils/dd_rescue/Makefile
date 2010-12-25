@@ -10,7 +10,7 @@ PORTVERSION=	1.22
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.garloff.de/kurt/linux/ddrescue/
 
-MAINTAINER=	nobutaka@freebsd.org
+MAINTAINER=	nobutaka@FreeBSD.org
 COMMENT=	A dd tool suitable for rescuing data from a medium with errors
 
 WRKSRC=		${WRKDIR}/${PORTNAME}

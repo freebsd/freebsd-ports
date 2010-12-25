@@ -11,7 +11,7 @@ PORTREVISION=	2
 CATEGORIES=	java devel
 DISTNAME=	ib12
 
-MAINTAINER=	java@freebsd.org
+MAINTAINER=	java@FreeBSD.org
 COMMENT=	Enables dynamic exchange of data between JavaBeans(TM)
 
 USE_ZIP=	YES

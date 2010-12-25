@@ -12,7 +12,7 @@ CATEGORIES=	sysutils net
 MASTER_SITES=	http://www.eee.metu.edu.tr/~canacar/
 DISTNAME=	${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	mlaier@freebsd.org
+MAINTAINER=	mlaier@FreeBSD.org
 COMMENT=	Utility for real-time display of statistics for pf
 
 MAN8=		pftop.8

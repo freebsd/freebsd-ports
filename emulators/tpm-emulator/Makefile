@@ -12,7 +12,7 @@ CATEGORIES=		emulators security
 MASTER_SITES=		BERLIOS/${PORTNAME}
 DISTNAME=		${PORTNAME:S/-/_/}-${PORTVERSION}
 
-MAINTAINER=		nork@freebsd.org
+MAINTAINER=		nork@FreeBSD.org
 COMMENT=		Trusted Platform Module (TPM) emulator
 
 LIB_DEPENDS=		gmp.10:${PORTSDIR}/math/gmp

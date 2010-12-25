@@ -12,7 +12,7 @@ MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	../../authors/id/G/GP/GPHAT
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	swills@freebsd.org
+MAINTAINER=	swills@FreeBSD.org
 COMMENT=	A Perl mock RabbitMQ implementation for use when testing
 
 BUILD_DEPENDS=	p5-ExtUtils-MakeMaker>0:${PORTSDIR}/devel/p5-ExtUtils-MakeMaker \

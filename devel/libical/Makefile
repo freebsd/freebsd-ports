@@ -10,7 +10,7 @@ PORTVERSION=	0.44
 CATEGORIES=	devel
 MASTER_SITES=	SF/freeassociation/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	gnome@freebsd.org
+MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	An implementation of the IETF's Calendaring and Scheduling protocols
 
 USE_GNOME=	gnomehack

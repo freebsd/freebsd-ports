@@ -83,7 +83,7 @@ DISTNAME=	CACHEBOY_1.5.2
 # EXTRACT_SUFX=	.tar.gz
 DIST_SUBDIR=	CACHEBOY_1.5.2
 
-MAINTAINER=	adrian@freebsd.org
+MAINTAINER=	adrian@FreeBSD.org
 COMMENT=	HTTP Caching Proxy (Squid Derivative) - Development Release
 
 CONFLICTS=	squid-[0-9]* cacheboy*

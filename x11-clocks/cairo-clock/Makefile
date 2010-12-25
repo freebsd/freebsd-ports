@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	x11-clocks net gnome
 MASTER_SITES=	http://macslow.thepimp.net/projects/cairo-clock/
 
-MAINTAINER=	daichi@freebsd.org
+MAINTAINER=	daichi@FreeBSD.org
 COMMENT=	MacSlow's Cairo-Clock
 
 USE_GNOME=	gtk20 intlhack gnomehack libglade2 librsvg2

@@ -12,7 +12,7 @@ CATEGORIES=		emulators kld
 MASTER_SITES=		SF/${PORTNAME}/${PORTNAME}/${RELEASE_DATE}
 DISTNAME=		open-vm-tools-${RELEASE_DATE}-${BUILD_VER}
 
-MAINTAINER=		mbr@freebsd.org
+MAINTAINER=		mbr@FreeBSD.org
 COMMENT?=		Open VMware tools for FreeBSD VMware guests
 
 RELEASE_DATE=		2010.10.18

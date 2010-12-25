@@ -11,7 +11,7 @@ CATEGORIES=	sysutils perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	pirzyk@freebsd.org
+MAINTAINER=	pirzyk@FreeBSD.org
 COMMENT=	Perl extension for statvfs() and fstatvfs()
 
 PERL_CONFIGURE=	yes

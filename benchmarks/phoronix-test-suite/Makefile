@@ -12,7 +12,7 @@ CATEGORIES=	benchmarks
 MASTER_SITES=	http://www.phoronix-test-suite.com/releases/ \
 		http://www.phoronix.com/downloads/phoronix-test-suite/releases/
 
-MAINTAINER=	ports@freebsd.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Phoronix Benchmarking Suite
 
 OPTIONS=	X11	"Enable support for php-gtk2 GUI"  on

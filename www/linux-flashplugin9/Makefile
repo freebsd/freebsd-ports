@@ -17,7 +17,7 @@ DISTFILES=	install_flash_player_9.tar.gz:plugin \
 DIST_SUBDIR=	${PORTNAME}/${PORTVERSION}
 EXTRACT_ONLY=	install_flash_player_9.tar.gz
 
-MAINTAINER=	emulation@freebsd.org
+MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	Adobe Flash Player NPAPI Plugin
 
 ONLY_FOR_ARCHS=	amd64 i386

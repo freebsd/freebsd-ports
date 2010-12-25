@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	www perl5
 MASTER_SITES=	http://langfeldt.net/w3mir/
 
-MAINTAINER=	ache@freebsd.org
+MAINTAINER=	ache@FreeBSD.org
 COMMENT=	All-purpose HTTP copying and mirroring tool
 
 BUILD_DEPENDS=	${SITE_PERL}/LWP.pm:${PORTSDIR}/www/p5-libwww

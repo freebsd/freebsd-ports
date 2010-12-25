@@ -13,7 +13,7 @@ PKGNAMEPREFIX=	trac-
 DISTNAME=	${PORTNAME}plugin-${PORTVERSION}
 DIST_SUBDIR=	trac
 
-MAINTAINER=	brooks@freebsd.org
+MAINTAINER=	brooks@FreeBSD.org
 COMMENT=	A plugin to use Mercurial instead of Subversion in Trac
 
 RUN_DEPENDS+=	hg:${PORTSDIR}/devel/mercurial \

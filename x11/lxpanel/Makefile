@@ -11,7 +11,7 @@ PORTREVISION=	3
 CATEGORIES=	x11
 MASTER_SITES=	SF/lxde/LXPanel%20%28desktop%20panel%29/LXPanel%20${PORTVERSION}
 
-MAINTAINER=	kmoore@freebsd.org
+MAINTAINER=	kmoore@FreeBSD.org
 COMMENT=	LXPanel is a lightweight X11 desktop panel
 
 LIB_DEPENDS=	menu-cache.1:${PORTSDIR}/x11/menu-cache

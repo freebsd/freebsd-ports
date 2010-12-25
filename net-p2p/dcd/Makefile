@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	net-p2p
 MASTER_SITES=	http://www.dc.ds.pg.gda.pl/download/sources/stable/
 
-MAINTAINER=	az@freebsd.org
+MAINTAINER=	az@FreeBSD.org
 COMMENT=	Direct Connect Hub clone for Unix
 
 USE_BZIP2=	yes

@@ -4,7 +4,7 @@
 #
 # $FreeBSD$
 
-MAINTAINER=	lev@freebsd.org
+MAINTAINER=	lev@FreeBSD.org
 COMMENT=	Version control system
 
 CONFLICTS?=	subversion-devel-[0-9]* subversion-freebsd-[0-9]*

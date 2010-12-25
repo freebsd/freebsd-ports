@@ -12,7 +12,7 @@ MASTER_SITES=	http://people.freebsd.org/~daichi/distfiles/
 DISTNAME=	mozc-${PORTVERSION}
 DISTFILES=	${DISTNAME}.tar.bz2
 
-MAINTAINER=	daichi@freebsd.org
+MAINTAINER=	daichi@FreeBSD.org
 COMMENT=	Mozc server for IBus, SCIM and others
 
 BUILD_DEPENDS=	gsed:${PORTSDIR}/textproc/gsed \

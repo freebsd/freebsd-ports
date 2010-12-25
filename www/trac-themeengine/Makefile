@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	brooks
 PKGNAMEPREFIX=	trac-
 DISTNAME=	${PORTNAME}plugin-${PORTVERSION}
 
-MAINTAINER=	brooks@freebsd.org
+MAINTAINER=	brooks@FreeBSD.org
 COMMENT=	Plugin to simplify distributing and deploying themes and styles
 
 RUN_DEPENDS+=	tracd:${PORTSDIR}/www/trac

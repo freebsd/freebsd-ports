@@ -12,7 +12,7 @@ CATEGORIES=	sysutils perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	n_hibma@freebsd.org
+MAINTAINER=	n_hibma@FreeBSD.org
 COMMENT=	Perl interface to Gamin (File Access Monitor implementation)
 
 PERL_CONFIGURE=	yes

@@ -12,7 +12,7 @@ MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	../../authors/id/B/BU/BUNDACIA
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	swills@freebsd.org
+MAINTAINER=	swills@FreeBSD.org
 COMMENT=	Perl module which allows logging to RabbitMQ via log4perl
 
 RUN_DEPENDS=	${LOCALBASE}/bin/l4p-tmpl:${PORTSDIR}/devel/p5-Log-Log4perl \

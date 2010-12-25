@@ -12,7 +12,7 @@ MASTER_SITES=	"http://airo-linux.cvs.sourceforge.net/*checkout*/airo-linux/airo-
 DISTNAME=	airoflash.c
 EXTRACT_SUFX=
 
-MAINTAINER=	ambrisko@freebsd.org
+MAINTAINER=	ambrisko@FreeBSD.org
 COMMENT=	Flash utiltity for Cisco/Aironet 802.11 wireless cards
 
 AF_VERSION=	1.7

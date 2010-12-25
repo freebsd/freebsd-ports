@@ -11,7 +11,7 @@ CATEGORIES=	audio perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	perl@freebsd.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	A high-level interface to the Compact Disc Database
 
 PERL_CONFIGURE=	yes

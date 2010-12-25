@@ -13,7 +13,7 @@ MASTER_SITES=	http://gtk.php.net/distributions/ \
 		http://document-root.de/mirror/php-gtk/
 DISTNAME=	php-gtk-${PORTVERSION}
 
-MAINTAINER=	ports@freebsd.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An extension to use gtk2 in PHP-applications
 
 BROKEN=		does not compile
