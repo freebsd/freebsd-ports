@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gpodder
-PORTVERSION=	2.10
+PORTVERSION=	2.11
 CATEGORIES=	multimedia
 MASTER_SITES=	BERLIOS \
 		http://thp.io/2010/mygpoclient/:mygpoclient \
