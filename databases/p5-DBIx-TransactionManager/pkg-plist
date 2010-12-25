@@ -1,0 +1,5 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx/TransactionManager/.packlist
+%%SITE_PERL%%/DBIx/TransactionManager.pm
+@dirrmtry %%SITE_PERL%%/DBIx
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx/TransactionManager
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx
