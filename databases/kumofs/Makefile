@@ -1,4 +1,4 @@
-# New ports collection makefile for:	msgpack
+# New ports collection makefile for:	kumofs
 # Date created:		18 Jan 2010
 # Whom:			Jun Kuriyama <kuriyama@FreeBSD.org>
 #
@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	kumofs
-PORTVERSION=	0.4.12
-PORTREVISION=	1
+PORTVERSION=	0.4.13
 CATEGORIES=	databases
 MASTER_SITES=	${MASTER_SITE_LOCAL} \
 		http://cloud.github.com/downloads/etolabo/kumofs/
