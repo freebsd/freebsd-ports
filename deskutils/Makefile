@@ -279,6 +279,7 @@
     SUBDIR += treeline
     SUBDIR += tuxcards
     SUBDIR += vboxgtk
+    SUBDIR += vnc2flv
     SUBDIR += vym
     SUBDIR += wammu
     SUBDIR += when
