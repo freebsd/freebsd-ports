@@ -5,15 +5,15 @@
 # $FreeBSD$
 
 PORTNAME=	springframework
-PORTVERSION=	2.5.5
+PORTVERSION=	3.0.5
 CATEGORIES=	java devel
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-2/${PORTVERSION}
-DISTNAME=	spring-framework-${PORTVERSION}-with-dependencies
+MASTER_SITES=	http://s3.amazonaws.com/dist.springframework.org/release/SPR/
+DISTNAME=	spring-framework-${PORTVERSION}.RELEASE-with-docs
 
 MAINTAINER=	gerrit.beine@gmx.de
 COMMENT=	The Spring Framework for Java
 
-WRKSRC=		${WRKDIR}/spring-framework-${PORTVERSION}
+WRKSRC=		${WRKDIR}/spring-framework-${PORTVERSION}.RELEASE
 
 NO_BUILD=	yes
 USE_JAVA=	yes
@@ -21,64 +21,79 @@ USE_ZIP=	yes
 JAVA_VERSION=	1.5+
 
 OPTIONS=	DOCS    "Install docs & examples" on \
-		RESRCS  "Install resource files" off \
-		MODULES "Install modules" on \
-		WEAVING "Install weaving modules" off
+		RESRCS  "Install resource files" off
 
-PLIST_FILES=	%%JAVAJARDIR%%/spring.jar
+JAR_FILES=	org.springframework.aop.jar \
+		org.springframework.asm.jar \
+		org.springframework.aspects.jar \
+		org.springframework.beans.jar \
+		org.springframework.context.jar \
+		org.springframework.context.support.jar \
+		org.springframework.core.jar \
+		org.springframework.expression.jar \
+		org.springframework.instrument.jar \
+		org.springframework.instrument.tomcat.jar \
+		org.springframework.jdbc.jar \
+		org.springframework.jms.jar \
+		org.springframework.orm.jar \
+		org.springframework.oxm.jar \
+		org.springframework.test.jar \
+		org.springframework.transaction.jar \
+		org.springframework.web.jar \
+		org.springframework.web.portlet.jar \
+		org.springframework.web.servlet.jar \
+		org.springframework.web.struts.jar
 
-.include <bsd.port.pre.mk>
+.for f in ${JAR_FILES}
+PLIST_FILES +=	%%JAVAJARDIR%%/${f}
+.endfor
 
-.if defined(WITHOUT_DOCS) || !defined(WITH_DOCS)
+.include <bsd.port.options.mk>
+
+.if defined(WITHOUT_DOCS)
 NOPORTDOCS=	yes
 .endif
 
-.if !defined(WITHOUT_RESRCS) || defined(WITH_RESRCS)
-PLIST_FILES+=	%%JAVASHAREDIR%%/spring-aop-2.0.xsd \
-		%%JAVASHAREDIR%%/spring-aop-2.5.xsd \
-		%%JAVASHAREDIR%%/spring-beans-2.0.dtd \
-		%%JAVASHAREDIR%%/spring-beans-2.0.xsd \
-		%%JAVASHAREDIR%%/spring-beans-2.5.xsd \
-		%%JAVASHAREDIR%%/spring-beans.dtd \
-		%%JAVASHAREDIR%%/spring-context-2.5.xsd \
-		%%JAVASHAREDIR%%/spring-form.tld \
-		%%JAVASHAREDIR%%/spring-jee-2.0.xsd \
-		%%JAVASHAREDIR%%/spring-jee-2.5.xsd \
-		%%JAVASHAREDIR%%/spring-jms-2.5.xsd \
-		%%JAVASHAREDIR%%/spring-lang-2.0.xsd \
-		%%JAVASHAREDIR%%/spring-lang-2.5.xsd \
-		%%JAVASHAREDIR%%/spring-tool-2.0.xsd \
-		%%JAVASHAREDIR%%/spring-tool-2.5.xsd \
-		%%JAVASHAREDIR%%/spring-tx-2.0.xsd \
-		%%JAVASHAREDIR%%/spring-tx-2.5.xsd \
-		%%JAVASHAREDIR%%/spring-util-2.0.xsd \
-		%%JAVASHAREDIR%%/spring-util-2.5.xsd \
-		%%JAVASHAREDIR%%/spring.ftl \
-		%%JAVASHAREDIR%%/spring.tld \
-		%%JAVASHAREDIR%%/spring.vm
-.endif
+.if defined(WITH_RESRCS)
+RESOURCE_FILES=	spring-aop-2.0.xsd \
+		spring-aop-2.5.xsd \
+		spring-aop-3.0.xsd \
+		spring-beans-2.0.dtd \
+		spring-beans-2.0.xsd \
+		spring-beans-2.5.xsd \
+		spring-beans-3.0.xsd \
+		spring-beans.dtd \
+		spring-context-2.5.xsd \
+		spring-context-3.0.xsd \
+		spring-form.tld \
+		spring-jdbc-3.0.xsd \
+		spring-jee-2.0.xsd \
+		spring-jee-2.5.xsd \
+		spring-jee-3.0.xsd \
+		spring-jms-2.5.xsd \
+		spring-jms-3.0.xsd \
+		spring-lang-2.0.xsd \
+		spring-lang-2.5.xsd \
+		spring-lang-3.0.xsd \
+		spring-mvc-3.0.xsd \
+		spring-oxm-3.0.xsd \
+		spring-task-3.0.xsd \
+		spring-tool-2.0.xsd \
+		spring-tool-2.5.xsd \
+		spring-tool-3.0.xsd \
+		spring-tx-2.0.xsd \
+		spring-tx-2.5.xsd \
+		spring-tx-3.0.xsd \
+		spring-util-2.0.xsd \
+		spring-util-2.5.xsd \
+		spring-util-3.0.xsd \
+		spring.ftl \
+		spring.tld \
+		spring.vm
 
-.if !defined(WITHOUT_MODULES) || defined(WITH_MODULES)
-PLIST_FILES+=	%%JAVAJARDIR%%/spring-aop.jar \
-		%%JAVAJARDIR%%/spring-beans.jar \
-		%%JAVAJARDIR%%/spring-context-support.jar \
-		%%JAVAJARDIR%%/spring-context.jar \
-		%%JAVAJARDIR%%/spring-core.jar \
-		%%JAVAJARDIR%%/spring-jdbc.jar \
-		%%JAVAJARDIR%%/spring-jms.jar \
-		%%JAVAJARDIR%%/spring-orm.jar \
-		%%JAVAJARDIR%%/spring-test.jar \
-		%%JAVAJARDIR%%/spring-tx.jar \
-		%%JAVAJARDIR%%/spring-web.jar \
-		%%JAVAJARDIR%%/spring-webmvc-portlet.jar \
-		%%JAVAJARDIR%%/spring-webmvc-struts.jar \
-		%%JAVAJARDIR%%/spring-webmvc.jar
-.endif
-
-.if !defined(WITHOUT_WEAVING) || defined(WITH_WEAVING)
-PLIST_FILES+=	%%JAVAJARDIR%%/spring-agent.jar \
-		%%JAVAJARDIR%%/spring-aspects.jar \
-		%%JAVAJARDIR%%/spring-tomcat-weaver.jar
+.for f in ${RESOURCE_FILES}
+PLIST_FILES +=	%%JAVASHAREDIR%%/${f}
+.endfor
 .endif
 
 .if !defined(NOPORTDOCS)
@@ -86,36 +101,23 @@ PORTDOCS=	*
 .endif
 
 do-install:
-	@${INSTALL_DATA} ${WRKSRC}/dist/spring.jar ${JAVAJARDIR}
+.for f in ${JAR_FILES}
+	@${INSTALL_DATA} ${WRKSRC}/dist/${f:S/.jar/-${PORTVERSION}.RELEASE.jar/} \
+		${JAVAJARDIR}/${f}
+.endfor
 .if !defined(WITHOUT_RESRCS) || defined(WITH_RESRCS)
-	@${INSTALL_DATA} ${WRKSRC}/dist/resources/* ${JAVASHAREDIR}
-.endif
-.if !defined(WITHOUT_MODULES) || defined(WITH_MODULES)
-	@${INSTALL_DATA} ${WRKSRC}/dist/modules/* ${JAVAJARDIR}
-.endif
-.if !defined(WITHOUT_WEAVING) || defined(WITH_WEAVING)
-	@${INSTALL_DATA} ${WRKSRC}/dist/weaving/* ${JAVAJARDIR}
+.for f in ${RESOURCE_FILES}
+	@${INSTALL_DATA} `${FIND} "${WRKSRC}" -name ${f} -print` \
+		${JAVASHAREDIR}/${f}
+.endfor
 .endif
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	@${INSTALL_DATA} ${WRKSRC}/changelog.txt ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/license.txt ${DOCSDIR}
 	@${INSTALL_DATA} ${WRKSRC}/notice.txt ${DOCSDIR}
 	@${INSTALL_DATA} ${WRKSRC}/readme.txt ${DOCSDIR}
-	@cd ${WRKSRC}/docs/ \
-	    && ${FIND} . -type d -exec ${MKDIR} ${DOCSDIR}/{} \; \
-	    && ${FIND} . -type f -exec ${INSTALL_DATA} {} ${DOCSDIR}/{} \;
-	@${MKDIR} ${EXAMPLESDIR}
-	@cd ${WRKSRC}/samples/ \
-	    && ${FIND} . -type d -exec ${MKDIR} ${EXAMPLESDIR}/{} \; \
-	    && ${FIND} . -type f -exec ${INSTALL_DATA} {} ${EXAMPLESDIR}/{} \;
+	@cd ${WRKSRC}/docs/ && ${COPYTREE_SHARE} . ${DOCSDIR}
 .endif
 
-post-install:
-.if !defined(NOPORTDOCS)
-	@${FIND} -s ${WRKSRC}/samples -not -type d \
-	    | ${SED} -ne 's,^${WRKSRC}/samples,${EXAMPLESDIR:S,^${PREFIX}/,,},p' >> ${TMPPLIST}
-	@${FIND} -s -d ${WRKSRC}/samples -type d \
-	    | ${SED} -ne 's,^${WRKSRC}/samples,@dirrm ${EXAMPLESDIR:S,^${PREFIX}/,,},p' >> ${TMPPLIST}
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
