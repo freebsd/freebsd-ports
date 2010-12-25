@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
 DISTNAME=	uim-${PORTVERSION}
 
-MAINTAINER=	nobutaka@freebsd.org
+MAINTAINER=	nobutaka@FreeBSD.org
 COMMENT?=	Emacs lisp for uim input method library
 
 PROJECTHOST=	uim

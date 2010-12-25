@@ -10,7 +10,7 @@ PORTVERSION=	0.12.434.102
 CATEGORIES=	japanese
 MASTER_SITES=	http://people.freebsd.org/~daichi/distfiles/
 
-MAINTAINER=	daichi@freebsd.org
+MAINTAINER=	daichi@FreeBSD.org
 COMMENT=	Additional tools and images for Mozc Japanese Input Method
 
 NO_BUILD=	yes

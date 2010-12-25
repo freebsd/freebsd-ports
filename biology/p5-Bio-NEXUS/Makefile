@@ -11,7 +11,7 @@ CATEGORIES=	biology perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	perl@freebsd.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	An object-oriented Perl API for the NEXUS file format
 
 BUILD_DEPENDS=	p5-Clone-PP>=1.02:${PORTSDIR}/devel/p5-Clone-PP \

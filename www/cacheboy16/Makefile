@@ -82,7 +82,7 @@ MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 DISTNAME=	cacheboy-1.6-r13601
 # EXTRACT_SUFX=	.tar.gz
 
-MAINTAINER=	adrian@freebsd.org
+MAINTAINER=	adrian@FreeBSD.org
 COMMENT=	HTTP Caching Proxy (Squid Derivative) - Development Release
 
 CONFLICTS=	squid-[0-9]* cacheboy*

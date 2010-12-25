@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://ftp.qualcomm.com/eudora/servers/unix/popper/old/
 DISTNAME=	${PORTNAME}${PORTVERSION}
 EXTRACT_SUFX=	.tar.Z
 
-MAINTAINER=	ache@freebsd.org
+MAINTAINER=	ache@FreeBSD.org
 COMMENT=	Berkeley POP 3 server (now maintained by Qualcomm)
 
 # Set WITH_POPPER_YOUBIN_SUPPORT variable in the environment to enable

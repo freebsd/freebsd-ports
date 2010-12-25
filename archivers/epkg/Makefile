@@ -11,7 +11,7 @@ PORTREVISION=	5
 CATEGORIES=	archivers
 MASTER_SITES=	ftp://ftp.feep.net/pub/encap/epkg/
 
-MAINTAINER=	pirzyk@freebsd.org
+MAINTAINER=	pirzyk@FreeBSD.org
 COMMENT=	Encap Package Manager
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libfget.a:${PORTSDIR}/ftp/fget

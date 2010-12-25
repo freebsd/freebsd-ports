@@ -13,7 +13,7 @@ CATEGORIES=	www graphics
 MASTER_SITES=	SF/${PORTNAME:L}/${PORTNAME:L}-beta/2.03pre3
 DISTNAME=	${PORTNAME}-2.03pre3
 
-MAINTAINER=	ache@freebsd.org
+MAINTAINER=	ache@FreeBSD.org
 COMMENT=	Image Web Generator - recursively build HTMLs, imagemaps, thumbnails
 
 LIB_DEPENDS=	MagickWand.4:${PORTSDIR}/graphics/ImageMagick

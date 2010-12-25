@@ -5,7 +5,7 @@
 # $FreeBSD$
 #
 
-MAINTAINER=	nobutaka@freebsd.org
+MAINTAINER=	nobutaka@FreeBSD.org
 
 COMMENT=	Emacs lisp for uim input method library
 

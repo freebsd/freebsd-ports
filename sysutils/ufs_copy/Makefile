@@ -12,7 +12,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	http://people.freebsd.org/~simokawa/ufs/
 DISTNAME=	ufs-${PORTVERSION}
 
-MAINTAINER=	nobutaka@freebsd.org
+MAINTAINER=	nobutaka@FreeBSD.org
 COMMENT=	Fast copy utility for UFS filesystem
 
 WRKSRC=		${WRKDIR}/ufs

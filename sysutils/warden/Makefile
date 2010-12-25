@@ -11,7 +11,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	ftp://ftp.pcbsd.org/pub/software/ \
 		http://www.pcbsd.org/~kris/software/
 
-MAINTAINER=	kmoore@freebsd.org
+MAINTAINER=	kmoore@FreeBSD.org
 COMMENT=	PC-BSD's Jail Management Utility
 
 RUN_DEPENDS=	pbreg:${PORTSDIR}/sysutils/pbreg

@@ -9,7 +9,7 @@ PORTVERSION=	2.6.6
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	ruby@freebsd.org
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	A fast, secure, and very extensible implementation of eRuby
 
 RUN_DEPENDS=	rubygem-abstract>=1.0.0:${PORTSDIR}/devel/rubygem-abstract

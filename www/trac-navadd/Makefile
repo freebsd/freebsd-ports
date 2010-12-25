@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	brooks
 PKGNAMEPREFIX=	trac-
 DISTNAME=	${PORTNAME}plugin-${PORTVERSION}
 
-MAINTAINER=	brooks@freebsd.org
+MAINTAINER=	brooks@FreeBSD.org
 COMMENT=	A plugin for adding navigation items into Trac navigation bars
 
 RUN_DEPENDS+=	tracd:${PORTSDIR}/www/trac

@@ -16,7 +16,7 @@ MASTER_SITES=	ftp://ftp.nedit.org/pub/NEdit/v5_5/ \
 DISTFILES=	nedit-5.5-src.tar.bz2 nedit.app-defaults
 EXTRACT_ONLY=	nedit-5.5-src.tar.bz2
 
-MAINTAINER=	deischen@freebsd.org
+MAINTAINER=	deischen@FreeBSD.org
 COMMENT=	An X11/Motif GUI text editor for programs and plain text files
 
 USE_BZIP2=	yes

@@ -10,7 +10,7 @@ PORTVERSION=	0.1.1
 CATEGORIES=	x11
 MASTER_SITES=	SF/lxde/lxmenu-data%20%28desktop%20menu%29/lxmenu-data%20${PORTVERSION}
 
-MAINTAINER=	kmoore@freebsd.org
+MAINTAINER=	kmoore@FreeBSD.org
 COMMENT=	Menu data used by lxpanel
 
 USE_XORG=	x11 xmu

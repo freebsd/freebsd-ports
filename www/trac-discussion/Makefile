@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	brooks
 PKGNAMEPREFIX=	trac-
 
-MAINTAINER=	brooks@freebsd.org
+MAINTAINER=	brooks@FreeBSD.org
 COMMENT=	A discussion forum plugin for Trac
 
 RUN_DEPENDS+=	tracd:${PORTSDIR}/www/trac \

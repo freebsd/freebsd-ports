@@ -10,7 +10,7 @@ PORTVERSION=	1.2.4
 CATEGORIES=	japanese
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 
-MAINTAINER=	daichi@freebsd.org
+MAINTAINER=	daichi@FreeBSD.org
 COMMENT=	Anthy engine for IBus
 
 BUILD_DEPENDS=	swig:${PORTSDIR}/devel/swig13

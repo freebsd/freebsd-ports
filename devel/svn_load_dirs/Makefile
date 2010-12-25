@@ -11,7 +11,7 @@ CATEGORIES=	devel
 MASTER_SITES=	# none
 DISTFILES=	# none
 
-MAINTAINER=	knu@freebsd.org
+MAINTAINER=	knu@FreeBSD.org
 COMMENT=	A Perl script to load directories into a Subversion repository
 
 RUN_DEPENDS=	${SITE_PERL}/URI.pm:${PORTSDIR}/net/p5-URI \

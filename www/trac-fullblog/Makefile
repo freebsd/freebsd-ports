@@ -14,7 +14,7 @@ PKGNAMEPREFIX=	trac-
 DISTNAME=	${PORTNAME}plugin-${PORTVERSION}
 DIST_SUBDIR=	trac
 
-MAINTAINER=	brooks@freebsd.org
+MAINTAINER=	brooks@FreeBSD.org
 COMMENT=	This plugin provides a project Blog
 
 RUN_DEPENDS+=	htmldoc:${PORTSDIR}/textproc/htmldoc \

@@ -11,7 +11,7 @@ PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	http://www.lcdf.org/xmahjongg/
 
-MAINTAINER=	joerg@freebsd.org
+MAINTAINER=	joerg@FreeBSD.org
 COMMENT=	The Chinese game of Mahjongg for X11
 
 USE_XORG=	x11

@@ -9,7 +9,7 @@ PORTVERSION=	1.16
 CATEGORIES=	misc rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	ruby@freebsd.org
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Ruby gem which provides a mailcap-like MIME Content-Type lookup
 
 USE_RUBY=	yes

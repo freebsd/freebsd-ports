@@ -11,7 +11,7 @@ PORTEPOCH=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://nitpicker.de/
 
-MAINTAINER=	mr@freebsd.org
+MAINTAINER=	mr@FreeBSD.org
 COMMENT=	IP flow Accounting tools
 
 do-install:

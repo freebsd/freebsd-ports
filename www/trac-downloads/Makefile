@@ -14,7 +14,7 @@ PKGNAMEPREFIX=	trac-
 DISTNAME=	${PORTNAME}plugin-${PORTVERSION}
 DIST_SUBDIR=	trac
 
-MAINTAINER=	brooks@freebsd.org
+MAINTAINER=	brooks@FreeBSD.org
 COMMENT=	A trac plugin providing a downloads section
 
 RUN_DEPENDS+=	tracd:${PORTSDIR}/www/trac

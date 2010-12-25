@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEWARE}
 MASTER_SITE_SUBDIR=	binutils/releases
 DISTNAME=	binutils-${PORTVERSION}
 
-MAINTAINER=	joerg@freebsd.org
+MAINTAINER=	joerg@FreeBSD.org
 COMMENT=	Universal BFD library from GNU binutils
 
 BUILD_DEPENDS=  ${LOCALBASE}/lib/libiberty.a:${PORTSDIR}/devel/gnulibiberty

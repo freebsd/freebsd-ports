@@ -10,7 +10,7 @@ PORTVERSION=	1.0.1
 CATEGORIES=	net
 MASTER_SITES=	SF
 
-MAINTAINER=	nobutaka@freebsd.org
+MAINTAINER=	nobutaka@FreeBSD.org
 COMMENT=	A tool for extracting files from network traffic
 
 GNU_CONFIGURE=	yes

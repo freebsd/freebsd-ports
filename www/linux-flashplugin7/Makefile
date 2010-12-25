@@ -15,7 +15,7 @@ DISTNAME=	install_flash_player_7_linux
 DISTNAME=	fp7_archive
 DIST_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	emulation@freebsd.org
+MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	Adobe Flash Player NPAPI Plugin
 
 ONLY_FOR_ARCHS=	amd64 i386

@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	brooks
 PKGNAMEPREFIX=	trac-
 DISTNAME=	${PORTNAME}plugin-${PORTVERSION}
 
-MAINTAINER=	brooks@freebsd.org
+MAINTAINER=	brooks@FreeBSD.org
 COMMENT=	Plugin to generate PDF documents from the Wiki
 
 RUN_DEPENDS+=	htmldoc:${PORTSDIR}/textproc/htmldoc \

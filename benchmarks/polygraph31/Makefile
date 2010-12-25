@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.web-polygraph.org/downloads/srcs/
 DISTNAME=	${PORTNAME:S/31//}-${PORTVERSION}-src
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	adrian@freebsd.org
+MAINTAINER=	adrian@FreeBSD.org
 COMMENT=	A benchmarking tool for Web proxies
 
 GNU_CONFIGURE=	YES

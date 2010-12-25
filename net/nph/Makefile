@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.feep.net/pub/software/nph/
 
-MAINTAINER=	pirzyk@freebsd.org
+MAINTAINER=	pirzyk@FreeBSD.org
 COMMENT=	New PH Client and API Library
 
 HAS_CONFIGURE=	YES

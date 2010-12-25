@@ -19,7 +19,7 @@ MASTER_SITES=		${MASTER_SITE_LOCAL:S/$/:boot/}
 MASTER_SITE_SUBDIR=	deischen/gcc/:boot
 DISTFILES=		${gcc_srcfile}:gcc ${gnat_srcfile}:gnat
 
-MAINTAINER=		deischen@freebsd.org
+MAINTAINER=		deischen@FreeBSD.org
 COMMENT=		The GNU Ada Compiler system
 
 LIB_DEPENDS=		gmp.10:${PORTSDIR}/math/gmp \

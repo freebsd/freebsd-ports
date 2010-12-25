@@ -15,7 +15,7 @@ CATEGORIES=	net
 MASTER_SITES=	http://etherboot.sourceforge.net/ \
 		http://etherboot.berlios.de/dist/
 
-MAINTAINER=	ambrisko@freebsd.org
+MAINTAINER=	ambrisko@FreeBSD.org
 COMMENT=	Network boot of FreeBSD a.out/ELF kernels (improved netboot)
 
 NO_PACKAGE=	lots of configuration necessary

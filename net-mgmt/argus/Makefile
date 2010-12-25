@@ -12,7 +12,7 @@ CATEGORIES=	net-mgmt security
 MASTER_SITES=	http://qosient.com/argus/src/ \
 		ftp://qosient.com/pub/argus/src/
 
-MAINTAINER=	ports@freebsd.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A generic IP network transaction auditing tool
 
 CONFLICTS=	argus-3* argus-sasl-3*
