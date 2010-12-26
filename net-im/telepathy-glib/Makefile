@@ -6,7 +6,7 @@
 #    $MCom: ports/net-im/telepathy-glib/Makefile,v 1.15 2010/10/21 17:35:24 kwm Exp $
 
 PORTNAME=	telepathy-glib
-PORTVERSION=	0.12.6
+PORTVERSION=	0.12.7
 CATEGORIES=	net-im
 MASTER_SITES=	http://telepathy.freedesktop.org/releases/${PORTNAME}/
 
