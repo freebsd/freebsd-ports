@@ -1,4 +1,5 @@
 bin/gnurobbo
+%%DATADIR%%/levels/alex01.dat
 %%DATADIR%%/levels/boss.dat
 %%DATADIR%%/levels/demo.dat
 %%DATADIR%%/levels/designer.dat
@@ -26,6 +27,8 @@ bin/gnurobbo
 %%DATADIR%%/levels/robbo98.dat
 %%DATADIR%%/levels/robbo_b.dat
 %%DATADIR%%/levels/warsaw.dat
+%%DATADIR%%/locales/cz_CZ/localerc
+%%DATADIR%%/locales/cz_CZ/text
 %%DATADIR%%/locales/de_DE/localerc
 %%DATADIR%%/locales/de_DE/text
 %%DATADIR%%/locales/en_GB/localerc
@@ -99,15 +102,31 @@ bin/gnurobbo
 %%DATADIR%%/sounds/default/shoot_default.ogg
 %%DATADIR%%/sounds/default/teleport.ogg
 %%DATADIR%%/sounds/default/walk_default.ogg
+%%DATADIR%%/sounds/free/ammo2.ogg
+%%DATADIR%%/sounds/free/bomb2.ogg
+%%DATADIR%%/sounds/free/box2.ogg
+%%DATADIR%%/sounds/free/capsule2.ogg
+%%DATADIR%%/sounds/free/door2.ogg
+%%DATADIR%%/sounds/free/exit2.ogg
+%%DATADIR%%/sounds/free/key2.ogg
+%%DATADIR%%/sounds/free/kill2.ogg
+%%DATADIR%%/sounds/free/magnet.ogg
+%%DATADIR%%/sounds/free/screw2.ogg
+%%DATADIR%%/sounds/free/shoot2.ogg
+%%DATADIR%%/sounds/free/shoot3.ogg
+%%DATADIR%%/sounds/free/teleport2.ogg
+%%DATADIR%%/sounds/free/walk2.ogg
 %%DATADIR%%/sounds/oily/door.ogg
 %%DATADIR%%/sounds/oily/end.ogg
 %%DATADIR%%/sounds/oily/gun.ogg
 %%DATADIR%%/sounds/oily/shoot.ogg
 %%DATADIR%%/sounds/oily/walk.ogg
 %%DATADIR%%/sounds/skins/default.dat
-%%DATADIR%%/sounds/skins/sounds_oily.dat
+%%DATADIR%%/sounds/skins/free.dat
+%%DATADIR%%/sounds/skins/oily.dat
 @dirrm %%DATADIR%%/sounds/skins
 @dirrm %%DATADIR%%/sounds/oily
+@dirrm %%DATADIR%%/sounds/free
 @dirrm %%DATADIR%%/sounds/default
 @dirrm %%DATADIR%%/sounds
 @dirrm %%DATADIR%%/skins/tronic
@@ -122,6 +141,7 @@ bin/gnurobbo
 @dirrm %%DATADIR%%/locales/id_ID
 @dirrm %%DATADIR%%/locales/en_GB
 @dirrm %%DATADIR%%/locales/de_DE
+@dirrm %%DATADIR%%/locales/cz_CZ
 @dirrm %%DATADIR%%/locales
 @dirrm %%DATADIR%%/levels
 @dirrm %%DATADIR%%
