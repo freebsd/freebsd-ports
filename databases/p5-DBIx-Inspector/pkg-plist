@@ -1,0 +1,19 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx/Inspector/.packlist
+%%SITE_PERL%%/DBIx/Inspector.pm
+%%SITE_PERL%%/DBIx/Inspector/Column.pm
+%%SITE_PERL%%/DBIx/Inspector/Driver/Base.pm
+%%SITE_PERL%%/DBIx/Inspector/Driver/Pg.pm
+%%SITE_PERL%%/DBIx/Inspector/Driver/SQLite.pm
+%%SITE_PERL%%/DBIx/Inspector/Driver/mysql.pm
+%%SITE_PERL%%/DBIx/Inspector/ForeignKey.pm
+%%SITE_PERL%%/DBIx/Inspector/ForeignKey/Pg.pm
+%%SITE_PERL%%/DBIx/Inspector/Iterator.pm
+%%SITE_PERL%%/DBIx/Inspector/Iterator/Null.pm
+%%SITE_PERL%%/DBIx/Inspector/Table.pm
+@dirrm %%SITE_PERL%%/DBIx/Inspector/Iterator
+@dirrm %%SITE_PERL%%/DBIx/Inspector/ForeignKey
+@dirrm %%SITE_PERL%%/DBIx/Inspector/Driver
+@dirrm %%SITE_PERL%%/DBIx/Inspector
+@dirrmtry %%SITE_PERL%%/DBIx
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx/Inspector
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx
