@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	gcc
-PORTVERSION=	4.6.0.20101127
+PORTVERSION=	4.6.0.20101225
 CATEGORIES=	lang java
 MASTER_SITES=	${MASTER_SITE_GCC}
 MASTER_SITE_SUBDIR=	snapshots/${VERSIONSTRING}
@@ -99,7 +99,8 @@ INFO=		gcc${SUFFIX}/cpp \
 		gcc${SUFFIX}/gccinstall \
 		gcc${SUFFIX}/gccint \
 		gcc${SUFFIX}/gfortran \
-		gcc${SUFFIX}/libgomp
+		gcc${SUFFIX}/libgomp \
+		gcc${SUFFIX}/libquadmath
 
 .if ! defined(WITHOUT_JAVA)
 DISTFILES+=	gcc-java-${VERSIONSTRING}${EXTRACT_SUFX}
