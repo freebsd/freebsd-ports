@@ -2110,6 +2110,7 @@
     SUBDIR += p5-ReadLine-TTYtter
     SUBDIR += p5-Readonly
     SUBDIR += p5-Regexp-Assemble
+    SUBDIR += p5-Regexp-Assemble-Compressed
     SUBDIR += p5-Regexp-Bind
     SUBDIR += p5-Regexp-Grammars
     SUBDIR += p5-Regexp-Shellish
