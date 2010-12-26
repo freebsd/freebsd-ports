@@ -8,7 +8,7 @@
 PORTNAME=	gnocl
 PORTVERSION=	0.9.95
 CATEGORIES=	x11-toolkits devel
-MASTER_SITES=	SF/${PORTNAME}/Gnocl-Nightly-Build/
+MASTER_SITES=	SF/${PORTNAME}/Gnocl/${PORTVERSION}/
 
 MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	GTK+ and Gnome extension for Tcl
