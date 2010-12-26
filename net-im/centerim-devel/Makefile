@@ -7,8 +7,8 @@
 #
 
 PORTNAME=	centerim
-DISTVERSION=	4.22.9.40
-PORTREVISION=	1
+PORTVERSION=	4.22.9.40
+PORTREVISION=	2
 CATEGORIES=	net-im
 MASTER_SITES=	http://www.centerim.org/download/mobshots/ \
 		ftp://ftp.centerim.org/mobshots/
@@ -27,10 +27,7 @@ USE_ICONV=	yes
 USE_OPENSSL=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV+=	CPPFLAGS+="-I${LOCALBASE}/include" \
-		CXXFLAGS+="-I${LOCALBASE}/include"
 CONFIGURE_ARGS=	--with-ssl --with-openssl
-WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}
 CONFLICTS=	centericq-[0-9]* centerim-[0-9]*
 
 OPTIONS=	NLS             "Native Language Support" on \
@@ -112,6 +109,10 @@ CONFIGURE_ARGS+=	--disable-gg
 LIB_DEPENDS+=		gadu.3:${PORTSDIR}/polish/ekg
 LIBGADU=		-lgadu
 .endif
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|/var/run/screen|/tmp/screens|' \
+		${WRKSRC}/src/icqconf.cc
 
 .if !defined(NOPORTDOCS)
 post-install:
