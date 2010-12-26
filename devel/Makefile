@@ -2581,6 +2581,7 @@
     SUBDIR += pecl-automap
     SUBDIR += pecl-bbcode
     SUBDIR += pecl-bcompiler
+    SUBDIR += pecl-dio
     SUBDIR += pecl-expect
     SUBDIR += pecl-gearman
     SUBDIR += pecl-hidef

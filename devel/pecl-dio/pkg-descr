@@ -1,0 +1,6 @@
+DIO provides functions and stream wrappers which provide raw and serial low
+level IO support. The use of the DIO functions should be considered only when
+direct control of a device is needed. In all other cases, the standard
+filesystem functions are more than adequate.
+
+WWW:	http://www.pecl.php.net/package/dio/
