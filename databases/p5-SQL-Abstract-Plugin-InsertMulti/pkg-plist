@@ -1,0 +1,5 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/SQL/Abstract/Plugin/InsertMulti/.packlist
+%%SITE_PERL%%/SQL/Abstract/Plugin/InsertMulti.pm
+@dirrmtry %%SITE_PERL%%/SQL/Abstract/Plugin
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/SQL/Abstract/Plugin/InsertMulti
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/SQL/Abstract/Plugin
