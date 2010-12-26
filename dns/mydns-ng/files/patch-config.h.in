@@ -1,0 +1,11 @@
+--- config.h.in.orig	2010-12-26 02:19:27.000000000 +0800
++++ config.h.in	2010-12-26 02:20:07.000000000 +0800
+@@ -225,7 +225,7 @@
+ #undef HAVE_NETINET_IN_H
+ 
+ /* Define to 1 if you have the <net/if.h> header file. */
+-#undef HAVE_NET_IF_H
++#define HAVE_NET_IF_H 1
+ 
+ /* Define to 1 if you have the `nl_langinfo' function. */
+ #undef HAVE_NL_LANGINFO

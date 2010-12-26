@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	mydns-ng
-PORTVERSION=	1.2.8.27
-PORTREVISION=	3
+PORTVERSION=	1.2.8.31
 CATEGORIES=	dns databases
 MASTER_SITES=	SF/${PORTNAME}/mydns/${PORTVERSION}
 DISTNAME=	mydns-${PORTVERSION}
@@ -15,7 +14,7 @@ DISTNAME=	mydns-${PORTVERSION}
 MAINTAINER=	gaod@hychen.org
 COMMENT=	A Next Generation DNS Server for sql based DNS services
 
-WRKSRC=		${WRKDIR}/mydns-${PORTVERSION:R}
+#WRKSRC=		${WRKDIR}/mydns-${PORTVERSION:R}
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-confdir=${PREFIX}/etc
 USE_ICONV=	yes
