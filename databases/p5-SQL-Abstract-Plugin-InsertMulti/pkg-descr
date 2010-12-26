@@ -1,0 +1,9 @@
+SQL::Abstract::Plugin::InsertMulti is enable bulk insert support for
+SQL::Abstract. Declare 'use SQL::Abstract::Plugin::InsertMulti;' with
+'use SQL::Abstract;', exporting insert_multi() and update_multi()
+methods to SQL::Abstract namespace from
+SQL::Abstract::Plugin::InsertMulti.
+
+Plugin system is depends on 'into' options of Sub::Exporter.
+
+WWW: http://search.cpan.org/dist/SQL-Abstract-Plugin-InsertMulti/
