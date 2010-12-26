@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	supertuxkart
-PORTVERSION=	0.6.2
-PORTREVISION=	3
+PORTVERSION=	0.7
 CATEGORIES=	games
 MASTER_SITES=	SF/supertuxkart/SuperTuxKart/${PORTVERSION}
 EXTRACT_SUFX=	-src.tar.bz2
@@ -15,9 +14,11 @@ EXTRACT_SUFX=	-src.tar.bz2
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Free 3D kart racing game
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/libplibsl.a:${PORTSDIR}/x11-toolkits/plib
 LIB_DEPENDS=	vorbisfile.6:${PORTSDIR}/audio/libvorbis \
-		ogg.7:${PORTSDIR}/audio/libogg
+		ogg.7:${PORTSDIR}/audio/libogg \
+		fribidi.3:${PORTSDIR}/converters/fribidi
+BUILD_DEPENDS=	${LOCALBASE}/lib/libIrrlicht.so:${PORTSDIR}/x11-toolkits/irrlicht
+RUN_DEPENDS=	${LOCALBASE}/lib/libIrrlicht.so:${PORTSDIR}/x11-toolkits/irrlicht
 
 USE_BZIP2=	yes
 USE_GL=		gl glu glut
@@ -34,6 +35,10 @@ PORTDOCS=	*
 # there's devel/bullet port installed
 CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}" \
 		CPPFLAGS="-I${LOCALBASE}/include"
+CONFIGURE_ARGS=	--with-irrlicht="${LOCALBASE}"
+
+LICENSE=	GPLv3
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 post-patch:
 	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} -e \
