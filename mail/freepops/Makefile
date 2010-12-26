@@ -17,6 +17,8 @@ COMMENT=	Extensible webmail to pop3 interface
 LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2 \
 		curl:${PORTSDIR}/ftp/curl
 
+BROKEN=		does not build
+
 MAN1=		freepopsd.1 freepops-updater-dialog.1 freepops-updater-zenity.1
 PORTDOCS=	*
 
