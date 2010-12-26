@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	skytools
-PORTVERSION=	2.1.11
+PORTVERSION=	2.1.12
 CATEGORIES=	databases
-MASTER_SITES=	http://pgfoundry.org/frs/download.php/2561/
+MASTER_SITES=	http://pgfoundry.org/frs/download.php/2872/
 
 MAINTAINER=	kheechin@gmail.com
 COMMENT=	PostgreSQL tools from Skype: walshipping, queueing, replication
