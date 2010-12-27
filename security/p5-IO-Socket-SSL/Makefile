@@ -18,6 +18,7 @@ RUN_DEPENDS=	p5-Net-SSLeay>=1.21:${PORTSDIR}/security/p5-Net-SSLeay
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
+INSTALL_TARGET=	pure_install
 
 MAN3=		IO::Socket::SSL.3
 
