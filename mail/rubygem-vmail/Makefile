@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	vmail
-PORTVERSION=	0.1.8
+PORTVERSION=	0.6.4
 CATEGORIES=	mail rubygems
 MASTER_SITES=	RG
 
@@ -19,6 +19,6 @@ USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
 
-PLIST_FILES=	bin/vmail bin/vmail_client
+PLIST_FILES=	bin/vmail bin/vmail_client bin/vmailsend
 
 .include <bsd.port.mk>
