@@ -6,16 +6,13 @@
 #
 
 PORTNAME=	scummvm
-DISTVERSION=	1.1.1
+DISTVERSION=	1.2.1
 CATEGORIES=	games emulators
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	${PORTNAME}/${PORTNAME}/${DISTVERSION}
 
 MAINTAINER=	lme@FreeBSD.org
 COMMENT=	Interpreter for several adventure games
-
-ONLY_FOR_ARCHS=	i386 amd64
-ONLY_FOR_ARCHS_REASON=	"invokes i386 asm"
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
@@ -33,13 +30,12 @@ CONFIGURE_ARGS=	--prefix=${PREFIX} \
 CONFIGURE_ENV=	CXX="${CXX}"
  		LDFLAGS="${PTHREAD_LIBS}"
 
-OPTIONS=	VORBIS "Enable Ogg Vorbis support" off \
+OPTIONS=	VORBIS "Enable Ogg Vorbis support" on \
 		MP3 "Enable MP3 support" on \
-		MPEG2 "Enable MPEG2 support (implies VORBIS)" on \
 		FLAC "Enable FLAC support" off \
 		FLUIDSYNTH "Enable FluidSynth MIDI synthesizer" off \
  		MT32EMU "Enable MT-32 emulator" on \
- 		X86_ASM "Enable assembly code (i386 only)" on
+ 		X86_ASM "Enable assembly code (i386 only)" off
 
 MAN6=		scummvm.6
 
@@ -51,9 +47,10 @@ ENGINEDATA=	drascula.dat \
 		sky.cpt \
 		teenagent.dat
 
-PLIST_FILES=	bin/scummvm %%DATADIR%%/scummmodern.zip \
+PLIST_FILES=	bin/scummvm \
 		%%DATADIR%%/scummvm.svg \
 		%%DATADIR%%/scummmodern.zip \
+		%%DATADIR%%/translations.dat \
 		$(ENGINEDATA:S/^/%%DATADIR%%\/$$/)
 PLIST_DIRS=	%%DATADIR%%
 
@@ -66,10 +63,6 @@ CONFIGURE_ARGS+=--with-nasm-prefix=${LOCALBASE}
 .else
 CONFIGURE_ARGS+=--disable-nasm
 .endif
-.endif
-
-.if defined(WITH_MPEG2)
-WITH_VORBIS=	yes
 .endif
 
 .if defined(WITH_VORBIS)
@@ -112,6 +105,7 @@ do-install:
 	@${MKDIR} ${DATADIR}
 	@${INSTALL_DATA} ${WRKSRC}/icons/scummvm.svg ${DATADIR}
 	@${INSTALL_DATA} ${WRKSRC}/gui/themes/scummmodern.zip ${DATADIR}
+	@${INSTALL_DATA} ${WRKSRC}/gui/themes/translations.dat ${DATADIR}
 .for i in ${ENGINEDATA}
 	@${INSTALL_DATA} ${WRKSRC}/dists/engine-data/${i} ${DATADIR}
 .endfor
