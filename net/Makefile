@@ -736,6 +736,7 @@
     SUBDIR += p5-X500-DN
     SUBDIR += p5-XML-Compile-SOAP
     SUBDIR += p5-XML-Compile-SOAP-Daemon
+    SUBDIR += p5-XML-Compile-SOAP-WSA
     SUBDIR += p5-XML-RPC
     SUBDIR += p5-XML-RPC-Fast
     SUBDIR += p5-XPC

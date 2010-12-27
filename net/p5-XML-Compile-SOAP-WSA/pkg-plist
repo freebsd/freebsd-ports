@@ -1,0 +1,18 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Compile/SOAP/WSA/.packlist
+%%SITE_PERL%%/XML/Compile/SOAP/WSA.pm
+%%SITE_PERL%%/XML/Compile/SOAP/WSA.pod
+%%SITE_PERL%%/XML/Compile/SOAP/WSA/Util.pm
+%%SITE_PERL%%/XML/Compile/SOAP/WSA/Util.pod
+%%SITE_PERL%%/XML/Compile/SOAP/WSA/xsd/20060512-wsaw.xsd
+%%SITE_PERL%%/XML/Compile/SOAP/WSA/xsd/20070131-metadata.xsd
+%%SITE_PERL%%/XML/Compile/SOAP/WSA/xsd/20070619-wsa09.xsd
+%%SITE_PERL%%/XML/Compile/SOAP/WSA/xsd/20080723-wsa10.xsd
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Compile/SOAP/WSA/
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Compile/SOAP/
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Compile/
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/
+@dirrmtry %%SITE_PERL%%/XML/Compile/SOAP/WSA/xsd
+@dirrmtry %%SITE_PERL%%/XML/Compile/SOAP/WSA
+@dirrmtry %%SITE_PERL%%/XML/Compile/SOAP
+@dirrmtry %%SITE_PERL%%/XML/Compile
+@dirrmtry %%SITE_PERL%%/XML
