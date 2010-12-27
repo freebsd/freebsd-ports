@@ -389,6 +389,7 @@
     SUBDIR += imaze
     SUBDIR += inform
     SUBDIR += inform7
+    SUBDIR += instead
     SUBDIR += intensityengine
     SUBDIR += interlogic
     SUBDIR += ioquake3

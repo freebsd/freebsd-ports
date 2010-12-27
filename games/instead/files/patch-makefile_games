@@ -1,0 +1,11 @@
+--- games/Makefile.orig	2010-10-12 19:06:34.000000000 +0800
++++ games/Makefile	2010-12-23 11:55:51.000000000 +0700
+@@ -7,7 +7,7 @@
+ 	for f in *; do \
+ 		if [ ! -d $$f ]; then continue; fi;\
+ 		$(INSTALLD) $(GAMESPATH)/$$f; \
+-		tar --exclude=".svn" -c -C $$f . | tar -x -C $(GAMESPATH)/$$f;\
++		tar -cf - -C $$f . | tar -xpf - -C $(GAMESPATH)/$$f; \
+ 	done
+ 
+ uninstall:

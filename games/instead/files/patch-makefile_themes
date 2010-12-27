@@ -1,0 +1,11 @@
+--- themes/Makefile.orig	2010-10-12 19:06:32.000000000 +0800
++++ themes/Makefile	2010-12-23 11:55:51.000000000 +0700
+@@ -8,7 +8,7 @@
+ 	for f in *; do \
+ 		if [ ! -d $$f ]; then continue; fi;\
+ 		$(INSTALLD) $(THEMESPATH)/$$f;\
+-		tar --exclude=".svn" -c -C $$f . | tar -x -C $(THEMESPATH)/$$f;\
++		tar -cf - -C $$f . | tar -xpf - -C $(THEMESPATH)/$$f; \
+ 	done
+ 
+ uninstall:
