@@ -10,7 +10,7 @@ PORTVERSION=	2.6.13
 CATEGORIES=	www
 MASTER_SITES=	http://www.phpmyfaq.de/download/
 
-MAINTAINER=	flo@smeets.im
+MAINTAINER=	flo@FreeBSD.org
 COMMENT=	A multilingual, completely database-driven FAQ-system
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}

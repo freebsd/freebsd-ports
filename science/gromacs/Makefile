@@ -10,7 +10,7 @@ PORTVERSION=	4.5.3
 CATEGORIES=	science
 MASTER_SITES=	ftp://ftp.gromacs.org/pub/gromacs/
 
-MAINTAINER=	flo@smeets.im
+MAINTAINER=	flo@FreeBSD.org
 COMMENT=	Compute molecular dynamics
 
 USE_GNOME=	libxml2

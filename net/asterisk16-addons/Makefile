@@ -13,7 +13,7 @@ MASTER_SITES=	http://downloads.asterisk.org/pub/telephony/asterisk/ \
 PKGNAMESUFFIX=	-addons
 DISTNAME=	asterisk${PKGNAMESUFFIX}-${DISTVERSION}
 
-MAINTAINER=	flo@smeets.im
+MAINTAINER=	flo@FreeBSD.org
 COMMENT=	GPL modules for the Asterisk Open Source PBX
 
 BUILD_DEPENDS=	asterisk:${PORTSDIR}/net/asterisk16
