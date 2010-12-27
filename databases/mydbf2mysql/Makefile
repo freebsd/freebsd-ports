@@ -14,7 +14,7 @@ DISTNAME=	MyDBF2MySQL-${PORTVERSION}
 MAINTAINER=	andrey.polyakov@unix.net
 COMMENT=	Flexible tool for DBF import into MySQL
 
-RUN_DEPENDS+=	py26-MySQLdb>=1.2.2:${PORTSDIR}/databases/py-MySQLdb
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}MySQLdb>=1.2.2:${PORTSDIR}/databases/py-MySQLdb
 RUN_DEPENDS+=	ydbf=0.0.1:${PORTSDIR}/devel/py-ydbf
 
 USE_PYTHON=	2.6+
