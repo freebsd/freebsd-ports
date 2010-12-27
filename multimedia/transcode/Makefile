@@ -264,7 +264,7 @@ pre-install:
 	${RM} -rf ${PLIST} ${FAKEDIR}
 	${MKDIR} ${FAKEDIR}
 	${TOUCH} -f ${PLIST}
-	@(cd ${WRKSRC} && ${GMAKE} install prefix=${FAKEDIR})
+	@(cd ${WRKSRC} && ${GMAKE} install prefix=${FAKEDIR} mandir=${FAKEDIR}/man)
 	${RM} -rf ${FAKEDIR}/man # let bsd.port.mk handle man files
 .for dir in bin share/doc lib
 	@(cd ${FAKEDIR}/${dir} && ${FIND} -s * -type f -o -type l | \
