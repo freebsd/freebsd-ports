@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	CPAN-Meta
-PORTVERSION=	2.102160
+PORTVERSION=	2.102400
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -18,7 +18,8 @@ BUILD_DEPENDS=	p5-autodie>0:${PORTSDIR}/devel/p5-autodie	\
 		p5-JSON>=2:${PORTSDIR}/converters/p5-JSON	\
 		p5-Parse-CPAN-Meta>0:${PORTSDIR}/devel/p5-Parse-CPAN-Meta	\
 		p5-Test-Simple>0:${PORTSDIR}/devel/p5-Test-Simple		\
-		p5-Version-Requirements>0:${PORTSDIR}/devel/p5-Version-Requirements
+		p5-Version-Requirements>0:${PORTSDIR}/devel/p5-Version-Requirements \
+		p5-version>=0.82:${PORTSDIR}/devel/p5-version
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	YES
