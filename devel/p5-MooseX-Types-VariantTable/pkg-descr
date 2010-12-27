@@ -1,0 +1,7 @@
+MooseX::Types::VariantTable implements a simple dispatch table based on
+Moose type constraints.
+
+Subtypes will be checked before their parents, meaning that the order of
+the declaration does not matter.
+
+WWW: http://search.cpan.org/dist/MooseX-Types-VariantTable/
