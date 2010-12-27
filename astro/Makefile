@@ -74,6 +74,7 @@
     SUBDIR += pp3
     SUBDIR += prune
     SUBDIR += ptiger
+    SUBDIR += py-RO
     SUBDIR += py-aipy
     SUBDIR += py-astLib
     SUBDIR += py-metar
