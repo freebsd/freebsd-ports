@@ -1608,6 +1608,7 @@
     SUBDIR += rubygem-railties
     SUBDIR += rubygem-ramaze
     SUBDIR += rubygem-redcloth
+    SUBDIR += rubygem-rest-client
     SUBDIR += rubygem-rfacebook
     SUBDIR += rubygem-rfeedfinder
     SUBDIR += rubygem-robots
