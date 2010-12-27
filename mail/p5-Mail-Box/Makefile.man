@@ -38,6 +38,7 @@ MAN3+=	Mail::Box::Message.3
 MAN3+=	Mail::Box::Message::Destructed.3
 MAN3+=	Mail::Box::Net.3
 MAN3+=	Mail::Box::Net::Message.3
+MAN3+=	Mail::Box::POP3s.3
 MAN3+=	Mail::Box::POP3.3
 MAN3+=	Mail::Box::POP3::Message.3
 MAN3+=	Mail::Box::Parser.3

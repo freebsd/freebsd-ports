@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Mail-Box
-PORTVERSION=	2.095
+PORTVERSION=	2.096
 CATEGORIES=	mail perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -28,8 +28,7 @@ BUILD_DEPENDS=	\
 	p5-Object-Realize-Later>=0.14:${PORTSDIR}/devel/p5-Object-Realize-Later \
 	p5-TimeDate>=0:${PORTSDIR}/devel/p5-TimeDate \
 	p5-URI>=1.23:${PORTSDIR}/net/p5-URI \
-	p5-User-Identity>=0.90:${PORTSDIR}/devel/p5-User-Identity \
-	p5-Test-Harness>=3.00:${PORTSDIR}/devel/p5-Test-Harness
+	p5-User-Identity>=0.90:${PORTSDIR}/devel/p5-User-Identity
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	5.8.0+
