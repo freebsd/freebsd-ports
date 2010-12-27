@@ -1,9 +1,7 @@
-bin/cardos-info
 bin/cardos-tool
 bin/cryptoflex-tool
 bin/eidenv
 bin/netkey-tool
-bin/opensc-config
 bin/opensc-explorer
 bin/opensc-tool
 bin/piv-tool
@@ -14,39 +12,10 @@ bin/pkcs15-tool
 bin/rutoken-tool
 bin/westcos-tool
 etc/opensc.conf-sample
-include/opensc/asn1.h
-include/opensc/cardctl.h
-include/opensc/compression.h
-include/opensc/emv.h
-include/opensc/errors.h
-include/opensc/log.h
-include/opensc/opensc.h
-include/opensc/pkcs11-opensc.h
-include/opensc/pkcs11.h
-include/opensc/pkcs15-init.h
-include/opensc/pkcs15.h
-include/opensc/scconf.h
-include/opensc/types.h
-include/opensc/ui.h
-libdata/pkgconfig/libopensc.pc
-libdata/pkgconfig/libpkcs15init.pc
-libdata/pkgconfig/libscconf.pc
-%%SIGNER%%%%WEBPLUGINS_DIR%%/opensc-signer.so
-%%SIGNER%%lib/opensc-signer.a
-%%SIGNER%%lib/opensc-signer.la
-%%SIGNER%%lib/opensc-signer.so
 lib/libopensc.a
 lib/libopensc.la
 lib/libopensc.so
-lib/libopensc.so.2
-lib/libpkcs15init.a
-lib/libpkcs15init.la
-lib/libpkcs15init.so
-lib/libpkcs15init.so.2
-lib/libscconf.a
-lib/libscconf.la
-lib/libscconf.so
-lib/libscconf.so.2
+lib/libopensc.so.3
 lib/onepin-opensc-pkcs11.la
 lib/onepin-opensc-pkcs11.so
 lib/opensc-pkcs11.la
@@ -74,7 +43,6 @@ lib/pkcs11/pkcs11-spy.so
 %%DATADIR%%/setcos.profile
 %%DATADIR%%/starcos.profile
 %%DATADIR%%/westcos.profile
-%%SIGNER%%@dirrmtry %%WEBPLUGINS_DIR%%
 @dirrm include/opensc
 @dirrm lib/pkcs11
 @dirrm %%DATADIR%%
