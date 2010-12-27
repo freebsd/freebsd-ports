@@ -1,51 +1,22 @@
---- configure.orig	2010-09-29 15:19:43.000000000 +0400
-+++ configure	2010-10-24 22:49:10.000000000 +0400
-@@ -125,11 +125,11 @@
-     echo "                                 ... NOT found, module postgres disabled"
+--- configure.orig	2010-11-19 12:52:07.000000000 +0300
++++ configure	2010-11-30 00:06:09.000000000 +0300
+@@ -152,8 +152,8 @@
+         fi
+     fi  
+     if [ "X" = "X$APR_IPATH" ]; then
+-        if [ -d "$i/apr-1.0" ]; then
+-            APR_IPATH="$i/apr-1.0"
++        if [ -d "$i/apr-1" ]; then
++            APR_IPATH="$i/apr-1"
+         fi
+     fi  
+ done
+@@ -473,7 +473,7 @@
  fi
  
--echo "Checking for SVN (libsvn_client-1 libapr-0.so libaprutil-0.so) ..."
-+echo "Checking for SVN (libsvn_client-1 libapr-1.so libaprutil-1.so) ..."
- for i in  $LIBDIRS /lib  /usr/lib /usr/local/lib /opt/local/lib .
- do
-     if [ "X" = "X$SVN_PATH" ]; then
--        if [ -f "$i/libsvn_client-1.so" ]&&[ -f "$i/libapr-0.so" ]&&[ -f "$i/libaprutil-0.so" ]; then
-+        if [ -f "$i/libsvn_client-1.so" ]&&[ -f "$i/libapr-1.so" ]&&[ -f "$i/libaprutil-1.so" ]; then
-             SVN_PATH="$i"
-         fi
-     fi
-@@ -303,8 +303,8 @@
-         fi
-     fi  
-     if [ "X" = "X$APR_IPATH" ]; then
--        if [ -d "$i/apr-0" ]; then
--            APR_IPATH="$i/apr-0"
-+        if [ -d "$i/apr-1" ]; then
-+            APR_IPATH="$i/apr-1"
-         fi
-     fi  
- done
-@@ -321,8 +321,8 @@
-         fi
-     fi  
-     if [ "X" = "X$APR_IPATH" ]; then
--        if [ -d "$i/apr-0" ]; then
--            APR_IPATH="$i/apr-0"
-+        if [ -d "$i/apr-1" ]; then
-+            APR_IPATH="$i/apr-1"
-         fi
-     fi  
- done
-@@ -528,10 +528,10 @@
-     XLIBS="$XLIBS -lpq"
+ if [ -n "$FIREBIRD_PATH" -o -n "$SSL_PATH" -o -n "$CRYPTO_PATH" -o -n "$NSL_PATH" -o -n "$SOCKET_PATH" -o -n "$RESOLV_PATH" -o -n "$SAPR3_PATH" -o -n "$SSH_PATH" -o -n "$POSTGRES_PATH" -o -n "$SVN_PATH" -o -n "$NCP_PATH" -o -n "$AFP_PATH" -o -n "$MYSQL_PATH" ]; then
+-    XLIBPATHS="-L/usr/lib -L/usr/local/lib -L/lib"
++    XLIBPATHS="-L/usr/local/lib -L/usr/lib -L/lib"
  fi
- if [ -n "$SVN_PATH" ]; then
--    XLIBS="$XLIBS -lsvn_client-1 -lapr-0 -laprutil-0"
-+    XLIBS="$XLIBS -lsvn_client-1 -lapr-1 -laprutil-1"
- fi
- if [ -n "$SVN_PATH" ]; then
--    XLIBS="$XLIBS -lsvn_client-1 -lapr-0 -laprutil-0"
-+    XLIBS="$XLIBS -lsvn_client-1 -lapr-1 -laprutil-1"
- fi
- if [ -n "$SSH_PATH" ]; then
-     XLIBS="$XLIBS -lssh"
+ if [ -n "$SSL_PATH" ]; then
+     XDEFINES="$XDEFINES -DLIBOPENSSL"
