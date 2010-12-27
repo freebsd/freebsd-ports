@@ -11861,6 +11861,7 @@ p5-DBIx-DBSchema                ports/databases/p5-DBIx-DBSchema
 p5-DBIx-DataSource              ports/databases/p5-DBIx-DataSource
 p5-DBIx-Ease                    ports/databases/p5-DBIx-Ease
 p5-DBIx-HA                      ports/databases/p5-DBIx-HA
+p5-DBIx-Inspector               ports/databases/p5-DBIx-Inspector
 p5-DBIx-Log4perl                ports/databases/p5-DBIx-Log4perl
 p5-DBIx-MySQLSequence           ports/databases/p5-DBIx-MySQLSequence
 p5-DBIx-NoSQL                   ports/databases/p5-DBIx-NoSQL
@@ -13908,6 +13909,7 @@ p5-Readonly                     ports/devel/p5-Readonly
 p5-Redis                        ports/databases/p5-Redis
 p5-Regex-PreSuf                 ports/textproc/p5-Regex-PreSuf
 p5-Regexp-Assemble              ports/devel/p5-Regexp-Assemble
+p5-Regexp-Assemble-Compressed   ports/devel/p5-Regexp-Assemble-Compressed
 p5-Regexp-Bind                  ports/devel/p5-Regexp-Bind
 p5-Regexp-Common                ports/textproc/p5-Regexp-Common
 p5-Regexp-Common-Email-Address  ports/textproc/p5-Regexp-Common-Email-Address
@@ -13972,6 +13974,7 @@ p5-SOAP-WSDL                    ports/devel/p5-SOAP-WSDL
 p5-SPOPS                        ports/devel/p5-SPOPS
 p5-SQL-Abstract                 ports/databases/p5-SQL-Abstract
 p5-SQL-Abstract-Limit           ports/databases/p5-SQL-Abstract-Limit
+p5-SQL-Abstract-Plugin-InsertMulti  ports/databases/p5-SQL-Abstract-Plugin-InsertMulti
 p5-SQL-Interp                   ports/databases/p5-SQL-Interp
 p5-SQL-ReservedWords            ports/databases/p5-SQL-ReservedWords
 p5-SQL-Statement                ports/databases/p5-SQL-Statement
@@ -14367,6 +14370,7 @@ p5-Test-XML-Valid               ports/devel/p5-Test-XML-Valid
 p5-Test-XPath                   ports/lang/p5-Test-XPath
 p5-Test-YAML-Meta               ports/devel/p5-Test-YAML-Meta
 p5-Test-YAML-Valid              ports/devel/p5-Test-YAML-Valid
+p5-Test-postgresql              ports/databases/p5-Test-postgresql
 p5-Test-use-ok                  ports/devel/p5-Test-use-ok
 p5-TestGen4Web-Runner           ports/www/p5-TestGen4Web-Runner
 p5-Text-ASCIIMathML             ports/textproc/p5-Text-ASCIIMathML
@@ -16081,6 +16085,7 @@ p5-dbix-dbhresolver             ports/databases/p5-DBIx-DBHResolver
 p5-dbix-dbschema                ports/databases/p5-DBIx-DBSchema
 p5-dbix-ease                    ports/databases/p5-DBIx-Ease
 p5-dbix-ha                      ports/databases/p5-DBIx-HA
+p5-dbix-inspector               ports/databases/p5-DBIx-Inspector
 p5-dbix-log4perl                ports/databases/p5-DBIx-Log4perl
 p5-dbix-mysqlsequence           ports/databases/p5-DBIx-MySQLSequence
 p5-dbix-nosql                   ports/databases/p5-DBIx-NoSQL
@@ -17996,6 +18001,7 @@ p5-reaper                       ports/devel/p5-reaper
 p5-redis                        ports/databases/p5-Redis
 p5-regex-presuf                 ports/textproc/p5-Regex-PreSuf
 p5-regexp-assemble              ports/devel/p5-Regexp-Assemble
+p5-regexp-assemble-compressed   ports/devel/p5-Regexp-Assemble-Compressed
 p5-regexp-bind                  ports/devel/p5-Regexp-Bind
 p5-regexp-common                ports/textproc/p5-Regexp-Common
 p5-regexp-common-email-address  ports/textproc/p5-Regexp-Common-Email-Address
@@ -18181,6 +18187,7 @@ p5-spreadsheet-writeexcelxml    ports/textproc/p5-Spreadsheet-WriteExcelXML
 p5-springgraph                  ports/graphics/p5-SpringGraph
 p5-sql-abstract                 ports/databases/p5-SQL-Abstract
 p5-sql-abstract-limit           ports/databases/p5-SQL-Abstract-Limit
+p5-sql-abstract-plugin-insertmulti  ports/databases/p5-SQL-Abstract-Plugin-InsertMulti
 p5-sql-interp                   ports/databases/p5-SQL-Interp
 p5-sql-reservedwords            ports/databases/p5-SQL-ReservedWords
 p5-sql-statement                ports/databases/p5-SQL-Statement
@@ -18448,6 +18455,7 @@ p5-test-pod-coverage-permissive  ports/devel/p5-Test-Pod-Coverage-Permissive
 p5-test-poe-client-tcp          ports/devel/p5-Test-POE-Client-TCP
 p5-test-poe-server-tcp          ports/devel/p5-Test-POE-Server-TCP
 p5-test-portability-files       ports/devel/p5-Test-Portability-Files
+p5-test-postgresql              ports/databases/p5-Test-postgresql
 p5-test-randomresults           ports/devel/p5-Test-RandomResults
 p5-test-reporter                ports/devel/p5-Test-Reporter
 p5-test-requires                ports/devel/p5-Test-Requires
@@ -19823,6 +19831,7 @@ pecl-crack                      ports/security/pecl-crack
 pecl-ctemplate                  ports/textproc/pecl-ctemplate
 pecl-cvsclient                  ports/net/pecl-cvsclient
 pecl-dbase                      ports/databases/pecl-dbase
+pecl-dio                        ports/devel/pecl-dio
 pecl-doublemetaphone            ports/textproc/pecl-doublemetaphone
 pecl-drizzle                    ports/databases/pecl-drizzle
 pecl-enchant                    ports/textproc/pecl-enchant
