@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	hydra
-PORTVERSION=	5.8
+PORTVERSION=	5.9
 CATEGORIES=	security
 MASTER_SITES=	http://freeworld.thc.org/releases/
 MASTER_SITE_SUBDIR=	groups/thc
@@ -26,6 +26,22 @@ USE_GNOME=	gtk20
 USE_OPENSSL=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}-src
 
+OPTIONS=	FIREBIRD "Enable firebird support" off \
+		SSH "Enable ssh support" off \
+		SVN "Enable subversion support" off
+
+.include <bsd.port.pre.mk>
+
+.if defined(WITH_FIREBIRD)
+LIB_DEPENDS+=	fbclient.2:${PORTSDIR}/databases/firebird20-client
+.endif
+.if defined(WITH_SSH)
+LIB_DEPENDS+=	ssh.4:${PORTSDIR}/security/libssh
+.endif
+.if defined(WITH_SVN)
+LIB_DEPENDS+=	svn_client-1:${PORTSDIR}/devel/subversion
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|CC = gcc||; \
 		s|-O2|${CFLAGS}|; s|md4\..||g' \
@@ -34,4 +50,4 @@ post-patch:
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/hydra ${WRKSRC}/hydra-gtk/src/xhydra ${PREFIX}/bin
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
