@@ -6,20 +6,21 @@
 #
 
 PORTNAME=	ptlib
-PORTVERSION=	2.6.5
-PORTREVISION=	2
+PORTVERSION=	2.6.7
 CATEGORIES=	devel
-MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/ptlib/2.6
+MASTER_SITES=	SF/opalvoip/v3.6%20Lalande/Final/
 DISTNAME=	ptlib-${PORTVERSION}
 
 MAINTAINER=	melifaro@ipfw.ru
 COMMENT=	A cross platform C++ library, used by OPAL
 
+LICENSE=MPL
+
 LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2
 
-CONFLICTS=	pwlib-1.* ptlib-2.4.*
+CONFLICTS=	pwlib-1.* ptlib-2.4.* ptlib-2.8.*
 
+USE_BZIP2=	yes
 USE_BISON=	build
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
@@ -30,8 +31,10 @@ USE_LDCONFIG=	yes
 
 CFLAGS+=	-I${LOCALBASE}/include
 CONFIGURE_ARGS+=	--enable-oss --enable-plugins --with-expat-dir="${LOCALBASE}"
+CONFIGURE_ENV+=		OPENSSL_CFLAGS="-I${OPENSSLINC}" OPENSSL_LIBS="-L${OPENSSLLIB} -lssl"
 
 OPTIONS=	ODBC		"Use ODBC" On \
+		ALSA		"Use ALSA (experimental)" Off \
 		V4L		"Use Video4Linux" Off \
 		BSDVIDEO	"Enable BSD video support" On \
 		SDL		"Use SDL" On \
@@ -55,6 +58,15 @@ CONFIGURE_ARGS+=	--enable-odbc
 LIB_DEPENDS+=		odbc.1:${PORTSDIR}/databases/unixODBC
 .else
 CONFIGURE_ARGS+=	--disable-odbc
+.endif
+
+.if defined(WITH_ALSA)
+CONFIGURE_ARGS+=	--enable-alsa
+PLIST_SUB+=	ALSA=""
+LIB_DEPENDS+=		asound.2:${PORTSDIR}/audio/alsa-lib
+.else
+CONFIGURE_ARGS+=	--disable-alsa
+PLIST_SUB+=	ALSA="@comment "
 .endif
 
 .if defined(WITH_BSDVIDEO)
@@ -130,6 +142,7 @@ CONFIGURE_ARGS+=	--disable-dc
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-lpt|-lpt-${PORTVERSION:C/.[0-9]+$//g}|' ${WRKSRC}/ptlib.pc.in
+	@${REINPLACE_CMD} -e 's|-lasound|-lasound -L${LOCALBASE}/lib|' ${WRKSRC}/plugins/sound_alsa/Makefile
 .if ${ARCH} == sparc64 && ${OSVERSION} <= 700003
 	@${REINPLACE_CMD} -e 's|P_PTHREADS_XPG6|0|' ${WRKSRC}/src/ptlib/unix/tlibthrd.cxx
 .endif

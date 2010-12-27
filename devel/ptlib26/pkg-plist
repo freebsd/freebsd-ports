@@ -157,9 +157,10 @@ include/ptlib/video.h
 include/ptlib/videoio.h
 include/ptlib/videoio1394dc.h
 lib/libpt-%%PVERSION_MAJOR%%.so
+lib/libpt-%%PVERSION_MAJOR%%.so.%%PVERSION_MINOR%%
 lib/libpt.so
 lib/libpt_s.a
-lib/libpt-%%PVERSION_MAJOR%%.so.%%PVERSION_MINOR%%
+%%ALSA%%lib/ptlib-%%PORTVERSION%%/devices/sound/alsa_pwplugin.so
 lib/ptlib-%%PORTVERSION%%/devices/sound/oss_pwplugin.so
 %%BSDVIDEO%%lib/ptlib-%%PORTVERSION%%/devices/videoinput/bsdvideo_pwplugin.so
 %%V4L%%lib/ptlib-%%PORTVERSION%%/devices/videoinput/v4l_pwplugin.so
