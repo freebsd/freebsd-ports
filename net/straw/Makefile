@@ -18,6 +18,9 @@ BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/_bsddb.so:${PORTSDIR}/databases/py-bsddb
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/_bsddb.so:${PORTSDIR}/databases/py-bsddb \
 		${PYTHON_SITELIBDIR}/dbus/_dbus.py:${PORTSDIR}/devel/py-dbus
 
+DEPRECATED=	abandoned upstream and does not work with python 2.6+
+EXPIRATION_DATA=2011-03-31
+
 USE_GMAKE=	yes
 USE_BZIP2=	yes
 USE_GNOME=	gnomehier libglade2 pygnome2 pygnomeextras
