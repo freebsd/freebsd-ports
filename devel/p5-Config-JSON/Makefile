@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	Config-JSON
-PORTVERSION=	1.5000
-PORTREVISION=	2
+PORTVERSION=	1.5100
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -15,9 +14,11 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	A JSON based config file system
 
-RUN_DEPENDS=    p5-Class-InsideOut>=1.06:${PORTSDIR}/devel/p5-Class-InsideOut \
-		p5-JSON>=2.12:${PORTSDIR}/converters/p5-JSON \
-		p5-Moose>=0.93:${PORTSDIR}/devel/p5-Moose
+RUN_DEPENDS=	\
+		p5-Scalar-List-Utils>=1.19:${PORTSDIR}/lang/p5-Scalar-List-Utils \
+		p5-File-Temp>=0.18:${PORTSDIR}/devel/p5-File-Temp \
+		p5-JSON>=2.16:${PORTSDIR}/converters/p5-JSON \
+		p5-Any-Moose>=0.13:${PORTSDIR}/devel/p5-Any-Moose
 BUILD_DEPENDS=  ${RUN_DEPENDS}
 
 PERL_CONFIGURE=	Yes
