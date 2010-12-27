@@ -61,8 +61,6 @@ OPTIONS=	PAM		"Enable pam(3) support"				on \
 		GSSAPI		"Enable GSSAPI support (req: KERBEROS)"		off \
 		KERB_GSSAPI	"Enable Kerberos/GSSAPI patch (req: GSSAPI)"	off \
 		OPENSSH_CHROOT	"Enable CHROOT support"				off \
-		OPENSC		"Enable OpenSC smartcard support"		off \
-		OPENSCPINPATCH	"Enable OpenSC PIN patch"			off \
 		HPN		"Enable HPN-SSH patch"				off \
 		LPK		"Enable LDAP Public Key (LPK) patch"		off \
 		X509		"Enable x509 certificate patch"			off \
@@ -143,16 +141,6 @@ CONFIGURE_ARGS+=	--with-ssl-dir=${OPENSSLBASE}
 
 .if defined(WITH_OPENSSH_CHROOT)
 CFLAGS+=		-DCHROOT
-.endif
-
-.if defined(WITH_OPENSC)
-LIB_DEPENDS+=		opensc.2:${PORTSDIR}/security/opensc
-CONFIGURE_ARGS+=	--with-opensc=${LOCALBASE}
-.endif
-
-# See http://bugzilla.mindrot.org/show_bug.cgi?id=608
-.if defined(WITH_OPENSCPINPATCH)
-EXTRA_PATCHES+=		${FILESDIR}/scardpin.patch
 .endif
 
 .if defined(WITH_HPN)
