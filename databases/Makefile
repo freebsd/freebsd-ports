@@ -234,7 +234,6 @@
     SUBDIR += mysql51-scripts
     SUBDIR += mysql51-server
     SUBDIR += mysql55-client
-    SUBDIR += mysql55-scripts
     SUBDIR += mysql55-server
     SUBDIR += mysql_last_value
     SUBDIR += mysqlard

@@ -1,0 +1,53 @@
+--- client/CMakeLists.txt.orig	2010-12-03 18:58:26.000000000 +0100
++++ client/CMakeLists.txt	2010-12-23 18:01:04.000000000 +0100
+@@ -27,17 +27,20 @@
+ 
+ ADD_DEFINITIONS(${READLINE_DEFINES})
+ ADD_DEFINITIONS(${SSL_DEFINES})
++IF(FALSE)
+ MYSQL_ADD_EXECUTABLE(mysql completion_hash.cc mysql.cc readline.cc sql_string.cc)
+ TARGET_LINK_LIBRARIES(mysql mysqlclient)
+ IF(UNIX)
+   TARGET_LINK_LIBRARIES(mysql ${READLINE_LIBRARY})
+ ENDIF(UNIX)
++ENDIF()
+ 
+ MYSQL_ADD_EXECUTABLE(mysqltest mysqltest.cc COMPONENT Test)
+ SET_SOURCE_FILES_PROPERTIES(mysqltest.cc PROPERTIES COMPILE_FLAGS "-DTHREADS")
+ TARGET_LINK_LIBRARIES(mysqltest mysqlclient regex)
+ 
+ 
++IF(FALSE)
+ MYSQL_ADD_EXECUTABLE(mysqlcheck mysqlcheck.c)
+ TARGET_LINK_LIBRARIES(mysqlcheck mysqlclient)
+ 
+@@ -46,11 +49,13 @@
+ 
+ MYSQL_ADD_EXECUTABLE(mysqlimport mysqlimport.c)
+ TARGET_LINK_LIBRARIES(mysqlimport mysqlclient)
++ENDIF()
+ 
+ MYSQL_ADD_EXECUTABLE(mysql_upgrade mysql_upgrade.c)
+ TARGET_LINK_LIBRARIES(mysql_upgrade mysqlclient)
+ ADD_DEPENDENCIES(mysql_upgrade GenFixPrivs)
+ 
++IF(FALSE)
+ MYSQL_ADD_EXECUTABLE(mysqlshow mysqlshow.c)
+ TARGET_LINK_LIBRARIES(mysqlshow mysqlclient)
+ 
+@@ -63,13 +68,14 @@
+ MYSQL_ADD_EXECUTABLE(mysqlslap mysqlslap.c)
+ SET_SOURCE_FILES_PROPERTIES(mysqlslap.c PROPERTIES COMPILE_FLAGS "-DTHREADS")
+ TARGET_LINK_LIBRARIES(mysqlslap mysqlclient)
++ENDIF()
+ 
+ # "WIN32" also covers 64 bit. "echo" is used in some files below "mysql-test/".
+ IF(WIN32)
+   MYSQL_ADD_EXECUTABLE(echo echo.c)
+ ENDIF(WIN32)
+ 
+-SET_TARGET_PROPERTIES (mysqlcheck mysqldump mysqlimport mysql_upgrade mysqlshow mysqlslap 
++SET_TARGET_PROPERTIES (mysql_upgrade
+ PROPERTIES HAS_CXX TRUE)
+ 
+ ADD_DEFINITIONS(-DHAVE_DLOPEN)
