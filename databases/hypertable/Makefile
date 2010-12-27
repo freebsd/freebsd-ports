@@ -26,8 +26,6 @@ LIB_DEPENDS=	expat:${PORTSDIR}/textproc/expat2 \
 BUILD_DEPENDS=	${RUN_DEPENDS} \
 		ant:${PORTSDIR}/devel/apache-ant
 
-BROKEN=		does not build
-
 OPTIONS=	TCMALLOC	"Use Tcmalloc"			on  \
 		HOARD		"Use Hoard"			off \
 		PYTHONLIBS	"Add Python binding"		off \
