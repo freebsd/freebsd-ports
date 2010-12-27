@@ -5,14 +5,14 @@
 # $FreeBSD$
 
 PORTNAME=	classifier
-PORTVERSION=	1.3.2
+PORTVERSION=	1.3.3
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	peter.schuller@infidyne.com
 COMMENT=	A classifier module for Bayesian and other types of classifications
 
-RUN_DEPENDS=	rubygem-stemmer>=1.0.0:${PORTSDIR}/devel/rubygem-stemmer
+RUN_DEPENDS=	rubygem-fast-stemmer>=1.0.0:${PORTSDIR}/devel/rubygem-fast-stemmer
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
