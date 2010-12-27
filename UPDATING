@@ -5,6 +5,15 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20101227:
+  AFFECTS: users of security/opensc
+  AUTHOR: ale@FreeBSD.org
+
+  opensc has been updated to 0.12.0 release. Only one backend can be
+  choosen at compile-time: PC/SC is now the default one.
+  opensc doesn't export anymore its internal library, PKCS#11 is the
+  recommended interface.
+
 20101220:
   AFFECTS: users of net-mgmt/flowd
   AUTHOR: ohauer@FreeBSD.org
