@@ -1,0 +1,35 @@
+--- client/CMakeLists.txt.orig	2010-12-03 18:58:26.000000000 +0100
++++ client/CMakeLists.txt	2010-12-23 15:19:07.000000000 +0100
+@@ -33,9 +33,11 @@
+   TARGET_LINK_LIBRARIES(mysql ${READLINE_LIBRARY})
+ ENDIF(UNIX)
+ 
++IF(FALSE)
+ MYSQL_ADD_EXECUTABLE(mysqltest mysqltest.cc COMPONENT Test)
+ SET_SOURCE_FILES_PROPERTIES(mysqltest.cc PROPERTIES COMPILE_FLAGS "-DTHREADS")
+ TARGET_LINK_LIBRARIES(mysqltest mysqlclient regex)
++ENDIF()
+ 
+ 
+ MYSQL_ADD_EXECUTABLE(mysqlcheck mysqlcheck.c)
+@@ -47,9 +49,11 @@
+ MYSQL_ADD_EXECUTABLE(mysqlimport mysqlimport.c)
+ TARGET_LINK_LIBRARIES(mysqlimport mysqlclient)
+ 
++IF(FALSE)
+ MYSQL_ADD_EXECUTABLE(mysql_upgrade mysql_upgrade.c)
+ TARGET_LINK_LIBRARIES(mysql_upgrade mysqlclient)
+ ADD_DEPENDENCIES(mysql_upgrade GenFixPrivs)
++ENDIF()
+ 
+ MYSQL_ADD_EXECUTABLE(mysqlshow mysqlshow.c)
+ TARGET_LINK_LIBRARIES(mysqlshow mysqlclient)
+@@ -69,7 +73,7 @@
+   MYSQL_ADD_EXECUTABLE(echo echo.c)
+ ENDIF(WIN32)
+ 
+-SET_TARGET_PROPERTIES (mysqlcheck mysqldump mysqlimport mysql_upgrade mysqlshow mysqlslap 
++SET_TARGET_PROPERTIES (mysqlcheck mysqldump mysqlimport mysqlshow mysqlslap 
+ PROPERTIES HAS_CXX TRUE)
+ 
+ ADD_DEFINITIONS(-DHAVE_DLOPEN)

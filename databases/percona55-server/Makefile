@@ -6,98 +6,57 @@
 #
 
 PORTNAME?=	mysql
-PORTVERSION=	5.5.7
+PORTVERSION=	5.5.8
 PORTREVISION?=	0
 CATEGORIES=	databases ipv6
 MASTER_SITES=	${MASTER_SITE_MYSQL}
 MASTER_SITE_SUBDIR=	MySQL-5.5
 PKGNAMESUFFIX?=	-server
-DISTNAME=	${PORTNAME}-${PORTVERSION}-rc
 
 MAINTAINER=	ale@FreeBSD.org
 COMMENT?=	Multithreaded SQL database (server)
 
-SLAVEDIRS=	databases/mysql55-client databases/mysql55-scripts
-GNU_CONFIGURE=	yes
+SLAVEDIRS=	databases/mysql55-client
+USE_CMAKE=	yes
 MAKE_JOBS_SAFE=	yes
 
-CONFIGURE_ARGS=	--localstatedir=/var/db/mysql \
-		--without-debug \
-		--without-readline \
-		--without-libedit \
-		--with-libwrap \
-		--with-low-memory \
-		--with-plugins=max-no-ndb \
-		--with-comment='FreeBSD port: ${PKGNAME}' \
-		--enable-thread-safe-client
+OPTIONS=	OPENSSL "Enable SSL support" on \
+		FASTMTX "Replace mutexes with spinlocks" off
+
+CMAKE_ARGS+=	-DINSTALL_DOCDIR="share/doc/mysql" \
+		-DINSTALL_DOCREADMEDIR="share/doc/mysql" \
+		-DINSTALL_INCLUDEDIR="include/mysql" \
+		-DINSTALL_INFODIR="info" \
+		-DINSTALL_LIBDIR="lib" \
+		-DINSTALL_MANDIR="man" \
+		-DINSTALL_MYSQLDATADIR="/var/db/mysql" \
+		-DINSTALL_MYSQLSHAREDIR="share/mysql" \
+		-DINSTALL_MYSQLTESTDIR="share/mysql/tests" \
+		-DINSTALL_PLUGINDIR="lib/mysql/plugin" \
+		-DINSTALL_SBINDIR="libexec" \
+		-DINSTALL_SCRIPTDIR="bin" \
+		-DINSTALL_SHAREDIR="share" \
+		-DINSTALL_SQLBENCHDIR="share/mysql" \
+		-DINSTALL_SUPPORTFILESDIR="share/mysql" \
+		-DCMAKE_THREAD_LIBS:STRING="" \
+		-DCMAKE_USE_PTHREADS:BOOL=ON \
+		-DCMAKE_EXE_LINKER_FLAGS:STRING="${PTHREAD_LIBS}"
 
 .ifdef USE_MYSQL
 .error You have `USE_MYSQL' variable defined either in environment or in make(1) arguments. Please undefine and try again.
 .endif
 
-.if defined(WITHOUT_IPV6)
-CONFIGURE_ARGS+=--disable-ipv6
-.endif
-.if defined(WITH_CHARSET) && ${WITH_CHARSET} != ""
-CONFIGURE_ARGS+=--with-charset=${WITH_CHARSET}
-.endif
-.if defined(WITH_XCHARSET) && ${WITH_XCHARSET} != ""
-CONFIGURE_ARGS+=--with-extra-charsets=${WITH_XCHARSET}
-.endif
-.if defined(WITH_OPENSSL)
-.if !defined(WITHOUT_YASSL)
-CONFIGURE_ARGS+=--with-ssl=bundled
-.else
-USE_OPENSSL=	yes
-CONFIGURE_ARGS+=--with-ssl=${OPENSSLBASE}
-.endif
-.endif
-.if defined(WITH_FAST_MUTEXES)
-CONFIGURE_ARGS+=--with-fast-mutexes
-.endif
-.if defined(BUILD_STATIC)
-CONFIGURE_ARGS+=--with-mysqld-ldflags=-all-static
-PLIST_SUB+=	PLUGINS="@comment "
-.else
-PLIST_SUB+=	PLUGINS=""
-.endif
-.if defined(WITH_COLLATION) && ${WITH_COLLATION} != ""
-CONFIGURE_ARGS+=--with-collation=${WITH_COLLATION}
-.endif
+.include <bsd.port.options.mk>
 
-.include <bsd.port.pre.mk>
-
-.if defined(WITH_DTRACE) && ${OSVERSION} >= 900021
-CONFIGURE_ARGS+=--enable-dtrace
-CONFIGURE_ENV+=	LDFLAGS=-lelf
-.else
-CONFIGURE_ARGS+=--disable-dtrace
+.if !defined(WITHOUT_OPENSSL)
+CMAKE_ARGS+=	-DWITH_SSL=bundled
 .endif
-
-.if ${ARCH} == "i386"
-CONFIGURE_ARGS+=--enable-assembler
+.if defined(WITH_FASTMTX)
+CMAKE_ARGS+=	-DWITH_FAST_MUTEXES
 .endif
-.if defined(WITH_LINUXTHREADS)
-CONFIGURE_ARGS+=--with-named-thread-libs='-DHAVE_GLIBC2_STYLE_GETHOSTBYNAME_R
-CONFIGURE_ARGS+=-D_THREAD_SAFE -I${LOCALBASE}/include/pthread/linuxthreads
-CFLAGS+=	-D__USE_UNIX98 -D_REENTRANT -D_THREAD_SAFE
-CFLAGS+=	-I${LOCALBASE}/include/pthread/linuxthreads
-LIB_DEPENDS+=	lthread:${PORTSDIR}/devel/linuxthreads
-CONFIGURE_ARGS+=-L${LOCALBASE}/lib -llthread -llgcc_r -llstdc++ -llsupc++'
-.else
-CONFIGURE_ARGS+=--with-named-thread-libs=${PTHREAD_LIBS}
-CFLAGS+=	${PTHREAD_CFLAGS}
-.endif
-
-.if defined(BUILD_OPTIMIZED)
-CFLAGS+=	-O3 -fno-omit-frame-pointer
-CFLAGS+=	-fno-gcse
-.endif
-CXXFLAGS+=	${CFLAGS} -felide-constructors -fno-rtti
-CXXFLAGS+=	-fno-exceptions
 
 # MySQL-Server part
-.if !defined(CLIENT_ONLY) && !defined(SCRIPTS_ONLY)
+.if !defined(CLIENT_ONLY)
 USE_MYSQL=	yes
 WANT_MYSQL_VER=	55
 
@@ -110,125 +69,26 @@ USE_RC_SUBR=	mysql-server.sh
 USERS=		mysql
 GROUPS=		mysql
 
-MAN1=		innochecksum.1 myisamchk.1 myisamlog.1 myisampack.1 \
-		my_print_defaults.1 myisam_ftdump.1 mysql_client_test_embedded.1 \
-		mysql_install_db.1 mysql_tzinfo_to_sql.1 \
-		mysql_waitpid.1 mysqld_safe.1 mysqltest_embedded.1 mysql.server.1 \
-		perror.1 replace.1 resolve_stack_dump.1 resolveip.1
-
 INFO=		mysql
 
-CONFIGURE_ARGS+=--with-embedded-server
+MAN1=		my_print_defaults.1 myisam_ftdump.1 myisamchk.1 myisamlog.1 myisampack.1 \
+		mysql.server.1 mysql_convert_table_format.1 mysql_fix_extensions.1 \
+		mysql_install_db.1 mysql_secure_installation.1 mysql_setpermission.1 \
+		mysql_tzinfo_to_sql.1 mysql_upgrade.1 mysql_zap.1 mysqlbug.1 \
+		mysqld_multi.1 mysqld_safe.1 mysqldumpslow.1 mysqlhotcopy.1 mysqlman.1 \
+		mysqltest.1 perror.1 replace.1 resolve_stack_dump.1 resolveip.1
 
-CFLAGS+=	-fPIC
+MAN8=		mysqld.8
 
-.if ${OSVERSION} < 700000
-BROKEN=		does not build on 6.X
-.endif
-
-pre-fetch:
-	@${ECHO} ""
-	@${ECHO} "You may use the following build options:"
-	@${ECHO} ""
-	@${ECHO} "	WITH_CHARSET=charset	Define the primary built-in charset (latin1)."
-	@${ECHO} "	WITH_XCHARSET=list	Define other built-in charsets (may be 'all')."
-	@${ECHO} "	WITH_COLLATION=collate	Define default collation (latin1_swedish_ci)."
-.if ${OSVERSION} >= 900021
-	@${ECHO} "	WITH_DTRACE=yes		Enable DTrace."
-.endif
-	@${ECHO} "	WITH_OPENSSL=yes	Enable secure connections"
-	@${ECHO} "				(define WITHOUT_YASSL for backward compatibility)."
-	@${ECHO} "	WITH_LINUXTHREADS=yes	Use the linuxthreads pthread library."
-	@${ECHO} "	WITH_PROC_SCOPE_PTH=yes	Use process scope threads"
-	@${ECHO} "				(try it if you use libpthread)."
-	@${ECHO} "	WITH_FAST_MUTEXES=yes	Replace mutexes with spinlocks."
-	@${ECHO} "	BUILD_OPTIMIZED=yes	Enable compiler optimizations"
-	@${ECHO} "				(use it if you need speed)."
-	@${ECHO} "	BUILD_STATIC=yes	Build a static version of mysqld."
-	@${ECHO} "				(use it if you need even more speed)."
-	@${ECHO} ""
-
-post-patch:
-	@${REINPLACE_CMD} -e "s|SUBDIRS =|SUBDIRS = include @docs_dirs@ sql-common scripts libservices @sql_server_dirs@ libmysql @sql_server@ @man_dirs@ @libmysqld_dirs@ support-files|g" ${WRKSRC}/Makefile.in
-	@${REINPLACE_CMD} -e "s|bin_SCRIPTS =|bin_SCRIPTS = @server_scripts@|g" ${WRKSRC}/scripts/Makefile.in
-	@${REINPLACE_CMD} -e "s|dist_pkgdata_DATA =|dist_pkgdata_DATA = fill_help_tables.sql mysql_system_tables.sql mysql_system_tables_data.sql|g" ${WRKSRC}/scripts/Makefile.in
-	@${REINPLACE_CMD} -e "s|man1_MANS =|man1_MANS = ${MAN1}|g" ${WRKSRC}/man/Makefile.in
-	@${REINPLACE_CMD} -e "s|install-data-am: install-pkgincludeHEADERS|install-data-am:|g" ${WRKSRC}/extra/Makefile.in
-	@${REINPLACE_CMD} -e "s|install-data-am: install-pkgincludeHEADERS|install-data-am:|g" ${WRKSRC}/include/Makefile.in
-	@${REINPLACE_CMD} -e "s|install-exec-am: install-pkglibLTLIBRARIES|install-exec-am:|g" ${WRKSRC}/libmysql/Makefile.in
-.if defined(WITH_PROC_SCOPE_PTH)
-	@${REINPLACE_CMD} -e "s|PTHREAD_SCOPE_SYSTEM|PTHREAD_SCOPE_PROCESS|g" ${WRKSRC}/sql/mysqld.cc
-.endif
+CMAKE_ARGS+=	-DWITH_EMBEDDED_SERVER="ON"
 
 post-install:
 .if !defined(PACKAGE_BUILDING)
 	@${CAT} ${PKGMESSAGE}
 .endif
-
-.else
-# MySQL-Client part
-.if defined(CLIENT_ONLY)
-LATEST_LINK=	mysql55-client
-
-CONFLICTS=	mysql-client-[34].* mysql-client-5.[0-46-9].*
-
-MAN1=		mysql_config.1 mysql_upgrade.1 mysql.1 mysqladmin.1 \
-		mysqlbinlog.1 mysqlbug.1 mysqlcheck.1 \
-		mysqldump.1 mysqlimport.1 mysqlshow.1 mysqlslap.1 mysqltest.1
-
-USE_LDCONFIG=	${PREFIX}/lib/mysql
-
-CONFIGURE_ARGS+=--without-server
+.endif
 
 post-patch:
-	@${REINPLACE_CMD} -e "s|SUBDIRS =|SUBDIRS = include sql-common scripts @sql_client_dirs@ @man_dirs@|g" ${WRKSRC}/Makefile.in
-	@${REINPLACE_CMD} -e "s|install-exec-am: install-pkglibLIBRARIES|install-exec-am:|g" ${WRKSRC}/strings/Makefile.in ${WRKSRC}/mysys/Makefile.in ${WRKSRC}/dbug/Makefile.in
-	@${REINPLACE_CMD} -e "s|bin_SCRIPTS =|bin_SCRIPTS = mysql_config mysqlbug|g" ${WRKSRC}/scripts/Makefile.in
-	@${REINPLACE_CMD} -e "s|man1_MANS =|man1_MANS = ${MAN1}|g" ${WRKSRC}/man/Makefile.in
-	@${REINPLACE_CMD} -e "s|install-exec-am: install-binPROGRAMS|install-exec-am:|g" ${WRKSRC}/extra/Makefile.in
+	@${REINPLACE_CMD} 's/*.1/${MAN1}/' ${WRKSRC}/man/CMakeLists.txt
 
-post-install:
-	${INSTALL_DATA} ${WRKSRC}/support-files/mysql.m4 ${PREFIX}/share/aclocal/
-
-.else
-# MySQL-Scripts part
-USE_MYSQL=	yes
-WANT_MYSQL_VER=	55
-
-RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/DBD/mysql.pm:${PORTSDIR}/databases/p5-DBD-mysql55
-.if ${PERL_LEVEL} <= 500800
-RUN_DEPENDS+=	${SITE_PERL}/File/Temp.pm:${PORTSDIR}/devel/p5-File-Temp
-.endif
-
-LATEST_LINK=	mysql55-scripts
-
-CONFLICTS=	mysql-scripts-[34].* mysql-scripts-5.[0-46-9].*
-
-MAN1=		msql2mysql.1 mysql_convert_table_format.1 mysql_find_rows.1 \
-		mysql_fix_extensions.1 mysql_secure_installation.1 \
-		mysql_setpermission.1 mysql_zap.1 mysqlaccess.1 \
-		mysqldumpslow.1 mysqlhotcopy.1 mysqld_multi.1
-
-SCRIPTS=	msql2mysql mysql_fix_extensions mysql_setpermission \
-		mysql_secure_installation mysql_zap mysqlaccess \
-		mysql_convert_table_format mysql_find_rows mysqlhotcopy \
-		mysqldumpslow mysqld_multi
-
-post-patch:
-	@${REINPLACE_CMD} -e "s|SUBDIRS =|SUBDIRS = scripts @man_dirs@|g" ${WRKSRC}/Makefile.in
-	@${REINPLACE_CMD} -e "s|bin_SCRIPTS =|bin_SCRIPTS = ${SCRIPTS}|g" ${WRKSRC}/scripts/Makefile.in
-	@${REINPLACE_CMD} -e "s|install-exec-am install-data-am|install-exec-am|g" ${WRKSRC}/scripts/Makefile.in
-	@${REINPLACE_CMD} -e "s|man1_MANS =|man1_MANS = ${MAN1}|g" ${WRKSRC}/man/Makefile.in
-.endif
-.endif
-# Common part
-post-extract:
-	@${CP} /usr/include/tcpd.h ${WRKSRC}/include/my_tcpd.h
-
-.if defined(WITH_OPENSSL) && defined(WITHOUT_YASSL) && defined(BUILD_STATIC)
-pre-configure:
-	@${ECHO} "You can't use the BUILD_STATIC option when using OpenSSL."
-	@${FALSE}
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
