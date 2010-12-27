@@ -1,6 +1,6 @@
---- boost/config/compiler/gcc.hpp.orig	2010-02-24 00:41:39.000000000 -0300
-+++ boost/config/compiler/gcc.hpp	2010-02-24 00:44:56.000000000 -0300
-@@ -104,6 +104,13 @@
+--- boost/config/compiler/gcc.hpp.orig	2010-10-01 09:19:44.000000000 +0000
++++ boost/config/compiler/gcc.hpp	2010-11-20 10:59:22.000000000 +0000
+@@ -146,6 +149,13 @@
  #  endif
  #endif
  

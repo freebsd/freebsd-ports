@@ -4,6 +4,7 @@ USE_LDCONFIG=	yes
 BOOST_SHARED_LIB_VER=	4
 PKGMESSAGE=	${WRKDIR}/pkg-message
 BJAM=		bjam
+CXXFLAGS+=	-Wno-long-long
 
 PLIST_SUB+=	BOOST_SHARED_LIB_VER=${BOOST_SHARED_LIB_VER}
 
@@ -31,7 +32,7 @@ BJAM_OPTIONS+=	threading=multi
 BJAM_OPTIONS+=	optimization=speed
 .if defined (WITH_OPTIMIZED_CFLAGS)
 BJAM_OPTIONS+=	inlining=full
-CXXFLAGS=	-O3
+CXXFLAGS+=	-O3
 .endif
 
 customize-boost-build:
