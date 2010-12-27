@@ -15,7 +15,7 @@ DISTNAME=	${ZOPEPRODUCTNAME}-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Zope user folder which uses MySQL database to store user information
 
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/MySQLdb/__init__.py:${PORTSDIR}/databases/py-MySQLdb
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}MySQLdb>=0:${PORTSDIR}/databases/py-MySQLdb
 
 NO_PACKAGE=	Double python dependency
 USE_PYTHON=	yes

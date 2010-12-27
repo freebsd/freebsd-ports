@@ -66,7 +66,7 @@ RUN_DEPENDS+=	${LOCALBASE}/${APACHEMODDIR}/mod_wsgi.so:${PORTSDIR}/www/mod_wsgi3
 # It catalogs every commit in the CVS or Subversion repository into a SQL database.
 # In fact, the databases are 100% compatible.
 .if defined(WITH_MYSQL)
-RUN_DEPENDS+=	${PYTHON_LIBDIR}/site-packages/_mysql.so:${PORTSDIR}/databases/py-MySQLdb
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}-MySQLdb>=0::${PORTSDIR}/databases/py-MySQLdb
 .endif
 
 pre-everything::

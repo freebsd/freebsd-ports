@@ -26,7 +26,7 @@ OPTIONS+=	POSTGRESQL "psycopg support" on
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_MYSQL)
-RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/MySQLdb/__init__.py:${PORTSDIR}/databases/py-MySQLdb
+RUN_DEPENDS+=	${PYHON_PKGNAMEPREFIX}MySQLdb>=0:${PORTSDIR}/databases/py-MySQLdb
 BROKEN=		bad dependency line
 .endif
 
