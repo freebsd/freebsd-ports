@@ -6,7 +6,6 @@
 #
 
 PORTNAME=	boost-libs
-PORTREVISION=	2
 COMMENT=	Free portable C++ libraries (without Boost.Python)
 USE_BZIP2=	yes
 
@@ -58,10 +57,10 @@ do-build:
 
 do-install:
 # Install libraries
-	${FIND} ${WRKSRC}/bin.v2/libs -type f -name "*.a"\
+	${FIND} ${WRKSRC}/stage/lib -type f -name "*.a"\
 		-exec ${INSTALL_DATA} \{\} ${PREFIX}/lib \;
 
-	${FIND} -E ${WRKSRC}/bin.v2/libs -type f \
+	${FIND} -E ${WRKSRC}/stage/lib -type f \
 		-regex '.*so' \
 		-exec ${INSTALL_DATA} \{\} ${PREFIX}/lib \;
 
