@@ -1,0 +1,10 @@
+The Web Service Addressing protocol is used to select certain service
+and port on a SOAP server, just like the "Host" header in "HTTP".
+
+The basic SOAP design uses the URI and the "soapAction" header of HTTP
+(in case it uses HTTP, by far the most often used transport mechanism)
+However, when the server is hidden behind firewalls and proxies, these
+fields are rewritten or replaced.  This means that the definitions by
+the WSDL for the client can differ from the configuration of the
+
+WWW: http://search.cpan.org/dist/XML-Compile-SOAP-WSA/
