@@ -7,15 +7,18 @@
 
 PORTNAME=	adminer
 PORTVERSION=	3.1.0
+PORTREVISION=	1
 CATEGORIES=	databases www
 MASTER_SITES=	SF/${PORTNAME}/Adminer/Adminer%20${PORTVERSION}
 
 MAINTAINER=	wen@FreeBSD.org
-COMMENT=	A full-featured MySQL management tool written in PHP
+COMMENT=	A full-featured database management tool written in PHP
+
+LICENSE=	ASL
 
 USE_ZIP=	yes
 NO_BUILD=	yes
-USE_PHP=	mysql session
+USE_PHP=	mssql mysql odbc pgsql session sqlite
 SUB_FILES=	pkg-message
 
 do-install:
