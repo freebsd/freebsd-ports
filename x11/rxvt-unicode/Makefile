@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	rxvt-unicode
-PORTVERSION=	9.07
-PORTREVISION=	3
+PORTVERSION=	9.10
 CATEGORIES=	x11
 MASTER_SITES=	http://dist.schmorp.de/rxvt-unicode/%SUBDIR%/
 MASTER_SITE_SUBDIR=	. Attic
@@ -15,11 +14,17 @@ MASTER_SITE_SUBDIR=	. Attic
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	A clone of the terminal emulator rxvt modified to support Unicode
 
-USE_GNOME=	pkgconfig
-USE_XORG=		xpm xft
+BUILD_DEPENDS=	tic:${PORTSDIR}/devel/ncurses	\
+		${LOCALBASE}/libdata/pkgconfig/fontconfig.pc:${PORTSDIR}/x11-fonts/fontconfig
+RUN_DEPENDS=	${LOCALBASE}/bin/fc-cache:${PORTSDIR}/x11-fonts/fontconfig	\
+		${LOCALBASE}/share/misc/terminfo.db:${PORTSDIR}/devel/ncurses
+
+USE_GNOME=		pkgconfig
+USE_XORG=		xpm xft xrender
 GNU_CONFIGURE=		yes
-CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include"
-CONFIGURE_ARGS=		--enable-shared --enable-everything --with-term=rxvt
+CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" LIBS="-lutil"
+CONFIGURE_ARGS=		--enable-shared --enable-everything --with-term=rxvt	\
+			--with-terminfo=${LOCALBASE}/share/misc/terminfo.db
 USE_BZIP2=		yes
 WANT_PERL=		yes
 
@@ -29,21 +34,16 @@ OPTIONS=	\
 	UNICODE3	"Support Unicode codepoints above 65535"	On	\
 	ISO14755	"Support for extended ISO 14755 modes"		On	\
 	COMBINING	"Automatic composition of combining chars"	On	\
-	MENUBAR		"Support for the menu bar system"		On	\
 	RXVT_SCROLLBAR	"Support for the original rxvt scrollbar"	On	\
 	NEXT_SCROLLBAR	"Support for a NeXT-like scrollbar"		On	\
 	XTERM_SCROLLBAR	"Support for an Xterm-like scrollbar"		On	\
-	PLAIN_SCROLLBAR	"Support for a plain-looking scrollbar"		On	\
-	HALF_SHADOW	"Half width/height shadows rxvt scrollbar"	Off	\
 	BACKSPACE_KEY	"Handling of the backspace key by rxvt"		On	\
 	DELETE_KEY	"Handling of the delete key by rxvt"		On	\
-	LINESPACE	"Support for line-spacing"			On	\
 	MOUSEWHEEL	"Support for scrolling via mouse wheel"		On	\
 	SMART_RESIZE	"Smart growth/shrink behaviour"			On	\
 	IMLOCALE_FIX	"imlocale encoding conversion fix" 		On	\
-	TERMINFO	"Register urxvt in the terminfo database"	On	\
 	AFTERIMAGE	"Use libAfterImage for background images"	On	\
-	XTERM_COLOR	"Support for xterm 256 colors"			Off
+	256_COLOR	"Support for 256 colors"			Off
 
 .include <bsd.port.pre.mk>
 
@@ -90,11 +90,6 @@ CONFIGURE_ARGS+=	--disable-iso14755
 CONFIGURE_ARGS+=	--disable-combining
 .endif
 
-# disable support for menu bar system
-.if defined(WITHOUT_MENUBAR)
-CONFIGURE_ARGS+=	--disable-menubar
-.endif
-
 # disable support for the original rxvt scrollbar
 .if defined(WITHOUT_RXVT_SCROLLBAR)
 CONFIGURE_ARGS+=	--disable-rxvt-scroll
@@ -110,16 +105,6 @@ CONFIGURE_ARGS+=	--disable-next-scroll
 CONFIGURE_ARGS+=	--disable-xterm-scroll
 .endif
 
-# disable support for a very unobtrusive, plain-looking scrollbar
-.if defined(WITHOUT_PLAIN_SCROLLBAR)
-CONFIGURE_ARGS+=	--disable-plain-scroll
-.endif
-
-# enable half width/height shadows rxvt scrollbar
-.if defined(WITH_HALF_SHADOW)
-CONFIGURE_ARGS+=	--enable-half-shadow
-.endif
-
 # disable any handling of the backspace key by rxvt
 # let the X server do it
 .if defined(WITHOUT_BACKSPACE_KEY)
@@ -129,11 +114,6 @@ CONFIGURE_ARGS+=	--disable-backspace-key
 # disable any handling of the delete key by rxvt
 .if defined(WITHOUT_DELETE_KEY)
 CONFIGURE_ARGS+=	--disable-delete-key
-.endif
-
-# disable support to provide user specified line spacing between text rows
-.if defined(WITHOUT_LINESPACE)
-CONFIGURE_ARGS+=	--disable-linespace
 .endif
 
 # enable scrolling via mouse wheel or buttons 4 & 5
@@ -148,16 +128,6 @@ CONFIGURE_ARGS+=	--disable-smart-resize
 CONFIGURE_ARGS+=	--enable-smart-resize
 .endif
 
-.if defined(WITHOUT_TERMINFO)
-CONFIGURE_ARGS+=	--without-terminfo
-PLIST_SUB+=		TERMINFO="@comment "
-.else
-BUILD_DEPENDS+=	tic:${PORTSDIR}/devel/ncurses
-CONFIGURE_ARGS+=	--with-terminfo=${LOCALBASE}/share/misc/terminfo.db
-RUN_DEPENDS+=	${LOCALBASE}/share/misc/terminfo.db:${PORTSDIR}/devel/ncurses
-PLIST_SUB+=		TERMINFO=""
-.endif
-
 # enable integration with libAfterImage for background images
 .if defined(WITHOUT_AFTERIMAGE)
 CONFIGURE_ARGS+=	--disable-afterimage	# To be upgraded
@@ -166,11 +136,9 @@ LIB_DEPENDS+=		AfterImage.0:${PORTSDIR}/graphics/libafterimage
 CONFIGURE_ARGS+=	--enable-afterimage
 .endif
 
-CONFIGURE_ENV+=		LIBS="-lutil"
-
-# enable support for xterm 256 colors
-.if defined(WITH_XTERM_COLOR)
-CONFIGURE_ARGS+=	--enable-xterm-colors=256
+# enable support for 256 colors
+.if defined(WITH_256_COLOR)
+CONFIGURE_ARGS+=	--enable-256-color
 .endif
 
 # compile in support for additional codeset groups
@@ -206,28 +174,21 @@ pre-everything::
 	@${ECHO_MSG}
 .endif
 
-.if !defined(WITHOUT_IMLOCALE_FIX) || defined(WITH_XTERM_COLOR)
-post-patch:
 .if !defined(WITHOUT_IMLOCALE_FIX)
-	@${PATCH} ${PATCH_ARGS} < ${PATCHDIR}/extra-patch-imlocale
-	@cd ${WRKSRC}/src && ./gentables
-.endif
-.if defined(WITH_XTERM_COLOR)
-	@${PATCH} ${PATCH_ARGS} -p1 < ${WRKSRC}/doc/urxvt-8.2-256color.patch
-.endif
+post-patch:
+	${PATCH} ${PATCH_ARGS} < ${PATCHDIR}/extra-patch-imlocale
+	cd ${WRKSRC}/src && ./gentables
 .endif
 
 pre-configure:
-	@${RM} ${WRKSRC}/src/perl/kuake.orig
-	@${PERL} -pi -e 's|(PTYCHAR2\s+"[^"]+)"|\1ghijklmnopqrstuv"|' \
+	${RM} ${WRKSRC}/src/perl/kuake.orig
+	${PERL} -pi -e 's|(PTYCHAR2\s+"[^"]+)"|\1ghijklmnopqrstuv"|' \
 		${WRKSRC}/src/ptytty.C
 
 post-install:
 	${CHMOD} 4711 ${PREFIX}/bin/urxvt ${PREFIX}/bin/urxvtd
-.if !defined(WITHOUT_TERMINFO)
 	${INSTALL_DATA} ${WRKSRC}/doc/etc/rxvt-unicode.terminfo	\
 		${LOCALBASE}/share/misc/
-.endif
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 	@${CP} ${PORTDOCS1:S|^|${WRKSRC}/|} ${WRKSRC}/doc

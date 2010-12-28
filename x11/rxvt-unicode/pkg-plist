@@ -3,10 +3,13 @@ bin/urxvtc
 bin/urxvtcd
 bin/urxvtd
 %%PERL%%lib/urxvt/perl/block-graphics-to-ascii
+%%PERL%%lib/urxvt/perl/clipboard-osc
+%%PERL%%lib/urxvt/perl/confirm-paste
 %%PERL%%lib/urxvt/perl/digital-clock
 %%PERL%%lib/urxvt/perl/example-refresh-hooks
 %%PERL%%lib/urxvt/perl/kuake
 %%PERL%%lib/urxvt/perl/macosx-clipboard
+%%PERL%%lib/urxvt/perl/macosx-clipboard-native
 %%PERL%%lib/urxvt/perl/matcher
 %%PERL%%lib/urxvt/perl/option-popup
 %%PERL%%lib/urxvt/perl/overlay-osc
@@ -23,7 +26,7 @@ bin/urxvtd
 %%PERL%%lib/urxvt/urxvt.pm
 %%PERL%%@dirrm lib/urxvt/perl
 %%PERL%%@dirrm lib/urxvt
-%%TERMINFO%%@cwd %%LOCALBASE%%
-%%TERMINFO%%share/misc/rxvt-unicode.terminfo
-%%TERMINFO%%@exec tic %%LOCALBASE%%/share/misc/rxvt-unicode.terminfo
+@cwd %%LOCALBASE%%
+share/misc/rxvt-unicode.terminfo
+@exec tic %%LOCALBASE%%/share/misc/rxvt-unicode.terminfo
 @comment No unexec tic available
