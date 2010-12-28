@@ -20,7 +20,7 @@ LATEST_LINK=	mysql55-client
 
 CONFLICTS=	mysql-client-[34].* mysql-client-5.[0-46-9].*
 
-CMAKE_ARGS=	-DWITHOUT_SERVER="ON"
+CMAKE_ARGS=	-DWITHOUT_SERVER=1
 
 USE_LDCONFIG=	yes
 
