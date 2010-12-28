@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mdocml
-PORTVERSION=	1.10.6
+PORTVERSION=	1.10.8
 CATEGORIES=	textproc
 MASTER_SITES=	http://mdocml.bsd.lv/snapshots/ \
 		${MASTER_SITE_LOCAL}
