@@ -1,12 +1,11 @@
 bin/mediathek
 %%DATADIR%%/Bitte_lesen.txt
-%%DATADIR%%/Kurzanleitung.odg
 %%DATADIR%%/Kurzanleitung.pdf
 %%DATADIR%%/Mediathek.jar
-%%DATADIR%%/MediathekView.jpg
+%%DATADIR%%/lib/commons-compress-1.1.jar
 %%DATADIR%%/lib/commons-lang-2.5.jar
 %%DATADIR%%/lib/jdom.jar
 %%DATADIR%%/lib/rome-1.0.jar
-%%DATADIR%%/releases_2.3.0.txt
+%%DATADIR%%/releases.txt
 @dirrm %%DATADIR%%/lib
 @dirrm %%DATADIR%%

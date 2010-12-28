@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mediathek
-PORTVERSION=	2.3.0
+PORTVERSION=	2.4.0
 CATEGORIES=	german java
 MASTER_SITES=	SF/zdfmediathk/Mediathek/Mediathek%20${PORTVERSION}
 DISTNAME=	Mediathek_${PORTVERSION}
@@ -25,9 +25,10 @@ SUB_FILES=	mediathek
 OPTIONS=	MPLAYER "mplayer zum Aufnehmen verwenden" on \
 		VLC "VLC zum Abspielen verwenden" on
 
-INSTALLFILES=	Bitte_lesen.txt Mediathek.jar MediathekView.jpg \
-		releases_2.3.0.txt Kurzanleitung.odg Kurzanleitung.pdf
-INSTALLLIBS=	commons-lang-2.5.jar jdom.jar rome-1.0.jar
+INSTALLFILES=	Bitte_lesen.txt Mediathek.jar \
+		releases.txt Kurzanleitung.pdf
+INSTALLLIBS=	commons-compress-1.1.jar commons-lang-2.5.jar \
+		jdom.jar rome-1.0.jar
 
 .include <bsd.port.pre.mk>
 
