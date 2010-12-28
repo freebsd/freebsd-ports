@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	palomino
-PORTVERSION=	20100709
+PORTVERSION=	20101112
 CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.palomino3d.org/sim/
 DISTFILES=	${PORTNAME}_src_${PORTVERSION}${EXTRACT_SUFX} \
@@ -35,9 +35,11 @@ TERRAIN_VER=	20080206
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 OPTIONS=	JOYSTICK "Enable joystick support through linux-js" off \
-		SDL	"SDL support for input sound and sound" on \
 		PLIB	"Enable sound support through plib" off \
 		GUI	"Enable FLTK GUI" on
+
+# Broken
+#		SDL	"SDL support for input and sound" on \
 
 .include <bsd.port.pre.mk>
 
@@ -48,6 +50,7 @@ RUN_DEPENDS+=	${LOCALBASE}/include/linux/joystick.h:${PORTSDIR}/devel/linux-js
 
 .if !defined(WITHOUT_SDL)
 USE_SDL+=	sdl mixer
+BROKEN=		does not build
 .endif
 
 .if defined(WITHOUT_PLIB)
