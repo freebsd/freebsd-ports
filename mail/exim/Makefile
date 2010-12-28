@@ -15,7 +15,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:exim
 DIST_SUBDIR=	exim
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	rea@FreeBSD.org
 COMMENT?=	High performance MTA for Unix systems on the Internet
 
 .include "Makefile.options"
