@@ -1,0 +1,181 @@
+From jhelfman@experts-exchange.com  Thu Dec  2 23:07:44 2010
+Return-Path: <jhelfman@experts-exchange.com>
+Received: from mx1.freebsd.org (mx1.freebsd.org [IPv6:2001:4f8:fff6::34])
+	by hub.freebsd.org (Postfix) with ESMTP id 721381065694
+	for <FreeBSD-gnats-submit@freebsd.org>; Thu,  2 Dec 2010 23:07:44 +0000 (UTC)
+	(envelope-from jhelfman@experts-exchange.com)
+Received: from mail.experts-exchange.com (mail.experts-exchange.com [72.29.183.251])
+	by mx1.freebsd.org (Postfix) with ESMTP id 509A58FC1B
+	for <FreeBSD-gnats-submit@freebsd.org>; Thu,  2 Dec 2010 23:07:44 +0000 (UTC)
+Received: from mail.experts-exchange.com (localhost [127.0.0.1])
+	by mail.experts-exchange.com (Postfix) with ESMTP id 7F3B87A23CB
+	for <FreeBSD-gnats-submit@freebsd.org>; Thu,  2 Dec 2010 14:51:56 -0800 (PST)
+Received: from mail.experts-exchange.com ([127.0.0.1])
+	by mail.experts-exchange.com (mail.experts-exchange.com [127.0.0.1]) (amavisd-new, port 10024)
+	with ESMTP id YAfr3jRjzIRC for <FreeBSD-gnats-submit@freebsd.org>;
+	Thu,  2 Dec 2010 14:51:56 -0800 (PST)
+Received: from experts-exchange.com (unknown [192.168.103.122])
+	by mail.experts-exchange.com (Postfix) with SMTP id 1BC677A23CA
+	for <FreeBSD-gnats-submit@freebsd.org>; Thu,  2 Dec 2010 14:51:56 -0800 (PST)
+Received: (nullmailer pid 52249 invoked by uid 1001);
+	Thu, 02 Dec 2010 22:48:55 -0000
+Message-Id: <1291330135.146866.52248.nullmailer@experts-exchange.com>
+Date: Thu, 02 Dec 2010 14:48:55 -0800
+From: Jason Helfman <jhelfman@experts-exchange.com>
+Reply-To: Jason Helfman <jhelfman@experts-exchange.com>
+To: FreeBSD-gnats-submit@freebsd.org
+Subject: new port: sysutils/cronolog-beta web log rotation utility with "jumbo patches"
+X-Send-Pr-Version: 3.113
+X-GNATS-Notify:
+
+>Number:         152794
+>Category:       ports
+>Synopsis:       new port: sysutils/cronolog-beta web log rotation utility with "jumbo patches"
+>Confidential:   no
+>Severity:       non-critical
+>Priority:       low
+>Responsible:    beech
+>State:          open
+>Quarter:        
+>Keywords:       
+>Date-Required:  
+>Class:          change-request
+>Submitter-Id:   current-users
+>Arrival-Date:   Thu Dec 02 23:10:05 UTC 2010
+>Closed-Date:    
+>Last-Modified:  Sat Dec 04 22:42:00 UTC 2010
+>Originator:     Jason Helfman
+>Release:        FreeBSD 8.1-RELEASE i386
+>Organization:
+Experts Exchange, LLC.
+>Environment:
+System: FreeBSD eggman.experts-exchange.com 8.1-RELEASE FreeBSD 8.1-RELEASE #0: Mon Jul 19 02:55:53 UTC 2010 root@almeida.cse.buffalo.edu:/usr/obj/usr/src/sys/GENERIC i386
+
+
+	
+>Description:
+This is cronolog-beta, which adds in the jumbo patch as shown on their website.
+http://cronolog.org/patches/index.html
+First patch.
+
+>How-To-Repeat:
+	
+>Fix:
+
+	
+# This is a shell archive.  Save it in a file, remove anything before
+# this line, and then unpack it by entering "sh file".  Note, it may
+# create directories; files and directories will be owned by you and
+# have default permissions.
+#
+# This archive contains:
+#
+#	cronolog-beta
+#	cronolog-beta/files
+#	cronolog-beta/files/patch-src__cronolog.c
+#	cronolog-beta/pkg-descr
+#	cronolog-beta/distinfo
+#	cronolog-beta/Makefile
+#
+echo c - cronolog-beta
+mkdir -p cronolog-beta > /dev/null 2>&1
+echo c - cronolog-beta/files
+mkdir -p cronolog-beta/files > /dev/null 2>&1
+echo x - cronolog-beta/files/patch-src__cronolog.c
+sed 's/^X//' >cronolog-beta/files/patch-src__cronolog.c << '7cfbf051762abbfd71e10b3fd09461bf'
+X--- ./src/cronolog.c.orig	2010-12-02 13:41:57.000000000 -0800
+X+++ ./src/cronolog.c	2010-12-02 13:42:30.000000000 -0800
+X@@ -84,8 +84,8 @@
+X 
+X #ifndef _WIN32
+X #define _GNU_SOURCE 1
+X-#define OPEN_EXCLUSIVE O_WRONLY|O_CREAT|O_EXCL|O_APPEND|O_LARGEFILE
+X-#define OPEN_SHARED O_WRONLY|O_CREAT|O_APPEND|O_LARGEFILE
+X+#define OPEN_EXCLUSIVE O_WRONLY|O_CREAT|O_EXCL|O_APPEND
+X+#define OPEN_SHARED O_WRONLY|O_CREAT|O_APPEND
+X #else
+X #define OPEN_EXCLUSIVE O_WRONLY|O_CREAT|O_EXCL|O_APPEND
+X #define OPEN_SHARED O_WRONLY|O_CREAT|O_APPEND
+7cfbf051762abbfd71e10b3fd09461bf
+echo x - cronolog-beta/pkg-descr
+sed 's/^X//' >cronolog-beta/pkg-descr << '8f7d40240eefff3bd7eb908f9ce95321'
+Xcronolog 1.7 beta with the jumbo patch applied (Matthew Grosso 2003-10-10)
+Xtarball with the jumbo patch applied (incorporates most of the other 
+Xpatches and some of the features on the todo list)
+X * http://cronolog.org/patches/index.html
+X
+X"cronolog" is a simple program that reads log messages from its input
+Xand writes them to a set of output files, the names of which are
+Xconstructed using template and the current date and time.
+X
+X"cronolog" is intended to be used in conjunction with a Web server, such
+Xas Apache to split the access log into daily or monthly logs. E.g.:
+X
+X	TransferLog "|/www/sbin/cronolog /www/logs/%Y/%m/%d/access.log"
+X	ErrorLog    "|/www/sbin/cronolog /www/logs/%Y/%m/%d/errors.log"
+X
+Xwould instruct Apache to pipe its access and error log messages into
+Xseparate copies of cronolog, which would create new log files each day
+Xin a directory hierarchy structured by date, i.e. on 31 December 1996
+Xmessages would be written to:
+X
+X	/www/logs/1996/12/31/access.log
+X	/www/logs/1996/12/31/errors.log
+X
+XAfter midnight the following files would be used:
+X
+X	/www/logs/1997/01/01/access.log
+X	/www/logs/1997/01/01/errors.log
+X
+XWWW: http://cronolog.org/
+8f7d40240eefff3bd7eb908f9ce95321
+echo x - cronolog-beta/distinfo
+sed 's/^X//' >cronolog-beta/distinfo << '6b03cd2da3d7c5fb830862969d79109a'
+XSHA256 (cronolog-1.7.0-beta.tar.gz) = ceffe7d534061404023a7499d536ebffea333f453735b3b6ba518294280af2a0
+XSIZE (cronolog-1.7.0-beta.tar.gz) = 170276
+6b03cd2da3d7c5fb830862969d79109a
+echo x - cronolog-beta/Makefile
+sed 's/^X//' >cronolog-beta/Makefile << 'c68684f3dab24dbf4052e770f7f3ffa8'
+X# New ports collection makefile for:   cronolog-beta
+X# Date created:        10 November 2010
+X# Whom:                Jason Helfman <jhelfman@experts-exchange.com>
+X#
+X# $FreeBSD$
+X#
+X
+XPORTNAME=	cronolog
+XPORTVERSION=	1.7.0
+XCATEGORIES=	sysutils
+XMASTER_SITES=	http://cronolog.org/patches/
+XPKGNAMESUFFIX=	-beta
+XDISTNAME=	${PORTNAME}-${PORTVERSION}-beta
+X
+XMAINTAINER=	jhelfman@experts-exchange.com
+XCOMMENT=	A web log rotation utility that provides datestamp filenames
+X
+XPLIST_FILES=	sbin/cronolog \
+X		sbin/cronosplit
+X
+XCONFLICTS=	cronolog-[0-9]*
+X
+XWRKSRC=		${WRKDIR}/cronolog-${PORTVERSION}
+XINFO=		cronolog
+XMAN1=		cronolog.1m cronosplit.1m
+X
+XGNU_CONFIGURE=	yes
+X
+X.include <bsd.port.mk>
+c68684f3dab24dbf4052e770f7f3ffa8
+exit
+
+>Release-Note:
+>Audit-Trail:
+Responsible-Changed-From-To: freebsd-ports-bugs->beech 
+Responsible-Changed-By: beech 
+Responsible-Changed-When: Sat Dec 4 22:41:18 UTC 2010 
+Responsible-Changed-Why:  
+I'll take it. 
+
+http://www.freebsd.org/cgi/query-pr.cgi?pr=152794 
+>Unformatted:
+
