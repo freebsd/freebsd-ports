@@ -38,9 +38,9 @@ CMAKE_ARGS+=	-DINSTALL_DOCDIR="share/doc/mysql" \
 		-DINSTALL_SHAREDIR="share" \
 		-DINSTALL_SQLBENCHDIR="share/mysql" \
 		-DINSTALL_SUPPORTFILESDIR="share/mysql" \
-		-DCMAKE_THREAD_LIBS:STRING="" \
-		-DCMAKE_USE_PTHREADS:BOOL=ON \
-		-DCMAKE_EXE_LINKER_FLAGS:STRING="${PTHREAD_LIBS}"
+		-DCMAKE_THREAD_LIBS="" \
+		-DCMAKE_USE_PTHREADS=1 \
+		-DCMAKE_EXE_LINKER_FLAGS="${PTHREAD_LIBS}"
 
 .ifdef USE_MYSQL
 .error You have `USE_MYSQL' variable defined either in environment or in make(1) arguments. Please undefine and try again.
@@ -52,7 +52,7 @@ CMAKE_ARGS+=	-DINSTALL_DOCDIR="share/doc/mysql" \
 CMAKE_ARGS+=	-DWITH_SSL=bundled
 .endif
 .if defined(WITH_FASTMTX)
-CMAKE_ARGS+=	-DWITH_FAST_MUTEXES
+CMAKE_ARGS+=	-DWITH_FAST_MUTEXES=1
 .endif
 
 # MySQL-Server part
