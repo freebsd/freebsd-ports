@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	views
-DISTVERSION=	6.x-2.11
+DISTVERSION=	6.x-2.12
 CATEGORIES=	www
 
 MAINTAINER=	rea@FreeBSD.org
@@ -274,7 +274,6 @@ MODULE_FILES=	css/views-admin.css \
 		modules/system/views_handler_field_file_status.inc \
 		modules/system/views_handler_filter_file_status.inc \
 		modules/system.views.inc \
-		modules/taxonomy/views_plugin_argument_default_taxonomy_tid.inc \
 		modules/taxonomy/views_handler_argument_taxonomy.inc \
 		modules/taxonomy/views_handler_argument_term_node_tid.inc \
 		modules/taxonomy/views_handler_argument_term_node_tid_depth.inc \
@@ -286,6 +285,7 @@ MODULE_FILES=	css/views-admin.css \
 		modules/taxonomy/views_handler_filter_term_node_tid_depth.inc \
 		modules/taxonomy/views_handler_filter_vocabulary_vid.inc \
 		modules/taxonomy/views_handler_relationship_node_term_data.inc \
+		modules/taxonomy/views_plugin_argument_default_taxonomy_tid.inc \
 		modules/taxonomy/views_plugin_argument_validate_taxonomy_term.inc \
 		modules/taxonomy.views.inc \
 		modules/taxonomy.views_convert.inc \
@@ -378,8 +378,8 @@ MODULE_FILES=	css/views-admin.css \
 		translations/de.po \
 		translations/eo.po \
 		translations/fr.po \
-		translations/it.po \
 		translations/hu.po \
+		translations/it.po \
 		translations/pl.po \
 		translations/pt-br.po \
 		translations/sv.po \
