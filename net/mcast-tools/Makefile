@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	net ipv6
 MASTER_SITES=	SF
 
-MAINTAINER=	suz@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	IPv6 multicast routing daemons and tools
 
 MAKE_JOBS_UNSAFE=	yes

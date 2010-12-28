@@ -12,7 +12,7 @@ CATEGORIES=	net ipv6
 MASTER_SITES=	SF/wide-dhcpv6/wide-dhcpv6/wide-dhcpv6-${PORTVERSION}
 DISTNAME=	wide-dhcpv6-${PORTVERSION}
 
-MAINTAINER=	suz@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	KAME DHCP6 client, server, and relay
 
 WRKSRC=		${WRKDIR}/${DISTNAME}
