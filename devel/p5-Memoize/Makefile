@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Memoize
-PORTVERSION=	1.01
+PORTVERSION=	1.02
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -26,7 +26,6 @@ MAN3=		Memoize.3 \
 		Memoize::ExpireTest.3 \
 		Memoize::NDBM_File.3 \
 		Memoize::SDBM_File.3 \
-		Memoize::Saves.3 \
 		Memoize::Storable.3
 
 post-patch:
