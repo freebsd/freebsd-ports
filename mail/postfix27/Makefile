@@ -41,7 +41,8 @@ STATUS_${o}=on
 
 OPTIONS=	PCRE		"Perl Compatible Regular Expressions"			on \
 		SASL2		"Cyrus SASLv2 (Simple Auth. and Sec. Layer)"		${STATUS_SASL2} \
-		DOVECOT		"Dovecot SASL authentication method"			off \
+		DOVECOT		"Dovecot 1.x SASL authentication method"		off \
+		DOVECOT2	"Dovecot 2.x SASL authentication method"		off \
 		SASLKRB5	"If your SASL req. Kerberos5 select this option"	${STATUS_SASLKRB5} \
 		SASLKMIT	"If your SASL req. MIT Kerberos5 select this option"	${STATUS_SASLKRB5MIT} \
 		TLS		"Enable SSL and TLS support"				${STATUS_TLS} \
@@ -122,8 +123,16 @@ POSTFIX_CCARGS+=	-DUSE_SASL_AUTH -DUSE_CYRUS_SASL -I${LOCALBASE}/include -I${LOC
 POSTFIX_AUXLIBS+=	-L${LOCALBASE}/lib -lsasl2 -lpam -lcrypt
 .endif
 
+.if defined(WITH_DOVECOT) && defined(WITH_DOVECOT2)
+BROKEN=			Select only one Dovecot option
+.endif
+
+.if defined(WITH_DOVECOT) || defined(WITH_DOVECOT2)
 .if defined(WITH_DOVECOT)
 RUN_DEPENDS+=		dovecot:${PORTSDIR}/mail/dovecot
+.else
+RUN_DEPENDS+=		dovecot:${PORTSDIR}/mail/dovecot2
+.endif
 POSTFIX_CCARGS+=	-DUSE_SASL_AUTH -DDEF_SERVER_SASL_TYPE=\\\"dovecot\\\"
 _REQUIRE+=		dovecot
 .endif
