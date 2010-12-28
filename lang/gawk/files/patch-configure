@@ -1,11 +1,11 @@
 --- configure.orig	Sun Mar  4 10:17:16 2007
 +++ configure	Sun Mar  4 10:17:29 2007
-@@ -7725,7 +7725,7 @@
- for ac_header in fcntl.h limits.h locale.h libintl.h mcheck.h \
+@@ -8113,7 +8113,7 @@
+ for ac_header in arpa/inet.h fcntl.h limits.h locale.h libintl.h mcheck.h \
  	netdb.h netinet/in.h  signum.h stdarg.h string.h \
  	sys/param.h sys/socket.h sys/time.h unistd.h \
 -	termios.h stropts.h wchar.h wctype.h
 +	termios.h stropts.h
- do
+ do :
  as_ac_Header=`echo "ac_cv_header_$ac_header" | $as_tr_sh`
  if eval "test \"\${$as_ac_Header+set}\" = set"; then

@@ -5,13 +5,12 @@
 # $FreeBSD$
 
 PORTNAME=	gawk
-PORTVERSION=	3.1.7
-PORTREVISION=	2
+PORTVERSION=	3.1.8
 CATEGORIES=	lang
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	gawk
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	johans@FreeBSD.org
 COMMENT=	The GNU version of Awk
 
 INFO=		gawk gawkinet
