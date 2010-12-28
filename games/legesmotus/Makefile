@@ -6,23 +6,27 @@
 #
 
 PORTNAME=	legesmotus
-PORTVERSION=	0.3.0
-PORTREVISION=	1
+PORTVERSION=	0.4.0
 CATEGORIES=	games
 MASTER_SITES=	SF
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	A team-based, networked, 2D shooter set in zero-gravity
 
+HAS_CONFIGURE=	yes
+CONFIGURE_ARGS=	--prefix="${PREFIX}" \
+		--mandir="${PREFIX}/man" \
+		--datadir="${DATADIR}"
 USE_GMAKE=	yes
-MAKE_ENV=	DATADIR=${DATADIR} XDIR=${LOCALBASE}
+MAKE_ENV=	XDIR=${LOCALBASE}
 MAKE_JOBS_SAFE=	yes
 
 PORTDOCS=	*
 
-MAN6=		lmserver.6
-
-OPTIONS=	LM_SERVER_ONLY "Build dedicated server only" off
+OPTIONS=	CLIENT "Build client" on \
+		SERVER "Build server" on \
+		METASERVER "Build metaserver" off \
+		SERVERSCANNER "Build server scanner" off
 
 DESKTOP_ENTRIES="Leges Motus" \
 		"A team-based, networked, 2D shooter set in zero-gravity" \
@@ -33,33 +37,47 @@ DESKTOP_ENTRIES="Leges Motus" \
 
 .include <bsd.port.options.mk>
 
-.if defined(WITH_LM_SERVER_ONLY)
+.if defined(WITHOUT_CLIENT)
 PLIST_SUB+=	CLIENT="@comment "
-ALL_TARGET=	server
-PKGNAMESUFFIX=	-server
+CONFIGURE_ARGS+=--disable-client
 .else
-MAN6+=		legesmotus.6
 PLIST_SUB+=	CLIENT=""
 USE_SDL=	sdl image ttf mixer
 USE_GL=		gl
+MAN6+=		legesmotus.6
 .endif
 
-.include <bsd.port.pre.mk>
-
-do-install:
-	${MKDIR} ${DATADIR}
-.if !defined(WITH_LM_SERVER_ONLY)
-	${INSTALL_PROGRAM} ${WRKSRC}/client/legesmotus ${PREFIX}/bin/
-	${INSTALL_MAN} ${WRKSRC}/man/man6/legesmotus.6 ${MAN6PREFIX}/man/man6/
-	cd ${WRKSRC}/data && ${COPYTREE_SHARE} '*' ${DATADIR}/
+.if defined(WITHOUT_SERVER)
+PLIST_SUB+=	SERVER="@comment "
+CONFIGURE_ARGS+=--disable-server
 .else
-	cd ${WRKSRC}/data && ${COPYTREE_SHARE} 'maps' ${DATADIR}/
-.endif
-	${INSTALL_PROGRAM} ${WRKSRC}/server/lmserver ${PREFIX}/bin/
-	${INSTALL_MAN} ${WRKSRC}/man/man6/lmserver.6 ${MAN6PREFIX}/man/man6/
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}/
+PLIST_SUB+=	SERVER=""
+MAN6+=		lmserver.6
 .endif
 
-.include <bsd.port.post.mk>
+.if defined(WITHOUT_CLIENT) && defined(WITHOUT_SERVER) && defined(WITHOUT_METASERVER)
+PLIST_SUB+=	DATA="@comment "
+.else
+PLIST_SUB+=	DATA=""
+.endif
+
+.if defined(WITH_METASERVER)
+PLIST_SUB+=	METASERVER=""
+CONFIGURE_ARGS+=--enable-metaserver
+.else
+PLIST_SUB+=	METASERVER="@comment "
+.endif
+
+.if defined(WITH_SERVERSCANNER)
+PLIST_SUB+=	SERVERSCANNER=""
+CONFIGURE_ARGS+=--enable-serverscanner
+MAN6+=		lmscan.6
+.else
+PLIST_SUB+=	SERVERSCANNER="@comment "
+.endif
+
+.if defined(WITHOUT_CLIENT) && defined(WITHOUT_SERVER) && defined(WITHOUT_METASERVER) && defined(WITHOUT_SERVERSCANNER)
+IGNORE=		cannot be built with all components disabled. Please rerun 'make config' and enable at least one option
+.endif
+
+.include <bsd.port.mk>
