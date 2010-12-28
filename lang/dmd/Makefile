@@ -11,7 +11,7 @@ CATEGORIES=	lang
 MASTER_SITES=	http://ftp.digitalmars.com/
 DISTNAME=	${PORTNAME}.${PORTVERSION}
 
-MAINTAINER=	chromium@hybridsource.org
+MAINTAINER=	cy@FreeBSD.org
 COMMENT=	Official compiler for the D 1.0 programming language
 
 NO_PACKAGE=	Packages are not validation-tested by the developer
