@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	paintown
-PORTVERSION=	3.3.1
+PORTVERSION=	3.4.0
 CATEGORIES=	games
 MASTER_SITES=	SF
 
@@ -28,10 +28,6 @@ SCONS_BUILDENV+=CPPPATH="${LOCALBASE}/include" \
 DESKTOP_ENTRIES="Paintown" "Fighting game similar to Streets of Rage and TMNT" \
 		"${LOCALBASE}/share/icons/hicolor/32x32/apps/paintown.png" \
 		"paintown" "Game;ActionGame;" false
-
-post-patch:
-		@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g' \
-			${WRKSRC}/src/dumb/SConscript
 
 do-install:
 		${MKDIR} ${DATADIR}
