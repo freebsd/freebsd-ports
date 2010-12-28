@@ -34,6 +34,42 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="ff8b419a-0ffa-11e0-becc-0022156e8794">
+    <topic>Drupal Views plugin -- cross-site scripting</topic>
+    <affects>
+      <package>
+	<name>drupal6-views</name>
+	<range><lt>2.12</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Drupal security team reports:</p>
+	<blockquote cite="http://drupal.org/node/999380">
+	  <p>The Views module provides a flexible method for Drupal site
+	    designers to control how lists and tables of content are
+	    presented. Under certain circumstances, Views could display
+	    parts of the page path without escaping, resulting in a
+	    relected Cross Site Scripting (XSS) vulnerability. An attacker
+	    could exploit this to gain full administrative access.</p>
+	    <p>Mitigating factors: This vulnerability only occurs with a
+	    specific combination of configuration options for a specific
+	    View, but this combination is used in the default Views
+	    provided by some additional modules. A malicious user would
+	    need to get an authenticated administrative user to visit a
+	    specially crafted URL.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2010-4521</cvename>
+      <url>http://drupal.org/node/999380</url>
+    </references>
+    <dates>
+      <discovery>2010-12-15</discovery>
+      <entry>2010-12-28</entry>
+    </dates>
+  </vuln>
   <vuln vid="584c506d-0e98-11e0-b59b-0050569b2d21">
     <topic>redmine -- multiple vulnerabilities</topic>
     <affects>
@@ -46,7 +82,8 @@ Note:  Please add new entries to the beginning of this file.
       <body xmlns="http://www.w3.org/1999/xhtml">
 	<p>Jean-Philippe Lang reports:</p>
 	<blockquote cite="http://www.redmine.org/news/49">
-	  <p>This release also fixes 3 security issues reported by joernchen of Phenoelit:</p>
+	  <p>This release also fixes 3 security issues reported by
+	    joernchen of Phenoelit:</p>
 	  <ul>
 	    <li>logged in users may be able to access private data
 	     (affected versions: 1.0.x)</li>
