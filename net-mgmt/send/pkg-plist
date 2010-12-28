@@ -1,3 +1,4 @@
+@comment $FreeBSD$
 sbin/cgatool
 sbin/ipexttool
 sbin/sendd
@@ -5,4 +6,5 @@ etc/rc.d/sendd
 etc/sendd/sendd.conf-dist
 etc/sendd/params.conf-dist
 etc/sendd/ipext.conf-dist
+etc/sendd/ipext_verify.conf-dist
 @dirrmtry etc/sendd

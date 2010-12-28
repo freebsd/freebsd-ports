@@ -5,56 +5,41 @@
 # $FreeBSD$
 
 PORTNAME=	send
-PORTVERSION=	0.2
-PORTREVISION=	1
+PORTVERSION=	0.3
 CATEGORIES=	net-mgmt ipv6
-MASTER_SITES=	#http://www.docomolabs-usa.com/lab_osrc_guide.html
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	anchie
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
-MAINTAINER=	janos.mohacsi@bsd.hu
+MAINTAINER=	anchie@freebsd.org
 COMMENT=	Secure Neighbor Discovery implementation for IPv6
 
 LIB_DEPENDS=	dnet.1:${PORTSDIR}/net/libdnet
 
-RESTRICTED=	not redistributable, license agreement required
-
-USE_ZIP=	yes
 USE_GMAKE=	yes
 SUB_FILES=	pkg-message
+PKGMESSAGE=	${WRKDIR}/pkg-message
+PORTDOCS=	README UserGuide.pdf
 
-PORTDOCS=	UserGuide.pdf
-
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} > 700000
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-include_pkixip__ext__asn.h
+.if !exists(/usr/include/netinet6/send.h)
+IGNORE=		is supported only on 9.0 and later
 .endif
-
-.if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX})
-IGNORE=		needs you to sign the agreement on "http://www.docomolabs-usa.com/lab_osrc_downl.html", download it manually, place in ${DISTDIR} and then restart this build
-.endif
-
-post-patch:
-	@${REINPLACE_CMD} -e "s|%%PREFIX%%|${PREFIX}|" -e "s|%%LOCALBASE%%|${LOCALBASE}|" \
-		${WRKSRC}/Makefile.config \
-		${WRKSRC}/sendd/sendd_local.h \
-		${WRKSRC}/sendd/os-freebsd/Makefile \
-		${WRKSRC}/sendd/os-freebsd/sendd \
-		${WRKSRC}/examples/sendd.conf \
-		${WRKSRC}/examples/params.conf \
-		${WRKSRC}/examples/ipext/ipext_verify.conf
 
 post-install:
 	${MKDIR} ${PREFIX}/etc/sendd/
-	${INSTALL_DATA} ${WRKSRC}/examples/sendd.conf ${PREFIX}/etc/sendd/sendd.conf-dist
-	${INSTALL_DATA} ${WRKSRC}/examples/params.conf ${PREFIX}/etc/sendd/params.conf-dist
-	${INSTALL_DATA} ${WRKSRC}/examples/ipext/ipext_verify.conf ${PREFIX}/etc/sendd/ipext.conf-dist
-	@${CAT} ${PKGMESSAGE}
-.ifndef(NOPORTDOCS)
+	${INSTALL_DATA} ${WRKSRC}/examples/ipext/ipext_verify.conf \
+		${WRKSRC}/examples/ipext/ca/ipext.conf \
+		${WRKSRC}/examples/
+	${INSTALL_DATA} ${WRKSRC}/docs/UserGuide.pdf \
+		${WRKSRC}/UserGuide.pdf
+	for F in sendd.conf params.conf ipext.conf ipext_verify.conf; do \
+		${INSTALL_DATA} ${WRKSRC}/examples/$$F \
+		${PREFIX}/etc/sendd/$${F}-dist; \
+	done
+.if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
-. for doc in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/docs/${doc} ${DOCSDIR}
-. endfor
+	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
 .endif
+	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

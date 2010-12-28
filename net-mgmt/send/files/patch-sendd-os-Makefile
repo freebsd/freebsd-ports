@@ -1,0 +1,23 @@
+--- sendd/os/Makefile.orig	2010-08-28 17:58:04.000000000 +0900
++++ sendd/os/Makefile	2010-12-20 15:14:58.000000000 +0900
+@@ -1,13 +1,15 @@
+ 
+ OBJS += os/addr.o os/snd_freebsd.o os-linux/rand.o
+-CPPFLAGS +=	-I/usr/local/include
++CPPFLAGS +=	-I${LOCALBASE}/include
+ 
+-OSLIBS= -L/usr/local/lib -l$(DNET)
++OSLIBS= -L${LOCALBASE}/lib -l$(DNET)
+ 
+ OSEXTRA= os/sendd
+-EXTRAINSTALL= /usr/local/etc/rc.d/sendd
++EXTRAINSTALL= ${PREFIX}/etc/rc.d/sendd
+ EXTRAUNINSTALL=$(EXTRAINSTALL)
+ 
+ /usr/local/etc/rc.d/%: os/%
+-	install $< $@
+-
++	touch $@
++	chmod 0555 $@
++	chown root:wheel $@
++	sed -e s,%%PREFIX%%,${PREFIX},g < $< > $@
