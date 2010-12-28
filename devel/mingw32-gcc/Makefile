@@ -30,8 +30,6 @@ PATCH_WRKSRC=	${SRCDIR}
 SRCDIR=		${WRKDIR}/${PORTNAME}-${GCCVERSION}
 WRKSRC=		${WRKDIR}/build
 
-BROKEN=		does not build
-
 USE_BISON=	build
 USE_BZIP2=	yes
 USE_GMAKE=	yes
@@ -192,6 +190,10 @@ CONFIGURE_TARGET=x86_64-portbld-freebsd${OSREL}
 .elif ${ARCH} == "ia64" || ${ARCH} == "powerpc"
 BROKEN=		Does not compile on ia64 or powerpc
 .endif
+
+post-patch:
+	${REINPLACE_CMD} -e "s,# include <sys/sysctl.h>,," \
+		${SRCDIR}/libiberty/physmem.c
 
 pre-configure:
 	cd ${SRCDIR} ; contrib/gcc_update --touch
