@@ -1,0 +1,10 @@
+MooseX::MultiMethods provides multi method dispatch based on Moose type
+constraints. It does so by providing a multi keyword that extends the
+method keyword provided by MooseX::Method::Signatures.
+
+When invoking a method declared as multi a matching variant is being searched
+in all the declared multi variants based on the passed parameters and the
+declared type constraints. If a variant has been found, it will be invoked.
+If no variant could be found, an exception will be thrown.
+
+WWW: http://search.cpan.org/dist/MooseX-MultiMethods/
