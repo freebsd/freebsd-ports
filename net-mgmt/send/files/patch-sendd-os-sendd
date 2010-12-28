@@ -1,0 +1,13 @@
+--- sendd/os/sendd.orig	2010-08-28 17:58:04.000000000 +0900
++++ sendd/os/sendd	2010-12-20 15:10:58.000000000 +0900
+@@ -37,8 +37,8 @@
+ 
+ name="sendd"
+ rcvar=`set_rcvar`
+-command="/usr/local/sbin/${name}"
+-required_files="/usr/local/etc/${name}.conf"
++command="%%PREFIX%%/sbin/${name}"
++required_files="%%PREFIX%%/etc/${name}/${name}.conf"
+ 
+ load_rc_config $name
+ run_rc_command "$1"
