@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	calf
-PORTVERSION=	0.0.18.5
-PORTREVISION=	2
+PORTVERSION=	0.0.18.6
 CATEGORIES=	audio
 MASTER_SITES=	SF
 
@@ -31,10 +30,6 @@ MAN7=		calf.7
 INSTALLS_ICONS=	yes
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 700000
-BROKEN=		Does not compile
-.endif
 
 post-patch:
 		@${FIND} ${BUILD_WRKSRC} -name '*.cpp' | ${XARGS} \
