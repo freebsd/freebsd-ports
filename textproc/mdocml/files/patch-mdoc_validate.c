@@ -1,6 +1,6 @@
---- mdoc_action.c
-+++ mdoc_action.c
-@@ -609,6 +609,8 @@ post_os(POST_ARGS)
+--- mdoc_validate.c
++++ mdoc_validate.c
+@@ -2143,6 +2143,8 @@ post_os(POST_ARGS)
  			mdoc_nmsg(m, n, MANDOCERR_MEM);
  			return(0);
  		}
