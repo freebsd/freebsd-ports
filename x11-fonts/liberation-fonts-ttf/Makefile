@@ -9,7 +9,9 @@ PORTNAME=	liberation-fonts-ttf
 PORTVERSION=	1.06.0.20100721
 PORTEPOCH=	1
 CATEGORIES=	x11-fonts
-MASTER_SITES=	https://fedorahosted.org/releases/l/i/liberation-fonts/
+MASTER_SITES=	https://fedorahosted.org/releases/l/i/liberation-fonts/	\
+		${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	thierry
 
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	Liberation fonts from Red Hat to replace MS TTF fonts
