@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	miro
-PORTVERSION=	3.5
+PORTVERSION=	3.5.1
 CATEGORIES=	multimedia
 MASTER_SITES=	ftp://ftp.osuosl.org/pub/pculture.org/miro/src/	\
 		http://ftp.osuosl.org/pub/pculture.org/miro/src/
@@ -49,10 +49,6 @@ MAN1=		miro.1 miro.real.1
 CPPFLAGS=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 700000
-BROKEN=		does not compile on 6.x
-.endif
 
 .SILENT:
 
