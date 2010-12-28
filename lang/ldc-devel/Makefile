@@ -12,7 +12,7 @@ MASTER_SITES=	http://hybridsource.org/
 PKGNAMESUFFIX=	-devel
 DISTFILES=	ldc-0.9.2r1697.tar.bz2 tango-5599.tar.bz2
 
-MAINTAINER=	chromium@hybridsource.org
+MAINTAINER=	cy@FreeBSD.org
 COMMENT=	D frontend for llvm, with the Tango standard library
 
 BUILD_DEPENDS=	llvm>=2.8:${PORTSDIR}/devel/llvm
