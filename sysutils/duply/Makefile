@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	duply
-PORTVERSION=	1.5.4
-PORTREVISION=	1
+PORTVERSION=	1.5.4.1
 CATEGORIES=	sysutils
 MASTER_SITES=	SF/ftplicity/${PORTNAME}%20%28simple%20duplicity%29/1.5.x/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
@@ -27,9 +26,7 @@ PORTDOCS=	INSTALL.txt gpl.txt
 PLIST_FILES=	bin/duply
 
 post-patch:
-	@${REINPLACE_CMD} -e "s,^#!/bin/bash,#!${LOCALBASE}/bin/bash,g" \
-		-e "s,/etc/duply,${PREFIX}/etc/duply,g" \
-		${WRKSRC}/duply
+	@${REINPLACE_CMD} -e "s,/etc/duply,${ETCDIR},g" ${WRKSRC}/duply
 
 do-install:
 	@${INSTALL_SCRIPT} ${WRKSRC}/duply ${PREFIX}/bin/duply
