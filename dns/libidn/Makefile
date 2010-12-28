@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_GNU_ALPHA} \
 		http://josefsson.org/libidn/releases/
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	krion@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Internationalized Domain Names command line tool
 
 USE_GNOME=	gnomehack gnometarget pkgconfig

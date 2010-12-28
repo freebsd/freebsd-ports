@@ -12,7 +12,7 @@ MASTER_SITES=	ftp://invisible-island.net/xterm/ \
 		http://voodoo.bawue.com/download/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	krion@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Terminal emulator for the X Window System
 
 BUILD_DEPENDS=	luit:${PORTSDIR}/x11/luit
