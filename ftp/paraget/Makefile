@@ -12,7 +12,7 @@ PORTREVISION=	2
 CATEGORIES=	ftp perl5
 MASTER_SITES=	SF
 
-MAINTAINER=	ijliao@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Parallel ftp-fetching program
 
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Class/MethodMaker.pm:${PORTSDIR}/devel/p5-Class-MethodMaker

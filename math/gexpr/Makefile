@@ -13,7 +13,7 @@ CATEGORIES=	math
 MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	apps/math/calc
 
-MAINTAINER=	ijliao@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A shell calculator
 
 MAKE_ENV=	CPPFLAGS="${CPPFLAGS}" \

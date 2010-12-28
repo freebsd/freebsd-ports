@@ -13,7 +13,7 @@ CATEGORIES=	palm
 MASTER_SITES=	SF
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	ijliao@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The Palm ROM Discombobulator
 
 PLIST_FILES=	bin/romeo

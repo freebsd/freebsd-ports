@@ -16,7 +16,7 @@ DISTNAME=	res
 EXTRACT_SUFX=	.cls
 DIST_SUBDIR=	${PKGNAMEPREFIX}${PORTNAME}
 
-MAINTAINER=	ijliao@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A resume class for LaTeX
 
 BUILD_DEPENDS=	mktexlsr:${PORTSDIR}/print/teTeX-base

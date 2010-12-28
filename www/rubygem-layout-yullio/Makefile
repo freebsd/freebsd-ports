@@ -12,7 +12,7 @@ CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 DISTNAME=	layout_yullio_generator-${PORTVERSION}
 
-MAINTAINER=	ijliao@FreeBSD.org
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	A combination of Mollio CSS/HTML template and Yahoo UI grid
 
 RUN_DEPENDS=	sow:${PORTSDIR}/devel/rubygem-hoe

@@ -11,7 +11,7 @@ PORTVERSION=	1.1
 CATEGORIES=	textproc
 MASTER_SITES=	SF
 
-MAINTAINER=	ijliao@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Yacc-to-Latex pretty printer/convertor
 
 NO_BUILD=	yes

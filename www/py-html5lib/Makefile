@@ -12,7 +12,7 @@ CATEGORIES=	www python
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	ijliao@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	A Python based HTML parser based on the HTML5 spec
 
 USE_ZIP=	yes

@@ -5,6 +5,3 @@ it. This EBNF is written out as LaTeX source. The output is a LaTeX
 typically using an \input{} statement.
 
 WWW: http://www.alchar.org/~aedil/Projects/y2l.html
-
--- Ying-Chieh Liao
-   ijliao@FreeBSD.org

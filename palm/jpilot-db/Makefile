@@ -13,7 +13,7 @@ CATEGORIES=	palm java
 MASTER_SITES=	http://chickenshick.com/jpilot-db/download/
 EXTRACT_SUFX=	-ej.jar
 
-MAINTAINER=	ijliao@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A desktop app for pilot-db
 
 NO_WRKSUBDIR=	yes

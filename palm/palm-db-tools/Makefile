@@ -12,7 +12,7 @@ CATEGORIES=	palm
 MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/./_/g}
 
-MAINTAINER=	ijliao@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Utilities for the PalmOS flat-file database programs
 
 WRKSRC=		${WRKDIR}/${PORTNAME}

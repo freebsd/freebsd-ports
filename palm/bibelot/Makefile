@@ -11,7 +11,7 @@ PORTVERSION=	0.9.4
 CATEGORIES=	palm
 MASTER_SITES=	SF/${PORTNAME}/Bibelot/${PORTVERSION}
 
-MAINTAINER=	ijliao@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Formats and converts text documents into compressed PalmDoc .pdb files
 
 PLIST_FILES=	bin/bibelot
