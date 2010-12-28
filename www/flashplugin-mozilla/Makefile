@@ -15,6 +15,10 @@ DISTNAME=	gplflash-${PORTVERSION}
 MAINTAINER=	llwang@infor.org
 COMMENT=	A GPL standalone Flash (TM) plugin for Mozilla web browser
 
+DEPRECATED=	gplflash is no longer supported. Please use graphics/gnash, \
+		graphics/lightspark, or www/nspluginwrapper and \
+		www/linux-f10-flashplugin10 instead
+
 LIB_DEPENDS=	flash.0:${PORTSDIR}/graphics/libflash
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/plugin
