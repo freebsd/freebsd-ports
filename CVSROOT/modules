@@ -6043,6 +6043,7 @@ insighttoolkit                  ports/science/InsightToolkit
 inspircd                        ports/irc/inspircd
 installwatch                    ports/sysutils/installwatch
 instant-server                  ports/misc/instant-server
+instead                         ports/games/instead
 instiki                         ports/www/instiki
 insub                           ports/irc/insub
 intclock                        ports/x11-clocks/intclock
@@ -9979,7 +9980,6 @@ mysql51-client                  ports/databases/mysql51-client
 mysql51-scripts                 ports/databases/mysql51-scripts
 mysql51-server                  ports/databases/mysql51-server
 mysql55-client                  ports/databases/mysql55-client
-mysql55-scripts                 ports/databases/mysql55-scripts
 mysql55-server                  ports/databases/mysql55-server
 mysql_last_value                ports/databases/mysql_last_value
 mysqlard                        ports/databases/mysqlard
@@ -13266,6 +13266,7 @@ p5-MooseX-Types-DateTimeX       ports/devel/p5-MooseX-Types-DateTimeX
 p5-MooseX-Types-Path-Class      ports/devel/p5-MooseX-Types-Path-Class
 p5-MooseX-Types-Signal          ports/devel/p5-MooseX-Types-Signal
 p5-MooseX-Types-Structured      ports/devel/p5-MooseX-Types-Structured
+p5-MooseX-Types-VariantTable    ports/devel/p5-MooseX-Types-VariantTable
 p5-Mouse                        ports/devel/p5-Mouse
 p5-MouseX-AttributeHelpers      ports/devel/p5-MouseX-AttributeHelpers
 p5-MouseX-ConfigFromFile        ports/devel/p5-MouseX-ConfigFromFile
@@ -14297,6 +14298,7 @@ p5-Test-Expect                  ports/devel/p5-Test-Expect
 p5-Test-Fatal                   ports/devel/p5-Test-Fatal
 p5-Test-File                    ports/devel/p5-Test-File
 p5-Test-File-Contents           ports/devel/p5-Test-File-Contents
+p5-Test-Fixture-DBI             ports/databases/p5-Test-Fixture-DBI
 p5-Test-Fixture-DBIC-Schema     ports/devel/p5-Test-Fixture-DBIC-Schema
 p5-Test-Group                   ports/devel/p5-Test-Group
 p5-Test-HTML-Tidy               ports/devel/p5-Test-HTML-Tidy
@@ -14782,6 +14784,7 @@ p5-XML-Compile-Cache            ports/textproc/p5-XML-Compile-Cache
 p5-XML-Compile-Dumper           ports/textproc/p5-XML-Compile-Dumper
 p5-XML-Compile-SOAP             ports/net/p5-XML-Compile-SOAP
 p5-XML-Compile-SOAP-Daemon      ports/net/p5-XML-Compile-SOAP-Daemon
+p5-XML-Compile-SOAP-WSA         ports/net/p5-XML-Compile-SOAP-WSA
 p5-XML-Compile-Tester           ports/devel/p5-XML-Compile-Tester
 p5-XML-DBMS                     ports/textproc/p5-XML-DBMS
 p5-XML-DOM                      ports/textproc/p5-XML-DOM
@@ -17344,6 +17347,7 @@ p5-moosex-types-datetimex       ports/devel/p5-MooseX-Types-DateTimeX
 p5-moosex-types-path-class      ports/devel/p5-MooseX-Types-Path-Class
 p5-moosex-types-signal          ports/devel/p5-MooseX-Types-Signal
 p5-moosex-types-structured      ports/devel/p5-MooseX-Types-Structured
+p5-moosex-types-varianttable    ports/devel/p5-MooseX-Types-VariantTable
 p5-mouse                        ports/devel/p5-Mouse
 p5-mousex-attributehelpers      ports/devel/p5-MouseX-AttributeHelpers
 p5-mousex-configfromfile        ports/devel/p5-MouseX-ConfigFromFile
@@ -18416,6 +18420,7 @@ p5-test-expect                  ports/devel/p5-Test-Expect
 p5-test-fatal                   ports/devel/p5-Test-Fatal
 p5-test-file                    ports/devel/p5-Test-File
 p5-test-file-contents           ports/devel/p5-Test-File-Contents
+p5-test-fixture-dbi             ports/databases/p5-Test-Fixture-DBI
 p5-test-fixture-dbic-schema     ports/devel/p5-Test-Fixture-DBIC-Schema
 p5-test-group                   ports/devel/p5-Test-Group
 p5-test-harness                 ports/devel/p5-Test-Harness
@@ -18914,6 +18919,7 @@ p5-xml-compile-cache            ports/textproc/p5-XML-Compile-Cache
 p5-xml-compile-dumper           ports/textproc/p5-XML-Compile-Dumper
 p5-xml-compile-soap             ports/net/p5-XML-Compile-SOAP
 p5-xml-compile-soap-daemon      ports/net/p5-XML-Compile-SOAP-Daemon
+p5-xml-compile-soap-wsa         ports/net/p5-XML-Compile-SOAP-WSA
 p5-xml-compile-tester           ports/devel/p5-XML-Compile-Tester
 p5-xml-dbms                     ports/textproc/p5-XML-DBMS
 p5-xml-descent                  ports/textproc/p5-XML-Descent
@@ -21042,6 +21048,7 @@ py-PyGreSQL                     ports/databases/py-PyGreSQL
 py-PySQLite10                   ports/databases/py-PySQLite10
 py-PySQLite11                   ports/databases/py-PySQLite11
 py-PyX                          ports/graphics/py-PyX
+py-RO                           ports/astro/py-RO
 py-RPyC                         ports/devel/py-RPyC
 py-SQLDict                      ports/databases/py-SQLDict
 py-SciParam                     ports/x11-toolkits/py-SciParam
@@ -21611,8 +21618,10 @@ py-resourcepackage              ports/devel/py-resourcepackage
 py-restclient                   ports/www/py-restclient
 py-reverend                     ports/textproc/py-reverend
 py-reverse                      ports/devel/py-reverse
+py-riak                         ports/databases/py-riak
 py-rijndael                     ports/security/py-rijndael
 py-rlcompleter2                 ports/devel/py-rlcompleter2
+py-ro                           ports/astro/py-RO
 py-room                         ports/editors/py-room
 py-routes                       ports/www/py-routes
 py-roxlib                       ports/devel/py-roxlib
