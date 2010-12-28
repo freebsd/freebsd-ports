@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	node
-PORTVERSION=	0.3.1
+PORTVERSION=	0.3.2
 CATEGORIES=	www
 MASTER_SITES=	http://nodejs.org/dist/
 PKGNAMESUFFIX=	-devel
@@ -24,7 +24,7 @@ USE_LDCONFIG=	yes
 USE_PYTHON=	yes
 USE_GNOME=	pkgconfig
 
-ONLY_FOR_ARCHS=	i386 amd64
+ONLY_FOR_ARCHS=	i386
 MAKE_JOBS_SAFE=	yes
 
 CONFLICTS=	node-0.2.[0-9]*
