@@ -6,18 +6,19 @@
 #
 
 PORTNAME=	goldendict
-PORTVERSION=	0.9.0
-PORTREVISION=	2
+PORTVERSION=	1.0.1
 CATEGORIES=	textproc
-MASTER_SITES=	BERLIOS
-DISTNAME=	${PORTNAME}-${PORTVERSION}-src-x11
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION:C|(.*)\.[0-9]*$|\1|}/
+DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
 MAINTAINER=	bsam@FreeBSD.org
 COMMENT=	A feature-rich dictionary lookup program (with QT lib)
 
 LIB_DEPENDS=	hunspell-1.2.0:${PORTSDIR}/hungarian/hunspell \
+		execinfo:${PORTSDIR}/devel/libexecinfo \
 		vorbis:${PORTSDIR}/audio/libvorbis
 
+LICENSE=	GPLv3
 USE_BZIP2=	yes
 HAS_CONFIGURE=	yes
 USE_GNOME=	pkgconfig
@@ -26,7 +27,7 @@ USE_QT4=	linguist
 QT_COMPONENTS=	corelib gui webkit \
 		qmake_build linguist_build moc_build rcc_build script_build uic_build
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}-src
+WRKSRC=		${WRKDIR}
 
 post-patch:
 	@${SED} -I.bak -e "s:/usr:${PREFIX}:" ${WRKSRC}/redist/goldendict.desktop
@@ -38,7 +39,7 @@ do-configure:
 
 post-install:
 	@${MKDIR} ${DATADIR}/locale
-	@${INSTALL_DATA} ${WRKSRC}/locale/ru.qm ${DATADIR}/locale/
+	@${INSTALL_DATA} ${WRKSRC}/locale/*.qm ${DATADIR}/locale/
 
 .include <bsd.port.pre.mk>
 
