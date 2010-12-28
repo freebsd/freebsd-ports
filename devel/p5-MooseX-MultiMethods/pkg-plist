@@ -1,0 +1,8 @@
+%%SITE_PERL%%/MooseX/MultiMethods.pm
+%%SITE_PERL%%/MooseX/MultiMethods/Meta/Method.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX/MultiMethods/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX/MultiMethods
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX
+@dirrmtry %%SITE_PERL%%/MooseX/MultiMethods/Meta
+@dirrmtry %%SITE_PERL%%/MooseX/MultiMethods
+@dirrmtry %%SITE_PERL%%/MooseX
