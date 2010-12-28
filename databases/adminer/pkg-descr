@@ -1,9 +1,9 @@
-phpMinAdmin is a MySQL management tool written in PHP.
-Currently it can create database, create/drop/alter
-tables, create/drop/alter stored procedures, functions
-and triggers, delete/edit/add fields, execute any SQL
-statement, and manage keys on fields. The main difference
-between phpMinAdmin and phpMyAdmin is that phpMinAdmin
-is light-weight.
+Adminer (formerly phpMinAdmin) is a full-featured database 
+management tool written in PHP. Conversely to phpMyAdmin, 
+it consist of a single file ready to deploy to the target 
+server. 
 
-WWW: http://phpminadmin.sourceforge.net
+Adminer is available for MySQL, PostgreSQL, SQLite, MS SQL 
+and Oracle.
+
+WWW: http://www.adminer.org/
