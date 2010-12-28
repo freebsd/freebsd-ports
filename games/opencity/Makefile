@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	opencity
-PORTVERSION=	0.0.6.2
-PORTREVISION=	3
+PORTVERSION=	0.0.6.3
 CATEGORIES=	games
-MASTER_SITES=	SF/${PORTNAME}/Stable/0.0.6
+MASTER_SITES=	SF/${PORTNAME}/Stable/${PORTVERSION:C/^([0-9]+\.[0-9]+\.[0-9]+)\..*$/\1/}/
 DISTNAME=	${PORTNAME}-${PORTVERSION}stable
 
 MAINTAINER=	amdmi3@FreeBSD.org
@@ -20,8 +19,6 @@ GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_SDL=	sdl mixer image net
 USE_GL=		gl glu
-
-WRKSRC=		${WRKDIR}/${PORTNAME}-0.0.6.2stable
 
 PORTDOCS=	*
 
