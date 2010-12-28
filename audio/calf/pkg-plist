@@ -15,13 +15,13 @@ share/calf/gui-rotaryspeaker.xml
 share/calf/gui-phaser.xml
 share/calf/gui-multichorus.xml
 share/calf/gui-compressor.xml
+share/calf/gui-sidechaingate.xml
 share/calf/calf.glade
 share/ladspa/rdf/calf.rdf
 share/icons/hicolor/16x16/apps/calf.png
 share/icons/hicolor/24x24/apps/calf.png
 share/icons/hicolor/32x32/apps/calf.png
 share/icons/hicolor/48x48/apps/calf.png
-share/icons/hicolor/icon-theme.cache
 share/applications/calf.desktop
 @dirrm lib/dssi/calf
 @dirrm share/calf
