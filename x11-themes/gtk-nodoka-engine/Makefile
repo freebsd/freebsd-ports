@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gtk-nodoka-engine
-PORTVERSION=	0.7.2
-PORTREVISION=	3
+PORTVERSION=	0.7.5
 CATEGORIES=	x11-themes
 MASTER_SITES=	https://fedorahosted.org/releases/n/o/nodoka/
 
@@ -20,6 +19,7 @@ OPTIONS=	ANIMATION	"Enable animation support"	off \
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gtk20
+USE_LDCONFIG=	yes
 
 .include <bsd.port.pre.mk>
 
