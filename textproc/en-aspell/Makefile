@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	${DICT}-aspell
-DISTVERSION=	6-en-6.0-0
-PORTREVISION=	1
+DISTVERSION=	6-en-7.0-0
 CATEGORIES=	textproc
 
 MAINTAINER=	thierry@FreeBSD.org
