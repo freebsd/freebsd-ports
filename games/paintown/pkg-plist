@@ -830,7 +830,6 @@ bin/paintown
 %%DATADIR%%/data/chars/yashiro/walk/walk8.png
 %%DATADIR%%/data/chars/yashiro/yashiro.txt
 %%DATADIR%%/data/chars/yashiro/yashiro.txt.good
-%%DATADIR%%/data/fonts.dat
 %%DATADIR%%/data/fonts/Neuropol.ttf
 %%DATADIR%%/data/fonts/arial.ttf
 %%DATADIR%%/data/fonts/chiller.ttf
@@ -869,8 +868,7 @@ bin/paintown
 %%DATADIR%%/data/menu/bgs/seizure-bg/00200011.png
 %%DATADIR%%/data/menu/bgs/seizure-bg/00200012.png
 %%DATADIR%%/data/menu/bgs/seizure-bg/00200013.png
-%%DATADIR%%/data/menu/change-mod.txt
-%%DATADIR%%/data/menu/level_select.txt
+%%DATADIR%%/data/menu/in-game.txt
 %%DATADIR%%/data/menu/main.txt
 %%DATADIR%%/data/menu/options.txt
 %%DATADIR%%/data/menu/paintown.png
@@ -2074,6 +2072,118 @@ bin/paintown
 %%DATADIR%%/data/players/maxima/walk/walk005.png
 %%DATADIR%%/data/players/maxima/walk/walk006.png
 %%DATADIR%%/data/players/maxima/walk/walk007.png
+%%DATADIR%%/data/players/mj/attack1/01.png
+%%DATADIR%%/data/players/mj/attack1/02.png
+%%DATADIR%%/data/players/mj/attack1/03.png
+%%DATADIR%%/data/players/mj/attack1/04.png
+%%DATADIR%%/data/players/mj/attack2/01.png
+%%DATADIR%%/data/players/mj/attack2/02.png
+%%DATADIR%%/data/players/mj/attack2/03.png
+%%DATADIR%%/data/players/mj/attack2/04.png
+%%DATADIR%%/data/players/mj/attack2/05.png
+%%DATADIR%%/data/players/mj/attack2/06.png
+%%DATADIR%%/data/players/mj/attack3/01.png
+%%DATADIR%%/data/players/mj/attack3/02.png
+%%DATADIR%%/data/players/mj/attack3/03.png
+%%DATADIR%%/data/players/mj/attack3/04.png
+%%DATADIR%%/data/players/mj/attack3/05.png
+%%DATADIR%%/data/players/mj/attack3/06.png
+%%DATADIR%%/data/players/mj/attack3/07.png
+%%DATADIR%%/data/players/mj/attack3/08.png
+%%DATADIR%%/data/players/mj/attack3/09.png
+%%DATADIR%%/data/players/mj/die.wav
+%%DATADIR%%/data/players/mj/fall/01.png
+%%DATADIR%%/data/players/mj/fall/02.png
+%%DATADIR%%/data/players/mj/fall/03.png
+%%DATADIR%%/data/players/mj/fall/04.png
+%%DATADIR%%/data/players/mj/fall/05.png
+%%DATADIR%%/data/players/mj/get/01.png
+%%DATADIR%%/data/players/mj/get/02.png
+%%DATADIR%%/data/players/mj/get/03.png
+%%DATADIR%%/data/players/mj/get/04.png
+%%DATADIR%%/data/players/mj/grab.png
+%%DATADIR%%/data/players/mj/hurt/01.png
+%%DATADIR%%/data/players/mj/hurt/02.png
+%%DATADIR%%/data/players/mj/hurt/03.png
+%%DATADIR%%/data/players/mj/icon.png
+%%DATADIR%%/data/players/mj/jump/01.png
+%%DATADIR%%/data/players/mj/jump/02.png
+%%DATADIR%%/data/players/mj/jump/03.png
+%%DATADIR%%/data/players/mj/jump/04.png
+%%DATADIR%%/data/players/mj/jump/05.png
+%%DATADIR%%/data/players/mj/jump/06.png
+%%DATADIR%%/data/players/mj/jump/07.png
+%%DATADIR%%/data/players/mj/jump/08.png
+%%DATADIR%%/data/players/mj/jump/09.png
+%%DATADIR%%/data/players/mj/jump/10.png
+%%DATADIR%%/data/players/mj/jump/11.png
+%%DATADIR%%/data/players/mj/jumpattack1/01.png
+%%DATADIR%%/data/players/mj/jumpattack1/02.png
+%%DATADIR%%/data/players/mj/jumpattack1/03.png
+%%DATADIR%%/data/players/mj/jumpattack1/04.png
+%%DATADIR%%/data/players/mj/jumpattack1/05.png
+%%DATADIR%%/data/players/mj/jumpattack1/06.png
+%%DATADIR%%/data/players/mj/jumpattack2/01.png
+%%DATADIR%%/data/players/mj/jumpattack2/02.png
+%%DATADIR%%/data/players/mj/jumpattack2/03.png
+%%DATADIR%%/data/players/mj/jumpattack2/04.png
+%%DATADIR%%/data/players/mj/mj.txt
+%%DATADIR%%/data/players/mj/rise/01.png
+%%DATADIR%%/data/players/mj/rise/02.png
+%%DATADIR%%/data/players/mj/rise/03.png
+%%DATADIR%%/data/players/mj/rise/04.png
+%%DATADIR%%/data/players/mj/rise/05.png
+%%DATADIR%%/data/players/mj/special/01.png
+%%DATADIR%%/data/players/mj/special/02.png
+%%DATADIR%%/data/players/mj/special/03.png
+%%DATADIR%%/data/players/mj/special/04.png
+%%DATADIR%%/data/players/mj/special/05.png
+%%DATADIR%%/data/players/mj/special/06.png
+%%DATADIR%%/data/players/mj/special/07.png
+%%DATADIR%%/data/players/mj/special/08.png
+%%DATADIR%%/data/players/mj/special/09.png
+%%DATADIR%%/data/players/mj/special/10.png
+%%DATADIR%%/data/players/mj/stand/01.png
+%%DATADIR%%/data/players/mj/stand/02.png
+%%DATADIR%%/data/players/mj/stand/03.png
+%%DATADIR%%/data/players/mj/stand/04.png
+%%DATADIR%%/data/players/mj/stand/05.png
+%%DATADIR%%/data/players/mj/stand/06.png
+%%DATADIR%%/data/players/mj/strike/01.png
+%%DATADIR%%/data/players/mj/strike/02.png
+%%DATADIR%%/data/players/mj/super/01.png
+%%DATADIR%%/data/players/mj/super/02.png
+%%DATADIR%%/data/players/mj/super/03.png
+%%DATADIR%%/data/players/mj/super/04.png
+%%DATADIR%%/data/players/mj/super/05.png
+%%DATADIR%%/data/players/mj/super/06.png
+%%DATADIR%%/data/players/mj/super/07.png
+%%DATADIR%%/data/players/mj/super/08.png
+%%DATADIR%%/data/players/mj/super/09.png
+%%DATADIR%%/data/players/mj/super/10.png
+%%DATADIR%%/data/players/mj/super/11.png
+%%DATADIR%%/data/players/mj/super/12.png
+%%DATADIR%%/data/players/mj/super/13.png
+%%DATADIR%%/data/players/mj/super/14.png
+%%DATADIR%%/data/players/mj/super/15.png
+%%DATADIR%%/data/players/mj/throw/01.png
+%%DATADIR%%/data/players/mj/throw/02.png
+%%DATADIR%%/data/players/mj/throw/03.png
+%%DATADIR%%/data/players/mj/throw/04.png
+%%DATADIR%%/data/players/mj/throw/05.png
+%%DATADIR%%/data/players/mj/throw/06.png
+%%DATADIR%%/data/players/mj/throw/07.png
+%%DATADIR%%/data/players/mj/walk/01.png
+%%DATADIR%%/data/players/mj/walk/02.png
+%%DATADIR%%/data/players/mj/walk/03.png
+%%DATADIR%%/data/players/mj/walk/04.png
+%%DATADIR%%/data/players/mj/walk/05.png
+%%DATADIR%%/data/players/mj/walk/06.png
+%%DATADIR%%/data/players/mj/walk/07.png
+%%DATADIR%%/data/players/mj/walk/08.png
+%%DATADIR%%/data/players/mj/walk/09.png
+%%DATADIR%%/data/players/mj/walk/10.png
+%%DATADIR%%/data/players/mj/walk/11.png
 %%DATADIR%%/data/players/ryu/Ryu.gif
 %%DATADIR%%/data/players/ryu/die.wav
 %%DATADIR%%/data/players/ryu/fall/ryu-fall01.png
@@ -2504,6 +2614,8 @@ bin/paintown
 %%DATADIR%%/data/players/wolverine/walk/5.png
 %%DATADIR%%/data/players/wolverine/walk/6.png
 %%DATADIR%%/data/players/wolverine/wolverine.txt
+%%DATADIR%%/data/psp/icon0.png
+%%DATADIR%%/data/psp/pic1.png
 %%DATADIR%%/data/river-city-ransom/players/alex/alex.txt
 %%DATADIR%%/data/river-city-ransom/players/alex/fall/1.png
 %%DATADIR%%/data/river-city-ransom/players/alex/fall/2.png
@@ -2552,22 +2664,25 @@ bin/paintown
 %%DATADIR%%/data/sounds/squish.wav
 %%DATADIR%%/data/sounds/steelsword.wav
 %%DATADIR%%/data/sounds/swing.wav
+%%DATADIR%%/data/sounds/thunder.wav
 %%DATADIR%%/data/sprites/arrow.png
 %%DATADIR%%/data/sprites/lamp.png
 %%DATADIR%%/data/sprites/logo.png
-%%DATADIR%%/data/sprites/select.png
 %%DATADIR%%/data/sprites/shadow/shadow1.png
 %%DATADIR%%/data/sprites/shadow/shadow2.png
 %%DATADIR%%/data/sprites/shadow/shadow3.png
 %%DATADIR%%/data/sprites/shadow/shadow4.png
 %%DATADIR%%/data/sprites/shadow/shadow5.png
 %%DATADIR%%/data/sprites/shadow/shadow6.png
+%%DATADIR%%/data/wii/icon.png
+%%DATADIR%%/data/wii/meta.xml
 %%DATADIR%%/paintown-bin
 share/icons/hicolor/32x32/apps/paintown.png
 @dirrmtry share/icons/hicolor/32x32/apps
 @dirrmtry share/icons/hicolor/32x32
 @dirrmtry share/icons/hicolor
 @dirrmtry share/icons
+@dirrm %%DATADIR%%/data/wii
 @dirrm %%DATADIR%%/data/sprites/shadow
 @dirrm %%DATADIR%%/data/sprites
 @dirrm %%DATADIR%%/data/sounds
@@ -2588,6 +2703,7 @@ share/icons/hicolor/32x32/apps/paintown.png
 @dirrm %%DATADIR%%/data/river-city-ransom/players/alex
 @dirrm %%DATADIR%%/data/river-city-ransom/players
 @dirrm %%DATADIR%%/data/river-city-ransom
+@dirrm %%DATADIR%%/data/psp
 @dirrm %%DATADIR%%/data/players/wolverine/walk
 @dirrm %%DATADIR%%/data/players/wolverine/taunt1
 @dirrm %%DATADIR%%/data/players/wolverine/special
@@ -2646,6 +2762,23 @@ share/icons/hicolor/32x32/apps/paintown.png
 @dirrm %%DATADIR%%/data/players/ryu/get
 @dirrm %%DATADIR%%/data/players/ryu/fall
 @dirrm %%DATADIR%%/data/players/ryu
+@dirrm %%DATADIR%%/data/players/mj/walk
+@dirrm %%DATADIR%%/data/players/mj/throw
+@dirrm %%DATADIR%%/data/players/mj/super
+@dirrm %%DATADIR%%/data/players/mj/strike
+@dirrm %%DATADIR%%/data/players/mj/stand
+@dirrm %%DATADIR%%/data/players/mj/special
+@dirrm %%DATADIR%%/data/players/mj/rise
+@dirrm %%DATADIR%%/data/players/mj/jumpattack2
+@dirrm %%DATADIR%%/data/players/mj/jumpattack1
+@dirrm %%DATADIR%%/data/players/mj/jump
+@dirrm %%DATADIR%%/data/players/mj/hurt
+@dirrm %%DATADIR%%/data/players/mj/get
+@dirrm %%DATADIR%%/data/players/mj/fall
+@dirrm %%DATADIR%%/data/players/mj/attack3
+@dirrm %%DATADIR%%/data/players/mj/attack2
+@dirrm %%DATADIR%%/data/players/mj/attack1
+@dirrm %%DATADIR%%/data/players/mj
 @dirrm %%DATADIR%%/data/players/maxima/walk
 @dirrm %%DATADIR%%/data/players/maxima/throw
 @dirrm %%DATADIR%%/data/players/maxima/super
@@ -2804,6 +2937,7 @@ share/icons/hicolor/32x32/apps/paintown.png
 @dirrm %%DATADIR%%/data/players/akuma/dragon-punch
 @dirrm %%DATADIR%%/data/players/akuma
 @dirrm %%DATADIR%%/data/players
+@dirrm %%DATADIR%%/data/paks
 @dirrm %%DATADIR%%/data/paintown/levels
 @dirrm %%DATADIR%%/data/paintown
 @dirrm %%DATADIR%%/data/music
