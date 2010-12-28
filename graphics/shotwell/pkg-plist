@@ -1,7 +1,12 @@
 bin/shotwell
+share/applications/shotwell-viewer.desktop
+share/applications/shotwell.desktop
+share/icons/hicolor/scalable/apps/shotwell.svg
 share/locale/ar/LC_MESSAGES/shotwell.mo
+share/locale/ast/LC_MESSAGES/shotwell.mo
 share/locale/bg/LC_MESSAGES/shotwell.mo
 share/locale/bn/LC_MESSAGES/shotwell.mo
+share/locale/ca/LC_MESSAGES/shotwell.mo
 share/locale/cs/LC_MESSAGES/shotwell.mo
 share/locale/da/LC_MESSAGES/shotwell.mo
 share/locale/de/LC_MESSAGES/shotwell.mo
@@ -11,11 +16,14 @@ share/locale/es/LC_MESSAGES/shotwell.mo
 share/locale/et/LC_MESSAGES/shotwell.mo
 share/locale/fi/LC_MESSAGES/shotwell.mo
 share/locale/fr/LC_MESSAGES/shotwell.mo
+share/locale/gl/LC_MESSAGES/shotwell.mo
 share/locale/hr/LC_MESSAGES/shotwell.mo
 share/locale/hu/LC_MESSAGES/shotwell.mo
 share/locale/id/LC_MESSAGES/shotwell.mo
 share/locale/it/LC_MESSAGES/shotwell.mo
 share/locale/ja/LC_MESSAGES/shotwell.mo
+share/locale/kk/LC_MESSAGES/shotwell.mo
+share/locale/ko/LC_MESSAGES/shotwell.mo
 share/locale/lt/LC_MESSAGES/shotwell.mo
 share/locale/lv/LC_MESSAGES/shotwell.mo
 share/locale/nb/LC_MESSAGES/shotwell.mo
@@ -30,12 +38,65 @@ share/locale/sl/LC_MESSAGES/shotwell.mo
 share/locale/sr/LC_MESSAGES/shotwell.mo
 share/locale/sv/LC_MESSAGES/shotwell.mo
 share/locale/th/LC_MESSAGES/shotwell.mo
+share/locale/tr/LC_MESSAGES/shotwell.mo
 share/locale/uk/LC_MESSAGES/shotwell.mo
 share/locale/zh_CN/LC_MESSAGES/shotwell.mo
 share/locale/zh_TW/LC_MESSAGES/shotwell.mo
-share/locale/ast/LC_MESSAGES/shotwell.mo
-share/icons/hicolor/scalable/apps/shotwell.svg
-share/applications/shotwell.desktop
-share/applications/shotwell-viewer.desktop
+%%DATADIR%%/icons/all-rejected.png
+%%DATADIR%%/icons/crop-pivot-reticle.png
+%%DATADIR%%/icons/crop.svg
+%%DATADIR%%/icons/drag_nub.png
+%%DATADIR%%/icons/enhance.png
+%%DATADIR%%/icons/five-star-filter.svg
+%%DATADIR%%/icons/five-stars.svg
+%%DATADIR%%/icons/four-star-filter-plus.svg
+%%DATADIR%%/icons/four-stars.svg
+%%DATADIR%%/icons/image-adjust.svg
+%%DATADIR%%/icons/import-all.png
+%%DATADIR%%/icons/import.svg
+%%DATADIR%%/icons/last-import-roll.png
+%%DATADIR%%/icons/make-primary.svg
+%%DATADIR%%/icons/merge.svg
+%%DATADIR%%/icons/multiple-events.png
+%%DATADIR%%/icons/multiple-tags.png
+%%DATADIR%%/icons/one-event.png
+%%DATADIR%%/icons/one-star-filter-plus.svg
+%%DATADIR%%/icons/one-star.svg
+%%DATADIR%%/icons/one-tag.png
+%%DATADIR%%/icons/pin-toolbar.svg
+%%DATADIR%%/icons/publish.png
+%%DATADIR%%/icons/redeye.png
+%%DATADIR%%/icons/rejected.svg
+%%DATADIR%%/icons/shotwell-16.svg
+%%DATADIR%%/icons/shotwell-24.svg
+%%DATADIR%%/icons/shotwell-street.jpg
+%%DATADIR%%/icons/shotwell.ico
+%%DATADIR%%/icons/shotwell.svg
+%%DATADIR%%/icons/three-star-filter-plus.svg
+%%DATADIR%%/icons/three-stars.svg
+%%DATADIR%%/icons/two-star-filter-plus.svg
+%%DATADIR%%/icons/two-stars.svg
+%%DATADIR%%/icons/zoom-in.png
+%%DATADIR%%/icons/zoom-out.png
+%%DATADIR%%/ui/collection.ui
+%%DATADIR%%/ui/direct.ui
+%%DATADIR%%/ui/event.ui
+%%DATADIR%%/ui/events_directory.ui
+%%DATADIR%%/ui/fullscreen.ui
+%%DATADIR%%/ui/import.ui
+%%DATADIR%%/ui/import_queue.ui
+%%DATADIR%%/ui/offline.ui
+%%DATADIR%%/ui/photo.ui
+%%DATADIR%%/ui/shotwell.glade
+%%DATADIR%%/ui/tags.ui
+%%DATADIR%%/ui/trash.ui
+@dirrm %%DATADIR%%/ui
+@dirrm %%DATADIR%%/icons
+@dirrm %%DATADIR%%
+@dirrmtry share/locale/kk/LC_MESSAGES
+@dirrmtry share/locale/kk
+@dirrmtry share/locale/ast/LC_MESSAGES
+@dirrmtry share/locale/ast
+@dirrmtry share/applications
 @exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
 @unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
