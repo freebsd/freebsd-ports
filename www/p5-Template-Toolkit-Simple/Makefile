@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Template-Toolkit-Simple
-PORTVERSION=	0.08
+PORTVERSION=	0.10
 CATEGORIES=	www textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
