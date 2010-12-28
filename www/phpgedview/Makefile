@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	phpGedView
-PORTVERSION=	4.2.2
+PORTVERSION=	4.2.3
 CATEGORIES=	www
 MASTER_SITES=	SF/${PORTNAME:L}/1%20PhpGedView/PhpGedView%20v${PORTVERSION}
 DISTNAME=	${PORTNAME:S/p/P/}-basic-${PORTVERSION}
@@ -40,14 +40,16 @@ check-makevars::
 
 .if defined(WITH_MYSQL)
 USE_MYSQL=	yes
+USE_PHP +=	pdo_mysql
 .endif
 
 .if defined(WITH_PGSQL)
 USE_PGSQL=	yes
+USE_PHP +=	pdo_pgsql
 .endif
 
 .if defined(WITH_SQLITE)
-USE_PHP +=	sqlite
+USE_PHP +=	pdo_sqlite
 .endif
 
 post-extract:

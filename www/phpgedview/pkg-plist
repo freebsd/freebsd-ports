@@ -124,6 +124,7 @@
 %%WWWDIR%%/images/add.gif
 %%WWWDIR%%/images/admin.gif
 %%WWWDIR%%/images/bubble.gif
+%%WWWDIR%%/images/buttons/addmedia.gif
 %%WWWDIR%%/images/buttons/addnote.gif
 %%WWWDIR%%/images/buttons/addrepository.gif
 %%WWWDIR%%/images/buttons/addsource.gif
@@ -575,6 +576,8 @@
 %%WWWDIR%%/includes/.htaccess
 %%WWWDIR%%/includes/accesskeyHeaders.php
 %%WWWDIR%%/includes/authentication.php
+%%WWWDIR%%/includes/class.phpmailer.php
+%%WWWDIR%%/includes/class.smtp.php
 %%WWWDIR%%/includes/classes/class_date.php
 %%WWWDIR%%/includes/classes/class_event.php
 %%WWWDIR%%/includes/classes/class_family.php
@@ -592,13 +595,11 @@
 %%WWWDIR%%/includes/classes/class_note.php
 %%WWWDIR%%/includes/classes/class_person.php
 %%WWWDIR%%/includes/classes/class_pgv_db.php
-%%WWWDIR%%/includes/classes/class_phpmailer.php
 %%WWWDIR%%/includes/classes/class_reportbase.php
 %%WWWDIR%%/includes/classes/class_reporthtml.php
 %%WWWDIR%%/includes/classes/class_reportpdf.php
 %%WWWDIR%%/includes/classes/class_repository.php
 %%WWWDIR%%/includes/classes/class_serviceclient.php
-%%WWWDIR%%/includes/classes/class_smtp.php
 %%WWWDIR%%/includes/classes/class_source.php
 %%WWWDIR%%/includes/classes/class_stats.php
 %%WWWDIR%%/includes/classes/class_stats_compat.php
@@ -890,10 +891,12 @@
 %%WWWDIR%%/reports/individual.xml
 %%WWWDIR%%/reports/individuale.xml
 %%WWWDIR%%/reports/marrlist.xml
+%%WWWDIR%%/reports/missing.xml
 %%WWWDIR%%/reports/pedigree.xml
 %%WWWDIR%%/reports/pedigree_l.xml
 %%WWWDIR%%/reports/relativelist.xml
 %%WWWDIR%%/reports/relativelist_ext.xml
+%%WWWDIR%%/reports/sourcelist.xml
 %%WWWDIR%%/rss.php
 %%WWWDIR%%/search.php
 %%WWWDIR%%/search_advanced.php
@@ -941,6 +944,7 @@
 %%WWWDIR%%/themes/cloudy/images/blokcontent.gif
 %%WWWDIR%%/themes/cloudy/images/blokfooter.gif
 %%WWWDIR%%/themes/cloudy/images/blokheader.gif
+%%WWWDIR%%/themes/cloudy/images/buttons/addmedia.gif
 %%WWWDIR%%/themes/cloudy/images/buttons/addnote.gif
 %%WWWDIR%%/themes/cloudy/images/buttons/addrepository.gif
 %%WWWDIR%%/themes/cloudy/images/buttons/addsource.gif
@@ -1121,6 +1125,7 @@
 %%WWWDIR%%/themes/simplygreen/images/add.gif
 %%WWWDIR%%/themes/simplygreen/images/ancestry.gif
 %%WWWDIR%%/themes/simplygreen/images/bannerimage.jpg
+%%WWWDIR%%/themes/simplygreen/images/buttons/addmedia.gif
 %%WWWDIR%%/themes/simplygreen/images/buttons/addnote.gif
 %%WWWDIR%%/themes/simplygreen/images/buttons/addrepository.gif
 %%WWWDIR%%/themes/simplygreen/images/buttons/addsource.gif
@@ -1255,6 +1260,7 @@
 %%WWWDIR%%/themes/xenea/images/add.gif
 %%WWWDIR%%/themes/xenea/images/ancestry.gif
 %%WWWDIR%%/themes/xenea/images/barra.gif
+%%WWWDIR%%/themes/xenea/images/buttons/addmedia.gif
 %%WWWDIR%%/themes/xenea/images/buttons/addnote.gif
 %%WWWDIR%%/themes/xenea/images/buttons/addrepository.gif
 %%WWWDIR%%/themes/xenea/images/buttons/addsource.gif
