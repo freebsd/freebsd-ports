@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pnp
-PORTVERSION=	0.6.7
+PORTVERSION=	0.6.10
 CATEGORIES=	net-mgmt
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=pnp4nagios/PNP-0.6
@@ -28,7 +28,8 @@ OPTIONS=	PDF "Use built-in fpdf library to produce PDF views" ON
 LICENSE=	GPLv2
 PATCH_STRIP=	-p1
 USE_PERL5=	yes
-USE_PHP=	zlib gd xml pcre filter iconv json simplexml
+USE_PHP=	filter gd iconv json pcre simplexml xml zlib
+
 WANT_PHP_WEB=	yes
 USE_RC_SUBR=	npcd.sh
 MAN8=		npcd.8
@@ -42,6 +43,7 @@ NAGIOSGROUP?=	nagios
 PNP_STATE=	${NAGIOSDIR}/pnp
 PNP_RRDS=	${PNP_STATE}/rrd
 PNP_SPOOL=	${PNP_STATE}/perfspool
+PNP_URL?=	${NAGIOSHTMURL}/pnp
 FPDF_DIR?=	share/fpdf
 SPOOL_DIRS=	${PNP_STATE}:${NAGIOSUSER}:${NAGIOSGROUP}:0750%${PNP_RRDS}:${NAGIOSUSER}:${NAGIOSGROUP}:0750%${PNP_SPOOL}:${NAGIOSUSER}:${NAGIOSGROUP}:0750
 
@@ -51,7 +53,7 @@ EXTRA_PATCHES+=	${FILESDIR}/extra-patch-disable-pdf
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	\
-	--sysconfdir=${PREFIX}/etc/pnp \
+	--sysconfdir=${ETCDIR} \
 	--datarootdir=${WWWDIR} \
 	--datadir=${WWWDIR} \
 	--localstatedir=/var/log \
@@ -71,6 +73,7 @@ SUB_FILES=	pkg-install \
 		pkg-message
 SUB_LIST=	SPOOL_DIRS=${SPOOL_DIRS} \
 		PNP_RRDS=${PNP_RRDS} \
+		PNP_URL=${PNP_URL} \
 		NAGIOSUSER=${NAGIOSUSER} \
 		NAGIOSGROUP=${NAGIOSGROUP}
 
@@ -83,6 +86,8 @@ post-patch:
 	@${REINPLACE_CMD} \
   -e's|^\$$conf\['\''use_fpdf'\''\] = [[:digit:]];|$$conf['\''use_fpdf'\''] = ${PNP_USE_FPDF};|' \
   -e's|^\$$conf\['\''nagios_base'\''\] = "/nagios/cgi-bin";|$$conf\['\''nagios_base'\''\] = "${NAGIOSHTMURL}/cgi-bin";|' \
+  -e's|/usr/local/check_mk/|/usr/local/share/check_mk/|g' \
+  -e's|/usr/local/nagios/var/rw/live|/${NAGIOSDIR}/rw/live|' \
   "${WRKSRC}/sample-config/pnp/config.php.in"
 
 pre-install:
@@ -90,7 +95,7 @@ pre-install:
 
 post-install:
 .for m in ${MAN8}
-	${INSTALL_MAN} ${WRKSRC}/man/${m} ${MAN1PREFIX}/man/man8/${m}
+	${INSTALL_MAN} ${WRKSRC}/man/${m} ${MAN8PREFIX}/man/man8/${m}
 .endfor
 	@${CAT} ${PKGMESSAGE}
 

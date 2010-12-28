@@ -12,7 +12,7 @@ We recommend to start with the following restrictive Apache
 configuration for the PNP area:
 {{{
 # PNP graphing tool
-Alias /nagios/pnp %%WWWDIR%%
+Alias %%PNP_URL%% %%WWWDIR%%
 <Directory "%%WWWDIR%%/">
     Order deny,allow
     Allow from all
