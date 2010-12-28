@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	openlldp
-DISTVERSION=	0.3alpha
+DISTVERSION=	0.4alpha
 PORTREVISION=	1
 CATEGORIES=	net-mgmt
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-0.3alpha
+MASTER_SITES=	SF/${PORTNAME}
 
 MAINTAINER=	roar.pettersen@it.uib.no
 COMMENT=	Link Layer Discovery Protocol daemon
@@ -17,7 +17,7 @@ COMMENT=	Link Layer Discovery Protocol daemon
 GNU_CONFIGURE=	yes
 
 USE_RC_SUBR=	lldpd
-PLIST_FILES=	sbin/lldpd
+PLIST_FILES=	sbin/lldpd bin/lldpneighbors
 
 MAN8=	lldpd.8
 
@@ -27,6 +27,7 @@ post-patch:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/lldpd ${PREFIX}/sbin
+	${INSTALL_PROGRAM} ${WRKSRC}/src/lldpneighbors ${PREFIX}/bin
 	${INSTALL_MAN} ${FILESDIR}/lldpd.8 ${MAN8PREFIX}/man/man8
 
 .include <bsd.port.mk>
