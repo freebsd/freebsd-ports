@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	openmq
-PORTVERSION=	4.5.b.21
+PORTVERSION=	4.5.b.22
 PORTEPOCH=	1
 CATEGORIES=	net java
-MASTER_SITES=	http://download.java.net/mq/open-mq/4.5/b21/ \
+MASTER_SITES=	http://download.java.net/mq/open-mq/4.5/b22/ \
 	 	http://download.java.net/maven/2/javax/javaee-api/6.0/:2 \
 		http://download.java.net/maven/2/com/sun/grizzly/grizzly-nio-framework/1.9.18a/:3 \
 		http://download.java.net/maven/2/com/sun/woodstock/dependlibs/jhall/2.0/:4

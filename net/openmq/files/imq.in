@@ -25,7 +25,7 @@
 # OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
 # SUCH DAMAGE.
 
-# $Id$
+# $FreeBSD$
 
 # PROVIDE: imq
 # REQUIRE: DAEMON
@@ -50,7 +50,8 @@ rcvar=`set_rcvar`
 load_rc_config $name
 pidfile=/var/run/imq.pid
 start_cmd="${name}_start"
-command=/usr/local/imq/bin/imqbrokerd
+start_precmd="${name}_build_cmdline"
+command=%%PREFIX%%/imq/bin/imqbrokerd
 command_args="-bgnd -silent"
 command_interpreter="/bin/sh"
 sigstop=INT
@@ -66,38 +67,6 @@ if ! checkyesno ${rcvar}; then
   fi
 fi
 
-#check if RESTART feature is enabled
-if [ -f $CONF_FILE -a -r $CONF_FILE ]; then
-     autorestart=`grep "^RESTART=" $CONF_FILE | cut -c9-`
-     autoargs=`grep "^ARGS=" $CONF_FILE | cut -c6-`
-     if checkyesno autorestart; then
-       command_args="$command_args -autorestart"
-     fi
-fi
-
-#add vmargs if needed
-if [ -n "$imq_vmargs" ]; then
-  command_args="$command_args -vmargs \"$imq_vmargs\""
-fi
-
-#load aditional command line arguments from broker config file
-if [ -n $autoargs ]; then
-   echo "$autoargs" | grep -q -- '-varhome'
-   if [ ! $? -eq 0 ]; then
-       command_args="$command_args -varhome $imq_data $autoargs"
-   else
-       command_args="$command_args $autoargs"
-   fi
-fi
-
-#add brokerlist if not yet defined
-if [ -n "$imq_brokerlist" ]; then
-   echo "$command_args" | grep -q -- '-cluster '
-   if [ ! $? -eq 0 ]; then
-      command_args="$command_args -cluster $imq_brokerlist"
-   fi
-fi
-
 imq_start()
 {
   if [ -z "$rc_pid" ]; then
@@ -108,6 +77,48 @@ imq_start()
   else
            echo "imq is already running with pid=$rc_pid."
   fi
+}
+
+imq_build_cmdline()
+{
+	# add imq_flags
+        if [ -n "$imq_flags" ]; then
+           command_args="$command_args $imq_flags"
+        fi
+
+	#check if RESTART feature is enabled
+	if [ -f $CONF_FILE -a -r $CONF_FILE ]; then
+	     autorestart=`grep "^RESTART=" $CONF_FILE | cut -c9-`
+	     autoargs=`grep "^ARGS=" $CONF_FILE | cut -c6-`
+	     if checkyesno autorestart; then
+	       command_args="$command_args -autorestart"
+	     fi
+	fi
+
+	#add imq_vmargs if needed
+	if [ -n "$imq_vmargs" ]; then
+	  command_args="$command_args -vmargs \"$imq_vmargs\""
+	fi
+
+	#load aditional command line arguments from broker config file
+	if [ -n $autoargs ]; then
+	   echo "$autoargs" | grep -q -- '-varhome'
+	   if [ ! $? -eq 0 ]; then
+	       command_args="$command_args -varhome $imq_data $autoargs"
+	   else
+	       command_args="$command_args $autoargs"
+	   fi
+	fi
+
+	#add brokerlist if not yet defined
+	if [ -n "$imq_brokerlist" ]; then
+	   echo "$command_args" | grep -q -- '-cluster '
+	   if [ ! $? -eq 0 ]; then
+	      command_args="$command_args -cluster $imq_brokerlist"
+	   fi
+	fi
+
+        return 0
 }
 
 run_rc_command "$1"
