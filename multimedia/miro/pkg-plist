@@ -691,6 +691,7 @@ share/locale/km/LC_MESSAGES/miro.mo
 share/locale/kn/LC_MESSAGES/miro.mo
 share/locale/ko/LC_MESSAGES/miro.mo
 share/locale/ku/LC_MESSAGES/miro.mo
+share/locale/kw/LC_MESSAGES/miro.mo
 share/locale/lb/LC_MESSAGES/miro.mo
 share/locale/lt/LC_MESSAGES/miro.mo
 share/locale/lv/LC_MESSAGES/miro.mo
@@ -972,6 +973,8 @@ share/pixmaps/miro.xpm
 @dirrmtry share/locale/km
 @dirrmtry share/locale/ku/LC_MESSAGES
 @dirrmtry share/locale/ku
+@dirrmtry share/locale/kw/LC_MESSAGES
+@dirrmtry share/locale/kw
 @dirrmtry share/locale/kk/LC_MESSAGES
 @dirrmtry share/locale/kk
 @dirrmtry share/locale/mr/LC_MESSAGES
