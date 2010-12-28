@@ -12,7 +12,7 @@ CATEGORIES=	www
 MASTER_SITES=	SF/${PORTNAME}/CSSTidy%20%28C%2B%2B%2C%20stable%29/${PORTVERSION}
 DISTNAME=	${PORTNAME}-source-${PORTVERSION}
 
-MAINTAINER=	ijliao@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An opensource CSS parser and optimiser
 
 USE_ZIP=	yes

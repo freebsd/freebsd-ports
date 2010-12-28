@@ -13,7 +13,7 @@ CATEGORIES=	games
 MASTER_SITES=	http://www.laurasia.com.au/downloads/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	ijliao@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Console based sudoku games
 
 PLIST_FILES=	bin/sudoku \

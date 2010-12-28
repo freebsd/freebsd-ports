@@ -13,7 +13,7 @@ CATEGORIES=	audio java
 MASTER_SITES=	SF/${PORTNAME}/jMusic_Stable/${PORTVERSION}
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
-MAINTAINER=	ijliao@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Composition in Java
 
 USE_JAVA=	yes

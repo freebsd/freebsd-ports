@@ -12,7 +12,7 @@ PORTREVISION=	1
 CATEGORIES=	textproc scheme
 MASTER_SITES=	SAVANNAH
 
-MAINTAINER=	ijliao@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An implementation of the W3C DOM recommendation in Scheme
 
 RUN_DEPENDS=	${LOCALBASE}/share/guile/site/config/load.scm:${PORTSDIR}/devel/guile-lib

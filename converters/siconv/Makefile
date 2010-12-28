@@ -12,7 +12,7 @@ PORTREVISION=	1
 CATEGORIES=	converters
 MASTER_SITES=	http://www.technocage.com/~caskey/siconv/download/
 
-MAINTAINER=	ijliao@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Convert data from one character set to another
 
 USE_ICONV=	yes

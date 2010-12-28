@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.crockford.com/javascript/
 DISTNAME=	${PORTNAME}
 EXTRACT_SUFX=	.c
 
-MAINTAINER=	ijliao@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The JavaScript Minifier
 
 EXTRACT_CMD=	${CP}

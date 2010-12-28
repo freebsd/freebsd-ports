@@ -12,7 +12,7 @@ CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 DISTNAME=	acts_as_taggable-${PORTVERSION}
 
-MAINTAINER=	ijliao@FreeBSD.org
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Add tagging capabilities to your ActiveRecord objects
 
 GEM_NAME=	${DISTNAME}

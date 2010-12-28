@@ -12,7 +12,7 @@ CATEGORIES=	devel
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}_${PORTVERSION}
 DISTNAME=	${PORTNAME}_${PORTVERSION}_src
 
-MAINTAINER=	ijliao@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Find duplicated code blocks in large C/C++/Java/C#/VB.Net systems
 
 USE_GMAKE=	yes

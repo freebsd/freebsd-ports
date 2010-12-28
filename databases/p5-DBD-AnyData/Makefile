@@ -12,7 +12,7 @@ CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ijliao@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	DBI access to XML, CSV and other formats
 
 BUILD_DEPENDS=	p5-AnyData>=0.07:${PORTSDIR}/devel/p5-AnyData \

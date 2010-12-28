@@ -12,7 +12,7 @@ PORTREVISION=	3
 CATEGORIES=	devel scheme
 MASTER_SITES=	http://download.gna.org/guile-lib/
 
-MAINTAINER=	ijliao@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A down-scaled, limited-scope CPAN for Guile
 
 BUILD_DEPENDS=	guile:${PORTSDIR}/lang/guile

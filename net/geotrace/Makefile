@@ -12,7 +12,7 @@ PORTREVISION=	8
 CATEGORIES=	net gnome
 MASTER_SITES=	SF/${PORTNAME}/GeoTrace/${PORTVERSION}
 
-MAINTAINER=	ijliao@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Graphical traceroute utility
 
 USE_GNOME=	gdkpixbuf libcapplet

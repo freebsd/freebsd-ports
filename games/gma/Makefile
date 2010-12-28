@@ -10,7 +10,7 @@ PORTVERSION=	0.6
 CATEGORIES=	games
 MASTER_SITES=	http://www.student.nada.kth.se/~d92-jwa/code/gma/
 
-MAINTAINER=	ijliao@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Go-moku game which learns playing the game from studying its opponent
 
 GNU_CONFIGURE=	yes

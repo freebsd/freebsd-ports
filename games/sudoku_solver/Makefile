@@ -12,7 +12,7 @@ CATEGORIES=	games
 MASTER_SITES=	http://www.techfinesse.com/game/
 DISTNAME=	solver_${PORTVERSION}
 
-MAINTAINER=	ijliao@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Sudoku Solver in C
 
 ALL_TARGET=	# empty

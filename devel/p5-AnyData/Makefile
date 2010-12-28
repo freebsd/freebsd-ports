@@ -13,7 +13,7 @@ MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	../../authors/id/J/JZ/JZUCKER
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ijliao@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Easy access to data in many formats
 
 PERL_CONFIGURE=	yes
