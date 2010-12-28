@@ -31,6 +31,7 @@ include/osg/BlendFunc
 include/osg/BoundingBox
 include/osg/BoundingSphere
 include/osg/BoundsChecking
+include/osg/BufferIndexBinding
 include/osg/BufferObject
 include/osg/Camera
 include/osg/CameraNode
@@ -129,6 +130,8 @@ include/osg/Scissor
 include/osg/Sequence
 include/osg/ShadeModel
 include/osg/Shader
+include/osg/ShaderAttribute
+include/osg/ShaderComposer
 include/osg/ShadowVolumeOccluder
 include/osg/Shape
 include/osg/ShapeDrawable
@@ -290,6 +293,7 @@ include/osgGA/GUIActionAdapter
 include/osgGA/GUIEventAdapter
 include/osgGA/GUIEventHandler
 include/osgGA/KeySwitchMatrixManipulator
+include/osgGA/MultiTouchTrackballManipulator
 include/osgGA/NodeTrackerManipulator
 include/osgGA/OrbitManipulator
 include/osgGA/SphericalManipulator
@@ -324,14 +328,20 @@ include/osgManipulator/TranslatePlaneDragger
 include/osgManipulator/Version
 include/osgParticle/AccelOperator
 include/osgParticle/AngularAccelOperator
+include/osgParticle/AngularDampingOperator
+include/osgParticle/BounceOperator
 include/osgParticle/BoxPlacer
 include/osgParticle/CenteredPlacer
+include/osgParticle/CompositePlacer
 include/osgParticle/ConnectedParticleSystem
 include/osgParticle/ConstantRateCounter
 include/osgParticle/Counter
+include/osgParticle/DampingOperator
+include/osgParticle/DomainOperator
 include/osgParticle/Emitter
 include/osgParticle/ExplosionDebrisEffect
 include/osgParticle/ExplosionEffect
+include/osgParticle/ExplosionOperator
 include/osgParticle/Export
 include/osgParticle/FireEffect
 include/osgParticle/FluidFrictionOperator
@@ -343,6 +353,7 @@ include/osgParticle/ModularEmitter
 include/osgParticle/ModularProgram
 include/osgParticle/MultiSegmentPlacer
 include/osgParticle/Operator
+include/osgParticle/OrbitOperator
 include/osgParticle/Particle
 include/osgParticle/ParticleEffect
 include/osgParticle/ParticleProcessor
@@ -357,6 +368,7 @@ include/osgParticle/RandomRateCounter
 include/osgParticle/SectorPlacer
 include/osgParticle/SegmentPlacer
 include/osgParticle/Shooter
+include/osgParticle/SinkOperator
 include/osgParticle/SmokeEffect
 include/osgParticle/SmokeTrailEffect
 include/osgParticle/VariableRateCounter
@@ -364,6 +376,7 @@ include/osgParticle/Version
 include/osgParticle/range
 include/osgPresentation/AnimationMaterial
 include/osgPresentation/CompileSlideCallback
+include/osgPresentation/Export
 include/osgPresentation/PickEventHandler
 include/osgPresentation/SlideEventHandler
 include/osgPresentation/SlideShowConstructor
@@ -423,8 +436,10 @@ include/osgText/Export
 include/osgText/FadeText
 include/osgText/Font
 include/osgText/Font3D
+include/osgText/Glyph
 include/osgText/KerningType
 include/osgText/String
+include/osgText/Style
 include/osgText/Text
 include/osgText/Text3D
 include/osgText/TextBase
@@ -629,6 +644,8 @@ lib/osgPlugins-%%OSG_VERSION%%/osgdb_pic.so
 lib/osgPlugins-%%OSG_VERSION%%/osgdb_ply.so
 lib/osgPlugins-%%OSG_VERSION%%/osgdb_png.so
 lib/osgPlugins-%%OSG_VERSION%%/osgdb_pnm.so
+lib/osgPlugins-%%OSG_VERSION%%/osgdb_pov.so
+lib/osgPlugins-%%OSG_VERSION%%/osgdb_pvr.so
 lib/osgPlugins-%%OSG_VERSION%%/osgdb_revisions.so
 lib/osgPlugins-%%OSG_VERSION%%/osgdb_rgb.so
 lib/osgPlugins-%%OSG_VERSION%%/osgdb_rot.so
@@ -663,7 +680,6 @@ libdata/pkgconfig/openscenegraph-osgAnimation.pc
 libdata/pkgconfig/openscenegraph-osgDB.pc
 libdata/pkgconfig/openscenegraph-osgFX.pc
 libdata/pkgconfig/openscenegraph-osgGA.pc
-libdata/pkgconfig/openscenegraph-osgIntrospection.pc
 libdata/pkgconfig/openscenegraph-osgManipulator.pc
 libdata/pkgconfig/openscenegraph-osgParticle.pc
 libdata/pkgconfig/openscenegraph-osgShadow.pc

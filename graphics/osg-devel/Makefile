@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	osg
-PORTVERSION=	2.9.8
-PORTREVISION=	1
+PORTVERSION=	2.9.10
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.openscenegraph.org/downloads/developer_releases/ \
 		http://mirror.amdmi3.ru/distfiles/
@@ -32,7 +31,7 @@ USE_LDCONFIG=	yes
 MAKE_JOBS_SAFE=	yes
 
 PLIST_SUB=	OSG_VERSION=${PORTVERSION} \
-		OSG_SHLIBVER=66 \
+		OSG_SHLIBVER=68 \
 		OPENTHREADS_VERSION=2.5.0 \
 		OPENTHREADS_SHLIBVER=12
 
@@ -60,11 +59,9 @@ OPTIONS=	CURL     "Support for cURL"                 off \
 .include <bsd.port.options.mk>
 
 # GUI toolkits are only needed for building examples, which are not even installed
-FORCE_IGNORE=	FLTK GLUT FOX Qt3 Qt4 wxWidgets OpenAL # only for examples
-FORCE_IGNORE+=	COLLADA Performer OurDCMTK XUL        # not in ports
-FORCE_REQUIRE=	Threads OpenGL X11 JPEG PNG TIFF ZLIB # common & lightweight
-FORCE_PC_IGNORE=	GTK GTKGL                     # only for examples
-FORCE_PC_REQUIRE=
+FORCE_IGNORE=	FLTK GLUT FOX Qt3 Qt4 wxWidgets OpenAL GtkGl # only for examples
+FORCE_IGNORE+=	COLLADA Performer OurDCMTK XUL FBX           # not in ports
+FORCE_REQUIRE=	Threads OpenGL X11 JPEG PNG TIFF ZLIB        # common & lightweight
 
 # options that affect FIND_PACKAGE
 .if defined(WITH_CURL)
@@ -187,28 +184,25 @@ FORCE_IGNORE+=	SDL
 
 # options that affect PKG_CHECK_MODULES
 .if defined(WITH_SVG)
-FORCE_PC_REQUIRE+=RSVG
+FORCE_REQUIRE+=	RSVG
 LIB_DEPENDS+=	rsvg-2:${PORTSDIR}/graphics/librsvg2
 PLIST_SUB+=	SVG=""
 .else
-FORCE_PC_IGNORE+=RSVG
+FORCE_IGNORE+=	RSVG
 PLIST_SUB+=	SVG="@comment "
 .endif
 
 .if defined(WITH_PDF)
-FORCE_PC_REQUIRE+=POPPLER
+FORCE_REQUIRE+=	Poppler-glib
 LIB_DEPENDS+=	poppler-glib.5:${PORTSDIR}/graphics/poppler-gtk
 PLIST_SUB+=	PDF=""
 .else
-FORCE_PC_IGNORE+=POPPLER
+FORCE_IGNORE+=	Poppler-glib
 PLIST_SUB+=	PDF="@comment "
 .endif
 
 .if defined(WITH_SVG) || defined(WITH_PDF)
-FORCE_PC_REQUIRE+=CAIRO
 LIB_DEPENDS+=	cairo.2:${PORTSDIR}/graphics/cairo
-.else
-FORCE_PC_IGNORE+=CAIRO
 .endif
 
 # other options
@@ -237,14 +231,6 @@ post-patch:
 .endfor
 .for p in ${FORCE_IGNORE}
 	@${REINPLACE_CMD} -e '/FIND_PACKAGE.*${p}/ s|^|#|' \
-		${WRKSRC}/CMakeLists.txt
-.endfor
-.for p in ${FORCE_PC_REQUIRE}
-	@${REINPLACE_CMD} -e 's|PKG_CHECK_MODULES.*${p}|& REQUIRED| ' \
-		${WRKSRC}/CMakeLists.txt
-.endfor
-.for p in ${FORCE_PC_IGNORE}
-	@${REINPLACE_CMD} -e '/PKG_CHECK_MODULES.*${p}/ s|^|#|' \
 		${WRKSRC}/CMakeLists.txt
 .endfor
 
