@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Math-BigInt
-PORTVERSION=	1.89
+PORTVERSION=	1.96
 CATEGORIES=	math perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -21,4 +21,10 @@ MAN3=		Math::BigFloat.3 \
 		Math::BigInt::Calc.3 \
 		Math::BigInt::CalcEmu.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 501000
+BUILD_DEPENDS+=	p5-ExtUtils-MakeMaker>=6.42:${PORTSDIR}/devel/p5-ExtUtils-MakeMaker
+.endif
+
+.include <bsd.port.post.mk>
