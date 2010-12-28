@@ -7,7 +7,7 @@
 
 PORTNAME=	aspell
 PORTVERSION=	0.60.6
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	aspell
@@ -19,6 +19,8 @@ EXTRACT_ONLY=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}
 
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	Spelling checker with better suggestion logic than ispell
+
+LICENSE=	LGPL21
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=		--enable-dict-dir=${DATADIR}	\
@@ -45,7 +47,7 @@ SUB_LIST=		VERINST=${VERINST}
 CONFLICTS=		aspell-0.*
 DICT_TARGET=
 .else
-VERDICT_EN=		6-en-6.0-0
+VERDICT_EN=		6-en-7.0-0
 DICT_SUFFIX=		.tar.bz2
 MASTER_SITES+=		${MASTER_SITE_GNU:S|$|:dicten|}
 MASTER_SITE_SUBDIR+=	aspell/dict/en/:dicten
