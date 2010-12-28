@@ -25,6 +25,7 @@
     SUBDIR += asm2html
     SUBDIR += aspell
     SUBDIR += aspell-without-dicten
+    SUBDIR += ast-aspell
     SUBDIR += atom
     SUBDIR += augeas
     SUBDIR += az-aspell
