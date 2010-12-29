@@ -10,7 +10,6 @@ PORTVERSION=	2.3
 CATEGORIES=	print python
 MASTER_SITES=	SF/${PORTNAME}/Source%20code/${PORTVERSION}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTNAME=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An open source library for manipulating fonts, written in Python

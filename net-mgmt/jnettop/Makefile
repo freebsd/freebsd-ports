@@ -9,7 +9,6 @@ PORTNAME=	jnettop
 PORTVERSION=	0.13.0
 CATEGORIES=	net-mgmt
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/0.13
-DISTNAME=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	rpsfa@rit.edu
 COMMENT=	Traffic visualizer, similiar to nettop

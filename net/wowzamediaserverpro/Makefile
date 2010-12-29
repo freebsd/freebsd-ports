@@ -9,7 +9,6 @@ PORTNAME=	WowzaMediaServerPro
 PORTVERSION=	1.7.2
 CATEGORIES=	net
 MASTER_SITES=	http://www.wowzamedia.com/downloads/WowzaMediaServer-1-7-2/
-DISTNAME=	${PORTNAME}-${PORTVERSION}
 EXTRACT_SUFX=	.tar.bin
 
 MAINTAINER=	meritus@innervision.pl

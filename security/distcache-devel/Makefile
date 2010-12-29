@@ -13,7 +13,6 @@ MASTER_SITES=	SF/${PORTNAME}/1.%20${PORTNAME}-devel/${PORTVERSION} \
 		http://osdn.dl.sourceforge.net/sourceforge/${PORTNAME}/
 
 PKGNAMESUFFIX=	-devel
-DISTNAME=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	marcel.prisi@virtua.ch
 COMMENT=	Distributed OpenSSL session caching tools - development version

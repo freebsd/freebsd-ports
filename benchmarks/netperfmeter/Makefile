@@ -9,7 +9,6 @@ PORTNAME=	netperfmeter
 PORTVERSION=	1.0.4
 CATEGORIES=	benchmarks
 MASTER_SITES=	http://www.iem.uni-due.de/~dreibh/netperfmeter/download/ http://www.exp-math.uni-essen.de/~dreibh/netperfmeter/download/
-DISTNAME=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	dreibh@iem.uni-due.de
 COMMENT=	Network Performance Meter

@@ -9,7 +9,6 @@ PORTNAME=	netembryo
 PORTVERSION=	0.0.4
 CATEGORIES=	net
 MASTER_SITES=	http://live.polito.it/files/downloads/netembryo/
-DISTNAME=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	err@tollari.org
 COMMENT=	A network abstraction library used by for feng, libnemesi, felix

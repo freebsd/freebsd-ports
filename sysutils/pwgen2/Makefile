@@ -9,7 +9,6 @@ PORTNAME=	pwgen
 PORTVERSION=	2.06
 CATEGORIES=	sysutils
 MASTER_SITES=	SF
-DISTNAME=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	andrey@hm.perm.ru
 COMMENT=	A small, powerful, GPL'ed password generator

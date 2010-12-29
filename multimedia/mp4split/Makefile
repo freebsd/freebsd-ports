@@ -9,7 +9,6 @@ PORTNAME=	mp4split
 PORTVERSION=	1.0.8
 CATEGORIES=	multimedia
 MASTER_SITES=	http://smoothstreaming.code-shop.com/download/
-DISTNAME=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	bmhermansson@gmail.com
 COMMENT=	Converts MP4 files to Fragmented MP4 and creates manifest files

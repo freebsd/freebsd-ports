@@ -9,7 +9,6 @@ PORTNAME=	klh10
 PORTVERSION=	2.0a
 CATEGORIES=	emulators
 MASTER_SITES=	http://klh10.trailing-edge.com/
-DISTNAME=	${PORTNAME}-${PORTVERSION}
 DISTFILES=	${DISTNAME}.tgz klh10-2.0a-aux.tgz
 
 MAINTAINER=	ports@FreeBSD.org

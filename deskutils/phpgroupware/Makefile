@@ -9,7 +9,6 @@ PORTVERSION=	0.9.16.017
 CATEGORIES=	deskutils
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	phpgroupware/phpgroupware/${PORTVERSION}
-DISTNAME=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	A web based GroupWare system

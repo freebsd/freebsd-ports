@@ -12,7 +12,6 @@ MASTER_SITES=	http://www.xorp.org/releases/${PORTVERSION}/	\
 		http://www2.xorp.org/releases/${PORTVERSION}/	\
 		http://www5.xorp.org/releases/${PORTVERSION}/	\
 		http://www3.xorp.org/releases/${PORTVERSION}/
-DISTNAME=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The eXtensible Open Router Platform

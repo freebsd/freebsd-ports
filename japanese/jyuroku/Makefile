@@ -10,7 +10,6 @@ PORTVERSION=	1.32
 PORTREVISION=	6
 CATEGORIES=	japanese
 MASTER_SITES=	http://homepage3.nifty.com/seto-yoneji/
-DISTNAME=	${PORTNAME}-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org

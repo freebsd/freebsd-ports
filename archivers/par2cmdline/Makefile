@@ -10,7 +10,6 @@ PORTVERSION=	0.4
 PORTREVISION=	3
 CATEGORIES=	archivers
 MASTER_SITES=	SF/parchive/${PORTNAME}/${PORTVERSION}
-DISTNAME=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	martymac@FreeBSD.org
 COMMENT=	Tools for using Parity v2 Archive files

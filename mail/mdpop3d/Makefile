@@ -8,7 +8,6 @@ PORTNAME=	mdpop3d
 PORTVERSION=	0.97
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.corpit.ru/home/mjt/mdpop3d/
-DISTNAME=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	avl@FreeBSD.org
 COMMENT=	A simple and small POP3 daemon implementation with Maildir support

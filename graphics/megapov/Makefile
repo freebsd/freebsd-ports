@@ -10,7 +10,6 @@ PORTVERSION=	1.2.1
 PORTREVISION=	5
 CATEGORIES=	graphics
 MASTER_SITES=	http://megapov.inetart.net/packages/unix/
-DISTNAME=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	maho@FreeBSD.org
 COMMENT=	Unofficial extensions of POV-Ray

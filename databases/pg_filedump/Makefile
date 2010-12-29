@@ -9,7 +9,6 @@ PORTNAME=	pg_filedump
 PORTVERSION=	8.4
 CATEGORIES=	databases
 MASTER_SITES=	http://sources.redhat.com/rhdb/tools/
-DISTNAME=	${PORTNAME}-${PORTVERSION}
 EXTRACT_SUFX=	.tar
 
 MAINTAINER=	kuriyama@FreeBSD.org

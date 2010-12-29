@@ -10,7 +10,6 @@ PORTVERSION=	1.2.11
 PORTREVISION=	1
 CATEGORIES=	comms hamradio
 MASTER_SITES=	SF
-DISTNAME=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	db@FreeBSD.org
 COMMENT=	Shared libraries for Amateur Radio Equipment Control Applications

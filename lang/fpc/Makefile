@@ -20,7 +20,6 @@ MASTER_SITES=	ftp://ftp.freepascal.org/pub/fpc/dist/${PORTVERSION}/source/:sourc
 		${MASTER_SITE_LOCAL:S|$|acm/freepascal/:bootstrap|} \
 		${MASTER_SITE_GOOGLE_CODE}:man \
 		${MASTER_SITE_LOCAL:S|$|acm/freepascal/:man|}
-DISTNAME=	${PORTNAME}-${PORTVERSION}
 DISTFILES=	${DISTNAME:S/$/.source/}${EXTRACT_SUFX}:source
 DIST_SUBDIR=	freepascal
 

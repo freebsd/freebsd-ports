@@ -12,7 +12,6 @@ PORTEPOCH=	1
 CATEGORIES=	www
 MASTER_SITES=	http://sams.perm.ru/download/ \
 		http://gateway11.ath.cx/sams/
-DISTNAME=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	uzgrishin@mail.ru
 COMMENT=	Squid 2.x Accounting Management System

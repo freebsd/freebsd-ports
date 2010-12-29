@@ -9,7 +9,6 @@ PORTNAME=	pcl
 PORTVERSION=	1.6
 CATEGORIES=	devel
 MASTER_SITES=	http://www.xmailserver.org/
-DISTNAME=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	manuel.giraud@gmail.com
 COMMENT=	Portable Coroutine Library

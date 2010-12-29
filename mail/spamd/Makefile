@@ -10,7 +10,6 @@ PORTVERSION=	4.8.0
 CATEGORIES=	mail
 MASTER_SITES=	BERLIOS
 MASTER_SITE_SUBDIR=freebsdspamd
-DISTNAME=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	ohauer@FreeBSD.org
 COMMENT=	Traps spammers with a very slow smtp-login and return 4xx error

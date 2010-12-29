@@ -9,7 +9,6 @@ PORTNAME=	clucene-contrib
 PORTVERSION=	0.9.16a
 CATEGORIES=	textproc
 MASTER_SITES=	SF/clucene/clucene-contribs-unstable/${PORTVERSION}
-DISTNAME=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	tom@tomjudge.com
 COMMENT=	CLucene Contrib Code and Tools

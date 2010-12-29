@@ -10,7 +10,6 @@ PORTVERSION=	1.0
 PORTREVISION=	1
 CATEGORIES=	emulators kld
 MASTER_SITES=	http://www.tbrk.org/software/
-DISTNAME=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	timbob@bigpond.com
 COMMENT=	Kernel module for SNES controllers on a parallel port

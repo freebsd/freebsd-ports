@@ -9,7 +9,6 @@ PORTNAME=	mod_proxy_add_forward
 PORTVERSION=	20020710
 CATEGORIES=	www
 MASTER_SITES=	http://develooper.com/code/mpaf/
-DISTNAME=	${PORTNAME}-${PORTVERSION}
 EXTRACT_SUFX=	.c
 
 MAINTAINER=	apache@FreeBSD.org

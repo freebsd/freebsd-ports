@@ -8,7 +8,6 @@
 PORTNAME=	DB_Pager
 PORTVERSION=	0.7
 CATEGORIES=	databases www pear
-DISTNAME=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	toshiya@saitoh.nu
 COMMENT=	PEAR Database Abstraction Layer

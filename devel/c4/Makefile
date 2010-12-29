@@ -10,7 +10,6 @@ PORTVERSION=	1.10
 PORTREVISION=	1
 CATEGORIES+=	devel
 MASTER_SITES=	http://public.perforce.com/public/perforce/utils/c4/
-DISTNAME=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	araujo@FreeBSD.org
 COMMENT=	A CVS-like Frontend to Perforce

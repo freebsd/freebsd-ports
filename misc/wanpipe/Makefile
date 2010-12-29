@@ -11,7 +11,6 @@ PORTVERSION=	3.3.1
 PORTREVISION=	1
 CATEGORIES=	misc net kld
 MASTER_SITES=	ftp://ftp.sangoma.com/FreeBSD/wanpipe/ports/
-DISTNAME=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	jpaetzel@FreeBSD.org
 COMMENT=	A FreeBSD Driver for Sangoma AFT/S51x Series Cards

@@ -10,7 +10,6 @@ PORTVERSION=	0.11
 PORTEPOCH=	1
 CATEGORIES=	devel
 MASTER_SITES=	SF/opende/ODE/${PORTVERSION}
-DISTNAME=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Articulated rigid body dynamics library

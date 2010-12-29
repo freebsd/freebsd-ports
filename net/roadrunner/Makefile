@@ -10,7 +10,6 @@ PORTVERSION=	0.9.1
 PORTREVISION=	4
 CATEGORIES=	net
 MASTER_SITES=	http://ftp.codefactory.se/pub/RoadRunner/source/roadrunner/
-DISTNAME=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A portable BEEP protocol implementation

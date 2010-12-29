@@ -9,7 +9,6 @@ PORTNAME=	javamail
 PORTVERSION=	1.4.3
 CATEGORIES=	java mail
 MASTER_SITES=	#
-DISTNAME=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Reference Implementation of JSR 919

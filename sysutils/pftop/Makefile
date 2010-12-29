@@ -10,7 +10,6 @@ PORTVERSION=	0.7
 PORTREVISION=	1
 CATEGORIES=	sysutils net
 MASTER_SITES=	http://www.eee.metu.edu.tr/~canacar/
-DISTNAME=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	mlaier@FreeBSD.org
 COMMENT=	Utility for real-time display of statistics for pf

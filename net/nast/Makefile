@@ -11,7 +11,6 @@ PORTREVISION=	3
 CATEGORIES=	net
 MASTER_SITES=	http://download.berlios.de/${PORTNAME}/ \
 		http://voodoo.bawue.com/download/
-DISTNAME=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Nast is a packet sniffer

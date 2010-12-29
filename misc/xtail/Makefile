@@ -10,7 +10,6 @@ PORTVERSION=	2.1
 CATEGORIES=	misc
 MASTER_SITES=	http://www.unicom.com/sw/xtail/ \
 		http://utenti.gufi.org/~gmarco/files/distfiles/
-DISTNAME=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	gmarco@gufi.org
 COMMENT=	Watches the growth of files or directories

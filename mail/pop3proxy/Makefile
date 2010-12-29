@@ -10,7 +10,6 @@ PORTVERSION=	1.2
 PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://people.freebsd.org/~mbr/distfiles/
-DISTNAME=	${PORTNAME}-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	mbr@FreeBSD.org

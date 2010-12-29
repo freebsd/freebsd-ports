@@ -10,7 +10,6 @@ PORTVERSION=	1.0.2
 PORTREVISION=	4
 CATEGORIES=	games
 MASTER_SITES=	SF/lgames/${PORTNAME}/1.0
-DISTNAME=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Destroy as many targets as possible

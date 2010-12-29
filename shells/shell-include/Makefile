@@ -9,7 +9,6 @@ PORTNAME=	shell-include
 PORTVERSION=	0.1.2
 CATEGORIES=	shells devel
 MASTER_SITES=	http://vvelox.net/src/shell-include/
-DISTNAME=	${PORTNAME}-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	vvelox@vvelox.net

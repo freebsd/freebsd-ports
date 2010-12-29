@@ -10,7 +10,6 @@ PORTVERSION=	0.9.0
 PORTREVISION=	8
 CATEGORIES=	deskutils
 MASTER_SITES=	http://www.ongs.co.jp/projects/fusenshi/
-DISTNAME=	${PORTNAME}-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ozawa@ongs.co.jp

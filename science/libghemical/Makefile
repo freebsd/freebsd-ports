@@ -10,7 +10,6 @@ PORTREVISION=	1
 CATEGORIES=	science
 MASTER_SITES=	http://www.uku.fi/~thassine/projects/download/release20090911/ \
 		http://bioinformatics.org/ghemical/download/
-DISTNAME=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	maho@FreeBSD.org
 COMMENT=	Support libraries of science/ghemical port

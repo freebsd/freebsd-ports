@@ -10,7 +10,6 @@ PORTVERSION=	0.1.3
 CATEGORIES=	devel ruby
 MASTER_SITES=http://pablotron.org/files/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
-DISTNAME=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	A set of enhancements of irb

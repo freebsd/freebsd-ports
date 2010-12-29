@@ -9,7 +9,6 @@ PORTNAME=	primer3
 PORTVERSION=	1.1.4
 CATEGORIES=	biology
 MASTER_SITES=	SF
-DISTNAME=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	fernan@iib.unsam.edu.ar
 COMMENT=	Primer3 helps to choose primers for PCR reactions

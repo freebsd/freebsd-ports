@@ -10,7 +10,6 @@ PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://mediaproxy.ag-projects.com/ \
 		http://mediaproxy.ag-projects.com/old/
-DISTNAME=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	steve@energistic.com
 COMMENT=	A far-end NAT traversal solution for SER/OpenSER

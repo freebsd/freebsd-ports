@@ -12,7 +12,6 @@ CATEGORIES=	net-mgmt
 MASTER_SITES=	http://www.cultdeadsheep.org/~clement/FreeBSD/nagios/
 PKGNAMEPREFIX=	nagios-
 PKGNAMESUFFIX=	-plugin
-DISTNAME=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	jarrod@netleader.com.au
 COMMENT=	Security vulnerability plugin for Nagios

@@ -14,7 +14,6 @@ MASTER_SITES=	${MASTER_SITE_SAVANNAH:S/$/:savannah/} \
 		${MASTER_SITE_LOCAL:S/$/:local/}
 MASTER_SITE_SUBDIR=	${PORTNAME}/:savannah \
 		vd/${PORTNAME}${PKGNAMESUFFIX}/:local
-DISTNAME=	${PORTNAME}-${PORTVERSION}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:savannah,local
 
 MAINTAINER=	peter.schuller@infidyne.com

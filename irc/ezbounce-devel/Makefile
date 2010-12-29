@@ -10,7 +10,6 @@ PORTVERSION=	1.99.15
 CATEGORIES=	irc
 MASTER_SITES=	http://www.linuxftw.com/ezbounce/files/
 PKGNAMESUFFIX=	-devel
-DISTNAME=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	flo@FreeBSD.org
 COMMENT=	A highly configurable IRC Proxy

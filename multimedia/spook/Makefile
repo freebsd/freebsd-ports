@@ -10,7 +10,6 @@ PORTVERSION=	20050207
 PORTREVISION=	3
 CATEGORIES=	multimedia
 MASTER_SITES=	http://www.litech.org/spook/dist/
-DISTNAME=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Embedded RTP/RTSP/HTTP video streamer
