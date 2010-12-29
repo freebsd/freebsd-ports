@@ -698,6 +698,7 @@ asr-utils                       ports/sysutils/asr-utils
 asr10                           ports/converters/asr10
 assaultcube                     ports/games/assaultcube
 assp                            ports/mail/assp
+ast-aspell                      ports/textproc/ast-aspell
 asterisk                        ports/net/asterisk
 asterisk-app-ldap               ports/net/asterisk-app-ldap
 asterisk-app-notify             ports/net/asterisk-app-notify
@@ -5027,6 +5028,7 @@ gracula                         ports/graphics/gracula
 grads                           ports/graphics/grads
 graft                           ports/sysutils/graft
 grafx2                          ports/graphics/grafx2
+graid5                          ports/sysutils/graid5
 grails                          ports/www/grails
 grake                           ports/multimedia/grake
 gramofile                       ports/audio/gramofile
@@ -13245,6 +13247,7 @@ p5-MooseX-Meta-TypeConstraint-ForceCoercion  ports/devel/p5-MooseX-Meta-TypeCons
 p5-MooseX-Method-Signatures     ports/devel/p5-MooseX-Method-Signatures
 p5-MooseX-MethodAttributes      ports/devel/p5-MooseX-MethodAttributes
 p5-MooseX-MultiInitArg          ports/devel/p5-MooseX-MultiInitArg
+p5-MooseX-MultiMethods          ports/devel/p5-MooseX-MultiMethods
 p5-MooseX-NonMoose              ports/devel/p5-MooseX-NonMoose
 p5-MooseX-Object-Pluggable      ports/devel/p5-MooseX-Object-Pluggable
 p5-MooseX-POE                   ports/devel/p5-MooseX-POE
@@ -17326,6 +17329,7 @@ p5-moosex-meta-typeconstraint-forcecoercion  ports/devel/p5-MooseX-Meta-TypeCons
 p5-moosex-method-signatures     ports/devel/p5-MooseX-Method-Signatures
 p5-moosex-methodattributes      ports/devel/p5-MooseX-MethodAttributes
 p5-moosex-multiinitarg          ports/devel/p5-MooseX-MultiInitArg
+p5-moosex-multimethods          ports/devel/p5-MooseX-MultiMethods
 p5-moosex-nonmoose              ports/devel/p5-MooseX-NonMoose
 p5-moosex-object-pluggable      ports/devel/p5-MooseX-Object-Pluggable
 p5-moosex-params-validate       ports/devel/p5-MooseX-Params-Validate
@@ -23224,6 +23228,7 @@ rubygem-rchardet                ports/textproc/rubygem-rchardet
 rubygem-rcov                    ports/devel/rubygem-rcov
 rubygem-rdiscount               ports/textproc/rubygem-rdiscount
 rubygem-redcloth                ports/www/rubygem-redcloth
+rubygem-rest-client             ports/www/rubygem-rest-client
 rubygem-rfacebook               ports/www/rubygem-rfacebook
 rubygem-rfeedfinder             ports/www/rubygem-rfeedfinder
 rubygem-rgl                     ports/devel/rubygem-rgl
