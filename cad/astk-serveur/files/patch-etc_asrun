@@ -1,6 +1,6 @@
---- ./etc/asrun.orig	2009-12-23 15:53:06.000000000 +0100
-+++ ./etc/asrun	2010-01-10 21:19:13.000000000 +0100
-@@ -41,6 +41,10 @@
+--- etc/asrun.orig	2010-12-21 19:08:32.000000000 +0100
++++ etc/asrun	2010-12-27 21:42:25.000000000 +0100
+@@ -38,6 +38,10 @@
  # shared folders = for which remote copy is never necessary (comma separated)
  shared_folders :
  
@@ -11,26 +11,7 @@
  # choose True to create symbolic links instead of copying executable and catalogs
  symlink : True
  
-@@ -108,12 +112,12 @@
- # batch_job : to display information about jobs
- # batch_kil : to delete jobs
- # --- Sun Grid Engine example
--batch_nom : SunGE
--batch_ini : /opt/SunGE6.0/default/common/settings.sh
--batch_sub : /opt/SunGE6.0/bin/lx24-x86/qsub
--batch_jid : JOB_ID
--batch_job : /opt/SunGE6.0/bin/lx24-x86/qstat
--batch_kil : /opt/SunGE6.0/bin/lx24-x86/qdel
-+#batch_nom : SunGE
-+#batch_ini : /opt/SunGE6.0/default/common/settings.sh
-+#batch_sub : /opt/SunGE6.0/bin/lx24-x86/qsub
-+#batch_jid : JOB_ID
-+#batch_job : /opt/SunGE6.0/bin/lx24-x86/qstat
-+#batch_kil : /opt/SunGE6.0/bin/lx24-x86/qdel
- 
- # --- LSF example
- #batch_nom : LSF
-@@ -124,28 +128,28 @@
+@@ -121,28 +125,28 @@
  #batch_kil : /usr/share/lsf/6.2/linux2.6-glibc2.3-ia64/bin/bkill
  
  # --- PBS example
@@ -67,7 +48,7 @@
  
  # shell command to get processor id
  # LAM/MPI : echo $LAMRANK
-@@ -172,8 +176,11 @@
+@@ -170,8 +174,11 @@
  # ps commands : uncomment lines corresponding to your platform
  #ps_cpu : /bin/ps -e --width=512 -ocputime -ocommand
  #ps_pid : /bin/ps -e --width=512 -opid -ocommand
@@ -81,16 +62,3 @@
  
  #-------------------------------------------------------------------------------
  # debug command :
-@@ -182,10 +189,9 @@
- #  @D will be remplaced by the filename which contains "where+quit"
- #  @d will be remplaced by the string 'where ; quit'
- #
--#cmd_post : gdb -batch --command=@D @E @C
-+cmd_post : gdb -batch --command=@D @E @C
- #cmd_dbg : ddd --debugger gdb --command=@D @E @C
--cmd_post : ?DEBUGGER_COMMAND_POST?
--cmd_dbg : ?DEBUGGER_COMMAND?
-+cmd_dbg : gdb --dbx --command=@D @E @C
- 
- #-------------------------------------------------------------------------------
- # style of ctags used (optionnal, leave commented to ignore ctags generation)

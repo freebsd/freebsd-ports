@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	astk
-PORTVERSION=	1.8.3
+PORTVERSION=	1.8.4
 CATEGORIES=	cad
 .if !defined(CLIENT_SEUL)
 PKGNAMESUFFIX=	-serveur
@@ -29,6 +29,7 @@ COMMENT?=	Graphical interface for Code_Aster (server side)
 
 # There exists a "logical" RUN_DEPENDS towards french/aster and french/eficas
 # for the server part, but it is not set to avoid circular dependences.
+
 RUN_DEPENDS+=	${SHELL_INSTALL_ASTER}:${PORTSDIR}/shells/${SHIADEP}
 
 LICENSE=	GPLv2
@@ -39,7 +40,6 @@ USE_PYTHON=	yes
 NO_BUILD=	yes
 REINPLACE_ARGS=	-i ""
 
-ASTER_DISTVERSION=	${ASTER_VER}-1
 EXTRACT_WRKSRC=	${WRKDIR}/aster-${DISTVERSIONPREFIX}${ASTER_DISTVERSION:S/-/./:R}/SRC
 
 PKGMESSAGE=	${WRKDIR}/pkg-message
@@ -49,7 +49,7 @@ aster_dir=	${LOCALBASE}/aster/${vaster}
 S_SCRIPTS=	bin/as_run bin/parallel_cp asrun/installation.py	\
 		share/codeaster/asrun/data/mpirun_template
 S_PYLIBS=	share/codeaster/asrun/examples/alamain.py		\
-		unittest/data/config_serveurs unittest/010_misc.py	\
+		unittest/datafiles/config_serveurs unittest/010_misc.py	\
 		unittest/015_package.py unittest/run_test.py
 C_SCRIPTS=	bin/astk bin/bsf
 tools_dir=	${LOCALBASE}/aster/outils
@@ -83,7 +83,10 @@ RUN_DEPENDS+=	qsub:${PORTSDIR}/sysutils/torque
 . endif
 .else
 RUN_DEPENDS+=	xterm:${PORTSDIR}/x11/xterm						\
-		wish${TK_VER}:${PORTSDIR}/x11-toolkits/tk${SHORT_TK_VER}
+		wish${TK_VER}:${PORTSDIR}/x11-toolkits/tk${SHORT_TK_VER}		\
+		${LOCALBASE}/lib/${TKPKG}/pkgIndex.tcl:${PORTSDIR}/graphics/tkpng
+TKPKG_VER=	0.9
+TKPKG=		tkpng${TKPKG_VER}
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/ASTK_CLIENT
 PATCHDIR=	${MASTERDIR}/files.client
 PLIST_SUB=	ASTKDIR=${LINSTDIR}/ASTK_CLIENT SERV="@comment " CLIENT="" vaster=""	\
@@ -180,6 +183,9 @@ do-configure:
 	${REINPLACE_CMD} -e "s|?ASTER_VERSION?|${vaster}|"			\
 		 -e 's|#?vers : VVV?|vers : ${vaster}|'				\
 		${WRKSRC}/etc/aster
+	${REINPLACE_CMD} -e 's|?DEBUGGER_COMMAND_POST?|gdb -batch --command=@D @E @C|'\
+		-e 's|?DEBUGGER_COMMAND?|gdb --dbx --command=@D @E @C|'		\
+		${WRKSRC}/etc/asrun
 . if defined(WITH_MPI)
 	${REINPLACE_CMD} -e "s|?MPIRUN?|${HOME_MPI}/bin/mpirun|"		\
 		-e "s|?ASTER_CONFDIR?|${PREFIX}/aster|"				\
@@ -211,7 +217,7 @@ do-configure:
 		-e "s|/opt/aster|${aster_dir}|" ${WRKSRC}/${libs}
 . endfor
 . if defined(WITH_PBS)
-.   for cf in etc/asrun unittest/data/config_serveurs
+.   for cf in etc/asrun unittest/datafiles/config_serveurs
 	${REINPLACE_CMD} -e "s|batch : non|batch : oui|"			\
 		${WRKSRC}/${cf}
 .   endfor

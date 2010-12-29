@@ -31,5 +31,5 @@ ASTK uses the rcp/rsh protocol: it must be configured (check /etc/inetd.conf
 and ~/.rhosts); if you launch astk with the parameter --check, it will check
 your configuration.
 
-ASTK launch xterm with -display: check that Xorg is not launched with
+ASTK launches xterm with -display: check that Xorg is not launched with
 -nolisten tcp

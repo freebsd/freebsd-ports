@@ -38,6 +38,38 @@
 %%CLIENT%%%%ASTKDIR%%/lib/fichier.tcl
 %%CLIENT%%%%ASTKDIR%%/lib/file_funct.tcl
 %%CLIENT%%%%ASTKDIR%%/lib/i_serv.tcl
+%%CLIENT%%%%ASTKDIR%%/lib/icons/ambiance_button_cancel.gif
+%%CLIENT%%%%ASTKDIR%%/lib/icons/ambiance_button_cancel.png
+%%CLIENT%%%%ASTKDIR%%/lib/icons/ambiance_delete.gif
+%%CLIENT%%%%ASTKDIR%%/lib/icons/ambiance_delete.png
+%%CLIENT%%%%ASTKDIR%%/lib/icons/ambiance_downarrow.gif
+%%CLIENT%%%%ASTKDIR%%/lib/icons/ambiance_downarrow.png
+%%CLIENT%%%%ASTKDIR%%/lib/icons/ambiance_edit.gif
+%%CLIENT%%%%ASTKDIR%%/lib/icons/ambiance_edit.png
+%%CLIENT%%%%ASTKDIR%%/lib/icons/ambiance_empty.gif
+%%CLIENT%%%%ASTKDIR%%/lib/icons/ambiance_empty.png
+%%CLIENT%%%%ASTKDIR%%/lib/icons/ambiance_filenew.gif
+%%CLIENT%%%%ASTKDIR%%/lib/icons/ambiance_filenew.png
+%%CLIENT%%%%ASTKDIR%%/lib/icons/ambiance_fileopen.gif
+%%CLIENT%%%%ASTKDIR%%/lib/icons/ambiance_fileopen.png
+%%CLIENT%%%%ASTKDIR%%/lib/icons/ambiance_folder.gif
+%%CLIENT%%%%ASTKDIR%%/lib/icons/ambiance_folder.png
+%%CLIENT%%%%ASTKDIR%%/lib/icons/ambiance_folder_open.gif
+%%CLIENT%%%%ASTKDIR%%/lib/icons/ambiance_folder_open.png
+%%CLIENT%%%%ASTKDIR%%/lib/icons/ambiance_help.gif
+%%CLIENT%%%%ASTKDIR%%/lib/icons/ambiance_help.png
+%%CLIENT%%%%ASTKDIR%%/lib/icons/ambiance_iconwindow.gif
+%%CLIENT%%%%ASTKDIR%%/lib/icons/ambiance_iconwindow.png
+%%CLIENT%%%%ASTKDIR%%/lib/icons/ambiance_openterm.gif
+%%CLIENT%%%%ASTKDIR%%/lib/icons/ambiance_openterm.png
+%%CLIENT%%%%ASTKDIR%%/lib/icons/ambiance_reload.gif
+%%CLIENT%%%%ASTKDIR%%/lib/icons/ambiance_reload.png
+%%CLIENT%%%%ASTKDIR%%/lib/icons/ambiance_salome.gif
+%%CLIENT%%%%ASTKDIR%%/lib/icons/ambiance_salome.png
+%%CLIENT%%%%ASTKDIR%%/lib/icons/ambiance_up.gif
+%%CLIENT%%%%ASTKDIR%%/lib/icons/ambiance_up.png
+%%CLIENT%%%%ASTKDIR%%/lib/icons/ambiance_uparrow.gif
+%%CLIENT%%%%ASTKDIR%%/lib/icons/ambiance_uparrow.png
 %%CLIENT%%%%ASTKDIR%%/lib/icons/astk.png
 %%CLIENT%%%%ASTKDIR%%/lib/icons/crystalsvg_22_1downarrow.gif
 %%CLIENT%%%%ASTKDIR%%/lib/icons/crystalsvg_22_1uparrow.gif
@@ -218,6 +250,9 @@
 %%SERV%%%%ASTKDIR%%/asrun/common/i18n.py
 %%SERV%%%%ASTKDIR%%/asrun/common/i18n.pyc
 %%SERV%%%%ASTKDIR%%/asrun/common/i18n.pyo
+%%SERV%%%%ASTKDIR%%/asrun/common/lockfile.py
+%%SERV%%%%ASTKDIR%%/asrun/common/lockfile.pyc
+%%SERV%%%%ASTKDIR%%/asrun/common/lockfile.pyo
 %%SERV%%%%ASTKDIR%%/asrun/common/rcfile.py
 %%SERV%%%%ASTKDIR%%/asrun/common/rcfile.pyc
 %%SERV%%%%ASTKDIR%%/asrun/common/rcfile.pyo
@@ -245,6 +280,9 @@
 %%SERV%%%%ASTKDIR%%/asrun/contrib/__init__.py
 %%SERV%%%%ASTKDIR%%/asrun/contrib/__init__.pyc
 %%SERV%%%%ASTKDIR%%/asrun/contrib/__init__.pyo
+%%SERV%%%%ASTKDIR%%/asrun/contrib/log_usage.py
+%%SERV%%%%ASTKDIR%%/asrun/contrib/log_usage.pyc
+%%SERV%%%%ASTKDIR%%/asrun/contrib/log_usage.pyo
 %%SERV%%%%ASTKDIR%%/asrun/core/__init__.py
 %%SERV%%%%ASTKDIR%%/asrun/core/__init__.pyc
 %%SERV%%%%ASTKDIR%%/asrun/core/__init__.pyo
@@ -263,6 +301,9 @@
 %%SERV%%%%ASTKDIR%%/asrun/dev/messages.py
 %%SERV%%%%ASTKDIR%%/asrun/dev/messages.pyc
 %%SERV%%%%ASTKDIR%%/asrun/dev/messages.pyo
+%%SERV%%%%ASTKDIR%%/asrun/dev/routines.py
+%%SERV%%%%ASTKDIR%%/asrun/dev/routines.pyc
+%%SERV%%%%ASTKDIR%%/asrun/dev/routines.pyo
 %%SERV%%%%ASTKDIR%%/asrun/distrib.py
 %%SERV%%%%ASTKDIR%%/asrun/distrib.pyc
 %%SERV%%%%ASTKDIR%%/asrun/distrib.pyo
@@ -435,18 +476,19 @@
 %%SERV%%%%ASTKDIR%%/unittest/data.py
 %%SERV%%%%ASTKDIR%%/unittest/data.pyc
 %%SERV%%%%ASTKDIR%%/unittest/data.pyo
-%%SERV%%%%ASTKDIR%%/unittest/data/astout.list
-%%SERV%%%%ASTKDIR%%/unittest/data/astout_dvp.list
-%%SERV%%%%ASTKDIR%%/unittest/data/chg_capy.comm
-%%SERV%%%%ASTKDIR%%/unittest/data/config_serveurs
-%%SERV%%%%ASTKDIR%%/unittest/data/forma01a.mmed
-%%SERV%%%%ASTKDIR%%/unittest/data/hostfile
-%%SERV%%%%ASTKDIR%%/unittest/data/parametric.distr
-%%SERV%%%%ASTKDIR%%/unittest/data/parametric.pre.include
-%%SERV%%%%ASTKDIR%%/unittest/data/poursuite.comm
-%%SERV%%%%ASTKDIR%%/unittest/data/sleep.comm
-%%SERV%%%%ASTKDIR%%/unittest/data/study.comm
-%%SERV%%%%ASTKDIR%%/unittest/data/with_win_CR.export
+%%SERV%%%%ASTKDIR%%/unittest/datafiles/astout.list
+%%SERV%%%%ASTKDIR%%/unittest/datafiles/astout_dvp.list
+%%SERV%%%%ASTKDIR%%/unittest/datafiles/chg_capy.comm
+%%SERV%%%%ASTKDIR%%/unittest/datafiles/config_serveurs
+%%SERV%%%%ASTKDIR%%/unittest/datafiles/forma01a.mmed
+%%SERV%%%%ASTKDIR%%/unittest/datafiles/hostfile
+%%SERV%%%%ASTKDIR%%/unittest/datafiles/parametric.distr
+%%SERV%%%%ASTKDIR%%/unittest/datafiles/parametric.pre.include
+%%SERV%%%%ASTKDIR%%/unittest/datafiles/poursuite.comm
+%%SERV%%%%ASTKDIR%%/unittest/datafiles/sleep.comm
+%%SERV%%%%ASTKDIR%%/unittest/datafiles/study.comm
+%%SERV%%%%ASTKDIR%%/unittest/datafiles/test_profile.sh
+%%SERV%%%%ASTKDIR%%/unittest/datafiles/with_win_CR.export
 %%SERV%%%%ASTKDIR%%/unittest/run_test.py
 %%SERV%%%%ASTKDIR%%/unittest/run_test.pyc
 %%SERV%%%%ASTKDIR%%/unittest/run_test.pyo
@@ -460,7 +502,7 @@
 %%CLIENT%%@dirrm %%BWidget_DIR%%/images
 %%CLIENT%%@dirrm %%BWidget_DIR%%/lang
 %%CLIENT%%@dirrm %%BWidget_DIR%%
-%%SERV%%@dirrm %%ASTKDIR%%/unittest/data
+%%SERV%%@dirrm %%ASTKDIR%%/unittest/datafiles
 %%SERV%%@dirrm %%ASTKDIR%%/unittest
 %%SERV%%@dirrm %%ASTKDIR%%/share/codeaster/asrun/examples
 %%SERV%%@dirrm %%ASTKDIR%%/share/codeaster/asrun/data
