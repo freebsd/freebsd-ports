@@ -61,7 +61,7 @@ post-install:
 
 # graphics/libraw
 .if exists(${LOCALBASE}/lib/libraw.so.0)
-LIB_DEPENDS+=	libraw.0:${PORTSDIR}/graphics/libraw
+LIB_DEPENDS+=	raw.0:${PORTSDIR}/graphics/libraw
 .endif
 
 # attempt at a DATADIR safe port
