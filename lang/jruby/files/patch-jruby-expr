@@ -1,0 +1,24 @@
+--- bin/jruby.orig	2010-12-04 01:58:22.000000000 +0900
++++ bin/jruby	2010-12-30 06:00:45.000000000 +0900
+@@ -28,15 +28,14 @@
+ while [ -h "$PRG" ] ; do
+   ls=`ls -ld "$PRG"`
+   link=`expr "$ls" : '.*-> \(.*\)$'`
+-  if expr "$link" : '.*/.*' > /dev/null; then
+-    if expr "$link" : '/' > /dev/null; then
++  case "$link" in
++    /*)
+       PRG="$link"
+-    else
++      ;;
++    *)
+       PRG="`dirname ${PRG}`/${link}"
+-    fi
+-  else
+-    PRG="`dirname $PRG`/$link"
+-  fi
++      ;;
++  esac
+ done
+ 
+ JRUBY_HOME_1=`dirname "$PRG"`           # the ./bin dir

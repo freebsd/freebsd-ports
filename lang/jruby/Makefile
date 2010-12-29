@@ -6,12 +6,9 @@
 #
 
 PORTNAME=	jruby
-PORTVERSION=	1.1.5
+PORTVERSION=	1.5.6
 CATEGORIES=	lang ruby java
-MASTER_SITES=	http://dist.codehaus.org/jruby/ \
-		http://repo2.maven.org/maven/jruby/ \
-		http://repo1.maven.org/maven/jruby/ \
-		http://dist.codehaus.org/jruby/previous/
+MASTER_SITES=	http://jruby.org.s3.amazonaws.com/downloads/${PORTVERSION}/
 DISTNAME=	${PORTNAME}-bin-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
@@ -21,7 +18,7 @@ RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
 
 NO_BUILD=	yes
 USE_JAVA=	yes
-JAVA_VERSION=	1.3+
+JAVA_VERSION=	1.5+
 
 WRKDIR?=	${WRKDIRPREFIX}${.CURDIR}/work
 JRUBY_HOME?=	${PREFIX}/share/${PORTNAME}-${PORTVERSION}
@@ -76,8 +73,8 @@ do-install:
 	@${ECHO_MSG} " [ DONE ]"
 
 	@${ECHO_MSG} -n ">> Installing symlinks in ${PREFIX}/bin..."
-	@${LN} -s ${JRUBY_HOME}/bin/jruby ${PREFIX}/bin/jruby
-	@${LN} -s ${JRUBY_HOME}/bin/jirb ${PREFIX}/bin/jirb
+	@${LN} -sf ${JRUBY_HOME}/bin/jruby ${PREFIX}/bin/jruby
+	@${LN} -sf ${JRUBY_HOME}/bin/jirb ${PREFIX}/bin/jirb
 	@${ECHO_MSG} " [ DONE ]"
 
 .if !defined(NOPORTDOCS)
