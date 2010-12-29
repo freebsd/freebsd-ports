@@ -1,5 +1,5 @@
 bin/eficas
-bin/qtEficas
+%%QT4%%bin/qtEficas
 %%EFICASDIR%%/AIDE/__init__.py
 %%EFICASDIR%%/AIDE/__init__.pyc
 %%EFICASDIR%%/AIDE/__init__.pyo
@@ -118,11 +118,15 @@ bin/qtEficas
 %%EFICASDIR%%/Accas/__init__NonAster.pyc
 %%EFICASDIR%%/Accas/__init__NonAster.pyo
 %%EFICASDIR%%/Aide/eficas_ASTER.adp
+%%EFICASDIR%%/Aide/eficas_OPENTURNS_STUDY.adp
 %%EFICASDIR%%/Aide/fichiers_ASTER/INSTALL.txt
 %%EFICASDIR%%/Aide/fichiers_ASTER/NEWS.txt
 %%EFICASDIR%%/Aide/fichiers_ASTER/faqs.txt
 %%EFICASDIR%%/Aide/fichiers_ASTER/includes.txt
 %%EFICASDIR%%/Aide/fichiers_ASTER/index.html
+%%EFICASDIR%%/Aide/fichiers_OPENTURNS_STUDY/EficasGui.txt
+%%EFICASDIR%%/Aide/fichiers_OPENTURNS_STUDY/UncertaintyStudy.txt
+%%EFICASDIR%%/Aide/fichiers_OPENTURNS_STUDY/index.html
 %%EFICASDIR%%/Aster/Cata/__init__.py
 %%EFICASDIR%%/Aster/Cata/__init__.pyc
 %%EFICASDIR%%/Aster/Cata/__init__.pyo
@@ -294,9 +298,15 @@ bin/qtEficas
 %%EFICASDIR%%/Aster/Cata/cataSTA10/Macro/observation_ops.py
 %%EFICASDIR%%/Aster/Cata/cataSTA10/Macro/observation_ops.pyc
 %%EFICASDIR%%/Aster/Cata/cataSTA10/Macro/observation_ops.pyo
+%%EFICASDIR%%/Aster/Cata/cataSTA10/Macro/post_bordet_ops.py
+%%EFICASDIR%%/Aster/Cata/cataSTA10/Macro/post_bordet_ops.pyc
+%%EFICASDIR%%/Aster/Cata/cataSTA10/Macro/post_bordet_ops.pyo
 %%EFICASDIR%%/Aster/Cata/cataSTA10/Macro/post_coque_ops.py
 %%EFICASDIR%%/Aster/Cata/cataSTA10/Macro/post_coque_ops.pyc
 %%EFICASDIR%%/Aster/Cata/cataSTA10/Macro/post_coque_ops.pyo
+%%EFICASDIR%%/Aster/Cata/cataSTA10/Macro/post_decollement_ops.py
+%%EFICASDIR%%/Aster/Cata/cataSTA10/Macro/post_decollement_ops.pyc
+%%EFICASDIR%%/Aster/Cata/cataSTA10/Macro/post_decollement_ops.pyo
 %%EFICASDIR%%/Aster/Cata/cataSTA10/Macro/post_dyna_alea_ops.py
 %%EFICASDIR%%/Aster/Cata/cataSTA10/Macro/post_dyna_alea_ops.pyc
 %%EFICASDIR%%/Aster/Cata/cataSTA10/Macro/post_dyna_alea_ops.pyo
@@ -684,6 +694,9 @@ bin/qtEficas
 %%EFICASDIR%%/Aster/Cata/cataSTA10/SD/sd_nume_ddl_gene.py
 %%EFICASDIR%%/Aster/Cata/cataSTA10/SD/sd_nume_ddl_gene.pyc
 %%EFICASDIR%%/Aster/Cata/cataSTA10/SD/sd_nume_ddl_gene.pyo
+%%EFICASDIR%%/Aster/Cata/cataSTA10/SD/sd_nume_elim.py
+%%EFICASDIR%%/Aster/Cata/cataSTA10/SD/sd_nume_elim.pyc
+%%EFICASDIR%%/Aster/Cata/cataSTA10/SD/sd_nume_elim.pyo
 %%EFICASDIR%%/Aster/Cata/cataSTA10/SD/sd_nume_eqge.py
 %%EFICASDIR%%/Aster/Cata/cataSTA10/SD/sd_nume_eqge.pyc
 %%EFICASDIR%%/Aster/Cata/cataSTA10/SD/sd_nume_eqge.pyo
@@ -1220,6 +1233,9 @@ bin/qtEficas
 %%EFICASDIR%%/Aster/Cata/cataSTA9/Macro/test_temps_ops.py
 %%EFICASDIR%%/Aster/Cata/cataSTA9/Macro/test_temps_ops.pyc
 %%EFICASDIR%%/Aster/Cata/cataSTA9/Macro/test_temps_ops.pyo
+%%EFICASDIR%%/Aster/Cata/cataSTA9/Numeric.py
+%%EFICASDIR%%/Aster/Cata/cataSTA9/Numeric.pyc
+%%EFICASDIR%%/Aster/Cata/cataSTA9/Numeric.pyo
 %%EFICASDIR%%/Aster/Cata/cataSTA9/SD/__init__.py
 %%EFICASDIR%%/Aster/Cata/cataSTA9/SD/__init__.pyc
 %%EFICASDIR%%/Aster/Cata/cataSTA9/SD/__init__.pyo
@@ -1747,6 +1763,9 @@ bin/qtEficas
 %%EFICASDIR%%/Editeur/basestyle.py
 %%EFICASDIR%%/Editeur/basestyle.pyc
 %%EFICASDIR%%/Editeur/basestyle.pyo
+%%EFICASDIR%%/Editeur/catadesc.py
+%%EFICASDIR%%/Editeur/catadesc.pyc
+%%EFICASDIR%%/Editeur/catadesc.pyo
 %%EFICASDIR%%/Editeur/comploader.py
 %%EFICASDIR%%/Editeur/comploader.pyc
 %%EFICASDIR%%/Editeur/comploader.pyo
@@ -1829,6 +1848,7 @@ bin/qtEficas
 %%EFICASDIR%%/Editeur/icons/code_saturne.gif
 %%EFICASDIR%%/Editeur/icons/compute.png
 %%EFICASDIR%%/Editeur/icons/empty.png
+%%EFICASDIR%%/Editeur/icons/image240.png
 %%EFICASDIR%%/Editeur/icons/logo_edf.gif
 %%EFICASDIR%%/Editeur/icons/minusnode.gif
 %%EFICASDIR%%/Editeur/icons/minusnode.png
@@ -2029,6 +2049,9 @@ bin/qtEficas
 %%EFICASDIR%%/InterfaceQT4/composimp.py
 %%EFICASDIR%%/InterfaceQT4/composimp.pyc
 %%EFICASDIR%%/InterfaceQT4/composimp.pyo
+%%EFICASDIR%%/InterfaceQT4/configuration.py
+%%EFICASDIR%%/InterfaceQT4/configuration.pyc
+%%EFICASDIR%%/InterfaceQT4/configuration.pyo
 %%EFICASDIR%%/InterfaceQT4/editor.py
 %%EFICASDIR%%/InterfaceQT4/editor.pyc
 %%EFICASDIR%%/InterfaceQT4/editor.pyo
@@ -2080,6 +2103,12 @@ bin/qtEficas
 %%EFICASDIR%%/InterfaceQT4/monOptions_ASTER.py
 %%EFICASDIR%%/InterfaceQT4/monOptions_ASTER.pyc
 %%EFICASDIR%%/InterfaceQT4/monOptions_ASTER.pyo
+%%EFICASDIR%%/InterfaceQT4/monOptions_OPENTURNS_STUDY.py
+%%EFICASDIR%%/InterfaceQT4/monOptions_OPENTURNS_STUDY.pyc
+%%EFICASDIR%%/InterfaceQT4/monOptions_OPENTURNS_STUDY.pyo
+%%EFICASDIR%%/InterfaceQT4/monOptions_OPENTURNS_WRAPPER.py
+%%EFICASDIR%%/InterfaceQT4/monOptions_OPENTURNS_WRAPPER.pyc
+%%EFICASDIR%%/InterfaceQT4/monOptions_OPENTURNS_WRAPPER.pyo
 %%EFICASDIR%%/InterfaceQT4/monParamPanel.py
 %%EFICASDIR%%/InterfaceQT4/monParamPanel.pyc
 %%EFICASDIR%%/InterfaceQT4/monParamPanel.pyo
@@ -2497,6 +2526,41 @@ bin/qtEficas
 %%EFICASDIR%%/Noyau/nommage.py
 %%EFICASDIR%%/Noyau/nommage.pyc
 %%EFICASDIR%%/Noyau/nommage.pyo
+%%EFICASDIR%%/Openturns_Study/OpenTURNS_Cata_Study_V8.py
+%%EFICASDIR%%/Openturns_Study/OpenTURNS_Cata_Study_V8.pyc
+%%EFICASDIR%%/Openturns_Study/OpenTURNS_Cata_Study_V8.pyo
+%%EFICASDIR%%/Openturns_Study/catalogues_openturns.ini
+%%EFICASDIR%%/Openturns_Study/configuration_OPENTURNS_STUDY.py
+%%EFICASDIR%%/Openturns_Study/configuration_OPENTURNS_STUDY.pyc
+%%EFICASDIR%%/Openturns_Study/configuration_OPENTURNS_STUDY.pyo
+%%EFICASDIR%%/Openturns_Study/opsOT.py
+%%EFICASDIR%%/Openturns_Study/opsOT.pyc
+%%EFICASDIR%%/Openturns_Study/opsOT.pyo
+%%EFICASDIR%%/Openturns_Study/prefs.py
+%%EFICASDIR%%/Openturns_Study/prefs.pyc
+%%EFICASDIR%%/Openturns_Study/prefs.pyo
+%%EFICASDIR%%/Openturns_Study/prefs_OPENTURNS_STUDY.py
+%%EFICASDIR%%/Openturns_Study/prefs_OPENTURNS_STUDY.pyc
+%%EFICASDIR%%/Openturns_Study/prefs_OPENTURNS_STUDY.pyo
+%%EFICASDIR%%/Openturns_Study/qtEficas_openturns_study.py
+%%EFICASDIR%%/Openturns_Study/qtEficas_openturns_study.pyc
+%%EFICASDIR%%/Openturns_Study/qtEficas_openturns_study.pyo
+%%EFICASDIR%%/Openturns_Wrapper/OpenTURNS_Cata_Wrapper_V4.py
+%%EFICASDIR%%/Openturns_Wrapper/OpenTURNS_Cata_Wrapper_V4.pyc
+%%EFICASDIR%%/Openturns_Wrapper/OpenTURNS_Cata_Wrapper_V4.pyo
+%%EFICASDIR%%/Openturns_Wrapper/catalogues_openturns.ini
+%%EFICASDIR%%/Openturns_Wrapper/configuration_OPENTURNS_WRAPPER.py
+%%EFICASDIR%%/Openturns_Wrapper/configuration_OPENTURNS_WRAPPER.pyc
+%%EFICASDIR%%/Openturns_Wrapper/configuration_OPENTURNS_WRAPPER.pyo
+%%EFICASDIR%%/Openturns_Wrapper/prefs.py
+%%EFICASDIR%%/Openturns_Wrapper/prefs.pyc
+%%EFICASDIR%%/Openturns_Wrapper/prefs.pyo
+%%EFICASDIR%%/Openturns_Wrapper/prefs_OPENTURNS_WRAPPER.py
+%%EFICASDIR%%/Openturns_Wrapper/prefs_OPENTURNS_WRAPPER.pyc
+%%EFICASDIR%%/Openturns_Wrapper/prefs_OPENTURNS_WRAPPER.pyo
+%%EFICASDIR%%/Openturns_Wrapper/qtEficas_openturns_wrapper.py
+%%EFICASDIR%%/Openturns_Wrapper/qtEficas_openturns_wrapper.pyc
+%%EFICASDIR%%/Openturns_Wrapper/qtEficas_openturns_wrapper.pyo
 %%EFICASDIR%%/Tools/__init__.py
 %%EFICASDIR%%/Tools/__init__.pyc
 %%EFICASDIR%%/Tools/__init__.pyo
@@ -2605,6 +2669,7 @@ bin/qtEficas
 %%EFICASDIR%%/UiQT4/desInclude.py
 %%EFICASDIR%%/UiQT4/desInclude.pyc
 %%EFICASDIR%%/UiQT4/desInclude.pyo
+%%EFICASDIR%%/UiQT4/desInclude.ui
 %%EFICASDIR%%/UiQT4/desListeParam.py
 %%EFICASDIR%%/UiQT4/desListeParam.pyc
 %%EFICASDIR%%/UiQT4/desListeParam.pyo
@@ -2742,6 +2807,12 @@ bin/qtEficas
 %%EFICASDIR%%/convert/convert_file_from_template.py
 %%EFICASDIR%%/convert/convert_file_from_template.pyc
 %%EFICASDIR%%/convert/convert_file_from_template.pyo
+%%EFICASDIR%%/convert/convert_openturns_study.py
+%%EFICASDIR%%/convert/convert_openturns_study.pyc
+%%EFICASDIR%%/convert/convert_openturns_study.pyo
+%%EFICASDIR%%/convert/convert_openturns_wrapper.py
+%%EFICASDIR%%/convert/convert_openturns_wrapper.pyc
+%%EFICASDIR%%/convert/convert_openturns_wrapper.pyo
 %%EFICASDIR%%/convert/convert_python.py
 %%EFICASDIR%%/convert/convert_python.pyc
 %%EFICASDIR%%/convert/convert_python.pyo
@@ -2751,6 +2822,15 @@ bin/qtEficas
 %%EFICASDIR%%/generator/Formatage.py
 %%EFICASDIR%%/generator/Formatage.pyc
 %%EFICASDIR%%/generator/Formatage.pyo
+%%EFICASDIR%%/generator/OpenturnsBase.py
+%%EFICASDIR%%/generator/OpenturnsBase.pyc
+%%EFICASDIR%%/generator/OpenturnsBase.pyo
+%%EFICASDIR%%/generator/OpenturnsSTD.py
+%%EFICASDIR%%/generator/OpenturnsSTD.pyc
+%%EFICASDIR%%/generator/OpenturnsSTD.pyo
+%%EFICASDIR%%/generator/OpenturnsXML.py
+%%EFICASDIR%%/generator/OpenturnsXML.pyc
+%%EFICASDIR%%/generator/OpenturnsXML.pyo
 %%EFICASDIR%%/generator/__init__.py
 %%EFICASDIR%%/generator/__init__.pyc
 %%EFICASDIR%%/generator/__init__.pyo
@@ -2766,6 +2846,15 @@ bin/qtEficas
 %%EFICASDIR%%/generator/generator_file_from_template.py
 %%EFICASDIR%%/generator/generator_file_from_template.pyc
 %%EFICASDIR%%/generator/generator_file_from_template.pyo
+%%EFICASDIR%%/generator/generator_openturns.py
+%%EFICASDIR%%/generator/generator_openturns.pyc
+%%EFICASDIR%%/generator/generator_openturns.pyo
+%%EFICASDIR%%/generator/generator_openturns_study.py
+%%EFICASDIR%%/generator/generator_openturns_study.pyc
+%%EFICASDIR%%/generator/generator_openturns_study.pyo
+%%EFICASDIR%%/generator/generator_openturns_wrapper.py
+%%EFICASDIR%%/generator/generator_openturns_wrapper.pyc
+%%EFICASDIR%%/generator/generator_openturns_wrapper.pyo
 %%EFICASDIR%%/generator/generator_python.py
 %%EFICASDIR%%/generator/generator_python.pyc
 %%EFICASDIR%%/generator/generator_python.pyo
@@ -2780,6 +2869,8 @@ bin/qtEficas
 @dirrm %%EFICASDIR%%/Traducteur
 @dirrm %%EFICASDIR%%/Tools/foztools
 @dirrm %%EFICASDIR%%/Tools
+@dirrm %%EFICASDIR%%/Openturns_Wrapper
+@dirrm %%EFICASDIR%%/Openturns_Study
 @dirrm %%EFICASDIR%%/Noyau
 @dirrm %%EFICASDIR%%/Misc
 @dirrm %%EFICASDIR%%/InterfaceTK
@@ -2807,6 +2898,7 @@ bin/qtEficas
 @dirrm %%EFICASDIR%%/Aster/Cata/cataSTA10
 @dirrm %%EFICASDIR%%/Aster/Cata
 @dirrm %%EFICASDIR%%/Aster
+@dirrm %%EFICASDIR%%/Aide/fichiers_OPENTURNS_STUDY
 @dirrm %%EFICASDIR%%/Aide/fichiers_ASTER
 @dirrm %%EFICASDIR%%/Aide
 @dirrm %%EFICASDIR%%/Accas
