@@ -277,26 +277,26 @@ share/applications/claws-mail.desktop
 %%PORTDOCS%%%%DOCSDIR%%/README.tools
 %%PORTDOCS%%%%DOCSDIR%%/RELEASE_NOTES
 %%PORTDOCS%%%%DOCSDIR%%/TODO
-%%DOCSDIR%%/manual/de/claws-mail-manual.html
-%%DOCSDIR%%/manual/de/claws-mail-manual.pdf
-%%DOCSDIR%%/manual/de/claws-mail-manual.ps
-%%DOCSDIR%%/manual/de/claws-mail-manual.txt
-%%DOCSDIR%%/manual/en/claws-mail-manual.html
-%%DOCSDIR%%/manual/en/claws-mail-manual.pdf
-%%DOCSDIR%%/manual/en/claws-mail-manual.ps
-%%DOCSDIR%%/manual/en/claws-mail-manual.txt
-%%DOCSDIR%%/manual/es/claws-mail-manual.html
-%%DOCSDIR%%/manual/es/claws-mail-manual.pdf
-%%DOCSDIR%%/manual/es/claws-mail-manual.ps
-%%DOCSDIR%%/manual/es/claws-mail-manual.txt
-%%DOCSDIR%%/manual/fr/claws-mail-manual.html
-%%DOCSDIR%%/manual/fr/claws-mail-manual.pdf
-%%DOCSDIR%%/manual/fr/claws-mail-manual.ps
-%%DOCSDIR%%/manual/fr/claws-mail-manual.txt
-%%DOCSDIR%%/manual/pl/claws-mail-manual.html
-%%DOCSDIR%%/manual/pl/claws-mail-manual.pdf
-%%DOCSDIR%%/manual/pl/claws-mail-manual.ps
-%%DOCSDIR%%/manual/pl/claws-mail-manual.txt
+%%MANUAL%%%%DOCSDIR%%/manual/de/claws-mail-manual.html
+%%MANUAL%%%%DOCSDIR%%/manual/de/claws-mail-manual.pdf
+%%MANUAL%%%%DOCSDIR%%/manual/de/claws-mail-manual.ps
+%%MANUAL%%%%DOCSDIR%%/manual/de/claws-mail-manual.txt
+%%MANUAL%%%%DOCSDIR%%/manual/en/claws-mail-manual.html
+%%MANUAL%%%%DOCSDIR%%/manual/en/claws-mail-manual.pdf
+%%MANUAL%%%%DOCSDIR%%/manual/en/claws-mail-manual.ps
+%%MANUAL%%%%DOCSDIR%%/manual/en/claws-mail-manual.txt
+%%MANUAL%%%%DOCSDIR%%/manual/es/claws-mail-manual.html
+%%MANUAL%%%%DOCSDIR%%/manual/es/claws-mail-manual.pdf
+%%MANUAL%%%%DOCSDIR%%/manual/es/claws-mail-manual.ps
+%%MANUAL%%%%DOCSDIR%%/manual/es/claws-mail-manual.txt
+%%MANUAL%%%%DOCSDIR%%/manual/fr/claws-mail-manual.html
+%%MANUAL%%%%DOCSDIR%%/manual/fr/claws-mail-manual.pdf
+%%MANUAL%%%%DOCSDIR%%/manual/fr/claws-mail-manual.ps
+%%MANUAL%%%%DOCSDIR%%/manual/fr/claws-mail-manual.txt
+%%MANUAL%%%%DOCSDIR%%/manual/pl/claws-mail-manual.html
+%%MANUAL%%%%DOCSDIR%%/manual/pl/claws-mail-manual.pdf
+%%MANUAL%%%%DOCSDIR%%/manual/pl/claws-mail-manual.ps
+%%MANUAL%%%%DOCSDIR%%/manual/pl/claws-mail-manual.txt
 share/icons/hicolor/128x128/apps/claws-mail-128x128.png
 share/icons/hicolor/48x48/apps/claws-mail.png
 share/icons/hicolor/64x64/apps/claws-mail-64x64.png
@@ -325,12 +325,12 @@ share/pixmaps/claws-mail-128x128.png
 share/pixmaps/claws-mail-64x64.png
 share/pixmaps/claws-mail.png
 @dirrm %%DATADIR%%
-@dirrm %%DOCSDIR%%/manual/pl
-@dirrm %%DOCSDIR%%/manual/fr
-@dirrm %%DOCSDIR%%/manual/es
-@dirrm %%DOCSDIR%%/manual/en
-@dirrm %%DOCSDIR%%/manual/de
-@dirrm %%DOCSDIR%%/manual
+%%MANUAL%%@dirrm %%DOCSDIR%%/manual/pl
+%%MANUAL%%@dirrm %%DOCSDIR%%/manual/fr
+%%MANUAL%%@dirrm %%DOCSDIR%%/manual/es
+%%MANUAL%%@dirrm %%DOCSDIR%%/manual/en
+%%MANUAL%%@dirrm %%DOCSDIR%%/manual/de
+%%MANUAL%%@dirrm %%DOCSDIR%%/manual
 @dirrmtry %%DOCSDIR%%
 @dirrmtry share/applications
 @dirrmtry lib/claws-mail/plugins
