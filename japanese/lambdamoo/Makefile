@@ -20,7 +20,7 @@ PATCH_SITES=	${MASTER_SITE_LOCAL}
 PATCH_SITE_SUBDIR=	flathill
 PATCHFILES=	ja-lambdamoo-19990704.patch.gz
 
-MAINTAINER=	ports@FreeBSD.ORG
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The most commonly used program to run MOOs
 
 WRKSRC=		${WRKDIR}/MOO-${PORTVERSION}

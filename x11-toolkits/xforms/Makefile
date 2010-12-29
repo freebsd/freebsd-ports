@@ -16,7 +16,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}/stable.pkg/${PORTVERSION}/:savannah \
 			mikeh/:local
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:savannah,local
 
-MAINTAINER?=	ports@FreeBSD.ORG
+MAINTAINER?=	ports@FreeBSD.org
 COMMENT?=	A graphical user interface toolkit for X Window System
 
 LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg \
