@@ -7,13 +7,13 @@
 
 PORTNAME=	claws-mail
 PORTVERSION=	3.7.8
+PORTREVISION=	1
 CATEGORIES=	mail news ipv6
 MASTER_SITES=	SF/sylpheed-claws/Claws%20Mail/${PORTVERSION}
 
 MAINTAINER=	c0rn@o2.pl
 COMMENT=	A lightweight and very featureful GTK+ based e-mail and news client
 
-BUILD_DEPENDS=	${LOCALBASE}/bin/docbook2html:${PORTSDIR}/textproc/docbook-utils
 LIB_DEPENDS=	etpan:${PORTSDIR}/mail/libetpan \
 		cairo:${PORTSDIR}/graphics/cairo \
 		expat:${PORTSDIR}/textproc/expat2 \
@@ -25,6 +25,8 @@ LIB_DEPENDS=	etpan:${PORTSDIR}/mail/libetpan \
 RUN_DEPENDS=	${LOCALBASE}/etc/mime.types:${PORTSDIR}/misc/mime-support
 
 CONFLICTS=	sylpheed-claws
+
+LICENSE=	GPLv3
 
 USE_BZIP2=	yes
 USE_GETTEXT=	yes
@@ -40,16 +42,14 @@ MAKE_JOBS_SAFE=	yes
 
 MAN1=		claws-mail.1
 
-CONFIGURE_ARGS=	\
-		--with-libiconv-prefix=${LOCALBASE} \
-		--with-manualdir=${DOCSDIR}/manual \
+CONFIGURE_ARGS=	--with-libiconv-prefix=${LOCALBASE}
 
 CONFIGURE_ENV=	CFLAGS="${CFLAGS} ${PTHREAD_CFLAGS}" \
 		CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" \
 		LIBS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
 
-OPTIONS=	ALL		"Enable all options except GNUTLS."			off \
+OPTIONS=	ALL		"Enable all options."			off \
 		ENCHANT		"Enable spell checking support."	on \
 		BOGOFILTER	"Enable bogofilter support."		off \
 		COMPFACE	"Enable X-Face support."		on \
@@ -59,6 +59,7 @@ OPTIONS=	ALL		"Enable all options except GNUTLS."			off \
 		IPV6		"Enable ipv6 support."			on \
 		JPILOT		"Enable JPilot support."		off \
 		LDAP		"Enable LDAP support."			off \
+		MANUAL		"Build and install manual files"	on \
 		SA_PLUG		"Enable SpamAssassin support."		off \
 		STARTUP		"Enable startup notification support."	on \
 		THEMES		"Install additional themes."		on
@@ -98,6 +99,14 @@ USE_OPENLDAP=		yes
 CONFIGURE_ARGS+=	--enable-ldap
 .else
 CONFIGURE_ARGS+=	--disable-ldap
+.endif
+.if defined(WITH_MANUAL) || defined(WITH_ALL)
+BUILD_DEPENDS=	${LOCALBASE}/bin/docbook2html:${PORTSDIR}/textproc/docbook-utils
+CONFIGURE_ARGS+=	--enable-manual --with-manualdir=${DOCSDIR}/manual
+PLIST_SUB+=		MANUAL=""
+.else
+CONFIGURE_ARGS+=	--disable-manual
+PLIST_SUB+=		MANUAL="@comment "
 .endif
 .if defined(WITH_SA_PLUG) || defined(WITH_ALL)
 RUN_DEPENDS+=		spamd:${PORTSDIR}/mail/p5-Mail-SpamAssassin
@@ -162,6 +171,7 @@ post-patch:
 
 post-install:
 .if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
 .for i in NEWS RELEASE_NOTES README TODO
 	@${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
 .endfor
