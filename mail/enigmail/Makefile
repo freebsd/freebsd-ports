@@ -25,9 +25,9 @@ RUN_DEPENDS=	${GECKO:C/[0-9]//}:${PORTSDIR}/${GECKO_PORTDIR} \
 		gpg:${PORTSDIR}/security/gnupg
 
 .if !defined(GECKO)
-GECKO=		mozilla
+GECKO=		libxul
 GECKO_PORTDIR=	www/${GECKO}
-IGNORE=		is not available anymore for Mozilla: use one of the slave ports
+IGNORE=		is an abstract port: use one of the slave ports
 .endif
 
 .if defined(GECKO_EXTDIR)
