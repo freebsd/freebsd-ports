@@ -1,18 +1,15 @@
---- products.py.orig	2010-09-14 10:48:26.000000000 +0200
-+++ products.py	2010-10-25 22:53:13.000000000 +0200
-@@ -907,16 +907,19 @@
+--- products.py.orig	2010-12-22 17:42:46.000000000 +0100
++++ products.py	2010-12-27 23:44:22.000000000 +0100
+@@ -922,15 +922,16 @@
             'HOME_PYTHON', 'PYTHON_EXE', 'PYTHONLIB',
             'HOME_MUMPS', 'HOME_ZMAT', 'HOME_MPI', 'INCLUDE_MUMPS', 'HOME_METIS',
             'HOME_MED', 'HOME_HDF', 'HOME_CRPCRS', 'HOME_NUMPY', 'USE_NUMPY',
--           'LD', 'CC', 'F77', 'F90', 'CXXLIB', 'OTHERLIB',],
-+           'LD', 'CC', 'F77', 'F90', 'LDFLAGS', 'SYSLIB',
-+           'CFLAGS', 'CFLAGS_DBG',
-+           'FFLAGS', 'FFLAGS_DBG',
-+           'F90FLAGS', 'F90FLAGS_DBG', 'CXXLIB', 'OTHERLIB',],
+-           'LD', 'CC', 'F77', 'F90', 'CXXLIB', 'OTHERLIB', 'SYSLIB', ],
++           'LD', 'CC', 'F77', 'F90', 'CXXLIB', 'OTHERLIB', 'SYSLIB', 'CFLAGS',
++           'CFLAGS_DBG', 'FFLAGS', 'FFLAGS_DBG','F90FLAGS', 'F90FLAGS_DBG', 'CXXLIB', ],
        reqobj=['file:?ASTER_ROOT?/bin/as_run',
                'file:?ASTER_ROOT?/etc/codeaster/profile.sh'],
-       set=['SYSLIB',
-            'MEDLIB', 'HDFLIB', 'MATHLIB',
+       set=['MEDLIB', 'HDFLIB', 'MATHLIB',
             'MUMPSLIB', 'ZMATLIB', 'SCOTCHLIB',
             'LDFLAGS',
 -           'CFLAGS', 'CFLAGS_DBG', 'CINCLUDE',
@@ -24,8 +21,8 @@
             'NOBUILD', ],
     )
     cfg['ENV_SH']   = cfg.get('ENV_SH', '')
-@@ -959,6 +962,19 @@
-       opt['FFLAGS']     = '-O2'
+@@ -968,6 +969,19 @@
+    if   cfg['IFDEF'] in ('LINUX', 'P_LINUX'):
        zmat_platform='Linux'
        mpilibs.extend(['mpich'])
 +   elif cfg['IFDEF']=='FREEBSD':
@@ -42,9 +39,9 @@
 +      zmat_platform=''
 +      mpilibs.extend(['mpich', 'mpl'])
     elif cfg['IFDEF'] == 'LINUX64':
-       opt['SYSLIB']     = '-Wl,--allow-multiple-definition -Wl,--export-dynamic -lieee -ldl -lutil -lm'
-       opt['LDFLAGS']    = '-v'
-@@ -1031,11 +1047,12 @@
+       mpilibs.extend(['mpich'])
+       # others have not been tested !
+@@ -1010,11 +1024,12 @@
        cfg['MEDLIB']=''
  
     # ----- libs c++ (for MED and ZMAT)
@@ -62,7 +59,7 @@
  
     # ----- MUMPS
     if cfg['HOME_MUMPS'] != '':
-@@ -1044,12 +1061,15 @@
+@@ -1023,12 +1038,15 @@
        if not less_than_version(dict_prod['mumps'], '4.8.0'):
           mumps_lib.extend(['smumps', 'cmumps', 'mumps_common'])
        mumps_lib.extend(['pord', 'mpiseq'])
