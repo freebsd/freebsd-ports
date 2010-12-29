@@ -34,6 +34,73 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="14a37474-1383-11e0-8a58-00215c6a37bb">
+    <topic>django -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>py23-django</name>
+	<name>py24-django</name>
+	<name>py25-django</name>
+	<name>py26-django</name>
+	<name>py27-django</name>
+	<name>py30-django</name>
+	<name>py31-django</name>
+	<range><gt>1.2</gt><lt>1.2.4</lt></range>
+	<range><gt>1.1</gt><lt>1.1.3</lt></range>
+      </package>
+      <package>
+	<name>py23-django-devel</name>
+	<name>py24-django-devel</name>
+	<name>py25-django-devel</name>
+	<name>py26-django-devel</name>
+	<name>py27-django-devel</name>
+	<name>py30-django-devel</name>
+	<name>py31-django-devel</name>
+	<range><lt>15032,1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Django project reports:</p>
+	<blockquote cite="http://www.djangoproject.com/weblog/2010/dec/22/security/">
+	  <p>Today the Django team is issuing multiple releases
+	    -- Django 1.2.4, Django 1.1.3 and Django 1.3 beta 1 --
+	    to remedy two security issues reported to us. All users
+	    of affected versions of Django are urged to upgrade
+	    immediately.</p>
+	  <h3>Information leakage in Django administrative interface</h3>
+	  <p>The Django administrative interface, django.contrib.admin
+	    supports filtering of displayed lists of objects by fields
+	    on the corresponding models, including across database-level
+	    relationships. This is implemented by passing lookup arguments
+	    in the querystring portion of the URL, and options on the
+	    ModelAdmin class allow developers to specify particular
+	    fields or relationships which will generate automatic links
+	    for filtering.</p>
+	  <h3>Denial-of-service attack in password-reset mechanism</h3>
+	  <p>Django's bundled authentication framework,
+	    django.contrib.auth, offers views which allow users to
+	    reset a forgotten password. The reset mechanism involves
+	    generating a one-time token composed from the user's ID,
+	    the timestamp of the reset request converted to a base36
+	    integer, and a hash derived from the user's current password
+	    hash (which will change once the reset is complete, thus
+	    invalidating the token).</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <bid>45562</bid>
+      <bid>45563</bid>
+      <url>https://bugzilla.redhat.com/show_bug.cgi?id=665373</url>
+      <url>http://secunia.com/advisories/42715/</url>
+    </references>
+    <dates>
+      <discovery>2010-12-22</discovery>
+      <entry>2010-12-29</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="ff8b419a-0ffa-11e0-becc-0022156e8794">
     <topic>Drupal Views plugin -- cross-site scripting</topic>
     <affects>
