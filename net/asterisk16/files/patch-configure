@@ -1,6 +1,14 @@
---- ./configure.orig	2010-07-17 23:43:50.000000000 +0600
-+++ ./configure	2010-08-24 09:37:46.000000000 +0600
-@@ -4147,9 +4147,6 @@
+--- configure.orig	2010-12-29 07:55:41.000000000 +0100
++++ configure	2010-12-29 07:56:15.000000000 +0100
+@@ -620,7 +620,6 @@
+ 
+ ac_default_prefix=/usr/local
+ ac_default_prefix=/usr/local
+-ac_default_prefix=/usr
+ ac_header_list=
+ ac_subst_vars='SHELL
+ PATH_SEPARATOR
+@@ -4149,9 +4148,6 @@
  
  case "${host_os}" in
       freebsd*)
@@ -10,7 +18,7 @@
       ;;
       openbsd*)
  
-@@ -34755,7 +34752,7 @@
+@@ -36593,7 +36589,7 @@
  
  	fi
  
