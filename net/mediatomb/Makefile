@@ -80,7 +80,8 @@ CONFIGURE_ARGS+=	--disable-sqlite3
 .if defined(WITH_MYSQL)
 CONFIGURE_ARGS+=	--enable-mysql \
 			--with-mysql-cfg="${LOCALBASE}/bin/mysql_config"
-LIB_DEPENDS+=		mysqlclient_r:${PORTSDIR}/databases/mysql50-client
+USE_MYSQL=		yes
+IGNORE_WITH_MYSQL=	323 40 41
 .else
 CONFIGURE_ARGS+=	--disable-mysql
 .endif
