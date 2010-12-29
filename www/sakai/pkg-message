@@ -1,18 +1,17 @@
-================================
-To start Sakai correctly, please
-set the variable JAVA_OPTS with:
+==================================================================
+To start Sakai correctly, please set the variable JAVA_OPTS with:
 
-JAVA_OPTS="-server -Xms768m -Xmx768m 
--XX:PermSize=128m -XX:MaxPermSize=256m 
--XX:NewSize=192m -XX:MaxNewSize=384m"
+JAVA_OPTS="-server -Xms512m -Xmx1024m -XX:PermSize=128m \
+-XX:MaxPermSize=512m -XX:NewSize=192m -XX:MaxNewSize=384m \
+-Djava.awt.headless=true -Dhttp.agent=Sakai \
+-Dorg.apache.jasper.compiler.Parser.STRICT_QUOTE_ESCAPING=false \
+-Dsun.lang.ClassLoader.allowArraySyntax=true"
 
-Now you should start your Tomcat
-server and browse with:
+Now you should start your Tomcat server and browse with:
    http://your-server:8180/portal
 
-Login into the Sakai system with
-the user/admin and password/admin
+Login into the Sakai system with the user/admin and password/admin
 to configure and setup the system.
 
-More information please visit:
-http://www.sakaiproject.org
+More install information please visit:
+http://confluence.sakaiproject.org/display/DOC/Install+Guide+-+Binary+Install+(2.7)

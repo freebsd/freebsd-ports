@@ -6,33 +6,29 @@
 #
 
 PORTNAME=	sakai
-PORTVERSION=	2.5.4
+PORTVERSION=	2.7.1
 CATEGORIES=	www java
 MASTER_SITES=	http://source.sakaiproject.org/release/${PORTVERSION}/artifacts/
-DISTNAME=	${PORTNAME}-bin-${PORTVERSION}
+DISTFILES=	${PORTNAME}-bin-${PORTVERSION}.tgz
 
-MAINTAINER=	wenheping@gmail.com
+MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Sakai is an online Collaboration and Learning Environment
 
-RUN_DEPENDS=	${TOMCAT}:${PORTSDIR}/www/tomcat55
+RUN_DEPENDS=	${LOCALBASE}/${TOMCAT}:${PORTSDIR}/www/tomcat55
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.5
+JAVA_VERSION=	1.5+
 
 NO_BUILD=	yes
-WRKSRC=		${WRKDIR}/${PORTNAME}-bin-${PORTVERSION}
-TOMCAT=		${PREFIX}/tomcat5.5
+WRKSRC=		${WRKDIR}
+TOMCAT=		tomcat5.5
 TOMCATOWN=	www
 TOMCATGRP=	www
-WEBAPPDIR=	${PREFIX}/tomcat5.5/webapps
-SYSTEM_DIR=	common components licenses server shared
+SYSTEM_DIR=	common components licenses server shared webapps
 TOMCAT_DIR=	${PREFIX}/tomcat5.5
-LIC_DOC=	ECLv1.txt
 PLIST_SUB+=	SAKAI_VER="${PORTVERSION}"
 
 do-install:
-	cd ${WRKSRC}/webapps && ${FIND} . -type f -exec ${INSTALL} -g \
-		${TOMCATGRP} -o ${TOMCATOWN} -m 444 {} ${WEBAPPDIR}/{} \;
 
 .for i in ${SYSTEM_DIR}
 	cd ${WRKSRC}/${i} && ${FIND} . -type d \
@@ -40,7 +36,6 @@ do-install:
 	cd ${WRKSRC}/${i} && ${FIND} . -type f \
 		-exec ${INSTALL} -m 644 {} ${TOMCAT_DIR}/${i}/{} \;
 .endfor
-	${INSTALL_DATA} ${WRKSRC}/${LIC_DOC} ${TOMCAT_DIR}
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
