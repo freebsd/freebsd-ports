@@ -67,7 +67,7 @@ CONFIGURE_ARGS+=--enable-imfile --enable-mail --enable-imtemplate --enable-testb
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure
-	@${REINPLACE_CMD} -e 's|/lib/rsyslog/|${PREFIX}/lib/rsyslog/|'\
+	@${REINPLACE_CMD} -e 's|/usr/local/lib/rsyslog/|${PREFIX}/lib/rsyslog/|'\
 		${WRKSRC}/tools/syslogd.c
 	@${GREP} -rl '/etc/rsyslog.conf' ${WRKSRC}|${XARGS} ${REINPLACE_CMD} -e\
 		's|/etc/rsyslog.conf|${PREFIX}/etc/rsyslog.conf|'
