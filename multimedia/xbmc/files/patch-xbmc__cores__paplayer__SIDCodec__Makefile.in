@@ -1,0 +1,12 @@
+--- ./xbmc/cores/paplayer/SIDCodec/Makefile.in.orig	2010-06-11 19:53:24.000000000 +0200
++++ ./xbmc/cores/paplayer/SIDCodec/Makefile.in	2010-12-01 12:17:34.223710592 +0100
+@@ -1,7 +1,7 @@
+ ARCH=@ARCH@
+ 
+-CFLAGS +=-D_LINUX -DHAVE_UNIX -DHAVE_STRCASECMP -DHAVE_STRNCASECMP -DHAVE_IOS_OPENMODE -fPIC -Ilibsidplay/win/VC -Ibuilders/resid-builder/include/sidplay/builders -Ilibsidplay/include/sidplay -Iresid -Ilibsidplay/include -I../../../linux -I../../../utils -I../../../ -I../../../../guilib/ -fPIC
+-CXXFLAGS += $(CFLAGS)
++CFLAGS :=-D_LINUX -DHAVE_UNIX -DHAVE_STRCASECMP -DHAVE_STRNCASECMP -DHAVE_IOS_OPENMODE -fPIC -Ilibsidplay/win/VC -Ibuilders/resid-builder/include/sidplay/builders -Ilibsidplay/include/sidplay -Iresid -Ilibsidplay/include -I../../../linux -I../../../utils -I../../../ -I../../../../guilib/ -fPIC $(CFLAGS)
++CXXFLAGS := $(CFLAGS) $(CXXFLAGS)
+ ifeq ($(ARCH), powerpc-osx)
+ 	BUNDLE1_O=-lbundle1.o -L/usr/lib/gcc/powerpc-apple-darwin8/4.0.1/ -lgcc
+ endif
