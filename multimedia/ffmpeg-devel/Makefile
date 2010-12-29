@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	ffmpeg
-DISTVERSION=	2010-11-30
-PORTREVISION=	2
+DISTVERSION=	2010-12-29
 CATEGORIES=	multimedia audio ipv6 net
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	mm
@@ -47,6 +46,7 @@ OPTIONS=	ALSA	"Enable alsa input/output device" off \
 		SPEEX	"Speex audio decoder" off \
 		SSSE3	"SSSE3 support" on \
 		THEORA	"Theora encoder (implies OGG)" on \
+		VDPAU "NVidia vdpau support" off \
 		VORBIS	"Vorbis encoder via libvorbis (implies OGG)" on \
 		VP8	"VP8 codec via libvpx" on \
 		X264	"H.264 encoder" on \
@@ -107,8 +107,8 @@ DOC_FILES=	Changelog COPYING.GPLv2 COPYING.GPLv3 COPYING.LGPLv2.1 \
 		COPYING.LGPLv3 CREDITS INSTALL LICENSE MAINTAINERS README
 # under doc subdirectory
 DOC_DOCFILES=	APIchanges TODO avutil.txt developer.html faq.html \
-		ffmpeg-doc.html ffplay-doc.html ffprobe-doc.html \
-		ffserver-doc.html general.html issue_tracker.txt \
+		ffmpeg.html ffplay.html ffprobe.html \
+		ffserver.html general.html issue_tracker.txt \
 		libavfilter.html optimization.txt rate_distortion.txt \
 		snow.txt soc.txt swscale.txt tablegen.txt viterbi.txt
 PORTDOCS=	*
@@ -281,6 +281,14 @@ LIB_DEPENDS+=	theora.0:${PORTSDIR}/multimedia/libtheora
 CONFIGURE_ARGS+=	--enable-libtheora
 .else
 CONFIGURE_ARGS+=	--disable-libtheora
+.endif
+
+# vdpau
+.ifndef(WITHOUT_VDPAU)
+LIB_DEPENDS+=   vdpau.1:${PORTSDIR}/multimedia/libvdpau
+CONFIGURE_ARGS+=	--enable-vdpau
+.else
+CONFIGURE_ARGS+=	--disable-vdpau
 .endif
 
 # vorbis
