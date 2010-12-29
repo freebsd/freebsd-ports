@@ -10,7 +10,7 @@ PORTVERSION=	1.0
 CATEGORIES=	x11
 MASTER_SITES=	ftp://ftp.lemis.com/pub/
 
-MAINTAINER=	ports@FreeBSD.Org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Utility to set title on an xterm
 
 NO_WRKSUBDIR=	YES
