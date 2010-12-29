@@ -2502,9 +2502,6 @@ PKG_ARGS+=		-o ${PKGORIGIN}
 .if defined(CONFLICTS) && !defined(DISABLE_CONFLICTS)
 PKG_ARGS+=		-C "${CONFLICTS}"
 .endif
-.if defined(CONFLICTS_BUILD) && !defined(DISABLE_CONFLICTS)
-PKG_ARGS+=		-C "${CONFLICTS_BUILD}"
-.endif
 .if defined(CONFLICTS_INSTALL) && !defined(DISABLE_CONFLICTS)
 PKG_ARGS+=		-C "${CONFLICTS_INSTALL}"
 .endif
