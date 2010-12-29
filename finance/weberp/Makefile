@@ -14,6 +14,8 @@ DISTNAME=	webERP_${PORTVERSION}
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	An Open-Source Web-Based ERP System
 
+PORTSCOUT=	skipv:3.12
+
 USE_ZIP=	yes
 USE_PHP=	mysql gettext
 USE_GETTEXT=	yes

@@ -15,6 +15,8 @@ DISTNAME=	2867d1288196553-pligg-content-management-system-1-1-2-pligg-cms-1.1.2
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	An Open Source Web2.0 CMS
 
+PORTSCOUT=	limit:^1\.1\.
+
 USE_ZIP=	yes
 USE_PHP=	mysql
 WRKSRC=		${WRKDIR}/pligg
