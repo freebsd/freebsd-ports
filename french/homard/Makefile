@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	homard
-DISTVERSION=	9.6-1
-PORTREVISION=	1
+DISTVERSION=	9.8-1
 CATEGORIES=	french cad linux
 
 MAINTAINER=	ports@FreeBSD.org
@@ -64,7 +63,6 @@ do-install:
 .for doc in ${DOCS}
 	${INSTALL_DATA} ${WRKSRC}/HOMARD/${doc} ${DOCSDIR}
 .endfor
-	${CP} -R ${WRKSRC}/${HOMARDWDIR}/Intranet ${DOCSDIR}
 	@${ECHO_MSG} "===> Documentation installed in ${DOCSDIR}."
 .endif
 .if !defined(NOPORTEXAMPLES)
