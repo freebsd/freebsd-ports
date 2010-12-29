@@ -1,0 +1,11 @@
+--- ./Makefile.include.in.orig	2010-07-12 00:23:28.000000000 +0200
++++ ./Makefile.include.in	2010-12-01 12:17:34.287118766 +0100
+@@ -1,7 +1,7 @@
+ AR=ar
+ ARFLAGS=crus
+ RM=rm -rf
+-SHELL=/bin/bash
++SHELL=/bin/sh
+ ARCH=@ARCH@
+ abs_top_srcdir=@abs_top_srcdir@
+ prefix=@prefix@

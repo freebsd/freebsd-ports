@@ -335,6 +335,7 @@
     SUBDIR += x264-devel
     SUBDIR += xanim
     SUBDIR += xawtv
+    SUBDIR += xbmc
     SUBDIR += xdvshow
     SUBDIR += xfce4-media
     SUBDIR += xfce4-parole

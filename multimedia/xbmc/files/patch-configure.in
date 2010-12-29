@@ -1,0 +1,182 @@
+Index: configure.in
+===================================================================
+--- configure.in	(revision 35649)
++++ configure.in	(working copy)
+@@ -19,10 +19,10 @@
+ [
+   if [[ "$host_vendor" != "apple" ]]; then
+     AC_MSG_CHECKING([for lib$2 soname])
+-    $1_SONAME=$( $CC -print-file-name=lib$2.so | \
++    $1_SONAME=$( LIBRARY_PATH=/usr/local/lib $CC -print-file-name=lib$2.so | \
+       while read output; do objdump -p $output | \
+         grep "SONAME" | \
+-        sed -e 's/ \+SONAME \+//'; done 2> /dev/null )
++        sed -e 's/ *SONAME *//'; done 2> /dev/null )
+   else
+     AC_MSG_CHECKING([for lib$2 dylib])
+     gcc_lib_path=[`$CC -print-search-dirs 2>/dev/null | fgrep libraries: | sed 's/[^=]*=\(.*\)/\1/' | sed 's/:/ /g'`]
+@@ -294,6 +294,12 @@
+   [use_libbluray=$enableval],
+   [use_libbluray=auto])
+ 
++AC_ARG_ENABLE([libmms],
++  [AS_HELP_STRING([--enable-libmms],
++  [enable mms:// and mmsh:// support (default is auto)])],
++  [use_libmms=$enableval],
++  [use_libmms=auto])
++
+ AC_ARG_WITH([lirc-device],
+   [AS_HELP_STRING([--with-lirc-device=file],
+   [specify the default LIRC device (default is /dev/lircd)])],
+@@ -359,6 +365,18 @@
+   x86_64-*-linux-gnu*)
+      ARCH="x86_64-linux"
+      ;;
++  i386-*-freebsd*)
++     ARCH="x86-freebsd"
++     MAKE="gmake"
++	 CFLAGS="$CFLAGS -I/usr/local/include"
++	 CXXFLAGS="$CXXFLAGS -I/usr/local/include"
++     ;;
++  amd64-*-freebsd*)
++     ARCH="x86_64-freebsd"
++     MAKE="gmake"
++	 CFLAGS="$CFLAGS -I/usr/local/include"
++	 CXXFLAGS="$CXXFLAGS -I/usr/local/include"
++     ;;
+   i386-apple-darwin*)
+      ARCH="x86-osx"
+      # define i386 or x86_64, cannot use $HOSTTYPE as it reports x86_64 on 10.6 regardless of kernel flavor
+@@ -543,7 +561,11 @@
+ AC_CHECK_LIB([ass], [ass_set_message_cb],,use_external_libass="no")
+ AC_CHECK_LIB([bz2],         [main],, AC_MSG_ERROR($missing_library))
+ AC_CHECK_LIB([jpeg],        [main],, AC_MSG_ERROR($missing_library)) # check for cximage
++if echo "$ARCH" | grep -q freebsd; then
++AC_CHECK_LIB([pthread],     [main],LIBS="-pthread $LIBS", AC_MSG_ERROR($missing_library))
++else
+ AC_CHECK_LIB([pthread],     [main],, AC_MSG_ERROR($missing_library))
++fi
+ AC_CHECK_LIB([lzo2],        [main],, AC_MSG_ERROR($missing_library))
+ AC_CHECK_LIB([z],           [main],, AC_MSG_ERROR($missing_library))
+ AC_CHECK_LIB([ssl],         [main],, AC_MSG_ERROR($missing_library))
+@@ -581,9 +603,6 @@
+ PKG_CHECK_MODULES([SAMPLERATE], [samplerate],
+   [INCLUDES="$INCLUDES $SAMPLERATE_CFLAGS"; LIBS="$LIBS $SAMPLERATE_LIBS"],
+   AC_MSG_ERROR($missing_library))
+-PKG_CHECK_MODULES([MMS],        [libmms],
+-  [INCLUDES="$INCLUDES $MMS_CFLAGS"; LIBS="$LIBS $MMS_LIBS"],
+-  AC_MSG_ERROR($missing_library))
+ PKG_CHECK_MODULES([FREETYPE2],  [freetype2],
+   [INCLUDES="$INCLUDES $FREETYPE2_CFLAGS"; LIBS="$LIBS $FREETYPE2_LIBS"],
+   AC_MSG_ERROR($missing_library))
+@@ -620,6 +639,29 @@
+   ]
+ )
+ 
++# check for libmms
++AS_CASE([x$use_libmms],
++  [xyes],[
++    PKG_CHECK_MODULES([LIBMMS],[libmms],[use_libmms="yes"], AC_MSG_ERROR($missing_library))
++  ],
++  [xauto],[
++    PKG_CHECK_MODULES([LIBMMS],[libmms],[use_libmms="yes"], [use_libmms="no"])
++  ])
++
++AS_CASE([x$use_libmms],
++  [xyes],[
++    INCLUDES="$INCLUDES $LIBMMS_CFLAGS";
++    LIBS="$LIBS $LIBMMS_LIBS";
++    if test "$host_vendor" != "apple"; then
++      XB_FIND_SONAME([MMS], [mms], [use_libmms])
++    fi;
++    AC_DEFINE([HAVE_LIBMMS], 1, [System has libmms library])
++    AC_SUBST([HAVE_LIBMMS], 1)
++  ],[
++    AC_SUBST([HAVE_LIBMMS], 0)
++  ]
++)
++
+ # platform dependent libraries
+ if test "$host_vendor" = "apple" ; then
+   AC_CHECK_LIB([iconv],     [main],, AC_MSG_ERROR($missing_library))
+@@ -644,8 +686,10 @@
+   AC_CHECK_HEADER([FLAC/stream_decoder.h],, AC_MSG_ERROR($missing_library))
+   AC_CHECK_LIB([smbclient],  [main],, AC_MSG_ERROR($missing_library))
+   AC_CHECK_LIB([SDL_mixer],  [main],, AC_MSG_ERROR($missing_library))
+-  AC_CHECK_LIB([dl],         [main],, AC_MSG_ERROR($missing_library))
+-  AC_CHECK_LIB([resolv],     [main],, AC_MSG_ERROR($missing_library))
++  if echo "$ARCH" | grep -vq freebsd; then
++    AC_CHECK_LIB([dl],     [main],, AC_MSG_ERROR($missing_library))
++    AC_CHECK_LIB([resolv],     [main],, AC_MSG_ERROR($missing_library))
++  fi
+   AC_CHECK_LIB([jasper],     [main],, AC_MSG_ERROR($missing_library)) # check for cximage
+   AC_CHECK_LIB([tiff],       [main],, AC_MSG_ERROR($missing_library))
+   AC_CHECK_LIB([rt],         [clock_gettime],, AC_MSG_ERROR($missing_library))
+@@ -740,8 +784,8 @@
+   AC_MSG_RESULT($faac_disabled)
+ else
+   if test "$use_faac" = "yes"; then
+-    AC_CHECK_LIB([faac], [main],,
+-      use_faac=no;AC_MSG_RESULT($faac_not_found))
++    AC_CHECK_LIB([faac], [main], LIBS="-lfaac -lstdc++ $LIBS",
++      use_faac=no;AC_MSG_RESULT($faac_not_found), [-lstdc++])
+   else
+     AC_MSG_RESULT($faac_disabled)
+   fi
+@@ -1211,6 +1255,12 @@
+   final_message="$final_message\n  Bluray:\tNo"
+ fi
+ 
++if test "$use_libmms" = "yes"; then
++  final_message="$final_message\n  MMS Support:\tYes"
++else
++  final_message="$final_message\n  MMS Support:\tNo"
++fi
++
+ if test "$use_mid" = "yes"; then
+   final_message="$final_message\n  MID Support:\tYes"
+   SDL_DEFINES="$SDL_DEFINES -DMID"
+@@ -1735,7 +1785,7 @@
+       --enable-static \
+       --disable-shared \
+       --cc="$CC" &&
+-    make dvdread-config &&
++    $MAKE dvdread-config &&
+     mkdir -p `pwd`/../includes/dvdread
+     cp `pwd`/../libdvdread/src/*.h `pwd`/../includes/dvdread
+   else
+@@ -1744,13 +1794,14 @@
+       --prefix="${prefix}" --includedir="${includedir}" --libdir="${libdir}" --datadir="${datadir}" \
+       --host=$host_alias \
+       --build=$build_alias \
+-      --target=$target_alias \      
++      --target=$target_alias \
+       --enable-static \
+       --disable-shared \
+       --disable-strip \
+       --disable-opts \
++      --make=$MAKE \
+       --cc="$CC" &&
+-    make dvdread-config &&
++    $MAKE dvdread-config &&
+     mkdir -p `pwd`/../includes/dvdread
+     cp `pwd`/../libdvdread/src/*.h `pwd`/../includes/dvdread
+   fi
+@@ -1766,6 +1817,17 @@
+       --enable-static \
+       --disable-shared \
+       --cc="$CC"
++  elif echo "$ARCH" | grep -q "freebsd" ; then  
++    ./configure2 \
++      --extra-cflags="$CFLAGS $DVDREAD_CFLAGS -I/usr/local/include" \
++      --extra-ldflags="-L/usr/local/lib" \
++      --host=$host_alias \
++      --build=$build_alias \
++      --target=$target_alias \      
++      --enable-static \
++      --disable-shared \
++      --make=$MAKE \
++      --cc="$CC"
+   else
+     ./configure2 \
+       --extra-cflags="$CFLAGS $DVDREAD_CFLAGS -I`pwd`/../includes" \

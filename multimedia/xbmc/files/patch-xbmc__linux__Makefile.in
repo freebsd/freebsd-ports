@@ -1,0 +1,15 @@
+Index: xbmc/linux/Makefile.in
+===================================================================
+--- xbmc/linux/Makefile.in	(revision 35575)
++++ xbmc/linux/Makefile.in	(working copy)
+@@ -9,6 +9,10 @@
+ 
+ SRCS=ConvUtils.cpp XEventUtils.cpp XFileUtils.cpp XHandle.cpp XSyncUtils.cpp XTimeUtils.cpp XMemUtils.cpp XThreadUtils.cpp NetworkLinux.cpp LinuxResourceCounter.cpp LinuxTimezone.cpp XRandR.cpp XCriticalSection.cpp XLCDproc.cpp HALManager.cpp HALPowerSyscall.cpp ConsoleDeviceKitPowerSyscall.cpp DBusUtil.cpp DBusMessage.cpp ZeroconfAvahi.cpp ZeroconfBrowserAvahi.cpp HALProvider.cpp PosixMountProvider.cpp DeviceKitDisksProvider.cpp UDisksProvider.cpp ConsoleUPowerSyscall.cpp
+ 
++ifeq ($(findstring freebsd,$(ARCH)), freebsd)
++	SRCS+=FreeBSDGNUReplacements.cpp
++endif
++
+ LIB=linux.a
+ 
+ include ../../Makefile.include
