@@ -7,6 +7,7 @@
 
 PORTNAME=	asterisk
 PORTVERSION=	1.8.1.1
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://downloads.asterisk.org/pub/telephony/asterisk/ \
 		http://downloads.asterisk.org/pub/telephony/asterisk/old-releases/
@@ -25,7 +26,7 @@ ONLY_FOR_ARCHS=	i386 amd64 sparc64
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/openh323" \
 		LDFLAGS="-L${LOCALBASE}/lib"
-CONFIGURE_ARGS=	--with-gsm=${LOCALBASE} --localstatedir=/var
+CONFIGURE_ARGS=	--with-gsm=${LOCALBASE}
 CPPFLAGS=	-I${LOCALBASE}/include -I${LOCALBASE}/include/openh323
 USE_GMAKE=	yes
 USE_GNOME=	libxml2
@@ -67,11 +68,17 @@ GROUPS=	${ASTERISK_GROUP} dahdi
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "i386" || ${ARCH} == "amd64"
+.if ${PREFIX} == ${LOCALBASE}
+VARDIR=/var
+.else
+VARDIR=${PREFIX}/var
+.endif
+
+.if ${ARCH} == "i386" || ${ARCH} == "amd64" || ${ARCH} == "sparc64"
 OPTIONS+=	DAHDI		"Enable DAHDI support" on
 
 .if defined(WITH_IODBC) && defined(WITH_UODBC)
-IGNORE= please select only one of iodbc or unixODBC
+IGNORE=	please select only one of iodbc or unixODBC
 .endif
 
 # Include this since we have altered OPTIONS.
@@ -81,6 +88,7 @@ IGNORE= please select only one of iodbc or unixODBC
 SUB_LIST+=	ASTERISK_USER=${ASTERISK_USER}
 PLIST_SUB+=	ASTERISK_USER=${ASTERISK_USER}
 PLIST_SUB+=	ASTERISK_GROUP=${ASTERISK_GROUP}
+PLIST_SUB+=	VARDIR=${VARDIR}
 
 .if !defined(WITH_H323)
 PLIST_SUB+=	WITH_H323="@comment "
@@ -255,6 +263,6 @@ post-patch:
 	${REINPLACE_CMD} -e 's|/var/lib|${PREFIX}/share|g' ${WRKSRC}/configs/musiconhold.conf.sample
 
 post-install:
-	@${CHOWN} -R ${ASTERISK_USER}:${ASTERISK_GROUP} /var/db/asterisk /var/log/asterisk /var/spool/asterisk
+	@${CHOWN} -R ${ASTERISK_USER}:${ASTERISK_GROUP} ${VARDIR}/db/asterisk ${VARDIR}/log/asterisk ${VARDIR}/spool/asterisk
 
 .include <bsd.port.post.mk>
