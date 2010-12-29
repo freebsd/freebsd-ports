@@ -88,10 +88,6 @@ post-install:
 
 .ifdef MNAME
 
-.if ${MNAME} == "gssapi" && ${OSVERSION} < 700000
-IGNORE=	with gssapi module is only supported on FreeBSD 7.x or later
-.endif
-
 CONFIGURE_ARGS+=	--disable-rsyslogd --disable-klog
 
 DESCR?=		${.CURDIR}/../rsyslog5/pkg-descr
