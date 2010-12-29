@@ -11,7 +11,6 @@ CATEGORIES=	devel
 MASTER_SITES=	SF \
 		http://voodoo.com.ua/dotconfpp/
 
-DISTNAME=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	mark_sf@kikg.ifmo.ru
 COMMENT=	Configuration file parser written in C++

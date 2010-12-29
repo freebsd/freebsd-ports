@@ -9,7 +9,6 @@ PORTNAME=		logrotate
 PORTVERSION=		3.7.9
 CATEGORIES=		sysutils
 MASTER_SITES=		https://fedorahosted.org/releases/l/o/logrotate/
-DISTNAME=		${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=		js@iksz.hu
 COMMENT=		Daemon to rotate, compress, remove and mail system log files

@@ -9,7 +9,6 @@ PORTNAME=	e00compr
 PORTVERSION=	1.0.1
 CATEGORIES=	devel
 MASTER_SITES=	http://avce00.maptools.org/dl/
-DISTNAME=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	wenheping@gmail.com
 COMMENT=	A Library to Read/Write Compressed E00 Files

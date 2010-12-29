@@ -10,7 +10,6 @@ PORTVERSION=	1.6
 PORTREVISION=	1
 CATEGORIES=	converters mail news
 MASTER_SITES=	ftp://ftp.andrew.cmu.edu/pub/mpack/
-DISTNAME=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	External MIME packer/unpacker

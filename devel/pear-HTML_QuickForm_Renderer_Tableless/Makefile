@@ -8,7 +8,6 @@
 PORTNAME=	HTML_QuickForm_Renderer_Tableless
 PORTVERSION=	0.6.1
 CATEGORIES=	devel www pear
-DISTNAME=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	chris@smartt.com
 COMMENT=	Implementation of Tableless Renderer for HTML_QuickForm

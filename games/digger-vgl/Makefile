@@ -10,7 +10,6 @@ PORTVERSION=	20020314
 PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	http://www.digger.org/
-DISTNAME=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	FreeBSD graphics console (VGL) version of the famous Digger game

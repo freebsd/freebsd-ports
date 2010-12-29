@@ -10,7 +10,6 @@ PORTVERSION=	1.004
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
-DISTNAME=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	jeffhung@mail2000.com.tw
 COMMENT=	Perl5 module that report exceptions with formatted text call-stack.

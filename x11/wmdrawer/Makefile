@@ -12,7 +12,6 @@ PORTREVISION=	8
 CATEGORIES=	x11 windowmaker
 MASTER_SITES=	http://people.easter-eggs.org/~valos/wmdrawer/:tarball \
 		http://wikitest.freebsd.org/wiki/common/:pixmap
-DISTNAME=	${PORTNAME}-${PORTVERSION}
 DISTFILES=	${EXTRACT_ONLY}:tarball \
 		logo-beastie.png:pixmap
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}

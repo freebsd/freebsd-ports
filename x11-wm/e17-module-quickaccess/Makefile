@@ -10,7 +10,6 @@ PORTVERSION=	20101003
 CATEGORIES=	x11-wm enlightenment
 MASTER_SITES=	http://files.roorback.net/e17/2010-10-03/modules/
 PKGNAMEPREFIX=	e17-module-
-DISTNAME=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	magik@roorback.net
 COMMENT=	An e17 module to provide quick access to applications

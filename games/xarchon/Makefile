@@ -11,7 +11,6 @@ PORTREVISION=	5
 CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.seul.org/pub/xarchon/ \
 		http://xarchon.seul.org/
-DISTNAME=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A chess-like strategy game with battle options

@@ -12,7 +12,6 @@ PORTEPOCH=	2
 CATEGORIES=	multimedia audio kde
 MASTER_SITES=	http://freebsd.ricin.com/ports/distfiles/ \
 		http://kmplayer.kde.org/pkgs/
-DISTNAME=	${PORTNAME}-${PORTVERSION}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	kde@FreeBSD.org

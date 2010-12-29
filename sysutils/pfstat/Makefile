@@ -10,7 +10,6 @@ PORTVERSION=	2.4
 PORTREVISION=	4
 CATEGORIES=	sysutils net
 MASTER_SITES=	http://www.benzedrine.cx/
-DISTNAME=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	mlaier@FreeBSD.org
 COMMENT=	Utility to render graphical statistics for pf

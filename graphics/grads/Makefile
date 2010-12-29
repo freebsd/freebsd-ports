@@ -11,7 +11,6 @@ PORTREVISION=	3
 CATEGORIES=	graphics science math
 MASTER_SITES=	ftp://grads.iges.org/grads/1.9/:src \
 		ftp://grads.iges.org/grads/:other
-DISTNAME=	${PORTNAME}-${PORTVERSION}
 DISTFILES=	${PORTNAME}-src-${PORTVERSION}${EXTRACT_SUFX}:src \
 		example.tar.gz:other
 EXTRACT_ONLY=	${PORTNAME}-src-${PORTVERSION}${EXTRACT_SUFX}

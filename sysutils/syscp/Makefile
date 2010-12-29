@@ -10,7 +10,6 @@ PORTVERSION=	1.4.2.1
 PORTREVISION=	2
 CATEGORIES=	sysutils www
 MASTER_SITES=	http://files.syscp.org/releases/tgz/
-DISTNAME=	${PORTNAME}-${PORTVERSION}
 
 PATCH_DIST_STRIP=	-p0
 

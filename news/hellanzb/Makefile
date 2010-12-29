@@ -10,7 +10,6 @@ PORTNAME=	hellanzb
 PORTVERSION=	0.13
 CATEGORIES=	news
 MASTER_SITES=	http://www.hellanzb.com/distfiles/
-DISTNAME=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	pjenvey@groovie.org
 COMMENT=	Nzb downloader and post processor

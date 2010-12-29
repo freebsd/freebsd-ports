@@ -12,7 +12,6 @@ CATEGORIES=	ports-mgmt sysutils perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	../../authors/id/V/VV/VVELOX
 PKGNAMEPREFIX=	p5-
-DISTNAME=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	vvelox@vvelox.net
 COMMENT=	Finds updates for FreeBSD pkgs by checking the ports index

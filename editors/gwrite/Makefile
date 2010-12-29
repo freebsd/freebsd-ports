@@ -9,7 +9,6 @@ PORTNAME=		gwrite
 PORTVERSION=		0.3.0
 CATEGORIES=		editors python
 MASTER_SITES=		GOOGLE_CODE
-DISTNAME=		${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=		jupengfei@gmail.com
 COMMENT=		A simple HTML format editor

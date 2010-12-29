@@ -11,7 +11,6 @@ CATEGORIES=	devel
 MASTER_SITES=	http://www.codon.org.uk/~mjg59/libx86/downloads/	\
 		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	jkim
-DISTNAME=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	jkim@FreeBSD.org
 COMMENT=	A hardware-independent library for executing real-mode x86 code

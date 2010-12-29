@@ -12,7 +12,6 @@ CATEGORIES=	finance
 MASTER_SITES=	${MASTER_SITE_LOCAL}			\
 		http://tinyerp.org/download/sources/
 MASTER_SITE_SUBDIR=	thierry
-DISTNAME=	${PORTNAME}-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	jhaarman-keyword-tinyerpPort.fd583c@projects.synantics.net

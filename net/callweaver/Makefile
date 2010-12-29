@@ -9,7 +9,6 @@ PORTVERSION=	1.2.1
 PORTREVISION=	4
 CATEGORIES=	net
 MASTER_SITES=	http://devs.callweaver.org/release/
-DISTNAME=	${PORTNAME}-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	melifaro@ipfw.ru

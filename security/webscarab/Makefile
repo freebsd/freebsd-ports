@@ -11,7 +11,6 @@ CATEGORIES=	security www java
 MASTER_SITES=	${MASTER_SITE_LOCAL} \
 		http://people.freebsd.org/~niels/distfiles/
 MASTER_SITE_SUBDIR=	niels
-DISTNAME=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	niels@FreeBSD.org
 COMMENT=	Framework for analysing HTTP and HTTPS web application traffic

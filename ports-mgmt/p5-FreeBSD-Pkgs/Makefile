@@ -10,7 +10,6 @@ PORTVERSION=	0.1.1
 CATEGORIES=	ports-mgmt sysutils perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
-DISTNAME=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	vvelox@vvelox.net
 COMMENT=	Parses the contents of FreeBSD package DB under /var/db/pkg

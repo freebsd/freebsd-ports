@@ -9,7 +9,6 @@ PORTNAME=	akpop3d
 PORTVERSION=	0.7.7
 CATEGORIES=	mail
 MASTER_SITES=	http://www.synflood.at/akpop3d/
-DISTNAME=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	POP3 daemon aimed to be small and secure

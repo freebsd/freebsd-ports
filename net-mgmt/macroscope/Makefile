@@ -11,7 +11,6 @@ PORTREVISION=	4
 CATEGORIES=		net-mgmt
 MASTER_SITES=		ftp://ftp.berlios.de/pub/macroscope/ \
 			http://white-raven.pisem.net/
-DISTNAME=		${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=		white_raven@users.berlios.de
 COMMENT=		User and IP traffic management with Web interface

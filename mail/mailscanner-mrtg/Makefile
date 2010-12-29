@@ -10,7 +10,6 @@ PORTVERSION=	0.11.00
 PORTREVISION=	6
 CATEGORIES=	mail
 MASTER_SITES=	SF/mailscannermrtg/${PORTNAME}-UNSTABLE/${PORTVERSION}
-DISTNAME=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Allows mrtg to monitor many aspects of your MailScanner machine

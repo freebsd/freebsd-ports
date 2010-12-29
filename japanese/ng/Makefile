@@ -10,7 +10,6 @@ PORTVERSION=	1.4.4
 PORTREVISION=	2
 CATEGORIES=	japanese editors
 MASTER_SITES=	http://tomato.sakura.ne.jp/~amura/archives/ng/
-DISTNAME=	${PORTNAME}-${PORTVERSION}
 
 PATCH_SITES=	${MASTER_SITES}
 PATCHFILES=	ng-1.4.4-replace_bug.patch

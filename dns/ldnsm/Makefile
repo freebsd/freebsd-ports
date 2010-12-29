@@ -9,7 +9,6 @@ PORTNAME=	ldnsm
 PORTVERSION=	0.2.1
 CATEGORIES=	dns
 MASTER_SITES=	http://vvelox.net/src/ldap/
-DISTNAME=	${PORTNAME}-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	vvelox@vvelox.net

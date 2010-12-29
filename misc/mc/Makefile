@@ -12,7 +12,6 @@ CATEGORIES=	misc shells
 MASTER_SITES=	http://www.midnight-commander.org/downloads/ \
 		${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	utils/file/managers/mc
-DISTNAME=	${PORTNAME}-${PORTVERSION}
 EXTRACT_SUFX=	.tar.lzma
 
 PATCH_SITES=	${MASTER_SITES}

@@ -11,7 +11,6 @@ PORTEPOCH=	1
 CATEGORIES=	x11-wm enlightenment
 MASTER_SITES=	http://files.roorback.net/e17/2010-10-03/modules/
 PKGNAMEPREFIX=	e17-module-
-DISTNAME=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	stas@FreeBSD.org
 COMMENT=	An e17 Moon Clock module

@@ -10,7 +10,6 @@ PORTVERSION=	1.0
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.lexa.ru/pub/domestic/snar/	\
 		ftp://ftp.lucky.net/pub/unix/local/
-DISTNAME=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tell programs to which IP-address they should bind

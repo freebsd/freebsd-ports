@@ -10,7 +10,6 @@ PORTVERSION=	5.0.1.3
 CATEGORIES=	japanese perl5
 MASTER_SITES=	http://dist.bsdlab.org/ \
 		http://www.srekcah.org/~utashiro/perl/scripts/mg/
-DISTNAME=	${PORTNAME}-${PORTVERSION}
 EXTRACT_SUFX=	# None
 EXTRACT_ONLY=	# None
 

@@ -11,7 +11,6 @@ CATEGORIES=	japanese
 MASTER_SITES=	http://openmya.hacker.jp/hasegawa/jstrings/ \
 		http://devel.aquahill.net/ports/jstrings/ \
 		http://www.kokone.to/~ryo/lib/ports/jstrings/
-DISTNAME=	${PORTNAME}-${PORTVERSION}
 EXTRACT_SUFX=	.lzh
 
 MAINTAINER=	ryo@aquahill.net

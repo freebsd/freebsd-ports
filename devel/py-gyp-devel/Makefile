@@ -11,7 +11,6 @@ PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	http://people.freebsd.org/~daichi/distfiles/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTNAME=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	daichi@FreeBSD.org
 COMMENT=	Generate Your Projects

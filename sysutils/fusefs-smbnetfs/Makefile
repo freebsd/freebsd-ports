@@ -9,7 +9,6 @@ PORTVERSION=	0.3.7
 CATEGORIES=	sysutils net
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/SMBNetFS-${PORTVERSION}
 PKGNAMEPREFIX=	fusefs-
-DISTNAME=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	dindin@freebsd.org.ua
 COMMENT=	Mount smb shares (Fuse filesystem)

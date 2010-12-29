@@ -9,7 +9,6 @@ PORTNAME=		ansiprint
 PORTVERSION=		1.0
 CATEGORIES=		print
 MASTER_SITES=		SF
-DISTNAME=		${PORTNAME}-${PORTVERSION}
 EXTRACT_SUFX=		.tgz
 
 MAINTAINER=		steve@stephen-fisher.com

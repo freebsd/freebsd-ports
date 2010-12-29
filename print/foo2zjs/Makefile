@@ -11,7 +11,6 @@ PORTREVISION=	4
 CATEGORIES=	print
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE} \
 		${MASTER_SITE_LOCAL:S,$,acm/${PORTNAME}/,}
-DISTNAME=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Driver for printers that use the ZjStream wire protocol

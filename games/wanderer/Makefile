@@ -10,7 +10,6 @@ PORTVERSION=	3.2
 CATEGORIES=	games
 MASTER_SITES=	http://www.e271.net/~marina/ \
 		http://www.surferz.net/~marina/
-DISTNAME=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	marina@surferz.net
 COMMENT=	Rogue like adventure game

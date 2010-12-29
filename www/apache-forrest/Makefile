@@ -14,7 +14,6 @@ MASTER_SITES=		${MASTER_SITE_APACHE} \
 			http://mirror.nohup.it/apache/forrest/ \
 			ftp://mirror.nohup.it/apache/forrest/
 MASTER_SITE_SUBDIR=	forrest
-DISTNAME=		${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=		nivit@FreeBSD.org
 COMMENT=		A tool for rapid development of small sites

@@ -9,7 +9,6 @@ PORTNAME=	bufferpool
 PORTVERSION=	0.0.1
 CATEGORIES=	devel
 MASTER_SITES=	http://live.polito.it/files/downloads/bufferpool/
-DISTNAME=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	err@tollari.org
 COMMENT=	Bufferpool - the memory management library Feng and Felix depend upon

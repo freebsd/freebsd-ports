@@ -9,7 +9,6 @@ PORTNAME=	avce00
 PORTVERSION=	2.0.0
 CATEGORIES=	devel
 MASTER_SITES=	http://avce00.maptools.org/dl/
-DISTNAME=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	wenheping@gmail.com
 COMMENT=	An OpenSource C library convert Arc/Info Vector Coverages to E00

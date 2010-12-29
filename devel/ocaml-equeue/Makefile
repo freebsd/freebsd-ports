@@ -11,7 +11,6 @@ PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	http://www.ocaml-programming.de/packages/
 PKGNAMEPREFIX=	ocaml-
-DISTNAME=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	stas@FreeBSD.org
 COMMENT=	The Equeue library for OCaml

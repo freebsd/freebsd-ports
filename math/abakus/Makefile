@@ -10,7 +10,6 @@ PORTREVISION=	9
 CATEGORIES=	math kde
 MASTER_SITES=	http://purinchu.net/abakus/ \
 		http://www.athame.co.uk/mirror/
-DISTNAME=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	makc@FreeBSD.org
 COMMENT=	Michael Pyne's Abakus Calculator

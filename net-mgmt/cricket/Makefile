@@ -10,7 +10,6 @@ PORTVERSION=	1.0.5
 PORTREVISION=	7
 CATEGORIES=	net-mgmt
 MASTER_SITES=	SF
-DISTNAME=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A high performance, extremely flexible monitoring system

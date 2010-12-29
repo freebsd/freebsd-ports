@@ -11,7 +11,6 @@ CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	../by-authors/id/N/NU/NUFFIN
 PKGNAMEPREFIX=	p5-
-DISTNAME=       ${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	fernan@iib.unsam.edu.ar
 COMMENT=	Stash your lexical goodness

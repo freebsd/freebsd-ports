@@ -8,7 +8,6 @@ PORTNAME=	aimsniff
 PORTVERSION=	0.9d
 CATEGORIES=	security
 MASTER_SITES=	SF/${PORTNAME}/AIM%20Sniff/${PORTVERSION}
-DISTNAME=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	andrew@amrx.net
 COMMENT=	AOL Instant Messanger Sniffing and Reading Tool

@@ -9,7 +9,6 @@ PORTNAME=	znotes
 PORTVERSION=	0.4.3
 CATEGORIES=	deskutils
 MASTER_SITES=	SF/${PORTNAME}/${PORTVERSION}/
-DISTNAME=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	g.veniamin@googlemail.com
 COMMENT=	Simple notes based on QT4

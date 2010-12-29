@@ -11,7 +11,6 @@ CATEGORIES=	devel python
 MASTER_SITES=	http://www.voidspace.org.uk/downloads/ \
 		http://whotookspaz.org/misc/freebsd/py-akismet/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTNAME=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	jacob@whotookspaz.org
 COMMENT=	A Python interface to the Akismet API

@@ -10,7 +10,6 @@ PORTVERSION=	1.0
 CATEGORIES=	sysutils
 MASTER_SITES=	http://ext.by/jkill/
 PKGNAMEPREFIX=
-DISTNAME=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	pavel@ext.by
 COMMENT=	Shutdowns a running jail and all its processes

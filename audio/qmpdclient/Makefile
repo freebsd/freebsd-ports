@@ -10,7 +10,6 @@ PORTVERSION=	1.1.2
 PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://dump.bitcheese.net/files/dedycec/
-DISTNAME=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	uyamba@gmail.com
 COMMENT=	Easy to use musicpd client written in QT4

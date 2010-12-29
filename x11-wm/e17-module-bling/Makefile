@@ -11,7 +11,6 @@ PORTREVISION=	4
 CATEGORIES=	x11-wm
 MASTER_SITES=	ftp://ftp.springdaemons.com/pub/snapshots/e17/
 PKGNAMEPREFIX=	e17-module-
-DISTNAME=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	stas@FreeBSD.org
 COMMENT=	E17 composite manager module

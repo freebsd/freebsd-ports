@@ -18,7 +18,6 @@ OPTIONS+=	LIBOIL	"Use liboil for CPU-optimized primitives" on
 # Making Python a proper option awaits portmgr's resolving the current
 # chicken-and-egg problem of OPTIONS vs. USE_* knobs
 #OPTIONS+=	PYTHON	"Create Python bindings" ${PYPRESENT}
-DISTNAME=	${PORTNAME}-${PORTVERSION}
 
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/XML/Parser.pm:${PORTSDIR}/textproc/p5-XML-Parser
 LIB_DEPENDS=	fftw3:${PORTSDIR}/math/fftw3 \

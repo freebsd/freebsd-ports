@@ -10,7 +10,6 @@ PORTVERSION=	0.3.1
 PORTREVISION=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	SF/${PORTNAME}/qKismet/${PORTVERSION}
-DISTNAME=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	g.veniamin@googlemail.com
 COMMENT=	This is graphical Kismet client writtent in Qt

@@ -11,7 +11,6 @@ PORTREVISION=	2
 CATEGORIES=	deskutils gnustep
 MASTER_SITES=	http://www.nongnu.org/charmap/ \
 		${MASTER_SITE_GNUSTEP_CH}
-DISTNAME=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Character map for GNUstep

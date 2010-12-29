@@ -10,7 +10,6 @@ PORTVERSION=	0.2
 PORTREVISION=	3
 CATEGORIES=	archivers
 MASTER_SITES=	SF/parchive/${PORTNAME}/${PORTVERSION}
-DISTNAME=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	toxic@doobie.com
 COMMENT=	A library for manipulating par2 files, extracted from par2cmdline

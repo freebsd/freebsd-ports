@@ -10,7 +10,6 @@ PORTVERSION=	0.011
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
-DISTNAME=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	jeffhung@mail2000.com.tw
 COMMENT=	Perl5 module that give your module classic AND OO interfaces.

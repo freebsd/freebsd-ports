@@ -10,7 +10,6 @@ PORTVERSION=	0.95
 CATEGORIES=	databases python
 MASTER_SITES=	http://gijsbert.org/downloads/cmemcache/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTNAME=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	qingfeng@me.com
 COMMENT=	Python API for memcached, a distributed memory cache daemon

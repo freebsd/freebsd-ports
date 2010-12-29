@@ -9,7 +9,6 @@ PORTNAME=	traff
 PORTVERSION=	0.6.1
 CATEGORIES=	net net-mgmt
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
-DISTNAME=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	daniel@freebsd.ro
 COMMENT=	Libpcab based fast traffic accounting program

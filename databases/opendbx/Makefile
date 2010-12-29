@@ -10,7 +10,6 @@ PORTVERSION=	1.4.5
 PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	http://www.linuxnetworks.de/opendbx/download/
-DISTNAME=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	tremere@cainites.net
 COMMENT=	A C library for accessing databases with a single API
