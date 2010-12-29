@@ -43,6 +43,7 @@ OPTIONS=	ALSA	"Enable alsa input/output device" off \
 		SPEEX	"Speex audio decoder" off \
 		SSSE3	"Enable ssse3 support" on \
 		THEORA	"Theora encoder (implies OGG)" on \
+		VDPAU	"Nvidia vdpau support" off \
 		VORBIS	"Vorbis encoder via libvorbis (implies OGG)" on \
 		VP8	"VP8 codec via libvpx" on \
 		X264	"H.264 encoder" on \
@@ -269,6 +270,14 @@ LIB_DEPENDS+=	theora.0:${PORTSDIR}/multimedia/libtheora
 CONFIGURE_ARGS+=	--enable-libtheora
 .else
 CONFIGURE_ARGS+=	--disable-libtheora
+.endif
+
+# vdpau
+.ifndef(WITHOUT_VDPAU)
+LIB_DEPENDS+=	vdpau.1:${PORTSDIR}/multimedia/libvdpau
+CONFIGURE_ARGS+=	--enable-vdpau
+.else
+CONFIGURE_ARGS+=	--disable-vdpau
 .endif
 
 # vorbis
