@@ -6,7 +6,11 @@ MASTER_SITES?=	http://pear.php.net/get/ \
 		http://us.pear.php.net/get/ \
 		http://de.pear.php.net/get/
 PKGNAMEPREFIX=	pear-
+.if defined(PEAR_DIST_SUFX)
+EXTRACT_SUFX=	${PEAR_DIST_SUFX}
+.else
 EXTRACT_SUFX=	.tgz
+.endif
 DIST_SUBDIR=	PEAR
 
 RUN_DEPENDS+=	pear:${PORTSDIR}/devel/pear
@@ -97,7 +101,19 @@ pre-install:
 	@${FALSE}
 .endif
 
-DIRFILTER=	${SED} -En '\:^.*/[^/]*$$:s:^(.+)/[^/]*$$:\1:p' | ${SORT} -ru
+DIRFILTER=	${SED} -En '\:^.*/[^/]*$$:s:^(.+)/[^/]*$$:\1:p' \
+		    | ( while read r; do \
+			C=1; \
+			while [ $$C = 1 ]; do \
+			    echo $$r; \
+			    if echo $$r | ${GREP} '/' > /dev/null; then \
+	                        r=`${DIRNAME} $$r`; \
+			    else  \
+	                        C=0; \
+	                    fi; \
+	                done; \
+	            done \
+	      ) | ${SORT} -ur
 
 .if !defined(USE_PHPIZE)
 do-generate-plist:
