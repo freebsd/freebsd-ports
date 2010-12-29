@@ -541,9 +541,9 @@ lib/asterisk/modules/cdr_syslog.so
 lib/asterisk/modules/cel_custom.so
 lib/asterisk/modules/cel_manager.so
 %%WITH_ODBC%%lib/asterisk/modules/cel_odbc.so
-lib/asterisk/modules/cel_pgsql.so
-lib/asterisk/modules/cel_radius.so
-lib/asterisk/modules/cel_sqlite3_custom.so
+%%WITH_POSTGRES%%lib/asterisk/modules/cel_pgsql.so
+%%WITH_RADIUS%%lib/asterisk/modules/cel_radius.so
+%%WITH_SQLITE%%lib/asterisk/modules/cel_sqlite3_custom.so
 %%WITH_FREETDS%%lib/asterisk/modules/cel_tds.so
 lib/asterisk/modules/chan_agent.so
 %%WITH_JABBER%%lib/asterisk/modules/chan_gtalk.so
@@ -1167,7 +1167,7 @@ share/asterisk/static-http/mantest.html
 @exec mkdir -p %D/share/asterisk/sounds/es
 @exec mkdir -p %D/share/asterisk/sounds/fr
 @exec mkdir -p %D/share/asterisk/sounds/en_AU
-@cwd /var
+@cwd %%VARDIR%%
 spool/asterisk/voicemail/default/1234/en/busy.gsm
 spool/asterisk/voicemail/default/1234/en/unavail.gsm
 @exec mkdir -p %D/log/asterisk/cdr-csv

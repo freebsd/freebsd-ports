@@ -1,6 +1,14 @@
---- configure.orig	2010-10-07 22:58:47.000000000 +0200
-+++ configure	2010-11-06 15:54:49.000000000 +0100
-@@ -4670,9 +4670,9 @@
+--- configure.orig	2010-11-09 21:33:05.000000000 +0100
++++ configure	2010-12-29 09:00:30.000000000 +0100
+@@ -600,7 +600,6 @@
+ ac_default_prefix=/usr/local
+ ac_default_prefix=/usr/local
+ ac_default_prefix=/usr/local
+-ac_default_prefix=/usr
+ ac_header_list=
+ ac_subst_vars='LTLIBOBJS
+ PBX_SYSLOG
+@@ -4670,9 +4669,9 @@
  astheaderdir='${includedir}/asterisk'
  astlibdir='${libdir}/asterisk'
  astmandir='${mandir}'
@@ -12,7 +20,7 @@
  astkeydir='${astvarlibdir}'
  astspooldir='${localstatedir}/spool/asterisk'
  astlogdir='${localstatedir}/log/asterisk'
-@@ -4694,9 +4694,6 @@
+@@ -4694,9 +4693,6 @@
  
  case "${host_os}" in
       freebsd*)
@@ -22,7 +30,7 @@
       ;;
       openbsd*)
  
-@@ -25058,7 +25055,7 @@
+@@ -25152,7 +25148,7 @@
  
  	fi
  
