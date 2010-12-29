@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	eficas
-DISTVERSION=	2.0.3-1
-PORTREVISION=	1
+DISTVERSION=	2.1.1-1
 CATEGORIES=	french cad
 
 MAINTAINER=	ports@FreeBSD.org
@@ -28,7 +27,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:R}
 
 LEFICASDIR?=	apps/${PORTNAME}
 EFICASDIR=	${PREFIX}/${LEFICASDIR}
-PLIST_SUB=	EFICASDIR=${LEFICASDIR} STAV=STA9
+PLIST_SUB=	EFICASDIR=${LEFICASDIR}
 SUB_FILES=	eficas
 SUB_LIST=	EFICASDIR=${EFICASDIR} PYTHON_CMD=${PYTHON_CMD}
 
@@ -38,15 +37,16 @@ EF_LANG=	fr
 EF_LANG=	ang
 .endif
 
-.if !defined(WITHOUT_QT)
+.if defined(WITH_QT)
 RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/PyQt4/QtGui.so:${PORTSDIR}/x11-toolkits/py-qt4-gui	\
 		${PYTHON_SITELIBDIR}/PyQt4/QtAssistant.so:${PORTSDIR}/devel/py-qt4-assistant
 SUB_FILES+=	qtEficas
+PLIST_SUB+=	QT4=""
+IGNORE=		qtEficas fails ATM ('QListBoxItem*' is not supported as a slot argument type)
+.else
+PLIST_SUB+=	QT4="@comment "
 .endif
 
-ENV2PYTHON=	Misc/Cyclops.py Aster/eficas_aster.py Aster/qtEficas_aster.py	\
-		Aster/qtGroup.py Traducteur/traduitV8V9.py			\
-		Traducteur/traduitV7V8.py convert/Parserv5/Translate.py
 FIXSHTK=	bureau.py cataediteur.py panels.py
 FIXSHQT4=	typeNode.py
 FIXBASH=	cataSTA9/Macro/macr_ecre_calc_ops.py cataSTA10/Macro/macr_ecre_calc_ops.py
@@ -54,10 +54,6 @@ FIXBASH=	cataSTA9/Macro/macr_ecre_calc_ops.py cataSTA10/Macro/macr_ecre_calc_ops
 pre-configure:
 	${RM} ${WRKSRC}/convert/Parserv5/Translate.py.orig
 	${RM} -r ${WRKSRC}/Pmw	# Use our ported Pmw
-.for FILE in ${ENV2PYTHON}
-	${REINPLACE_CMD} -e "s|^#!*./usr/bin/env python|#!${PYTHON_CMD}|"	\
-		-e "s|^#!*./bin/env python|#!${PYTHON_CMD}|" ${WRKSRC}/${FILE}
-.endfor
 .for tk in TK QT4
 . for FILE in ${FIXSH${tk}}
 	${REINPLACE_CMD} -e "s|/usr/bin/sh|/bin/sh|" ${WRKSRC}/Interface${tk}/${FILE}
@@ -66,7 +62,7 @@ pre-configure:
 	${REINPLACE_CMD} -e "s#lang='fr'#lang='${EF_LANG}'#"			\
 		${WRKSRC}/Aster/prefs.py
 	${REINPLACE_CMD} -e "s#os.path.join(rep_cata,'..','Doc')#\"${DOCSDIR}\"#"	\
-		-e "s#os.path.join(prefs.REPINI,'../Pmw')#'${PYTHON_SITELIBDIR}/Pmw'#"	\
+		-e "s#os.path.join(initialdir,'../Pmw')#'${PYTHON_SITELIBDIR}/Pmw'#"	\
 		${WRKSRC}/Aster/editeur.ini
 .for cata in ${FIXBASH}
 	${REINPLACE_CMD} -e "s|'/bin/bash'|'${LOCALBASE}/bin/bash'|"	\
@@ -77,10 +73,11 @@ do-install:
 	${MKDIR} ${EFICASDIR}
 	${CP} -R ${WRKSRC}/* ${EFICASDIR}
 	${FIND} ${EFICASDIR} -name CMakeFiles -delete
+	${FIND} ${EFICASDIR} -name CVS | ${XARGS} ${RM} -rf
 	@${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${EFICASDIR}
 	@${PYTHON_CMD} -O ${PYTHON_LIBDIR}/compileall.py ${EFICASDIR}
 	${INSTALL_SCRIPT} ${WRKDIR}/eficas ${PREFIX}/bin
-.if !defined(WITHOUT_QT)
+.if defined(WITH_QT)
 	${INSTALL_SCRIPT} ${WRKDIR}/qtEficas ${PREFIX}/bin
 .endif
 
