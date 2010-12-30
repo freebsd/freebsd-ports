@@ -22,7 +22,7 @@ USE_RUBY_SETUP=	yes
 INSTALL_TARGET=	site-install
 
 DOCS=		README.txt History.txt License.txt
-EXAMPLES=	cext/camellia-example.rb
+EXAMPLES=	ext/camellia-example.rb
 
 post-install:
 .if !defined(NOPORTDOCS)
