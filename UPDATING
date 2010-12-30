@@ -5,6 +5,17 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20101230:
+  AFFECTS: users of net-mgmt/pnp
+  AUTHOR: rea@FreeBSD.org
+
+  Starting from 0.6.10_1 config.php is no longer preserved across
+  upgrades; PNP way is to put all modifications into config_local.php.
+
+  Existing config.php will be saved as config.php.orig and you should
+  review your deviations from defaults and place them into
+  config_local.php.
+
 20101227:
   AFFECTS: users of databases/mysql55-server
   AUTHOR: ale@FreeBSD.org

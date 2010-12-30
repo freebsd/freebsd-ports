@@ -1,7 +1,7 @@
-From 9c588aefedcdcd15a4bc61bf6a33c10818107390 Mon Sep 17 00:00:00 2001
+From 689736f288253fdbaff816910317f5c532a583fe Mon Sep 17 00:00:00 2001
 From: Eygene Ryabinkin <rea-fbsd@codelabs.ru>
 Date: Thu, 18 Nov 2010 15:47:59 +0300
-Subject: [PATCH 3/3] Disable PDF generation
+Subject: [PATCH 3/4] Disable PDF generation
 
 This patch allows to completely disable generation of PDF files
 via any means.  It used to support WITHOUT_PDF knob of FreeBSD port.
@@ -14,10 +14,10 @@ Signed-off-by: Eygene Ryabinkin <rea-fbsd@codelabs.ru>
  3 files changed, 5 insertions(+), 9 deletions(-)
 
 diff --git a/share/pnp/application/controllers/pdf.php b/share/pnp/application/controllers/pdf.php
-index 36ef2a7..aa48d1f 100644
+index 330e341..6ff172c 100644
 --- a/share/pnp/application/controllers/pdf.php
 +++ b/share/pnp/application/controllers/pdf.php
-@@ -13,6 +13,7 @@ class Pdf_Controller extends System_Controller  {
+@@ -10,6 +10,7 @@ class Pdf_Controller extends System_Controller  {
  
      public function __construct(){
          parent::__construct();
@@ -25,15 +25,15 @@ index 36ef2a7..aa48d1f 100644
  
          $this->use_bg = 0;
          $this->bg = $this->config->conf['background_pdf'];
-@@ -33,6 +34,7 @@ class Pdf_Controller extends System_Controller  {
+@@ -30,6 +31,7 @@ class Pdf_Controller extends System_Controller  {
      }
  
      public function index(){
 +        exit;
  
-         $this->host      = $this->input->get('host');
-         $this->service   = $this->input->get('srv');
-@@ -144,6 +146,7 @@ class Pdf_Controller extends System_Controller  {
+         $this->tpl       = $this->input->get('tpl');
+         $this->view      = "";
+@@ -137,6 +139,7 @@ class Pdf_Controller extends System_Controller  {
      }
  
      public function page($page){
@@ -41,7 +41,7 @@ index 36ef2a7..aa48d1f 100644
          $this->start     = $this->input->get('start');
          $this->end       = $this->input->get('end');
          $this->view      = "";
-@@ -206,6 +209,7 @@ class Pdf_Controller extends System_Controller  {
+@@ -199,6 +202,7 @@ class Pdf_Controller extends System_Controller  {
      }
  
      public function basket(){
@@ -50,10 +50,10 @@ index 36ef2a7..aa48d1f 100644
          $this->end       = $this->input->get('end');
          $this->view      = "";
 diff --git a/share/pnp/application/models/rrdtool.php b/share/pnp/application/models/rrdtool.php
-index 2c18b4e..2a24996 100644
+index 308ab77..344478c 100644
 --- a/share/pnp/application/models/rrdtool.php
 +++ b/share/pnp/application/models/rrdtool.php
-@@ -79,6 +79,7 @@ class Rrdtool_Model extends Model
+@@ -79,6 +79,7 @@ class Rrdtool_Model extends System_Model
          $width = 0;
          $height = 0;
          if ($out == 'PDF'){
@@ -82,5 +82,5 @@ index 7ce5301..838b474 100644
  	$qsa  = pnp::addToUri(array(), False);
  	echo "<a title=\"".Kohana::lang('common.title-xml-link')."\" href=\"".url::base(TRUE)."xml".$qsa."\"><img class=\"icon\" src=\"".url::base()."media/images/xml.png\"></a>\n";
 -- 
-1.7.2.1
+1.7.3.2
 

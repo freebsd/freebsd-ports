@@ -1,7 +1,7 @@
-From ef870c19bfafbac8139c676bde7cafb2420ebdba Mon Sep 17 00:00:00 2001
+From a3bc33c9134d25f8bdcc5fa696606bafbaac8c2c Mon Sep 17 00:00:00 2001
 From: Eygene Ryabinkin <rea-fbsd@codelabs.ru>
 Date: Tue, 28 Dec 2010 18:32:10 +0300
-Subject: [PATCH] PNP: remove creation of an empty directory
+Subject: [PATCH 4/4] PNP: remove creation of an empty directory
 
 $SHARE/application/libraries contains nothing after the installtion,
 so it looks like a remains of some old directory layout.
