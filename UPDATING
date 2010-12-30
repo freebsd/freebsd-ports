@@ -6,6 +6,14 @@ You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
 20101230:
+  AFFECTS: users of databases/postgresql??-(server|client)
+  AUTHOR: ohauer@FreeBSD.org
+
+  PostgreSQL version 8.4 is now the default. To upgrade from a version
+  lower than 8.4, follow the instructions on the PostgreSQL.org website.
+  http://www.postgresql.org/docs/8.4/interactive/install-upgrading.html
+
+20101230:
   AFFECTS: users of net-mgmt/pnp
   AUTHOR: rea@FreeBSD.org
 
