@@ -1,3 +1,10 @@
+%%RUBY_DOCDIR%%/bio/ChangeLog
+%%RUBY_DOCDIR%%/bio/Changes-0.7.rd
+%%RUBY_DOCDIR%%/bio/KEGG_API.rd
+%%RUBY_DOCDIR%%/bio/README.rdoc
+%%RUBY_DOCDIR%%/bio/Tutorial.rd
+%%RUBY_DOCDIR%%/bio/ja/KEGG_API.rd.ja
+%%RUBY_DOCDIR%%/bio/ja/Tutorial.rd.ja
 %%RUBY_EXAMPLESDIR%%/bio/any2fasta.rb
 %%RUBY_EXAMPLESDIR%%/bio/biofetch.rb
 %%RUBY_EXAMPLESDIR%%/bio/color_scheme_na.rb
@@ -384,3 +391,5 @@ etc/bioinformatics/seqdatabase.ini.sample
 @dirrm %%RUBY_SITELIBDIR%%/bio/appl
 @dirrm %%RUBY_SITELIBDIR%%/bio
 @dirrm %%RUBY_EXAMPLESDIR%%/bio
+@dirrm %%RUBY_DOCDIR%%/bio/ja
+@dirrm %%RUBY_DOCDIR%%/bio
