@@ -5,8 +5,8 @@ bin/lens
 %%RUBY_SITELIBDIR%%/lens/message.rb
 %%RUBY_SITELIBDIR%%/lens/parsedate.rb
 @dirrm %%RUBY_SITELIBDIR%%/lens
-%%EXAMPLESDIR%%/dot.commandmailrc
-%%EXAMPLESDIR%%/dot.lensrc
-@dirrm %%EXAMPLESDIR%%
 %%PORTDOCS%%%%DOCSDIR%%/index.html
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/dot.commandmailrc
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/dot.lensrc
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
