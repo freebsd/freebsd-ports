@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	sflowtool
-PORTVERSION=	3.13
+PORTVERSION=	3.17
 CATEGORIES=	net
 MASTER_SITES=	http://www.inmon.com/bin/
 
-MAINTAINER=	greg@bestnet.kharkov.ua
+MAINTAINER=	ohauer@FreeBSD.org
 COMMENT=	This is a sFlow capture and sFlow-to-NetFlow conversion tool
 
 GNU_CONFIGURE=	yes
@@ -18,11 +18,19 @@ USE_RC_SUBR=	${PORTNAME}
 
 PLIST_FILES=	bin/sflowtool
 PORTDOCS=	README
+PORTEXAMPLES=	README ipTopTalkers ipTrafficMatrix sflowRRDChart.cgi \
+		sflowRRDLoad sflowenable
 
 post-install:
 .ifndef(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/${PORTDOCS} ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/${PORTDOCS} ${DOCSDIR}
+.endif
+.ifndef(NOPORTEXAMPLES)
+	@${MKDIR} ${EXAMPLESDIR}
+. for f in ${PORTEXAMPLES}
+	@${INSTALL_DATA} ${WRKSRC}/scripts/$f ${EXAMPLESDIR}/
+. endfor
 .endif
 
 .include <bsd.port.mk>
