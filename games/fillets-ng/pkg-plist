@@ -2584,7 +2584,6 @@ bin/fillets
 %%DATADIR%%/images/menu/status/saved.png
 %%DATADIR%%/images/menu/subtitle.png
 %%DATADIR%%/images/menu/subtitles/no.png
-%%DATADIR%%/images/menu/subtitles/speech_cs.png
 %%DATADIR%%/images/menu/subtitles/yes.png
 %%DATADIR%%/images/menu/volume_music.png
 %%DATADIR%%/images/menu/volume_sound.png
@@ -3738,20 +3737,34 @@ bin/fillets
 %%DATADIR%%/images/wreck/rybicka_h_02.png
 %%DATADIR%%/images/wreck/rybicka_h_03.png
 %%DATADIR%%/music/kufrik.ogg
+%%DATADIR%%/music/kufrik.ogg.meta
 %%DATADIR%%/music/menu.ogg
+%%DATADIR%%/music/menu.ogg.meta
 %%DATADIR%%/music/rybky01.ogg
+%%DATADIR%%/music/rybky01.ogg.meta
 %%DATADIR%%/music/rybky02.ogg
+%%DATADIR%%/music/rybky02.ogg.meta
 %%DATADIR%%/music/rybky03.ogg
+%%DATADIR%%/music/rybky03.ogg.meta
 %%DATADIR%%/music/rybky04.ogg
+%%DATADIR%%/music/rybky04.ogg.meta
 %%DATADIR%%/music/rybky05.ogg
+%%DATADIR%%/music/rybky05.ogg.meta
 %%DATADIR%%/music/rybky06.ogg
+%%DATADIR%%/music/rybky06.ogg.meta
 %%DATADIR%%/music/rybky07.ogg
+%%DATADIR%%/music/rybky07.ogg.meta
 %%DATADIR%%/music/rybky09.ogg
+%%DATADIR%%/music/rybky09.ogg.meta
 %%DATADIR%%/music/rybky10.ogg
 %%DATADIR%%/music/rybky11.ogg
+%%DATADIR%%/music/rybky12.ogg.meta
 %%DATADIR%%/music/rybky13.ogg
+%%DATADIR%%/music/rybky13.ogg.meta
 %%DATADIR%%/music/rybky14.ogg
+%%DATADIR%%/music/rybky14.ogg.meta
 %%DATADIR%%/music/rybky15.ogg
+%%DATADIR%%/music/rybky15.ogg.meta
 %%DATADIR%%/script/airplane/code.lua
 %%DATADIR%%/script/airplane/dialogs.lua
 %%DATADIR%%/script/airplane/dialogs_bg.lua
@@ -4217,6 +4230,7 @@ bin/fillets
 %%DATADIR%%/script/electromagnet/dialogs_cs.lua
 %%DATADIR%%/script/electromagnet/dialogs_de.lua
 %%DATADIR%%/script/electromagnet/dialogs_en.lua
+%%DATADIR%%/script/electromagnet/dialogs_nl.lua
 %%DATADIR%%/script/electromagnet/dialogs_ru.lua
 %%DATADIR%%/script/electromagnet/dialogs_sv.lua
 %%DATADIR%%/script/electromagnet/init.lua
@@ -4532,6 +4546,7 @@ bin/fillets
 %%DATADIR%%/script/keys/dialogs_cs.lua
 %%DATADIR%%/script/keys/dialogs_de.lua
 %%DATADIR%%/script/keys/dialogs_en.lua
+%%DATADIR%%/script/keys/dialogs_nl.lua
 %%DATADIR%%/script/keys/dialogs_sv.lua
 %%DATADIR%%/script/keys/init.lua
 %%DATADIR%%/script/keys/models.lua
@@ -4589,6 +4604,7 @@ bin/fillets
 %%DATADIR%%/script/linux/demo_dialogs_cs.lua
 %%DATADIR%%/script/linux/demo_dialogs_de.lua
 %%DATADIR%%/script/linux/demo_dialogs_en.lua
+%%DATADIR%%/script/linux/demo_dialogs_nl.lua
 %%DATADIR%%/script/linux/demo_dialogs_sv.lua
 %%DATADIR%%/script/linux/demo_poster.lua
 %%DATADIR%%/script/linux/dialogs.lua
@@ -4596,6 +4612,7 @@ bin/fillets
 %%DATADIR%%/script/linux/dialogs_cs.lua
 %%DATADIR%%/script/linux/dialogs_de.lua
 %%DATADIR%%/script/linux/dialogs_en.lua
+%%DATADIR%%/script/linux/dialogs_nl.lua
 %%DATADIR%%/script/linux/dialogs_ru.lua
 %%DATADIR%%/script/linux/dialogs_sv.lua
 %%DATADIR%%/script/linux/init.lua
@@ -4932,6 +4949,15 @@ bin/fillets
 %%DATADIR%%/script/share/prog_finder.lua
 %%DATADIR%%/script/share/prog_goanim.lua
 %%DATADIR%%/script/share/prog_save.lua
+%%DATADIR%%/script/share/shout_dialogs_bg.lua
+%%DATADIR%%/script/share/shout_dialogs_cs.lua
+%%DATADIR%%/script/share/shout_dialogs_de.lua
+%%DATADIR%%/script/share/shout_dialogs_en.lua
+%%DATADIR%%/script/share/shout_dialogs_fr.lua
+%%DATADIR%%/script/share/shout_dialogs_nl.lua
+%%DATADIR%%/script/share/shout_dialogs_ru.lua
+%%DATADIR%%/script/share/shout_dialogs_sv.lua
+%%DATADIR%%/script/share/shout_dialogs_tr.lua
 %%DATADIR%%/script/share/stddialogs.lua
 %%DATADIR%%/script/snowman/code.lua
 %%DATADIR%%/script/snowman/dialogs.lua
@@ -5215,6 +5241,14 @@ bin/fillets
 %%DATADIR%%/sound/airplane/cs/let-v-vrak0.ogg
 %%DATADIR%%/sound/airplane/cs/let-v-vrak1.ogg
 %%DATADIR%%/sound/airplane/cs/let-v-vrak2.ogg
+%%DATADIR%%/sound/airplane/nl/let-m-divna.ogg
+%%DATADIR%%/sound/airplane/nl/let-m-oko.ogg
+%%DATADIR%%/sound/airplane/nl/let-m-sedadlo.ogg
+%%DATADIR%%/sound/airplane/nl/let-v-budrada.ogg
+%%DATADIR%%/sound/airplane/nl/let-v-oko.ogg
+%%DATADIR%%/sound/airplane/nl/let-v-vrak0.ogg
+%%DATADIR%%/sound/airplane/nl/let-v-vrak1.ogg
+%%DATADIR%%/sound/airplane/nl/let-v-vrak2.ogg
 %%DATADIR%%/sound/alibaba/cs/kni-m-amfornictvi.ogg
 %%DATADIR%%/sound/alibaba/cs/kni-m-cetky.ogg
 %%DATADIR%%/sound/alibaba/cs/kni-m-hrncirstvi.ogg
@@ -5229,6 +5263,20 @@ bin/fillets
 %%DATADIR%%/sound/alibaba/cs/kni-v-proc.ogg
 %%DATADIR%%/sound/alibaba/cs/kni-v-prolezt.ogg
 %%DATADIR%%/sound/alibaba/cs/kni-v-vypni.ogg
+%%DATADIR%%/sound/alibaba/nl/kni-m-amfornictvi.ogg
+%%DATADIR%%/sound/alibaba/nl/kni-m-cetky.ogg
+%%DATADIR%%/sound/alibaba/nl/kni-m-hrncirstvi.ogg
+%%DATADIR%%/sound/alibaba/nl/kni-m-hromado.ogg
+%%DATADIR%%/sound/alibaba/nl/kni-m-kramy.ogg
+%%DATADIR%%/sound/alibaba/nl/kni-m-mise.ogg
+%%DATADIR%%/sound/alibaba/nl/kni-m-svicny.ogg
+%%DATADIR%%/sound/alibaba/nl/kni-m-tloustka.ogg
+%%DATADIR%%/sound/alibaba/nl/kni-v-amforstvi.ogg
+%%DATADIR%%/sound/alibaba/nl/kni-v-ber.ogg
+%%DATADIR%%/sound/alibaba/nl/kni-v-padavko.ogg
+%%DATADIR%%/sound/alibaba/nl/kni-v-proc.ogg
+%%DATADIR%%/sound/alibaba/nl/kni-v-prolezt.ogg
+%%DATADIR%%/sound/alibaba/nl/kni-v-vypni.ogg
 %%DATADIR%%/sound/atlantis/cs/sp-m-costim.ogg
 %%DATADIR%%/sound/atlantis/cs/sp-m-kalet.ogg
 %%DATADIR%%/sound/atlantis/cs/sp-m-nechat.ogg
@@ -5260,6 +5308,37 @@ bin/fillets
 %%DATADIR%%/sound/atlantis/cs/sp-v-vratit1.ogg
 %%DATADIR%%/sound/atlantis/cs/sp-v-vzit.ogg
 %%DATADIR%%/sound/atlantis/cs/sp-v-zahynuli.ogg
+%%DATADIR%%/sound/atlantis/nl/sp-m-costim.ogg
+%%DATADIR%%/sound/atlantis/nl/sp-m-kalet.ogg
+%%DATADIR%%/sound/atlantis/nl/sp-m-nechat.ogg
+%%DATADIR%%/sound/atlantis/nl/sp-m-neopatrnost.ogg
+%%DATADIR%%/sound/atlantis/nl/sp-m-no1.ogg
+%%DATADIR%%/sound/atlantis/nl/sp-m-potize.ogg
+%%DATADIR%%/sound/atlantis/nl/sp-m-spunt.ogg
+%%DATADIR%%/sound/atlantis/nl/sp-m-taky.ogg
+%%DATADIR%%/sound/atlantis/nl/sp-m-vratit0.ogg
+%%DATADIR%%/sound/atlantis/nl/sp-m-vratit1.ogg
+%%DATADIR%%/sound/atlantis/nl/sp-m-vydrz.ogg
+%%DATADIR%%/sound/atlantis/nl/sp-m-vymluva0.ogg
+%%DATADIR%%/sound/atlantis/nl/sp-m-vymluva1.ogg
+%%DATADIR%%/sound/atlantis/nl/sp-m-vymluva2.ogg
+%%DATADIR%%/sound/atlantis/nl/sp-m-vymluva3.ogg
+%%DATADIR%%/sound/atlantis/nl/sp-m-vymluva4.ogg
+%%DATADIR%%/sound/atlantis/nl/sp-m-vytazeny.ogg
+%%DATADIR%%/sound/atlantis/nl/sp-v-centrala.ogg
+%%DATADIR%%/sound/atlantis/nl/sp-v-co.ogg
+%%DATADIR%%/sound/atlantis/nl/sp-v-dotoho.ogg
+%%DATADIR%%/sound/atlantis/nl/sp-v-jedno.ogg
+%%DATADIR%%/sound/atlantis/nl/sp-v-kdoby.ogg
+%%DATADIR%%/sound/atlantis/nl/sp-v-nesmysl.ogg
+%%DATADIR%%/sound/atlantis/nl/sp-v-no0.ogg
+%%DATADIR%%/sound/atlantis/nl/sp-v-pocit.ogg
+%%DATADIR%%/sound/atlantis/nl/sp-v-trapne.ogg
+%%DATADIR%%/sound/atlantis/nl/sp-v-ven.ogg
+%%DATADIR%%/sound/atlantis/nl/sp-v-vratit0.ogg
+%%DATADIR%%/sound/atlantis/nl/sp-v-vratit1.ogg
+%%DATADIR%%/sound/atlantis/nl/sp-v-vzit.ogg
+%%DATADIR%%/sound/atlantis/nl/sp-v-zahynuli.ogg
 %%DATADIR%%/sound/aztec/cs/bot-m-ble.ogg
 %%DATADIR%%/sound/aztec/cs/bot-m-padaji.ogg
 %%DATADIR%%/sound/aztec/cs/bot-m-vidim.ogg
@@ -5278,6 +5357,21 @@ bin/fillets
 %%DATADIR%%/sound/aztec/en/bot-x-gr0.ogg
 %%DATADIR%%/sound/aztec/en/bot-x-gr1.ogg
 %%DATADIR%%/sound/aztec/en/bot-x-smich.ogg
+%%DATADIR%%/sound/aztec/nl/bot-m-ble.ogg
+%%DATADIR%%/sound/aztec/nl/bot-m-padaji.ogg
+%%DATADIR%%/sound/aztec/nl/bot-m-vidim.ogg
+%%DATADIR%%/sound/aztec/nl/bot-m-vidis.ogg
+%%DATADIR%%/sound/aztec/nl/bot-m-vypada.ogg
+%%DATADIR%%/sound/aztec/nl/bot-m-zajem.ogg
+%%DATADIR%%/sound/aztec/nl/bot-m-zivy.ogg
+%%DATADIR%%/sound/aztec/nl/bot-v-lebka.ogg
+%%DATADIR%%/sound/aztec/nl/bot-v-podivat.ogg
+%%DATADIR%%/sound/aztec/nl/bot-v-totem.ogg
+%%DATADIR%%/sound/aztec/nl/bot-v-uveznen0.ogg
+%%DATADIR%%/sound/aztec/nl/bot-v-uveznen1.ogg
+%%DATADIR%%/sound/aztec/nl/bot-v-vsak0.ogg
+%%DATADIR%%/sound/aztec/nl/bot-v-vsak1.ogg
+%%DATADIR%%/sound/aztec/nl/bot-v-vsim.ogg
 %%DATADIR%%/sound/barrel/cs/bar-m-barel.ogg
 %%DATADIR%%/sound/barrel/cs/bar-m-dost0.ogg
 %%DATADIR%%/sound/barrel/cs/bar-m-dost1.ogg
@@ -5321,6 +5415,37 @@ bin/fillets
 %%DATADIR%%/sound/barrel/en/bar-x-suckne.ogg
 %%DATADIR%%/sound/barrel/en/bar-x-tup.ogg
 %%DATADIR%%/sound/barrel/en/bar-x-zzz.ogg
+%%DATADIR%%/sound/barrel/nl/bar-m-barel.ogg
+%%DATADIR%%/sound/barrel/nl/bar-m-dost0.ogg
+%%DATADIR%%/sound/barrel/nl/bar-m-dost1.ogg
+%%DATADIR%%/sound/barrel/nl/bar-m-fdto.ogg
+%%DATADIR%%/sound/barrel/nl/bar-m-kachna.ogg
+%%DATADIR%%/sound/barrel/nl/bar-m-mutanti.ogg
+%%DATADIR%%/sound/barrel/nl/bar-m-no.ogg
+%%DATADIR%%/sound/barrel/nl/bar-m-noha.ogg
+%%DATADIR%%/sound/barrel/nl/bar-m-panb.ogg
+%%DATADIR%%/sound/barrel/nl/bar-m-pobit.ogg
+%%DATADIR%%/sound/barrel/nl/bar-m-promin.ogg
+%%DATADIR%%/sound/barrel/nl/bar-m-pudy.ogg
+%%DATADIR%%/sound/barrel/nl/bar-m-rada.ogg
+%%DATADIR%%/sound/barrel/nl/bar-m-rybka.ogg
+%%DATADIR%%/sound/barrel/nl/bar-m-videt1.ogg
+%%DATADIR%%/sound/barrel/nl/bar-m-zmeni.ogg
+%%DATADIR%%/sound/barrel/nl/bar-v-co.ogg
+%%DATADIR%%/sound/barrel/nl/bar-v-fotka.ogg
+%%DATADIR%%/sound/barrel/nl/bar-v-genofond.ogg
+%%DATADIR%%/sound/barrel/nl/bar-v-kdyby0.ogg
+%%DATADIR%%/sound/barrel/nl/bar-v-kdyby1.ogg
+%%DATADIR%%/sound/barrel/nl/bar-v-krab.ogg
+%%DATADIR%%/sound/barrel/nl/bar-v-lih.ogg
+%%DATADIR%%/sound/barrel/nl/bar-v-pld.ogg
+%%DATADIR%%/sound/barrel/nl/bar-v-priciny.ogg
+%%DATADIR%%/sound/barrel/nl/bar-v-sbirka.ogg
+%%DATADIR%%/sound/barrel/nl/bar-v-sud.ogg
+%%DATADIR%%/sound/barrel/nl/bar-v-traverza.ogg
+%%DATADIR%%/sound/barrel/nl/bar-v-ufouni.ogg
+%%DATADIR%%/sound/barrel/nl/bar-v-videt0.ogg
+%%DATADIR%%/sound/barrel/nl/bar_v_fotka.ogg
 %%DATADIR%%/sound/bathroom/cs/br-m-ahoj.ogg
 %%DATADIR%%/sound/bathroom/cs/br-m-bavi.ogg
 %%DATADIR%%/sound/bathroom/cs/br-m-bydli.ogg
@@ -5345,6 +5470,29 @@ bin/fillets
 %%DATADIR%%/sound/bathroom/cs/br-v-santusak.ogg
 %%DATADIR%%/sound/bathroom/cs/br-v-shodit.ogg
 %%DATADIR%%/sound/bathroom/en/br-x-pracka.ogg
+%%DATADIR%%/sound/bathroom/nl/br-m-ahoj.ogg
+%%DATADIR%%/sound/bathroom/nl/br-m-bavi.ogg
+%%DATADIR%%/sound/bathroom/nl/br-m-bydli.ogg
+%%DATADIR%%/sound/bathroom/nl/br-m-dva.ogg
+%%DATADIR%%/sound/bathroom/nl/br-m-nefunguje.ogg
+%%DATADIR%%/sound/bathroom/nl/br-m-podvodnik.ogg
+%%DATADIR%%/sound/bathroom/nl/br-m-poklady.ogg
+%%DATADIR%%/sound/bathroom/nl/br-m-sprcha.ogg
+%%DATADIR%%/sound/bathroom/nl/br-m-vsim0.ogg
+%%DATADIR%%/sound/bathroom/nl/br-m-vsim1.ogg
+%%DATADIR%%/sound/bathroom/nl/br-m-vsim2.ogg
+%%DATADIR%%/sound/bathroom/nl/br-m-zapnout.ogg
+%%DATADIR%%/sound/bathroom/nl/br-m-zkusit.ogg
+%%DATADIR%%/sound/bathroom/nl/br-v-dost.ogg
+%%DATADIR%%/sound/bathroom/nl/br-v-draha.ogg
+%%DATADIR%%/sound/bathroom/nl/br-v-komfort.ogg
+%%DATADIR%%/sound/bathroom/nl/br-v-lazen.ogg
+%%DATADIR%%/sound/bathroom/nl/br-v-nechat.ogg
+%%DATADIR%%/sound/bathroom/nl/br-v-nerozvadet0.ogg
+%%DATADIR%%/sound/bathroom/nl/br-v-nerozvadet1.ogg
+%%DATADIR%%/sound/bathroom/nl/br-v-nerozvadet2.ogg
+%%DATADIR%%/sound/bathroom/nl/br-v-santusak.ogg
+%%DATADIR%%/sound/bathroom/nl/br-v-shodit.ogg
 %%DATADIR%%/sound/bathyscaph/cs/bat-m-mikro.ogg
 %%DATADIR%%/sound/bathyscaph/cs/bat-m-sluch.ogg
 %%DATADIR%%/sound/bathyscaph/cs/bat-m-tohle.ogg
@@ -5370,6 +5518,13 @@ bin/fillets
 %%DATADIR%%/sound/bathyscaph/en/bat-t-budik.ogg
 %%DATADIR%%/sound/bathyscaph/en/bat-t-phone0.ogg
 %%DATADIR%%/sound/bathyscaph/en/bat-t-phone1.ogg
+%%DATADIR%%/sound/bathyscaph/nl/bat-m-mikro.ogg
+%%DATADIR%%/sound/bathyscaph/nl/bat-m-sluch.ogg
+%%DATADIR%%/sound/bathyscaph/nl/bat-m-tohle.ogg
+%%DATADIR%%/sound/bathyscaph/nl/bat-v-klid.ogg
+%%DATADIR%%/sound/bathyscaph/nl/bat-v-vyp.ogg
+%%DATADIR%%/sound/bathyscaph/nl/bat-v-zved0.ogg
+%%DATADIR%%/sound/bathyscaph/nl/bat-v-zved1.ogg
 %%DATADIR%%/sound/briefcase/cs/help1.ogg
 %%DATADIR%%/sound/briefcase/cs/help10.ogg
 %%DATADIR%%/sound/briefcase/cs/help11.ogg
@@ -5419,6 +5574,44 @@ bin/fillets
 %%DATADIR%%/sound/briefcase/cs/kuf-v-noco.ogg
 %%DATADIR%%/sound/briefcase/cs/kuf-v-restart.ogg
 %%DATADIR%%/sound/briefcase/cs/kuf-v-ukol.ogg
+%%DATADIR%%/sound/briefcase/nl/help1.ogg
+%%DATADIR%%/sound/briefcase/nl/help10.ogg
+%%DATADIR%%/sound/briefcase/nl/help11.ogg
+%%DATADIR%%/sound/briefcase/nl/help12.ogg
+%%DATADIR%%/sound/briefcase/nl/help13.ogg
+%%DATADIR%%/sound/briefcase/nl/help14.ogg
+%%DATADIR%%/sound/briefcase/nl/help15.ogg
+%%DATADIR%%/sound/briefcase/nl/help16.ogg
+%%DATADIR%%/sound/briefcase/nl/help17.ogg
+%%DATADIR%%/sound/briefcase/nl/help18.ogg
+%%DATADIR%%/sound/briefcase/nl/help19.ogg
+%%DATADIR%%/sound/briefcase/nl/help2.ogg
+%%DATADIR%%/sound/briefcase/nl/help20.ogg
+%%DATADIR%%/sound/briefcase/nl/help21.ogg
+%%DATADIR%%/sound/briefcase/nl/help22.ogg
+%%DATADIR%%/sound/briefcase/nl/help23.ogg
+%%DATADIR%%/sound/briefcase/nl/help3.ogg
+%%DATADIR%%/sound/briefcase/nl/help4.ogg
+%%DATADIR%%/sound/briefcase/nl/help5.ogg
+%%DATADIR%%/sound/briefcase/nl/help6.ogg
+%%DATADIR%%/sound/briefcase/nl/help7.ogg
+%%DATADIR%%/sound/briefcase/nl/help8.ogg
+%%DATADIR%%/sound/briefcase/nl/help9.ogg
+%%DATADIR%%/sound/briefcase/nl/kuf-m-disk.ogg
+%%DATADIR%%/sound/briefcase/nl/kuf-m-dodilny.ogg
+%%DATADIR%%/sound/briefcase/nl/kuf-m-je.ogg
+%%DATADIR%%/sound/briefcase/nl/kuf-m-kousek.ogg
+%%DATADIR%%/sound/briefcase/nl/kuf-m-nezvednu.ogg
+%%DATADIR%%/sound/briefcase/nl/kuf-m-pravda.ogg
+%%DATADIR%%/sound/briefcase/nl/kuf-m-ven.ogg
+%%DATADIR%%/sound/briefcase/nl/kuf-v-doprace.ogg
+%%DATADIR%%/sound/briefcase/nl/kuf-v-dotoho.ogg
+%%DATADIR%%/sound/briefcase/nl/kuf-v-hod.ogg
+%%DATADIR%%/sound/briefcase/nl/kuf-v-jeste.ogg
+%%DATADIR%%/sound/briefcase/nl/kuf-v-napad.ogg
+%%DATADIR%%/sound/briefcase/nl/kuf-v-noco.ogg
+%%DATADIR%%/sound/briefcase/nl/kuf-v-restart.ogg
+%%DATADIR%%/sound/briefcase/nl/kuf-v-ukol.ogg
 %%DATADIR%%/sound/broom/cs/kos-m-uklid0.ogg
 %%DATADIR%%/sound/broom/cs/kos-m-uklid1.ogg
 %%DATADIR%%/sound/broom/cs/kos-m-uklid2.ogg
@@ -5432,6 +5625,19 @@ bin/fillets
 %%DATADIR%%/sound/broom/cs/kos-v-poradek0.ogg
 %%DATADIR%%/sound/broom/cs/kos-v-poradek1.ogg
 %%DATADIR%%/sound/broom/cs/kos-v-poradek2.ogg
+%%DATADIR%%/sound/broom/nl/kos-m-uklid0.ogg
+%%DATADIR%%/sound/broom/nl/kos-m-uklid1.ogg
+%%DATADIR%%/sound/broom/nl/kos-m-uklid2.ogg
+%%DATADIR%%/sound/broom/nl/kos-m-zamet0.ogg
+%%DATADIR%%/sound/broom/nl/kos-m-zamet1.ogg
+%%DATADIR%%/sound/broom/nl/kos-m-zamet2.ogg
+%%DATADIR%%/sound/broom/nl/kos-m-zamet3.ogg
+%%DATADIR%%/sound/broom/nl/kos-v-koste0.ogg
+%%DATADIR%%/sound/broom/nl/kos-v-koste1.ogg
+%%DATADIR%%/sound/broom/nl/kos-v-koste2.ogg
+%%DATADIR%%/sound/broom/nl/kos-v-poradek0.ogg
+%%DATADIR%%/sound/broom/nl/kos-v-poradek1.ogg
+%%DATADIR%%/sound/broom/nl/kos-v-poradek2.ogg
 %%DATADIR%%/sound/cabin1/cs/k1-m-chobotnice.ogg
 %%DATADIR%%/sound/cabin1/cs/k1-m-codelas.ogg
 %%DATADIR%%/sound/cabin1/cs/k1-m-copak.ogg
@@ -5474,6 +5680,27 @@ bin/fillets
 %%DATADIR%%/sound/cabin1/en/k1-chob-3.ogg
 %%DATADIR%%/sound/cabin1/en/k1-chob-p.ogg
 %%DATADIR%%/sound/cabin1/en/k1-x-vrz.ogg
+%%DATADIR%%/sound/cabin1/nl/k1-m-chobotnice.ogg
+%%DATADIR%%/sound/cabin1/nl/k1-m-codelas.ogg
+%%DATADIR%%/sound/cabin1/nl/k1-m-copak.ogg
+%%DATADIR%%/sound/cabin1/nl/k1-m-diky.ogg
+%%DATADIR%%/sound/cabin1/nl/k1-m-fuj.ogg
+%%DATADIR%%/sound/cabin1/nl/k1-m-kolebku.ogg
+%%DATADIR%%/sound/cabin1/nl/k1-m-lebku.ogg
+%%DATADIR%%/sound/cabin1/nl/k1-m-mysli.ogg
+%%DATADIR%%/sound/cabin1/nl/k1-m-myslis.ogg
+%%DATADIR%%/sound/cabin1/nl/k1-m-podivin.ogg
+%%DATADIR%%/sound/cabin1/nl/k1-m-tospisona.ogg
+%%DATADIR%%/sound/cabin1/nl/k1-v-bedna.ogg
+%%DATADIR%%/sound/cabin1/nl/k1-v-cit.ogg
+%%DATADIR%%/sound/cabin1/nl/k1-v-citis.ogg
+%%DATADIR%%/sound/cabin1/nl/k1-v-jejeho.ogg
+%%DATADIR%%/sound/cabin1/nl/k1-v-kdovi.ogg
+%%DATADIR%%/sound/cabin1/nl/k1-v-opatrne.ogg
+%%DATADIR%%/sound/cabin1/nl/k1-v-patrila.ogg
+%%DATADIR%%/sound/cabin1/nl/k1-v-proc.ogg
+%%DATADIR%%/sound/cabin1/nl/k1-v-promin.ogg
+%%DATADIR%%/sound/cabin1/nl/k1-v-radose.ogg
 %%DATADIR%%/sound/cabin2/cs/k1-pap-3xkruty.ogg
 %%DATADIR%%/sound/cabin2/cs/k1-pap-kruci.ogg
 %%DATADIR%%/sound/cabin2/cs/k1-pap-kruty.ogg
@@ -5505,8 +5732,28 @@ bin/fillets
 %%DATADIR%%/sound/cabin2/en/k1-chob-3.ogg
 %%DATADIR%%/sound/cabin2/en/k1-chob-p.ogg
 %%DATADIR%%/sound/cabin2/en/k1-x-vrz.ogg
+%%DATADIR%%/sound/cabin2/nl/ka2-m-chapadlo.ogg
+%%DATADIR%%/sound/cabin2/nl/ka2-m-diky.ogg
+%%DATADIR%%/sound/cabin2/nl/ka2-m-hej.ogg
+%%DATADIR%%/sound/cabin2/nl/ka2-m-kdepak.ogg
+%%DATADIR%%/sound/cabin2/nl/ka2-m-kostra.ogg
+%%DATADIR%%/sound/cabin2/nl/ka2-m-patrne.ogg
+%%DATADIR%%/sound/cabin2/nl/ka2-m-posledni.ogg
+%%DATADIR%%/sound/cabin2/nl/ka2-m-svitit.ogg
+%%DATADIR%%/sound/cabin2/nl/ka2-m-tezko.ogg
+%%DATADIR%%/sound/cabin2/nl/ka2-v-fik.ogg
+%%DATADIR%%/sound/cabin2/nl/ka2-v-hrbet.ogg
+%%DATADIR%%/sound/cabin2/nl/ka2-v-kostry.ogg
+%%DATADIR%%/sound/cabin2/nl/ka2-v-mapa0.ogg
+%%DATADIR%%/sound/cabin2/nl/ka2-v-mapa1.ogg
+%%DATADIR%%/sound/cabin2/nl/ka2-v-mapa2.ogg
+%%DATADIR%%/sound/cabin2/nl/ka2-v-myslet.ogg
+%%DATADIR%%/sound/cabin2/nl/ka2-v-napad.ogg
+%%DATADIR%%/sound/cabin2/nl/ka2-v-nekde.ogg
+%%DATADIR%%/sound/cabin2/nl/ka2-v-papousek.ogg
 %%DATADIR%%/sound/cancan/cs/kan-v-proc.ogg
 %%DATADIR%%/sound/cancan/en/kan-klavir-music.ogg
+%%DATADIR%%/sound/cancan/nl/kan-v-proc.ogg
 %%DATADIR%%/sound/cannons/cs/del-m-ci.ogg
 %%DATADIR%%/sound/cannons/cs/del-m-jedn0.ogg
 %%DATADIR%%/sound/cannons/cs/del-m-jedn1.ogg
@@ -5516,6 +5763,15 @@ bin/fillets
 %%DATADIR%%/sound/cannons/cs/del-v-dve.ogg
 %%DATADIR%%/sound/cannons/cs/del-v-mec.ogg
 %%DATADIR%%/sound/cannons/cs/del-v-splet.ogg
+%%DATADIR%%/sound/cannons/nl/del-m-ci.ogg
+%%DATADIR%%/sound/cannons/nl/del-m-jedn0.ogg
+%%DATADIR%%/sound/cannons/nl/del-m-jedn1.ogg
+%%DATADIR%%/sound/cannons/nl/del-m-jedn2.ogg
+%%DATADIR%%/sound/cannons/nl/del-m-tus.ogg
+%%DATADIR%%/sound/cannons/nl/del-m-voda.ogg
+%%DATADIR%%/sound/cannons/nl/del-v-dve.ogg
+%%DATADIR%%/sound/cannons/nl/del-v-mec.ogg
+%%DATADIR%%/sound/cannons/nl/del-v-splet.ogg
 %%DATADIR%%/sound/captain/cs/vl-leb-kecy0.ogg
 %%DATADIR%%/sound/captain/cs/vl-leb-kecy1.ogg
 %%DATADIR%%/sound/captain/cs/vl-leb-kecy2.ogg
@@ -5529,6 +5785,13 @@ bin/fillets
 %%DATADIR%%/sound/captain/cs/vl-v-lodni.ogg
 %%DATADIR%%/sound/captain/cs/vl-v-silha.ogg
 %%DATADIR%%/sound/captain/cs/vl-x-site.ogg
+%%DATADIR%%/sound/captain/nl/vl-m-hak.ogg
+%%DATADIR%%/sound/captain/nl/vl-m-hara.ogg
+%%DATADIR%%/sound/captain/nl/vl-m-oko.ogg
+%%DATADIR%%/sound/captain/nl/vl-v-kaj1.ogg
+%%DATADIR%%/sound/captain/nl/vl-v-kaj2.ogg
+%%DATADIR%%/sound/captain/nl/vl-v-lodni.ogg
+%%DATADIR%%/sound/captain/nl/vl-v-silha.ogg
 %%DATADIR%%/sound/cave/cs/jes-m-deprese.ogg
 %%DATADIR%%/sound/cave/cs/jes-m-netopyr.ogg
 %%DATADIR%%/sound/cave/cs/jes-m-netopyr0.ogg
@@ -5555,6 +5818,32 @@ bin/fillets
 %%DATADIR%%/sound/cave/cs/jes-v-potvora2.ogg
 %%DATADIR%%/sound/cave/cs/jes-v-tojo.ogg
 %%DATADIR%%/sound/cave/cs/jes-v-uzke.ogg
+%%DATADIR%%/sound/cave/nl/jes-m-deprese.ogg
+%%DATADIR%%/sound/cave/nl/jes-m-netopyr.ogg
+%%DATADIR%%/sound/cave/nl/jes-m-netopyr0.ogg
+%%DATADIR%%/sound/cave/nl/jes-m-netopyr1.ogg
+%%DATADIR%%/sound/cave/nl/jes-m-netopyr2.ogg
+%%DATADIR%%/sound/cave/nl/jes-m-netopyr3.ogg
+%%DATADIR%%/sound/cave/nl/jes-m-potvora0.ogg
+%%DATADIR%%/sound/cave/nl/jes-m-potvora1.ogg
+%%DATADIR%%/sound/cave/nl/jes-m-potvora2.ogg
+%%DATADIR%%/sound/cave/nl/jes-m-ryba.ogg
+%%DATADIR%%/sound/cave/nl/jes-m-takvidis.ogg
+%%DATADIR%%/sound/cave/nl/jes-m-tvor.ogg
+%%DATADIR%%/sound/cave/nl/jes-v-gral.ogg
+%%DATADIR%%/sound/cave/nl/jes-v-kamen.ogg
+%%DATADIR%%/sound/cave/nl/jes-v-nechut0.ogg
+%%DATADIR%%/sound/cave/nl/jes-v-nechut1.ogg
+%%DATADIR%%/sound/cave/nl/jes-v-nestezuj.ogg
+%%DATADIR%%/sound/cave/nl/jes-v-netopyr0.ogg
+%%DATADIR%%/sound/cave/nl/jes-v-netopyr1.ogg
+%%DATADIR%%/sound/cave/nl/jes-v-netopyr2.ogg
+%%DATADIR%%/sound/cave/nl/jes-v-nevim.ogg
+%%DATADIR%%/sound/cave/nl/jes-v-potvora0.ogg
+%%DATADIR%%/sound/cave/nl/jes-v-potvora1.ogg
+%%DATADIR%%/sound/cave/nl/jes-v-potvora2.ogg
+%%DATADIR%%/sound/cave/nl/jes-v-tojo.ogg
+%%DATADIR%%/sound/cave/nl/jes-v-uzke.ogg
 %%DATADIR%%/sound/cellar/cs/pra-m-chytit.ogg
 %%DATADIR%%/sound/cellar/cs/pra-m-jakudelat.ogg
 %%DATADIR%%/sound/cellar/cs/pra-m-kniha.ogg
@@ -5586,6 +5875,37 @@ bin/fillets
 %%DATADIR%%/sound/cellar/cs/pra-v-vzit.ogg
 %%DATADIR%%/sound/cellar/cs/pra-v-zapeklita.ogg
 %%DATADIR%%/sound/cellar/cs/pra-v-zavazis.ogg
+%%DATADIR%%/sound/cellar/nl/pra-m-chytit.ogg
+%%DATADIR%%/sound/cellar/nl/pra-m-jakudelat.ogg
+%%DATADIR%%/sound/cellar/nl/pra-m-kniha.ogg
+%%DATADIR%%/sound/cellar/nl/pra-m-nepohnu.ogg
+%%DATADIR%%/sound/cellar/nl/pra-m-neradit.ogg
+%%DATADIR%%/sound/cellar/nl/pra-m-pravidla.ogg
+%%DATADIR%%/sound/cellar/nl/pra-m-prisun.ogg
+%%DATADIR%%/sound/cellar/nl/pra-m-pustis.ogg
+%%DATADIR%%/sound/cellar/nl/pra-m-reseni.ogg
+%%DATADIR%%/sound/cellar/nl/pra-m-restart.ogg
+%%DATADIR%%/sound/cellar/nl/pra-m-stava.ogg
+%%DATADIR%%/sound/cellar/nl/pra-m-strach.ogg
+%%DATADIR%%/sound/cellar/nl/pra-m-uvazovat.ogg
+%%DATADIR%%/sound/cellar/nl/pra-m-vyrazit.ogg
+%%DATADIR%%/sound/cellar/nl/pra-m-znovu.ogg
+%%DATADIR%%/sound/cellar/nl/pra-m-zpatky.ogg
+%%DATADIR%%/sound/cellar/nl/pra-v-dobrynapad.ogg
+%%DATADIR%%/sound/cellar/nl/pra-v-dopredu.ogg
+%%DATADIR%%/sound/cellar/nl/pra-v-klesnout.ogg
+%%DATADIR%%/sound/cellar/nl/pra-v-nahore.ogg
+%%DATADIR%%/sound/cellar/nl/pra-v-nezapomen.ogg
+%%DATADIR%%/sound/cellar/nl/pra-v-objet.ogg
+%%DATADIR%%/sound/cellar/nl/pra-v-prekvapit.ogg
+%%DATADIR%%/sound/cellar/nl/pra-v-problem.ogg
+%%DATADIR%%/sound/cellar/nl/pra-v-schvalne.ogg
+%%DATADIR%%/sound/cellar/nl/pra-v-spatne.ogg
+%%DATADIR%%/sound/cellar/nl/pra-v-ukladani.ogg
+%%DATADIR%%/sound/cellar/nl/pra-v-valec.ogg
+%%DATADIR%%/sound/cellar/nl/pra-v-vzit.ogg
+%%DATADIR%%/sound/cellar/nl/pra-v-zapeklita.ogg
+%%DATADIR%%/sound/cellar/nl/pra-v-zavazis.ogg
 %%DATADIR%%/sound/chest/cs/tru-m-co.ogg
 %%DATADIR%%/sound/chest/cs/tru-m-nejistota.ogg
 %%DATADIR%%/sound/chest/cs/tru-m-oznamit.ogg
@@ -5609,6 +5929,29 @@ bin/fillets
 %%DATADIR%%/sound/chest/cs/tru-v-vzit1.ogg
 %%DATADIR%%/sound/chest/cs/tru-v-vzit2.ogg
 %%DATADIR%%/sound/chest/cs/tru-v-zrak.ogg
+%%DATADIR%%/sound/chest/nl/tru-m-co.ogg
+%%DATADIR%%/sound/chest/nl/tru-m-nejistota.ogg
+%%DATADIR%%/sound/chest/nl/tru-m-oznamit.ogg
+%%DATADIR%%/sound/chest/nl/tru-m-trpyt.ogg
+%%DATADIR%%/sound/chest/nl/tru-m-truhla0.ogg
+%%DATADIR%%/sound/chest/nl/tru-m-truhla1.ogg
+%%DATADIR%%/sound/chest/nl/tru-m-vzit0.ogg
+%%DATADIR%%/sound/chest/nl/tru-m-vzit1.ogg
+%%DATADIR%%/sound/chest/nl/tru-m-vzit2.ogg
+%%DATADIR%%/sound/chest/nl/tru-m-zpochybnit.ogg
+%%DATADIR%%/sound/chest/nl/tru-m-zrada.ogg
+%%DATADIR%%/sound/chest/nl/tru-v-gral.ogg
+%%DATADIR%%/sound/chest/nl/tru-v-nasly.ogg
+%%DATADIR%%/sound/chest/nl/tru-v-nejspis.ogg
+%%DATADIR%%/sound/chest/nl/tru-v-poklad.ogg
+%%DATADIR%%/sound/chest/nl/tru-v-stacit.ogg
+%%DATADIR%%/sound/chest/nl/tru-v-truhla0.ogg
+%%DATADIR%%/sound/chest/nl/tru-v-truhla1.ogg
+%%DATADIR%%/sound/chest/nl/tru-v-vkupe.ogg
+%%DATADIR%%/sound/chest/nl/tru-v-vzit0.ogg
+%%DATADIR%%/sound/chest/nl/tru-v-vzit1.ogg
+%%DATADIR%%/sound/chest/nl/tru-v-vzit2.ogg
+%%DATADIR%%/sound/chest/nl/tru-v-zrak.ogg
 %%DATADIR%%/sound/city/cs/vit-hs-demoni0.ogg
 %%DATADIR%%/sound/city/cs/vit-hs-dite0.ogg
 %%DATADIR%%/sound/city/cs/vit-hs-jidelna1.ogg
@@ -5649,6 +5992,22 @@ bin/fillets
 %%DATADIR%%/sound/city/cs/vit-v-vazne.ogg
 %%DATADIR%%/sound/city/en/vit-x-beg.ogg
 %%DATADIR%%/sound/city/en/vit-x-end.ogg
+%%DATADIR%%/sound/city/nl/vit-m-hlava.ogg
+%%DATADIR%%/sound/city/nl/vit-m-jak.ogg
+%%DATADIR%%/sound/city/nl/vit-m-jakze.ogg
+%%DATADIR%%/sound/city/nl/vit-m-nebo.ogg
+%%DATADIR%%/sound/city/nl/vit-m-nechutne.ogg
+%%DATADIR%%/sound/city/nl/vit-m-nezkusime.ogg
+%%DATADIR%%/sound/city/nl/vit-m-tak.ogg
+%%DATADIR%%/sound/city/nl/vit-m-vecnost.ogg
+%%DATADIR%%/sound/city/nl/vit-v-automat.ogg
+%%DATADIR%%/sound/city/nl/vit-v-hlava.ogg
+%%DATADIR%%/sound/city/nl/vit-v-krabi.ogg
+%%DATADIR%%/sound/city/nl/vit-v-nevsimla.ogg
+%%DATADIR%%/sound/city/nl/vit-v-noa.ogg
+%%DATADIR%%/sound/city/nl/vit-v-pockej.ogg
+%%DATADIR%%/sound/city/nl/vit-v-proc.ogg
+%%DATADIR%%/sound/city/nl/vit-v-vazne.ogg
 %%DATADIR%%/sound/columns/cs/sl-m-nelibila.ogg
 %%DATADIR%%/sound/columns/cs/sl-m-sedi.ogg
 %%DATADIR%%/sound/columns/cs/sl-m-tehdy.ogg
@@ -5663,6 +6022,19 @@ bin/fillets
 %%DATADIR%%/sound/columns/cs/sl-v-stopa.ogg
 %%DATADIR%%/sound/columns/cs/sl-v-vkapse.ogg
 %%DATADIR%%/sound/columns/en/sl-m-jekot.ogg
+%%DATADIR%%/sound/columns/nl/sl-m-nelibila.ogg
+%%DATADIR%%/sound/columns/nl/sl-m-sedi.ogg
+%%DATADIR%%/sound/columns/nl/sl-m-tehdy.ogg
+%%DATADIR%%/sound/columns/nl/sl-m-trvat.ogg
+%%DATADIR%%/sound/columns/nl/sl-m-velkolepe.ogg
+%%DATADIR%%/sound/columns/nl/sl-v-barbarka.ogg
+%%DATADIR%%/sound/columns/nl/sl-v-feidios.ogg
+%%DATADIR%%/sound/columns/nl/sl-v-nechme.ogg
+%%DATADIR%%/sound/columns/nl/sl-v-opatrne.ogg
+%%DATADIR%%/sound/columns/nl/sl-v-pust.ogg
+%%DATADIR%%/sound/columns/nl/sl-v-skoda.ogg
+%%DATADIR%%/sound/columns/nl/sl-v-stopa.ogg
+%%DATADIR%%/sound/columns/nl/sl-v-vkapse.ogg
 %%DATADIR%%/sound/computer/cs/poc-m-kcemu.ogg
 %%DATADIR%%/sound/computer/cs/poc-m-kram.ogg
 %%DATADIR%%/sound/computer/cs/poc-m-lezt0.ogg
@@ -5686,6 +6058,29 @@ bin/fillets
 %%DATADIR%%/sound/computer/cs/poc-v-pssst.ogg
 %%DATADIR%%/sound/computer/cs/poc-v-stahni.ogg
 %%DATADIR%%/sound/computer/cs/poc-v-vyresil.ogg
+%%DATADIR%%/sound/computer/nl/poc-m-kcemu.ogg
+%%DATADIR%%/sound/computer/nl/poc-m-kram.ogg
+%%DATADIR%%/sound/computer/nl/poc-m-lezt0.ogg
+%%DATADIR%%/sound/computer/nl/poc-m-lezt1.ogg
+%%DATADIR%%/sound/computer/nl/poc-m-lezt2.ogg
+%%DATADIR%%/sound/computer/nl/poc-m-mechanika.ogg
+%%DATADIR%%/sound/computer/nl/poc-m-mohlby.ogg
+%%DATADIR%%/sound/computer/nl/poc-m-myslis.ogg
+%%DATADIR%%/sound/computer/nl/poc-m-ukryta.ogg
+%%DATADIR%%/sound/computer/nl/poc-m-vyvrtka.ogg
+%%DATADIR%%/sound/computer/nl/poc-m-zezadu.ogg
+%%DATADIR%%/sound/computer/nl/poc-v-dira.ogg
+%%DATADIR%%/sound/computer/nl/poc-v-kam0.ogg
+%%DATADIR%%/sound/computer/nl/poc-v-kam1.ogg
+%%DATADIR%%/sound/computer/nl/poc-v-kam2.ogg
+%%DATADIR%%/sound/computer/nl/poc-v-kam3.ogg
+%%DATADIR%%/sound/computer/nl/poc-v-mono.ogg
+%%DATADIR%%/sound/computer/nl/poc-v-multimed.ogg
+%%DATADIR%%/sound/computer/nl/poc-v-napad.ogg
+%%DATADIR%%/sound/computer/nl/poc-v-nenajde.ogg
+%%DATADIR%%/sound/computer/nl/poc-v-pssst.ogg
+%%DATADIR%%/sound/computer/nl/poc-v-stahni.ogg
+%%DATADIR%%/sound/computer/nl/poc-v-vyresil.ogg
 %%DATADIR%%/sound/corals/cs/re-k-au.ogg
 %%DATADIR%%/sound/corals/cs/re-k-budi.ogg
 %%DATADIR%%/sound/corals/cs/re-k-nesahej.ogg
@@ -5706,6 +6101,21 @@ bin/fillets
 %%DATADIR%%/sound/corals/cs/re-v-obejit.ogg
 %%DATADIR%%/sound/corals/cs/re-v-ocel.ogg
 %%DATADIR%%/sound/corals/cs/re-v-pokoj.ogg
+%%DATADIR%%/sound/corals/nl/re-m-ahoj.ogg
+%%DATADIR%%/sound/corals/nl/re-m-libi0.ogg
+%%DATADIR%%/sound/corals/nl/re-m-libi1.ogg
+%%DATADIR%%/sound/corals/nl/re-m-libi2.ogg
+%%DATADIR%%/sound/corals/nl/re-m-rozveselit.ogg
+%%DATADIR%%/sound/corals/nl/re-m-uzitecny0.ogg
+%%DATADIR%%/sound/corals/nl/re-m-uzitecny1.ogg
+%%DATADIR%%/sound/corals/nl/re-v-koraly0.ogg
+%%DATADIR%%/sound/corals/nl/re-v-koraly1.ogg
+%%DATADIR%%/sound/corals/nl/re-v-nech.ogg
+%%DATADIR%%/sound/corals/nl/re-v-nervozni.ogg
+%%DATADIR%%/sound/corals/nl/re-v-nevsimej.ogg
+%%DATADIR%%/sound/corals/nl/re-v-obejit.ogg
+%%DATADIR%%/sound/corals/nl/re-v-ocel.ogg
+%%DATADIR%%/sound/corals/nl/re-v-pokoj.ogg
 %%DATADIR%%/sound/corridor/cs/ch-m-blik0.ogg
 %%DATADIR%%/sound/corridor/cs/ch-m-blik1.ogg
 %%DATADIR%%/sound/corridor/cs/ch-m-blik2.ogg
@@ -5752,6 +6162,38 @@ bin/fillets
 %%DATADIR%%/sound/corridor/cs/ch-v-zapada.ogg
 %%DATADIR%%/sound/corridor/en/ch-x-click1.ogg
 %%DATADIR%%/sound/corridor/en/ch-x-click2.ogg
+%%DATADIR%%/sound/corridor/nl/ch-m-blik0.ogg
+%%DATADIR%%/sound/corridor/nl/ch-m-blik1.ogg
+%%DATADIR%%/sound/corridor/nl/ch-m-blik2.ogg
+%%DATADIR%%/sound/corridor/nl/ch-m-bojim0.ogg
+%%DATADIR%%/sound/corridor/nl/ch-m-bojim1.ogg
+%%DATADIR%%/sound/corridor/nl/ch-m-bojim2.ogg
+%%DATADIR%%/sound/corridor/nl/ch-m-doufam.ogg
+%%DATADIR%%/sound/corridor/nl/ch-m-odpoved0.ogg
+%%DATADIR%%/sound/corridor/nl/ch-m-odpoved1.ogg
+%%DATADIR%%/sound/corridor/nl/ch-m-odpoved2.ogg
+%%DATADIR%%/sound/corridor/nl/ch-m-odpoved3.ogg
+%%DATADIR%%/sound/corridor/nl/ch-m-rozsvit0.ogg
+%%DATADIR%%/sound/corridor/nl/ch-m-rozsvit1.ogg
+%%DATADIR%%/sound/corridor/nl/ch-m-rozsvit2.ogg
+%%DATADIR%%/sound/corridor/nl/ch-m-tady0.ogg
+%%DATADIR%%/sound/corridor/nl/ch-m-tady1.ogg
+%%DATADIR%%/sound/corridor/nl/ch-m-tady2.ogg
+%%DATADIR%%/sound/corridor/nl/ch-m-ten.ogg
+%%DATADIR%%/sound/corridor/nl/ch-m-vubec.ogg
+%%DATADIR%%/sound/corridor/nl/ch-v-halo0.ogg
+%%DATADIR%%/sound/corridor/nl/ch-v-halo1.ogg
+%%DATADIR%%/sound/corridor/nl/ch-v-halo2.ogg
+%%DATADIR%%/sound/corridor/nl/ch-v-neboj0.ogg
+%%DATADIR%%/sound/corridor/nl/ch-v-neboj1.ogg
+%%DATADIR%%/sound/corridor/nl/ch-v-neboj2.ogg
+%%DATADIR%%/sound/corridor/nl/ch-v-pockej0.ogg
+%%DATADIR%%/sound/corridor/nl/ch-v-pockej1.ogg
+%%DATADIR%%/sound/corridor/nl/ch-v-pockej2.ogg
+%%DATADIR%%/sound/corridor/nl/ch-v-pozor.ogg
+%%DATADIR%%/sound/corridor/nl/ch-v-robopes.ogg
+%%DATADIR%%/sound/corridor/nl/ch-v-smysl.ogg
+%%DATADIR%%/sound/corridor/nl/ch-v-zapada.ogg
 %%DATADIR%%/sound/crabshow/cs/sec-m-balonky.ogg
 %%DATADIR%%/sound/crabshow/cs/sec-m-dole0.ogg
 %%DATADIR%%/sound/crabshow/cs/sec-m-dole1.ogg
@@ -5774,6 +6216,28 @@ bin/fillets
 %%DATADIR%%/sound/crabshow/cs/sec-v-ven1.ogg
 %%DATADIR%%/sound/crabshow/cs/sec-v-ven2.ogg
 %%DATADIR%%/sound/crabshow/cs/sec-v-zavreny.ogg
+%%DATADIR%%/sound/crabshow/nl/sec-m-balonky.ogg
+%%DATADIR%%/sound/crabshow/nl/sec-m-dole0.ogg
+%%DATADIR%%/sound/crabshow/nl/sec-m-dole1.ogg
+%%DATADIR%%/sound/crabshow/nl/sec-m-kamen.ogg
+%%DATADIR%%/sound/crabshow/nl/sec-m-krab.ogg
+%%DATADIR%%/sound/crabshow/nl/sec-m-pocity.ogg
+%%DATADIR%%/sound/crabshow/nl/sec-m-program.ogg
+%%DATADIR%%/sound/crabshow/nl/sec-m-situace.ogg
+%%DATADIR%%/sound/crabshow/nl/sec-m-ven0.ogg
+%%DATADIR%%/sound/crabshow/nl/sec-m-ven1.ogg
+%%DATADIR%%/sound/crabshow/nl/sec-v-ktery.ogg
+%%DATADIR%%/sound/crabshow/nl/sec-v-mesto.ogg
+%%DATADIR%%/sound/crabshow/nl/sec-v-normalni0.ogg
+%%DATADIR%%/sound/crabshow/nl/sec-v-normalni1.ogg
+%%DATADIR%%/sound/crabshow/nl/sec-v-oci.ogg
+%%DATADIR%%/sound/crabshow/nl/sec-v-pocit.ogg
+%%DATADIR%%/sound/crabshow/nl/sec-v-pockej.ogg
+%%DATADIR%%/sound/crabshow/nl/sec-v-socha.ogg
+%%DATADIR%%/sound/crabshow/nl/sec-v-ven0.ogg
+%%DATADIR%%/sound/crabshow/nl/sec-v-ven1.ogg
+%%DATADIR%%/sound/crabshow/nl/sec-v-ven2.ogg
+%%DATADIR%%/sound/crabshow/nl/sec-v-zavreny.ogg
 %%DATADIR%%/sound/creatures/cs/kor-m-avlada.ogg
 %%DATADIR%%/sound/creatures/cs/kor-m-bizarni.ogg
 %%DATADIR%%/sound/creatures/cs/kor-m-budesmuset.ogg
@@ -5810,6 +6274,38 @@ bin/fillets
 %%DATADIR%%/sound/creatures/en/kor-chob-psi.ogg
 %%DATADIR%%/sound/creatures/en/kor-chob-tca.ogg
 %%DATADIR%%/sound/creatures/en/kor-room-music.ogg
+%%DATADIR%%/sound/creatures/nl/kor-m-avlada.ogg
+%%DATADIR%%/sound/creatures/nl/kor-m-bizarni.ogg
+%%DATADIR%%/sound/creatures/nl/kor-m-budesmuset.ogg
+%%DATADIR%%/sound/creatures/nl/kor-m-dusi.ogg
+%%DATADIR%%/sound/creatures/nl/kor-m-hraje.ogg
+%%DATADIR%%/sound/creatures/nl/kor-m-jinou.ogg
+%%DATADIR%%/sound/creatures/nl/kor-m-lezekrkem.ogg
+%%DATADIR%%/sound/creatures/nl/kor-m-nachob.ogg
+%%DATADIR%%/sound/creatures/nl/kor-m-neniono.ogg
+%%DATADIR%%/sound/creatures/nl/kor-m-neprehani.ogg
+%%DATADIR%%/sound/creatures/nl/kor-m-pocit.ogg
+%%DATADIR%%/sound/creatures/nl/kor-m-podivej.ogg
+%%DATADIR%%/sound/creatures/nl/kor-m-pokud.ogg
+%%DATADIR%%/sound/creatures/nl/kor-m-tovis.ogg
+%%DATADIR%%/sound/creatures/nl/kor-m-tudiru.ogg
+%%DATADIR%%/sound/creatures/nl/kor-m-vsimlsis.ogg
+%%DATADIR%%/sound/creatures/nl/kor-m-vzdyt.ogg
+%%DATADIR%%/sound/creatures/nl/kor-v-avidelas.ogg
+%%DATADIR%%/sound/creatures/nl/kor-v-bermudy.ogg
+%%DATADIR%%/sound/creatures/nl/kor-v-inteligentni.ogg
+%%DATADIR%%/sound/creatures/nl/kor-v-jedovate.ogg
+%%DATADIR%%/sound/creatures/nl/kor-v-juchacka.ogg
+%%DATADIR%%/sound/creatures/nl/kor-v-kostice.ogg
+%%DATADIR%%/sound/creatures/nl/kor-v-lezekrkem.ogg
+%%DATADIR%%/sound/creatures/nl/kor-v-nicje.ogg
+%%DATADIR%%/sound/creatures/nl/kor-v-odsud.ogg
+%%DATADIR%%/sound/creatures/nl/kor-v-odvaz.ogg
+%%DATADIR%%/sound/creatures/nl/kor-v-podivej.ogg
+%%DATADIR%%/sound/creatures/nl/kor-v-shledavam.ogg
+%%DATADIR%%/sound/creatures/nl/kor-v-spitu.ogg
+%%DATADIR%%/sound/creatures/nl/kor-v-treba.ogg
+%%DATADIR%%/sound/creatures/nl/kor-v-vali.ogg
 %%DATADIR%%/sound/duckie/cs/odp-m-blaznis.ogg
 %%DATADIR%%/sound/duckie/cs/odp-m-kohout.ogg
 %%DATADIR%%/sound/duckie/cs/odp-m-predmet.ogg
@@ -5822,6 +6318,18 @@ bin/fillets
 %%DATADIR%%/sound/duckie/cs/odp-v-pozadi.ogg
 %%DATADIR%%/sound/duckie/cs/odp-v-snehulak.ogg
 %%DATADIR%%/sound/duckie/cs/odp-v-vtip.ogg
+%%DATADIR%%/sound/duckie/nl/odp-m-blaznis.ogg
+%%DATADIR%%/sound/duckie/nl/odp-m-kohout.ogg
+%%DATADIR%%/sound/duckie/nl/odp-m-predmet.ogg
+%%DATADIR%%/sound/duckie/nl/odp-m-zda0.ogg
+%%DATADIR%%/sound/duckie/nl/odp-m-zda1.ogg
+%%DATADIR%%/sound/duckie/nl/odp-v-coja.ogg
+%%DATADIR%%/sound/duckie/nl/odp-v-kachna.ogg
+%%DATADIR%%/sound/duckie/nl/odp-v-nestacim.ogg
+%%DATADIR%%/sound/duckie/nl/odp-v-pohni.ogg
+%%DATADIR%%/sound/duckie/nl/odp-v-pozadi.ogg
+%%DATADIR%%/sound/duckie/nl/odp-v-snehulak.ogg
+%%DATADIR%%/sound/duckie/nl/odp-v-vtip.ogg
 %%DATADIR%%/sound/dump/cs/sm-m-codela.ogg
 %%DATADIR%%/sound/dump/cs/sm-m-dedek.ogg
 %%DATADIR%%/sound/dump/cs/sm-m-kramy0.ogg
@@ -5845,7 +6353,94 @@ bin/fillets
 %%DATADIR%%/sound/dump/cs/sm-v-sbirka.ogg
 %%DATADIR%%/sound/dump/cs/sm-x-meduza.ogg
 %%DATADIR%%/sound/dump/en/sm-x-tiktak.ogg
+%%DATADIR%%/sound/dump/nl/sm-m-codela.ogg
+%%DATADIR%%/sound/dump/nl/sm-m-dedek.ogg
+%%DATADIR%%/sound/dump/nl/sm-m-kramy0.ogg
+%%DATADIR%%/sound/dump/nl/sm-m-kramy1.ogg
+%%DATADIR%%/sound/dump/nl/sm-m-namaloval.ogg
+%%DATADIR%%/sound/dump/nl/sm-m-normalni.ogg
+%%DATADIR%%/sound/dump/nl/sm-m-proc.ogg
+%%DATADIR%%/sound/dump/nl/sm-m-prolezame.ogg
+%%DATADIR%%/sound/dump/nl/sm-v-budik.ogg
+%%DATADIR%%/sound/dump/nl/sm-v-charon.ogg
+%%DATADIR%%/sound/dump/nl/sm-v-duchodce0.ogg
+%%DATADIR%%/sound/dump/nl/sm-v-duchodce1.ogg
+%%DATADIR%%/sound/dump/nl/sm-v-jine0.ogg
+%%DATADIR%%/sound/dump/nl/sm-v-jine1.ogg
+%%DATADIR%%/sound/dump/nl/sm-v-jine2.ogg
+%%DATADIR%%/sound/dump/nl/sm-v-kramy2.ogg
+%%DATADIR%%/sound/dump/nl/sm-v-kramy3.ogg
+%%DATADIR%%/sound/dump/nl/sm-v-lod.ogg
+%%DATADIR%%/sound/dump/nl/sm-v-marnost.ogg
+%%DATADIR%%/sound/dump/nl/sm-v-podivej.ogg
+%%DATADIR%%/sound/dump/nl/sm-v-sbirka.ogg
 %%DATADIR%%/sound/electromagnet/en/laser.ogg
+%%DATADIR%%/sound/electromagnet/nl/b-hurt-0.ogg
+%%DATADIR%%/sound/electromagnet/nl/b-hurt-1.ogg
+%%DATADIR%%/sound/electromagnet/nl/b-hurt-2.ogg
+%%DATADIR%%/sound/electromagnet/nl/init-0.ogg
+%%DATADIR%%/sound/electromagnet/nl/init-1.ogg
+%%DATADIR%%/sound/electromagnet/nl/init-2.ogg
+%%DATADIR%%/sound/electromagnet/nl/init-3-0.ogg
+%%DATADIR%%/sound/electromagnet/nl/init-3-1.ogg
+%%DATADIR%%/sound/electromagnet/nl/init-3-2.ogg
+%%DATADIR%%/sound/electromagnet/nl/init-3-3.ogg
+%%DATADIR%%/sound/electromagnet/nl/init-4.ogg
+%%DATADIR%%/sound/electromagnet/nl/rand-0-0.ogg
+%%DATADIR%%/sound/electromagnet/nl/rand-0-1.ogg
+%%DATADIR%%/sound/electromagnet/nl/rand-0-2.ogg
+%%DATADIR%%/sound/electromagnet/nl/rand-0-3.ogg
+%%DATADIR%%/sound/electromagnet/nl/rand-0-4.ogg
+%%DATADIR%%/sound/electromagnet/nl/rand-0-5.ogg
+%%DATADIR%%/sound/electromagnet/nl/rand-1-0.ogg
+%%DATADIR%%/sound/electromagnet/nl/rand-1-1.ogg
+%%DATADIR%%/sound/electromagnet/nl/rand-1-2.ogg
+%%DATADIR%%/sound/electromagnet/nl/rand-1-3.ogg
+%%DATADIR%%/sound/electromagnet/nl/rand-2-0.ogg
+%%DATADIR%%/sound/electromagnet/nl/rand-2-1.ogg
+%%DATADIR%%/sound/electromagnet/nl/rand-2-2.ogg
+%%DATADIR%%/sound/electromagnet/nl/rand-2-3-0.ogg
+%%DATADIR%%/sound/electromagnet/nl/rand-2-3-1.ogg
+%%DATADIR%%/sound/electromagnet/nl/rand-2-3-2.ogg
+%%DATADIR%%/sound/electromagnet/nl/rand-2-4.ogg
+%%DATADIR%%/sound/electromagnet/nl/rand-3-0.ogg
+%%DATADIR%%/sound/electromagnet/nl/rand-3-1.ogg
+%%DATADIR%%/sound/electromagnet/nl/rand-3-2-0.ogg
+%%DATADIR%%/sound/electromagnet/nl/rand-3-2-1.ogg
+%%DATADIR%%/sound/electromagnet/nl/rand-3-2-2.ogg
+%%DATADIR%%/sound/electromagnet/nl/rand-3-2-3.ogg
+%%DATADIR%%/sound/electromagnet/nl/rand-3-2-4.ogg
+%%DATADIR%%/sound/electromagnet/nl/rand-3-2-5.ogg
+%%DATADIR%%/sound/electromagnet/nl/rand-3-3.ogg
+%%DATADIR%%/sound/electromagnet/nl/rand-4-0.ogg
+%%DATADIR%%/sound/electromagnet/nl/rand-4-1.ogg
+%%DATADIR%%/sound/electromagnet/nl/rand-4-2.ogg
+%%DATADIR%%/sound/electromagnet/nl/rand-5-0.ogg
+%%DATADIR%%/sound/electromagnet/nl/rand-5-1.ogg
+%%DATADIR%%/sound/electromagnet/nl/rand-5-2.ogg
+%%DATADIR%%/sound/electromagnet/nl/rand-5-3-0.ogg
+%%DATADIR%%/sound/electromagnet/nl/rand-5-3-1.ogg
+%%DATADIR%%/sound/electromagnet/nl/rand-6-0.ogg
+%%DATADIR%%/sound/electromagnet/nl/rand-6-1.ogg
+%%DATADIR%%/sound/electromagnet/nl/rand-6-2.ogg
+%%DATADIR%%/sound/electromagnet/nl/rand-6-3.ogg
+%%DATADIR%%/sound/electromagnet/nl/rand-6-4.ogg
+%%DATADIR%%/sound/electromagnet/nl/rand-6-5.ogg
+%%DATADIR%%/sound/electromagnet/nl/s-hurt-0.ogg
+%%DATADIR%%/sound/electromagnet/nl/s-hurt-1.ogg
+%%DATADIR%%/sound/electromagnet/nl/s-hurt-2.ogg
+%%DATADIR%%/sound/electromagnet/nl/shoot-0-0.ogg
+%%DATADIR%%/sound/electromagnet/nl/shoot-0-1.ogg
+%%DATADIR%%/sound/electromagnet/nl/shoot-0-2.ogg
+%%DATADIR%%/sound/electromagnet/nl/shoot-0-3.ogg
+%%DATADIR%%/sound/electromagnet/nl/shoot-1.ogg
+%%DATADIR%%/sound/electromagnet/nl/shoot-2-0.ogg
+%%DATADIR%%/sound/electromagnet/nl/shoot-2-1.ogg
+%%DATADIR%%/sound/electromagnet/nl/shoot-3-0.ogg
+%%DATADIR%%/sound/electromagnet/nl/shoot-3-1.ogg
+%%DATADIR%%/sound/electromagnet/nl/shoot-4.ogg
+%%DATADIR%%/sound/electromagnet/nl/shoot-5.ogg
+%%DATADIR%%/sound/electromagnet/nl/shoot-6.ogg
 %%DATADIR%%/sound/elevator1/cs/zd1-m-cesta.ogg
 %%DATADIR%%/sound/elevator1/cs/zd1-m-dolu.ogg
 %%DATADIR%%/sound/elevator1/cs/zd1-m-last.ogg
@@ -5864,6 +6459,18 @@ bin/fillets
 %%DATADIR%%/sound/elevator1/cs/zd1-x-huhu4.ogg
 %%DATADIR%%/sound/elevator1/cs/zd1-x-huhu5.ogg
 %%DATADIR%%/sound/elevator1/cs/zd1-x-huhu6.ogg
+%%DATADIR%%/sound/elevator1/nl/zd1-m-cesta.ogg
+%%DATADIR%%/sound/elevator1/nl/zd1-m-dolu.ogg
+%%DATADIR%%/sound/elevator1/nl/zd1-m-last.ogg
+%%DATADIR%%/sound/elevator1/nl/zd1-m-poved.ogg
+%%DATADIR%%/sound/elevator1/nl/zd1-m-slap.ogg
+%%DATADIR%%/sound/elevator1/nl/zd1-m-stejne.ogg
+%%DATADIR%%/sound/elevator1/nl/zd1-m-tlac.ogg
+%%DATADIR%%/sound/elevator1/nl/zd1-v-civil.ogg
+%%DATADIR%%/sound/elevator1/nl/zd1-v-krecek.ogg
+%%DATADIR%%/sound/elevator1/nl/zd1-v-lebka.ogg
+%%DATADIR%%/sound/elevator1/nl/zd1-v-styd.ogg
+%%DATADIR%%/sound/elevator1/nl/zd1-v-talis.ogg
 %%DATADIR%%/sound/elevator2/cs/zd2-m-dalsi.ogg
 %%DATADIR%%/sound/elevator2/cs/zd2-m-douf.ogg
 %%DATADIR%%/sound/elevator2/cs/zd2-m-lebka.ogg
@@ -5886,6 +6493,16 @@ bin/fillets
 %%DATADIR%%/sound/elevator2/cs/zd2-x-neklast.ogg
 %%DATADIR%%/sound/elevator2/cs/zd2-x-pokoj.ogg
 %%DATADIR%%/sound/elevator2/cs/zd2-x-ritual.ogg
+%%DATADIR%%/sound/elevator2/nl/zd2-m-dalsi.ogg
+%%DATADIR%%/sound/elevator2/nl/zd2-m-douf.ogg
+%%DATADIR%%/sound/elevator2/nl/zd2-m-lebka.ogg
+%%DATADIR%%/sound/elevator2/nl/zd2-m-nevid0.ogg
+%%DATADIR%%/sound/elevator2/nl/zd2-m-nevid1.ogg
+%%DATADIR%%/sound/elevator2/nl/zd2-v-haml.ogg
+%%DATADIR%%/sound/elevator2/nl/zd2-v-odlis0.ogg
+%%DATADIR%%/sound/elevator2/nl/zd2-v-odlis1.ogg
+%%DATADIR%%/sound/elevator2/nl/zd2-v-symbol.ogg
+%%DATADIR%%/sound/elevator2/nl/zd2-v-vlevo.ogg
 %%DATADIR%%/sound/elk/cs/deu-m-bojovat.ogg
 %%DATADIR%%/sound/elk/cs/deu-m-valka.ogg
 %%DATADIR%%/sound/elk/cs/deu-m-zvlastni.ogg
@@ -5912,6 +6529,13 @@ bin/fillets
 %%DATADIR%%/sound/elk/en/deu-p-streng.ogg
 %%DATADIR%%/sound/elk/en/deu-p-trinken0.ogg
 %%DATADIR%%/sound/elk/en/deu-p-trinken1.ogg
+%%DATADIR%%/sound/elk/nl/deu-m-bojovat.ogg
+%%DATADIR%%/sound/elk/nl/deu-m-valka.ogg
+%%DATADIR%%/sound/elk/nl/deu-m-zvlastni.ogg
+%%DATADIR%%/sound/elk/nl/deu-v-losa.ogg
+%%DATADIR%%/sound/elk/nl/deu-v-nepratelstvi.ogg
+%%DATADIR%%/sound/elk/nl/deu-v-radsi.ogg
+%%DATADIR%%/sound/elk/nl/deu-v-slysel.ogg
 %%DATADIR%%/sound/emulator/cs/zx-m-highway.ogg
 %%DATADIR%%/sound/emulator/cs/zx-m-jetpack.ogg
 %%DATADIR%%/sound/emulator/cs/zx-m-knight.ogg
@@ -5927,6 +6551,21 @@ bin/fillets
 %%DATADIR%%/sound/emulator/cs/zx-v-otazka.ogg
 %%DATADIR%%/sound/emulator/cs/zx-v-pamet.ogg
 %%DATADIR%%/sound/emulator/cs/zx-v-roboti.ogg
+%%DATADIR%%/sound/emulator/nl/zx-m-highway.ogg
+%%DATADIR%%/sound/emulator/nl/zx-m-jetpack.ogg
+%%DATADIR%%/sound/emulator/nl/zx-m-knight.ogg
+%%DATADIR%%/sound/emulator/nl/zx-m-necodosebe.ogg
+%%DATADIR%%/sound/emulator/nl/zx-m-ocel.ogg
+%%DATADIR%%/sound/emulator/nl/zx-m-pametnici.ogg
+%%DATADIR%%/sound/emulator/nl/zx-m-pixel.ogg
+%%DATADIR%%/sound/emulator/nl/zx-m-premyslis.ogg
+%%DATADIR%%/sound/emulator/nl/zx-v-hry.ogg
+%%DATADIR%%/sound/emulator/nl/zx-v-manicminer.ogg
+%%DATADIR%%/sound/emulator/nl/zx-v-nahravani.ogg
+%%DATADIR%%/sound/emulator/nl/zx-v-osmibit.ogg
+%%DATADIR%%/sound/emulator/nl/zx-v-otazka.ogg
+%%DATADIR%%/sound/emulator/nl/zx-v-pamet.ogg
+%%DATADIR%%/sound/emulator/nl/zx-v-roboti.ogg
 %%DATADIR%%/sound/ending/cs/z-c-1.ogg
 %%DATADIR%%/sound/ending/cs/z-c-10.ogg
 %%DATADIR%%/sound/ending/cs/z-c-100.ogg
@@ -5978,6 +6617,16 @@ bin/fillets
 %%DATADIR%%/sound/ending/en/bar-x-suck2.ogg
 %%DATADIR%%/sound/ending/en/bar-x-suck3.ogg
 %%DATADIR%%/sound/ending/en/bar-x-suckano.ogg
+%%DATADIR%%/sound/ending/nl/z-m-dlouho.ogg
+%%DATADIR%%/sound/ending/nl/z-m-nemluv.ogg
+%%DATADIR%%/sound/ending/nl/z-m-netusi.ogg
+%%DATADIR%%/sound/ending/nl/z-m-oblicej.ogg
+%%DATADIR%%/sound/ending/nl/z-m-pocit.ogg
+%%DATADIR%%/sound/ending/nl/z-v-doma.ogg
+%%DATADIR%%/sound/ending/nl/z-v-forky.ogg
+%%DATADIR%%/sound/ending/nl/z-v-pozdrav.ogg
+%%DATADIR%%/sound/ending/nl/z-v-sef.ogg
+%%DATADIR%%/sound/ending/nl/z-v-slyset.ogg
 %%DATADIR%%/sound/engine/cs/mot-m-akce0.ogg
 %%DATADIR%%/sound/engine/cs/mot-m-akce1.ogg
 %%DATADIR%%/sound/engine/cs/mot-m-akce2.ogg
@@ -6005,6 +6654,32 @@ bin/fillets
 %%DATADIR%%/sound/engine/cs/mot-v-zvuky0.ogg
 %%DATADIR%%/sound/engine/cs/mot-v-zvuky1.ogg
 %%DATADIR%%/sound/engine/en/mot-x-motor.ogg
+%%DATADIR%%/sound/engine/nl/mot-m-akce0.ogg
+%%DATADIR%%/sound/engine/nl/mot-m-akce1.ogg
+%%DATADIR%%/sound/engine/nl/mot-m-akce2.ogg
+%%DATADIR%%/sound/engine/nl/mot-m-info.ogg
+%%DATADIR%%/sound/engine/nl/mot-m-konecne0.ogg
+%%DATADIR%%/sound/engine/nl/mot-m-konecne1.ogg
+%%DATADIR%%/sound/engine/nl/mot-m-mayday.ogg
+%%DATADIR%%/sound/engine/nl/mot-m-nemuzu0.ogg
+%%DATADIR%%/sound/engine/nl/mot-m-nemuzu1.ogg
+%%DATADIR%%/sound/engine/nl/mot-m-tak.ogg
+%%DATADIR%%/sound/engine/nl/mot-m-ublizit.ogg
+%%DATADIR%%/sound/engine/nl/mot-m-zvuky0.ogg
+%%DATADIR%%/sound/engine/nl/mot-m-zvuky1.ogg
+%%DATADIR%%/sound/engine/nl/mot-v-funkce0.ogg
+%%DATADIR%%/sound/engine/nl/mot-v-funkce1.ogg
+%%DATADIR%%/sound/engine/nl/mot-v-funkce2.ogg
+%%DATADIR%%/sound/engine/nl/mot-v-klic.ogg
+%%DATADIR%%/sound/engine/nl/mot-v-konecne0.ogg
+%%DATADIR%%/sound/engine/nl/mot-v-konecne1.ogg
+%%DATADIR%%/sound/engine/nl/mot-v-konvencni.ogg
+%%DATADIR%%/sound/engine/nl/mot-v-nemuzu0.ogg
+%%DATADIR%%/sound/engine/nl/mot-v-nemuzu1.ogg
+%%DATADIR%%/sound/engine/nl/mot-v-zavery.ogg
+%%DATADIR%%/sound/engine/nl/mot-v-znovu0.ogg
+%%DATADIR%%/sound/engine/nl/mot-v-zvuky0.ogg
+%%DATADIR%%/sound/engine/nl/mot-v-zvuky1.ogg
 %%DATADIR%%/sound/experiments/cs/bank-m-bojim.ogg
 %%DATADIR%%/sound/experiments/cs/bank-m-fuj.ogg
 %%DATADIR%%/sound/experiments/cs/bank-m-hlavakolem.ogg
@@ -6038,6 +6713,39 @@ bin/fillets
 %%DATADIR%%/sound/experiments/cs/bank-v-vypad1.ogg
 %%DATADIR%%/sound/experiments/cs/bank-v-vypad2.ogg
 %%DATADIR%%/sound/experiments/cs/bank-v-zije.ogg
+%%DATADIR%%/sound/experiments/nl/bank-m-bojim.ogg
+%%DATADIR%%/sound/experiments/nl/bank-m-fuj.ogg
+%%DATADIR%%/sound/experiments/nl/bank-m-hlavakolem.ogg
+%%DATADIR%%/sound/experiments/nl/bank-m-jejda.ogg
+%%DATADIR%%/sound/experiments/nl/bank-m-kouka.ogg
+%%DATADIR%%/sound/experiments/nl/bank-m-labolator1.ogg
+%%DATADIR%%/sound/experiments/nl/bank-m-labolator2.ogg
+%%DATADIR%%/sound/experiments/nl/bank-m-labolator3.ogg
+%%DATADIR%%/sound/experiments/nl/bank-m-mrtvolka.ogg
+%%DATADIR%%/sound/experiments/nl/bank-m-nerus.ogg
+%%DATADIR%%/sound/experiments/nl/bank-m-nervozni.ogg
+%%DATADIR%%/sound/experiments/nl/bank-m-nesetkala.ogg
+%%DATADIR%%/sound/experiments/nl/bank-m-ocicka.ogg
+%%DATADIR%%/sound/experiments/nl/bank-m-organismy.ogg
+%%DATADIR%%/sound/experiments/nl/bank-m-prehnal1.ogg
+%%DATADIR%%/sound/experiments/nl/bank-m-prehnal2.ogg
+%%DATADIR%%/sound/experiments/nl/bank-m-prohlednout.ogg
+%%DATADIR%%/sound/experiments/nl/bank-m-rozbila.ogg
+%%DATADIR%%/sound/experiments/nl/bank-m-tvorove.ogg
+%%DATADIR%%/sound/experiments/nl/bank-m-zkumavka.ogg
+%%DATADIR%%/sound/experiments/nl/bank-v-flaska.ogg
+%%DATADIR%%/sound/experiments/nl/bank-v-jeste.ogg
+%%DATADIR%%/sound/experiments/nl/bank-v-mnozeni.ogg
+%%DATADIR%%/sound/experiments/nl/bank-v-nahazet.ogg
+%%DATADIR%%/sound/experiments/nl/bank-v-neproplavu1.ogg
+%%DATADIR%%/sound/experiments/nl/bank-v-neproplavu2.ogg
+%%DATADIR%%/sound/experiments/nl/bank-v-pokusy1.ogg
+%%DATADIR%%/sound/experiments/nl/bank-v-pokusy2.ogg
+%%DATADIR%%/sound/experiments/nl/bank-v-pomoc.ogg
+%%DATADIR%%/sound/experiments/nl/bank-v-potvory.ogg
+%%DATADIR%%/sound/experiments/nl/bank-v-vypad1.ogg
+%%DATADIR%%/sound/experiments/nl/bank-v-vypad2.ogg
+%%DATADIR%%/sound/experiments/nl/bank-v-zije.ogg
 %%DATADIR%%/sound/fdto/cs/agenti-m.ogg
 %%DATADIR%%/sound/fdto/cs/budova-m.ogg
 %%DATADIR%%/sound/fdto/cs/cely-m.ogg
@@ -6066,6 +6774,29 @@ bin/fillets
 %%DATADIR%%/sound/fdto/cs/ted6-m.ogg
 %%DATADIR%%/sound/fdto/cs/vidis-v.ogg
 %%DATADIR%%/sound/fdto/cs/zelena-v.ogg
+%%DATADIR%%/sound/fdto/nl/agenti-m.ogg
+%%DATADIR%%/sound/fdto/nl/budova-m.ogg
+%%DATADIR%%/sound/fdto/nl/cely-m.ogg
+%%DATADIR%%/sound/fdto/nl/drzel-m.ogg
+%%DATADIR%%/sound/fdto/nl/hybeme-v.ogg
+%%DATADIR%%/sound/fdto/nl/kecas-v.ogg
+%%DATADIR%%/sound/fdto/nl/mene-m.ogg
+%%DATADIR%%/sound/fdto/nl/mrka-m.ogg
+%%DATADIR%%/sound/fdto/nl/nacekala-m.ogg
+%%DATADIR%%/sound/fdto/nl/nebyl-v.ogg
+%%DATADIR%%/sound/fdto/nl/nemrka-v.ogg
+%%DATADIR%%/sound/fdto/nl/podvodou-v.ogg
+%%DATADIR%%/sound/fdto/nl/proc-m.ogg
+%%DATADIR%%/sound/fdto/nl/proc-v.ogg
+%%DATADIR%%/sound/fdto/nl/rozbil-v.ogg
+%%DATADIR%%/sound/fdto/nl/rozkladaci-v.ogg
+%%DATADIR%%/sound/fdto/nl/semafor-v.ogg
+%%DATADIR%%/sound/fdto/nl/ted1-m.ogg
+%%DATADIR%%/sound/fdto/nl/ted2-m.ogg
+%%DATADIR%%/sound/fdto/nl/ted3-m.ogg
+%%DATADIR%%/sound/fdto/nl/ted4-m.ogg
+%%DATADIR%%/sound/fdto/nl/vidis-v.ogg
+%%DATADIR%%/sound/fdto/nl/zelena-v.ogg
 %%DATADIR%%/sound/floppy/cs/disk-m-depres.ogg
 %%DATADIR%%/sound/floppy/cs/disk-m-nahrat.ogg
 %%DATADIR%%/sound/floppy/cs/disk-m-potvory.ogg
@@ -6101,6 +6832,30 @@ bin/fillets
 %%DATADIR%%/sound/floppy/en/disk-x-vir0.ogg
 %%DATADIR%%/sound/floppy/en/disk-x-vir1.ogg
 %%DATADIR%%/sound/floppy/en/disk-x-vir2.ogg
+%%DATADIR%%/sound/floppy/nl/disk-m-depres.ogg
+%%DATADIR%%/sound/floppy/nl/disk-m-nahrat.ogg
+%%DATADIR%%/sound/floppy/nl/disk-m-potvory.ogg
+%%DATADIR%%/sound/floppy/nl/disk-m-sakra.ogg
+%%DATADIR%%/sound/floppy/nl/disk-m-tady.ogg
+%%DATADIR%%/sound/floppy/nl/disk-m-tvorecci.ogg
+%%DATADIR%%/sound/floppy/nl/disk-m-ukol.ogg
+%%DATADIR%%/sound/floppy/nl/disk-m-vejit.ogg
+%%DATADIR%%/sound/floppy/nl/disk-m-velka.ogg
+%%DATADIR%%/sound/floppy/nl/disk-m-zmatlo.ogg
+%%DATADIR%%/sound/floppy/nl/disk-m-zvednem.ogg
+%%DATADIR%%/sound/floppy/nl/disk-v-kriz.ogg
+%%DATADIR%%/sound/floppy/nl/disk-v-mas.ogg
+%%DATADIR%%/sound/floppy/nl/disk-v-metrova.ogg
+%%DATADIR%%/sound/floppy/nl/disk-v-naano.ogg
+%%DATADIR%%/sound/floppy/nl/disk-v-nane.ogg
+%%DATADIR%%/sound/floppy/nl/disk-v-nejde.ogg
+%%DATADIR%%/sound/floppy/nl/disk-v-neverim.ogg
+%%DATADIR%%/sound/floppy/nl/disk-v-pozor.ogg
+%%DATADIR%%/sound/floppy/nl/disk-v-tady.ogg
+%%DATADIR%%/sound/floppy/nl/disk-v-tezko.ogg
+%%DATADIR%%/sound/floppy/nl/disk-v-ulamu.ogg
+%%DATADIR%%/sound/floppy/nl/disk-v-viry.ogg
+%%DATADIR%%/sound/floppy/nl/disk-v-vratime.ogg
 %%DATADIR%%/sound/gems/cs/zav-m-hopskok.ogg
 %%DATADIR%%/sound/gems/cs/zav-m-hrac.ogg
 %%DATADIR%%/sound/gems/cs/zav-m-kameny.ogg
@@ -6114,6 +6869,17 @@ bin/fillets
 %%DATADIR%%/sound/gems/cs/zav-v-zachranit.ogg
 %%DATADIR%%/sound/gems/cs/zav-v-zaval.ogg
 %%DATADIR%%/sound/gems/cs/zav-v-zeleny.ogg
+%%DATADIR%%/sound/gems/nl/zav-m-hopskok.ogg
+%%DATADIR%%/sound/gems/nl/zav-m-hrac.ogg
+%%DATADIR%%/sound/gems/nl/zav-m-kameny.ogg
+%%DATADIR%%/sound/gems/nl/zav-m-pohnout.ogg
+%%DATADIR%%/sound/gems/nl/zav-m-pravda.ogg
+%%DATADIR%%/sound/gems/nl/zav-v-restart.ogg
+%%DATADIR%%/sound/gems/nl/zav-v-sto.ogg
+%%DATADIR%%/sound/gems/nl/zav-v-trpyt.ogg
+%%DATADIR%%/sound/gems/nl/zav-v-venku.ogg
+%%DATADIR%%/sound/gems/nl/zav-v-zaval.ogg
+%%DATADIR%%/sound/gems/nl/zav-v-zeleny.ogg
 %%DATADIR%%/sound/gods/cs/b1-1.ogg
 %%DATADIR%%/sound/gods/cs/b1-10.ogg
 %%DATADIR%%/sound/gods/cs/b1-2.ogg
@@ -6222,6 +6988,36 @@ bin/fillets
 %%DATADIR%%/sound/gods/cs/lod-v-silenost1.ogg
 %%DATADIR%%/sound/gods/cs/lod-v-silenost2.ogg
 %%DATADIR%%/sound/gods/cs/lod-v-zluty.ogg
+%%DATADIR%%/sound/gods/nl/lod-m-bohove.ogg
+%%DATADIR%%/sound/gods/nl/lod-m-co.ogg
+%%DATADIR%%/sound/gods/nl/lod-m-costim.ogg
+%%DATADIR%%/sound/gods/nl/lod-m-hrac.ogg
+%%DATADIR%%/sound/gods/nl/lod-m-jednoho.ogg
+%%DATADIR%%/sound/gods/nl/lod-m-micek.ogg
+%%DATADIR%%/sound/gods/nl/lod-m-modry.ogg
+%%DATADIR%%/sound/gods/nl/lod-m-oba.ogg
+%%DATADIR%%/sound/gods/nl/lod-m-ozizlana.ogg
+%%DATADIR%%/sound/gods/nl/lod-m-palka.ogg
+%%DATADIR%%/sound/gods/nl/lod-m-pravda0.ogg
+%%DATADIR%%/sound/gods/nl/lod-m-pravda1.ogg
+%%DATADIR%%/sound/gods/nl/lod-m-pravda2.ogg
+%%DATADIR%%/sound/gods/nl/lod-m-vyznam.ogg
+%%DATADIR%%/sound/gods/nl/lod-m-zluty.ogg
+%%DATADIR%%/sound/gods/nl/lod-v-cvok.ogg
+%%DATADIR%%/sound/gods/nl/lod-v-golf.ogg
+%%DATADIR%%/sound/gods/nl/lod-v-hrac.ogg
+%%DATADIR%%/sound/gods/nl/lod-v-hravost.ogg
+%%DATADIR%%/sound/gods/nl/lod-v-hul.ogg
+%%DATADIR%%/sound/gods/nl/lod-v-internovat.ogg
+%%DATADIR%%/sound/gods/nl/lod-v-kdovi.ogg
+%%DATADIR%%/sound/gods/nl/lod-v-koho.ogg
+%%DATADIR%%/sound/gods/nl/lod-v-micky.ogg
+%%DATADIR%%/sound/gods/nl/lod-v-modry.ogg
+%%DATADIR%%/sound/gods/nl/lod-v-rozliseni.ogg
+%%DATADIR%%/sound/gods/nl/lod-v-silenost0.ogg
+%%DATADIR%%/sound/gods/nl/lod-v-silenost1.ogg
+%%DATADIR%%/sound/gods/nl/lod-v-silenost2.ogg
+%%DATADIR%%/sound/gods/nl/lod-v-zluty.ogg
 %%DATADIR%%/sound/grail/cs/gr-m-gral.ogg
 %%DATADIR%%/sound/grail/cs/gr-m-jensvaty.ogg
 %%DATADIR%%/sound/grail/cs/gr-m-svaty0.ogg
@@ -6241,6 +7037,25 @@ bin/fillets
 %%DATADIR%%/sound/grail/cs/gr-v-tuseni.ogg
 %%DATADIR%%/sound/grail/cs/gr-v-vsechny0.ogg
 %%DATADIR%%/sound/grail/cs/gr-v-vsechny1.ogg
+%%DATADIR%%/sound/grail/nl/gr-m-gral.ogg
+%%DATADIR%%/sound/grail/nl/gr-m-jensvaty.ogg
+%%DATADIR%%/sound/grail/nl/gr-m-svaty0.ogg
+%%DATADIR%%/sound/grail/nl/gr-m-svaty1.ogg
+%%DATADIR%%/sound/grail/nl/gr-m-tuseni.ogg
+%%DATADIR%%/sound/grail/nl/gr-m-vsechny0.ogg
+%%DATADIR%%/sound/grail/nl/gr-m-vsechny1.ogg
+%%DATADIR%%/sound/grail/nl/gr-m-zare0.ogg
+%%DATADIR%%/sound/grail/nl/gr-m-zare1.ogg
+%%DATADIR%%/sound/grail/nl/gr-m-zare2.ogg
+%%DATADIR%%/sound/grail/nl/gr-v-jiste.ogg
+%%DATADIR%%/sound/grail/nl/gr-v-nic0.ogg
+%%DATADIR%%/sound/grail/nl/gr-v-nic1.ogg
+%%DATADIR%%/sound/grail/nl/gr-v-nic2.ogg
+%%DATADIR%%/sound/grail/nl/gr-v-skoro0.ogg
+%%DATADIR%%/sound/grail/nl/gr-v-skoro1.ogg
+%%DATADIR%%/sound/grail/nl/gr-v-tuseni.ogg
+%%DATADIR%%/sound/grail/nl/gr-v-vsechny0.ogg
+%%DATADIR%%/sound/grail/nl/gr-v-vsechny1.ogg
 %%DATADIR%%/sound/hanoi/cs/m-bude.ogg
 %%DATADIR%%/sound/hanoi/cs/m-citovat.ogg
 %%DATADIR%%/sound/hanoi/cs/m-co.ogg
@@ -6268,6 +7083,33 @@ bin/fillets
 %%DATADIR%%/sound/hanoi/cs/v-pochvalil.ogg
 %%DATADIR%%/sound/hanoi/cs/v-restartovat.ogg
 %%DATADIR%%/sound/hanoi/cs/v-tady.ogg
+%%DATADIR%%/sound/hanoi/nl/m-bude.ogg
+%%DATADIR%%/sound/hanoi/nl/m-citovat.ogg
+%%DATADIR%%/sound/hanoi/nl/m-co.ogg
+%%DATADIR%%/sound/hanoi/nl/m-hazet.ogg
+%%DATADIR%%/sound/hanoi/nl/m-inspiroval.ogg
+%%DATADIR%%/sound/hanoi/nl/m-nepomahas.ogg
+%%DATADIR%%/sound/hanoi/nl/m-predstavujes.ogg
+%%DATADIR%%/sound/hanoi/nl/m-rekurzivni.ogg
+%%DATADIR%%/sound/hanoi/nl/m-restartuj.ogg
+%%DATADIR%%/sound/hanoi/nl/m-tesise.ogg
+%%DATADIR%%/sound/hanoi/nl/m-trikrat.ogg
+%%DATADIR%%/sound/hanoi/nl/m-vicedat.ogg
+%%DATADIR%%/sound/hanoi/nl/m-vyhecoval.ogg
+%%DATADIR%%/sound/hanoi/nl/v-alehrac.ogg
+%%DATADIR%%/sound/hanoi/nl/v-bavit.ogg
+%%DATADIR%%/sound/hanoi/nl/v-budou.ogg
+%%DATADIR%%/sound/hanoi/nl/v-jacity.ogg
+%%DATADIR%%/sound/hanoi/nl/v-jineho.ogg
+%%DATADIR%%/sound/hanoi/nl/v-kopie.ogg
+%%DATADIR%%/sound/hanoi/nl/v-looser.ogg
+%%DATADIR%%/sound/hanoi/nl/v-mamja.ogg
+%%DATADIR%%/sound/hanoi/nl/v-nenifer.ogg
+%%DATADIR%%/sound/hanoi/nl/v-orechove.ogg
+%%DATADIR%%/sound/hanoi/nl/v-plny.ogg
+%%DATADIR%%/sound/hanoi/nl/v-pochvalil.ogg
+%%DATADIR%%/sound/hanoi/nl/v-restartovat.ogg
+%%DATADIR%%/sound/hanoi/nl/v-tady.ogg
 %%DATADIR%%/sound/hardware/cs/pz-m-co.ogg
 %%DATADIR%%/sound/hardware/cs/pz-m-nech.ogg
 %%DATADIR%%/sound/hardware/cs/pz-m-nepasuje.ogg
@@ -6284,6 +7126,21 @@ bin/fillets
 %%DATADIR%%/sound/hardware/cs/pz-v-klice2.ogg
 %%DATADIR%%/sound/hardware/cs/pz-v-zaskladanej.ogg
 %%DATADIR%%/sound/hardware/cs/pz-x-pocitac.ogg
+%%DATADIR%%/sound/hardware/nl/pz-m-co.ogg
+%%DATADIR%%/sound/hardware/nl/pz-m-nech.ogg
+%%DATADIR%%/sound/hardware/nl/pz-m-nepasuje.ogg
+%%DATADIR%%/sound/hardware/nl/pz-m-pocitace.ogg
+%%DATADIR%%/sound/hardware/nl/pz-m-spoje1.ogg
+%%DATADIR%%/sound/hardware/nl/pz-m-spoje2.ogg
+%%DATADIR%%/sound/hardware/nl/pz-m-spoje3.ogg
+%%DATADIR%%/sound/hardware/nl/pz-m-vylez.ogg
+%%DATADIR%%/sound/hardware/nl/pz-v-co1.ogg
+%%DATADIR%%/sound/hardware/nl/pz-v-co2.ogg
+%%DATADIR%%/sound/hardware/nl/pz-v-dat.ogg
+%%DATADIR%%/sound/hardware/nl/pz-v-hej.ogg
+%%DATADIR%%/sound/hardware/nl/pz-v-klice1.ogg
+%%DATADIR%%/sound/hardware/nl/pz-v-klice2.ogg
+%%DATADIR%%/sound/hardware/nl/pz-v-zaskladanej.ogg
 %%DATADIR%%/sound/hole/cs/l-dejte0.ogg
 %%DATADIR%%/sound/hole/cs/l-dejte1.ogg
 %%DATADIR%%/sound/hole/cs/l-dejte2.ogg
@@ -6304,6 +7161,17 @@ bin/fillets
 %%DATADIR%%/sound/hole/cs/v-nedame1.ogg
 %%DATADIR%%/sound/hole/cs/v-vratte.ogg
 %%DATADIR%%/sound/hole/cs/v-zkus.ogg
+%%DATADIR%%/sound/hole/nl/m-nedame0.ogg
+%%DATADIR%%/sound/hole/nl/m-nedame1.ogg
+%%DATADIR%%/sound/hole/nl/m-sluchatko.ogg
+%%DATADIR%%/sound/hole/nl/m-strasidelna.ogg
+%%DATADIR%%/sound/hole/nl/m-zmizet.ogg
+%%DATADIR%%/sound/hole/nl/v-bojim.ogg
+%%DATADIR%%/sound/hole/nl/v-neber.ogg
+%%DATADIR%%/sound/hole/nl/v-nedame0.ogg
+%%DATADIR%%/sound/hole/nl/v-nedame1.ogg
+%%DATADIR%%/sound/hole/nl/v-vratte.ogg
+%%DATADIR%%/sound/hole/nl/v-zkus.ogg
 %%DATADIR%%/sound/imprisoned/cs/ncp-m-barvy.ogg
 %%DATADIR%%/sound/imprisoned/cs/ncp-m-komari.ogg
 %%DATADIR%%/sound/imprisoned/cs/ncp-m-koraly.ogg
@@ -6321,6 +7189,63 @@ bin/fillets
 %%DATADIR%%/sound/imprisoned/en/ncp-x-ihaha.ogg
 %%DATADIR%%/sound/imprisoned/en/ncp-x-tik.ogg
 %%DATADIR%%/sound/imprisoned/en/ncp-x-tup.ogg
+%%DATADIR%%/sound/imprisoned/nl/ncp-m-barvy.ogg
+%%DATADIR%%/sound/imprisoned/nl/ncp-m-komari.ogg
+%%DATADIR%%/sound/imprisoned/nl/ncp-m-koraly.ogg
+%%DATADIR%%/sound/imprisoned/nl/ncp-m-muzes.ogg
+%%DATADIR%%/sound/imprisoned/nl/ncp-m-nekoukej.ogg
+%%DATADIR%%/sound/imprisoned/nl/ncp-m-tesno0.ogg
+%%DATADIR%%/sound/imprisoned/nl/ncp-m-tesno1.ogg
+%%DATADIR%%/sound/imprisoned/nl/ncp-m-tvrdy.ogg
+%%DATADIR%%/sound/imprisoned/nl/ncp-v-ceho.ogg
+%%DATADIR%%/sound/imprisoned/nl/ncp-v-dostala.ogg
+%%DATADIR%%/sound/imprisoned/nl/ncp-v-mekky.ogg
+%%DATADIR%%/sound/imprisoned/nl/ncp-v-neprojedu.ogg
+%%DATADIR%%/sound/imprisoned/nl/ncp-v-sasanka.ogg
+%%DATADIR%%/sound/imprisoned/nl/ncp-v-tak.ogg
+%%DATADIR%%/sound/key/nl/cactus-0big.ogg
+%%DATADIR%%/sound/key/nl/cactus-0small.ogg
+%%DATADIR%%/sound/key/nl/cactus-1big.ogg
+%%DATADIR%%/sound/key/nl/cactus-1small.ogg
+%%DATADIR%%/sound/key/nl/cactus-2big.ogg
+%%DATADIR%%/sound/key/nl/cactus-2small.ogg
+%%DATADIR%%/sound/key/nl/down-0-0.ogg
+%%DATADIR%%/sound/key/nl/down-0-1.ogg
+%%DATADIR%%/sound/key/nl/down-1-0.ogg
+%%DATADIR%%/sound/key/nl/down-1-1.ogg
+%%DATADIR%%/sound/key/nl/rd-0-0.ogg
+%%DATADIR%%/sound/key/nl/rd-0-1.ogg
+%%DATADIR%%/sound/key/nl/rd-1-0.ogg
+%%DATADIR%%/sound/key/nl/rd-1-1.ogg
+%%DATADIR%%/sound/key/nl/rd-1-2.ogg
+%%DATADIR%%/sound/key/nl/rd-1-3.ogg
+%%DATADIR%%/sound/key/nl/rd-2-0.ogg
+%%DATADIR%%/sound/key/nl/rd-2-1.ogg
+%%DATADIR%%/sound/key/nl/rd-3-0.ogg
+%%DATADIR%%/sound/key/nl/rd-3-1.ogg
+%%DATADIR%%/sound/key/nl/rd-3-2.ogg
+%%DATADIR%%/sound/key/nl/rd-3-3.ogg
+%%DATADIR%%/sound/key/nl/rd-3-4.ogg
+%%DATADIR%%/sound/key/nl/rd-3-5.ogg
+%%DATADIR%%/sound/key/nl/rd-4-0.ogg
+%%DATADIR%%/sound/key/nl/rd-4-1.ogg
+%%DATADIR%%/sound/key/nl/rdopt-0-0.ogg
+%%DATADIR%%/sound/key/nl/rdopt-0-1.ogg
+%%DATADIR%%/sound/key/nl/rdopt-1-0.ogg
+%%DATADIR%%/sound/key/nl/rdopt-1-1.ogg
+%%DATADIR%%/sound/key/nl/rdopt-1-2.ogg
+%%DATADIR%%/sound/key/nl/rdopt-1-3.ogg
+%%DATADIR%%/sound/key/nl/start-0.ogg
+%%DATADIR%%/sound/key/nl/start-1.ogg
+%%DATADIR%%/sound/key/nl/start-2.ogg
+%%DATADIR%%/sound/key/nl/start-3.ogg
+%%DATADIR%%/sound/key/nl/start-4.ogg
+%%DATADIR%%/sound/key/nl/up-0-0.ogg
+%%DATADIR%%/sound/key/nl/up-0-1.ogg
+%%DATADIR%%/sound/key/nl/up-0-2.ogg
+%%DATADIR%%/sound/key/nl/up-0-3.ogg
+%%DATADIR%%/sound/key/nl/up-1-0.ogg
+%%DATADIR%%/sound/key/nl/up-1-1.ogg
 %%DATADIR%%/sound/keys/cs/init-0-0.ogg
 %%DATADIR%%/sound/keys/cs/init-0-1.ogg
 %%DATADIR%%/sound/keys/cs/init-0-2.ogg
@@ -6371,6 +7296,52 @@ bin/fillets
 %%DATADIR%%/sound/keys/en/unlocking-1.ogg
 %%DATADIR%%/sound/keys/en/unlocking-2.ogg
 %%DATADIR%%/sound/keys/en/unlocking-3.ogg
+%%DATADIR%%/sound/keys/nl/init-0-0.ogg
+%%DATADIR%%/sound/keys/nl/init-0-1.ogg
+%%DATADIR%%/sound/keys/nl/init-0-2.ogg
+%%DATADIR%%/sound/keys/nl/init-0-3.ogg
+%%DATADIR%%/sound/keys/nl/init-0-4.ogg
+%%DATADIR%%/sound/keys/nl/init-0-5.ogg
+%%DATADIR%%/sound/keys/nl/init-0-6.ogg
+%%DATADIR%%/sound/keys/nl/init-0-7.ogg
+%%DATADIR%%/sound/keys/nl/rand-0-0.ogg
+%%DATADIR%%/sound/keys/nl/rand-0-1.ogg
+%%DATADIR%%/sound/keys/nl/rand-0-2.ogg
+%%DATADIR%%/sound/keys/nl/rand-0-3.ogg
+%%DATADIR%%/sound/keys/nl/rand-0-4.ogg
+%%DATADIR%%/sound/keys/nl/rand-0-5-0.ogg
+%%DATADIR%%/sound/keys/nl/rand-0-5-1.ogg
+%%DATADIR%%/sound/keys/nl/rand-0-5-2.ogg
+%%DATADIR%%/sound/keys/nl/rand-0-5-3.ogg
+%%DATADIR%%/sound/keys/nl/rand-0-5-4.ogg
+%%DATADIR%%/sound/keys/nl/rand-0-5-5.ogg
+%%DATADIR%%/sound/keys/nl/rand-0-6.ogg
+%%DATADIR%%/sound/keys/nl/rand-0-7.ogg
+%%DATADIR%%/sound/keys/nl/rand-1-0.ogg
+%%DATADIR%%/sound/keys/nl/rand-1-1.ogg
+%%DATADIR%%/sound/keys/nl/rand-2-0.ogg
+%%DATADIR%%/sound/keys/nl/rand-3-0.ogg
+%%DATADIR%%/sound/keys/nl/rand-3-1.ogg
+%%DATADIR%%/sound/keys/nl/rand-3-2.ogg
+%%DATADIR%%/sound/keys/nl/rand-3-3-0.ogg
+%%DATADIR%%/sound/keys/nl/rand-3-3-1.ogg
+%%DATADIR%%/sound/keys/nl/rand-3-4-0.ogg
+%%DATADIR%%/sound/keys/nl/rand-3-4-1.ogg
+%%DATADIR%%/sound/keys/nl/rand-4-0.ogg
+%%DATADIR%%/sound/keys/nl/rand-4-1.ogg
+%%DATADIR%%/sound/keys/nl/rand-4-2.ogg
+%%DATADIR%%/sound/keys/nl/rand-4-3.ogg
+%%DATADIR%%/sound/keys/nl/rand-4-4-0.ogg
+%%DATADIR%%/sound/keys/nl/rand-4-4-1.ogg
+%%DATADIR%%/sound/keys/nl/rand-4-4-2.ogg
+%%DATADIR%%/sound/keys/nl/rand-4-5.ogg
+%%DATADIR%%/sound/keys/nl/rand-4-6.ogg
+%%DATADIR%%/sound/keys/nl/rand-5-0.ogg
+%%DATADIR%%/sound/keys/nl/rand-5-1.ogg
+%%DATADIR%%/sound/keys/nl/rand-6-0.ogg
+%%DATADIR%%/sound/keys/nl/rand-6-1.ogg
+%%DATADIR%%/sound/keys/nl/rand-7-0.ogg
+%%DATADIR%%/sound/keys/nl/rand-7-1.ogg
 %%DATADIR%%/sound/kitchen/cs/kuch-m-hrnec0.ogg
 %%DATADIR%%/sound/kitchen/cs/kuch-m-hrnec1.ogg
 %%DATADIR%%/sound/kitchen/cs/kuch-m-hrnec2.ogg
@@ -6407,6 +7378,42 @@ bin/fillets
 %%DATADIR%%/sound/kitchen/cs/kuch-v-svitek0.ogg
 %%DATADIR%%/sound/kitchen/cs/kuch-v-svitek1.ogg
 %%DATADIR%%/sound/kitchen/cs/kuch-v-varil.ogg
+%%DATADIR%%/sound/kitchen/nl/kuch-m-hrnec0.ogg
+%%DATADIR%%/sound/kitchen/nl/kuch-m-hrnec1.ogg
+%%DATADIR%%/sound/kitchen/nl/kuch-m-hrnec2.ogg
+%%DATADIR%%/sound/kitchen/nl/kuch-m-kreslo0.ogg
+%%DATADIR%%/sound/kitchen/nl/kuch-m-kreslo2.ogg
+%%DATADIR%%/sound/kitchen/nl/kuch-m-kuchari.ogg
+%%DATADIR%%/sound/kitchen/nl/kuch-m-noproblem.ogg
+%%DATADIR%%/sound/kitchen/nl/kuch-m-objev0.ogg
+%%DATADIR%%/sound/kitchen/nl/kuch-m-objev1.ogg
+%%DATADIR%%/sound/kitchen/nl/kuch-m-objev2.ogg
+%%DATADIR%%/sound/kitchen/nl/kuch-m-objev3.ogg
+%%DATADIR%%/sound/kitchen/nl/kuch-m-pekne.ogg
+%%DATADIR%%/sound/kitchen/nl/kuch-m-porcovani.ogg
+%%DATADIR%%/sound/kitchen/nl/kuch-m-premyslim0.ogg
+%%DATADIR%%/sound/kitchen/nl/kuch-m-premyslim1.ogg
+%%DATADIR%%/sound/kitchen/nl/kuch-m-premyslim2.ogg
+%%DATADIR%%/sound/kitchen/nl/kuch-m-recept.ogg
+%%DATADIR%%/sound/kitchen/nl/kuch-m-stolky.ogg
+%%DATADIR%%/sound/kitchen/nl/kuch-m-zapeklite.ogg
+%%DATADIR%%/sound/kitchen/nl/kuch-v-ja.ogg
+%%DATADIR%%/sound/kitchen/nl/kuch-v-kreslo0.ogg
+%%DATADIR%%/sound/kitchen/nl/kuch-v-kreslo1.ogg
+%%DATADIR%%/sound/kitchen/nl/kuch-v-mec.ogg
+%%DATADIR%%/sound/kitchen/nl/kuch-v-nedela.ogg
+%%DATADIR%%/sound/kitchen/nl/kuch-v-obavam.ogg
+%%DATADIR%%/sound/kitchen/nl/kuch-v-odsud0.ogg
+%%DATADIR%%/sound/kitchen/nl/kuch-v-odsud1.ogg
+%%DATADIR%%/sound/kitchen/nl/kuch-v-podivej.ogg
+%%DATADIR%%/sound/kitchen/nl/kuch-v-problem.ogg
+%%DATADIR%%/sound/kitchen/nl/kuch-v-serie.ogg
+%%DATADIR%%/sound/kitchen/nl/kuch-v-stolky0.ogg
+%%DATADIR%%/sound/kitchen/nl/kuch-v-stolky1.ogg
+%%DATADIR%%/sound/kitchen/nl/kuch-v-stolky2.ogg
+%%DATADIR%%/sound/kitchen/nl/kuch-v-svitek0.ogg
+%%DATADIR%%/sound/kitchen/nl/kuch-v-svitek1.ogg
+%%DATADIR%%/sound/kitchen/nl/kuch-v-varil.ogg
 %%DATADIR%%/sound/labyrinth/cs/bl-m-funkce.ogg
 %%DATADIR%%/sound/labyrinth/cs/bl-m-koral0.ogg
 %%DATADIR%%/sound/labyrinth/cs/bl-m-snecku0.ogg
@@ -6426,6 +7433,25 @@ bin/fillets
 %%DATADIR%%/sound/labyrinth/cs/bl-v-pozadi.ogg
 %%DATADIR%%/sound/labyrinth/cs/bl-v-proc.ogg
 %%DATADIR%%/sound/labyrinth/cs/bl-v-zvlastni1.ogg
+%%DATADIR%%/sound/labyrinth/nl/bl-m-funkce.ogg
+%%DATADIR%%/sound/labyrinth/nl/bl-m-koral0.ogg
+%%DATADIR%%/sound/labyrinth/nl/bl-m-snecku0.ogg
+%%DATADIR%%/sound/labyrinth/nl/bl-m-snecku1.ogg
+%%DATADIR%%/sound/labyrinth/nl/bl-m-snecku2.ogg
+%%DATADIR%%/sound/labyrinth/nl/bl-m-tvar.ogg
+%%DATADIR%%/sound/labyrinth/nl/bl-m-visi.ogg
+%%DATADIR%%/sound/labyrinth/nl/bl-m-zeptej.ogg
+%%DATADIR%%/sound/labyrinth/nl/bl-m-zvlastni0.ogg
+%%DATADIR%%/sound/labyrinth/nl/bl-v-dost0.ogg
+%%DATADIR%%/sound/labyrinth/nl/bl-v-dost1.ogg
+%%DATADIR%%/sound/labyrinth/nl/bl-v-dost2.ogg
+%%DATADIR%%/sound/labyrinth/nl/bl-v-koral1.ogg
+%%DATADIR%%/sound/labyrinth/nl/bl-v-nevim0.ogg
+%%DATADIR%%/sound/labyrinth/nl/bl-v-nevim1.ogg
+%%DATADIR%%/sound/labyrinth/nl/bl-v-pestovany.ogg
+%%DATADIR%%/sound/labyrinth/nl/bl-v-pozadi.ogg
+%%DATADIR%%/sound/labyrinth/nl/bl-v-proc.ogg
+%%DATADIR%%/sound/labyrinth/nl/bl-v-zvlastni1.ogg
 %%DATADIR%%/sound/library/cs/vrak-m-cteni0.ogg
 %%DATADIR%%/sound/library/cs/vrak-m-cteni1.ogg
 %%DATADIR%%/sound/library/cs/vrak-m-cteni2.ogg
@@ -6462,6 +7488,42 @@ bin/fillets
 %%DATADIR%%/sound/library/cs/vrak-v-vraky1.ogg
 %%DATADIR%%/sound/library/cs/vrak-v-vraky2.ogg
 %%DATADIR%%/sound/library/cs/vrak-v-vyhodit.ogg
+%%DATADIR%%/sound/library/nl/vrak-m-cteni0.ogg
+%%DATADIR%%/sound/library/nl/vrak-m-cteni1.ogg
+%%DATADIR%%/sound/library/nl/vrak-m-cteni2.ogg
+%%DATADIR%%/sound/library/nl/vrak-m-knihy0.ogg
+%%DATADIR%%/sound/library/nl/vrak-m-knihy1.ogg
+%%DATADIR%%/sound/library/nl/vrak-m-knihy2.ogg
+%%DATADIR%%/sound/library/nl/vrak-m-knihy3.ogg
+%%DATADIR%%/sound/library/nl/vrak-m-knihy4.ogg
+%%DATADIR%%/sound/library/nl/vrak-m-knihy5.ogg
+%%DATADIR%%/sound/library/nl/vrak-m-knihy6.ogg
+%%DATADIR%%/sound/library/nl/vrak-m-kupovat0.ogg
+%%DATADIR%%/sound/library/nl/vrak-m-kupovat1.ogg
+%%DATADIR%%/sound/library/nl/vrak-m-naco.ogg
+%%DATADIR%%/sound/library/nl/vrak-m-ocel.ogg
+%%DATADIR%%/sound/library/nl/vrak-m-ostnatec.ogg
+%%DATADIR%%/sound/library/nl/vrak-m-pohadky.ogg
+%%DATADIR%%/sound/library/nl/vrak-m-predmety.ogg
+%%DATADIR%%/sound/library/nl/vrak-m-restart.ogg
+%%DATADIR%%/sound/library/nl/vrak-m-vrak0.ogg
+%%DATADIR%%/sound/library/nl/vrak-m-vrak1.ogg
+%%DATADIR%%/sound/library/nl/vrak-m-vrak2.ogg
+%%DATADIR%%/sound/library/nl/vrak-m-zivocich.ogg
+%%DATADIR%%/sound/library/nl/vrak-v-knihy0.ogg
+%%DATADIR%%/sound/library/nl/vrak-v-knihy1.ogg
+%%DATADIR%%/sound/library/nl/vrak-v-knihy2.ogg
+%%DATADIR%%/sound/library/nl/vrak-v-knihy3.ogg
+%%DATADIR%%/sound/library/nl/vrak-v-knihy4.ogg
+%%DATADIR%%/sound/library/nl/vrak-v-nevejdu0.ogg
+%%DATADIR%%/sound/library/nl/vrak-v-nevejdu1.ogg
+%%DATADIR%%/sound/library/nl/vrak-v-policky.ogg
+%%DATADIR%%/sound/library/nl/vrak-v-potvurka.ogg
+%%DATADIR%%/sound/library/nl/vrak-v-snek.ogg
+%%DATADIR%%/sound/library/nl/vrak-v-vraky0.ogg
+%%DATADIR%%/sound/library/nl/vrak-v-vraky1.ogg
+%%DATADIR%%/sound/library/nl/vrak-v-vraky2.ogg
+%%DATADIR%%/sound/library/nl/vrak-v-vyhodit.ogg
 %%DATADIR%%/sound/linux/cs/1-archlinux.ogg
 %%DATADIR%%/sound/linux/cs/1-balickovaci.ogg
 %%DATADIR%%/sound/linux/cs/1-dohnat.ogg
@@ -6587,6 +7649,33 @@ bin/fillets
 %%DATADIR%%/sound/linux/en/space7.ogg
 %%DATADIR%%/sound/linux/en/space8.ogg
 %%DATADIR%%/sound/linux/en/space9.ogg
+%%DATADIR%%/sound/linux/nl/m-linuxaci.ogg
+%%DATADIR%%/sound/linux/nl/m-nemyslis.ogg
+%%DATADIR%%/sound/linux/nl/m-nestaci.ogg
+%%DATADIR%%/sound/linux/nl/m-ostatni.ogg
+%%DATADIR%%/sound/linux/nl/m-radi.ogg
+%%DATADIR%%/sound/linux/nl/m-samem.ogg
+%%DATADIR%%/sound/linux/nl/m-sileny.ogg
+%%DATADIR%%/sound/linux/nl/m-tatinek.ogg
+%%DATADIR%%/sound/linux/nl/m-ukolem.ogg
+%%DATADIR%%/sound/linux/nl/m-vtipni.ogg
+%%DATADIR%%/sound/linux/nl/m-vykaslat.ogg
+%%DATADIR%%/sound/linux/nl/m-zadarmo.ogg
+%%DATADIR%%/sound/linux/nl/m-zamykali.ogg
+%%DATADIR%%/sound/linux/nl/v-alespon.ogg
+%%DATADIR%%/sound/linux/nl/v-argumenty.ogg
+%%DATADIR%%/sound/linux/nl/v-dole.ogg
+%%DATADIR%%/sound/linux/nl/v-forkovat.ogg
+%%DATADIR%%/sound/linux/nl/v-horydoly.ogg
+%%DATADIR%%/sound/linux/nl/v-kdojiny.ogg
+%%DATADIR%%/sound/linux/nl/v-musime.ogg
+%%DATADIR%%/sound/linux/nl/v-nabourali.ogg
+%%DATADIR%%/sound/linux/nl/v-osobne.ogg
+%%DATADIR%%/sound/linux/nl/v-prepinani.ogg
+%%DATADIR%%/sound/linux/nl/v-radeji.ogg
+%%DATADIR%%/sound/linux/nl/v-snazit.ogg
+%%DATADIR%%/sound/linux/nl/v-ven.ogg
+%%DATADIR%%/sound/linux/nl/v-vyrobil.ogg
 %%DATADIR%%/sound/magnet/cs/pap-m-coje.ogg
 %%DATADIR%%/sound/magnet/cs/pap-m-jejedno.ogg
 %%DATADIR%%/sound/magnet/cs/pap-m-magnet.ogg
@@ -6611,6 +7700,30 @@ bin/fillets
 %%DATADIR%%/sound/magnet/cs/pap-v-radio.ogg
 %%DATADIR%%/sound/magnet/cs/pap-v-tesno.ogg
 %%DATADIR%%/sound/magnet/cs/pap-v-vufu.ogg
+%%DATADIR%%/sound/magnet/nl/pap-m-coje.ogg
+%%DATADIR%%/sound/magnet/nl/pap-m-jejedno.ogg
+%%DATADIR%%/sound/magnet/nl/pap-m-magnet.ogg
+%%DATADIR%%/sound/magnet/nl/pap-m-mraz.ogg
+%%DATADIR%%/sound/magnet/nl/pap-m-naucit.ogg
+%%DATADIR%%/sound/magnet/nl/pap-m-nechme.ogg
+%%DATADIR%%/sound/magnet/nl/pap-m-nedobre.ogg
+%%DATADIR%%/sound/magnet/nl/pap-m-nejde.ogg
+%%DATADIR%%/sound/magnet/nl/pap-m-nepohnu.ogg
+%%DATADIR%%/sound/magnet/nl/pap-m-ocel.ogg
+%%DATADIR%%/sound/magnet/nl/pap-m-pistole.ogg
+%%DATADIR%%/sound/magnet/nl/pap-m-radio.ogg
+%%DATADIR%%/sound/magnet/nl/pap-m-teorie.ogg
+%%DATADIR%%/sound/magnet/nl/pap-m-zvlastni.ogg
+%%DATADIR%%/sound/magnet/nl/pap-v-divny.ogg
+%%DATADIR%%/sound/magnet/nl/pap-v-ha.ogg
+%%DATADIR%%/sound/magnet/nl/pap-v-laserova.ogg
+%%DATADIR%%/sound/magnet/nl/pap-v-nemir.ogg
+%%DATADIR%%/sound/magnet/nl/pap-v-pole.ogg
+%%DATADIR%%/sound/magnet/nl/pap-v-potrebovat.ogg
+%%DATADIR%%/sound/magnet/nl/pap-v-prekvapeni.ogg
+%%DATADIR%%/sound/magnet/nl/pap-v-radio.ogg
+%%DATADIR%%/sound/magnet/nl/pap-v-tesno.ogg
+%%DATADIR%%/sound/magnet/nl/pap-v-vufu.ogg
 %%DATADIR%%/sound/map/cs/map-m-mapa.ogg
 %%DATADIR%%/sound/map/cs/map-m-neplacej.ogg
 %%DATADIR%%/sound/map/cs/map-m-pohnout.ogg
@@ -6628,6 +7741,22 @@ bin/fillets
 %%DATADIR%%/sound/map/cs/map-v-restart.ogg
 %%DATADIR%%/sound/map/cs/map-v-ukol.ogg
 %%DATADIR%%/sound/map/cs/map-x-hlemyzdi.ogg
+%%DATADIR%%/sound/map/nl/map-m-mapa.ogg
+%%DATADIR%%/sound/map/nl/map-m-neplacej.ogg
+%%DATADIR%%/sound/map/nl/map-m-pohnout.ogg
+%%DATADIR%%/sound/map/nl/map-m-pravidla.ogg
+%%DATADIR%%/sound/map/nl/map-m-sneci.ogg
+%%DATADIR%%/sound/map/nl/map-m-ukol.ogg
+%%DATADIR%%/sound/map/nl/map-m-uvidime.ogg
+%%DATADIR%%/sound/map/nl/map-m-uz.ogg
+%%DATADIR%%/sound/map/nl/map-v-cojetam.ogg
+%%DATADIR%%/sound/map/nl/map-v-dal.ogg
+%%DATADIR%%/sound/map/nl/map-v-jasne.ogg
+%%DATADIR%%/sound/map/nl/map-v-mapa.ogg
+%%DATADIR%%/sound/map/nl/map-v-oci.ogg
+%%DATADIR%%/sound/map/nl/map-v-poklady.ogg
+%%DATADIR%%/sound/map/nl/map-v-restart.ogg
+%%DATADIR%%/sound/map/nl/map-v-ukol.ogg
 %%DATADIR%%/sound/music/cs/ves-hs-hrajeme.ogg
 %%DATADIR%%/sound/music/cs/ves-m-dik.ogg
 %%DATADIR%%/sound/music/cs/ves-m-krab.ogg
@@ -6639,11 +7768,23 @@ bin/fillets
 %%DATADIR%%/sound/music/en/sp-smrt.ogg
 %%DATADIR%%/sound/music/en/ves-ampliony.ogg
 %%DATADIR%%/sound/music/en/ves-hs-papa.ogg
+%%DATADIR%%/sound/music/nl/ves-m-dik.ogg
+%%DATADIR%%/sound/music/nl/ves-m-krab.ogg
+%%DATADIR%%/sound/music/nl/ves-m-uz.ogg
+%%DATADIR%%/sound/music/nl/ves-v-pokoj.ogg
+%%DATADIR%%/sound/music/nl/ves-v-stejne.ogg
+%%DATADIR%%/sound/music/nl/ves-v-veci.ogg
+%%DATADIR%%/sound/music/nl/ves-v-vyp.ogg
 %%DATADIR%%/sound/noground/cs/nog-m-uvedom0.ogg
 %%DATADIR%%/sound/noground/cs/nog-m-uvedom1.ogg
 %%DATADIR%%/sound/noground/cs/nog-v-smetiste0.ogg
 %%DATADIR%%/sound/noground/cs/nog-v-smetiste1.ogg
 %%DATADIR%%/sound/noground/cs/nog-v-zvlastni.ogg
+%%DATADIR%%/sound/noground/nl/nog-m-uvedom0.ogg
+%%DATADIR%%/sound/noground/nl/nog-m-uvedom1.ogg
+%%DATADIR%%/sound/noground/nl/nog-v-smetiste0.ogg
+%%DATADIR%%/sound/noground/nl/nog-v-smetiste1.ogg
+%%DATADIR%%/sound/noground/nl/nog-v-zvlastni.ogg
 %%DATADIR%%/sound/nowall/cs/m-otazka0.ogg
 %%DATADIR%%/sound/nowall/cs/m-otazka1.ogg
 %%DATADIR%%/sound/nowall/cs/m-otazka2.ogg
@@ -6660,6 +7801,22 @@ bin/fillets
 %%DATADIR%%/sound/nowall/cs/v-odpoved2.ogg
 %%DATADIR%%/sound/nowall/cs/v-odpoved3.ogg
 %%DATADIR%%/sound/nowall/cs/v-zadne.ogg
+%%DATADIR%%/sound/nowall/nl/m-otazka0.ogg
+%%DATADIR%%/sound/nowall/nl/m-otazka1.ogg
+%%DATADIR%%/sound/nowall/nl/m-otazka2.ogg
+%%DATADIR%%/sound/nowall/nl/m-otazka3.ogg
+%%DATADIR%%/sound/nowall/nl/m-otazka4.ogg
+%%DATADIR%%/sound/nowall/nl/m-predmet.ogg
+%%DATADIR%%/sound/nowall/nl/m-uvedomit.ogg
+%%DATADIR%%/sound/nowall/nl/m-zeme.ogg
+%%DATADIR%%/sound/nowall/nl/m-zvlastni.ogg
+%%DATADIR%%/sound/nowall/nl/v-krehci.ogg
+%%DATADIR%%/sound/nowall/nl/v-nad.ogg
+%%DATADIR%%/sound/nowall/nl/v-odpoved0.ogg
+%%DATADIR%%/sound/nowall/nl/v-odpoved1.ogg
+%%DATADIR%%/sound/nowall/nl/v-odpoved2.ogg
+%%DATADIR%%/sound/nowall/nl/v-odpoved3.ogg
+%%DATADIR%%/sound/nowall/nl/v-zadne.ogg
 %%DATADIR%%/sound/party1/cs/pt1-m-kostlivec.ogg
 %%DATADIR%%/sound/party1/cs/pt1-m-nemuzu.ogg
 %%DATADIR%%/sound/party1/cs/pt1-m-parnicek.ogg
@@ -6672,6 +7829,18 @@ bin/fillets
 %%DATADIR%%/sound/party1/cs/pt1-v-pryc0.ogg
 %%DATADIR%%/sound/party1/cs/pt1-v-pryc1.ogg
 %%DATADIR%%/sound/party1/cs/pt1-v-valec.ogg
+%%DATADIR%%/sound/party1/nl/pt1-m-kostlivec.ogg
+%%DATADIR%%/sound/party1/nl/pt1-m-nemuzu.ogg
+%%DATADIR%%/sound/party1/nl/pt1-m-parnicek.ogg
+%%DATADIR%%/sound/party1/nl/pt1-m-predtucha.ogg
+%%DATADIR%%/sound/party1/nl/pt1-m-vylezt0.ogg
+%%DATADIR%%/sound/party1/nl/pt1-m-vylezt1.ogg
+%%DATADIR%%/sound/party1/nl/pt1-m-vylezt2.ogg
+%%DATADIR%%/sound/party1/nl/pt1-v-pozor.ogg
+%%DATADIR%%/sound/party1/nl/pt1-v-predtucha.ogg
+%%DATADIR%%/sound/party1/nl/pt1-v-pryc0.ogg
+%%DATADIR%%/sound/party1/nl/pt1-v-pryc1.ogg
+%%DATADIR%%/sound/party1/nl/pt1-v-valec.ogg
 %%DATADIR%%/sound/party2/cs/pt2-m-hrac.ogg
 %%DATADIR%%/sound/party2/cs/pt2-m-parnik.ogg
 %%DATADIR%%/sound/party2/cs/pt2-m-piknik0.ogg
@@ -6685,6 +7854,19 @@ bin/fillets
 %%DATADIR%%/sound/party2/cs/pt2-v-unaveni0.ogg
 %%DATADIR%%/sound/party2/cs/pt2-v-unaveni1.ogg
 %%DATADIR%%/sound/party2/cs/pt2-v-zmena.ogg
+%%DATADIR%%/sound/party2/nl/pt2-m-hrac.ogg
+%%DATADIR%%/sound/party2/nl/pt2-m-parnik.ogg
+%%DATADIR%%/sound/party2/nl/pt2-m-piknik0.ogg
+%%DATADIR%%/sound/party2/nl/pt2-m-piknik1.ogg
+%%DATADIR%%/sound/party2/nl/pt2-m-piknik2.ogg
+%%DATADIR%%/sound/party2/nl/pt2-m-piknik3.ogg
+%%DATADIR%%/sound/party2/nl/pt2-v-minule0.ogg
+%%DATADIR%%/sound/party2/nl/pt2-v-minule1.ogg
+%%DATADIR%%/sound/party2/nl/pt2-v-nemohou0.ogg
+%%DATADIR%%/sound/party2/nl/pt2-v-nemohou1.ogg
+%%DATADIR%%/sound/party2/nl/pt2-v-unaveni0.ogg
+%%DATADIR%%/sound/party2/nl/pt2-v-unaveni1.ogg
+%%DATADIR%%/sound/party2/nl/pt2-v-zmena.ogg
 %%DATADIR%%/sound/pavement/cs/dir-hs-konec0.ogg
 %%DATADIR%%/sound/pavement/cs/dir-hs-konec1.ogg
 %%DATADIR%%/sound/pavement/cs/dir-hs-konec2.ogg
@@ -6714,6 +7896,16 @@ bin/fillets
 %%DATADIR%%/sound/pavement/en/k1-chob-3.ogg
 %%DATADIR%%/sound/pavement/en/k1-chob-p.ogg
 %%DATADIR%%/sound/pavement/en/k1-x-vrz.ogg
+%%DATADIR%%/sound/pavement/nl/dir-m-rada0.ogg
+%%DATADIR%%/sound/pavement/nl/dir-m-rada1.ogg
+%%DATADIR%%/sound/pavement/nl/dir-m-rada2.ogg
+%%DATADIR%%/sound/pavement/nl/dir-m-rada3.ogg
+%%DATADIR%%/sound/pavement/nl/dir-m-rada4.ogg
+%%DATADIR%%/sound/pavement/nl/dir-v-rada0.ogg
+%%DATADIR%%/sound/pavement/nl/dir-v-rada1.ogg
+%%DATADIR%%/sound/pavement/nl/dir-v-rada2.ogg
+%%DATADIR%%/sound/pavement/nl/dir-v-rada3.ogg
+%%DATADIR%%/sound/pavement/nl/dir-v-rada4.ogg
 %%DATADIR%%/sound/pearls/cs/jed-m-flakas.ogg
 %%DATADIR%%/sound/pearls/cs/jed-m-kulicka.ogg
 %%DATADIR%%/sound/pearls/cs/jed-m-libi.ogg
@@ -6733,6 +7925,24 @@ bin/fillets
 %%DATADIR%%/sound/pearls/cs/jed-v-uzivat1.ogg
 %%DATADIR%%/sound/pearls/cs/jed-v-vzdelat.ogg
 %%DATADIR%%/sound/pearls/cs/jed-x-nedam.ogg
+%%DATADIR%%/sound/pearls/nl/jed-m-flakas.ogg
+%%DATADIR%%/sound/pearls/nl/jed-m-kulicka.ogg
+%%DATADIR%%/sound/pearls/nl/jed-m-libi.ogg
+%%DATADIR%%/sound/pearls/nl/jed-m-moc.ogg
+%%DATADIR%%/sound/pearls/nl/jed-m-perlorodka0.ogg
+%%DATADIR%%/sound/pearls/nl/jed-m-perlorodka1.ogg
+%%DATADIR%%/sound/pearls/nl/jed-m-perlorodka2.ogg
+%%DATADIR%%/sound/pearls/nl/jed-m-perly0.ogg
+%%DATADIR%%/sound/pearls/nl/jed-m-perly1.ogg
+%%DATADIR%%/sound/pearls/nl/jed-m-trubka.ogg
+%%DATADIR%%/sound/pearls/nl/jed-v-ocet.ogg
+%%DATADIR%%/sound/pearls/nl/jed-v-poslani0.ogg
+%%DATADIR%%/sound/pearls/nl/jed-v-poslani1.ogg
+%%DATADIR%%/sound/pearls/nl/jed-v-poslani2.ogg
+%%DATADIR%%/sound/pearls/nl/jed-v-poter.ogg
+%%DATADIR%%/sound/pearls/nl/jed-v-uzivat0.ogg
+%%DATADIR%%/sound/pearls/nl/jed-v-uzivat1.ogg
+%%DATADIR%%/sound/pearls/nl/jed-v-vzdelat.ogg
 %%DATADIR%%/sound/propulsion/cs/poh-m-dobre.ogg
 %%DATADIR%%/sound/propulsion/cs/poh-m-dobryden0.ogg
 %%DATADIR%%/sound/propulsion/cs/poh-m-dobryden1.ogg
@@ -6755,6 +7965,28 @@ bin/fillets
 %%DATADIR%%/sound/propulsion/cs/poh-v-tocit.ogg
 %%DATADIR%%/sound/propulsion/cs/poh-v-ukol.ogg
 %%DATADIR%%/sound/propulsion/cs/poh-v-zarizeni.ogg
+%%DATADIR%%/sound/propulsion/nl/poh-m-dobre.ogg
+%%DATADIR%%/sound/propulsion/nl/poh-m-dobryden0.ogg
+%%DATADIR%%/sound/propulsion/nl/poh-m-dobryden1.ogg
+%%DATADIR%%/sound/propulsion/nl/poh-m-motor.ogg
+%%DATADIR%%/sound/propulsion/nl/poh-m-pohadali.ogg
+%%DATADIR%%/sound/propulsion/nl/poh-m-princip.ogg
+%%DATADIR%%/sound/propulsion/nl/poh-m-projekt.ogg
+%%DATADIR%%/sound/propulsion/nl/poh-m-reaktor.ogg
+%%DATADIR%%/sound/propulsion/nl/poh-m-sest.ogg
+%%DATADIR%%/sound/propulsion/nl/poh-m-sestra.ogg
+%%DATADIR%%/sound/propulsion/nl/poh-m-tosnadne.ogg
+%%DATADIR%%/sound/propulsion/nl/poh-v-automat.ogg
+%%DATADIR%%/sound/propulsion/nl/poh-v-biosila.ogg
+%%DATADIR%%/sound/propulsion/nl/poh-v-forma.ogg
+%%DATADIR%%/sound/propulsion/nl/poh-v-klec.ogg
+%%DATADIR%%/sound/propulsion/nl/poh-v-neuveri.ogg
+%%DATADIR%%/sound/propulsion/nl/poh-v-pomoct.ogg
+%%DATADIR%%/sound/propulsion/nl/poh-v-setkani.ogg
+%%DATADIR%%/sound/propulsion/nl/poh-v-takhle.ogg
+%%DATADIR%%/sound/propulsion/nl/poh-v-tocit.ogg
+%%DATADIR%%/sound/propulsion/nl/poh-v-ukol.ogg
+%%DATADIR%%/sound/propulsion/nl/poh-v-zarizeni.ogg
 %%DATADIR%%/sound/puzzle/cs/puc-m-hele.ogg
 %%DATADIR%%/sound/puzzle/cs/puc-m-koukej.ogg
 %%DATADIR%%/sound/puzzle/cs/puc-m-oblicej.ogg
@@ -6770,6 +8002,20 @@ bin/fillets
 %%DATADIR%%/sound/puzzle/cs/puc-v-podivej.ogg
 %%DATADIR%%/sound/puzzle/cs/puc-v-videl.ogg
 %%DATADIR%%/sound/puzzle/en/puc-x-pldik.ogg
+%%DATADIR%%/sound/puzzle/nl/puc-m-hele.ogg
+%%DATADIR%%/sound/puzzle/nl/puc-m-koukej.ogg
+%%DATADIR%%/sound/puzzle/nl/puc-m-oblicej.ogg
+%%DATADIR%%/sound/puzzle/nl/puc-m-obraz.ogg
+%%DATADIR%%/sound/puzzle/nl/puc-m-pld0.ogg
+%%DATADIR%%/sound/puzzle/nl/puc-m-pld1.ogg
+%%DATADIR%%/sound/puzzle/nl/puc-m-slizka.ogg
+%%DATADIR%%/sound/puzzle/nl/puc-m-stalo.ogg
+%%DATADIR%%/sound/puzzle/nl/puc-v-fuska0.ogg
+%%DATADIR%%/sound/puzzle/nl/puc-v-fuska1.ogg
+%%DATADIR%%/sound/puzzle/nl/puc-v-fuska2.ogg
+%%DATADIR%%/sound/puzzle/nl/puc-v-nesmysl.ogg
+%%DATADIR%%/sound/puzzle/nl/puc-v-podivej.ogg
+%%DATADIR%%/sound/puzzle/nl/puc-v-videl.ogg
 %%DATADIR%%/sound/pyramid/cs/pyr-m-comy.ogg
 %%DATADIR%%/sound/pyramid/cs/pyr-m-dest.ogg
 %%DATADIR%%/sound/pyramid/cs/pyr-m-kam.ogg
@@ -6782,6 +8028,18 @@ bin/fillets
 %%DATADIR%%/sound/pyramid/cs/pyr-v-sbohem.ogg
 %%DATADIR%%/sound/pyramid/cs/pyr-v-sfing.ogg
 %%DATADIR%%/sound/pyramid/cs/pyr-v-vsim.ogg
+%%DATADIR%%/sound/pyramid/nl/pyr-m-comy.ogg
+%%DATADIR%%/sound/pyramid/nl/pyr-m-dest.ogg
+%%DATADIR%%/sound/pyramid/nl/pyr-m-kam.ogg
+%%DATADIR%%/sound/pyramid/nl/pyr-m-nic.ogg
+%%DATADIR%%/sound/pyramid/nl/pyr-m-nudi.ogg
+%%DATADIR%%/sound/pyramid/nl/pyr-m-plaz.ogg
+%%DATADIR%%/sound/pyramid/nl/pyr-m-zkus.ogg
+%%DATADIR%%/sound/pyramid/nl/pyr-v-druha.ogg
+%%DATADIR%%/sound/pyramid/nl/pyr-v-sark.ogg
+%%DATADIR%%/sound/pyramid/nl/pyr-v-sbohem.ogg
+%%DATADIR%%/sound/pyramid/nl/pyr-v-sfing.ogg
+%%DATADIR%%/sound/pyramid/nl/pyr-v-vsim.ogg
 %%DATADIR%%/sound/reactor/cs/rea-m-anebo.ogg
 %%DATADIR%%/sound/reactor/cs/rea-m-cojavim.ogg
 %%DATADIR%%/sound/reactor/cs/rea-m-comyslis.ogg
@@ -6801,6 +8059,23 @@ bin/fillets
 %%DATADIR%%/sound/reactor/cs/rea-v-tozni.ogg
 %%DATADIR%%/sound/reactor/en/rea-x-pldik.ogg
 %%DATADIR%%/sound/reactor/en/rea-x-reakttyc.ogg
+%%DATADIR%%/sound/reactor/nl/rea-m-anebo.ogg
+%%DATADIR%%/sound/reactor/nl/rea-m-cojavim.ogg
+%%DATADIR%%/sound/reactor/nl/rea-m-comyslis.ogg
+%%DATADIR%%/sound/reactor/nl/rea-m-doufam.ogg
+%%DATADIR%%/sound/reactor/nl/rea-m-jakmuzes.ogg
+%%DATADIR%%/sound/reactor/nl/rea-m-mohl.ogg
+%%DATADIR%%/sound/reactor/nl/rea-m-nevim.ogg
+%%DATADIR%%/sound/reactor/nl/rea-m-proboha.ogg
+%%DATADIR%%/sound/reactor/nl/rea-v-acoby.ogg
+%%DATADIR%%/sound/reactor/nl/rea-v-coto.ogg
+%%DATADIR%%/sound/reactor/nl/rea-v-kolik.ogg
+%%DATADIR%%/sound/reactor/nl/rea-v-ledaze.ogg
+%%DATADIR%%/sound/reactor/nl/rea-v-nemudruj.ogg
+%%DATADIR%%/sound/reactor/nl/rea-v-patrne.ogg
+%%DATADIR%%/sound/reactor/nl/rea-v-radeji.ogg
+%%DATADIR%%/sound/reactor/nl/rea-v-takvidis.ogg
+%%DATADIR%%/sound/reactor/nl/rea-v-tozni.ogg
 %%DATADIR%%/sound/reef/cs/uts-m-batyskaf.ogg
 %%DATADIR%%/sound/reef/cs/uts-m-chudak.ogg
 %%DATADIR%%/sound/reef/cs/uts-m-lastura.ogg
@@ -6818,6 +8093,23 @@ bin/fillets
 %%DATADIR%%/sound/reef/cs/uts-v-projet0.ogg
 %%DATADIR%%/sound/reef/cs/uts-v-projet1.ogg
 %%DATADIR%%/sound/reef/cs/uts-v-sam.ogg
+%%DATADIR%%/sound/reef/nl/uts-m-batyskaf.ogg
+%%DATADIR%%/sound/reef/nl/uts-m-chudak.ogg
+%%DATADIR%%/sound/reef/nl/uts-m-lastura.ogg
+%%DATADIR%%/sound/reef/nl/uts-m-matrace.ogg
+%%DATADIR%%/sound/reef/nl/uts-m-nezvedneme.ogg
+%%DATADIR%%/sound/reef/nl/uts-m-otresy.ogg
+%%DATADIR%%/sound/reef/nl/uts-m-snek.ogg
+%%DATADIR%%/sound/reef/nl/uts-m-tvorove.ogg
+%%DATADIR%%/sound/reef/nl/uts-m-zelvy.ogg
+%%DATADIR%%/sound/reef/nl/uts-m-zivocich.ogg
+%%DATADIR%%/sound/reef/nl/uts-v-konecne.ogg
+%%DATADIR%%/sound/reef/nl/uts-v-koraly.ogg
+%%DATADIR%%/sound/reef/nl/uts-v-mikroskop.ogg
+%%DATADIR%%/sound/reef/nl/uts-v-poradi.ogg
+%%DATADIR%%/sound/reef/nl/uts-v-projet0.ogg
+%%DATADIR%%/sound/reef/nl/uts-v-projet1.ogg
+%%DATADIR%%/sound/reef/nl/uts-v-sam.ogg
 %%DATADIR%%/sound/rotate/en/tyc-pauau.ogg
 %%DATADIR%%/sound/rush/cs/m-hraje.ogg
 %%DATADIR%%/sound/rush/cs/m-myslis.ogg
@@ -6829,6 +8121,16 @@ bin/fillets
 %%DATADIR%%/sound/rush/cs/v-ffneni.ogg
 %%DATADIR%%/sound/rush/cs/v-upozornit.ogg
 %%DATADIR%%/sound/rush/cs/v-zopakuje.ogg
+%%DATADIR%%/sound/rush/nl/m-hraje.ogg
+%%DATADIR%%/sound/rush/nl/m-myslis.ogg
+%%DATADIR%%/sound/rush/nl/m-obdivovat.ogg
+%%DATADIR%%/sound/rush/nl/m-silou.ogg
+%%DATADIR%%/sound/rush/nl/m-vysunout.ogg
+%%DATADIR%%/sound/rush/nl/v-chytra.ogg
+%%DATADIR%%/sound/rush/nl/v-codelas.ogg
+%%DATADIR%%/sound/rush/nl/v-ffneni.ogg
+%%DATADIR%%/sound/rush/nl/v-upozornit.ogg
+%%DATADIR%%/sound/rush/nl/v-zopakuje.ogg
 %%DATADIR%%/sound/share/blackjokes/cs/smrt-m-0.ogg
 %%DATADIR%%/sound/share/blackjokes/cs/smrt-m-1.ogg
 %%DATADIR%%/sound/share/blackjokes/cs/smrt-m-2.ogg
@@ -6856,6 +8158,32 @@ bin/fillets
 %%DATADIR%%/sound/share/blackjokes/cs/smrt-v-restart.ogg
 %%DATADIR%%/sound/share/blackjokes/cs/smrt-v-zahrobi.ogg
 %%DATADIR%%/sound/share/blackjokes/cs/smrt-x-obe.ogg
+%%DATADIR%%/sound/share/blackjokes/nl/smrt-m-0.ogg
+%%DATADIR%%/sound/share/blackjokes/nl/smrt-m-1.ogg
+%%DATADIR%%/sound/share/blackjokes/nl/smrt-m-2.ogg
+%%DATADIR%%/sound/share/blackjokes/nl/smrt-m-3.ogg
+%%DATADIR%%/sound/share/blackjokes/nl/smrt-m-4.ogg
+%%DATADIR%%/sound/share/blackjokes/nl/smrt-m-5.ogg
+%%DATADIR%%/sound/share/blackjokes/nl/smrt-m-6.ogg
+%%DATADIR%%/sound/share/blackjokes/nl/smrt-m-autorest.ogg
+%%DATADIR%%/sound/share/blackjokes/nl/smrt-m-obe.ogg
+%%DATADIR%%/sound/share/blackjokes/nl/smrt-m-posmrtny.ogg
+%%DATADIR%%/sound/share/blackjokes/nl/smrt-m-psst.ogg
+%%DATADIR%%/sound/share/blackjokes/nl/smrt-m-restart.ogg
+%%DATADIR%%/sound/share/blackjokes/nl/smrt-m-zahrobi.ogg
+%%DATADIR%%/sound/share/blackjokes/nl/smrt-v-0.ogg
+%%DATADIR%%/sound/share/blackjokes/nl/smrt-v-1.ogg
+%%DATADIR%%/sound/share/blackjokes/nl/smrt-v-2.ogg
+%%DATADIR%%/sound/share/blackjokes/nl/smrt-v-3.ogg
+%%DATADIR%%/sound/share/blackjokes/nl/smrt-v-4.ogg
+%%DATADIR%%/sound/share/blackjokes/nl/smrt-v-5.ogg
+%%DATADIR%%/sound/share/blackjokes/nl/smrt-v-6.ogg
+%%DATADIR%%/sound/share/blackjokes/nl/smrt-v-7.ogg
+%%DATADIR%%/sound/share/blackjokes/nl/smrt-v-autorest.ogg
+%%DATADIR%%/sound/share/blackjokes/nl/smrt-v-obe.ogg
+%%DATADIR%%/sound/share/blackjokes/nl/smrt-v-posmrtny.ogg
+%%DATADIR%%/sound/share/blackjokes/nl/smrt-v-restart.ogg
+%%DATADIR%%/sound/share/blackjokes/nl/smrt-v-zahrobi.ogg
 %%DATADIR%%/sound/share/border/cs/cil-m-hlaska0.ogg
 %%DATADIR%%/sound/share/border/cs/cil-m-hlaska1.ogg
 %%DATADIR%%/sound/share/border/cs/cil-m-hlaska2.ogg
@@ -6874,6 +8202,14 @@ bin/fillets
 %%DATADIR%%/sound/share/border/cs/sp-shout_small_02.ogg
 %%DATADIR%%/sound/share/border/cs/sp-shout_small_03.ogg
 %%DATADIR%%/sound/share/border/cs/sp-shout_small_04.ogg
+%%DATADIR%%/sound/share/border/nl/cil-m-hlaska0.ogg
+%%DATADIR%%/sound/share/border/nl/cil-m-hlaska1.ogg
+%%DATADIR%%/sound/share/border/nl/cil-m-hlaska2.ogg
+%%DATADIR%%/sound/share/border/nl/cil-m-hlaska3.ogg
+%%DATADIR%%/sound/share/border/nl/cil-v-hlaska0.ogg
+%%DATADIR%%/sound/share/border/nl/cil-v-hlaska1.ogg
+%%DATADIR%%/sound/share/border/nl/cil-v-hlaska2.ogg
+%%DATADIR%%/sound/share/border/nl/cil-v-hlaska3.ogg
 %%DATADIR%%/sound/share/borejokes/cs/ob-m-ach.ogg
 %%DATADIR%%/sound/share/borejokes/cs/ob-m-ceka.ogg
 %%DATADIR%%/sound/share/borejokes/cs/ob-m-co.ogg
@@ -6881,7 +8217,6 @@ bin/fillets
 %%DATADIR%%/sound/share/borejokes/cs/ob-m-jakdlouho.ogg
 %%DATADIR%%/sound/share/borejokes/cs/ob-m-jesteneco.ogg
 %%DATADIR%%/sound/share/borejokes/cs/ob-m-jetam.ogg
-%%DATADIR%%/sound/share/borejokes/cs/ob-m-kdejsme.ogg
 %%DATADIR%%/sound/share/borejokes/cs/ob-m-kdo.ogg
 %%DATADIR%%/sound/share/borejokes/cs/ob-m-klid.ogg
 %%DATADIR%%/sound/share/borejokes/cs/ob-m-lito.ogg
@@ -6890,10 +8225,7 @@ bin/fillets
 %%DATADIR%%/sound/share/borejokes/cs/ob-m-nedeje.ogg
 %%DATADIR%%/sound/share/borejokes/cs/ob-m-nedosataneme.ogg
 %%DATADIR%%/sound/share/borejokes/cs/ob-m-neverim.ogg
-%%DATADIR%%/sound/share/borejokes/cs/ob-m-nic.ogg
 %%DATADIR%%/sound/share/borejokes/cs/ob-m-pokracuj.ogg
-%%DATADIR%%/sound/share/borejokes/cs/ob-m-poslani.ogg
-%%DATADIR%%/sound/share/borejokes/cs/ob-m-praci.ogg
 %%DATADIR%%/sound/share/borejokes/cs/ob-m-pravdepodobne.ogg
 %%DATADIR%%/sound/share/borejokes/cs/ob-m-proc.ogg
 %%DATADIR%%/sound/share/borejokes/cs/ob-m-pst.ogg
@@ -6903,7 +8235,6 @@ bin/fillets
 %%DATADIR%%/sound/share/borejokes/cs/ob-m-tezky.ogg
 %%DATADIR%%/sound/share/borejokes/cs/ob-m-uplnevse.ogg
 %%DATADIR%%/sound/share/borejokes/cs/ob-m-vsechno.ogg
-%%DATADIR%%/sound/share/borejokes/cs/ob-m-zapremyslet.ogg
 %%DATADIR%%/sound/share/borejokes/cs/ob-m-zase.ogg
 %%DATADIR%%/sound/share/borejokes/cs/ob-m-zvykacka.ogg
 %%DATADIR%%/sound/share/borejokes/cs/ob-o-halo.ogg
@@ -6918,7 +8249,6 @@ bin/fillets
 %%DATADIR%%/sound/share/borejokes/cs/ob-v-jidlo.ogg
 %%DATADIR%%/sound/share/borejokes/cs/ob-v-jit0.ogg
 %%DATADIR%%/sound/share/borejokes/cs/ob-v-jit1.ogg
-%%DATADIR%%/sound/share/borejokes/cs/ob-v-kdejsme.ogg
 %%DATADIR%%/sound/share/borejokes/cs/ob-v-kdoresi.ogg
 %%DATADIR%%/sound/share/borejokes/cs/ob-v-klid.ogg
 %%DATADIR%%/sound/share/borejokes/cs/ob-v-leskne.ogg
@@ -6931,14 +8261,63 @@ bin/fillets
 %%DATADIR%%/sound/share/borejokes/cs/ob-v-neobvykle.ogg
 %%DATADIR%%/sound/share/borejokes/cs/ob-v-nerus.ogg
 %%DATADIR%%/sound/share/borejokes/cs/ob-v-ostani.ogg
-%%DATADIR%%/sound/share/borejokes/cs/ob-v-podivej.ogg
-%%DATADIR%%/sound/share/borejokes/cs/ob-v-pomuze.ogg
-%%DATADIR%%/sound/share/borejokes/cs/ob-v-praci.ogg
 %%DATADIR%%/sound/share/borejokes/cs/ob-v-prestavka.ogg
-%%DATADIR%%/sound/share/borejokes/cs/ob-v-pripomina.ogg
 %%DATADIR%%/sound/share/borejokes/cs/ob-v-sami.ogg
 %%DATADIR%%/sound/share/borejokes/cs/ob-v-vyzkousej.ogg
 %%DATADIR%%/sound/share/borejokes/cs/ob-v-zvykacka.ogg
+%%DATADIR%%/sound/share/borejokes/nl/ob-m-ach.ogg
+%%DATADIR%%/sound/share/borejokes/nl/ob-m-ceka.ogg
+%%DATADIR%%/sound/share/borejokes/nl/ob-m-co.ogg
+%%DATADIR%%/sound/share/borejokes/nl/ob-m-hlavu.ogg
+%%DATADIR%%/sound/share/borejokes/nl/ob-m-jakdlouho.ogg
+%%DATADIR%%/sound/share/borejokes/nl/ob-m-jesteneco.ogg
+%%DATADIR%%/sound/share/borejokes/nl/ob-m-jetam.ogg
+%%DATADIR%%/sound/share/borejokes/nl/ob-m-kdo.ogg
+%%DATADIR%%/sound/share/borejokes/nl/ob-m-klid.ogg
+%%DATADIR%%/sound/share/borejokes/nl/ob-m-lito.ogg
+%%DATADIR%%/sound/share/borejokes/nl/ob-m-mysleli.ogg
+%%DATADIR%%/sound/share/borejokes/nl/ob-m-naveky.ogg
+%%DATADIR%%/sound/share/borejokes/nl/ob-m-nedeje.ogg
+%%DATADIR%%/sound/share/borejokes/nl/ob-m-nedosataneme.ogg
+%%DATADIR%%/sound/share/borejokes/nl/ob-m-neverim.ogg
+%%DATADIR%%/sound/share/borejokes/nl/ob-m-pokracuj.ogg
+%%DATADIR%%/sound/share/borejokes/nl/ob-m-pravdepodobne.ogg
+%%DATADIR%%/sound/share/borejokes/nl/ob-m-proc.ogg
+%%DATADIR%%/sound/share/borejokes/nl/ob-m-pst.ogg
+%%DATADIR%%/sound/share/borejokes/nl/ob-m-resit.ogg
+%%DATADIR%%/sound/share/borejokes/nl/ob-m-strach.ogg
+%%DATADIR%%/sound/share/borejokes/nl/ob-m-teorie.ogg
+%%DATADIR%%/sound/share/borejokes/nl/ob-m-tezky.ogg
+%%DATADIR%%/sound/share/borejokes/nl/ob-m-uplnevse.ogg
+%%DATADIR%%/sound/share/borejokes/nl/ob-m-vsechno.ogg
+%%DATADIR%%/sound/share/borejokes/nl/ob-m-zase.ogg
+%%DATADIR%%/sound/share/borejokes/nl/ob-m-zvykacka.ogg
+%%DATADIR%%/sound/share/borejokes/nl/ob-v-akvarium.ogg
+%%DATADIR%%/sound/share/borejokes/nl/ob-v-alenic.ogg
+%%DATADIR%%/sound/share/borejokes/nl/ob-v-colito.ogg
+%%DATADIR%%/sound/share/borejokes/nl/ob-v-copak.ogg
+%%DATADIR%%/sound/share/borejokes/nl/ob-v-covsechno.ogg
+%%DATADIR%%/sound/share/borejokes/nl/ob-v-halo.ogg
+%%DATADIR%%/sound/share/borejokes/nl/ob-v-hrej.ogg
+%%DATADIR%%/sound/share/borejokes/nl/ob-v-jidlo.ogg
+%%DATADIR%%/sound/share/borejokes/nl/ob-v-jit0.ogg
+%%DATADIR%%/sound/share/borejokes/nl/ob-v-jit1.ogg
+%%DATADIR%%/sound/share/borejokes/nl/ob-v-kdoresi.ogg
+%%DATADIR%%/sound/share/borejokes/nl/ob-v-klid.ogg
+%%DATADIR%%/sound/share/borejokes/nl/ob-v-leskne.ogg
+%%DATADIR%%/sound/share/borejokes/nl/ob-v-mamto.ogg
+%%DATADIR%%/sound/share/borejokes/nl/ob-v-musi.ogg
+%%DATADIR%%/sound/share/borejokes/nl/ob-v-napad.ogg
+%%DATADIR%%/sound/share/borejokes/nl/ob-v-nebavi.ogg
+%%DATADIR%%/sound/share/borejokes/nl/ob-v-nehybes.ogg
+%%DATADIR%%/sound/share/borejokes/nl/ob-v-nelekl.ogg
+%%DATADIR%%/sound/share/borejokes/nl/ob-v-neobvykle.ogg
+%%DATADIR%%/sound/share/borejokes/nl/ob-v-nerus.ogg
+%%DATADIR%%/sound/share/borejokes/nl/ob-v-ostani.ogg
+%%DATADIR%%/sound/share/borejokes/nl/ob-v-prestavka.ogg
+%%DATADIR%%/sound/share/borejokes/nl/ob-v-sami.ogg
+%%DATADIR%%/sound/share/borejokes/nl/ob-v-vyzkousej.ogg
+%%DATADIR%%/sound/share/borejokes/nl/ob-v-zvykacka.ogg
 %%DATADIR%%/sound/share/sp-bubles_00.ogg
 %%DATADIR%%/sound/share/sp-bubles_01.ogg
 %%DATADIR%%/sound/share/sp-bubles_02.ogg
@@ -6962,6 +8341,16 @@ bin/fillets
 %%DATADIR%%/sound/snowman/cs/tr-v-jid2.ogg
 %%DATADIR%%/sound/snowman/cs/tr-v-prezil.ogg
 %%DATADIR%%/sound/snowman/en/tr-x-koste.ogg
+%%DATADIR%%/sound/snowman/nl/tr-m-au1.ogg
+%%DATADIR%%/sound/snowman/nl/tr-m-au2.ogg
+%%DATADIR%%/sound/snowman/nl/tr-m-chlad1.ogg
+%%DATADIR%%/sound/snowman/nl/tr-m-chlad2.ogg
+%%DATADIR%%/sound/snowman/nl/tr-m-cvicit.ogg
+%%DATADIR%%/sound/snowman/nl/tr-m-ztuhl.ogg
+%%DATADIR%%/sound/snowman/nl/tr-v-agres.ogg
+%%DATADIR%%/sound/snowman/nl/tr-v-jid1.ogg
+%%DATADIR%%/sound/snowman/nl/tr-v-jid2.ogg
+%%DATADIR%%/sound/snowman/nl/tr-v-prezil.ogg
 %%DATADIR%%/sound/society/cs/mik-m-konik.ogg
 %%DATADIR%%/sound/society/cs/mik-m-krab.ogg
 %%DATADIR%%/sound/society/cs/mik-m-myslit.ogg
@@ -6981,12 +8370,33 @@ bin/fillets
 %%DATADIR%%/sound/society/en/mik-x-stebet1.ogg
 %%DATADIR%%/sound/society/en/mik-x-stebet2.ogg
 %%DATADIR%%/sound/society/en/mik-x-stebet3.ogg
+%%DATADIR%%/sound/society/nl/mik-m-konik.ogg
+%%DATADIR%%/sound/society/nl/mik-m-krab.ogg
+%%DATADIR%%/sound/society/nl/mik-m-myslit.ogg
+%%DATADIR%%/sound/society/nl/mik-m-nezlob.ogg
+%%DATADIR%%/sound/society/nl/mik-m-poust.ogg
+%%DATADIR%%/sound/society/nl/mik-m-proc.ogg
+%%DATADIR%%/sound/society/nl/mik-m-tusit.ogg
+%%DATADIR%%/sound/society/nl/mik-v-projet.ogg
+%%DATADIR%%/sound/society/nl/mik-v-proto.ogg
+%%DATADIR%%/sound/society/nl/mik-v-sakra.ogg
+%%DATADIR%%/sound/society/nl/mik-v-tak.ogg
+%%DATADIR%%/sound/society/nl/mik-v-ticho0.ogg
+%%DATADIR%%/sound/society/nl/mik-v-ticho1.ogg
+%%DATADIR%%/sound/society/nl/mik-v-ticho2.ogg
+%%DATADIR%%/sound/society/nl/mik-v-videt.ogg
 %%DATADIR%%/sound/stairs/cs/sch-m-moc0.ogg
 %%DATADIR%%/sound/stairs/cs/sch-m-moc1.ogg
 %%DATADIR%%/sound/stairs/cs/sch-m-moc2.ogg
 %%DATADIR%%/sound/stairs/cs/sch-m-spadlo.ogg
 %%DATADIR%%/sound/stairs/cs/sch-v-lastura.ogg
 %%DATADIR%%/sound/stairs/cs/sch-v-setkani.ogg
+%%DATADIR%%/sound/stairs/nl/sch-m-moc0.ogg
+%%DATADIR%%/sound/stairs/nl/sch-m-moc1.ogg
+%%DATADIR%%/sound/stairs/nl/sch-m-moc2.ogg
+%%DATADIR%%/sound/stairs/nl/sch-m-spadlo.ogg
+%%DATADIR%%/sound/stairs/nl/sch-v-lastura.ogg
+%%DATADIR%%/sound/stairs/nl/sch-v-setkani.ogg
 %%DATADIR%%/sound/start/cs/1st-m-backspace.ogg
 %%DATADIR%%/sound/start/cs/1st-m-cotobylo.ogg
 %%DATADIR%%/sound/start/cs/1st-m-diky.ogg
@@ -7019,9 +8429,42 @@ bin/fillets
 %%DATADIR%%/sound/start/cs/1st-v-ven.ogg
 %%DATADIR%%/sound/start/cs/1st-v-znovu.ogg
 %%DATADIR%%/sound/start/cs/1st-x-ocel.ogg
+%%DATADIR%%/sound/start/nl/1st-m-backspace.ogg
+%%DATADIR%%/sound/start/nl/1st-m-cotobylo.ogg
+%%DATADIR%%/sound/start/nl/1st-m-diky.ogg
+%%DATADIR%%/sound/start/nl/1st-m-hej.ogg
+%%DATADIR%%/sound/start/nl/1st-m-hmmm.ogg
+%%DATADIR%%/sound/start/nl/1st-m-navod4.ogg
+%%DATADIR%%/sound/start/nl/1st-m-navod6.ogg
+%%DATADIR%%/sound/start/nl/1st-m-navod8.ogg
+%%DATADIR%%/sound/start/nl/1st-m-nechtoho.ogg
+%%DATADIR%%/sound/start/nl/1st-m-nepohnu.ogg
+%%DATADIR%%/sound/start/nl/1st-m-neprojedu.ogg
+%%DATADIR%%/sound/start/nl/1st-m-pockej.ogg
+%%DATADIR%%/sound/start/nl/1st-m-pokud.ogg
+%%DATADIR%%/sound/start/nl/1st-m-proc.ogg
+%%DATADIR%%/sound/start/nl/1st-v-chyba.ogg
+%%DATADIR%%/sound/start/nl/1st-v-davej.ogg
+%%DATADIR%%/sound/start/nl/1st-v-jedno.ogg
+%%DATADIR%%/sound/start/nl/1st-v-najit.ogg
+%%DATADIR%%/sound/start/nl/1st-v-navod1.ogg
+%%DATADIR%%/sound/start/nl/1st-v-navod5.ogg
+%%DATADIR%%/sound/start/nl/1st-v-navod7.ogg
+%%DATADIR%%/sound/start/nl/1st-v-nedostanu.ogg
+%%DATADIR%%/sound/start/nl/1st-v-nemuzu.ogg
+%%DATADIR%%/sound/start/nl/1st-v-netusim.ogg
+%%DATADIR%%/sound/start/nl/1st-v-posunout.ogg
+%%DATADIR%%/sound/start/nl/1st-v-pribral.ogg
+%%DATADIR%%/sound/start/nl/1st-v-stiskni.ogg
+%%DATADIR%%/sound/start/nl/1st-v-takdobre.ogg
+%%DATADIR%%/sound/start/nl/1st-v-takukaz.ogg
+%%DATADIR%%/sound/start/nl/1st-v-ven.ogg
+%%DATADIR%%/sound/start/nl/1st-v-znovu.ogg
 %%DATADIR%%/sound/steel/cs/steel-m-0.ogg
 %%DATADIR%%/sound/steel/cs/steel-m-1.ogg
 %%DATADIR%%/sound/steel/en/steel-x-redalert.ogg
+%%DATADIR%%/sound/steel/nl/steel-m-0.ogg
+%%DATADIR%%/sound/steel/nl/steel-m-1.ogg
 %%DATADIR%%/sound/submarine/cs/zr-m-komu.ogg
 %%DATADIR%%/sound/submarine/cs/zr-m-nepovykuj.ogg
 %%DATADIR%%/sound/submarine/cs/zr-m-nervi.ogg
@@ -7038,6 +8481,21 @@ bin/fillets
 %%DATADIR%%/sound/submarine/cs/zr-v-opatrne.ogg
 %%DATADIR%%/sound/submarine/cs/zr-v-vzdyt.ogg
 %%DATADIR%%/sound/submarine/cs/zr-x-nabito.ogg
+%%DATADIR%%/sound/submarine/nl/zr-m-komu.ogg
+%%DATADIR%%/sound/submarine/nl/zr-m-nepovykuj.ogg
+%%DATADIR%%/sound/submarine/nl/zr-m-nervi.ogg
+%%DATADIR%%/sound/submarine/nl/zr-m-obliceje.ogg
+%%DATADIR%%/sound/submarine/nl/zr-m-pockej.ogg
+%%DATADIR%%/sound/submarine/nl/zr-m-prestan.ogg
+%%DATADIR%%/sound/submarine/nl/zr-m-tadyjsem.ogg
+%%DATADIR%%/sound/submarine/nl/zr-m-takfajn.ogg
+%%DATADIR%%/sound/submarine/nl/zr-m-tojeon.ogg
+%%DATADIR%%/sound/submarine/nl/zr-v-halo.ogg
+%%DATADIR%%/sound/submarine/nl/zr-v-hej.ogg
+%%DATADIR%%/sound/submarine/nl/zr-v-jetunekdo.ogg
+%%DATADIR%%/sound/submarine/nl/zr-v-nevim.ogg
+%%DATADIR%%/sound/submarine/nl/zr-v-opatrne.ogg
+%%DATADIR%%/sound/submarine/nl/zr-v-vzdyt.ogg
 %%DATADIR%%/sound/tank/cs/sv-m-doscasu.ogg
 %%DATADIR%%/sound/tank/cs/sv-m-kecy.ogg
 %%DATADIR%%/sound/tank/cs/sv-m-munice.ogg
@@ -7054,6 +8512,22 @@ bin/fillets
 %%DATADIR%%/sound/tank/cs/sv-v-proc.ogg
 %%DATADIR%%/sound/tank/cs/sv-v-ucpat.ogg
 %%DATADIR%%/sound/tank/cs/sv-v-zebrik.ogg
+%%DATADIR%%/sound/tank/nl/sv-m-doscasu.ogg
+%%DATADIR%%/sound/tank/nl/sv-m-kecy.ogg
+%%DATADIR%%/sound/tank/nl/sv-m-munice.ogg
+%%DATADIR%%/sound/tank/nl/sv-m-pomohli.ogg
+%%DATADIR%%/sound/tank/nl/sv-m-pravdepodob.ogg
+%%DATADIR%%/sound/tank/nl/sv-m-tank.ogg
+%%DATADIR%%/sound/tank/nl/sv-m-utecha.ogg
+%%DATADIR%%/sound/tank/nl/sv-m-ven.ogg
+%%DATADIR%%/sound/tank/nl/sv-v-bezsneku.ogg
+%%DATADIR%%/sound/tank/nl/sv-v-chtel.ogg
+%%DATADIR%%/sound/tank/nl/sv-v-nevim.ogg
+%%DATADIR%%/sound/tank/nl/sv-v-obojzivelny.ogg
+%%DATADIR%%/sound/tank/nl/sv-v-potopena.ogg
+%%DATADIR%%/sound/tank/nl/sv-v-proc.ogg
+%%DATADIR%%/sound/tank/nl/sv-v-ucpat.ogg
+%%DATADIR%%/sound/tank/nl/sv-v-zebrik.ogg
 %%DATADIR%%/sound/tetris/cs/tet-m-ano.ogg
 %%DATADIR%%/sound/tetris/cs/tet-m-jaklepsi.ogg
 %%DATADIR%%/sound/tetris/cs/tet-m-lepe.ogg
@@ -7068,6 +8542,20 @@ bin/fillets
 %%DATADIR%%/sound/tetris/cs/tet-v-myslim.ogg
 %%DATADIR%%/sound/tetris/cs/tet-v-ucta.ogg
 %%DATADIR%%/sound/tetris/cs/tet-v-uprava.ogg
+%%DATADIR%%/sound/tetris/nl/tet-m-ano.ogg
+%%DATADIR%%/sound/tetris/nl/tet-m-jaklepsi.ogg
+%%DATADIR%%/sound/tetris/nl/tet-m-lepe.ogg
+%%DATADIR%%/sound/tetris/nl/tet-m-pozor.ogg
+%%DATADIR%%/sound/tetris/nl/tet-m-predmety.ogg
+%%DATADIR%%/sound/tetris/nl/tet-m-program.ogg
+%%DATADIR%%/sound/tetris/nl/tet-m-usudek.ogg
+%%DATADIR%%/sound/tetris/nl/tet-m-vypadala.ogg
+%%DATADIR%%/sound/tetris/nl/tet-v-hybat.ogg
+%%DATADIR%%/sound/tetris/nl/tet-v-kostky.ogg
+%%DATADIR%%/sound/tetris/nl/tet-v-lepsi.ogg
+%%DATADIR%%/sound/tetris/nl/tet-v-myslim.ogg
+%%DATADIR%%/sound/tetris/nl/tet-v-ucta.ogg
+%%DATADIR%%/sound/tetris/nl/tet-v-uprava.ogg
 %%DATADIR%%/sound/turtle/cs/zel-m-cimtoje.ogg
 %%DATADIR%%/sound/turtle/cs/zel-m-coto0.ogg
 %%DATADIR%%/sound/turtle/cs/zel-m-coto1.ogg
@@ -7099,6 +8587,37 @@ bin/fillets
 %%DATADIR%%/sound/turtle/cs/zel-v-zelva1.ogg
 %%DATADIR%%/sound/turtle/cs/zel-v-zmistnosti0.ogg
 %%DATADIR%%/sound/turtle/cs/zel-v-zmistnosti1.ogg
+%%DATADIR%%/sound/turtle/nl/zel-m-cimtoje.ogg
+%%DATADIR%%/sound/turtle/nl/zel-m-coto0.ogg
+%%DATADIR%%/sound/turtle/nl/zel-m-coto1.ogg
+%%DATADIR%%/sound/turtle/nl/zel-m-coto2.ogg
+%%DATADIR%%/sound/turtle/nl/zel-m-fotky0.ogg
+%%DATADIR%%/sound/turtle/nl/zel-m-fotky1.ogg
+%%DATADIR%%/sound/turtle/nl/zel-m-jasne.ogg
+%%DATADIR%%/sound/turtle/nl/zel-m-jednoduse.ogg
+%%DATADIR%%/sound/turtle/nl/zel-m-nevim0.ogg
+%%DATADIR%%/sound/turtle/nl/zel-m-nevim1.ogg
+%%DATADIR%%/sound/turtle/nl/zel-m-potvora0.ogg
+%%DATADIR%%/sound/turtle/nl/zel-m-potvora1.ogg
+%%DATADIR%%/sound/turtle/nl/zel-m-priroda.ogg
+%%DATADIR%%/sound/turtle/nl/zel-m-tazelva.ogg
+%%DATADIR%%/sound/turtle/nl/zel-v-bizarni.ogg
+%%DATADIR%%/sound/turtle/nl/zel-v-cosedeje.ogg
+%%DATADIR%%/sound/turtle/nl/zel-v-coto0.ogg
+%%DATADIR%%/sound/turtle/nl/zel-v-coto1.ogg
+%%DATADIR%%/sound/turtle/nl/zel-v-coto2.ogg
+%%DATADIR%%/sound/turtle/nl/zel-v-nevim0.ogg
+%%DATADIR%%/sound/turtle/nl/zel-v-nevim1.ogg
+%%DATADIR%%/sound/turtle/nl/zel-v-pochyby.ogg
+%%DATADIR%%/sound/turtle/nl/zel-v-stacit0.ogg
+%%DATADIR%%/sound/turtle/nl/zel-v-stacit1.ogg
+%%DATADIR%%/sound/turtle/nl/zel-v-tazelva.ogg
+%%DATADIR%%/sound/turtle/nl/zel-v-tvary.ogg
+%%DATADIR%%/sound/turtle/nl/zel-v-ukol.ogg
+%%DATADIR%%/sound/turtle/nl/zel-v-zelva0.ogg
+%%DATADIR%%/sound/turtle/nl/zel-v-zelva1.ogg
+%%DATADIR%%/sound/turtle/nl/zel-v-zmistnosti0.ogg
+%%DATADIR%%/sound/turtle/nl/zel-v-zmistnosti1.ogg
 %%DATADIR%%/sound/ufo/cs/ufo-m-moc.ogg
 %%DATADIR%%/sound/ufo/cs/ufo-m-ne.ogg
 %%DATADIR%%/sound/ufo/cs/ufo-m-nevim.ogg
@@ -7115,6 +8634,22 @@ bin/fillets
 %%DATADIR%%/sound/ufo/cs/ufo-v-zjistit0.ogg
 %%DATADIR%%/sound/ufo/cs/ufo-v-zjistit1.ogg
 %%DATADIR%%/sound/ufo/cs/ufo-v-znicilo.ogg
+%%DATADIR%%/sound/ufo/nl/ufo-m-moc.ogg
+%%DATADIR%%/sound/ufo/nl/ufo-m-ne.ogg
+%%DATADIR%%/sound/ufo/nl/ufo-m-nevim.ogg
+%%DATADIR%%/sound/ufo/nl/ufo-m-osmy.ogg
+%%DATADIR%%/sound/ufo/nl/ufo-m-tady.ogg
+%%DATADIR%%/sound/ufo/nl/ufo-m-tajemstvi.ogg
+%%DATADIR%%/sound/ufo/nl/ufo-m-valce.ogg
+%%DATADIR%%/sound/ufo/nl/ufo-m-vidim.ogg
+%%DATADIR%%/sound/ufo/nl/ufo-m-zvlastni.ogg
+%%DATADIR%%/sound/ufo/nl/ufo-v-dovnitr.ogg
+%%DATADIR%%/sound/ufo/nl/ufo-v-hur.ogg
+%%DATADIR%%/sound/ufo/nl/ufo-v-rikam.ogg
+%%DATADIR%%/sound/ufo/nl/ufo-v-vpredu.ogg
+%%DATADIR%%/sound/ufo/nl/ufo-v-zjistit0.ogg
+%%DATADIR%%/sound/ufo/nl/ufo-v-zjistit1.ogg
+%%DATADIR%%/sound/ufo/nl/ufo-v-znicilo.ogg
 %%DATADIR%%/sound/viking1/cs/d1-1-hudba0.ogg
 %%DATADIR%%/sound/viking1/cs/d1-1-hudba1.ogg
 %%DATADIR%%/sound/viking1/cs/d1-1-hudba2.ogg
@@ -7143,6 +8678,11 @@ bin/fillets
 %%DATADIR%%/sound/viking1/en/d1-z-v0.ogg
 %%DATADIR%%/sound/viking1/en/d1-z-v1.ogg
 %%DATADIR%%/sound/viking1/en/d1-z-v2.ogg
+%%DATADIR%%/sound/viking1/nl/dr-m-hruza.ogg
+%%DATADIR%%/sound/viking1/nl/dr-m-musela.ogg
+%%DATADIR%%/sound/viking1/nl/dr-m-tojesnad.ogg
+%%DATADIR%%/sound/viking1/nl/dr-v-jiste.ogg
+%%DATADIR%%/sound/viking1/nl/dr-v-mozna.ogg
 %%DATADIR%%/sound/viking2/cs/dr-1-achjo.ogg
 %%DATADIR%%/sound/viking2/cs/dr-1-aztambudem.ogg
 %%DATADIR%%/sound/viking2/cs/dr-1-bojovnik.ogg
@@ -7212,6 +8752,17 @@ bin/fillets
 %%DATADIR%%/sound/viking2/en/dr-7-sm8.ogg
 %%DATADIR%%/sound/viking2/en/dr-x-buch.ogg
 %%DATADIR%%/sound/viking2/en/dr-x-pes.ogg
+%%DATADIR%%/sound/viking2/nl/dr-m-nedycha.ogg
+%%DATADIR%%/sound/viking2/nl/dr-m-podivej.ogg
+%%DATADIR%%/sound/viking2/nl/dr-v-napsa.ogg
+%%DATADIR%%/sound/viking2/nl/dr-v-nato.ogg
+%%DATADIR%%/sound/viking2/nl/dr1-m-dlouho.ogg
+%%DATADIR%%/sound/viking2/nl/dr1-v-harold.ogg
+%%DATADIR%%/sound/viking2/nl/dr1-v-leif.ogg
+%%DATADIR%%/sound/viking2/nl/dr1-v-olaf.ogg
+%%DATADIR%%/sound/viking2/nl/dr1-v-snorr.ogg
+%%DATADIR%%/sound/viking2/nl/dr1-v-thorson.ogg
+%%DATADIR%%/sound/viking2/nl/dr1-v-urcite.ogg
 %%DATADIR%%/sound/warcraft/cs/war-m-aznato.ogg
 %%DATADIR%%/sound/warcraft/cs/war-m-hodiny.ogg
 %%DATADIR%%/sound/warcraft/cs/war-m-hrad.ogg
@@ -7236,6 +8787,20 @@ bin/fillets
 %%DATADIR%%/sound/warcraft/en/war-k-ready0.ogg
 %%DATADIR%%/sound/warcraft/en/war-k-ready1.ogg
 %%DATADIR%%/sound/warcraft/en/war-k-ready2.ogg
+%%DATADIR%%/sound/warcraft/nl/war-m-aznato.ogg
+%%DATADIR%%/sound/warcraft/nl/war-m-hodiny.ogg
+%%DATADIR%%/sound/warcraft/nl/war-m-hrad.ogg
+%%DATADIR%%/sound/warcraft/nl/war-m-kam.ogg
+%%DATADIR%%/sound/warcraft/nl/war-m-ocel.ogg
+%%DATADIR%%/sound/warcraft/nl/war-m-peoni.ogg
+%%DATADIR%%/sound/warcraft/nl/war-m-pichat.ogg
+%%DATADIR%%/sound/warcraft/nl/war-m-povazuji.ogg
+%%DATADIR%%/sound/warcraft/nl/war-v-blizzard.ogg
+%%DATADIR%%/sound/warcraft/nl/war-v-doly.ogg
+%%DATADIR%%/sound/warcraft/nl/war-v-pohadka.ogg
+%%DATADIR%%/sound/warcraft/nl/war-v-povedome.ogg
+%%DATADIR%%/sound/warcraft/nl/war-v-prozradit.ogg
+%%DATADIR%%/sound/warcraft/nl/war-v-vesnicane.ogg
 %%DATADIR%%/sound/wc/cs/wc-m-coze.ogg
 %%DATADIR%%/sound/wc/cs/wc-m-hrbitov.ogg
 %%DATADIR%%/sound/wc/cs/wc-m-nevis.ogg
@@ -7247,6 +8812,17 @@ bin/fillets
 %%DATADIR%%/sound/wc/cs/wc-v-neznas.ogg
 %%DATADIR%%/sound/wc/cs/wc-v-oblibene.ogg
 %%DATADIR%%/sound/wc/cs/wc-v-zmatek.ogg
+%%DATADIR%%/sound/wc/nl/wc-m-coze.ogg
+%%DATADIR%%/sound/wc/nl/wc-m-hrbitov.ogg
+%%DATADIR%%/sound/wc/nl/wc-m-nevis.ogg
+%%DATADIR%%/sound/wc/nl/wc-m-prasecinky.ogg
+%%DATADIR%%/sound/wc/nl/wc-m-sochar.ogg
+%%DATADIR%%/sound/wc/nl/wc-m-vlezt.ogg
+%%DATADIR%%/sound/wc/nl/wc-v-coze.ogg
+%%DATADIR%%/sound/wc/nl/wc-v-hygiena.ogg
+%%DATADIR%%/sound/wc/nl/wc-v-neznas.ogg
+%%DATADIR%%/sound/wc/nl/wc-v-oblibene.ogg
+%%DATADIR%%/sound/wc/nl/wc-v-zmatek.ogg
 %%DATADIR%%/sound/windoze/cs/win-m-blok.ogg
 %%DATADIR%%/sound/windoze/cs/win-m-chodila.ogg
 %%DATADIR%%/sound/windoze/cs/win-m-costim0.ogg
@@ -7278,6 +8854,37 @@ bin/fillets
 %%DATADIR%%/sound/windoze/cs/win-v-premyslej.ogg
 %%DATADIR%%/sound/windoze/cs/win-v-real.ogg
 %%DATADIR%%/sound/windoze/cs/win-v-tamhle.ogg
+%%DATADIR%%/sound/windoze/nl/win-m-blok.ogg
+%%DATADIR%%/sound/windoze/nl/win-m-chodila.ogg
+%%DATADIR%%/sound/windoze/nl/win-m-costim0.ogg
+%%DATADIR%%/sound/windoze/nl/win-m-costim1.ogg
+%%DATADIR%%/sound/windoze/nl/win-m-costim2.ogg
+%%DATADIR%%/sound/windoze/nl/win-m-costim3.ogg
+%%DATADIR%%/sound/windoze/nl/win-m-costim4.ogg
+%%DATADIR%%/sound/windoze/nl/win-m-dira.ogg
+%%DATADIR%%/sound/windoze/nl/win-m-jejda.ogg
+%%DATADIR%%/sound/windoze/nl/win-m-nemusim.ogg
+%%DATADIR%%/sound/windoze/nl/win-m-nic1.ogg
+%%DATADIR%%/sound/windoze/nl/win-m-nic3.ogg
+%%DATADIR%%/sound/windoze/nl/win-m-okno.ogg
+%%DATADIR%%/sound/windoze/nl/win-m-ven.ogg
+%%DATADIR%%/sound/windoze/nl/win-m-vga.ogg
+%%DATADIR%%/sound/windoze/nl/win-m-vzit.ogg
+%%DATADIR%%/sound/windoze/nl/win-m-zahrat.ogg
+%%DATADIR%%/sound/windoze/nl/win-m-zavrene.ogg
+%%DATADIR%%/sound/windoze/nl/win-v-citim.ogg
+%%DATADIR%%/sound/windoze/nl/win-v-hav.ogg
+%%DATADIR%%/sound/windoze/nl/win-v-hra.ogg
+%%DATADIR%%/sound/windoze/nl/win-v-nehrajem.ogg
+%%DATADIR%%/sound/windoze/nl/win-v-nic0.ogg
+%%DATADIR%%/sound/windoze/nl/win-v-nic2.ogg
+%%DATADIR%%/sound/windoze/nl/win-v-osvobodit.ogg
+%%DATADIR%%/sound/windoze/nl/win-v-plocha.ogg
+%%DATADIR%%/sound/windoze/nl/win-v-pocitala.ogg
+%%DATADIR%%/sound/windoze/nl/win-v-pockej.ogg
+%%DATADIR%%/sound/windoze/nl/win-v-premyslej.ogg
+%%DATADIR%%/sound/windoze/nl/win-v-real.ogg
+%%DATADIR%%/sound/windoze/nl/win-v-tamhle.ogg
 %%DATADIR%%/sound/wreck/cs/pot-m-dik.ogg
 %%DATADIR%%/sound/wreck/cs/pot-m-dovn.ogg
 %%DATADIR%%/sound/wreck/cs/pot-m-hnil.ogg
@@ -7303,200 +8910,309 @@ bin/fillets
 %%DATADIR%%/sound/wreck/cs/pot-v-slus.ogg
 %%DATADIR%%/sound/wreck/cs/pot-v-trub.ogg
 %%DATADIR%%/sound/wreck/cs/pot-v-vidim.ogg
+%%DATADIR%%/sound/wreck/nl/pot-m-dik.ogg
+%%DATADIR%%/sound/wreck/nl/pot-m-dovn.ogg
+%%DATADIR%%/sound/wreck/nl/pot-m-hnil.ogg
+%%DATADIR%%/sound/wreck/nl/pot-m-klob.ogg
+%%DATADIR%%/sound/wreck/nl/pot-m-moc.ogg
+%%DATADIR%%/sound/wreck/nl/pot-m-nezb.ogg
+%%DATADIR%%/sound/wreck/nl/pot-m-pujc.ogg
+%%DATADIR%%/sound/wreck/nl/pot-m-soud.ogg
+%%DATADIR%%/sound/wreck/nl/pot-m-velik.ogg
+%%DATADIR%%/sound/wreck/nl/pot-m-vidis.ogg
+%%DATADIR%%/sound/wreck/nl/pot-m-zatuch.ogg
+%%DATADIR%%/sound/wreck/nl/pot-m-zima.ogg
+%%DATADIR%%/sound/wreck/nl/pot-v-cepic.ogg
+%%DATADIR%%/sound/wreck/nl/pot-v-hlave.ogg
+%%DATADIR%%/sound/wreck/nl/pot-v-jmeno.ogg
+%%DATADIR%%/sound/wreck/nl/pot-v-kras.ogg
+%%DATADIR%%/sound/wreck/nl/pot-v-leda.ogg
+%%DATADIR%%/sound/wreck/nl/pot-v-lod.ogg
+%%DATADIR%%/sound/wreck/nl/pot-v-nehnu.ogg
+%%DATADIR%%/sound/wreck/nl/pot-v-nikdo.ogg
+%%DATADIR%%/sound/wreck/nl/pot-v-plav.ogg
+%%DATADIR%%/sound/wreck/nl/pot-v-ponur.ogg
+%%DATADIR%%/sound/wreck/nl/pot-v-slus.ogg
+%%DATADIR%%/sound/wreck/nl/pot-v-trub.ogg
+%%DATADIR%%/sound/wreck/nl/pot-v-vidim.ogg
+@dirrm %%DATADIR%%/sound/wreck/nl
 @dirrm %%DATADIR%%/sound/wreck/cs
 @dirrm %%DATADIR%%/sound/wreck
+@dirrm %%DATADIR%%/sound/windoze/nl
 @dirrm %%DATADIR%%/sound/windoze/cs
 @dirrm %%DATADIR%%/sound/windoze
+@dirrm %%DATADIR%%/sound/wc/nl
 @dirrm %%DATADIR%%/sound/wc/cs
 @dirrm %%DATADIR%%/sound/wc
+@dirrm %%DATADIR%%/sound/warcraft/nl
 @dirrm %%DATADIR%%/sound/warcraft/en
 @dirrm %%DATADIR%%/sound/warcraft/cs
 @dirrm %%DATADIR%%/sound/warcraft
+@dirrm %%DATADIR%%/sound/viking2/nl
 @dirrm %%DATADIR%%/sound/viking2/en
 @dirrm %%DATADIR%%/sound/viking2/cs
 @dirrm %%DATADIR%%/sound/viking2
+@dirrm %%DATADIR%%/sound/viking1/nl
 @dirrm %%DATADIR%%/sound/viking1/en
 @dirrm %%DATADIR%%/sound/viking1/cs
 @dirrm %%DATADIR%%/sound/viking1
+@dirrm %%DATADIR%%/sound/ufo/nl
 @dirrm %%DATADIR%%/sound/ufo/cs
 @dirrm %%DATADIR%%/sound/ufo
+@dirrm %%DATADIR%%/sound/turtle/nl
 @dirrm %%DATADIR%%/sound/turtle/cs
 @dirrm %%DATADIR%%/sound/turtle
+@dirrm %%DATADIR%%/sound/tetris/nl
 @dirrm %%DATADIR%%/sound/tetris/cs
 @dirrm %%DATADIR%%/sound/tetris
+@dirrm %%DATADIR%%/sound/tank/nl
 @dirrm %%DATADIR%%/sound/tank/cs
 @dirrm %%DATADIR%%/sound/tank
+@dirrm %%DATADIR%%/sound/submarine/nl
 @dirrm %%DATADIR%%/sound/submarine/cs
 @dirrm %%DATADIR%%/sound/submarine
+@dirrm %%DATADIR%%/sound/steel/nl
 @dirrm %%DATADIR%%/sound/steel/en
 @dirrm %%DATADIR%%/sound/steel/cs
 @dirrm %%DATADIR%%/sound/steel
+@dirrm %%DATADIR%%/sound/start/nl
 @dirrm %%DATADIR%%/sound/start/cs
 @dirrm %%DATADIR%%/sound/start
+@dirrm %%DATADIR%%/sound/stairs/nl
 @dirrm %%DATADIR%%/sound/stairs/cs
 @dirrm %%DATADIR%%/sound/stairs
+@dirrm %%DATADIR%%/sound/society/nl
 @dirrm %%DATADIR%%/sound/society/en
 @dirrm %%DATADIR%%/sound/society/cs
 @dirrm %%DATADIR%%/sound/society
+@dirrm %%DATADIR%%/sound/snowman/nl
 @dirrm %%DATADIR%%/sound/snowman/en
 @dirrm %%DATADIR%%/sound/snowman/cs
 @dirrm %%DATADIR%%/sound/snowman
+@dirrm %%DATADIR%%/sound/share/borejokes/nl
 @dirrm %%DATADIR%%/sound/share/borejokes/cs
 @dirrm %%DATADIR%%/sound/share/borejokes
+@dirrm %%DATADIR%%/sound/share/border/nl
 @dirrm %%DATADIR%%/sound/share/border/cs
 @dirrm %%DATADIR%%/sound/share/border
+@dirrm %%DATADIR%%/sound/share/blackjokes/nl
 @dirrm %%DATADIR%%/sound/share/blackjokes/cs
 @dirrm %%DATADIR%%/sound/share/blackjokes
 @dirrm %%DATADIR%%/sound/share
+@dirrm %%DATADIR%%/sound/rush/nl
 @dirrm %%DATADIR%%/sound/rush/cs
 @dirrm %%DATADIR%%/sound/rush
 @dirrm %%DATADIR%%/sound/rotate/en
 @dirrm %%DATADIR%%/sound/rotate
+@dirrm %%DATADIR%%/sound/reef/nl
 @dirrm %%DATADIR%%/sound/reef/cs
 @dirrm %%DATADIR%%/sound/reef
+@dirrm %%DATADIR%%/sound/reactor/nl
 @dirrm %%DATADIR%%/sound/reactor/en
 @dirrm %%DATADIR%%/sound/reactor/cs
 @dirrm %%DATADIR%%/sound/reactor
+@dirrm %%DATADIR%%/sound/pyramid/nl
 @dirrm %%DATADIR%%/sound/pyramid/cs
 @dirrm %%DATADIR%%/sound/pyramid
+@dirrm %%DATADIR%%/sound/puzzle/nl
 @dirrm %%DATADIR%%/sound/puzzle/en
 @dirrm %%DATADIR%%/sound/puzzle/cs
 @dirrm %%DATADIR%%/sound/puzzle
+@dirrm %%DATADIR%%/sound/propulsion/nl
 @dirrm %%DATADIR%%/sound/propulsion/cs
 @dirrm %%DATADIR%%/sound/propulsion
+@dirrm %%DATADIR%%/sound/pearls/nl
 @dirrm %%DATADIR%%/sound/pearls/cs
 @dirrm %%DATADIR%%/sound/pearls
+@dirrm %%DATADIR%%/sound/pavement/nl
 @dirrm %%DATADIR%%/sound/pavement/en
 @dirrm %%DATADIR%%/sound/pavement/cs
 @dirrm %%DATADIR%%/sound/pavement
+@dirrm %%DATADIR%%/sound/party2/nl
 @dirrm %%DATADIR%%/sound/party2/cs
 @dirrm %%DATADIR%%/sound/party2
+@dirrm %%DATADIR%%/sound/party1/nl
 @dirrm %%DATADIR%%/sound/party1/cs
 @dirrm %%DATADIR%%/sound/party1
+@dirrm %%DATADIR%%/sound/nowall/nl
 @dirrm %%DATADIR%%/sound/nowall/cs
 @dirrm %%DATADIR%%/sound/nowall
+@dirrm %%DATADIR%%/sound/noground/nl
 @dirrm %%DATADIR%%/sound/noground/cs
 @dirrm %%DATADIR%%/sound/noground
+@dirrm %%DATADIR%%/sound/music/nl
 @dirrm %%DATADIR%%/sound/music/en
 @dirrm %%DATADIR%%/sound/music/cs
 @dirrm %%DATADIR%%/sound/music
+@dirrm %%DATADIR%%/sound/map/nl
 @dirrm %%DATADIR%%/sound/map/cs
 @dirrm %%DATADIR%%/sound/map
+@dirrm %%DATADIR%%/sound/magnet/nl
 @dirrm %%DATADIR%%/sound/magnet/cs
 @dirrm %%DATADIR%%/sound/magnet
+@dirrm %%DATADIR%%/sound/linux/nl
 @dirrm %%DATADIR%%/sound/linux/en
 @dirrm %%DATADIR%%/sound/linux/cs
 @dirrm %%DATADIR%%/sound/linux
+@dirrm %%DATADIR%%/sound/library/nl
 @dirrm %%DATADIR%%/sound/library/cs
 @dirrm %%DATADIR%%/sound/library
+@dirrm %%DATADIR%%/sound/labyrinth/nl
 @dirrm %%DATADIR%%/sound/labyrinth/cs
 @dirrm %%DATADIR%%/sound/labyrinth
+@dirrm %%DATADIR%%/sound/kitchen/nl
 @dirrm %%DATADIR%%/sound/kitchen/cs
 @dirrm %%DATADIR%%/sound/kitchen
+@dirrm %%DATADIR%%/sound/keys/nl
 @dirrm %%DATADIR%%/sound/keys/en
 @dirrm %%DATADIR%%/sound/keys/cs
 @dirrm %%DATADIR%%/sound/keys
+@dirrm %%DATADIR%%/sound/key/nl
+@dirrm %%DATADIR%%/sound/key
+@dirrm %%DATADIR%%/sound/imprisoned/nl
 @dirrm %%DATADIR%%/sound/imprisoned/en
 @dirrm %%DATADIR%%/sound/imprisoned/cs
 @dirrm %%DATADIR%%/sound/imprisoned
+@dirrm %%DATADIR%%/sound/hole/nl
 @dirrm %%DATADIR%%/sound/hole/cs
 @dirrm %%DATADIR%%/sound/hole
+@dirrm %%DATADIR%%/sound/hardware/nl
 @dirrm %%DATADIR%%/sound/hardware/cs
 @dirrm %%DATADIR%%/sound/hardware
+@dirrm %%DATADIR%%/sound/hanoi/nl
 @dirrm %%DATADIR%%/sound/hanoi/cs
 @dirrm %%DATADIR%%/sound/hanoi
+@dirrm %%DATADIR%%/sound/grail/nl
 @dirrm %%DATADIR%%/sound/grail/cs
 @dirrm %%DATADIR%%/sound/grail
+@dirrm %%DATADIR%%/sound/gods/nl
 @dirrm %%DATADIR%%/sound/gods/cs
 @dirrm %%DATADIR%%/sound/gods
+@dirrm %%DATADIR%%/sound/gems/nl
 @dirrm %%DATADIR%%/sound/gems/cs
 @dirrm %%DATADIR%%/sound/gems
+@dirrm %%DATADIR%%/sound/floppy/nl
 @dirrm %%DATADIR%%/sound/floppy/en
 @dirrm %%DATADIR%%/sound/floppy/cs
 @dirrm %%DATADIR%%/sound/floppy
+@dirrm %%DATADIR%%/sound/fdto/nl
 @dirrm %%DATADIR%%/sound/fdto/cs
 @dirrm %%DATADIR%%/sound/fdto
+@dirrm %%DATADIR%%/sound/experiments/nl
 @dirrm %%DATADIR%%/sound/experiments/cs
 @dirrm %%DATADIR%%/sound/experiments
+@dirrm %%DATADIR%%/sound/engine/nl
 @dirrm %%DATADIR%%/sound/engine/en
 @dirrm %%DATADIR%%/sound/engine/cs
 @dirrm %%DATADIR%%/sound/engine
+@dirrm %%DATADIR%%/sound/ending/nl
 @dirrm %%DATADIR%%/sound/ending/en
 @dirrm %%DATADIR%%/sound/ending/cs
 @dirrm %%DATADIR%%/sound/ending
+@dirrm %%DATADIR%%/sound/emulator/nl
 @dirrm %%DATADIR%%/sound/emulator/cs
 @dirrm %%DATADIR%%/sound/emulator
+@dirrm %%DATADIR%%/sound/elk/nl
 @dirrm %%DATADIR%%/sound/elk/en
 @dirrm %%DATADIR%%/sound/elk/cs
 @dirrm %%DATADIR%%/sound/elk
+@dirrm %%DATADIR%%/sound/elevator2/nl
 @dirrm %%DATADIR%%/sound/elevator2/cs
 @dirrm %%DATADIR%%/sound/elevator2
+@dirrm %%DATADIR%%/sound/elevator1/nl
 @dirrm %%DATADIR%%/sound/elevator1/cs
 @dirrm %%DATADIR%%/sound/elevator1
+@dirrm %%DATADIR%%/sound/electromagnet/nl
 @dirrm %%DATADIR%%/sound/electromagnet/en
 @dirrm %%DATADIR%%/sound/electromagnet
+@dirrm %%DATADIR%%/sound/dump/nl
 @dirrm %%DATADIR%%/sound/dump/en
 @dirrm %%DATADIR%%/sound/dump/cs
 @dirrm %%DATADIR%%/sound/dump
+@dirrm %%DATADIR%%/sound/duckie/nl
 @dirrm %%DATADIR%%/sound/duckie/cs
 @dirrm %%DATADIR%%/sound/duckie
+@dirrm %%DATADIR%%/sound/creatures/nl
 @dirrm %%DATADIR%%/sound/creatures/en
 @dirrm %%DATADIR%%/sound/creatures/cs
 @dirrm %%DATADIR%%/sound/creatures
+@dirrm %%DATADIR%%/sound/crabshow/nl
 @dirrm %%DATADIR%%/sound/crabshow/cs
 @dirrm %%DATADIR%%/sound/crabshow
+@dirrm %%DATADIR%%/sound/corridor/nl
 @dirrm %%DATADIR%%/sound/corridor/en
 @dirrm %%DATADIR%%/sound/corridor/cs
 @dirrm %%DATADIR%%/sound/corridor
+@dirrm %%DATADIR%%/sound/corals/nl
 @dirrm %%DATADIR%%/sound/corals/cs
 @dirrm %%DATADIR%%/sound/corals
+@dirrm %%DATADIR%%/sound/computer/nl
 @dirrm %%DATADIR%%/sound/computer/cs
 @dirrm %%DATADIR%%/sound/computer
+@dirrm %%DATADIR%%/sound/columns/nl
 @dirrm %%DATADIR%%/sound/columns/en
 @dirrm %%DATADIR%%/sound/columns/cs
 @dirrm %%DATADIR%%/sound/columns
+@dirrm %%DATADIR%%/sound/city/nl
 @dirrm %%DATADIR%%/sound/city/en
 @dirrm %%DATADIR%%/sound/city/cs
 @dirrm %%DATADIR%%/sound/city
+@dirrm %%DATADIR%%/sound/chest/nl
 @dirrm %%DATADIR%%/sound/chest/cs
 @dirrm %%DATADIR%%/sound/chest
+@dirrm %%DATADIR%%/sound/cellar/nl
 @dirrm %%DATADIR%%/sound/cellar/cs
 @dirrm %%DATADIR%%/sound/cellar
+@dirrm %%DATADIR%%/sound/cave/nl
 @dirrm %%DATADIR%%/sound/cave/cs
 @dirrm %%DATADIR%%/sound/cave
+@dirrm %%DATADIR%%/sound/captain/nl
 @dirrm %%DATADIR%%/sound/captain/cs
 @dirrm %%DATADIR%%/sound/captain
+@dirrm %%DATADIR%%/sound/cannons/nl
 @dirrm %%DATADIR%%/sound/cannons/cs
 @dirrm %%DATADIR%%/sound/cannons
+@dirrm %%DATADIR%%/sound/cancan/nl
 @dirrm %%DATADIR%%/sound/cancan/en
 @dirrm %%DATADIR%%/sound/cancan/cs
 @dirrm %%DATADIR%%/sound/cancan
+@dirrm %%DATADIR%%/sound/cabin2/nl
 @dirrm %%DATADIR%%/sound/cabin2/en
 @dirrm %%DATADIR%%/sound/cabin2/cs
 @dirrm %%DATADIR%%/sound/cabin2
+@dirrm %%DATADIR%%/sound/cabin1/nl
 @dirrm %%DATADIR%%/sound/cabin1/en
 @dirrm %%DATADIR%%/sound/cabin1/cs
 @dirrm %%DATADIR%%/sound/cabin1
+@dirrm %%DATADIR%%/sound/broom/nl
 @dirrm %%DATADIR%%/sound/broom/cs
 @dirrm %%DATADIR%%/sound/broom
+@dirrm %%DATADIR%%/sound/briefcase/nl
 @dirrm %%DATADIR%%/sound/briefcase/cs
 @dirrm %%DATADIR%%/sound/briefcase
+@dirrm %%DATADIR%%/sound/bathyscaph/nl
 @dirrm %%DATADIR%%/sound/bathyscaph/en
 @dirrm %%DATADIR%%/sound/bathyscaph/cs
 @dirrm %%DATADIR%%/sound/bathyscaph
+@dirrm %%DATADIR%%/sound/bathroom/nl
 @dirrm %%DATADIR%%/sound/bathroom/en
 @dirrm %%DATADIR%%/sound/bathroom/cs
 @dirrm %%DATADIR%%/sound/bathroom
+@dirrm %%DATADIR%%/sound/barrel/nl
 @dirrm %%DATADIR%%/sound/barrel/en
 @dirrm %%DATADIR%%/sound/barrel/cs
 @dirrm %%DATADIR%%/sound/barrel
+@dirrm %%DATADIR%%/sound/aztec/nl
 @dirrm %%DATADIR%%/sound/aztec/en
 @dirrm %%DATADIR%%/sound/aztec/cs
 @dirrm %%DATADIR%%/sound/aztec
+@dirrm %%DATADIR%%/sound/atlantis/nl
 @dirrm %%DATADIR%%/sound/atlantis/cs
 @dirrm %%DATADIR%%/sound/atlantis
+@dirrm %%DATADIR%%/sound/alibaba/nl
 @dirrm %%DATADIR%%/sound/alibaba/cs
 @dirrm %%DATADIR%%/sound/alibaba
+@dirrm %%DATADIR%%/sound/airplane/nl
 @dirrm %%DATADIR%%/sound/airplane/cs
 @dirrm %%DATADIR%%/sound/airplane
 @dirrm %%DATADIR%%/sound
