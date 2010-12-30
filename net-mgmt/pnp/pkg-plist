@@ -2,7 +2,7 @@
 %%ETCDIR%%/check_commands/check_all_local_disks.cfg-sample
 %%ETCDIR%%/check_commands/check_nrpe.cfg-sample
 %%ETCDIR%%/check_commands/check_nwstat.cfg-sample
-%%ETCDIR%%/config.php-sample
+%%ETCDIR%%/config.php
 %%ETCDIR%%/misccommands.cfg-sample
 %%ETCDIR%%/nagios.cfg-sample
 %%ETCDIR%%/npcd.cfg-sample

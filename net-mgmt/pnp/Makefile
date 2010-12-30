@@ -7,6 +7,7 @@
 
 PORTNAME=	pnp
 PORTVERSION=	0.6.10
+PORTREVISION=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=pnp4nagios/PNP-0.6
@@ -28,7 +29,7 @@ OPTIONS=	PDF "Use built-in fpdf library to produce PDF views" ON
 LICENSE=	GPLv2
 PATCH_STRIP=	-p1
 USE_PERL5=	yes
-USE_PHP=	filter gd iconv json pcre simplexml xml zlib
+USE_PHP=	gd iconv json pcre simplexml sockets xml zlib
 
 WANT_PHP_WEB=	yes
 USE_RC_SUBR=	npcd.sh
