@@ -1974,6 +1974,7 @@ critterding                     ports/games/critterding
 crm114                          ports/mail/crm114
 cromwell                        ports/sysutils/cromwell
 cronolog                        ports/sysutils/cronolog
+cronolog-devel                  ports/sysutils/cronolog-devel
 cross-binutils                  ports/devel/cross-binutils
 cross-gcc                       ports/devel/cross-gcc
 cross-gdb                       ports/devel/cross-gdb
@@ -12452,6 +12453,7 @@ p5-Geo-Cache                    ports/misc/p5-Geo-Cache
 p5-Geo-Caching                  ports/www/p5-Geo-Caching
 p5-Geo-Coder-Google             ports/misc/p5-Geo-Coder-Google
 p5-Geo-Coder-Multiple           ports/misc/p5-Geo-Coder-Multiple
+p5-Geo-Coordinates-Converter    ports/science/p5-Geo-Coordinates-Converter
 p5-Geo-Coordinates-UTM          ports/math/p5-Geo-Coordinates-UTM
 p5-Geo-Distance                 ports/math/p5-Geo-Distance
 p5-Geo-Distance-XS              ports/math/p5-Geo-Distance-XS
@@ -16513,6 +16515,7 @@ p5-geo-cache                    ports/misc/p5-Geo-Cache
 p5-geo-caching                  ports/www/p5-Geo-Caching
 p5-geo-coder-google             ports/misc/p5-Geo-Coder-Google
 p5-geo-coder-multiple           ports/misc/p5-Geo-Coder-Multiple
+p5-geo-coordinates-converter    ports/science/p5-Geo-Coordinates-Converter
 p5-geo-coordinates-utm          ports/math/p5-Geo-Coordinates-UTM
 p5-geo-distance                 ports/math/p5-Geo-Distance
 p5-geo-distance-xs              ports/math/p5-Geo-Distance-XS
