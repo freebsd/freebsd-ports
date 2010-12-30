@@ -12,7 +12,7 @@ CATEGORIES=	graphics linux
 PKGNAMEPREFIX=	linux-f10-
 DISTNAME=	${PORTNAME}-${PORTVERSION}-${RPMVERSION}
 
-MAINTAINER=	lists@eitanadler.com
+MAINTAINER=	ports@eitanadler.com
 COMMENT=	OpenGL Extension Wrangler Library (Linux Fedora 10)
 
 ONLY_FOR_ARCHS=	i386 amd64
