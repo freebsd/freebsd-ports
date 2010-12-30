@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	structuresynth
-PORTVERSION=	1.0.0
-PORTREVISION=	1
+PORTVERSION=	1.5.0
 CATEGORIES=	graphics
-MASTER_SITES=	SF/${PORTNAME}/Structure%20Synth/Version%201.0%20%28Potemkin%29
+MASTER_SITES=	SF/${PORTNAME}/Structure%20Synth/Version%201.5%20%28Hinxton%29
 DISTNAME=	StructureSynth-Source-v${PORTVERSION}
 
 MAINTAINER=	amdmi3@FreeBSD.org
