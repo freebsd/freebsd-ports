@@ -24,10 +24,16 @@ PORTDOCS=	*
 
 MAN6=		opencity.6
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 900027
+EXTRA_PATCHES=	${FILESDIR}/extra-patch-src-macros.h
+.endif
+
 post-patch:
 .if defined(NOPORTDOCS)
 	@${REINPLACE_CMD} -e '/install-data-am/ s|install-docsDATA||' \
 		${WRKSRC}/docs/Makefile.in
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
