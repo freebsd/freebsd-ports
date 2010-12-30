@@ -11,7 +11,7 @@ PORTREVISION=	3
 CATEGORIES=	net-mgmt
 MASTER_SITES=	SF/nagios/${PORTNAME}-2.x/${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	jarrod@netleader.com.au
+MAINTAINER=	jarrod@downtools.com.au
 COMMENT=	Nagios Remote Plugin Executor
 
 RUN_DEPENDS=	${LOCALBASE}/libexec/nagios/check_nagios:${PORTSDIR}/net-mgmt/nagios-plugins

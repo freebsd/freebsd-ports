@@ -12,7 +12,7 @@ CATEGORIES=	net-mgmt
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-3.x/${PORTNAME}-${PORTVERSION}
 PKGNAMESUFFIX=	-devel
 
-MAINTAINER=	jarrod@netleader.com.au
+MAINTAINER=	jarrod@downtools.com.au
 COMMENT=	Extremely powerful network monitoring system
 
 LIB_DEPENDS=	gd.4:${PORTSDIR}/graphics/gd
