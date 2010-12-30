@@ -6,16 +6,17 @@
 #
 
 PORTNAME=	unuran
-PORTVERSION=	1.7.1
+PORTVERSION=	1.8.0
 CATEGORIES=	math
 MASTER_SITES=	http://statmath.wu-wien.ac.at/unuran/ \
-		LOCAL/wen
+		LOCAL/bf
 
 MAINTAINER=	bf@FreeBSD.org
 COMMENT=	Universal Non-Uniform RANdom number generators
 
 LIB_DEPENDS=	rngstreams:${PORTSDIR}/math/rngstreams
 
+LICENSE=	GPLv2
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-shared --with-urng-rngstream --with-urng-default=rngstream \
@@ -23,14 +24,15 @@ CONFIGURE_ARGS=	--enable-shared --with-urng-rngstream --with-urng-default=rngstr
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
+MAKE_ENV=	MAKE="${GMAKE}"
 
 USE_LDCONFIG=	yes
 INFO=		unuran
 PORTDOCS=	unuran.pdf unuran.txt
 
 post-patch:
-	${FIND} -X ${WRKSRC} -name 'Makefile.in' | ${XARGS} ${REINPLACE_CMD} -e \
-		's/sinclude/#sinclude/g'
+	${REINPLACE_CMD} -e '/UNURANFULLCHECK=true make check/s/make/${GMAKE}/' \
+		${WRKSRC}/Makefile.in
 
 .ifndef(NOPORTDOCS)
 post-install:
