@@ -7,8 +7,10 @@
 
 PORTNAME=	lens
 PORTVERSION=	0.2
+PORTREVISION=	1
 CATEGORIES=	mail ruby
-MASTER_SITES=	http://pitecan.com/Lens/
+MASTER_SITES=	http://www.pitecan.com/Lens/ \
+		${MASTER_SITE_LOCAL:S|%SUBDIR%|tota/lens|}
 
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	A mail filter written in Ruby
@@ -21,16 +23,18 @@ RUBY_SHEBANG_FILES=	lens
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/lens ${PREFIX}/bin
-	@${MKDIR} ${RUBY_SITELIBDIR}/lens
+	${MKDIR} ${RUBY_SITELIBDIR}/lens
 .for f in ${LIB_FILES}
 	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_SITELIBDIR}/lens
 .endfor
-	@${MKDIR} ${EXAMPLESDIR}
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/index.html ${DOCSDIR}
+.endif
+.if !defined(NOPORTEXAMPLES)
+	${MKDIR} ${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/lensrc.sample ${EXAMPLESDIR}/dot.lensrc
 	${INSTALL_DATA} ${WRKSRC}/commandmailrc.sample ${EXAMPLESDIR}/dot.commandmailrc
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/index.html ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
