@@ -6,8 +6,7 @@
 #
 
 PORTNAME?=	postgresql
-DISTVERSION?=	9.0.1
-PORTREVISION?=	2
+DISTVERSION?=	9.0.2
 CATEGORIES?=	databases
 MASTER_SITES=	${MASTER_SITE_PGSQL}
 MASTER_SITE_SUBDIR=	source/v${DISTVERSION}
@@ -109,6 +108,7 @@ CONFIGURE_ARGS+=--with-icu
 PATCH_SITES+=	http://people.freebsd.org/~girgen/postgresql-icu/:icu
 PATCHFILES+=	pg-900-icu-2010-09-19.diff.gz:icu
 LIB_DEPENDS+=	icudata.46:${PORTSDIR}/devel/icu
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-icu4
 .  endif
 
 PATCH_DIST_STRIP=-p1
@@ -319,7 +319,6 @@ post-patch:
 .  if defined(WITH_ICU)
 	@${REINPLACE_CMD} -E -e \
 		"s|^(m4_if.*)2.6[0-9](.*Autoconf version )2.6[0-9]|\1${AUTOCONF_VERSION}\2${AUTOCONF_VERSION}|g" \
-		-e "s|_44|_46|g" \
 		${WRKSRC}/configure.in
 .  endif
 
