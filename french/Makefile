@@ -28,11 +28,9 @@
     SUBDIR += koffice-i18n
     SUBDIR += koffice-kde4-l10n
     SUBDIR += med
-    SUBDIR += mozilla-flp
     SUBDIR += php_doc
     SUBDIR += plgrenouille
     SUBDIR += tvdownloader
     SUBDIR += verbiste
-    SUBDIR += xtel
 
 .include <bsd.port.subdir.mk>

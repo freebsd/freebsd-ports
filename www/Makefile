@@ -121,7 +121,6 @@
     SUBDIR += cssed
     SUBDIR += csstidy
     SUBDIR += ctemplate
-    SUBDIR += cybercalendar
     SUBDIR += dalbum
     SUBDIR += dansguardian
     SUBDIR += davical
@@ -241,7 +240,6 @@
     SUBDIR += flashplugin-mozilla
     SUBDIR += flat-frog
     SUBDIR += flickcurl
-    SUBDIR += flock
     SUBDIR += flood
     SUBDIR += fluxbb
     SUBDIR += fluxcms
@@ -393,7 +391,6 @@
     SUBDIR += linux-firefox-devel
     SUBDIR += linux-flashplugin7
     SUBDIR += linux-flashplugin9
-    SUBDIR += linux-flock
     SUBDIR += linux-libgtkembedmoz
     SUBDIR += linux-mplayer-plugin
     SUBDIR += linux-opera

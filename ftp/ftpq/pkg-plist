@@ -1,3 +1,0 @@
-bin/ftpq
-@exec mkdir -p %D%%SPOOLDIR%% && chmod 777 %D%%SPOOLDIR%%
-@unexec rmdir %D%%SPOOLDIR%% 2>/dev/null || true

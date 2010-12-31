@@ -4724,3 +4724,21 @@ devel/icu2|devel/icu|2010-12-16|Removed: now obsolete and unused please use newe
 devel/icu4|devel/icu|2010-12-17|Removed: devel/icu is now following 4.x version
 multimedia/flv2mpeg4||2010-12-23|Abandoned upstream
 databases/mysql55-scripts||2010-12-27|Merged in other mysql ports
+databases/p5-sqlrelay||2010-12-31|Has expired: broken and upstream disapeared
+devel/php-dbg2||2010-12-31|Has expired: No upstream support
+dns/fourcdns||2010-12-31|Has expired: upstream has disapeared
+emulators/win4bsd||2010-12-31|Has expired: Development has ceased and distfile is no longer available
+french/mozilla-flp||2010-12-31|Has expired: www/seamonkey port is deprecated. Consider using the www/firefox-i18n.
+french/xtel||2010-12-31|Has expired: Minitel services will be discontinued at the end of 2010.
+ftp/ftpq||2010-12-31|Has expired: upstream has disapeared
+graphics/paintlib||2010-12-31|Has expired: does not compile with new tiff and no more maintained upstream
+graphics/g3dviewer||2010-12-31|Has expired: does not build with gcc 4.2, upstream disapeared
+lang/scriba||2010-12-31|Has expired: Does not compile with gcc 4.2+, looks like abandonware
+math/rascal||2010-12-31|Has expired: Broken on every arch since 2008, looks like an abandonware
+net-mgmt/nrg||2010-12-31|Has expired: Project has vanished. Use cacti instead.
+security/hostsentry||2010-12-31|Has expired: Project is dead.
+sysutils/kcube||2010-12-31|Has expired: Project has vanished
+www/cybercalendar||2010-12-31|Has expired: has been unmaintained since 2001 and is unusable with dates after 2010 (see ports/150974)
+www/flock||2010-12-31|Has expired: Flock 3 moves from Firefox to Chromium
+www/linux-flock||2010-12-31|Has expired: Flock 3 moves from Firefox to Chromium
+x11-clocks/xtu||2010-12-31|Has expired: Looks like abandonware

@@ -32,7 +32,6 @@
     SUBDIR += ftplocate
     SUBDIR += ftpmirror
     SUBDIR += ftpproxy
-    SUBDIR += ftpq
     SUBDIR += ftpsesame
     SUBDIR += ftpsync
     SUBDIR += ftptool

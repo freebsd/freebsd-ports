@@ -323,7 +323,6 @@
     SUBDIR += scheme48
     SUBDIR += schemetoc
     SUBDIR += scm
-    SUBDIR += scriba
     SUBDIR += scsh
     SUBDIR += sdcc
     SUBDIR += sdcc-devel

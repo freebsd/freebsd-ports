@@ -1,6 +1,0 @@
-lib/libkcube.a
-lib/libkcube.la
-lib/libkcube.so
-lib/libkcube.so.1
-share/apps/kicker/applets/kcube.desktop
-@dirrmtry share/apps/kicker/applets
