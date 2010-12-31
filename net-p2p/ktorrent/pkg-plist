@@ -21,7 +21,7 @@ lib/kde4/ktzeroconfplugin.so
 lib/kde4/plasma_engine_ktorrent.so
 lib/libktcore.so
 lib/libktcore.so.11
-lib/libktcore.so.11.0.3
+lib/libktcore.so.11.0.4
 lib/libktupnp.so
 lib/libktupnp.so.4
 lib/libktupnp.so.4.0.2
