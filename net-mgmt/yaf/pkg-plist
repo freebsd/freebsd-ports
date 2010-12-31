@@ -22,28 +22,35 @@ include/airframe/mio_source_tcp.h
 include/airframe/mio_source_udp.h
 include/airframe/mio_stdio.h
 include/airframe/privconfig.h
+include/libltdl/lt_dlloader.h
+include/libltdl/lt_error.h
+include/libltdl/lt_system.h
 include/ltdl.h
+include/yaf/CERT_IE.h
 include/yaf/autoinc.h
 include/yaf/decode.h
 include/yaf/picq.h
 include/yaf/ring.h
 include/yaf/yafcore.h
+include/yaf/yafhooks.h
 include/yaf/yafrag.h
 include/yaf/yaftab.h
-lib/libairframe-1.0.0.2.so
-lib/libairframe-1.0.0.2.so.4
+lib/libairframe-1.3.1.so
+lib/libairframe-1.3.1.so.4
 lib/libairframe.a
 lib/libairframe.la
 lib/libairframe.so
 lib/libltdl.a
 lib/libltdl.la
-lib/libltdl.so.4.0
-lib/libyaf-1.0.0.2.so
-lib/libyaf-1.0.0.2.so.4
+lib/libltdl.so
+lib/libltdl.so.9
+lib/libyaf-1.3.1.so
+lib/libyaf-1.3.1.so.4
 lib/libyaf.a
 lib/libyaf.la
 lib/libyaf.so
 libdata/pkgconfig/libairframe.pc
 libdata/pkgconfig/libyaf.pc
 @dirrm include/yaf
+@dirrm include/libltdl
 @dirrm include/airframe

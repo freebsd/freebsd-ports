@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	yaf
-PORTVERSION=	1.0.0.2
+PORTVERSION=	1.3.1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://tools.netsa.cert.org/releases/
 
@@ -19,7 +19,8 @@ GNU_CONFIGURE=	yes
 USE_GNOME=	glib20 gnomehack
 USE_LDCONFIG=	yes
 
-MAN1=	airdaemon.1 filedaemon.1 yaf.1 yafscii.1
+MAN1=		airdaemon.1 applabel.1 \
+		filedaemon.1 yaf.1 yafdpi.1 yafscii.1
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|echo aout|echo elf|' ${WRKSRC}/configure
