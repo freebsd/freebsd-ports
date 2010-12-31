@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	rss2email
-PORTVERSION=	2.69
+PORTVERSION=	2.70
 CATEGORIES=	mail python
 MASTER_SITES=	http://www.allthingsrss.com/rss2email/
 
@@ -20,7 +20,7 @@ USE_PYTHON=	yes
 NO_BUILD=	yes
 PLIST_FILES=	bin/r2e %%DATADIR%%/${PORTNAME}.py
 PLIST_DIRS=	%%DATADIR%%
-PORTEXAMPLES=	config.py
+PORTEXAMPLES=	config.py.example
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|@PYTHONCMD@|${PYTHON_CMD}|;s|@DATADIR@|${DATADIR}|'\
@@ -34,7 +34,7 @@ do-install:
 	@${INSTALL_SCRIPT} ${WRKSRC}/r2e ${PREFIX}/bin/
 .ifndef NOPORTEXAMPLES
 	@${INSTALL} -d ${EXAMPLESDIR}/
-	@${INSTALL_DATA} ${WRKSRC}/config.py ${EXAMPLESDIR}/
+	@${INSTALL_DATA} ${WRKSRC}/config.py.example ${EXAMPLESDIR}/
 .endif
 
 .include <bsd.port.mk>
