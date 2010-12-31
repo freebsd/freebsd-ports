@@ -28,6 +28,7 @@
     SUBDIR += cursor-grounation-theme
     SUBDIR += cursor-jimmac-theme
     SUBDIR += cursor-neutral-theme
+    SUBDIR += cursor-neutral-white-theme
     SUBDIR += cursor-polar-theme
     SUBDIR += e16-themes
     SUBDIR += e17-splash-azul
