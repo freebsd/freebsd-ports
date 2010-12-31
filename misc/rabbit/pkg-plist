@@ -132,12 +132,14 @@ bin/rabrick
 %%RUBY_SITELIBDIR%%/rabbit/renderer/display/gesture.rb
 %%RUBY_SITELIBDIR%%/rabbit/renderer/display/gl.rb
 %%RUBY_SITELIBDIR%%/rabbit/renderer/display/graffiti.rb
+%%RUBY_SITELIBDIR%%/rabbit/renderer/display/hook-handler.rb
 %%RUBY_SITELIBDIR%%/rabbit/renderer/display/info.rb
 %%RUBY_SITELIBDIR%%/rabbit/renderer/display/key-handler.rb
 %%RUBY_SITELIBDIR%%/rabbit/renderer/display/magnifier.rb
 %%RUBY_SITELIBDIR%%/rabbit/renderer/display/mask.rb
 %%RUBY_SITELIBDIR%%/rabbit/renderer/display/menu.rb
 %%RUBY_SITELIBDIR%%/rabbit/renderer/display/progress.rb
+%%RUBY_SITELIBDIR%%/rabbit/renderer/display/scroll-handler.rb
 %%RUBY_SITELIBDIR%%/rabbit/renderer/display/search.rb
 %%RUBY_SITELIBDIR%%/rabbit/renderer/display/spotlight.rb
 %%RUBY_SITELIBDIR%%/rabbit/renderer/engine.rb
@@ -227,6 +229,8 @@ bin/rabrick
 %%RUBY_SITELIBDIR%%/rabbit/theme/cozmixng/property.rb
 %%RUBY_SITELIBDIR%%/rabbit/theme/day-white/day-white.rb
 %%RUBY_SITELIBDIR%%/rabbit/theme/day-white/property.rb
+%%RUBY_SITELIBDIR%%/rabbit/theme/debian/debian.rb
+%%RUBY_SITELIBDIR%%/rabbit/theme/debian/property.rb
 %%RUBY_SITELIBDIR%%/rabbit/theme/default-block-quote/default-block-quote.rb
 %%RUBY_SITELIBDIR%%/rabbit/theme/default-block-quote/property.rb
 %%RUBY_SITELIBDIR%%/rabbit/theme/default-description/default-description.rb
@@ -320,6 +324,8 @@ bin/rabrick
 %%RUBY_SITELIBDIR%%/rabbit/theme/rabbit-title-logo/rabbit-title-logo.rb
 %%RUBY_SITELIBDIR%%/rabbit/theme/rabbit/property.rb
 %%RUBY_SITELIBDIR%%/rabbit/theme/rabbit/rabbit.rb
+%%RUBY_SITELIBDIR%%/rabbit/theme/ranguba/property.rb
+%%RUBY_SITELIBDIR%%/rabbit/theme/ranguba/ranguba.rb
 %%RUBY_SITELIBDIR%%/rabbit/theme/red-frame/property.rb
 %%RUBY_SITELIBDIR%%/rabbit/theme/red-frame/red-frame.rb
 %%RUBY_SITELIBDIR%%/rabbit/theme/rotate-zoom-effect/property.rb
@@ -393,6 +399,14 @@ bin/rabrick
 %%DATADIR%%/image/cozmixng-images/cozmixng-images.rb
 %%DATADIR%%/image/cozmixng-images/powered-by-cozmixng.png
 %%DATADIR%%/image/cozmixng-images/property.rb
+%%DATADIR%%/image/debian-images/bottom.png
+%%DATADIR%%/image/debian-images/debian-images.rb
+%%DATADIR%%/image/debian-images/debian-logo-pink.png
+%%DATADIR%%/image/debian-images/debian-logo.png
+%%DATADIR%%/image/debian-images/debian-whirl.png
+%%DATADIR%%/image/debian-images/item1.png
+%%DATADIR%%/image/debian-images/property.rb
+%%DATADIR%%/image/debian-images/top.png
 %%DATADIR%%/image/rabbit-images/blue-item.png
 %%DATADIR%%/image/rabbit-images/close-quote-blue.png
 %%DATADIR%%/image/rabbit-images/close-quote-brown.png
@@ -432,6 +446,14 @@ bin/rabrick
 %%DATADIR%%/image/rabbit-images/usa-taro.png
 %%DATADIR%%/image/rabbit-images/usagi.png
 %%DATADIR%%/image/rabbit-images/yukiusa.png
+%%DATADIR%%/image/ranguba-images/ranguba-bar.png
+%%DATADIR%%/image/ranguba-images/ranguba-bar.svg
+%%DATADIR%%/image/ranguba-images/ranguba-images.rb
+%%DATADIR%%/image/ranguba-images/ranguba-item-mark-mini.png
+%%DATADIR%%/image/ranguba-images/ranguba-item-mark.png
+%%DATADIR%%/image/ranguba-images/ranguba-item-mark.svg
+%%DATADIR%%/image/ranguba-images/ranguba-mark.png
+%%DATADIR%%/image/ranguba-images/ranguba-mark.svg
 %%DATADIR%%/image/ruby-images/property.rb
 %%DATADIR%%/image/ruby-images/ruby-images.rb
 %%DATADIR%%/image/ruby-images/ruby-pink-circle-icon.png
@@ -460,6 +482,7 @@ bin/rabrick
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/gl-sample.rd
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/html_and_wiki.png
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/html_and_wiki.svg
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/info-window.png
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/join_cozmixng.png
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/join_cozmixng.svg
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/kof2005/gesture-flow.svg
@@ -606,7 +629,9 @@ bin/rabrick
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/ja
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm %%DATADIR%%/image/ruby-images
+@dirrm %%DATADIR%%/image/ranguba-images
 @dirrm %%DATADIR%%/image/rabbit-images
+@dirrm %%DATADIR%%/image/debian-images
 @dirrm %%DATADIR%%/image/cozmixng-images
 @dirrm %%DATADIR%%/image/clear-blue-images
 @dirrm %%DATADIR%%/image
@@ -642,6 +667,7 @@ bin/rabrick
 @dirrm %%RUBY_SITELIBDIR%%/rabbit/theme/ruby-gnome2
 @dirrm %%RUBY_SITELIBDIR%%/rabbit/theme/rotate-zoom-effect
 @dirrm %%RUBY_SITELIBDIR%%/rabbit/theme/red-frame
+@dirrm %%RUBY_SITELIBDIR%%/rabbit/theme/ranguba
 @dirrm %%RUBY_SITELIBDIR%%/rabbit/theme/rabbit-title-logo
 @dirrm %%RUBY_SITELIBDIR%%/rabbit/theme/rabbit-powered-by
 @dirrm %%RUBY_SITELIBDIR%%/rabbit/theme/rabbit-item-mark
@@ -687,6 +713,7 @@ bin/rabrick
 @dirrm %%RUBY_SITELIBDIR%%/rabbit/theme/default-description
 @dirrm %%RUBY_SITELIBDIR%%/rabbit/theme/default-block-quote
 @dirrm %%RUBY_SITELIBDIR%%/rabbit/theme/default
+@dirrm %%RUBY_SITELIBDIR%%/rabbit/theme/debian
 @dirrm %%RUBY_SITELIBDIR%%/rabbit/theme/day-white
 @dirrm %%RUBY_SITELIBDIR%%/rabbit/theme/cozmixng-powered-by
 @dirrm %%RUBY_SITELIBDIR%%/rabbit/theme/cozmixng
