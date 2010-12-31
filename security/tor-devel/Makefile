@@ -6,14 +6,27 @@
 #
 
 PORTNAME=	tor
-DISTVERSION=	0.2.2.17-alpha
-PORTREVISION=	1
+DISTVERSION=	0.2.2.20-alpha
 CATEGORIES=	security net ipv6
 MASTER_SITES=	http://www.torproject.org/dist/ \
-		http://tor.cypherpunks.at/dist/ \
-		http://tor.depthstrike.com/dist/ \
+		ftp://tor.tomyn.com/pub/mirrors/tor/ \
+		ftp://ftp.bit.nl/mirror/tor/ \
+		http://irani-tor.ath.cx/dist/ \
+		http://mirrors.chaos-darmstadt.de/tor-mirror/dist/ \
+		http://tor-www.5coluna.com/dist/ \
+		http://tor.amorphis.eu/dist/ \
+		http://tor.askapache.com/dist/ \
+		http://tor.beme-it.de/dist/ \
 		http://tor.boinc.ch/dist/ \
-		http://tor.anonymity.cn/dist/
+		http://tor.ccc.de/dist/ \
+		http://tor.idnr.ws/dist/ \
+		http://tor.kamagurka.org/dist/ \
+		http://torproj.xpdm.us/dist/ \
+		http://www.oignon.net/dist/ \
+		http://www.theonionrouter.com/dist/ \
+		http://www.torproject.org.in/dist/ \
+		http://www.torproject.org.nyud.net/dist/ \
+		http://www.torproject.us/dist/
 PKGNAMESUFFIX=	-devel
 
 MAINTAINER=	bf@FreeBSD.org
@@ -43,7 +56,9 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 .include <bsd.port.pre.mk>
 
-.if  ( ${OSVERSION} < 801000 || (${OSVERSION} >= 900000 && ${OSVERSION} < 900011) )
+.if  ( ${OSVERSION} < 704000 || \
+(${OSVERSION} >= 800000 && ${OSVERSION} < 802000) || \
+(${OSVERSION} >= 900000 && ${OSVERSION} < 900027) )
 WITH_OPENSSL_PORT=	yes
 .endif
 .include "${PORTSDIR}/Mk/bsd.openssl.mk"
