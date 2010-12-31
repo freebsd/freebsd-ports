@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	ludia/32461
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	PostgreSQL extension for full-text search indexing
 
-PGSQL_PORT=	${PORTSDIR}/databases/postgresql${PGSQL_VER}-server
+PGSQL_PORT=	${PORTSDIR}/databases/postgresql82-server
 RUN_DEPENDS=	${LOCALBASE}/bin/postmaster:${PGSQL_PORT} \
 		senna-cfg:${PORTSDIR}/textproc/senna
 BUILD_DEPENDS=	${LOCALBASE}/bin/postmaster:${PGSQL_PORT} \
@@ -22,7 +22,8 @@ BUILD_DEPENDS=	${LOCALBASE}/bin/postmaster:${PGSQL_PORT} \
 
 GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	libtool
-USE_PGSQL=	yes
+USE_PGSQL=	82
+WANT_PGSQL_VER=	82
 
 .include <bsd.port.pre.mk>
 
