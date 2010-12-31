@@ -7,6 +7,7 @@
 
 PORTNAME=	fillets-ng
 PORTVERSION=	1.0.0
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	SF/fillets/Fish%20Fillets%20-%20Next%20Generation/${PORTVERSION}:source \
 		SF/fillets/Fish%20Fillets%20-%20Next%20Generation/${DATAVERSION}:data
@@ -34,7 +35,7 @@ MAN6=		fillets.6
 DESKTOP_ENTRIES="Fish Fillets - Next Generation" \
 		"A wonderful puzzle game" \
 		"${DATADIR}/images/icon.png" \
-		"fillets-ng" \
+		"fillets" \
 		"Game;LogicGame;" \
 		false
 
