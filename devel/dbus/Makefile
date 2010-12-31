@@ -59,8 +59,9 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|/lib/dbus/machine-id|/db/dbus/machine-id|g' \
 		${WRKSRC}/dbus/Makefile.in \
 		${WRKSRC}/tools/Makefile.in
-	@${REINPLACE_CMD} -e 's|THREAD_LIBS -lrt|THREAD_LIBS|g' \
-		${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|THREAD_LIBS -lrt|THREAD_LIBS|g ; \
+		s|dummy man2html|dummy man2html_disable|g' \
+			${WRKSRC}/configure
 
 .if !defined(DBUS_SLAVE)
 post-install:
