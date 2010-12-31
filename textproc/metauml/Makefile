@@ -7,10 +7,14 @@
 
 PORTNAME=	metauml
 PORTVERSION=	0.2.5
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	textproc
-MASTER_SITES=	SF
-DISTFILES=	${PORTNAME}_lib_${PORTVERSION}.tgz ${PORTNAME}_manual_${PORTVERSION}.pdf lop-release.tgz
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}/:lib \
+		SF/${PORTNAME}/${PORTNAME}_manual/${PORTVERSION}/:man \
+		SF/${PORTNAME}/${PORTNAME}_lop/1.0/:patterns
+DISTFILES=	${PORTNAME}_lib_${PORTVERSION}.tgz:lib \
+		${PORTNAME}_manual_${PORTVERSION}.pdf:man \
+		lop-release.tgz:patterns
 DIST_SUBDIR=	${PORTNAME}
 EXTRACT_ONLY=	${PORTNAME}_lib_${PORTVERSION}.tgz lop-release.tgz
 
@@ -19,6 +23,9 @@ COMMENT=	A MetaPost library for typesetting UML diagrams
 
 BUILD_DEPENDS=	mktexlsr:${PORTSDIR}/print/teTeX-base
 RUN_DEPENDS=	latex:${PORTSDIR}/print/teTeX-base
+
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/thrunk/License
 
 PLIST_SUB=	TEXMFDIR=${TEXMFDIR} MKTEXLSR=${MKTEXLSR} MPDIR=${MPDIR}
 
