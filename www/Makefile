@@ -840,6 +840,7 @@
     SUBDIR += p5-Catalyst-Plugin-ConfigLoader
     SUBDIR += p5-Catalyst-Plugin-ConfigLoader-Environment
     SUBDIR += p5-Catalyst-Plugin-CookiedSession
+    SUBDIR += p5-Catalyst-Plugin-DateTime
     SUBDIR += p5-Catalyst-Plugin-DefaultEnd
     SUBDIR += p5-Catalyst-Plugin-Email
     SUBDIR += p5-Catalyst-Plugin-ErrorCatcher

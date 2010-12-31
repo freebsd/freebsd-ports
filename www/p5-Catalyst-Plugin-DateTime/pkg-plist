@@ -1,0 +1,7 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Plugin/DateTime/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Plugin/DateTime
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Plugin
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst
+%%SITE_PERL%%/Catalyst/Plugin/DateTime.pm
+@dirrmtry %%SITE_PERL%%/Catalyst/Plugin
+@dirrmtry %%SITE_PERL%%/Catalyst
