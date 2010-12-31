@@ -16,14 +16,16 @@ COMMENT=	A simple library for detecting objects in pictures
 
 LIB_DEPENDS=	cv.2:${PORTSDIR}/graphics/opencv
 
+LICENSE=	MIT
+
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
-RUBYGEM_AUTOPLIST=  yes
+RUBYGEM_AUTOPLIST=	yes
 
 .include <bsd.port.pre.mk>
 
 .if ${RUBY_VER} == 1.9
-BROKEN= does not work with ruby 1.9
+BROKEN=	does not work with ruby 1.9
 .endif
 
 .if ${OSVERSION} < 700000
