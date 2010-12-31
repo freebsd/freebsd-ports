@@ -16,6 +16,8 @@ COMMENT=	An extension to RubyInline
 
 RUN_DEPENDS=	rubygem-inline>=3.6.3:${PORTSDIR}/devel/rubygem-inline
 
+LICENSE=	GPLv2
+
 GEM_NAME=	${DISTNAME}
 
 USE_RUBY=	yes
