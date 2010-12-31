@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	msmtp
-PORTVERSION=	1.4.21
+PORTVERSION=	1.4.22
 CATEGORIES=	mail ipv6
 MASTER_SITES=	SF
 
@@ -21,11 +21,11 @@ CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 MAN1=	msmtp.1
 INFO=	msmtp
 
-OPTIONS=       GNUTLS "Adds GnuTLS support" off \
-               OPENSSL "Adds support for SSL (Secure Socket Layer)" off \
-               GSASL "Adds GSASL support" off \
-               NLS "Native Language Support via gettext utilities" on \
-               IDN "Enable Internationalized Domain Names" on \
+OPTIONS=	GNUTLS "Adds GnuTLS support" off \
+		OPENSSL "Adds support for SSL (Secure Socket Layer)" off \
+		GSASL "Adds GSASL support" off \
+		NLS "Native Language Support via gettext utilities" on \
+		IDN "Enable Internationalized Domain Names" on \
 
 .include       <bsd.port.options.mk>
 
