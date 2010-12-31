@@ -216,7 +216,6 @@
     SUBDIR += fv
     SUBDIR += fyre
     SUBDIR += g2
-    SUBDIR += g3dviewer
     SUBDIR += gambas2-gb-gtk-svg
     SUBDIR += gambas2-gb-image
     SUBDIR += gambas2-gb-opengl
@@ -683,7 +682,6 @@
     SUBDIR += p5-chart
     SUBDIR += p5-clutter
     SUBDIR += p5-ming
-    SUBDIR += paintlib
     SUBDIR += panoglview
     SUBDIR += panomatic
     SUBDIR += passepartout

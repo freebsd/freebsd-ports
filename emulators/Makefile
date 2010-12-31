@@ -187,7 +187,6 @@
     SUBDIR += vpce
     SUBDIR += vxtools
     SUBDIR += wahcade
-    SUBDIR += win4bsd
     SUBDIR += wine
     SUBDIR += wine-doors
     SUBDIR += x48

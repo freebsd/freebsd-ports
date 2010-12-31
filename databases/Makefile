@@ -461,7 +461,6 @@
     SUBDIR += p5-mysql-genocide
     SUBDIR += p5-postgresql-plperl
     SUBDIR += p5-qdbm
-    SUBDIR += p5-sqlrelay
     SUBDIR += p5-tokyotyrant
     SUBDIR += pear-DB
     SUBDIR += pear-DBA

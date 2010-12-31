@@ -406,7 +406,6 @@
     SUBDIR += k3b-kde4
     SUBDIR += k8temp
     SUBDIR += kcpuload
-    SUBDIR += kcube
     SUBDIR += kdeadmin3
     SUBDIR += kdeadmin4
     SUBDIR += kdirstat

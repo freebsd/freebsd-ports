@@ -2614,7 +2614,6 @@
     SUBDIR += perlconsole
     SUBDIR += perltidy
     SUBDIR += pharmacy
-    SUBDIR += php-dbg2
     SUBDIR += php-java-bridge
     SUBDIR += php-libawl
     SUBDIR += php-xdebug
