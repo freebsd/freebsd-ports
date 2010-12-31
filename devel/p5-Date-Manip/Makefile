@@ -7,12 +7,15 @@
 
 PORTNAME=	Date-Manip
 PORTVERSION=	6.20
+PORTREVISION=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	Perl5 module containing date manipulation routines
+
+RUN_DEPENDS=	p5-YAML-Syck>=1.15:${PORTSDIR}/textproc/p5-YAML-Syck
 
 PERL_CONFIGURE=	YES
 
