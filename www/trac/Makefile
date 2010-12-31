@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	trac
-PORTVERSION=	0.12
-PORTREVISION=	1
+PORTVERSION=	0.12.1
 CATEGORIES=	www devel python
 MASTER_SITES=	http://ftp.edgewall.com/pub/trac/ \
 		ftp://ftp.edgewall.com/pub/trac/
