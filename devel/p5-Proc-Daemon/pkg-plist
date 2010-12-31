@@ -1,4 +1,5 @@
 %%SITE_PERL%%/Proc/Daemon.pm
+%%SITE_PERL%%/Proc/Daemon.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Proc/Daemon/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Proc/Daemon
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Proc
