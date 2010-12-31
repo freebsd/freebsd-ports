@@ -606,8 +606,10 @@ share/postgresql/psqlrc.sample
 %%GETTEXT%%share/locale/ja/LC_MESSAGES/pg_dump-9.0.mo
 %%GETTEXT%%share/locale/ja/LC_MESSAGES/pgscripts-9.0.mo
 %%GETTEXT%%share/locale/ja/LC_MESSAGES/psql-9.0.mo
+%%GETTEXT%%share/locale/ko/LC_MESSAGES/ecpg-9.0.mo
 %%GETTEXT%%share/locale/ko/LC_MESSAGES/libpq5-9.0.mo
 %%GETTEXT%%share/locale/ko/LC_MESSAGES/pg_config-9.0.mo
+%%GETTEXT%%share/locale/ko/LC_MESSAGES/pg_dump-9.0.mo
 %%GETTEXT%%share/locale/ko/LC_MESSAGES/pgscripts-9.0.mo
 %%GETTEXT%%share/locale/nb/LC_MESSAGES/pg_config-9.0.mo
 %%GETTEXT%%share/locale/pt_BR/LC_MESSAGES/ecpg-9.0.mo
@@ -642,5 +644,11 @@ share/postgresql/psqlrc.sample
 %%GETTEXT%%share/locale/zh_CN/LC_MESSAGES/pg_config-9.0.mo
 %%GETTEXT%%share/locale/zh_CN/LC_MESSAGES/pg_dump-9.0.mo
 %%GETTEXT%%share/locale/zh_CN/LC_MESSAGES/pgscripts-9.0.mo
+%%GETTEXT%%share/locale/zh_CN/LC_MESSAGES/psql-9.0.mo
+%%GETTEXT%%share/locale/zh_TW/LC_MESSAGES/ecpg-9.0.mo
+%%GETTEXT%%share/locale/zh_TW/LC_MESSAGES/libpq5-9.0.mo
+%%GETTEXT%%share/locale/zh_TW/LC_MESSAGES/pg_config-9.0.mo
+%%GETTEXT%%share/locale/zh_TW/LC_MESSAGES/pg_dump-9.0.mo
+%%GETTEXT%%share/locale/zh_TW/LC_MESSAGES/pgscripts-9.0.mo
 @dirrm share/doc/postgresql/html
 @dirrm share/doc/postgresql
