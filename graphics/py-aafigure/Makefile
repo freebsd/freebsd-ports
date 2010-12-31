@@ -17,6 +17,9 @@ COMMENT=	An ASCII art to image converter written in Python
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/PIL/__init__.py:${PORTSDIR}/graphics/py-imaging \
 		${PYTHON_SITELIBDIR}/reportlab/__init__.py:${PORTSDIR}/print/py-reportlab2
 
+LICENSE=	BSD
+LICENSE_FILE=	${WRKSRC}/LICENSE.txt
+
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 
