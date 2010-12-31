@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gecko-mediaplayer
-PORTVERSION=	0.9.9.2
-PORTREVISION=	1
+PORTVERSION=	1.0.0
 CATEGORIES=	www multimedia gnome
 MASTER_SITES=	GOOGLE_CODE
 
@@ -29,9 +28,7 @@ WEBPLUGINS_FILES=	${PORTNAME}-dvx.so ${PORTNAME}-qt.so ${PORTNAME}-rm.so \
 				${PORTNAME}-wmp.so ${PORTNAME}.so
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
-CONFIGURE_ARGS+=	--enable-new-libxul \
-		--with-xulrunner-sdk="${LOCALBASE}/include" \
-		--with-plugin_dir="${WEBPLUGINS_DIR}"
+CONFIGURE_ARGS+=--with-plugin_dir="${WEBPLUGINS_DIR}"
 
 PORTDOCS=	README COPYING AUTHORS ChangeLog INSTALL NEWS javascript.txt
 

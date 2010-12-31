@@ -9,12 +9,3 @@
  	GECKO_LIBS="-L$XULRUNNER_SDK_PREFIX/lib -lxpcomglue_s -lxul -lxpcom -lplds4 -lplc4 -lnspr4 -lpthread -ldl"
  	# Check whether --enable-new-libxul was given.
  if test "${enable_new_libxul+set}" = set; then
-@@ -8720,7 +8720,7 @@
- fi
- 
- 
--	if test $usenewlibxul == yes; then
-+	if test $usenewlibxul = yes; then
- 
- cat >>confdefs.h <<\_ACEOF
- #define HAVE_NEW_XULRUNNER 1

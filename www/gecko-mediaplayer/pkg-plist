@@ -4,6 +4,7 @@
 %%WEBPLUGINS_DIR%%/gecko-mediaplayer-wmp.so
 %%WEBPLUGINS_DIR%%/gecko-mediaplayer.so
 share/locale/cs/LC_MESSAGES/gecko-mediaplayer.mo
+share/locale/de/LC_MESSAGES/gecko-mediaplayer.mo
 share/locale/es/LC_MESSAGES/gecko-mediaplayer.mo
 share/locale/fr/LC_MESSAGES/gecko-mediaplayer.mo
 share/locale/it/LC_MESSAGES/gecko-mediaplayer.mo
