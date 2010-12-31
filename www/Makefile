@@ -1688,6 +1688,7 @@
     SUBDIR += tdom
     SUBDIR += template_
     SUBDIR += templatelite
+    SUBDIR += testlink
     SUBDIR += textpattern
     SUBDIR += thttpd
     SUBDIR += thumbnail_index
