@@ -6,8 +6,7 @@
 #
 
 PORTNAME?=	postgresql
-DISTVERSION?=	8.3.12
-PORTREVISION?=	2
+DISTVERSION?=	8.3.13
 CATEGORIES?=	databases
 MASTER_SITES=	${MASTER_SITE_PGSQL}
 MASTER_SITE_SUBDIR=	source/v${DISTVERSION}
@@ -108,6 +107,7 @@ CONFIGURE_ARGS+=--with-icu
 LIB_DEPENDS=	icudata:${PORTSDIR}/devel/icu
 PATCH_SITES+=	http://people.freebsd.org/~girgen/postgresql-icu/:icu
 PATCHFILES+=	pg-8311-icu-xx-2010-05-14.diff.gz:icu
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-icu4
 .  endif
 
 PATCH_DIST_STRIP=-p1
@@ -285,7 +285,6 @@ post-patch:
 .  if defined(WITH_ICU)
 	@${REINPLACE_CMD} -E -e \
 		"s|^(m4_if.*)2.6[0-9](.*Autoconf version )2.6[0-9]|\1${AUTOCONF_VERSION}\2${AUTOCONF_VERSION}|g" \
-		-e "s|_43|_46|g" \
 		${WRKSRC}/configure.in
 .  endif
 
