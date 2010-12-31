@@ -1,3 +1,2 @@
-MD5 (s3cmd-0.9.9.91.tar.gz) = 0b8334ab4ffb1e09d6964861dc001e0f
-SHA256 (s3cmd-0.9.9.91.tar.gz) = 3c7b5ebaaba52473c73268cb0d79e6e46111e5d1f25d73f2d2ffbfc4dc905343
-SIZE (s3cmd-0.9.9.91.tar.gz) = 51132
+SHA256 (s3cmd-1.0.0-rc1.tar.gz) = 6359467a46ea1af56938926ce06c3949e4f94ed04ff475a6e2dc7a1580192d5d
+SIZE (s3cmd-1.0.0-rc1.tar.gz) = 56268
