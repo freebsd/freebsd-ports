@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	TurboJson
-PORTVERSION=	1.2.1
+PORTVERSION=	1.3
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP \
 		http://www.turbogears.org/2.0/downloads/2.0.1/ \
@@ -17,7 +17,7 @@ MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	Python template plugin for TurboGears that supports json
 
 BUILD_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}simplejson>=1.9.1:${PORTSDIR}/devel/py-simplejson \
-		${PYTHON_PKGNAMEPREFIX}prioritized_methods>=0.2.1:${PORTSDIR}/devel/py-prioritized_methods
+		${PYTHON_PKGNAMEPREFIX}PEAK-Rules>=0:${PORTSDIR}/devel/py-PEAK-Rules
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 USE_PYTHON=	2.4+
