@@ -1,0 +1,2 @@
+@comment $FreeBSD$
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%

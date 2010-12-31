@@ -1487,6 +1487,7 @@
     SUBDIR += py-paste
     SUBDIR += py-pastedeploy
     SUBDIR += py-pastescript
+    SUBDIR += py-poster
     SUBDIR += py-postmarkup
     SUBDIR += py-prewikka
     SUBDIR += py-pullparser
