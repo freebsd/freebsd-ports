@@ -21,6 +21,9 @@ RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR}/gtk2.so:${PORTSDIR}/x11-toolkits/ruby-gtk2 \
 		ruby-pwgen:${PORTSDIR}/security/ruby-password \
 		rubygem-tweetstream>=0.0.0:${PORTSDIR}/net/rubygem-tweetstream
 
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/GPL
+
 USE_RUBY=	yes
 USE_RUBY_SETUP=	yes
 .if defined(WITHOUT_NLS)

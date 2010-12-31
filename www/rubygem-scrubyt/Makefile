@@ -16,6 +16,8 @@ COMMENT=	A powerful web scraping toolkit written in Ruby
 RUN_DEPENDS=	rubygem-hpricot>=0.5:${PORTSDIR}/www/rubygem-hpricot \
 		rubygem-mechanize>=0.6.3:${PORTSDIR}/www/rubygem-mechanize
 
+LICENSE=	GPLv2
+
 GEM_NAME=	${PORTNAME}-0.4.1
 
 USE_RUBY=	yes
