@@ -332,6 +332,7 @@
     SUBDIR += p3scan
     SUBDIR += p5-CGP-CLI
     SUBDIR += p5-Clamd
+    SUBDIR += p5-Dancer-Plugin-Email
     SUBDIR += p5-Data-Validate-Email
     SUBDIR += p5-Email-Abstract
     SUBDIR += p5-Email-Address

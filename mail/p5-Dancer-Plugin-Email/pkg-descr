@@ -1,0 +1,7 @@
+Dancer::Plugin::Email provides an easy way of handling text or
+html email messages with or without attachments. Simply define
+how you wish to send the email in your application's YAML
+configuration file, then call the email keyword passing the
+necessary parameters.
+
+WWW: http://search.cpan.org/~ironcamel/Dancer-Plugin-Email/
