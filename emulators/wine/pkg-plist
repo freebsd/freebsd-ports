@@ -542,6 +542,7 @@ include/wine/windows/sti.h
 include/wine/windows/storage.h
 include/wine/windows/strmif.h
 include/wine/windows/strmif.idl
+include/wine/windows/strsafe.h
 include/wine/windows/structuredquerycondition.h
 include/wine/windows/structuredquerycondition.idl
 include/wine/windows/svrapi.h
@@ -643,7 +644,6 @@ include/wine/windows/xinput.h
 include/wine/windows/xmldom.h
 include/wine/windows/xmldom.idl
 include/wine/windows/xmldomdid.h
-include/wine/windows/xmldso.h
 include/wine/windows/xmldso.idl
 include/wine/windows/xmldsodid.h
 include/wine/windows/xmllite.h
@@ -760,6 +760,7 @@ lib/wine/d3dx9_41.dll.so
 lib/wine/d3dx9_42.dll.so
 lib/wine/d3dx9_43.dll.so
 lib/wine/d3dxof.dll.so
+lib/wine/dbgeng.dll.so
 lib/wine/dbghelp.dll.so
 lib/wine/dciman32.dll.so
 lib/wine/ddeml.dll16.so
@@ -895,6 +896,7 @@ lib/wine/fakedlls/d3dx9_41.dll
 lib/wine/fakedlls/d3dx9_42.dll
 lib/wine/fakedlls/d3dx9_43.dll
 lib/wine/fakedlls/d3dxof.dll
+lib/wine/fakedlls/dbgeng.dll
 lib/wine/fakedlls/dbghelp.dll
 lib/wine/fakedlls/dciman32.dll
 lib/wine/fakedlls/ddeml.dll16
@@ -1046,15 +1048,19 @@ lib/wine/fakedlls/msvfw32.dll
 lib/wine/fakedlls/msvidc32.dll
 lib/wine/fakedlls/msvideo.dll16
 lib/wine/fakedlls/mswsock.dll
+lib/wine/fakedlls/msxml.dll
+lib/wine/fakedlls/msxml2.dll
 lib/wine/fakedlls/msxml3.dll
 lib/wine/fakedlls/msxml4.dll
 lib/wine/fakedlls/msxml6.dll
 lib/wine/fakedlls/nddeapi.dll
 lib/wine/fakedlls/net.exe
 lib/wine/fakedlls/netapi32.dll
+lib/wine/fakedlls/netsh.exe
 lib/wine/fakedlls/newdev.dll
 lib/wine/fakedlls/ngen.exe
 lib/wine/fakedlls/notepad.exe
+lib/wine/fakedlls/npmshtml.dll
 lib/wine/fakedlls/ntdll.dll
 lib/wine/fakedlls/ntdsapi.dll
 lib/wine/fakedlls/ntoskrnl.exe
@@ -1124,6 +1130,7 @@ lib/wine/fakedlls/secur32.dll
 lib/wine/fakedlls/security.dll
 lib/wine/fakedlls/sensapi.dll
 lib/wine/fakedlls/serialui.dll
+lib/wine/fakedlls/servicemodelreg.exe
 lib/wine/fakedlls/services.exe
 lib/wine/fakedlls/setupapi.dll
 lib/wine/fakedlls/setupx.dll16
@@ -1194,7 +1201,6 @@ lib/wine/fakedlls/winaspi.dll16
 lib/wine/fakedlls/windebug.dll16
 lib/wine/fakedlls/windowscodecs.dll
 lib/wine/fakedlls/winealsa.drv
-lib/wine/fakedlls/wineaudioio.drv
 lib/wine/fakedlls/wineboot.exe
 lib/wine/fakedlls/winebrowser.exe
 lib/wine/fakedlls/winecfg.exe
@@ -1237,6 +1243,7 @@ lib/wine/fakedlls/winver.exe
 lib/wine/fakedlls/wlanapi.dll
 lib/wine/fakedlls/wldap32.dll
 lib/wine/fakedlls/wmi.dll
+lib/wine/fakedlls/wmic.exe
 lib/wine/fakedlls/wmiutils.dll
 lib/wine/fakedlls/wnaspi32.dll
 lib/wine/fakedlls/wordpad.exe
@@ -1331,6 +1338,7 @@ lib/wine/libd3dim.def
 lib/wine/libd3drm.def
 lib/wine/libd3dx9.def
 lib/wine/libd3dxof.def
+lib/wine/libdbgeng.def
 lib/wine/libdbghelp.def
 lib/wine/libdciman32.def
 lib/wine/libddraw.def
@@ -1522,15 +1530,19 @@ lib/wine/msvfw32.dll.so
 lib/wine/msvidc32.dll.so
 lib/wine/msvideo.dll16.so
 lib/wine/mswsock.dll.so
+lib/wine/msxml.dll.so
+lib/wine/msxml2.dll.so
 lib/wine/msxml3.dll.so
 lib/wine/msxml4.dll.so
 lib/wine/msxml6.dll.so
 lib/wine/nddeapi.dll.so
 lib/wine/net.exe.so
 lib/wine/netapi32.dll.so
+lib/wine/netsh.exe.so
 lib/wine/newdev.dll.so
 lib/wine/ngen.exe.so
 lib/wine/notepad.exe.so
+lib/wine/npmshtml.dll.so
 lib/wine/ntdll.dll.so
 lib/wine/ntdsapi.dll.so
 lib/wine/ntoskrnl.exe.so
@@ -1600,6 +1612,7 @@ lib/wine/secur32.dll.so
 lib/wine/security.dll.so
 lib/wine/sensapi.dll.so
 lib/wine/serialui.dll.so
+lib/wine/servicemodelreg.exe.so
 lib/wine/services.exe.so
 lib/wine/setupapi.dll.so
 lib/wine/setupx.dll16.so
@@ -1670,7 +1683,6 @@ lib/wine/winaspi.dll16.so
 lib/wine/windebug.dll16.so
 lib/wine/windowscodecs.dll.so
 lib/wine/winealsa.drv.so
-lib/wine/wineaudioio.drv.so
 lib/wine/wineboot.exe.so
 lib/wine/winebrowser.exe.so
 lib/wine/winecfg.exe.so
@@ -1713,6 +1725,7 @@ lib/wine/winver.exe.so
 lib/wine/wlanapi.dll.so
 lib/wine/wldap32.dll.so
 lib/wine/wmi.dll.so
+lib/wine/wmic.exe.so
 lib/wine/wmiutils.dll.so
 lib/wine/wnaspi32.dll.so
 lib/wine/wordpad.exe.so

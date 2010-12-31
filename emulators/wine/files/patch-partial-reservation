@@ -1,12 +1,13 @@
 --- libs/wine/mmap.c
 +++ libs/wine/mmap.c
-@@ -383,6 +383,9 @@ void mmap_init(void)
+@@ -380,6 +380,9 @@
          reserve_area( base, end );
      }
      else reserve_area( user_space_limit, 0 );
 +#if defined(__FreeBSD__) || defined(__FreeBSD_kernel__)
 +    wine_mmap_remove_reserved_area( (char *)0x82000000, 0xffffffff - 0x82000000, 1 );
 +#endif
- #endif /* __i386__ */
- 
+
      /* reserve the DOS area if not already done */
+ 
+     ptr = list_head( &reserved_areas );
