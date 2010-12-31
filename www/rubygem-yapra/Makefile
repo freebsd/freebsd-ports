@@ -15,6 +15,8 @@ COMMENT=	Yet Another Pragger implementation
 
 RUN_DEPENDS=	rubygem-mechanize>=0.7.6:${PORTSDIR}/www/rubygem-mechanize
 
+LICENSE=	MIT
+
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
