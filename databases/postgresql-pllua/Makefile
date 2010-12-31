@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	pllua
-PORTVERSION=	0.3.1
-PORTREVISION=	1
+PORTVERSION=	0.3.2
 CATEGORIES=	databases
-MASTER_SITES=	http://pgfoundry.org/frs/download.php/1722/
+MASTER_SITES=	http://pgfoundry.org/frs/download.php/2401/
 PKGNAMEPREFIX=	postgresql-
 
 MAINTAINER=	sunghyuk@gmail.com
