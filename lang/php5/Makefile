@@ -59,8 +59,7 @@ MAN1=		php-config.1 phpize.1
 PATCH_DIST_STRIP=	-p1
 
 .if !defined(WITHOUT_SUHOSIN)
-#PATCHFILES+=	suhosin-patch-${PORTVERSION}-0.9.10.patch.gz:suhosin
-PATCHFILES+=	suhosin-patch-5.3.3-0.9.10.patch.gz:suhosin
+PATCHFILES+=	suhosin-patch-${PORTVERSION}-0.9.10.patch.gz:suhosin
 PATCH_SITES+=	http://download.suhosin.org/:suhosin
 PLIST_SUB+=	SUHOSIN=""
 .else
@@ -156,13 +155,6 @@ CONFIGURE_ARGS+=--enable-zend-multibyte
 
 .if defined(WITHOUT_IPV6)
 CONFIGURE_ARGS+=--disable-ipv6
-.endif
-
-pre-patch:
-# To be removed after suhosin update
-.if !defined(WITHOUT_SUHOSIN)
-	@${REINPLACE_CMD} -E 's|REPORT_ERRORS TSRMLS_CC, "%s", error|REPORT_ERRORS TSRMLS_CC, error|' \
-		${WRKSRC}/ext/phar/stream.c
 .endif
 
 post-patch:
