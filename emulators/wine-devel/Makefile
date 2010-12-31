@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	wine
-DISTVERSION=	1.3.7
+DISTVERSION=	1.3.10
 PORTEPOCH=	1
 CATEGORIES=	emulators
 MASTER_SITES=	SF/${PORTNAME}/Source \
@@ -41,7 +41,12 @@ USE_LDCONFIG=	${PREFIX}/lib ${PREFIX}/lib/wine
 MAKE_JOBS_SAFE=	yes
 MAN1=		widl.1 wine.1 winebuild.1 winedbg.1 winedump.1 winegcc.1 \
 		winemaker.1 wineserver.1 wmc.1 wrc.1
-MLINKS=		winegcc.1 wineg++.1
+MAN1=		msiexec.1 notepad.1 regedit.1 regsvr32.1 widl.1 wine.1 \
+		wineboot.1 winebuild.1 winecfg.1 wineconsole.1 winedbg.1 \
+		winedump.1 winefile.1 winegcc.1 winemaker.1 winemine.1 \
+		winepath.1 wineserver.1 wmc.1 wrc.1
+MLINKS=		winegcc.1 winecpp.1 \
+		winegcc.1 wineg++.1
 ONLY_FOR_ARCHS=	i386
 USE_BISON=	build
 USE_BZIP2=	yes
