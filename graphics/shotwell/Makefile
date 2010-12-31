@@ -39,7 +39,7 @@ GCONF_SCHEMAS=	shotwell.schemas
 
 post-patch:
 	@${REINPLACE_CMD} -E \
-		-e 's|/bin/bash|${SH}|' \
+		-e 's|/bin/bash|${SH}|g ; s|/usr/bin/env.*bash|${SH}|g' \
 		${WRKSRC}/${CONFIGURE_SCRIPT} \
 		${WRKSRC}/libraw-config \
 		${WRKSRC}/minver
