@@ -16,6 +16,8 @@ COMMENT=	A reimplementation of ParseTree using RubyInlineAcceleration
 
 RUN_DEPENDS=	rubygem-rubyinlineaccel>=0.0.1:${PORTSDIR}/devel/rubygem-rubyinlineaccel
 
+LICENSE=	GPLv2
+
 GEM_NAME=	${DISTNAME}
 
 USE_RUBY=	yes

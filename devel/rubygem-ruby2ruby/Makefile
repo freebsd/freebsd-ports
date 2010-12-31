@@ -16,6 +16,8 @@ COMMENT=	A pure ruby code generator easily from ParseTree's Sexps # '
 RUN_DEPENDS=	rubygem-sexp_processor>=3.0:${PORTSDIR}/devel/rubygem-sexp_processor \
 		rubygem-ruby_parser>=2.0:${PORTSDIR}/devel/rubygem-ruby_parser
 
+LICENSE=	MIT
+
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
