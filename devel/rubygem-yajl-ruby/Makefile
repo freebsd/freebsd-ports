@@ -13,6 +13,8 @@ MASTER_SITES=	RG
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	A streaming JSON parsing and encoding library for Ruby
 
+LICENSE=	MIT
+
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
