@@ -27,11 +27,12 @@ USE_AUTOTOOLS=	autoconf
 
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}"
 CONFIGURE_ENV+=	LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS} -lintl"
+CONFIGURE_ARGS+=	--without-alsa
 
 CFLAGS+=	-fPIC
 .if !defined(_BUILDING_LIBQUICKTIME_PLUGINS)
 USE_XORG=	xaw xv
-CONFIGURE_ARGS=	--with-x --enable-gpl --without-doxygen --without-lame
+CONFIGURE_ARGS+=	--with-x --enable-gpl --without-doxygen --without-lame
 MAN1=		lqtplay.1
 
 OPTIONS=	OPENGL "Enable OpenGL support" On \
