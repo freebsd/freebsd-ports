@@ -34,7 +34,7 @@ NO_BUILD=	yes
 WANT_PERL=	yes
 SUB_FILES=	pkg-message
 
-SNAP=		20110101 # 18:00:00 UTC
+SNAP=		20110101 # 22:28:07 UTC
 
 MAN1=		tc-configCcache.1 tc-configDistfile.1 tc-configGet.1 \
 		tc-configJail.1 tc-configTinderd.1 tc-init.1
