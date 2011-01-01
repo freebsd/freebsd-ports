@@ -11,7 +11,6 @@
     SUBDIR += bind9-sdb-postgresql
     SUBDIR += bind94
     SUBDIR += bind94-geoip
-    SUBDIR += bind95
     SUBDIR += bind96
     SUBDIR += bind97
     SUBDIR += bind98
