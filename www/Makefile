@@ -583,7 +583,6 @@
     SUBDIR += moodle2
     SUBDIR += moonshine
     SUBDIR += mozex
-    SUBDIR += mozilla
     SUBDIR += mozplugger
     SUBDIR += multisort
     SUBDIR += mybb

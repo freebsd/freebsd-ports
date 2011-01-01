@@ -4745,3 +4745,4 @@ x11-clocks/xtu||2010-12-31|Has expired: Looks like abandonware
 java/tya||2010-12-31|Has expired: looks like abandonware and does not compile wth gcc4.2
 net-p2p/qbittorrent-22||2011-01-01|Old version no longer updated
 dns/bind95||2011-01-01|Entered EOL 2010-09 - Update to dns/bind97 or dns/bind96
+www/mozilla|www/seamonkey2|2011-01-01|Unmaintained upstream for years and has security issues
