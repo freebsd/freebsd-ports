@@ -7,6 +7,7 @@
 
 PORTNAME=	p7zip
 PORTVERSION=	9.13
+PORTREVISION=	1
 CATEGORIES=	archivers
 MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}_${DISTVERSION}_src_all
@@ -71,7 +72,7 @@ post-patch:
 	       -e 's/-D_FILE_OFFSET_BITS=64//' \
 	       -e 's/-lc_r/${PTHREAD_LIBS}/' \
 	       ${WRKSRC}/makefile.freebsd > ${WRKSRC}/makefile.machine
-	${REINPLACE_CMD} -e 's|/usr/share/doc/p7zip/DOCS|${DOCSDIR}|' \
+	${REINPLACE_CMD} -e 's|{DEST_SHARE_DOC}|${DOCSDIR}|' \
 		${WRKSRC}/man1/*
 	${MV} ${WRKSRC}/README ${WRKSRC}/DOCS/readme.unix
 	${MV} ${WRKSRC}/contrib/gzip-like_CLI_wrapper_for_7z/man1/p7zip.1 ${WRKSRC}/man1/
