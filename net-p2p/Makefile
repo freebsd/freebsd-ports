@@ -105,7 +105,6 @@
     SUBDIR += py-py2play
     SUBDIR += py-transmissionrpc
     SUBDIR += py-vertex
-    SUBDIR += qbittorrent-22
     SUBDIR += qbittorrent-23
     SUBDIR += qtella
     SUBDIR += qtorrent
