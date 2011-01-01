@@ -18,11 +18,11 @@ etc/mimedefang/sa-mimedefang.cf.example
 %%PORTDOCS%%%%DOCSDIR%%/README.TRU64
 %%PORTDOCS%%%%DOCSDIR%%/README.IRIX
 %%PORTDOCS%%%%DOCSDIR%%/README.VEXIRA
-%%PORTDOCS%%%%EXAMPLESDIR%%/suggested-minimum-filter-for-windows-clients
-%%PORTDOCS%%%%EXAMPLESDIR%%/stream-by-domain-filter
-%%PORTDOCS%%%%EXAMPLESDIR%%/README
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/README
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/stream-by-domain-filter
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/suggested-minimum-filter-for-windows-clients
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
 @dirrm etc/mimedefang
 @cwd /var/spool
 @dirrm MIMEDefang
