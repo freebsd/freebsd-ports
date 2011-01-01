@@ -34,6 +34,8 @@ post-patch:
 	    	${WRKSRC}/common.mk
 
 post-configure:
-	@${TOUCH} -f ${WRKSRC}/config.h
+	@${TOUCH} -f ${WRKSRC}/config.h ${WRKSRC}/aclocal.m4 \
+	    	${WRKSRC}/configure ${WRKSRC}/Makefile.in \
+		${WRKSRC}/Makefile
 
 .include <bsd.port.mk>
