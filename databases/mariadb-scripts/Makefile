@@ -19,7 +19,7 @@ COMMENT=	A database server that offers drop-in replacement functionality for MyS
 CONFLICTS=	mysql-server-[0-9]* mysql-client-[0-9]*
 
 GNU_CONFIGURE=	yes
-USE_LDCONFIG=	yes
+USE_LDCONFIG=	${PREFIX}/lib/mysql
 USE_RC_SUBR=	mysql-server
 
 USERS=		mysql
