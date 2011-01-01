@@ -4354,7 +4354,7 @@ math/libgmp4|math/gmp|2010-04-19|Switch to newer performance release
 irc/dircproxy-devel||2010-04-19|Removed
 security/krb5-17||2010-04-25|deleted: no longer builds with new OpenSSL 1.0. secuirity/krb5 now contains 1.8.1.
 www/blogd|www/ephemera|2010-04-26|Port renamed
-net-p2p/qbittorrent|net-p2p/qbittorrent-22|2010-05-01|Old version no longer updated
+net-p2p/qbittorrent||2010-05-01|Old version no longer updated
 audio/py-flac||2010-05-02|Has expired: has been marked IGNORE for past 24 months
 databases/mysql-connector-java50||2010-05-02|Has expired: Old version: please use databases/mysql-connector-java instead
 databases/p5-DBIx-Class-HTML-FormFu||2010-05-02|Has expired: This module is obsoleted by www/p5-HTML-FormFu-Model-DBIC
@@ -4743,3 +4743,4 @@ www/flock||2010-12-31|Has expired: Flock 3 moves from Firefox to Chromium
 www/linux-flock||2010-12-31|Has expired: Flock 3 moves from Firefox to Chromium
 x11-clocks/xtu||2010-12-31|Has expired: Looks like abandonware
 java/tya||2010-12-31|Has expired: looks like abandonware and does not compile wth gcc4.2
+net-p2p/qbittorrent-22||2011-01-01|Old version no longer updated
