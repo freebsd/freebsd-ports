@@ -7,7 +7,7 @@
 PORTNAME=	tinderbox
 DISTVERSION=	3.4-${SNAP}
 CATEGORIES=	ports-mgmt
-MASTER_SITES=	http://freebsd.unixfreunde.de/${PORTNAME}/
+MASTER_SITES=	http://T32.TecNik93.com/FreeBSD/ports/${PORTNAME}/sources/
 PKGNAMESUFFIX=	-devel
 DIST_SUBDIR=	${PORTNAME}
 
@@ -18,22 +18,23 @@ CONFLICTS=	tinderbox-[0-9]*
 
 OPTIONS=	PGSQL "With pgsql" Off \
 		MYSQL "With mysql" On \
-		CSUP  "Use csup for updates" On \
 		CVSUP "Use cvsup for updates" Off \
 		WEBUI   "Install web interface" On \
 		APACHE "Use Apache for web interface" On \
 		HIAWATHA "Use Hiawatha for web interface" Off \
 		LIGHTTPD "Use LightHTTPD for web interface" Off \
 		CHECK_FOR_ROOT "Check if ./tc is run by uid 0" On \
+		EMAILS "Support for build failure/completion emails" On \
 		LSOF "For killMountProcesses() when using nullfs" On \
-		TMPFS "Enable TMPFS extra patch" Off \
-		PARALLEL "Enable PARALLEL extra patch" Off
+		LOG_COMPRESS "Support bzip'ing the logs" On \
+		TMPFS "Enable TMPFS extra patch" On \
+		PARALLEL "Enable PARALLEL extra patch" On
 
 NO_BUILD=	yes
 WANT_PERL=	yes
 SUB_FILES=	pkg-message
 
-SNAP=	20100104 # 07:00 PM
+SNAP=		20110101 # 18:00:00 UTC
 
 MAN1=		tc-configCcache.1 tc-configDistfile.1 tc-configGet.1 \
 		tc-configJail.1 tc-configTinderd.1 tc-init.1
@@ -83,8 +84,16 @@ RUN_DEPENDS+=	lighttpd:${PORTSDIR}/www/lighttpd
 RUN_DEPENDS+=	hiawatha:${PORTSDIR}/www/hiawatha
 .endif
 
+.if defined(WITH_EMAILS)
+RUN_DEPENDS+=	${SITE_PERL}/Net/SMTP.pm:${PORTSDIR}/net/p5-Net
+.endif
+
 .if defined(WITH_LSOF)
 RUN_DEPENDS+=	lsof:${PORTSDIR}/sysutils/lsof
+.endif
+
+.if defined(WITH_LOG_COMPRESS)
+RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Compress/Bzip2.pm:${PORTSDIR}/archivers/p5-Compress-Bzip2
 .endif
 
 .if defined(WITH_TMPFS) && defined(WITH_PARALLEL)

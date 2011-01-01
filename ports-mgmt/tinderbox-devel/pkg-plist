@@ -1,6 +1,8 @@
 etc/rc.d/tinderbox
 tinderbox/scripts/Makefile
 tinderbox/scripts/README
+tinderbox/scripts/contrib/hooks/compress_wrkdir/README.txt
+tinderbox/scripts/contrib/hooks/compress_wrkdir/compress_wrkdir.sh
 tinderbox/scripts/contrib/hooks/kse-fix/README.txt
 tinderbox/scripts/contrib/hooks/kse-fix/kse-fix.sh
 tinderbox/scripts/contrib/hooks/kse-fix/libmap.conf
@@ -59,6 +61,7 @@ tinderbox/scripts/upgrade/order.lst
 tinderbox/scripts/upgrade/user_permissions.map
 %%WEBUI%%tinderbox/scripts/webui/.cvsignore
 %%WEBUI%%tinderbox/scripts/webui/core/Build.php
+%%WEBUI%%tinderbox/scripts/webui/core/BuildGroups.php
 %%WEBUI%%tinderbox/scripts/webui/core/BuildPortsQueue.php
 %%WEBUI%%tinderbox/scripts/webui/core/Config.php
 %%WEBUI%%tinderbox/scripts/webui/core/Jail.php
@@ -76,6 +79,7 @@ tinderbox/scripts/upgrade/user_permissions.map
 %%WEBUI%%tinderbox/scripts/webui/inc_tinderbox.php.dist
 %%WEBUI%%tinderbox/scripts/webui/index.php
 %%WEBUI%%tinderbox/scripts/webui/module/module.php
+%%WEBUI%%tinderbox/scripts/webui/module/moduleBuildGroups.php
 %%WEBUI%%tinderbox/scripts/webui/module/moduleBuildPorts.php
 %%WEBUI%%tinderbox/scripts/webui/module/moduleBuilds.php
 %%WEBUI%%tinderbox/scripts/webui/module/moduleConfig.php
@@ -89,6 +93,7 @@ tinderbox/scripts/upgrade/user_permissions.map
 %%WEBUI%%tinderbox/scripts/webui/templates/default/config.tpl
 %%WEBUI%%tinderbox/scripts/webui/templates/default/current_buildports.tpl
 %%WEBUI%%tinderbox/scripts/webui/templates/default/describe_port.tpl
+%%WEBUI%%tinderbox/scripts/webui/templates/default/display_build_groups.tpl
 %%WEBUI%%tinderbox/scripts/webui/templates/default/display_login.tpl
 %%WEBUI%%tinderbox/scripts/webui/templates/default/display_markup_log.tpl
 %%WEBUI%%tinderbox/scripts/webui/templates/default/failed_buildports.tpl
@@ -108,6 +113,7 @@ tinderbox/scripts/upgrade/user_permissions.map
 %%WEBUI%%tinderbox/scripts/webui/templates/paefchen/config.tpl
 %%WEBUI%%tinderbox/scripts/webui/templates/paefchen/current_buildports.tpl
 %%WEBUI%%tinderbox/scripts/webui/templates/paefchen/describe_port.tpl
+%%WEBUI%%tinderbox/scripts/webui/templates/paefchen/display_build_groups.tpl
 %%WEBUI%%tinderbox/scripts/webui/templates/paefchen/display_login.tpl
 %%WEBUI%%tinderbox/scripts/webui/templates/paefchen/display_markup_log.tpl
 %%WEBUI%%tinderbox/scripts/webui/templates/paefchen/failed_buildports.tpl
@@ -144,6 +150,7 @@ tinderbox/scripts/upgrade/user_permissions.map
 @dirrm tinderbox/scripts/etc
 @dirrm tinderbox/scripts/contrib/hooks/make-jobs-safe
 @dirrm tinderbox/scripts/contrib/hooks/kse-fix
+@dirrm tinderbox/scripts/contrib/hooks/compress_wrkdir
 @dirrm tinderbox/scripts/contrib/hooks
 @dirrm tinderbox/scripts/contrib
 @dirrm tinderbox/scripts
