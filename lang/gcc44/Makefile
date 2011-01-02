@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	gcc
-PORTVERSION=	4.4.6.20101026
+PORTVERSION=	4.4.6.20101221
 CATEGORIES=	lang
 MASTER_SITES=	${MASTER_SITE_GCC}
 MASTER_SITE_SUBDIR=	snapshots/${VERSIONSTRING}
@@ -45,7 +45,6 @@ CONFIGURE_SCRIPT=	../${SRCDIR:S/${WRKDIR}\///}/configure
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "amd64"
-BROKEN=			does not build
 CONFIGURE_TARGET=	x86_64-portbld-freebsd${OSREL}
 .else
 CONFIGURE_TARGET=	${ARCH}-portbld-freebsd${OSREL}
@@ -57,6 +56,7 @@ TARGLIB=	${PREFIX}/lib/gcc${SUFFIX}
 LIBEXEC=	${PREFIX}/libexec/gcc${SUFFIX}
 GNU_CONFIGURE=	yes
 CFLAGS+=	-I${LOCALBASE}/include
+CPPFLAGS+=	-I${LOCALBASE}/include
 CONFIGURE_ARGS+=--disable-nls \
 		--libdir=${TARGLIB} \
 		--libexecdir=${LIBEXEC} \
@@ -68,6 +68,7 @@ CONFIGURE_ARGS+=--disable-nls \
 		--with-libiconv-prefix=${LOCALBASE} \
 		--with-system-zlib
 MAKE_ARGS+=	MAKEINFOFLAGS="--no-split"
+MAKE_ENV+=	CPPFLAGS=${CPPFLAGS}
 ALL_TARGET=	bootstrap-lean
 USE_LDCONFIG=	${TARGLIB}
 PLIST_SUB=	GCC_VER=${PORTVERSION:C/(.+)\.[0-9]+/\1/} \
