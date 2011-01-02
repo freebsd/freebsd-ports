@@ -488,6 +488,7 @@ share/pixmaps/pidgin/emotes/small/writing.png
 share/pixmaps/pidgin/logo.png
 share/pixmaps/pidgin/protocols/16/aim.png
 share/pixmaps/pidgin/protocols/16/bonjour.png
+share/pixmaps/pidgin/protocols/16/facebook.png
 share/pixmaps/pidgin/protocols/16/gadu-gadu.png
 share/pixmaps/pidgin/protocols/16/google-talk.png
 share/pixmaps/pidgin/protocols/16/icq.png
@@ -505,6 +506,7 @@ share/pixmaps/pidgin/protocols/16/yahoo.png
 share/pixmaps/pidgin/protocols/16/zephyr.png
 share/pixmaps/pidgin/protocols/22/aim.png
 share/pixmaps/pidgin/protocols/22/bonjour.png
+share/pixmaps/pidgin/protocols/22/facebook.png
 share/pixmaps/pidgin/protocols/22/gadu-gadu.png
 share/pixmaps/pidgin/protocols/22/google-talk.png
 share/pixmaps/pidgin/protocols/22/icq.png
@@ -521,6 +523,7 @@ share/pixmaps/pidgin/protocols/22/yahoo.png
 share/pixmaps/pidgin/protocols/22/zephyr.png
 share/pixmaps/pidgin/protocols/48/aim.png
 share/pixmaps/pidgin/protocols/48/bonjour.png
+share/pixmaps/pidgin/protocols/48/facebook.png
 share/pixmaps/pidgin/protocols/48/gadu-gadu.png
 share/pixmaps/pidgin/protocols/48/icq.png
 share/pixmaps/pidgin/protocols/48/irc.png
@@ -715,11 +718,11 @@ share/pixmaps/pidgin/tray/hicolor/index.theme
 @dirrm share/pixmaps/pidgin/emotes/none
 @dirrm share/pixmaps/pidgin/emotes/small
 @dirrm share/pixmaps/pidgin/emotes
-@dirrm share/pixmaps/pidgin/protocols/16
-@dirrm share/pixmaps/pidgin/protocols/22
-@dirrm share/pixmaps/pidgin/protocols/48
-@dirrm share/pixmaps/pidgin/protocols/scalable
-@dirrm share/pixmaps/pidgin/protocols
+@dirrmtry share/pixmaps/pidgin/protocols/16
+@dirrmtry share/pixmaps/pidgin/protocols/22
+@dirrmtry share/pixmaps/pidgin/protocols/48
+@dirrmtry share/pixmaps/pidgin/protocols/scalable
+@dirrmtry share/pixmaps/pidgin/protocols
 @dirrm share/pixmaps/pidgin/status/11/rtl
 @dirrm share/pixmaps/pidgin/status/11
 @dirrm share/pixmaps/pidgin/status/16/rtl
