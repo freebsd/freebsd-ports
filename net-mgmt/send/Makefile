@@ -11,7 +11,7 @@ MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	anchie
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
-MAINTAINER=	anchie@freebsd.org
+MAINTAINER=	anchie@FreeBSD.org
 COMMENT=	Secure Neighbor Discovery implementation for IPv6
 
 LIB_DEPENDS=	dnet.1:${PORTSDIR}/net/libdnet

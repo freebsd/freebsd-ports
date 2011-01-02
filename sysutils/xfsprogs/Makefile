@@ -14,7 +14,7 @@ MASTER_SITES=	ftp://oss.sgi.com/projects/xfs/cmd_tars/ \
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 EXTRACT_SUFX=	-1.tar.gz
 
-MAINTAINER=	rodrigc@FreeBSD.ORG
+MAINTAINER=	rodrigc@FreeBSD.org
 COMMENT=	A set of utilities and library to manipulate an xfs filesystem
 
 USE_GMAKE=	yes
