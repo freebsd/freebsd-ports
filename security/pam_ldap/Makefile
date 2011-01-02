@@ -30,9 +30,6 @@ PKGMESSAGE=	${WRKDIR}/pkg-message
 
 MAN5=		pam_ldap.5
 
-post-extract:
-	@${FIND} ${WRKSRC} -type f | ${XARGS} ${TOUCH} -f
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/bin/perl|${LOCALBASE}/bin/perl|' \
 	    	${WRKSRC}/vers_string
