@@ -17,6 +17,9 @@ LIB_DEPENDS=	vdpau.1:${PORTSDIR}/multimedia/libvdpau
 
 GNU_CONFIGURE=	yes
 
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 PLIST_FILES=	bin/vdpauinfo
 
 .include <bsd.port.mk>

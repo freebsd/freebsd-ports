@@ -14,6 +14,8 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	swell.k@gmail.com
 COMMENT=	X11 client library for Common Lisp
 
+LICENSE=	MIT
+
 .if !defined(FASL_BUILD)
 USE_ASDF=	yes
 INFO=		clx
