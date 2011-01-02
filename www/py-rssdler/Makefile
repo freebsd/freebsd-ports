@@ -18,6 +18,8 @@ COMMENT=	Automatically grab link elements of an RSS feed
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}feedparser>=4.1:${PORTSDIR}/textproc/py-feedparser
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}feedparser>=4.1:${PORTSDIR}/textproc/py-feedparser
 
+LICENSE=	GPLv2
+
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
 WRKSRC=		${WRKDIR}/${PORTNAME}${PORTVERSION:S/.//g}

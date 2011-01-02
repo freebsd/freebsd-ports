@@ -16,6 +16,9 @@ COMMENT=	Multi-track non-linear audio editing
 RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/xdg/__init__.py:${PORTSDIR}/devel/py-xdg \
 		easy_install:${PORTSDIR}/devel/py-setuptools
 
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
 USE_GNOME=	gnomehier

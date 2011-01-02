@@ -20,6 +20,10 @@ BUILD_DEPENDS=	${FLEX}:${PORTSDIR}/textproc/flex \
 
 CONFLICTS=	amule-[0-9]*
 
+LICENSE=	GPLv2 GPLv3
+LICENSE_COMB=	dual
+LICENSE_FILE_GPLv2=${WRKSRC}/docs/COPYING
+
 USE_BZIP2=	yes
 USE_GNOME=	pkgconfig
 USE_GMAKE=	yes
