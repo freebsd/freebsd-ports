@@ -10,7 +10,7 @@ PORTREVISION=	4
 CATEGORIES=	misc windowmaker geography
 MASTER_SITES=	http://www.godisch.de/debian/wmweather/
 
-MAINTAINER=	kris@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A WMaker dockapp which displays meteorological data for your city
 
 LIB_DEPENDS=	curl.6:${PORTSDIR}/ftp/curl

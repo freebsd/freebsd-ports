@@ -12,7 +12,7 @@ CATEGORIES=	games
 MASTER_SITES=	http://zapatopi.net/mindguard/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	kris@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Helpful utility for detecting and jamming harmful mind-control rays
 
 USE_GNOME=	gtk12

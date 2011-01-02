@@ -12,7 +12,7 @@ CATEGORIES=	astro
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=kris
 
-MAINTAINER=	kris@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Displays a view of the Earth (like xearth) with a rendered photo map
 
 USE_QT_VER=	3

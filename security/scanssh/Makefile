@@ -11,7 +11,7 @@ PORTREVISION=	8
 CATEGORIES=	security net
 MASTER_SITES=	http://www.monkey.org/~provos/
 
-MAINTAINER=	kris@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Scans networks for open proxies, SSH, Web and SMTP servers
 
 LIB_DEPENDS=	dnet:${PORTSDIR}/net/libdnet \

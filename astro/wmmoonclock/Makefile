@@ -11,7 +11,7 @@ PORTREVISION=	3
 CATEGORIES=	astro windowmaker
 MASTER_SITES=	http://dockapps.org/files/14/21/
 
-MAINTAINER=	kris@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Displays the phase of the moon, plus orbital data
 
 # Distfile says it's a .tar.gz but is actually uncompressed
