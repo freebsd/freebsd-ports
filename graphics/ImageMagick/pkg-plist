@@ -225,6 +225,8 @@ lib/ImageMagick-%%PORTVERSION%%/modules-%%QBIT%%/coders/.keep
 %%JPEG%%%%MODULES%%lib/ImageMagick-%%PORTVERSION%%/modules-%%QBIT%%/coders/jpeg.so
 %%MODULES%%lib/ImageMagick-%%PORTVERSION%%/modules-%%QBIT%%/coders/label.la
 %%MODULES%%lib/ImageMagick-%%PORTVERSION%%/modules-%%QBIT%%/coders/label.so
+%%MODULES%%lib/ImageMagick-%%PORTVERSION%%/modules-%%QBIT%%/coders/mac.la
+%%MODULES%%lib/ImageMagick-%%PORTVERSION%%/modules-%%QBIT%%/coders/mac.so
 %%MODULES%%lib/ImageMagick-%%PORTVERSION%%/modules-%%QBIT%%/coders/magick.la
 %%MODULES%%lib/ImageMagick-%%PORTVERSION%%/modules-%%QBIT%%/coders/magick.so
 %%MODULES%%lib/ImageMagick-%%PORTVERSION%%/modules-%%QBIT%%/coders/map.la
@@ -415,6 +417,7 @@ libdata/pkgconfig/Wand.pc
 %%PORTDOCS%%%%DOCSDIR%%/images/bluebells_log.jpg
 %%PORTDOCS%%%%DOCSDIR%%/images/button.gif
 %%PORTDOCS%%%%DOCSDIR%%/images/configure.jpg
+%%PORTDOCS%%%%DOCSDIR%%/images/cylinder_shaded.png
 %%PORTDOCS%%%%DOCSDIR%%/images/definitive-guide.png
 %%PORTDOCS%%%%DOCSDIR%%/images/difference.png
 %%PORTDOCS%%%%DOCSDIR%%/images/examples.jpg
@@ -449,6 +452,8 @@ libdata/pkgconfig/Wand.pc
 %%PORTDOCS%%%%DOCSDIR%%/images/tricks.png
 %%PORTDOCS%%%%DOCSDIR%%/images/wand.ico
 %%PORTDOCS%%%%DOCSDIR%%/images/white-highlight.png
+%%PORTDOCS%%%%DOCSDIR%%/images/wizard.jpg
+%%PORTDOCS%%%%DOCSDIR%%/images/wizard.png
 %%PORTDOCS%%%%DOCSDIR%%/index.html
 %%PORTDOCS%%%%DOCSDIR%%/www/ImageMagickObject.html
 %%PORTDOCS%%%%DOCSDIR%%/www/Magick++/Blob.html
@@ -1276,6 +1281,7 @@ libdata/pkgconfig/Wand.pc
 %%PORTDOCS%%%%DOCSDIR%%/www/convert.html
 %%PORTDOCS%%%%DOCSDIR%%/www/display.html
 %%PORTDOCS%%%%DOCSDIR%%/www/download.html
+%%PORTDOCS%%%%DOCSDIR%%/www/export.html
 %%PORTDOCS%%%%DOCSDIR%%/www/escape.html
 %%PORTDOCS%%%%DOCSDIR%%/www/examples.html
 %%PORTDOCS%%%%DOCSDIR%%/www/exception.html
@@ -1291,6 +1297,7 @@ libdata/pkgconfig/Wand.pc
 %%PORTDOCS%%%%DOCSDIR%%/www/jp2.html
 %%PORTDOCS%%%%DOCSDIR%%/www/license.html
 %%PORTDOCS%%%%DOCSDIR%%/www/links.html
+%%PORTDOCS%%%%DOCSDIR%%/www/magick++.html
 %%PORTDOCS%%%%DOCSDIR%%/www/magick-core.html
 %%PORTDOCS%%%%DOCSDIR%%/www/magick-vector-graphics.html
 %%PORTDOCS%%%%DOCSDIR%%/www/magick-wand.html
