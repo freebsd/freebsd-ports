@@ -1036,7 +1036,6 @@ bind9-sdb-ldap                  ports/dns/bind9-sdb-ldap
 bind9-sdb-postgresql            ports/dns/bind9-sdb-postgresql
 bind94                          ports/dns/bind94
 bind94-geoip                    ports/dns/bind94-geoip
-bind95                          ports/dns/bind95
 bind96                          ports/dns/bind96
 bind97                          ports/dns/bind97
 bind98                          ports/dns/bind98
@@ -9719,7 +9718,6 @@ movingmotif                     ports/x11-toolkits/movingmotif
 mowitz                          ports/x11-toolkits/mowitz
 mozart                          ports/lang/mozart
 mozex                           ports/www/mozex
-mozilla                         ports/www/mozilla
 mozilla-fonts                   ports/x11-fonts/mozilla-fonts
 mozplugger                      ports/www/mozplugger
 mp                              ports/editors/mp
@@ -21971,7 +21969,6 @@ q4wine                          ports/deskutils/q4wine
 qadsl                           ports/net/qadsl
 qalculate                       ports/math/qalculate
 qar-bufo                        ports/mail/qar-bufo
-qbittorrent-22                  ports/net-p2p/qbittorrent-22
 qbittorrent-23                  ports/net-p2p/qbittorrent-23
 qbrew                           ports/misc/qbrew
 qbzr                            ports/devel/qbzr
