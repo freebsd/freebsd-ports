@@ -27,25 +27,25 @@ USE_AUTOTOOLS=	autoconf
 
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}"
 CONFIGURE_ENV+=	LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS} -lintl"
-CONFIGURE_ARGS+=	--without-alsa
 
 CFLAGS+=	-fPIC
 .if !defined(_BUILDING_LIBQUICKTIME_PLUGINS)
 USE_XORG=	xaw xv
-CONFIGURE_ARGS+=	--with-x --enable-gpl --without-doxygen --without-lame
+CONFIGURE_ARGS=	--with-x --enable-gpl --without-doxygen --without-lame
 MAN1=		lqtplay.1
 
-OPTIONS=	OPENGL "Enable OpenGL support" On \
+OPTIONS=	ALSA "Enable ALSA support" Off \
 		DV "Enable libdv support for digital cameras" On \
-		JPEG "Enable JPEG support" On \
-		PNG "Enable PNG support" On \
-		FFMPEG "Enable FFmpeg support" On \
 		FAAC "Enable FAAC support" Off \
 		FAAD "Enable FAAD support" On \
-		X264 "Enable X264 codec support" On \
-		SCHROEDINGER "Enable dirac support" On \
+		FFMPEG "Enable FFmpeg support" On \
 		GTK2 "Enable Gtk+2 Frontend" Off \
-		OPTIMIZED_CFLAGS "Enable Optimized CFLAGS" Off
+		JPEG "Enable JPEG support" On \
+		OPENGL "Enable OpenGL support" On \
+		OPTIMIZED_CFLAGS "Enable Optimized CFLAGS" Off \
+		PNG "Enable PNG support" On \
+		SCHROEDINGER "Enable dirac support" On \
+		X264 "Enable X264 codec support" On
 
 PORTDOCS=	api_usage.html codecs.html qt4l_building.html \
 		qt4l_codecs.html qt4l_index.html \
@@ -71,6 +71,12 @@ PLIST_SUB+=	GTK=""
 .else
 CONFIGURE_ARGS+=	--without-gtk
 PLIST_SUB+=	GTK="@comment "
+.endif
+
+.if defined(WITH_ALSA)
+LIB_DEPENDS=	asound.2:${PORTSDIR}/audio/alsa-lib
+.else
+CONFIGURE_ARGS+=	--without-alsa
 .endif
 
 .if !defined(WITHOUT_OPENGL)
