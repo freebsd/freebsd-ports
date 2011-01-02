@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gdata
-PORTVERSION=	2.0.12
+PORTVERSION=	2.0.13
 CATEGORIES=	devel python
 MASTER_SITES=	GOOGLE_CODE
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -43,7 +43,7 @@ EXTRA_PATCHES+=	${FILESDIR}/extra-patch-src_atom-mock_service.py \
 .endif
 
 .if defined(WITH_M2CRYPTO)
-RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/M2Crypto/__init__.py:${PORTSDIR}/security/py-m2crypto
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}m2crypto>=0.20:${PORTSDIR}/security/py-m2crypto
 .endif
 .if defined(WITH_PYCRYPTO)
 RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/Crypto/__init__.py:${PORTSDIR}/security/py-pycrypto
