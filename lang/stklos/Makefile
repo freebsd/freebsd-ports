@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	stklos
-PORTVERSION=	1.00
+PORTVERSION=	1.01
 CATEGORIES=	lang scheme
 MASTER_SITES=	http://www.stklos.net/download/ \
 		ftp://kaolin.essi.fr/pub/STklos/
