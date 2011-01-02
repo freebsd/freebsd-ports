@@ -7,6 +7,7 @@
 
 PORTNAME=	eficas
 DISTVERSION=	2.1.1-1
+PORTREVISION=	1
 CATEGORIES=	french cad
 
 MAINTAINER=	ports@FreeBSD.org
@@ -37,12 +38,11 @@ EF_LANG=	fr
 EF_LANG=	ang
 .endif
 
-.if defined(WITH_QT)
+.if !defined(WITHOUT_QT)
 RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/PyQt4/QtGui.so:${PORTSDIR}/x11-toolkits/py-qt4-gui	\
 		${PYTHON_SITELIBDIR}/PyQt4/QtAssistant.so:${PORTSDIR}/devel/py-qt4-assistant
 SUB_FILES+=	qtEficas
 PLIST_SUB+=	QT4=""
-IGNORE=		qtEficas fails ATM ('QListBoxItem*' is not supported as a slot argument type)
 .else
 PLIST_SUB+=	QT4="@comment "
 .endif
@@ -68,6 +68,7 @@ pre-configure:
 	${REINPLACE_CMD} -e "s|'/bin/bash'|'${LOCALBASE}/bin/bash'|"	\
 		${WRKSRC}/Aster/Cata/${cata}
 .endfor
+	${REINPLACE_CMD} -e 's|QListBoxItem\*|QListWidgetItem*|' ${WRKSRC}/InterfaceQT4/*.py
 
 do-install:
 	${MKDIR} ${EFICASDIR}
@@ -77,7 +78,7 @@ do-install:
 	@${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${EFICASDIR}
 	@${PYTHON_CMD} -O ${PYTHON_LIBDIR}/compileall.py ${EFICASDIR}
 	${INSTALL_SCRIPT} ${WRKDIR}/eficas ${PREFIX}/bin
-.if defined(WITH_QT)
+.if !defined(WITHOUT_QT)
 	${INSTALL_SCRIPT} ${WRKDIR}/qtEficas ${PREFIX}/bin
 .endif
 
