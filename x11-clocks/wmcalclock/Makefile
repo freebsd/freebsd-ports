@@ -12,7 +12,7 @@ CATEGORIES=	x11-clocks windowmaker
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=kris
 
-MAINTAINER=	kris@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Another Window Maker calendar/clock dockapp
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/Src

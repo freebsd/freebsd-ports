@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	kris
 DISTNAME=	vsound-${PORTVERSION}
 EXTRACT_ONLY=
 
-MAINTAINER=	kris@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Utility for capturing audio streams from Linux binaries
 
 RUN_DEPENDS=	sox:${PORTSDIR}/audio/sox/

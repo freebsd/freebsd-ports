@@ -10,7 +10,7 @@ PORTVERSION=	0.4.12
 CATEGORIES=	benchmarks databases
 MASTER_SITES=	SF
 
-MAINTAINER=	kris@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A modular, cross-platform and multi-threaded benchmark tool
 
 USE_AUTOTOOLS=	libtool

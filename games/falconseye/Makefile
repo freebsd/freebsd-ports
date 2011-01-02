@@ -12,7 +12,7 @@ CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/NetHack-Falcon_s%20Eye%20%28source%29/${PORTVERSION}
 DISTNAME=	nethack_source_331_jtp_${PORTVERSION:S/.//g}
 
-MAINTAINER=	kris@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	NetHack derivative
 
 RUN_DEPENDS=	timidity:${PORTSDIR}/audio/timidity
