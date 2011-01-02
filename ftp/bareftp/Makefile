@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	bareftp
-PORTVERSION=	0.3.6
+PORTVERSION=	0.3.7
 CATEGORIES=	ftp
-MASTER_SITES=	http://www.bareftp.org/release/ \
-		http://www.predatorlabs.net/dl/
+MASTER_SITES=	http://www.bareftp.org/release/
 
 MAINTAINER=	c.petrik.sosa@gmail.com
 COMMENT=	Ftp client made in C sharp
