@@ -11,11 +11,11 @@
 PORTNAME=	dma
 # commit f54b5114efc65d0e31c7b612bd59cc1b7c8cd8dc
 PORTVERSION=	20101004
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail ipv6
 MASTER_SITES=   LOCAL/bz
 
-MAINTAINER=	bapt@FreeBSD.org
+MAINTAINER=	bz@FreeBSD.org
 COMMENT=	DragonFly Mail Agent, a small MTA for local/outbound mail
 
 USE_BZIP2=	yes
