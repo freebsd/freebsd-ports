@@ -4746,3 +4746,5 @@ java/tya||2010-12-31|Has expired: looks like abandonware and does not compile wt
 net-p2p/qbittorrent-22||2011-01-01|Old version no longer updated
 dns/bind95||2011-01-01|Entered EOL 2010-09 - Update to dns/bind97 or dns/bind96
 www/mozilla|www/seamonkey2|2011-01-01|Unmaintained upstream for years and has security issues
+security/lxnb||2011-01-02|Has expired: Development has ceased, mastersite disappeared
+x11-wm/lxsession-lite|x11-wm/lxsession|2011-01-02|Has expired: Superseded by x11-wm/lxsession
