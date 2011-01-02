@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.lri.fr/~filliatr/ftp/ocamlweb/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${PORTDOCS}
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
-MAINTAINER=	hrs@FreeBSD.ORG
+MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	A literate programming tool for Objective Caml
 
 BUILD_DEPENDS=	ocamlc:${PORTSDIR}/lang/ocaml

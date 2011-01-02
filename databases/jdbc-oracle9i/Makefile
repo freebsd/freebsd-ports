@@ -14,7 +14,7 @@ DISTFILES=	${CLASSES} ${OCRS_FILE}
 DIST_SUBDIR=	oracle9i
 EXTRACT_ONLY=	# none
 
-MAINTAINER=	thierry@FreeBSD.Org
+MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	The JDBC drivers for Oracle 9i
 
 RESTRICTED=	'Must be downloaded direct from Oracle via www interface'

@@ -12,7 +12,7 @@ MASTER_SITES=	http://iroffer.dinoex.net/
 PKGNAMESUFFIX=	-dinoex${PKGNAMESUFFIX2}
 DISTNAME=	iroffer-dinoex-${PORTVERSION}
 
-MAINTAINER=	dinoex@FreeBSD.ORG
+MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	An IRC "bot" that makes sharing files via DCC extremely easy
 
 LICENSE=	GPLv2

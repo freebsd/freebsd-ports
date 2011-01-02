@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://ftp.remotesensing.org/pub/gdal/ \
 		http://dl.maptools.org/dl/gdal/ \
 		http://sunpoet.net/distfiles/
 
-MAINTAINER=	glebius@FreeBSD.ORG
+MAINTAINER=	glebius@FreeBSD.org
 COMMENT=	A translator library for geospatial data formats
 
 USE_AUTOTOOLS=	libtool
