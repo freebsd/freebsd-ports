@@ -5,6 +5,21 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20110103:
+  AFFECTS: users of textproc/libwpd and graphics/libwpg
+  AUTHOR: fluffy@FreeBSD.org
+
+  LibWPD and LibWPG is now using new API, partially incompatible with
+  previous versions.
+  For correct upgrade procedure please upgrade LibWPD and LibWPG first
+  as described, than follow usual upgrade procedure
+
+  # portmaster -o textproc/libwpd08 libwpd
+  # portmaster -o graphics/libwpg01 libwpg
+
+  substitute 'portupgrade' for 'portmaster' accordingly if that's your
+  your upgrade tool of choice.
+
 20101230:
   AFFECTS: users of databases/postgresql??-(server|client)
   AUTHOR: ohauer@FreeBSD.org

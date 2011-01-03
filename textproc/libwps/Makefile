@@ -7,14 +7,14 @@
 
 PORTNAME=	libwps
 PORTVERSION=	0.1.2
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	textproc
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Microsoft file word processor format import filter library
 
-LIB_DEPENDS=	wpd-0.8.8:${PORTSDIR}/textproc/libwpd
+LIB_DEPENDS=	wpd-0.8.8:${PORTSDIR}/textproc/libwpd08
 
 USE_AUTOTOOLS=	libtool
 USE_GNOME=	gnomeprefix gnomehack ltverhack

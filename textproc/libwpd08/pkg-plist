@@ -1,6 +1,3 @@
-bin/wpd2html
-bin/wpd2raw
-bin/wpd2text
 include/libwpd-0.8/libwpd/GSFStream.h
 include/libwpd-0.8/libwpd/WPDocument.h
 include/libwpd-0.8/libwpd/WPXHLListenerImpl.h
