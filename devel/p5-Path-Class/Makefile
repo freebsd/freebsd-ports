@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Path-Class
-PORTVERSION=	0.21
+PORTVERSION=	0.23
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN/../../authors/id/K/KW/KWILLIAMS/
 PKGNAMEPREFIX=	p5-
@@ -18,6 +18,7 @@ PERL_MODBUILD=	yes
 
 MAN3=		Path::Class.3 \
 		Path::Class::File.3 \
+		Path::Class::Entity.3 \
 		Path::Class::Dir.3
 
 .if !defined(NOPORTDOCS)
