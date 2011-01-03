@@ -9,7 +9,6 @@ PORTNAME=	dalmp
 PORTVERSION=	0.9.240
 CATEGORIES=	databases
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
-DISTNAME=	dalmp
 
 MAINTAINER=	nbari@dalmp.com
 COMMENT=	Database Abstraction Layer for MySQL using PHP
