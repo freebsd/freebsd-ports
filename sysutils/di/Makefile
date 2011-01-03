@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	di
-PORTVERSION=	4.26
+PORTVERSION=	4.27
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.gentoo.com/di/ \
 		http://fresh.t-systems-sfr.com/unix/src/privat2/
@@ -29,6 +29,6 @@ MAKE_ENV+=	LDFLAGS="${LDFLAGS}" prefix="${PREFIX}"
 .include <bsd.port.pre.mk>
 
 post-patch:
-	@${REINPLACE_CMD} -e "s|zoneid_t|zoneId_t|g" ${WRKSRC}/di.c
+	@${REINPLACE_CMD} -e "s|zoneid_t|zoneId_t|g" ${WRKSRC}/C/di.c
 
 .include <bsd.port.post.mk>
