@@ -51,8 +51,7 @@ OPTIONS=	DBUS "Enable D-BUS support" on
 
 .include <bsd.port.pre.mk>
 
-GECKO_PTHREAD_LIBS!=${CC} -dumpspecs | ${GREP} -m 1 '%{\!pg: %{pthread:' | ${SED
-} -e 's|^.*%{\!pg: %{pthread:|| ; s|}.*$$||' || ${TRUE}
+GECKO_PTHREAD_LIBS!=${CC} -dumpspecs | ${GREP} -m 1 '%{\!pg: %{pthread:' | ${SED} -e 's|^.*%{\!pg: %{pthread:|| ; s|}.*$$||' || ${TRUE}
 
 .if ${OSVERSION} < 700000
 LIB_DEPENDS+=	pulse.0:${PORTSDIR}/audio/pulseaudio
