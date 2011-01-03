@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Hash-Merge-Simple
-PORTVERSION=	0.05
+PORTVERSION=	0.051
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -18,8 +18,6 @@ RUN_DEPENDS=	p5-Clone>=0:${PORTSDIR}/devel/p5-Clone
 BUILD_DEPENDS=	${RUN_DEPENDS}
 BUILD_DEPENDS+=	p5-Test-Deep>=0:${PORTSDIR}/devel/p5-Test-Deep \
 		p5-Test-Most>=0:${PORTSDIR}/devel/p5-Test-Most
-
-PERL_CONFIGURE=	5.8.1+
 
 MAN3=	Hash::Merge::Simple.3
 
