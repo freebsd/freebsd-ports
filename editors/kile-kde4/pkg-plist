@@ -55,6 +55,7 @@ share/apps/kile/complete/tex/enumerate.cwl
 share/apps/kile/complete/tex/esint.cwl
 share/apps/kile/complete/tex/fancybox.cwl
 share/apps/kile/complete/tex/fancyhdr.cwl
+share/apps/kile/complete/tex/fancyref.cwl
 share/apps/kile/complete/tex/fancyunits-base.cwl
 share/apps/kile/complete/tex/fancyunits-np.cwl
 share/apps/kile/complete/tex/fancyunits-per.cwl
@@ -87,6 +88,7 @@ share/apps/kile/complete/tex/mdwlist.cwl
 share/apps/kile/complete/tex/multicol.cwl
 share/apps/kile/complete/tex/multido.cwl
 share/apps/kile/complete/tex/nicefrac.cwl
+share/apps/kile/complete/tex/nomencl.cwl
 share/apps/kile/complete/tex/pdfpages.cwl
 share/apps/kile/complete/tex/psfrag.cwl
 share/apps/kile/complete/tex/pst-3d.cwl
@@ -117,6 +119,7 @@ share/apps/kile/complete/tex/tabularx.cwl
 share/apps/kile/complete/tex/tex.cwl
 share/apps/kile/complete/tex/textcomp.cwl
 share/apps/kile/complete/tex/todonotes.cwl
+share/apps/kile/complete/tex/units.cwl
 share/apps/kile/complete/tex/url.cwl
 share/apps/kile/complete/tex/varioref.cwl
 share/apps/kile/complete/tex/verse.cwl
@@ -371,6 +374,7 @@ share/apps/kile/icons/hicolor/32x32/actions/dvipng.png
 share/apps/kile/icons/hicolor/32x32/actions/dvips.png
 share/apps/kile/icons/hicolor/32x32/actions/dvisearch.png
 share/apps/kile/icons/hicolor/32x32/actions/environment.png
+share/apps/kile/icons/hicolor/32x32/actions/joincells.png
 share/apps/kile/icons/hicolor/32x32/actions/js.png
 share/apps/kile/icons/hicolor/32x32/actions/l2h.png
 share/apps/kile/icons/hicolor/32x32/actions/latex.png
@@ -383,6 +387,7 @@ share/apps/kile/icons/hicolor/32x32/actions/pdftex.png
 share/apps/kile/icons/hicolor/32x32/actions/ps2pdf.png
 share/apps/kile/icons/hicolor/32x32/actions/scriptnew.png
 share/apps/kile/icons/hicolor/32x32/actions/scriptopen.png
+share/apps/kile/icons/hicolor/32x32/actions/splitcells.png
 share/apps/kile/icons/hicolor/32x32/actions/sqrt.png
 share/apps/kile/icons/hicolor/32x32/actions/texcompiler.png
 share/apps/kile/icons/hicolor/32x32/actions/viewbib.png
@@ -1433,6 +1438,7 @@ share/config.kcfg/kile.kcfg
 share/dbus-1/interfaces/net.sourceforge.kile.main.xml
 share/doc/HTML/en/kile/bullets.png
 share/doc/HTML/en/kile/command-view.png
+share/doc/HTML/en/kile/common
 share/doc/HTML/en/kile/complete_cmd1.png
 share/doc/HTML/en/kile/complete_cmd2.png
 share/doc/HTML/en/kile/complete_env1.png
@@ -1496,9 +1502,8 @@ share/icons/hicolor/32x32/apps/kile.png
 share/icons/hicolor/48x48/apps/kile.png
 share/icons/hicolor/64x64/apps/kile.png
 share/icons/hicolor/scalable/apps/kile.svgz
-share/mimelink/text/x-kilepr.desktop
-@dirrmtry share/mimelink/text
-@dirrmtry share/mimelink
+share/mime/packages/kile.xml
+share/mime/text/x-kilepr.xml
 @dirrm share/doc/kile
 @dirrm share/doc/HTML/en/kile
 @dirrm share/apps/kile/test
@@ -1538,3 +1543,5 @@ share/mimelink/text/x-kilepr.desktop
 @dirrm share/apps/kile/complete/abbreviation
 @dirrm share/apps/kile/complete
 @dirrm share/apps/kile
+@exec %%LOCALBASE%%/bin/update-mime-database %D/share/mime > /dev/null || /usr/bin/true
+@unexec %%LOCALBASE%%/bin/update-mime-database %D/share/mime > /dev/null || /usr/bin/true
