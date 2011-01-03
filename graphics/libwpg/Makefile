@@ -6,15 +6,16 @@
 #
 
 PORTNAME=	libwpg
-PORTVERSION=	0.1.3
-PORTREVISION=	5
+PORTVERSION=	0.2.0
 CATEGORIES=	graphics
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	fluffy@FreeBSD.org
 COMMENT=	Library for importing and converting Corel WordPerfect(tm) Graphics images
 
-LIB_DEPENDS=	wpd-0.8.8:${PORTSDIR}/textproc/libwpd
+LIB_DEPENDS=	wpd-0.9.9:${PORTSDIR}/textproc/libwpd
+
+LICENSE=	LGPL20
 
 USE_AUTOTOOLS=	libtool
 USE_GNOME=	gnomeprefix gnomehack ltverhack

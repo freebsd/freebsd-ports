@@ -492,6 +492,7 @@
     SUBDIR += libvisual04-plugins
     SUBDIR += libwmf
     SUBDIR += libwpg
+    SUBDIR += libwpg01
     SUBDIR += libx3dtk
     SUBDIR += lightspark-devel
     SUBDIR += linplasma

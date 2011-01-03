@@ -11,15 +11,22 @@ PORTREVISION=	3
 CATEGORIES=	textproc
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	mi@aldan.algebra.com
+MAINTAINER=	fluffy@FreeBSD.org
 COMMENT=	Tools for importing and exporting WordPerfect(tm) documents
+
+LATEST_LINK=	${PORTNAME}08
+
+LICENSE=	LGPL21
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_GNOME=	gnomehack libgsf
 USE_LDCONFIG=	yes
-ALL_TARGET=	-j`${SYSCTL} -n hw.ncpu`
+MAKE_JOBS_SAFE=	yes
 
 CONFIGURE_ARGS+=--without-docs
+
+post-patch:
+	@${REINPLACE_CMD} -E '/^SUBDIRS = /s/conv//g' ${WRKSRC}/src/Makefile.in
 
 .include <bsd.port.mk>

@@ -7,7 +7,7 @@
 
 PORTNAME=	koffice
 PORTVERSION=	1.6.3
-PORTREVISION=	14
+PORTREVISION=	15
 PORTEPOCH=	2
 CATEGORIES=	editors kde
 MASTER_SITES=	${MASTER_SITE_KDE}
@@ -27,7 +27,7 @@ LIB_DEPENDS=	GraphicsMagick++.1:${PORTSDIR}/graphics/GraphicsMagick \
 		lcms.1:${PORTSDIR}/graphics/lcms \
 		paper.2:${PORTSDIR}/print/libpaper \
 		poppler-qt.2:${PORTSDIR}/graphics/poppler-qt \
-		wpd-0.8.8:${PORTSDIR}/textproc/libwpd \
+		wpd-0.8.8:${PORTSDIR}/textproc/libwpd08 \
 		wv2.4:${PORTSDIR}/textproc/wv2
 RUN_DEPENDS=	${LOCALBASE}/lib/libpqxx.a:${PORTSDIR}/databases/postgresql-libpqxx
 

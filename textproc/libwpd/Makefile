@@ -6,19 +6,20 @@
 #
 
 PORTNAME=	libwpd
-PORTVERSION=	0.8.14
-PORTREVISION=	3
+PORTVERSION=	0.9.0
 CATEGORIES=	textproc
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	mi@aldan.algebra.com
+MAINTAINER=	fluffy@FreeBSD.org
 COMMENT=	Tools for importing and exporting WordPerfect(tm) documents
+
+LICENSE=	LGPL21
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_GNOME=	gnomehack libgsf
 USE_LDCONFIG=	yes
-ALL_TARGET=	-j`${SYSCTL} -n hw.ncpu`
+MAKE_JOBS_SAFE=	yes
 
 CONFIGURE_ARGS+=--without-docs
 

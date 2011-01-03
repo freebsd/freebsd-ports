@@ -333,6 +333,7 @@
     SUBDIR += libuninameslist
     SUBDIR += libupskirt
     SUBDIR += libwpd
+    SUBDIR += libwpd08
     SUBDIR += libwps
     SUBDIR += libxdiff
     SUBDIR += libxml

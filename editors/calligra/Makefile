@@ -7,7 +7,7 @@
 
 PORTNAME=	koffice
 PORTVERSION=	${KOFFICE2_VERSION}
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	editors kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/${PORTNAME}-${PORTVERSION}/
@@ -29,7 +29,7 @@ LIB_DEPENDS=	boost_thread.4:${PORTSDIR}/devel/boost-libs \
 		jpeg.11:${PORTSDIR}/graphics/jpeg \
 		kipi.7:${PORTSDIR}/graphics/kdegraphics4 \
 		lcms.1:${PORTSDIR}/graphics/lcms \
-		wpg-0.1:${PORTSDIR}/graphics/libwpg \
+		wpg-0.1:${PORTSDIR}/graphics/libwpg01 \
 		png.6:${PORTSDIR}/graphics/png \
 		poppler-qt4.3:${PORTSDIR}/graphics/poppler-qt4 \
 		tiff.4:${PORTSDIR}/graphics/tiff \
