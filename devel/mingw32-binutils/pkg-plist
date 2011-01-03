@@ -7,6 +7,7 @@
 %%BINUTILS_TARG%%/bin/dllwrap
 %%BINUTILS_TARG%%/bin/gprof
 %%BINUTILS_TARG%%/bin/ld
+%%BINUTILS_TARG%%/bin/ld.bfd
 %%BINUTILS_TARG%%/bin/nm
 %%BINUTILS_TARG%%/bin/objcopy
 %%BINUTILS_TARG%%/bin/objdump
@@ -29,8 +30,10 @@ bin/%%BINUTILS_TARG%%-as
 bin/%%BINUTILS_TARG%%-c++filt
 bin/%%BINUTILS_TARG%%-dlltool
 bin/%%BINUTILS_TARG%%-dllwrap
+bin/%%BINUTILS_TARG%%-elfedit
 bin/%%BINUTILS_TARG%%-gprof
 bin/%%BINUTILS_TARG%%-ld
+bin/%%BINUTILS_TARG%%-ld.bfd
 bin/%%BINUTILS_TARG%%-nm
 bin/%%BINUTILS_TARG%%-objcopy
 bin/%%BINUTILS_TARG%%-objdump
