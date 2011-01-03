@@ -7,6 +7,7 @@
 
 PORTNAME=	firefox35-i18n
 PORTVERSION=	3.5.16
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITE_SUBDIR=	firefox/releases/${PORTVERSION}/linux-i686/xpi
 PKGNAMEPREFIX=
@@ -16,6 +17,7 @@ DIST_SUBDIR=	xpi/${DISTNAME}
 MAINTAINER=	gecko@FreeBSD.org
 COMMENT=	Localized interface for Firefox3.5
 
+USE_FIREFOX=	35
 USE_XPI=	*firefox3
 
 USE_SUBMAKE=	yes
