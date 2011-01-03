@@ -1018,6 +1018,7 @@
     SUBDIR += slirp
     SUBDIR += slurm
     SUBDIR += smb4k
+    SUBDIR += smb4k-kde4
     SUBDIR += smbldap-tools
     SUBDIR += smm++
     SUBDIR += sniffit
