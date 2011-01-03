@@ -55,7 +55,6 @@
     SUBDIR += efreet
     SUBDIR += emprint
     SUBDIR += emu
-    SUBDIR += enterminus
     SUBDIR += erun
     SUBDIR += eterm
     SUBDIR += etoile
