@@ -14,7 +14,7 @@ Patch attached with submission follows:
   							"cuaa",    //dialout serial ports
 + 							"ttyu",    //general purpose serial ports (uart)
 + 							"cuau",    //dialout serial ports (uart)
-+ 							"ttyD",    //USB serial ports
++ 							"ttyU",    //USB serial ports
 + 							"cuaU",    //USB dial in serial ports
   							"ttyA",    //Specialix SI/XIO dialin ports
   							"cuaA",    //Specialix SI/XIO dialout ports
