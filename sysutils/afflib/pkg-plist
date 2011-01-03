@@ -16,7 +16,6 @@ bin/affxml
 include/afflib/afflib.h
 include/afflib/afflib_i.h
 include/afflib/aftimer.h
-include/afflib/threaded_hash.h
 include/afflib/utils.h
 lib/libafflib.a
 lib/libafflib.la
