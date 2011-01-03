@@ -35,7 +35,6 @@
     SUBDIR += e16
     SUBDIR += e16utils
     SUBDIR += e17-module-alarm
-    SUBDIR += e17-module-bling
     SUBDIR += e17-module-calendar
     SUBDIR += e17-module-cpu
     SUBDIR += e17-module-deskshow
@@ -59,7 +58,6 @@
     SUBDIR += e17-module-language
     SUBDIR += e17-module-mail
     SUBDIR += e17-module-mem
-    SUBDIR += e17-module-mixer
     SUBDIR += e17-module-moon
     SUBDIR += e17-module-mpdule
     SUBDIR += e17-module-net
@@ -80,7 +78,6 @@
     SUBDIR += e17-module-winselector
     SUBDIR += e17-module-wlan
     SUBDIR += e17-modules
-    SUBDIR += e17-utils
     SUBDIR += echinus
     SUBDIR += ede
     SUBDIR += emerald

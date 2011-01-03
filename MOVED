@@ -4748,3 +4748,52 @@ dns/bind95||2011-01-01|Entered EOL 2010-09 - Update to dns/bind97 or dns/bind96
 www/mozilla|www/seamonkey2|2011-01-01|Unmaintained upstream for years and has security issues
 security/lxnb||2011-01-02|Has expired: Development has ceased, mastersite disappeared
 x11-wm/lxsession-lite|x11-wm/lxsession|2011-01-02|Has expired: Superseded by x11-wm/lxsession
+audio/emphasis||2011-01-03|Has expired: abandoned upstream
+converters/ecore-txt||2011-01-03|Has expired: abandoned upstream
+deskutils/estickies||2011-01-03|Has expired: abandoned upstream
+devel/ecore-job||2011-01-03|Has expired: abandoned upstream
+devel/engrave||2011-01-03|Has expired: abandoned upstream
+devel/evfs||2011-01-03|Has expired: abandoned upstream
+devel/ruby-ecore||2011-01-03|Has expired: abandoned upstream
+graphics/exhibit||2011-01-03|Has expired: abandoned upstream
+graphics/epsilon||2011-01-03|Has expired: abandoned upstream
+graphics/esmart||2011-01-03|Has expired: abandoned upstream
+graphics/ruby-edje||2011-01-03|Has expired: abandoned upstream
+graphics/ruby-esmart||2011-01-03|Has expired: abandoned upstream
+graphics/ruby-evas||2011-01-03|Has expired: abandoned upstream
+graphics/ruby-redact||2011-01-03|Has expired: abandoned upstream
+multimedia/eclair||2011-01-03|Has expired: abandoned upstream
+security/phpmyid||2011-01-03|Has expired: Development has ceased.
+sysutils/ecore-config||2011-01-03|Has expired: abandoned upstream
+sysutils/extrackt||2011-01-03|Has expired: abandoned upstream
+textproc/exml||2011-01-03|Has expired: abandoned upstream
+www/mod_accesscookie||2011-01-03|Has expired: upstream is gone
+www/mod_vdbh||2011-01-03|Has expired: upstream is gone
+www/mod_auth_any||2011-01-03|Has expired: upstream is gone
+www/mod_log_data||2011-01-03|Has expired: upstream is gone and will be unsupported by ASF when 2.4.0 is release, migrate to 2.2.x+ now
+x11-fm/entropyfm||2011-01-03|Has expired: abandoned upstream
+x11-themes/e17-splash-fortune||2011-01-03|Has expired: abandoned upstream
+x11-themes/e17-splash-shiny||2011-01-03|Has expired: abandoned upstream
+x11-themes/e17-splash-takara||2011-01-03|Has expired: abandoned upstream
+x11-themes/e17-theme-blue_eyed||2011-01-03|Has expired: abandoned upstream
+x11-themes/e17-theme-dali||2011-01-03|Has expired: abandoned upstream
+x11-themes/e17-theme-gant||2011-01-03|Has expired: abandoned upstream
+x11-themes/e17-theme-japan2007||2011-01-03|Has expired: abandoned upstream
+x11-themes/e17-theme-kor||2011-01-03|Has expired: abandoned upstream
+x11-themes/e17-theme-milky||2011-01-03|Has expired: abandoned upstream
+x11-themes/e17-theme-night_bling||2011-01-03|Has expired: abandoned upstream
+x11-themes/e17-theme-simply_white||2011-01-03|Has expired: abandoned upstream
+x11-themes/e17-splash-azul||2011-01-03|Has expired: abandoned upstream
+x11-themes/e17-splash-blue||2011-01-03|Has expired: abandoned upstream
+x11-themes/e17-splash-clean||2011-01-03|Has expired: abandoned upstream
+x11-themes/e17-splash-logo||2011-01-03|Has expired: abandoned upstream
+x11-toolkits/etk||2011-01-03|Has expired: abandoned upstream
+x11-toolkits/ewl||2011-01-03|Has expired: abandoned upstream
+x11-toolkits/enhance||2011-01-03|Has expired: abandoned upstream
+x11-wm/e17-module-bling||2011-01-03|Has expired: abandoned upstream
+x11-wm/e17-module-mixer||2011-01-03|Has expired: abandoned upstream
+x11-wm/e17-utils||2011-01-03|Has expired: abandoned upstream
+x11/elicit||2011-01-03|Has expired: abandoned upstream
+x11/enity||2011-01-03|Has expired: abandoned upstream
+x11/examine||2011-01-03|Has expired: abandoned upstream
+x11/ecore-desktop||2011-01-03|Has expired: abandoned upstream

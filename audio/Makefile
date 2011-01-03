@@ -145,7 +145,6 @@
     SUBDIR += ecasound
     SUBDIR += ecawave
     SUBDIR += emms
-    SUBDIR += emphasis
     SUBDIR += emu10kx
     SUBDIR += enscribe
     SUBDIR += epos-devel

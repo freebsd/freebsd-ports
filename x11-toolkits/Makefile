@@ -15,9 +15,6 @@
     SUBDIR += eel
     SUBDIR += efltk
     SUBDIR += elementary
-    SUBDIR += enhance
-    SUBDIR += etk
-    SUBDIR += ewl
     SUBDIR += fl_editor
     SUBDIR += flowcanvas
     SUBDIR += fltk

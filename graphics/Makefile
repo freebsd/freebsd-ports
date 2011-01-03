@@ -137,9 +137,7 @@
     SUBDIR += epeg
     SUBDIR += epix
     SUBDIR += eps2png
-    SUBDIR += epsilon
     SUBDIR += epstool
-    SUBDIR += esmart
     SUBDIR += eterm-bg
     SUBDIR += ethumb
     SUBDIR += evas
@@ -163,7 +161,6 @@
     SUBDIR += evince
     SUBDIR += evolvotron
     SUBDIR += exact-image
-    SUBDIR += exhibit
     SUBDIR += exif
     SUBDIR += exifprobe
     SUBDIR += exiftags
@@ -841,9 +838,6 @@
     SUBDIR += ristretto
     SUBDIR += robot
     SUBDIR += ruby-cairo
-    SUBDIR += ruby-edje
-    SUBDIR += ruby-esmart
-    SUBDIR += ruby-evas
     SUBDIR += ruby-gd
     SUBDIR += ruby-gdk_pixbuf2
     SUBDIR += ruby-gnomecanvas2
@@ -855,7 +849,6 @@
     SUBDIR += ruby-ming
     SUBDIR += ruby-opengl
     SUBDIR += ruby-pgplot
-    SUBDIR += ruby-redact
     SUBDIR += ruby-rmagick
     SUBDIR += ruby-rsvg2
     SUBDIR += ruby-svg

@@ -45,7 +45,6 @@
     SUBDIR += ecru
     SUBDIR += egroupware
     SUBDIR += epoch
-    SUBDIR += estickies
     SUBDIR += etask
     SUBDIR += etoile-corner
     SUBDIR += etoile-dictionaryreader

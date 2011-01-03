@@ -46,7 +46,6 @@
     SUBDIR += dzen2
     SUBDIR += eaglemode
     SUBDIR += ebuttons
-    SUBDIR += ecore-desktop
     SUBDIR += ecore-imf
     SUBDIR += ecore-imf_evas
     SUBDIR += ecore-input
@@ -54,10 +53,8 @@
     SUBDIR += ecore-x11
     SUBDIR += editres
     SUBDIR += efreet
-    SUBDIR += elicit
     SUBDIR += emprint
     SUBDIR += emu
-    SUBDIR += enity
     SUBDIR += enterminus
     SUBDIR += erun
     SUBDIR += eterm
@@ -67,7 +64,6 @@
     SUBDIR += etoile-xwindowserverkit
     SUBDIR += evieext
     SUBDIR += evilvte
-    SUBDIR += examine
     SUBDIR += fbdesk
     SUBDIR += fbpanel
     SUBDIR += fbsd-icons

@@ -50,7 +50,6 @@
     SUBDIR += dvdrip
     SUBDIR += dvdstyler
     SUBDIR += dvts
-    SUBDIR += eclair
     SUBDIR += emotion
     SUBDIR += emovix
     SUBDIR += enjoympeg
