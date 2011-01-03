@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	openfire
-PORTVERSION=	3.6.4
+DISTVERSION=	3.7.0.beta
 CATEGORIES=	net-im java
-MASTER_SITES=	http://download.igniterealtime.org/openfire/
-DISTNAME=	${PORTNAME}_src_${PORTVERSION:S/./_/g}
+MASTER_SITES=	http://www.igniterealtime.org/downloadServlet?filename=openfire/
+DISTNAME=	${PORTNAME}_src_${DISTVERSION:S/./_/g}
 
 MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	Openfire (formerly Wildfire) is an enterprise instant messaging server
@@ -23,7 +23,7 @@ JAVA_VERSION=	1.5+
 
 CONFLICTS=	wildfire-[0-9]*
 
-ALL_TARGET=	openfire
+ALL_TARGET=	openfire plugins
 USE_RC_SUBR=	openfire
 SUB_FILES=	pkg-message
 
