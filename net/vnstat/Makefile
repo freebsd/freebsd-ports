@@ -7,7 +7,7 @@
 
 PORTNAME=	vnstat
 PORTVERSION=	1.10
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net
 MASTER_SITES=	http://humdi.net/vnstat/ \
 		http://mirror.mcx2.org/
@@ -15,22 +15,34 @@ MASTER_SITES=	http://humdi.net/vnstat/ \
 MAINTAINER=	dhn@FreeBSD.org
 COMMENT=	A console-based network traffic monitor
 
-LIB_DEPENDS+=	gd.4:${PORTSDIR}/graphics/gd
-
 MAKE_ARGS=	CFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 INSTALL_TARGET=	bsdinstall
 
-MAN1=	vnstat.1 vnstatd.1 vnstati.1
+MAN1=	vnstat.1 vnstatd.1
 MAN5=	vnstat.conf.5
 MANCOMPRESSED=	yes
 PORTDOCS=	README INSTALL_BSD UPGRADE vnstat-cron
 SUB_FILES=	pkg-message
 
+# will compile with image output
+OPTIONS=	GUI "Build with graphics/gd dependency" on
+
+.include <bsd.port.options.mk>
+
 PLIST_FILES=	bin/vnstat \
 		sbin/vnstatd \
-		bin/vnstati \
+		%%GUI%%bin/vnstati \
 		etc/vnstat.conf.sample
+
+.if !defined(WITHOUT_GUI)
+LIB_DEPENDS+=	gd.4:${PORTSDIR}/graphics/gd
+PLIST_SUB+=	GUI=""
+MAN1+=	vnstati.1
+.else
+ALL_TARGET="vnstat"
+PLIST_SUB+=	GUI="@comment "
+.endif
 
 post-extract:
 	@cd ${WRKSRC} && ${CP} examples/vnstat.cron vnstat-cron
