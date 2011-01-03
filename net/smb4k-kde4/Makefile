@@ -7,6 +7,7 @@
 
 PORTNAME=		smb4k
 PORTVERSION=		0.10.9
+PORTREVISION=		1
 CATEGORIES=		net kde
 MASTER_SITES=		${MASTER_SITE_BERLIOS}
 MASTER_SITE_SUBDIR=	smb4k
@@ -22,7 +23,7 @@ SAMBA_PORT?=	net/samba34
 USE_CMAKE=	yes
 USE_GETTEXT=	yes
 USE_BZIP2=	yes
-USE_LDCONFIG=	${PREFIX}/lib ${PREFIX}/lib/kde4
+USE_LDCONFIG=	${PREFIX}/kde4/lib ${PREFIX}/kde4/lib/kde4
 INSTALLS_ICONS=	yes
 USE_KDE4=	kdehier kdeprefix kdelibs automoc4
 USE_QT_VER=	4
