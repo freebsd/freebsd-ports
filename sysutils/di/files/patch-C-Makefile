@@ -1,0 +1,38 @@
+--- C/Makefile.orig	2011-01-01 15:25:04.000000000 -0500
++++ C/Makefile	2011-01-02 15:29:46.000000000 -0500
+@@ -6,7 +6,7 @@
+ #  $Id: Makefile,v 1.109 2010-12-31 21:15:39-08 bll Exp $
+ #
+ 
+-CC = cc
++CC ?= cc
+ # for tests.done
+ DC = gdc
+ 
+@@ -34,7 +34,7 @@
+ ###
+ # installation options
+ #
+-prefix = /usr/local
++prefix ?= /usr/local
+ LOCALEDIR = $(prefix)/share/locale
+ PROG = di
+ MPROG = mi
+@@ -145,7 +145,7 @@
+ 	$(MAKE) _MKCONFIG_SHELL=$(MKCONFIG_SHELL) \
+ 		CC=cc LD=cc EXE_EXT="" OBJ_EXT=".o" \
+ 		CFLAGS="$(CFLAGS) -O" \
+-		LDFLAGS="-O" di-programs
++		LDFLAGS="-O $(LDFLAGS)" di-programs
+ 
+ bsd43-gcc:
+ 	@$(MAKE) ../dioptions.dat
+@@ -156,7 +156,7 @@
+ 	$(MAKE) _MKCONFIG_SHELL=$(MKCONFIG_SHELL) \
+ 		CC=gcc LD=gcc EXE_EXT="" OBJ_EXT=".o" \
+ 		CFLAGS="$(CFLAGS) -O2" \
+-		LDFLAGS="-O2" di-programs
++		LDFLAGS="-O2 $(LDFLAGS)" di-programs
+ 
+ ###
+ # cleaning
