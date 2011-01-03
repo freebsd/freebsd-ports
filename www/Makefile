@@ -433,10 +433,8 @@
     SUBDIR += mnogosearch
     SUBDIR += mod_access_identd
     SUBDIR += mod_access_referer
-    SUBDIR += mod_accesscookie
     SUBDIR += mod_accounting
     SUBDIR += mod_antiloris
-    SUBDIR += mod_auth_any
     SUBDIR += mod_auth_cas
     SUBDIR += mod_auth_cookie_mysql
     SUBDIR += mod_auth_cookie_mysql2
@@ -514,7 +512,6 @@
     SUBDIR += mod_line_edit
     SUBDIR += mod_lisp2
     SUBDIR += mod_log_config-st
-    SUBDIR += mod_log_data
     SUBDIR += mod_log_dbd
     SUBDIR += mod_log_firstbyte
     SUBDIR += mod_log_mysql
@@ -566,7 +563,6 @@
     SUBDIR += mod_tsa
     SUBDIR += mod_tsunami
     SUBDIR += mod_uid
-    SUBDIR += mod_vdbh
     SUBDIR += mod_vhost_ldap
     SUBDIR += mod_vhs
     SUBDIR += mod_webkit

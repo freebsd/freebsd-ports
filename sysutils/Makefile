@@ -193,7 +193,6 @@
     SUBDIR += dvtm
     SUBDIR += dwatch
     SUBDIR += e2fsprogs
-    SUBDIR += ecore-config
     SUBDIR += eiciel
     SUBDIR += eject
     SUBDIR += empower
@@ -211,7 +210,6 @@
     SUBDIR += eventlog
     SUBDIR += evtviewer
     SUBDIR += extipl
-    SUBDIR += extrackt
     SUBDIR += ezjail
     SUBDIR += facter
     SUBDIR += fanout

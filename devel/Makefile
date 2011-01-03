@@ -343,7 +343,6 @@
     SUBDIR += ecore
     SUBDIR += ecore-file
     SUBDIR += ecore-ipc
-    SUBDIR += ecore-job
     SUBDIR += ecore-main
     SUBDIR += ecos-tools
     SUBDIR += eet
@@ -360,7 +359,6 @@
     SUBDIR += elftoaout
     SUBDIR += elib
     SUBDIR += elib-emacs21
-    SUBDIR += engrave
     SUBDIR += entity
     SUBDIR += epm
     SUBDIR += epydoc
@@ -377,7 +375,6 @@
     SUBDIR += etoile-serialize
     SUBDIR += etoile-unitkit
     SUBDIR += eventxx
-    SUBDIR += evfs
     SUBDIR += evolution-gconf-tools
     SUBDIR += excalibur-configuration
     SUBDIR += f77flow
@@ -3059,7 +3056,6 @@
     SUBDIR += ruby-cvs
     SUBDIR += ruby-date2
     SUBDIR += ruby-dialogs
-    SUBDIR += ruby-ecore
     SUBDIR += ruby-eet
     SUBDIR += ruby-event-loop
     SUBDIR += ruby-fam

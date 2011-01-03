@@ -10,7 +10,6 @@
     SUBDIR += dfm
     SUBDIR += dolphin
     SUBDIR += emelfm2
-    SUBDIR += entropyfm
     SUBDIR += etoile-fontmanager
     SUBDIR += ezfm
     SUBDIR += filerunner

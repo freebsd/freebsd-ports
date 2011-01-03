@@ -648,7 +648,6 @@
     SUBDIR += php52-mhash
     SUBDIR += php52-openssl
     SUBDIR += phpdeadlock
-    SUBDIR += phpmyid
     SUBDIR += phpsecinfo
     SUBDIR += pidentd
     SUBDIR += pidgin-encryption
