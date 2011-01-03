@@ -115,6 +115,7 @@
 %%WWWDIR%%/languages/installer_lang.php
 %%WWWDIR%%/languages/installer_lang_default.php
 %%WWWDIR%%/languages/lang_arabic.conf.default
+%%WWWDIR%%/languages/lang_catalan.conf.default
 %%WWWDIR%%/languages/lang_chinese_simplified.conf.default
 %%WWWDIR%%/languages/lang_english.conf.default
 %%WWWDIR%%/languages/lang_german.conf.default
