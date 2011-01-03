@@ -24951,6 +24951,7 @@ tpb                             ports/deskutils/tpb
 tpg                             ports/devel/tpg
 tpm-emulator                    ports/emulators/tpm-emulator
 tpm-tools                       ports/security/tpm-tools
+tpmmanager                      ports/security/tpmmanager
 tpop3d                          ports/mail/tpop3d
 tpp                             ports/misc/tpp
 tptest                          ports/net/tptest
