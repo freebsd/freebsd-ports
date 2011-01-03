@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mbuffer
-PORTVERSION=	2010.05.26
+PORTVERSION=	2010.12.30
 CATEGORIES=	misc
 MASTER_SITES=	http://www.maier-komor.de/software/mbuffer/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.//g}
@@ -14,6 +14,9 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	rafan@FreeBSD.org
 COMMENT=	A tool for buffering data streams
+
+LICENSE=	GPLv3
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
