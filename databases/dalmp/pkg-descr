@@ -1,0 +1,17 @@
+DALMP - Database Abstraction Layer for MySQL using PHP
+
+%0 fat, extremely easy to use, define some constants and you are ready to go.
+
+Details:
+ redis support.
+ memcache support.
+ apc support.
+ Disck cache support.
+ Prepared statements ready.
+ Ability to use different cache types at the same time.
+ Simple store of session on database or a cache like redis/memcache/apc.
+ Easy to use/install/adapt DALMP is just a single file.
+ Nested Transactions (SAVEPOINT / ROLLBACK TO SAVEPOINT).
+ sql queue.
+
+WWW: http://code.google.com/p/dalmp

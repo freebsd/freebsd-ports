@@ -29,6 +29,7 @@
     SUBDIR += courier-authlib-userdb
     SUBDIR += courier-authlib-usergdbm
     SUBDIR += cyrus-imspd
+    SUBDIR += dalmp
     SUBDIR += db
     SUBDIR += db2
     SUBDIR += db3
