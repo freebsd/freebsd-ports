@@ -17,7 +17,7 @@ DISTNAME=	${PORTNAME}-${BINUTILVERSION}
 MAINTAINER=	cyberbotx@cyberbotx.com
 COMMENT=	GNU Binutils for Windows cross-development
 
-BINUTILVERSION=	2.20
+BINUTILVERSION=	2.21
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
@@ -28,15 +28,16 @@ CONFIGURE_ARGS=	--target=${PKGNAMEPREFIX:S/-$//} \
 		--disable-shared
 INFO_PATH=	${PKGNAMEPREFIX:S/-$//}/info
 
-MAN1=	${PKGNAMEPREFIX}addr2line.1 ${PKGNAMEPREFIX}ar.1   \
-	${PKGNAMEPREFIX}as.1 ${PKGNAMEPREFIX}dlltool.1     \
-	${PKGNAMEPREFIX}c++filt.1 ${PKGNAMEPREFIX}gprof.1  \
-	${PKGNAMEPREFIX}ld.1 ${PKGNAMEPREFIX}nlmconv.1     \
-	${PKGNAMEPREFIX}nm.1 ${PKGNAMEPREFIX}objcopy.1     \
-	${PKGNAMEPREFIX}objdump.1 ${PKGNAMEPREFIX}ranlib.1 \
-	${PKGNAMEPREFIX}readelf.1 ${PKGNAMEPREFIX}size.1   \
-	${PKGNAMEPREFIX}strings.1 ${PKGNAMEPREFIX}strip.1  \
-	${PKGNAMEPREFIX}windmc.1 ${PKGNAMEPREFIX}windres.1
+MAN1=	${PKGNAMEPREFIX}addr2line.1 ${PKGNAMEPREFIX}ar.1    \
+	${PKGNAMEPREFIX}as.1 ${PKGNAMEPREFIX}c++filt.1      \
+	${PKGNAMEPREFIX}dlltool.1 ${PKGNAMEPREFIX}elfedit.1 \
+	${PKGNAMEPREFIX}gprof.1 ${PKGNAMEPREFIX}ld.1        \
+	${PKGNAMEPREFIX}nlmconv.1 ${PKGNAMEPREFIX}nm.1      \
+	${PKGNAMEPREFIX}objcopy.1 ${PKGNAMEPREFIX}objdump.1 \
+	${PKGNAMEPREFIX}ranlib.1 ${PKGNAMEPREFIX}readelf.1  \
+	${PKGNAMEPREFIX}size.1 ${PKGNAMEPREFIX}strings.1    \
+	${PKGNAMEPREFIX}strip.1 ${PKGNAMEPREFIX}windmc.1    \
+	${PKGNAMEPREFIX}windres.1
 
 INFO=		as bfd binutils ld configure gprof standards
 INFO_PATH=	${PKGNAMEPREFIX:S/-$//}/info
