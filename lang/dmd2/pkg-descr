@@ -12,4 +12,11 @@ It is not governed by a corporate agenda or any overarching theory of
 programming. The needs and contributions of the D programming community form
 the direction it goes.
 
-WWW: http://digitalmars.com/d/1.0/
+This is an unofficial port that compiles directly from source, so it has not
+been officially validated or tested on the FreeBSD platform by the developer.
+
+This Software is copyrighted and comes with a single user license, and may not
+be redistributed. If you wish to obtain a redistribution license, please
+contact Digital Mars.
+
+WWW: http://digitalmars.com/d/2.0/
