@@ -203,6 +203,7 @@ share/locale/ku/LC_MESSAGES/pidgin.mo
 share/locale/lo/LC_MESSAGES/pidgin.mo
 share/locale/lt/LC_MESSAGES/pidgin.mo
 share/locale/mai/LC_MESSAGES/pidgin.mo
+share/locale/mhr/LC_MESSAGES/pidgin.mo
 share/locale/mk/LC_MESSAGES/pidgin.mo
 share/locale/mn/LC_MESSAGES/pidgin.mo
 share/locale/mr/LC_MESSAGES/pidgin.mo
@@ -298,6 +299,8 @@ share/sounds/purple/send.wav
 @dirrmtry share/locale/ms_MY
 @dirrmtry share/locale/mr/LC_MESSAGES
 @dirrmtry share/locale/mr
+@dirrmtry share/locale/mhr/LC_MESSAGES
+@dirrmtry share/locale/mhr
 @dirrmtry share/locale/mai/LC_MESSAGES
 @dirrmtry share/locale/mai
 @dirrmtry share/locale/lo/LC_MESSAGES
