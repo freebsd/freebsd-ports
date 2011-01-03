@@ -7,6 +7,7 @@
 
 PORTNAME=	thunderbird3-i18n
 PORTVERSION=	3.0.11
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITE_SUBDIR=	thunderbird/releases/${PORTVERSION}/linux-i686/xpi
 PKGNAMEPREFIX=
@@ -21,6 +22,7 @@ RUN_DEPENDS+=	xpi-quick-locale-switcher>=0:${PORTSDIR}/www/xpi-quick-locale-swit
 .endif
 
 NO_BUILD=	yes
+USE_THUNDERBIRD=	30
 USE_XPI=	*thunderbird*
 
 THUNDERBIRD_I18N_ALL=	af ar be bg bn-BD ca cs da de el en-GB es-AR es-ES et \
