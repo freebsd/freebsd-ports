@@ -96,6 +96,9 @@ bin/pygmentize
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pygments/lexers/functional.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pygments/lexers/functional.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pygments/lexers/functional.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pygments/lexers/hdl.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pygments/lexers/hdl.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pygments/lexers/hdl.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pygments/lexers/math.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pygments/lexers/math.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pygments/lexers/math.pyo
