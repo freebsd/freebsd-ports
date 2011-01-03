@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	nagios-check_hdd_health
-PORTVERSION=	1.0
+PORTVERSION=	1.0.1
 CATEGORIES=	net-mgmt
-MASTER_SITES=	http://www.bwelectronics.sk/jamrich/ports/
+MASTER_SITES=	# No distfile
+DISTFILES=	# No distfile
 
 MAINTAINER=	jamrich.majo@gmail.com
 COMMENT=	Nagios plug-in to check HDD health from S.M.A.R.T

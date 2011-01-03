@@ -16,7 +16,7 @@ SMT=Smartmontools
 PROGNAME=`basename $0`
             
 # Version
-VERSION="Version 1.0"
+VERSION="Version 1.0.1"
         
 # Author
 AUTHOR="Marian Jamrich"
@@ -37,7 +37,7 @@ mini_help() {
 print_help() {
     clear;
     echo "*********************************************************************************"
-    echo "* $PROGNAME $VERSION $1""($AUTHOR) <jamrich.majo@gmail.com> (2010) *" 
+    echo "* $PROGNAME $VERSION $1""($AUTHOR) <jamrich.majo@gmail.com> (2011) *" 
     echo "*********************************************************************************"
     echo "This is Nagios plugin to check HDD health from S.M.A.R.T. by Smartmontools."
     echo '
@@ -111,7 +111,7 @@ test `uname` != "FreeBSD" && echo "This plugin is only for FreeBSD." && exit $ST
 if [ ! -e $device ]; then
         echo
         echo "Unknown device \"$device\"!"
-        exit $ST_UK
+        exit $ST_UN
 fi
 
 if [ -z $smartctl ]; then
