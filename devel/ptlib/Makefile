@@ -43,6 +43,7 @@ CONFIGURE_ARGS+=	\
 		--disable-atomicity \
 		--with-expat-dir="${LOCALBASE}" \
 		--enable-oss \
+		--enable-alsa=no \
 		--disable-odbc
 ALL_TARGET=	optshared
 
