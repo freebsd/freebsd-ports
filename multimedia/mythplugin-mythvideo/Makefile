@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mythvideo
-PORTVERSION=	0.23.1
+PORTVERSION=	0.24
 CATEGORIES=	multimedia
 MASTER_SITES=	http://ftp.osuosl.org/pub/mythtv/ \
 		http://ftp.osuosl.org/pub/mythtv/old_releases/ \

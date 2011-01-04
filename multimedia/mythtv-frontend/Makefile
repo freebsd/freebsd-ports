@@ -6,7 +6,7 @@
 # $FreeBSD$
 
 PORTNAME=	mythtv-frontend
-PORTVERSION=	0.23.1
+PORTVERSION=	0.24
 CATEGORIES=	multimedia
 MASTER_SITES=	http://ftp.osuosl.org/pub/mythtv/ \
 		http://ftp.osuosl.org/pub/mythtv/old_releases/ \
@@ -17,6 +17,7 @@ DISTNAME=	mythtv-${PORTVERSION}
 MAINTAINER=	decke@FreeBSD.org
 COMMENT=	MythTV is a homebrew PVR project
 
+BUILD_DEPENDS=	${LOCALBASE}/include/linux/videodev2.h:${PORTSDIR}/multimedia/v4l_compat
 LIB_DEPENDS=	mp3lame.0:${PORTSDIR}/audio/lame \
 		freetype.9:${PORTSDIR}/print/freetype2
 
@@ -41,11 +42,11 @@ MAKE_ENV=	QTDIR="${QT_PREFIX}" \
 CONFIGURE_ENV+=	QMAKESPEC="${QMAKESPEC}" MOC="${MOC}" CPPFLAGS="${CPPFLAGS} ${QTCPPFLAGS}" \
 		QTDIR="${QT_PREFIX}" LDFLAGS="-L${LOCALBASE}/lib"
 
-CONFIGURE_ARGS=	--prefix="${PREFIX}" --disable-firewire --disable-iptv --disable-hdhomerun \
+CONFIGURE_ARGS=	--prefix="${PREFIX}" --disable-audio-alsa --disable-firewire --disable-iptv \
+		--disable-hdhomerun \
 		--disable-v4l --disable-ivtv --disable-hdpvr --disable-dvb --enable-xvmc \
-		--disable-xvmcw --enable-xvmc-pro --enable-opengl-video \
-		--disable-directfb --without-bindings=perl,python \
-		--enable-glx-procaddrarb
+		--disable-xvmcw --enable-xvmc --enable-opengl-video \
+		--disable-directfb --without-bindings=perl,python
 
 QMAKESPEC?=	${LOCALBASE}/share/qt4/mkspecs/freebsd-g++
 
@@ -91,15 +92,10 @@ post-patch:
 		@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g' \
 			${WRKSRC}/configure \
 			${WRKSRC}/libs/libmythtv/libmythtv.pro \
-			${WRKSRC}/libs/libavformat/libavformat.pro \
 			${WRKSRC}/bindings/perl/MythTV/Recording.pm \
 			${WRKSRC}/programs/mythtranscode/replex/Makefile.standalone \
 			${WRKSRC}/programs/scripts/database/mythconverg_backup.pl \
 			${WRKSRC}/programs/scripts/database/mythconverg_restore.pl \
-			${WRKSRC}/contrib/encoding_converting/mythencode/mythencode.pl \
-			${WRKSRC}/contrib/user_jobs/firewire_primer.pl \
-			${WRKSRC}/contrib/user_jobs/mythvidexport.py \
-			${WRKSRC}/contrib/info/mythname/mythname.pl \
 			${WRKSRC}/programs/mythcommflag/mythcommflag-analyze
 
 .include <bsd.port.post.mk>
