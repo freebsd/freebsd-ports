@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	jGnash
-PORTVERSION=	2.5.0
+PORTVERSION=	2.5.1
 CATEGORIES=	finance java
 MASTER_SITES=	SF/jgnash/Active%20Stable%202.x/2.5.x%20Releases
 
@@ -22,6 +22,7 @@ PLIST_SUB+=	DESKTOPDIR=${DESKTOPDIR:S|^${PREFIX}/||}
 USE_ZIP=	yes
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+
+JAVA_VENDOR=	openjdk
 
 NO_BUILD=	yes
 
