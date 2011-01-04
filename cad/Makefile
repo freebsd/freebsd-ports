@@ -80,6 +80,7 @@
     SUBDIR += salome-light
     SUBDIR += salome-med
     SUBDIR += salome-multipr
+    SUBDIR += salome-netgenplugin
     SUBDIR += salome-randomizer
     SUBDIR += salome-sierpinsky
     SUBDIR += salome-smesh
