@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	klayout
-PORTVERSION=	0.19.3
-PORTREVISION=	1
+PORTVERSION=	0.21.3
 CATEGORIES=	cad
 MASTER_SITES=	http://www.klayout.de/
 
