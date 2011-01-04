@@ -5,11 +5,10 @@
 # $FreeBSD$
 
 PORTNAME=	salome
-PORTVERSION=	5.1.3
-PORTREVISION=	4
+PORTVERSION=	5.1.4
 CATEGORIES=	cad science
 MASTER_SITES=	http://www.stasyan.com/devel/distfiles/
-DISTNAME=	src5.1.3
+DISTNAME=	src5.1.4
 DIST_SUBDIR=	${PORTNAME}
 .if !defined(PKGNAMESUFFIX)
 EXTRACT_ONLY=	#none
@@ -21,20 +20,22 @@ OPTIONS=	\
 		GEOM		"GEOM module" 					on  \
 		MED		"MED module" 					on  \
 		SMESH		"SMESH module (require MED & GEOM)" 		on  \
+		NETGENPLUGIN	"Netgen-meser plugin"		 		on  \
 		VISU		"VISU module (require MED)" 			on  \
 		LIGHT		"LIGHT module" 					on  \
 		YACS		"Yacs module" 					on  \
 		MULTIPR		"Multipr module" 				on  \
 		RANDOMIZER	"Randomizer module" 				on  \
 		SIERPINSKY	"Sierpinsky module" 				on  \
-		CPPUNIT		"build with C++ unit testing framework" 	off \
-		MPI		"build with support parrallel calculation" 	off
+		JOBMAN		"Job manager module" 				on  \
+		MPI		"build with support parrallel calculation" 	on
 
-RESOURCEDIR=	${DATADIR}/resources
+RESOURCEDIR=	${PREFIX}/share/salome/resources
 
 SLAVEDIRS=	cad/salome-kernel cad/salome-gui cad/salome-geom cad/salome-light	\
 		cad/salome-yacs cad/salome-randomizer cad/salome-visu cad/salome-med	\
-		cad/salome-sierpinsky cad/salome-smesh cad/salome-multipr
+		cad/salome-sierpinsky cad/salome-smesh cad/salome-multipr cad/salome-jobmanager \
+		cad/salome-netgenplugin
 
 .include <bsd.port.options.mk>
 
@@ -72,8 +73,14 @@ RUN_DEPENDS+=	${RESOURCEDIR}/sierpinsky:${PORTSDIR}/cad/salome-sierpinsky
 .if defined(WITH_SMESH)
 RUN_DEPENDS+=	${RESOURCEDIR}/smesh:${PORTSDIR}/cad/salome-smesh
 .endif
+.if defined(WITH_NETGENPLUGIN)
+RUN_DEPENDS+=	${RESOURCEDIR}/netgenplugin:${PORTSDIR}/cad/salome-netgenplugin
+.endif
 .if defined(WITH_MULTIPR)
 RUN_DEPENDS+=	${RESOURCEDIR}/multipr:${PORTSDIR}/cad/salome-multipr
+.endif
+.if defined(WITH_JOBMAN)
+RUN_DEPENDS+=	${RESOURCEDIR}/jobmanager:${PORTSDIR}/cad/salome-jobmanager
 .endif
 
 SUB_LIST=	PREFIX=${PREFIX}

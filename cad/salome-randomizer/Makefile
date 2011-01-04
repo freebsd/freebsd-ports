@@ -8,6 +8,7 @@ CATEGORIES=	cad science
 
 MASTERDIR=	${.CURDIR}/../salome
 
+PORTNAME=	salome
 PKGNAMESUFFIX=	-randomizer
 SAL_MODULE_UPPER=	RANDOMIZER
 

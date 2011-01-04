@@ -22,16 +22,23 @@ GUI_DEPEND=			KERNEL QWT
 GEOM_DEPEND=		KERNEL GUI
 MED_DEPEND=			KERNEL GUI MED2
 SMESH_DEPEND=		KERNEL GUI MED GEOM
+NETGENPLUGIN_DEPEND=	KERNEL GUI MED GEOM MED SMESH NETGEN
 VISU_DEPEND=		KERNEL GUI MED
 LIGHT_DEPEND=		KERNEL GUI
 YACS_DEPEND=		KERNEL GUI
 RANDOMIZER_DEPEND=	KERNEL GUI
+JOBMANAGER_DEPEND=	KERNEL GUI
 SIERPINSKY_DEPEND=	KERNEL GUI VISU MED RANDOMIZER
 FILTER_DEPEND=		KERNEL GUI MED
 MULTIPR_DEPEND=		KERNEL GUI MED MED2 HDF5 CAS QT OMNIORB
 
 
-RELEASENAME=	5.1.3
+.if !${SAL_MODULE} == "jobmanager"
+RELEASENAME=	5.1.4
+.else
+RELEASENAME=	0.1
+.endif
+
 HAS_CONFIGURE=		yes
 CONFIGURE_ARGS+=	--prefix=${PREFIX}
 CONFIGURE_ARGS+=	--enable-debug
@@ -82,6 +89,13 @@ BUILD_DEPENDS+=		${RESOURCEDIR}/geom:${PORTSDIR}/cad/salome-geom
 RUN_DEPENDS+=		${RESOURCEDIR}/geom:${PORTSDIR}/cad/salome-geom
 .endif
 
+#Depndency from SMESH module
+.if ${SAL_MODULE} == "netgenplugin"
+BUILD_DEPENDS+=		${RESOURCEDIR}/smesh:${PORTSDIR}/cad/salome-smesh
+RUN_DEPENDS+=		${RESOURCEDIR}/smesh:${PORTSDIR}/cad/salome-smesh
+.endif
+
+
 #Dependency for SIERPINSKY
 .if ${SAL_MODULE} == "sierpinsky"
 BUILD_DEPENDS+=		${RESOURCEDIR}/visu:${PORTSDIR}/cad/salome-visu \
@@ -103,19 +117,24 @@ USE_AUTOTOOLS=	autoconf automake libtool aclocal
     USE_AUTOTOOLS+=	autoheader
     AUTOHEADER_ARGS=	-I adm/unix/config_files
 . else
-    ACLOCAL_ARGS=	-I adm_local/unix/config_files -I ${LOCALBASE}/salome_adm/unix/config_files 
-.	if ${SAL_MODULE} != "gui"
+.	if ${SAL_MODULE} != "jobmanager"
+    ACLOCAL_ARGS=	-I adm_local/unix/config_files -I ${LOCALBASE}/salome_adm/unix/config_files
+.	else
+    ACLOCAL_ARGS=	-I m4
+    AUTOHEADER_ARGS+=	-I m4
+.	endif
+.	if ${SAL_MODULE} != "gui" && ${SAL_MODULE} != "jobmanager"
     ACLOCAL_ARGS+= -I ${LOCALBASE}/adm_local/unix/config_files
 .	endif
 . endif
 .endif
-LIBTOOLFLAGS=--force --copy --automake 
+LIBTOOLFLAGS=--force --copy --automake
 AUTOMAKE_ARGS=--add-missing --copy --gnu
 
 #Dependency from HDF5
 .if !${SAL_MODULE} == "randomizer" &&  !${SAL_MODULE} == "yacs" && !${SAL_MODULE} == "hello" && !${SAL_MODULE} == "pyhello"
 LIB_DEPENDS+=		hdf5.0:${PORTSDIR}/science/hdf5
-CONFIGURE_ARGS+=	--with-hdf5=${LOCALBASE} 
+CONFIGURE_ARGS+=	--with-hdf5=${LOCALBASE}
 AUTOTOOLS_ENV+= 	HDF5HOME=${LOCALBASE}
 .endif
 
@@ -134,7 +153,7 @@ BUILD_DEPENDS+=		swig:${PORTSDIR}/devel/swig13
 .endif
 
 #Dependency from libxml2
-.if ${SAL_MODULE} == "gui" || ${SAL_MODULE} == "kernel" || ${SAL_MODULE} == "med" || ${SAL_MODULE} == "yacs" 
+.if ${SAL_MODULE} == "gui" || ${SAL_MODULE} == "kernel" || ${SAL_MODULE} == "med" || ${SAL_MODULE} == "yacs"
 LIB_DEPENDS+=	xml2.5:${PORTSDIR}/textproc/libxml2
 CPPFLAGS+=	-I${LOCALBASE}/include/libxml2
 CONFIGURE_ENV+=	LIBXML_DIR=${LOCALBASE}
@@ -172,10 +191,17 @@ CONFIGURE_ARGS+=	--with-vtk=${LOCALBASE}
 #CONFIGURE_ENV+=		VTKHOME=${LOCALBASE}
 .endif
 
+#Dependency from cad/netgen
+.if ${SAL_MODULE} == "netgenplugin"
+LIB_DEPENDS+=		nglib.1:${PORTSDIR}/cad/netgen
+CONFIGURE_ENV+=		NETGENHOME=${LOCALBASE}
+AUTOTOOLS_ENV+=		NETGENHOME=${LOCALBASE}
+.endif
+
+
 #Dependency from qwt5
 .if ${SAL_MODULE} == "gui" || ${SAL_MODULE} == "component" || ${SAL_MODULE} == "smesh" || ${SAL_MODULE} == "visu" || ${SAL_MODULE} == "filter"
 LIB_DEPENDS+=		qwt.5:${PORTSDIR}/x11-toolkits/qwt5
-#CONFIGURE_ENV+=		QWTHOME=${LOCALBASE}
 CONFIGURE_ARGS+=	--with-qwt=${LOCALBASE}
 CPPFLAGS+=		-I/${LOCALBASE}/include/qwt/
 AUTOTOOLS_ENV+= 	QWTHOME=${LOCALBASE}
@@ -234,30 +260,30 @@ LIB_DEPENDS+=		gd.4:${PORTSDIR}/graphics/gd
 LIB_DEPENDS+=		argp.0:${PORTSDIR}/devel/argp-standalone
 LIB_DEPENDS+=		expat.6:${PORTSDIR}/textproc/expat2
 LIB_DEPENDS+=		gvc.5:${PORTSDIR}/graphics/graphviz
-LDFLAGS+=		-largp 
+LDFLAGS+=		-largp
 .endif
 
-#Don't strip binaries 
+#Don't strip binaries
 .if ${SAL_MODULE} == "multipr"
-STRIP=		
+STRIP=
 .endif
 
-#optionally dependency from cppunit
+#turn off cppunit support
 .if ${SAL_MODULE} == "kernel" || ${SAL_MODULE} == "gui" || ${SAL_MODULE} == "yacs" ||  ${SAL_MODULE} == "med"
-.if defined(WITH_CPPUNIT)
-CONFIGURE_ARGS+=	--with-cppunit=${LOCALBASE} --with-cppunit_inc=${LOCALBASE}/include/cppunit
-BUILD_DEPENDS+=		cppunit-config:${PORTSDIR}/devel/cppunit
-PLIST_SUB+=     CPPUNIT=""
-.		else
+#.if defined(WITH_CPPUNIT)
+#CONFIGURE_ARGS+=	--with-cppunit=${LOCALBASE} --with-cppunit_inc=${LOCALBASE}/include/cppunit
+#BUILD_DEPENDS+=		cppunit-config:${PORTSDIR}/devel/cppunit
+#PLIST_SUB+=     CPPUNIT=""
+#.		else
 CONFIGURE_ARGS+=	--with-cppunit=no
 PLIST_SUB+=     CPPUNIT="@comment "
-.endif
+#.endif
 .endif
 
 #optionally dependency from mpich2
 .if ${SAL_MODULE} == "kernel" || ${SAL_MODULE} == "med"
 .if defined(WITH_MPI)
-LIB_DEPENDS+=	mpich.1:${PORTSDIR}/net/mpich2
+LIB_DEPENDS+=	mpich.2:${PORTSDIR}/net/mpich2
 CONFIGURE_ARGS+=	--with-mpich=${LOCALBASE}/mpich2 --with-mpi=${LOCALBASE}/mpich2
 PLIST_SUB+=     MPI=""
 .		else
@@ -288,11 +314,6 @@ CONFIGURE_ENV+=		LDFLAGS="${LDFLAGS}" CXXFLAGS="${QSCIFLAGS} ${QTFLAGS} ${CXXFLA
 .if ${SAL_MODULE} == "yacs"
     post-patch:
 	${CP} ${WRKSRC}/configure.in.base  ${WRKSRC}/configure.in
-.endif
-
-.if ${SAL_MODULE} == "med"
-    post-install:
-	${MV} ${PREFIX}/include/salome/Node.hxx ${PREFIX}/include/salome/MEDNode.hxx
 .endif
 
 
@@ -328,7 +349,7 @@ run-autotools-automake:
 		${AUTOMAKE_ARGS})
 	echo "End of automake"
 
-.if ${SAL_MODULE} == "yacs"
+.if ${SAL_MODULE} == "yacs" || ${SAL_MODULE} == "jobmanager"
 run-autotools-autoheader:
 	echo "Start of autoheader"
 	@(cd ${PATCH_WRKSRC} && ${SETENV} ${AUTOTOOLS_ENV} ${AUTOHEADER} \

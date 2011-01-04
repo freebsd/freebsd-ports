@@ -8,6 +8,7 @@ CATEGORIES=	cad science
 
 MASTERDIR=	${.CURDIR}/../salome
 
+PORTNAME=	salome
 PKGNAMESUFFIX=	-kernel
 SAL_MODULE_UPPER=	KERNEL
 
