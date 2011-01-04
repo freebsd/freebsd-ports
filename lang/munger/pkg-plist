@@ -1,9 +1,7 @@
 bin/munger
-lib/libmunger.so.65
-%%DATADIR%%/ipdatabase.munger
+lib/libmunger.so.66
 %%DATADIR%%/httpd.munger
 %%DATADIR%%/scgid.munger
-%%DATADIR%%/ip2country.munger
 %%DATADIR%%/echo.munger
 %%DATADIR%%/msh.munger
 %%DATADIR%%/mbox2munger.munger
@@ -28,7 +26,6 @@ lib/libmunger.so.65
 %%DATADIR%%/library.munger
 %%DATADIR%%/transform.munger
 %%DATADIR%%/view.munger
-%%DATADIR%%/tk.munger
 %%DATADIR%%/cal.munger
 %%DATADIR%%/xml2buffer.munger
 @dirrm %%DATADIR%%
