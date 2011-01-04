@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	davmail
-PORTVERSION=	3.8.5
+PORTVERSION=	3.8.7
 CATEGORIES=	mail java
 MASTER_SITES=	SF/davmail/davmail/${PORTVERSION}
-DISTNAME=	${PORTNAME}-src-${PORTVERSION}-1480
+DISTNAME=	${PORTNAME}-src-${PORTVERSION}-1558
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	john.c.prather@gmail.com
@@ -39,6 +39,7 @@ do-install:
 		-not -name "swt-*.jar" \
 		-not -name "*.zip" \
 		-not -name "*.war" \
+		-not -name "*.rpm" \
 		-exec ${INSTALL_DATA} \{} ${DATADIR}/\{} \;
 	${INSTALL_SCRIPT} ${WRKDIR}/davmail.sh ${PREFIX}/bin/davmail
 
