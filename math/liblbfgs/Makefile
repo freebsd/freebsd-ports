@@ -6,13 +6,15 @@
 #
 
 PORTNAME=	liblbfgs
-PORTVERSION=	1.9
-PORTREVISION=	1
+PORTVERSION=	1.10
 CATEGORIES=	math
-MASTER_SITES=	http://www.chokkan.org/software/dist/
+MASTER_SITES=	http://cloud.github.com/downloads/chokkan/liblbfgs/
 
 MAINTAINER=	gaod@hychen.org
 COMMENT=	A library of Limited-memory Broyden-Fletcher-Goldfarb-Shanno
+
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	autoconf:env
@@ -30,7 +32,7 @@ IGNORE=	does not install properly on 6.x
 CONFIGURE_ARGS+=	--enable-sse2
 .endif
 
-PLIST_FILES=	lib/liblbfgs-1.9.so.0.0 lib/liblbfgs.a lib//liblbfgs.la \
+PLIST_FILES=	lib/liblbfgs-1.10.so.0.0 lib/liblbfgs.a lib//liblbfgs.la \
 		lib/liblbfgs.so.0.0 include/lbfgs.h
 
 PORTDOCS=	README INSTALL COPYING AUTHORS ChangeLog NEWS
