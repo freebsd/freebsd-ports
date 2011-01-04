@@ -6,16 +6,11 @@
 #
 
 PORTNAME=	libmikmod
-PORTVERSION=	3.1.11
-PORTREVISION=	2
+PORTVERSION=	3.1.12
 CATEGORIES=	audio
-MASTER_SITES=	http://mikmod.raphnet.net/files/
+MASTER_SITES=	SF/mikmod/libmikmod%20%28source%29/${PORTVERSION}/
 
-PATCH_SITES=	http://mikmod.raphnet.net/files/
-PATCHFILES=	libmikmod-3.1.11-a.diff
-PATCH_DIST_STRIP=	-p1
-
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	neuroworker@gmail.com
 COMMENT=	MikMod Sound Library
 
 USE_AUTOTOOLS=	libtool
