@@ -76,6 +76,7 @@
     SUBDIR += salome
     SUBDIR += salome-geom
     SUBDIR += salome-gui
+    SUBDIR += salome-jobmanager
     SUBDIR += salome-kernel
     SUBDIR += salome-light
     SUBDIR += salome-med
