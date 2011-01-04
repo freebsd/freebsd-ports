@@ -15184,7 +15184,7 @@
 +            return tz;
 +        } else {
 +            if (lstat(zoneinfo_file, &statbuf) == -1) {
-+                retuen NULL;
++                return NULL;
 +            }
          }
 -        return tz;
