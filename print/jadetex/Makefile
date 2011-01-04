@@ -36,12 +36,7 @@ do-install:
 	${LN} -sf ${LOCALBASE}/bin/etex ${PREFIX}/bin/jadetex
 	${LN} -sf ${LOCALBASE}/bin/pdfetex ${PREFIX}/bin/pdfjadetex
 
-post-install: rebuild-tex-database display-message
-
-rebuild-tex-database:
+post-install:
 	${LOCALBASE}/bin/mktexlsr ${TEXMFDIR}
-
-display-message:
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
