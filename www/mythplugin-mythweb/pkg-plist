@@ -3,13 +3,13 @@
 %%WWWDIR%%/LICENSE
 %%WWWDIR%%/README
 %%WWWDIR%%/classes/Cache.php
+%%WWWDIR%%/classes/Cache/APC.php
 %%WWWDIR%%/classes/Cache/Enabled.php
 %%WWWDIR%%/classes/Cache/Engine.php
 %%WWWDIR%%/classes/Cache/Memcache.php
+%%WWWDIR%%/classes/Cache/Memcached.php
 %%WWWDIR%%/classes/Cache/Null.php
 %%WWWDIR%%/classes/Cache/SHM.php
-%%WWWDIR%%/classes/Cache/Static.php
-%%WWWDIR%%/classes/Cache/StaticMemcache.php
 %%WWWDIR%%/classes/Database.php
 %%WWWDIR%%/classes/Database/Query.php
 %%WWWDIR%%/classes/Database/Query/mysql.php
@@ -21,6 +21,7 @@
 %%WWWDIR%%/classes/JSON.php
 %%WWWDIR%%/classes/Modules.php
 %%WWWDIR%%/classes/MythBackend.php
+%%WWWDIR%%/classes/MythBase.php
 %%WWWDIR%%/classes/MythFrontend.php
 %%WWWDIR%%/classes/MythTV.php
 %%WWWDIR%%/classes/MythTVChannel.php
@@ -28,6 +29,7 @@
 %%WWWDIR%%/classes/MythTVRecording.php
 %%WWWDIR%%/classes/MythTVStorageGroup.php
 %%WWWDIR%%/classes/Services/JSON.php
+%%WWWDIR%%/classes/Translate.php
 %%WWWDIR%%/classes/Video.php
 %%WWWDIR%%/classes/vcalendar.php
 %%WWWDIR%%/configuration/canned_searches.conf.php.Australia
@@ -39,6 +41,7 @@
 %%WWWDIR%%/includes/database.php
 %%WWWDIR%%/includes/db_update.php
 %%WWWDIR%%/includes/defines.php
+%%WWWDIR%%/includes/dynamic_strings.php
 %%WWWDIR%%/includes/errordisplay.php
 %%WWWDIR%%/includes/errors.php
 %%WWWDIR%%/includes/init.php
@@ -84,6 +87,8 @@
 %%WWWDIR%%/modules/_shared/lang/Dutch.lang
 %%WWWDIR%%/modules/_shared/lang/English.cat
 %%WWWDIR%%/modules/_shared/lang/English.lang
+%%WWWDIR%%/modules/_shared/lang/English_CA.cat
+%%WWWDIR%%/modules/_shared/lang/English_CA.lang
 %%WWWDIR%%/modules/_shared/lang/English_GB.cat
 %%WWWDIR%%/modules/_shared/lang/English_GB.lang
 %%WWWDIR%%/modules/_shared/lang/Finnish.cat
@@ -98,6 +103,8 @@
 %%WWWDIR%%/modules/_shared/lang/Hungarian.lang
 %%WWWDIR%%/modules/_shared/lang/Japanese.cat
 %%WWWDIR%%/modules/_shared/lang/Japanese.lang
+%%WWWDIR%%/modules/_shared/lang/Norwegian_NB.cat
+%%WWWDIR%%/modules/_shared/lang/Norwegian_NB.lang
 %%WWWDIR%%/modules/_shared/lang/Polish.cat
 %%WWWDIR%%/modules/_shared/lang/Polish.lang
 %%WWWDIR%%/modules/_shared/lang/Slovenian.cat
@@ -125,6 +132,7 @@
 %%WWWDIR%%/modules/_shared/tmpl/lite/footer.php
 %%WWWDIR%%/modules/_shared/tmpl/lite/header.php
 %%WWWDIR%%/modules/_shared/tmpl/lite/welcome.php
+%%WWWDIR%%/modules/_shared/tmpl/tmpl/header.php
 %%WWWDIR%%/modules/_shared/tmpl/wap/css.php
 %%WWWDIR%%/modules/_shared/tmpl/wap/footer.php
 %%WWWDIR%%/modules/_shared/tmpl/wap/header.php
@@ -173,6 +181,7 @@
 %%WWWDIR%%/modules/remote/init.php
 %%WWWDIR%%/modules/remote/keys.php
 %%WWWDIR%%/modules/remote/play_program_on_frontend.php
+%%WWWDIR%%/modules/remote/screenshot.php
 %%WWWDIR%%/modules/remote/tmpl/default/jump.php
 %%WWWDIR%%/modules/remote/tmpl/default/keys.php
 %%WWWDIR%%/modules/remote/tmpl/default/play.php
@@ -219,7 +228,6 @@
 %%WWWDIR%%/modules/tv/canned_searches.conf.php
 %%WWWDIR%%/modules/tv/channel.php
 %%WWWDIR%%/modules/tv/classes/Channel.php
-%%WWWDIR%%/modules/tv/classes/Channel_List.php
 %%WWWDIR%%/modules/tv/classes/Program.php
 %%WWWDIR%%/modules/tv/classes/Recording.php
 %%WWWDIR%%/modules/tv/classes/Schedule.php
@@ -230,7 +238,6 @@
 %%WWWDIR%%/modules/tv/get_schedule_details.php
 %%WWWDIR%%/modules/tv/get_show_details.php
 %%WWWDIR%%/modules/tv/handler.php
-%%WWWDIR%%/modules/tv/includes/channels.php
 %%WWWDIR%%/modules/tv/includes/programs.php
 %%WWWDIR%%/modules/tv/includes/recording_schedules.php
 %%WWWDIR%%/modules/tv/includes/schedule_utils.php
@@ -314,6 +321,7 @@
 %%WWWDIR%%/modules/video/tmpl/default/welcome.php
 %%WWWDIR%%/modules/weather/classes/WeatherScreen.php
 %%WWWDIR%%/modules/weather/handler.php
+%%WWWDIR%%/modules/weather/includes/weather_utils.php
 %%WWWDIR%%/modules/weather/init.php
 %%WWWDIR%%/modules/weather/set_screen.php
 %%WWWDIR%%/modules/weather/tmpl/default/set_screen.php
@@ -330,6 +338,89 @@
 %%WWWDIR%%/mythweb.conf.lighttpd
 %%WWWDIR%%/mythweb.php
 %%WWWDIR%%/mythweb.pl
+%%WWWDIR%%/skins/clean_blue/backend_log.css
+%%WWWDIR%%/skins/clean_blue/header.css
+%%WWWDIR%%/skins/clean_blue/img/backend_log.png
+%%WWWDIR%%/skins/clean_blue/img/blue_fade.jpg
+%%WWWDIR%%/skins/clean_blue/img/favicon.ico
+%%WWWDIR%%/skins/clean_blue/img/flags/autoexpire.png
+%%WWWDIR%%/skins/clean_blue/img/flags/bookmark.png
+%%WWWDIR%%/skins/clean_blue/img/flags/cc.png
+%%WWWDIR%%/skins/clean_blue/img/flags/commflagged.png
+%%WWWDIR%%/skins/clean_blue/img/flags/cutlist.png
+%%WWWDIR%%/skins/clean_blue/img/flags/hd.png
+%%WWWDIR%%/skins/clean_blue/img/flags/no.png
+%%WWWDIR%%/skins/clean_blue/img/flags/no_autoexpire.png
+%%WWWDIR%%/skins/clean_blue/img/flags/processing.png
+%%WWWDIR%%/skins/clean_blue/img/flags/stereo.png
+%%WWWDIR%%/skins/clean_blue/img/flags/watched.png
+%%WWWDIR%%/skins/clean_blue/img/flash_flv_icon.png
+%%WWWDIR%%/skins/clean_blue/img/grey_fade.jpg
+%%WWWDIR%%/skins/clean_blue/img/head_bord_bg.png
+%%WWWDIR%%/skins/clean_blue/img/iCal2.0.png
+%%WWWDIR%%/skins/clean_blue/img/left.gif
+%%WWWDIR%%/skins/clean_blue/img/left_sm.png
+%%WWWDIR%%/skins/clean_blue/img/movietimes.png
+%%WWWDIR%%/skins/clean_blue/img/music.png
+%%WWWDIR%%/skins/clean_blue/img/music/add.gif
+%%WWWDIR%%/skins/clean_blue/img/music/down.gif
+%%WWWDIR%%/skins/clean_blue/img/music/ff_big.gif
+%%WWWDIR%%/skins/clean_blue/img/music/libg.png
+%%WWWDIR%%/skins/clean_blue/img/music/paypal_donate.gif
+%%WWWDIR%%/skins/clean_blue/img/music/play.gif
+%%WWWDIR%%/skins/clean_blue/img/music/play_big.gif
+%%WWWDIR%%/skins/clean_blue/img/music/progress_bar.gif
+%%WWWDIR%%/skins/clean_blue/img/music/rem.gif
+%%WWWDIR%%/skins/clean_blue/img/music/rew_big.gif
+%%WWWDIR%%/skins/clean_blue/img/music/stop_big.gif
+%%WWWDIR%%/skins/clean_blue/img/music/up.gif
+%%WWWDIR%%/skins/clean_blue/img/music/vol.gif
+%%WWWDIR%%/skins/clean_blue/img/mythtv-logo.png
+%%WWWDIR%%/skins/clean_blue/img/play.png
+%%WWWDIR%%/skins/clean_blue/img/play_sm.png
+%%WWWDIR%%/skins/clean_blue/img/right.gif
+%%WWWDIR%%/skins/clean_blue/img/right_sm.png
+%%WWWDIR%%/skins/clean_blue/img/rss2.0.gif
+%%WWWDIR%%/skins/clean_blue/img/settings.png
+%%WWWDIR%%/skins/clean_blue/img/spacer.gif
+%%WWWDIR%%/skins/clean_blue/img/stats.png
+%%WWWDIR%%/skins/clean_blue/img/status.png
+%%WWWDIR%%/skins/clean_blue/img/tv.png
+%%WWWDIR%%/skins/clean_blue/img/video.png
+%%WWWDIR%%/skins/clean_blue/img/video_sm.png
+%%WWWDIR%%/skins/clean_blue/img/weather.png
+%%WWWDIR%%/skins/clean_blue/img/weather/cloudy.png
+%%WWWDIR%%/skins/clean_blue/img/weather/fair.png
+%%WWWDIR%%/skins/clean_blue/img/weather/flurries.png
+%%WWWDIR%%/skins/clean_blue/img/weather/fog.png
+%%WWWDIR%%/skins/clean_blue/img/weather/lshowers.png
+%%WWWDIR%%/skins/clean_blue/img/weather/mcloudy.png
+%%WWWDIR%%/skins/clean_blue/img/weather/pcloudy.png
+%%WWWDIR%%/skins/clean_blue/img/weather/rainsnow.png
+%%WWWDIR%%/skins/clean_blue/img/weather/showers.png
+%%WWWDIR%%/skins/clean_blue/img/weather/snowshow.png
+%%WWWDIR%%/skins/clean_blue/img/weather/sunny.png
+%%WWWDIR%%/skins/clean_blue/img/weather/thunshowers.png
+%%WWWDIR%%/skins/clean_blue/img/weather/unknown.png
+%%WWWDIR%%/skins/clean_blue/menus.css
+%%WWWDIR%%/skins/clean_blue/music.css
+%%WWWDIR%%/skins/clean_blue/programming.css
+%%WWWDIR%%/skins/clean_blue/remote.css
+%%WWWDIR%%/skins/clean_blue/settings.css
+%%WWWDIR%%/skins/clean_blue/stats.css
+%%WWWDIR%%/skins/clean_blue/status.css
+%%WWWDIR%%/skins/clean_blue/style.css
+%%WWWDIR%%/skins/clean_blue/tv_channel.css
+%%WWWDIR%%/skins/clean_blue/tv_detail.css
+%%WWWDIR%%/skins/clean_blue/tv_list.css
+%%WWWDIR%%/skins/clean_blue/tv_recorded.css
+%%WWWDIR%%/skins/clean_blue/tv_schedule.css
+%%WWWDIR%%/skins/clean_blue/tv_schedules.css
+%%WWWDIR%%/skins/clean_blue/tv_search.css
+%%WWWDIR%%/skins/clean_blue/tv_upcoming.css
+%%WWWDIR%%/skins/clean_blue/video.css
+%%WWWDIR%%/skins/clean_blue/weather.css
+%%WWWDIR%%/skins/clean_blue/welcome.css
 %%WWWDIR%%/skins/default/backend_log.css
 %%WWWDIR%%/skins/default/header.css
 %%WWWDIR%%/skins/default/img/backend_log.png
@@ -407,6 +498,7 @@
 %%WWWDIR%%/skins/default/tv_schedules.css
 %%WWWDIR%%/skins/default/tv_search.css
 %%WWWDIR%%/skins/default/tv_upcoming.css
+%%WWWDIR%%/skins/default/video.css
 %%WWWDIR%%/skins/default/video.css.php
 %%WWWDIR%%/skins/default/weather.css
 %%WWWDIR%%/skins/default/welcome.css
@@ -674,101 +766,107 @@
 %%WWWDIR%%/skins/wap/img/mythtv-logo.gif
 %%WWWDIR%%/skins/wap/img/spacer.gif
 %%WWWDIR%%/skins/wap/style.css
-@dirrm %%WWWDIR%%/skins/haze_dark/img/weather
-@dirrm %%WWWDIR%%/skins/haze_dark/img
-@dirrm %%WWWDIR%%/skins/haze_dark
-@dirrm %%WWWDIR%%/skins/default/img/music
-@dirrm %%WWWDIR%%/skins/default/img/flags
-@dirrm %%WWWDIR%%/skins/default/img/weather
-@dirrm %%WWWDIR%%/skins/default/img
-@dirrm %%WWWDIR%%/skins/default
-@dirrm %%WWWDIR%%/skins/haze_light/img/weather
-@dirrm %%WWWDIR%%/skins/haze_light/img
-@dirrm %%WWWDIR%%/skins/haze_light
-@dirrm %%WWWDIR%%/skins/elkin/img/music
-@dirrm %%WWWDIR%%/skins/elkin/img/flags
-@dirrm %%WWWDIR%%/skins/elkin/img/weather
-@dirrm %%WWWDIR%%/skins/elkin/img
-@dirrm %%WWWDIR%%/skins/elkin
-@dirrm %%WWWDIR%%/skins/grey/img/flags
-@dirrm %%WWWDIR%%/skins/grey/img/weather
-@dirrm %%WWWDIR%%/skins/grey/img
-@dirrm %%WWWDIR%%/skins/grey
 @dirrm %%WWWDIR%%/skins/wap/img
 @dirrm %%WWWDIR%%/skins/wap
 @dirrm %%WWWDIR%%/skins/iPod-default/img/Icons
 @dirrm %%WWWDIR%%/skins/iPod-default/img
 @dirrm %%WWWDIR%%/skins/iPod-default
+@dirrm %%WWWDIR%%/skins/haze_light/img/weather
+@dirrm %%WWWDIR%%/skins/haze_light/img
+@dirrm %%WWWDIR%%/skins/haze_light
+@dirrm %%WWWDIR%%/skins/haze_dark/img/weather
+@dirrm %%WWWDIR%%/skins/haze_dark/img
+@dirrm %%WWWDIR%%/skins/haze_dark
+@dirrm %%WWWDIR%%/skins/grey/img/weather
+@dirrm %%WWWDIR%%/skins/grey/img/flags
+@dirrm %%WWWDIR%%/skins/grey/img
+@dirrm %%WWWDIR%%/skins/grey
+@dirrm %%WWWDIR%%/skins/elkin/img/weather
+@dirrm %%WWWDIR%%/skins/elkin/img/music
+@dirrm %%WWWDIR%%/skins/elkin/img/flags
+@dirrm %%WWWDIR%%/skins/elkin/img
+@dirrm %%WWWDIR%%/skins/elkin
+@dirrm %%WWWDIR%%/skins/default/img/weather
+@dirrm %%WWWDIR%%/skins/default/img/music
+@dirrm %%WWWDIR%%/skins/default/img/flags
+@dirrm %%WWWDIR%%/skins/default/img
+@dirrm %%WWWDIR%%/skins/default
+@dirrm %%WWWDIR%%/skins/clean_blue/img/weather
+@dirrm %%WWWDIR%%/skins/clean_blue/img/music
+@dirrm %%WWWDIR%%/skins/clean_blue/img/flags
+@dirrm %%WWWDIR%%/skins/clean_blue/img
+@dirrm %%WWWDIR%%/skins/clean_blue
 @dirrm %%WWWDIR%%/skins
-@dirrm %%WWWDIR%%/modules/stream/tmpl/default
-@dirrm %%WWWDIR%%/modules/stream/tmpl/lite
-@dirrm %%WWWDIR%%/modules/stream/tmpl
-@dirrm %%WWWDIR%%/modules/stream
-@dirrm %%WWWDIR%%/modules/mythweb/tmpl/default
-@dirrm %%WWWDIR%%/modules/mythweb/tmpl/lite
-@dirrm %%WWWDIR%%/modules/mythweb/tmpl
-@dirrm %%WWWDIR%%/modules/mythweb
-@dirrm %%WWWDIR%%/modules/music/tmpl/default
-@dirrm %%WWWDIR%%/modules/music/tmpl
-@dirrm %%WWWDIR%%/modules/music
+@dirrm %%WWWDIR%%/modules/weather/tmpl/default
+@dirrm %%WWWDIR%%/modules/weather/tmpl
+@dirrm %%WWWDIR%%/modules/weather/includes
+@dirrm %%WWWDIR%%/modules/weather/classes
+@dirrm %%WWWDIR%%/modules/weather
 @dirrm %%WWWDIR%%/modules/video/tmpl/default
 @dirrm %%WWWDIR%%/modules/video/tmpl
 @dirrm %%WWWDIR%%/modules/video
-@dirrm %%WWWDIR%%/modules/backend_log/tmpl/default
-@dirrm %%WWWDIR%%/modules/backend_log/tmpl/lite
-@dirrm %%WWWDIR%%/modules/backend_log/tmpl
-@dirrm %%WWWDIR%%/modules/backend_log
-@dirrm %%WWWDIR%%/modules/tv/includes
-@dirrm %%WWWDIR%%/modules/tv/tmpl/default
-@dirrm %%WWWDIR%%/modules/tv/tmpl/ical
-@dirrm %%WWWDIR%%/modules/tv/tmpl/iPod
-@dirrm %%WWWDIR%%/modules/tv/tmpl/lite
 @dirrm %%WWWDIR%%/modules/tv/tmpl/wap
 @dirrm %%WWWDIR%%/modules/tv/tmpl/rss
+@dirrm %%WWWDIR%%/modules/tv/tmpl/lite
+@dirrm %%WWWDIR%%/modules/tv/tmpl/ical
+@dirrm %%WWWDIR%%/modules/tv/tmpl/iPod
+@dirrm %%WWWDIR%%/modules/tv/tmpl/default
 @dirrm %%WWWDIR%%/modules/tv/tmpl
+@dirrm %%WWWDIR%%/modules/tv/includes
 @dirrm %%WWWDIR%%/modules/tv/classes
 @dirrm %%WWWDIR%%/modules/tv
-@dirrm %%WWWDIR%%/modules/stats/tmpl/default
+@dirrm %%WWWDIR%%/modules/stream/tmpl/lite
+@dirrm %%WWWDIR%%/modules/stream/tmpl/default
+@dirrm %%WWWDIR%%/modules/stream/tmpl
+@dirrm %%WWWDIR%%/modules/stream
+@dirrm %%WWWDIR%%/modules/status/tmpl/wap
+@dirrm %%WWWDIR%%/modules/status/tmpl/lite
+@dirrm %%WWWDIR%%/modules/status/tmpl/default
+@dirrm %%WWWDIR%%/modules/status/tmpl
+@dirrm %%WWWDIR%%/modules/status
 @dirrm %%WWWDIR%%/modules/stats/tmpl/lite
+@dirrm %%WWWDIR%%/modules/stats/tmpl/default
 @dirrm %%WWWDIR%%/modules/stats/tmpl
 @dirrm %%WWWDIR%%/modules/stats
-@dirrm %%WWWDIR%%/modules/settings/tmpl/default
 @dirrm %%WWWDIR%%/modules/settings/tmpl/lite
+@dirrm %%WWWDIR%%/modules/settings/tmpl/default
 @dirrm %%WWWDIR%%/modules/settings/tmpl
 @dirrm %%WWWDIR%%/modules/settings
-@dirrm %%WWWDIR%%/modules/coverart
+@dirrm %%WWWDIR%%/modules/remote/tmpl/iPod
+@dirrm %%WWWDIR%%/modules/remote/tmpl/default
+@dirrm %%WWWDIR%%/modules/remote/tmpl
+@dirrm %%WWWDIR%%/modules/remote
+@dirrm %%WWWDIR%%/modules/mythweb/tmpl/lite
+@dirrm %%WWWDIR%%/modules/mythweb/tmpl/default
+@dirrm %%WWWDIR%%/modules/mythweb/tmpl
+@dirrm %%WWWDIR%%/modules/mythweb
+@dirrm %%WWWDIR%%/modules/mythtv/tmpl/lite
+@dirrm %%WWWDIR%%/modules/mythtv/tmpl/default
+@dirrm %%WWWDIR%%/modules/mythtv/tmpl
+@dirrm %%WWWDIR%%/modules/mythtv
+@dirrm %%WWWDIR%%/modules/music/tmpl/default
+@dirrm %%WWWDIR%%/modules/music/tmpl
+@dirrm %%WWWDIR%%/modules/music
 @dirrm %%WWWDIR%%/modules/database/tmpl/default
 @dirrm %%WWWDIR%%/modules/database/tmpl
 @dirrm %%WWWDIR%%/modules/database
-@dirrm %%WWWDIR%%/modules/status/tmpl/default
-@dirrm %%WWWDIR%%/modules/status/tmpl/lite
-@dirrm %%WWWDIR%%/modules/status/tmpl/wap
-@dirrm %%WWWDIR%%/modules/status/tmpl
-@dirrm %%WWWDIR%%/modules/status
-@dirrm %%WWWDIR%%/modules/mythtv/tmpl/default
-@dirrm %%WWWDIR%%/modules/mythtv/tmpl/lite
-@dirrm %%WWWDIR%%/modules/mythtv/tmpl
-@dirrm %%WWWDIR%%/modules/mythtv
-@dirrm %%WWWDIR%%/modules/_shared/lang
-@dirrm %%WWWDIR%%/modules/_shared/tmpl/_errors
-@dirrm %%WWWDIR%%/modules/_shared/tmpl/default
-@dirrm %%WWWDIR%%/modules/_shared/tmpl/iPod
-@dirrm %%WWWDIR%%/modules/_shared/tmpl/lite
+@dirrm %%WWWDIR%%/modules/coverart
+@dirrm %%WWWDIR%%/modules/backend_log/tmpl/lite
+@dirrm %%WWWDIR%%/modules/backend_log/tmpl/default
+@dirrm %%WWWDIR%%/modules/backend_log/tmpl
+@dirrm %%WWWDIR%%/modules/backend_log
 @dirrm %%WWWDIR%%/modules/_shared/tmpl/wap
+@dirrm %%WWWDIR%%/modules/_shared/tmpl/tmpl
+@dirrm %%WWWDIR%%/modules/_shared/tmpl/lite
+@dirrm %%WWWDIR%%/modules/_shared/tmpl/iPod
+@dirrm %%WWWDIR%%/modules/_shared/tmpl/default
+@dirrm %%WWWDIR%%/modules/_shared/tmpl/_errors
 @dirrm %%WWWDIR%%/modules/_shared/tmpl
+@dirrm %%WWWDIR%%/modules/_shared/lang
 @dirrm %%WWWDIR%%/modules/_shared
-@dirrm %%WWWDIR%%/modules/weather/includes
-@dirrm %%WWWDIR%%/modules/weather/tmpl/default
-@dirrm %%WWWDIR%%/modules/weather/tmpl
-@dirrm %%WWWDIR%%/modules/weather/classes
-@dirrm %%WWWDIR%%/modules/weather
-@dirrm %%WWWDIR%%/modules/remote/tmpl/default
-@dirrm %%WWWDIR%%/modules/remote/tmpl/iPod
-@dirrm %%WWWDIR%%/modules/remote/tmpl
-@dirrm %%WWWDIR%%/modules/remote
 @dirrm %%WWWDIR%%/modules
-@dirrm %%WWWDIR%%/js/prototip
 @dirrm %%WWWDIR%%/js/scriptaculous
+@dirrm %%WWWDIR%%/js/prototip
 @dirrm %%WWWDIR%%/js
 @dirrm %%WWWDIR%%/includes
 @dirrmtry %%WWWDIR%%/data

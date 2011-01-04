@@ -27,9 +27,42 @@
 %%DATADIR%%/themes/Arclight/base.xml
 %%DATADIR%%/themes/Arclight/browser-ui.xml
 %%DATADIR%%/themes/Arclight/categories.xml
+%%DATADIR%%/themes/Arclight/codecs/1080i.png
+%%DATADIR%%/themes/Arclight/codecs/1080p.png
+%%DATADIR%%/themes/Arclight/codecs/1chan.png
+%%DATADIR%%/themes/Arclight/codecs/2chan.png
+%%DATADIR%%/themes/Arclight/codecs/5chan.png
+%%DATADIR%%/themes/Arclight/codecs/6chan.png
+%%DATADIR%%/themes/Arclight/codecs/720p.png
+%%DATADIR%%/themes/Arclight/codecs/7chan.png
+%%DATADIR%%/themes/Arclight/codecs/8chan.png
+%%DATADIR%%/themes/Arclight/codecs/AAC.png
+%%DATADIR%%/themes/Arclight/codecs/AC3.png
+%%DATADIR%%/themes/Arclight/codecs/ASP.png
+%%DATADIR%%/themes/Arclight/codecs/Blu-ray.png
+%%DATADIR%%/themes/Arclight/codecs/DTS.png
+%%DATADIR%%/themes/Arclight/codecs/DVD.png
+%%DATADIR%%/themes/Arclight/codecs/EAC3.png
+%%DATADIR%%/themes/Arclight/codecs/H263.png
+%%DATADIR%%/themes/Arclight/codecs/H264.png
+%%DATADIR%%/themes/Arclight/codecs/LiveTV.png
+%%DATADIR%%/themes/Arclight/codecs/MP2.png
+%%DATADIR%%/themes/Arclight/codecs/MP3.png
+%%DATADIR%%/themes/Arclight/codecs/MPEG2.png
+%%DATADIR%%/themes/Arclight/codecs/PCM-Blu-ray.png
+%%DATADIR%%/themes/Arclight/codecs/PCM.png
+%%DATADIR%%/themes/Arclight/codecs/RTJPEG.png
+%%DATADIR%%/themes/Arclight/codecs/Recorded.png
+%%DATADIR%%/themes/Arclight/codecs/Recording.png
+%%DATADIR%%/themes/Arclight/codecs/SD.png
+%%DATADIR%%/themes/Arclight/codecs/TrueHD.png
+%%DATADIR%%/themes/Arclight/codecs/VC1.png
+%%DATADIR%%/themes/Arclight/codecs/Video.png
+%%DATADIR%%/themes/Arclight/codecs/Vorbis.png
+%%DATADIR%%/themes/Arclight/codecs/WMAPRO.png
+%%DATADIR%%/themes/Arclight/codecs/WMV3.png
 %%DATADIR%%/themes/Arclight/config-ui.xml
 %%DATADIR%%/themes/Arclight/controls-ui.xml
-%%DATADIR%%/themes/Arclight/dvd-ui.xml
 %%DATADIR%%/themes/Arclight/gallery-ui.xml
 %%DATADIR%%/themes/Arclight/game-ui.xml
 %%DATADIR%%/themes/Arclight/htmls/progdetails_page1.html
@@ -116,6 +149,7 @@
 %%DATADIR%%/themes/Arclight/images/halfstar.png
 %%DATADIR%%/themes/Arclight/images/hdicon_black.png
 %%DATADIR%%/themes/Arclight/images/hdicon_white.png
+%%DATADIR%%/themes/Arclight/images/infooverlay.png
 %%DATADIR%%/themes/Arclight/images/lb-check-empty.png
 %%DATADIR%%/themes/Arclight/images/lb-check-full.png
 %%DATADIR%%/themes/Arclight/images/lb-check-half.png
@@ -137,6 +171,10 @@
 %%DATADIR%%/themes/Arclight/images/mv_gallery_dir_up.png
 %%DATADIR%%/themes/Arclight/images/mv_gallery_dir_up_open.png
 %%DATADIR%%/themes/Arclight/images/mythtv.png
+%%DATADIR%%/themes/Arclight/images/osd_bg.png
+%%DATADIR%%/themes/Arclight/images/osd_bumper_left.png
+%%DATADIR%%/themes/Arclight/images/osd_bumper_right.png
+%%DATADIR%%/themes/Arclight/images/osd_overlay.png
 %%DATADIR%%/themes/Arclight/images/pcloudy.png
 %%DATADIR%%/themes/Arclight/images/progressbar/progress1.png
 %%DATADIR%%/themes/Arclight/images/progressbar/progress10.png
@@ -190,6 +228,8 @@
 %%DATADIR%%/themes/Arclight/images/progressbar/progress9.png
 %%DATADIR%%/themes/Arclight/images/progressbar/progressbar_background.png
 %%DATADIR%%/themes/Arclight/images/progressbar/progressbar_fill.png
+%%DATADIR%%/themes/Arclight/images/progressbar/progressbar_large_background.png
+%%DATADIR%%/themes/Arclight/images/progressbar/progressbar_large_fill.png
 %%DATADIR%%/themes/Arclight/images/progressbar_background.png
 %%DATADIR%%/themes/Arclight/images/progressbar_fill.png
 %%DATADIR%%/themes/Arclight/images/rainsnow.png
@@ -218,8 +258,8 @@
 %%DATADIR%%/themes/Arclight/images/unknown.png
 %%DATADIR%%/themes/Arclight/images/wideselector_selected.png
 %%DATADIR%%/themes/Arclight/images/wideselector_unselected.png
-%%DATADIR%%/themes/Arclight/keyboard/en_uk.xml
-%%DATADIR%%/themes/Arclight/keyboard/en_uk_ui.xml
+%%DATADIR%%/themes/Arclight/keyboard/en_gb.xml
+%%DATADIR%%/themes/Arclight/keyboard/en_gb_ui.xml
 %%DATADIR%%/themes/Arclight/keyboard/en_us.xml
 %%DATADIR%%/themes/Arclight/keyboard/en_us_ui.xml
 %%DATADIR%%/themes/Arclight/keyboard/keyboard.xml
@@ -235,6 +275,7 @@
 %%DATADIR%%/themes/Arclight/mythnative-ui.xml
 %%DATADIR%%/themes/Arclight/netvision-ui.xml
 %%DATADIR%%/themes/Arclight/news-ui.xml
+%%DATADIR%%/themes/Arclight/osd.xml
 %%DATADIR%%/themes/Arclight/preview.png
 %%DATADIR%%/themes/Arclight/qtlook.txt
 %%DATADIR%%/themes/Arclight/recordings-ui.xml
@@ -271,7 +312,6 @@
 %%DATADIR%%/themes/Childish/buttons/submenu_right.png
 %%DATADIR%%/themes/Childish/config-ui.xml
 %%DATADIR%%/themes/Childish/controls-ui.xml
-%%DATADIR%%/themes/Childish/dvd-ui.xml
 %%DATADIR%%/themes/Childish/gallery-ui.xml
 %%DATADIR%%/themes/Childish/gallery/ORIGphoto_single.png
 %%DATADIR%%/themes/Childish/gallery/ORIGphoto_stack.png
@@ -424,7 +464,6 @@
 %%DATADIR%%/themes/Graphite/categories.xml
 %%DATADIR%%/themes/Graphite/config-ui.xml
 %%DATADIR%%/themes/Graphite/controls-ui.xml
-%%DATADIR%%/themes/Graphite/dvd-ui.xml
 %%DATADIR%%/themes/Graphite/gallery-ui.xml
 %%DATADIR%%/themes/Graphite/game-ui.xml
 %%DATADIR%%/themes/Graphite/images/1.5star.png
@@ -677,10 +716,9 @@
 %%DATADIR%%/themes/Graphite/images/wide.png
 %%DATADIR%%/themes/Graphite/images/widealone.png
 %%DATADIR%%/themes/Graphite/menu-ui.xml
-%%DATADIR%%/themes/Graphite/movies-ui.xml
 %%DATADIR%%/themes/Graphite/music-ui.xml
-%%DATADIR%%/themes/Graphite/netflix-ui.xml
 %%DATADIR%%/themes/Graphite/news-ui.xml
+%%DATADIR%%/themes/Graphite/osd.xml
 %%DATADIR%%/themes/Graphite/preview.png
 %%DATADIR%%/themes/Graphite/qtlook.txt
 %%DATADIR%%/themes/Graphite/recordings-ui.xml
@@ -689,38 +727,6 @@
 %%DATADIR%%/themes/Graphite/themeinfo.xml
 %%DATADIR%%/themes/Graphite/video-ui.xml
 %%DATADIR%%/themes/Graphite/weather-ui.xml
-%%DATADIR%%/themes/Iulius-OSD/blue.png
-%%DATADIR%%/themes/Iulius-OSD/cut-end.png
-%%DATADIR%%/themes/Iulius-OSD/cut-start.png
-%%DATADIR%%/themes/Iulius-OSD/green-slide.png
-%%DATADIR%%/themes/Iulius-OSD/green.png
-%%DATADIR%%/themes/Iulius-OSD/iulius-osd-preview.png
-%%DATADIR%%/themes/Iulius-OSD/osd-alert.png
-%%DATADIR%%/themes/Iulius-OSD/osd-big.png
-%%DATADIR%%/themes/Iulius-OSD/osd-callerid.png
-%%DATADIR%%/themes/Iulius-OSD/osd-channel-edit.png
-%%DATADIR%%/themes/Iulius-OSD/osd-edit-bg.png
-%%DATADIR%%/themes/Iulius-OSD/osd-small.png
-%%DATADIR%%/themes/Iulius-OSD/osd.xml
-%%DATADIR%%/themes/Iulius-OSD/popup.png
-%%DATADIR%%/themes/Iulius-OSD/position-indicator.png
-%%DATADIR%%/themes/Iulius-OSD/red.png
-%%DATADIR%%/themes/Iulius-OSD/themeinfo.xml
-%%DATADIR%%/themes/Mono-OSD/cut-end.png
-%%DATADIR%%/themes/Mono-OSD/cut-start.png
-%%DATADIR%%/themes/Mono-OSD/fill-blue.png
-%%DATADIR%%/themes/Mono-OSD/grey.png
-%%DATADIR%%/themes/Mono-OSD/mono-osd-preview.png
-%%DATADIR%%/themes/Mono-OSD/osd-alert.png
-%%DATADIR%%/themes/Mono-OSD/osd-big.png
-%%DATADIR%%/themes/Mono-OSD/osd-browse.png
-%%DATADIR%%/themes/Mono-OSD/osd-callerid.png
-%%DATADIR%%/themes/Mono-OSD/osd-channel-edit.png
-%%DATADIR%%/themes/Mono-OSD/osd-small.png
-%%DATADIR%%/themes/Mono-OSD/osd.xml
-%%DATADIR%%/themes/Mono-OSD/position-indicator.png
-%%DATADIR%%/themes/Mono-OSD/red.png
-%%DATADIR%%/themes/Mono-OSD/themeinfo.xml
 %%DATADIR%%/themes/Mythbuntu/README.txt
 %%DATADIR%%/themes/Mythbuntu/appear-ui.xml
 %%DATADIR%%/themes/Mythbuntu/background.png
@@ -755,7 +761,6 @@
 %%DATADIR%%/themes/Mythbuntu/config-ui.xml
 %%DATADIR%%/themes/Mythbuntu/container.png
 %%DATADIR%%/themes/Mythbuntu/controls-ui.xml
-%%DATADIR%%/themes/Mythbuntu/dvd-ui.xml
 %%DATADIR%%/themes/Mythbuntu/gallery-ui.xml
 %%DATADIR%%/themes/Mythbuntu/game-ui.xml
 %%DATADIR%%/themes/Mythbuntu/htmls/notfound.html
@@ -806,6 +811,7 @@
 %%DATADIR%%/themes/Mythbuntu/news-ui.xml
 %%DATADIR%%/themes/Mythbuntu/panels-with-drop.png
 %%DATADIR%%/themes/Mythbuntu/preview.jpg
+%%DATADIR%%/themes/Mythbuntu/preview.png
 %%DATADIR%%/themes/Mythbuntu/progress-filler.png
 %%DATADIR%%/themes/Mythbuntu/qtlook.txt
 %%DATADIR%%/themes/Mythbuntu/recordings-ui.xml
@@ -922,98 +928,6 @@
 %%DATADIR%%/themes/Mythbuntu/weather/thunshowers.png
 %%DATADIR%%/themes/Mythbuntu/weather/unknown.png
 %%DATADIR%%/themes/Mythbuntu/welcome-ui.xml
-%%DATADIR%%/themes/ProjectGrayhem-OSD/Vera.ttf
-%%DATADIR%%/themes/ProjectGrayhem-OSD/VeraBd.ttf
-%%DATADIR%%/themes/ProjectGrayhem-OSD/cut_end.png
-%%DATADIR%%/themes/ProjectGrayhem-OSD/cut_start.png
-%%DATADIR%%/themes/ProjectGrayhem-OSD/edit.png
-%%DATADIR%%/themes/ProjectGrayhem-OSD/fill_green.png
-%%DATADIR%%/themes/ProjectGrayhem-OSD/fill_red.png
-%%DATADIR%%/themes/ProjectGrayhem-OSD/osd-alert.png
-%%DATADIR%%/themes/ProjectGrayhem-OSD/osd-channel-edit.png
-%%DATADIR%%/themes/ProjectGrayhem-OSD/osd.xml
-%%DATADIR%%/themes/ProjectGrayhem-OSD/osd_mid.png
-%%DATADIR%%/themes/ProjectGrayhem-OSD/paused_frame.png
-%%DATADIR%%/themes/ProjectGrayhem-OSD/phone.png
-%%DATADIR%%/themes/ProjectGrayhem-OSD/popup.png
-%%DATADIR%%/themes/ProjectGrayhem-OSD/position_marker.png
-%%DATADIR%%/themes/ProjectGrayhem-OSD/projectgrayhem-osd-preview.png
-%%DATADIR%%/themes/ProjectGrayhem-OSD/scroll.png
-%%DATADIR%%/themes/ProjectGrayhem-OSD/select.png
-%%DATADIR%%/themes/ProjectGrayhem-OSD/themeinfo.xml
-%%DATADIR%%/themes/Retro-OSD/Vera.ttf
-%%DATADIR%%/themes/Retro-OSD/VeraBd.ttf
-%%DATADIR%%/themes/Retro-OSD/cut_end.png
-%%DATADIR%%/themes/Retro-OSD/cut_start.png
-%%DATADIR%%/themes/Retro-OSD/edit.png
-%%DATADIR%%/themes/Retro-OSD/fill_green.png
-%%DATADIR%%/themes/Retro-OSD/fill_red.png
-%%DATADIR%%/themes/Retro-OSD/osd-channel-edit.png
-%%DATADIR%%/themes/Retro-OSD/osd.xml
-%%DATADIR%%/themes/Retro-OSD/osd_mid.png
-%%DATADIR%%/themes/Retro-OSD/pause.png
-%%DATADIR%%/themes/Retro-OSD/paused_frame.png
-%%DATADIR%%/themes/Retro-OSD/phone.png
-%%DATADIR%%/themes/Retro-OSD/popup.png
-%%DATADIR%%/themes/Retro-OSD/position_marker.png
-%%DATADIR%%/themes/Retro-OSD/retro-osd-preview.png
-%%DATADIR%%/themes/Retro-OSD/scroll.png
-%%DATADIR%%/themes/Retro-OSD/select.png
-%%DATADIR%%/themes/Retro-OSD/settings.png
-%%DATADIR%%/themes/Retro-OSD/themeinfo.xml
-%%DATADIR%%/themes/Titivillus-OSD/cut-end.png
-%%DATADIR%%/themes/Titivillus-OSD/cut-start.png
-%%DATADIR%%/themes/Titivillus-OSD/edit_background.png
-%%DATADIR%%/themes/Titivillus-OSD/fill-blue.png
-%%DATADIR%%/themes/Titivillus-OSD/grey.png
-%%DATADIR%%/themes/Titivillus-OSD/length.png
-%%DATADIR%%/themes/Titivillus-OSD/osd-alert.png
-%%DATADIR%%/themes/Titivillus-OSD/osd-big.png
-%%DATADIR%%/themes/Titivillus-OSD/osd-callerid.png
-%%DATADIR%%/themes/Titivillus-OSD/osd-channel-edit.png
-%%DATADIR%%/themes/Titivillus-OSD/osd-small.png
-%%DATADIR%%/themes/Titivillus-OSD/osd.xml
-%%DATADIR%%/themes/Titivillus-OSD/popup.png
-%%DATADIR%%/themes/Titivillus-OSD/position-indicator.png
-%%DATADIR%%/themes/Titivillus-OSD/red.png
-%%DATADIR%%/themes/Titivillus-OSD/themeinfo.xml
-%%DATADIR%%/themes/Titivillus-OSD/titivillus-osd-preview.png
-%%DATADIR%%/themes/blootube-osd/Vera.ttf
-%%DATADIR%%/themes/blootube-osd/VeraBd.ttf
-%%DATADIR%%/themes/blootube-osd/blootube-osd-preview.png
-%%DATADIR%%/themes/blootube-osd/cut_end.png
-%%DATADIR%%/themes/blootube-osd/cut_start.png
-%%DATADIR%%/themes/blootube-osd/edit.png
-%%DATADIR%%/themes/blootube-osd/fill_green.png
-%%DATADIR%%/themes/blootube-osd/fill_red.png
-%%DATADIR%%/themes/blootube-osd/osd-alert.png
-%%DATADIR%%/themes/blootube-osd/osd-channel-edit.png
-%%DATADIR%%/themes/blootube-osd/osd.xml
-%%DATADIR%%/themes/blootube-osd/osd_mid.png
-%%DATADIR%%/themes/blootube-osd/pause.png
-%%DATADIR%%/themes/blootube-osd/paused_frame.png
-%%DATADIR%%/themes/blootube-osd/phone.png
-%%DATADIR%%/themes/blootube-osd/popup.png
-%%DATADIR%%/themes/blootube-osd/position_marker.png
-%%DATADIR%%/themes/blootube-osd/scroll.png
-%%DATADIR%%/themes/blootube-osd/select.png
-%%DATADIR%%/themes/blootube-osd/settings.png
-%%DATADIR%%/themes/blootube-osd/themeinfo.xml
-%%DATADIR%%/themes/blueosd/blueosd-preview.png
-%%DATADIR%%/themes/blueosd/cut-end.png
-%%DATADIR%%/themes/blueosd/cut-start.png
-%%DATADIR%%/themes/blueosd/fill-blue.png
-%%DATADIR%%/themes/blueosd/grey.png
-%%DATADIR%%/themes/blueosd/osd-alert.png
-%%DATADIR%%/themes/blueosd/osd-big.png
-%%DATADIR%%/themes/blueosd/osd-callerid.png
-%%DATADIR%%/themes/blueosd/osd-channel-edit.png
-%%DATADIR%%/themes/blueosd/osd-mid.png
-%%DATADIR%%/themes/blueosd/osd-small.png
-%%DATADIR%%/themes/blueosd/osd.xml
-%%DATADIR%%/themes/blueosd/position-indicator.png
-%%DATADIR%%/themes/blueosd/red.png
-%%DATADIR%%/themes/blueosd/themeinfo.xml
 %%DATADIR%%/themes/metallurgy/README
 %%DATADIR%%/themes/metallurgy/backgrounds/background.png
 %%DATADIR%%/themes/metallurgy/backgrounds/delete_usage_background.png
@@ -1207,7 +1121,6 @@
 %%DATADIR%%/themes/metallurgy/music/stop_button_pushed.png
 %%DATADIR%%/themes/metallurgy/music/visualiser_background.png
 %%DATADIR%%/themes/metallurgy/mythtvlogo.png
-%%DATADIR%%/themes/metallurgy/netflix-ui.xml
 %%DATADIR%%/themes/metallurgy/news-ui.xml
 %%DATADIR%%/themes/metallurgy/news/download.png
 %%DATADIR%%/themes/metallurgy/news/embedmedia.png
@@ -1224,9 +1137,8 @@
 %%DATADIR%%/themes/metallurgy/osd/position_marker.png
 %%DATADIR%%/themes/metallurgy/osd/settings_background.png
 %%DATADIR%%/themes/metallurgy/osd/slider_background.png
+%%DATADIR%%/themes/metallurgy/osd/slider_foreground.png
 %%DATADIR%%/themes/metallurgy/osd/slider_glass.png
-%%DATADIR%%/themes/metallurgy/osd/slider_offcolour.png
-%%DATADIR%%/themes/metallurgy/osd/slider_oncolour.png
 %%DATADIR%%/themes/metallurgy/osd_preview.png
 %%DATADIR%%/themes/metallurgy/preview.png
 %%DATADIR%%/themes/metallurgy/qtlook.txt
@@ -1279,7 +1191,6 @@
 %%DATADIR%%/themes/metallurgy/shared/volume_slider_background.png
 %%DATADIR%%/themes/metallurgy/shared/volume_slider_foreground.png
 %%DATADIR%%/themes/metallurgy/status-ui.xml
-%%DATADIR%%/themes/metallurgy/theme.xml
 %%DATADIR%%/themes/metallurgy/themeinfo.xml
 %%DATADIR%%/themes/metallurgy/type/autoexpire.png
 %%DATADIR%%/themes/metallurgy/type/blank.png
@@ -1324,11 +1235,6 @@
 @dirrm %%DATADIR%%/themes/metallurgy/controls
 @dirrm %%DATADIR%%/themes/metallurgy/backgrounds
 @dirrm %%DATADIR%%/themes/metallurgy
-@dirrm %%DATADIR%%/themes/blueosd
-@dirrm %%DATADIR%%/themes/blootube-osd
-@dirrm %%DATADIR%%/themes/Titivillus-OSD
-@dirrm %%DATADIR%%/themes/Retro-OSD
-@dirrm %%DATADIR%%/themes/ProjectGrayhem-OSD
 @dirrm %%DATADIR%%/themes/Mythbuntu/weather
 @dirrm %%DATADIR%%/themes/Mythbuntu/watermark
 @dirrm %%DATADIR%%/themes/Mythbuntu/type
@@ -1337,8 +1243,6 @@
 @dirrm %%DATADIR%%/themes/Mythbuntu/htmls
 @dirrm %%DATADIR%%/themes/Mythbuntu/busyimages
 @dirrm %%DATADIR%%/themes/Mythbuntu
-@dirrm %%DATADIR%%/themes/Mono-OSD
-@dirrm %%DATADIR%%/themes/Iulius-OSD
 @dirrm %%DATADIR%%/themes/Graphite/images/progressbar
 @dirrm %%DATADIR%%/themes/Graphite/images/backgrounds
 @dirrm %%DATADIR%%/themes/Graphite/images
@@ -1356,6 +1260,7 @@
 @dirrm %%DATADIR%%/themes/Arclight/images/progressbar
 @dirrm %%DATADIR%%/themes/Arclight/images
 @dirrm %%DATADIR%%/themes/Arclight/htmls
+@dirrm %%DATADIR%%/themes/Arclight/codecs
 @dirrm %%DATADIR%%/themes/Arclight/Watermarks
 @dirrm %%DATADIR%%/themes/Arclight/Backgrounds
 @dirrm %%DATADIR%%/themes/Arclight
