@@ -398,6 +398,7 @@
     SUBDIR += p5-DMOZ-ParseRDF
     SUBDIR += p5-DWH_File
     SUBDIR += p5-Dancer-Plugin-Database
+    SUBDIR += p5-Dancer-Session-Memcached
     SUBDIR += p5-Data-Page
     SUBDIR += p5-Data-Pageset
     SUBDIR += p5-Exception-Class-DBI

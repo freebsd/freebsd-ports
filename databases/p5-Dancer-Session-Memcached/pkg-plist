@@ -1,0 +1,4 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Dancer/Session/Memcached/.packlist
+%%SITE_PERL%%/Dancer/Session/Memcached.pm
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Dancer/Session/Memcached
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Dancer/Session
