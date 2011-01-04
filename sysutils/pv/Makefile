@@ -6,13 +6,16 @@
 #
 
 PORTNAME=	pv
-PORTVERSION=	1.1.4
-PORTREVISION=	1
+PORTVERSION=	1.2.0
 CATEGORIES=	sysutils
-MASTER_SITES=	SF/pipeviewer/pipeviewer/${PORTVERSION}
+MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE} \
+		SF/${PROJECTHOST}/${PROJECTHOST}/${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	martymac@FreeBSD.org
 COMMENT=	A pipe throughput monitor
+
+PROJECTHOST=	pipeviewer
+LICENSE=	ART20
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
@@ -20,7 +23,7 @@ GNU_CONFIGURE=	yes
 
 MAN1=		pv.1
 PLIST_FILES=	bin/pv
-PORTDOCS=	README COPYING INSTALL NEWS PACKAGE \
+PORTDOCS=	README INSTALL NEWS PACKAGE \
 		TODO VERSION release-checklist
 OPTIONS=	LFS "Use large filesystem support" on \
 		NLS "Use Native Language Support" off
@@ -44,7 +47,9 @@ do-install:
 	${INSTALL_MAN} ${WRKSRC}/doc/quickref.1 ${MAN1PREFIX}/man/man1/pv.1
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/doc/,} ${DOCSDIR}/
+.for doc in ${PORTDOCS}
+	${INSTALL_DATA} ${WRKSRC}/doc/${doc} ${DOCSDIR}
+.endfor
 .endif
 
 test:
