@@ -10,7 +10,6 @@ etc/Muttrc.dist
 etc/mime.types.dist
 %%PORTDOCS%%%%DOCSDIR%%/COPYRIGHT
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
-%%PORTDOCS%%%%DOCSDIR%%/ChangeLog.old
 %%PORTDOCS%%%%DOCSDIR%%/GPL
 %%PORTDOCS%%%%DOCSDIR%%/INSTALL
 %%PORTDOCS%%%%DOCSDIR%%/INSTALL.JA-PATCH.ja
@@ -46,6 +45,7 @@ etc/mime.types.dist
 %%PORTDOCS%%%%DOCSDIR%%/manual.ja.html
 %%PORTDOCS%%%%DOCSDIR%%/manual.ja.sgml
 %%PORTDOCS%%%%DOCSDIR%%/manual.ja.txt
+%%PORTDOCS%%%%DOCSDIR%%/optionalfeatures.html
 %%PORTDOCS%%%%DOCSDIR%%/patch-notes.txt
 %%PORTDOCS%%%%DOCSDIR%%/samples/Mush.rc
 %%PORTDOCS%%%%DOCSDIR%%/samples/Pine.rc
@@ -80,6 +80,8 @@ etc/mime.types.dist
 %%PORTDOCS%%%%DOCSDIR%%/samples/smime_keys_test.pl
 %%PORTDOCS%%%%DOCSDIR%%/samples/colors.default
 %%PORTDOCS%%%%DOCSDIR%%/samples/colors.linux
+%%PORTDOCS%%%%DOCSDIR%%/samples/mutt_xtitle
+%%PORTDOCS%%%%DOCSDIR%%/security.html
 %%PORTDOCS%%%%DOCSDIR%%/smime-notes.txt
 %%PORTDOCS%%%%DOCSDIR%%/tuning.html
 %%NLS%%share/locale/bg/LC_MESSAGES/mutt.mo
