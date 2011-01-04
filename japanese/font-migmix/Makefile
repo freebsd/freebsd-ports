@@ -44,7 +44,7 @@ do-install:
 		${DATADIR}
 	${MKDIR} ${PREFIX}/${LOCAL_FONTSDIR}/TTF
 	${LN} -s -f ${DATADIR}/MigMix*.ttf \
-		${LOCALBASE}/${LOCAL_FONTSDIR}/TTF/
+		${PREFIX}/${LOCAL_FONTSDIR}/TTF/
 	${MKDIR} ${PREFIX}/${X_FONTSDIR}/TTF
 	${LN} -s -f ${DATADIR}/MigMix*.ttf \
 		${PREFIX}/${X_FONTSDIR}/TTF/
