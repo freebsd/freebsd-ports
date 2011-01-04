@@ -7,7 +7,7 @@
 # $FreeBSD$
 
 PORTNAME=	mythtv
-PORTVERSION=	0.23.1
+PORTVERSION=	0.24
 CATEGORIES=	multimedia
 MASTER_SITES=	http://ftp.osuosl.org/pub/mythtv/ \
 		http://ftp.osuosl.org/pub/mythtv/old_releases/ \
@@ -19,8 +19,7 @@ COMMENT=	MythTV is a homebrew PVR project
 
 LIB_DEPENDS=	mp3lame.0:${PORTSDIR}/audio/lame \
 		freetype.9:${PORTSDIR}/print/freetype2
-BUILD_DEPENDS=	v4l_compat>=1.0.20100321:${PORTSDIR}/multimedia/v4l_compat \
-		${SITE_PERL}/${PERL_ARCH}/XML/Parser/Expat.pm:${PORTSDIR}/textproc/p5-XML-SAX-Expat
+BUILD_DEPENDS=	v4l_compat>=1.0.20100321:${PORTSDIR}/multimedia/v4l_compat
 RUN_DEPENDS=	tv_check:${PORTSDIR}/textproc/p5-xmltv \
 		wget:${PORTSDIR}/ftp/wget
 
@@ -30,16 +29,12 @@ ONLY_FOR_ARCHS=	i386 amd64
 USE_BZIP2=	yes
 USE_QT_VER=	4
 QT_COMPONENTS=	gui sql network script linguist_build l10n sql-mysql_run \
-		moc_build qmake_build rcc_build uic_build
+		moc_build qmake_build rcc_build uic_build imageformats
 QT_NONSTANDARD=	yes
 USE_MYSQL=	51
 USE_GMAKE=	yes
 HAS_CONFIGURE=	yes
 USE_PERL=	yes
-USE_PYTHON=	yes
-INSTALLS_EGGINFO=yes
-PYDISTUTILS_PKGNAME=MythTV
-PYDISTUTILS_PKGVERSION=${PORTVERSION}
 USE_LDCONFIG=	${PREFIX}/lib/mythtv/filters
 REINPLACE_ARGS=	-i ""
 USE_RC_SUBR=	mythbackend
@@ -55,19 +50,37 @@ CONFIGURE_ENV+=	QMAKESPEC="${QMAKESPEC}" MOC="${MOC}" CPPFLAGS="${CPPFLAGS} ${QT
 
 CONFIGURE_ARGS=	--prefix=${PREFIX} --dvb-path=${LOCALBASE}/include \
 		--extra-cflags=-g --extra-cxxflags=-g --enable-v4l \
-		--enable-ivtv --enable-xvmc --disable-xvmcw --disable-xvmc-pro \
-		--disable-directfb --enable-glx-procaddrarb
+		--enable-ivtv --enable-xvmc --disable-xvmcw \
+		--disable-directfb --disable-audio-alsa
 
 QMAKESPEC?=	${LOCALBASE}/share/qt4/mkspecs/freebsd-g++
 
-OPTIONS=	LIRC		"Native LIRC Support" off \
+OPTIONS=	BINDINGS	"Perl and Python bindings" off \
+		LIRC		"Native LIRC Support" off \
 		MYSQL_LOCAL	"RUN_DEPEND on selected MySQL server" off \
 		OPENGL		"OpenGL support" on \
 		VDPAU		"VDPAU support (nvidia only)" off
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 SUB_FILES=	pkg-message
+
+.if defined(WITH_BINDINGS)
+USE_PYTHON=	yes
+INSTALLS_EGGINFO=yes
+PYDISTUTILS_PKGNAME=MythTV
+PYDISTUTILS_PKGVERSION=${PORTVERSION}.0
+
+BUILD_DEPENDS+=	py*-lxml>=0:${PORTSDIR}/devel/py-lxml \
+		${PYTHON_PKGNAMEPREFIX}MySQLdb>=1.2.2:${PORTSDIR}/databases/py-MySQLdb
+RUN_DEPENDS+=	py*-lxml>=0:${PORTSDIR}/devel/py-lxml \
+		${PYTHON_PKGNAMEPREFIX}MySQLdb>=1.2.2:${PORTSDIR}/databases/py-MySQLdb
+CONFIGURE_ARGS+=--without-bindings=perl
+PLIST_SUB+=	BINDINGS=""
+.else
+CONFIGURE_ARGS+=--without-bindings=perl,python
+PLIST_SUB+=	BINDINGS="@comment "
+.endif
 
 .if defined(WITH_LIRC)
 LIB_DEPENDS+=	lirc_client.1:${PORTSDIR}/comms/lirc
@@ -95,15 +108,10 @@ post-patch:
 		@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g' \
 			${WRKSRC}/configure \
 			${WRKSRC}/libs/libmythtv/libmythtv.pro \
-			${WRKSRC}/libs/libavformat/libavformat.pro \
 			${WRKSRC}/bindings/perl/MythTV/Recording.pm \
 			${WRKSRC}/programs/mythtranscode/replex/Makefile.standalone \
 			${WRKSRC}/programs/scripts/database/mythconverg_backup.pl \
 			${WRKSRC}/programs/scripts/database/mythconverg_restore.pl \
-			${WRKSRC}/contrib/encoding_converting/mythencode/mythencode.pl \
-			${WRKSRC}/contrib/user_jobs/firewire_primer.pl \
-			${WRKSRC}/contrib/user_jobs/mythvidexport.py \
-			${WRKSRC}/contrib/info/mythname/mythname.pl \
 			${WRKSRC}/programs/mythcommflag/mythcommflag-analyze
 
 post-install:
@@ -111,4 +119,4 @@ post-install:
 		@${CP} ${WRKSRC}/database/mc.sql ${PREFIX}/share/mythtv/database
 		@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
