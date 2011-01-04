@@ -32,18 +32,7 @@ CONFIGURE_ENV+=	ALLIANCE_TOP=${ALLIANCE_TOP}
 CONFIGURE_ARGS+=--mandir=${MANPREFIX}/man \
 		--prefix=${ALLIANCE_TOP} ${CONFIGURE_TARGET}
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 800000
-BROKEN=		does not compile
-.endif
-
 ALLIANCE_TOP=	${PREFIX}/alliance
-SRCDIRLIST!=	${CAT} ${FILESDIR}/srcdirs.list
-CFLAGS+=	${SRCDIRLIST:S,^,-I${WRKSRC}/,}
-LDFLAGS+=	${SRCDIRLIST:S,^,-L${WRKSRC}/,}
-CONFIGURE_ENV+=	CFLAGS="${CFLAGS}" CPPFLAGS="${CFLAGS}" LDFLAGS="${LDFLAGS}"
-MAKE_ENV+=	CPPFLAGS="${CFLAGS}" LDFLAGS="${LDFLAGS}"
 
 MAN1=	MBK_CATAL_NAME.1 MBK_CATA_LIB.1 MBK_FILTER_SFX.1 MBK_IN_FILTER.1 \
 	MBK_IN_LO.1 MBK_IN_PH.1 MBK_OUT_FILTER.1 MBK_OUT_LO.1 MBK_OUT_PH.1 \
@@ -186,6 +175,12 @@ MAN3=	addcapa.3 addchain.3 addht.3 addhtitem.3 addlocon.3 addlofig.3 \
 
 MAN5=	ap.5 catal.5 prol.5 vbe.5 vhdl.5 vst.5 al.5 spi.5 ctl.5 fsm.5 pat.5 \
 	lax.5 sxlib.5 vasy.5
+
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 800000
+BROKEN=		does not compile
+.endif
 
 pre-configure:
 	@CONFIG_GUESS_DIRS=$$(${FIND} ${WRKDIR} -name config.guess -o -name config.sub \
