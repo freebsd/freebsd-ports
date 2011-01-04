@@ -6,7 +6,7 @@
 
 PORTNAME=	vice
 PORTVERSION=	2.2
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	emulators
 MASTER_SITES=	http://www.viceteam.org/online/ \
 		http://www.zimmers.net/anonftp/pub/cbm/crossplatform/emulators/VICE/ \
@@ -20,7 +20,9 @@ BUILD_DEPENDS=	bdftopcf:${PORTSDIR}/x11-fonts/bdftopcf \
 		mkfontdir:${PORTSDIR}/x11-fonts/mkfontdir \
 		mkfontscale:${PORTSDIR}/x11-fonts/mkfontscale \
 		pkg-config:${PORTSDIR}/devel/pkg-config
-LIB_DEPENDS=	png:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	png:${PORTSDIR}/graphics/png \
+		gif:${PORTSDIR}/graphics/giflib \
+		mp3lame:${PORTSDIR}/audio/lame
 .if defined(VICE_WITH_XAW3D)
 LIB_DEPENDS+=	Xaw3d.${XAWVER}:${PORTSDIR}/x11-toolkits/Xaw3d
 .endif
@@ -108,7 +110,7 @@ PLIST_SUB+=		NLS="@comment "
 
 .if !defined(WITHOUT_SDL)
 USE_SDL=		sdl
-CONFIGURE_ARGS+=	--with-sdl
+CONFIGURE_ARGS+=	--with-sdl --with-sdlsound
 CPPFLAGS+=		-I${LOCALBASE}/include/SDL
 .endif
 
@@ -119,12 +121,18 @@ CONFIGURE_ARGS+=	--with-esd
 CONFIGURE_ARGS+=	--without-esd
 .endif
 
+.if defined(VICE_WITH_ASOUND)
+LIB_DEPENDS+=	asound.2:${PORTSDIR}/audio/alsa-lib
+.endif
+
 post-extract:
 	@${RM} -f ${WRKSRC}/doc/vice.info*
 
 post-patch:
 	${REINPLACE_CMD} -e "s|%%PREFIX%%|${PREFIX}|g" \
 		${WRKSRC}/man/vice.1
+	${REINPLACE_CMD} -e 's|lungif|lgif|g' -e 's|== "x|= "x|' \
+		${WRKSRC}/configure
 .if defined(NOPORTDOCS)
 	${REINPLACE_CMD} -e 's| doc||' ${WRKSRC}/Makefile.in
 .endif
