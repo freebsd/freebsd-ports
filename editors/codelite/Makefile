@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	codelite
-DISTVERSION=	2.8.0.${SVN_REVISION}
+DISTVERSION=	2.9.0.${SVN_REVISION}
 CATEGORIES=	editors
 MASTER_SITES=	SF/${PORTNAME}/Releases/${PORTNAME}-${PORTVERSION:R:R}
 
@@ -25,16 +25,13 @@ HAS_CONFIGURE=	yes
 
 .include <bsd.port.pre.mk>
 
-SVN_REVISION=	4537
+SVN_REVISION=	4684
 
 .if defined(WITH_CSCOPE)
 RUN_DEPENDS+=	cscope:${PORTSDIR}/devel/cscope
 .endif
 
 post-patch:
-.if ${ARCH} == "amd64"
-	${REINPLACE_CMD} -e '66s|=|= -fPIC|' ${WRKSRC}/configure
-.endif
 	${REINPLACE_CMD} -e 's|wx-config|${WX_CONFIG}|g' ${WRKSRC}/configure
 #	Configure script does not respect --prefix
 	${REINPLACE_CMD} -e '/^prefix/s|/usr|${PREFIX}|; \
