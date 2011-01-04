@@ -5,12 +5,13 @@
 # $FreeBSD$
 #
 
-PORTNAME=		smb4k
+PORTNAME=		smb4k-kde4
 PORTVERSION=		0.10.9
-PORTREVISION=		1
+PORTREVISION=		2
 CATEGORIES=		net kde
 MASTER_SITES=		${MASTER_SITE_BERLIOS}
 MASTER_SITE_SUBDIR=	smb4k
+DISTNAME=		smb4k-${PORTVERSION}
 
 MAINTAINER=		jpaetzel@FreeBSD.org
 COMMENT=		KDE 4.x SMB Network browser and SMB shares mounting center
@@ -29,7 +30,7 @@ USE_KDE4=	kdehier kdeprefix kdelibs automoc4
 USE_QT_VER=	4
 QT_COMPONENTS=	corelib gui network opengl script svg webkit \
 		qmake_build moc_build rcc_build uic_build phonon
-DOCSDIR=	${PREFIX}/share/doc/HTML/en/${PORTNAME}
+DOCSDIR=	${PREFIX}/share/doc/HTML/en/smb4k
 SUB_FILES=	pkg-message
 
 .if defined(WITHOUT_NLS)
