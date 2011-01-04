@@ -6,6 +6,7 @@
 
 PORTNAME=	flvstreamer
 PORTVERSION=	2.1.c.1
+PORTREVISION=	1
 CATEGORIES=	multimedia net
 MASTER_SITES=	SAVANNAH
 MASTER_SITE_SUBDIR=	${PORTNAME}/source
@@ -14,12 +15,11 @@ DISTNAME=	${PORTNAME}-2.1c1
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	An open source command-line RTMP client
 
-CONFLICTS=	rtmpdump-[0-9]*
 USE_GMAKE=	yes
 ALL_TARGET=	posix
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-PLIST_FILES=	bin/flvstreamer bin/streams bin/rtmpsrv bin/rtmpsuck
+PLIST_FILES=	bin/flvstreamer bin/streams
 PORTDOCS=	ChangeLog ChangeLog.rtmpdump README
 
 do-install:
