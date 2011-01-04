@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Geo-Coordinates-Converter
-PORTVERSION=	0.06
+PORTVERSION=	0.08
 CATEGORIES=	science geography perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	../../authors/id/Y/YA/YAPPO
