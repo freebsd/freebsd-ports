@@ -7,7 +7,7 @@
 
 PORTNAME=	jadetex
 PORTVERSION=	3.13
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	print
 MASTER_SITES=	SF
 
@@ -21,8 +21,6 @@ RUN_DEPENDS=	etex:${PORTSDIR}/print/teTeX-base
 MAKE_JOBS_UNSAFE=	yes
 MAKE_ENV=	TEXMFCNF=${FILESDIR}:${TEXMFDIR}/web2c
 
-PKGMESSAGE=	${WRKDIR}/pkg-message
-SUB_FILES=	pkg-message
 PLIST_SUB=	TEXMFDIR=share/texmf
 
 MAN1=		jadetex.1 pdfjadetex.1
