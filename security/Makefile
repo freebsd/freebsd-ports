@@ -320,7 +320,6 @@
     SUBDIR += nikto
     SUBDIR += nmap
     SUBDIR += nmapsi4
-    SUBDIR += nofgpg
     SUBDIR += nsm-console
     SUBDIR += nss
     SUBDIR += ocaml-cryptgps

@@ -4798,3 +4798,14 @@ x11/enity||2011-01-03|Has expired: abandoned upstream
 x11/examine||2011-01-03|Has expired: abandoned upstream
 x11/ecore-desktop||2011-01-03|Has expired: abandoned upstream
 x11/enterminus||2011-01-03|Removed
+deskutils/gnome-pim||2011-01-03|Removed due to x11/libcapplet broke
+mail/pmail||2011-01-03|Removed due to x11/libcapplet broke
+mail/pygmy||2011-01-03|Removed due to x11/libcapplet broke
+math/scigraphica||2011-01-03|Removed due to x11/libcapplet broke
+net/geotrace||2011-01-03|Removed due to x11/libcapplet broke
+security/nofgpg||2011-01-03|Removed due to x11/libcapplet broke
+sysutils/gnome-control-center1||2011-01-03|Removed due to x11/libcapplet broke
+www/gtkhtml||2011-01-03|Removed due to x11/libcapplet broke
+x11/libcapplet||2011-01-03|Removed, broke and unmaintain by upstream
+x11/wmmenu||2011-01-03|Removed due to x11/libcapplet broke
+x11-toolkits/py-gnome||2011-01-03|Removed due to x11/libcapplet broke

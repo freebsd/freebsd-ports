@@ -75,8 +75,7 @@ _USE_GNOME_ALL= esound intlhack intltool ltasneededhack lthack ltverhack \
 # GNOME 1 components
 _USE_GNOME_ALL+= bonobo gal gconf gdkpixbuf glib12 glibwww \
 		gnomecanvas gnomedb gnomelibs gnomeprint gnomevfs gtk12 \
-		gtkhtml libcapplet libgda libghttp libglade libxml imlib \
-		oaf orbit pygnome pygtk
+		libgda libghttp libglade libxml imlib oaf orbit pygtk
 
 # GNOME 2 components
 _USE_GNOME_ALL+= atk atspi desktopfileutils eel2 evolutiondataserver gal2 gdkpixbuf2 \
@@ -217,10 +216,6 @@ gnomevfs_MAKE_ENV=	GNOME_VFS_CONFIG="${GNOME_VFS_CONFIG}"
 gnomevfs_DETECT=	${GNOME_VFS_CONFIG}
 gnomevfs_USE_GNOME_IMPL=gnomemimedata gconf gnomelibs
 
-libcapplet_LIB_DEPENDS=	capplet.5:${PORTSDIR}/x11/libcapplet
-libcapplet_DETECT=	${LOCALBASE}/etc/cappletConf.sh
-libcapplet_USE_GNOME_IMPL=gnomelibs
-
 gnomeprint_LIB_DEPENDS=	gnomeprint.16:${PORTSDIR}/print/gnome-print
 gnomeprint_DETECT=	${LOCALBASE}/etc/printConf.sh
 gnomeprint_USE_GNOME_IMPL=gnomelibs gnomecanvas
@@ -258,19 +253,10 @@ glibwww_LIB_DEPENDS=	glibwww.1:${PORTSDIR}/www/glibwww
 glibwww_DETECT=		${LOCALBASE}/etc/glibwwwConf.sh
 glibwww_USE_GNOME_IMPL=	gnomelibs
 
-gtkhtml_LIB_DEPENDS=	gtkhtml-1.1.3:${PORTSDIR}/www/gtkhtml
-gtkhtml_DETECT=		${LOCALBASE}/etc/gtkhtmlConf.sh
-gtkhtml_USE_GNOME_IMPL=	glibwww gal libghttp libcapplet
-
 pygtk_DETECT=			${LOCALBASE}/bin/pygtk-codegen-1.2
 pygtk_BUILD_DEPENDS=	${pygtk_DETECT}:${PORTSDIR}/x11-toolkits/py-gtk
 pygtk_RUN_DEPENDS=		${pygtk_DETECT}:${PORTSDIR}/x11-toolkits/py-gtk
 pygtk_USE_GNOME_IMPL=	gnomelibs gdkpixbuf libglade
-
-pygnome_DETECT=			${LOCALBASE}/share/pygtk/1.2/defs/applet.defs
-pygnome_BUILD_DEPENDS=	${pygnome_DETECT}:${PORTSDIR}/x11-toolkits/py-gnome
-pygnome_RUN_DEPENDS=	${pygnome_DETECT}:${PORTSDIR}/x11-toolkits/py-gnome
-pygnome_USE_GNOME_IMPL=	gtkhtml pygtk
 
 _glib20_LIB_DEPENDS=	glib-2.0.0:${PORTSDIR}/devel/glib20
 _glib20_DETECT=		${LOCALBASE}/libdata/pkgconfig/glib-2.0.pc

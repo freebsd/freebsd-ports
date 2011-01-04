@@ -1,8 +1,5 @@
-%%NOGNOME%%bin/ickle
-%%GNOME%%bin/ickle_applet
+bin/ickle
 %%ICKLECONTROL%%bin/ickle_control
-%%GNOME%%etc/CORBA/servers/ickle_applet.gnorba
-%%GNOME%%share/applets/Network/ickle_applet.desktop
 %%DATADIR%%/icons/doors/away.xpm
 %%DATADIR%%/icons/doors/chat.xpm
 %%DATADIR%%/icons/doors/dnd.xpm
@@ -146,7 +143,3 @@
 @dirrm %%DATADIR%%/icons/doors
 @dirrm %%DATADIR%%/icons
 @dirrm %%DATADIR%%
-@dirrmtry share/applets/Network
-@dirrmtry share/applets
-@dirrmtry etc/CORBA/servers
-@dirrmtry etc/CORBA

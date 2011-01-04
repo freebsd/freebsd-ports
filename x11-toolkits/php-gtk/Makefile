@@ -7,7 +7,7 @@
 
 PORTNAME=	php-gtk
 PORTVERSION=	1.0.2
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	http://gtk.php.net/distributions/ \
 		http://document-root.de/mirror/php-gtk/
@@ -29,8 +29,7 @@ WRKSRC=${WRKDIR}/php_gtk-${PORTVERSION}
 PORTSCOUT=	limit:^1\.
 
 OPTIONS=	LIBGLADE	"GladeXML support in php-gtk" on \
-		GDK_PIXBUF	"Enable pixbuf support" on \
-		GTKHTML		"Enable Gtkhtml support" on
+		GDK_PIXBUF	"Enable pixbuf support" on
 
 .include <bsd.port.pre.mk>
 
@@ -56,15 +55,6 @@ ENVSCE+=	-DHAVE_GDKPIXBUF=1 -DPHP_GTK_COMPILE_DL_GDKPIXBUF=1
 PLIST_SUB+=	GDKPIXBUF=""
 .else
 PLIST_SUB+=	GDKPIXBUF="@comment "
-.endif
-
-.if !defined(WITHOUT_GTKHTML)
-USE_GNOME+=	gtkhtml
-CONFIGURE_ARGS+=	--enable-gtkhtml
-ENVSCE+=	-DHAVE_HTML=1 -I${LOCALBASE}/include/gal-1.0 # -DPHP_GTK_COMPILE_DL_GTKHTML=1 -DGTKHTML_HAVE_GCONF=1 -I${LOCALBASE}/include/gal-1.0
-PLIST_SUB+=	GTKHTML=""
-.else
-PLIST_SUB+=	GTKHTML="@comment "
 .endif
 
 PLIST_SUB+=	PHPEXTDIR="${PHP_EXT_DIR}"
