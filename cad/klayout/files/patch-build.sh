@@ -1,15 +1,15 @@
---- build.sh.orig	2009-12-18 07:52:08.000000000 +0900
-+++ build.sh	2009-12-22 02:13:06.000000000 +0900
+--- build.sh.orig	2010-12-28 05:22:08.000000000 +0900
++++ build.sh	2011-01-04 16:58:54.000000000 +0900
 @@ -1,7 +1,7 @@
  #!/bin/sh 
  
  EXEC_NAME=klayout
--OTHER_BIN="strm2gds strm2oas strmcmp strmclip"
-+OTHER_BIN="strm2gds strm2oas strm2txt strmcmp strmclip strmxor"
+-OTHER_BIN=""
++OTHER_BIN="strm2gds strm2oas strm2txt strm2cif strm2dxf strmcmp strmclip strmxor"
  
  CURR_DIR=`pwd`
- USOURCE=$CURR_DIR/src
-@@ -158,11 +158,11 @@
+ PLATFORM="linux-32-gcc-release"
+@@ -217,11 +217,11 @@
    ;;
  esac
  
@@ -23,7 +23,7 @@
    echo "*** ERROR: unable to locate Qt UIC in $QTBIN"
    exit 1
  fi
-@@ -277,12 +277,12 @@
+@@ -331,12 +331,12 @@
  if [ $WIN_CYGWIN = 0 ]; then
    echo ""
    echo "Final binary is ready in $BIN/$EXEC_NAME."
