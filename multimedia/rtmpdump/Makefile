@@ -19,6 +19,7 @@ MAN8=		rtmpgw.8
 
 USE_GNOME=	pkgconfig
 USE_LDCONFIG=	yes
+USE_OPENSSL=	yes
 MAKE_ENV=	CFLAGS="${PTHREAD_CFLAGS}" THREADLIB="${PTHREAD_LIBS}"
 PORTDOCS=	ChangeLog README
 
@@ -26,6 +27,11 @@ PORTDOCS=	ChangeLog README
 
 .if ${OSVERSION} < 700000
 BROKEN=		does not compile on 6.X
+.endif
+
+.if ${OPENSSLBASE} != "/usr"
+CFLAGS+=	-I${OPENSSLINC}
+LDFLAGS+=	-L${OPENSSLLIB}
 .endif
 
 post-install:
