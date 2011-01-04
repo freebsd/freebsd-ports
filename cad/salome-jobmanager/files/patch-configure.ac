@@ -1,0 +1,11 @@
+--- configure.ac.orig	2010-11-10 13:50:32.000000000 +0600
++++ configure.ac	2010-11-10 13:50:39.000000000 +0600
+@@ -39,7 +39,7 @@
+ # argument. Exemple:
+ # $ filename="../KERNEL_SRC/configure
+ # $ absfilename=`absolute_path $filename`
+-function absolute_path {
++absolute_path () {
+     filename=$1
+     here=`pwd`
+     apath=`dirname $filename`
