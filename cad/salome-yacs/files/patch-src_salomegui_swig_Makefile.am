@@ -1,22 +1,26 @@
---- src/salomegui_swig/Makefile.am.orig	2010-05-07 12:05:34.000000000 +0700
-+++ src/salomegui_swig/Makefile.am	2010-05-07 12:05:43.000000000 +0700
-@@ -24,7 +24,7 @@
+--- src/salomegui_swig/Makefile.am.orig	2010-11-12 14:53:59.000000000 +0600
++++ src/salomegui_swig/Makefile.am	2010-11-12 14:54:11.000000000 +0600
+@@ -23,9 +23,9 @@
+ SWIGSRC=libYACS_Swig.i
  MYSWIG_FLAGS =
  
- if DOXYGEN_IS_OK
+-if DOXYGEN_IS_OK
 -MYSWIG_FLAGS += -DDOXYGEN_IS_OK
+-endif
++#if DOXYGEN_IS_OK
 +#MYSWIG_FLAGS += -DDOXYGEN_IS_OK
- endif
++#endif
  
  salomepython_PYTHON = libYACS_Swig.py
+ salomepyexec_LTLIBRARIES = _libYACS_Swig.la
 @@ -51,8 +51,8 @@
  	$(SWIG) $(SWIG_PYTHON_OPT) $(SWIG_PYTHON_INCLUDES) $(MYSWIG_FLAGS) -o $@ $<
  
  doc.i:YACSGUI_Swig.hxx YACSGUI_Swig.cxx
--	(cd $(srcdir);doxygen ../../Misc/Doxyfile)
--	python $(top_srcdir)/Misc/doxy2swig.py -n $(srcdir)/xml/index.xml doc.i; rm -rf $(srcdir)/xml
-+#	(cd $(srcdir);doxygen ../../Misc/Doxyfile)
-+#	python $(top_srcdir)/Misc/doxy2swig.py -n $(srcdir)/xml/index.xml doc.i; rm -rf $(srcdir)/xml
+-	DOXSRCDIR=$(srcdir) doxygen $(top_srcdir)/Misc/Doxyfile
+-	$(PYTHON) $(top_srcdir)/Misc/doxy2swig.py -n xml/index.xml doc.i
++#	DOXSRCDIR=$(srcdir) doxygen $(top_srcdir)/Misc/Doxyfile
++#	$(PYTHON) $(top_srcdir)/Misc/doxy2swig.py -n xml/index.xml doc.i
  
- CLEANFILES = libYACS_SwigWRAP.cxx libYACS_Swig.py doc.i
+ EXTRA_DIST = YACSGUI_Swig.hxx
  

@@ -23,7 +23,6 @@ bin/salome/SALOME_DriverPy.pyc
 bin/salome/SALOME_DriverPy.pyo
 bin/salome/SALOME_LauncherServer
 bin/salome/SALOME_Logger_Server
-%%MPI%%bin/salome/SALOME_MPIContainer
 bin/salome/SALOME_ModuleCatalog_Client
 bin/salome/SALOME_ModuleCatalog_Server
 bin/salome/SALOME_NamingServicePy.py
@@ -54,7 +53,6 @@ bin/salome/TestLogger
 bin/salome/TestLogger.py
 bin/salome/TestLogger.pyc
 bin/salome/TestLogger.pyo
-%%MPI%%bin/salome/TestMPIContainer
 bin/salome/TestModuleCatalog.py
 bin/salome/TestModuleCatalog.pyc
 bin/salome/TestModuleCatalog.pyo
@@ -156,50 +154,6 @@ bin/salome/waitNS.py
 bin/salome/waitNS.pyc
 bin/salome/waitNS.pyo
 bin/salome/waitNS.sh
-%%CPPUNIT%%bin/salome/LifeCycleCORBA_SWIGTest.py
-%%CPPUNIT%%bin/salome/LifeCycleCORBA_SWIGTest.pyc
-%%CPPUNIT%%bin/salome/LifeCycleCORBA_SWIGTest.pyo
-%%CPPUNIT%%bin/salome/TestKiller.py
-%%CPPUNIT%%bin/salome/TestKiller.pyc
-%%CPPUNIT%%bin/salome/TestKiller.pyo
-%%CPPUNIT%%bin/salome/TestLifeCycleCORBA
-%%CPPUNIT%%bin/salome/TestLifeCycleCORBA_SWIG.py
-%%CPPUNIT%%bin/salome/TestLifeCycleCORBA_SWIG.pyc
-%%CPPUNIT%%bin/salome/TestLifeCycleCORBA_SWIG.pyo
-%%CPPUNIT%%bin/salome/TestNamingService
-%%CPPUNIT%%bin/salome/TestNamingService.py
-%%CPPUNIT%%bin/salome/TestNamingService.pyc
-%%CPPUNIT%%bin/salome/TestNamingService.pyo
-%%CPPUNIT%%bin/salome/TestSALOMEDS
-%%CPPUNIT%%bin/salome/TestSALOMEDS.py
-%%CPPUNIT%%bin/salome/TestSALOMEDS.pyc
-%%CPPUNIT%%bin/salome/TestSALOMEDS.pyo
-%%CPPUNIT%%bin/salome/TestSALOMEDSImpl
-%%CPPUNIT%%bin/salome/TestSALOMEDSImpl.py
-%%CPPUNIT%%bin/salome/TestSALOMEDSImpl.pyc
-%%CPPUNIT%%bin/salome/TestSALOMEDSImpl.pyo
-%%CPPUNIT%%bin/salome/TestSALOMELocalTrace
-%%CPPUNIT%%bin/salome/TestSALOMELocalTrace.py
-%%CPPUNIT%%bin/salome/TestSALOMELocalTrace.pyc
-%%CPPUNIT%%bin/salome/TestSALOMELocalTrace.pyo
-%%CPPUNIT%%bin/salome/TestSALOMETraceCollector
-%%CPPUNIT%%bin/salome/TestSALOMETraceCollector.py
-%%CPPUNIT%%bin/salome/TestSALOMETraceCollector.pyc
-%%CPPUNIT%%bin/salome/TestSALOMETraceCollector.pyo
-%%CPPUNIT%%bin/salome/TestUtils
-%%CPPUNIT%%bin/salome/TestUtils.py
-%%CPPUNIT%%bin/salome/TestUtils.pyc
-%%CPPUNIT%%bin/salome/TestUtils.pyo
-%%CPPUNIT%%bin/salome/UnitTests
-%%CPPUNIT%%bin/salome/UnitTests.py
-%%CPPUNIT%%bin/salome/UnitTests.pyc
-%%CPPUNIT%%bin/salome/UnitTests.pyo
-%%CPPUNIT%%bin/salome/testcontainermanager.py
-%%CPPUNIT%%bin/salome/testcontainermanager.pyc
-%%CPPUNIT%%bin/salome/testcontainermanager.pyo
-%%CPPUNIT%%bin/salome/testresourcemanager.py
-%%CPPUNIT%%bin/salome/testresourcemanager.pyc
-%%CPPUNIT%%bin/salome/testresourcemanager.pyo
 idl/salome/Calcium_Ports.idl
 idl/salome/DSC_Engines.idl
 idl/salome/Logger.idl
@@ -211,8 +165,6 @@ idl/salome/SALOME_Component.idl
 idl/salome/SALOME_ContainerManager.idl
 idl/salome/SALOME_Exception.idl
 idl/salome/SALOME_GenericObj.idl
-%%MPI%%idl/salome/SALOME_MPIContainer.idl
-%%MPI%%idl/salome/SALOME_MPIObject.idl
 idl/salome/SALOME_ModuleCatalog.idl
 idl/salome/SALOME_PACOExtension.idl
 idl/salome/SALOME_ParamPorts.idl
@@ -222,7 +174,6 @@ idl/salome/SALOME_Registry.idl
 idl/salome/SALOME_RessourcesCatalog.idl
 idl/salome/SALOME_Session.idl
 idl/salome/SALOME_TestComponent.idl
-%%MPI%%idl/salome/SALOME_TestMPIComponent.idl
 idl/salome/SALOME_TestModuleCatalog.idl
 idl/salome/nstest.idl
 include/salome/AdjacentFunctor.hxx
@@ -291,10 +242,14 @@ include/salome/HDFtypes.h
 include/salome/IteratorTraits.hxx
 include/salome/KERNEL_version.h
 include/salome/Launcher.hxx
+include/salome/Launcher_Job.hxx
+include/salome/Launcher_Job_Command.hxx
+include/salome/Launcher_Job_PythonSALOME.hxx
+include/salome/Launcher_Job_SALOME.hxx
+include/salome/Launcher_Job_YACSFile.hxx
+include/salome/Launcher_Utils.hxx
 include/salome/LocalTraceBufferPool.hxx
 include/salome/Logger.hh
-%%MPI%%include/salome/MPIContainer_i.hxx
-%%MPI%%include/salome/MPIObject_i.hxx
 include/salome/MatrixClient.hxx
 include/salome/MultiCommException.hxx
 include/salome/NOTIFICATION.hxx
@@ -335,6 +290,7 @@ include/salome/SALOMEDSClient_AttributeSequenceOfInteger.hxx
 include/salome/SALOMEDSClient_AttributeSequenceOfReal.hxx
 include/salome/SALOMEDSClient_AttributeString.hxx
 include/salome/SALOMEDSClient_AttributeStudyProperties.hxx
+include/salome/SALOMEDSClient_AttributeTable.hxx
 include/salome/SALOMEDSClient_AttributeTableOfInteger.hxx
 include/salome/SALOMEDSClient_AttributeTableOfReal.hxx
 include/salome/SALOMEDSClient_AttributeTableOfString.hxx
@@ -379,6 +335,7 @@ include/salome/SALOMEDSImpl_AttributeSequenceOfInteger.hxx
 include/salome/SALOMEDSImpl_AttributeSequenceOfReal.hxx
 include/salome/SALOMEDSImpl_AttributeString.hxx
 include/salome/SALOMEDSImpl_AttributeStudyProperties.hxx
+include/salome/SALOMEDSImpl_AttributeTable.hxx
 include/salome/SALOMEDSImpl_AttributeTableOfInteger.hxx
 include/salome/SALOMEDSImpl_AttributeTableOfReal.hxx
 include/salome/SALOMEDSImpl_AttributeTableOfString.hxx
@@ -446,8 +403,6 @@ include/salome/SALOME_Launcher_defs.hxx
 include/salome/SALOME_LifeCycleCORBA.hxx
 include/salome/SALOME_LoadRateManager.hxx
 include/salome/SALOME_LocalTrace.hxx
-%%MPI%%include/salome/SALOME_MPIContainer.hh
-%%MPI%%include/salome/SALOME_MPIObject.hh
 include/salome/SALOME_Matrix_i.hxx
 include/salome/SALOME_ModuleCatalog.hh
 include/salome/SALOME_ModuleCatalog.hxx
@@ -471,7 +426,6 @@ include/salome/SALOME_ResourcesManager.hxx
 include/salome/SALOME_RessourcesCatalog.hh
 include/salome/SALOME_Session.hh
 include/salome/SALOME_TestComponent.hh
-%%MPI%%include/salome/SALOME_TestMPIComponent.hh
 include/salome/SALOME_TestModuleCatalog.hh
 include/salome/SALOME_Trace.hxx
 include/salome/SALOME_Utils.hxx
@@ -480,7 +434,6 @@ include/salome/Salome_file_i.hxx
 include/salome/SenderFactory.hxx
 include/salome/ServiceUnreachable.hxx
 include/salome/Superv_Component_i.hxx
-%%MPI%%include/salome/TestMPIComponentEngine.hxx
 include/salome/TraceCollector_WaitForServerReadiness.hxx
 include/salome/Utils_CommException.hxx
 include/salome/Utils_CorbaException.hxx
@@ -522,14 +475,6 @@ include/salome/provides_port.hxx
 include/salome/uses_port.hxx
 include/salome/utilities.h
 include/salome/version.h
-%%CPPUNIT%%include/salome/BasicMainTest.hxx
-%%CPPUNIT%%include/salome/LifeCycleCORBATest.hxx
-%%CPPUNIT%%include/salome/NamingServiceTest.hxx
-%%CPPUNIT%%include/salome/SALOMEDSImplTest.hxx
-%%CPPUNIT%%include/salome/SALOMEDSTest.hxx
-%%CPPUNIT%%include/salome/SALOMELocalTraceTest.hxx
-%%CPPUNIT%%include/salome/SALOMETraceCollectorTest.hxx
-%%CPPUNIT%%include/salome/UtilsTest.hxx
 %%PYTHON_SITELIBDIR%%/salome/Calcium_Ports_idl.py
 %%PYTHON_SITELIBDIR%%/salome/DSC_Engines_idl.py
 %%PYTHON_SITELIBDIR%%/salome/Engines/__init__.py
@@ -564,8 +509,6 @@ include/salome/version.h
 %%PYTHON_SITELIBDIR%%/salome/SALOME_GenericObj_idl.py
 %%PYTHON_SITELIBDIR%%/salome/SALOME_Logger/__init__.py
 %%PYTHON_SITELIBDIR%%/salome/SALOME_Logger__POA/__init__.py
-%%MPI%%%%PYTHON_SITELIBDIR%%/salome/SALOME_MPIContainer_idl.py
-%%MPI%%%%PYTHON_SITELIBDIR%%/salome/SALOME_MPIObject_idl.py
 %%PYTHON_SITELIBDIR%%/salome/SALOME_ModuleCatalog/__init__.py
 %%PYTHON_SITELIBDIR%%/salome/SALOME_ModuleCatalog__POA/__init__.py
 %%PYTHON_SITELIBDIR%%/salome/SALOME_ModuleCatalog_idl.py
@@ -579,7 +522,6 @@ include/salome/version.h
 %%PYTHON_SITELIBDIR%%/salome/SALOME_RessourcesCatalog_idl.py
 %%PYTHON_SITELIBDIR%%/salome/SALOME_Session_idl.py
 %%PYTHON_SITELIBDIR%%/salome/SALOME_TestComponent_idl.py
-%%MPI%%%%PYTHON_SITELIBDIR%%/salome/SALOME_TestMPIComponent_idl.py
 %%PYTHON_SITELIBDIR%%/salome/SALOME_TestModuleCatalog/__init__.py
 %%PYTHON_SITELIBDIR%%/salome/SALOME_TestModuleCatalog__POA/__init__.py
 %%PYTHON_SITELIBDIR%%/salome/SALOME_TestModuleCatalog_idl.py
@@ -732,9 +674,6 @@ lib/salome/libSalomeLifeCycleCORBA.so.0
 lib/salome/libSalomeLoggerServer.la
 lib/salome/libSalomeLoggerServer.so
 lib/salome/libSalomeLoggerServer.so.0
-%%MPI%%lib/salome/libSalomeMPIContainer.la
-%%MPI%%lib/salome/libSalomeMPIContainer.so
-%%MPI%%lib/salome/libSalomeMPIContainer.so.0
 lib/salome/libSalomeNS.la
 lib/salome/libSalomeNS.so
 lib/salome/libSalomeNS.so.0
@@ -747,36 +686,12 @@ lib/salome/libSalomeResourcesManager.so.0
 lib/salome/libSalomeTestComponentEngine.la
 lib/salome/libSalomeTestComponentEngine.so
 lib/salome/libSalomeTestComponentEngine.so.0
-%%MPI%%lib/salome/libSalomeTestMPIComponentEngine.la
-%%MPI%%lib/salome/libSalomeTestMPIComponentEngine.so
-%%MPI%%lib/salome/libSalomeTestMPIComponentEngine.so.0
 lib/salome/libTOOLSDS.la
 lib/salome/libTOOLSDS.so
 lib/salome/libTOOLSDS.so.0
 lib/salome/libwith_loggerTraceCollector.la
 lib/salome/libwith_loggerTraceCollector.so
 lib/salome/libwith_loggerTraceCollector.so.0
-%%CPPUNIT%%lib/salome/libLifeCycleCORBATest.la
-%%CPPUNIT%%lib/salome/libLifeCycleCORBATest.so
-%%CPPUNIT%%lib/salome/libLifeCycleCORBATest.so.0
-%%CPPUNIT%%lib/salome/libNamingServiceTest.la
-%%CPPUNIT%%lib/salome/libNamingServiceTest.so
-%%CPPUNIT%%lib/salome/libNamingServiceTest.so.0
-%%CPPUNIT%%lib/salome/libSALOMEDSImplTest.la
-%%CPPUNIT%%lib/salome/libSALOMEDSImplTest.so
-%%CPPUNIT%%lib/salome/libSALOMEDSImplTest.so.0
-%%CPPUNIT%%lib/salome/libSALOMEDSTest.la
-%%CPPUNIT%%lib/salome/libSALOMEDSTest.so
-%%CPPUNIT%%lib/salome/libSALOMEDSTest.so.0
-%%CPPUNIT%%lib/salome/libSALOMELocalTraceTest.la
-%%CPPUNIT%%lib/salome/libSALOMELocalTraceTest.so
-%%CPPUNIT%%lib/salome/libSALOMELocalTraceTest.so.0
-%%CPPUNIT%%lib/salome/libSALOMETraceCollectorTest.la
-%%CPPUNIT%%lib/salome/libSALOMETraceCollectorTest.so
-%%CPPUNIT%%lib/salome/libSALOMETraceCollectorTest.so.0
-%%CPPUNIT%%lib/salome/libUtilsTest.la
-%%CPPUNIT%%lib/salome/libUtilsTest.so
-%%CPPUNIT%%lib/salome/libUtilsTest.so.0
 salome_adm/cmake_files/FindBOOST.cmake
 salome_adm/cmake_files/FindCPPUNIT.cmake
 salome_adm/cmake_files/FindDOXYGEN.cmake
@@ -852,14 +767,34 @@ salome_adm/unix/make_conclude.in
 salome_adm/unix/make_module.in
 salome_adm/unix/make_omniorb.in
 salome_adm/unix/sstream.in
-share/salome/resources/kernel/CatalogModulePersonnel.xml_skel
-share/salome/resources/kernel/CatalogResources.xml
-share/salome/resources/kernel/KERNELCatalog.xml
-share/salome/resources/kernel/SALOMEDS_Resources
-share/salome/resources/kernel/channel.cfg
-@dirrm share/salome/resources/kernel
-@dirrm share/salome/resources
-@dirrm share/salome
+%%DATADIR%%/resources/kernel/CatalogModulePersonnel.xml_skel
+%%DATADIR%%/resources/kernel/CatalogResources.xml
+%%DATADIR%%/resources/kernel/KERNELCatalog.xml
+%%DATADIR%%/resources/kernel/SALOMEDS_Resources
+%%DATADIR%%/resources/kernel/channel.cfg
+%%MPI%%bin/salome/SALOME_MPIContainer
+%%MPI%%bin/salome/TestMPIContainer
+%%MPI%%idl/salome/SALOME_MPIObject.idl
+%%MPI%%idl/salome/SALOME_MPIContainer.idl
+%%MPI%%idl/salome/SALOME_TestMPIComponent.idl
+%%MPI%%include/salome/SALOME_MPIObject.hh
+%%MPI%%include/salome/SALOME_MPIContainer.hh
+%%MPI%%include/salome/SALOME_TestMPIComponent.hh
+%%MPI%%include/salome/MPIObject_i.hxx
+%%MPI%%include/salome/MPIContainer_i.hxx
+%%MPI%%include/salome/TestMPIComponentEngine.hxx
+%%MPI%%%%PYTHON_SITELIBDIR%%/salome/SALOME_MPIContainer_idl.py
+%%MPI%%%%PYTHON_SITELIBDIR%%/salome/SALOME_MPIObject_idl.py
+%%MPI%%%%PYTHON_SITELIBDIR%%/salome/SALOME_TestMPIComponent_idl.py
+%%MPI%%lib/salome/libSalomeMPIContainer.so.0
+%%MPI%%lib/salome/libSalomeMPIContainer.so
+%%MPI%%lib/salome/libSalomeMPIContainer.la
+%%MPI%%lib/salome/libSalomeTestMPIComponentEngine.so.0
+%%MPI%%lib/salome/libSalomeTestMPIComponentEngine.so
+%%MPI%%lib/salome/libSalomeTestMPIComponentEngine.la
+@dirrm %%DATADIR%%/resources/kernel
+@dirrm %%DATADIR%%/resources
+@dirrm %%DATADIR%%
 @dirrm salome_adm/unix/config_files/DEPRECATED
 @dirrm salome_adm/unix/config_files
 @dirrm salome_adm/unix
