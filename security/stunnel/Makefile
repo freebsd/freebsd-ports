@@ -7,7 +7,7 @@
 
 PORTNAME=	stunnel
 PORTVERSION=	4.34
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security
 MASTER_SITES=	http://www.stunnel.org/download/stunnel/src/ \
 		http://mirrors.zerg.biz/stunnel/%SUBDIR%/ \
@@ -21,6 +21,10 @@ MASTER_SITE_SUBDIR=	. obsolete/4.x
 
 MAINTAINER=	roam@FreeBSD.org
 COMMENT=	SSL encryption wrapper for standard network daemons
+
+# FIXME: IMHO, there really ought to be a GPL-2+ option or some such.
+LICENSE=	GPLv2 GPLv3
+LICENSE_COMB=	dual
 
 USE_AUTOTOOLS=	libtool
 USE_RC_SUBR=	stunnel
