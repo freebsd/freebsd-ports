@@ -7,8 +7,8 @@
 
 PORTNAME=	ipsc
 PORTVERSION=	0.4.2
-PORTREVISION=	2
-CATEGORIES=	sysutils gnome
+PORTREVISION=	3
+CATEGORIES=	sysutils
 MASTER_SITES=	http://www.alaskaparadise.com/freebsd/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
@@ -19,18 +19,10 @@ BUILD_DEPENDS=	${PRIPS_WRKSRC}/prips.o:${.CURDIR}/../prips:build
 
 WRKSRC=		${WRKDIR}/ipsc/src
 
-WANT_GNOME=	yes
+ALL_TARGET=	ipsc
 PLIST_FILES=	bin/ipsc
 
 MAN8=	ipsc.8
-
-.if defined(HAVE_GNOME)
-USE_GNOME=	gnomeprefix gnomehack gtkhtml
-ALL_TARGET=	all
-PLIST_FILES+=	bin/gipsc
-.else
-ALL_TARGET=	ipsc
-.endif
 
 PRIPS_WRKSRC!=	cd ${.CURDIR}/../prips && ${MAKE} -V WRKSRC
 
@@ -39,9 +31,6 @@ post-extract:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/ipsc ${PREFIX}/bin
-.if defined(HAVE_GNOME)
-	${INSTALL_PROGRAM} ${WRKSRC}/gipsc ${PREFIX}/bin
-.endif
 	${INSTALL_MAN} ${FILESDIR}/ipsc.8 ${MANPREFIX}/man/man8
 
 .include <bsd.port.mk>

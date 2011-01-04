@@ -313,7 +313,6 @@
     SUBDIR += gksu
     SUBDIR += glload
     SUBDIR += gnome-control-center
-    SUBDIR += gnome-control-center1
     SUBDIR += gnome-device-manager
     SUBDIR += gnome-mount
     SUBDIR += gnome-pkgview

@@ -7,8 +7,8 @@
 
 PORTNAME=	ogle
 PORTVERSION=	0.9.2
-PORTREVISION=	15
-CATEGORIES=	multimedia gnome
+PORTREVISION=	16
+CATEGORIES=	multimedia
 MASTER_SITES=	http://www.dtek.chalmers.se/groups/dvd/dist/
 PKGNAMESUFFIX=	-gui
 DISTNAME=	${PORTNAME}_gui-${PORTVERSION}
@@ -26,7 +26,6 @@ USE_GNOME=	gnomehack \
 		gnomehier \
 		gnomeprefix \
 		gtk20
-WANT_GNOME=	yes
 USE_XORG=	xpm
 USE_AUTOTOOLS=	libtool
 CONFIGURE_ENV=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include ${PTHREAD_CFLAGS} -L${LOCALBASE}/lib ${PTHREAD_LIBS}"
@@ -41,11 +40,6 @@ CONFIGURE_ARGS=	--with-dvd-includes=${LOCALBASE}/include \
 MAKE_JOBS_SAFE=	yes
 
 .include <bsd.port.pre.mk>
-
-.if ${HAVE_GNOME:Mlibcapplet}!=""
-USE_GNOME+=	libcapplet
-PKGNAMESUFFIX=	-gnome
-.endif
 
 PLIST_SUB=	SHARE_DATADIR="${SHARE_DATADIR}"
 

@@ -285,7 +285,6 @@
     SUBDIR += gregarius
     SUBDIR += groupoffice
     SUBDIR += gstreamer-plugins-neon
-    SUBDIR += gtkhtml
     SUBDIR += gtkhtml3
     SUBDIR += guile-www
     SUBDIR += gurlchecker

@@ -8,7 +8,7 @@
 
 PORTNAME=	ickle
 PORTVERSION=	0.3.2
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	net-im devel
 MASTER_SITES=	SF
 
@@ -23,7 +23,8 @@ WANT_GNOME=	yes
 USE_ICONV=	yes
 USE_AUTOTOOLS=	libtool
 CONFIGURE_ARGS=	--with-sigc-prefix=${LOCALBASE} \
-		--with-gtkmm-prefix=${LOCALBASE}
+		--with-gtkmm-prefix=${LOCALBASE} \
+		--with-gnome=no
 CONFIGURE_ENV=	CPPFLAGS="`${LOCALBASE}/bin/sigc-config --cflags`"
 
 post-patch:
@@ -31,16 +32,6 @@ post-patch:
 		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
 
 .include <bsd.port.pre.mk>
-
-.if ${HAVE_GNOME:Mlibcapplet}!="" || defined(WITH_GNOME)
-USE_GNOME+=	libcapplet
-PKGNAMESUFFIX=	-gnome
-PLIST_SUB+=	GNOME="" NOGNOME="@comment "
-.else
-CONFIGURE_ARGS+=	--with-gnome=no
-
-PLIST_SUB+=	GNOME="@comment " NOGNOME=""
-.endif
 
 .if defined(WITH_ICKLE_CONTROL)
 PLIST_SUB+=	ICKLECONTROL=""
@@ -51,9 +42,6 @@ PLIST_SUB+=	ICKLECONTROL="@comment "
 .endif
 
 pre-everything::
-.if ${HAVE_GNOME:Mlibcapplet}=="" && !defined(WITH_GNOME)
-	@${ECHO_MSG} "===> Define WITH_GNOME		to enable GNOME support"
-.endif
 .if !defined(WITH_ICKLE_CONTROL)
 	@${ECHO_MSG} "===> Define WITH_ICKLE_CONTROL	to enable external command-line"
 	@${ECHO_MSG} "===>				control for the ickle client"

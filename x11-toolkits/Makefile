@@ -197,7 +197,6 @@
     SUBDIR += py-Pmw
     SUBDIR += py-SciParam
     SUBDIR += py-fltk
-    SUBDIR += py-gnome
     SUBDIR += py-gnome-desktop
     SUBDIR += py-gnome-extras
     SUBDIR += py-gnome2

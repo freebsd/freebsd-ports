@@ -173,7 +173,6 @@
     SUBDIR += libXxf86dga
     SUBDIR += libXxf86misc
     SUBDIR += libXxf86vm
-    SUBDIR += libcapplet
     SUBDIR += libdmx
     SUBDIR += libdnd
     SUBDIR += libexo
@@ -305,7 +304,6 @@
     SUBDIR += wmdrawer
     SUBDIR += wmfstatus
     SUBDIR += wmmatrix
-    SUBDIR += wmmenu
     SUBDIR += wmmsg
     SUBDIR += wmoldmenu2new
     SUBDIR += wmxss

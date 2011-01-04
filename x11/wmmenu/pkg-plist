@@ -1,5 +1,0 @@
-bin/wmmenu
-%%PORTDOCS%%%%DOCSDIR%%/apps.sample
-%%PORTDOCS%%%%DOCSDIR%%/defaults.sample
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

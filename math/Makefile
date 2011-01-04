@@ -509,7 +509,6 @@
     SUBDIR += saga
     SUBDIR += sc
     SUBDIR += scalapack
-    SUBDIR += scigraphica
     SUBDIR += scilab
     SUBDIR += scilab-toolbox-sivp
     SUBDIR += scilab-toolbox-swt

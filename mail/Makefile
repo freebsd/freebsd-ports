@@ -489,7 +489,6 @@
     SUBDIR += phpmailer2
     SUBDIR += pine-pgp-filters
     SUBDIR += pm-lib
-    SUBDIR += pmail
     SUBDIR += policyd2
     SUBDIR += pop-before-smtp
     SUBDIR += pop3gwd
@@ -539,7 +538,6 @@
     SUBDIR += py-spf
     SUBDIR += py-turbomail
     SUBDIR += py-twistedMail
-    SUBDIR += pygmy
     SUBDIR += pymsgauth
     SUBDIR += pysieved
     SUBDIR += pyzor

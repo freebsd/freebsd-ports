@@ -175,7 +175,6 @@
     SUBDIR += gatekeeper
     SUBDIR += gateway6
     SUBDIR += generic-nqs
-    SUBDIR += geotrace
     SUBDIR += ggsd
     SUBDIR += gini
     SUBDIR += gkrellmmultiping2
