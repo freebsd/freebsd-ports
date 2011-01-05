@@ -191,6 +191,7 @@
     SUBDIR += heimdal
     SUBDIR += hlfl
     SUBDIR += hmap
+    SUBDIR += honggfuzz
     SUBDIR += horde-jeta
     SUBDIR += hotssh
     SUBDIR += hs-SHA
