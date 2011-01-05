@@ -71,6 +71,6 @@ find ${distdir}/.pbtmp/ -type f -depth 2 \! -name .done | xargs -J % mv % ${dist
 echo "Cleaning up"
 sed -e 's,$,.done,' < .pkgdirs | xargs rm -f || exit 1
 cat .pkgdirs | xargs rmdir || exit 1
-rmdir -f .pbtmp || exit 1
+rmdir .pbtmp || exit 1
 
 rm -f .alldirs .done .pkgdirs .pkgsubdirs .subdirs || exit 1
