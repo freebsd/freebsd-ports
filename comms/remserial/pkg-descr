@@ -1,0 +1,13 @@
+Remserial acts as a communications bridge between a TCP/IP network port and a
+device such as a serial port. Any character-oriented /dev device will work.
+
+The program can operate as a server accepting network connections from other
+machines, or as a client, connecting to remote machine that is running the
+remserial program or some other program that accepts a raw network connection.
+The network connection passes data as-is, there is no control protocol over the
+network socket.
+
+Multiple copies of the program can run on the same computer at the same time
+assuming each is using a different network port and device.
+
+WWW: http://lpccomp.bc.ca/remserial/
