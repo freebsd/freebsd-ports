@@ -29,7 +29,9 @@
 %%WWWDIR%%/core/Controller.php
 %%WWWDIR%%/core/Cookie.php
 %%WWWDIR%%/core/DataFiles/Countries.php
+%%WWWDIR%%/core/DataFiles/Currencies.php
 %%WWWDIR%%/core/DataFiles/LanguageToCountry.php
+%%WWWDIR%%/core/DataFiles/Languages.php
 %%WWWDIR%%/core/DataFiles/SearchEngines.php
 %%WWWDIR%%/core/DataTable.php
 %%WWWDIR%%/core/DataTable/Array.php
@@ -80,6 +82,7 @@
 %%WWWDIR%%/core/ErrorHandler.php
 %%WWWDIR%%/core/ExceptionHandler.php
 %%WWWDIR%%/core/FrontController.php
+%%WWWDIR%%/core/HTMLPurifier.php
 %%WWWDIR%%/core/Http.php
 %%WWWDIR%%/core/Loader.php
 %%WWWDIR%%/core/Log.php
@@ -105,6 +108,7 @@
 %%WWWDIR%%/core/PluginsFunctions/Sql.php
 %%WWWDIR%%/core/PluginsFunctions/WidgetsList.php
 %%WWWDIR%%/core/PluginsManager.php
+%%WWWDIR%%/core/ProxyHeaders.php
 %%WWWDIR%%/core/QuickForm2.php
 %%WWWDIR%%/core/ScheduledTask.php
 %%WWWDIR%%/core/ScheduledTime.php
@@ -113,8 +117,10 @@
 %%WWWDIR%%/core/ScheduledTime/Monthly.php
 %%WWWDIR%%/core/ScheduledTime/Weekly.php
 %%WWWDIR%%/core/Session.php
+%%WWWDIR%%/core/Session/Namespace.php
 %%WWWDIR%%/core/Site.php
 %%WWWDIR%%/core/Smarty.php
+%%WWWDIR%%/core/SmartyPlugins/block.purify.php
 %%WWWDIR%%/core/SmartyPlugins/function.ajaxErrorDiv.php
 %%WWWDIR%%/core/SmartyPlugins/function.ajaxLoadingDiv.php
 %%WWWDIR%%/core/SmartyPlugins/function.ajaxRequestErrorDiv.php
@@ -142,6 +148,7 @@
 %%WWWDIR%%/core/Tracker.php
 %%WWWDIR%%/core/Tracker/Action.php
 %%WWWDIR%%/core/Tracker/Config.php
+%%WWWDIR%%/core/Tracker/Cookie.php
 %%WWWDIR%%/core/Tracker/Db.php
 %%WWWDIR%%/core/Tracker/Db/Mysqli.php
 %%WWWDIR%%/core/Tracker/Db/Pdo/Mysql.php
@@ -150,6 +157,9 @@
 %%WWWDIR%%/core/Tracker/Visit.php
 %%WWWDIR%%/core/Tracker/javascriptTag.tpl
 %%WWWDIR%%/core/Translate.php
+%%WWWDIR%%/core/Unzip.php
+%%WWWDIR%%/core/Unzip/PclZip.php
+%%WWWDIR%%/core/Unzip/ZipArchive.php
 %%WWWDIR%%/core/UpdateCheck.php
 %%WWWDIR%%/core/Updater.php
 %%WWWDIR%%/core/Updates.php
@@ -175,6 +185,7 @@
 %%WWWDIR%%/core/Updates/0.6.3.php
 %%WWWDIR%%/core/Updates/0.7.php
 %%WWWDIR%%/core/Updates/0.9.1.php
+%%WWWDIR%%/core/Updates/1.1.php
 %%WWWDIR%%/core/Url.php
 %%WWWDIR%%/core/Version.php
 %%WWWDIR%%/core/View.php
@@ -198,13 +209,16 @@
 %%WWWDIR%%/core/Visualization/Chart/VerticalBar.php
 %%WWWDIR%%/core/Visualization/Cloud.php
 %%WWWDIR%%/core/Visualization/Sparkline.php
+%%WWWDIR%%/core/iUnzip.php
 %%WWWDIR%%/core/iView.php
 %%WWWDIR%%/core/testMinimumPhpVersion.php
 %%WWWDIR%%/index.php
+%%WWWDIR%%/js/LICENSE.txt
 %%WWWDIR%%/js/README
 %%WWWDIR%%/js/index.php
 %%WWWDIR%%/js/piwik.js
 %%WWWDIR%%/lang/am.php
+%%WWWDIR%%/lang/ar.php
 %%WWWDIR%%/lang/be.php
 %%WWWDIR%%/lang/bg.php
 %%WWWDIR%%/lang/ca.php
@@ -219,7 +233,9 @@
 %%WWWDIR%%/lang/fi.php
 %%WWWDIR%%/lang/fr.php
 %%WWWDIR%%/lang/gl.php
+%%WWWDIR%%/lang/he.php
 %%WWWDIR%%/lang/hu.php
+%%WWWDIR%%/lang/id.php
 %%WWWDIR%%/lang/it.php
 %%WWWDIR%%/lang/ja.php
 %%WWWDIR%%/lang/ko.php
@@ -236,11 +252,17 @@
 %%WWWDIR%%/lang/sq.php
 %%WWWDIR%%/lang/sr.php
 %%WWWDIR%%/lang/sv.php
+%%WWWDIR%%/lang/te.php
 %%WWWDIR%%/lang/th.php
 %%WWWDIR%%/lang/tr.php
 %%WWWDIR%%/lang/uk.php
 %%WWWDIR%%/lang/zh-cn.php
 %%WWWDIR%%/lang/zh-tw.php
+%%WWWDIR%%/libs/CSS3PIE/LICENSE-2.0
+%%WWWDIR%%/libs/CSS3PIE/LICENSE.txt
+%%WWWDIR%%/libs/CSS3PIE/PIE.htc
+%%WWWDIR%%/libs/CSS3PIE/PIE_uncompressed.htc
+%%WWWDIR%%/libs/CSS3PIE/gpl-2.0.txt
 %%WWWDIR%%/libs/Event/Dispatcher.php
 %%WWWDIR%%/libs/Event/Notification.php
 %%WWWDIR%%/libs/HTML/Common2.php
@@ -872,20 +894,25 @@
 %%WWWDIR%%/libs/swfobject/expressInstall.swf
 %%WWWDIR%%/libs/swfobject/swfobject.js
 %%WWWDIR%%/libs/tcpdf/2dbarcodes.php
+%%WWWDIR%%/libs/tcpdf/CHANGELOG.TXT
 %%WWWDIR%%/libs/tcpdf/README.TXT
 %%WWWDIR%%/libs/tcpdf/barcodes.php
-%%WWWDIR%%/libs/tcpdf/config/lang/bra.php
 %%WWWDIR%%/libs/tcpdf/config/lang/eng.php
-%%WWWDIR%%/libs/tcpdf/config/lang/ger.php
-%%WWWDIR%%/libs/tcpdf/config/lang/ita.php
 %%WWWDIR%%/libs/tcpdf/config/tcpdf_config.php
 %%WWWDIR%%/libs/tcpdf/config/tcpdf_config_alt.php
+%%WWWDIR%%/libs/tcpdf/fonts/almohanad.ctg.z
 %%WWWDIR%%/libs/tcpdf/fonts/almohanad.php
-%%WWWDIR%%/libs/tcpdf/fonts/arialunicid0.php
+%%WWWDIR%%/libs/tcpdf/fonts/almohanad.z
+%%WWWDIR%%/libs/tcpdf/fonts/dejavusans.ctg.z
+%%WWWDIR%%/libs/tcpdf/fonts/dejavusans.php
+%%WWWDIR%%/libs/tcpdf/fonts/dejavusans.z
 %%WWWDIR%%/libs/tcpdf/fonts/helvetica.php
 %%WWWDIR%%/libs/tcpdf/fonts/helveticab.php
 %%WWWDIR%%/libs/tcpdf/fonts/helveticabi.php
 %%WWWDIR%%/libs/tcpdf/fonts/helveticai.php
+%%WWWDIR%%/libs/tcpdf/fonts/hysmyeongjostdmedium.php
+%%WWWDIR%%/libs/tcpdf/fonts/msungstdlight.php
+%%WWWDIR%%/libs/tcpdf/fonts/stsongstdlight.php
 %%WWWDIR%%/libs/tcpdf/fonts/symbol.php
 %%WWWDIR%%/libs/tcpdf/fonts/times.php
 %%WWWDIR%%/libs/tcpdf/fonts/timesb.php
@@ -896,6 +923,7 @@
 %%WWWDIR%%/libs/tcpdf/lgpl-3.0.txt
 %%WWWDIR%%/libs/tcpdf/pdf417.php
 %%WWWDIR%%/libs/tcpdf/qrcode.php
+%%WWWDIR%%/libs/tcpdf/spotcolors.php
 %%WWWDIR%%/libs/tcpdf/tcpdf.crt
 %%WWWDIR%%/libs/tcpdf/tcpdf.fdf
 %%WWWDIR%%/libs/tcpdf/tcpdf.p12
@@ -905,13 +933,12 @@
 %%WWWDIR%%/libs/upgradephp/upgrade.php
 %%WWWDIR%%/misc/ExamplePiwikTracker.php
 %%WWWDIR%%/misc/How to install Piwik.html
-%%WWWDIR%%/misc/WebAppGallery/Manifest.xml
-%%WWWDIR%%/misc/WebAppGallery/parameters.xml
 %%WWWDIR%%/misc/api_community_sticker.php
 %%WWWDIR%%/misc/api_example_marketing.php
 %%WWWDIR%%/misc/api_internal_call.php
 %%WWWDIR%%/misc/api_rest_call.php
 %%WWWDIR%%/misc/cron/archive.sh
+%%WWWDIR%%/misc/cron/archive.sh.bak
 %%WWWDIR%%/misc/cron/archive.windows.ps1
 %%WWWDIR%%/misc/crossdomain.xml
 %%WWWDIR%%/misc/download-count.txt
@@ -921,7 +948,6 @@
 %%WWWDIR%%/misc/iframeWidget.htm
 %%WWWDIR%%/misc/iframeWidget_localhost.php
 %%WWWDIR%%/misc/phpdoc-config.ini
-%%WWWDIR%%/misc/redirectToUrl.php
 %%WWWDIR%%/misc/stress.sh
 %%WWWDIR%%/misc/test_cookies_GenerateHundredsWebsitesAndVisits.php
 %%WWWDIR%%/misc/tracker_simpleImageTracker.php
@@ -930,8 +956,8 @@
 %%WWWDIR%%/piwik.php
 %%WWWDIR%%/plugins/API/API.php
 %%WWWDIR%%/plugins/API/Controller.php
+%%WWWDIR%%/plugins/API/css/styles.css
 %%WWWDIR%%/plugins/API/templates/listAllAPI.tpl
-%%WWWDIR%%/plugins/API/templates/styles.css
 %%WWWDIR%%/plugins/Actions/API.php
 %%WWWDIR%%/plugins/Actions/Actions.php
 %%WWWDIR%%/plugins/Actions/Controller.php
@@ -945,6 +971,7 @@
 %%WWWDIR%%/plugins/CoreAdminHome/templates/header.tpl
 %%WWWDIR%%/plugins/CoreAdminHome/templates/menu.css
 %%WWWDIR%%/plugins/CoreAdminHome/templates/menu.tpl
+%%WWWDIR%%/plugins/CoreAdminHome/templates/optOut.tpl
 %%WWWDIR%%/plugins/CoreAdminHome/templates/styles.css
 %%WWWDIR%%/plugins/CoreHome/Controller.php
 %%WWWDIR%%/plugins/CoreHome/CoreHome.php
@@ -960,6 +987,7 @@
 %%WWWDIR%%/plugins/CoreHome/templates/datatable_actions_js.tpl
 %%WWWDIR%%/plugins/CoreHome/templates/datatable_actions_recursive.tpl
 %%WWWDIR%%/plugins/CoreHome/templates/datatable_actions_subdatable.tpl
+%%WWWDIR%%/plugins/CoreHome/templates/datatable_cell.tpl
 %%WWWDIR%%/plugins/CoreHome/templates/datatable_footer.tpl
 %%WWWDIR%%/plugins/CoreHome/templates/datatable_js.tpl
 %%WWWDIR%%/plugins/CoreHome/templates/date.js
@@ -1023,6 +1051,8 @@
 %%WWWDIR%%/plugins/ExampleFeedburner/templates/feedburner.tpl
 %%WWWDIR%%/plugins/ExamplePlugin/ExamplePlugin.php
 %%WWWDIR%%/plugins/ExamplePlugin/lang/en.php
+%%WWWDIR%%/plugins/ExamplePlugin/templates/piwikDownloads.tpl
+%%WWWDIR%%/plugins/ExamplePlugin/templates/websitesAndUsers.tpl
 %%WWWDIR%%/plugins/ExampleRssWidget/ExampleRssWidget.php
 %%WWWDIR%%/plugins/ExampleRssWidget/templates/styles.css
 %%WWWDIR%%/plugins/ExampleUI/API.php
@@ -1149,26 +1179,33 @@
 %%WWWDIR%%/plugins/Provider/Controller.php
 %%WWWDIR%%/plugins/Provider/Provider.php
 %%WWWDIR%%/plugins/Provider/functions.php
+%%WWWDIR%%/plugins/Proxy/Controller.php
+%%WWWDIR%%/plugins/Proxy/Proxy.php
+%%WWWDIR%%/plugins/Proxy/templates/exportImage.tpl
 %%WWWDIR%%/plugins/Referers/API.php
 %%WWWDIR%%/plugins/Referers/Controller.php
 %%WWWDIR%%/plugins/Referers/Referers.php
 %%WWWDIR%%/plugins/Referers/functions.php
 %%WWWDIR%%/plugins/Referers/images/searchEngines/1.cz.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/abcsok.no.png
+%%WWWDIR%%/plugins/Referers/images/searchEngines/alexa.com.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/all.by.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/apollo.lv.png
+%%WWWDIR%%/plugins/Referers/images/searchEngines/apollo7.de.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/arama.com.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/ariadna.elmundo.es.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/arianna.libero.it.png
-%%WWWDIR%%/plugins/Referers/images/searchEngines/bbs2.openfind.com.tw.png
+%%WWWDIR%%/plugins/Referers/images/searchEngines/ask.com.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/bg.setooz.com.png
+%%WWWDIR%%/plugins/Referers/images/searchEngines/bing.com.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/blogs.icerocket.com.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/blogsearch.google.com.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/busca.orange.es.png
+%%WWWDIR%%/plugins/Referers/images/searchEngines/buscador.terra.es.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/cf.dir.yahoo.com.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/cgi.search.biglobe.ne.jp.png
+%%WWWDIR%%/plugins/Referers/images/searchEngines/daemon-search.com.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/de.dir.yahoo.com.png
-%%WWWDIR%%/plugins/Referers/images/searchEngines/de.forestle.org.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/digg.com.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/dir.gigablast.com.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/dmoz.org.png
@@ -1176,6 +1213,7 @@
 %%WWWDIR%%/plugins/Referers/images/searchEngines/ecosia.org.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/encrypted.google.com.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/eo.st.png
+%%WWWDIR%%/plugins/Referers/images/searchEngines/forestle.org.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/fr.dir.com.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/fr.wedoo.com.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/friendfeed.com.png
@@ -1183,11 +1221,13 @@
 %%WWWDIR%%/plugins/Referers/images/searchEngines/gais.cs.ccu.edu.tw.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/geona.net.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/go.mail.ru.png
+%%WWWDIR%%/plugins/Referers/images/searchEngines/google.com.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/googlesyndicatedsearch.com.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/holmes.ge.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/images.google.com.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/images.search.yahoo.com.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/images.yandex.ru.png
+%%WWWDIR%%/plugins/Referers/images/searchEngines/infospace.com.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/iwon.ask.com.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/ixquick.com.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/jyxo.1188.cz.png
@@ -1195,18 +1235,21 @@
 %%WWWDIR%%/plugins/Referers/images/searchEngines/lo.st.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/meta.rrzn.uni-hannover.de.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/meta.ua.png
+%%WWWDIR%%/plugins/Referers/images/searchEngines/metager2.de.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/news.google.com.png
-%%WWWDIR%%/plugins/Referers/images/searchEngines/news.openfind.com.tw.png
-%%WWWDIR%%/plugins/Referers/images/searchEngines/nl.altavista.com.png
+%%WWWDIR%%/plugins/Referers/images/searchEngines/nigma.ru.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/nova.rambler.ru.png
+%%WWWDIR%%/plugins/Referers/images/searchEngines/online.no.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/otsing.delfi.ee.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/p.zhongsou.com.png
+%%WWWDIR%%/plugins/Referers/images/searchEngines/pesquisa.clix.pt.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/pesquisa.sapo.pt.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/poisk.ru.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/recherche.francite.com.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/rechercher.aliceadsl.fr.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/req.hit-parade.com.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/ricerca.virgilio.it.png
+%%WWWDIR%%/plugins/Referers/images/searchEngines/rpmfind.net.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/s1.metacrawler.de.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/search.1und1.de.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/search.about.com.png
@@ -1216,7 +1259,7 @@
 %%WWWDIR%%/plugins/Referers/images/searchEngines/search.centrum.cz.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/search.comcast.net.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/search.conduit.com.png
-%%WWWDIR%%/plugins/Referers/images/searchEngines/search.dogpile.com.png
+%%WWWDIR%%/plugins/Referers/images/searchEngines/search.daum.net.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/search.earthlink.net.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/search.excite.it.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/search.free.fr.png
@@ -1224,15 +1267,18 @@
 %%WWWDIR%%/plugins/Referers/images/searchEngines/search.goo.ne.jp.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/search.ke.voila.fr.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/search.lycos.com.png
-%%WWWDIR%%/plugins/Referers/images/searchEngines/search.metacrawler.com.png
+%%WWWDIR%%/plugins/Referers/images/searchEngines/search.nate.com.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/search.naver.com.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/search.nifty.com.png
+%%WWWDIR%%/plugins/Referers/images/searchEngines/search.peoplepc.com.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/search.qip.ru.png
+%%WWWDIR%%/plugins/Referers/images/searchEngines/search.rr.com.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/search.seznam.cz.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/search.tiscali.it.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/search.www.ee.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/search.yahoo.com.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/search.yippy.com.png
+%%WWWDIR%%/plugins/Referers/images/searchEngines/searchalot.com.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/searchatlas.centrum.cz.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/searchservice.myspace.com.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/sm.aport.ru.png
@@ -1250,24 +1296,19 @@
 %%WWWDIR%%/plugins/Referers/images/searchEngines/web.volny.cz.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/websearch.cs.com.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/websearch.rakuten.co.jp.png
-%%WWWDIR%%/plugins/Referers/images/searchEngines/ws.copernic.com.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/www.123people.com.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/www.1881.no.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/www.abacho.de.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/www.acoon.de.png
-%%WWWDIR%%/plugins/Referers/images/searchEngines/www.alexa.com.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/www.allesklar.de.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/www.alltheweb.com.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/www.altavista.com.png
-%%WWWDIR%%/plugins/Referers/images/searchEngines/www.apollo7.de.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/www.arcor.de.png
-%%WWWDIR%%/plugins/Referers/images/searchEngines/www.ask.com.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/www.baidu.com.png
-%%WWWDIR%%/plugins/Referers/images/searchEngines/www.bing.com.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/www.blogdigger.com.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/www.blogpulse.com.png
+%%WWWDIR%%/plugins/Referers/images/searchEngines/www.charter.net.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/www.cuil.com.png
-%%WWWDIR%%/plugins/Referers/images/searchEngines/www.daemon-search.com.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/www.dasoertliche.de.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/www.eniro.se.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/www.eudip.com.png
@@ -1276,6 +1317,7 @@
 %%WWWDIR%%/plugins/Referers/images/searchEngines/www.everyclick.com.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/www.exalead.fr.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/www.facebook.com.png
+%%WWWDIR%%/plugins/Referers/images/searchEngines/www.fastbrowsersearch.com.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/www.fireball.de.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/www.firstsfind.com.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/www.fixsuche.de.png
@@ -1283,6 +1325,7 @@
 %%WWWDIR%%/plugins/Referers/images/searchEngines/www.gigablast.com.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/www.gnadenmeer.de.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/www.google.com.png
+%%WWWDIR%%/plugins/Referers/images/searchEngines/www.google.interia.pl.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/www.goyellow.de.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/www.gulesider.no.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/www.highbeam.com.png
@@ -1299,23 +1342,20 @@
 %%WWWDIR%%/plugins/Referers/images/searchEngines/www.maailm.com.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/www.mamma.com.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/www.meinestadt.de.png
-%%WWWDIR%%/plugins/Referers/images/searchEngines/www.metager2.de.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/www.mister-wong.com.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/www.monstercrawler.com.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/www.mozbot.fr.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/www.mysearch.com.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/www.najdi.si.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/www.neti.ee.png
-%%WWWDIR%%/plugins/Referers/images/searchEngines/www.nigma.ru.png
-%%WWWDIR%%/plugins/Referers/images/searchEngines/www.online.no.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/www.paperball.de.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/www.picsearch.com.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/www.plazoo.com.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/www.qualigo.at.png
-%%WWWDIR%%/plugins/Referers/images/searchEngines/www.rpmfind.net.png
+%%WWWDIR%%/plugins/Referers/images/searchEngines/www.scroogle.org.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/www.search.ch.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/www.search.com.png
-%%WWWDIR%%/plugins/Referers/images/searchEngines/www.searchalot.com.png
+%%WWWDIR%%/plugins/Referers/images/searchEngines/www.searchcanvas.com.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/www.searchy.co.uk.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/www.seek.fr.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/www.sharelook.fr.png
@@ -1328,6 +1368,7 @@
 %%WWWDIR%%/plugins/Referers/images/searchEngines/www.tixuma.de.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/www.toile.com.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/www.trouvez.com.png
+%%WWWDIR%%/plugins/Referers/images/searchEngines/www.trovarapido.com.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/www.trusted--search.com.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/www.twingly.com.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/www.vinden.nl.png
@@ -1335,10 +1376,12 @@
 %%WWWDIR%%/plugins/Referers/images/searchEngines/www.walhello.info.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/www.web.nl.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/www.weborama.fr.png
+%%WWWDIR%%/plugins/Referers/images/searchEngines/www.websearch.com.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/www.witch.de.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/www.x-recherche.com.png
+%%WWWDIR%%/plugins/Referers/images/searchEngines/www.yandex.com.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/www.yasni.de.png
-%%WWWDIR%%/plugins/Referers/images/searchEngines/www.yellowmap.de.png
+%%WWWDIR%%/plugins/Referers/images/searchEngines/www.yougoo.fr.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/www.zoeken.nl.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/www.zoznam.sk.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/www1.dastelefonbuch.de.png
@@ -1346,7 +1389,7 @@
 %%WWWDIR%%/plugins/Referers/images/searchEngines/www3.zoek.nl.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/xx.gif
 %%WWWDIR%%/plugins/Referers/images/searchEngines/xx.png
-%%WWWDIR%%/plugins/Referers/images/searchEngines/yandex.ru.png
+%%WWWDIR%%/plugins/Referers/images/searchEngines/yellowmap.de.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/zoohoo.cz.png
 %%WWWDIR%%/plugins/Referers/templates/index.tpl
 %%WWWDIR%%/plugins/Referers/templates/searchEngines_Keywords.tpl
@@ -1403,6 +1446,8 @@
 %%WWWDIR%%/plugins/UserCountry/API.php
 %%WWWDIR%%/plugins/UserCountry/Controller.php
 %%WWWDIR%%/plugins/UserCountry/UserCountry.php
+%%WWWDIR%%/plugins/UserCountry/flags/a1.png
+%%WWWDIR%%/plugins/UserCountry/flags/a2.png
 %%WWWDIR%%/plugins/UserCountry/flags/ac.png
 %%WWWDIR%%/plugins/UserCountry/flags/ad.png
 %%WWWDIR%%/plugins/UserCountry/flags/ae.png
@@ -1413,6 +1458,7 @@
 %%WWWDIR%%/plugins/UserCountry/flags/am.png
 %%WWWDIR%%/plugins/UserCountry/flags/an.png
 %%WWWDIR%%/plugins/UserCountry/flags/ao.png
+%%WWWDIR%%/plugins/UserCountry/flags/ap.png
 %%WWWDIR%%/plugins/UserCountry/flags/aq.png
 %%WWWDIR%%/plugins/UserCountry/flags/ar.png
 %%WWWDIR%%/plugins/UserCountry/flags/as.png
@@ -1443,6 +1489,7 @@
 %%WWWDIR%%/plugins/UserCountry/flags/by.png
 %%WWWDIR%%/plugins/UserCountry/flags/bz.png
 %%WWWDIR%%/plugins/UserCountry/flags/ca.png
+%%WWWDIR%%/plugins/UserCountry/flags/cat.png
 %%WWWDIR%%/plugins/UserCountry/flags/cc.png
 %%WWWDIR%%/plugins/UserCountry/flags/cd.png
 %%WWWDIR%%/plugins/UserCountry/flags/cf.png
@@ -1583,6 +1630,7 @@
 %%WWWDIR%%/plugins/UserCountry/flags/nt.png
 %%WWWDIR%%/plugins/UserCountry/flags/nu.png
 %%WWWDIR%%/plugins/UserCountry/flags/nz.png
+%%WWWDIR%%/plugins/UserCountry/flags/o1.png
 %%WWWDIR%%/plugins/UserCountry/flags/om.png
 %%WWWDIR%%/plugins/UserCountry/flags/pa.png
 %%WWWDIR%%/plugins/UserCountry/flags/pe.png
@@ -1669,9 +1717,9 @@
 %%WWWDIR%%/plugins/UserCountry/flags/zw.png
 %%WWWDIR%%/plugins/UserCountry/functions.php
 %%WWWDIR%%/plugins/UserCountry/templates/index.tpl
+%%WWWDIR%%/plugins/UserCountryMap/Controller.php
 %%WWWDIR%%/plugins/UserCountryMap/PiwikMap.swf
 %%WWWDIR%%/plugins/UserCountryMap/UserCountryMap.php
-%%WWWDIR%%/plugins/UserCountryMap/templates/exportImage.tpl
 %%WWWDIR%%/plugins/UserCountryMap/templates/worldmap.tpl
 %%WWWDIR%%/plugins/UserSettings/API.php
 %%WWWDIR%%/plugins/UserSettings/Controller.php
@@ -1739,6 +1787,7 @@
 %%WWWDIR%%/plugins/UserSettings/images/os/IRI.gif
 %%WWWDIR%%/plugins/UserSettings/images/os/LIN.gif
 %%WWWDIR%%/plugins/UserSettings/images/os/MAC.gif
+%%WWWDIR%%/plugins/UserSettings/images/os/MAE.gif
 %%WWWDIR%%/plugins/UserSettings/images/os/NBS.gif
 %%WWWDIR%%/plugins/UserSettings/images/os/NDS.gif
 %%WWWDIR%%/plugins/UserSettings/images/os/OBS.gif
@@ -1748,16 +1797,22 @@
 %%WWWDIR%%/plugins/UserSettings/images/os/PSP.gif
 %%WWWDIR%%/plugins/UserSettings/images/os/SOS.gif
 %%WWWDIR%%/plugins/UserSettings/images/os/SYL.gif
+%%WWWDIR%%/plugins/UserSettings/images/os/SYM.gif
 %%WWWDIR%%/plugins/UserSettings/images/os/T64.gif
 %%WWWDIR%%/plugins/UserSettings/images/os/UNK.gif
+%%WWWDIR%%/plugins/UserSettings/images/os/VMS.gif
 %%WWWDIR%%/plugins/UserSettings/images/os/W2K.gif
+%%WWWDIR%%/plugins/UserSettings/images/os/W61.gif
+%%WWWDIR%%/plugins/UserSettings/images/os/W65.gif
 %%WWWDIR%%/plugins/UserSettings/images/os/W95.gif
 %%WWWDIR%%/plugins/UserSettings/images/os/W98.gif
+%%WWWDIR%%/plugins/UserSettings/images/os/WCE.gif
 %%WWWDIR%%/plugins/UserSettings/images/os/WI7.gif
 %%WWWDIR%%/plugins/UserSettings/images/os/WII.gif
 %%WWWDIR%%/plugins/UserSettings/images/os/WME.gif
 %%WWWDIR%%/plugins/UserSettings/images/os/WNT.gif
 %%WWWDIR%%/plugins/UserSettings/images/os/WOS.gif
+%%WWWDIR%%/plugins/UserSettings/images/os/WP7.gif
 %%WWWDIR%%/plugins/UserSettings/images/os/WS3.gif
 %%WWWDIR%%/plugins/UserSettings/images/os/WVI.gif
 %%WWWDIR%%/plugins/UserSettings/images/os/WXP.gif
@@ -1829,12 +1884,12 @@
 %%WWWDIR%%/themes/default/common.css
 %%WWWDIR%%/themes/default/common.js
 %%WWWDIR%%/themes/default/genericForm.tpl
+%%WWWDIR%%/themes/default/ieonly.css
 %%WWWDIR%%/themes/default/images/arr_r.png
 %%WWWDIR%%/themes/default/images/background-submit.png
 %%WWWDIR%%/themes/default/images/chart_bar.png
 %%WWWDIR%%/themes/default/images/chart_pie.png
 %%WWWDIR%%/themes/default/images/close.png
-%%WWWDIR%%/themes/default/images/close_medium.png
 %%WWWDIR%%/themes/default/images/collapsed_arrows.gif
 %%WWWDIR%%/themes/default/images/dashboard_h_bg.png
 %%WWWDIR%%/themes/default/images/dashboard_h_bg_hover.png
@@ -1860,6 +1915,7 @@
 %%WWWDIR%%/themes/default/images/link.gif
 %%WWWDIR%%/themes/default/images/loading-blue.gif
 %%WWWDIR%%/themes/default/images/logo.png
+%%WWWDIR%%/themes/default/images/maximise.png
 %%WWWDIR%%/themes/default/images/minus.png
 %%WWWDIR%%/themes/default/images/ok.png
 %%WWWDIR%%/themes/default/images/page_border_grad.png
@@ -1882,287 +1938,293 @@
 %%WWWDIR%%/themes/default/simple_structure_footer.tpl
 %%WWWDIR%%/themes/default/simple_structure_header.tpl
 %%WWWDIR%%/themes/default/styles.css
-@dirrm %%WWWDIR%%/config
-@dirrm %%WWWDIR%%/core/API
-@dirrm %%WWWDIR%%/core/Archive/Array
-@dirrm %%WWWDIR%%/core/Archive
-@dirrm %%WWWDIR%%/core/ArchiveProcessing/Record
-@dirrm %%WWWDIR%%/core/ArchiveProcessing
-@dirrm %%WWWDIR%%/core/DataFiles
-@dirrm %%WWWDIR%%/core/DataTable/Filter
-@dirrm %%WWWDIR%%/core/DataTable/Renderer
-@dirrm %%WWWDIR%%/core/DataTable/Row
-@dirrm %%WWWDIR%%/core/DataTable
-@dirrm %%WWWDIR%%/core/Db/Adapter/Pdo
-@dirrm %%WWWDIR%%/core/Db/Adapter
-@dirrm %%WWWDIR%%/core/Db/Schema
-@dirrm %%WWWDIR%%/core/Db
-@dirrm %%WWWDIR%%/core/Log
-@dirrm %%WWWDIR%%/core/Menu
-@dirrm %%WWWDIR%%/core/Period
-@dirrm %%WWWDIR%%/core/PluginsFunctions
-@dirrm %%WWWDIR%%/core/ScheduledTime
-@dirrm %%WWWDIR%%/core/SmartyPlugins
-@dirrm %%WWWDIR%%/core/Tracker/Db/Pdo
-@dirrm %%WWWDIR%%/core/Tracker/Db
-@dirrm %%WWWDIR%%/core/Tracker
-@dirrm %%WWWDIR%%/core/Updates
-@dirrm %%WWWDIR%%/core/ViewDataTable/GenerateGraphData
-@dirrm %%WWWDIR%%/core/ViewDataTable/GenerateGraphHTML
-@dirrm %%WWWDIR%%/core/ViewDataTable/HtmlTable
-@dirrm %%WWWDIR%%/core/ViewDataTable
-@dirrm %%WWWDIR%%/core/Visualization/Chart
-@dirrm %%WWWDIR%%/core/Visualization
-@dirrm %%WWWDIR%%/core
-@dirrm %%WWWDIR%%/js
-@dirrm %%WWWDIR%%/lang
-@dirrm %%WWWDIR%%/libs/Event
-@dirrm %%WWWDIR%%/libs/HTML/QuickForm2/Container
-@dirrm %%WWWDIR%%/libs/HTML/QuickForm2/Controller/Action
-@dirrm %%WWWDIR%%/libs/HTML/QuickForm2/Controller
-@dirrm %%WWWDIR%%/libs/HTML/QuickForm2/DataSource
-@dirrm %%WWWDIR%%/libs/HTML/QuickForm2/Element
-@dirrm %%WWWDIR%%/libs/HTML/QuickForm2/Renderer
-@dirrm %%WWWDIR%%/libs/HTML/QuickForm2/Rule
-@dirrm %%WWWDIR%%/libs/HTML/QuickForm2
-@dirrm %%WWWDIR%%/libs/HTML
-@dirrm %%WWWDIR%%/libs/PiwikTracker
-@dirrm %%WWWDIR%%/libs/PclZip
-@dirrm %%WWWDIR%%/libs/PEAR
-@dirrm %%WWWDIR%%/libs/Smarty/internals
-@dirrm %%WWWDIR%%/libs/Smarty/plugins
-@dirrm %%WWWDIR%%/libs/Smarty
-@dirrm %%WWWDIR%%/libs/UserAgentParser
-@dirrm %%WWWDIR%%/libs/Zend/Auth/Adapter/Http/Resolver
-@dirrm %%WWWDIR%%/libs/Zend/Auth/Adapter/Http
-@dirrm %%WWWDIR%%/libs/Zend/Auth/Adapter
-@dirrm %%WWWDIR%%/libs/Zend/Auth/Storage
-@dirrm %%WWWDIR%%/libs/Zend/Auth
-@dirrm %%WWWDIR%%/libs/Zend/Cache/Backend/ZendServer
-@dirrm %%WWWDIR%%/libs/Zend/Cache/Backend
-@dirrm %%WWWDIR%%/libs/Zend/Cache/Frontend
-@dirrm %%WWWDIR%%/libs/Zend/Cache
-@dirrm %%WWWDIR%%/libs/Zend/Config/Writer
-@dirrm %%WWWDIR%%/libs/Zend/Config
-@dirrm %%WWWDIR%%/libs/Zend/Db/Adapter/Db2
-@dirrm %%WWWDIR%%/libs/Zend/Db/Adapter/Mysqli
-@dirrm %%WWWDIR%%/libs/Zend/Db/Adapter/Oracle
-@dirrm %%WWWDIR%%/libs/Zend/Db/Adapter/Pdo/Ibm
-@dirrm %%WWWDIR%%/libs/Zend/Db/Adapter/Pdo
-@dirrm %%WWWDIR%%/libs/Zend/Db/Adapter/Sqlsrv
-@dirrm %%WWWDIR%%/libs/Zend/Db/Adapter
-@dirrm %%WWWDIR%%/libs/Zend/Db/Profiler
-@dirrm %%WWWDIR%%/libs/Zend/Db/Select
-@dirrm %%WWWDIR%%/libs/Zend/Db/Statement/Db2
-@dirrm %%WWWDIR%%/libs/Zend/Db/Statement/Mysqli
-@dirrm %%WWWDIR%%/libs/Zend/Db/Statement/Oracle
-@dirrm %%WWWDIR%%/libs/Zend/Db/Statement/Pdo
-@dirrm %%WWWDIR%%/libs/Zend/Db/Statement/Sqlsrv
-@dirrm %%WWWDIR%%/libs/Zend/Db/Statement
-@dirrm %%WWWDIR%%/libs/Zend/Db/Table/Row
-@dirrm %%WWWDIR%%/libs/Zend/Db/Table/Rowset
-@dirrm %%WWWDIR%%/libs/Zend/Db/Table/Select
-@dirrm %%WWWDIR%%/libs/Zend/Db/Table
-@dirrm %%WWWDIR%%/libs/Zend/Db
-@dirrm %%WWWDIR%%/libs/Zend/Feed/Builder/Header
-@dirrm %%WWWDIR%%/libs/Zend/Feed/Builder
-@dirrm %%WWWDIR%%/libs/Zend/Feed/Entry
-@dirrm %%WWWDIR%%/libs/Zend/Feed/Pubsubhubbub/Http
-@dirrm %%WWWDIR%%/libs/Zend/Feed/Pubsubhubbub/Model
-@dirrm %%WWWDIR%%/libs/Zend/Feed/Pubsubhubbub/Subscriber
-@dirrm %%WWWDIR%%/libs/Zend/Feed/Pubsubhubbub
-@dirrm %%WWWDIR%%/libs/Zend/Feed/Reader/Collection
-@dirrm %%WWWDIR%%/libs/Zend/Feed/Reader/Entry
-@dirrm %%WWWDIR%%/libs/Zend/Feed/Reader/Extension/Atom
-@dirrm %%WWWDIR%%/libs/Zend/Feed/Reader/Extension/Content
-@dirrm %%WWWDIR%%/libs/Zend/Feed/Reader/Extension/CreativeCommons
-@dirrm %%WWWDIR%%/libs/Zend/Feed/Reader/Extension/DublinCore
-@dirrm %%WWWDIR%%/libs/Zend/Feed/Reader/Extension/Podcast
-@dirrm %%WWWDIR%%/libs/Zend/Feed/Reader/Extension/Slash
-@dirrm %%WWWDIR%%/libs/Zend/Feed/Reader/Extension/Syndication
-@dirrm %%WWWDIR%%/libs/Zend/Feed/Reader/Extension/Thread
-@dirrm %%WWWDIR%%/libs/Zend/Feed/Reader/Extension/WellFormedWeb
-@dirrm %%WWWDIR%%/libs/Zend/Feed/Reader/Extension
-@dirrm %%WWWDIR%%/libs/Zend/Feed/Reader/Feed/Atom
-@dirrm %%WWWDIR%%/libs/Zend/Feed/Reader/Feed
-@dirrm %%WWWDIR%%/libs/Zend/Feed/Reader
-@dirrm %%WWWDIR%%/libs/Zend/Feed/Writer/Exception
-@dirrm %%WWWDIR%%/libs/Zend/Feed/Writer/Extension/Atom/Renderer
-@dirrm %%WWWDIR%%/libs/Zend/Feed/Writer/Extension/Atom
-@dirrm %%WWWDIR%%/libs/Zend/Feed/Writer/Extension/Content/Renderer
-@dirrm %%WWWDIR%%/libs/Zend/Feed/Writer/Extension/Content
-@dirrm %%WWWDIR%%/libs/Zend/Feed/Writer/Extension/DublinCore/Renderer
-@dirrm %%WWWDIR%%/libs/Zend/Feed/Writer/Extension/DublinCore
-@dirrm %%WWWDIR%%/libs/Zend/Feed/Writer/Extension/ITunes/Renderer
-@dirrm %%WWWDIR%%/libs/Zend/Feed/Writer/Extension/ITunes
-@dirrm %%WWWDIR%%/libs/Zend/Feed/Writer/Extension/Slash/Renderer
-@dirrm %%WWWDIR%%/libs/Zend/Feed/Writer/Extension/Slash
-@dirrm %%WWWDIR%%/libs/Zend/Feed/Writer/Extension/Threading/Renderer
-@dirrm %%WWWDIR%%/libs/Zend/Feed/Writer/Extension/Threading
-@dirrm %%WWWDIR%%/libs/Zend/Feed/Writer/Extension/WellFormedWeb/Renderer
-@dirrm %%WWWDIR%%/libs/Zend/Feed/Writer/Extension/WellFormedWeb
-@dirrm %%WWWDIR%%/libs/Zend/Feed/Writer/Extension
-@dirrm %%WWWDIR%%/libs/Zend/Feed/Writer/Feed
-@dirrm %%WWWDIR%%/libs/Zend/Feed/Writer/Renderer/Entry/Atom
-@dirrm %%WWWDIR%%/libs/Zend/Feed/Writer/Renderer/Entry
-@dirrm %%WWWDIR%%/libs/Zend/Feed/Writer/Renderer/Feed/Atom
-@dirrm %%WWWDIR%%/libs/Zend/Feed/Writer/Renderer/Feed
-@dirrm %%WWWDIR%%/libs/Zend/Feed/Writer/Renderer
-@dirrm %%WWWDIR%%/libs/Zend/Feed/Writer
-@dirrm %%WWWDIR%%/libs/Zend/Feed
-@dirrm %%WWWDIR%%/libs/Zend/Http/Client/Adapter
-@dirrm %%WWWDIR%%/libs/Zend/Http/Client
-@dirrm %%WWWDIR%%/libs/Zend/Http/Response
-@dirrm %%WWWDIR%%/libs/Zend/Http
-@dirrm %%WWWDIR%%/libs/Zend/Loader/Autoloader
-@dirrm %%WWWDIR%%/libs/Zend/Loader/PluginLoader
-@dirrm %%WWWDIR%%/libs/Zend/Loader
-@dirrm %%WWWDIR%%/libs/Zend/Log/Filter
-@dirrm %%WWWDIR%%/libs/Zend/Log/Formatter
-@dirrm %%WWWDIR%%/libs/Zend/Log/Writer
-@dirrm %%WWWDIR%%/libs/Zend/Log
-@dirrm %%WWWDIR%%/libs/Zend/Mail/Message
-@dirrm %%WWWDIR%%/libs/Zend/Mail/Part
-@dirrm %%WWWDIR%%/libs/Zend/Mail/Protocol/Smtp/Auth
-@dirrm %%WWWDIR%%/libs/Zend/Mail/Protocol/Smtp
-@dirrm %%WWWDIR%%/libs/Zend/Mail/Protocol
-@dirrm %%WWWDIR%%/libs/Zend/Mail/Storage/Folder
-@dirrm %%WWWDIR%%/libs/Zend/Mail/Storage/Writable
-@dirrm %%WWWDIR%%/libs/Zend/Mail/Storage
-@dirrm %%WWWDIR%%/libs/Zend/Mail/Transport
-@dirrm %%WWWDIR%%/libs/Zend/Mail
-@dirrm %%WWWDIR%%/libs/Zend/Mime
-@dirrm %%WWWDIR%%/libs/Zend/Session/SaveHandler
-@dirrm %%WWWDIR%%/libs/Zend/Session/Validator
-@dirrm %%WWWDIR%%/libs/Zend/Session
-@dirrm %%WWWDIR%%/libs/Zend/Uri
-@dirrm %%WWWDIR%%/libs/Zend/Validate/Barcode
-@dirrm %%WWWDIR%%/libs/Zend/Validate/Db
-@dirrm %%WWWDIR%%/libs/Zend/Validate/File
-@dirrm %%WWWDIR%%/libs/Zend/Validate/Hostname
-@dirrm %%WWWDIR%%/libs/Zend/Validate/Sitemap
-@dirrm %%WWWDIR%%/libs/Zend/Validate
-@dirrm %%WWWDIR%%/libs/Zend
-@dirrm %%WWWDIR%%/libs/cssmin
-@dirrm %%WWWDIR%%/libs/javascript
-@dirrm %%WWWDIR%%/libs/jquery/themes/base/images
-@dirrm %%WWWDIR%%/libs/jquery/themes/base
-@dirrm %%WWWDIR%%/libs/jquery/themes
-@dirrm %%WWWDIR%%/libs/jquery
-@dirrm %%WWWDIR%%/libs/jsmin
-@dirrm %%WWWDIR%%/libs/open-flash-chart/php-ofc-library
-@dirrm %%WWWDIR%%/libs/open-flash-chart
-@dirrm %%WWWDIR%%/libs/sparkline/lib
-@dirrm %%WWWDIR%%/libs/sparkline
-@dirrm %%WWWDIR%%/libs/swfobject
-@dirrm %%WWWDIR%%/libs/tcpdf/fonts
-@dirrm %%WWWDIR%%/libs/tcpdf/config/lang
-@dirrm %%WWWDIR%%/libs/tcpdf/config
-@dirrm %%WWWDIR%%/libs/tcpdf
-@dirrm %%WWWDIR%%/libs/upgradephp
-@dirrm %%WWWDIR%%/libs
-@dirrm %%WWWDIR%%/misc/WebAppGallery
-@dirrm %%WWWDIR%%/misc/cron
-@dirrm %%WWWDIR%%/misc
-@dirrm %%WWWDIR%%/plugins/API/templates
-@dirrm %%WWWDIR%%/plugins/API
-@dirrm %%WWWDIR%%/plugins/Actions
-@dirrm %%WWWDIR%%/plugins/AnonymizeIP
-@dirrm %%WWWDIR%%/plugins/CoreAdminHome/templates
-@dirrm %%WWWDIR%%/plugins/CoreAdminHome
-@dirrm %%WWWDIR%%/plugins/CoreHome/templates/images
-@dirrm %%WWWDIR%%/plugins/CoreHome/templates
-@dirrm %%WWWDIR%%/plugins/CoreHome
-@dirrm %%WWWDIR%%/plugins/CorePluginsAdmin/templates
-@dirrm %%WWWDIR%%/plugins/CorePluginsAdmin
-@dirrm %%WWWDIR%%/plugins/CoreUpdater/templates
-@dirrm %%WWWDIR%%/plugins/CoreUpdater
-@dirrm %%WWWDIR%%/plugins/DBStats/templates
-@dirrm %%WWWDIR%%/plugins/DBStats
-@dirrm %%WWWDIR%%/plugins/Dashboard/templates
-@dirrm %%WWWDIR%%/plugins/Dashboard
-@dirrm %%WWWDIR%%/plugins/ExampleAPI
-@dirrm %%WWWDIR%%/plugins/ExampleFeedburner/templates
-@dirrm %%WWWDIR%%/plugins/ExampleFeedburner
-@dirrm %%WWWDIR%%/plugins/ExamplePlugin/lang
-@dirrm %%WWWDIR%%/plugins/ExamplePlugin
-@dirrm %%WWWDIR%%/plugins/ExampleRssWidget/templates
-@dirrm %%WWWDIR%%/plugins/ExampleRssWidget
-@dirrm %%WWWDIR%%/plugins/ExampleUI/images/icons-planet
-@dirrm %%WWWDIR%%/plugins/ExampleUI/images
-@dirrm %%WWWDIR%%/plugins/ExampleUI
-@dirrm %%WWWDIR%%/plugins/Feedback/images
-@dirrm %%WWWDIR%%/plugins/Feedback/templates
-@dirrm %%WWWDIR%%/plugins/Feedback
-@dirrm %%WWWDIR%%/plugins/Goals/templates
-@dirrm %%WWWDIR%%/plugins/Goals
-@dirrm %%WWWDIR%%/plugins/Installation/templates
-@dirrm %%WWWDIR%%/plugins/Installation
-@dirrm %%WWWDIR%%/plugins/LanguagesManager/templates
-@dirrm %%WWWDIR%%/plugins/LanguagesManager
-@dirrm %%WWWDIR%%/plugins/Live/templates/images
-@dirrm %%WWWDIR%%/plugins/Live/templates/scripts
-@dirrm %%WWWDIR%%/plugins/Live/templates
-@dirrm %%WWWDIR%%/plugins/Live
-@dirrm %%WWWDIR%%/plugins/Login/templates
-@dirrm %%WWWDIR%%/plugins/Login
-@dirrm %%WWWDIR%%/plugins/MultiSites/images
-@dirrm %%WWWDIR%%/plugins/MultiSites/templates
-@dirrm %%WWWDIR%%/plugins/MultiSites
-@dirrm %%WWWDIR%%/plugins/PDFReports/templates
-@dirrm %%WWWDIR%%/plugins/PDFReports
-@dirrm %%WWWDIR%%/plugins/Provider
-@dirrm %%WWWDIR%%/plugins/Referers/images/searchEngines
-@dirrm %%WWWDIR%%/plugins/Referers/images
-@dirrm %%WWWDIR%%/plugins/Referers/templates
-@dirrm %%WWWDIR%%/plugins/Referers
-@dirrm %%WWWDIR%%/plugins/SEO/templates
-@dirrm %%WWWDIR%%/plugins/SEO/images
-@dirrm %%WWWDIR%%/plugins/SEO
-@dirrm %%WWWDIR%%/plugins/SecurityInfo/PhpSecInfo/Test/Application
-@dirrm %%WWWDIR%%/plugins/SecurityInfo/PhpSecInfo/Test/CGI
-@dirrm %%WWWDIR%%/plugins/SecurityInfo/PhpSecInfo/Test/Core
-@dirrm %%WWWDIR%%/plugins/SecurityInfo/PhpSecInfo/Test/Curl
-@dirrm %%WWWDIR%%/plugins/SecurityInfo/PhpSecInfo/Test/Session
-@dirrm %%WWWDIR%%/plugins/SecurityInfo/PhpSecInfo/Test/Suhosin
-@dirrm %%WWWDIR%%/plugins/SecurityInfo/PhpSecInfo/Test
-@dirrm %%WWWDIR%%/plugins/SecurityInfo/PhpSecInfo
-@dirrm %%WWWDIR%%/plugins/SecurityInfo/templates
-@dirrm %%WWWDIR%%/plugins/SecurityInfo
-@dirrm %%WWWDIR%%/plugins/SitesManager/templates
-@dirrm %%WWWDIR%%/plugins/SitesManager
-@dirrm %%WWWDIR%%/plugins/UserCountry/flags
-@dirrm %%WWWDIR%%/plugins/UserCountry/templates
-@dirrm %%WWWDIR%%/plugins/UserCountry
-@dirrm %%WWWDIR%%/plugins/UserCountryMap/templates
-@dirrm %%WWWDIR%%/plugins/UserCountryMap
-@dirrm %%WWWDIR%%/plugins/UserSettings/images/browsers
-@dirrm %%WWWDIR%%/plugins/UserSettings/images/os
-@dirrm %%WWWDIR%%/plugins/UserSettings/images/plugins
-@dirrm %%WWWDIR%%/plugins/UserSettings/images/screens
-@dirrm %%WWWDIR%%/plugins/UserSettings/images
-@dirrm %%WWWDIR%%/plugins/UserSettings/templates
-@dirrm %%WWWDIR%%/plugins/UserSettings
-@dirrm %%WWWDIR%%/plugins/UsersManager/images
-@dirrm %%WWWDIR%%/plugins/UsersManager/templates
-@dirrm %%WWWDIR%%/plugins/UsersManager
-@dirrm %%WWWDIR%%/plugins/VisitFrequency/templates
-@dirrm %%WWWDIR%%/plugins/VisitFrequency
+@dirrm %%WWWDIR%%/tmp
+@dirrm %%WWWDIR%%/themes/default/images
+@dirrm %%WWWDIR%%/themes/default
+@dirrm %%WWWDIR%%/themes
+@dirrm %%WWWDIR%%/tests
+@dirrm %%WWWDIR%%/plugins/Widgetize/templates
+@dirrm %%WWWDIR%%/plugins/Widgetize
+@dirrm %%WWWDIR%%/plugins/VisitsSummary/templates
+@dirrm %%WWWDIR%%/plugins/VisitsSummary
+@dirrm %%WWWDIR%%/plugins/VisitorInterest/templates
+@dirrm %%WWWDIR%%/plugins/VisitorInterest
 @dirrm %%WWWDIR%%/plugins/VisitorGenerator/templates
 @dirrm %%WWWDIR%%/plugins/VisitorGenerator/data
 @dirrm %%WWWDIR%%/plugins/VisitorGenerator
 @dirrm %%WWWDIR%%/plugins/VisitTime/templates
 @dirrm %%WWWDIR%%/plugins/VisitTime
-@dirrm %%WWWDIR%%/plugins/VisitorInterest/templates
-@dirrm %%WWWDIR%%/plugins/VisitorInterest
-@dirrm %%WWWDIR%%/plugins/VisitsSummary/templates
-@dirrm %%WWWDIR%%/plugins/VisitsSummary
-@dirrm %%WWWDIR%%/plugins/Widgetize/templates
-@dirrm %%WWWDIR%%/plugins/Widgetize
+@dirrm %%WWWDIR%%/plugins/VisitFrequency/templates
+@dirrm %%WWWDIR%%/plugins/VisitFrequency
+@dirrm %%WWWDIR%%/plugins/UsersManager/templates
+@dirrm %%WWWDIR%%/plugins/UsersManager/images
+@dirrm %%WWWDIR%%/plugins/UsersManager
+@dirrm %%WWWDIR%%/plugins/UserSettings/templates
+@dirrm %%WWWDIR%%/plugins/UserSettings/images/screens
+@dirrm %%WWWDIR%%/plugins/UserSettings/images/plugins
+@dirrm %%WWWDIR%%/plugins/UserSettings/images/os
+@dirrm %%WWWDIR%%/plugins/UserSettings/images/browsers
+@dirrm %%WWWDIR%%/plugins/UserSettings/images
+@dirrm %%WWWDIR%%/plugins/UserSettings
+@dirrm %%WWWDIR%%/plugins/UserCountryMap/templates
+@dirrm %%WWWDIR%%/plugins/UserCountryMap
+@dirrm %%WWWDIR%%/plugins/UserCountry/templates
+@dirrm %%WWWDIR%%/plugins/UserCountry/flags
+@dirrm %%WWWDIR%%/plugins/UserCountry
+@dirrm %%WWWDIR%%/plugins/SitesManager/templates
+@dirrm %%WWWDIR%%/plugins/SitesManager
+@dirrm %%WWWDIR%%/plugins/SecurityInfo/templates
+@dirrm %%WWWDIR%%/plugins/SecurityInfo/PhpSecInfo/Test/Suhosin
+@dirrm %%WWWDIR%%/plugins/SecurityInfo/PhpSecInfo/Test/Session
+@dirrm %%WWWDIR%%/plugins/SecurityInfo/PhpSecInfo/Test/Curl
+@dirrm %%WWWDIR%%/plugins/SecurityInfo/PhpSecInfo/Test/Core
+@dirrm %%WWWDIR%%/plugins/SecurityInfo/PhpSecInfo/Test/CGI
+@dirrm %%WWWDIR%%/plugins/SecurityInfo/PhpSecInfo/Test/Application
+@dirrm %%WWWDIR%%/plugins/SecurityInfo/PhpSecInfo/Test
+@dirrm %%WWWDIR%%/plugins/SecurityInfo/PhpSecInfo
+@dirrm %%WWWDIR%%/plugins/SecurityInfo
+@dirrm %%WWWDIR%%/plugins/SEO/templates
+@dirrm %%WWWDIR%%/plugins/SEO/images
+@dirrm %%WWWDIR%%/plugins/SEO
+@dirrm %%WWWDIR%%/plugins/Referers/templates
+@dirrm %%WWWDIR%%/plugins/Referers/images/searchEngines
+@dirrm %%WWWDIR%%/plugins/Referers/images
+@dirrm %%WWWDIR%%/plugins/Referers
+@dirrm %%WWWDIR%%/plugins/Proxy/templates
+@dirrm %%WWWDIR%%/plugins/Proxy
+@dirrm %%WWWDIR%%/plugins/Provider
+@dirrm %%WWWDIR%%/plugins/PDFReports/templates
+@dirrm %%WWWDIR%%/plugins/PDFReports
+@dirrm %%WWWDIR%%/plugins/MultiSites/templates
+@dirrm %%WWWDIR%%/plugins/MultiSites/images
+@dirrm %%WWWDIR%%/plugins/MultiSites
+@dirrm %%WWWDIR%%/plugins/Login/templates
+@dirrm %%WWWDIR%%/plugins/Login
+@dirrm %%WWWDIR%%/plugins/Live/templates/scripts
+@dirrm %%WWWDIR%%/plugins/Live/templates/images
+@dirrm %%WWWDIR%%/plugins/Live/templates
+@dirrm %%WWWDIR%%/plugins/Live
+@dirrm %%WWWDIR%%/plugins/LanguagesManager/templates
+@dirrm %%WWWDIR%%/plugins/LanguagesManager
+@dirrm %%WWWDIR%%/plugins/Installation/templates
+@dirrm %%WWWDIR%%/plugins/Installation
+@dirrm %%WWWDIR%%/plugins/Goals/templates
+@dirrm %%WWWDIR%%/plugins/Goals
+@dirrm %%WWWDIR%%/plugins/Feedback/templates
+@dirrm %%WWWDIR%%/plugins/Feedback/images
+@dirrm %%WWWDIR%%/plugins/Feedback
+@dirrm %%WWWDIR%%/plugins/ExampleUI/images/icons-planet
+@dirrm %%WWWDIR%%/plugins/ExampleUI/images
+@dirrm %%WWWDIR%%/plugins/ExampleUI
+@dirrm %%WWWDIR%%/plugins/ExampleRssWidget/templates
+@dirrm %%WWWDIR%%/plugins/ExampleRssWidget
+@dirrm %%WWWDIR%%/plugins/ExamplePlugin/templates
+@dirrm %%WWWDIR%%/plugins/ExamplePlugin/lang
+@dirrm %%WWWDIR%%/plugins/ExamplePlugin
+@dirrm %%WWWDIR%%/plugins/ExampleFeedburner/templates
+@dirrm %%WWWDIR%%/plugins/ExampleFeedburner
+@dirrm %%WWWDIR%%/plugins/ExampleAPI
+@dirrm %%WWWDIR%%/plugins/Dashboard/templates
+@dirrm %%WWWDIR%%/plugins/Dashboard
+@dirrm %%WWWDIR%%/plugins/DBStats/templates
+@dirrm %%WWWDIR%%/plugins/DBStats
+@dirrm %%WWWDIR%%/plugins/CoreUpdater/templates
+@dirrm %%WWWDIR%%/plugins/CoreUpdater
+@dirrm %%WWWDIR%%/plugins/CorePluginsAdmin/templates
+@dirrm %%WWWDIR%%/plugins/CorePluginsAdmin
+@dirrm %%WWWDIR%%/plugins/CoreHome/templates/images
+@dirrm %%WWWDIR%%/plugins/CoreHome/templates
+@dirrm %%WWWDIR%%/plugins/CoreHome
+@dirrm %%WWWDIR%%/plugins/CoreAdminHome/templates
+@dirrm %%WWWDIR%%/plugins/CoreAdminHome
+@dirrm %%WWWDIR%%/plugins/AnonymizeIP
+@dirrm %%WWWDIR%%/plugins/Actions
+@dirrm %%WWWDIR%%/plugins/API/templates
+@dirrm %%WWWDIR%%/plugins/API/css
+@dirrm %%WWWDIR%%/plugins/API
 @dirrm %%WWWDIR%%/plugins
-@dirrm %%WWWDIR%%/tests
-@dirrm %%WWWDIR%%/themes/default/images
-@dirrm %%WWWDIR%%/themes/default
-@dirrm %%WWWDIR%%/themes
-@dirrm %%WWWDIR%%/tmp
+@dirrm %%WWWDIR%%/misc/cron
+@dirrm %%WWWDIR%%/misc
+@dirrm %%WWWDIR%%/libs/upgradephp
+@dirrm %%WWWDIR%%/libs/tcpdf/fonts
+@dirrm %%WWWDIR%%/libs/tcpdf/config/lang
+@dirrm %%WWWDIR%%/libs/tcpdf/config
+@dirrm %%WWWDIR%%/libs/tcpdf
+@dirrm %%WWWDIR%%/libs/swfobject
+@dirrm %%WWWDIR%%/libs/sparkline/lib
+@dirrm %%WWWDIR%%/libs/sparkline
+@dirrm %%WWWDIR%%/libs/open-flash-chart/php-ofc-library
+@dirrm %%WWWDIR%%/libs/open-flash-chart
+@dirrm %%WWWDIR%%/libs/jsmin
+@dirrm %%WWWDIR%%/libs/jquery/themes/base/images
+@dirrm %%WWWDIR%%/libs/jquery/themes/base
+@dirrm %%WWWDIR%%/libs/jquery/themes
+@dirrm %%WWWDIR%%/libs/jquery
+@dirrm %%WWWDIR%%/libs/javascript
+@dirrm %%WWWDIR%%/libs/cssmin
+@dirrm %%WWWDIR%%/libs/Zend/Validate/Sitemap
+@dirrm %%WWWDIR%%/libs/Zend/Validate/Hostname
+@dirrm %%WWWDIR%%/libs/Zend/Validate/File
+@dirrm %%WWWDIR%%/libs/Zend/Validate/Db
+@dirrm %%WWWDIR%%/libs/Zend/Validate/Barcode
+@dirrm %%WWWDIR%%/libs/Zend/Validate
+@dirrm %%WWWDIR%%/libs/Zend/Uri
+@dirrm %%WWWDIR%%/libs/Zend/Session/Validator
+@dirrm %%WWWDIR%%/libs/Zend/Session/SaveHandler
+@dirrm %%WWWDIR%%/libs/Zend/Session
+@dirrm %%WWWDIR%%/libs/Zend/Mime
+@dirrm %%WWWDIR%%/libs/Zend/Mail/Transport
+@dirrm %%WWWDIR%%/libs/Zend/Mail/Storage/Writable
+@dirrm %%WWWDIR%%/libs/Zend/Mail/Storage/Folder
+@dirrm %%WWWDIR%%/libs/Zend/Mail/Storage
+@dirrm %%WWWDIR%%/libs/Zend/Mail/Protocol/Smtp/Auth
+@dirrm %%WWWDIR%%/libs/Zend/Mail/Protocol/Smtp
+@dirrm %%WWWDIR%%/libs/Zend/Mail/Protocol
+@dirrm %%WWWDIR%%/libs/Zend/Mail/Part
+@dirrm %%WWWDIR%%/libs/Zend/Mail/Message
+@dirrm %%WWWDIR%%/libs/Zend/Mail
+@dirrm %%WWWDIR%%/libs/Zend/Log/Writer
+@dirrm %%WWWDIR%%/libs/Zend/Log/Formatter
+@dirrm %%WWWDIR%%/libs/Zend/Log/Filter
+@dirrm %%WWWDIR%%/libs/Zend/Log
+@dirrm %%WWWDIR%%/libs/Zend/Loader/PluginLoader
+@dirrm %%WWWDIR%%/libs/Zend/Loader/Autoloader
+@dirrm %%WWWDIR%%/libs/Zend/Loader
+@dirrm %%WWWDIR%%/libs/Zend/Http/Response
+@dirrm %%WWWDIR%%/libs/Zend/Http/Client/Adapter
+@dirrm %%WWWDIR%%/libs/Zend/Http/Client
+@dirrm %%WWWDIR%%/libs/Zend/Http
+@dirrm %%WWWDIR%%/libs/Zend/Feed/Writer/Renderer/Feed/Atom
+@dirrm %%WWWDIR%%/libs/Zend/Feed/Writer/Renderer/Feed
+@dirrm %%WWWDIR%%/libs/Zend/Feed/Writer/Renderer/Entry/Atom
+@dirrm %%WWWDIR%%/libs/Zend/Feed/Writer/Renderer/Entry
+@dirrm %%WWWDIR%%/libs/Zend/Feed/Writer/Renderer
+@dirrm %%WWWDIR%%/libs/Zend/Feed/Writer/Feed
+@dirrm %%WWWDIR%%/libs/Zend/Feed/Writer/Extension/WellFormedWeb/Renderer
+@dirrm %%WWWDIR%%/libs/Zend/Feed/Writer/Extension/WellFormedWeb
+@dirrm %%WWWDIR%%/libs/Zend/Feed/Writer/Extension/Threading/Renderer
+@dirrm %%WWWDIR%%/libs/Zend/Feed/Writer/Extension/Threading
+@dirrm %%WWWDIR%%/libs/Zend/Feed/Writer/Extension/Slash/Renderer
+@dirrm %%WWWDIR%%/libs/Zend/Feed/Writer/Extension/Slash
+@dirrm %%WWWDIR%%/libs/Zend/Feed/Writer/Extension/ITunes/Renderer
+@dirrm %%WWWDIR%%/libs/Zend/Feed/Writer/Extension/ITunes
+@dirrm %%WWWDIR%%/libs/Zend/Feed/Writer/Extension/DublinCore/Renderer
+@dirrm %%WWWDIR%%/libs/Zend/Feed/Writer/Extension/DublinCore
+@dirrm %%WWWDIR%%/libs/Zend/Feed/Writer/Extension/Content/Renderer
+@dirrm %%WWWDIR%%/libs/Zend/Feed/Writer/Extension/Content
+@dirrm %%WWWDIR%%/libs/Zend/Feed/Writer/Extension/Atom/Renderer
+@dirrm %%WWWDIR%%/libs/Zend/Feed/Writer/Extension/Atom
+@dirrm %%WWWDIR%%/libs/Zend/Feed/Writer/Extension
+@dirrm %%WWWDIR%%/libs/Zend/Feed/Writer/Exception
+@dirrm %%WWWDIR%%/libs/Zend/Feed/Writer
+@dirrm %%WWWDIR%%/libs/Zend/Feed/Reader/Feed/Atom
+@dirrm %%WWWDIR%%/libs/Zend/Feed/Reader/Feed
+@dirrm %%WWWDIR%%/libs/Zend/Feed/Reader/Extension/WellFormedWeb
+@dirrm %%WWWDIR%%/libs/Zend/Feed/Reader/Extension/Thread
+@dirrm %%WWWDIR%%/libs/Zend/Feed/Reader/Extension/Syndication
+@dirrm %%WWWDIR%%/libs/Zend/Feed/Reader/Extension/Slash
+@dirrm %%WWWDIR%%/libs/Zend/Feed/Reader/Extension/Podcast
+@dirrm %%WWWDIR%%/libs/Zend/Feed/Reader/Extension/DublinCore
+@dirrm %%WWWDIR%%/libs/Zend/Feed/Reader/Extension/CreativeCommons
+@dirrm %%WWWDIR%%/libs/Zend/Feed/Reader/Extension/Content
+@dirrm %%WWWDIR%%/libs/Zend/Feed/Reader/Extension/Atom
+@dirrm %%WWWDIR%%/libs/Zend/Feed/Reader/Extension
+@dirrm %%WWWDIR%%/libs/Zend/Feed/Reader/Entry
+@dirrm %%WWWDIR%%/libs/Zend/Feed/Reader/Collection
+@dirrm %%WWWDIR%%/libs/Zend/Feed/Reader
+@dirrm %%WWWDIR%%/libs/Zend/Feed/Pubsubhubbub/Subscriber
+@dirrm %%WWWDIR%%/libs/Zend/Feed/Pubsubhubbub/Model
+@dirrm %%WWWDIR%%/libs/Zend/Feed/Pubsubhubbub/Http
+@dirrm %%WWWDIR%%/libs/Zend/Feed/Pubsubhubbub
+@dirrm %%WWWDIR%%/libs/Zend/Feed/Entry
+@dirrm %%WWWDIR%%/libs/Zend/Feed/Builder/Header
+@dirrm %%WWWDIR%%/libs/Zend/Feed/Builder
+@dirrm %%WWWDIR%%/libs/Zend/Feed
+@dirrm %%WWWDIR%%/libs/Zend/Db/Table/Select
+@dirrm %%WWWDIR%%/libs/Zend/Db/Table/Rowset
+@dirrm %%WWWDIR%%/libs/Zend/Db/Table/Row
+@dirrm %%WWWDIR%%/libs/Zend/Db/Table
+@dirrm %%WWWDIR%%/libs/Zend/Db/Statement/Sqlsrv
+@dirrm %%WWWDIR%%/libs/Zend/Db/Statement/Pdo
+@dirrm %%WWWDIR%%/libs/Zend/Db/Statement/Oracle
+@dirrm %%WWWDIR%%/libs/Zend/Db/Statement/Mysqli
+@dirrm %%WWWDIR%%/libs/Zend/Db/Statement/Db2
+@dirrm %%WWWDIR%%/libs/Zend/Db/Statement
+@dirrm %%WWWDIR%%/libs/Zend/Db/Select
+@dirrm %%WWWDIR%%/libs/Zend/Db/Profiler
+@dirrm %%WWWDIR%%/libs/Zend/Db/Adapter/Sqlsrv
+@dirrm %%WWWDIR%%/libs/Zend/Db/Adapter/Pdo/Ibm
+@dirrm %%WWWDIR%%/libs/Zend/Db/Adapter/Pdo
+@dirrm %%WWWDIR%%/libs/Zend/Db/Adapter/Oracle
+@dirrm %%WWWDIR%%/libs/Zend/Db/Adapter/Mysqli
+@dirrm %%WWWDIR%%/libs/Zend/Db/Adapter/Db2
+@dirrm %%WWWDIR%%/libs/Zend/Db/Adapter
+@dirrm %%WWWDIR%%/libs/Zend/Db
+@dirrm %%WWWDIR%%/libs/Zend/Config/Writer
+@dirrm %%WWWDIR%%/libs/Zend/Config
+@dirrm %%WWWDIR%%/libs/Zend/Cache/Frontend
+@dirrm %%WWWDIR%%/libs/Zend/Cache/Backend/ZendServer
+@dirrm %%WWWDIR%%/libs/Zend/Cache/Backend
+@dirrm %%WWWDIR%%/libs/Zend/Cache
+@dirrm %%WWWDIR%%/libs/Zend/Auth/Storage
+@dirrm %%WWWDIR%%/libs/Zend/Auth/Adapter/Http/Resolver
+@dirrm %%WWWDIR%%/libs/Zend/Auth/Adapter/Http
+@dirrm %%WWWDIR%%/libs/Zend/Auth/Adapter
+@dirrm %%WWWDIR%%/libs/Zend/Auth
+@dirrm %%WWWDIR%%/libs/Zend
+@dirrm %%WWWDIR%%/libs/UserAgentParser
+@dirrm %%WWWDIR%%/libs/Smarty/plugins
+@dirrm %%WWWDIR%%/libs/Smarty/internals
+@dirrm %%WWWDIR%%/libs/Smarty
+@dirrm %%WWWDIR%%/libs/PiwikTracker
+@dirrm %%WWWDIR%%/libs/PclZip
+@dirrm %%WWWDIR%%/libs/PEAR
+@dirrm %%WWWDIR%%/libs/HTML/QuickForm2/Rule
+@dirrm %%WWWDIR%%/libs/HTML/QuickForm2/Renderer
+@dirrm %%WWWDIR%%/libs/HTML/QuickForm2/Element
+@dirrm %%WWWDIR%%/libs/HTML/QuickForm2/DataSource
+@dirrm %%WWWDIR%%/libs/HTML/QuickForm2/Controller/Action
+@dirrm %%WWWDIR%%/libs/HTML/QuickForm2/Controller
+@dirrm %%WWWDIR%%/libs/HTML/QuickForm2/Container
+@dirrm %%WWWDIR%%/libs/HTML/QuickForm2
+@dirrm %%WWWDIR%%/libs/HTML
+@dirrm %%WWWDIR%%/libs/Event
+@dirrm %%WWWDIR%%/libs/CSS3PIE
+@dirrm %%WWWDIR%%/libs
+@dirrm %%WWWDIR%%/lang
+@dirrm %%WWWDIR%%/js
+@dirrm %%WWWDIR%%/core/Visualization/Chart
+@dirrm %%WWWDIR%%/core/Visualization
+@dirrm %%WWWDIR%%/core/ViewDataTable/HtmlTable
+@dirrm %%WWWDIR%%/core/ViewDataTable/GenerateGraphHTML
+@dirrm %%WWWDIR%%/core/ViewDataTable/GenerateGraphData
+@dirrm %%WWWDIR%%/core/ViewDataTable
+@dirrm %%WWWDIR%%/core/Updates
+@dirrm %%WWWDIR%%/core/Unzip
+@dirrm %%WWWDIR%%/core/Tracker/Db/Pdo
+@dirrm %%WWWDIR%%/core/Tracker/Db
+@dirrm %%WWWDIR%%/core/Tracker
+@dirrm %%WWWDIR%%/core/SmartyPlugins
+@dirrm %%WWWDIR%%/core/Session
+@dirrm %%WWWDIR%%/core/ScheduledTime
+@dirrm %%WWWDIR%%/core/PluginsFunctions
+@dirrm %%WWWDIR%%/core/Period
+@dirrm %%WWWDIR%%/core/Menu
+@dirrm %%WWWDIR%%/core/Log
+@dirrm %%WWWDIR%%/core/Db/Schema
+@dirrm %%WWWDIR%%/core/Db/Adapter/Pdo
+@dirrm %%WWWDIR%%/core/Db/Adapter
+@dirrm %%WWWDIR%%/core/Db
+@dirrm %%WWWDIR%%/core/DataTable/Row
+@dirrm %%WWWDIR%%/core/DataTable/Renderer
+@dirrm %%WWWDIR%%/core/DataTable/Filter
+@dirrm %%WWWDIR%%/core/DataTable
+@dirrm %%WWWDIR%%/core/DataFiles
+@dirrm %%WWWDIR%%/core/ArchiveProcessing/Record
+@dirrm %%WWWDIR%%/core/ArchiveProcessing
+@dirrm %%WWWDIR%%/core/Archive/Array
+@dirrm %%WWWDIR%%/core/Archive
+@dirrm %%WWWDIR%%/core/API
+@dirrm %%WWWDIR%%/core
+@dirrm %%WWWDIR%%/config
 @dirrm %%WWWDIR%%
