@@ -7,7 +7,7 @@
 
 PORTNAME=	sarg
 PORTVERSION=	2.2.7.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
@@ -33,6 +33,7 @@ CONFIGURE_ARGS=	--sysconfdir="${PREFIX}/etc/${PORTNAME}" \
 MAN1=		sarg.1
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 .include <bsd.port.pre.mk>
 
@@ -44,5 +45,8 @@ CC=	gcc
 GD_PORT?=	graphics/gd
 LIB_DEPENDS+=	gd.4:${PORTSDIR}/${GD_PORT}
 .endif
+
+pre-install:
+	${STRIP_CMD} ${WRKSRC}/sarg
 
 .include <bsd.port.post.mk>
