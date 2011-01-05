@@ -7,6 +7,7 @@
 
 PORTNAME=	rakudo
 PORTVERSION=	2010.11
+PORTREVISION=	1
 PORTEPOCH=	2
 CATEGORIES=	lang
 MASTER_SITES=	http://cloud.github.com/downloads/rakudo/star/
@@ -15,11 +16,27 @@ DISTNAME=	${PORTNAME}-star-${PORTVERSION}
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	The Rakudo Perl 6 Compiler targets the Parrot Virtual Machine
 
-BUILD_DEPENDS=	parrot>=${PARROT_VERSION}:${PORTSDIR}/lang/parrot
-LIB_DEPENDS=	icudata:${PORTSDIR}/devel/icu
-RUN_DEPENDS=	parrot>=${PARROT_VERSION}:${PORTSDIR}/lang/parrot
+BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4 \
+		${LOCALBASE}/bin/flex:${PORTSDIR}/textproc/flex \
+		${LOCALBASE}/bin/pcre-config:${PORTSDIR}/devel/pcre
+LIB_DEPENDS=	icudata:${PORTSDIR}/devel/icu \
+		gmp.10:${PORTSDIR}/math/gmp
 
 LICENSE=	ART20
+CONFLICTS=	parrot-[0-9]*
+
+PARROT_VERSION=2.10.1
+INSTALL_TARGET=	install
+CONFIGURE_SCRIPT=	Configure.pl
+CONFIGURE_PARROT_ARGS=	--cc=${CC} --cxx=${CXX} --ld=${CC} --ccflags="${CFLAGS}" \
+		--ldflags="${LDFLAGS} -L/usr/lib -L${LOCALBASE}/lib" \
+		--icu-config=${LOCALBASE}/bin/icu-config \
+		--optimize --parrot_is_shared --inline \
+		--lex=${LOCALBASE}/bin/flex \
+		--yacc=${LOCALBASE}/bin/bison \
+		--verbose \
+		--prefix=${PREFIX}
+CONFIGURE_ARGS=	--parrot-config=parrot-${PARROT_VERSION}/installable_parrot_config
 
 .include <bsd.port.pre.mk>
 
@@ -31,14 +48,9 @@ USE_BISON=	build
 USE_PERL5_BUILD=	5.8.0+
 USE_GMAKE=	yes
 
-INSTALL_TARGET=	install
-
 MAN1=		perl6.1 rakudo.1
 MANCOMPRESSED=	no
 
-PARROTCONFIG?=	${LOCALBASE}/bin/parrot_config
-CONFIGURE_SCRIPT=	Configure.pl
-CONFIGURE_ARGS=	--parrot-config=${PARROTCONFIG}
 PLIST_SUB+=	PARROT_VERSION=${PARROT_VERSION}
 
 EXTRA_DOCS=	UsingPerl6-draft.pdf cheatsheet.txt
@@ -46,7 +58,17 @@ EXTRA_DOCS=	UsingPerl6-draft.pdf cheatsheet.txt
 PORTDOCS=	${EXTRA_DOCS}
 
 do-configure:
-	cd ${WRKSRC} && ${PERL} ${CONFIGURE_SCRIPT} ${CONFIGURE_ARGS}
+	cd ${WRKSRC}/parrot-${PARROT_VERSION} \
+	&& ${PERL} ${CONFIGURE_SCRIPT} ${CONFIGURE_PARROT_ARGS} \
+	&& ${MAKE} installable PREFIX=${PREFIX}
+
+do-build:
+
+do-install:
+	cd ${WRKSRC}/parrot-${PARROT_VERSION} \
+	&& ${MAKE} install-dev PREFIX=${PREFIX} \
+	&& cd ${WRKSRC} && ${PERL} ${CONFIGURE_SCRIPT} ${CONFIGURE_ARGS}\
+	&& ${MAKE} PREFIX=${PREFIX} && ${MAKE} ${INSTALL_TARGET} PREFIX=${PREFIX}
 
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/perl6.1 ${MAN1PREFIX}/man/man1/perl6.1
@@ -66,7 +88,5 @@ x-generate-plist:
 	's,.*share/nls/.+$$,,g \
 	;s,${PARROT_VERSION}(/.+)?$$,%%PARROT_VERSION%%\1,g \
 	' | ${TR} -s '\n') > temp-pkg-plist
-
-.include "${.CURDIR}/../parrot/Makefile.common"
 
 .include <bsd.port.post.mk>
