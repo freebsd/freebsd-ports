@@ -8,6 +8,7 @@
 
 PORTNAME=	gdb
 PORTVERSION=	7.2
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=   ${MASTER_SITE_GNU:S,$,:gdb,}
 MASTER_SITE_SUBDIR=gdb/:gdb
@@ -41,7 +42,13 @@ MAN1=	gdb${VER}.1
 
 ONLY_FOR_ARCHS=	i386 amd64	# untested elsewhere, might work
 
+OPTIONS=	DEBUG "Build with debugging symbols" off
+
 .include <bsd.port.pre.mk>
+
+.if defined(WITH_DEBUG)
+CFLAGS+=	-g
+.endif
 
 # XXX: add OSVERSION check after readline is removed from base
 .if exists(${LOCALBASE}/lib/libreadline.so)
