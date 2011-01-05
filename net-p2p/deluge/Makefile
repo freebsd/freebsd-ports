@@ -28,6 +28,8 @@ RUN_DEPENDS=	boost-python-libs>=1.41.0:${PORTSDIR}/devel/boost-python-libs \
 		${PYTHON_PKGNAMEPREFIX}chardet>=1.0.1:${PORTSDIR}/textproc/py-chardet \
 		${PYTHON_PKGNAMEPREFIX}mako>=0.2.5:${PORTSDIR}/textproc/py-mako
 
+BROKEN=		bad dependency object
+
 USE_RC_SUBR=	deluged
 SUB_LIST+=	PYTHON_CMD=${PYTHON_CMD}
 
