@@ -1,6 +1,6 @@
---- tcl/ayam.tcl.orig	Mon Jan 12 16:05:21 2004
-+++ tcl/ayam.tcl	Mon Jan 12 16:06:01 2004
-@@ -391,7 +391,7 @@
+--- tcl/ayam.tcl.orig	2011-01-04 13:54:09.000000000 +0100
++++ tcl/ayam.tcl	2011-01-04 13:54:31.000000000 +0100
+@@ -555,7 +555,7 @@
   pady 3
   failsafe 0
   showsplash 1

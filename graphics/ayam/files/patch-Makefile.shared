@@ -1,5 +1,5 @@
---- Makefile.shared.orig	2008-04-03 20:21:22.000000000 +0200
-+++ Makefile.shared	2008-04-07 12:09:04.000000000 +0200
+--- Makefile.shared.orig	2010-12-23 21:04:42.000000000 +0100
++++ Makefile.shared	2011-01-05 10:49:15.000000000 +0100
 @@ -4,7 +4,7 @@
  # Makefile for Ayam (shared version)
  
@@ -27,7 +27,7 @@
  #CXX = g++
  
  # the linker
-@@ -80,7 +80,10 @@
+@@ -82,7 +82,10 @@
  # the default configuration is to build with Affine as RIB writer without
  # any shader parsing library (i.e. you will have to build and load a
  # plugin for shader parsing)
@@ -39,7 +39,7 @@
  
  # simple configuration using BMRT
  #CFLAGS = -O -DAYUSESLCARGS -DAYUSEBMRTRIBOUT
-@@ -94,7 +97,7 @@
+@@ -96,7 +99,7 @@
  # MacOSX with Aqua:
  #CFLAGS = -O -DAYWITHAQUA -DAYUSEAFFINE -DAYENABLEFEXIT -DUSE_NON_CONST
  # MacOSX with Aqua (universal binary, support for older MacOSX):
@@ -48,7 +48,19 @@
  # MacOSX with X11:
  #CFLAGS = -O -DAYUSEAFFINE -DAYENABLEFEXIT
  
-@@ -138,7 +141,7 @@
+@@ -121,9 +124,9 @@
+ # extra ld flags needed to compile Ayam
+ # (gcc needs -rdynamic to allow shared objects access to global symbols)
+ # IRIX:
+-EXLDFLAGS =
++#EXLDFLAGS =
+ # Linux:
+-#EXLDFLAGS = -rdynamic
++EXLDFLAGS = -rdynamic
+ # MacOSX (X11):
+ #EXLDFLAGS = -flat_namespace -undefined suppress
+ # MacOSX (Aqua):
+@@ -140,7 +143,7 @@
  
  # OpenGL
  # OpenGL includes
@@ -57,7 +69,7 @@
  # MacOSX (Aqua):
  #GLINC =
  # link options for linking with OpenGL libraries
-@@ -148,24 +151,26 @@
+@@ -150,24 +153,26 @@
  
  # TIFF
  # TIFF includes
@@ -88,7 +100,7 @@
  # if you have an installed Tcl/Tk, you probably just want:
  #TCLLIB = -ltcl
  # MacOSX (Aqua):
-@@ -173,7 +178,7 @@
+@@ -175,7 +180,7 @@
  
  # Tk sources directory
  # Note: You really need the Tk _sources_ in order to compile Ayam!
@@ -97,7 +109,7 @@
  #TKDIR = ../../tk8.0
  
  # Tk includes
-@@ -183,8 +188,9 @@
+@@ -185,8 +190,9 @@
  
  # Tk library
  # link options for linking with Tk library
@@ -108,7 +120,7 @@
  # if you have an installed Tcl/Tk, you probably just want:
  #TKLIB = -ltk
  # MacOSX (Aqua):
-@@ -192,11 +198,11 @@
+@@ -194,11 +200,11 @@
  
  # X11
  # X11 includes
@@ -122,7 +134,7 @@
  #X11LIBS = -L/usr/X11R6/lib -lXmu -lXext -lX11
  # MacOSX (Aqua):
  #X11LIBS =
-@@ -207,23 +213,25 @@
+@@ -209,23 +215,25 @@
  AFFINEINC = -Iaffine/include
  # if you use Affine as BMRT libribout replacement
  # (also add -DAYUSEAFFINE to CFLAGS!):
@@ -143,7 +155,7 @@
 +#AQSISOBJS =
  # if you use Aqsis libslxargs (add -DAYUSESLXARGS to CFLAGS!):
  #AQSISOBJS = $(AQSISLIBDIR)/rcdummy.o $(AQSISLIBDIR)/libshadervm.so $(AQSISLIBDIR)/libshaderexecenv.so $(AQSISLIBDIR)/libslxargs.so $(AQSISLIBDIR)/libaqsistypes.so -L /usr/local/lib -llog4cpp
-+AQSISOBJS = $(AQSISLIBDIR)/libaqsis_shadervm.so $(AQSISLIBDIR)/libaqsis_slxargs.so -L${AQSISLIBDIR} -lstdc++ -DUYUSESLXARGS
++AQSISOBJS = $(AQSISLIBDIR)/libaqsis_shadervm.so $(AQSISLIBDIR)/libaqsis_slxargs.so -L${AQSISLIBDIR} -lstdc++
 +
  
  # if you do not use Aqsis libri2rib as BMRT libribout replacement:
@@ -155,7 +167,7 @@
  
  
  # BMRT
-@@ -251,9 +259,9 @@
+@@ -253,9 +261,9 @@
  # IRIX, Solaris, (MacOSX<10.4: get libdl from Fink!):
  #DL = -ldl
  # Linux:
@@ -167,7 +179,7 @@
  
  
  # linker flags to produce shared modules:
-@@ -272,8 +280,9 @@
+@@ -274,8 +282,9 @@
  RRIBLIBS = -L$(AFFINEDIR)/lib -lribrdr -lribhash -lribnop -lm
  
  # Ayslx Plugin (Aqsis)
@@ -179,9 +191,9 @@
  
  # Ayslc Plugin (BMRT)
  AYSLCINCDIR = $(BMRTDIR)/include
-@@ -496,9 +505,9 @@
+@@ -520,9 +529,9 @@
  .cpp.o:
- 	$(CXX) -c $(CFLAGS) $*.cpp -o $@ $(AYINC) -I$(OPENCSGINCDIR) -I$(GLEWINCDIR) -Iplugins
+ 	$(CXX) -c $(CFLAGS) $*.cpp -o $@ $(AYINC) $(OPENCSGINC) -Iplugins
  
 -all: ayamsh
 +all: ayamsh plugins
