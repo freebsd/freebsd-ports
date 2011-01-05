@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	acroread9
-PORTVERSION=	9.3.4
+PORTVERSION=	9.4.1
 CATEGORIES?=	print linux
 MASTER_SITES?=	http://ardownload.adobe.com/pub/adobe/reader/unix/9.x/${PORTVERSION}/${ADOBE_LANG:L}/ \
 		ftp://ftp.adobe.com/pub/adobe/reader/unix/9.x/${PORTVERSION}/${ADOBE_LANG:L}/
-DISTNAME=	AdbeRdr${PORTVERSION}-1_i486linux_${ADOBE_LANG:L}
+DISTNAME=	AdbeRdr${PORTVERSION:S,.0$,,}-1_i486linux_${ADOBE_LANG:L}
 DIST_SUBDIR=	acroread
 
 MAINTAINER=	hrs@FreeBSD.org
@@ -65,6 +65,13 @@ INSTALLEXEC=	${SETENV} UNAME_s=Linux \
 			InstallDir=${INSTALLDIR} \
 			UNAME_r="Linux Compatibility on FreeBSD" \
 			${SH} ./INSTALL --install_path=${INSTALLDIR} > /dev/null
+
+pre-everything::
+	@${ECHO_CMD} "======================================================="
+	@${ECHO_CMD} "Try print/acroread8 instead if you need Adobe Reader."
+	@${ECHO_CMD} "Currently acroread9 port does not work with X Window "
+	@${ECHO_CMD} "System because of issues in FreeBSD's Linux emulation."
+	@${ECHO_CMD} "======================================================="
 
 pre-install:
 	@${MKDIR} ${WRKDIR}/bin
