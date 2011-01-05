@@ -7,7 +7,7 @@
 
 PORTNAME=		miredo
 PORTVERSION=	 	1.2.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=		net ipv6
 MASTER_SITES=		http://www.remlab.net/files/miredo/archive/
 
@@ -20,6 +20,8 @@ USE_BZIP2=		yes
 GNU_CONFIGURE=		yes
 CONFIGURE_ARGS=		--localstatedir=/var
 USE_LDCONFIG=		yes
+
+OPTIONS=		POLICYTABLE	"Install policy table to support teredo"	off
 
 MAN1=			teredo-mire.1
 MAN5=			miredo-server.conf.5 miredo.conf.5
@@ -36,6 +38,16 @@ PLIST_SUB=		NLS=""
 .else
 CONFIGURE_ARGS+=	--disable-nls
 PLIST_SUB=		NLS="@comment "
+.endif
+
+.include <bsd.port.options.mk>
+
+post-install:
+.if defined(WITH_POLICYTABLE)
+			$(INSTALL_DATA) $(FILESDIR)/ip6addrctl.conf /etc
+PLIST_SUB+=		POLICYTABLE=""
+.else
+PLIST_SUB+=		POLICYTABLE="@comment "
 .endif
 
 .include <bsd.port.mk>

@@ -29,3 +29,5 @@ etc/miredo/client-hook
 @dirrm include/libtun6
 @dirrm include/libteredo
 @dirrm lib/miredo
+%%POLICYTABLE%%@cwd /
+%%POLICYTABLE%%/etc/ip6addrctl.conf
