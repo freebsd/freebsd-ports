@@ -51,6 +51,7 @@
     SUBDIR += kicad-devel
     SUBDIR += kicad-library
     SUBDIR += klayout
+    SUBDIR += layouteditor
     SUBDIR += leocad
     SUBDIR += libgeda
     SUBDIR += linux-eagle5
