@@ -5,10 +5,10 @@
 # $FreeBSD$
 
 PORTNAME=	sampsvr
-PORTVERSION=	0.3b
+PORTVERSION=	0.3c
 CATEGORIES=	games linux
 MASTER_SITES=	http://files.sa-mp.com/
-DISTNAME=	samp${PORTVERSION:S,.,,}svr_R2
+DISTNAME=	samp${PORTVERSION:S,.,,}svr
 
 MAINTAINER=	avl@FreeBSD.org
 COMMENT=	Rockstar's GTA: San Andreas multiplayer modification dedicated server
