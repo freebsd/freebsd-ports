@@ -17,6 +17,8 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Ruby Reference Referrer
 
+BROKEN=		incomplete plist
+
 USE_RUBY=	yes
 USE_RUBY_SETUP=	yes
 
