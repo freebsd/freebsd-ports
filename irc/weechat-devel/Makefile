@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	weechat
-PORTVERSION=	20101220
+PORTVERSION=	20110104
 CATEGORIES=	irc
 MASTER_SITES=	http://perturb.me.uk/distfiles/
 PKGNAMESUFFIX=	-devel
-DISTNAME=	weechat-devel-4d98ddb13c91b4827985cea2e2b501c15fb7653b
+DISTNAME=	weechat-devel-fd764a369c138d0399a1476e5c03a1e482c05f25
 
 MAINTAINER=	freebsd@beardz.net
 COMMENT=	A lightweight and user friendly ncurse based IRC client
@@ -37,7 +37,7 @@ OPTIONS=	RUBY		"Ruby scripting support."	Off	\
 		NLS		"NLS support."			On	\
 		DOCUMENTATION	"Build documentation."		Off
 
-WRKSRC=	${WRKDIR}/${PORTNAME}-4d98ddb
+WRKSRC=	${WRKDIR}/${PORTNAME}-fd764a3
 
 .include <bsd.port.options.mk>
 
