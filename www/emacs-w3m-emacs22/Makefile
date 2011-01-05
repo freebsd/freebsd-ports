@@ -11,4 +11,6 @@ USE_EMACS=	yes
 EMACS_PORT_NAME=	emacs22
 COMMENT=	Simple front-end to w3m for emacs22
 
+BROKEN=		fails to package
+
 .include "${MASTERDIR}/Makefile"
