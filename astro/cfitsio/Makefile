@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	cfitsio
-PORTVERSION=	3.100
-PORTREVISION=	1
+PORTVERSION=	3.250
 CATEGORIES=	astro
 MASTER_SITES=	ftp://heasarc.gsfc.nasa.gov/software/fitsio/c/ \
 		ftp://heasarc.gsfc.nasa.gov/software/fitsio/c/oldvers/
