@@ -7,23 +7,24 @@
 
 PORTNAME=	jpeg
 PORTVERSION=	8
-DISTVERSION=	8b
 PORTREVISION=	3
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.ijg.org/files/ \
 		ftp://ftp.uu.net/graphics/jpeg/ \
 		http://sylvana.net/jpegcrop/:exif
-DISTNAME=	jpegsrc.v${DISTVERSION}
+DISTNAME=	jpegsrc.v${DISTVERSION2}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		jpegexiforient.c:exif exifautotran.txt:exif
+DIST_SUBDIR=	${PORTNAME}${DISTVERSION2}
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	IJG's jpeg compression utilities
 
 CONFLICTS=	libjpeg-turbo-[0-9]*
-WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}
+WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION2}
 
+DISTVERSION2=	8b
 USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--enable-shared --enable-static
