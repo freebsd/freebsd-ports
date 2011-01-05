@@ -21,4 +21,6 @@ BUILD_DEPENDS+=	p5-Test-Deep>=0:${PORTSDIR}/devel/p5-Test-Deep \
 
 MAN3=	Hash::Merge::Simple.3
 
+PERL_CONFIGURE=	yes
+
 .include <bsd.port.mk>
