@@ -639,6 +639,10 @@ lib/libfxt.a
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/bits/thue-morse-out.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/bits/zorder-texpic-demo.cc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/bits/zorder-texpic-out.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/mset-ksubset-demo.cc
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/mset-ksubset-out.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/partition-refined-demo.cc
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/partition-refined-out.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/kperm-gray-out.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/kperm-gray-demo.cc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/ffact2kperm-out.txt
