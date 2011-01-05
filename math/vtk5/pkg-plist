@@ -116,6 +116,7 @@
 %%STATIC%%lib/vtk-%%VER2%%/libvtkImaging.a
 %%STATIC%%lib/vtk-%%VER2%%/libvtkInfovis.a
 %%STATIC%%lib/vtk-%%VER2%%/libvtkNetCDF.a
+%%STATIC%%lib/vtk-%%VER2%%/libvtkNetCDF_cxx.a
 %%STATIC%%lib/vtk-%%VER2%%/libvtkParallel.a
 %%STATIC%%lib/vtk-%%VER2%%/libvtkRendering.a
 %%STATIC%%lib/vtk-%%VER2%%/libvtkViews.a
@@ -123,14 +124,19 @@
 %%STATIC%%lib/vtk-%%VER2%%/libvtkWidgets.a
 %%STATIC%%lib/vtk-%%VER2%%/libvtkalglib.a
 %%STATIC%%lib/vtk-%%VER2%%/libvtkexoIIc.a
+%%STATIC%%lib/vtk-%%VER2%%/libvtkexpat.a
 %%STATIC%%lib/vtk-%%VER2%%/libvtkfreetype.a
 %%STATIC%%lib/vtk-%%VER2%%/libvtkftgl.a
+%%STATIC%%lib/vtk-%%VER2%%/libvtkjpeg.a
 %%STATIC%%lib/vtk-%%VER2%%/libvtklibxml2.a
 %%STATIC%%lib/vtk-%%VER2%%/libvtkmetaio.a
+%%STATIC%%lib/vtk-%%VER2%%/libvtkpng.a
 %%STATIC%%lib/vtk-%%VER2%%/libvtkproj4.a
 %%STATIC%%lib/vtk-%%VER2%%/libvtksqlite.a
 %%STATIC%%lib/vtk-%%VER2%%/libvtksys.a
+%%STATIC%%lib/vtk-%%VER2%%/libvtktiff.a
 %%STATIC%%lib/vtk-%%VER2%%/libvtkverdict.a
+%%STATIC%%lib/vtk-%%VER2%%/libvtkzlib.a
 %%SHARED%%%%PYTHON%%lib/vtk-%%VER2%%/libvtkCommonPythonD.so.%%VER1%%
 %%SHARED%%%%PYTHON%%lib/vtk-%%VER2%%/libvtkCommonPythonD.so.%%VER2%%
 %%SHARED%%%%PYTHON%%lib/vtk-%%VER2%%/libvtkCommonPythonD.so.%%VER3%%
