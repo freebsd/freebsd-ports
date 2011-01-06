@@ -34,6 +34,37 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="e177c410-1943-11e0-9d1c-000c29ba66d2">
+    <topic>mediawiki -- Clickjacking vulnerabilities</topic>
+    <affects>
+      <package>
+        <name>mediawiki</name>
+        <range><gt>1.16</gt><lt>1.16.1</lt></range>
+        <range><gt>1.15</gt><lt>1.15.5_1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>Clickjacking vulnerabilities:</p>
+        <blockquote cite="https://bugzilla.wikimedia.org/show_bug.cgi?id=26561">
+          <p>Clickjacking is a type of vulnerability discovered in 2008, which
+            is similar to CSRF. The attack involves displaying the target webpage
+            in a iframe embedded in a malicious website. Using CSS, the submit button
+            of the form on the targeit webpage is made invisible, and then overlaid
+            with some button or link on the malicious website that encourages
+            the user to click on it.</p>
+        </blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://bugzilla.wikimedia.org/show_bug.cgi?id=26561</url>
+    </references>
+    <dates>
+      <discovery>2011-01-04</discovery>
+      <entry>2011-01-06</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="06a12e26-142e-11e0-bea2-0015f2db7bde">
     <topic>webkit-gtk2 -- Multiple vulnabilities</topic>
     <affects>
