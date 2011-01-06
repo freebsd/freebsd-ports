@@ -19,6 +19,8 @@ COMMENT=	Library for arbitrary precision arithmetic (MinGW32)
 BUILD_DEPENDS=	${PKGNAMEPREFIX}gcc:${PORTSDIR}/devel/${PKGNAMEPREFIX}gcc \
 		mingwm10.dll:${PORTSDIR}/devel/mingw32-bin-msvcrt
 
+BROKEN=		does not build
+
 GMP_TARG=	${PKGNAMEPREFIX:S/-$//}
 GNU_CONFIGURE=	yes
 CC=		${PKGNAMEPREFIX}gcc
