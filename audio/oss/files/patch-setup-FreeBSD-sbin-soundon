@@ -1,5 +1,5 @@
---- setup/FreeBSD/sbin/soundon.orig	2008-09-16 16:55:03.000000000 -0400
-+++ setup/FreeBSD/sbin/soundon	2008-12-11 15:14:31.000000000 -0500
+--- setup/FreeBSD/sbin/soundon.orig	2011-01-04 20:33:08.000000000 -0500
++++ setup/FreeBSD/sbin/soundon	2011-01-06 14:48:55.000000000 -0500
 @@ -1,10 +1,10 @@
  #!/bin/sh
  
@@ -46,3 +46,21 @@
  
  if test -x $OSSLIBDIR/soundon.user
  then
+@@ -97,7 +97,7 @@
+   $OSSLIBDIR/soundon.user >> $LOG 2>&1
+ fi
+ 
+-if test "`ossinfo -g|grep TRIAL` " != " "
++if test "`%%PREFIX%%/bin/ossinfo -g|grep TRIAL` " != " "
+ then
+ 	echo
+ 	echo "************************************************************"
+@@ -108,7 +108,7 @@
+ 	sleep 1
+ fi
+ 
+-if test "`ossinfo -g|grep EXPIRED` " != " "
++if test "`%%PREFIX%%/bin/ossinfo -g|grep EXPIRED` " != " "
+ then
+ 	echo
+ 	echo "****************************************************************"
