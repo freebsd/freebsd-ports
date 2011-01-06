@@ -77,8 +77,8 @@ Note:  Please add new entries to the beginning of this file.
       <body xmlns="http://www.w3.org/1999/xhtml">
 	<p>Gustavo Noronha Silva reports:</p>
 	<blockquote cite="http://gitorious.org/webkitgtk/stable/blobs/master/WebKit/gtk/NEWS">
-	  <p>The patches to fix the following CVEs are included with help 
-             from Huzaifa Sidhpurwala from the Red Hat security team.</p>
+	  <p>The patches to fix the following CVEs are included with help
+	    from Huzaifa Sidhpurwala from the Red Hat security team.</p>
 	</blockquote>
       </body>
     </description>
@@ -202,6 +202,7 @@ Note:  Please add new entries to the beginning of this file.
       <entry>2010-12-28</entry>
     </dates>
   </vuln>
+
   <vuln vid="584c506d-0e98-11e0-b59b-0050569b2d21">
     <topic>redmine -- multiple vulnerabilities</topic>
     <affects>
@@ -334,28 +335,28 @@ Note:  Please add new entries to the beginning of this file.
 	      (Identified by Mateusz Kocielski). (CVE-2010-4150).</li>
 	    <li>Fixed NULL pointer dereference in
 	      ZipArchive::getArchiveComment.  (CVE-2010-3709).</li>
-	    <li>Fixed possible flaw in open_basedir (CVE-2010-3436).</li> 
+	    <li>Fixed possible flaw in open_basedir (CVE-2010-3436).</li>
 	    <li>Fixed MOPS-2010-24, fix string validation.
-	      (CVE-2010-2950).</li> 
+	      (CVE-2010-2950).</li>
 	    <li>Fixed symbolic resolution support when the target
-	      is a DFS share.</li> 
+	      is a DFS share.</li>
 	    <li>Fixed bug #52929 (Segfault in filter_var with
-	      FILTER_VALIDATE_EMAIL with large amount of data) (CVE-2010-3710).</li> 
-	  </ul> 
+	      FILTER_VALIDATE_EMAIL with large amount of data) (CVE-2010-3710).</li>
+	  </ul>
 	</blockquote>
 	<blockquote cite="http://www.php.net/releases/5_2_15.php">
 	  <p>Security Enhancements and Fixes in PHP 5.2.15:</p>
 	  <ul>
 	    <li>Fixed extract() to do not overwrite $GLOBALS and $this
-	      when using EXTR_OVERWRITE.</li> 
-	    <li>Fixed crash in zip extract method (possible CWE-170).</li> 
-	    <li>Fixed a possible double free in imap extension.</li> 
-	    <li>Fixed possible flaw in open_basedir (CVE-2010-3436).</li> 
+	      when using EXTR_OVERWRITE.</li>
+	    <li>Fixed crash in zip extract method (possible CWE-170).</li>
+	    <li>Fixed a possible double free in imap extension.</li>
+	    <li>Fixed possible flaw in open_basedir (CVE-2010-3436).</li>
 	    <li>Fixed NULL pointer dereference in ZipArchive::getArchiveComment.
-	      (CVE-2010-3709).</li> 
+	      (CVE-2010-3709).</li>
 	    <li>Fixed bug #52929 (Segfault in filter_var with FILTER_VALIDATE_EMAIL
-	      with large amount of data).</li> 
-	  </ul> 
+	      with large amount of data).</li>
+	  </ul>
 	</blockquote>
       </body>
     </description>
@@ -737,7 +738,7 @@ Note:  Please add new entries to the beginning of this file.
 	      Linux. Credit to Google Chrome Security Team (Chris Evans).<br/>
 	    [56451] High Stale elements in an element map. Credit to Michal
 	      Zalewski of the Google Security Team.</p>
-	</blockquote> 
+	</blockquote>
       </body>
     </description>
     <references>
