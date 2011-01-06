@@ -6,24 +6,33 @@
 #
 
 PORTNAME=		jd
-PORTVERSION=		2.7.0
-PORTREVISION=		1
+PORTVERSION=		2.7.5
 CATEGORIES=		japanese www
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE_JP}
-MASTER_SITE_SUBDIR=	jd4linux/48699
-DISTNAME=	${PORTNAME}-${PORTVERSION}-100823
+MASTER_SITES=		SFJP
+MASTER_SITE_SUBDIR=	jd4linux/50363
+DISTNAME=	${PORTNAME}-${PORTVERSION}-101228
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	townwear@gmail.com
 COMMENT=	A 2ch browser
 
+LIB_DEPENDS=	gnutls:${PORTSDIR}/security/gnutls \
+		gtkmm:${PORTSDIR}/x11-toolkits/gtkmm24
+
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 MAKE_JOBS_SAFE=	yes
-GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	autoconf automake libtool
+USE_GNOME=	gtk20
+GNU_CONFIGURE=	yes
 
-LIB_DEPENDS+=	gnutls:${PORTSDIR}/security/gnutls \
-		gtkmm:${PORTSDIR}/x11-toolkits/gtkmm24
+OPTIONS=	ONIGURUMA "Build with oniguruma regular expressions lib" off \
+		GNOMEUI "Enable LibGnomeUI support" off \
+		PANGOLAYOUT "Use PANGOLayout instead of PangoGlyphString" off
+
+.include <bsd.port.pre.mk>
 
 .if defined(WITH_ONIGURUMA)
 CONFIGURE_ARGS+=	--with-oniguruma
@@ -42,4 +51,4 @@ CONFIGURE_ARGS+=	--with-pangolayout
 pre-configure:
 	@cd ${WRKSRC} && ${AUTORECONF} -i
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
