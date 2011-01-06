@@ -166,6 +166,7 @@
     SUBDIR += szip
     SUBDIR += udunits
     SUBDIR += v_sim
+    SUBDIR += veusz
     SUBDIR += vis5d+
     SUBDIR += vmd
     SUBDIR += x11iraf
