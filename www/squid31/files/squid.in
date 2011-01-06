@@ -77,7 +77,6 @@ squid_chdir=${squid_chdir:-"/var/squid"}
 squid_conf=${squid_conf:-"%%PREFIX%%/etc/squid/squid.conf"}
 squid_enable=${squid_enable:-"NO"}
 squid_fib=${squid_fib:-"NONE"}
-squid_flags="-f ${squid_conf} ${squid_flags}"
 squid_pidfile=${squid_pidfile:-"/var/run/squid/squid.pid"}
 squid_user=${squid_user:-%%SQUID_UID%%}
 
@@ -89,5 +88,9 @@ required_dirs=${squid_chdir}
 # squid(8) crash.
 
 required_files=${squid_conf}
+
+# Now make sure that we invoke squid with "-f ${squid_conf}":
+
+command_args="-f ${squid_conf}"
 
 run_rc_command "$1"
