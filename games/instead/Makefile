@@ -6,6 +6,7 @@
 
 PORTNAME=	instead
 PORTVERSION=	1.3.1
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	GOOGLE_CODE \
 		http://209.44.102.205/FreeBSD/distfiles/
@@ -19,6 +20,7 @@ USE_GMAKE=	yes
 USE_GNOME=	pkgconfig gtk20
 USE_LUA=	5.1
 USE_SDL=	sdl image ttf mixer
+USE_ICONV=	yes
 
 CONFIGURE_SCRIPT=	configure.sh
 
