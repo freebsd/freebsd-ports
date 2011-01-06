@@ -3,6 +3,8 @@ bin/cget
 bin/cherokee-config
 bin/cherokee-panic
 bin/cherokee-tweak
+bin/cherokee-macos-askpass
+bin/cherokee-admin-launcher
 @unexec for i in `find %D/etc/cherokee -name \*.default`;do if cmp -s $i ${i%%.default};then rm -f ${i%%.default};fi;done
 @unexec for i in `find %D/etc/cherokee -name \*.sample`;do if cmp -s $i ${i%%.sample};then rm -f ${i%%.sample};fi;done
 etc/cherokee/cherokee.conf.default
@@ -89,6 +91,8 @@ lib/cherokee/libplugin_exists.la
 lib/cherokee/libplugin_exists.so
 lib/cherokee/libplugin_extensions.la
 lib/cherokee/libplugin_extensions.so
+lib/cherokee/libplugin_failover.la
+lib/cherokee/libplugin_failover.so
 lib/cherokee/libplugin_fcgi.la
 lib/cherokee/libplugin_fcgi.so
 lib/cherokee/libplugin_file.la
@@ -175,6 +179,7 @@ lib/libcherokee-server.la
 lib/libcherokee-server.so
 lib/libcherokee-server.so.0
 libdata/pkgconfig/cherokee.pc
+man/man1/cherokee-admin-launcher.1
 sbin/cherokee
 sbin/cherokee-admin
 sbin/cherokee-worker
@@ -389,6 +394,7 @@ share/aclocal/cherokee.m4
 %%ADMIN%%%%DATADIR%%/admin/CTK/static/images/ui-icons_cd0a0a_256x240.png
 %%ADMIN%%%%DATADIR%%/admin/CTK/static/images/uploadify.cancel.png
 %%ADMIN%%%%DATADIR%%/admin/CTK/static/js/ajaxupload.3.6.js
+%%ADMIN%%%%DATADIR%%/admin/CTK/static/js/Carousel.js
 %%ADMIN%%%%DATADIR%%/admin/CTK/static/js/Help.js
 %%ADMIN%%%%DATADIR%%/admin/CTK/static/js/Submitter.js
 %%ADMIN%%%%DATADIR%%/admin/CTK/static/js/common.js
@@ -447,6 +453,8 @@ share/aclocal/cherokee.m4
 %%ADMIN%%%%DATADIR%%/admin/Rule.pyc
 %%ADMIN%%%%DATADIR%%/admin/RuleSimple.py
 %%ADMIN%%%%DATADIR%%/admin/RuleSimple.pyc
+%%ADMIN%%%%DATADIR%%/admin/SavingChecks.py
+%%ADMIN%%%%DATADIR%%/admin/SavingChecks.pyc
 %%ADMIN%%%%DATADIR%%/admin/SelectionPanel.py
 %%ADMIN%%%%DATADIR%%/admin/SelectionPanel.pyc
 %%ADMIN%%%%DATADIR%%/admin/Wizard.py
@@ -461,6 +469,14 @@ share/aclocal/cherokee.m4
 %%ADMIN%%%%DATADIR%%/admin/consts.pyc
 %%ADMIN%%%%DATADIR%%/admin/exception.html
 %%ADMIN%%%%DATADIR%%/admin/help.html
+%%ADMIN%%%%DATADIR%%/admin/icons/cherokee-admin-launcher-16.png
+%%ADMIN%%%%DATADIR%%/admin/icons/cherokee-admin-launcher-32.png
+%%ADMIN%%%%DATADIR%%/admin/icons/cherokee-admin-launcher-48.png
+%%ADMIN%%%%DATADIR%%/admin/icons/cherokee-admin-launcher-96.png
+%%ADMIN%%%%DATADIR%%/admin/icons/cherokee-admin-launcher-128.png
+%%ADMIN%%%%DATADIR%%/admin/icons/cherokee-admin-launcher-256.png
+%%ADMIN%%%%DATADIR%%/admin/icons/cherokee-admin-launcher-512.png
+%%ADMIN%%%%DATADIR%%/admin/icons/cherokee-admin-launcher.svg
 %%ADMIN%%%%DATADIR%%/admin/plugins/admin.py
 %%ADMIN%%%%DATADIR%%/admin/plugins/admin.pyc
 %%ADMIN%%%%DATADIR%%/admin/plugins/authlist.py
@@ -555,6 +571,12 @@ share/aclocal/cherokee.m4
 %%ADMIN%%%%DATADIR%%/admin/plugins/uwsgi.pyc
 %%ADMIN%%%%DATADIR%%/admin/plugins/wildcard.py
 %%ADMIN%%%%DATADIR%%/admin/plugins/wildcard.pyc
+%%ADMIN%%%%DATADIR%%/admin/plugins/failover.py
+%%ADMIN%%%%DATADIR%%/admin/plugins/gzip.py
+%%ADMIN%%%%DATADIR%%/admin/plugins/deflate.py
+%%ADMIN%%%%DATADIR%%/admin/plugins/failover.pyc
+%%ADMIN%%%%DATADIR%%/admin/plugins/gzip.pyc
+%%ADMIN%%%%DATADIR%%/admin/plugins/deflate.pyc
 %%ADMIN%%%%DATADIR%%/admin/server.py
 %%ADMIN%%%%DATADIR%%/admin/server.pyc
 %%ADMIN%%%%DATADIR%%/admin/static/css/cherokee-admin.css
@@ -925,6 +947,8 @@ share/aclocal/cherokee.m4
 %%ADMIN%%%%DATADIR%%/admin/wizards/moinmoin.pyc
 %%ADMIN%%%%DATADIR%%/admin/wizards/mono.py
 %%ADMIN%%%%DATADIR%%/admin/wizards/mono.pyc
+%%ADMIN%%%%DATADIR%%/admin/wizards/moodle.py
+%%ADMIN%%%%DATADIR%%/admin/wizards/moodle.pyc
 %%ADMIN%%%%DATADIR%%/admin/wizards/php.py
 %%ADMIN%%%%DATADIR%%/admin/wizards/php.pyc
 %%ADMIN%%%%DATADIR%%/admin/wizards/phpbb.py
@@ -1035,6 +1059,7 @@ www/cherokee/index.html
 %%ADMIN%%@dirrm %%DATADIR%%/admin/static
 %%ADMIN%%@dirrm %%DATADIR%%/admin/plugins
 %%ADMIN%%@dirrm %%DATADIR%%/admin/market
+%%ADMIN%%@dirrm %%DATADIR%%/admin/icons
 %%ADMIN%%@dirrm %%DATADIR%%/admin/CTK/static/js
 %%ADMIN%%@dirrm %%DATADIR%%/admin/CTK/static/images
 %%ADMIN%%@dirrm %%DATADIR%%/admin/CTK/static/css

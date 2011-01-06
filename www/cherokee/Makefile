@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cherokee
-PORTVERSION=	1.0.10
+PORTVERSION=	1.0.15
 CATEGORIES=	www
 MASTER_SITES=	http://www.cherokee-project.com/download/1.0/${PORTVERSION}/ \
 		http://cherokee.osuosl.org/1.0/${PORTVERSION}/ \
@@ -182,6 +182,10 @@ post-patch:
 		$$i > $${i%.pre};done
 
 	@${REINPLACE_CMD} -e 's|/usr/bin/env python|/usr/local/bin/python|' \
+		${WRKSRC}/admin/CTK/CTK-run.pre
+	@${REINPLACE_CMD} -e 's|/usr/bin/env python|/usr/local/bin/python|' \
+		${WRKSRC}/cherokee/cherokee-admin-launcher
+	@${REINPLACE_CMD} -e 's|/usr/bin/env python|/usr/local/bin/python|' \
 		${WRKSRC}/admin/server.py
 	@${REINPLACE_CMD} -e 's|/usr/bin/env python|/usr/local/bin/python|' \
 		${WRKSRC}/admin/upgrade_config.py
@@ -197,8 +201,6 @@ post-patch:
 		${WRKSRC}/gitlog2changelog.py
 	@${REINPLACE_CMD} -e 's|/usr/bin/env python|/usr/local/bin/python|' \
 		${WRKSRC}/po/po_stats.py
-	@${REINPLACE_CMD} -e 's|/usr/bin/env python|/usr/local/bin/python|' \
-		${WRKSRC}/packages/osx/build.py
 	@${REINPLACE_CMD} -e 's|/usr/bin/env python|/usr/local/bin/python|' \
 		${WRKSRC}/qa/fcgi.py
 	@${REINPLACE_CMD} -e 's|/usr/bin/env python|/usr/local/bin/python|' \
