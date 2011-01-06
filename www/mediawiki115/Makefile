@@ -7,6 +7,7 @@
 
 PORTNAME=	mediawiki
 PORTVERSION=	1.15.5
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://dumps.wikimedia.org/mediawiki/1.15/
 
