@@ -109,7 +109,7 @@ you update your ports collection, before attempting any port upgrades.
   icu has been updated to version 4.6. Please rebuild all ports that depends
   on it.
 
-  If you use portmaster: 
+  If you use portmaster:
   # portmaster -r icu
 
   If you use portupgrade:
@@ -119,7 +119,7 @@ you update your ports collection, before attempting any port upgrades.
   # portmaster -o devel/icu devel/icu4
   or
   # env DISABLE_CONFLICTS=1 portupgrade -o devel/icu -f icu-4\*
-  
+
 20101211:
   AFFECTS: users of devel/bugzilla, japanese/bugzilla and russian/bugzilla-ru
   AUTHOR: tota@FreeBSD.org
@@ -185,11 +185,11 @@ you update your ports collection, before attempting any port upgrades.
   audio/libmpcdec has been removed in favor of audio/musepack; which
   has a higher shared library version. You will have to rebuild all
   ports that depend on audio/libmpcdec. Do this:
-  
+
   Portmaster users:
 	# portmaster -o audio/musepack audio/libmpcdec
 	# portmaster -r musepack-
-  
+
   Portupgrade user:
 	# env DISABLE_CONFLICTS=1 portupgrade -o audio/musepack -f libmpcdec-\*
 	# pkgdb -Ff
@@ -636,7 +636,7 @@ you update your ports collection, before attempting any port upgrades.
   The main configuration file is now: $PREFIX/etc/lighttpd/lighttpd.conf
   and includes other configuration files from $PREFIX/etc/lighttpd/
 
-  For compatibility with old-style configurations, if the lighttpd_conf 
+  For compatibility with old-style configurations, if the lighttpd_conf
   variable is not set in /etc/rc.conf, $PREFIX/etc/lighttpd.conf takes
   precedence over $PREFIX/etc/lighttpd/lighttpd.conf
 
@@ -645,7 +645,7 @@ you update your ports collection, before attempting any port upgrades.
   AUTHOR: osa@FreeBSD.org
 
   The redis configuration file, redis.conf, have been changed, some options
-  removed in newer versions (>=2.0).  In some cases, redis-server with 
+  removed in newer versions (>=2.0).  In some cases, redis-server with
   older configuration might does not run at startup.
 
   If you run into startup problems, re-edit configuration file.
