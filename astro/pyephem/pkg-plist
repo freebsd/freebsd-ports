@@ -16,6 +16,8 @@
 %%PYTHON_SITELIBDIR%%/ephem/doc/newton.rst
 %%PYTHON_SITELIBDIR%%/ephem/doc/quick.rst
 %%PYTHON_SITELIBDIR%%/ephem/doc/radec.rst
+%%PYTHON_SITELIBDIR%%/ephem/doc/reference.rst
+%%PYTHON_SITELIBDIR%%/ephem/doc/rise-set.rst
 %%PYTHON_SITELIBDIR%%/ephem/doc/tutorial.rst
 %%PYTHON_SITELIBDIR%%/ephem/stars.py
 %%PYTHON_SITELIBDIR%%/ephem/stars.pyc
@@ -47,6 +49,9 @@
 %%PYTHON_SITELIBDIR%%/ephem/tests/test_bodies.py
 %%PYTHON_SITELIBDIR%%/ephem/tests/test_bodies.pyc
 %%PYTHON_SITELIBDIR%%/ephem/tests/test_bodies.pyo
+%%PYTHON_SITELIBDIR%%/ephem/tests/test_cities.py
+%%PYTHON_SITELIBDIR%%/ephem/tests/test_cities.pyc
+%%PYTHON_SITELIBDIR%%/ephem/tests/test_cities.pyo
 %%PYTHON_SITELIBDIR%%/ephem/tests/test_constants.py
 %%PYTHON_SITELIBDIR%%/ephem/tests/test_constants.pyc
 %%PYTHON_SITELIBDIR%%/ephem/tests/test_constants.pyo
@@ -65,6 +70,9 @@
 %%PYTHON_SITELIBDIR%%/ephem/tests/test_satellite.py
 %%PYTHON_SITELIBDIR%%/ephem/tests/test_satellite.pyc
 %%PYTHON_SITELIBDIR%%/ephem/tests/test_satellite.pyo
+%%PYTHON_SITELIBDIR%%/ephem/tests/test_stars.py
+%%PYTHON_SITELIBDIR%%/ephem/tests/test_stars.pyc
+%%PYTHON_SITELIBDIR%%/ephem/tests/test_stars.pyo
 %%PYTHON_SITELIBDIR%%/ephem/tests/test_usno.py
 %%PYTHON_SITELIBDIR%%/ephem/tests/test_usno.pyc
 %%PYTHON_SITELIBDIR%%/ephem/tests/test_usno.pyo
