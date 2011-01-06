@@ -15,7 +15,7 @@ DISTNAME=	GtkRadiant-GPL
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:id \
 		${PORTNAME}_gamepacks${EXTRACT_SUFX}:fb
 
-MAINTAINER=	alepulver@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Level design program developed by id Software and Loki Software
 
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/libsvn/__init__.py:${PORTSDIR}/devel/py-subversion
