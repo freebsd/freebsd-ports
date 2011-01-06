@@ -1,0 +1,11 @@
+Astro::FITS::CFITSIO is a perl interface to William Pence's cfitsio
+subroutine library. For more information on cfitsio, see
+http://heasarc.gsfc.nasa.gov/fitsio.
+
+This module attempts to provide a wrapper for nearly every cfitsio
+routine, while retaining as much cfitsio behavior as possible. As
+such, one should be aware that it is still somewhat low-level, in
+the sense that handing an array which is not the correct size to a
+routine like fits_write_img() may cause SIGSEGVs.
+
+WWW: http://search.cpan.org/dist/Astro-FITS-CFITSIO/

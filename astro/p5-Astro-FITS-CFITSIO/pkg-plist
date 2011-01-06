@@ -1,0 +1,10 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/Astro/FITS/CFITSIO.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Astro/FITS/CFITSIO/.packlist
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Astro/FITS/CFITSIO/autosplit.ix
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Astro/FITS/CFITSIO/CFITSIO.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Astro/FITS/CFITSIO/CFITSIO.so
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Astro/FITS/CFITSIO
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Astro/FITS
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Astro
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Astro/FITS
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Astro
