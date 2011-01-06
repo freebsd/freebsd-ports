@@ -1,5 +1,5 @@
---- setup/FreeBSD/sbin/soundoff.orig	2009-11-16 12:44:58.000000000 -0500
-+++ setup/FreeBSD/sbin/soundoff	2009-11-16 12:48:25.000000000 -0500
+--- setup/FreeBSD/sbin/soundoff.orig	2011-01-04 20:33:08.000000000 -0500
++++ setup/FreeBSD/sbin/soundoff	2011-01-06 13:59:37.000000000 -0500
 @@ -1,10 +1,10 @@
  #!/bin/sh
  
@@ -23,8 +23,8 @@
  fi
  
  # Save legacy devices
--/usr/sbin/ossdevlinks
-+%%PREFIX%%/sbin/ossdevlinks
+-/usr/sbin/ossdevlinks -N
++%%PREFIX%%/sbin/ossdevlinks -N
  
  PROGRAMS="`fstat /dev/mixer* /dev/dsp* /dev/midi* /dev/oss/*/* 2>/dev/null | sed '1 D'`"
  
