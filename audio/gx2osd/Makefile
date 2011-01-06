@@ -19,6 +19,8 @@ LIB_DEPENDS=	gtkmm-2.4:${PORTSDIR}/x11-toolkits/gtkmm24 \
 BUILD_DEPENDS=	${LOCALBASE}/lib/libxmmsclient++.so.3:${PORTSDIR}/audio/cpp-xmms2
 RUN_DEPENDS=	${LOCALBASE}/lib/libxmmsclient++.so.3:${PORTSDIR}/audio/cpp-xmms2
 
+BROKEN=		does not configure
+
 USE_BZIP2=	yes
 USE_PYTHON_BUILD=	yes
 
@@ -26,12 +28,6 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 MAKE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" WAF_HOME=.
 
 MAN1=		gx2osd.1
-
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 700000
-BROKEN=		does not link
-.endif
 
 do-configure:
 	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ./waf --conf-prefix=${LOCALBASE} --with-mandir=${PREFIX}/man --prefix=${PREFIX} configure
@@ -42,4 +38,4 @@ do-build:
 do-install:
 	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ./waf ${INSTALL_TARGET}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
