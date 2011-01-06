@@ -7,6 +7,7 @@
 #
 
 PORTNAME=	qt4-${DB}-plugin
+PORTVERSION=	1
 DISTVERSION=	${QT4_VERSION}
 CATEGORIES=	databases
 
