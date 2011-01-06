@@ -101,7 +101,7 @@ LIB_DEPENDS+=		avcodec.1:${PORTSDIR}/multimedia/ffmpeg
 
 .if !defined(WITHOUT_NLS)
 USE_GETTEXT=		yes
-LDFLAGS+=		-lgettextlib
+#LDFLAGS+=		-lgettextlib
 PLIST_SUB+=		NLS=""
 .else
 CONFIGURE_ARGS+=	--disable-nls
