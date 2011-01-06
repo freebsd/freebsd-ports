@@ -1,15 +1,15 @@
 etc/periodic/daily/510.assp
-@dirrmtry etc/periodic/daily
-@dirrmtry etc/periodic
+sbin/assp
+sbin/assplog
 %%DATADIR%%/assp.pl
 %%DATADIR%%/files/URIBLCCTLDS.txt
 %%DATADIR%%/files/blackaddresses.txt
 %%DATADIR%%/files/blackdomains.txt
-%%DATADIR%%/files/blackre.txt 
+%%DATADIR%%/files/blackre.txt
 %%DATADIR%%/files/blockreportlist.txt
 %%DATADIR%%/files/bombheaderre.txt
-%%DATADIR%%/files/bombsenderre.txt
 %%DATADIR%%/files/bombre.txt
+%%DATADIR%%/files/bombsenderre.txt
 %%DATADIR%%/files/charsets.txt
 %%DATADIR%%/files/deny.txt
 %%DATADIR%%/files/denyalways.txt
@@ -74,15 +74,15 @@ etc/periodic/daily/510.assp
 %%DATADIR%%/reports/whiteremovereport.txt
 %%DATADIR%%/reports/whitereport.txt
 %%DATADIR%%/stat.pl
+%%PORTDOCS%%%%DOCSDIR%%/Legacy - ASSP Documentation.htm
+%%PORTDOCS%%%%DOCSDIR%%/Regular Expression Tutorial.htm
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm %%DATADIR%%/reports
 @dirrm %%DATADIR%%/images
 @dirrm %%DATADIR%%/files
 @dirrm %%DATADIR%%
-sbin/assp
-sbin/assplog
-%%PORTDOCS%%%%DOCSDIR%%/Legacy - ASSP Documentation.htm
-%%PORTDOCS%%%%DOCSDIR%%/Regular Expression Tutorial.htm
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrmtry etc/periodic/daily
+@dirrmtry etc/periodic
 @unexec rm %%ASSP_HOME%%/logs
 @unexec rm %%ASSP_HOME%%/reports
 @unexec rm %%ASSP_HOME%%/images

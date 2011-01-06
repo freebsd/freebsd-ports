@@ -7,8 +7,10 @@
 
 PORTNAME=	assp
 PORTVERSION=	1.8.1.6
+PORTREVISION=	1
 CATEGORIES=	mail
-MASTER_SITES=	SF/${PORTNAME}/ASSP%20Installation/${PORTNAME:U}%20${PORTVERSION}/
+MASTER_SITES=	SF
+MASTER_SITE_SUBDIR=${PORTNAME}/ASSP%20Installation/${PORTNAME:U}%20${PORTVERSION}/
 DISTNAME=	${PORTNAME:U}_${PORTVERSION}-Install
 
 MAINTAINER=	rnejdl@ringofsaturn.com
@@ -22,14 +24,14 @@ MAN8=		assp.8 assplog.8
 
 ASSP_USER=	assp
 ASSP_GROUP=	assp
-ASSP_UID=	587
-ASSP_GID=	587
+USERS=		${ASSP_USER}
+GROUPS=		${ASSP_GROUP}
 ASSP_HOME=	/var/db/assp
 ASSP_LOG=	/var/log/assp
 
 PLIST_SUB=	ASSP_HOME="${ASSP_HOME}" ASSP_LOG="${ASSP_LOG}"
 
-SUB_FILES=	assp.8 assplog.8 assplog.pl periodic-assp
+SUB_FILES=	assp.8 assplog.8 assplog.pl periodic-assp pkg-install
 SUB_LIST=	ASSP_USER="${ASSP_USER}" ASSP_GROUP="${ASSP_GROUP}" \
 		ASSP_HOME="${ASSP_HOME}" ASSP_LOG="${ASSP_LOG}" \
 		DATADIR="${DATADIR}" PERL="${PERL}"
@@ -129,56 +131,22 @@ RUN_DEPENDS+=	${SITE_PERL}/IO/Socket/INET6.pm:${PORTSDIR}/net/p5-IO-Socket-INET6
 
 EXTRACT_AFTER_ARGS=	-d ${PORTNAME}-${PORTVERSION}
 
-post-extract:
-	@echo "===>  Removing incorrect group/other write permissions"
-	@${FIND} ${WRKDIR}/${PORTNAME}-${PORTVERSION} -type d -exec ${CHMOD} go-w {} \;
-	@${FIND} ${WRKDIR}/${PORTNAME}-${PORTVERSION} -type f -exec ${CHMOD} a-wx {} \;
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/bin/perl|${PERL}|' ${WRKSRC}/*.pl
-
-pre-install:
-	if ! /usr/sbin/pw groupshow ${ASSP_GROUP}; then \
-		/usr/sbin/pw groupadd ${ASSP_GROUP} -g ${ASSP_GID}; \
-	else \
-		${ECHO_CMD} "Using exsing ${ASSP_GROUP} group"; \
-	fi; \
-	if ! /usr/sbin/pw usershow ${ASSP_USER}; then \
-		/usr/sbin/pw useradd ${ASSP_USER} -g ${ASSP_GROUP} -u ${ASSP_UID} -h - -d ${ASSP_HOME} -s /usr/sbin/nologin -c "ASSP Anti-Spam Proxy"; \
-	else \
-		${ECHO_CMD} "Using exsing ${ASSP_USER} user"; \
-	fi
 
 do-install:
 	${MKDIR} ${DATADIR}
 	${INSTALL_SCRIPT} ${WRKSRC}/assp.pl ${DATADIR}
 	${INSTALL_SCRIPT} ${WRKSRC}/rebuildspamdb.pl ${DATADIR}
 	${INSTALL_SCRIPT} ${WRKSRC}/stat.pl ${DATADIR}
-	${MKDIR} ${DATADIR}/files
-	${INSTALL_DATA} ${WRKSRC}/files/* ${DATADIR}/files
-	${MKDIR} ${DATADIR}/images
-	${INSTALL_DATA} ${WRKSRC}/images/* ${DATADIR}/images
-	${MKDIR} ${DATADIR}/reports
-	${INSTALL_DATA} ${WRKSRC}/reports/* ${DATADIR}/reports
 
-	${LN} -s ${DATADIR}/assp.pl ${PREFIX}/sbin/assp
+	( cd ${WRKSRC} && ${COPYTREE_SHARE} "files images reports" \
+		${DATADIR}/ "! -name '*.orig' ! -name '*.bak'" )
 
 	${INSTALL_SCRIPT} ${WRKDIR}/assplog.pl ${PREFIX}/sbin/assplog
 
 	${INSTALL_MAN} ${WRKDIR}/assp.8 ${MAN8PREFIX}/man/man8
 	${INSTALL_MAN} ${WRKDIR}/assplog.8 ${MAN8PREFIX}/man/man8
-
-	${MKDIR} ${ASSP_LOG}
-	${CHOWN} ${ASSP_USER}:${ASSP_GROUP} ${ASSP_LOG}
-	${CHMOD} 750 ${ASSP_LOG}
-
-	${MKDIR} ${ASSP_HOME}
-	${CHOWN} ${ASSP_USER}:${ASSP_GROUP} ${ASSP_HOME}
-	${CHMOD} 700 ${ASSP_HOME}
-	${LN} -s ${DATADIR}/files ${ASSP_HOME}
-	${LN} -s ${DATADIR}/images ${ASSP_HOME}
-	${LN} -s ${DATADIR}/reports ${ASSP_HOME}
-	${LN} -s ${ASSP_LOG} ${ASSP_HOME}/logs
 
 	${MKDIR} ${PREFIX}/etc/periodic/daily
 	${INSTALL_SCRIPT} ${WRKDIR}/periodic-assp ${PREFIX}/etc/periodic/daily/510.assp
@@ -187,5 +155,12 @@ do-install:
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/docs/*.htm ${DOCSDIR}
 .endif
+
+post-install:
+	@PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
+# XXX Workaround: for PR ports/152498. Remove if PR ports/152498 is fixed!
+	@${EGREP} -e '^@exec.*${PW}' -e '^@exec ${INSTALL} -d -g' ${TMPPLIST} > ${WRKDIR}/.PLIST.ugid
+	@${EGREP} -v -e '^@exec.*${PW}' -e '^@exec ${INSTALL} -d -g' ${TMPPLIST} >> ${WRKDIR}/.PLIST.ugid
+	@${MV} ${WRKDIR}/.PLIST.ugid ${TMPPLIST}
 
 .include <bsd.port.post.mk>
