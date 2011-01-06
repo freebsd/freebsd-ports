@@ -17,7 +17,7 @@ COMMENT=	IC/MEMS layout editor
 
 USE_QT_VER=	4
 QT_COMPONENTS=	corelib gui network moc_build sql uic_build \
-		rcc_build qt3support xml
+		rcc_build qmake qt3support xml
 USE_ZIP=	yes
 USE_FREETYPE=	yes
 WRKSRC=		${WRKDIR}/layout
