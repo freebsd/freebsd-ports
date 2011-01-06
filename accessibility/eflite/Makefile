@@ -20,6 +20,8 @@ GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 ALL_TARGET=	eflite
 
+BROKEN=		does not link
+
 CONFIGURE_ARGS+=	--with-audio=freebsd
 .if defined(FL_LANG)
 CONFIGURE_ARGS+=	--with-lang=${FL_LANG}
