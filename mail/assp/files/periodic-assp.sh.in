@@ -15,6 +15,7 @@ else
 	echo ""
 	echo "Running ASSP rebuildspamdb.pl:"
 	%%PERL%% %%DATADIR%%/rebuildspamdb.pl && rc_spamdb=0 || rc_spamdb=3
+	chown -R %%ASSP_USER%%:%%ASSP_GROUP%% %%ASSP_HOME%%
 fi
 
 . /etc/rc.subr

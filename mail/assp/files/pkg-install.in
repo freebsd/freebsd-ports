@@ -1,0 +1,20 @@
+#!/bin/sh
+# $FreeBSD$
+
+if [ "${2}" = "POST-INSTALL" ]; then
+    ASSP_USER=%%ASSP_USER%%
+    ASSP_GROUP=%%ASSP_GROUP%%
+    ASSP_HOME=%%ASSP_HOME%%
+    ASSP_LOG=%%ASSP_LOG%%
+    DATADIR=${PKG_PREFIX}/share/assp
+
+    ln -sf ${DATADIR}/assp.pl ${PKG_PREFIX}/sbin/assp
+
+    install -d -m 750 -o ${ASSP_USER} -g ${ASSP_GROUP} ${ASSP_LOG}
+    install -d -m 700 -o ${ASSP_USER} -g ${ASSP_GROUP} ${ASSP_HOME}
+
+    ln -sf ${DATADIR}/files ${ASSP_HOME}
+    ln -sf ${DATADIR}/images ${ASSP_HOME}
+    ln -sf ${DATADIR}/reports ${ASSP_HOME}
+    ln -sf ${ASSP_LOG} ${ASSP_HOME}/logs
+fi
