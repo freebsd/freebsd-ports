@@ -39,8 +39,8 @@ CONFIGURE_ARGS+=	--enable-maxmem=${J_MAXMEM}
 MAN1=		cjpeg.1 djpeg.1 jpegtran.1 rdjpgcom.1 wrjpgcom.1
 
 post-extract:
-	@${CP} ${DISTDIR}/jpegexiforient.c ${WRKSRC}/
-	@${CP} ${DISTDIR}/exifautotran.txt ${WRKSRC}/exifautotran
+	@${CP} ${DISTDIR}/${DIST_SUBDIR}/jpegexiforient.c ${WRKSRC}/
+	@${CP} ${DISTDIR}/${DIST_SUBDIR}/exifautotran.txt ${WRKSRC}/exifautotran
 
 post-build:
 	@cd ${WRKSRC} && ${CC} ${CFLAGS} -o jpegexiforient jpegexiforient.c
