@@ -7,7 +7,7 @@
 
 PORTNAME=	gpc
 PORTVERSION=	20060325
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	lang
 MASTER_SITES=	http://www.gnu-pascal.de/alpha/:gpc \
 		${MASTER_SITE_GCC}
@@ -24,6 +24,8 @@ BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash \
 
 DEPRECATED=	development has ceased; use lang/fpc instead
 EXPIRATION_DATE=	2011-04-11
+
+LICENSE=	GPLv2
 
 USE_BISON=	build
 USE_BZIP2=	yes
@@ -45,8 +47,8 @@ INFO=		gpc gpcs gpcs-de gpcs-es gpcs-hr
 
 PLIST_SUB=	GCC_VER="${GCC_VER}" GNU_HOST="${CONFIGURE_TARGET}"
 
-# This port can be compiled with GCC versions 2.8.1 to 2.95 and 3.2 to 3.4.3.
-GCC_VER?=	3.4.3
+# This port can be compiled with GCC versions 2.8.1 to 2.95 and 3.2 to 3.4.4.
+GCC_VER?=	3.4.4
 
 .include <bsd.port.pre.mk>
 
