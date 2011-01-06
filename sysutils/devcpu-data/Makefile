@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	data
-PORTVERSION=	0.4
-PORTREVISION=	1
+PORTVERSION=	0.5
+PORTREVISION=	0
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://ftp.SpringDaemons.com/soft/
 PKGNAMEPREFIX=	devcpu-
