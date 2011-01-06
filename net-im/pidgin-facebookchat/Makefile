@@ -7,6 +7,7 @@
 
 PORTNAME=	pidgin-facebookchat
 PORTVERSION=	1.69
+PORTREVISION=	1
 CATEGORIES=	net-im
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 DISTNAME=	${PROJECTHOST}-source-${PORTVERSION}
@@ -23,8 +24,9 @@ LICENSE=	GPLv3
 PROJECTHOST=	${PORTNAME}
 WRKSRC=		${WRKDIR}/${PORTNAME}
 USE_BZIP2=	yes
+USE_LDCONFIG=	yes
 
-PIXMAPS_DIR=	${PREFIX}/share/pixmaps/pidgin/protocols
+PLIST_FILES=	lib/purple-2/libfacebook.so
 
 do-patch:
 	${REINPLACE_CMD} -e "s#i686-pc-freebsd6.0-gcc#${CC}#; \
@@ -37,11 +39,7 @@ do-build:
 	${MAKE} -C ${WRKSRC} libfacebookbsd60.so
 
 do-install:
-	${MKDIR} ${PREFIX}/lib/purple-2/ \
-		 ${PIXMAPS_DIR}/16 ${PIXMAPS_DIR}/22 ${PIXMAPS_DIR}/48
+	${MKDIR} ${PREFIX}/lib/purple-2/
 	${INSTALL_DATA} ${WRKSRC}/libfacebook.so ${PREFIX}/lib/purple-2/
-	${INSTALL_DATA} ${WRKSRC}/facebook16.png ${PIXMAPS_DIR}/16/facebook.png
-	${INSTALL_DATA} ${WRKSRC}/facebook22.png ${PIXMAPS_DIR}/22/facebook.png
-	${INSTALL_DATA} ${WRKSRC}/facebook48.png ${PIXMAPS_DIR}/48/facebook.png
 
 .include <bsd.port.mk>
