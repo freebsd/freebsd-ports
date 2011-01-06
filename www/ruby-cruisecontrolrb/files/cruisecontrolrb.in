@@ -17,14 +17,15 @@
 name=cruisecontrolrb
 rcvar=${name}_enable
 
-pidfile="%%PREFIX%%/www/${name}/tmp/pids/mongrel.pid"
-command="%%PREFIX%%/www/${name}/cruise"
+homedir="%%PREFIX%%/www/${name}"
+pidfile="${homedir}/tmp/pids/mongrel.pid"
+command="./cruise"
 
 start_cmd="cruisecontrolrb_start"
 stop_cmd="cruisecontrolrb_stop"
 
 cruisecontrolrb_start() {
-    ${command} start ${command_args}
+    cd ${homedir} && ${command} start ${command_args}
 }
 cruisecontrolrb_stop() {
     if [ -f $pidfile ]; then
