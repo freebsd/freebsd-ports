@@ -88,7 +88,7 @@ COMMENT=	HTTP Caching Proxy
 
 LATEST_LINK=	squid31
 
-SQUID_STABLE_VER=	9
+SQUID_STABLE_VER=	10
 
 CONFLICTS=	squid-2.[0-9].* squid-3.[^1].* cacheboy-[0-9]* lusca-head-[0-9]*
 GNU_CONFIGURE=	yes
@@ -171,14 +171,16 @@ error_files=	ERR_ACCESS_DENIED ERR_CACHE_ACCESS_DENIED \
 		ERR_FTP_PUT_ERROR ERR_FTP_PUT_MODIFIED ERR_FTP_UNAVAILABLE \
 		ERR_ICAP_FAILURE ERR_INVALID_REQ ERR_INVALID_RESP \
 		ERR_INVALID_URL ERR_LIFETIME_EXP ERR_NO_RELAY \
-		ERR_ONLY_IF_CACHED_MISS ERR_READ_ERROR ERR_READ_TIMEOUT \
+		ERR_ONLY_IF_CACHED_MISS ERR_PRECONDITION_FAILED \
+		ERR_READ_ERROR ERR_READ_TIMEOUT \
 		ERR_SECURE_CONNECT_FAIL ERR_SHUTTING_DOWN ERR_SOCKET_FAILURE \
 		ERR_TOO_BIG ERR_UNSUP_REQ ERR_UNSUP_HTTPVERSION \
 		ERR_URN_RESOLVE ERR_WRITE_ERROR ERR_ZERO_SIZE_OBJECT
 
 error_dirs=	af ar az bg ca cs da de el en es et fa fi fr he hu hy id it \
-		ja ko lt lv ms nl pl pt pt-br ro ru sk sr-latn sv th tr uk uz \
-		zh-cn zh-tw \
+		ja ko lt lv ms nl oc pl pt pt-br ro ru sk sr-cyrl sr-latn sv \
+		th tr uk uz \
+		vi zh-cn zh-tw \
 		templates
 
 error_dir_links=	ar-ae ar-bh ar-dz ar-eg ar-iq ar-jo ar-kw ar-lb \
@@ -194,11 +196,11 @@ error_dir_links=	ar-ae ar-bh ar-dz ar-eg ar-iq ar-jo ar-kw ar-lb \
 			et-ee \
 			fa-fa fa-ir fi-fi \
 			fr-be fr-ca fr-ch fr-fr fr-lu fr-mc \
-			he-il hu-hu hy-am id-id it-ch it-it \
+			he-il hu-hu hy-am hy-armn id-id it-ch it-it \
 			ja-jp ko-kp ko-kr lt-lt lv-lv ms-my nl-nl \
 			pl-pl pt-pt ro-md ro-ro ru-ru sk-sk \
 			sr sr-latn-cs sr-sp sv-fi sv-se \
-			th-th tr-tr uk-ua zh-hk zh-mo zh-sg
+			th-th tr-tr uk-ua vi-vn zh-hk zh-mo zh-sg
 
 libexec=	cachemgr.cgi digest_pw_auth diskd ip_user_check \
 		msnt_auth ncsa_auth ntlm_smb_lm_auth pam_auth smb_auth \
