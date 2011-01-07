@@ -79,7 +79,7 @@ INFO=		vice
 LIB_DEPENDS+=		usb:${PORTSDIR}/devel/libusb
 .endif
 .else
-CONFIGURE_ARGS+=        --disable-libusb
+CONFIGURE_ARGS+=	--disable-libusb
 .endif
 
 .if exists(${LOCALBASE}/bin/fc-cache)
@@ -101,6 +101,8 @@ LIB_DEPENDS+=		avcodec.1:${PORTSDIR}/multimedia/ffmpeg
 
 .if !defined(WITHOUT_NLS)
 USE_GETTEXT=		yes
+CONFIGURE_ARGS+=	--enable-nls --localedir=${LOCALBASE}/share/locale
+# causes vice to crash:
 #LDFLAGS+=		-lgettextlib
 PLIST_SUB+=		NLS=""
 .else
@@ -131,8 +133,15 @@ post-extract:
 post-patch:
 	${REINPLACE_CMD} -e "s|%%PREFIX%%|${PREFIX}|g" \
 		${WRKSRC}/man/vice.1
+	${REINPLACE_CMD} -e "s|^localedir.*|localedir = ${LOCALBASE}/share/locale|" \
+		${WRKSRC}/po/Makefile.in.in
 	${REINPLACE_CMD} -e 's|lungif|lgif|g' -e 's|== "x|= "x|' \
+		-e 's|"DATADIRNAME"/locale|share/locale|' \
 		${WRKSRC}/configure
+.for i in da.po de.po fr.po hu.po it.po nl.po pl.po sv.po tr.po
+	${MV} "${WRKSRC}/po/${i}" "${WRKSRC}/po/${i}.latin"
+	${LOCALBASE}/bin/iconv -f latin1 -t utf-8 < "${WRKSRC}/po/${i}.latin" > "${WRKSRC}/po/${i}"
+.endfor
 .if defined(NOPORTDOCS)
 	${REINPLACE_CMD} -e 's| doc||' ${WRKSRC}/Makefile.in
 .endif
