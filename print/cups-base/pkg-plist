@@ -106,6 +106,7 @@ sbin/cupsdisable
 sbin/cupsenable
 sbin/cupsfilter
 sbin/cupsreject
+sbin/ulpt-cupsd.sh
 sbin/lpadmin
 sbin/lpc
 sbin/lpinfo
@@ -922,7 +923,7 @@ sbin/reject
 %%DOCSDIR%%/pl/index.html
 %%DOCSDIR%%/robots.txt
 %%DOCSDIR%%/ru/index.html
-%%EXAMPLESDIR%%/lpt-cupsd.conf
+%%EXAMPLESDIR%%/ulpt-cupsd.conf
 share/applications/cups.desktop
 share/icons/hicolor/16x16/apps/cups.png
 share/icons/hicolor/32x32/apps/cups.png

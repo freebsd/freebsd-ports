@@ -6,9 +6,8 @@
 #
 
 PORTNAME=	cups
-PORTVERSION=	1.4.5
+PORTVERSION=	1.4.6
 DISTVERSIONSUFFIX=	-source
-PORTREVISION=	0
 CATEGORIES=	print
 MASTER_SITES=	EASYSW/${PORTNAME}/${DISTVERSION}
 PKGNAMESUFFIX=	${CUPS_SUFFIX}${PKGNAMESUFFIX2}
@@ -75,7 +74,6 @@ CUPS_SUFFIX=	-client
 CUPS_SUFFIX=	-image
 LICENSE=	LGPL21
 .else
-PORTREVISION=	1
 CUPS_SUFFIX=	-base
 CONFLICTS+=	cupsddk-*
 .endif
@@ -266,6 +264,8 @@ MAN8=	accept.8 \
 MLINKS=	accept.8 reject.8 \
 	cupsaccept.8 cupsreject.8 \
 	cupsenable.8 cupsdisable.8
+
+SUB_FILES+=	ulpt-cupsd.conf ulpt-cupsd.sh
 .endif
 
 pre-configure::
@@ -361,7 +361,8 @@ post-install:
 	cd ${CUPS_ETCDIR}/; if test ! -f ${f}; then ${CP} -p ${f}.N ${f}; fi
 .endfor
 	${MKDIR} ${EXAMPLESDIR}
-	${INSTALL_DATA} ${FILESDIR}/lpt-cupsd.conf ${EXAMPLESDIR}/
+	${INSTALL_DATA} ${WRKDIR}/ulpt-cupsd.conf ${EXAMPLESDIR}/
+	${INSTALL_SCRIPT} ${WRKDIR}/ulpt-cupsd.sh ${PREFIX}/sbin/
 	${INSTALL} -d ${CUPS_SPOOLDIR}/tmp/
 	${CHOWN} -R ${CUPSOWN}:${CUPSGRP} ${CUPS_SPOOLDIR}/
 	${CHMOD} -R g+w ${CUPS_SPOOLDIR}/
