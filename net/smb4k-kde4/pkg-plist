@@ -102,7 +102,6 @@ lib/libsmb4kdialogs.so
 @dirrmtry share/apps/kconf_update
 @dirrm share/apps/smb4k
 @dirrmtry share/apps
-@dirrmtry share/config.kcfg
 @dirrmtry share/doc/HTML/en/smb4k
 @dirrmtry share/doc/HTML/en
 @dirrmtry share/doc/HTML
