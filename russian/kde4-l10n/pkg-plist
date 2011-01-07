@@ -890,6 +890,7 @@ share/locale/ru/LC_MESSAGES/kompare.mo
 share/locale/ru/LC_MESSAGES/konqueror.mo
 share/locale/ru/LC_MESSAGES/konquest.mo
 share/locale/ru/LC_MESSAGES/konsole.mo
+share/locale/ru/LC_MESSAGES/kontactinterfaces.mo
 share/locale/ru/LC_MESSAGES/kopete.mo
 share/locale/ru/LC_MESSAGES/kpartloader.mo
 share/locale/ru/LC_MESSAGES/kpartsaver.mo
@@ -967,6 +968,7 @@ share/locale/ru/LC_MESSAGES/libakonadi.mo
 share/locale/ru/LC_MESSAGES/libkasten.mo
 share/locale/ru/LC_MESSAGES/libkblog.mo
 share/locale/ru/LC_MESSAGES/libkcal.mo
+share/locale/ru/LC_MESSAGES/libkcalutils.mo
 share/locale/ru/LC_MESSAGES/libkcddb.mo
 share/locale/ru/LC_MESSAGES/libkcompactdisc.mo
 share/locale/ru/LC_MESSAGES/libkdcraw.mo

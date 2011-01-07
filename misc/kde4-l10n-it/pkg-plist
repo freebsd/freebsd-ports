@@ -795,6 +795,23 @@ share/doc/HTML/it/kommander/widgets.docbook
 share/doc/HTML/it/kompare/common
 share/doc/HTML/it/kompare/index.cache.bz2
 share/doc/HTML/it/kompare/index.docbook
+share/doc/HTML/it/konqueror/basics.docbook
+share/doc/HTML/it/konqueror/bookmarks.docbook
+share/doc/HTML/it/konqueror/browser.docbook
+share/doc/HTML/it/konqueror/commands.docbook
+share/doc/HTML/it/konqueror/common
+share/doc/HTML/it/konqueror/config.docbook
+share/doc/HTML/it/konqueror/credits.docbook
+share/doc/HTML/it/konqueror/faq.docbook
+share/doc/HTML/it/konqueror/filemanager.docbook
+share/doc/HTML/it/konqueror/index.cache.bz2
+share/doc/HTML/it/konqueror/index.docbook
+share/doc/HTML/it/konqueror/introduction.docbook
+share/doc/HTML/it/konqueror/man-kbookmarkmerger.1.docbook
+share/doc/HTML/it/konqueror/path-complete.docbook
+share/doc/HTML/it/konqueror/plugins.docbook
+share/doc/HTML/it/konqueror/save-settings.docbook
+share/doc/HTML/it/konqueror/sidebar.docbook
 share/doc/HTML/it/konquest/common
 share/doc/HTML/it/konquest/index.cache.bz2
 share/doc/HTML/it/konquest/index.docbook
@@ -1690,6 +1707,7 @@ share/locale/it/entry.desktop
 @dirrm share/doc/HTML/it/kopete
 @dirrm share/doc/HTML/it/konsole
 @dirrm share/doc/HTML/it/konquest
+@dirrm share/doc/HTML/it/konqueror
 @dirrm share/doc/HTML/it/kompare
 @dirrm share/doc/HTML/it/kommander
 @dirrm share/doc/HTML/it/kolourpaint
