@@ -551,19 +551,19 @@ check-license:
 		@exit 1
 .endif
 .	if ${_LICENSE_STATUS} == "rejected"
-		@${ECHO_MSG} "===>  License rejected by the user"
+		@${ECHO_MSG} "===>  License ${_LICENSE} rejected by the user"
 		@${ECHO_MSG}
 		@${ECHO_MSG} "If you want to install this port make sure the following license(s) are not present in LICENSES_REJECTED, either in make arguments or /etc/make.conf: ${_LICENSE}. Also check LICENSES_GROUPS_REJECTED in case they contain a group this license(s) belong to." | ${FMT}
 		@${ECHO_MSG}
 		@exit 1
 .	elif ${_LICENSE_STATUS} == "accepted"
-		@${ECHO_MSG} "===>  License accepted by the user"
+		@${ECHO_MSG} "===>  License ${_LICENSE} accepted by the user"
 .	elif ${_LICENSE_STATUS} == "ask"
 .		if defined(BATCH)
-		@${ECHO_MSG} "===>  License needs confirmation, but BATCH is defined"
+		@${ECHO_MSG} "===>  License ${_LICENSE} needs confirmation, but BATCH is defined"
 		@exit 1
 .		else
-		@${ECHO_MSG} "===>  License needs confirmation, will ask later"
+		@${ECHO_MSG} "===>  License ${_LICENSE} needs confirmation, will ask later"
 .		endif
 .	endif
 
