@@ -1392,6 +1392,7 @@
     SUBDIR += phpmyfaq
     SUBDIR += phprecipebook
     SUBDIR += phproxy
+    SUBDIR += phpscheduleit
     SUBDIR += phpsysinfo
     SUBDIR += phpsysinfo-dev
     SUBDIR += phpvirtualbox
