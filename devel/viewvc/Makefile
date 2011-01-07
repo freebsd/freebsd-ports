@@ -7,6 +7,7 @@
 
 PORTNAME=	viewvc
 PORTVERSION=	1.1.8
+PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	http://www.viewvc.org/ \
 		LOCAL/glarkin
@@ -31,6 +32,8 @@ SUB_LIST=	INSTDIR="${PREFIX}/${INSTDIR}" \
 
 INSTDIR?=	${PORTNAME}
 PLIST_SUB=	INSTDIR=${INSTDIR}
+
+LICENSE=	BSD
 
 .include <bsd.port.options.mk>
 
@@ -66,12 +69,12 @@ RUN_DEPENDS+=	${LOCALBASE}/${APACHEMODDIR}/mod_wsgi.so:${PORTSDIR}/www/mod_wsgi3
 # It catalogs every commit in the CVS or Subversion repository into a SQL database.
 # In fact, the databases are 100% compatible.
 .if defined(WITH_MYSQL)
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}-MySQLdb>=0::${PORTSDIR}/databases/py-MySQLdb
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}MySQLdb>=0:${PORTSDIR}/databases/py-MySQLdb
 .endif
 
 pre-everything::
 .if defined(WITH_APACHE) && defined(WITH_LIGHTTPD)
-	@${ECHO_CMD} "It doesn't make sense to depend on Apache *and* lighttpd choose only one."
+	@${ECHO_CMD} "It doesn't make sense to depend on Apache *and* lighttpd - choose only one."
 	@${FALSE}
 .endif
 
@@ -80,6 +83,12 @@ pre-everything::
 	@${FALSE}
 .elif defined(WITH_MODPYTHON3) && !defined(WITH_APACHE)
 	@${ECHO_CMD} "mod_python3 needs Apache, please select Apache"
+	@${FALSE}
+.elif defined(WITH_MODWSGI3) && !defined(WITH_APACHE) && defined(WITH_LIGHTTPD)
+	@${ECHO_CMD} "mod_wsgi3 needs Apache, please select Apache and deselect lighttpd"
+	@${FALSE}
+.elif defined(WITH_MODWSGI3) && !defined(WITH_APACHE)
+	@${ECHO_CMD} "mod_wsgi3 needs Apache, please select Apache"
 	@${FALSE}
 .endif
 
