@@ -1,6 +1,6 @@
-# New ports collection makefile for:	gtkradiant
+# New ports collection makefile for:	GtkRadiant
 # Date created:				9 May 2006
-# Whom:					alepulver
+# Whom:					Alejandro Pulver <alepulver@FreeBSD.org>
 #
 # $FreeBSD$
 #
@@ -15,8 +15,10 @@ DISTNAME=	GtkRadiant-GPL
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:id \
 		${PORTNAME}_gamepacks${EXTRACT_SUFX}:fb
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Level design program developed by id Software and Loki Software
+
+LICENSE=	GPLv2
 
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/libsvn/__init__.py:${PORTSDIR}/devel/py-subversion
 LIB_DEPENDS=	gtkglext-x11-1.0.0:${PORTSDIR}/x11-toolkits/gtkglext \
@@ -48,7 +50,7 @@ post-build:
 	${CP} -R ${WRKDIR}/${PORTNAME}_gamepacks/* ${WRKSRC}/install
 
 do-install:
-	${MKDIR} ${DATADIR}
+	@${MKDIR} ${DATADIR}
 	${CP} -R ${WRKSRC}/install/* ${DATADIR}
 	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME} ${PREFIX}/bin
 
