@@ -1059,6 +1059,7 @@ lib/wine/fakedlls/netapi32.dll
 lib/wine/fakedlls/netsh.exe
 lib/wine/fakedlls/newdev.dll
 lib/wine/fakedlls/ngen.exe
+lib/wine/fakedlls/normaliz.dll
 lib/wine/fakedlls/notepad.exe
 lib/wine/fakedlls/npmshtml.dll
 lib/wine/fakedlls/ntdll.dll
@@ -1391,6 +1392,7 @@ lib/wine/libmswsock.def
 lib/wine/libnddeapi.def
 lib/wine/libnetapi32.def
 lib/wine/libnewdev.def
+lib/wine/libnormaliz.def
 lib/wine/libntdll.def
 lib/wine/libntdsapi.def
 lib/wine/libntoskrnl.exe.def
@@ -1541,6 +1543,7 @@ lib/wine/netapi32.dll.so
 lib/wine/netsh.exe.so
 lib/wine/newdev.dll.so
 lib/wine/ngen.exe.so
+lib/wine/normaliz.dll.so
 lib/wine/notepad.exe.so
 lib/wine/npmshtml.dll.so
 lib/wine/ntdll.dll.so
