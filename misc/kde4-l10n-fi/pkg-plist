@@ -409,6 +409,7 @@ share/locale/fi/LC_MESSAGES/phononserver.mo
 share/locale/fi/LC_MESSAGES/plasma-desktop.mo
 share/locale/fi/LC_MESSAGES/plasma-netbook.mo
 share/locale/fi/LC_MESSAGES/plasma-overlay.mo
+share/locale/fi/LC_MESSAGES/plasma-windowed.mo
 share/locale/fi/LC_MESSAGES/plasma_applet_BbalL.mo
 share/locale/fi/LC_MESSAGES/plasma_applet_CharSelectApplet.mo
 share/locale/fi/LC_MESSAGES/plasma_applet_battery.mo
@@ -509,6 +510,7 @@ share/locale/fi/LC_MESSAGES/plasma_runner_sessions.mo
 share/locale/fi/LC_MESSAGES/plasma_runner_shell.mo
 share/locale/fi/LC_MESSAGES/plasma_runner_solid.mo
 share/locale/fi/LC_MESSAGES/plasma_runner_webshortcuts.mo
+share/locale/fi/LC_MESSAGES/plasma_runner_windowedwidgets.mo
 share/locale/fi/LC_MESSAGES/plasma_runner_windows.mo
 share/locale/fi/LC_MESSAGES/plasma_scriptengine_qscript.mo
 share/locale/fi/LC_MESSAGES/plasma_wallpaper_color.mo

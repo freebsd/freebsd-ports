@@ -2,6 +2,34 @@ share/apps/kvtml/el/animals.kvtml
 share/apps/kvtml/el/easy.kvtml
 share/apps/kvtml/el/hard.kvtml
 share/apps/kvtml/el/medium.kvtml
+share/doc/HTML/el/konqueror/basics.docbook
+share/doc/HTML/el/konqueror/bookmarks.docbook
+share/doc/HTML/el/konqueror/browser.docbook
+share/doc/HTML/el/konqueror/cmndline.png
+share/doc/HTML/el/konqueror/commands.docbook
+share/doc/HTML/el/konqueror/common
+share/doc/HTML/el/konqueror/config.docbook
+share/doc/HTML/el/konqueror/credits.docbook
+share/doc/HTML/el/konqueror/dirtree.png
+share/doc/HTML/el/konqueror/dragdrop.png
+share/doc/HTML/el/konqueror/faq.docbook
+share/doc/HTML/el/konqueror/filemanager.docbook
+share/doc/HTML/el/konqueror/format-font-size-less.png
+share/doc/HTML/el/konqueror/format-font-size-more.png
+share/doc/HTML/el/konqueror/index.cache.bz2
+share/doc/HTML/el/konqueror/index.docbook
+share/doc/HTML/el/konqueror/introduction.docbook
+share/doc/HTML/el/konqueror/kongorg.png
+share/doc/HTML/el/konqueror/man-kbookmarkmerger.1.docbook
+share/doc/HTML/el/konqueror/parts.png
+share/doc/HTML/el/konqueror/path-complete.docbook
+share/doc/HTML/el/konqueror/plugins.docbook
+share/doc/HTML/el/konqueror/reset.png
+share/doc/HTML/el/konqueror/save-settings.docbook
+share/doc/HTML/el/konqueror/shortcut1.png
+share/doc/HTML/el/konqueror/shortcut2.png
+share/doc/HTML/el/konqueror/sidebar.docbook
+share/doc/HTML/el/konqueror/viewproperties-dialog.png
 share/locale/el/LC_MESSAGES/amor.mo
 share/locale/el/LC_MESSAGES/ark.mo
 share/locale/el/LC_MESSAGES/attica_kde.mo
@@ -545,5 +573,8 @@ share/locale/el/LC_MESSAGES/umbrello.mo
 share/locale/el/LC_MESSAGES/useraccount.mo
 share/locale/el/LC_MESSAGES/xml_mimetypes.mo
 share/locale/el/entry.desktop
+@dirrm share/doc/HTML/el/konqueror
 @dirrm share/apps/kvtml/el
 @dirrm share/apps/kvtml
+@dirrmtry man/el/man1
+@dirrmtry man/el

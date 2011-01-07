@@ -7,7 +7,9 @@ share/locale/ko/LC_MESSAGES/attica_kde.mo
 share/locale/ko/LC_MESSAGES/audiocd_encoder_lame.mo
 share/locale/ko/LC_MESSAGES/audiocd_encoder_vorbis.mo
 share/locale/ko/LC_MESSAGES/audiorename_plugin.mo
+share/locale/ko/LC_MESSAGES/blinken.mo
 share/locale/ko/LC_MESSAGES/bovo.mo
+share/locale/ko/LC_MESSAGES/cantor.mo
 share/locale/ko/LC_MESSAGES/cervisia.mo
 share/locale/ko/LC_MESSAGES/cvsservice.mo
 share/locale/ko/LC_MESSAGES/display.mo
@@ -29,6 +31,7 @@ share/locale/ko/LC_MESSAGES/kabc_ldapkio.mo
 share/locale/ko/LC_MESSAGES/kabc_net.mo
 share/locale/ko/LC_MESSAGES/kabcformat_binary.mo
 share/locale/ko/LC_MESSAGES/kaccess.mo
+share/locale/ko/LC_MESSAGES/kalgebra.mo
 share/locale/ko/LC_MESSAGES/kanagram.mo
 share/locale/ko/LC_MESSAGES/kapptemplate.mo
 share/locale/ko/LC_MESSAGES/kate.mo
@@ -362,6 +365,7 @@ share/locale/ko/LC_MESSAGES/plasma_applet_bubblemon.mo
 share/locale/ko/LC_MESSAGES/plasma_applet_calculator.mo
 share/locale/ko/LC_MESSAGES/plasma_applet_clock.mo
 share/locale/ko/LC_MESSAGES/plasma_applet_comic.mo
+share/locale/ko/LC_MESSAGES/plasma_applet_concentrationCalculator.mo
 share/locale/ko/LC_MESSAGES/plasma_applet_currentappcontrol.mo
 share/locale/ko/LC_MESSAGES/plasma_applet_devicenotifier.mo
 share/locale/ko/LC_MESSAGES/plasma_applet_dig_clock.mo
@@ -370,8 +374,10 @@ share/locale/ko/LC_MESSAGES/plasma_applet_fileWatcher.mo
 share/locale/ko/LC_MESSAGES/plasma_applet_folderview.mo
 share/locale/ko/LC_MESSAGES/plasma_applet_frame.mo
 share/locale/ko/LC_MESSAGES/plasma_applet_fuzzy_clock.mo
+share/locale/ko/LC_MESSAGES/plasma_applet_gasCalculator.mo
 share/locale/ko/LC_MESSAGES/plasma_applet_icon.mo
 share/locale/ko/LC_MESSAGES/plasma_applet_incomingmsg.mo
+share/locale/ko/LC_MESSAGES/plasma_applet_kalgebra.mo
 share/locale/ko/LC_MESSAGES/plasma_applet_kalzium.mo
 share/locale/ko/LC_MESSAGES/plasma_applet_katesession.mo
 share/locale/ko/LC_MESSAGES/plasma_applet_kget.mo
@@ -391,6 +397,7 @@ share/locale/ko/LC_MESSAGES/plasma_applet_newspaper.mo
 share/locale/ko/LC_MESSAGES/plasma_applet_notes.mo
 share/locale/ko/LC_MESSAGES/plasma_applet_notifications.mo
 share/locale/ko/LC_MESSAGES/plasma_applet_nowplaying.mo
+share/locale/ko/LC_MESSAGES/plasma_applet_nuclearCalculator.mo
 share/locale/ko/LC_MESSAGES/plasma_applet_opendesktop.mo
 share/locale/ko/LC_MESSAGES/plasma_applet_opendesktop_activities.mo
 share/locale/ko/LC_MESSAGES/plasma_applet_pager.mo
