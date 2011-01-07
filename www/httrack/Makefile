@@ -6,12 +6,11 @@
 #
 
 PORTNAME=	httrack
-PORTVERSION=	3.43.9
-PORTREVISION=	1
+PORTVERSION=	3.43.12
 CATEGORIES=	www
-MASTER_SITES=	http://www.httrack.com/ \
+MASTER_SITES=	http://download.httrack.com/ \
 		LOCAL/sunpoet
-DISTNAME=	${PORTNAME}-${PORTVERSION:C/.([0-9]*)$/-\1/}C
+#DISTNAME=	${PORTNAME}-${PORTVERSION:C/.([0-9]*)$/-\1/}C
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Easy-to-use offline browser utility and website copier
