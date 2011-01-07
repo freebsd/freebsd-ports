@@ -7,12 +7,14 @@
 
 PORTNAME=	cronolog
 PORTVERSION=	1.6.2
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	sysutils
 MASTER_SITES=	http://cronolog.org/download/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A web log rotation utility that provides datestamp filenames
+
+CONFLICTS_INSTALL=      cronolog-devel-[0-9]*
 
 INFO=		cronolog
 MAN1=		cronolog.1m cronosplit.1m
