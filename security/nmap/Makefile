@@ -6,18 +6,18 @@
 #
 
 PORTNAME=	nmap
-DISTVERSION=	5.35DC1
+DISTVERSION=	5.36TEST3
 CATEGORIES=	security ipv6
 MASTER_SITES=	http://nmap.org/dist/ \
-		http://nmap.ucsd.edu/dist/ \
-		http://www.mirrors.wiretapped.net/security/network-mapping/nmap/ \
-		http://www.mirrorservice.org/sites/ftp.wiretapped.net/pub/security/network-mapping/nmap/ \
-		http://mirror.sg.depaul.edu/pub/security/nmap/
+		LOCAL/ohauer
 
 MAINTAINER=	ohauer@FreeBSD.org
 COMMENT=	Port scanning utility for large networks
 
 LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre
+
+# http://nmap.org/book/man-legal.html
+LICENSE=	GPLv2
 
 USE_LUA=	5.1
 LUA_COMPS=	lua
@@ -34,8 +34,6 @@ CONFIGURE_ENV=	LUA_INCDIR="${LUA_INCDIR}" LUA_LIBDIR="${LUA_LIBDIR}"
 MANLANG=	"" de es fr hr hu it jp pl pt_BR pt_PT ro ru sk zh
 MAN1=		nmap.1
 MAN1_EN=	ncat.1 nping.1
-PLIST_SUB+=	NCATDATADIR=share/ncat \
-		NPINGDIR=share/nping
 
 .ifndef WITHOUT_SSL
 USE_OPENSSL=	yes
@@ -43,12 +41,17 @@ CONFIGURE_ARGS+=	--with-openssl=${OPENSSLBASE}
 CONFIGURE_ENV+=		CFLAGS="${CFLAGS} -I${OPENSSLINC}"
 PLIST_SUB+=		WITHSSL=""
 .else
+PKGNAMESUFFIX=		-nossl
 CONFIGURE_ARGS+=	--without-openssl
 PLIST_SUB+=		WITHSSL="@comment "
 .endif
 
+PORTDOCS=	CHANGELOG HACKING
+EXAMPLES=	docs/sample-script.nse
+PORTEXAMPLES=	${EXAMPLES:T}
+
 # XXX limit results if we do a grep in the sources!
-post-patch:
+post-extract:
 	@${RM} -rf ${WRKSRC}/mswin32
 
 post-configure:
@@ -57,9 +60,15 @@ post-configure:
 post-install:
 .ifndef NOPORTDOCS
 	@${MKDIR} ${DOCSDIR}
-	@for doc in CHANGELOG HACKING docs/nmap.dtd; do \
-		${INSTALL_DATA} ${WRKSRC}/$${doc} ${DOCSDIR}; \
-	done
+.	for i in ${PORTDOCS}
+		@${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
+.	endfor
+.endif
+.ifndef NOPORTEXAMPLES
+	@${MKDIR} ${EXAMPLESDIR}
+.	for i in ${EXAMPLES}
+		@${INSTALL_DATA} ${WRKSRC}/${i} ${EXAMPLESDIR}
+.	endfor
 .endif
 
 .include <bsd.port.mk>
