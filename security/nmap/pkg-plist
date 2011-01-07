@@ -1,10 +1,7 @@
 bin/ncat
 bin/nmap
 bin/nping
-%%PORTDOCS%%%%DOCSDIR%%/CHANGELOG
-%%PORTDOCS%%%%DOCSDIR%%/HACKING
-%%PORTDOCS%%%%DOCSDIR%%/nmap.dtd
-%%WITHSSL%%%%NCATDATADIR%%/ca-bundle.crt
+%%WITHSSL%%share/ncat/ca-bundle.crt
 %%DATADIR%%/nmap-mac-prefixes
 %%DATADIR%%/nmap-os-db
 %%DATADIR%%/nmap-payloads
@@ -18,11 +15,12 @@ bin/nping
 %%DATADIR%%/nselib/afp.lua
 %%DATADIR%%/nselib/asn1.lua
 %%DATADIR%%/nselib/base64.lua
+%%DATADIR%%/nselib/brute.lua
 %%DATADIR%%/nselib/citrixxml.lua
 %%DATADIR%%/nselib/comm.lua
 %%DATADIR%%/nselib/data/favicon-db
-%%DATADIR%%/nselib/data/folders.lst
-%%DATADIR%%/nselib/data/http-fingerprints
+%%DATADIR%%/nselib/data/http-fingerprints.lua
+%%DATADIR%%/nselib/data/http-folders.txt
 %%DATADIR%%/nselib/data/oracle-sids
 %%DATADIR%%/nselib/data/passwords.lst
 %%DATADIR%%/nselib/data/psexec/README
@@ -36,13 +34,18 @@ bin/nping
 %%DATADIR%%/nselib/data/psexec/nmap_service.vcproj
 %%DATADIR%%/nselib/data/psexec/pwdump.lua
 %%DATADIR%%/nselib/data/usernames.lst
-%%DATADIR%%/nselib/data/yokoso-fingerprints
 %%DATADIR%%/nselib/datafiles.lua
-%%DATADIR%%/nselib/db2.lua
+%%DATADIR%%/nselib/dhcp.lua
 %%DATADIR%%/nselib/dns.lua
+%%DATADIR%%/nselib/dnssd.lua
+%%DATADIR%%/nselib/drda.lua
+%%DATADIR%%/nselib/ftp.lua
+%%DATADIR%%/nselib/giop.lua
 %%DATADIR%%/nselib/http.lua
 %%DATADIR%%/nselib/imap.lua
+%%DATADIR%%/nselib/informix.lua
 %%DATADIR%%/nselib/ipOps.lua
+%%DATADIR%%/nselib/iscsi.lua
 %%DATADIR%%/nselib/json.lua
 %%DATADIR%%/nselib/ldap.lua
 %%DATADIR%%/nselib/listop.lua
@@ -54,11 +57,13 @@ bin/nping
 %%DATADIR%%/nselib/mssql.lua
 %%DATADIR%%/nselib/mysql.lua
 %%DATADIR%%/nselib/netbios.lua
+%%DATADIR%%/nselib/nrpc.lua
 %%DATADIR%%/nselib/nsedebug.lua
 %%DATADIR%%/nselib/packet.lua
 %%DATADIR%%/nselib/pgsql.lua
 %%DATADIR%%/nselib/pop3.lua
 %%DATADIR%%/nselib/proxy.lua
+%%DATADIR%%/nselib/rmi.lua
 %%DATADIR%%/nselib/rpc.lua
 %%DATADIR%%/nselib/shortport.lua
 %%DATADIR%%/nselib/smb.lua
@@ -70,8 +75,13 @@ bin/nping
 %%DATADIR%%/nselib/strbuf.lua
 %%DATADIR%%/nselib/strict.lua
 %%DATADIR%%/nselib/tab.lua
+%%DATADIR%%/nselib/target.lua
+%%DATADIR%%/nselib/tns.lua
 %%DATADIR%%/nselib/unpwdb.lua
+%%DATADIR%%/nselib/upnp.lua
 %%DATADIR%%/nselib/url.lua
+%%DATADIR%%/nselib/vnc.lua
+%%DATADIR%%/nselib/wsdd.lua
 %%DATADIR%%/scripts/afp-brute.nse
 %%DATADIR%%/scripts/afp-path-vuln.nse
 %%DATADIR%%/scripts/afp-serverinfo.nse
@@ -80,6 +90,10 @@ bin/nping
 %%DATADIR%%/scripts/auth-owners.nse
 %%DATADIR%%/scripts/auth-spoof.nse
 %%DATADIR%%/scripts/banner.nse
+%%DATADIR%%/scripts/broadcast-dns-service-discovery.nse
+%%DATADIR%%/scripts/broadcast-ms-sql-discover.nse
+%%DATADIR%%/scripts/broadcast-upnp-info.nse
+%%DATADIR%%/scripts/broadcast-wsdd-discover.nse
 %%DATADIR%%/scripts/citrix-brute-xml.nse
 %%DATADIR%%/scripts/citrix-enum-apps-xml.nse
 %%DATADIR%%/scripts/citrix-enum-apps.nse
@@ -89,9 +103,8 @@ bin/nping
 %%DATADIR%%/scripts/couchdb-stats.nse
 %%DATADIR%%/scripts/daap-get-library.nse
 %%DATADIR%%/scripts/daytime.nse
-%%DATADIR%%/scripts/db2-brute.nse
 %%DATADIR%%/scripts/db2-das-info.nse
-%%DATADIR%%/scripts/db2-info.nse
+%%DATADIR%%/scripts/db2-discover.nse
 %%DATADIR%%/scripts/dhcp-discover.nse
 %%DATADIR%%/scripts/dns-cache-snoop.nse
 %%DATADIR%%/scripts/dns-fuzz.nse
@@ -100,16 +113,29 @@ bin/nping
 %%DATADIR%%/scripts/dns-recursion.nse
 %%DATADIR%%/scripts/dns-service-discovery.nse
 %%DATADIR%%/scripts/dns-zone-transfer.nse
+%%DATADIR%%/scripts/domcon-brute.nse
+%%DATADIR%%/scripts/domcon-cmd.nse
+%%DATADIR%%/scripts/domino-enum-users.nse
+%%DATADIR%%/scripts/drda-brute.nse
+%%DATADIR%%/scripts/drda-info.nse
 %%DATADIR%%/scripts/finger.nse
+%%DATADIR%%/scripts/firewalk.nse
 %%DATADIR%%/scripts/ftp-anon.nse
 %%DATADIR%%/scripts/ftp-bounce.nse
 %%DATADIR%%/scripts/ftp-brute.nse
 %%DATADIR%%/scripts/ftp-libopie.nse
-%%DATADIR%%/scripts/html-title.nse
+%%DATADIR%%/scripts/ftp-proftpd-backdoor.nse
+%%DATADIR%%/scripts/giop-info.nse
+%%DATADIR%%/scripts/gopher-ls.nse
+%%DATADIR%%/scripts/hddtemp-info.nse
+%%DATADIR%%/scripts/hostmap.nse
 %%DATADIR%%/scripts/http-auth.nse
+%%DATADIR%%/scripts/http-brute.nse
 %%DATADIR%%/scripts/http-date.nse
+%%DATADIR%%/scripts/http-domino-enum-passwords.nse
 %%DATADIR%%/scripts/http-enum.nse
 %%DATADIR%%/scripts/http-favicon.nse
+%%DATADIR%%/scripts/http-form-brute.nse
 %%DATADIR%%/scripts/http-headers.nse
 %%DATADIR%%/scripts/http-iis-webdav-vuln.nse
 %%DATADIR%%/scripts/http-malware-host.nse
@@ -117,19 +143,28 @@ bin/nping
 %%DATADIR%%/scripts/http-open-proxy.nse
 %%DATADIR%%/scripts/http-passwd.nse
 %%DATADIR%%/scripts/http-php-version.nse
+%%DATADIR%%/scripts/http-robots.txt.nse
+%%DATADIR%%/scripts/http-title.nse
 %%DATADIR%%/scripts/http-trace.nse
 %%DATADIR%%/scripts/http-userdir-enum.nse
+%%DATADIR%%/scripts/http-vhosts.nse
 %%DATADIR%%/scripts/http-vmware-path-vuln.nse
 %%DATADIR%%/scripts/iax2-version.nse
 %%DATADIR%%/scripts/imap-capabilities.nse
+%%DATADIR%%/scripts/informix-brute.nse
+%%DATADIR%%/scripts/informix-query.nse
+%%DATADIR%%/scripts/informix-tables.nse
 %%DATADIR%%/scripts/ipidseq.nse
 %%DATADIR%%/scripts/irc-info.nse
 %%DATADIR%%/scripts/irc-unrealircd-backdoor.nse
+%%DATADIR%%/scripts/iscsi-brute.nse
+%%DATADIR%%/scripts/iscsi-info.nse
 %%DATADIR%%/scripts/jdwp-version.nse
 %%DATADIR%%/scripts/ldap-brute.nse
 %%DATADIR%%/scripts/ldap-rootdse.nse
 %%DATADIR%%/scripts/ldap-search.nse
 %%DATADIR%%/scripts/lexmark-config.nse
+%%DATADIR%%/scripts/modbus-discover.nse
 %%DATADIR%%/scripts/mongodb-databases.nse
 %%DATADIR%%/scripts/mongodb-info.nse
 %%DATADIR%%/scripts/ms-sql-brute.nse
@@ -146,14 +181,22 @@ bin/nping
 %%DATADIR%%/scripts/mysql-info.nse
 %%DATADIR%%/scripts/mysql-users.nse
 %%DATADIR%%/scripts/mysql-variables.nse
+%%DATADIR%%/scripts/nat-pmp-info.nse
 %%DATADIR%%/scripts/nbstat.nse
+%%DATADIR%%/scripts/netbus-auth-bypass.nse
+%%DATADIR%%/scripts/netbus-brute.nse
+%%DATADIR%%/scripts/netbus-info.nse
+%%DATADIR%%/scripts/netbus-version.nse
 %%DATADIR%%/scripts/nfs-ls.nse
 %%DATADIR%%/scripts/nfs-showmount.nse
 %%DATADIR%%/scripts/nfs-statfs.nse
 %%DATADIR%%/scripts/ntp-info.nse
 %%DATADIR%%/scripts/ntp-monlist.nse
+%%DATADIR%%/scripts/oracle-brute.nse
+%%DATADIR%%/scripts/oracle-enum-users.nse
 %%DATADIR%%/scripts/oracle-sid-brute.nse
 %%DATADIR%%/scripts/p2p-conficker.nse
+%%DATADIR%%/scripts/path-mtu.nse
 %%DATADIR%%/scripts/pgsql-brute.nse
 %%DATADIR%%/scripts/pjl-ready-message.nse
 %%DATADIR%%/scripts/pop3-brute.nse
@@ -161,7 +204,8 @@ bin/nping
 %%DATADIR%%/scripts/pptp-version.nse
 %%DATADIR%%/scripts/qscan.nse
 %%DATADIR%%/scripts/realvnc-auth-bypass.nse
-%%DATADIR%%/scripts/robots.txt.nse
+%%DATADIR%%/scripts/resolveall.nse
+%%DATADIR%%/scripts/rmi-dumpregistry.nse
 %%DATADIR%%/scripts/rpcinfo.nse
 %%DATADIR%%/scripts/script.db
 %%DATADIR%%/scripts/skypev2-version.nse
@@ -173,6 +217,7 @@ bin/nping
 %%DATADIR%%/scripts/smb-enum-sessions.nse
 %%DATADIR%%/scripts/smb-enum-shares.nse
 %%DATADIR%%/scripts/smb-enum-users.nse
+%%DATADIR%%/scripts/smb-flood.nse
 %%DATADIR%%/scripts/smb-os-discovery.nse
 %%DATADIR%%/scripts/smb-psexec.nse
 %%DATADIR%%/scripts/smb-security-mode.nse
@@ -196,22 +241,28 @@ bin/nping
 %%DATADIR%%/scripts/socks-open-proxy.nse
 %%DATADIR%%/scripts/sql-injection.nse
 %%DATADIR%%/scripts/ssh-hostkey.nse
+%%DATADIR%%/scripts/ssh2-enum-algos.nse
 %%DATADIR%%/scripts/sshv1.nse
 %%DATADIR%%/scripts/ssl-cert.nse
 %%DATADIR%%/scripts/ssl-enum-ciphers.nse
 %%DATADIR%%/scripts/sslv2.nse
+%%DATADIR%%/scripts/stuxnet-detect.nse
+%%DATADIR%%/scripts/svn-brute.nse
+%%DATADIR%%/scripts/targets-traceroute.nse
 %%DATADIR%%/scripts/telnet-brute.nse
 %%DATADIR%%/scripts/upnp-info.nse
+%%DATADIR%%/scripts/vnc-brute.nse
+%%DATADIR%%/scripts/vnc-info.nse
+%%DATADIR%%/scripts/wdb-version.nse
 %%DATADIR%%/scripts/whois.nse
+%%DATADIR%%/scripts/wsdd-discover.nse
 %%DATADIR%%/scripts/x11-access.nse
 @dirrm %%DATADIR%%/scripts
 @dirrm %%DATADIR%%/nselib/data/psexec
 @dirrm %%DATADIR%%/nselib/data
 @dirrm %%DATADIR%%/nselib
 @dirrm %%DATADIR%%
-@dirrm %%NPINGDIR%%
-@dirrm %%NCATDATADIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%WITHSSL%%@dirrm share/ncat
 @dirrmtry man/zh/man1
 @dirrmtry man/zh
 @dirrmtry man/sk/man1
@@ -240,5 +291,3 @@ bin/nping
 @dirrmtry man/es
 @dirrmtry man/de/man1
 @dirrmtry man/de
-@exec mkdir -p %D/%%NCATDATADIR%%
-@exec mkdir -p %D/%%NPINGDIR%%
