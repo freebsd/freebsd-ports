@@ -384,8 +384,6 @@ share/locale/zh_CN/LC_MESSAGES/gtg.mo
 @dirrm %%DATADIR%%/icons/hicolor
 @dirrm %%DATADIR%%/icons
 @dirrm %%DATADIR%%
-@dirrmtry share/dbus-1/services
-@dirrmtry share/dbus-1
 @dirrmtry share/applications
 @dirrm %%PYTHON_SITELIBDIR%%/GTG/tools
 @dirrm %%PYTHON_SITELIBDIR%%/GTG/taskeditor

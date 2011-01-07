@@ -7,7 +7,7 @@
 
 PORTNAME=	gtg
 PORTVERSION=	0.2.4
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	deskutils gnome python
 MASTER_SITES=	http://launchpad.net/gtg/0.2/${PORTVERSION}/+download/
 
