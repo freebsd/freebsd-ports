@@ -305,7 +305,6 @@ PLIST_SUB+=	QUOTA="@comment "
 
 .if defined(WITH_CLAMAV)
 DISTFILES+=	mod_clamav-0.11rc.tar.gz:clam
-EXTRACT_ONLY+=	mod_clamav-0.11rc.tar.gz
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-modules_mod_xfer.c
 USE_CLAMAV=	yes
 MODULES:=${MODULES}:mod_clamav
