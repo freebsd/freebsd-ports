@@ -248,6 +248,7 @@
     SUBDIR += semantik
     SUBDIR += silence
     SUBDIR += simpleagenda
+    SUBDIR += simplegroupware
     SUBDIR += sliderule
     SUBDIR += snotes
     SUBDIR += splashsetter
