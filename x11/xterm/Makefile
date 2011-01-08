@@ -6,13 +6,14 @@
 #
 
 PORTNAME=	xterm
-PORTVERSION=	261
+PORTVERSION=	267
 CATEGORIES=	x11
 MASTER_SITES=	ftp://invisible-island.net/xterm/ \
-		http://voodoo.bawue.com/download/
+		http://voodoo.bawue.com/download/ \
+		CRITICAL
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Terminal emulator for the X Window System
 
 BUILD_DEPENDS=	luit:${PORTSDIR}/x11/luit
