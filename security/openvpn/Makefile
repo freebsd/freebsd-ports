@@ -85,6 +85,7 @@ post-build:
 	cd ${WRKSRC}/plugin/auth-pam && ${CC} ${CPPFLAGS} -I../.. -DDLOPEN_PAM=0 ${CFLAGS} -fPIC -shared -Wl,-soname,openvpn-auth-pam.so -o openvpn-auth-pam.so auth-pam.c pamdl.c -lc -lpam
 	@# self-tests here
 .if !defined(WITHOUT_CHECK)
+	@${ECHO} ; ${ECHO} "### Note that you can skip these lengthy selftests with WITHOUT_CHECK=yes ###" ; ${ECHO}
 	cd ${WRKSRC} && ${MAKE} check
 .endif
 
