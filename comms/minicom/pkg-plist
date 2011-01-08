@@ -20,6 +20,7 @@ bin/ascii-xfr
 %%NLS%%share/locale/sv/LC_MESSAGES/minicom.mo
 %%NLS%%share/locale/vi/LC_MESSAGES/minicom.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/minicom.mo
+@exec if [ ! -d %D/etc/minicom ] ; then /bin/mkdir -p %D/etc/minicom ; fi
 @exec /usr/sbin/chown uucp %D/etc/minicom
 @dirrmtry etc/minicom
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
