@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libtorrent-rasterbar
-PORTVERSION=	0.15.4
+PORTVERSION=	0.15.5
 PORTREVISION?=	0
 CATEGORIES?=	net-p2p ipv6
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
@@ -58,6 +58,11 @@ CONFIGURE_ARGS+=	--disable-python-binding
 post-patch: slave-post-patch
 .else
 post-patch:
+	${MV} ${WRKSRC}/include/libtorrent/alloca.hpp \
+	    ${WRKSRC}/include/libtorrent/alloca.hpp.Dist
+	${SED} -e 's#alloca.h#stdlib.h#g' \
+	    ${WRKSRC}/include/libtorrent/alloca.hpp.Dist > \
+	    ${WRKSRC}/include/libtorrent/alloca.hpp
 .endif
 
 .if defined(SLAVE_PORT) && ${SLAVE_PORT:L}=="yes"
