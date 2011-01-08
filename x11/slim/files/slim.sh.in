@@ -1,9 +1,11 @@
 #!/bin/sh
 
+# $FreeBSD$
+#
 # PROVIDE: slim
 # REQUIRE: LOGIN
+# KEYWORD: shutdown
 
-#
 # Add the following lines to /etc/rc.conf to enable slim:
 # slim_enable (bool):      Set to "NO" by default.
 #                          Set it to "YES" to enable slim
@@ -11,12 +13,16 @@
 # Alternatively, edit /etc/ttys and change the line below
 #   ttyv8   "/usr/X11R6/bin/xdm -nodaemon"  xterm   off secure
 # to this:
-#   ttyv8   "/usr/local/bin/slim"   xterm   on secure
+#   ttyv8   "%%PREFIX%%/bin/slim"   xterm   on secure
 
 . /etc/rc.subr
 
 name="slim"
 rcvar=`set_rcvar`
+
+start_precmd=${name}_rmfile
+stop_precmd=${name}_prestop
+stop_postcmd=${name}_rmfile
 
 load_rc_config $name
 
@@ -25,5 +31,25 @@ load_rc_config $name
 command=%%PREFIX%%/bin/slim
 command_args="-d"
 pidfile=/var/run/slim.pid
+
+slim_rmfile ()
+{
+	local file
+
+	for file in $pidfile /var/run/slim.auth; do
+		[ -e "$file" ] && unlink $file
+	done
+	
+	return 0
+}
+
+slim_prestop ()
+{
+	local xpid
+
+	xpid=`ps -axww | grep '/bin/[X] .* -auth /var/run/slim.auth'`
+	xpid="${xpid## }"
+	[ -n "$xpid" ] && kill ${xpid%% *}
+}
 
 run_rc_command "$1"
