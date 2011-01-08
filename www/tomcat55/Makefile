@@ -16,7 +16,8 @@ DISTFILES=	apache-tomcat-${PORTVERSION}.tar.gz
 MAINTAINER=	jhelfman@experts-exchange.com
 COMMENT=	Open-source Java web server by Apache, 5.5.x branch
 
-OPTIONS=	CRONOLOG "Use Cronolog for Tomcat Log Processing" Off
+OPTIONS=	CRONOLOG "Use Cronolog for Log Processing" Off \
+		CRONOLOG_DEVEL "Use Cronlog-Devel for Log Processing" Off
 
 USE_JAVA=	yes
 JAVA_VERSION?=	1.4+
@@ -82,16 +83,27 @@ PLIST_SUB+=	JAVA14="@comment "
 .endif
 
 .if defined(WITH_CRONOLOG)
+RUN_DEPENDS+=	cronolog:${PORTSDIR}/sysutils/cronolog
+.endif
+
+.if defined(WITH_CRONOLOG_DEVEL)
+RUN_DEPENDS+=	cronolog:${PORTSDIR}/sysutils/cronolog-devel
+.endif
+
+.if ( defined(WITH_CRONOLOG) || (WITH_CRONOLOG_DEVEL) )
+LOG_PROCESSOR?= ${LOCALBASE}/sbin/cronolog 
+LOG_PROCESSOR_DIRECTIVES?= "\$$CATALINA_OUT \$$CATALINA_BASE/logs/catalina.out.\%Y_\%m_\%d.out"
+LOG_PROCESSOR_OPTS?= --link
 REDIRECT?=     "2\>\&1"
 SUB_LIST+=     LOG_PROCESSOR=${LOG_PROCESSOR} \
 	       LOG_PROCESSOR_DIRECTIVES=${LOG_PROCESSOR_DIRECTIVES} \
 	       LOG_PROCESSOR_OPTS=${LOG_PROCESSOR_OPTS} \
 	       REDIRECT=${REDIRECT}
-RUN_DEPENDS+=	cronolog:${PORTSDIR}/sysutils/cronolog
-LOG_PROCESSOR_DIRECTIVES?= "\$$CATALINA_OUT \$$CATALINA_BASE/logs/catalina.out.\%Y_\%m_\%d.out"
-LOG_PROCESSOR?= ${LOCALBASE}/sbin/cronolog 
-LOG_PROCESSOR_OPTS?= --link
 .endif
+
+.if ( defined(WITH_CRONOLOG) && defined(WITH_CRONOLOG_DEVEL) )
+BROKEN=		You can only define one log pre-processor application.
+.endif 
 
 pre-patch:
 	@${ECHO_MSG} "Installation settings:"
@@ -106,7 +118,7 @@ pre-patch:
 	@${ECHO_MSG} "   Logfile stderr:           ${STDERR_LOG}"
 
 post-patch:
-.if defined(WITH_CRONOLOG)
+.if ( defined(WITH_CRONOLOG) || (WITH_CRONOLOG_DEVEL) )
 	@cd ${WRKSRC} && ${PATCH} --quiet < ${FILESDIR}/logprocessor-cronolog
 .endif
 
