@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	ros-common
-PORTVERSION=	1.2.1
-PORTREVISION=	1
+PORTVERSION=	1.2.2
 CATEGORIES=	devel
 MASTER_SITES=	ftp://rene-ladan.nl/pub/distfiles/ros/
 DISTFILES=	common-${PORTVERSION}.tar.bz2 bfl-31655.tar.gz \
