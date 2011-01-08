@@ -7,6 +7,7 @@
 
 PORTNAME=	violet
 PORTVERSION=	0.21.1
+PORTREVISION=	1
 CATEGORIES=	devel editors java
 MASTER_SITES=	SF/${PORTNAME}/violetumleditor/${PORTVERSION}
 DISTNAME=	com.horstmann.violet-${PORTVERSION}
@@ -28,7 +29,7 @@ PLIST_DIRS=	%%JAVASHAREDIR%%/${PORTNAME}
 
 pre-install:
 	${ECHO} "#!/bin/sh" > ${WRKDIR}/violet.sh
-	${ECHO} "${PREFIX}/bin/java -jar ${JAVASHAREDIR}/${PORTNAME}/com.horstmann.violet.jar &" >> ${WRKDIR}/violet.sh
+	${ECHO} "${PREFIX}/bin/java -jar ${JAVASHAREDIR}/${PORTNAME}/com.horstmann.violet.jar" >> ${WRKDIR}/violet.sh
 
 do-install:
 	${MKDIR} ${JAVASHAREDIR}/${PORTNAME}
