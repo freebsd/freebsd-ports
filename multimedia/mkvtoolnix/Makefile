@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	mkvtoolnix
-PORTVERSION=	4.2.0
+PORTVERSION=	4.4.0
 CATEGORIES=	multimedia audio
-MASTER_SITES=	http://www.bunkus.org/videotools/mkvtoolnix/sources/
+MASTER_SITES=	http://www.bunkus.org/videotools/mkvtoolnix/sources/ \
+		CRITICAL
 
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Tools to extract from/get info about/create Matroska media streams
@@ -27,9 +28,10 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 USE_BZIP2=	yes
 USE_GETTEXT=	yes
-USE_GMAKE=	yes
 USE_ICONV=	yes
 GNU_CONFIGURE=	yes
+USE_RAKE=	yes
+USE_RUBY=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}" \
@@ -41,6 +43,7 @@ CONFIGURE_ARGS=	--enable-lzo --enable-bz2 --disable-qt \
 		--with-boost-regex=boost_regex
 MAKE_JOBS_SAFE=	yes
 
+MANLANG=	"" ja zh_CN
 MAN1=		mkvextract.1 mkvinfo.1 mkvmerge.1 mkvpropedit.1
 
 OPTIONS=	WXGTK "build wxGTK2 based GUI" on
@@ -68,5 +71,11 @@ PLIST_SUB+=	GUI="@comment "
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|"-O3"|""|g' ${WRKSRC}/configure
+
+do-build:
+	@(cd ${WRKSRC}/; ${SETENV} ${MAKE_ENV} ${RAKE_BIN})
+
+do-install:
+	@(cd ${WRKSRC}/; ${SETENV} ${MAKE_ENV} ${RAKE_BIN} install)
 
 .include <bsd.port.post.mk>
