@@ -35,8 +35,7 @@ USE_GNOME=	gnomeprefix gnomehack intlhack gconf2
 GNOME_DESKTOP_VERSION=2
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--disable-docbook-docs \
-		--enable-splash
+CONFIGURE_ARGS=	--disable-docbook-docs
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
