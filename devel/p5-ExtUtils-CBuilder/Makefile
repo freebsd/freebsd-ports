@@ -7,6 +7,7 @@
 
 PORTNAME=	ExtUtils-CBuilder
 PORTVERSION=	0.2802
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN/../../authors/id/D/DA/DAGOLDEN
@@ -28,4 +29,11 @@ post-install:
 	@${ECHO_MSG} "===> Documentation installed in ${DOCSDIR}."
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 501000
+BUILD_DEPENDS+=	p5-IPC-Cmd>=0:${PORTSDIR}/devel/p5-IPC-Cmd
+RUN_DEPENDS+=	p5-IPC-Cmd>=0:${PORTSDIR}/devel/p5-IPC-Cmd
+.endif
+
+.include <bsd.port.post.mk>
