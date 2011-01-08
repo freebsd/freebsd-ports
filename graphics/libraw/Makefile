@@ -6,10 +6,11 @@
 #
 
 PORTNAME=	libraw
-PORTVERSION=	0.11.3
+PORTVERSION=	0.12.2
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.libraw.su/data/
 DISTNAME=	LibRaw-${PORTVERSION}
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	osa@FreeBSD.org
 COMMENT=	Library for manipulating raw images
@@ -17,13 +18,19 @@ COMMENT=	Library for manipulating raw images
 LICENSE=	LGPL21 CDDL
 LICENSE_COMB=	dual
 
-OPTIONS=	OPTIMIZED_CFLAGS "Enable optimization" off \
-		SHARED_LIBS "Install shared libraries" off
+OPTIONS=	DEMOSAIC_PACK_GPL2	"Enable demosaic pack GPL2" off \
+		DEMOSAIC_PACK_GPL3	"Enable demosaic pack GPL3" off \
+		LCMS			"Build with lcms" on \
+		OPTIMIZED_CFLAGS	"Enable optimization" off \
+		SHARED_LIBS		"Install shared libraries" off
 
 .include <bsd.port.pre.mk>
 
-LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg \
-		lcms.1:${PORTSDIR}/graphics/lcms
+LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg
+USE_PKGCONFIG=  yes
+HAS_CONFIGURE=	yes
+CONFIGURE_ARGS+=--program-prefix=${PREFIX} --disable-examples
+CFLAGS+=	-fPIC
 
 .if defined(WITH_OPTIMIZED_CFLAGS)
 .if ${ARCH} == "i386"
@@ -31,9 +38,31 @@ CFLAGS+=	-O3
 .endif
 .endif
 
-MAKE_ENV+=	PTHREAD_CFLAGS=${PTHREAD_CFLAGS} PTHREAD_LIBS=${PTHREAD_LIBS}
+.if defined(WITH_LCMS)
+LIB_DEPENDS+=	lcms2.2:${PORTSDIR}/graphics/lcms2
+CONFIGURE_ARGS+=--enable-lcms
+.else
+CONFIGURE_ARGS+=--disable-lcms
+.endif
+
+.if defined(WITH_DEMOSAIC_PACK_GPL2)
+LICENSE+=	GPLv2
+DISTFILES+=	LibRaw-demosaic-pack-GPL2-${PORTVERSION}.tar.gz
+CONFIGURE_ARGS+=--enable-demosaic-pack-gpl2=../LibRaw-demosaic-pack-GPL2-${PORTVERSION}
+.else
+CONFIGURE_ARGS+=--disable-demosaic-pack-gpl2
+.endif
+
+.if defined(WITH_DEMOSAIC_PACK_GPL3)
+LICENSE+=	GPLv3
+DISTFILES+=	LibRaw-demosaic-pack-GPL3-${PORTVERSION}.tar.gz
+CONFIGURE_ARGS+=--enable-demosaic-pack-gpl3=../LibRaw-demosaic-pack-GPL3-${PORTVERSION}
+.else
+CONFIGURE_ARGS+=--disable-demosaic-pack-gpl3
+.endif
 
 .if defined(WITH_SHARED_LIBS)
+EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-Makefile.in
 USE_LDCONFIG=	yes
 PLIST_SUB+=	SHAREDLIBS=""
 .else
@@ -50,12 +79,6 @@ PORTDOCS=	API-C-eng.html API-C-rus.html API-CXX-eng.html API-CXX-rus.html \
 
 PORTEXAMPLES=	4channels.cpp dcraw_emu.cpp dcraw_half.c half_mt.c mem_image.cpp \
 		raw-identify.cpp simple_dcraw.cpp unprocessed_raw.cpp
-
-post-patch:
-	@${REINPLACE_CMD} -i.bak -e 's|-pthread|${PTHREAD_LIBS}|' \
-		-e 's|gcc|${CC}|' \
-		-e 's|g++|${CXX}|' \
-		${WRKSRC}/Makefile
 
 do-install:
 	@${MKDIR} ${PREFIX}/include/libraw
