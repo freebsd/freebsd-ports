@@ -34,6 +34,36 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="e4fcf020-0447-11e0-becc-0022156e8794">
+    <topic>exim -- local privilege escalation</topic>
+    <affects>
+      <package>
+	<name>exim</name>
+	<range><lt>4.73</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>David Woodhouse reports:</p>
+	<blockquote cite="https://bugzilla.redhat.com/show_bug.cgi?id=661756#c3">
+	  <p>Secondly a privilege escalation where the trusted 'exim'
+	  user is able to tell Exim to use arbitrary config files,
+	  in which further ${run ...} commands will be invoked as
+	  root.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2010-4345</cvename>
+      <url>http://www.exim.org/lurker/message/20101209.022730.dbb6732d.en.html</url>
+      <url>https://bugzilla.redhat.com/show_bug.cgi?id=661756#c3</url>
+    </references>
+    <dates>
+      <discovery>2010-12-10</discovery>
+      <entry>2011-01-08</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="e177c410-1943-11e0-9d1c-000c29ba66d2">
     <topic>mediawiki -- Clickjacking vulnerabilities</topic>
     <affects>
