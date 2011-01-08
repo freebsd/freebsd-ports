@@ -11,6 +11,7 @@ bin/mkvpropedit
 %%GUI%%share/icons/hicolor/64x64/apps/mkvmergeGUI.png
 share/locale/de/LC_MESSAGES/mkvtoolnix.mo
 share/locale/es/LC_MESSAGES/mkvtoolnix.mo
+share/locale/fr/LC_MESSAGES/mkvtoolnix.mo
 share/locale/ja/LC_MESSAGES/mkvtoolnix.mo
 share/locale/nl/LC_MESSAGES/mkvtoolnix.mo
 share/locale/ru/LC_MESSAGES/mkvtoolnix.mo
@@ -54,6 +55,8 @@ share/locale/zh_TW/LC_MESSAGES/mkvtoolnix.mo
 %%DATADIR%%/guide/zh_CN/mkvmerge-gui.hhk
 %%DATADIR%%/guide/zh_CN/mkvmerge-gui.hhp
 %%DATADIR%%/guide/zh_CN/mkvmerge-gui.html
+@dirrmtry man/zh_CN/man1
+@dirrmtry man/zh_CN
 @dirrm %%DATADIR%%/guide/zh_CN/images
 @dirrm %%DATADIR%%/guide/zh_CN
 @dirrm %%DATADIR%%/guide/en/images
