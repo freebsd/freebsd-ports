@@ -14632,6 +14632,7 @@ p5-WWW-HatenaLogin              ports/www/p5-WWW-HatenaLogin
 p5-WWW-HatenaStar               ports/www/p5-WWW-HatenaStar
 p5-WWW-Hotmail                  ports/mail/p5-WWW-Hotmail
 p5-WWW-IMDb                     ports/www/p5-WWW-IMDb
+p5-WWW-Instapaper-Client        ports/www/p5-WWW-Instapaper-Client
 p5-WWW-Link                     ports/www/p5-WWW-Link
 p5-WWW-Mechanize                ports/www/p5-WWW-Mechanize
 p5-WWW-Mechanize-CGI            ports/www/p5-WWW-Mechanize-CGI
@@ -18796,6 +18797,7 @@ p5-www-hatenalogin              ports/www/p5-WWW-HatenaLogin
 p5-www-hatenastar               ports/www/p5-WWW-HatenaStar
 p5-www-hotmail                  ports/mail/p5-WWW-Hotmail
 p5-www-imdb                     ports/www/p5-WWW-IMDb
+p5-www-instapaper-client        ports/www/p5-WWW-Instapaper-Client
 p5-www-itunesconnect            ports/www/p5-WWW-iTunesConnect
 p5-www-link                     ports/www/p5-WWW-Link
 p5-www-mechanize                ports/www/p5-WWW-Mechanize
@@ -20235,6 +20237,7 @@ phppgadmin                      ports/databases/phppgadmin
 phprecipebook                   ports/www/phprecipebook
 phprojekt                       ports/deskutils/phprojekt
 phproxy                         ports/www/phproxy
+phpscheduleit                   ports/www/phpscheduleit
 phpsecinfo                      ports/security/phpsecinfo
 phpsview                        ports/graphics/phpsview
 phpsysinfo                      ports/www/phpsysinfo
@@ -23711,6 +23714,7 @@ simian                          ports/devel/simian
 simlib                          ports/science/simlib
 simple-ccsm                     ports/x11-wm/simple-ccsm
 simpleagenda                    ports/deskutils/simpleagenda
+simplegroupware                 ports/deskutils/simplegroupware
 simplehtmldom                   ports/textproc/simplehtmldom
 simpleirc                       ports/irc/simpleirc
 simplemod                       ports/audio/simplemod
