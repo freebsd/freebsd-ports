@@ -1,0 +1,52 @@
+--- configure.orig	2010-12-29 18:51:59.000000000 +0300
++++ configure	2010-12-29 18:52:22.000000000 +0300
+@@ -2256,7 +2256,7 @@
+   */*) mkdir_p="\$(top_builddir)/$mkdir_p" ;;
+ esac
+ 
+-for ac_prog in gawk mawk nawk awk
++for ac_prog in awk
+ do
+   # Extract the first word of "$ac_prog", so it can be a program name with args.
+ set dummy $ac_prog; ac_word=$2
+@@ -4129,42 +4129,6 @@
+ 
+ 
+ 
+-pkg_failed=no
+-{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for LCMS" >&5
+-$as_echo_n "checking for LCMS... " >&6; }
+-
+-if test -n "$LCMS_CFLAGS"; then
+-    pkg_cv_LCMS_CFLAGS="$LCMS_CFLAGS"
+- elif test -n "$PKG_CONFIG"; then
+-    if test -n "$PKG_CONFIG" && \
+-    { { $as_echo "$as_me:${as_lineno-$LINENO}: \$PKG_CONFIG --exists --print-errors \"lcms\""; } >&5
+-  ($PKG_CONFIG --exists --print-errors "lcms") 2>&5
+-  ac_status=$?
+-  $as_echo "$as_me:${as_lineno-$LINENO}: \$? = $ac_status" >&5
+-  test $ac_status = 0; }; then
+-  pkg_cv_LCMS_CFLAGS=`$PKG_CONFIG --cflags "lcms" 2>/dev/null`
+-else
+-  pkg_failed=yes
+-fi
+- else
+-    pkg_failed=untried
+-fi
+-if test -n "$LCMS_LIBS"; then
+-    pkg_cv_LCMS_LIBS="$LCMS_LIBS"
+- elif test -n "$PKG_CONFIG"; then
+-    if test -n "$PKG_CONFIG" && \
+-    { { $as_echo "$as_me:${as_lineno-$LINENO}: \$PKG_CONFIG --exists --print-errors \"lcms\""; } >&5
+-  ($PKG_CONFIG --exists --print-errors "lcms") 2>&5
+-  ac_status=$?
+-  $as_echo "$as_me:${as_lineno-$LINENO}: \$? = $ac_status" >&5
+-  test $ac_status = 0; }; then
+-  pkg_cv_LCMS_LIBS=`$PKG_CONFIG --libs "lcms" 2>/dev/null`
+-else
+-  pkg_failed=yes
+-fi
+- else
+-    pkg_failed=untried
+-fi
+ 
