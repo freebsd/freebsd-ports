@@ -6,18 +6,26 @@
 #
 
 PORTNAME=	mariadb
-PORTVERSION=	5.2.3
+PORTVERSION=	5.2.4
 CATEGORIES=	databases
-MASTER_SITES=	http://ftp-stud.hs-esslingen.de/pub/Mirrors/mariadb/${PORTNAME}-${PORTVERSION}/kvm-tarbake-jaunty-x86/ \
-		http://mirrors.fe.up.pt/pub/mariadb/${PORTNAME}-${PORTVERSION}/kvm-tarbake-jaunty-x86/ \
+MASTER_SITES=	http://www.percona.com/downloads/MariaDB/${PORTNAME}-${PORTVERSION}/kvm-tarbake-jaunty-x86/ \
 		http://ftp.osuosl.org/pub/mariadb/${PORTNAME}-${PORTVERSION}/kvm-tarbake-jaunty-x86/ \
-		http://mirrors.supportex.net/mariadb/${PORTNAME}-${PORTVERSION}/kvm-tarbake-jaunty-x86/
+		http://mirrors.supportex.net/mariadb/${PORTNAME}-${PORTVERSION}/kvm-tarbake-jaunty-x86/ \
+		http://technocation.org/mirror/mariadb/${PORTNAME}-${PORTVERSION}/kvm-tarbake-jaunty-x86/ \
+		http://mirror.aarnet.edu.au/pub/MariaDB/${PORTNAME}-${PORTVERSION}/kvm-tarbake-jaunty-x86/ \
+		http://ftp-stud.hs-esslingen.de/pub/Mirrors/mariadb/${PORTNAME}-${PORTVERSION}/kvm-tarbake-jaunty-x86/ \
+		http://gd.tuwien.ac.at/db/mariadb/${PORTNAME}-${PORTVERSION}/kvm-tarbake-jaunty-x86/ \
+		http://mirrors.fe.up.pt/pub/mariadb/${PORTNAME}-${PORTVERSION}/kvm-tarbake-jaunty-x86/
 
 MAINTAINER=	siasiamail@gmail.com
 COMMENT=	A database server that offers drop-in replacement functionality for MySQL
 
+LICENSE=	GPLv2
+
 CONFLICTS=	mysql-server-[0-9]* mysql-client-[0-9]*
 
+CONFIGURE_ARGS=	--with-embedded-server
+DATADIR=	${PREFIX}/share/mysql
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	${PREFIX}/lib/mysql
 USE_RC_SUBR=	mysql-server
@@ -25,6 +33,7 @@ USE_RC_SUBR=	mysql-server
 USERS=		mysql
 GROUPS=		mysql
 
+INFO=		mysql
 MAN1=		comp_err.1 \
 		innochecksum.1 \
 		msql2mysql.1 \
@@ -38,6 +47,7 @@ MAN1=		comp_err.1 \
 		mysql.1 \
 		mysql.server.1 \
 		mysql_client_test.1 \
+		mysql_client_test_embedded.1 \
 		mysql_config.1 \
 		mysql_convert_table_format.1 \
 		mysql_find_rows.1 \
@@ -65,11 +75,16 @@ MAN1=		comp_err.1 \
 		mysqlshow.1 \
 		mysqlslap.1 \
 		mysqltest.1 \
+		mysqltest_embedded.1 \
 		perror.1 \
 		replace.1 \
 		resolve_stack_dump.1 \
 		resolveip.1
 MAN8=		mysqld.8 \
 		mysqlmanager.8
+
+post-patch:
+	@${REINPLACE_CMD} -e '/^install:/ s|^\(install:\).*$$|\1|' \
+		${WRKSRC}/mysql-test/Makefile.in ${WRKSRC}/sql-bench/Makefile.in
 
 .include <bsd.port.mk>
