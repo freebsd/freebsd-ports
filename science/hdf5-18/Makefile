@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	hdf5
-PORTVERSION=	1.8.4
+PORTVERSION=	1.8.5
 CATEGORIES=	science archivers graphics
 MASTER_SITES=	ftp://ftp.hdfgroup.org/HDF5/current/src/ \
-		ftp://ftp.hdfgroup.org/HDF5/prev-releases/hdf5-1.8.4/src/
+		ftp://ftp.hdfgroup.org/HDF5/prev-releases/hdf5-${PORTVERSION}/src/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-patch1
 
 MAINTAINER=	koziol@hdfgroup.org
@@ -21,31 +21,34 @@ NO_LATEST_LINK=	yes
 USE_BZIP2=	yes
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--disable-debug \
-		--enable-cxx \
+CONFIGURE_ARGS=	--enable-cxx \
 		--enable-instrument \
-		--enable-production \
 		--enable-strict-format-checks \
 		--with-pthread=/usr \
 		--with-zlib=/usr
 
-OPTIONS=	FORTRAN	"Fortran support"	off \
+OPTIONS=	DEBUG	"Debug"			off \
+		FORTRAN	"Fortran support"	off \
 		SZIP	"SZIP support"		off
 
 .include <bsd.port.pre.mk>
 
+.if !defined(WITH_DEBUG)
+CONFIGURE_ARGS+=--disable-debug --enable-production
+.endif
+
 .if defined(WITH_FORTRAN)
-USE_FORTRAN=		yes
-CONFIGURE_ENV+=		F9X=${FC}
-CONFIGURE_ARGS+=	--enable-fortran
-PLIST_SUB+=		FORTRAN=""
+USE_FORTRAN=	yes
+CONFIGURE_ENV+=	F9X=${FC}
+CONFIGURE_ARGS+=--enable-fortran
+PLIST_SUB+=	FORTRAN=""
 .else
-PLIST_SUB+=		FORTRAN="@comment "
+PLIST_SUB+=	FORTRAN="@comment "
 .endif
 
 .if defined(WITH_SZIP)
-LIB_DEPENDS+=		sz.2:${PORTSDIR}/science/szip
-CONFIGURE_ARGS+=	--with-szlib=${LOCALBASE}
+LIB_DEPENDS+=	sz.2:${PORTSDIR}/science/szip
+CONFIGURE_ARGS+=--with-szlib=${LOCALBASE}
 .endif
 
 .if ${ARCH} == "sparc64"
@@ -55,15 +58,14 @@ BROKEN=		Does not compile on ${ARCH}
 post-patch:
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|-O3||g' ${WRKSRC}/config/gnu-flags
-
-post-install:
-.if !defined(NOPORTEXAMPLES)
-	@${MKDIR} ${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/examples/* ${EXAMPLESDIR}
+	@${REINPLACE_CMD} \
+		-e '/LD_LIBRARY_PATH/ s|^|#|' \
+		-e 's|/share/hdf5_examples|/${EXAMPLESDIR_REL}|' \
+		-e 's|(INSTALL)|(INSTALL_DATA)|' \
+			`${FIND} ${WRKSRC} -regex '.*/examples/Makefile.in'`
+.if defined(NOPORTEXAMPLES)
+	@${REINPLACE_CMD} -e '/^install:/ s|install-examples||' ${WRKSRC}/Makefile.in
 .endif
-.for i in gif2h5 h52gif h5debug h5diff h5dump h5import h5jam h5ls h5repack h5repart h5unjam
-	@${STRIP_CMD} ${PREFIX}/bin/${i}
-.endfor
 
 regression-test: build
 	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} check
