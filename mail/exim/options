@@ -1,8 +1,8 @@
 OPTIONS+= \
-	 ALT_CONFIG_PREFIX "Allow alternate configuration files" off \
+	 ALT_CONFIG_PREFIX "Restrict the set of configuration files" off \
 	 AUTH_CRAM_MD5 "Enable CRAM-MD5 authentication mechanisms" on \
 	 AUTH_DOVECOT "Enable Dovecot authentication mechanisms" on \
-	 AUTH_PLAINTEXT "Enalbe plaintext authentication" on \
+	 AUTH_PLAINTEXT "Enable plaintext authentication" on \
 	 AUTH_RADIUS "Enable radius (RFC 2865) authentication" off \
 	 AUTH_SASL "Enable use of Cyrus SASL auth library" off \
 	 AUTH_SPA "Enable Secure Password Authentication" on \
@@ -11,6 +11,7 @@ OPTIONS+= \
 	 DAEMON "Install scripts to run as a daemon" on \
 	 DCC "Enable DCC at ACL support via dccifd" off \
 	 DEBUG "Build with debugging symbols" off \
+	 DISABLE_D_OPT "Disable macros overrides using option -D" on \
 	 DNSDB "Enable DNS-style lookups" on \
 	 DSEARCH "Enable directory-list lookups" on \
 	 EMBEDDED_PERL "Enable embedded Perl interpreter" on \
@@ -33,7 +34,7 @@ OPTIONS+= \
 	 READLINE "Enable readline(3) library" off \
 	 SASLAUTHD "Enable use of Cyrus SASL auth daemon" off \
 	 SA_EXIM "SA-Exim support" off \
-	 SO_1024 "Build with Spamoborona-1024 local scan" off \
+	 SO_1024 "Build with Spamooborona-1024 local scan" off \
 	 SPF "Enable Sender Policy Framework checking" off \
 	 SQLITE "Enable SQLite lookups" off \
 	 SRS "Enable Sender Rewriting Scheme" off \
