@@ -1,0 +1,23 @@
+	 
+	In order to enable periodic snapshots you need
+	to add these lines to your /etc/periodic.conf
+
+	hourly_output="root"
+	hourly_show_success="NO"
+	hourly_show_info="YES"
+	hourly_show_badconfig="NO"
+	hourly_zfs_snapshot_enable="YES"
+	hourly_zfs_snapshot_pools="tank"
+	hourly_zfs_snapshot_keep=6
+	daily_zfs_snapshot_enable="YES"
+	daily_zfs_snapshot_pools="tank"
+	daily_zfs_snapshot_keep=7
+	weekly_zfs_snapshot_enable="YES"
+	weekly_zfs_snapshot_pools="tank"
+	weekly_zfs_snapshot_keep=5
+	monthly_zfs_snapshot_enable="YES"
+	monthly_zfs_scrub_enable="YES"
+	monthly_zfs_scrub_pools="tank"
+	monthly_zfs_snapshot_pools="tank"
+	monthly_zfs_snapshot_keep=2'
+
