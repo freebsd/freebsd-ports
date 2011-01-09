@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	pinot
-PORTVERSION=	0.96
-PORTREVISION=	2
+PORTVERSION=	0.97
 CATEGORIES=	deskutils
 MASTER_SITES=	${MASTER_SITE_BERLIOS}
 #MASTER_SITES=	http://colinf.chez.com/pinot/
@@ -36,6 +35,8 @@ RUN_DEPENDS=	update-mime-database:${PORTSDIR}/misc/shared-mime-info	\
 		unzip:${PORTSDIR}/archivers/unzip			\
 		unrtf:${PORTSDIR}/textproc/unrtf			\
 		catdvi:${PORTSDIR}/print/catdvi
+
+LICENSE=	GPLv2
 
 LDFLAGS+=	-L${LOCALBASE}/lib
 GNU_CONFIGURE=	yes
@@ -87,6 +88,8 @@ pre-configure:
 	${REINPLACE_CMD} -e 's|-lthr|${PTHREAD_LIBS}|' ${WRKSRC}/configure
 	${REINPLACE_CMD} -e 's|/usr/share|${LOCALBASE}/share|'	\
 		${LM2FIX:S|^|${WRKSRC}/|}
+	${REINPLACE_CMD} -e 's|libtextcat/|libtextcat/LM/|'	\
+		${WRKSRC}/textcat_conf.txt
 	${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|'	\
 		${UL2FIX:S|^|${WRKSRC}/|}
 	${REINPLACE_CMD} -e 's|/usr/share|${PREFIX}/share|'	\
