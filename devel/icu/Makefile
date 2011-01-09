@@ -64,10 +64,6 @@ PLIST_SUB+=	ICUMAJOR=${ICUMAJOR} ICUMINOR=${ICUMINOR} ICUVER=${PORTVERSION}
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "sparc64"
-BROKEN=		Does not install on sparc64: fails 3 iotests
-.endif
-
 .if defined(WITHOUT_THREADS)
 CONFIGURE_ARGS+=	--enable-threads=no
 .else
