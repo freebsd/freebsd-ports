@@ -1,0 +1,18 @@
+--- ./server/Gemfile.orig	2010-11-30 17:45:17.000000000 +0100
++++ ./server/Gemfile	2011-01-09 22:37:36.000000000 +0100
+@@ -11,11 +11,11 @@
+ #
+ gem 'RedCloth', :require => 'redcloth'
+ 
+-if !( (RUBY_PLATFORM =~ /mswin/i) || (RUBY_PLATFORM =~ /mingw/i) )
+-  gem 'sqlite3-ruby', '1.2.5', :require => 'sqlite3'
+-else
++#if !( (RUBY_PLATFORM =~ /mswin/i) || (RUBY_PLATFORM =~ /mingw/i) )
++#  gem 'sqlite3-ruby', '1.2.5', :require => 'sqlite3'
++#else
+   gem 'sqlite3-ruby', '1.3.2', :require => 'sqlite3'
+-end
++#end
+ 
+ # Bundle gems for the local environment. Make sure to
+ # put test-only gems in this group so their generators

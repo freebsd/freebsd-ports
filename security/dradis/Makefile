@@ -6,16 +6,24 @@
 #
 
 PORTNAME=	dradis
-DISTVERSION=	2.5.2
+DISTVERSION=	2.6.0
 CATEGORIES=	security
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/v${PORTVERSION}
+MASTER_SITES=	SF
+MASTER_SITE_SUBDIR=${PORTNAME}/${PORTNAME}/v${DISTVERSION:R}
 DISTNAME=	${PORTNAME}-v${PORTVERSION}
 
 MAINTAINER=	semprix@bsdmail.org
 COMMENT=	Opensource framework to enable effective information gathering
 
-RUN_DEPENDS=	rubygem-sqlite3>=1.2.4:${PORTSDIR}/databases/rubygem-sqlite3 \
-		ruby18-wirble>=0.1.3:${PORTSDIR}/devel/ruby-wirble
+RUN_DEPENDS=	ruby18-gems>=1.3.6:${PORTSDIR}/devel/ruby-gems \
+		ruby18-iconv>=1.8.7.302,1:${PORTSDIR}/converters/ruby-iconv \
+		ruby18-wirble>=0.1.3:${PORTSDIR}/devel/ruby-wirble \
+		rubygem-rake>=0.8.7:${PORTSDIR}/devel/rubygem-rake \
+		rubygem-rails>=3.0.3:${PORTSDIR}/www/rubygem-rails \
+		rubygem-activesupport>=3.0.2:${PORTSDIR}/devel/rubygem-activesupport \
+		rubygem-bundler>=1.0.7:${PORTSDIR}/sysutils/rubygem-bundler \
+		rubygem-redcloth>=4.2.0:${PORTSDIR}/www/rubygem-redcloth \
+		rubygem-sqlite3>=1.3.2:${PORTSDIR}/databases/rubygem-sqlite3
 
 LICENSE=	GPLv2
 
@@ -25,24 +33,22 @@ SUB_LIST=	INSTDIR="${PREFIX}/${INSTDIR}" \
 		RUBY_CMD=${RUBY_WITHOUT_SUFFIX}
 
 INSTDIR?=	${PORTNAME}
-WRKSRC=		${WRKDIR}/${PORTNAME}-2.5
+WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION:R}
 
 NO_BUILD=	yes
 USE_RUBY=	yes
-USE_RAKE=	yes
-DEPEND_RUBY_ICONV=	yes
+RUBY_SHEBANG_FILES=	server/script/rails server/script/delayed_job
 RUBY_NO_BUILD_DEPENDS=	yes
+
 USE_DOS2UNIX=	yes
 DOS2UNIX_REGEX=	.*(css|rb|txt|js|RELEASE_NOTES)$$
 
-post-patch:
-	@${REINPLACE_CMD} -e 's|/usr/bin/env ruby|${RUBY}|' ${WRKSRC}/server/script/server
-	@${CHOWN} -R root:wheel ${WRKSRC}/server
-	@${FIND} ${WRKSRC}/server -type f \( -name "*.bak" -o -name "*.orig" \) -delete
+pre-install:
+	@${FIND} ${WRKSRC}/server -type f \( -name "*.bak" -o -name "*.orig" -o -name "*.swp" \) -delete
 
 do-install:
 	@${MKDIR} ${PREFIX}/${PORTNAME}
-	@${CP} -Rp ${WRKSRC}/server ${PREFIX}/${PORTNAME}/
+	@( cd ${WRKSRC} && ${COPYTREE_SHARE} server ${PREFIX}/${PORTNAME}/ )
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
