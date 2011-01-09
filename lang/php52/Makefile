@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	php52
-PORTVERSION=	5.2.16
+PORTVERSION=	5.2.17
 CATEGORIES?=	lang devel www
 MASTER_SITES=	${MASTER_SITE_PHP}
 MASTER_SITE_SUBDIR=	distributions
@@ -88,7 +88,7 @@ PLIST_SUB+=	FPM="@comment "
 .endif
 
 .if !defined(WITHOUT_SUHOSIN)
-PATCHFILES+=	suhosin-patch-${PORTVERSION}-0.9.7.patch.gz:suhosin
+PATCHFILES+=	suhosin-patch-5.2.16-0.9.7.patch.gz:suhosin
 PATCH_SITES+=	http://download.suhosin.org/:suhosin
 PLIST_SUB+=	SUHOSIN=""
 .else
