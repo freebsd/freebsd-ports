@@ -1013,6 +1013,7 @@
     SUBDIR += yawho
     SUBDIR += zeroer
     SUBDIR += zetaback
+    SUBDIR += zfs-periodic
     SUBDIR += zfs-replicate
     SUBDIR += zfs-snapshot-clean
     SUBDIR += zfs-snapshot-mgmt
