@@ -133,8 +133,8 @@
 +      (strcmp(type, "CREATE") && strcmp(type, "DESTROY")))
 +    return FALSE;
 +
-+  if (! strncmp(data, "cdev=ugen", strlen("cdev=ugen")) ||
-+      ! strncmp(data, "cdev=usb", strlen("cdev=usb")))
++  if (strstr(data, "cdev=ugen") != NULL ||
++      strstr(data, "cdev=usb") != NULL)
 +    return TRUE;
 +
 +  return FALSE;
