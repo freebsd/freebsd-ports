@@ -13,6 +13,7 @@ RESTRICTED=	Port has restricted dependencies
 .include "${.CURDIR}/../mplayer/Makefile.shared"
 
 OPTIONS=	DEBUG "Include debug symbols in mencoder's binary" off
+OPTIONS+=	FONTCONFIG "Enable fontconfig support" off
 OPTIONS+=	RTCPU "Allow runtime CPU detection" on
 OPTIONS+=	OCFLAGS "Use optimized compiler flags" on
 OPTIONS+=	IPV6 "Include inet6 network support" on
@@ -67,7 +68,6 @@ CONFIGURE_ARGS+=	--disable-mplayer \
 			--disable-libdca \
 			--disable-x11 \
 			--disable-vdpau \
-			--disable-fontconfig \
 			--disable-rtc \
 			--disable-arts \
 			--disable-esd \
@@ -85,6 +85,12 @@ CONFIGURE_ARGS+=	--disable-mplayer \
 ALL_TARGET=	mencoder
 
 .include "${.CURDIR}/../mplayer/Makefile.options"
+
+.if defined(WITH_FONTCONFIG)
+LIB_DEPENDS+=	fontconfig.1:${PORTSDIR}/x11-fonts/fontconfig
+.else
+CONFIGURE_ARGS+=	--disable-fontconfig
+.endif
 
 .if defined(WITH_TWOLAME)
 LIB_DEPENDS+=	twolame.0:${PORTSDIR}/audio/twolame
