@@ -27,7 +27,7 @@ MAKE_JOBS_UNSAFE=	yes
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_SA_EXIM) 
+.if defined(WITH_SA_EXIM)
 .if defined(WITH_KAS)
 IGNORE=		You cannot select both SA_EXIM and KAS options
 .endif
@@ -58,7 +58,7 @@ PLIST_SUB+=	SO_1024=""
 PLIST_SUB+=	SO_1024="@comment "
 .endif
 
-EXIM_VERSION=	4.72
+EXIM_VERSION=	4.73
 SA_EXIM_VERSION=4.2
 SO_1024_VERSION=3.2
 
@@ -449,9 +449,32 @@ PLIST_SUB+=	DAEMON="@comment "
 SEDLIST+=	-e 's,^\# (HAVE_IPV6=),\1,'
 .endif
 
+.if defined(WITH_DISABLE_D_OPT)
+SEDLIST+=	-e 's,^\# (DISABLE_D_OPTION=),\1,'
+.else
+.if defined(WHITELIST_D_MACROS)
+SEDLIST+=	-e 's,^\# (WHITELIST_D_MACROS=).*$$,\1=${WHITELIST_D_MACROS:S/,/\\,/g},'
+.endif
+.endif
+
+.if defined(TRUSTED_CONFIG_LIST)
+SEDLIST+=	-e 's,^\# (TRUSTED_CONFIG_LIST=).*$$,\1=${TRUSTED_CONFIG_LIST:S/,/\\,/g},'
+.endif
+
 DUMMY_LDFLAGS!=	${ECHO_CMD} ${LDFLAGS} | ${SED} -e 's|-Wl,-rpath|-Wl,-DUMMYrpath|g; s|-rpath|-Wl,-rpath|g; s|-DUMMYrpath|-rpath|g'
 
 pre-everything::
+	@${ECHO} 'Exim now drops privileges when alternate configuration'
+	@${ECHO} 'files are used.  You can set make variable TRUSTED_CONFIG_LIST'
+	@${ECHO} 'to specify the list of configuration files for which'
+	@${ECHO} 'root privileges will be retained.'
+	@${ECHO} ''
+	@${ECHO} 'You can whitelist some macros using the make variable'
+	@${ECHO} 'WHITELIST_D_MACROS.  This is useful if you are running'
+	@${ECHO} 'with DISABLE_D_OPT set, but macros whitelisting will be'
+	@${ECHO} 'removed in some future Exim release, so it is better'
+	@${ECHO} 'to use TRUSTED_CONFIG_LIST to set the list of trusted'
+	@${ECHO} 'configuration files.'
 .if empty(.MAKEFLAGS:M-s) && defined(WITH_WISHLIST)
 	@${ECHO} ''
 	@${ECHO} 'Included extra patches:'

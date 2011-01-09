@@ -5,6 +5,36 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20110107:
+  AFFECTS: users of mail/exim
+  AUTHOR: rea@FreeBSD.org
+
+  [POSSIBLE CONFIG BREAKAGE] The default value for system_filter_user
+  is now the Exim run-time user, instead of root.
+
+  [POSSIBLE CONFIG BREAKAGE] ALT_CONFIG_ROOT_ONLY is no longer
+  optional and is forced on.  This is mitigated by the new build
+  option TRUSTED_CONFIG_LIST which defines a list of configuration
+  files which are trusted; one per line. If a config file is owned
+  by root and matches a pathname in the list, then it may be invoked
+  by the Exim build-time user without Exim relinquishing root
+  privileges.
+
+  [POSSIBLE CONFIG BREAKAGE] The Exim user is no longer automatically
+  trusted to supply -D<Macro[=Value]> overrides on the command-line.
+  Going forward, we recommend using TRUSTED_CONFIG_LIST with shim
+  configs that include the main config.  As a transition mechanism,
+  we are temporarily providing a work-around: the new build option
+  WHITELIST_D_MACROS provides a colon-separated list of macro names
+  which may be overriden by the Exim run-time user.  The values of
+  these macros are constrained to the regex ^[A-Za-z0-9_/.-]*$
+  (which explicitly does allow for empty values).
+
+  Upgrading users are encouraged to fully study
+    ftp://exim.inode.at/exim/ChangeLogs/NewStuff-4.73
+  and
+    ftp://exim.inode.at/exim/ChangeLogs/ChangeLog-4.73
+
 20110103:
   AFFECTS: users of textproc/libwpd and graphics/libwpg
   AUTHOR: fluffy@FreeBSD.org
