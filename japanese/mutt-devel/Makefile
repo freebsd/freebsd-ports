@@ -17,7 +17,6 @@ MASTER_SITES=	ftp://ftp.mutt.org/mutt/devel/:body \
 		http://www.emaillab.org/mutt/${MANUALVERSION}/:ja_man1 \
 		http://mutt-j.sourceforge.jp/:ja_man2 \
 		http://www.emaillab.org/mutt/1.5/doc/:ja_doc
-PKGNAMEPREFIX=	ja-
 PKGNAMESUFFIX=	-devel
 DISTNAME=	mutt-${VERSION}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:body \

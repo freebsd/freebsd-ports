@@ -11,7 +11,6 @@ CATEGORIES=	japanese print
 MASTER_SITES=	ftp://ftp.math.s.chiba-u.ac.jp/tex/texfam-1.2/ \
 		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	hrs/texfamily
-PKGNAMEPREFIX=	ja-
 PKGNAMESUFFIX=	-tetex
 DISTFILES=	teTeX-src-1.0.7${EXTRACT_SUFX} \
 		texfam-1.2${EXTRACT_SUFX} \

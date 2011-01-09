@@ -11,7 +11,6 @@ PORTREVISION=	11
 CATEGORIES=	japanese textproc
 MASTER_SITES=	${MASTER_SITE_TEX_CTAN}
 MASTER_SITE_SUBDIR=	support/${PORTNAME}
-PKGNAMEPREFIX=	ja-
 DISTNAME=	${PORTNAME}-${VERSION:S,.,-,g}
 
 PATCH_SITES=	http://takeno.iee.niit.ac.jp/~shige/TeX/latex2html/data/

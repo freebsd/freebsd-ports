@@ -5,7 +5,6 @@
 # $FreeBSD$
 
 CATEGORIES=	japanese
-PKGNAMEPREFIX?=	ja-
 
 MAINTAINER=	dinoex@FreeBSD.org
 

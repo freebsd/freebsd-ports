@@ -10,7 +10,6 @@ PORTVERSION=	0.4.1
 PORTREVISION=	6
 CATEGORIES=	chinese
 MASTER_SITES=	 SF/qterm/qterm/${PORTVERSION}
-PKGNAMEPREFIX=	zh-
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	QTerm is a BBS client for BSD/Linux

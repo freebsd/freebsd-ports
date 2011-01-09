@@ -5,7 +5,6 @@
 # $FreeBSD$
 
 CATEGORIES=	german
-PKGNAMEPREFIX?=	de-
 
 MAINTAINER=	dinoex@FreeBSD.org
 
