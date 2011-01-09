@@ -11,6 +11,7 @@
     SUBDIR += dbs
     SUBDIR += dkftpbench
     SUBDIR += fhourstones
+    SUBDIR += filebench
     SUBDIR += flops
     SUBDIR += forkbomb
     SUBDIR += geekbench
