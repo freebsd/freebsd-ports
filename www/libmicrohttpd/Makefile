@@ -6,25 +6,27 @@
 #
 
 PORTNAME=	libmicrohttpd
-PORTVERSION=	0.4.2
+PORTVERSION=	0.9.4
 CATEGORIES=	www
-MASTER_SITES=	http://gnunet.org/libmicrohttpd/download/
+MASTER_SITES=	${MASTER_SITE_GNU}
+MASTER_SITE_SUBDIR=	libmicrohttpd
 
-MAINTAINER=	amatus@gnu.org
+MAINTAINER=	gaod@hychen.org
 COMMENT=	C library for embedding HTTP server functionality
 
+LICENSE=	LGPL21
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 MAKE_ARGS+=	pkgconfigdir=${PREFIX}/libdata/pkgconfig
 
-PLIST_FILES=	lib/libmicrohttpd.so.6 \
+MAN3=		libmicrohttpd.3
+INFO=		microhttpd microhttpd-tutorial
+
+PLIST_FILES=	lib/libmicrohttpd.so.12 \
 		lib/libmicrohttpd.la \
 		lib/libmicrohttpd.so \
 		lib/libmicrohttpd.a \
 		libdata/pkgconfig/libmicrohttpd.pc \
-		include/microhttpd.h \
-		info/microhttpd.info
-
-MAN3=		libmicrohttpd.3
+		include/microhttpd.h
 
 .include <bsd.port.mk>
