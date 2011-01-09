@@ -18,7 +18,7 @@ PLIST=		${.CURDIR}/pkg-plist
 
 LATEST_LINK=	mysql55-client
 
-CONFLICTS=	mysql-client-[34].* mysql-client-5.[0-46-9].*
+CONFLICTS_INSTALL=	mysql-client-[34].* mysql-client-5.[0-46-9].*
 
 CMAKE_ARGS=	-DWITHOUT_SERVER=1
 

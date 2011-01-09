@@ -7,7 +7,7 @@
 
 PORTNAME?=	mysql
 PORTVERSION=	5.5.8
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES=	databases ipv6
 MASTER_SITES=	${MASTER_SITE_MYSQL}
 MASTER_SITE_SUBDIR=	MySQL-5.5
@@ -62,7 +62,7 @@ WANT_MYSQL_VER=	55
 
 LATEST_LINK=	mysql55-server
 
-CONFLICTS=	mysql-server-[34].* mysql-server-5.[0-46-9].*
+CONFLICTS_INSTALL=	mysql-server-[34].* mysql-server-5.[0-46-9].*
 
 USE_RC_SUBR=	mysql-server.sh
 
