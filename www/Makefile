@@ -56,6 +56,7 @@
     SUBDIR += bacula-web
     SUBDIR += bannerfilter
     SUBDIR += bblog
+    SUBDIR += bigbluebutton
     SUBDIR += bins
     SUBDIR += bk2site
     SUBDIR += bk_edit
