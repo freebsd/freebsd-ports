@@ -6,11 +6,9 @@
 #
 
 PORTNAME?=	mysql
-PORTVERSION=	5.0.90
-PORTREVISION?=	2
+PORTVERSION=	5.0.91
 CATEGORIES=	databases
-MASTER_SITES=	${MASTER_SITE_MYSQL}
-MASTER_SITE_SUBDIR=	MySQL-5.0
+MASTER_SITES=	http://downloads.mysql.com/archives/mysql-5.0/
 PKGNAMESUFFIX?=	-server
 
 MAINTAINER=	ale@FreeBSD.org
