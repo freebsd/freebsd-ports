@@ -11,8 +11,10 @@ CATEGORIES=	www java
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 DISTNAME=	compiler-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	kimelto@gmail.com
 COMMENT=	Closure Compiler
+
+LICENSE=	ASL
 
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
