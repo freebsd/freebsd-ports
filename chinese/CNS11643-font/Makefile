@@ -10,7 +10,6 @@ PORTVERSION=	95.1.3
 CATEGORIES=	chinese x11-fonts
 MASTER_SITES=	LOCAL/chinsan/fonts/ \
 		http://www.cns11643.gov.tw/cns11643/images/ttf/
-PKGNAMEPREFIX=	zh-
 DISTFILES=	TW-Kai-95_1_3.ttf TW-Sung-95_1_3.ttf
 
 MAINTAINER=	ports@FreeBSD.org

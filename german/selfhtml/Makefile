@@ -20,7 +20,6 @@ MASTER_SITES=	http://aktuell.de.selfhtml.org/extras/ \
 		http://www.a-mazing.de/downloads/ \
 		http://download.iansview.com/mirror/selfhtml.org/ \
 		ftp://ftp.rub.de/pub/selfhtml/
-PKGNAMEPREFIX=	de-
 DISTNAME=	${PORTNAME}${PORTVERSION:S/.//g}
 
 MAINTAINER=	ports@FreeBSD.org

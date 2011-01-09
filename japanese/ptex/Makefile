@@ -12,7 +12,6 @@ MASTER_SITES=	${MASTER_SITE_TEX_CTAN} \
 		ftp://ftp.ascii.co.jp/pub/TeX/ascii-ptex/tetex/:1 \
 		ftp://ftp.ascii.co.jp/pub/TeX/ascii-ptex/jvf/:2
 MASTER_SITE_SUBDIR=	obsolete/systems/unix/teTeX/3.0/distrib
-PKGNAMEPREFIX=	ja-
 PKGNAMESUFFIX=	-tetex
 DISTFILES=	ptex-src-${VER_PTEX}${EXTRACT_SUFX}:1 \
 		ptex-texmf-${VER_PTEXTEXMF}${EXTRACT_SUFX}:1 \

@@ -10,7 +10,6 @@ PORTREVISION=	2
 CATEGORIES=	german www
 MASTER_SITES=	http://forge.vtiger.com/frs/download.php/322/ \
 		http://people.bsdgroup.de/~as/freebsd/distfiles/vtiger/
-PKGNAMEPREFIX=	de-
 DISTNAME=	de_de.lang
 
 MAINTAINER=	as@bsdgroup.de

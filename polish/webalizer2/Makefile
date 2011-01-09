@@ -5,7 +5,6 @@
 # $FreeBSD$
 
 CATEGORIES=	polish
-PKGNAMEPREFIX?=	pl-
 
 MAINTAINER=	wtp@bsdguru.org
 

@@ -9,7 +9,6 @@ PORTNAME=	schwobifyer
 PORTVERSION=	20050730
 CATEGORIES=	german
 MASTER_SITES=	CRITICAL
-PKGNAMEPREFIX=	de-
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	A utility for translating german into the schwaebisch dialect

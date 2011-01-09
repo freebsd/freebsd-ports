@@ -10,7 +10,6 @@ PORTNAME=	wordpress
 PORTVERSION=	3.0.3
 CATEGORIES=	german www
 MASTER_SITES=	http://freebsd.unixfreunde.de/sources/
-PKGNAMEPREFIX=	de-
 DISTNAME=	wordpress_303-de
 
 MAINTAINER=	miwi@FreeBSD.org

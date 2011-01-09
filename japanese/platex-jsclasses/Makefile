@@ -10,7 +10,6 @@ PORTREVISION=	4
 CATEGORIES=	japanese print
 MASTER_SITES=	http://oku.edu.mie-u.ac.jp/~okumura/jsclasses/:0 \
 		http://oku.edu.mie-u.ac.jp/~okumura/texfaq/:1
-PKGNAMEPREFIX=	ja-
 DISTFILES=	${PORTNAME:S/^platex-//}-${PORTVERSION:S/^1.0.20//}${EXTRACT_SUFX}:0 \
 		jis-tfm${EXTRACT_SUFX}:1 \
 		jis-pl${EXTRACT_SUFX}:1

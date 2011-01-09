@@ -12,7 +12,6 @@ MASTER_SITES=	LOCAL/chinsan/fonts/:uming \
 		http://ftp.debian.org/debian/pool/main/t/ttf-arphic-uming/:uming \
 		LOCAL/chinsan/fonts/:ukai \
 		http://ftp.debian.org/debian/pool/main/t/ttf-arphic-ukai/:ukai
-PKGNAMEPREFIX=	zh-
 DISTFILES=	ttf-arphic-uming_${PORTVERSION}.orig.tar.gz:uming \
 		ttf-arphic-ukai_${PORTVERSION}.orig.tar.gz:ukai
 

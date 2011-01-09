@@ -12,7 +12,6 @@ PORTVERSION=	0.1.20060303
 PORTREVISION=	4
 CATEGORIES=	chinese
 MASTER_SITES=	# none
-PKGNAMEPREFIX=	zh-
 DISTFILES=	# none
 
 # Note: Updates from intron@intron.ac should also be
