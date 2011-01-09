@@ -21,7 +21,7 @@ RUN_DEPENDS=	asterisk:${PORTSDIR}/net/asterisk16
 
 OPTIONS=	SAMPLE_CONFIG	"Install sample configuration files" off
 
-ONLY_FOR_ARCHS=	i386 amd64 powerpc
+ONLY_FOR_ARCHS=	i386 amd64 powerpc sparc64
 USE_AUTOTOOLS=	libtool
 USE_MYSQL=	yes
 USE_GMAKE=	yes
