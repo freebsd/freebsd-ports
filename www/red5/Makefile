@@ -7,6 +7,7 @@
 
 PORTNAME=	red5
 PORTVERSION=	0.9.1
+PORTREVISION=	1
 CATEGORIES=	www java
 MASTER_SITES=	http://www.red5.org/downloads/0_9/ \
 		http://red5.rmdir.fr/
@@ -41,5 +42,7 @@ post-install:
 	${MKDIR} ${DOCSDIR}
 	(cd ${WRKSRC}/doc && ${COPYTREE_SHARE} \* ${DOCSDIR})
 .endif
+	@${ECHO_CMD} '@exec ${CHOWN} -R ${RED5_USER}:${RED5_GRP} ${RED5_HOME}' \
+		>> ${TMPPLIST}
 
 .include <bsd.port.mk>
