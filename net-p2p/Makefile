@@ -106,6 +106,7 @@
     SUBDIR += py-transmissionrpc
     SUBDIR += py-vertex
     SUBDIR += qbittorrent-23
+    SUBDIR += qbittorrent-26
     SUBDIR += qtella
     SUBDIR += qtorrent
     SUBDIR += rtgui
