@@ -9,7 +9,8 @@ sbin/uacctd
 %%PORTDOCS%%%%DOCSDIR%%/EXAMPLES
 %%PORTDOCS%%%%DOCSDIR%%/FAQS
 %%PORTDOCS%%%%DOCSDIR%%/README
-%%EXAMPLESDIR%%/agent_to_peer.map
+%%EXAMPLESDIR%%/agent_to_peer.map.example
+%%EXAMPLESDIR%%/bgp_md5.lst.example
 %%EXAMPLESDIR%%/allow-list.example
 %%EXAMPLESDIR%%/is_symmetric.map.example
 %%EXAMPLESDIR%%/gnuplot-example.sh

@@ -6,12 +6,11 @@
 #
 
 PORTNAME=	pmacct
-DISTVERSION=	0.12.1
+DISTVERSION=	0.12.5
 CATEGORIES=	net-mgmt
-MASTER_SITES=	http://www.pmacct.net/ \
-		http://voodoo.bawue.com/download/
+MASTER_SITES=	http://www.pmacct.net/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	rpsfa@rit.edu
 COMMENT=	Accounting and aggregation tool for IPv4 and IPv6 traffic
 
 GNU_CONFIGURE=	yes
