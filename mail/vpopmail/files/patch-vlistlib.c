@@ -7,19 +7,11 @@ Description: Sanity and safety checks.
  Look for the arguments properly if progname should ever containing spaces.
 Forwarded: no
 Author: Peter Pentchev <roam@FreeBSD.org>
-Last-Update: 2009-11-26
+Last-Update: 2011-01-09
 
 --- a/vlistlib.c
 +++ b/vlistlib.c
-@@ -193,26 +193,26 @@
- 
-     if( DomainOnly ) {    //   Have domain
-         if ( strstr( Address, "@") != NULL ) return(4);
--        snprintf( LI->Name,   MAX_FILE_NAME, "%s", "" );
--        snprintf( LI->Domain, MAX_FILE_NAME, "%s", Address );
-+        snprintf( LI->Name,   sizeof(LI->Name), "%s", "" );
-+        snprintf( LI->Domain, sizeof(LI->Domain), "%s", Address );
-     }
+@@ -199,7 +199,7 @@
  
      else {                //   Have mail list
          if ( strstr( Address, "@") == NULL ) return(1);
@@ -28,26 +20,6 @@ Last-Update: 2009-11-26
      }
  
  //    printf( "before GetDomainEntries\n" );
- 
-     if(( LI->entry = get_domain_entries( LI->Domain )) == NULL ) return(3);
- 
--    snprintf( LI->OwnerEmail,   MAX_FILE_NAME, "postmaster@%s", LI->Domain ); 
--    snprintf( LI->ReplyTo_Addr, MAX_FILE_NAME, "%s", "" );
--    snprintf( LI->SQLBase,      MAX_FILE_NAME, "ezmlm" );
--    snprintf( LI->SQLHost,      MAX_FILE_NAME, "localhost" );
--    snprintf( LI->SQLPass,      MAX_FILE_NAME, "dbpass" );
--    snprintf( LI->SQLTable,     MAX_FILE_NAME, "ezmlm" );
--    snprintf( LI->SQLUser,      MAX_FILE_NAME, "dbUser" );
-+    snprintf( LI->OwnerEmail,   sizeof(LI->OwnerEmail), "postmaster@%s", LI->Domain );
-+    snprintf( LI->ReplyTo_Addr, sizeof(LI->ReplyTo_Addr), "%s", "" );
-+    snprintf( LI->SQLBase,      sizeof(LI->SQLBase), "ezmlm" );
-+    snprintf( LI->SQLHost,      sizeof(LI->SQLHost), "localhost" );
-+    snprintf( LI->SQLPass,      sizeof(LI->SQLPass), "dbpass" );
-+    snprintf( LI->SQLTable,     sizeof(LI->SQLTable), "ezmlm" );
-+    snprintf( LI->SQLUser,      sizeof(LI->SQLUser), "dbUser" );
- 
- //    printf( "before make name\n" );
- 
 @@ -228,12 +228,12 @@
  //    printf( "before Dir\n" );
  
