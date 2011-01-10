@@ -1,0 +1,11 @@
+--- src/Makefile.am	Sat Jul 10 06:54:31 2010 -0700
++++ src/Makefile.am	Fri Jul 23 06:16:56 2010 -0700
+@@ -52,8 +52,6 @@
+ 	exif.h\
+ 	livetracks.c\
+ 	livetracks.h\
+-	hrm_functions.c\
+-	hrm_functions.h\
+ 	dataupload.c\
+ 	dataupload.h
+ 
