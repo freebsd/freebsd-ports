@@ -7,6 +7,7 @@ bin/desktop-installer
 %%DATADIR%%/KDE4/Xsession
 %%DATADIR%%/KDE4/xinitrc
 %%DATADIR%%/PolicyKit.conf
+%%DATADIR%%/Scripts/battery_shutdown.sh
 %%DATADIR%%/XFCE4/GiveConsole
 %%DATADIR%%/XFCE4/Xsession
 %%DATADIR%%/XFCE4/Xsetup_0
@@ -18,6 +19,7 @@ bin/desktop-installer
 %%DATADIR%%/ntp.conf
 %%DATADIR%%/todo
 @dirrm %%DATADIR%%/XFCE4
+@dirrm %%DATADIR%%/Scripts
 @dirrm %%DATADIR%%/KDE4
 @dirrm %%DATADIR%%/KDE3
 @dirrm %%DATADIR%%/Gnome
