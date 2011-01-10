@@ -100,6 +100,7 @@ LIB_DEPENDS+=		avcodec.1:${PORTSDIR}/multimedia/ffmpeg
 .endif
 
 .if !defined(WITHOUT_NLS)
+PATCH_DEPENDS+=		${LOCALBASE}/bin/iconv:${PORTSDIR}/converters/libiconv
 USE_GETTEXT=		yes
 CONFIGURE_ARGS+=	--enable-nls --localedir=${LOCALBASE}/share/locale
 # causes vice to crash:
