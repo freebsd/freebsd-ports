@@ -109,8 +109,8 @@ pre-install:
 	${ECHO} .freeswitch-sounds >> ${PLIST}; \
 	${SED} -i "" -e "s:^:share/${BASE_PORTNAME}/sounds/:" ${PLIST}; \
 	${FIND} * -type d ! -empty | ${SORT} -r | ${SED} -e "s:^:@dirrm share/${BASE_PORTNAME}/sounds/:" | ${GREP} / >> ${PLIST}; \
-	${ECHO} "@dirrmtry share/${BASE_PORTNAME}/sounds 2> /dev/null || /usr/bin/true" >> ${PLIST}; \
-	${ECHO} "@dirrmtry share/${BASE_PORTNAME} 2> /dev/null || /usr/bin/true" >> ${PLIST};
+	${ECHO} "@dirrmtry share/${BASE_PORTNAME}/sounds" >> ${PLIST}; \
+	${ECHO} "@dirrmtry share/${BASE_PORTNAME}" >> ${PLIST};
 	${CHMOD} -R 0755 ${WRKDIR}/tmp/
 
 do-install:
