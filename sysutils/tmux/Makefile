@@ -7,7 +7,7 @@
 
 PORTNAME=	tmux
 PORTVERSION=	1.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
@@ -30,10 +30,6 @@ CFLAGS+=	-I${LOCALBASE}/include
 CONFIGURE_ARGS+=	CFLAGS="${CFLAGS}" LDFLAGS="${LDFLAGS}"
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 800000
-EXTRA_PATCHES+=		${PATCHDIR}/extra-patch-configure
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's#/usr/local#${LOCALBASE}#g' \
