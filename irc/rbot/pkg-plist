@@ -1,6 +1,7 @@
 bin/rbot
 bin/rbot-remote
 %%RUBY_SITELIBDIR%%/rbot/botuser.rb
+%%RUBY_SITELIBDIR%%/rbot/compat19.rb
 %%RUBY_SITELIBDIR%%/rbot/config-compat.rb
 %%RUBY_SITELIBDIR%%/rbot/config.rb
 %%RUBY_SITELIBDIR%%/rbot/core/auth.rb
@@ -14,8 +15,10 @@ bin/rbot-remote
 %%RUBY_SITELIBDIR%%/rbot/core/utils/extends.rb
 %%RUBY_SITELIBDIR%%/rbot/core/utils/filters.rb
 %%RUBY_SITELIBDIR%%/rbot/core/utils/httputil.rb
+%%RUBY_SITELIBDIR%%/rbot/core/utils/parse_time.rb
 %%RUBY_SITELIBDIR%%/rbot/core/utils/utils.rb
-%%RUBY_SITELIBDIR%%/rbot/dbhash.rb
+%%RUBY_SITELIBDIR%%/rbot/core/utils/wordlist.rb
+%%RUBY_SITELIBDIR%%/rbot/core/wordlist_ui.rb
 %%RUBY_SITELIBDIR%%/rbot/irc.rb
 %%RUBY_SITELIBDIR%%/rbot/ircbot.rb
 %%RUBY_SITELIBDIR%%/rbot/ircsocket.rb
@@ -27,14 +30,17 @@ bin/rbot-remote
 %%RUBY_SITELIBDIR%%/rbot/pkgconfig.rb
 %%RUBY_SITELIBDIR%%/rbot/plugins.rb
 %%RUBY_SITELIBDIR%%/rbot/rbotconfig.rb
-%%RUBY_SITELIBDIR%%/rbot/registry.rb
+%%RUBY_SITELIBDIR%%/rbot/registry/bdb.rb
+%%RUBY_SITELIBDIR%%/rbot/registry/tc.rb
 %%RUBY_SITELIBDIR%%/rbot/rfc2812.rb
 %%RUBY_SITELIBDIR%%/rbot/timer.rb
 %%DATADIR%%/contrib/plugins/stats.rb
 %%DATADIR%%/contrib/plugins/vandale.rb
+%%DATADIR%%/filters/rss.rb
 %%DATADIR%%/languages/dutch.lang
 %%DATADIR%%/languages/english.lang
 %%DATADIR%%/languages/french.lang
+%%DATADIR%%/languages/finnish.lang
 %%DATADIR%%/languages/german.lang
 %%DATADIR%%/languages/italian.lang
 %%DATADIR%%/languages/japanese.lang
@@ -61,18 +67,20 @@ bin/rbot-remote
 %%DATADIR%%/plugins/excuse.rb
 %%DATADIR%%/plugins/factoids.rb
 %%DATADIR%%/plugins/figlet.rb
-%%DATADIR%%/plugins/fish.rb
 %%DATADIR%%/plugins/forecast.rb
 %%DATADIR%%/plugins/fortune.rb
 %%DATADIR%%/plugins/freshmeat.rb
 %%DATADIR%%/plugins/geoip.rb
 %%DATADIR%%/plugins/games/azgame.rb
+%%DATADIR%%/plugins/games/hangman.rb
 %%DATADIR%%/plugins/games/quiz.rb
 %%DATADIR%%/plugins/games/roshambo.rb
 %%DATADIR%%/plugins/games/roulette.rb
 %%DATADIR%%/plugins/games/shiritori.rb
 %%DATADIR%%/plugins/games/uno.rb
 %%DATADIR%%/plugins/games/wheelfortune.rb
+%%DATADIR%%/plugins/googlefight.rb
+%%DATADIR%%/plugins/greet.rb
 %%DATADIR%%/plugins/grouphug.rb
 %%DATADIR%%/plugins/hl2.rb
 %%DATADIR%%/plugins/host.rb
@@ -84,12 +92,14 @@ bin/rbot-remote
 %%DATADIR%%/plugins/keywords.rb
 %%DATADIR%%/plugins/lart.rb
 %%DATADIR%%/plugins/lastfm.rb
+%%DATADIR%%/plugins/lib_spotify.rb
 %%DATADIR%%/plugins/linkbot.rb
 %%DATADIR%%/plugins/markov.rb
 %%DATADIR%%/plugins/math.rb
 %%DATADIR%%/plugins/modes.rb
 %%DATADIR%%/plugins/nickrecover.rb
 %%DATADIR%%/plugins/nickserv.rb
+%%DATADIR%%/plugins/note.rb
 %%DATADIR%%/plugins/nslookup.rb
 %%DATADIR%%/plugins/plugin.header
 %%DATADIR%%/plugins/quakeauth.rb
@@ -107,12 +117,14 @@ bin/rbot-remote
 %%DATADIR%%/plugins/shortenurls.rb
 %%DATADIR%%/plugins/slashdot.rb
 %%DATADIR%%/plugins/spell.rb
+%%DATADIR%%/plugins/spotify.rb
 %%DATADIR%%/plugins/theyfightcrime.rb
 %%DATADIR%%/plugins/threat.rb
 %%DATADIR%%/plugins/time.rb
 %%DATADIR%%/plugins/topic.rb
 %%DATADIR%%/plugins/translator.rb
 %%DATADIR%%/plugins/tube.rb
+%%DATADIR%%/plugins/tumblr.rb
 %%DATADIR%%/plugins/twitter.rb
 %%DATADIR%%/plugins/urban.rb
 %%DATADIR%%/plugins/url.rb
@@ -141,9 +153,11 @@ bin/rbot-remote
 @dirrm %%DATADIR%%/plugins/games
 @dirrm %%DATADIR%%/plugins
 @dirrm %%DATADIR%%/languages
+@dirrm %%DATADIR%%/filters
 @dirrm %%DATADIR%%/contrib/plugins
 @dirrm %%DATADIR%%/contrib
 @dirrm %%DATADIR%%
+@dirrm %%RUBY_SITELIBDIR%%/rbot/registry
 @dirrm %%RUBY_SITELIBDIR%%/rbot/core/utils
 @dirrm %%RUBY_SITELIBDIR%%/rbot/core
 @dirrm %%RUBY_SITELIBDIR%%/rbot
