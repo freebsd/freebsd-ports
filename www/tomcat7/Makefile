@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tomcat
-PORTVERSION=	7.0.4
+PORTVERSION=	7.0.5
 CATEGORIES=	www java
 MASTER_SITES=	${MASTER_SITE_APACHE}
 MASTER_SITE_SUBDIR=	tomcat/tomcat-7/v${PORTVERSION}-beta/bin
@@ -14,6 +14,9 @@ DISTNAME=	apache-${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	ale@FreeBSD.org
 COMMENT=	Open-source Java web server by Apache, 7.x branch
+
+LICENSE=	ASL
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+
