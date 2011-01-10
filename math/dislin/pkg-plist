@@ -578,6 +578,7 @@ dislin/chf/swgfnt.chf
 dislin/chf/swgfoc.chf
 dislin/chf/swghlp.chf
 dislin/chf/swgint.chf
+dislin/chf/swgiop.chf
 dislin/chf/swgjus.chf
 dislin/chf/swglis.chf
 dislin/chf/swgmix.chf
@@ -942,6 +943,7 @@ dislin/perl/contour.pl
 dislin/perl/curve.pl
 dislin/perl/Dislin.pm
 dislin/perl/Dislin.so
+%%DISLIN8%%dislin/perl/Dislin.so.5.8.9
 dislin/perl/dislin-%%VER%%.perl.tar.gz
 dislin/perl/intpol.pl
 dislin/perl/legend.pl

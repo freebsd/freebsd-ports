@@ -7,6 +7,7 @@
 
 PORTNAME=	dislin
 PORTVERSION=	10.0
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	ftp://ftp.gwdg.de/pub/grafik/dislin/unix/
 DISTNAME=	${PORTNAME}-${PORTVERSION}.fbsd${BINVER}
@@ -16,8 +17,6 @@ MAINTAINER=	sylvio@FreeBSD.org
 COMMENT=	A scientific data plotting package
 
 LIB_DEPENDS=	f2c.2:${PORTSDIR}/lang/f2c
-
-BROKEN=		size mismatch
 
 RESTRICTED=	free for non-commercial use.
 USE_XORG=	x11
@@ -39,12 +38,14 @@ USE_LDCONFIG=	yes
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 700000
-BINVER=		-6.0
-BINDIR=		60
+.if ${OSVERSION} > 800000
+BINVER=
+BINDIR=
+PLIST_SUB+=	DISLIN8=""
 .else
 BINVER=		-7.0
-BINDIR=		70
+BINDIR=		_70
+PLIST_SUB+=	DISLIN8="@comment "
 .endif
 
 SCRIPTS2FIX=	clink dlink f2clink
@@ -52,7 +53,7 @@ SCRIPTS2FIX=	clink dlink f2clink
 pre-configure:
 .for sc in ${SCRIPTS2FIX}
 	${REINPLACE_CMD} -e '/libs="-L$$DISLIN/s|"$$| ${PTHREAD_LIBS}"|'	\
-		${WRKSRC}/fbsd_${BINDIR}/bin/${sc}
+		${WRKSRC}/fbsd${BINDIR}/bin/${sc}
 .endfor
 
 do-install:
