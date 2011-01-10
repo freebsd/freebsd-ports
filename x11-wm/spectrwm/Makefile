@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	scrotwm
-PORTVERSION=	0.9.25
+PORTVERSION=	0.9.27
 CATEGORIES=	x11-wm
-MASTER_SITES=	http://scrotwm.org/snapshot/ \
-		http://www.peereboom.us/scrotwm/snapshot/
+MASTER_SITES=	http://opensource.conformal.com/snapshots/scrotwm/ \
+		http://scrotwm.org/snapshot/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	aragon@phat.za.net
