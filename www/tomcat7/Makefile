@@ -30,7 +30,8 @@ TOMCAT_SUBDIR?=	${DISTNAME:R}
 TOMCAT_HOME=	${PREFIX}/${TOMCAT_SUBDIR}
 CONF_FILES=	catalina.policy catalina.properties context.xml logging.properties server.xml tomcat-users.xml web.xml
 CONF_EXT=	sample
-PLIST_SUB=	T=${TOMCAT_SUBDIR} CONF_EXT=${CONF_EXT}
+PLIST_SUB=	T=${TOMCAT_SUBDIR} CONF_EXT=${CONF_EXT} \
+		WWWOWN=${WWWOWN} WWWGRP=${WWWGRP}
 LATEST_LINK=	${APP_SHORTNAME}
 
 SUB_LIST=	TOMCAT_HOME=${TOMCAT_HOME} \
