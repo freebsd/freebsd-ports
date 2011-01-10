@@ -2,7 +2,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/memcache-support.txt
 %%PORTDOCS%%%%DOCSDIR%%/pluggable-replication-policies.txt
 %%PORTDOCS%%%%DOCSDIR%%/testing.txt
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/mogilefs-server/.packlist
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/MogileFS/Server/.packlist
 %%SITE_PERL%%/MogileFS/Class.pm
 %%SITE_PERL%%/MogileFS/Config.pm
 %%SITE_PERL%%/MogileFS/Connection/Client.pm
@@ -19,10 +19,7 @@
 %%SITE_PERL%%/MogileFS/IOStatWatcher.pm
 %%SITE_PERL%%/MogileFS/Overview.pm
 %%SITE_PERL%%/MogileFS/ProcManager.pm
-%%SITE_PERL%%/MogileFS/RebalancePolicy.pm
-%%SITE_PERL%%/MogileFS/RebalancePolicy/DrainDevices.pm
-%%SITE_PERL%%/MogileFS/RebalancePolicy/PercentFree.pm
-%%SITE_PERL%%/MogileFS/RebalancePolicy/Random.pm
+%%SITE_PERL%%/MogileFS/Rebalance.pm
 %%SITE_PERL%%/MogileFS/ReplicationPolicy.pm
 %%SITE_PERL%%/MogileFS/ReplicationPolicy/MultipleHosts.pm
 %%SITE_PERL%%/MogileFS/ReplicationPolicy/Union.pm
@@ -119,8 +116,8 @@ bin/mogstored
 @dirrmtry %%SITE_PERL%%/MogileFS/Worker
 @dirrmtry %%SITE_PERL%%/MogileFS/Store
 @dirrmtry %%SITE_PERL%%/MogileFS/ReplicationPolicy
-@dirrmtry %%SITE_PERL%%/MogileFS/RebalancePolicy
 @dirrmtry %%SITE_PERL%%/MogileFS/Connection
 @dirrmtry %%SITE_PERL%%/MogileFS
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/mogilefs-server
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MogileFS/Server
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MogileFS
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
