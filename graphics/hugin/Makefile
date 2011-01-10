@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	hugin
-PORTVERSION=	2009.4.0
-PORTREVISION=	6
+PORTVERSION=	2010.4.0
 CATEGORIES=	graphics
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION:R}
 
@@ -28,6 +27,8 @@ RUN_DEPENDS=	enblend>=3.1.r20080615:${PORTSDIR}/graphics/enblend \
 		exiftool:${PORTSDIR}/graphics/p5-Image-ExifTool \
 		gmake:${PORTSDIR}/devel/gmake
 
+USE_BZIP2=	yes
+
 OPTIONS=	PANOMATIC "Install graphics/panomatic" on \
 		AUTOPANOSIFT "Install graphics/autopano-sift" off \
 		AUTOPANOSIFTC "Install graphics/autopano-sift-c" on
@@ -39,6 +40,7 @@ CMAKE_VERBOSE=	yes
 CMAKE_USE_PTHREAD=	yes
 
 USE_WX=		2.8+
+WX_UNICODE=	yes
 
 USE_GETTEXT=	yes
 
@@ -50,14 +52,21 @@ MAN1=		\
 		autooptimiser.1 \
 		calibrate_lens.1 \
 		celeste_standalone.1 \
+		checkpto.1 \
 		cpclean.1 \
+		cpfind.1 \
+		deghosting_mask.1 \
 		fulla.1 \
 		hugin.1 \
 		hugin_hdrmerge.1 \
 		hugin_stitch_project.1 \
+		icpfind.1 \
 		nona.1 \
 		nona_gui.1 \
+		pano_modify.1 \
+		pano_trafo.1 \
 		pto2mk.1 \
+		pto_merge.1 \
 		tca_correct.1 \
 		vig_optimize.1
 
@@ -83,11 +92,6 @@ post-configure:
 		${WRKSRC}/src/hugin1/stitch_project/CMakeFiles/hugin_stitch_project.dir/link.txt
 
 .include <bsd.port.pre.mk>
-
-# see the commit log message for Makefile rev 1.43
-.if ${OSVERSION} < 700000
-USE_GCC=	4.2
-.endif
 
 .if defined(WITH_PANOMATIC)
 RUN_DEPENDS+=	panomatic:${PORTSDIR}/graphics/panomatic
