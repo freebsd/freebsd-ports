@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	wbxml2
-PORTVERSION=	0.10.8
+PORTVERSION=	0.10.9
 CATEGORIES=	textproc devel
 MASTER_SITES=	SF/libwbxml/libwbxml/${PORTVERSION}
 DISTNAME=	libwbxml-${PORTVERSION}
@@ -14,7 +14,8 @@ DISTNAME=	libwbxml-${PORTVERSION}
 MAINTAINER=	flo@FreeBSD.org
 COMMENT=	Library & tools for converting wbxml<->xml
 
-LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2
+LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2 \
+		iconv.3:${PORTSDIR}/converters/libiconv
 
 WRKSRC=			${WRKDIR}/libwbxml-${PORTVERSION}
 CONFIGURE_WRKSRC=	${WRKDIR}/libwbxml-${PORTVERSION}/build
