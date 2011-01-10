@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	desktop-installer
-PORTVERSION=	0.2
+PORTVERSION=	0.3
 CATEGORIES=	sysutils
 MASTER_SITES=	http://personalpages.tds.net/~jwbacon/Ports/distfiles/ \
 		http://jbacon.dyndns.org/~bacon/Ports/distfiles/
@@ -27,6 +27,8 @@ do-install:
 		${PREFIX}/man/man1/amd-setup.1
 	${MKDIR} ${DATADIR}
 	${CP} -r ${WRKSRC}/Data/* ${DATADIR}
+	${MKDIR} ${DATADIR}/Scripts
+	${INSTALL_SCRIPT} ${WRKSRC}/Scripts/* ${DATADIR}/Scripts
 
 .include <bsd.port.pre.mk>
 post-patch:
