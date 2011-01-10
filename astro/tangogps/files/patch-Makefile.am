@@ -1,0 +1,11 @@
+--- Makefile.am	Sat Jul 10 06:54:31 2010 -0700
++++ Makefile.am	Fri Jul 23 21:28:20 2010 -0700
+@@ -5,7 +5,7 @@
+ 
+ SUBDIRS = po src pixmaps data
+ 
+-tangogpsdocdir = ${prefix}/doc/tangogps
++tangogpsdocdir = ${prefix}/share/doc/tangogps
+ tangogpsdoc_DATA = \
+ 	README\
+ 	COPYING\

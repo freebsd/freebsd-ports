@@ -1,0 +1,11 @@
+--- configure.in	Sat Jul 10 06:54:31 2010 -0700
++++ configure.in	Fri Jul 23 05:48:57 2010 -0700
+@@ -23,7 +23,7 @@
+ 
+ AM_PROG_LIBTOOL
+ 
+-PKG_CHECK_MODULES(PACKAGE, [gtk+-2.0 gdk-2.0 gconf-2.0 libxml-2.0 libsoup-2.4 bluez])
++PKG_CHECK_MODULES(PACKAGE, [gtk+-2.0 gdk-2.0 gconf-2.0 libxml-2.0 libsoup-2.4])
+ AC_SUBST(PACKAGE_CFLAGS)
+ AC_SUBST(PACKAGE_LIBS)
+ 
