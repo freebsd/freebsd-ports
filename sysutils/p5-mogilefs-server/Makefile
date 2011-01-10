@@ -6,11 +6,12 @@
 #
 
 PORTNAME=	mogilefs-server
-PORTVERSION=	2.37
+PORTVERSION=	2.45
 CATEGORIES=	sysutils perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	../../authors/id/D/DO/DORMANDO
 PKGNAMEPREFIX=	p5-
+DISTNAME=	MogileFS-Server-${PORTVERSION}
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	MogileFS (distributed filesystem) server
