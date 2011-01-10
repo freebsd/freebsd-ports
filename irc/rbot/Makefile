@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	rbot
-PORTVERSION=	0.9.14
-PORTREVISION=	1
+PORTVERSION=	0.9.15
 CATEGORIES=	irc ruby
 MASTER_SITES=	http://ruby-rbot.org/download/
 EXTRACT_SUFX=	.tgz
@@ -25,9 +24,12 @@ CONFIGURE_ARGS=	--prefix=${PREFIX}
 PKGMESSAGE=	${WRKDIR}/pkg-message
 SUB_FILES=	pkg-message
 
-PORTDOCS=	README REQUIREMENTS ChangeLog
+PORTDOCS=	REQUIREMENTS ChangeLog
 
 .include <bsd.port.pre.mk>
+
+pre-install:
+	${RM} ${WRKSRC}/bin/svnwatch-postcommit-hook
 
 post-install:
 .if !defined(NOPORTDOCS)
