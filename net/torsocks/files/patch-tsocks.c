@@ -14,14 +14,6 @@
  /* Global configuration variables */
  const char *progname = "libtorsocks";         /* Name used in err msgs    */
  
-@@ -62,7 +69,6 @@
- #include <stdlib.h>
- #include <unistd.h>
- #include <dlfcn.h>
--#include <sys/types.h>
- #include <sys/socket.h>
- #include <string.h>
- #include <strings.h>
 @@ -163,7 +169,7 @@
  void tsocks_init(void) {
  

@@ -5,12 +5,11 @@
 # $FreeBSD$
 
 PORTNAME=	torsocks
-PORTVERSION=	1.0
-PORTREVISION=	3
+PORTVERSION=	1.1
 CATEGORIES=	net security
 MASTER_SITES=	GOOGLE_CODE \
 		http://tor.reactor-xg.kiev.ua/files/
-DISTNAME=	${PORTNAME}-${PORTVERSION}-epsilon
+DISTNAME=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	andy.lavr@gmail.com
 COMMENT=	Most SOCKS-friendly applications way with Tor
@@ -27,17 +26,12 @@ MAN8=		torsocks.8
 
 SUB_FILES=	pkg-message
 
-OPTIONS=	TORDNS "Use tordns" on \
-		SOCKSDNS "Use socks server for DNS lookups" off \
+OPTIONS=	SOCKSDNS "Use socks server for DNS lookups" off \
 		OLDMETHOD "Do not use RTLD_NEXT parameter to dlsym" off \
 		NODEBUG "Disable output of error messages" off \
 		HOSTNAMES "Disable DNS lookups of socks server" off
 
 .include <bsd.port.pre.mk>
-
-.if defined(WITHOUT_TORDNS)
-CONFIGURE_ARGS+=	--disable-tordns
-.endif
 
 .if defined(WITH_SOCKSDNS)
 CONFIGURE_ARGS+=	--enable-socksdns
@@ -60,15 +54,6 @@ BROKEN=		HOSTNAMES option is necessary if SOCKSDNS option is enabled
 .endif
 
 pre-everything::
-.if !defined(WITHOUT_TORDNS)
-	@${ECHO_MSG}
-	@${ECHO_MSG} "You can deselect the TORDNS option."
-	@${ECHO_MSG} "This option disables tordns, which causes"
-	@${ECHO_MSG} "names to be looked up in a way designed to"
-	@${ECHO_MSG} "work well with Tor."
-	@${ECHO_MSG}
-.endif
-
 .if !defined(WITH_SOCKSDNS)
 	@${ECHO_MSG}
 	@${ECHO_MSG} "You can use the SOCKSDNS option."
