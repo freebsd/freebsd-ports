@@ -22,5 +22,5 @@ include/pano13/queryfeature.h
 include/pano13/version.h
 lib/libpano13.la
 lib/libpano13.so
-lib/libpano13.so.0
+lib/libpano13.so.2
 @dirrm include/pano13
