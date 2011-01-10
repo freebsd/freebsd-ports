@@ -36,9 +36,7 @@ do-install:
 	@${ECHO_MSG} " [DONE]"
 .if !defined(NOPORTDOCS)
 	@${ECHO_MSG} -n ">> Installing documentation..."
-#	@${MKDIR} ${DOCSDIR}/api
-#	@cd ${WRKSRC}/javadocs && ${FIND} * \
-#	  | ${CPIO} -pdmu -R ${SHAREOWN}:${SHAREGRP} ${DOCSDIR}/api > /dev/null 2>&1
+	@${MKDIR} ${DOCSDIR}
 	@${INSTALL_DATA} ${WRKSRC}/RELEASE_NOTES.txt ${DOCSDIR}
 	@${ECHO_MSG} " [DONE]"
 .endif
