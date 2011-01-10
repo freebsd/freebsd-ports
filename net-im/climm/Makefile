@@ -80,6 +80,7 @@ LIB_DEPENDS+=		iksemel:${PORTSDIR}/textproc/iksemel \
 
 post-patch:
 	@${REINPLACE_CMD} -e '/^SUBDIRS =/s/ doc//' ${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e '/^noinst_LIBRARIES/d' ${WRKSRC}/src/Makefile.in
 	@${REINPLACE_CMD} -e '/ac_lib/s/tcl8\./tcl8/g' \
 		-e '/libgnutls_config_version=/s/--version/--modversion/' \
 		${WRKSRC}/configure
