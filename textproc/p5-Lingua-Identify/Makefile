@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Lingua-Identify
-PORTVERSION=	0.26
+PORTVERSION=	0.29
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -27,6 +27,7 @@ MAN3=	Lingua::Identify.3 \
 	Lingua::Identify::BG.3 \
 	Lingua::Identify::DA.3 \
 	Lingua::Identify::DE.3 \
+	Lingua::Identify::EL.3 \
 	Lingua::Identify::EN.3 \
 	Lingua::Identify::ES.3 \
 	Lingua::Identify::FI.3 \

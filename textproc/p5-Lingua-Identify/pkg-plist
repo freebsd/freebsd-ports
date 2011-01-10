@@ -4,6 +4,7 @@ bin/make-lingua-identify-language
 %%SITE_PERL%%/Lingua/Identify/BG.pm
 %%SITE_PERL%%/Lingua/Identify/DA.pm
 %%SITE_PERL%%/Lingua/Identify/DE.pm
+%%SITE_PERL%%/Lingua/Identify/EL.pm
 %%SITE_PERL%%/Lingua/Identify/EN.pm
 %%SITE_PERL%%/Lingua/Identify/ES.pm
 %%SITE_PERL%%/Lingua/Identify/FI.pm
