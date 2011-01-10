@@ -888,6 +888,7 @@
     SUBDIR += tren
     SUBDIR += ts
     SUBDIR += tss
+    SUBDIR += tty-clock
     SUBDIR += ttyload
     SUBDIR += tw_cli
     SUBDIR += ua
