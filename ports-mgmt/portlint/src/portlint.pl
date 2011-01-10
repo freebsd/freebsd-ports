@@ -17,7 +17,7 @@
 # OpenBSD and NetBSD will be accepted.
 #
 # $FreeBSD$
-# $MCom: portlint/portlint.pl,v 1.203 2010/11/07 22:10:25 marcus Exp $
+# $MCom: portlint/portlint.pl,v 1.207 2011/01/10 04:42:45 marcus Exp $
 #
 
 use strict;
@@ -52,7 +52,7 @@ $portdir = '.';
 # version variables
 my $major = 2;
 my $minor = 13;
-my $micro = 2;
+my $micro = 3;
 
 sub l { '[{(]'; }
 sub r { '[)}]'; }
@@ -464,7 +464,7 @@ if ($committer) {
 				if /^(?:\.\.?|CVS)$/;
 			my $filename = $dir eq '.' ? $_ : "$dir/$_";
 			if (-d $filename) {
-				if (!$entries{$_} || $entries{$_} ne 'D') {
+				if ((!$entries{$_} || $entries{$_} ne 'D') && $filename ne 'work') {
 					&perror("FATAL", "", -1, "directory $filename not in CVS.");
 				}
 				else {
@@ -699,8 +699,13 @@ sub checkplist {
 	# E.g., %%PORTDOCS%%%%RUBY_MODDOCDIR%% will be OK because there is
 	# no %%PORTRUBY_MODDOC%% substitution.
 	my %check_xxxdir_ok = (
+		"DOCS"				=> "DOCS",
+		"EXAMPLES"			=> "EXPAMPLES",
+		"DATA"				=> "DATA",
+		"RUBY_DOC"			=> "DOCS",
+		"RUBY_EXAMPLES"		=> "EXAMPLES",
 		"RUBY_MODDOC" 		=> "DOCS",
-		"RUBY_MODEXAMPLES"	=> "DOCS",
+		"RUBY_MODEXAMPLES"	=> "EXAMPLES",
 	);
 
 	open(IN, "< $file") || return 0;
@@ -925,7 +930,7 @@ sub checkplist {
 
 		if ($_ =~ m{^%%PORT(\w+)%%(.*?)%%(\w+)DIR%%(.*)$} and $1 ne $3) {
 			&perror("WARN", $file, $., "Do not mix %%PORT$1%% with %%$3DIR%%. ".
-				"Use '%%PORT$3%%$2%%$3DIR%%$4' instead and update Makefile ".
+				"Use '%%PORT$check_xxxdir_ok{$3}%%$2%%$3DIR%%$4' instead and update Makefile ".
 				"accordingly.") unless (defined($check_xxxdir_ok{$3}) and
 					$check_xxxdir_ok{$3} eq $1);
 		}
