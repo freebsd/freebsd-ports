@@ -453,12 +453,12 @@ SEDLIST+=	-e 's,^\# (HAVE_IPV6=),\1,'
 SEDLIST+=	-e 's,^\# (DISABLE_D_OPTION=),\1,'
 .else
 .if defined(WHITELIST_D_MACROS)
-SEDLIST+=	-e 's,^\# (WHITELIST_D_MACROS=).*$$,\1=${WHITELIST_D_MACROS:S/,/\\,/g},'
+SEDLIST+=	-e 's,^\# (WHITELIST_D_MACROS=).*$$,\1${WHITELIST_D_MACROS:S/,/\\,/g},'
 .endif
 .endif
 
 .if defined(TRUSTED_CONFIG_LIST)
-SEDLIST+=	-e 's,^\# (TRUSTED_CONFIG_LIST=).*$$,\1=${TRUSTED_CONFIG_LIST:S/,/\\,/g},'
+SEDLIST+=	-e 's,^\# (TRUSTED_CONFIG_LIST=).*$$,\1${TRUSTED_CONFIG_LIST:S/,/\\,/g},'
 .endif
 
 DUMMY_LDFLAGS!=	${ECHO_CMD} ${LDFLAGS} | ${SED} -e 's|-Wl,-rpath|-Wl,-DUMMYrpath|g; s|-rpath|-Wl,-rpath|g; s|-DUMMYrpath|-rpath|g'
