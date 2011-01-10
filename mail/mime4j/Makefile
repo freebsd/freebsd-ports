@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mime4j
-PORTVERSION=	0.6
+PORTVERSION=	0.6.1
 CATEGORIES=	mail java
 MASTER_SITES=	${MASTER_SITE_APACHE}
 MASTER_SITE_SUBDIR=	james/${PORTNAME}
@@ -16,6 +16,9 @@ MAINTAINER=	ale@FreeBSD.org
 COMMENT=	A Java parser for e-mail message streams
 
 RUN_DEPENDS=	${JAVAJARDIR}/commons-logging.jar:${PORTSDIR}/java/jakarta-commons-logging
+
+LICENSE=	ASL
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USE_JAVA=	yes
 JAVA_VERSION=	1.5+
@@ -33,9 +36,9 @@ do-install:
 	@${ECHO_MSG} " [DONE]"
 .if !defined(NOPORTDOCS)
 	@${ECHO_MSG} -n ">> Installing documentation..."
-	@${MKDIR} ${DOCSDIR}/api
-	@cd ${WRKSRC}/javadocs && ${FIND} * \
-	  | ${CPIO} -pdmu -R ${SHAREOWN}:${SHAREGRP} ${DOCSDIR}/api > /dev/null 2>&1
+#	@${MKDIR} ${DOCSDIR}/api
+#	@cd ${WRKSRC}/javadocs && ${FIND} * \
+#	  | ${CPIO} -pdmu -R ${SHAREOWN}:${SHAREGRP} ${DOCSDIR}/api > /dev/null 2>&1
 	@${INSTALL_DATA} ${WRKSRC}/RELEASE_NOTES.txt ${DOCSDIR}
 	@${ECHO_MSG} " [DONE]"
 .endif
