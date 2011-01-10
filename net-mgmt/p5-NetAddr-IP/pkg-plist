@@ -11,8 +11,6 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/NetAddr/IP/Util/inet_n2ad.al
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/NetAddr/IP/Util/inet_n2dx.al
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/NetAddr/IP/Util/ipv6_aton.al
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/NetAddr/IP/Util/ipv6_n2d.al
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/NetAddr/IP/Util/ipv6_n2x.al
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/NetAddr/IP/UtilPP/_128x10.al
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/NetAddr/IP/UtilPP/_128x2.al
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/NetAddr/IP/UtilPP/_bcd2bin.al

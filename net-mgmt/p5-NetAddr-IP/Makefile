@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	NetAddr-IP
-PORTVERSION=	4.02.8
+PORTVERSION=	4.038
 CATEGORIES=	net-mgmt perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
-DISTNAME=	${PORTNAME}-${PORTVERSION:C/.([0-9])$/\1/}
 
 MAINTAINER=	tobez@FreeBSD.org
 COMMENT=	Perl module for working with IP addresses and blocks thereof
