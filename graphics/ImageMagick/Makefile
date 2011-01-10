@@ -302,6 +302,7 @@ CONFIGURE_ARGS+=	--without-fontconfig
 .if defined(WITH_IMAGEMAGICK_WMF)
 LIB_DEPENDS+=		wmf:${PORTSDIR}/graphics/libwmf
 CONFIGURE_ARGS+=	--with-wmf=yes
+CFLAGS+=		-I${LOCALBASE}/include/freetype2
 PLIST_SUB+=		WMF=""
 .else
 CONFIGURE_ARGS+=	--without-wmf
