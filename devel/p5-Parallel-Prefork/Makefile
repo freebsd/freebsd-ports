@@ -6,21 +6,20 @@
 #
 
 PORTNAME=	Parallel-Prefork
-PORTVERSION=	0.08
+PORTVERSION=	0.11
 CATEGORIES=	devel perl5
-MASTER_SITES=	CPAN
-MASTER_SITE_SUBDIR=	Parallel
+MASTER_SITES=	CPAN/../../authors/id/K/KA/KAZUHO
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	tobez@FreeBSD.org
 COMMENT=	A simple prefork server framework
 
 BUILD_DEPENDS=	p5-Proc-Wait3>=0.03:${PORTSDIR}/devel/p5-Proc-Wait3 \
-		p5-Class-Accessor>=0.31:${PORTSDIR}/devel/p5-Class-Accessor \
+		p5-Class-Accessor-Lite>=0.04:${PORTSDIR}/devel/p5-Class-Accessor-Lite \
 		p5-List-MoreUtils>=0:${PORTSDIR}/lang/p5-List-MoreUtils \
 		p5-Scope-Guard>=0:${PORTSDIR}/devel/p5-Scope-Guard
-
 RUN_DEPENDS=	${BUILD_DEPENDS}
+TEST_DEPENDS=	p5-Test-Requires>=0:${PORTSDIR}/devel/p5-Test-Requires
 
 PERL_CONFIGURE=	yes
 
