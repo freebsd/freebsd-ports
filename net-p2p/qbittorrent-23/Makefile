@@ -13,6 +13,9 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PKGNAME}/
 MAINTAINER=	dougb@FreeBSD.org
 COMMENT=	Bittorrent client using Qt4 and libtorrent-rasterbar
 
+DEPRECATED=	Old version, no longer supported. Upgrade to qbittorrent-26.
+EXPIRATION_DATE=	2011-01-23
+
 LIB_DEPENDS=	execinfo.1:${PORTSDIR}/devel/libexecinfo \
 		torrent-rasterbar.6:${PORTSDIR}/net-p2p/libtorrent-rasterbar-15 \
 		GeoIP.5:${PORTSDIR}/net/GeoIP
