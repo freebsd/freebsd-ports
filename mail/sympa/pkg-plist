@@ -236,6 +236,7 @@ sympa/default/scenari/send.public_nobcc
 sympa/default/scenari/send.publickey
 sympa/default/scenari/send.publicnoattachment
 sympa/default/scenari/send.publicnomultipart
+sympa/default/scenari/spam_status.x-spam-status
 sympa/default/scenari/subscribe.auth
 sympa/default/scenari/subscribe.auth_notify
 sympa/default/scenari/subscribe.auth_owner
@@ -277,9 +278,11 @@ sympa/default/web_tt2/arc_protect.tt2
 sympa/default/web_tt2/arcsearch.tt2
 sympa/default/web_tt2/arcsearch_form.tt2
 sympa/default/web_tt2/authorization_reject.tt2
+sympa/default/web_tt2/auto_signoff.tt2
 sympa/default/web_tt2/blacklist.tt2
 sympa/default/web_tt2/button_footer.tt2
 sympa/default/web_tt2/button_header.tt2
+sympa/default/web_tt2/ca.tt2
 sympa/default/web_tt2/change_email.tt2
 sympa/default/web_tt2/change_email_request.tt2
 sympa/default/web_tt2/choosepasswd.tt2
@@ -299,6 +302,7 @@ sympa/default/web_tt2/d_upload.tt2
 sympa/default/web_tt2/dump_scenario.tt2
 sympa/default/web_tt2/dumpvars.tt2
 sympa/default/web_tt2/edit_attributes.tt2
+sympa/default/web_tt2/edit_config.tt2
 sympa/default/web_tt2/edit_list_request.tt2
 sympa/default/web_tt2/edit_template.tt2
 sympa/default/web_tt2/editfile.tt2
@@ -330,6 +334,7 @@ sympa/default/web_tt2/javascript.tt2
 sympa/default/web_tt2/latest_arc.tt2
 sympa/default/web_tt2/latest_d_read.tt2
 sympa/default/web_tt2/latest_lists.tt2
+sympa/default/web_tt2/lca.tt2
 sympa/default/web_tt2/list_button_footer.tt2
 sympa/default/web_tt2/list_button_header.tt2
 sympa/default/web_tt2/list_menu.tt2
@@ -368,6 +373,7 @@ sympa/default/web_tt2/serveradmin.tt2
 sympa/default/web_tt2/set_pending_list_request.tt2
 sympa/default/web_tt2/setlang.tt2
 sympa/default/web_tt2/show_cert.tt2
+sympa/default/web_tt2/show_exclude.tt2
 sympa/default/web_tt2/show_sessions.tt2
 sympa/default/web_tt2/sigrequest.tt2
 sympa/default/web_tt2/skinsedit.tt2
@@ -376,6 +382,8 @@ sympa/default/web_tt2/stats.tt2
 sympa/default/web_tt2/subindex.tt2
 sympa/default/web_tt2/suboptions.tt2
 sympa/default/web_tt2/subrequest.tt2
+sympa/default/web_tt2/subscriber_table.tt2
+sympa/default/web_tt2/suspend_request.tt2
 sympa/default/web_tt2/ticket.tt2
 sympa/default/web_tt2/title.tt2
 sympa/default/web_tt2/tt2_error.tt2
@@ -472,16 +480,17 @@ sympa/static_content/icons/sv.png
 sympa/static_content/icons/text.png
 sympa/static_content/icons/top.png
 sympa/static_content/icons/unknown.png
-%%EXAMPLESDIR%%/test/web_tt2/welcome.tt2
-%%EXAMPLESDIR%%/test/config
-%%EXAMPLESDIR%%/test/info
-%%EXAMPLESDIR%%/test/message.footer
-%%EXAMPLESDIR%%/README
-%%EXAMPLESDIR%%/trusted_applications.conf
-%%EXAMPLESDIR%%/robot.conf
-%%EXAMPLESDIR%%/employees.ldap
-@dirrm %%EXAMPLESDIR%%/test/web_tt2
-@dirrm %%EXAMPLESDIR%%/test
+%%EXAMPLESDIR%%/sample/test/web_tt2/welcome.tt2
+%%EXAMPLESDIR%%/sample/test/config
+%%EXAMPLESDIR%%/sample/test/info
+%%EXAMPLESDIR%%/sample/test/message.footer
+%%EXAMPLESDIR%%/sample/README
+%%EXAMPLESDIR%%/sample/trusted_applications.conf
+%%EXAMPLESDIR%%/sample/robot.conf
+%%EXAMPLESDIR%%/sample/employees.ldap
+@dirrm %%EXAMPLESDIR%%/sample/test/web_tt2
+@dirrm %%EXAMPLESDIR%%/sample/test
+@dirrm %%EXAMPLESDIR%%/sample
 @dirrm %%EXAMPLESDIR%%
 @dirrm sympa/static_content/icons
 @dirrm sympa/static_content

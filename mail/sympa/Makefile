@@ -6,15 +6,13 @@
 #
 
 PORTNAME=	sympa
-PORTVERSION=	6.0.5
+PORTVERSION=	6.1.3
 CATEGORIES=	mail
 MASTER_SITES=	http://www.sympa.org/distribution/ \
 		http://www.sympa.org/distribution/old/
 
 MAINTAINER=	utisoft@gmail.com
 COMMENT=	Sympa is an electronic mailing list manager
-
-LICENSE=	GPLv2
 
 BUILD_DEPENDS+=	${SITE_PERL}/Mail/Mailer.pm:${PORTSDIR}/mail/p5-Mail-Tools \
 		${SITE_PERL}/IO/Stringy.pm:${PORTSDIR}/devel/p5-IO-stringy \
@@ -28,14 +26,18 @@ BUILD_DEPENDS+=	${SITE_PERL}/Mail/Mailer.pm:${PORTSDIR}/mail/p5-Mail-Tools \
 		${SITE_PERL}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
+LICENSE=	GPLv2
+
 HAS_CONFIGURE=	yes
 USE_PERL5=	yes
 USE_APACHE=	1.3+
 CONFIGURE_ARGS+=--prefix=${PREFIX}/sympa \
 		--with-confdir=${PREFIX}/etc \
+		--with-docdir=${EXAMPLESDIR} \
 		--with-initdir=${PREFIX}/etc/rc.d \
 		--with-etcdir=${PREFIX}/sympa/bin/etc \
 		--with-iconsdir=${PREFIX}/www/icons \
+		--with-lockdir=/var/spool/lock \
 		--mandir=${PREFIX}/man \
 		${CONFIGURE_TARGET}
 CONFIGURE_ENV+=	lt_cv_sys_max_cmd_len=${CONFIGURE_MAX_CMD_LEN}
@@ -94,6 +96,8 @@ pre-install:
 	@PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 
 post-patch:
+	${REINPLACE_CMD} -e 's/\$$(DESTDIR)\$$(sampledir)/\$$(sampledir)/g' \
+		${WRKSRC}/doc/sample/Makefile.in
 	@${FIND} ${WRKSRC} -name "*.orig" -a -exec ${RM} -f {} \;
 
 post-install:
