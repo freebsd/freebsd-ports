@@ -1,3 +1,4 @@
+include/gavl/compression.h
 include/gavl/gavl.h
 include/gavl/gavl_version.h
 include/gavl/gavldefs.h
