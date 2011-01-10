@@ -6,27 +6,24 @@
 #
 
 PORTNAME=	amiwm
-PORTVERSION=	0.20.p48
-PORTREVISION=	2
+PORTVERSION=	0.21.pl2
 CATEGORIES=	x11-wm
-MASTER_SITES=	ftp://ftp.lysator.liu.se/pub/X11/wm/amiwm/ \
-		http://www.plig.org/xwinman/archive/amiwm/
-DISTNAME=	${PORTNAME}0.20pl48
+MASTER_SITES=	ftp://ftp.lysator.liu.se/pub/X11/wm/amiwm/
+DISTNAME=	${PORTNAME}0.21pl2
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	dcarmich@dcarmichael.net
 COMMENT=	A window manager that makes your desktop look like an Amiga(TM)
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CFLAGS="${CFLAGS} -DHAVE_X11_EXTENSIONS_SHAPE_H"
 USE_XORG=	x11 ice sm xext xmu
 MAN1=		amiwm.1
 
 post-install:
 .if !defined(NOPORTDOCS)
-	@${ECHO_MSG} "===>  Copying documents to ${PREFIX}/share/doc/amiwm"
-	@${MKDIR} ${PREFIX}/share/doc/amiwm
-	@${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/amiwm
-	@${INSTALL_DATA} ${WRKSRC}/README.modules ${PREFIX}/share/doc/amiwm
+	@${ECHO_MSG} "===>  Copying documents to ${DOCSDIR}"
+	@${MKDIR} ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}/README
+	@${INSTALL_DATA} ${WRKSRC}/README.modules ${DOCSDIR}/README.modules
 .endif
 
 .include <bsd.port.mk>
