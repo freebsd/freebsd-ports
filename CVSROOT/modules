@@ -1020,6 +1020,7 @@ bicom                           ports/archivers/bicom
 bicyclerepair                   ports/devel/bicyclerepair
 biew                            ports/editors/biew
 biffer                          ports/mail/biffer
+bigbluebutton                   ports/www/bigbluebutton
 bigboard                        ports/misc/bigboard
 biggles                         ports/math/biggles
 bigloo                          ports/lang/bigloo
@@ -3501,6 +3502,7 @@ figlet-fonts                    ports/misc/figlet-fonts
 figurine                        ports/graphics/figurine
 fiked                           ports/security/fiked
 file-roller                     ports/archivers/file-roller
+filebench                       ports/benchmarks/filebench
 filedupe                        ports/sysutils/filedupe
 filelight                       ports/sysutils/filelight
 filelight-kde4                  ports/sysutils/filelight-kde4
@@ -27107,6 +27109,7 @@ zeroer                          ports/sysutils/zeroer
 zeroinstall-injector            ports/devel/zeroinstall-injector
 zerowait-httpd                  ports/www/zerowait-httpd
 zetaback                        ports/sysutils/zetaback
+zfs-periodic                    ports/sysutils/zfs-periodic
 zfs-replicate                   ports/sysutils/zfs-replicate
 zfs-snapshot-clean              ports/sysutils/zfs-snapshot-clean
 zfs-snapshot-mgmt               ports/sysutils/zfs-snapshot-mgmt
