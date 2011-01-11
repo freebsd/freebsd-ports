@@ -1,5 +1,5 @@
 --- Makefile.orig	Thu Nov  7 18:58:32 1996
-+++ Makefile	Mon Feb 20 18:49:33 2006
++++ Makefile	Tue Jan 11 12:03:57 2011
 @@ -34,40 +34,43 @@
  CLASS_SRC = ./class
  MKDIRHIER = mkdir -p
@@ -36,8 +36,9 @@
 +usr-tree: FORCE
 +	cd $(GCC_SRC); perl -e $(USR_TREE)
  	$(MAKE) -C $(GCC_SRC) $(GCC_MAKE_ARGS) xgcc cc1 cccp
- 	$(MAKE) -e -C $(CLASS_SRC)
+-	$(MAKE) -e -C $(CLASS_SRC)
 -	$(MAKE) usr-tree1
++	$(MAKE) -C $(CLASS_SRC)
 +	$(MAKE) -e -C objdump
  
  usr-tree1: $(INSTLIB) $(INSTBIN) public-files \
