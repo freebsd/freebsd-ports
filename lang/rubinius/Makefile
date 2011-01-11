@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	rubinius
-PORTVERSION=	1.1.0
+PORTVERSION=	1.2.0
 CATEGORIES=	lang
 MASTER_SITES=	ftp://ftp.SpringDaemons.com/soft/ \
 		http://asset.rubini.us/prebuilt/:llvm
@@ -28,7 +28,7 @@ CONFIGURE_ARGS=	--without-execinfo \
 		--sitedir "${PREFIX}/lib/ruby/site_ruby/rubinius" \
 		--vendordir "${PREFIX}/lib/ruby/vendor_ruby/rubinius"
 
-LLVMDIST=	llvm-2.6-source.tar.bz2
+LLVMDIST=	llvm-2.8.tgz
 USE_RUBY=	yes
 USE_RAKE=	yes
 USE_PERL5_BUILD=	yes
