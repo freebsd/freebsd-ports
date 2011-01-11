@@ -8,7 +8,7 @@
 
 PORTNAME=	gdb
 PORTVERSION=	7.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel
 MASTER_SITES=   ${MASTER_SITE_GNU:S,$,:gdb,}
 MASTER_SITE_SUBDIR=gdb/:gdb
@@ -27,9 +27,7 @@ CONFIGURE_ENV+=	CONFIGURED_M4=m4 CONFIGURED_BISON=byacc LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--program-suffix=${PORTVERSION:S/.//g} \
 		--with-libiconv-prefix=${LOCALBASE} \
 		--with-system-readline \
-		--without-expat \
 		--without-libunwind \
-		--without-python \
 		--enable-target=all \
 		--enable-tui
 CFLAGS:=	${CFLAGS:C/ +$//}	# blanks at EOL creep in sometimes
@@ -42,12 +40,33 @@ MAN1=	gdb${VER}.1
 
 ONLY_FOR_ARCHS=	i386 amd64	# untested elsewhere, might work
 
-OPTIONS=	DEBUG "Build with debugging symbols" off
+OPTIONS=	DEBUG "Build with debugging symbols" off \
+		EXPAT "Enable XML parsing for metadata" off \
+		PYTHON "Enable Python support" off
+
+.include <bsd.port.options.mk>
+
+.if defined(WITH_PYTHON)
+USE_PYTHON=	2.4-2.7
+.endif
 
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_DEBUG)
 CFLAGS+=	-g
+.endif
+
+.if defined(WITH_EXPAT)
+LIB_DEPENDS+=	expat.6:${PORTSDIR}/textproc/expat2
+CONFIGURE_ARGS+= --with-expat=yes
+.else
+CONFIGURE_ARGS+= --without-expat
+.endif
+
+.if defined(WITH_PYTHON)
+CONFIGURE_ARGS+= --with-python=${PYTHON_CMD}
+.else
+CONFIGURE_ARGS+= --without-python
 .endif
 
 # XXX: add OSVERSION check after readline is removed from base
