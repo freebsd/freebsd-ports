@@ -18,6 +18,8 @@ EXTRACT_ONLY=
 MAINTAINER=		ports@FreeBSD.org
 COMMENT=		A high performance Smalltalk environment
 
+BROKEN=			does not fetch
+
 USE_LINUX=		yes
 USE_LINUX_APPS=		xorglibs
 ONLY_FOR_ARCHS=		i386
