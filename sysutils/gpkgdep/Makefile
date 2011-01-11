@@ -10,7 +10,7 @@ PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	SF/${PORTNAME}/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	michael@fun-box.ru
 COMMENT=	Shows package dependencies in tree views
 
 USE_BZIP2=	yes
