@@ -2791,6 +2791,7 @@
     SUBDIR += py-geojson
     SUBDIR += py-geotypes
     SUBDIR += py-gevent
+    SUBDIR += py-gflags
     SUBDIR += py-gitosis
     SUBDIR += py-gitpython
     SUBDIR += py-gobject

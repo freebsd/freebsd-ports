@@ -1,0 +1,7 @@
+The gflags package contains a library that implements commandline flags
+processing. As such it's a replacement for getopt(). It has increased
+flexibility, including built-in support for Python types, and the ability to
+define flags in the source file in which they're used. (This last is its major
+difference from OptParse.)
+
+WWW:	http://code.google.com/p/python-gflags/
