@@ -85,7 +85,7 @@
 @dirrmtry %%SITE_PERL%%/Rose/HTML/Form
 @dirrmtry %%SITE_PERL%%/Rose/HTML/Object/Error
 @dirrmtry %%SITE_PERL%%/Rose/HTML/Object/MakeMethods
-@dirrmtry %%SITE_PERL%%/Rose/HTML/Object/Message 
+@dirrmtry %%SITE_PERL%%/Rose/HTML/Object/Message
 @dirrmtry %%SITE_PERL%%/Rose/HTML/Object
 @dirrmtry %%SITE_PERL%%/Rose/HTML
 @dirrmtry %%SITE_PERL%%/Rose
