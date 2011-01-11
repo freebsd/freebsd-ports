@@ -7,10 +7,11 @@
 
 PORTNAME=	openmsx
 PORTVERSION=	0.3.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
-MASTER_SITES=	http://ftp.snt.utwente.nl/pub/games/openttd/binaries/extra/openmsx/${PORTVERSION}/ \
-		http://gb.binaries.openttd.org/binaries/extra/openmsx/${PORTVERSION}/
+MASTER_SITES=	http://gb.binaries.openttd.org/binaries/extra/${PORTNAME}/${PORTVERSION}/ \
+		http://de.binaries.openttd.org/binaries/extra/${PORTNAME}/${PORTVERSION}/ \
+		http://cz.binaries.openttd.org/openttd/binaries/extra/${PORTNAME}/${PORTVERSION}/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-all
 
 MAINTAINER=	micro@heavennet.ru
@@ -20,12 +21,9 @@ USE_ZIP=	yes
 NO_BUILD=	yes
 LATEST_LINK=	openttd-${PORTNAME}
 
-post-extract:
-	@${FIND} ${WRKDIR}/openmsx-${PORTVERSION} -type f -name "*.txt" -exec ${MV} {} {}-msx \;
-
 do-install:
-	${MKDIR} ${PREFIX}/share/openttd/gm
+	${MKDIR} ${PREFIX}/share/openttd/gm/openmsx
 	${INSTALL_DATA} ${WRKDIR}/openmsx-${PORTVERSION}/* \
-		${PREFIX}/share/openttd/gm
+		${PREFIX}/share/openttd/gm/openmsx
 
 .include <bsd.port.mk>
