@@ -14,6 +14,7 @@ bin/config-edit
 %%SITE_PERL%%/Config/Model/Backend/Yaml.pm
 %%SITE_PERL%%/Config/Model/CheckList.pm
 %%SITE_PERL%%/Config/Model/Cookbook/CreateModelFromDoc.pod
+%%SITE_PERL%%/Config/Model/Debian/Dependency.pm
 %%SITE_PERL%%/Config/Model/Describe.pm
 %%SITE_PERL%%/Config/Model/DumpAsData.pm
 %%SITE_PERL%%/Config/Model/Dumper.pm
@@ -68,6 +69,7 @@ bin/config-edit
 @dirrmtry %%SITE_PERL%%/Config/Model/Manual
 @dirrmtry %%SITE_PERL%%/Config/Model/application.d
 @dirrmtry %%SITE_PERL%%/Config/Model/Manual
+@dirrmtry %%SITE_PERL%%/Config/Model/Debian
 @dirrmtry %%SITE_PERL%%/Config/Model/Cookbook
 @dirrmtry %%SITE_PERL%%/Config/Model/Backend/Debian/Dpkg
 @dirrmtry %%SITE_PERL%%/Config/Model/Backend/Debian

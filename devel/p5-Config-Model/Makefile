@@ -7,9 +7,10 @@
 #
 
 PORTNAME=	Config-Model
-PORTVERSION=	1.226
+PORTVERSION=	1.229
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
+MASTER_SITE_SUBDIR=	../../authors/id/D/DD/DDUMONT
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
@@ -40,6 +41,7 @@ MAN3=		Config::Model.3 \
 		Config::Model::Backend::Yaml.3 \
 		Config::Model::CheckList.3 Config::Model::Describe.3 \
 		Config::Model::Cookbook::CreateModelFromDoc.3 \
+		Config::Model::Debian::Dependency.3 \
 		Config::Model::DumpAsData.3 Config::Model::Dumper.3 \
 		Config::Model::Exception.3 Config::Model::HashId.3 \
 		Config::Model::FuseUI.3 \
