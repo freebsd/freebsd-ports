@@ -106,6 +106,7 @@
     SUBDIR += clearsilver-python
     SUBDIR += clickheat
     SUBDIR += closure-compiler
+    SUBDIR += closure-linter
     SUBDIR += cmsmadesimple
     SUBDIR += cntlm
     SUBDIR += cocoon
