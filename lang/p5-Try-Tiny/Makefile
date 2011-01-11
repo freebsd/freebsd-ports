@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	Try-Tiny
-PORTVERSION=	0.07
+PORTVERSION=	0.09
 CATEGORIES=	lang perl5
-MASTER_SITES=	CPAN/../../authors/id/R/RJ/RJBS
+MASTER_SITES=	CPAN/../../authors/id/D/DO/DOY
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	tobez@FreeBSD.org
