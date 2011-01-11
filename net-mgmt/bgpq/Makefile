@@ -16,7 +16,7 @@ COMMENT=	Bgpq - lightweight access-list generator for cisco routers
 MAN8=		bgpq.8
 PLIST_FILES=	bin/bgpq
 
-HAS_CONFIGURE=	yes
+GNU_CONFIGURE=	yes
 
 post-install:
 	${STRIP_CMD} ${PREFIX}/bin/bgpq

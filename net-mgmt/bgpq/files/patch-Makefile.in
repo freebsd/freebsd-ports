@@ -1,0 +1,11 @@
+--- Makefile.in.orig	2011-01-11 14:58:00.000000000 +0300
++++ Makefile.in	2011-01-11 14:58:10.000000000 +0300
+@@ -26,7 +26,7 @@
+ 
+ install: bgpq
+ 	$(INSTALL) -s -m 755 bgpq @prefix@@bindir@
+-	$(INSTALL) -m 644 bgpq.8 @prefix@@mandir@/man8
++	$(INSTALL) -m 644 bgpq.8 @mandir@/man8
+ 
+ test: bgpq
+ 	@rm -f test.out ]
