@@ -20,6 +20,9 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	GNU C cross-compiler for HP48 calculators
 
+LICENSE=	GPLv2
+
+ONLY_FOR_ARCHS=		i386
 USE_GMAKE=		yes
 USE_PERL5_BUILD=	yes
 USE_ZIP=		yes
@@ -35,12 +38,6 @@ MAKE_ARGS=	GCC_SRC="${GCC_DIR}" GCC_VERSION="${GCC_VER}" \
 		INSTALL_PROG="${INSTALL_PROGRAM}" \
 		INSTALL_DATA="${INSTALL_DATA}"
 
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} != "i386"
-BROKEN=		Configure fails on !i386
-.endif
-
 post-extract: .SILENT
 # Extract GCC distribution separately because of USE_ZIP/.tar.gz conflict
 	cd ${WRKDIR} && ${GZIP_CMD} -dc \
@@ -50,15 +47,15 @@ post-extract: .SILENT
 # Prepare GCC by creating proper config symlink
 	${LN} -sf ../../saturn/gcc-target/config-saturn ${GCC_DIR}/config/saturn
 # Allow GCC to build in our environment
-	${REINPLACE_CMD} '178d' ${GCC_DIR}/gcc.c
+	${REINPLACE_CMD} -e '178d' ${GCC_DIR}/gcc.c
 # FreeBSD has vprintf() actually
 	${CHMOD} +w ${GCC_DIR}/config/xm-freebsd.h
 	${ECHO_CMD} '#define HAVE_VPRINTF' >> ${GCC_DIR}/config/xm-freebsd.h
 # Do not install yet another copies of GPL
-	${REINPLACE_CMD} '/COPYING/d' ${WRKSRC}/make.pubfiles
+	${REINPLACE_CMD} -e '/COPYING/d' ${WRKSRC}/make.pubfiles
 
 do-configure:
 	cd ${GCC_DIR} && ./configure --target=saturn-local-hp48 \
 		--prefix=${PREFIX}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
