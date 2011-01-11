@@ -6,10 +6,9 @@
 %%XPI_XPIDIR%%/components/FormNotifier.js
 %%XPI_XPIDIR%%/components/IWeaveCrypto.xpt
 %%XPI_XPIDIR%%/components/Weave.js
-%%XPI_XPIDIR%%/components/WeaveCrypto.js
+%%XPI_XPIDIR%%/crypto-modules/WeaveCrypto.js
 %%XPI_XPIDIR%%/modules/base_records/collection.js
 %%XPI_XPIDIR%%/modules/base_records/crypto.js
-%%XPI_XPIDIR%%/modules/base_records/keys.js
 %%XPI_XPIDIR%%/modules/base_records/wbo.js
 %%XPI_XPIDIR%%/modules/engines/clients.js
 %%XPI_XPIDIR%%/modules/engines/forms.js
@@ -40,6 +39,7 @@
 %%XPI_XPIDIR%%/modules/main.js
 %%XPI_XPIDIR%%/modules/log4moz.js
 %%XPI_XPIDIR%%/modules/engines.js
+%%XPI_XPIDIR%%/modules/jpakeclient.js
 %%XPI_XPIDIR%%/modules/identity.js
 %%XPI_XPIDIR%%/modules/constants.js
 %%XPI_XPIDIR%%/platform/%%PLATFORM%%/components/WeaveCrypto.so
@@ -54,6 +54,7 @@ lib/firefox3/extensions/%%XPI_XPIID%%
 @dirrm %%XPI_XPIDIR%%/modules/engines
 @dirrm %%XPI_XPIDIR%%/modules/base_records
 @dirrm %%XPI_XPIDIR%%/modules
+@dirrm %%XPI_XPIDIR%%/crypto-modules
 @dirrm %%XPI_XPIDIR%%/components
 @dirrm %%XPI_XPIDIR%%/defaults/preferences
 @dirrm %%XPI_XPIDIR%%/defaults

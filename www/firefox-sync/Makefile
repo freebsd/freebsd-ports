@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	firefox-sync
-PORTVERSION=	1.5.1
+PORTVERSION=	1.6.1
 PORTEPOCH=	2
 CATEGORIES=	www
-MASTER_SITES=	http://files.roorback.net/ \
-		LOCAL/glarkin
+MASTER_SITES=	http://hg.mozilla.org/services/fx-sync/archive/${DISTVERSION}${EXTRACT_SUFX}/
 
 MAINTAINER=	magik@roorback.net
 COMMENT=	Mozilla extension to synchronize Firefox data
@@ -22,6 +21,7 @@ ONLY_FOR_ARCHS=	i386 amd64
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 MAKE_JOBS_UNSAFE=yes
+WRKSRC=		${WRKDIR}/fx-sync-${DISTVERSION}
 
 OPTIONS=	FF35 "Build for Firefox 3.5 instead of 3.6" Off
 
@@ -38,7 +38,7 @@ AMD64_ARCH=	x86_64
 BUILD_DEPENDS+=	${FF_DEPENDS}
 RUN_DEPENDS+=	${FF_DEPENDS}
 
-REVID=		5a3327fd9c8f
+REVID=		7081421a3910
 .if ${ARCH} == i386
 PLATFORM=	FreeBSD_x86-gcc3
 .elif ${ARCH} == amd64
@@ -69,7 +69,8 @@ post-install:
 	${MKDIR} ${XPI_DIR}
 	(cd ${XPI_DIR}; tar -xf ${WRKSRC}/dist/xpi/weave-${DISTVERSION}-rel.xpi)
 	${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${XPI_DIR}/
-	${CHMOD} -R a+rX,go-w ${XPI_DIR}/
+	${FIND} ${XPI_DIR}/ -type d -print0 | ${XARGS} -0 ${CHMOD} 755
+	${FIND} ${XPI_DIR}/ -type f -print0 | ${XARGS} -0 ${CHMOD} 644
 	${MKDIR} ${PREFIX}/lib/firefox3/extensions
 	${LN} -sf ${XPI_DIR} ${PREFIX}/lib/firefox3/extensions
 
