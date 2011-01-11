@@ -14,12 +14,20 @@ MASTER_SITES=	http://www.sigala.it/sandro/files/
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	C-like compiler that translates input code to the HP48 RPN language
 
+LICENSE=	GPLv2
+
 USE_BISON=	build
 GNU_CONFIGURE=	yes
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}"
-MAKE_JOBS_UNSAFE=	yes
 
 MAN1=		${PORTNAME}.1
+PLIST_FILES=	bin/${PORTNAME}
+PORTEXAMPLES=	*
+
+post-patch:
+# Fix the Makefile to unbreak parallel builds
+	@${REINPLACE_CMD} -e 's,(YACC),& -o parser.c, ; \
+		s,(LEX),& -olexer.c, ; /mv/d' ${WRKSRC}/src/Makefile.in
 
 post-install:
 .if !defined(NOPORTDOCS)
