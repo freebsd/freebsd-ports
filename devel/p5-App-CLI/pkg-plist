@@ -2,6 +2,7 @@
 %%SITE_PERL%%/App/CLI.pm
 %%SITE_PERL%%/App/CLI/Command.pm
 %%SITE_PERL%%/App/CLI/Command/Help.pm
+%%SITE_PERL%%/App/CLI/Helper.pm
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/App/CLI
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/App
 @dirrmtry %%SITE_PERL%%/App/CLI/Command
