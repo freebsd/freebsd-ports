@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ytree
-PORTVERSION=	1.96
+PORTVERSION=	1.97
 CATEGORIES=	misc
 MASTER_SITES=	http://www.han.de/~werner/
 
