@@ -4,12 +4,8 @@ bin/ghwdump
 bin/gtkwave
 bin/lxt2miner
 bin/lxt2vcd
-bin/mvl2lxt
-bin/mvl2vcd
 bin/rtlbrowse
 bin/shmidcat
-bin/tex2vcd
-bin/tla2vcd
 bin/twinwave
 bin/vcd2fst
 bin/vcd2lxt
@@ -20,9 +16,11 @@ bin/vzt2vcd
 bin/vztminer
 %%DOCSDIR%%/gtkwave.odt
 %%EXAMPLESDIR%%/des.sav
-%%EXAMPLESDIR%%/des.script
 %%EXAMPLESDIR%%/des.tcl
 %%EXAMPLESDIR%%/des.v
 %%EXAMPLESDIR%%/des.vzt
+%%EXAMPLESDIR%%/transaction.fst
+%%EXAMPLESDIR%%/transaction.sav
+%%EXAMPLESDIR%%/transaction.c
 @dirrm %%EXAMPLESDIR%%
 @dirrm %%DOCSDIR%%
