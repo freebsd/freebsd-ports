@@ -11,7 +11,7 @@ PORTREVISION=	5
 CATEGORIES=	x11-fm kde
 MASTER_SITES=	SF
 
-MAINTAINER=	h.eichmann@gmx.de
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A two window file-manager for KDE, like midnight or norton commander
 
 USE_KDELIBS_VER=3

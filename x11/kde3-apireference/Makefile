@@ -12,9 +12,11 @@ MASTER_SITES=	http://developer.kde.org/documentation/library/${PORTVERSION}-api/
 DISTNAME=	${PORTVERSION}-api
 DIST_SUBDIR=	KDE
 
-MAINTAINER=	h.eichmann@gmx.de
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	API reference for KDE 3
 
+DEPRECATED=	outdated and obsolete
+EXPIRATION_DATE=2011-01-31
 IGNOREFILES=	${ALLFILES}
 USE_BZIP2=	yes
 

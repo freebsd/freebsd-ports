@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.bryld.info/filer/
 DISTNAME=	manugot19
 EXTRACT_SUFX=	.ttf
 
-MAINTAINER=	h.eichmann@gmx.de
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Old german blackletter handwriting (suetterlin)
 
 BUILD_DEPENDS=	fc-cache:${PORTSDIR}/x11-fonts/fontconfig
