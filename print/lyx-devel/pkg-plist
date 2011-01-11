@@ -1,7 +1,6 @@
 bin/lyx
 bin/lyxclient
 bin/tex2lyx
-
 %%NLS%%share/locale/ar/LC_MESSAGES/lyx.mo
 %%NLS%%share/locale/bg/LC_MESSAGES/lyx.mo
 %%NLS%%share/locale/ca/LC_MESSAGES/lyx.mo
@@ -37,7 +36,6 @@ bin/tex2lyx
 %%NLS%%share/locale/wa/LC_MESSAGES/lyx.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/lyx.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/lyx.mo
-
 %%DATADIR%%/CREDITS
 %%DATADIR%%/bind/aqua.bind
 %%DATADIR%%/bind/broadway.bind
@@ -190,7 +188,9 @@ bin/tex2lyx
 %%DATADIR%%/doc/hu/Intro.lyx
 %%DATADIR%%/doc/hu/Tutorial.lyx
 %%DATADIR%%/doc/id/Intro.lyx
+%%DATADIR%%/doc/id/Shortcuts.lyx
 %%DATADIR%%/doc/id/Tutorial.lyx
+%%DATADIR%%/doc/id/UserGuide.lyx
 %%DATADIR%%/doc/id/clipart/id-contrib.png
 %%DATADIR%%/doc/id/clipart/id-footnote.png
 %%DATADIR%%/doc/id/clipart/id-lingkungan.png
@@ -980,30 +980,19 @@ bin/tex2lyx
 %%DATADIR%%/images/math/upsilon2.png
 %%DATADIR%%/images/math/upuparrows.png
 %%DATADIR%%/images/math/urcorner.png
-%%DATADIR%%/images/math/varDelta.png
-%%DATADIR%%/images/math/varGamma.png
-%%DATADIR%%/images/math/varLambda.png
-%%DATADIR%%/images/math/varOmega.png
-%%DATADIR%%/images/math/varPsi.png
-%%DATADIR%%/images/math/varUpsilon.png
-%%DATADIR%%/images/math/varXi.png
 %%DATADIR%%/images/math/varepsilon.png
 %%DATADIR%%/images/math/varkappa.png
 %%DATADIR%%/images/math/varnothing.png
 %%DATADIR%%/images/math/varphi.png
-%%DATADIR%%/images/math/varphi2.png
 %%DATADIR%%/images/math/varpi.png
-%%DATADIR%%/images/math/varpi2.png
 %%DATADIR%%/images/math/varpropto.png
 %%DATADIR%%/images/math/varrho.png
 %%DATADIR%%/images/math/varsigma.png
-%%DATADIR%%/images/math/varsigma2.png
 %%DATADIR%%/images/math/varsubsetneq.png
 %%DATADIR%%/images/math/varsubsetneqq.png
 %%DATADIR%%/images/math/varsupsetneq.png
 %%DATADIR%%/images/math/varsupsetneqq.png
 %%DATADIR%%/images/math/vartheta.png
-%%DATADIR%%/images/math/vartheta2.png
 %%DATADIR%%/images/math/vartriangle.png
 %%DATADIR%%/images/math/vartriangleleft.png
 %%DATADIR%%/images/math/vartriangleright.png
@@ -1506,7 +1495,6 @@ bin/tex2lyx
 %%DATADIR%%/ui/stdmenus.inc
 %%DATADIR%%/ui/stdtoolbars.inc
 %%DATADIR%%/unicodesymbols
-
 @dirrm %%DATADIR%%/ui
 @dirrm %%DATADIR%%/tex
 @dirrm %%DATADIR%%/templates/thesis
