@@ -21,6 +21,7 @@ bin/idb-inspect.py
 %%PYTHON_SITELIBDIR%%/itools/RELEASE-0.62.4
 %%PYTHON_SITELIBDIR%%/itools/UPGRADE-0.62.0
 %%PYTHON_SITELIBDIR%%/itools/RELEASE-0.62.5
+%%PYTHON_SITELIBDIR%%/itools/RELEASE-0.62.6
 %%PYTHON_SITELIBDIR%%/itools/__init__.py
 %%PYTHON_SITELIBDIR%%/itools/__init__.pyc
 %%PYTHON_SITELIBDIR%%/itools/__init__.pyo
@@ -446,9 +447,6 @@ bin/idb-inspect.py
 %%PYTHON_SITELIBDIR%%/itools/web/access.py
 %%PYTHON_SITELIBDIR%%/itools/web/access.pyc
 %%PYTHON_SITELIBDIR%%/itools/web/access.pyo
-%%PYTHON_SITELIBDIR%%/itools/web/authentication.py
-%%PYTHON_SITELIBDIR%%/itools/web/authentication.pyc
-%%PYTHON_SITELIBDIR%%/itools/web/authentication.pyo
 %%PYTHON_SITELIBDIR%%/itools/web/context.py
 %%PYTHON_SITELIBDIR%%/itools/web/context.pyc
 %%PYTHON_SITELIBDIR%%/itools/web/context.pyo
