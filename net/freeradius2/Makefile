@@ -168,6 +168,8 @@ USE_PYTHON=	yes
 CONFIGURE_ARGS+=--with-rlm_python \
 		--with-rlm-python-lib-dir=${PYTHON_LIBDIR} \
 		--with-rlm-python-include-dir=${PYTHON_INCLUDEDIR}
+# temporary workaround for libtool issue until FR 2.2.x is released
+CFLAGS+=	-DHAVE_LT_DLADVISE_INIT
 PLIST_SUB+=	RLMPYTHON=""
 .else
 CONFIGURE_ARGS+=--without-rlm_python
