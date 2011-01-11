@@ -133,6 +133,9 @@ lib/kde3/kfile_k3b.so
 lib/kde3/kio_videodvd.a
 lib/kde3/kio_videodvd.la
 lib/kde3/kio_videodvd.so
+%%ALSA%%lib/kde3/libk3balsaoutputplugin.a
+%%ALSA%%lib/kde3/libk3balsaoutputplugin.la
+%%ALSA%%lib/kde3/libk3balsaoutputplugin.so
 lib/kde3/libk3bartsoutputplugin.a
 lib/kde3/libk3bartsoutputplugin.la
 lib/kde3/libk3bartsoutputplugin.so
@@ -357,6 +360,7 @@ share/apps/k3b/plugins/k3bartsoutputplugin.plugin
 share/apps/k3b/plugins/k3baudiometainforenamerplugin.plugin
 share/apps/k3b/plugins/k3baudioprojectcddbplugin.plugin
 share/apps/k3b/plugins/k3bexternalencoder.plugin
+%%ALSA%%share/apps/k3b/plugins/k3balsaoutputplugin.plugin
 %%FFMPEG%%share/apps/k3b/plugins/k3bffmpegdecoder.plugin
 %%FLAC%%share/apps/k3b/plugins/k3bflacdecoder.plugin
 %%LAME%%share/apps/k3b/plugins/k3blameencoder.plugin
