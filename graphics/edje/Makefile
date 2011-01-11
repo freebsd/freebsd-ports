@@ -29,4 +29,8 @@ USE_LDCONFIG=	yes
 
 CONFIGURE_ARGS+=	--without-vim
 
+post-patch:
+	@${REINPLACE_CMD} -E -e "/^SUBDIRS[[:space:]]+=/s/utils//" \
+	    ${WRKSRC}/Makefile.in
+
 .include <bsd.port.mk>
