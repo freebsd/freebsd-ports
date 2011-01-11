@@ -17,6 +17,9 @@ COMMENT=	Allow use any sound program for the OSS system as a JACK client
 LIB_DEPENDS=	jack.0:${PORTSDIR}/audio/jack \
 		samplerate.1:${PORTSDIR}/audio/libsamplerate
 
+DEPRECATED=	development has ceased; try audio/jack instead
+EXPIRATION_DATE=2011-02-11
+
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes

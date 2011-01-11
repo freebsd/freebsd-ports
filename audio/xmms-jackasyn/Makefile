@@ -19,6 +19,9 @@ COMMENT=	XMMS plugin for jack using libjackasyn
 LIB_DEPENDS=	xmms.4:${PORTSDIR}/multimedia/xmms \
 		jackasyn.0:${PORTSDIR}/audio/libjackasyn
 
+DEPRECATED=	development has ceased; try audio/xmms-jack instead
+EXPIRATION_DATE=2011-02-11
+
 USE_GNOME=	gtk12 gnometarget
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
