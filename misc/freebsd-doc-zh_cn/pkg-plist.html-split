@@ -252,7 +252,6 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/jails-tuning.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/jails.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/kerberos5.html
-%%DOCSDIR%%/%%DOCLANG%%/books/handbook/kerberosiv.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/kernelconfig-building.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/kernelconfig-config.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/kernelconfig-custom-kernel.html
@@ -296,6 +295,7 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/mail-trouble.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/mail-using.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/mail.html
+%%DOCSDIR%%/%%DOCLANG%%/books/handbook/make-delete-old.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/makeworld.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/mirrors-afs.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/mirrors-bittorrent.html
@@ -357,7 +357,6 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/printing.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/quotas.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/raid.html
-%%DOCSDIR%%/%%DOCLANG%%/books/handbook/sapr3.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/scanners.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/securing-freebsd.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/security-accounting.html
@@ -439,7 +438,6 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/dads-rerolling-distfiles.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/dads-sh-exec.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/dads-sysctl.html
-%%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/dads-workarounds.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/distfile-survey.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/freebsd-versions.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/index.html
@@ -520,3 +518,4 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/using-x11.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/using-xfce.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/why-port.html
+%%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/x5580.html
