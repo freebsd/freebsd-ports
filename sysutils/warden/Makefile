@@ -47,4 +47,7 @@ do-configure:
 RUN_DEPENDS+=	xz:${PORTSDIR}/archivers/xz
 .endif
 
+post-install:
+	@${CAT} ${PKGMESSAGE}
+
 .include <bsd.port.post.mk>
