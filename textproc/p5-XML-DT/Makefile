@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	XML-DT
-PORTVERSION=	0.53
+PORTVERSION=	0.54
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,9 +14,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	tobez@FreeBSD.org
 COMMENT=	Perl module for down translation of XML to strings
 
-BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/XML/LibXML.pm:${PORTSDIR}/textproc/p5-XML-LibXML \
-		${SITE_PERL}/LWP/Simple.pm:${PORTSDIR}/www/p5-libwww \
-		${SITE_PERL}/XML/DTDParser.pm:${PORTSDIR}/textproc/p5-XML-DTDParser
+BUILD_DEPENDS=	p5-XML-LibXML>=1.54:${PORTSDIR}/textproc/p5-XML-LibXML \
+		p5-libwww>=1.35:${PORTSDIR}/www/p5-libwww \
+		p5-XML-DTDParser>=2.00:${PORTSDIR}/textproc/p5-XML-DTDParser
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
