@@ -21930,6 +21930,7 @@ qadsl                           ports/net/qadsl
 qalculate                       ports/math/qalculate
 qar-bufo                        ports/mail/qar-bufo
 qbittorrent-23                  ports/net-p2p/qbittorrent-23
+qbittorrent-26                  ports/net-p2p/qbittorrent-26
 qbrew                           ports/misc/qbrew
 qbzr                            ports/devel/qbzr
 qca                             ports/devel/qca
@@ -25082,6 +25083,7 @@ tthsum                          ports/security/tthsum
 ttlscan                         ports/net/ttlscan
 ttmkfdir                        ports/x11-fonts/ttmkfdir
 ttraffic                        ports/games/ttraffic
+tty-clock                       ports/sysutils/tty-clock
 ttyload                         ports/sysutils/ttyload
 ttyrec                          ports/misc/ttyrec
 ttytter                         ports/net-im/ttytter
