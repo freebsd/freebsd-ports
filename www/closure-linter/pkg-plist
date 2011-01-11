@@ -1,0 +1,4 @@
+@comment $FreeBSD$
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%
+bin/fixjsstyle
+bin/gjslint
