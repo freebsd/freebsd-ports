@@ -7,9 +7,11 @@
 
 PORTNAME=	opensfx
 PORTVERSION=	0.2.3
+PORTREVISION=	1
 CATEGORIES=	games
-MASTER_SITES=	http://ftp.snt.utwente.nl/pub/games/openttd/binaries/extra/opensfx/${PORTVERSION}/ \
-		http://gb.binaries.openttd.org/binaries/extra/opensfx/${PORTVERSION}/
+MASTER_SITES=	http://gb.binaries.openttd.org/binaries/extra/${PORTNAME}/${PORTVERSION}/ \
+		http://de.binaries.openttd.org/binaries/extra/${PORTNAME}/${PORTVERSION}/ \
+		http://cz.binaries.openttd.org/openttd/binaries/extra/${PORTNAME}/${PORTVERSION}/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-all
 
 MAINTAINER=	micro@heavennet.ru
@@ -18,12 +20,9 @@ COMMENT=	Free alternative sounds for OpenTTD game engine
 USE_ZIP=	yes
 NO_BUILD=	yes
 
-post-extract:
-	@${FIND} ${WRKDIR}/opensfx-${PORTVERSION} -type f -name "*.txt" -exec ${MV} {} {}-sfx \;
-
 do-install:
-	${MKDIR} ${PREFIX}/share/openttd/data
+	${MKDIR} ${PREFIX}/share/openttd/data/opensfx/
 	${INSTALL_DATA} ${WRKDIR}/opensfx-${PORTVERSION}/* \
-		${PREFIX}/share/openttd/data
+		${PREFIX}/share/openttd/data/opensfx/
 
 .include <bsd.port.mk>
