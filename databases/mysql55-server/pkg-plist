@@ -23,6 +23,7 @@ bin/perror
 bin/replace
 bin/resolve_stack_dump
 bin/resolveip
+lib/mysql/libmysqld.a
 lib/mysql/plugin/adt_null.so
 lib/mysql/plugin/auth.so
 lib/mysql/plugin/auth_test_plugin.so
@@ -37,7 +38,6 @@ lib/mysql/plugin/qa_auth_interface.so
 lib/mysql/plugin/qa_auth_server.so
 lib/mysql/plugin/semisync_master.so
 lib/mysql/plugin/semisync_slave.so
-lib/libmysqld.a
 libexec/mysqld
 %%DATADIR%%/binary-configure
 %%DATADIR%%/charsets/Index.xml
@@ -108,7 +108,7 @@ libexec/mysqld
 %%DATADIR%%/swedish/errmsg.sys
 %%DATADIR%%/ukrainian/errmsg.sys
 @dirrm lib/mysql/plugin
-@dirrm lib/mysql
+@dirrmtry lib/mysql
 @dirrm %%DATADIR%%/charsets
 @dirrm %%DATADIR%%/czech
 @dirrm %%DATADIR%%/danish
