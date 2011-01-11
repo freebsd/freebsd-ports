@@ -7,7 +7,7 @@
 
 PORTNAME=	hp48xgcc
 PORTVERSION=	1.0.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	SF/${PORTNAME}/source/${PORTVERSION}:hp \
 		ftp://ftp.gnu.org/old-gnu/gcc/:gcc
