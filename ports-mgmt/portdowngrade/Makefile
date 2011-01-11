@@ -11,7 +11,7 @@ PORTREVISION=	2
 CATEGORIES=	ports-mgmt
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	h.eichmann@gmx.de
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Sets a port back to a previous version
 
 LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt

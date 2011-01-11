@@ -11,7 +11,7 @@ PORTREVISION=	3
 CATEGORIES=	multimedia
 MASTER_SITES=	CENKES LOCAL/beech
 
-MAINTAINER=	h.eichmann@gmx.de
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Shrink-factor calculator for StreamDVD
 
 LIB_DEPENDS=	dvdread.4:${PORTSDIR}/multimedia/libdvdread

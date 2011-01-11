@@ -12,7 +12,7 @@ CATEGORIES=	german
 MASTER_SITES=	http://www.tipp10.de/download/
 DISTNAME=	tipp10_source_v2-0-1
 
-MAINTAINER=	h.eichmann@gmx.de
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A 10 finger touch typing learning program
 
 RUN_DEPENDS=	${LOCALBASE}/lib/qt4/plugins/sqldrivers/libqsqlite2.so:${PORTSDIR}/databases/qt4-sqlite-plugin \

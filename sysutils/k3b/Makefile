@@ -11,7 +11,7 @@ PORTREVISION=	10
 CATEGORIES=	sysutils multimedia kde
 MASTER_SITES=	SF
 
-MAINTAINER=	h.eichmann@gmx.de
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A CD/DVD recording GUI for KDE
 
 RUN_DEPENDS=	cdrdao:${PORTSDIR}/sysutils/cdrdao
