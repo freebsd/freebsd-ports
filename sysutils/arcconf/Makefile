@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	arcconf
-DISTVERSION=	v6_50_18570
+DISTVERSION=	v6_50_18579
 CATEGORIES=	sysutils
 MASTER_SITES=	http://download.adaptec.com/raid/storage_manager/
 DISTNAME=	asm_freebsd_${DIST_EXT}_${DISTVERSION}
@@ -35,17 +35,15 @@ DIST_TYPE=	6
 
 .if ${ARCH} == amd64
 DIST_EXT=	x64
-WORK_EXT=	_x86_64
 .else
 DIST_EXT=	x86
-WORK_EXT=	#
 .endif
 
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/freebsd${DIST_TYPE}${WORK_EXT}/cmdline/arcconf ${PREFIX}/sbin
+	${INSTALL_PROGRAM} ${WRKSRC}/freebsd${DIST_TYPE}/cmdline/arcconf ${PREFIX}/sbin
 	@${MKDIR} ${PREFIX}/etc/periodic/daily
 	${INSTALL_SCRIPT} ${WRKDIR}/${PERIODICSCRIPT} ${PREFIX}/etc/periodic/daily
 
