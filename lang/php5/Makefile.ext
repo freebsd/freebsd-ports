@@ -186,11 +186,11 @@ CONFIGURE_ARGS+=--with-mssql=${LOCALBASE}
 .endif
 
 .if ${PHP_MODNAME} == "mysql"
-OPTIONS=	MYSQLND "Use MySQL Native Driver" off
+OPTIONS=	MYSQLND "Use MySQL Native Driver" on
 .endif
 
 .if ${PHP_MODNAME} == "mysqli"
-OPTIONS=	MYSQLND "Use MySQL Native Driver" off
+OPTIONS=	MYSQLND "Use MySQL Native Driver" on
 .endif
 
 .if ${PHP_MODNAME} == "odbc"
@@ -233,7 +233,7 @@ USE_FIREBIRD=	yes
 .endif
 
 .if ${PHP_MODNAME} == "pdo_mysql"
-OPTIONS=	MYSQLND "Use MySQL Native Driver" off
+OPTIONS=	MYSQLND "Use MySQL Native Driver" on
 
 USE_PHP=	pdo
 USE_PHP_BUILD=	yes
