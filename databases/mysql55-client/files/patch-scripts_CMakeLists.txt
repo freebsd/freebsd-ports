@@ -1,5 +1,5 @@
 --- scripts/CMakeLists.txt.orig	2010-12-03 18:58:26.000000000 +0100
-+++ scripts/CMakeLists.txt	2010-12-23 15:03:13.000000000 +0100
++++ scripts/CMakeLists.txt	2011-01-11 20:18:07.000000000 +0100
 @@ -71,6 +71,7 @@
  )
  ENDIF()
@@ -48,7 +48,16 @@
  
  
  SET(prefix "${CMAKE_INSTALL_PREFIX}")
-@@ -318,18 +324,9 @@
+@@ -266,6 +272,8 @@
+           GET_FILENAME_COMPONENT(lib "${lib}" NAME_WE)
+           STRING(REGEX REPLACE "^lib" "" lib "${lib}")
+           SET(${var} "${${var}}-l${lib} " ) 
++        ELSEIF(lib STREQUAL "-pthread")
++          SET(${var} "${${var}}-pthread " ) 
+         ELSE()
+           SET(${var} "${${var}}-l${lib} " ) 
+         ENDIF()
+@@ -318,18 +326,9 @@
    SET(BIN_SCRIPTS
      msql2mysql
      mysql_config

@@ -61,14 +61,15 @@ include/mysql/sslopt-case.h
 include/mysql/sslopt-longopts.h
 include/mysql/sslopt-vars.h
 include/mysql/typelib.h
-lib/libmysqlclient.a
-lib/libmysqlclient.so
-lib/libmysqlclient.so.16
-lib/libmysqlclient_r.a
-lib/libmysqlclient_r.so
-lib/libmysqlclient_r.so.16
-lib/libmysqlservices.a
+lib/mysql/libmysqlclient.a
+lib/mysql/libmysqlclient.so
+lib/mysql/libmysqlclient.so.16
+lib/mysql/libmysqlclient_r.a
+lib/mysql/libmysqlclient_r.so
+lib/mysql/libmysqlclient_r.so.16
+lib/mysql/libmysqlservices.a
 share/aclocal/mysql.m4
 @dirrm include/mysql/mysql/psi
 @dirrm include/mysql/mysql
 @dirrm include/mysql
+@dirrmtry lib/mysql

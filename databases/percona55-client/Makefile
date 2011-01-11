@@ -22,7 +22,7 @@ CONFLICTS_INSTALL=	mysql-client-[34].* mysql-client-5.[0-46-9].*
 
 CMAKE_ARGS=	-DWITHOUT_SERVER=1
 
-USE_LDCONFIG=	yes
+USE_LDCONFIG=	${PREFIX}/lib/mysql
 
 MAN1=		comp_err.1 msql2mysql.1 mysql.1 mysql_config.1 mysql_find_rows.1 \
 		mysql_waitpid.1 mysqlaccess.1 mysqladmin.1 mysqlbinlog.1 \

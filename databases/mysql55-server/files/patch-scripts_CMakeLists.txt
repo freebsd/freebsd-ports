@@ -1,6 +1,15 @@
---- scripts/CMakeLists.txt.orig	2010-12-23 17:38:12.000000000 +0100
-+++ scripts/CMakeLists.txt	2010-12-23 17:40:29.000000000 +0100
-@@ -316,16 +316,11 @@
+--- scripts/CMakeLists.txt.orig	2010-12-03 18:58:26.000000000 +0100
++++ scripts/CMakeLists.txt	2011-01-11 20:20:02.000000000 +0100
+@@ -266,6 +266,8 @@
+           GET_FILENAME_COMPONENT(lib "${lib}" NAME_WE)
+           STRING(REGEX REPLACE "^lib" "" lib "${lib}")
+           SET(${var} "${${var}}-l${lib} " ) 
++        ELSEIF(lib STREQUAL "-pthread")
++          SET(${var} "${${var}}-pthread " ) 
+         ELSE()
+           SET(${var} "${${var}}-l${lib} " ) 
+         ENDIF()
+@@ -316,16 +318,11 @@
    # On Unix, most of the files end up in the bin directory
    SET(mysql_config_COMPONENT COMPONENT Development)
    SET(BIN_SCRIPTS
