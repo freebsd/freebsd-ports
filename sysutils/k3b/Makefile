@@ -18,8 +18,6 @@ RUN_DEPENDS=	cdrdao:${PORTSDIR}/sysutils/cdrdao
 LIB_DEPENDS=	tag:${PORTSDIR}/audio/taglib \
 		samplerate:${PORTSDIR}/audio/libsamplerate
 
-BROKEN=		bad plist
-
 USE_BZIP2=	yes
 USE_AUTOTOOLS=	libtool
 CONFIGURE_ARGS=	--with-k3bsetup=no \
@@ -31,16 +29,17 @@ USE_CDRTOOLS=	yes
 USE_LDCONFIG=	yes
 USE_KDELIBS_VER=	3
 
-OPTIONS=	FLAC "Add audio/flac decoder" On \
-		LAME "Add audio/lame encoder (for mp3 files)" On \
-		FFMPEG "Add multimedia/ffmpeg decoder (for wma files)" Off \
-		MUSICBRAINZ "Use audio/libmusicbrainz music meta database" Off \
-		LIBDVDREAD "Use libdvdread (for video dvd ripping)" On \
+OPTIONS=	ALSA "Add audio/alsa-lib support" Off \
 		DVDPLUSRW "Add DVD+RW Tools (for DVD+/-R(W) burning)" On \
-		TRANSCODE "Add Transcode (for DVD ripping)" Off \
 		EMOVIX "Add eMovix (to burn bootable video CD)" Off \
+		FFMPEG "Add multimedia/ffmpeg decoder (for wma files)" Off \
+		FLAC "Add audio/flac decoder" On \
+		LAME "Add audio/lame encoder (for mp3 files)" On \
+		LIBDVDREAD "Use libdvdread (for video dvd ripping)" On \
+		MUSICBRAINZ "Use audio/libmusicbrainz music meta database" Off \
 		NORMALIZE "Add Normalize (adjust audio to a std. level)" Off \
 		SOX "Add SoX (more audio encoding formats)" Off \
+		TRANSCODE "Add Transcode (for DVD ripping)" Off \
 		VCDIMAGER "Add VCDImager (for Video CD burning)" Off
 
 pre-configure:
@@ -122,6 +121,15 @@ RUN_DEPENDS+=	sox:${PORTSDIR}/audio/sox
 
 .if defined (WITH_VCDIMAGER)
 RUN_DEPENDS+=	vcdxrip:${PORTSDIR}/multimedia/vcdimager
+.endif
+
+.if defined (WITH_ALSA)
+PLIST_SUB+=	ALSA=""
+LIB_DEPENDS+=	asound.2:${PORTSDIR}/audio/alsa-lib
+CONFIGURE_ARGS+=	--with-alsa
+.else
+PLIST_SUB+=	ALSA="@comment "
+CONFIGURE_ARGS+=	--without-alsa
 .endif
 
 .include <bsd.port.post.mk>
