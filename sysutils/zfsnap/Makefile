@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	zfsnap
-PORTVERSION=	1.7.0
+PORTVERSION=	1.7.2
 CATEGORIES=	sysutils
 MASTER_SITES=	http://files.bsdroot.lv/my/FreeBSD/distfiles/
 DISTNAME=	zfSnap-${PORTVERSION}
@@ -17,6 +17,8 @@ COMMENT=	Simple sh script to make zfs rolling snaphosts with cron
 PLIST_FILES=	sbin/zfSnap
 
 NO_BUILD=	yes
+WRKSRC=		${WRKDIR}/zfSnap-${REV}
+REV=		a7a361b9460c
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/zfSnap.sh ${PREFIX}/sbin/zfSnap
