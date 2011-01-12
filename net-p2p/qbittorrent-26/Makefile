@@ -7,30 +7,39 @@
 
 PORTNAME=	qbittorrent
 PORTVERSION=	2.6.1
+PORTREVISION?=	0
 CATEGORIES=	net-p2p ipv6
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PKGNAME}/
 
 MAINTAINER=	dougb@FreeBSD.org
-COMMENT=	Bittorrent client using Qt4 and libtorrent-rasterbar
+COMMENT?=	Bittorrent client using Qt4 and libtorrent-rasterbar
 
 LIB_DEPENDS=	execinfo.1:${PORTSDIR}/devel/libexecinfo \
-		torrent-rasterbar.5:${PORTSDIR}/net-p2p/libtorrent-rasterbar-14 \
-		GeoIP.5:${PORTSDIR}/net/GeoIP
+		torrent-rasterbar.5:${PORTSDIR}/net-p2p/libtorrent-rasterbar-14
 
 MAKE_JOBS_SAFE=	yes
 
 CONFLICTS=	qbittorrent-2.[2345789].*
 
-OPTIONS=	NOTIFY "Enable libnotify support" on
-
 USE_QT_VER=	4
-QT_COMPONENTS=	corelib gui network xml \
-		moc_build qmake_build rcc_build uic_build
+QT_COMPONENTS=	corelib network qmake_build moc_build rcc_build
+
+.if !defined(QB26_NOX_SLAVE)
+.if defined(WITHOUT_X11)
+BROKEN=	Use net-p2p/${PORTNAME}-nox11 for the non-GUI version
+.endif
+LIB_DEPENDS+=	GeoIP.5:${PORTSDIR}/net/GeoIP
+OPTIONS=	NOTIFY "Enable libnotify support" on
+QT_COMPONENTS+=	gui xml uic_build
+INSTALLS_ICONS=	yes
+.else
+CONFIGURE_ARGS+=	--disable-gui
+.endif
+
 QT_NONSTANDARD=	yes
 HAS_CONFIGURE=	yes
-INSTALLS_ICONS=	yes
 
-MAN1=		qbittorrent.1
+MAN1?=		qbittorrent.1
 
 .include <bsd.port.pre.mk>
 
@@ -46,6 +55,11 @@ post-patch:
 	@${ECHO_CMD} "LIBS+= -lexecinfo" >> ${WRKSRC}/src/src.pro
 
 post-install:
+.if !defined(QB26_NOX_SLAVE)
 	@${STRIP_CMD} ${PREFIX}/bin/qbittorrent
+.else
+	@${STRIP_CMD} ${PREFIX}/bin/qbittorrent-nox
+	${INSTALL_MAN} ${WRKSRC}/doc/qbittorrent-nox.1 ${MANPREFIX}/man/man1
+.endif
 
 .include <bsd.port.post.mk>
