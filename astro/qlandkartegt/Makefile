@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	qlandkartegt
-PORTVERSION=	0.20.2
+PORTVERSION=	1.0.0
 CATEGORIES=	astro
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/QLandkarteGT%20${PORTVERSION}
 
@@ -15,6 +15,8 @@ COMMENT=	The ultimate outdoor aficionado's tool
 
 LIB_DEPENDS=	gdal:${PORTSDIR}/graphics/gdal \
 		proj.6:${PORTSDIR}/graphics/proj
+
+LICENSE=	GPLv2
 
 USE_CMAKE=	yes
 USE_QT_VER=	4
