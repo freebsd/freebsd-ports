@@ -47,7 +47,7 @@ MAN1=		pike.1
 
 WANT_MESA=	yes
 
-CPPFLAGS+=	-I/usr/local/include ${PTHREAD_CFLAGS}
+CPPFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
 CONFIGURE_ENV=	CPPFLAGS=${CPPFLAGS}
 CONFIGURE_ARGS+=	--without-debug \
 		 --with-thread-library=${PTHREAD_LIBS} \
