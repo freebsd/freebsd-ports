@@ -1745,6 +1745,7 @@ clojure-mode.el                 ports/lang/clojure-mode.el
 clonehdd                        ports/sysutils/clonehdd
 cloop-utils                     ports/sysutils/cloop-utils
 closure-compiler                ports/www/closure-compiler
+closure-linter                  ports/www/closure-linter
 clp                             ports/math/clp
 clpbar                          ports/misc/clpbar
 clucene                         ports/textproc/clucene
@@ -21224,6 +21225,7 @@ py-geoip                        ports/net/py-GeoIP
 py-geojson                      ports/devel/py-geojson
 py-geotypes                     ports/devel/py-geotypes
 py-gevent                       ports/devel/py-gevent
+py-gflags                       ports/devel/py-gflags
 py-gimp                         ports/graphics/py-gimp
 py-gingin                       ports/www/py-GinGin
 py-gitosis                      ports/devel/py-gitosis
