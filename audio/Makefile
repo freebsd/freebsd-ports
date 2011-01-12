@@ -340,6 +340,7 @@
     SUBDIR += julius
     SUBDIR += jxm
     SUBDIR += k3bmonkeyaudioplugin
+    SUBDIR += kaudiocreator
     SUBDIR += kexis
     SUBDIR += kid3
     SUBDIR += kid3-kde4
