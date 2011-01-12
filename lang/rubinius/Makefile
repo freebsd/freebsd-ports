@@ -35,10 +35,19 @@ USE_PERL5_BUILD=	yes
 USE_GMAKE=	yes
 MAKE_JOBS_UNSAFE=	yes
 
+OPTIONS=	GDBM	"Enable GDBM support"	on
+
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 700000
 BROKEN=		does not build on 6.X
+.endif
+
+.if !defined(WITHOUT_GDBM) || exists(${LOCALBASE}/include/gdbm.h)
+LIB_DEPENDS=	gdbm.3:${PORTSDIR}/databases/gdbm
+PLIST_SUB+=	GDBM=""
+.else
+PLIST_SUB+=	GDBM="@comment "
 .endif
 
 post-extract:
