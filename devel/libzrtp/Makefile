@@ -27,7 +27,7 @@ RESTRICTED=	Forbidden by license
 .include <bsd.port.pre.mk>
 
 # Check for sources
-.if !exists(${DISTDIR}/${DISTFILES}.tar.gz)
+.if !exists(${DISTDIR}/${DISTFILES})
 DISTFILE_INSTRUCTIONS=\n\
 Due to licensing restrictions, certain files must be fetched manually.\n\n\
 Please register to download the LINUX version of the Zfone SDK at\n\
