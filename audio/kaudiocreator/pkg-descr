@@ -1,0 +1,10 @@
+KAudioCreator is an audio CD ripper, which uses cdparanoia as a
+backend to extract the tracks and later it encodes them to mp3 or
+ogg files (or many other formats supported).
+
+Features:
+ - CDDB lookup to extract the album and track information
+ - Different encoding formats supported (ogg, mp3, flac)
+ - Different filename formats using tags
+
+WWW: http://www.kde.org/applications/multimedia/kaudiocreator/

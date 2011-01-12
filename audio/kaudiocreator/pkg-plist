@@ -1,0 +1,13 @@
+bin/kaudiocreator
+share/applications/kde4/kaudiocreator.desktop
+share/apps/kaudiocreator/kaudiocreator.notifyrc
+share/apps/kaudiocreator/kaudiocreatorui.rc
+share/apps/kconf_update/kaudiocreator-libkcddb.upd
+share/apps/kconf_update/kaudiocreator-meta.upd
+share/apps/kconf_update/upgrade-kaudiocreator-metadata.sh
+share/config.kcfg/kaudiocreator.kcfg
+share/config.kcfg/kaudiocreator_encoders.kcfg
+share/icons/hicolor/16x16/apps/kaudiocreator.png
+share/icons/hicolor/32x32/apps/kaudiocreator.png
+share/kde4/services/ServiceMenus/audiocd_extract.desktop
+@dirrm share/apps/kaudiocreator
