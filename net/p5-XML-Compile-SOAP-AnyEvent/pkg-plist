@@ -1,0 +1,10 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Compile/SOAP/AnyEvent/.packlist
+%%SITE_PERL%%/XML/Compile/Transfer/SOAPHTTP_AnyEvent.pm
+%%SITE_PERL%%/XML/Compile/Transfer/SOAPHTTP_AnyEvent.pod
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Compile/SOAP/AnyEvent
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Compile/SOAP
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Compile
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML
+@dirrmtry %%SITE_PERL%%/XML/Compile/Transfer
+@dirrmtry %%SITE_PERL%%/XML/Compile
+@dirrmtry %%SITE_PERL%%/XML

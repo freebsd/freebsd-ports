@@ -1,0 +1,8 @@
+This module handles the exchange of (XML) messages, according to the
+rules of SOAP (any version).  The module does not known how to parse or
+compose XML, but only worries about the HTTP aspects.
+
+In contrairy to XML::Compile::Transport::SOAPHTTP, this implementation
+can be used in various event-driven environments, via AnyEvent::HTTP.
+
+WWW: http://search.cpan.org/dist/XML-Compile-SOAP-AnyEvent/
