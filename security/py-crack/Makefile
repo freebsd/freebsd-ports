@@ -30,8 +30,9 @@ CONFIGURE_ENV=	"CPPFLAGS=-I${LOCALBASE}/include" \
 		"LDFLAGS=-L${LOCALBASE}/lib" \
 		"DEFAULT_DICTPATH=${LOCALBASE}/libdata/cracklib/pw_dict"
 
-MAKE_ENV=	"CPPFLAGS=-I${LOCALBASE}/include -fPIC" \
-		"LDFLAGS=-L${LOCALBASE}/lib"
+MAKE_ENV=	"LDFLAGS=-L${LOCALBASE}/lib"
+
+CFLAGS+=	"-I${LOCALBASE}/include"
 
 post-patch:
 	${REINPLACE_CMD} -e 's/setup(/setup(name="${PORTNAME}",version="${PORTVERSION}",/' \
