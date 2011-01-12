@@ -20,8 +20,8 @@ COMMENT=	A trac plugin providing a downloads section
 RUN_DEPENDS+=	tracd:${PORTSDIR}/www/trac
 BUILD_DEPENDS+=	easy_install:${PORTSDIR}/devel/py-setuptools
 
-TRAC_VERSION=	0.11
-PLUGIN_VERSION=	0.2
+TRAC_VERSION=	0.12
+PLUGIN_VERSION=	0.3
 
 USE_PYTHON=	yes
 NO_BUILD=	yes
@@ -34,10 +34,16 @@ PLIST_FILES=	%%PYTHON_SITELIBDIR%%/${PYDISTUTILS_PKGNAME}-${PLUGIN_VERSION}-py${
 .if defined(BOOTSTRAP)
 do-fetch:
 	${MKDIR} ${WRKDIR}
-	svn export http://trac-hacks.org/svn/downloadsplugin/0.11/ ${WRKSRC}
+	svn export http://trac-hacks.org/svn/downloadsplugin/${TRAC_VERSION}/ ${WRKSRC}
 	${MKDIR} ${_DISTDIR}
 	cd ${WRKDIR} && \
 	    tar cfvz ${_DISTDIR}/${DISTNAME}.tar.gz ${DISTNAME}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PYTHON_REL} >= 260
+EXTRA_PATCHES=	${PATCHDIR}/no-sets-module.diff
+.endif
+
+.include <bsd.port.post.mk>
