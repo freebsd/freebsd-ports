@@ -32,6 +32,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 
 USE_APACHE=	13
 
+USE_MYSQL=	yes
 USE_PHP=	mysql curl pcre xml xmlrpc gd session
 WANT_PHP_CLI=	YES
 USE_PHP_BUILD=	YES
