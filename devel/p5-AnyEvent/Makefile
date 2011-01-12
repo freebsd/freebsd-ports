@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	AnyEvent
-PORTVERSION=	5.29
+PORTVERSION=	5.30
 PORTEPOCH=	1
 CATEGORIES=	devel perl5
-MASTER_SITES=	CPAN
+MASTER_SITES=	CPAN/../../authors/id/M/ML/MLEHMANN
 PKGNAMEPREFIX=	p5-
 DISTNAME=	${PORTNAME}-${DISTVERSION:C/0$//}
 
@@ -23,6 +23,7 @@ MAN3=		AnyEvent.3 \
 		AnyEvent::Debug.3 \
 		AnyEvent::FAQ.3 \
 		AnyEvent::DNS.3 AnyEvent::Handle.3 \
+		AnyEvent::Impl::Cocoa.3 \
 		AnyEvent::Impl::EventLib.3 \
 		AnyEvent::Impl::Irssi.3 \
 		AnyEvent::Impl::POE.3 \
