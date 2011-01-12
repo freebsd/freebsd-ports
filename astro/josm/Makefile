@@ -9,7 +9,8 @@ PORTNAME=	josm
 PORTVERSION=	3751
 CATEGORIES=	astro java
 MASTER_SITES=	http://josm.openstreetmap.de/download/:josm \
-		http://svn.openstreetmap.org/applications/editors/josm/plugins/wmsplugin/:wmsplugin
+		http://mirror.amdmi3.ru/distfiles/:josm \
+		http://mirror.amdmi3.ru/distfiles/:wmsplugin
 DISTNAME=	${PORTNAME}-snapshot-${PORTVERSION}.jar
 DISTFILES=	${DISTNAME}:josm ${WEBKITIMG_SRC}:wmsplugin
 EXTRACT_ONLY=	# empty
@@ -37,13 +38,13 @@ PLIST_FILES=	bin/josm ${JAVAJARDIR:C,${PREFIX}/?,,}/${DISTNAME} \
 
 do-build:
 	cd ${WRKSRC} && \
-	    ${MOC} ${DISTDIR}/${WEBKITIMG_SRC} > ${WEBKITIMG}.h && \
-	    ${CXX} ${CFLAGS} ${PTHREAD_LIBS} -I. -I${QT_INCDIR} -L${QT_LIBDIR} \
-	    ${DISTDIR}/${WEBKITIMG_SRC} -o ${WEBKITIMG} -lQtCore -lQtWebKit \
-	    -lQtGui
+		${MOC} ${DISTDIR}/${WEBKITIMG_SRC} > ${WEBKITIMG}.h && \
+		${CXX} ${CFLAGS} ${PTHREAD_LIBS} -I. -I${QT_INCDIR} -L${QT_LIBDIR} \
+		${DISTDIR}/${WEBKITIMG_SRC} -o ${WEBKITIMG} -lQtCore -lQtWebKit \
+		-lQtGui
 
 do-install:
-	@${MKDIR} ${JAVAJARDIR}/
+	${MKDIR} ${JAVAJARDIR}/
 	${INSTALL_DATA} ${DISTDIR}/${DISTNAME} ${JAVAJARDIR}/
 	${INSTALL_SCRIPT} ${WRKDIR}/josm.sh ${PREFIX}/bin/josm
 	${INSTALL_PROGRAM} ${WRKDIR}/${WEBKITIMG} ${PREFIX}/bin
