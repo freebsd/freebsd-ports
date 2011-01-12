@@ -7,6 +7,7 @@
 
 PORTNAME=	xbmc
 PORTVERSION=	10.0
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	http://mirrors.xbmc.org/releases/source/ \
 		http://fneufn.eu/freebsd/xbmc/
@@ -166,7 +167,7 @@ CONFIGURE_ARGS+=	--disable-vdpau
 
 .if defined(WITH_WEBSERVER)
 CONFIGURE_ARGS+=	--enable-webserver
-LIB_DEPENDS+=	microhttpd.6:${PORTSDIR}/www/libmicrohttpd
+LIB_DEPENDS+=	microhttpd.12:${PORTSDIR}/www/libmicrohttpd
 PLIST_SUB+=	HTTPD=""
 .else
 CONFIGURE_ARGS+=	--disable-webserver
