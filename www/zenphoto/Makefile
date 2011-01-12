@@ -1,10 +1,12 @@
 # New ports collection makefile for:   zenphoto
 # Date created:                27 December 2007
 # Whom:                        Philippe Audeoud <jadawin@tuxaco.net>
+#
 # $FreeBSD$
+#
 
 PORTNAME=	zenphoto
-PORTVERSION=	1.3.1.2
+PORTVERSION=	1.4
 CATEGORIES=	www
 MASTER_SITES=	GOOGLE_CODE \
 		http://www.zenphoto.org/files/
@@ -26,10 +28,11 @@ SUB_LIST=	PORTNAME=${PORTNAME}
 
 do-install:
 	${MKDIR} ${WWWDIR}
+	@${RM} ${WRKSRC}/doc_files/License.txt \
+		${WRKSRC}/doc_files/README.html \
+		${WRKSRC}/zp-core/Zenphoto.package
+	@${TOUCH} ${WRKSRC}/uploaded/.keepme
 	@cd ${WRKSRC} && ${COPYTREE_SHARE} \* ${WWWDIR}
-	@${RM} ${WWWDIR}/doc_files/License.txt
-	@${RM} ${WWWDIR}/doc_files/README.html
-	@${RM} ${WWWDIR}/zp-core/Zenphoto.package
 	${CHOWN} -R ${WWWOWN}:${WWWGRP} ${WWWDIR}
 	${CHMOD} 644 ${WWWDIR}/zp-core/images/*
 
