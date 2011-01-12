@@ -8,7 +8,7 @@
 
 PORTNAME=	vtk
 PORTVERSION=	5.6.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	math graphics
 MASTER_SITES=	http://www.vtk.org/files/release/${PORTVERSION:R}/ \
 		http://www.neuro.mcw.edu/Ports/distfiles/VTK5/
@@ -205,7 +205,7 @@ post-patch:
 	${REINPLACE_CMD} -e '222s|)|) \&\& !defined(__FreeBSD__)|' \
 	    ${WRKSRC}/Utilities/kwsys/SharedForward.h.in
 	${REINPLACE_CMD} -e '25,30d' ${WRKSRC}/Wrapping/Python/setup.py.in
-.if !defined(WITH_SHARED)
+.if defined(WITH_SHARED)
 	${REINPLACE_CMD} -e 's|png_set_gray_1_2_4_to_8|png_set_expand_gray_1_2_4_to_8|g' \
 	    ${WRKSRC}/IO/vtkPNGReader.cxx
 .endif
