@@ -36,6 +36,10 @@ LICENSE_PERMS_DMD=	no-dist-mirror no-dist-sell no-pkg-mirror no-pkg-sell auto-ac
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} < 800000
+BROKEN=		does not compile
+.endif
+
 MODULEDIR=	${PREFIX}/include/d/phobos2
 
 post-patch:
