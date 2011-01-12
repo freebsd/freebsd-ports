@@ -7,7 +7,7 @@
 
 PORTNAME=	${PYDISTUTILS_PKGNAME:S;^Trac;;S;Plugin$;;:L}
 PORTVERSION=	0.7.4
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	www devel graphics python
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	brooks
@@ -22,7 +22,7 @@ RUN_DEPENDS+=	${LOCALBASE}/lib/X11/fonts/URW/fonts.dir:${PORTSDIR}/x11-fonts/urw
 		tracd:${PORTSDIR}/www/trac
 BUILD_DEPENDS+=	easy_install:${PORTSDIR}/devel/py-setuptools
 
-USE_PYTHON=	yes
+USE_PYTHON=	2.5+
 NO_BUILD=	yes
 USE_PYDISTUTILS=yes
 PYDISTUTILS_PKGNAME=	graphviz
