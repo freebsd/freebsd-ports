@@ -239,7 +239,7 @@ lib/ruby/rubinius/rubinius/1.2/lib/ext/dl/type.rb
 lib/ruby/rubinius/rubinius/1.2/lib/ext/dl/type.rbc
 lib/ruby/rubinius/rubinius/1.2/lib/ext/gdbm/extconf.rb
 lib/ruby/rubinius/rubinius/1.2/lib/ext/gdbm/extconf.rbc
-lib/ruby/rubinius/rubinius/1.2/lib/ext/gdbm/gdbm.so
+%%GDBM%%lib/ruby/rubinius/rubinius/1.2/lib/ext/gdbm/gdbm.so
 lib/ruby/rubinius/rubinius/1.2/lib/ext/gdbm/test/test_gdbm.rb
 lib/ruby/rubinius/rubinius/1.2/lib/ext/gdbm/test/test_gdbm.rbc
 lib/ruby/rubinius/rubinius/1.2/lib/ext/melbourne/extconf.rb
