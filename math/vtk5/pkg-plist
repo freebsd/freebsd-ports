@@ -182,6 +182,29 @@
 %%SHARED%%%%PYTHON%%lib/vtk-%%VER2%%/libvtkWidgetsPythonD.so.%%VER1%%
 %%SHARED%%%%PYTHON%%lib/vtk-%%VER2%%/libvtkWidgetsPythonD.so.%%VER2%%
 %%SHARED%%%%PYTHON%%lib/vtk-%%VER2%%/libvtkWidgetsPythonD.so.%%VER3%%
+%%STATIC%%include/vtk-%%VER2%%/vtkzlib/zlib.h
+%%STATIC%%include/vtk-%%VER2%%/vtkzlib/zconf.h
+%%STATIC%%include/vtk-%%VER2%%/vtkzlib/vtk_zlib_mangle.h
+%%STATIC%%include/vtk-%%VER2%%/vtkzlib/zlibDllConfig.h
+%%STATIC%%include/vtk-%%VER2%%/vtkjpeg/jpegDllConfig.h
+%%STATIC%%include/vtk-%%VER2%%/vtkjpeg/jpeglib.h
+%%STATIC%%include/vtk-%%VER2%%/vtkjpeg/vtk_jpeg_mangle.h
+%%STATIC%%include/vtk-%%VER2%%/vtkjpeg/jconfig.h
+%%STATIC%%include/vtk-%%VER2%%/vtkjpeg/jmorecfg.h
+%%STATIC%%include/vtk-%%VER2%%/vtkjpeg/jerror.h
+%%STATIC%%include/vtk-%%VER2%%/vtkpng/pngDllConfig.h
+%%STATIC%%include/vtk-%%VER2%%/vtkpng/png.h
+%%STATIC%%include/vtk-%%VER2%%/vtkpng/pngconf.h
+%%STATIC%%include/vtk-%%VER2%%/vtkpng/vtk_png_mangle.h
+%%STATIC%%include/vtk-%%VER2%%/vtktiff/tiffDllConfig.h
+%%STATIC%%include/vtk-%%VER2%%/vtktiff/tiffvers.h
+%%STATIC%%include/vtk-%%VER2%%/vtktiff/vtk_tiff_mangle.h
+%%STATIC%%include/vtk-%%VER2%%/vtktiff/tiff.h
+%%STATIC%%include/vtk-%%VER2%%/vtktiff/tiffio.h
+%%STATIC%%include/vtk-%%VER2%%/vtktiff/tconf.h
+%%STATIC%%include/vtk-%%VER2%%/vtkexpat/expatDllConfig.h
+%%STATIC%%include/vtk-%%VER2%%/vtkexpat/expat.h
+%%STATIC%%include/vtk-%%VER2%%/vtkexpat/vtk_expat_mangle.h
 %%QT%%include/vtk-%%VER2%%/QFilterTreeProxyModel.h
 %%QT%%include/vtk-%%VER2%%/QVTKWidget.h
 %%QT%%include/vtk-%%VER2%%/QVTKWin32Header.h
@@ -478,13 +501,10 @@
 %%WRAP_PYTHON_OR_TCLTK%%include/vtk-%%VER2%%/TclTk/internals/tk%%TCLTK_VER%%/default.h
 %%WRAP_PYTHON_OR_TCLTK%%include/vtk-%%VER2%%/TclTk/internals/tk%%TCLTK_VER%%/tclInt.h
 %%WRAP_PYTHON_OR_TCLTK%%include/vtk-%%VER2%%/TclTk/internals/tk%%TCLTK_VER%%/tclIntDecls.h
-%%WRAP_PYTHON_OR_TCLTK%%include/vtk-%%VER2%%/TclTk/internals/tk%%TCLTK_VER%%/tclIntPlatDecls.h
-%%WRAP_PYTHON_OR_TCLTK%%include/vtk-%%VER2%%/TclTk/internals/tk%%TCLTK_VER%%/tclPort.h
-%%WRAP_PYTHON_OR_TCLTK%%include/vtk-%%VER2%%/TclTk/internals/tk%%TCLTK_VER%%/tclUnixPort.h
-%%WRAP_PYTHON_OR_TCLTK%%include/vtk-%%VER2%%/TclTk/internals/tk%%TCLTK_VER%%/tclWinPort.h
 %%WRAP_PYTHON_OR_TCLTK%%include/vtk-%%VER2%%/TclTk/internals/tk%%TCLTK_VER%%/tkInt.h
 %%WRAP_PYTHON_OR_TCLTK%%include/vtk-%%VER2%%/TclTk/internals/tk%%TCLTK_VER%%/tkIntDecls.h
 %%WRAP_PYTHON_OR_TCLTK%%include/vtk-%%VER2%%/TclTk/internals/tk%%TCLTK_VER%%/tkIntPlatDecls.h
+%%WRAP_PYTHON_OR_TCLTK%%include/vtk-%%VER2%%/TclTk/internals/tk%%TCLTK_VER%%/tkMacDefault.h
 %%WRAP_PYTHON_OR_TCLTK%%include/vtk-%%VER2%%/TclTk/internals/tk%%TCLTK_VER%%/tkMacOSXDefault.h
 %%WRAP_PYTHON_OR_TCLTK%%include/vtk-%%VER2%%/TclTk/internals/tk%%TCLTK_VER%%/tkMacOSXInt.h
 %%WRAP_PYTHON_OR_TCLTK%%include/vtk-%%VER2%%/TclTk/internals/tk%%TCLTK_VER%%/tkMacOSXPort.h
@@ -2850,5 +2870,10 @@ lib/vtk-%%VER2%%/vtkWidgetsKit.cmake
 @dirrm include/vtk-%%VER2%%/alglib
 @dirrm include/vtk-%%VER2%%/VPIC
 @dirrm include/vtk-%%VER2%%/Cosmo
+%%STATIC%%@dirrm include/vtk-%%VER2%%/vtkzlib
+%%STATIC%%@dirrm include/vtk-%%VER2%%/vtkjpeg
+%%STATIC%%@dirrm include/vtk-%%VER2%%/vtkpng
+%%STATIC%%@dirrm include/vtk-%%VER2%%/vtktiff
+%%STATIC%%@dirrm include/vtk-%%VER2%%/vtkexpat
 @comment The following directory is shared with multimedia/vtkmpeg2encode
 @dirrmtry include/vtk-%%VER2%%
