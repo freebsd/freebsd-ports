@@ -5,6 +5,19 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20110111:
+  AFFECTS: users of www/redmine
+  AUTHOR: decke@FreeBSD.org
+
+  Redmine explicitly requires i18n with version 0.4.2. You need to install
+  that manually until a better solution is available.
+
+  # gem install -v=0.4.2 i18n
+
+  Then upgrade the database as usual:
+
+  # rake db:migrate RAILS_ENV=production
+
 20110107:
   AFFECTS: users of mail/exim
   AUTHOR: rea@FreeBSD.org
