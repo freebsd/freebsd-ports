@@ -35,6 +35,7 @@ PORTEXAMPLES=	4charts.pl bigtops.pl cgi-demo.cgi minmax.pl perftest.pl \
 		piped-demo.pl shared-demo.pl stripes.pl
 
 OPTIONS=	DEJAVU		"Use DejaVu fonts (requires X11)" off \
+		JSON		"Support of json export" off \
 		MMAP		"Use mmap in rrd_update" on \
 		PERL_MODULE	"Build PERL module" on \
 		PYTHON_MODULE	"Build PYTHON bindings" off \
@@ -79,6 +80,10 @@ PLIST_SUB+=	WITH_PERL="@comment "
 
 .if defined(WITHOUT_MMAP)
 CONFIGURE_ARGS+=	--disable-mmap
+.endif
+
+.if defined(WITH_JSON)
+EXTRA_PATCHES+=		${FILESDIR}/thirdparty-json.diff
 .endif
 
 .if exists(${LOCALBASE}/lib/X11/fonts/dejavu) || defined(WITH_DEJAVU)

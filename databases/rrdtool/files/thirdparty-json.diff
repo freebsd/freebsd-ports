@@ -1,0 +1,115 @@
+#
+# From: https://gist.github.com/raw/614476/19f1b1bc9499bb9dd761e5e03eff225d2316707d/0001-work-in-progress.patch
+#
+--- src/rrd_tool.c.orig	2010-07-05 12:31:21.000000000 -0700
++++ src/rrd_tool.c	2011-01-06 15:17:04.453738239 -0800
+@@ -55,7 +55,7 @@
+         N_
+         ("Valid commands: create, update, updatev, graph, graphv,  dump, restore,\n"
+          "\t\tlast, lastupdate, first, info, fetch, tune,\n"
+-         "\t\tresize, xport, flushcached\n");
++         "\t\tresize, xport, json, flushcached\n");
+ 
+     const char *help_listremote =
+         N_("Valid remote commands: quit, ls, cd, mkdir, pwd\n");
+@@ -208,6 +208,13 @@
+            "\t\t[--enumds]\n" "\t\t[DEF:vname=rrd:ds-name:CF]\n"
+            "\t\t[CDEF:vname=rpn-expression]\n"
+            "\t\t[XPORT:vname:legend]\n");
++    const char *help_json =
++        N_("* json - generate JSON dump from one or several RRD\n\n"
++           "\trrdtool json [-s|--start seconds] [-e|--end seconds]\n"
++           "\t\t[-m|--maxrows rows]\n" "\t\t[--step seconds]\n"
++           "\t\t[DEF:vname=rrd:ds-name:CF]\n"
++           "\t\t[CDEF:vname=rpn-expression]\n"
++           "\t\t[XPORT:vname:legend]\n");
+     const char *help_quit =
+         N_(" * quit - closing a session in remote mode\n\n"
+            "\trrdtool quit\n");
+@@ -230,7 +237,7 @@
+     enum { C_NONE, C_CREATE, C_DUMP, C_INFO, C_RESTORE, C_LAST,
+         C_LASTUPDATE, C_FIRST, C_UPDATE, C_FETCH, C_GRAPH, C_GRAPHV,
+         C_TUNE,
+-        C_RESIZE, C_XPORT, C_QUIT, C_LS, C_CD, C_MKDIR, C_PWD,
++        C_RESIZE, C_XPORT, C_JSON, C_QUIT, C_LS, C_CD, C_MKDIR, C_PWD,
+         C_UPDATEV, C_FLUSHCACHED
+     };
+     int       help_cmd = C_NONE;
+@@ -268,6 +275,8 @@
+             help_cmd = C_RESIZE;
+         else if (!strcmp(cmd, "xport"))
+             help_cmd = C_XPORT;
++        else if (!strcmp(cmd, "json"))
++            help_cmd = C_JSON;
+         else if (!strcmp(cmd, "quit"))
+             help_cmd = C_QUIT;
+         else if (!strcmp(cmd, "ls"))
+@@ -343,6 +352,9 @@
+     case C_XPORT:
+         puts(_(help_xport));
+         break;
++    case C_JSON:
++        puts(_(help_json));
++        break;
+     case C_QUIT:
+         puts(_(help_quit));
+         break;
+@@ -770,6 +782,58 @@
+             setlocale(LC_NUMERIC, old_locale);
+         }
+         free(vtag);
++    } else if (strcmp("json", argv[1]) == 0) {
++        int       xxsize;
++        unsigned long int j = 0;
++        time_t    start, end, ti;
++        unsigned long step, col_cnt;
++        rrd_value_t *data, *ptr;
++        char    **legend_v;
++        int       i;
++
++        if (rrd_xport
++            (argc - 1, &argv[1], &xxsize, &start, &end, &step, &col_cnt,
++             &legend_v, &data) != -1) {
++            char *old_locale = setlocale(LC_NUMERIC, "C");
++            printf("[\n");
++            for (j = 0; j < col_cnt; j++) {
++                char     *entry = NULL;
++                ptr = j + data;
++                entry = legend_v[j];
++
++                printf("\t{\n\t\t\"%s\": {\n", entry);
++                free(entry);
++
++                printf("\t\t\t\"%s\": %lld,\n", META_START_TAG,
++                      (long long int) start + step);
++                printf("\t\t\t\"%s\": %lu,\n", META_STEP_TAG, step);
++                printf("\t\t\t\"%s\": %lld,\n", META_END_TAG, (long long int) end);
++                printf("\t\t\t\"data_points\": [\n");
++
++                for (ti = start + step; ti <= end; ti += step) {
++                  rrd_value_t newval = DNAN;
++                    newval = *ptr;
++                    if (isnan(newval)) {
++                        printf("null");
++                    } else {
++                        printf("%0.5f", newval);
++                    };
++                    if (ti < end) {
++                      printf(", ");
++                    }
++                    ptr+=col_cnt;
++                }
++
++                printf("\n\t\t\t]\n");
++                printf("\t\t}\n");
++                printf("\t}%s\n", (j<col_cnt-1) ? "," : "");
++            }
++            free(legend_v);
++
++            free(data);
++            printf("]\n");
++            setlocale(LC_NUMERIC, old_locale);
++        }
+     } else if (strcmp("graph", argv[1]) == 0) {
+         char    **calcpr;
+ 
