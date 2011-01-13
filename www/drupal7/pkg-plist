@@ -40,6 +40,7 @@
 %%DRUPAL_BASE%%/includes/theme.inc
 %%DRUPAL_BASE%%/includes/theme.maintenance.inc
 %%DRUPAL_BASE%%/includes/unicode.inc
+%%DRUPAL_BASE%%/includes/unicode.entities.inc
 %%DRUPAL_BASE%%/includes/xmlrpc.inc
 %%DRUPAL_BASE%%/includes/xmlrpcs.inc
 %%DRUPAL_BASE%%/index.php
@@ -263,6 +264,7 @@
 %%DRUPAL_BASE%%/modules/statistics/statistics.module
 %%DRUPAL_BASE%%/modules/statistics/statistics.pages.inc
 %%DRUPAL_BASE%%/modules/syslog/syslog.info
+%%DRUPAL_BASE%%/modules/syslog/syslog.install
 %%DRUPAL_BASE%%/modules/syslog/syslog.module
 %%DRUPAL_BASE%%/modules/system/admin-rtl.css
 %%DRUPAL_BASE%%/modules/system/admin.css
