@@ -1,4 +1,3 @@
-# ex:ts=8
 # Ports collection makefile for:	sudoku_solver
 # Date created:			Apr 9, 2006
 # Whom:				ijliao
@@ -7,13 +6,15 @@
 #
 
 PORTNAME=	sudoku_solver
-PORTVERSION=	1.11
+PORTVERSION=	1.20
 CATEGORIES=	games
 MASTER_SITES=	http://www.techfinesse.com/game/
-DISTNAME=	solver_${PORTVERSION}
+DISTNAME=	solver
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	rhurlin@gwdg.de
 COMMENT=	A Sudoku Solver in C
+
+WRKSRC=		${WRKDIR}/${DISTNAME}_${PORTVERSION}
 
 ALL_TARGET=	# empty
 
