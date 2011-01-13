@@ -16,6 +16,8 @@ COMMENT=	Create an open-source PXE implementation and bootloader
 
 BUILD_DEPENDS=	syslinux:${PORTSDIR}/sysutils/syslinux
 
+BROKEN=		does not build
+
 LICENSE=	GPLv2
 
 USE_BZIP2=	yes
