@@ -14739,6 +14739,7 @@ p5-XML-Compile                  ports/textproc/p5-XML-Compile
 p5-XML-Compile-Cache            ports/textproc/p5-XML-Compile-Cache
 p5-XML-Compile-Dumper           ports/textproc/p5-XML-Compile-Dumper
 p5-XML-Compile-SOAP             ports/net/p5-XML-Compile-SOAP
+p5-XML-Compile-SOAP-AnyEvent    ports/net/p5-XML-Compile-SOAP-AnyEvent
 p5-XML-Compile-SOAP-Daemon      ports/net/p5-XML-Compile-SOAP-Daemon
 p5-XML-Compile-SOAP-WSA         ports/net/p5-XML-Compile-SOAP-WSA
 p5-XML-Compile-Tester           ports/devel/p5-XML-Compile-Tester
@@ -18880,6 +18881,7 @@ p5-xml-compile                  ports/textproc/p5-XML-Compile
 p5-xml-compile-cache            ports/textproc/p5-XML-Compile-Cache
 p5-xml-compile-dumper           ports/textproc/p5-XML-Compile-Dumper
 p5-xml-compile-soap             ports/net/p5-XML-Compile-SOAP
+p5-xml-compile-soap-anyevent    ports/net/p5-XML-Compile-SOAP-AnyEvent
 p5-xml-compile-soap-daemon      ports/net/p5-XML-Compile-SOAP-Daemon
 p5-xml-compile-soap-wsa         ports/net/p5-XML-Compile-SOAP-WSA
 p5-xml-compile-tester           ports/devel/p5-XML-Compile-Tester
@@ -21536,6 +21538,7 @@ py-pywebdav                     ports/www/py-pywebdav
 py-pyx                          ports/graphics/py-PyX
 py-pyx12                        ports/textproc/py-pyx12
 py-pyxmpp                       ports/net-im/py-pyxmpp
+py-pyzmq                        ports/devel/py-pyzmq
 py-qp                           ports/www/py-qp
 py-qpy                          ports/www/py-qpy
 py-qt                           ports/x11-toolkits/py-qt
@@ -21933,6 +21936,7 @@ qalculate                       ports/math/qalculate
 qar-bufo                        ports/mail/qar-bufo
 qbittorrent-23                  ports/net-p2p/qbittorrent-23
 qbittorrent-26                  ports/net-p2p/qbittorrent-26
+qbittorrent-26-nox11            ports/net-p2p/qbittorrent-26-nox11
 qbrew                           ports/misc/qbrew
 qbzr                            ports/devel/qbzr
 qca                             ports/devel/qca
