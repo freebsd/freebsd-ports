@@ -19,7 +19,7 @@ RUN_DEPENDS=	fluxbox:${PORTSDIR}/x11-wm/fluxbox
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 ALL_TARGET=	first
-MAKE_ARGS=	CXX="${CXX}" CFLAGS="${CFLAGS}"
+CFLAGS+=	"-I${LOCALBASE}/include"
 
 USE_XORG=	x11 xmu
 PLIST_FILES=	bin/fbcmd
