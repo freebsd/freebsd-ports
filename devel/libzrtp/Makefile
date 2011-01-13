@@ -38,7 +38,7 @@ place it in ${DISTDIR}, and restart the build.\n\n
 .endif
 
 pre-fetch:
-.if defined(DISTFILE_INSTRUCTIONS)
+.if defined(DISTFILE_INSTRUCTIONS) && !defined(PACKAGE_BUILDING)
 	@${PRINTF} "${DISTFILE_INSTRUCTIONS}"
 	@exit 1
 .endif
