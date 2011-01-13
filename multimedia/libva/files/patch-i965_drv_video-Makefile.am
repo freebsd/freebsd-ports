@@ -1,0 +1,13 @@
+--- i965_drv_video/Makefile.am~
++++ i965_drv_video/Makefile.am
+@@ -26,8 +26,8 @@ AM_CFLAGS = -Wall -I$(top_srcdir) -I$(to
+ 
+ i965_drv_video_la_LTLIBRARIES = i965_drv_video.la
+ i965_drv_video_ladir = @LIBVA_DRIVERS_PATH@
+-i965_drv_video_la_LDFLAGS = -module -avoid-version -no-undefined -Wl,--no-undefined @DRM_LIBS@ -ldrm_intel
+-i965_drv_video_la_LIBADD = ../va/libva-x11.la -lpthread
++i965_drv_video_la_LDFLAGS = -module -avoid-version -no-undefined -Wl,--no-undefined @DRM_LIBS@ -ldrm_intel -pthread
++i965_drv_video_la_LIBADD = ../va/libva-x11.la
+ 
+ i965_drv_video_la_SOURCES =	\
+ 	object_heap.c		\
