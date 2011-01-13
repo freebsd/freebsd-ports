@@ -7,6 +7,7 @@
 
 PORTNAME=	pinot
 PORTVERSION=	0.97
+PORTREVISION=	1
 CATEGORIES=	deskutils
 MASTER_SITES=	${MASTER_SITE_BERLIOS}
 #MASTER_SITES=	http://colinf.chez.com/pinot/
@@ -67,7 +68,7 @@ LM2FIX=		textcat_conf.txt textcat3_conf.txt IndexSearch/Google/Makefile.in
 SHR2FIX=	Core/pinot-search.1 README
 UL2FIX=		Utils/xdgmime/xdgmime.c
 
-LDESKBAR_MOD=	lib/deskbar-applet/modules-2.20-compatible
+LDESKBAR_MOD=	libexec/deskbar-applet/modules-2.20-compatible
 DESKBAR_MOD=	${PREFIX}/${LDESKBAR_MOD}
 
 .include <bsd.port.pre.mk>
@@ -100,10 +101,6 @@ pre-configure:
 
 post-install:
 	${TOUCH} ${DATADIR}/stopwords/.empty_file
-	${MKDIR} ${DESKBAR_MOD}
-.for pyscript in pinot-module
-	${INSTALL_DATA} ${WRKSRC}/scripts/python/${pyscript}.py ${DESKBAR_MOD}
-.endfor
 	@${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${DESKBAR_MOD}
 	@${PYTHON_CMD} -O ${PYTHON_LIBDIR}/compileall.py ${DESKBAR_MOD}
 	@${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py		\
