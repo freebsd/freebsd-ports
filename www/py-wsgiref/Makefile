@@ -20,7 +20,7 @@ USE_PYDISTUTILS=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PYTHON_REL} >= 250
-IGNORE=	hashlib ships with Python 2.5.x
+IGNORE=	wsgiref ships with Python 2.5.x
 .endif
 
 .include <bsd.port.post.mk>
