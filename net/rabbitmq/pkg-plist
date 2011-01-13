@@ -32,7 +32,6 @@ lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/rabbit_channel_sup_sup.beam
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/rabbit_connection_sup.beam
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/rabbit_control.beam
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/rabbit_ctl_usage.beam
-lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/rabbit_dialyzer.beam
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/rabbit_error_logger.beam
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/rabbit_error_logger_file_h.beam
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/rabbit_exchange.beam
@@ -43,6 +42,7 @@ lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/rabbit_exchange_type_headers.bea
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/rabbit_exchange_type_registry.beam
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/rabbit_exchange_type_topic.beam
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/rabbit_event.beam
+lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/rabbit_framing.beam
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/rabbit_framing_amqp_0_8.beam
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/rabbit_framing_amqp_0_9_1.beam
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/rabbit_framing_channel.beam
@@ -72,10 +72,13 @@ lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/rabbit_reader.beam
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/rabbit_restartable_sup.beam
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/rabbit_router.beam
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/rabbit_sasl_report_file_h.beam
+lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/rabbit_ssl.beam
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/rabbit_sup.beam
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/rabbit_tests.beam
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/rabbit_tests_event_receiver.beam
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/rabbit_types.beam
+lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/rabbit_upgrade.beam
+lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/rabbit_upgrade_functions.beam
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/rabbit_variable_queue.beam
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/rabbit_writer.beam
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/supervisor2.beam
