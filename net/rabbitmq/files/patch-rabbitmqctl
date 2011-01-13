@@ -1,5 +1,5 @@
---- scripts/rabbitmqctl.orig	2010-08-24 11:19:27.000000000 -0400
-+++ scripts/rabbitmqctl	2010-08-31 17:58:01.000000000 -0400
+--- scripts/rabbitmqctl.orig	2011-01-12 09:22:10.000000000 -0300
++++ scripts/rabbitmqctl	2011-01-12 09:23:31.000000000 -0300
 @@ -38,7 +38,7 @@
  [ "x" = "x$RABBITMQ_NODENAME" ] && RABBITMQ_NODENAME=${NODENAME}
  [ "x" = "x$RABBITMQ_CTL_ERL_ARGS" ] && RABBITMQ_CTL_ERL_ARGS=${CTL_ERL_ARGS}
@@ -9,8 +9,3 @@
      -pa "${RABBITMQ_HOME}/ebin" \
      -noinput \
      -hidden \
-@@ -47,4 +47,3 @@
-     -s rabbit_control \
-     -nodename $RABBITMQ_NODENAME \
-     -extra "$@"
--	
