@@ -7,6 +7,7 @@
 
 PORTNAME=	heyu2
 PORTVERSION=	2.9.2
+PORTREVISION=	1
 CATEGORIES=	misc
 MASTER_SITES=	http://www.heyu.org/download/
 DISTNAME=	heyu-${PORTVERSION}
@@ -39,6 +40,8 @@ OPTIONS=	CM17A		"X10 CM17A \"Firecracker\" Support"		on \
 		RFXMETER	"RFXMeter (RF) Support"				on \
 		DMX		"Digimax Thermostat Support"			on \
 		OREGON	 	"Oregon Support"				on
+
+.include <bsd.port.options.mk>
 
 .if !defined(WITH_CM17A)
 CONFIGURE_ARGS+=	nocm17a
