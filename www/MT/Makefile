@@ -6,49 +6,47 @@
 #
 
 PORTNAME=	MT
-PORTVERSION?=	5.03
-PORTREVISION=	1
+PORTVERSION?=	5.04
+PORTREVISION?=	0
 CATEGORIES?=	www
 MASTER_SITES?=	http://movabletype.org/downloads/stable/
-DISTNAME?=	MTOS-${PORTVERSION}${PORTREVISION}-en
+DISTNAME?=	MTOS-${PORTVERSION}-en
 
 MAINTAINER?=	takefu@airport.fm
 COMMENT?=	A web-based personal publishing system for weblogs
 
-CONFLICTS?=	ja-MT-[2-5].* fr-MT-[2-5].* de-MT-[2-5].* es-MT-[2-5].* \
-		nl-MT-[2-5].* ru-MT-[2-5].*
+CONFLICTS?=	de-MT-[2-5].* fr-MT-[2-5].* ja-MT-[2-5].* ru-MT-[2-5].*
 
 RUN_DEPENDS=	${SITE_PERL}/HTML/Template.pm:${PORTSDIR}/www/p5-HTML-Template \
 		${SITE_PERL}/Image/Size.pm:${PORTSDIR}/graphics/p5-Image-Size \
 		${SITE_PERL}/CGI.pm:${PORTSDIR}/www/p5-CGI.pm
 
-OPTIONS=	APACHE			"USE_APACHE"		off\
-		MYSQL			"USE_MYSQL"		off\
+OPTIONS=	APACHE			"USE_APACHE"		off \
+		MYSQL			"USE_MYSQL"		off \
 		OPTIONAL_MODULES	"OPTIONAL_MODULES"	on
 
 .include <bsd.port.options.mk>
 
 .if !defined(WITHOUT_OPTIONAL_MODULES)
 RUN_DEPENDS+=	${SITE_PERL}/LWP/UserAgent.pm:${PORTSDIR}/www/p5-libwww \
-	${SITE_PERL}/SOAP/Lite.pm:${PORTSDIR}/net/p5-SOAP-Lite \
-	${SITE_PERL}/${PERL_ARCH}/Image/Magick.pm:${PORTSDIR}/graphics/ImageMagick \
-	${SITE_PERL}/Crypt/DSA.pm:${PORTSDIR}/security/p5-Crypt-DSA \
-	${SITE_PERL}/Mail/Sendmail.pm:${PORTSDIR}/mail/p5-Mail-Sendmail \
-	${SITE_PERL}/Archive/Zip.pm:${PORTSDIR}/archivers/p5-Archive-Zip \
-	${SITE_PERL}/Archive/Tar.pm:${PORTSDIR}/archivers/p5-Archive-Tar \
-	${SITE_PERL}/${PERL_ARCH}/GD.pm:${PORTSDIR}/graphics/p5-GD
+		${SITE_PERL}/SOAP/Lite.pm:${PORTSDIR}/net/p5-SOAP-Lite \
+		${SITE_PERL}/${PERL_ARCH}/Image/Magick.pm:${PORTSDIR}/graphics/ImageMagick \
+		${SITE_PERL}/Crypt/DSA.pm:${PORTSDIR}/security/p5-Crypt-DSA \
+		${SITE_PERL}/Mail/Sendmail.pm:${PORTSDIR}/mail/p5-Mail-Sendmail \
+		${SITE_PERL}/Archive/Zip.pm:${PORTSDIR}/archivers/p5-Archive-Zip \
+		${SITE_PERL}/Archive/Tar.pm:${PORTSDIR}/archivers/p5-Archive-Tar \
+		${SITE_PERL}/${PERL_ARCH}/GD.pm:${PORTSDIR}/graphics/p5-GD
 .endif
 
 DATADIR=	www/data
 CGIDIR=		www/cgi-bin/mt
 
 .if defined(WITH_MYSQL)
-DB_DIR?=		/var/db/mysql/blog
-USE_MYSQL=		yes
+DB_DIR?=	/var/db/mysql/blog
+USE_MYSQL=	yes
 .else
 DB_DIR?=	${PREFIX}/${CGIDIR}/db
-RUN_DEPENDS+=\
-	${SITE_PERL}/${PERL_ARCH}/DBD/SQLite.pm:${PORTSDIR}/databases/p5-DBD-SQLite
+RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBD/SQLite.pm:${PORTSDIR}/databases/p5-DBD-SQLite
 WITH_DEFAULTDB=	yes
 .endif
 
