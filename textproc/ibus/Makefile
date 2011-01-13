@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ibus
-PORTVERSION=	1.3.8
+PORTVERSION=	1.3.9
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 
@@ -61,13 +61,13 @@ PLIST_SUB+=	VALA="@comment "
 .endif
 
 .if defined(WITH_GINTRO)
-BUILD_DEPENDS+= gobject-introspection>=0.6.8:${PORTSDIR}/devel/gobject-introspection
-RUN_DEPENDS+=   gobject-introspection>=0.6.8:${PORTSDIR}/devel/gobject-introspection
-CONFIGURE_ARGS+=        --enable-introspection=yes
-PLIST_SUB+= GINTRO=""
+BUILD_DEPENDS+=		gobject-introspection>=0.6.8:${PORTSDIR}/devel/gobject-introspection
+RUN_DEPENDS+=		gobject-introspection>=0.6.8:${PORTSDIR}/devel/gobject-introspection
+CONFIGURE_ARGS+=	--enable-introspection=yes
+PLIST_SUB+=		GINTRO=""
 .else
-CONFIGURE_ARGS+=        --enable-introspection=no
-PLIST_SUB+= GINTRO="@comment "
+CONFIGURE_ARGS+=	--enable-introspection=no
+PLIST_SUB+=		GINTRO="@comment "
 .endif
 
 post-patch:
