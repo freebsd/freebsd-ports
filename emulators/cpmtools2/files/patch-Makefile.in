@@ -9,12 +9,3 @@
  LDFLAGS=        @LDFLAGS@
  DEFFORMAT=      @DEFFORMAT@
  DEVICE=         @DEVICE@
-@@ -86,7 +86,7 @@
- 		$(INSTALL) -s -m 755 cpmchattr $(BINDIR)/cpmchattr
- 		$(INSTALL) -s -m 755 mkfs.cpm $(BINDIR)/mkfs.cpm
- 		$(INSTALL) -s -m 755 fsck.cpm $(BINDIR)/fsck.cpm
--		$(INSTALL) -s -m 755 fsed.cpm $(BINDIR)/fsed.cpm
-+#		$(INSTALL) -s -m 755 fsed.cpm $(BINDIR)/fsed.cpm
- 		$(INSTALL_DATA) diskdefs @datarootdir@/diskdefs
- 		$(INSTALL_DATA) cpmls.1 $(MANDIR)/man1/cpmls.1
- 		$(INSTALL_DATA) cpmcp.1 $(MANDIR)/man1/cpmcp.1

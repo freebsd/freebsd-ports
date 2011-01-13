@@ -1,0 +1,10 @@
+Index: configure
+@@ -3385,7 +3385,7 @@
+ { $as_echo "$as_me:${as_lineno-$LINENO}: result: $ac_cv_lib_curses_printw" >&5
+ $as_echo "$ac_cv_lib_curses_printw" >&6; }
+ if test "x$ac_cv_lib_curses_printw" = x""yes; then :
+-  FSED_CPM=fsed.cpm LIBS="-lcurses $LIBS"
++  FSED_CPM=fsed.cpm
+ else
+   FSED_CPM=
+ fi

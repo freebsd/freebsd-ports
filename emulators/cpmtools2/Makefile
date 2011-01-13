@@ -6,44 +6,42 @@
 #
 
 PORTNAME=	cpmtools
-PORTVERSION=	2.8
+PORTVERSION=	2.13
 CATEGORIES=	emulators sysutils
-MASTER_SITES=	http://www.moria.de/~michael/cpmtools/ \
-		http://www.copei.de/freebsd-ports/
+MASTER_SITES=	http://www.moria.de/~michael/cpmtools/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	spam@rm-rf.kiev.ua
 COMMENT=	Tools to access CP/M disks and disk images
-
-LIB_DEPENDS+=	dmalloc:${PORTSDIR}/devel/dmalloc
-
-BROKEN=		does not fetch
 
 LATEST_LINK=	cpmtools2
 
-HAS_CONFIGURE=	yes
-CONFIGURE_ARGS+=--mandir=${PREFIX}/man --bindir=${PREFIX}/sbin \
-		--datarootdir=${PREFIX}/share/${PORTNAME} --with-dmalloc
+LICENSE=	GPLv3
+
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS+=--bindir=${PREFIX}/sbin \
+		--datarootdir=${DATADIR}
 
 MAN1=	cpmls.1 cpmcp.1 cpmrm.1 cpmchmod.1 cpmchattr.1 mkfs.cpm.1 fsck.cpm.1 fsed.cpm.1
 MAN5=	cpm.5
 
-OPTIONS=	RAW_LIBDSK "With LIBDSK support with direct floppy access" on \
-		LIBDSK "With LIBDSK support (no direct floppy access)" off
+OPTIONS=	LIBDSK "With LIBDSK support" off
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_LIBDSK) || defined(WITH_RAW_LIBDSK)
+.if defined(WITH_LIBDSK)
 LIB_DEPENDS+=	dsk.5:${PORTSDIR}/emulators/libdsk
-CONFIGURE_ARGS+=--with-libdsk=${LOCALBASE} --with-device=LibDsk
+CONFIGURE_ARGS+=--with-libdsk=${LOCALBASE}
 .else
-CONFIGURE_ARGS+=--without-libdsk --with-device=posix
+CONFIGURE_ARGS+=--with-libdsk=''
 .endif
 
-.if defined(WITH_RAW_LIBDSK)
-CONFIGURE_ARGS+=--enable-floppy
-.else
-CONFIGURE_ARGS+=--disable-floppy
-.endif
+# remove unneeded getopt*.c
+# remove curses from all but fsed.cpm
+post-patch:
+	@${REINPLACE_CMD} -e 's|getopt$$(OBJEXT)||g; s|getopt1$$(OBJEXT)||g' \
+		${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e 's|\($$(CC).*fsed.cpm$$(OBJEXT).*$$(DEVICEOBJ)\)|\1 -lcurses|' \
+		${WRKSRC}/Makefile.in
 
 pre-install:
 	@${MKDIR} ${DATADIR}
