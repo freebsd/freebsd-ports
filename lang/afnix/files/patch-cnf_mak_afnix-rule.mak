@@ -1,6 +1,6 @@
---- cnf/mak/afnix-rule.mak.orig	Fri Apr 20 08:10:38 2007
-+++ cnf/mak/afnix-rule.mak	Sat May 26 23:59:55 2007
-@@ -24,7 +24,7 @@
+--- cnf/mak/afnix-rule.mak.orig	2011-01-13 11:16:23.000000000 +0100
++++ cnf/mak/afnix-rule.mak	2011-01-13 18:26:39.000000000 +0100
+@@ -24,7 +24,7 @@ endif
  ifeq ($(CCMODE),optimized)
    ENVFLAGS      = $(STDEVFLAGS) $(PLTEVFLAGS)
    CPPFLAGS      = $(STDCCFLAGS) $(PLTCCFLAGS) $(CPPCCFLAGS) $(OPTCCFLAGS)
@@ -9,7 +9,16 @@
    CCDEFINE      = $(STDDEFINES) $(PLTDEFINES) $(OPTDEFINES)
  endif
  
-@@ -95,7 +95,7 @@
+@@ -69,7 +69,7 @@ endif
+ 
+ ifeq ($(LKMODE),soname)
+ SOMAJ		= $(DYLIB).$(MAJOR)
+-SOMIN		= $(DYLIB).$(MAJOR).$(MINOR)
++SOMIN		= $(DYLIB).$(MAJOR)
+ SOVRS		= $(DYLIB).$(MAJOR).$(MINOR).$(PATCH)
+ endif
+ 
+@@ -95,7 +95,7 @@ else
  -include *.d
  
  %.o   : %.cpp 
@@ -18,7 +27,7 @@
  
  %.o   : %.cxx 
  	$(ENVFLAGS) $(CC) $(XXFLAGS) $(DEFINES) $(XXINCLS) -o $@ -c $<
-@@ -124,7 +124,7 @@
+@@ -124,7 +124,7 @@ endif
  
  install-arlib: $(ARLIB)
  	@$(MKDIR) $(LIBDIR)
@@ -27,7 +36,7 @@
  .PHONY: install-arlib
  else
  install-arlib: $(ARLIB)
-@@ -148,7 +148,7 @@
+@@ -148,7 +148,7 @@ $(DYLIB) : $(OBJECTS)
  
  install-dylib : $(DYLIB)
  	@$(MKDIR)       $(LIBDIR)
@@ -36,7 +45,7 @@
  .PHONY: install-dylib
  endif
  
-@@ -167,11 +167,8 @@
+@@ -167,11 +167,8 @@ $(DYLIB) : $(SOVRS)
  
  install-dylib : $(DYLIB)
  	@$(MKDIR)        $(LIBDIR)
@@ -50,7 +59,7 @@
  .PHONY: install-dylib
  endif
  
-@@ -194,7 +191,7 @@
+@@ -194,7 +191,7 @@ $(DYLIB) : $(DYVRS)
  
  install-dylib : $(DYLIB)
  	@$(MKDIR)        $(LIBDIR)
