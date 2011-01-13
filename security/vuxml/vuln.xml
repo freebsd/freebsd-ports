@@ -380,8 +380,212 @@ Note:  Please add new entries to the beginning of this file.
     </dates>
   </vuln>
 
-  <vuln vid="b2a6fc0e-070f-11e0-a6e9-00215c6a37bb">
-    <topic>php -- multiple vulnerabilities</topic>
+  <vuln vid="2a41233d-10e7-11e0-becc-0022156e8794">
+    <topic>php-zip -- multiple Denial of Service
+      vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>php5-zip</name>
+	<range><lt>5.3.4</lt></range>
+      </package>
+      <package>
+	<name>php52-zip</name>
+	<range><lt>5.2.15</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The following DoS conditions in Zip extension
+	  were fixed in PHP 5.3.4 and PHP 5.2.15:</p>
+	<ul>
+	  <li>
+	    <blockquote cite="http://www.php.net/releases/5_3_4.php">
+	      <p>Fixed crash in zip extract method (possible
+		CWE-170).</p>
+	    </blockquote>
+	  </li>
+	  <li>
+	    <blockquote cite="http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2010-3709">
+	      <p>The ZipArchive::getArchiveComment function
+		in PHP 5.2.x through 5.2.14 and 5.3.x through 5.3.3
+		allows context-dependent attackers to cause a denial
+		of service (NULL pointer dereference and application
+		crash) via a crafted ZIP archive.</p>
+	    </blockquote>
+	  </li>
+	</ul>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2010-3709</cvename>
+      <url>http://www.php.net/releases/5_3_4.php</url>
+      <url>http://www.php.net/releases/5_2_15.php</url>
+      <url>http://securityreason.com/achievement_securityalert/90</url>
+    </references>
+    <dates>
+      <discovery>2010-12-13</discovery>
+      <entry>2011-01-13</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="c623f058-10e7-11e0-becc-0022156e8794">
+    <topic>php-filter -- Denial of Service</topic>
+    <affects>
+      <package>
+	<name>php5-filter</name>
+	<range><lt>5.3.4</lt></range>
+      </package>
+      <package>
+	<name>php52-filter</name>
+	<range><lt>5.2.15</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The following DoS condition in filter extension
+	  was fixed in PHP 5.3.4 and PHP 5.2.15:</p>
+	<blockquote cite="http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2010-3710">
+	  <p>Stack consumption vulnerability in the filter_var
+	    function in PHP 5.2.x through 5.2.14 and 5.3.x through
+	    5.3.3, when FILTER_VALIDATE_EMAIL mode is used, allows
+	    remote attackers to cause a denial of service (memory
+	    consumption and application crash) via a long e-mail
+	    address string.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2010-3710</cvename>
+      <url>http://www.php.net/releases/5_3_4.php</url>
+      <url>http://www.php.net/releases/5_2_15.php</url>
+    </references>
+    <dates>
+      <discovery>2010-12-13</discovery>
+      <entry>2011-01-13</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="1a0704e7-0edf-11e0-becc-0022156e8794">
+    <topic>php-imap -- Denial of Service</topic>
+    <affects>
+      <package>
+	<name>php5-imap</name>
+	<range><lt>5.3.4</lt></range>
+      </package>
+      <package>
+	<name>php52-imap</name>
+	<range><lt>5.2.15</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The following DoS condition in IMAP extension
+	  was fixed in PHP 5.3.4 and PHP 5.2.15:</p>
+	<blockquote cite="http://securitytracker.com/alerts/2010/Nov/1024761.html">
+	  <p>A remote user can send specially crafted IMAP user name
+	    or password data to trigger a double free memory error
+	    in 'ext/imap/php_imap.c' and cause the target service
+	    to crash.</p>
+	  <p>It may be possible to execute arbitrary code.
+	    However, code execution was not confirmed.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2010-4150</cvename>
+      <url>http://www.php.net/releases/5_3_4.php</url>
+      <url>http://www.php.net/releases/5_2_15.php</url>
+    </references>
+    <dates>
+      <discovery>2010-12-13</discovery>
+      <entry>2011-01-13</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="da3d381b-0ee6-11e0-becc-0022156e8794">
+    <topic>pecl-phar -- format string vulnerability</topic>
+    <affects>
+      <package>
+	<name>pecl-phar</name>
+	<range><ge>0</ge></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Entry for CVE-2010-2094 says:</p>
+	<blockquote cite="http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2010-2094">
+	  <p>Multiple format string vulnerabilities in the phar
+	    extension in PHP 5.3 before 5.3.2 allow context-dependent
+	    attackers to obtain sensitive information (memory
+	    contents) and possibly execute arbitrary code via a
+	    crafted phar:// URI that is not properly handled by the
+	    (1) phar_stream_flush, (2) phar_wrapper_unlink,
+	    (3) phar_parse_url, or (4) phar_wrapper_open_url functions
+	    in ext/phar/stream.c; and the (5) phar_wrapper_open_dir
+	    function in ext/phar/dirstream.c, which triggers errors
+	    in the php_stream_wrapper_log_error function.</p>
+	</blockquote>
+	<p>PECL source code for PHAR extension shares the same code,
+	  so it is vulnerable too.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2010-2094</cvename>
+      <url>http://php-security.org/2010/05/14/mops-2010-024-php-phar_stream_flush-format-string-vulnerability/index.html</url>
+      <url>http://php-security.org/2010/05/14/mops-2010-025-php-phar_wrapper_open_dir-format-string-vulnerability/index.htm</url>
+      <url>http://php-security.org/2010/05/14/mops-2010-026-php-phar_wrapper_unlink-format-string-vulnerability/index.htm</url>
+      <url>http://php-security.org/2010/05/14/mops-2010-027-php-phar_parse_url-format-string-vulnerabilities/index.htm</url>
+      <url>http://php-security.org/2010/05/14/mops-2010-028-php-phar_wrapper_open_url-format-string-vulnerabilities/index.html</url>
+    </references>
+    <dates>
+      <discovery>2010-12-13</discovery>
+      <entry>2011-01-13</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="3761df02-0f9c-11e0-becc-0022156e8794">
+    <topic>php -- NULL byte poisoning</topic>
+    <affects>
+      <package>
+	<name>php5</name>
+	<range><lt>5.3.4</lt></range>
+      </package>
+      <package>
+	<name>php52</name>
+	<range><ge>0</ge></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>PHP-specific version of NULL-byte poisoning was briefly
+	  described by ShAnKaR:</p>
+	<blockquote cite="http://www.securityfocus.com/archive/1/archive/1/445788/100/0/threaded">
+	  <p>Poison NULL byte vulnerability for perl CGI applications
+	    was described in
+	    <a href="http://artofhacking.com/files/phrack/phrack55/P55-07.TXT">[1]</a>.
+	    ShAnKaR noted, that same vulnerability also affects
+	    different PHP applications.</p>
+	</blockquote>
+	<p>PHP developers report that branch 5.3 received a fix:</p>
+	<blockquote cite="http://www.php.net/releases/5_3_4.php">
+	  <p>Paths with NULL in them (foo\0bar.txt) are now considered
+	    as invalid (CVE-2006-7243).</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2006-7243</cvename>
+      <url>http://www.securityfocus.com/archive/1/archive/1/445788/100/0/threaded</url>
+      <url>http://artofhacking.com/files/phrack/phrack55/P55-07.TXT</url>
+    </references>
+    <dates>
+      <discovery>2010-12-10</discovery>
+      <entry>2011-01-13</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="73634294-0fa7-11e0-becc-0022156e8794">
+    <topic>php -- open_basedir bypass</topic>
     <affects>
       <package>
 	<name>php5</name>
@@ -394,55 +598,56 @@ Note:  Please add new entries to the beginning of this file.
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-	<p>PHP developers reports:</p>
-	<blockquote cite="http://www.php.net/releases/5_3_4.php">
-	  <p>Security Enhancements and Fixes in PHP 5.3.4:</p>
-	  <ul>
-	    <li>Fixed crash in zip extract method (possible
-	      CWE-170).</li>
-	    <li>Paths with NULL in them (foo\0bar.txt) are now
-	      considered as invalid (CVE-2006-7243).</li>
-	    <li>Fixed a possible double free in imap extension
-	      (Identified by Mateusz Kocielski). (CVE-2010-4150).</li>
-	    <li>Fixed NULL pointer dereference in
-	      ZipArchive::getArchiveComment.  (CVE-2010-3709).</li>
-	    <li>Fixed possible flaw in open_basedir (CVE-2010-3436).</li>
-	    <li>Fixed MOPS-2010-24, fix string validation.
-	      (CVE-2010-2950).</li>
-	    <li>Fixed symbolic resolution support when the target
-	      is a DFS share.</li>
-	    <li>Fixed bug #52929 (Segfault in filter_var with
-	      FILTER_VALIDATE_EMAIL with large amount of data) (CVE-2010-3710).</li>
-	  </ul>
-	</blockquote>
-	<blockquote cite="http://www.php.net/releases/5_2_15.php">
-	  <p>Security Enhancements and Fixes in PHP 5.2.15:</p>
-	  <ul>
-	    <li>Fixed extract() to do not overwrite $GLOBALS and $this
-	      when using EXTR_OVERWRITE.</li>
-	    <li>Fixed crash in zip extract method (possible CWE-170).</li>
-	    <li>Fixed a possible double free in imap extension.</li>
-	    <li>Fixed possible flaw in open_basedir (CVE-2010-3436).</li>
-	    <li>Fixed NULL pointer dereference in ZipArchive::getArchiveComment.
-	      (CVE-2010-3709).</li>
-	    <li>Fixed bug #52929 (Segfault in filter_var with FILTER_VALIDATE_EMAIL
-	      with large amount of data).</li>
-	  </ul>
+	<p>MITRE reports:</p>
+	<blockquote cite="http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2010-3436">
+	  <p>fopen_wrappers.c in PHP 5.3.x through 5.3.3 might allow
+	    remote attackers to bypass open_basedir restrictions via
+	    vectors related to the length of a filename.</p>
 	</blockquote>
       </body>
     </description>
     <references>
-      <cvename>CVE-2006-7243</cvename>
-      <cvename>CVE-2010-2950</cvename>
+      <bid>44723</bid>
       <cvename>CVE-2010-3436</cvename>
-      <cvename>CVE-2010-3709</cvename>
-      <cvename>CVE-2010-4150</cvename>
     </references>
     <dates>
       <discovery>2010-12-10</discovery>
-      <entry>2010-12-13</entry>
-      <modified>2010-12-16</modified>
+      <entry>2011-01-13</entry>
     </dates>
+  </vuln>
+
+  <vuln vid="f3148a05-0fa7-11e0-becc-0022156e8794">
+    <topic>php -- corruption of $GLOBALS and $this variables via
+      extract() method</topic>
+    <affects>
+      <package>
+	<name>php5</name>
+	<range><lt>5.3.4</lt></range>
+      </package>
+      <package>
+	<name>php52</name>
+	<range><lt>5.2.15</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Off-by-one error in the sanity validator for the extract()
+	  method allowed attackers to replace the values of $GLOBALS
+	  and $this when mode EXTR_OVERWRITE was used.</p>
+      </body>
+    </description>
+    <references>
+      <url>http://www.mail-archive.com/php-cvs@lists.php.net/msg47722.html</url>
+      <url>http://www.php.net/releases/5_2_15.php</url>
+    </references>
+    <dates>
+      <discovery>2010-12-10</discovery>
+      <entry>2011-01-13</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="b2a6fc0e-070f-11e0-a6e9-00215c6a37bb">
+    <cancelled />
   </vuln>
 
   <vuln vid="1d8ff4a2-0445-11e0-8e32-000f20797ede">
