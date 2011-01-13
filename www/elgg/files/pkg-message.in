@@ -1,6 +1,10 @@
+POST-UPGRADE INSTRUCTIONS
+=========================
+Please follow instructions in %%WWWDIR%%/UPGRADE.txt.
+
 
 POST-INSTALL CONFIGURATION FOR ELGG
-=====================================
+===================================
 1) Make sure your apache's mod_rewrite extension is working,
 and change the AllowOverride setting of the DocumentRoot to
     AllowOverride all 
