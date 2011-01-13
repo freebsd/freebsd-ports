@@ -27,7 +27,7 @@ RUN_DEPENDS+=	cdrdao:${PORTSDIR}/sysutils/cdrdao \
 		${LOCALBASE}/sbin/fping:${PORTSDIR}/net/fping \
 		${BUILD_DEPENDS}
 BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Gtk2.pm:${PORTSDIR}/x11-toolkits/p5-Gtk2 \
-		${SITE_PERL}/AnyEvent.pm:${PORTSDIR}/devel/p5-AnyEvent \
+		${SITE_PERL}/${PERL_ARCH}/AnyEvent.pm:${PORTSDIR}/devel/p5-AnyEvent \
 		${SITE_PERL}/Event/ExecFlow.pm:${PORTSDIR}/devel/p5-Event-ExecFlow \
 		${SITE_PERL}/Gtk2/Ex/FormFactory.pm:${PORTSDIR}/x11-toolkits/p5-Gtk2-Ex-FormFactory \
 		${SITE_PERL}/Event/RPC.pm:${PORTSDIR}/devel/p5-Event-RPC \
