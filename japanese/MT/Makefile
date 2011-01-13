@@ -3,18 +3,18 @@
 # Whom:				Takefu Kenji <takefu@airport.fm>
 #
 # $FreeBSD$
+#
 
 PORTNAME=	MT
 CATEGORIES=	japanese www
-DISTNAME=	MTOS-${PORTVERSION}${PORTREVISION}-ja
+DISTNAME=	MTOS-${PORTVERSION}-ja
 
 COMMENT=	Japanese localization of the MovableType publishing system
 
 MASTERDIR=	${.CURDIR}/../../www/${PORTNAME}
 
 MT_LANG=	ja
-CONFLICTS=	MT-[2-5].* fr-MT-[2-5].* de-MT-[2-5].* es-MT-[2-5].* \
-		nl-MT-[2-5].* ru-MT-[2-5].*
+CONFLICTS=	MT-[2-5].* de-MT-[2-5].* fr-MT-[2-5].* ru-MT-[2-5].*
 
 MT_DOCS_URL=	http://movabletype.jp/documentation/
 MT_UPGRADE_URL=	http://movabletype.jp/documentation/upgrade/

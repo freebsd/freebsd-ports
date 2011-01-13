@@ -7,13 +7,12 @@
 
 PORTNAME=	MT
 CATEGORIES=	german www
-DISTNAME=	MTOS-${PORTVERSION}${PORTREVISION}-de
+DISTNAME=	MTOS-${PORTVERSION}-de
 
 COMMENT=	german localization of the MovableType publishing system
 
 MASTERDIR=	${.CURDIR}/../../www/${PORTNAME}
 
-CONFLICTS=	MT-[2-5].* ja-MT-[2-5].* fr-MT-[2-5].* es-MT-[2-5].* \
-		nl-MT-[2-5].* ru-MT-[2-5].*
+CONFLICTS=	MT-[2-5].* fr-MT-[2-5].* ja-MT-[2-5].* ru-MT-[2-5].*
 
 .include "${MASTERDIR}/Makefile"
