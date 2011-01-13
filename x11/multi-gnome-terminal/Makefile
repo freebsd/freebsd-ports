@@ -12,7 +12,7 @@ PORTREVISION=	10
 CATEGORIES=	x11 gnome
 MASTER_SITES=	SF/multignometerm/multignometerm/mgt-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	ports@eitanadler.com
 COMMENT=	Gnome tabbed terminal emulator
 
 INSTALLS_OMF=	yes
