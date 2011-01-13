@@ -1,0 +1,50 @@
+
+	To run zfSnap periodically you can add these options to your
+	/etc/periodic.conf
+
+	xPERIODICx_zfsnap_enable	- Enable xPERIODICx snapshots
+					  (values: YES | NO)
+	xPERIODICx_zfsnap_fs		- Space separated zfs filesystems
+					  to create non-recursive snapshots
+	xPERIODICx_zfsnap_recursive_fs	- Space separated zfs filesystems
+					  to create recursive snapshots
+	xPERIODICx_zfsnap_ttl		- Set Time To Live
+	xPERIODICx_zfsnap_verbose	- Verbose output (values: YES | NO)
+	xPERIODICx_zfsnap_flags		- zfSnap generic flags
+					  (except -v and -d)
+	xPERIODICx_zfsnap_enable_prefix - Create snapshots with prefix
+					  (Default = YES)
+	xPERIODICx_zfsnap_prefix	- Set prefix to use for new snapshots
+					  (Default = "xPERIODICx-")
+	(where xPERIODICx is any of hourly, daily, weekly, monthly, reboot)
+
+	xPERIODICx_zfsnap_delete_enable    - Delete old snapshots periodicaly
+					     (values: YES | NO)
+	xPERIODICx_zfsnap_delete_flags	   - zfSnap generic flags
+					     (except -v and -d)
+	xPERIODICx_zfsnap_delete_verbose   - Verbose output (values: YES | NO)
+	xPERIODICx_zfsnap_delete_prefixes  - Space separated list of prefixes
+					     of old zfSnap snapshots to delete
+					     'hourly-', 'daily-', 'weekly-',
+					     'monthly-' and 'reboot'  prefixes
+					     are hardcoded
+	(where xPERIODICx is any of daily, weekly, monthly)
+
+
+	Add these lines to your /etc/crontab
+	4	*	*	*	*	root	periodic hourly
+	@reboot					root	periodic reboot
+
+	NOTE: it is not recommended to delete zfSnap snapshots every hour.
+	Deleting zfs snapshots takes more time than creating them.
+	There for it's better to delete snapshots once per day...
+
+	
+	Periodic scripts provide very limited feature set. If you want to use
+	more advanced setup, you need to call zfSnap from crontab directly.
+	This way you can combine all sort of parameter combinations.
+
+	Don't forget to check http://wiki.bsdroot.lv/zfsnap for more info.
+
+	Feedback wellcomed: zfsnap@bsdroot.lv
+

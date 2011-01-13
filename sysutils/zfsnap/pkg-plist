@@ -1,0 +1,15 @@
+sbin/zfSnap
+%%PERIODICDIR%%/daily/402.zfSnap
+%%PERIODICDIR%%/daily/403.zfSnap_delete
+%%PERIODICDIR%%/hourly/402.zfSnap
+%%PERIODICDIR%%/monthly/402.zfSnap
+%%PERIODICDIR%%/monthly/403.zfSnap_delete
+%%PERIODICDIR%%/reboot/402.zfSnap
+%%PERIODICDIR%%/weekly/402.zfSnap
+%%PERIODICDIR%%/weekly/403.zfSnap_delete
+@dirrmtry %%PERIODICDIR%%/weekly
+@dirrmtry %%PERIODICDIR%%/reboot
+@dirrmtry %%PERIODICDIR%%/monthly
+@dirrmtry %%PERIODICDIR%%/hourly
+@dirrmtry %%PERIODICDIR%%/daily
+@dirrmtry %%PERIODICDIR%%
