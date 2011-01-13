@@ -23,8 +23,9 @@ USE_GMAKE=	yes
 USE_XORG=	x11 xau xdmcp
 USE_SDL=	sdl
 USE_ZIP=	yes
-MAKE_ENV=	CPPFLAGS="-I${LOCALBASE}/include `${SDL_CONFIG} --cflags`" \
-		LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS} `${SDL_CONFIG} --libs`"
+CPPFLAGS+=	-I${LOCALBASE}/include `${SDL_CONFIG} --cflags`
+LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS} `${SDL_CONFIG} --libs`
+MAKE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 
 OPTIONS=	TOOLS "Install additional tools" off
 TOOLS=		as1600 crc32 dasm1600 dis1600 frombit_r gms2rom imvtoppm rom2bin \
