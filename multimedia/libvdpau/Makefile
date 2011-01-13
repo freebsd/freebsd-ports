@@ -7,6 +7,7 @@
 
 PORTNAME=	libvdpau
 PORTVERSION=	0.4.1
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	http://people.freedesktop.org/~aplattner/vdpau/
 
@@ -22,8 +23,18 @@ USE_LDCONFIG=	yes
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+.include <bsd.port.pre.mk>
+
+.if defined(WITH_DEBUG)
+CFLAGS+=	-DDEBUG
+.endif
+
+.if defined(STRIP) && ${STRIP} != ""
+INSTALL_TARGET=	install-strip
+.endif
+
 post-patch:	.SILENT
 	${REINPLACE_CMD} 's|$$(libdir)/\(pkgconfig\)|$$(prefix)/libdata/\1|' \
 		${WRKSRC}/Makefile.in
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
