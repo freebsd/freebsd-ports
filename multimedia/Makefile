@@ -163,6 +163,7 @@
     SUBDIR += libtheora
     SUBDIR += libtuner
     SUBDIR += libv4l
+    SUBDIR += libva
     SUBDIR += libvdpau
     SUBDIR += libvpx
     SUBDIR += libxine
@@ -322,6 +323,7 @@
     SUBDIR += vcdimager
     SUBDIR += vcdpad
     SUBDIR += vcdtools
+    SUBDIR += vdpau-video
     SUBDIR += vdpauinfo
     SUBDIR += vlc
     SUBDIR += vodcatcher
