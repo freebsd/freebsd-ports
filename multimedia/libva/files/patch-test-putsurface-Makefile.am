@@ -1,0 +1,13 @@
+--- test/putsurface/Makefile.am~	2011-01-05 02:07:32.000000000 +0300
++++ test/putsurface/Makefile.am	2011-01-05 02:07:54.000000000 +0300
+@@ -23,8 +23,9 @@
+ bin_PROGRAMS = putsurface
+ 
+ AM_CFLAGS = -I$(top_srcdir)/va -I$(top_srcdir)/src/x11
++AM_LDFLAGS = -pthread
+ 
+-TEST_LIBS = $(top_builddir)/va/$(libvabackendlib) -lpthread
++TEST_LIBS = $(top_builddir)/va/$(libvabackendlib)
+ 
+ putsurface_LDADD = $(TEST_LIBS)
+ putsurface_SOURCES = putsurface.c
