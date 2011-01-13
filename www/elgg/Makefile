@@ -6,18 +6,16 @@
 #
 
 PORTNAME=	elgg
-PORTVERSION=	1.6.1
-PORTREVISION=	1
+PORTVERSION=	1.7.6
 CATEGORIES=	www
 MASTER_SITES=	http://elgg.org/download/
-DISTNAME=	${PORTNAME}${PORTVERSION}
 
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Blogging and social networking platform
 
 USE_PHP=	mysql gd json soap dom xml
 USE_GETTEXT=	yes
-WRKSRC=		${WRKDIR}/${PORTNAME}${PORTVERSION}
+USE_ZIP=	yes
 
 NO_BUILD=	yes
 SUB_FILES=	pkg-message
