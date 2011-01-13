@@ -75,7 +75,8 @@ share/locale/zh_TW/LC_MESSAGES/pinot.mo
 @dirrm lib/pinot/filters
 @dirrm lib/pinot/backends
 @dirrm lib/pinot
-@dirrmtry lib/deskbar-applet/modules-2.20-compatible
+@dirrmtry libexec/deskbar-applet/modules-2.20-compatible
+@dirrmtry libexec/deskbar-applet
 @dirrmtry lib/deskbar-applet/handlers
 @dirrmtry lib/deskbar-applet
 @dirrmtry etc/xdg/autostart
