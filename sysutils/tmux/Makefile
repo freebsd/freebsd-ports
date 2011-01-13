@@ -31,6 +31,11 @@ CONFIGURE_ARGS+=	CFLAGS="${CFLAGS}" LDFLAGS="${LDFLAGS}"
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} < 702104
+BROKEN=		fails to build with closefrom
+# More detailed message: http://svn.freebsd.org/viewvc/base/stable/7/sys/kern/syscalls.master?revision=195694&amp;view=markup
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's#/usr/local#${LOCALBASE}#g' \
 		${WRKSRC}/Makefile
