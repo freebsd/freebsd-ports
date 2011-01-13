@@ -34,6 +34,39 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="908f4cf2-1e8b-11e0-a587-001b77d09812">
+    <topic>sudo -- local privilege escalation</topic>
+    <affects>
+      <package>
+	<name>sudo</name>
+	<range><ge>1.7.0</ge><lt>1.7.4.5</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Todd Miller reports:</p>
+	<blockquote cite="http://www.sudo.ws/sudo/alerts/runas_group_pw.html">
+	  <p>Beginning with sudo version 1.7.0 it has been possible
+	    to grant permission to run a command using a specified
+	    group via sudo's -g option (run as group), if allowed by
+	    the sudoers file. A flaw exists in sudo's password
+	    checking logic that allows a user to run a command
+	    with only the group changed without being prompted
+	    for a password.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2011-0010</cvename>
+      <url>http://www.sudo.ws/sudo/alerts/runas_group_pw.html</url>
+      <url>http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=609641</url>
+    </references>
+    <dates>
+      <discovery>2011-01-11</discovery>
+      <entry>2011-01-13</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="71612099-1e93-11e0-a587-001b77d09812">
     <topic>subversion -- multiple DoS</topic>
     <affects>
