@@ -1255,6 +1255,7 @@
     SUBDIR += p5-WWW-Mechanize-Pluggable
     SUBDIR += p5-WWW-Mechanize-Plugin-phpBB
     SUBDIR += p5-WWW-Mechanize-Shell
+    SUBDIR += p5-WWW-Mechanize-SpamCop
     SUBDIR += p5-WWW-Mechanize-TreeBuilder
     SUBDIR += p5-WWW-Mediawiki-Client
     SUBDIR += p5-WWW-Mixi
