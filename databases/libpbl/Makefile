@@ -14,6 +14,8 @@ DISTNAME=	pbl_${PORTVERSION:S/./_/g}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Peter Graf's Program Base Library
 
+BROKEN=		checksum mismatch
+
 MAKEFILE=	makefile
 PLIST_FILES=	lib/libpbl.a include/pbl.h
 MAKE_JOBS_SAFE=	yes
