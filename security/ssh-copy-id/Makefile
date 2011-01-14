@@ -12,7 +12,7 @@ MASTER_SITES=	# none
 DISTFILES=	# none
 
 MAINTAINER=	ehaupt@FreeBSD.org
-COMMENT=	Small script which copy your ssh public-key to a remote host
+COMMENT=	Small script which copies your ssh public-key to a remote host
 
 NO_BUILD=	yes
 
