@@ -21,11 +21,9 @@ PLIST_FILES=	bin/busybox
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "amd64"
-BROKEN=		does not compile
-.elif ${OSVERSION} >= 800000
-BROKEN=		does not compile
-.endif
+post-patch:
+	@${FIND} ${WRKSRC} -name '*.[ch]' | ${XARGS} \
+		${REINPLACE_CMD} -e 's/ dprintf(/ bb_dprintf(/g'
 
 do-configure:
 	${CP} ${FILESDIR}/data-.config ${WRKSRC}/.config
