@@ -6,15 +6,14 @@
 #
 
 PORTNAME=	webalizer
-PORTVERSION=	2.21.2
-PORTREVISION=	3
+PORTVERSION=	2.23.4
 CATEGORIES+=	www
 MASTER_SITES=	ftp://ftp.mrunix.net/pub/webalizer/:main \
 MASTER_SITES=	ftp://ftp.mrunix.net/pub/webalizer/geodb/:geodb \
 		ftp://ftp.dinoex.de/pub/FreeBSD/distfiles/:main \
 		http://flags.blogpotato.de/zip/:flags
 PKGNAMESUFFIX?=	${WEBALIZER_SUFFIX}${PKGNAMESUFFIX2}
-DISTNAME=	${PORTNAME}-2.21-02-src
+DISTNAME=	${PORTNAME}-2.23-04-src
 DISTFILES=	${DISTNAME}.tgz:main
 
 MAINTAINER?=	dinoex@FreeBSD.org
@@ -40,7 +39,7 @@ WEBALIZER_LANG?=english
 DISTFILES+=	webalizer-flags.tgz:main
 .endif
 .if defined(WITH_GEODB) || make(makesum) || defined(FETCH_ALL)
-DISTFILES+=	webalizer-geodb-20100601.tgz:geodb
+DISTFILES+=	webalizer-geodb-20110101.tgz:geodb
 .endif
 
 .if !defined(LIB_DEPENDS)
