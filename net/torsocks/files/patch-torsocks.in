@@ -1,0 +1,11 @@
+--- src/torsocks.in.orig	2010-12-11 18:28:08.000000000 +0200
++++ src/torsocks.in	2011-01-12 17:01:34.460490482 +0200
+@@ -68,7 +68,7 @@
+    exit
+ fi
+ 
+-LIBDIR="@prefix@/lib/torsocks"
++LIBDIR="@prefix@/lib"
+ LIB_NAME="libtorsocks"
+ SHLIB_EXT="@SHLIB_EXT@"
+ SHLIB="${LIBDIR}/${LIB_NAME}.${SHLIB_EXT}"
