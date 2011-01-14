@@ -25,7 +25,7 @@ LATEST_LINK=	vtk5
 
 WRKSRC=		${WRKDIR}/VTK
 
-CONFLICTS=	vtk-4* vtk-5.0.[012356789]* paraview-3*
+CONFLICTS=	vtk-4*
 
 SUB_FILES=	vtk.3
 
