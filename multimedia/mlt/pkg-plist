@@ -48,14 +48,16 @@ include/mlt/framework/mlt_tokeniser.h
 include/mlt/framework/mlt_tractor.h
 include/mlt/framework/mlt_transition.h
 include/mlt/framework/mlt_types.h
+include/mlt/framework/mlt_version.h
 lib/libmlt++.so
-lib/libmlt++.so.0.5.10
+lib/libmlt++.so.0.6.0
 lib/libmlt++.so.3
 lib/libmlt.so
-lib/libmlt.so.0.5.10
-lib/libmlt.so.2
+lib/libmlt.so.0.6.0
+lib/libmlt.so.3
 %%AVFORMAT%%lib/mlt/libmltavformat.so
 lib/mlt/libmltcore.so
+lib/mlt/libmltdecklink.so
 lib/mlt/libmltdgraft.so
 %%DV%%lib/mlt/libmltdv.so
 lib/mlt/libmlteffectv.so
@@ -73,6 +75,7 @@ lib/mlt/libmltplus.so
 %%RESAMPLE%%lib/mlt/libmltresample.so
 lib/mlt/libmltsdl.so
 %%SOX%%lib/mlt/libmltsox.so
+%%SWFDEC%%lib/mlt/libmltswfdec.so
 lib/mlt/libmltvmfx.so
 %%VORBIS%%lib/mlt/libmltvorbis.so
 lib/mlt/libmltxine.so
@@ -84,6 +87,7 @@ libdata/pkgconfig/mlt-framework.pc
 %%DATADIR%%/core/loader.dict
 %%DATADIR%%/core/loader.ini
 %%DATADIR%%/feeds/NTSC/data_fx.properties
+%%DATADIR%%/feeds/NTSC/etv.properties
 %%DATADIR%%/feeds/NTSC/obscure.properties
 %%DATADIR%%/feeds/PAL/border.properties
 %%DATADIR%%/feeds/PAL/data_fx.properties
