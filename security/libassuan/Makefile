@@ -29,7 +29,8 @@ USE_AUTOTOOLS=	libtool
 USE_GNOME=	ltverhack
 
 INFO=		assuan
-PLIST_FILES=	bin/libassuan-config include/assuan.h lib/libassuan.la \
+PLIST_FILES=	bin/libassuan-config include/assuan.h \
+		lib/libassuan.a lib/libassuan.la \
 		lib/libassuan.so.0 lib/libassuan.so share/aclocal/libassuan.m4
 
 .include <bsd.port.pre.mk>
