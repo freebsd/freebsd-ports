@@ -25,15 +25,15 @@ MAN1=		urlview.1
 SUB_FILES=	gecko.sh
 SUB_LIST=	GECKO=${GECKO}
 
-.include <bsd.port.pre.mk>
-
 .if defined(WITH_FIREFOX)
-RUN_DEPENDS+=	${LOCALBASE}/lib/firefox3/firefox:${PORTSDIR}/www/firefox
+USE_FIREFOX=	36
 GECKO=		firefox3
 .elif defined(WITH_SEAMONKEY)
-RUN_DEPENDS+=	${LOCALBASE}/lib/seamonkey/seamonkey-bin:${PORTSDIR}/www/seamonkey
+USE_SEAMONKEY=	20
 GECKO=		seamonkey
 .endif
+
+.include <bsd.port.pre.mk>
 
 post-patch:
 	@${REINPLACE_CMD} -e "s,!!PREFIX!!,${PREFIX},g" \
