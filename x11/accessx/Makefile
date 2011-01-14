@@ -15,6 +15,9 @@ DISTNAME=	accessx${PORTVERSION:S/.//g}
 MAINTAINER=	stephen@missouri.edu
 COMMENT=	Customise accessibility features for X
 
+DEPRECATED=	Project abandoned, mastersite disappeared
+EXPIRATION_DATE=2011-01-31
+
 USE_TK=		yes
 
 USE_XORG=	xext
