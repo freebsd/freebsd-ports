@@ -562,6 +562,7 @@
     SUBDIR += p5-File-Signature
     SUBDIR += p5-File-Stat-Bits
     SUBDIR += p5-File-Stat-ModeString
+    SUBDIR += p5-File-Tee
     SUBDIR += p5-File-Which
     SUBDIR += p5-Filesys-Df
     SUBDIR += p5-Filesys-DfPortable
