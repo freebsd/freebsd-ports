@@ -6,7 +6,7 @@
 #
 
 PORTNAME?=	libYGP
-PORTVERSION=	0.9.41
+PORTVERSION=	0.9.42
 CATEGORIES=	devel
 MASTER_SITES=	SF/libymp/libymp/libYGP-${PORTVERSION}
 DISTNAME=	libYGP-${PORTVERSION}
@@ -24,7 +24,7 @@ USE_LDCONFIG=	yes
 USE_GETTEXT=	yes
 CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	--with-libintl-prefix=${LOCALBASE} --with-gmp\
-		--disable-static --disable-rpath
+		--disable-static --disable-rpath --enable-network-trav
 USE_GMAKE=	yes
 
 .if ${PORTNAME:M*XGP}
