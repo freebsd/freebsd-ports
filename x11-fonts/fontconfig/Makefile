@@ -11,7 +11,7 @@ PORTVERSION=	2.8.0
 PORTREVISION?=	0
 PORTEPOCH?=	1
 CATEGORIES=	x11-fonts
-MASTER_SITES=	http://fontconfig.org/release/
+MASTER_SITES=	http://www.freedesktop.org/software/fontconfig/release/
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	An XML-based font configuration API for X Windows
