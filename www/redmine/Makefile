@@ -7,6 +7,7 @@
 
 PORTNAME=	redmine
 PORTVERSION=	1.1.0
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_RUBYFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -14,7 +15,8 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	decke@FreeBSD.org
 COMMENT=	A flexible project management web application
 
-RUN_DEPENDS=	rackup:${PORTSDIR}/www/rubygem-rack
+RUN_DEPENDS=	rackup:${PORTSDIR}/www/rubygem-rack \
+		rubygem-i18n>=0.4.2:${PORTSDIR}/devel/rubygem-i18n
 
 USE_RUBY=	yes
 USE_RUBY_FEATURES=	iconv
@@ -56,9 +58,14 @@ IGNORE=		either Thin or Apache/Nginx WEB server option required. \
 		Please 'make config' again.
 .endif
 
+post-patch:
+	# hack to fix template syntax for rubygem-i18n >= 0.5.0
+	${FIND} ${WRKSRC} -name "*.yml" -type f | ${XARGS} ${REINPLACE_CMD} -e \
+		's|{{|%{|g ; s|}}|}|g'
+
 do-install:
 	${MKDIR} ${WWWDIR}
-	(cd ${WRKSRC}/ && ${COPYTREE_SHARE} "*" ${WWWDIR} "! -name *.orig")
+	(cd ${WRKSRC}/ && ${COPYTREE_SHARE} "*" ${WWWDIR} "! -name *.orig ! -name *.bak")
 
 	${MKDIR} ${WWWDIR}/public/plugin_assets
 	${CHOWN} -R ${WWWOWN}:${WWWGRP} ${WWWDIR}

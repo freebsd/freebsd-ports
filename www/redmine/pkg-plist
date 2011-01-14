@@ -1780,7 +1780,6 @@
 %%WWWDIR%%/vendor/rails/actionmailer/test/fixtures/test_mailer/custom_templating_extension.text.html.haml
 %%WWWDIR%%/vendor/rails/actionmailer/test/fixtures/test_mailer/custom_templating_extension.text.plain.haml
 %%WWWDIR%%/vendor/rails/actionmailer/test/fixtures/test_mailer/implicitly_multipart_example.ignored.erb
-%%WWWDIR%%/vendor/rails/actionmailer/test/fixtures/test_mailer/implicitly_multipart_example.rhtml.bak
 %%WWWDIR%%/vendor/rails/actionmailer/test/fixtures/test_mailer/implicitly_multipart_example.text.html.erb
 %%WWWDIR%%/vendor/rails/actionmailer/test/fixtures/test_mailer/implicitly_multipart_example.text.html.erb~
 %%WWWDIR%%/vendor/rails/actionmailer/test/fixtures/test_mailer/implicitly_multipart_example.text.plain.erb
