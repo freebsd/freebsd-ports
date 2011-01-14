@@ -6936,6 +6936,7 @@ katalog                         ports/misc/katalog
 katapult                        ports/deskutils/katapult
 katchtv                         ports/multimedia/katchtv
 kate-plugins                    ports/editors/kate-plugins
+kaudiocreator                   ports/audio/kaudiocreator
 kavmilter                       ports/mail/kavmilter
 kawa                            ports/lang/kawa
 kazehakase                      ports/www/kazehakase
@@ -8354,6 +8355,7 @@ libutf-8                        ports/converters/libutf-8
 libutils                        ports/lang/libutils
 libv3d                          ports/graphics/libv3d
 libv4l                          ports/multimedia/libv4l
+libva                           ports/multimedia/libva
 libvanessa_adt                  ports/devel/libvanessa_adt
 libvanessa_logger               ports/devel/libvanessa_logger
 libvanessa_socket               ports/devel/libvanessa_socket
@@ -10519,7 +10521,6 @@ octave-forge-secs2d             ports/math/octave-forge-secs2d
 octave-forge-signal             ports/math/octave-forge-signal
 octave-forge-simp               ports/math/octave-forge-simp
 octave-forge-sockets            ports/math/octave-forge-sockets
-octave-forge-spanish            ports/math/octave-forge-spanish
 octave-forge-specfun            ports/math/octave-forge-specfun
 octave-forge-special-matrix     ports/math/octave-forge-special-matrix
 octave-forge-spline-gcvspl      ports/math/octave-forge-spline-gcvspl
@@ -25470,6 +25471,7 @@ vde2                            ports/net/vde2
 vdesk                           ports/x11/vdesk
 vdk                             ports/x11-toolkits/vdk
 vdkbuilder                      ports/x11-toolkits/vdkbuilder
+vdpau-video                     ports/multimedia/vdpau-video
 vdpauinfo                       ports/multimedia/vdpauinfo
 vdrift                          ports/games/vdrift
 vdrift-data                     ports/games/vdrift-data
