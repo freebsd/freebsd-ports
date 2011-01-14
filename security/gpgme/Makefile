@@ -7,7 +7,7 @@
 
 PORTNAME=	gpgme
 PORTVERSION=	1.3.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_GNUPG}
 MASTER_SITE_SUBDIR=	gpgme
@@ -17,7 +17,7 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	bsdkaffee@gmail.com
 COMMENT=	A library to make access to GnuPG easier
 
-LIB_DEPENDS=	assuan.1:${PORTSDIR}/security/libassuan \
+LIB_DEPENDS=	assuan.0:${PORTSDIR}/security/libassuan \
 		gpg-error.0:${PORTSDIR}/security/libgpg-error
 
 USE_BZIP2=	yes
