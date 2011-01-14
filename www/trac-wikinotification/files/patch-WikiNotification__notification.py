@@ -1,6 +1,16 @@
---- ./WikiNotification/notification.py.orig	2008-03-14 05:02:03.000000000 -0400
-+++ ./WikiNotification/notification.py	2010-10-08 11:41:19.000000000 -0400
-@@ -21,7 +21,7 @@
+
+$FreeBSD$
+
+--- ./WikiNotification/notification.py.orig
++++ ./WikiNotification/notification.py
+@@ -14,14 +14,13 @@
+ # =============================================================================
+ 
+ import re
+-import md5
+ 
+ from trac import __version__
+ from trac.core import *
  from trac.util.text import CRLF
  from trac.wiki.model import WikiPage
  from trac.versioncontrol.diff import unified_diff
@@ -9,7 +19,7 @@
  from trac.config import Option, BoolOption, ListOption, IntOption
  
  from genshi.template.text import TextTemplate
-@@ -33,6 +33,7 @@
+@@ -33,6 +32,7 @@
  +++ %(name)s (version: %(version)s)
  """
  
@@ -17,7 +27,7 @@
  class WikiNotificationSystem(Component):
      smtp_from = Option(
          'wiki-notification', 'smtp_from', 'trac+wiki@localhost',
-@@ -131,7 +132,7 @@
+@@ -131,7 +131,7 @@
          if page.version > 0 and action == 'modified':
              diff = diff_header % {'name': self.page.name,
                                    'version': self.page.version,
@@ -26,7 +36,7 @@
                                   }
              oldpage = WikiPage(self.env, page.name, page.version - 1)
              self.data["oldversion"]= oldpage.version
-@@ -183,8 +184,8 @@
+@@ -183,8 +183,8 @@
          public_cc = self.config.getbool('wiki-notification', 'use_public_cc')
          headers = {}
          headers['X-Mailer'] = 'Trac %s, by Edgewall Software' % __version__
@@ -37,7 +47,7 @@
          headers['X-URL'] = self.config.get('project', 'url')
          headers['Precedence'] = 'bulk'
          headers['Auto-Submitted'] = 'auto-generated'
-@@ -284,18 +285,16 @@
+@@ -284,18 +284,16 @@
              del msg['Content-Transfer-Encoding']
              msg.set_charset(self._charset)
  
@@ -62,7 +72,7 @@
  
      def format_subject(self, action):
          template = self.config.get('wiki-notification', 'subject_template')
-@@ -308,6 +307,6 @@
+@@ -308,6 +306,6 @@
          data = {
              'page': self.page,
              'prefix': prefix,
