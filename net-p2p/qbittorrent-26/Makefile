@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	qbittorrent
-PORTVERSION=	2.6.1
+PORTVERSION=	2.6.2
 PORTREVISION?=	0
 CATEGORIES=	net-p2p ipv6
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PKGNAME}/
@@ -30,7 +30,7 @@ BROKEN=	Use net-p2p/${PORTNAME}-nox11 for the non-GUI version
 .endif
 LIB_DEPENDS+=	GeoIP.5:${PORTSDIR}/net/GeoIP
 OPTIONS=	NOTIFY "Enable libnotify support" on
-QT_COMPONENTS+=	gui xml uic_build
+QT_COMPONENTS+=	gui xml uic_build dbus
 INSTALLS_ICONS=	yes
 .else
 CONFIGURE_ARGS+=	--disable-gui
