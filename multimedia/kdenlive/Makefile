@@ -6,6 +6,7 @@
 
 PORTNAME=	kdenlive
 PORTVERSION=	0.7.8
+PORTREVISION=	1
 CATEGORIES=	multimedia kde
 MASTER_SITES=	SF
 
@@ -15,8 +16,7 @@ COMMENT=	A professional quality non-linear video editing suite for KDE
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	mlt>=0.5.10:${PORTSDIR}/multimedia/mlt
-RUN_DEPENDS:=	${BUILD_DEPENDS}
+LIB_DEPENDS=	mlt.3:${PORTSDIR}/multimedia/mlt
 
 USE_GETTEXT=	yes
 USE_KDE4=	automoc4 kdehier kdelibs kdeprefix sharedmime
