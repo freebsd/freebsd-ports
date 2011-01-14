@@ -8,8 +8,12 @@
 PORTNAME=	librcd
 PORTVERSION=	0.1.13
 CATEGORIES=	devel
-MASTER_SITES=	http://dside.dyndns.org/files/rusxmms/ \
-		SF/rusxmms/Charset%20Detection%20Library/${PORTVERSION}
+MASTER_SITES=	SF/rusxmms/Charset%20Detection%20Library/${PORTVERSION} \
+		${MASTER_SITE_LOCAL} \
+		http://ns.ael.ru/~fluffy.khv/distfiles/ \
+		http://dside.dyndns.org/files/rusxmms/
+MASTER_SITE_SUBDIR=	fluffy
+
 
 MAINTAINER=	fluffy@FreeBSD.org
 COMMENT=	Library used by rusxmms for autodetection of russian charset
