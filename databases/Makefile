@@ -241,6 +241,7 @@
     SUBDIR += mysqlbackup
     SUBDIR += mysqlcc
     SUBDIR += mysqlcppapi
+    SUBDIR += mysqldumper
     SUBDIR += mysqlidxchk
     SUBDIR += mysqlman
     SUBDIR += mysqlreport
