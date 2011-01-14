@@ -1,6 +1,5 @@
 lib/gtk-2.0/%%GTK2_VERSION%%/engines/liboxygen-gtk.so
 share/themes/oxygen-gtk/gtk-2.0/argb-apps.conf
-share/themes/oxygen-gtk/gtk-2.0/argb-blacklist.conf
 share/themes/oxygen-gtk/gtk-2.0/gtkrc
 share/themes/oxygen-gtk/gtk-2.0/icons4
 share/themes/oxygen-gtk/gtk-2.0/kdeglobals
