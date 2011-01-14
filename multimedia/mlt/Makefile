@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	mlt
-PORTVERSION=	0.5.10
+PORTVERSION=	0.6.0
 CATEGORIES=	multimedia
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}
 
@@ -25,7 +25,6 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-debug \
 		--enable-gpl
 USE_GMAKE=	yes
-MAKE_ENV=	LDFLAGS="-lc" # Required by FreeBSD 6.X.
 CFLAGS+=	-I${LOCALBASE}/include
 USE_LDCONFIG=	${PREFIX}/lib ${PREFIX}/lib/mlt
 
@@ -46,6 +45,7 @@ OPTIONS=	AVFORMAT	"Avformat module" on \
 		SOX	"Sound eXchange module" on \
 		SSE	"SSE support (requires MMX)" off \
 		SSE2	"SSE2 support (requires SSE)" off \
+		SWFDEC	"Swfdec module" on \
 		VORBIS	"Vorbis module" on
 
 .include <bsd.port.options.mk>
@@ -156,6 +156,15 @@ CONFIGURE_ARGS+=	--enable-sse2
 CONFIGURE_ARGS+=	--disable-sse2
 .endif
 
+.ifndef(WITHOUT_SWFDEC)
+LIB_DEPENDS+=	swfdec-0.8.0:${PORTSDIR}/graphics/swfdec
+CONFIGURE_ARGS+=	--enable-swfdec
+PLIST_SUB+=	SWFDEC=""
+.else
+CONFIGURE_ARGS+=	--disable-swfdec
+PLIST_SUB+=	SWFDEC="@comment "
+.endif
+
 .ifndef(WITHOUT_VORBIS)
 LIB_DEPENDS+=	vorbis.4:${PORTSDIR}/audio/libvorbis
 CONFIGURE_ARGS+=	--enable-vorbis
@@ -165,17 +174,7 @@ CONFIGURE_ARGS+=	--disable-vorbis
 PLIST_SUB+=	VORBIS="@comment "
 .endif
 
-.include <bsd.port.pre.mk>
-
 pre-configure:
-.if ${OSVERSION} < 700041
-	${REINPLACE_CMD} -E -e 's|^(LDFLAGS.*)|\1 -lthr|' \
-		${WRKSRC}/src/framework/Makefile \
-		${WRKSRC}/src/modules/avformat/Makefile \
-		${WRKSRC}/src/modules/core/Makefile \
-		${WRKSRC}/src/modules/dv/Makefile \
-		${WRKSRC}/src/modules/sdl/Makefile
-.endif
 	${REINPLACE_CMD} -e 's|-pthread|${PTHREAD_LIBS}|g' \
 		${WRKSRC}/configure \
 		${WRKSRC}/src/swig/*/build
@@ -193,4 +192,4 @@ post-install:
 .endfor
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
