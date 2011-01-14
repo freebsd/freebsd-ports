@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	google-styleguide
-PORTVERSION=	52
+PORTVERSION=	66
 CATEGORIES=	devel
 MASTER_SITES=	http://google-styleguide.googlecode.com/svn/trunk/cpplint/
 DISTFILES=	cpplint.py cpplint_unittest.py README
