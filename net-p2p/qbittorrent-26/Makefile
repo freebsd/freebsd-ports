@@ -9,7 +9,7 @@ PORTNAME=	qbittorrent
 PORTVERSION=	2.6.2
 PORTREVISION?=	0
 CATEGORIES=	net-p2p ipv6
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PKGNAME}/
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}/
 
 MAINTAINER=	dougb@FreeBSD.org
 COMMENT?=	Bittorrent client using Qt4 and libtorrent-rasterbar
@@ -53,6 +53,12 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|$$$$PREFIX/share/man|${MANPREFIX}/man|' \
 		${WRKSRC}/unixconf.pri
 	@${ECHO_CMD} "LIBS+= -lexecinfo" >> ${WRKSRC}/src/src.pro
+.if defined(QB26_NOX_SLAVE)
+	@${REINPLACE_CMD} -e 's|Q_WS_X11|BLAHBLAHBLAH|g' \
+		${WRKSRC}/src/misc.cpp
+	@${REINPLACE_CMD} -e 's|^QT.*+=.*dbus.*||' \
+		${WRKSRC}/unixconf.pri
+.endif
 
 post-install:
 .if !defined(QB26_NOX_SLAVE)
