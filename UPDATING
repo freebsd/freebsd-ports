@@ -9,8 +9,9 @@ you update your ports collection, before attempting any port upgrades.
   AFFECTS: users of www/redmine
   AUTHOR: decke@FreeBSD.org
 
-  Redmine explicitly requires i18n with version 0.4.2. You need to install
-  that manually until a better solution is available.
+  If you use 3rd party plugins that are incompatible with i18n >= 0.5.0
+  (eg. variables in yml files as {{variable}}) then you need to
+  install an older i18n version manually.
 
   # gem install -v=0.4.2 i18n
 
