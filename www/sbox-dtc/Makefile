@@ -9,7 +9,7 @@ PORTNAME=	sbox
 PORTVERSION=	1.10
 PORTREVISION=	1
 CATEGORIES=	www
-MASTER_SITES=	http://files.bsdroot.lv/FreeBSD/distfiles/
+MASTER_SITES=	http://files.bsdroot.lv/my/FreeBSD/distfiles/
 
 MAINTAINER=	aldis@BSDroot.lv
 COMMENT=	A CGI wrapper for Web site hosting services to safely grant CGI
