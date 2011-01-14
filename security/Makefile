@@ -819,6 +819,7 @@
     SUBDIR += sscep
     SUBDIR += ssdeep
     SUBDIR += ssh
+    SUBDIR += ssh-copy-id
     SUBDIR += ssh-gui
     SUBDIR += ssh-multiadd
     SUBDIR += ssh_askpass_gtk2
