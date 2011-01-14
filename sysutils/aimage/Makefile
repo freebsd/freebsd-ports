@@ -10,12 +10,10 @@ PORTVERSION=	3.2.4
 CATEGORIES=	sysutils
 MASTER_SITES=	http://afflib.org/downloads/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	glarkin@FreeBSD.org
 COMMENT=	Advanced Disk Imager
 
 LIB_DEPENDS=	afflib:${PORTSDIR}/sysutils/afflib
-
-BROKEN=		does not compile
 
 USE_OPENSSL=	yes
 USE_GMAKE=	yes
