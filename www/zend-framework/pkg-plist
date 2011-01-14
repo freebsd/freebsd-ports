@@ -89,6 +89,9 @@ bin/zf.php
 %%DOJO%%%%DATADIR%%/externals/dojo/dijit/_editor/nls/ja/FontChoice.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dijit/_editor/nls/ja/LinkDialog.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dijit/_editor/nls/ja/commands.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dijit/_editor/nls/kk/FontChoice.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dijit/_editor/nls/kk/LinkDialog.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dijit/_editor/nls/kk/commands.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dijit/_editor/nls/ko/FontChoice.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dijit/_editor/nls/ko/LinkDialog.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dijit/_editor/nls/ko/commands.js
@@ -225,6 +228,9 @@ bin/zf.php
 %%DOJO%%%%DATADIR%%/externals/dojo/dijit/form/nls/ja/ComboBox.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dijit/form/nls/ja/Textarea.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dijit/form/nls/ja/validate.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dijit/form/nls/kk/ComboBox.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dijit/form/nls/kk/Textarea.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dijit/form/nls/kk/validate.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dijit/form/nls/ko/ComboBox.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dijit/form/nls/ko/Textarea.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dijit/form/nls/ko/validate.js
@@ -343,6 +349,8 @@ bin/zf.php
 %%DOJO%%%%DATADIR%%/externals/dojo/dijit/nls/it/loading.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dijit/nls/ja/common.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dijit/nls/ja/loading.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dijit/nls/kk/common.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dijit/nls/kk/loading.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dijit/nls/ko/common.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dijit/nls/ko/loading.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dijit/nls/loading.js
@@ -1074,6 +1082,7 @@ bin/zf.php
 %%DOJO%%%%DATADIR%%/externals/dojo/dojo/nls/hu/colors.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojo/nls/it/colors.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojo/nls/ja/colors.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojo/nls/kk/colors.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojo/nls/ko/colors.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojo/nls/nb/colors.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojo/nls/nl/colors.js
@@ -1189,6 +1198,10 @@ bin/zf.php
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/atom/widget/nls/ja/FeedEntryViewer.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/atom/widget/nls/ja/FeedViewerEntry.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/atom/widget/nls/ja/PeopleEditor.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/atom/widget/nls/kk/FeedEntryEditor.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/atom/widget/nls/kk/FeedEntryViewer.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/atom/widget/nls/kk/FeedViewerEntry.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/atom/widget/nls/kk/PeopleEditor.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/atom/widget/nls/ko/FeedEntryEditor.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/atom/widget/nls/ko/FeedEntryViewer.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/atom/widget/nls/ko/FeedViewerEntry.js
@@ -1679,6 +1692,24 @@ bin/zf.php
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/ja/Smiley.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/ja/TableDialog.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/ja/latinEntities.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/kk/AutoSave.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/kk/Blockquote.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/kk/Breadcrumb.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/kk/CollapsibleToolbar.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/kk/FindReplace.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/kk/InsertAnchor.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/kk/InsertEntity.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/kk/LocalImage.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/kk/PageBreak.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/kk/PasteFromWord.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/kk/Preview.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/kk/Save.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/kk/ShowBlockNodes.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/kk/Smiley.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/kk/SpellCheck.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/kk/TableDialog.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/kk/TextColor.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/kk/latinEntities.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/ko/Breadcrumb.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/ko/FindReplace.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/ko/InsertEntity.js
@@ -1942,6 +1973,7 @@ bin/zf.php
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/form/nls/hu/PasswordValidator.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/form/nls/it/PasswordValidator.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/form/nls/ja/PasswordValidator.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/form/nls/kk/PasswordValidator.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/form/nls/ko/PasswordValidator.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/form/nls/nb/PasswordValidator.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/form/nls/nl/PasswordValidator.js
@@ -2114,6 +2146,9 @@ bin/zf.php
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/grid/enhanced/nls/hu/EnhancedGrid.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/grid/enhanced/nls/it/EnhancedGrid.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/grid/enhanced/nls/ja/EnhancedGrid.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/grid/enhanced/nls/kk/EnhancedGrid.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/grid/enhanced/nls/kk/Filter.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/grid/enhanced/nls/kk/Pagination.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/grid/enhanced/nls/ko/EnhancedGrid.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/grid/enhanced/nls/nb/EnhancedGrid.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/grid/enhanced/nls/nl/EnhancedGrid.js
@@ -2654,6 +2689,9 @@ bin/zf.php
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/widget/nls/ja/ColorPicker.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/widget/nls/ja/FilePicker.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/widget/nls/ja/Wizard.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/widget/nls/kk/ColorPicker.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/widget/nls/kk/FilePicker.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/widget/nls/kk/Wizard.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/widget/nls/ko/ColorPicker.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/widget/nls/ko/FilePicker.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/widget/nls/ko/Wizard.js
@@ -6506,6 +6544,7 @@ bin/zf.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/Zend/Wildfire/application/views/scripts/zend-db-profiler-firebug/test-logging.phtml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/Zend/Wildfire/application/views/scripts/zend-db-profiler-firebug/test-multiple-databases.phtml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/Zend/Wildfire/application/views/scripts/zend-log-writer-firebug/test-error-controller.phtml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/Zend/Wildfire/application/views/scripts/zend-log-writer-firebug/test-grouped-logging.phtml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/Zend/Wildfire/application/views/scripts/zend-log-writer-firebug/test-large-message.phtml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/Zend/Wildfire/application/views/scripts/zend-log-writer-firebug/test-logging.phtml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/Zend/Wildfire/application/views/scripts/zend-wildfire-plugin-firephp/test-groups.phtml
@@ -6866,6 +6905,7 @@ bin/zf.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/CodeGenerator/Php/Property/DefaultValueTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/CodeGenerator/Php/PropertyTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/CodeGenerator/Php/_files/ClassAndInterfaces.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/CodeGenerator/Php/_files/TestClassWithCodeInMethod.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/CodeGenerator/Php/_files/TestClassWithManyProperties.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/CodeGenerator/Php/_files/TestSampleSingleClass.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Config/AllTests.php
@@ -6928,6 +6968,7 @@ bin/zf.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Controller/Action/Helper/ContextSwitchTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Controller/Action/Helper/FlashMessengerTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Controller/Action/Helper/JsonTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Controller/Action/Helper/NamespaceTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Controller/Action/Helper/RedirectorTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Controller/Action/Helper/UrlTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Controller/Action/Helper/ViewRendererTest.php
@@ -6963,6 +7004,7 @@ bin/zf.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Controller/_files/FooController.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Controller/_files/HelperBrokerController.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Controller/_files/HelperFlashMessengerController.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Controller/_files/Helpers/NamespacedHelper.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Controller/_files/Helpers/TestHelper.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Controller/_files/Helpers/Url.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Controller/_files/IndexController.php
@@ -7000,6 +7042,7 @@ bin/zf.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Crypt/Rsa/_files/test.cert
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Crypt/Rsa/_files/test.pem
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Currency/ExchangeTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Currency/Service.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/CurrencyTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Date/AllTests.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Date/DateObjectTest.php
@@ -8684,12 +8727,12 @@ bin/zf.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Mail/MessageTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Mail/Pop3Test.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Mail/SmtpOfflineTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Mail/SmtpProtocolTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Mail/SmtpTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Mail/_files/mail.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Mail/_files/test.maildir/maildir.tar
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Mail/_files/test.mbox/INBOX
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Mail/_files/test.mbox/subfolder/test
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/MailTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Markup/AllTests.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Markup/BbcodeAndHtmlTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Markup/FactoryTest.php
@@ -8843,6 +8886,7 @@ bin/zf.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/ProgressBar/Adapter/MockupStream.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/ProgressBar/AllTests.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/ProgressBar/ProgressBarTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Queue/Adapter/ActivemqOfflineTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Queue/Adapter/ActivemqTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Queue/Adapter/AdapterTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Queue/Adapter/ArrayTest.php
@@ -9744,6 +9788,7 @@ bin/zf.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Wildfire/WildfireTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Wildfire/_files/IndexController.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/XmlRpc/AllTests.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/XmlRpc/BigIntegerValueTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/XmlRpc/ClientTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/XmlRpc/FaultTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/XmlRpc/GeneratorTest.php
@@ -9762,6 +9807,7 @@ bin/zf.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/_files/_testDir1/ClassNonexistent.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/_files/_testDir1/Interface1.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/_files/_testDir2/Class2.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/phpunit.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/resources/AllTests.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/resources/languages/AllTests.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/resources/languages/Zend_ValidateTest.php
@@ -11280,6 +11326,7 @@ bin/zf.php
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/widget/nls/nl
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/widget/nls/nb
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/widget/nls/ko
+%%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/widget/nls/kk
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/widget/nls/ja
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/widget/nls/it
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/widget/nls/hu
@@ -11399,6 +11446,7 @@ bin/zf.php
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/grid/enhanced/nls/nl
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/grid/enhanced/nls/nb
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/grid/enhanced/nls/ko
+%%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/grid/enhanced/nls/kk
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/grid/enhanced/nls/ja
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/grid/enhanced/nls/it
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/grid/enhanced/nls/hu
@@ -11447,6 +11495,7 @@ bin/zf.php
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/form/nls/nl
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/form/nls/nb
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/form/nls/ko
+%%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/form/nls/kk
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/form/nls/ja
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/form/nls/it
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/form/nls/hu
@@ -11500,6 +11549,7 @@ bin/zf.php
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/nl
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/nb
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/ko
+%%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/kk
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/ja
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/it
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/editor/plugins/nls/hu
@@ -11583,6 +11633,7 @@ bin/zf.php
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/atom/widget/nls/nl
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/atom/widget/nls/nb
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/atom/widget/nls/ko
+%%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/atom/widget/nls/kk
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/atom/widget/nls/ja
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/atom/widget/nls/it
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojox/atom/widget/nls/hu
@@ -11624,6 +11675,7 @@ bin/zf.php
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojo/nls/nl
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojo/nls/nb
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojo/nls/ko
+%%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojo/nls/kk
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojo/nls/ja
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojo/nls/it
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dojo/nls/hu
@@ -11723,6 +11775,7 @@ bin/zf.php
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dijit/nls/nl
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dijit/nls/nb
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dijit/nls/ko
+%%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dijit/nls/kk
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dijit/nls/ja
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dijit/nls/it
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dijit/nls/hu
@@ -11757,6 +11810,7 @@ bin/zf.php
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dijit/form/nls/nl
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dijit/form/nls/nb
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dijit/form/nls/ko
+%%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dijit/form/nls/kk
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dijit/form/nls/ja
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dijit/form/nls/it
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dijit/form/nls/hu
@@ -11789,6 +11843,7 @@ bin/zf.php
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dijit/_editor/nls/nl
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dijit/_editor/nls/nb
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dijit/_editor/nls/ko
+%%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dijit/_editor/nls/kk
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dijit/_editor/nls/ja
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dijit/_editor/nls/it
 %%DOJO%%@dirrm %%DATADIR%%/externals/dojo/dijit/_editor/nls/hu
