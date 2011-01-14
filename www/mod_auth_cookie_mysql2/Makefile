@@ -22,8 +22,8 @@ USE_APACHE=	20+
 AP_FAST_BUILD=	YES
 AP_GENPLIST=	YES
 AP_EXTRAS=	-DMODULE_NAME=${SHORTMODNAME} -DMODULE_NAME_module=${SHORTMODNAME}_module
-AP_INC=		`${LOCALBASE}/bin/mysql_config --include | ${SED} -e 's/^-I//'`
-AP_LIB=		`${LOCALBASE}/bin/mysql_config --libs | ${SED} -e 's/^-L//'`
+AP_INC=		${LOCALBASE}/include/mysql
+AP_LIB=		${LOCALBASE}/lib/mysql
 SRC_FILE=	mod_auth_cookie_sql2.c mod_auth_cookie_sql2_mysql.c
 
 .include <bsd.port.mk>
