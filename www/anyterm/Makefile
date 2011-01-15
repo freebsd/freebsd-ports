@@ -18,6 +18,8 @@ COMMENT=	A terminal emulator on a Web page
 
 BUILD_DEPENDS=	${LOCALBASE}/include/boost/function.hpp:${PORTSDIR}/devel/boost-libs
 
+LICENSE=	GPLv2
+
 MAN1=		anytermd.1
 USE_RC_SUBR=	anytermd
 USE_BZIP2=	yes
