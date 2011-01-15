@@ -7,10 +7,9 @@
 
 PORTNAME=	zerowait
 PORTVERSION=	0.8d
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
-MASTER_SITES=	http://www.0w.ru/httpd/ \
-		http://mirror.mcx2.org/
+MASTER_SITES=	http://mirror.mcx2.org/
 PKGNAMESUFFIX=	-httpd
 DISTNAME=	0W-httpd-${PORTVERSION}
 
