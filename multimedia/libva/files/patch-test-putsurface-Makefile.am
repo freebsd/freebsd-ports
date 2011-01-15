@@ -1,5 +1,5 @@
---- test/putsurface/Makefile.am~	2011-01-05 02:07:32.000000000 +0300
-+++ test/putsurface/Makefile.am	2011-01-05 02:07:54.000000000 +0300
+--- test/putsurface/Makefile.am~
++++ test/putsurface/Makefile.am
 @@ -23,8 +23,9 @@
  bin_PROGRAMS = putsurface
  

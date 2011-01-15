@@ -52,8 +52,9 @@ post-patch:	.SILENT
 		${WRKSRC}/configure.ac
 	${REINPLACE_CMD} 's/va\(info\)/\1/' ${WRKSRC}/test/Makefile.am
 	${REINPLACE_CMD} 's/-ldl//' ${WRKSRC}/va/Makefile.am
-	${REINPLACE_CMD} 's/dummy.*LDFLAGS.*/& -Wl,-lc/' \
-		${WRKSRC}/dummy_drv_video/Makefile.am
+	${REINPLACE_CMD} 's/LDFLAGS.*/& -Wl,-lc/' \
+		${WRKSRC}/dummy_drv_video/Makefile.am \
+		${WRKSRC}/i965_drv_video/Makefile.am
 	${REINPLACE_CMD} 's/-pthread/${PTHREAD_LIBS}/' \
 		${WRKSRC}/i965_drv_video/Makefile.am \
 		${WRKSRC}/test/putsurface/Makefile.am
