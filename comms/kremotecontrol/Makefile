@@ -6,6 +6,7 @@
 
 PORTNAME=	kdeutils
 PORTVERSION=	${KDE4_VERSION}
+PORTREVISION=	1
 CATEGORIES=	misc kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	${KDE4_BRANCH}/${PORTVERSION}/src
@@ -61,6 +62,7 @@ LIB_DEPENDS+=	lzma.5:${PORTSDIR}/archivers/xz
 .endif
 
 .ifdef(WITH_RAR)
+RUN_DEPENDS+=	unrar:${PORTSDIR}/archivers/unrar
 .if ${ARCH} != "amd64" && ${ARCH} != "ia64" && ${ARCH} != "powerpc" && ${ARCH} != "sparc64"
 INSTALL_RAR=	YES
 .elif ${ARCH} == "amd64"
@@ -73,8 +75,6 @@ INSTALL_RAR=	YES
 .endif
 .ifdef(INSTALL_RAR)
 RUN_DEPENDS+=	rar:${PORTSDIR}/archivers/rar
-.else
-RUN_DEPENDS+=	unrar:${PORTSDIR}/archivers/unrar
 .endif
 .endif
 
