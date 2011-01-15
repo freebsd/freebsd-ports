@@ -1,6 +1,14 @@
---- relayd/relayd.c.orig	2010-05-31 07:32:32.670912835 +0000
-+++ relayd/relayd.c	2010-05-31 07:35:25.223559078 +0000
-@@ -112,6 +112,9 @@
+--- relayd/relayd.c.orig	2011-01-15 00:27:09.020486320 +0100
++++ relayd/relayd.c	2011-01-15 00:32:43.024188430 +0100
+@@ -26,6 +26,7 @@
+ #include <sys/queue.h>
+ #include <sys/socket.h>
+ #include <sys/wait.h>
++#include <sys/resource.h>
+ 
+ #include <net/if.h>
+ #include <netinet/in.h>
+@@ -113,6 +114,9 @@
  	case SIGHUP:
  		reconfigure();
  		break;
@@ -10,8 +18,8 @@
  	default:
  		fatalx("unexpected signal");
  	}
-@@ -136,10 +139,6 @@
- 	u_int32_t		 opts;
+@@ -142,10 +146,6 @@
+ #endif
  	struct relayd		*env;
  	const char		*conffile;
 -	struct event		 ev_sigint;
@@ -21,7 +29,7 @@
  	struct imsgev		*iev;
  
  	opts = 0;
-@@ -245,15 +244,17 @@
+@@ -261,15 +261,17 @@
  
  	event_init();
  
@@ -48,7 +56,7 @@
  
  	close(pipe_parent2pfe[1]);
  	close(pipe_parent2hce[1]);
-@@ -306,6 +307,8 @@
+@@ -322,6 +324,8 @@
  #endif
  	event_dispatch();
  
@@ -57,7 +65,7 @@
  	return (0);
  }
  
-@@ -626,6 +629,7 @@
+@@ -642,6 +646,7 @@
  #ifndef __FreeBSD__
  	struct ctl_demote	 demote;
  #endif
@@ -65,7 +73,7 @@
  
  	iev = ptr;
  	ibuf = &iev->ibuf;
-@@ -669,6 +673,10 @@
+@@ -685,6 +690,10 @@
  			 */
  			reconfigure();
  			break;
@@ -76,7 +84,7 @@
  		default:
  			log_debug("main_dispatch_pfe: unexpected imsg %d",
  			    imsg.hdr.type);
-@@ -972,6 +980,7 @@
+@@ -988,6 +997,7 @@
  	if (timercmp(&tv_next, &tv, >))
  		bcopy(&tv_next, &tv, sizeof(tv));
  
@@ -84,7 +92,7 @@
  	event_set(ev, fd, event, fn, arg);
  	event_add(ev, &tv);
  }
-@@ -1129,6 +1138,7 @@
+@@ -1145,6 +1155,7 @@
  	}
  	pn->key = strdup(pk->key);
  	if (pn->key == NULL) {
@@ -92,3 +100,28 @@
  		log_warn("out of memory");
  		return (NULL);
  	}
+@@ -1370,3 +1381,24 @@
+ 
+ 	return (0);
+ }
++
++void
++socket_rlimit(int maxfd)
++{
++	struct rlimit	 rl;
++
++	if (getrlimit(RLIMIT_NOFILE, &rl) == -1)
++		fatal("socket_rlimit: failed to get resource limit");
++	log_debug("socket_rlimit: max open files %d", rl.rlim_max);
++
++	/*
++	 * Allow the maximum number of open file descriptors for this
++	 * login class (which should be the class "daemon" by default).
++	 */
++	if (maxfd == -1)
++		rl.rlim_cur = rl.rlim_max;
++	else
++		rl.rlim_cur = MAX(rl.rlim_max, (rlim_t)maxfd);
++	if (setrlimit(RLIMIT_NOFILE, &rl) == -1)
++		fatal("socket_rlimit: failed to set resource limit");
++}

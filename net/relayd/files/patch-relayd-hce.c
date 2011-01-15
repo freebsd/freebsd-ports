@@ -1,5 +1,5 @@
---- relayd/hce.c.orig	2010-05-31 08:54:55.771055422 +0200
-+++ relayd/hce.c	2010-05-31 08:54:50.916277342 +0200
+--- relayd/hce.c.orig	2011-01-15 00:27:09.012456298 +0100
++++ relayd/hce.c	2011-01-15 00:40:15.058397878 +0100
 @@ -62,6 +62,11 @@
  	case SIGTERM:
  		hce_shutdown();
@@ -21,7 +21,17 @@
  
  	switch (pid = fork()) {
  	case -1:
-@@ -135,12 +138,17 @@
+@@ -117,6 +120,9 @@
+ 
+ 	event_init();
+ 
++	/* Allow maximum available sockets for TCP checks */
++	socket_rlimit(-1);
++
+ 	if ((iev_pfe = calloc(1, sizeof(struct imsgev))) == NULL ||
+ 	    (iev_main = calloc(1, sizeof(struct imsgev))) == NULL)
+ 		fatal("hce");
+@@ -135,12 +141,17 @@
  	    iev_main->handler, iev_main);
  	event_add(&iev_main->ev, NULL);
  
@@ -45,7 +55,7 @@
  
  	/* setup pipes */
  	close(pipe_pfe2hce[1]);
-@@ -370,6 +378,7 @@
+@@ -370,6 +381,7 @@
  	objid_t			 id;
  	struct host		*host;
  	struct table		*table;
@@ -53,7 +63,7 @@
  
  	iev = ptr;
  	ibuf = &iev->ibuf;
-@@ -437,6 +446,10 @@
+@@ -437,6 +449,10 @@
  				table->skipped = 0;
  			hce_launch_checks(-1, EV_TIMEOUT, env);
  			break;
