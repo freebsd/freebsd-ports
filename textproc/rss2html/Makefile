@@ -7,10 +7,9 @@
 
 PORTNAME=	rss2html
 PORTVERSION=	0.8.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc
-MASTER_SITES=	http://mirror.mcx2.org/ \
-		ftp://ftp.nopcode.org/prj/rss2html/
+MASTER_SITES=	http://mirror.mcx2.org/
 
 MAINTAINER=	dhn@FreeBSD.org
 COMMENT=	RSS to HTML converter
