@@ -14,7 +14,7 @@ MASTER_SITES=	http://openscep.othello.ch/download/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Open source scep server
 
-MAKE_JOBS_SAFE=  yes
+MAKE_JOBS_SAFE=	yes
 
 USE_AUTOTOOLS=	libtool
 USE_OPENSSL=	yes
@@ -22,6 +22,7 @@ USE_OPENLDAP=	yes
 USE_APACHE=	1.3+
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
+USE_LDCONFIG=	yes
 
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
