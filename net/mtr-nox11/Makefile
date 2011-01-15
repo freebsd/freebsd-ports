@@ -6,7 +6,6 @@
 #
 
 PORTNAME=	mtr
-PORTREVISION=	2
 
 MAINTAINER=	sunpoet@FreeBSD.org
 
