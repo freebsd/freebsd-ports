@@ -8,7 +8,7 @@
 PORTNAME=	wired-tracker
 PORTVERSION=	1.0.2
 CATEGORIES=	net
-MASTER_SITES=	http://www.zankasoftware.com/dist/
+MASTER_SITES=	http://mirror.mcx2.org/
 DISTNAME=	wiredtracker-${PORTVERSION}
 
 MAINTAINER=	dhn@FreeBSD.org
