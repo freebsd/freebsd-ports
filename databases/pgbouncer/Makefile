@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	pgbouncer
-PORTVERSION=	1.3.4
+PORTVERSION=	1.4
 CATEGORIES=	databases
-MASTER_SITES=	http://pgfoundry.org/frs/download.php/2797/
+MASTER_SITES=	http://pgfoundry.org/frs/download.php/2912/
 
 MAINTAINER=	skv@FreeBSD.org
 COMMENT=	Lightweight connection pooler for PostgreSQL
@@ -40,7 +40,10 @@ PGBOUNCER_GROUP?=	pgbouncer
 PGBOUNCER_RUNDIR?=	/var/run/pgbouncer
 PGBOUNCER_LOGDIR?=	/var/log/pgbouncer
 
+BUILD_DEPENDS+=		${LOCALBASE}/bin/gsed:${PORTSDIR}/textproc/gsed
+
 .include <bsd.port.pre.mk>
+
 # Parse ${PORTSDIR}/UIDs and GIDs for the defaults
 USER!=	${GREP} -E '^${PGBOUNCER_USER}:' ${PORTSDIR}/UIDs | \
 		${SED} -Ee 's/^([^:]*):([^:]*):([^:]*):([^:]*)::0:0:([^:]*):([^:]*):([^:]*)$$/USER="\1" UID="\3" GECOS="\5" HOME="\6" SHELL="\7"/'
@@ -71,6 +74,8 @@ post-patch:
 	@${REINPLACE_CMD} -e "s|= pgbouncer.log|= ${PGBOUNCER_LOGDIR}/pgbouncer.log|g" \
 		-e "s|= pgbouncer.pid|= ${PGBOUNCER_RUNDIR}/pgbouncer.pid|g" \
 		${WRKSRC}/etc/pgbouncer.ini
+	@${REINPLACE_CMD} -e "s|sed -n|${LOCALBASE}/bin/gsed -n|g" \
+		${WRKSRC}/lib/find_modules.sh
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/pgbouncer ${PREFIX}/bin/
