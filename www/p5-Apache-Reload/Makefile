@@ -14,7 +14,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Reload changed modules
 
-MAKE_JOBS_SAFE=  yes
+MAKE_JOBS_SAFE=	yes
 
 PERL_CONFIGURE=	yes
 
