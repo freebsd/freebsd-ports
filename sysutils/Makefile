@@ -353,6 +353,7 @@
     SUBDIR += hal
     SUBDIR += hal-info
     SUBDIR += hammerhead
+    SUBDIR += hardlink
     SUBDIR += hatop
     SUBDIR += hdup
     SUBDIR += healthd
