@@ -31,8 +31,6 @@ DOCS=		CREDITS FAQ README SCRIPTS TODO \
 PLIST_FILES=	bin/tt++
 PORTDOCS=	${DOCS:T}
 
-.include <bsd.port.pre.mk>
-
 post-configure:
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|' ${WRKSRC}/Makefile
 
@@ -43,4 +41,4 @@ do-install:
 	@cd ${WRKSRC}/.. && ${INSTALL_DATA} ${DOCS} ${DOCSDIR}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
