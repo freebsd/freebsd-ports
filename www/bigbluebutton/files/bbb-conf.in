@@ -17,6 +17,8 @@ TOMCAT_HOME="%%TOMCAT_HOME%%"
 TOMCAT_LOGS="%%TOMCAT_LOGS%%"
 TOMCAT_USER="%%TOMCAT_USER%%"
 TOMCAT_GROUP="%%TOMCAT_GROUP%%"
+FREESWITCH_USER="%%FREESWITCH_USER%%"
+FREESWITCH_GROUP="%%FREESWITCH_GROUP%%"
 WWWROOT="%%WWWROOT%%"
 WWWDIR="%%WWWDIR%%"
 ASTERISK_ETC="$PREFIX/etc/asterisk"
@@ -29,16 +31,17 @@ INSTALL_CMD="install -B $BACKUP"
 # BBB security salt
 BBB_SALT=""
 
-# BBB common path
+# BBB common
 BBB_SHAREDIR="%%DATADIR%%"
 BBB_PRESENTATIONDIR="/var/spool/%%PORTNAME%%"
+BBB_SRV_LIST=""
 BBB_INSTALL_CONF="$BBB_PRESENTATIONDIR/conf.txt"
 
 # BBB JDBC properties
 BBB_DATABASE_TYPE="mysql"
-BBB_DATABASE_HOST="localhost"
+BBB_DATABASE_HOST=""
 BBB_DATABASE_NAME="%%PORTNAME%%"
-BBB_DATABASE_URL="jdbc:$BBB_DATABASE_TYPE://$BBB_DATABASE_HOST/$BBB_DATABASE_NAME"
+BBB_DATABASE_URL=""
 BBB_DATABASE_DRIVER="com.mysql.jdbc.Driver"
 BBB_DATABASE_USERNAME="%%PORTNAME%%"
 BBB_DATABASE_PASSWORD=""
@@ -48,18 +51,18 @@ BBB_CONFERENCE_MODULE=""
 BBB_CONFERENCE_TYPE=""
 
 # FreeSWITCH Event Socket Library (ESL)
-BBB_ESL_HOST="localhost"
+BBB_ESL_HOST=""
 BBB_ESL_PORT="8021"
 BBB_ESL_PASSWORD=""
 
 # Asterisk Management Interface (AMI)
-BBB_AMI_HOST="localhost"
+BBB_AMI_HOST=""
 BBB_AMI_PORT="5038"
 BBB_AMI_USERNAME="bbb"
 BBB_AMI_PASSWORD=""
 
 # SIP
-BBB_SIP_HOST="localhost"
+BBB_SIP_HOST=""
 BBB_SIP_PORT="5070"
 BBB_SIP_USERNAME="bbbuser"
 BBB_SIP_PASSWORD=""
@@ -68,8 +71,8 @@ BBB_SIP_PASSWORD=""
 BBB_VAR_LIST="PREFIX WWWROOT WWWDIR \
 	RED5_HOME RED5_LOGS RED5_USER RED5_GROUP \
 	TOMCAT_HOME TOMCAT_LOGS TOMCAT_USER TOMCAT_GROUP \
-	ASTERISK_ETC NGINX_ETC BBB_HOSTNAME BBB_SALT \
-	BBB_SHAREDIR BBB_PRESENTATIONDIR BBB_INSTALL_CONF \
+	ASTERISK_ETC NGINX_ETC BBB_HOSTNAME BBB_IP_ADDRESS BBB_SALT \
+	BBB_SHAREDIR BBB_PRESENTATIONDIR BBB_SRV_LIST BBB_INSTALL_CONF \
 	BBB_DATABASE_TYPE BBB_DATABASE_HOST BBB_DATABASE_NAME BBB_DATABASE_URL \
 	BBB_DATABASE_DRIVER BBB_DATABASE_USERNAME BBB_DATABASE_PASSWORD \
 	BBB_CONFERENCE_MODULE BBB_CONFERENCE_TYPE \
@@ -86,6 +89,12 @@ bbb_usage() {
 	Install initial configuration:
 	$SCRIPT install -h <hostname|ip address> -c <konference|meetme|freeswitch>
 
+	Start all BigBlueButton services:
+	$SCRIPT start
+
+	Stop all BigBlueButton services:
+	$SCRIPT stop
+
 	Restart all bbb services:
 	$SCRIPT restart
 
@@ -95,20 +104,29 @@ bbb_usage() {
 }
 
 bbb_random() {
-	openssl rand -base64 $1 | sed -E 's|[^A-Za-z0-9]||g'
+	openssl rand -base64 48 | sed -E 's|[^A-Za-z0-9]||g' | cut -c 1-$1
 }
 
 bbb_install() {
+	CHECK_PKGS="swftools ImageMagick mysql-server activemq nginx tomcat"
+	CHECK_PKGS="$CHECK_PKGS red5"
 	CHECK_DIRS="RED5_HOME TOMCAT_HOME WWWROOT WWWDIR NGINX_ETC BBB_SHAREDIR"
 
 	case "$BBB_CONFERENCE_MODULE" in
 	konference|meetme)
+		CHECK_PKGS="$CHECK_PKGS asterisk"
 		CHECK_DIRS="$CHECK_DIRS ASTERISK_ETC"
 		;;
 	freeswitch)
+		CHECK_PKGS="$CHECK_PKGS freeswitch"
 		CHECK_DIRS="$CHECK_DIRS FREESWITCH_ETC"
 		;;
 	esac
+
+	for pkg in $CHECK_PKGS; do
+		echo -n "Check package $pkg: "
+		pkg_info -E ${pkg}\* || usage "$SCRIPT required $pkg package"
+	done
 
 	for var in $CHECK_DIRS; do
 		eval val=\$$var
@@ -126,6 +144,12 @@ bbb_install() {
 	BBB_ESL_PASSWORD="$(bbb_random 16)"
 	BBB_AMI_PASSWORD="$(bbb_random 16)"
 	BBB_SIP_PASSWORD="$(bbb_random 16)"
+	BBB_IP_ADDRESS="$(getent hosts "$BBB_HOSTNAME" | awk '{print $1}')"
+	BBB_DATABASE_HOST="$BBB_IP_ADDRESS"
+	BBB_DATABASE_URL="jdbc:$BBB_DATABASE_TYPE://$BBB_DATABASE_HOST/$BBB_DATABASE_NAME"
+	BBB_ESL_HOST="$BBB_IP_ADDRESS"
+	BBB_AMI_HOST="$BBB_IP_ADDRESS"
+	BBB_SIP_HOST="$BBB_IP_ADDRESS"
 
 	for var in $BBB_VAR_LIST; do
 		eval val=\$$var
@@ -136,13 +160,14 @@ bbb_install() {
 	mkdir -p /etc/rc.conf.d
 
 	echo "Configure activemq: rc.conf"
+	BBB_SRV_LIST="activemq"
 	cat >/etc/rc.conf.d/activemq <<-EOF
 	activemq_enable="YES"
 	EOF
 
 	echo -n "Configure $BBB_DATABASE_TYPE: drop/create/grant"
-	(/usr/local/etc/rc.d/mysql-server status || /usr/local/etc/rc.d/mysql-server start) >/dev/null 2>&1
-	mysql -h $BBB_DATABASE_HOST -u root >/dev/null <<-EOF
+	(/usr/local/etc/rc.d/mysql-server onestatus || /usr/local/etc/rc.d/mysql-server onestart) >/dev/null 2>&1
+	mysql -u root >/dev/null <<-EOF
 	drop database if exists $BBB_DATABASE_NAME;
 	create database $BBB_DATABASE_NAME;
 	grant all on $BBB_DATABASE_NAME.* to '$BBB_DATABASE_USERNAME'@'$BBB_DATABASE_HOST' identified by '$BBB_DATABASE_PASSWORD';
@@ -150,9 +175,12 @@ bbb_install() {
 	EOF
 
 	echo " rc.conf"
+	BBB_SRV_LIST="$BBB_SRV_LIST mysql-server"
 	cat >/etc/rc.conf.d/mysql <<-EOF
 	mysql_enable="YES"
 	EOF
+
+	/usr/local/etc/rc.d/mysql-server stop >/dev/null 2>&1
 
 	echo -n "Configure $BBB_CONFERENCE_TYPE:"
 	case "$BBB_CONFERENCE_MODULE" in
@@ -212,6 +240,7 @@ bbb_install() {
 			noload => app_konference.so
 			EOF
 
+			BBB_SRV_LIST="$BBB_SRV_LIST zaptel"
 			cat >/etc/rc.conf.d/zaptel <<-EOF
 			zaptel_enable="YES"
 			zaptel_kmod_load="zaptel.ko ztdummy.ko"
@@ -231,17 +260,50 @@ bbb_install() {
 		EOF
 
 		echo " rc.conf"
+		BBB_SRV_LIST="$BBB_SRV_LIST asterisk"
 		cat >/etc/rc.conf.d/asterisk <<-EOF
 		asterisk_enable="YES"
 		EOF
 		;;
 	freeswitch)
-		echo "Not implemented yet"
-		exit 1
+		cd $FREESWITCH_ETC
+		echo -n " backup"
+		mv conf conf$BACKUP
+
+		echo -n " extract"
+		(cd $BBB_SHAREDIR/freeswitch && tar cf - conf) | tar xf -
+		chown -R $FREESWITCH_USER:$FREESWITCH_GROUP conf
+		cd conf
+
+		echo -n " event_socket.conf.xml"
+		$INSTALL_CMD -m 0600 -o $FREESWITCH_USER -g $FREESWITCH_GROUP \
+			autoload_configs/event_socket.conf.xml-dist \
+			autoload_configs/event_socket.conf.xml
+		sed -i '' $BBB_REPLACE autoload_configs/event_socket.conf.xml
+
+		echo -n " acl.conf.xml"
+		$INSTALL_CMD -m 0600 -o $FREESWITCH_USER -g $FREESWITCH_GROUP \
+			autoload_configs/acl.conf.xml-dist \
+			autoload_configs/acl.conf.xml
+		sed -i '' $BBB_REPLACE autoload_configs/acl.conf.xml
+
+		echo -n " $BBB_SIP_USERNAME.xml"
+		$INSTALL_CMD -m 0600 -o $FREESWITCH_USER -g $FREESWITCH_GROUP \
+			directory/default/bbbuser.xml-dist \
+			directory/default/$BBB_SIP_USERNAME.xml
+		sed -i '' $BBB_REPLACE directory/default/$BBB_SIP_USERNAME.xml
+
+		echo " rc.conf"
+		BBB_SRV_LIST="$BBB_SRV_LIST freeswitch"
+		cat >/etc/rc.conf.d/freeswitch <<-EOF
+		freeswitch_enable="YES"
+		freeswitch_flags="-ncwait -waste -nonat"
+		EOF
 		;;
 	esac
 
 	echo "Configure openoffice: rc.conf"
+	BBB_SRV_LIST="$BBB_SRV_LIST openoffice"
 	cat >/etc/rc.conf.d/openoffice <<-EOF
 	openoffice_enable="YES"
 	EOF
@@ -269,35 +331,10 @@ bbb_install() {
 		WEB-INF/classes/log4j.properties
 
 	echo " rc.conf"
+	BBB_SRV_LIST="$BBB_SRV_LIST tomcat6"
 	cat >/etc/rc.conf.d/tomcat60 <<-EOF
 	tomcat60_enable="YES"
-	tomcat60_stop_timeout="60"
-	EOF
-
-	echo -n "Configure nginx:"
-	cd $NGINX_ETC
-	mkdir -p sites-available sites-enabled
-
-	echo -n " nginx.conf"
-	$INSTALL_CMD $BBB_SHAREDIR/nginx/nginx.conf-dist nginx.conf
-
-	echo -n " bigbluebutton.conf"
-	$INSTALL_CMD $BBB_SHAREDIR/nginx/nginx-bigbluebutton.conf-dist \
-		sites-available/bigbluebutton.conf
-	sed -i '' $BBB_REPLACE nginx.conf sites-available/bigbluebutton.conf
-	cd sites-enabled
-	rm -f bigbluebutton.conf
-	ln -s ../sites-available/bigbluebutton.conf \
-		bigbluebutton.conf
-	cd $WWWDIR/client/conf
-
-	echo -n " config.xml"
-	$INSTALL_CMD config.xml-dist config.xml
-	sed -i '' $BBB_REPLACE config.xml
-
-	echo " rc.conf"
-	cat >/etc/rc.conf.d/nginx <<-EOF
-	nginx_enable="YES"
+	tomcat60_stop_timeout="30"
 	EOF
 
 	echo -n "Configure red5:"
@@ -327,14 +364,42 @@ bbb_install() {
 	sed -i '' $BBB_REPLACE  bigbluebutton-sip.properties
 
 	echo " rc.conf"
+	BBB_SRV_LIST="$BBB_SRV_LIST red5"
 	RED5_RMI_PORT=$(awk -F= '/^jmx.rmi.port.registry/{print $2}' $RED5_HOME/conf/red5.properties)
 	RED5_RMI_USER=$(awk '/^[^#].+readwrite$/{print $1}' $RED5_HOME/conf/access.properties | head -1)
 	RED5_RMI_PASSWD=$(awk '/^'$RED5_RMI_USER'[\ \t]+/{print $2}' $RED5_HOME/conf/password.properties)
 	
 	cat >/etc/rc.conf.d/red5 <<-EOF
 	red5_enable="YES"
-	red5_stop_timeout="60"
+	red5_stop_timeout="30"
 	red5_stop_class_opts="$RED5_RMI_PORT $RED5_RMI_USER $RED5_RMI_PASSWD"
+	EOF
+
+	echo -n "Configure nginx:"
+	cd $NGINX_ETC
+	mkdir -p sites-available sites-enabled
+
+	echo -n " nginx.conf"
+	$INSTALL_CMD $BBB_SHAREDIR/nginx/nginx.conf-dist nginx.conf
+
+	echo -n " bigbluebutton.conf"
+	$INSTALL_CMD $BBB_SHAREDIR/nginx/nginx-bigbluebutton.conf-dist \
+		sites-available/bigbluebutton.conf
+	sed -i '' $BBB_REPLACE nginx.conf sites-available/bigbluebutton.conf
+	cd sites-enabled
+	rm -f bigbluebutton.conf
+	ln -s ../sites-available/bigbluebutton.conf \
+		bigbluebutton.conf
+	cd $WWWDIR/client/conf
+
+	echo -n " config.xml"
+	$INSTALL_CMD config.xml-dist config.xml
+	sed -i '' $BBB_REPLACE config.xml
+
+	echo " rc.conf"
+	BBB_SRV_LIST="$BBB_SRV_LIST nginx"
+	cat >/etc/rc.conf.d/nginx <<-EOF
+	nginx_enable="YES"
 	EOF
 
 	echo -n "Save config:"
@@ -348,35 +413,31 @@ bbb_install() {
 	for var in $BBB_VAR_LIST; do
 		eval val=\$$var
 		cat >>$BBB_INSTALL_CONF <<-EOF
-		$var=$val
+		$var="$val"
 		EOF
 	done
 	echo " $BBB_INSTALL_CONF"
 }
 
-bbb_restart() {
-	. $BBB_INSTALL_CONF
+bbb_start() {
+	for i in $BBB_SRV_LIST; do
+		$PREFIX/etc/rc.d/$i start || true
+	done
+}
 
-	$PREFIX/etc/rc.d/activemq restart
-	$PREFIX/etc/rc.d/mysql-server restart
-	case "$BBB_CONFERENCE_MODULE" in
-	meetme)
-		if ! kldstat -q -m ztdummy; then
-			$PREFIX/etc/rc.d/zaptel start >/dev/null 2>&1
-		fi
-		$PREFIX/etc/rc.d/asterisk restart
-		;;
-	konference)
-		$PREFIX/etc/rc.d/asterisk restart
-		;;
-	freeswitch)
-		$PREFIX/etc/rc.d/freeswitch restart
-		;;
-	esac
-	$PREFIX/etc/rc.d/openoffice restart
-	$PREFIX/etc/rc.d/tomcat6 restart
-	$PREFIX/etc/rc.d/red5 restart
-	$PREFIX/etc/rc.d/nginx restart
+bbb_stop() {
+	for i in $BBB_SRV_LIST; do
+		REVERSE_SRV_LIST="$i $REVERSE_SRV_LIST"
+	done
+
+	for i in $REVERSE_SRV_LIST; do
+		$PREFIX/etc/rc.d/$i stop || true
+	done
+}
+
+bbb_restart() {
+	bbb_stop
+	bbb_start
 }
 
 if [ "`/usr/bin/id -u`" != "0" ]; then
@@ -384,7 +445,7 @@ if [ "`/usr/bin/id -u`" != "0" ]; then
 fi
 
 if [ $# -eq 0 ]; then
-	bbb_usage "$SCRIPT <install|restart> [options]"
+	bbb_usage "$SCRIPT <install|start|stop|restart> [options]"
 fi
 
 BBB_ACTION="$1"
@@ -409,8 +470,8 @@ install)
 	if [ -z "$BBB_HOSTNAME" ]; then
 		bbb_usage "Error: 'install' action required '-h' option"
 	else
-		if ! host "$BBB_HOSTNAME" >/dev/null 2>&1; then
-			bbb_usage "Error: hostname '$BBB_HOSTNAME' not found by host command"
+		if ! getent hosts "$BBB_HOSTNAME" >/dev/null 2>&1; then
+			bbb_usage "Error: hostname '$BBB_HOSTNAME' not found by getent command"
 		fi
 	fi
 
@@ -441,11 +502,18 @@ install)
 	fi
 	bbb_install
 	;;
-restart)
-	if [ -n "$BBB_HOSTNAME" ]; then
-		bbb_usage "Error: 'restart' action do not allow any options"
+start|stop|restart)
+	if [ -n "$BBB_HOSTNAME" -o -n "$BBB_CONFERENCE_MODULE" ]; then
+		bbb_usage "Error: '$BBB_ACTION' action do not allow any options"
 	fi
-	bbb_restart
+
+	if [ -s "$BBB_INSTALL_CONF" ]; then
+		. $BBB_INSTALL_CONF
+	else
+		bbb_usage "Error: '$BBB_ACTION' action allow only after install"
+	fi
+
+	eval bbb_$BBB_ACTION
 	;;
 *)
 	bbb_usage "Error: '$BBB_ACTION' is not valid action"

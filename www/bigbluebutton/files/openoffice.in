@@ -17,6 +17,8 @@
 #               Set it to required username.
 # openoffice_group (group):   Set to www by default.
 #               Set it to required group.
+# openoffice_home (string):   Set to /var/spool/%%PORTNAME%% by default.
+#               Set it to required dir.
 # openoffice_bin (string):    Set by default - see below.
 #               Set it to soffice.bin path.
 # openoffice_args (string):  Set by default - see below.
@@ -32,6 +34,7 @@ load_rc_config $name
 : ${openoffice_enable:=NO}
 : ${openoffice_user:="www"}
 : ${openoffice_group:="www"}
+: ${openoffice_home:="/var/spool/%%PORTNAME%%"}
 : ${openoffice_bin:="%%SOFFICEBIN%%"}
 : ${openoffice_args:="-accept=socket,host=localhost,port=8100;urp -headless -nofirststartwizard"}
 
@@ -42,7 +45,8 @@ start_precmd="${name}_precmd"
 
 openoffice_start() {
         echo "Starting ${name}."
-        /usr/sbin/daemon -f -p ${pidfile} -u ${openoffice_user} \
+        env HOME=${openoffice_home} /usr/sbin/daemon \
+		-f -p ${pidfile} -u ${openoffice_user} \
 		${openoffice_bin} ${openoffice_args}
 }
 
