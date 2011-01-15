@@ -16,6 +16,8 @@ DISTNAME=	mcitymicrogui-default
 MAINTAINER=	douglas@douglasthrift.net
 COMMENT=	The microGUI Sawfish theme for Metacity
 
+LICENSE=	GPLv2
+
 USE_GNOME=	gnomehier
 
 RESTRICTED=	${REASON}
