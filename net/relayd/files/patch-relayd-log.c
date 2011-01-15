@@ -1,5 +1,5 @@
---- relayd/log.c.orig	2010-05-31 08:55:55.644112693 +0200
-+++ relayd/log.c	2010-05-31 08:55:50.789959404 +0200
+--- relayd/log.c.orig	2011-01-15 00:27:09.012456298 +0100
++++ relayd/log.c	2011-01-15 00:39:01.553947279 +0100
 @@ -45,6 +45,7 @@
  #include "relayd.h"
  
@@ -38,3 +38,21 @@
  		va_start(ap, emsg);
  		vlog(LOG_DEBUG, emsg, ap);
  		va_end(ap);
+@@ -192,9 +200,15 @@
+ 	case HCE_ICMP_WRITE_TIMEOUT:
+ 		return ("icmp write timeout");
+ 		break;
+-	case HCE_TCP_CONNECT_ERROR:
+-		return ("tcp connect error");
++	case HCE_TCP_SOCKET_ERROR:
++		return ("tcp socket error");
++		break;
++	case HCE_TCP_SOCKET_LIMIT:
++		return ("tcp socket limit");
+ 		break;
++	case HCE_TCP_SOCKET_OPTION:
++		return ("tcp socket option");
++ 		break;
+ 	case HCE_TCP_CONNECT_FAIL:
+ 		return ("tcp connect failed");
+ 		break;
