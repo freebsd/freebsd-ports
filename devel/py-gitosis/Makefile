@@ -15,6 +15,8 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	douglas@douglasthrift.net
 COMMENT=	Software for hosting git repositories
 
+LICENSE=	GPLv2
+
 RUN_DEPENDS=	git:${PORTSDIR}/devel/git
 
 USE_BZIP2=	yes
