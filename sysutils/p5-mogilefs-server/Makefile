@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mogilefs-server
-PORTVERSION=	2.45
+PORTVERSION=	2.46
 CATEGORIES=	sysutils perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	../../authors/id/D/DO/DORMANDO
