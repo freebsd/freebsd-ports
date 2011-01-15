@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	anyremote
-PORTVERSION=	5.2
+PORTVERSION=	5.3
 CATEGORIES=	comms
 MASTER_SITES=	SF
 
@@ -17,6 +17,8 @@ USE_GNOME=	glib20
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
+
+LICENSE=	GPLv2
 
 OPTIONS=	DBUS		"Build with DBUS support" on \
 		X11		"Build with X11 library" on

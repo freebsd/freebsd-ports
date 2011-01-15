@@ -43,7 +43,6 @@ bin/anyremote
 %%DATADIR%%/cfg-data/Server-mode/customizeClient4.cfg
 %%DATADIR%%/cfg-data/Server-mode/nokia-e61.cfg
 %%DATADIR%%/cfg-data/Server-mode/bmp.cfg
-%%DATADIR%%/cfg-data/Server-mode/sound.cfg
 %%DATADIR%%/cfg-data/Server-mode/kdetv.cfg
 %%DATADIR%%/cfg-data/Server-mode/kdialog.cfg
 %%DATADIR%%/cfg-data/Server-mode/vlc.cfg
@@ -82,6 +81,9 @@ bin/anyremote
 %%DATADIR%%/cfg-data/Server-mode/nokia-e75.cfg
 %%DATADIR%%/cfg-data/Server-mode/qmmp.cfg
 %%DATADIR%%/cfg-data/Server-mode/qwerty-device-test.cfg
+%%DATADIR%%/cfg-data/Server-mode/amixer.cfg
+%%DATADIR%%/cfg-data/Server-mode/miro.cfg
+%%DATADIR%%/cfg-data/Server-mode/mpris.cfg
 %%DATADIR%%/cfg-data/Utils/gradient.png
 %%DATADIR%%/cfg-data/Utils/message.sh
 %%DATADIR%%/cfg-data/Utils/all-in-1.py
@@ -90,6 +92,8 @@ bin/anyremote
 %%DATADIR%%/cfg-data/Utils/aliases-bemused.cfg
 %%DATADIR%%/cfg-data/Utils/aliases-server.cfg
 %%DATADIR%%/cfg-data/Utils/getPlayList.sh
+%%DATADIR%%/cfg-data/Utils/aliases-iviewer.cfg
+%%DATADIR%%/cfg-data/Utils/pulse-audio-ctl.sh
 %%DATADIR%%/cfg-data/Bemused-emulation/exaile.cfg
 %%DATADIR%%/cfg-data/Bemused-emulation/quodlibet.cfg
 %%DATADIR%%/cfg-data/Bemused-emulation/xmms.cfg
@@ -121,7 +125,6 @@ bin/anyremote
 %%DATADIR%%/cfg-data/AT-mode/totem.cfg
 %%DATADIR%%/cfg-data/AT-mode/xdtv.cfg
 %%DATADIR%%/cfg-data/AT-mode/amarok.cfg
-%%DATADIR%%/cfg-data/AT-mode/sound.cfg
 %%DATADIR%%/cfg-data/AT-mode/kdetv.cfg
 %%DATADIR%%/cfg-data/AT-mode/kdialog.cfg
 %%DATADIR%%/cfg-data/AT-mode/multimode.cfg
@@ -133,6 +136,7 @@ bin/anyremote
 %%DATADIR%%/cfg-data/AT-mode/listen.cfg
 %%DATADIR%%/cfg-data/AT-mode/exaile.cfg
 %%DATADIR%%/cfg-data/AT-mode/freevo.cfg
+%%DATADIR%%/cfg-data/AT-mode/amixer.cfg
 %%DATADIR%%/cfg-data/Icons/16/favorites.png
 %%DATADIR%%/cfg-data/Icons/16/bottom.png
 %%DATADIR%%/cfg-data/Icons/16/eject.png
@@ -191,7 +195,6 @@ bin/anyremote
 %%DATADIR%%/cfg-data/iViewer/amarok.cfg
 %%DATADIR%%/cfg-data/iViewer/kaffeine.cfg
 %%DATADIR%%/cfg-data/iViewer/xine.cfg
-%%DATADIR%%/cfg-data/iViewer/vlc.cfg
 %%DATADIR%%/cfg-data/iViewer/xmms.cfg
 %%DATADIR%%/cfg-data/iViewer/banshee.cfg
 %%DATADIR%%/cfg-data/iViewer/rhythmbox.cfg
