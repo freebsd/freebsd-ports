@@ -396,6 +396,7 @@
     SUBDIR += msend
     SUBDIR += msntp
     SUBDIR += mtr
+    SUBDIR += mtr-nox11
     SUBDIR += mudix
     SUBDIR += nakenchat
     SUBDIR += nam
