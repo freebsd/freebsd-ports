@@ -1521,3 +1521,4 @@ x11/wmmenu||2011-01-03|Removed due to x11/libcapplet broke
 x11-toolkits/py-gnome||2011-01-03|Removed due to x11/libcapplet broke
 www/glibwww||2011-01-04|Removed due to no port depend on it
 math/octave-forge-spanish|math/octave-forge-es|2011-01-13|Replaced by math/octave-forge-es
+cvsnt||2011-01-15|Removed: abandoned upstream
