@@ -8,7 +8,7 @@
 PORTNAME=	stardict-pc
 PORTVERSION=	2.4.2
 CATEGORIES=	russian
-MASTER_SITES=	SF/stardict/stardict-dictionaries-ru/${PORTVERSION}
+MASTER_SITES=	http://yeelou.com/huzheng/stardict-dic/ru/
 DISTNAME=	${PORTNAME}-user-ru-${PORTVERSION}
 
 MAINTAINER=	g.veniamin@googlemail.com
