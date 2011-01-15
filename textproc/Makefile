@@ -204,6 +204,7 @@
     SUBDIR += gpp
     SUBDIR += grap
     SUBDIR += grc-aspell
+    SUBDIR += groff
     SUBDIR += groonga
     SUBDIR += gsed
     SUBDIR += gtk-doc
