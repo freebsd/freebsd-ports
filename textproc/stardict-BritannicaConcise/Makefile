@@ -8,7 +8,7 @@
 PORTNAME=	stardict-BritannicaConcise
 PORTVERSION=	2.4.2
 CATEGORIES=	textproc
-MASTER_SITES=	SF/stardict/stardict-dictionaries-dictd/${PORTVERSION}
+MASTER_SITES=	http://yeelou.com/huzheng/stardict-dic/dict.org/
 
 MAINTAINER=	makc@FreeBSD.org
 COMMENT=	The Britannica Concise Encyclopedia

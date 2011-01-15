@@ -8,7 +8,7 @@
 PORTNAME=	stardict-OxfordCollocation
 PORTVERSION=	2.4.2
 CATEGORIES=	textproc
-MASTER_SITES=	SF/stardict/stardict-dictionaries-dictd/${PORTVERSION}
+MASTER_SITES=	http://yeelou.com/huzheng/stardict-dic/dict.org/
 DISTNAME=	stardict-oxford_collocations-${PORTVERSION}
 
 MAINTAINER=	makc@FreeBSD.org
