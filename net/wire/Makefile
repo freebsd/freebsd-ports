@@ -7,17 +7,18 @@
 
 PORTNAME=	wire
 PORTVERSION=	1.1.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
-MASTER_SITES=	http://www.zankasoftware.com/dist/ \
+MASTER_SITES=	http://mirror.mcx2.org/ \
 		${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	miwi
+MASTER_SITE_SUBDIR=	dhn
 
 MAINTAINER=	dhn@FreeBSD.org
 COMMENT=	Wire is a screen-oriented command line Wired client
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--libdir="${LOCALBASE}/lib" --includedir="${LOCALBASE}/include"
+CFLAGS+=	"-I${LOCALBASE}/include"
 USE_GMAKE=	yes
 USE_ICONV=	yes
 

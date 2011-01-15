@@ -8,7 +8,7 @@
 PORTNAME=	wired
 PORTVERSION=	1.3.4
 CATEGORIES=	net
-MASTER_SITES=	http://www.zankasoftware.com/dist/
+MASTER_SITES=	http://mirror.mcx2.org/
 
 MAINTAINER=	dhn@FreeBSD.org
 COMMENT=	Wired server
