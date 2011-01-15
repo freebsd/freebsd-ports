@@ -7,11 +7,13 @@
 
 PORTNAME=	xine
 PORTVERSION=	1.1.19
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia ipv6
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-lib/${PORTVERSION}
 PKGNAMEPREFIX=	lib
 DISTNAME=	${PORTNAME}-lib-${PORTVERSION}
+
+PATCH_SITES=	LOCAL/makc
 
 MAINTAINER=	makc@FreeBSD.org
 COMMENT=	Libraries for xine multimedia player
@@ -76,7 +78,8 @@ OPTIONS=	ARTS "Enable aRts support" off \
 		AALIB "Enable aalib support" off \
 		IMAGEMAGICK "Enable ImageMagick support" off \
 		GTK2 "Enable gdkpixbuf support" off \
-		WAVPACK "Enable WavPack support" off
+		WAVPACK "Enable WavPack support" off \
+		VDPAU "Enable VDPAU support" on
 
 MAN1=	xine-config.1 xine-list-1.1.1
 MAN5=	xine.5
@@ -87,6 +90,8 @@ PLIST_SUB=	PLUGINSDIR="lib/xine/plugins/1.29"
 # DVDCSS version hardcoded in src/input/input_dvd.c misc/cdda_server.c
 # and src/input/libdvdnav/dvd_input.c (dlopen'ed)
 DVDCSS_LIBVERSION=	3
+
+PATCH_DIST_ARGS=	-d ${WRKSRC} -p1 --forward --quiet
 
 .include <bsd.port.options.mk>
 
@@ -202,6 +207,15 @@ PLIST_SUB+=	WITH_WAVPACK="@comment "
 CONFIGURE_ARGS+=	--without-wavpack
 .endif
 
+.if defined(WITH_VDPAU)
+PATCHFILES+=	xine-vdpau.bz2
+USE_AUTOTOOLS=	autoconf
+LIB_DEPENDS+=	vdpau.1:${PORTSDIR}/multimedia/libvdpau
+PLIST_SUB+=	VDPAU=""
+.else
+PLIST_SUB+=	VDPAU="@comment "
+.endif
+
 .if ${CONFIGURE_ARGS:M*--without-imagemagick*} == "" || ${CONFIGURE_ARGS:M*-disable-gdkpixbuf*} == ""
 PLIST_SUB+=	WITH_DMX_IMAGE=""
 .else
@@ -216,6 +230,11 @@ CONFIGURE_ARGS+=	--disable-vidix
 .endif
 
 post-patch:
+.if defined(WITH_VDPAU)
+	for i in `${LS} ${FILESDIR}/extrapatch-vdpau*`; do \
+		${PATCH} ${PATCH_DIST_ARGS} <$$i ;\
+	done
+.endif
 .for f in libtool ltmain.sh
 	@${REINPLACE_CMD} -e \
 		'/freebsd-elf)/,/;;/ s|major="\.$$current"|major=.`expr $$current - $$age`|; \

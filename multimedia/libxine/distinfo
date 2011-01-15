@@ -1,3 +1,6 @@
-MD5 (xine-lib-1.1.19.tar.xz) = d0969c067dc32f33c5ea431e5e2106ce
 SHA256 (xine-lib-1.1.19.tar.xz) = f834f646880bb44186018d12280ac27c8314447de9335b6fe390157b26df9cd9
 SIZE (xine-lib-1.1.19.tar.xz) = 5782580
+SHA256 (xine-lib_1.1.19-2.etobi2.debian.tar.gz) = 41d2ff49284973690914dd8fea0ec25cbbc2a6b60d391bdefe8fab5335eca6b7
+SIZE (xine-lib_1.1.19-2.etobi2.debian.tar.gz) = 179402
+SHA256 (xine-vdpau.bz2) = 25ab5eaa0f5a62e74478feaf1458c81b9e779cac362f04ae5800a73c471d49b2
+SIZE (xine-vdpau.bz2) = 93194
