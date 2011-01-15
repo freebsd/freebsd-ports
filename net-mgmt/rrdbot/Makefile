@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	rrdbot
-PORTVERSION=	0.9.6
-PORTREVISION=	2
+PORTVERSION=	0.9.7
 CATEGORIES=	net-mgmt
-MASTER_SITES=	http://memberwebs.com/stef/software/rrdbot/
+MASTER_SITES=	http://thewalter.net/stef/software/rrdbot/
 
 MAINTAINER=	dhn@FreeBSD.org
 COMMENT=	Threaded SNMP polling daemon which stores data in RRDs
