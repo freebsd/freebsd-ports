@@ -24,14 +24,13 @@ GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LIBS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
+CONFIGURE_ENV=	CPPFLAGS=${CPPFLAGS} LIBS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	--with-html-install-dir="${PREFIX}/www/openscep" \
 		--with-cgi-install-dir="${PREFIX}/www/cgi-bin/openscep" \
 		--with-openscep-dir="${PREFIX}/etc/openscep" \
 		--with-pkiclientexe="${PREFIX}/www/cgi-bin/pkiclient.exe"
-
-MAKE_ENV=	CPPFLAGS="-I${LOCALBASE}/include"
+MAKE_ENV=	CPPFLAGS=${CPPFLAGS}
 
 CONF_DIR=	${PREFIX}/etc/${PORTNAME}
 LOCAL_CONF_FILES=	openscep.cnf openscep.ldif openscep.schema slapd.conf
