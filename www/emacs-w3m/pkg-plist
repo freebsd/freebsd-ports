@@ -40,7 +40,7 @@
 %%ICONDIR%%/weather-up.png
 %%ICONDIR%%/weather-up.xpm
 %%LISPDIR%%/bookmark-w3m.el
-%%LISPDIR%%/bookmark-w3m.elc
+%%EMACS23%%%%LISPDIR%%/bookmark-w3m.elc
 %%SHIMBUN%%%%LISPDIR%%/mew-shimbun.el
 %%SHIMBUN%%@unexec rm -f %D/%%LISPDIR%%/mew-shimbun.elc
 %%LISPDIR%%/mew-w3m.el

@@ -61,6 +61,9 @@ SHIMBUN=	""
 FLIM_PORT=	${PORTSDIR}/editors/flim
 SEMI_PORT=	${PORTSDIR}/editors/semi
 INSTALL_TARGET= install install-icons
+PLIST_SUB+=	EMACS23=""
+.else
+PLIST_SUB+= EMACS23="@comment "
 .endif
 
 .if (${EMACS_PORT_NAME} == "emacs22")
