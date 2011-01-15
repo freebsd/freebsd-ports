@@ -5,7 +5,7 @@
 # $FreeBSD$
 #
 
-CATEGORIES?=	chinese
+CATEGORIES=	chinese
 
 MAINTAINER=	sunpoet@FreeBSD.org
 
