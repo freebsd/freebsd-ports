@@ -5,78 +5,77 @@
 # $FreeBSD$
 #
 
-PORTNAME=		bigbluebutton
-PORTVERSION=		0.71
-CATEGORIES=		www java
-MASTER_SITES=		http://bigbluebutton.org/downloads/%SUBDIR%/
-MASTER_SITE_SUBDIR=	${PORTVERSION} ${PORTVERSION}/packages 0.70 0.64/blank
-DISTFILES=		bbb_extensions.conf bbb_sip.conf blank-slide.swf \
-			blank-thumb.png nginx-bigbluebutton.conf \
-			${EXTRACT_FILES}
-EXTRACT_ONLY=		${EXTRACT_FILES}
+PORTNAME=	bigbluebutton
+PORTVERSION=	0.71
+PORTREVISION=	1
+CATEGORIES=	www java
+MASTER_SITES=	http://bigbluebutton.org/downloads/${PORTVERSION}/ \
+		http://bigbluebutton.org/downloads/0.70/:2 \
+		http://bigbluebutton.org/downloads/0.64/blank/:3
+DISTFILES=	bigbluebutton.tar.gz freeswitch-config.tar.gz \
+		nginx-bigbluebutton.conf bbb_extensions.conf:2 \
+		bbb_sip.conf:2 red5-0.9.1.tar.gz:2 \
+		blank-slide.swf:3 blank-thumb.png:3
+EXTRACT_ONLY=	bigbluebutton.tar.gz red5-0.9.1.tar.gz freeswitch-config.tar.gz
 
-MAINTAINER=		alex.deiter@gmail.com
-COMMENT=		Web conferencing system for distance education
+MAINTAINER=	alex.deiter@gmail.com
+COMMENT=	Web conferencing system for distance education
 
-BUILD_DEPENDS=		${LOCALBASE}/bin/pdf2swf:${PORTSDIR}/graphics/swftools \
-			${LOCALBASE}/bin/convert:${PORTSDIR}/graphics/ImageMagick \
-			${LOCALBASE}/etc/rc.d/activemq:${PORTSDIR}/net/activemq \
-			${LOCALBASE}/sbin/nginx:${PORTSDIR}/www/nginx \
-			${LOCALBASE}/etc/rc.d/tomcat6:${PORTSDIR}/www/tomcat6 \
-			${LOCALBASE}/etc/rc.d/red5:${PORTSDIR}/www/red5
-RUN_DEPENDS=		${BUILD_DEPENDS}
+BUILD_DEPENDS=	${LOCALBASE}/bin/pdf2swf:${PORTSDIR}/graphics/swftools \
+		${LOCALBASE}/bin/convert:${PORTSDIR}/graphics/ImageMagick \
+		${LOCALBASE}/etc/rc.d/activemq:${PORTSDIR}/net/activemq \
+		${LOCALBASE}/sbin/nginx:${PORTSDIR}/www/nginx \
+		${LOCALBASE}/etc/rc.d/tomcat6:${PORTSDIR}/www/tomcat6 \
+		${LOCALBASE}/etc/rc.d/red5:${PORTSDIR}/www/red5
+RUN_DEPENDS=	${BUILD_DEPENDS}
 
-EXTRACT_FILES=		bigbluebutton.tar.gz freeswitch-config.tar.gz \
-			red5-0.9.1.tar.gz
+USE_DOS2UNIX=	yes
+DOS2UNIX_REGEX=	.+\.(conf|jsp|properties|xml)$
 
-USE_DOS2UNIX=		yes
-DOS2UNIX_REGEX=		.+\.(conf|jsp|properties|xml)$
+USE_JAVA=	yes
+JAVA_EXTRACT=	yes
+NO_BUILD=	yes
+NO_WRKSUBDIR=	yes
+DIST_SUBDIR=	${PORTNAME}
+USE_RC_SUBR=   	openoffice
+SOFFICEBIN?=	${PREFIX}/openoffice.org-3.2.1/openoffice.org3/program/soffice.bin
+RED5_HOME?=	${PREFIX}/red5
+RED5_LOGS?=	${RED5_HOME}/log
+RED5_USER?=	www
+RED5_GROUP?=	${RED5_USER}
+TOMCAT_HOME?=	${PREFIX}/apache-tomcat-6.0
+TOMCAT_LOGS?=	${TOMCAT_HOME}/logs
+TOMCAT_USER?=	www
+TOMCAT_GROUP?=	${TOMCAT_USER}
+FS_USER?=	freeswitch
+FS_GROUP?=	${FS_USER}
+WWWROOT?=	${WWWDIR:S|/${PORTNAME}$||}
 
-USE_JAVA=		yes
-JAVA_VERSION=		1.5+
-JAVA_EXTRACT=		yes
-USE_MYSQL=		yes
-NO_BUILD=		yes
-NO_WRKSUBDIR=		yes
-DIST_SUBDIR=		${PORTNAME}
-USE_RC_SUBR=    	openoffice
-SOFFICEBIN?=		${PREFIX}/openoffice.org-3.2.1/openoffice.org3/program/soffice.bin
-RED5_HOME?=		${PREFIX}/red5
-RED5_HOME_REL=		${RED5_HOME:S,^${PREFIX}/,,}
-RED5_LOGS?=		${RED5_HOME}/log
-RED5_USER?=		www
-RED5_GROUP?=		${RED5_USER}
-TOMCAT_HOME?=		${PREFIX}/apache-tomcat-6.0
-TOMCAT_HOME_REL=	${TOMCAT_HOME:S,^${PREFIX}/,,}
-TOMCAT_LOGS?=		${TOMCAT_HOME}/logs
-TOMCAT_USER?=		www
-TOMCAT_GROUP?=		${TOMCAT_USER}
-WWWROOT?=		${WWWDIR:S|/${PORTNAME}$||}
-WWWROOT_REL=		${WWWROOT:S,^${PREFIX}/,,}
+OPTIONS=	MEETME "meetme Asterisk module" off \
+		KONFERENCE "konference Asterisk module" on \
+		FREESWITCH "mod_conference FreeSWITCH module" off \
+		OPENOFFICE "Include OpenOffice support" off
 
-OPTIONS=		MEETME "meetme Asterisk module" off \
-			KONFERENCE "konference Asterisk module" on \
-			FREESWITCH "mod_conference FreeSWITCH module" off \
-			OPENOFFICE "Include OpenOffice support" off
+PLIST_SUB+=	RED5_HOME=${RED5_HOME:S,^${PREFIX}/,,} \
+		TOMCAT_HOME=${TOMCAT_HOME:S,^${PREFIX}/,,} \
+		WWWROOT=${WWWROOT:S,^${PREFIX}/,,}
 
-PLIST_SUB+=		RED5_HOME=${RED5_HOME_REL} \
-			TOMCAT_HOME=${TOMCAT_HOME_REL} \
-			WWWROOT=${WWWROOT_REL}
+SUB_LIST+=	PORTNAME=${PORTNAME} \
+		SOFFICEBIN=${SOFFICEBIN} \
+		RED5_HOME=${RED5_HOME} \
+		RED5_LOGS=${RED5_LOGS} \
+		RED5_USER=${RED5_USER} \
+		RED5_GROUP=${RED5_GROUP} \
+		TOMCAT_HOME=${TOMCAT_HOME} \
+		TOMCAT_LOGS=${TOMCAT_LOGS} \
+		TOMCAT_USER=${TOMCAT_USER} \
+		TOMCAT_GROUP=${TOMCAT_GROUP} \
+		FREESWITCH_USER=${FS_USER} \
+		FREESWITCH_GROUP=${FS_GROUP} \
+		WWWROOT=${WWWROOT} \
+		WWWDIR=${WWWDIR}
 
-SUB_LIST+=		PORTNAME=${PORTNAME} \
-			SOFFICEBIN=${SOFFICEBIN} \
-			RED5_HOME=${RED5_HOME} \
-			RED5_LOGS=${RED5_LOGS} \
-			RED5_USER=${RED5_USER} \
-			RED5_GROUP=${RED5_GROUP} \
-			TOMCAT_HOME=${TOMCAT_HOME} \
-			TOMCAT_LOGS=${TOMCAT_LOGS} \
-			TOMCAT_USER=${TOMCAT_USER} \
-			TOMCAT_GROUP=${TOMCAT_GROUP} \
-			WWWROOT=${WWWROOT} \
-			WWWDIR=${WWWDIR}
-
-SUB_FILES=		pkg-message openoffice nginx.conf-dist bbb-conf
+SUB_FILES=	pkg-message openoffice nginx.conf-dist bbb-conf
 
 .include <bsd.port.pre.mk>
 
