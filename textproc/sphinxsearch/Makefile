@@ -11,7 +11,7 @@
 PORTNAME=	sphinxsearch
 PORTVERSION=	0.9.9
 CATEGORIES=	textproc databases
-MASTER_SITES=	http://www.sphinxsearch.com/downloads/
+MASTER_SITES=	http://sphinxsearch.com/files/
 DISTNAME=	sphinx-${PORTVERSION}
 
 MAINTAINER=	m.seaman@infracaninophile.co.uk
@@ -21,6 +21,8 @@ COMMENT=	Sphinx Full-Text Search Engine
 # unconditionally link the output binary against it.  There's no way
 # of turning this off. So for consistency, make sure it's always on.
 LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2
+
+LICENSE=	GPLv2
 
 OPTIONS=	MYSQL            "MySQL support"                    on  \
 		PGSQL            "PostgreSQL support"               off \
