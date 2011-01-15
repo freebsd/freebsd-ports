@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ibus-chewing
-PORTVERSION=	1.3.6.20100730
+PORTVERSION=	1.3.9.2
 CATEGORIES=	chinese
 MASTER_SITES=	http://ibus.googlecode.com/files/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-Source
