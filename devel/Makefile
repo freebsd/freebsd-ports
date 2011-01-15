@@ -266,7 +266,6 @@
     SUBDIR += cvslines
     SUBDIR += cvsmapfs
     SUBDIR += cvsmonitor
-    SUBDIR += cvsnt
     SUBDIR += cvsplot
     SUBDIR += cvsps
     SUBDIR += cvsps-devel
