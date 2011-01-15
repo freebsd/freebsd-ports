@@ -15,6 +15,8 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 MAINTAINER=	douglas@douglasthrift.net
 COMMENT=	An indexing search engine for use on small websites
 
+LICENSE=	ASL
+
 .if defined(WITH_OPENSSL)
 USE_OPENSSL=	yes
 CONFIGURE_ARGS+=	--with-openssl=${OPENSSLBASE}
