@@ -81,6 +81,7 @@
     SUBDIR += font-kochi
     SUBDIR += font-migmix
     SUBDIR += font-mona-ipa
+    SUBDIR += font-motoya-al
     SUBDIR += font-mplus
     SUBDIR += font-mplus-ipa
     SUBDIR += font-sazanami
