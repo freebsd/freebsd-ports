@@ -8,7 +8,8 @@
 PORTNAME=	montecarlo_fonts
 PORTVERSION=	1.0
 CATEGORIES=	x11-fonts
-MASTER_SITES=	http://bok.net/MonteCarlo/downloads/
+MASTER_SITES=	http://bok.net/MonteCarlo/downloads/ \
+		http://mirror.4bit.ws/
 DISTNAME=	MonteCarlo-PCF
 EXTRACT_SUFX=	.tgz
 
