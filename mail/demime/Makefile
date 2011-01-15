@@ -9,9 +9,8 @@ PORTNAME=	demime
 PORTVERSION=	1.1d
 PORTREVISION=	1
 CATEGORIES=	mail textproc
-MASTER_SITES=	http://freebsd.dev-urandom.com/distfiles/demime/ \
-		http://www.glenbarber.us/ports/mail/demime/
-DISTFILES=	${PORTNAME}.${PORTVERSION} demime_junkmail.cf
+MASTER_SITES=	http://www.glenbarber.us/ports/mail/${PORTNAME}/
+DISTFILES=	${PORTNAME}.${PORTVERSION} ${PORTNAME}_junkmail.cf
 
 MAINTAINER=	gjb@FreeBSD.org
 COMMENT=	A tool to scrub mime from mailing lists
