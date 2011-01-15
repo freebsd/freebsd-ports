@@ -16,6 +16,8 @@ COMMENT=	A GAI applet that displays the keyboard status leds
 
 LIB_DEPENDS=	gai:${PORTSDIR}/x11-toolkits/gai
 
+LICENSE=	GPLv2
+
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
 USE_GNOME=	gnomehack gnomeprefix
