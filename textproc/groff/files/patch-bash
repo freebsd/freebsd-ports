@@ -1,0 +1,45 @@
+--- contrib/hdtbl/examples/common.roff.orig	2011-01-14 13:33:12.190888414 +0100
++++ contrib/hdtbl/examples/common.roff	2011-01-14 13:33:20.480831318 +0100
+@@ -65,7 +65,7 @@
+ .\"	**	for example "Sun Dec  5 22:27:57     2004"		**
+ .\"	******************************************************************
+ .de date
+-.  pso bash -c "echo -n .ds *date\ ;date"
++.  pso sh -c "echo -n .ds *date\ ;date"
+ .  tm \\*[*date] ***
+ ..
+ .
+@@ -83,9 +83,9 @@
+ .  ds * \\$1\"
+ .  substring * 0 0
+ .  ie "\\*[*]"s" \
+-.    pso bash -c "echo -n .nr *time 0+;date +%s"
++.    pso sh -c "echo -n .nr *time 0+;date +%s"
+ .  el \{\
+-.   pso bash -c "echo -n .nr *time -;date +%s"
++.   pso sh -c "echo -n .nr *time -;date +%s"
+ .   nr *time 0-\\n[*time]
+ .   tm elapsed time: \\n[*time] seconds
+ .  \}
+--- contrib/hdtbl/examples/fonts_n.in.orig	2011-01-14 13:33:25.820790311 +0100
++++ contrib/hdtbl/examples/fonts_n.in	2011-01-14 13:33:35.440720348 +0100
+@@ -50,7 +50,7 @@
+ .  el \
+ .    ds *args \\n[.fn]
+ .
+-.  pso bash -c \
++.  pso sh -c \
+        "echo -n .ds *f\ ; \
+         ls \\*[fontpath]/dev\*[.T] \
+         | tr '[:cntrl:]' ' '"
+--- contrib/hdtbl/examples/fonts_x.in.orig	2011-01-14 13:33:39.430690407 +0100
++++ contrib/hdtbl/examples/fonts_x.in	2011-01-14 13:33:59.840540242 +0100
+@@ -50,7 +50,7 @@
+ .  el \
+ .    ds *args \\n[.fn]
+ .
+-.  pso bash -c \
++.  pso sh -c \
+        "echo -n .ds *f\ ; \
+         ls \\*[fontpath]/dev\*[.T] \
+         | tr '[:cntrl:]' ' '"
