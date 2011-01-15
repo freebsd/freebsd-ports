@@ -32,11 +32,7 @@ EXTRA_PATCHES+=	${FILESDIR}/extra-patch-style-qt_settings.c
 post-extract:
 .if ${OSVERSION} < 800067
 	${CP} ${FILESDIR}/getline.h ${WRKSRC}/style
-.if ${OSVERSION} < 701101
-	${CP} ${FILESDIR}/getline_strndup.c ${WRKSRC}/style/getline.c
-.else
-	${CP} ${FILESDIR}/getline.c ${WRKSRC}/style/getline.c
-.endif
+	${CP} ${FILESDIR}/getline.c ${WRKSRC}/style
 .endif
 
 .include <bsd.port.post.mk>

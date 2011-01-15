@@ -19,6 +19,7 @@ General Public License for more details.  */
 #endif
 
 #include <sys/types.h>
+#include <stdlib.h>
 #include <stdio.h>
 #include <assert.h>
 #include <errno.h>
