@@ -6,29 +6,29 @@
 #
 
 PORTNAME=	Apache2-Scoreboard
-PORTVERSION=	2.08
+PORTVERSION=	2.09.2
 CATEGORIES=	www perl5
-MASTER_SITES=	CPAN
+MASTER_SITES=	CPAN/../../authors/id/M/MJ/MJH
 PKGNAMEPREFIX=	p5-
-DISTNAME=	Apache-Scoreboard-${PORTVERSION}
+DISTNAME=	${PORTNAME:C/2//}-${PORTVERSION}
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl interface to the Apache scoreboard structure
 
-BUILD_DEPENDS=	${LOCALBASE}/libexec/apache2/mod_perl.so:${PORTSDIR}/www/mod_perl2
+BUILD_DEPENDS=	${APACHE_PKGNAMEPREFIX}mod_perl2>=2.0.0:${PORTSDIR}/www/mod_perl2
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-BROKEN=		does not compile
+PERL_CONFIGURE=	yes
+USE_APACHE=	2.0+
+USE_LDCONFIG=	yes
+WRKSRC=		${WRKDIR}/${DISTNAME:R}
 
-PERL_CONFIGURE=	5.8.0+
-
-MAN3=		Apache::Scoreboard.3 Apache::DummyScoreboard.3
-
-USE_LDCONFIG=	YES
+MAN3=		Apache::DummyScoreboard.3 Apache::Scoreboard.3
 
 post-patch:
-	@${RM} -f ${WRKSRC}/lib/Apache/*.orig
-	${SED} -i.bak 's@%%LOCALBASE%%@${LOCALBASE}@g' ${WRKSRC}/Makefile.PL
-	${SED} -i.bak 's@%%LOCALBASE%%@${LOCALBASE}@g' ${WRKSRC}/Dummy/Makefile.PL
+	@${REINPLACE_CMD} \
+		-e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
+		-e 's|%%APACHEINCLUDEDIR%%|${APACHEINCLUDEDIR}|g' \
+			${WRKSRC}/Makefile.PL ${WRKSRC}/Dummy/Makefile.PL
 
 .include <bsd.port.mk>

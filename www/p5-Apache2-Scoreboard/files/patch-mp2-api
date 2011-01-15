@@ -1,37 +1,21 @@
---- Makefile.PL.orig	Mon Apr 17 17:08:56 2006
-+++ Makefile.PL	Mon Apr 17 17:10:29 2006
-@@ -30,13 +30,18 @@
- Apache::TestMM::filter_args();
- Apache::TestMM::generate_script('t/TEST');
- 
-+# XXX: this is a hack!
-+my $extra_inc = "-I%%LOCALBASE%%/include/apache2/modules/perl/";
-+
- ModPerl::MM::WriteMakefile(
-     NAME         => 'Apache::Scoreboard',
-     VERSION_FROM => 'lib/Apache/Scoreboard.pm',
-     PREREQ_PM    => \%require,
+--- Makefile.PL.orig	2008-01-22 03:17:41.000000000 +0800
++++ Makefile.PL	2011-01-16 01:12:53.000000000 +0800
+@@ -45,7 +45,7 @@
      clean        => {
          FILES => "@{ clean_files() }",
--    }
-+    },
-+    # XXX: this is a hack!
-+    INC => join " ", $extra_inc, ModPerl::MM::get_def_opt('INC')
+     },
+-    INC => join " ", $extra_inc, ModPerl::MM::get_def_opt('INC'),
++    INC => join " ", "-I%%LOCALBASE%%/%%APACHEINCLUDEDIR%%/modules/perl/", $extra_inc, ModPerl::MM::get_def_opt('INC'),
  );
  
  sub clean_files {
---- Dummy/Makefile.PL.orig	Mon Apr 17 17:12:37 2006
-+++ Dummy/Makefile.PL	Mon Apr 17 17:13:12 2006
-@@ -18,7 +18,12 @@
- 
- genxs();
- 
-+# XXX: this is a hack!
-+my $extra_inc = "-I%%LOCALBASE%%/include/apache2/modules/perl/";
-+
+--- Dummy/Makefile.PL.orig	2008-01-22 03:17:31.000000000 +0800
++++ Dummy/Makefile.PL	2011-01-16 01:13:41.000000000 +0800
+@@ -29,6 +29,6 @@
  ModPerl::MM::WriteMakefile(
      NAME	 => 'Apache::DummyScoreboard',
      VERSION_FROM => 'DummyScoreboard.pm',
-+    # XXX: this is a hack!
-+    INC => join " ", $extra_inc, ModPerl::MM::get_def_opt('INC')
+-    INC => join " ", $extra_inc, ModPerl::MM::get_def_opt('INC'),
++    INC => join " ", "-I%%LOCALBASE%%/%%APACHEINCLUDEDIR%%/modules/perl/", $extra_inc, ModPerl::MM::get_def_opt('INC'),
+ 
  );
