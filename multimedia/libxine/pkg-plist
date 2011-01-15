@@ -227,12 +227,19 @@ share/aclocal/xine.m4
 %%DATADIR%%/libxine1/fonts/serif-32.xinefont.gz
 %%DATADIR%%/libxine1/fonts/serif-48.xinefont.gz
 %%DATADIR%%/libxine1/fonts/serif-64.xinefont.gz
+%%VDPAU%%include/xine/vdr.h
+%%VDPAU%%%%PLUGINSDIR%%/xineplug_vo_out_vdpau.so
+%%VDPAU%%%%PLUGINSDIR%%/xineplug_dmx_vc1_es.so
+%%VDPAU%%%%PLUGINSDIR%%/xineplug_decode_vdpau_h264.so
+%%VDPAU%%%%PLUGINSDIR%%/xineplug_decode_vdpau_mpeg12.so
+%%VDPAU%%%%PLUGINSDIR%%/xineplug_decode_vdpau_vc1.so
+%%VDPAU%%%%PLUGINSDIR%%/xineplug_vdr.so
 @dirrm include/xine
 @dirrm %%PLUGINSDIR%%/vidix
 @dirrm %%PLUGINSDIR%%/post
-@dirrm %%PLUGINSDIR%%
-@dirrm lib/xine/plugins
-@dirrm lib/xine
+@dirrmtry %%PLUGINSDIR%%
+@dirrmtry lib/xine/plugins
+@dirrmtry lib/xine
 @dirrm %%DOCSDIR%%/hackersguide
 @dirrm %%DOCSDIR%%
 %%NLS%%@dirrmtry share/locale/pl_PL/LC_MESSAGES
@@ -241,4 +248,4 @@ share/aclocal/xine.m4
 %%NLS%%@dirrmtry share/locale/en_US
 @dirrm %%DATADIR%%/libxine1/fonts
 @dirrm %%DATADIR%%/libxine1
-@dirrm %%DATADIR%%
+@dirrmtry %%DATADIR%%
