@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	keyring
-PORTVERSION=	0.5
+PORTVERSION=	0.5.1
 CATEGORIES=	security python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,19 +14,17 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	douglas@douglasthrift.net
 COMMENT=	Store and access your passwords safely
 
-#LICENSE=	PSF
+LICENSE=	PSFL
 
 LATEST_LINK=	py-${PORTNAME}
 
-USE_KDE4=	#
 USE_PYTHON=	2.4+
 USE_PYDISTUTILS=	yes
-WANT_GNOME=	yes
 
 OPTIONS=	GNOME_KEYRING "GNOME Keyring backend" Off \
 		KDE_KWALLET "KDE KWallet backend" Off
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if defined(WITH_GNOME_KEYRING)
 USE_GNOME+=	pygnomedesktop
@@ -36,4 +34,4 @@ USE_GNOME+=	pygnomedesktop
 USE_KDE4+=	pykde4
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
