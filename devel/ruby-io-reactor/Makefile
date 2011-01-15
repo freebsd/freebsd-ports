@@ -6,17 +6,18 @@
 #
 
 PORTNAME=	io-reactor
-PORTVERSION=	0.0.6
+PORTVERSION=	1.0.4
 CATEGORIES=	devel ruby
-MASTER_SITES=	http://www.deveiate.org/code/
+MASTER_SITES=	http://deveiate.org/code/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
-DISTNAME=	IO-Reactor-${PORTVERSION}
+DISTNAME=	io-reactor-${PORTVERSION}
 DIST_SUBDIR=	ruby
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	A Ruby module that implements an asynchronous multiplexeded IO Reactor
 
 USE_RUBY=	yes
+USE_RAKE=	yes
 
 NO_BUILD=	yes
 
@@ -24,7 +25,7 @@ DOCS=		ChangeLog README
 EXAMPLES=	examples/*
 
 do-install:
-	cd ${WRKSRC}; ${RUBY} install.rb
+	cd ${WRKSRC}; ${RUBY} ${RAKE_BIN} install
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${RUBY_MODDOCDIR}
 .for f in ${DOCS}
