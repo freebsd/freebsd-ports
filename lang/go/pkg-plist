@@ -16,6 +16,7 @@ bin/gopack
 bin/gopprof
 bin/gotest
 bin/gotry
+bin/govet
 bin/goyacc
 bin/hgpatch
 bin/quietgcc
@@ -37,6 +38,9 @@ lib/go/pkg/freebsd_%%ARCH%%/container/vector.a
 lib/go/pkg/freebsd_%%ARCH%%/crypto/aes.a
 lib/go/pkg/freebsd_%%ARCH%%/crypto/block.a
 lib/go/pkg/freebsd_%%ARCH%%/crypto/blowfish.a
+lib/go/pkg/freebsd_%%ARCH%%/crypto/cast5.a
+lib/go/pkg/freebsd_%%ARCH%%/crypto/cipher.a
+lib/go/pkg/freebsd_%%ARCH%%/crypto/elliptic.a
 lib/go/pkg/freebsd_%%ARCH%%/crypto/hmac.a
 lib/go/pkg/freebsd_%%ARCH%%/crypto/md4.a
 lib/go/pkg/freebsd_%%ARCH%%/crypto/md5.a
@@ -56,6 +60,7 @@ lib/go/pkg/freebsd_%%ARCH%%/debug/dwarf.a
 lib/go/pkg/freebsd_%%ARCH%%/debug/elf.a
 lib/go/pkg/freebsd_%%ARCH%%/debug/gosym.a
 lib/go/pkg/freebsd_%%ARCH%%/debug/macho.a
+lib/go/pkg/freebsd_%%ARCH%%/debug/pe.a
 lib/go/pkg/freebsd_%%ARCH%%/debug/proc.a
 lib/go/pkg/freebsd_%%ARCH%%/ebnf.a
 lib/go/pkg/freebsd_%%ARCH%%/encoding/ascii85.a
@@ -94,7 +99,6 @@ lib/go/pkg/freebsd_%%ARCH%%/index/suffixarray.a
 lib/go/pkg/freebsd_%%ARCH%%/io.a
 lib/go/pkg/freebsd_%%ARCH%%/io/ioutil.a
 lib/go/pkg/freebsd_%%ARCH%%/json.a
-lib/go/pkg/freebsd_%%ARCH%%/libcgo.so
 lib/go/pkg/freebsd_%%ARCH%%/log.a
 lib/go/pkg/freebsd_%%ARCH%%/math.a
 lib/go/pkg/freebsd_%%ARCH%%/mime.a
@@ -114,6 +118,7 @@ lib/go/pkg/freebsd_%%ARCH%%/rpc.a
 lib/go/pkg/freebsd_%%ARCH%%/rpc/jsonrpc.a
 lib/go/pkg/freebsd_%%ARCH%%/runtime.a
 lib/go/pkg/freebsd_%%ARCH%%/runtime.h
+lib/go/pkg/freebsd_%%ARCH%%/runtime/cgo.a
 lib/go/pkg/freebsd_%%ARCH%%/runtime/pprof.a
 lib/go/pkg/freebsd_%%ARCH%%/scanner.a
 lib/go/pkg/freebsd_%%ARCH%%/smtp.a
@@ -240,12 +245,14 @@ lib/go/pkg/freebsd_%%ARCH%%/xml.a
 %%PORTDOCS%%%%DOCSDIR%%/talks/go_talk-20100112.html
 %%PORTDOCS%%%%DOCSDIR%%/talks/go_talk-20100121.html
 %%PORTDOCS%%%%DOCSDIR%%/talks/go_talk-20100323.html
+%%PORTDOCS%%%%DOCSDIR%%/talks/gofrontend-gcc-summit-2010.pdf
 %%PORTDOCS%%%%DOCSDIR%%/talks/java-typing.png
 %%PORTDOCS%%%%DOCSDIR%%/talks/slidy.css
 %%PORTDOCS%%%%DOCSDIR%%/talks/slidy.js
 %%PORTDOCS%%%%DOCSDIR%%/video-001.png
 %%PORTDOCS%%%%DOCSDIR%%/video-002.png
 %%PORTDOCS%%%%DOCSDIR%%/video-003.png
+%%PORTDOCS%%%%DOCSDIR%%/video-004.png
 %%GOMAKEDIR%%/Make.cmd
 %%GOMAKEDIR%%/Make.pkg
 %%GOMAKEDIR%%/Make.common
