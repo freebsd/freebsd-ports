@@ -19,8 +19,9 @@ LIB_DEPENDS=	png.6:${PORTSDIR}/graphics/png \
 		ungif.5:${PORTSDIR}/graphics/libungif
 
 USE_GMAKE=	yes
-MAKE_ENV=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include -I." \
-		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include -I.
+LDFLAGS+=	-L${LOCALBASE}/lib
+MAKE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 
 PLIST_FILES=	bin/metapixel bin/metapixel-convert bin/metapixel-imagesize \
 		bin/metapixel-prepare bin/metapixel-sizesort \
