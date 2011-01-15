@@ -13,6 +13,8 @@ DISTNAME=	${PORTNAME}-V${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	XSL stylesheets to transform Europass documents to HTML
 
+BROKEN=		checksum mismatch
+
 USE_ZIP=	yes
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
