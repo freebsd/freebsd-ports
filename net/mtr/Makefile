@@ -7,7 +7,7 @@
 
 PORTNAME=	mtr
 PORTVERSION=	0.80
-PORTREVISION=	1
+PORTREVISION?=	2
 CATEGORIES=	net ipv6
 MASTER_SITES=	ftp://ftp.bitwizard.nl/mtr/ \
 		http://mirrors.evolva.ro/util/mtr/ \
@@ -17,7 +17,7 @@ MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Traceroute and ping in a single graphical network diagnostic tool
 
 OPTIONS=	IPV6	"Build IPv6 support" on \
-		X11	"Build X11-enabled mtr" off
+		X11	"Build X11-enabled mtr" on
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
@@ -33,12 +33,12 @@ CONFIGURE_ARGS+=--enable-ipv6
 CONFIGURE_ARGS+=--disable-ipv6
 .endif
 
-.if !defined(WITH_X11)
-CONFIGURE_ARGS+=--without-gtk
-.else
+.if !defined(WITHOUT_X11)
 CONFIGURE_ARGS+=--with-gtk
 USE_GNOME=	gtk20
-PKGNAMESUFFIX=	-x11
+.else
+CONFIGURE_ARGS+=--without-gtk
+PKGNAMESUFFIX=	-nox11
 .endif
 
 post-patch:
