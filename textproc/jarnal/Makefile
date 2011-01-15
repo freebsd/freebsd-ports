@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	jarnal
-PORTVERSION=	970
+PORTVERSION=	999
 CATEGORIES=	textproc editors
 MASTER_SITES=	http://levine.sscnet.ucla.edu/general/software/tc1000/
 DISTNAME=	${PORTNAME}-install
