@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	qbittorrent
-PORTVERSION=	2.6.2
+PORTVERSION=	2.6.3
 PORTREVISION?=	0
 CATEGORIES=	net-p2p ipv6
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}/
@@ -47,17 +47,6 @@ MAN1?=		qbittorrent.1
 LIB_DEPENDS+=	notify.1:${PORTSDIR}/devel/libnotify
 .else
 CONFIGURE_ARGS+=	--disable-libnotify
-.endif
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|$$$$PREFIX/share/man|${MANPREFIX}/man|' \
-		${WRKSRC}/unixconf.pri
-	@${ECHO_CMD} "LIBS+= -lexecinfo" >> ${WRKSRC}/src/src.pro
-.if defined(QB26_NOX_SLAVE)
-	@${REINPLACE_CMD} -e 's|Q_WS_X11|BLAHBLAHBLAH|g' \
-		${WRKSRC}/src/misc.cpp
-	@${REINPLACE_CMD} -e 's|^QT.*+=.*dbus.*||' \
-		${WRKSRC}/unixconf.pri
 .endif
 
 post-install:
