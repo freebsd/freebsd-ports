@@ -16,7 +16,7 @@
 # anytermd_flags (str):     Set to "-c /usr/bin/login -u nobody --local-only"
 #                           by default. See anytermd(1) for flags.
 #
-# anytermd_name (str):		Set to "anyterm" by default.
+# anytermd_name (str):      Set to "anyterm" by default.
 #
 
 . /etc/rc.subr
