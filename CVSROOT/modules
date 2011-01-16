@@ -2102,7 +2102,6 @@ cvslines                        ports/devel/cvslines
 cvsmail                         ports/mail/cvsmail
 cvsmapfs                        ports/devel/cvsmapfs
 cvsmonitor                      ports/devel/cvsmonitor
-cvsnt                           ports/devel/cvsnt
 cvsplot                         ports/devel/cvsplot
 cvsps                           ports/devel/cvsps
 cvsps-devel                     ports/devel/cvsps-devel
@@ -5399,6 +5398,7 @@ haproxy                         ports/net/haproxy
 haproxy-devel                   ports/net/haproxy-devel
 hapy                            ports/devel/hapy
 harbour                         ports/lang/harbour
+hardlink                        ports/sysutils/hardlink
 harminv                         ports/science/harminv
 harvest                         ports/www/harvest
 hashcash                        ports/mail/hashcash
@@ -6258,6 +6258,7 @@ ja-font-ipaex                   ports/japanese/font-ipaex
 ja-font-kochi                   ports/japanese/font-kochi
 ja-font-migmix                  ports/japanese/font-migmix
 ja-font-mona-ipa                ports/japanese/font-mona-ipa
+ja-font-motoya-al               ports/japanese/font-motoya-al
 ja-font-mplus                   ports/japanese/font-mplus
 ja-font-mplus-ipa               ports/japanese/font-mplus-ipa
 ja-font-sazanami                ports/japanese/font-sazanami
@@ -12907,6 +12908,7 @@ p5-Log-Agent-Logger             ports/devel/p5-Log-Agent-Logger
 p5-Log-Any                      ports/devel/p5-Log-Any
 p5-Log-Any-Adapter              ports/devel/p5-Log-Any-Adapter
 p5-Log-Any-Adapter-Dispatch     ports/devel/p5-Log-Any-Adapter-Dispatch
+p5-Log-Any-Adapter-Log4perl     ports/devel/p5-Log-Any-Adapter-Log4perl
 p5-Log-Any-Adapter-Syslog       ports/devel/p5-Log-Any-Adapter-Syslog
 p5-Log-Dispatch                 ports/devel/p5-Log-Dispatch
 p5-Log-Dispatch-Colorful        ports/devel/p5-Log-Dispatch-Colorful
@@ -14444,6 +14446,7 @@ p5-Text-Xslate                  ports/textproc/p5-Text-Xslate
 p5-Text-vCard                   ports/textproc/p5-Text-vCard
 p5-Text-vFile-asData            ports/devel/p5-Text-vFile-asData
 p5-TheSchwartz                  ports/devel/p5-TheSchwartz
+p5-TheSchwartz-Worker-SendEmail  ports/devel/p5-TheSchwartz-Worker-SendEmail
 p5-Thread-Apartment             ports/devel/p5-Thread-Apartment
 p5-Thread-Cancel                ports/devel/p5-Thread-Cancel
 p5-Thread-Pool-Simple           ports/devel/p5-Thread-Pool-Simple
@@ -16996,6 +16999,7 @@ p5-log-agent-logger             ports/devel/p5-Log-Agent-Logger
 p5-log-any                      ports/devel/p5-Log-Any
 p5-log-any-adapter              ports/devel/p5-Log-Any-Adapter
 p5-log-any-adapter-dispatch     ports/devel/p5-Log-Any-Adapter-Dispatch
+p5-log-any-adapter-log4perl     ports/devel/p5-Log-Any-Adapter-Log4perl
 p5-log-any-adapter-syslog       ports/devel/p5-Log-Any-Adapter-Syslog
 p5-log-dispatch                 ports/devel/p5-Log-Dispatch
 p5-log-dispatch-colorful        ports/devel/p5-Log-Dispatch-Colorful
@@ -18577,6 +18581,7 @@ p5-text-worddiff                ports/textproc/p5-Text-WordDiff
 p5-text-wrapper                 ports/textproc/p5-Text-Wrapper
 p5-text-xslate                  ports/textproc/p5-Text-Xslate
 p5-theschwartz                  ports/devel/p5-TheSchwartz
+p5-theschwartz-worker-sendemail  ports/devel/p5-TheSchwartz-Worker-SendEmail
 p5-thread-apartment             ports/devel/p5-Thread-Apartment
 p5-thread-cancel                ports/devel/p5-Thread-Cancel
 p5-thread-pool-simple           ports/devel/p5-Thread-Pool-Simple
@@ -20634,6 +20639,7 @@ ports_gdb                       ports/devel/gdb
 ports_getopt                    ports/misc/getopt
 ports_gperf                     ports/devel/gperf
 ports_gpt                       ports/misc/gpt
+ports_groff                     ports/textproc/groff
 ports_gzip                      ports/archivers/gzip
 ports_host                      ports/dns/host
 ports_ja-man                    ports/japanese/man
