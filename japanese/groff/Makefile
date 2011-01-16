@@ -34,6 +34,8 @@ GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_ICONV=	yes
 
+CONFLICTS=	groff-[0-9]*
+
 MAKE_JOBS_UNSAFE=	yes
 
 CONFIGURE_ARGS=	--enable-multibyte

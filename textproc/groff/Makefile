@@ -35,6 +35,8 @@ CONFIGURE_ENV+=	PAGE=${PAPERSIZE}
 
 OPTIONS=	X11	"Enable X11 devices (-TX*) and gxditview" On
 
+CONFLICTS=	ja-groff-[0-9]*
+
 INFO=	groff
 MAN1=	addftinfo.1 afmtodit.1 chem.1 eqn.1 eqn2graph.1 gdiffmk.1 \
 	grap2graph.1 grn.1 grodvi.1 groff.1 groffer.1 grog.1 grohtml.1 \
