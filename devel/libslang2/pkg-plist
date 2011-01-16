@@ -13,6 +13,7 @@ lib/slang/v2/modules/fork-module.so
 %%PNG%%lib/slang/v2/modules/png-module.so
 %%ICONV%%lib/slang/v2/modules/iconv-module.so
 %%ONIG%%lib/slang/v2/modules/onig-module.so
+lib/slang/v2/modules/csv-module.so
 lib/slang/v2/modules/rand-module.so
 lib/slang/v2/modules/select-module.so
 lib/slang/v2/modules/slsmg-module.so
@@ -25,6 +26,7 @@ libdata/pkgconfig/slang.pc
 %%DATADIR%%/arrayfuns.sl
 %%DATADIR%%/autoload.sl
 %%DATADIR%%/cmaps/cool.map
+%%DATADIR%%/cmaps/coolwarm.map
 %%DATADIR%%/cmaps/copper.map
 %%DATADIR%%/cmaps/ds9b.map
 %%DATADIR%%/cmaps/ds9sls.map
@@ -47,11 +49,13 @@ libdata/pkgconfig/slang.pc
 %%DATADIR%%/cmaps/topo.map
 %%DATADIR%%/cmaps/wysiwyg.map
 %%DATADIR%%/cmdopt.sl
+%%DATADIR%%/csv.sl
 %%DATADIR%%/fcntl.sl
 %%DATADIR%%/fork.sl
 %%DATADIR%%/glob.sl
 %%DATADIR%%/help/arrayfuns.hlp
 %%DATADIR%%/help/cmdopt.hlp
+%%DATADIR%%/help/csvfuns.hlp
 %%DATADIR%%/help/forkfuns.hlp
 %%DATADIR%%/help/glob.hlp
 %%DATADIR%%/help/onigfuns.hlp
@@ -63,6 +67,8 @@ libdata/pkgconfig/slang.pc
 %%DATADIR%%/help/randfuns.hlp
 %%DATADIR%%/help/readascii.hlp
 %%DATADIR%%/help/require.hlp
+%%DATADIR%%/help/setfuns.hlp
+%%DATADIR%%/help/slsmg.hlp
 %%DATADIR%%/help/sockfuns.hlp
 %%DATADIR%%/help/structfuns.hlp
 %%DATADIR%%/iconv.sl
@@ -77,8 +83,10 @@ libdata/pkgconfig/slang.pc
 %%DATADIR%%/require.sl
 %%DATADIR%%/rline/complete.sl
 %%DATADIR%%/rline/editfuns.sl
+%%DATADIR%%/rline/editor.sl
 %%DATADIR%%/rline/emacskeys.sl
 %%DATADIR%%/rline/history.sl
+%%DATADIR%%/rline/histsrch.sl
 %%DATADIR%%/rline/slrline.rc
 %%DATADIR%%/rline/vikeys.sl
 %%DATADIR%%/scripts/jpegsize
@@ -87,6 +95,7 @@ libdata/pkgconfig/slang.pc
 %%DATADIR%%/scripts/slprof
 %%DATADIR%%/scripts/svnsh
 %%DATADIR%%/select.sl
+%%DATADIR%%/setfuns.sl
 %%DATADIR%%/sldb.sl
 %%DATADIR%%/sldbcore.sl
 %%DATADIR%%/sldbsock.sl
