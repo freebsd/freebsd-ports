@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	lzlib
-PORTVERSION=	1.0
+PORTVERSION=	1.1
 CATEGORIES=	archivers
 MASTER_SITES=	SAVANNAH/lzip
 
@@ -17,6 +17,7 @@ PLIST_FILES=	include/lzlib.h \
 		lib/liblz.a
 
 GNU_CONFIGURE=	yes
+USE_GMAKE=	yes
 INFO=		lzlib
 
 .include <bsd.port.mk>
