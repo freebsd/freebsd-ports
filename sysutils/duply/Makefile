@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	duply
-PORTVERSION=	1.5.4.1
+PORTVERSION=	1.5.4.2
 CATEGORIES=	sysutils
 MASTER_SITES=	SF/ftplicity/${PORTNAME}%20%28simple%20duplicity%29/1.5.x/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
@@ -19,10 +19,10 @@ RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash \
 		duplicity:${PORTSDIR}/sysutils/duplicity
 
 LICENSE=	GPLv2
-LICENSE_FILE=	${WRKSRC}/gpl.txt
+LICENSE_FILE=	${WRKSRC}/gpl-2.0.txt
 NO_BUILD=	yes
 
-PORTDOCS=	INSTALL.txt gpl.txt
+PORTDOCS=	INSTALL.txt gpl-2.0.txt
 PLIST_FILES=	bin/duply
 
 post-patch:
