@@ -10,12 +10,13 @@ PORTNAME=	csv2latex
 PORTVERSION=	0.18
 PORTEPOCH=	1
 CATEGORIES=	textproc converters
-MASTER_SITES=	http://herewe.servebeer.com/csv2latex/releases/ \
-		http://brouits.free.fr/csv2latex/
+MASTER_SITES=	http://ftp.debian.org/pool/main/c/csv2latex/
+DISTNAME=	${PORTNAME}_${PORTVERSION}.orig
 
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Converts a well formed csv file to a LaTeX document
 
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 PLIST_FILES=	bin/csv2latex
 
 do-build:
