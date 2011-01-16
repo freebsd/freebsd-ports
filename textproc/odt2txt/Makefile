@@ -15,7 +15,7 @@ COMMENT=	A simple (and stupid) converter from OpenDocument Text to plain text
 
 USE_GMAKE=	yes
 USE_ICONV=	yes
-CPPFLAGS+=	-DICONV_CHAR="const char" -I${LOCALBASE}/include
+CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
 PLIST_FILES=	bin/odt2txt
