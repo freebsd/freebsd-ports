@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	gcc
-PORTVERSION=	4.6.0.20110108
+PORTVERSION=	4.6.0.20110115
 CATEGORIES=	lang java
 MASTER_SITES=	${MASTER_SITE_GCC}
 MASTER_SITE_SUBDIR=	snapshots/${VERSIONSTRING}
@@ -106,8 +106,8 @@ INFO=		gcc${SUFFIX}/cpp \
 DISTFILES+=	gcc-java-${VERSIONSTRING}${EXTRACT_SUFX}
 BUILD_DEPENDS+=	zip:${PORTSDIR}/archivers/zip
 EXTRA_PATCHES+=	${FILESDIR}/java-patch-hier
-# FIXME: we are currently getting weird build failures with libjava on
-# some 4.x and 5.x systems, which the following works around. PR 81788.
+# FIXME: we are getting weird build failures with libjava on some systems,
+# which the following works around. PR 81788, http://gcc.gnu.org/PR21206.
 CONFIGURE_ARGS+=--disable-rpath
 MAN1+=		aot-compile${SUFFIX}.1 \
 		gappletviewer${SUFFIX}.1 \
