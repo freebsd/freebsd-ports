@@ -24,10 +24,6 @@ WRKSRC=	${WRKDIR}/${DISTNAME}
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} > 699999
-BROKEN=		does not compile
-.endif
-
 do-install:
 	@${SETENV} ${MAKE_ENV} ${MAKE} -C ${WRKSRC} -DMODULES_WITH_WORLD install
 
