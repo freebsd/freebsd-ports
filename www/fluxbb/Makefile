@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	fluxbb
-PORTVERSION=	1.2.22
+PORTVERSION=	1.4.2
 CATEGORIES=	www
 MASTER_SITES=	http://fluxbb.org/download/releases/${PORTVERSION}/
 
@@ -35,8 +35,12 @@ USE_PHP+=	pgsql
 USE_PHP+=	sqlite
 .endif
 
+do-extract:
+	@${MKDIR} ${WRKSRC}
+	@${TAR} -yxf ${DISTDIR}/${DISTFILES} -C ${WRKSRC}
+
 do-install:
-	@cd ${WRKSRC}/upload && ${COPYTREE_SHARE} . ${WWWDIR}
+	@cd ${WRKSRC} && ${COPYTREE_SHARE} . ${WWWDIR}
 	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${WWWDIR}
 	@${ECHO_CMD} '@exec ${CHOWN} -R ${WWWOWN}:${WWWGRP} ${WWWDIR}' >> ${TMPPLIST}
 
