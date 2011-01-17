@@ -39,8 +39,6 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		FLEX="${LOCALBASE}/bin/flex"
 USE_LDCONFIG=	${PREFIX}/lib ${PREFIX}/lib/wine
 MAKE_JOBS_SAFE=	yes
-MAN1=		widl.1 wine.1 winebuild.1 winedbg.1 winedump.1 winegcc.1 \
-		winemaker.1 wineserver.1 wmc.1 wrc.1
 MAN1=		msiexec.1 notepad.1 regedit.1 regsvr32.1 widl.1 wine.1 \
 		wineboot.1 winebuild.1 winecfg.1 wineconsole.1 winedbg.1 \
 		winedump.1 winefile.1 winegcc.1 winemaker.1 winemine.1 \
