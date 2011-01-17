@@ -8,7 +8,7 @@
 PORTNAME=	xstream
 PORTVERSION=	1.3.1
 CATEGORIES=	textproc java
-MASTER_SITES=	http://repository.codehaus.org/com/thoughtworks/xstream/xstream-distribution/${PORTVERSION}/
+MASTER_SITES=	https://nexus.codehaus.org/content/repositories/releases/com/thoughtworks/xstream/xstream-distribution/${PORTVERSION}/
 DISTNAME=	${PORTNAME}-distribution-${PORTVERSION}-src
 
 MAINTAINER=	ale@FreeBSD.org
