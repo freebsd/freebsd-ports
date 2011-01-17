@@ -17,6 +17,8 @@ DISTNAME=	tre-${PORTVERSION}
 MAINTAINER=	bf@FreeBSD.org
 COMMENT=	A lightweight fully POSIX compliant regexp matching library
 
+LICENSE=	BSD
+LICENSE_FILE=	${WRKSRC}/LICENSE
 USE_BZIP2=	yes
 USE_GNOME=	gnomehack gnometarget pkgconfig
 USE_AUTOTOOLS=	libtool
