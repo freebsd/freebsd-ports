@@ -9804,6 +9804,7 @@ mtop                            ports/databases/mtop
 mtpaint                         ports/graphics/mtpaint
 mtpfs                           ports/sysutils/mtpfs
 mtr                             ports/net/mtr
+mtr-nox11                       ports/net/mtr-nox11
 mtrace                          ports/net-mgmt/mtrace
 mtrxmath                        ports/math/mtrxmath
 mtx                             ports/misc/mtx
@@ -27013,6 +27014,7 @@ xxe                             ports/editors/xxe
 xxgdb                           ports/devel/xxgdb
 xxkb                            ports/x11/xxkb
 xxl                             ports/devel/xxl
+xxxterm                         ports/www/xxxterm
 xye                             ports/games/xye
 xymon-client                    ports/net-mgmt/xymon-client
 xymon-server                    ports/net-mgmt/xymon-server
