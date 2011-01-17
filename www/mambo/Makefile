@@ -11,7 +11,7 @@ CATEGORIES=	www
 MASTER_SITES=	http://mamboxchange.com/frs/download.php/8290/:source1
 DISTFILES=	${MAMBO_SRC}:source1
 
-MAINTAINER=	include@npf.pt.freebsd.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A dynamic web content management system (CMS)
 
 EXTRACT_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
