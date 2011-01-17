@@ -10,7 +10,8 @@ PORTNAME=	libtre
 PORTVERSION=	0.8.0
 PORTREVISION=	1
 CATEGORIES=	textproc
-MASTER_SITES=	http://laurikari.net/tre/
+MASTER_SITES=	http://laurikari.net/tre/ \
+		LOCAL/bf
 DISTNAME=	tre-${PORTVERSION}
 
 MAINTAINER=	bf@FreeBSD.org
