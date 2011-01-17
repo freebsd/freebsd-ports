@@ -9,6 +9,7 @@
     SUBDIR += R-cran-RSvgDevice
     SUBDIR += R-cran-Zelig
     SUBDIR += R-cran-car
+    SUBDIR += R-cran-coda
     SUBDIR += R-cran-gpclib
     SUBDIR += R-cran-igraph
     SUBDIR += R-cran-inline
