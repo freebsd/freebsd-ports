@@ -8,7 +8,8 @@
 PORTNAME=	abi-compliance-checker
 PORTVERSION=	1.21.9
 CATEGORIES=	devel perl5
-MASTER_SITES=	http://linuxtesting.org/downloads/
+MASTER_SITES=	http://linuxtesting.org/downloads/ \
+		LOCAL/bf
 
 MAINTAINER=	bf@FreeBSD.org
 COMMENT=	Checks binary compatibility of two versions of a C/C++ shared library
