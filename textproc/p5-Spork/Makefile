@@ -13,7 +13,7 @@ MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	../../authors/id/I/IN/INGY/
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	include@npf.pt.freebsd.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Creating standalone HTML slideshows from Kwiki markup
 
 BUILD_DEPENDS=	${LOCALBASE}/kwiki/lib/Kwiki.pm:${PORTSDIR}/www/p5-Kwiki
