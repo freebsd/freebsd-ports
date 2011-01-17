@@ -889,6 +889,7 @@
     SUBDIR += tremulous
     SUBDIR += trigger
     SUBDIR += trimines
+    SUBDIR += triplane
     SUBDIR += trojka
     SUBDIR += trophy
     SUBDIR += tsito
