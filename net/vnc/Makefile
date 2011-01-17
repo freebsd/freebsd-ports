@@ -14,11 +14,13 @@ DISTNAME=	vnc-4_1_3-unixsrc
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:vnc
 DIST_SUBDIR=	xc
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	michael@fun-box.ru
 COMMENT=	Display X and Win32 desktops on remote X/Win32/Java displays
 
 RUN_DEPENDS=	xorg-fonts>=7.2:${PORTSDIR}/x11-fonts/xorg-fonts \
 		xauth:${PORTSDIR}/x11/xauth
+
+LICENSE=	GPLv2
 
 GNU_CONFIGURE=	yes
 # The vnc supplied zlib seg. faults if compiled with -O
