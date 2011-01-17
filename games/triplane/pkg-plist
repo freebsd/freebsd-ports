@@ -1,0 +1,3 @@
+bin/triplane
+%%DATADIR%%/fokker.dks
+@dirrm %%DATADIR%%
