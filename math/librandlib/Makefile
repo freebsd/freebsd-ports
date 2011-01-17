@@ -8,14 +8,15 @@
 PORTNAME=	randlib
 PORTVERSION=	1.3
 CATEGORIES=	math
-MASTER_SITES=	http://biostatistics.mdanderson.org/SoftwareDownload/ProductDownloadFiles/
+MASTER_SITES=	https://biostatistics.mdanderson.org/SoftwareDownload/ProductDownloadFiles/ \
+		LOCAL/bf
 DISTNAME=	RANDLIB_V90
 
 MAINTAINER=	bf@FreeBSD.org
 COMMENT=	Library of Routines for Random Number Generation
 
 USE_LDCONFIG=	yes
-MAKE_ENV=	NOPROFILE=true
+MAKE_ENV=	NO_PROFILE=true
 WRKSRC=		${WRKDIR}/source/randlib.c/src
 PORTDOCS=	Basegen.c.doc randlib.c.chs randlib.c.fdoc
 PLIST_FILES=	include/randlib.h \
