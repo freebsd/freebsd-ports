@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	WebService-GData
-PORTVERSION=	0.0307
+PORTVERSION=	0.0309
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
-#MASTER_SITE_SUBDIR=	WebService
+MASTER_SITE_SUBDIR=	../../authors/id/S/SH/SHIRIRU
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	wen@FreeBSD.org
@@ -39,6 +39,7 @@ MAN3=	WebService::GData::Error.3 \
 	WebService::GData.3 \
 	WebService::GData::Error::Entry.3 \
 	WebService::GData::Feed.3 \
-	WebService::GData::YouTube.3
+	WebService::GData::YouTube.3 \
+	WebService::GData::YouTube::Feed::Comment.3
 
 .include <bsd.port.mk>
