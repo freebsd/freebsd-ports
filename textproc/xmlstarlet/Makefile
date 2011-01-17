@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	xmlstarlet
-PORTVERSION=	1.0.3
+PORTVERSION=	1.0.4
 CATEGORIES=	textproc
 MASTER_SITES=	SF/xmlstar/${PORTNAME}/${PORTVERSION}
 
@@ -19,7 +19,8 @@ USE_ICONV=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-libxml-prefix=${LOCALBASE} \
 		--with-libxslt-prefix=${LOCALBASE} \
-		--with-libiconv-prefix=${LOCALBASE}
+		--with-libiconv-prefix=${LOCALBASE} \
+		--disable-static-libs
 
 MAN1=		xmlstarlet.1
 PLIST_FILES=	bin/xml
@@ -28,10 +29,6 @@ PORTDOCS=	xmlstarlet.txt xmlstarlet.pdf xmlstarlet.ps \
 		xmlstarlet-ug.html xmlstarlet-ug.pdf \
 		xmlstarlet-ug.ps xmlstarlet-ug.xml \
 		html.css
-
-post-patch:
-	@${REINPLACE_CMD} -e "s|%%PTHREAD%%|${PTHREAD_LIBS}|g" \
-		${WRKSRC}/configure
 
 .if !defined(NOPORTDOCS)
 post-install:
