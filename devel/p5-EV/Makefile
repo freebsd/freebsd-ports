@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	EV
-PORTVERSION=	4.01
+PORTVERSION=	4.03
 PORTEPOCH=	1
 CATEGORIES=	devel perl5
-MASTER_SITES=	CPAN
-MASTER_SITE_SUBDIR=	../../authors/id/M/ML/MLEHMANN
+MASTER_SITES=	CPAN/../../authors/id/M/ML/MLEHMANN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	vovkasm@gmail.com
@@ -20,10 +19,10 @@ RUN_DEPENDS=	p5-common-sense>=0:${PORTSDIR}/devel/p5-common-sense
 BUILD_DEPENDS=	p5-common-sense>=0:${PORTSDIR}/devel/p5-common-sense
 
 PERL_CONFIGURE=	yes
-CONFIGURE_ENV+=	PERL_MM_USE_DEFAULT="YES"
+CONFIGURE_ENV=	PERL_MM_USE_DEFAULT="YES"
 
-MAN3=	EV.3 \
-	EV::MakeMaker.3 \
-	EV::libev.3
+MAN3=		EV.3 \
+		EV::MakeMaker.3 \
+		EV::libev.3
 
 .include <bsd.port.mk>
