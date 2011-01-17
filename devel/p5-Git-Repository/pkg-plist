@@ -5,9 +5,11 @@
 %%SITE_PERL%%/Git/Repository/Plugin.pm
 %%SITE_PERL%%/Git/Repository/Command.pm
 %%SITE_PERL%%/Git/Repository.pm
+%%SITE_PERL%%/Test/Git.pm
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Git/Repository
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Git
 @dirrm %%SITE_PERL%%/Git/Repository/Log
 @dirrm %%SITE_PERL%%/Git/Repository/Plugin
 @dirrm %%SITE_PERL%%/Git/Repository
 @dirrmtry %%SITE_PERL%%/Git
+@dirrmtry %%SITE_PERL%%/Test

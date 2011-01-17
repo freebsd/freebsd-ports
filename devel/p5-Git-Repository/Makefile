@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	Git-Repository
-PORTVERSION=	1.14
+PORTVERSION=	1.16
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
+MASTER_SITE_SUBDIR=	../../authors/id/B/BO/BOOK
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	wen@FreeBSD.org
@@ -21,6 +22,7 @@ MAN3=		Git::Repository.3 \
 		Git::Repository::Log.3 \
 		Git::Repository::Plugin.3 \
 		Git::Repository::Log::Iterator.3 \
-		Git::Repository::Command.3
+		Git::Repository::Command.3 \
+		Test::Git.3
 
 .include <bsd.port.mk>
