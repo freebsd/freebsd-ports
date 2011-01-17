@@ -275,6 +275,7 @@
     SUBDIR += glide3
     SUBDIR += glitz
     SUBDIR += gliv
+    SUBDIR += glosm
     SUBDIR += glpng
     SUBDIR += gltk
     SUBDIR += gltt
