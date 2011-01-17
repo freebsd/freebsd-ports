@@ -20,9 +20,5 @@ XPI_ID=		{DF8E5247-8E0A-4de6-B393-0735A39DFD80}
 XPI_FILES=	application.ini chrome/jslib.jar chrome/jsliblive/contents.rdf chrome/jsliblive/jsliblive.xul chrome.manifest components/jslib-dom.js components/jslib-service.js components/jslib.xpt defaults/preferences/prefs.js install.js install.rdf
 XPI_DIRS=	chrome/jsliblive chrome components defaults/preferences defaults
 
-# we don't (currently) care about the signature
-post-extract:
-	@${RM} -rf ${WRKSRC}/META-INF
-
 .include "${.CURDIR}/../xpi-adblock/Makefile.xpi"
 .include <bsd.port.mk>
