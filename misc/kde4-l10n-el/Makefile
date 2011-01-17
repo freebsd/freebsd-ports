@@ -15,5 +15,7 @@ COMMENT=	Modern Greek messages and documentation for KDE4
 KDE4_L10N=	el
 .include <${.CURDIR}/Makefile.man>
 
+BROKEN=		bad plist
+
 .include "${.CURDIR}/../../misc/kde4-l10n/files/bsd.l10n.mk"
 .include <bsd.port.mk>
