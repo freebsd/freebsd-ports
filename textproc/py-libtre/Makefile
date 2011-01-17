@@ -8,7 +8,8 @@
 PORTNAME=	libtre
 PORTVERSION=	0.8.0
 CATEGORIES=	textproc python
-MASTER_SITES=	http://laurikari.net/tre/
+MASTER_SITES=	http://laurikari.net/tre/ \
+		LOCAL/bf
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	tre-${PORTVERSION}
 
@@ -17,6 +18,8 @@ COMMENT=	Python interface for the tre regular expressions library
 
 LIB_DEPENDS=	tre.5:${PORTSDIR}/textproc/libtre
 
+LICENSE=	BSD
+LICENSE_FILE=	${WRKSRC}/LICENSE
 USE_BZIP2=	yes
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
