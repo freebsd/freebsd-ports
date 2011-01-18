@@ -1,0 +1,180 @@
+%%WWWDIR%%/COPYRIGHT.txt
+%%WWWDIR%%/LICENSE.txt
+%%WWWDIR%%/.htaccess
+%%WWWDIR%%/admin/ajax/comment_delete.php
+%%WWWDIR%%/admin/ajax/elFinder.php
+%%WWWDIR%%/admin/ajax/email_send.php
+%%WWWDIR%%/admin/ajax/login.php
+%%WWWDIR%%/admin/ajax/nb_get_metatags.php
+%%WWWDIR%%/admin/ajax/post_delete.php
+%%WWWDIR%%/admin/ajax/post_set_category.php
+%%WWWDIR%%/admin/ajax/spam_add.php
+%%WWWDIR%%/admin/ajax/spam_remove.php
+%%WWWDIR%%/admin/category.php
+%%WWWDIR%%/admin/comments.php
+%%WWWDIR%%/admin/html/footer.php
+%%WWWDIR%%/admin/html/head.php
+%%WWWDIR%%/admin/includes/category_list.php
+%%WWWDIR%%/admin/includes/comments_list.php
+%%WWWDIR%%/admin/includes/comments_spam.php
+%%WWWDIR%%/admin/includes/index_main.php
+%%WWWDIR%%/admin/includes/links_list.php
+%%WWWDIR%%/admin/includes/login_main.php
+%%WWWDIR%%/admin/includes/plugins_list.php
+%%WWWDIR%%/admin/includes/post_list.php
+%%WWWDIR%%/admin/includes/post_simple.php
+%%WWWDIR%%/admin/includes/post_simple_edit.php
+%%WWWDIR%%/admin/includes/post_video.php
+%%WWWDIR%%/admin/includes/profile_info.php
+%%WWWDIR%%/admin/includes/profile_picture.php
+%%WWWDIR%%/admin/includes/profile_user.php
+%%WWWDIR%%/admin/includes/settings.php
+%%WWWDIR%%/admin/index.php
+%%WWWDIR%%/admin/js/elrte/elfinder.js
+%%WWWDIR%%/admin/js/elrte/elrte.js
+%%WWWDIR%%/admin/js/jcrop/jcrop.js
+%%WWWDIR%%/admin/js/jquery-ui/jquery-ui.js
+%%WWWDIR%%/admin/js/jquery/jquery.js
+%%WWWDIR%%/admin/kernel/class.categories_dbxml.php
+%%WWWDIR%%/admin/kernel/class.comments_dbxml.php
+%%WWWDIR%%/admin/kernel/class.config_dbxml.php
+%%WWWDIR%%/admin/kernel/class.elFinder.php
+%%WWWDIR%%/admin/kernel/class.email.php
+%%WWWDIR%%/admin/kernel/class.framework_html.php
+%%WWWDIR%%/admin/kernel/class.links_dbxml.php
+%%WWWDIR%%/admin/kernel/class.login.php
+%%WWWDIR%%/admin/kernel/class.nbinstall.php
+%%WWWDIR%%/admin/kernel/class.nbxml.php
+%%WWWDIR%%/admin/kernel/class.post_dbxml.php
+%%WWWDIR%%/admin/kernel/class.profiles_dbxml.php
+%%WWWDIR%%/admin/kernel/class.rss_dbxml.php
+%%WWWDIR%%/admin/kernel/class.syslog_dbxml.php
+%%WWWDIR%%/admin/kernel/class.tags_dbxml.php
+%%WWWDIR%%/admin/links.php
+%%WWWDIR%%/admin/login.php
+%%WWWDIR%%/admin/logout.php
+%%WWWDIR%%/admin/plugins.php
+%%WWWDIR%%/admin/post.php
+%%WWWDIR%%/admin/profile.php
+%%WWWDIR%%/admin/security.php
+%%WWWDIR%%/admin/settings.php
+%%WWWDIR%%/admin/themes/default/default.css
+%%WWWDIR%%/admin/themes/default/elfinder.full.css
+%%WWWDIR%%/admin/themes/default/elrte-inner.css
+%%WWWDIR%%/admin/themes/default/elrte.min.css
+%%WWWDIR%%/admin/themes/default/favicon.ico
+%%WWWDIR%%/admin/themes/default/img/elfinder/icons-big.png
+%%WWWDIR%%/admin/themes/default/img/elfinder/icons-small.png
+%%WWWDIR%%/admin/themes/default/img/elfinder/ql.png
+%%WWWDIR%%/admin/themes/default/img/elfinder/toolbar.png
+%%WWWDIR%%/admin/themes/default/img/elrte/elrte-toolbar.png
+%%WWWDIR%%/admin/themes/default/img/elrte/loading.gif
+%%WWWDIR%%/admin/themes/default/img/elrte/media-flash.png
+%%WWWDIR%%/admin/themes/default/img/elrte/outline-div.png
+%%WWWDIR%%/admin/themes/default/img/elrte/outline-p.png
+%%WWWDIR%%/admin/themes/default/img/elrte/pagebreak.gif
+%%WWWDIR%%/admin/themes/default/img/elrte/pixel.gif
+%%WWWDIR%%/admin/themes/default/img/icons/comment.png
+%%WWWDIR%%/admin/themes/default/img/icons/generic.png
+%%WWWDIR%%/admin/themes/default/img/icons/mcomment.png
+%%WWWDIR%%/admin/themes/default/img/icons/post.png
+%%WWWDIR%%/admin/themes/default/img/icons/profile.png
+%%WWWDIR%%/admin/themes/default/img/icons/settings.png
+%%WWWDIR%%/admin/themes/default/img/icons/sorteable.png
+%%WWWDIR%%/admin/themes/default/img/icons/syslog.png
+%%WWWDIR%%/admin/themes/default/img/loading.gif
+%%WWWDIR%%/admin/themes/default/img/logo.png
+%%WWWDIR%%/admin/themes/default/ui-themes/smoothness/images/ui-bg_flat_0_aaaaaa_40x100.png
+%%WWWDIR%%/admin/themes/default/ui-themes/smoothness/images/ui-bg_flat_75_ffffff_40x100.png
+%%WWWDIR%%/admin/themes/default/ui-themes/smoothness/images/ui-bg_glass_55_fbf9ee_1x400.png
+%%WWWDIR%%/admin/themes/default/ui-themes/smoothness/images/ui-bg_glass_65_ffffff_1x400.png
+%%WWWDIR%%/admin/themes/default/ui-themes/smoothness/images/ui-bg_glass_75_dadada_1x400.png
+%%WWWDIR%%/admin/themes/default/ui-themes/smoothness/images/ui-bg_glass_75_e6e6e6_1x400.png
+%%WWWDIR%%/admin/themes/default/ui-themes/smoothness/images/ui-bg_glass_95_fef1ec_1x400.png
+%%WWWDIR%%/admin/themes/default/ui-themes/smoothness/images/ui-bg_highlight-soft_75_cccccc_1x100.png
+%%WWWDIR%%/admin/themes/default/ui-themes/smoothness/images/ui-icons_222222_256x240.png
+%%WWWDIR%%/admin/themes/default/ui-themes/smoothness/images/ui-icons_454545_256x240.png
+%%WWWDIR%%/admin/themes/default/ui-themes/smoothness/jquery-ui.css
+%%WWWDIR%%/admin/variables.php
+%%WWWDIR%%/ajax/comment_add.php
+%%WWWDIR%%/ajax/gencaptcha.php
+%%WWWDIR%%/index.php
+%%WWWDIR%%/install.php
+%%WWWDIR%%/lang/bulgarian.php
+%%WWWDIR%%/lang/chinese_simplified.php
+%%WWWDIR%%/lang/chinese_traditional.php
+%%WWWDIR%%/lang/english.php
+%%WWWDIR%%/lang/german.php
+%%WWWDIR%%/lang/portuguese.php
+%%WWWDIR%%/lang/russian.php
+%%WWWDIR%%/lang/spanish.php
+%%WWWDIR%%/lang/vietnamese.php
+%%WWWDIR%%/plugins/about/about.php
+%%WWWDIR%%/plugins/about/lang/english.php
+%%WWWDIR%%/plugins/adsense/adsense.php
+%%WWWDIR%%/plugins/adsense/lang/english.php
+%%WWWDIR%%/plugins/categories/categories.php
+%%WWWDIR%%/plugins/categories/lang/english.php
+%%WWWDIR%%/plugins/links/lang/english.php
+%%WWWDIR%%/plugins/links/links.php
+%%WWWDIR%%/plugins/tags/lang/english.php
+%%WWWDIR%%/plugins/tags/tags.php
+%%WWWDIR%%/post.php
+%%WWWDIR%%/templates/default/containers/set_comment.php
+%%WWWDIR%%/templates/default/containers/view_comment.php
+%%WWWDIR%%/templates/default/containers/view_olderpost.php
+%%WWWDIR%%/templates/default/containers/view_post.php
+%%WWWDIR%%/templates/default/containers/view_posts_list.php
+%%WWWDIR%%/templates/default/containers/view_sidebar.php
+%%WWWDIR%%/templates/default/containers/view_sticky_list.php
+%%WWWDIR%%/templates/default/css/favicon.ico
+%%WWWDIR%%/templates/default/css/img/guest75x75.jpg
+%%WWWDIR%%/templates/default/css/img/loading.gif
+%%WWWDIR%%/templates/default/css/img/simple.png
+%%WWWDIR%%/templates/default/css/img/underline.png
+%%WWWDIR%%/templates/default/css/img/video.png
+%%WWWDIR%%/templates/default/css/style.css
+%%WWWDIR%%/templates/default/index.php
+%%WWWDIR%%/templates/default/post.php
+%%WWWDIR%%/templates/default/screenshot.png
+%%WWWDIR%%/variables.php
+@dirrm %%WWWDIR%%/templates/default/css/img
+@dirrm %%WWWDIR%%/templates/default/css
+@dirrm %%WWWDIR%%/templates/default/containers
+@dirrm %%WWWDIR%%/templates/default
+@dirrm %%WWWDIR%%/templates
+@dirrm %%WWWDIR%%/plugins/tags/lang
+@dirrm %%WWWDIR%%/plugins/tags
+@dirrm %%WWWDIR%%/plugins/links/lang
+@dirrm %%WWWDIR%%/plugins/links
+@dirrm %%WWWDIR%%/plugins/categories/lang
+@dirrm %%WWWDIR%%/plugins/categories
+@dirrm %%WWWDIR%%/plugins/adsense/lang
+@dirrm %%WWWDIR%%/plugins/adsense
+@dirrm %%WWWDIR%%/plugins/about/lang
+@dirrm %%WWWDIR%%/plugins/about
+@dirrm %%WWWDIR%%/plugins
+@dirrm %%WWWDIR%%/lang
+@dirrmtry %%WWWDIR%%/content
+@dirrm %%WWWDIR%%/ajax
+@dirrm %%WWWDIR%%/admin/themes/default/ui-themes/smoothness/images
+@dirrm %%WWWDIR%%/admin/themes/default/ui-themes/smoothness
+@dirrm %%WWWDIR%%/admin/themes/default/ui-themes
+@dirrm %%WWWDIR%%/admin/themes/default/img/icons
+@dirrm %%WWWDIR%%/admin/themes/default/img/elrte
+@dirrm %%WWWDIR%%/admin/themes/default/img/elfinder
+@dirrm %%WWWDIR%%/admin/themes/default/img
+@dirrm %%WWWDIR%%/admin/themes/default
+@dirrm %%WWWDIR%%/admin/themes
+@dirrm %%WWWDIR%%/admin/kernel
+@dirrm %%WWWDIR%%/admin/js/jquery-ui
+@dirrm %%WWWDIR%%/admin/js/jquery
+@dirrm %%WWWDIR%%/admin/js/jcrop
+@dirrm %%WWWDIR%%/admin/js/elrte
+@dirrm %%WWWDIR%%/admin/js
+@dirrm %%WWWDIR%%/admin/includes
+@dirrm %%WWWDIR%%/admin/html
+@dirrm %%WWWDIR%%/admin/ajax
+@dirrm %%WWWDIR%%/admin
+@dirrmtry %%WWWDIR%%
+@exec mkdir -p %D/%%WWWDIR%%/content
