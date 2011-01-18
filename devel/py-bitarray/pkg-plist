@@ -1,0 +1,17 @@
+@comment $FreeBSD$
+%%PYTHON_SITELIBDIR%%/bitarray/__init__.py
+%%PYTHON_SITELIBDIR%%/bitarray/__init__.pyc
+%%PYTHON_SITELIBDIR%%/bitarray/__init__.pyo
+%%PYTHON_SITELIBDIR%%/bitarray/test_bitarray.py
+%%PYTHON_SITELIBDIR%%/bitarray/test_bitarray.pyc
+%%PYTHON_SITELIBDIR%%/bitarray/test_bitarray.pyo
+%%PYTHON_SITELIBDIR%%/bitarray/_bitarray.so
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/README
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/decoding.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/huffman.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/mandel.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ndarray.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/pbm.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/smallints.py
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
+@dirrm %%PYTHON_SITELIBDIR%%/bitarray

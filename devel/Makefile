@@ -2734,6 +2734,7 @@
     SUBDIR += py-astng
     SUBDIR += py-babel
     SUBDIR += py-bison
+    SUBDIR += py-bitarray
     SUBDIR += py-bitstring
     SUBDIR += py-boto
     SUBDIR += py-cclib
