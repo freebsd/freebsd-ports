@@ -1,0 +1,25 @@
+bin/daq-modules-config
+include/daq.h
+include/daq_api.h
+include/daq_common.h
+include/sfbpf.h
+include/sfbpf_dlt.h
+lib/libdaq.so.0
+lib/libdaq.so
+lib/libdaq.la
+lib/libdaq_static.la
+lib/libdaq.a
+lib/libdaq_static.a
+lib/libsfbpf.so.0
+lib/libsfbpf.so
+lib/libsfbpf.la
+lib/libsfbpf.a
+lib/libdaq_static_modules.la
+lib/libdaq_static_modules.a
+lib/daq/daq_pcap.so
+lib/daq/daq_pcap.la
+lib/daq/daq_dump.so
+lib/daq/daq_dump.la
+lib/daq/daq_ipfw.so
+lib/daq/daq_ipfw.la
+@dirrm lib/daq

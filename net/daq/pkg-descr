@@ -1,0 +1,12 @@
+Snort 2.9 introduces the DAQ, or Data Acquisition library,
+for packet I/O.  The DAQ replaces direct calls to PCAP functions
+with an abstraction layer that facilitates operation on a variety
+of hardware and software interfaces without requiring changes
+to Snort.  It is possible to select the DAQ type and mode
+when invoking Snort to perform PCAP readback or inline operation, etc.
+
+The DAQ library may be useful for other packet processing applications
+and the modular nature allows you to build new modules for other
+platforms.
+
+WWW: http://www.snort.org/
