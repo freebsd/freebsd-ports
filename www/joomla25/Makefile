@@ -5,19 +5,20 @@
 # $FreeBSD$
 
 PORTNAME=	joomla
-PORTVERSION=	1.0.15
+PORTVERSION=	1.6.0
 CATEGORIES=	www
-MASTER_SITES=	http://downloads.joomlacode.org/frsrelease/2/2/5/22536/
+MASTER_SITES=	http://joomlacode.org/gf/download/frsrelease/13869/60196/
 DISTNAME=	Joomla_${PORTVERSION}-Stable-Full_Package
 DIST_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	wen@FreeBSD.org
 COMMENT=	A dynamic web content management system (CMS)
 
 NO_BUILD=	yes
+FETCH_ARGS=	-apR
 USE_BZIP2=	yes
 USE_MYSQL=	yes
-USE_PHP=	mysql pcre xml zlib session gd pdf
+USE_PHP=	mysql pcre xml zlib session gd pdf json mbstring
 WANT_PHP_WEB=	yes
 PKGMESSAGE=	${WRKDIR}/pkg-message
 SUB_FILES=	pkg-message
