@@ -9,7 +9,8 @@ PORTNAME=	chromium
 DISTVERSIONPREFIX=	courgette-redacted-
 DISTVERSION=	6.0.472.63
 CATEGORIES=	www
-MASTER_SITES=	http://chromium.hybridsource.org/old/ports/ \
+MASTER_SITES=	http://download.goodking.org/downloads/ \
+		ftp://rene-ladan.nl/pub/distfiles/ \
 		CRITICAL
 
 MAINTAINER=	rene@FreeBSD.org
@@ -24,6 +25,7 @@ BUILD_DEPENDS=	${LOCALBASE}/bin/flex:${PORTSDIR}/textproc/flex		\
 # minimal version of nss, LIB_DEPENDS does not enforce this
 
 LIB_DEPENDS=	execinfo.1:${PORTSDIR}/devel/libexecinfo	\
+		avformat:${PORTSDIR}/multimedia/ffmpeg		\
 		cairo.2:${PORTSDIR}/graphics/cairo		\
 		dbus-1.3:${PORTSDIR}/devel/dbus			\
 		dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib	\
@@ -33,18 +35,19 @@ LIB_DEPENDS=	execinfo.1:${PORTSDIR}/devel/libexecinfo	\
 		nss3.1:${PORTSDIR}/security/nss			\
 		gnome-keyring.0:${PORTSDIR}/security/libgnome-keyring
 
-RUN_DEPENDS=	${LOCALBASE}/lib/alsa-lib/libasound_module_pcm_oss.so:${PORTSDIR}/audio/alsa-plugins
-
 FORBIDDEN=		several security vulnerabilities
+
+RUN_DEPENDS=	${LOCALBASE}/lib/alsa-lib/libasound_module_pcm_oss.so:${PORTSDIR}/audio/alsa-plugins \
+		${LOCALBASE}/lib/X11/fonts/Droid/fonts.dir:${PORTSDIR}/x11-fonts/droid-fonts-ttf
 
 ONLY_FOR_ARCHS=	i386 amd64
 USE_XZ=		yes
 USE_BISON=	build
-USE_PYTHON=	2.6			# only needed at build time
+USE_PYTHON=	2.6+			# only needed at build time
 USE_PERL5_BUILD=yes
 USE_GMAKE=	yes
 MAN1=		chrome.1
-USE_XORG=	scrnsaverproto
+USE_XORG=	scrnsaverproto xtst
 USE_GNOME=	glib20 gtk20 dconf libxslt
 LICENSE_COMB=	multi
 LICENSE=	BSD LGPL21 MPL
