@@ -709,6 +709,9 @@ bin/moin
 %%PYTHON_SITELIBDIR%%/MoinMoin/script/import/irclog.py
 %%PYTHON_SITELIBDIR%%/MoinMoin/script/import/irclog.pyc
 %%PYTHON_SITELIBDIR%%/MoinMoin/script/import/irclog.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/import/wikipage.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/import/wikipage.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/import/wikipage.pyo
 %%PYTHON_SITELIBDIR%%/MoinMoin/script/index/__init__.py
 %%PYTHON_SITELIBDIR%%/MoinMoin/script/index/__init__.pyc
 %%PYTHON_SITELIBDIR%%/MoinMoin/script/index/__init__.pyo
@@ -841,6 +844,9 @@ bin/moin
 %%PYTHON_SITELIBDIR%%/MoinMoin/script/migration/1080700.py
 %%PYTHON_SITELIBDIR%%/MoinMoin/script/migration/1080700.pyc
 %%PYTHON_SITELIBDIR%%/MoinMoin/script/migration/1080700.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/migration/1080800.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/migration/1080800.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/migration/1080800.pyo
 %%PYTHON_SITELIBDIR%%/MoinMoin/script/migration/1089999.py
 %%PYTHON_SITELIBDIR%%/MoinMoin/script/migration/1089999.pyc
 %%PYTHON_SITELIBDIR%%/MoinMoin/script/migration/1089999.pyo
@@ -853,6 +859,9 @@ bin/moin
 %%PYTHON_SITELIBDIR%%/MoinMoin/script/migration/1090200.py
 %%PYTHON_SITELIBDIR%%/MoinMoin/script/migration/1090200.pyc
 %%PYTHON_SITELIBDIR%%/MoinMoin/script/migration/1090200.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/migration/1090300.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/migration/1090300.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/migration/1090300.pyo
 %%PYTHON_SITELIBDIR%%/MoinMoin/script/migration/__init__.py
 %%PYTHON_SITELIBDIR%%/MoinMoin/script/migration/__init__.pyc
 %%PYTHON_SITELIBDIR%%/MoinMoin/script/migration/__init__.pyo
@@ -1165,6 +1174,9 @@ bin/moin
 %%PYTHON_SITELIBDIR%%/MoinMoin/support/pygments/lexers/__init__.py
 %%PYTHON_SITELIBDIR%%/MoinMoin/support/pygments/lexers/__init__.pyc
 %%PYTHON_SITELIBDIR%%/MoinMoin/support/pygments/lexers/__init__.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/support/pygments/lexers/_asybuiltins.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/support/pygments/lexers/_asybuiltins.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/support/pygments/lexers/_asybuiltins.pyo
 %%PYTHON_SITELIBDIR%%/MoinMoin/support/pygments/lexers/_clbuiltins.py
 %%PYTHON_SITELIBDIR%%/MoinMoin/support/pygments/lexers/_clbuiltins.pyc
 %%PYTHON_SITELIBDIR%%/MoinMoin/support/pygments/lexers/_clbuiltins.pyo
@@ -1255,6 +1267,9 @@ bin/moin
 %%PYTHON_SITELIBDIR%%/MoinMoin/support/pygments/styles/manni.py
 %%PYTHON_SITELIBDIR%%/MoinMoin/support/pygments/styles/manni.pyc
 %%PYTHON_SITELIBDIR%%/MoinMoin/support/pygments/styles/manni.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/support/pygments/styles/monokai.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/support/pygments/styles/monokai.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/support/pygments/styles/monokai.pyo
 %%PYTHON_SITELIBDIR%%/MoinMoin/support/pygments/styles/murphy.py
 %%PYTHON_SITELIBDIR%%/MoinMoin/support/pygments/styles/murphy.pyc
 %%PYTHON_SITELIBDIR%%/MoinMoin/support/pygments/styles/murphy.pyo
@@ -1673,6 +1688,7 @@ bin/moin
 %%PYTHON_SITELIBDIR%%/MoinMoin/web/static/htdocs/applets/FCKeditor/editor/_source/internals/fcklistslib.js
 %%PYTHON_SITELIBDIR%%/MoinMoin/web/static/htdocs/applets/FCKeditor/editor/_source/internals/fckplugins.js
 %%PYTHON_SITELIBDIR%%/MoinMoin/web/static/htdocs/applets/FCKeditor/editor/_source/internals/fckregexlib.js
+%%PYTHON_SITELIBDIR%%/MoinMoin/web/static/htdocs/applets/FCKeditor/editor/_source/internals/fckscayt.js
 %%PYTHON_SITELIBDIR%%/MoinMoin/web/static/htdocs/applets/FCKeditor/editor/_source/internals/fckselection.js
 %%PYTHON_SITELIBDIR%%/MoinMoin/web/static/htdocs/applets/FCKeditor/editor/_source/internals/fckselection_gecko.js
 %%PYTHON_SITELIBDIR%%/MoinMoin/web/static/htdocs/applets/FCKeditor/editor/_source/internals/fckselection_ie.js
@@ -1742,6 +1758,8 @@ bin/moin
 %%PYTHON_SITELIBDIR%%/MoinMoin/web/static/htdocs/applets/FCKeditor/editor/dialog/fck_paste.html
 %%PYTHON_SITELIBDIR%%/MoinMoin/web/static/htdocs/applets/FCKeditor/editor/dialog/fck_radiobutton.html
 %%PYTHON_SITELIBDIR%%/MoinMoin/web/static/htdocs/applets/FCKeditor/editor/dialog/fck_replace.html
+%%PYTHON_SITELIBDIR%%/MoinMoin/web/static/htdocs/applets/FCKeditor/editor/dialog/fck_scayt.html
+%%PYTHON_SITELIBDIR%%/MoinMoin/web/static/htdocs/applets/FCKeditor/editor/dialog/fck_scayt/scayt_dialog.css
 %%PYTHON_SITELIBDIR%%/MoinMoin/web/static/htdocs/applets/FCKeditor/editor/dialog/fck_select.html
 %%PYTHON_SITELIBDIR%%/MoinMoin/web/static/htdocs/applets/FCKeditor/editor/dialog/fck_select/fck_select.js
 %%PYTHON_SITELIBDIR%%/MoinMoin/web/static/htdocs/applets/FCKeditor/editor/dialog/fck_smiley.html
@@ -2499,6 +2517,7 @@ share/moin/config/more_samples/auth_wikiconfig_snippet
 share/moin/config/more_samples/dicts_wikiconfig_snippet
 share/moin/config/more_samples/groups_wikiconfig_snippet
 share/moin/config/more_samples/jabber_wikiconfig_snippet
+share/moin/config/more_samples/ldap_2servers_wikiconfig_snippet
 share/moin/config/more_samples/ldap_wikiconfig_snippet
 share/moin/config/more_samples/mail_wikiconfig_snippet
 share/moin/config/more_samples/mailimportconf.py
@@ -2558,10 +2577,14 @@ share/moin/underlay/pages/LanguageSetup/attachments/Brazilian_Portuguese--option
 share/moin/underlay/pages/LanguageSetup/attachments/Brazilian_Portuguese--optional_system_pages.zip
 share/moin/underlay/pages/LanguageSetup/attachments/Brazilian_Portuguese--optional_template_pages.zip
 share/moin/underlay/pages/LanguageSetup/attachments/Brazilian_Portuguese--translated_system_pages.zip
+share/moin/underlay/pages/LanguageSetup/attachments/Bulgarian--all_help_pages.zip
 share/moin/underlay/pages/LanguageSetup/attachments/Bulgarian--all_pages.zip
 share/moin/underlay/pages/LanguageSetup/attachments/Bulgarian--all_system_pages.zip
+share/moin/underlay/pages/LanguageSetup/attachments/Bulgarian--all_template_pages.zip
+share/moin/underlay/pages/LanguageSetup/attachments/Bulgarian--essential_help_pages.zip
 share/moin/underlay/pages/LanguageSetup/attachments/Bulgarian--essential_pages.zip
 share/moin/underlay/pages/LanguageSetup/attachments/Bulgarian--essential_system_pages.zip
+share/moin/underlay/pages/LanguageSetup/attachments/Bulgarian--essential_template_pages.zip
 share/moin/underlay/pages/LanguageSetup/attachments/Bulgarian--optional_pages.zip
 share/moin/underlay/pages/LanguageSetup/attachments/Bulgarian--optional_system_pages.zip
 share/moin/underlay/pages/LanguageSetup/attachments/Bulgarian--translated_system_pages.zip
@@ -2581,10 +2604,13 @@ share/moin/underlay/pages/LanguageSetup/attachments/Croatian--essential_system_p
 share/moin/underlay/pages/LanguageSetup/attachments/Croatian--optional_pages.zip
 share/moin/underlay/pages/LanguageSetup/attachments/Croatian--optional_system_pages.zip
 share/moin/underlay/pages/LanguageSetup/attachments/Croatian--translated_system_pages.zip
+share/moin/underlay/pages/LanguageSetup/attachments/Czech--all_help_pages.zip
 share/moin/underlay/pages/LanguageSetup/attachments/Czech--all_pages.zip
 share/moin/underlay/pages/LanguageSetup/attachments/Czech--all_system_pages.zip
+share/moin/underlay/pages/LanguageSetup/attachments/Czech--essential_help_pages.zip
 share/moin/underlay/pages/LanguageSetup/attachments/Czech--essential_pages.zip
 share/moin/underlay/pages/LanguageSetup/attachments/Czech--essential_system_pages.zip
+share/moin/underlay/pages/LanguageSetup/attachments/Czech--optional_help_pages.zip
 share/moin/underlay/pages/LanguageSetup/attachments/Czech--optional_pages.zip
 share/moin/underlay/pages/LanguageSetup/attachments/Czech--optional_system_pages.zip
 share/moin/underlay/pages/LanguageSetup/attachments/Czech--translated_system_pages.zip
@@ -2998,6 +3024,7 @@ share/moin/underlay/pages/LanguageSetup/revisions/00000001
 @dirrm %%PYTHON_SITELIBDIR%%/MoinMoin/web/static/htdocs/applets/FCKeditor/editor/dialog/fck_spellerpages/spellerpages
 @dirrm %%PYTHON_SITELIBDIR%%/MoinMoin/web/static/htdocs/applets/FCKeditor/editor/dialog/fck_spellerpages
 @dirrm %%PYTHON_SITELIBDIR%%/MoinMoin/web/static/htdocs/applets/FCKeditor/editor/dialog/fck_select
+@dirrm %%PYTHON_SITELIBDIR%%/MoinMoin/web/static/htdocs/applets/FCKeditor/editor/dialog/fck_scayt
 @dirrm %%PYTHON_SITELIBDIR%%/MoinMoin/web/static/htdocs/applets/FCKeditor/editor/dialog/fck_link
 @dirrm %%PYTHON_SITELIBDIR%%/MoinMoin/web/static/htdocs/applets/FCKeditor/editor/dialog/fck_image
 @dirrm %%PYTHON_SITELIBDIR%%/MoinMoin/web/static/htdocs/applets/FCKeditor/editor/dialog/fck_flash
