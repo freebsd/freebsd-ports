@@ -1,0 +1,24 @@
+--- po/CMakeLists.txt~
++++ po/CMakeLists.txt
+@@ -273,9 +273,6 @@ if(ENABLE_NLS)
+ 				COMMENT "mo-update [${DOMAIN}-${LINGUA}]: Creating mo file."
+ 			)
+ 
+-			install(FILES ${CMAKE_SOURCE_DIR}/${LOCALEDIR}/${LINGUA}/LC_MESSAGES/${DOMAIN}.mo
+-					DESTINATION ${LOCALE_INSTALL}/${LINGUA}/LC_MESSAGES)
+-
+ 			set(mo-update-SRC ${mo-update-SRC} 
+ 				${CMAKE_SOURCE_DIR}/${LOCALEDIR}/${LINGUA}/LC_MESSAGES/${DOMAIN}.mo
+ 			)
+@@ -285,6 +282,11 @@ if(ENABLE_NLS)
+ 
+ 		endforeach(DOMAIN ${DOMAINS})
+ 
++		foreach(DOMAIN ${NORMAL_DOMAINS})
++			install(FILES ${CMAKE_SOURCE_DIR}/${LOCALEDIR}/${LINGUA}/LC_MESSAGES/${DOMAIN}.mo
++					DESTINATION ${LOCALE_INSTALL}/${LINGUA}/LC_MESSAGES)
++		endforeach(DOMAIN ${NORMAL_DOMAINS})
++
+ 		if(ENABLE_POT_UPDATE_TARGET)
+ 			add_custom_target(mo-update-${LINGUA}
+ 				COMMENT "mo-update ${LINGUA}: Done."

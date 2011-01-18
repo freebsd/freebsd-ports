@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	wesnoth
-PORTVERSION=	1.9.3
+PORTVERSION=	1.9.4
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION} \
 		http://files.wesnoth.org/
@@ -25,24 +25,9 @@ CONFLICTS=	wesnoth-[0-9]*
 
 USE_SDL=	image mixer net ttf
 USE_GNOME=	gnometarget pango
-USE_GMAKE=	yes
 MAKE_JOBS_SAFE=	yes
 USE_BZIP2=	yes
-USE_AUTOTOOLS=	aclocal autoheader automake autoconf
-ACLOCAL_ARGS=	-Im4
-AUTOMAKE_ARGS=	--add-missing --copy
-CONFIGURE_ENV=	PKG_CONFIG="${PKG_CONFIG}" \
-		LDFLAGS="${LDFLAGS}"
-CONFIGURE_ARGS=	--localstatedir=/var \
-		--with-boost=${LOCALBASE} \
-		--with-icondir=${PREFIX}/share/pixmaps \
-		--with-libiconv-prefix=${LOCALBASE} \
-		--with-libintl-prefix=${LOCALBASE} \
-		--with-localedir=${PREFIX}/share/locale
-PKG_CONFIG?=	${LOCALBASE}/bin/pkg-config
-
-MANLANG=	"" cs de en_GB es et fi fr gl hu id it ja lt pl pt_BR sk \
-		sr sr@ijekavian sr@ijekavianlatin sr@latin tr zh_CN zh_TW
+USE_CMAKE=	yes
 
 MAN6=		wesnoth.6
 
@@ -50,166 +35,145 @@ PORTDOCS=	*
 PORTDATA=	*
 
 OPTIONS=	ANA	 "Enable Asynchronous Network API (WIP)" On \
-		BWMON	 "Enable bandwidth monitoring for server" Off \
 		CAMPAIGN "Enable campaign server"	On \
 		EDITOR	 "Enable map editor"		On \
 		FRIBIDI	 "Enable bidirectional support"	On \
 		LOWMEM	 "Reduce memory usage (disables animations)" Off \
 		NOTIFY	 "Enable desktop notifications"	On \
 		POOLALLOC "Use wesnoth own memory allocator" Off \
-		PYTHON	 "Enable python developer tools" On \
+		PYTHON	 "Enable python developer tools" Off \
 		RAWSOCKETS "Use raw receiving sockets in multiplayer" Off \
 		SERVER	 "Enable server"		On \
 		TESTS	 "Enable unit tests"		Off \
 		TINYGUI	 "Enable tiny gui (down to 320x200)" Off \
 		TOOLS	 "Enable extra tools for artists and translators" On
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 700000
-BROKEN=		does not compile
-.endif
+.include <bsd.port.options.mk>
 
 .if defined(WITH_DEBUG)
-CONFIGURE_ARGS+=	--enable-debug
-.endif
-
-.if defined(WITH_PROFILE)
-CONFIGURE_ARGS+=	--enable-profile
+CMAKE_BUILD_TYPE=	debug
 .endif
 
 # XXX: breaks compilation because of -Werror
 .if !defined(WITH_STRICT)
-CONFIGURE_ARGS+=	--disable-strict-compilation
+CMAKE_ARGS+=	-DENABLE_STRICT_COMPILATION=off
 .endif
 
 .if defined(WITHOUT_ANA)
-CONFIGURE_ARGS+=	--disable-ana
+CMAKE_ARGS+=	-DUSE_ANA_NETWORK=off
 .else
-CONFIGURE_ARGS+=	--enable-ana
-.endif
-
-.if defined(WITHOUT_BWMON)
-CONFIGURE_ARGS+=	--disable-bandwidth-monitor
-.else
-CONFIGURE_ARGS+=	--enable-bandwidth-monitor
+CMAKE_ARGS+=	-DUSE_ANA_NETWORK=on
 .endif
 
 .if defined(WITHOUT_CAMPAIGN)
-CONFIGURE_ARGS+=	--disable-campaign-server
-PLIST_SUB+=		CAMPAIGN="@comment "
+CMAKE_ARGS+=	-DENABLE_CAMPAIGN_SERVER=off
+PLIST_SUB+=	CAMPAIGN="@comment "
 .else
-CONFIGURE_ARGS+=	--enable-campaign-server
-PLIST_SUB+=		CAMPAIGN=""
+CMAKE_ARGS+=	-DENABLE_CAMPAIGN_SERVER=on
+PLIST_SUB+=	CAMPAIGN=""
 .endif
 
 .if defined(WITHOUT_EDITOR)
-CONFIGURE_ARGS+=	--disable-editor
-PLIST_SUB+=		EDITOR="@comment "
+CMAKE_ARGS+=	-DENABLE_EDITOR=off
+PLIST_SUB+=	EDITOR="@comment "
 .else
-CONFIGURE_ARGS+=	--enable-editor
-PLIST_SUB+=		EDITOR=""
+CMAKE_ARGS+=	-DENABLE_EDITOR=on
+PLIST_SUB+=	EDITOR=""
 .endif
 
 .if defined(WITHOUT_FRIBIDI)
-CONFIGURE_ARGS+=	--without-fribidi
+CMAKE_ARGS+=	-DENABLE_FRIBIDI=off
 .else
-CONFIGURE_ARGS+=	--with-fribidi
-LIB_DEPENDS+=		fribidi.3:${PORTSDIR}/converters/fribidi
+CMAKE_ARGS+=	-DENABLE_FRIBIDI=on
+LIB_DEPENDS+=	fribidi.3:${PORTSDIR}/converters/fribidi
 .endif
 
 .if defined(WITHOUT_LOWMEM)
-CONFIGURE_ARGS+=	--disable-lowmem
+CMAKE_ARGS+=	-DENABLE_LOW_MEM=off
 .else
-CONFIGURE_ARGS+=	--enable-lowmem
+CMAKE_ARGS+=	-DENABLE_LOW_MEM=off
 .endif
 
 .if defined(WITHOUT_NOTIFY)
-CONFIGURE_ARGS+=	--disable-notifications
+CMAKE_ARGS+=	-DENABLE_NOTIFICATIONS=off
 .else
-CONFIGURE_ARGS+=	--enable-notifications --enable-dbus
-LIB_DEPENDS+=		dbus-1.3:${PORTSDIR}/devel/dbus
+CMAKE_ARGS+=	-DENABLE_NOTIFICATIONS=on
+LIB_DEPENDS+=	dbus-1.3:${PORTSDIR}/devel/dbus
 .endif
 
 .if defined(WITHOUT_NLS)
-CONFIGURE_ARGS+=	--disable-nls
-PLIST_SUB+=		NLS="@comment "
+CMAKE_ARGS+=	-DENABLE_NLS=off
+PLIST_SUB+=	NLS="@comment "
 .else
-USE_GETTEXT=		yes
-CONFIGURE_ARGS+=	--enable-nls
-PLIST_SUB+=		NLS=""
+CMAKE_ARGS+=	-DENABLE_NLS=on -DLOCALEDIR=${PREFIX}/share/locale
+USE_GETTEXT=	yes
+MANLANG=	"" cs de en_GB et fi fr gl hu id it ja lt pl pt_BR sk \
+		sr sr@ijekavian sr@ijekavianlatin sr@latin zh_CN zh_TW
+_MANPAGES+=	${PREFIX}/man/es/man6/wesnothd.6 \
+		${PREFIX}/man/tr/man6/wesnothd.6
+PLIST_SUB+=	NLS=""
 .endif
 
 .if defined(WITHOUT_POOLALLOC)
-CONFIGURE_ARGS+=	--disable-pool-alloc
+CMAKE_ARGS+=	-DENABLE_POOL_ALLOC=off
 .else
-CONFIGURE_ARGS+=	--enable-pool-alloc
+CMAKE_ARGS+=	-DENABLE_POOL_ALLOC=on
 .endif
 
 .if defined(WITHOUT_PYTHON)
-CONFIGURE_ARGS+=	--disable-python-install
-PLIST_SUB+=		PYTHON="@comment "
+PLIST_SUB+=	PYTHON="@comment "
 .else
-USE_PYTHON=		yes
-CONFIGURE_ENV+=		PYTHON_PREFIX=${PREFIX} \
-			PYTHON_VERSION=${PYTHON_VERSION:S/python//}
-CONFIGURE_ARGS+=	--enable-python-install
-PLIST_SUB+=		PYTHON=""
-.include "${PORTSDIR}/Mk/bsd.python.mk"
+BROKEN=		cmake build doesn\'t support installing python tools
+USE_PYTHON=	yes
+CONFIGURE_ENV+=	PYTHON_PREFIX=${PREFIX} \
+		PYTHON_VERSION=${PYTHON_VERSION:S/python//}
+CONFIGURE_ARGS+=--enable-python-install
+PLIST_SUB+=	PYTHON=""
 .endif
 
-.if defined(WITHOUT_RAWSOCKETS)
-CONFIGURE_ARGS+=	--disable-raw-sockets
-.else
-CONFIGURE_ARGS+=	--enable-raw-sockets
+.if !defined(WITHOUT_RAWSOCKETS)
+CFLAGS+=	-DNETWORK_USE_RAW_SOCKETS
 .endif
 
 .if defined(WITHOUT_SERVER)
-CONFIGURE_ARGS+=	--disable-server
-PLIST_SUB+=		SERVER="@comment "
+CMAKE_ARGS+=	-DENABLE_SERVER=off
+PLIST_SUB+=	SERVER="@comment "
 .else
-CONFIGURE_ARGS+=	--enable-server
-MAN6+=			wesnothd.6
-PLIST_SUB+=		SERVER=""
+CMAKE_ARGS+=	-DENABLE_SERVER=on
+MAN6+=		wesnothd.6
+PLIST_SUB+=	SERVER=""
 .endif
 
 .if defined(WITHOUT_TESTS)
-CONFIGURE_ARGS+=	--disable-tests
-PLIST_SUB+=		TESTS="@comment "
+CMAKE_ARGS+=	-DENABLE_TESTS=off
+PLIST_SUB+=	TESTS="@comment "
 .else
-CONFIGURE_ARGS+=	--enable-tests
-PLIST_SUB+=		TESTS=""
+CMAKE_ARGS+=	-DENABLE_TESTS=on
+PLIST_SUB+=	TESTS=""
 .endif
 
-.if defined(WITHOUT_TINYGUI)
-CONFIGURE_ARGS+=	--disable-tinygui
-.else
-BUILD_DEPENDS+=		convert:${PORTSDIR}/graphics/ImageMagick
-CONFIGURE_ARGS+=	--enable-tinygui
+.if !defined(WITHOUT_TINYGUI)
+CMAKE_ARGS+=	-DGUI=tiny
+BUILD_DEPENDS+=	convert:${PORTSDIR}/graphics/ImageMagick
 .endif
 
 .if defined(WITHOUT_TOOLS)
-CONFIGURE_ARGS+=	--disable-tools
-PLIST_SUB+=		TOOLS="@comment "
+CMAKE_ARGS+=	-DENABLE_TOOLS=off
+PLIST_SUB+=	TOOLS="@comment "
 .else
-CONFIGURE_ARGS+=	--enable-tools
-PLIST_SUB+=		TOOLS=""
+CMAKE_ARGS+=	-DENABLE_TOOLS=on
+PLIST_SUB+=	TOOLS=""
 .endif
 
 .if defined(NOPORTDOCS)
-CONFIGURE_ARGS+=	--without-docs
+CMAKE_ARGS+=	-DDOCDIR=none
 .endif
 
 .if defined(NOPORTDATA)
 IGNORE=		game data is required, undefine NOPORTDATA
 .endif
 
-post-patch:	.SILENT
-	${REINPLACE_CMD} -e 's|png_voidp_NULL|NULL|g' \
-		-e 's|png_error_ptr_NULL|NULL|g' \
-		${WRKSRC}/src/tools/exploder_utils.cpp
-
 post-install:
 	-update-desktop-database ${PREFIX}/share/applications
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
