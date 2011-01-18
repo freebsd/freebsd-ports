@@ -7,15 +7,15 @@
 PORTNAME=	joomla15
 PORTVERSION=	1.5.22
 CATEGORIES=	www
-MASTER_SITES=	http://joomlacode.org/gf/download/frsrelease/13105/57240/ \
-		http://web.dti.supsi.ch/downloads/
+MASTER_SITES=	http://joomlacode.org/gf/download/frsrelease/13105/57238/ \
+		http://linux3.dti.supsi.ch/downloads/
 DISTNAME=	Joomla_${PORTVERSION}-Stable-Full_Package
 
 MAINTAINER=	robi@nunnisoft.ch
 COMMENT=	A dynamic web content management system (CMS)
 
 FETCH_CMD=	fetch -Rr
-USE_ZIP=	yes
+USE_BZIP2=	yes
 NO_BUILD=	yes
 USE_MYSQL=	yes
 USE_PHP=	mysql pcre xml zlib session gd pdf
