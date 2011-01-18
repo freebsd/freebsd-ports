@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	inform7
-PORTVERSION=	6F95
+PORTVERSION=	6G60
 CATEGORIES=	games
 MASTER_SITES=	http://ftp.ifarchive.org/if-archive/infocom/compilers/inform7/source/:1 \
 		http://ifarchive.heanet.ie/if-archive/infocom/compilers/inform7/source/:1 \
 		http://ftp.ifarchive.org/if-archive/infocom/compilers/inform7/executables/:2 \
 		http://ifarchive.heanet.ie/if-archive/infocom/compilers/inform7/executables/:2
 DISTFILES=	inform6.zip:1 \
-		I7_6F95_FreeBSD.zip:2
+		I7_6G60_FreeBSD.zip:2
 
 MAINTAINER=	akosela@andykosela.com
 COMMENT=	Inform 7 programming language (CLI edition)
