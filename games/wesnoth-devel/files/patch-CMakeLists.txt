@@ -1,0 +1,82 @@
+--- CMakeLists.txt~
++++ CMakeLists.txt
+@@ -21,11 +21,10 @@ set(CMAKE_MODULE_PATH ${CMAKE_SOURCE_DIR
+ find_package(SDL 1.2.7 REQUIRED)
+ find_package(Boost 1.35 REQUIRED COMPONENTS iostreams regex)
+ 
+-# no, gettext executables are not required when NLS is deactivated
++if(ENABLE_NLS)
+ find_package(Gettext)
+-# yes, libintl is *required* even when NLS is deactivated (this is to compile
+-# src/gettext.cpp since it includes libintl.h)
+ find_package(Libintl REQUIRED)
++endif(ENABLE_NLS)
+ 
+ find_package(X11)
+ 
+@@ -68,7 +67,7 @@ option(ENABLE_GAME "Enable compilation o
+ option(ENABLE_CAMPAIGN_SERVER "Enable compilation of campaign server")
+ option(ENABLE_SERVER "Enable compilation of server" ON)
+ option(ENABLE_EDITOR "Enable compilation of the new map editor into the game executable" ON)
+-option(ENABLE_TOOLS "Enable building and installation of tools for artists and WML maintainers")
++option(ENABLE_TOOLS "Enable building and installation of tools for artists and WML maintainers" OFF)
+ option(ENABLE_TESTS "Build unit tests")
+ option(ENABLE_NLS "Enable building of translations" ON)
+ option(ENABLE_POOL_ALLOC "Enable custom pool malloc" OFF)
+@@ -114,18 +113,18 @@ if(CMAKE_COMPILER_IS_GNUCXX)
+ 		endif(ENABLE_STRICT_COMPILATION)
+ 
+ 		# Strict compilation for C files is disabled until somebody wants to clean them.
+-		set(CMAKE_C_FLAGS "-O2 -W -Wall -ansi $ENV{CFLAGS}" 
++		set(CMAKE_C_FLAGS "-W -Wall -ansi $ENV{CFLAGS}" 
+ 				CACHE STRING "Flags used by the C compiler during normal builds." FORCE)
+-		set(CMAKE_C_FLAGS_DEBUG "-O0 -DDEBUG -ggdb3 -W -Wall -ansi $ENV{CFLAGS}"
++		set(CMAKE_C_FLAGS_DEBUG "-DDEBUG -W -Wall -ansi $ENV{CFLAGS}"
+ 				CACHE STRING "Flags used by the C compiler during debug builds." FORCE)
+-		set(CMAKE_C_FLAGS_RELEASE "-O3 -DNDEBUG -W -Wall -ansi $ENV{CFLAGS} -Wno-unused"
++		set(CMAKE_C_FLAGS_RELEASE "-DNDEBUG -W -Wall -ansi $ENV{CFLAGS} -Wno-unused"
+ 				CACHE STRING "Flags used by the C compiler during release builds." FORCE)
+ 
+-		set(CMAKE_CXX_FLAGS "-O2 -W -Wall -std=c++98 ${STRICT_FLAGS} $ENV{CXXFLAGS}"
++		set(CMAKE_CXX_FLAGS "-W -Wall -std=c++98 ${STRICT_FLAGS} $ENV{CXXFLAGS}"
+ 				CACHE STRING "Flags used by the CXX compiler during normal builds." FORCE)
+-		set(CMAKE_CXX_FLAGS_DEBUG "-O0 -DDEBUG -ggdb3 -W -Wall -std=c++98 ${STRICT_FLAGS} $ENV{CXXFLAGS}"
++		set(CMAKE_CXX_FLAGS_DEBUG "-DDEBUG -W -Wall -std=c++98 ${STRICT_FLAGS} $ENV{CXXFLAGS}"
+ 				CACHE STRING "Flags used by the CXX compiler during debug builds." FORCE)
+-		set(CMAKE_CXX_FLAGS_RELEASE "-O3 -DNDEBUG -W -Wall -std=c++98 ${STRICT_FLAGS} $ENV{CXXFLAGS} -Wno-unused"
++		set(CMAKE_CXX_FLAGS_RELEASE "-DNDEBUG -W -Wall -std=c++98 ${STRICT_FLAGS} $ENV{CXXFLAGS} -Wno-unused"
+ 				CACHE STRING "Flags used by the CXX compiler during release builds." FORCE)
+ 
+ 	endif(NOT CONFIGURED)
+@@ -151,9 +150,15 @@ if(X11_FOUND)
+ 	add_definitions(-D_X11)
+ endif(X11_FOUND)
+ 
++if(IS_ABSOLUTE ${LOCALEDIR})
++	set(LOCALE_INSTALL ${LOCALEDIR})
++	add_definitions(-DLOCALEDIR=\\\"${LOCALE_INSTALL}\\\")
++	set(LOCALEDIR "translations")
++else(IS_ABSOLUTE ${LOCALEDIR})
+ add_definitions(-DHAS_RELATIVE_LOCALEDIR=1)
+ add_definitions(-DLOCALEDIR=\\\"${LOCALEDIR}\\\")
+ set(LOCALE_INSTALL ${DATADIR}/${LOCALEDIR})
++endif(IS_ABSOLUTE ${LOCALEDIR})
+ 
+ add_definitions(-DFIFODIR=\\\"${FIFO_DIR}\\\")
+ 
+@@ -201,10 +206,14 @@ if(ENABLE_GAME)
+ 		pkg_check_modules( FONTCONFIG REQUIRED fontconfig>=2.4.1 )
+ 	endif(NOT MSVC)
+ 
+-	find_package( FriBiDi )
++	pkg_check_modules( FRIBIDI fribidi>=0.19.0 )
+ 	if(ENABLE_FRIBIDI AND FRIBIDI_LIBRARIES)
+ 		add_definitions(-DHAVE_FRIBIDI)
+ 	elseif(ENABLE_FRIBIDI AND NOT FRIBIDI_LIBRARIES)
++		pkg_check_modules( FRIBIDI fribidi )
++		if(FRIBIDI_LIBRARIES)
++			add_definitions(-DOLD_FRIBIDI)
++		endif(FRIBIDI_LIBRARIES)
+ 		message("Could not find FriBiDi. Disabling FriBiDi support.")
+ 	endif()
+ 
