@@ -598,6 +598,7 @@
     SUBDIR += postgresql-plruby
     SUBDIR += postgresql-pltcl
     SUBDIR += postgresql-relay
+    SUBDIR += postgresql-repmgr
     SUBDIR += postgresql-tcltk
     SUBDIR += postgresql73-client
     SUBDIR += postgresql73-server
