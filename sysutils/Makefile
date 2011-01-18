@@ -778,6 +778,7 @@
     SUBDIR += ruby-quota
     SUBDIR += rubygem-bundler
     SUBDIR += rubygem-capistrano
+    SUBDIR += rubygem-chef
     SUBDIR += rubygem-god
     SUBDIR += rubygem-ohai
     SUBDIR += rubygem-sys-admin
