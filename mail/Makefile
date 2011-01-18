@@ -105,6 +105,7 @@
     SUBDIR += dovecot2
     SUBDIR += dovecot2-pigeonhole
     SUBDIR += drac
+    SUBDIR += dracmail
     SUBDIR += drbl
     SUBDIR += dsbl-testers
     SUBDIR += dspam
