@@ -24,7 +24,7 @@ PORTDOCS=	README
 
 do-extract:
 	@${MKDIR} ${WRKSRC}
-	@cd ${DISTDIR} && ${CP} ${DISTFILES} ${WRKSRC}
+	@cd ${DISTDIR}/${DIST_SUBDIR} && ${CP} ${DISTFILES} ${WRKSRC}
 
 post-patch:
 	@${REINPLACE_CMD} -Ee "s,#!.*,#!${PYTHON_CMD}," ${WRKSRC}/*.py
