@@ -206,6 +206,7 @@ R                               ports/math/R
 R-cran-RSvgDevice               ports/math/R-cran-RSvgDevice
 R-cran-Zelig                    ports/math/R-cran-Zelig
 R-cran-car                      ports/math/R-cran-car
+R-cran-coda                     ports/math/R-cran-coda
 R-cran-gpclib                   ports/math/R-cran-gpclib
 R-cran-igraph                   ports/math/R-cran-igraph
 R-cran-inline                   ports/math/R-cran-inline
@@ -13869,6 +13870,7 @@ p5-ReadLine-Perl                ports/devel/p5-ReadLine-Perl
 p5-ReadLine-TTYtter             ports/devel/p5-ReadLine-TTYtter
 p5-Readonly                     ports/devel/p5-Readonly
 p5-Redis                        ports/databases/p5-Redis
+p5-Redis-hiredis                ports/databases/p5-Redis-hiredis
 p5-Regex-PreSuf                 ports/textproc/p5-Regex-PreSuf
 p5-Regexp-Assemble              ports/devel/p5-Regexp-Assemble
 p5-Regexp-Assemble-Compressed   ports/devel/p5-Regexp-Assemble-Compressed
@@ -17976,6 +17978,7 @@ p5-readline-ttytter             ports/devel/p5-ReadLine-TTYtter
 p5-readonly                     ports/devel/p5-Readonly
 p5-reaper                       ports/devel/p5-reaper
 p5-redis                        ports/databases/p5-Redis
+p5-redis-hiredis                ports/databases/p5-Redis-hiredis
 p5-regex-presuf                 ports/textproc/p5-Regex-PreSuf
 p5-regexp-assemble              ports/devel/p5-Regexp-Assemble
 p5-regexp-assemble-compressed   ports/devel/p5-Regexp-Assemble-Compressed
@@ -22238,6 +22241,7 @@ qwtplot3d                       ports/math/qwtplot3d
 qwtplot3d-qt4                   ports/math/qwtplot3d-qt4
 r                               ports/math/R
 r-cran-car                      ports/math/R-cran-car
+r-cran-coda                     ports/math/R-cran-coda
 r-cran-gpclib                   ports/math/R-cran-gpclib
 r-cran-igraph                   ports/math/R-cran-igraph
 r-cran-inline                   ports/math/R-cran-inline
@@ -25060,6 +25064,7 @@ trigger                         ports/games/trigger
 trimines                        ports/games/trimines
 trinokiller                     ports/security/trinokiller
 trio                            ports/devel/trio
+triplane                        ports/games/triplane
 tripwire                        ports/security/tripwire
 tripwire-131                    ports/security/tripwire-131
 tripwire12                      ports/security/tripwire12
