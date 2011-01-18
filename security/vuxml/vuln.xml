@@ -34,6 +34,43 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="38bdf10e-2293-11e0-bfa4-001676740879">
+    <topic>tor -- remote code execution and crash</topic>
+    <affects>
+      <package>
+	<name>tor</name>
+	<range><lt>0.2.1.29</lt></range>
+      </package>
+      <package>
+	<name>tor-devel</name>
+	<range><lt>0.2.2.21.a</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Tor Project reports:</p>
+	<blockquote cite="http://archives.seul.org/or/announce/Jan-2011/msg00000.html">
+	  <p>A remote heap overflow vulnerability that can allow remote
+	  code execution. Other fixes address a variety of assert and crash
+	  bugs, most of which we think are hard to exploit remotely.
+	  All Tor users should upgrade.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <bid>45832</bid>
+      <cvename>CVE-2011-0427</cvename>
+      <freebsdpr>ports/154099</freebsdpr>
+      <mlist msgid="20110117155813.GG3300@moria.seul.org">http://archives.seul.org/or/announce/Jan-2011/msg00000.html</mlist>
+      <url>https://gitweb.torproject.org/tor.git/blob/release-0.2.1:/ChangeLog</url>
+      <url>https://gitweb.torproject.org/tor.git/blob/release-0.2.2:/ChangeLog</url>
+    </references>
+    <dates>
+      <discovery>2011-01-15</discovery>
+      <entry>2011-01-17</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="908f4cf2-1e8b-11e0-a587-001b77d09812">
     <topic>sudo -- local privilege escalation</topic>
     <affects>
