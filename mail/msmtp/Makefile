@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	msmtp
-PORTVERSION=	1.4.22
+PORTVERSION=	1.4.23
 CATEGORIES=	mail ipv6
 MASTER_SITES=	SF
 
@@ -20,6 +20,8 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 MAN1=	msmtp.1
 INFO=	msmtp
+
+LICENSE=	GPLv3
 
 OPTIONS=	GNUTLS "Adds GnuTLS support" off \
 		OPENSSL "Adds support for SSL (Secure Socket Layer)" off \
