@@ -470,6 +470,7 @@
     SUBDIR += p5-HTML-FormatText-WithLinks
     SUBDIR += p5-HTML-Fraction
     SUBDIR += p5-HTML-HTML5-Parser
+    SUBDIR += p5-HTML-HTMLDoc
     SUBDIR += p5-HTML-RewriteAttributes
     SUBDIR += p5-HTML-SBC
     SUBDIR += p5-HTML-SuperForm
