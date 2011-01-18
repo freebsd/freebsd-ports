@@ -6,14 +6,16 @@
 #
 
 PORTNAME=	moinmoin
-PORTVERSION=	1.9.2
-PORTREVISION=	4
+PORTVERSION=	1.9.3
 CATEGORIES=	www python
 MASTER_SITES=	http://static.moinmo.in/files/
 DISTNAME=	moin-${PORTVERSION}
 
 MAINTAINER=	khsing.cn@gmail.com
 COMMENT=	A Python clone of WikiWiki
+
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/docs/licenses/COPYING
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
