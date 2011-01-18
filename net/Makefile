@@ -107,6 +107,7 @@
     SUBDIR += daemonlogger
     SUBDIR += danamics
     SUBDIR += dante
+    SUBDIR += daq
     SUBDIR += datapipe
     SUBDIR += dbeacon
     SUBDIR += delegate
