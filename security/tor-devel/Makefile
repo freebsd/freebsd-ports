@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tor
-DISTVERSION=	0.2.2.20-alpha
+DISTVERSION=	0.2.2.21-alpha
 CATEGORIES=	security net ipv6
 MASTER_SITES=	http://www.torproject.org/dist/ \
 		ftp://tor.tomyn.com/pub/mirrors/tor/ \
@@ -47,6 +47,9 @@ USE_RC_SUBR=	tor
 SUB_FILES=	pkg-message
 
 CONFLICTS=	tor-[0-9]*
+
+MANCOMPRESSED=	no
+MAN1=		tor.1 tor-resolve.1 torify.1 tor-gencert.1
 
 LICENSE=	BSD
 LICENSE_FILE=	${WRKSRC}/LICENSE
@@ -103,6 +106,8 @@ post-patch:
 post-configure:
 	@${FIND} -X ${WRKSRC} -type f -name Makefile | ${XARGS} ${REINPLACE_CMD} -e \
 		"s|-lpthread|${PTHREAD_LIBS}|g"
+	@${REINPLACE_CMD} -e '\|^nodist_man_MANS =|s|$$|${MAN1}|' \
+		${WRKSRC}/doc/Makefile
 
 pre-su-install:
 	@${SETENV} PKG_PREFIX=${PREFIX} ${SH} \
