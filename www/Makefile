@@ -600,6 +600,7 @@
     SUBDIR += newsfeed
     SUBDIR += nginx
     SUBDIR += nginx-devel
+    SUBDIR += nibbleblog
     SUBDIR += node
     SUBDIR += node-devel
     SUBDIR += notftp
