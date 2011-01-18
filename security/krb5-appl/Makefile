@@ -7,6 +7,7 @@
 
 PORTNAME=		krb5-appl
 PORTVERSION=		1.0.1
+PORTREVISION=		1
 CATEGORIES=		security
 MASTER_SITES=		http://web.mit.edu/kerberos/dist/${PORTNAME}/${PORTVERSION:C/^[0-9]*\.[0-9]*/&X/:C/X\.[0-9]*$//:C/X//}/
 PATCH_SITES=		http://web.mit.edu/kerberos/advisories/
@@ -26,7 +27,6 @@ CONFLICTS=		krb4-[0-9]* krb5-1.[0-7].* heimdal-[0-9]* srp-[0-9]*
 LATEST_LINK=		${PORTNAME}-1
 KERBEROSV_URL=		http://web.mit.edu/kerberos/
 USE_OPENSSL=		yes
-WITH_OPENSSL_PORT=	yes
 USE_GMAKE=		yes
 USE_PERL5_BUILD=	yes
 USE_LDCONFIG=		yes
