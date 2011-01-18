@@ -24,6 +24,8 @@ PLIST_FILES=	bin/busybox
 post-patch:
 	@${FIND} ${WRKSRC} -name '*.[ch]' | ${XARGS} \
 		${REINPLACE_CMD} -e 's/ dprintf(/ bb_dprintf(/g'
+	${REINPLACE_CMD} -e 's/fdprintf dprintf/fdprintf bb_dprintf/g' \
+		${WRKSRC}/include/platform.h
 
 do-configure:
 	${CP} ${FILESDIR}/data-.config ${WRKSRC}/.config
