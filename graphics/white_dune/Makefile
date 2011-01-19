@@ -8,18 +8,21 @@
 
 PORTNAME=	white_dune
 PORTVERSION=	${DISTVERSION:S/pl/./}
-DISTVERSION=	0.28pl14
-PORTREVISION=	4
+DISTVERSION=	0.30pl5
 PORTEPOCH=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://vrml.cip.ica.uni-stuttgart.de/dune/ CENKES
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	devel@stasyan.com
 COMMENT=	Graphical VRML97 Editor and animation tool
 
 LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg \
 		png.6:${PORTSDIR}/graphics/png
 
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
+
+USE_XORG=	xft
 USE_MOTIF=	yes
 USE_GL=		gl glu glut
 USE_SDL=	sdl
@@ -32,7 +35,7 @@ CONFIGURE_ARGS=	--with-optimization \
 		--with-vrml97am1url="${DOCSDIR}/vrml97Amendment1" \
 		--with-x3ddrafturl="${DOCSDIR}/x3dDraft" \
 		--with-scriptednodesurl="${DOCSDIR}/scriptedNodes"
-CPPFLAGS=	`${SDL_CONFIG} --cflags` -DUSBHID_UCR_DATA -DUSBHID_NEW
+CPPFLAGS=	`${SDL_CONFIG} --cflags` -DUSBHID_UCR_DATA -DUSBHID_NEW -D__FREEBSD__
 LDFLAGS=	`${SDL_CONFIG} --libs`
 ALL_TARGET=	dune
 
@@ -46,10 +49,4 @@ do-install:
 	@cd ${WRKSRC}/docs/&&${COPYTREE_SHARE} . ${DOCSDIR}/
 .endif
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 800064
-BROKEN=		does not build
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
