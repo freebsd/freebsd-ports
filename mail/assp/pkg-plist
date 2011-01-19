@@ -24,6 +24,7 @@ sbin/assplog
 %%DATADIR%%/files/notls.txt
 %%DATADIR%%/files/nowhite.txt
 %%DATADIR%%/files/preheaderre.txt
+%%DATADIR%%/files/rcptreplrules.txt
 %%DATADIR%%/files/redre.txt
 %%DATADIR%%/files/strictspf.txt
 %%DATADIR%%/files/subjectre.txt
