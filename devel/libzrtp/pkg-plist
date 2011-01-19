@@ -53,5 +53,6 @@ include/libzrtp/zrtp_srtp_builtin.h
 include/libzrtp/zrtp_string.h
 include/libzrtp/zrtp_types.h
 include/libzrtp/zrtp_version.h
+lib/libbn.a
 lib/libzrtp.a
 @dirrm include/libzrtp
