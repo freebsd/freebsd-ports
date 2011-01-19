@@ -16,6 +16,8 @@ DISTNAME=	SPIP-v${PORTVERSION:U:C|\.|-|g}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A publishing system for the Internet (CMS)
 
+FORBIDDEN=	Security: http://www.spip-contrib.net/SPIP-2-1-8-corrige-une-importante-faille-de-securite
+
 USE_ZIP=	yes
 USE_PHP=	mysql pcre
 NO_BUILD=	yes
