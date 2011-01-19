@@ -20,6 +20,10 @@ LICENSE=	LGPL21
 OPTIONS=	GNUTLS "Build with gnutls to support ssl" off
 .include <bsd.port.options.mk>
 
+.if ${OSVERSION} < 702000
+IGNORE=	strdup is not available in this OS release
+.endif
+
 .if defined(WITH_GNUTLS)
 LIB_DEPENDS=	gnutls.40:${PORTSDIR}/security/gnutls
 CONFIGURE_ARGS+=--with-gnutls=${LOCALBASE} --enable-https
