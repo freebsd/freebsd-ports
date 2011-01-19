@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	merkaartor
-PORTVERSION=	0.16.3
+PORTVERSION=	0.17.0
 CATEGORIES=	astro
-MASTER_SITES=	http://www.merkaartor.be/attachments/download/29/
+MASTER_SITES=	http://www.merkaartor.be/attachments/download/192/
 
 MAINTAINER=	slaven@rezic.de
 COMMENT=	An openstreetmap mapping program
@@ -27,13 +27,39 @@ INSTALLS_ICONS=	yes
 
 QMAKEFLAGS=	PREFIX=${PREFIX}
 
-OPTIONS=	GEOIMAGE "Enable geotagged images (needs exiv2)" on
+OPTIONS=	GEOIMAGE "Enable geotagged images (needs exiv2)" on\
+		GDAL     "Use the Geospatial Data Abstraction Library" on\
+		PROJ     "Use the Cartographic Projections Library" on\
+		ZBAR     "Read barcodes from walking papers" off\
+		DEBUG    "Enable debugging and verbose logging" off
 
 .include <bsd.port.options.mk>
 
 .if !defined(WITHOUT_GEOIMAGE)
 QMAKEFLAGS+=	GEOIMAGE=1
 LIB_DEPENDS+=	exiv2:${PORTSDIR}/graphics/exiv2
+.endif
+
+.if defined(WITH_GDAL)
+QMAKEFLAGS+=	GDAL=1
+LIB_DEPENDS+=	gdal:${PORTSDIR}/graphics/gdal
+PLIST_SUB+=	GDAL=""
+.else
+PLIST_SUB+=	GDAL="@comment "
+.endif
+
+.if defined(WITH_PROJ)
+QMAKEFLAGS+=	PROJ=1
+LIB_DEPENDS+=	proj:${PORTSDIR}/graphics/proj
+.endif
+
+.if defined(WITH_ZBAR)
+QMAKEFLAGS+=	ZBAR=1
+LIB_DEPENDS+=	zbar:${PORTSDIR}/graphics/zbar
+.endif
+
+.if !defined(WITH_DEBUG)
+QMAKEFLAGS+=	RELEASE=1 NODEBUG=1
 .endif
 
 .if defined(WITHOUT_NLS)
