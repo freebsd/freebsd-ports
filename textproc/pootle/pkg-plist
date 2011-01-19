@@ -773,6 +773,7 @@ bin/updatetm
 %%DATADIR%%/html/js/mt/apertium.js
 %%DATADIR%%/html/js/mt/google-translate.js
 %%DATADIR%%/mo/README
+%%DATADIR%%/mo/ach/LC_MESSAGES/django.mo
 %%DATADIR%%/mo/af/LC_MESSAGES/django.mo
 %%DATADIR%%/mo/ak/LC_MESSAGES/django.mo
 %%DATADIR%%/mo/am/LC_MESSAGES/django.mo
@@ -1128,6 +1129,8 @@ bin/updatetm
 @dirrm %%DATADIR%%/mo/ak
 @dirrm %%DATADIR%%/mo/af/LC_MESSAGES
 @dirrm %%DATADIR%%/mo/af
+@dirrm %%DATADIR%%/mo/ach/LC_MESSAGES
+@dirrm %%DATADIR%%/mo/ach
 @dirrm %%DATADIR%%/mo
 @dirrm %%DATADIR%%/templates/registration
 @dirrm %%DATADIR%%/templates/profiles
