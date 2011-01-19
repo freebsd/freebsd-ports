@@ -6,8 +6,7 @@
 #
 
 PORTNAME=		mapserver
-PORTVERSION=		5.6.5
-PORTREVISION=		3
+PORTVERSION=		5.6.6
 CATEGORIES=		graphics www geography
 MASTER_SITES=		http://download.osgeo.org/mapserver/
 
@@ -97,7 +96,9 @@ CONFIGURE_ARGS+=	--with-mygis=${LOCALBASE}/bin/mysql_config
 .endif
 
 .if defined(WITH_POSTGIS)
-BUILD_DEPENDS+=		${LOCALBASE}/lib/libpgport.a:${PORTSDIR}/databases/postgresql82-server
+BUILD_DEPENDS+=		${LOCALBASE}/lib/libpgport.a:${PORTSDIR}/databases/postgresql${PGSQL_VER}-server
+USE_PGSQL=		YES
+DEFAULT_PGSQL_VER=	83
 CONFIGURE_ARGS+=	--with-postgis=${LOCALBASE}/bin/pg_config
 .endif
 
