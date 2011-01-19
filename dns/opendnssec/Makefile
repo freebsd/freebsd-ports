@@ -6,17 +6,15 @@
 #
 
 PORTNAME=	opendnssec
-PORTVERSION=	1.1.3
-PORTREVISION=	1
+PORTVERSION=	1.2.0
 CATEGORIES=	dns
 MASTER_SITES=	http://www.opendnssec.org/files/source/
 
 MAINTAINER=	jaap@NLnetLabs.nl
 COMMENT=	Tool suite for maintaining DNSSEC
 
-BUILD_DEPENDS=	ldns>=1.6.6:${PORTSDIR}/dns/ldns \
-		${PYTHON_SITELIBDIR}/Ft/Xml/__init__.py:${PORTSDIR}/textproc/py-4suite-xml \
-		rubygem-dnsruby>=1.49:${PORTSDIR}/dns/rubygem-dnsruby \
+BUILD_DEPENDS=	ldns>=1.6.7:${PORTSDIR}/dns/ldns \
+		rubygem-dnsruby>=1.51:${PORTSDIR}/dns/rubygem-dnsruby \
 		sqlite3>=3.4.2:${PORTSDIR}/databases/sqlite3
 LIB_DEPENDS=	ldns:${PORTSDIR}/dns/ldns \
 		sqlite3:${PORTSDIR}/databases/sqlite3
@@ -24,7 +22,6 @@ LIB_DEPENDS=	ldns:${PORTSDIR}/dns/ldns \
 GNU_CONFIGURE=	yes
 USE_GNOME=	libxml2
 USE_PERL5=	yes
-USE_PYTHON=	2.4+
 USE_RUBY=	yes
 USE_LDCONFIG=	yes
 
@@ -34,7 +31,11 @@ MAN5=		ods-timing.5
 MAN7=		opendnssec.7
 MAN8=		ods-control.8 ods-enforcerd.8 ods-signer.8 ods-signerd.8
 
-pre-configure:
-	@${REINPLACE_CMD} -e 's/ Ft.Xml.XPath//' ${WRKSRC}/signer/configure
+PKGMESSAGE=	${WRKSRC}/MIGRATION
+
+post-install:
+.if !defined(BATCH)
+	@${CAT} ${PKGMESSAGE}
+.endif
 
 .include <bsd.port.mk>

@@ -12,14 +12,9 @@ bin/ods-kasp2html
 %%ETCDIR%%/zonefetch.xml.sample
 %%ETCDIR%%/zonelist.xml
 %%ETCDIR%%/zonelist.xml.sample
-include/hsmtest.h
-include/libhsm.h
-include/libhsmdns.h
-lib/libhsm.a
-lib/libhsm.la
-lib/libhsm.so
-lib/libhsm.so.1
 lib/opendnssec/kasp_auditor/auditor.rb
+lib/opendnssec/kasp_auditor/changed_config.rb
+lib/opendnssec/kasp_auditor/commands.rb
 lib/opendnssec/kasp_auditor/config.rb
 lib/opendnssec/kasp_auditor/key_tracker.rb
 lib/opendnssec/kasp_auditor/parse.rb
@@ -27,41 +22,11 @@ lib/opendnssec/kasp_auditor/preparser.rb
 lib/opendnssec/kasp_auditor.rb
 lib/opendnssec/kasp_auditor/partial_auditor.rb
 lib/opendnssec/kasp_checker.rb
-lib/opendnssec/signer/Engine.py
-lib/opendnssec/signer/Engine.pyc
-lib/opendnssec/signer/Engine.pyo
-lib/opendnssec/signer/EngineConfig.py
-lib/opendnssec/signer/EngineConfig.pyc
-lib/opendnssec/signer/EngineConfig.pyo
-lib/opendnssec/signer/Util.py
-lib/opendnssec/signer/Util.pyc
-lib/opendnssec/signer/Util.pyo
-lib/opendnssec/signer/Worker.py
-lib/opendnssec/signer/Worker.pyc
-lib/opendnssec/signer/Worker.pyo
-lib/opendnssec/signer/Zone.py
-lib/opendnssec/signer/Zone.pyc
-lib/opendnssec/signer/Zone.pyo
-lib/opendnssec/signer/ZoneConfig.py
-lib/opendnssec/signer/ZoneConfig.pyc
-lib/opendnssec/signer/ZoneConfig.pyo
-lib/opendnssec/signer/ZoneList.py
-lib/opendnssec/signer/ZoneList.pyc
-lib/opendnssec/signer/ZoneList.pyo
 lib/opendnssec/time_shift.rb
-libexec/opendnssec/create_dnskey
-libexec/opendnssec/finalizer
-libexec/opendnssec/get_class
-libexec/opendnssec/get_serial
-libexec/opendnssec/quicksorter
-libexec/opendnssec/signer
-libexec/opendnssec/zone_fetcher
-libexec/opendnssec/zone_reader
 sbin/ods-control
 sbin/ods-enforcerd
 sbin/ods-signer
 sbin/ods-signerd
-%%DATADIR%%.spec
 %%DATADIR%%/conf.rnc
 %%DATADIR%%/conf.rng
 %%DATADIR%%/database_create.sqlite3
@@ -83,9 +48,7 @@ sbin/ods-signerd
 @dirrm var/opendnssec
 @dirrm var
 @dirrm %%DATADIR%%
-@dirrm libexec/opendnssec
 @dirrm lib/opendnssec/kasp_auditor
-@dirrm lib/opendnssec/signer
 @dirrm lib/opendnssec
 @dirrm %%ETCDIR%%
 @exec mkdir -p %D/var/run/opendnssec
