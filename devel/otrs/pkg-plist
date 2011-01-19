@@ -177,6 +177,7 @@ otrs/scripts/test/Group.t
 otrs/scripts/test/HTMLUtils.t
 otrs/scripts/test/JSON.t
 otrs/scripts/test/Layout.t
+otrs/scripts/test/LayoutTicket.t
 otrs/scripts/test/LinkObject.t
 otrs/scripts/test/Loader.t
 otrs/scripts/test/Lock.t
@@ -192,7 +193,6 @@ otrs/scripts/test/Queue.t
 otrs/scripts/test/SLA.t
 otrs/scripts/test/SMIME.t
 otrs/scripts/test/Salutation.t
-otrs/scripts/test/Selenium.t
 otrs/scripts/test/Service.t
 otrs/scripts/test/Signature.t
 otrs/scripts/test/StandardResponse.t
@@ -275,6 +275,7 @@ otrs/var/httpd/htdocs/js/test/Core.Form.UnitTest.js
 otrs/var/httpd/htdocs/js/test/Core.JSON.UnitTest.js
 otrs/var/httpd/htdocs/js/test/Core.JavaScriptEnhancements.UnitTest.js
 otrs/var/httpd/htdocs/js/test/Core.UI.Accessibility.UnitTest.js
+otrs/var/httpd/htdocs/js/test/Core.UI.Popup.UnitTest.js
 otrs/var/httpd/htdocs/js/test/JSUnitTest.html
 otrs/var/httpd/htdocs/js/test/sample/Core.AJAX.ContentUpdate1.html
 otrs/var/httpd/htdocs/js/test/sample/Core.AJAX.FunctionCall1.html
@@ -513,7 +514,7 @@ otrs/var/httpd/htdocs/js/thirdparty/flot-0.6/jquery.flot.js
 otrs/var/httpd/htdocs/js/thirdparty/jquery-1.4.4/jquery.js
 otrs/var/httpd/htdocs/js/thirdparty/jquery-tablesorter-2.0.5/jquery.tablesorter.js
 otrs/var/httpd/htdocs/js/thirdparty/jquery-tooltip-1.3/jquery.tooltip.js
-otrs/var/httpd/htdocs/js/thirdparty/jquery-ui-1.8.6/jquery-ui.js
+otrs/var/httpd/htdocs/js/thirdparty/jquery-ui-1.8.7/jquery-ui.js
 otrs/var/httpd/htdocs/js/thirdparty/jquery-validate-1.7/jquery.validate.js
 otrs/var/httpd/htdocs/js/thirdparty/json/json2.js
 otrs/var/httpd/htdocs/js/thirdparty/qunit/qunit.css
@@ -857,8 +858,8 @@ otrs/Kernel/Config/Files/Ticket.xml
 otrs/Kernel/Language.pm
 otrs/Kernel/Language/ar_SA.pm
 otrs/Kernel/Language/bg.pm
+otrs/Kernel/Language/cs.pm
 otrs/Kernel/Language/ct.pm
-otrs/Kernel/Language/cz.pm
 otrs/Kernel/Language/da.pm
 otrs/Kernel/Language/de.pm
 otrs/Kernel/Language/el.pm
@@ -1367,6 +1368,7 @@ otrs/Kernel/System/Ticket/Permission/WatcherCheck.pm
 otrs/Kernel/System/Time.pm
 otrs/Kernel/System/Type.pm
 otrs/Kernel/System/UnitTest.pm
+otrs/Kernel/System/UnitTest/Helper.pm
 otrs/Kernel/System/UnitTest/Selenium.pm
 otrs/Kernel/System/User.pm
 otrs/Kernel/System/User/Preferences/DB.pm
@@ -1472,7 +1474,7 @@ otrs/Kernel/System/XMLMaster.pm
 @dirrm otrs/var/httpd/htdocs/js/thirdparty/stacktrace
 @dirrm otrs/var/httpd/htdocs/js/thirdparty/json
 @dirrm otrs/var/httpd/htdocs/js/thirdparty/jquery-validate-1.7
-@dirrm otrs/var/httpd/htdocs/js/thirdparty/jquery-ui-1.8.6
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/jquery-ui-1.8.7
 @dirrm otrs/var/httpd/htdocs/js/thirdparty/jquery-tooltip-1.3
 @dirrm otrs/var/httpd/htdocs/js/thirdparty/jquery-tablesorter-2.0.5
 @dirrm otrs/var/httpd/htdocs/js/thirdparty/jquery-1.4.4
@@ -1561,6 +1563,7 @@ otrs/Kernel/System/XMLMaster.pm
 @dirrm otrs/var/httpd/htdocs/js/thirdparty
 @dirrm otrs/var/httpd/htdocs/js/test/sample
 @dirrm otrs/var/httpd/htdocs/js/test
+@dirrm otrs/var/httpd/htdocs/js/js-cache
 @dirrm otrs/var/httpd/htdocs/js
 @dirrm otrs/var/httpd/htdocs
 @dirrm otrs/var/httpd
