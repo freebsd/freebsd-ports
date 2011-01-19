@@ -1,4 +1,5 @@
 @comment $FreeBSD$
+%%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/config-guide.txt
 %%PORTDOCS%%%%DOCSDIR%%/hacking/classes.txt
 %%PORTDOCS%%%%DOCSDIR%%/hacking/hooks.txt
@@ -45,11 +46,31 @@
 %%SITE_PERL%%/Perlbal/Test/WebServer.pm
 %%SITE_PERL%%/Perlbal/UploadListener.pm
 %%SITE_PERL%%/Perlbal/Util.pm
+%%SITE_PERL%%/Perlbal/Manual/Credits.pod
+%%SITE_PERL%%/Perlbal/Manual/Roles.pod
+%%SITE_PERL%%/Perlbal/Manual/Management.pod
+%%SITE_PERL%%/Perlbal/Manual/Hooks.pod
+%%SITE_PERL%%/Perlbal/Manual/FailOver.pod
+%%SITE_PERL%%/Perlbal/Manual/Plugins.pod
+%%SITE_PERL%%/Perlbal/Manual/ReverseProxy.pod
+%%SITE_PERL%%/Perlbal/Manual/Logging.pod
+%%SITE_PERL%%/Perlbal/Manual/LoadBalancer.pod
+%%SITE_PERL%%/Perlbal/Manual/HighPriority.pod
+%%SITE_PERL%%/Perlbal/Manual/Debugging.pod
+%%SITE_PERL%%/Perlbal/Manual/Selector.pod
+%%SITE_PERL%%/Perlbal/Manual/Contributing.pod
+%%SITE_PERL%%/Perlbal/Manual/WebServer.pod
+%%SITE_PERL%%/Perlbal/Manual/Configuration.pod
+%%SITE_PERL%%/Perlbal/Manual/Internals.pod
+%%SITE_PERL%%/Perlbal/Manual/Install.pod
+%%SITE_PERL%%/Perlbal/Manual.pod
+%%SITE_PERL%%/Perlbal/FAQ.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Perlbal/.packlist
 bin/perlbal
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Perlbal
 @dirrm %%SITE_PERL%%/Perlbal/Test
 @dirrm %%SITE_PERL%%/Perlbal/Plugin
+@dirrm %%SITE_PERL%%/Perlbal/Manual
 @dirrm %%SITE_PERL%%/Perlbal
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/hacking
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
