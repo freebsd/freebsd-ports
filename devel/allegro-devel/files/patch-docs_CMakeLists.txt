@@ -1,0 +1,11 @@
+--- docs/CMakeLists.txt.orig	2010-12-15 13:29:42.000000000 +0600
++++ docs/CMakeLists.txt	2010-12-15 13:29:49.000000000 +0600
+@@ -9,7 +9,7 @@
+ endif()
+ 
+ set(DOCDIR "doc" CACHE STRING "Install docs into $DOCDIR/allegro-$VERSION")
+-set(ACTUAL_DOC_DIR "${DOCDIR}/allegro-${ALLEGRO_VERSION}")
++set(ACTUAL_DOC_DIR "${DOCDIR}")
+ 
+ add_executable(makedoc
+     src/makedoc/makedoc.c
