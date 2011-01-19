@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	Config-JFDI
-PORTVERSION=	0.064
+PORTVERSION=	0.065
 CATEGORIES=	devel perl5
-MASTER_SITES=	CPAN
+MASTER_SITES=	CPAN/../../authors/id/R/RO/ROKR
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
@@ -16,16 +16,15 @@ COMMENT=	A Catalyst::Plugin::ConfigLoader-style layer over Config::Any
 
 BUILD_DEPENDS=	\
 	p5-Carp-Clan-Share>=0:${PORTSDIR}/devel/p5-Carp-Clan-Share \
-	p5-MooseX-AttributeHelpers>=0:${PORTSDIR}/devel/p5-MooseX-AttributeHelpers \
 	p5-Hash-Merge-Simple>=0:${PORTSDIR}/devel/p5-Hash-Merge-Simple \
 	p5-Config-Any>=0:${PORTSDIR}/devel/p5-Config-Any \
-	p5-Carp-Clan>=0:${PORTSDIR}/devel/p5-Carp-Clan \
+	p5-Config-General>=0:${PORTSDIR}/devel/p5-Config-General \
 	p5-Clone>=0:${PORTSDIR}/devel/p5-Clone \
 	p5-List-MoreUtils>=0:${PORTSDIR}/lang/p5-List-MoreUtils \
-	p5-Moose>=0:${PORTSDIR}/devel/p5-Moose \
+	p5-Any-Moose>=0:${PORTSDIR}/devel/p5-Any-Moose \
 	p5-Path-Class>=0:${PORTSDIR}/devel/p5-Path-Class \
 	p5-Sub-Install>=0:${PORTSDIR}/devel/p5-Sub-Install \
-	p5-Data-Visitor>=0:${PORTSDIR}/devel/p5-Data-Visitor
+	p5-Data-Visitor>=0.24:${PORTSDIR}/devel/p5-Data-Visitor
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
