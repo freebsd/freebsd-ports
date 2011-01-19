@@ -24,6 +24,9 @@ USE_LDCONFIG=	yes
 
 BROKEN=		does not build
 
+DEPRECATED=	unmaintained and failed to build for months
+EXPIRATION_DATE=2011-02-28
+
 MAN3=	V3DGLInterpriteDelete.3 \
 	V3DGLInterpriteNew.3 \
 	V3DGLProcessModel.3 \
