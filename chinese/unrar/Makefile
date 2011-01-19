@@ -16,4 +16,6 @@ EXTRA_PATCHES=	${.CURDIR}/files/patch-arcread.cpp \
 
 CONFLICTS=	unrar-*
 
+BROKEN=		Obsoleted.
+
 .include "${MASTERDIR}/Makefile"
