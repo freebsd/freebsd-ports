@@ -6,20 +6,21 @@
 #
 
 PORTNAME=	Data-GUID
-PORTVERSION=	0.045
+PORTVERSION=	0.046
 CATEGORIES=	devel perl5
-MASTER_SITES=	CPAN
+MASTER_SITES=	CPAN/../../authors/id/R/RJ/RJBS
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	tobez@FreeBSD.org
 COMMENT=	Generate globally unique identifiers
 
-BUILD_DEPENDS=	${SITE_PERL}/Sub/Install.pm:${PORTSDIR}/devel/p5-Sub-Install \
-		${SITE_PERL}/Sub/Exporter.pm:${PORTSDIR}/devel/p5-Sub-Exporter \
+BUILD_DEPENDS=	p5-Sub-Install>=0.03:${PORTSDIR}/devel/p5-Sub-Install \
+		p5-Sub-Exporter>=0.90:${PORTSDIR}/devel/p5-Sub-Exporter \
 		p5-Data-UUID>=1.148:${PORTSDIR}/devel/p5-Data-UUID
 RUN_DEPENDS=	${BUILD_DEPENDS}
+TEST_DEPENDS=	p5-Test-Simple>=0.88:${PORTSDIR}/devel/p5-Test-Simple
 
-PERL_CONFIGURE=	5.8.0+
+PERL_CONFIGURE=	yes
 
 MAN3=	Data::GUID.3
 
