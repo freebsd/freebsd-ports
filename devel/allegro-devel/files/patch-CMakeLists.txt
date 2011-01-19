@@ -1,0 +1,32 @@
+--- CMakeLists.txt.orig	2010-03-03 11:07:40.000000000 +0100
++++ CMakeLists.txt	2011-01-19 12:38:44.000000000 +0100
+@@ -66,7 +66,7 @@
+ endif(WIN32)
+ 
+ set(ALLEGRO_VERSION 4.4.1)
+-string(REGEX MATCH "^[0-9]+[.][0-9]+" ALLEGRO_SOVERSION ${ALLEGRO_VERSION})
++string(REGEX MATCH "^[0-9]" ALLEGRO_SOVERSION ${ALLEGRO_VERSION})
+ 
+ # Mac OS X -compatibility_version.
+ # XXX doesn't seem to work
+@@ -83,6 +83,7 @@
+ 
+ # Put libraries into `lib'.
+ set(LIBRARY_OUTPUT_PATH ${CMAKE_BINARY_DIR}/lib)
++set(LIBDATA_OUTPUT_PATH ${CMAKE_BINARY_DIR}/libdata)
+ 
+ # Lists of all the source files.
+ include(FileList)
+@@ -880,10 +881,10 @@
+ 
+         configure_file(
+             misc/${name}.pc.in
+-            ${LIBRARY_OUTPUT_PATH}/pkgconfig/${name}${lib_type}.pc
++            ${LIBDATA_OUTPUT_PATH}/pkgconfig/${name}${lib_type}.pc
+             @ONLY
+             )
+-        install(FILES ${LIBRARY_OUTPUT_PATH}/pkgconfig/${name}${lib_type}.pc
++        install(FILES ${LIBDATA_OUTPUT_PATH}/pkgconfig/${name}${lib_type}.pc
+                 DESTINATION "lib${LIB_SUFFIX}/pkgconfig"
+                 )
+     endforeach(name)
