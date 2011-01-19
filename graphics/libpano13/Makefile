@@ -17,6 +17,8 @@ LIB_DEPENDS=	jpeg:${PORTSDIR}/graphics/jpeg \
 		png:${PORTSDIR}/graphics/png \
 		tiff:${PORTSDIR}/graphics/tiff
 
+BROKEN=		incomplete plist (and installs .pc file to lib/pkg-config)
+
 USE_GNOME=	gtk20 glib20 pango atk
 
 USE_AUTOTOOLS=	autoconf:env autoheader:env aclocal:env \
