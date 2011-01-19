@@ -43,7 +43,7 @@ Note:  Please add new entries to the beginning of this file.
       </package>
       <package>
 	<name>asterisk16</name>
-	<range><gt>1.6.*</gt><lt>1.6.16.1</lt></range>
+	<range><gt>1.6.*</gt><lt>1.6.2.16.1</lt></range>
       </package>
       <package>
 	<name>asterisk18</name>
