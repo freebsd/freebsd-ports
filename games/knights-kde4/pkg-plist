@@ -1,15 +1,95 @@
 bin/knights
 share/applications/kde4/knights.desktop
 share/apps/knights/knightsui.rc
-share/apps/knights/themes/default.desktop
+share/apps/knights/themes/east_west.desktop
+share/apps/knights/themes/east_west.png
+share/apps/knights/themes/east_west.svgz
+share/apps/knights/themes/gray.desktop
+share/apps/knights/themes/gray.png
+share/apps/knights/themes/gray.svgz
+share/apps/knights/themes/knights.desktop
 share/apps/knights/themes/knights.png
-share/apps/knights/themes/knights.svg
-share/apps/knights/themes/tux.desktop
-share/apps/knights/themes/tux.png
-share/apps/knights/themes/tux.svg
+share/apps/knights/themes/knights.svgz
+share/apps/knights/themes/plain.desktop
+share/apps/knights/themes/plain.png
+share/apps/knights/themes/plain.svgz
+share/apps/knights/themes/xboard2.desktop
+share/apps/knights/themes/xboard2.png
+share/apps/knights/themes/xboard2.svgz
 share/config.kcfg/knights.kcfg
+share/config/knights.knsrc
+share/doc/HTML/en/knights/Knights-board-setup.png
+share/doc/HTML/en/knights/Knights-board.png
+share/doc/HTML/en/knights/Knights-castle-kingside.png
+share/doc/HTML/en/knights/Knights-castle-queenside.png
+share/doc/HTML/en/knights/Knights-danger.png
+share/doc/HTML/en/knights/Knights-enpassant.png
+share/doc/HTML/en/knights/Knights-lastmove.png
+share/doc/HTML/en/knights/Knights-move-bishop.png
+share/doc/HTML/en/knights/Knights-move-king.png
+share/doc/HTML/en/knights/Knights-move-knight.png
+share/doc/HTML/en/knights/Knights-move-limits.png
+share/doc/HTML/en/knights/Knights-move-pawn.png
+share/doc/HTML/en/knights/Knights-move-queen.png
+share/doc/HTML/en/knights/Knights-move-rook.png
+share/doc/HTML/en/knights/Knights-moving-queen.png
+share/doc/HTML/en/knights/Knights-newgame-dialog.png
+share/doc/HTML/en/knights/common
+share/doc/HTML/en/knights/index.cache.bz2
+share/doc/HTML/en/knights/index.docbook
+share/doc/HTML/es/knights/common
+share/doc/HTML/es/knights/index.cache.bz2
+share/doc/HTML/es/knights/index.docbook
+share/doc/HTML/nl/knights/common
+share/doc/HTML/nl/knights/index.cache.bz2
+share/doc/HTML/nl/knights/index.docbook
+share/doc/HTML/pt/knights/common
+share/doc/HTML/pt/knights/index.cache.bz2
+share/doc/HTML/pt/knights/index.docbook
+share/doc/HTML/pt_BR/knights/common
+share/doc/HTML/pt_BR/knights/index.cache.bz2
+share/doc/HTML/pt_BR/knights/index.docbook
+share/doc/HTML/sv/knights/common
+share/doc/HTML/sv/knights/index.cache.bz2
+share/doc/HTML/sv/knights/index.docbook
+share/doc/HTML/uk/knights/Knights-newgame-dialog.png
+share/doc/HTML/uk/knights/common
+share/doc/HTML/uk/knights/index.cache.bz2
+share/doc/HTML/uk/knights/index.docbook
 share/icons/hicolor/16x16/apps/knights.png
 share/icons/hicolor/32x32/apps/knights.png
 share/icons/hicolor/48x48/apps/knights.png
-@dirrm share/apps/knights/themes/
-@dirrm share/apps/knights/
+share/icons/hicolor/64x64/apps/knights.png
+share/locale/cs/LC_MESSAGES/knights.mo
+share/locale/da/LC_MESSAGES/knights.mo
+share/locale/de/LC_MESSAGES/knights.mo
+share/locale/en_GB/LC_MESSAGES/knights.mo
+share/locale/eo/LC_MESSAGES/knights.mo
+share/locale/es/LC_MESSAGES/knights.mo
+share/locale/et/LC_MESSAGES/knights.mo
+share/locale/fr/LC_MESSAGES/knights.mo
+share/locale/hu/LC_MESSAGES/knights.mo
+share/locale/it/LC_MESSAGES/knights.mo
+share/locale/ja/LC_MESSAGES/knights.mo
+share/locale/lt/LC_MESSAGES/knights.mo
+share/locale/nds/LC_MESSAGES/knights.mo
+share/locale/nl/LC_MESSAGES/knights.mo
+share/locale/pt/LC_MESSAGES/knights.mo
+share/locale/pt_BR/LC_MESSAGES/knights.mo
+share/locale/ru/LC_MESSAGES/knights.mo
+share/locale/sk/LC_MESSAGES/knights.mo
+share/locale/sr/LC_MESSAGES/knights.mo
+share/locale/sr@ijekavian/LC_MESSAGES/knights.mo
+share/locale/sr@ijekavianlatin/LC_MESSAGES/knights.mo
+share/locale/sv/LC_MESSAGES/knights.mo
+share/locale/uk/LC_MESSAGES/knights.mo
+share/locale/zh_TW/LC_MESSAGES/knights.mo
+@dirrm share/doc/HTML/uk/knights
+@dirrm share/doc/HTML/sv/knights
+@dirrm share/doc/HTML/pt_BR/knights
+@dirrm share/doc/HTML/pt/knights
+@dirrm share/doc/HTML/nl/knights
+@dirrm share/doc/HTML/es/knights
+@dirrm share/doc/HTML/en/knights
+@dirrm share/apps/knights/themes
+@dirrm share/apps/knights
