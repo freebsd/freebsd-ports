@@ -2177,6 +2177,7 @@ danpei                          ports/graphics/danpei
 dansguardian                    ports/www/dansguardian
 dante                           ports/net/dante
 dap                             ports/audio/dap
+daq                             ports/net/daq
 dar                             ports/sysutils/dar
 darcnes                         ports/emulators/darcnes
 darkbot                         ports/irc/darkbot
@@ -2622,6 +2623,7 @@ dpkg                            ports/archivers/dpkg
 dprog                           ports/devel/dprog
 dpsearch                        ports/www/dpsearch
 drac                            ports/mail/drac
+dracmail                        ports/mail/dracmail
 dradis                          ports/security/dradis
 dragon                          ports/devel/dragon
 dragstack                       ports/deskutils/dragstack
@@ -4564,6 +4566,7 @@ global-menu                     ports/deskutils/global-menu
 glog                            ports/devel/glog
 glom                            ports/databases/glom
 gloox                           ports/net-im/gloox
+glosm                           ports/graphics/glosm
 glpi                            ports/www/glpi
 glpi-plugins-AdditionalReports  ports/textproc/glpi-plugins-AdditionalReports
 glpi-plugins-DataInjection      ports/textproc/glpi-plugins-DataInjection
@@ -10219,6 +10222,7 @@ ngrep                           ports/net/ngrep
 ngrep-lib                       ports/net/ngrep-lib
 ngspice_rework                  ports/cad/ngspice_rework
 nhc98                           ports/lang/nhc98
+nibbleblog                      ports/www/nibbleblog
 nibbles                         ports/games/nibbles
 nickle                          ports/lang/nickle
 nickleby                        ports/x11-wm/nickleby
@@ -12538,6 +12542,7 @@ p5-HTML-GenToc                  ports/www/p5-HTML-GenToc
 p5-HTML-GenerateUtil            ports/www/p5-HTML-GenerateUtil
 p5-HTML-GoogleMaps              ports/www/p5-HTML-GoogleMaps
 p5-HTML-HTML5-Parser            ports/textproc/p5-HTML-HTML5-Parser
+p5-HTML-HTMLDoc                 ports/textproc/p5-HTML-HTMLDoc
 p5-HTML-Highlight               ports/www/p5-HTML-Highlight
 p5-HTML-LinkExtractor           ports/www/p5-HTML-LinkExtractor
 p5-HTML-LinkList                ports/www/p5-HTML-LinkList
@@ -16642,6 +16647,7 @@ p5-html-gentoc                  ports/www/p5-HTML-GenToc
 p5-html-googlemaps              ports/www/p5-HTML-GoogleMaps
 p5-html-highlight               ports/www/p5-HTML-Highlight
 p5-html-html5-parser            ports/textproc/p5-HTML-HTML5-Parser
+p5-html-htmldoc                 ports/textproc/p5-HTML-HTMLDoc
 p5-html-linkextractor           ports/www/p5-HTML-LinkExtractor
 p5-html-linklist                ports/www/p5-HTML-LinkList
 p5-html-lint                    ports/www/p5-HTML-Lint
@@ -20727,6 +20733,7 @@ postgresql-plpython             ports/databases/postgresql-plpython
 postgresql-plruby               ports/databases/postgresql-plruby
 postgresql-pltcl                ports/databases/postgresql-pltcl
 postgresql-relay                ports/databases/postgresql-relay
+postgresql-repmgr               ports/databases/postgresql-repmgr
 postgresql-tcltk                ports/databases/postgresql-tcltk
 postgresql73-client             ports/databases/postgresql73-client
 postgresql73-server             ports/databases/postgresql73-server
@@ -21078,6 +21085,7 @@ py-beautifulsoup30              ports/www/py-beautifulsoup30
 py-biolccc                      ports/science/py-biolccc
 py-biopython                    ports/biology/py-biopython
 py-bison                        ports/devel/py-bison
+py-bitarray                     ports/devel/py-bitarray
 py-bitstring                    ports/devel/py-bitstring
 py-bittornado                   ports/net-p2p/py-bittornado
 py-bittornado-core              ports/net-p2p/py-bittornado-core
@@ -23014,6 +23022,7 @@ rubygem-callsign                ports/comms/rubygem-callsign
 rubygem-capistrano              ports/sysutils/rubygem-capistrano
 rubygem-captcha                 ports/graphics/rubygem-captcha
 rubygem-cgi_multipart_eof_fix   ports/www/rubygem-cgi_multipart_eof_fix
+rubygem-chef                    ports/sysutils/rubygem-chef
 rubygem-chronic                 ports/devel/rubygem-chronic
 rubygem-classifier              ports/devel/rubygem-classifier
 rubygem-color                   ports/print/rubygem-color
