@@ -7,6 +7,7 @@
 
 PORTNAME=	libzrtp
 PORTVERSION=	0.81.514
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	# http://philzimmermann.com/zfone/EN/registration/index.html
 
