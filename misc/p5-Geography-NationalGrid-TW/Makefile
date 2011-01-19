@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	Geography-NationalGrid-TW
-PORTVERSION=	0.07
+PORTVERSION=	0.08
 CATEGORIES=	misc perl5 geography
-MASTER_SITES=	CPAN
+MASTER_SITES=	CPAN/../../authors/id/L/LE/LEEYM
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
