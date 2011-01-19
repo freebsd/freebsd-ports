@@ -13,7 +13,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	py-${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	wenheping@gmail.com
-COMMENT=	Simple Librairy to Allow Python Applicationto Use CouchDB
+COMMENT=	Simple Library to Allow Python Applications to Use CouchDB
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}httplib2>0:${PORTSDIR}/www/py-httplib2 \
 		${PYTHON_PKGNAMEPREFIX}py-restclient>0:${PORTSDIR}/www/py-py-restclient
