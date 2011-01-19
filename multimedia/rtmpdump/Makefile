@@ -6,6 +6,7 @@
 
 PORTNAME=	rtmpdump
 PORTVERSION=	2.3
+PORTREVISION=	1
 CATEGORIES=	multimedia net
 MASTER_SITES=	http://rtmpdump.mplayerhq.hu/download/
 EXTRACT_SUFX=	.tgz
