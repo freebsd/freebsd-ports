@@ -34,6 +34,37 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="2c2d4e83-2370-11e0-a91b-00e0815b8da8">
+    <topic>tarsnap -- cryptographic nonce reuse</topic>
+    <affects>
+      <package>
+	<name>tarsnap</name>
+	<range><ge>1.0.22</ge><le>1.0.27</le></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Colin Percival reports:</p>
+	<blockquote cite="http://www.daemonology.net/blog/2011-01-18-tarsnap-critical-security-bug.html">
+	  <p>In versions 1.0.22 through 1.0.27 of Tarsnap, the CTR nonce value
+	   is not incremented after each chunk is encrypted. (The CTR counter
+	   is correctly incremented after each 16 bytes of data was processed,
+	   but this counter is reset to zero for each new chunk.)</p>
+	  <p>Note that since the Tarsnap client-server protocol is encrypted,
+	   being able to intercept Tarsnap client-server traffic does not
+	   provide an attacker with access to the data.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://www.daemonology.net/blog/2011-01-18-tarsnap-critical-security-bug.html</url>
+    </references>
+    <dates>
+      <discovery>2011-01-18</discovery>
+      <entry>2011-01-19</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="4c017345-1d89-11e0-bbee-0014a5e3cda6">
     <topic>MoinMoin -- cross-site scripting vulnerabilities</topic>
     <affects>
