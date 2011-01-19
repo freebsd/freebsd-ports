@@ -1,5 +1,5 @@
---- configure.orig	2010-11-03 09:12:22.000000000 +0100
-+++ configure	2010-11-06 18:21:38.162592186 +0100
+--- configure.orig	2010-11-03 17:12:22.000000000 +0900
++++ configure	2011-01-05 23:58:07.000000000 +0900
 @@ -565,7 +565,7 @@
  _iwmmxt=auto
  _mtrr=auto
@@ -63,7 +63,24 @@
  EOF
  _vsscanf=no
  cc_check && _vsscanf=yes
-@@ -7283,7 +7270,7 @@
+@@ -6912,6 +6899,16 @@
+   nolibrtmp=no
+   def_librtmp='#define CONFIG_LIBRTMP 1'
+   inputmodules="librtmp $inputmodules"
++
++  if $_pkg_config --exists librtmp; then
++	_inc_tmp=$($_pkg_config --cflags librtmp)
++	_ld_tmp=$($_pkg_config --libs librtmp)
++  else
++	_inc_tmp="-I${LOCALBASE}/include"
++	_ld_tmp="-L${LOCALBASE}/lib -lrtmp -lz -lssl -lcrypto"
++  fi
++  extra_ldflags="$extra_ldflags $_ld_tmp"
++  extra_cflags="$extra_cflags $_inc_tmp"
+ else
+   nolibrtmp=yes
+   _librtmp=no
+@@ -7283,7 +7280,7 @@
    def_muxers='#define CONFIG_MUXERS 1'
  else
    # mpeg1video for vf_lavc, snow for vf_uspp / vf_mcdeint,
@@ -72,7 +89,7 @@
    libavmuxers=""
    def_muxers='#define CONFIG_MUXERS 0'
  fi
-@@ -7645,8 +7632,11 @@
+@@ -7645,8 +7642,11 @@
  if test "$_gui" = yes ; then
  
    # Required libraries
@@ -86,7 +103,7 @@
      die "The GUI requires libavcodec with PNG support (needs zlib)."
    fi
    test "$_freetype" = no && test "$_bitmap_font" = no && \
-@@ -8034,7 +8024,7 @@
+@@ -8034,7 +8034,7 @@
  EXESUF      = $_exesuf
  EXESUFS_ALL = .exe
  

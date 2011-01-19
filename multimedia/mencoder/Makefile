@@ -6,7 +6,7 @@
 
 PORTNAME=	mencoder
 PORTVERSION=	${MPLAYER_PORT_VERSION}
-PORTREVISION=	0
+PORTREVISION=	1
 COMMENT=	Convenient video file and movie encoder
 RESTRICTED=	Port has restricted dependencies
 
@@ -46,6 +46,7 @@ OPTIONS+=	LIBCDIO "Enable libcdio support" off
 OPTIONS+=	CDPARANOIA "Enable cdparanoia support" off
 OPTIONS+=	LIBLZO "Enable external liblzo library" off
 OPTIONS+=	V4L "Enable Video4Linux TV support" off
+OPTIONS+=	LIBRTMP "Enable RTMPDump Streaming Media support" off
 
 MAN1=		mencoder.1
 

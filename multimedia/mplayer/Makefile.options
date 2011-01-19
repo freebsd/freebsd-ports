@@ -218,6 +218,13 @@ CONFIGURE_ARGS+=	--disable-tv-v4l1 \
 			--disable-tv-v4l2
 .endif
 
+.if defined(WITH_LIBRTMP)
+LIB_DEPENDS+=	rtmp.0:${PORTSDIR}/multimedia/rtmpdump
+CONFIGURE_ARGS+=	--enable-librtmp
+.else
+CONFIGURE_ARGS+=	--disable-librtmp
+.endif
+
 .if defined(WITH_MNG)
 LIB_DEPENDS+=		mng.1:${PORTSDIR}/graphics/libmng
 .else

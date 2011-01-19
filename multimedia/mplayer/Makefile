@@ -7,7 +7,7 @@
 
 PORTNAME=	mplayer
 PORTVERSION=	${MPLAYER_PORT_VERSION}
-PORTREVISION=	0
+PORTREVISION=	1
 COMMENT=	High performance media player supporting many formats
 
 .include "${.CURDIR}/Makefile.shared"
@@ -61,6 +61,7 @@ OPTIONS+=	CDPARANOIA "Enable cdparanoia support" off
 OPTIONS+=	LIBLZO "Enable external liblzo library" off
 OPTIONS+=	JOYSTICK "Enable joystick support" off
 OPTIONS+=	V4L "Enable Video4Linux TV support" off
+OPTIONS+=	LIBRTMP "Enable RTMPDump Streaming Media support" off
 
 MAN1=		mplayer.1
 MANCOMPRESSED=	no

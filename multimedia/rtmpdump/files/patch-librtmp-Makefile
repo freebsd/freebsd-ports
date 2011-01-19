@@ -1,5 +1,5 @@
 --- librtmp/Makefile.orig	2010-07-01 05:01:28.000000000 +0900
-+++ librtmp/Makefile	2010-08-01 01:18:35.000000000 +0900
++++ librtmp/Makefile	2011-01-05 23:18:28.000000000 +0900
 @@ -1,10 +1,10 @@
  VERSION=v2.3
  
@@ -15,6 +15,15 @@
  
  SYS=posix
  CRYPTO=OPENSSL
+@@ -14,7 +14,7 @@
+ DEF_GNUTLS=-DUSE_GNUTLS
+ DEF_=-DNO_CRYPTO
+ REQ_GNUTLS=gnutls
+-REQ_OPENSSL=libssl,libcrypto
++#REQ_OPENSSL=libssl,libcrypto
+ LIBZ=-lz
+ LIBS_posix=
+ LIBS_mingw=-lws2_32 -lwinmm -lgdi32
 @@ -39,15 +39,18 @@
  
  DEF=-DRTMPDUMP_VERSION=\"$(VERSION)\" $(CRYPTO_DEF) $(XDEF)
@@ -35,7 +44,16 @@
  MANDIR=$(DESTDIR)$(mandir)
  
  OBJS=rtmp.o log.o amf.o hashswf.o parseurl.o
-@@ -77,10 +80,10 @@
+@@ -72,15 +75,18 @@
+ 
+ librtmp.pc: librtmp.pc.in Makefile
+ 	sed -e "s;@prefix@;$(prefix);" -e "s;@VERSION@;$(VERSION);" \
+-		-e "s;@CRYPTO_REQ@;$(CRYPTO_REQ);" librtmp.pc.in > $@
++		-e "s;@CRYPTO_REQ@;$(CRYPTO_REQ);" \
++		-e "s;@OPENSSLLIB@;$(OPENSSLLIB);" \
++		-e "s;@OPENSSLINC@;$(OPENSSLINC);" \
++		librtmp.pc.in > $@
+ 
  install:	install_base $(SO_INST)
  
  install_base:	librtmp.a librtmp.pc
