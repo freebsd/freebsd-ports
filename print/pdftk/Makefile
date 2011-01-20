@@ -15,9 +15,8 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 MAINTAINER=	glarkin@FreeBSD.org
 COMMENT=	A simple tool for doing everyday things with PDF documents
 
-# Make this explicit for all OS versions.  For __FreeBSD_version < 700042,
-# we need to build gcc 4.2 to get gcj42, and for OS versions with gcc 4.2+
-# in the base system, we need to build the port anyway to get gcj42.
+# None of the base systems include gcjXX, so it's listed here to ensure
+# that the correct gcc port that includes it is built.
 BUILD_DEPENDS=	gcj${CSUFF}:${PORTSDIR}/lang/gcc${CSUFF}
 
 USE_ZIP=	yes
