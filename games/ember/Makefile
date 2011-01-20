@@ -7,7 +7,7 @@
 
 PORTNAME=	ember
 PORTVERSION=	0.5.8
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	games
 MASTER_SITES=	SF/worldforge/Ember%20%28OGRE%20client%29/${PORTVERSION} \
 		http://amber.worldforge.org/ember/releases/stable/
@@ -23,7 +23,7 @@ RUN_DEPENDS=	${LOCALBASE}/lib/libOgreMain-1.6.5.so:${PORTSDIR}/graphics/ogre3d
 LIB_DEPENDS=	sigc-2.0:${PORTSDIR}/devel/libsigc++20 \
 		eris-1.3:${PORTSDIR}/devel/eris \
 		varconf-1.0.6:${PORTSDIR}/devel/varconf \
-		mercator-0.2.7:${PORTSDIR}/devel/mercator \
+		mercator-0.2.8:${PORTSDIR}/devel/mercator \
 		wfut-0.2:${PORTSDIR}/devel/libwfut \
 		boost_thread.4:${PORTSDIR}/devel/boost-libs
 
