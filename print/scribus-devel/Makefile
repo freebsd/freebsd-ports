@@ -2,17 +2,17 @@
 # Date created:			Mar 15, 2002
 # Whom:				ijliao
 #
-# $Carpetsmoker: ports/print/scribus/Makefile,v 1.2 2007/09/24 08:06:52 carpetsmoker Exp $
 # $FreeBSD$
 #
 
 PORTNAME=	scribus
-PORTVERSION=	1.3.3.14
+PORTVERSION=	1.3.9
 CATEGORIES=	print editors
-MASTER_SITES=	SF \
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-devel/${PORTVERSION} \
 		http://www.scribus.net/downloads/${PORTVERSION}/
+PKGNAMESUFFIX=	-devel
 
-MAINTAINER=	sylvio@FreeBSD.org
+MAINTAINER=	coder@tuxfamily.org
 COMMENT=	A comprehensive desktop publishing program
 
 LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg \
@@ -21,24 +21,35 @@ LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg \
 		tiff.4:${PORTSDIR}/graphics/tiff \
 		cups.2:${PORTSDIR}/print/cups-base \
 		freetype.9:${PORTSDIR}/print/freetype2 \
-		fontconfig.1:${PORTSDIR}/x11-fonts/fontconfig
+		fontconfig.1:${PORTSDIR}/x11-fonts/fontconfig \
+		podofo.0:${PORTSDIR}/graphics/podofo \
+		boost_thread.4:${PORTSDIR}/devel/boost-libs \
+		aspell.16:${PORTSDIR}/textproc/aspell \
+		cairo.2:${PORTSDIR}/graphics/cairo \
+		execinfo:${PORTSDIR}/devel/libexecinfo
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/_tkinter.so:${PORTSDIR}/x11-toolkits/py-tkinter \
-		${PYTHON_SITELIBDIR}/PIL/_imaging.so:${PORTSDIR}/graphics/py-imaging
+		${PYTHON_SITELIBDIR}/PIL/_imaging.so:${PORTSDIR}/graphics/py-imaging \
+		update-mime-database:${PORTSDIR}/misc/shared-mime-info
 
 USE_BZIP2=	yes
-USE_QT_VER=	3
-USE_GNOME=	gnometarget libartlgpl2 libxml2
+USE_QT_VER=	4
+QT_COMPONENTS=	gui linguist_build moc_build qmake_build rcc_build uic_build xml network
+USE_GNOME=	desktopfileutils gnometarget libartlgpl2 libxml2 pkgconfig
 USE_GHOSTSCRIPT_RUN=	yes
 USE_PYTHON=	yes
-USE_PERL5_BUILD=yes
-USE_LDCONFIG=	yes
-USE_MOTIF=	yes
 USE_CMAKE=	yes
 CMAKE_USE_PTHREAD=	yes
+MAKE_JOBS_SAFE=	yes
 
-PLIST_SUB+=	SCRIBUS_VERSION=${PORTVERSION}
+DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}-${PORTVERSION}
+
 MAN1=		scribus.1
 MANLANG=	"" pl de
 MANCOMPRESSED=	no
+
+post-install:
+	${LN} ${DATADIR}/icons/scribus.png ${PREFIX}/share/pixmaps/
+	-update-desktop-database
+	-update-mime-database ${PREFIX}/share/mime
 
 .include <bsd.port.mk>
