@@ -22,8 +22,9 @@ USE_LDCONFIG=	yes
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 700042
-BROKEN=		Does not compile with GCC 4.2
-.endif
+post-patch:
+	${FIND} ${WRKSRC}/mimelib/ -name "*.cpp" -or -name "*.h" \
+		| ${XARGS} ${REINPLACE_CMD} -e "s,iostream.h,iostream,"
+	${TOUCH} ${WRKSRC}/mimelib/mimelib/Makefile.in ${WRKSRC}/stamp-h.in ${WRKSRC}/Makefile.in ${WRKSRC}/mimelib/Makefile.in
 
 .include <bsd.port.post.mk>
