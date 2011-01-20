@@ -5,14 +5,14 @@
 
 PORTNAME=	ampache
 PORTVERSION=	3.5.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio www
 MASTER_SITES=	http://ampache.org/downloads/
 
 MAINTAINER=	jadawin@FreeBSD.org
 COMMENT=	A Web-based Audio file manager
 
-USE_PHP=	mysql pcre session iconv
+USE_PHP=	mysql pcre session iconv hash gettext mbstring
 WANT_PHP_WEB=	yes
 
 NO_BUILD=	yes
