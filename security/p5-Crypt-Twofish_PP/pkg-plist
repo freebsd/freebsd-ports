@@ -1,0 +1,12 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt-Twofish_PP/.packlist
+%%SITE_PERL%%/Crypt/Twofish_PP.pm
+%%SITE_PERL%%/Crypt/Twofish_PP/Key16.pm
+%%SITE_PERL%%/Crypt/Twofish_PP/Key24.pm
+%%SITE_PERL%%/Crypt/Twofish_PP/Key32.pm
+%%SITE_PERL%%/LocaleData/de/LC_MESSAGES/Crypt-Twofish_PP.mo
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt-Twofish_PP
+@dirrmtry %%SITE_PERL%%/Crypt/Twofish_PP
+@dirrmtry %%SITE_PERL%%/Crypt
+@dirrmtry %%SITE_PERL%%/LocaleData/de/LC_MESSAGES
+@dirrmtry %%SITE_PERL%%/LocaleData/de
+@dirrmtry %%SITE_PERL%%/LocaleData

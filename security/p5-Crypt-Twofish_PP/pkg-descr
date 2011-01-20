@@ -1,0 +1,10 @@
+Twofish is a 128-bit symmetric block cipher with a variable key
+length (128, 192, or 256 bits) key, developed by Counterpane Labs.
+It is unpatented and free for all uses, as described at
+http://www.counterpane.com/twofish.html. It has been one of the
+five finalists for AES.
+
+This module is written in pure Perl, it should run everywhere
+where Perl runs.
+
+WWW:	http://search.cpan.org/dist/Crypt-Twofish_PP/
