@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	tor
-DISTVERSION=	0.2.1.28
-PORTREVISION=	1
+DISTVERSION=	0.2.1.29
 CATEGORIES=	security net ipv6
 MASTER_SITES=	http://www.torproject.org/dist/ \
 		ftp://tor.tomyn.com/pub/mirrors/tor/ \
@@ -26,7 +25,7 @@ MASTER_SITES=	http://www.torproject.org/dist/ \
 		http://www.torproject.org.nyud.net/dist/ \
 		http://www.torproject.us/dist/
 
-MAINTAINER=	miwi@FreeBSD.org
+MAINTAINER=	bf@FreeBSD.org
 COMMENT=	An anonymizing overlay network for TCP
 
 LIB_DEPENDS=	event-1.4:${PORTSDIR}/devel/libevent
