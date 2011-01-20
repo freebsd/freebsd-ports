@@ -1,3 +1,4 @@
+
 # New ports collection makefile for:	cyphesis
 # Date created:				02 Oct 2005
 # Whom:					Oliver Lehmann <oliver@FreeBSD.org>
@@ -7,7 +8,7 @@
 
 PORTNAME=	cyphesis
 PORTVERSION=	0.5.21
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	net
 MASTER_SITES=	SF/worldforge/${PORTNAME}%20%28server%29/${PORTVERSION}
 
@@ -17,7 +18,7 @@ COMMENT=	A server for WorldForge games
 LIB_DEPENDS=	Atlas-0.6.1:${PORTSDIR}/devel/atlas-devel \
 		varconf-1.0.6:${PORTSDIR}/devel/varconf \
 		wfmath-0.3.4:${PORTSDIR}/math/wfmath \
-		mercator-0.2.7:${PORTSDIR}/devel/mercator \
+		mercator-0.2.8:${PORTSDIR}/devel/mercator \
 		skstream-0.3.5:${PORTSDIR}/net/skstream \
 		gcrypt.17:${PORTSDIR}/security/libgcrypt
 
