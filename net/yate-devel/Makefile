@@ -20,6 +20,8 @@ COMMENT=	Yet Another Telephony Engine
 LIB_DEPENDS=	gsm.1:${PORTSDIR}/audio/gsm \
 		speex.1:${PORTSDIR}/audio/speex
 
+BROKEN=		does not build
+
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_BISON=	build
