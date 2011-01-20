@@ -15,6 +15,8 @@ MASTER_SITES=	SF/raypp/raypp/${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A collection of C++ classes needed for ray tracing
 
+DEPRECATED=	Does not compile on supported versions of FreeBSD
+EXPIRATION_DATE=2011-02-04
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-shared --enable-fast-handles
 USE_GMAKE=	yes
