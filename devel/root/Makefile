@@ -15,6 +15,9 @@ DISTNAME=		${PORTNAME}_v${PORTVERSION}.source
 MAINTAINER=		simon@lang-clan.de
 COMMENT=		An Object-Oriented Data Analysis Framework
 
+DEPRECATED=		Port does not build on supported versions of FreeBSD
+EXPIRATION_DATE=	2011-02-20
+
 HAS_CONFIGURE=		yes
 CONFIGURE_TARGET=	freebsd5
 CONFIGURE_ENV+=		PTHREAD_CFLAGS="${PTHREAD_CFLAGS}"	\
