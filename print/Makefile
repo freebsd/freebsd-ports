@@ -324,6 +324,7 @@
     SUBDIR += rubygem-prawn-security
     SUBDIR += rubygem-prawn-svg
     SUBDIR += scribus
+    SUBDIR += scribus-devel
     SUBDIR += sgf2tex
     SUBDIR += splix
     SUBDIR += sv-acroread8
