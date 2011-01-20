@@ -15,11 +15,7 @@ include/JAGS/distribution/ArrayDist.h
 include/JAGS/distribution/DistPtr.h
 include/JAGS/distribution/DistTab.h
 include/JAGS/distribution/Distribution.h
-include/JAGS/distribution/RNG.h
-include/JAGS/distribution/RNGFactory.h
-include/JAGS/distribution/RmathRNG.h
 include/JAGS/distribution/ScalarDist.h
-include/JAGS/distribution/TruncatedNormal.h
 include/JAGS/distribution/VectorDist.h
 include/JAGS/function/ArrayFunction.h
 include/JAGS/function/FuncTab.h
@@ -54,6 +50,10 @@ include/JAGS/model/MonitorFactory.h
 include/JAGS/model/MonitorInfo.h
 include/JAGS/model/NodeArray.h
 include/JAGS/model/SymTab.h
+include/JAGS/rng/RNG.h
+include/JAGS/rng/RmathRNG.h
+include/JAGS/rng/RNGFactory.h
+include/JAGS/rng/TruncatedNormal.h
 include/JAGS/sampler/GraphView.h
 include/JAGS/sampler/Linear.h
 include/JAGS/sampler/Metropolis.h
@@ -462,6 +462,7 @@ libexec/jags-terminal
 @dirrm include/JAGS/util
 @dirrm include/JAGS/sarray
 @dirrm include/JAGS/sampler
+@dirrm include/JAGS/rng
 @dirrm include/JAGS/model
 @dirrm include/JAGS/graph
 @dirrm include/JAGS/function

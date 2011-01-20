@@ -7,12 +7,12 @@
 #
 
 PORTNAME=	mcmc-jags
-PORTVERSION=	2.1.0
+PORTVERSION=	2.2.0
 CATEGORIES=	math
 MASTER_SITES=	SF:1,2,3
 MASTER_SITE_SUBDIR=	${PORTNAME}/JAGS/2.x/Source/:1 \
-		${PORTNAME}/Examples/2.0/:2 \
-		${PORTNAME}/Manuals/2.0/:3
+		${PORTNAME}/Examples/2.x/:2 \
+		${PORTNAME}/Manuals/2.x/:3
 DISTFILES=	${DISTNAME:S/mcmc-//:U}${EXTRACT_SUFX}:1
 .if !defined(NOPORTDOCS)
 DISTFILES+=	classic-bugs.tar.gz:2 jags_developer_manual.pdf:3 \
@@ -36,6 +36,8 @@ USE_FORTRAN=	yes
 USE_LDCONFIG=	yes
 USE_BISON=	build
 PLIST_SUB=	PORTVERSION=${PORTVERSION}
+
+MAN1=		jags.1
 
 .include <bsd.port.options.mk>
 
@@ -73,12 +75,24 @@ post-install:
 	  ${PAX} -rzf ${DISTDIR}/${DIST_SUBDIR}/classic-bugs.tar.gz \
 	    -s ':^classic-bugs/*::' )
 	${SED} -i '' \
-		-e '\|JAGS ?=|{s|/usr/local|${PREFIX}|;s|jags|mcmc-&|;}' \
+		-e '\|JAGS ?=|{s|jags|mcmc-&|;s|/usr/local|${PREFIX}|;}' \
 		${EXAMPLESDIR}/vol[12]/Makefile
+	${SED} -i '' -e '\|EXAMPLES ?=|{s|litters||;}' \
+		${EXAMPLESDIR}/vol1/Makefile
 	@${ECHO_MSG} ""
 	@${CAT} ${PKGMESSAGE}
 	@${ECHO_MSG} ""
 
 .endif
 
+.if defined(MAINTAINER_MODE)
+RUN_DEPENDS+=	${LOCALBASE}/lib/R/library/coda/R/coda.rdb:${PORTSDIR}/math/R-cran-coda
+
+regression-test test check:	install
+.for _i in 1 2
+	 ( cd ${EXAMPLESDIR}/vol${_i} && ${SETENV} ${MAKE_ENV} ${MAKE} \
+	 	${_MAKE_JOBS} ${MAKE_ARGS} clean check clean)
+.endfor
+
+.endif
 .include <bsd.port.mk>
