@@ -20,6 +20,9 @@ LIB_DEPENDS=	aviplay.0:${PORTSDIR}/multimedia/avifile \
 		freetype.9:${PORTSDIR}/print/freetype2 \
 		jpeg.11:${PORTSDIR}/graphics/jpeg
 
+DEPRECATED=	Does not compile on supported versions of FreeBSD
+EXPIRATION_DATE=2011-02-04
+
 USE_GL=		glut
 USE_QT_VER=	3
 MAKE_ENV=	QMAKESPEC=${QMAKESPEC} QTDIR=${QT_PREFIX}
@@ -30,6 +33,7 @@ PORTDOCS=	README
 TCSH?=		/bin/csh
 QMAKE?=		${LOCALBASE}/bin/qmake
 QMAKESPEC?=	${LOCALBASE}/share/qt/mkspecs/freebsd-g++
+MAKE_JOBS_UNSAFE=yes
 
 .include <bsd.port.pre.mk>
 
