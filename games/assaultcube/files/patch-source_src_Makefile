@@ -1,0 +1,36 @@
+--- source/src/Makefile.orig	2010-11-15 00:46:24.000000000 +0600
++++ source/src/Makefile	2010-11-30 07:29:06.000000000 +0600
+@@ -1,9 +1,8 @@
+ //CXX=g++-gcc-4.2.3
+-CXXFLAGS= -O3 -fomit-frame-pointer
+ override CXXFLAGS+= -Wall -fsigned-char
+ 
+ PLATFORM= $(shell uname -s)
+-PLATFORM_PREFIX=native
++PLATFORM_PREFIX= FreeBSD
+ 
+ INCLUDES= -I. -Ibot -I../enet/include
+ 
+@@ -24,9 +23,9 @@
+ else
+ USRLIB=$(shell if [ -e /usr/lib64 ]; then echo "/usr/lib64"; else echo "/usr/lib"; fi)
+ override CXXFLAGS+= -rdynamic
+-CLIENT_INCLUDES= $(INCLUDES) -I/usr/include `sdl-config --cflags` -idirafter ../include
++CLIENT_INCLUDES= $(INCLUDES) `${SDL_CONFIG} --cflags` -I${LOCALBASE}/include -idirafter ../include
+ # -lSDL_ttf 
+-CLIENT_LIBS= -L../enet/.libs -lenet -L$(USRLIB) `sdl-config --libs` -lSDL_image -lz -lGL -lopenal -lvorbisfile
++CLIENT_LIBS= -L../enet/.libs -lenet `${SDL_CONFIG} --libs` -L${LOCALBASE}/lib -lSDL_image -lz -lGL -lopenal -lvorbisfile -lintl
+ endif
+ 
+ CLIENT_OBJS= \
+@@ -92,8 +91,8 @@
+ SERVER_INCLUDES= -DSTANDALONE $(INCLUDES) -I../include
+ SERVER_LIBS= -L../lib -lzdll -lenet -llibintl -lws2_32 -lwinmm
+ else
+-SERVER_INCLUDES= -DSTANDALONE $(INCLUDES)
+-SERVER_LIBS= -L../enet/.libs -lenet -lz
++SERVER_INCLUDES= -DSTANDALONE $(INCLUDES) -I${LOCALBASE}/include
++SERVER_LIBS= -L../enet/.libs -lenet -lz -L${LOCALBASE}/lib
+ endif
+ 
+ SERVER_OBJS= \

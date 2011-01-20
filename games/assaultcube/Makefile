@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	assaultcube
-PORTVERSION=	1.0.2
-PORTREVISION=	5
+PORTVERSION=	1.1.0.4
 CATEGORIES=	games
-MASTER_SITES=	SF/actiongame/AssaultCube/1.0
-DISTNAME=	AssaultCube_v${PORTVERSION}
+MASTER_SITES=	SF/actiongame/AssaultCube%20Version%20${PORTVERSION}
+DISTFILES=	AssaultCube_v${PORTVERSION}_source${EXTRACT_SUFX} \
+		AssaultCube_v${PORTVERSION}${EXTRACT_SUFX}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Total conversion of the FPS game called Cube
@@ -20,39 +20,46 @@ USE_OPENAL=	al
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 ALL_TARGET=	libenet
+WRKSRC=		${WRKDIR}/${PORTVERSION}
+CONFIGURE_ARGS=	--enable-shared=no --enable-static=yes
 CONFIGURE_WRKSRC=	${WRKSRC}/source/enet
 BUILD_WRKSRC=	${WRKSRC}/source/src
+MAKE_JOBS_SAFE=	yes
+
+PORTDATA=	config demos packages
+PORTDOCS=	*
 
 CFLAGS+=	-DFREEBSD
 
 OPTIONS=	CLIENT "Build client" on \
 		DEDICATED "Build dedicated server" on \
+		MASTER "Build master server" off \
 		OPTIMIZED_CFLAGS "Enable compilation optimizations" on
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITHOUT_CLIENT) && defined(WITHOUT_DEDICATED)
-IGNORE=		needs at least one executable (CLIENT and DEDICATED)
+.if defined(WITHOUT_CLIENT) && defined(WITHOUT_DEDICATED) && defined(WITHOUT_MASTER)
+IGNORE=		needs at least one executable (CLIENT, DEDICATED or MASTER)
 .endif
 
 .if !defined(WITHOUT_CLIENT)
 USE_GL=		yes
 USE_SDL=	image mixer sdl
 ALL_TARGET+=	client
-PLIST_SUB+=	CLIENT=""
 SUB_FILES+=	${PORTNAME}_client
 ACUBE_BIN+=	client
-.else
-PLIST_SUB+=	CLIENT="@comment "
 .endif
 
 .if !defined(WITHOUT_DEDICATED)
 ALL_TARGET+=	server
-PLIST_SUB+=	DEDICATED=""
 SUB_FILES+=	${PORTNAME}_server
 ACUBE_BIN+=	server
-.else
-PLIST_SUB+=	DEDICATED="@comment "
+.endif
+
+.if !defined(WITHOUT_MASTER)
+ALL_TARGET+=	master
+SUB_FILES+=	${PORTNAME}_master
+ACUBE_BIN+=	master
 .endif
 
 .if defined(WITHOUT_OPTIMIZED_CFLAGS)
@@ -63,21 +70,21 @@ post-patch:
 do-install:
 .for f in ${ACUBE_BIN}
 	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME}_${f} ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/ac_${f} ${PREFIX}/libexec/${PORTNAME}_${f}
 .endfor
-.for f in ${ACUBE_BIN}
-	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/ac_${f} \
-		${PREFIX}/libexec/${PORTNAME}_${f}
-.endfor
+.if !defined(NOPORTDATA)
 	${MKDIR} ${DATADIR}
-	cd ${WRKSRC} && ${CP} -r bot config packages ${DATADIR}
-	@${FIND} ${DATADIR} -type d -print0 | ${XARGS} -0 ${CHMOD} ${BINMODE}
-	@${FIND} ${DATADIR} -type f -print0 | ${XARGS} -0 ${CHMOD} ${SHAREMODE}
+	cd ${WRKSRC} && ${COPYTREE_SHARE} "${PORTDATA}" ${DATADIR}
+.endif
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
-	${CP} -R ${WRKSRC}/docs/* ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README.html ${DOCSDIR}
-	@${FIND} ${DOCSDIR} -type d -print0 | ${XARGS} -0 ${CHMOD} ${BINMODE}
-	@${FIND} ${DOCSDIR} -type f -print0 | ${XARGS} -0 ${CHMOD} ${SHAREMODE}
+	cd ${WRKSRC}/docs && ${COPYTREE_SHARE} . ${DOCSDIR}
 .endif
+
+post-install:
+.for f in ${ACUBE_BIN}
+	@${ECHO_CMD} bin/${PORTNAME}_${f} >> ${TMPPLIST}
+	@${ECHO_CMD} libexec/${PORTNAME}_${f} >> ${TMPPLIST}
+.endfor
 
 .include <bsd.port.post.mk>
