@@ -23,10 +23,6 @@ DEFINES+=	-DAMIGA4D
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} != "i386" && ${ARCH} != "alpha"
-BROKEN=		Does not compile on !i386 and !alpha
-.endif
-
 do-install:
 	${MKDIR} ${PREFIX}/etc/gtic
 .for i in areagroups areas config domains help users

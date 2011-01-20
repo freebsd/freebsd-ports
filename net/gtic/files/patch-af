@@ -4,7 +4,7 @@
  #ifndef __XMALLOC_H
  #define __XMALLOC_H
  
-+#if !defined(__FreeBSD__) || !defined(__alpha__)
++#if !defined(__FreeBSD__)
  void *xmalloc(size_t size);
 +#endif
  void xfree(void *ptr);
