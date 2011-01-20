@@ -17,6 +17,8 @@ LIB_DEPENDS=	jack.0:${PORTSDIR}/audio/jack \
 		gig.10:${PORTSDIR}/audio/libgig \
 		sqlite3.8:${PORTSDIR}/databases/sqlite3
 
+BROKEN=		does not fetch
+
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	"HAVE_UNIX98=1"
