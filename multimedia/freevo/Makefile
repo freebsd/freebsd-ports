@@ -7,7 +7,7 @@
 
 PORTNAME=	freevo
 PORTVERSION=	1.9.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	multimedia
 MASTER_SITES=	SF/${PORTNAME}/Freevo%20releases/${PORTVERSION}
 
@@ -35,7 +35,8 @@ FREEVO_UID=	523
 FREEVO_GID=	${FREEVO_UID}
 FREEVO_HOME=	/var/db/${FREEVO_USER}
 
-SUB_LIST+=	PORTVERSION=${PORTVERSION} \
+SUB_LIST+=	PYTHON_VERSION=${PYTHON_DEFAULT_VERSION} \
+		PORTVERSION=${PORTVERSION} \
 		FREEVO_USER=${FREEVO_USER} \
 		FREEVO_GROUP=${FREEVO_GROUP} \
 		FREEVO_UID=${FREEVO_UID} \
@@ -68,6 +69,10 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|/etc/freevo|${PREFIX}/etc/freevo|' ${WRKSRC}/freevo_config.py
 	@${REINPLACE_CMD} -e 's|/etc/freevo|${PREFIX}/etc/freevo|' ${WRKSRC}/local_conf.py.example
 	@${MV} ${WRKSRC}/src/www/htdocs/favorites.rpy.orig ${WRKDIR}
+	@${MV} ${WRKSRC}/src/www/htdocs/search.rpy.orig ${WRKDIR}
+	@${RM} ${WRKSRC}/src/www/htdocs/fileinfo.rpy.orig ${WRKSRC}/src/www/htdocs/guide.rpy.orig \
+		${WRKSRC}/src/www/htdocs/guidechannel.rpy.orig ${WRKSRC}/src/www/htdocs/proginfo.rpy.orig \
+		${WRKSRC}/src/www/htdocs/vlcwin.rpy.orig
 
 post-install:
 	@${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
