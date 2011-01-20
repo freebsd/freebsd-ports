@@ -15,6 +15,9 @@ DISTNAME=	ACE-${ACE_VERSION:C/\.0$//}+TAO-${TAO_VERSION:C/\.0$//}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT?=	The Adaptive Communication Environment (ACE) with The ACE ORB (TAO)
 
+DEPRECATED=	Outdated and does not compile on any supported version of FreeBSD
+EXPIRATION_DATE=2011-02-04
+
 CONFLICTS?=	ace-* gperf-[0-9]*
 
 ACE_VERSION=	5.4.2
