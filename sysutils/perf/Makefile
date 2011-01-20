@@ -16,6 +16,9 @@ COMMENT=	Xview-based system monitoring tool
 
 LIB_DEPENDS=	xview.3:${PORTSDIR}/x11-toolkits/xview
 
+DEPRECATED=	Does not build on supported versions of FreeBSD
+EXPIRATION_DATE=	2011-02-20
+
 USE_IMAKE=		yes
 USE_XORG=		x11 xext
 MAN1=			perf.1
