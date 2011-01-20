@@ -27,6 +27,8 @@ COMMENT=	CMU Gwydion project interpreter and compiler for the Dylan language
 LIB_DEPENDS=	gc.1:${PORTSDIR}/devel/boehm-gc
 
 BROKEN=		does not build
+DEPRECATED=	does not build
+EXPIRATION_DATE=2011-02-04
 
 USE_PERL5=	yes
 USE_GMAKE=	yes
