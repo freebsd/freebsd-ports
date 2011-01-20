@@ -21,6 +21,9 @@ COMMENT=	A Spreadsheet Program + Japanese patches
 # xmkmf is for configure script, not for USE_IMAKE.
 BUILD_DEPENDS=	imake:${PORTSDIR}/devel/imake
 
+DEPRECATED=	Does not compile on supported versions of FreeBSD
+EXPIRATION_DATE=	2011-02-04
+
 USE_BISON=	build
 
 .if defined(WITH_MOTIF)
