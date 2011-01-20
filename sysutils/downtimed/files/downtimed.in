@@ -31,6 +31,5 @@ pidfile="/var/run/${name}.pid"
 load_rc_config "$name"
 
 : ${downtimed_enable="NO"}
-: ${downtimed_flags=""}
 
 run_rc_command "$1"

@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	downtimed
-PORTVERSION=	0.2
+PORTVERSION=	0.4
 CATEGORIES=	sysutils
 MASTER_SITES=	http://dist.epipe.com/${PORTNAME}/ \
-		http://launchpadlibrarian.net/58217312/
+		http://launchpadlibrarian.net/61230833/
 DISTNAME=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	snabb@epipe.com
@@ -25,6 +25,7 @@ USE_RC_SUBR=	${PORTNAME}
 GNU_CONFIGURE=	yes
 
 post-install:
+		@${MKDIR} /var/db/downtimed
 		@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
