@@ -17,6 +17,8 @@ DIST_SUBDIR=	KDE
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	A plugin for QT to connect to IBase/Firebird-Databases
 
+DEPRECATED=	Port is broken on all supported versions of FreeBSD
+EXPIRATION_DATE=	2011-02-04
 DB=		ibase
 
 LIB_DEPENDS+=	qt-mt:${PORTSDIR}/x11-toolkits/qt33
