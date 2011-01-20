@@ -14,6 +14,9 @@ MASTER_SITES=		SF
 MAINTAINER=		jaapb@kerguelen.org
 COMMENT=		Bibliography tool for KDE/Postgres/BibTeX
 
+DEPRECATED=		yes
+EXPIRATION_DATE=	2011-02-20
+
 USE_PGSQL=		yes
 USE_KDEBASE_VER=	3
 USE_AUTOTOOLS=		libtool
