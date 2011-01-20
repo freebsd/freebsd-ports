@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	qmailadmin
-PORTVERSION=	1.2.14
+PORTVERSION=	1.2.15
 PORTEPOCH=	2
 CATEGORIES=	mail www
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-stable/${PORTVERSION}
@@ -36,6 +36,9 @@ RUN_DEPENDS+=	ezmlm-send:${PORTSDIR}/mail/ezmlm
 BUILD_DEPENDS+=	ezmlm-idx:${PORTSDIR}/mail/ezmlm-idx
 RUN_DEPENDS+=	ezmlm-idx:${PORTSDIR}/mail/ezmlm-idx
 .endif
+
+LICENSE=	GPLv2 GPLv3
+LICENSE_COMB=	dual
 
 CONFLICTS=	qmailadmin-devel-1.*
 
