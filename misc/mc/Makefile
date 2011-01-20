@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	mc
-PORTVERSION=	4.7.4
-PORTREVISION=	3
+PORTVERSION=	4.7.5
 CATEGORIES=	misc shells
 MASTER_SITES=	http://www.midnight-commander.org/downloads/ \
 		${MASTER_SITE_SUNSITE}
@@ -66,7 +65,7 @@ PLIST_SUB+=	NLS=""
 _MANLANG=	es hu it pl ru sr
 .endif
 
-.if !defined(WITH_X11) || defined(MINIMAL)
+.if !defined(WITH_X11) || (defined(WITHOUT_X11) || defined(MINIMAL))
 CONFIGURE_ARGS+=--without-x
 .else
 USE_XORG=	x11 xext
