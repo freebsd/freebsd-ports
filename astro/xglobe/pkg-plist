@@ -1,4 +1,4 @@
 bin/xglobe
-share/xglobe/map.bmp
-share/xglobe/xglobe-markers
-@dirrm share/xglobe
+%%DATADIR%%/map.bmp
+%%DATADIR%%/xglobe-markers
+@dirrm %%DATADIR%%

@@ -1,6 +1,6 @@
---- Makefile.orig	Mon Jul 19 14:56:27 1999
-+++ Makefile	Sat Jan 25 14:51:03 2003
-@@ -4,29 +4,30 @@
+--- Makefile.orig	1999-07-19 05:56:27.000000000 -0700
++++ Makefile	2011-01-19 09:39:21.000000000 -0800
+@@ -4,43 +4,44 @@
  
  ####### Installation directory
  
@@ -15,11 +15,11 @@
 -X11_INCLUDE_DIR = /usr/X11R6/include
 -QT_INCLUDE_DIR  = $(QTDIR)/include
 +X11_INCLUDE_DIR = $(LOCALBASE)/include
-+QT_INCLUDE_DIR  = $(QT_PREFIX)/include/
++QT_INCLUDE_DIR  = $(QT_PREFIX)/include/qt4
  
 -QT_LIB_DIR      = $(QTDIR)/lib
 -X11_LIB_DIR     = /usr/X11R6/lib
-+QT_LIB_DIR      = $(QT_PREFIX)/lib
++QT_LIB_DIR      = $(QT_PREFIX)/lib/qt4
 +X11_LIB_DIR     = $(LOCALBASE)/lib
  
  
@@ -27,25 +27,27 @@
  
 -CPP     = g++
 -LINK    = g++
+-MOC     = moc
 +CXX    ?= c++
 +CPP     = ${CXX} 
 +LINK    = ${CXX} 
- MOC     = moc
++MOC     = moc-qt4
  INSTALL = install
  
  ####### compile and link options
  
 -CFLAGS       = $(INCLUDE_DIRS) -DXGLOBE_LIB_DIR=\"$(XGLOBE_LIB_DIR)\" $(WITH_QIMGIO) -O2 -Wall
-+CFLAGS       += $(INCLUDE_DIRS) -DXGLOBE_LIB_DIR=\"$(XGLOBE_LIB_DIR)\" $(WITH_QIMGIO)
++CFLAGS       += -DQT3_SUPPORT $(INCLUDE_DIRS) -DXGLOBE_LIB_DIR=\"$(XGLOBE_LIB_DIR)\" $(WITH_QIMGIO)
  
  LFLAGS       =
  
-@@ -34,13 +35,13 @@
+-INCLUDE_DIRS = -I$(QT_INCLUDE_DIR) -I$(X11_INCLUDE_DIR)
++INCLUDE_DIRS = -I$(QT_INCLUDE_DIR) -I$(QT_INCLUDE_DIR)/Qt -I$(QT_INCLUDE_DIR)/QtGui -I$(X11_INCLUDE_DIR)
  
  LIB_DIRS     = -L$(QT_LIB_DIR) -L$(X11_LIB_DIR)
  
 -LIBS         = -lX11 -lqt -lm
-+LIBS         = -lX11 -lqt-mt -lm ${PTHREAD_LIBS}
++LIBS         = -lX11 -lQt3Support -lQtGui  -lm ${PTHREAD_LIBS}
  # If you want to use the QImageIO lib (to support jpg and png maps) use the
  # next two lines and comment the one above
  #WITH_QIMGIO  = -DWITH_QIMAGEIO
