@@ -6,14 +6,5 @@ to for instance run the solver directly from the csh as a batch job. The
 aim is to provide more solvers for different applications, such as 2D
 incompressible flow problems, transient problems etc. It should also be
 possible to use the X11 interface for your own applications.
-	+---------------------------------------+
-	|					|
-	|	Authors:			|
-	|     Peter Hansbo			|
-	|     Marten Levenstam			|
-	|     Dep. of Mathematics		|
-	|     Chalmers University of Technology	|
-	|     S-412 96 Goteborg			|
-	|     SWEDEN				|
-	|                \|/			|
-	+----------------( )--------------------+
+
+WWW: http://www.math.chalmers.se/Math/Research/Femlab/
