@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	audacious
-PORTVERSION=	2.4.0
+PORTVERSION=	2.4.3
 CATEGORIES=	multimedia audio
 MASTER_SITES=	http://distfiles.atheme.org/
 MASTER_SITE_SUBDIR=oliver
@@ -91,6 +91,8 @@ post-patch:
 .if defined(WITH_EXECINFO) || exists(${LOCALBASE}/lib/libexecinfo.so)
 	@${REINPLACE_CMD} 's|$${REGEX_LIBS}|& -L${LOCALBASE}/lib -lexecinfo|' \
 		${WRKSRC}/src/audacious/Makefile
+	@${REINPLACE_CMD} 's|-laudcore|-laudcore -L${LOCALBASE}/lib -lexecinfo|' \
+		${WRKSRC}/audacious.pc.in
 .endif
 
 post-install:
