@@ -28,12 +28,10 @@ MAKE_ARGS=	JAVAHOME=${JAVA_HOME} JAVAINCLUDE="-I${JAVA_HOME}/include -I${JAVA_HO
 		CC=${CC} CPP=${CPP}
 
 PLIST_SUB+=	GALAX=Galax-${PORTVERSION}
+ONLY_FOR_ARCHS=	i386
+ONLY_FOR_ARCHS_REASON= Java-1.4 is only available for i386
 
 .include <bsd.port.pre.mk>
-
-.if ${ARCH} != "i386"
-BROKEN=		Does not compile on !i386
-.endif
 
 pre-patch:
 	${CP} ${WRKSRC}/config/Makefile.unix ${WRKSRC}/config/Makefile
