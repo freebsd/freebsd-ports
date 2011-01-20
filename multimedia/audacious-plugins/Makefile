@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	audacious-plugins
-PORTVERSION=	2.4.0
+PORTVERSION=	2.4.3
 CATEGORIES=	multimedia audio
 MASTER_SITES=	http://distfiles.atheme.org/
 EXTRACT_SUFX=	.tgz
@@ -355,7 +355,8 @@ pre-everything::
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|$$EGREP|egrep|g; \
-		s| -ldl||g' ${WRKSRC}/configure
+		s| -ldl||g ; \
+		s|OSS_LIBS="-lossaudio"|OSS_LIBS=""|g' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|malloc\.h|stdlib\.h|g' \
 		${WRKSRC}/src/neon/cert_verification.c \
 		${WRKSRC}/src/usf/memory.c
