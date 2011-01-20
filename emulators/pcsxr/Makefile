@@ -7,7 +7,7 @@
 
 PORTNAME=	pcsxr
 PORTVERSION=	1.9.91
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	emulators
 # Original URLs :
 # http://download.codeplex.com/Project/Download/FileDownload.aspx?ProjectName=pcsxr&DownloadId=98581&FileTime=129064504645100000&Build=16694
@@ -36,7 +36,9 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--enable-opengl
 USE_LDCONFIG=	yes
+
 USE_DOS2UNIX=	yes
+DOS2UNIX_REGEX=	.*\.(c|h|cpp|hpp)
 
 USE_GNOME=	gtk20 desktopfileutils glib20 libglade2
 USE_ICONV=	yes
