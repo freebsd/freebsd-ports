@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	k3b
-PORTVERSION=	2.0.1
-PORTREVISION=	4
+PORTVERSION=	2.0.2
 CATEGORIES=	sysutils multimedia kde
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	A CD/DVD recording GUI for KDE4
 
+BUILD_DEPENDS=	${LOCALBASE}/share/xml/docbook/4.2/docbookx.dtd:${PORTSDIR}/textproc/docbook-xml
 LIB_DEPENDS=	cdda_paranoia:${PORTSDIR}/audio/cdparanoia \
 		samplerate:${PORTSDIR}/audio/libsamplerate \
 		kcddb:${PORTSDIR}/multimedia/kdemultimedia4
@@ -35,10 +35,10 @@ OPTIONS=	CDRDAO "Burning: Use cdrdao" ON \
 		DVDPLUSRW "Burning: DVD+RW Tools (DVD+/-R(W))" ON \
 		EMOVIX "Burning: eMovix (bootable video CDs)" OFF \
 		VCDIMAGER "Burning: VCDImager (video CDs)" OFF \
-		FFMPEG "Decoder: various (multimedia/ffmpeg)" OFF \
+		FFMPEG "Decoder: various (multimedia/ffmpeg)" ON \
 		FLAC "Decoder: flac (audio/flac)" ON \
 		MAD "Decoder: mp3 (audio/libmad)" ON \
-		MUSEPACK "Decoder: musepack (audio/musepack)" OFF \
+		MUSEPACK "Decoder: musepack (audio/musepack)" ON \
 		SNDFILE "Decoder: various (audio/libsndfile)" ON \
 		VORBIS_DEC "Decoder: ogg/vorbis" ON \
 		LAME "Encoder: mp3 (audio/lame)" OFF \
