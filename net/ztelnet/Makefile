@@ -24,6 +24,8 @@ COMMENT=	Telnet program with zmodem transfer
 
 RESTRICTED=	"zmodem code has restrictive copyright"
 BROKEN=		does not fetch
+DEPRECATED=	unfetchable
+EXPIRATION_DATE=2011-02-20
 
 NO_WRKSUBDIR=	yes
 PATCH_STRIP=	-p1
