@@ -6,7 +6,7 @@
 # are copied, and write permission for the user is added to them.
 
 APPNAME="assaultcube"
-CUBE_OPTIONS="--home=~/.${APPNAME} --init"
+CUBE_OPTIONS=
 
 if [ -d ~/.$APPNAME ]
 then
@@ -22,4 +22,4 @@ else
 fi
 
 cd ~/.$APPNAME || exit 1
-exec %%PREFIX%%/libexec/${APPNAME}_client ${CUBE_OPTIONS} "$@"
+exec %%PREFIX%%/libexec/${APPNAME}_master ${CUBE_OPTIONS} "$@"
