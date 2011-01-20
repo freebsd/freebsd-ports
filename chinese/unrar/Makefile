@@ -16,6 +16,8 @@ EXTRA_PATCHES=	${.CURDIR}/files/patch-arcread.cpp \
 
 CONFLICTS=	unrar-*
 
-BROKEN=		Obsoleted.
+BROKEN=		obsoleted
+DEPRECATED=	constantly behind master and no maintainer
+EXPIRATION_DATE=	2001-02-20
 
 .include "${MASTERDIR}/Makefile"
