@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	SF/ede/${PORTNAME}/${PORTVERSION}
 
-MAINTAINER=	sem@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Extended Fast Light Toolkit
 
 LIB_DEPENDS=	png.6:${PORTSDIR}/graphics/png \

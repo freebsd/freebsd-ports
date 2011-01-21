@@ -11,7 +11,7 @@ PORTREVISION=	5
 CATEGORIES=	x11-wm
 MASTER_SITES=	SF
 
-MAINTAINER=	sem@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Equinox Desktop Environment
 
 LIB_DEPENDS=	efltk.2:${PORTSDIR}/x11-toolkits/efltk
