@@ -7,6 +7,7 @@
 
 PORTNAME=	libpano13
 PORTVERSION=	2.9.17
+PORTREVISION=	1
 CATEGORIES=	graphics java
 MASTER_SITES=	SF/panotools/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
@@ -16,8 +17,6 @@ COMMENT=	Cross-platform library behind Panorama Tools and other photo stitchers
 LIB_DEPENDS=	jpeg:${PORTSDIR}/graphics/jpeg \
 		png:${PORTSDIR}/graphics/png \
 		tiff:${PORTSDIR}/graphics/tiff
-
-BROKEN=		incomplete plist (and installs .pc file to lib/pkg-config)
 
 USE_GNOME=	gtk20 glib20 pango atk
 

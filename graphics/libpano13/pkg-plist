@@ -23,5 +23,5 @@ include/pano13/version.h
 lib/libpano13.la
 lib/libpano13.so
 lib/libpano13.so.2
-lib/pkgconfig/libpano13.pc
+libdata/pkgconfig/libpano13.pc
 @dirrm include/pano13
