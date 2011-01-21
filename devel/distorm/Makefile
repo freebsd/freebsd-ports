@@ -7,7 +7,7 @@
 
 PORTNAME=	distorm
 PORTVERSION=	3.0.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE} \
 		LOCAL/bf
@@ -22,16 +22,16 @@ USE_DOS2UNIX=	yes
 USE_ZIP=	yes
 USE_LDCONFIG=	yes
 
-WRKSRC=		${WRKDIR}/distorm3/build/linux
+BUILD_WRKSRC=	${WRKSRC}/make/linux
 ALL_TARGET=	clib
 PLIST_FILES=	bin/disasm lib/libdistorm3.a lib/libdistorm3.so
 
 post-build:
-	${CC} ${CFLAGS} -o ${WRKSRC}/disasm ${WRKSRC}/../../linuxproj/main.c \
-		${WRKSRC}/libdistorm3.a
+	${CC} ${CFLAGS} -o ${BUILD_WRKSRC}/disasm ${WRKSRC}/examples/linux/main.c \
+		${BUILD_WRKSRC}/libdistorm3.a
 
 do-install:
-	( cd ${WRKSRC} && ${INSTALL_DATA} libdistorm3.a libdistorm3.so ${PREFIX}/lib \
+	( cd ${BUILD_WRKSRC} && ${INSTALL_DATA} libdistorm3.a libdistorm3.so ${PREFIX}/lib \
 	&& ${INSTALL_PROGRAM} disasm ${PREFIX}/bin )
 
 .include <bsd.port.mk>
