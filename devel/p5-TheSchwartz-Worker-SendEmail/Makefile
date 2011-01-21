@@ -7,7 +7,7 @@
 
 PORTNAME=	TheSchwartz-Worker-SendEmail
 PORTVERSION=	1.00
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN/../../authors/id/B/BR/BRADFITZ
 PKGNAMEPREFIX=	p5-
@@ -16,8 +16,7 @@ MAINTAINER=	perl@FreeBSD.org
 COMMENT=	TheSchwartz Worker Task to Send Email
 
 BUILD_DEPENDS=	p5-TheSchwartz>=1.10:${PORTSDIR}/devel/p5-TheSchwartz \
-		p5-Net-DNS>=0.66_1:${PORTSDIR}/dns/p5-Net-DNS \
-		p5-Storable>=2.25:${PORTSDIR}/devel/p5-Storable
+		p5-Net-DNS>=0.66_1:${PORTSDIR}/dns/p5-Net-DNS
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
