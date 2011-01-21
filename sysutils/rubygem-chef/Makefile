@@ -13,8 +13,7 @@ MASTER_SITES=	RG
 MAINTAINER=	renchap@cocoa-x.com
 COMMENT=	A systems integration framework. Client part
 
-BUILD_DEPENDS=	ruby18-iconv>=0.0.0:${PORTSDIR}/converters/ruby-iconv \
-		rubygem-mixlib-log>=1.1.0:${PORTSDIR}/devel/rubygem-mixlib-log \
+BUILD_DEPENDS=	rubygem-mixlib-log>=1.1.0:${PORTSDIR}/devel/rubygem-mixlib-log \
 		rubygem-mixlib-config>=1.1.2:${PORTSDIR}/devel/rubygem-mixlib-config \
 		rubygem-mixlib-cli>=1.1.0:${PORTSDIR}/devel/rubygem-mixlib-cli \
 		rubygem-mixlib-authentication>=1.1.2:${PORTSDIR}/devel/rubygem-mixlib-authentication \
@@ -31,6 +30,7 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 
 USE_RUBY=		yes
 USE_RUBYGEMS=		yes
+USE_RUBY_FEATURES=	iconv
 RUBYGEM_AUTOPLIST=	yes
 
 PLIST_FILES=	bin/chef-client \
