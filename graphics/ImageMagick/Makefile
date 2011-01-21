@@ -15,8 +15,6 @@ MASTER_SITES=	ftp://ftp.imagemagick.org/pub/ImageMagick/ \
 MAINTAINER=	mm@FreeBSD.org
 COMMENT=	Image processing tools
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}
-
 USE_XZ=		yes
 USE_PERL5=	yes
 USE_GNOME=	gnomehack gnometarget pkgconfig
@@ -38,7 +36,7 @@ MAN1=		ImageMagick.1 Magick++-config.1 Magick-config.1 Wand-config.1 \
 CPPFLAGS=	-I${LOCALBASE}/include
 LDFLAGS=	-L${LOCALBASE}/lib
 
-PLIST_SUB+=	PORTVERSION=${PORTVERSION:R}
+PLIST_SUB=	PORTVERSION=${PORTVERSION:R}
 
 OPTIONS=\
 	IMAGEMAGICK_16BIT_PIXEL	"16bit pixel support" on \
@@ -84,7 +82,7 @@ CONFIGURE_ARGS+=	--disable-hdri
 .if defined(WITH_THREADS)
 _IMAGEMAGICK_THREADS=yes
 _IMAGEMAGICK_THREADS_MSG=with threads
-PERL_THREADED!=	/bin/sh -c 'case `perl --version` in *freebsd-thread*) echo yes ;; esac'
+PERL_THREADED!=	${SH} -c 'case `perl --version` in *freebsd-thread*) ${ECHO_CMD} yes ;; esac'
 .else
 _IMAGEMAGICK_THREADS=no
 _IMAGEMAGICK_THREADS_MSG=without threads
@@ -309,27 +307,19 @@ CONFIGURE_ARGS+=	--without-wmf
 PLIST_SUB+=		WMF="@comment "
 .endif
 
-# SVG (Scalable Vector Graphics) images and MSL (Magick Scripting Language)
-# both require XML
-.if defined(WITH_IMAGEMAGICK_SVG) || !defined(WITHOUT_IMAGEMAGICK_MSL)
-USE_GNOME+=		libxml2
-CONFIGURE_ARGS+=	--with-xml
-.else
-CONFIGURE_ARGS+=	--without-xml
-.endif
-
-# SVG (Scalable Vector Graphics) requires X11
+# SVG (Scalable Vector Graphics) requires both libxml2 and X11
 .if defined(WITH_IMAGEMAGICK_SVG)
 . if defined(WITHOUT_X11)
 IGNORE=			svg support requires X11
 . else
+USE_GNOME+=		libxml2
 LIB_DEPENDS+=		rsvg-2:${PORTSDIR}/graphics/librsvg2
-CONFIGURE_ARGS+=	--with-rsvg
+CONFIGURE_ARGS+=	--with-rsvg --with-xml
 CONFIGURE_ENV+=		RSVG_CFLAGS="-I${LOCALBASE}/include/librsvg-2" \
 			RSVG_LIBS="-L${LOCALBASE}/lib"
 . endif
 .else
-CONFIGURE_ARGS+=	--without-rsvg
+CONFIGURE_ARGS+=	--without-rsvg --without-xml
 .endif
 
 # PDF (Adobe Portable Document Format) support
@@ -357,10 +347,6 @@ INSTALL_TARGET=	install
 .else
 INSTALL_TARGET=	install install-data-html
 .endif
-
-#.if ${OSVERSION} >= 800000
-#WITHOUT_IMAGEMAGICK_TESTS=yes
-#.endif
 
 .if ${ARCH} == sparc64
 WITHOUT_IMAGEMAGICK_TESTS=yes
@@ -435,11 +421,8 @@ WITHOUT_IMAGEMAGICK_TESTS=yes
 .	endfor
 .endif
 
-.if defined(WITH_IMAGEMAGICK_TESTS) && !defined(WITHOUT_IMAGEMAGICK_TESTS)
-# jpeg-7 fails in ValidateImageFormatsOnDisk
-.if defined(WITH_IMAGEMAGICK_TEST_JPEG7)
+.if !defined(WITHOUT_IMAGEMAGICK_TESTS)
 post-build:	test
-.endif
 .endif
 
 .include <bsd.port.post.mk>
