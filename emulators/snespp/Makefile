@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	emulators kld
 MASTER_SITES=	http://www.tbrk.org/software/
 
-MAINTAINER=	timbob@bigpond.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Kernel module for SNES controllers on a parallel port
 
 BROKEN=	does not compile
