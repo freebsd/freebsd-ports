@@ -8,7 +8,7 @@
 PORTNAME=	hp48xgcc
 PORTVERSION=	1.0.2
 PORTREVISION=	2
-CATEGORIES=	devel
+CATEGORIES=	devel lang
 MASTER_SITES=	SF/${PORTNAME}/source/${PORTVERSION}:hp \
 		ftp://ftp.gnu.org/old-gnu/gcc/:gcc
 DISTNAME=	${PORTNAME}-${PORTVERSION}-source
@@ -51,7 +51,7 @@ post-extract: .SILENT
 # FreeBSD has vprintf() actually
 	${CHMOD} +w ${GCC_DIR}/config/xm-freebsd.h
 	${ECHO_CMD} '#define HAVE_VPRINTF' >> ${GCC_DIR}/config/xm-freebsd.h
-# Do not install yet another copies of GPL
+# Do not install extra copies of GPL (we use license framework instead)
 	${REINPLACE_CMD} -e '/COPYING/d' ${WRKSRC}/make.pubfiles
 
 do-configure:
