@@ -9,7 +9,7 @@ PORTNAME=	mod_geoip
 PORTVERSION=	1.3.4
 PORTREVISION=	1
 CATEGORIES=	www geography
-MASTER_SITES=	http://www.maxmind.com/download/geoip/api/mod_geoip/
+MASTER_SITES=	http://geolite.maxmind.com/download/geoip/api/mod_geoip/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	yarodin@gmail.com
