@@ -1,6 +1,6 @@
-@exec  if [ ! -f %D/etc/mfsmaster.cfg ]; then /bin/cp %D/etc/mfsmaster.cfg.dist %D/etc/mfsmaster.cfg; fi
-@exec  if [ ! -f %D/etc/mfsexports.cfg ]; then /bin/cp %D/etc/mfsexports.cfg.dist %D/etc/mfsexports.cfg; fi
-@exec  if [ ! -f %D/etc/mfsmetalogger.cfg ]; then /bin/cp %D/etc/mfsmetalogger.cfg.dist %D/etc/mfsmetalogger.cfg; fi
+@exec  if [ ! -f %D/etc/mfsmaster.cfg ]; then /bin/cp %D/%F %D/etc/mfsmaster.cfg; fi
+@exec  if [ ! -f %D/etc/mfsexports.cfg ]; then /bin/cp %D/%F %D/etc/mfsexports.cfg; fi
+@exec  if [ ! -f %D/etc/mfsmetalogger.cfg ]; then /bin/cp %D/%F %D/etc/mfsmetalogger.cfg; fi
 @unexec if cmp -s %D/etc/mfsmaster.cfg.dist %D/etc/mfsmaster.cfg; then rm -f %D/etc/mfsmaster.cfg; fi
 @unexec if cmp -s %D/etc/mfsexports.cfg.dist %D/etc/mfsexports.cfg; then rm -f %D/etc/mfsexports.cfg; fi
 @unexec if cmp -s %D/etc/mfsmetalogger.cfg.dist %D/etc/mfsmetalogger.cfg; then rm -f %D/etc/mfsmetalogger.cfg; fi
