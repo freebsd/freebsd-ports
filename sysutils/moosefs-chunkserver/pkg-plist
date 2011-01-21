@@ -1,5 +1,5 @@
-@exec  if [ ! -f %D/etc/mfshdd.cfg ]; then /bin/cp %D/etc/mfshdd.cfg.dist %D/etc/mfshdd.cfg; fi
-@exec  if [ ! -f %D/etc/mfschunkserver.cfg ]; then /bin/cp %D/etc/mfschunkserver.cfg.dist %D/etc/mfschunkserver.cfg; fi
+@exec  if [ ! -f %D/etc/mfshdd.cfg ]; then /bin/cp %D/%F %D/etc/mfshdd.cfg; fi
+@exec  if [ ! -f %D/etc/mfschunkserver.cfg ]; then /bin/cp %D/%F %D/etc/mfschunkserver.cfg; fi
 @unexec if cmp -s %D/etc/mfshdd.cfg.dist %D/etc/mfshdd.cfg; then rm -f %D/etc/mfshdd.cfg; fi
 @unexec if cmp -s %D/etc/mfschunkserver.cfg.dist %D/etc/mfschunkserver.cfg; then rm -f %D/etc/mfschunkserver.cfg; fi
 etc/mfschunkserver.cfg.dist
