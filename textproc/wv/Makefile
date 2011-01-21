@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	wv
-PORTVERSION=	1.2.7
-PORTREVISION=	1
+PORTVERSION=	1.2.9
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.abisource.com/downloads/wv/${PORTVERSION}/
 
@@ -15,7 +14,6 @@ MAINTAINER=	bf@FreeBSD.org
 COMMENT=	A library and executables to access Microsoft Word files
 
 LIB_DEPENDS=	wmf.2:${PORTSDIR}/graphics/libwmf
-RUN_DEPENDS=	lynx:${PORTSDIR}/www/lynx
 
 USE_GNOME=	gnometarget libgsf
 USE_GMAKE=	yes
