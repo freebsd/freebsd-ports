@@ -7,6 +7,7 @@
 
 PORTNAME=	syslog-ng
 PORTVERSION=	3.2.2
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.balabit.com/downloads/files/syslog-ng/sources/$(PORTVERSION)/source/
 PKGNAMESUFFIX=	3
@@ -103,6 +104,7 @@ CONFIGURE_ARGS+=	--disable-sql
 
 post-patch:
 	@${REINPLACE_CMD} -e 's:libnet-config:libnet115-config:g' ${WRKSRC}/configure
+	@${MV} ${WRKSRC}/scl/syslog-ng.conf ${WRKSRC}/scl/syslog-ng.conf.dist
 .if ${OSVERSION} >= 900007
 	@${REINPLACE_CMD} \
 		-e 's|utmp|utmpx|' -e 's|getutent|getutxent|' \
@@ -124,6 +126,9 @@ post-install:
 .endif
 	@if [ ! -f ${PREFIX}/etc/syslog-ng.conf.sample ]; then \
 		${INSTALL_DATA} ${FILESDIR}/syslog-ng.conf.sample ${PREFIX}/etc; \
+	fi
+	@if [ ! -f ${PREFIX}/etc/syslog-ng.conf ]; then \
+		${CP} ${PREFIX}/etc/syslog-ng.conf.sample ${PREFIX}/etc/syslog-ng.conf; \
 	fi
 	@${CAT} ${PKGMESSAGE}
 
