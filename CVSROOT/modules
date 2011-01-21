@@ -11743,6 +11743,7 @@ p5-Crypt-T_e_a                  ports/security/p5-Crypt-T_e_a
 p5-Crypt-TripleDES              ports/security/p5-Crypt-TripleDES
 p5-Crypt-Twofish                ports/security/p5-Crypt-Twofish
 p5-Crypt-Twofish2               ports/security/p5-Crypt-Twofish2
+p5-Crypt-Twofish_PP             ports/security/p5-Crypt-Twofish_PP
 p5-Crypt-UnixCrypt              ports/security/p5-Crypt-UnixCrypt
 p5-Crypt-UnixCrypt_XS           ports/security/p5-Crypt-UnixCrypt_XS
 p5-Crypt-X509                   ports/security/p5-Crypt-X509
@@ -14454,6 +14455,7 @@ p5-Text-Xslate                  ports/textproc/p5-Text-Xslate
 p5-Text-vCard                   ports/textproc/p5-Text-vCard
 p5-Text-vFile-asData            ports/devel/p5-Text-vFile-asData
 p5-TheSchwartz                  ports/devel/p5-TheSchwartz
+p5-TheSchwartz-Simple           ports/devel/p5-TheSchwartz-Simple
 p5-TheSchwartz-Worker-SendEmail  ports/devel/p5-TheSchwartz-Worker-SendEmail
 p5-Thread-Apartment             ports/devel/p5-Thread-Apartment
 p5-Thread-Cancel                ports/devel/p5-Thread-Cancel
@@ -15808,6 +15810,7 @@ p5-crypt-tea                    ports/security/p5-Crypt-TEA
 p5-crypt-tripledes              ports/security/p5-Crypt-TripleDES
 p5-crypt-twofish                ports/security/p5-Crypt-Twofish
 p5-crypt-twofish2               ports/security/p5-Crypt-Twofish2
+p5-crypt-twofish_pp             ports/security/p5-Crypt-Twofish_PP
 p5-crypt-unixcrypt              ports/security/p5-Crypt-UnixCrypt
 p5-crypt-unixcrypt_xs           ports/security/p5-Crypt-UnixCrypt_XS
 p5-crypt-x509                   ports/security/p5-Crypt-X509
@@ -18591,6 +18594,7 @@ p5-text-worddiff                ports/textproc/p5-Text-WordDiff
 p5-text-wrapper                 ports/textproc/p5-Text-Wrapper
 p5-text-xslate                  ports/textproc/p5-Text-Xslate
 p5-theschwartz                  ports/devel/p5-TheSchwartz
+p5-theschwartz-simple           ports/devel/p5-TheSchwartz-Simple
 p5-theschwartz-worker-sendemail  ports/devel/p5-TheSchwartz-Worker-SendEmail
 p5-thread-apartment             ports/devel/p5-Thread-Apartment
 p5-thread-cancel                ports/devel/p5-Thread-Cancel
