@@ -16,7 +16,6 @@ COMMENT=	A replacement for qmail's sendmail drop-in
 
 USE_QMAIL=	yes
 
-NO_SIZE=	yes
 WRKSRC=		${WRKDIR}/mail/${DISTNAME}
 
 PLIST_FILES=	sbin/usendmail
