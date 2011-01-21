@@ -12,7 +12,7 @@ MASTER_SITES=	SF/actiongame/AssaultCube%20Version%20${PORTVERSION}
 DISTFILES=	AssaultCube_v${PORTVERSION}_source${EXTRACT_SUFX} \
 		AssaultCube_v${PORTVERSION}${EXTRACT_SUFX}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	lightside@safebox.ru
 COMMENT=	Total conversion of the FPS game called Cube
 
 USE_BZIP2=	yes
