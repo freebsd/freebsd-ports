@@ -14,7 +14,7 @@ MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE} \
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	sqlalchemy-${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	elvstone@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Database schema migrations for SQLAlchemy
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlalchemy>=0.3.10:${PORTSDIR}/databases/py-sqlalchemy
