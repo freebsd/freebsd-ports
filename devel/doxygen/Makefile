@@ -1,12 +1,12 @@
-# New ports collection makefile for:   doxygen
-# Date created:        20 March 1998
-# Whom:                Joep Grooten <joep@di.nl>
+# New ports collection makefile for:	doxygen
+# Date created:		20 March 1998
+# Whom:			Joep Grooten <joep@di.nl>
 #
 # $FreeBSD$
 #
 
 PORTNAME=	doxygen
-PORTVERSION=	1.7.2
+PORTVERSION=	1.7.3
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.stack.nl/pub/users/dimitri/ \
 		http://ftp.stack.nl/pub/users/dimitri/
@@ -28,9 +28,8 @@ USE_PERL5=	yes
 HAS_CONFIGURE=	yes
 USE_GMAKE=	yes
 QT_NONSTANDARD=	yes	# non-standard configure arguments
-CONFIGURE_ARGS+=--prefix ${PREFIX} --perl ${PERL} --make ${GMAKE} \
+CONFIGURE_ARGS=	--prefix ${PREFIX} --perl ${PERL} --make ${GMAKE} \
 		--install "${INSTALL}"
-CONFIGURE_ENV=	CXX="${CXX}"
 MAKE_JOBS_UNSAFE=	yes
 
 EXTRACT_AFTER_ARGS=|${TAR} -xpf - \
@@ -69,17 +68,17 @@ QT_COMPONENTS=	corelib gui xml qmake_build moc_build rcc_build
 
 # Need this in env for build
 QTDIR?=		${QT_PREFIX}
-CONFIGURE_ENV+=	QTDIR="${QTDIR}"
+CONFIGURE_ENV=	QTDIR="${QTDIR}"
 CONFIGURE_ARGS+=--with-doxywizard
-.endif # !WITHOUT_DOXYWIZARD
+.endif # !defined(WITHOUT_DOXYWIZARD)
 
 .if ${MACHINE_ARCH:L} == alpha
 CONFIGURE_ARGS+=	--enable-langs no
 .endif
 
-.ifndef WITHOUT_DOXYWIZARD
+.if !defined(WITHOUT_DOXYWIZARD)
 PLIST_FILES+=	bin/doxywizard
-.endif
+.endif # !defined(WITHOUT_DOXYWIZARD)
 
 pre-configure:
 	@cd ${WRKSRC};for pro in src/*.pro.in addon/doxywizard/doxywizard.pro.in;do \
@@ -99,7 +98,7 @@ post-build:
 pre-install:
 	${RM} -rf ${TMPDOCDEST} ${PLIST}
 	${TOUCH} ${PLIST}
-.ifndef NOPORTDOCS
+.if !defined(NOPORTDOCS)
 	${MKDIR} ${TMPDOCDEST}/doxygen
 	${RM} -f ${WRKSRC}/examples/diagrams/html/*.md5 \
 		 ${WRKSRC}/examples/diagrams/html/*.map
@@ -108,31 +107,31 @@ pre-install:
 	${TAR} -C ${WRKSRC} --exclude '*/Makefile*' --exclude '*.dot' \
 		-cf - examples \
 		| ${TAR} -C ${TMPDOCDEST}/doxygen --unlink -xf -
-.ifndef WITHOUT_LATEX
+.if !defined(WITHOUT_LATEX)
 	${INSTALL_DATA} ${WRKSRC}/latex/doxygen_manual.dvi \
 			${WRKSRC}/latex/doxygen_manual.pdf \
 			${WRKSRC}/latex/doxygen_manual.ps \
 			${WRKSRC}/latex/archoverview.eps \
 			${WRKSRC}/latex/doxygen_logo.eps \
 			${TMPDOCDEST}/doxygen
-.endif # WITHOUT_LATEX
+.endif # !defined(WITHOUT_LATEX)
 	@cd ${TMPDOCDEST} \
 	&& ${FIND} -s * -type f -o -type l \
 		| ${SED} -e 's|^|share/doc/|'>> ${PLIST} \
 	&& ${FIND} -d * -type d \
 		| ${SED} -e 's|^|@dirrm share/doc/|' >> ${PLIST}
-.endif # ! NOPORTDOCS
+.endif # !defined(NOPORTDOCS)
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/doxygen ${PREFIX}/bin/
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/doxytag ${PREFIX}/bin/
-.ifndef WITHOUT_DOXYWIZARD
+.if !defined(WITHOUT_DOXYWIZARD)
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/doxywizard ${PREFIX}/bin/
-.endif
-.ifndef NOPORTDOCS
+.endif # !defined(WITHOUT_DOXYWIZARD)
+.if !defined(NOPORTDOCS)
 	${MKDIR} ${PREFIX}/share/doc/doxygen
 	${TAR} -C ${TMPDOCDEST} -cf - doxygen \
 		| ${TAR} -C ${PREFIX}/share/doc --unlink -xf -
-.endif # ! NOPORTDOCS
+.endif # !defined(NOPORTDOCS)
 
 .include <bsd.port.mk>
