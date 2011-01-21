@@ -1,10 +1,10 @@
---- cmake/FindRuby.cmake.orig	2010-12-10 15:13:27.000000000 +0000
-+++ cmake/FindRuby.cmake	2010-12-12 03:10:20.000000000 +0000
+--- cmake/FindRuby.cmake.orig	2011-01-18 19:54:43.825973597 +0000
++++ cmake/FindRuby.cmake	2011-01-18 19:57:33.943672013 +0000
 @@ -32,13 +32,12 @@
  ENDIF(RUBY_FOUND)
  
  FIND_PROGRAM(RUBY_EXECUTABLE
--  NAMES ruby ruby1.9 ruby19 ruby1.8 ruby18 ruby1.6 ruby16
+-  NAMES ruby1.9.2 ruby192 ruby1.9.1 ruby191 ruby1.9 ruby19 ruby1.8 ruby18 ruby1.6 ruby16 ruby
 -  PATHS /usr/bin /usr/local/bin /usr/pkg/bin
 +  NAMES ${BSD_RUBY_CMD}
    )
@@ -35,7 +35,7 @@
      "${RUBY_INCLUDE_PATH}/${RUBY_ARCH}")
  
    FIND_LIBRARY(RUBY_LIBRARY
--    NAMES ruby ruby1.6 ruby16 ruby1.8 ruby18 ruby1.9 ruby19
+-    NAMES ruby-1.9.2 ruby1.9.2 ruby192 ruby-1.9.1 ruby1.9.1 ruby191 ruby1.9 ruby19 ruby1.8 ruby18 ruby1.6 ruby16 ruby
 +    NAMES ${BSD_RUBY_VER}
      PATHS ${RUBY_POSSIBLE_LIB_PATH} ${RUBY_RUBY_LIB_PATH}
      )
