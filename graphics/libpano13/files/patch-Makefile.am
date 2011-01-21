@@ -1,5 +1,5 @@
---- Makefile.am.orig	2011-01-09 21:47:05.000000000 +0200
-+++ Makefile.am	2011-01-09 21:47:19.000000000 +0200
+--- Makefile.am.orig	2010-07-25 00:16:56.000000000 +0300
++++ Makefile.am	2011-01-21 11:25:52.000000000 +0200
 @@ -91,13 +91,23 @@
  
  endif
@@ -27,3 +27,12 @@
  libpano13_la_DEPENDENCIES = @PANO_WIN32_RESOURCE@
  
  pkginclude_HEADERS = $(STD_HDR) $(TOOL_HDR)
+@@ -105,7 +115,7 @@
+ noinst_HEADERS = $(INTERNAL_HDR) $(SYS_HDR) $(MAC_HDR)
+ 
+ # Pkg-config script.
+-pkgconfigdir = $(libdir)/pkgconfig
++pkgconfigdir = $(exec_prefix)/libdata/pkgconfig
+ pkgconfig_DATA = libpano13.pc
+ DISTCLEANFILES = $(pkgconfig_DATA)
+ 
