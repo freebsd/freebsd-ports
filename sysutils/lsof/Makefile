@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	lsof
-PORTVERSION=	4.84A
+PORTVERSION=	4.85A
 PORTEPOCH=	5
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.SpringDaemons.com/stas/ \
@@ -26,6 +26,7 @@ MASTER_SITES=	http://www.SpringDaemons.com/stas/ \
 		ftp://ftp.cert.dfn.de/pub/tools/admin/lsof/  \
 		ftp://ftp.cert.dfn.de/pub/tools/admin/lsof/NEW/ \
 		ftp://ftp.tau.ac.il/pub/unix/admin/
+DISTNAME=	${PORTNAME}_${PORTVERSION}${DISTNAME_SUFFIX}
 
 MAINTAINER=	ler@lerctr.org
 COMMENT=	Lists information about open files (similar to fstat(1))
@@ -33,25 +34,20 @@ COMMENT=	Lists information about open files (similar to fstat(1))
 #Please leave the below line in for the next clean up.
 FIXUP_RELEASE=	YES
 .if defined(FIXUP_RELEASE)
-DISTNAME=	${PORTNAME}_${PORTVERSION}.freebsd
+DISTNAME_SUFFIX=.freebsd
 .else
-DISTNAME=	${PORTNAME}_${PORTVERSION}
-.endif
-.if defined(FIXUP_RELEASE)
-WRKSRC=		${WRKDIR}/${DISTNAME}
-.else
+SRCBALL_NAME=	${DISTNAME:S/_W$//}_src
 WRKSRC=		${WRKDIR}/${DISTNAME}/${SRCBALL_NAME}
 .endif
+
 USE_BZIP2=	yes
 HAS_CONFIGURE=	yes
 CONFIGURE_SCRIPT=	Configure
 CONFIGURE_ARGS=	-n freebsd
 CONFIGURE_ENV=	LSOF_CC="${CC}"
-FREEBSD_SYS?=	/usr/src/sys
+FREEBSD_SYS?=	${SRC_BASE}/sys
 PLIST_FILES=	sbin/lsof
 MAN8=		lsof.8
-
-SRCBALL_NAME=	${DISTNAME:S/_W$//}_src
 
 .if !defined(FIXUP_RELEASE)
 post-extract:
