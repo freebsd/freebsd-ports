@@ -1,6 +1,15 @@
---- deps/v8/src/platform-freebsd.cc.orig	2010-12-18 01:51:48.000000000 +0800
-+++ deps/v8/src/platform-freebsd.cc	2010-12-26 00:30:36.000000000 +0800
-@@ -500,6 +500,16 @@
+--- deps/v8/src/platform-freebsd.cc.orig	2011-01-22 10:18:37.000000000 +0800
++++ deps/v8/src/platform-freebsd.cc	2011-01-22 21:44:50.000000000 +0800
+@@ -416,7 +416,7 @@
+ 
+ 
+ Thread::Thread(const char* name) : ThreadHandle(ThreadHandle::INVALID) {
+-  set_names(name);
++  set_name(name);
+ }
+ 
+ 
+@@ -512,6 +512,16 @@
      return result;
    }
  
@@ -17,7 +26,7 @@
   private:
    pthread_mutex_t mutex_;   // Pthread mutex for POSIX platforms.
  };
-@@ -578,7 +588,7 @@
+@@ -590,7 +600,7 @@
    TickSample sample;
  
    // We always sample the VM state.
