@@ -91,6 +91,7 @@ bin/nping
 %%DATADIR%%/scripts/auth-spoof.nse
 %%DATADIR%%/scripts/banner.nse
 %%DATADIR%%/scripts/broadcast-dns-service-discovery.nse
+%%DATADIR%%/scripts/broadcast-dropbox-listener.nse
 %%DATADIR%%/scripts/broadcast-ms-sql-discover.nse
 %%DATADIR%%/scripts/broadcast-upnp-info.nse
 %%DATADIR%%/scripts/broadcast-wsdd-discover.nse
@@ -112,6 +113,7 @@ bin/nping
 %%DATADIR%%/scripts/dns-random-txid.nse
 %%DATADIR%%/scripts/dns-recursion.nse
 %%DATADIR%%/scripts/dns-service-discovery.nse
+%%DATADIR%%/scripts/dns-update.nse
 %%DATADIR%%/scripts/dns-zone-transfer.nse
 %%DATADIR%%/scripts/domcon-brute.nse
 %%DATADIR%%/scripts/domcon-cmd.nse
@@ -190,6 +192,7 @@ bin/nping
 %%DATADIR%%/scripts/nfs-ls.nse
 %%DATADIR%%/scripts/nfs-showmount.nse
 %%DATADIR%%/scripts/nfs-statfs.nse
+%%DATADIR%%/scripts/nrpe-enum.nse
 %%DATADIR%%/scripts/ntp-info.nse
 %%DATADIR%%/scripts/ntp-monlist.nse
 %%DATADIR%%/scripts/oracle-brute.nse
