@@ -7,5 +7,5 @@ GenericName=XMMS Player
 Comment=Audio Player
 Terminal=false
 Name=xmms
-MimeType=application/x-xmms
+MimeType=application/x-xmms;
 Categories=GTK;Application;AudioVideo;Audio;
