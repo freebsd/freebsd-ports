@@ -107,6 +107,7 @@ libdata/pkgconfig/libwpg-0.2.pc
 %%PORTDOCS%%%%DOCSDIR%%/html/ftv2node.png
 %%PORTDOCS%%%%DOCSDIR%%/html/ftv2plastnode.png
 %%PORTDOCS%%%%DOCSDIR%%/html/ftv2pnode.png
+%%PORTDOCS%%%%DOCSDIR%%/html/ftv2splitbar.png
 %%PORTDOCS%%%%DOCSDIR%%/html/ftv2vertline.png
 %%PORTDOCS%%%%DOCSDIR%%/html/functions.html
 %%PORTDOCS%%%%DOCSDIR%%/html/functions_0x62.html
@@ -160,7 +161,6 @@ libdata/pkgconfig/libwpg-0.2.pc
 %%PORTDOCS%%%%DOCSDIR%%/html/libwpg_8h_source.html
 %%PORTDOCS%%%%DOCSDIR%%/html/libwpg__utils_8h.html
 %%PORTDOCS%%%%DOCSDIR%%/html/libwpg__utils_8h_source.html
-%%PORTDOCS%%%%DOCSDIR%%/html/main.html
 %%PORTDOCS%%%%DOCSDIR%%/html/namespacelibwpg.html
 %%PORTDOCS%%%%DOCSDIR%%/html/namespacemembers.html
 %%PORTDOCS%%%%DOCSDIR%%/html/namespacemembers_enum.html
@@ -168,13 +168,13 @@ libdata/pkgconfig/libwpg-0.2.pc
 %%PORTDOCS%%%%DOCSDIR%%/html/namespaces.html
 %%PORTDOCS%%%%DOCSDIR%%/html/nav_f.png
 %%PORTDOCS%%%%DOCSDIR%%/html/nav_h.png
+%%PORTDOCS%%%%DOCSDIR%%/html/navtree.css
 %%PORTDOCS%%%%DOCSDIR%%/html/open.png
 %%PORTDOCS%%%%DOCSDIR%%/html/tab_a.png
 %%PORTDOCS%%%%DOCSDIR%%/html/tab_b.png
 %%PORTDOCS%%%%DOCSDIR%%/html/tab_h.png
 %%PORTDOCS%%%%DOCSDIR%%/html/tab_s.png
 %%PORTDOCS%%%%DOCSDIR%%/html/tabs.css
-%%PORTDOCS%%%%DOCSDIR%%/html/tree.html
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/html
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm include/libwpg-0.2/libwpg
