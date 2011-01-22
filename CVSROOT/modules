@@ -23507,6 +23507,7 @@ screenie                        ports/sysutils/screenie
 scribe                          ports/net/scribe
 scribes                         ports/editors/scribes
 scribus                         ports/print/scribus
+scribus-devel                   ports/print/scribus-devel
 script4rss                      ports/www/script4rss
 scripts                         ports/x11/scripts
 scrnsaverproto                  ports/x11/scrnsaverproto
