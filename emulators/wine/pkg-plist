@@ -29,6 +29,7 @@ include/wine/library.h
 include/wine/svcctl.h
 include/wine/svcctl.idl
 include/wine/unicode.h
+include/wine/msvcrt/assert.h
 include/wine/msvcrt/conio.h
 include/wine/msvcrt/crtdbg.h
 include/wine/msvcrt/crtdefs.h
