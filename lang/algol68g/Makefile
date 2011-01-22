@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	algol68g
-PORTVERSION=	2.0.3
+PORTVERSION=	2.1.1
 CATEGORIES=	lang
 MASTER_SITES=	http://www.xs4all.nl/~jmvdveer/
-DISTFILES=	${PORTNAME}-${PORTVERSION}.tgz
-EXTRACT_ONLY=	${PORTNAME}-${PORTVERSION}.tgz
+EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	johans@FreeBSD.org
 COMMENT=	Alogol 68 Genie compiler
@@ -20,46 +19,29 @@ LIB_DEPENDS=	gsl.15:${PORTSDIR}/math/gsl
 OPTIONS=	PLOT "GNU plot support" On \
 		PGSQL "Postgresql support" On
 
-HAS_CONFIGURE=	yes
-CONFIGURE_ARGS=	-O -macosx -threads
-CONFIGURE_ENV+=	LOCALBASE=${LOCALBASE}
-MAKEFILE=	makefile
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS+=--enable-compiler
 
 MAN1=		a68g.1
-PLIST_FILES=	bin/a68g include/a68g.h
+PLIST_DIRS=	include/algol68g
+PLIST_FILES=	bin/a68g include/algol68g/a68g.h include/algol68g/a68g-config.h
 
 .include <bsd.port.options.mk>
 
 .ifdef WITH_PLOT
 LIB_DEPENDS+=	plot.4:${PORTSDIR}/graphics/plotutils
+.else
+CONFIGURE_ARGS+=--disable-plotutils
 .endif
 
 .ifdef WITH_PGSQL
 USE_PGSQL=	yes
+.else
+CONFIGURE_ARGS+=--disable-postgresql
 .endif
 
-post-install:
-	@:
-.ifndef NOPORTEXAMPLES
-	@${MKDIR} ${EXAMPLESDIR}
-	@${INSTALL_DATA} ${WRKSRC}/demo/* ${EXAMPLESDIR}
-.endif
-.ifndef NOPORTDOCS
-	@${MKDIR} ${DOCSDIR}
-	@${INSTALL_DATA} ${DISTDIR}/${PORTDOCS} ${DOCSDIR}
+post-patch:
+	# Skip broken check, assume our $CC works
+	@${REINPLACE_CMD} -e 's/"xgcc"/"x${CC}"/' ${WRKSRC}/configure
 
-PORTDOCS=	a68g-doc.pdf
-DISTFILES+=	${PORTDOCS}
-.endif
-
-.ifndef NOPORTEXAMPLES
-PORTEXAMPLES=	*
-.endif
-
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 700000
-BROKEN=		does not build on 6.X
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
