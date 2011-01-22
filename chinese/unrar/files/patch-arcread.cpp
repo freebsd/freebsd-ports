@@ -1,6 +1,6 @@
---- arcread.cpp.orig	Sun Aug  1 01:55:38 2004
-+++ arcread.cpp	Sun Aug  1 01:57:56 2004
-@@ -540,6 +540,7 @@
+--- arcread.cpp.orig	2011-01-04 20:28:47.000000000 +0800
++++ arcread.cpp	2011-01-21 22:59:22.000000000 +0800
+@@ -629,6 +629,7 @@
  
  void Archive::ConvertUnknownHeader()
  {
@@ -8,7 +8,7 @@
    if (NewLhd.UnpVer<20 && (NewLhd.FileAttr & 0x10))
      NewLhd.Flags|=LHD_DIRECTORY;
    if (NewLhd.HostOS>=HOST_MAX)
-@@ -551,6 +552,16 @@
+@@ -640,6 +641,16 @@
    }
    for (char *s=NewLhd.FileName;*s!=0;s=charnext(s))
    {

@@ -7,17 +7,13 @@
 
 CATEGORIES=	chinese
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 
 MASTERDIR=	${.CURDIR}/../../archivers/unrar
 
 EXTRA_PATCHES=	${.CURDIR}/files/patch-arcread.cpp \
 		${.CURDIR}/files/patch-unicode.cpp
 
-CONFLICTS=	unrar-*
-
-BROKEN=		obsoleted
-DEPRECATED=	constantly behind master and no maintainer
-EXPIRATION_DATE=	2011-02-20
+CONFLICTS=	unrar-[0-9]* unrar-iconv-[0-9]*
 
 .include "${MASTERDIR}/Makefile"

@@ -1,10 +1,10 @@
---- unicode.cpp.orig	Thu Aug  4 00:34:30 2005
-+++ unicode.cpp	Wed Sep  7 22:01:58 2005
+--- unicode.cpp.orig	2011-01-04 20:28:47.000000000 +0800
++++ unicode.cpp	2011-01-21 23:01:09.000000000 +0800
 @@ -7,6 +7,7 @@
- bool WideToChar(const wchar *Src,char *Dest,int DestSize)
+ bool WideToChar(const wchar *Src,char *Dest,size_t DestSize)
  {
    bool RetCode=true;
 +  return(RetCode); /* patch for chinese filename */
- #ifdef _WIN_32
-   if (WideCharToMultiByte(CP_ACP,0,Src,-1,Dest,DestSize,NULL,NULL)==0)
-     RetCode=false;
+   *Dest=0; // Set 'Dest' to zero just in case the conversion will fail.
+ 
+ #ifdef _WIN_ALL
