@@ -1,0 +1,9 @@
+%%SITE_PERL%%/Dancer/Debug.pm
+%%SITE_PERL%%/Plack/Middleware/Debug/Dancer/Logger.pm
+%%SITE_PERL%%/Plack/Middleware/Debug/Dancer/Routes.pm
+%%SITE_PERL%%/Plack/Middleware/Debug/Dancer/Session.pm
+%%SITE_PERL%%/Plack/Middleware/Debug/Dancer/Settings.pm
+%%SITE_PERL%%/Plack/Middleware/Debug/Dancer/Version.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Dancer/Debug/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Dancer/Debug
+@dirrm %%SITE_PERL%%/Plack/Middleware/Debug/Dancer
