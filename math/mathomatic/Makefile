@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mathomatic
-PORTVERSION=	15.4.0
+PORTVERSION=	15.4.1
 CATEGORIES=	math
 MASTER_SITES=	http://www.panix.com/~gesslein/ \
 		CRITICAL
@@ -21,6 +21,7 @@ MAKE_JOBS_SAFE=	yes
 
 MAKEFILE=	makefile
 
+LICENSE=	GPLv2
 PORTDOCS=	*
 MAN1=		mathomatic.1
 
