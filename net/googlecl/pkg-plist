@@ -2,6 +2,9 @@ bin/google
 %%PYTHON_SITELIBDIR%%/googlecl/__init__.py
 %%PYTHON_SITELIBDIR%%/googlecl/__init__.pyc
 %%PYTHON_SITELIBDIR%%/googlecl/__init__.pyo
+%%PYTHON_SITELIBDIR%%/googlecl/authentication.py
+%%PYTHON_SITELIBDIR%%/googlecl/authentication.pyc
+%%PYTHON_SITELIBDIR%%/googlecl/authentication.pyo
 %%PYTHON_SITELIBDIR%%/googlecl/base.py
 %%PYTHON_SITELIBDIR%%/googlecl/base.pyc
 %%PYTHON_SITELIBDIR%%/googlecl/base.pyo
@@ -14,12 +17,24 @@ bin/google
 %%PYTHON_SITELIBDIR%%/googlecl/calendar/__init__.py
 %%PYTHON_SITELIBDIR%%/googlecl/calendar/__init__.pyc
 %%PYTHON_SITELIBDIR%%/googlecl/calendar/__init__.pyo
+%%PYTHON_SITELIBDIR%%/googlecl/calendar/date.py
+%%PYTHON_SITELIBDIR%%/googlecl/calendar/date.pyc
+%%PYTHON_SITELIBDIR%%/googlecl/calendar/date.pyo
+%%PYTHON_SITELIBDIR%%/googlecl/calendar/date_test.py
+%%PYTHON_SITELIBDIR%%/googlecl/calendar/date_test.pyc
+%%PYTHON_SITELIBDIR%%/googlecl/calendar/date_test.pyo
 %%PYTHON_SITELIBDIR%%/googlecl/calendar/service.py
 %%PYTHON_SITELIBDIR%%/googlecl/calendar/service.pyc
 %%PYTHON_SITELIBDIR%%/googlecl/calendar/service.pyo
 %%PYTHON_SITELIBDIR%%/googlecl/client.py
 %%PYTHON_SITELIBDIR%%/googlecl/client.pyc
 %%PYTHON_SITELIBDIR%%/googlecl/client.pyo
+%%PYTHON_SITELIBDIR%%/googlecl/config/__init__.py
+%%PYTHON_SITELIBDIR%%/googlecl/config/__init__.pyc
+%%PYTHON_SITELIBDIR%%/googlecl/config/__init__.pyo
+%%PYTHON_SITELIBDIR%%/googlecl/config/parser.py
+%%PYTHON_SITELIBDIR%%/googlecl/config/parser.pyc
+%%PYTHON_SITELIBDIR%%/googlecl/config/parser.pyo
 %%PYTHON_SITELIBDIR%%/googlecl/contacts/__init__.py
 %%PYTHON_SITELIBDIR%%/googlecl/contacts/__init__.pyc
 %%PYTHON_SITELIBDIR%%/googlecl/contacts/__init__.pyo
@@ -44,6 +59,12 @@ bin/google
 %%PYTHON_SITELIBDIR%%/googlecl/docs/service.py
 %%PYTHON_SITELIBDIR%%/googlecl/docs/service.pyc
 %%PYTHON_SITELIBDIR%%/googlecl/docs/service.pyo
+%%PYTHON_SITELIBDIR%%/googlecl/finance/__init__.py
+%%PYTHON_SITELIBDIR%%/googlecl/finance/__init__.pyc
+%%PYTHON_SITELIBDIR%%/googlecl/finance/__init__.pyo
+%%PYTHON_SITELIBDIR%%/googlecl/finance/service.py
+%%PYTHON_SITELIBDIR%%/googlecl/finance/service.pyc
+%%PYTHON_SITELIBDIR%%/googlecl/finance/service.pyo
 %%PYTHON_SITELIBDIR%%/googlecl/picasa/__init__.py
 %%PYTHON_SITELIBDIR%%/googlecl/picasa/__init__.pyc
 %%PYTHON_SITELIBDIR%%/googlecl/picasa/__init__.pyo
@@ -61,8 +82,10 @@ bin/google
 %%PYTHON_SITELIBDIR%%/googlecl/youtube/service.pyo
 @dirrm %%PYTHON_SITELIBDIR%%/googlecl/youtube
 @dirrm %%PYTHON_SITELIBDIR%%/googlecl/picasa
+@dirrm %%PYTHON_SITELIBDIR%%/googlecl/finance
 @dirrm %%PYTHON_SITELIBDIR%%/googlecl/docs
 @dirrm %%PYTHON_SITELIBDIR%%/googlecl/contacts
+@dirrm %%PYTHON_SITELIBDIR%%/googlecl/config
 @dirrm %%PYTHON_SITELIBDIR%%/googlecl/calendar
 @dirrm %%PYTHON_SITELIBDIR%%/googlecl/blogger
 @dirrm %%PYTHON_SITELIBDIR%%/googlecl
