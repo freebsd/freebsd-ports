@@ -1,0 +1,14 @@
+SETI - Search for Extra-Terrestrial Intelligence -- AstroPulse
+
+The project listens for broad-band, short-time pulses that might represent
+extraterrestial intelligence, or other phenomena such as rapidly rotating
+pulsars or exploding primordial black holes.
+
+The port automatically optimizes for the host CPU using the CPUTYPE
+variable in /etc/make.conf
+
+Currently it requires X to build, but at runtime X is only required for the
+screen saver.  This requirement is an artifact of the current upstream design
+of the port.
+
+WWW: http://setiathome.berkeley.edu/

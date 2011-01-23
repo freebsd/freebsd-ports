@@ -1,0 +1,41 @@
+--- configure.ac.orig	2009-06-11 19:35:16.000000000 +0200
++++ configure.ac	2010-11-28 11:40:22.000000000 +0100
+@@ -7,17 +7,9 @@
+ dnl Process this file with autoconf to produce a configure script.
+ AC_INIT(astropulse, 5.06)
+ 
+-svnrev="`svn info | grep Revision:`"
+-
+-if test -n "${svnrev}" ; then
+-  AC_REVISION("${svnrev}") 
+-  AC_DEFINE_UNQUOTED(SVN_REV,"${svnrev}",
+-    [Define to be the subversion revision number])
+-else
+-  AC_REVISION([$Revision: 163 $])
+-  AC_DEFINE(SVN_REV,"$Revision: 163 $",
++  AC_REVISION([$Revision: 562 $])
++  AC_DEFINE(SVN_REV,"$Revision: 562 $",
+     [Define to be the subversion revision number])
+-fi
+ 
+ 
+ echo "--- Configuring Astropulse $AC_PACKAGE_VERSION ---"
+@@ -262,9 +254,7 @@
+ dnl AC_CHECK_LIB([stdc++], [main])
+ SAH_GRX_LIBS
+ AC_LANG(C++)
+-SAH_CHECK_BOINC
+ SAH_CHECK_SAH
+-SAH_FIND_SETILIB
+ AC_CACHE_SAVE
+ 
+ if test "${ac_cv_cxx_compiler_gnu}" = "yes" ; then
+@@ -378,7 +368,7 @@
+ AM_CONDITIONAL(ENABLE_GUI, [test "${enable_graphics}" = yes])
+ AM_CONDITIONAL(LINUX, [test -n "`echo ${target} | grep linux`"])
+ AM_CONDITIONAL(I386, [test -n "`echo ${target} | grep i.86`"])
+-AM_CONDITIONAL(X86_64, [test -n "`echo ${target} | grep 'x86_64'`"])
++AM_CONDITIONAL(X86_64, [test -n "`echo ${target} | ${EGREP} 'x86_64|amd64'`"])
+ AM_CONDITIONAL(PPC, [test -n "`echo ${target} | grep 'powerpc'`" -o -n "`echo ${target} | grep 'ppc'`" ])
+ 
+ 

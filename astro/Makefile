@@ -6,6 +6,7 @@
     SUBDIR += aa
     SUBDIR += accrete
     SUBDIR += astrometry
+    SUBDIR += boinc-astropulse
     SUBDIR += boinc-einsteinathome
     SUBDIR += boinc-milkyway
     SUBDIR += boinc-setiathome-enhanced

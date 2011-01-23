@@ -1,0 +1,113 @@
+# New ports collection makefile for:	boinc-astropulse
+# Date created:				8 July 2009
+# Whom:					Rene Ladan <rene@FreeBSD.org>
+# $FreeBSD$
+#
+
+PORTNAME=	boinc-astropulse
+PORTVERSION=	5.06
+CATEGORIES=	astro
+MASTER_SITES=	ftp://rene-ladan.nl/pub/distfiles/
+DISTNAME=	astropulse-svn-562
+
+MAINTAINER=	rene@FreeBSD.org
+COMMENT=	Astropulse for BOINC
+
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
+
+EXTRACT_DEPENDS=${NONEXISTENT}:${PORTSDIR}/astro/boinc-setiathome-enhanced:patch
+BUILD_DEPENDS=	${LOCALBASE}/include/fftw3.h:${PORTSDIR}/math/fftw3 \
+		${LOCALBASE}/include/boinc/std_fixes.h:${PORTSDIR}/net/boinc-client \
+		${LOCALBASE}/bin/bash:${PORTSDIR}/shells/bash
+RUN_DEPENDS=	boinc_client:${PORTSDIR}/net/boinc-client
+LIB_DEPENDS=	fftw3f:${PORTSDIR}/math/fftw3-float
+
+USE_AUTOTOOLS=	autoconf:env automake:env
+USE_BZIP2=	yes
+GNU_CONFIGURE=	yes
+USE_GMAKE=	yes
+USE_GNOME=	pkgconfig
+WRKSRC=		${WRKDIR}/${DISTNAME}/client
+
+CFLAGS+=	-O2 -I${LOCALBASE}/include/boinc -I${LOCALBASE}/include \
+		-L${LOCALBASE}/lib
+.if defined(CPUTYPE)
+CFLAGS+=	-march=${CPUTYPE}
+.endif
+
+# these must match settings in ${PORTSDIR}/net/boinc-client/Makefile
+BOINC_USER?=	boinc
+BOINC_GROUP?=	nobody
+BOINC_HOME?=	/var/db/boinc
+
+#.include <bsd.port.options.mk>
+
+#OPTIONS=	X11		"Build screensaver" on
+
+.include <bsd.port.pre.mk>
+
+# TODO fix upstream
+.if defined(WITHOUT_X11)
+BROKEN=Currently Astropulse requires X11 to build
+.endif
+
+.if !defined(WITHOUT_X11)
+.if !exists(${LOCALBASE}/lib/libboinc_graphics2.a)
+BROKEN=Reinstall net/boinc-client with X11 enabled for screensavers
+.endif
+LIB_DEPENDS+=	jpeg.11:${PORTSDIR}/graphics/jpeg \
+		xcb.2:${PORTSDIR}/x11/libxcb
+USE_GL=		gl glu glut
+USE_XORG=	ice sm x11 xau xext xi xdamage xdmcp xfixes xmu xt xxf86vm
+PLIST_SUB+=	X11=""
+.else
+CONFIGURE_ARGS+=	--disable-graphics
+PLIST_SUB+=	X11="@comment "
+.endif
+
+.if ${ARCH} == amd64 || ${ARCH} == i386
+# comment out if world is built with clang and port with gcc
+CFLAGS+=	-mtune=native
+.endif
+
+CONFIGURE_ENV+=	BOINCDIR="${NONEXISTENT}" \
+		BOINC_DIR="${NONEXISTENT}" \
+		SETI_BOINC_DIR="${PORTSDIR}/astro/boinc-setiathome-enhanced/work/setiathome-svn-412"
+CONFIGURE_ARGS+=	--disable-static-client \
+			--with-boinc-platform=${ARCH}-portbld-freebsd
+
+SETI_SITE=	setiathome.berkeley.edu
+AP_BINARY=	astropulse-${PORTVERSION:S/.0/./}.${ARCH}-portbld-freebsd
+
+SUB_FILES=	pkg-deinstall pkg-install pkg-message
+SUB_LIST=	AP_BINARY=${AP_BINARY} \
+		AP_VERSION=${PORTVERSION:S/.//} \
+		SETI_SITE=${SETI_SITE} \
+		BOINC_HOME=${BOINC_HOME} \
+		BOINC_USER=${BOINC_USER} \
+		BOINC_GROUP=${BOINC_GROUP}
+PLIST_SUB+=	AP_BINARY=${AP_BINARY} \
+		SETI_SITE=${SETI_SITE} \
+		BOINC_HOME=${BOINC_HOME}
+
+pre-configure:
+	(cd ${WRKSRC} ; ./_autosetup ; ${REINPLACE_CMD} -E -e \
+	    "s|/bin/sh|${LOCALBASE}/bin/bash|" ./configure)
+
+do-install:
+	${INSTALL} -d -o ${BOINC_USER} -g ${BOINC_GROUP} ${BOINC_HOME}/projects
+	${INSTALL} -d -o ${BOINC_USER} -g ${BOINC_GROUP} \
+	    ${BOINC_HOME}/projects/${SETI_SITE}
+	${INSTALL_PROGRAM} -o ${BOINC_USER} -g ${BOINC_GROUP} \
+	    ${WRKSRC}/${AP_BINARY} ${BOINC_HOME}/projects/${SETI_SITE}/
+.if !defined(WITHOUT_X11)
+	${INSTALL_PROGRAM} -o ${BOINC_USER} -g ${BOINC_GROUP} \
+	    ${WRKSRC}/ap_graphics ${BOINC_HOME}/projects/${SETI_SITE}/
+.endif
+
+post-install:
+	@PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
+	@${CAT} ${PKGMESSAGE}
+
+.include <bsd.port.post.mk>
