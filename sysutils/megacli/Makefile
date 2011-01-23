@@ -16,6 +16,8 @@ COMMENT=	SAS MegaRAID FreeBSD MegaCLI
 ONLY_FOR_ARCHS=	i386 amd64
 IA32_BINARY_PORT=	yes
 
+BROKEN=		unfetchable
+
 RESTRICTED=	May not be redistributed in binary form
 NO_CDROM=	yes
 
