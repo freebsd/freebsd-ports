@@ -1393,6 +1393,7 @@
     SUBDIR += p5-Data-Dumper-Simple
     SUBDIR += p5-Data-Flow
     SUBDIR += p5-Data-GUID
+    SUBDIR += p5-Data-Grouper
     SUBDIR += p5-Data-HashArray
     SUBDIR += p5-Data-HexDump
     SUBDIR += p5-Data-Hexdumper
