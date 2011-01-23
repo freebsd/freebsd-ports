@@ -9,17 +9,14 @@ PORTNAME=	libecwj2
 PORTVERSION=	3.3
 PORTREVISION=	1
 CATEGORIES=	graphics
-MASTER_SITES=	${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	glebius
+MASTER_SITES=	http://glebius.int.ru/tmp/403/
 DISTFILES=	ecw_jpeg_2000_sdk_3_3_source.zip
 
 MAINTAINER=	glebius@FreeBSD.org
 COMMENT=	Erdas ECW and JPEG2000 support library
 
 RESTRICTED=	Registration required to download sources, \
-		sources temporary unavailable on ERDAS website
-NO_PACKAGE=	${RESTRICTED}
-NO_CDROM=	${RESTRICTED}
+		but sources no longer available on ERDAS website
 
 USE_ZIP=	yes
 USE_AUTOTOOLS=	libtool autoconf
