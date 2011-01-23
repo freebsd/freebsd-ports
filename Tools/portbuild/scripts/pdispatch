@@ -145,7 +145,7 @@ ${scp_cmd} ${client_user}@${host}:${chroot}/tmp/${pkgname}.log ${builddir}/logs/
 # XXX Set dirty flag if any of the scp's fail
     
 mkdir -p ${builddir}/distfiles/.pbtmp/${pkgname}
-${ssh_cmd} -a -n ${client_user}@${host} tar -C ${chroot}/tmp/distfiles -cf - . | \
+${ssh_cmd} -a -n ${client_user}@${host} tar -C ${chroot}/tmp/distfiles -exclude ${chroot}/tmp/distfiles/RESTRICTED -cf - . | \
     tar --unlink -C ${builddir}/distfiles/.pbtmp/${pkgname} -xvf - && \
     touch ${builddir}/distfiles/.pbtmp/${pkgname}/.done
     
