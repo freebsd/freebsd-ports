@@ -6,7 +6,7 @@
 
 PORTNAME=	boinc-setiathome-enhanced
 PORTVERSION=	6.08
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	astro
 MASTER_SITES=	ftp://rene-ladan.nl/pub/distfiles/
 DISTNAME=	setiathome-svn-412
@@ -29,7 +29,8 @@ GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_GNOME=	pkgconfig
 
-CFLAGS+=	-O2 -I${LOCALBASE}/include/boinc -I${LOCALBASE}/include -L${LOCALBASE}/lib
+CFLAGS+=	-O2 -I${LOCALBASE}/include/boinc -I${LOCALBASE}/include \
+		-L${LOCALBASE}/lib
 .if defined(CPUTYPE)
 CFLAGS+=	-march=${CPUTYPE}
 .endif
@@ -57,41 +58,47 @@ CONFIGURE_ARGS+=	--disable-graphics
 PLIST_SUB+=	X11="@comment "
 .endif
 
-.if ${OSVERSION} >= 700042 && (${ARCH} == i386 || ${ARCH} == amd64)
-CFLAGS+=	-mtune=native # comment out if world is built with clang and port with gcc
+.if ${ARCH} == i386 || ${ARCH} == amd64
+# comment out if world is built with clang and port with gcc
+CFLAGS+=	-mtune=native
 .endif
 
-CXXFLAGS+=	${CFLAGS}
+CONFIGURE_ENV+=	BOINCDIR="${NONEXISTENT}"
 
-CONFIGURE_ENV+=	BOINCDIR="${LOCALBASE}"
-
-CONFIGURE_ARGS+=	--disable-static-client --with-boinc-platform=${ARCH}-portbld-freebsd --disable-server
+CONFIGURE_ARGS+=	--disable-static-client --disable-server \
+			--disable-altivec \
+			--with-boinc-platform=${ARCH}-portbld-freebsd
 
 SETI_SITE=	setiathome.berkeley.edu
 SETI_BINARY=	setiathome-${PORTVERSION:S/.0/./}.${ARCH}-portbld-freebsd
 
-SUB_FILES=	app_info.xml pkg-message
+SUB_FILES=	pkg-deinstall pkg-install pkg-message
 SUB_LIST=	SETI_BINARY=${SETI_BINARY} \
 		SETI_SITE=${SETI_SITE} \
-		SETI_VERSION=${PORTVERSION:S/.//}
+		SETI_VERSION=${PORTVERSION:S/.//} \
+		BOINC_HOME=${BOINC_HOME}
 PLIST_SUB+=	SETI_BINARY=${SETI_BINARY} \
 		SETI_SITE=${SETI_SITE} \
 		BOINC_HOME=${BOINC_HOME} \
 		PREFIX=${PREFIX}
 
 pre-configure:
-	(cd ${WRKSRC}; ./_autosetup ; ${REINPLACE_CMD} -E -e "s|/bin/sh|${LOCALBASE}/bin/bash|" ./configure)
+	(cd ${WRKSRC} ; ./_autosetup ; ${REINPLACE_CMD} -E -e \
+	    "s|/bin/sh|${LOCALBASE}/bin/bash|" ./configure)
 
 do-install:
 	${INSTALL} -d -o ${BOINC_USER} -g ${BOINC_GROUP} ${BOINC_HOME}/projects
-	${INSTALL} -d -o ${BOINC_USER} -g ${BOINC_GROUP} ${BOINC_HOME}/projects/${SETI_SITE}
-	${INSTALL_PROGRAM} -o ${BOINC_USER} -g ${BOINC_GROUP} ${WRKSRC}/client/${SETI_BINARY} ${BOINC_HOME}/projects/${SETI_SITE}/
+	${INSTALL} -d -o ${BOINC_USER} -g ${BOINC_GROUP} \
+	    ${BOINC_HOME}/projects/${SETI_SITE}
+	${INSTALL_PROGRAM} -o ${BOINC_USER} -g ${BOINC_GROUP} \
+	    ${WRKSRC}/client/${SETI_BINARY} ${BOINC_HOME}/projects/${SETI_SITE}/
 .if !defined(WITHOUT_X11)
-	${INSTALL_PROGRAM} -o ${BOINC_USER} -g ${BOINC_GROUP} ${WRKSRC}/client/seti_graphics ${BOINC_HOME}/projects/${SETI_SITE}/
+	${INSTALL_PROGRAM} -o ${BOINC_USER} -g ${BOINC_GROUP} \
+	    ${WRKSRC}/client/seti_graphics ${BOINC_HOME}/projects/${SETI_SITE}/
 .endif
-	${INSTALL_DATA} -o ${BOINC_USER} -g ${BOINC_GROUP} ${WRKDIR}/app_info.xml ${BOINC_HOME}/projects/${SETI_SITE}/
 
 post-install:
+	@PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
