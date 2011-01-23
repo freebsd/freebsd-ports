@@ -33,6 +33,7 @@
     SUBDIR += cooledit
     SUBDIR += cream
     SUBDIR += dedit
+    SUBDIR += dhex
     SUBDIR += diakonos
     SUBDIR += dkns
     SUBDIR += doxymacs
