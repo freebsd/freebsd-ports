@@ -71,12 +71,15 @@ setup() {
 	    ${client_user}@${node}:${pb}/
 	checkerror $? || (echo "Copying scripts to ${node} failed"; return 1)
 
-	# client.conf and common.conf can be symlinks; copy the actual files
+	# client.conf and common.conf can be symlinks outside this dir, so
+	# copy the actual files
 	rsync ${rsync_gzip} -e "${ssh_cmd}" -r -L -p --delete ${pb}/${arch}/*.conf \
 	    ${client_user}@${node}:${pb}/${arch}
 	checkerror $? || (echo "copying *.conf to ${node} failed"; return 1)
 
-	rsync ${rsync_gzip} -e "${ssh_cmd}" -r -l -p --delete ${pb}/${arch}/portbuild* \
+	# portbuild.* can be symlinks outside this dir, so copy the actual
+	# files
+	rsync ${rsync_gzip} -e "${ssh_cmd}" -r -L -p --delete ${pb}/${arch}/portbuild* \
 	    ${client_user}@${node}:${pb}/${arch}
 	checkerror $? || (echo "copying portbuild* files to ${node} failed"; return 1)
 
