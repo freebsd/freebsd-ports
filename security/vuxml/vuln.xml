@@ -1148,13 +1148,63 @@ Note:  Please add new entries to the beginning of this file.
     <affects>
       <package>
 	<name>chromium</name>
-	<range><lt>8.0.552.215</lt></range>
+	<range><lt>8.0.552.237</lt></range>
       </package>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
 	<p>Google Chrome Releases reports:</p>
-     	<blockquote cite="http://googlechromereleases.blogspot.com/search/label/Stable%20updates">
+	<blockquote cite="http://googlechromereleases.blogspot.com/search/label/Stable%20updates">
+	  <p>Fixed in 8.0.552.237:<br/>
+	    [58053] Medium Browser crash in extensions notification handling.
+	      Credit to Eric Roman of the Chromium development community.<br/>
+	    [65764] High Bad pointer handling in node iteration. Credit to
+	      Sergey Glazunov.<br/>
+	    [66334] High Crashes when printing multi-page PDFs. Credit to
+	      Google Chrome Security Team (Chris Evans).<br/>
+	    [66560] High Stale pointer with CSS + canvas. Credit to Sergey
+	      Glazunov.<br/>
+	    [66748] High Stale pointer with CSS + cursors. Credit to Jan
+	      Tosovsk&yacute;.<br/>
+	    [67100] High Use after free in PDF page handling. Credit to Google
+	      Chrome Security Team (Chris Evans).<br/>
+	    [67208] High Stack corruption after PDF out-of-memory condition.
+	      Credit to Jared Allar of CERT.<br/>
+	    [67303] High Bad memory access with mismatched video frame sizes.
+	      Credit to Aki Helin of OUSPG; plus independent discovery by
+	      Google Chrome Security Team (SkyLined) and David Warren of
+	      CERT.<br/>
+	    [67363] High Stale pointer with SVG use element. Credited
+	      anonymously; plus indepdent discovery by miaubiz.<br/>
+	    [67393] Medium Uninitialized pointer in the browser triggered by
+	      rogue extension. Credit to kuzzcc.<br/>
+	    [68115] High Vorbis decoder buffer overflows. Credit to David
+	      Warren of CERT.<br/>
+	    [68170] High Buffer overflow in PDF shading. Credit to Aki Helin of
+	      OUSPG.<br/>
+	    [68178] High Bad cast in anchor handling. Credit to Sergey
+	      Glazunov.<br/>
+	    [68181] High Bad cast in video handling. Credit to Sergey
+	      Glazunov.<br/>
+	    [68439] High Stale rendering node after DOM node removal. Credit to
+	      Martin Barbella; plus independent discovery by Google Chrome
+	      Security Team (SkyLined).<br/>
+	    [68666] Critical Stale pointer in speech handling. Credit to Sergey
+	      Glazunov.</p>
+
+	  <p>Fixed in 8.0.552.224:<br/>
+	    [64-bit Linux only] [56449] High Bad validation for message
+	      deserialization on 64-bit builds. Credit to Lei Zhang of the
+	      Chromium development community.<br/>
+	    [60761] Medium Bad extension can cause browser crash in tab
+	      handling. Credit to kuzzcc.<br/>
+	    [63529] Low Browser crash with NULL pointer in web worker handling.
+	      Credit to Nathan Weizenbaum of Google.<br/>
+	    [63866] Medium Out-of-bounds read in CSS parsing. Credit to Chris
+	      Rohlf.<br/>
+	    [64959] High Stale pointers in cursor handling. Credit to Slawomir
+	      Blazek and Sergey Glazunov.</p>
+
 	  <p>Fixed in 8.0.552.215:<br/>
 	    [17655] Low Possible pop-up blocker bypass. Credit to Google Chrome
 	      Security Team (SkyLined).<br/>
@@ -1239,6 +1289,7 @@ Note:  Please add new entries to the beginning of this file.
     <dates>
       <discovery>2010-10-19</discovery>
       <entry>2010-12-07</entry>
+      <modified>2011-01-23</modified>
     </dates>
   </vuln>
 
