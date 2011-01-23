@@ -1,0 +1,4 @@
+@cwd %%BOINC_HOME%%/projects
+%%SETI_SITE%%/%%AP_BINARY%%
+%%X11%%%%SETI_SITE%%/ap_graphics
+@dirrmtry %%SETI_SITE%%
