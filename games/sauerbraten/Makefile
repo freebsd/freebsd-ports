@@ -25,6 +25,8 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 ALL_TARGET=	libenet
 MAKE_JOBS_SAFE=	yes
 
+MANUAL_PACKAGE_BUILD=	distfile exceeds pointyhat file size limits
+
 PORTDATA=	data packages
 PORTDOCS=	*
 
