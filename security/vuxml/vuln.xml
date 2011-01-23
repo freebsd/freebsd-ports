@@ -1165,7 +1165,7 @@ Note:  Please add new entries to the beginning of this file.
 	    [66560] High Stale pointer with CSS + canvas. Credit to Sergey
 	      Glazunov.<br/>
 	    [66748] High Stale pointer with CSS + cursors. Credit to Jan
-	      Tosovsk&yacute;.<br/>
+	      Tosovsk.<br/>
 	    [67100] High Use after free in PDF page handling. Credit to Google
 	      Chrome Security Team (Chris Evans).<br/>
 	    [67208] High Stack corruption after PDF out-of-memory condition.
