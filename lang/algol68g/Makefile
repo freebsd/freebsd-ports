@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	algol68g
-PORTVERSION=	2.1.1
+PORTVERSION=	2.1.2
 CATEGORIES=	lang
 MASTER_SITES=	http://www.xs4all.nl/~jmvdveer/
 EXTRACT_SUFX=	.tgz
