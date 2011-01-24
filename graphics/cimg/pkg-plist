@@ -289,7 +289,6 @@ include/CImg.h
 %%PORTDOCS%%%%DOCSDIR%%/reference/ref_index.jpg
 %%PORTDOCS%%%%DOCSDIR%%/reference/ref_isoline3d.jpg
 %%PORTDOCS%%%%DOCSDIR%%/reference/ref_isosurface3d.jpg
-%%PORTDOCS%%%%DOCSDIR%%/reference/ref_label_regions.jpg
 %%PORTDOCS%%%%DOCSDIR%%/reference/ref_map.jpg
 %%PORTDOCS%%%%DOCSDIR%%/reference/ref_noise.jpg
 %%PORTDOCS%%%%DOCSDIR%%/reference/ref_norm.jpg
