@@ -46,7 +46,7 @@ CONFIGURE_ARGS+=	--enable-localspeex=no
 CONFIGURE_ARGS+=	--enable-localspeex=yes
 .endif
 
-.if (${ARCH} == "amd64") || (${ARCH} == "ia64") || (${ARCH} == "sparc64")
+.if (${ARCH} == "amd64") || (${ARCH} == "ia64") || (${ARCH} == "powerpc") || (${ARCH} == "sparc64")
 CFLAGS+=	-fPIC
 .endif
 
