@@ -9,7 +9,6 @@ PORTVERSION=	3.2.1
 PORTREVISION=	6
 CATEGORIES=	russian kde
 MASTER_SITES=	http://ksocrat.linux.kiev.ua/download/
-
 MASTER_SITE_SUBDIR=	${PORTNAME}-${PORTVERSION}
 DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX} \
 		${PORTNAME}-enru-dic-1.0.1${EXTRACT_SUFX} \
@@ -23,8 +22,7 @@ USE_KDELIBS_VER=3
 USE_AUTOTOOLS=	libtool
 USE_GMAKE=	yes
 
-RESTRICTED=	"Redistribution not allowed"
-NO_CDROM=	${RESTRICTED}
+RESTRICTED=	Redistribution not allowed
 
 CONFIGURE_ENV+=	LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
 
