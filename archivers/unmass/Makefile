@@ -21,6 +21,7 @@ MAKE_JOBS_SAFE=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/kdev
 
+LICENSE=	GPLv2
 PLIST_FILES=	bin/unmass
 
 post-patch:
