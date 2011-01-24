@@ -21,8 +21,6 @@ BUILD_DEPENDS=	mkfontscale:${PORTSDIR}/x11-fonts/mkfontscale	\
 		mkfontdir:${PORTSDIR}/x11-fonts/mkfontdir	\
 		fc-cache:${PORTSDIR}/x11-fonts/fontconfig
 
-RESTRICTED=	Only unmodified original package can be distributed
-
 USE_ZIP=	yes
 
 PLIST_SUB=	FONTSDIR="${FONTSDIR:S|${PREFIX}/||}"
