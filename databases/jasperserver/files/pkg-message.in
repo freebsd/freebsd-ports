@@ -1,0 +1,23 @@
+
+To use this software package, you need to properly configure and enable an application and
+database server. These components need to be enabled, respectively, in /etc/rc.conf.
+
+The %%DATABASE%% schema and default security credentials have been copied to:
+
+%%JSHOME%%/jasperserverCreate-%%DATABASE%%.ddl
+and 
+%%JSHOME%%/jasperserverCreateDefaultSecurity-%%DATABASE%%.sql 
+
+Take necessary precautions before loading this sql into the %%PORTNAME%% database.
+
+To create the %%PORTNAME%% database, you may choose to run the following target against
+%%PORTSDIR%%/databases/%%PORTNAME%%-%%PORTVERSION%%-src/%%PORTNAME%%/buildomatic/js-ant
+
+./js-ant create-js-db (Creates the %%PORTNAME%% database)
+
+If the %%PORTNAME%% database already exists, you may need to first drop the database:
+./js-ant drop-js-db (Drops the %%PORTNAME%% database)
+
+Alternatively, you may choose to use the following method to create a suitable database:
+ (mysql) mysql> create database jasperserver character set utf8;
+
