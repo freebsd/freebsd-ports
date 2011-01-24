@@ -16,7 +16,10 @@ EXTRACT_SUFX=	.tar.Z
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The parallel make(1) program from the Sprite project
 
-RESTRICTED=	"Non-commercial use only"
+NO_CDROM=	"Non-commercial use only"
+
+DEPRECATED=		does not build on any supported version of FreeBSD
+EXPIRATION_DATE=	2011-02-23
 
 WRKSRC=		${WRKDIR}/pmake
 MAKEFILE=	makefile
