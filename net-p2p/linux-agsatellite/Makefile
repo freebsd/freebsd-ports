@@ -16,6 +16,10 @@ DISTNAME=	AGSatellite${PORTVERSION:S/.//}-glibc21
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Client that allows you to share your music on Audiogalaxy(TM)
 
+BROKEN=		unfetchable
+DEPRECATED=	the whole service went to cloud
+EXPIRATION_DATE=2011-02-24
+
 WRKSRC=	${WRKDIR}/${DISTNAME:C/-.*//}
 
 NO_BUILD=	yes
