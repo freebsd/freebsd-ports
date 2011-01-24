@@ -51,9 +51,9 @@ CONFIGURE_ARGS=	--with-lapack=-llapack --with-blas=-lblas
 .endif
 
 post-patch:
-	${REINPLACE_CMD} -e 's|[(]libdir[)]/pkgconfig|(prefix)/libdata/pkgconfig|g' \
+	@${REINPLACE_CMD} -e 's|[(]libdir[)]/pkgconfig|(prefix)/libdata/pkgconfig|g' \
 		${WRKSRC}/etc/Makefile.in
-	${REINPLACE_CMD} \
+	@${REINPLACE_CMD} \
 		-e '/@WINDOWS_FALSE@bin_SCRIPTS =/s/jags/mcmc-&/' \
 		-e '/CLEANFILES =/s/jags/mcmc-&/' \
 		-e '/@WINDOWS_FALSE@jags:/s/jags/mcmc-&/' \
@@ -63,22 +63,20 @@ post-patch:
 
 post-install:
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${DOCSDIR}
 .for _M in developer installation user
-	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/jags_${_M}_manual.pdf \
+	@${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/jags_${_M}_manual.pdf \
 		${DOCSDIR}
 .endfor
 .endif
 .if !defined(NOPORTEXAMPLES)
-	${MKDIR} ${EXAMPLESDIR}
-	( cd ${EXAMPLESDIR}; \
+	@${MKDIR} ${EXAMPLESDIR}
+	@( cd ${EXAMPLESDIR}; \
 	  ${PAX} -rzf ${DISTDIR}/${DIST_SUBDIR}/classic-bugs.tar.gz \
 	    -s ':^classic-bugs/*::' )
-	${SED} -i '' \
+	@${SED} -i '' \
 		-e '\|JAGS ?=|{s|jags|mcmc-&|;s|/usr/local|${PREFIX}|;}' \
 		${EXAMPLESDIR}/vol[12]/Makefile
-	${SED} -i '' -e '\|EXAMPLES ?=|{s|litters||;}' \
-		${EXAMPLESDIR}/vol1/Makefile
 	@${ECHO_MSG} ""
 	@${CAT} ${PKGMESSAGE}
 	@${ECHO_MSG} ""
@@ -88,10 +86,16 @@ post-install:
 .if defined(MAINTAINER_MODE)
 RUN_DEPENDS+=	${LOCALBASE}/lib/R/library/coda/R/coda.rdb:${PORTSDIR}/math/R-cran-coda
 
-regression-test test check:	install
+testclean:	install
 .for _i in 1 2
-	 ( cd ${EXAMPLESDIR}/vol${_i} && ${SETENV} ${MAKE_ENV} ${MAKE} \
-	 	${_MAKE_JOBS} ${MAKE_ARGS} clean check clean)
+	@( cd ${EXAMPLESDIR}/vol${_i} && ${SETENV} ${MAKE_ENV} ${MAKE} \
+	 	${_MAKE_JOBS} ${MAKE_ARGS} clean)
+.endfor
+
+regression-test test check:	testclean
+.for _i in 1 2
+	@( cd ${EXAMPLESDIR}/vol${_i} && ${SETENV} ${MAKE_ENV} ${MAKE} \
+	 	${_MAKE_JOBS} ${MAKE_ARGS} check)
 .endfor
 
 .endif
