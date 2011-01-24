@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tt-rss
-PORTVERSION=	1.5.0
+PORTVERSION=	1.5.1
 CATEGORIES=	www
 MASTER_SITES=	http://tt-rss.org/download/
 
@@ -66,6 +66,7 @@ do-configure:
 .if !defined(WITH_PGSQL)
 	${REINPLACE_CMD} -e '/DB_TYPE/s|pgsql|mysql|;s|mysql$$|pgsql|'	\
 		${WRKSRC}/config.php-dist
+	${REINPLACE_CMD} -e "s|, 'DB_PORT'||" ${WRKSRC}/sanity_config.php
 .endif
 	${REINPLACE_CMD} -e '/SINGLE_USER_MODE/s|true|false|'		\
 		-e '/ENABLE_UPDATE_DAEMON/s|false|true|'		\

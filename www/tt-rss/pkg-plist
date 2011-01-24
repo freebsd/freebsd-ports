@@ -1656,6 +1656,7 @@
 %%WWWDIR%%/register.php
 %%WWWDIR%%/rss.xsl
 %%WWWDIR%%/sanity_check.php
+%%WWWDIR%%/sanity_config.php
 %%WWWDIR%%/schema/ttrss_schema_mysql.sql
 %%WWWDIR%%/schema/ttrss_schema_pgsql.sql
 %%WWWDIR%%/schema/versions/mysql/10.sql
@@ -1933,6 +1934,7 @@
 %%WWWDIR%%/utils/notifier/options.html
 %%WWWDIR%%/utils/notifier/popup.html
 %%WWWDIR%%/utils/notifier/style.css
+%%WWWDIR%%/utils/regen_config_checks.sh
 %%WWWDIR%%/utils/stats.php
 %%WWWDIR%%/utils/update-js-translations.sh
 %%WWWDIR%%/utils/update-schema-translations.sh
@@ -2015,9 +2017,9 @@
 @dirrm %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/HTMLModule
 @dirrm %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/Filter
 @dirrm %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/EntityLookup
-@dirrm %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/DefinitionCache/Serializer
+@dirrmtry %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/DefinitionCache/Serializer
 @dirrm %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/DefinitionCache/Decorator
-@dirrm %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/DefinitionCache
+@dirrmtry %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/DefinitionCache
 @dirrm %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema
 @dirrm %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/Interchange
 @dirrm %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/Builder
@@ -2029,9 +2031,9 @@
 @dirrm %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/AttrDef/HTML
 @dirrm %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/AttrDef/CSS
 @dirrm %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/AttrDef
-@dirrm %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier
-@dirrm %%WWWDIR%%/lib/htmlpurifier/library
-@dirrm %%WWWDIR%%/lib/htmlpurifier
+@dirrmtry %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier
+@dirrmtry %%WWWDIR%%/lib/htmlpurifier/library
+@dirrmtry %%WWWDIR%%/lib/htmlpurifier
 @dirrm %%WWWDIR%%/lib/gettext
 @dirrm %%WWWDIR%%/lib/dojo/rpc
 @dirrm %%WWWDIR%%/lib/dojo/resources/images
@@ -2227,7 +2229,7 @@
 @dirrm %%WWWDIR%%/lib/dijit/_editor
 @dirrm %%WWWDIR%%/lib/dijit/_base
 @dirrm %%WWWDIR%%/lib/dijit
-@dirrm %%WWWDIR%%/lib
+@dirrmtry %%WWWDIR%%/lib
 @dirrm %%WWWDIR%%/images
 @dirrmtry %%WWWDIR%%/icons
 @dirrm %%WWWDIR%%/help
