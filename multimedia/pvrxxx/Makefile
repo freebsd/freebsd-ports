@@ -26,8 +26,6 @@ NOFETCHFILES=	hcwPVRP2.sys HcwMakoA.ROM
 
 RESTRICTED_FILES=	hcwPVRP2.sys HcwMakoA.ROM
 RESTRICTED=	This port uses a binary driver which is owned by Hauppauge
-NO_PACKAGE=	${RESTRICTED}
-NO_CDROM=	${RESTRICTED}
 
 MAN4=		cxm.4
 MAN1=		pvr250-setchannel.1
@@ -38,16 +36,15 @@ MODULESDIR=	/boot/modules
 PLIST_SUB=	MODULESDIR=${MODULESDIR}
 
 .if !exists(${DISTDIR}/hcwPVRP2.sys)
-IGNORE=		You need the file hcwPVRP2.sys from the CD coming with the PVR-150/500 card. Please place this file in ${DISTDIR} and run make again. Check http://ivtvdriver.org/index.php/Firmware for the recommended version.
+IGNORE=		you need the file hcwPVRP2.sys from the CD coming with the PVR-150/500 card. Please place this file in ${DISTDIR} and run make again. Check http://ivtvdriver.org/index.php/Firmware for the recommended version
 .endif
 
 .if !exists(${DISTDIR}/HcwMakoA.ROM)
-IGNORE=         You need the file HcwMakoA.ROM from the CD coming with the PVR-150/500 card. Please place this file in ${DISTDIR} and run m
-ake again. Check http://ivtvdriver.org/index.php/Firmware for the recommended version.
+IGNORE=         you need the file HcwMakoA.ROM from the CD coming with the PVR-150/500 card. Please place this file in ${DISTDIR} and run make again. Check http://ivtvdriver.org/index.php/Firmware for the recommended version
 .endif
 
 .if !exists(${SRC_BASE}/sys/dev/iicbus/iicbb.c)
-IGNORE=		You need the kernel sources installed to build this module.
+IGNORE=		you need the kernel sources installed to build this module
 .endif
 
 patch-iicbb:
@@ -64,7 +61,7 @@ do-extract:
 	${SH} ${DISTDIR}/${CXMSHAR}; \
 	${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${_DISTDIR}/${PVRTOOLS}.tar.gz ${EXTRACT_AFTER_ARGS}; \
 	cd modules/cxm/cxm; \
-        ${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${_DISTDIR}/pvrxxx_gpl.tgz ${EXTRACT_AFTER_ARGS};
+	${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${_DISTDIR}/pvrxxx_gpl.tgz ${EXTRACT_AFTER_ARGS};
 
 post-patch:
 	${REINPLACE_CMD} -e 's/tuner0/cxm0/' \
