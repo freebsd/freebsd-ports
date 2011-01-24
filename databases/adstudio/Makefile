@@ -22,7 +22,6 @@ JAVA_VERSION=	1.6+
 NO_BUILD=	yes
 
 RESTRICTED=	See <http://www.aquafold.com/licensing.html>
-NO_CDROM=	${RESTRICTED}
 
 LICENSE=	EULA
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
