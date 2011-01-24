@@ -1,0 +1,11 @@
+--- configure.in.orig	2010-05-10 06:38:57.000000000 +0900
++++ configure.in	2010-12-29 19:11:40.000000000 +0900
+@@ -166,7 +166,7 @@
+
+ if test "x${USE_AACPLUS}" = "xyes" ; then
+     AC_MSG_CHECKING( [for aacplus library at ${CONFIG_AACPLUS_PREFIX}] )
+-    LA_SEARCH_LIB( AACPLUS_LIB_LOC, AACPLUS_INC_LOC, libaacplus.a libaacplus.so, sbr_main.h,
++    LA_SEARCH_LIB( AACPLUS_LIB_LOC, AACPLUS_INC_LOC, libaacplus.a libaacplus.so, aacplus.h,
+                    ${CONFIG_AACPLUS_PREFIX})
+     if test "x${AACPLUS_LIB_LOC}" != "x" ; then
+         AC_DEFINE( HAVE_AACPLUS_LIB, 1, [build with aacplus library] )
