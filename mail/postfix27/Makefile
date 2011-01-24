@@ -21,9 +21,11 @@ MAINTAINER=	sahil@FreeBSD.org
 COMMENT=	A secure alternative to widely-used Sendmail
 
 VDAVERSION=	2.7.0
-CONFLICTS=	courier-0.* postfix-1.* postfix-2.[0-68-9].* postfix-current-2.* \
-		sendmail-8.* sendmail+*-8.* smail-3.* zmailer-2.*
+CONFLICTS=	courier-0.* postfix-1.* postfix-2.[0-689].* postfix-base-2.[0-689].* \
+		postfix-current-2.* postfix-current-base-2.* sendmail-8.* \
+		sendmail+*-8.* smail-3.* zmailer-2.*
 
+NO_LATEST_LINK=	yes
 USE_SUBMAKE=	yes
 USE_PERL5_BUILD=yes
 SCRIPTS_ENV+=	POSTFIX_DEFAULT_MTA="${POSTFIX_DEFAULT_MTA}"
