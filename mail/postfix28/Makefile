@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	postfix
-PORTVERSION=	2.7.2
+PORTVERSION=	2.8.0
 PORTEPOCH=	1
 CATEGORIES=	mail ipv6
 MASTER_SITES=	ftp://ftp.porcupine.org/mirrors/postfix-release/official/ \
@@ -21,9 +21,11 @@ MAINTAINER=	sahil@FreeBSD.org
 COMMENT=	A secure alternative to widely-used Sendmail
 
 VDAVERSION=	2.7.0
-CONFLICTS=	courier-0.* postfix-1.* postfix-2.[0-68-9].* postfix-current-2.* \
-		sendmail-8.* sendmail+*-8.* smail-3.* zmailer-2.*
+CONFLICTS=	courier-0.* postfix-1.* postfix-2.[0-79].* postfix-base-2.[0-79].* \
+		postfix-current-2.* postfix-current-base-2.* sendmail-8.* \
+		sendmail+*-8.* smail-3.* zmailer-2.*
 
+MAKE_JOBS_SAFE=	yes
 USE_SUBMAKE=	yes
 USE_PERL5_BUILD=yes
 SCRIPTS_ENV+=	POSTFIX_DEFAULT_MTA="${POSTFIX_DEFAULT_MTA}"
@@ -49,7 +51,9 @@ OPTIONS=	PCRE		"Perl Compatible Regular Expressions"			on \
 		BDB		"Berkeley DB (choose version with WITH_BDB_VER)"	${STATUS_BDB} \
 		MYSQL		"MySQL maps (choose version with WITH_MYSQL_VER)"	${STATUS_MySQL} \
 		PGSQL		"PostgreSQL maps (choose with DEFAULT_PGSQL_VER)"	${STATUS_PgSQL} \
+		SQLITE		"SQLite maps"						off \
 		OPENLDAP	"OpenLDAP maps (choose ver. with WITH_OPENLDAP_VER)"	${STATUS_OpenLDAP} \
+		LDAP_SASL	"Enable OpenLDAP client-to-server auth via SASL"	off \
 		CDB		"CDB maps lookups"					${STATUS_CDB} \
 		NIS		"NIS maps lookups"					${STATUS_NIS} \
 		VDA		"VDA (Virtual Delivery Agent 32Bit)"			${STATUS_VDA} \
@@ -66,11 +70,11 @@ MAN1=	postalias.1 postcat.1 postconf.1 postdrop.1 postfix.1 postkick.1 \
 MAN5=	access.5 aliases.5 bounce.5 canonical.5 cidr_table.5 generic.5 \
 	header_checks.5 ldap_table.5 master.5 mysql_table.5 nisplus_table.5 \
 	pcre_table.5 pgsql_table.5 postconf.5 postfix-wrapper.5 regexp_table.5 \
-	relocated.5 tcp_table.5 transport.5 virtual.5
+	relocated.5 sqlite_table.5 tcp_table.5 transport.5 virtual.5
 
-MAN8=	anvil.8 bounce.8 cleanup.8 discard.8 error.8 flush.8 local.8 master.8 \
-	oqmgr.8 pickup.8 pipe.8 proxymap.8 qmgr.8 qmqpd.8 scache.8 showq.8 \
-	smtp.8 smtpd.8 spawn.8 tlsmgr.8 trivial-rewrite.8 verify.8 virtual.8
+MAN8=	anvil.8 bounce.8 cleanup.8 discard.8 dnsblog.8 error.8 flush.8 local.8 master.8 \
+	oqmgr.8 pickup.8 pipe.8 postscreen.8 proxymap.8 qmgr.8 qmqpd.8 scache.8 showq.8 \
+	smtp.8 smtpd.8 spawn.8 tlsmgr.8 tlsproxy.8 trivial-rewrite.8 verify.8 virtual.8
 
 MLINKS=	sendmail.1 mailq.1 \
 	sendmail.1 newaliases.1 \
@@ -79,7 +83,7 @@ MLINKS=	sendmail.1 mailq.1 \
 	bounce.8 trace.8 \
 	smtp.8 lmtp.8
 
-HTML1=	SOHO_README.html body_checks.5.html bounce.5.html postfix-power.png \
+HTML1=	body_checks.5.html bounce.5.html postfix-power.png \
 	scache.8.html tlsmgr.8.html
 
 .if ${OSVERSION} >= 800037
@@ -159,6 +163,7 @@ POSTFIX_AUXLIBS+=	-L${OPENSSLLIB} ${LDFLAGS} -lssl -lcrypto
 .endif
 
 .if defined(WITH_SPF)
+BROKEN=			At the moment, SPF support is unavailable for ${PORTNAME}-${DISTVERSION}
 LIB_DEPENDS+=		spf2.3:${PORTSDIR}/mail/libspf2
 PATCH_SITES+=		${MASTER_SITE_LOCAL}
 PATCH_SITE_SUBDIR=	mm
@@ -191,6 +196,12 @@ POSTFIX_AUXLIBS+=	-L${LOCALBASE}/lib -L${LOCALBASE}/pgsql/lib -lpq -lcrypt
 _REQUIRE+=		postgresql
 .endif
 
+.if defined(WITH_SQLITE)
+USE_SQLITE=		yes
+POSTFIX_CCARGS+=	-DHAS_SQLITE -I${LOCALBASE}/include
+POSTFIX_AUXLIBS+=	-L${LOCALBASE}/lib -lsqlite3
+.endif
+
 .if defined(WITH_OPENLDAP)
 USE_OPENLDAP=		yes
 .if defined(WITH_OPENLDAP_VER)
@@ -199,6 +210,9 @@ WANT_OPENLDAP_VER=	${WITH_OPENLDAP_VER}
 POSTFIX_CCARGS+=	-DHAS_LDAP -I${LOCALBASE}/include
 POSTFIX_AUXLIBS+=	-L${LOCALBASE}/lib -lldap -llber
 _REQUIRE+=		slapd
+.if defined(WITH_LDAP_SASL)
+POSTFIX_CCARGS+=	-DUSE_LDAP_SASL
+.endif
 .endif
 
 .if defined(WITH_CDB)
@@ -214,6 +228,7 @@ _REQUIRE+=		ypserv
 
 # 32Bit VDA patch (64Bit has different patch)
 .if defined(WITH_VDA)
+BROKEN=			At the moment, VDA support is unavailable for ${PORTNAME}-${DISTVERSION}
 PATCH_SITES+=		http://vda.sourceforge.net/VDA/:vda
 PATCHFILES+=		postfix-vda-${VDAVERSION}.patch:vda
 PATCH_DIST_STRIP=	-p1
@@ -310,8 +325,6 @@ pre-patch:
 		${REINPLACE_CMD} -E -e '${REINPLACE}'
 
 post-patch:
-	@${ECHO} '$$readme_directory/SOHO_README:f:root:-:644' \
-		>> ${WRKSRC}/conf/postfix-files
 .for f in ${HTML1}
 	@${ECHO} '$$html_directory/$f:f:root:-:644' \
 		>> ${WRKSRC}/conf/postfix-files

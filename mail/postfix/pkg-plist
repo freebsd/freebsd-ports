@@ -4,6 +4,7 @@ libexec/postfix/anvil
 libexec/postfix/bounce
 libexec/postfix/cleanup
 libexec/postfix/discard
+libexec/postfix/dnsblog
 libexec/postfix/error
 libexec/postfix/flush
 libexec/postfix/lmtp
@@ -20,6 +21,7 @@ libexec/postfix/postfix-files
 libexec/postfix/postfix-script
 libexec/postfix/postfix-wrapper
 libexec/postfix/postmulti-script
+libexec/postfix/postscreen
 libexec/postfix/proxymap
 libexec/postfix/qmgr
 libexec/postfix/qmqpd
@@ -28,6 +30,7 @@ libexec/postfix/showq
 libexec/postfix/smtp
 libexec/postfix/smtpd
 libexec/postfix/spawn
+libexec/postfix/tlsproxy
 libexec/postfix/trivial-rewrite
 libexec/postfix/verify
 libexec/postfix/virtual
@@ -115,6 +118,8 @@ sbin/sendmail
 %%PORTDOCS%%%%DOCSDIR%%/PCRE_README.html
 %%PORTDOCS%%%%DOCSDIR%%/PGSQL_README
 %%PORTDOCS%%%%DOCSDIR%%/PGSQL_README.html
+%%PORTDOCS%%%%DOCSDIR%%/POSTSCREEN_README
+%%PORTDOCS%%%%DOCSDIR%%/POSTSCREEN_README.html
 %%PORTDOCS%%%%DOCSDIR%%/QSHAPE_README
 %%PORTDOCS%%%%DOCSDIR%%/QSHAPE_README.html
 %%PORTDOCS%%%%DOCSDIR%%/RELEASE_NOTES
@@ -133,6 +138,8 @@ sbin/sendmail
 %%PORTDOCS%%%%DOCSDIR%%/SOHO_README
 %%PORTDOCS%%%%DOCSDIR%%/SOHO_README.html
 %%SPF%%%%PORTDOCS%%%%DOCSDIR%%/SPF_README
+%%PORTDOCS%%%%DOCSDIR%%/SQLITE_README
+%%PORTDOCS%%%%DOCSDIR%%/SQLITE_README.html
 %%PORTDOCS%%%%DOCSDIR%%/STANDARD_CONFIGURATION_README
 %%PORTDOCS%%%%DOCSDIR%%/STANDARD_CONFIGURATION_README.html
 %%PORTDOCS%%%%DOCSDIR%%/STRESS_README
@@ -164,6 +171,7 @@ sbin/sendmail
 %%PORTDOCS%%%%DOCSDIR%%/cleanup.8.html
 %%PORTDOCS%%%%DOCSDIR%%/defer.8.html
 %%PORTDOCS%%%%DOCSDIR%%/discard.8.html
+%%PORTDOCS%%%%DOCSDIR%%/dnsblog.8.html
 %%PORTDOCS%%%%DOCSDIR%%/error.8.html
 %%PORTDOCS%%%%DOCSDIR%%/flush.8.html
 %%PORTDOCS%%%%DOCSDIR%%/header_checks.5.html
@@ -198,6 +206,7 @@ sbin/sendmail
 %%PORTDOCS%%%%DOCSDIR%%/postmap.1.html
 %%PORTDOCS%%%%DOCSDIR%%/postmulti.1.html
 %%PORTDOCS%%%%DOCSDIR%%/postqueue.1.html
+%%PORTDOCS%%%%DOCSDIR%%/postscreen.8.html
 %%PORTDOCS%%%%DOCSDIR%%/postsuper.1.html
 %%PORTDOCS%%%%DOCSDIR%%/proxymap.8.html
 %%PORTDOCS%%%%DOCSDIR%%/qmgr.8.html
@@ -215,7 +224,9 @@ sbin/sendmail
 %%PORTDOCS%%%%DOCSDIR%%/smtp.8.html
 %%PORTDOCS%%%%DOCSDIR%%/smtpd.8.html
 %%PORTDOCS%%%%DOCSDIR%%/spawn.8.html
+%%PORTDOCS%%%%DOCSDIR%%/sqlite_table.5.html
 %%PORTDOCS%%%%DOCSDIR%%/tcp_table.5.html
+%%PORTDOCS%%%%DOCSDIR%%/tlsproxy.8.html
 %%PORTDOCS%%%%DOCSDIR%%/trace.8.html
 %%PORTDOCS%%%%DOCSDIR%%/transport.5.html
 %%PORTDOCS%%%%DOCSDIR%%/trivial-rewrite.8.html
