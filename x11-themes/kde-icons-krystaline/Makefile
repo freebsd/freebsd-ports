@@ -7,7 +7,7 @@
 
 PORTNAME=	krystaline
 PORTVERSION=	1.1.6
-MASTER_SITES=	http://fredemmott.co.uk/files/
+MASTER_SITES=	http://files.fredemmott.co.uk/
 
 COMMENT=	KDE Krystaline iconset
 
