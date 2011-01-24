@@ -32,6 +32,10 @@ libdata/pkgconfig/libquvi.pc
 %%DATADIR%%/lua/website/golem.lua
 %%DATADIR%%/lua/website/google.lua
 %%DATADIR%%/lua/website/liveleak.lua
+%%DATADIR%%/lua/website/publicsenat.lua
+%%DATADIR%%/lua/website/quvi/bit.lua
+%%DATADIR%%/lua/website/quvi/const.lua
+%%DATADIR%%/lua/website/quvi/util.lua
 %%DATADIR%%/lua/website/sapo.lua
 %%DATADIR%%/lua/website/sevenload.lua
 %%DATADIR%%/lua/website/spiegel.lua
@@ -41,6 +45,7 @@ libdata/pkgconfig/libquvi.pc
 %%NSFW%%%%DATADIR%%/lua/website/tube8.lua
 %%NSFW%%%%DATADIR%%/lua/website/xvideos.lua
 %%NSFW%%%%DATADIR%%/lua/website/youjizz.lua
+@dirrm %%DATADIR%%/lua/website/quvi
 @dirrm %%DATADIR%%/lua/website
 @dirrm %%DATADIR%%/lua/util
 @dirrm %%DATADIR%%/lua
