@@ -466,6 +466,7 @@
     SUBDIR += geany
     SUBDIR += geany-plugins
     SUBDIR += gearmand
+    SUBDIR += gecode
     SUBDIR += generate
     SUBDIR += gengameng
     SUBDIR += gengetopt
