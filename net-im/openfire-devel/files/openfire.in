@@ -1,0 +1,102 @@
+#!/bin/sh
+
+# PROVIDE: openfire
+# REQUIRE: NETWORKING SERVERS
+# BEFORE: DAEMON
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# openfire_enable (bool):   Set to NO by default.
+#               Set it to YES to enable openfire.
+# openfire_user (username): Set to openfire by default.
+#               Set it to required username.
+# openfire_group (group):   Set to openfire by default.
+#               Set it to required group.
+# openfire_libdir (path):   Set to %%JAVAJARDIR%% by default.
+#               Set it to java classes directory.
+# openfire_home (path):     Set to %%DATADIR%% by default.
+#               Set it to java home directory.
+# openfire_javargs (args):  Set to -Xmx256M by default.
+#               See java -h for available arguments.
+
+. /etc/rc.subr
+
+name="openfire"
+rcvar=${name}_enable
+load_rc_config $name
+
+# Set defaults
+: ${openfire_enable:=NO}
+: ${openfire_user:=${name}}
+: ${openfire_group:=${name}}
+: ${openfire_libdir:=%%JAVAJARDIR%%}
+: ${openfire_home:=%%DATADIR%%}
+: ${openfire_javargs:='-Xmx256M'}
+
+pidfile=/var/run/${name}.pid
+
+required_files="%%ETCDIR%%/openfire.xml"
+java_options=" 	-server -jar ${openfire_javargs} \
+		-Dopenfire.lib.dir=${openfire_libdir} \
+		-DopenfireHome=${openfire_home}"
+
+java_command="	%%LOCALBASE%%/bin/java ${java_options} \
+		%%JAVAJARDIR%%/startup.jar"
+
+# Subvert the check_pid_file procname check.
+if [ -f $pidfile ]; then
+	read rc_pid junk < $pidfile
+	if [ ! -z "$rc_pid" ]; then
+		procname=`ps -o command= $rc_pid | awk '{print $1 }'`
+	fi
+fi
+
+command="/usr/sbin/daemon"
+command_args="-f -p ${pidfile} ${java_command}"
+start_precmd="openfire_precmd"
+status_cmd="openfire_status"
+stop_cmd="openfire_stop"
+
+openfire_precmd() {
+        touch ${pidfile}
+        chown ${openfire_user}:${openfire_group} ${pidfile}
+}
+
+openfire_status() {
+	rc_pid=$(check_pidfile $pidfile *$procname*)
+
+        if [ -z "$rc_pid" ]; then
+                [ -n "$rc_fast" ] && return 0
+                if [ -n "$pidfile" ]; then
+                        echo "${name} not running? (check $pidfile)."
+                else
+                        echo "${name} not running?"
+                fi
+                return 1
+        fi
+	echo "$name is running as pid ${rc_pid}"
+}
+
+
+openfire_stop() {
+        rc_pid=$(check_pidfile $pidfile *$procname*)
+
+        if [ -z "$rc_pid" ]; then
+                [ -n "$rc_fast" ] && return 0
+                if [ -n "$pidfile" ]; then
+                        echo "${name} not running? (check $pidfile)."
+                else
+                        echo "${name} not running?"
+                fi
+                return 1
+        fi
+
+        echo "Stopping ${name}."
+        kill ${rc_pid} 
+	wait_for_pids ${rc_pid}
+	rm ${pidfile}
+}
+
+run_rc_command "$1"
