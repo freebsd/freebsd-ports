@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libaacplus
-PORTVERSION=	1.1.0
+PORTVERSION=	2.0.2
 CATEGORIES=	audio
 MASTER_SITES=	http://tipok.org.ua/downloads/media/aac+/libaacplus/:site1\
 		http://217.20.164.161/~tipok/aacplus/:site1\
@@ -26,7 +26,6 @@ RESTRICTED=	unclear legal status, probably need licenses from 3GPP, Via Licensin
 CONFLICTS=	aacplusenc-0*
 
 USE_GNOME=	pkgconfig
-USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	libtool libtoolize aclocal autoheader automake
 GNU_CONFIGURE=	yes
@@ -37,6 +36,8 @@ ACLOCAL_ARGS=	--acdir=${ACLOCAL_DIR} \
 LIBTOOLIZE_ARGS=--automake
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include"\
 		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
+
+MAN1=		aacplusenc.1
 
 OPTIONS=	FFTW3	"USE_FFTW3"		on
 
@@ -52,6 +53,14 @@ CONFIGURE_ARGS+=--with-fftw3=no
 .endif
 
 pre-configure:
-	@${CP} ${DISTDIR}/26410-800.zip ${WRKSRC}
+	@${CP} ${DISTDIR}/26410-800.zip ${WRKSRC}/src
+
+post-patch:
+.if defined(WITH_OLDLIBS)
+	@${REINPLACE_CMD} -e 's,-I${includedir},-I@includedir@\ -I${includedir},'\
+	-e 's,@includedir@\/aacplus,@includedir@\/libaacplus,' ${WRKSRC}/aacplus.pc.in
+.else
+	@${REINPLACE_CMD} -e 's,\/aacplus,,' ${WRKSRC}/aacplus.pc.in
+.endif
 
 .include <bsd.port.mk>
