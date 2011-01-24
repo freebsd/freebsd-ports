@@ -5,6 +5,25 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20110124:
+  AFFECTS: users of mail/postfix
+  AUTHOR: sahil@FreeBSD.org
+
+  Postfix 2.8 introduces minor incompatibilities with previous versions.
+  Alias expansion, dns lookups, TLS support, milters and other features
+  are affected.  To avoid surprises, carefully review the RELEASE_NOTES. 
+
+  If you upgrade from Postfix 2.6 or earlier, you must execute "postfix
+  stop" and "postfix start" before you can use the postscreen(8) daemon.
+  This is needed because the Postfix 2.6 "pass" master service type did
+  not work reliably on some systems. If you upgrade from Postfix 2.7, or
+  from Postfix 2.8 before July 25, 2010, you must "postfix reload" (or
+  "postfix stop" followed by "postfix start"). This is needed because
+  the queue manager to delivery agent protocol has changed.
+
+  Also note that the optional SPF and VDA patches have not been updated
+  for Postfix 2.8; as a result, they are currently disabled.
+
 20110111:
   AFFECTS: users of www/redmine
   AUTHOR: decke@FreeBSD.org
