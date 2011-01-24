@@ -1,11 +1,11 @@
---- Makefile.am.orig	2009-10-09 05:58:21.000000000 +0900
-+++ Makefile.am	2010-09-07 12:42:33.000000000 +0900
-@@ -14,7 +14,7 @@
- LDADD = @FFTW3_LDFLAGS@
+--- Makefile.am.orig	2010-10-07 21:00:14.000000000 +0900
++++ Makefile.am	2010-10-14 18:02:13.000000000 +0900
+@@ -2,7 +2,7 @@
+ SUBDIRS = src include patches frontend
 
  if HAVE_PKGCONFIG
-- pkgconfigdir = $(libdir)/pkgconfig
-+ pkgconfigdir = $(prefix)/libdata/pkgconfig
-  pkgconfig_DATA = aacplus.pc
+-    pkgconfigdir = $(libdir)/pkgconfig
++    pkgconfigdir = $(prefix)/libdata/pkgconfig
+     pkgconfig_DATA = aacplus.pc
  else
-  bin_SCRIPTS = aacplus-config
+     bin_SCRIPTS = aacplus-config
