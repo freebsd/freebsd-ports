@@ -94,6 +94,7 @@
     SUBDIR += newsbot
     SUBDIR += openfetion
     SUBDIR += openfire
+    SUBDIR += openfire-devel
     SUBDIR += p5-AnyEvent-XMPP
     SUBDIR += p5-DJabberd
     SUBDIR += p5-Jabber-Connection
