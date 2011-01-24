@@ -11,7 +11,7 @@ CATEGORIES=	mail
 MASTER_SITES=	SF/dracmail/release/
 DISTNAME=	dracMail-${PORTVERSION}_release
 
-MAINTAINER=	jamrich.majo@gmail.com
+MAINTAINER=	fgheorghe@dracmail.net
 COMMENT=	DracMail is a webmail interface built using PHP
 
 RUN_DEPENDS+=	php:${PORTSDIR}/lang/php5
