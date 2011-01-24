@@ -15,6 +15,7 @@ COMMENT=	Compresses CD images by stripping unnecessary EDC/ECC data
 
 MAKE_JOBS_SAFE=	yes
 
+LICENSE=	GPLv2
 PLIST_FILES=	bin/ecm bin/unecm
 PORTDOCS=	format.txt
 

@@ -20,6 +20,7 @@ USE_BZIP2=	yes
 CONFIGURE_ARGS+=	--prefix=${PREFIX}
 ALL_TARGET=	${PORTNAME}
 
+LICENSE=	GPLv2
 MAN1=		amigadepacker.1
 PLIST_FILES=	bin/amigadepacker
 
