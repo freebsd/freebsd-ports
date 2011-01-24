@@ -133,7 +133,7 @@ CONFIGURE_ARGS+=	--disable-dc
 PLIST_SUB+=	DC1394="@comment "
 #.endif
 
-.if (${ARCH} == "amd64") || (${ARCH} == "ia64") || (${ARCH} == "sparc64")
+.if (${ARCH} == "amd64") || (${ARCH} == "ia64") || (${ARCH} == "powerpc") || (${ARCH} == "sparc64")
 CFLAGS+=	-fPIC
 .endif
 
