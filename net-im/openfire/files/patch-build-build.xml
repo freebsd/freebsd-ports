@@ -1,0 +1,10 @@
+--- build/build.xml.orig	2010-10-27 04:53:55.000000000 -0700
++++ build/build.xml	2010-10-27 04:54:13.000000000 -0700
+@@ -224,6 +224,7 @@
+                 <or>
+                     <contains string="${ant.version}" substring="1.6"/>
+                     <contains string="${ant.version}" substring="1.7"/>
++                    <contains string="${ant.version}" substring="1.8"/>
+                 </or>
+             </not>
+         </condition>

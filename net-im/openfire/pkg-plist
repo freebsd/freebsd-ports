@@ -58,26 +58,6 @@
 %%DATADIR%%/conf
 %%DATADIR%%/embedded-db
 %%DATADIR%%/logs
-%%DATADIR%%/plugins/userCreation.jar
-%%DATADIR%%/plugins/userImportExport.jar
-%%DATADIR%%/plugins/contentFilter.jar
-%%DATADIR%%/plugins/sip.jar
-%%DATADIR%%/plugins/packetFilter.jar
-%%DATADIR%%/plugins/fastpath.jar
-%%DATADIR%%/plugins/registration.jar
-%%DATADIR%%/plugins/motd.jar
-%%DATADIR%%/plugins/loadStats.jar
-%%DATADIR%%/plugins/search.jar
-%%DATADIR%%/plugins/dbaccess.jar
-%%DATADIR%%/plugins/presence.jar
-%%DATADIR%%/plugins/xmldebugger.jar
-%%DATADIR%%/plugins/jingleNodes.jar
-%%DATADIR%%/plugins/broadcast.jar
-%%DATADIR%%/plugins/emailListener.jar
-%%DATADIR%%/plugins/monitoring.jar
-%%DATADIR%%/plugins/subscription.jar
-%%DATADIR%%/plugins/userservice.jar
-%%DATADIR%%/plugins/clientControl.jar
 %%DATADIR%%/plugins/admin/plugin.xml
 %%DATADIR%%/plugins/admin/webapp/WEB-INF/admin.tld
 %%DATADIR%%/plugins/admin/webapp/WEB-INF/decorators.xml
@@ -334,13 +314,6 @@
 %%DATADIR%%/resources/database/upgrade/20/openfire_postgresql.sql
 %%DATADIR%%/resources/database/upgrade/20/openfire_sqlserver.sql
 %%DATADIR%%/resources/database/upgrade/20/openfire_sybase.sql
-%%DATADIR%%/resources/database/upgrade/21/openfire_db2.sql
-%%DATADIR%%/resources/database/upgrade/21/openfire_hsqldb.sql
-%%DATADIR%%/resources/database/upgrade/21/openfire_mysql.sql
-%%DATADIR%%/resources/database/upgrade/21/openfire_oracle.sql
-%%DATADIR%%/resources/database/upgrade/21/openfire_postgresql.sql
-%%DATADIR%%/resources/database/upgrade/21/openfire_sqlserver.sql
-%%DATADIR%%/resources/database/upgrade/21/openfire_sybase.sql
 %%DATADIR%%/resources/database/upgrade/4/openfire_db2.sql
 %%DATADIR%%/resources/database/upgrade/4/openfire_hsqldb.sql
 %%DATADIR%%/resources/database/upgrade/4/openfire_mysql.sql
@@ -390,7 +363,6 @@
 %%DATADIR%%/resources/security
 %%DATADIR%%/resources/spank/WEB-INF/web.xml
 %%DATADIR%%/resources/spank/index.html
-share/java/classes/slf4j-log4j12.jar
 @dirrm %%DATADIR%%/resources/spank/WEB-INF
 @dirrm %%DATADIR%%/resources/spank
 @dirrm %%DATADIR%%/resources/nativeAuth/win32-x86
@@ -405,7 +377,6 @@ share/java/classes/slf4j-log4j12.jar
 @dirrm %%DATADIR%%/resources/database/upgrade/5
 @dirrm %%DATADIR%%/resources/database/upgrade/4
 @dirrm %%DATADIR%%/resources/database/upgrade/20
-@dirrm %%DATADIR%%/resources/database/upgrade/21
 @dirrm %%DATADIR%%/resources/database/upgrade/2
 @dirrm %%DATADIR%%/resources/database/upgrade/19
 @dirrm %%DATADIR%%/resources/database/upgrade/18
@@ -431,6 +402,8 @@ share/java/classes/slf4j-log4j12.jar
 @dirrm %%DATADIR%%/plugins/admin/webapp/WEB-INF
 @dirrm %%DATADIR%%/plugins/admin/webapp
 @dirrm %%DATADIR%%/plugins/admin
+@dirrm %%DATADIR%%/plugins
+@dirrm share/java/openfire
 @dirrm share/examples/openfire
 @dirrm %%PORTDOCS%%%%DOCSDIR%%/licenses
 @dirrm %%PORTDOCS%%%%DOCSDIR%%/images
