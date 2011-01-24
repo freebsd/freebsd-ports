@@ -2394,6 +2394,7 @@ dhcperf                         ports/net/dhcperf
 dhcping                         ports/net/dhcping
 dhcprelay                       ports/net/dhcprelay
 dhcprelya                       ports/net/dhcprelya
+dhex                            ports/editors/dhex
 dhid                            ports/dns/dhid
 dhisd                           ports/dns/dhisd
 dhttpd                          ports/www/dhttpd
@@ -11859,6 +11860,7 @@ p5-DNS-ZoneParse                ports/dns/p5-DNS-ZoneParse
 p5-DWH_File                     ports/databases/p5-DWH_File
 p5-Daemon-Generic               ports/net/p5-Daemon-Generic
 p5-Dancer                       ports/www/p5-Dancer
+p5-Dancer-Debug                 ports/devel/p5-Dancer-Debug
 p5-Dancer-Plugin-DataFu         ports/www/p5-Dancer-Plugin-DataFu
 p5-Dancer-Plugin-Database       ports/databases/p5-Dancer-Plugin-Database
 p5-Dancer-Plugin-Email          ports/mail/p5-Dancer-Plugin-Email
@@ -11887,6 +11889,7 @@ p5-Data-Flow                    ports/devel/p5-Data-Flow
 p5-Data-FormValidator           ports/textproc/p5-Data-FormValidator
 p5-Data-FormValidator-Constraints-DateTime  ports/textproc/p5-Data-FormValidator-Constraints-DateTime
 p5-Data-GUID                    ports/devel/p5-Data-GUID
+p5-Data-Grouper                 ports/devel/p5-Data-Grouper
 p5-Data-HashArray               ports/devel/p5-Data-HashArray
 p5-Data-HexDump                 ports/devel/p5-Data-HexDump
 p5-Data-Hexdumper               ports/devel/p5-Data-Hexdumper
@@ -15835,6 +15838,7 @@ p5-cvs                          ports/devel/p5-Cvs
 p5-dTemplate                    ports/textproc/p5-dTemplate
 p5-daemon-generic               ports/net/p5-Daemon-Generic
 p5-dancer                       ports/www/p5-Dancer
+p5-dancer-debug                 ports/devel/p5-Dancer-Debug
 p5-dancer-plugin-database       ports/databases/p5-Dancer-Plugin-Database
 p5-dancer-plugin-datafu         ports/www/p5-Dancer-Plugin-DataFu
 p5-dancer-plugin-email          ports/mail/p5-Dancer-Plugin-Email
@@ -15862,6 +15866,7 @@ p5-data-float                   ports/math/p5-Data-Float
 p5-data-flow                    ports/devel/p5-Data-Flow
 p5-data-formvalidator           ports/textproc/p5-Data-FormValidator
 p5-data-formvalidator-constraints-datetime  ports/textproc/p5-Data-FormValidator-Constraints-DateTime
+p5-data-grouper                 ports/devel/p5-Data-Grouper
 p5-data-guid                    ports/devel/p5-Data-GUID
 p5-data-hasharray               ports/devel/p5-Data-HashArray
 p5-data-hexdump                 ports/devel/p5-Data-HexDump
