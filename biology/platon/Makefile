@@ -9,7 +9,7 @@ PORTNAME=	platon
 PORTVERSION=	2007.01.09
 PORTREVISION=	4
 CATEGORIES=	biology
-MASTER_SITES=	ftp://xraysoft.chem.uu.nl/pub/unix/
+MASTER_SITES=	http://www.cryst.chem.uu.nl/spek/xraysoft/unix/
 DISTNAME=	platon
 
 MAINTAINER=	ports@FreeBSD.org
