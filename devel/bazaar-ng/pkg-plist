@@ -1271,6 +1271,9 @@ bin/bzr
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/per_tree/test_inv.py
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/per_tree/test_inv.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/per_tree/test_inv.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/tests/per_tree/test_is_executable.py
+%%PYTHON_SITELIBDIR%%/bzrlib/tests/per_tree/test_is_executable.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/tests/per_tree/test_is_executable.pyo
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/per_tree/test_iter_search_rules.py
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/per_tree/test_iter_search_rules.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/per_tree/test_iter_search_rules.pyo
