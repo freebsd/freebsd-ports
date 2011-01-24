@@ -8,21 +8,23 @@
 
 PORTNAME=	darkice
 PORTVERSION=	1.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	audio net
 MASTER_SITES=	GOOGLE_CODE
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An IceCast, IceCast2 and ShoutCast live audio streamer
 
+LICENSE=	GPLv3
+
 OPTIONS=	VORBIS "Ogg Vorbis support" on \
 		LAME "LAME support for MP3" off \
 		TWOLAME "TwoLAME support for MP2" off \
 		FAAC "FAAC support for AAC" off \
 		JACK "Jack support" off \
-		AACPLUS "AAC HEv2 support" off \
-		SAMPLERATE "Libsamplerate support" off
+		AACPLUS "AAC HEv2 and libsamplerate support" off
 
+USE_AUTOTOOLS=	aclocal autoconf
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${PTHREAD_CFLAGS}" LDFLAGS="${PTHREAD_LIBS}" \
 		ac_cv_prog_acx_pthread_config=no
@@ -73,17 +75,11 @@ CONFIGURE_ARGS+=	--without-jack
 .endif
 
 .if defined(WITH_AACPLUS)
-LIB_DEPENDS+=	aacplus.1:${PORTSDIR}/audio/libaacplus
-CONFIGURE_ARGS+=	--with-aacplus-prefix=${LOCALBASE}
+LIB_DEPENDS+=	aacplus.2:${PORTSDIR}/audio/libaacplus \
+		samplerate.1:${PORTSDIR}/audio/libsamplerate
+CONFIGURE_ARGS+=	--with-aacplus-prefix=${LOCALBASE} --with-samplerate-prefix=${LOCALBASE}
 .else
-CONFIGURE_ARGS+=	--without-aacplus
-.endif
-
-.if defined(WITH_SAMPLERATE)
-LIB_DEPENDS+=	samplerate.1:${PORTSDIR}/audio/libsamplerate
-CONFIGURE_ARGS+=	--with-samplerate-prefix=${LOCALBASE}
-.else
-CONFIGURE_ARGS+=	--without-samplerate
+CONFIGURE_ARGS+=	--without-aacplus --without-samplerate
 .endif
 
 post-patch:
