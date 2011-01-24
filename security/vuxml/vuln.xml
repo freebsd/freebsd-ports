@@ -34,6 +34,46 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="7580f00e-280c-11e0-b7c8-00215c6a37bb">
+    <topic>dokuwiki -- multiple privilege escalation vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>dokuwiki</name>
+	<range><lt>20101107a</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Dokuwiki reports:</p>
+	<blockquote cite="http://bugs.dokuwiki.org/index.php?do=details&amp;task_id=2136">
+	  <p>This security update fixes problems in the XMLRPC
+	    interface where ACLs where not checked correctly
+	    sometimes, making it possible to access and write
+	    information that should not have been accessible/writable.
+	    This only affects users who have enabled the XMLRPC
+	    interface (default is off) and have enabled XMLRPC
+	    access for users who can't access/write all content
+	    anyway (default is nobody, see <a
+	      href="http://www.dokuwiki.org/config:xmlrpcuser">http://www.dokuwiki.org/config:xmlrpcuser</a>
+	    for details).</p>
+	  <p>This update also includes a fix for a problem in
+	    the general ACL checking function that could be exploited
+	    to gain access to restricted pages and media files in rare
+	    conditions (when you had rights for an id you could get
+	    the same rights on ids where one character has been
+	    replaced by a ".").</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://bugs.dokuwiki.org/index.php?do=details&amp;task_id=2136</url>
+    </references>
+    <dates>
+      <discovery>2011-01-16</discovery>
+      <entry>2011-01-24</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="5ab9fb2a-23a5-11e0-a835-0003ba02bf30">
     <topic>asterisk -- Exploitable Stack Buffer Overflow</topic>
     <affects>
