@@ -1169,6 +1169,7 @@ bogofilter-sqlite               ports/mail/bogofilter-sqlite
 bogofilter-tc                   ports/mail/bogofilter-tc
 bogosort                        ports/misc/bogosort
 boiling-egg                     ports/editors/boiling-egg
+boinc-astropulse                ports/astro/boinc-astropulse
 boinc-client                    ports/net/boinc-client
 boinc-einsteinathome            ports/astro/boinc-einsteinathome
 boinc-milkyway                  ports/astro/boinc-milkyway
@@ -4294,6 +4295,7 @@ geany-plugins                   ports/devel/geany-plugins
 gearmand                        ports/devel/gearmand
 gecko-mediaplayer               ports/www/gecko-mediaplayer
 gecko-sharp20                   ports/www/gecko-sharp20
+gecode                          ports/devel/gecode
 geda                            ports/cad/geda
 geda-docs                       ports/cad/geda-docs
 geda-examples                   ports/cad/geda-examples
@@ -10666,6 +10668,7 @@ openexr                         ports/graphics/OpenEXR
 openexr_ctl                     ports/graphics/openexr_ctl
 openfetion                      ports/net-im/openfetion
 openfire                        ports/net-im/openfire
+openfire-devel                  ports/net-im/openfire-devel
 openftd                         ports/news/openftd
 openfts                         ports/textproc/openfts
 openfwtk                        ports/security/openfwtk
@@ -21967,7 +21970,6 @@ q4wine                          ports/deskutils/q4wine
 qadsl                           ports/net/qadsl
 qalculate                       ports/math/qalculate
 qar-bufo                        ports/mail/qar-bufo
-qbittorrent-23                  ports/net-p2p/qbittorrent-23
 qbittorrent-26                  ports/net-p2p/qbittorrent-26
 qbittorrent-26-nox11            ports/net-p2p/qbittorrent-26-nox11
 qbrew                           ports/misc/qbrew
