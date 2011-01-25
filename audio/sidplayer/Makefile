@@ -27,6 +27,8 @@ CONFIGURE_ENV=	CFLAGS="${CFLAGS} ${CPPFLAGS}" \
 		CPPFLAGS="${CPPFLAGS}" \
 		LDFLAGS="${LDFLAGS}"
 
+LICENSE=	GPLv2
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|SDL/SDL_endian\.h|${SDLINCLUDEDIR}/SDL_endian\.h|' \
 		${WRKSRC}/src/main_sdl.cpp

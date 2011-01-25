@@ -24,6 +24,7 @@ CFLAGS+=	-DDRIVER_OSS -I${LOCALBASE}/include
 
 .if ${PKGNAMEPREFIX} == ""
 
+LICENSE=	GPLv2
 MAN1=		aylet.1
 PLIST_FILES=	bin/aylet
 

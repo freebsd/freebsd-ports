@@ -44,6 +44,7 @@ CONFIGURE_ARGS=	--with-dir-suffix="" \
 		--without-alsa \
 		--libdir=${LOCALBASE}/lib
 
+LICENSE=	GPLv2
 INFO=		ocp
 
 TIMIDITY_CFG=	${LOCALBASE}/share/timidity/timidity.cfg

@@ -21,4 +21,6 @@ MAKE_JOBS_SAFE=	yes
 
 CONFIGURE_ARGS=		--enable-shared
 
+LICENSE=	GPLv2
+
 .include <bsd.port.mk>

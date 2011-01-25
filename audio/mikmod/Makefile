@@ -25,6 +25,7 @@ MAKE_JOBS_SAFE=	yes
 CONFIGURE_ARGS+=	--enable-color-interface
 .endif
 
+LICENSE=	GPLv2
 MAN1=		mikmod.1
 PLIST_FILES=	bin/mikmod
 

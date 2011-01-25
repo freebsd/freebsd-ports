@@ -21,6 +21,7 @@ CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib -lmikmod ${PTHREAD_LIBS} -lncurses -lpanel
 DEFINES=	-D_REENTRANT
 
+LICENSE=	GPLv2
 PLIST_FILES=	bin/mp-player
 
 do-build:

@@ -35,6 +35,8 @@ OPTIONS=	ALSA    "ALSA output driver" off \
 
 MAKE_JOBS_SAFE=	yes
 
+LICENSE=	GPLv2
+
 .include <bsd.port.pre.mk>
 
 .if !defined(NOPORTDOCS)

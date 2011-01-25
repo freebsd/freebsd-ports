@@ -22,4 +22,6 @@ USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 MAKE_JOBS_SAFE=	yes
 
+LICENSE=	GPLv2
+
 .include <bsd.port.mk>
