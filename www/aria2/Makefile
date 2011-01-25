@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	aria2
-PORTVERSION=	1.10.6
+PORTVERSION=	1.10.9
 CATEGORIES=	www
 MASTER_SITES=	SF/${PORTNAME}/stable/${PORTNAME}-${PORTVERSION}
 
@@ -27,7 +27,7 @@ MAKE_JOBS_SAFE=	yes
 .ifdef WITHOUT_NLS
 CONFIGURE_ARGS+=	--disable-nls
 .else
-LINGUAS=	bg ca da de el en@boldquot en@quot es fi fr he hu id it ko ja \
+LINGUAS=	ar bg ca da de el en@boldquot en@quot es fi fr he hu id it ko ja \
 		nl nn pl pt pt_BR ru sk sr sv th tr uk vi zh_CN zh_TW
 .endif
 
@@ -36,11 +36,16 @@ PLIST_FILES=	bin/aria2c \
 		share/doc/aria2/README \
 		share/doc/aria2/README.html \
 		share/doc/aria2/aria2c.1.html \
+		share/doc/aria2/aria2c.1.asciidoc \
+		share/doc/aria2/README.asciidoc \
+		share/doc/aria2/bash_completion/README.txt \
+		share/doc/aria2/bash_completion/aria2c \
 		share/doc/aria2/xmlrpc/aria2mon \
 		share/doc/aria2/xmlrpc/aria2rpc \
 		share/doc/aria2/xmlrpc/README.txt
 
-PLIST_DIRS=	share/doc/aria2/xmlrpc \
+PLIST_DIRS=	share/doc/aria2/bash_completion \
+		share/doc/aria2/xmlrpc \
 		share/doc/aria2
 
 MAN1=		aria2c.1
