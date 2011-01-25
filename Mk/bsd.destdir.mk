@@ -208,8 +208,8 @@ do-chroot:
 	${CHROOT} $${_destdir} ${SH} -c "\
 		cd $${PORTSDIR}${.CURDIR:S|^${PORTSDIR}||}; \
 		${SETENV} -i ${DESTDIR_ENV} $${_var_path_list} ${MAKE} ${.TARGETS}" && \
-		${ECHO_MSG} "===>  Chrooted make in ${DESTDIR} succeeded" || \
-		${ECHO_MSG} "===>  Chrooted make in ${DESTDIR} failed"; \
+		{ status=$$?; ${ECHO_MSG} "===>  Chrooted make in ${DESTDIR} succeeded"; } || \
+		{ status=$$?; ${ECHO_MSG} "===>  Chrooted make in ${DESTDIR} failed"; }; \
 		${ECHO_MSG} "===>  Cleaning up..."; \
 	for _entry in $${_mounted_entries_list}; do \
 		${UMOUNT} -f $${_entry} || ${TRUE}; \
@@ -217,6 +217,6 @@ do-chroot:
 	for _entry in $${_created_mountpoints_list}; do \
 		${RMDIR} $${_entry} || ${TRUE}; \
 	done; \
-	exit 0
+	exit $$status
 .endif	# !target(do-chroot)
 .endif	# !defined(_DESTDIRMKINCLUDED)
