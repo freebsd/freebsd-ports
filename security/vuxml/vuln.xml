@@ -34,6 +34,64 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="c8c927e5-2891-11e0-8f26-00151735203a">
+    <topic>bugzilla -- multiple seriuos vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>bugzilla</name>
+	<range><ge>2.14.*</ge><lt>3.6.4</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>A Bugzilla Security Advisory reports:</p>
+	<blockquote cite="http://www.bugzilla.org/security/3.2.9/">
+	  <p>This advisory covers three security issues that have recently been
+	    fixed in the Bugzilla code:</p>
+	  <ul>
+	    <li>A weakness in Bugzilla could allow a user to gain unauthorized
+              access to another Bugzilla account.</li>
+	    <li>A weakness in the Perl CGI.pm module allows injecting HTTP
+              headers and content to users via several pages in Bugzilla.</li>
+	    <li>If you put a harmful "javascript:" or "data:" URL into
+              Bugzilla's "URL" field, then there are multiple situations in
+              which Bugzilla will unintentionally make that link clickable.</li>
+	    <li>Various pages lack protection against cross-site request
+              forgeries.</li>
+	  </ul>
+	  <p>All affected installations are encouraged to upgrade as soon as
+            possible.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <bid>25425</bid>
+      <cvename>CVE-2010-4568</cvename>
+      <cvename>CVE-2010-2761</cvename>
+      <cvename>CVE-2010-4411</cvename>
+      <cvename>CVE-2010-4572</cvename>
+      <cvename>CVE-2010-4567</cvename>
+      <cvename>CVE-2010-0048</cvename>
+      <cvename>CVE-2011-0046</cvename>
+      <url>https://bugzilla.mozilla.org/show_bug.cgi?id=621591</url>
+      <url>https://bugzilla.mozilla.org/show_bug.cgi?id=619594</url>
+      <url>https://bugzilla.mozilla.org/show_bug.cgi?id=591165</url>
+      <url>https://bugzilla.mozilla.org/show_bug.cgi?id=621572</url>
+      <url>https://bugzilla.mozilla.org/show_bug.cgi?id=619588</url>
+      <url>https://bugzilla.mozilla.org/show_bug.cgi?id=628034</url>
+      <url>https://bugzilla.mozilla.org/show_bug.cgi?id=621090</url>
+      <url>https://bugzilla.mozilla.org/show_bug.cgi?id=621105</url>
+      <url>https://bugzilla.mozilla.org/show_bug.cgi?id=621107</url>
+      <url>https://bugzilla.mozilla.org/show_bug.cgi?id=621108</url>
+      <url>https://bugzilla.mozilla.org/show_bug.cgi?id=621109</url>
+      <url>https://bugzilla.mozilla.org/show_bug.cgi?id=621110</url>
+    </references>
+    <dates>
+      <discovery>2011-01-24</discovery>
+      <entry>2011-01-25</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="7580f00e-280c-11e0-b7c8-00215c6a37bb">
     <topic>dokuwiki -- multiple privilege escalation vulnerabilities</topic>
     <affects>
