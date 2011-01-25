@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bugzilla
-PORTVERSION=	3.6.3
+PORTVERSION=	3.6.4
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_MOZILLA}
 MASTER_SITE_SUBDIR=	webtools webtools/archived
@@ -21,6 +21,7 @@ RUN_DEPENDS=	\
 		p5-DateTime>=0.28:${PORTSDIR}/devel/p5-DateTime \
 		p5-DateTime-TimeZone>=0.71:${PORTSDIR}/devel/p5-DateTime-TimeZone \
 		p5-URI>=0:${PORTSDIR}/net/p5-URI \
+		p5-CGI.pm>=3.51:${PORTSDIR}/www/p5-CGI.pm \
 		p5-Email-Send>=2.00:${PORTSDIR}/mail/p5-Email-Send \
 		p5-Email-MIME>=1.861:${PORTSDIR}/mail/p5-Email-MIME
 
