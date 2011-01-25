@@ -2,5 +2,5 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Mail/CheckUser/.packlist
 bin/cufilter
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Mail/CheckUser
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Mail 2>/dev/null || true
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Mail
 @dirrmtry %%SITE_PERL%%/Mail
