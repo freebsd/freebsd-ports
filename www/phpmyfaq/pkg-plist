@@ -1,6 +1,7 @@
 %%WWWDIR%%/_.htaccess
 %%WWWDIR%%/_httpd.ini
 %%WWWDIR%%/_lighttpd.conf
+%%WWWDIR%%/_nginx.conf
 %%WWWDIR%%/add.php
 %%WWWDIR%%/admin/adminlog.php
 %%WWWDIR%%/admin/ajax.comment.php
