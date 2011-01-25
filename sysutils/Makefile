@@ -68,6 +68,7 @@
     SUBDIR += blimitd
     SUBDIR += bontmia
     SUBDIR += boxbackup
+    SUBDIR += boxbackup-devel
     SUBDIR += brasero
     SUBDIR += bsd-splash-changer
     SUBDIR += bsdadminscripts
