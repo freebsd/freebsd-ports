@@ -6,15 +6,18 @@
 #
 
 PORTNAME=	CGI.pm
-PORTVERSION=	3.50
+PORTVERSION=	3.52
 PORTEPOCH=	1
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
-MASTER_SITE_SUBDIR=	CGI
+MASTER_SITE_SUBDIR=	../../authors/id/M/MA/MARKSTOS
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	tobez@FreeBSD.org
 COMMENT=	Simple Common Gateway Interface Class for Perl
+
+LICENSE=	ART20 GPLv1
+LICENSE_COMB=	dual
 
 PERL_CONFIGURE=	yes
 
@@ -22,7 +25,7 @@ MAN3=		CGI.3 CGI::Apache.3 CGI::Carp.3 CGI::Cookie.3 \
 		CGI::Fast.3 CGI::Pretty.3 CGI::Push.3 CGI::Switch.3 \
 		CGI::Util.3
 
-.if !defined(NOPORTDOCS)
+.if !defined(NOPORTEXAMPLES)
 EXAMPLES=	examples/caution.xbm examples/clickable_image.cgi \
 		examples/cookie.cgi examples/crash.cgi examples/customize.cgi \
 		examples/diff_upload.cgi examples/dna.small.gif \
