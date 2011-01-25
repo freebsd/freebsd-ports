@@ -1,7 +1,7 @@
 Description: Let the configure script succeed on FreeBSD.
  Add FreeBSD to the list of supported operating systems.
  Fix a bashism (test = instead of ==).
-Forwarded: no
+Forwarded: yes
 Author: Peter Pentchev <roam@FreeBSD.org>
 Last-Update: 2011-01-24
 
