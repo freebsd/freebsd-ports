@@ -106,7 +106,6 @@ PLIST_SUB+=     IA64_NA=""
 
 .if ${ARCH} == powerpc || ${ARCH} == powerpc64
 PLIST_SUB+=	PPC_NA="@comment "
-MAN4+=		nv.4x
 EXTRA_PATCHES=	${.CURDIR}/files/extra-arch-powerpc
 .else
 PLIST_SUB+=	PPC_NA=""
