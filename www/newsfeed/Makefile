@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	newsfeed
-PORTVERSION=	2.13
+PORTVERSION=	2.14
 CATEGORIES=	www
 MASTER_SITES=	http://home.arcor.de/mdoege/newsfeed/
 DISTNAME=	NewsFeed-${DISTVERSION}
