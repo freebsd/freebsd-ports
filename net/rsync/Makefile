@@ -35,6 +35,8 @@ PORTDOCS=	NEWS README csprotocol.txt tech_report.tex
 MAN1=		rsync.1
 MAN5=		rsyncd.conf.5
 
+LICENSE=	GPLv3
+
 OPTIONS=	POPT_PORT "Use popt from devel/popt instead of bundled one" off \
 		SSH       "Use SSH instead of RSH" on \
 		FLAGS     "File system flags support patch, adds --fileflags" off \

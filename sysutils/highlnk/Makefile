@@ -16,6 +16,8 @@ COMMENT=	A tool to save disk space on hard disks by using hardlinks
 
 MAKE_JOBS_SAFE=	yes
 
+LICENSE=	GPLv2
+
 PLIST_FILES=	bin/highlnk
 PORTDOCS=	README
 MAN1=		highlnk.1

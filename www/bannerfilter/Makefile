@@ -25,6 +25,8 @@ CONFIG_FILES=	bannerfilter.conf banners.data banners.local.data \
 		exceptions.data exceptions.local.data frames.data \
 		frames.local.data popups.data popups.local.data
 
+LICENSE=	GPLv2
+
 post-patch:
 	@${REINPLACE_CMD} -e \
 		's|/usr/local/etc|${PREFIX}/etc|; s|/usr/bin/perl|${PERL}|' \

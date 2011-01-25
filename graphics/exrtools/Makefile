@@ -28,6 +28,8 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 
 CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 
+LICENSE=	GPLv2
+
 PLIST_FILES=	bin/exrblur bin/exrchr bin/exricamtm bin/exrnlm \
 		bin/exrnormalize bin/exrpptm bin/exrstats \
 		bin/exrtopng bin/jpegtoexr bin/pngtoexr bin/ppmtoexr

@@ -16,6 +16,8 @@ COMMENT=	A tool to colorize diff output
 USE_PERL5=	yes
 NO_BUILD=	yes
 
+LICENSE=	GPLv2
+
 MAN1=		colordiff.1
 
 post-patch:

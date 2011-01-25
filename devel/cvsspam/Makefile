@@ -17,6 +17,8 @@ COMMENT=	Sends diffs when a change is committed to your CVS repository
 USE_RUBY=	yes
 NO_BUILD=	yes
 
+LICENSE=	GPLv2
+
 PORTDOCS=	COPYING CREDITS TODO cvsspam-doc.html cvsspam-doc.pdf
 
 post-patch:

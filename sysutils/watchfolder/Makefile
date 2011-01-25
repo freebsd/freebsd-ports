@@ -19,6 +19,8 @@ MAKE_JOBS_SAFE=	yes
 WRKSRC=		${WRKDIR}/watchd-${PORTVERSION}
 USE_RC_SUBR=	watchd
 
+LICENSE=	GPLv2
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|gcc $$(OPT)|${CC} ${CFLAGS}|' \
 		${WRKSRC}/Makefile

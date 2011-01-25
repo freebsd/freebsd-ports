@@ -20,6 +20,8 @@ MAKE_JOBS_SAFE=	yes
 
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}" LDFLAGS="${LDFLAGS}"
 
+LICENSE=	GPLv3
+
 MAN1=		uni2ascii.1 ascii2uni.1
 PLIST_FILES=	bin/uni2ascii bin/ascii2uni
 

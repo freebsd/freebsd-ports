@@ -21,6 +21,8 @@ MAKE_JOBS_SAFE=	yes
 # recoverjpeg scripts require many dependencies
 OPTIONS=	SCRIPTS	"Install sort-pictures script" off
 
+LICENSE=	GPLv2
+
 PLIST_FILES=	bin/recoverjpeg
 MAN1=		recoverjpeg.1
 

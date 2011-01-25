@@ -18,6 +18,9 @@ USE_GMAKE=	yes
 MAKE_JOBS_SAFE=	yes
 
 WRKSRC=		${WRKDIR}
+
+LICENSE=	GPLv2
+
 PLIST_FILES=	bin/pure-sfv
 PORTDOCS=	ReadMe.txt
 

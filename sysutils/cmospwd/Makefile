@@ -17,6 +17,8 @@ COMMENT=	A BIOS password recovery tool
 USE_BZIP2=	yes
 MAKE_JOBS_SAFE=	yes
 
+LICENSE=	GPLv2
+
 PLIST_FILES=	bin/cmospwd
 PORTDOCS=	cmospwd.txt
 

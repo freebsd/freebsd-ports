@@ -17,6 +17,8 @@ COMMENT=	A HTTP tunnelling utility for SSH
 
 GNU_CONFIGURE=	yes
 
+LICENSE=	GPLv2
+
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}

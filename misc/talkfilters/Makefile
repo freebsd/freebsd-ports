@@ -41,6 +41,8 @@ MLINKS=	talkfilters.1 austro.1 \
 	talkfilters.1 warez.1
 INFO=	talkfilters
 
+LICENSE=	GPLv2
+
 pre-everything::
 	@${ECHO_MSG} "Please note that some of the filters contain language that may"
 	@${ECHO_MSG} "be objectionable to some. They are provided uncensored, in their"

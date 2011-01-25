@@ -23,4 +23,6 @@ USE_GNOME=	libwnck gconf2
 USE_GMAKE=	yes
 USE_GCC=	4.4+
 
+LICENSE=	GPLv3
+
 .include <bsd.port.mk>

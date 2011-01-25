@@ -19,6 +19,8 @@ CONFIGURE_ARGS=	--prefix=${PREFIX}
 USE_PERL5_RUN=	yes
 MAKE_JOBS_SAFE=	yes
 
+LICENSE=	GPLv2
+
 MAN1=		dupemap.1 magicrescue.1 magicsort.1
 
 post-patch:

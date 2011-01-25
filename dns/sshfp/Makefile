@@ -19,6 +19,8 @@ RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/dns/__init__.py:${PORTSDIR}/dns/py-dnspython
 NO_BUILD=	yes
 USE_PYTHON=	2.4+
 
+LICENSE=	GPLv2
+
 MAN1=		sshfp.1
 PLIST_FILES=	bin/sshfp
 
