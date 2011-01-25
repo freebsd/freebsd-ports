@@ -20,7 +20,6 @@ COMMENT=	A Gopher client
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/_tkinter.so:${PORTSDIR}/x11-toolkits/py-tkinter \
 		${PYTHON_SITELIBDIR}/Pmw:${PORTSDIR}/x11-toolkits/py-Pmw
 
-NO_SIZE=	yes
 USE_PYTHON=	yes
 NO_BUILD=	yes
 
