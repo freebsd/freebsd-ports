@@ -16,6 +16,8 @@ COMMENT=	Convert propiatary .drg file format into SBaGen format
 GNU_CONFIGURE=	yes
 USE_SSL=	yes
 
+LICENSE=	GPLv2
+
 PLIST_FILES=	bin/drg2sbg
 
 .include <bsd.port.mk>

@@ -18,6 +18,8 @@ GNU_CONFIGURE=	yes
 MAKE_JOBS_SAFE=	yes
 MANCOMPRESSED=	yes
 
+LICENSE=	GPLv2
+
 MAN1=		nload.1
 PLIST_FILES=	bin/nload
 

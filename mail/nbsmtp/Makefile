@@ -22,6 +22,8 @@ OPTIONS=	IPV6	"Support for IPv6 connections"			off \
 		DEBUG	"Enable debug information (for developers)"	off \
 		SSL	"Enable SSL support"				off
 
+LICENSE=	GPLv2
+
 PLIST_FILES=	bin/nbsmtp
 
 MAN5=		nbsmtprc.5

@@ -30,6 +30,8 @@ CONFLICTS=	notification-daemon-[0-9]* xfce4-notification-daemon-[0-9]*
 
 OPTIONS=	NLS      "Enable Native Language Support"             on
 
+LICENSE=	GPLv3
+
 .include <bsd.port.pre.mk>
 
 .if !defined(WITHOUT_NLS)

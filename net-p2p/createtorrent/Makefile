@@ -18,6 +18,8 @@ GNU_CONFIGURE=	yes
 USE_OPENSSL=	yes
 MAKE_JOBS_SAFE=	yes
 
+LICENSE=	GPLv2
+
 PLIST_FILES=	bin/createtorrent
 
 do-install:

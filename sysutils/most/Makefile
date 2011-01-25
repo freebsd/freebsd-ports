@@ -24,6 +24,8 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--enable-mmap
 MAKE_JOBS_UNSAFE=	yes
 
+LICENSE=	GPLv2
+
 PLIST_FILES=	bin/most
 PORTDOCS=	README changes.txt lesskeys.rc most-fun.txt most.doc most.rc
 MAN1=		most.1

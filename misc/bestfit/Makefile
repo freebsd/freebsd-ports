@@ -17,6 +17,8 @@ GNU_CONFIGURE=	yes
 MANCOMPRESSED=	no
 MAKE_JOBS_SAFE=	yes
 
+LICENSE=	GPLv2
+
 MAN1=		bestfit.1
 PLIST_FILES=	bin/bestfit
 

@@ -24,6 +24,8 @@ MAKE_JOBS_SAFE=	yes
 
 CFLAGS+=	-I${LOCALBASE}/include -L${LOCALBASE}/lib
 
+LICENSE=	GPLv2
+
 MAN1=		iec16022.1
 
 post-patch:

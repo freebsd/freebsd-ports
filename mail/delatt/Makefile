@@ -19,6 +19,8 @@ RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/MIME/Base64.pm:${PORTSDIR}/converters/p5-
 USE_PERL5_RUN=	5.8.6+
 NO_BUILD=	yes
 
+LICENSE=	GPLv2
+
 PLIST_FILES=	bin/delatt
 
 post-patch:

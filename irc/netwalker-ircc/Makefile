@@ -16,6 +16,8 @@ COMMENT=	A lightweight curses-based IRC client
 
 MAKE_JOBS_SAFE=	yes
 
+LICENSE=	GPLv2
+
 MAN1=		netwalker.1
 
 LDFLAGS=	-lncurses ${PTHREAD_LIBS}

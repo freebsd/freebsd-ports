@@ -20,6 +20,8 @@ MAKE_JOBS_SAFE=	yes
 
 CONFIGURE_ENV+=		CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 
+LICENSE=	GPLv2
+
 MAN1=		isync.1 mbsync.1 mdconvert.1
 PORTDOCS=	AUTHORS ChangeLog NEWS README TODO
 PLIST_FILES=	bin/get-cert bin/isync bin/mbsync bin/mdconvert

@@ -17,6 +17,8 @@ GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 MAKE_JOBS_SAFE=	yes
 
+LICENSE=	GPLv2
+
 PLIST_FILES=	sbin/tmpreaper
 PORTDOCS=	README
 MAN8=		tmpreaper.8

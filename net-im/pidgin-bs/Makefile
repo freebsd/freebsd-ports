@@ -23,6 +23,8 @@ USE_BZIP2=	yes
 USE_GNOME=	gtk20
 USE_LDCONFIG=	${PREFIX}/lib/pidgin
 
+LICENSE=	GPLv3
+
 PLIST_FILES=	lib/purple-2/bot-sentry.so lib/purple-2/bot-sentry.la
 
 .include <bsd.port.pre.mk>

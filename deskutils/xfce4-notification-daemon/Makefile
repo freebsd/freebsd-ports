@@ -42,6 +42,8 @@ OPTIONS=	GRADIENT "Show a gradient look in the default theme"  off \
 		CLOSE    "Show the close button in the default theme" on  \
 		NLS      "Enable Native Language Support"             on
 
+LICENSE=	GPLv2
+
 .include <bsd.port.pre.mk>
 
 .if !defined(WITHOUT_NLS)

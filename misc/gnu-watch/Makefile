@@ -20,6 +20,8 @@ MAKE_JOBS_SAFE=	yes
 
 LDFLAGS+=	-lncurses
 
+LICENSE=	GPLv2
+
 MAN1=		gnu-watch.1
 PLIST_FILES=	bin/${UNIQUENAME}
 

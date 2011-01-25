@@ -19,6 +19,8 @@ USE_GNOME=	pkgconfig
 CFLAGS+=	`pkg-config --cflags libxfce4panel-1.0`
 LDFLAGS+=	`pkg-config --libs libxfce4panel-1.0`
 
+LICENSE=	GPLv3
+
 post-patch:
 	@${REINPLACE_CMD} -e \
 		"s|@PLUGINDIR@|${PREFIX}/lib/xfce4/xfce4/panel-plugins|" \

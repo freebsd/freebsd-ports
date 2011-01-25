@@ -18,6 +18,8 @@ RUN_DEPENDS=	screen:${PORTSDIR}/sysutils/screen
 
 NO_BUILD=	yes
 
+LICENSE=	GPLv2
+
 MAN1=		screenie.1
 PLIST_FILES=	sbin/screenie
 

@@ -19,6 +19,8 @@ SUB_FILES=	pkg-message
 PKGMESSAGE=	${WRKDIR}/pkg-message
 USE_RC_SUBR=	noip
 
+LICENSE=	GPLv2
+
 pre-install:
 	@${SETENV} PKG_PREFIX=${PREFIX} ${SH} \
 		${PKGINSTALL} ${PKGNAME} PRE-INSTALL

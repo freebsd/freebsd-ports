@@ -19,6 +19,8 @@ USE_BZIP2=	yes
 USE_RC_SUBR=	socat
 MAKE_JOBS_SAFE=	yes
 
+LICENSE=	GPLv2
+
 MAN1=		socat.1
 
 PORTSCOUT=	skipv:2.0.0-b2

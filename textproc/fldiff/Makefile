@@ -23,6 +23,8 @@ MAKE_JOBS_SAFE=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
+LICENSE=	GPLv2
+
 MAN1=		fldiff.1
 PORTDOCS=	index.html fldiff.jpg
 

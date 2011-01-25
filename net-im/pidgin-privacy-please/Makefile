@@ -23,4 +23,6 @@ USE_GETTEXT=	yes
 USE_GNOME=	gtk20
 USE_LDCONFIG=	${PREFIX}/lib/pidgin
 
+LICENSE=	GPLv2
+
 .include <bsd.port.mk>
