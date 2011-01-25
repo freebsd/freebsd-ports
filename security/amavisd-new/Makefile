@@ -8,7 +8,7 @@
 
 PORTNAME=	amavisd-new
 PORTVERSION=	2.6.4
-PORTREVISION=	10
+PORTREVISION=	11
 PORTEPOCH=	1
 CATEGORIES=	security
 MASTER_SITES=	http://www.ijs.si/software/amavisd/ \
@@ -42,7 +42,7 @@ AMAVISDIR?=	/var/amavis
 AMAVISQUARANTINE?=	/var/virusmails
 DAEMON?=	/usr/sbin/daemon -p
 
-OPTIONS=	IPV6	"Support IPv6"				off \
+OPTIONS=	IPV6	"Support IPv6"				on \
 		BDB	"Use BerkeleyDB for nanny/cache/snmp"	on \
 		SNMP	"Install amavisd snmp subagent"	off \
 		SQLITE	"Use SQLite for lookups"	off \
