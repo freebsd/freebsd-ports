@@ -11,6 +11,7 @@ PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	SF
 EXTRACT_SUFX=	.tgz
+PKGNAMESUFFIX=	-devel
 
 MAINTAINER=	james@netinertia.co.uk
 COMMENT=	An open source, completely automatic on-line backup system for UNIX
