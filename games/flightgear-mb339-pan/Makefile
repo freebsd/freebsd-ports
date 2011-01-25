@@ -23,9 +23,6 @@ NO_BUILD=	yes
 RESTRICTED=	Redistribution prohibited
 PLIST=		${WRKDIR}/.pkg-plist
 
-post-patch:
-	@${MV} ${WRKSRC}/${DISTNAME}/engines ${WRKDIR}/${DISTNAME}/Engines
-
 pre-install:
 	@${RM} -f ${PLIST}
 	@cd ${WRKSRC} && \
