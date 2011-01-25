@@ -8,27 +8,27 @@
 %%SITE_PERL%%/CGI/Switch.pm
 %%SITE_PERL%%/CGI/Util.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/CGI/.packlist
-%%PORTDOCS%%%%EXAMPLESDIR%%/caution.xbm
-%%PORTDOCS%%%%EXAMPLESDIR%%/clickable_image.cgi
-%%PORTDOCS%%%%EXAMPLESDIR%%/cookie.cgi
-%%PORTDOCS%%%%EXAMPLESDIR%%/crash.cgi
-%%PORTDOCS%%%%EXAMPLESDIR%%/customize.cgi
-%%PORTDOCS%%%%EXAMPLESDIR%%/diff_upload.cgi
-%%PORTDOCS%%%%EXAMPLESDIR%%/dna.small.gif
-%%PORTDOCS%%%%EXAMPLESDIR%%/file_upload.cgi
-%%PORTDOCS%%%%EXAMPLESDIR%%/frameset.cgi
-%%PORTDOCS%%%%EXAMPLESDIR%%/index.html
-%%PORTDOCS%%%%EXAMPLESDIR%%/internal_links.cgi
-%%PORTDOCS%%%%EXAMPLESDIR%%/javascript.cgi
-%%PORTDOCS%%%%EXAMPLESDIR%%/make_links.pl
-%%PORTDOCS%%%%EXAMPLESDIR%%/monty.cgi
-%%PORTDOCS%%%%EXAMPLESDIR%%/multiple_forms.cgi
-%%PORTDOCS%%%%EXAMPLESDIR%%/nph-clock.cgi
-%%PORTDOCS%%%%EXAMPLESDIR%%/nph-multipart.cgi
-%%PORTDOCS%%%%EXAMPLESDIR%%/popup.cgi
-%%PORTDOCS%%%%EXAMPLESDIR%%/save_state.cgi
-%%PORTDOCS%%%%EXAMPLESDIR%%/tryit.cgi
-%%PORTDOCS%%%%EXAMPLESDIR%%/wilogo.gif
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/caution.xbm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/clickable_image.cgi
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cookie.cgi
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/crash.cgi
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/customize.cgi
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/diff_upload.cgi
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/dna.small.gif
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/file_upload.cgi
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/frameset.cgi
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/index.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/internal_links.cgi
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/javascript.cgi
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/make_links.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/monty.cgi
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/multiple_forms.cgi
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/nph-clock.cgi
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/nph-multipart.cgi
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/popup.cgi
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/save_state.cgi
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tryit.cgi
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/wilogo.gif
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/CGI
 @dirrmtry %%SITE_PERL%%/CGI
