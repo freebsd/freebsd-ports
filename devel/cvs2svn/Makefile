@@ -8,7 +8,8 @@ PORTNAME=	cvs2svn
 PORTVERSION=	2.3.0
 PORTREVISION=	2
 CATEGORIES=	devel
-MASTER_SITES=	http://cvs2svn.tigris.org/files/documents/1462/46528/
+MASTER_SITES=	http://www.sourcehosting.net/freebsd/distfiles/ \
+		LOCAL/glarkin
 
 MAINTAINER=	glarkin@FreeBSD.org
 COMMENT=	CVS to Subversion Repository Converter
