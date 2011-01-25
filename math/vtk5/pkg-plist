@@ -316,7 +316,7 @@
 %%QT%%include/vtk-%%VER2%%/vtkQtTreeRingLabelMapper.h
 %%QT%%include/vtk-%%VER2%%/vtkQtTreeView.h
 %%QT%%include/vtk-%%VER2%%/vtkQtView.h
-%%SHARED%%%%QT%%lib/qt4/plugins/designer/libQVTKWidgetPlugin.so
+%%QT%%lib/qt4/plugins/designer/libQVTKWidgetPlugin.so
 %%QT%%lib/vtk-%%VER2%%/VTKConfigQt.cmake
 %%STATIC%%%%QT%%lib/vtk-%%VER2%%/libQVTK.a
 %%STATIC%%%%QT%%lib/vtk-%%VER2%%/libvtkQtChart.a
@@ -501,10 +501,13 @@
 %%WRAP_PYTHON_OR_TCLTK%%include/vtk-%%VER2%%/TclTk/internals/tk%%TCLTK_VER%%/default.h
 %%WRAP_PYTHON_OR_TCLTK%%include/vtk-%%VER2%%/TclTk/internals/tk%%TCLTK_VER%%/tclInt.h
 %%WRAP_PYTHON_OR_TCLTK%%include/vtk-%%VER2%%/TclTk/internals/tk%%TCLTK_VER%%/tclIntDecls.h
+%%WRAP_PYTHON_OR_TCLTK%%include/vtk-%%VER2%%/TclTk/internals/tk%%TCLTK_VER%%/tclIntPlatDecls.h
+%%WRAP_PYTHON_OR_TCLTK%%include/vtk-%%VER2%%/TclTk/internals/tk%%TCLTK_VER%%/tclPort.h
+%%WRAP_PYTHON_OR_TCLTK%%include/vtk-%%VER2%%/TclTk/internals/tk%%TCLTK_VER%%/tclUnixPort.h
+%%WRAP_PYTHON_OR_TCLTK%%include/vtk-%%VER2%%/TclTk/internals/tk%%TCLTK_VER%%/tclWinPort.h
 %%WRAP_PYTHON_OR_TCLTK%%include/vtk-%%VER2%%/TclTk/internals/tk%%TCLTK_VER%%/tkInt.h
 %%WRAP_PYTHON_OR_TCLTK%%include/vtk-%%VER2%%/TclTk/internals/tk%%TCLTK_VER%%/tkIntDecls.h
 %%WRAP_PYTHON_OR_TCLTK%%include/vtk-%%VER2%%/TclTk/internals/tk%%TCLTK_VER%%/tkIntPlatDecls.h
-%%WRAP_PYTHON_OR_TCLTK%%include/vtk-%%VER2%%/TclTk/internals/tk%%TCLTK_VER%%/tkMacDefault.h
 %%WRAP_PYTHON_OR_TCLTK%%include/vtk-%%VER2%%/TclTk/internals/tk%%TCLTK_VER%%/tkMacOSXDefault.h
 %%WRAP_PYTHON_OR_TCLTK%%include/vtk-%%VER2%%/TclTk/internals/tk%%TCLTK_VER%%/tkMacOSXInt.h
 %%WRAP_PYTHON_OR_TCLTK%%include/vtk-%%VER2%%/TclTk/internals/tk%%TCLTK_VER%%/tkMacOSXPort.h

@@ -23,8 +23,6 @@ LIB_DEPENDS=	expat.[5-6]:${PORTSDIR}/textproc/expat2 \
 
 LATEST_LINK=	vtk5
 
-BROKEN=		fails to package
-
 WRKSRC=		${WRKDIR}/VTK
 
 CONFLICTS=	vtk-4*
