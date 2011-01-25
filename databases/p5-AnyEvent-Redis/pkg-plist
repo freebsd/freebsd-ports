@@ -1,0 +1,7 @@
+%%SITE_PERL%%/AnyEvent/Redis.pm
+%%SITE_PERL%%/AnyEvent/Redis/Protocol.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/AnyEvent/Redis/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/AnyEvent/Redis
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/AnyEvent
+@dirrmtry %%SITE_PERL%%/AnyEvent/Redis
+@dirrmtry %%SITE_PERL%%/AnyEvent
