@@ -26,6 +26,7 @@ MAKE_JOBS_UNSAFE=	yes
 CXXFLAGS+=	--no-exceptions
 WRKSRC=		${WRKDIR}/sapplug-${DISTVERSION}
 
+LICENSE=	GPLv2
 PLIST_FILES=	lib/xmms/Input/libsap.so
 
 OPTIONS=	OPTIMIZED_CXXFLAGS "use optimized C++ flags" on \

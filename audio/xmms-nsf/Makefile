@@ -26,6 +26,7 @@ ONLY_FOR_ARCHS=	i386 amd64
 
 CFLAGS+=	-fPIC
 
+LICENSE=	GPLv2
 PLIST_FILES=	lib/xmms/Input/libnsf.a \
 		lib/xmms/Input/libnsf.la \
 		lib/xmms/Input/libnsf.so

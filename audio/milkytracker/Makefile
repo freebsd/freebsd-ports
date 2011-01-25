@@ -28,6 +28,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS+=	--disable-alsatest --without-alsa
 
+LICENSE=	GPLv3
 PLIST_FILES=	bin/milkytracker share/pixmaps/milkytracker.ico \
 		share/pixmaps/milkytracker.png
 PORTDOCS=	FAQ.html MilkyTracker.html ChangeLog.html

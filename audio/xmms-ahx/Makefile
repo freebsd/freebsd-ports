@@ -28,6 +28,8 @@ USE_GNOME=	gtk12
 USE_LDCONFIG=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
 
+LICENSE=	GPLv2
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|\(objformat=\).*|\1elf|' ${WRKSRC}/configure
 

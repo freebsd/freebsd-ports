@@ -22,6 +22,7 @@ GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 MAKE_JOBS_SAFE=	yes
 
+LICENSE=	GPLv2
 PLIST_FILES=	lib/xmms/Effect/libnormvol.so
 
 post-patch:

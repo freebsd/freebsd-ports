@@ -21,6 +21,7 @@ GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 MAKE_JOBS_SAFE=	yes
 
+LICENSE=	GPLv2
 PLIST_FILES=	lib/bmp/Input/libfc.so lib/bmp/Input/libfc.la
 
 post-patch:

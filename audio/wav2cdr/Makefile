@@ -18,6 +18,7 @@ MAKE_JOBS_SAFE=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
 SRC=		wav2cdr cmdarg data fileio process
 
+LICENSE=	GPLv2
 PLIST_FILES=	bin/wav2cdr
 MAN1=		wav2cdr.1
 

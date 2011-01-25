@@ -20,6 +20,7 @@ CONFIGURE_ARGS+=	--enable-interface=interface
 DESCR=		${.CURDIR}/pkg-descr
 PLIST=		${.CURDIR}/pkg-plist
 
+LICENSE=	GPLv2
 PLIST_FILES=	lib/xmms/Input/libfestalon_xmms.a \
 		lib/xmms/Input/libfestalon_xmms.la \
 		lib/xmms/Input/libfestalon_xmms.so \
