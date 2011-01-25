@@ -15,6 +15,8 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	james@netinertia.co.uk
 COMMENT=	An open source, completely automatic on-line backup system for UNIX
 
+NO_LATEST_LINK=	yes
+
 USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes
 USE_PERL5=	yes
