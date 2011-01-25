@@ -8,4 +8,4 @@ libexec/qpopper
 etc/qpopper.config.sample
 %%PORTDOCS%%%%DOCSDIR%%/GUIDE.pdf
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrmtry %%ETCDIR%% || echo "If you are permanently removing this port, you should do a ``rm -rf %%ETCDIR%%`` to remove any configuration files and logs left." | fmt
+@dirrmtry %%ETCDIR%%
