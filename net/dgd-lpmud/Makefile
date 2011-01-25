@@ -19,7 +19,7 @@ COMMENT=	LPmud mudlib, for use with DGD
 
 RUN_DEPENDS=	${LOCALBASE}/sbin/dgd:${PORTSDIR}/net/dgd
 
-RESTRICTED=	no monetary gain, tarball OK for CDROM
+NO_PACKAGE=	no monetary gain, tarball OK for CDROM
 
 DIST_SUBDIR=	dgd
 WRKSRC=		${WRKDIR}/mud
