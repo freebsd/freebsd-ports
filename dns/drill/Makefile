@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	drill
-PORTVERSION=	1.6.7
+PORTVERSION=	1.6.8
 CATEGORIES=	dns
 MASTER_SITES=	http://www.nlnetlabs.nl/downloads/ldns/
 DISTNAME=	ldns-${PORTVERSION}
@@ -27,5 +27,8 @@ HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX} --mandir=${MANPREFIX}/man
 
 PLIST_FILES=	bin/drill
+
+post-install:
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
