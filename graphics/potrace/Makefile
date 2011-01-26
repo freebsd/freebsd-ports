@@ -23,6 +23,8 @@ PLIST_FILES=	bin/potrace bin/mkbitmap
 OPTIONS=	METRIC	"Enable use of metric units (centimeters) as default" on \
 		A4	"Enable use of A4 as the default papersize"           on
 
+.include <bsd.port.pre.mk>
+
 .if defined(WITH_A4)
 CONFIGURE_ARGS+=	--enable-a4
 .endif
@@ -39,4 +41,4 @@ do-install:
 	${INSTALL_MAN} ${WRKSRC}/doc/mkbitmap.1 ${MAN1PREFIX}/man/man1
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
