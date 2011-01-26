@@ -1,0 +1,7 @@
+**************************************************************************
+*                                                                        *
+*       This separate port for drill is scheduled to be discontinued.    *
+*       The drill program can now be generated via an option in          *
+*       the dns/ldns port.                                               *
+*                                                                        *
+**************************************************************************
