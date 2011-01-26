@@ -54,7 +54,7 @@ INFO=		conduits
 
 .include <bsd.port.pre.mk>
 
-CFLAGS+=	-O0 -D__BSD_VISIBLE=1
+CFLAGS+=	-O0 -D__BSD_VISIBLE=1 -I${LOCALBASE}/include
 CONFIGURE_ARGS+=	--disable-pedantic --without-perl --with-usb
 
 post-patch:
