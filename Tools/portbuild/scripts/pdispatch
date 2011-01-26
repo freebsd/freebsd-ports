@@ -199,5 +199,5 @@ if grep -q "^build of .*ended at" ${builddir}/logs/${pkgname}.log; then
     exit ${error}
 else
     echo "Build of ${pkgname} in ${host}:/${chroot} failed uncleanly"
-    exit 254
+    exit 255
 fi
