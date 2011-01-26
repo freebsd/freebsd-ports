@@ -1,4 +1,8 @@
-share/gmpc/plugins/gmpcmserverplugin.la
-share/gmpc/plugins/gmpcmserverplugin.so
+lib/gmpc/plugins/gmpcmserverplugin.la
+lib/gmpc/plugins/gmpcmserverplugin.so
+share/gmpc/plugins/gmpc-mserver/gmpc-mserver.png
+@dirrmtry lib/gmpc/plugins
+@dirrmtry lib/gmpc
+@dirrm share/gmpc/plugins/gmpc-mserver
 @dirrmtry share/gmpc/plugins
 @dirrmtry share/gmpc

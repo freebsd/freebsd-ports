@@ -6,25 +6,22 @@
 #
 
 PORTNAME=	gmpc-lastfm
-PORTVERSION=	0.19.0
-PORTREVISION=	3
+PORTVERSION=	0.20.0
 CATEGORIES=	audio
 MASTER_SITES=	http://download.sarine.nl/Programs/gmpc/${PORTVERSION}/ \
 		http://freebsd.unixfreunde.de/sources/
 DISTNAME=	gmpc-last-fm-${PORTVERSION}
 
 MAINTAINER=	miwi@FreeBSD.org
-COMMENT=	Lastfm plugin for gmpc
+COMMENT=	Last.FM metadata fetcher plugin for gmpc
 
-LIB_DEPENDS=	mpd:${PORTSDIR}/audio/libmpd \
-		curl.6:${PORTSDIR}/ftp/curl
+LIB_DEPENDS=	mpd.3:${PORTSDIR}/audio/libmpd
 BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/gmpc.pc:${PORTSDIR}/audio/gmpc
 RUN_DEPENDS=	gmpc:${PORTSDIR}/audio/gmpc
 
 GNU_CONFIGURE=	yes
-USE_XORG=	x11
-USE_GNOME=	gnomehack intltool
 USE_GMAKE=	yes
-USE_LDCONFIG=	yes
+USE_GNOME=	gnomehack pkgconfig glib20 gtk20 intltool libxml2
+USE_GETTEXT=	yes
 
 .include <bsd.port.mk>

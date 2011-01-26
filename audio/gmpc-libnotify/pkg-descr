@@ -1,3 +1,8 @@
-A libnotify plugin for gmpc.
+The Libnotify plugin is a misc plugin for gmpc. The plugin uses libnotify to
+send messages to the notification-daemon on song change. It will show the song
+title, artist, album (date) and genre. It will also display the album cover if
+available.
 
-WWW:	http://gmpcwiki.sarine.nl/index.php/Libnotify 
+It can act as a replacement for the built-in notification.
+
+WWW: http://gmpc.wikia.com/wiki/GMPC_PLUGIN_LIBNOTIFY

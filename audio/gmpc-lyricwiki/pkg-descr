@@ -1,3 +1,4 @@
-A new plugin that uses the REST api of lyricwiki to fetch lyrics.
+A new plugin that uses the rest api of lyricwiki to fetch lyrics from
+lyrics.wikia.com.
 
-WWW: http://gmpcwiki.sarine.nl/index.php/Lyricwiki
+WWW: http://gmpc.wikia.com/wiki/Lyricwiki
