@@ -20,6 +20,8 @@
 %%EXAMPLES%%bin/ldns-zcat
 %%EXAMPLES%%bin/ldns-zsplit
 %%EXAMPLES%%bin/ldnsd
+%%EXAMPLES%%bin/ldns-test-edns
+%%DRILLPROG%%bin/drill
 include/ldns/buffer.h
 include/ldns/common.h
 include/ldns/dname.h
