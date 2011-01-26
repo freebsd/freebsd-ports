@@ -1,11 +1,14 @@
 bin/javaservicewrapper
 %%DATADIR%%/bin/testwrapper
 %%DATADIR%%/bin/wrapper
+%%DATADIR%%/bin/demoapp
 %%DATADIR%%/conf/wrapper.conf
+%%DATADIR%%/conf/demoapp.conf
 %%DATADIR%%/lib/libwrapper.so
 %%DATADIR%%/lib/wrapper.jar
 %%DATADIR%%/lib/wrappertest.jar
 %%DATADIR%%/lib/wrappertest2.jar
+%%DATADIR%%/lib/wrapperdemo.jar
 %%DATADIR%%/test/backgroundthreads
 %%DATADIR%%/test/backgroundthreads.conf
 %%DATADIR%%/test/daemonthreads
@@ -39,8 +42,6 @@ bin/javaservicewrapper
 %%DATADIR%%/test/quickcomplete
 %%DATADIR%%/test/quickcomplete.conf
 %%DATADIR%%/test/restarter
-%%DATADIR%%/test/runtimeexec.conf
-%%DATADIR%%/test/runtimeexec
 %%DATADIR%%/test/restarter.conf
 %%DATADIR%%/test/shutdownhook
 %%DATADIR%%/test/shutdownhook.conf
@@ -53,8 +54,11 @@ bin/javaservicewrapper
 %%DATADIR%%/test/systemproperty
 %%DATADIR%%/test/systemproperty.conf
 %%DATADIR%%/test/template.conf
+%%DATADIR%%/test/nestedwrapperlistener
+%%DATADIR%%/test/nestedwrapperlistener.conf
+%%DATADIR%%/test/simplewrapperlistener
+%%DATADIR%%/test/simplewrapperlistener.conf
 %%PORTDOCS%%%%DOCSDIR%%/index.html
-%%PORTDOCS%%%%DOCSDIR%%/readme.txt
 %%PORTDOCS%%%%DOCSDIR%%/revisions.txt
 %%PORTDOCS%%%%DOCSDIR%%/wrapper-community-license-1.1.txt
 %%PORTDOCS%%@dirrm %%DOCSDIR%%

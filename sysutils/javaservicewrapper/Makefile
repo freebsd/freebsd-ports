@@ -6,20 +6,19 @@
 #
 
 PORTNAME=	javaservicewrapper
-PORTVERSION=	3.3.9
+PORTVERSION=	3.5.7
 CATEGORIES=	sysutils java
-MASTER_SITES=	http://dl.wrapper.tanukisoftware.com/download/${PORTVERSION}/
+MASTER_SITES=	http://wrapper.tanukisoftware.com/download/${PORTVERSION}/
 DISTNAME=	wrapper_${PORTVERSION}_src
 
-MAINTAINER=	mikej@rogers.com
+MAINTAINER=	mike.jakubik@gmail.com
 COMMENT=	Application to solve problems common to many Java applications
-
-BUILD_DEPENDS=	gmake:${PORTSDIR}/devel/gmake
 
 ONLY_FOR_ARCHS=	i386 amd64
 
-USE_JAVA=	1.3+
+USE_JAVA=	1.4+
 USE_ANT=	yes
+USE_GMAKE=	yes
 
 DATADIR=	${PREFIX}/lib/${PORTNAME}
 
