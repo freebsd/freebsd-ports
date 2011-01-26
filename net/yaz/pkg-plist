@@ -52,12 +52,15 @@ include/yaz/query-charset.h
 include/yaz/querytowrbuf.h
 include/yaz/readconf.h
 include/yaz/record_conv.h
+include/yaz/record_render.h
 include/yaz/retrieval.h
 include/yaz/rpn2cql.h
+include/yaz/rpn2solr.h
 include/yaz/sc.h
 include/yaz/shptr.h
 include/yaz/snprintf.h
 include/yaz/soap.h
+include/yaz/solr.h
 include/yaz/sortspec.h
 include/yaz/spipe.h
 include/yaz/srw.h
@@ -189,6 +192,7 @@ share/aclocal/yaz.m4
 %%PORTDOCS%%%%DOCSDIR%%/yaz.html
 %%PORTDOCS%%%%DOCSDIR%%/zoom.events.html
 %%PORTDOCS%%%%DOCSDIR%%/zoom.extendedservices.html
+%%PORTDOCS%%%%DOCSDIR%%/zoom.facets.html
 %%PORTDOCS%%%%DOCSDIR%%/zoom.html
 %%PORTDOCS%%%%DOCSDIR%%/zoom.options.html
 %%PORTDOCS%%%%DOCSDIR%%/zoom.query.html

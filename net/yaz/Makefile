@@ -6,12 +6,11 @@
 #
 
 PORTNAME=	yaz
-PORTVERSION=	4.0.12
-PORTREVISION=	1
+PORTVERSION=	4.1.2
 CATEGORIES=	net
 MASTER_SITES=	http://ftp.indexdata.dk/pub/yaz/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	c0rn@o2.pl
 COMMENT=	Z39.50/SR client and API library
 
 LIB_DEPENDS=	icuuc:${PORTSDIR}/devel/icu
@@ -28,11 +27,11 @@ CONFIGURE_ARGS+=--enable-shared --with-openssl=${OPENSSLBASE} \
 		--with-xslt=${LOCALBASE} --with-icu=${LOCALBASE} \
 		--enable-tcpd
 
-MAN1=		yaz-asncomp.1 yaz-client.1 yaz-iconv.1 \
+MAN1=		yaz-asncomp.1 yaz-client.1 yaz-config.1 yaz-iconv.1 \
 		yaz-json-parse.1 yaz-marcdump.1 \
 		zoomsh.1 yaz-icu.1 yaz-illclient.1
 MAN7=		bib1-attr.7 yaz-log.7 yaz.7
-MAN8=		yaz-config.8 yaz-ztest.8
+MAN8=		yaz-ztest.8
 
 .if defined(NOPORTDOCS)
 EXTRA_PATCHES+=	${FILESDIR}/extrapatch-doc__Makefile.in
