@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	firefox-sync
-PORTVERSION=	1.6.1
+PORTVERSION=	1.6.2
 PORTEPOCH=	2
 CATEGORIES=	www
 MASTER_SITES=	http://hg.mozilla.org/services/fx-sync/archive/${DISTVERSION}${EXTRACT_SUFX}/
@@ -38,7 +38,7 @@ AMD64_ARCH=	x86_64
 BUILD_DEPENDS+=	${FF_DEPENDS}
 RUN_DEPENDS+=	${FF_DEPENDS}
 
-REVID=		7081421a3910
+REVID=		d52662c1c99b
 .if ${ARCH} == i386
 PLATFORM=	FreeBSD_x86-gcc3
 .elif ${ARCH} == amd64
