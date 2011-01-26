@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gnokii
-PORTVERSION=	0.6.29
-PORTREVISION=	1
+PORTVERSION=	0.6.30
 PORTEPOCH=	1
 CATEGORIES=	comms
 MASTER_SITES=	http://www.gnokii.org/download/gnokii/ \
@@ -16,6 +15,9 @@ MASTER_SITES=	http://www.gnokii.org/download/gnokii/ \
 
 MAINTAINER=	mad@madpilot.net
 COMMENT=	Tools to talk to GSM cellular phones
+
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/XML/Parser.pm:${PORTSDIR}/textproc/p5-XML-Parser
 
@@ -50,6 +52,7 @@ OPTIONS=	ICAL	"Build with IETF iCal support"		off \
 		SMSD	"Enable smsd daemon"			off \
 		MYSQL	"Enable MySQL support for smsd"		off \
 		PGSQL	"Enable PostgreSQL support for smsd"	off \
+		SQLITE	"Enable SQLite support in smsd"		off \
 		X11	"Build graphical version (xgnokii)"	on
 
 .include <bsd.port.pre.mk>
@@ -69,7 +72,7 @@ LIB_DEPENDS+=	pcsclite.1:${PORTSDIR}/devel/pcsc-lite
 .endif
 
 .if !defined(WITH_SMSD)
-PLIST_SUB+=	SMSD='@comment ' MSM='@comment ' PGM='@comment '
+PLIST_SUB+=	SMSD='@comment ' MSM='@comment ' PGM='@comment ' SQLT='@comment '
 CONFIGURE_ARGS+=	--disable-smsd
 .else
 PLIST_SUB+=	SMSD=''
@@ -86,6 +89,12 @@ USE_PGSQL=	yes
 PLIST_SUB+=	PGM=''
 .else
 PLIST_SUB+=	PGM='@comment '
+.endif
+.if exists(${LOCALBASE}/lib/libsqlite3.so) && !defined(WITHOUT_SQLITE)
+LIB_DEPENDS+=	sqlite3.8:${PORTSDIR}/databases/sqlite3
+PLIST_SUB+=	SQLT=''
+.else
+PLIST_SUB+=	SQLT='@comment '
 .endif
 .endif
 

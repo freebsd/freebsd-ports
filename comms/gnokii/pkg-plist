@@ -21,7 +21,7 @@ include/gnokii/wappush.h
 lib/libgnokii.a
 lib/libgnokii.la
 lib/libgnokii.so
-lib/libgnokii.so.6
+lib/libgnokii.so.7
 libdata/pkgconfig/gnokii.pc
 libdata/pkgconfig/xgnokii.pc
 sbin/gnokiid
@@ -53,6 +53,9 @@ share/locale/zh_CN/LC_MESSAGES/gnokii.mo
 %%PGM%%lib/smsd/libsmsd_pq.la
 %%PGM%%lib/smsd/libsmsd_pq.so
 %%PGM%%share/smsd/sms.tables.pq.sql
+%%SQLT%%lib/smsd/libsmsd_sqlite.a
+%%SQLT%%lib/smsd/libsmsd_sqlite.la
+%%SQLT%%lib/smsd/libsmsd_sqlite.so
 %%SMSD%%@dirrm lib/smsd
 %%SMSD%%@dirrm share/smsd
 %%X11%%share/applications/xgnokii.desktop
