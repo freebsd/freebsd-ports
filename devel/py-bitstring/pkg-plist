@@ -1,0 +1,22 @@
+%%PYTHON_SITELIBDIR%%/bitstring/__init__.py
+%%PYTHON_SITELIBDIR%%/bitstring/__init__.pyc
+%%PYTHON_SITELIBDIR%%/bitstring/__init__.pyo
+%%PYTHON_SITELIBDIR%%/bitstring/bitarray.py
+%%PYTHON_SITELIBDIR%%/bitstring/bitarray.pyc
+%%PYTHON_SITELIBDIR%%/bitstring/bitarray.pyo
+%%PYTHON_SITELIBDIR%%/bitstring/bitstore.py
+%%PYTHON_SITELIBDIR%%/bitstring/bitstore.pyc
+%%PYTHON_SITELIBDIR%%/bitstring/bitstore.pyo
+%%PYTHON_SITELIBDIR%%/bitstring/bitstream.py
+%%PYTHON_SITELIBDIR%%/bitstring/bitstream.pyc
+%%PYTHON_SITELIBDIR%%/bitstring/bitstream.pyo
+%%PYTHON_SITELIBDIR%%/bitstring/constbitarray.py
+%%PYTHON_SITELIBDIR%%/bitstring/constbitarray.pyc
+%%PYTHON_SITELIBDIR%%/bitstring/constbitarray.pyo
+%%PYTHON_SITELIBDIR%%/bitstring/constbitstream.py
+%%PYTHON_SITELIBDIR%%/bitstring/constbitstream.pyc
+%%PYTHON_SITELIBDIR%%/bitstring/constbitstream.pyo
+%%PYTHON_SITELIBDIR%%/bitstring/errors.py
+%%PYTHON_SITELIBDIR%%/bitstring/errors.pyc
+%%PYTHON_SITELIBDIR%%/bitstring/errors.pyo
+@dirrm %%PYTHON_SITELIBDIR%%/bitstring
