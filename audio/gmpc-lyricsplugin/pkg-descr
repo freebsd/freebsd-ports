@@ -1,3 +1,6 @@
-Uses lyricsplugin (website: http://www.lyricsplugin.com/ ) to fetch lyrics.
+This plugin fetches lyrics from the web from the following sites:
 
-WWW: http://gmpc.wikia.com/wiki/GMPC_0.19.0
+ * Neolyrics
+ * Lyrics tracker
+
+WWW: http://gmpc.wikia.com/wiki/Lyrics

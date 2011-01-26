@@ -1,3 +1,4 @@
-This plugin allows gmpc to play Shoutcast streams.
+This plugin calls ogg123 and points it at mpd's shoutstream. it will stop ogg123
+when stopped/paused and starts it again when mpd starts playing again.
 
-WWW: http://gmpcwiki.sarine.nl/index.php/Shout
+WWW: http://gmpc.wikia.com/wiki/GMPC_PLUGIN_SHOUT

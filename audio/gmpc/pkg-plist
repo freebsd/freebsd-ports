@@ -2,40 +2,440 @@ bin/gmpc
 bin/gmpc-remote
 bin/gmpc-remote-stream
 include/gmpc/config1.h
-include/gmpc/gmpc-connection.h
-include/gmpc/gmpc-easy-command.h
+include/gmpc/gmpc-extras.h
 include/gmpc/gmpc-meta-text-view.h
 include/gmpc/gmpc-meta-watcher.h
 include/gmpc/gmpc-metaimage.h
 include/gmpc/gmpc-mpddata-model-sort.h
 include/gmpc/gmpc-mpddata-model.h
-include/gmpc/gmpc-mpddata-treeview-tooltip.h
 include/gmpc/gmpc-mpddata-treeview.h
-include/gmpc/gmpc-paned-size-group.h
-include/gmpc/gmpc-plugin.h
 include/gmpc/gmpc-profiles.h
 include/gmpc/gmpc-version.h
 include/gmpc/gmpc_easy_download.h
 include/gmpc/metadata.h
 include/gmpc/misc.h
+include/gmpc/mpd-async-request.h
+include/gmpc/mpdinteraction.h
 include/gmpc/playlist3-messages.h
 include/gmpc/plugin.h
 libdata/pkgconfig/gmpc.pc
 share/applications/gmpc.desktop
 %%DATADIR%%/aboutdialog.ui
+%%DATADIR%%/gmpc-add-url.ui
 %%DATADIR%%/gmpc-gtk-win32.rc
+%%DATADIR%%/icons/Humanity/128x128/actions/dynamic.png
+%%DATADIR%%/icons/Humanity/128x128/actions/gmpc-database.png
+%%DATADIR%%/icons/Humanity/128x128/actions/gmpc-metabrowser.png
+%%DATADIR%%/icons/Humanity/128x128/actions/gmpc-serve.png
+%%DATADIR%%/icons/Humanity/128x128/actions/info.png
+%%DATADIR%%/icons/Humanity/128x128/actions/media-audiofile.png
+%%DATADIR%%/icons/Humanity/128x128/actions/media-consume.png
+%%DATADIR%%/icons/Humanity/128x128/actions/media-playlist.png
+%%DATADIR%%/icons/Humanity/128x128/actions/media-repeat-single.png
+%%DATADIR%%/icons/Humanity/128x128/actions/media-tag.png
+%%DATADIR%%/icons/Humanity/128x128/actions/playlist-browser.png
+%%DATADIR%%/icons/Humanity/128x128/actions/playlist-search-browser.png
+%%DATADIR%%/icons/Humanity/128x128/actions/tag-browser.png
+%%DATADIR%%/icons/Humanity/128x128/apps/gmpc.png
+%%DATADIR%%/icons/Humanity/128x128/status/audio-volume-high.png
+%%DATADIR%%/icons/Humanity/128x128/status/audio-volume-low.png
+%%DATADIR%%/icons/Humanity/128x128/status/audio-volume-medium.png
+%%DATADIR%%/icons/Humanity/128x128/status/audio-volume-muted.png
+%%DATADIR%%/icons/Humanity/128x128/status/emblem-favorite.png
+%%DATADIR%%/icons/Humanity/128x128/status/fetching-artist.png
+%%DATADIR%%/icons/Humanity/128x128/status/frame-artist.png
+%%DATADIR%%/icons/Humanity/128x128/status/gmpc-tray-disconnected.png
+%%DATADIR%%/icons/Humanity/128x128/status/gmpc-tray-pause.png
+%%DATADIR%%/icons/Humanity/128x128/status/gmpc-tray-play.png
+%%DATADIR%%/icons/Humanity/128x128/status/gmpc-tray.png
+%%DATADIR%%/icons/Humanity/128x128/status/media-album.png
+%%DATADIR%%/icons/Humanity/128x128/status/media-artist.png
+%%DATADIR%%/icons/Humanity/128x128/status/media-codec.png
+%%DATADIR%%/icons/Humanity/128x128/status/media-date.png
+%%DATADIR%%/icons/Humanity/128x128/status/media-format.png
+%%DATADIR%%/icons/Humanity/128x128/status/media-genre.png
+%%DATADIR%%/icons/Humanity/128x128/status/media-num-tracks.png
+%%DATADIR%%/icons/Humanity/128x128/status/media-track-length.png
+%%DATADIR%%/icons/Humanity/128x128/status/no-artist.png
+%%DATADIR%%/icons/Humanity/128x128/status/stock_repeat.png
+%%DATADIR%%/icons/Humanity/128x128/status/stock_shuffle.png
+%%DATADIR%%/icons/Humanity/128x128/status/stylized-cover.png
+%%DATADIR%%/icons/Humanity/128x128/status/stylized-fetching-cover.png
+%%DATADIR%%/icons/Humanity/128x128/status/stylized-no-cover.png
+%%DATADIR%%/icons/Humanity/16x16/actions/dynamic.png
+%%DATADIR%%/icons/Humanity/16x16/actions/gmpc-database.png
+%%DATADIR%%/icons/Humanity/16x16/actions/gmpc-metabrowser.png
+%%DATADIR%%/icons/Humanity/16x16/actions/gmpc-serve.png
+%%DATADIR%%/icons/Humanity/16x16/actions/info.png
+%%DATADIR%%/icons/Humanity/16x16/actions/media-audiofile.png
+%%DATADIR%%/icons/Humanity/16x16/actions/media-consume.png
+%%DATADIR%%/icons/Humanity/16x16/actions/media-playlist.png
+%%DATADIR%%/icons/Humanity/16x16/actions/media-repeat-single.png
+%%DATADIR%%/icons/Humanity/16x16/actions/media-tag.png
+%%DATADIR%%/icons/Humanity/16x16/actions/playlist-browser.png
+%%DATADIR%%/icons/Humanity/16x16/actions/playlist-search-browser.png
+%%DATADIR%%/icons/Humanity/16x16/actions/tag-browser.png
+%%DATADIR%%/icons/Humanity/16x16/apps/gmpc.png
+%%DATADIR%%/icons/Humanity/16x16/status/audio-volume-high.png
+%%DATADIR%%/icons/Humanity/16x16/status/audio-volume-low.png
+%%DATADIR%%/icons/Humanity/16x16/status/audio-volume-medium.png
+%%DATADIR%%/icons/Humanity/16x16/status/audio-volume-muted.png
+%%DATADIR%%/icons/Humanity/16x16/status/emblem-favorite.png
+%%DATADIR%%/icons/Humanity/16x16/status/fetching-artist.png
+%%DATADIR%%/icons/Humanity/16x16/status/frame-artist.png
+%%DATADIR%%/icons/Humanity/16x16/status/gmpc-tray-disconnected.png
+%%DATADIR%%/icons/Humanity/16x16/status/gmpc-tray-pause.png
+%%DATADIR%%/icons/Humanity/16x16/status/gmpc-tray-play.png
+%%DATADIR%%/icons/Humanity/16x16/status/gmpc-tray.png
+%%DATADIR%%/icons/Humanity/16x16/status/media-album.png
+%%DATADIR%%/icons/Humanity/16x16/status/media-artist.png
+%%DATADIR%%/icons/Humanity/16x16/status/media-codec.png
+%%DATADIR%%/icons/Humanity/16x16/status/media-date.png
+%%DATADIR%%/icons/Humanity/16x16/status/media-format.png
+%%DATADIR%%/icons/Humanity/16x16/status/media-genre.png
+%%DATADIR%%/icons/Humanity/16x16/status/media-num-tracks.png
+%%DATADIR%%/icons/Humanity/16x16/status/media-track-length.png
+%%DATADIR%%/icons/Humanity/16x16/status/no-artist.png
+%%DATADIR%%/icons/Humanity/16x16/status/rating.png
+%%DATADIR%%/icons/Humanity/16x16/status/stock_repeat.png
+%%DATADIR%%/icons/Humanity/16x16/status/stock_shuffle.png
+%%DATADIR%%/icons/Humanity/16x16/status/stylized-cover.png
+%%DATADIR%%/icons/Humanity/16x16/status/stylized-fetching-cover.png
+%%DATADIR%%/icons/Humanity/16x16/status/stylized-no-cover.png
+%%DATADIR%%/icons/Humanity/22x22/actions/dynamic.png
+%%DATADIR%%/icons/Humanity/22x22/actions/gmpc-database.png
+%%DATADIR%%/icons/Humanity/22x22/actions/gmpc-metabrowser.png
+%%DATADIR%%/icons/Humanity/22x22/actions/gmpc-serve.png
+%%DATADIR%%/icons/Humanity/22x22/actions/info.png
+%%DATADIR%%/icons/Humanity/22x22/actions/media-audiofile.png
+%%DATADIR%%/icons/Humanity/22x22/actions/media-consume.png
+%%DATADIR%%/icons/Humanity/22x22/actions/media-playlist.png
+%%DATADIR%%/icons/Humanity/22x22/actions/media-repeat-single.png
+%%DATADIR%%/icons/Humanity/22x22/actions/media-tag.png
+%%DATADIR%%/icons/Humanity/22x22/actions/playlist-browser.png
+%%DATADIR%%/icons/Humanity/22x22/actions/playlist-search-browser.png
+%%DATADIR%%/icons/Humanity/22x22/actions/tag-browser.png
+%%DATADIR%%/icons/Humanity/22x22/apps/gmpc.png
+%%DATADIR%%/icons/Humanity/22x22/status/audio-volume-high.png
+%%DATADIR%%/icons/Humanity/22x22/status/audio-volume-low.png
+%%DATADIR%%/icons/Humanity/22x22/status/audio-volume-medium.png
+%%DATADIR%%/icons/Humanity/22x22/status/audio-volume-muted.png
+%%DATADIR%%/icons/Humanity/22x22/status/emblem-favorite.png
+%%DATADIR%%/icons/Humanity/22x22/status/fetching-artist.png
+%%DATADIR%%/icons/Humanity/22x22/status/frame-artist.png
+%%DATADIR%%/icons/Humanity/22x22/status/gmpc-tray-disconnected.png
+%%DATADIR%%/icons/Humanity/22x22/status/gmpc-tray-pause.png
+%%DATADIR%%/icons/Humanity/22x22/status/gmpc-tray-play.png
+%%DATADIR%%/icons/Humanity/22x22/status/gmpc-tray.png
+%%DATADIR%%/icons/Humanity/22x22/status/media-album.png
+%%DATADIR%%/icons/Humanity/22x22/status/media-artist.png
+%%DATADIR%%/icons/Humanity/22x22/status/media-codec.png
+%%DATADIR%%/icons/Humanity/22x22/status/media-date.png
+%%DATADIR%%/icons/Humanity/22x22/status/media-format.png
+%%DATADIR%%/icons/Humanity/22x22/status/media-genre.png
+%%DATADIR%%/icons/Humanity/22x22/status/media-num-tracks.png
+%%DATADIR%%/icons/Humanity/22x22/status/media-track-length.png
+%%DATADIR%%/icons/Humanity/22x22/status/no-artist.png
+%%DATADIR%%/icons/Humanity/22x22/status/rating.png
+%%DATADIR%%/icons/Humanity/22x22/status/stock_repeat.png
+%%DATADIR%%/icons/Humanity/22x22/status/stock_shuffle.png
+%%DATADIR%%/icons/Humanity/22x22/status/stylized-cover.png
+%%DATADIR%%/icons/Humanity/22x22/status/stylized-fetching-cover.png
+%%DATADIR%%/icons/Humanity/22x22/status/stylized-no-cover.png
+%%DATADIR%%/icons/Humanity/24x24/actions/dynamic.png
+%%DATADIR%%/icons/Humanity/24x24/actions/gmpc-database.png
+%%DATADIR%%/icons/Humanity/24x24/actions/gmpc-metabrowser.png
+%%DATADIR%%/icons/Humanity/24x24/actions/gmpc-serve.png
+%%DATADIR%%/icons/Humanity/24x24/actions/media-audiofile.png
+%%DATADIR%%/icons/Humanity/24x24/actions/media-consume.png
+%%DATADIR%%/icons/Humanity/24x24/actions/media-playlist.png
+%%DATADIR%%/icons/Humanity/24x24/actions/media-repeat-single.png
+%%DATADIR%%/icons/Humanity/24x24/actions/media-tag.png
+%%DATADIR%%/icons/Humanity/24x24/actions/playlist-browser.png
+%%DATADIR%%/icons/Humanity/24x24/actions/playlist-search-browser.png
+%%DATADIR%%/icons/Humanity/24x24/actions/tag-browser.png
+%%DATADIR%%/icons/Humanity/24x24/apps/gmpc.png
+%%DATADIR%%/icons/Humanity/24x24/categories/mpd.png
+%%DATADIR%%/icons/Humanity/24x24/status/audio-volume-high.png
+%%DATADIR%%/icons/Humanity/24x24/status/audio-volume-low.png
+%%DATADIR%%/icons/Humanity/24x24/status/audio-volume-medium.png
+%%DATADIR%%/icons/Humanity/24x24/status/audio-volume-muted.png
+%%DATADIR%%/icons/Humanity/24x24/status/emblem-favorite.png
+%%DATADIR%%/icons/Humanity/24x24/status/fetching-artist.png
+%%DATADIR%%/icons/Humanity/24x24/status/frame-artist.png
+%%DATADIR%%/icons/Humanity/24x24/status/gmpc-tray-disconnected.png
+%%DATADIR%%/icons/Humanity/24x24/status/gmpc-tray-pause.png
+%%DATADIR%%/icons/Humanity/24x24/status/gmpc-tray-play.png
+%%DATADIR%%/icons/Humanity/24x24/status/gmpc-tray.png
+%%DATADIR%%/icons/Humanity/24x24/status/media-album.png
+%%DATADIR%%/icons/Humanity/24x24/status/media-artist.png
+%%DATADIR%%/icons/Humanity/24x24/status/media-codec.png
+%%DATADIR%%/icons/Humanity/24x24/status/media-date.png
+%%DATADIR%%/icons/Humanity/24x24/status/media-format.png
+%%DATADIR%%/icons/Humanity/24x24/status/media-genre.png
+%%DATADIR%%/icons/Humanity/24x24/status/media-num-tracks.png
+%%DATADIR%%/icons/Humanity/24x24/status/media-track-length.png
+%%DATADIR%%/icons/Humanity/24x24/status/no-artist.png
+%%DATADIR%%/icons/Humanity/24x24/status/stylized-cover.png
+%%DATADIR%%/icons/Humanity/24x24/status/stylized-fetching-cover.png
+%%DATADIR%%/icons/Humanity/24x24/status/stylized-no-cover.png
+%%DATADIR%%/icons/Humanity/32x32/actions/dynamic.png
+%%DATADIR%%/icons/Humanity/32x32/actions/gmpc-database.png
+%%DATADIR%%/icons/Humanity/32x32/actions/gmpc-metabrowser.png
+%%DATADIR%%/icons/Humanity/32x32/actions/gmpc-serve.png
+%%DATADIR%%/icons/Humanity/32x32/actions/info.png
+%%DATADIR%%/icons/Humanity/32x32/actions/media-audiofile.png
+%%DATADIR%%/icons/Humanity/32x32/actions/media-consume.png
+%%DATADIR%%/icons/Humanity/32x32/actions/media-playlist.png
+%%DATADIR%%/icons/Humanity/32x32/actions/media-repeat-single.png
+%%DATADIR%%/icons/Humanity/32x32/actions/media-tag.png
+%%DATADIR%%/icons/Humanity/32x32/actions/playlist-browser.png
+%%DATADIR%%/icons/Humanity/32x32/actions/playlist-search-browser.png
+%%DATADIR%%/icons/Humanity/32x32/actions/tag-browser.png
+%%DATADIR%%/icons/Humanity/32x32/apps/gmpc.png
+%%DATADIR%%/icons/Humanity/32x32/status/audio-volume-high.png
+%%DATADIR%%/icons/Humanity/32x32/status/audio-volume-low.png
+%%DATADIR%%/icons/Humanity/32x32/status/audio-volume-medium.png
+%%DATADIR%%/icons/Humanity/32x32/status/audio-volume-muted.png
+%%DATADIR%%/icons/Humanity/32x32/status/emblem-favorite.png
+%%DATADIR%%/icons/Humanity/32x32/status/fetching-artist.png
+%%DATADIR%%/icons/Humanity/32x32/status/frame-artist.png
+%%DATADIR%%/icons/Humanity/32x32/status/gmpc-tray-disconnected.png
+%%DATADIR%%/icons/Humanity/32x32/status/gmpc-tray-pause.png
+%%DATADIR%%/icons/Humanity/32x32/status/gmpc-tray-play.png
+%%DATADIR%%/icons/Humanity/32x32/status/gmpc-tray.png
+%%DATADIR%%/icons/Humanity/32x32/status/media-album.png
+%%DATADIR%%/icons/Humanity/32x32/status/media-artist.png
+%%DATADIR%%/icons/Humanity/32x32/status/media-codec.png
+%%DATADIR%%/icons/Humanity/32x32/status/media-date.png
+%%DATADIR%%/icons/Humanity/32x32/status/media-format.png
+%%DATADIR%%/icons/Humanity/32x32/status/media-genre.png
+%%DATADIR%%/icons/Humanity/32x32/status/media-num-tracks.png
+%%DATADIR%%/icons/Humanity/32x32/status/media-track-length.png
+%%DATADIR%%/icons/Humanity/32x32/status/no-artist.png
+%%DATADIR%%/icons/Humanity/32x32/status/rating.png
+%%DATADIR%%/icons/Humanity/32x32/status/stock_repeat.png
+%%DATADIR%%/icons/Humanity/32x32/status/stock_shuffle.png
+%%DATADIR%%/icons/Humanity/32x32/status/stylized-cover.png
+%%DATADIR%%/icons/Humanity/32x32/status/stylized-fetching-cover.png
+%%DATADIR%%/icons/Humanity/32x32/status/stylized-no-cover.png
+%%DATADIR%%/icons/Humanity/48x48/actions/dynamic.png
+%%DATADIR%%/icons/Humanity/48x48/actions/gmpc-database.png
+%%DATADIR%%/icons/Humanity/48x48/actions/gmpc-metabrowser.png
+%%DATADIR%%/icons/Humanity/48x48/actions/gmpc-serve.png
+%%DATADIR%%/icons/Humanity/48x48/actions/info.png
+%%DATADIR%%/icons/Humanity/48x48/actions/media-audiofile.png
+%%DATADIR%%/icons/Humanity/48x48/actions/media-consume.png
+%%DATADIR%%/icons/Humanity/48x48/actions/media-playlist.png
+%%DATADIR%%/icons/Humanity/48x48/actions/media-repeat-single.png
+%%DATADIR%%/icons/Humanity/48x48/actions/media-tag.png
+%%DATADIR%%/icons/Humanity/48x48/actions/playlist-browser.png
+%%DATADIR%%/icons/Humanity/48x48/actions/playlist-search-browser.png
+%%DATADIR%%/icons/Humanity/48x48/actions/tag-browser.png
+%%DATADIR%%/icons/Humanity/48x48/apps/gmpc.png
+%%DATADIR%%/icons/Humanity/48x48/status/audio-volume-high.png
+%%DATADIR%%/icons/Humanity/48x48/status/audio-volume-low.png
+%%DATADIR%%/icons/Humanity/48x48/status/audio-volume-medium.png
+%%DATADIR%%/icons/Humanity/48x48/status/audio-volume-muted.png
+%%DATADIR%%/icons/Humanity/48x48/status/emblem-favorite.png
+%%DATADIR%%/icons/Humanity/48x48/status/fetching-artist.png
+%%DATADIR%%/icons/Humanity/48x48/status/frame-artist.png
+%%DATADIR%%/icons/Humanity/48x48/status/gmpc-tray-disconnected.png
+%%DATADIR%%/icons/Humanity/48x48/status/gmpc-tray-pause.png
+%%DATADIR%%/icons/Humanity/48x48/status/gmpc-tray-play.png
+%%DATADIR%%/icons/Humanity/48x48/status/gmpc-tray.png
+%%DATADIR%%/icons/Humanity/48x48/status/media-album.png
+%%DATADIR%%/icons/Humanity/48x48/status/media-artist.png
+%%DATADIR%%/icons/Humanity/48x48/status/media-codec.png
+%%DATADIR%%/icons/Humanity/48x48/status/media-date.png
+%%DATADIR%%/icons/Humanity/48x48/status/media-format.png
+%%DATADIR%%/icons/Humanity/48x48/status/media-genre.png
+%%DATADIR%%/icons/Humanity/48x48/status/media-num-tracks.png
+%%DATADIR%%/icons/Humanity/48x48/status/media-track-length.png
+%%DATADIR%%/icons/Humanity/48x48/status/no-artist.png
+%%DATADIR%%/icons/Humanity/48x48/status/stock_repeat.png
+%%DATADIR%%/icons/Humanity/48x48/status/stock_shuffle.png
+%%DATADIR%%/icons/Humanity/48x48/status/stylized-cover.png
+%%DATADIR%%/icons/Humanity/48x48/status/stylized-fetching-cover.png
+%%DATADIR%%/icons/Humanity/48x48/status/stylized-no-cover.png
+%%DATADIR%%/icons/Humanity/64x64/actions/dynamic.png
+%%DATADIR%%/icons/Humanity/64x64/actions/gmpc-database.png
+%%DATADIR%%/icons/Humanity/64x64/actions/gmpc-metabrowser.png
+%%DATADIR%%/icons/Humanity/64x64/actions/gmpc-serve.png
+%%DATADIR%%/icons/Humanity/64x64/actions/media-audiofile.png
+%%DATADIR%%/icons/Humanity/64x64/actions/media-consume.png
+%%DATADIR%%/icons/Humanity/64x64/actions/media-playlist.png
+%%DATADIR%%/icons/Humanity/64x64/actions/media-repeat-single.png
+%%DATADIR%%/icons/Humanity/64x64/actions/media-tag.png
+%%DATADIR%%/icons/Humanity/64x64/actions/playlist-browser.png
+%%DATADIR%%/icons/Humanity/64x64/actions/playlist-search-browser.png
+%%DATADIR%%/icons/Humanity/64x64/actions/tag-browser.png
+%%DATADIR%%/icons/Humanity/64x64/apps/gmpc.png
+%%DATADIR%%/icons/Humanity/64x64/status/audio-volume-high.png
+%%DATADIR%%/icons/Humanity/64x64/status/audio-volume-low.png
+%%DATADIR%%/icons/Humanity/64x64/status/audio-volume-medium.png
+%%DATADIR%%/icons/Humanity/64x64/status/audio-volume-muted.png
+%%DATADIR%%/icons/Humanity/64x64/status/emblem-favorite.png
+%%DATADIR%%/icons/Humanity/64x64/status/fetching-artist.png
+%%DATADIR%%/icons/Humanity/64x64/status/frame-artist.png
+%%DATADIR%%/icons/Humanity/64x64/status/gmpc-tray-disconnected.png
+%%DATADIR%%/icons/Humanity/64x64/status/gmpc-tray-pause.png
+%%DATADIR%%/icons/Humanity/64x64/status/gmpc-tray-play.png
+%%DATADIR%%/icons/Humanity/64x64/status/gmpc-tray.png
+%%DATADIR%%/icons/Humanity/64x64/status/media-album.png
+%%DATADIR%%/icons/Humanity/64x64/status/media-artist.png
+%%DATADIR%%/icons/Humanity/64x64/status/media-codec.png
+%%DATADIR%%/icons/Humanity/64x64/status/media-date.png
+%%DATADIR%%/icons/Humanity/64x64/status/media-format.png
+%%DATADIR%%/icons/Humanity/64x64/status/media-genre.png
+%%DATADIR%%/icons/Humanity/64x64/status/media-num-tracks.png
+%%DATADIR%%/icons/Humanity/64x64/status/media-track-length.png
+%%DATADIR%%/icons/Humanity/64x64/status/no-artist.png
+%%DATADIR%%/icons/Humanity/64x64/status/stock_repeat.png
+%%DATADIR%%/icons/Humanity/64x64/status/stock_shuffle.png
+%%DATADIR%%/icons/Humanity/64x64/status/stylized-cover.png
+%%DATADIR%%/icons/Humanity/64x64/status/stylized-fetching-cover.png
+%%DATADIR%%/icons/Humanity/64x64/status/stylized-no-cover.png
+%%DATADIR%%/icons/Humanity/72x72/actions/dynamic.png
+%%DATADIR%%/icons/Humanity/72x72/actions/gmpc-database.png
+%%DATADIR%%/icons/Humanity/72x72/actions/gmpc-metabrowser.png
+%%DATADIR%%/icons/Humanity/72x72/actions/gmpc-serve.png
+%%DATADIR%%/icons/Humanity/72x72/actions/media-audiofile.png
+%%DATADIR%%/icons/Humanity/72x72/actions/media-consume.png
+%%DATADIR%%/icons/Humanity/72x72/actions/media-playlist.png
+%%DATADIR%%/icons/Humanity/72x72/actions/media-repeat-single.png
+%%DATADIR%%/icons/Humanity/72x72/actions/media-tag.png
+%%DATADIR%%/icons/Humanity/72x72/actions/playlist-browser.png
+%%DATADIR%%/icons/Humanity/72x72/actions/playlist-search-browser.png
+%%DATADIR%%/icons/Humanity/72x72/actions/tag-browser.png
+%%DATADIR%%/icons/Humanity/72x72/apps/gmpc.png
+%%DATADIR%%/icons/Humanity/72x72/status/audio-volume-high.png
+%%DATADIR%%/icons/Humanity/72x72/status/audio-volume-low.png
+%%DATADIR%%/icons/Humanity/72x72/status/audio-volume-medium.png
+%%DATADIR%%/icons/Humanity/72x72/status/audio-volume-muted.png
+%%DATADIR%%/icons/Humanity/72x72/status/emblem-favorite.png
+%%DATADIR%%/icons/Humanity/72x72/status/fetching-artist.png
+%%DATADIR%%/icons/Humanity/72x72/status/frame-artist.png
+%%DATADIR%%/icons/Humanity/72x72/status/gmpc-tray-disconnected.png
+%%DATADIR%%/icons/Humanity/72x72/status/gmpc-tray-pause.png
+%%DATADIR%%/icons/Humanity/72x72/status/gmpc-tray-play.png
+%%DATADIR%%/icons/Humanity/72x72/status/gmpc-tray.png
+%%DATADIR%%/icons/Humanity/72x72/status/media-album.png
+%%DATADIR%%/icons/Humanity/72x72/status/media-artist.png
+%%DATADIR%%/icons/Humanity/72x72/status/media-codec.png
+%%DATADIR%%/icons/Humanity/72x72/status/media-date.png
+%%DATADIR%%/icons/Humanity/72x72/status/media-format.png
+%%DATADIR%%/icons/Humanity/72x72/status/media-genre.png
+%%DATADIR%%/icons/Humanity/72x72/status/media-num-tracks.png
+%%DATADIR%%/icons/Humanity/72x72/status/media-track-length.png
+%%DATADIR%%/icons/Humanity/72x72/status/no-artist.png
+%%DATADIR%%/icons/Humanity/72x72/status/stock_repeat.png
+%%DATADIR%%/icons/Humanity/72x72/status/stock_shuffle.png
+%%DATADIR%%/icons/Humanity/72x72/status/stylized-cover.png
+%%DATADIR%%/icons/Humanity/72x72/status/stylized-fetching-cover.png
+%%DATADIR%%/icons/Humanity/72x72/status/stylized-no-cover.png
+%%DATADIR%%/icons/Humanity/96x96/actions/dynamic.png
+%%DATADIR%%/icons/Humanity/96x96/actions/gmpc-database.png
+%%DATADIR%%/icons/Humanity/96x96/actions/gmpc-metabrowser.png
+%%DATADIR%%/icons/Humanity/96x96/actions/gmpc-serve.png
+%%DATADIR%%/icons/Humanity/96x96/actions/media-audiofile.png
+%%DATADIR%%/icons/Humanity/96x96/actions/media-consume.png
+%%DATADIR%%/icons/Humanity/96x96/actions/media-playlist.png
+%%DATADIR%%/icons/Humanity/96x96/actions/media-repeat-single.png
+%%DATADIR%%/icons/Humanity/96x96/actions/media-tag.png
+%%DATADIR%%/icons/Humanity/96x96/actions/playlist-browser.png
+%%DATADIR%%/icons/Humanity/96x96/actions/playlist-search-browser.png
+%%DATADIR%%/icons/Humanity/96x96/actions/tag-browser.png
+%%DATADIR%%/icons/Humanity/96x96/apps/gmpc.png
+%%DATADIR%%/icons/Humanity/96x96/status/audio-volume-high.png
+%%DATADIR%%/icons/Humanity/96x96/status/audio-volume-low.png
+%%DATADIR%%/icons/Humanity/96x96/status/audio-volume-medium.png
+%%DATADIR%%/icons/Humanity/96x96/status/audio-volume-muted.png
+%%DATADIR%%/icons/Humanity/96x96/status/emblem-favorite.png
+%%DATADIR%%/icons/Humanity/96x96/status/fetching-artist.png
+%%DATADIR%%/icons/Humanity/96x96/status/frame-artist.png
+%%DATADIR%%/icons/Humanity/96x96/status/gmpc-tray-disconnected.png
+%%DATADIR%%/icons/Humanity/96x96/status/gmpc-tray-pause.png
+%%DATADIR%%/icons/Humanity/96x96/status/gmpc-tray-play.png
+%%DATADIR%%/icons/Humanity/96x96/status/gmpc-tray.png
+%%DATADIR%%/icons/Humanity/96x96/status/media-album.png
+%%DATADIR%%/icons/Humanity/96x96/status/media-artist.png
+%%DATADIR%%/icons/Humanity/96x96/status/media-codec.png
+%%DATADIR%%/icons/Humanity/96x96/status/media-date.png
+%%DATADIR%%/icons/Humanity/96x96/status/media-format.png
+%%DATADIR%%/icons/Humanity/96x96/status/media-genre.png
+%%DATADIR%%/icons/Humanity/96x96/status/media-num-tracks.png
+%%DATADIR%%/icons/Humanity/96x96/status/media-track-length.png
+%%DATADIR%%/icons/Humanity/96x96/status/no-artist.png
+%%DATADIR%%/icons/Humanity/96x96/status/stock_repeat.png
+%%DATADIR%%/icons/Humanity/96x96/status/stock_shuffle.png
+%%DATADIR%%/icons/Humanity/96x96/status/stylized-cover.png
+%%DATADIR%%/icons/Humanity/96x96/status/stylized-fetching-cover.png
+%%DATADIR%%/icons/Humanity/96x96/status/stylized-no-cover.png
+%%DATADIR%%/icons/Humanity/scalable/actions/dynamic.svg
+%%DATADIR%%/icons/Humanity/scalable/actions/gmpc-database.svg
+%%DATADIR%%/icons/Humanity/scalable/actions/gmpc-metabrowser.svg
+%%DATADIR%%/icons/Humanity/scalable/actions/gmpc-serve.svg
+%%DATADIR%%/icons/Humanity/scalable/actions/info.svg
+%%DATADIR%%/icons/Humanity/scalable/actions/media-audiofile.svg
+%%DATADIR%%/icons/Humanity/scalable/actions/media-consume.svg
+%%DATADIR%%/icons/Humanity/scalable/actions/media-playlist.svg
+%%DATADIR%%/icons/Humanity/scalable/actions/media-repeat-single.svg
+%%DATADIR%%/icons/Humanity/scalable/actions/media-tag.svg
+%%DATADIR%%/icons/Humanity/scalable/actions/playlist-browser.svg
+%%DATADIR%%/icons/Humanity/scalable/actions/playlist-search-browser.svg
+%%DATADIR%%/icons/Humanity/scalable/actions/tag-browser.svg
+%%DATADIR%%/icons/Humanity/scalable/apps/gmpc.svg
+%%DATADIR%%/icons/Humanity/scalable/categories/mpd.svg
+%%DATADIR%%/icons/Humanity/scalable/status/audio-volume-high.svg
+%%DATADIR%%/icons/Humanity/scalable/status/audio-volume-low.svg
+%%DATADIR%%/icons/Humanity/scalable/status/audio-volume-medium.svg
+%%DATADIR%%/icons/Humanity/scalable/status/audio-volume-muted.svg
+%%DATADIR%%/icons/Humanity/scalable/status/emblem-favorite.svg
+%%DATADIR%%/icons/Humanity/scalable/status/fetching-artist.svg
+%%DATADIR%%/icons/Humanity/scalable/status/frame-artist.svg
+%%DATADIR%%/icons/Humanity/scalable/status/gmpc-tray-disconnected.svg
+%%DATADIR%%/icons/Humanity/scalable/status/gmpc-tray-pause.svg
+%%DATADIR%%/icons/Humanity/scalable/status/gmpc-tray-play.svg
+%%DATADIR%%/icons/Humanity/scalable/status/gmpc-tray.svg
+%%DATADIR%%/icons/Humanity/scalable/status/media-album.svg
+%%DATADIR%%/icons/Humanity/scalable/status/media-artist.svg
+%%DATADIR%%/icons/Humanity/scalable/status/media-codec.svg
+%%DATADIR%%/icons/Humanity/scalable/status/media-date.svg
+%%DATADIR%%/icons/Humanity/scalable/status/media-format.svg
+%%DATADIR%%/icons/Humanity/scalable/status/media-genre.svg
+%%DATADIR%%/icons/Humanity/scalable/status/media-num-tracks.svg
+%%DATADIR%%/icons/Humanity/scalable/status/media-track-length.svg
+%%DATADIR%%/icons/Humanity/scalable/status/no-artist.svg
+%%DATADIR%%/icons/Humanity/scalable/status/stock_repeat.svg
+%%DATADIR%%/icons/Humanity/scalable/status/stock_shuffle.svg
+%%DATADIR%%/icons/Humanity/scalable/status/stylized-cover.svg
+%%DATADIR%%/icons/Humanity/scalable/status/stylized-fetching-cover.svg
+%%DATADIR%%/icons/Humanity/scalable/status/stylized-no-cover.svg
 %%DATADIR%%/icons/gmpc-loading-cover.png
 %%DATADIR%%/icons/gmpc-no-cover.png
 %%DATADIR%%/icons/hicolor/128x128/apps/gmpc.png
 %%DATADIR%%/icons/hicolor/128x128/categories/mpd.png
 %%DATADIR%%/icons/hicolor/128x128/status/fetching-artist.png
 %%DATADIR%%/icons/hicolor/128x128/status/frame-artist.png
+%%DATADIR%%/icons/hicolor/128x128/status/media-album.png
+%%DATADIR%%/icons/hicolor/128x128/status/media-artist.png
+%%DATADIR%%/icons/hicolor/128x128/status/media-codec.png
+%%DATADIR%%/icons/hicolor/128x128/status/media-date.png
+%%DATADIR%%/icons/hicolor/128x128/status/media-format.png
+%%DATADIR%%/icons/hicolor/128x128/status/media-genre.png
+%%DATADIR%%/icons/hicolor/128x128/status/media-num-tracks.png
+%%DATADIR%%/icons/hicolor/128x128/status/media-track-length.png
 %%DATADIR%%/icons/hicolor/128x128/status/no-artist.png
 %%DATADIR%%/icons/hicolor/128x128/status/stylized-cover.png
 %%DATADIR%%/icons/hicolor/128x128/status/stylized-fetching-cover.png
 %%DATADIR%%/icons/hicolor/128x128/status/stylized-no-cover.png
+%%DATADIR%%/icons/hicolor/16x16/actions/gmpc-database.png
+%%DATADIR%%/icons/hicolor/16x16/actions/gmpc-metabrowser.png
 %%DATADIR%%/icons/hicolor/16x16/actions/media-audiofile.png
+%%DATADIR%%/icons/hicolor/16x16/actions/media-consume.png
 %%DATADIR%%/icons/hicolor/16x16/actions/media-playlist.png
+%%DATADIR%%/icons/hicolor/16x16/actions/media-repeat-single.png
 %%DATADIR%%/icons/hicolor/16x16/actions/media-tag.png
 %%DATADIR%%/icons/hicolor/16x16/actions/playlist-browser.png
 %%DATADIR%%/icons/hicolor/16x16/actions/playlist-search-browser.png
@@ -50,8 +450,19 @@ share/applications/gmpc.desktop
 %%DATADIR%%/icons/hicolor/16x16/status/gmpc-tray-pause.png
 %%DATADIR%%/icons/hicolor/16x16/status/gmpc-tray-play.png
 %%DATADIR%%/icons/hicolor/16x16/status/gmpc-tray.png
+%%DATADIR%%/icons/hicolor/16x16/status/media-album.png
+%%DATADIR%%/icons/hicolor/16x16/status/media-artist.png
+%%DATADIR%%/icons/hicolor/16x16/status/media-codec.png
+%%DATADIR%%/icons/hicolor/16x16/status/media-date.png
+%%DATADIR%%/icons/hicolor/16x16/status/media-format.png
+%%DATADIR%%/icons/hicolor/16x16/status/media-genre.png
+%%DATADIR%%/icons/hicolor/16x16/status/media-num-tracks.png
+%%DATADIR%%/icons/hicolor/16x16/status/media-track-length.png
+%%DATADIR%%/icons/hicolor/16x16/status/rating.png
 %%DATADIR%%/icons/hicolor/16x16/status/stock_repeat.png
 %%DATADIR%%/icons/hicolor/16x16/status/stock_shuffle.png
+%%DATADIR%%/icons/hicolor/22x22/actions/gmpc-database.png
+%%DATADIR%%/icons/hicolor/22x22/actions/gmpc-metabrowser.png
 %%DATADIR%%/icons/hicolor/22x22/actions/media-audiofile.png
 %%DATADIR%%/icons/hicolor/22x22/actions/media-playlist.png
 %%DATADIR%%/icons/hicolor/22x22/apps/gmpc.png
@@ -64,7 +475,18 @@ share/applications/gmpc.desktop
 %%DATADIR%%/icons/hicolor/22x22/status/gmpc-tray-pause.png
 %%DATADIR%%/icons/hicolor/22x22/status/gmpc-tray-play.png
 %%DATADIR%%/icons/hicolor/22x22/status/gmpc-tray.png
+%%DATADIR%%/icons/hicolor/22x22/status/media-album.png
+%%DATADIR%%/icons/hicolor/22x22/status/media-artist.png
+%%DATADIR%%/icons/hicolor/22x22/status/media-codec.png
+%%DATADIR%%/icons/hicolor/22x22/status/media-date.png
+%%DATADIR%%/icons/hicolor/22x22/status/media-format.png
+%%DATADIR%%/icons/hicolor/22x22/status/media-genre.png
+%%DATADIR%%/icons/hicolor/22x22/status/media-num-tracks.png
+%%DATADIR%%/icons/hicolor/22x22/status/media-track-length.png
+%%DATADIR%%/icons/hicolor/22x22/status/rating.png
 %%DATADIR%%/icons/hicolor/32x32/actions/add-url.png
+%%DATADIR%%/icons/hicolor/32x32/actions/gmpc-database.png
+%%DATADIR%%/icons/hicolor/32x32/actions/gmpc-metabrowser.png
 %%DATADIR%%/icons/hicolor/32x32/actions/media-audiofile.png
 %%DATADIR%%/icons/hicolor/32x32/actions/media-playlist.png
 %%DATADIR%%/icons/hicolor/32x32/actions/media-tag.png
@@ -77,19 +499,43 @@ share/applications/gmpc.desktop
 %%DATADIR%%/icons/hicolor/32x32/status/audio-volume-medium.png
 %%DATADIR%%/icons/hicolor/32x32/status/audio-volume-muted.png
 %%DATADIR%%/icons/hicolor/32x32/status/emblem-favorite.png
-%%DATADIR%%/icons/hicolor/32x32/status/gmpc-tray.png
+%%DATADIR%%/icons/hicolor/32x32/status/media-album.png
+%%DATADIR%%/icons/hicolor/32x32/status/media-artist.png
+%%DATADIR%%/icons/hicolor/32x32/status/media-codec.png
+%%DATADIR%%/icons/hicolor/32x32/status/media-date.png
+%%DATADIR%%/icons/hicolor/32x32/status/media-format.png
+%%DATADIR%%/icons/hicolor/32x32/status/media-genre.png
+%%DATADIR%%/icons/hicolor/32x32/status/media-num-tracks.png
+%%DATADIR%%/icons/hicolor/32x32/status/media-track-length.png
+%%DATADIR%%/icons/hicolor/32x32/status/rating.png
+%%DATADIR%%/icons/hicolor/48x48/actions/gmpc-database.png
+%%DATADIR%%/icons/hicolor/48x48/actions/gmpc-metabrowser.png
 %%DATADIR%%/icons/hicolor/48x48/actions/media-playlist.png
 %%DATADIR%%/icons/hicolor/48x48/actions/media-tag.png
 %%DATADIR%%/icons/hicolor/48x48/actions/tag-browser.png
 %%DATADIR%%/icons/hicolor/48x48/apps/gmpc.png
 %%DATADIR%%/icons/hicolor/48x48/status/fetching-artist.png
 %%DATADIR%%/icons/hicolor/48x48/status/frame-artist.png
-%%DATADIR%%/icons/hicolor/48x48/status/gmpc-tray.png
+%%DATADIR%%/icons/hicolor/48x48/status/media-album.png
+%%DATADIR%%/icons/hicolor/48x48/status/media-artist.png
+%%DATADIR%%/icons/hicolor/48x48/status/media-codec.png
+%%DATADIR%%/icons/hicolor/48x48/status/media-date.png
+%%DATADIR%%/icons/hicolor/48x48/status/media-format.png
+%%DATADIR%%/icons/hicolor/48x48/status/media-genre.png
+%%DATADIR%%/icons/hicolor/48x48/status/media-num-tracks.png
+%%DATADIR%%/icons/hicolor/48x48/status/media-track-length.png
 %%DATADIR%%/icons/hicolor/48x48/status/no-artist.png
 %%DATADIR%%/icons/hicolor/48x48/status/stylized-cover.png
 %%DATADIR%%/icons/hicolor/64x64/apps/gmpc.png
 %%DATADIR%%/icons/hicolor/64x64/status/fetching-artist.png
 %%DATADIR%%/icons/hicolor/64x64/status/frame-artist.png
+%%DATADIR%%/icons/hicolor/64x64/status/media-album.png
+%%DATADIR%%/icons/hicolor/64x64/status/media-artist.png
+%%DATADIR%%/icons/hicolor/64x64/status/media-date.png
+%%DATADIR%%/icons/hicolor/64x64/status/media-format.png
+%%DATADIR%%/icons/hicolor/64x64/status/media-genre.png
+%%DATADIR%%/icons/hicolor/64x64/status/media-num-tracks.png
+%%DATADIR%%/icons/hicolor/64x64/status/media-track-length.png
 %%DATADIR%%/icons/hicolor/64x64/status/no-artist.png
 %%DATADIR%%/icons/hicolor/64x64/status/stylized-cover.png
 %%DATADIR%%/icons/hicolor/64x64/status/stylized-fetching-cover.png
@@ -97,6 +543,13 @@ share/applications/gmpc.desktop
 %%DATADIR%%/icons/hicolor/72x72/apps/gmpc.png
 %%DATADIR%%/icons/hicolor/72x72/status/fetching-artist.png
 %%DATADIR%%/icons/hicolor/72x72/status/frame-artist.png
+%%DATADIR%%/icons/hicolor/72x72/status/media-album.png
+%%DATADIR%%/icons/hicolor/72x72/status/media-artist.png
+%%DATADIR%%/icons/hicolor/72x72/status/media-date.png
+%%DATADIR%%/icons/hicolor/72x72/status/media-format.png
+%%DATADIR%%/icons/hicolor/72x72/status/media-genre.png
+%%DATADIR%%/icons/hicolor/72x72/status/media-num-tracks.png
+%%DATADIR%%/icons/hicolor/72x72/status/media-track-length.png
 %%DATADIR%%/icons/hicolor/72x72/status/no-artist.png
 %%DATADIR%%/icons/hicolor/72x72/status/stylized-cover.png
 %%DATADIR%%/icons/hicolor/72x72/status/stylized-fetching-cover.png
@@ -104,10 +557,24 @@ share/applications/gmpc.desktop
 %%DATADIR%%/icons/hicolor/96x96/apps/gmpc.png
 %%DATADIR%%/icons/hicolor/96x96/status/fetching-artist.png
 %%DATADIR%%/icons/hicolor/96x96/status/frame-artist.png
+%%DATADIR%%/icons/hicolor/96x96/status/media-album.png
+%%DATADIR%%/icons/hicolor/96x96/status/media-artist.png
+%%DATADIR%%/icons/hicolor/96x96/status/media-date.png
+%%DATADIR%%/icons/hicolor/96x96/status/media-format.png
+%%DATADIR%%/icons/hicolor/96x96/status/media-genre.png
+%%DATADIR%%/icons/hicolor/96x96/status/media-num-tracks.png
+%%DATADIR%%/icons/hicolor/96x96/status/media-track-length.png
 %%DATADIR%%/icons/hicolor/96x96/status/no-artist.png
 %%DATADIR%%/icons/hicolor/96x96/status/stylized-fetching-cover.png
 %%DATADIR%%/icons/hicolor/96x96/status/stylized-no-cover.png
+%%DATADIR%%/icons/hicolor/scalable/actions/gmpc-database.svg
+%%DATADIR%%/icons/hicolor/scalable/actions/gmpc-metabrowser.svg
 %%DATADIR%%/icons/hicolor/scalable/actions/media-audiofile.svg
+%%DATADIR%%/icons/hicolor/scalable/actions/media-consume.svg
+%%DATADIR%%/icons/hicolor/scalable/actions/media-playlist.svg
+%%DATADIR%%/icons/hicolor/scalable/actions/media-repeat-single.svg
+%%DATADIR%%/icons/hicolor/scalable/actions/media-tag.svg
+%%DATADIR%%/icons/hicolor/scalable/actions/tag-browser.svg
 %%DATADIR%%/icons/hicolor/scalable/apps/gmpc.svg
 %%DATADIR%%/icons/hicolor/scalable/categories/mpd.svg
 %%DATADIR%%/icons/hicolor/scalable/status/audio-volume-high.svg
@@ -121,6 +588,14 @@ share/applications/gmpc.desktop
 %%DATADIR%%/icons/hicolor/scalable/status/gmpc-tray-pause.svg
 %%DATADIR%%/icons/hicolor/scalable/status/gmpc-tray-play.svg
 %%DATADIR%%/icons/hicolor/scalable/status/gmpc-tray.svg
+%%DATADIR%%/icons/hicolor/scalable/status/media-album.svg
+%%DATADIR%%/icons/hicolor/scalable/status/media-artist.svg
+%%DATADIR%%/icons/hicolor/scalable/status/media-codec.svg
+%%DATADIR%%/icons/hicolor/scalable/status/media-date.svg
+%%DATADIR%%/icons/hicolor/scalable/status/media-format.svg
+%%DATADIR%%/icons/hicolor/scalable/status/media-genre.svg
+%%DATADIR%%/icons/hicolor/scalable/status/media-num-tracks.svg
+%%DATADIR%%/icons/hicolor/scalable/status/media-track-length.svg
 %%DATADIR%%/icons/hicolor/scalable/status/no-artist.svg
 %%DATADIR%%/icons/hicolor/scalable/status/stylized-cover.svg
 %%DATADIR%%/icons/hicolor/scalable/status/stylized-fetching-cover.svg
@@ -128,7 +603,6 @@ share/applications/gmpc.desktop
 %%DATADIR%%/icons/media-album.png
 %%DATADIR%%/icons/media-artist.png
 %%DATADIR%%/icons/media-stream.png
-%%DATADIR%%/icons/mpdBrowser_case.png
 %%DATADIR%%/password-dialog.ui
 %%DATADIR%%/playlist-message-window.ui
 %%DATADIR%%/playlist-save-dialog.ui
@@ -143,6 +617,16 @@ share/applications/gmpc.desktop
 %%DATADIR%%/preferences-trayicon.ui
 %%DATADIR%%/preferences.ui
 %%DATADIR%%/weblinks.list
+share/icons/Humanity/128x128/apps/gmpc.png
+share/icons/Humanity/16x16/apps/gmpc.png
+share/icons/Humanity/22x22/apps/gmpc.png
+share/icons/Humanity/24x24/apps/gmpc.png
+share/icons/Humanity/32x32/apps/gmpc.png
+share/icons/Humanity/48x48/apps/gmpc.png
+share/icons/Humanity/64x64/apps/gmpc.png
+share/icons/Humanity/72x72/apps/gmpc.png
+share/icons/Humanity/96x96/apps/gmpc.png
+share/icons/Humanity/scalable/apps/gmpc.svg
 share/icons/hicolor/128x128/apps/gmpc.png
 share/icons/hicolor/16x16/apps/gmpc.png
 share/icons/hicolor/22x22/apps/gmpc.png
@@ -159,6 +643,9 @@ share/locale/bs/LC_MESSAGES/gmpc.mo
 share/locale/cs/LC_MESSAGES/gmpc.mo
 share/locale/da/LC_MESSAGES/gmpc.mo
 share/locale/de/LC_MESSAGES/gmpc.mo
+share/locale/el/LC_MESSAGES/gmpc.mo
+share/locale/en_CA/LC_MESSAGES/gmpc.mo
+share/locale/en_GB/LC_MESSAGES/gmpc.mo
 share/locale/es/LC_MESSAGES/gmpc.mo
 share/locale/fi/LC_MESSAGES/gmpc.mo
 share/locale/fr/LC_MESSAGES/gmpc.mo
@@ -169,6 +656,7 @@ share/locale/hu/LC_MESSAGES/gmpc.mo
 share/locale/hy/LC_MESSAGES/gmpc.mo
 share/locale/id/LC_MESSAGES/gmpc.mo
 share/locale/it/LC_MESSAGES/gmpc.mo
+share/locale/ja/LC_MESSAGES/gmpc.mo
 share/locale/jv/LC_MESSAGES/gmpc.mo
 share/locale/lv/LC_MESSAGES/gmpc.mo
 share/locale/ml/LC_MESSAGES/gmpc.mo
@@ -187,10 +675,28 @@ share/locale/th/LC_MESSAGES/gmpc.mo
 share/locale/tr/LC_MESSAGES/gmpc.mo
 share/locale/zh_CN/LC_MESSAGES/gmpc.mo
 share/locale/zh_TW/LC_MESSAGES/gmpc.mo
-@dirrmtry share/locale/jv/LC_MESSAGES
-@dirrmtry share/locale/jv
-@dirrmtry share/locale/hy/LC_MESSAGES
-@dirrmtry share/locale/hy
+@dirrm include/gmpc
+@dirrmtry share/icons/Humanity/scalable/apps
+@dirrmtry share/icons/Humanity/scalable
+@dirrmtry share/icons/Humanity/96x96/apps
+@dirrmtry share/icons/Humanity/96x96
+@dirrmtry share/icons/Humanity/72x72/apps
+@dirrmtry share/icons/Humanity/72x72
+@dirrmtry share/icons/Humanity/64x64/apps
+@dirrmtry share/icons/Humanity/64x64
+@dirrmtry share/icons/Humanity/48x48/apps
+@dirrmtry share/icons/Humanity/48x48
+@dirrmtry share/icons/Humanity/32x32/apps
+@dirrmtry share/icons/Humanity/32x32
+@dirrmtry share/icons/Humanity/24x24/apps
+@dirrmtry share/icons/Humanity/24x24
+@dirrmtry share/icons/Humanity/22x22/apps
+@dirrmtry share/icons/Humanity/22x22
+@dirrmtry share/icons/Humanity/16x16/apps
+@dirrmtry share/icons/Humanity/16x16
+@dirrmtry share/icons/Humanity/128x128/apps
+@dirrmtry share/icons/Humanity/128x128
+@dirrmtry share/icons/Humanity
 @dirrm %%DATADIR%%/icons/hicolor/scalable/status
 @dirrm %%DATADIR%%/icons/hicolor/scalable/categories
 @dirrm %%DATADIR%%/icons/hicolor/scalable/apps
@@ -226,7 +732,51 @@ share/locale/zh_TW/LC_MESSAGES/gmpc.mo
 @dirrm %%DATADIR%%/icons/hicolor/128x128/apps
 @dirrm %%DATADIR%%/icons/hicolor/128x128
 @dirrm %%DATADIR%%/icons/hicolor
+@dirrm %%DATADIR%%/icons/Humanity/scalable/status
+@dirrm %%DATADIR%%/icons/Humanity/scalable/categories
+@dirrm %%DATADIR%%/icons/Humanity/scalable/apps
+@dirrm %%DATADIR%%/icons/Humanity/scalable/actions
+@dirrm %%DATADIR%%/icons/Humanity/scalable
+@dirrm %%DATADIR%%/icons/Humanity/96x96/status
+@dirrm %%DATADIR%%/icons/Humanity/96x96/apps
+@dirrm %%DATADIR%%/icons/Humanity/96x96/actions
+@dirrm %%DATADIR%%/icons/Humanity/96x96
+@dirrm %%DATADIR%%/icons/Humanity/72x72/status
+@dirrm %%DATADIR%%/icons/Humanity/72x72/apps
+@dirrm %%DATADIR%%/icons/Humanity/72x72/actions
+@dirrm %%DATADIR%%/icons/Humanity/72x72
+@dirrm %%DATADIR%%/icons/Humanity/64x64/status
+@dirrm %%DATADIR%%/icons/Humanity/64x64/apps
+@dirrm %%DATADIR%%/icons/Humanity/64x64/actions
+@dirrm %%DATADIR%%/icons/Humanity/64x64
+@dirrm %%DATADIR%%/icons/Humanity/48x48/status
+@dirrm %%DATADIR%%/icons/Humanity/48x48/apps
+@dirrm %%DATADIR%%/icons/Humanity/48x48/actions
+@dirrm %%DATADIR%%/icons/Humanity/48x48
+@dirrm %%DATADIR%%/icons/Humanity/32x32/status
+@dirrm %%DATADIR%%/icons/Humanity/32x32/apps
+@dirrm %%DATADIR%%/icons/Humanity/32x32/actions
+@dirrm %%DATADIR%%/icons/Humanity/32x32
+@dirrm %%DATADIR%%/icons/Humanity/24x24/status
+@dirrm %%DATADIR%%/icons/Humanity/24x24/categories
+@dirrm %%DATADIR%%/icons/Humanity/24x24/apps
+@dirrm %%DATADIR%%/icons/Humanity/24x24/actions
+@dirrm %%DATADIR%%/icons/Humanity/24x24
+@dirrm %%DATADIR%%/icons/Humanity/22x22/status
+@dirrm %%DATADIR%%/icons/Humanity/22x22/apps
+@dirrm %%DATADIR%%/icons/Humanity/22x22/actions
+@dirrm %%DATADIR%%/icons/Humanity/22x22
+@dirrm %%DATADIR%%/icons/Humanity/16x16/status
+@dirrm %%DATADIR%%/icons/Humanity/16x16/apps
+@dirrm %%DATADIR%%/icons/Humanity/16x16/actions
+@dirrm %%DATADIR%%/icons/Humanity/16x16
+@dirrm %%DATADIR%%/icons/Humanity/128x128/status
+@dirrm %%DATADIR%%/icons/Humanity/128x128/apps
+@dirrm %%DATADIR%%/icons/Humanity/128x128/actions
+@dirrm %%DATADIR%%/icons/Humanity/128x128
+@dirrm %%DATADIR%%/icons/Humanity
 @dirrm %%DATADIR%%/icons
 @dirrm %%DATADIR%%
+@dirrmtry share/locale/jv/LC_MESSAGES
+@dirrmtry share/locale/jv
 @dirrmtry share/applications
-@dirrm include/gmpc

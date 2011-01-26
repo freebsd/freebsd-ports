@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gmpc
-PORTVERSION=	0.19.0
-PORTREVISION=	5
+PORTVERSION=	0.20.0
 PORTEPOCH=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://download.sarine.nl/Programs/gmpc/${PORTVERSION}/ \
@@ -16,39 +15,37 @@ MASTER_SITES=	http://download.sarine.nl/Programs/gmpc/${PORTVERSION}/ \
 MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	Full featured GTK2 client for musicpd
 
-BUILD_DEPENDS=	gob2:${PORTSDIR}/devel/gob2
-LIB_DEPENDS=	mpd:${PORTSDIR}/audio/libmpd \
+BUILD_DEPENDS=	gob2:${PORTSDIR}/devel/gob2 \
+		valac:${PORTSDIR}/lang/vala
+LIB_DEPENDS=	mpd.3:${PORTSDIR}/audio/libmpd \
+		sexy.2:${PORTSDIR}/x11-toolkits/libsexy \
 		sqlite3.8:${PORTSDIR}/databases/sqlite3 \
-		curl.6:${PORTSDIR}/ftp/curl \
 		soup-2.4.1:${PORTSDIR}/devel/libsoup
 
 GNU_CONFIGURE=	yes
-USE_XORG=	x11 sm
 USE_GMAKE=	yes
-USE_GNOME=	libglade2 gnomevfs2 gnomehack
+USE_GNOME=	gnomehack pkgconfig glib20 gtk20 libglade2
 INSTALLS_ICONS=	yes
 USE_GETTEXT=	yes
+CONFIGURE_ARGS=	--enable-system-libsexy
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
 
-MAN1=	gmpc-remote.1 gmpc.1
+MAN1=		gmpc-remote.1 gmpc.1
 
-OPTIONS=	SESSION "Enable session support" on \
-		MMKEYS "Enable multimedia keys support" on \
-		TRAY "Enable tray icon support" on
+OPTIONS=	MMKEYS "Enable multimedia keys support" on \
+		XSPF "Enable support for XSPF playlists" off
 
-.include <bsd.port.pre.mk>
-
-pre-configure:
-.if defined(WITHOUT_SESSION)
-CONFIGURE_ARGS+=	--disable-sm
-.endif
+.include <bsd.port.options.mk>
 
 .if defined(WITHOUT_MMKEYS)
-CONFIGURE_ARGS+=	--disable-mmkeys
+CONFIGURE_ARGS+=--disable-mmkeys
 .endif
 
-.if defined(WITHOUT_TRAY)
-CONFIGURE_ARGS+=	--disable-trayicon
+.if defined(WITH_XSPF)
+LIB_DEPENDS+=	xspf.4:${PORTSDIR}/multimedia/libxspf
+CONFIGURE_ARGS+=--enable-libxspf
+.else
+CONFIGURE_ARGS+=--disable-libxspf
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

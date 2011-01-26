@@ -6,30 +6,25 @@
 #
 
 PORTNAME=	gmpc-mserver
-PORTVERSION=	0.19.0
-PORTREVISION=	4
+PORTVERSION=	0.20.0
 CATEGORIES=	audio
-MASTER_SITES=	http://download.sarine.nl/gmpc-${PORTVERSION:C/\.0$//}/ \
+MASTER_SITES=	http://download.sarine.nl/Programs/gmpc/${PORTVERSION}/ \
 		http://freebsd.unixfreunde.de/sources/
 
 MAINTAINER=	miwi@FreeBSD.org
-COMMENT=	A plugin for gmpc that serves music.
+COMMENT=	Lets you stream music files to your mpd that are not in your database
 
-LIB_DEPENDS=	mpd:${PORTSDIR}/audio/libmpd \
-		curl.6:${PORTSDIR}/ftp/curl \
+LIB_DEPENDS=	mpd.3:${PORTSDIR}/audio/libmpd \
 		tag.1:${PORTSDIR}/audio/taglib \
-		microhttpd:${PORTSDIR}/www/libmicrohttpd
+		microhttpd.6:${PORTSDIR}/www/libmicrohttpd
 BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/gmpc.pc:${PORTSDIR}/audio/gmpc
-RUN_DEPEND=	gmpc:${PORTSDIR}/audio/gmpc
-
-BROKEN=		fails to build
+RUN_DEPENDS=	gmpc:${PORTSDIR}/audio/gmpc
 
 GNU_CONFIGURE=	yes
+USE_GMAKE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
-USE_XORG=	x11
-USE_GNOME=	gnomehack
-USE_LDCONFIG=	yes
-USE_GMAKE=	yes
+USE_GNOME=	gnomehack pkgconfig glib20 gtk20 libxml2
+USE_GETTEXT=	yes
 
 .include <bsd.port.mk>

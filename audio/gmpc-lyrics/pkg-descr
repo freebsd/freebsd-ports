@@ -1,8 +1,6 @@
-This plugin fetches lyrics from the Internet. It uses the following websites
-as sources:
+This plugin fetches lyrics from the web from the following sites:
 
-    * LyricWiki
-    * LeosLyrics
-    * Lyrics Tracker
+ * LeosLyrics
+ * LyricsTracker
 
-WWW: http://gmpcwiki.sarine.nl/index.php/Lyrics
+WWW: http://gmpc.wikia.com/wiki/GMPC_PLUGIN_LYRICS

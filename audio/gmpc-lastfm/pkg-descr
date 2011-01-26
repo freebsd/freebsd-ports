@@ -1,4 +1,13 @@
-The last.fm plugin can fetch artist images, from last.fm. This plugin doesn't
-scrobble your music, use a dedicated client like mpdscribble for this.
+The Last.FM metadata fetcher is taking all kinds of metadata from last.fm for
+your music collection.
 
-WWW: http://gmpcwiki.sarine.nl/index.php/Last.fm
+The following metadata is taken from last.fm:
+
+ * Artist Images
+ * Artist Biography
+ * Album Covers
+ * Similar Artist
+ * Similar Songs
+ * Similar Genres
+
+WWW: http://gmpc.wikia.com/wiki/GMPC_PLUGIN_LASTFM

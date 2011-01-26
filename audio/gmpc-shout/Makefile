@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gmpc-shout
-PORTVERSION=	0.19.0
-PORTREVISION=	3
+PORTVERSION=	0.20.0
 CATEGORIES=	audio
 MASTER_SITES=	http://download.sarine.nl/Programs/gmpc/${PORTVERSION}/ \
 		http://freebsd.unixfreunde.de/sources/
@@ -15,17 +14,15 @@ MASTER_SITES=	http://download.sarine.nl/Programs/gmpc/${PORTVERSION}/ \
 MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	Shoutcast stream for gmpc
 
-RUN_DEPENDS=	gmpc:${PORTSDIR}/audio/gmpc
-LIB_DEPENDS+=	mpd:${PORTSDIR}/audio/libmpd \
-		curl.6:${PORTSDIR}/ftp/curl
+LIB_DEPENDS=	mpd.3:${PORTSDIR}/audio/libmpd \
+		cairo.2:${PORTSDIR}/graphics/cairo
 BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/gmpc.pc:${PORTSDIR}/audio/gmpc
+RUN_DEPENDS=	gmpc:${PORTSDIR}/audio/gmpc \
+		ogg123:${PORTSDIR}/audio/vorbis-tools
 
 GNU_CONFIGURE=	yes
-USE_XORG=	x11
-USE_GNOME=	gnomehack intltool
 USE_GMAKE=	yes
-USE_LDCONFIG=	yes
-
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
+USE_GNOME=	gnomehack pkgconfig intltool glib20 gtk20 libxml2
+USE_GETTEXT=	yes
 
 .include <bsd.port.mk>
