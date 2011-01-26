@@ -1211,6 +1211,7 @@ bounce                          ports/net/bounce
 bouncycastle                    ports/java/bouncycastle
 box                             ports/graphics/box
 boxbackup                       ports/sysutils/boxbackup
+boxbackup-devel                 ports/sysutils/boxbackup-devel
 boxer                           ports/graphics/boxer
 boxes                           ports/misc/boxes
 boxquote.el                     ports/misc/boxquote.el
@@ -6693,6 +6694,7 @@ jarnal                          ports/textproc/jarnal
 jasmin                          ports/java/jasmin
 jasper                          ports/graphics/jasper
 jasperreports                   ports/databases/jasperreports
+jasperserver                    ports/databases/jasperserver
 java-access-bridge              ports/accessibility/java-access-bridge
 java-beepcore                   ports/net/java-beepcore
 java-checkstyle                 ports/java/java-checkstyle
@@ -20729,6 +20731,7 @@ postfix-postfwd                 ports/mail/postfix-postfwd
 postfix24                       ports/mail/postfix24
 postfix25                       ports/mail/postfix25
 postfix26                       ports/mail/postfix26
+postfix27                       ports/mail/postfix27
 postfixadmin                    ports/mail/postfixadmin
 postgis                         ports/databases/postgis
 postgis-jdbc                    ports/databases/postgis-jdbc
