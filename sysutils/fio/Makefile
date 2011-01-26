@@ -8,8 +8,8 @@
 #
 
 PORTNAME=	fio
-PORTVERSION=	1.44.2
-CATEGORIES=	sysutils
+PORTVERSION=	1.44.3
+CATEGORIES=	sysutils benchmarks
 MASTER_SITES=	http://brick.kernel.dk/snaps/
 
 MAINTAINER=	luigi@FreeBSD.org
