@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	geronimo
-PORTVERSION=	2.2
+PORTVERSION=	2.2.1
 CATEGORIES=	www devel java
 MASTER_SITES=	${MASTER_SITE_APACHE}
 MASTER_SITE_SUBDIR=	geronimo/${PORTVERSION}
 DISTNAME=	${PORTNAME}-${WEBSERVER}-javaee5-${PORTVERSION}-bin
 
-MAINTAINER=	jonc@chen.org.nz
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Open-source Java EE 5 application server
 
 USE_JAVA=	yes
