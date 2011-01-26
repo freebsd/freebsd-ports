@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	ldns
-PORTVERSION=	1.6.7
-PORTREVISION=	1
+PORTVERSION=	1.6.8
 CATEGORIES=	dns
 MASTER_SITES=	http://www.nlnetlabs.nl/downloads/ldns/
 
@@ -23,6 +22,7 @@ USE_LDCONFIG=	yes
 
 OPTIONS=	DOCS "With documentation" Off \
 		EXAMPLES "With example programs" Off \
+		DRILL "With drill program" Off \
 		GOST "GOST signatures enabled (requires openssl >= 1.0.0)" Off \
 		ECDSA "With highly experimental ECDSA support" Off
 
@@ -230,26 +230,23 @@ NO_GOST=		--disable-gost
 CONFIGURE_ARGS+=	${NO_GOST}
 .endif
 
+.if defined(WITH_DRILL)
+PLIST_SUB+=		DRILLPROG=""
+MAN1+=	drill.1
+.else
+PLIST_SUB+=		DRILLPROG="@comment "
+.endif
+
 .if defined(WITH_EXAMPLES)
 PLIST_SUB+=		EXAMPLES=""
 NOMANCOMPRESS=	true
 MANCOMPRESSED=	no
-MAN1=	ldns-chaos.1 ldns-compare-zones.1 ldns-dpa.1 ldns-key2ds.1 \
+MAN1+=	ldns-chaos.1 ldns-compare-zones.1 ldns-dpa.1 ldns-key2ds.1 \
 	ldns-keyfetcher.1 ldns-keygen.1 ldns-mx.1 ldns-notify.1 \
 	ldns-nsec3-hash.1 ldns-read-zone.1 ldns-resolver.1 ldns-revoke.1 \
 	ldns-rrsig.1 ldns-signzone.1 ldns-testns.1 ldns-update.1 \
 	ldns-verify-zone.1 ldns-version.1 ldns-walk.1 ldns-zcat.1 \
-	ldns-zsplit.1 ldnsd.1
-post-configure:
-	@(cd ${WRKSRC}/examples; ./configure --prefix=${PREFIX} \
-		--infodir=${PREFIX}/${INFO_PATH} --mandir=${MANPREFIX}/man \
-		--build=${CONFIGURE_TARGET} ${NO_GOST} ${NO_SHA2})
-
-post-build:
-	@(cd ${WRKSRC}/examples; ${GMAKE})
-
-post-install:
-	@(cd ${WRKSRC}/examples; ${GMAKE} install)
+	ldns-zsplit.1 ldnsd.1 ldns-test-edns.1
 .else
 PLIST_SUB+=		EXAMPLES="@comment "
 .endif
@@ -261,6 +258,34 @@ CONFIGURE_ARGS+=	--enable-ecdsa
 .if ${OSVERSION} < 700000
 NO_SHA2=		--disable-sha2
 CONFIGURE_ARGS+=	${NO_SHA2}
+.endif
+
+post-configure:
+.if defined(WITH_EXAMPLES)
+	@(cd ${WRKSRC}/examples; ./configure --prefix=${PREFIX} \
+		--infodir=${PREFIX}/${INFO_PATH} --mandir=${MANPREFIX}/man \
+		--build=${CONFIGURE_TARGET} ${NO_GOST} ${NO_SHA2})
+.endif
+.if defined(WITH_DRILL)
+	@(cd ${WRKSRC}/drill; ./configure --prefix=${PREFIX} \
+		--mandir=${MANPREFIX}/man \
+		--build=${CONFIGURE_TARGET})
+.endif
+
+post-build:
+.if defined(WITH_EXAMPLES)
+	 @(cd ${WRKSRC}/examples; ${GMAKE})
+.endif
+.if defined(WITH_DRILL)
+	 @(cd ${WRKSRC}/drill; ${GMAKE})
+.endif
+
+post-install:
+.if defined(WITH_EXAMPLES)
+	@(cd ${WRKSRC}/examples; ${GMAKE} install)
+.endif
+.if defined(WITH_DRILL)
+	@(cd ${WRKSRC}/drill; ${GMAKE} install)
 .endif
 
 .include <bsd.port.post.mk>
