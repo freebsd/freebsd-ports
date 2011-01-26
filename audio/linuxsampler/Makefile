@@ -17,7 +17,11 @@ LIB_DEPENDS=	jack.0:${PORTSDIR}/audio/jack \
 		gig.10:${PORTSDIR}/audio/libgig \
 		sqlite3.8:${PORTSDIR}/databases/sqlite3
 
+ONLY_FOR_ARCHS=	"i386 amd64"
+ONLY_FOR_ARCHS_REASON=	"not yet ported"
 BROKEN=		does not fetch
+DEPRECATED=		"${BROKEN}"
+EXPIRATION_DATE=	2011-03-26
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
@@ -33,10 +37,6 @@ MAN1=		linuxsampler.1
 
 .if ${OSVERSION} < 700000 || ${OSVERSION} >= 900000
 BROKEN=		Does not compile
-.endif
-
-.if ${ARCH} == "sparc64"
-IGNORE=		Not yet ported to sparc64
 .endif
 
 .include <bsd.port.post.mk>
