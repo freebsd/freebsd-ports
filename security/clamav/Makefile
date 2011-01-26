@@ -140,7 +140,7 @@ USE_ICONV=	yes
 CONFIGURE_ARGS+=--without-iconv
 .endif
 
-.if defined(WITH_LLVM) && ${ARCH} != "sparc64"
+.if defined(WITH_LLVM) && ( ${ARCH} == "i386" || ${ARCH} == "amd64" )
 CONFIGURE_ARGS+=--enable-llvm
 USE_GMAKE=	yes
 . if defined(WITH_TESTS)
