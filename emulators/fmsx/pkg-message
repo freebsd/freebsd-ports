@@ -10,4 +10,3 @@ select BPP16 or BPP24 as options.
 *******************************************************************
 
 See ftp://ftp.komkon.org//pub/EMUL8/MSX/Carts for cartridge ROMs
-
