@@ -7,9 +7,9 @@
 #
 
 PORTNAME=	fasta3
-PORTVERSION=	35.4.9
+PORTVERSION=	36.3.2
 CATEGORIES=	biology
-MASTER_SITES=	http://faculty.virginia.edu/wrpearson/fasta/fasta3/
+MASTER_SITES=	http://faculty.virginia.edu/wrpearson/fasta/fasta36/
 DISTNAME=	fasta-${PORTVERSION}
 
 MAINTAINER=	fernan@iib.unsam.edu.ar
@@ -34,12 +34,12 @@ FASTA3_DOCS=	README.versions fasta3x.me fasta3x.doc \
 DATA=		data/*.mat
 EXAMPLES=	seq/*.aa seq/*.lc seq/*.seq seq/*.lib
 
-MAN1=		fasta35.1 map_db.1 ps_lav.1 pvcomp.1
-MLINKS=		fasta35.1 tfasta35.1 fasta35.1 fastx35.1 fasta35.1 tfastx35.1  \
-		fasta35.1 fasty35.1  fasta35.1 tfasty35.1 fasta35.1 ssearch35.1 \
-		fasta35.1 fastf35.1 fasta35.1 fasts35.1 fasta35.1 tfasts35.1 \
-		fasta35.1 fastm35.1 fasta35.1 tfastf35.1 fasta35.1 ggsearch35.1 \
-		fasta35.1 lalign35.1 fasta35.1 prss35.1 fasta35.1 prfx35.1
+MAN1=		fasta36.1 fastf3.1 fasts3.1 prss3.1 map_db.1 ps_lav.1
+MLINKS=		fasta36.1 tfasta35.1 fasta36.1 fastx35.1 fasta36.1 tfastx35.1 \
+		fasta36.1 fasty35.1 fasta36.1 tfasty35.1 fasta36.1 ssearch35.1 \
+		fasta36.1 fastf35.1 fasta36.1 fasts35.1 fasta36.1 tfasts35.1 \
+		fasta36.1 fastm35.1 fasta36.1 tfastf35.1 fasta36.1 ggsearch35.1 \
+		fasta36.1 lalign35.1 fasta36.1 prss35.1 fasta36.1 prfx35.1
 PLIST_SUB=	VER=${PORTVERSION:R:R}
 
 post-patch:

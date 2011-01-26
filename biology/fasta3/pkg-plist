@@ -17,7 +17,6 @@ bin/glsearch%%VER%%_t
 bin/lalign%%VER%%
 bin/lav2ps
 bin/lav2svg
-bin/list_db
 bin/map_db
 bin/ssearch%%VER%%
 bin/ssearch%%VER%%_t
@@ -39,10 +38,6 @@ etc/fastlibs.sample
 %%PORTDOCS%%%%DOCSDIR%%/fasta3x.doc
 %%PORTDOCS%%%%DOCSDIR%%/fasta20.doc
 %%PORTDOCS%%%%DOCSDIR%%/fasta_func.doc
-%%PORTDOCS%%%%DOCSDIR%%/readme.mpi_3.3
-%%PORTDOCS%%%%DOCSDIR%%/readme.pvm_3.2
-%%PORTDOCS%%%%DOCSDIR%%/readme.pvm_3.3
-%%PORTDOCS%%%%DOCSDIR%%/readme.pvm_3.4
 %%PORTDOCS%%%%DOCSDIR%%/readme.v30
 %%PORTDOCS%%%%DOCSDIR%%/readme.v30t6
 %%PORTDOCS%%%%DOCSDIR%%/readme.v30t7
@@ -52,12 +47,14 @@ etc/fastlibs.sample
 %%PORTDOCS%%%%DOCSDIR%%/readme.v33t0
 %%PORTDOCS%%%%DOCSDIR%%/readme.v34t0
 %%PORTDOCS%%%%DOCSDIR%%/readme.v35
+%%PORTDOCS%%%%DOCSDIR%%/readme.v36
 %%PORTDOCS%%%%DOCSDIR%%/readme.w32
 %%PORTDOCS%%%%DOCSDIR%%/fasta.defaults
 %%PORTDOCS%%%%DOCSDIR%%/fasta.options
 %%PORTDOCS%%%%DOCSDIR%%/fasta_versions.html
 %%PORTDOCS%%%%DOCSDIR%%/changes_v34.html
 %%PORTDOCS%%%%DOCSDIR%%/changes_v35.html
+%%PORTDOCS%%%%DOCSDIR%%/changes_v36.html
 %%EXAMPLESDIR%%/egmsmg.aa
 %%EXAMPLESDIR%%/gstt1_drome.aa
 %%EXAMPLESDIR%%/gtm1_human.aa
@@ -95,6 +92,7 @@ etc/fastlibs.sample
 %%EXAMPLESDIR%%/hsgstm1b.seq
 %%EXAMPLESDIR%%/humgstd.seq
 %%EXAMPLESDIR%%/mgstm1.seq
+%%EXAMPLESDIR%%/mgstm1_genclone.seq
 %%EXAMPLESDIR%%/mgtt2_x.seq
 %%EXAMPLESDIR%%/titin_hum.seq
 %%EXAMPLESDIR%%/mu.lib
