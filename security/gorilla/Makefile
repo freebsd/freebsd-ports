@@ -8,6 +8,7 @@
 PORTNAME=	gorilla
 PORTVERSION=	1.5.3.1
 DISTVERSIONSUFFIX=	c05eb4e
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://www.bayofrum.net/dist/gorilla/ \
 		http://cerberus.bayofrum.net/dist/gorilla/
@@ -17,7 +18,8 @@ MAINTAINER=	utisoft@gmail.com
 COMMENT=	Password Gorilla is a cross-platform Password Manager
 
 RUN_DEPENDS=	${LOCALBASE}/lib/bwidget/init.tcl:${PORTSDIR}/x11-toolkits/bwidget \
-		itcl>=3.4:${PORTSDIR}/lang/itcl
+		itcl>=3.4:${PORTSDIR}/lang/itcl \
+		wish:${PORTSDIR}/x11-toolkits/tk-wrapper
 
 LICENSE=	GPLv2
 
