@@ -39,9 +39,10 @@ OPTIONS=	GDBM	"Enable GDBM support"	on
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 700000
-BROKEN=		does not build on 6.X
+.if ${OSVERSION} <= 701000
+MANUAL_PACKAGE_BUILD=	hangs on pointyhat
 .endif
+
 
 .if !defined(WITHOUT_GDBM) || exists(${LOCALBASE}/include/gdbm.h)
 LIB_DEPENDS=	gdbm.3:${PORTSDIR}/databases/gdbm

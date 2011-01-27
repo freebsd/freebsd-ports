@@ -45,7 +45,13 @@ post-install:
 CMAKE_ARGS+=	-DGDCM_DOCUMENTATION:BOOL=NO
 .endif
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} <= 701000
+MANUAL_PACKAGE_BUILD=	hangs on pointyhat
+.endif
+
 post-patch:
 	${REINPLACE_CMD} -e 's| NAMELINK_SKIP||; s| NAMELINK_ONLY||' ${WRKSRC}/CMakeLists.txt
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

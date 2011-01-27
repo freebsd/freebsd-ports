@@ -26,6 +26,12 @@ PORTDOCS=	*
 
 MAN1=		dsss.1 rebuild.1
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} <= 701000
+MANUAL_PACKAGE_BUILD=	hangs on pointyhat
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|share/man|man|' \
 		${WRKSRC}/dsss.conf
@@ -38,4 +44,4 @@ post-patch:
 		${WRKSRC}/rebuild/Makefile
 .endfor
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
