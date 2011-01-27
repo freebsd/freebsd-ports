@@ -7,7 +7,7 @@
 
 PORTNAME=	libtextcat
 PORTVERSION=	2.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	textproc
 MASTER_SITES=	http://software.wise-guys.nl/download/
 
