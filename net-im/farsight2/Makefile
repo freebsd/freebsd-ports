@@ -26,4 +26,10 @@ USE_AUTOTOOLS=	libtool
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 702000
+BROKEN=		does not build on FreeBSD 7.X prior 7.2
+.endif
+
+.include <bsd.port.post.mk>
