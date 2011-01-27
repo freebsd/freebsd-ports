@@ -1,9 +1,8 @@
-The Autoconf Macro Archive aims to provide a collection of reusable
-Autoconf macros as free software. The archive currently features more
-than 600 macros which perform portability tests ranging from compiler
-support for weird language extensions to automatic generation of
-sophisticated Automake rules.  However, all these macros have been
-contributed by friendly supporters of the cause from all over the
-Internet; the archive really just collects and distributes them.
+The GNU Autoconf Archive is a collection of more than 450 macros for GNU
+Autoconf that have been contributed as free software by friendly supporters
+of the cause from all over the Internet. Every single one of those macros
+can be re-used without imposing any restrictions whatsoever on the licensing
+of the generated configure script. In particular, it is possible to use all
+those macros in configure scripts that are meant for non-free software.
 
-WWW: http://autoconf-archive.cryp.to/
+WWW: http://savannah.gnu.org/projects/autoconf-archive/
