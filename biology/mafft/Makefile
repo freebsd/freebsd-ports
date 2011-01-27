@@ -16,7 +16,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	fernan@iib.unsam.edu.ar
 COMMENT=	Multiple sequence alignments based on fast Fourier transform
 
-RUN_DEPENDS=	fasta35:${PORTSDIR}/biology/fasta3
+RUN_DEPENDS=	lav2ps:${PORTSDIR}/biology/fasta3
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 BUILD_WRKSRC=	${WRKSRC}/src
