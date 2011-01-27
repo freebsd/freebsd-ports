@@ -3,6 +3,7 @@ USE_GCC=	4.2+
 USE_LDCONFIG=	yes
 BOOST_SHARED_LIB_VER=	4
 PKGMESSAGE=	${WRKDIR}/pkg-message
+MAKE_JOBS_SAFE=	yes
 BJAM=		bjam
 CXXFLAGS+=	-Wno-long-long
 
@@ -14,6 +15,7 @@ PKG_MESSAGE_FILE_PYTHON=	${PORTSDIR}/devel/boost-all/pkg-message.python
 BOOST_TOOLS=	gcc
 
 BJAM_OPTIONS=	--layout=system --disable-long-double
+BJAM_OPTIONS+=	${_MAKE_JOBS}
 .if defined (WITH_VERBOSE_BUILD)
 BJAM_OPTIONS+=	-d2
 .endif
