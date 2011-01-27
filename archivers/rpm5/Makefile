@@ -130,6 +130,10 @@ PORTDOCS=	*
 LIB_DEPENDS+=	lzma:${PORTSDIR}/archivers/xz
 .endif
 
+.if ${OSVERSION} <= 701000
+MANUAL_PACKAGE_BUILD=	hangs on pointyhat
+.endif
+
 post-patch::
 	@${REINPLACE_CMD} -E -e \
 		's:\$$\(libdir\)/pkgconfig:${PREFIX}/libdata/pkgconfig:' \
