@@ -16,7 +16,7 @@ COMMENT=	Lets you stream music files to your mpd that are not in your database
 
 LIB_DEPENDS=	mpd.3:${PORTSDIR}/audio/libmpd \
 		tag.1:${PORTSDIR}/audio/taglib \
-		microhttpd.6:${PORTSDIR}/www/libmicrohttpd
+		microhttpd.12:${PORTSDIR}/www/libmicrohttpd
 BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/gmpc.pc:${PORTSDIR}/audio/gmpc
 RUN_DEPENDS=	gmpc:${PORTSDIR}/audio/gmpc
 
