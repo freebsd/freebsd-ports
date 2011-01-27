@@ -1,0 +1,119 @@
+--- modules/FvwmTaskBar/ButtonArray.c.orig	2011-01-25 11:20:29.000000000 +0100
++++ modules/FvwmTaskBar/ButtonArray.c	2011-01-25 11:21:00.000000000 +0100
+@@ -16,6 +16,7 @@
+ 
+ #include <stdlib.h>
+ #include <stdio.h>
++#include <string.h>
+ #include <X11/Xlib.h>
+ 
+ #include <fvwm/fvwmlib.h>
+--- modules/FvwmTaskBar/Mallocs.c.orig	1996-12-10 17:41:48.000000000 +0100
++++ modules/FvwmTaskBar/Mallocs.c	2011-01-25 11:24:01.000000000 +0100
+@@ -25,6 +25,8 @@
+ #include <string.h>
+ #include <sys/time.h>
+ 
++#include "Mallocs.h"
++
+ #ifdef BROKEN_SUN_HEADERS
+ #include "../../fvwm/sun_headers.h"
+ #endif
+@@ -57,6 +59,10 @@
+   if (value==NULL) return;
+   if (*string==NULL) *string=(char *)safemalloc(strlen(value)+1);
+   else *string=(char *)realloc(*string,strlen(value)+1);
++    if (*string == (char *)0) {
++      fprintf(stderr,"%s:UpdateString failed, not enought memory",Module);
++      exit(1);
++    }
+   strcpy(*string,value);
+ }
+ 
+--- xpmroot/xpmroot.c.orig	2011-01-25 11:28:06.000000000 +0100
++++ xpmroot/xpmroot.c	2011-01-25 11:28:22.000000000 +0100
+@@ -9,6 +9,7 @@
+ #include <FVWMconfig.h>
+ 
+ #include <stdio.h>
++#include <stdlib.h>
+ #include <signal.h>
+ #include <string.h>
+ #include <X11/Xos.h>
+--- modules/FvwmWinList/ButtonArray.c.orig	2011-01-25 11:30:10.000000000 +0100
++++ modules/FvwmWinList/ButtonArray.c	2011-01-25 11:30:58.000000000 +0100
+@@ -14,6 +14,7 @@
+ 
+ #include <stdlib.h>
+ #include <stdio.h>
++#include <string.h>
+ #include <X11/Xlib.h>
+ 
+ #include <fvwm/fvwmlib.h>
+--- modules/FvwmTaskBar/Start.c.orig	2011-01-25 11:32:17.000000000 +0100
++++ modules/FvwmTaskBar/Start.c	2011-01-25 11:32:49.000000000 +0100
+@@ -1,5 +1,6 @@
+ /* Start ;-) button handling */
+ 
++#include <string.h>
+ #include <X11/Xlib.h>
+ 
+ #include <fvwm/fvwmlib.h>
+--- modules/FvwmForm/FvwmForm.c.ORIG	2011-01-25 11:38:20.000000000 +0100
++++ modules/FvwmForm/FvwmForm.c	2011-01-25 11:44:19.000000000 +0100
+@@ -31,6 +31,9 @@
+ #include <sys/select.h>
+ #endif
+ 
++//Missing declaration from libs/ :
++XFontStruct *GetFontOrFixed(Display *disp, char *fontname);
++
+ void dummy () {
+ }
+ 
+--- libs/SendInfo.c.orig	2011-01-25 11:50:05.000000000 +0100
++++ libs/SendInfo.c	2011-01-25 11:51:44.000000000 +0100
+@@ -1,4 +1,5 @@
+ #include <stdio.h>
++#include <string.h>
+ #include <ctype.h>
+ 
+ /***********************************************************************
+--- libs/SendText.c.orig	2011-01-25 11:50:51.000000000 +0100
++++ libs/SendText.c	2011-01-25 11:52:09.000000000 +0100
+@@ -1,4 +1,5 @@
+ #include <stdio.h>
++#include <string.h>
+ #include <ctype.h>
+ /************************************************************************
+  *
+--- libs/hostname.c.orig	2011-01-25 11:51:12.000000000 +0100
++++ libs/hostname.c	2011-01-25 11:52:08.000000000 +0100
+@@ -1,4 +1,5 @@
+ #include <FVWMconfig.h>
++#include <string.h>
+ 
+ #if HAVE_UNAME
+ /* define mygethostname() by using uname() */
+--- fvwm/icons.c.orig	2011-01-25 11:54:50.000000000 +0100
++++ fvwm/icons.c	2011-01-25 11:56:58.000000000 +0100
+@@ -321,7 +321,7 @@
+   if(Tmp_win->flags & SUPPRESSICON)
+     return;
+ 
+-  if (Tmp_win->icon_w == (int)NULL)
++  if (Tmp_win->icon_w == 0)
+     return;
+   
+   Tmp_win->icon_t_width = XTextWidth(Scr.IconFont.font,Tmp_win->icon_name, 
+--- fvwm/module.c.orig	2011-01-25 11:58:00.000000000 +0100
++++ fvwm/module.c	2011-01-25 11:58:49.000000000 +0100
+@@ -275,7 +275,7 @@
+   if(size >255)
+     {
+       fvwm_msg(ERR,"HandleModuleInput",
+-               "Module command is too big (%d)",(void *)size);
++               "Module command is too big (%d)",size);
+       size=255;
+     }
+ 
