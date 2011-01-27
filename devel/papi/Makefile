@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	papi
-PORTVERSION=	3.7.1
-PORTREVESION=	1
+PORTVERSION=	4.1.2.1
 CATEGORIES=	devel
 MASTER_SITES=	http://icl.cs.utk.edu/projects/papi/downloads/
 
@@ -26,8 +25,7 @@ HAS_CONFIGURE=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/src
 WRKMAN=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/man
 
-OPTIONS=	CTESTS "Install C tests" On
-OPTIONS+=	FTESTS "Install Fortran tests" On
+OPTIONS=	CORETEMP "Add Intel Core thermal sensor (need coretemp.ko)" Off
 OPTIONS+=	DEBUG  "Add debug information (increased verbosity)" Off
 
 .include <bsd.port.pre.mk>
@@ -39,20 +37,10 @@ IGNORE=		needs hwmpc module loaded or compiled into the kernel. \
 		Please consult hwpmc(4) on how to do it (or cat pkg-message)
 .endif
 
-.if defined(WITHOUT_CTESTS)
-PLIST_SUB+=	CTESTS="@comment "
-.else
-PLIST_SUB+=	CTESTS=""
 CONFIGURE_ARGS+=	--with-tests=ctests
-.endif
 
-.if defined(WITHOUT_FTESTS)
-PLIST_SUB+=	FTESTS="@comment "
-.else
-PLIST_SUB+=	FTESTS=""
-USE_FORTRAN=	yes
-CONFIGURE_ARGS+=	--with-tests="ctests ftests"
-FFLAGS=		-fdefault-integer-8 -fno-range-check
+.if defined(WITH_CORETEMP)
+CONFIGURE_ARGS+=	--with-components=coretemp_freebsd
 .endif
 
 .if defined(WITHOUT_DEBUG)
@@ -81,6 +69,7 @@ MAN3=	PAPI.3 \
 	PAPI_accum_counters.3 \
 	PAPI_add_event.3 \
 	PAPI_add_events.3 \
+	PAPI_assign_eventset_component.3 \
 	PAPI_attach.3 \
 	PAPI_cleanup_eventset.3 \
 	PAPI_create_eventset.3 \
@@ -92,7 +81,9 @@ MAN3=	PAPI.3 \
 	PAPI_event_name_to_code.3 \
 	PAPI_flips.3 \
 	PAPI_flops.3 \
-	PAPI_get_dmem_info.3 \
+	PAPI_get_cmp_opt.3 \
+	PAPI_get_component_info.3 \
+	PAPI_get_dmem_info.3  \
 	PAPI_get_event_info.3 \
 	PAPI_get_executable_info.3 \
 	PAPI_get_hardware_info.3 \
@@ -113,8 +104,10 @@ MAN3=	PAPI.3 \
 	PAPI_list_events.3 \
 	PAPI_list_threads.3 \
 	PAPI_lock.3 \
-	PAPI_multiplex_init.3 \
+	PAPI_multiplex_init.3  \
 	PAPI_native.3 \
+	PAPI_num_cmp_hwctrs.3 \
+	PAPI_num_components.3 \
 	PAPI_num_counters.3 \
 	PAPI_num_events.3 \
 	PAPI_num_hwctrs.3 \
@@ -129,6 +122,8 @@ MAN3=	PAPI.3 \
 	PAPI_remove_event.3 \
 	PAPI_remove_events.3 \
 	PAPI_reset.3 \
+	PAPI_set_cmp_domain.3 \
+	PAPI_set_cmp_granularity.3 \
 	PAPI_set_debug.3 \
 	PAPI_set_domain.3 \
 	PAPI_set_event_info.3 \
@@ -151,7 +146,7 @@ MAN3=	PAPI.3 \
 	PAPI_write.3
 
 PAPI_LIBS=	libpapi.a \
-	libpapi.so.3
+	libpapi.so.4
 
 PAPI_BINARIES=	papi_avail \
 	papi_clockres \
@@ -168,74 +163,89 @@ PAPI_INCLUDES=	f77papi.h \
 	papi.h \
 	papiStdEventDefs.h
 
-PAPI_FORTRAN_TESTS=	strtest \
-	zero \
-	first \
-	second \
-	tenth \
-	description \
-	fdmemtest \
-	accum \
-	highlevel \
-	cost \
-	johnmay2 \
-	avail \
-	case1 \
-	case2 \
-	clockres \
-	eventname \
-	fmatrixlowpapi \
-	fmatrixpapi \
-	flops \
-	fmatrixpapi2 \
-	fmultiplex1 \
-	fmultiplex2
-
-PAPI_C_TESTS=	ipc \
-	hwinfo \
-	code2name \
-	reset \
-	subinfo \
-	realtime \
-	first \
-	exeinfo \
-	zero \
-	branches \
-	dmem_info \
-	all_native_events \
+PAPI_C_TESTS=	\
 	all_events \
-	derived \
-	high-level2 \
-	describe \
-	memory \
-	zero_flip \
- 	low-level \
-	high-level \
-	eventname \
+	all_native_events \
+	api \
+	branches \
+	burn \
+	byte_profile \
+	calibrate \
 	case1 \
 	case2 \
-	calibrate \
+	child_overflow \
+	clockres_pthreads \
+	code2name \
+	derived \
+	describe \
+	dmem_info \
+	eventname \
+	exec \
+	exec2 \
+	exec_overflow \
+	exeinfo \
+	first \
 	flops \
-	second \
+	fork \
+	fork2 \
+	fork_overflow \
+	forkexec \
+	forkexec2 \
+	forkexec3 \
+	forkexec4 \
+	high-level \
+	high-level2 \
+	hwinfo \
+	ipc \
 	johnmay2 \
-	matrix-hl \
-	tenth \
-	encode \
-	encode2 \
-	multiplex1_pthreads \
-	multiplex3_pthreads \
+	krentel_pthreads \
 	kufrin \
-	multiplex1 \
-	multiplex2 \
+	locks_pthreads \
+	low-level \
+	matrix-hl \
+	memory \
 	mendes-alt \
+	multiattach \
+	multiplex1 \
+	multiplex1_pthreads \
+	multiplex2 \
+	multiplex3_pthreads \
+	overflow \
+	overflow2 \
+	overflow3_pthreads \
+	overflow_allcounters \
+	overflow_force_software \
+	overflow_index \
+	overflow_one_and_read \
+	overflow_pthreads \
+	overflow_single_event \
+	overflow_twoevents \
+	profile \
+	profile_force_software \
+	profile_pthreads \
+	profile_twoevents \
+	pthrtough \
+	pthrtough2 \
+	realtime \
+	reset \
 	sdsc-mpx \
 	sdsc2-mpx \
 	sdsc4-mpx \
+	second \
+	shlib \
+	sprofile \
+	subinfo \
+	system_child_overflow \
+	system_overflow \
+	tenth \
 	thrspecific \
-	zero_pthreads \
-	unregister_pthreads \
-	clockres_pthreads \
-	locks_pthreads
+	timer_overflow \
+	virttime \
+	zero \
+	zero_attach \
+	zero_flip \
+	zero_fork \
+	zero_pthreads
 
 do-install:
 .for f in ${PAPI_BINARIES}
@@ -244,22 +254,14 @@ do-install:
 .for f in ${PAPI_INCLUDES}
 	${INSTALL_DATA} ${WRKSRC}/${f} ${PREFIX}/include
 .endfor
-.if defined(WITH_FTESTS)
-	${MKDIR} ${DATADIR}/ftests
-.for f in ${PAPI_FORTRAN_TESTS}
-	${INSTALL_PROGRAM} ${WRKSRC}/ftests/${f} ${DATADIR}/ftests
-.endfor
-.endif
-.if defined(WITH_CTESTS)
-	${MKDIR} ${DATADIR}/ctests
-.for f in ${PAPI_C_TESTS}
-	${INSTALL_PROGRAM} ${WRKSRC}/ctests/${f} ${DATADIR}/ctests
-.endfor
-.endif
 .for f in ${PAPI_LIBS}
 	${INSTALL_PROGRAM} ${WRKSRC}/${f} ${PREFIX}/lib
 .endfor
 	${LN} -s ${PREFIX}/lib/libpapi.so.3 ${PREFIX}/lib/libpapi.so
+	${MKDIR} ${DATADIR}/ctests
+.for f in ${PAPI_C_TESTS}
+	${INSTALL_PROGRAM} ${WRKSRC}/ctests/${f} ${DATADIR}/ctests
+.endfor
 .for f in ${MAN1}
 	${INSTALL_MAN} ${WRKMAN}/man1/${f} ${PREFIX}/man/man1
 .endfor
