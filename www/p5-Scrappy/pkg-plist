@@ -1,0 +1,17 @@
+%%SITE_PERL%%/Scrappy.pm
+%%SITE_PERL%%/Scrappy/Crawler.pm
+%%SITE_PERL%%/Scrappy/Doo.pm
+%%SITE_PERL%%/Scrappy/Element.pm
+%%SITE_PERL%%/Scrappy/Manual.pod
+%%SITE_PERL%%/auto/share/dist/Scrappy/support/chrome.txt
+%%SITE_PERL%%/auto/share/dist/Scrappy/support/explorer.txt
+%%SITE_PERL%%/auto/share/dist/Scrappy/support/firefox.txt
+%%SITE_PERL%%/auto/share/dist/Scrappy/support/opera.txt
+%%SITE_PERL%%/auto/share/dist/Scrappy/support/safari.txt
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Scrappy/.packlist
+@dirrmtry %%SITE_PERL%%/auto/share/dist/Scrappy/support
+@dirrmtry %%SITE_PERL%%/auto/share/dist/Scrappy
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Scrappy
+@dirrmtry %%SITE_PERL%%/auto/share/dist
+@dirrmtry %%SITE_PERL%%/auto/share
+@dirrmtry %%SITE_PERL%%/Scrappy
