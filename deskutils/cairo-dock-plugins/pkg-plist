@@ -1,86 +1,45 @@
-lib/cairo-dock/libcd-Animated-icons.la         
+%%ALSA_MIXER%%lib/cairo-dock/libcd-AlsaMixer.so
 lib/cairo-dock/libcd-Animated-icons.so
-lib/cairo-dock/libcd-Cairo-Penguin.la
 lib/cairo-dock/libcd-Cairo-Penguin.so
-lib/cairo-dock/libcd-Clipper.la
 lib/cairo-dock/libcd-Clipper.so
-lib/cairo-dock/libcd-Dbus.la
 lib/cairo-dock/libcd-Dbus.so
-%%GMENU%%lib/cairo-dock/libcd-GMenu.la
+lib/cairo-dock/libcd-Folders.so
+lib/cairo-dock/libcd-rssreader.so
+lib/cairo-dock/libcd-system-monitor.so
 %%GMENU%%lib/cairo-dock/libcd-GMenu.so
-lib/cairo-dock/libcd-System-Monitor.la
-lib/cairo-dock/libcd-System-Monitor.so
-lib/cairo-dock/libcd-Toons.la
 lib/cairo-dock/libcd-Toons.so
-lib/cairo-dock/libcd-Xgamma.la
 lib/cairo-dock/libcd-Xgamma.so
-lib/cairo-dock/libcd-clock.la
-lib/cairo-dock/libcd-clock.so
-lib/cairo-dock/libcd-compiz-icon.la
 lib/cairo-dock/libcd-compiz-icon.so
-lib/cairo-dock/libcd-desklet-rendering.la
 lib/cairo-dock/libcd-desklet-rendering.so
-lib/cairo-dock/libcd-dialog-rendering.la
 lib/cairo-dock/libcd-dialog-rendering.so
-lib/cairo-dock/libcd-dnd2share.la
 lib/cairo-dock/libcd-dnd2share.so
-lib/cairo-dock/libcd-drop_indicator.la
 lib/cairo-dock/libcd-drop_indicator.so
-lib/cairo-dock/libcd-dustbin.la
 lib/cairo-dock/libcd-dustbin.so
-lib/cairo-dock/libcd-icon-effect.la
 lib/cairo-dock/libcd-icon-effect.so
-lib/cairo-dock/libcd-illusion.la
 lib/cairo-dock/libcd-illusion.so
-lib/cairo-dock/libcd_kde-integration.la
 lib/cairo-dock/libcd_kde-integration.so
-%%KEYBOARD_INDICATOR%%lib/cairo-dock/libcd-keyboard-indicator.la
 %%KEYBOARD_INDICATOR%%lib/cairo-dock/libcd-keyboard-indicator.so
-lib/cairo-dock/libcd-logout.la
 lib/cairo-dock/libcd-logout.so
-lib/cairo-dock/libcd-mail.la
 lib/cairo-dock/libcd-mail.so
-lib/cairo-dock/libcd-motion_blur.la
 lib/cairo-dock/libcd-motion_blur.so
-lib/cairo-dock/libcd-musicPlayer.la
 lib/cairo-dock/libcd-musicPlayer.so
-lib/cairo-dock/libcd-netspeed.la
 lib/cairo-dock/libcd-netspeed.so
-lib/cairo-dock/libcd-powermanager.la
 lib/cairo-dock/libcd-powermanager.so
-lib/cairo-dock/libcd-quick-browser.la
 lib/cairo-dock/libcd-quick-browser.so
-lib/cairo-dock/libcd-rendering.la
 lib/cairo-dock/libcd-rendering.so
-lib/cairo-dock/libcd-RSSreader.la
-lib/cairo-dock/libcd-RSSreader.so
-lib/cairo-dock/libcd-shortcuts.la
 lib/cairo-dock/libcd-shortcuts.so
-lib/cairo-dock/libcd-showDesktop.la
 lib/cairo-dock/libcd-showDesktop.so
-lib/cairo-dock/libcd-show_mouse.la
 lib/cairo-dock/libcd-show_mouse.so
-lib/cairo-dock/libcd-slider.la
 lib/cairo-dock/libcd-slider.so
-lib/cairo-dock/libcd-stack.la
 lib/cairo-dock/libcd-stack.so
-lib/cairo-dock/libcd-switcher.la
 lib/cairo-dock/libcd-switcher.so
-lib/cairo-dock/libcd-systray.la
 lib/cairo-dock/libcd-systray.so
-%%TERMINAL%%lib/cairo-dock/libcd-terminal.la
 %%TERMINAL%%lib/cairo-dock/libcd-terminal.so
-lib/cairo-dock/libcd-tomboy.la
 lib/cairo-dock/libcd-tomboy.so
-lib/cairo-dock/libcd-weather.la
 lib/cairo-dock/libcd-weather.so
-%%WEBLETS%%lib/cairo-dock/libcd-weblets.la
 %%WEBLETS%%lib/cairo-dock/libcd-weblets.so
-lib/cairo-dock/libcd-wifi.la
 lib/cairo-dock/libcd-wifi.so
-lib/cairo-dock/libcd_gnome-integration.la
 lib/cairo-dock/libcd_gnome-integration.so
-%%XFCE_INTEGRATION%%lib/cairo-dock/libcd_xfce-integration.la
 %%XFCE_INTEGRATION%%lib/cairo-dock/libcd_xfce-integration.so
 share/locale/fr/LC_MESSAGES/cairo-dock-plugins.mo
 share/locale/it/LC_MESSAGES/cairo-dock-plugins.mo
@@ -98,392 +57,381 @@ share/locale/es/LC_MESSAGES/cairo-dock-plugins.mo
 share/locale/hu/LC_MESSAGES/cairo-dock-plugins.mo
 share/locale/uk/LC_MESSAGES/cairo-dock-plugins.mo
 share/locale/zh_TW/LC_MESSAGES/cairo-dock-plugins.mo
-%%DATADIR%%/plug-ins/Animated-icons/Animated-icons.conf
-%%DATADIR%%/plug-ins/Animated-icons/preview.jpg
-%%DATADIR%%/plug-ins/Animated-icons/icon.svg
-%%DATADIR%%/plug-ins/Animated-icons/texture-chrome.png
-%%DATADIR%%/plug-ins/Animated-icons/icon-rotation.png
-%%DATADIR%%/plug-ins/Animated-icons/spot.png
-%%DATADIR%%/plug-ins/Animated-icons/halo.png
-%%DATADIR%%/plug-ins/Animated-icons/ray.png
-%%DATADIR%%/plug-ins/Animated-icons/icon-wave.png
-%%DATADIR%%/plug-ins/Cairo-Penguin/Cairo-Penguin.conf
-%%DATADIR%%/plug-ins/Cairo-Penguin/icon.png
-%%DATADIR%%/plug-ins/Cairo-Penguin/preview.jpg
-%%DATADIR%%/plug-ins/Cairo-Penguin/themes/Classic/theme.conf
-%%DATADIR%%/plug-ins/Cairo-Penguin/themes/Classic/readme
-%%DATADIR%%/plug-ins/Cairo-Penguin/themes/Classic/basher.png
-%%DATADIR%%/plug-ins/Cairo-Penguin/themes/Classic/blocker.png
-%%DATADIR%%/plug-ins/Cairo-Penguin/themes/Classic/boarder.png
-%%DATADIR%%/plug-ins/Cairo-Penguin/themes/Classic/bomber.png
-%%DATADIR%%/plug-ins/Cairo-Penguin/themes/Classic/bridger.png
-%%DATADIR%%/plug-ins/Cairo-Penguin/themes/Classic/climber.xpm
-%%DATADIR%%/plug-ins/Cairo-Penguin/themes/Classic/digger.png
-%%DATADIR%%/plug-ins/Cairo-Penguin/themes/Classic/drownfall.png
-%%DATADIR%%/plug-ins/Cairo-Penguin/themes/Classic/drownwalk.png
-%%DATADIR%%/plug-ins/Cairo-Penguin/themes/Classic/exit.png
-%%DATADIR%%/plug-ins/Cairo-Penguin/themes/Classic/faller.png
-%%DATADIR%%/plug-ins/Cairo-Penguin/themes/Classic/floater.png
-%%DATADIR%%/plug-ins/Cairo-Penguin/themes/Classic/miner.png
-%%DATADIR%%/plug-ins/Cairo-Penguin/themes/Classic/reader.xpm
-%%DATADIR%%/plug-ins/Cairo-Penguin/themes/Classic/slider.png
-%%DATADIR%%/plug-ins/Cairo-Penguin/themes/Classic/superman.png
-%%DATADIR%%/plug-ins/Cairo-Penguin/themes/Classic/tumble.png
-%%DATADIR%%/plug-ins/Cairo-Penguin/themes/Classic/waiter.png
-%%DATADIR%%/plug-ins/Cairo-Penguin/themes/Classic/walker.png
-%%DATADIR%%/plug-ins/Cairo-Penguin/themes/Classic/sitter.png
-%%DATADIR%%/plug-ins/Cairo-Penguin/themes/Classic/xmas-walker.png
-%%DATADIR%%/plug-ins/Clipper/Clipper.conf
-%%DATADIR%%/plug-ins/Clipper/icon.svg
-%%DATADIR%%/plug-ins/Clipper/preview.jpg
-%%DATADIR%%/plug-ins/Clipper/Clipper-actions-gnome.conf
-%%DATADIR%%/plug-ins/Clipper/Clipper-actions-xfce.conf
-%%DATADIR%%/plug-ins/Clipper/Clipper-actions-kde.conf
-%%DATADIR%%/plug-ins/clock/clock.conf
-%%DATADIR%%/plug-ins/clock/preview.jpg
-%%DATADIR%%/plug-ins/clock/dates.svg
-%%DATADIR%%/plug-ins/clock/icon.png
-%%DATADIR%%/plug-ins/clock/icon-alarm.png
-%%DATADIR%%/plug-ins/clock/themes/default/readme
-%%DATADIR%%/plug-ins/clock/themes/default/clock-drop-shadow.svg
-%%DATADIR%%/plug-ins/clock/themes/default/clock-face-shadow.svg
-%%DATADIR%%/plug-ins/clock/themes/default/clock-face.svg
-%%DATADIR%%/plug-ins/clock/themes/default/clock-frame.svg
-%%DATADIR%%/plug-ins/clock/themes/default/clock-glass.svg
-%%DATADIR%%/plug-ins/clock/themes/default/clock-hour-hand-shadow.svg
-%%DATADIR%%/plug-ins/clock/themes/default/clock-hour-hand.svg
-%%DATADIR%%/plug-ins/clock/themes/default/clock-marks.svg
-%%DATADIR%%/plug-ins/clock/themes/default/clock-minute-hand-shadow.svg
-%%DATADIR%%/plug-ins/clock/themes/default/clock-minute-hand.svg
-%%DATADIR%%/plug-ins/clock/themes/default/clock-second-hand-shadow.svg
-%%DATADIR%%/plug-ins/clock/themes/default/clock-second-hand.svg
-%%DATADIR%%/plug-ins/clock/themes/default/theme.conf
-%%DATADIR%%/plug-ins/clock/digital/default/config
-%%DATADIR%%/plug-ins/clock/digital/default/frame_0.svg
-%%DATADIR%%/plug-ins/clock/digital/default/frame_1.svg
-%%DATADIR%%/plug-ins/clock/digital/default/frame_2.svg
-%%DATADIR%%/plug-ins/clock/digital/default/frame_3.svg
-%%DATADIR%%/plug-ins/compiz-icon/compiz
-%%DATADIR%%/plug-ins/compiz-icon/compiz-kill
-%%DATADIR%%/plug-ins/compiz-icon/compiz-icon.conf
-%%DATADIR%%/plug-ins/compiz-icon/default.svg
-%%DATADIR%%/plug-ins/compiz-icon/broken.svg
-%%DATADIR%%/plug-ins/compiz-icon/other.svg
-%%DATADIR%%/plug-ins/compiz-icon/0.svg
-%%DATADIR%%/plug-ins/compiz-icon/1.svg
-%%DATADIR%%/plug-ins/compiz-icon/2.svg
-%%DATADIR%%/plug-ins/compiz-icon/3.svg
-%%DATADIR%%/plug-ins/compiz-icon/4.svg
-%%DATADIR%%/plug-ins/compiz-icon/icon.png
-%%DATADIR%%/plug-ins/compiz-icon/preview.jpg
-%%DATADIR%%/plug-ins/Dbus/Dbus.conf
-%%DATADIR%%/plug-ins/Dbus/icon.svg
-%%DATADIR%%/plug-ins/desklet-rendering/icon.svg
-%%DATADIR%%/plug-ins/desklet-rendering/branche1.svg
-%%DATADIR%%/plug-ins/desklet-rendering/branche2.svg
-%%DATADIR%%/plug-ins/desklet-rendering/scotch.svg
-%%DATADIR%%/plug-ins/desklet-rendering/scotch+frame.svg
-%%DATADIR%%/plug-ins/desklet-rendering/frame.svg
-%%DATADIR%%/plug-ins/desklet-rendering/reflect.svg
-%%DATADIR%%/plug-ins/desklet-rendering/cd_box_cover.svg
-%%DATADIR%%/plug-ins/desklet-rendering/cd_box.svg
-%%DATADIR%%/plug-ins/desklet-rendering/starcraft2.png
-%%DATADIR%%/plug-ins/desklet-rendering/dark-bg.png
-%%DATADIR%%/plug-ins/desklet-rendering/clear-bg.svg
-%%DATADIR%%/plug-ins/desklet-rendering/board.png
-%%DATADIR%%/plug-ins/dialog-rendering/dialog-rendering.conf
-%%DATADIR%%/plug-ins/dialog-rendering/icon.svg
-%%DATADIR%%/plug-ins/dnd2share/upload2free.sh
-%%DATADIR%%/plug-ins/dnd2share/dnd2share.conf
-%%DATADIR%%/plug-ins/dnd2share/readme
-%%DATADIR%%/plug-ins/dnd2share/icon.png
-%%DATADIR%%/plug-ins/dnd2share/preview.jpg
-%%GMENU%%%%DATADIR%%/plug-ins/GMenu/GMenu.conf
-%%GMENU%%%%DATADIR%%/plug-ins/GMenu/icon-recent.png
-%%GMENU%%%%DATADIR%%/plug-ins/GMenu/icon.svg
-%%GMENU%%%%DATADIR%%/plug-ins/GMenu/preview.jpg
-%%DATADIR%%/plug-ins/drop-indicator/drop_indicator.conf
-%%DATADIR%%/plug-ins/drop-indicator/icon.svg
-%%DATADIR%%/plug-ins/drop-indicator/preview.jpg
-%%DATADIR%%/plug-ins/drop-indicator/default-drop-indicator.svg
-%%DATADIR%%/plug-ins/drop-indicator/default-hover-indicator.svg
-%%DATADIR%%/plug-ins/dustbin/dustbin.conf
-%%DATADIR%%/plug-ins/dustbin/preview.jpg
-%%DATADIR%%/plug-ins/dustbin/icon.png
-%%DATADIR%%/plug-ins/dustbin/themes/default/trashcan_full.svg
-%%DATADIR%%/plug-ins/dustbin/themes/default/trashcan_empty.svg
-%%DATADIR%%/plug-ins/gnome-integration/icon.png
-%%DATADIR%%/plug-ins/icon-effect/icon-effect.conf
-%%DATADIR%%/plug-ins/icon-effect/icon.png
-%%DATADIR%%/plug-ins/icon-effect/icon-firework.png
-%%DATADIR%%/plug-ins/icon-effect/preview.jpg
-%%DATADIR%%/plug-ins/icon-effect/star.png
-%%DATADIR%%/plug-ins/icon-effect/snow.png
-%%DATADIR%%/plug-ins/icon-effect/rain.png
-%%DATADIR%%/plug-ins/icon-effect/icon-fire.svg
-%%DATADIR%%/plug-ins/icon-effect/icon-storm.png
-%%DATADIR%%/plug-ins/illusion/illusion.conf
-%%DATADIR%%/plug-ins/illusion/icon.svg
-%%DATADIR%%/plug-ins/illusion/preview.jpg
-%%DATADIR%%/plug-ins/illusion/icon-black-hole.svg
-%%DATADIR%%/plug-ins/illusion/icon-break.svg
-%%DATADIR%%/plug-ins/illusion/icon-evaporate.svg
-%%DATADIR%%/plug-ins/illusion/icon-explode.svg
-%%DATADIR%%/plug-ins/illusion/icon-fade-out.svg
-%%DATADIR%%/plug-ins/kde-integration/icon.png
-%%KEYBOARD_INDICATOR%%%%DATADIR%%/plug-ins/keyboard-indicator/keyboard-indicator.conf
-%%KEYBOARD_INDICATOR%%%%DATADIR%%/plug-ins/keyboard-indicator/icon.png
-%%KEYBOARD_INDICATOR%%%%DATADIR%%/plug-ins/keyboard-indicator/preview.jpg
-%%DATADIR%%/plug-ins/logout/logout.conf
-%%DATADIR%%/plug-ins/logout/icon.svg
-%%DATADIR%%/plug-ins/logout/icon-scheduling.png
-%%DATADIR%%/plug-ins/mail/preview.jpg
-%%DATADIR%%/plug-ins/mail/cd_mail_icon.png
-%%DATADIR%%/plug-ins/mail/cd_mail_newmail.svg
-%%DATADIR%%/plug-ins/mail/cd_mail_nomail.svg
-%%DATADIR%%/plug-ins/mail/mail.conf
-%%DATADIR%%/plug-ins/mail/themes/Default/has_mail.svg
-%%DATADIR%%/plug-ins/mail/themes/Default/new_mail_sound.wav
-%%DATADIR%%/plug-ins/mail/themes/Default/no_mail.svg
-%%DATADIR%%/plug-ins/motion-blur/motion_blur.conf
-%%DATADIR%%/plug-ins/motion-blur/icon.png
-%%DATADIR%%/plug-ins/musicPlayer/musicPlayer.conf
-%%DATADIR%%/plug-ins/musicPlayer/broken.svg
-%%DATADIR%%/plug-ins/musicPlayer/pause.svg
-%%DATADIR%%/plug-ins/musicPlayer/play.svg
-%%DATADIR%%/plug-ins/musicPlayer/preview.jpg
-%%DATADIR%%/plug-ins/musicPlayer/stop.svg
-%%DATADIR%%/plug-ins/musicPlayer/default.svg
-%%DATADIR%%/plug-ins/musicPlayer/broken.jpg
-%%DATADIR%%/plug-ins/musicPlayer/pause.jpg
-%%DATADIR%%/plug-ins/musicPlayer/play.jpg
-%%DATADIR%%/plug-ins/musicPlayer/stop.jpg
-%%DATADIR%%/plug-ins/musicPlayer/default.jpg
-%%DATADIR%%/plug-ins/musicPlayer/0.svg
-%%DATADIR%%/plug-ins/musicPlayer/1.svg
-%%DATADIR%%/plug-ins/musicPlayer/2.svg
-%%DATADIR%%/plug-ins/musicPlayer/3.svg
-%%DATADIR%%/plug-ins/musicPlayer/icon.png
-%%DATADIR%%/plug-ins/musicPlayer/themes/cd_box_simple/readme
-%%DATADIR%%/plug-ins/musicPlayer/themes/cd_box_simple/preview
-%%DATADIR%%/plug-ins/musicPlayer/themes/cd_box_simple/frame.svg
-%%DATADIR%%/plug-ins/musicPlayer/themes/cd_box_simple/reflect.svg
-%%DATADIR%%/plug-ins/musicPlayer/themes/cd_box_simple/theme.conf
-%%DATADIR%%/plug-ins/netspeed/netspeed.conf
-%%DATADIR%%/plug-ins/netspeed/default.png
-%%DATADIR%%/plug-ins/netspeed/icon.png
-%%DATADIR%%/plug-ins/netspeed/preview.jpg
-%%DATADIR%%/plug-ins/netspeed/ok.png
-%%DATADIR%%/plug-ins/netspeed/unknown.png
-%%DATADIR%%/plug-ins/netspeed/bad.png
-%%DATADIR%%/plug-ins/netspeed/netspeed
-%%DATADIR%%/plug-ins/powermanager/sector.svg
-%%DATADIR%%/plug-ins/powermanager/default-battery.svg
-%%DATADIR%%/plug-ins/powermanager/default-charge.svg
-%%DATADIR%%/plug-ins/powermanager/powermanager.conf
-%%DATADIR%%/plug-ins/powermanager/icon.png
-%%DATADIR%%/plug-ins/powermanager/charge.svg
-%%DATADIR%%/plug-ins/powermanager/preview.jpg
-%%DATADIR%%/plug-ins/quick_browser/quick-browser.conf
-%%DATADIR%%/plug-ins/quick_browser/icon.svg
-%%DATADIR%%/plug-ins/quick_browser/preview.jpg
-%%DATADIR%%/plug-ins/rendering/rendering.conf
-%%DATADIR%%/plug-ins/rendering/icon.svg
-%%DATADIR%%/plug-ins/rendering/preview-caroussel.jpg
-%%DATADIR%%/plug-ins/rendering/preview-parabolic.jpg
-%%DATADIR%%/plug-ins/rendering/preview-3D-plane.jpg
-%%DATADIR%%/plug-ins/rendering/preview-rainbow.jpg
-%%DATADIR%%/plug-ins/rendering/preview-diapo.jpg
-%%DATADIR%%/plug-ins/rendering/preview-diapo-simple.jpg
-%%DATADIR%%/plug-ins/rendering/preview-curve.jpg
-%%DATADIR%%/plug-ins/rendering/readme-3D-plane-view
-%%DATADIR%%/plug-ins/rendering/readme-caroussel-view
-%%DATADIR%%/plug-ins/rendering/readme-curve-view
-%%DATADIR%%/plug-ins/rendering/readme-diapo-simple-view
-%%DATADIR%%/plug-ins/rendering/readme-diapo-view
-%%DATADIR%%/plug-ins/rendering/readme-parabolic-view
-%%DATADIR%%/plug-ins/rendering/readme-rainbow-view
-%%DATADIR%%/plug-ins/RSSreader/icon.svg
-%%DATADIR%%/plug-ins/RSSreader/preview.jpg
-%%DATADIR%%/plug-ins/RSSreader/RSSreader.conf
-%%DATADIR%%/plug-ins/shortcuts/shortcuts.conf
-%%DATADIR%%/plug-ins/shortcuts/icon.png
-%%DATADIR%%/plug-ins/shortcuts/preview.jpg
-%%DATADIR%%/plug-ins/showDesktop/showDesktop.conf
-%%DATADIR%%/plug-ins/showDesktop/icon.png
-%%DATADIR%%/plug-ins/showDesktop/icon-active.png
-%%DATADIR%%/plug-ins/show_mouse/show_mouse.conf
-%%DATADIR%%/plug-ins/show_mouse/icon.png
-%%DATADIR%%/plug-ins/show_mouse/preview.jpg
-%%DATADIR%%/plug-ins/slider/slider.conf
-%%DATADIR%%/plug-ins/slider/icon.png
-%%DATADIR%%/plug-ins/slider/preview.jpg
-%%DATADIR%%/plug-ins/stack/stack.conf
-%%DATADIR%%/plug-ins/stack/icon.png
-%%DATADIR%%/plug-ins/stack/preview.jpg
-%%DATADIR%%/plug-ins/stack/text-icon.svg
-%%DATADIR%%/plug-ins/stack/url-icon.svg
-%%DATADIR%%/plug-ins/switcher/broken.svg
-%%DATADIR%%/plug-ins/switcher/default.svg
-%%DATADIR%%/plug-ins/switcher/preview.jpg
-%%DATADIR%%/plug-ins/switcher/workspaces.svg
-%%DATADIR%%/plug-ins/switcher/switcher.conf
-%%DATADIR%%/plug-ins/System-monitor/nvidia-config
-%%DATADIR%%/plug-ins/System-monitor/System-Monitor.conf
-%%DATADIR%%/plug-ins/System-monitor/icon.png
-%%DATADIR%%/plug-ins/System-monitor/preview.jpg
-%%DATADIR%%/plug-ins/System-monitor/button-cpu.png
-%%DATADIR%%/plug-ins/System-monitor/button-ram.png
-%%DATADIR%%/plug-ins/systray/systray.conf
-%%DATADIR%%/plug-ins/systray/icon.png
-%%DATADIR%%/plug-ins/systray/preview.jpg
-%%TERMINAL%%%%DATADIR%%/plug-ins/terminal/icon.png
-%%TERMINAL%%%%DATADIR%%/plug-ins/terminal/preview.jpg
-%%TERMINAL%%%%DATADIR%%/plug-ins/terminal/terminal.conf
-%%DATADIR%%/plug-ins/tomboy/default.svg
-%%DATADIR%%/plug-ins/tomboy/close.svg
-%%DATADIR%%/plug-ins/tomboy/broken.svg
-%%DATADIR%%/plug-ins/tomboy/note.svg
-%%DATADIR%%/plug-ins/tomboy/tomboy.conf
-%%DATADIR%%/plug-ins/tomboy/icon.png
-%%DATADIR%%/plug-ins/tomboy/preview.jpg
-%%DATADIR%%/plug-ins/Toons/Toons.conf
-%%DATADIR%%/plug-ins/Toons/icon.png
-%%DATADIR%%/plug-ins/Toons/preview.jpg
-%%DATADIR%%/plug-ins/Toons/themes/Classic/theme.conf
-%%DATADIR%%/plug-ins/Toons/themes/Classic/readme
-%%DATADIR%%/plug-ins/Toons/themes/Classic/toon.svg
-%%DATADIR%%/plug-ins/Toons/themes/Classic/pupil.svg
-%%DATADIR%%/plug-ins/Toons/themes/Classic/eyelid.svg
-%%DATADIR%%/plug-ins/weather/weather.conf
-%%DATADIR%%/plug-ins/weather/broken.png
-%%DATADIR%%/plug-ins/weather/icon.png
-%%DATADIR%%/plug-ins/weather/preview.jpg
-%%DATADIR%%/plug-ins/weather/themes/Classic/0.png
-%%DATADIR%%/plug-ins/weather/themes/Classic/1.png
-%%DATADIR%%/plug-ins/weather/themes/Classic/2.png
-%%DATADIR%%/plug-ins/weather/themes/Classic/3.png
-%%DATADIR%%/plug-ins/weather/themes/Classic/4.png
-%%DATADIR%%/plug-ins/weather/themes/Classic/5.png
-%%DATADIR%%/plug-ins/weather/themes/Classic/6.png
-%%DATADIR%%/plug-ins/weather/themes/Classic/7.png
-%%DATADIR%%/plug-ins/weather/themes/Classic/8.png
-%%DATADIR%%/plug-ins/weather/themes/Classic/9.png
-%%DATADIR%%/plug-ins/weather/themes/Classic/10.png
-%%DATADIR%%/plug-ins/weather/themes/Classic/11.png
-%%DATADIR%%/plug-ins/weather/themes/Classic/12.png
-%%DATADIR%%/plug-ins/weather/themes/Classic/13.png
-%%DATADIR%%/plug-ins/weather/themes/Classic/14.png
-%%DATADIR%%/plug-ins/weather/themes/Classic/15.png
-%%DATADIR%%/plug-ins/weather/themes/Classic/16.png
-%%DATADIR%%/plug-ins/weather/themes/Classic/17.png
-%%DATADIR%%/plug-ins/weather/themes/Classic/18.png
-%%DATADIR%%/plug-ins/weather/themes/Classic/19.png
-%%DATADIR%%/plug-ins/weather/themes/Classic/20.png
-%%DATADIR%%/plug-ins/weather/themes/Classic/21.png
-%%DATADIR%%/plug-ins/weather/themes/Classic/22.png
-%%DATADIR%%/plug-ins/weather/themes/Classic/23.png
-%%DATADIR%%/plug-ins/weather/themes/Classic/24.png
-%%DATADIR%%/plug-ins/weather/themes/Classic/25.png
-%%DATADIR%%/plug-ins/weather/themes/Classic/26.png
-%%DATADIR%%/plug-ins/weather/themes/Classic/27.png
-%%DATADIR%%/plug-ins/weather/themes/Classic/28.png
-%%DATADIR%%/plug-ins/weather/themes/Classic/29.png
-%%DATADIR%%/plug-ins/weather/themes/Classic/30.png
-%%DATADIR%%/plug-ins/weather/themes/Classic/31.png
-%%DATADIR%%/plug-ins/weather/themes/Classic/32.png
-%%DATADIR%%/plug-ins/weather/themes/Classic/33.png
-%%DATADIR%%/plug-ins/weather/themes/Classic/34.png
-%%DATADIR%%/plug-ins/weather/themes/Classic/35.png
-%%DATADIR%%/plug-ins/weather/themes/Classic/36.png
-%%DATADIR%%/plug-ins/weather/themes/Classic/37.png
-%%DATADIR%%/plug-ins/weather/themes/Classic/38.png
-%%DATADIR%%/plug-ins/weather/themes/Classic/39.png
-%%DATADIR%%/plug-ins/weather/themes/Classic/40.png
-%%DATADIR%%/plug-ins/weather/themes/Classic/41.png
-%%DATADIR%%/plug-ins/weather/themes/Classic/42.png
-%%DATADIR%%/plug-ins/weather/themes/Classic/43.png
-%%DATADIR%%/plug-ins/weather/themes/Classic/44.png
-%%DATADIR%%/plug-ins/weather/themes/Classic/45.png
-%%DATADIR%%/plug-ins/weather/themes/Classic/46.png
-%%DATADIR%%/plug-ins/weather/themes/Classic/47.png
-%%DATADIR%%/plug-ins/weather/themes/Classic/na.png
-%%DATADIR%%/plug-ins/weather/themes/Classic/preview
-%%DATADIR%%/plug-ins/weather/themes/Classic/readme
-%%WEBLETS%%%%DATADIR%%/plug-ins/weblets/icon.png
-%%WEBLETS%%%%DATADIR%%/plug-ins/weblets/preview.jpg
-%%WEBLETS%%%%DATADIR%%/plug-ins/weblets/weblets.conf
-%%DATADIR%%/plug-ins/wifi/wifi
-%%DATADIR%%/plug-ins/wifi/wifi.conf
-%%DATADIR%%/plug-ins/wifi/link-0.svg
-%%DATADIR%%/plug-ins/wifi/link-1.svg
-%%DATADIR%%/plug-ins/wifi/link-2.svg
-%%DATADIR%%/plug-ins/wifi/link-3.svg
-%%DATADIR%%/plug-ins/wifi/link-4.svg
-%%DATADIR%%/plug-ins/wifi/link-5.svg
-%%DATADIR%%/plug-ins/wifi/icon.png
-%%DATADIR%%/plug-ins/wifi/preview.jpg
-%%XFCE_INTEGRATION%%%%DATADIR%%/plug-ins/xfce-integration/icon.png
-%%DATADIR%%/plug-ins/Xgamma/Xgamma.conf
-%%DATADIR%%/plug-ins/Xgamma/icon.png
-%%DATADIR%%/plug-ins/Xgamma/preview.jpg
-@dirrm %%DATADIR%%/plug-ins/Animated-icons
-@dirrm %%DATADIR%%/plug-ins/Cairo-Penguin/themes/Classic
-@dirrm %%DATADIR%%/plug-ins/Cairo-Penguin/themes
-@dirrm %%DATADIR%%/plug-ins/Cairo-Penguin
-@dirrm %%DATADIR%%/plug-ins/Clipper
-@dirrm %%DATADIR%%/plug-ins/Dbus
-%%GMENU%%@dirrm %%DATADIR%%/plug-ins/GMenu
-@dirrm %%DATADIR%%/plug-ins/System-monitor
-@dirrm %%DATADIR%%/plug-ins/Toons/themes/Classic
-@dirrm %%DATADIR%%/plug-ins/Toons/themes
-@dirrm %%DATADIR%%/plug-ins/Toons
-@dirrm %%DATADIR%%/plug-ins/Xgamma
-@dirrm %%DATADIR%%/plug-ins/clock/digital/default
-@dirrm %%DATADIR%%/plug-ins/clock/digital
-@dirrm %%DATADIR%%/plug-ins/clock/themes/default
-@dirrm %%DATADIR%%/plug-ins/clock/themes
-@dirrm %%DATADIR%%/plug-ins/clock
-@dirrm %%DATADIR%%/plug-ins/compiz-icon
-@dirrm %%DATADIR%%/plug-ins/desklet-rendering
-@dirrm %%DATADIR%%/plug-ins/dialog-rendering
-@dirrm %%DATADIR%%/plug-ins/dnd2share
-@dirrm %%DATADIR%%/plug-ins/drop-indicator
-@dirrm %%DATADIR%%/plug-ins/dustbin/themes/default
-@dirrm %%DATADIR%%/plug-ins/dustbin/themes
-@dirrm %%DATADIR%%/plug-ins/dustbin
-@dirrm %%DATADIR%%/plug-ins/gnome-integration
-@dirrm %%DATADIR%%/plug-ins/icon-effect
-@dirrm %%DATADIR%%/plug-ins/illusion
-@dirrm %%DATADIR%%/plug-ins/kde-integration
-%%KEYBOARD_INDICATOR%%@dirrm %%DATADIR%%/plug-ins/keyboard-indicator
-@dirrm %%DATADIR%%/plug-ins/logout
-@dirrm %%DATADIR%%/plug-ins/mail/themes/Default
-@dirrm %%DATADIR%%/plug-ins/mail/themes
-@dirrm %%DATADIR%%/plug-ins/mail
-@dirrm %%DATADIR%%/plug-ins/motion-blur
-@dirrm %%DATADIR%%/plug-ins/musicPlayer/themes/cd_box_simple
-@dirrm %%DATADIR%%/plug-ins/musicPlayer/themes
-@dirrm %%DATADIR%%/plug-ins/musicPlayer
-@dirrm %%DATADIR%%/plug-ins/netspeed
-@dirrm %%DATADIR%%/plug-ins/powermanager
-@dirrm %%DATADIR%%/plug-ins/quick_browser
-@dirrm %%DATADIR%%/plug-ins/RSSreader
-@dirrm %%DATADIR%%/plug-ins/rendering
-@dirrm %%DATADIR%%/plug-ins/shortcuts
-@dirrm %%DATADIR%%/plug-ins/showDesktop
-@dirrm %%DATADIR%%/plug-ins/show_mouse
-@dirrm %%DATADIR%%/plug-ins/slider
-@dirrm %%DATADIR%%/plug-ins/stack
-@dirrm %%DATADIR%%/plug-ins/switcher
-@dirrm %%DATADIR%%/plug-ins/systray
-%%TERMINAL%%@dirrm %%DATADIR%%/plug-ins/terminal
-@dirrm %%DATADIR%%/plug-ins/tomboy
-@dirrm %%DATADIR%%/plug-ins/weather/themes/Classic
-@dirrm %%DATADIR%%/plug-ins/weather/themes
-@dirrm %%DATADIR%%/plug-ins/weather
-%%WEBLETS%%@dirrm %%DATADIR%%/plug-ins/weblets
-@dirrm %%DATADIR%%/plug-ins/wifi
-%%XFCE_INTEGRATION%%@dirrm %%DATADIR%%/plug-ins/xfce-integration
-@dirrm %%DATADIR%%/plug-ins
+share/locale/ar/LC_MESSAGES/cairo-dock-plugins.mo
+share/locale/et/LC_MESSAGES/cairo-dock-plugins.mo
+share/locale/sk/LC_MESSAGES/cairo-dock-plugins.mo
+share/locale/sr/LC_MESSAGES/cairo-dock-plugins.mo
+share/locale/tr/LC_MESSAGES/cairo-dock-plugins.mo
+share/cairo-dock/plug-ins/dnd2share/icon.svg
+share/cairo-dock/plug-ins/rendering/preview-panel.jpg
+share/cairo-dock/plug-ins/rendering/readme-panel-view
+share/cairo-dock/plug-ins/Folders/Folders.conf
+share/cairo-dock/plug-ins/Folders/preview.jpg
+share/cairo-dock/plug-ins/Folders/icon.svg
+share/cairo-dock/plug-ins/logout/icon-lock.png
+%%XFCE_INTEGRATION%%share/cairo-dock/plug-ins/xfce-integration/icon.png
+%%ALSA_MIXER%%share/cairo-dock/plug-ins/AlsaMixer/AlsaMixer.conf
+%%ALSA_MIXER%%share/cairo-dock/plug-ins/AlsaMixer/broken.svg
+%%ALSA_MIXER%%share/cairo-dock/plug-ins/AlsaMixer/default.svg
+%%ALSA_MIXER%%share/cairo-dock/plug-ins/AlsaMixer/emblem-mute.svg
+%%ALSA_MIXER%%share/cairo-dock/plug-ins/AlsaMixer/icon.png
+%%ALSA_MIXER%%share/cairo-dock/plug-ins/AlsaMixer/mute.svg
+%%ALSA_MIXER%%share/cairo-dock/plug-ins/AlsaMixer/preview.jpg
+share/cairo-dock/plug-ins/Animated-icons/Animated-icons.conf
+share/cairo-dock/plug-ins/Animated-icons/preview.jpg
+share/cairo-dock/plug-ins/Animated-icons/icon.svg
+share/cairo-dock/plug-ins/Animated-icons/texture-chrome.png
+share/cairo-dock/plug-ins/Animated-icons/icon-rotation.png
+share/cairo-dock/plug-ins/Animated-icons/spot.png
+share/cairo-dock/plug-ins/Animated-icons/halo.png
+share/cairo-dock/plug-ins/Animated-icons/ray.png
+share/cairo-dock/plug-ins/Animated-icons/icon-wave.png
+share/cairo-dock/plug-ins/Cairo-Penguin/Cairo-Penguin.conf
+share/cairo-dock/plug-ins/Cairo-Penguin/icon.png
+share/cairo-dock/plug-ins/Cairo-Penguin/preview.jpg
+share/cairo-dock/plug-ins/Cairo-Penguin/themes/Classic/theme.conf
+share/cairo-dock/plug-ins/Cairo-Penguin/themes/Classic/readme
+share/cairo-dock/plug-ins/Cairo-Penguin/themes/Classic/basher.png
+share/cairo-dock/plug-ins/Cairo-Penguin/themes/Classic/blocker.png
+share/cairo-dock/plug-ins/Cairo-Penguin/themes/Classic/boarder.png
+share/cairo-dock/plug-ins/Cairo-Penguin/themes/Classic/bomber.png
+share/cairo-dock/plug-ins/Cairo-Penguin/themes/Classic/bridger.png
+share/cairo-dock/plug-ins/Cairo-Penguin/themes/Classic/climber.xpm
+share/cairo-dock/plug-ins/Cairo-Penguin/themes/Classic/digger.png
+share/cairo-dock/plug-ins/Cairo-Penguin/themes/Classic/drownfall.png
+share/cairo-dock/plug-ins/Cairo-Penguin/themes/Classic/drownwalk.png
+share/cairo-dock/plug-ins/Cairo-Penguin/themes/Classic/exit.png
+share/cairo-dock/plug-ins/Cairo-Penguin/themes/Classic/faller.png
+share/cairo-dock/plug-ins/Cairo-Penguin/themes/Classic/floater.png
+share/cairo-dock/plug-ins/Cairo-Penguin/themes/Classic/miner.png
+share/cairo-dock/plug-ins/Cairo-Penguin/themes/Classic/reader.xpm
+share/cairo-dock/plug-ins/Cairo-Penguin/themes/Classic/slider.png
+share/cairo-dock/plug-ins/Cairo-Penguin/themes/Classic/superman.png
+share/cairo-dock/plug-ins/Cairo-Penguin/themes/Classic/tumble.png
+share/cairo-dock/plug-ins/Cairo-Penguin/themes/Classic/waiter.png
+share/cairo-dock/plug-ins/Cairo-Penguin/themes/Classic/walker.png
+share/cairo-dock/plug-ins/Cairo-Penguin/themes/Classic/sitter.png
+share/cairo-dock/plug-ins/Cairo-Penguin/themes/Classic/xmas-walker.png
+share/cairo-dock/plug-ins/Clipper/Clipper.conf
+share/cairo-dock/plug-ins/Clipper/icon.svg
+share/cairo-dock/plug-ins/Clipper/preview.jpg
+share/cairo-dock/plug-ins/Clipper/Clipper-actions-gnome.conf
+share/cairo-dock/plug-ins/Clipper/Clipper-actions-xfce.conf
+share/cairo-dock/plug-ins/Clipper/Clipper-actions-kde.conf
+share/cairo-dock/plug-ins/compiz-icon/compiz
+share/cairo-dock/plug-ins/compiz-icon/compiz-kill
+share/cairo-dock/plug-ins/compiz-icon/compiz-icon.conf
+share/cairo-dock/plug-ins/compiz-icon/default.svg
+share/cairo-dock/plug-ins/compiz-icon/broken.svg
+share/cairo-dock/plug-ins/compiz-icon/other.svg
+share/cairo-dock/plug-ins/compiz-icon/0.svg
+share/cairo-dock/plug-ins/compiz-icon/1.svg
+share/cairo-dock/plug-ins/compiz-icon/2.svg
+share/cairo-dock/plug-ins/compiz-icon/3.svg
+share/cairo-dock/plug-ins/compiz-icon/4.svg
+share/cairo-dock/plug-ins/compiz-icon/icon.png
+share/cairo-dock/plug-ins/compiz-icon/preview.jpg
+share/cairo-dock/plug-ins/Dbus/Dbus.conf
+share/cairo-dock/plug-ins/Dbus/icon.svg
+share/cairo-dock/plug-ins/desklet-rendering/icon.svg
+share/cairo-dock/plug-ins/desklet-rendering/branche1.svg
+share/cairo-dock/plug-ins/desklet-rendering/branche2.svg
+share/cairo-dock/plug-ins/desklet-rendering/scotch.svg
+share/cairo-dock/plug-ins/desklet-rendering/scotch+frame.svg
+share/cairo-dock/plug-ins/desklet-rendering/frame.svg
+share/cairo-dock/plug-ins/desklet-rendering/reflect.svg
+share/cairo-dock/plug-ins/desklet-rendering/cd_box_cover.svg
+share/cairo-dock/plug-ins/desklet-rendering/cd_box.svg
+share/cairo-dock/plug-ins/desklet-rendering/starcraft2.png
+share/cairo-dock/plug-ins/desklet-rendering/dark-bg.png
+share/cairo-dock/plug-ins/desklet-rendering/clear-bg.svg
+share/cairo-dock/plug-ins/desklet-rendering/board.png
+share/cairo-dock/plug-ins/dialog-rendering/dialog-rendering.conf
+share/cairo-dock/plug-ins/dialog-rendering/icon.svg
+share/cairo-dock/plug-ins/dnd2share/upload2free.sh
+share/cairo-dock/plug-ins/dnd2share/dnd2share.conf
+share/cairo-dock/plug-ins/dnd2share/readme
+share/cairo-dock/plug-ins/dnd2share/preview.jpg
+%%GMENU%%share/cairo-dock/plug-ins/GMenu/GMenu.conf
+%%GMENU%%share/cairo-dock/plug-ins/GMenu/icon-recent.png
+%%GMENU%%share/cairo-dock/plug-ins/GMenu/icon.svg
+%%GMENU%%share/cairo-dock/plug-ins/GMenu/preview.jpg
+share/cairo-dock/plug-ins/drop-indicator/drop_indicator.conf
+share/cairo-dock/plug-ins/drop-indicator/icon.svg
+share/cairo-dock/plug-ins/drop-indicator/preview.jpg
+share/cairo-dock/plug-ins/drop-indicator/default-drop-indicator.svg
+share/cairo-dock/plug-ins/drop-indicator/default-hover-indicator.svg
+share/cairo-dock/plug-ins/dustbin/dustbin.conf
+share/cairo-dock/plug-ins/dustbin/preview.jpg
+share/cairo-dock/plug-ins/dustbin/icon.png
+share/cairo-dock/plug-ins/dustbin/themes/default/trashcan_full.svg
+share/cairo-dock/plug-ins/dustbin/themes/default/trashcan_empty.svg
+share/cairo-dock/plug-ins/gnome-integration/icon.png
+share/cairo-dock/plug-ins/icon-effect/icon-effect.conf
+share/cairo-dock/plug-ins/icon-effect/icon.png
+share/cairo-dock/plug-ins/icon-effect/icon-firework.png
+share/cairo-dock/plug-ins/icon-effect/preview.jpg
+share/cairo-dock/plug-ins/icon-effect/star.png
+share/cairo-dock/plug-ins/icon-effect/snow.png
+share/cairo-dock/plug-ins/icon-effect/rain.png
+share/cairo-dock/plug-ins/icon-effect/icon-fire.svg
+share/cairo-dock/plug-ins/icon-effect/icon-storm.png
+share/cairo-dock/plug-ins/illusion/illusion.conf
+share/cairo-dock/plug-ins/illusion/icon.svg
+share/cairo-dock/plug-ins/illusion/preview.jpg
+share/cairo-dock/plug-ins/illusion/icon-black-hole.svg
+share/cairo-dock/plug-ins/illusion/icon-break.svg
+share/cairo-dock/plug-ins/illusion/icon-evaporate.svg
+share/cairo-dock/plug-ins/illusion/icon-explode.svg
+share/cairo-dock/plug-ins/illusion/icon-fade-out.svg
+share/cairo-dock/plug-ins/kde-integration/icon.png
+%%KEYBOARD_INDICATOR%%share/cairo-dock/plug-ins/keyboard-indicator/keyboard-indicator.conf
+%%KEYBOARD_INDICATOR%%share/cairo-dock/plug-ins/keyboard-indicator/icon.png
+%%KEYBOARD_INDICATOR%%share/cairo-dock/plug-ins/keyboard-indicator/preview.jpg
+share/cairo-dock/plug-ins/logout/logout.conf
+share/cairo-dock/plug-ins/logout/icon.svg
+share/cairo-dock/plug-ins/logout/icon-scheduling.png
+share/cairo-dock/plug-ins/mail/preview.jpg
+share/cairo-dock/plug-ins/mail/cd_mail_icon.png
+share/cairo-dock/plug-ins/mail/cd_mail_newmail.svg
+share/cairo-dock/plug-ins/mail/cd_mail_nomail.svg
+share/cairo-dock/plug-ins/mail/mail.conf
+share/cairo-dock/plug-ins/mail/themes/Default/has_mail.svg
+share/cairo-dock/plug-ins/mail/themes/Default/new_mail_sound.wav
+share/cairo-dock/plug-ins/mail/themes/Default/no_mail.svg
+share/cairo-dock/plug-ins/motion-blur/motion_blur.conf
+share/cairo-dock/plug-ins/motion-blur/icon.png
+share/cairo-dock/plug-ins/musicPlayer/musicPlayer.conf
+share/cairo-dock/plug-ins/musicPlayer/broken.svg
+share/cairo-dock/plug-ins/musicPlayer/pause.svg
+share/cairo-dock/plug-ins/musicPlayer/play.svg
+share/cairo-dock/plug-ins/musicPlayer/preview.jpg
+share/cairo-dock/plug-ins/musicPlayer/stop.svg
+share/cairo-dock/plug-ins/musicPlayer/default.svg
+share/cairo-dock/plug-ins/musicPlayer/broken.jpg
+share/cairo-dock/plug-ins/musicPlayer/pause.jpg
+share/cairo-dock/plug-ins/musicPlayer/play.jpg
+share/cairo-dock/plug-ins/musicPlayer/stop.jpg
+share/cairo-dock/plug-ins/musicPlayer/default.jpg
+share/cairo-dock/plug-ins/musicPlayer/0.svg
+share/cairo-dock/plug-ins/musicPlayer/1.svg
+share/cairo-dock/plug-ins/musicPlayer/2.svg
+share/cairo-dock/plug-ins/musicPlayer/3.svg
+share/cairo-dock/plug-ins/musicPlayer/icon.png
+share/cairo-dock/plug-ins/musicPlayer/themes/cd_box_simple/readme
+share/cairo-dock/plug-ins/musicPlayer/themes/cd_box_simple/preview
+share/cairo-dock/plug-ins/musicPlayer/themes/cd_box_simple/frame.svg
+share/cairo-dock/plug-ins/musicPlayer/themes/cd_box_simple/reflect.svg
+share/cairo-dock/plug-ins/musicPlayer/themes/cd_box_simple/theme.conf
+share/cairo-dock/plug-ins/netspeed/netspeed.conf
+share/cairo-dock/plug-ins/netspeed/default.png
+share/cairo-dock/plug-ins/netspeed/icon.png
+share/cairo-dock/plug-ins/netspeed/preview.jpg
+share/cairo-dock/plug-ins/netspeed/ok.png
+share/cairo-dock/plug-ins/netspeed/unknown.png
+share/cairo-dock/plug-ins/netspeed/bad.png
+share/cairo-dock/plug-ins/netspeed/netspeed
+share/cairo-dock/plug-ins/powermanager/sector.svg
+share/cairo-dock/plug-ins/powermanager/default-battery.svg
+share/cairo-dock/plug-ins/powermanager/default-charge.svg
+share/cairo-dock/plug-ins/powermanager/powermanager.conf
+share/cairo-dock/plug-ins/powermanager/icon.png
+share/cairo-dock/plug-ins/powermanager/charge.svg
+share/cairo-dock/plug-ins/powermanager/preview.jpg
+share/cairo-dock/plug-ins/quick_browser/quick-browser.conf
+share/cairo-dock/plug-ins/quick_browser/icon.svg
+share/cairo-dock/plug-ins/quick_browser/preview.jpg
+share/cairo-dock/plug-ins/rendering/rendering.conf
+share/cairo-dock/plug-ins/rendering/icon.svg
+share/cairo-dock/plug-ins/rendering/preview-caroussel.jpg
+share/cairo-dock/plug-ins/rendering/preview-parabolic.jpg
+share/cairo-dock/plug-ins/rendering/preview-3D-plane.jpg
+share/cairo-dock/plug-ins/rendering/preview-rainbow.jpg
+share/cairo-dock/plug-ins/rendering/preview-diapo-simple.jpg
+share/cairo-dock/plug-ins/rendering/preview-curve.jpg
+share/cairo-dock/plug-ins/rendering/readme-3D-plane-view
+share/cairo-dock/plug-ins/rendering/readme-caroussel-view
+share/cairo-dock/plug-ins/rendering/readme-curve-view
+share/cairo-dock/plug-ins/rendering/readme-diapo-simple-view
+share/cairo-dock/plug-ins/rendering/readme-parabolic-view
+share/cairo-dock/plug-ins/rendering/readme-rainbow-view
+share/cairo-dock/plug-ins/RSSreader/icon.svg
+share/cairo-dock/plug-ins/RSSreader/preview.jpg
+share/cairo-dock/plug-ins/RSSreader/RSSreader.conf
+share/cairo-dock/plug-ins/shortcuts/shortcuts.conf
+share/cairo-dock/plug-ins/shortcuts/icon.png
+share/cairo-dock/plug-ins/shortcuts/preview.jpg
+share/cairo-dock/plug-ins/showDesktop/showDesktop.conf
+share/cairo-dock/plug-ins/showDesktop/icon.png
+share/cairo-dock/plug-ins/showDesktop/icon-active.png
+share/cairo-dock/plug-ins/show_mouse/show_mouse.conf
+share/cairo-dock/plug-ins/show_mouse/icon.png
+share/cairo-dock/plug-ins/show_mouse/preview.jpg
+share/cairo-dock/plug-ins/slider/slider.conf
+share/cairo-dock/plug-ins/slider/icon.png
+share/cairo-dock/plug-ins/slider/preview.jpg
+share/cairo-dock/plug-ins/stack/stack.conf
+share/cairo-dock/plug-ins/stack/icon.png
+share/cairo-dock/plug-ins/stack/preview.jpg
+share/cairo-dock/plug-ins/stack/text-icon.svg
+share/cairo-dock/plug-ins/stack/url-icon.svg
+share/cairo-dock/plug-ins/switcher/broken.svg
+share/cairo-dock/plug-ins/switcher/default.svg
+share/cairo-dock/plug-ins/switcher/preview.jpg
+share/cairo-dock/plug-ins/switcher/workspaces.svg
+share/cairo-dock/plug-ins/switcher/switcher.conf
+share/cairo-dock/plug-ins/System-monitor/nvidia-config
+share/cairo-dock/plug-ins/System-monitor/System-Monitor.conf
+share/cairo-dock/plug-ins/System-monitor/icon.png
+share/cairo-dock/plug-ins/System-monitor/preview.jpg
+share/cairo-dock/plug-ins/System-monitor/button-cpu.png
+share/cairo-dock/plug-ins/System-monitor/button-ram.png
+share/cairo-dock/plug-ins/systray/systray.conf
+share/cairo-dock/plug-ins/systray/icon.png
+share/cairo-dock/plug-ins/systray/preview.jpg
+%%TERMINAL%%share/cairo-dock/plug-ins/terminal/icon.png
+%%TERMINAL%%share/cairo-dock/plug-ins/terminal/preview.jpg
+%%TERMINAL%%share/cairo-dock/plug-ins/terminal/terminal.conf
+share/cairo-dock/plug-ins/tomboy/default.svg
+share/cairo-dock/plug-ins/tomboy/close.svg
+share/cairo-dock/plug-ins/tomboy/broken.svg
+share/cairo-dock/plug-ins/tomboy/note.svg
+share/cairo-dock/plug-ins/tomboy/tomboy.conf
+share/cairo-dock/plug-ins/tomboy/icon.png
+share/cairo-dock/plug-ins/tomboy/preview.jpg
+share/cairo-dock/plug-ins/Toons/Toons.conf
+share/cairo-dock/plug-ins/Toons/icon.png
+share/cairo-dock/plug-ins/Toons/preview.jpg
+share/cairo-dock/plug-ins/Toons/themes/Classic/theme.conf
+share/cairo-dock/plug-ins/Toons/themes/Classic/readme
+share/cairo-dock/plug-ins/Toons/themes/Classic/toon.svg
+share/cairo-dock/plug-ins/Toons/themes/Classic/pupil.svg
+share/cairo-dock/plug-ins/Toons/themes/Classic/eyelid.svg
+share/cairo-dock/plug-ins/weather/weather.conf
+share/cairo-dock/plug-ins/weather/broken.png
+share/cairo-dock/plug-ins/weather/icon.png
+share/cairo-dock/plug-ins/weather/preview.jpg
+share/cairo-dock/plug-ins/weather/themes/Classic/0.png
+share/cairo-dock/plug-ins/weather/themes/Classic/1.png
+share/cairo-dock/plug-ins/weather/themes/Classic/2.png
+share/cairo-dock/plug-ins/weather/themes/Classic/3.png
+share/cairo-dock/plug-ins/weather/themes/Classic/4.png
+share/cairo-dock/plug-ins/weather/themes/Classic/5.png
+share/cairo-dock/plug-ins/weather/themes/Classic/6.png
+share/cairo-dock/plug-ins/weather/themes/Classic/7.png
+share/cairo-dock/plug-ins/weather/themes/Classic/8.png
+share/cairo-dock/plug-ins/weather/themes/Classic/9.png
+share/cairo-dock/plug-ins/weather/themes/Classic/10.png
+share/cairo-dock/plug-ins/weather/themes/Classic/11.png
+share/cairo-dock/plug-ins/weather/themes/Classic/12.png
+share/cairo-dock/plug-ins/weather/themes/Classic/13.png
+share/cairo-dock/plug-ins/weather/themes/Classic/14.png
+share/cairo-dock/plug-ins/weather/themes/Classic/15.png
+share/cairo-dock/plug-ins/weather/themes/Classic/16.png
+share/cairo-dock/plug-ins/weather/themes/Classic/17.png
+share/cairo-dock/plug-ins/weather/themes/Classic/18.png
+share/cairo-dock/plug-ins/weather/themes/Classic/19.png
+share/cairo-dock/plug-ins/weather/themes/Classic/20.png
+share/cairo-dock/plug-ins/weather/themes/Classic/21.png
+share/cairo-dock/plug-ins/weather/themes/Classic/22.png
+share/cairo-dock/plug-ins/weather/themes/Classic/23.png
+share/cairo-dock/plug-ins/weather/themes/Classic/24.png
+share/cairo-dock/plug-ins/weather/themes/Classic/25.png
+share/cairo-dock/plug-ins/weather/themes/Classic/26.png
+share/cairo-dock/plug-ins/weather/themes/Classic/27.png
+share/cairo-dock/plug-ins/weather/themes/Classic/28.png
+share/cairo-dock/plug-ins/weather/themes/Classic/29.png
+share/cairo-dock/plug-ins/weather/themes/Classic/30.png
+share/cairo-dock/plug-ins/weather/themes/Classic/31.png
+share/cairo-dock/plug-ins/weather/themes/Classic/32.png
+share/cairo-dock/plug-ins/weather/themes/Classic/33.png
+share/cairo-dock/plug-ins/weather/themes/Classic/34.png
+share/cairo-dock/plug-ins/weather/themes/Classic/35.png
+share/cairo-dock/plug-ins/weather/themes/Classic/36.png
+share/cairo-dock/plug-ins/weather/themes/Classic/37.png
+share/cairo-dock/plug-ins/weather/themes/Classic/38.png
+share/cairo-dock/plug-ins/weather/themes/Classic/39.png
+share/cairo-dock/plug-ins/weather/themes/Classic/40.png
+share/cairo-dock/plug-ins/weather/themes/Classic/41.png
+share/cairo-dock/plug-ins/weather/themes/Classic/42.png
+share/cairo-dock/plug-ins/weather/themes/Classic/43.png
+share/cairo-dock/plug-ins/weather/themes/Classic/44.png
+share/cairo-dock/plug-ins/weather/themes/Classic/45.png
+share/cairo-dock/plug-ins/weather/themes/Classic/46.png
+share/cairo-dock/plug-ins/weather/themes/Classic/47.png
+share/cairo-dock/plug-ins/weather/themes/Classic/na.png
+share/cairo-dock/plug-ins/weather/themes/Classic/preview
+share/cairo-dock/plug-ins/weather/themes/Classic/readme
+%%WEBLETS%%share/cairo-dock/plug-ins/weblets/icon.png
+%%WEBLETS%%share/cairo-dock/plug-ins/weblets/preview.jpg
+%%WEBLETS%%share/cairo-dock/plug-ins/weblets/weblets.conf
+share/cairo-dock/plug-ins/wifi/wifi
+share/cairo-dock/plug-ins/wifi/wifi.conf
+share/cairo-dock/plug-ins/wifi/link-0.svg
+share/cairo-dock/plug-ins/wifi/link-1.svg
+share/cairo-dock/plug-ins/wifi/link-2.svg
+share/cairo-dock/plug-ins/wifi/link-3.svg
+share/cairo-dock/plug-ins/wifi/link-4.svg
+share/cairo-dock/plug-ins/wifi/link-5.svg
+share/cairo-dock/plug-ins/wifi/icon.png
+share/cairo-dock/plug-ins/wifi/preview.jpg
+share/cairo-dock/plug-ins/Xgamma/Xgamma.conf
+share/cairo-dock/plug-ins/Xgamma/icon.png
+share/cairo-dock/plug-ins/Xgamma/preview.jpg
+%%ALSA_MIXER%%@dirrm share/cairo-dock/plug-ins/AlsaMixer
+@dirrm share/cairo-dock/plug-ins/Animated-icons
+@dirrm share/cairo-dock/plug-ins/Cairo-Penguin/themes/Classic
+@dirrm share/cairo-dock/plug-ins/Cairo-Penguin/themes
+@dirrm share/cairo-dock/plug-ins/Cairo-Penguin
+@dirrm share/cairo-dock/plug-ins/Clipper
+@dirrm share/cairo-dock/plug-ins/Dbus
+@dirrm share/cairo-dock/plug-ins/Folders
+%%GMENU%%@dirrm share/cairo-dock/plug-ins/GMenu
+@dirrm share/cairo-dock/plug-ins/System-monitor
+@dirrm share/cairo-dock/plug-ins/Toons/themes/Classic
+@dirrm share/cairo-dock/plug-ins/Toons/themes
+@dirrm share/cairo-dock/plug-ins/Toons
+@dirrm share/cairo-dock/plug-ins/Xgamma
+@dirrm share/cairo-dock/plug-ins/compiz-icon
+@dirrm share/cairo-dock/plug-ins/desklet-rendering
+@dirrm share/cairo-dock/plug-ins/dialog-rendering
+@dirrm share/cairo-dock/plug-ins/dnd2share
+@dirrm share/cairo-dock/plug-ins/drop-indicator
+@dirrm share/cairo-dock/plug-ins/dustbin/themes/default
+@dirrm share/cairo-dock/plug-ins/dustbin/themes
+@dirrm share/cairo-dock/plug-ins/dustbin
+@dirrm share/cairo-dock/plug-ins/gnome-integration
+@dirrm share/cairo-dock/plug-ins/icon-effect
+@dirrm share/cairo-dock/plug-ins/illusion
+@dirrm share/cairo-dock/plug-ins/kde-integration
+%%KEYBOARD_INDICATOR%%@dirrm share/cairo-dock/plug-ins/keyboard-indicator
+@dirrm share/cairo-dock/plug-ins/logout
+@dirrm share/cairo-dock/plug-ins/mail/themes/Default
+@dirrm share/cairo-dock/plug-ins/mail/themes
+@dirrm share/cairo-dock/plug-ins/mail
+@dirrm share/cairo-dock/plug-ins/motion-blur
+@dirrm share/cairo-dock/plug-ins/musicPlayer/themes/cd_box_simple
+@dirrm share/cairo-dock/plug-ins/musicPlayer/themes
+@dirrm share/cairo-dock/plug-ins/musicPlayer
+@dirrm share/cairo-dock/plug-ins/netspeed
+@dirrm share/cairo-dock/plug-ins/powermanager
+@dirrm share/cairo-dock/plug-ins/quick_browser
+@dirrm share/cairo-dock/plug-ins/RSSreader
+@dirrm share/cairo-dock/plug-ins/rendering
+@dirrm share/cairo-dock/plug-ins/shortcuts
+@dirrm share/cairo-dock/plug-ins/showDesktop
+@dirrm share/cairo-dock/plug-ins/show_mouse
+@dirrm share/cairo-dock/plug-ins/slider
+@dirrm share/cairo-dock/plug-ins/stack
+@dirrm share/cairo-dock/plug-ins/switcher
+@dirrm share/cairo-dock/plug-ins/systray
+%%TERMINAL%%@dirrm share/cairo-dock/plug-ins/terminal
+@dirrm share/cairo-dock/plug-ins/tomboy
+@dirrm share/cairo-dock/plug-ins/weather/themes/Classic
+@dirrm share/cairo-dock/plug-ins/weather/themes
+@dirrm share/cairo-dock/plug-ins/weather
+%%WEBLETS%%@dirrm share/cairo-dock/plug-ins/weblets
+@dirrm share/cairo-dock/plug-ins/wifi
+%%XFCE_INTEGRATION%%@dirrm share/cairo-dock/plug-ins/xfce-integration
+@dirrm share/cairo-dock/plug-ins
 @dirrm lib/cairo-dock

@@ -6,18 +6,16 @@
 #
 
 PORTNAME=	cairo-dock-plugins
-DISTVERSION=	2.1.3-9
+DISTVERSION=	2.2.0-4
 CATEGORIES=	deskutils
-MASTER_SITES=	http://launchpadlibrarian.net/44930752/
+MASTER_SITES=	http://launchpadlibrarian.net/56955156/
 
 MAINTAINER=	fidaj@ukr.net
 COMMENT=	Cairo-Dock-Plugins for Cairo-Dock
 
-BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/cairo-dock.pc:${PORTSDIR}/deskutils/cairo-dock
-RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/cairo-dock.pc:${PORTSDIR}/deskutils/cairo-dock \
-		wget:${PORTSDIR}/ftp/wget
-
-LIB_DEPENDS=	etpan:${PORTSDIR}/mail/libetpan
+RUN_DEPENDS=	wget:${PORTSDIR}/ftp/wget
+LIB_DEPENDS=	etpan:${PORTSDIR}/mail/libetpan \
+		gldi.2:${PORTSDIR}/deskutils/cairo-dock
 
 DATADIR=	${PREFIX}/share/cairo-dock
 
@@ -28,65 +26,73 @@ USE_GNOME=	gnomehack pkgconfig glib20 gtk20 librsvg2 libxml2
 USE_LDCONFIG=	yes
 USE_XORG=	xrender
 USE_DOS2UNIX=	YES
+USE_CMAKE=	yes
+USE_GCC=	4.5+
 MAKE_JOBS_SAFE=	YES
 
-OPTIONS+=	GMENU "Common Applications menu" On \
+OPTIONS=	GMENU "Common Applications menu" On \
 		KEYBOARD_INDICATOR "Control the keyboard layout" Off \
 		TERMINAL "Add a terminal to your dock" On \
 		WEBLETS "To show an interactive web page" On \
-		XFCE_INTEGRATION "For XFCE environnement" Off
+		XFCE_INTEGRATION "For XFCE environnement" Off \
+		ALSA_MIXER "For ALSA compatibility utils" Off
 
 .include <bsd.port.options.mk>
 
-CONFIGURE_ARGS+=	--disable-alsa-mixer \
-			--disable-old-gnome-integration
-CONFIGURE_ENV+=		CCFLAGS="-I${LOCALBASE}/include/cairo"
-
 .if defined(WITH_GMENU)
-LIB_DEPENDS+=		gnome-menu:${PORTSDIR}/x11/gnome-menus
-CONFIGURE_ARGS+=	--enable-gmenu
+LIB_DEPENDS+=	gnome-menu.2:${PORTSDIR}/x11/gnome-menus
+CMAKE_ARGS+=	-Denable_gmenu:STRING=yes
 PLIST_SUB+=	GMENU=""
 .else
-CONFIGURE_ARGS+=	--disable-gmenu
+CMAKE_ARGS+=	-Denable_gmenu:STRING=no
 PLIST_SUB+=	GMENU="@comment "
 .endif
 
 .if defined(WITH_KEYBOARD_INDICATOR)
-LIB_DEPENDS+=		exif:${PORTSDIR}/graphics/libexif \
-			xklavier:${PORTSDIR}/x11/libxklavier
-CONFIGURE_ARGS+=	--enable-keyboard-indicator
+LIB_DEPENDS+=	exif.12:${PORTSDIR}/graphics/libexif \
+		xklavier.12:${PORTSDIR}/x11/libxklavier
+CMAKE_ARGS+=	-Denable_keyboard_indicator:STRING=yes
 PLIST_SUB+=	KEYBOARD_INDICATOR=""
 .else
-CONFIGURE_ARGS+=	--disable-keyboard-indicator
+CMAKE_ARGS+=	-Denable_keyboard_indicator:STRING=no
 PLIST_SUB+=	KEYBOARD_INDICATOR="@comment "
 .endif
 
 .if defined(WITH_TERMINAL)
-LIB_DEPENDS+=		vte:${PORTSDIR}/x11-toolkits/vte
-CONFIGURE_ARGS+=	--enable-terminal
+LIB_DEPENDS+=	vte.9:${PORTSDIR}/x11-toolkits/vte
+CMAKE_ARGS+=	-Denable_terminal:STRING=yes
 PLIST_SUB+=	TERMINAL=""
 .else
-CONFIGURE_ARGS+=	--disable-terminal
+CMAKE_ARGS+=	-Denable_terminal:STRING=no
 PLIST_SUB+=	TERMINAL="@comment "
 .endif
 
 .if defined(WITH_WEBLETS)
-LIB_DEPENDS+=		webkit-1.0:${PORTSDIR}/www/webkit-gtk2
-CONFIGURE_ARGS+=	--enable-weblets
+LIB_DEPENDS+=	webkit-1.0.13:${PORTSDIR}/www/webkit-gtk2
+CMAKE_ARGS+=	-Denable_weblets:STRING=yes
 PLIST_SUB+=	WEBLETS=""
 .else
-CONFIGURE_ARGS+=	--disable-weblets
+CMAKE_ARGS+=	-Denable_weblets:STRING=no
 PLIST_SUB+=	WEBLETS="@comment "
 .endif
 
 .if defined(WITH_XFCE_INTEGRATION)
-LIB_DEPENDS+=		thunar-vfs-1:${PORTSDIR}/x11-fm/thunar \
-			exif:${PORTSDIR}/graphics/libexif
-CONFIGURE_ARGS+=	--enable-xfce-integration
+LIB_DEPENDS+=	thunar-vfs-1.5:${PORTSDIR}/x11-fm/thunar \
+		exif.12:${PORTSDIR}/graphics/libexif
+CMAKE_ARGS+=	-Denable_xfce_integration:STRING=yes
 PLIST_SUB+=	XFCE_INTEGRATION=""
 .else
-CONFIGURE_ARGS+=	--disable-xfce-integration
+CMAKE_ARGS+=	-Denable_xfce_integration:STRING=no
 PLIST_SUB+=	XFCE_INTEGRATION="@comment "
+.endif
+
+.if defined(WITH_ALSA_MIXER)
+LIB_DEPENDS+=	asound.2:${PORTSDIR}/audio/alsa-lib
+CMAKE_ARGS+=	-Denable_alsa_mixer:STRING=yes
+PLIST_SUB+=	ALSA_MIXER=""
+.else
+CMAKE_ARGS+=	-Denable_alsa_mixer:STRING=no
+PLIST_SUB+=	ALSA_MIXER="@comment "
 .endif
 
 .include <bsd.port.mk>
