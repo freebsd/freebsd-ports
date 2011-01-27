@@ -10923,6 +10923,7 @@ p5-AnyEvent-HTTP                ports/www/p5-AnyEvent-HTTP
 p5-AnyEvent-HTTPD               ports/www/p5-AnyEvent-HTTPD
 p5-AnyEvent-IRC                 ports/irc/p5-AnyEvent-IRC
 p5-AnyEvent-Mojo                ports/www/p5-AnyEvent-Mojo
+p5-AnyEvent-Redis               ports/databases/p5-AnyEvent-Redis
 p5-AnyEvent-ReverseHTTP         ports/www/p5-AnyEvent-ReverseHTTP
 p5-AnyEvent-Run                 ports/devel/p5-AnyEvent-Run
 p5-AnyEvent-SCGI                ports/www/p5-AnyEvent-SCGI
@@ -14982,6 +14983,7 @@ p5-anyevent-http                ports/www/p5-AnyEvent-HTTP
 p5-anyevent-httpd               ports/www/p5-AnyEvent-HTTPD
 p5-anyevent-irc                 ports/irc/p5-AnyEvent-IRC
 p5-anyevent-mojo                ports/www/p5-AnyEvent-Mojo
+p5-anyevent-redis               ports/databases/p5-AnyEvent-Redis
 p5-anyevent-reversehttp         ports/www/p5-AnyEvent-ReverseHTTP
 p5-anyevent-run                 ports/devel/p5-AnyEvent-Run
 p5-anyevent-scgi                ports/www/p5-AnyEvent-SCGI
