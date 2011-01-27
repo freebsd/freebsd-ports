@@ -40,7 +40,7 @@ EXTRA_PATCHES=	${WRKDIR}/patch-ngstatsut
 .include <bsd.port.pre.mk>
 
 .if !defined(WITHOUT_BONUSPACKS)
-MASTER_SITES+=	http://liflg.0wnitsch.de/files/final/:pbonus
+MASTER_SITES+=	http://liflg.holarse.net/files/final/:pbonus
 BONUSFILE=	unreal.tournament.official.bonus.pack.collection.run
 DISTFILES+=	${BONUSFILE}:pbonus
 PLIST_SUB+=	WITH_BONUSPACKS=""
