@@ -7,7 +7,7 @@
 
 PORTNAME=	platon
 PORTVERSION=	2007.01.09
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	biology
 MASTER_SITES=	http://www.cryst.chem.uu.nl/spek/xraysoft/unix/
 DISTNAME=	platon
@@ -29,8 +29,7 @@ IGNOREFILES=	platon.tar.gz
 SAMPLES=	azt.dat bucky.spf c476.spf c540.cart3d check.def cubane.spf \
 		cyto.spf ml.pdb s810c.cif s913a.res sucrose.spf
 TESTDATADIR=	ABSORB_EXAMPLE ABSTOMPA_EXAMPLE ABSTOMPA_TEST ADDSYM_EXAMPLE \
-		ASYM_EXAMPLE DELABS_EXAMPLE MULABS_EXAMPLE PSICOR_EXAMPLE \
-		SQUEEZE_EXAMPLE
+		ASYM_EXAMPLE MULABS_EXAMPLE PSICOR_EXAMPLE SQUEEZE_EXAMPLE
 
 .include <bsd.port.pre.mk>
 
@@ -39,7 +38,7 @@ BROKEN=	/usr/libexec/elf/ld: platon.o: .got subsegment exceeds 64K (size 88552)
 .endif
 
 pre-patch:
-	(cd ${WRKDIR}/${DISTNAME} ; ${GUNZIP_CMD} platon.f.Z xdrvr.c.gz)
+	(cd ${WRKDIR}/${DISTNAME} ; ${GUNZIP_CMD} platon.f.gz xdrvr.c.gz)
 
 post-patch:
 	${CP} ${FILESDIR}/Makefile ${WRKSRC}/Makefile
@@ -57,8 +56,6 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKDIR}/${DISTNAME}/platon ${PREFIX}/bin
 	${LN} -s ${PREFIX}/bin/platon ${PREFIX}/bin/pluton
 	${INSTALL_DATA} ${WRKDIR}/${DISTNAME}/README* \
-		${PREFIX}/share/doc/platon
-	${INSTALL_DATA} ${WRKDIR}/${DISTNAME}/VALIDATION.DOC \
 		${PREFIX}/share/doc/platon
 	for file in ${SAMPLES} ; do \
 		${INSTALL_DATA} ${WRKDIR}/${DISTNAME}/$${file} \
