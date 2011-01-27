@@ -6,54 +6,53 @@
 #
 
 PORTNAME=	spip
-PORTVERSION=	1.8.3
-PORTREVISION=	1
+PORTVERSION=	2.1.8
 CATEGORIES=	www
-MASTER_SITES=	http://www.spip.net/spip-dev/DISTRIB/ \
-		http://trac.rezo.net/files/spip/
-DISTNAME=	SPIP-v${PORTVERSION:U:C|\.|-|g}
+MASTER_SITES=	http://files.spip.org/spip/archives/
+DISTNAME=	SPIP-v${PORTVERSION:C|\.|-|1}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A publishing system for the Internet (CMS)
 
-FORBIDDEN=	Security: http://www.spip-contrib.net/SPIP-2-1-8-corrige-une-importante-faille-de-securite
+LICENSE=	GPLv3
 
 USE_ZIP=	yes
-USE_PHP=	mysql pcre
+USE_PHP=	mysql pcre zlib
 NO_BUILD=	yes
-
-WWWDOCROOT?=	www
-SPIPDIR?=	${WWWDOCROOT}/${PORTNAME:L}
+WRKSRC=		${WRKDIR}/${PORTNAME}
 
 SUB_FILES=	pkg-message
-SUB_LIST=	SPIPDIR=${SPIPDIR}
-PLIST_SUB=	SPIPDIR=${SPIPDIR}
 
 OPTIONS=	GD "With GD Support" on \
-		IMAGICK     "With ImageMagick Support" off \
+		IMAGICK "With ImageMagick Support" off \
 		LDAP "With LDAP Support for authentification" off
 
 .include <bsd.port.pre.mk>
 
 .if !defined(WITHOUT_GD)
-RUN_DEPENDS+=	${LOCALBASE}/lib/php/${PHP_EXT_DIR}/gd.so:${PORTSDIR}/${gd_DEPENDS}
+USE_PHP+=	gd
 .endif
 
 .if defined(WITH_IMAGICK)
-RUN_DEPENDS+=	${LOCALBASE}/lib/php/${PHP_EXT_DIR}/imagick.so:${PORTSDIR}/${imagick_DEPENDS}
+USE_PHP+=	imagick
 .endif
 
 .if defined(WITH_LDAP)
-RUN_DEPENDS+=	${LOCALBASE}/lib/php/${PHP_EXT_DIR}/ldap.so:${PORTSDIR}/${ldap_DEPENDS}
+USE_PHP+=	ldap
 .endif
 
+post-patch:
+	@${FIND} ${WRKSRC} -type f -name remove.txt | ${XARGS} ${RM}
+	@${FIND} ${WRKSRC} -type f -name svn.revision | ${XARGS} ${RM}
+
 do-install:
-	@${MKDIR} ${PREFIX}/${SPIPDIR}
-	@${CP} -Rv ${WRKSRC}/* ${PREFIX}/${SPIPDIR}
-	@${CHGRP} -R ${WWWGRP} ${PREFIX}/${SPIPDIR}
-.for dir in CACHE IMG ecrire ecrire/data
-	@${CHMOD} 775 ${PREFIX}/${SPIPDIR}/${dir}
+	@${MKDIR} ${WWWDIR}
+	@${CP} -Rv ${WRKSRC}/* ${WWWDIR}
+	@${CHGRP} -R ${WWWGRP} ${WWWDIR}
+.for dir in config IMG ecrire local tmp
+	@${CHMOD} 775 ${WWWDIR}/${dir}
 .endfor
+	@${MV} ${WWWDIR}/htaccess.txt ${WWWDIR}/.htaccess
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
