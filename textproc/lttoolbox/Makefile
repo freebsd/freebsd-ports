@@ -6,20 +6,24 @@
 #
 
 PORTNAME=	lttoolbox
-PORTVERSION=	3.1.1
+PORTVERSION=	${APVER}.${APREV}
 CATEGORIES=	textproc
-MASTER_SITES=	SF/apertium/${PORTNAME}/3.1
+MASTER_SITES=	SF/apertium/${PORTNAME}/${APVER}
 
-MAINTAINER=	freebsd@levsha.org.ua
+MAINTAINER=	i@levsha.me
 COMMENT=	A tool for lexical, morphological analysis and generation of words
 
 LIB_DEPENDS=	xml2:${PORTSDIR}/textproc/libxml2
+
+APVER=	3.2
+APREV=	0
 
 GNU_CONFIGURE=	yes
 
 USE_LDCONFIG=	yes
 USE_GNOME=	gnomehack pkgconfig
 
+PLIST_SUB+=	APVER="${APVER}"
 MAN1=	lt-comp.1 lt-expand.1 lt-proc.1 lt-tmxcomp.1 lt-tmxproc.1
 
 .include <bsd.port.mk>
