@@ -25,7 +25,10 @@ case "$exim_tidydb_enable" in
 	for db in "$exim_dbdir"/db/*.lockfile; do
 	    [ "$db" = "$exim_dbdir/db/*.lockfile" ] && continue
 	    echo
-	    "$exim_tidydb" "$exim_dbdir" `basename "$db" .lockfile`
+	    db_name=`basename "$db" .lockfile`
+	    if [ -e "${exim_dbdir}/db/${db_name}" ]; then
+	        "$exim_tidydb" "$exim_dbdir" "$db_name"
+	    fi
 	done
 	rc=1;;
 
