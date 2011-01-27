@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	apertium
-PORTVERSION=	3.1.1
+PORTVERSION=	${APVER}.${APREV}
 CATEGORIES=	textproc
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/3.1
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${APVER}
 
 MAINTAINER=	i@levsha.me
 COMMENT=	A toolbox to build shallow-transfer machine translation systems
@@ -20,10 +20,18 @@ LIB_DEPENDS=	xml2:${PORTSDIR}/textproc/libxml2 \
 		lttoolbox3:${PORTSDIR}/textproc/lttoolbox \
 		pcre:${PORTSDIR}/devel/pcre
 
+APVER=	3.2
+APREV=	0
+
 MAKE_JOBS_UNSAFE=	yes
 
 GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
 USE_GNOME=	gnomehack pkgconfig
+USE_LDCONFIG=	yes
+
+PLIST_SUB+=	APVER="${APVER}"
 
 MAN1=	apertium-deshtml.1 apertium-desodt.1 apertium-despptx.1 \
 	apertium-desrtf.1 apertium-destxt.1 apertium-deswxml.1 \
@@ -42,6 +50,6 @@ MAN1=	apertium-deshtml.1 apertium-desodt.1 apertium-despptx.1 \
 	apertium-validate-interchunk.1 apertium-validate-modes.1 \
 	apertium-validate-postchunk.1 apertium-validate-tagger.1\
 		apertium-validate-transfer.1 apertium-unformat.1 \
-	apertium.1
+	apertium.1 apertium-desmediawiki.1 apertium-remediawiki.1
 
 .include <bsd.port.mk>
