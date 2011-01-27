@@ -1,0 +1,34 @@
+--- admin/SystemStats.py	2011-01-14 12:07:33.000000000 -0300
++++ admin/SystemStats.py-new	2011-01-21 16:44:01.000000000 -0300
+@@ -5,7 +5,7 @@
+ # Authors:
+ #      Alvaro Lopez Ortega <alvaro@alobbs.com>
+ #
+-# Copyright (C) 2001-2011 Alvaro Lopez Ortega
++# Copyright (C) 2001-2010 Alvaro Lopez Ortega
+ #
+ # This program is free software; you can redistribute it and/or
+ # modify it under the terms of version 2 of the GNU General Public
+@@ -331,7 +331,7 @@
+ 
+     def _read_cpu_and_mem_info (self):
+         # Execute sysctl
+-        ret = popen.popen_sync ("/sbin/sysctl hw.ncpu hw.clockrate kern.threads.virtual_cpu hw.pagesize vm.stats.vm.v_page_count")
++        ret = popen.popen_sync ("/sbin/sysctl -i hw.ncpu hw.clockrate kern.smp.cpus hw.pagesize vm.stats.vm.v_page_count")
+         lines = filter (lambda x: x, ret['stdout'].split('\n'))
+ 
+         # Parse output
+@@ -349,10 +349,11 @@
+ 	    parts = line.split()
+ 	    if parts[0] == 'hw.ncpu:':
+ 		ncpus = int(parts[1])
++		vcpus = int(parts[1])
+             elif parts[0] == 'hw.clockrate:':
+ 		clock = parts[1]
+-            elif parts[0] == 'kern.threads.virtual_cpu:':
+-		vcpus = parts[1]
++            elif parts[0] == 'kern.smp.cpus:':
++	  	vcpus = parts[1]
+             elif parts[0] == 'vm.stats.vm.v_page_count:':
+ 		pcount = int(parts[1])
+             elif parts[0] == 'hw.pagesize:':

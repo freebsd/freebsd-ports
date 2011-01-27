@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cherokee
-PORTVERSION=	1.0.15
+PORTVERSION=	1.0.18
 CATEGORIES=	www
 MASTER_SITES=	http://www.cherokee-project.com/download/1.0/${PORTVERSION}/ \
 		http://cherokee.osuosl.org/1.0/${PORTVERSION}/ \
@@ -73,12 +73,15 @@ CHEROKEE_LOGFILE_FILEMODE=	0600
 CHEROKEE_LOGFILE_USER=	root
 CHEROKEE_LOGFILE_GROUP=	wheel
 
+# Directory where to put RRD files, by default
+CHEROKEE_RRDDIR=/var/lib/cherokee/graphs
+
 CONFIGURE_ARGS=	--with-wwwroot=${PREFIX}/www/cherokee \
 		--localstatedir=${CHEROKEE_VARDIR} \
 		--disable-static
 DEFCONFS=	cherokee.conf
 CONFSUBDIRS=	ssl mods-available mods-enabled sites-available sites-enabled
-MAN1=		cget.1 cherokee-config.1 cherokee.1 cherokee-admin.1 \
+MAN1=		cget.1 cherokee-config.1 cherokee.1 cherokee-admin.1 cherokee-admin-launcher.1 \
 		cherokee-tweak.1 cherokee-worker.1
 PORTDOCS=	*
 
@@ -237,6 +240,10 @@ post-install:
 	     CHEROKEE_LOGFILE_GROUP=${CHEROKEE_LOGFILE_GROUP} \
 	     CHEROKEE_ERRORLOG=${CHEROKEE_ERRORLOG} \
 	     CHEROKEE_ACCESSLOG=${CHEROKEE_ACCESSLOG} \
+	     CHEROKEE_WITH_RRDTOOL=${WITH_RRDTOOL} \
+	     CHEROKEE_RRDDIR=${CHEROKEE_RRDDIR} \
+	     CHEROKEE_RRDDIR_USER=${CHEROKEE_USER} \
+	     CHEROKEE_RRDDIR_GROUP=${CHEROKEE_GROUP} \
 	     ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
 	@${ECHO_MSG} "==============================================================="
