@@ -127,7 +127,6 @@ share/mime/packages/opera-widget.xml
 %%DATADIR%%/locale/fr/search.ini
 %%DATADIR%%/locale/fr/standard_speeddial.ini
 %%DATADIR%%/locale/fy/fy.lng
-%%DATADIR%%/locale/gd/gd.lng
 %%DATADIR%%/locale/hi/hi.lng
 %%DATADIR%%/locale/hr/hr.lng
 %%DATADIR%%/locale/hu/bookmarks.adr
