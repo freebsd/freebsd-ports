@@ -179,7 +179,6 @@ lib/libcherokee-server.la
 lib/libcherokee-server.so
 lib/libcherokee-server.so.0
 libdata/pkgconfig/cherokee.pc
-man/man1/cherokee-admin-launcher.1
 sbin/cherokee
 sbin/cherokee-admin
 sbin/cherokee-worker
@@ -910,6 +909,7 @@ share/aclocal/cherokee.m4
 %%ADMIN%%%%DATADIR%%/admin/static/images/wizards/wordpress.png
 %%ADMIN%%%%DATADIR%%/admin/static/images/wizards/zend.png
 %%ADMIN%%%%DATADIR%%/admin/static/js/SelectionPanel.js
+%%ADMIN%%%%DATADIR%%/admin/static/help_404.html
 %%ADMIN%%%%DATADIR%%/admin/theme.html
 %%ADMIN%%%%DATADIR%%/admin/upgrade_config.py
 %%ADMIN%%%%DATADIR%%/admin/upgrade_config.pyc

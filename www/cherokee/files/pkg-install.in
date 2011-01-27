@@ -3,31 +3,51 @@
 PATH=/bin:/usr/bin:/usr/sbin
 
 
-C_ACCESSLOG=${CHEROKEE_ACCESSLOG:-/var/log/cherokee.access}
-C_ERRORLOG=${CHEROKEE_ERRORLOG:-/var/log/cherokee.error}
-C_USER=${CHEROKEE_LOGFILE_USER:-root}
-C_GROUP=${CHEROKEE_LOGFILE_GROUP:-wheel}
-C_FILEMODE=${CHEROKEE_LOGFILE_FILEMODE:-0640}
+ACCESSLOG=${CHEROKEE_ACCESSLOG:-/var/log/cherokee.access}
+ERRORLOG=${CHEROKEE_ERRORLOG:-/var/log/cherokee.error}
+LOGS_USER=${CHEROKEE_LOGFILE_USER:-root}
+LOGS_GROUP=${CHEROKEE_LOGFILE_GROUP:-wheel}
+LOGS_FILEMODE=${CHEROKEE_LOGFILE_FILEMODE:-0640}
+
+WITH_RRDTOOL=${CHEROKEE_WITH_RRDTOOL:-n}
+RRDDIR=${CHEROKEE_RRDDIR:-/var/lib/cherokee/graphs}
+RRDDIR_USER=${CHEROKEE_RRDDIR_USER:-www}
+RRDDIR_GROUP=${CHEROKEE_RRDDIR_GROUP:-www}
+
 
 case $2 in
 
 POST-INSTALL)
-        echo "$2 for $1" 
-	echo "Adjusting ownership (${C_USER}:${C_GROUP}) and permissions (${C_FILEMODE}) on log files:"
-        echo "${C_ACCESSLOG}"
-        echo "${C_ERRORLOG}"
+        
+	echo "$2 for $1" 
+	echo "Adjusting ownership (${LOGS_USER}:${LOGS_GROUP}) and permissions (${LOGS_FILEMODE}) on log files:"
+        echo "${ACCESSLOG}"
+        echo "${ERRORLOG}"
 
-	if [ ! -f  ${C_ACCESSLOG} ]; then
-		touch ${C_ACCESSLOG}
+	if [ ! -f  ${ACCESSLOG} ]; then
+		touch ${ACCESSLOG}
         fi
 
-	if [ ! -f  ${C_ERRORLOG} ]; then
-		touch ${C_ERRORLOG}
+	if [ ! -f  ${ERRORLOG} ]; then
+		touch ${ERRORLOG}
         fi
 
-	chown ${C_USER}:${C_GROUP} ${C_ACCESSLOG} ${C_ERRORLOG}
-	chmod ${C_FILEMODE} ${C_ACCESSLOG} ${C_ERRORLOG}
-	
+	chown -v ${LOGS_USER}:${LOGS_GROUP} ${ACCESSLOG} ${ERRORLOG}
+	chmod -v ${LOGS_FILEMODE} ${ACCESSLOG} ${ERRORLOG}
+
+        if [ "$WITH_RRDTOOL" = "true" ]; then	
+	        if [ -d ${RRDDIR} ]; then
+	            echo "RRD directory already exists."
+		else
+	            echo "Creating directory for RRD databases..."
+		    mkdir -v -p ${RRDDIR} 
+		fi
+
+	        echo "Adjusting ownership..."
+	        chown -v ${RRDDIR_USER}:${RRDDIR_GROUP} ${RRDDIR} 
+	fi
+
+	echo "$2 done."
 	;;
 
 
