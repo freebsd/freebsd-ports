@@ -1162,6 +1162,7 @@
     SUBDIR += p5-SCGI
     SUBDIR += p5-SRU
     SUBDIR += p5-SWF-Chart
+    SUBDIR += p5-Scrappy
     SUBDIR += p5-Sledge
     SUBDIR += p5-Sledge-Plugin-CacheContent
     SUBDIR += p5-Sledge-Plugin-Download
