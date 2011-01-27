@@ -212,29 +212,51 @@ MASTER_SITE_ECLIPSE+= \
 
 .if !defined(IGNORE_MASTER_SITE_EXIM)
 MASTER_SITE_EXIM+=	\
-	ftp://ftp.csx.cam.ac.uk/pub/software/email/exim/%SUBDIR%/ \
 	ftp://ftp.exim.org/pub/exim/%SUBDIR%/ \
+	ftp://exim.inode.at/exim/%SUBDIR%/ \
+	ftp://exim-ftp.itsoft.at/exim/exim/%SUBDIR%/ \
+	http://exim-ftp.itsoft.at/exim/%SUBDIR%/ \
 	ftp://ftp.easynet.be/exim/exim/%SUBDIR%/ \
 	ftp://mirror.kn.vutbr.cz/pub/ftp.exim.org/exim/%SUBDIR%/ \
+	http://exim.mirror.fr/exim/%SUBDIR%/ \
 	ftp://ftp.doc.cs.univ-paris8.fr/mirrors/ftp.exim.org/exim/%SUBDIR%/ \
+	http://mirrors.zerg.biz/exim/exim/%SUBDIR%/ \
+	http://dl.ambiweb.de/mirrors/ftp.exim.org/exim/%SUBDIR%/ \
+	ftp://exim.noris.de/exim/%SUBDIR%/ \
+	ftp://ftp.bytemine.net/exim/exim/%SUBDIR%/ \
+	ftp://exim.mirror.iphh.net/ftp/exim/%SUBDIR%/ \
+	http://exim.mirror.iphh.net/ftp/exim/%SUBDIR%/ \
 	ftp://ftp.fu-berlin.de/unix/mail/exim/%SUBDIR%/ \
-	ftp://ftp.tin.org/pub/mail/exim/%SUBDIR%/ \
-	ftp://ftp.freenet.de/pub/ftp.csx.cam.ac.uk/pub/software/email/exim/%SUBDIR%/ \
-	ftp://ftp.esat.net/pub/networking/mail/mta/exim/%SUBDIR%/ \
+	http://exim-ftp.octet.hu/exim/%SUBDIR%/ \
+	ftp://ftp.heanet.ie/pub/exim/%SUBDIR%/ \
+	http://ftp.heanet.ie/pub/exim/%SUBDIR%/ \
 	http://washitake.com/mail/exim/mirror/exim/%SUBDIR%/ \
+	ftp://ftp.tin.org/pub/mail/exim/%SUBDIR%/ \
 	http://exim.psshee.com/ftp/exim/%SUBDIR%/ \
+	ftp://mirror.hostfuss.com/exim/ftp/exim/%SUBDIR%/ \
+	http://mirror.hostfuss.com/exim/ftp/exim/%SUBDIR%/ \
 	ftp://ftp.nl.uu.net/pub/unix/mail/exim/exim/%SUBDIR%/ \
-	ftp://ftp.demon.nl/pub/mirrors/exim/%SUBDIR%/ \
 	ftp://ftp.easynet.nl/mirror/exim/exim/%SUBDIR%/ \
 	ftp://sunsite.uio.no/pub/mail/exim/exim/%SUBDIR%/ \
-	http://www.no.exim.org/ftp/exim/%SUBDIR%/ \
+	http://piotrkosoft.net/pub/mirrors/ftp.exim.org/exim/%SUBDIR%/ \
+	ftp://ftp.piotrkosoft.net/pub/mirrors/ftp.exim.org/exim/%SUBDIR%/ \
+	ftp://sunsite.icm.edu.pl/pub/unix/mail/exim/exim/%SUBDIR%/ \
 	http://sunsite.icm.edu.pl/pub/unix/mail/exim/exim/%SUBDIR%/ \
-	ftp://ftp.is.co.za/networking/mail/mta/exim/%SUBDIR%/ \
+	ftp://ftp.is.co.za/networking/mail/mta/exim/ftp/exim/%SUBDIR%/ \
+	ftp://mirrors.dominios.pt/pub/ftp.exim.org/exim/%SUBDIR%/ \
+	http://exim.n9.ru/ftp/exim/%SUBDIR%/ \
+	ftp://mirror.switch.ch/mirror/exim/exim/%SUBDIR%/ \
+	http://mirror.switch.ch/ftp/mirror/exim/exim/%SUBDIR%/ \
 	ftp://ftp.reaper.org/pub/exim/exim/%SUBDIR%/ \
 	ftp://sunsite.cnlab-switch.ch/mirror/exim/exim/%SUBDIR%/ \
-	ftp://ftp.mirrorservice.org/sites/ftp.csx.cam.ac.uk/pub/software/email/exim/%SUBDIR%/ \
 	ftp://ftp.demon.co.uk/pub/mirrors/exim/%SUBDIR%/ \
-	ftp://ftp.fsckit.net/pub/exim/exim/%SUBDIR%/
+	ftp://mirror.tje.me.uk/pub/mirrors/ftp.exim.org/exim/%SUBDIR%/ \
+	http://mirror.tje.me.uk/pub/mirrors/ftp.exim.org/exim/%SUBDIR%/ \
+	ftp://mirrors.24-7-solutions.net/pub/exim/ftp/exim/%SUBDIR%/ \
+	http://mirrors.24-7-solutions.net/pub/exim/ftp/exim/%SUBDIR%/ \
+	ftp://ftp.fsckit.net/pub/exim/exim/%SUBDIR%/ \
+	ftp://idcnetwork.org/pub/exim/exim/%SUBDIR%/ \
+	http://ftp.exim.llorien.org/exim/%SUBDIR%
 .endif
 
 .if !defined(IGNORE_MASTER_SITE_FEDORA_LINUX)

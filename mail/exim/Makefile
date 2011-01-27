@@ -25,6 +25,10 @@ WANT_GNOME=	yes
 WANT_PERL=	yes
 MAKE_JOBS_UNSAFE=	yes
 
+.if make(makesum) && !defined(FETCH_ALL)
+.error "You forgot to define FETCH_ALL to create the sane distinfo"
+.endif
+
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_SA_EXIM)
@@ -42,23 +46,26 @@ IGNORE=		You cannot select both SA_KAS and SO_1024 options
 .endif
 .endif
 
-.if defined(WITH_SA_EXIM)
+.if defined(WITH_SA_EXIM) || defined(FETCH_ALL)
 MASTER_SITES+=	http://marc.merlins.org/linux/exim/files/:sa_exim \
 		SF/sa-exim/sa-exim/${SA_EXIM_VERSION}:sa_exim
 MASTER_SITE_SUBDIR+=	sa-exim/:sa_exim
 DISTFILES+=	sa-exim-${SA_EXIM_VERSION}.tar.gz:sa_exim
 .endif
 
-.if defined(WITH_SO_1024)
+.if defined(WITH_SO_1024) || defined(FETCH_ALL)
 MASTER_SITES+=	ftp://ftp.renatasystems.org/pub/FreeBSD/ports/distfiles/:so_1024
 DISTFILES+=	spamooborona1024-src-${SO_1024_VERSION}.tar.gz:so_1024
+.endif
+
+.if defined(WITH_SO_1024)
 LDFLAGS+=	-lz
 PLIST_SUB+=	SO_1024=""
 .else
 PLIST_SUB+=	SO_1024="@comment "
 .endif
 
-EXIM_VERSION=	4.73
+EXIM_VERSION=	4.74
 SA_EXIM_VERSION=4.2
 SO_1024_VERSION=3.2
 
