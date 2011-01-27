@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	pmwiki
-PORTVERSION=	2.2.17
+PORTVERSION=	2.2.23
 PORTEPOCH=	1
 CATEGORIES=	www
-MASTER_SITES=	http://pmwiki.org/pub/pmwiki/
+MASTER_SITES=	http://www.pmwiki.org/pub/pmwiki/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	miwi@FreeBSD.org
