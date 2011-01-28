@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	nfdump
-PORTVERSION=	1.6.1
+PORTVERSION=	1.6.2
 CATEGORIES=	net-mgmt
 MASTER_SITES=	SF/${PORTNAME}/stable/${PORTNAME}-${PORTVERSION}
 
@@ -16,16 +16,15 @@ COMMENT=	Command-line tools to collect and process NetFlow data
 GNU_CONFIGURE=	yes
 MAKE_JOBS_UNSAFE=	yes
 
+LICENSE=	BSD
+LICENSE_FILE=	${WRKSRC}/BSD-license.txt
+
 #flow-tools support
 OPTIONS=	FT2NFDUMP	"With Flow-tools to nfdump converter" off \
 		NFPROFILE	"With nfprofile  (nfsen requires it)" on \
 		SFLOW		"Build sflow collector daemon also" off
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 700000
-BROKEN=		does not configure on 6.X
-.endif
 
 #for compatibility
 #
@@ -39,6 +38,7 @@ MAN1+=		nfprofile.1 ft2nfdump.1 sfcapd.1
 PORTDOCS=	AUTHORS ChangeLog INSTALL README
 
 .if defined(WITH_NFPROFILE)
+
 CONFIGURE_ARGS+=	--enable-nfprofile --with-rrdpath=${LOCALBASE}
 PLIST_FILES+=	bin/nfprofile
 #MAN1+=		nfprofile.1
