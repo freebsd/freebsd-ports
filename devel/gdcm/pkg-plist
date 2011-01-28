@@ -7,11 +7,6 @@ bin/gdcmimg
 bin/gdcmconv
 bin/gdcmtar
 bin/gdcminfo
-include/gdcm-2.0/bio.h
-include/gdcm-2.0/cio.h
-include/gdcm-2.0/dwt.h
-include/gdcm-2.0/event.h
-include/gdcm-2.0/fix.h
 include/gdcm-2.0/gdcmASN1.h
 include/gdcm-2.0/gdcmAnonymizeEvent.h
 include/gdcm-2.0/gdcmAnonymizer.h
@@ -179,6 +174,7 @@ include/gdcm-2.0/gdcmTableReader.h
 include/gdcm-2.0/gdcmTag.h
 include/gdcm-2.0/gdcmTagPath.h
 include/gdcm-2.0/gdcmTagToType.h
+include/gdcm-2.0/gdcmTagToVR.h
 include/gdcm-2.0/gdcmTerminal.h
 include/gdcm-2.0/gdcmTestDriver.h
 include/gdcm-2.0/gdcmTesting.h
@@ -262,29 +258,43 @@ include/gdcm-2.0/gdcmjpeg/jmorecfg.h
 include/gdcm-2.0/gdcmjpeg/jpegint.h
 include/gdcm-2.0/gdcmjpeg/jpeglib.h
 include/gdcm-2.0/gdcmjpeg/jversion.h
-include/gdcm-2.0/image.h
-include/gdcm-2.0/int.h
-include/gdcm-2.0/j2k.h
-include/gdcm-2.0/j2k_lib.h
-include/gdcm-2.0/jp2.h
-include/gdcm-2.0/jpt.h
-include/gdcm-2.0/mct.h
-include/gdcm-2.0/mqc.h
-include/gdcm-2.0/openjpeg.h
-include/gdcm-2.0/openjpeg_mangle.h
-include/gdcm-2.0/opj_includes.h
-include/gdcm-2.0/pi.h
-include/gdcm-2.0/raw.h
-include/gdcm-2.0/t1.h
-include/gdcm-2.0/t2.h
-include/gdcm-2.0/tcd.h
-include/gdcm-2.0/tgt.h
+include/gdcm-2.0/gdcmopenjpeg/bio.h
+include/gdcm-2.0/gdcmopenjpeg/cio.h
+include/gdcm-2.0/gdcmopenjpeg/dwt.h
+include/gdcm-2.0/gdcmopenjpeg/event.h
+include/gdcm-2.0/gdcmopenjpeg/fix.h
+include/gdcm-2.0/gdcmopenjpeg/function_list.h
+include/gdcm-2.0/gdcmopenjpeg/image.h
+include/gdcm-2.0/gdcmopenjpeg/int.h
+include/gdcm-2.0/gdcmopenjpeg/invert.h
+include/gdcm-2.0/gdcmopenjpeg/j2k.h
+include/gdcm-2.0/gdcmopenjpeg/j2k_lib.h
+include/gdcm-2.0/gdcmopenjpeg/jp2.h
+include/gdcm-2.0/gdcmopenjpeg/jpt.h
+include/gdcm-2.0/gdcmopenjpeg/mct.h
+include/gdcm-2.0/gdcmopenjpeg/mqc.h
+include/gdcm-2.0/gdcmopenjpeg/openjpeg.h
+include/gdcm-2.0/gdcmopenjpeg/openjpeg_mangle.h
+include/gdcm-2.0/gdcmopenjpeg/opj_configure.h
+include/gdcm-2.0/gdcmopenjpeg/opj_includes.h
+include/gdcm-2.0/gdcmopenjpeg/opj_malloc.h
+include/gdcm-2.0/gdcmopenjpeg/pi.h
+include/gdcm-2.0/gdcmopenjpeg/profile.h
+include/gdcm-2.0/gdcmopenjpeg/raw.h
+include/gdcm-2.0/gdcmopenjpeg/t1.h
+include/gdcm-2.0/gdcmopenjpeg/t1_luts.h
+include/gdcm-2.0/gdcmopenjpeg/t2.h
+include/gdcm-2.0/gdcmopenjpeg/tcd.h
+include/gdcm-2.0/gdcmopenjpeg/tgt.h
 include/gdcm-2.0/zipstreamimpl.h
 lib/gdcm-2.0/GDCMConfig.cmake
 lib/gdcm-2.0/GDCMConfigVersion.cmake
 lib/gdcm-2.0/GDCMTargets-noconfig.cmake
 lib/gdcm-2.0/GDCMTargets.cmake
 lib/gdcm-2.0/UseGDCM.cmake
+lib/gdcmopenjpeg-2.0/GDCMTargets.cmake
+lib/gdcmopenjpeg-2.0/GDCMTargets-noconfig.cmake
+lib/gdcmopenjpeg-2.0/OpenJPEGConfig.cmake
 lib/libgdcmCommon.so
 lib/libgdcmCommon.so.%%GDCM_MAJ%%
 lib/libgdcmCommon.so.%%GDCM_MAJ%%.%%GDCM_MIN%%
@@ -316,8 +326,8 @@ lib/libgdcmjpeg8.so
 lib/libgdcmjpeg8.so.%%GDCM_MAJ%%
 lib/libgdcmjpeg8.so.%%GDCM_MAJ%%.%%GDCM_MIN%%
 lib/libgdcmopenjpeg.so
-lib/libgdcmopenjpeg.so.1.0
-lib/libgdcmopenjpeg.so.1.0.0
+lib/libgdcmopenjpeg.so.%%GDCM_MAJ%%
+lib/libgdcmopenjpeg.so.%%GDCM_MAJ%%.0
 lib/libgdcmuuid.so
 lib/libgdcmuuid.so.%%GDCM_MAJ%%
 lib/libgdcmuuid.so.%%GDCM_MAJ%%.%%GDCM_MIN%%
@@ -332,6 +342,7 @@ lib/libgdcmzlib.so.%%GDCM_MAJ%%.%%GDCM_MIN%%
 %%DATADIR%%/XML/Part7.xml
 %%DATADIR%%/XML/UIDs.xml
 %%DATADIR%%/XML/cp699.xml
+@dirrm include/gdcm-2.0/gdcmopenjpeg
 @dirrm include/gdcm-2.0/gdcmjpeg/8
 @dirrm include/gdcm-2.0/gdcmjpeg/16
 @dirrm include/gdcm-2.0/gdcmjpeg/12
@@ -339,5 +350,6 @@ lib/libgdcmzlib.so.%%GDCM_MAJ%%.%%GDCM_MIN%%
 @dirrm include/gdcm-2.0/gdcmcharls
 @dirrm include/gdcm-2.0
 @dirrm lib/gdcm-2.0
+@dirrm lib/gdcmopenjpeg-2.0
 @dirrm %%DATADIR%%/XML
 @dirrm %%DATADIR%%
