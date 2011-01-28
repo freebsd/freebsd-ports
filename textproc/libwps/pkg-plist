@@ -105,7 +105,6 @@ libdata/pkgconfig/libwps-0.2.pc
 %%PORTDOCS%%%%DOCSDIR%%/html/libwps__internal_8cpp.html
 %%PORTDOCS%%%%DOCSDIR%%/html/libwps__internal_8h.html
 %%PORTDOCS%%%%DOCSDIR%%/html/libwps__internal_8h_source.html
-%%PORTDOCS%%%%DOCSDIR%%/html/main.html
 %%PORTDOCS%%%%DOCSDIR%%/html/nav_f.png
 %%PORTDOCS%%%%DOCSDIR%%/html/nav_h.png
 %%PORTDOCS%%%%DOCSDIR%%/html/open.png
@@ -116,7 +115,6 @@ libdata/pkgconfig/libwps-0.2.pc
 %%PORTDOCS%%%%DOCSDIR%%/html/tab_h.png
 %%PORTDOCS%%%%DOCSDIR%%/html/tab_s.png
 %%PORTDOCS%%%%DOCSDIR%%/html/tabs.css
-%%PORTDOCS%%%%DOCSDIR%%/html/tree.html
 @dirrm include/libwps-0.2/libwps
 @dirrm include/libwps-0.2
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/html
