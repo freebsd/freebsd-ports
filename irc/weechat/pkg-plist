@@ -4,6 +4,8 @@ lib/weechat/plugins/alias.so
 lib/weechat/plugins/fifo.so
 lib/weechat/plugins/irc.so
 lib/weechat/plugins/logger.so
+lib/weechat/plugins/relay.so
+lib/weechat/plugins/rmodifier.so
 lib/weechat/plugins/xfer.so
 libdata/pkgconfig/weechat.pc
 %%ASPELL%%lib/weechat/plugins/aspell.so
@@ -48,8 +50,9 @@ libdata/pkgconfig/weechat.pc
 %%NLS%%share/locale/hu/LC_MESSAGES/weechat.mo
 %%NLS%%share/locale/it/LC_MESSAGES/weechat.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/weechat.mo
+%%NLS%%share/locale/pt_BR/LC_MESSAGES/weechat.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/weechat.mo
 @dirrmtry lib/weechat/plugins
 @dirrmtry lib/weechat
-@dirrmtry share/doc/weechat
+%%DOCUMENTATION%%@dirrmtry share/doc/weechat
 @dirrm include/weechat
