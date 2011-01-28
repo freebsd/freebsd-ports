@@ -5,6 +5,7 @@
 # $FreeBSD$
 #
 
+PORTREVISION?=	1
 CATEGORIES=	devel python
 DISTNAME=	${PORTNAME}-${PORTVERSION}
 
@@ -20,6 +21,7 @@ RUN_DEPENDS=	${BUILD_DEPENDS} \
 
 INSTALL_CMD=	install.py -c -f eric4config.freebsd
 PLIST_FILES=
+SUB_FILES=	eric4.desktop
 
 do-configure:
 	${SED}  -e 's,PYTHON_SITELIBDIR,${PYTHON_SITELIBDIR},' \
@@ -28,5 +30,12 @@ do-configure:
 		-e 's,DOCSDIR,${DOCSDIR},' \
 		-e 's,EXAMPLESDIR,${EXAMPLESDIR},' \
 		< ${FILESDIR}/config > ${WRKSRC}/eric4config.freebsd
+
+post-install:
+	${INSTALL} -d ${PREFIX}/share/applications
+	${INSTALL_DATA} ${WRKDIR}/eric4.desktop ${PREFIX}/share/applications/
+	${LN} ${PYTHON_SITELIBDIR}/eric4/icons/default/eric.png ${PREFIX}/share/pixmaps/
+	-update-desktop-database
+	-update-mime-database ${PREFIX}/share/mime
 
 .include "${.CURDIR}/../../devel/eric4/Makefile.inc"

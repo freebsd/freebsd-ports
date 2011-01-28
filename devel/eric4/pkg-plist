@@ -2928,6 +2928,8 @@ bin/eric4-trpreviewer
 bin/eric4-uipreviewer
 bin/eric4-unittest
 bin/eric4-webbrowser
+share/applications/eric4.desktop
+share/pixmaps/eric.png
 share/qt4/qsci/api/python/eric4.api
 share/qt4/qsci/api/python/zope-2.10.7.api
 share/qt4/qsci/api/python/zope-2.11.2.api
@@ -2935,6 +2937,7 @@ share/qt4/qsci/api/python/zope-3.3.1.api
 share/qt4/qsci/api/ruby/Ruby-1.8.7.api
 share/qt4/qsci/api/ruby/eric4.api
 @dirrmtry share/qt4/qsci/api/ruby
+@dirrmtry share/applications
 @dirrmtry %%PYTHON_SITELIBDIR%%/eric4/i18n
 @dirrm %%PYTHON_SITELIBDIR%%/eric4plugins
 @dirrm %%PYTHON_SITELIBDIR%%/eric4/pixmaps
@@ -3034,3 +3037,7 @@ share/qt4/qsci/api/ruby/eric4.api
 @dirrm %%DOCSDIR%%/Source
 @dirrm %%DOCSDIR%%/Help
 @dirrm %%DOCSDIR%%
+@exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
+@unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
+@exec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
+@unexec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
