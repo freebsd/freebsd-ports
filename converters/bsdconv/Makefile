@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	bsdconv
-PORTVERSION=	3.6.2
+PORTVERSION=	4.3
 CATEGORIES=	converters
-MASTER_SITES=	http://security-hole.info/distfile/
-DISTNAME=	buganini-bsdconv-3.6.2-0-g66aab4b
+MASTER_SITES=	http://cloud.github.com/downloads/buganini/bsdconv/
 
 MAINTAINER=	buganini@gmail.com
 COMMENT=	BSD licensed charset/encoding converter library
@@ -17,8 +16,6 @@ COMMENT=	BSD licensed charset/encoding converter library
 USE_LDCONFIG=	yes
 
 MAKE_ARGS=	PREFIX=${PREFIX}
-
-WRKSRC=		${WRKDIR}/buganini-bsdconv-66aab4b
 
 .include <bsd.port.pre.mk>
 
