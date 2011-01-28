@@ -14,11 +14,12 @@ MASTER_SITES=	http://prosody.im/downloads/source/ \
 MAINTAINER=	lx@FreeBSD.org
 COMMENT=	A simple extensible XMPP server written in Lua
 
-BUILD_DEPENDS=	${LOCALBASE}/include/stringprep.h:${PORTSDIR}/dns/libidn
 RUN_DEPENDS=	${LUA_MODLIBDIR}/socket/core.so:${PORTSDIR}/net/luasocket \
 		${LUA_MODLIBDIR}/ssl.so:${PORTSDIR}/security/luasec \
 		${LUA_MODLIBDIR}/lxp.so:${PORTSDIR}/textproc/luaexpat \
-		${LUA_MODLIBDIR}/lfs.so:${PORTSDIR}/devel/luafilesystem
+		${LUA_MODLIBDIR}/lfs.so:${PORTSDIR}/devel/luafilesystem \
+
+LIB_DEPENDS=	idn:${PORTSDIR}/dns/libidn
 
 USE_RC_SUBR=	prosody
 MAN1=	prosodyctl.1
