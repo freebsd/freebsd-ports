@@ -14,6 +14,8 @@ DISTNAME=		ut_linux_mgr_5.20
 MAINTAINER=		pmh@hausen.com
 COMMENT=		LSI MegaRAID controller management utility
 
+BROKEN=			fails to fetch
+
 NO_WRKSUBDIR=		yes
 USE_ZIP=		yes
 RESTRICTED=		Redistribution prohibited, see: http://www.lsi.com/cm/License.do
