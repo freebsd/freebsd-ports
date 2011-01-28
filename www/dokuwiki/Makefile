@@ -7,6 +7,7 @@
 
 PORTNAME=	dokuwiki
 PORTVERSION=	${DIST_VER:S/${PORTNAME}//:S/-//g}
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://www.splitbrain.org/_media/projects/dokuwiki/ \
 		LOCAL/chinsan/${PORTNAME}
@@ -41,6 +42,7 @@ x-generate-plist:
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/bin|${LOCALBASE}/bin|' ${WRKSRC}/bin/*.php
 	@${FIND} ${WRKSRC} -name '*.orig' -delete
+	@${RM} ${WRKSRC}/data/deleted.files
 
 do-install:
 # Data files
