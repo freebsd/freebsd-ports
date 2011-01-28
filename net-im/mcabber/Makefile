@@ -7,9 +7,9 @@
 
 PORTNAME=	mcabber
 PORTVERSION=	0.10.1
+PORTREVISION=	1
 CATEGORIES=	net-im
 MASTER_SITES=	http://www.lilotux.net/~mikael/mcabber/files/ CENKES
-#DISTNAME=	${PORTNAME}-${PORTVERSION}-rc3
 
 MAINTAINER=	dhn@FreeBSD.org
 COMMENT=	Small Jabber console client
@@ -20,14 +20,12 @@ LICENSE=	GPLv2
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--enable-sigwinch
-CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
+CONFIGURE_ARGS=	--enable-sigwinch --libdir=${PREFIX}/lib
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
 USE_ICONV=	yes
 USE_GETTEXT=	yes
 USE_LDCONFIG=	yes
 USE_GNOME=	glib20
-CPPFLAGS=	-I${LOCALBASE}/include
-LDFLAGS=	-L${LOCALBASE}/lib
 
 MAN1=		mcabber.1
 
@@ -57,7 +55,7 @@ CONFIGURE_ARGS+=--disable-aspell
 .endif
 
 .if defined(WITH_ENCHANT)
-LIB_DEPENDS+=   enchant.1:${PORTSDIR}/textproc/enchant
+LIB_DEPENDS+=	enchant.1:${PORTSDIR}/textproc/enchant
 CONFIGURE_ARGS+=--enable-enchant
 .else
 CONFIGURE_ARGS+=--disable-enchant
@@ -75,7 +73,7 @@ PLIST_SUB+=	OTR="@comment "
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|$$"$${datadir}"|"$${datadir}"|;s|-O2||'\
-		${WRKSRC}/configure
+		-e 's|$$"$${libdir}|"$${libdir}|g' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|$$(libdir)/pkgconfig|${PREFIX}/libdata/pkgconfig|g' \
 		${WRKSRC}/Makefile.*
 
