@@ -14,6 +14,8 @@ MASTER_SITES=	http://www.redhillconsulting.com.au/products/simian/
 MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	Similarity analyser for source and other text files
 
+BROKEN=		website has disappeared as of 20100128
+
 .if defined(WITHOUT_JAVA) && !defined(WITH_MONO)
 WITH_MONO=	yes
 .endif
