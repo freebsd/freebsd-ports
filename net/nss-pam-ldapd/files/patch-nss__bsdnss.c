@@ -1,12 +1,15 @@
---- nss/bsdnss.c.orig	2009-08-10 16:06:22.000000000 +0000
-+++ nss/bsdnss.c	2009-08-10 15:58:04.000000000 +0000
-@@ -0,0 +1,157 @@
+--- /dev/null	2011-01-14 20:44:13.000000000 +0000
++++ nss/bsdnss.c	2011-01-14 20:33:39.000000000 +0000
+@@ -0,0 +1,234 @@
++#include <stdio.h>
++#include <stdlib.h>
 +#include <errno.h>
 +#include <sys/param.h>
 +#include <netinet/in.h>
 +#include <pwd.h>
 +#include <grp.h>
 +#include <nss.h>
++#include <nsswitch.h>
 +#include <netdb.h>
 +
 +#define BUFFER_SIZE		1024
@@ -39,12 +42,15 @@
 +extern enum nss_status _nss_ldap_gethostbyaddr_r (struct in_addr * addr, int len, int type,
 +			   struct hostent * result, char *buffer,
 +			   size_t buflen, int *errnop, int *h_errnop);
++extern enum nss_status _nss_ldap_initgroups_dyn(const char *, gid_t, long int *,
++			   long int *, gid_t **, long int, int *);
 +
 +NSS_METHOD_PROTOTYPE(__nss_compat_getgrnam_r);
 +NSS_METHOD_PROTOTYPE(__nss_compat_getgrgid_r);
 +NSS_METHOD_PROTOTYPE(__nss_compat_getgrent_r);
 +NSS_METHOD_PROTOTYPE(__nss_compat_setgrent);
 +NSS_METHOD_PROTOTYPE(__nss_compat_endgrent);
++static NSS_METHOD_PROTOTYPE(__freebsd_getgroupmembership);
 +
 +NSS_METHOD_PROTOTYPE(__nss_compat_getpwnam_r);
 +NSS_METHOD_PROTOTYPE(__nss_compat_getpwuid_r);
@@ -62,6 +68,7 @@
 +{ NSDB_GROUP, "getgrent_r", __nss_compat_getgrent_r, _nss_ldap_getgrent_r },
 +{ NSDB_GROUP, "setgrent",   __nss_compat_setgrent,   _nss_ldap_setgrent },
 +{ NSDB_GROUP, "endgrent",   __nss_compat_endgrent,   _nss_ldap_endgrent },
++{ NSDB_GROUP, "getgroupmembership", __freebsd_getgroupmembership, NULL },
 +
 +{ NSDB_PASSWD, "getpwnam_r", __nss_compat_getpwnam_r, _nss_ldap_getpwnam_r },
 +{ NSDB_PASSWD, "getpwuid_r", __nss_compat_getpwuid_r, _nss_ldap_getpwuid_r },
@@ -148,6 +155,76 @@
 +	status = __nss_compat_result(status,errnop);
 +	h_errno = h_errnop;
 +	return (status);
++}
++
++static int
++__gr_addgid(gid_t gid, gid_t *groups, int maxgrp, int *groupc)
++{
++	int	ret, dupc;
++
++						/* skip duplicates */
++	for (dupc = 0; dupc < MIN(maxgrp, *groupc); dupc++) {
++		if (groups[dupc] == gid)
++			return 1;
++	}
++
++	ret = 1;
++	if (*groupc < maxgrp)			/* add this gid */
++		groups[*groupc] = gid;
++	else
++		ret = 0;
++	(*groupc)++;
++	return ret;
++}
++
++static int
++__freebsd_getgroupmembership(void *retval, void *mdata, va_list ap)
++{
++
++	int err;
++	enum nss_status s;
++    gid_t       group;
++    gid_t       *tmpgroups;
++    size_t      bufsize;
++    const char  *user;
++    gid_t       *groups;
++    gid_t       agroup;
++    int         maxgrp, *grpcnt;
++    int     i, rv, ret_errno;
++	long int lstart, lsize;
++
++   
++    user = va_arg(ap, const char *);
++    group = va_arg(ap, gid_t);
++    groups = va_arg(ap, gid_t *);
++    maxgrp = va_arg(ap, int);
++    grpcnt = va_arg(ap, int *); 
++    
++
++	tmpgroups = malloc(maxgrp * sizeof(gid_t));
++	if (tmpgroups == NULL) {
++        printf("Tried to mallog %u * %u\n", maxgrp, sizeof(gid_t));
++        return NS_TRYAGAIN;
++    }
++
++	/* insert primary membership */
++	__gr_addgid(group, groups, maxgrp, grpcnt);
++
++	lstart = 0;
++	lsize = maxgrp;
++	s = _nss_ldap_initgroups_dyn(user, group, &lstart, &lsize,
++		&tmpgroups, 0, &err);
++	if (s == NSS_STATUS_SUCCESS) {
++		for (i = 0; i < lstart; i++)
++			if (! __gr_addgid(tmpgroups[i], groups, maxgrp, grpcnt)) { 
++                ;;
++            }
++		s = NSS_STATUS_NOTFOUND;
++	}
++
++	free(tmpgroups);
++
++	return __nss_compat_result(s, 0);
 +}
 +
 +ns_mtab *
