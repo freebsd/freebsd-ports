@@ -1,5 +1,5 @@
---- nss/nss_ldap.map.orig	2010-06-15 23:53:21.000000000 +0400
-+++ nss/nss_ldap.map	2010-07-06 22:57:53.000000000 +0400
+--- ./nss/nss_ldap.map.orig	2010-09-24 07:07:18.000000000 +0000
++++ ./nss/nss_ldap.map		2010-12-16 13:13:25.000000000 +0000
 @@ -81,6 +78,27 @@
      _nss_ldap_getspent_r;
      _nss_ldap_endspent;

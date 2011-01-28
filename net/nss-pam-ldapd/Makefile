@@ -25,8 +25,7 @@ NSLCD_PIDFILE?=		/var/run/nslcd.pid
 NSLCD_SOCKET?=		/var/run/nslcd.ctl
 
 OPTIONS=		SASL		"Enable SASL" off \
-			PAM		"Build pam_ldap" on \
-			NSS_COMPAT	"Enable nss_ldap compatibility (DEPRECATED)" off
+			PAM		"Build pam_ldap" on
 
 USERS=			nslcd
 GROUPS=			nslcd
@@ -37,6 +36,10 @@ GROUPS=			nslcd
 IGNORE=			problems with nss/libc TLS
 .endif
 
+.if ${OSVERSION} < 800000
+EXTRA_PATCHES+=		${FILESDIR}/rtld_nss__nslcd.c
+.endif
+
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 
@@ -45,20 +48,9 @@ CONFIGURE_ARGS+=	--with-nslcd-pidfile=${NSLCD_PIDFILE} \
 			--with-ldap-lib=openldap --disable-kerberos \
 			--with-nss-ldap-soname=nss_ldap.so.1
 
-.if defined(WITHOUT_NSS)
-.undef NSS_COMPAT
-.endif
-
-.if defined(WITH_NSS_COMPAT)
-CONFIG_FILE=		"nss_ldap.conf"
-CONFIGURE_ARGS+=	--enable-nss_compat --disable-configfile-checking --with-ldap-conf-file=${PREFIX}/etc/${CONFIG_FILE}
-EXTRA_PATCHES+=		${FILESDIR}/nss_patch.diff
-PLIST_SUB+=		CONFIG=${CONFIG_FILE}
-.else
 CONFIG_FILE=		"nslcd.conf"
 CONFIGURE_ARGS+=	--with-ldap-conf-file=${PREFIX}/etc/${CONFIG_FILE}
 PLIST_SUB+=		CONFIG=${CONFIG_FILE}
-.endif
 
 .if defined(WITH_SASL)
 WANT_OPENLDAP_SASL=	yes
@@ -96,16 +88,10 @@ MAN5+=			nslcd.conf.5
 MAN8+=			nslcd.8
 .endif
 
-.if ${OSVERSION} < 800000
-BROKEN=		fails to patch on 7.X
-.endif
-
 post-extract:
 	@${REINPLACE_CMD} -e 's/\(INSTALL_\)\(.*\)) -D /\1\2) /' ${WRKSRC}/Makefile.in ${WRKSRC}/nss/Makefile.in
 	@${REINPLACE_CMD} -e 's/shadow.$$(OBJEXT)/shadow.$$(OBJEXT) bsdnss.$$(OBJEXT)/;s/shadow\.c/shadow.c bsdnss.c/' ${WRKSRC}/nss/Makefile.in
-	@${REINPLACE_CMD} -e 's/^NSS_VERS = .*/NSS_VERS = 1/;s/libnss_ldap\.so/nss_ldap.so/' ${WRKSRC}/nss/Makefile.in
-	@${REINPLACE_CMD} -e 's/$$(DESTDIR)$$(NSS_LDAP_PATH_CONF)/$$(DESTDIR)$$(NSS_LDAP_PATH_CONF).sample/' ${WRKSRC}/Makefile.in
-	@${REINPLACE_CMD} -e '/^$$(ACLOCAL_M4/,+2d' ${WRKSRC}/Makefile.in
+	#@${REINPLACE_CMD} -e '/^$$(ACLOCAL_M4/,+2d' ${WRKSRC}/Makefile.in
 
 post-configure:
 	${REINPLACE_CMD} -e 's/^\(CFLAGS.*\) \-O2 \(.*\)$$/\1 -O0 \2/' ${WRKSRC}/nss/Makefile
@@ -114,21 +100,9 @@ post-install:
 	@${ECHO_MSG}
 	@${ECHO_MSG} =====================================================================
 	@${ECHO_MSG}
-.if defined(WITH_NSS_COMPAT)
-	@${ECHO_MSG} "                NSS_LDAP compatibility ENABLED."
-	@${ECHO_MSG} "          It is DEPRECATED now and will be removed."
-	@${ECHO_MSG}
-	@${ECHO_MSG} " LDAP configuration:      ${PREFIX}/etc/${CONFIG_FILE}"
-	@${ECHO_MSG} " Secret file:             ${PREFIX}/etc/nss_ldap.secret"
-	@${ECHO_MSG} " Sample configuration:    ${PREFIX}/etc/${CONFIG_FILE}.sample"
-	@${ECHO_MSG}
-	@${ECHO_MSG} " Check if you need to adjust  reconnect_* parameters"
-	@${ECHO_MSG} " WARNING: nss_ldapd will use ONLY rootbinddn to access LDAP data"
-.else
 	@${ECHO_MSG} " LDAP configuration:      ${PREFIX}/etc/${CONFIG_FILE}"
 	@${ECHO_MSG} " Sample configuration:    ${PREFIX}/etc/${CONFIG_FILE}.sample"
 	@${ECHO_MSG}
-.endif
 .if !defined(WITHOUT_NSS)
 	@${ECHO_MSG} " WARNING: Be sure to set uid and gid configuration parameters"
 	@${ECHO_MSG} " WARNING: to make nslcd run under unprivileged user"
