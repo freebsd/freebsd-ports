@@ -222,6 +222,7 @@
     SUBDIR += php5-snmp
     SUBDIR += php52-snmp
     SUBDIR += phpip
+    SUBDIR += phpweathermap
     SUBDIR += pixilate
     SUBDIR += pktstat
     SUBDIR += pmacct

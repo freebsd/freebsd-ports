@@ -1,0 +1,36 @@
+--- weathermap.orig	2011-01-06 16:39:47.000000000 +0800
++++ weathermap	2011-01-07 21:24:30.000000000 +0800
+@@ -1,20 +1,20 @@
+-#!/usr/bin/php
++#!%%PREFIX%%/bin/php
+ <?php
+ 
+ // PHP Weathermap 0.97a
+ // Copyright Howard Jones, 2005-2009 howie@thingy.com
+ // http://www.network-weathermap.com/
+ // Released under the GNU Public License
+-require_once 'Console/Getopt.php';
++require_once '%%PREFIX%%/share/pear/Console/Getopt.php';
+ 
+-require_once "Weathermap.class.php";
++require_once "%%DATADIR%%/Weathermap.class.php";
+ 
+ if (!module_checks()) { die ("Quitting: Module checks failed.\n"); }
+ 
+ //    $weathermap_debugging=TRUE; 
+ 
+ $output="html";
+-$configfile="weathermap.conf";
++$configfile="%%DATADIR%%/weathermap.conf";
+ $htmlfile='';
+ $imagefile='';
+ $dumpafter=0;
+@@ -25,7 +25,7 @@
+ 
+ // **************************************************************************************
+ // THIS IS THE ONE LINE IN HERE YOU MIGHT HAVE TO CHANGE!
+-$rrdtool="/usr/bin/rrdtool";
++$rrdtool="%%PREFIX%%/bin/rrdtool";
+ // (on Windows, use / instead of \ in pathnames - c:/rrdtool/bin/rrdtool.exe for example)
+ // **************************************************************************************
+ 
