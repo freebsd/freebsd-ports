@@ -9,7 +9,7 @@ PORTNAME=		visualworks
 PORTVERSION=		7.6
 CATEGORIES=		lang linux
 SUBDIR=			vwnc${PORTVERSION}
-MASTER_SITES=		http://www.cincomsmalltalk.com/bsdports/${SUBDIR}/
+MASTER_SITES=		http://www.cincomsmalltalk.com/bsdports/${SUBDIR}.old/
 DISTFILES=		BaseVisualWorks.tar.gz \
 			VM-Linux86.tar.gz
 DIST_SUBDIR=		${SUBDIR}
@@ -17,8 +17,6 @@ EXTRACT_ONLY=
 
 MAINTAINER=		ports@FreeBSD.org
 COMMENT=		A high performance Smalltalk environment
-
-BROKEN=			does not fetch
 
 USE_LINUX=		yes
 USE_LINUX_APPS=		xorglibs
