@@ -6,16 +6,19 @@
 #
 
 PORTNAME=	typo3
-PORTVERSION=	4.4.6
+PORTVERSION=	4.5.0
 CATEGORIES=	www
-MASTER_SITES=	SF/${PORTNAME}/TYPO3%20Source%20and%20Dummy/TYPO3%20${PORTVERSION}
+MASTER_SITES=	SF/${PORTNAME}/TYPO3%20Source%20and%20Dummy/TYPO3%20${PORTVERSION} \
+		http://dl1.typo3.org/TYPO3_${PORTVERSION}/
 DISTNAME=	${PORTNAME}_src-${PORTVERSION}
 
 MAINTAINER=	jumper99@gmx.de
 COMMENT=	The typo3 content management system
 
+LICENSE=	GPLv2
+
 NO_BUILD=	yes
-USE_PHP=	mysql pcre xml session ctype filter json
+USE_PHP=	ctype filter json mysql pcre session xml
 WANT_PHP_WEB=	yes
 IGNORE_WITH_PHP=	4
 
@@ -27,22 +30,32 @@ EDITION=	dummy
 
 DISTFILES+=	${DISTNAME}${EXTRACT_SUFX} ${EDITION}-${PORTVERSION}${EXTRACT_SUFX}
 
-OPTIONS=	GD "Configure with GDlib/freetype support" off \
-		ZLIB "Configure with zlib support" off \
-		IMAGICK "Configure with ImageMagick support" off
+OPTIONS=	CURL "Configure with cURL support" off \
+		GD "Configure with GDlib/freetype support" on \
+		IMAGICK "Configure with ImageMagick support" on \
+		MBSTRING "Configure with mbstring support" off \
+		ZLIB "Configure with zlib support" off
 
 .include <bsd.port.pre.mk>
+
+.if defined(WITH_CURL)
+USE_PHP+=	curl
+.endif
 
 .if defined(WITH_GD)
 USE_PHP+=	gd
 .endif
 
-.if defined(WITH_ZLIB)
-USE_PHP+=	zlib
-.endif
-
 .if defined(WITH_IMAGICK)
 LIB_DEPENDS+=	MagickWand.4:${PORTSDIR}/graphics/ImageMagick
+.endif
+
+.if defined(WITH_MBSTRING)
+USE_PHP+=	mbstring
+.endif
+
+.if defined(WITH_ZLIB)
+USE_PHP+=	zlib
 .endif
 
 pre-install:
