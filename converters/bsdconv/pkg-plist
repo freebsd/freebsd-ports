@@ -2,7 +2,7 @@ bin/bsdconv
 bin/bsdconv_mktable
 include/bsdconv.h
 lib/libbsdconv.so
-lib/libbsdconv.so.3
+lib/libbsdconv.so.4
 %%DATADIR%%/from/3F
 %%DATADIR%%/from/ASCII
 %%DATADIR%%/from/ASCII-NAMED-HTML-ENTITY
@@ -15,12 +15,22 @@ lib/libbsdconv.so.3
 %%DATADIR%%/from/BYTE
 %%DATADIR%%/from/CNS11643
 %%DATADIR%%/from/CNS11643.so
+%%DATADIR%%/from/CP1251
+%%DATADIR%%/from/CP1252
 %%DATADIR%%/from/CP936
+%%DATADIR%%/from/CP949
 %%DATADIR%%/from/CP950
+%%DATADIR%%/from/ESCAPE
+%%DATADIR%%/from/ESCAPE.so
 %%DATADIR%%/from/GB2312
 %%DATADIR%%/from/GBK
 %%DATADIR%%/from/ISO-8859-1
 %%DATADIR%%/from/MOZ18
+%%DATADIR%%/from/PASS
+%%DATADIR%%/from/PASS.so
+%%DATADIR%%/from/SHIFT-JIS
+%%DATADIR%%/from/UNICODE
+%%DATADIR%%/from/UNICODE.so
 %%DATADIR%%/from/UTF-16BE
 %%DATADIR%%/from/UTF-16BE.so
 %%DATADIR%%/from/UTF-16LE
@@ -50,6 +60,7 @@ lib/libbsdconv.so.3
 %%DATADIR%%/inter/WIN
 %%DATADIR%%/inter/ZHCN
 %%DATADIR%%/inter/ZHTW
+%%DATADIR%%/inter/ZHTW_WORDS
 %%DATADIR%%/inter/ZH_COMP
 %%DATADIR%%/inter/ZH_DECOMP
 %%DATADIR%%/to/3F
@@ -80,10 +91,14 @@ lib/libbsdconv.so.3
 %%DATADIR%%/to/GB2312
 %%DATADIR%%/to/GBK
 %%DATADIR%%/to/ISO-8859-1
+%%DATADIR%%/to/PASS
+%%DATADIR%%/to/PASS.so
 %%DATADIR%%/to/UCS-2BE
 %%DATADIR%%/to/UCS-2BE.so
 %%DATADIR%%/to/UCS-2LE
 %%DATADIR%%/to/UCS-2LE.so
+%%DATADIR%%/to/UNICODE
+%%DATADIR%%/to/UNICODE.so
 %%DATADIR%%/to/UTF-16BE
 %%DATADIR%%/to/UTF-16BE.so
 %%DATADIR%%/to/UTF-16LE
@@ -94,7 +109,7 @@ lib/libbsdconv.so.3
 %%DATADIR%%/to/UTF-32LE.so
 %%DATADIR%%/to/UTF-8
 %%DATADIR%%/to/UTF-8.so
+@dirrmtry %%DATADIR%%/to
 @dirrmtry %%DATADIR%%/inter
 @dirrmtry %%DATADIR%%/from
-@dirrmtry %%DATADIR%%/to
 @dirrmtry %%DATADIR%%
