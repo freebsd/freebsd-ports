@@ -8,7 +8,7 @@
 
 PORTNAME=	libfame
 PORTVERSION=	0.9.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	multimedia
 MASTER_SITES=	SF/fame/${PORTNAME}/${PORTVERSION}
 
@@ -39,5 +39,8 @@ CONFIGURE_ARGS+=	--disable-mmx
 post-patch:
 	@${REINPLACE_CMD} -e 's|$${CONFIG_SHELL-/bin/sh} $$ac_aux_dir|$$ac_aux_dir|' \
 		${WRKSRC}/configure
+	@${REINPLACE_CMD} \
+		-e 's|AC_DEFUN(AM_PATH_LIBFAME|AC_DEFUN([AM_PATH_LIBFAME]|g' \
+		${WRKSRC}/libfame.m4 ${WRKSRC}/libfame.m4.in
 
 .include <bsd.port.post.mk>
