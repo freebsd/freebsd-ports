@@ -12,7 +12,9 @@
 %%WWWDIR%%/gfx/bullet_toggle_minus.png
 %%WWWDIR%%/gfx/bullet_toggle_plus.png
 %%WWWDIR%%/gfx/close.gif
+%%WWWDIR%%/gfx/favicon.png
 %%WWWDIR%%/gfx/html.gif
+%%WWWDIR%%/gfx/images/Apple.png
 %%WWWDIR%%/gfx/images/Arch.png
 %%WWWDIR%%/gfx/images/CentOS.png
 %%WWWDIR%%/gfx/images/Cobalt.png
@@ -47,9 +49,9 @@
 %%WWWDIR%%/gfx/next.gif
 %%WWWDIR%%/gfx/prev.gif
 %%WWWDIR%%/gfx/reload.png
-%%WWWDIR%%/gfx/sort_asc.gif
-%%WWWDIR%%/gfx/sort_both.gif
-%%WWWDIR%%/gfx/sort_desc.gif
+%%WWWDIR%%/gfx/sort_asc.png
+%%WWWDIR%%/gfx/sort_both.png
+%%WWWDIR%%/gfx/sort_desc.png
 %%WWWDIR%%/gfx/treeTable/blank.gif
 %%WWWDIR%%/gfx/treeTable/tv-collapsable-last.gif
 %%WWWDIR%%/gfx/treeTable/tv-collapsable.gif
@@ -201,6 +203,11 @@
 %%WWWDIR%%/plugins/SMART/lang/cz.xml
 %%WWWDIR%%/plugins/SMART/lang/en.xml
 %%WWWDIR%%/plugins/SMART/lang/fr.xml
+%%WWWDIR%%/plugins/UpdateNotifier/UpdateNotifier.config.php
+%%WWWDIR%%/plugins/UpdateNotifier/class.UpdateNotifier.inc.php
+%%WWWDIR%%/plugins/UpdateNotifier/js/UpdateNotifier.js
+%%WWWDIR%%/plugins/UpdateNotifier/lang/en.xml
+%%WWWDIR%%/plugins/UpdateNotifier/lang/fr.xml
 %%WWWDIR%%/plugins/ipmi/class.ipmi.inc.php
 %%WWWDIR%%/plugins/ipmi/ipmi.config.php
 %%WWWDIR%%/plugins/ipmi/js/ipmi.js
@@ -215,6 +222,8 @@
 %%WWWDIR%%/templates/cream/bg.gif
 %%WWWDIR%%/templates/jstyle_blue.css
 %%WWWDIR%%/templates/jstyle_green.css
+%%WWWDIR%%/templates/nextgen.css
+%%WWWDIR%%/templates/nextgen/nextgen_bg.png
 %%WWWDIR%%/templates/phpsysinfo.css
 %%WWWDIR%%/templates/plugin/jquery.dataTables.css
 %%WWWDIR%%/templates/plugin/jquery.jgrowl.css
@@ -225,12 +234,18 @@
 %%WWWDIR%%/xml.php
 @dirrm %%WWWDIR%%/templates/two
 @dirrm %%WWWDIR%%/templates/plugin
+@dirrm %%WWWDIR%%/templates/nextgen
 @dirrm %%WWWDIR%%/templates/cream
 @dirrm %%WWWDIR%%/templates/aqua
 @dirrm %%WWWDIR%%/templates
 @dirrm %%WWWDIR%%/plugins/ipmi/lang
 @dirrm %%WWWDIR%%/plugins/ipmi/js
 @dirrm %%WWWDIR%%/plugins/ipmi
+@dirrm %%WWWDIR%%/plugins/UpdateNotifier/lang
+@dirrm %%WWWDIR%%/plugins/UpdateNotifier/js
+@dirrm %%WWWDIR%%/plugins/UpdateNotifier/gfx
+@dirrm %%WWWDIR%%/plugins/UpdateNotifier/css
+@dirrm %%WWWDIR%%/plugins/UpdateNotifier
 @dirrm %%WWWDIR%%/plugins/SMART/lang
 @dirrm %%WWWDIR%%/plugins/SMART/js
 @dirrm %%WWWDIR%%/plugins/SMART/gfx
@@ -283,3 +298,11 @@
 @dirrm %%WWWDIR%%/gfx
 @dirrm %%WWWDIR%%/data
 @dirrm %%WWWDIR%%
+@exec mkdir -p %D/%%WWWDIR%%/plugins/UpdateNotifier/gfx
+@exec mkdir -p %D/%%WWWDIR%%/plugins/UpdateNotifier/css
+@exec mkdir -p %D/%%WWWDIR%%/plugins/SMART/gfx
+@exec mkdir -p %D/%%WWWDIR%%/plugins/Quotas/gfx
+@exec mkdir -p %D/%%WWWDIR%%/plugins/PS/gfx
+@exec mkdir -p %D/%%WWWDIR%%/plugins/PS/css
+@exec mkdir -p %D/%%WWWDIR%%/plugins/BAT/gfx
+@exec mkdir -p %D/%%WWWDIR%%/plugins/BAT/css
