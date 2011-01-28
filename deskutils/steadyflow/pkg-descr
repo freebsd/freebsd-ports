@@ -1,0 +1,5 @@
+Steadyflow is a GTK+ based download manager that aims for minimalism, and
+ease of use. It should be easy to control, whether from the GUI, command
+line, or D-Bus.
+
+WWW:	https://launchpad.net/steadyflow
