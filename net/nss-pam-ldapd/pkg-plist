@@ -1,3 +1,4 @@
+@unexec if cmp -s %D/etc/%%CONFIG%%.sample %D/etc/%%CONFIG%%; then rm -f %D/etc/%%CONFIG%%; fi
 etc/%%CONFIG%%.sample
 %%NSS%%lib/nss_ldap.so.1
 %%NSLCD%%sbin/nslcd

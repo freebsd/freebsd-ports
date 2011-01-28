@@ -6,7 +6,7 @@
 #
 
 PORTNAME=		nss-pam-ldapd
-PORTVERSION=		0.7.7
+PORTVERSION=		0.7.13
 CATEGORIES=		net
 MASTER_SITES=		http://arthurdejong.org/nss-pam-ldapd/ \
 			http://static.ipfw.ru/files/
@@ -42,7 +42,8 @@ CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 
 CONFIGURE_ARGS+=	--with-nslcd-pidfile=${NSLCD_PIDFILE} \
 			--with-nslcd-socket=${NSLCD_SOCKET} \
-			--with-ldap-lib=openldap --disable-kerberos
+			--with-ldap-lib=openldap --disable-kerberos \
+			--with-nss-ldap-soname=nss_ldap.so.1
 
 .if defined(WITHOUT_NSS)
 .undef NSS_COMPAT
