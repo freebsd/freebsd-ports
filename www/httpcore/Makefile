@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	httpcore
-DISTVERSION=	4.0.1
+DISTVERSION=	4.1
 CATEGORIES=	www java
 MASTER_SITES=	${MASTER_SITE_APACHE}
 MASTER_SITE_SUBDIR=	httpcomponents/${PORTNAME}/binary
@@ -14,6 +14,9 @@ DISTNAME=	httpcomponents-core-${DISTVERSION}-bin
 
 MAINTAINER=	ale@FreeBSD.org
 COMMENT=	Java components implementing the base HTTP protocol
+
+LICENSE=	ASL
+LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 USE_JAVA=	yes
 JAVA_VERSION=	1.5+
