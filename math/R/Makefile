@@ -11,8 +11,7 @@ PORTNAME=	libRmath
 .else
 PORTNAME=	R
 .endif
-PORTVERSION=	2.11.1
-PORTREVISION=	1
+PORTVERSION=	2.12.1
 CATEGORIES=	math lang
 MASTER_SITES=	http://cran.r-project.org/src/base/R-2/ \
 		ftp://cran.r-project.org/pub/R/src/base/R-2/ \
@@ -30,8 +29,7 @@ MASTER_SITES=	http://cran.r-project.org/src/base/R-2/ \
 		http://lib.stat.cmu.edu/R/CRAN/src/base/R-2/ \
 		http://cran.stat.ucla.edu/src/base/R-2/ \
 		http://probability.ca/cran/src/base/R-2/ \
-		http://www.ibiblio.org/pub/languages/R/CRAN/src/base/R-2/ \
-		http://www.bioconductor.org/CRAN/src/base/R-2/
+		http://www.ibiblio.org/pub/languages/R/CRAN/src/base/R-2/
 DISTNAME=	R-${PORTVERSION}
 
 MAINTAINER=	bf@FreeBSD.org
@@ -55,8 +53,7 @@ OPTIONS=	ATLAS	"Use ATLAS instead of BLAS/LAPACK" off \
 		THREADS "Build a multithreaded R" on \
 		X11	"Enable the X11() graphics device" on \
 		DVI_MANUALS  "Install DVI manuals (requires TeX)" off \
-		INFO_MANUALS "Install GNU info manuals" on \
-		PDF_MANUALS	"Install PDF manuals (requires TeX)" off
+		INFO_MANUALS "Install GNU info manuals" on
 
 MAN1=		R.1 Rscript.1
 .endif # !LIBRMATH_SLAVEPORT
@@ -75,21 +72,19 @@ ALL_TARGET=	all
 USE_ICONV=	yes
 USE_PERL5=	yes
 CONFIGURE_ENV=	INSTALL_DATA="${INSTALL} ${COPY} ${_SHROWNGRP} -m 644" \
-		FCFLAGS="${FFLAGS}" TAR="${TAR}"
-CONFIGURE_ARGS=	--with-system-bzlib --with-system-zlib rdocdir=${DOCSDIR}
+		FCFLAGS="${FFLAGS}" LDFLAGS="${LDFLAGS}" TAR="${TAR}" \
+		R_LD_LIBRARY_PATH="${LOCALBASE}/lib/${_GCC_BUILD_DEPENDS}"
+CONFIGURE_ARGS=	--with-system-bzlib --with-system-zlib rdocdir=${DOCSDIR} \
+		--enable-memory-profiling
 .endif # LIBRMATH_SLAVEPORT
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 700000
-EXTRA_PATCHES+=	${FILESDIR}/freebsd6_tar_patch
-.endif
 
 .if !defined(LIBRMATH_SLAVEPORT)
 .if defined(WITH_ATLAS)
 LIB_DEPENDS+=	atlas.2:${PORTSDIR}/math/atlas
 CONFIGURE_ARGS+=--with-blas="-lf77blas -latlas"
-# A workaround to prevent hangs up during the build.
+# A workaround to prevent hangs during the build.
 .if ${ARCH} != "i386"
 CONFIGURE_ARGS+=--with-lapack="-lalapack -lcblas"
 .endif
@@ -156,7 +151,7 @@ CONFIGURE_ARGS+=--without-tcltk
 PLIST_SUB+=	TCLTK="@comment "
 .else
 USE_TK_NO_THREADS=	yes
-USE_TK =	83+
+USE_TK =	84+
 .include "${PORTSDIR}/Mk/bsd.tcl.mk"
 CONFIGURE_ARGS+=--with-tcltk \
 		--with-tcl-config=${TCL_LIBDIR}/tclConfig.sh \
@@ -179,27 +174,18 @@ USE_XORG=	x11 xt
 PLIST_SUB+=	X11=""
 .endif
 
-.if defined(WITH_DVI_MANUALS) && !defined(NOPORTDOCS)
-BUILD_DEPENDS+=	texi2dvi:${PORTSDIR}/print/teTeX-base
-ALL_TARGET+=	dvi
-INSTALL_TARGET+=install-dvi
-PLIST_SUB+=	DVI_MANUAL=""
-.else
-PLIST_SUB+=	DVI_MANUAL="@comment "
-.endif
-
 .if defined(WITH_INFO_MANUALS) && !defined(NOPORTDOCS)
 ALL_TARGET+=	info
 INFO=		R-FAQ R-admin R-data R-exts R-intro R-lang
 .endif
 
-.if defined(WITH_PDF_MANUALS) && !defined(NOPORTDOCS)
-PLIST_SUB+=	PDF_MANUAL=""
-BUILD_DEPENDS+=	pdflatex:${PORTSDIR}/print/teTeX-base
-ALL_TARGET+=	pdf
-INSTALL_TARGET+=	install-pdf
+.if defined(WITH_DVI_MANUALS) && !defined(NOPORTDOCS)
+BUILD_DEPENDS+=	texi2dvi:${PORTSDIR}/print/teTeX-base
+ALL_TARGET+=	dvi
+INSTALL_TARGET+=	install-dvi
+PLIST_SUB+=	DVI_MANUAL=""
 .else
-PLIST_SUB+=	PDF_MANUAL="@comment "
+PLIST_SUB+=	DVI_MANUAL="@comment "
 .endif
 .endif # !LIBRMATH_SLAVEPORT
 
@@ -225,10 +211,12 @@ post-patch:
 .endif
 
 regression-test: build
-	@(cd ${WRKSRC}; ${MAKE} check)
+	@(cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${MAKE} ${_MAKE_JOBS} \
+		${MAKE_ARGS} check)
 
 check-all: build
-	@(cd ${WRKSRC}; ${MAKE} check-all)
+	@(cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${MAKE} ${_MAKE_JOBS} \
+		${MAKE_ARGS} check-all)
 
 post-install:
 .if !defined(WITH_STATIC_LIBR)

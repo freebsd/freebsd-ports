@@ -6,11 +6,12 @@
 %%DOCSDIR%%/FAQ
 %%DOCSDIR%%/KEYWORDS
 %%DOCSDIR%%/KEYWORDS.db
-%%DOCSDIR%%/NEWS
+%%DOCSDIR%%/NEWS.rds
 %%DOCSDIR%%/RESOURCES
 %%DOCSDIR%%/THANKS
 bin/R
 bin/Rscript
+%%DOCSDIR%%/html/NEWS.html
 %%DOCSDIR%%/html/R.css
 %%DOCSDIR%%/html/SearchOn.html
 %%DOCSDIR%%/html/Search.html
@@ -27,6 +28,7 @@ bin/Rscript
 %%DOCSDIR%%/html/up.jpg
 lib/R/COPYING
 lib/R/NEWS
+lib/R/NEWS.pdf
 lib/R/SVN-REVISION
 lib/R/bin/BATCH
 lib/R/bin/COMPILE
@@ -657,6 +659,7 @@ lib/R/library/grid/libs/grid.so
 %%NLS%%lib/R/library/grid/po/ru/LC_MESSAGES/grid.mo
 %%NLS%%lib/R/library/grid/po/zh_CN/LC_MESSAGES/R-grid.mo
 %%NLS%%lib/R/library/grid/po/zh_CN/LC_MESSAGES/grid.mo
+lib/R/library/lattice/CITATION
 lib/R/library/lattice/COPYING
 lib/R/library/lattice/DESCRIPTION
 lib/R/library/lattice/INDEX
@@ -726,6 +729,7 @@ lib/R/library/mgcv/CITATION
 lib/R/library/mgcv/DESCRIPTION
 lib/R/library/mgcv/INDEX
 lib/R/library/mgcv/Meta/Rd.rds
+lib/R/library/mgcv/Meta/data.rds
 lib/R/library/mgcv/Meta/hsearch.rds
 lib/R/library/mgcv/Meta/links.rds
 lib/R/library/mgcv/Meta/nsInfo.rds
@@ -734,6 +738,8 @@ lib/R/library/mgcv/NAMESPACE
 lib/R/library/mgcv/R/mgcv
 lib/R/library/mgcv/R/mgcv.rdb
 lib/R/library/mgcv/R/mgcv.rdx
+lib/R/library/mgcv/data/columb.polys.rda
+lib/R/library/mgcv/data/columb.rda
 lib/R/library/mgcv/help/AnIndex
 lib/R/library/mgcv/help/aliases.rds
 lib/R/library/mgcv/help/mgcv.rdb
@@ -1023,6 +1029,11 @@ lib/R/library/survival/data/us2003.dat
 lib/R/library/survival/data/us2004.dat
 lib/R/library/survival/data/usdecennial.dat
 lib/R/library/survival/data/usinfant.dat
+lib/R/library/survival/doc/validate.aux
+lib/R/library/survival/doc/validate.log
+lib/R/library/survival/doc/validate.pdf
+lib/R/library/survival/doc/validate.tex
+lib/R/library/survival/doc/index.html
 lib/R/library/survival/help/AnIndex
 lib/R/library/survival/help/aliases.rds
 lib/R/library/survival/help/paths.rds
@@ -1030,13 +1041,6 @@ lib/R/library/survival/help/survival.rdb
 lib/R/library/survival/help/survival.rdx
 lib/R/library/survival/html/00Index.html
 lib/R/library/survival/libs/survival.so
-lib/R/library/survival/noweb/Makefile
-lib/R/library/survival/noweb/Readme
-lib/R/library/survival/noweb/main.Rnw
-lib/R/library/survival/noweb/noweb.sty
-lib/R/library/survival/noweb/nwmac.tex
-lib/R/library/survival/noweb/predict.coxph.Rnw
-lib/R/library/survival/noweb/residuals.survreg.Rnw
 lib/R/library/tcltk/DESCRIPTION
 lib/R/library/tcltk/INDEX
 lib/R/library/tcltk/Meta/Rd.rds
@@ -1155,7 +1159,6 @@ lib/R/modules/internet.so
 lib/R/modules/lapack.so
 lib/R/modules/vfonts.so
 lib/R/share/R/REMOVE.R
-lib/R/share/R/Rdiff.R
 lib/R/share/R/examples-footer.R
 lib/R/share/R/examples-header.R
 lib/R/share/R/nspackloader.R
@@ -1194,44 +1197,36 @@ lib/R/share/make/config.mk
 lib/R/share/make/shlib.mk
 lib/R/share/make/vars.mk
 lib/R/share/make/winshlib.mk
-lib/R/share/perl/File/Copy/Recursive.pm
-lib/R/share/perl/R/Dcf.pm
-lib/R/share/perl/R/Logfile.pm
-lib/R/share/perl/R/Utils.pm
-lib/R/share/perl/R/Vars.pm
 lib/R/share/sh/echo.sh
-lib/R/share/texmf/Rd.sty
-lib/R/share/texmf/Sweave.sty
-lib/R/share/texmf/omsaer.fd
-lib/R/share/texmf/omsaett.fd
-lib/R/share/texmf/omscmtt.fd
-lib/R/share/texmf/ts1aer.fd
-lib/R/share/texmf/ts1aett.fd
-lib/R/share/texmf/upquote.sty
+lib/R/share/texmf/bibtex/bib/RJournal.bib
+lib/R/share/texmf/bibtex/bib/Rnews.bib
+lib/R/share/texmf/bibtex/bst/jss.bst
+lib/R/share/texmf/tex/latex/Rd.sty
+lib/R/share/texmf/tex/latex/Sweave.sty
+lib/R/share/texmf/tex/latex/jss.cls
+lib/R/share/texmf/tex/latex/omsaer.fd
+lib/R/share/texmf/tex/latex/omsaett.fd
+lib/R/share/texmf/tex/latex/omscmtt.fd
+lib/R/share/texmf/tex/latex/ts1aer.fd
+lib/R/share/texmf/tex/latex/ts1aett.fd
+lib/R/share/texmf/tex/latex/upquote.sty
 libdata/pkgconfig/libR.pc
 %%SHARED_LIBR%%lib/libR.so
 %%SHARED_LIBR%%lib/libR.so.0
 %%PORTDOCS%%%%DVI_MANUAL%%%%DOCSDIR%%/manual/R-FAQ.dvi
 %%DOCSDIR%%/manual/R-FAQ.html
-%%PORTDOCS%%%%PDF_MANUAL%%%%DOCSDIR%%/manual/R-FAQ.pdf
 %%PORTDOCS%%%%DVI_MANUAL%%%%DOCSDIR%%/manual/R-admin.dvi
 %%DOCSDIR%%/manual/R-admin.html
-%%PORTDOCS%%%%PDF_MANUAL%%%%DOCSDIR%%/manual/R-admin.pdf
 %%PORTDOCS%%%%DVI_MANUAL%%%%DOCSDIR%%/manual/R-data.dvi
 %%DOCSDIR%%/manual/R-data.html
-%%PORTDOCS%%%%PDF_MANUAL%%%%DOCSDIR%%/manual/R-data.pdf
 %%PORTDOCS%%%%DVI_MANUAL%%%%DOCSDIR%%/manual/R-exts.dvi
 %%DOCSDIR%%/manual/R-exts.html
-%%PORTDOCS%%%%PDF_MANUAL%%%%DOCSDIR%%/manual/R-exts.pdf
 %%PORTDOCS%%%%DVI_MANUAL%%%%DOCSDIR%%/manual/R-intro.dvi
 %%DOCSDIR%%/manual/R-intro.html
-%%PORTDOCS%%%%PDF_MANUAL%%%%DOCSDIR%%/manual/R-intro.pdf
 %%PORTDOCS%%%%DVI_MANUAL%%%%DOCSDIR%%/manual/R-ints.dvi
 %%DOCSDIR%%/manual/R-ints.html
-%%PORTDOCS%%%%PDF_MANUAL%%%%DOCSDIR%%/manual/R-ints.pdf
 %%PORTDOCS%%%%DVI_MANUAL%%%%DOCSDIR%%/manual/R-lang.dvi
 %%DOCSDIR%%/manual/R-lang.html
-%%PORTDOCS%%%%PDF_MANUAL%%%%DOCSDIR%%/manual/R-lang.pdf
 %%PORTDOCS%%%%DVI_MANUAL%%%%DOCSDIR%%/manual/images/QQ.eps
 %%PORTDOCS%%%%DVI_MANUAL%%%%DOCSDIR%%/manual/images/ecdf.eps
 %%PORTDOCS%%%%DVI_MANUAL%%%%DOCSDIR%%/manual/images/fig11.eps
@@ -1239,13 +1234,13 @@ libdata/pkgconfig/libR.pc
 %%PORTDOCS%%%%DVI_MANUAL%%%%DOCSDIR%%/manual/images/hist.eps
 %%PORTDOCS%%%%DVI_MANUAL%%%%DOCSDIR%%/manual/images/ice.eps
 %%PORTDOCS%%%%DVI_MANUAL%%%%DOCSDIR%%/manual/refman.dvi
-%%PORTDOCS%%%%PDF_MANUAL%%%%DOCSDIR%%/manual/refman.pdf
+@dirrm lib/R/share/texmf/tex/latex
+@dirrm lib/R/share/texmf/tex
+@dirrm lib/R/share/texmf/bibtex/bst
+@dirrm lib/R/share/texmf/bibtex/bib
+@dirrm lib/R/share/texmf/bibtex
 @dirrm lib/R/share/texmf
 @dirrm lib/R/share/sh
-@dirrm lib/R/share/perl/R
-@dirrm lib/R/share/perl/File/Copy
-@dirrm lib/R/share/perl/File
-@dirrm lib/R/share/perl
 @dirrm lib/R/share/make
 %%NLS%%@dirrm lib/R/share/locale/zh_TW/LC_MESSAGES
 %%NLS%%@dirrm lib/R/share/locale/zh_TW
@@ -1356,10 +1351,10 @@ libdata/pkgconfig/libR.pc
 @dirrm lib/R/library/tcltk/R
 @dirrm lib/R/library/tcltk/Meta
 @dirrm lib/R/library/tcltk
-@dirrm lib/R/library/survival/noweb
 @dirrm lib/R/library/survival/libs
 @dirrm lib/R/library/survival/html
 @dirrm lib/R/library/survival/help
+@dirrm lib/R/library/survival/doc
 @dirrm lib/R/library/survival/data
 @dirrm lib/R/library/survival/R
 @dirrm lib/R/library/survival/Meta
@@ -1499,6 +1494,7 @@ libdata/pkgconfig/libR.pc
 @dirrm lib/R/library/mgcv/libs
 @dirrm lib/R/library/mgcv/html
 @dirrm lib/R/library/mgcv/help
+@dirrm lib/R/library/mgcv/data
 @dirrm lib/R/library/mgcv/R
 @dirrm lib/R/library/mgcv/Meta
 @dirrm lib/R/library/mgcv
