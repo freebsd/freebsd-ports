@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	fuse-utils
-PORTVERSION=	0.10.0.1
+PORTVERSION=	1.0.0
 CATEGORIES=	emulators
 MASTER_SITES=	SF/fuse-emulator/${PORTNAME}/${PORTVERSION}
 
@@ -16,15 +16,20 @@ COMMENT=	Utilities from the Free Unix Spectrum Emulator
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	spectrum.7:${PORTSDIR}/emulators/libspectrum
+MAKE_JOBS_SAFE=	yes
+
+LIB_DEPENDS=	spectrum.8:${PORTSDIR}/emulators/libspectrum
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--with-libspectrum-prefix=${LOCALBASE} \
+		--with-local-prefix=${LOCALBASE}
+
+MAN1=	createhdf.1 fuse-utils.1 listbasic.1 raw2hdf.1 rzxcheck.1 rzxdump.1 rzxtool.1 scl2trd.1 snap2tzx.1 snapconv.1 tapeconv.1 tzxlist.1 profile2map.1
+
+.include <bsd.port.options.mk>
 
 OPTIONS=	AUDIOFILE "Build audio <-> tape utilities" on
 
-GNU_CONFIGURE=	yes
-
 .include <bsd.port.pre.mk>
-
-MAN1=	createhdf.1 fuse-utils.1 listbasic.1 raw2hdf.1 rzxcheck.1 rzxdump.1 rzxtool.1 scl2trd.1 snap2tzx.1 snapconv.1 tapeconv.1 tzxlist.1 profile2map.1
 
 .if !defined(WITHOUT_AUDIOFILE)
 LIB_DEPENDS+=	audiofile.0:${PORTSDIR}/audio/libaudiofile
@@ -34,8 +39,6 @@ MAN1+=		audio2tape.1 tape2wav.1
 CONFIGURE_ARGS+=--without-audiofile
 PLIST_SUB=	AUDIOFILE="@comment "
 .endif
-
-MAKE_JOBS_SAFE=	yes
 
 .if !defined(NOPORTDOCS)
 post-install:
