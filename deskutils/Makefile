@@ -258,6 +258,7 @@
     SUBDIR += sugarcrm
     SUBDIR += superkaramba-lwp
     SUBDIR += superswitcher
+    SUBDIR += surrealtodo
     SUBDIR += systempreferences
     SUBDIR += tagutils
     SUBDIR += taskjuggler
