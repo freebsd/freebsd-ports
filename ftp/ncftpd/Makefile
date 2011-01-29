@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ncftpd
-PORTVERSION=	2.8.6
+PORTVERSION=	2.8.7
 CATEGORIES=	ftp
 MASTER_SITES=	ftp://ftp.ncftp.com/ncftpd/${PORTVERSION}/ \
 		ftp://ftp.nl.uu.net/pub/unix/ftp/ncftpd/${PORTVERSION}/ \
