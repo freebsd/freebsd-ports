@@ -457,6 +457,7 @@
     SUBDIR += nylon
     SUBDIR += ohphone
     SUBDIR += olsrd
+    SUBDIR += omcmd
     SUBDIR += omnitty
     SUBDIR += onenetd
     SUBDIR += onion-fec
