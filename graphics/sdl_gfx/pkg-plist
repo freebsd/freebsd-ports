@@ -8,7 +8,5 @@ lib/libSDL_gfx.a
 lib/libSDL_gfx.la
 lib/libSDL_gfx.so
 lib/libSDL_gfx.so.18
-lib/libdata/pkgconfig/SDL_gfx.pc
-@dirrmtry lib/libdata/pkgconfig
-@dirrmtry lib/libdata
+libdata/pkgconfig/SDL_gfx.pc
 @dirrmtry include/SDL
