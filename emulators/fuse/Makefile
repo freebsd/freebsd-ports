@@ -6,19 +6,23 @@
 #
 
 PORTNAME=	fuse
-PORTVERSION=	0.10.0.2
-PORTREVISION=	2
+PORTVERSION=	1.0.0.1
 CATEGORIES=	emulators
 MASTER_SITES=	SF/${PORTNAME}-emulator/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	yuri.pankov@gmail.com
 COMMENT=	Free Unix (Sinclair ZX-)Spectrum Emulator
 
-LIB_DEPENDS=	spectrum.7:${PORTSDIR}/emulators/libspectrum \
+LIB_DEPENDS=	spectrum.8:${PORTSDIR}/emulators/libspectrum \
 		gcrypt.17:${PORTSDIR}/security/libgcrypt
 
-USE_GNOME=	libxml2 glib20 gtk20
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 GNU_CONFIGURE=	yes
+USE_GNOME=	libxml2 glib20 gtk20
+
+CONFIGURE_ARGS+=--without-alsa --without-joystick
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
 		LIBS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
 

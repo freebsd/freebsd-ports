@@ -16,6 +16,7 @@ bin/fuse
 %%DATADIR%%/if1-2.rom
 %%DATADIR%%/keyboard.scr
 %%DATADIR%%/microdrive.bmp
+%%DATADIR%%/opus.rom
 %%DATADIR%%/plus2-0.rom
 %%DATADIR%%/plus2-1.rom
 %%DATADIR%%/plus3-0.rom
@@ -35,6 +36,7 @@ bin/fuse
 %%DATADIR%%/tape_2048.szx
 %%DATADIR%%/tape_2068.szx
 %%DATADIR%%/tape_48.szx
+%%DATADIR%%/tape_48_ntsc.szx
 %%DATADIR%%/tape_pentagon.szx
 %%DATADIR%%/tape_plus2.szx
 %%DATADIR%%/tape_plus2a.szx
