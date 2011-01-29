@@ -131,7 +131,7 @@ PLIST_SUB+=		SHAREDLIB="@comment "
 
 # Check for GNAT sources.
 .if !exists(${DISTDIR}/${gnat_srcfile}) && !defined(PACKAGE_BUILDING)
-IGNORE=	You must fetch the source distribution manually. Please access http://libre.adacore.com/ with a web browsern and download the source files: ${gnat_srcfile} ${gcc_srcfile} placing them in ${DISTDIR}.
+IGNORE=	you must fetch the source distribution manually. Please access http://libre.adacore.com/ with a web browser and download the source files: ${gnat_srcfile} ${gcc_srcfile} placing them in ${DISTDIR}
 .endif
 
 pre-patch:
