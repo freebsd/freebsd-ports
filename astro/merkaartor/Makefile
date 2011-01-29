@@ -7,6 +7,7 @@
 
 PORTNAME=	merkaartor
 PORTVERSION=	0.17.0
+PORTREVISION=	1
 CATEGORIES=	astro
 MASTER_SITES=	http://www.merkaartor.be/attachments/download/192/
 

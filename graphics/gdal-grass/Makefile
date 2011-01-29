@@ -7,6 +7,7 @@
 
 PORTNAME=	gdal-grass
 PORTVERSION=	1.4.3
+PORTREVISION=	1
 PORTREVISION=	5
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.gdal.org/dl/ \
