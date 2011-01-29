@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tor
-DISTVERSION=	0.2.2.21-alpha
+DISTVERSION=	0.2.2.22-alpha
 CATEGORIES=	security net ipv6
 MASTER_SITES=	http://www.torproject.org/dist/ \
 		ftp://tor.tomyn.com/pub/mirrors/tor/ \
@@ -21,7 +21,6 @@ MASTER_SITES=	http://www.torproject.org/dist/ \
 		http://tor.kamagurka.org/dist/ \
 		http://torproj.xpdm.us/dist/ \
 		http://www.oignon.net/dist/ \
-		http://www.theonionrouter.com/dist/ \
 		http://www.torproject.org.nyud.net/dist/ \
 		http://www.torproject.us/dist/
 PKGNAMESUFFIX=	-devel
@@ -33,8 +32,6 @@ LIB_DEPENDS=	event-1.4:${PORTSDIR}/devel/libevent
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--with-openssl-dir="${OPENSSLBASE}" --disable-asciidoc
-CPPFLAGS+=	-I${LOCALBASE}/include
-CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS}"
 MAKE_JOBS_UNSAFE=	yes
 
 OPTIONS=	BUFFREELISTS "freelists for buffer RAM" on \
