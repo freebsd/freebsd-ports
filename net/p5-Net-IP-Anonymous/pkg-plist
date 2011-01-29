@@ -1,0 +1,7 @@
+%%SITE_PERL%%/IP/Anonymous.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/IP/Anonymous/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/IP/Anonymous
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/IP
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%
+@dirrmtry %%SITE_PERL%%/IP
