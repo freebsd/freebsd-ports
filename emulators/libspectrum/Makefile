@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	libspectrum
-PORTVERSION=	0.5.0.1
-PORTREVISION=	1
+PORTVERSION=	1.0.0
 CATEGORIES=	emulators devel
 MASTER_SITES=	SF/fuse-emulator/${PORTNAME}/${PORTVERSION}
 
@@ -16,10 +15,14 @@ COMMENT=	Handling of ZX-Spectrum emulator files formats
 
 LIB_DEPENDS=	gcrypt.17:${PORTSDIR}/security/libgcrypt
 
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
+
+GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_GNOME=	glib20
-GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
+
 MAN3=		libspectrum.3
 
 OPTIONS=	AUDIOFILE "Support loading from .wav files" on
