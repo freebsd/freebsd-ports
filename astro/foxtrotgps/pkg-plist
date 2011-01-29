@@ -1,0 +1,53 @@
+bin/convert2gpx
+bin/convert2osm
+bin/foxtrotgps
+bin/georss2foxtrotgps-poi
+lib/locale/bg/LC_MESSAGES/foxtrotgps.mo
+lib/locale/cs/LC_MESSAGES/foxtrotgps.mo
+lib/locale/de/LC_MESSAGES/foxtrotgps.mo
+lib/locale/es/LC_MESSAGES/foxtrotgps.mo
+lib/locale/fi/LC_MESSAGES/foxtrotgps.mo
+lib/locale/fr/LC_MESSAGES/foxtrotgps.mo
+lib/locale/hu/LC_MESSAGES/foxtrotgps.mo
+lib/locale/nl/LC_MESSAGES/foxtrotgps.mo
+lib/locale/ru/LC_MESSAGES/foxtrotgps.mo
+lib/locale/sk/LC_MESSAGES/foxtrotgps.mo
+share/applications/foxtrotgps.desktop
+%%DOCSDIR%%/AUTHORS
+%%DOCSDIR%%/COPYING
+%%DOCSDIR%%/ChangeLog
+%%DOCSDIR%%/INSTALL
+%%DOCSDIR%%/NEWS
+%%DOCSDIR%%/README
+%%DOCSDIR%%/TODO
+%%DATADIR%%/foxtrotgps.glade
+share/pixmaps/foxtrotgps-friend.png
+share/pixmaps/foxtrotgps-myposition.png
+share/pixmaps/foxtrotgps-photo.png
+share/pixmaps/foxtrotgps-poi.png
+share/pixmaps/foxtrotgps-wp.png
+share/pixmaps/foxtrotgps.png
+@dirrm %%DATADIR%%
+@dirrm %%DOCSDIR%%
+@dirrmtry share/applications
+@dirrmtry lib/locale/sk/LC_MESSAGES
+@dirrmtry lib/locale/sk
+@dirrmtry lib/locale/ru/LC_MESSAGES
+@dirrmtry lib/locale/ru
+@dirrmtry lib/locale/nl/LC_MESSAGES
+@dirrmtry lib/locale/nl
+@dirrmtry lib/locale/hu/LC_MESSAGES
+@dirrmtry lib/locale/hu
+@dirrmtry lib/locale/fr/LC_MESSAGES
+@dirrmtry lib/locale/fr
+@dirrmtry lib/locale/fi/LC_MESSAGES
+@dirrmtry lib/locale/fi
+@dirrmtry lib/locale/es/LC_MESSAGES
+@dirrmtry lib/locale/es
+@dirrmtry lib/locale/de/LC_MESSAGES
+@dirrmtry lib/locale/de
+@dirrmtry lib/locale/cs/LC_MESSAGES
+@dirrmtry lib/locale/cs
+@dirrmtry lib/locale/bg/LC_MESSAGES
+@dirrmtry lib/locale/bg
+@dirrmtry lib/locale
