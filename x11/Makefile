@@ -278,6 +278,7 @@
     SUBDIR += startup-notification
     SUBDIR += swarp
     SUBDIR += sxpc
+    SUBDIR += tabbed
     SUBDIR += temperature.app
     SUBDIR += terminal.app
     SUBDIR += terminator
