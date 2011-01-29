@@ -39,7 +39,7 @@ Note:  Please add new entries to the beginning of this file.
     <affects>
       <package>
 	<name>isc-dhcp41-server</name>
-	<range><lt>4.1.2,1</lt></range>
+	<range><le>4.1.2,1</le></range>
       </package>
     </affects>
     <description>
