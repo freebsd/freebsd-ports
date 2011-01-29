@@ -34,6 +34,37 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="dc9f8335-2b3b-11e0-a91b-00e0815b8da8">
+    <topic>isc-dhcp-server -- </topic>
+    <affects>
+      <package>
+	<name>isc-dhcp41-server</name>
+	<range><lt>4.1.2,1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>ISC reports:</p>
+	<blockquote cite="http://www.isc.org/software/dhcp/advisories/cve-2011-0413">
+	  <p>When the DHCPv6 server code processes a message for an address
+	    that was previously declined and internally tagged as abandoned
+	    it can trigger an assert failure resulting in the server crashing.
+	    This could be used to crash DHCPv6 servers remotely. This issue
+	    only affects DHCPv6 servers. DHCPv4 servers are unaffected.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2011-0413</cvename>
+      <url>http://www.isc.org/software/dhcp/advisories/cve-2011-0413</url>
+      <url>http://www.kb.cert.org/vuls/id/686084</url>
+    </references>
+    <dates>
+      <discovery>2011-01-26</discovery>
+      <entry>2011-01-28</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="c8c927e5-2891-11e0-8f26-00151735203a">
     <topic>bugzilla -- multiple seriuos vulnerabilities</topic>
     <affects>
