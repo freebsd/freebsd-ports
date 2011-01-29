@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	verve-plugin
-PORTVERSION=	0.3.6
-PORTREVISION=	8
+PORTVERSION=	1.0.0
 CATEGORIES=	x11 xfce
-MASTER_SITES=	http://goodies.xfce.org/releases/xfce4-verve-plugin/
+MASTER_SITES=	${MASTER_SITE_XFCE}
+MASTER_SITE_SUBDIR=	src/panel-plugins/${DISTNAME:S/-${PORTVERSION}//}/${PORTVERSION:R}
 PKGNAMEPREFIX=	xfce4-
 DISTNAME=	${PKGNAMEPREFIX}${PORTNAME}-${PORTVERSION}
 DIST_SUBDIR=	xfce4
@@ -17,14 +17,38 @@ DIST_SUBDIR=	xfce4
 MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	A command line plugin for xfce4
 
-RUN_DEPENDES=	dbus-daemon:${PORTSDIR}/devel/dbus
-LIB_DEPENDS=	pcre:${PORTSDIR}/devel/pcre
+LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre
 
+USE_AUTOTOOLS=	libtool
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
-USE_GETTEXT=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gnometarget gtk20 intltool intlhack pkgconfig
-USE_XFCE=	configenv panel libexo libutil
+USE_GNOME=	gnomehack glib20 intltool intlhack pkgconfig
+USE_XFCE=	configenv panel libexo libgui libutil
 
-.include <bsd.port.mk>
+CONFIGURE_ARGS=	--disable-debug
+
+OPTIONS=	NLS "Enable Native Language Support" on \
+		DBUS "Enable D-BUS support" on
+
+.include <bsd.port.pre.mk>
+
+.if !defined(WITHOUT_NLS)
+USE_GETTEXT=	yes
+CONFIGURE_ARGS+=--enable-nls
+PLIST_SUB+=	NLS=""
+.else
+CONFIGURE_ARGS+=--disable-nls
+PLIST_SUB+=	NLS="@comment "
+.endif
+
+.if !defined(WITHOUT_DBUS)
+LIB_DEPENDS+=	dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib
+CONFIGURE_ARGS+=--enable-dbus
+PLIST_SUB+=	DBUS=""
+.else
+CONFIGURE_ARGS+=--disable-dbus
+PLIST_SUB+=	DBUS="@comment "
+.endif
+
+.include <bsd.port.post.mk>
