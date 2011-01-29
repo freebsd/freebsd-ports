@@ -17,6 +17,8 @@ include/dvbpsi/dr_0d.h
 include/dvbpsi/dr_0e.h
 include/dvbpsi/dr_0f.h
 include/dvbpsi/dr_42.h
+include/dvbpsi/dr_43.h
+include/dvbpsi/dr_45.h
 include/dvbpsi/dr_47.h
 include/dvbpsi/dr_48.h
 include/dvbpsi/dr_4d.h
@@ -24,16 +26,21 @@ include/dvbpsi/dr_4e.h
 include/dvbpsi/dr_52.h
 include/dvbpsi/dr_55.h
 include/dvbpsi/dr_56.h
+include/dvbpsi/dr_58.h
 include/dvbpsi/dr_59.h
+include/dvbpsi/dr_5a.h
 include/dvbpsi/dr_69.h
 include/dvbpsi/dvbpsi.h
 include/dvbpsi/eit.h
+include/dvbpsi/nit.h
 include/dvbpsi/pat.h
 include/dvbpsi/pmt.h
 include/dvbpsi/psi.h
 include/dvbpsi/sdt.h
+include/dvbpsi/tot.h
 lib/libdvbpsi.a
 lib/libdvbpsi.la
 lib/libdvbpsi.so
-lib/libdvbpsi.so.5
+lib/libdvbpsi.so.6
+libdata/pkgconfig/libdvbpsi.pc
 @dirrm include/dvbpsi
