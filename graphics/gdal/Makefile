@@ -6,14 +6,13 @@
 #
 
 PORTNAME=	gdal
-PORTVERSION=	1.7.3
+PORTVERSION=	1.8.0
 CATEGORIES=	graphics geography
-MASTER_SITES=	ftp://ftp.remotesensing.org/pub/gdal/ \
-		http://www.gdal.org/dl/ \
-		http://dl.maptools.org/dl/gdal/ \
-		http://sunpoet.net/distfiles/
+MASTER_SITES=	http://download.osgeo.org/gdal/ \
+		ftp://ftp.remotesensing.org/pub/gdal/ \
+		LOCAL/sunpoet
 
-MAINTAINER=	glebius@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	A translator library for geospatial data formats
 
 USE_AUTOTOOLS=	libtool
@@ -25,7 +24,7 @@ MAKEFILE=	GNUmakefile
 MAKE_JOBS_UNSAFE=	yes
 
 .if !defined(NOPORTDOCS)
-BUILD_DEPENDS+=		${LOCALBASE}/bin/doxygen:${PORTSDIR}/devel/doxygen
+BUILD_DEPENDS=	${LOCALBASE}/bin/doxygen:${PORTSDIR}/devel/doxygen
 .endif
 
 OPTIONS=	CFITSIO	"FITS support"			off \
@@ -55,7 +54,15 @@ OPTIONS=	CFITSIO	"FITS support"			off \
 		TIFF	"External libtiff"		off \
 		XERCES	"Xerces support"		off
 
-.include <bsd.port.pre.mk>
+NETCDF_VER?=	4
+HDF5_VER?=	18
+
+.include <bsd.port.options.mk>
+
+.if defined(WITH_NETCDF) && (${NETCDF_VER} == "4")
+WITH_HDF5=	yes
+HDF5_VER=	18
+.endif
 
 .if defined(WITH_CFITSIO)
 LIB_DEPENDS+=		cfitsio.0:${PORTSDIR}/astro/cfitsio
@@ -111,7 +118,11 @@ CONFIGURE_ARGS+=	--with-hdf4=${LOCALBASE}
 .endif
 
 .if defined(WITH_HDF5)
+.if (${NETCDF_VER} == "4")
+LIB_DEPENDS+=		hdf5.6:${PORTSDIR}/science/hdf5-18
+.else
 LIB_DEPENDS+=		hdf5.0:${PORTSDIR}/science/hdf5
+.endif
 CONFIGURE_ARGS+=	--with-hdf5=${LOCALBASE}
 .endif
 
@@ -133,7 +144,11 @@ CONFIGURE_ARGS+=	--with-mysql=no
 .endif
 
 .if defined(WITH_NETCDF)
+.if (${NETCDF_VER} == "4")
+LIB_DEPENDS+=		netcdf.6:${PORTSDIR}/science/netcdf4
+.else
 LIB_DEPENDS+=		netcdf.4:${PORTSDIR}/science/netcdf
+.endif
 CONFIGURE_ARGS+=	--with-netcdf=${LOCALBASE}
 .else
 CONFIGURE_ARGS+=	--with-netcdf=no
@@ -188,7 +203,9 @@ PYEASYINSTALL_EGG=	${PYDISTUTILS_PKGNAME:C/[^A-Za-z0-9.]+/_/g}-${PYDISTUTILS_PKG
 PYEASYINSTALL_BINDIR=	${PREFIX}/bin
 PYEASYINSTALL_SITELIBDIR=	${PYTHONPREFIX_SITELIBDIR}
 
-PLIST_SUB+=		PYEASYINSTALL_EGG=${PYEASYINSTALL_EGG}
+PLIST_SUB+=		PYEASYINSTALL_EGG=${PYEASYINSTALL_EGG} PYTHON=""
+.else
+PLIST_SUB+=		PYTHON="@comment "
 .endif
 
 .if !defined(WITHOUT_PNG)
@@ -210,8 +227,8 @@ CONFIGURE_ARGS+=	--with-sqlite=no
 .endif
 
 .if !defined(WITHOUT_THREAD)
+CFLAGS+=		${PTHREAD_CFLAGS}
 CONFIGURE_ARGS+=	--with-threads=yes
-CONFIGURE_ENV+=		CFLAGS="${CFLAGS} ${PTHREAD_CFLAGS}"
 .if defined(WITH_ECW)
 LIB_DEPENDS+=		NCSEcw.0:${PORTSDIR}/graphics/libecwj2
 CONFIGURE_ARGS+=	--with-ecw=${LOCALBASE}
@@ -221,7 +238,7 @@ CONFIGURE_ARGS+=	--with-ecw=no
 .else
 CONFIGURE_ARGS+=	--with-threads=no
 .if defined(WITH_ECW)
-IGNORE=		THREAD option required.  Please 'make config' again
+IGNORE=			requires THREAD option. Please 'make config' again
 .endif
 .endif
 
@@ -244,7 +261,7 @@ CONFIGURE_ARGS+=	--with-xerces=no
 .endif
 
 .if defined(WITH_HDF4) && defined(WITH_HDF5)
-IGNORE=			"You can't use HDF4 with HDF5."
+IGNORE=			You can't use HDF4 with HDF5.
 .endif
 
 pre-build:
@@ -271,4 +288,4 @@ post-patch:
 		' ${WRKSRC}/swig/python/GNUmakefile
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
