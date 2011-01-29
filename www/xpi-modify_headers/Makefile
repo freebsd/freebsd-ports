@@ -6,9 +6,8 @@
 #
 
 PORTNAME=	modify_headers
-PORTVERSION=	0.6.6
+PORTVERSION=	0.6.8
 DISTVERSIONSUFFIX=	-fx+sm+mz
-PORTREVISION=	2
 CATEGORIES=	www
 
 MAINTAINER=	kamikaze@bsdforen.de
@@ -27,9 +26,6 @@ XPI_FILES=	chrome.manifest \
 
 XPI_DIRS=	chrome \
 		components
-
-post-patch:
-	${RM} ${WRKSRC}/install.rdf.orig
 
 .include "../xpi-adblock/Makefile.xpi"
 .include <bsd.port.mk>
