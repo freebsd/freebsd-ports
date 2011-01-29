@@ -3,9 +3,11 @@
 # Whom:                Rainer Hurling <rhurlin@gwdg.de>
 #
 # $FreeBSD$
+#
 
 PORTNAME=	saga
 PORTVERSION=	2.0.6
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	SF/saga-gis/SAGA%20-%20${PORTVERSION:C/\.[[:digit:]]*$//}/SAGA%20${PORTVERSION}
 DISTNAME=	${PORTNAME}_${PORTVERSION}
@@ -14,7 +16,7 @@ MAINTAINER=	rhurlin@gwdg.de
 COMMENT=	System for Automated Geoscientific Analyses
 
 LIB_DEPENDS=	proj.6:${PORTSDIR}/graphics/proj \
-		gdal.15:${PORTSDIR}/graphics/gdal \
+		gdal.16:${PORTSDIR}/graphics/gdal \
 		jasper.4:${PORTSDIR}/graphics/jasper \
 		tiff.4:${PORTSDIR}/graphics/tiff \
 		iodbc.3:${PORTSDIR}/databases/libiodbc \
