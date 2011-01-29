@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	libkmfl
-PORTVERSION=	0.9.8
-PORTREVISION=	3
+PORTVERSION=	0.9.9
 CATEGORIES=	textproc
 MASTER_SITES=	SF/kmfl/kmfl/${PORTVERSION} \
 		http://anthesphoria.net/FreeBSD/ports/distfiles/
