@@ -11039,6 +11039,7 @@ p5-Astro-SpaceTrack             ports/astro/p5-Astro-SpaceTrack
 p5-Astro-SunTime                ports/astro/p5-Astro-SunTime
 p5-Astro-Sunrise                ports/astro/p5-Astro-Sunrise
 p5-Astro-satpass                ports/astro/p5-Astro-satpass
+p5-Async-Interrupt              ports/devel/p5-Async-Interrupt
 p5-Async-MergePoint             ports/devel/p5-Async-MergePoint
 p5-AtExit                       ports/devel/p5-AtExit
 p5-Attribute-Handlers           ports/devel/p5-Attribute-Handlers
@@ -15102,6 +15103,7 @@ p5-astro-simbad-client          ports/astro/p5-Astro-SIMBAD-Client
 p5-astro-spacetrack             ports/astro/p5-Astro-SpaceTrack
 p5-astro-sunrise                ports/astro/p5-Astro-Sunrise
 p5-astro-suntime                ports/astro/p5-Astro-SunTime
+p5-async-interrupt              ports/devel/p5-Async-Interrupt
 p5-async-mergepoint             ports/devel/p5-Async-MergePoint
 p5-atexit                       ports/devel/p5-AtExit
 p5-attribute-handlers           ports/devel/p5-Attribute-Handlers
@@ -20295,6 +20297,7 @@ phpua-q3                        ports/games/phpua-q3
 phpua-ut                        ports/games/phpua-ut
 phpua-ut2003                    ports/games/phpua-ut2003
 phpvirtualbox                   ports/www/phpvirtualbox
+phpweathermap                   ports/net-mgmt/phpweathermap
 phpwebapp                       ports/www/phpwebapp
 phpwebftp                       ports/ftp/phpwebftp
 phpwiki                         ports/www/phpwiki
@@ -24270,6 +24273,7 @@ startup-notification            ports/x11/startup-notification
 statcvs                         ports/devel/statcvs
 staticcharge                    ports/dns/staticcharge
 statsvn                         ports/devel/statsvn
+steadyflow                      ports/deskutils/steadyflow
 sted                            ports/editors/sted
 steelstorm                      ports/games/steelstorm
 stegdetect                      ports/security/stegdetect
