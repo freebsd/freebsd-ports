@@ -6,13 +6,18 @@
 #
 
 PORTNAME=	enca
-PORTVERSION=	1.9
+PORTVERSION=	1.13
 CATEGORIES=	converters textproc russian ukrainian
-MASTER_SITES=	http://trific.ath.cx/Ftp/enca/ \
-		http://freebsd.unixfreunde.de/sources/
+MASTER_SITES=	http://dl.cihar.com/enca/
 
 MAINTAINER=	never@nevermind.kiev.ua
 COMMENT=	A package for detecting encoding of text files
+
+BUILD_DEPENDS=	umap:${PORTSDIR}/converters/p5-Unicode-Map8
+LIB_DEPENDS=	recode:${PORTSDIR}/converters/recode
+RUN_DEPENDS=	umap:${PORTSDIR}/converters/p5-Unicode-Map8
+
+LICENSE=	GPLv2
 
 USE_AUTOTOOLS=	libtool
 USE_GNOME=	pkgconfig
@@ -21,9 +26,9 @@ USE_BZIP2=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-CONFIGURE_ARGS=	--with-html-dir=${DOCSDIR} \
-		--without-librecode \
-		--with-libiconv=${LOCALBASE}
+MAKE_JOBS_SAFE=	yes
+CONFIGURE_ARGS=	--with-html-dir=${DOCSDIR}
+
 CONFIGURE_ENV=	CPPFLAGS=-I${LOCALBASE}/include \
 		LDFLAGS=-L${LOCALBASE}/lib
 
