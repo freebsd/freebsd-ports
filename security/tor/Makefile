@@ -21,7 +21,6 @@ MASTER_SITES=	http://www.torproject.org/dist/ \
 		http://tor.kamagurka.org/dist/ \
 		http://torproj.xpdm.us/dist/ \
 		http://www.oignon.net/dist/ \
-		http://www.theonionrouter.com/dist/ \
 		http://www.torproject.org.nyud.net/dist/ \
 		http://www.torproject.us/dist/
 
@@ -31,8 +30,6 @@ COMMENT=	An anonymizing overlay network for TCP
 LIB_DEPENDS=	event-1.4:${PORTSDIR}/devel/libevent
 
 GNU_CONFIGURE=	yes
-CPPFLAGS+=	-I${LOCALBASE}/include
-CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS}"
 CONFIGURE_ARGS+=	--with-openssl-dir="${OPENSSLBASE}"
 
 OPTIONS=	BUFFREELISTS "freelists for buffer RAM" on \
