@@ -21,7 +21,7 @@ COMMENT=	Izumo collection of Gravis Ultrasound MIDI patches
 # Not useful without timidity.
 RUN_DEPENDS=	timidity:${PORTSDIR}/audio/timidity++
 
-RESTRICTED=	Some of the patches are marked no-commercial-use
+NO_CDROM=	Some of the patches are marked no-commercial-use
 
 NO_BUILD=	yes
 

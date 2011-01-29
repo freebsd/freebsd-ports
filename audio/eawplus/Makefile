@@ -19,7 +19,7 @@ COMMENT=	E.A.W.+Izumo+Tamuki collection of Gravis Ultrasound MIDI patches
 RUN_DEPENDS=	${LOCALBASE}/share/eawpats/acbass.pat:${PORTSDIR}/audio/eawpats \
 		${LOCALBASE}/share/guspat/inst/GUS/acbass.pat:${PORTSDIR}/audio/guspat
 
-RESTRICTED=	Some of the patches are marked no-commercial-use
+NO_CDROM=	Some of the patches are marked no-commercial-use
 
 NO_WRKSUBDIR=	yes
 
