@@ -18,10 +18,13 @@ COMMENT=	Libevent extension for PHP
 
 LIB_DEPENDS=event:${PORTSDIR}/devel/libevent
 
+LICENSE=	PHP301
+
 USE_PHP=	yes
 USE_PHP_BUILD=	yes
 USE_PHPIZE=	yes
 USE_PHPEXT=	yes
 PHP_MODNAME=	libevent
+IGNORE_WITH_PHP=4
 
 .include <bsd.port.mk>
