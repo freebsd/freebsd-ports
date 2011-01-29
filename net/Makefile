@@ -582,6 +582,7 @@
     SUBDIR += p5-Net-HL7
     SUBDIR += p5-Net-Hiveminder
     SUBDIR += p5-Net-INET6Glue
+    SUBDIR += p5-Net-IP-Anonymous
     SUBDIR += p5-Net-IP-RangeCompare
     SUBDIR += p5-Net-IPTrie
     SUBDIR += p5-Net-IRR
