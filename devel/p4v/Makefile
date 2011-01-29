@@ -14,13 +14,12 @@ DISTNAME=	${PORTNAME}
 EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	perforce/${PORTNAME}-${PORTVERSION}/${ARCH}
 
-MAINTAINER=	scf@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Visual client for Perforce SCM
 
 LIB_DEPENDS=	pthread.2:${PORTSDIR}/misc/compat6x
 
-NO_CDROM=	Binary redistribution restrictions in effect
-RESTRICTED=	${NO_CDROM}
+RESTRICTED=	Binary redistribution restrictions in effect
 
 ONLY_FOR_ARCHS=	amd64 i386
 NO_BUILD=	yes
