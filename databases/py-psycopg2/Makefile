@@ -6,35 +6,27 @@
 #
 
 PORTNAME=	psycopg2
-PORTVERSION=	2.2.2
+PORTVERSION=	2.3.2
 CATEGORIES=	databases python
 MASTER_SITES=	http://initd.org/psycopg/tarballs/ \
 		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	miwi
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTNAME=	psycopg2-${PORTVERSION}
 
 MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	The high performance Python adapter for PostgreSQL
 
 USE_PGSQL=	yes
-USE_GMAKE=	yes
 USE_PYTHON=	2.4+
 USE_PYDISTUTILS=	yes
-
-do-build:
-	@(cd ${WRKSRC}; ${PYTHON_CMD} setup.py build)
-
-do-install:
-	@(cd ${WRKSRC}; ${PYTHON_CMD} setup.py install)
 
 DOCSDIR=	${PREFIX}/share/doc/py-psycopg2
 EXAMPLESDIR=	${PREFIX}/share/examples/py-psycopg2
 
-EXAMPLES=	binary.py cursor.py dt.py lastrowid.py notify.py threads.py \
-		whereareyou.jpg copy_from.py dialtone.py encoding.py \
-		mogrify.py simple.py tz.py copy_to.py dict.py fetch.py \
-		myfirstrecipe.py somehackers.jpg usercast.py
+EXAMPLES=	binary.py copy_from.py copy_to.py cursor.py dialtone.py \
+		dict.py dt.py encoding.py fetch.py lastrowid.py lobject.py \
+		mogrify.py myfirstrecipe.py notify.py simple.py somehackers.jpg \
+		threads.py typecast.py tz.py usercast.py whereareyou.jpg
 
 DOCS=		AUTHORS ChangeLog INSTALL README PKG-INFO
 
