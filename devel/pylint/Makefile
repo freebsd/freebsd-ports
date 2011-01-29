@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pylint
-PORTVERSION=	0.21.4
+PORTVERSION=	0.23.0
 CATEGORIES=	devel python
 MASTER_SITES=	LOGILAB
 PKGNAMESUFFIX=	${PYTHON_PKGNAMESUFFIX}
@@ -24,11 +24,8 @@ OPTIONS=	GUI	"Include Tkinter support for pylint-gui"	Off
 
 .include <bsd.port.pre.mk>
 
-.if ${PYTHON_REL} < 250
-PLIST_SUB+=	NOPY25=""
-.else
-PLIST_SUB+=	NOPY25="@comment "
-.endif
+post-extract:
+	${RM} -fr ${WRKSRC}/test
 
 .if defined(WITH_GUI)
 RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/_tkinter.so:${PORTSDIR}/x11-toolkits/py-tkinter
