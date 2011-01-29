@@ -1,0 +1,91 @@
+@comment $FreeBSD$
+bin/d-feet
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/PKG-INFO
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/SOURCES.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/dependency_links.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/not-zip-safe
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/scripts/d-feet
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/top_level.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/dfeet/DFeetApp.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/dfeet/DFeetApp.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/dfeet/DFeetApp.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/dfeet/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/dfeet/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/dfeet/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/dfeet/_introspect_parser.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/dfeet/_introspect_parser.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/dfeet/_introspect_parser.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/dfeet/_ui/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/dfeet/_ui/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/dfeet/_ui/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/dfeet/_ui/addconnectiondialog.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/dfeet/_ui/addconnectiondialog.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/dfeet/_ui/addconnectiondialog.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/dfeet/_ui/busbox.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/dfeet/_ui/busbox.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/dfeet/_ui/busbox.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/dfeet/_ui/busnamebox.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/dfeet/_ui/busnamebox.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/dfeet/_ui/busnamebox.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/dfeet/_ui/busnameinfobox.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/dfeet/_ui/busnameinfobox.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/dfeet/_ui/busnameinfobox.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/dfeet/_ui/busnameview.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/dfeet/_ui/busnameview.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/dfeet/_ui/busnameview.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/dfeet/_ui/executemethoddialog.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/dfeet/_ui/executemethoddialog.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/dfeet/_ui/executemethoddialog.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/dfeet/_ui/uiloader.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/dfeet/_ui/uiloader.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/dfeet/_ui/uiloader.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/dfeet/_ui/wnck_utils.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/dfeet/_ui/wnck_utils.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/dfeet/_ui/wnck_utils.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/dfeet/_util.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/dfeet/_util.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/dfeet/_util.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/dfeet/dbus_introspector.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/dfeet/dbus_introspector.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/dfeet/dbus_introspector.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/dfeet/dbus_utils.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/dfeet/dbus_utils.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/dfeet/dbus_utils.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/dfeet/introspect_data.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/dfeet/introspect_data.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/dfeet/introspect_data.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/dfeet/settings.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/dfeet/settings.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/dfeet/settings.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/share/applications/dfeet.desktop
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/share/dfeet/addconnectiondialog.ui
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/share/dfeet/default-actiongroup.ui
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/share/dfeet/executedialog.ui
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/share/dfeet/filterbox.ui
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/share/dfeet/introspectview.ui
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/share/dfeet/mainwindow.ui
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/share/dfeet/test-actions.ui
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/share/icons/hicolor/16x16/apps/dfeet-icon-default-service.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/share/icons/hicolor/16x16/apps/dfeet-method-category.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/share/icons/hicolor/16x16/apps/dfeet-method.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/share/icons/hicolor/16x16/apps/dfeet-object.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/share/icons/hicolor/16x16/apps/dfeet-property-category.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/share/icons/hicolor/16x16/apps/dfeet-property.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/share/icons/hicolor/16x16/apps/dfeet-signal-category.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/share/icons/hicolor/16x16/apps/dfeet-signal.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/share/icons/hicolor/48x48/apps/dfeet-icon.png
+
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/share/icons/hicolor/48x48/apps
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/share/icons/hicolor/48x48
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/share/icons/hicolor/16x16/apps
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/share/icons/hicolor/16x16
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/share/icons/hicolor
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/share/icons
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/share/dfeet
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/share/applications
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/share
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/dfeet/_ui
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/dfeet
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/scripts
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%

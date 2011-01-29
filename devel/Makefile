@@ -281,6 +281,7 @@
     SUBDIR += cxmon
     SUBDIR += cxref
     SUBDIR += cxxtest
+    SUBDIR += d-feet
     SUBDIR += darts
     SUBDIR += datadesigner
     SUBDIR += datadraw
