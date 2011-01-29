@@ -140,7 +140,6 @@
     SUBDIR += sleuth
     SUBDIR += sqldjbdns
     SUBDIR += sshfp
-    SUBDIR += staticcharge
     SUBDIR += tinystats
     SUBDIR += totd
     SUBDIR += udns
