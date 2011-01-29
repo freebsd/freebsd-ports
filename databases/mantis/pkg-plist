@@ -348,6 +348,7 @@
 %%WWWDIR%%/lang/strings_amharic.txt
 %%WWWDIR%%/lang/strings_arabic.txt
 %%WWWDIR%%/lang/strings_arabicegyptianspoken.txt
+%%WWWDIR%%/lang/strings_belarusian_tarask.txt
 %%WWWDIR%%/lang/strings_breton.txt
 %%WWWDIR%%/lang/strings_bulgarian.txt
 %%WWWDIR%%/lang/strings_catalan.txt
@@ -367,6 +368,7 @@
 %%WWWDIR%%/lang/strings_hebrew.txt
 %%WWWDIR%%/lang/strings_hungarian.txt
 %%WWWDIR%%/lang/strings_icelandic.txt
+%%WWWDIR%%/lang/strings_interlingua.txt
 %%WWWDIR%%/lang/strings_italian.txt
 %%WWWDIR%%/lang/strings_japanese.txt
 %%WWWDIR%%/lang/strings_korean.txt
@@ -896,6 +898,7 @@
 %%WWWDIR%%/plugins/MantisCoreFormatting/MantisCoreFormatting.php
 %%WWWDIR%%/plugins/MantisCoreFormatting/lang/strings_afrikaans.txt
 %%WWWDIR%%/plugins/MantisCoreFormatting/lang/strings_arabic.txt
+%%WWWDIR%%/plugins/MantisCoreFormatting/lang/strings_belarusian_tarask.txt
 %%WWWDIR%%/plugins/MantisCoreFormatting/lang/strings_breton.txt
 %%WWWDIR%%/plugins/MantisCoreFormatting/lang/strings_bulgarian.txt
 %%WWWDIR%%/plugins/MantisCoreFormatting/lang/strings_catalan.txt
@@ -908,6 +911,7 @@
 %%WWWDIR%%/plugins/MantisCoreFormatting/lang/strings_german.txt
 %%WWWDIR%%/plugins/MantisCoreFormatting/lang/strings_hebrew.txt
 %%WWWDIR%%/plugins/MantisCoreFormatting/lang/strings_hungarian.txt
+%%WWWDIR%%/plugins/MantisCoreFormatting/lang/strings_interlingua.txt
 %%WWWDIR%%/plugins/MantisCoreFormatting/lang/strings_italian.txt
 %%WWWDIR%%/plugins/MantisCoreFormatting/lang/strings_japanese.txt
 %%WWWDIR%%/plugins/MantisCoreFormatting/lang/strings_macedonian.txt
@@ -943,6 +947,7 @@
 %%WWWDIR%%/plugins/MantisGraph/lang/strings_german.txt
 %%WWWDIR%%/plugins/MantisGraph/lang/strings_hebrew.txt
 %%WWWDIR%%/plugins/MantisGraph/lang/strings_hungarian.txt
+%%WWWDIR%%/plugins/MantisGraph/lang/strings_interlingua.txt
 %%WWWDIR%%/plugins/MantisGraph/lang/strings_italian.txt
 %%WWWDIR%%/plugins/MantisGraph/lang/strings_japanese.txt
 %%WWWDIR%%/plugins/MantisGraph/lang/strings_lithuanian.txt
@@ -1005,6 +1010,7 @@
 %%WWWDIR%%/plugins/XmlImportExport/lang/strings_german.txt
 %%WWWDIR%%/plugins/XmlImportExport/lang/strings_hebrew.txt
 %%WWWDIR%%/plugins/XmlImportExport/lang/strings_hungarian.txt
+%%WWWDIR%%/plugins/XmlImportExport/lang/strings_interlingua.txt
 %%WWWDIR%%/plugins/XmlImportExport/lang/strings_italian.txt
 %%WWWDIR%%/plugins/XmlImportExport/lang/strings_japanese.txt
 %%WWWDIR%%/plugins/XmlImportExport/lang/strings_macedonian.txt
@@ -1183,3 +1189,5 @@
 @dirrm %%WWWDIR%%/api
 @dirrm %%WWWDIR%%/admin
 @dirrm %%WWWDIR%%
+@exec mkdir -p %D/%%WWWDIR%%/docbook/developers/en/build
+@exec mkdir -p %D/%%WWWDIR%%/docbook/adminguide/en/build
