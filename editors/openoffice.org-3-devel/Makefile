@@ -79,12 +79,12 @@ FREEBSD_ENV_SET=	FreeBSDAMDEnv.Set.sh
 FREEBSD_ENV_SET=	FreeBSDX86Env.Set.sh
 .endif
 
-MILESTONE?=		95
+MILESTONE?=		96
 OOOTAG?=		DEV300_m${MILESTONE}
 OOOTAG2=		${OOOTAG:C/_//g}
 OOOSRC?=		OOo_${OOOTAG}_source${EXTRACT_SUFX}
 OOODIR=			openoffice.org3
-SNAPDATE=		20101210
+SNAPDATE=		20101223
 INSTALLATION_BASEDIR?=	openoffice.org-${OOOTAG}
 EXECBASE?=		openoffice.org-${OOOTAG}
 DIST_SUBDIR=		openoffice.org3
@@ -207,7 +207,7 @@ pre-configure:
 
 do-build:
 	@cd ${WRKSRC} ; ./bootstrap
-	@cd ${WRKSRC} ; ${SETENV} "LANG=C" "LC_ALL=C" "LIBINTL_PREFIX=${PREFIX}" ${BASH} -c "source ${FREEBSD_ENV_SET} ; cd instsetoo_native ; build.pl --checkmodules ; build.pl -P${MAKE_JOBS_NUMBER} --all --html"
+	@cd ${WRKSRC} ; ${SETENV} "LANG=C" "LC_ALL=C" "LIBINTL_PREFIX=${PREFIX}" ${BASH} -c "source ${FREEBSD_ENV_SET} ; cd instsetoo_native ; ../solenv/bin/build.pl --all -P${MAKE_JOBS_NUMBER} -- -P${MAKE_JOBS_NUMBER}"
 
 .if ${LOCALIZED_LANG} == "alllangs"
 	@${MAKE} languagepack
@@ -277,7 +277,7 @@ post-install:
 		-e "s/^Icon.*/Icon=${EXECBASE}-printeradmin.png/" \
 		${PREFIX}/${INSTALLATION_BASEDIR}/${OOODIR}/share/xdg/printeradmin.desktop
 	@${REINPLACE_CMD} -e "s/^Exec.*/Exec=${EXECBASE} -quickstart -nologo -nodefault/" \
-		${PREFIX}/${INSTALLATION_BASEDIR}/${OOODIR}/share/xdg/qstart.desktop
+		${PREFIX}/${INSTALLATION_BASEDIR}/${OOODIR}/share/xdg/startcenter.desktop
 	@${RM} ${PREFIX}/${INSTALLATION_BASEDIR}/${OOODIR}/share/xdg/*.desktop.bak
 	@${RM} -f ${DESKTOPDIR}/${EXECBASE}
 	@${MKDIR} ${DESKTOPDIR}
