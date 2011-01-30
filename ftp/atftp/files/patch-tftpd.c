@@ -1,5 +1,5 @@
---- tftpd.c.orig	2010-10-11 11:30:50.000000000 +0800
-+++ tftpd.c	2010-10-11 11:31:42.000000000 +0800
+--- tftpd.c.orig	2004-02-27 10:05:26.000000000 +0800
++++ tftpd.c	2011-01-26 18:08:01.000000000 +0800
 @@ -60,6 +60,9 @@
  char directory[MAXLEN] = "/tftpboot/";
  int retry_timeout = S_TIMEOUT;
@@ -36,7 +36,7 @@
       {
            logger(LOG_WARNING, "Failed to set socket option: %s", strerror(errno));
       }
-@@ -387,10 +391,18 @@
+@@ -387,10 +391,21 @@
               packets */
            if (!tftpd_cancel)
            {
@@ -51,13 +51,16 @@
 +               if (rv < 0) {
 +                    logger(LOG_ERR, "%s: %d: select: %s",
 +                           __FILE__, __LINE__, strerror(errno));
++                    if (errno == EINTR)
++                        continue;
++
 +                    /* Clear the bits, they are undefined! */
 +                    FD_ZERO(&rfds);
 +	       }
            }
  
  #ifdef RATE_CONTROL
-@@ -463,10 +475,12 @@
+@@ -463,10 +478,12 @@
                      exit(1);
                 }
                 new->client_info->done = 0;
@@ -71,7 +74,7 @@
                                    (void *)new) != 0)
                 {
                      logger(LOG_ERR, "Failed to start new thread");
-@@ -567,7 +581,8 @@
+@@ -567,7 +584,8 @@
  
       /* Detach ourself. That way the main thread does not have to
        * wait for us with pthread_join. */
@@ -81,7 +84,7 @@
  
       /* Read the first packet from stdin. */
       data_size = data->data_buffer_size;     
-@@ -615,7 +630,25 @@
+@@ -615,7 +633,25 @@
            data->sockfd = socket(PF_INET, SOCK_DGRAM, 0);
            to.sin_family = AF_INET;
            to.sin_port = 0;
@@ -108,7 +111,7 @@
            {
                 /* bind the socket to the interface */
                 if (bind(data->sockfd, (struct sockaddr *)&to, len) == -1)
-@@ -630,17 +663,14 @@
+@@ -630,17 +666,14 @@
                      logger(LOG_ERR, "getsockname: %s", strerror(errno));
                      retval = ABORT;
                 }
@@ -131,7 +134,7 @@
                 /* read options from request */
                 opt_parse_request(data->data_buffer, data_size,
                                   data->tftp_options);
-@@ -732,8 +762,8 @@
+@@ -732,8 +765,8 @@
       tftpd_clientlist_free(data);
  
       /* free the thread structure */
@@ -142,7 +145,7 @@
       logger(LOG_INFO, "Server thread exiting");
       pthread_exit(NULL);
  }
-@@ -811,6 +841,7 @@
+@@ -811,6 +844,7 @@
            { "no-multicast", 0, NULL, 'M' },
            { "logfile", 1, NULL, 'L' },
            { "pidfile", 1, NULL, 'I'},
@@ -150,7 +153,7 @@
            { "daemon", 0, NULL, 'D' },
            { "no-fork", 0, NULL, 'N'},
            { "user", 1, NULL, 'U'},
-@@ -888,6 +919,9 @@
+@@ -888,6 +922,9 @@
            case 'I':
                 pidfile = strdup(optarg);
                 break;
@@ -160,7 +163,7 @@
            case 'D':
                 tftpd_daemon = 1;
                 break;
-@@ -1015,6 +1049,10 @@
+@@ -1015,6 +1052,10 @@
       logger(LOG_INFO, "  log file: %s", (log_file==NULL) ? "syslog":log_file);
       if (pidfile)
            logger(LOG_INFO, "  pid file: %s", pidfile);
@@ -171,7 +174,17 @@
       if (tftpd_daemon == 1)
            logger(LOG_INFO, "  server timeout: Not used");
       else
-@@ -1111,11 +1149,12 @@
+@@ -1085,8 +1126,7 @@
+      else
+      {
+           /* unlink the pid file */
+-          if (unlink(file) == -1)
+-               logger(LOG_ERR, "unlink: %s", strerror(errno));
++          unlink(file);
+           return OK;
+      }
+ }
+@@ -1111,11 +1151,12 @@
              " output messages\n"
              "  --trace                    : log all sent and received packets\n"
              "  --no-timeout               : disable 'timeout' from RFC2349\n"
