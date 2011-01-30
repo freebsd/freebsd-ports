@@ -753,6 +753,7 @@
     SUBDIR += ruby-pam
     SUBDIR += ruby-password
     SUBDIR += ruby-tcpwrap
+    SUBDIR += rubygem-bcrypt-ruby
     SUBDIR += rubygem-ezcrypto
     SUBDIR += rubygem-net-scp
     SUBDIR += rubygem-net-sftp
