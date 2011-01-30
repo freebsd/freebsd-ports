@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	octave-forge-nnet
-PORTVERSION=	0.1.12
+PORTVERSION=	0.1.13
 CATEGORIES=	math
 
 MAINTAINER=	stephen@missouri.edu
@@ -18,6 +18,6 @@ do-build:
 	@${DO_NADA}
 
 post-build:
-	cd ${WRKDIR} && ${TAR} cfz ${DISTNAME}.tar.gz ${DISTNAME}
+	cd ${WRKDIR} && ${TAR} cfz ${DISTNAME}.tar.gz ${OCTAVE_PKGNAME}
 
 .include <bsd.port.post.mk>
