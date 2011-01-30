@@ -58,6 +58,19 @@ CONFIGURE_ARGS+=	--with-system-icu=yes
 CONFIGURE_ARGS+=	--with-system-icu=no
 .endif
 
+.if defined(WITH_GRAPHITE)
+CONFIGURE_ARGS+=	--enable-graphite=yes --without-stlport
+.else
+CONFIGURE_ARGS+=	--enable-graphite=no
+.endif
+
+.if defined(WITH_SYSTEM_GRAPHITE) && defined(WITH_GRAPHITE)
+LIB_DEPENDS+=		graphite.3:${PORTSDIR}/graphics/silgraphite
+CONFIGURE_ARGS+=	--with-system-graphite=yes
+.else
+CONFIGURE_ARGS+=	--with-system-graphite=no
+.endif
+
 pre-fetch:
 	@${ECHO} "OPTIONS:"
 .if !defined(WITH_DEBUG)
@@ -79,6 +92,23 @@ pre-fetch:
 	@${ECHO}
 	@${ECHO} "You can compile OOo with devel/icu from ports with"
 	@${ECHO} "make -DWITH_SYSTEM_ICU"
+.endif
+.if !defined(WITH_GRAPHITE)
+	@${ECHO}
+	@${ECHO} "You can compile OOo with Graphite smart font rendering with"
+	@${ECHO} "make -DWITH_GRAPHITE"
+.else
+	@${ECHO}
+	@${ECHO} "WARNING: Graphite support enabled, --without-stlport added"
+	@${ECHO} "to configure arguments."
+.endif
+.if !defined(WITH_SYSTEM_GRAPHITE)
+	@${ECHO}
+	@${ECHO} "You can compile OOo with graphics/silgraphite from ports with"
+	@${ECHO} "make -DWITH_SYSTEM_GRAPHITE"
+.elif !defined(WITH_GRAPHITE)
+	@${ECHO}
+	@${ECHO} "To use system Graphite, WITH_GRAPHITE must be set as well."
 .endif
 .if !defined(WITHOUT_CUPS)
 	@${ECHO}

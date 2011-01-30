@@ -1,0 +1,34 @@
+--- /dev/null	2010-05-05 13:00:20.000000000 +0900
++++ hunspell/hunspell.patch	2010-05-05 13:03:11.000000000 +0900
+@@ -0,0 +1,8 @@
++--- misc/hunspell-1.2.9/tests/test.sh	2010-02-23 21:18:50.000000000 +0900
+++++ misc/build/hunspell-1.2.9/tests/test.sh	2010-05-05 13:01:42.000000000 +0900
++@@ -1,4 +1,4 @@
++-#!/bin/bash
+++#!/usr/bin/env bash
++ export LC_ALL="C"
++ 
++ function check_valgrind_log () {
+--- hunspell/makefile.mk.orig	2010-05-05 12:59:48.000000000 +0900
++++ hunspell/makefile.mk	2010-05-05 13:02:14.000000000 +0900
+@@ -43,8 +43,9 @@
+ PATCH_FILES=\
+     hunspell-wntconfig.patch \
+     hunspell-solaris.patch \
+-    hunspell-stacksmash.patch
+-
++    hunspell-stacksmash.patch \
++    hunspell.patch
++	
+ .IF "$(GUI)"=="UNX"
+ 
+ #relative to CONFIGURE_DIR
+@@ -60,6 +61,8 @@
+ .ENDIF # "$(EXTRA_CFLAGS)"!=""
+ .ELIF "$(OS)"=="MACOSX" # "$(SYSBASE)"!=""
+ CONFIGURE_FLAGS+=CPPFLAGS="$(EXTRA_CDEFS)"
++.ELIF "$(OS)"=="FREEBSD" # "$(SYSBASE)"!=""
++CONFIGURE_FLAGS+=CPPFLAGS="-I$(LIBINTL_PREFIX)/include" --with-libintl-prefix="$(LIBINTL_PREFIX)"
+ .ENDIF
+ 
+ BUILD_ACTION=make && make check
