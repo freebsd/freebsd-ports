@@ -1591,6 +1591,7 @@
     SUBDIR += rubygem-httpclient
     SUBDIR += rubygem-innate
     SUBDIR += rubygem-jekyll
+    SUBDIR += rubygem-jquery-rails
     SUBDIR += rubygem-layout-yullio
     SUBDIR += rubygem-less
     SUBDIR += rubygem-lighthouse-api
