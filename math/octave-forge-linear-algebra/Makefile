@@ -6,14 +6,17 @@
 #
 
 PORTNAME=	octave-forge-linear-algebra
-PORTVERSION=	1.0.8
-PORTREVISION=	2
+PORTVERSION=	2.0.0
 CATEGORIES=	math
 
 MAINTAINER=	stephen@missouri.edu
 COMMENT=	Octave-forge package ${OCTAVE_PKGNAME}
-GNU_CONFIGURE=	yes
+
+WRKSRC=		${WRKDIR}/${OCTAVE_PKGNAME}/src
 
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/Mk/bsd.octave.mk"
+post-build:
+	cd ${WRKDIR} && ${TAR} cfz ${DISTNAME}.tar.gz ${OCTAVE_PKGNAME}
+
 .include <bsd.port.post.mk>
