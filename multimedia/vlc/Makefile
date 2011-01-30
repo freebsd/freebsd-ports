@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	vlc
-DISTVERSION=	1.1.5
-PORTREVISION=	2
+DISTVERSION=	1.1.6
 PORTEPOCH=	3
 CATEGORIES=	multimedia audio ipv6 net www
 MASTER_SITES=	http://download.videolan.org/pub/videolan/${PORTNAME}/${DISTVERSION}/ \
@@ -36,6 +35,7 @@ OPTIONS=	A52 "A52 DVD audio decoder" On \
 		FLAC "Flac audio codec support" On \
 		FLUID "Enable Fluidsynth MIDI support" Off \
 		FRIBIDI "FriBidi bidirectional unicode support" Off \
+		GCRYPT "libgcrypt support" On \
 		GGI "General Graphic Interface support" Off \
 		GLX "X11 OpenGL rendering (requires XCB)" On \
 		GNOMEVFS "Gnome VFS support" Off \
@@ -61,6 +61,7 @@ OPTIONS=	A52 "A52 DVD audio decoder" On \
 		PULSE "Pulse Audio support" Off \
 		QT4 "Qt4 Interface" On \
 		REALAUDIO "Real Audio(R) support" On \
+		REMOTEOSD "Remote OSD support" On \
 		RUNROOT "Enable running as root" Off \
 		SAMBA "SAMBA Access module" On \
 		SCHROED "Enable Schroedinger decoder" Off \
@@ -263,7 +264,7 @@ CONFIGURE_ARGS+=--enable-dca
 .endif
 
 .if defined(WITH_DVBPSI)
-LIB_DEPENDS+=	dvbpsi.5:${PORTSDIR}/multimedia/libdvbpsi
+LIB_DEPENDS+=	dvbpsi.6:${PORTSDIR}/multimedia/libdvbpsi
 CONFIGURE_ARGS+=--enable-dvbpsi \
 		--with-dvbpsi=${LOCALBASE}
 .else
@@ -310,6 +311,13 @@ CONFIGURE_ARGS+=--disable-fribidi
 .else
 LIB_DEPENDS+=	fribidi.3:${PORTSDIR}/converters/fribidi
 CONFIGURE_ARGS+=--enable-fribidi
+.endif
+
+.if defined(WITHOUT_GCRYPT)
+CONFIGURE_ARGS+=--disable-libgcrypt
+.else
+LIB_DEPENDS+=	gcrypt.17:${PORTSDIR}/security/libgcrypt
+CONFIGURE_ARGS+=--enable-libgcrypt
 .endif
 
 .if defined(WITH_GGI)
@@ -484,6 +492,12 @@ CONFIGURE_ARGS+=--disable-pulse
 CONFIGURE_ARGS+=--disable-real --disable-realrtsp
 .else
 CONFIGURE_ARGS+=--enable-real --enable-realrtsp
+.endif
+
+.if defined(WITHOUT_REMOTEOSD)
+CONFIGURE_ARGS+=--disable-remoteosd
+.else
+CONFIGURE_ARGS+=--enable-remoteosd
 .endif
 
 .if defined(WITH_RUNROOT)
@@ -661,6 +675,7 @@ CONFIGURE_ARGS+=--disable-zvbi
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g' \
+		-e '\|LIBS|s|-lrt||' \
 		${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|/usr/share/fonts/truetype/freefont/FreeSerifBold.ttf|${WITH_VLC_DEFAULT_FONT}|' \
 		${WRKSRC}/modules/misc/freetype.c
