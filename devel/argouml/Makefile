@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	argouml
-PORTVERSION=	0.30.2
-PORTREVISION=	1
+PORTVERSION=	0.32
 CATEGORIES=	devel java
 MASTER_SITES=	http://argouml-downloads.tigris.org/nonav/argouml-${PORTVERSION}/
 DISTNAME=	ArgoUML-${PORTVERSION}
@@ -23,9 +22,9 @@ COMMENT=	A UML design tool with cognitive support
 
 LICENSE=	EPL
 
-RUN_DEPENDS=	java:${PORTSDIR}/java/javavmwrapper
-
 PORTSCOUT=	limitw:1,even
+
+RUN_DEPENDS=	java:${PORTSDIR}/java/javavmwrapper
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 NO_BUILD=	yes
@@ -37,7 +36,7 @@ PORTDOCS=	manual-${PORTVERSION}.pdf quickguide-${PORTVERSION}.pdf
 
 DESKTOP_ENTRIES=	"ArgoUML" \
 			"Create advanced UML diagrams" \
-			"" \
+			"${DATADIR}/icon/ArgoIcon128x128.png" \
 			"argouml" \
 			"Application;Development;Building;Java;" \
 			false
@@ -47,8 +46,11 @@ do-install:
 	@${MKDIR} ${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/*.jar ${DATADIR}
 	@${MKDIR} ${DATADIR}/ext
-	${INSTALL_DATA} ${WRKSRC}/ext/*.jar ${DATADIR}/ext/
-	${INSTALL_DATA} ${WRKSRC}/ext/*.xml ${DATADIR}/ext/
+	${INSTALL_DATA} ${WRKSRC}/ext/*.jar ${DATADIR}/ext
+	${INSTALL_DATA} ${WRKSRC}/ext/*.xml ${DATADIR}/ext
+	@${MKDIR} ${DATADIR}/icon
+	${INSTALL_DATA} ${WRKSRC}/icon/*.png ${DATADIR}/icon
+	${INSTALL_DATA} ${WRKSRC}/icon/*.svg ${DATADIR}/icon
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/manual-${PORTVERSION}.pdf ${DOCSDIR}
