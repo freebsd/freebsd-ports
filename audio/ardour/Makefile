@@ -50,8 +50,8 @@ OPTIONS=	OPTIMIZED_CFLAGS "Builds with compiler optimizations" on \
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 700000
-BROKEN=		needs posix_memalign()
+.if ${OSVERSION} < 800000 && ${ARCH} == "amd64"
+BROKEN=		does not compile
 .endif
 
 .if ${OSVERSION} < 800069
