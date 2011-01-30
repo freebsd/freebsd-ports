@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	camellia
-PORTVERSION=	1.1
+PORTVERSION=	1.2
 CATEGORIES=	security ruby
 MASTER_SITES=	http://info.isl.ntt.co.jp/crypt/camellia/dl/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
