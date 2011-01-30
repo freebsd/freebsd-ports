@@ -1,0 +1,5 @@
+Dragonfly is an on-the-fly Rack-based image handling framework. It is suitable
+for use with Rails, Sinatra and other web frameworks. Although it's mainly used
+for images, it can handle any content type.
+
+WWW: http://rubygems.org/gems/dragonfly
