@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	octave-forge-nurbs
-PORTVERSION=	1.0.3
+PORTVERSION=	1.3.1
 CATEGORIES=	math
 
 MAINTAINER=	stephen@missouri.edu
