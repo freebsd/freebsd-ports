@@ -1,0 +1,19 @@
+%%SITE_PERL%%/Test/Mini.pm
+%%SITE_PERL%%/Test/Mini.pod
+%%SITE_PERL%%/Test/Mini/Assertions.pm
+%%SITE_PERL%%/Test/Mini/Assertions.pod
+%%SITE_PERL%%/Test/Mini/Logger.pm
+%%SITE_PERL%%/Test/Mini/Logger.pod
+%%SITE_PERL%%/Test/Mini/Logger/TAP.pm
+%%SITE_PERL%%/Test/Mini/Logger/TAP.pod
+%%SITE_PERL%%/Test/Mini/Runner.pm
+%%SITE_PERL%%/Test/Mini/Runner.pod
+%%SITE_PERL%%/Test/Mini/TestCase.pm
+%%SITE_PERL%%/Test/Mini/TestCase.pod
+%%SITE_PERL%%/Test/README.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/Mini/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/Mini
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test
+@dirrmtry %%SITE_PERL%%/Test/Mini/Logger
+@dirrmtry %%SITE_PERL%%/Test/Mini
+@dirrmtry %%SITE_PERL%%/Test
