@@ -503,6 +503,7 @@
     SUBDIR += minirsyslogd
     SUBDIR += mixer
     SUBDIR += mkfile
+    SUBDIR += mkfwimage
     SUBDIR += mksunbootcd
     SUBDIR += mktool
     SUBDIR += mmore
