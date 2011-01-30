@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	octave-forge-image
-PORTVERSION=	1.0.12
+PORTVERSION=	1.0.13
 CATEGORIES=	math
 
 MAINTAINER=	stephen@missouri.edu
