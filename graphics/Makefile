@@ -855,6 +855,7 @@
     SUBDIR += ruby-svg
     SUBDIR += ruby-tgif
     SUBDIR += rubygem-captcha
+    SUBDIR += rubygem-dragonfly
     SUBDIR += rubygem-exifr
     SUBDIR += rubygem-gd2
     SUBDIR += rubygem-geokit
