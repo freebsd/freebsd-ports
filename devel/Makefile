@@ -2284,6 +2284,7 @@
     SUBDIR += p5-Test-Manifest
     SUBDIR += p5-Test-Memory-Cycle
     SUBDIR += p5-Test-Mini
+    SUBDIR += p5-Test-Mini-Unit
     SUBDIR += p5-Test-Mock-LWP
     SUBDIR += p5-Test-MockModule
     SUBDIR += p5-Test-MockObject
