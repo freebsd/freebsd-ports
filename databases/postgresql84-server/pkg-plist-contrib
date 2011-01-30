@@ -113,9 +113,9 @@ share/postgresql/contrib/uninstall_tablefunc.sql
 share/postgresql/contrib/uninstall_test_parser.sql
 share/postgresql/contrib/uninstall_tsearch2.sql
 share/postgresql/tsearch_data/xsyn_sample.rules
-@dirrmtry share/postgresql/tsearch_data >&2
-@dirrmtry share/postgresql/contrib >&2
-@dirrmtry share/postgresql >&2
-@dirrmtry %%DOCSDIR%%/contrib >&2
-@dirrmtry %%DOCSDIR%% >&2
-@dirrmtry lib/postgresql >&2
+@dirrmtry share/postgresql/tsearch_data
+@dirrmtry share/postgresql/contrib
+@dirrmtry share/postgresql
+@dirrmtry %%DOCSDIR%%/contrib
+@dirrmtry %%DOCSDIR%%
+@dirrmtry lib/postgresql
