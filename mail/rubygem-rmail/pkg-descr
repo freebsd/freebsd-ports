@@ -1,0 +1,5 @@
+RMail is a lightweight mail library containing various
+utility classes and modules that allow ruby scripts to
+parse, modify, and generate MIME mail messages.
+
+see: mail/ruby-rmail for non Gem version
