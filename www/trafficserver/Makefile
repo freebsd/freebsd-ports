@@ -35,8 +35,8 @@ BUILD_DEPENDS=	xz>0:${PORTSDIR}/archivers/xz
 RUN_DEPENDS=	xz>0:${PORTSDIR}/archivers/xz
 .endif
 
-.if ${OSVERSION} < 700000
-IGNORE=		only supports 7.0 and above
+.if ${OSVERSION} < 800000 && ${ARCH} == "amd64"
+BROKEN=		does not compile on 7.X
 .endif
 
 pre-configure:
