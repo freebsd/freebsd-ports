@@ -1,0 +1,79 @@
+--- framework/Library_fwe.mk	2010-12-23 11:32:17.000000000 +0900
++++ framework/Library_fwe.mk	2011-01-29 17:57:56.000000000 +0900
+@@ -104,6 +104,17 @@
+ 	pthread \
+ ))
+ endif
++
++ifeq ($(OS),FREEBSD)
++
++$(eval $(call gb_Library_set_cxxflags,fwe,$$(filter-out -fvisibility=hidden,$$(CXXFLAGS))))
++
++$(eval $(call gb_Library_add_linked_libs,fwe,\
++	m \
++	pthread \
++))
++endif
++
+ ifeq ($(OS),WNT)
+ $(eval $(call gb_Library_add_linked_libs,fwe,\
+ 	kernel32 \
+--- framework/Library_fwi.mk	2010-12-23 11:32:17.000000000 +0900
++++ framework/Library_fwi.mk	2011-01-29 17:58:17.000000000 +0900
+@@ -83,6 +83,13 @@
+ 	pthread \
+ ))
+ endif
++ifeq ($(OS),FREEBSD)
++$(eval $(call gb_Library_add_linked_libs,fwi,\
++	m \
++	pthread \
++))
++endif
++
+ ifeq ($(OS),WNT)
+ $(eval $(call gb_Library_add_linked_libs,fwi,\
+ 	advapi32 \
+--- framework/Library_fwk.mk	2010-12-23 11:32:17.000000000 +0900
++++ framework/Library_fwk.mk	2011-01-29 17:59:13.000000000 +0900
+@@ -189,6 +189,12 @@
+ 	pthread \
+ ))
+ endif
++ifeq ($(OS),FREEBSD)
++$(eval $(call gb_Library_add_linked_libs,fwk,\
++	m \
++	pthread \
++))
++endif
+ ifeq ($(OS),WNT)
+ $(eval $(call gb_Library_add_linked_libs,fwk,\
+ 	kernel32 \
+--- framework/Library_fwl.mk	2010-12-23 11:32:17.000000000 +0900
++++ framework/Library_fwl.mk	2011-01-29 17:59:36.000000000 +0900
+@@ -82,9 +82,8 @@
+ 	framework/source/uielement/simpletextstatusbarcontroller \
+ 	framework/source/uielement/toolbarsmenucontroller \
+ ))
+-ifeq ($(OS),LINUX)
++ifeq ($(OS),FREEBSD)
+ $(eval $(call gb_Library_add_linked_libs,fwl,\
+-	dl \
+ 	m \
+ 	pthread \
+ ))
+--- framework/Library_fwm.mk	2010-12-23 11:32:17.000000000 +0900
++++ framework/Library_fwm.mk	2011-01-29 18:00:04.000000000 +0900
+@@ -71,6 +71,12 @@
+ 	pthread \
+ ))
+ endif
++ifeq ($(OS),FREEBSD)
++$(eval $(call gb_Library_add_linked_libs,fwm,\
++	m \
++	pthread \
++))
++endif
+ ifeq ($(OS),WNT)
+ $(eval $(call gb_Library_add_linked_libs,fwm,\
+ 	kernel32 \
