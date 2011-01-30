@@ -3746,6 +3746,7 @@ fowsr                           ports/astro/fowsr
 fox14                           ports/x11-toolkits/fox14
 fox16                           ports/x11-toolkits/fox16
 fox17                           ports/x11-toolkits/fox17
+foxtrotgps                      ports/astro/foxtrotgps
 fpc                             ports/lang/fpc
 fpc-a52                         ports/audio/fpc-a52
 fpc-aspell                      ports/textproc/fpc-aspell
@@ -13409,6 +13410,7 @@ p5-Net-NBName                   ports/net/p5-Net-NBName
 p5-Net-NBsocket                 ports/net/p5-Net-NBsocket
 p5-Net-NIS                      ports/net/p5-Net-NIS
 p5-Net-NIS-Listgroup            ports/net/p5-Net-NIS-Listgroup
+p5-Net-Nessus-XMLRPC            ports/net/p5-Net-Nessus-XMLRPC
 p5-Net-NetSend                  ports/net-im/p5-Net-NetSend
 p5-Net-Netmask                  ports/net-mgmt/p5-Net-Netmask
 p5-Net-Nslookup                 ports/dns/p5-Net-Nslookup
@@ -17518,6 +17520,7 @@ p5-net-movabletype              ports/net/p5-Net-MovableType
 p5-net-msn                      ports/net-im/p5-Net-MSN
 p5-net-nbname                   ports/net/p5-Net-NBName
 p5-net-nbsocket                 ports/net/p5-Net-NBsocket
+p5-net-nessus-xmlrpc            ports/net/p5-Net-Nessus-XMLRPC
 p5-net-netmask                  ports/net-mgmt/p5-Net-Netmask
 p5-net-netsend                  ports/net-im/p5-Net-NetSend
 p5-net-nis                      ports/net/p5-Net-NIS
