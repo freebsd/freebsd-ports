@@ -1189,6 +1189,7 @@
     SUBDIR += p5-Template-GD
     SUBDIR += p5-Template-Iterator-AlzaboWrapperCursor
     SUBDIR += p5-Template-Multilingual
+    SUBDIR += p5-Template-Mustache
     SUBDIR += p5-Template-Plugin-Class
     SUBDIR += p5-Template-Plugin-Clickable
     SUBDIR += p5-Template-Plugin-Clickable-Email

@@ -1,0 +1,7 @@
+%%SITE_PERL%%/Template/Mustache.pm
+%%SITE_PERL%%/Template/Mustache.pod
+%%SITE_PERL%%/Template/benchmark.pl
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Template/Mustache/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Template/Mustache
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Template
+@dirrmtry %%SITE_PERL%%/Template
