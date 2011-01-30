@@ -1,0 +1,5 @@
+This gem provides a Rails generator to install jQuery and the jQuery-ujs
+driver into your Rails 3 application, and then have them included
+automatically instead of Prototype.
+
+WWW: http://rubygems.org/gems/jquery-rails
