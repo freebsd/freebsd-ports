@@ -2338,6 +2338,7 @@
     SUBDIR += p5-Test-YAML-Valid
     SUBDIR += p5-Test-use-ok
     SUBDIR += p5-Text-LevenshteinXS
+    SUBDIR += p5-Text-Outdent
     SUBDIR += p5-Text-vFile-asData
     SUBDIR += p5-TheSchwartz
     SUBDIR += p5-TheSchwartz-Simple
