@@ -1,0 +1,17 @@
+%%SITE_PERL%%/Test/Mini/README.pod
+%%SITE_PERL%%/Test/Mini/Unit.pm
+%%SITE_PERL%%/Test/Mini/Unit.pod
+%%SITE_PERL%%/Test/Mini/Unit/SharedBehavior.pm
+%%SITE_PERL%%/Test/Mini/Unit/Sugar/Advice.pm
+%%SITE_PERL%%/Test/Mini/Unit/Sugar/Reuse.pm
+%%SITE_PERL%%/Test/Mini/Unit/Sugar/Shared.pm
+%%SITE_PERL%%/Test/Mini/Unit/Sugar/Test.pm
+%%SITE_PERL%%/Test/Mini/Unit/Sugar/TestCase.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/Mini/Unit/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/Mini/Unit
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/Mini
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test
+@dirrmtry %%SITE_PERL%%/Test/Mini/Unit/Sugar
+@dirrmtry %%SITE_PERL%%/Test/Mini/Unit
+@dirrmtry %%SITE_PERL%%/Test/Mini
+@dirrmtry %%SITE_PERL%%/Test
