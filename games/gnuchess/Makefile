@@ -6,26 +6,22 @@
 #
 
 PORTNAME=	gnuchess
-PORTVERSION=	5.07
+PORTVERSION=	5.08
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	chess
 # The DISTFILES here is explicitly needed because it can be extended later.
 DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	johans@FreeBSD.org
 COMMENT=	"Classic" Gnu Chess
 
 PLIST_FILES=	bin/gnuchess \
 		bin/gnuchessx
 
-.if !defined(NOPORTDOCS)
-PORTDOCS=	ChangeLog \
-		NEWS \
-		README
-.endif
+PORTDOCS=	*
 
-OPTIONS=    OPENING_BOOK "Install opening book (24 MB download)" on
+OPTIONS=    OPENING_BOOK "Install opening book (25 MB download)" on
 
 .include <bsd.port.pre.mk>
 
@@ -37,7 +33,7 @@ EXTRACT_ONLY=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}
 .endif
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	LIBS="${PTHREAD_LIBS}"
+CONFIGURE_ENV=	LIBS="${PTHREAD_LIBS}" MKDIR_P="${MKDIR}"
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-D_THREAD_SAFE|${PTHREAD_CFLAGS:S/"//g}|g ; \
