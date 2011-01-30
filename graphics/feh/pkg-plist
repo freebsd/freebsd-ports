@@ -1,14 +1,17 @@
 bin/feh
 bin/feh-cam
 bin/gen-cam-menu
-%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
-%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/TODO
+%%DOCSDIR%%/AUTHORS
+%%DOCSDIR%%/ChangeLog
+%%DOCSDIR%%/README
+%%DOCSDIR%%/TODO
+%%DOCSDIR%%/examples/keys
+%%DOCSDIR%%/examples/themes
 %%DATADIR%%/fonts/black.style
 %%DATADIR%%/fonts/menu.style
 %%DATADIR%%/fonts/yudit.ttf
 %%DATADIR%%/images/about.png
+%%DATADIR%%/images/logo.svg
 %%DATADIR%%/images/menubg_aluminium.png
 %%DATADIR%%/images/menubg_aqua.png
 %%DATADIR%%/images/menubg_black.png
@@ -18,4 +21,5 @@ bin/gen-cam-menu
 @dirrm %%DATADIR%%/images
 @dirrm %%DATADIR%%/fonts
 @dirrm %%DATADIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm %%DOCSDIR%%/examples
+@dirrm %%DOCSDIR%%
