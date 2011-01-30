@@ -1,16 +1,11 @@
-Index: libxml2/libxml2-2.6.31.patch
-===================================================================
-RCS file: /cvs/external/libxml2/libxml2-2.6.31.patch,v
-retrieving revision 1.2
-diff -u -r1.2 libxml2-2.6.31.patch
---- libxml2/libxml2-2.6.31.patch	6 Jun 2008 11:48:45 -0000	1.2
-+++ libxml2/libxml2-2.6.31.patch	8 Jul 2008 02:54:59 -0000
-@@ -88,7 +88,7 @@
-   
-   	freebsd-elf)
- ! 	  major=.`expr $current - $age`
--! 	  versuffix=".$major.$age.$revision";
-+! 	  versuffix="$major"; 
-   	  ;;
-   
-   	irix | nonstopux)
+--- libxml2/libxml2-configure.patch.org	2010-06-06 08:23:29.000000000 +0900
++++ libxml2/libxml2-configure.patch	2010-06-06 08:23:45.000000000 +0900
+@@ -7,7 +7,7 @@
+ -	  major=".$current"
+ -	  versuffix=".$current"
+ +	  major=.`expr $current - $age`
+-+	  versuffix=".$major.$age.$revision";
+++	  versuffix="$major";
+  	  ;;
+  
+  	irix | nonstopux)
