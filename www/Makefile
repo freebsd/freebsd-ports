@@ -1593,6 +1593,7 @@
     SUBDIR += rubygem-jekyll
     SUBDIR += rubygem-layout-yullio
     SUBDIR += rubygem-less
+    SUBDIR += rubygem-lighthouse-api
     SUBDIR += rubygem-maruku
     SUBDIR += rubygem-mechanize
     SUBDIR += rubygem-mongrel
