@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	octave-forge-fpl
-PORTVERSION=	1.0.0
+PORTVERSION=	1.2.0
 CATEGORIES=	math
 
 MAINTAINER=	stephen@missouri.edu
