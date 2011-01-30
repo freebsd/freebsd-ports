@@ -1,0 +1,16 @@
+--- ./libdnet-stripped/configure.orig	2010-05-07 23:08:32.000000000 +0200
++++ ./libdnet-stripped/configure	2011-01-29 22:22:39.000000000 +0100
+@@ -14342,11 +14342,8 @@
+     if test "${ac_cv_dnet_bsd_bpf+set}" = set; then
+   $as_echo_n "(cached) " >&6
+ else
+-  if test -c /dev/bpf0 ; then
+-	    ac_cv_dnet_bsd_bpf=yes
+-	else
+-	    ac_cv_dnet_bsd_bpf=no
+-	fi
++# PR ports/154353 : support building in FreeBSD jail
++    ac_cv_dnet_bsd_bpf=yes
+ fi
+ 
+     { $as_echo "$as_me:$LINENO: result: $ac_cv_dnet_bsd_bpf" >&5
