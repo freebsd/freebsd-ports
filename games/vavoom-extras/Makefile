@@ -9,13 +9,13 @@ PORTNAME=	vavoom-extras
 PORTVERSION=	1.30
 PORTREVISION=	2
 CATEGORIES=	games
-MASTER_SITES=	SF/vavoom/vmodels-doom/1.4.3:vmd \
-		SF/vavoom/vmodels-heretic/1.4.3:vmhr \
-		SF/vavoom/vmodels-hexen/1.4.3:vmhx \
-		SF/vavoom/vmodels-strife/1.4.3:vms \
-		SF/vavoom/vmusic/1.0:vmu \
-		SF/vavoom/vtextures/1.0:vt10 \
-		SF/vavoom/vtextures/1.1:vt11 \
+MASTER_SITES=	SF/vavoom/Resources/vmodels-doom/1.4.3:vmd \
+		SF/vavoom/Resources/vmodels-heretic/1.4.3:vmhr \
+		SF/vavoom/Resources/vmodels-hexen/1.4.3:vmhx \
+		SF/vavoom/Resources/vmodels-strife/1.4.3:vms \
+		SF/vavoom/Resources/vmusic/1.0:vmu \
+		SF/vavoom/Resources/vtextures/1.0:vt10 \
+		SF/vavoom/Resources/vtextures/1.1:vt11 \
 		http://doomtextures.freelanzer.com/:dt
 
 MAINTAINER=	ports@FreeBSD.org
