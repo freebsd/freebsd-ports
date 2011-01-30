@@ -123,7 +123,6 @@ share/icons/hicolor/scalable/mimetypes/linux-opera-widget.svg
 %%DATADIR%%/locale/fr/search.ini
 %%DATADIR%%/locale/fr/standard_speeddial.ini
 %%DATADIR%%/locale/fy/fy.lng
-%%DATADIR%%/locale/gd/gd.lng
 %%DATADIR%%/locale/hi/hi.lng
 %%DATADIR%%/locale/hr/hr.lng
 %%DATADIR%%/locale/hu/bookmarks.adr
@@ -336,7 +335,6 @@ share/mime/packages/linux-opera-widget.xml
 @dirrm %%DATADIR%%/locale/hu
 @dirrm %%DATADIR%%/locale/hr
 @dirrm %%DATADIR%%/locale/hi
-@dirrm %%DATADIR%%/locale/gd
 @dirrm %%DATADIR%%/locale/fy
 @dirrm %%DATADIR%%/locale/fr-CA
 @dirrm %%DATADIR%%/locale/fr
