@@ -711,6 +711,7 @@
     SUBDIR += sound-juicer
     SUBDIR += soundconverter
     SUBDIR += soundgrab
+    SUBDIR += soundkonverter
     SUBDIR += soundtouch
     SUBDIR += soundtracker
     SUBDIR += sox
