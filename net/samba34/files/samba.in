@@ -137,7 +137,7 @@ samba_reload_cmd() {
 }
 
 samba_cmd() {
-    local name rcvar command pidfile samba_daemons
+    local name rcvar command pidfile samba_daemons result _result
     # Prevent recursive calling
     unset "${rc_arg}_cmd" "${rc_arg}_precmd" "${rc_arg}_postcmd"
     # Stop processes in the reverse to order
@@ -145,6 +145,7 @@ samba_cmd() {
 	samba_daemons=$(reverse_list ${samba_daemons})
     fi
     # Apply to all daemons
+    result=0
     for name in ${samba_daemons}; do
 	rcvar=$(set_rcvar)
 	command="%%PREFIX%%/sbin/${name}"
@@ -152,8 +153,14 @@ samba_cmd() {
 	# Daemon should be enabled and running
 	if [ -n "${rcvar}" ] && checkyesno "${rcvar}"; then
 	    run_rc_command "${_rc_prefix}${rc_arg}" ${rc_extra_args}
+	    # Collect return values
+	    _result=$?
+	    if [ ${_result} != 0 ]; then
+		result=${_result}
+	    fi
 	fi
     done
+    return $result
 }
 
 run_rc_command "$1"
