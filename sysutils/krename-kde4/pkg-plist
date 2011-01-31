@@ -9,6 +9,7 @@ share/kde4/services/ServiceMenus/krename_dir_rec.desktop
 share/locale/bs/LC_MESSAGES/krename.mo
 share/locale/cs/LC_MESSAGES/krename.mo
 share/locale/de/LC_MESSAGES/krename.mo
+share/locale/el/LC_MESSAGES/krename.mo
 share/locale/es/LC_MESSAGES/krename.mo
 share/locale/fr/LC_MESSAGES/krename.mo
 share/locale/hu/LC_MESSAGES/krename.mo
