@@ -804,7 +804,6 @@
 %%WWWDIR%%/lib/tasks/watchers.rake
 %%WWWDIR%%/lib/tasks/yardoc.rake
 %%WWWDIR%%/log/delete.me
-%%WWWDIR%%/public/.htaccess
 %%WWWDIR%%/public/404.html
 %%WWWDIR%%/public/500.html
 %%WWWDIR%%/public/dispatch.cgi.example
@@ -813,6 +812,7 @@
 %%WWWDIR%%/public/favicon.ico
 %%WWWDIR%%/public/help/wiki_syntax.html
 %%WWWDIR%%/public/help/wiki_syntax_detailed.html
+%%WWWDIR%%/public/htaccess.fcgi.example
 %%WWWDIR%%/public/images/1downarrow.png
 %%WWWDIR%%/public/images/1uparrow.png
 %%WWWDIR%%/public/images/2downarrow.png
@@ -1158,7 +1158,7 @@
 %%WWWDIR%%/test/fixtures/repositories/darcs_repository.tar.gz
 %%WWWDIR%%/test/fixtures/repositories/filesystem_repository.tar.gz
 %%WWWDIR%%/test/fixtures/repositories/git_repository.tar.gz
-%%WWWDIR%%/test/fixtures/repositories/mercurial_repository.tar.gz
+%%WWWDIR%%/test/fixtures/repositories/mercurial_repository.hg
 %%WWWDIR%%/test/fixtures/repositories/subversion_repository.dump.gz
 %%WWWDIR%%/test/fixtures/roles.yml
 %%WWWDIR%%/test/fixtures/time_entries.yml
@@ -1294,6 +1294,7 @@
 %%WWWDIR%%/test/unit/lib/redmine/notifiable_test.rb
 %%WWWDIR%%/test/unit/lib/redmine/plugin_test.rb
 %%WWWDIR%%/test/unit/lib/redmine/safe_attributes_test.rb
+%%WWWDIR%%/test/unit/lib/redmine/scm/adapters/darcs_adapter_test.rb
 %%WWWDIR%%/test/unit/lib/redmine/scm/adapters/filesystem_adapter_test.rb
 %%WWWDIR%%/test/unit/lib/redmine/scm/adapters/git_adapter_test.rb
 %%WWWDIR%%/test/unit/lib/redmine/scm/adapters/mercurial_adapter_test.rb
@@ -1340,6 +1341,86 @@
 %%WWWDIR%%/test/unit/wiki_redirect_test.rb
 %%WWWDIR%%/test/unit/wiki_test.rb
 %%WWWDIR%%/tmp/test/empty
+%%WWWDIR%%/vendor/gems/coderay-0.9.7/.specification
+%%WWWDIR%%/vendor/gems/coderay-0.9.7/FOLDERS
+%%WWWDIR%%/vendor/gems/coderay-0.9.7/LICENSE
+%%WWWDIR%%/vendor/gems/coderay-0.9.7/Rakefile
+%%WWWDIR%%/vendor/gems/coderay-0.9.7/bin/coderay
+%%WWWDIR%%/vendor/gems/coderay-0.9.7/bin/coderay_stylesheet
+%%WWWDIR%%/vendor/gems/coderay-0.9.7/lib/README
+%%WWWDIR%%/vendor/gems/coderay-0.9.7/lib/coderay.rb
+%%WWWDIR%%/vendor/gems/coderay-0.9.7/lib/coderay/duo.rb
+%%WWWDIR%%/vendor/gems/coderay-0.9.7/lib/coderay/encoder.rb
+%%WWWDIR%%/vendor/gems/coderay-0.9.7/lib/coderay/encoders/_map.rb
+%%WWWDIR%%/vendor/gems/coderay-0.9.7/lib/coderay/encoders/comment_filter.rb
+%%WWWDIR%%/vendor/gems/coderay-0.9.7/lib/coderay/encoders/count.rb
+%%WWWDIR%%/vendor/gems/coderay-0.9.7/lib/coderay/encoders/debug.rb
+%%WWWDIR%%/vendor/gems/coderay-0.9.7/lib/coderay/encoders/div.rb
+%%WWWDIR%%/vendor/gems/coderay-0.9.7/lib/coderay/encoders/filter.rb
+%%WWWDIR%%/vendor/gems/coderay-0.9.7/lib/coderay/encoders/html.rb
+%%WWWDIR%%/vendor/gems/coderay-0.9.7/lib/coderay/encoders/html/css.rb
+%%WWWDIR%%/vendor/gems/coderay-0.9.7/lib/coderay/encoders/html/numerization.rb
+%%WWWDIR%%/vendor/gems/coderay-0.9.7/lib/coderay/encoders/html/output.rb
+%%WWWDIR%%/vendor/gems/coderay-0.9.7/lib/coderay/encoders/json.rb
+%%WWWDIR%%/vendor/gems/coderay-0.9.7/lib/coderay/encoders/lines_of_code.rb
+%%WWWDIR%%/vendor/gems/coderay-0.9.7/lib/coderay/encoders/null.rb
+%%WWWDIR%%/vendor/gems/coderay-0.9.7/lib/coderay/encoders/page.rb
+%%WWWDIR%%/vendor/gems/coderay-0.9.7/lib/coderay/encoders/span.rb
+%%WWWDIR%%/vendor/gems/coderay-0.9.7/lib/coderay/encoders/statistic.rb
+%%WWWDIR%%/vendor/gems/coderay-0.9.7/lib/coderay/encoders/term.rb
+%%WWWDIR%%/vendor/gems/coderay-0.9.7/lib/coderay/encoders/text.rb
+%%WWWDIR%%/vendor/gems/coderay-0.9.7/lib/coderay/encoders/token_class_filter.rb
+%%WWWDIR%%/vendor/gems/coderay-0.9.7/lib/coderay/encoders/xml.rb
+%%WWWDIR%%/vendor/gems/coderay-0.9.7/lib/coderay/encoders/yaml.rb
+%%WWWDIR%%/vendor/gems/coderay-0.9.7/lib/coderay/for_redcloth.rb
+%%WWWDIR%%/vendor/gems/coderay-0.9.7/lib/coderay/helpers/file_type.rb
+%%WWWDIR%%/vendor/gems/coderay-0.9.7/lib/coderay/helpers/gzip_simple.rb
+%%WWWDIR%%/vendor/gems/coderay-0.9.7/lib/coderay/helpers/plugin.rb
+%%WWWDIR%%/vendor/gems/coderay-0.9.7/lib/coderay/helpers/word_list.rb
+%%WWWDIR%%/vendor/gems/coderay-0.9.7/lib/coderay/scanner.rb
+%%WWWDIR%%/vendor/gems/coderay-0.9.7/lib/coderay/scanners/_map.rb
+%%WWWDIR%%/vendor/gems/coderay-0.9.7/lib/coderay/scanners/c.rb
+%%WWWDIR%%/vendor/gems/coderay-0.9.7/lib/coderay/scanners/cpp.rb
+%%WWWDIR%%/vendor/gems/coderay-0.9.7/lib/coderay/scanners/css.rb
+%%WWWDIR%%/vendor/gems/coderay-0.9.7/lib/coderay/scanners/debug.rb
+%%WWWDIR%%/vendor/gems/coderay-0.9.7/lib/coderay/scanners/delphi.rb
+%%WWWDIR%%/vendor/gems/coderay-0.9.7/lib/coderay/scanners/diff.rb
+%%WWWDIR%%/vendor/gems/coderay-0.9.7/lib/coderay/scanners/groovy.rb
+%%WWWDIR%%/vendor/gems/coderay-0.9.7/lib/coderay/scanners/html.rb
+%%WWWDIR%%/vendor/gems/coderay-0.9.7/lib/coderay/scanners/java.rb
+%%WWWDIR%%/vendor/gems/coderay-0.9.7/lib/coderay/scanners/java/builtin_types.rb
+%%WWWDIR%%/vendor/gems/coderay-0.9.7/lib/coderay/scanners/java_script-0.9.6.rb
+%%WWWDIR%%/vendor/gems/coderay-0.9.7/lib/coderay/scanners/java_script.rb
+%%WWWDIR%%/vendor/gems/coderay-0.9.7/lib/coderay/scanners/json.rb
+%%WWWDIR%%/vendor/gems/coderay-0.9.7/lib/coderay/scanners/nitro_xhtml.rb
+%%WWWDIR%%/vendor/gems/coderay-0.9.7/lib/coderay/scanners/php.rb
+%%WWWDIR%%/vendor/gems/coderay-0.9.7/lib/coderay/scanners/plaintext.rb
+%%WWWDIR%%/vendor/gems/coderay-0.9.7/lib/coderay/scanners/python.rb
+%%WWWDIR%%/vendor/gems/coderay-0.9.7/lib/coderay/scanners/rhtml.rb
+%%WWWDIR%%/vendor/gems/coderay-0.9.7/lib/coderay/scanners/ruby.rb
+%%WWWDIR%%/vendor/gems/coderay-0.9.7/lib/coderay/scanners/ruby/patterns.rb
+%%WWWDIR%%/vendor/gems/coderay-0.9.7/lib/coderay/scanners/scheme.rb
+%%WWWDIR%%/vendor/gems/coderay-0.9.7/lib/coderay/scanners/sql.rb
+%%WWWDIR%%/vendor/gems/coderay-0.9.7/lib/coderay/scanners/xml.rb
+%%WWWDIR%%/vendor/gems/coderay-0.9.7/lib/coderay/scanners/yaml.rb
+%%WWWDIR%%/vendor/gems/coderay-0.9.7/lib/coderay/style.rb
+%%WWWDIR%%/vendor/gems/coderay-0.9.7/lib/coderay/styles/_map.rb
+%%WWWDIR%%/vendor/gems/coderay-0.9.7/lib/coderay/styles/cycnus.rb
+%%WWWDIR%%/vendor/gems/coderay-0.9.7/lib/coderay/styles/murphy.rb
+%%WWWDIR%%/vendor/gems/coderay-0.9.7/lib/coderay/token_classes.rb
+%%WWWDIR%%/vendor/gems/coderay-0.9.7/lib/coderay/tokens.rb
+%%WWWDIR%%/vendor/gems/coderay-0.9.7/test/functional/basic.rb
+%%WWWDIR%%/vendor/gems/coderay-0.9.7/test/functional/basic.rbc
+%%WWWDIR%%/vendor/gems/coderay-0.9.7/test/functional/for_redcloth.rb
+%%WWWDIR%%/vendor/gems/coderay-0.9.7/test/functional/for_redcloth.rbc
+%%WWWDIR%%/vendor/gems/coderay-0.9.7/test/functional/load_plugin_scanner.rb
+%%WWWDIR%%/vendor/gems/coderay-0.9.7/test/functional/load_plugin_scanner.rbc
+%%WWWDIR%%/vendor/gems/coderay-0.9.7/test/functional/suite.rb
+%%WWWDIR%%/vendor/gems/coderay-0.9.7/test/functional/suite.rbc
+%%WWWDIR%%/vendor/gems/coderay-0.9.7/test/functional/vhdl.rb
+%%WWWDIR%%/vendor/gems/coderay-0.9.7/test/functional/vhdl.rbc
+%%WWWDIR%%/vendor/gems/coderay-0.9.7/test/functional/word_list.rb
+%%WWWDIR%%/vendor/gems/coderay-0.9.7/test/functional/word_list.rbc
 %%WWWDIR%%/vendor/gems/rubytree-0.5.2/.specification
 %%WWWDIR%%/vendor/gems/rubytree-0.5.2/COPYING
 %%WWWDIR%%/vendor/gems/rubytree-0.5.2/ChangeLog
@@ -1443,68 +1524,6 @@
 %%WWWDIR%%/vendor/plugins/classic_pagination/test/helper.rb
 %%WWWDIR%%/vendor/plugins/classic_pagination/test/pagination_helper_test.rb
 %%WWWDIR%%/vendor/plugins/classic_pagination/test/pagination_test.rb
-%%WWWDIR%%/vendor/plugins/coderay-0.9.2/LICENSE
-%%WWWDIR%%/vendor/plugins/coderay-0.9.2/lib/README
-%%WWWDIR%%/vendor/plugins/coderay-0.9.2/lib/coderay.rb
-%%WWWDIR%%/vendor/plugins/coderay-0.9.2/lib/coderay/duo.rb
-%%WWWDIR%%/vendor/plugins/coderay-0.9.2/lib/coderay/encoder.rb
-%%WWWDIR%%/vendor/plugins/coderay-0.9.2/lib/coderay/encoders/_map.rb
-%%WWWDIR%%/vendor/plugins/coderay-0.9.2/lib/coderay/encoders/comment_filter.rb
-%%WWWDIR%%/vendor/plugins/coderay-0.9.2/lib/coderay/encoders/count.rb
-%%WWWDIR%%/vendor/plugins/coderay-0.9.2/lib/coderay/encoders/debug.rb
-%%WWWDIR%%/vendor/plugins/coderay-0.9.2/lib/coderay/encoders/div.rb
-%%WWWDIR%%/vendor/plugins/coderay-0.9.2/lib/coderay/encoders/filter.rb
-%%WWWDIR%%/vendor/plugins/coderay-0.9.2/lib/coderay/encoders/html.rb
-%%WWWDIR%%/vendor/plugins/coderay-0.9.2/lib/coderay/encoders/html/css.rb
-%%WWWDIR%%/vendor/plugins/coderay-0.9.2/lib/coderay/encoders/html/numerization.rb
-%%WWWDIR%%/vendor/plugins/coderay-0.9.2/lib/coderay/encoders/html/output.rb
-%%WWWDIR%%/vendor/plugins/coderay-0.9.2/lib/coderay/encoders/json.rb
-%%WWWDIR%%/vendor/plugins/coderay-0.9.2/lib/coderay/encoders/lines_of_code.rb
-%%WWWDIR%%/vendor/plugins/coderay-0.9.2/lib/coderay/encoders/null.rb
-%%WWWDIR%%/vendor/plugins/coderay-0.9.2/lib/coderay/encoders/page.rb
-%%WWWDIR%%/vendor/plugins/coderay-0.9.2/lib/coderay/encoders/span.rb
-%%WWWDIR%%/vendor/plugins/coderay-0.9.2/lib/coderay/encoders/statistic.rb
-%%WWWDIR%%/vendor/plugins/coderay-0.9.2/lib/coderay/encoders/term.rb
-%%WWWDIR%%/vendor/plugins/coderay-0.9.2/lib/coderay/encoders/text.rb
-%%WWWDIR%%/vendor/plugins/coderay-0.9.2/lib/coderay/encoders/token_class_filter.rb
-%%WWWDIR%%/vendor/plugins/coderay-0.9.2/lib/coderay/encoders/xml.rb
-%%WWWDIR%%/vendor/plugins/coderay-0.9.2/lib/coderay/encoders/yaml.rb
-%%WWWDIR%%/vendor/plugins/coderay-0.9.2/lib/coderay/for_redcloth.rb
-%%WWWDIR%%/vendor/plugins/coderay-0.9.2/lib/coderay/helpers/file_type.rb
-%%WWWDIR%%/vendor/plugins/coderay-0.9.2/lib/coderay/helpers/gzip_simple.rb
-%%WWWDIR%%/vendor/plugins/coderay-0.9.2/lib/coderay/helpers/plugin.rb
-%%WWWDIR%%/vendor/plugins/coderay-0.9.2/lib/coderay/helpers/word_list.rb
-%%WWWDIR%%/vendor/plugins/coderay-0.9.2/lib/coderay/scanner.rb
-%%WWWDIR%%/vendor/plugins/coderay-0.9.2/lib/coderay/scanners/_map.rb
-%%WWWDIR%%/vendor/plugins/coderay-0.9.2/lib/coderay/scanners/c.rb
-%%WWWDIR%%/vendor/plugins/coderay-0.9.2/lib/coderay/scanners/cpp.rb
-%%WWWDIR%%/vendor/plugins/coderay-0.9.2/lib/coderay/scanners/css.rb
-%%WWWDIR%%/vendor/plugins/coderay-0.9.2/lib/coderay/scanners/debug.rb
-%%WWWDIR%%/vendor/plugins/coderay-0.9.2/lib/coderay/scanners/delphi.rb
-%%WWWDIR%%/vendor/plugins/coderay-0.9.2/lib/coderay/scanners/diff.rb
-%%WWWDIR%%/vendor/plugins/coderay-0.9.2/lib/coderay/scanners/groovy.rb
-%%WWWDIR%%/vendor/plugins/coderay-0.9.2/lib/coderay/scanners/html.rb
-%%WWWDIR%%/vendor/plugins/coderay-0.9.2/lib/coderay/scanners/java.rb
-%%WWWDIR%%/vendor/plugins/coderay-0.9.2/lib/coderay/scanners/java/builtin_types.rb
-%%WWWDIR%%/vendor/plugins/coderay-0.9.2/lib/coderay/scanners/java_script.rb
-%%WWWDIR%%/vendor/plugins/coderay-0.9.2/lib/coderay/scanners/json.rb
-%%WWWDIR%%/vendor/plugins/coderay-0.9.2/lib/coderay/scanners/nitro_xhtml.rb
-%%WWWDIR%%/vendor/plugins/coderay-0.9.2/lib/coderay/scanners/php.rb
-%%WWWDIR%%/vendor/plugins/coderay-0.9.2/lib/coderay/scanners/plaintext.rb
-%%WWWDIR%%/vendor/plugins/coderay-0.9.2/lib/coderay/scanners/python.rb
-%%WWWDIR%%/vendor/plugins/coderay-0.9.2/lib/coderay/scanners/rhtml.rb
-%%WWWDIR%%/vendor/plugins/coderay-0.9.2/lib/coderay/scanners/ruby.rb
-%%WWWDIR%%/vendor/plugins/coderay-0.9.2/lib/coderay/scanners/ruby/patterns.rb
-%%WWWDIR%%/vendor/plugins/coderay-0.9.2/lib/coderay/scanners/scheme.rb
-%%WWWDIR%%/vendor/plugins/coderay-0.9.2/lib/coderay/scanners/sql.rb
-%%WWWDIR%%/vendor/plugins/coderay-0.9.2/lib/coderay/scanners/xml.rb
-%%WWWDIR%%/vendor/plugins/coderay-0.9.2/lib/coderay/scanners/yaml.rb
-%%WWWDIR%%/vendor/plugins/coderay-0.9.2/lib/coderay/style.rb
-%%WWWDIR%%/vendor/plugins/coderay-0.9.2/lib/coderay/styles/_map.rb
-%%WWWDIR%%/vendor/plugins/coderay-0.9.2/lib/coderay/styles/cycnus.rb
-%%WWWDIR%%/vendor/plugins/coderay-0.9.2/lib/coderay/styles/murphy.rb
-%%WWWDIR%%/vendor/plugins/coderay-0.9.2/lib/coderay/token_classes.rb
-%%WWWDIR%%/vendor/plugins/coderay-0.9.2/lib/coderay/tokens.rb
 %%WWWDIR%%/vendor/plugins/engines/.gitignore
 %%WWWDIR%%/vendor/plugins/engines/CHANGELOG
 %%WWWDIR%%/vendor/plugins/engines/MIT-LICENSE
@@ -3667,16 +3686,6 @@
 @dirrm %%WWWDIR%%/vendor/plugins/engines/generators/plugin_migration
 @dirrm %%WWWDIR%%/vendor/plugins/engines/generators
 @dirrm %%WWWDIR%%/vendor/plugins/engines
-@dirrm %%WWWDIR%%/vendor/plugins/coderay-0.9.2/lib/coderay/styles
-@dirrm %%WWWDIR%%/vendor/plugins/coderay-0.9.2/lib/coderay/scanners/ruby
-@dirrm %%WWWDIR%%/vendor/plugins/coderay-0.9.2/lib/coderay/scanners/java
-@dirrm %%WWWDIR%%/vendor/plugins/coderay-0.9.2/lib/coderay/scanners
-@dirrm %%WWWDIR%%/vendor/plugins/coderay-0.9.2/lib/coderay/helpers
-@dirrm %%WWWDIR%%/vendor/plugins/coderay-0.9.2/lib/coderay/encoders/html
-@dirrm %%WWWDIR%%/vendor/plugins/coderay-0.9.2/lib/coderay/encoders
-@dirrm %%WWWDIR%%/vendor/plugins/coderay-0.9.2/lib/coderay
-@dirrm %%WWWDIR%%/vendor/plugins/coderay-0.9.2/lib
-@dirrm %%WWWDIR%%/vendor/plugins/coderay-0.9.2
 @dirrm %%WWWDIR%%/vendor/plugins/classic_pagination/test/fixtures
 @dirrm %%WWWDIR%%/vendor/plugins/classic_pagination/test
 @dirrm %%WWWDIR%%/vendor/plugins/classic_pagination/lib
@@ -3722,6 +3731,19 @@
 @dirrm %%WWWDIR%%/vendor/gems/rubytree-0.5.2/lib/tree
 @dirrm %%WWWDIR%%/vendor/gems/rubytree-0.5.2/lib
 @dirrm %%WWWDIR%%/vendor/gems/rubytree-0.5.2
+@dirrm %%WWWDIR%%/vendor/gems/coderay-0.9.7/test/functional
+@dirrm %%WWWDIR%%/vendor/gems/coderay-0.9.7/test
+@dirrm %%WWWDIR%%/vendor/gems/coderay-0.9.7/lib/coderay/styles
+@dirrm %%WWWDIR%%/vendor/gems/coderay-0.9.7/lib/coderay/scanners/ruby
+@dirrm %%WWWDIR%%/vendor/gems/coderay-0.9.7/lib/coderay/scanners/java
+@dirrm %%WWWDIR%%/vendor/gems/coderay-0.9.7/lib/coderay/scanners
+@dirrm %%WWWDIR%%/vendor/gems/coderay-0.9.7/lib/coderay/helpers
+@dirrm %%WWWDIR%%/vendor/gems/coderay-0.9.7/lib/coderay/encoders/html
+@dirrm %%WWWDIR%%/vendor/gems/coderay-0.9.7/lib/coderay/encoders
+@dirrm %%WWWDIR%%/vendor/gems/coderay-0.9.7/lib/coderay
+@dirrm %%WWWDIR%%/vendor/gems/coderay-0.9.7/lib
+@dirrm %%WWWDIR%%/vendor/gems/coderay-0.9.7/bin
+@dirrm %%WWWDIR%%/vendor/gems/coderay-0.9.7
 @dirrm %%WWWDIR%%/vendor/gems
 @dirrmtry %%WWWDIR%%/vendor
 @dirrm %%WWWDIR%%/tmp/test
