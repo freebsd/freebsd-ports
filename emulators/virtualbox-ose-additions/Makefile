@@ -7,6 +7,7 @@
 
 PORTNAME=	virtualbox-ose
 DISTVERSION=	3.2.12
+PORTREVISION=	1
 CATEGORIES=	emulators kld
 MASTER_SITES=	http://tmp.chruetertee.ch/ \
 		http://freebsd.unixfreunde.de/sources/ \
@@ -27,7 +28,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 UNIQUENAME=	${PORTNAME}${PKGNAMESUFFIX}
 WRKSRC=		${WRKDIR}/VirtualBox-${PORTVERSION}_OSE
-USE_RC_SUBR=	vboxguest
+USE_RC_SUBR=	vboxguest vboxservice
 ONLY_FOR_ARCHS=	i386 amd64
 USE_BZIP2=	yes
 MAKE_JOBS_UNSAFE=	yes
@@ -122,7 +123,9 @@ post-patch:
 		${WRKSRC}/Config.kmk \
 		${WRKSRC}/configure \
 		${WRKSRC}/kBuild/units/qt4.kmk \
-		${WRKSRC}/kBuild/sdks/LIBSDL.kmk
+		${WRKSRC}/kBuild/sdks/LIBSDL.kmk \
+		${WRKSRC}/src/VBox/Additions/x11/Installer/98vboxadd-xclient \
+		${WRKSRC}/src/VBox/Additions/x11/Installer/vboxclient.desktop
 	@${REINPLACE_CMD} -e 's|\$$KBUILDDIR_BIN/kmk_sed|${PREFIX}/bin/kmk_sed|g' ${WRKSRC}/configure
 
 pre-build:
@@ -146,7 +149,21 @@ do-install:
 	${INSTALL_PROGRAM} ${VBOX_BIN}/VBoxService ${PREFIX}/sbin/
 
 .if !defined(WITHOUT_X11)
-	${INSTALL_PROGRAM} ${VBOX_BIN}/VBoxClient ${PREFIX}/sbin/
+	${INSTALL_PROGRAM} ${VBOX_BIN}/VBoxClient ${PREFIX}/bin/
+
+	${MKDIR} ${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/src/VBox/Additions/x11/Installer/98vboxadd-xclient \
+		${PREFIX}/bin/VBoxClient-all
+
+	# X11 autostart
+	${MKDIR} ${PREFIX}/etc/xdg/autostart/
+	${INSTALL_DATA} ${WRKSRC}/src/VBox/Additions/x11/Installer/vboxclient.desktop \
+		${PREFIX}/etc/xdg/autostart/
+
+	# KDE autostart
+	${MKDIR} ${PREFIX}/share/autostart/
+	${INSTALL_DATA} ${WRKSRC}/src/VBox/Additions/x11/Installer/vboxclient.desktop \
+		${PREFIX}/share/autostart/
 
 	${MKDIR} ${VIDEODIR}
 	${INSTALL_DATA} ${VBOX_BIN}/vboxvideo_drv_17.so ${VIDEODIR}/vboxvideo_drv.so
