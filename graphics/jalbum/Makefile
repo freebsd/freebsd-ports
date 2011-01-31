@@ -6,17 +6,17 @@
 #
 
 PORTNAME=	jalbum
-PORTVERSION=	8.6
+PORTVERSION=	9.0.2
 CATEGORIES=	graphics java
 MASTER_SITES=	http://jalbum.net/download/
-DISTNAME=	Jalbum${PORTVERSION}
+DISTNAME=	jAlbum${PORTVERSION}
 
 MAINTAINER=	tdb@FreeBSD.org
 COMMENT=	Web photo album generator
 
 RUN_DEPENDS=	java:${PORTSDIR}/java/javavmwrapper
 
-WRKSRC=		${WRKDIR}/Jalbum
+WRKSRC=		${WRKDIR}/jAlbum
 
 USE_ZIP=	yes
 NO_BUILD=	yes
