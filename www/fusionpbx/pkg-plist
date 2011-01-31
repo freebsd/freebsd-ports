@@ -1,0 +1,926 @@
+%%WWWDIR%%/.htaccess
+%%WWWDIR%%/core/backup/backup.php
+%%WWWDIR%%/core/backup/backupandrestore.php
+%%WWWDIR%%/core/backup/root.php
+%%WWWDIR%%/core/menu/menu_delete.php
+%%WWWDIR%%/core/menu/menu_edit.php
+%%WWWDIR%%/core/menu/menu_list.php
+%%WWWDIR%%/core/menu/menu_move_down.php
+%%WWWDIR%%/core/menu/menu_move_up.php
+%%WWWDIR%%/core/menu/menu_restore_default.php
+%%WWWDIR%%/core/menu/root.php
+%%WWWDIR%%/core/settings/root.php
+%%WWWDIR%%/core/settings/v_settings.php
+%%WWWDIR%%/core/settings/v_settings_delete.php
+%%WWWDIR%%/core/settings/v_settings_edit.php
+%%WWWDIR%%/core/status/root.php
+%%WWWDIR%%/core/status/v_cmd.php
+%%WWWDIR%%/core/status/v_status.php
+%%WWWDIR%%/core/status/v_status_registrations.php
+%%WWWDIR%%/core/system_settings/root.php
+%%WWWDIR%%/core/system_settings/v_system_settings.php
+%%WWWDIR%%/core/system_settings/v_system_settings_default.php
+%%WWWDIR%%/core/system_settings/v_system_settings_delete.php
+%%WWWDIR%%/core/system_settings/v_system_settings_edit.php
+%%WWWDIR%%/core/upgrade/root.php
+%%WWWDIR%%/core/upgrade/upgrade.php
+%%WWWDIR%%/core/upgrade/upgrade_schema.php
+%%WWWDIR%%/core/upgrade/upgrade_svn.php
+%%WWWDIR%%/core/upgrade/upgrade_xml.php
+%%WWWDIR%%/core/users/groupadd.php
+%%WWWDIR%%/core/users/groupdelete.php
+%%WWWDIR%%/core/users/grouplist.php
+%%WWWDIR%%/core/users/groupmemberadd.php
+%%WWWDIR%%/core/users/groupmemberdelete.php
+%%WWWDIR%%/core/users/groupmembers.php
+%%WWWDIR%%/core/users/index.php
+%%WWWDIR%%/core/users/root.php
+%%WWWDIR%%/core/users/signup.php
+%%WWWDIR%%/core/users/userdelete.php
+%%WWWDIR%%/core/users/userlist.php
+%%WWWDIR%%/core/users/usersupdate.php
+%%WWWDIR%%/images/background_cell_active.gif
+%%WWWDIR%%/images/background_cell_conference.gif
+%%WWWDIR%%/images/background_cell_fifo.gif
+%%WWWDIR%%/images/background_cell_light.gif
+%%WWWDIR%%/images/blank.gif
+%%WWWDIR%%/images/icon_cal.gif
+%%WWWDIR%%/images/icon_e.gif
+%%WWWDIR%%/images/icon_e.png
+%%WWWDIR%%/images/icon_plus.gif
+%%WWWDIR%%/images/icon_plus.png
+%%WWWDIR%%/images/icon_restart.gif
+%%WWWDIR%%/images/icon_start.gif
+%%WWWDIR%%/images/icon_stop.gif
+%%WWWDIR%%/images/icon_up.gif
+%%WWWDIR%%/images/icon_view.gif
+%%WWWDIR%%/images/icon_x.gif
+%%WWWDIR%%/images/icon_x.png
+%%WWWDIR%%/includes/calendar_lw_layers.js
+%%WWWDIR%%/includes/calendar_lw_menu.js
+%%WWWDIR%%/includes/calendar_popcalendar.js
+%%WWWDIR%%/includes/captcha/config.php
+%%WWWDIR%%/includes/captcha/fonts/ROUGD.TTF
+%%WWWDIR%%/includes/captcha/fonts/Zebra.ttf
+%%WWWDIR%%/includes/captcha/fonts/hanshand.ttf
+%%WWWDIR%%/includes/captcha/img.php
+%%WWWDIR%%/includes/captcha/root.php
+%%WWWDIR%%/includes/checkauth.php
+%%WWWDIR%%/includes/checkstring.php
+%%WWWDIR%%/includes/class.phpmailer.php
+%%WWWDIR%%/includes/class.smtp.php
+%%WWWDIR%%/includes/class_vcard.php
+%%WWWDIR%%/includes/config.php.dist
+%%WWWDIR%%/includes/directory.php
+%%WWWDIR%%/includes/download.php
+%%WWWDIR%%/includes/edit_area/edit_area_full.gz
+%%WWWDIR%%/includes/edit_area/edit_area_full.js
+%%WWWDIR%%/includes/edit_area/images/autocompletion.gif
+%%WWWDIR%%/includes/edit_area/images/close.gif
+%%WWWDIR%%/includes/edit_area/images/fullscreen.gif
+%%WWWDIR%%/includes/edit_area/images/go_to_line.gif
+%%WWWDIR%%/includes/edit_area/images/help.gif
+%%WWWDIR%%/includes/edit_area/images/highlight.gif
+%%WWWDIR%%/includes/edit_area/images/load.gif
+%%WWWDIR%%/includes/edit_area/images/move.gif
+%%WWWDIR%%/includes/edit_area/images/newdocument.gif
+%%WWWDIR%%/includes/edit_area/images/opacity.png
+%%WWWDIR%%/includes/edit_area/images/processing.gif
+%%WWWDIR%%/includes/edit_area/images/redo.gif
+%%WWWDIR%%/includes/edit_area/images/reset_highlight.gif
+%%WWWDIR%%/includes/edit_area/images/save.gif
+%%WWWDIR%%/includes/edit_area/images/search.gif
+%%WWWDIR%%/includes/edit_area/images/smooth_selection.gif
+%%WWWDIR%%/includes/edit_area/images/spacer.gif
+%%WWWDIR%%/includes/edit_area/images/statusbar_resize.gif
+%%WWWDIR%%/includes/edit_area/images/undo.gif
+%%WWWDIR%%/includes/edit_area/images/word_wrap.gif
+%%WWWDIR%%/includes/edit_area/langs/bg.js
+%%WWWDIR%%/includes/edit_area/langs/cs.js
+%%WWWDIR%%/includes/edit_area/langs/de.js
+%%WWWDIR%%/includes/edit_area/langs/dk.js
+%%WWWDIR%%/includes/edit_area/langs/en.js
+%%WWWDIR%%/includes/edit_area/langs/eo.js
+%%WWWDIR%%/includes/edit_area/langs/es.js
+%%WWWDIR%%/includes/edit_area/langs/fi.js
+%%WWWDIR%%/includes/edit_area/langs/fr.js
+%%WWWDIR%%/includes/edit_area/langs/hr.js
+%%WWWDIR%%/includes/edit_area/langs/it.js
+%%WWWDIR%%/includes/edit_area/langs/ja.js
+%%WWWDIR%%/includes/edit_area/langs/mk.js
+%%WWWDIR%%/includes/edit_area/langs/nl.js
+%%WWWDIR%%/includes/edit_area/langs/pl.js
+%%WWWDIR%%/includes/edit_area/langs/pt.js
+%%WWWDIR%%/includes/edit_area/langs/ru.js
+%%WWWDIR%%/includes/edit_area/langs/sk.js
+%%WWWDIR%%/includes/edit_area/langs/zh.js
+%%WWWDIR%%/includes/edit_area/plugins/charmap/charmap.js
+%%WWWDIR%%/includes/edit_area/plugins/charmap/css/charmap.css
+%%WWWDIR%%/includes/edit_area/plugins/charmap/images/charmap.gif
+%%WWWDIR%%/includes/edit_area/plugins/charmap/jscripts/map.js
+%%WWWDIR%%/includes/edit_area/plugins/charmap/langs/bg.js
+%%WWWDIR%%/includes/edit_area/plugins/charmap/langs/cs.js
+%%WWWDIR%%/includes/edit_area/plugins/charmap/langs/de.js
+%%WWWDIR%%/includes/edit_area/plugins/charmap/langs/dk.js
+%%WWWDIR%%/includes/edit_area/plugins/charmap/langs/en.js
+%%WWWDIR%%/includes/edit_area/plugins/charmap/langs/eo.js
+%%WWWDIR%%/includes/edit_area/plugins/charmap/langs/es.js
+%%WWWDIR%%/includes/edit_area/plugins/charmap/langs/fr.js
+%%WWWDIR%%/includes/edit_area/plugins/charmap/langs/hr.js
+%%WWWDIR%%/includes/edit_area/plugins/charmap/langs/it.js
+%%WWWDIR%%/includes/edit_area/plugins/charmap/langs/ja.js
+%%WWWDIR%%/includes/edit_area/plugins/charmap/langs/mk.js
+%%WWWDIR%%/includes/edit_area/plugins/charmap/langs/nl.js
+%%WWWDIR%%/includes/edit_area/plugins/charmap/langs/pl.js
+%%WWWDIR%%/includes/edit_area/plugins/charmap/langs/pt.js
+%%WWWDIR%%/includes/edit_area/plugins/charmap/langs/ru.js
+%%WWWDIR%%/includes/edit_area/plugins/charmap/langs/sk.js
+%%WWWDIR%%/includes/edit_area/plugins/charmap/langs/zh.js
+%%WWWDIR%%/includes/edit_area/plugins/charmap/popup.html
+%%WWWDIR%%/includes/edit_area/plugins/test/css/test.css
+%%WWWDIR%%/includes/edit_area/plugins/test/images/Thumbs.db
+%%WWWDIR%%/includes/edit_area/plugins/test/images/test.gif
+%%WWWDIR%%/includes/edit_area/plugins/test/langs/bg.js
+%%WWWDIR%%/includes/edit_area/plugins/test/langs/cs.js
+%%WWWDIR%%/includes/edit_area/plugins/test/langs/de.js
+%%WWWDIR%%/includes/edit_area/plugins/test/langs/dk.js
+%%WWWDIR%%/includes/edit_area/plugins/test/langs/en.js
+%%WWWDIR%%/includes/edit_area/plugins/test/langs/eo.js
+%%WWWDIR%%/includes/edit_area/plugins/test/langs/es.js
+%%WWWDIR%%/includes/edit_area/plugins/test/langs/fr.js
+%%WWWDIR%%/includes/edit_area/plugins/test/langs/hr.js
+%%WWWDIR%%/includes/edit_area/plugins/test/langs/it.js
+%%WWWDIR%%/includes/edit_area/plugins/test/langs/ja.js
+%%WWWDIR%%/includes/edit_area/plugins/test/langs/mk.js
+%%WWWDIR%%/includes/edit_area/plugins/test/langs/nl.js
+%%WWWDIR%%/includes/edit_area/plugins/test/langs/pl.js
+%%WWWDIR%%/includes/edit_area/plugins/test/langs/pt.js
+%%WWWDIR%%/includes/edit_area/plugins/test/langs/ru.js
+%%WWWDIR%%/includes/edit_area/plugins/test/langs/sk.js
+%%WWWDIR%%/includes/edit_area/plugins/test/langs/zh.js
+%%WWWDIR%%/includes/edit_area/plugins/test/test.js
+%%WWWDIR%%/includes/edit_area/plugins/test/test2.js
+%%WWWDIR%%/includes/edit_area/reg_syntax/basic.js
+%%WWWDIR%%/includes/edit_area/reg_syntax/brainfuck.js
+%%WWWDIR%%/includes/edit_area/reg_syntax/c.js
+%%WWWDIR%%/includes/edit_area/reg_syntax/coldfusion.js
+%%WWWDIR%%/includes/edit_area/reg_syntax/cpp.js
+%%WWWDIR%%/includes/edit_area/reg_syntax/css.js
+%%WWWDIR%%/includes/edit_area/reg_syntax/html.js
+%%WWWDIR%%/includes/edit_area/reg_syntax/java.js
+%%WWWDIR%%/includes/edit_area/reg_syntax/js.js
+%%WWWDIR%%/includes/edit_area/reg_syntax/pas.js
+%%WWWDIR%%/includes/edit_area/reg_syntax/perl.js
+%%WWWDIR%%/includes/edit_area/reg_syntax/php.js
+%%WWWDIR%%/includes/edit_area/reg_syntax/python.js
+%%WWWDIR%%/includes/edit_area/reg_syntax/robotstxt.js
+%%WWWDIR%%/includes/edit_area/reg_syntax/ruby.js
+%%WWWDIR%%/includes/edit_area/reg_syntax/sql.js
+%%WWWDIR%%/includes/edit_area/reg_syntax/tsql.js
+%%WWWDIR%%/includes/edit_area/reg_syntax/vb.js
+%%WWWDIR%%/includes/edit_area/reg_syntax/xml.js
+%%WWWDIR%%/includes/footer.php
+%%WWWDIR%%/includes/getcontent.php
+%%WWWDIR%%/includes/header.php
+%%WWWDIR%%/includes/install/autoload_configs/cdr_csv.conf.xml
+%%WWWDIR%%/includes/install/dialplan/default.xml
+%%WWWDIR%%/includes/install/htdocs/license.txt
+%%WWWDIR%%/includes/install/htdocs/slim.swf
+%%WWWDIR%%/includes/install/htdocs/slimtest.htm
+%%WWWDIR%%/includes/install/scripts/call_broadcast_originate.js
+%%WWWDIR%%/includes/install/scripts/call_forward_basic.lua
+%%WWWDIR%%/includes/install/scripts/disa.lua
+%%WWWDIR%%/includes/install/scripts/huntgroup_originate.lua
+%%WWWDIR%%/includes/install/scripts/intercom.lua
+%%WWWDIR%%/includes/install/scripts/originate.js
+%%WWWDIR%%/includes/install/scripts/recordings.lua
+%%WWWDIR%%/includes/install/scripts/roku.lua
+%%WWWDIR%%/includes/install/sounds/custom/16000/begin_recording.wav
+%%WWWDIR%%/includes/install/sounds/custom/16000/call_forward_has_been_deleted.wav
+%%WWWDIR%%/includes/install/sounds/custom/16000/call_forward_has_been_set.wav
+%%WWWDIR%%/includes/install/sounds/custom/16000/followme_menu.wav
+%%WWWDIR%%/includes/install/sounds/custom/16000/please_enter_the_extension_number.wav
+%%WWWDIR%%/includes/install/sounds/custom/16000/please_enter_the_phone_number.wav
+%%WWWDIR%%/includes/install/sounds/custom/16000/please_enter_the_pin_number.wav
+%%WWWDIR%%/includes/install/sounds/custom/16000/please_enter_your_pin_number.wav
+%%WWWDIR%%/includes/install/sounds/custom/16000/please_say_your_name_and_reason_for_calling.wav
+%%WWWDIR%%/includes/install/sounds/custom/16000/press_1_to_accept_2_to_reject_or_3_for_voicemail.wav
+%%WWWDIR%%/includes/install/sounds/custom/16000/your_pin_number_is_incorect_goodbye.wav
+%%WWWDIR%%/includes/install/sounds/custom/8000/begin_recording.wav
+%%WWWDIR%%/includes/install/sounds/custom/8000/call_forward_has_been_deleted.wav
+%%WWWDIR%%/includes/install/sounds/custom/8000/call_forward_has_been_set.wav
+%%WWWDIR%%/includes/install/sounds/custom/8000/followme_menu.wav
+%%WWWDIR%%/includes/install/sounds/custom/8000/please_enter_the_extension_number.wav
+%%WWWDIR%%/includes/install/sounds/custom/8000/please_enter_the_phone_number.wav
+%%WWWDIR%%/includes/install/sounds/custom/8000/please_enter_the_pin_number.wav
+%%WWWDIR%%/includes/install/sounds/custom/8000/please_enter_your_pin_number.wav
+%%WWWDIR%%/includes/install/sounds/custom/8000/please_say_your_name_and_reason_for_calling.wav
+%%WWWDIR%%/includes/install/sounds/custom/8000/press_1_to_accept_2_to_reject_or_3_for_voicemail.wav
+%%WWWDIR%%/includes/install/sounds/custom/8000/your_pin_number_is_incorect_goodbye.wav
+%%WWWDIR%%/includes/install/sql/mysql.sql
+%%WWWDIR%%/includes/install/sql/pgsql.sql
+%%WWWDIR%%/includes/install/sql/sqlite.sql
+%%WWWDIR%%/includes/lib_cdr.php
+%%WWWDIR%%/includes/lib_functions.php
+%%WWWDIR%%/includes/lib_install_copy.php
+%%WWWDIR%%/includes/lib_pdo.php
+%%WWWDIR%%/includes/lib_pdo_vm.php
+%%WWWDIR%%/includes/lib_php.php
+%%WWWDIR%%/includes/lib_schema.php
+%%WWWDIR%%/includes/lib_switch.php
+%%WWWDIR%%/includes/lib_system_settings_default.php
+%%WWWDIR%%/includes/menu.php
+%%WWWDIR%%/includes/paging.php
+%%WWWDIR%%/includes/persistform.php
+%%WWWDIR%%/includes/persistformvar.php
+%%WWWDIR%%/includes/phpsvnclient/definitions.php
+%%WWWDIR%%/includes/phpsvnclient/http.php
+%%WWWDIR%%/includes/phpsvnclient/phpsvnclient.php
+%%WWWDIR%%/includes/phpsvnclient/xml2Array.php
+%%WWWDIR%%/includes/phpsvnclient/xml_parser.php
+%%WWWDIR%%/includes/pop3/mime_parser.php
+%%WWWDIR%%/includes/pop3/parse_message.php
+%%WWWDIR%%/includes/pop3/pop3.php
+%%WWWDIR%%/includes/pop3/rfc822_addresses.php
+%%WWWDIR%%/includes/root.php
+%%WWWDIR%%/includes/securedownload.php
+%%WWWDIR%%/includes/templates/conf/autoload_configs/.htaccess
+%%WWWDIR%%/includes/templates/conf/autoload_configs/callcenter.conf.xml
+%%WWWDIR%%/includes/templates/conf/autoload_configs/switch.conf.xml
+%%WWWDIR%%/includes/templates/conf/autoload_configs/xml_cdr.conf.xml
+%%WWWDIR%%/includes/templates/provision/aastra/675x/{v_mac}.cfg
+%%WWWDIR%%/includes/templates/provision/linksys/spa2102/{v_mac}.xml
+%%WWWDIR%%/includes/templates/provision/linksys/spa3102/{v_mac}.xml
+%%WWWDIR%%/includes/templates/provision/linksys/spa504g/{v_mac}.xml
+%%WWWDIR%%/includes/templates/provision/linksys/spa942/{v_mac}.xml
+%%WWWDIR%%/includes/templates/provision/snom/820/{v_mac}.xml
+%%WWWDIR%%/includes/templates/provision/yealink/t20/{v_mac}.cfg
+%%WWWDIR%%/includes/templates/provision/yealink/t22/{v_mac}.cfg
+%%WWWDIR%%/includes/upload.php
+%%WWWDIR%%/includes/v_cmd.php
+%%WWWDIR%%/includes/v_dialplan_entry_exists.php
+%%WWWDIR%%/includes/wysiwyg.php
+%%WWWDIR%%/index.php
+%%WWWDIR%%/install.php
+%%WWWDIR%%/licenses.php
+%%WWWDIR%%/login.php
+%%WWWDIR%%/logout.php
+%%WWWDIR%%/mod/auto_attendant/root.php
+%%WWWDIR%%/mod/auto_attendant/v_auto_attendant.php
+%%WWWDIR%%/mod/auto_attendant/v_auto_attendant_delete.php
+%%WWWDIR%%/mod/auto_attendant/v_auto_attendant_edit.php
+%%WWWDIR%%/mod/auto_attendant/v_auto_attendant_options_delete.php
+%%WWWDIR%%/mod/auto_attendant/v_auto_attendant_options_edit.php
+%%WWWDIR%%/mod/call_broadcast/root.php
+%%WWWDIR%%/mod/call_broadcast/v_call_broadcast.php
+%%WWWDIR%%/mod/call_broadcast/v_call_broadcast_delete.php
+%%WWWDIR%%/mod/call_broadcast/v_call_broadcast_edit.php
+%%WWWDIR%%/mod/call_broadcast/v_call_broadcast_send.php
+%%WWWDIR%%/mod/call_center/root.php
+%%WWWDIR%%/mod/call_center/v_call_center_agent.php
+%%WWWDIR%%/mod/call_center/v_call_center_agent_delete.php
+%%WWWDIR%%/mod/call_center/v_call_center_agent_edit.php
+%%WWWDIR%%/mod/call_center/v_call_center_queue.php
+%%WWWDIR%%/mod/call_center/v_call_center_queue_delete.php
+%%WWWDIR%%/mod/call_center/v_call_center_queue_edit.php
+%%WWWDIR%%/mod/call_center/v_call_center_tier.php
+%%WWWDIR%%/mod/call_center/v_call_center_tier_delete.php
+%%WWWDIR%%/mod/call_center/v_call_center_tier_edit.php
+%%WWWDIR%%/mod/call_center/v_cmd.php
+%%WWWDIR%%/mod/call_center_active/root.php
+%%WWWDIR%%/mod/call_center_active/v_call_center_active.php
+%%WWWDIR%%/mod/call_center_active/v_call_center_active_inc.php
+%%WWWDIR%%/mod/call_center_active/v_call_center_exec.php
+%%WWWDIR%%/mod/call_center_active/v_call_center_queue.php
+%%WWWDIR%%/mod/call_forward/root.php
+%%WWWDIR%%/mod/call_forward/v_call_forward.php
+%%WWWDIR%%/mod/call_forward/v_call_forward_add.php
+%%WWWDIR%%/mod/call_forward/v_call_forward_delete.php
+%%WWWDIR%%/mod/call_forward/v_call_forward_details_delete.php
+%%WWWDIR%%/mod/call_forward/v_call_forward_details_edit.php
+%%WWWDIR%%/mod/call_forward/v_call_forward_edit.php
+%%WWWDIR%%/mod/calls/root.php
+%%WWWDIR%%/mod/calls/v_call_edit.php
+%%WWWDIR%%/mod/calls/v_calls.php
+%%WWWDIR%%/mod/calls_active/root.php
+%%WWWDIR%%/mod/calls_active/v_calls_active.php
+%%WWWDIR%%/mod/calls_active/v_calls_active_assigned_extensions_inc.php
+%%WWWDIR%%/mod/calls_active/v_calls_active_extensions.php
+%%WWWDIR%%/mod/calls_active/v_calls_active_extensions_inc.php
+%%WWWDIR%%/mod/calls_active/v_calls_active_inc.php
+%%WWWDIR%%/mod/calls_active/v_calls_exec.php
+%%WWWDIR%%/mod/cdr/root.php
+%%WWWDIR%%/mod/cdr/v_cdr.php
+%%WWWDIR%%/mod/cdr/v_cdr_csv.php
+%%WWWDIR%%/mod/cdr/v_cdr_edit.php
+%%WWWDIR%%/mod/cdr/v_cdr_import.php
+%%WWWDIR%%/mod/cdr/v_cdr_search.php
+%%WWWDIR%%/mod/click_to_call/click_to_call.php
+%%WWWDIR%%/mod/click_to_call/root.php
+%%WWWDIR%%/mod/conferences/root.php
+%%WWWDIR%%/mod/conferences/v_conferences.php
+%%WWWDIR%%/mod/conferences/v_conferences_delete.php
+%%WWWDIR%%/mod/conferences/v_conferences_details_delete.php
+%%WWWDIR%%/mod/conferences/v_conferences_details_edit.php
+%%WWWDIR%%/mod/conferences/v_conferences_edit.php
+%%WWWDIR%%/mod/conferences/v_conferences_edit_advanced.php
+%%WWWDIR%%/mod/conferences_active/root.php
+%%WWWDIR%%/mod/conferences_active/v_conference_exec.php
+%%WWWDIR%%/mod/conferences_active/v_conference_interactive.php
+%%WWWDIR%%/mod/conferences_active/v_conference_interactive_inc.php
+%%WWWDIR%%/mod/conferences_active/v_conferences_active.php
+%%WWWDIR%%/mod/conferences_active/v_conferences_active_inc.php
+%%WWWDIR%%/mod/contacts/root.php
+%%WWWDIR%%/mod/contacts/users.php
+%%WWWDIR%%/mod/contacts/users_delete.php
+%%WWWDIR%%/mod/contacts/users_edit.php
+%%WWWDIR%%/mod/contacts/users_vcard.php
+%%WWWDIR%%/mod/content/config.php
+%%WWWDIR%%/mod/content/index.php
+%%WWWDIR%%/mod/content/root.php
+%%WWWDIR%%/mod/content/rss.css
+%%WWWDIR%%/mod/content/rss.php
+%%WWWDIR%%/mod/content/rssadd.php
+%%WWWDIR%%/mod/content/rsscontent.php
+%%WWWDIR%%/mod/content/rssdelete.php
+%%WWWDIR%%/mod/content/rsslist.php
+%%WWWDIR%%/mod/content/rssmovedown.php
+%%WWWDIR%%/mod/content/rssmoveup.php
+%%WWWDIR%%/mod/content/rsssearch.php
+%%WWWDIR%%/mod/content/rsssubadd.php
+%%WWWDIR%%/mod/content/rsssubcategoryadd.php
+%%WWWDIR%%/mod/content/rsssubcategorylist.php
+%%WWWDIR%%/mod/content/rsssubcategoryupdate.php
+%%WWWDIR%%/mod/content/rsssubdelete.php
+%%WWWDIR%%/mod/content/rsssublist.php
+%%WWWDIR%%/mod/content/rsssubsearch.php
+%%WWWDIR%%/mod/content/rsssubupdate.php
+%%WWWDIR%%/mod/content/rssupdate.php
+%%WWWDIR%%/mod/dialplan/root.php
+%%WWWDIR%%/mod/dialplan/v_dialplan.php
+%%WWWDIR%%/mod/dialplan/v_dialplan_includes.php
+%%WWWDIR%%/mod/dialplan/v_dialplan_includes_add.php
+%%WWWDIR%%/mod/dialplan/v_dialplan_includes_copy.php
+%%WWWDIR%%/mod/dialplan/v_dialplan_includes_delete.php
+%%WWWDIR%%/mod/dialplan/v_dialplan_includes_details_delete.php
+%%WWWDIR%%/mod/dialplan/v_dialplan_includes_details_edit.php
+%%WWWDIR%%/mod/dialplan/v_dialplan_includes_edit.php
+%%WWWDIR%%/mod/dialplan_outbound/root.php
+%%WWWDIR%%/mod/dialplan_outbound/v_dialplan_outbound.php
+%%WWWDIR%%/mod/dialplan_outbound/v_dialplan_outbound_add.php
+%%WWWDIR%%/mod/dialplan_outbound/v_dialplan_outbound_copy.php
+%%WWWDIR%%/mod/dialplan_outbound/v_dialplan_outbound_delete.php
+%%WWWDIR%%/mod/dialplan_outbound/v_dialplan_outbound_details_delete.php
+%%WWWDIR%%/mod/dialplan_outbound/v_dialplan_outbound_details_edit.php
+%%WWWDIR%%/mod/dialplan_outbound/v_dialplan_outbound_edit.php
+%%WWWDIR%%/mod/exec/root.php
+%%WWWDIR%%/mod/exec/v_exec.php
+%%WWWDIR%%/mod/extensions/root.php
+%%WWWDIR%%/mod/extensions/v_extensions.php
+%%WWWDIR%%/mod/extensions/v_extensions_copy.php
+%%WWWDIR%%/mod/extensions/v_extensions_delete.php
+%%WWWDIR%%/mod/extensions/v_extensions_edit.php
+%%WWWDIR%%/mod/fax/root.php
+%%WWWDIR%%/mod/fax/v_fax.php
+%%WWWDIR%%/mod/fax/v_fax_delete.php
+%%WWWDIR%%/mod/fax/v_fax_edit.php
+%%WWWDIR%%/mod/features/root.php
+%%WWWDIR%%/mod/features/v_features.php
+%%WWWDIR%%/mod/fifo/root.php
+%%WWWDIR%%/mod/fifo/v_fifo.php
+%%WWWDIR%%/mod/fifo/v_fifo_add.php
+%%WWWDIR%%/mod/fifo/v_fifo_delete.php
+%%WWWDIR%%/mod/fifo/v_fifo_details_delete.php
+%%WWWDIR%%/mod/fifo/v_fifo_details_edit.php
+%%WWWDIR%%/mod/fifo/v_fifo_edit.php
+%%WWWDIR%%/mod/fifo_agents/fifo_agent/root.php
+%%WWWDIR%%/mod/fifo_agents/fifo_agent/v_fifo_agent.php
+%%WWWDIR%%/mod/fifo_agents/fifo_agent/v_fifo_agent_edit.php
+%%WWWDIR%%/mod/fifo_agents/fifo_agent/v_fifo_agent_login.php
+%%WWWDIR%%/mod/fifo_agents/fifo_agent/v_fifo_agent_logout.php
+%%WWWDIR%%/mod/fifo_agents/fifo_agent/v_fifo_agent_remote.php
+%%WWWDIR%%/mod/fifo_agents/fifo_agent_call_logs/root.php
+%%WWWDIR%%/mod/fifo_agents/fifo_agent_call_logs/v_fifo_agent_call_logs.php
+%%WWWDIR%%/mod/fifo_agents/fifo_agent_call_logs/v_fifo_agent_call_logs.sql
+%%WWWDIR%%/mod/fifo_agents/fifo_agent_call_logs/v_fifo_agent_call_logs_delete.php
+%%WWWDIR%%/mod/fifo_agents/fifo_agent_call_logs/v_fifo_agent_call_logs_edit.php
+%%WWWDIR%%/mod/fifo_agents/fifo_agent_profiles/root.php
+%%WWWDIR%%/mod/fifo_agents/fifo_agent_profiles/v_fifo_agent_profile_members.php
+%%WWWDIR%%/mod/fifo_agents/fifo_agent_profiles/v_fifo_agent_profile_members.sql
+%%WWWDIR%%/mod/fifo_agents/fifo_agent_profiles/v_fifo_agent_profile_members_delete.php
+%%WWWDIR%%/mod/fifo_agents/fifo_agent_profiles/v_fifo_agent_profile_members_edit.php
+%%WWWDIR%%/mod/fifo_agents/fifo_agent_profiles/v_fifo_agent_profiles.php
+%%WWWDIR%%/mod/fifo_agents/fifo_agent_profiles/v_fifo_agent_profiles.sql
+%%WWWDIR%%/mod/fifo_agents/fifo_agent_profiles/v_fifo_agent_profiles_delete.php
+%%WWWDIR%%/mod/fifo_agents/fifo_agent_profiles/v_fifo_agent_profiles_edit.php
+%%WWWDIR%%/mod/fifo_agents/fifo_agent_status_logs/root.php
+%%WWWDIR%%/mod/fifo_agents/fifo_agent_status_logs/v_fifo_agent_status_logs.php
+%%WWWDIR%%/mod/fifo_agents/fifo_agent_status_logs/v_fifo_agent_status_logs.sql
+%%WWWDIR%%/mod/fifo_agents/fifo_agent_status_logs/v_fifo_agent_status_logs_delete.php
+%%WWWDIR%%/mod/fifo_agents/fifo_agent_status_logs/v_fifo_agent_status_logs_edit.php
+%%WWWDIR%%/mod/fifo_agents/fifo_languages/root.php
+%%WWWDIR%%/mod/fifo_agents/fifo_languages/v_fifo_agent_languages.php
+%%WWWDIR%%/mod/fifo_agents/fifo_languages/v_fifo_agent_languages.sql
+%%WWWDIR%%/mod/fifo_agents/fifo_languages/v_fifo_agent_languages_delete.php
+%%WWWDIR%%/mod/fifo_agents/fifo_languages/v_fifo_agent_languages_edit.php
+%%WWWDIR%%/mod/fifo_agents/root.php
+%%WWWDIR%%/mod/fifo_agents/v_fifo_agents.php
+%%WWWDIR%%/mod/fifo_agents/v_fifo_agents.sql
+%%WWWDIR%%/mod/fifo_agents/v_fifo_agents_delete.php
+%%WWWDIR%%/mod/fifo_agents/v_fifo_agents_edit.php
+%%WWWDIR%%/mod/fifo_list/root.php
+%%WWWDIR%%/mod/fifo_list/v_fifo_exec.php
+%%WWWDIR%%/mod/fifo_list/v_fifo_interactive.php
+%%WWWDIR%%/mod/fifo_list/v_fifo_interactive_inc.php
+%%WWWDIR%%/mod/fifo_list/v_fifo_list.php
+%%WWWDIR%%/mod/fifo_list/v_fifo_list_inc.php
+%%WWWDIR%%/mod/gateways/root.php
+%%WWWDIR%%/mod/gateways/v_gateways.php
+%%WWWDIR%%/mod/gateways/v_gateways_copy.php
+%%WWWDIR%%/mod/gateways/v_gateways_delete.php
+%%WWWDIR%%/mod/gateways/v_gateways_edit.php
+%%WWWDIR%%/mod/grammar_edit/clip.db
+%%WWWDIR%%/mod/grammar_edit/clipadd.php
+%%WWWDIR%%/mod/grammar_edit/clipdelete.php
+%%WWWDIR%%/mod/grammar_edit/cliplist.php
+%%WWWDIR%%/mod/grammar_edit/clipoptions.php
+%%WWWDIR%%/mod/grammar_edit/clipoptionslist.php
+%%WWWDIR%%/mod/grammar_edit/clipsearch.php
+%%WWWDIR%%/mod/grammar_edit/clipupdate.php
+%%WWWDIR%%/mod/grammar_edit/config.php
+%%WWWDIR%%/mod/grammar_edit/filedelete.php
+%%WWWDIR%%/mod/grammar_edit/filelist.php
+%%WWWDIR%%/mod/grammar_edit/filenew.php
+%%WWWDIR%%/mod/grammar_edit/fileoptions.php
+%%WWWDIR%%/mod/grammar_edit/fileoptionslist.php
+%%WWWDIR%%/mod/grammar_edit/fileread.php
+%%WWWDIR%%/mod/grammar_edit/filerename.php
+%%WWWDIR%%/mod/grammar_edit/filesave.php
+%%WWWDIR%%/mod/grammar_edit/folderdelete.php
+%%WWWDIR%%/mod/grammar_edit/foldernew.php
+%%WWWDIR%%/mod/grammar_edit/footer.php
+%%WWWDIR%%/mod/grammar_edit/header.php
+%%WWWDIR%%/mod/grammar_edit/images/Thumbs.db
+%%WWWDIR%%/mod/grammar_edit/images/file.gif
+%%WWWDIR%%/mod/grammar_edit/images/file.png
+%%WWWDIR%%/mod/grammar_edit/images/folder.gif
+%%WWWDIR%%/mod/grammar_edit/images/gear.png
+%%WWWDIR%%/mod/grammar_edit/images/leaf.gif
+%%WWWDIR%%/mod/grammar_edit/images/minus.gif
+%%WWWDIR%%/mod/grammar_edit/images/plus.gif
+%%WWWDIR%%/mod/grammar_edit/images/program.gif
+%%WWWDIR%%/mod/grammar_edit/images/thumbnails/Thumbs.db
+%%WWWDIR%%/mod/grammar_edit/images/thumbnails/cliplibrary.png
+%%WWWDIR%%/mod/grammar_edit/images/thumbnails/filemanagement.png
+%%WWWDIR%%/mod/grammar_edit/images/thumbnails/phpeditor.png
+%%WWWDIR%%/mod/grammar_edit/index.php
+%%WWWDIR%%/mod/grammar_edit/list.php
+%%WWWDIR%%/mod/grammar_edit/readme.txt
+%%WWWDIR%%/mod/grammar_edit/root.php
+%%WWWDIR%%/mod/hardware_phones/root.php
+%%WWWDIR%%/mod/hardware_phones/v_hardware_phones.php
+%%WWWDIR%%/mod/hardware_phones/v_hardware_phones_delete.php
+%%WWWDIR%%/mod/hardware_phones/v_hardware_phones_edit.php
+%%WWWDIR%%/mod/hunt_group/root.php
+%%WWWDIR%%/mod/hunt_group/v_hunt_group.php
+%%WWWDIR%%/mod/hunt_group/v_hunt_group_call_forward.php
+%%WWWDIR%%/mod/hunt_group/v_hunt_group_call_forward_edit.php
+%%WWWDIR%%/mod/hunt_group/v_hunt_group_copy.php
+%%WWWDIR%%/mod/hunt_group/v_hunt_group_delete.php
+%%WWWDIR%%/mod/hunt_group/v_hunt_group_destinations_delete.php
+%%WWWDIR%%/mod/hunt_group/v_hunt_group_destinations_edit.php
+%%WWWDIR%%/mod/hunt_group/v_hunt_group_edit.php
+%%WWWDIR%%/mod/ivr_menu/root.php
+%%WWWDIR%%/mod/ivr_menu/v_ivr_menu.php
+%%WWWDIR%%/mod/ivr_menu/v_ivr_menu_copy.php
+%%WWWDIR%%/mod/ivr_menu/v_ivr_menu_delete.php
+%%WWWDIR%%/mod/ivr_menu/v_ivr_menu_edit.php
+%%WWWDIR%%/mod/ivr_menu/v_ivr_menu_options.php
+%%WWWDIR%%/mod/ivr_menu/v_ivr_menu_options_delete.php
+%%WWWDIR%%/mod/ivr_menu/v_ivr_menu_options_edit.php
+%%WWWDIR%%/mod/log_viewer/root.php
+%%WWWDIR%%/mod/log_viewer/v_log_viewer.php
+%%WWWDIR%%/mod/modules/root.php
+%%WWWDIR%%/mod/modules/v_modules.php
+%%WWWDIR%%/mod/modules/v_modules_delete.php
+%%WWWDIR%%/mod/modules/v_modules_edit.php
+%%WWWDIR%%/mod/music_on_hold/root.php
+%%WWWDIR%%/mod/music_on_hold/slim.swf
+%%WWWDIR%%/mod/music_on_hold/v_music_on_hold.php
+%%WWWDIR%%/mod/music_on_hold/v_music_on_hold_play.php
+%%WWWDIR%%/mod/php_edit/clip.db
+%%WWWDIR%%/mod/php_edit/clipadd.php
+%%WWWDIR%%/mod/php_edit/clipdelete.php
+%%WWWDIR%%/mod/php_edit/cliplist.php
+%%WWWDIR%%/mod/php_edit/clipoptions.php
+%%WWWDIR%%/mod/php_edit/clipoptionslist.php
+%%WWWDIR%%/mod/php_edit/clipsearch.php
+%%WWWDIR%%/mod/php_edit/clipupdate.php
+%%WWWDIR%%/mod/php_edit/config.php
+%%WWWDIR%%/mod/php_edit/filedelete.php
+%%WWWDIR%%/mod/php_edit/filelist.php
+%%WWWDIR%%/mod/php_edit/filenew.php
+%%WWWDIR%%/mod/php_edit/fileoptions.php
+%%WWWDIR%%/mod/php_edit/fileoptionslist.php
+%%WWWDIR%%/mod/php_edit/fileread.php
+%%WWWDIR%%/mod/php_edit/filerename.php
+%%WWWDIR%%/mod/php_edit/filesave.php
+%%WWWDIR%%/mod/php_edit/folderdelete.php
+%%WWWDIR%%/mod/php_edit/foldernew.php
+%%WWWDIR%%/mod/php_edit/footer.php
+%%WWWDIR%%/mod/php_edit/header.php
+%%WWWDIR%%/mod/php_edit/images/Thumbs.db
+%%WWWDIR%%/mod/php_edit/images/file.gif
+%%WWWDIR%%/mod/php_edit/images/file.png
+%%WWWDIR%%/mod/php_edit/images/folder.gif
+%%WWWDIR%%/mod/php_edit/images/gear.png
+%%WWWDIR%%/mod/php_edit/images/leaf.gif
+%%WWWDIR%%/mod/php_edit/images/minus.gif
+%%WWWDIR%%/mod/php_edit/images/plus.gif
+%%WWWDIR%%/mod/php_edit/images/program.gif
+%%WWWDIR%%/mod/php_edit/images/thumbnails/Thumbs.db
+%%WWWDIR%%/mod/php_edit/images/thumbnails/cliplibrary.png
+%%WWWDIR%%/mod/php_edit/images/thumbnails/filemanagement.png
+%%WWWDIR%%/mod/php_edit/images/thumbnails/phpeditor.png
+%%WWWDIR%%/mod/php_edit/index.php
+%%WWWDIR%%/mod/php_edit/list.php
+%%WWWDIR%%/mod/php_edit/readme.txt
+%%WWWDIR%%/mod/php_edit/root.php
+%%WWWDIR%%/mod/php_service/root.php
+%%WWWDIR%%/mod/php_service/v_php_service.php
+%%WWWDIR%%/mod/php_service/v_php_service_delete.php
+%%WWWDIR%%/mod/php_service/v_php_service_edit.php
+%%WWWDIR%%/mod/profiles/root.php
+%%WWWDIR%%/mod/profiles/v_profile_edit.php
+%%WWWDIR%%/mod/profiles/v_profiles.php
+%%WWWDIR%%/mod/provision/index.php
+%%WWWDIR%%/mod/provision/root.php
+%%WWWDIR%%/mod/provision/v_provision_write.php
+%%WWWDIR%%/mod/public_includes/root.php
+%%WWWDIR%%/mod/public_includes/v_public_includes.php
+%%WWWDIR%%/mod/public_includes/v_public_includes_add.php
+%%WWWDIR%%/mod/public_includes/v_public_includes_copy.php
+%%WWWDIR%%/mod/public_includes/v_public_includes_delete.php
+%%WWWDIR%%/mod/public_includes/v_public_includes_details_delete.php
+%%WWWDIR%%/mod/public_includes/v_public_includes_details_edit.php
+%%WWWDIR%%/mod/public_includes/v_public_includes_edit.php
+%%WWWDIR%%/mod/recordings/root.php
+%%WWWDIR%%/mod/recordings/slim.swf
+%%WWWDIR%%/mod/recordings/v_recordings.php
+%%WWWDIR%%/mod/recordings/v_recordings_delete.php
+%%WWWDIR%%/mod/recordings/v_recordings_edit.php
+%%WWWDIR%%/mod/recordings/v_recordings_play.php
+%%WWWDIR%%/mod/roku/roku.php
+%%WWWDIR%%/mod/script_edit/clip.db
+%%WWWDIR%%/mod/script_edit/clipadd.php
+%%WWWDIR%%/mod/script_edit/clipdelete.php
+%%WWWDIR%%/mod/script_edit/cliplist.php
+%%WWWDIR%%/mod/script_edit/clipoptions.php
+%%WWWDIR%%/mod/script_edit/clipoptionslist.php
+%%WWWDIR%%/mod/script_edit/clipsearch.php
+%%WWWDIR%%/mod/script_edit/clipupdate.php
+%%WWWDIR%%/mod/script_edit/config.php
+%%WWWDIR%%/mod/script_edit/filedelete.php
+%%WWWDIR%%/mod/script_edit/filelist.php
+%%WWWDIR%%/mod/script_edit/filenew.php
+%%WWWDIR%%/mod/script_edit/fileoptions.php
+%%WWWDIR%%/mod/script_edit/fileoptionslist.php
+%%WWWDIR%%/mod/script_edit/fileread.php
+%%WWWDIR%%/mod/script_edit/filerename.php
+%%WWWDIR%%/mod/script_edit/filesave.php
+%%WWWDIR%%/mod/script_edit/folderdelete.php
+%%WWWDIR%%/mod/script_edit/foldernew.php
+%%WWWDIR%%/mod/script_edit/footer.php
+%%WWWDIR%%/mod/script_edit/header.php
+%%WWWDIR%%/mod/script_edit/images/Thumbs.db
+%%WWWDIR%%/mod/script_edit/images/file.gif
+%%WWWDIR%%/mod/script_edit/images/file.png
+%%WWWDIR%%/mod/script_edit/images/folder.gif
+%%WWWDIR%%/mod/script_edit/images/gear.png
+%%WWWDIR%%/mod/script_edit/images/leaf.gif
+%%WWWDIR%%/mod/script_edit/images/minus.gif
+%%WWWDIR%%/mod/script_edit/images/plus.gif
+%%WWWDIR%%/mod/script_edit/images/program.gif
+%%WWWDIR%%/mod/script_edit/images/thumbnails/Thumbs.db
+%%WWWDIR%%/mod/script_edit/images/thumbnails/cliplibrary.png
+%%WWWDIR%%/mod/script_edit/images/thumbnails/filemanagement.png
+%%WWWDIR%%/mod/script_edit/images/thumbnails/phpeditor.png
+%%WWWDIR%%/mod/script_edit/index.php
+%%WWWDIR%%/mod/script_edit/list.php
+%%WWWDIR%%/mod/script_edit/readme.txt
+%%WWWDIR%%/mod/script_edit/root.php
+%%WWWDIR%%/mod/services/root.php
+%%WWWDIR%%/mod/services/v_services.php
+%%WWWDIR%%/mod/services/v_services_delete.php
+%%WWWDIR%%/mod/services/v_services_edit.php
+%%WWWDIR%%/mod/soft_phone/root.php
+%%WWWDIR%%/mod/soft_phone/v_softphone.php
+%%WWWDIR%%/mod/sql_query/root.php
+%%WWWDIR%%/mod/sql_query/v_sql_backup.php
+%%WWWDIR%%/mod/sql_query/v_sql_query.php
+%%WWWDIR%%/mod/sql_query/v_sql_query_result.php
+%%WWWDIR%%/mod/templates/root.php
+%%WWWDIR%%/mod/templates/template_restore_default.php
+%%WWWDIR%%/mod/templates/templates.php
+%%WWWDIR%%/mod/templates/templates_delete.php
+%%WWWDIR%%/mod/templates/templates_edit.php
+%%WWWDIR%%/mod/time_conditions/root.php
+%%WWWDIR%%/mod/time_conditions/v_dialplan_includes.php
+%%WWWDIR%%/mod/time_conditions/v_dialplan_includes_add.php
+%%WWWDIR%%/mod/time_conditions/v_dialplan_includes_delete.php
+%%WWWDIR%%/mod/time_conditions/v_dialplan_includes_details_delete.php
+%%WWWDIR%%/mod/time_conditions/v_dialplan_includes_details_edit.php
+%%WWWDIR%%/mod/time_conditions/v_dialplan_includes_edit.php
+%%WWWDIR%%/mod/traffic_graph/root.php
+%%WWWDIR%%/mod/traffic_graph/status_graph.php
+%%WWWDIR%%/mod/traffic_graph/status_interface.php
+%%WWWDIR%%/mod/traffic_graph/svg_graph.php
+%%WWWDIR%%/mod/users/root.php
+%%WWWDIR%%/mod/users/signup.php
+%%WWWDIR%%/mod/users/usersupdate.php
+%%WWWDIR%%/mod/users_bulk_add/root.php
+%%WWWDIR%%/mod/users_bulk_add/v_users_bulk_add.php
+%%WWWDIR%%/mod/vars/root.php
+%%WWWDIR%%/mod/vars/v_vars.php
+%%WWWDIR%%/mod/vars/v_vars.textarea.php
+%%WWWDIR%%/mod/vars/v_vars_delete.php
+%%WWWDIR%%/mod/vars/v_vars_edit.php
+%%WWWDIR%%/mod/virtual_tables/root.php
+%%WWWDIR%%/mod/virtual_tables/v_virtual_table_data_delete.php
+%%WWWDIR%%/mod/virtual_tables/v_virtual_table_data_edit.php
+%%WWWDIR%%/mod/virtual_tables/v_virtual_table_data_types_name_value.php
+%%WWWDIR%%/mod/virtual_tables/v_virtual_table_data_types_name_value_delete.php
+%%WWWDIR%%/mod/virtual_tables/v_virtual_table_data_types_name_value_edit.php
+%%WWWDIR%%/mod/virtual_tables/v_virtual_table_data_view.php
+%%WWWDIR%%/mod/virtual_tables/v_virtual_table_fields.php
+%%WWWDIR%%/mod/virtual_tables/v_virtual_table_fields_delete.php
+%%WWWDIR%%/mod/virtual_tables/v_virtual_table_fields_edit.php
+%%WWWDIR%%/mod/virtual_tables/v_virtual_tables.php
+%%WWWDIR%%/mod/virtual_tables/v_virtual_tables_delete.php
+%%WWWDIR%%/mod/virtual_tables/v_virtual_tables_edit.php
+%%WWWDIR%%/mod/virtual_tables/v_virtual_tables_import.php
+%%WWWDIR%%/mod/voicemail_msgs/root.php
+%%WWWDIR%%/mod/voicemail_msgs/v_voicemail_msgs.php
+%%WWWDIR%%/mod/voicemail_msgs/v_voicemail_msgs_delete.php
+%%WWWDIR%%/mod/voicemail_msgs/v_voicemail_msgs_password.php
+%%WWWDIR%%/mod/voicemail_msgs/v_voicemail_msgs_play.php
+%%WWWDIR%%/mod/voicemail_status/root.php
+%%WWWDIR%%/mod/voicemail_status/v_voicemail.php
+%%WWWDIR%%/mod/voicemail_status/v_voicemail_prefs_delete.php
+%%WWWDIR%%/mod/xml_cdr/root.php
+%%WWWDIR%%/mod/xml_cdr/v_xml_cdr.php
+%%WWWDIR%%/mod/xml_cdr/v_xml_cdr_csv.php
+%%WWWDIR%%/mod/xml_cdr/v_xml_cdr_delete.php
+%%WWWDIR%%/mod/xml_cdr/v_xml_cdr_details.php
+%%WWWDIR%%/mod/xml_cdr/v_xml_cdr_edit.php
+%%WWWDIR%%/mod/xml_cdr/v_xml_cdr_import.php
+%%WWWDIR%%/mod/xml_cdr/v_xml_cdr_search.php
+%%WWWDIR%%/mod/xml_edit/clip.db
+%%WWWDIR%%/mod/xml_edit/clipadd.php
+%%WWWDIR%%/mod/xml_edit/clipdelete.php
+%%WWWDIR%%/mod/xml_edit/cliplist.php
+%%WWWDIR%%/mod/xml_edit/clipoptions.php
+%%WWWDIR%%/mod/xml_edit/clipoptionslist.php
+%%WWWDIR%%/mod/xml_edit/clipsearch.php
+%%WWWDIR%%/mod/xml_edit/clipupdate.php
+%%WWWDIR%%/mod/xml_edit/config.php
+%%WWWDIR%%/mod/xml_edit/filedelete.php
+%%WWWDIR%%/mod/xml_edit/filelist.php
+%%WWWDIR%%/mod/xml_edit/filenew.php
+%%WWWDIR%%/mod/xml_edit/fileoptions.php
+%%WWWDIR%%/mod/xml_edit/fileoptionslist.php
+%%WWWDIR%%/mod/xml_edit/fileread.php
+%%WWWDIR%%/mod/xml_edit/filerename.php
+%%WWWDIR%%/mod/xml_edit/filesave.php
+%%WWWDIR%%/mod/xml_edit/folderdelete.php
+%%WWWDIR%%/mod/xml_edit/foldernew.php
+%%WWWDIR%%/mod/xml_edit/footer.php
+%%WWWDIR%%/mod/xml_edit/header.php
+%%WWWDIR%%/mod/xml_edit/images/Thumbs.db
+%%WWWDIR%%/mod/xml_edit/images/file.gif
+%%WWWDIR%%/mod/xml_edit/images/file.png
+%%WWWDIR%%/mod/xml_edit/images/folder.gif
+%%WWWDIR%%/mod/xml_edit/images/gear.png
+%%WWWDIR%%/mod/xml_edit/images/leaf.gif
+%%WWWDIR%%/mod/xml_edit/images/minus.gif
+%%WWWDIR%%/mod/xml_edit/images/plus.gif
+%%WWWDIR%%/mod/xml_edit/images/program.gif
+%%WWWDIR%%/mod/xml_edit/images/thumbnails/Thumbs.db
+%%WWWDIR%%/mod/xml_edit/images/thumbnails/cliplibrary.png
+%%WWWDIR%%/mod/xml_edit/images/thumbnails/filemanagement.png
+%%WWWDIR%%/mod/xml_edit/images/thumbnails/phpeditor.png
+%%WWWDIR%%/mod/xml_edit/index.php
+%%WWWDIR%%/mod/xml_edit/list.php
+%%WWWDIR%%/mod/xml_edit/readme.txt
+%%WWWDIR%%/mod/xml_edit/root.php
+%%WWWDIR%%/root.php
+%%WWWDIR%%/secure/.htaccess
+%%WWWDIR%%/secure/class.phpmailer.php
+%%WWWDIR%%/secure/class.smtp.php
+%%WWWDIR%%/secure/fax_to_email.php
+%%WWWDIR%%/secure/htaccess.tmp
+%%WWWDIR%%/secure/index.php
+%%WWWDIR%%/secure/root.php
+%%WWWDIR%%/secure/v_config_cli.php
+%%WWWDIR%%/secure/v_mailto.php
+%%WWWDIR%%/themes/accessible/background.jpg
+%%WWWDIR%%/themes/accessible/background_black.png
+%%WWWDIR%%/themes/accessible/background_cell.gif
+%%WWWDIR%%/themes/accessible/background_head.png
+%%WWWDIR%%/themes/accessible/background_th.png
+%%WWWDIR%%/themes/accessible/background_th_blue.png
+%%WWWDIR%%/themes/accessible/background_th_purple.png
+%%WWWDIR%%/themes/accessible/blank.gif
+%%WWWDIR%%/themes/accessible/logo.png
+%%WWWDIR%%/themes/accessible/menu_background.jpg
+%%WWWDIR%%/themes/accessible/root.php
+%%WWWDIR%%/themes/accessible/template.php
+%%WWWDIR%%/themes/classic/background.jpg
+%%WWWDIR%%/themes/classic/background_black.png
+%%WWWDIR%%/themes/classic/background_cell.gif
+%%WWWDIR%%/themes/classic/background_head.png
+%%WWWDIR%%/themes/classic/background_th.png
+%%WWWDIR%%/themes/classic/background_th_blue.png
+%%WWWDIR%%/themes/classic/background_th_purple.png
+%%WWWDIR%%/themes/classic/blank.gif
+%%WWWDIR%%/themes/classic/logo.png
+%%WWWDIR%%/themes/classic/root.php
+%%WWWDIR%%/themes/classic/template.php
+%%WWWDIR%%/themes/default/arrow.png
+%%WWWDIR%%/themes/default/background_black.png
+%%WWWDIR%%/themes/default/background_cell.gif
+%%WWWDIR%%/themes/default/background_th.png
+%%WWWDIR%%/themes/default/blank.gif
+%%WWWDIR%%/themes/default/content_background.png
+%%WWWDIR%%/themes/default/images/backgrounds/clouds_1.jpg
+%%WWWDIR%%/themes/default/images/backgrounds/fantasy_1.jpg
+%%WWWDIR%%/themes/default/images/backgrounds/mountain_1.jpg
+%%WWWDIR%%/themes/default/images/backgrounds/yellowstone_1.jpg
+%%WWWDIR%%/themes/default/images/backgrounds/yellowstone_2.jpg
+%%WWWDIR%%/themes/default/login_background.png
+%%WWWDIR%%/themes/default/logo.png
+%%WWWDIR%%/themes/default/menu_background.png
+%%WWWDIR%%/themes/default/root.php
+%%WWWDIR%%/themes/default/template.php
+%%WWWDIR%%/themes/enhanced/background.jpg
+%%WWWDIR%%/themes/enhanced/background_black.png
+%%WWWDIR%%/themes/enhanced/background_cell.gif
+%%WWWDIR%%/themes/enhanced/background_th.png
+%%WWWDIR%%/themes/enhanced/blank.gif
+%%WWWDIR%%/themes/enhanced/content_background.png
+%%WWWDIR%%/themes/enhanced/images/backgrounds/clouds_1.jpg
+%%WWWDIR%%/themes/enhanced/images/backgrounds/fantasy_1.jpg
+%%WWWDIR%%/themes/enhanced/images/backgrounds/mountain_1.jpg
+%%WWWDIR%%/themes/enhanced/images/backgrounds/yellowstone_1.jpg
+%%WWWDIR%%/themes/enhanced/images/backgrounds/yellowstone_2.jpg
+%%WWWDIR%%/themes/enhanced/login_background.png
+%%WWWDIR%%/themes/enhanced/logo.png
+%%WWWDIR%%/themes/enhanced/menu_background.png
+%%WWWDIR%%/themes/enhanced/root.php
+%%WWWDIR%%/themes/enhanced/template.php
+@dirrm %%WWWDIR%%/themes/enhanced/images/backgrounds
+@dirrm %%WWWDIR%%/themes/enhanced/images
+@dirrm %%WWWDIR%%/themes/enhanced
+@dirrm %%WWWDIR%%/themes/default/images/backgrounds
+@dirrm %%WWWDIR%%/themes/default/images
+@dirrm %%WWWDIR%%/themes/default
+@dirrm %%WWWDIR%%/themes/classic
+@dirrm %%WWWDIR%%/themes/accessible
+@dirrm %%WWWDIR%%/themes
+@dirrm %%WWWDIR%%/secure
+@dirrm %%WWWDIR%%/mod/xml_edit/images/thumbnails
+@dirrm %%WWWDIR%%/mod/xml_edit/images
+@dirrm %%WWWDIR%%/mod/xml_edit
+@dirrm %%WWWDIR%%/mod/xml_cdr
+@dirrm %%WWWDIR%%/mod/voicemail_status
+@dirrm %%WWWDIR%%/mod/voicemail_msgs
+@dirrm %%WWWDIR%%/mod/virtual_tables
+@dirrm %%WWWDIR%%/mod/vars
+@dirrm %%WWWDIR%%/mod/users_bulk_add
+@dirrm %%WWWDIR%%/mod/users
+@dirrm %%WWWDIR%%/mod/traffic_graph
+@dirrm %%WWWDIR%%/mod/time_conditions
+@dirrm %%WWWDIR%%/mod/templates
+@dirrm %%WWWDIR%%/mod/sql_query
+@dirrm %%WWWDIR%%/mod/soft_phone
+@dirrm %%WWWDIR%%/mod/services
+@dirrm %%WWWDIR%%/mod/script_edit/images/thumbnails
+@dirrm %%WWWDIR%%/mod/script_edit/images
+@dirrm %%WWWDIR%%/mod/script_edit
+@dirrm %%WWWDIR%%/mod/roku
+@dirrm %%WWWDIR%%/mod/recordings
+@dirrm %%WWWDIR%%/mod/public_includes
+@dirrm %%WWWDIR%%/mod/provision
+@dirrm %%WWWDIR%%/mod/profiles
+@dirrm %%WWWDIR%%/mod/php_service
+@dirrm %%WWWDIR%%/mod/php_edit/images/thumbnails
+@dirrm %%WWWDIR%%/mod/php_edit/images
+@dirrm %%WWWDIR%%/mod/php_edit
+@dirrm %%WWWDIR%%/mod/music_on_hold
+@dirrm %%WWWDIR%%/mod/modules
+@dirrm %%WWWDIR%%/mod/log_viewer
+@dirrm %%WWWDIR%%/mod/ivr_menu
+@dirrm %%WWWDIR%%/mod/hunt_group
+@dirrm %%WWWDIR%%/mod/hardware_phones
+@dirrm %%WWWDIR%%/mod/grammar_edit/images/thumbnails
+@dirrm %%WWWDIR%%/mod/grammar_edit/images
+@dirrm %%WWWDIR%%/mod/grammar_edit
+@dirrm %%WWWDIR%%/mod/gateways
+@dirrm %%WWWDIR%%/mod/fifo_list
+@dirrm %%WWWDIR%%/mod/fifo_agents/fifo_languages
+@dirrm %%WWWDIR%%/mod/fifo_agents/fifo_agent_status_logs
+@dirrm %%WWWDIR%%/mod/fifo_agents/fifo_agent_profiles
+@dirrm %%WWWDIR%%/mod/fifo_agents/fifo_agent_call_logs
+@dirrm %%WWWDIR%%/mod/fifo_agents/fifo_agent
+@dirrm %%WWWDIR%%/mod/fifo_agents
+@dirrm %%WWWDIR%%/mod/fifo
+@dirrm %%WWWDIR%%/mod/features
+@dirrm %%WWWDIR%%/mod/fax
+@dirrm %%WWWDIR%%/mod/extensions
+@dirrm %%WWWDIR%%/mod/exec
+@dirrm %%WWWDIR%%/mod/dialplan_outbound
+@dirrm %%WWWDIR%%/mod/dialplan
+@dirrm %%WWWDIR%%/mod/content
+@dirrm %%WWWDIR%%/mod/contacts
+@dirrm %%WWWDIR%%/mod/conferences_active
+@dirrm %%WWWDIR%%/mod/conferences
+@dirrm %%WWWDIR%%/mod/click_to_call
+@dirrm %%WWWDIR%%/mod/cdr
+@dirrm %%WWWDIR%%/mod/calls_active
+@dirrm %%WWWDIR%%/mod/calls
+@dirrm %%WWWDIR%%/mod/call_forward
+@dirrm %%WWWDIR%%/mod/call_center_active
+@dirrm %%WWWDIR%%/mod/call_center
+@dirrm %%WWWDIR%%/mod/call_broadcast
+@dirrm %%WWWDIR%%/mod/auto_attendant
+@dirrm %%WWWDIR%%/mod
+@dirrm %%WWWDIR%%/includes/templates/provision/yealink/t22
+@dirrm %%WWWDIR%%/includes/templates/provision/yealink/t20
+@dirrm %%WWWDIR%%/includes/templates/provision/yealink
+@dirrm %%WWWDIR%%/includes/templates/provision/snom/820
+@dirrm %%WWWDIR%%/includes/templates/provision/snom
+@dirrm %%WWWDIR%%/includes/templates/provision/polycom
+@dirrm %%WWWDIR%%/includes/templates/provision/linksys/spa942
+@dirrm %%WWWDIR%%/includes/templates/provision/linksys/spa504g
+@dirrm %%WWWDIR%%/includes/templates/provision/linksys/spa3102
+@dirrm %%WWWDIR%%/includes/templates/provision/linksys/spa2102
+@dirrm %%WWWDIR%%/includes/templates/provision/linksys
+@dirrm %%WWWDIR%%/includes/templates/provision/grandstream
+@dirrm %%WWWDIR%%/includes/templates/provision/cisco/7960
+@dirrm %%WWWDIR%%/includes/templates/provision/cisco/7940
+@dirrm %%WWWDIR%%/includes/templates/provision/cisco
+@dirrm %%WWWDIR%%/includes/templates/provision/aastra/675x
+@dirrm %%WWWDIR%%/includes/templates/provision/aastra
+@dirrm %%WWWDIR%%/includes/templates/provision
+@dirrm %%WWWDIR%%/includes/templates/conf/autoload_configs
+@dirrm %%WWWDIR%%/includes/templates/conf
+@dirrm %%WWWDIR%%/includes/templates
+@dirrm %%WWWDIR%%/includes/pop3
+@dirrm %%WWWDIR%%/includes/phpsvnclient
+@dirrm %%WWWDIR%%/includes/install/sql
+@dirrm %%WWWDIR%%/includes/install/sounds/custom/8000
+@dirrm %%WWWDIR%%/includes/install/sounds/custom/16000
+@dirrm %%WWWDIR%%/includes/install/sounds/custom
+@dirrm %%WWWDIR%%/includes/install/sounds
+@dirrm %%WWWDIR%%/includes/install/scripts
+@dirrm %%WWWDIR%%/includes/install/htdocs
+@dirrm %%WWWDIR%%/includes/install/dialplan
+@dirrm %%WWWDIR%%/includes/install/autoload_configs
+@dirrm %%WWWDIR%%/includes/install
+@dirrm %%WWWDIR%%/includes/edit_area/reg_syntax
+@dirrm %%WWWDIR%%/includes/edit_area/plugins/test/langs
+@dirrm %%WWWDIR%%/includes/edit_area/plugins/test/images
+@dirrm %%WWWDIR%%/includes/edit_area/plugins/test/css
+@dirrm %%WWWDIR%%/includes/edit_area/plugins/test
+@dirrm %%WWWDIR%%/includes/edit_area/plugins/charmap/langs
+@dirrm %%WWWDIR%%/includes/edit_area/plugins/charmap/jscripts
+@dirrm %%WWWDIR%%/includes/edit_area/plugins/charmap/images
+@dirrm %%WWWDIR%%/includes/edit_area/plugins/charmap/css
+@dirrm %%WWWDIR%%/includes/edit_area/plugins/charmap
+@dirrm %%WWWDIR%%/includes/edit_area/plugins
+@dirrm %%WWWDIR%%/includes/edit_area/langs
+@dirrm %%WWWDIR%%/includes/edit_area/images
+@dirrm %%WWWDIR%%/includes/edit_area
+@dirrm %%WWWDIR%%/includes/captcha/fonts
+@dirrm %%WWWDIR%%/includes/captcha
+@dirrm %%WWWDIR%%/includes
+@dirrm %%WWWDIR%%/images
+@dirrm %%WWWDIR%%/core/users
+@dirrm %%WWWDIR%%/core/upgrade
+@dirrm %%WWWDIR%%/core/system_settings
+@dirrm %%WWWDIR%%/core/status
+@dirrm %%WWWDIR%%/core/settings
+@dirrm %%WWWDIR%%/core/menu
+@dirrm %%WWWDIR%%/core/backup
+@dirrm %%WWWDIR%%/core
+@dirrm %%WWWDIR%%
+@exec mkdir -p %D/%%WWWDIR%%/includes/templates/provision/polycom
+@exec mkdir -p %D/%%WWWDIR%%/includes/templates/provision/grandstream
+@exec mkdir -p %D/%%WWWDIR%%/includes/templates/provision/cisco/7960
+@exec mkdir -p %D/%%WWWDIR%%/includes/templates/provision/cisco/7940
+@exec chown -R www:www %D/www/fusionpbx
+@dirrmtry %%WWWDIR%% 2> /dev/null || /usr/bin/true
+@cwd /var
+@dirrmtry db/fusionpbx 2> /dev/null || /usr/bin/true
+@exec mkdir -p %D/db/fusionpbx
+@exec chown -R www:www %D/db/fusionpbx

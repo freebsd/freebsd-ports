@@ -1,0 +1,27 @@
+
+	*************************************************
+	*	Attention Freebsd FusionPBX Users 	*
+	*						*
+	*	Please do the following after install	*
+	*************************************************
+
+  see  http://wiki.fusionpbx.com/index.php?title=FreeBSD_Install
+  and  http://wiki.fusionpbx.com/index.php?title=Freebsd_FusionPBX
+	_Install#FusionPBX_install_on_FreeBSD
+	
+	if your updating versions do the following after 
+	updating via the port:
+
+	cd /usr/local/www/fusionpbx
+	from a command line type the following
+	php core/upgrade/upgrade_schema.php hit enter
+	
+	then login as superuser and goto the menumanager 
+	page and hit restore defaults.
+
+	upgrade done
+
+	If you selected Mysql or PgSql Client you will need
+	to install the proper server if needed on the local
+	server. This is unless the database server sits on a
+	remote machine/database server machine.
