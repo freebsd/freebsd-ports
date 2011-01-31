@@ -8,7 +8,7 @@
 PORTNAME=	rtpbreak
 PORTVERSION=	1.3a
 CATEGORIES=	net
-MASTER_SITES=	http://xenion.reactive-search.com/rtpbreak/
+MASTER_SITES=	http://dallachiesa.com/code/rtpbreak/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	prudhvi-krishna-bsd@surapaneni.in
