@@ -113,6 +113,7 @@
     SUBDIR += grass
     SUBDIR += gtksql
     SUBDIR += hamsterdb
+    SUBDIR += hiredis
     SUBDIR += hk_classes
     SUBDIR += hsqldb
     SUBDIR += hypertable
