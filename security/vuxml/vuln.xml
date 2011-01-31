@@ -34,6 +34,40 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="8015600f-2c80-11e0-9cc1-00163e5bf4f9">
+    <topic>maradns -- denial of service when resolving a long DNS hostname</topic>
+    <affects>
+      <package>
+	<name>maradns</name>
+	<range><lt>1.4.06</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>MaraDNS developer Sam Trenholme reports:</p>
+	<blockquote cite="http://samiam.org/blog/20110129.html">
+	  <p>... a mistake in allocating an array of integers, allocating it
+	    in bytes instead of sizeof(int) units. This resulted in a buffer 
+	    being too small, allowing it to be overwritten. The impact of this
+	    programming error is that MaraDNS can be crashed by sending 
+	    MaraDNS a single "packet of death". Since the data placed in the 
+	    overwritten array can not be remotely controlled (it is a list of 
+	    increasing integers), there is no way to increase privileges 
+	    exploiting this bug.</p>
+        </blockquote>
+      </body>
+    </description>
+    <references>
+      <bid>45966</bid>
+      <cvename>CVE-2011-0520</cvename>      
+      <url>http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=610834</url>			    
+    </references>
+    <dates>
+      <discovery>2011-01-23</discovery>
+      <entry>2011-01-31</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="dc9f8335-2b3b-11e0-a91b-00e0815b8da8">
     <topic>isc-dhcp-server -- </topic>
     <affects>
