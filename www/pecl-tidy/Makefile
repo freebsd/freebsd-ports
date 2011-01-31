@@ -14,14 +14,17 @@ EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	PECL
 
 MAINTAINER=	rick@wzoeterwoude.net
-COMMENT=	Tidy HTML Repairing and Parsing
+COMMENT=	Tidy HTML Repairing and Parsing for PHP 4
 
 BUILD_DEPENDS+=	${LOCALBASE}/include/tidy/tidy.h:${PORTSDIR}/www/tidy-devel
+
+LICENSE=	PHP30
 
 USE_PHP=	yes
 USE_PHPEXT=	yes
 PHP_MODNAME=	tidy
-IGNORE_WITH_PHP=	5
+DEFAULT_PHP_VER?=	4
+IGNORE_WITH_PHP=	5 52
 
 CONFIGURE_ARGS=	--enable-tidy
 
