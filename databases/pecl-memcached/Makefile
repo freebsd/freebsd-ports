@@ -20,12 +20,15 @@ BUILD_DEPENDS=	${LOCALBASE}/bin/pear:${PORTSDIR}/devel/pear
 LIB_DEPENDS=	memcached:${PORTSDIR}/databases/libmemcached
 RUN_DEPENDS=	${LOCALBASE}/bin/pear:${PORTSDIR}/devel/pear
 
+LICENSE=	PHP30
+
 PHP_MODNAME=	memcached
 USE_PHP=	json session
 USE_PHPEXT=	yes
 USE_PHPIZE=	yes
 USE_PHP_BUILD=	yes
 CONFIGURE_ARGS+=--with-libmemcached-dir=${LOCALBASE}
+IGNORE_WITH_PHP=4
 
 OPTIONS=	IGBINARY "Binary serializer support" off
 
