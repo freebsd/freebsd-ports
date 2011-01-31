@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	barnyard2
-PORTVERSION=	1.8
+PORTVERSION=	1.9
 CATEGORIES=	security
 MASTER_SITES=	http://www.securixlive.com/download/barnyard2/
 
@@ -23,7 +23,9 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	LDFLAGS="${LDFLAGS}"
 SUB_FILES=	pkg-message
 
-PORTDOCS=	INSTALL	README README.aruba README.database README.sguil
+PORTDOCS1=	README
+PORTDOCS2=	INSTALL README.aruba README.database README.sguil
+PORTDOCS=	${PORTDOCS1} ${PORTDOCS2}
 
 .include <bsd.port.pre.mk>
 
@@ -54,7 +56,8 @@ post-install:
 .endfor
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-	cd ${WRKSRC}/doc && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
+	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS1} ${DOCSDIR}
+	cd ${WRKSRC}/doc && ${INSTALL_DATA} ${PORTDOCS2} ${DOCSDIR}
 .endif
 
 	@${CAT} ${PKGMESSAGE}
