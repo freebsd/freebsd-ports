@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	gentoo
-PORTVERSION=	0.19.8
+PORTVERSION=	0.19.9
 CATEGORIES=	x11-fm
-MASTER_SITES=	SF
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}/ \
+		http://mirror.4bit.ws/
 
 MAINTAINER=	dhn@FreeBSD.org
 COMMENT=	Gtk+ based, file manager inspired by DirectoryOpus
