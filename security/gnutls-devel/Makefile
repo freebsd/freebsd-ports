@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gnutls
-PORTVERSION=	2.11.0
-PORTREVISION=	1
+PORTVERSION=	2.11.5
 CATEGORIES=	security net
 MASTER_SITES=	http://alpha.gnu.org/gnu/gnutls/ \
 		ftp://ftp.gnutls.org/pub/gnutls/devel/
@@ -30,7 +29,7 @@ USE_AUTOTOOLS=	libtool
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} -fPIC" LDFLAGS="${LDFLAGS}"
-CONFIGURE_ARGS+=	--disable-guile
+CONFIGURE_ARGS+=	--disable-guile --with-libgcrypt
 MANCOMPRESSED=	no
 
 .include <bsd.port.pre.mk>
