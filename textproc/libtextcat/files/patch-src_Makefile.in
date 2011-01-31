@@ -1,5 +1,5 @@
 --- src/Makefile.in.orig	2003-05-22 13:39:52.000000000 +0200
-+++ src/Makefile.in	2010-12-09 21:29:22.000000000 +0100
++++ src/Makefile.in	2011-01-31 20:51:27.000000000 +0100
 @@ -126,18 +126,18 @@
  
  WARNS = -W -Wall -Wshadow -Wpointer-arith 
@@ -31,7 +31,18 @@
  libtextcat_la_OBJECTS = $(am_libtextcat_la_OBJECTS)
  bin_PROGRAMS = createfp$(EXEEXT)
  noinst_PROGRAMS = testtextcat$(EXEEXT)
-@@ -264,6 +264,11 @@
+@@ -187,7 +187,9 @@
+ 	$(AM_LDFLAGS) $(LDFLAGS) -o $@
+ DIST_SOURCES = $(libtextcat_la_SOURCES) $(createfp_SOURCES) \
+ 	$(testtextcat_SOURCES)
+-HEADERS = $(noinst_HEADERS)
++
++# Needed for LibreOffice
++HEADERS = $(noinst_HEADERS) $(CONFIG_HEADER)
+ 
+ DIST_COMMON = $(noinst_HEADERS) Makefile.am Makefile.in config.h.in
+ SOURCES = $(libtextcat_la_SOURCES) $(createfp_SOURCES) $(testtextcat_SOURCES)
+@@ -264,6 +266,11 @@
  	  else :; fi; \
  	done
  
@@ -43,7 +54,7 @@
  uninstall-binPROGRAMS:
  	@$(NORMAL_UNINSTALL)
  	@list='$(bin_PROGRAMS)'; for p in $$list; do \
-@@ -490,7 +495,7 @@
+@@ -490,7 +497,7 @@
  
  install-data-am:
  
