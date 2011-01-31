@@ -43,7 +43,7 @@ PYDISTUTILS_PKGVERSION=	1.0
 PYDISTUTILS_NOEGGINFO=	yes
 
 HAS_CONFIGURE=	yes
-CONFIGURE_ARGS+=--with-gcc="${CC}" --with-g++="${CXX}"
+CONFIGURE_ARGS+=--with-gcc="${CC}" --with-g++="${CXX}" --passive-mesa
 USE_LDCONFIG=	${PREFIX}/lib/virtualbox
 
 CONFLICTS=	bcc-[0-9]* virtualbox-ose-devel-3* virtualbox-ose-additions-3* virtualbox-ose-additions-devel-3*
