@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	nagios-check_hdd_health
-PORTVERSION=	1.0.1
+PORTVERSION=	1.1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	# No distfile
 DISTFILES=	# No distfile
@@ -14,7 +14,7 @@ DISTFILES=	# No distfile
 MAINTAINER=	jamrich.majo@gmail.com
 COMMENT=	Nagios plug-in to check HDD health from S.M.A.R.T
 
-RUN_DEPENDS=    smartmontools>=0:${PORTSDIR}/sysutils/smartmontools
+RUN_DEPENDS=	smartmontools>=0:${PORTSDIR}/sysutils/smartmontools
 
 NO_BUILD=	yes
 
