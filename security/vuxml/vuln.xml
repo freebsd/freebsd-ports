@@ -47,20 +47,20 @@ Note:  Please add new entries to the beginning of this file.
 	<p>MaraDNS developer Sam Trenholme reports:</p>
 	<blockquote cite="http://samiam.org/blog/20110129.html">
 	  <p>... a mistake in allocating an array of integers, allocating it
-	    in bytes instead of sizeof(int) units. This resulted in a buffer 
+	    in bytes instead of sizeof(int) units. This resulted in a buffer
 	    being too small, allowing it to be overwritten. The impact of this
-	    programming error is that MaraDNS can be crashed by sending 
-	    MaraDNS a single "packet of death". Since the data placed in the 
-	    overwritten array can not be remotely controlled (it is a list of 
-	    increasing integers), there is no way to increase privileges 
+	    programming error is that MaraDNS can be crashed by sending
+	    MaraDNS a single "packet of death". Since the data placed in the
+	    overwritten array can not be remotely controlled (it is a list of
+	    increasing integers), there is no way to increase privileges
 	    exploiting this bug.</p>
         </blockquote>
       </body>
     </description>
     <references>
       <bid>45966</bid>
-      <cvename>CVE-2011-0520</cvename>      
-      <url>http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=610834</url>			    
+      <cvename>CVE-2011-0520</cvename>
+      <url>http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=610834</url>
     </references>
     <dates>
       <discovery>2011-01-23</discovery>
