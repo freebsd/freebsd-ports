@@ -257,6 +257,7 @@
     SUBDIR += freeway
     SUBDIR += fswiki
     SUBDIR += ftasv
+    SUBDIR += fusionpbx
     SUBDIR += g-cows
     SUBDIR += g-gcl
     SUBDIR += gaeo
