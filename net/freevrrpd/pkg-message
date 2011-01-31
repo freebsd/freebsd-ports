@@ -1,0 +1,17 @@
+!! WARNING !!
+freevrrpd now use the netgraph layout. netgraph, ng_ether, ng_bridge and ng_eiface are required to run correctly.
+
+Unfortunately some netgraph modules doesn't load automatically, you need to load them manually.
+use:
+
+kldload ng_eiface
+kldload ng_bridge
+kldload ng_ether
+
+OR
+
+add these lines to your /boot/loader.conf:
+
+ng_ether_load="YES"
+ng_bridge_load="YES"
+ng_eiface_load="YES"
