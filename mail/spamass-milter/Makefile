@@ -12,11 +12,13 @@ CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_SAVANNAH}
 MASTER_SITE_SUBDIR=	spamass-milt
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	michael@fun-box.ru
 COMMENT=	Sendmail Milter (mail filter) plugin for SpamAssassin
 
 BUILD_DEPENDS=	spamc:${PORTSDIR}/mail/p5-Mail-SpamAssassin
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
+
+LICENSE=	GPLv2
 
 MAKE_JOBS_SAFE=	yes
 
@@ -56,32 +58,9 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 .endif
 
-.if !defined(WITH_SENDMAIL_BASE) && !defined(WITH_SENDMAIL_PORT)
-WITH_SENDMAIL_BASE=yes
-.endif
-
-.if defined(WITH_SENDMAIL_BASE)
-.if exists(/usr/lib/libmilter.a)
-MILTERBASE=	/usr
-.else
-IGNORE=	base system sendmail not found or too old, rebuild with WITH_SENDMAIL_PORT=yes
-.endif
-.endif
-
-.if defined(WITH_SENDMAIL_PORT)
-BUILD_DEPENDS+=	${LOCALBASE}/lib/libmilter.a:${PORTSDIR}/mail/sendmail
-MILTERBASE?=	${LOCALBASE}
-.endif
-
 .if !defined(NOPORTDOCS)
 PORTDOCS=	AUTHORS ChangeLog NEWS README TODO
 .endif
-
-MILTERINC=	${MILTERBASE}/include
-MILTERLIB=	${MILTERBASE}/lib
-
-CPPFLAGS+=	-I${MILTERINC}
-LDFLAGS+=	-L${MILTERLIB}
 
 USE_RC_SUBR=	spamass-milter
 GNU_CONFIGURE=	yes
@@ -112,5 +91,7 @@ post-install:
 .endfor
 .endif
 	@${CAT} ${PKGMESSAGE}
+
+.include "${PORTSDIR}/mail/sendmail/bsd.milter.mk"
 
 .include <bsd.port.post.mk>
