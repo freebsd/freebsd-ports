@@ -30,11 +30,11 @@ OPTIONS=	\
 	BENCHMARK "Install package: benchmark" On \
 	BIM "Install package: bim" On \
 	BIOINFO "Install package: bioinfo" On \
-	CIVIL-ENGINEERING "Install package: civil-engineering" On \
+	CIVIL_ENGINEERING "Install package: civil-engineering" On \
 	COMBINATORICS "Install package: combinatorics" On \
 	COMMUNICATIONS "Install package: communications" On \
 	CONTROL "Install package: control" On \
-	DATA-SMOOTHING "Install package: data-smoothing" On \
+	DATA_SMOOTHING "Install package: data-smoothing" On \
 	ECONOMETRICS "Install package: econometrics" On \
 	ENGINE "Install package: engine" On \
 	ES "Install package: es" On \
@@ -52,10 +52,10 @@ OPTIONS=	\
 	INTEGRATION "Install package: integration" On \
 	IO "Install package: io" On \
 	IRSA "Install package: irsa" On \
-	LINEAR-ALGEBRA "Install package: linear-algebra" On \
+	LINEAR_ALGEBRA "Install package: linear-algebra" On \
 	MAPPING "Install package: mapping" On \
 	MISCELLANEOUS "Install package: miscellaneous" On \
-	MISSING-FUNCTIONS "Install package: missing-functions" On \
+	MISSING_FUNCTIONS "Install package: missing-functions" On \
 	MSH "Install package: msh" On \
 	MULTICORE "Install package: multicore" On \
 	NAN "Install package: nan" On \
@@ -84,15 +84,15 @@ OPTIONS=	\
 	SIMP "Install package: simp" On \
 	SOCKETS "Install package: sockets" On \
 	SPECFUN "Install package: specfun" On \
-	SPECIAL-MATRIX "Install package: special-matrix" On \
-	SPLINE-GCVSPL "Install package: spline-gcvspl" On \
+	SPECIAL_MATRIX "Install package: special-matrix" On \
+	SPLINE_GCVSPL "Install package: spline-gcvspl" On \
 	SPLINES "Install package: splines" On \
 	STATISTICS "Install package: statistics" On \
 	STRINGS "Install package: strings" On \
 	STRUCT "Install package: struct" On \
 	SYMBAND "Install package: symband" On \
 	SYMBOLIC "Install package: symbolic" On \
-	TCL-OCTAVE "Install package: tcl-octave" On \
+	TCL_OCTAVE "Install package: tcl-octave" On \
 	TIME "Install package: time" On \
 	TSA "Install package: tsa" On \
 	VIDEO "Install package: video" On \
