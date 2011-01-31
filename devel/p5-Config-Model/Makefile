@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	Config-Model
-PORTVERSION=	1.230
+PORTVERSION=	1.232
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	../../authors/id/D/DD/DDUMONT
@@ -37,6 +37,7 @@ MAN3=		Config::Model.3 \
 		Config::Model::Backend::Debian::DpkgSyntax.3 \
 		Config::Model::Backend::Fstab.3 \
 		Config::Model::Backend::IniFile.3 \
+		Config::Model::Backend::PlainFile.3 \
 		Config::Model::Backend::ShellVar.3 \
 		Config::Model::Backend::Yaml.3 \
 		Config::Model::CheckList.3 Config::Model::Describe.3 \
