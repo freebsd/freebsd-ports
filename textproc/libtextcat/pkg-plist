@@ -1,5 +1,6 @@
 bin/createfp
 include/libtextcat/common.h
+include/libtextcat/config.h
 include/libtextcat/constants.h
 include/libtextcat/fingerprint.h
 include/libtextcat/textcat.h
