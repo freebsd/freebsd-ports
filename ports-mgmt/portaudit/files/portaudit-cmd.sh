@@ -440,7 +440,7 @@ elif $opt_verbose; then
 			print "Type of problem: " $3 "."
 			split($2, ref, / /)
 			for (r in ref)
-				print "Reference: <" ref[r] ">"
+				print "Reference: " ref[r]
 			if (note)
 				print "Note: " note
 			print ""
@@ -454,7 +454,7 @@ else
 			print "Type of problem: " $3 "."
 			split($2, ref, / /)
 			for (r in ref)
-				print "Reference: <" ref[r] ">"
+				print "Reference: " ref[r]
 			if (note)
 				print "Note: " note
 			print ""
