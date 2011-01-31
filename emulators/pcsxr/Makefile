@@ -6,13 +6,10 @@
 #
 
 PORTNAME=	pcsxr
-PORTVERSION=	1.9.91
-PORTREVISION=	3
+PORTVERSION=	1.9.92.r62569
 CATEGORIES=	emulators
-# Original URLs :
-# http://download.codeplex.com/Project/Download/FileDownload.aspx?ProjectName=pcsxr&DownloadId=98581&FileTime=129064504645100000&Build=16694
-# http://sourceforge.net/projects/pcsx-df/files/pcsx-df/1.10/pcsx-df-1.10.tar.gz/download
-MASTER_SITES=	http://contribs.martymac.org/FreeBSD-ports/distfiles/
+MASTER_SITES=	http://contribs.martymac.org/FreeBSD-ports/distfiles/ \
+		LOCAL/martymac
 DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX} \
 		pcsx-df-1.10-plugin-dfbinimage2${EXTRACT_SUFX}
 EXTRACT_ONLY=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}
@@ -21,7 +18,8 @@ MAINTAINER=	martymac@FreeBSD.org
 COMMENT=	Playstation (PSX) emulator
 
 BUILD_DEPENDS=	gawk:${PORTSDIR}/lang/gawk
-LIB_DEPENDS=	vorbis.4:${PORTSDIR}/audio/libvorbis
+LIB_DEPENDS=	vorbis.4:${PORTSDIR}/audio/libvorbis \
+		cdio.12:${PORTSDIR}/sysutils/libcdio
 
 LICENSE=	GPLv2
 
@@ -34,7 +32,7 @@ GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
-CONFIGURE_ARGS=	--enable-opengl
+CONFIGURE_ARGS=	--enable-opengl --enable-libcdio
 USE_LDCONFIG=	yes
 
 USE_DOS2UNIX=	yes
@@ -49,10 +47,11 @@ USE_GL=	gl
 MAN1=	pcsx.1
 PORTDOCS=	ChangeLog README
 
-.include <bsd.port.pre.mk>
+# Default CDROM device to use with dfcdrom,
+# accessed through libcdio (using cam(4) and pass(4))
+DEFAULT_DVD_DEVICE?=	/dev/cd0
 
-# XXX
-# dfxvideo plugin seems buggy, remove it in future updates ?
+.include <bsd.port.pre.mk>
 
 .if ${ARCH} == "amd64"
 CONFIGURE_ARGS+=	--enable-dynarec=x86_64
@@ -69,11 +68,15 @@ PLIST_SUB+=	NLS="@comment "
 
 # Extract dfbinimage2 plugin
 post-extract:
-	@(cd ${WRKSRC} && ${TAR} -xjf ${DISTDIR}/pcsx-df-1.10-plugin-dfbinimage2${EXTRACT_SUFX})
+	@(cd ${WRKSRC} && \
+		${TAR} -xjf ${DISTDIR}/pcsx-df-1.10-plugin-dfbinimage2${EXTRACT_SUFX})
 
-# Add ${PREFIX} to plugins' lookup directories
+# Add ${PREFIX} to plugins' lookup directories and set default CDROM device
 post-patch:
-	@${SED} -i.bak "s|%%PREFIX%%|${PREFIX}|" ${WRKSRC}/gui/LnxMain.c
+	@${REINPLACE_CMD} "s|%%PREFIX%%|${PREFIX}|" \
+		${WRKSRC}/gui/LnxMain.c
+	@${REINPLACE_CMD} "s|%%DVD_DEVICE%%|${DEFAULT_DVD_DEVICE}|" \
+		${WRKSRC}/plugins/dfcdrom/cdr.h
 
 pre-configure:
 	@(cd ${WRKSRC} && ${AUTORECONF} -fi)

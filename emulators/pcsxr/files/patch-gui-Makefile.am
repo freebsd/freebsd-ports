@@ -1,8 +1,8 @@
---- gui/Makefile.am.orig	2009-12-25 18:25:24.000000000 +0000
-+++ gui/Makefile.am	2010-06-11 08:23:55.837551420 +0000
+--- gui/Makefile.am.orig	2011-01-25 07:07:29.144904305 +0100
++++ gui/Makefile.am	2011-01-25 07:15:13.989942292 +0100
 @@ -1,10 +1,10 @@
--INCLUDES = -DPACKAGE_DATA_DIR=\"${datadir}/pcsx/\" \
-+INCLUDES = -DPACKAGE_DATA_DIR=\"${datadir}/pcsxr/\" \
+-AM_CPPFLAGS = -DPACKAGE_DATA_DIR=\"${datadir}/pcsx/\" \
++AM_CPPFLAGS = -DPACKAGE_DATA_DIR=\"${datadir}/pcsxr/\" \
  	-DPIXMAPDIR=\"${datadir}/pixmaps/\" \
  	-DLOCALE_DIR=\"${datadir}/locale/\" \
  	$(GTK2_CFLAGS) $(GLADE2_CFLAGS) \
@@ -14,11 +14,10 @@
  
  bin_PROGRAMS = pcsx
  
-@@ -18,5 +18,6 @@
- 	Cheat.c
+@@ -21,4 +21,5 @@
  
  pcsx_LDADD = \
--	$(GTK2_LIBS) $(GLADE2_LIBS) -lpthread -lz -lm -lXext -lXtst \
-+	$(GTK2_LIBS) $(GLADE2_LIBS) -lz -lm -lXext -lXtst -lGL \
- 	../libpcsxcore/libpcsxcore.a
+ 	../libpcsxcore/libpcsxcore.a \
+-	$(GTK2_LIBS) $(GLADE2_LIBS) -lpthread -lz -lm -lXext -lXtst
++	$(GTK2_LIBS) $(GLADE2_LIBS) -lz -lm -lXext -lXtst -lGL
 +pcsx_LDFLAGS = -pthread

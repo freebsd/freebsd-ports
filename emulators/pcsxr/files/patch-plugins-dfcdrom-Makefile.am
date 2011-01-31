@@ -1,0 +1,37 @@
+--- plugins/dfcdrom/Makefile.am.orig	2011-01-26 14:37:30.887292632 +0100
++++ plugins/dfcdrom/Makefile.am	2011-01-26 14:40:33.221965684 +0100
+@@ -1,5 +1,5 @@
+-bindir = @libdir@/games/psemu/
+-libdir = @libdir@/games/psemu/
++bindir = @libdir@/pcsxr/
++libdir = @libdir@/pcsxr/
+ 
+ lib_LTLIBRARIES = libDFCdrom.la
+ 
+@@ -13,8 +13,8 @@
+ 	util.c
+ 
+ libDFCdrom_la_CFLAGS =
+-libDFCdrom_la_LDFLAGS = -module -avoid-version 
+-libDFCdrom_la_LIBADD = -lpthread
++libDFCdrom_la_LDFLAGS = -module -avoid-version -pthread
++libDFCdrom_la_LIBADD =
+ 
+ if USE_LIBCDIO
+ libDFCdrom_la_CFLAGS += -DUSE_LIBCDIO=1 $(LIBCDIO_CFLAGS)
+@@ -22,7 +22,7 @@
+ endif
+ 
+ AM_CPPFLAGS = -DLOCALE_DIR=\"${datadir}/locale/\" \
+-	-DDATADIR=\"${datadir}/psemu/\" \
++	-DDATADIR=\"${datadir}/pcsxr/\" \
+ 	$(GTK2_CFLAGS) $(GLADE2_CFLAGS) \
+ 	-I../../libpcsxcore -I../../include
+ 
+@@ -31,5 +31,5 @@
+ cfgDFCdrom_LDADD = $(GTK2_LIBS) $(GLADE2_LIBS)
+ 
+ glade_DATA = cdrcfg-0.1df/dfcdrom.glade2
+-gladedir = $(datadir)/psemu/
++gladedir = $(datadir)/pcsxr
+ EXTRA_DIST = $(glade_DATA)
