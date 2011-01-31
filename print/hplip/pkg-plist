@@ -414,6 +414,8 @@ share/applications/hplip.desktop
 %%GUI%%%%DATADIR%%/data/images/other/fax2.png
 %%GUI%%%%DATADIR%%/data/images/other/generic_coverpage.png
 %%GUI%%%%DATADIR%%/data/images/other/generic_title.png
+%%GUI%%%%DATADIR%%/data/images/other/h-k-2.png
+%%GUI%%%%DATADIR%%/data/images/other/h-k-3.png
 %%GUI%%%%DATADIR%%/data/images/other/h-kc-2.png
 %%GUI%%%%DATADIR%%/data/images/other/h-kc-3.png
 %%GUI%%%%DATADIR%%/data/images/other/hp-tux-printer.png
@@ -482,6 +484,8 @@ share/applications/hplip.desktop
 %%FAX%%%%DATADIR%%/fax/coverpages.py
 %%FAX%%%%DATADIR%%/fax/fax.py
 %%FAX%%%%DATADIR%%/fax/faxdevice.py
+%%FAX%%%%DATADIR%%/fax/ledmfax.py
+%%FAX%%%%DATADIR%%/fax/ledmsoapfax.py
 %%FAX%%%%DATADIR%%/fax/marvellfax.py
 %%FAX%%%%DATADIR%%/fax/pmlfax.py
 %%FAX%%%%DATADIR%%/fax/pstotiff
@@ -593,6 +597,8 @@ share/applications/hplip.desktop
 %%FAX%%share/ppd/HP/HP-Fax2-hpijs.ppd.gz
 %%FAX%%share/ppd/HP/HP-Fax3-hpcups.ppd.gz
 %%FAX%%share/ppd/HP/HP-Fax3-hpijs.ppd.gz
+%%FAX%%share/ppd/HP/HP-Fax4-hpcups.ppd.gz
+%%FAX%%share/ppd/HP/HP-Fax4-hpijs.ppd.gz
 share/ppd/HP/hp-2000c-hpijs.ppd.gz
 share/ppd/HP/hp-2500c-hpijs.ppd.gz
 share/ppd/HP/hp-910-hpijs.ppd.gz
@@ -695,6 +701,8 @@ share/ppd/HP/hp-color_laserjet_cm2320nf_mfp-hpijs-pcl3.ppd.gz
 share/ppd/HP/hp-color_laserjet_cm2320nf_mfp-ps.ppd.gz
 share/ppd/HP/hp-color_laserjet_cm3530_mfp-hpijs-pcl3.ppd.gz
 share/ppd/HP/hp-color_laserjet_cm3530_mfp-ps.ppd.gz
+share/ppd/HP/hp-color_laserjet_cm4540_mfp-hpijs-pcl3.ppd.gz
+share/ppd/HP/hp-color_laserjet_cm4540_mfp-ps.ppd.gz
 share/ppd/HP/hp-color_laserjet_cm4730_mfp-hpijs-pcl3.ppd.gz
 share/ppd/HP/hp-color_laserjet_cm4730_mfp-ps.ppd.gz
 share/ppd/HP/hp-color_laserjet_cm6030_mfp-hpijs-pcl3.ppd.gz
@@ -734,6 +742,8 @@ share/ppd/HP/hp-color_laserjet_cp5225dn-hpijs-pcl3.ppd.gz
 share/ppd/HP/hp-color_laserjet_cp5225dn-ps.ppd.gz
 share/ppd/HP/hp-color_laserjet_cp5225n-hpijs-pcl3.ppd.gz
 share/ppd/HP/hp-color_laserjet_cp5225n-ps.ppd.gz
+share/ppd/HP/hp-color_laserjet_cp5520_series-hpijs-pcl3.ppd.gz
+share/ppd/HP/hp-color_laserjet_cp5520_series-ps.ppd.gz
 share/ppd/HP/hp-color_laserjet_cp6015-hpijs-pcl3.ppd.gz
 share/ppd/HP/hp-color_laserjet_cp6015-ps.ppd.gz
 share/ppd/HP/hp-cp1160-hpijs.ppd.gz
@@ -904,6 +914,8 @@ share/ppd/HP/hp-deskjet_f4213_series-hpijs.ppd.gz
 share/ppd/HP/hp-deskjet_f4400_series-hpijs.ppd.gz
 share/ppd/HP/hp-deskjet_f4500_series-hpijs.ppd.gz
 share/ppd/HP/hp-deskjet_f735-hpijs.ppd.gz
+share/ppd/HP/hp-deskjet_ink_adv_2010_k010-hpijs.ppd.gz
+share/ppd/HP/hp-deskjet_ink_adv_2060_k110-hpijs.ppd.gz
 share/ppd/HP/hp-deskjet_ink_advant_k109a-z-hpijs.ppd.gz
 share/ppd/HP/hp-deskjet_ink_advant_k209a-z-hpijs.ppd.gz
 share/ppd/HP/hp-dj350-hpijs.ppd.gz
@@ -1081,6 +1093,23 @@ share/ppd/HP/hp-laserjet_9055mfp-hpijs-pcl3.ppd.gz
 share/ppd/HP/hp-laserjet_9055mfp-ps.ppd.gz
 share/ppd/HP/hp-laserjet_9065mfp-hpijs-pcl3.ppd.gz
 share/ppd/HP/hp-laserjet_9065mfp-ps.ppd.gz
+share/ppd/HP/hp-laserjet_cm1411fn-hpijs-pcl3.ppd.gz
+share/ppd/HP/hp-laserjet_cm1412fn-hpijs-pcl3.ppd.gz
+share/ppd/HP/hp-laserjet_cm1413fn-hpijs-pcl3.ppd.gz
+share/ppd/HP/hp-laserjet_cm1415fn-hpijs-pcl3.ppd.gz
+share/ppd/HP/hp-laserjet_cm1415fnw-hpijs-pcl3.ppd.gz
+share/ppd/HP/hp-laserjet_cm1415fnw-ps.ppd.gz
+share/ppd/HP/hp-laserjet_cm1416fnw-hpijs-pcl3.ppd.gz
+share/ppd/HP/hp-laserjet_cm1417fnw-hpijs-pcl3.ppd.gz
+share/ppd/HP/hp-laserjet_cm1418fnw-hpijs-pcl3.ppd.gz
+share/ppd/HP/hp-laserjet_cp1021-hpijs.ppd.gz
+share/ppd/HP/hp-laserjet_cp1022-hpijs.ppd.gz
+share/ppd/HP/hp-laserjet_cp1023-hpijs.ppd.gz
+share/ppd/HP/hp-laserjet_cp1025-hpijs.ppd.gz
+share/ppd/HP/hp-laserjet_cp1025nw-hpijs.ppd.gz
+share/ppd/HP/hp-laserjet_cp1026nw-hpijs.ppd.gz
+share/ppd/HP/hp-laserjet_cp1027nw-hpijs.ppd.gz
+share/ppd/HP/hp-laserjet_cp1028nw-hpijs.ppd.gz
 share/ppd/HP/hp-laserjet_m1005-hpijs.ppd.gz
 share/ppd/HP/hp-laserjet_m1120_mfp-hpijs.ppd.gz
 share/ppd/HP/hp-laserjet_m1120n_mfp-hpijs.ppd.gz
@@ -1089,6 +1118,11 @@ share/ppd/HP/hp-laserjet_m1522_mfp-ps.ppd.gz
 share/ppd/HP/hp-laserjet_m1522n_mfp-ps.ppd.gz
 share/ppd/HP/hp-laserjet_m1522nf_mfp-hpijs-pcl3.ppd.gz
 share/ppd/HP/hp-laserjet_m1522nf_mfp-ps.ppd.gz
+share/ppd/HP/hp-laserjet_m1536dnf_mfp-hpijs-pcl3.ppd.gz
+share/ppd/HP/hp-laserjet_m1536dnf_mfp-ps.ppd.gz
+share/ppd/HP/hp-laserjet_m1537dnf_mfp-hpijs-pcl3.ppd.gz
+share/ppd/HP/hp-laserjet_m1538dnf_mfp-hpijs-pcl3.ppd.gz
+share/ppd/HP/hp-laserjet_m1539dnf_mfp-hpijs-pcl3.ppd.gz
 share/ppd/HP/hp-laserjet_m2727_mfp-hpijs-pcl3.ppd.gz
 share/ppd/HP/hp-laserjet_m2727_mfp-ps.ppd.gz
 share/ppd/HP/hp-laserjet_m2727nf_mfp-ps.ppd.gz
@@ -1180,6 +1214,7 @@ share/ppd/HP/hp-laserjet_p4515xm-ps.ppd.gz
 share/ppd/HP/hp-laserjet_professional_m1132_mfp-hpijs.ppd.gz
 share/ppd/HP/hp-laserjet_professional_m1136_mfp-hpijs.ppd.gz
 share/ppd/HP/hp-laserjet_professional_m1212nf_mfp-hpijs.ppd.gz
+share/ppd/HP/hp-laserjet_professional_m1213nf_mfp-hpijs.ppd.gz
 share/ppd/HP/hp-laserjet_professional_m1217nfw_mfp-hpijs.ppd.gz
 share/ppd/HP/hp-laserjet_professional_p1102-hpijs.ppd.gz
 share/ppd/HP/hp-laserjet_professional_p1102w-hpijs.ppd.gz
@@ -1380,6 +1415,7 @@ share/ppd/HP/hp-photosmart_d7300_series-hpijs.ppd.gz
 share/ppd/HP/hp-photosmart_d7400_series-hpijs.ppd.gz
 share/ppd/HP/hp-photosmart_d7500_series-hpijs.ppd.gz
 share/ppd/HP/hp-photosmart_estn_c510_series-hpijs.ppd.gz
+share/ppd/HP/hp-photosmart_ink_adv_k510-hpijs.ppd.gz
 share/ppd/HP/hp-photosmart_p1000-hpijs.ppd.gz
 share/ppd/HP/hp-photosmart_p1100-hpijs.ppd.gz
 share/ppd/HP/hp-photosmart_plus_b209a-m-hpijs.ppd.gz
