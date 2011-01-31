@@ -23,7 +23,7 @@ COMMENT=	Distributed.net distributed computing project client
 WRKSRC=		${WRKDIR}/dnetc${PORTVERSION:E}-freebsd-${ARCH:S/i386/x86/}-elf
 DISTINFO_FILE=	${MASTERDIR}/distinfo.${ARCH}
 
-ONLY_FOR_ARCHS=	i386 sparc64 amd64
+ONLY_FOR_ARCHS=	i386 sparc64 amd64 powerpc
 
 USE_RC_SUBR=	dnetc.sh
 NO_BUILD=	yes
@@ -50,7 +50,7 @@ SUB_LIST=	BINDIR="${BINDIR}" \
 
 .if ${ARCH} == i386
 REVISION=	1
-VERSION=	2.9103.509
+VERSION=	2.9108.517
 .if ${OSVERSION} >= 800107
 REVISION=	0
 VERSION=	2.9107.516
@@ -68,27 +68,40 @@ WRKSRC=		${WRKDIR}/dnetc${PORTVERSION:E}-freebsd6-${ARCH:S/i386/x86/}
 REVISION=	0
 .if ${OSVERSION} >= 800107
 VERSION=	2.9107.515
-DISTNAME=	dnetc${PORTVERSION:E}-freebsd8-${ARCH:S/i386/x86/}
-WRKSRC=		${WRKDIR}/dnetc${PORTVERSION:E}-freebsd8-${ARCH:S/i386/x86/}
+DISTNAME=	dnetc${PORTVERSION:E}-freebsd8-${ARCH}
+WRKSRC=		${WRKDIR}/dnetc${PORTVERSION:E}-freebsd8-${ARCH}
 .elif ${OSVERSION} >= 700055
 VERSION=	2.9106.513b
-DISTNAME=	dnetc${PORTVERSION:E}-freebsd7-${ARCH:S/i386/x86/}
-WRKSRC=		${WRKDIR}/dnetc${PORTVERSION:E:S/b$//}-freebsd7-${ARCH:S/i386/x86/}
+DISTNAME=	dnetc${PORTVERSION:E}-freebsd7-${ARCH}
+WRKSRC=		${WRKDIR}/dnetc${PORTVERSION:E:S/b$//}-freebsd7-${ARCH}
 .else
 VERSION=	2.9106.513
-DISTNAME=	dnetc${PORTVERSION:E}-freebsd6-${ARCH:S/i386/x86/}
-WRKSRC=		${WRKDIR}/dnetc${PORTVERSION:E}-freebsd6-${ARCH:S/i386/x86/}
+DISTNAME=	dnetc${PORTVERSION:E}-freebsd6-${ARCH}
+WRKSRC=		${WRKDIR}/dnetc${PORTVERSION:E}-freebsd6-${ARCH}
 .endif
 
 .elif ${ARCH} == sparc64
 REVISION=	1
 VERSION=	2.9103.509
-.if ${OSVERSION} >= 700055
-DISTNAME=	dnetc${PORTVERSION:E}-freebsd7-${ARCH:S/i386/x86/}-elf
-WRKSRC=		${WRKDIR}/dnetc${PORTVERSION:E}-freebsd7-${ARCH:S/i386/x86/}-elf
+.if ${OSVERSION} >= 800107
+VERSION=	2.9108.517
+DISTNAME=	dnetc${PORTVERSION:E}-freebsd8-${ARCH}
+WRKSRC=		${WRKDIR}/dnetc${PORTVERSION:E}-freebsd8-${ARCH}
+.elif ${OSVERSION} >= 700055
+DISTNAME=	dnetc${PORTVERSION:E}-freebsd7-${ARCH}-elf
+WRKSRC=		${WRKDIR}/dnetc${PORTVERSION:E}-freebsd7-${ARCH}-elf
 .else
-DISTNAME=	dnetc${PORTVERSION:E}-freebsd6-${ARCH:S/i386/x86/}
-WRKSRC=		${WRKDIR}/dnetc${PORTVERSION:E}-freebsd6-${ARCH:S/i386/x86/}
+DISTNAME=	dnetc${PORTVERSION:E}-freebsd6-${ARCH}
+WRKSRC=		${WRKDIR}/dnetc${PORTVERSION:E}-freebsd6-${ARCH}
+.endif
+
+.elif ${ARCH} == powerpc
+.if ${OSVERSION} >= 800107
+VERSION=	2.9109.518
+DISTNAME=	dnetc${PORTVERSION:E}-freebsd8-${ARCH}
+WRKSRC=		${WRKDIR}/dnetc${PORTVERSION:E}-freebsd8-${ARCH}
+.else
+BROKEN=		works on FreeBSD 8+ only
 .endif
 
 .else
