@@ -1,0 +1,28 @@
+---------------------------------------------------------------------------------------------
+Installation has successfully completed!
+---------------------------------------------------------------------------------------------
+MyITCRM is now installed in documentoroot: %%WWWDIR%%. 
+
+1) Create user, MySQL database and set privileges:
+
+mysql -u root -p'your_password'
+create database myitcrm;
+create user 'myitcrm'@'localhost' identified by 'your_password';
+grant all privileges on myitcrm.* to 'myitcrm'@'localhost' identified by 'your_password';
+
+2) Setup your MyITCRM:
+
+Now you can try http://your-server/myitcrm/install and setup your database.
+
+Full Path: %%WWWDIR%%
+Site Name: http://your-server/myitcrm
+
+3) Finally remove installation folder:
+
+rm -rf %%WWWDIR%%/install
+
+NOTE: These may not be necessary but should be used as a guide only.
+- memory_limit=32M
+- register_globals=off
+- safe_mode=off
+---------------------------------------------------------------------------------------------

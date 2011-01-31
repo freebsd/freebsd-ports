@@ -1,0 +1,1385 @@
+%%WWWDIR%%/LICENSE.txt
+%%WWWDIR%%/backup/.htaccess
+%%WWWDIR%%/backup/bigdump.php
+%%WWWDIR%%/cache/index.php
+%%WWWDIR%%/changelog.txt
+%%WWWDIR%%/conf-default.php
+%%WWWDIR%%/cron/.htaccess
+%%WWWDIR%%/cron/backup.php
+%%WWWDIR%%/cron/index.php
+%%WWWDIR%%/css/default.css
+%%WWWDIR%%/css/index.php
+%%WWWDIR%%/css/sdmenu.css
+%%WWWDIR%%/favicon.ico
+%%WWWDIR%%/fonts/04B_08__.TTF
+%%WWWDIR%%/fonts/04B_09__.TTF
+%%WWWDIR%%/fonts/index.php
+%%WWWDIR%%/images/MC.gif
+%%WWWDIR%%/images/Visa.gif
+%%WWWDIR%%/images/back_24.gif
+%%WWWDIR%%/images/bank.gif
+%%WWWDIR%%/images/bottom.gif
+%%WWWDIR%%/images/btn_paynow_LG.gif
+%%WWWDIR%%/images/buttons/Thumbs.db
+%%WWWDIR%%/images/buttons/ics.png
+%%WWWDIR%%/images/closed.gif
+%%WWWDIR%%/images/collapsed.gif
+%%WWWDIR%%/images/cross.png
+%%WWWDIR%%/images/detail01.gif
+%%WWWDIR%%/images/detail02.gif
+%%WWWDIR%%/images/expanded.gif
+%%WWWDIR%%/images/fastf_24.gif
+%%WWWDIR%%/images/forwd_24.gif
+%%WWWDIR%%/images/gblnav_left.gif
+%%WWWDIR%%/images/glblnav_selected.gif
+%%WWWDIR%%/images/glbnav_background.gif
+%%WWWDIR%%/images/glbnav_right.gif
+%%WWWDIR%%/images/icons/16x16/Calendar.gif
+%%WWWDIR%%/images/icons/16x16/back.gif
+%%WWWDIR%%/images/icons/16x16/calendar.old
+%%WWWDIR%%/images/icons/16x16/down.gif
+%%WWWDIR%%/images/icons/16x16/email.jpg
+%%WWWDIR%%/images/icons/16x16/fileprint.gif
+%%WWWDIR%%/images/icons/16x16/forward.gif
+%%WWWDIR%%/images/icons/16x16/help.gif
+%%WWWDIR%%/images/icons/16x16/next.gif
+%%WWWDIR%%/images/icons/16x16/pdf_small.gif
+%%WWWDIR%%/images/icons/16x16/small_clock.gif
+%%WWWDIR%%/images/icons/16x16/small_edit.gif
+%%WWWDIR%%/images/icons/16x16/small_edit_employees.gif
+%%WWWDIR%%/images/icons/16x16/small_new_customer.gif
+%%WWWDIR%%/images/icons/16x16/small_new_work_order.gif
+%%WWWDIR%%/images/icons/16x16/stop.gif
+%%WWWDIR%%/images/icons/16x16/up.gif
+%%WWWDIR%%/images/icons/16x16/view+.gif
+%%WWWDIR%%/images/icons/16x16/viewmag.gif
+%%WWWDIR%%/images/icons/3floppy_mount.png
+%%WWWDIR%%/images/icons/bookmark.png
+%%WWWDIR%%/images/icons/bug.png
+%%WWWDIR%%/images/icons/button_ok.png
+%%WWWDIR%%/images/icons/cheque.jpeg
+%%WWWDIR%%/images/icons/clock.gif
+%%WWWDIR%%/images/icons/close.gif
+%%WWWDIR%%/images/icons/comment.png
+%%WWWDIR%%/images/icons/control.gif
+%%WWWDIR%%/images/icons/customers.gif
+%%WWWDIR%%/images/icons/db_restore.png
+%%WWWDIR%%/images/icons/db_save.png
+%%WWWDIR%%/images/icons/decrypted.png
+%%WWWDIR%%/images/icons/delete.gif
+%%WWWDIR%%/images/icons/delete_employees.gif
+%%WWWDIR%%/images/icons/deposit.jpeg
+%%WWWDIR%%/images/icons/edit.gif
+%%WWWDIR%%/images/icons/edit_employees.gif
+%%WWWDIR%%/images/icons/employees.gif
+%%WWWDIR%%/images/icons/encrypted.png
+%%WWWDIR%%/images/icons/filefind.gif
+%%WWWDIR%%/images/icons/gift.png
+%%WWWDIR%%/images/icons/home.gif
+%%WWWDIR%%/images/icons/invoice.png
+%%WWWDIR%%/images/icons/key.png
+%%WWWDIR%%/images/icons/logout.gif
+%%WWWDIR%%/images/icons/map.png
+%%WWWDIR%%/images/icons/money.png
+%%WWWDIR%%/images/icons/new.gif
+%%WWWDIR%%/images/icons/new_customer.gif
+%%WWWDIR%%/images/icons/new_employees.gif
+%%WWWDIR%%/images/icons/new_note.gif
+%%WWWDIR%%/images/icons/new_work_order.gif
+%%WWWDIR%%/images/icons/next.gif
+%%WWWDIR%%/images/icons/note.png
+%%WWWDIR%%/images/icons/pdf.png
+%%WWWDIR%%/images/icons/pdf_small.png
+%%WWWDIR%%/images/icons/php.png
+%%WWWDIR%%/images/icons/previous.gif
+%%WWWDIR%%/images/icons/print.gif
+%%WWWDIR%%/images/icons/reports.png
+%%WWWDIR%%/images/icons/sf.ico
+%%WWWDIR%%/images/icons/status.gif
+%%WWWDIR%%/images/icons/view.gif
+%%WWWDIR%%/images/icons/warning.gif
+%%WWWDIR%%/images/icons/web.png
+%%WWWDIR%%/images/icons/workorders.gif
+%%WWWDIR%%/images/index.php
+%%WWWDIR%%/images/index03.gif
+%%WWWDIR%%/images/index07.gif
+%%WWWDIR%%/images/index13.gif
+%%WWWDIR%%/images/index14.gif
+%%WWWDIR%%/images/index15.gif
+%%WWWDIR%%/images/index16.gif
+%%WWWDIR%%/images/index17.gif
+%%WWWDIR%%/images/index18.gif
+%%WWWDIR%%/images/index19.gif
+%%WWWDIR%%/images/index20.gif
+%%WWWDIR%%/images/index21.gif
+%%WWWDIR%%/images/index22.gif
+%%WWWDIR%%/images/index26.jpg
+%%WWWDIR%%/images/index29.jpg
+%%WWWDIR%%/images/index30.gif
+%%WWWDIR%%/images/index31.gif
+%%WWWDIR%%/images/index41.gif
+%%WWWDIR%%/images/index42.gif
+%%WWWDIR%%/images/index43.gif
+%%WWWDIR%%/images/inside01.gif
+%%WWWDIR%%/images/key.png
+%%WWWDIR%%/images/linkarrow.gif
+%%WWWDIR%%/images/list.gif
+%%WWWDIR%%/images/list01.gif
+%%WWWDIR%%/images/logo.jpg
+%%WWWDIR%%/images/move.png
+%%WWWDIR%%/images/news.png
+%%WWWDIR%%/images/open.gif
+%%WWWDIR%%/images/paymate/Thumbs.db
+%%WWWDIR%%/images/paymate/paymate_cc.gif
+%%WWWDIR%%/images/paypal/Thumbs.db
+%%WWWDIR%%/images/paypal/cc_paypal.gif
+%%WWWDIR%%/images/paypal/pay_now.gif
+%%WWWDIR%%/images/paypal/pay_now.png
+%%WWWDIR%%/images/rate_upload.PNG
+%%WWWDIR%%/images/request.png
+%%WWWDIR%%/images/rewnd_24.gif
+%%WWWDIR%%/images/spacer.gif
+%%WWWDIR%%/images/swsh.gif
+%%WWWDIR%%/images/tick.png
+%%WWWDIR%%/images/title.gif
+%%WWWDIR%%/images/toptitle.gif
+%%WWWDIR%%/images/upArrow.png
+%%WWWDIR%%/images/xml.png
+%%WWWDIR%%/images/xp_button_blue.gif
+%%WWWDIR%%/include/ADODB/adodb-csvlib.inc.php
+%%WWWDIR%%/include/ADODB/adodb-datadict.inc.php
+%%WWWDIR%%/include/ADODB/adodb-error.inc.php
+%%WWWDIR%%/include/ADODB/adodb-errorhandler.inc.php
+%%WWWDIR%%/include/ADODB/adodb-errorpear.inc.php
+%%WWWDIR%%/include/ADODB/adodb-exceptions.inc.php
+%%WWWDIR%%/include/ADODB/adodb-iterator.inc.php
+%%WWWDIR%%/include/ADODB/adodb-lib.inc.php
+%%WWWDIR%%/include/ADODB/adodb-pager.inc.php
+%%WWWDIR%%/include/ADODB/adodb-pear.inc.php
+%%WWWDIR%%/include/ADODB/adodb-perf.inc.php
+%%WWWDIR%%/include/ADODB/adodb-php4.inc.php
+%%WWWDIR%%/include/ADODB/adodb-time.inc.php
+%%WWWDIR%%/include/ADODB/adodb-xmlschema.inc.php
+%%WWWDIR%%/include/ADODB/adodb.inc.php
+%%WWWDIR%%/include/ADODB/contrib/toxmlrpc.inc.php
+%%WWWDIR%%/include/ADODB/datadict/datadict-access.inc.php
+%%WWWDIR%%/include/ADODB/datadict/datadict-db2.inc.php
+%%WWWDIR%%/include/ADODB/datadict/datadict-firebird.inc.php
+%%WWWDIR%%/include/ADODB/datadict/datadict-generic.inc.php
+%%WWWDIR%%/include/ADODB/datadict/datadict-ibase.inc.php
+%%WWWDIR%%/include/ADODB/datadict/datadict-informix.inc.php
+%%WWWDIR%%/include/ADODB/datadict/datadict-mssql.inc.php
+%%WWWDIR%%/include/ADODB/datadict/datadict-mysql.inc.php
+%%WWWDIR%%/include/ADODB/datadict/datadict-oci8.inc.php
+%%WWWDIR%%/include/ADODB/datadict/datadict-postgres.inc.php
+%%WWWDIR%%/include/ADODB/datadict/datadict-sapdb.inc.php
+%%WWWDIR%%/include/ADODB/datadict/datadict-sybase.inc.php
+%%WWWDIR%%/include/ADODB/drivers/adodb-access.inc.php
+%%WWWDIR%%/include/ADODB/drivers/adodb-ado.inc.php
+%%WWWDIR%%/include/ADODB/drivers/adodb-ado5.inc.php
+%%WWWDIR%%/include/ADODB/drivers/adodb-ado_access.inc.php
+%%WWWDIR%%/include/ADODB/drivers/adodb-ado_mssql.inc.php
+%%WWWDIR%%/include/ADODB/drivers/adodb-borland_ibase.inc.php
+%%WWWDIR%%/include/ADODB/drivers/adodb-csv.inc.php
+%%WWWDIR%%/include/ADODB/drivers/adodb-db2.inc.php
+%%WWWDIR%%/include/ADODB/drivers/adodb-fbsql.inc.php
+%%WWWDIR%%/include/ADODB/drivers/adodb-firebird.inc.php
+%%WWWDIR%%/include/ADODB/drivers/adodb-ibase.inc.php
+%%WWWDIR%%/include/ADODB/drivers/adodb-informix.inc.php
+%%WWWDIR%%/include/ADODB/drivers/adodb-informix72.inc.php
+%%WWWDIR%%/include/ADODB/drivers/adodb-ldap.inc.php
+%%WWWDIR%%/include/ADODB/drivers/adodb-mssql.inc.php
+%%WWWDIR%%/include/ADODB/drivers/adodb-mssqlpo.inc.php
+%%WWWDIR%%/include/ADODB/drivers/adodb-mysql.inc.php
+%%WWWDIR%%/include/ADODB/drivers/adodb-mysqli.inc.php
+%%WWWDIR%%/include/ADODB/drivers/adodb-mysqlt.inc.php
+%%WWWDIR%%/include/ADODB/drivers/adodb-netezza.inc.php
+%%WWWDIR%%/include/ADODB/drivers/adodb-oci8.inc.php
+%%WWWDIR%%/include/ADODB/drivers/adodb-oci805.inc.php
+%%WWWDIR%%/include/ADODB/drivers/adodb-oci8po.inc.php
+%%WWWDIR%%/include/ADODB/drivers/adodb-odbc.inc.php
+%%WWWDIR%%/include/ADODB/drivers/adodb-odbc_mssql.inc.php
+%%WWWDIR%%/include/ADODB/drivers/adodb-odbc_oracle.inc.php
+%%WWWDIR%%/include/ADODB/drivers/adodb-odbtp.inc.php
+%%WWWDIR%%/include/ADODB/drivers/adodb-odbtp_unicode.inc.php
+%%WWWDIR%%/include/ADODB/drivers/adodb-oracle.inc.php
+%%WWWDIR%%/include/ADODB/drivers/adodb-pdo.inc.php
+%%WWWDIR%%/include/ADODB/drivers/adodb-pdo_mysql.inc.php
+%%WWWDIR%%/include/ADODB/drivers/adodb-pdo_oci.inc.php
+%%WWWDIR%%/include/ADODB/drivers/adodb-pdo_pgsql.inc.php
+%%WWWDIR%%/include/ADODB/drivers/adodb-postgres.inc.php
+%%WWWDIR%%/include/ADODB/drivers/adodb-postgres64.inc.php
+%%WWWDIR%%/include/ADODB/drivers/adodb-postgres7.inc.php
+%%WWWDIR%%/include/ADODB/drivers/adodb-postgres8.inc.php
+%%WWWDIR%%/include/ADODB/drivers/adodb-proxy.inc.php
+%%WWWDIR%%/include/ADODB/drivers/adodb-sapdb.inc.php
+%%WWWDIR%%/include/ADODB/drivers/adodb-sqlanywhere.inc.php
+%%WWWDIR%%/include/ADODB/drivers/adodb-sqlite.inc.php
+%%WWWDIR%%/include/ADODB/drivers/adodb-sqlitepo.inc.php
+%%WWWDIR%%/include/ADODB/drivers/adodb-sybase.inc.php
+%%WWWDIR%%/include/ADODB/drivers/adodb-sybase_ase.inc.php
+%%WWWDIR%%/include/ADODB/drivers/adodb-vfp.inc.php
+%%WWWDIR%%/include/ADODB/lang/adodb-ar.inc.php
+%%WWWDIR%%/include/ADODB/lang/adodb-bg.inc.php
+%%WWWDIR%%/include/ADODB/lang/adodb-bgutf8.inc.php
+%%WWWDIR%%/include/ADODB/lang/adodb-ca.inc.php
+%%WWWDIR%%/include/ADODB/lang/adodb-cn.inc.php
+%%WWWDIR%%/include/ADODB/lang/adodb-cz.inc.php
+%%WWWDIR%%/include/ADODB/lang/adodb-da.inc.php
+%%WWWDIR%%/include/ADODB/lang/adodb-de.inc.php
+%%WWWDIR%%/include/ADODB/lang/adodb-en.inc.php
+%%WWWDIR%%/include/ADODB/lang/adodb-es.inc.php
+%%WWWDIR%%/include/ADODB/lang/adodb-esperanto.inc.php
+%%WWWDIR%%/include/ADODB/lang/adodb-fr.inc.php
+%%WWWDIR%%/include/ADODB/lang/adodb-hu.inc.php
+%%WWWDIR%%/include/ADODB/lang/adodb-it.inc.php
+%%WWWDIR%%/include/ADODB/lang/adodb-nl.inc.php
+%%WWWDIR%%/include/ADODB/lang/adodb-pl.inc.php
+%%WWWDIR%%/include/ADODB/lang/adodb-pt-br.inc.php
+%%WWWDIR%%/include/ADODB/lang/adodb-ro.inc.php
+%%WWWDIR%%/include/ADODB/lang/adodb-ru1251.inc.php
+%%WWWDIR%%/include/ADODB/lang/adodb-sv.inc.php
+%%WWWDIR%%/include/ADODB/lang/adodb-uk1251.inc.php
+%%WWWDIR%%/include/ADODB/license.txt
+%%WWWDIR%%/include/ADODB/pear/Auth/Container/ADOdb.php
+%%WWWDIR%%/include/ADODB/pear/readme.Auth.txt
+%%WWWDIR%%/include/ADODB/perf/perf-db2.inc.php
+%%WWWDIR%%/include/ADODB/perf/perf-informix.inc.php
+%%WWWDIR%%/include/ADODB/perf/perf-mssql.inc.php
+%%WWWDIR%%/include/ADODB/perf/perf-mysql.inc.php
+%%WWWDIR%%/include/ADODB/perf/perf-oci8.inc.php
+%%WWWDIR%%/include/ADODB/perf/perf-postgres.inc.php
+%%WWWDIR%%/include/ADODB/pivottable.inc.php
+%%WWWDIR%%/include/ADODB/readme.txt
+%%WWWDIR%%/include/ADODB/rsfilter.inc.php
+%%WWWDIR%%/include/ADODB/server.php
+%%WWWDIR%%/include/ADODB/session/adodb-compress-bzip2.php
+%%WWWDIR%%/include/ADODB/session/adodb-compress-gzip.php
+%%WWWDIR%%/include/ADODB/session/adodb-cryptsession.php
+%%WWWDIR%%/include/ADODB/session/adodb-encrypt-mcrypt.php
+%%WWWDIR%%/include/ADODB/session/adodb-encrypt-md5.php
+%%WWWDIR%%/include/ADODB/session/adodb-encrypt-secret.php
+%%WWWDIR%%/include/ADODB/session/adodb-sess.txt
+%%WWWDIR%%/include/ADODB/session/adodb-session-clob.php
+%%WWWDIR%%/include/ADODB/session/adodb-session.php
+%%WWWDIR%%/include/ADODB/session/adodb-sessions.mysql.sql
+%%WWWDIR%%/include/ADODB/session/adodb-sessions.oracle.clob.sql
+%%WWWDIR%%/include/ADODB/session/adodb-sessions.oracle.sql
+%%WWWDIR%%/include/ADODB/session/crypt.inc.php
+%%WWWDIR%%/include/ADODB/session/old/adodb-cryptsession.php
+%%WWWDIR%%/include/ADODB/session/old/adodb-session-clob.php
+%%WWWDIR%%/include/ADODB/session/old/adodb-session.php
+%%WWWDIR%%/include/ADODB/session/old/crypt.inc.php
+%%WWWDIR%%/include/ADODB/session/session_schema.xml
+%%WWWDIR%%/include/ADODB/toexport.inc.php
+%%WWWDIR%%/include/ADODB/tohtml.inc.php
+%%WWWDIR%%/include/ADODB/xmlschema.dtd
+%%WWWDIR%%/include/ADODB/xsl/convert-0.1-0.2.xsl
+%%WWWDIR%%/include/ADODB/xsl/convert-0.2-0.1.xsl
+%%WWWDIR%%/include/ADODB/xsl/remove-0.2.xsl
+%%WWWDIR%%/include/SMARTY/Config_File.class.php
+%%WWWDIR%%/include/SMARTY/Smarty.class.php
+%%WWWDIR%%/include/SMARTY/Smarty_Compiler.class.php
+%%WWWDIR%%/include/SMARTY/debug.tpl
+%%WWWDIR%%/include/SMARTY/internals/core.assemble_plugin_filepath.php
+%%WWWDIR%%/include/SMARTY/internals/core.assign_smarty_interface.php
+%%WWWDIR%%/include/SMARTY/internals/core.create_dir_structure.php
+%%WWWDIR%%/include/SMARTY/internals/core.display_debug_console.php
+%%WWWDIR%%/include/SMARTY/internals/core.get_include_path.php
+%%WWWDIR%%/include/SMARTY/internals/core.get_microtime.php
+%%WWWDIR%%/include/SMARTY/internals/core.get_php_resource.php
+%%WWWDIR%%/include/SMARTY/internals/core.is_secure.php
+%%WWWDIR%%/include/SMARTY/internals/core.is_trusted.php
+%%WWWDIR%%/include/SMARTY/internals/core.load_plugins.php
+%%WWWDIR%%/include/SMARTY/internals/core.load_resource_plugin.php
+%%WWWDIR%%/include/SMARTY/internals/core.process_cached_inserts.php
+%%WWWDIR%%/include/SMARTY/internals/core.process_compiled_include.php
+%%WWWDIR%%/include/SMARTY/internals/core.read_cache_file.php
+%%WWWDIR%%/include/SMARTY/internals/core.rm_auto.php
+%%WWWDIR%%/include/SMARTY/internals/core.rmdir.php
+%%WWWDIR%%/include/SMARTY/internals/core.run_insert_handler.php
+%%WWWDIR%%/include/SMARTY/internals/core.smarty_include_php.php
+%%WWWDIR%%/include/SMARTY/internals/core.write_cache_file.php
+%%WWWDIR%%/include/SMARTY/internals/core.write_compiled_include.php
+%%WWWDIR%%/include/SMARTY/internals/core.write_compiled_resource.php
+%%WWWDIR%%/include/SMARTY/internals/core.write_file.php
+%%WWWDIR%%/include/SMARTY/plugins/block.textformat.php
+%%WWWDIR%%/include/SMARTY/plugins/compiler.assign.php
+%%WWWDIR%%/include/SMARTY/plugins/function.assign_debug_info.php
+%%WWWDIR%%/include/SMARTY/plugins/function.config_load.php
+%%WWWDIR%%/include/SMARTY/plugins/function.counter.php
+%%WWWDIR%%/include/SMARTY/plugins/function.cycle.php
+%%WWWDIR%%/include/SMARTY/plugins/function.debug.php
+%%WWWDIR%%/include/SMARTY/plugins/function.eval.php
+%%WWWDIR%%/include/SMARTY/plugins/function.fetch.php
+%%WWWDIR%%/include/SMARTY/plugins/function.html_checkboxes.php
+%%WWWDIR%%/include/SMARTY/plugins/function.html_image.php
+%%WWWDIR%%/include/SMARTY/plugins/function.html_options.php
+%%WWWDIR%%/include/SMARTY/plugins/function.html_radios.php
+%%WWWDIR%%/include/SMARTY/plugins/function.html_select_date.php
+%%WWWDIR%%/include/SMARTY/plugins/function.html_select_time.php
+%%WWWDIR%%/include/SMARTY/plugins/function.html_table.php
+%%WWWDIR%%/include/SMARTY/plugins/function.mailto.php
+%%WWWDIR%%/include/SMARTY/plugins/function.math.php
+%%WWWDIR%%/include/SMARTY/plugins/function.popup.php
+%%WWWDIR%%/include/SMARTY/plugins/function.popup_init.php
+%%WWWDIR%%/include/SMARTY/plugins/modifier.capitalize.php
+%%WWWDIR%%/include/SMARTY/plugins/modifier.cat.php
+%%WWWDIR%%/include/SMARTY/plugins/modifier.count_characters.php
+%%WWWDIR%%/include/SMARTY/plugins/modifier.count_paragraphs.php
+%%WWWDIR%%/include/SMARTY/plugins/modifier.count_sentences.php
+%%WWWDIR%%/include/SMARTY/plugins/modifier.count_words.php
+%%WWWDIR%%/include/SMARTY/plugins/modifier.date_format.php
+%%WWWDIR%%/include/SMARTY/plugins/modifier.debug_print_var.php
+%%WWWDIR%%/include/SMARTY/plugins/modifier.default.php
+%%WWWDIR%%/include/SMARTY/plugins/modifier.escape.php
+%%WWWDIR%%/include/SMARTY/plugins/modifier.indent.php
+%%WWWDIR%%/include/SMARTY/plugins/modifier.lower.php
+%%WWWDIR%%/include/SMARTY/plugins/modifier.nl2br.php
+%%WWWDIR%%/include/SMARTY/plugins/modifier.regex_replace.php
+%%WWWDIR%%/include/SMARTY/plugins/modifier.replace.php
+%%WWWDIR%%/include/SMARTY/plugins/modifier.spacify.php
+%%WWWDIR%%/include/SMARTY/plugins/modifier.string_format.php
+%%WWWDIR%%/include/SMARTY/plugins/modifier.strip.php
+%%WWWDIR%%/include/SMARTY/plugins/modifier.strip_tags.php
+%%WWWDIR%%/include/SMARTY/plugins/modifier.truncate.php
+%%WWWDIR%%/include/SMARTY/plugins/modifier.upper.php
+%%WWWDIR%%/include/SMARTY/plugins/modifier.wordwrap.php
+%%WWWDIR%%/include/SMARTY/plugins/outputfilter.trimwhitespace.php
+%%WWWDIR%%/include/SMARTY/plugins/shared.escape_special_chars.php
+%%WWWDIR%%/include/SMARTY/plugins/shared.make_timestamp.php
+%%WWWDIR%%/include/acl.php
+%%WWWDIR%%/include/auth.php
+%%WWWDIR%%/include/fpdf/font/courier.php
+%%WWWDIR%%/include/fpdf/font/desktop.ini
+%%WWWDIR%%/include/fpdf/font/helvetica.php
+%%WWWDIR%%/include/fpdf/font/helveticab.php
+%%WWWDIR%%/include/fpdf/font/helveticabi.php
+%%WWWDIR%%/include/fpdf/font/helveticai.php
+%%WWWDIR%%/include/fpdf/font/makefont/cp1250.map
+%%WWWDIR%%/include/fpdf/font/makefont/cp1251.map
+%%WWWDIR%%/include/fpdf/font/makefont/cp1252.map
+%%WWWDIR%%/include/fpdf/font/makefont/cp1253.map
+%%WWWDIR%%/include/fpdf/font/makefont/cp1254.map
+%%WWWDIR%%/include/fpdf/font/makefont/cp1255.map
+%%WWWDIR%%/include/fpdf/font/makefont/cp1257.map
+%%WWWDIR%%/include/fpdf/font/makefont/cp1258.map
+%%WWWDIR%%/include/fpdf/font/makefont/cp874.map
+%%WWWDIR%%/include/fpdf/font/makefont/iso-8859-1.map
+%%WWWDIR%%/include/fpdf/font/makefont/iso-8859-11.map
+%%WWWDIR%%/include/fpdf/font/makefont/iso-8859-15.map
+%%WWWDIR%%/include/fpdf/font/makefont/iso-8859-16.map
+%%WWWDIR%%/include/fpdf/font/makefont/iso-8859-2.map
+%%WWWDIR%%/include/fpdf/font/makefont/iso-8859-4.map
+%%WWWDIR%%/include/fpdf/font/makefont/iso-8859-5.map
+%%WWWDIR%%/include/fpdf/font/makefont/iso-8859-7.map
+%%WWWDIR%%/include/fpdf/font/makefont/iso-8859-9.map
+%%WWWDIR%%/include/fpdf/font/makefont/koi8-r.map
+%%WWWDIR%%/include/fpdf/font/makefont/koi8-u.map
+%%WWWDIR%%/include/fpdf/font/makefont/makefont.php
+%%WWWDIR%%/include/fpdf/font/symbol.php
+%%WWWDIR%%/include/fpdf/font/times.php
+%%WWWDIR%%/include/fpdf/font/timesb.php
+%%WWWDIR%%/include/fpdf/font/timesbi.php
+%%WWWDIR%%/include/fpdf/font/timesi.php
+%%WWWDIR%%/include/fpdf/font/zapfdingbats.php
+%%WWWDIR%%/include/fpdf/fpdf.php
+%%WWWDIR%%/include/fpdf/license.txt
+%%WWWDIR%%/include/index.php
+%%WWWDIR%%/include/jscalendar/README
+%%WWWDIR%%/include/jscalendar/calendar-blue.css
+%%WWWDIR%%/include/jscalendar/calendar-setup_stripped.js
+%%WWWDIR%%/include/jscalendar/calendar_stripped.js
+%%WWWDIR%%/include/jscalendar/img.gif
+%%WWWDIR%%/include/jscalendar/lang/calendar-af.js
+%%WWWDIR%%/include/jscalendar/lang/calendar-al.js
+%%WWWDIR%%/include/jscalendar/lang/calendar-bg.js
+%%WWWDIR%%/include/jscalendar/lang/calendar-big5-utf8.js
+%%WWWDIR%%/include/jscalendar/lang/calendar-big5.js
+%%WWWDIR%%/include/jscalendar/lang/calendar-br.js
+%%WWWDIR%%/include/jscalendar/lang/calendar-ca.js
+%%WWWDIR%%/include/jscalendar/lang/calendar-cs-utf8.js
+%%WWWDIR%%/include/jscalendar/lang/calendar-cs-win.js
+%%WWWDIR%%/include/jscalendar/lang/calendar-da.js
+%%WWWDIR%%/include/jscalendar/lang/calendar-de.js
+%%WWWDIR%%/include/jscalendar/lang/calendar-du.js
+%%WWWDIR%%/include/jscalendar/lang/calendar-el.js
+%%WWWDIR%%/include/jscalendar/lang/calendar-english.js
+%%WWWDIR%%/include/jscalendar/lang/calendar-es.js
+%%WWWDIR%%/include/jscalendar/lang/calendar-eu.js
+%%WWWDIR%%/include/jscalendar/lang/calendar-fi.js
+%%WWWDIR%%/include/jscalendar/lang/calendar-fr.js
+%%WWWDIR%%/include/jscalendar/lang/calendar-french.js
+%%WWWDIR%%/include/jscalendar/lang/calendar-german.js
+%%WWWDIR%%/include/jscalendar/lang/calendar-he-utf8.js
+%%WWWDIR%%/include/jscalendar/lang/calendar-hr-utf8.js
+%%WWWDIR%%/include/jscalendar/lang/calendar-hr.js
+%%WWWDIR%%/include/jscalendar/lang/calendar-hu.js
+%%WWWDIR%%/include/jscalendar/lang/calendar-it.js
+%%WWWDIR%%/include/jscalendar/lang/calendar-italian.js
+%%WWWDIR%%/include/jscalendar/lang/calendar-jp.js
+%%WWWDIR%%/include/jscalendar/lang/calendar-ko-utf8.js
+%%WWWDIR%%/include/jscalendar/lang/calendar-ko.js
+%%WWWDIR%%/include/jscalendar/lang/calendar-lt-utf8.js
+%%WWWDIR%%/include/jscalendar/lang/calendar-lt.js
+%%WWWDIR%%/include/jscalendar/lang/calendar-lv.js
+%%WWWDIR%%/include/jscalendar/lang/calendar-nl.js
+%%WWWDIR%%/include/jscalendar/lang/calendar-no.js
+%%WWWDIR%%/include/jscalendar/lang/calendar-pl-utf8.js
+%%WWWDIR%%/include/jscalendar/lang/calendar-pl.js
+%%WWWDIR%%/include/jscalendar/lang/calendar-pt.js
+%%WWWDIR%%/include/jscalendar/lang/calendar-ro.js
+%%WWWDIR%%/include/jscalendar/lang/calendar-ru-UTF.js
+%%WWWDIR%%/include/jscalendar/lang/calendar-ru.js
+%%WWWDIR%%/include/jscalendar/lang/calendar-ru_win_.js
+%%WWWDIR%%/include/jscalendar/lang/calendar-russian.js
+%%WWWDIR%%/include/jscalendar/lang/calendar-si.js
+%%WWWDIR%%/include/jscalendar/lang/calendar-sk.js
+%%WWWDIR%%/include/jscalendar/lang/calendar-sp.js
+%%WWWDIR%%/include/jscalendar/lang/calendar-spanish.js
+%%WWWDIR%%/include/jscalendar/lang/calendar-sr-utf8.js
+%%WWWDIR%%/include/jscalendar/lang/calendar-sr.js
+%%WWWDIR%%/include/jscalendar/lang/calendar-sv.js
+%%WWWDIR%%/include/jscalendar/lang/calendar-tr.js
+%%WWWDIR%%/include/jscalendar/lang/calendar-zh.js
+%%WWWDIR%%/include/jscalendar/lang/cn_utf8.js
+%%WWWDIR%%/include/jscalendar/menuarrow.gif
+%%WWWDIR%%/include/phpinfo.php
+%%WWWDIR%%/include/session.php
+%%WWWDIR%%/include/swift/lib/classes/Swift.php
+%%WWWDIR%%/include/swift/lib/classes/Swift/Attachment.php
+%%WWWDIR%%/include/swift/lib/classes/Swift/ByteStream/AbstractFilterableInputStream.php
+%%WWWDIR%%/include/swift/lib/classes/Swift/ByteStream/ArrayByteStream.php
+%%WWWDIR%%/include/swift/lib/classes/Swift/ByteStream/FileByteStream.php
+%%WWWDIR%%/include/swift/lib/classes/Swift/CharacterReader.php
+%%WWWDIR%%/include/swift/lib/classes/Swift/CharacterReader/GenericFixedWidthReader.php
+%%WWWDIR%%/include/swift/lib/classes/Swift/CharacterReader/UsAsciiReader.php
+%%WWWDIR%%/include/swift/lib/classes/Swift/CharacterReader/Utf8Reader.php
+%%WWWDIR%%/include/swift/lib/classes/Swift/CharacterReaderFactory.php
+%%WWWDIR%%/include/swift/lib/classes/Swift/CharacterReaderFactory/SimpleCharacterReaderFactory.php
+%%WWWDIR%%/include/swift/lib/classes/Swift/CharacterStream.php
+%%WWWDIR%%/include/swift/lib/classes/Swift/CharacterStream/ArrayCharacterStream.php
+%%WWWDIR%%/include/swift/lib/classes/Swift/CharacterStream/NgCharacterStream.php
+%%WWWDIR%%/include/swift/lib/classes/Swift/DependencyContainer.php
+%%WWWDIR%%/include/swift/lib/classes/Swift/DependencyException.php
+%%WWWDIR%%/include/swift/lib/classes/Swift/EmbeddedFile.php
+%%WWWDIR%%/include/swift/lib/classes/Swift/Encoder.php
+%%WWWDIR%%/include/swift/lib/classes/Swift/Encoder/Base64Encoder.php
+%%WWWDIR%%/include/swift/lib/classes/Swift/Encoder/QpEncoder.php
+%%WWWDIR%%/include/swift/lib/classes/Swift/Encoder/Rfc2231Encoder.php
+%%WWWDIR%%/include/swift/lib/classes/Swift/Encoding.php
+%%WWWDIR%%/include/swift/lib/classes/Swift/Events/CommandEvent.php
+%%WWWDIR%%/include/swift/lib/classes/Swift/Events/CommandListener.php
+%%WWWDIR%%/include/swift/lib/classes/Swift/Events/Event.php
+%%WWWDIR%%/include/swift/lib/classes/Swift/Events/EventDispatcher.php
+%%WWWDIR%%/include/swift/lib/classes/Swift/Events/EventListener.php
+%%WWWDIR%%/include/swift/lib/classes/Swift/Events/EventObject.php
+%%WWWDIR%%/include/swift/lib/classes/Swift/Events/ResponseEvent.php
+%%WWWDIR%%/include/swift/lib/classes/Swift/Events/ResponseListener.php
+%%WWWDIR%%/include/swift/lib/classes/Swift/Events/SendEvent.php
+%%WWWDIR%%/include/swift/lib/classes/Swift/Events/SendListener.php
+%%WWWDIR%%/include/swift/lib/classes/Swift/Events/SimpleEventDispatcher.php
+%%WWWDIR%%/include/swift/lib/classes/Swift/Events/TransportChangeEvent.php
+%%WWWDIR%%/include/swift/lib/classes/Swift/Events/TransportChangeListener.php
+%%WWWDIR%%/include/swift/lib/classes/Swift/Events/TransportExceptionEvent.php
+%%WWWDIR%%/include/swift/lib/classes/Swift/Events/TransportExceptionListener.php
+%%WWWDIR%%/include/swift/lib/classes/Swift/FailoverTransport.php
+%%WWWDIR%%/include/swift/lib/classes/Swift/FileStream.php
+%%WWWDIR%%/include/swift/lib/classes/Swift/Filterable.php
+%%WWWDIR%%/include/swift/lib/classes/Swift/Image.php
+%%WWWDIR%%/include/swift/lib/classes/Swift/InputByteStream.php
+%%WWWDIR%%/include/swift/lib/classes/Swift/IoException.php
+%%WWWDIR%%/include/swift/lib/classes/Swift/KeyCache.php
+%%WWWDIR%%/include/swift/lib/classes/Swift/KeyCache/ArrayKeyCache.php
+%%WWWDIR%%/include/swift/lib/classes/Swift/KeyCache/DiskKeyCache.php
+%%WWWDIR%%/include/swift/lib/classes/Swift/KeyCache/KeyCacheInputStream.php
+%%WWWDIR%%/include/swift/lib/classes/Swift/KeyCache/NullKeyCache.php
+%%WWWDIR%%/include/swift/lib/classes/Swift/KeyCache/SimpleKeyCacheInputStream.php
+%%WWWDIR%%/include/swift/lib/classes/Swift/LoadBalancedTransport.php
+%%WWWDIR%%/include/swift/lib/classes/Swift/MailTransport.php
+%%WWWDIR%%/include/swift/lib/classes/Swift/Mailer.php
+%%WWWDIR%%/include/swift/lib/classes/Swift/Mailer/ArrayRecipientIterator.php
+%%WWWDIR%%/include/swift/lib/classes/Swift/Mailer/RecipientIterator.php
+%%WWWDIR%%/include/swift/lib/classes/Swift/Message.php
+%%WWWDIR%%/include/swift/lib/classes/Swift/Mime/Attachment.php
+%%WWWDIR%%/include/swift/lib/classes/Swift/Mime/CharsetObserver.php
+%%WWWDIR%%/include/swift/lib/classes/Swift/Mime/ContentEncoder.php
+%%WWWDIR%%/include/swift/lib/classes/Swift/Mime/ContentEncoder/Base64ContentEncoder.php
+%%WWWDIR%%/include/swift/lib/classes/Swift/Mime/ContentEncoder/PlainContentEncoder.php
+%%WWWDIR%%/include/swift/lib/classes/Swift/Mime/ContentEncoder/QpContentEncoder.php
+%%WWWDIR%%/include/swift/lib/classes/Swift/Mime/EmbeddedFile.php
+%%WWWDIR%%/include/swift/lib/classes/Swift/Mime/EncodingObserver.php
+%%WWWDIR%%/include/swift/lib/classes/Swift/Mime/Header.php
+%%WWWDIR%%/include/swift/lib/classes/Swift/Mime/HeaderEncoder.php
+%%WWWDIR%%/include/swift/lib/classes/Swift/Mime/HeaderEncoder/Base64HeaderEncoder.php
+%%WWWDIR%%/include/swift/lib/classes/Swift/Mime/HeaderEncoder/QpHeaderEncoder.php
+%%WWWDIR%%/include/swift/lib/classes/Swift/Mime/HeaderFactory.php
+%%WWWDIR%%/include/swift/lib/classes/Swift/Mime/HeaderSet.php
+%%WWWDIR%%/include/swift/lib/classes/Swift/Mime/Headers/AbstractHeader.php
+%%WWWDIR%%/include/swift/lib/classes/Swift/Mime/Headers/DateHeader.php
+%%WWWDIR%%/include/swift/lib/classes/Swift/Mime/Headers/IdentificationHeader.php
+%%WWWDIR%%/include/swift/lib/classes/Swift/Mime/Headers/MailboxHeader.php
+%%WWWDIR%%/include/swift/lib/classes/Swift/Mime/Headers/ParameterizedHeader.php
+%%WWWDIR%%/include/swift/lib/classes/Swift/Mime/Headers/PathHeader.php
+%%WWWDIR%%/include/swift/lib/classes/Swift/Mime/Headers/UnstructuredHeader.php
+%%WWWDIR%%/include/swift/lib/classes/Swift/Mime/Message.php
+%%WWWDIR%%/include/swift/lib/classes/Swift/Mime/MimeEntity.php
+%%WWWDIR%%/include/swift/lib/classes/Swift/Mime/MimePart.php
+%%WWWDIR%%/include/swift/lib/classes/Swift/Mime/ParameterizedHeader.php
+%%WWWDIR%%/include/swift/lib/classes/Swift/Mime/SimpleHeaderFactory.php
+%%WWWDIR%%/include/swift/lib/classes/Swift/Mime/SimpleHeaderSet.php
+%%WWWDIR%%/include/swift/lib/classes/Swift/Mime/SimpleMessage.php
+%%WWWDIR%%/include/swift/lib/classes/Swift/Mime/SimpleMimeEntity.php
+%%WWWDIR%%/include/swift/lib/classes/Swift/MimePart.php
+%%WWWDIR%%/include/swift/lib/classes/Swift/OutputByteStream.php
+%%WWWDIR%%/include/swift/lib/classes/Swift/Plugins/AntiFloodPlugin.php
+%%WWWDIR%%/include/swift/lib/classes/Swift/Plugins/BandwidthMonitorPlugin.php
+%%WWWDIR%%/include/swift/lib/classes/Swift/Plugins/Decorator/Replacements.php
+%%WWWDIR%%/include/swift/lib/classes/Swift/Plugins/DecoratorPlugin.php
+%%WWWDIR%%/include/swift/lib/classes/Swift/Plugins/Logger.php
+%%WWWDIR%%/include/swift/lib/classes/Swift/Plugins/LoggerPlugin.php
+%%WWWDIR%%/include/swift/lib/classes/Swift/Plugins/Loggers/ArrayLogger.php
+%%WWWDIR%%/include/swift/lib/classes/Swift/Plugins/Loggers/EchoLogger.php
+%%WWWDIR%%/include/swift/lib/classes/Swift/Plugins/Pop/Pop3Connection.php
+%%WWWDIR%%/include/swift/lib/classes/Swift/Plugins/Pop/Pop3Exception.php
+%%WWWDIR%%/include/swift/lib/classes/Swift/Plugins/PopBeforeSmtpPlugin.php
+%%WWWDIR%%/include/swift/lib/classes/Swift/Plugins/Reporter.php
+%%WWWDIR%%/include/swift/lib/classes/Swift/Plugins/ReporterPlugin.php
+%%WWWDIR%%/include/swift/lib/classes/Swift/Plugins/Reporters/HitReporter.php
+%%WWWDIR%%/include/swift/lib/classes/Swift/Plugins/Reporters/HtmlReporter.php
+%%WWWDIR%%/include/swift/lib/classes/Swift/Plugins/Sleeper.php
+%%WWWDIR%%/include/swift/lib/classes/Swift/Plugins/ThrottlerPlugin.php
+%%WWWDIR%%/include/swift/lib/classes/Swift/Plugins/Timer.php
+%%WWWDIR%%/include/swift/lib/classes/Swift/Preferences.php
+%%WWWDIR%%/include/swift/lib/classes/Swift/ReplacementFilterFactory.php
+%%WWWDIR%%/include/swift/lib/classes/Swift/RfcComplianceException.php
+%%WWWDIR%%/include/swift/lib/classes/Swift/SendmailTransport.php
+%%WWWDIR%%/include/swift/lib/classes/Swift/SmtpTransport.php
+%%WWWDIR%%/include/swift/lib/classes/Swift/StreamFilter.php
+%%WWWDIR%%/include/swift/lib/classes/Swift/StreamFilters/ByteArrayReplacementFilter.php
+%%WWWDIR%%/include/swift/lib/classes/Swift/StreamFilters/StringReplacementFilter.php
+%%WWWDIR%%/include/swift/lib/classes/Swift/StreamFilters/StringReplacementFilterFactory.php
+%%WWWDIR%%/include/swift/lib/classes/Swift/SwiftException.php
+%%WWWDIR%%/include/swift/lib/classes/Swift/Transport.php
+%%WWWDIR%%/include/swift/lib/classes/Swift/Transport/AbstractSmtpTransport.php
+%%WWWDIR%%/include/swift/lib/classes/Swift/Transport/Esmtp/Auth/CramMd5Authenticator.php
+%%WWWDIR%%/include/swift/lib/classes/Swift/Transport/Esmtp/Auth/LoginAuthenticator.php
+%%WWWDIR%%/include/swift/lib/classes/Swift/Transport/Esmtp/Auth/PlainAuthenticator.php
+%%WWWDIR%%/include/swift/lib/classes/Swift/Transport/Esmtp/AuthHandler.php
+%%WWWDIR%%/include/swift/lib/classes/Swift/Transport/Esmtp/Authenticator.php
+%%WWWDIR%%/include/swift/lib/classes/Swift/Transport/EsmtpHandler.php
+%%WWWDIR%%/include/swift/lib/classes/Swift/Transport/EsmtpTransport.php
+%%WWWDIR%%/include/swift/lib/classes/Swift/Transport/FailoverTransport.php
+%%WWWDIR%%/include/swift/lib/classes/Swift/Transport/IoBuffer.php
+%%WWWDIR%%/include/swift/lib/classes/Swift/Transport/LoadBalancedTransport.php
+%%WWWDIR%%/include/swift/lib/classes/Swift/Transport/MailInvoker.php
+%%WWWDIR%%/include/swift/lib/classes/Swift/Transport/MailTransport.php
+%%WWWDIR%%/include/swift/lib/classes/Swift/Transport/SendmailTransport.php
+%%WWWDIR%%/include/swift/lib/classes/Swift/Transport/SimpleMailInvoker.php
+%%WWWDIR%%/include/swift/lib/classes/Swift/Transport/SmtpAgent.php
+%%WWWDIR%%/include/swift/lib/classes/Swift/Transport/StreamBuffer.php
+%%WWWDIR%%/include/swift/lib/classes/Swift/TransportException.php
+%%WWWDIR%%/include/swift/lib/dependency_maps/cache_deps.php
+%%WWWDIR%%/include/swift/lib/dependency_maps/mime_deps.php
+%%WWWDIR%%/include/swift/lib/dependency_maps/transport_deps.php
+%%WWWDIR%%/include/swift/lib/mime_types.php
+%%WWWDIR%%/include/swift/lib/preferences.php
+%%WWWDIR%%/include/swift/lib/swift_init.php
+%%WWWDIR%%/include/swift/lib/swift_required.php
+%%WWWDIR%%/include/swift/lib/swift_required_pear.php
+%%WWWDIR%%/include/tinymce/changelog.txt
+%%WWWDIR%%/include/tinymce/jscripts/tiny_mce/langs/en.js
+%%WWWDIR%%/include/tinymce/jscripts/tiny_mce/license.txt
+%%WWWDIR%%/include/tinymce/jscripts/tiny_mce/plugins/advhr/css/advhr.css
+%%WWWDIR%%/include/tinymce/jscripts/tiny_mce/plugins/advhr/editor_plugin.js
+%%WWWDIR%%/include/tinymce/jscripts/tiny_mce/plugins/advhr/editor_plugin_src.js
+%%WWWDIR%%/include/tinymce/jscripts/tiny_mce/plugins/advhr/js/rule.js
+%%WWWDIR%%/include/tinymce/jscripts/tiny_mce/plugins/advhr/langs/en_dlg.js
+%%WWWDIR%%/include/tinymce/jscripts/tiny_mce/plugins/advhr/rule.htm
+%%WWWDIR%%/include/tinymce/jscripts/tiny_mce/plugins/advimage/css/advimage.css
+%%WWWDIR%%/include/tinymce/jscripts/tiny_mce/plugins/advimage/editor_plugin.js
+%%WWWDIR%%/include/tinymce/jscripts/tiny_mce/plugins/advimage/editor_plugin_src.js
+%%WWWDIR%%/include/tinymce/jscripts/tiny_mce/plugins/advimage/image.htm
+%%WWWDIR%%/include/tinymce/jscripts/tiny_mce/plugins/advimage/img/sample.gif
+%%WWWDIR%%/include/tinymce/jscripts/tiny_mce/plugins/advimage/js/image.js
+%%WWWDIR%%/include/tinymce/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js
+%%WWWDIR%%/include/tinymce/jscripts/tiny_mce/plugins/advlink/css/advlink.css
+%%WWWDIR%%/include/tinymce/jscripts/tiny_mce/plugins/advlink/editor_plugin.js
+%%WWWDIR%%/include/tinymce/jscripts/tiny_mce/plugins/advlink/editor_plugin_src.js
+%%WWWDIR%%/include/tinymce/jscripts/tiny_mce/plugins/advlink/js/advlink.js
+%%WWWDIR%%/include/tinymce/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js
+%%WWWDIR%%/include/tinymce/jscripts/tiny_mce/plugins/advlink/link.htm
+%%WWWDIR%%/include/tinymce/jscripts/tiny_mce/plugins/advlist/editor_plugin.js
+%%WWWDIR%%/include/tinymce/jscripts/tiny_mce/plugins/advlist/editor_plugin_src.js
+%%WWWDIR%%/include/tinymce/jscripts/tiny_mce/plugins/autoresize/editor_plugin.js
+%%WWWDIR%%/include/tinymce/jscripts/tiny_mce/plugins/autoresize/editor_plugin_src.js
+%%WWWDIR%%/include/tinymce/jscripts/tiny_mce/plugins/autosave/editor_plugin.js
+%%WWWDIR%%/include/tinymce/jscripts/tiny_mce/plugins/autosave/editor_plugin_src.js
+%%WWWDIR%%/include/tinymce/jscripts/tiny_mce/plugins/autosave/langs/en.js
+%%WWWDIR%%/include/tinymce/jscripts/tiny_mce/plugins/bbcode/editor_plugin.js
+%%WWWDIR%%/include/tinymce/jscripts/tiny_mce/plugins/bbcode/editor_plugin_src.js
+%%WWWDIR%%/include/tinymce/jscripts/tiny_mce/plugins/contextmenu/editor_plugin.js
+%%WWWDIR%%/include/tinymce/jscripts/tiny_mce/plugins/contextmenu/editor_plugin_src.js
+%%WWWDIR%%/include/tinymce/jscripts/tiny_mce/plugins/directionality/editor_plugin.js
+%%WWWDIR%%/include/tinymce/jscripts/tiny_mce/plugins/directionality/editor_plugin_src.js
+%%WWWDIR%%/include/tinymce/jscripts/tiny_mce/plugins/emotions/editor_plugin.js
+%%WWWDIR%%/include/tinymce/jscripts/tiny_mce/plugins/emotions/editor_plugin_src.js
+%%WWWDIR%%/include/tinymce/jscripts/tiny_mce/plugins/emotions/emotions.htm
+%%WWWDIR%%/include/tinymce/jscripts/tiny_mce/plugins/emotions/img/smiley-cool.gif
+%%WWWDIR%%/include/tinymce/jscripts/tiny_mce/plugins/emotions/img/smiley-cry.gif
+%%WWWDIR%%/include/tinymce/jscripts/tiny_mce/plugins/emotions/img/smiley-embarassed.gif
+%%WWWDIR%%/include/tinymce/jscripts/tiny_mce/plugins/emotions/img/smiley-foot-in-mouth.gif
+%%WWWDIR%%/include/tinymce/jscripts/tiny_mce/plugins/emotions/img/smiley-frown.gif
+%%WWWDIR%%/include/tinymce/jscripts/tiny_mce/plugins/emotions/img/smiley-innocent.gif
+%%WWWDIR%%/include/tinymce/jscripts/tiny_mce/plugins/emotions/img/smiley-kiss.gif
+%%WWWDIR%%/include/tinymce/jscripts/tiny_mce/plugins/emotions/img/smiley-laughing.gif
+%%WWWDIR%%/include/tinymce/jscripts/tiny_mce/plugins/emotions/img/smiley-money-mouth.gif
+%%WWWDIR%%/include/tinymce/jscripts/tiny_mce/plugins/emotions/img/smiley-sealed.gif
+%%WWWDIR%%/include/tinymce/jscripts/tiny_mce/plugins/emotions/img/smiley-smile.gif
+%%WWWDIR%%/include/tinymce/jscripts/tiny_mce/plugins/emotions/img/smiley-surprised.gif
+%%WWWDIR%%/include/tinymce/jscripts/tiny_mce/plugins/emotions/img/smiley-tongue-out.gif
+%%WWWDIR%%/include/tinymce/jscripts/tiny_mce/plugins/emotions/img/smiley-undecided.gif
+%%WWWDIR%%/include/tinymce/jscripts/tiny_mce/plugins/emotions/img/smiley-wink.gif
+%%WWWDIR%%/include/tinymce/jscripts/tiny_mce/plugins/emotions/img/smiley-yell.gif
+%%WWWDIR%%/include/tinymce/jscripts/tiny_mce/plugins/emotions/js/emotions.js
+%%WWWDIR%%/include/tinymce/jscripts/tiny_mce/plugins/emotions/langs/en_dlg.js
+%%WWWDIR%%/include/tinymce/jscripts/tiny_mce/plugins/example/dialog.htm
+%%WWWDIR%%/include/tinymce/jscripts/tiny_mce/plugins/example/editor_plugin.js
+%%WWWDIR%%/include/tinymce/jscripts/tiny_mce/plugins/example/editor_plugin_src.js
+%%WWWDIR%%/include/tinymce/jscripts/tiny_mce/plugins/example/img/example.gif
+%%WWWDIR%%/include/tinymce/jscripts/tiny_mce/plugins/example/js/dialog.js
+%%WWWDIR%%/include/tinymce/jscripts/tiny_mce/plugins/example/langs/en.js
+%%WWWDIR%%/include/tinymce/jscripts/tiny_mce/plugins/example/langs/en_dlg.js
+%%WWWDIR%%/include/tinymce/jscripts/tiny_mce/plugins/fullpage/css/fullpage.css
+%%WWWDIR%%/include/tinymce/jscripts/tiny_mce/plugins/fullpage/editor_plugin.js
+%%WWWDIR%%/include/tinymce/jscripts/tiny_mce/plugins/fullpage/editor_plugin_src.js
+%%WWWDIR%%/include/tinymce/jscripts/tiny_mce/plugins/fullpage/fullpage.htm
+%%WWWDIR%%/include/tinymce/jscripts/tiny_mce/plugins/fullpage/js/fullpage.js
+%%WWWDIR%%/include/tinymce/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js
+%%WWWDIR%%/include/tinymce/jscripts/tiny_mce/plugins/fullscreen/editor_plugin.js
+%%WWWDIR%%/include/tinymce/jscripts/tiny_mce/plugins/fullscreen/editor_plugin_src.js
+%%WWWDIR%%/include/tinymce/jscripts/tiny_mce/plugins/fullscreen/fullscreen.htm
+%%WWWDIR%%/include/tinymce/jscripts/tiny_mce/plugins/iespell/editor_plugin.js
+%%WWWDIR%%/include/tinymce/jscripts/tiny_mce/plugins/iespell/editor_plugin_src.js
+%%WWWDIR%%/include/tinymce/jscripts/tiny_mce/plugins/inlinepopups/editor_plugin.js
+%%WWWDIR%%/include/tinymce/jscripts/tiny_mce/plugins/inlinepopups/editor_plugin_src.js
+%%WWWDIR%%/include/tinymce/jscripts/tiny_mce/plugins/inlinepopups/skins/clearlooks2/img/alert.gif
+%%WWWDIR%%/include/tinymce/jscripts/tiny_mce/plugins/inlinepopups/skins/clearlooks2/img/button.gif
+%%WWWDIR%%/include/tinymce/jscripts/tiny_mce/plugins/inlinepopups/skins/clearlooks2/img/buttons.gif
+%%WWWDIR%%/include/tinymce/jscripts/tiny_mce/plugins/inlinepopups/skins/clearlooks2/img/confirm.gif
+%%WWWDIR%%/include/tinymce/jscripts/tiny_mce/plugins/inlinepopups/skins/clearlooks2/img/corners.gif
+%%WWWDIR%%/include/tinymce/jscripts/tiny_mce/plugins/inlinepopups/skins/clearlooks2/img/horizontal.gif
+%%WWWDIR%%/include/tinymce/jscripts/tiny_mce/plugins/inlinepopups/skins/clearlooks2/img/vertical.gif
+%%WWWDIR%%/include/tinymce/jscripts/tiny_mce/plugins/inlinepopups/skins/clearlooks2/window.css
+%%WWWDIR%%/include/tinymce/jscripts/tiny_mce/plugins/inlinepopups/template.htm
+%%WWWDIR%%/include/tinymce/jscripts/tiny_mce/plugins/insertdatetime/editor_plugin.js
+%%WWWDIR%%/include/tinymce/jscripts/tiny_mce/plugins/insertdatetime/editor_plugin_src.js
+%%WWWDIR%%/include/tinymce/jscripts/tiny_mce/plugins/layer/editor_plugin.js
+%%WWWDIR%%/include/tinymce/jscripts/tiny_mce/plugins/layer/editor_plugin_src.js
+%%WWWDIR%%/include/tinymce/jscripts/tiny_mce/plugins/legacyoutput/editor_plugin.js
+%%WWWDIR%%/include/tinymce/jscripts/tiny_mce/plugins/legacyoutput/editor_plugin_src.js
+%%WWWDIR%%/include/tinymce/jscripts/tiny_mce/plugins/media/css/content.css
+%%WWWDIR%%/include/tinymce/jscripts/tiny_mce/plugins/media/css/media.css
+%%WWWDIR%%/include/tinymce/jscripts/tiny_mce/plugins/media/editor_plugin.js
+%%WWWDIR%%/include/tinymce/jscripts/tiny_mce/plugins/media/editor_plugin_src.js
+%%WWWDIR%%/include/tinymce/jscripts/tiny_mce/plugins/media/img/flash.gif
+%%WWWDIR%%/include/tinymce/jscripts/tiny_mce/plugins/media/img/flv_player.swf
+%%WWWDIR%%/include/tinymce/jscripts/tiny_mce/plugins/media/img/quicktime.gif
+%%WWWDIR%%/include/tinymce/jscripts/tiny_mce/plugins/media/img/realmedia.gif
+%%WWWDIR%%/include/tinymce/jscripts/tiny_mce/plugins/media/img/shockwave.gif
+%%WWWDIR%%/include/tinymce/jscripts/tiny_mce/plugins/media/img/trans.gif
+%%WWWDIR%%/include/tinymce/jscripts/tiny_mce/plugins/media/img/windowsmedia.gif
+%%WWWDIR%%/include/tinymce/jscripts/tiny_mce/plugins/media/js/embed.js
+%%WWWDIR%%/include/tinymce/jscripts/tiny_mce/plugins/media/js/media.js
+%%WWWDIR%%/include/tinymce/jscripts/tiny_mce/plugins/media/langs/en_dlg.js
+%%WWWDIR%%/include/tinymce/jscripts/tiny_mce/plugins/media/media.htm
+%%WWWDIR%%/include/tinymce/jscripts/tiny_mce/plugins/nonbreaking/editor_plugin.js
+%%WWWDIR%%/include/tinymce/jscripts/tiny_mce/plugins/nonbreaking/editor_plugin_src.js
+%%WWWDIR%%/include/tinymce/jscripts/tiny_mce/plugins/noneditable/editor_plugin.js
+%%WWWDIR%%/include/tinymce/jscripts/tiny_mce/plugins/noneditable/editor_plugin_src.js
+%%WWWDIR%%/include/tinymce/jscripts/tiny_mce/plugins/pagebreak/css/content.css
+%%WWWDIR%%/include/tinymce/jscripts/tiny_mce/plugins/pagebreak/editor_plugin.js
+%%WWWDIR%%/include/tinymce/jscripts/tiny_mce/plugins/pagebreak/editor_plugin_src.js
+%%WWWDIR%%/include/tinymce/jscripts/tiny_mce/plugins/pagebreak/img/pagebreak.gif
+%%WWWDIR%%/include/tinymce/jscripts/tiny_mce/plugins/pagebreak/img/trans.gif
+%%WWWDIR%%/include/tinymce/jscripts/tiny_mce/plugins/paste/editor_plugin.js
+%%WWWDIR%%/include/tinymce/jscripts/tiny_mce/plugins/paste/editor_plugin_src.js
+%%WWWDIR%%/include/tinymce/jscripts/tiny_mce/plugins/paste/js/pastetext.js
+%%WWWDIR%%/include/tinymce/jscripts/tiny_mce/plugins/paste/js/pasteword.js
+%%WWWDIR%%/include/tinymce/jscripts/tiny_mce/plugins/paste/langs/en_dlg.js
+%%WWWDIR%%/include/tinymce/jscripts/tiny_mce/plugins/paste/pastetext.htm
+%%WWWDIR%%/include/tinymce/jscripts/tiny_mce/plugins/paste/pasteword.htm
+%%WWWDIR%%/include/tinymce/jscripts/tiny_mce/plugins/preview/editor_plugin.js
+%%WWWDIR%%/include/tinymce/jscripts/tiny_mce/plugins/preview/editor_plugin_src.js
+%%WWWDIR%%/include/tinymce/jscripts/tiny_mce/plugins/preview/example.html
+%%WWWDIR%%/include/tinymce/jscripts/tiny_mce/plugins/preview/jscripts/embed.js
+%%WWWDIR%%/include/tinymce/jscripts/tiny_mce/plugins/preview/preview.html
+%%WWWDIR%%/include/tinymce/jscripts/tiny_mce/plugins/print/editor_plugin.js
+%%WWWDIR%%/include/tinymce/jscripts/tiny_mce/plugins/print/editor_plugin_src.js
+%%WWWDIR%%/include/tinymce/jscripts/tiny_mce/plugins/save/editor_plugin.js
+%%WWWDIR%%/include/tinymce/jscripts/tiny_mce/plugins/save/editor_plugin_src.js
+%%WWWDIR%%/include/tinymce/jscripts/tiny_mce/plugins/searchreplace/css/searchreplace.css
+%%WWWDIR%%/include/tinymce/jscripts/tiny_mce/plugins/searchreplace/editor_plugin.js
+%%WWWDIR%%/include/tinymce/jscripts/tiny_mce/plugins/searchreplace/editor_plugin_src.js
+%%WWWDIR%%/include/tinymce/jscripts/tiny_mce/plugins/searchreplace/js/searchreplace.js
+%%WWWDIR%%/include/tinymce/jscripts/tiny_mce/plugins/searchreplace/langs/en_dlg.js
+%%WWWDIR%%/include/tinymce/jscripts/tiny_mce/plugins/searchreplace/searchreplace.htm
+%%WWWDIR%%/include/tinymce/jscripts/tiny_mce/plugins/spellchecker/css/content.css
+%%WWWDIR%%/include/tinymce/jscripts/tiny_mce/plugins/spellchecker/editor_plugin.js
+%%WWWDIR%%/include/tinymce/jscripts/tiny_mce/plugins/spellchecker/editor_plugin_src.js
+%%WWWDIR%%/include/tinymce/jscripts/tiny_mce/plugins/spellchecker/img/wline.gif
+%%WWWDIR%%/include/tinymce/jscripts/tiny_mce/plugins/style/css/props.css
+%%WWWDIR%%/include/tinymce/jscripts/tiny_mce/plugins/style/editor_plugin.js
+%%WWWDIR%%/include/tinymce/jscripts/tiny_mce/plugins/style/editor_plugin_src.js
+%%WWWDIR%%/include/tinymce/jscripts/tiny_mce/plugins/style/js/props.js
+%%WWWDIR%%/include/tinymce/jscripts/tiny_mce/plugins/style/langs/en_dlg.js
+%%WWWDIR%%/include/tinymce/jscripts/tiny_mce/plugins/style/props.htm
+%%WWWDIR%%/include/tinymce/jscripts/tiny_mce/plugins/tabfocus/editor_plugin.js
+%%WWWDIR%%/include/tinymce/jscripts/tiny_mce/plugins/tabfocus/editor_plugin_src.js
+%%WWWDIR%%/include/tinymce/jscripts/tiny_mce/plugins/table/cell.htm
+%%WWWDIR%%/include/tinymce/jscripts/tiny_mce/plugins/table/css/cell.css
+%%WWWDIR%%/include/tinymce/jscripts/tiny_mce/plugins/table/css/row.css
+%%WWWDIR%%/include/tinymce/jscripts/tiny_mce/plugins/table/css/table.css
+%%WWWDIR%%/include/tinymce/jscripts/tiny_mce/plugins/table/editor_plugin.js
+%%WWWDIR%%/include/tinymce/jscripts/tiny_mce/plugins/table/editor_plugin_src.js
+%%WWWDIR%%/include/tinymce/jscripts/tiny_mce/plugins/table/js/cell.js
+%%WWWDIR%%/include/tinymce/jscripts/tiny_mce/plugins/table/js/merge_cells.js
+%%WWWDIR%%/include/tinymce/jscripts/tiny_mce/plugins/table/js/row.js
+%%WWWDIR%%/include/tinymce/jscripts/tiny_mce/plugins/table/js/table.js
+%%WWWDIR%%/include/tinymce/jscripts/tiny_mce/plugins/table/langs/en_dlg.js
+%%WWWDIR%%/include/tinymce/jscripts/tiny_mce/plugins/table/merge_cells.htm
+%%WWWDIR%%/include/tinymce/jscripts/tiny_mce/plugins/table/row.htm
+%%WWWDIR%%/include/tinymce/jscripts/tiny_mce/plugins/table/table.htm
+%%WWWDIR%%/include/tinymce/jscripts/tiny_mce/plugins/template/blank.htm
+%%WWWDIR%%/include/tinymce/jscripts/tiny_mce/plugins/template/css/template.css
+%%WWWDIR%%/include/tinymce/jscripts/tiny_mce/plugins/template/editor_plugin.js
+%%WWWDIR%%/include/tinymce/jscripts/tiny_mce/plugins/template/editor_plugin_src.js
+%%WWWDIR%%/include/tinymce/jscripts/tiny_mce/plugins/template/js/template.js
+%%WWWDIR%%/include/tinymce/jscripts/tiny_mce/plugins/template/langs/en_dlg.js
+%%WWWDIR%%/include/tinymce/jscripts/tiny_mce/plugins/template/template.htm
+%%WWWDIR%%/include/tinymce/jscripts/tiny_mce/plugins/visualchars/editor_plugin.js
+%%WWWDIR%%/include/tinymce/jscripts/tiny_mce/plugins/visualchars/editor_plugin_src.js
+%%WWWDIR%%/include/tinymce/jscripts/tiny_mce/plugins/wordcount/editor_plugin.js
+%%WWWDIR%%/include/tinymce/jscripts/tiny_mce/plugins/wordcount/editor_plugin_src.js
+%%WWWDIR%%/include/tinymce/jscripts/tiny_mce/plugins/xhtmlxtras/abbr.htm
+%%WWWDIR%%/include/tinymce/jscripts/tiny_mce/plugins/xhtmlxtras/acronym.htm
+%%WWWDIR%%/include/tinymce/jscripts/tiny_mce/plugins/xhtmlxtras/attributes.htm
+%%WWWDIR%%/include/tinymce/jscripts/tiny_mce/plugins/xhtmlxtras/cite.htm
+%%WWWDIR%%/include/tinymce/jscripts/tiny_mce/plugins/xhtmlxtras/css/attributes.css
+%%WWWDIR%%/include/tinymce/jscripts/tiny_mce/plugins/xhtmlxtras/css/popup.css
+%%WWWDIR%%/include/tinymce/jscripts/tiny_mce/plugins/xhtmlxtras/del.htm
+%%WWWDIR%%/include/tinymce/jscripts/tiny_mce/plugins/xhtmlxtras/editor_plugin.js
+%%WWWDIR%%/include/tinymce/jscripts/tiny_mce/plugins/xhtmlxtras/editor_plugin_src.js
+%%WWWDIR%%/include/tinymce/jscripts/tiny_mce/plugins/xhtmlxtras/ins.htm
+%%WWWDIR%%/include/tinymce/jscripts/tiny_mce/plugins/xhtmlxtras/js/abbr.js
+%%WWWDIR%%/include/tinymce/jscripts/tiny_mce/plugins/xhtmlxtras/js/acronym.js
+%%WWWDIR%%/include/tinymce/jscripts/tiny_mce/plugins/xhtmlxtras/js/attributes.js
+%%WWWDIR%%/include/tinymce/jscripts/tiny_mce/plugins/xhtmlxtras/js/cite.js
+%%WWWDIR%%/include/tinymce/jscripts/tiny_mce/plugins/xhtmlxtras/js/del.js
+%%WWWDIR%%/include/tinymce/jscripts/tiny_mce/plugins/xhtmlxtras/js/element_common.js
+%%WWWDIR%%/include/tinymce/jscripts/tiny_mce/plugins/xhtmlxtras/js/ins.js
+%%WWWDIR%%/include/tinymce/jscripts/tiny_mce/plugins/xhtmlxtras/langs/en_dlg.js
+%%WWWDIR%%/include/tinymce/jscripts/tiny_mce/themes/advanced/about.htm
+%%WWWDIR%%/include/tinymce/jscripts/tiny_mce/themes/advanced/anchor.htm
+%%WWWDIR%%/include/tinymce/jscripts/tiny_mce/themes/advanced/charmap.htm
+%%WWWDIR%%/include/tinymce/jscripts/tiny_mce/themes/advanced/color_picker.htm
+%%WWWDIR%%/include/tinymce/jscripts/tiny_mce/themes/advanced/editor_template.js
+%%WWWDIR%%/include/tinymce/jscripts/tiny_mce/themes/advanced/editor_template_src.js
+%%WWWDIR%%/include/tinymce/jscripts/tiny_mce/themes/advanced/image.htm
+%%WWWDIR%%/include/tinymce/jscripts/tiny_mce/themes/advanced/img/colorpicker.jpg
+%%WWWDIR%%/include/tinymce/jscripts/tiny_mce/themes/advanced/img/icons.gif
+%%WWWDIR%%/include/tinymce/jscripts/tiny_mce/themes/advanced/js/about.js
+%%WWWDIR%%/include/tinymce/jscripts/tiny_mce/themes/advanced/js/anchor.js
+%%WWWDIR%%/include/tinymce/jscripts/tiny_mce/themes/advanced/js/charmap.js
+%%WWWDIR%%/include/tinymce/jscripts/tiny_mce/themes/advanced/js/color_picker.js
+%%WWWDIR%%/include/tinymce/jscripts/tiny_mce/themes/advanced/js/image.js
+%%WWWDIR%%/include/tinymce/jscripts/tiny_mce/themes/advanced/js/link.js
+%%WWWDIR%%/include/tinymce/jscripts/tiny_mce/themes/advanced/js/source_editor.js
+%%WWWDIR%%/include/tinymce/jscripts/tiny_mce/themes/advanced/langs/en.js
+%%WWWDIR%%/include/tinymce/jscripts/tiny_mce/themes/advanced/langs/en_dlg.js
+%%WWWDIR%%/include/tinymce/jscripts/tiny_mce/themes/advanced/link.htm
+%%WWWDIR%%/include/tinymce/jscripts/tiny_mce/themes/advanced/skins/default/content.css
+%%WWWDIR%%/include/tinymce/jscripts/tiny_mce/themes/advanced/skins/default/dialog.css
+%%WWWDIR%%/include/tinymce/jscripts/tiny_mce/themes/advanced/skins/default/img/buttons.png
+%%WWWDIR%%/include/tinymce/jscripts/tiny_mce/themes/advanced/skins/default/img/items.gif
+%%WWWDIR%%/include/tinymce/jscripts/tiny_mce/themes/advanced/skins/default/img/menu_arrow.gif
+%%WWWDIR%%/include/tinymce/jscripts/tiny_mce/themes/advanced/skins/default/img/menu_check.gif
+%%WWWDIR%%/include/tinymce/jscripts/tiny_mce/themes/advanced/skins/default/img/progress.gif
+%%WWWDIR%%/include/tinymce/jscripts/tiny_mce/themes/advanced/skins/default/img/tabs.gif
+%%WWWDIR%%/include/tinymce/jscripts/tiny_mce/themes/advanced/skins/default/ui.css
+%%WWWDIR%%/include/tinymce/jscripts/tiny_mce/themes/advanced/skins/o2k7/content.css
+%%WWWDIR%%/include/tinymce/jscripts/tiny_mce/themes/advanced/skins/o2k7/dialog.css
+%%WWWDIR%%/include/tinymce/jscripts/tiny_mce/themes/advanced/skins/o2k7/img/button_bg.png
+%%WWWDIR%%/include/tinymce/jscripts/tiny_mce/themes/advanced/skins/o2k7/img/button_bg_black.png
+%%WWWDIR%%/include/tinymce/jscripts/tiny_mce/themes/advanced/skins/o2k7/img/button_bg_silver.png
+%%WWWDIR%%/include/tinymce/jscripts/tiny_mce/themes/advanced/skins/o2k7/ui.css
+%%WWWDIR%%/include/tinymce/jscripts/tiny_mce/themes/advanced/skins/o2k7/ui_black.css
+%%WWWDIR%%/include/tinymce/jscripts/tiny_mce/themes/advanced/skins/o2k7/ui_silver.css
+%%WWWDIR%%/include/tinymce/jscripts/tiny_mce/themes/advanced/source_editor.htm
+%%WWWDIR%%/include/tinymce/jscripts/tiny_mce/themes/simple/editor_template.js
+%%WWWDIR%%/include/tinymce/jscripts/tiny_mce/themes/simple/editor_template_src.js
+%%WWWDIR%%/include/tinymce/jscripts/tiny_mce/themes/simple/img/icons.gif
+%%WWWDIR%%/include/tinymce/jscripts/tiny_mce/themes/simple/langs/en.js
+%%WWWDIR%%/include/tinymce/jscripts/tiny_mce/themes/simple/skins/default/content.css
+%%WWWDIR%%/include/tinymce/jscripts/tiny_mce/themes/simple/skins/default/ui.css
+%%WWWDIR%%/include/tinymce/jscripts/tiny_mce/themes/simple/skins/o2k7/content.css
+%%WWWDIR%%/include/tinymce/jscripts/tiny_mce/themes/simple/skins/o2k7/img/button_bg.png
+%%WWWDIR%%/include/tinymce/jscripts/tiny_mce/themes/simple/skins/o2k7/ui.css
+%%WWWDIR%%/include/tinymce/jscripts/tiny_mce/tiny_mce.js
+%%WWWDIR%%/include/tinymce/jscripts/tiny_mce/tiny_mce_popup.js
+%%WWWDIR%%/include/tinymce/jscripts/tiny_mce/tiny_mce_src.js
+%%WWWDIR%%/include/tinymce/jscripts/tiny_mce/utils/editable_selects.js
+%%WWWDIR%%/include/tinymce/jscripts/tiny_mce/utils/form_utils.js
+%%WWWDIR%%/include/tinymce/jscripts/tiny_mce/utils/mctabs.js
+%%WWWDIR%%/include/tinymce/jscripts/tiny_mce/utils/validate.js
+%%WWWDIR%%/index.php
+%%WWWDIR%%/install/index.php
+%%WWWDIR%%/install/sql.php
+%%WWWDIR%%/install/validate.js
+%%WWWDIR%%/js/dhtml.js
+%%WWWDIR%%/js/emp_edit.js
+%%WWWDIR%%/js/index.php
+%%WWWDIR%%/js/jquery-1.2.1.pack.js
+%%WWWDIR%%/js/jquery.min.js
+%%WWWDIR%%/js/myitcrm.js
+%%WWWDIR%%/js/password.js
+%%WWWDIR%%/js/sdmenu.js
+%%WWWDIR%%/js/submit.js
+%%WWWDIR%%/js/tabs.js
+%%WWWDIR%%/language/asset/english.xml
+%%WWWDIR%%/language/billing/english.xml
+%%WWWDIR%%/language/billing/english_US.xml
+%%WWWDIR%%/language/control/english.xml
+%%WWWDIR%%/language/control/english_US.xml
+%%WWWDIR%%/language/core/english.xml
+%%WWWDIR%%/language/core/english_US.xml
+%%WWWDIR%%/language/core/french.xml
+%%WWWDIR%%/language/core/german.xml
+%%WWWDIR%%/language/customer/english.xml
+%%WWWDIR%%/language/customer/english_US.xml
+%%WWWDIR%%/language/customer/french.xml
+%%WWWDIR%%/language/customer/german.xml
+%%WWWDIR%%/language/customer/spanish.xml
+%%WWWDIR%%/language/employees/english.xml
+%%WWWDIR%%/language/employees/english_US.xml
+%%WWWDIR%%/language/english.xml
+%%WWWDIR%%/language/english_US.xml
+%%WWWDIR%%/language/error/english.xml
+%%WWWDIR%%/language/error/english_US.xml
+%%WWWDIR%%/language/index.php
+%%WWWDIR%%/language/invoice/english.xml
+%%WWWDIR%%/language/invoice/english_US.xml
+%%WWWDIR%%/language/parts/english.xml
+%%WWWDIR%%/language/parts/english_US.xml
+%%WWWDIR%%/language/portuguese.xml
+%%WWWDIR%%/language/schedule/english.xml
+%%WWWDIR%%/language/schedule/english_US.xml
+%%WWWDIR%%/language/stats/english.xml
+%%WWWDIR%%/language/stats/english_US.xml
+%%WWWDIR%%/language/workorder/english.xml
+%%WWWDIR%%/language/workorder/english_US.xml
+%%WWWDIR%%/log/access.log
+%%WWWDIR%%/log/index.php
+%%WWWDIR%%/login.php
+%%WWWDIR%%/modules/asset/index.php
+%%WWWDIR%%/modules/asset/view.php
+%%WWWDIR%%/modules/billing/include.php
+%%WWWDIR%%/modules/billing/index.php
+%%WWWDIR%%/modules/billing/new.php
+%%WWWDIR%%/modules/billing/new_gift.php
+%%WWWDIR%%/modules/billing/payments/2CheckOut.txt
+%%WWWDIR%%/modules/billing/payments/2co_ipn.php
+%%WWWDIR%%/modules/billing/payments/2co_start.php
+%%WWWDIR%%/modules/billing/payments/Authorize.php
+%%WWWDIR%%/modules/billing/payments/Authorize.txt
+%%WWWDIR%%/modules/billing/payments/PaymentGateway.php
+%%WWWDIR%%/modules/billing/payments/Paypal.php
+%%WWWDIR%%/modules/billing/payments/Paypal.txt
+%%WWWDIR%%/modules/billing/payments/TwoCo.php
+%%WWWDIR%%/modules/billing/payments/authorize_ipn.php
+%%WWWDIR%%/modules/billing/payments/authorize_start.php
+%%WWWDIR%%/modules/billing/payments/authorize_success.php
+%%WWWDIR%%/modules/billing/payments/index.php
+%%WWWDIR%%/modules/billing/payments/license.txt
+%%WWWDIR%%/modules/billing/payments/paypal_failure.php
+%%WWWDIR%%/modules/billing/payments/paypal_ipn.php
+%%WWWDIR%%/modules/billing/payments/paypal_start.php
+%%WWWDIR%%/modules/billing/payments/paypal_success.php
+%%WWWDIR%%/modules/billing/payments/proc_paypal.php
+%%WWWDIR%%/modules/billing/pp_complete.php
+%%WWWDIR%%/modules/billing/proc_cash.php
+%%WWWDIR%%/modules/billing/proc_cc.php
+%%WWWDIR%%/modules/billing/proc_check.php
+%%WWWDIR%%/modules/billing/proc_deposit.php
+%%WWWDIR%%/modules/billing/proc_gift.php
+%%WWWDIR%%/modules/billing/proc_paymate.php
+%%WWWDIR%%/modules/billing/proc_paypal.php
+%%WWWDIR%%/modules/billing/testcc.php
+%%WWWDIR%%/modules/control/acl.php
+%%WWWDIR%%/modules/control/backup.php
+%%WWWDIR%%/modules/control/check_updates.php
+%%WWWDIR%%/modules/control/company_edit.php
+%%WWWDIR%%/modules/control/edit_rate.php
+%%WWWDIR%%/modules/control/export_rates.php
+%%WWWDIR%%/modules/control/hours_edit.php
+%%WWWDIR%%/modules/control/index.php
+%%WWWDIR%%/modules/control/main.php
+%%WWWDIR%%/modules/control/payment_options.php
+%%WWWDIR%%/modules/control/restore.php
+%%WWWDIR%%/modules/core/404.php
+%%WWWDIR%%/modules/core/backup.php
+%%WWWDIR%%/modules/core/company.php
+%%WWWDIR%%/modules/core/error.php
+%%WWWDIR%%/modules/core/footer.php
+%%WWWDIR%%/modules/core/header.php
+%%WWWDIR%%/modules/core/include.php
+%%WWWDIR%%/modules/core/include/display_work_orders.php
+%%WWWDIR%%/modules/core/main.php
+%%WWWDIR%%/modules/core/navagation.php
+%%WWWDIR%%/modules/core/tool_bar.php
+%%WWWDIR%%/modules/core/translate.php
+%%WWWDIR%%/modules/customer/customer_details.php
+%%WWWDIR%%/modules/customer/delete.php
+%%WWWDIR%%/modules/customer/edit.php
+%%WWWDIR%%/modules/customer/email.php
+%%WWWDIR%%/modules/customer/include.php
+%%WWWDIR%%/modules/customer/index.php
+%%WWWDIR%%/modules/customer/memo.php
+%%WWWDIR%%/modules/customer/new.php
+%%WWWDIR%%/modules/customer/view.php
+%%WWWDIR%%/modules/employees/delete.php
+%%WWWDIR%%/modules/employees/edit.php
+%%WWWDIR%%/modules/employees/employee_details.php
+%%WWWDIR%%/modules/employees/include.php
+%%WWWDIR%%/modules/employees/index.php
+%%WWWDIR%%/modules/employees/main.php
+%%WWWDIR%%/modules/employees/new.php
+%%WWWDIR%%/modules/expense/delete.php
+%%WWWDIR%%/modules/expense/edit.php
+%%WWWDIR%%/modules/expense/expense_details.php
+%%WWWDIR%%/modules/expense/include.php
+%%WWWDIR%%/modules/expense/index.php
+%%WWWDIR%%/modules/expense/new.php
+%%WWWDIR%%/modules/expense/search.php
+%%WWWDIR%%/modules/index.php
+%%WWWDIR%%/modules/invoice/include.php
+%%WWWDIR%%/modules/invoice/index.php
+%%WWWDIR%%/modules/invoice/main.php
+%%WWWDIR%%/modules/invoice/new.php
+%%WWWDIR%%/modules/invoice/pdf.php
+%%WWWDIR%%/modules/invoice/print.php
+%%WWWDIR%%/modules/invoice/view.php
+%%WWWDIR%%/modules/invoice/view_paid.php
+%%WWWDIR%%/modules/invoice/view_unpaid.php
+%%WWWDIR%%/modules/parts/checkout.php
+%%WWWDIR%%/modules/parts/main.php
+%%WWWDIR%%/modules/parts/print_results.php
+%%WWWDIR%%/modules/parts/status.php
+%%WWWDIR%%/modules/parts/update.php
+%%WWWDIR%%/modules/parts/view.php
+%%WWWDIR%%/modules/refund/delete.php
+%%WWWDIR%%/modules/refund/edit.php
+%%WWWDIR%%/modules/refund/include.php
+%%WWWDIR%%/modules/refund/index.php
+%%WWWDIR%%/modules/refund/new.php
+%%WWWDIR%%/modules/refund/refund_details.php
+%%WWWDIR%%/modules/refund/search.php
+%%WWWDIR%%/modules/schedule/delete.php
+%%WWWDIR%%/modules/schedule/edit.php
+%%WWWDIR%%/modules/schedule/include.php
+%%WWWDIR%%/modules/schedule/index.php
+%%WWWDIR%%/modules/schedule/main.php
+%%WWWDIR%%/modules/schedule/main2.php
+%%WWWDIR%%/modules/schedule/new.php
+%%WWWDIR%%/modules/schedule/print.php
+%%WWWDIR%%/modules/schedule/sync.php
+%%WWWDIR%%/modules/schedule/view.php
+%%WWWDIR%%/modules/stats/hit_stats.php
+%%WWWDIR%%/modules/stats/hit_stats_view.php
+%%WWWDIR%%/modules/stats/index.php
+%%WWWDIR%%/modules/stats/main.php
+%%WWWDIR%%/modules/supplier/delete.php
+%%WWWDIR%%/modules/supplier/edit.php
+%%WWWDIR%%/modules/supplier/include.php
+%%WWWDIR%%/modules/supplier/index.php
+%%WWWDIR%%/modules/supplier/new.php
+%%WWWDIR%%/modules/supplier/search.php
+%%WWWDIR%%/modules/supplier/supplier_details.php
+%%WWWDIR%%/modules/workorder/autosuggest.php
+%%WWWDIR%%/modules/workorder/close.php
+%%WWWDIR%%/modules/workorder/edit_comment.php
+%%WWWDIR%%/modules/workorder/edit_description.php
+%%WWWDIR%%/modules/workorder/include.php
+%%WWWDIR%%/modules/workorder/index.php
+%%WWWDIR%%/modules/workorder/main.php
+%%WWWDIR%%/modules/workorder/new.php
+%%WWWDIR%%/modules/workorder/new_note.php
+%%WWWDIR%%/modules/workorder/new_status.php
+%%WWWDIR%%/modules/workorder/open_work_order.php
+%%WWWDIR%%/modules/workorder/print.php
+%%WWWDIR%%/modules/workorder/view.php
+%%WWWDIR%%/modules/workorder/view_closed.php
+%%WWWDIR%%/password.php
+%%WWWDIR%%/submit.php
+%%WWWDIR%%/templates/asset/index.php
+%%WWWDIR%%/templates/asset/view.tpl
+%%WWWDIR%%/templates/billing/display_gift.tpl
+%%WWWDIR%%/templates/billing/dspl_pp.tpl
+%%WWWDIR%%/templates/billing/index.php
+%%WWWDIR%%/templates/billing/new.tpl
+%%WWWDIR%%/templates/billing/new_gift.tpl
+%%WWWDIR%%/templates/billing/print_gift.tpl
+%%WWWDIR%%/templates/billing/proc_paypal.tpl
+%%WWWDIR%%/templates/control/acl.tpl
+%%WWWDIR%%/templates/control/check.tpl
+%%WWWDIR%%/templates/control/company_edit.tpl
+%%WWWDIR%%/templates/control/edit_rate.tpl
+%%WWWDIR%%/templates/control/hours_edit.tpl
+%%WWWDIR%%/templates/control/index.php
+%%WWWDIR%%/templates/control/main.tpl
+%%WWWDIR%%/templates/control/payment_options.tpl
+%%WWWDIR%%/templates/core/404.tpl
+%%WWWDIR%%/templates/core/backup.tpl
+%%WWWDIR%%/templates/core/company.tpl
+%%WWWDIR%%/templates/core/error.tpl
+%%WWWDIR%%/templates/core/error_header.tpl
+%%WWWDIR%%/templates/core/footer.tpl
+%%WWWDIR%%/templates/core/header.tpl
+%%WWWDIR%%/templates/core/index.php
+%%WWWDIR%%/templates/core/login.tpl
+%%WWWDIR%%/templates/core/main.tpl
+%%WWWDIR%%/templates/core/msg.tpl
+%%WWWDIR%%/templates/core/navagation.tpl
+%%WWWDIR%%/templates/core/password.tpl
+%%WWWDIR%%/templates/core/submit.tpl
+%%WWWDIR%%/templates/customer/customer_details.tpl
+%%WWWDIR%%/templates/customer/directions.tpl
+%%WWWDIR%%/templates/customer/edit.js
+%%WWWDIR%%/templates/customer/edit.tpl
+%%WWWDIR%%/templates/customer/email.tpl
+%%WWWDIR%%/templates/customer/index.php
+%%WWWDIR%%/templates/customer/memo.tpl
+%%WWWDIR%%/templates/customer/new.js
+%%WWWDIR%%/templates/customer/new.tpl
+%%WWWDIR%%/templates/customer/search.tpl
+%%WWWDIR%%/templates/employees/delete.tpl
+%%WWWDIR%%/templates/employees/edit.tpl
+%%WWWDIR%%/templates/employees/emp_edit.js
+%%WWWDIR%%/templates/employees/emp_new.js
+%%WWWDIR%%/templates/employees/employee_details.tpl
+%%WWWDIR%%/templates/employees/index.php
+%%WWWDIR%%/templates/employees/main.tpl
+%%WWWDIR%%/templates/employees/new.tpl
+%%WWWDIR%%/templates/employees/new_results.tpl
+%%WWWDIR%%/templates/expense/edit.tpl
+%%WWWDIR%%/templates/expense/expense_details.tpl
+%%WWWDIR%%/templates/expense/index.php
+%%WWWDIR%%/templates/expense/javascripts.js
+%%WWWDIR%%/templates/expense/new.tpl
+%%WWWDIR%%/templates/expense/search.tpl
+%%WWWDIR%%/templates/index.php
+%%WWWDIR%%/templates/invoice/index.php
+%%WWWDIR%%/templates/invoice/main.tpl
+%%WWWDIR%%/templates/invoice/new.tpl
+%%WWWDIR%%/templates/invoice/print.tpl
+%%WWWDIR%%/templates/invoice/view.tpl
+%%WWWDIR%%/templates/invoice/view_paid.tpl
+%%WWWDIR%%/templates/invoice/view_unpaid.tpl
+%%WWWDIR%%/templates/parts/main.tpl
+%%WWWDIR%%/templates/parts/print_results.tpl
+%%WWWDIR%%/templates/parts/results.tpl
+%%WWWDIR%%/templates/parts/status.tpl
+%%WWWDIR%%/templates/parts/view.tpl
+%%WWWDIR%%/templates/refund/edit.tpl
+%%WWWDIR%%/templates/refund/index.php
+%%WWWDIR%%/templates/refund/javascripts.js
+%%WWWDIR%%/templates/refund/new.tpl
+%%WWWDIR%%/templates/refund/refund_details.tpl
+%%WWWDIR%%/templates/refund/search.tpl
+%%WWWDIR%%/templates/schedule/assigned_work_order.tpl
+%%WWWDIR%%/templates/schedule/edit.tpl
+%%WWWDIR%%/templates/schedule/index.php
+%%WWWDIR%%/templates/schedule/main.tpl
+%%WWWDIR%%/templates/schedule/new.tpl
+%%WWWDIR%%/templates/schedule/new_work_order.tpl
+%%WWWDIR%%/templates/schedule/open_work_orders_block.tpl
+%%WWWDIR%%/templates/schedule/print.tpl
+%%WWWDIR%%/templates/schedule/view.tpl
+%%WWWDIR%%/templates/schedule/view_week.tpl
+%%WWWDIR%%/templates/stats/hit_stats.tpl
+%%WWWDIR%%/templates/stats/hit_stats_view.tpl
+%%WWWDIR%%/templates/stats/index.php
+%%WWWDIR%%/templates/stats/main.tpl
+%%WWWDIR%%/templates/supplier/edit.tpl
+%%WWWDIR%%/templates/supplier/index.php
+%%WWWDIR%%/templates/supplier/javascripts.js
+%%WWWDIR%%/templates/supplier/new.tpl
+%%WWWDIR%%/templates/supplier/search.tpl
+%%WWWDIR%%/templates/supplier/supplier_details.tpl
+%%WWWDIR%%/templates/workorder/blocks/assigned_work_order.tpl
+%%WWWDIR%%/templates/workorder/blocks/awaiting_work_order.tpl
+%%WWWDIR%%/templates/workorder/blocks/closed_work_orders_block.tpl
+%%WWWDIR%%/templates/workorder/blocks/new_work_order.tpl
+%%WWWDIR%%/templates/workorder/blocks/open_work_orders_block.tpl
+%%WWWDIR%%/templates/workorder/blocks/payment_work_order.tpl
+%%WWWDIR%%/templates/workorder/blocks/today_work_orders_block.tpl
+%%WWWDIR%%/templates/workorder/close.tpl
+%%WWWDIR%%/templates/workorder/close_results.tpl
+%%WWWDIR%%/templates/workorder/edit_comment.tpl
+%%WWWDIR%%/templates/workorder/edit_description.tpl
+%%WWWDIR%%/templates/workorder/index.php
+%%WWWDIR%%/templates/workorder/main.tpl
+%%WWWDIR%%/templates/workorder/new.js
+%%WWWDIR%%/templates/workorder/new.tpl
+%%WWWDIR%%/templates/workorder/new_note.tpl
+%%WWWDIR%%/templates/workorder/new_note_results.tpl
+%%WWWDIR%%/templates/workorder/new_results.tpl
+%%WWWDIR%%/templates/workorder/new_status.tpl
+%%WWWDIR%%/templates/workorder/new_status_result.tpl
+%%WWWDIR%%/templates/workorder/print.new
+%%WWWDIR%%/templates/workorder/print.tpl
+%%WWWDIR%%/templates/workorder/resolution.tpl
+%%WWWDIR%%/templates/workorder/set_schedule.tpl
+%%WWWDIR%%/templates/workorder/view.tpl
+%%WWWDIR%%/templates/workorder/view_closed.tpl
+%%WWWDIR%%/templates/workorder/work_order_comments.tpl
+%%WWWDIR%%/templates/workorder/work_order_customer_contact.tpl
+%%WWWDIR%%/templates/workorder/work_order_description.tpl
+%%WWWDIR%%/templates/workorder/work_order_head.tpl
+%%WWWDIR%%/templates/workorder/work_order_notes.tpl
+%%WWWDIR%%/templates/workorder/work_order_parts.tpl
+%%WWWDIR%%/templates/workorder/work_order_schedule.tpl
+%%WWWDIR%%/templates/workorder/work_order_status.tpl
+%%WWWDIR%%/upgrade/0281_0290/index.php
+%%WWWDIR%%/upgrade/0281_0290/sql.php
+%%WWWDIR%%/upgrade/0290_0291/index.php
+%%WWWDIR%%/upgrade/0290_0291/sql.php
+%%WWWDIR%%/upgrade/index.html
+%%WWWDIR%%/upgrade/inv.php
+%%WWWDIR%%/upgrade/validate.js
+%%WWWDIR%%/upload/.htaccess
+%%WWWDIR%%/upload/index.php
+%%WWWDIR%%/upload/rate_upload.csv
+%%WWWDIR%%/version.php
+%%WWWDIR%%/conf.php
+@dirrm %%WWWDIR%%/upload
+@dirrm %%WWWDIR%%/upgrade/0290_0291
+@dirrm %%WWWDIR%%/upgrade/0281_0290
+@dirrm %%WWWDIR%%/upgrade
+@dirrm %%WWWDIR%%/templates/workorder/blocks
+@dirrm %%WWWDIR%%/templates/workorder
+@dirrm %%WWWDIR%%/templates/supplier
+@dirrm %%WWWDIR%%/templates/stats
+@dirrm %%WWWDIR%%/templates/schedule
+@dirrm %%WWWDIR%%/templates/refund
+@dirrm %%WWWDIR%%/templates/parts
+@dirrm %%WWWDIR%%/templates/invoice
+@dirrm %%WWWDIR%%/templates/expense
+@dirrm %%WWWDIR%%/templates/employees
+@dirrm %%WWWDIR%%/templates/customer
+@dirrm %%WWWDIR%%/templates/core
+@dirrm %%WWWDIR%%/templates/control
+@dirrm %%WWWDIR%%/templates/billing
+@dirrm %%WWWDIR%%/templates/asset
+@dirrm %%WWWDIR%%/templates
+@dirrm %%WWWDIR%%/modules/workorder
+@dirrm %%WWWDIR%%/modules/supplier
+@dirrm %%WWWDIR%%/modules/stats
+@dirrm %%WWWDIR%%/modules/schedule
+@dirrm %%WWWDIR%%/modules/refund
+@dirrm %%WWWDIR%%/modules/parts
+@dirrm %%WWWDIR%%/modules/invoice
+@dirrm %%WWWDIR%%/modules/expense
+@dirrm %%WWWDIR%%/modules/employees
+@dirrm %%WWWDIR%%/modules/customer
+@dirrm %%WWWDIR%%/modules/core/include
+@dirrm %%WWWDIR%%/modules/core
+@dirrm %%WWWDIR%%/modules/control
+@dirrm %%WWWDIR%%/modules/billing/payments
+@dirrm %%WWWDIR%%/modules/billing
+@dirrm %%WWWDIR%%/modules/asset
+@dirrm %%WWWDIR%%/modules
+@dirrm %%WWWDIR%%/log
+@dirrm %%WWWDIR%%/language/workorder
+@dirrm %%WWWDIR%%/language/stats
+@dirrm %%WWWDIR%%/language/schedule
+@dirrm %%WWWDIR%%/language/parts
+@dirrm %%WWWDIR%%/language/invoice
+@dirrm %%WWWDIR%%/language/error
+@dirrm %%WWWDIR%%/language/employees
+@dirrm %%WWWDIR%%/language/customer
+@dirrm %%WWWDIR%%/language/core
+@dirrm %%WWWDIR%%/language/control
+@dirrm %%WWWDIR%%/language/billing
+@dirrm %%WWWDIR%%/language/asset
+@dirrm %%WWWDIR%%/language
+@dirrm %%WWWDIR%%/js
+@dirrm %%WWWDIR%%/install
+@dirrm %%WWWDIR%%/include/tinymce/jscripts/tiny_mce/utils
+@dirrm %%WWWDIR%%/include/tinymce/jscripts/tiny_mce/themes/simple/skins/o2k7/img
+@dirrm %%WWWDIR%%/include/tinymce/jscripts/tiny_mce/themes/simple/skins/o2k7
+@dirrm %%WWWDIR%%/include/tinymce/jscripts/tiny_mce/themes/simple/skins/default
+@dirrm %%WWWDIR%%/include/tinymce/jscripts/tiny_mce/themes/simple/skins
+@dirrm %%WWWDIR%%/include/tinymce/jscripts/tiny_mce/themes/simple/langs
+@dirrm %%WWWDIR%%/include/tinymce/jscripts/tiny_mce/themes/simple/img
+@dirrm %%WWWDIR%%/include/tinymce/jscripts/tiny_mce/themes/simple
+@dirrm %%WWWDIR%%/include/tinymce/jscripts/tiny_mce/themes/advanced/skins/o2k7/img
+@dirrm %%WWWDIR%%/include/tinymce/jscripts/tiny_mce/themes/advanced/skins/o2k7
+@dirrm %%WWWDIR%%/include/tinymce/jscripts/tiny_mce/themes/advanced/skins/default/img
+@dirrm %%WWWDIR%%/include/tinymce/jscripts/tiny_mce/themes/advanced/skins/default
+@dirrm %%WWWDIR%%/include/tinymce/jscripts/tiny_mce/themes/advanced/skins
+@dirrm %%WWWDIR%%/include/tinymce/jscripts/tiny_mce/themes/advanced/langs
+@dirrm %%WWWDIR%%/include/tinymce/jscripts/tiny_mce/themes/advanced/js
+@dirrm %%WWWDIR%%/include/tinymce/jscripts/tiny_mce/themes/advanced/img
+@dirrm %%WWWDIR%%/include/tinymce/jscripts/tiny_mce/themes/advanced
+@dirrm %%WWWDIR%%/include/tinymce/jscripts/tiny_mce/themes
+@dirrm %%WWWDIR%%/include/tinymce/jscripts/tiny_mce/plugins/xhtmlxtras/langs
+@dirrm %%WWWDIR%%/include/tinymce/jscripts/tiny_mce/plugins/xhtmlxtras/js
+@dirrm %%WWWDIR%%/include/tinymce/jscripts/tiny_mce/plugins/xhtmlxtras/css
+@dirrm %%WWWDIR%%/include/tinymce/jscripts/tiny_mce/plugins/xhtmlxtras
+@dirrm %%WWWDIR%%/include/tinymce/jscripts/tiny_mce/plugins/wordcount
+@dirrm %%WWWDIR%%/include/tinymce/jscripts/tiny_mce/plugins/visualchars
+@dirrm %%WWWDIR%%/include/tinymce/jscripts/tiny_mce/plugins/template/langs
+@dirrm %%WWWDIR%%/include/tinymce/jscripts/tiny_mce/plugins/template/js
+@dirrm %%WWWDIR%%/include/tinymce/jscripts/tiny_mce/plugins/template/css
+@dirrm %%WWWDIR%%/include/tinymce/jscripts/tiny_mce/plugins/template
+@dirrm %%WWWDIR%%/include/tinymce/jscripts/tiny_mce/plugins/table/langs
+@dirrm %%WWWDIR%%/include/tinymce/jscripts/tiny_mce/plugins/table/js
+@dirrm %%WWWDIR%%/include/tinymce/jscripts/tiny_mce/plugins/table/css
+@dirrm %%WWWDIR%%/include/tinymce/jscripts/tiny_mce/plugins/table
+@dirrm %%WWWDIR%%/include/tinymce/jscripts/tiny_mce/plugins/tabfocus
+@dirrm %%WWWDIR%%/include/tinymce/jscripts/tiny_mce/plugins/style/langs
+@dirrm %%WWWDIR%%/include/tinymce/jscripts/tiny_mce/plugins/style/js
+@dirrm %%WWWDIR%%/include/tinymce/jscripts/tiny_mce/plugins/style/css
+@dirrm %%WWWDIR%%/include/tinymce/jscripts/tiny_mce/plugins/style
+@dirrm %%WWWDIR%%/include/tinymce/jscripts/tiny_mce/plugins/spellchecker/img
+@dirrm %%WWWDIR%%/include/tinymce/jscripts/tiny_mce/plugins/spellchecker/css
+@dirrm %%WWWDIR%%/include/tinymce/jscripts/tiny_mce/plugins/spellchecker
+@dirrm %%WWWDIR%%/include/tinymce/jscripts/tiny_mce/plugins/searchreplace/langs
+@dirrm %%WWWDIR%%/include/tinymce/jscripts/tiny_mce/plugins/searchreplace/js
+@dirrm %%WWWDIR%%/include/tinymce/jscripts/tiny_mce/plugins/searchreplace/css
+@dirrm %%WWWDIR%%/include/tinymce/jscripts/tiny_mce/plugins/searchreplace
+@dirrm %%WWWDIR%%/include/tinymce/jscripts/tiny_mce/plugins/save
+@dirrm %%WWWDIR%%/include/tinymce/jscripts/tiny_mce/plugins/print
+@dirrm %%WWWDIR%%/include/tinymce/jscripts/tiny_mce/plugins/preview/jscripts
+@dirrm %%WWWDIR%%/include/tinymce/jscripts/tiny_mce/plugins/preview
+@dirrm %%WWWDIR%%/include/tinymce/jscripts/tiny_mce/plugins/paste/langs
+@dirrm %%WWWDIR%%/include/tinymce/jscripts/tiny_mce/plugins/paste/js
+@dirrm %%WWWDIR%%/include/tinymce/jscripts/tiny_mce/plugins/paste
+@dirrm %%WWWDIR%%/include/tinymce/jscripts/tiny_mce/plugins/pagebreak/img
+@dirrm %%WWWDIR%%/include/tinymce/jscripts/tiny_mce/plugins/pagebreak/css
+@dirrm %%WWWDIR%%/include/tinymce/jscripts/tiny_mce/plugins/pagebreak
+@dirrm %%WWWDIR%%/include/tinymce/jscripts/tiny_mce/plugins/noneditable
+@dirrm %%WWWDIR%%/include/tinymce/jscripts/tiny_mce/plugins/nonbreaking
+@dirrm %%WWWDIR%%/include/tinymce/jscripts/tiny_mce/plugins/media/langs
+@dirrm %%WWWDIR%%/include/tinymce/jscripts/tiny_mce/plugins/media/js
+@dirrm %%WWWDIR%%/include/tinymce/jscripts/tiny_mce/plugins/media/img
+@dirrm %%WWWDIR%%/include/tinymce/jscripts/tiny_mce/plugins/media/css
+@dirrm %%WWWDIR%%/include/tinymce/jscripts/tiny_mce/plugins/media
+@dirrm %%WWWDIR%%/include/tinymce/jscripts/tiny_mce/plugins/legacyoutput
+@dirrm %%WWWDIR%%/include/tinymce/jscripts/tiny_mce/plugins/layer
+@dirrm %%WWWDIR%%/include/tinymce/jscripts/tiny_mce/plugins/insertdatetime
+@dirrm %%WWWDIR%%/include/tinymce/jscripts/tiny_mce/plugins/inlinepopups/skins/clearlooks2/img
+@dirrm %%WWWDIR%%/include/tinymce/jscripts/tiny_mce/plugins/inlinepopups/skins/clearlooks2
+@dirrm %%WWWDIR%%/include/tinymce/jscripts/tiny_mce/plugins/inlinepopups/skins
+@dirrm %%WWWDIR%%/include/tinymce/jscripts/tiny_mce/plugins/inlinepopups
+@dirrm %%WWWDIR%%/include/tinymce/jscripts/tiny_mce/plugins/iespell
+@dirrm %%WWWDIR%%/include/tinymce/jscripts/tiny_mce/plugins/fullscreen
+@dirrm %%WWWDIR%%/include/tinymce/jscripts/tiny_mce/plugins/fullpage/langs
+@dirrm %%WWWDIR%%/include/tinymce/jscripts/tiny_mce/plugins/fullpage/js
+@dirrm %%WWWDIR%%/include/tinymce/jscripts/tiny_mce/plugins/fullpage/css
+@dirrm %%WWWDIR%%/include/tinymce/jscripts/tiny_mce/plugins/fullpage
+@dirrm %%WWWDIR%%/include/tinymce/jscripts/tiny_mce/plugins/example/langs
+@dirrm %%WWWDIR%%/include/tinymce/jscripts/tiny_mce/plugins/example/js
+@dirrm %%WWWDIR%%/include/tinymce/jscripts/tiny_mce/plugins/example/img
+@dirrm %%WWWDIR%%/include/tinymce/jscripts/tiny_mce/plugins/example
+@dirrm %%WWWDIR%%/include/tinymce/jscripts/tiny_mce/plugins/emotions/langs
+@dirrm %%WWWDIR%%/include/tinymce/jscripts/tiny_mce/plugins/emotions/js
+@dirrm %%WWWDIR%%/include/tinymce/jscripts/tiny_mce/plugins/emotions/img
+@dirrm %%WWWDIR%%/include/tinymce/jscripts/tiny_mce/plugins/emotions
+@dirrm %%WWWDIR%%/include/tinymce/jscripts/tiny_mce/plugins/directionality
+@dirrm %%WWWDIR%%/include/tinymce/jscripts/tiny_mce/plugins/contextmenu
+@dirrm %%WWWDIR%%/include/tinymce/jscripts/tiny_mce/plugins/bbcode
+@dirrm %%WWWDIR%%/include/tinymce/jscripts/tiny_mce/plugins/autosave/langs
+@dirrm %%WWWDIR%%/include/tinymce/jscripts/tiny_mce/plugins/autosave/images
+@dirrm %%WWWDIR%%/include/tinymce/jscripts/tiny_mce/plugins/autosave
+@dirrm %%WWWDIR%%/include/tinymce/jscripts/tiny_mce/plugins/autoresize
+@dirrm %%WWWDIR%%/include/tinymce/jscripts/tiny_mce/plugins/advlist
+@dirrm %%WWWDIR%%/include/tinymce/jscripts/tiny_mce/plugins/advlink/langs
+@dirrm %%WWWDIR%%/include/tinymce/jscripts/tiny_mce/plugins/advlink/js
+@dirrm %%WWWDIR%%/include/tinymce/jscripts/tiny_mce/plugins/advlink/css
+@dirrm %%WWWDIR%%/include/tinymce/jscripts/tiny_mce/plugins/advlink
+@dirrm %%WWWDIR%%/include/tinymce/jscripts/tiny_mce/plugins/advimage/langs
+@dirrm %%WWWDIR%%/include/tinymce/jscripts/tiny_mce/plugins/advimage/js
+@dirrm %%WWWDIR%%/include/tinymce/jscripts/tiny_mce/plugins/advimage/img
+@dirrm %%WWWDIR%%/include/tinymce/jscripts/tiny_mce/plugins/advimage/css
+@dirrm %%WWWDIR%%/include/tinymce/jscripts/tiny_mce/plugins/advimage
+@dirrm %%WWWDIR%%/include/tinymce/jscripts/tiny_mce/plugins/advhr/langs
+@dirrm %%WWWDIR%%/include/tinymce/jscripts/tiny_mce/plugins/advhr/js
+@dirrm %%WWWDIR%%/include/tinymce/jscripts/tiny_mce/plugins/advhr/css
+@dirrm %%WWWDIR%%/include/tinymce/jscripts/tiny_mce/plugins/advhr
+@dirrm %%WWWDIR%%/include/tinymce/jscripts/tiny_mce/plugins
+@dirrm %%WWWDIR%%/include/tinymce/jscripts/tiny_mce/langs
+@dirrm %%WWWDIR%%/include/tinymce/jscripts/tiny_mce
+@dirrm %%WWWDIR%%/include/tinymce/jscripts
+@dirrm %%WWWDIR%%/include/tinymce
+@dirrm %%WWWDIR%%/include/swift/lib/dependency_maps
+@dirrm %%WWWDIR%%/include/swift/lib/classes/Swift/Transport/Esmtp/Auth
+@dirrm %%WWWDIR%%/include/swift/lib/classes/Swift/Transport/Esmtp
+@dirrm %%WWWDIR%%/include/swift/lib/classes/Swift/Transport
+@dirrm %%WWWDIR%%/include/swift/lib/classes/Swift/StreamFilters
+@dirrm %%WWWDIR%%/include/swift/lib/classes/Swift/Plugins/Reporters
+@dirrm %%WWWDIR%%/include/swift/lib/classes/Swift/Plugins/Pop
+@dirrm %%WWWDIR%%/include/swift/lib/classes/Swift/Plugins/Loggers
+@dirrm %%WWWDIR%%/include/swift/lib/classes/Swift/Plugins/Decorator
+@dirrm %%WWWDIR%%/include/swift/lib/classes/Swift/Plugins
+@dirrm %%WWWDIR%%/include/swift/lib/classes/Swift/Mime/Headers
+@dirrm %%WWWDIR%%/include/swift/lib/classes/Swift/Mime/HeaderEncoder
+@dirrm %%WWWDIR%%/include/swift/lib/classes/Swift/Mime/ContentEncoder
+@dirrm %%WWWDIR%%/include/swift/lib/classes/Swift/Mime
+@dirrm %%WWWDIR%%/include/swift/lib/classes/Swift/Mailer
+@dirrm %%WWWDIR%%/include/swift/lib/classes/Swift/KeyCache
+@dirrm %%WWWDIR%%/include/swift/lib/classes/Swift/Events
+@dirrm %%WWWDIR%%/include/swift/lib/classes/Swift/Encoder
+@dirrm %%WWWDIR%%/include/swift/lib/classes/Swift/CharacterStream
+@dirrm %%WWWDIR%%/include/swift/lib/classes/Swift/CharacterReaderFactory
+@dirrm %%WWWDIR%%/include/swift/lib/classes/Swift/CharacterReader
+@dirrm %%WWWDIR%%/include/swift/lib/classes/Swift/ByteStream
+@dirrm %%WWWDIR%%/include/swift/lib/classes/Swift
+@dirrm %%WWWDIR%%/include/swift/lib/classes
+@dirrm %%WWWDIR%%/include/swift/lib
+@dirrm %%WWWDIR%%/include/swift
+@dirrm %%WWWDIR%%/include/jscalendar/lang
+@dirrm %%WWWDIR%%/include/jscalendar
+@dirrm %%WWWDIR%%/include/fpdf/font/makefont
+@dirrm %%WWWDIR%%/include/fpdf/font
+@dirrm %%WWWDIR%%/include/fpdf
+@dirrm %%WWWDIR%%/include/SMARTY/plugins
+@dirrm %%WWWDIR%%/include/SMARTY/internals
+@dirrm %%WWWDIR%%/include/SMARTY
+@dirrm %%WWWDIR%%/include/ADODB/xsl
+@dirrm %%WWWDIR%%/include/ADODB/session/old
+@dirrm %%WWWDIR%%/include/ADODB/session
+@dirrm %%WWWDIR%%/include/ADODB/perf
+@dirrm %%WWWDIR%%/include/ADODB/pear/Auth/Container
+@dirrm %%WWWDIR%%/include/ADODB/pear/Auth
+@dirrm %%WWWDIR%%/include/ADODB/pear
+@dirrm %%WWWDIR%%/include/ADODB/lang
+@dirrm %%WWWDIR%%/include/ADODB/drivers
+@dirrm %%WWWDIR%%/include/ADODB/datadict
+@dirrm %%WWWDIR%%/include/ADODB/contrib
+@dirrm %%WWWDIR%%/include/ADODB
+@dirrm %%WWWDIR%%/include
+@dirrm %%WWWDIR%%/images/paypal
+@dirrm %%WWWDIR%%/images/paymate
+@dirrm %%WWWDIR%%/images/icons/16x16
+@dirrm %%WWWDIR%%/images/icons
+@dirrm %%WWWDIR%%/images/buttons
+@dirrm %%WWWDIR%%/images
+@dirrm %%WWWDIR%%/fonts
+@dirrm %%WWWDIR%%/css
+@dirrm %%WWWDIR%%/cron
+@dirrm %%WWWDIR%%/cache
+@dirrm %%WWWDIR%%/backup
+@dirrmtry %%WWWDIR%%/
+@exec mkdir -p %D/%%WWWDIR%%/include/tinymce/jscripts/tiny_mce/plugins/autosave/images

@@ -184,6 +184,7 @@
     SUBDIR += multisync
     SUBDIR += multisync-backup
     SUBDIR += multisync-syncml
+    SUBDIR += myitcrm
     SUBDIR += mywiki
     SUBDIR += nagaina
     SUBDIR += narval
