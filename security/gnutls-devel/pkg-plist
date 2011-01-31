@@ -3,6 +3,7 @@ bin/certtool
 bin/gnutls-cli
 bin/gnutls-cli-debug
 bin/gnutls-serv
+bin/p11tool
 bin/psktool
 bin/srptool
 info/gnutls-certificate-user-use-case.png
@@ -36,15 +37,15 @@ include/gnutls/x509.h
 lib/libgnutls-extra.a
 lib/libgnutls-extra.la
 lib/libgnutls-extra.so
-lib/libgnutls-extra.so.43
+lib/libgnutls-extra.so.44
 lib/libgnutls-openssl.a
 lib/libgnutls-openssl.la
 lib/libgnutls-openssl.so
-lib/libgnutls-openssl.so.43
+lib/libgnutls-openssl.so.44
 lib/libgnutls.a
 lib/libgnutls.la
 lib/libgnutls.so
-lib/libgnutls.so.43
+lib/libgnutls.so.44
 libdata/pkgconfig/gnutls-extra.pc
 libdata/pkgconfig/gnutls.pc
 %%EXAMPLESDIR%%/ex-alert.c
