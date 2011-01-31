@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	freevrrpd
-PORTVERSION=	0.9.3
+PORTVERSION=	1.0
 CATEGORIES=	net
-MASTER_SITES=	http://freebsd.unixfreunde.de/sources/ \
+MASTER_SITES=	http://opensource.kewego.com/freevrrpd/ \
+		http://freebsd.unixfreunde.de/sources/ \
 		${MASTER_SITE_LOCAL:S/$/:freebsd/g}
 MASTER_SITE_SUBDIR=	flz/freevrrpd/:freebsd
 DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}:DEFAULT,freebsd
@@ -26,5 +27,10 @@ do-install:
 	@${INSTALL_DATA} ${WRKSRC}/freevrrpd.conf.sample ${PREFIX}/etc
 	@${INSTALL_SCRIPT} ${WRKSRC}/freevrrpd.sh.sample ${PREFIX}/etc/rc.d
 	@${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.8 ${MANPREFIX}/man/man8
+
+post-install:
+	@${ECHO} ''
+	@${CAT} ${PKGMESSAGE}
+	@${ECHO} ''
 
 .include <bsd.port.mk>
