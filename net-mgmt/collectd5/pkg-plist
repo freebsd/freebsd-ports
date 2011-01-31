@@ -35,6 +35,9 @@ lib/collectd/csv.so
 %%DBI%%lib/collectd/dbi.a
 %%DBI%%lib/collectd/dbi.la
 %%DBI%%lib/collectd/dbi.so
+%%DISK%%lib/collectd/disk.a
+%%DISK%%lib/collectd/disk.la
+%%DISK%%lib/collectd/disk.so
 lib/collectd/df.a
 lib/collectd/df.la
 lib/collectd/df.so
