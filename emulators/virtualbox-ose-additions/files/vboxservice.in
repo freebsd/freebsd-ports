@@ -1,0 +1,26 @@
+#!/bin/sh
+
+# $FreeBSD$
+
+# PROVIDE: vboxservice
+# REQUIRE: DAEMON vboxguest
+# BEFORE: LOGIN
+# KEYWORD: shutdown
+
+# Define vboxservice_enable in /etc/rc.conf[.local] to enable it.
+#
+# vboxservice_enable (bool):  Set to "NO" by default.
+#                             Set it to "YES" to enable VBoxService.
+
+. /etc/rc.subr
+
+name="vboxservice"
+rcvar=`set_rcvar`
+command="%%PREFIX%%/sbin/VBoxService"
+
+load_rc_config $name
+
+: ${vboxservice_enable="NO"}
+: ${vboxservice_flags=""}
+
+run_rc_command "$1"
