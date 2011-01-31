@@ -1,5 +1,5 @@
---- ../make/Makefile.orig	Thu Aug 19 17:37:44 2004
-+++ ../make/Makefile	Thu Aug 19 22:52:41 2004
+--- ../make/Makefile.orig	2010-08-25 00:58:16.000000000 +0400
++++ ../make/Makefile	2011-01-22 01:12:41.000000000 +0300
 @@ -9,8 +9,8 @@
  ##
  ##   1. make all              Build all the TINKER executables
@@ -15,7 +15,7 @@
  ##  LINKDIR      Linked Copies of TINKER Executables
  ##
  
--TINKERDIR = /user/ponder/tinker
+-TINKERDIR = /Users/ponder/tinker
 -BINDIR = $(TINKERDIR)/bin
 -LINKDIR = /usr/local/bin
 +TINKERDIR = ${WRKDIR}
@@ -24,11 +24,10 @@
  
  ####################################################################
  ##  Known Machine Types; Uncomment One of the Following Sections  ##
-@@ -122,6 +122,20 @@
- #LIBFLAGS = -crusv
- #LINKFLAGS =
+@@ -40,6 +40,20 @@
+ ####################################################################
  
-+##
+ ##
 +##  Machine:  IntelPC / FreeBSD
 +##  CPU Type: Intel, AMD, Cyrix
 +##  Oper Sys: FreeBSD 4.2
@@ -42,10 +41,30 @@
 +OPTFLAGS = 
 +LIBFLAGS = -rcuv
 +
- #################################################################
- ##  Should not be Necessary to Change Things Below this Point  ##
- #################################################################
-@@ -529,11 +543,13 @@
++##
+ ##  Machine:  Generic Linux
+ ##  CPU Type: Intel x86 Compatible
+ ##  Oper Sys: Fedora Core
+@@ -102,12 +116,12 @@
+ ##  Compiler: Intel Fortran for Mac 11
+ ##
+ 
+-F77 = /opt/intel/Compiler/11.1/058/bin/intel64/ifort
+-LIBS =
+-F77FLAGS = -c -axSSSE3 -vec-report0
+-OPTFLAGS = -O3 -no-ipo -no-prec-div
+-LIBFLAGS = -crusv
+-LINKFLAGS = -static-intel -mmacosx-version-min=10.4
++#F77 = /opt/intel/Compiler/11.1/058/bin/intel64/ifort
++#LIBS =
++#F77FLAGS = -c -axSSSE3 -vec-report0
++#OPTFLAGS = -O3 -no-ipo -no-prec-div
++#LIBFLAGS = -crusv
++#LINKFLAGS = -static-intel -mmacosx-version-min=10.4
+ 
+ ##
+ ##  Machine:  Macintosh (PPC)
+@@ -584,6 +598,8 @@
             xyzpdb.x \
             xyzsybyl.x
  
@@ -54,6 +73,10 @@
  .f.o:
  	${F77} ${F77FLAGS} ${OPTFLAGS} $*.f 
  
+@@ -596,8 +612,8 @@
+ server.o:
+ 	${F77} ${F77FLAGS} ${OPTFLAGS} server.f
+ 
 -%.x: %.o libtinker.a
 -	${F77} ${LINKFLAGS} -o $@ $^ ${LIBS}
 +.o.x: libtinker.a
@@ -61,7 +84,7 @@
  
  all:	${EXEFILES}
  
-@@ -544,59 +560,59 @@
+@@ -608,63 +624,63 @@
  	cat *.i *.f > tinker.txt
  
  rename:
@@ -91,6 +114,8 @@
 -	mv  path.x       $(BINDIR)/path
 -	mv  pdbxyz.x     $(BINDIR)/pdbxyz
 -	mv  polarize.x   $(BINDIR)/polarize
+-	mv  poledit.x    $(BINDIR)/poledit
+-	mv  potential.x  $(BINDIR)/potential
 -	mv  prmedit.x    $(BINDIR)/prmedit
 -	mv  protein.x    $(BINDIR)/protein
 -	mv  pss.x        $(BINDIR)/pss
@@ -106,10 +131,12 @@
 -	mv  sybylxyz.x   $(BINDIR)/sybylxyz
 -	mv  testgrad.x   $(BINDIR)/testgrad
 -	mv  testhess.x   $(BINDIR)/testhess
--	mv  testlight.x  $(BINDIR)/testlight
+-	mv  testpair.x   $(BINDIR)/testpair
 -	mv  testrot.x    $(BINDIR)/testrot
 -	mv  timer.x      $(BINDIR)/timer
 -	mv  timerot.x    $(BINDIR)/timerot
+-	mv  valence.x    $(BINDIR)/valence
+-	mv  vibbig.x     $(BINDIR)/vibbig
 -	mv  vibrate.x    $(BINDIR)/vibrate
 -	mv  vibrot.x     $(BINDIR)/vibrot
 -	mv  xtalfit.x    $(BINDIR)/xtalfit
@@ -144,6 +171,8 @@
 +	${INSTALL_PROGRAM}  path.x       $(BINDIR)/path
 +	${INSTALL_PROGRAM}  pdbxyz.x     $(BINDIR)/pdbxyz
 +	${INSTALL_PROGRAM}  polarize.x   $(BINDIR)/polarize
++	${INSTALL_PROGRAM}  poledit.x    $(BINDIR)/poledit
++	${INSTALL_PROGRAM}  potential.x  $(BINDIR)/potential
 +	${INSTALL_PROGRAM}  prmedit.x    $(BINDIR)/prmedit
 +	${INSTALL_PROGRAM}  protein.x    $(BINDIR)/protein
 +	${INSTALL_PROGRAM}  pss.x        $(BINDIR)/pss
@@ -159,10 +188,12 @@
 +	${INSTALL_PROGRAM}  sybylxyz.x   $(BINDIR)/sybylxyz
 +	${INSTALL_PROGRAM}  testgrad.x   $(BINDIR)/testgrad
 +	${INSTALL_PROGRAM}  testhess.x   $(BINDIR)/testhess
-+	${INSTALL_PROGRAM}  testlight.x  $(BINDIR)/testlight
++	${INSTALL_PROGRAM}  testpair.x   $(BINDIR)/testpair
 +	${INSTALL_PROGRAM}  testrot.x    $(BINDIR)/testrot
 +	${INSTALL_PROGRAM}  timer.x      $(BINDIR)/timer
 +	${INSTALL_PROGRAM}  timerot.x    $(BINDIR)/timerot
++	${INSTALL_PROGRAM}  valence.x    $(BINDIR)/valence
++	${INSTALL_PROGRAM}  vibbig.x     $(BINDIR)/vibbig
 +	${INSTALL_PROGRAM}  vibrate.x    $(BINDIR)/vibrate
 +	${INSTALL_PROGRAM}  vibrot.x     $(BINDIR)/vibrot
 +	${INSTALL_PROGRAM}  xtalfit.x    $(BINDIR)/xtalfit

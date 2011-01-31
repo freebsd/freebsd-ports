@@ -6,14 +6,9 @@
 #
 
 PORTNAME=	tinker
-PORTVERSION=	4.2.20040908
-PORTREVISION=	5
+PORTVERSION=	5.1.09
 CATEGORIES=	biology
-MASTER_SITES=	ftp://ftp.tu-chemnitz.de/.SAN0/pub/FreeBSD/ports/distfiles/RESTRICTED/${PORTNAME}-${PORTVERSION}/\
-		ftp://ftp.tw.freebsd.org/pub/ports/distfiles/${PORTNAME}-${PORTVERSION}/ \
-		ftp://ftp.uvsq.fr/pub/FreeBSD/ports/distfiles/RESTRICTED/${PORTNAME}-${PORTVERSION}/
-DISTNAME=	${PORTNAME}
-DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
+MASTER_SITES=	http://dasher.wustl.edu/tinker/downloads/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A general purpose molecular modelling package
@@ -27,10 +22,9 @@ ALL_TARGET=	all listing
 INSTALL_TARGET=	rename
 RESTRICTED=	author requests no distribution except from his FTP site
 
-DOCS=		README *.pdf *.txt release*
-SAMPLES=	README clean.make *.1st *.boat *.cell *.chair *.dat *.dyn0	\
-		*.key *.log *.pdb *.run *.xyz
-BENCHES=	README *.dyn0 *.log *.key *.run *.xyz results*
+DOCS=		0README *.pdf *.txt announce/release*
+SAMPLES=	0README *.make *.dyn *.int *.frac *.key *.seq *.pdb *.run *.xyz
+BENCHES=	0README *.dyn0 *.log *.key *.run *.xyz results*
 
 .include <bsd.port.pre.mk>
 
@@ -41,21 +35,6 @@ FFLAGS+=	-O3 -ffast-math -finline-functions -fomit-frame-pointer -funroll-loops 
 .if (${ARCH} == "i386")
 FFLAGS+=	-mfancy-math-387 -malign-double
 .endif # i386
-.endif
-
-.if defined(WITH_VIEWER)
-BUILD_DEPENDS+=	imake:${PORTSDIR}/devel/imake
-USE_XORG=	x11 xext xi
-PLIST_SUB+=	WITH_VIEWER=""
-post-build:
-	@${SETENV} ${SCRIPTS_ENV} ${SH} ${SCRIPTDIR}/build_viewer
-.else
-PLIST_SUB+=	WITH_VIEWER="@comment "
-pre-extract:
-	@${ECHO_MSG} ""
-	@${ECHO_MSG} If you would like to also build
-	@${ECHO_MSG} the molecular viewer, define WITH_VIEWER.
-	@${ECHO_MSG} ""
 .endif
 
 pre-everything::
@@ -84,13 +63,6 @@ post-install:
 	@${INSTALL_DATA} ${SAMPLES:S|^|${WRKDIR}/tinker/example/|} ${EXAMPLESDIR}
 	@${INSTALL_DATA} ${BENCHES:S|^|${WRKDIR}/tinker/bench/|} ${DATADIR}/bench
 	@${INSTALL_DATA} ${WRKDIR}/tinker/test/* ${DATADIR}/test
-.endif
-.if defined(WITH_VIEWER)
-	@${MKDIR} ${DATADIR}/rasmol
-	@${INSTALL_PROGRAM} ${WRKDIR}/tinker/rasmol/tview-* ${PREFIX}/bin
-	@${INSTALL_SCRIPT} ${FILESDIR}/tview ${PREFIX}/bin
-	@${INSTALL_DATA} ${WRKDIR}/tinker/rasmol/rasmol.hlp \
-		${DATADIR}/rasmol
 .endif
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "   **********************************************************"
