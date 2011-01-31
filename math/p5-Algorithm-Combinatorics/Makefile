@@ -6,13 +6,12 @@
 #
 
 PORTNAME=	Algorithm-Combinatorics
-PORTVERSION=	0.25
-PORTREVISION=	1
+PORTVERSION=	0.26
 CATEGORIES=	math perl5
-MASTER_SITES=	CPAN
+MASTER_SITES=	CPAN/../../authors/id/F/FX/FXN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Efficient generation of combinatorial sequences
 
 MAN3=		Algorithm::Combinatorics.3
