@@ -1,0 +1,514 @@
+bin/erlyctl
+bin/reverse_mpegts
+bin/rtmp_bench
+%%ETCDIR%%/%%PORTNAME%%.conf.sample
+%%ETCDIR%%/log4erl.conf.sample
+%%ETCDIR%%/production.config.sample
+lib/erlang/lib/amf-%%PORTVERSION%%/ebin/amf0.beam
+lib/erlang/lib/amf-%%PORTVERSION%%/ebin/amf0_tests.beam
+lib/erlang/lib/amf-%%PORTVERSION%%/ebin/amf3.beam
+lib/erlang/lib/amf-%%PORTVERSION%%/ebin/amf3_tests.beam
+lib/erlang/lib/amf-%%PORTVERSION%%/ebin/eamf.app
+lib/erlang/lib/erlmedia-%%PORTVERSION%%/ebin/aac.beam
+lib/erlang/lib/erlmedia-%%PORTVERSION%%/ebin/ems_log.beam
+lib/erlang/lib/erlmedia-%%PORTVERSION%%/ebin/erlmedia.app
+lib/erlang/lib/erlmedia-%%PORTVERSION%%/ebin/flv.beam
+lib/erlang/lib/erlmedia-%%PORTVERSION%%/ebin/flv_reader.beam
+lib/erlang/lib/erlmedia-%%PORTVERSION%%/ebin/flv_video_frame.beam
+lib/erlang/lib/erlmedia-%%PORTVERSION%%/ebin/flv_writer.beam
+lib/erlang/lib/erlmedia-%%PORTVERSION%%/ebin/gen_format.beam
+lib/erlang/lib/erlmedia-%%PORTVERSION%%/ebin/gen_listener.beam
+lib/erlang/lib/erlmedia-%%PORTVERSION%%/ebin/h264.beam
+lib/erlang/lib/erlmedia-%%PORTVERSION%%/ebin/http_stream.beam
+lib/erlang/lib/erlmedia-%%PORTVERSION%%/ebin/http_uri2.beam
+lib/erlang/lib/erlmedia-%%PORTVERSION%%/ebin/jpeg_reader.beam
+lib/erlang/lib/erlmedia-%%PORTVERSION%%/ebin/mjpeg_reader.beam
+lib/erlang/lib/erlmedia-%%PORTVERSION%%/ebin/mkv.beam
+lib/erlang/lib/erlmedia-%%PORTVERSION%%/ebin/mp3.beam
+lib/erlang/lib/erlmedia-%%PORTVERSION%%/ebin/mp3_reader.beam
+lib/erlang/lib/erlmedia-%%PORTVERSION%%/ebin/mp4.beam
+lib/erlang/lib/erlmedia-%%PORTVERSION%%/ebin/mp4_reader.beam
+lib/erlang/lib/erlmedia-%%PORTVERSION%%/ebin/mp4_writer.beam
+lib/erlang/lib/erlmedia-%%PORTVERSION%%/ebin/packet_codec.beam
+lib/erlang/lib/erlmedia-%%PORTVERSION%%/ebin/shoutcast_reader.beam
+lib/erlang/lib/erlmedia-%%PORTVERSION%%/ebin/srt_parser.beam
+lib/erlang/lib/erlmedia-%%PORTVERSION%%/ebin/wav.beam
+lib/erlang/lib/erlmedia-%%PORTVERSION%%/include/aac.hrl
+lib/erlang/lib/erlmedia-%%PORTVERSION%%/include/flv.hrl
+lib/erlang/lib/erlmedia-%%PORTVERSION%%/include/h264.hrl
+lib/erlang/lib/erlmedia-%%PORTVERSION%%/include/mp3.hrl
+lib/erlang/lib/erlmedia-%%PORTVERSION%%/include/mp4.hrl
+lib/erlang/lib/erlmedia-%%PORTVERSION%%/include/srt.hrl
+lib/erlang/lib/erlmedia-%%PORTVERSION%%/include/video_frame.hrl
+lib/erlang/lib/erlmedia-%%PORTVERSION%%/include/wav.hrl
+lib/erlang/lib/erlydtl-%%PORTVERSION%%/ebin/erlydtl.beam
+lib/erlang/lib/erlydtl-%%PORTVERSION%%/ebin/erlydtl_compiler.beam
+lib/erlang/lib/erlydtl-%%PORTVERSION%%/ebin/erlydtl_dateformat.beam
+lib/erlang/lib/erlydtl-%%PORTVERSION%%/ebin/erlydtl_dateformat_tests.beam
+lib/erlang/lib/erlydtl-%%PORTVERSION%%/ebin/erlydtl_deps.beam
+lib/erlang/lib/erlydtl-%%PORTVERSION%%/ebin/erlydtl_example_variable_storage.beam
+lib/erlang/lib/erlydtl-%%PORTVERSION%%/ebin/erlydtl_filters.beam
+lib/erlang/lib/erlydtl-%%PORTVERSION%%/ebin/erlydtl_functional_tests.beam
+lib/erlang/lib/erlydtl-%%PORTVERSION%%/ebin/erlydtl_parser.beam
+lib/erlang/lib/erlydtl-%%PORTVERSION%%/ebin/erlydtl_runtime.beam
+lib/erlang/lib/erlydtl-%%PORTVERSION%%/ebin/erlydtl_scanner.beam
+lib/erlang/lib/erlydtl-%%PORTVERSION%%/ebin/erlydtl_unittests.beam
+lib/erlang/lib/erlydtl-%%PORTVERSION%%/src/erlydtl/erlydtl.app
+lib/erlang/lib/erlydtl-%%PORTVERSION%%/src/erlydtl/erlydtl.erl
+lib/erlang/lib/erlydtl-%%PORTVERSION%%/src/erlydtl/erlydtl_compiler.erl
+lib/erlang/lib/erlydtl-%%PORTVERSION%%/src/erlydtl/erlydtl_dateformat.erl
+lib/erlang/lib/erlydtl-%%PORTVERSION%%/src/erlydtl/erlydtl_deps.erl
+lib/erlang/lib/erlydtl-%%PORTVERSION%%/src/erlydtl/erlydtl_filters.erl
+lib/erlang/lib/erlydtl-%%PORTVERSION%%/src/erlydtl/erlydtl_parser.erl
+lib/erlang/lib/erlydtl-%%PORTVERSION%%/src/erlydtl/erlydtl_parser.yrl
+lib/erlang/lib/erlydtl-%%PORTVERSION%%/src/erlydtl/erlydtl_runtime.erl
+lib/erlang/lib/erlydtl-%%PORTVERSION%%/src/erlydtl/erlydtl_scanner.erl
+lib/erlang/lib/erlydtl-%%PORTVERSION%%/src/tests/erlydtl_dateformat_tests.erl
+lib/erlang/lib/erlydtl-%%PORTVERSION%%/src/tests/erlydtl_example_variable_storage.erl
+lib/erlang/lib/erlydtl-%%PORTVERSION%%/src/tests/erlydtl_functional_tests.erl
+lib/erlang/lib/erlydtl-%%PORTVERSION%%/src/tests/erlydtl_unittests.erl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/Emakefile
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/apps_push.beam
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/apps_recording.beam
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/apps_rewrite_play.beam
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/apps_rewrite_publish.beam
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/apps_stat_collector.beam
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/apps_streaming.beam
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/array_timeshift.beam
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/auth_users_limit.beam
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/directory_playlist.beam
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/ems.beam
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/ems_debug.beam
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/ems_event.beam
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/ems_event_consumer.beam
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/ems_event_hook.beam
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/ems_flv_streams.beam
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/ems_hook_http.beam
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/ems_http.beam
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/ems_http_file.beam
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/ems_http_flv.beam
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/ems_http_push.beam
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/ems_http_rtmpt.beam
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/ems_http_stats.beam
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/ems_http_templates.beam
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/ems_license_client.beam
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/ems_media.beam
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/ems_media_clients.beam
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/ems_media_frame.beam
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/ems_media_tests.beam
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/ems_network_lag_monitor.beam
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/ems_rtsp.beam
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/ems_shoutcast.beam
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/ems_sup.beam
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/ems_users.beam
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/ems_vhosts.beam
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/erlyvideo.app
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/erlyvideo.beam
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/erlyvideo_ctl.beam
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/file_media.beam
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/file_password_publish.beam
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/fitc_demo.beam
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/gen_cache.beam
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/gen_server_ems.beam
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/http_media.beam
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/io_lib_pretty_limited.beam
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/json_session.beam
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/jsonerl.beam
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/limited_connections_login.beam
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/live_media.beam
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/media_detector.beam
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/media_provider.beam
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/media_ticker.beam
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/misultin_req.beam
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/misultin_socket.beam
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/mmap.so
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/mochijson2.beam
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/mochiweb_util.beam
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/mpegts_file_media.beam
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/mpegts_media.beam
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/mpegts_passive_media.beam
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/password_publish.beam
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/referer_check.beam
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/reverse_mpegts.beam
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/rtmp_media.beam
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/rtmp_publish.beam
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/rtmp_session.beam
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/rtsp_media.beam
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/shared_object.beam
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/shared_objects.beam
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/test_media.beam
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/trusted_login.beam
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/uuid.beam
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/include/ems_media.hrl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/include/erlyvideo.hrl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/include/rtmp_session.hrl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/lib/misultin/LICENSE.txt
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/lib/misultin/README.txt
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/lib/misultin/compile
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/lib/misultin/compile.bat
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/lib/misultin/examples/misultin_echo.erl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/lib/misultin/examples/misultin_file.erl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/lib/misultin/examples/misultin_gen_server.erl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/lib/misultin/examples/misultin_get_variable.erl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/lib/misultin/examples/misultin_hello_world.erl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/lib/misultin/examples/misultin_rest.erl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/lib/misultin/examples/misultin_stream.erl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/lib/misultin/include/misultin.hrl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/lib/misultin/src/misultin.app
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/lib/misultin/src/misultin_req.erl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/lib/misultin/src/misultin_socket.erl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/apps/apps_push.erl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/apps/apps_recording.erl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/apps/apps_stat_collector.erl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/apps/apps_streaming.erl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/auth/apps_rewrite_play.erl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/auth/apps_rewrite_publish.erl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/auth/auth_users_limit.erl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/auth/file_password_publish.erl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/auth/json_session.erl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/auth/limited_connections_login.erl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/auth/password_publish.erl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/auth/referer_check.erl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/auth/trusted_login.erl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/core/ems_network_lag_monitor.erl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/core/gen_cache.erl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/core/gen_server_ems.erl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/core/io_lib_pretty_limited.erl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/core/mmap.c
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/core/mochijson2.erl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/core/mochiweb_util.erl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/core/uuid.erl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/demos/fitc_demo.erl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/ems.erl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/ems.hrl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/ems_debug.erl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/ems_event.erl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/ems_event_consumer.erl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/ems_flv_streams.erl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/ems_license_client.erl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/ems_rtsp.erl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/ems_sup.erl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/ems_users.erl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/ems_vhosts.erl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/erlyvideo.erl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/erlyvideo_ctl.erl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/hooks/ems_event_hook.erl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/hooks/ems_hook_http.erl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/http/ems_http.erl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/http/ems_http_file.erl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/http/ems_http_flv.erl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/http/ems_http_push.erl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/http/ems_http_rtmpt.erl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/http/ems_http_stats.erl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/http/ems_http_templates.erl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/jsonerl.erl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/jsonerl.hrl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/log.hrl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/media/array_timeshift.erl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/media/directory_playlist.erl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/media/ems_media.erl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/media/ems_media_client.hrl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/media/ems_media_clients.erl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/media/ems_media_frame.erl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/media/ems_media_tests.erl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/media/ems_shoutcast.erl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/media/file_media.erl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/media/http_media.erl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/media/live_media.erl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/media/media_detector.erl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/media/media_provider.erl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/media/media_ticker.erl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/media/mpegts_file_media.erl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/media/mpegts_media.erl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/media/mpegts_passive_media.erl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/media/rtmp_media.erl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/media/rtsp_media.erl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/meta_access.hrl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/reverse_mpegts.erl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/rtmp/rtmp_publish.erl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/rtmp/rtmp_session.erl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/rtmp/shared_objects/shared_object.erl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/rtmp/shared_objects/shared_object.hrl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/rtmp/shared_objects/shared_objects.erl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/test/test_media.erl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/tpl/_ems_http.tpl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/tpl/_ems_media.tpl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/tpl/_gen_consumer.tpl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/tpl/_gen_event.tpl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/tpl/_gen_fsm.tpl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/tpl/_gen_server.tpl
+lib/erlang/lib/log4erl-%%PORTVERSION%%/ebin/console_appender.beam
+lib/erlang/lib/log4erl-%%PORTVERSION%%/ebin/dummy_appender.beam
+lib/erlang/lib/log4erl-%%PORTVERSION%%/ebin/email_msg.beam
+lib/erlang/lib/log4erl-%%PORTVERSION%%/ebin/error_logger_log4erl_h.beam
+lib/erlang/lib/log4erl-%%PORTVERSION%%/ebin/file_appender.beam
+lib/erlang/lib/log4erl-%%PORTVERSION%%/ebin/log4erl.app
+lib/erlang/lib/log4erl-%%PORTVERSION%%/ebin/log4erl.beam
+lib/erlang/lib/log4erl-%%PORTVERSION%%/ebin/log4erl_conf.beam
+lib/erlang/lib/log4erl-%%PORTVERSION%%/ebin/log4erl_lex.beam
+lib/erlang/lib/log4erl-%%PORTVERSION%%/ebin/log4erl_parser.beam
+lib/erlang/lib/log4erl-%%PORTVERSION%%/ebin/log4erl_sup.beam
+lib/erlang/lib/log4erl-%%PORTVERSION%%/ebin/log4erl_utils.beam
+lib/erlang/lib/log4erl-%%PORTVERSION%%/ebin/log_filter.beam
+lib/erlang/lib/log4erl-%%PORTVERSION%%/ebin/log_filter_codegen.beam
+lib/erlang/lib/log4erl-%%PORTVERSION%%/ebin/log_formatter.beam
+lib/erlang/lib/log4erl-%%PORTVERSION%%/ebin/log_manager.beam
+lib/erlang/lib/log4erl-%%PORTVERSION%%/ebin/logger_guard.beam
+lib/erlang/lib/log4erl-%%PORTVERSION%%/ebin/mochinum.beam
+lib/erlang/lib/log4erl-%%PORTVERSION%%/ebin/smtp_appender.beam
+lib/erlang/lib/log4erl-%%PORTVERSION%%/ebin/smtp_fsm.beam
+lib/erlang/lib/log4erl-%%PORTVERSION%%/ebin/syslog_appender.beam
+lib/erlang/lib/log4erl-%%PORTVERSION%%/ebin/xml_appender.beam
+lib/erlang/lib/log4erl-%%PORTVERSION%%/include/log4erl.hrl
+lib/erlang/lib/log4erl-%%PORTVERSION%%/src/Makefile
+lib/erlang/lib/log4erl-%%PORTVERSION%%/src/console_appender.erl
+lib/erlang/lib/log4erl-%%PORTVERSION%%/src/dummy_appender.erl
+lib/erlang/lib/log4erl-%%PORTVERSION%%/src/email_msg.erl
+lib/erlang/lib/log4erl-%%PORTVERSION%%/src/error_logger_log4erl_h.erl
+lib/erlang/lib/log4erl-%%PORTVERSION%%/src/file_appender.erl
+lib/erlang/lib/log4erl-%%PORTVERSION%%/src/log4erl.erl
+lib/erlang/lib/log4erl-%%PORTVERSION%%/src/log4erl_conf.erl
+lib/erlang/lib/log4erl-%%PORTVERSION%%/src/log4erl_lex.erl
+lib/erlang/lib/log4erl-%%PORTVERSION%%/src/log4erl_lex.xrl
+lib/erlang/lib/log4erl-%%PORTVERSION%%/src/log4erl_parser.erl
+lib/erlang/lib/log4erl-%%PORTVERSION%%/src/log4erl_parser.yrl
+lib/erlang/lib/log4erl-%%PORTVERSION%%/src/log4erl_sup.erl
+lib/erlang/lib/log4erl-%%PORTVERSION%%/src/log4erl_utils.erl
+lib/erlang/lib/log4erl-%%PORTVERSION%%/src/log_filter.erl
+lib/erlang/lib/log4erl-%%PORTVERSION%%/src/log_filter_codegen.erl
+lib/erlang/lib/log4erl-%%PORTVERSION%%/src/log_formatter.erl
+lib/erlang/lib/log4erl-%%PORTVERSION%%/src/log_manager.erl
+lib/erlang/lib/log4erl-%%PORTVERSION%%/src/logger_guard.erl
+lib/erlang/lib/log4erl-%%PORTVERSION%%/src/mochinum.erl
+lib/erlang/lib/log4erl-%%PORTVERSION%%/src/smtp_appender.erl
+lib/erlang/lib/log4erl-%%PORTVERSION%%/src/smtp_fsm.erl
+lib/erlang/lib/log4erl-%%PORTVERSION%%/src/syslog_appender.erl
+lib/erlang/lib/log4erl-%%PORTVERSION%%/src/xml_appender.erl
+lib/erlang/lib/mpegts-%%PORTVERSION%%/ebin/ems_http_mpegts.beam
+lib/erlang/lib/mpegts-%%PORTVERSION%%/ebin/iphone_streams.beam
+lib/erlang/lib/mpegts-%%PORTVERSION%%/ebin/mpeg2_crc32.beam
+lib/erlang/lib/mpegts-%%PORTVERSION%%/ebin/mpeg2_crc32.so
+lib/erlang/lib/mpegts-%%PORTVERSION%%/ebin/mpegts.app
+lib/erlang/lib/mpegts-%%PORTVERSION%%/ebin/mpegts.beam
+lib/erlang/lib/mpegts-%%PORTVERSION%%/ebin/mpegts_file_reader.beam
+lib/erlang/lib/mpegts-%%PORTVERSION%%/ebin/mpegts_play.beam
+lib/erlang/lib/mpegts-%%PORTVERSION%%/ebin/mpegts_reader.beam
+lib/erlang/lib/mpegts-%%PORTVERSION%%/ebin/mpegts_reader.so
+lib/erlang/lib/mpegts-%%PORTVERSION%%/ebin/mpegts_sup.beam
+lib/erlang/lib/rtmp-%%PORTVERSION%%/contrib/rtmp_bench
+lib/erlang/lib/rtmp-%%PORTVERSION%%/contrib/so_bench
+lib/erlang/lib/rtmp-%%PORTVERSION%%/ebin/hmac256.beam
+lib/erlang/lib/rtmp-%%PORTVERSION%%/ebin/rtmp.app
+lib/erlang/lib/rtmp-%%PORTVERSION%%/ebin/rtmp.beam
+lib/erlang/lib/rtmp-%%PORTVERSION%%/ebin/rtmp_app.beam
+lib/erlang/lib/rtmp-%%PORTVERSION%%/ebin/rtmp_bench.beam
+lib/erlang/lib/rtmp-%%PORTVERSION%%/ebin/rtmp_handshake.beam
+lib/erlang/lib/rtmp-%%PORTVERSION%%/ebin/rtmp_handshake_tests.beam
+lib/erlang/lib/rtmp-%%PORTVERSION%%/ebin/rtmp_lib.beam
+lib/erlang/lib/rtmp-%%PORTVERSION%%/ebin/rtmp_listener.beam
+lib/erlang/lib/rtmp-%%PORTVERSION%%/ebin/rtmp_socket.beam
+lib/erlang/lib/rtmp-%%PORTVERSION%%/ebin/rtmp_stat_collector.beam
+lib/erlang/lib/rtmp-%%PORTVERSION%%/ebin/rtmp_sup.beam
+lib/erlang/lib/rtmp-%%PORTVERSION%%/ebin/rtmpe.beam
+lib/erlang/lib/rtmp-%%PORTVERSION%%/ebin/rtmpt.beam
+lib/erlang/lib/rtmp-%%PORTVERSION%%/ebin/sha2.beam
+lib/erlang/lib/rtmp-%%PORTVERSION%%/include/rtmp.hrl
+lib/erlang/lib/rtp-%%PORTVERSION%%/ebin/ertp.app
+lib/erlang/lib/rtp-%%PORTVERSION%%/ebin/ertp.beam
+lib/erlang/lib/rtp-%%PORTVERSION%%/ebin/ertp_sup.beam
+lib/erlang/lib/rtp-%%PORTVERSION%%/ebin/rtp_server.beam
+lib/erlang/lib/rtp-%%PORTVERSION%%/ebin/sdp.beam
+lib/erlang/lib/rtp-%%PORTVERSION%%/ebin/sdp_tests.beam
+lib/erlang/lib/rtp-%%PORTVERSION%%/include/sdp.hrl
+lib/erlang/lib/rtsp-%%PORTVERSION%%/ebin/rtsp.app
+lib/erlang/lib/rtsp-%%PORTVERSION%%/ebin/rtsp.beam
+lib/erlang/lib/rtsp-%%PORTVERSION%%/ebin/rtsp_example_callback.beam
+lib/erlang/lib/rtsp-%%PORTVERSION%%/ebin/rtsp_listener.beam
+lib/erlang/lib/rtsp-%%PORTVERSION%%/ebin/rtsp_socket.beam
+lib/erlang/lib/rtsp-%%PORTVERSION%%/ebin/rtsp_sup.beam
+lib/erlang/lib/rtsp-%%PORTVERSION%%/include/rtsp.hrl
+lib/erlang/lib/rtsp-%%PORTVERSION%%/include/sdp.hrl
+%%WWWDIR%%/wwwroot/admin.html
+%%WWWDIR%%/wwwroot/blueprint/ie.css
+%%WWWDIR%%/wwwroot/blueprint/plugins/buttons/icons/cross.png
+%%WWWDIR%%/wwwroot/blueprint/plugins/buttons/icons/key.png
+%%WWWDIR%%/wwwroot/blueprint/plugins/buttons/icons/tick.png
+%%WWWDIR%%/wwwroot/blueprint/plugins/buttons/readme.txt
+%%WWWDIR%%/wwwroot/blueprint/plugins/buttons/screen.css
+%%WWWDIR%%/wwwroot/blueprint/plugins/fancy-type/readme.txt
+%%WWWDIR%%/wwwroot/blueprint/plugins/fancy-type/screen.css
+%%WWWDIR%%/wwwroot/blueprint/plugins/link-icons/icons/doc.png
+%%WWWDIR%%/wwwroot/blueprint/plugins/link-icons/icons/email.png
+%%WWWDIR%%/wwwroot/blueprint/plugins/link-icons/icons/external.png
+%%WWWDIR%%/wwwroot/blueprint/plugins/link-icons/icons/feed.png
+%%WWWDIR%%/wwwroot/blueprint/plugins/link-icons/icons/im.png
+%%WWWDIR%%/wwwroot/blueprint/plugins/link-icons/icons/pdf.png
+%%WWWDIR%%/wwwroot/blueprint/plugins/link-icons/icons/visited.png
+%%WWWDIR%%/wwwroot/blueprint/plugins/link-icons/icons/xls.png
+%%WWWDIR%%/wwwroot/blueprint/plugins/link-icons/readme.txt
+%%WWWDIR%%/wwwroot/blueprint/plugins/link-icons/screen.css
+%%WWWDIR%%/wwwroot/blueprint/plugins/rtl/readme.txt
+%%WWWDIR%%/wwwroot/blueprint/plugins/rtl/screen.css
+%%WWWDIR%%/wwwroot/blueprint/print.css
+%%WWWDIR%%/wwwroot/blueprint/screen.css
+%%WWWDIR%%/wwwroot/blueprint/src/forms.css
+%%WWWDIR%%/wwwroot/blueprint/src/grid.css
+%%WWWDIR%%/wwwroot/blueprint/src/grid.png
+%%WWWDIR%%/wwwroot/blueprint/src/ie.css
+%%WWWDIR%%/wwwroot/blueprint/src/print.css
+%%WWWDIR%%/wwwroot/blueprint/src/reset.css
+%%WWWDIR%%/wwwroot/blueprint/src/typography.css
+%%WWWDIR%%/wwwroot/chat.html
+%%WWWDIR%%/wwwroot/conf/audio/Caller.as
+%%WWWDIR%%/wwwroot/conf/audio/Caller.mxml
+%%WWWDIR%%/wwwroot/conf/audio/Caller.swf
+%%WWWDIR%%/wwwroot/conf/audio/index.html
+%%WWWDIR%%/wwwroot/conf/index.html
+%%WWWDIR%%/wwwroot/conf/player/Player.as
+%%WWWDIR%%/wwwroot/conf/player/Player.mxml
+%%WWWDIR%%/wwwroot/conf/player/Player.swf
+%%WWWDIR%%/wwwroot/conf/player/VideoContainer.as
+%%WWWDIR%%/wwwroot/conf/player/VideoSource.as
+%%WWWDIR%%/wwwroot/conf/player/VideoSourceEvent.as
+%%WWWDIR%%/wwwroot/conf/player/VideoStream.as
+%%WWWDIR%%/wwwroot/conf/player/ev-disabled.png
+%%WWWDIR%%/wwwroot/conf/player/ev-normal.png
+%%WWWDIR%%/wwwroot/conf/player/ev-pressed.png
+%%WWWDIR%%/wwwroot/erlyvideo-sq.png
+%%WWWDIR%%/wwwroot/erlyvideo-t.png
+%%WWWDIR%%/wwwroot/erlyvideo.png
+%%WWWDIR%%/wwwroot/expressInstall.swf
+%%WWWDIR%%/wwwroot/favicon.ico
+%%WWWDIR%%/wwwroot/flowplayer/flowplayer-3.1.4.min.js
+%%WWWDIR%%/wwwroot/flowplayer/flowplayer-3.1.5.swf
+%%WWWDIR%%/wwwroot/flowplayer/flowplayer-3.2.4.min.js
+%%WWWDIR%%/wwwroot/flowplayer/flowplayer-3.2.5.swf
+%%WWWDIR%%/wwwroot/flowplayer/flowplayer.captions-3.2.2.swf
+%%WWWDIR%%/wwwroot/flowplayer/flowplayer.captions.js
+%%WWWDIR%%/wwwroot/flowplayer/flowplayer.content-3.2.0.swf
+%%WWWDIR%%/wwwroot/flowplayer/flowplayer.controls-3.1.5.swf
+%%WWWDIR%%/wwwroot/flowplayer/flowplayer.controls-3.2.3.swf
+%%WWWDIR%%/wwwroot/flowplayer/flowplayer.rtmp-3.1.3.swf
+%%WWWDIR%%/wwwroot/flowplayer/index.html
+%%WWWDIR%%/wwwroot/flowplayer/style.css
+%%WWWDIR%%/wwwroot/index.html
+%%WWWDIR%%/wwwroot/iphone.html
+%%WWWDIR%%/wwwroot/js/jquery.js
+%%WWWDIR%%/wwwroot/js/jsSO.js
+%%WWWDIR%%/wwwroot/js/netconnection.js
+%%WWWDIR%%/wwwroot/js/swfobject.js
+%%WWWDIR%%/wwwroot/jsSO/jsSO.mxml
+%%WWWDIR%%/wwwroot/jsSO/jsSO.swf
+%%WWWDIR%%/wwwroot/jsso.html
+%%WWWDIR%%/wwwroot/mini/index.html
+%%WWWDIR%%/wwwroot/mini/player/Player.as
+%%WWWDIR%%/wwwroot/mini/player/Player.swf
+%%WWWDIR%%/wwwroot/phone/Phone.as
+%%WWWDIR%%/wwwroot/phone/Phone.mxml
+%%WWWDIR%%/wwwroot/phone/Phone.swf
+%%WWWDIR%%/wwwroot/phone/index.html
+%%WWWDIR%%/wwwroot/push/push.as
+%%WWWDIR%%/wwwroot/push/push.swf
+%%WWWDIR%%/wwwroot/stats.html
+%%WWWDIR%%/wwwroot/stats/stats.as
+%%WWWDIR%%/wwwroot/stats/stats.mxml
+%%WWWDIR%%/wwwroot/stats/stats.swf
+%%WWWDIR%%/wwwroot/videoconf.html
+%%WWWDIR%%/wwwroot/videoconf/VideoContainer.as
+%%WWWDIR%%/wwwroot/videoconf/Videoconf.as
+%%WWWDIR%%/wwwroot/videoconf/Videoconf.mxml
+%%WWWDIR%%/wwwroot/videoconf/Videoconf.swf
+%%WWWDIR%%/wwwroot/videoconf/videoconf.as
+%%WWWDIR%%/wwwroot/videoconf/videoconf.mxml
+%%WWWDIR%%/wwwroot/videoconf/videoconf.swf
+@dirrm %%WWWDIR%%/wwwroot/videoconf
+@dirrm %%WWWDIR%%/wwwroot/stats
+@dirrm %%WWWDIR%%/wwwroot/push
+@dirrm %%WWWDIR%%/wwwroot/phone
+@dirrm %%WWWDIR%%/wwwroot/mini/player
+@dirrm %%WWWDIR%%/wwwroot/mini
+@dirrm %%WWWDIR%%/wwwroot/jsSO
+@dirrm %%WWWDIR%%/wwwroot/js
+@dirrm %%WWWDIR%%/wwwroot/flowplayer
+@dirrm %%WWWDIR%%/wwwroot/conf/player
+@dirrm %%WWWDIR%%/wwwroot/conf/audio
+@dirrm %%WWWDIR%%/wwwroot/conf
+@dirrm %%WWWDIR%%/wwwroot/blueprint/src
+@dirrm %%WWWDIR%%/wwwroot/blueprint/plugins/rtl
+@dirrm %%WWWDIR%%/wwwroot/blueprint/plugins/link-icons/icons
+@dirrm %%WWWDIR%%/wwwroot/blueprint/plugins/link-icons
+@dirrm %%WWWDIR%%/wwwroot/blueprint/plugins/fancy-type
+@dirrm %%WWWDIR%%/wwwroot/blueprint/plugins/buttons/icons
+@dirrm %%WWWDIR%%/wwwroot/blueprint/plugins/buttons
+@dirrm %%WWWDIR%%/wwwroot/blueprint/plugins
+@dirrm %%WWWDIR%%/wwwroot/blueprint
+@dirrm %%WWWDIR%%/wwwroot
+@dirrm %%WWWDIR%%
+@dirrm lib/erlang/lib/rtsp-%%PORTVERSION%%/include
+@dirrm lib/erlang/lib/rtsp-%%PORTVERSION%%/ebin
+@dirrm lib/erlang/lib/rtsp-%%PORTVERSION%%
+@dirrm lib/erlang/lib/rtp-%%PORTVERSION%%/include
+@dirrm lib/erlang/lib/rtp-%%PORTVERSION%%/ebin
+@dirrm lib/erlang/lib/rtp-%%PORTVERSION%%
+@dirrm lib/erlang/lib/rtmp-%%PORTVERSION%%/include
+@dirrm lib/erlang/lib/rtmp-%%PORTVERSION%%/ebin
+@dirrm lib/erlang/lib/rtmp-%%PORTVERSION%%/contrib
+@dirrm lib/erlang/lib/rtmp-%%PORTVERSION%%
+@dirrm lib/erlang/lib/mpegts-%%PORTVERSION%%/ebin
+@dirrm lib/erlang/lib/mpegts-%%PORTVERSION%%
+@dirrm lib/erlang/lib/log4erl-%%PORTVERSION%%/src
+@dirrm lib/erlang/lib/log4erl-%%PORTVERSION%%/include
+@dirrm lib/erlang/lib/log4erl-%%PORTVERSION%%/ebin
+@dirrm lib/erlang/lib/log4erl-%%PORTVERSION%%
+@dirrm lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/tpl
+@dirrm lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/test
+@dirrm lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/rtmp/shared_objects
+@dirrm lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/rtmp
+@dirrm lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/media
+@dirrm lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/http
+@dirrm lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/hooks
+@dirrm lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/demos
+@dirrm lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/core
+@dirrm lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/auth
+@dirrm lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/apps
+@dirrm lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src
+@dirrm lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/lib/misultin/src
+@dirrm lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/lib/misultin/include
+@dirrm lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/lib/misultin/examples
+@dirrm lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/lib/misultin
+@dirrm lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/lib
+@dirrm lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/include
+@dirrm lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin
+@dirrm lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%
+@dirrm lib/erlang/lib/erlydtl-%%PORTVERSION%%/src/tests
+@dirrm lib/erlang/lib/erlydtl-%%PORTVERSION%%/src/erlydtl
+@dirrm lib/erlang/lib/erlydtl-%%PORTVERSION%%/src
+@dirrm lib/erlang/lib/erlydtl-%%PORTVERSION%%/ebin
+@dirrm lib/erlang/lib/erlydtl-%%PORTVERSION%%
+@dirrm lib/erlang/lib/erlmedia-%%PORTVERSION%%/include
+@dirrm lib/erlang/lib/erlmedia-%%PORTVERSION%%/ebin
+@dirrm lib/erlang/lib/erlmedia-%%PORTVERSION%%
+@dirrm lib/erlang/lib/amf-%%PORTVERSION%%/ebin
+@dirrm lib/erlang/lib/amf-%%PORTVERSION%%
+@dirrmtry %%ETCDIR%%
+@cwd /var
+lib/%%PORTNAME%%/snmp/ERLYVIDEO-MIB.funcs
+lib/%%PORTNAME%%/snmp/ERLYVIDEO-MIB.mib
+lib/%%PORTNAME%%/snmp/agent/conf/agent.conf
+lib/%%PORTNAME%%/snmp/agent/conf/community.conf
+lib/%%PORTNAME%%/snmp/agent/conf/context.conf
+lib/%%PORTNAME%%/snmp/agent/conf/standard.conf
+lib/%%PORTNAME%%/snmp/agent/conf/usm.conf
+lib/%%PORTNAME%%/snmp/agent/conf/vacm.conf
+@dirrmtry lib/%%PORTNAME%%/snmp/agent/conf
+@exec /bin/mkdir %D/lib/%%PORTNAME%%/snmp/agent/db
+@dirrmtry lib/%%PORTNAME%%/snmp/agent/db
+@dirrmtry lib/%%PORTNAME%%/snmp/agent
+@dirrmtry lib/%%PORTNAME%%/snmp
+@exec /bin/mkdir %D/lib/%%PORTNAME%%/movies
+@dirrmtry lib/%%PORTNAME%%/movies
+@exec /bin/mkdir %D/lib/%%PORTNAME%%/plugins
+@dirrmtry lib/%%PORTNAME%%/plugins
+@dirrmtry lib/%%PORTNAME%%
+@exec /bin/mkdir %D/log/%%PORTNAME%%
+@dirrmtry log/%%PORTNAME%%

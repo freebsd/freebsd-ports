@@ -1,0 +1,14 @@
+#!/bin/sh
+
+if [ x"$2" != x"POST-DEINSTALL" ]; then
+    exit 0
+fi
+
+cat <<EOF
+If you wish to completely delete erlyvideo, please remove
+this directories manually:
+/var/lib/erlyvideo
+/var/log/erlyvideo
+EOF
+
+exit 0
