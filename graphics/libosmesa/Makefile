@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	libosmesa
-PORTVERSION=	7.8.2
-PORTREVISION=	1
+PORTVERSION=	7.9.1
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.freedesktop.org/pub/mesa/${PORTVERSION}/
 DISTNAME=	MesaLib-${PORTVERSION}
@@ -15,7 +14,10 @@ DISTNAME=	MesaLib-${PORTVERSION}
 MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	Off-Screen Mesa implementation of the OpenGL API
 
-LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2
+LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2 \
+    		talloc.2:${PORTSDIR}/devel/talloc
+BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/libxml2mod.so:${PORTSDIR}/textproc/py-libxml2
+RUN_DEPENDS=	${BUILD_DEPENDS}
 
 CONFLICTS=	mesagl-mangled-*
 

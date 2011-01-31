@@ -1,0 +1,11 @@
+--- configure.orig	2011-01-20 07:30:27.000000000 +0000
++++ configure	2011-01-20 07:32:39.000000000 +0000
+@@ -5127,7 +5127,7 @@
+             ;;
+         esac
+         ;;
+-    x86_64)
++    amd64)
+         case "$host_os" in
+         linux* | *freebsd* | dragonfly*)
+             test "x$enable_32bit" = xyes && asm_arch=x86 || asm_arch=x86_64
