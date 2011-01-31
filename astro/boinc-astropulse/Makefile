@@ -16,10 +16,9 @@ COMMENT=	Astropulse for BOINC
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-EXTRACT_DEPENDS=${NONEXISTENT}:${PORTSDIR}/astro/boinc-setiathome-enhanced:patch
 BUILD_DEPENDS=	${LOCALBASE}/include/fftw3.h:${PORTSDIR}/math/fftw3 \
-		${LOCALBASE}/include/boinc/std_fixes.h:${PORTSDIR}/net/boinc-client \
-		${LOCALBASE}/bin/bash:${PORTSDIR}/shells/bash
+		${LOCALBASE}/bin/bash:${PORTSDIR}/shells/bash \
+		${NONEXISTENT}:${PORTSDIR}/astro/boinc-setiathome-enhanced:patch
 RUN_DEPENDS=	boinc_client:${PORTSDIR}/net/boinc-client
 LIB_DEPENDS=	fftw3f:${PORTSDIR}/math/fftw3-float
 
@@ -41,9 +40,7 @@ BOINC_USER?=	boinc
 BOINC_GROUP?=	nobody
 BOINC_HOME?=	/var/db/boinc
 
-#.include <bsd.port.options.mk>
-
-#OPTIONS=	X11		"Build screensaver" on
+#OPTIONS=	X11		"Build screensaver (requires net/boinc-client with X11)" on
 
 .include <bsd.port.pre.mk>
 
@@ -53,15 +50,14 @@ BROKEN=Currently Astropulse requires X11 to build
 .endif
 
 .if !defined(WITHOUT_X11)
-.if !exists(${LOCALBASE}/lib/libboinc_graphics2.a)
-BROKEN=Reinstall net/boinc-client with X11 enabled for screensavers
-.endif
 LIB_DEPENDS+=	jpeg.11:${PORTSDIR}/graphics/jpeg \
 		xcb.2:${PORTSDIR}/x11/libxcb
 USE_GL=		gl glu glut
 USE_XORG=	ice sm x11 xau xext xi xdamage xdmcp xfixes xmu xt xxf86vm
+BUILD_DEPENDS+=	${LOCALBASE}/lib/libboinc_graphics2.a:${PORTSDIR}/net/boinc-client
 PLIST_SUB+=	X11=""
 .else
+BUILD_DEPENDS+=	${LOCALBASE}/include/boinc/std_fixes.h:${PORTSDIR}/net/boinc-client
 CONFIGURE_ARGS+=	--disable-graphics
 PLIST_SUB+=	X11="@comment "
 .endif
