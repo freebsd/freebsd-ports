@@ -1,0 +1,87 @@
+--- ./src/parallel.orig	2011-01-22 15:37:41.000000000 -0700
++++ ./src/parallel	2011-01-30 11:39:53.000000000 -0700
+@@ -2077,14 +2077,20 @@
+ sub no_of_cpus_freebsd {
+     # Returns:
+     #   Number of physical CPUs on FreeBSD
+-    my $no_of_cpus = `sysctl hw.ncpu 2>/dev/null | awk '{ print \$2 }'`;
++    my $no_of_cpus =
++	(`sysctl -a dev.cpu | grep \%parent | awk '{ print \$2 }' | uniq | wc -l | awk '{ print \$1 }'`
++	 or
++	 `sysctl hw.ncpu 2>/dev/null | awk '{ print \$2 }'`);
+     return $no_of_cpus;
+ }
+ 
+ sub no_of_cores_freebsd {
+     # Returns:
+     #   Number of CPU cores on FreeBSD
+-    my $no_of_cores = `sysctl -a hw  2>/dev/null | grep -w logicalcpu | awk '{ print \$2 }'`;
++    my $no_of_cores =
++	(`sysctl hw.ncpu 2>/dev/null | awk '{ print \$2 }'`
++	 or
++	 `sysctl -a hw  2>/dev/null | grep -w logicalcpu | awk '{ print \$2 }'`);
+     return $no_of_cores;
+ }
+ 
+@@ -3455,28 +3461,40 @@
+ 
+ # Maximal command line length (for -m and -X)
+ sub max_length {
+-    # Find the max_length of a command line
+-    # Returns:
+-    #   number of chars on the longest command line allowed
+-    if(not $Limits::Command::line_max_len) {
+-	if($::opt_s) {
+-	    if(is_acceptable_command_line_length($::opt_s)) {
+-		$Limits::Command::line_max_len = $::opt_s;
+-	    } else {
+-		# -s is too long: Find the correct
+-		$Limits::Command::line_max_len = binary_find_max_length(0,$::opt_s);
+-	    }
+-	    if($::opt_s <= $Limits::Command::line_max_len) {
+-		$Limits::Command::line_max_len = $::opt_s;
+-	    } else {
+-		print STDERR "$Global::progname: ",
+-		"value for -s option should be < $Limits::Command::line_max_len\n";
+-	    }
+-	} else {
+-	    $Limits::Command::line_max_len = real_max_length();
+-	}
++    # FreeBSD code:
++    my $limit = `getconf ARG_MAX` - 1024;
++    if ($::opt_s) {
++        if ($::opt_s > $limit) {
++	    print STDERR "$Global::progname: ",
++	    "you are setting value for -s greater than $limit\n";
++        }
++        $limit = $::opt_s;
+     }
+-    return $Limits::Command::line_max_len;
++    return $limit;
++
++#    ORIGINAL code:
++#    # Find the max_length of a command line
++#    # Returns:
++#    #   number of chars on the longest command line allowed
++#   if(not $Limits::Command::line_max_len) {
++#       if($::opt_s) {
++#	    if(is_acceptable_command_line_length($::opt_s)) {
++#		$Limits::Command::line_max_len = $::opt_s;
++#	    } else {
++#		# -s is too long: Find the correct
++#		$Limits::Command::line_max_len = binary_find_max_length(0,$::opt_s);
++#	    }
++#	    if($::opt_s <= $Limits::Command::line_max_len) {
++#		$Limits::Command::line_max_len = $::opt_s;
++#	    } else {
++#		print STDERR "$Global::progname: ",
++#		"value for -s option should be < $Limits::Command::line_max_len\n";
++#	    }
++#	} else {
++#	    $Limits::Command::line_max_len = real_max_length();
++#	}
++#    }
++#    return $Limits::Command::line_max_len;
+ }
+ 
+ sub real_max_length {
