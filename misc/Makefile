@@ -529,6 +529,7 @@
     SUBDIR += ttyrec
     SUBDIR += tvbrowser
     SUBDIR += txt2regex
+    SUBDIR += typetrainer
     SUBDIR += uf-view
     SUBDIR += uk-phone
     SUBDIR += uk-postcodes
