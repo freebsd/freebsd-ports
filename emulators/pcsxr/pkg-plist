@@ -1,11 +1,21 @@
 bin/pcsx
+%%NLS%%share/locale/fr_FR/LC_MESSAGES/pcsx.mo
+%%NLS%%share/locale/it/LC_MESSAGES/pcsx.mo
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/pcsx.mo
+%%NLS%%share/locale/ru_RU/LC_MESSAGES/pcsx.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/pcsx.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/pcsx.mo
+%%NLS%%@dirrmtry share/locale/ru_RU/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/ru_RU
+share/pcsxr/dfcdrom.glade2
 share/pcsxr/dfbinimage.glade2
 share/pcsxr/dfsound.glade2
 share/pcsxr/dfxvideo.glade2
-share/pcsxr/dfinput.glade2
+share/pcsxr/gxvideo.glade
+share/pcsxr/sio1.glade2
+share/pcsxr/peopsxgl.ui
+share/pcsxr/dfinput.ui
+share/pcsxr/dfnet.ui
 share/pcsxr/pcsx.glade2
 share/pcsxr/pcsx.jpg
 @dirrm share/pcsxr
@@ -15,7 +25,11 @@ share/applications/pcsx.desktop
 lib/pcsxr/cfgDFXVideo
 lib/pcsxr/cfgpeopsxgl
 lib/pcsxr/cfgDFInput
+lib/pcsxr/cfgDFCdrom
 lib/pcsxr/cfgDFSound
+lib/pcsxr/cfgDFNet
+lib/pcsxr/cfgGXVideo
+lib/pcsxr/cfgBladeSio1
 lib/pcsxr/libDFXVideo.a
 lib/pcsxr/libDFXVideo.la
 lib/pcsxr/libDFXVideo.so
@@ -28,9 +42,21 @@ lib/pcsxr/libDFInput.so
 lib/pcsxr/libDFSound.a
 lib/pcsxr/libDFSound.la
 lib/pcsxr/libDFSound.so
+lib/pcsxr/libDFCdrom.a
+lib/pcsxr/libDFCdrom.la
+lib/pcsxr/libDFCdrom.so
 lib/pcsxr/libDFBinImage2.a
 lib/pcsxr/libDFBinImage2.la
 lib/pcsxr/libDFBinImage2.so
+lib/pcsxr/libDFNet.a
+lib/pcsxr/libDFNet.la
+lib/pcsxr/libDFNet.so
+lib/pcsxr/libGXVideo.a
+lib/pcsxr/libGXVideo.la
+lib/pcsxr/libGXVideo.so
+lib/pcsxr/libBladeSio1.a
+lib/pcsxr/libBladeSio1.la
+lib/pcsxr/libBladeSio1.so
 @dirrm lib/pcsxr
 @exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
 @unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true

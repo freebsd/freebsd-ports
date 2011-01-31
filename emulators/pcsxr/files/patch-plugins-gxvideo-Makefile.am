@@ -1,5 +1,5 @@
---- plugins/dfxvideo/Makefile.am.orig	2011-01-21 18:16:02.202890852 +0100
-+++ plugins/dfxvideo/Makefile.am	2011-01-21 18:17:12.618830029 +0100
+--- plugins/gxvideo/Makefile.am.orig	2011-01-25 16:43:11.515454304 +0100
++++ plugins/gxvideo/Makefile.am	2011-01-25 16:44:47.751561128 +0100
 @@ -7,13 +7,13 @@
  	$(STRIP_FPIC) $(NASM) -f elf -d ELF -I${srcdir}/ $<
  
@@ -15,12 +15,12 @@
 +bindir = @libdir@/pcsxr/
 +libdir = @libdir@/pcsxr/
  
- lib_LTLIBRARIES = libDFXVideo.la
+ noinst_LTLIBRARIES = libcfg.la libglobals.la
+ libcfg_la_SOURCES = cfg.c
+@@ -35,5 +35,5 @@
+ cfgGXVideo_LDADD = libcfg.la libglobals.la $(GTK2_LIBS) $(GLADE2_LIBS) -lXext 
  
-@@ -30,5 +30,5 @@
- cfgDFXVideo_LDADD = $(GTK2_LIBS) $(GLADE2_LIBS) -lXext
- 
- glade_DATA = gpucfg-0.1df/dfxvideo.glade2
+ glade_DATA = gpucfg/gxvideo.glade
 -gladedir = $(datadir)/psemu/
-+gladedir = $(datadir)/pcsxr/
++gladedir = $(datadir)/pcsxr
  EXTRA_DIST = $(glade_DATA)

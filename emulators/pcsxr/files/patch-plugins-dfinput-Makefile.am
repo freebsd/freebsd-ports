@@ -1,6 +1,6 @@
---- plugins/dfinput/Makefile.am.orig	2009-12-25 18:26:35.000000000 +0000
-+++ plugins/dfinput/Makefile.am	2010-05-21 17:21:03.238298722 +0000
-@@ -1,15 +1,15 @@
+--- plugins/dfinput/Makefile.am.orig	2011-01-21 18:22:58.498759182 +0100
++++ plugins/dfinput/Makefile.am	2011-01-21 18:23:49.747937779 +0100
+@@ -1,14 +1,14 @@
 -bindir = @libdir@/games/psemu/
 -libdir = @libdir@/games/psemu/
 +bindir = @libdir@/pcsxr/
@@ -9,21 +9,21 @@
  lib_LTLIBRARIES = libDFInput.la
  
  libDFInput_la_SOURCES = cfg.c pad.c pad.h sdljoy.c xkb.c analog.c
--libDFInput_la_LDFLAGS = -module -avoid-version -lpthread -lX11 \
-+libDFInput_la_LDFLAGS = -module -avoid-version -pthread -lX11 \
- 	`$(SDL_CONFIG) --libs` -L/usr/X11R6/lib64 -L/usr/X11R6/lib
+-libDFInput_la_LDFLAGS = -module -avoid-version 
+-libDFInput_la_LIBADD = -lpthread -lX11 $(SDL_LIBS)
++libDFInput_la_LDFLAGS = -module -avoid-version -pthread
++libDFInput_la_LIBADD = -lX11 $(SDL_LIBS)
  
- INCLUDES = -DPIXMAPDIR=\"${datadir}/pixmaps/\" \
- 	-DLOCALE_DIR=\"${datadir}/locale/\" \
+ AM_CPPFLAGS = -DLOCALE_DIR=\"${datadir}/locale/\" \
 -	-DDATADIR=\"${datadir}/psemu/\" \
 +	-DDATADIR=\"${datadir}/pcsxr/\" \
- 	$(GTK2_CFLAGS) $(GLADE2_CFLAGS) -I/usr/X11R6/include \
- 	-I../../include -I../../libpcsxcore `$(SDL_CONFIG) --cflags`
+ 	$(GTK2_CFLAGS) $(GLADE2_CFLAGS) \
+ 	-I../../include -I../../libpcsxcore $(SDL_CFLAGS)
  
-@@ -19,5 +19,5 @@
- cfgDFInput_LDFLAGS = `$(SDL_CONFIG) --libs`
+@@ -17,5 +17,5 @@
+ cfgDFInput_LDADD = $(GTK2_LIBS) $(GLADE2_LIBS) $(SDL_LIBS) -lX11
  
- glade_DATA = dfinput.glade2
+ glade_DATA = dfinput.ui
 -gladedir = $(datadir)/psemu/
 +gladedir = $(datadir)/pcsxr/
  EXTRA_DIST = $(glade_DATA)

@@ -1,12 +1,7 @@
---- plugins/dfsound/Makefile.am.orig	2009-12-25 18:26:41.000000000 +0000
-+++ plugins/dfsound/Makefile.am	2010-05-21 17:21:11.042375497 +0000
-@@ -1,11 +1,11 @@
- INCLUDES = -DPIXMAPDIR=\"${datadir}/pixmaps/\" \
- 	-DLOCALE_DIR=\"${datadir}/locale/\" \
--	-DDATADIR=\"${datadir}/psemu/\" \
-+	-DDATADIR=\"${datadir}/pcsxr/\" \
- 	$(GTK2_CFLAGS) $(GLADE2_CFLAGS) \
- 	-I../../include
+--- plugins/dfsound/Makefile.am.orig	2011-01-21 18:22:58.487759739 +0100
++++ plugins/dfsound/Makefile.am	2011-01-21 18:24:59.271659928 +0100
+@@ -1,15 +1,15 @@
+ AM_CPPFLAGS = -I../../include
  
 -bindir = @libdir@/games/psemu/
 -libdir = @libdir@/games/psemu/
@@ -15,16 +10,24 @@
  
  lib_LTLIBRARIES = libDFSound.la
  
-@@ -13,7 +13,7 @@
- 	alsa.c oss.c nullsnd.c
+ libDFSound_la_SOURCES = spu.c cfg.c dma.c freeze.c registers.c
  
- libDFSound_la_CFLAGS =
--libDFSound_la_LDFLAGS = -module -avoid-version -lpthread -lm
-+libDFSound_la_LDFLAGS = -module -avoid-version -pthread -lm
+ libDFSound_la_CPPFLAGS = $(AM_CPPFLAGS)
+-libDFSound_la_LDFLAGS = -module -avoid-version 
+-libDFSound_la_LIBADD = -lpthread -lm
++libDFSound_la_LDFLAGS = -module -avoid-version -pthread
++libDFSound_la_LIBADD = -lm
  
- if HAVE_ALSA
- libDFSound_la_CFLAGS += -DUSEALSA=1
-@@ -29,5 +29,5 @@
+ if SOUND_ALSA
+ libDFSound_la_SOURCES += alsa.c
+@@ -41,11 +41,11 @@
+ 
+ bin_PROGRAMS = cfgDFSound
+ cfgDFSound_CPPFLAGS = -DLOCALE_DIR=\"${datadir}/locale/\" \
+-	-DDATADIR=\"${datadir}/psemu/\" \
++	-DDATADIR=\"${datadir}/pcsxr/\" \
+ 	$(GTK2_CFLAGS) $(GLADE2_CFLAGS) $(AM_CPPFLAGS)
+ cfgDFSound_SOURCES = spucfg-0.1df/main.c
  cfgDFSound_LDADD = $(GTK2_LIBS) $(GLADE2_LIBS)
  
  glade_DATA = spucfg-0.1df/dfsound.glade2
