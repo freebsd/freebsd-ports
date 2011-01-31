@@ -1,0 +1,4 @@
+Add the following line to the "Files" section of xorg.conf or XF86Config:
+
+	FontPath "%%FONTDIR%%/"
+
