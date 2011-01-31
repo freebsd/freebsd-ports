@@ -26,6 +26,7 @@ share/apps/tellico/data-sources/ministerio_de_cultura.py.spec
 share/apps/tellico/delicious2tellico.xsl
 share/apps/tellico/discogs2tellico.xsl
 share/apps/tellico/dvd-logo.png
+share/apps/tellico/dvdfr2tellico.xsl
 share/apps/tellico/entry-templates/Album.xsl
 share/apps/tellico/entry-templates/Compact.xsl
 share/apps/tellico/entry-templates/Default.xsl
@@ -41,15 +42,21 @@ share/apps/tellico/musicbrainz2tellico.xsl
 share/apps/tellico/pics/README.icons
 share/apps/tellico/pics/README.quesnay
 share/apps/tellico/pics/album.png
+share/apps/tellico/pics/alexandria.png
+share/apps/tellico/pics/amc.png
 share/apps/tellico/pics/bibtex.png
 share/apps/tellico/pics/boardgame.png
 share/apps/tellico/pics/book.png
 share/apps/tellico/pics/card.png
 share/apps/tellico/pics/checkmark.png
+share/apps/tellico/pics/cite.png
 share/apps/tellico/pics/coin.png
 share/apps/tellico/pics/comic.png
+share/apps/tellico/pics/deliciouslibrary.png
 share/apps/tellico/pics/file.png
 share/apps/tellico/pics/game.png
+share/apps/tellico/pics/gcstar.png
+share/apps/tellico/pics/griffith.png
 share/apps/tellico/pics/nocover_album.png
 share/apps/tellico/pics/nocover_bibtex.png
 share/apps/tellico/pics/nocover_boardgame.png
@@ -57,8 +64,10 @@ share/apps/tellico/pics/nocover_book.png
 share/apps/tellico/pics/nocover_comic.png
 share/apps/tellico/pics/nocover_game.png
 share/apps/tellico/pics/nocover_video.png
+share/apps/tellico/pics/palm.png
 share/apps/tellico/pics/person-open.png
 share/apps/tellico/pics/person.png
+share/apps/tellico/pics/referencer.png
 share/apps/tellico/pics/script.png
 share/apps/tellico/pics/script.svg
 share/apps/tellico/pics/stamp.png
@@ -153,6 +162,17 @@ share/doc/HTML/en/tellico/source-options.png
 share/doc/HTML/en/tellico/sru-options.png
 share/doc/HTML/en/tellico/template-options.png
 share/doc/HTML/en/tellico/z3950-options.png
+share/doc/HTML/es/tellico/advanced.docbook
+share/doc/HTML/es/tellico/common
+share/doc/HTML/es/tellico/configuration.docbook
+share/doc/HTML/es/tellico/details.docbook
+share/doc/HTML/es/tellico/faqs.docbook
+share/doc/HTML/es/tellico/fundamentals.docbook
+share/doc/HTML/es/tellico/hacking.docbook
+share/doc/HTML/es/tellico/importing-exporting.docbook
+share/doc/HTML/es/tellico/index.cache.bz2
+share/doc/HTML/es/tellico/index.docbook
+share/doc/HTML/es/tellico/menus.docbook
 share/doc/HTML/fr/tellico/advanced.docbook
 share/doc/HTML/fr/tellico/common
 share/doc/HTML/fr/tellico/configuration.docbook
@@ -164,6 +184,17 @@ share/doc/HTML/fr/tellico/importing-exporting.docbook
 share/doc/HTML/fr/tellico/index.cache.bz2
 share/doc/HTML/fr/tellico/index.docbook
 share/doc/HTML/fr/tellico/menus.docbook
+share/doc/HTML/pt/tellico/advanced.docbook
+share/doc/HTML/pt/tellico/common
+share/doc/HTML/pt/tellico/configuration.docbook
+share/doc/HTML/pt/tellico/details.docbook
+share/doc/HTML/pt/tellico/faqs.docbook
+share/doc/HTML/pt/tellico/fundamentals.docbook
+share/doc/HTML/pt/tellico/hacking.docbook
+share/doc/HTML/pt/tellico/importing-exporting.docbook
+share/doc/HTML/pt/tellico/index.cache.bz2
+share/doc/HTML/pt/tellico/index.docbook
+share/doc/HTML/pt/tellico/menus.docbook
 share/doc/HTML/pt_BR/tellico/advanced.docbook
 share/doc/HTML/pt_BR/tellico/common
 share/doc/HTML/pt_BR/tellico/configuration.docbook
@@ -209,6 +240,7 @@ share/icons/hicolor/48x48/apps/tellico.png
 share/icons/hicolor/48x48/mimetypes/application-x-tellico.png
 share/icons/hicolor/64x64/apps/tellico.png
 share/icons/hicolor/64x64/mimetypes/application-x-tellico.png
+share/locale/bg/LC_MESSAGES/tellico.mo
 share/locale/ca/LC_MESSAGES/tellico.mo
 share/locale/ca@valencia/LC_MESSAGES/tellico.mo
 share/locale/cs/LC_MESSAGES/tellico.mo
@@ -216,13 +248,20 @@ share/locale/da/LC_MESSAGES/tellico.mo
 share/locale/de/LC_MESSAGES/tellico.mo
 share/locale/el/LC_MESSAGES/tellico.mo
 share/locale/en_GB/LC_MESSAGES/tellico.mo
+share/locale/eo/LC_MESSAGES/tellico.mo
 share/locale/es/LC_MESSAGES/tellico.mo
 share/locale/et/LC_MESSAGES/tellico.mo
+share/locale/eu/LC_MESSAGES/tellico.mo
 share/locale/fi/LC_MESSAGES/tellico.mo
 share/locale/fr/LC_MESSAGES/tellico.mo
+share/locale/ga/LC_MESSAGES/tellico.mo
 share/locale/gl/LC_MESSAGES/tellico.mo
 share/locale/hu/LC_MESSAGES/tellico.mo
+share/locale/ia/LC_MESSAGES/tellico.mo
 share/locale/it/LC_MESSAGES/tellico.mo
+share/locale/ja/LC_MESSAGES/tellico.mo
+share/locale/lt/LC_MESSAGES/tellico.mo
+share/locale/ms/LC_MESSAGES/tellico.mo
 share/locale/nb/LC_MESSAGES/tellico.mo
 share/locale/nds/LC_MESSAGES/tellico.mo
 share/locale/nl/LC_MESSAGES/tellico.mo
@@ -230,21 +269,26 @@ share/locale/nn/LC_MESSAGES/tellico.mo
 share/locale/pl/LC_MESSAGES/tellico.mo
 share/locale/pt/LC_MESSAGES/tellico.mo
 share/locale/pt_BR/LC_MESSAGES/tellico.mo
+share/locale/ro/LC_MESSAGES/tellico.mo
 share/locale/ru/LC_MESSAGES/tellico.mo
+share/locale/sk/LC_MESSAGES/tellico.mo
 share/locale/sv/LC_MESSAGES/tellico.mo
 share/locale/tr/LC_MESSAGES/tellico.mo
 share/locale/uk/LC_MESSAGES/tellico.mo
 share/locale/zh_CN/LC_MESSAGES/tellico.mo
+share/locale/zh_TW/LC_MESSAGES/tellico.mo
 share/mime/packages/tellico.xml
 share/mimelnk/application/x-tellico.desktop
 @dirrmtry share/mimelnk/application
 @dirrmtry share/mimelnk
-@dirrmtry share/mime/packages
-@dirrmtry share/mime
+@dirrmtry share/locale/ia/LC_MESSAGES
+@dirrmtry share/locale/ia
 @dirrm share/doc/HTML/uk/tellico
 @dirrm share/doc/HTML/sv/tellico
 @dirrm share/doc/HTML/pt_BR/tellico
+@dirrm share/doc/HTML/pt/tellico
 @dirrm share/doc/HTML/fr/tellico
+@dirrm share/doc/HTML/es/tellico
 @dirrm share/doc/HTML/en/tellico
 @dirrm share/apps/tellico/report-templates
 @dirrm share/apps/tellico/pics

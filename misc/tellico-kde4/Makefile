@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	tellico
-PORTVERSION=	2.3
-PORTREVISION=	3
+PORTVERSION=	2.3.2
 CATEGORIES=	misc kde
 MASTER_SITES=	http://tellico-project.org/files/
 
@@ -21,6 +20,8 @@ LIB_DEPENDS=	tag:${PORTSDIR}/audio/taglib \
 		exempi:${PORTSDIR}/textproc/exempi \
 		kcddb:${PORTSDIR}/multimedia/kdemultimedia4 \
 		ksane:${PORTSDIR}/graphics/kdegraphics4
+
+LICENSE=	GPLv2
 
 LATEST_LINK=	${PORTNAME}-kde4
 
