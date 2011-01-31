@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	nagios
-PORTVERSION=	3.1.2
-PORTREVISION=	3
+DISTVERSIONPREFIX=HEAD-
+DISTVERSION=	20101122
 CATEGORIES=	net-mgmt
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-3.x/${PORTNAME}-${PORTVERSION}
+MASTER_SITES=	http://www.downtools.com.au/~jarrod/nagios/
 PKGNAMESUFFIX=	-devel
 
 MAINTAINER=	jarrod@downtools.com.au
@@ -18,15 +18,17 @@ COMMENT=	Extremely powerful network monitoring system
 LIB_DEPENDS=	gd.4:${PORTSDIR}/graphics/gd
 RUN_DEPENDS=	${LOCALBASE}/libexec/nagios/check_nagios:${PORTSDIR}/net-mgmt/nagios-plugins
 
+MASTER_SITE_FREEBSD=	yes
 LATEST_LINK=	nagios-devel
 
 USE_ICONV=	yes
-USE_PERL5_BUILD=	yes
-USE_PHP=	yes
+USE_PERL5_BUILD=yes
 USE_AUTOTOOLS=	autoconf libltdl
 USE_RC_SUBR=	nagios.sh
 
 CONFLICTS=	nagios-[123].*
+
+WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSIONPREFIX:C/-$//}
 
 OPTIONS=	EMBEDDED_PERL "Enable embedded Perl [requires Perl 5.8.0+]" off \
 		NANOSLEEP "Use nanosleep in event timing" off \
@@ -34,6 +36,7 @@ OPTIONS=	EMBEDDED_PERL "Enable embedded Perl [requires Perl 5.8.0+]" off \
 		UNHANDLED_HACK "Display passive checks in unhandled queries" off
 
 GNU_CONFIGURE=	yes
+WANT_PHP_MOD=	yes
 
 NAGIOSUSER?=	nagios
 NAGIOSGROUP?=	nagios
@@ -42,7 +45,6 @@ NAGIOSDIR?=	/var/spool/nagios
 NAGIOSUID=	181
 NAGIOSGID=	${NAGIOSUID}
 
-NAGIOSWWWDIR?=	www/nagios
 NAGIOSHTMURL?=	/nagios
 NAGIOSCGIURL?=	${NAGIOSHTMURL}/cgi-bin
 
@@ -57,11 +59,11 @@ CONFIGURE_ARGS=	--with-command-user=${NAGIOSUSER} \
 		--with-nagios-group=${NAGIOSGROUP} \
 		--with-htmurl=${NAGIOSHTMURL} \
 		--with-cgiurl=${NAGIOSCGIURL} \
-		--sbindir=${PREFIX}/${NAGIOSWWWDIR}/cgi-bin \
+		--sbindir=${WWWDIR}/cgi-bin \
 		--libexecdir=${PREFIX}/libexec/nagios \
-		--datarootdir=${PREFIX}/${NAGIOSWWWDIR} \
-		--datadir=${PREFIX}/${NAGIOSWWWDIR} \
-		--sysconfdir=${PREFIX}/etc/nagios \
+		--datarootdir=${WWWDIR} \
+		--datadir=${WWWDIR} \
+		--sysconfdir=${ETCDIR} \
 		--localstatedir=${NAGIOSDIR} \
 		--with-httpd-conf=${PREFIX}/etc \
 		--with-checkresult-dir=${NAGIOSDIR}/checkresults \
@@ -78,7 +80,6 @@ MAKE_JOBS_UNSAFE=	yes
 INSTALL_TARGET=	install install-commandmode install-config
 
 PLIST_SUB=	NAGIOSDIR=${NAGIOSDIR} \
-		NAGIOSWWWDIR=${NAGIOSWWWDIR} \
 		NAGIOSUSER=${NAGIOSUSER} \
 		NAGIOSGROUP=${NAGIOSGROUP} \
 		NAGIOSUID=${NAGIOSUID} \
@@ -94,6 +95,8 @@ SUB_FILES=	pkg-install \
 # XXX: Don't remove PREFIX from SUB_LIST here.
 SUB_LIST=	PREFIX=${PREFIX} \
 		${PLIST_SUB}
+
+USE_PHP=	yes
 
 .if defined(WITH_EMBEDDED_PERL)
 USE_PERL5=	5.8.0+
@@ -120,7 +123,7 @@ post-patch:
 		-e 's#;hostprops=42\"#;hostprops=10\"#g' ${WRKSRC}/html/side.php
 .endif
 
-pre-install:
+pre-su-install:
 	@${SH} ${PKGINSTALL} ${DISTNAME} PRE-INSTALL
 
 post-install:
