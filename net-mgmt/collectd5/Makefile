@@ -7,7 +7,7 @@
 
 PORTNAME=	collectd
 PORTVERSION=	4.9.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://collectd.org/files/
 
@@ -26,6 +26,7 @@ OPTIONS=	CGI		"Install collection.cgi (requires RRDTOOL)" 	Off \
 		APCUPS		"Input: APC UPS (apcupsd)" 			Off \
 		CURL		"Input: CURL generic web statistics" 		Off \
 		DBI		"Input: database abstraction library"		Off \
+		DISK		"Input: Disk performance statistics"		Off \
 		NUTUPS		"Input: NUT UPS daemon" 			Off \
 		INTERFACE 	"Input: Network interfaces (libstatgrab)" 	On  \
 		MBMON		"Input: MBMon" 					Off \
@@ -74,7 +75,6 @@ CONFIGURE_ARGS=	--localstatedir=/var \
 		--disable-contextswitch \
 		--disable-cpufreq \
 		--disable-curl_json \
-		--disable-disk \
 		--disable-entropy \
 		--disable-fscache \
 		--disable-gmond \
@@ -193,6 +193,14 @@ PLIST_SUB+=	DBI=""
 .else
 CONFIGURE_ARGS+=--disable-dbi
 PLIST_SUB+=	DBI="@comment "
+.endif
+
+.if defined(WITH_DISK)
+CONFIGURE_ARGS+=--enable-disk
+PLIST_SUB+=	DISK=""
+.else
+CONFIGURE_ARGS+=--disable-disk
+PLIST_SUB+=	DISK="@comment "
 .endif
 
 .if defined(WITH_NUTUPS)
