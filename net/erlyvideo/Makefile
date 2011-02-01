@@ -8,7 +8,7 @@
 PORTNAME=	erlyvideo
 PORTVERSION=	2.5.11
 CATEGORIES=	net
-MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/tarball/v${PORTVERSION}/
+MASTER_SITES=	http://host5.webstroy.ru/
 DISTNAME=	${PORTNAME}-${PORTNAME}-v${PORTVERSION}-0-g${GITVERSION}
 
 MAINTAINER=	cvs-src@yandex.ru
