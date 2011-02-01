@@ -1,4 +1,0 @@
-@exec mkdir -p %D/etc/mail/spamassassin/RulesDuJour
-@dirrmtry etc/mail/spamassassin/RulesDuJour
-@dirrmtry etc/mail/spamassassin
-@dirrmtry etc/mail
