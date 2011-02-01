@@ -168,6 +168,7 @@
     SUBDIR += leim21
     SUBDIR += leo
     SUBDIR += lfhex
+    SUBDIR += libreoffice
     SUBDIR += lpe
     SUBDIR += madedit
     SUBDIR += manedit

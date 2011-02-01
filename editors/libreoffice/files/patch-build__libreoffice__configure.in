@@ -1,0 +1,11 @@
+--- ./build/libreoffice/configure.in.orig	2010-12-17 23:08:36.000000000 +0100
++++ ./build/libreoffice/configure.in	2010-12-20 14:42:55.766436619 +0100
+@@ -2022,7 +2022,7 @@
+ dnl ===================================================================
+ AC_MSG_CHECKING([for GNU tar])
+ for a in $GNUTAR gtar gnutar tar; do
+-      $a --version 2> /dev/null | grep GNU  2>&1 > /dev/null
++      $a --version 2> /dev/null | grep bsdtar  2>&1 > /dev/null
+       if test $? -eq 0;  then
+            GNUTAR=$a
+            break

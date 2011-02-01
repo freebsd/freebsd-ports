@@ -1,0 +1,11 @@
+--- ./bin/ooinstall.orig	2010-11-30 21:15:58.000000000 +0100
++++ ./bin/ooinstall	2010-12-20 12:58:30.609567023 +0100
+@@ -31,7 +31,7 @@
+     return 0;
+ }
+ 
+-( $^O =~ /openbsd/i ) || ( $^O =~ /darwin/i ) || ( -f "/proc/meminfo" ) || die "The installer cannot work without javaldx running, which requires /proc to be mounted";
++( $^O =~ /freebsd/i) || ( $^O =~ /openbsd/i ) || ( $^O =~ /darwin/i ) || ( -f "/proc/meminfo" ) || die "The installer cannot work without javaldx running, which requires /proc to be mounted";
+ 
+ suck_setup ("./setup") || suck_setup ("bin/setup") || die "can't find bin/setup";
+ 
