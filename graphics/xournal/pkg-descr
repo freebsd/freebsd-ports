@@ -1,0 +1,13 @@
+Xournal is an application for notetaking, sketching, keeping a journal using a
+stylus. It is similar to Microsoft Windows Journal or to other alternatives such
+as Jarnal, Gournal, and NoteLab.
+
+Xournal aims to provide superior graphical quality (subpixel resolution) and
+overall functionality; however it lacks the collaborative features of Jarnal.
+Since Xournal is still in its early development stages, it may not be fully
+stable, and some features have not been implemented yet.
+
+Xournal supports annotation of PDF files through the Poppler library; PDF files,
+much like paper styles, are loaded as an immutable background image.
+
+WWW: http://xournal.sourceforge.net

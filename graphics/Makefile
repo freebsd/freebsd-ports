@@ -1007,6 +1007,7 @@
     SUBDIR += xmrm
     SUBDIR += xnview
     SUBDIR += xoris
+    SUBDIR += xournal
     SUBDIR += xpaint
     SUBDIR += xpdf
     SUBDIR += xpx

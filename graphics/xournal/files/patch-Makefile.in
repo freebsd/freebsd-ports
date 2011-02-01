@@ -1,0 +1,31 @@
+--- Makefile.in.orig	2011-01-31 16:28:59.925702117 +0100
++++ Makefile.in	2011-01-31 16:36:50.591377695 +0100
+@@ -709,19 +709,21 @@
+ 	    fi \
+ 	  done \
+ 	fi; \
++	echo "*** Desktop files, icons, MIME types not installed. Run 'make desktop-install'"; \
++	echo "*** (or 'make home-desktop-install' for installation in a home directory)."
++
++install-doc-local:
+ 	if test -d $(srcdir)/html-doc; then \
+-	  $(mkinstalldirs) $(DESTDIR)$(pkgdatadir)/html-doc; \
++	  $(mkinstalldirs) $(DESTDIR)$(docdir); \
+ 	  for docfile in $(srcdir)/html-doc/*; do \
+ 	    if test -f $$docfile; then \
+-	      $(INSTALL_DATA) $$docfile $(DESTDIR)$(pkgdatadir)/html-doc; \
++	      $(INSTALL_DATA) $$docfile $(DESTDIR)$(docdir); \
+ 	    fi \
+ 	  done; \
+-	  if test ! -e $(DESTDIR)$(pkgdatadir)/html-doc/pixmaps; then \
+-	    ln -s ../pixmaps $(DESTDIR)$(pkgdatadir)/html-doc/pixmaps; \
++	  if test ! -e $(DESTDIR)$(docdir)/pixmaps; then \
++	    ln -s $(DESTDIR)$(pkgdatadir)/pixmaps $(DESTDIR)$(docdir)/pixmaps; \
+ 	  fi \
+-	fi; \
+-	echo "*** Desktop files, icons, MIME types not installed. Run 'make desktop-install'"; \
+-	echo "*** (or 'make home-desktop-install' for installation in a home directory)."
++	fi
+ 
+ desktop-install:
+ 	if test "$(datadir)" = "/usr/share"; then \
