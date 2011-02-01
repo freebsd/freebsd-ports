@@ -1,0 +1,11 @@
+--- ./build/libreoffice/solenv/bin/ooinstall.orig	2010-11-30 21:17:23.000000000 +0100
++++ ./build/libreoffice/solenv/bin/ooinstall	2010-12-20 12:58:30.630567408 +0100
+@@ -14,7 +14,7 @@
+ $path = '';
+ $do_link = 0;
+ 
+-( $^O =~ /openbsd/i ) || ( $^O =~ /darwin/i ) || ( -f "/proc/meminfo" ) || die "The installer cannot work without javaldx running, which requires /proc to be mounted";
++( $^O =~ /freebsd/i ) || ( $^O =~ /openbsd/i ) || ( $^O =~ /darwin/i ) || ( -f "/proc/meminfo" ) || die "The installer cannot work without javaldx running, which requires /proc to be mounted";
+ 
+ # Workaround for system Mozilla
+ if ( $ENV{'SYSTEM_MOZILLA'} eq 'YES' ) {
