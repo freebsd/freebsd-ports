@@ -10,7 +10,6 @@ PORTVERSION=	1.0
 PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.mk.bsdclub.org/pub/FreeBSD/distfiles/
-MASTER_SITE_SUBDIR=	motoyuki
 DISTFILES=	xchada01.lzh
 
 MAINTAINER=	motoyuki@FreeBSD.org
