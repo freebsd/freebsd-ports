@@ -10,14 +10,15 @@
 %%SITE_PERL%%/IO/Async/Internals/TimeQueue.pm
 %%SITE_PERL%%/IO/Async/Listener.pm
 %%SITE_PERL%%/IO/Async/Loop.pm
-%%SITE_PERL%%/IO/Async/Loop/IO_Poll.pm
 %%SITE_PERL%%/IO/Async/Loop/Poll.pm
 %%SITE_PERL%%/IO/Async/Loop/Select.pm
 %%SITE_PERL%%/IO/Async/LoopTests.pm
 %%SITE_PERL%%/IO/Async/MergePoint.pm
 %%SITE_PERL%%/IO/Async/Notifier.pm
 %%SITE_PERL%%/IO/Async/PID.pm
+%%SITE_PERL%%/IO/Async/Process.pm
 %%SITE_PERL%%/IO/Async/Protocol.pm
+%%SITE_PERL%%/IO/Async/Protocol/LineStream.pm
 %%SITE_PERL%%/IO/Async/Protocol/Stream.pm
 %%SITE_PERL%%/IO/Async/Resolver.pm
 %%SITE_PERL%%/IO/Async/Sequencer.pm
@@ -26,6 +27,7 @@
 %%SITE_PERL%%/IO/Async/Socket.pm
 %%SITE_PERL%%/IO/Async/Test.pm
 %%SITE_PERL%%/IO/Async/Timer.pm
+%%SITE_PERL%%/IO/Async/Timer/Absolute.pm
 %%SITE_PERL%%/IO/Async/Timer/Countdown.pm
 %%SITE_PERL%%/IO/Async/Timer/Periodic.pm
 @dirrmtry %%SITE_PERL%%/IO/Async/Timer
