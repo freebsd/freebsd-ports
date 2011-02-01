@@ -16,6 +16,8 @@ COMMENT=	A publishing system for the Internet (CMS)
 
 LICENSE=	GPLv3
 
+BROKEN=		checksum is changing daily
+
 USE_ZIP=	yes
 USE_PHP=	mysql pcre zlib
 NO_BUILD=	yes
