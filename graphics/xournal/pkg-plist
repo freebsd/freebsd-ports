@@ -1,0 +1,57 @@
+bin/xournal
+share/applications/xournal.desktop
+share/icons/hicolor/scalable/apps/xournal.svg
+share/icons/hicolor/scalable/mimetypes/gnome-mime-application-x-xoj.svg
+share/icons/hicolor/scalable/mimetypes/xoj.svg
+share/mime/packages/xournal.xml
+share/mimelnk/application/x-xoj.desktop
+%%PORTDOCS%%%%DOCSDIR%%/manual.html
+%%PORTDOCS%%%%DOCSDIR%%/pixmaps
+%%PORTDOCS%%%%DOCSDIR%%/screenshot.png
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+share/xournal/pixmaps/black.png
+share/xournal/pixmaps/blue.png
+share/xournal/pixmaps/default-pen.png
+share/xournal/pixmaps/eraser.png
+share/xournal/pixmaps/fullscreen.png
+share/xournal/pixmaps/gray.png
+share/xournal/pixmaps/green.png
+share/xournal/pixmaps/hand.png
+share/xournal/pixmaps/highlighter.png
+share/xournal/pixmaps/lasso.png
+share/xournal/pixmaps/lightblue.png
+share/xournal/pixmaps/lightgreen.png
+share/xournal/pixmaps/magenta.png
+share/xournal/pixmaps/medium.png
+share/xournal/pixmaps/orange.png
+share/xournal/pixmaps/pencil.png
+share/xournal/pixmaps/rect-select.png
+share/xournal/pixmaps/recycled.png
+share/xournal/pixmaps/red.png
+share/xournal/pixmaps/ruler.png
+share/xournal/pixmaps/shapes.png
+share/xournal/pixmaps/stretch.png
+share/xournal/pixmaps/text-tool.png
+share/xournal/pixmaps/thick.png
+share/xournal/pixmaps/thin.png
+share/xournal/pixmaps/white.png
+share/xournal/pixmaps/xoj.svg
+share/xournal/pixmaps/xournal.png
+share/xournal/pixmaps/xournal.svg
+share/xournal/pixmaps/yellow.png
+@dirrm share/xournal/pixmaps
+@dirrm share/xournal
+@exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
+@unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
+@exec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
+@unexec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
+@dirrmtry share/mimelnk/application
+@dirrmtry share/mimelnk
+@dirrmtry share/mime/packages
+@dirrmtry share/mime
+@dirrmtry share/icons/hicolor/scalable/mimetypes
+@dirrmtry share/icons/hicolor/scalable/apps
+@dirrmtry share/icons/hicolor/scalable
+@dirrmtry share/icons/hicolor
+@dirrmtry share/icons
+@dirrmtry share/applications
