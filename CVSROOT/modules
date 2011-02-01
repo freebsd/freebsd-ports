@@ -914,7 +914,6 @@ bash                            ports/shells/bash
 bash-completion                 ports/shells/bash-completion
 bash-static                     ports/shells/bash-static
 bash3                           ports/shells/bash3
-bash3-static                    ports/shells/bash3-static
 bashburn                        ports/sysutils/bashburn
 bashc                           ports/shells/bashc
 basicdsp                        ports/cad/basicdsp
@@ -2151,6 +2150,7 @@ cyrus-sasl2-ldapdb              ports/security/cyrus-sasl2-ldapdb
 cyrus-sasl2-saslauthd           ports/security/cyrus-sasl2-saslauthd
 cyrus2courier                   ports/mail/cyrus2courier
 cython                          ports/lang/cython
+d-feet                          ports/devel/d-feet
 d2x                             ports/games/d2x
 d2x-xl                          ports/games/d2x-xl
 da-aspell                       ports/textproc/da-aspell
@@ -3157,6 +3157,7 @@ erlang-lite                     ports/lang/erlang-lite
 erlang-mysql                    ports/databases/erlang-mysql
 erlang-thrift                   ports/devel/erlang-thrift
 erlang_xmlrpc                   ports/net/erlang_xmlrpc
+erlyvideo                       ports/net/erlyvideo
 ermixer                         ports/audio/ermixer
 eroaster                        ports/sysutils/eroaster
 error                           ports/devel/error
@@ -4079,6 +4080,7 @@ fusefs-wdfs                     ports/sysutils/fusefs-wdfs
 fusefs-wikipediafs              ports/sysutils/fusefs-wikipediafs
 fusenshi                        ports/deskutils/fusenshi
 fuser                           ports/sysutils/fuser
+fusionpbx                       ports/www/fusionpbx
 fuzz                            ports/security/fuzz
 fuzzdb                          ports/security/fuzzdb
 fv                              ports/graphics/fv
@@ -5495,6 +5497,7 @@ hinfo                           ports/net/hinfo
 hinventory-client               ports/www/hinventory-client
 hinversi                        ports/games/hinversi
 hippo-canvas                    ports/x11-toolkits/hippo-canvas
+hiredis                         ports/databases/hiredis
 histring                        ports/misc/histring
 hk_classes                      ports/databases/hk_classes
 hla                             ports/lang/hla
@@ -9419,6 +9422,7 @@ mkcomposecache                  ports/x11/mkcomposecache
 mkfile                          ports/sysutils/mkfile
 mkfontdir                       ports/x11-fonts/mkfontdir
 mkfontscale                     ports/x11-fonts/mkfontscale
+mkfwimage                       ports/sysutils/mkfwimage
 mkgichessclub                   ports/games/mkgichessclub
 mkgmap                          ports/astro/mkgmap
 mkhexgrid                       ports/games/mkhexgrid
@@ -9907,6 +9911,7 @@ mydns-ng                        ports/dns/mydns-ng
 mydumper                        ports/databases/mydumper
 myfaces                         ports/www/myfaces
 myghty                          ports/www/myghty
+myitcrm                         ports/deskutils/myitcrm
 mylibrary                       ports/databases/mylibrary
 mymoon                          ports/astro/mymoon
 mypaint                         ports/graphics/mypaint
@@ -10582,6 +10587,7 @@ oleo                            ports/math/oleo
 olsrd                           ports/net/olsrd
 olvwm                           ports/x11-wm/olvwm
 omake                           ports/devel/omake
+omcmd                           ports/net/omcmd
 omega                           ports/games/omega
 omegaT                          ports/editors/omegaT
 omegat                          ports/editors/omegaT
@@ -11905,6 +11911,7 @@ p5-Data-Hexify                  ports/devel/p5-Data-Hexify
 p5-Data-Hierarchy               ports/devel/p5-Data-Hierarchy
 p5-Data-ICal                    ports/deskutils/p5-Data-ICal
 p5-Data-IPV4-Range-Parse        ports/net/p5-Data-IPV4-Range-Parse
+p5-Data-Inspect                 ports/devel/p5-Data-Inspect
 p5-Data-Integer                 ports/devel/p5-Data-Integer
 p5-Data-JavaScript              ports/lang/p5-Data-JavaScript
 p5-Data-JavaScript-Anon         ports/devel/p5-Data-JavaScript-Anon
@@ -13375,6 +13382,7 @@ p5-Net-IMAP-Simple              ports/mail/p5-Net-IMAP-Simple
 p5-Net-IMAP-Simple-SSL          ports/mail/p5-Net-IMAP-Simple-SSL
 p5-Net-INET6Glue                ports/net/p5-Net-INET6Glue
 p5-Net-IP                       ports/net-mgmt/p5-Net-IP
+p5-Net-IP-Anonymous             ports/net/p5-Net-IP-Anonymous
 p5-Net-IP-Match-Regexp          ports/net-mgmt/p5-Net-IP-Match-Regexp
 p5-Net-IP-Match-XS              ports/net-mgmt/p5-Net-IP-Match-XS
 p5-Net-IP-RangeCompare          ports/net/p5-Net-IP-RangeCompare
@@ -14171,6 +14179,7 @@ p5-Sys-Group-GIDhelper          ports/sysutils/p5-Sys-Group-GIDhelper
 p5-Sys-HostIP                   ports/sysutils/p5-Sys-HostIP
 p5-Sys-Hostname-FQDN            ports/sysutils/p5-Sys-Hostname-FQDN
 p5-Sys-Hostname-Long            ports/sysutils/p5-Sys-Hostname-Long
+p5-Sys-Load                     ports/sysutils/p5-Sys-Load
 p5-Sys-MemInfo                  ports/devel/p5-Sys-MemInfo
 p5-Sys-Mmap                     ports/devel/p5-Sys-Mmap
 p5-Sys-RunAlone                 ports/devel/p5-Sys-RunAlone
@@ -14210,6 +14219,7 @@ p5-Template-GD                  ports/www/p5-Template-GD
 p5-Template-Iterator-AlzaboWrapperCursor  ports/www/p5-Template-Iterator-AlzaboWrapperCursor
 p5-Template-Magic               ports/textproc/p5-Template-Magic
 p5-Template-Multilingual        ports/www/p5-Template-Multilingual
+p5-Template-Mustache            ports/www/p5-Template-Mustache
 p5-Template-Plugin-Autoformat   ports/textproc/p5-Template-Plugin-Autoformat
 p5-Template-Plugin-Class        ports/www/p5-Template-Plugin-Class
 p5-Template-Plugin-Clickable    ports/www/p5-Template-Plugin-Clickable
@@ -14299,6 +14309,8 @@ p5-Test-Log4perl                ports/devel/p5-Test-Log4perl
 p5-Test-LongString              ports/devel/p5-Test-LongString
 p5-Test-Manifest                ports/devel/p5-Test-Manifest
 p5-Test-Memory-Cycle            ports/devel/p5-Test-Memory-Cycle
+p5-Test-Mini                    ports/devel/p5-Test-Mini
+p5-Test-Mini-Unit               ports/devel/p5-Test-Mini-Unit
 p5-Test-Mock-LWP                ports/devel/p5-Test-Mock-LWP
 p5-Test-MockModule              ports/devel/p5-Test-MockModule
 p5-Test-MockObject              ports/devel/p5-Test-MockObject
@@ -14425,6 +14437,7 @@ p5-Text-Netstring               ports/textproc/p5-Text-Netstring
 p5-Text-Ngram                   ports/textproc/p5-Text-Ngram
 p5-Text-Ngrams                  ports/textproc/p5-Text-Ngrams
 p5-Text-Original                ports/textproc/p5-Text-Original
+p5-Text-Outdent                 ports/devel/p5-Text-Outdent
 p5-Text-PDF                     ports/print/p5-Text-PDF
 p5-Text-ParagraphDiff           ports/textproc/p5-Text-ParagraphDiff
 p5-Text-ParseWords              ports/textproc/p5-Text-ParseWords
@@ -15886,6 +15899,7 @@ p5-data-hexdumper               ports/devel/p5-Data-Hexdumper
 p5-data-hexify                  ports/devel/p5-Data-Hexify
 p5-data-hierarchy               ports/devel/p5-Data-Hierarchy
 p5-data-ical                    ports/deskutils/p5-Data-ICal
+p5-data-inspect                 ports/devel/p5-Data-Inspect
 p5-data-integer                 ports/devel/p5-Data-Integer
 p5-data-ipv4-range-parse        ports/net/p5-Data-IPV4-Range-Parse
 p5-data-javascript              ports/lang/p5-Data-JavaScript
@@ -17489,6 +17503,7 @@ p5-net-imap-simple-ssl          ports/mail/p5-Net-IMAP-Simple-SSL
 p5-net-inet6glue                ports/net/p5-Net-INET6Glue
 p5-net-interface                ports/net/p5-Net-Interface
 p5-net-ip                       ports/net-mgmt/p5-Net-IP
+p5-net-ip-anonymous             ports/net/p5-Net-IP-Anonymous
 p5-net-ip-match-regexp          ports/net-mgmt/p5-Net-IP-Match-Regexp
 p5-net-ip-match-xs              ports/net-mgmt/p5-Net-IP-Match-XS
 p5-net-ip-rangecompare          ports/net/p5-Net-IP-RangeCompare
@@ -18315,6 +18330,7 @@ p5-sys-group-gidhelper          ports/sysutils/p5-Sys-Group-GIDhelper
 p5-sys-hostip                   ports/sysutils/p5-Sys-HostIP
 p5-sys-hostname-fqdn            ports/sysutils/p5-Sys-Hostname-FQDN
 p5-sys-hostname-long            ports/sysutils/p5-Sys-Hostname-Long
+p5-sys-load                     ports/sysutils/p5-Sys-Load
 p5-sys-meminfo                  ports/devel/p5-Sys-MemInfo
 p5-sys-mmap                     ports/devel/p5-Sys-Mmap
 p5-sys-runalone                 ports/devel/p5-Sys-RunAlone
@@ -18353,6 +18369,7 @@ p5-template-gd                  ports/www/p5-Template-GD
 p5-template-iterator-alzabowrappercursor  ports/www/p5-Template-Iterator-AlzaboWrapperCursor
 p5-template-magic               ports/textproc/p5-Template-Magic
 p5-template-multilingual        ports/www/p5-Template-Multilingual
+p5-template-mustache            ports/www/p5-Template-Mustache
 p5-template-plugin-autoformat   ports/textproc/p5-Template-Plugin-Autoformat
 p5-template-plugin-class        ports/www/p5-Template-Plugin-Class
 p5-template-plugin-clickable    ports/www/p5-Template-Plugin-Clickable
@@ -18442,6 +18459,8 @@ p5-test-log4perl                ports/devel/p5-Test-Log4perl
 p5-test-longstring              ports/devel/p5-Test-LongString
 p5-test-manifest                ports/devel/p5-Test-Manifest
 p5-test-memory-cycle            ports/devel/p5-Test-Memory-Cycle
+p5-test-mini                    ports/devel/p5-Test-Mini
+p5-test-mini-unit               ports/devel/p5-Test-Mini-Unit
 p5-test-mock-lwp                ports/devel/p5-Test-Mock-LWP
 p5-test-mockmodule              ports/devel/p5-Test-MockModule
 p5-test-mockobject              ports/devel/p5-Test-MockObject
@@ -18570,6 +18589,7 @@ p5-text-ngram                   ports/textproc/p5-Text-Ngram
 p5-text-ngrams                  ports/textproc/p5-Text-Ngrams
 p5-text-nsp                     ports/textproc/p5-Text-NSP
 p5-text-original                ports/textproc/p5-Text-Original
+p5-text-outdent                 ports/devel/p5-Text-Outdent
 p5-text-paragraphdiff           ports/textproc/p5-Text-ParagraphDiff
 p5-text-parsewords              ports/textproc/p5-Text-ParseWords
 p5-text-password-pronounceable  ports/security/p5-Text-Password-Pronounceable
@@ -23036,6 +23056,7 @@ rubygem-arel                    ports/databases/rubygem-arel
 rubygem-arrayfields             ports/devel/rubygem-arrayfields
 rubygem-augeas                  ports/textproc/rubygem-augeas
 rubygem-authlogic               ports/devel/rubygem-authlogic
+rubygem-bcrypt-ruby             ports/security/rubygem-bcrypt-ruby
 rubygem-bigrecord               ports/databases/rubygem-bigrecord
 rubygem-bioruby                 ports/devel/rubygem-bioruby
 rubygem-bluecloth               ports/www/rubygem-bluecloth
@@ -23059,6 +23080,7 @@ rubygem-daemon_controller       ports/devel/rubygem-daemon_controller
 rubygem-daemons                 ports/devel/rubygem-daemons
 rubygem-data_objects            ports/databases/rubygem-data_objects
 rubygem-datamapper              ports/databases/rubygem-datamapper
+rubygem-davclient               ports/www/rubygem-davclient
 rubygem-deeptest                ports/devel/rubygem-deeptest
 rubygem-deprecated              ports/devel/rubygem-deprecated
 rubygem-deprecated2             ports/devel/rubygem-deprecated2
@@ -23081,6 +23103,7 @@ rubygem-do_mysql                ports/databases/rubygem-do_mysql
 rubygem-do_postgres             ports/databases/rubygem-do_postgres
 rubygem-do_sqlite3              ports/databases/rubygem-do_sqlite3
 rubygem-domainatrix             ports/www/rubygem-domainatrix
+rubygem-dragonfly               ports/graphics/rubygem-dragonfly
 rubygem-echoe                   ports/devel/rubygem-echoe
 rubygem-elif                    ports/devel/rubygem-elif
 rubygem-emk-sinatra-url-for     ports/www/rubygem-emk-sinatra-url-for
@@ -23136,6 +23159,7 @@ rubygem-innate                  ports/www/rubygem-innate
 rubygem-ipaddress               ports/net/rubygem-ipaddress
 rubygem-jdbc-mysql              ports/databases/rubygem-jdbc-mysql
 rubygem-jekyll                  ports/www/rubygem-jekyll
+rubygem-jquery-rails            ports/www/rubygem-jquery-rails
 rubygem-jruby-jars              ports/devel/rubygem-jruby-jars
 rubygem-json                    ports/devel/rubygem-json
 rubygem-json_pure               ports/devel/rubygem-json_pure
@@ -23145,6 +23169,7 @@ rubygem-launchy                 ports/devel/rubygem-launchy
 rubygem-layout-yullio           ports/www/rubygem-layout-yullio
 rubygem-less                    ports/www/rubygem-less
 rubygem-librmpd                 ports/audio/rubygem-librmpd
+rubygem-lighthouse-api          ports/www/rubygem-lighthouse-api
 rubygem-linecache               ports/devel/rubygem-linecache
 rubygem-liquid                  ports/textproc/rubygem-liquid
 rubygem-little_plugger          ports/devel/rubygem-little_plugger
@@ -23244,6 +23269,7 @@ rubygem-rightflexiscale         ports/net/rubygem-rightflexiscale
 rubygem-rightgogrid             ports/net/rubygem-rightgogrid
 rubygem-righthttpconnection     ports/net/rubygem-righthttpconnection
 rubygem-rightslicehost          ports/net/rubygem-rightslicehost
+rubygem-rmail                   ports/mail/rubygem-rmail
 rubygem-roauth                  ports/security/rubygem-roauth
 rubygem-robots                  ports/www/rubygem-robots
 rubygem-rparsec                 ports/devel/rubygem-rparsec
@@ -24006,6 +24032,7 @@ sortu                           ports/sysutils/sortu
 sound-juicer                    ports/audio/sound-juicer
 soundconverter                  ports/audio/soundconverter
 soundgrab                       ports/audio/soundgrab
+soundkonverter                  ports/audio/soundkonverter
 soundmodem                      ports/comms/soundmodem
 soundtouch                      ports/audio/soundtouch
 soundtracker                    ports/audio/soundtracker
@@ -24274,7 +24301,6 @@ stars                           ports/astro/stars
 starttls                        ports/security/starttls
 startup-notification            ports/x11/startup-notification
 statcvs                         ports/devel/statcvs
-staticcharge                    ports/dns/staticcharge
 statsvn                         ports/devel/statsvn
 steadyflow                      ports/deskutils/steadyflow
 sted                            ports/editors/sted
@@ -24384,6 +24410,7 @@ suphp                           ports/www/suphp
 surblhost                       ports/mail/surblhost
 surfraw                         ports/www/surfraw
 suricata                        ports/security/suricata
+surrealtodo                     ports/deskutils/surrealtodo
 susv2                           ports/misc/susv2
 susv3                           ports/misc/susv3
 suxus                           ports/x11-fonts/suxus
@@ -24498,6 +24525,7 @@ t_coffee                        ports/biology/t_coffee
 ta-aspell                       ports/textproc/ta-aspell
 ta-lib                          ports/devel/ta-lib
 ta2as                           ports/converters/ta2as
+tabbed                          ports/x11/tabbed
 table.el                        ports/misc/table.el
 tablelog                        ports/databases/tablelog
 tableutil                       ports/net/tableutil
@@ -25273,6 +25301,7 @@ tycho                           ports/games/tycho
 tycoon                          ports/x11/tycoon
 typespeed                       ports/games/typespeed
 typetools                       ports/print/typetools
+typetrainer                     ports/misc/typetrainer
 typhoon                         ports/databases/typhoon
 typo                            ports/www/typo
 typo3                           ports/www/typo3
