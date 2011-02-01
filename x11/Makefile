@@ -7,7 +7,6 @@
     SUBDIR += 9box
     SUBDIR += 9menu
     SUBDIR += Terminal
-    SUBDIR += accessx
     SUBDIR += alltray
     SUBDIR += appres
     SUBDIR += apwal
@@ -132,7 +131,6 @@
     SUBDIR += kbproto
     SUBDIR += kde-lite
     SUBDIR += kde3
-    SUBDIR += kde3-apireference
     SUBDIR += kde4
     SUBDIR += kdebase3
     SUBDIR += kdebase4

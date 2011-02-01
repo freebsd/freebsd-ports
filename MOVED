@@ -1525,3 +1525,7 @@ devel/cvsnt||2011-01-15|Removed: abandoned upstream
 net-p2p/qbittorrent-23||2011-01-24|Old, no longer updated. Try net-p2p/qbittorrent-26
 dns/staticcharge||2011-01-29|Has expired: abandoned by author
 shells/bash3-static|shells/bash-static|2011-01-29|Has expired: Use shells/bash or shells/bash-static instead
+audio/ecawave||2011-02-01|Has expired: has been broken for over one year
+mail/spamass-rules_du_jour||2011-02-01|Has expired: Use sa-update instead
+x11/accessx||2011-02-01|Has expired: Project abandoned, mastersite disappeared
+x11/kde3-apireference||2011-02-01|Has expired: outdated and obsolete
