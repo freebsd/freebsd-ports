@@ -201,6 +201,11 @@ LDFLAGS+=		-Wl,-rpath=${LOCALBASE}/lib/${_GCC_BUILD_DEPENDS}
 BUILD_DEPENDS+=	${_GCC_PORT_DEPENDS}:${PORTSDIR}/lang/${_GCC_BUILD_DEPENDS}
 . if ${_USE_GCC} != 3.4
 RUN_DEPENDS+=	${_GCC_PORT_DEPENDS}:${PORTSDIR}/lang/${_GCC_BUILD_DEPENDS}
+.  if ${_USE_GCC} != 4.2
+# Later GCC ports already depend on binutils; make sure whatever we
+# build leverages this as well.
+USE_BINUTILS=	yes
+.  endif
 . endif
 .endif
 .endif # defined(_USE_GCC)
