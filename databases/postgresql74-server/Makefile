@@ -16,6 +16,8 @@ DISTFILES?=	postgresql-${PORTVERSION}${EXTRACT_SUFX}
 
 MAINTAINER?=	girgen@FreeBSD.org
 COMMENT?=	The most advanced open-source database available anywhere
+DEPRECATED=		EOL see http://wiki.postgresql.org/wiki/PostgreSQL_Release_Support_Policy
+EXPIRATION_DATE=2011-04-02
 
 CONFLICTS?=	${PORTNAME}${PKGNAMESUFFIX}-7.[0-35-9]* \
 		${PORTNAME}${PKGNAMESUFFIX}-8.* \
