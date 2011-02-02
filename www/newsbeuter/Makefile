@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	newsbeuter
-PORTVERSION=	2.3
-PORTREVISION=	1
+PORTVERSION=	2.4
 CATEGORIES=	www
 MASTER_SITES=	http://newsbeuter.org/downloads/
 
