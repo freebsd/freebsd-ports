@@ -11,7 +11,7 @@ PORTNAME=	sphinxsearch
 PORTVERSION=	1.10b
 PORTEPOCH=	1
 CATEGORIES=	textproc databases
-MASTER_SITES=	http://www.sphinxsearch.com/downloads/
+MASTER_SITES=	http://sphinxsearch.com/files/
 PKGNAMESUFFIX?=	-devel
 DISTNAME=	sphinx-1.10-beta
 
