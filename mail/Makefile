@@ -601,6 +601,7 @@
     SUBDIR += roundcube-mobilecube
     SUBDIR += roundcube-mvision2
     SUBDIR += roundcube-umich
+    SUBDIR += rspamd
     SUBDIR += rss2email
     SUBDIR += ruby-rfilter
     SUBDIR += ruby-rmail
