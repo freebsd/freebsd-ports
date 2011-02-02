@@ -25,6 +25,10 @@ CONFLICTS=	courier-0.* postfix-1.* postfix-2.[0-79].* postfix-base-2.[0-79].* \
 		postfix-current-2.* postfix-current-base-2.* sendmail-8.* \
 		sendmail+*-8.* smail-3.* zmailer-2.*
 
+.if !defined(BATCH) && !defined(PACKAGE_BUILDING)
+IS_INTERACTIVE=	yes
+.endif
+
 MAKE_JOBS_SAFE=	yes
 USE_SUBMAKE=	yes
 USE_PERL5_BUILD=yes
@@ -50,7 +54,7 @@ OPTIONS=	PCRE		"Perl Compatible Regular Expressions"			on \
 		TLS		"Enable SSL and TLS support"				${STATUS_TLS} \
 		BDB		"Berkeley DB (choose version with WITH_BDB_VER)"	${STATUS_BDB} \
 		MYSQL		"MySQL maps (choose version with WITH_MYSQL_VER)"	${STATUS_MySQL} \
-		PGSQL		"PostgreSQL maps (choose with DEFAULT_PGSQL_VER)"	${STATUS_PgSQL} \
+		PGSQL		"PostgreSQL maps (pick ver. with DEFAULT_PGSQL_VER)"	${STATUS_PgSQL} \
 		SQLITE		"SQLite maps"						off \
 		OPENLDAP	"OpenLDAP maps (choose ver. with WITH_OPENLDAP_VER)"	${STATUS_OpenLDAP} \
 		LDAP_SASL	"Enable OpenLDAP client-to-server auth via SASL"	off \
