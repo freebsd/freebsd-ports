@@ -453,7 +453,6 @@
     SUBDIR += proxyper
     SUBDIR += pspresent
     SUBDIR += py-YABT
-    SUBDIR += py-distutils
     SUBDIR += py-osd
     SUBDIR += py-pexpect
     SUBDIR += py-progressbar
