@@ -1,16 +1,16 @@
-bin/drracket
-bin/drscheme
-bin/gracket
-bin/gracket-text
-bin/mred
-bin/mred-text
+%%GRACKET%%bin/drracket
+%%GRACKET%%bin/drscheme
+%%GRACKET%%bin/gracket
+%%GRACKET%%bin/gracket-text
+%%GRACKET%%bin/mred
+%%GRACKET%%bin/mred-text
 bin/mzc
 bin/mzpp
 bin/mzscheme
 bin/mztext
 bin/pdf-slatex
 bin/planet
-bin/plt-games
+%%GRACKET%%bin/plt-games
 bin/plt-help
 bin/plt-r5rs
 bin/plt-r6rs
@@ -20,7 +20,7 @@ bin/raco
 bin/scribble
 bin/setup-plt
 bin/slatex
-bin/slideshow
+%%GRACKET%%bin/slideshow
 bin/swindle
 bin/tex2page
 include/racket/escheme.h
@@ -40,10 +40,10 @@ include/racket/schvers.h
 include/racket/sconfig.h
 include/racket/stypes.h
 include/racket/uconfig.h
-%%LIB32DIR%%/libgracket3m-5.0.2.so
-%%LIB32DIR%%/libgracket3m.a
-%%LIB32DIR%%/libgracket3m.la
-%%LIB32DIR%%/libgracket3m.so
+%%GRACKET%%%%LIB32DIR%%/libgracket3m-5.0.2.so
+%%GRACKET%%%%LIB32DIR%%/libgracket3m.a
+%%GRACKET%%%%LIB32DIR%%/libgracket3m.la
+%%GRACKET%%%%LIB32DIR%%/libgracket3m.so
 %%LIB32DIR%%/libracket3m-5.0.2.so
 %%LIB32DIR%%/libracket3m.a
 %%LIB32DIR%%/libracket3m.la
@@ -8352,12 +8352,12 @@ include/racket/uconfig.h
 %%LIB32DIR%%/racket/collects/sgl/compiled/info_rkt.zo
 %%LIB32DIR%%/racket/collects/sgl/compiled/main_rkt.dep
 %%LIB32DIR%%/racket/collects/sgl/compiled/main_rkt.zo
-%%LIB32DIR%%/racket/collects/sgl/compiled/make-gl-info-helper_rkt.c
+%%GRACKET%%%%LIB32DIR%%/racket/collects/sgl/compiled/make-gl-info-helper_rkt.c
 %%LIB32DIR%%/racket/collects/sgl/compiled/make-gl-info_rkt.dep
 %%LIB32DIR%%/racket/collects/sgl/compiled/make-gl-info_rkt.zo
 %%LIB32DIR%%/racket/collects/sgl/compiled/makefile_rkt.dep
 %%LIB32DIR%%/racket/collects/sgl/compiled/makefile_rkt.zo
-%%LIB32DIR%%/racket/collects/sgl/compiled/native/%%ARCH%%-freebsd/3m/make-gl-info-helper_rkt.so
+%%GRACKET%%%%LIB32DIR%%/racket/collects/sgl/compiled/native/%%ARCH%%-freebsd/3m/make-gl-info-helper_rkt.so
 %%LIB32DIR%%/racket/collects/sgl/compiled/sgl_rkt.dep
 %%LIB32DIR%%/racket/collects/sgl/compiled/sgl_rkt.zo
 %%LIB32DIR%%/racket/collects/sgl/examples/alpha.rkt
@@ -16878,9 +16878,9 @@ include/racket/uconfig.h
 @dirrm %%LIB32DIR%%/racket/collects/sgl/scribblings/compiled
 @dirrm %%LIB32DIR%%/racket/collects/sgl/scribblings
 @dirrm %%LIB32DIR%%/racket/collects/sgl/examples
-@dirrm %%LIB32DIR%%/racket/collects/sgl/compiled/native/%%ARCH%%-freebsd/3m
-@dirrm %%LIB32DIR%%/racket/collects/sgl/compiled/native/%%ARCH%%-freebsd
-@dirrm %%LIB32DIR%%/racket/collects/sgl/compiled/native
+%%GRACKET%%@dirrm %%LIB32DIR%%/racket/collects/sgl/compiled/native/%%ARCH%%-freebsd/3m
+%%GRACKET%%@dirrm %%LIB32DIR%%/racket/collects/sgl/compiled/native/%%ARCH%%-freebsd
+%%GRACKET%%@dirrm %%LIB32DIR%%/racket/collects/sgl/compiled/native
 @dirrm %%LIB32DIR%%/racket/collects/sgl/compiled
 @dirrm %%LIB32DIR%%/racket/collects/sgl
 @dirrm %%LIB32DIR%%/racket/collects/setup/private/compiled
