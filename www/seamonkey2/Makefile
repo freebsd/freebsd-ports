@@ -28,10 +28,9 @@ ALL_TARGET=	default
 MAKE_JOBS_SAFE=	yes
 MOZ_PIS_SCRIPTS=	moz_pis_S50cleanhome
 MAKE_ENV=	LD_LIBRARY_PATH=${WRKSRC}/dist/bin
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include/cairo"
+CONFIGURE_ENV=	LOCALBASE=${LOCALBASE} CPPFLAGS="-I${LOCALBASE}/include/cairo" \
+		ac_cv_func__Unwind_Backtrace=no
 USE_GCC=	4.2+
-
-CONFIGURE_ENV=	LOCALBASE=${LOCALBASE}
 
 MOZ_EXTENSIONS=	default
 MOZ_OPTIONS+=	--with-default-mozilla-five-home=${PREFIX}/lib/${MOZILLA} \
@@ -121,11 +120,6 @@ post-patch:
 		${WRKSRC}/mozilla/storage/build/Makefile.in
 	@${REINPLACE_CMD} -e '/accessibility.typeaheadfind.enablesound/s/true/false/' \
 		${WRKSRC}/mozilla/modules/libpref/src/init/all.js
-	@${REINPLACE_CMD} -e 's|<iconv.h>|\"${LOCALBASE}/include/iconv.h\"|g' \
-		${WRKSRC}/configure \
-		${WRKSRC}/mozilla/configure \
-		${WRKSRC}/mozilla/intl/uconv/native/nsNativeUConvService.cpp \
-		${WRKSRC}/mozilla/xpcom/io/nsNativeCharsetUtils.cpp
 	@${REINPLACE_CMD} -e 's|libgnome-2.so.0|libgnome-2.so|' \
 		${WRKSRC}/mozilla/toolkit/xre/nsNativeAppSupportUnix.cpp \
 		${WRKSRC}/mozilla/modules/libpr0n/decoders/icon/gtk/nsIconChannel.cpp
