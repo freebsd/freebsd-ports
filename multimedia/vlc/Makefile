@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	vlc
-DISTVERSION=	1.1.6
+DISTVERSION=	1.1.7
 PORTEPOCH=	3
 CATEGORIES=	multimedia audio ipv6 net www
 MASTER_SITES=	http://download.videolan.org/pub/videolan/${PORTNAME}/${DISTVERSION}/ \
@@ -265,10 +265,10 @@ CONFIGURE_ARGS+=--enable-dca
 
 .if defined(WITH_DVBPSI)
 LIB_DEPENDS+=	dvbpsi.6:${PORTSDIR}/multimedia/libdvbpsi
-CONFIGURE_ARGS+=--enable-dvbpsi \
+CONFIGURE_ARGS+=--enable-dvb --enable-dvbpsi \
 		--with-dvbpsi=${LOCALBASE}
 .else
-CONFIGURE_ARGS+=--disable-dvbpsi
+CONFIGURE_ARGS+=--disable-dvb --disable-dvbpsi
 .endif
 
 .if defined(WITHOUT_DVDREAD)
@@ -613,10 +613,10 @@ CONFIGURE_ARGS+=--disable-upnp
 
 # Video for Linux and DVB (Digital Video Broadcast) support
 .if defined(WITHOUT_V4L)
-CONFIGURE_ARGS+=--disable-v4l --disable-dvb
+CONFIGURE_ARGS+=--disable-v4l
 .else
 BUILD_DEPENDS+=	v4l_compat>=1.0.20100321:${PORTSDIR}/multimedia/v4l_compat
-CONFIGURE_ARGS+=--enable-v4l --enable-dvb
+CONFIGURE_ARGS+=--enable-v4l
 .endif
 
 .if defined(WITHOUT_VCD)
