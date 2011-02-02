@@ -46,7 +46,7 @@ Note:  Please add new entries to the beginning of this file.
       <body xmlns="http://www.w3.org/1999/xhtml">
 	<p>VLC team reports:</p>
 	<blockquote cite="http://www.videolan.org/security/sa1102.html">
-	  <p>When parsing an invalid MKV (Matroska or WebM) file, input 
+	  <p>When parsing an invalid MKV (Matroska or WebM) file, input
              validation are insufficient.</p>
 	</blockquote>
       </body>
