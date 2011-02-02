@@ -88,6 +88,7 @@ libdata/pkgconfig/libwps-0.2.pc
 %%PORTDOCS%%%%DOCSDIR%%/html/ftv2plastnode.png
 %%PORTDOCS%%%%DOCSDIR%%/html/ftv2pnode.png
 %%PORTDOCS%%%%DOCSDIR%%/html/ftv2vertline.png
+%%PORTDOCS%%%%DOCSDIR%%/html/ftv2splitbar.png
 %%PORTDOCS%%%%DOCSDIR%%/html/functions.html
 %%PORTDOCS%%%%DOCSDIR%%/html/functions_func.html
 %%PORTDOCS%%%%DOCSDIR%%/html/functions_vars.html
@@ -107,6 +108,7 @@ libdata/pkgconfig/libwps-0.2.pc
 %%PORTDOCS%%%%DOCSDIR%%/html/libwps__internal_8h_source.html
 %%PORTDOCS%%%%DOCSDIR%%/html/nav_f.png
 %%PORTDOCS%%%%DOCSDIR%%/html/nav_h.png
+%%PORTDOCS%%%%DOCSDIR%%/html/navtree.css
 %%PORTDOCS%%%%DOCSDIR%%/html/open.png
 %%PORTDOCS%%%%DOCSDIR%%/html/struct__WPSContentParsingState-members.html
 %%PORTDOCS%%%%DOCSDIR%%/html/struct__WPSContentParsingState.html
