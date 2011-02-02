@@ -1,0 +1,7 @@
+URI::Escape::JavaScript provides JavaScript's escape() and unescape() functions.
+It works simplar to homonymous functions of JavaScript.
+URI::Escape doesn't work for escaping and
+unescaping JavaScript like Unicode URI-escape ("%uXXXX").
+But you can use this module to do those.
+
+WWW:	http://search.cpan.org/dist/URI-Escape-JavaScript/
