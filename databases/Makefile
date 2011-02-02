@@ -28,6 +28,7 @@
     SUBDIR += courier-authlib-pgsql
     SUBDIR += courier-authlib-userdb
     SUBDIR += courier-authlib-usergdbm
+    SUBDIR += credis
     SUBDIR += cyrus-imspd
     SUBDIR += dalmp
     SUBDIR += db

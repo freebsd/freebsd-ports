@@ -1,0 +1,6 @@
+@comment $FreeBSD$
+include/credis.h
+lib/libcredis.a
+lib/libcredis.so
+lib/libcredis.so.0
+lib/libcredis.so.%%VERSION%%
