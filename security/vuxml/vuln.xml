@@ -34,6 +34,32 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="f9258873-2ee2-11e0-afcd-0015f2db7bde">
+    <topic>vlc -- Insufficient input validation in MKV demuxer</topic>
+    <affects>
+      <package>
+	<name>vlc</name>
+	<range><lt>1.1.7</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>VLC team reports:</p>
+	<blockquote cite="http://www.videolan.org/security/sa1102.html">
+	  <p>When parsing an invalid MKV (Matroska or WebM) file, input 
+             validation are insufficient.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://www.videolan.org/security/sa1102.html</url>
+    </references>
+    <dates>
+      <discovery>2011-01-26</discovery>
+      <entry>2011-02-02</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="8015600f-2c80-11e0-9cc1-00163e5bf4f9">
     <topic>maradns -- denial of service when resolving a long DNS hostname</topic>
     <affects>
