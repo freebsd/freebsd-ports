@@ -2,7 +2,7 @@
 #
 
 # PROVIDE: musicpd
-# REQUIRE: LOGIN
+# REQUIRE: mixer LOGIN
 # KEYWORD: shutdown
 
 # Add the following line to /etc/rc.conf to enable mpd:
