@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	cproto
-PORTVERSION=	4.7i
+PORTVERSION=	4.7j
 CATEGORIES=	devel
 MASTER_SITES=	ftp://invisible-island.net/cproto/
 EXTRACT_SUFX=	.tgz
