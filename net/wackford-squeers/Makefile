@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	wackford-squeers
-PORTVERSION=	1.14
+PORTVERSION=	1.16
 CATEGORIES=	net
 MASTER_SITES=	http://www.mammothcheese.ca/
 
