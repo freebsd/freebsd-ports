@@ -367,6 +367,7 @@ lib/tcl%%TCL_VER%%/tclIndex
 %%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/America/Atikokan
 %%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/America/Atka
 %%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/America/Bahia
+%%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/America/Bahia_Banderas
 %%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/America/Barbados
 %%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/America/Belem
 %%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/America/Belize
@@ -429,6 +430,7 @@ lib/tcl%%TCL_VER%%/tclIndex
 %%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/America/Manaus
 %%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/America/Marigot
 %%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/America/Martinique
+%%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/America/Matamoros
 %%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/America/Mazatlan
 %%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/America/Mendoza
 %%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/America/Menominee
@@ -445,6 +447,7 @@ lib/tcl%%TCL_VER%%/tclIndex
 %%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/America/Nipigon
 %%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/America/Nome
 %%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/America/Noronha
+%%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/America/Ojinaga
 %%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/America/Panama
 %%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/America/Pangnirtung
 %%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/America/Paramaribo
@@ -461,6 +464,7 @@ lib/tcl%%TCL_VER%%/tclIndex
 %%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/America/Resolute
 %%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/America/Rio_Branco
 %%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/America/Rosario
+%%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/America/Santa_Isabel
 %%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/America/Santarem
 %%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/America/Santiago
 %%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/America/Santo_Domingo
@@ -502,6 +506,7 @@ lib/tcl%%TCL_VER%%/tclIndex
 %%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/Antarctica/Davis
 %%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/Antarctica/Mawson
 %%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/Antarctica/DumontDUrville
+%%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/Antarctica/Macquarie
 %%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/Antarctica/McMurdo
 %%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/Antarctica/Palmer
 %%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/Antarctica/Rothera
@@ -757,6 +762,7 @@ lib/tcl%%TCL_VER%%/tclIndex
 %%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/Pacific/Auckland
 %%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/Pacific/Apia
 %%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/Pacific/Chatham
+%%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/Pacific/Chuuk
 %%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/Pacific/Easter
 %%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/Pacific/Efate
 %%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/Pacific/Enderbury
@@ -781,8 +787,8 @@ lib/tcl%%TCL_VER%%/tclIndex
 %%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/Pacific/Noumea
 %%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/Pacific/Pago_Pago
 %%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/Pacific/Palau
-%%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/Pacific/Yap
 %%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/Pacific/Pitcairn
+%%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/Pacific/Pohnpei
 %%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/Pacific/Ponape
 %%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/Pacific/Port_Moresby
 %%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/Pacific/Rarotonga
@@ -794,6 +800,7 @@ lib/tcl%%TCL_VER%%/tclIndex
 %%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/Pacific/Truk
 %%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/Pacific/Wake
 %%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/Pacific/Wallis
+%%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/Pacific/Yap
 %%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/SystemV/AST4ADT
 %%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/SystemV/AST4
 %%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/SystemV/CST6
