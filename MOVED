@@ -1529,3 +1529,4 @@ audio/ecawave||2011-02-01|Has expired: has been broken for over one year
 mail/spamass-rules_du_jour||2011-02-01|Has expired: Use sa-update instead
 x11/accessx||2011-02-01|Has expired: Project abandoned, mastersite disappeared
 x11/kde3-apireference||2011-02-01|Has expired: outdated and obsolete
+misc/py-distutils||2011-02-02|Included in current python versions
