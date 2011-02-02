@@ -17,19 +17,35 @@ MASTER_SITES=	http://download.racket-lang.org/installers/${PORTVERSION}/racket/ 
 DISTFILES=	racket-${PORTVERSION}-src-unix.tgz ${PLTPATCHES}
 DIST_SUBDIR=	racket/${PORTVERSION}
 EXTRACT_ONLY=	racket-${PORTVERSION}-src-unix.tgz
+
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	An interactive, integrated, graphical Scheme programming environment
 
-LIB_DEPENDS=	cairo.2:${PORTSDIR}/graphics/cairo	\
+OPTIONS=	GRACKET	"Build GUI Racket"		ON
+
+GNU_CONFIGURE=		yes
+CONFIGURE_ARGS=		--enable-shared --enable-pthread \
+			--enable-lt=${LIBTOOL}
+CONFIGURE_SCRIPT=	../configure
+
+.include <bsd.port.options.mk>
+
+.if defined(WITHOUT_GRACKET)
+CONFIGURE_ARGS+=	--disable-gracket
+PLIST_SUB+=		GRACKET="@comment "
+.else
+LIB_DEPENDS+=	cairo.2:${PORTSDIR}/graphics/cairo	\
 		jpeg.11:${PORTSDIR}/graphics/jpeg	\
 		png.6:${PORTSDIR}/graphics/png
 
-USE_XORG=	xft x11 xrender xaw
-CONFIGURE_ARGS=	--prefix=${PREFIX} --enable-shared --enable-xft --enable-gl \
-		--enable-xrender --enable-cairo --with-x --enable-pthread \
-		--enable-lt=${LIBTOOL} \
-		CFLAGS="${CFLAGS}" LDFLAGS="${LDFLAGS}" \
-		CPPFLAGS="${CPPFLAGS}"
+USE_XORG+=		xft x11 xrender xaw
+USE_GL+=		yes
+CONFIGURE_ARGS+=	--enable-xft --enable-gl --enable-xrender \
+			--enable-cairo --with-x
+PLIST_SUB+=		GRACKET=""
+.endif
+
+CONFIGURE_ENV+=	LDFLAGS="${LDFLAGS}" CPPFLAGS="${CPPFLAGS}"
 
 # Force the "configure" script to look in $LOCALBASE for -lpng and -ljpeg
 LDFLAGS+=	-L${LOCALBASE}/lib
@@ -37,7 +53,6 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 
 WRKSRC=		${WRKDIR}/racket-${PORTVERSION}/src/build
 USE_ICONV=	yes
-USE_GL=		yes
 USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	libtool:env
 
