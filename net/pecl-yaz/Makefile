@@ -19,6 +19,8 @@ COMMENT=	A PECL extension that implements a Z39.50 client
 
 LIB_DEPENDS=	yaz.4:${PORTSDIR}/net/yaz
 
+BROKEN=		does not configure
+
 USE_PHP=	yes
 USE_PHPEXT=	yes
 
