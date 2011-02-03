@@ -1,0 +1,27 @@
+
+
+# The CGI script is served from the default apache
+# cgi-bin directory; we single this URL out from
+# the normal alias parsing below.
+#
+ScriptAliasMatch ^/argus/$ "%%PREFIX%%/www/%%PORTNAME%%/cgi-bin/arguscgi"
+ScriptAlias ^/argus/cgi-bin/$ "%%PREFIX%%/www/%%PORTNAME%%/cgi-bin/"
+
+<Directory "%%PREFIX%%/www/%%PORTNAME%%/cgi-bin">
+	options ExecCGI
+	AllowOverride none
+	allow from all
+</Directory>
+
+# Support for the logo, css and javascript files. The minimal set
+# needed are /sound/whoopwhoop.wav, /img/argus.logo.gif, /img/smile.gif
+# /img/sad.gif, /img/nospkr.gif and on top level /argus.css and 
+# optionally /argus.js.
+#
+Alias /argus/ "%%PREFIX%%/www/%%PORTNAME%%/docroot/"
+
+<Directory "%%PREFIX%%/www/%%PORTNAME%%/docroot">
+	options none
+	AllowOverride none
+	allow from all
+</Directory>
