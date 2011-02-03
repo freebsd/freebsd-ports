@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libdombey
-PORTVERSION=	1.5
+PORTVERSION=	1.6
 CATEGORIES=	devel
 MASTER_SITES=	http://www.mammothcheese.ca/
 
