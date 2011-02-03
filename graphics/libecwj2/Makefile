@@ -24,6 +24,12 @@ USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 800000
+BROKEN=		does not build on 7.X
+.endif
+
 post-extract:
 	cd ${WRKDIR} && \
 		${EXTRACT_CMD} ImageCompressionSDKSourceCode3.3Setup_20070509.zip
@@ -31,4 +37,4 @@ post-extract:
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' ${WRKSRC}/configure.in
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
