@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	jailkit
-PORTVERSION=	2.12
+PORTVERSION=	2.13
 CATEGORIES=	shells
 MASTER_SITES=	http://olivier.sessink.nl/jailkit/ \
 		http://www.sfr-fresh.com/unix/privat/
