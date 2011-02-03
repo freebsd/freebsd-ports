@@ -1,0 +1,37 @@
+--- main.c.orig	2011-02-02 19:11:34.000000000 +0100
++++ main.c	2011-01-24 17:44:29.000000000 +0100
+@@ -146,16 +146,6 @@
+ 	{"-scorefile","scorefile",XrmoptionSepArg, NULL },
+ };
+ 
+-static XtResource application_resources[] = {
+-  {"foreground", "Foreground", XtRPixel, sizeof(Pixel),
+-                (Cardinal)&fg, XtRString, (caddr_t) "Black"},
+-  {"background", "Background", XtRPixel, sizeof(Pixel),
+-                (Cardinal)&bg, XtRString, (caddr_t) "White"},
+-  {"translations","Translations", XtRTranslationTable, sizeof(XtTranslations),
+-                (Cardinal)&translations, XtRString, (caddr_t)translations_str},
+-  {"scorefile","Scorefile", XtRString, sizeof(String),
+-                (Cardinal)&score_filename, XtRString, (caddr_t)SCORE_FILE},
+-};
+ 
+ /*----------------------------------------------------------------------*/
+ 
+@@ -168,6 +158,17 @@
+   Widget quit_command,
+ 	 new_game_command;
+ 
++XtResource application_resources[] = {
++  {"foreground", "Foreground", XtRPixel, sizeof(Pixel),
++                (Cardinal)&fg, XtRString, (caddr_t) "Black"},
++  {"background", "Background", XtRPixel, sizeof(Pixel),
++                (Cardinal)&bg, XtRString, (caddr_t) "White"},
++  {"translations","Translations", XtRTranslationTable, sizeof(XtTranslations),
++                (Cardinal)&translations, XtRString, (caddr_t)translations_str},
++  {"scorefile","Scorefile", XtRString, sizeof(String),
++                (Cardinal)&score_filename, XtRString, (caddr_t)SCORE_FILE},
++};
++
+   srandom(getpid());
+   current_block = 0;
+   current_callback = NULL;
