@@ -252,6 +252,7 @@
     SUBDIR += freeipmi
     SUBDIR += freesbie
     SUBDIR += freqsdwn
+    SUBDIR += froxlor
     SUBDIR += fsbackup
     SUBDIR += fstyp
     SUBDIR += ftrace
