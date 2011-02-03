@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	texinfo
-PORTVERSION=	4.11
-PORTREVISION=	1
+PORTVERSION=	4.13
 CATEGORIES=	print
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -15,7 +14,6 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A typeset documentation system with multiple format output
 
-USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 INSTALL_TARGET=	install install-tex
@@ -31,7 +29,7 @@ CONFIGURE_ENV=	\
 
 INFO=		${PORTNAME} info-stnd info
 MAN1=		info.1 infokey.1 install-info.1 makeinfo.1 texi2dvi.1 \
-		texindex.1
+		texi2pdf.1 pdftexi2dvi.1 texindex.1
 MAN5=		info.5 texinfo.5
 
 PLIST_SUB=	TEXMFLOCAL=${TEXMFLOCAL}

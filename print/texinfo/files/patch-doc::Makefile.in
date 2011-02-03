@@ -1,6 +1,6 @@
---- doc/Makefile.in.orig	2007-09-10 02:37:44.000000000 +0200
-+++ doc/Makefile.in	2008-06-05 17:17:59.000000000 +0200
-@@ -104,7 +104,7 @@
+--- doc/Makefile.in.orig	2011-02-03 19:34:53.000000000 +0000
++++ doc/Makefile.in	2011-02-03 19:35:33.000000000 +0000
+@@ -121,7 +121,7 @@
  CONFIG_CLEAN_FILES =
  SOURCES =
  DIST_SOURCES =
@@ -9,16 +9,16 @@
  TEXINFO_TEX = $(top_srcdir)/build-aux/texinfo.tex
  am__TEXINFO_TEX_DIR = $(top_srcdir)/build-aux
  DVIS = texinfo.dvi info-stnd.dvi info.dvi
-@@ -375,7 +375,7 @@
+@@ -436,7 +436,7 @@
  
  # Put texinfo.txi first because that's the most important.
  info_TEXINFOS = texinfo.txi info-stnd.texi info.texi
 -DISTCLEANFILES = texinfo texinfo-* info*.info*
 +DISTCLEANFILES = texinfo.info texinfo-* info*.info*
- man_MANS = info.1 infokey.1 install-info.1 makeinfo.1 texindex.1 texi2dvi.1 \
-            info.5 texinfo.5
+ man_MANS = info.1 infokey.1 install-info.1 makeinfo.1 texindex.1 \
+ 	info.5 texinfo.5 texi2dvi.1 texi2pdf.1 pdftexi2dvi.1
  
-@@ -455,7 +455,7 @@
+@@ -526,7 +526,7 @@
  $(ACLOCAL_M4): @MAINTAINER_MODE_TRUE@ $(am__aclocal_m4_deps)
  	cd $(top_builddir) && $(MAKE) $(AM_MAKEFLAGS) am--refresh
  

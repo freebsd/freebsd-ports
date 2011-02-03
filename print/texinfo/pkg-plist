@@ -11,6 +11,7 @@ bin/pdftexi2dvi
 %%NLS%%share/locale/de/LC_MESSAGES/texinfo.mo
 %%NLS%%share/locale/de_AT/LC_MESSAGES/texinfo.mo
 %%NLS%%share/locale/eo/LC_MESSAGES/texinfo.mo
+%%NLS%%share/locale/es/LC_MESSAGES/texinfo.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/texinfo.mo
 %%NLS%%share/locale/he/LC_MESSAGES/texinfo.mo
 %%NLS%%share/locale/hr/LC_MESSAGES/texinfo.mo
@@ -18,7 +19,6 @@ bin/pdftexi2dvi
 %%NLS%%share/locale/ja/LC_MESSAGES/texinfo.mo
 %%NLS%%share/locale/nb/LC_MESSAGES/texinfo.mo
 %%NLS%%share/locale/nl/LC_MESSAGES/texinfo.mo
-%%NLS%%share/locale/no/LC_MESSAGES/texinfo.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/texinfo.mo
 %%NLS%%share/locale/ro/LC_MESSAGES/texinfo.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/texinfo.mo
@@ -38,8 +38,8 @@ bin/pdftexi2dvi
 %%TEXMFLOCAL%%/tex/texinfo/txi-es.tex
 %%TEXMFLOCAL%%/tex/texinfo/txi-fr.tex
 %%TEXMFLOCAL%%/tex/texinfo/txi-it.tex
+%%TEXMFLOCAL%%/tex/texinfo/txi-nb.tex
 %%TEXMFLOCAL%%/tex/texinfo/txi-nl.tex
-%%TEXMFLOCAL%%/tex/texinfo/txi-no.tex
 %%TEXMFLOCAL%%/tex/texinfo/txi-pl.tex
 %%TEXMFLOCAL%%/tex/texinfo/txi-pt.tex
 %%TEXMFLOCAL%%/tex/texinfo/txi-ru.tex
