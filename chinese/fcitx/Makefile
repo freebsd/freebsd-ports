@@ -34,6 +34,10 @@ OPTIONS=	XFT		"Use Xft for Freetype font support" on \
 
 .include <bsd.port.options.mk>
 
+.if ${OSVERSION} < 800000
+BROKEN=		does not build on 7.X
+.endif
+
 .if defined(WITH_XFT)
 LIB_DEPENDS+=	Xft.2:${PORTSDIR}/x11-fonts/libXft
 .else
