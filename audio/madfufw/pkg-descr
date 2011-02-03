@@ -1,0 +1,11 @@
+Userland scaffolding to load M-Audio firmware into supported
+sound devices upon attachment.  Supported devices:
+
+* Sonica
+* Ozone
+* MobilePre USB (some newer models don't need this port)
+* Transit 
+
+Based upon the madfuload package.
+
+WWW: http://usb-midi-fw.sourceforge.net/

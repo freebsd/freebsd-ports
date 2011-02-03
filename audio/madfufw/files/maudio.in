@@ -1,0 +1,98 @@
+#!/bin/sh
+#
+# PROVIDE: maudio
+# REQUIRE: LOGIN
+# KEYWORD: nojail
+#
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# maudio_enable (bool):	Set to NO by default.
+#			Set it to YES to enable maudio.
+# Usage:
+#	maudio start [<device> <product id>]	# load firmware to device with specified product ID
+
+# disable at boot time and prevent simultaneous runs
+if [ -n "${_boot}" -o -f /var/run/maudio.pid ]; then
+	exit 0
+fi
+trap "rm -f /var/run/maudio.pid" 1 2 10 13 14 15 EXIT
+echo $$ >/var/run/maudio.pid
+
+. /etc/rc.subr
+
+name="maudio"
+rcvar=`set_rcvar`
+load_rc_config $name
+
+: ${maudio_enable="NO"}
+
+command="%%PREFIX%%/bin/dfu-util"
+start_cmd="maudio_start"
+firmware_dir="%%PREFIX%%/share/maudio"
+required_modules="uhub/uaudio"
+required_dirs=$firmware_dir
+required_files=$command
+extra_commands="mixer"
+mixer_cmd="maudio_mixer"
+
+maudio_start()
+{
+	local firmware dev idVendor idProduct
+
+	if [ -n "${1}" -a -n "${2}" ]; then
+		idProduct=${2}
+		dev=${1}
+	else
+		for dev in /dev/ugen*; do
+			dev=${dev#/dev/*}
+			eval $( /usr/sbin/usbconfig -d ${dev} dump_device_desc \
+				|grep -E "idVendor = 0x0763|idProduct = 0x280[34568]" |tr -d " " )
+			if [ -n "${idVendor}" -a -n "${idProduct}" ]; then
+				break;
+			fi
+			idVendor=""
+			idProduct=""
+		done
+	fi
+
+	case "${idProduct}" in
+	0x2803)
+		firmware=${firmware_dir}/ma003101.bin
+		;;
+	0x2804)
+		firmware=${firmware_dir}/ma004103.bin
+		;;
+	0x2805)
+		firmware=${firmware_dir}/ma005101.bin
+		;;
+	0x2806)
+		firmware=${firmware_dir}/ma006100.bin
+		;;
+	0x2808)
+		firmware=${firmware_dir}/ma008100.bin
+		;;
+	*)
+		err 1 "Unknown product ID"
+		;;
+	esac
+
+	${command} -R -t 64 -d 0x0763:${idProduct} -D ${firmware} 2>/dev/null 1>&2
+	/usr/sbin/usbconfig -d ${dev} reset
+}
+
+maudio_mixer()
+{
+	local dev
+
+	if [ -z "${1}" ]; then
+		err 1 "No device specified"
+	fi
+
+	dev="/dev/mixer$( echo ${1} |sed -E 's/^[a-z]+([0-9]+)$/\1/' )"
+	if [ -r ${dev} ]; then
+		mixer -f ${dev} vol 100 pcm 100
+	fi
+}
+
+run_rc_command $*

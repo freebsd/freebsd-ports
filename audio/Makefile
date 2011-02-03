@@ -458,6 +458,7 @@
     SUBDIR += lv2core
     SUBDIR += mac
     SUBDIR += mad
+    SUBDIR += madfufw
     SUBDIR += madman
     SUBDIR += madplay
     SUBDIR += malint
