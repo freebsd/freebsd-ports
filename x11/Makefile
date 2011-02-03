@@ -426,6 +426,7 @@
     SUBDIR += xorg-minimal
     SUBDIR += xplsprinters
     SUBDIR += xpr
+    SUBDIR += xpra
     SUBDIR += xprehashprinterlist
     SUBDIR += xprompt
     SUBDIR += xprop
