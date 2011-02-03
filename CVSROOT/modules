@@ -1964,6 +1964,7 @@ crawl                           ports/www/crawl
 cre                             ports/games/cre
 cream                           ports/editors/cream
 createtorrent                   ports/net-p2p/createtorrent
+credis                          ports/databases/credis
 creox                           ports/audio/creox
 crescendo                       ports/net/crescendo
 crf++                           ports/science/crf++
@@ -8239,6 +8240,7 @@ librcd                          ports/devel/librcd
 libreadline-java                ports/devel/libreadline-java
 libredblack                     ports/devel/libredblack
 librelp                         ports/devel/librelp
+libreoffice                     ports/editors/libreoffice
 librep                          ports/lang/librep
 libretto-config                 ports/sysutils/libretto-config
 librfc822                       ports/mail/librfc822
@@ -14586,6 +14588,7 @@ p5-UNIVERSAL-require            ports/devel/p5-UNIVERSAL-require
 p5-UNIVERSAL-which              ports/devel/p5-UNIVERSAL-which
 p5-URI                          ports/net/p5-URI
 p5-URI-Encode                   ports/www/p5-URI-Encode
+p5-URI-Escape-JavaScript        ports/www/p5-URI-Escape-JavaScript
 p5-URI-Escape-XS                ports/www/p5-URI-Escape-XS
 p5-URI-Fetch                    ports/www/p5-URI-Fetch
 p5-URI-Find                     ports/textproc/p5-URI-Find
@@ -18765,6 +18768,7 @@ p5-unix-syslog                  ports/sysutils/p5-Unix-Syslog
 p5-unix-uptime                  ports/devel/p5-Unix-Uptime
 p5-uri                          ports/net/p5-URI
 p5-uri-encode                   ports/www/p5-URI-Encode
+p5-uri-escape-javascript        ports/www/p5-URI-Escape-JavaScript
 p5-uri-escape-xs                ports/www/p5-URI-Escape-XS
 p5-uri-fetch                    ports/www/p5-URI-Fetch
 p5-uri-find                     ports/textproc/p5-URI-Find
@@ -21197,7 +21201,6 @@ py-dexml                        ports/devel/py-dexml
 py-dialog                       ports/devel/py-dialog
 py-distorm                      ports/devel/py-distorm
 py-distribute                   ports/devel/py-distribute
-py-distutils                    ports/misc/py-distutils
 py-distutils-extra              ports/devel/py-distutils-extra
 py-django                       ports/www/py-django
 py-django-app-plugins           ports/www/py-django-app-plugins
@@ -22620,6 +22623,7 @@ rsibreak                        ports/x11/rsibreak
 rsibreak-kde4                   ports/x11/rsibreak-kde4
 rsmb                            ports/net/rsmb
 rsnapshot                       ports/sysutils/rsnapshot
+rspamd                          ports/mail/rspamd
 rsplib                          ports/net/rsplib
 rss2email                       ports/mail/rss2email
 rss2html                        ports/textproc/rss2html
