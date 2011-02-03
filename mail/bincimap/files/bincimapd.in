@@ -1,0 +1,41 @@
+#!/bin/sh
+#
+# Copyright 2007, AnyWi Technologies
+#
+# PROVIDE: bincimapd
+# REQUIRE: LOGIN cleanvar
+#
+# Note: tcpserver can be found in the sysutils/ucspi-tcp package.
+. /etc/rc.subr
+name="bincimapd"
+rcvar=`set_rcvar`
+load_rc_config $name
+: ${bincimapd_enable="NO"}
+: ${bincimapd_tcpserver="%%PREFIX%%/bin/tcpserver"}
+: ${bincimapd_tcpserver_flags="-R -H"}
+: ${bincimapd_host="0"}
+: ${bincimapd_port="imap"}
+: ${bincimapd_conf="%%PREFIX%%/etc/bincimap/bincimap.conf"}
+: ${bincimapd_pidfile="/var/run/bincimapd.pid"}
+: ${bincimapd_checkpassword="%%PREFIX%%/bin/checkpassword-pam"} # e.g. /usr/local/bin/checkpassword-pam
+: ${bincimapd_checksubprogram="/usr/bin/true"}
+
+bincimapd_start()
+{
+	echo -n "Starting bincimapd: "
+	$bincimapd_tcpserver $bincimapd_tcpserver_flags $bincimapd_host $bincimapd_port \
+		%%PREFIX%%/bin/bincimap-up --conf=$bincimapd_conf -- \
+		%%PREFIX%%/bin/checkpassword-pam -s imap -- %%PREFIX%%/bin/bincimapd &
+	echo $! > $bincimapd_pidfile
+	echo "."
+}
+
+bincimapd_stop()
+{
+	echo "Stopping bincimapd"
+	pkill -F $bincimapd_pidfile
+}
+
+start_cmd="bincimapd_start"
+stop_cmd="bincimapd_stop"
+run_rc_command "$1"
