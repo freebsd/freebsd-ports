@@ -147,6 +147,7 @@
     SUBDIR += krefty
     SUBDIR += krss
     SUBDIR += ksmoothdock
+    SUBDIR += ksshaskpass
     SUBDIR += ktagebuch
     SUBDIR += kuake
     SUBDIR += labyrinth

@@ -1,0 +1,4 @@
+bin/ksshaskpass
+share/applications/kde4/ksshaskpass.desktop
+@dirrmtry share/applications/kde4
+@dirrmtry share/applications
