@@ -1,6 +1,7 @@
 #!/bin/sh
 #
-
+# $FreeBSD$
+#
 # PROVIDE: musicpd
 # REQUIRE: mixer LOGIN
 # KEYWORD: shutdown
