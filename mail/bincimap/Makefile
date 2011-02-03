@@ -12,6 +12,7 @@
 
 PORTNAME=	bincimap
 PORTVERSION=	1.2.13
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://www.bincimap.org/%SUBDIR%/ \
 		http://www.bincimap.andreas.hanssen.name/%SUBDIR%/ \
@@ -22,6 +23,10 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}final
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Light-weight IMAP server for Maildir
 
+RUN_DEPENDS=	checkpassword-pam:${PORTSDIR}/security/checkpassword-pam \
+		tcpserver:${PORTSDIR}/sysutils/ucspi-tcp
+
+USE_RC_SUBR=	bincimapd
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--sysconfdir=${CONFDIR}
