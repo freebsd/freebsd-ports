@@ -31,6 +31,7 @@
     SUBDIR += efax-gtk
     SUBDIR += esmska
     SUBDIR += fldigi
+    SUBDIR += flwrap
     SUBDIR += gammu
     SUBDIR += gammu-devel
     SUBDIR += gammu-python
