@@ -15,7 +15,7 @@
    SYS_LIBRARIES = -lm
  
 +      MANSUFFIX = 6
-+   INSTPGMFLAGS = -g games
++   INSTPGMFLAGS = -g games -m 2755
 +
  all:: xpipeman
  
