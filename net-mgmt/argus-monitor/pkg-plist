@@ -2,8 +2,10 @@ bin/argus-config
 etc/argus-monitor/config.example
 etc/argus-monitor/locale/de_DE
 etc/argus-monitor/locale/el_gr
-etc/argus-monitor/locale/eubonics
 etc/argus-monitor/locale/fr_fr
+etc/argus-monitor/locale/lt_LT
+etc/argus-monitor/locale/nl_NL
+etc/argus-monitor/locale/ru_RU
 etc/argus-monitor/locale/piglatin
 etc/argus-monitor/locale/sp_ar
 etc/argus-monitor/locale/template
@@ -13,7 +15,6 @@ etc/argus-monitor/users.example
 lib/argus-monitor/Alias.pm
 lib/argus-monitor/Argus/Agent.pm
 lib/argus-monitor/Argus/Asterisk.pm
-lib/argus-monitor/Argus/BER.pm
 lib/argus-monitor/Argus/Ctl.pm
 lib/argus-monitor/Argus/Encode.pm
 lib/argus-monitor/Argus/IP.pm
@@ -38,7 +39,6 @@ lib/argus-monitor/DataBase.pm
 lib/argus-monitor/Doc.pm
 lib/argus-monitor/Error.pm
 lib/argus-monitor/Graph.pm
-lib/argus-monitor/GraphData.pm
 lib/argus-monitor/Group.pm
 lib/argus-monitor/LICENSE
 lib/argus-monitor/LOCATION
@@ -52,7 +52,6 @@ lib/argus-monitor/Ping.pm
 lib/argus-monitor/Prog.pm
 lib/argus-monitor/README
 lib/argus-monitor/Resolv.pm
-lib/argus-monitor/SNMP.pm
 lib/argus-monitor/SSL.pm
 lib/argus-monitor/Self.pm
 lib/argus-monitor/Server.pm
@@ -78,16 +77,56 @@ lib/argus-monitor/web_notify.pl
 lib/argus-monitor/web_override.pl
 lib/argus-monitor/web_page.pl
 lib/argus-monitor/web_utils.pl
+lib/argus-monitor/Argus/HashDir.pm
+lib/argus-monitor/Argus/MonEl/Expand.pm
+lib/argus-monitor/Argus/MonEl/Noise.pm
+lib/argus-monitor/Argus/MonEl/Trans.pm
+lib/argus-monitor/Argus/Archivist.pm
+lib/argus-monitor/Argus/Archive.pm
+lib/argus-monitor/Argus/Web/Overview.pm
+lib/argus-monitor/Argus/ReadConfig.pm
+lib/argus-monitor/Argus/Schedule.pm
+lib/argus-monitor/Argus/SNMP.pm
+lib/argus-monitor/Argus/SNMP/Helper.pm
+lib/argus-monitor/Argus/Freeswitch.pm
+lib/argus-monitor/Argus/Compute.pm
+lib/argus-monitor/Argus/Graph/Data.pm
+lib/argus-monitor/Encoding/BER.pm
+lib/argus-monitor/Encoding/BER/SNMP.pm
+lib/argus-monitor/DARP.pm
+lib/argus-monitor/DARP/Master.pm
+lib/argus-monitor/DARP/Slave.pm
+lib/argus-monitor/DARP/Service.pm
+lib/argus-monitor/DARP/Conf.pm
+lib/argus-monitor/DARP/Watch.pm
+lib/argus-monitor/DARP/Misc.pm
+lib/argus-monitor/web_web20.pl
 sbin/argus-agent
-sbin/arguscgi
 sbin/argusctl
 sbin/argusd
-sbin/argusvxml
+%%APACHEETCDIR%%/Includes/argus-monitor.conf.sample
+www/argus-monitor/docroot/argus.css
+www/argus-monitor/docroot/argus.js
+www/argus-monitor/docroot/img/argus.logo.gif
+www/argus-monitor/docroot/img/nospkr.gif
+www/argus-monitor/docroot/img/sad.gif
+www/argus-monitor/docroot/img/sadred.gif
+www/argus-monitor/docroot/img/smile.gif
+www/argus-monitor/docroot/sound/whoopwhoop.wav
+www/argus-monitor/cgi-bin/arguscgi
+www/argus-monitor/cgi-bin/argusvxml
 @dirrm lib/argus-monitor/DNS
 @dirrm lib/argus-monitor/Chart
 @dirrm lib/argus-monitor/Argus/SIP
 @dirrm lib/argus-monitor/Argus/RPC
+@dirrm lib/argus-monitor/Argus/MonEl
+@dirrm lib/argus-monitor/Argus/Web
+@dirrm lib/argus-monitor/Argus/SNMP
+@dirrm lib/argus-monitor/Argus/Graph
 @dirrm lib/argus-monitor/Argus
+@dirrm lib/argus-monitor/DARP
+@dirrm lib/argus-monitor/Encoding/BER
+@dirrm lib/argus-monitor/Encoding
 @dirrm lib/argus-monitor
 @dirrm etc/argus-monitor/stats
 @dirrm etc/argus-monitor/perl
@@ -97,3 +136,8 @@ sbin/argusvxml
 @dirrm etc/argus-monitor/gdata
 @dirrm etc/argus-monitor/gcache
 @dirrm etc/argus-monitor
+@dirrm www/argus-monitor/docroot/img
+@dirrm www/argus-monitor/docroot/sound
+@dirrm www/argus-monitor/docroot
+@dirrm www/argus-monitor/cgi-bin
+@dirrm www/argus-monitor
