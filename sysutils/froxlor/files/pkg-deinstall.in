@@ -1,0 +1,13 @@
+#!/bin/sh
+# $FreeBSD$
+
+if [ "$2" = DEINSTALL ]; then
+	echo ""
+	echo "-------------------------------------------------------"
+	echo "Run the following command, if you plan to permanently"
+	echo "remove froxlor:"
+	echo ""
+	echo "  rm -rf %%WWWDIR%%"
+	echo "-------------------------------------------------------"
+	echo ""
+fi

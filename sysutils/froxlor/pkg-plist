@@ -1,0 +1,1232 @@
+www/froxlor/COPYING
+www/froxlor/actions/admin/settings/000.version.php
+www/froxlor/actions/admin/settings/100.panel.php
+www/froxlor/actions/admin/settings/110.accounts.php
+www/froxlor/actions/admin/settings/120.system.php
+www/froxlor/actions/admin/settings/130.webserver.php
+www/froxlor/actions/admin/settings/135.fcgid.php
+www/froxlor/actions/admin/settings/136.phpfpm.php
+www/froxlor/actions/admin/settings/137.perl.php
+www/froxlor/actions/admin/settings/140.statistics.php
+www/froxlor/actions/admin/settings/150.mail.php
+www/froxlor/actions/admin/settings/155.ftpserver.php
+www/froxlor/actions/admin/settings/160.nameserver.php
+www/froxlor/actions/admin/settings/170.logger.php
+www/froxlor/actions/admin/settings/180.dkim.php
+www/froxlor/actions/admin/settings/185.spf.php
+www/froxlor/actions/admin/settings/190.ticket.php
+www/froxlor/actions/admin/settings/200.aps.php
+www/froxlor/actions/admin/settings/210.security.php
+www/froxlor/admin_admins.php
+www/froxlor/admin_aps.php
+www/froxlor/admin_configfiles.php
+www/froxlor/admin_cronjobs.php
+www/froxlor/admin_customers.php
+www/froxlor/admin_domains.php
+www/froxlor/admin_index.php
+www/froxlor/admin_ipsandports.php
+www/froxlor/admin_logger.php
+www/froxlor/admin_message.php
+www/froxlor/admin_phpsettings.php
+www/froxlor/admin_settings.php
+www/froxlor/admin_templates.php
+www/froxlor/admin_tickets.php
+www/froxlor/admin_updates.php
+www/froxlor/customer_aps.php
+www/froxlor/customer_autoresponder.php
+www/froxlor/customer_domains.php
+www/froxlor/customer_email.php
+www/froxlor/customer_extras.php
+www/froxlor/customer_ftp.php
+www/froxlor/customer_index.php
+www/froxlor/customer_mysql.php
+www/froxlor/customer_tickets.php
+www/froxlor/customer_traffic.php
+www/froxlor/images/ball.gif
+www/froxlor/images/changelanguage.gif
+www/froxlor/images/default.png
+www/froxlor/images/endsection.gif
+www/froxlor/images/error.gif
+www/froxlor/images/error.png
+www/froxlor/images/footer.gif
+www/froxlor/images/header.gif
+www/froxlor/images/header_r.gif
+www/froxlor/images/info.png
+www/froxlor/images/login.gif
+www/froxlor/images/logininternal.gif
+www/froxlor/images/multiserver/no.png
+www/froxlor/images/multiserver/server.png
+www/froxlor/images/multiserver/tick.png
+www/froxlor/images/multiserver/view.png
+www/froxlor/images/order_asc.gif
+www/froxlor/images/order_desc.gif
+www/froxlor/images/section.gif
+www/froxlor/images/shadow.gif
+www/froxlor/images/subsection.gif
+www/froxlor/images/title.gif
+www/froxlor/images/traffic_blue.gif
+www/froxlor/images/traffic_green.gif
+www/froxlor/images/traffic_red.gif
+www/froxlor/images/traffic_yellow.gif
+www/froxlor/index.php
+www/froxlor/install/froxlor.sql
+www/froxlor/install/install.php
+www/froxlor/install/lng/english.lng.php
+www/froxlor/install/lng/french.lng.php
+www/froxlor/install/lng/german.lng.php
+www/froxlor/install/scripts/htpasswd-htaccess-remover.php
+www/froxlor/install/scripts/language-check.php
+www/froxlor/install/updates/froxlor/0.9/update_0.9.inc.php
+www/froxlor/install/updates/froxlor/0.9/update_1.0.inc.php
+www/froxlor/install/updates/froxlor/upgrade_syscp.inc.php
+www/froxlor/install/updates/preconfig.php
+www/froxlor/install/updates/preconfig/0.9/preconfig_0.9.inc.php
+www/froxlor/install/updates/syscp/1.0/update_1.0.10_1.2-beta1.inc.php
+www/froxlor/install/updates/syscp/1.0/update_1.0_1.0.10.inc.php
+www/froxlor/install/updates/syscp/1.2/update_1.2-beta1_1.2.19.inc.php
+www/froxlor/install/updates/syscp/1.2/update_1.2.19_1.4.inc.php
+www/froxlor/install/updates/syscp/1.4/update_1.4.inc.php
+www/froxlor/install/updatesql.php
+www/froxlor/lib/classes/aps/class.ApsInstaller.php
+www/froxlor/lib/classes/aps/class.ApsParser.php
+www/froxlor/lib/classes/aps/class.ApsUpdater.php
+www/froxlor/lib/classes/aps/class.DynamicProperties.php
+www/froxlor/lib/classes/database/class.db.php
+www/froxlor/lib/classes/domains/class.docrootsettings.php
+www/froxlor/lib/classes/froxlorclient/class.froxlorclient.php
+www/froxlor/lib/classes/htmlpurifier/CREDITS
+www/froxlor/lib/classes/htmlpurifier/LICENSE
+www/froxlor/lib/classes/htmlpurifier/VERSION
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier.auto.php
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier.autoload.php
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier.func.php
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier.includes.php
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier.kses.php
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier.path.php
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier.php
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier.safe-includes.php
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/AttrCollections.php
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/AttrDef.php
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/AttrDef/CSS.php
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/AttrDef/CSS/AlphaValue.php
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/AttrDef/CSS/Background.php
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/AttrDef/CSS/BackgroundPosition.php
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/AttrDef/CSS/Border.php
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/AttrDef/CSS/Color.php
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/AttrDef/CSS/Composite.php
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/AttrDef/CSS/DenyElementDecorator.php
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/AttrDef/CSS/Filter.php
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/AttrDef/CSS/Font.php
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/AttrDef/CSS/FontFamily.php
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/AttrDef/CSS/ImportantDecorator.php
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/AttrDef/CSS/Length.php
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/AttrDef/CSS/ListStyle.php
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/AttrDef/CSS/Multiple.php
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/AttrDef/CSS/Number.php
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/AttrDef/CSS/Percentage.php
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/AttrDef/CSS/TextDecoration.php
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/AttrDef/CSS/URI.php
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/AttrDef/Enum.php
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/AttrDef/HTML/Bool.php
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/AttrDef/HTML/Class.php
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/AttrDef/HTML/Color.php
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/AttrDef/HTML/FrameTarget.php
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/AttrDef/HTML/ID.php
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/AttrDef/HTML/Length.php
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/AttrDef/HTML/LinkTypes.php
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/AttrDef/HTML/MultiLength.php
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/AttrDef/HTML/Nmtokens.php
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/AttrDef/HTML/Pixels.php
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/AttrDef/Integer.php
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/AttrDef/Lang.php
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/AttrDef/Switch.php
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/AttrDef/Text.php
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/AttrDef/URI.php
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/AttrDef/URI/Email.php
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/AttrDef/URI/Email/SimpleCheck.php
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/AttrDef/URI/Host.php
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/AttrDef/URI/IPv4.php
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/AttrDef/URI/IPv6.php
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/AttrTransform.php
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/AttrTransform/Background.php
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/AttrTransform/BdoDir.php
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/AttrTransform/BgColor.php
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/AttrTransform/BoolToCSS.php
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/AttrTransform/Border.php
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/AttrTransform/EnumToCSS.php
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/AttrTransform/ImgRequired.php
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/AttrTransform/ImgSpace.php
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/AttrTransform/Input.php
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/AttrTransform/Lang.php
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/AttrTransform/Length.php
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/AttrTransform/Name.php
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/AttrTransform/NameSync.php
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/AttrTransform/SafeEmbed.php
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/AttrTransform/SafeObject.php
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/AttrTransform/SafeParam.php
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/AttrTransform/ScriptRequired.php
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/AttrTransform/Textarea.php
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/AttrTypes.php
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/AttrValidator.php
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/Bootstrap.php
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/CSSDefinition.php
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/ChildDef.php
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/ChildDef/Chameleon.php
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/ChildDef/Custom.php
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/ChildDef/Empty.php
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/ChildDef/Optional.php
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/ChildDef/Required.php
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/ChildDef/StrictBlockquote.php
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/ChildDef/Table.php
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/Config.php
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/ConfigSchema.php
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/ConfigSchema/Builder/ConfigSchema.php
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/ConfigSchema/Builder/Xml.php
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/ConfigSchema/Exception.php
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/ConfigSchema/Interchange.php
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/ConfigSchema/Interchange/Directive.php
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/ConfigSchema/Interchange/Id.php
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/ConfigSchema/InterchangeBuilder.php
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/ConfigSchema/Validator.php
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/ConfigSchema/ValidatorAtom.php
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema.ser
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Attr.AllowedClasses.txt
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Attr.AllowedFrameTargets.txt
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Attr.AllowedRel.txt
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Attr.AllowedRev.txt
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Attr.ClassUseCDATA.txt
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Attr.DefaultImageAlt.txt
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Attr.DefaultInvalidImage.txt
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Attr.DefaultInvalidImageAlt.txt
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Attr.DefaultTextDir.txt
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Attr.EnableID.txt
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Attr.ForbiddenClasses.txt
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Attr.IDBlacklist.txt
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Attr.IDBlacklistRegexp.txt
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Attr.IDPrefix.txt
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Attr.IDPrefixLocal.txt
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/AutoFormat.AutoParagraph.txt
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/AutoFormat.Custom.txt
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/AutoFormat.DisplayLinkURI.txt
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/AutoFormat.Linkify.txt
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/AutoFormat.PurifierLinkify.DocURL.txt
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/AutoFormat.PurifierLinkify.txt
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/AutoFormat.RemoveEmpty.RemoveNbsp.Exceptions.txt
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/AutoFormat.RemoveEmpty.RemoveNbsp.txt
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/AutoFormat.RemoveEmpty.txt
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/AutoFormat.RemoveSpansWithoutAttributes.txt
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/CSS.AllowImportant.txt
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/CSS.AllowTricky.txt
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/CSS.AllowedProperties.txt
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/CSS.DefinitionRev.txt
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/CSS.ForbiddenProperties.txt
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/CSS.MaxImgLength.txt
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/CSS.Proprietary.txt
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Cache.DefinitionImpl.txt
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Cache.SerializerPath.txt
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Core.AggressivelyFixLt.txt
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Core.CollectErrors.txt
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Core.ColorKeywords.txt
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Core.ConvertDocumentToFragment.txt
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Core.DirectLexLineNumberSyncInterval.txt
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Core.Encoding.txt
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Core.EscapeInvalidChildren.txt
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Core.EscapeInvalidTags.txt
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Core.EscapeNonASCIICharacters.txt
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Core.HiddenElements.txt
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Core.Language.txt
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Core.LexerImpl.txt
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Core.MaintainLineNumbers.txt
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Core.NormalizeNewlines.txt
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Core.RemoveInvalidImg.txt
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Core.RemoveProcessingInstructions.txt
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Core.RemoveScriptContents.txt
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Filter.Custom.txt
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Filter.ExtractStyleBlocks.Escaping.txt
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Filter.ExtractStyleBlocks.Scope.txt
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Filter.ExtractStyleBlocks.TidyImpl.txt
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Filter.ExtractStyleBlocks.txt
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Filter.YouTube.txt
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/HTML.Allowed.txt
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/HTML.AllowedAttributes.txt
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/HTML.AllowedElements.txt
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/HTML.AllowedModules.txt
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/HTML.Attr.Name.UseCDATA.txt
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/HTML.BlockWrapper.txt
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/HTML.CoreModules.txt
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/HTML.CustomDoctype.txt
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/HTML.DefinitionID.txt
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/HTML.DefinitionRev.txt
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/HTML.Doctype.txt
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/HTML.FlashAllowFullScreen.txt
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/HTML.ForbiddenAttributes.txt
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/HTML.ForbiddenElements.txt
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/HTML.MaxImgLength.txt
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/HTML.Parent.txt
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/HTML.Proprietary.txt
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/HTML.SafeEmbed.txt
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/HTML.SafeObject.txt
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/HTML.Strict.txt
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/HTML.TidyAdd.txt
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/HTML.TidyLevel.txt
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/HTML.TidyRemove.txt
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/HTML.Trusted.txt
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/HTML.XHTML.txt
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Output.CommentScriptContents.txt
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Output.FlashCompat.txt
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Output.Newline.txt
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Output.SortAttr.txt
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Output.TidyFormat.txt
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Test.ForceNoIconv.txt
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/URI.AllowedSchemes.txt
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/URI.Base.txt
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/URI.DefaultScheme.txt
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/URI.DefinitionID.txt
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/URI.DefinitionRev.txt
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/URI.Disable.txt
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/URI.DisableExternal.txt
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/URI.DisableExternalResources.txt
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/URI.DisableResources.txt
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/URI.Host.txt
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/URI.HostBlacklist.txt
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/URI.MakeAbsolute.txt
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/URI.Munge.txt
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/URI.MungeResources.txt
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/URI.MungeSecretKey.txt
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/URI.OverrideAllowedSchemes.txt
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/info.ini
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/ContentSets.php
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/Context.php
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/Definition.php
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/DefinitionCache.php
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/DefinitionCache/Decorator.php
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/DefinitionCache/Decorator/Cleanup.php
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/DefinitionCache/Decorator/Memory.php
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/DefinitionCache/Decorator/Template.php.in
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/DefinitionCache/Null.php
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/DefinitionCache/Serializer.php
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/DefinitionCache/Serializer/README
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/DefinitionCacheFactory.php
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/Doctype.php
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/DoctypeRegistry.php
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/ElementDef.php
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/Encoder.php
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/EntityLookup.php
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/EntityLookup/entities.ser
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/EntityParser.php
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/ErrorCollector.php
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/ErrorStruct.php
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/Exception.php
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/Filter.php
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/Filter/ExtractStyleBlocks.php
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/Filter/YouTube.php
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/Generator.php
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/HTMLDefinition.php
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/HTMLModule.php
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/HTMLModule/Bdo.php
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/HTMLModule/CommonAttributes.php
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/HTMLModule/Edit.php
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/HTMLModule/Forms.php
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/HTMLModule/Hypertext.php
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/HTMLModule/Image.php
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/HTMLModule/Legacy.php
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/HTMLModule/List.php
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/HTMLModule/Name.php
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/HTMLModule/NonXMLCommonAttributes.php
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/HTMLModule/Object.php
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/HTMLModule/Presentation.php
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/HTMLModule/Proprietary.php
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/HTMLModule/Ruby.php
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/HTMLModule/SafeEmbed.php
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/HTMLModule/SafeObject.php
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/HTMLModule/Scripting.php
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/HTMLModule/StyleAttribute.php
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/HTMLModule/Tables.php
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/HTMLModule/Target.php
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/HTMLModule/Text.php
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/HTMLModule/Tidy.php
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/HTMLModule/Tidy/Name.php
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/HTMLModule/Tidy/Proprietary.php
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/HTMLModule/Tidy/Strict.php
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/HTMLModule/Tidy/Transitional.php
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/HTMLModule/Tidy/XHTML.php
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/HTMLModule/Tidy/XHTMLAndHTML4.php
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/HTMLModule/XMLCommonAttributes.php
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/HTMLModuleManager.php
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/IDAccumulator.php
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/Injector.php
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/Injector/AutoParagraph.php
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/Injector/DisplayLinkURI.php
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/Injector/Linkify.php
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/Injector/PurifierLinkify.php
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/Injector/RemoveEmpty.php
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/Injector/RemoveSpansWithoutAttributes.php
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/Injector/SafeObject.php
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/Language.php
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/Language/classes/en-x-test.php
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/Language/messages/en-x-test.php
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/Language/messages/en-x-testmini.php
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/Language/messages/en.php
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/LanguageFactory.php
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/Length.php
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/Lexer.php
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/Lexer/DOMLex.php
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/Lexer/DirectLex.php
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/Lexer/PEARSax3.php
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/Lexer/PH5P.php
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/PercentEncoder.php
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/Printer.php
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/Printer/CSSDefinition.php
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/Printer/ConfigForm.css
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/Printer/ConfigForm.js
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/Printer/ConfigForm.php
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/Printer/HTMLDefinition.php
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/PropertyList.php
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/PropertyListIterator.php
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/Strategy.php
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/Strategy/Composite.php
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/Strategy/Core.php
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/Strategy/FixNesting.php
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/Strategy/MakeWellFormed.php
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/Strategy/RemoveForeignElements.php
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/Strategy/ValidateAttributes.php
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/StringHash.php
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/StringHashParser.php
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/TagTransform.php
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/TagTransform/Font.php
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/TagTransform/Simple.php
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/Token.php
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/Token/Comment.php
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/Token/Empty.php
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/Token/End.php
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/Token/Start.php
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/Token/Tag.php
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/Token/Text.php
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/TokenFactory.php
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/URI.php
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/URIDefinition.php
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/URIFilter.php
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/URIFilter/DisableExternal.php
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/URIFilter/DisableExternalResources.php
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/URIFilter/DisableResources.php
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/URIFilter/HostBlacklist.php
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/URIFilter/MakeAbsolute.php
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/URIFilter/Munge.php
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/URIParser.php
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/URIScheme.php
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/URIScheme/data.php
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/URIScheme/file.php
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/URIScheme/ftp.php
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/URIScheme/http.php
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/URIScheme/https.php
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/URIScheme/mailto.php
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/URIScheme/news.php
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/URIScheme/nntp.php
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/URISchemeRegistry.php
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/UnitConverter.php
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/VarParser.php
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/VarParser/Flexible.php
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/VarParser/Native.php
+www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/VarParserException.php
+www/froxlor/lib/classes/idna/class.idna_convert.php
+www/froxlor/lib/classes/idna/class.idna_convert_wrapper.php
+www/froxlor/lib/classes/idna/npdata.ser
+www/froxlor/lib/classes/logger/abstract.AbstractLogger.php
+www/froxlor/lib/classes/logger/class.FileLogger.php
+www/froxlor/lib/classes/logger/class.FroxlorLogger.php
+www/froxlor/lib/classes/logger/class.MysqlLogger.php
+www/froxlor/lib/classes/logger/class.SysLogger.php
+www/froxlor/lib/classes/output/class.paging.php
+www/froxlor/lib/classes/phpinterface/class.phpinterface.php
+www/froxlor/lib/classes/phpinterface/class.phpinterface_fcgid.php
+www/froxlor/lib/classes/phpinterface/class.phpinterface_fpm.php
+www/froxlor/lib/classes/phpmailer/class.PHPMailer.php
+www/froxlor/lib/classes/phpmailer/class.SMTP.php
+www/froxlor/lib/classes/ticket/class.ticket.php
+www/froxlor/lib/configfiles/freebsd.inc.php
+www/froxlor/lib/configfiles/gentoo.inc.php
+www/froxlor/lib/configfiles/hardy.inc.php
+www/froxlor/lib/configfiles/lenny.inc.php
+www/froxlor/lib/configfiles/lucid.inc.php
+www/froxlor/lib/configfiles/suse10.inc.php
+www/froxlor/lib/configfiles_index.inc.php
+www/froxlor/lib/cron_init.php
+www/froxlor/lib/cron_shutdown.php
+www/froxlor/lib/functions.php
+www/froxlor/lib/functions/aps/function.domainHasApsInstances.php
+www/froxlor/lib/functions/aps/function.getXPathValue.php
+www/froxlor/lib/functions/aps/function.storeSettingApsPhpExtensions.php
+www/froxlor/lib/functions/aps/function.storeSettingApsWebserverModules.php
+www/froxlor/lib/functions/aps/function.sys_get_temp_dir.php
+www/froxlor/lib/functions/database/function.correctMysqlUsers.php
+www/froxlor/lib/functions/database/function.getTables.php
+www/froxlor/lib/functions/database/function.remove_remarks.php
+www/froxlor/lib/functions/database/function.split_sql_file.php
+www/froxlor/lib/functions/filedir/function.fileImmutable.php
+www/froxlor/lib/functions/filedir/function.findDirs.php
+www/froxlor/lib/functions/filedir/function.isConfigDir.php
+www/froxlor/lib/functions/filedir/function.maildirExists.php
+www/froxlor/lib/functions/filedir/function.makeChownWithNewStats.php
+www/froxlor/lib/functions/filedir/function.makeCorrectDir.php
+www/froxlor/lib/functions/filedir/function.makeCorrectFile.php
+www/froxlor/lib/functions/filedir/function.makePathfield.php
+www/froxlor/lib/functions/filedir/function.makeSecurePath.php
+www/froxlor/lib/functions/filedir/function.mkDirWithCorrectOwnership.php
+www/froxlor/lib/functions/filedir/function.safe_exec.php
+www/froxlor/lib/functions/filedir/function.storeDefaultIndex.php
+www/froxlor/lib/functions/formfields/bool/function.getFormFieldDataBool.php
+www/froxlor/lib/functions/formfields/bool/function.getFormFieldOutputBool.php
+www/froxlor/lib/functions/formfields/bool/function.validateFormFieldBool.php
+www/froxlor/lib/functions/formfields/constant.formfields.php
+www/froxlor/lib/functions/formfields/date/function.getFormFieldOutputDate.php
+www/froxlor/lib/functions/formfields/date/function.manipulateFormFieldDataDate.php
+www/froxlor/lib/functions/formfields/date/function.validateFormFieldDate.php
+www/froxlor/lib/functions/formfields/function.buildForm.php
+www/froxlor/lib/functions/formfields/function.buildFormEx.php
+www/froxlor/lib/functions/formfields/function.checkPlausibilityFormField.php
+www/froxlor/lib/functions/formfields/function.getFormFieldData.php
+www/froxlor/lib/functions/formfields/function.getFormFieldOutput.php
+www/froxlor/lib/functions/formfields/function.getFormGroupOutput.php
+www/froxlor/lib/functions/formfields/function.manipulateFormFieldData.php
+www/froxlor/lib/functions/formfields/function.prefetchFormFieldData.php
+www/froxlor/lib/functions/formfields/function.processForm.php
+www/froxlor/lib/functions/formfields/function.returnField.php
+www/froxlor/lib/functions/formfields/function.saveForm.php
+www/froxlor/lib/functions/formfields/function.saveFormField.php
+www/froxlor/lib/functions/formfields/function.validateFieldDefinition.php
+www/froxlor/lib/functions/formfields/function.validateFormDefinition.php
+www/froxlor/lib/functions/formfields/function.validateFormField.php
+www/froxlor/lib/functions/formfields/hidden/function.getFormFieldOutputHidden.php
+www/froxlor/lib/functions/formfields/hidden/function.validateFormFieldHidden.php
+www/froxlor/lib/functions/formfields/int/function.getFormFieldDataInt.php
+www/froxlor/lib/functions/formfields/int/function.getFormFieldOutputInt.php
+www/froxlor/lib/functions/formfields/int/function.validateFormFieldInt.php
+www/froxlor/lib/functions/formfields/label/function.getFormFieldOutputLabel.php
+www/froxlor/lib/functions/formfields/label/function.validateFormFieldLabel.php
+www/froxlor/lib/functions/formfields/option/function.getFormFieldDataOption.php
+www/froxlor/lib/functions/formfields/option/function.getFormFieldOutputOption.php
+www/froxlor/lib/functions/formfields/option/function.prefetchFormFieldDataOption.php
+www/froxlor/lib/functions/formfields/option/function.validateFormFieldOption.php
+www/froxlor/lib/functions/formfields/string/function.getFormFieldOutputString.php
+www/froxlor/lib/functions/formfields/string/function.validateFormFieldString.php
+www/froxlor/lib/functions/formfields/text/function.getFormFieldOutputText.php
+www/froxlor/lib/functions/formfields/text/function.validateFormFieldText.php
+www/froxlor/lib/functions/froxlor/function.CorrectErrorDocument.php
+www/froxlor/lib/functions/froxlor/function.CronjobFunctions.php
+www/froxlor/lib/functions/froxlor/function.convertUtf8.php
+www/froxlor/lib/functions/froxlor/function.createAWStatsConf.php
+www/froxlor/lib/functions/froxlor/function.createAWStatsVhost.php
+www/froxlor/lib/functions/froxlor/function.customerHasPerlEnabled.php
+www/froxlor/lib/functions/froxlor/function.domainHasMainSubDomains.php
+www/froxlor/lib/functions/froxlor/function.getAdmins.php
+www/froxlor/lib/functions/froxlor/function.getCustomerDetail.php
+www/froxlor/lib/functions/froxlor/function.getCustomerIdByDomain.php
+www/froxlor/lib/functions/froxlor/function.getCustomers.php
+www/froxlor/lib/functions/froxlor/function.getIpAddresses.php
+www/froxlor/lib/functions/froxlor/function.getIpPortCombinations.php
+www/froxlor/lib/functions/froxlor/function.getLanguages.php
+www/froxlor/lib/functions/froxlor/function.getLoginNameByUid.php
+www/froxlor/lib/functions/froxlor/function.getPhpConfigs.php
+www/froxlor/lib/functions/froxlor/function.getServerId.php
+www/froxlor/lib/functions/froxlor/function.getSessionUserDetail.php
+www/froxlor/lib/functions/froxlor/function.inserttask.php
+www/froxlor/lib/functions/froxlor/function.isCustomerStdSubdomain.php
+www/froxlor/lib/functions/froxlor/function.isUtf8.php
+www/froxlor/lib/functions/froxlor/function.loadConfigArrayDir.php
+www/froxlor/lib/functions/froxlor/function.openRootDB.php
+www/froxlor/lib/functions/froxlor/function.updateCounters.php
+www/froxlor/lib/functions/froxlor/function.updateFunctions.php
+www/froxlor/lib/functions/logger/constant.logger.php
+www/froxlor/lib/functions/output/function.RedirectCode.php
+www/froxlor/lib/functions/output/function.ask_yesno.php
+www/froxlor/lib/functions/output/function.buildNavigation.php
+www/froxlor/lib/functions/output/function.getCorrectFullUserDetails.php
+www/froxlor/lib/functions/output/function.getCorrectUserSalutation.php
+www/froxlor/lib/functions/output/function.getTemplate.php
+www/froxlor/lib/functions/output/function.makecheckbox.php
+www/froxlor/lib/functions/output/function.makeoption.php
+www/froxlor/lib/functions/output/function.makeyesno.php
+www/froxlor/lib/functions/output/function.redirectTo.php
+www/froxlor/lib/functions/output/function.standard_error.php
+www/froxlor/lib/functions/output/function.standard_success.php
+www/froxlor/lib/functions/phphelpers/function.array_merge_prefix.php
+www/froxlor/lib/functions/phphelpers/function.array_trim.php
+www/froxlor/lib/functions/phphelpers/function.doubleval_ressource.php
+www/froxlor/lib/functions/phphelpers/function.html_entity_decode_array.php
+www/froxlor/lib/functions/phphelpers/function.html_entity_decode_complete.php
+www/froxlor/lib/functions/phphelpers/function.htmlentities_array.php
+www/froxlor/lib/functions/phphelpers/function.intval_ressource.php
+www/froxlor/lib/functions/phphelpers/function.replace_variables.php
+www/froxlor/lib/functions/phphelpers/function.str_replace_array.php
+www/froxlor/lib/functions/phphelpers/function.stripslashes_array.php
+www/froxlor/lib/functions/phphelpers/function.stripslashes_complete.php
+www/froxlor/lib/functions/settings/function.getSetting.php
+www/froxlor/lib/functions/settings/function.loadSettings.php
+www/froxlor/lib/functions/settings/function.saveSetting.php
+www/froxlor/lib/functions/settings/function.storeSettingDefaultIp.php
+www/froxlor/lib/functions/settings/function.storeSettingField.php
+www/froxlor/lib/functions/settings/function.storeSettingHostname.php
+www/froxlor/lib/functions/settings/function.storeSettingIpAddress.php
+www/froxlor/lib/functions/settings/function.storeSettingMysqlAccessHost.php
+www/froxlor/lib/functions/system/function.checklastguid.php
+www/froxlor/lib/functions/validate/function.appendOpenbasedirPath.php
+www/froxlor/lib/functions/validate/function.buildValidMailFrom.php
+www/froxlor/lib/functions/validate/function.checkFcgidPhpFpm.php
+www/froxlor/lib/functions/validate/function.checkMysqlAccessHost.php
+www/froxlor/lib/functions/validate/function.checkPathConflicts.php
+www/froxlor/lib/functions/validate/function.checkUsername.php
+www/froxlor/lib/functions/validate/function.checkValidRegEx.php
+www/froxlor/lib/functions/validate/function.makeCorrectDestination.php
+www/froxlor/lib/functions/validate/function.setCycleOfCronjob.php
+www/froxlor/lib/functions/validate/function.validate.php
+www/froxlor/lib/functions/validate/function.validateDomain.php
+www/froxlor/lib/functions/validate/function.validateEmail.php
+www/froxlor/lib/functions/validate/function.validatePassword.php
+www/froxlor/lib/functions/validate/function.validateSqlInterval.php
+www/froxlor/lib/functions/validate/function.validateUrl.php
+www/froxlor/lib/functions/validate/function.validateUsername.php
+www/froxlor/lib/functions/validate/function.validate_ip.php
+www/froxlor/lib/init.php
+www/froxlor/lib/navigation/00.froxlor.main.php
+www/froxlor/lib/navigation/10.tickets.php
+www/froxlor/lib/navigation/20.aps.installer.php
+www/froxlor/lib/tables.inc.php
+www/froxlor/lng/bulgarian.lng.php
+www/froxlor/lng/catalan.lng.php
+www/froxlor/lng/czech.lng.php
+www/froxlor/lng/danish.lng.php
+www/froxlor/lng/dutch.lng.php
+www/froxlor/lng/english.lng.php
+www/froxlor/lng/french.lng.php
+www/froxlor/lng/german.lng.php
+www/froxlor/lng/hungarian.lng.php
+www/froxlor/lng/italian.lng.php
+www/froxlor/lng/polish.lng.php
+www/froxlor/lng/portugues.lng.php
+www/froxlor/lng/russian.lng.php
+www/froxlor/lng/slovak.lng.php
+www/froxlor/lng/spanish.lng.php
+www/froxlor/lng/swedish.lng.php
+www/froxlor/lng/zh-cn.lng.php
+www/froxlor/scripts/cron_apsinstaller.php
+www/froxlor/scripts/cron_apsupdater.php
+www/froxlor/scripts/cron_autoresponder.php
+www/froxlor/scripts/cron_tasks.php
+www/froxlor/scripts/cron_ticketarchive.php
+www/froxlor/scripts/cron_traffic.php
+www/froxlor/scripts/cron_used_tickets_reset.php
+www/froxlor/scripts/froxlor_master_cronjob.php
+www/froxlor/scripts/jobs/cron_apsinstaller.php
+www/froxlor/scripts/jobs/cron_apsupdater.php
+www/froxlor/scripts/jobs/cron_autoresponder.php
+www/froxlor/scripts/jobs/cron_lighttp.htaccess.php
+www/froxlor/scripts/jobs/cron_tasks.inc.dns.10.bind.php
+www/froxlor/scripts/jobs/cron_tasks.inc.http.10.apache.php
+www/froxlor/scripts/jobs/cron_tasks.inc.http.15.apache_fcgid.php
+www/froxlor/scripts/jobs/cron_tasks.inc.http.20.lighttpd.php
+www/froxlor/scripts/jobs/cron_tasks.inc.http.25.lighttpd_fcgid.php
+www/froxlor/scripts/jobs/cron_tasks.inc.http.30.nginx.php
+www/froxlor/scripts/jobs/cron_tasks.inc.http.35.nginx_phpfpm.php
+www/froxlor/scripts/jobs/cron_tasks.php
+www/froxlor/scripts/jobs/cron_ticketarchive.php
+www/froxlor/scripts/jobs/cron_traffic.inc.functions.php
+www/froxlor/scripts/jobs/cron_traffic.php
+www/froxlor/scripts/jobs/cron_usage.inc.diskspace.php
+www/froxlor/scripts/jobs/cron_usage_report.php
+www/froxlor/scripts/jobs/cron_used_tickets_reset.php
+www/froxlor/templates/admin/admins/admins.tpl
+www/froxlor/templates/admin/admins/admins_add.tpl
+www/froxlor/templates/admin/admins/admins_admin.tpl
+www/froxlor/templates/admin/admins/admins_edit.tpl
+www/froxlor/templates/admin/aps/askyesno.tpl
+www/froxlor/templates/admin/aps/footer.tpl
+www/froxlor/templates/admin/aps/header.tpl
+www/froxlor/templates/admin/aps/infobox.tpl
+www/froxlor/templates/admin/aps/manage_instances.tpl
+www/froxlor/templates/admin/aps/manage_instances_error.tpl
+www/froxlor/templates/admin/aps/manage_instances_install.tpl
+www/froxlor/templates/admin/aps/manage_instances_package.tpl
+www/froxlor/templates/admin/aps/manage_instances_success.tpl
+www/froxlor/templates/admin/aps/manage_instances_taskactive.tpl
+www/froxlor/templates/admin/aps/manage_instances_uninstall.tpl
+www/froxlor/templates/admin/aps/manage_packages.tpl
+www/froxlor/templates/admin/aps/manage_packages_detail.tpl
+www/froxlor/templates/admin/aps/manage_packages_download.tpl
+www/froxlor/templates/admin/aps/manage_packages_row.tpl
+www/froxlor/templates/admin/aps/upload.tpl
+www/froxlor/templates/admin/configfiles/choose.tpl
+www/froxlor/templates/admin/configfiles/choose_daemon.tpl
+www/froxlor/templates/admin/configfiles/choose_distribution.tpl
+www/froxlor/templates/admin/configfiles/choose_service.tpl
+www/froxlor/templates/admin/configfiles/configfiles.tpl
+www/froxlor/templates/admin/configfiles/configfiles_commands.tpl
+www/froxlor/templates/admin/configfiles/configfiles_file.tpl
+www/froxlor/templates/admin/configfiles/configfiles_files.tpl
+www/froxlor/templates/admin/configfiles/wizard.tpl
+www/froxlor/templates/admin/cronjobs/cronjob_edit.tpl
+www/froxlor/templates/admin/cronjobs/cronjobs.tpl
+www/froxlor/templates/admin/cronjobs/cronjobs_cronjob.tpl
+www/froxlor/templates/admin/customers/customers.tpl
+www/froxlor/templates/admin/customers/customers_add.tpl
+www/froxlor/templates/admin/customers/customers_customer.tpl
+www/froxlor/templates/admin/customers/customers_edit.tpl
+www/froxlor/templates/admin/domains/domains.tpl
+www/froxlor/templates/admin/domains/domains_add.tpl
+www/froxlor/templates/admin/domains/domains_domain.tpl
+www/froxlor/templates/admin/domains/domains_edit.tpl
+www/froxlor/templates/admin/froxlorclients/froxlorclient_settings.tpl
+www/froxlor/templates/admin/froxlorclients/froxlorclient_settingsend.tpl
+www/froxlor/templates/admin/froxlorclients/froxlorclient_settingsoverview.tpl
+www/froxlor/templates/admin/froxlorclients/froxlorclient_settingsoverviewgroup.tpl
+www/froxlor/templates/admin/froxlorclients/froxlorclients.tpl
+www/froxlor/templates/admin/froxlorclients/froxlorclients_add.tpl
+www/froxlor/templates/admin/froxlorclients/froxlorclients_client.tpl
+www/froxlor/templates/admin/froxlorclients/froxlorclients_edit.tpl
+www/froxlor/templates/admin/froxlorclients/froxlorclients_view.tpl
+www/froxlor/templates/admin/index/change_language.tpl
+www/froxlor/templates/admin/index/change_password.tpl
+www/froxlor/templates/admin/index/index.tpl
+www/froxlor/templates/admin/ipsandports/ipsandports.tpl
+www/froxlor/templates/admin/ipsandports/ipsandports_add.tpl
+www/froxlor/templates/admin/ipsandports/ipsandports_edit.tpl
+www/froxlor/templates/admin/ipsandports/ipsandports_ipandport.tpl
+www/froxlor/templates/admin/logger/logger.tpl
+www/froxlor/templates/admin/logger/logger_action.tpl
+www/froxlor/templates/admin/logger/logger_log.tpl
+www/froxlor/templates/admin/message/message.tpl
+www/froxlor/templates/admin/phpconfig/overview.tpl
+www/froxlor/templates/admin/phpconfig/overview_add.tpl
+www/froxlor/templates/admin/phpconfig/overview_edit.tpl
+www/froxlor/templates/admin/phpconfig/overview_overview.tpl
+www/froxlor/templates/admin/settings/settings.tpl
+www/froxlor/templates/admin/settings/settings_form_begin.tpl
+www/froxlor/templates/admin/settings/settings_form_end.tpl
+www/froxlor/templates/admin/settings/settings_group.tpl
+www/froxlor/templates/admin/settings/settings_overview.tpl
+www/froxlor/templates/admin/settings/settings_overviewgroup.tpl
+www/froxlor/templates/admin/settings/updatecounters.tpl
+www/froxlor/templates/admin/settings/updatecounters_row_admin.tpl
+www/froxlor/templates/admin/settings/updatecounters_row_customer.tpl
+www/froxlor/templates/admin/templates/filetemplates_add.tpl
+www/froxlor/templates/admin/templates/filetemplates_edit.tpl
+www/froxlor/templates/admin/templates/templates.tpl
+www/froxlor/templates/admin/templates/templates_add_1.tpl
+www/froxlor/templates/admin/templates/templates_add_2.tpl
+www/froxlor/templates/admin/templates/templates_edit.tpl
+www/froxlor/templates/admin/templates/templates_filetemplate.tpl
+www/froxlor/templates/admin/templates/templates_template.tpl
+www/froxlor/templates/admin/ticket/archive.tpl
+www/froxlor/templates/admin/ticket/archived_tickets.tpl
+www/froxlor/templates/admin/ticket/archivesearch.tpl
+www/froxlor/templates/admin/ticket/categories.tpl
+www/froxlor/templates/admin/ticket/tickets.tpl
+www/froxlor/templates/admin/ticket/tickets_categories.tpl
+www/froxlor/templates/admin/ticket/tickets_customer.tpl
+www/froxlor/templates/admin/ticket/tickets_editcategory.tpl
+www/froxlor/templates/admin/ticket/tickets_new.tpl
+www/froxlor/templates/admin/ticket/tickets_newcategory.tpl
+www/froxlor/templates/admin/ticket/tickets_reply.tpl
+www/froxlor/templates/admin/ticket/tickets_tickets.tpl
+www/froxlor/templates/admin/ticket/tickets_tickets_list.tpl
+www/froxlor/templates/admin/ticket/tickets_tickets_main.tpl
+www/froxlor/templates/admin/ticket/tickets_view.tpl
+www/froxlor/templates/admin/update/index.tpl
+www/froxlor/templates/admin/update/noupdatesavail.tpl
+www/froxlor/templates/admin/update/preconfigitem.tpl
+www/froxlor/templates/admin/update/update_end.tpl
+www/froxlor/templates/admin/update/update_start.tpl
+www/froxlor/templates/customer/aps/askyesno.tpl
+www/froxlor/templates/customer/aps/data.tpl
+www/froxlor/templates/customer/aps/footer.tpl
+www/froxlor/templates/customer/aps/header.tpl
+www/froxlor/templates/customer/aps/infobox.tpl
+www/froxlor/templates/customer/aps/installer.tpl
+www/froxlor/templates/customer/aps/package.tpl
+www/froxlor/templates/customer/aps/package_status.tpl
+www/froxlor/templates/customer/aps/search.tpl
+www/froxlor/templates/customer/domains/domainlist.tpl
+www/froxlor/templates/customer/domains/domains.tpl
+www/froxlor/templates/customer/domains/domains_add.tpl
+www/froxlor/templates/customer/domains/domains_delimiter.tpl
+www/froxlor/templates/customer/domains/domains_domain.tpl
+www/froxlor/templates/customer/domains/domains_edit.tpl
+www/froxlor/templates/customer/email/account_add.tpl
+www/froxlor/templates/customer/email/account_changepw.tpl
+www/froxlor/templates/customer/email/account_changequota.tpl
+www/froxlor/templates/customer/email/autoresponder.tpl
+www/froxlor/templates/customer/email/autoresponder_add.tpl
+www/froxlor/templates/customer/email/autoresponder_autoresponder.tpl
+www/froxlor/templates/customer/email/autoresponder_edit.tpl
+www/froxlor/templates/customer/email/email.tpl
+www/froxlor/templates/customer/email/emails.tpl
+www/froxlor/templates/customer/email/emails_add.tpl
+www/froxlor/templates/customer/email/emails_domain.tpl
+www/froxlor/templates/customer/email/emails_edit.tpl
+www/froxlor/templates/customer/email/emails_edit_forwarder.tpl
+www/froxlor/templates/customer/email/emails_email.tpl
+www/froxlor/templates/customer/email/forwarder_add.tpl
+www/froxlor/templates/customer/extras/extras.tpl
+www/froxlor/templates/customer/extras/htaccess.tpl
+www/froxlor/templates/customer/extras/htaccess_add.tpl
+www/froxlor/templates/customer/extras/htaccess_edit.tpl
+www/froxlor/templates/customer/extras/htaccess_htaccess.tpl
+www/froxlor/templates/customer/extras/htpasswds.tpl
+www/froxlor/templates/customer/extras/htpasswds_add.tpl
+www/froxlor/templates/customer/extras/htpasswds_edit.tpl
+www/froxlor/templates/customer/extras/htpasswds_htpasswd.tpl
+www/froxlor/templates/customer/ftp/accounts.tpl
+www/froxlor/templates/customer/ftp/accounts_account.tpl
+www/froxlor/templates/customer/ftp/accounts_add.tpl
+www/froxlor/templates/customer/ftp/accounts_edit.tpl
+www/froxlor/templates/customer/ftp/ftp.tpl
+www/froxlor/templates/customer/index/change_language.tpl
+www/froxlor/templates/customer/index/change_password.tpl
+www/froxlor/templates/customer/index/index.tpl
+www/froxlor/templates/customer/mysql/mysql.tpl
+www/froxlor/templates/customer/mysql/mysqls.tpl
+www/froxlor/templates/customer/mysql/mysqls_add.tpl
+www/froxlor/templates/customer/mysql/mysqls_database.tpl
+www/froxlor/templates/customer/mysql/mysqls_edit.tpl
+www/froxlor/templates/customer/ticket/ticket.tpl
+www/froxlor/templates/customer/ticket/tickets.tpl
+www/froxlor/templates/customer/ticket/tickets_new.tpl
+www/froxlor/templates/customer/ticket/tickets_reply.tpl
+www/froxlor/templates/customer/ticket/tickets_tickets.tpl
+www/froxlor/templates/customer/ticket/tickets_tickets_list.tpl
+www/froxlor/templates/customer/ticket/tickets_tickets_main.tpl
+www/froxlor/templates/customer/traffic/traffic.tpl
+www/froxlor/templates/customer/traffic/traffic_details.tpl
+www/froxlor/templates/customer/traffic/traffic_month.tpl
+www/froxlor/templates/customer/traffic/traffic_traffic.tpl
+www/froxlor/templates/footer.tpl
+www/froxlor/templates/formfields/bool.tpl
+www/froxlor/templates/formfields/hidden.tpl
+www/froxlor/templates/formfields/label.tpl
+www/froxlor/templates/formfields/option.tpl
+www/froxlor/templates/formfields/string.tpl
+www/froxlor/templates/formfields/text.tpl
+www/froxlor/templates/header.tpl
+www/froxlor/templates/login/fpwd.tpl
+www/froxlor/templates/login/login.tpl
+www/froxlor/templates/main.css
+www/froxlor/templates/misc/awstatsmodel/awstats.froxlor.model.conf
+www/froxlor/templates/misc/awstatsmodel/awstats.froxlor.model_log_sql.conf
+www/froxlor/templates/misc/configfiles/debian_lenny/apache2/etc_apache2_mods-enabled_fastcgi.conf
+www/froxlor/templates/misc/configfiles/debian_lenny/courier/etc_courier_authdaemonrc
+www/froxlor/templates/misc/configfiles/debian_lenny/courier/etc_courier_authmysqlrc
+www/froxlor/templates/misc/configfiles/debian_lenny/cron/etc_cron.d_froxlor
+www/froxlor/templates/misc/configfiles/debian_lenny/dkim/dkim-filter.conf
+www/froxlor/templates/misc/configfiles/debian_lenny/dovecot/etc_dovecot_dovecot-sql.conf
+www/froxlor/templates/misc/configfiles/debian_lenny/dovecot/etc_dovecot_dovecot.conf
+www/froxlor/templates/misc/configfiles/debian_lenny/exim4/etc_exim4_conf.d_acl_30_exim4-config_check_rcpt.rul
+www/froxlor/templates/misc/configfiles/debian_lenny/exim4/etc_exim4_conf.d_auth_30_froxlor-config
+www/froxlor/templates/misc/configfiles/debian_lenny/exim4/etc_exim4_conf.d_main_10_froxlor-config_options
+www/froxlor/templates/misc/configfiles/debian_lenny/exim4/etc_exim4_conf.d_router_180_froxlor-config
+www/froxlor/templates/misc/configfiles/debian_lenny/exim4/etc_exim4_conf.d_transport_30_froxlor-config
+www/froxlor/templates/misc/configfiles/debian_lenny/libnss/etc_nss-mysql-root.conf
+www/froxlor/templates/misc/configfiles/debian_lenny/libnss/etc_nss-mysql.conf
+www/froxlor/templates/misc/configfiles/debian_lenny/libnss/etc_nsswitch.conf
+www/froxlor/templates/misc/configfiles/debian_lenny/lighttpd/etc_lighttpd.conf
+www/froxlor/templates/misc/configfiles/debian_lenny/nginx/etc_init.d_php-fcgi
+www/froxlor/templates/misc/configfiles/debian_lenny/nginx/etc_nginx_fastcgi.conf
+www/froxlor/templates/misc/configfiles/debian_lenny/nginx/etc_nginx_nginx.conf
+www/froxlor/templates/misc/configfiles/debian_lenny/postfix_courier/etc_postfix_main.cf
+www/froxlor/templates/misc/configfiles/debian_lenny/postfix_courier/etc_postfix_mysql-virtual_alias_maps.cf
+www/froxlor/templates/misc/configfiles/debian_lenny/postfix_courier/etc_postfix_mysql-virtual_mailbox_domains.cf
+www/froxlor/templates/misc/configfiles/debian_lenny/postfix_courier/etc_postfix_mysql-virtual_mailbox_maps.cf
+www/froxlor/templates/misc/configfiles/debian_lenny/postfix_courier/etc_postfix_mysql-virtual_sender_permissions.cf
+www/froxlor/templates/misc/configfiles/debian_lenny/postfix_courier/etc_postfix_sasl_smtpd.conf
+www/froxlor/templates/misc/configfiles/debian_lenny/postfix_dovecot/etc_postfix_main.cf
+www/froxlor/templates/misc/configfiles/debian_lenny/postfix_dovecot/etc_postfix_master.cf
+www/froxlor/templates/misc/configfiles/debian_lenny/postfix_dovecot/etc_postfix_mysql-virtual_alias_maps.cf
+www/froxlor/templates/misc/configfiles/debian_lenny/postfix_dovecot/etc_postfix_mysql-virtual_mailbox_domains.cf
+www/froxlor/templates/misc/configfiles/debian_lenny/postfix_dovecot/etc_postfix_mysql-virtual_mailbox_maps.cf
+www/froxlor/templates/misc/configfiles/debian_lenny/postfix_dovecot/etc_postfix_mysql-virtual_sender_permissions.cf
+www/froxlor/templates/misc/configfiles/debian_lenny/postfix_mxaccess/etc_postfix_main.cf
+www/froxlor/templates/misc/configfiles/debian_lenny/postfix_mxaccess/etc_postfix_mx_access
+www/froxlor/templates/misc/configfiles/debian_lenny/powerdns/etc_powerdns_pdns-froxlor.conf
+www/froxlor/templates/misc/configfiles/debian_lenny/powerdns/etc_powerdns_pdns.conf
+www/froxlor/templates/misc/configfiles/debian_lenny/proftpd/etc_proftpd_modules.conf
+www/froxlor/templates/misc/configfiles/debian_lenny/proftpd/etc_proftpd_proftpd.conf
+www/froxlor/templates/misc/configfiles/debian_lenny/proftpd/etc_proftpd_sql.conf
+www/froxlor/templates/misc/configfiles/debian_lenny/pure-ftpd/etc_default_pure-ftpd-common
+www/froxlor/templates/misc/configfiles/debian_lenny/pure-ftpd/etc_pure-ftpd_conf_Bind
+www/froxlor/templates/misc/configfiles/debian_lenny/pure-ftpd/etc_pure-ftpd_conf_ChrootEveryone
+www/froxlor/templates/misc/configfiles/debian_lenny/pure-ftpd/etc_pure-ftpd_conf_CustomerProof
+www/froxlor/templates/misc/configfiles/debian_lenny/pure-ftpd/etc_pure-ftpd_conf_MaxIdleTime
+www/froxlor/templates/misc/configfiles/debian_lenny/pure-ftpd/etc_pure-ftpd_conf_MinUID
+www/froxlor/templates/misc/configfiles/debian_lenny/pure-ftpd/etc_pure-ftpd_conf_MySQLConfigFile
+www/froxlor/templates/misc/configfiles/debian_lenny/pure-ftpd/etc_pure-ftpd_conf_NoAnonymous
+www/froxlor/templates/misc/configfiles/debian_lenny/pure-ftpd/etc_pure-ftpd_conf_PAMAuthentication
+www/froxlor/templates/misc/configfiles/debian_lenny/pure-ftpd/etc_pure-ftpd_db_mysql.conf
+www/froxlor/templates/misc/configfiles/freebsd/dkim/dkim-filter.conf
+www/froxlor/templates/misc/configfiles/freebsd/dkim/postfix_dkim_addition.cf
+www/froxlor/templates/misc/configfiles/freebsd/dovecot/usr_local_etc_dovecot-sql.conf
+www/froxlor/templates/misc/configfiles/freebsd/dovecot/usr_local_etc_dovecot.conf
+www/froxlor/templates/misc/configfiles/freebsd/libnss/etc_nsswitch.conf
+www/froxlor/templates/misc/configfiles/freebsd/libnss/usr_local_etc_libnss-mysql-root.cfg
+www/froxlor/templates/misc/configfiles/freebsd/libnss/usr_local_etc_libnss-mysql.cfg
+www/froxlor/templates/misc/configfiles/freebsd/postfix/etc_periodic.conf
+www/froxlor/templates/misc/configfiles/freebsd/postfix/usr_local_etc_postfix_main.cf
+www/froxlor/templates/misc/configfiles/freebsd/postfix/usr_local_etc_postfix_mysql-virtual_alias_maps.cf
+www/froxlor/templates/misc/configfiles/freebsd/postfix/usr_local_etc_postfix_mysql-virtual_mailbox_domains.cf
+www/froxlor/templates/misc/configfiles/freebsd/postfix/usr_local_etc_postfix_mysql-virtual_mailbox_maps.cf
+www/froxlor/templates/misc/configfiles/freebsd/postfix/usr_local_etc_postfix_mysql-virtual_sender_permissions.cf
+www/froxlor/templates/misc/configfiles/freebsd/postfix_mxaccess/etc_postfix_main.cf
+www/froxlor/templates/misc/configfiles/freebsd/postfix_mxaccess/etc_postfix_mx_access
+www/froxlor/templates/misc/configfiles/freebsd/powerdns/usr_local_etc_pdns_pdns.conf
+www/froxlor/templates/misc/configfiles/freebsd/proftpd/etc_proftpd_proftpd.conf
+www/froxlor/templates/misc/configfiles/gentoo/apache2/etc_apache2_modules.d_70_fastcgi.conf
+www/froxlor/templates/misc/configfiles/gentoo/bind/etc_bind_default.zone
+www/froxlor/templates/misc/configfiles/gentoo/courier/etc_courier-imap_imapd
+www/froxlor/templates/misc/configfiles/gentoo/courier/etc_courier-imap_imapd-ssl
+www/froxlor/templates/misc/configfiles/gentoo/courier/etc_courier-imap_pop3d
+www/froxlor/templates/misc/configfiles/gentoo/courier/etc_courier-imap_pop3d-ssl
+www/froxlor/templates/misc/configfiles/gentoo/courier/etc_courier_authlib_authdaemonrc
+www/froxlor/templates/misc/configfiles/gentoo/courier/etc_courier_authlib_authmysqlrc
+www/froxlor/templates/misc/configfiles/gentoo/cron/etc_cron.d_froxlor
+www/froxlor/templates/misc/configfiles/gentoo/dkim/dkim-filter.conf
+www/froxlor/templates/misc/configfiles/gentoo/dovecot/etc_dovecot_dovecot-sql.conf
+www/froxlor/templates/misc/configfiles/gentoo/dovecot/etc_dovecot_dovecot.conf
+www/froxlor/templates/misc/configfiles/gentoo/libnss/etc_libnss-mysql-root.cfg
+www/froxlor/templates/misc/configfiles/gentoo/libnss/etc_libnss-mysql.cfg
+www/froxlor/templates/misc/configfiles/gentoo/libnss/etc_nsswitch.conf
+www/froxlor/templates/misc/configfiles/gentoo/lighttpd/etc_lighttpd.conf
+www/froxlor/templates/misc/configfiles/gentoo/nginx/etc_init.d_php-fcgi
+www/froxlor/templates/misc/configfiles/gentoo/nginx/etc_nginx_fastcgi.conf
+www/froxlor/templates/misc/configfiles/gentoo/nginx/etc_nginx_nginx.conf
+www/froxlor/templates/misc/configfiles/gentoo/postfix_courier/etc_postfix_main.cf
+www/froxlor/templates/misc/configfiles/gentoo/postfix_courier/etc_postfix_mysql-virtual_alias_maps.cf
+www/froxlor/templates/misc/configfiles/gentoo/postfix_courier/etc_postfix_mysql-virtual_mailbox_domains.cf
+www/froxlor/templates/misc/configfiles/gentoo/postfix_courier/etc_postfix_mysql-virtual_mailbox_limit_maps.cf
+www/froxlor/templates/misc/configfiles/gentoo/postfix_courier/etc_postfix_mysql-virtual_mailbox_maps.cf
+www/froxlor/templates/misc/configfiles/gentoo/postfix_courier/etc_postfix_mysql-virtual_sender_permissions.cf
+www/froxlor/templates/misc/configfiles/gentoo/postfix_courier/etc_sasl2_smtpd.conf
+www/froxlor/templates/misc/configfiles/gentoo/postfix_dovecot/etc_postfix_main.cf
+www/froxlor/templates/misc/configfiles/gentoo/postfix_dovecot/etc_postfix_master.cf
+www/froxlor/templates/misc/configfiles/gentoo/postfix_dovecot/etc_postfix_mysql-virtual_alias_maps.cf
+www/froxlor/templates/misc/configfiles/gentoo/postfix_dovecot/etc_postfix_mysql-virtual_mailbox_domains.cf
+www/froxlor/templates/misc/configfiles/gentoo/postfix_dovecot/etc_postfix_mysql-virtual_mailbox_limit_maps.cf
+www/froxlor/templates/misc/configfiles/gentoo/postfix_dovecot/etc_postfix_mysql-virtual_mailbox_maps.cf
+www/froxlor/templates/misc/configfiles/gentoo/postfix_dovecot/etc_postfix_mysql-virtual_sender_permissions.cf
+www/froxlor/templates/misc/configfiles/gentoo/postfix_mxaccess/etc_postfix_main.cf
+www/froxlor/templates/misc/configfiles/gentoo/postfix_mxaccess/etc_postfix_mx_access
+www/froxlor/templates/misc/configfiles/gentoo/proftpd/etc_proftpd_proftpd.conf
+www/froxlor/templates/misc/configfiles/gentoo/pureftpd/etc_conf.d_pure-ftpd
+www/froxlor/templates/misc/configfiles/gentoo/pureftpd/etc_pureftpd-mysql.conf
+www/froxlor/templates/misc/configfiles/suse_linux_10_0/courier/etc_authlib_authdaemonrc
+www/froxlor/templates/misc/configfiles/suse_linux_10_0/courier/etc_authlib_authmysqlrc
+www/froxlor/templates/misc/configfiles/suse_linux_10_0/cron/etc_cron.d_froxlor
+www/froxlor/templates/misc/configfiles/suse_linux_10_0/dkim/dkim-filter.conf
+www/froxlor/templates/misc/configfiles/suse_linux_10_0/postfix/etc_postfix_main.cf
+www/froxlor/templates/misc/configfiles/suse_linux_10_0/postfix/etc_postfix_mysql-virtual_alias_maps.cf
+www/froxlor/templates/misc/configfiles/suse_linux_10_0/postfix/etc_postfix_mysql-virtual_mailbox_domains.cf
+www/froxlor/templates/misc/configfiles/suse_linux_10_0/postfix/etc_postfix_mysql-virtual_mailbox_maps.cf
+www/froxlor/templates/misc/configfiles/suse_linux_10_0/postfix/etc_postfix_mysql-virtual_sender_permissions.cf
+www/froxlor/templates/misc/configfiles/suse_linux_10_0/postfix/usr_lib_sasl2_smtpd.conf
+www/froxlor/templates/misc/configfiles/suse_linux_10_0/postfix_mxaccess/etc_postfix_main.cf
+www/froxlor/templates/misc/configfiles/suse_linux_10_0/postfix_mxaccess/etc_postfix_mx_access
+www/froxlor/templates/misc/configfiles/suse_linux_10_0/proftpd/etc_proftpd_modules.conf
+www/froxlor/templates/misc/configfiles/suse_linux_10_0/proftpd/etc_proftpd_proftpd.conf
+www/froxlor/templates/misc/configfiles/ubuntu_hardy/apache2/etc_apache2_mods-enabled_fastcgi.conf
+www/froxlor/templates/misc/configfiles/ubuntu_hardy/courier/etc_courier_authdaemonrc
+www/froxlor/templates/misc/configfiles/ubuntu_hardy/courier/etc_courier_authmysqlrc
+www/froxlor/templates/misc/configfiles/ubuntu_hardy/cron/etc_cron.d_froxlor
+www/froxlor/templates/misc/configfiles/ubuntu_hardy/dkim/dkim-filter.conf
+www/froxlor/templates/misc/configfiles/ubuntu_hardy/dovecot/etc_dovecot_dovecot-sql.conf
+www/froxlor/templates/misc/configfiles/ubuntu_hardy/dovecot/etc_dovecot_dovecot.conf
+www/froxlor/templates/misc/configfiles/ubuntu_hardy/exim4/etc_exim4_conf.d_acl_30_exim4-config_check_rcpt.rul
+www/froxlor/templates/misc/configfiles/ubuntu_hardy/exim4/etc_exim4_conf.d_auth_30_froxlor-config
+www/froxlor/templates/misc/configfiles/ubuntu_hardy/exim4/etc_exim4_conf.d_main_10_froxlor-config_options
+www/froxlor/templates/misc/configfiles/ubuntu_hardy/exim4/etc_exim4_conf.d_router_180_froxlor-config
+www/froxlor/templates/misc/configfiles/ubuntu_hardy/exim4/etc_exim4_conf.d_transport_30_froxlor-config
+www/froxlor/templates/misc/configfiles/ubuntu_hardy/libnss/etc_nss-mysql-root.conf
+www/froxlor/templates/misc/configfiles/ubuntu_hardy/libnss/etc_nss-mysql.conf
+www/froxlor/templates/misc/configfiles/ubuntu_hardy/libnss/etc_nsswitch.conf
+www/froxlor/templates/misc/configfiles/ubuntu_hardy/lighttpd/etc_lighttpd.conf
+www/froxlor/templates/misc/configfiles/ubuntu_hardy/nginx/etc_init.d_php-fcgi
+www/froxlor/templates/misc/configfiles/ubuntu_hardy/nginx/etc_nginx_fastcgi.conf
+www/froxlor/templates/misc/configfiles/ubuntu_hardy/nginx/etc_nginx_nginx.conf
+www/froxlor/templates/misc/configfiles/ubuntu_hardy/postfix_courier/etc_postfix_main.cf
+www/froxlor/templates/misc/configfiles/ubuntu_hardy/postfix_courier/etc_postfix_mysql-virtual_alias_maps.cf
+www/froxlor/templates/misc/configfiles/ubuntu_hardy/postfix_courier/etc_postfix_mysql-virtual_mailbox_domains.cf
+www/froxlor/templates/misc/configfiles/ubuntu_hardy/postfix_courier/etc_postfix_mysql-virtual_mailbox_maps.cf
+www/froxlor/templates/misc/configfiles/ubuntu_hardy/postfix_courier/etc_postfix_mysql-virtual_sender_permissions.cf
+www/froxlor/templates/misc/configfiles/ubuntu_hardy/postfix_courier/etc_postfix_sasl_smtpd.conf
+www/froxlor/templates/misc/configfiles/ubuntu_hardy/postfix_dovecot/etc_postfix_main.cf
+www/froxlor/templates/misc/configfiles/ubuntu_hardy/postfix_dovecot/etc_postfix_master.cf
+www/froxlor/templates/misc/configfiles/ubuntu_hardy/postfix_dovecot/etc_postfix_mysql-virtual_alias_maps.cf
+www/froxlor/templates/misc/configfiles/ubuntu_hardy/postfix_dovecot/etc_postfix_mysql-virtual_mailbox_domains.cf
+www/froxlor/templates/misc/configfiles/ubuntu_hardy/postfix_dovecot/etc_postfix_mysql-virtual_mailbox_maps.cf
+www/froxlor/templates/misc/configfiles/ubuntu_hardy/postfix_dovecot/etc_postfix_mysql-virtual_sender_permissions.cf
+www/froxlor/templates/misc/configfiles/ubuntu_hardy/postfix_mxaccess/etc_postfix_main.cf
+www/froxlor/templates/misc/configfiles/ubuntu_hardy/postfix_mxaccess/etc_postfix_mx_access
+www/froxlor/templates/misc/configfiles/ubuntu_hardy/powerdns/etc_powerdns_pdns-froxlor.conf
+www/froxlor/templates/misc/configfiles/ubuntu_hardy/powerdns/etc_powerdns_pdns.conf
+www/froxlor/templates/misc/configfiles/ubuntu_hardy/proftpd/etc_proftpd_modules.conf
+www/froxlor/templates/misc/configfiles/ubuntu_hardy/proftpd/etc_proftpd_proftpd.conf
+www/froxlor/templates/misc/configfiles/ubuntu_hardy/pure-ftpd/etc_default_pure-ftpd-common
+www/froxlor/templates/misc/configfiles/ubuntu_hardy/pure-ftpd/etc_pure-ftpd_conf_Bind
+www/froxlor/templates/misc/configfiles/ubuntu_hardy/pure-ftpd/etc_pure-ftpd_conf_ChrootEveryone
+www/froxlor/templates/misc/configfiles/ubuntu_hardy/pure-ftpd/etc_pure-ftpd_conf_CustomerProof
+www/froxlor/templates/misc/configfiles/ubuntu_hardy/pure-ftpd/etc_pure-ftpd_conf_MaxIdleTime
+www/froxlor/templates/misc/configfiles/ubuntu_hardy/pure-ftpd/etc_pure-ftpd_conf_MinUID
+www/froxlor/templates/misc/configfiles/ubuntu_hardy/pure-ftpd/etc_pure-ftpd_conf_MySQLConfigFile
+www/froxlor/templates/misc/configfiles/ubuntu_hardy/pure-ftpd/etc_pure-ftpd_conf_NoAnonymous
+www/froxlor/templates/misc/configfiles/ubuntu_hardy/pure-ftpd/etc_pure-ftpd_conf_PAMAuthentication
+www/froxlor/templates/misc/configfiles/ubuntu_hardy/pure-ftpd/etc_pure-ftpd_db_mysql.conf
+www/froxlor/templates/misc/configfiles/ubuntu_lucid/apache2/etc_apache2_mods-enabled_fastcgi.conf
+www/froxlor/templates/misc/configfiles/ubuntu_lucid/courier/etc_courier_authdaemonrc
+www/froxlor/templates/misc/configfiles/ubuntu_lucid/courier/etc_courier_authmysqlrc
+www/froxlor/templates/misc/configfiles/ubuntu_lucid/cron/etc_cron.d_froxlor
+www/froxlor/templates/misc/configfiles/ubuntu_lucid/dkim/dkim-filter.conf
+www/froxlor/templates/misc/configfiles/ubuntu_lucid/dovecot/etc_dovecot_auth.d_01-dovecot-postfix.auth
+www/froxlor/templates/misc/configfiles/ubuntu_lucid/dovecot/etc_dovecot_conf.d_01-dovecot-postfix.conf
+www/froxlor/templates/misc/configfiles/ubuntu_lucid/dovecot/etc_dovecot_dovecot-sql.conf
+www/froxlor/templates/misc/configfiles/ubuntu_lucid/exim4/etc_exim4_conf.d_acl_30_exim4-config_check_rcpt.rul
+www/froxlor/templates/misc/configfiles/ubuntu_lucid/exim4/etc_exim4_conf.d_auth_30_froxlor-config
+www/froxlor/templates/misc/configfiles/ubuntu_lucid/exim4/etc_exim4_conf.d_main_10_froxlor-config_options
+www/froxlor/templates/misc/configfiles/ubuntu_lucid/exim4/etc_exim4_conf.d_router_180_froxlor-config
+www/froxlor/templates/misc/configfiles/ubuntu_lucid/exim4/etc_exim4_conf.d_transport_30_froxlor-config
+www/froxlor/templates/misc/configfiles/ubuntu_lucid/libnss/etc_nss-mysql-root.conf
+www/froxlor/templates/misc/configfiles/ubuntu_lucid/libnss/etc_nss-mysql.conf
+www/froxlor/templates/misc/configfiles/ubuntu_lucid/libnss/etc_nsswitch.conf
+www/froxlor/templates/misc/configfiles/ubuntu_lucid/lighttpd/etc_lighttpd.conf
+www/froxlor/templates/misc/configfiles/ubuntu_lucid/postfix_courier/etc_postfix_main.cf
+www/froxlor/templates/misc/configfiles/ubuntu_lucid/postfix_courier/etc_postfix_mysql-virtual_alias_maps.cf
+www/froxlor/templates/misc/configfiles/ubuntu_lucid/postfix_courier/etc_postfix_mysql-virtual_mailbox_domains.cf
+www/froxlor/templates/misc/configfiles/ubuntu_lucid/postfix_courier/etc_postfix_mysql-virtual_mailbox_maps.cf
+www/froxlor/templates/misc/configfiles/ubuntu_lucid/postfix_courier/etc_postfix_mysql-virtual_sender_permissions.cf
+www/froxlor/templates/misc/configfiles/ubuntu_lucid/postfix_courier/etc_postfix_sasl_smtpd.conf
+www/froxlor/templates/misc/configfiles/ubuntu_lucid/postfix_dovecot/etc_postfix_main.cf
+www/froxlor/templates/misc/configfiles/ubuntu_lucid/postfix_dovecot/etc_postfix_master.cf
+www/froxlor/templates/misc/configfiles/ubuntu_lucid/postfix_dovecot/etc_postfix_mysql-virtual_alias_maps.cf
+www/froxlor/templates/misc/configfiles/ubuntu_lucid/postfix_dovecot/etc_postfix_mysql-virtual_mailbox_domains.cf
+www/froxlor/templates/misc/configfiles/ubuntu_lucid/postfix_dovecot/etc_postfix_mysql-virtual_mailbox_maps.cf
+www/froxlor/templates/misc/configfiles/ubuntu_lucid/postfix_dovecot/etc_postfix_mysql-virtual_sender_permissions.cf
+www/froxlor/templates/misc/configfiles/ubuntu_lucid/postfix_mxaccess/etc_postfix_main.cf
+www/froxlor/templates/misc/configfiles/ubuntu_lucid/postfix_mxaccess/etc_postfix_mx_access
+www/froxlor/templates/misc/configfiles/ubuntu_lucid/powerdns/etc_powerdns_pdns-froxlor.conf
+www/froxlor/templates/misc/configfiles/ubuntu_lucid/powerdns/etc_powerdns_pdns.conf
+www/froxlor/templates/misc/configfiles/ubuntu_lucid/proftpd/etc_proftpd_modules.conf
+www/froxlor/templates/misc/configfiles/ubuntu_lucid/proftpd/etc_proftpd_proftpd.conf
+www/froxlor/templates/misc/configfiles/ubuntu_lucid/proftpd/etc_proftpd_sql.conf
+www/froxlor/templates/misc/configfiles/ubuntu_lucid/pure-ftpd/etc_default_pure-ftpd-common
+www/froxlor/templates/misc/configfiles/ubuntu_lucid/pure-ftpd/etc_pure-ftpd_conf_Bind
+www/froxlor/templates/misc/configfiles/ubuntu_lucid/pure-ftpd/etc_pure-ftpd_conf_ChrootEveryone
+www/froxlor/templates/misc/configfiles/ubuntu_lucid/pure-ftpd/etc_pure-ftpd_conf_CustomerProof
+www/froxlor/templates/misc/configfiles/ubuntu_lucid/pure-ftpd/etc_pure-ftpd_conf_MaxIdleTime
+www/froxlor/templates/misc/configfiles/ubuntu_lucid/pure-ftpd/etc_pure-ftpd_conf_MinUID
+www/froxlor/templates/misc/configfiles/ubuntu_lucid/pure-ftpd/etc_pure-ftpd_conf_MySQLConfigFile
+www/froxlor/templates/misc/configfiles/ubuntu_lucid/pure-ftpd/etc_pure-ftpd_conf_NoAnonymous
+www/froxlor/templates/misc/configfiles/ubuntu_lucid/pure-ftpd/etc_pure-ftpd_conf_PAMAuthentication
+www/froxlor/templates/misc/configfiles/ubuntu_lucid/pure-ftpd/etc_pure-ftpd_db_mysql.conf
+www/froxlor/templates/misc/configurehint.tpl
+www/froxlor/templates/misc/error.tpl
+www/froxlor/templates/misc/question_yesno.tpl
+www/froxlor/templates/misc/question_yesno_checkbox.tpl
+www/froxlor/templates/misc/standardcustomer/index.html
+www/froxlor/templates/misc/success.tpl
+www/froxlor/templates/navigation_element.tpl
+www/froxlor/templates/navigation_link.tpl
+@dirrm www/froxlor/templates/misc/standardcustomer
+@dirrm www/froxlor/templates/misc/configfiles/ubuntu_lucid/pure-ftpd
+@dirrm www/froxlor/templates/misc/configfiles/ubuntu_lucid/proftpd
+@dirrm www/froxlor/templates/misc/configfiles/ubuntu_lucid/powerdns
+@dirrm www/froxlor/templates/misc/configfiles/ubuntu_lucid/postfix_mxaccess
+@dirrm www/froxlor/templates/misc/configfiles/ubuntu_lucid/postfix_dovecot
+@dirrm www/froxlor/templates/misc/configfiles/ubuntu_lucid/postfix_courier
+@dirrm www/froxlor/templates/misc/configfiles/ubuntu_lucid/lighttpd
+@dirrm www/froxlor/templates/misc/configfiles/ubuntu_lucid/libnss
+@dirrm www/froxlor/templates/misc/configfiles/ubuntu_lucid/exim4
+@dirrm www/froxlor/templates/misc/configfiles/ubuntu_lucid/dovecot
+@dirrm www/froxlor/templates/misc/configfiles/ubuntu_lucid/dkim
+@dirrm www/froxlor/templates/misc/configfiles/ubuntu_lucid/cron
+@dirrm www/froxlor/templates/misc/configfiles/ubuntu_lucid/courier
+@dirrm www/froxlor/templates/misc/configfiles/ubuntu_lucid/apache2
+@dirrm www/froxlor/templates/misc/configfiles/ubuntu_lucid
+@dirrm www/froxlor/templates/misc/configfiles/ubuntu_hardy/pure-ftpd
+@dirrm www/froxlor/templates/misc/configfiles/ubuntu_hardy/proftpd
+@dirrm www/froxlor/templates/misc/configfiles/ubuntu_hardy/powerdns
+@dirrm www/froxlor/templates/misc/configfiles/ubuntu_hardy/postfix_mxaccess
+@dirrm www/froxlor/templates/misc/configfiles/ubuntu_hardy/postfix_dovecot
+@dirrm www/froxlor/templates/misc/configfiles/ubuntu_hardy/postfix_courier
+@dirrm www/froxlor/templates/misc/configfiles/ubuntu_hardy/nginx
+@dirrm www/froxlor/templates/misc/configfiles/ubuntu_hardy/lighttpd
+@dirrm www/froxlor/templates/misc/configfiles/ubuntu_hardy/libnss
+@dirrm www/froxlor/templates/misc/configfiles/ubuntu_hardy/exim4
+@dirrm www/froxlor/templates/misc/configfiles/ubuntu_hardy/dovecot
+@dirrm www/froxlor/templates/misc/configfiles/ubuntu_hardy/dkim
+@dirrm www/froxlor/templates/misc/configfiles/ubuntu_hardy/cron
+@dirrm www/froxlor/templates/misc/configfiles/ubuntu_hardy/courier
+@dirrm www/froxlor/templates/misc/configfiles/ubuntu_hardy/apache2
+@dirrm www/froxlor/templates/misc/configfiles/ubuntu_hardy
+@dirrm www/froxlor/templates/misc/configfiles/suse_linux_10_0/proftpd
+@dirrm www/froxlor/templates/misc/configfiles/suse_linux_10_0/postfix_mxaccess
+@dirrm www/froxlor/templates/misc/configfiles/suse_linux_10_0/postfix
+@dirrm www/froxlor/templates/misc/configfiles/suse_linux_10_0/dkim
+@dirrm www/froxlor/templates/misc/configfiles/suse_linux_10_0/cron
+@dirrm www/froxlor/templates/misc/configfiles/suse_linux_10_0/courier
+@dirrm www/froxlor/templates/misc/configfiles/suse_linux_10_0
+@dirrm www/froxlor/templates/misc/configfiles/gentoo/pureftpd
+@dirrm www/froxlor/templates/misc/configfiles/gentoo/proftpd
+@dirrm www/froxlor/templates/misc/configfiles/gentoo/postfix_mxaccess
+@dirrm www/froxlor/templates/misc/configfiles/gentoo/postfix_dovecot
+@dirrm www/froxlor/templates/misc/configfiles/gentoo/postfix_courier
+@dirrm www/froxlor/templates/misc/configfiles/gentoo/nginx
+@dirrm www/froxlor/templates/misc/configfiles/gentoo/lighttpd
+@dirrm www/froxlor/templates/misc/configfiles/gentoo/libnss
+@dirrm www/froxlor/templates/misc/configfiles/gentoo/dovecot
+@dirrm www/froxlor/templates/misc/configfiles/gentoo/dkim
+@dirrm www/froxlor/templates/misc/configfiles/gentoo/cron
+@dirrm www/froxlor/templates/misc/configfiles/gentoo/courier
+@dirrm www/froxlor/templates/misc/configfiles/gentoo/bind
+@dirrm www/froxlor/templates/misc/configfiles/gentoo/apache2
+@dirrm www/froxlor/templates/misc/configfiles/gentoo
+@dirrm www/froxlor/templates/misc/configfiles/freebsd/proftpd
+@dirrm www/froxlor/templates/misc/configfiles/freebsd/powerdns
+@dirrm www/froxlor/templates/misc/configfiles/freebsd/postfix_mxaccess
+@dirrm www/froxlor/templates/misc/configfiles/freebsd/postfix
+@dirrm www/froxlor/templates/misc/configfiles/freebsd/libnss
+@dirrm www/froxlor/templates/misc/configfiles/freebsd/dovecot
+@dirrm www/froxlor/templates/misc/configfiles/freebsd/dkim
+@dirrm www/froxlor/templates/misc/configfiles/freebsd
+@dirrm www/froxlor/templates/misc/configfiles/debian_lenny/pure-ftpd
+@dirrm www/froxlor/templates/misc/configfiles/debian_lenny/proftpd
+@dirrm www/froxlor/templates/misc/configfiles/debian_lenny/powerdns
+@dirrm www/froxlor/templates/misc/configfiles/debian_lenny/postfix_mxaccess
+@dirrm www/froxlor/templates/misc/configfiles/debian_lenny/postfix_dovecot
+@dirrm www/froxlor/templates/misc/configfiles/debian_lenny/postfix_courier
+@dirrm www/froxlor/templates/misc/configfiles/debian_lenny/nginx
+@dirrm www/froxlor/templates/misc/configfiles/debian_lenny/lighttpd
+@dirrm www/froxlor/templates/misc/configfiles/debian_lenny/libnss
+@dirrm www/froxlor/templates/misc/configfiles/debian_lenny/exim4
+@dirrm www/froxlor/templates/misc/configfiles/debian_lenny/dovecot
+@dirrm www/froxlor/templates/misc/configfiles/debian_lenny/dkim
+@dirrm www/froxlor/templates/misc/configfiles/debian_lenny/cron
+@dirrm www/froxlor/templates/misc/configfiles/debian_lenny/courier
+@dirrm www/froxlor/templates/misc/configfiles/debian_lenny/apache2
+@dirrm www/froxlor/templates/misc/configfiles/debian_lenny
+@dirrm www/froxlor/templates/misc/configfiles
+@dirrm www/froxlor/templates/misc/awstatsmodel
+@dirrm www/froxlor/templates/misc
+@dirrm www/froxlor/templates/login
+@dirrm www/froxlor/templates/formfields
+@dirrm www/froxlor/templates/customer/traffic
+@dirrm www/froxlor/templates/customer/ticket
+@dirrm www/froxlor/templates/customer/mysql
+@dirrm www/froxlor/templates/customer/index
+@dirrm www/froxlor/templates/customer/ftp
+@dirrm www/froxlor/templates/customer/extras
+@dirrm www/froxlor/templates/customer/email
+@dirrm www/froxlor/templates/customer/domains
+@dirrm www/froxlor/templates/customer/aps
+@dirrm www/froxlor/templates/customer
+@dirrm www/froxlor/templates/admin/update
+@dirrm www/froxlor/templates/admin/ticket
+@dirrm www/froxlor/templates/admin/templates
+@dirrm www/froxlor/templates/admin/settings
+@dirrm www/froxlor/templates/admin/phpconfig
+@dirrm www/froxlor/templates/admin/message
+@dirrm www/froxlor/templates/admin/logger
+@dirrm www/froxlor/templates/admin/ipsandports
+@dirrm www/froxlor/templates/admin/index
+@dirrm www/froxlor/templates/admin/froxlorclients
+@dirrm www/froxlor/templates/admin/domains
+@dirrm www/froxlor/templates/admin/customers
+@dirrm www/froxlor/templates/admin/cronjobs
+@dirrm www/froxlor/templates/admin/configfiles
+@dirrm www/froxlor/templates/admin/aps
+@dirrm www/froxlor/templates/admin/admins
+@dirrm www/froxlor/templates/admin
+@dirrm www/froxlor/templates
+@dirrm www/froxlor/temp
+@dirrm www/froxlor/scripts/jobs
+@dirrm www/froxlor/scripts
+@dirrm www/froxlor/packages
+@dirrm www/froxlor/lng
+@dirrm www/froxlor/lib/navigation
+@dirrm www/froxlor/lib/functions/validate
+@dirrm www/froxlor/lib/functions/system
+@dirrm www/froxlor/lib/functions/settings
+@dirrm www/froxlor/lib/functions/phphelpers
+@dirrm www/froxlor/lib/functions/output
+@dirrm www/froxlor/lib/functions/logger
+@dirrm www/froxlor/lib/functions/froxlor
+@dirrm www/froxlor/lib/functions/formfields/text
+@dirrm www/froxlor/lib/functions/formfields/string
+@dirrm www/froxlor/lib/functions/formfields/option
+@dirrm www/froxlor/lib/functions/formfields/label
+@dirrm www/froxlor/lib/functions/formfields/int
+@dirrm www/froxlor/lib/functions/formfields/hidden
+@dirrm www/froxlor/lib/functions/formfields/date
+@dirrm www/froxlor/lib/functions/formfields/bool
+@dirrm www/froxlor/lib/functions/formfields
+@dirrm www/froxlor/lib/functions/filedir
+@dirrm www/froxlor/lib/functions/database
+@dirrm www/froxlor/lib/functions/aps
+@dirrm www/froxlor/lib/functions
+@dirrm www/froxlor/lib/configfiles
+@dirrm www/froxlor/lib/classes/ticket
+@dirrm www/froxlor/lib/classes/phpmailer
+@dirrm www/froxlor/lib/classes/phpinterface
+@dirrm www/froxlor/lib/classes/output
+@dirrm www/froxlor/lib/classes/logger
+@dirrm www/froxlor/lib/classes/idna
+@dirrm www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/VarParser
+@dirrm www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/URIScheme
+@dirrm www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/URIFilter
+@dirrm www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/Token
+@dirrm www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/TagTransform
+@dirrm www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/Strategy
+@dirrm www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/Printer
+@dirrm www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/Lexer
+@dirrm www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/Language/messages
+@dirrm www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/Language/classes
+@dirrm www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/Language
+@dirrm www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/Injector
+@dirrm www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/HTMLModule/Tidy
+@dirrm www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/HTMLModule
+@dirrm www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/Filter
+@dirrm www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/EntityLookup
+@dirrm www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/DefinitionCache/Serializer
+@dirrm www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/DefinitionCache/Decorator
+@dirrm www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/DefinitionCache
+@dirrm www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema
+@dirrm www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/ConfigSchema/Interchange
+@dirrm www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/ConfigSchema/Builder
+@dirrm www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/ConfigSchema
+@dirrm www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/ChildDef
+@dirrm www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/AttrTransform
+@dirrm www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/AttrDef/URI/Email
+@dirrm www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/AttrDef/URI
+@dirrm www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/AttrDef/HTML
+@dirrm www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/AttrDef/CSS
+@dirrm www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier/AttrDef
+@dirrm www/froxlor/lib/classes/htmlpurifier/library/HTMLPurifier
+@dirrm www/froxlor/lib/classes/htmlpurifier/library
+@dirrm www/froxlor/lib/classes/htmlpurifier
+@dirrm www/froxlor/lib/classes/froxlorclient
+@dirrm www/froxlor/lib/classes/domains
+@dirrm www/froxlor/lib/classes/database
+@dirrm www/froxlor/lib/classes/aps
+@dirrm www/froxlor/lib/classes
+@dirrm www/froxlor/lib
+@dirrm www/froxlor/install/updates/syscp/1.4
+@dirrm www/froxlor/install/updates/syscp/1.2
+@dirrm www/froxlor/install/updates/syscp/1.0
+@dirrm www/froxlor/install/updates/syscp
+@dirrm www/froxlor/install/updates/preconfig/0.9
+@dirrm www/froxlor/install/updates/preconfig
+@dirrm www/froxlor/install/updates/froxlor/0.9
+@dirrm www/froxlor/install/updates/froxlor
+@dirrm www/froxlor/install/updates
+@dirrm www/froxlor/install/scripts
+@dirrm www/froxlor/install/lng
+@dirrm www/froxlor/install
+@dirrm www/froxlor/images/multiserver
+@dirrm www/froxlor/images
+@dirrm www/froxlor/actions/admin/settings
+@dirrm www/froxlor/actions/admin
+@dirrm www/froxlor/actions
+@dirrm www/froxlor
