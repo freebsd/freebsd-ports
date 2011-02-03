@@ -8,6 +8,7 @@ bin/lomath
 bin/loweb
 bin/lowriter
 bin/ooconfig
+bin/ootool
 bin/soffice
 bin/unopkg
 lib/libreoffice/CREDITS.odt
@@ -9186,3 +9187,4 @@ share/pixmaps/libreoffice-writer.png
 @dirrm lib/libreoffice/basis%%LOVER%%/help
 @dirrm lib/libreoffice/basis%%LOVER%%
 @dirrm lib/libreoffice
+@dirrmtry share/applications
