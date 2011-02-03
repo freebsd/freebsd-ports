@@ -710,3 +710,4 @@ libaacplus-*		audio/libaacplus	Unclear legal status
 26410-800.zip		audio/libaacplus	Unclear legal status
 dmd-*			lang/dmd		No redistribution of non
 						validated binaries
+madfufw-*		audio/madfufw		No redistribution of firmware files
