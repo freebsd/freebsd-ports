@@ -1,0 +1,11 @@
+A devd(8) configuration has been installed at:
+%%PREFIX%%/etc/devd/maudio-devd.conf.
+
+You must add 'maudio_enable="YES"' to rc.conf
+and restart devd(8) for this port to work.
+
+Some devices (eg. Transit) may also require
+sysctl modifications:
+
+hw.usb.uaudio.default_bits=16
+hw.usb.uaudio.default_rate=48000

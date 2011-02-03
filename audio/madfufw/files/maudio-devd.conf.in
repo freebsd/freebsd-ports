@@ -1,0 +1,13 @@
+attach 100 {
+	match "device-name" "ugen[0-9]+\.[0-9]+";
+	match "vendor" "0x0763";
+	match "product" "0x280[34568]";
+	action "%%PREFIX%%/etc/rc.d/maudio start $device-name $product";
+};
+
+attach 100 {
+	match "device-name" "uaudio[0-9]+";
+	match "vendor" "0x0763";
+	match "product" "0x2006";
+	action "/usr/local/etc/rc.d/maudio mixer $device-name";
+};
