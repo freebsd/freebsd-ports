@@ -3221,11 +3221,9 @@ lib/libreoffice/basis%%LOVER%%/program/hatchwindowfactory.uno.so
 lib/libreoffice/basis%%LOVER%%/program/i18npool.uno.so
 lib/libreoffice/basis%%LOVER%%/program/i18nsearch.uno.so
 lib/libreoffice/basis%%LOVER%%/program/kde-open-url
-%%KDEOPT%%lib/libreoffice/basis%%LOVER%%/program/fps_kde.uno.so
-%%KDEOPT%%lib/libreoffice/basis%%LOVER%%/program/kdebe1.uno.so
-%%KDEOPT%%lib/libreoffice/basis%%LOVER%%/program/libkab1.so
-%%KDEOPT%%lib/libreoffice/basis%%LOVER%%/program/libkabdrv1.so
-%%KDEOPT%%lib/libreoffice/basis%%LOVER%%/program/libvclplug_kdeob.so
+%%KDEOPT%%lib/libreoffice/basis%%LOVER%%/program/fps_kde4.uno.so
+%%KDEOPT%%lib/libreoffice/basis%%LOVER%%/program/kde4be1.uno.so
+%%KDEOPT%%lib/libreoffice/basis%%LOVER%%/program/libvclplug_kde4fx.so
 lib/libreoffice/basis%%LOVER%%/program/libabpfx.so
 lib/libreoffice/basis%%LOVER%%/program/libaccfx.so
 lib/libreoffice/basis%%LOVER%%/program/libadabasuifx.so
@@ -7153,7 +7151,6 @@ lib/libreoffice/basis%%LOVER%%/share/xslt/odfflatxml/odfflatxmlimport.xsl
 lib/libreoffice/basis%%LOVER%%/ure-link
 lib/libreoffice/program/about-pt_BR.png
 lib/libreoffice/program/about.png
-%%KDEOPT%%lib/libreoffice/program/kdefilepicker
 lib/libreoffice/program/bootstraprc
 lib/libreoffice/program/fundamentalrc
 lib/libreoffice/program/intro-pt_BR.png
