@@ -1,9 +1,9 @@
---- makefile.orig	2010-12-13 23:22:07.000000000 +0000
-+++ makefile	2010-12-24 10:11:19.000000000 +0000
-@@ -9,12 +9,12 @@
- # CFLAGS = -O2 -fomit-frame-pointer -Wall -Wstrict-prototypes -Winline -Wconversion -Wshadow -Wpointer-arith
- # CFLAGS = -O2 -g -Wall -Wextra -Wswitch-default -Wswitch-enum -Wcast-qual -Waggregate-return -Wwrite-strings -Wstrict-prototypes -Winline -Wconversion -Wshadow -Wpointer-arith -Wmissing-noreturn -Wno-multichar
+--- makefile.orig	2011-02-04 10:52:21.000000000 +0000
++++ makefile	2011-02-04 10:53:10.000000000 +0000
+@@ -12,12 +12,12 @@
  # CFLAGS = -O2 -fomit-frame-pointer -Wall -Wextra -Wswitch-default -Wcast-qual -Waggregate-return -Wwrite-strings -Winline -Wconversion -Wshadow -Wpointer-arith -Wmissing-noreturn -Wno-multichar
+ # CFLAGS = -O2 -g -Wall -Wstrict-prototypes -Winline -Wconversion -Wshadow -Wpointer-arith -ftrapv
+ # CFLAGS = -O2 -g -x c++ -Wall -Winline -Wconversion -Wshadow -Wpointer-arith
 -CFLAGS = -O2 -g -Wall -Wstrict-prototypes -Winline -Wconversion -Wshadow -Wpointer-arith
 +CFLAGS = -O2 -g -Wall -Wstrict-prototypes -Winline -Wconversion -Wshadow -Wpointer-arith -I%%LOCALBASE%%/include
  # CFLAGS = -O2 -g -Wall
@@ -15,7 +15,7 @@
  # LDFLAGS = -pg
  # LDFLAGS = -pg -lc_p
  # LIBS = /usr/Xlib/libX11.so -lncurses -lm
-@@ -102,6 +102,7 @@
+@@ -106,6 +106,7 @@
  	$(MAKE) ../prg/hi
  	../bin/hi level
  
