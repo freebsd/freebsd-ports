@@ -3641,6 +3641,7 @@ flvstreamer                     ports/multimedia/flvstreamer
 flvtool++                       ports/multimedia/flvtool++
 flvw                            ports/x11-toolkits/flvw
 flwm                            ports/x11-wm/flwm
+flwrap                          ports/comms/flwrap
 fly                             ports/graphics/fly
 flyback                         ports/sysutils/flyback
 flyhard                         ports/games/flyhard
@@ -3996,6 +3997,7 @@ frost                           ports/net-p2p/frost
 frostwire                       ports/net-p2p/frostwire
 frotz                           ports/games/frotz
 frox                            ports/ftp/frox
+froxlor                         ports/sysutils/froxlor
 frozenbubble                    ports/games/frozenbubble
 fruity                          ports/net-mgmt/fruity
 fsbackup                        ports/sysutils/fsbackup
@@ -7528,6 +7530,7 @@ ksmp3play                       ports/audio/ksmp3play
 ksqlanalyzer                    ports/databases/ksqlanalyzer
 ksqlshell                       ports/databases/ksqlshell
 kssh                            ports/security/kssh
+ksshaskpass                     ports/deskutils/ksshaskpass
 kst                             ports/science/kst
 kst2                            ports/science/kst2
 kstreamripper                   ports/audio/kstreamripper
@@ -9046,6 +9049,7 @@ mad                             ports/audio/mad
 mad_fcl                         ports/net/mad_fcl
 madbomber                       ports/games/madbomber
 madedit                         ports/editors/madedit
+madfufw                         ports/audio/madfufw
 madman                          ports/audio/madman
 madplay                         ports/audio/madplay
 maelstrom                       ports/games/maelstrom
@@ -26916,6 +26920,7 @@ xpp                             ports/print/xpp
 xpp3                            ports/textproc/xpp3
 xppaut                          ports/math/xppaut
 xpr                             ports/x11/xpr
+xpra                            ports/x11/xpra
 xprehashprinterlist             ports/x11/xprehashprinterlist
 xprobe                          ports/net/xprobe
 xprompt                         ports/x11/xprompt
