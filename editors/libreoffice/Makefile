@@ -114,7 +114,7 @@ CONFIGURE_ARGS+=	--without-download \
 			--disable-odk \
 			--with-build-version="FreeBSD ports ${PKGVERSION}" \
 			--with-vendor="FreeBSD ports ${PKGVERSION}" \
-			--exec-prefix=${LOCALBASE} \
+			--exec-prefix=${PREFIX} \
 			--with-num-cpus=${MAKE_JOBS_NUMBER} \
 			--with-installed-ooo-dirname=${PORTNAME} \
 			--without-git \
