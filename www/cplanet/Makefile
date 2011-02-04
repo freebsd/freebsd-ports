@@ -6,15 +6,18 @@
 #
 
 PORTNAME=	cplanet
-PORTVERSION=	0.3
+PORTVERSION=	0.5
 CATEGORIES=	www textproc
-MASTER_SITES=	http://baptux.free.fr/distfiles/
+MASTER_SITES=	http://files.etoilebsd.net/cplanet/
 
 MAINTAINER=	bapt@FreeBSD.org
 COMMENT=	RSS Feed Aggregator that generate static html
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libneo_cs.a:${PORTSDIR}/www/clearsilver
-LIB_DEPENDS=	mrss.19:${PORTSDIR}/textproc/libmrss
+LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2 \
+		curl.6:${PORTSDIR}/ftp/curl
+
+LICENSE=	BSD
 
 USE_BZIP2=	yes
 
