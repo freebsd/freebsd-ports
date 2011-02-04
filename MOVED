@@ -629,7 +629,6 @@ www/phpsurveyor|www/limesurvey|2009-05-05|Project was renamed
 devel/oskit||2009-05-07|Has expired: does not work with current versions of GCC, needs gcc295 which has been failing to build for months, no active maintainer
 www/p5-WWW-Nicovideo-Download|www/p5-WWW-NicoVideo-Download|2009-05-07|directory renamed
 german/swissgerman-ding|german/ding|2009-05-12|integrated into german/ding
-net/ntp-rc|net/ntp|2009-05-22|NTP is no longer in release candidate status. Use net/ntp instead.
 misc/sonytv||2009-05-28|Has expired: tcl8.3 support is going to be dropped
 mail/postilion||2009-05-28|Has expired: tcl8.3 support is going to be dropped
 x11-toolkits/p5-TclTk||2009-05-28|Has expired: replaced by x11-toolkits/p5-Tcl-Tk
@@ -876,7 +875,6 @@ sysutils/rsyslog-gssapi||2009-11-19|Has expired: Use sysutils/rsyslog3 or sysuti
 sysutils/rsyslog-mysql||2009-11-19|Has expired: Use sysutils/rsyslog3 or sysutils/rsyslog4 instead
 sysutils/rsyslog-pgsql||2009-11-19|Has expired: Use sysutils/rsyslog3 or sysutils/rsyslog4 instead
 misc/kde4-l10n-ta||2009-11-19|Has expired: unfetchable and unmaintained upstream
-misc/kde4-l10n-eo||2009-11-19|Has expired: unfetchable and unmaintained upstream
 security/f-prot-sig||2009-11-20|No longer needed with security/f-prot update
 lang/gcc295|lang/gcc44|2009-11-21|Abandoned upstream, superseded by later versions
 games/freebsd-games|games/bsdgames|2009-11-21|Superseded by and equivalent to freebsd-games
