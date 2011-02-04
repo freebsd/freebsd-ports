@@ -27,6 +27,17 @@ share/pixmaps/amsn.png
 %%DATADIR%%/autoupdate.tcl
 %%DATADIR%%/balloon.tcl
 %%DATADIR%%/bugs.tcl
+%%DATADIR%%/ca-certs/37621ded.0
+%%DATADIR%%/ca-certs/6e7f22c1.0
+%%DATADIR%%/ca-certs/75ced341.0
+%%DATADIR%%/ca-certs/874806e2.0
+%%DATADIR%%/ca-certs/GTE_CyberTrust_Global_Root.pem
+%%DATADIR%%/ca-certs/Microsoft_Internet_Authority.pem
+%%DATADIR%%/ca-certs/Microsoft_Secure_Server_Authority.pem
+%%DATADIR%%/ca-certs/README
+%%DATADIR%%/ca-certs/VeriSign_Class3_Extended_Validation_CA.pem
+%%DATADIR%%/ca-certs/VeriSign_International_Server_Class_3_CA.pem
+%%DATADIR%%/ca-certs/c692a373.0
 %%DATADIR%%/chatwindow.tcl
 %%DATADIR%%/config.tcl
 %%DATADIR%%/console.tcl
@@ -119,8 +130,10 @@ share/pixmaps/amsn.png
 %%DATADIR%%/lang/LANG-HOWTO
 %%DATADIR%%/lang/convert.tcl
 %%DATADIR%%/lang/langal
+%%DATADIR%%/lang/langar
 %%DATADIR%%/lang/langast
 %%DATADIR%%/lang/langbg
+%%DATADIR%%/lang/langbs
 %%DATADIR%%/lang/langca
 %%DATADIR%%/lang/langca_VC
 %%DATADIR%%/lang/langcs
@@ -160,6 +173,7 @@ share/pixmaps/amsn.png
 %%DATADIR%%/lang/langsl
 %%DATADIR%%/lang/langsr
 %%DATADIR%%/lang/langsv
+%%DATADIR%%/lang/langth
 %%DATADIR%%/lang/langtr
 %%DATADIR%%/lang/langvn
 %%DATADIR%%/lang/langzh-CN
@@ -713,6 +727,8 @@ share/pixmaps/amsn.png
 %%DATADIR%%/plugins/desktop_integration/plugininfo.xml
 %%DATADIR%%/plugins/devel/devel.tcl
 %%DATADIR%%/plugins/devel/plugininfo.xml
+%%DATADIR%%/plugins/ebuddykiller/ebuddykiller.tcl
+%%DATADIR%%/plugins/ebuddykiller/plugininfo.xml
 %%DATADIR%%/plugins/emotes/emotes.tcl
 %%DATADIR%%/plugins/emotes/plugininfo.xml
 %%DATADIR%%/plugins/emoticons_importer/emoticons_importer.tcl
@@ -1451,7 +1467,6 @@ share/pixmaps/amsn.png
 %%DATADIR%%/skins/Oxygen/pixmaps/box_upleft.png
 %%DATADIR%%/skins/Oxygen/pixmaps/box_upright.png
 %%DATADIR%%/skins/Oxygen/pixmaps/busy.png
-%%DATADIR%%/skins/Oxygen/pixmaps/busy2.png
 %%DATADIR%%/skins/Oxygen/pixmaps/busy_emblem.png
 %%DATADIR%%/skins/Oxygen/pixmaps/busy_emblem_detailedview.png
 %%DATADIR%%/skins/Oxygen/pixmaps/butblock.png
@@ -1800,7 +1815,6 @@ share/pixmaps/amsn.png
 %%DATADIR%%/skins/Oxygen/smileys/XD.png
 %%DATADIR%%/skins/Oxygen/smileys/Xbox.png
 %%DATADIR%%/skins/Oxygen/smileys/YIM.png
-%%DATADIR%%/skins/Oxygen/smileys/angry.png
 %%DATADIR%%/skins/Oxygen/smileys/im_xbox.gif
 %%DATADIR%%/skins/Oxygen/smileys/null
 %%DATADIR%%/skins/Oxygen/sounds/alarm.wav
@@ -2432,7 +2446,7 @@ share/pixmaps/amsn.png
 %%DATADIR%%/utils/voipcontrols/voipcontrols.tcl
 %%DATADIR%%/utils/webcamsn/pkgIndex.tcl
 %%DATADIR%%/utils/webcamsn/webcamsn.so
-@dirrmtry share/applications
+@dirrm share/applications
 @dirrm %%DATADIR%%/utils/webcamsn
 @dirrm %%DATADIR%%/utils/voipcontrols
 @dirrm %%DATADIR%%/utils/uri
@@ -2543,6 +2557,7 @@ share/pixmaps/amsn.png
 @dirrm %%DATADIR%%/plugins/emoticons_importer/lang
 @dirrm %%DATADIR%%/plugins/emoticons_importer
 @dirrm %%DATADIR%%/plugins/emotes
+@dirrm %%DATADIR%%/plugins/ebuddykiller
 @dirrm %%DATADIR%%/plugins/devel
 @dirrm %%DATADIR%%/plugins/desktop_integration
 @dirrm %%DATADIR%%/plugins/dbusviewer
@@ -2636,4 +2651,5 @@ share/pixmaps/amsn.png
 @dirrm %%DATADIR%%/desktop-icons/128x128/apps
 @dirrm %%DATADIR%%/desktop-icons/128x128
 @dirrm %%DATADIR%%/desktop-icons
+@dirrm %%DATADIR%%/ca-certs
 @dirrm %%DATADIR%%
