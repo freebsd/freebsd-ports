@@ -5,4 +5,5 @@ MAN1=	dcm2pnm.1 dcmcrle.1 dcmdump.1 dcmmkcrv.1 dcmp2pgm.1 dcmpsmk.1 \
 	dcmcjpeg.1 dcmdrle.1 dcmgpdir.1 dcmmklut.1 dcmprscu.1 dcmpsrcv.1 \
 	dcmqrti.1 dcod2lum.1 dsrdump.1 movescu.1 termscu.1 dcmconv.1 \
 	dcmdspfn.1 dcmj2pnm.1 dcmodify.1 dcmpschk.1 dcmpssnd.1 dcmquant.1 \
-	dconvlum.1 dump2dcm.1 pdf2dcm.1 wlmscpfs.1 
+	dconvlum.1 dump2dcm.1 pdf2dcm.1 wlmscpfs.1 dcm2pdf.1 dcmcjpls.1 \
+	dcmdjpls.1 dcml2pnm.1 img2dcm.1

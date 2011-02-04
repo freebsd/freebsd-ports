@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	dcmtk
-PORTVERSION=	3.5.4
+DISTVERSION=	3.6.0
 CATEGORIES=	devel
 MASTER_SITES=	ftp://dicom.offis.de/pub/dicom/offis/software/${PORTNAME}/${PORTNAME}${PORTVERSION:S/.//g}/
 
@@ -17,27 +17,15 @@ LIB_DEPENDS=	tiff.4:${PORTSDIR}/graphics/tiff \
     		png.6:${PORTSDIR}/graphics/png \
 		jpeg.11:${PORTSDIR}/graphics/jpeg
 
-USE_GMAKE=	yes
 USE_GNOME=	libxml2
 USE_LDCONFIG=	yes
-
-CFLAGS=		-D__BSD_VISIBLE -fPIC
-CPPFLAGS=	${CFLAGS}
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+=--with-libpnginc=${LOCALBASE}/include \
-		--with-libtiffinc=${LOCALBASE}/include \
-		--with-libxmlinc=${LOCALBASE}/include \
-		--bindir=${PREFIX}/bin/${PORTNAME} \
-		--sysconfdir=${PREFIX}/etc/${PORTNAME} \
-		--datadir=${DATADIR}
-CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS}" AR="${CXX}" \
-		ARFLAGS="-shared -o" LIBEXT="so" RANLIB=":"
-
-INSTALL_TARGET=	install install-lib
+USE_CMAKE=	yes
+CMAKE_OUTSOURCE=yes
 
 SHLIBS=		dcmdata dcmdsig dcmimage dcmimgle dcmjpeg dcmnet \
-		dcmpstat dcmqrdb dcmsr dcmtls dcmwlm ijg12 ijg16 \
-		ijg8 ofstd
+		dcmpstat dcmqrdb dcmsr dcmtls dcmwlm ijg8 ijg12 \
+		ijg16 i2d ofstd oflog charls dcmjpls
+
 SHLIBVER=	${PORTVERSION:R:R}
 PLIST_SUB=	SHLIBVER=${SHLIBVER}
 
@@ -47,6 +35,5 @@ post-install:
 	@${LN} -sf ${PREFIX}/lib/lib${shlib}.so.${SHLIBVER} ${PREFIX}/lib/lib${shlib}.so
 .endfor
 
-.include "Makefile.man"
+#.include "Makefile.man"
 .include <bsd.port.mk>
-
