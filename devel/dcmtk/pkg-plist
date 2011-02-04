@@ -1,15 +1,19 @@
+bin/dcmtk/dcm2pdf
 bin/dcmtk/dcm2pnm
 bin/dcmtk/dcm2xml
 bin/dcmtk/dcmcjpeg
+bin/dcmtk/dcmcjpls
 bin/dcmtk/dcmconv
 bin/dcmtk/dcmcrle
 bin/dcmtk/dcmdjpeg
+bin/dcmtk/dcmdjpls
 bin/dcmtk/dcmdrle
 bin/dcmtk/dcmdspfn
 bin/dcmtk/dcmdump
 bin/dcmtk/dcmftest
 bin/dcmtk/dcmgpdir
 bin/dcmtk/dcmj2pnm
+bin/dcmtk/dcml2pnm
 bin/dcmtk/dcmmkcrv
 bin/dcmtk/dcmmkdir
 bin/dcmtk/dcmmklut
@@ -36,6 +40,7 @@ bin/dcmtk/dsrdump
 bin/dcmtk/dump2dcm
 bin/dcmtk/echoscu
 bin/dcmtk/findscu
+bin/dcmtk/img2dcm
 bin/dcmtk/movescu
 bin/dcmtk/pdf2dcm
 bin/dcmtk/storescp
@@ -44,12 +49,13 @@ bin/dcmtk/termscu
 bin/dcmtk/wlmscpfs
 bin/dcmtk/xml2dcm
 bin/dcmtk/xml2dsr
+etc/dcmtk/logger.cfg
+etc/dcmtk/filelog.cfg
 etc/dcmtk/dcmpstat.cfg
 etc/dcmtk/dcmqrscp.cfg
 etc/dcmtk/printers.cfg
 etc/dcmtk/storescp.cfg
 etc/dcmtk/storescu.cfg
-include/dcmtk/config/cfunix.h
 include/dcmtk/config/osconfig.h
 include/dcmtk/dcmdata/cmdlnarg.h
 include/dcmtk/dcmdata/dcbytstr.h
@@ -57,8 +63,6 @@ include/dcmtk/dcmdata/dcchrstr.h
 include/dcmtk/dcmdata/dccodec.h
 include/dcmtk/dcmdata/dcdatset.h
 include/dcmtk/dcmdata/dcddirif.h
-include/dcmtk/dcmdata/dcdebug.h
-include/dcmtk/dcmdata/dcdefine.h
 include/dcmtk/dcmdata/dcdeftag.h
 include/dcmtk/dcmdata/dcdicdir.h
 include/dcmtk/dcmdata/dcdicent.h
@@ -66,6 +70,7 @@ include/dcmtk/dcmdata/dcdict.h
 include/dcmtk/dcmdata/dcdirrec.h
 include/dcmtk/dcmdata/dcelem.h
 include/dcmtk/dcmdata/dcerror.h
+include/dcmtk/dcmdata/dcfcache.h
 include/dcmtk/dcmdata/dcfilefo.h
 include/dcmtk/dcmdata/dchashdi.h
 include/dcmtk/dcmdata/dcistrma.h
@@ -82,6 +87,7 @@ include/dcmtk/dcmdata/dcostrmb.h
 include/dcmtk/dcmdata/dcostrmf.h
 include/dcmtk/dcmdata/dcostrmz.h
 include/dcmtk/dcmdata/dcovlay.h
+include/dcmtk/dcmdata/dcpath.h
 include/dcmtk/dcmdata/dcpcache.h
 include/dcmtk/dcmdata/dcpixel.h
 include/dcmtk/dcmdata/dcpixseq.h
@@ -130,7 +136,17 @@ include/dcmtk/dcmdata/dcvrul.h
 include/dcmtk/dcmdata/dcvrulup.h
 include/dcmtk/dcmdata/dcvrus.h
 include/dcmtk/dcmdata/dcvrut.h
+include/dcmtk/dcmdata/dcwcache.h
 include/dcmtk/dcmdata/dcxfer.h
+include/dcmtk/dcmdata/libi2d/i2d.h
+include/dcmtk/dcmdata/libi2d/i2dbmps.h
+include/dcmtk/dcmdata/libi2d/i2dimgs.h
+include/dcmtk/dcmdata/libi2d/i2djpgs.h
+include/dcmtk/dcmdata/libi2d/i2doutpl.h
+include/dcmtk/dcmdata/libi2d/i2dplnsc.h
+include/dcmtk/dcmdata/libi2d/i2dplsc.h
+include/dcmtk/dcmdata/libi2d/i2dplvlp.h
+include/dcmtk/dcmdata/vrscan.h
 include/dcmtk/dcmimage/diargimg.h
 include/dcmtk/dcmimage/diargpxt.h
 include/dcmtk/dcmimage/dicmyimg.h
@@ -147,6 +163,7 @@ include/dcmtk/dcmimage/dicorot.h
 include/dcmtk/dcmimage/dicosct.h
 include/dcmtk/dcmimage/dihsvimg.h
 include/dcmtk/dcmimage/dihsvpxt.h
+include/dcmtk/dcmimage/dilogger.h
 include/dcmtk/dcmimage/dipalimg.h
 include/dcmtk/dcmimage/dipalpxt.h
 include/dcmtk/dcmimage/dipipng.h
@@ -244,6 +261,13 @@ include/dcmtk/dcmjpeg/djencsv1.h
 include/dcmtk/dcmjpeg/djrplol.h
 include/dcmtk/dcmjpeg/djrploss.h
 include/dcmtk/dcmjpeg/djutils.h
+include/dcmtk/dcmjpls/djcodecd.h
+include/dcmtk/dcmjpls/djcodece.h
+include/dcmtk/dcmjpls/djcparam.h
+include/dcmtk/dcmjpls/djdecode.h
+include/dcmtk/dcmjpls/djencode.h
+include/dcmtk/dcmjpls/djlsutil.h
+include/dcmtk/dcmjpls/djrparam.h
 include/dcmtk/dcmnet/assoc.h
 include/dcmtk/dcmnet/cond.h
 include/dcmtk/dcmnet/dcasccff.h
@@ -258,12 +282,16 @@ include/dcmtk/dcmnet/dcmlayer.h
 include/dcmtk/dcmnet/dcmsmap.h
 include/dcmtk/dcmnet/dcmtrans.h
 include/dcmtk/dcmnet/dcompat.h
+include/dcmtk/dcmnet/dcuserid.h
+include/dcmtk/dcmnet/dfindscu.h
 include/dcmtk/dcmnet/dicom.h
 include/dcmtk/dcmnet/dimse.h
 include/dcmtk/dcmnet/diutil.h
 include/dcmtk/dcmnet/dul.h
 include/dcmtk/dcmnet/extneg.h
 include/dcmtk/dcmnet/lst.h
+include/dcmtk/dcmnet/scp.h
+include/dcmtk/dcmnet/scu.h
 include/dcmtk/dcmpstat/dcmpstat.h
 include/dcmtk/dcmpstat/dvcache.h
 include/dcmtk/dcmpstat/dviface.h
@@ -348,6 +376,7 @@ include/dcmtk/dcmsr/dsrchecc.h
 include/dcmtk/dcmsr/dsrcitem.h
 include/dcmtk/dcmsr/dsrcodtn.h
 include/dcmtk/dcmsr/dsrcodvl.h
+include/dcmtk/dcmsr/dsrcolcc.h
 include/dcmtk/dcmsr/dsrcomcc.h
 include/dcmtk/dcmsr/dsrcomtn.h
 include/dcmtk/dcmsr/dsrcomvl.h
@@ -362,18 +391,24 @@ include/dcmtk/dcmsr/dsrenhcc.h
 include/dcmtk/dcmsr/dsrimgfr.h
 include/dcmtk/dcmsr/dsrimgtn.h
 include/dcmtk/dcmsr/dsrimgvl.h
+include/dcmtk/dcmsr/dsrimpcc.h
 include/dcmtk/dcmsr/dsriodcc.h
 include/dcmtk/dcmsr/dsrkeycc.h
+include/dcmtk/dcmsr/dsrmaccc.h
 include/dcmtk/dcmsr/dsrmamcc.h
 include/dcmtk/dcmsr/dsrnumtn.h
 include/dcmtk/dcmsr/dsrnumvl.h
 include/dcmtk/dcmsr/dsrpnmtn.h
 include/dcmtk/dcmsr/dsrprocc.h
 include/dcmtk/dcmsr/dsrreftn.h
+include/dcmtk/dcmsr/dsrsc3gr.h
+include/dcmtk/dcmsr/dsrsc3tn.h
+include/dcmtk/dcmsr/dsrsc3vl.h
 include/dcmtk/dcmsr/dsrscogr.h
 include/dcmtk/dcmsr/dsrscotn.h
 include/dcmtk/dcmsr/dsrscovl.h
 include/dcmtk/dcmsr/dsrsoprf.h
+include/dcmtk/dcmsr/dsrspecc.h
 include/dcmtk/dcmsr/dsrstrvl.h
 include/dcmtk/dcmsr/dsrtcodt.h
 include/dcmtk/dcmsr/dsrtcosp.h
@@ -394,13 +429,63 @@ include/dcmtk/dcmsr/dsrxmlc.h
 include/dcmtk/dcmsr/dsrxmld.h
 include/dcmtk/dcmsr/dsrxrdcc.h
 include/dcmtk/dcmtls/tlslayer.h
+include/dcmtk/dcmtls/tlsscu.h
 include/dcmtk/dcmtls/tlstrans.h
 include/dcmtk/dcmwlm/wlds.h
 include/dcmtk/dcmwlm/wldsfs.h
 include/dcmtk/dcmwlm/wlfsim.h
 include/dcmtk/dcmwlm/wlmactmg.h
 include/dcmtk/dcmwlm/wltypdef.h
+include/dcmtk/oflog/appender.h
+include/dcmtk/oflog/config.h
+include/dcmtk/oflog/config/defines.h
+include/dcmtk/oflog/config/macosx.h
+include/dcmtk/oflog/config/win32.h
+include/dcmtk/oflog/configrt.h
+include/dcmtk/oflog/consap.h
+include/dcmtk/oflog/fileap.h
+include/dcmtk/oflog/fstreams.h
+include/dcmtk/oflog/helpers/apndimpl.h
+include/dcmtk/oflog/helpers/lloguser.h
+include/dcmtk/oflog/helpers/loglog.h
+include/dcmtk/oflog/helpers/pointer.h
+include/dcmtk/oflog/helpers/property.h
+include/dcmtk/oflog/helpers/sleep.h
+include/dcmtk/oflog/helpers/sockbuff.h
+include/dcmtk/oflog/helpers/socket.h
+include/dcmtk/oflog/helpers/strhelp.h
+include/dcmtk/oflog/helpers/syncppth.h
+include/dcmtk/oflog/helpers/syncprims.h
+include/dcmtk/oflog/helpers/syncpwin.h
+include/dcmtk/oflog/helpers/threadcf.h
+include/dcmtk/oflog/helpers/threads.h
+include/dcmtk/oflog/helpers/timehelp.h
+include/dcmtk/oflog/hierarchy.h
+include/dcmtk/oflog/hierlock.h
+include/dcmtk/oflog/layout.h
+include/dcmtk/oflog/logger.h
+include/dcmtk/oflog/loglevel.h
+include/dcmtk/oflog/logmacro.h
+include/dcmtk/oflog/ndc.h
+include/dcmtk/oflog/ntelogap.h
+include/dcmtk/oflog/nullap.h
+include/dcmtk/oflog/oflog.h
+include/dcmtk/oflog/socketap.h
+include/dcmtk/oflog/spi/apndatch.h
+include/dcmtk/oflog/spi/factory.h
+include/dcmtk/oflog/spi/filter.h
+include/dcmtk/oflog/spi/logevent.h
+include/dcmtk/oflog/spi/logfact.h
+include/dcmtk/oflog/spi/logimpl.h
+include/dcmtk/oflog/spi/objreg.h
+include/dcmtk/oflog/spi/rootlog.h
+include/dcmtk/oflog/streams.h
+include/dcmtk/oflog/syslogap.h
+include/dcmtk/oflog/tstring.h
+include/dcmtk/oflog/winconap.h
+include/dcmtk/oflog/windebap.h
 include/dcmtk/ofstd/ofalgo.h
+include/dcmtk/ofstd/ofaptr.h
 include/dcmtk/ofstd/ofbmanip.h
 include/dcmtk/ofstd/ofcast.h
 include/dcmtk/ofstd/ofcmdln.h
@@ -411,10 +496,12 @@ include/dcmtk/ofstd/ofconsol.h
 include/dcmtk/ofstd/ofcrc32.h
 include/dcmtk/ofstd/ofdate.h
 include/dcmtk/ofstd/ofdatime.h
+include/dcmtk/ofstd/ofdefine.h
+include/dcmtk/ofstd/offile.h
 include/dcmtk/ofstd/offname.h
 include/dcmtk/ofstd/ofglobal.h
 include/dcmtk/ofstd/oflist.h
-include/dcmtk/ofstd/oflogfil.h
+include/dcmtk/ofstd/ofmap.h
 include/dcmtk/ofstd/ofoset.h
 include/dcmtk/ofstd/ofset.h
 include/dcmtk/ofstd/ofsetit.h
@@ -428,58 +515,136 @@ include/dcmtk/ofstd/oftime.h
 include/dcmtk/ofstd/oftimer.h
 include/dcmtk/ofstd/oftypes.h
 include/dcmtk/ofstd/ofuoset.h
-lib/dcm2xml.dtd
-lib/dicom.dic
-lib/dsr2xml.xsd
-lib/libdcmdata.so.%%SHLIBVER%%
+include/dcmtk/ofstd/ofvector.h
+lib/libcharls.a
+lib/libcharls.so
+lib/libcharls.so.%%SHLIBVER%%
+lib/libdcmdata.a
 lib/libdcmdata.so
-lib/libdcmdsig.so.%%SHLIBVER%%
+lib/libdcmdata.so.%%SHLIBVER%%
+lib/libdcmdsig.a
 lib/libdcmdsig.so
-lib/libdcmimage.so.%%SHLIBVER%%
+lib/libdcmdsig.so.%%SHLIBVER%%
+lib/libdcmimage.a
 lib/libdcmimage.so
-lib/libdcmimgle.so.%%SHLIBVER%%
+lib/libdcmimage.so.%%SHLIBVER%%
+lib/libdcmimgle.a
 lib/libdcmimgle.so
-lib/libdcmjpeg.so.%%SHLIBVER%%
+lib/libdcmimgle.so.%%SHLIBVER%%
+lib/libdcmjpeg.a
 lib/libdcmjpeg.so
-lib/libdcmnet.so.%%SHLIBVER%%
+lib/libdcmjpeg.so.%%SHLIBVER%%
+lib/libdcmjpls.a
+lib/libdcmjpls.so
+lib/libdcmjpls.so.%%SHLIBVER%%
+lib/libdcmnet.a
 lib/libdcmnet.so
-lib/libdcmpstat.so.%%SHLIBVER%%
+lib/libdcmnet.so.%%SHLIBVER%%
+lib/libdcmpstat.a
 lib/libdcmpstat.so
-lib/libdcmqrdb.so.%%SHLIBVER%%
+lib/libdcmpstat.so.%%SHLIBVER%%
+lib/libdcmqrdb.a
 lib/libdcmqrdb.so
-lib/libdcmsr.so.%%SHLIBVER%%
+lib/libdcmqrdb.so.%%SHLIBVER%%
+lib/libdcmsr.a
 lib/libdcmsr.so
-lib/libdcmtls.so.%%SHLIBVER%%
+lib/libdcmsr.so.%%SHLIBVER%%
+lib/libdcmtls.a
 lib/libdcmtls.so
-lib/libdcmwlm.so.%%SHLIBVER%%
+lib/libdcmtls.so.%%SHLIBVER%%
+lib/libdcmwlm.a
 lib/libdcmwlm.so
-lib/libijg12.so.%%SHLIBVER%%
+lib/libdcmwlm.so.%%SHLIBVER%%
+lib/libi2d.a
+lib/libi2d.so
+lib/libi2d.so.%%SHLIBVER%%
+lib/libijg12.a
 lib/libijg12.so
-lib/libijg16.so.%%SHLIBVER%%
+lib/libijg12.so.%%SHLIBVER%%
+lib/libijg16.a
 lib/libijg16.so
-lib/libijg8.so.%%SHLIBVER%%
+lib/libijg16.so.%%SHLIBVER%%
+lib/libijg8.a
 lib/libijg8.so
-lib/libofstd.so.%%SHLIBVER%%
+lib/libijg8.so.%%SHLIBVER%%
+lib/liboflog.a
+lib/liboflog.so
+lib/liboflog.so.%%SHLIBVER%%
+lib/libofstd.a
 lib/libofstd.so
+lib/libofstd.so.%%SHLIBVER%%
+%%DATADIR%%/SC.dump
+%%DATADIR%%/VLP.dump
 %%DATADIR%%/camera.lut
+%%DATADIR%%/dcm2xml.dtd
+%%DATADIR%%/dicom.dic
+%%DATADIR%%/diconde.dic
+%%DATADIR%%/dsr2xml.xsd
 %%DATADIR%%/dumppat.txt
 %%DATADIR%%/monitor.lut
 %%DATADIR%%/philips.lut
 %%DATADIR%%/printer.lut
+%%DATADIR%%/private.dic
+%%DATADIR%%/report.css
+%%DATADIR%%/reportx.css
 %%DATADIR%%/scanner.lut
-%%DATADIR%%/COPYRIGHT
-%%DATADIR%%/FAQ
-%%DATADIR%%/HISTORY
-%%DATADIR%%/asconfig.txt
-%%DATADIR%%/ciphers.txt
-%%DATADIR%%/datadict.txt
-%%DATADIR%%/dcmqrcnf.txt
-%%DATADIR%%/dcmqrset.txt
-%%DATADIR%%/randseed.txt
-%%DATADIR%%/testing.txt
-%%DATADIR%%/wwwapp.txt
+%%DATADIR%%/wlistdb/OFFIS/lockfile
+%%DATADIR%%/wlistdb/OFFIS/wklist1.dump
+%%DATADIR%%/wlistdb/OFFIS/wklist10.dump
+%%DATADIR%%/wlistdb/OFFIS/wklist2.dump
+%%DATADIR%%/wlistdb/OFFIS/wklist3.dump
+%%DATADIR%%/wlistdb/OFFIS/wklist4.dump
+%%DATADIR%%/wlistdb/OFFIS/wklist5.dump
+%%DATADIR%%/wlistdb/OFFIS/wklist6.dump
+%%DATADIR%%/wlistdb/OFFIS/wklist7.dump
+%%DATADIR%%/wlistdb/OFFIS/wklist8.dump
+%%DATADIR%%/wlistdb/OFFIS/wklist9.dump
+%%DATADIR%%/wlistdb/README
+%%DATADIR%%/wlistqry/README
+%%DATADIR%%/wlistqry/wlistqry0.dump
+%%DATADIR%%/wlistqry/wlistqry1.dump
+%%DATADIR%%/wlistqry/wlistqry10.dump
+%%DATADIR%%/wlistqry/wlistqry11.dump
+%%DATADIR%%/wlistqry/wlistqry12.dump
+%%DATADIR%%/wlistqry/wlistqry2.dump
+%%DATADIR%%/wlistqry/wlistqry3.dump
+%%DATADIR%%/wlistqry/wlistqry4.dump
+%%DATADIR%%/wlistqry/wlistqry5.dump
+%%DATADIR%%/wlistqry/wlistqry6.dump
+%%DATADIR%%/wlistqry/wlistqry7.dump
+%%DATADIR%%/wlistqry/wlistqry8.dump
+%%DATADIR%%/wlistqry/wlistqry9.dump
+%%DOCSDIR%%/config.txt
+%%DOCSDIR%%/envvars.txt
+%%DOCSDIR%%/modules.txt
+%%DOCSDIR%%/dirstruc.txt
+%%DOCSDIR%%/macros.txt
+%%DOCSDIR%%/datadict.txt
+%%DOCSDIR%%/ciphers.txt
+%%DOCSDIR%%/randseed.txt
+%%DOCSDIR%%/asconfig.txt
+%%DOCSDIR%%/testing.txt
+%%DOCSDIR%%/dcmqrcnf.txt
+%%DOCSDIR%%/dcmqrset.txt
+%%DOCSDIR%%/wwwapp.txt
+%%DOCSDIR%%/ANNOUNCE.360
+%%DOCSDIR%%/CHANGES.360
+%%DOCSDIR%%/COPYRIGHT
+%%DOCSDIR%%/FAQ
+%%DOCSDIR%%/HISTORY
+%%DOCSDIR%%/VERSION
+@dirrm %%DATADIR%%/wlistdb/OFFIS
+@dirrm %%DATADIR%%/wlistqry
+@dirrm %%DATADIR%%/wlistdb
 @dirrm %%DATADIR%%
+@dirrm %%DOCSDIR%%
+@dirrm etc/dcmtk
+@dirrm bin/dcmtk
 @dirrm include/dcmtk/ofstd
+@dirrm include/dcmtk/oflog/spi
+@dirrm include/dcmtk/oflog/helpers
+@dirrm include/dcmtk/oflog/config
+@dirrm include/dcmtk/oflog
 @dirrm include/dcmtk/dcmwlm
 @dirrm include/dcmtk/dcmtls
 @dirrm include/dcmtk/dcmsr
@@ -487,11 +652,11 @@ lib/libofstd.so
 @dirrm include/dcmtk/dcmqrdb
 @dirrm include/dcmtk/dcmpstat
 @dirrm include/dcmtk/dcmnet
+@dirrm include/dcmtk/dcmjpls
 @dirrm include/dcmtk/dcmjpeg
 @dirrm include/dcmtk/dcmimgle
 @dirrm include/dcmtk/dcmimage
+@dirrm include/dcmtk/dcmdata/libi2d
 @dirrm include/dcmtk/dcmdata
 @dirrm include/dcmtk/config
 @dirrm include/dcmtk
-@dirrm etc/dcmtk
-@dirrm bin/dcmtk
