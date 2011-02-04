@@ -49,7 +49,6 @@
     SUBDIR += dlv
     SUBDIR += dmd
     SUBDIR += dmd2
-    SUBDIR += dylan
     SUBDIR += ecl
     SUBDIR += eiffel
     SUBDIR += elan

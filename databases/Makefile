@@ -686,7 +686,6 @@
     SUBDIR += pymongo
     SUBDIR += qdbm
     SUBDIR += qdbm-plus
-    SUBDIR += qt-ibase-plugin
     SUBDIR += qt-mysql-plugin
     SUBDIR += qt-odbc-plugin
     SUBDIR += qt-pgsql-plugin
