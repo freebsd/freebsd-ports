@@ -226,7 +226,6 @@
     SUBDIR += nvi-iso-2022-jp
     SUBDIR += nvi-sjis
     SUBDIR += ochusha
-    SUBDIR += oleo
     SUBDIR += onew
     SUBDIR += otojiro-fpw
     SUBDIR += p5-Acme-Lou

@@ -1528,3 +1528,9 @@ mail/spamass-rules_du_jour||2011-02-01|Has expired: Use sa-update instead
 x11/accessx||2011-02-01|Has expired: Project abandoned, mastersite disappeared
 x11/kde3-apireference||2011-02-01|Has expired: outdated and obsolete
 misc/py-distutils||2011-02-02|Included in current python versions
+databases/qt-ibase-plugin||2011-02-04|Has expired: Port is broken on all supported versions of FreeBSD
+devel/ace+tao||2011-02-04|Has expired: Outdated and does not compile on any supported version of FreeBSD
+graphics/ray++||2011-02-04|Has expired: Does not compile on supported versions of FreeBSD
+japanese/oleo||2011-02-04|Has expired: Does not compile on supported versions of FreeBSD
+lang/dylan||2011-02-04|Has expired: does not build
+multimedia/jahshaka||2011-02-04|Has expired: Does not compile on supported versions of FreeBSD

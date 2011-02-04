@@ -14,7 +14,6 @@
     SUBDIR += aap
     SUBDIR += abi-compliance-checker
     SUBDIR += ace
-    SUBDIR += ace+tao
     SUBDIR += ace+tao-doc
     SUBDIR += acovea
     SUBDIR += acovea-gtk

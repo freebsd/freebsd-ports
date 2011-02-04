@@ -123,7 +123,6 @@
     SUBDIR += hayes
     SUBDIR += iriverter
     SUBDIR += iso2mkv
-    SUBDIR += jahshaka
     SUBDIR += jmref
     SUBDIR += k9copy
     SUBDIR += k9copy-kde4
