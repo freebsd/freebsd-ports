@@ -16,6 +16,8 @@ COMMENT=	Astropulse for BOINC
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+MANUAL_PACKAGE_BUILDING=	tinderbox does not understand :patch depend targets
+
 BUILD_DEPENDS=	${LOCALBASE}/include/fftw3.h:${PORTSDIR}/math/fftw3 \
 		${LOCALBASE}/bin/bash:${PORTSDIR}/shells/bash \
 		${NONEXISTENT}:${PORTSDIR}/astro/boinc-setiathome-enhanced:patch
