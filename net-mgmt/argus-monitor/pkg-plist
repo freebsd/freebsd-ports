@@ -115,6 +115,7 @@ www/argus-monitor/docroot/img/smile.gif
 www/argus-monitor/docroot/sound/whoopwhoop.wav
 www/argus-monitor/cgi-bin/arguscgi
 www/argus-monitor/cgi-bin/argusvxml
+@dirrmtry %%APACHEETCDIR%%/Includes
 @dirrm lib/argus-monitor/DNS
 @dirrm lib/argus-monitor/Chart
 @dirrm lib/argus-monitor/Argus/SIP
