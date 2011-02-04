@@ -1788,8 +1788,8 @@ lib/libreoffice/basis%%LOVER%%/presets/gallery/sg100.thm
 lib/libreoffice/basis%%LOVER%%/presets/gallery/sg30.sdv
 lib/libreoffice/basis%%LOVER%%/presets/gallery/sg30.thm
 lib/libreoffice/basis%%LOVER%%/program/OGLTrans.uno.so
-%%GNOMEOPT%%/lib/libreoffice/basis%%LOVER%%/program/gconfbe1.uno.so
-%%GNOMEOPT%%/lib/libreoffice/basis%%LOVER%%/program/ucpgvfs1.uno.so
+%%GNOMEOPT%%lib/libreoffice/basis%%LOVER%%/program/gconfbe1.uno.so
+%%GNOMEOPT%%lib/libreoffice/basis%%LOVER%%/program/ucpgvfs1.uno.so
 lib/libreoffice/basis%%LOVER%%/program/cde-open-url
 lib/libreoffice/basis%%LOVER%%/program/fundamentalbasisrc
 lib/libreoffice/basis%%LOVER%%/program/gengal
