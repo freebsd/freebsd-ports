@@ -162,6 +162,7 @@ lib/lilypond/%%PORTVERSION%%/python/midi.so
 %%DATADIR%%/%%PORTVERSION%%/ly/scale-definitions-init.ly
 %%DATADIR%%/%%PORTVERSION%%/ly/script-init.ly
 %%DATADIR%%/%%PORTVERSION%%/ly/spanners-init.ly
+%%DATADIR%%/%%PORTVERSION%%/ly/string-tunings-init.ly
 %%DATADIR%%/%%PORTVERSION%%/ly/suomi.ly
 %%DATADIR%%/%%PORTVERSION%%/ly/svenska.ly
 %%DATADIR%%/%%PORTVERSION%%/ly/titling-init.ly
@@ -322,6 +323,7 @@ share/emacs/site-lisp/lilypond-words.el
 share/locale/cs/LC_MESSAGES/lilypond.mo
 share/locale/da/LC_MESSAGES/lilypond.mo
 share/locale/de/LC_MESSAGES/lilypond.mo
+share/locale/el/LC_MESSAGES/lilypond.mo
 share/locale/es/LC_MESSAGES/lilypond.mo
 share/locale/fi/LC_MESSAGES/lilypond.mo
 share/locale/fr/LC_MESSAGES/lilypond.mo
