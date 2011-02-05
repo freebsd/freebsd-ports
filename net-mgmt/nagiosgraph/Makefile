@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	nagiosgraph
-PORTVERSION=	1.4.3
+PORTVERSION=	1.4.4
 CATEGORIES=	net-mgmt
 MASTER_SITES=	SF
 
@@ -21,7 +21,8 @@ NO_BUILD=	yes
 
 PORTDOCS=	AUTHORS CHANGELOG INSTALL README TODO
 NAGIOSWWWDIR?=	www/nagios
-CGIFILES=	show.cgi showgraph.cgi showhost.cgi showservice.cgi testcolor.cgi showgroup.cgi
+CGIFILES=	show.cgi showconfig.cgi showgraph.cgi showgroup.cgi showhost.cgi \
+		showservice.cgi testcolor.cgi
 LIBFILES=	insert.pl
 CFGFILES=	nagiosgraph.conf nagiosgraph_de.conf nagiosgraph_es.conf nagiosgraph_fr.conf \
 		servdb.conf groupdb.conf hostdb.conf datasetdb.conf map access.conf labels.conf \
@@ -68,7 +69,7 @@ do-install:
 .endfor
 
 	${MV} ${PREFIX}/${NAGIOSWWWDIR}/images/action.gif ${PREFIX}/${NAGIOSWWWDIR}/images/action.gif.bak
-	${INSTALL_DATA} ${WRKSRC}/share/action.gif ${PREFIX}/${NAGIOSWWWDIR}/images/action.gif
+	${INSTALL_DATA} ${WRKSRC}/share/graph.gif ${PREFIX}/${NAGIOSWWWDIR}/images/action.gif
 
 .if !defined(NOPORTEXAMPLES)
 	${MKDIR} ${EXAMPLESDIR}
