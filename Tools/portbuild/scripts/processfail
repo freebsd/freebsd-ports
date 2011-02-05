@@ -44,7 +44,7 @@ footer() {
 #
 # Create "default" output, sorted on portname
 #
-header "<th>Port</th><th>Package</th><th>Broken</th><th>Last</th><th>#</th>"
+header "<th>Port</th><th>Build log</th><th>First broken</th><th>Last tried</th><th># tries</th>"
 
 dirname() {
 	echo ${1%/*}
