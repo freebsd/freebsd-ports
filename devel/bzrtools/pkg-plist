@@ -13,6 +13,9 @@
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/cbranch.py
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/cbranch.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/cbranch.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/check-release.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/check-release.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/check-release.pyo
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/colordiff.py
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/colordiff.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/colordiff.pyo
@@ -58,9 +61,6 @@
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/progress.py
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/progress.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/progress.pyo
-%%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/release.py
-%%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/release.pyc
-%%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/release.pyo
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/rspush.py
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/rspush.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/rspush.pyo
