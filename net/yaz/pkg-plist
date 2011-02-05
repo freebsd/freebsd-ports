@@ -65,6 +65,7 @@ include/yaz/sortspec.h
 include/yaz/spipe.h
 include/yaz/srw.h
 include/yaz/statserv.h
+include/yaz/stemmer.h
 include/yaz/tcpip.h
 include/yaz/test.h
 include/yaz/thread_create.h
