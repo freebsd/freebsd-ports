@@ -5,17 +5,19 @@
 # $FreeBSD$
 
 PORTNAME=	amarok
-PORTVERSION=	2.3.2
+PORTVERSION=	2.4.0
 CATEGORIES=	audio kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/${PORTNAME}/${PORTVERSION}/src
 
-MAINTAINER=	datahead4@gmail.com
+MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Media player for KDE4
 
 LIB_DEPENDS=	tag.1:${PORTSDIR}/audio/taglib \
 		tag-extras.1:${PORTSDIR}/audio/taglib-extras \
 		lastfm.0:${PORTSDIR}/audio/liblastfm \
+		ofa:${PORTSDIR}/audio/libofa \
+		avcodec.1:${PORTSDIR}/multimedia/ffmpeg \
 		qca.2:${PORTSDIR}/devel/qca
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/qt4/plugins/script/libqtscript_core.so.1.0.0:${PORTSDIR}/devel/qtscriptgenerator \
@@ -26,7 +28,7 @@ LATEST_LINK=	${PORTNAME}-kde4
 
 MAKE_JOBS_SAFE=	yes
 USE_BZIP2=	yes
-USE_KDE4=	kdehier kdeprefix kdelibs automoc4
+USE_KDE4=	kdehier kdeprefix kdelibs runtime automoc4
 USE_QT_VER=	4
 QT_COMPONENTS=	corelib gui network opengl script svg webkit \
 		qmake_build moc_build rcc_build uic_build phonon
@@ -77,7 +79,6 @@ post-extract:
 		${WRKSRC}/cmake/modules/FindMySQLAmarok.cmake
 	${REINPLACE_CMD} -e 's|/usr/include|${LOCALBASE}/include|' \
 		${WRKSRC}/cmake/modules/FindIpod.cmake \
-		${WRKSRC}/cmake/modules/FindLoudmouth.cmake \
-		${WRKSRC}/cmake/modules/FindGdk.cmake
+		${WRKSRC}/cmake/modules/FindLoudmouth.cmake
 
 .include <bsd.port.mk>
