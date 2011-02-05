@@ -1,0 +1,8 @@
+@comment $FreeBSD$
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Web/oEmbed/.packlist
+%%SITE_PERL%%/Web/oEmbed.pm
+%%SITE_PERL%%/Web/oEmbed/Response.pm
+@dirrmtry %%SITE_PERL%%/Web/oEmbed
+@dirrmtry %%SITE_PERL%%/Web
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Web/oEmbed
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Web
