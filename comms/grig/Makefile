@@ -21,6 +21,7 @@ GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 
 MAN1=		grig.1
+LICENSE=	GPLv2
 
 post-patch:
 	@${FIND} ${WRKSRC} -name Makefile.* | ${XARGS} ${REINPLACE_CMD} -e \
