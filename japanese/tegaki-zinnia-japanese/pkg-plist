@@ -1,0 +1,5 @@
+share/tegaki/models/zinnia/handwriting-ja.meta
+share/tegaki/models/zinnia/handwriting-ja.model
+@dirrm share/tegaki/models/zinnia
+@dirrm share/tegaki/models
+@dirrm share/tegaki
