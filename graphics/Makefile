@@ -807,6 +807,7 @@
     SUBDIR += py-soya3d
     SUBDIR += py-visual
     SUBDIR += pygts
+    SUBDIR += pymorph
     SUBDIR += pyro
     SUBDIR += pysvg
     SUBDIR += q-graph
