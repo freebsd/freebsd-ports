@@ -611,6 +611,7 @@
     SUBDIR += rubygem-mail
     SUBDIR += rubygem-mailfactory
     SUBDIR += rubygem-pony
+    SUBDIR += rubygem-qmail
     SUBDIR += rubygem-rmail
     SUBDIR += rubygem-smtp_tls
     SUBDIR += rubygem-tmail
