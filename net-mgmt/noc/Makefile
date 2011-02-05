@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	noc
-PORTVERSION=	0.3.2
+PORTVERSION=	0.6
 CATEGORIES=	net-mgmt python
-MASTER_SITES=	http://trac.nocproject.org/trac/downloads/
+MASTER_SITES=	http://redmine.nocproject.org/attachments/download/79/
 DISTNAME=	noc-${PORTVERSION}
 
 MAINTAINER=	count@211.ru
@@ -19,18 +19,24 @@ BUILD_DEPENDS=	easy_install:${PORTSDIR}/devel/py-setuptools \
     		${PYTHON_PKGNAMEPREFIX}sphinx>0:${PORTSDIR}/textproc/py-sphinx \
 		${PYTHON_PKGNAMEPREFIX}flup>0:${PORTSDIR}/www/py-flup
 RUN_DEPENDS=	django-admin.py:${PORTSDIR}/www/py-django \
+		${PYTHON_PKGNAMEPREFIX}django-tagging>0:${PORTSDIR}/www/py-django-tagging \
+		${PYTHON_PKGNAMEPREFIX}south>0:${PORTSDIR}/databases/py-south \
+		${PYTHON_PKGNAMEPREFIX}coverage>0:${PORTSDIR}/devel/py-coverage \
+		${PYTHON_PKGNAMEPREFIX}protobuf>0:${PORTSDIR}/devel/py-protobuf \
 		${PYTHON_SITELIBDIR}/psycopg2/_psycopg.so:${PORTSDIR}/databases/py-psycopg2 \
 		${PYTHON_SITELIBDIR}/pysnmp/v4/__init__.py:${PORTSDIR}/net-mgmt/py-snmp4 \
-		${PYTHON_PKGNAMEPREFIX}south>0:${PORTSDIR}/databases/py-south \
 		${PYTHON_PKGNAMEPREFIX}creole>0:${PORTSDIR}/textproc/py-creole \
-		${PYTHON_PKGNAMEPREFIX}netifaces>0:${PORTSDIR}/net/py-netifaces \
-		${PYTHON_PKGNAMEPREFIX}protobuf>0:${PORTSDIR}/devel/py-protobuf
+		${PYTHON_PKGNAMEPREFIX}webob>0:${PORTSDIR}/www/py-webob \
+		${PYTHON_PKGNAMEPREFIX}WebTest>0:${PORTSDIR}/www/py-WebTest \
+		${PYTHON_PKGNAMEPREFIX}netifaces>0:${PORTSDIR}/net/py-netifaces
 
 USE_PYTHON=	2.6+
 USE_PYDISTUTILS=	yes
-PYDISTUTILS_EGGINFODIR=	${NOCDIR}
+PYDISTUTILS_NOEGGINFO=	yes
 
 CONFLICTS=	noc-devel-[0-9].*
+
+LICENSE=	BSD
 
 NOCUSER?=	noc
 NOCGROUP?=	noc
@@ -70,6 +76,13 @@ NOC_CONF_FILES=	etc/noc-activator.defaults \
 		etc/noc-sae.defaults \
 		etc/noc-probe.defaults \
 		etc/noc.defaults
+
+post-extract:
+	@(cd ${WRKSRC}; \
+	    ${RM} -rf contrib/src; \
+	    ${REINPLACE_CMD} -e "/^contrib\/src/ d;" MANIFEST ; \
+	    ${REINPLACE_CMD} -e "/^contrib/ d;" MANIFEST-ACTIVATOR ; \
+	)
 
 post-patch:
 	@(cd ${WRKSRC}; \
