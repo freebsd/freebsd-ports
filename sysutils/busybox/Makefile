@@ -6,13 +6,15 @@
 #
 
 PORTNAME=	busybox
-PORTVERSION=	1.13.4
+PORTVERSION=	1.18.2
 CATEGORIES=	sysutils misc shells
 MASTER_SITES=	http://www.busybox.net/downloads/ \
 		http://distfiles.gentoo.org/distfiles/
 
 MAINTAINER=	utisoft@gmail.com
 COMMENT=	Busybox for FreeBSD
+
+BUILD_DEPENDS=	gsed:${PORTSDIR}/textproc/gsed
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
@@ -22,10 +24,10 @@ PLIST_FILES=	bin/busybox
 .include <bsd.port.pre.mk>
 
 post-patch:
-	@${FIND} ${WRKSRC} -name '*.[ch]' | ${XARGS} \
-		${REINPLACE_CMD} -e 's/ dprintf(/ bb_dprintf(/g'
-	${REINPLACE_CMD} -e 's/fdprintf dprintf/fdprintf bb_dprintf/g' \
-		${WRKSRC}/include/platform.h
+	@${REINPLACE_CMD} -e 's/sed/gsed/' ${WRKSRC}/scripts/gen_build_files.sh
+	@${REINPLACE_CMD} -e 's/<malloc.h>/<stdlib.h>/' \
+		${WRKSRC}/libbb/appletlib.c \
+		${WRKSRC}/shell/hush.c
 
 do-configure:
 	${CP} ${FILESDIR}/data-.config ${WRKSRC}/.config
