@@ -10,8 +10,6 @@ include/digikam/cbfilter.h
 include/digikam/cbsettings.h
 include/digikam/cietonguewidget.h
 include/digikam/colorgradientwidget.h
-include/digikam/curvesbox.h
-include/digikam/curveswidget.h
 include/digikam/dcolor.h
 include/digikam/dcolorblend.h
 include/digikam/dcolorcomposer.h
@@ -26,9 +24,6 @@ include/digikam/dpopupmenu.h
 include/digikam/dprogressdlg.h
 include/digikam/dzoombar.h
 include/digikam/exifwidget.h
-include/digikam/histogrambox.h
-include/digikam/histogrampainter.h
-include/digikam/histogramwidget.h
 include/digikam/hslfilter.h
 include/digikam/iccpreviewwidget.h
 include/digikam/iccprofileinfodlg.h
@@ -36,7 +31,6 @@ include/digikam/iccprofilewidget.h
 include/digikam/icctransform.h
 include/digikam/imagecurves.h
 include/digikam/imagedialog.h
-include/digikam/imagehistogram.h
 include/digikam/imageiface.h
 include/digikam/imagelevels.h
 include/digikam/imageplugin.h
@@ -149,6 +143,7 @@ share/apps/digikam/data/pine-pattern.png
 share/apps/digikam/data/pink-pattern.png
 share/apps/digikam/data/rain-pattern.png
 share/apps/digikam/data/rock-pattern.png
+share/apps/digikam/data/sample-aix.png
 share/apps/digikam/data/splash-digikam.png
 share/apps/digikam/data/stone-pattern.png
 share/apps/digikam/data/stone-texture.png
@@ -564,6 +559,37 @@ share/apps/digikam/icons/hicolor/scalable/actions/superimpose.svgz
 share/apps/digikam/icons/hicolor/scalable/actions/texture.svgz
 share/apps/digikam/icons/hicolor/scalable/actions/tonemap.svgz
 share/apps/digikam/icons/hicolor/scalable/actions/whitebalance.svgz
+share/apps/digikam/lensfun/6x6.xml
+share/apps/digikam/lensfun/compact-canon.xml
+share/apps/digikam/lensfun/compact-casio.xml
+share/apps/digikam/lensfun/compact-fujifilm.xml
+share/apps/digikam/lensfun/compact-kodak.xml
+share/apps/digikam/lensfun/compact-konica-minolta.xml
+share/apps/digikam/lensfun/compact-leica.xml
+share/apps/digikam/lensfun/compact-nikon.xml
+share/apps/digikam/lensfun/compact-olympus.xml
+share/apps/digikam/lensfun/compact-panasonic.xml
+share/apps/digikam/lensfun/compact-pentax.xml
+share/apps/digikam/lensfun/compact-ricoh.xml
+share/apps/digikam/lensfun/compact-sigma.xml
+share/apps/digikam/lensfun/compact-sony.xml
+share/apps/digikam/lensfun/generic.xml
+share/apps/digikam/lensfun/rf-leica.xml
+share/apps/digikam/lensfun/slr-canon.xml
+share/apps/digikam/lensfun/slr-contax.xml
+share/apps/digikam/lensfun/slr-hasselblad.xml
+share/apps/digikam/lensfun/slr-konica-minolta.xml
+share/apps/digikam/lensfun/slr-nikon.xml
+share/apps/digikam/lensfun/slr-olympus.xml
+share/apps/digikam/lensfun/slr-panasonic.xml
+share/apps/digikam/lensfun/slr-pentax.xml
+share/apps/digikam/lensfun/slr-samsung.xml
+share/apps/digikam/lensfun/slr-schneider.xml
+share/apps/digikam/lensfun/slr-sigma.xml
+share/apps/digikam/lensfun/slr-sony.xml
+share/apps/digikam/lensfun/slr-tamron.xml
+share/apps/digikam/lensfun/slr-tokina.xml
+share/apps/digikam/lensfun/slr-ussr.xml
 share/apps/digikam/lighttablewindowui.rc
 share/apps/digikam/queuemgrwindowui.rc
 share/apps/digikam/themes/Blue
@@ -642,6 +668,7 @@ share/locale/km/LC_MESSAGES/digikam.mo
 share/locale/ko/LC_MESSAGES/digikam.mo
 share/locale/lt/LC_MESSAGES/digikam.mo
 share/locale/lv/LC_MESSAGES/digikam.mo
+share/locale/ms/LC_MESSAGES/digikam.mo
 share/locale/nb/LC_MESSAGES/digikam.mo
 share/locale/nds/LC_MESSAGES/digikam.mo
 share/locale/ne/LC_MESSAGES/digikam.mo
@@ -667,6 +694,7 @@ share/locale/zh_TW/LC_MESSAGES/digikam.mo
 @dirrm share/apps/showfoto
 @dirrm share/apps/digikam/utils
 @dirrm share/apps/digikam/themes
+@dirrm share/apps/digikam/lensfun
 @dirrm share/apps/digikam/icons/hicolor/scalable/actions
 @dirrm share/apps/digikam/icons/hicolor/scalable
 @dirrm share/apps/digikam/icons/hicolor/64x64/mimetypes

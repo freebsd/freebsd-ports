@@ -1,16 +1,16 @@
 --- CMakeLists.txt.orig	2010-03-29 01:26:06.000000000 +0300
 +++ CMakeLists.txt	2010-03-30 09:42:27.978741828 +0300
-@@ -134,9 +134,6 @@
+@@ -137,9 +137,6 @@
  FIND_PACKAGE(PNG)
  FIND_PACKAGE(TIFF)
  FIND_PACKAGE(Jasper)
 -FIND_PACKAGE(Kdcraw)
 -FIND_PACKAGE(Kexiv2)
 -FIND_PACKAGE(Kipi)
+ FIND_PACKAGE(PGF)
+ FIND_PACKAGE(CLAPACK)
  
- # Extract version of libjpeg so that we can use the appropriate dir
- # See bug #227313, #228483
-@@ -150,31 +147,50 @@
+@@ -163,31 +160,50 @@
      SET(DIGIKAM_LIBJPEG_DIR libjpeg-80)
  ENDIF ("${jpeglib_version}" LESS 80)
  
