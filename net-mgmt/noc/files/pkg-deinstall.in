@@ -20,7 +20,7 @@ if [ "$2" = "POST-DEINSTALL" ]; then
     ##
     ## Remove created directories
     ##
-    for d in ${NOCDIR}/local ${NOCDIR}/static/doc ${NOCDIR} ${NOCDBDIR}/repo ${NOCDBDIR}/backup ${NOCDBDIR} /var/log/noc; do
+    for d in ${NOCDIR}/local ${NOCDIR}/static ${NOCDIR}/static/* ${NOCDIR} ${NOCDBDIR}/repo ${NOCDBDIR}/backup ${NOCDBDIR} /var/log/noc ${LOCALSTATE_DIR}; do
 	if [ -e $d ]; then
 	    echo "You should manually remove the \"${d}\" directory."
 	fi
