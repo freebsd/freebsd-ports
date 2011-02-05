@@ -14,11 +14,13 @@ share/applications/bombono-dvd.desktop
 %%DATADIR%%/resources/button/008.ico
 %%DATADIR%%/resources/button/still.ico
 %%DATADIR%%/resources/cap400.png
-%%DATADIR%%/resources/copy-n-paste/lpetool_show_bbox.png
+%%DATADIR%%/resources/copy-n-paste/FreeSans.ttf
 %%DATADIR%%/resources/copy-n-paste/HelixPlayer_Activity-watch-listen.svg
 %%DATADIR%%/resources/copy-n-paste/HelixPlayer_Activity-watch-listen/12.png
 %%DATADIR%%/resources/copy-n-paste/HelixPlayer_Activity-watch-listen/16.png
 %%DATADIR%%/resources/copy-n-paste/HelixPlayer_Activity-watch-listen/28.png
+%%DATADIR%%/resources/copy-n-paste/codepages.lst
+%%DATADIR%%/resources/copy-n-paste/lpetool_show_bbox.png
 %%DATADIR%%/resources/dvdmark.png
 %%DATADIR%%/resources/emblems/README
 %%DATADIR%%/resources/emblems/audio-x-generic.png
@@ -52,6 +54,7 @@ share/applications/bombono-dvd.desktop
 %%DATADIR%%/resources/emblems/tmp/stock_wallpaper-fill.png
 %%DATADIR%%/resources/emblems/tmp/weather-clear-night.png
 %%DATADIR%%/resources/emblems/tmp/weather-clear.png
+%%DATADIR%%/resources/emblems/transcoding.png
 %%DATADIR%%/resources/emblems/video-x-generic.png
 %%DATADIR%%/resources/frames/cell/frame.png
 %%DATADIR%%/resources/frames/cell/vframe.png
