@@ -3,9 +3,10 @@
 # Whom:			fenner@FreeBSD.Org
 #
 # $FreeBSD$
+#
 
 PORTNAME=	idnits
-PORTVERSION=	2.12.05
+PORTVERSION=	2.12.06
 CATEGORIES=	textproc
 MASTER_SITES=	http://tools.ietf.org/tools/idnits/ \
 		LOCAL/sunpoet
@@ -18,10 +19,10 @@ RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
 
 NO_BUILD=	yes
 
-PLIST_FILES=	bin/idnits
+PLIST_FILES=	bin/${PORTNAME}
 
 post-patch:
-	@${REINPLACE_CMD} -e '1 s|^#!/bin/bash|#!${LOCALBASE}/bin/bash|g' \
+	@${REINPLACE_CMD} -e '1 s|^#!/bin/bash|#!${LOCALBASE}/bin/bash|' \
 		${WRKSRC}/${PORTNAME}
 
 do-install:
