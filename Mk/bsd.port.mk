@@ -3495,7 +3495,7 @@ check-vulnerable:
 		vlist=`${_EXTRACT_AUDITFILE} | ${GREP} "${PORTNAME}" | \
 			${AWK} -F\| ' /^[^#]/ { \
 				if (!system("${PKG_VERSION} -T \"${PKGNAME}\" \"" $$1 "\"")) \
-					print "=> " $$3 ".\n   Reference: <" $$2 ">" \
+					print "=> " $$3 ".\n   Reference: " $$2 \
 			} \
 		'`; \
 		if [ -n "$$vlist" ]; then \
