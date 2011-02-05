@@ -1,0 +1,247 @@
+--- devfs.c	2006-03-14 14:07:08.000000000 +0300
++++ devfs.c	2010-10-22 13:06:31.000000000 +0400
+@@ -50,9 +50,7 @@
+ #include "fuser.h"
+ 
+ int
+-devfs_filestat(vp, fsp)
+-	const vnode_t	*vp;
+-	finfo_t		*fsp;
++devfs_filestat(const vnode_t *vp, finfo_t *fsp)
+ {
+ 	struct devfs_dirent	devfs_dirent;
+ 	struct mount		mount;
+--- fuser.c	2010-10-22 12:08:03.000000000 +0400
++++ fuser.c	2010-10-22 13:05:43.000000000 +0400
+@@ -249,10 +249,7 @@
+ }
+ 
+ void
+-print_file_info(pid, uid, ufl)
+-	pid_t		pid;
+-	uid_t		uid;
+-	int		ufl;
++print_file_info(pid_t pid, uid_t uid, int ufl)
+ {
+ 	uint	i;
+ 
+@@ -273,8 +270,7 @@
+  * Add file to the list.
+  */
+ static int
+-addfile(path)
+-	const char	*path;
++addfile(const char *path)
+ {
+ 	struct stat	sb;
+ 	int		type;
+@@ -314,9 +310,7 @@
+  * by a given process and add suitable entries to list. 
+  */
+ static int
+-add_ofiles(fd, head)
+-	const struct filedesc	*fd;
+-	fds_head_t		*head;
++add_ofiles(const struct filedesc *fd, fds_head_t *head)
+ {
+ 	struct file	**ofiles;
+ 	struct file	file;
+@@ -389,8 +383,7 @@
+  * This routine returns controlling tty of the process, if exist.
+  */
+ const vnode_t *
+-get_ctty(p)
+-	const kinfo_proc_t	*p;
++get_ctty(const kinfo_proc_t *p)
+ {
+ 	struct proc	proc;
+ 	struct pgrp	pgrp;
+@@ -430,8 +423,7 @@
+  * given process. The structure's pointer will be inserted in the list.
+  */
+ int
+-gather_pinfo(p)
+-	const kinfo_proc_t	*p;
++gather_pinfo(const kinfo_proc_t *p)
+ {
+ 	struct filedesc	fd_info;
+ 	pinfo_t		*pinfo;
+@@ -484,10 +476,7 @@
+  * Insert finfo structure for given vnode into the list
+  */
+ static int
+-vp2finfo(vp, head, ufl)
+-	const vnode_t	*vp;
+-	fds_head_t	*head;
+-	int		ufl;
++vp2finfo(const vnode_t *vp, fds_head_t *head, int ufl)
+ {
+ 	vnode_t		vn;
+ 	finfo_t		*finfo;
+@@ -540,9 +529,7 @@
+  * informations how given file is used.
+  */
+ static int
+-get_uflags(rfile, pinfo)
+-	const reqfile_t	*rfile;
+-	const pinfo_t	*pinfo;
++get_uflags(const reqfile_t *rfile, const pinfo_t *pinfo)
+ {
+ 	finfo_t	*fd;
+ 	int	ufl = 0;
+@@ -586,8 +573,7 @@
+  * Helper routine to free pinfo structure
+  */
+ static void
+-pinfo_free(pinfo)
+-	pinfo_t	*pinfo;
++pinfo_free(pinfo_t *pinfo)
+ {
+ 	
+ 	ASSERT(pinfo);
+@@ -596,9 +582,7 @@
+ }
+ 
+ int
+-main(argc, argv)
+-	int	argc;
+-	char	*argv[];	
++main(int argc, char *argv[])
+ {
+ 	reqfile_t	*rfile;
+ 	pinfo_t		*pinfo;
+@@ -724,8 +708,7 @@
+  * associated dev_t.
+  */
+ dev_t
+-dev2udev(dev)
+-	struct cdev	*dev;
++dev2udev(struct cdev *dev)
+ {
+ 	struct cdev_priv	priv;
+ 	int			ret;
+@@ -740,9 +723,7 @@
+ }
+ 
+ int
+-add_mmapped(p, head)
+-	const kinfo_proc_t	*p;
+-	fds_head_t		*head;
++add_mmapped(const kinfo_proc_t *p, fds_head_t *head)
+ {
+ 	vm_map_t map;
+ 	struct vmspace vmspace;
+@@ -803,8 +784,7 @@
+  * Returns signal number for it's string representation
+  */
+ static int
+-str2sig(str)
+-	const char	*str;
++str2sig(const char *str)
+ {
+         int n;
+ 
+--- isofs.c	2005-08-25 05:19:02.000000000 +0400
++++ isofs.c	2010-10-22 13:06:15.000000000 +0400
+@@ -55,9 +55,7 @@
+ #include "fuser.h"
+ 
+ int
+-isofs_filestat(vp, fsp)
+-	const vnode_t	*vp;
+-	finfo_t		*fsp;
++isofs_filestat(const vnode_t *vp, finfo_t *fsp)
+ {
+ 	struct iso_node	node;
+ 	struct iso_mnt	mnt;
+--- msdosfs.c	2010-10-22 12:08:03.000000000 +0400
++++ msdosfs.c	2010-10-22 13:05:59.000000000 +0400
+@@ -65,9 +65,7 @@
+ #define VTODE(vp)	((struct denode *)(vp)->v_data)
+ 
+ int
+-msdosfs_filestat(vp, fsp)
+-	const vnode_t	*vp;
+-	finfo_t		*fsp;
++msdosfs_filestat( const vnode_t *vp, finfo_t *fsp)
+ {
+ 	struct denode		denode;
+ 	u_long			dirsperblk;
+--- nfs.c	2010-10-22 12:08:03.000000000 +0400
++++ nfs.c	2010-10-22 13:07:04.000000000 +0400
+@@ -50,9 +50,7 @@
+ #include "fuser.h"
+ 
+ int
+-nfs_filestat(vp, fsp)
+-	const vnode_t	*vp;
+-	finfo_t		*fsp;
++nfs_filestat(const vnode_t *vp, finfo_t *fsp)
+ {
+ 	struct nfsnode	nfsnode;
+ 	int		ret;
+--- ntfs.c	2005-08-25 05:19:02.000000000 +0400
++++ ntfs.c	2010-10-22 13:07:22.000000000 +0400
+@@ -42,9 +42,7 @@
+ #include "fuser.h"
+ 
+ int
+-ntfs_filestat(vp, fsp)
+-	const vnode_t	*vp;
+-	finfo_t		*fsp;
++ntfs_filestat(const vnode_t *vp, finfo_t *fsp)
+ {
+ 	struct fnode		fnod;
+ 	struct ntnode		node;
+--- nwfs.c	2005-08-25 05:19:02.000000000 +0400
++++ nwfs.c	2010-10-22 13:07:36.000000000 +0400
+@@ -44,9 +44,7 @@
+ #include "fuser.h"
+ 
+ int
+-nwfs_filestat(vp, fsp)
+-	const vnode_t	*vp;
+-	finfo_t		*fsp;
++nwfs_filestat(const vnode_t *vp, finfo_t *fsp)
+ {
+ 	struct nwnode	node;
+ 	struct mount	mnt;
+--- smbfs.c	2005-08-25 05:27:58.000000000 +0400
++++ smbfs.c	2010-10-22 13:07:53.000000000 +0400
+@@ -44,9 +44,7 @@
+ #include "fuser.h"
+ 
+ int
+-smbfs_filestat(vp, fsp)
+-	const vnode_t	*vp;
+-	finfo_t		*fsp;
++smbfs_filestat(const vnode_t *vp, finfo_t *fsp)
+ {
+ 	struct smbnode	node;
+ 	struct mount	mnt;
+--- udf.c	2006-03-14 14:07:08.000000000 +0300
++++ udf.c	2010-10-22 13:08:07.000000000 +0400
+@@ -75,9 +75,7 @@
+ #define VTON(vp)	((struct udf_node *)((vp)->v_data))
+ 
+ int
+-udf_filestat(vp, fsp)
+-	const vnode_t	*vp;
+-	finfo_t		*fsp;
++udf_filestat(const vnode_t *vp, finfo_t *fsp)
+ {
+ 	struct udf_node	node;
+ 	struct udf_mnt	mnt;
+--- ufs.c	2005-08-24 18:05:29.000000000 +0400
++++ ufs.c	2010-10-22 13:06:50.000000000 +0400
+@@ -50,9 +50,7 @@
+ #include "fuser.h"
+ 
+ int
+-ufs_filestat(vp, finfo)
+-	const vnode_t	*vp;
+-	finfo_t		*finfo;
++ufs_filestat(const vnode_t *vp, finfo_t *finfo)
+ {
+ 	struct inode	inode;
+ 	int		ret;
