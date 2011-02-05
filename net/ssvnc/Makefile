@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	ssvnc
-PORTVERSION=	1.0.22
-PORTREVISION=	2
+PORTVERSION=	1.0.28
 CATEGORIES=	net security
 MASTER_SITES=	SF
 DISTFILES=	${DISTNAME}.src${EXTRACT_SUFX}
@@ -47,10 +46,10 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|grep Linux|grep ${OPSYS}|' ${WRKSRC}/scripts/util/ss_vncviewer
 	@${REINPLACE_CMD} -e 's|[[:<:]]ssvnc[[:>:]]|ssvnc-gui|' ${WRKSRC}/man/man1/ssvnc.1
 .if !defined(WITH_ULTRAFTP)
-	@${REINPLACE_CMD} -e "s|sh -c 'type javac'||" \
-		-e "s|sh -c 'type jar'||" \
-		-e 's|cd $$(JSRC);|@#|' \
-		-e 's|cp -p $$(ARCHIVE)|@#|' \
+	@${REINPLACE_CMD} -e "s|sh -c 'type javac'|:|" \
+		-e "s|sh -c 'type jar'|:|" \
+		-e 's|cd $$(JSRC);|: |' \
+		-e 's|cp -p $$(ARCHIVE)|:|' \
 		${WRKSRC}/Makefile
 .endif
 

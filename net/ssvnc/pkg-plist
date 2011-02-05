@@ -1,9 +1,11 @@
 bin/ssvnc-gui
 bin/ssvnc-stunnel
+bin/ssvnc-ts
 bin/ssvncviewer
 lib/ssvnc/lim_accept.so
 lib/ssvnc/ssvnc
 lib/ssvnc/ssvnc_cmd
+lib/ssvnc/tsvnc
 lib/ssvnc/ultravnc_dsm_helper
 lib/ssvnc/unwrap.so
 lib/ssvnc/util/ss_vncviewer
