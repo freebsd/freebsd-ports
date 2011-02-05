@@ -20,6 +20,7 @@ GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 
 MAN1=		xdx.1
+LICENSE=	GPLv2
 
 post-patch:
 	@${FIND} ${WRKSRC} -name Makefile.in | ${XARGS} ${REINPLACE_CMD} -e \
