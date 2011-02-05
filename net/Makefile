@@ -238,6 +238,7 @@
     SUBDIR += http_ping
     SUBDIR += httping
     SUBDIR += httpry
+    SUBDIR += hupnp
     SUBDIR += iaxmodem
     SUBDIR += icmpinfo
     SUBDIR += icpld
