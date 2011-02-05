@@ -7,7 +7,7 @@
 
 PORTNAME=	fuser
 PORTVERSION=	1142334561
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	sysutils
 MASTER_SITES=	http://mbsd.msk.ru/dist/
 
@@ -35,7 +35,7 @@ EXTRA_PATCHES+=	${FILESDIR}/extra::patch-msdosfs.c
 EXTRA_PATCHES+=	${FILESDIR}/extra::patch-nfs.c
 .endif
 .if ${OSVERSION} >= 900000
-BROKEN=		does not build
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch_ansify
 .endif
 
 .if ${ARCH} == "powerpc"
