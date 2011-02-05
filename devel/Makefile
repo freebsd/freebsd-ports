@@ -2227,6 +2227,7 @@
     SUBDIR += p5-TAP-Harness-JUnit
     SUBDIR += p5-Taint-Runtime
     SUBDIR += p5-Task-Weaken
+    SUBDIR += p5-Tee
     SUBDIR += p5-Template-Provider-Encode
     SUBDIR += p5-Term-ANSIColor
     SUBDIR += p5-Term-ANSIScreen
