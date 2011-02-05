@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	dovecot-pigeonhole
-PORTVERSION=	0.2.1
+PORTVERSION=	0.2.2
 CATEGORIES=	mail
 MASTER_SITES=	http://www.rename-it.nl/dovecot/${DOVECOTVERSION}/
 DISTNAME=	${PORTNAME:C/-/-${DOVECOTVERSION}-/}-${PORTVERSION}
@@ -14,14 +14,13 @@ DISTNAME=	${PORTNAME:C/-/-${DOVECOTVERSION}-/}-${PORTVERSION}
 MAINTAINER=	bra@fsn.hu
 COMMENT=	A Sieve plugin for the Dovecot 'deliver' LDA and LMTP
 
-BUILD_DEPENDS=	dovecot>=${DOVECOTVERSION}:${PORTSDIR}/mail/dovecot${DOVECOTVER}
-RUN_DEPENDS=	dovecot>=${DOVECOTVERSION}:${PORTSDIR}/mail/dovecot${DOVECOTVER}
+BUILD_DEPENDS=	dovecot>=${DOVECOTVERSION}:${PORTSDIR}/mail/dovecot${DOVECOTVERSION:R}
+RUN_DEPENDS=	dovecot>=${DOVECOTVERSION}:${PORTSDIR}/mail/dovecot${DOVECOTVERSION:R}
 
 DOVECOTVERSION=	2.0
-DOVECOTVER:=	${DOVECOTVERSION:C/\.[0-9]//}
 
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--prefix=${PREFIX} \
 		--docdir=${DOCSDIR} \
 		--with-dovecot="${LOCALBASE}/lib/dovecot"
