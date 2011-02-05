@@ -245,6 +245,7 @@
     SUBDIR += lmtp2nntp
     SUBDIR += lmtpd
     SUBDIR += lookout
+    SUBDIR += lurker
     SUBDIR += mahogany
     SUBDIR += mail-notification
     SUBDIR += mail2procmailrc

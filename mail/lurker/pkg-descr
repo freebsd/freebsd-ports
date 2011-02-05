@@ -1,0 +1,21 @@
+Lurker is not just another mailing list archiver. It is capable of handling
+gigabytes of mail without slowing down. Lurker has been designed to scale to
+support sites with thousands of concurrent users and hundreds of new messages a
+second. If you run a high-volume mailing list archive, you should seriously
+consider lurker for this alone.
+
+To facilitate finding interesting data, lurker supports:
+
+    * full keyword search by body, subject, author, ...
+    * a graphical representation of message relationships
+    * charts of the current activity about a topic
+    * searching lists or queries around an estimated time
+    * signature verification to confirm the author
+    * messages markup to find related information
+
+As one would expect, lurker also supports file attachments, multiple languages,
+message threading, gpg key photo ids, a transactional database, automatic
+timezone detection, render caching, xml customization with xslt and css,
+multiple front-ends (3-tier deployment), and many other buzz words.
+
+WWW: http://lurker.sourceforge.net/
