@@ -233,6 +233,7 @@
     SUBDIR += octave-forge-es
     SUBDIR += octave-forge-fenv
     SUBDIR += octave-forge-financial
+    SUBDIR += octave-forge-fits
     SUBDIR += octave-forge-fpl
     SUBDIR += octave-forge-ga
     SUBDIR += octave-forge-general
