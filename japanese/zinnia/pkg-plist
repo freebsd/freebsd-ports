@@ -1,0 +1,17 @@
+bin/zinnia
+bin/zinnia_convert
+bin/zinnia_learn
+include/zinnia.h
+include/zinnia/zinnia.h
+lib/libzinnia.a
+lib/libzinnia.la
+lib/libzinnia.so
+lib/libzinnia.so.0
+libdata/pkgconfig/zinnia.pc
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/index-ja.html
+%%PORTDOCS%%%%DOCSDIR%%/index.html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm include/zinnia
