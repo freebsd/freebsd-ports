@@ -1,0 +1,82 @@
+bin/lurker-index
+bin/lurker-list
+bin/lurker-params
+bin/lurker-prune
+bin/lurker-regenerate
+bin/lurker-search
+etc/lurker/apache.conf
+etc/lurker/lurker.conf
+@unexec if cmp -s %D/etc/lurker/lurker.conf.sample $D/etc/lurker/lurker.conf; then rm -f $D/etc/lurker/lurker.conf; fi
+etc/lurker/lurker.conf.sample
+@exec if [ ! -f %D/etc/lurker/lurker.conf ] ; then cp -p $D/%F %B/lurker.conf; fi
+@unexec if cmp -s %D/etc/lurker/apache.conf.sample $D/etc/lurker/apache.conf; then rm -f $D/etc/lurker/apache.conf; fi
+etc/lurker/apache.conf.sample
+@exec if [ ! -f %D/etc/lurker/apache.conf ] ; then cp -p $D/%F %B/apache.conf; fi
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL
+%%PORTDOCS%%%%DOCSDIR%%/FAQ
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+www/lurker/bounce.cgi
+www/lurker/imgs/a.png
+www/lurker/imgs/b.png
+www/lurker/imgs/bar.png
+www/lurker/imgs/c.png
+www/lurker/imgs/d.png
+www/lurker/imgs/e.png
+www/lurker/imgs/f.png
+www/lurker/imgs/g.png
+www/lurker/imgs/h.png
+www/lurker/imgs/i.png
+www/lurker/imgs/j.png
+www/lurker/imgs/k.png
+www/lurker/imgs/next.png
+www/lurker/imgs/paperclip.png
+www/lurker/imgs/prev.png
+www/lurker/imgs/reply.png
+www/lurker/imgs/root.png
+www/lurker/imgs/trash.png
+www/lurker/index.html
+www/lurker/jump.cgi
+www/lurker/keyword.cgi
+www/lurker/lurker.cgi
+www/lurker/lurker.docroot
+www/lurker/ui/ca.xml
+www/lurker/ui/common.js
+www/lurker/ui/common.xsl
+www/lurker/ui/da.xml
+www/lurker/ui/de.xml
+www/lurker/ui/default.css
+www/lurker/ui/el.xml
+www/lurker/ui/en.xml
+www/lurker/ui/es.xml
+www/lurker/ui/fi.xml
+www/lurker/ui/fr.xml
+www/lurker/ui/gl.xml
+www/lurker/ui/hu.xml
+www/lurker/ui/it.xml
+www/lurker/ui/ja.xml
+www/lurker/ui/lang.xml
+www/lurker/ui/lang.xsl
+www/lurker/ui/list.xsl
+www/lurker/ui/message.xsl
+www/lurker/ui/mindex.xsl
+www/lurker/ui/nl.xml
+www/lurker/ui/pl.xml
+www/lurker/ui/pt-BR.xml
+www/lurker/ui/pt.xml
+www/lurker/ui/search.xsl
+www/lurker/ui/splash.xsl
+www/lurker/ui/thread.xsl
+@dirrm www/lurker/zap
+@dirrm www/lurker/ui
+@dirrm www/lurker/thread
+@dirrm www/lurker/splash
+@dirrm www/lurker/search
+@dirrm www/lurker/mindex
+@dirrm www/lurker/message
+@dirrm www/lurker/mbox
+@dirrm www/lurker/list
+@dirrm www/lurker/imgs
+@dirrm www/lurker/attach
+@dirrm www/lurker
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm etc/lurker
