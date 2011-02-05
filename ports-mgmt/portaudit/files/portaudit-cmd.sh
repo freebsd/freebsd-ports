@@ -33,19 +33,23 @@
 
 portaudit_confs()
 {
-	: ${portaudit_dir="%%DATABASEDIR%%"}
-	: ${portaudit_filename="auditfile.tbz"}
-
-	: ${portaudit_fetch_env=""}
-	: ${portaudit_fetch_cmd="fetch -1mp"}
-
-	: ${portaudit_sites="http://portaudit.FreeBSD.org/"}
-
-	: ${portaudit_fixed=""}
-
 	if [ -r %%PREFIX%%/etc/portaudit.conf ]; then
 		. %%PREFIX%%/etc/portaudit.conf
 	fi
+
+	if [ -r "${0%/*}/portaudit.conf" ]; then
+		. ${0%/*}/portaudit.conf
+	fi
+
+	: ${portaudit_dir:="%%DATABASEDIR%%"}
+	: ${portaudit_filename:="auditfile.tbz"}
+
+	: ${portaudit_fetch_env=""}
+	: ${portaudit_fetch_cmd:="fetch -1mp"}
+
+	: ${portaudit_sites:="http://portaudit.FreeBSD.org/"}
+
+	: ${portaudit_fixed=""}
 }
 
 extract_auditfile()
