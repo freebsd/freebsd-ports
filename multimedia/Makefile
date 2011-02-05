@@ -112,6 +112,7 @@
     SUBDIR += gstreamer-plugins-vp8
     SUBDIR += gstreamer-plugins-x264
     SUBDIR += gstreamer-plugins-xvid
+    SUBDIR += gstreamer-qt4
     SUBDIR += gstreamermm
     SUBDIR += gsubedit
     SUBDIR += gtk-recordmydesktop
