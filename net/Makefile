@@ -290,6 +290,7 @@
     SUBDIR += kdenetwork4
     SUBDIR += keepalived
     SUBDIR += kiax
+    SUBDIR += kio-upnp-ms
     SUBDIR += kissd
     SUBDIR += kmuddy
     SUBDIR += knemo
