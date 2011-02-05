@@ -1,7 +1,7 @@
 bin/doveadm
 bin/doveconf
 bin/dsync
-%%PORTDOCS%%etc/dovecot/README
+%%PORTDOCS%%%%ETCDIR%%/README
 include/dovecot/abspath.h
 include/dovecot/access-lookup.h
 include/dovecot/anvil-client.h
@@ -338,6 +338,9 @@ lib/dovecot/lib02_imap_acl_plugin.so
 lib/dovecot/lib02_lazy_expunge_plugin.a
 lib/dovecot/lib02_lazy_expunge_plugin.la
 lib/dovecot/lib02_lazy_expunge_plugin.so
+lib/dovecot/lib05_snarf_plugin.a
+lib/dovecot/lib05_snarf_plugin.la
+lib/dovecot/lib05_snarf_plugin.so
 lib/dovecot/lib10_quota_plugin.a
 lib/dovecot/lib10_quota_plugin.la
 lib/dovecot/lib10_quota_plugin.so
@@ -365,9 +368,6 @@ lib/dovecot/lib20_listescape_plugin.so
 lib/dovecot/lib20_mail_log_plugin.a
 lib/dovecot/lib20_mail_log_plugin.la
 lib/dovecot/lib20_mail_log_plugin.so
-lib/dovecot/lib20_mbox_snarf_plugin.a
-lib/dovecot/lib20_mbox_snarf_plugin.la
-lib/dovecot/lib20_mbox_snarf_plugin.so
 lib/dovecot/lib20_virtual_plugin.a
 lib/dovecot/lib20_virtual_plugin.la
 lib/dovecot/lib20_virtual_plugin.so
@@ -426,5 +426,5 @@ share/aclocal/dovecot.m4
 @dirrm lib/dovecot/auth
 @dirrm lib/dovecot
 @dirrm include/dovecot
-@dirrmtry etc/dovecot
+@dirrmtry %%ETCDIR%%
 @dirrmtry %%DOCSDIR%%

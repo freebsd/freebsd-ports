@@ -20,7 +20,7 @@ rcvar=`set_rcvar`
 # read configuration and set defaults
 load_rc_config ${name}
 : ${dovecot_enable:="NO"}
-: ${dovecot_config:="%%PREFIX%%/etc/dovecot/${name}.conf"}
+: ${dovecot_config:="%%ETCDIR%%/${name}.conf"}
 
 command="%%PREFIX%%/sbin/${name}"
 start_precmd="start_precmd"
