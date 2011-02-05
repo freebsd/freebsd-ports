@@ -1,6 +1,6 @@
---- cli/Makefile.in.orig	2010-06-16 22:01:23.000000000 +0900
-+++ cli/Makefile.in	2010-07-09 04:31:31.000000000 +0900
-@@ -20,6 +20,10 @@
+--- cli/Makefile.in.orig	2010-08-28 11:10:07.000000000 -0400
++++ cli/Makefile.in	2011-02-02 15:28:13.000000000 -0500
+@@ -21,6 +21,10 @@
  
  quiet_build = @quiet_build@
  
@@ -11,7 +11,7 @@
  ifeq ($(CC),)
    CC = gcc
  endif
-@@ -54,10 +58,10 @@
+@@ -55,10 +59,10 @@
  
  DEFS = -DLOCALEDIR=\"$(localedir)\" -DHAVE_CONFIG_H
  
@@ -24,10 +24,10 @@
  
  %.o: %.c
  	$(CCECHO)
-@@ -67,7 +71,7 @@
+@@ -68,7 +72,7 @@
  $(CLI): .deps $(OBJS)
  	$(LDECHO)
- 	$(AMP)$(LIBTOOL) --mode=link $(CCV) -o $@ $(LDFLAGS) $(OBJS) \
+ 	$(AMP)$(LIBTOOL) --mode=link $(CCV) $(LDFLAGS) -o $@ $(OBJS) \
 -	$(GRETLLIB) $(READLINE_LIBS)
 +	$(GRETLLIB) $(READLINE_LIBS) $(INTL_LIBS)
  

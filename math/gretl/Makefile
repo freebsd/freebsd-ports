@@ -7,55 +7,84 @@
 #
 
 PORTNAME=	gretl
-PORTVERSION=	1.9.1
+PORTVERSION=	1.9.3
 CATEGORIES=	math finance
 MASTER_SITES=	SF
 
 MAINTAINER=	bf@FreeBSD.org
 COMMENT=	GNU Regression, Econometrics and Time-series Library
 
-BUILD_DEPENDS=	gnuplot:${PORTSDIR}/math/gnuplot
-LIB_DEPENDS=	fftw3.5:${PORTSDIR}/math/fftw3 \
-		mpfr.4:${PORTSDIR}/math/mpfr
-RUN_DEPENDS=	gnuplot:${PORTSDIR}/math/gnuplot
+LIB_DEPENDS=	fftw3.5:${PORTSDIR}/math/fftw3
 
-USE_BZIP2=	yes
-USE_GNOME=	gnomehier gtk20 gtksourceview2 libxml2
-USE_GETTEXT=	yes
-USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib ${GCCLIBDIR}"
-CONFIGURE_ARGS=	--enable-static --enable-shared --with-gmake --without-gnome
-ALL_TARGET=	# empty
+USE_BZIP2=	yes
+USE_FORTRAN=	yes
+USE_GMAKE=	yes
 USE_LDCONFIG=	yes
+WANT_GNOME=	yes
+
+ALL_TARGET=	# empty
+CONFIGURE_ARGS =	--enable-static --enable-shared --with-gmake --without-gnome
+CPPFLAGS+=		-I${LOCALBASE}/include
+LDFLAGS+=		-L${LOCALBASE}/lib
+CONFIGURE_ENV=		CPPFLAGS="${CPPFLAGS}" \
+			LAPACK_LIBS="${LAPACK} ${BLAS}" \
+			LDFLAGS="${LDFLAGS}"
 
 MAN1=		gretl.1
-
-USE_FORTRAN=	yes
-CONFIGURE_ENV+=	LAPACK_LIBS="${BLAS} ${LAPACK} -l${FORTRANRUNTIME}"
-FORTRANRUNTIME=	gfortran
-GCCLIBDIR=	-L`${CAT} ${WRKSRC}/LIBDIR` -L`${CAT} ${WRKSRC}/LIBDIR`/../../..
+OPTIONS=	ATLAS "Use Atlas for BLAS and LAPACK" off \
+		GUI "Build the graphical user interface and plugins" on \
+		NLS "Build with Natural Language Support" on \
+		ODBC "Build with unixODBC database support" off \
+		R "Build with libR support" off
 
 .include <bsd.port.pre.mk>
-
-.if ${ARCH} == "alpha"
-BROKEN=		math/lapack appears to be broken on alpha
-.endif
-
-.if exists(${LOCALBASE}/lib/libatlas_r.so) && !defined(WITH_BLAS)
-WITH_ATLAS=	yes
-.endif
 
 .if defined(WITH_ATLAS)
 LIB_DEPENDS+=	atlas.2:${PORTSDIR}/math/atlas
 BLAS=		-lf77blas -latlas
 LAPACK=		-lalapack -lcblas
 .else
-LIB_DEPENDS+=	blas.2:${PORTSDIR}/math/blas
-LIB_DEPENDS+=	lapack.4:${PORTSDIR}/math/lapack
+LIB_DEPENDS+=	blas.2:${PORTSDIR}/math/blas \
+		lapack.4:${PORTSDIR}/math/lapack
 BLAS=		-lblas
 LAPACK=		-llapack
+.endif
+
+.if defined(WITH_GUI)
+CONFIGURE_ARGS+=	--enable-gui=yes
+USE_GNOME=		gnomehier gtksourceview2
+BUILD_DEPENDS+=		gnuplot:${PORTSDIR}/math/gnuplot
+RUN_DEPENDS+=		gnuplot:${PORTSDIR}/math/gnuplot
+PLIST_SUB+=		GUI=""
+.else
+CONFIGURE_ARGS+=	--enable-gui=no
+PLIST_SUB+=		GUI="@comment "
+.endif
+
+.if !defined(WITHOUT_NLS)
+CONFIGURE_ARGS+=	--enable-nls=yes
+USE_GETTEXT=		yes
+PLIST_SUB+=		NLS=""
+.else
+CONFIGURE_ARGS+=	--enable-nls=no
+PLIST_SUB+=		NLS="@comment "
+.endif
+
+.if defined(WITH_ODBC)
+CONFIGURE_ARGS+=	--with-odbc
+LIB_DEPENDS+=		odbc.1:${PORTSDIR}/databases/unixODBC
+PLIST_SUB+=		ODBC=""
+.else
+CONFIGURE_ARGS+=	--without-odbc
+PLIST_SUB+=		ODBC="@comment "
+.endif
+
+.if defined(WITH_R)
+CONFIGURE_ARGS+=	--with-libR
+LIB_DEPENDS+=		R.0:${PORTSDIR}/math/R
+.else
+CONFIGURE_ARGS+=	--without-libR
 .endif
 
 post-patch:
@@ -66,29 +95,33 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|@gnome_prefix@|@prefix@|g' \
 		${WRKSRC}/gnome/gretl.keys.in
 
-pre-configure:
-	@${DIRNAME} `${F77} -print-libgcc-file-name` > ${WRKSRC}/LIBDIR
-
+.if defined(WITH_GUI)
 post-install:
 	@${MKDIR} ${PREFIX}/share/applications
-.for file in gretl.desktop
-	${INSTALL_DATA} ${WRKSRC}/gnome/${file} ${PREFIX}/share/applications
+.for _file in gretl.desktop
+	${INSTALL_DATA} ${WRKSRC}/gnome/${_file} ${PREFIX}/share/applications
 .endfor
 	@${MKDIR} ${PREFIX}/share/mime/packages
-.for file in gretl.xml
-	${INSTALL_DATA} ${WRKSRC}/xdg/${file} ${PREFIX}/share/mime/packages
+.for _file in gretl.xml
+	${INSTALL_DATA} ${WRKSRC}/xdg/${_file} ${PREFIX}/share/mime/packages
 .endfor
 	@${MKDIR} ${PREFIX}/share/mime-info
-.for file in gretl.keys gretl.mime
-	${INSTALL_DATA} ${WRKSRC}/gnome/${file} ${PREFIX}/share/mime-info
+.for _file in gretl.keys gretl.mime
+	${INSTALL_DATA} ${WRKSRC}/gnome/${_file} ${PREFIX}/share/mime-info
 .endfor
 	@${MKDIR} ${PREFIX}/share/pixmaps
-.for file in gnome-application-x-gretldata.png gnome-application-x-gretlsession.png
-	${INSTALL_DATA} ${WRKSRC}/gnome/${file} ${PREFIX}/share/pixmaps
+.for _file in gnome-application-x-gretldata.png gnome-application-x-gretlsession.png
+	${INSTALL_DATA} ${WRKSRC}/gnome/${_file} ${PREFIX}/share/pixmaps
 .endfor
-.for file in gretl-logo.xpm gretl.xpm
-	${INSTALL_DATA} ${WRKSRC}/pixmaps/${file} ${PREFIX}/share/pixmaps
+.for _file in gretl-logo.xpm gretl.xpm
+	${INSTALL_DATA} ${WRKSRC}/pixmaps/${_file} ${PREFIX}/share/pixmaps
 .endfor
 	@-update-mime-database ${PREFIX}/share/mime
+
+.endif
+
+regression-test test check: build
+	@(cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} ${GMAKE} ${_MAKE_JOBS} \
+		${MAKE_ARGS} check)
 
 .include <bsd.port.post.mk>

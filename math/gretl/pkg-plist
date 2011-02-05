@@ -1,5 +1,5 @@
-bin/gretl
-bin/gretl_x11
+%%GUI%%bin/gretl
+%%GUI%%bin/gretl_x11
 bin/gretlcli
 include/gretl/adf_kpss.h
 include/gretl/bhhh_max.h
@@ -19,6 +19,7 @@ include/gretl/genfuncs.h
 include/gretl/genmain.h
 include/gretl/graphing.h
 include/gretl/gretl_bfgs.h
+include/gretl/gretl_bundle.h
 include/gretl/gretl_commands.h
 include/gretl/gretl_data_io.h
 include/gretl/gretl_errors.h
@@ -83,6 +84,9 @@ lib/gretl-gtk2/arma.so
 lib/gretl-gtk2/arma_x12.a
 lib/gretl-gtk2/arma_x12.la
 lib/gretl-gtk2/arma_x12.so
+lib/gretl-gtk2/biprobit.a
+lib/gretl-gtk2/biprobit.la
+lib/gretl-gtk2/biprobit.so
 lib/gretl-gtk2/data/dwdata.gz
 lib/gretl-gtk2/data/urcdata.gz
 lib/gretl-gtk2/duration.a
@@ -91,24 +95,27 @@ lib/gretl-gtk2/duration.so
 lib/gretl-gtk2/eviews_import.a
 lib/gretl-gtk2/eviews_import.la
 lib/gretl-gtk2/eviews_import.so
-lib/gretl-gtk2/excel_import.a
-lib/gretl-gtk2/excel_import.la
-lib/gretl-gtk2/excel_import.so
+%%GUI%%lib/gretl-gtk2/excel_import.a
+%%GUI%%lib/gretl-gtk2/excel_import.la
+%%GUI%%lib/gretl-gtk2/excel_import.so
 lib/gretl-gtk2/fractals.a
 lib/gretl-gtk2/fractals.la
 lib/gretl-gtk2/fractals.so
 lib/gretl-gtk2/garch.a
 lib/gretl-gtk2/garch.la
 lib/gretl-gtk2/garch.so
-lib/gretl-gtk2/gnumeric_import.a
-lib/gretl-gtk2/gnumeric_import.la
-lib/gretl-gtk2/gnumeric_import.so
+%%GUI%%lib/gretl-gtk2/gnumeric_import.a
+%%GUI%%lib/gretl-gtk2/gnumeric_import.la
+%%GUI%%lib/gretl-gtk2/gnumeric_import.so
 lib/gretl-gtk2/gretlzip.a
 lib/gretl-gtk2/gretlzip.la
 lib/gretl-gtk2/gretlzip.so
 lib/gretl-gtk2/heckit.a
 lib/gretl-gtk2/heckit.la
 lib/gretl-gtk2/heckit.so
+lib/gretl-gtk2/interpolate.a
+lib/gretl-gtk2/interpolate.la
+lib/gretl-gtk2/interpolate.so
 lib/gretl-gtk2/interval.a
 lib/gretl-gtk2/interval.la
 lib/gretl-gtk2/interval.so
@@ -121,33 +128,36 @@ lib/gretl-gtk2/johansen.so
 lib/gretl-gtk2/kernel.a
 lib/gretl-gtk2/kernel.la
 lib/gretl-gtk2/kernel.so
-lib/gretl-gtk2/lad.a
-lib/gretl-gtk2/lad.la
-lib/gretl-gtk2/lad.so
-lib/gretl-gtk2/leverage.a
-lib/gretl-gtk2/leverage.la
-lib/gretl-gtk2/leverage.so
-lib/gretl-gtk2/mailer.a
-lib/gretl-gtk2/mailer.la
-lib/gretl-gtk2/mailer.so
+%%GUI%%lib/gretl-gtk2/leverage.a
+%%GUI%%lib/gretl-gtk2/leverage.la
+%%GUI%%lib/gretl-gtk2/leverage.so
+%%GUI%%lib/gretl-gtk2/mailer.a
+%%GUI%%lib/gretl-gtk2/mailer.la
+%%GUI%%lib/gretl-gtk2/mailer.so
 lib/gretl-gtk2/mp_ols.a
 lib/gretl-gtk2/mp_ols.la
 lib/gretl-gtk2/mp_ols.so
 lib/gretl-gtk2/nistcheck.a
 lib/gretl-gtk2/nistcheck.la
 lib/gretl-gtk2/nistcheck.so
-lib/gretl-gtk2/ods_import.a
-lib/gretl-gtk2/ods_import.la
-lib/gretl-gtk2/ods_import.so
-lib/gretl-gtk2/pca.a
-lib/gretl-gtk2/pca.la
-lib/gretl-gtk2/pca.so
+%%ODBC%%lib/gretl-gtk2/odbc_import.a
+%%ODBC%%lib/gretl-gtk2/odbc_import.la
+%%ODBC%%lib/gretl-gtk2/odbc_import.so
+%%GUI%%lib/gretl-gtk2/ods_import.a
+%%GUI%%lib/gretl-gtk2/ods_import.la
+%%GUI%%lib/gretl-gtk2/ods_import.so
+lib/gretl-gtk2/panurc.a
+lib/gretl-gtk2/panurc.la
+lib/gretl-gtk2/panurc.so
+%%GUI%%lib/gretl-gtk2/pca.a
+%%GUI%%lib/gretl-gtk2/pca.la
+%%GUI%%lib/gretl-gtk2/pca.so
 lib/gretl-gtk2/poisson.a
 lib/gretl-gtk2/poisson.la
 lib/gretl-gtk2/poisson.so
-lib/gretl-gtk2/progress_bar.a
-lib/gretl-gtk2/progress_bar.la
-lib/gretl-gtk2/progress_bar.so
+%%GUI%%lib/gretl-gtk2/progress_bar.a
+%%GUI%%lib/gretl-gtk2/progress_bar.la
+%%GUI%%lib/gretl-gtk2/progress_bar.so
 lib/gretl-gtk2/quantreg.a
 lib/gretl-gtk2/quantreg.la
 lib/gretl-gtk2/quantreg.so
@@ -172,9 +182,9 @@ lib/gretl-gtk2/sysest.so
 lib/gretl-gtk2/tobit.a
 lib/gretl-gtk2/tobit.la
 lib/gretl-gtk2/tobit.so
-lib/gretl-gtk2/tramo-x12a.a
-lib/gretl-gtk2/tramo-x12a.la
-lib/gretl-gtk2/tramo-x12a.so
+%%GUI%%lib/gretl-gtk2/tramo-x12a.a
+%%GUI%%lib/gretl-gtk2/tramo-x12a.la
+%%GUI%%lib/gretl-gtk2/tramo-x12a.so
 lib/gretl-gtk2/urcdist.a
 lib/gretl-gtk2/urcdist.la
 lib/gretl-gtk2/urcdist.so
@@ -186,8 +196,8 @@ lib/libgretl-1.0.la
 lib/libgretl-1.0.so
 lib/libgretl-1.0.so.0
 libdata/pkgconfig/gretl.pc
-share/applications/gretl.desktop
-%%DATADIR%%/COPYING
+%%GUI%%share/applications/gretl.desktop
+%%GUI%%%%DATADIR%%/COPYING
 %%DATADIR%%/data/data10-1.gdt
 %%DATADIR%%/data/data10-2.gdt
 %%DATADIR%%/data/data10-3.gdt
@@ -292,6 +302,7 @@ share/applications/gretl.desktop
 %%DATADIR%%/data/greene/greene18_2.gdt
 %%DATADIR%%/data/greene/greene19_1.gdt
 %%DATADIR%%/data/greene/greene22_2.gdt
+%%DATADIR%%/data/greene/greene25_1.gdt
 %%DATADIR%%/data/greene/greene5_1.gdt
 %%DATADIR%%/data/greene/greene7_8.gdt
 %%DATADIR%%/data/greene/greene8_3.gdt
@@ -299,6 +310,7 @@ share/applications/gretl.desktop
 %%DATADIR%%/data/greene/wg_descriptions
 %%DATADIR%%/data/gretldata.dtd
 %%DATADIR%%/data/misc/AWM.gdt
+%%DATADIR%%/data/misc/CEL.gdt
 %%DATADIR%%/data/misc/abdata.gdt
 %%DATADIR%%/data/misc/anscombe.gdt
 %%DATADIR%%/data/misc/arma.gdt
@@ -307,6 +319,7 @@ share/applications/gretl.desktop
 %%DATADIR%%/data/misc/banks91.gdt
 %%DATADIR%%/data/misc/bjg.gdt
 %%DATADIR%%/data/misc/broiler.gdt
+%%DATADIR%%/data/misc/chomage.gdt
 %%DATADIR%%/data/misc/credscore.gdt
 %%DATADIR%%/data/misc/denmark.gdt
 %%DATADIR%%/data/misc/descriptions
@@ -366,7 +379,7 @@ share/applications/gretl.desktop
 %%DATADIR%%/genrgui.hlp
 %%DATADIR%%/genrgui.hlp.it
 %%DATADIR%%/genrgui.hlp.pt
-%%DATADIR%%/gretl-logo.xpm
+%%GUI%%%%DATADIR%%/gretl-logo.xpm
 %%DATADIR%%/gretl.stamp
 %%DATADIR%%/gretlcli.hlp
 %%DATADIR%%/gretlcli.hlp.es
@@ -380,6 +393,7 @@ share/applications/gretl.desktop
 %%DATADIR%%/gretlgui.hlp.es
 %%DATADIR%%/gretlgui.hlp.it
 %%DATADIR%%/gretlgui.hlp.pt
+%%DATADIR%%/gretlhelp.refs
 %%DATADIR%%/helpfigs/Gamma.png
 %%DATADIR%%/helpfigs/adf1.png
 %%DATADIR%%/helpfigs/aic.png
@@ -427,6 +441,8 @@ share/applications/gretl.desktop
 %%DATADIR%%/scripts/greene9_3.inp
 %%DATADIR%%/scripts/misc/arbond91.inp
 %%DATADIR%%/scripts/misc/armaloop.inp
+%%DATADIR%%/scripts/misc/bbond98.inp
+%%DATADIR%%/scripts/misc/biprobit.inp
 %%DATADIR%%/scripts/misc/bjg.inp
 %%DATADIR%%/scripts/misc/camtriv.inp
 %%DATADIR%%/scripts/misc/convolve.inp
@@ -535,29 +551,30 @@ share/applications/gretl.desktop
 %%DATADIR%%/scripts/ps_descriptions
 %%DATADIR%%/scripts/testinp
 %%DATADIR%%/scripts/wg_ps_descriptions
-%%DATADIR%%/ui/gretlmain.xml
-share/gtksourceview-2.0/language-specs/gnuplot.lang
-share/gtksourceview-2.0/language-specs/gretl.lang
-share/locale/cs/LC_MESSAGES/gretl.mo
-share/locale/de/LC_MESSAGES/gretl.mo
-share/locale/es/LC_MESSAGES/gretl.mo
-share/locale/eu/LC_MESSAGES/gretl.mo
-share/locale/fr/LC_MESSAGES/gretl.mo
-share/locale/it/LC_MESSAGES/gretl.mo
-share/locale/pl/LC_MESSAGES/gretl.mo
-share/locale/pt/LC_MESSAGES/gretl.mo
-share/locale/pt_BR/LC_MESSAGES/gretl.mo
-share/locale/ru/LC_MESSAGES/gretl.mo
-share/locale/tr/LC_MESSAGES/gretl.mo
-share/locale/zh_TW/LC_MESSAGES/gretl.mo
-share/mime/packages/gretl.xml
-share/mime-info/gretl.keys
-share/mime-info/gretl.mime
-share/pixmaps/gnome-application-x-gretldata.png
-share/pixmaps/gnome-application-x-gretlsession.png
-share/pixmaps/gretl-logo.xpm
-share/pixmaps/gretl.xpm
-@dirrm %%DATADIR%%/ui
+%%GUI%%%%DATADIR%%/ui/gretlmain.xml
+%%GUI%%share/gtksourceview-2.0/language-specs/gnuplot.lang
+%%GUI%%share/gtksourceview-2.0/language-specs/gretl.lang
+%%NLS%%share/locale/cs/LC_MESSAGES/gretl.mo
+%%NLS%%share/locale/de/LC_MESSAGES/gretl.mo
+%%NLS%%share/locale/es/LC_MESSAGES/gretl.mo
+%%NLS%%share/locale/eu/LC_MESSAGES/gretl.mo
+%%NLS%%share/locale/fr/LC_MESSAGES/gretl.mo
+%%NLS%%share/locale/it/LC_MESSAGES/gretl.mo
+%%NLS%%share/locale/pl/LC_MESSAGES/gretl.mo
+%%NLS%%share/locale/pt/LC_MESSAGES/gretl.mo
+%%NLS%%share/locale/pt_BR/LC_MESSAGES/gretl.mo
+%%NLS%%share/locale/ru/LC_MESSAGES/gretl.mo
+%%NLS%%share/locale/sq/LC_MESSAGES/gretl.mo
+%%NLS%%share/locale/tr/LC_MESSAGES/gretl.mo
+%%NLS%%share/locale/zh_TW/LC_MESSAGES/gretl.mo
+%%GUI%%share/mime/packages/gretl.xml
+%%GUI%%share/mime-info/gretl.keys
+%%GUI%%share/mime-info/gretl.mime
+%%GUI%%share/pixmaps/gnome-application-x-gretldata.png
+%%GUI%%share/pixmaps/gnome-application-x-gretlsession.png
+%%GUI%%share/pixmaps/gretl-logo.xpm
+%%GUI%%share/pixmaps/gretl.xpm
+%%GUI%%@dirrm %%DATADIR%%/ui
 @dirrm %%DATADIR%%/scripts/misc
 @dirrm %%DATADIR%%/scripts
 @dirrm %%DATADIR%%/helpfigs
@@ -573,8 +590,6 @@ share/pixmaps/gretl.xpm
 @dirrm lib/gretl-gtk2/data
 @dirrm lib/gretl-gtk2
 @dirrm include/gretl
-@dirrmtry share/locale/rw/LC_MESSAGES
-@dirrmtry share/locale/rw
 @dirrmtry share/applications
 @exec %%LOCALBASE%%/bin/update-mime-database %D/share/mime > /dev/null || /usr/bin/true
 @unexec %%LOCALBASE%%/bin/update-mime-database %D/share/mime > /dev/null || /usr/bin/true
