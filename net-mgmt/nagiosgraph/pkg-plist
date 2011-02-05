@@ -37,6 +37,7 @@ etc/nagios/%%PORTNAME%%/rrdopts.conf.sample
 @exec if [ ! -f %D/etc/nagios/%%PORTNAME%%/rrdopts.conf ] ; then cp -p %D/%F %B/rrdopts.conf; fi
 libexec/%%PORTNAME%%/insert.pl
 %%NAGIOSWWWDIR%%/cgi-bin/%%PORTNAME%%/show.cgi
+%%NAGIOSWWWDIR%%/cgi-bin/%%PORTNAME%%/showconfig.cgi
 %%NAGIOSWWWDIR%%/cgi-bin/%%PORTNAME%%/showgraph.cgi
 %%NAGIOSWWWDIR%%/cgi-bin/%%PORTNAME%%/showgroup.cgi
 %%NAGIOSWWWDIR%%/cgi-bin/%%PORTNAME%%/showhost.cgi
