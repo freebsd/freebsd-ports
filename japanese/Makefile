@@ -346,6 +346,7 @@
     SUBDIR += tcl80
     SUBDIR += tdiary
     SUBDIR += teTeX
+    SUBDIR += tegaki-recognize
     SUBDIR += texfamily
     SUBDIR += texfamily-vfn2a
     SUBDIR += texinfo

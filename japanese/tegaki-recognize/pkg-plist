@@ -1,0 +1,9 @@
+bin/tegaki-recognize
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/COPYRIGHT
+%%PORTDOCS%%%%DOCSDIR%%/README
+share/pixmaps/tegaki-recognize.svg
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrmtry %%PYTHON_SITELIBDIR%%
+@dirrmtry %%PYTHON_LIBDIR%%
