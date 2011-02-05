@@ -8,9 +8,16 @@ bin/typetrainer
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/typetrainer/__init__.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/typetrainer/__init__.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/typetrainer/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/typetrainer/config.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/typetrainer/config.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/typetrainer/config.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/typetrainer/generator.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/typetrainer/generator.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/typetrainer/generator.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/typetrainer/i18n.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/typetrainer/i18n.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/typetrainer/i18n.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/typetrainer/locale/ru/LC_MESSAGES/typetrainer.mo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/typetrainer/run.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/typetrainer/run.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/typetrainer/run.pyo
@@ -29,6 +36,9 @@ bin/typetrainer
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/typetrainer/tutors/en/basic.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/typetrainer/tutors/en/basic.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/typetrainer/tutors/en/basic.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/typetrainer/tutors/help.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/typetrainer/tutors/help.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/typetrainer/tutors/help.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/typetrainer/tutors/ru/__init__.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/typetrainer/tutors/ru/__init__.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/typetrainer/tutors/ru/__init__.pyo
@@ -45,10 +55,16 @@ bin/typetrainer
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/typetrainer/ui/main.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/typetrainer/ui/main.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/typetrainer/ui/main.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/typetrainer/util.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/typetrainer/util.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/typetrainer/util.pyo
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/typetrainer/ui
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/typetrainer/tutors/ru
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/typetrainer/tutors/en
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/typetrainer/tutors
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/typetrainer/locale/ru/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/typetrainer/locale/ru
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/typetrainer/locale
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/typetrainer
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%
