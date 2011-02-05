@@ -1,5 +1,5 @@
---- Makefile.orig	2008-11-16 18:31:44.000000000 +0100
-+++ Makefile	2009-05-05 16:24:14.572268630 +0200
+--- Makefile.orig	2011-02-05 00:28:18.000000000 -0800
++++ Makefile	2011-02-05 00:36:51.000000000 -0800
 @@ -29,6 +29,7 @@
  MANDIR  ?= $(MAN)
  APPS    ?= share/applications
@@ -8,12 +8,12 @@
  
  
  VSRC = vnc_unixsrc
-@@ -65,23 +66,28 @@
+@@ -65,23 +66,30 @@
  	cd $(PSRC); $(MAKE) clean
  
  install: all
--	mkdir -p $(ROOT)$(PREFIX)/$(BIN) $(ROOT)$(PREFIX)/$(LIB) $(ROOT)$(PREFIX)/$(MANDIR)
-+	mkdir -p $(ROOT)$(PREFIX)/$(BIN) $(ROOT)$(PREFIX)/$(LIB)/util $(ROOT)$(PREFIX)/$(MANDIR)
+-	mkdir -p $(ROOT)$(PREFIX)/$(BIN) $(ROOT)$(PREFIX)/$(LIB) $(ROOT)$(PREFIX)/$(MANDIR)/man1
++	mkdir -p $(ROOT)$(PREFIX)/$(BIN) $(ROOT)$(PREFIX)/$(LIB)/util $(ROOT)$(PREFIX)/$(MANDIR)/man1
  	strip $(VIEWER)
  	cp -p $(VIEWER) $(ROOT)$(PREFIX)/$(LIB)
  	cp -p $(VNCSPW) $(ROOT)$(PREFIX)/$(LIB)
@@ -23,20 +23,22 @@
 -	cp -pR scripts/* $(ROOT)$(PREFIX)/$(LIB)
 +	cp -p scripts/ssvnc $(ROOT)$(PREFIX)/$(LIB)
 +	cp -p scripts/ssvnc_cmd $(ROOT)$(PREFIX)/$(LIB)
++	cp -p scripts/tsvnc $(ROOT)$(PREFIX)/$(LIB)
 +	cp -p scripts/util/ssvnc.tcl $(ROOT)$(PREFIX)/$(LIB)/util
 +	cp -p scripts/util/ss_vncviewer $(ROOT)$(PREFIX)/$(LIB)/util
- 	cp -p $(ARCHIVE) $(ROOT)$(PREFIX)/$(LIB)/util
--	cp -p $(MAN)/ssvnc.1 $(ROOT)$(PREFIX)/$(MANDIR)
+ 	if [ "X$(JSRC)" != "X" ]; then cp -p $(ARCHIVE) $(ROOT)$(PREFIX)/$(LIB)/util; fi
+-	cp -p $(MAN)/man1/ssvnc.1 $(ROOT)$(PREFIX)/$(MANDIR)/man1
 -	./wr_tool $(ROOT)$(PREFIX)/$(BIN)/ssvnc  $(PREFIX)/$(LIB)/ssvnc
 -	./wr_tool $(ROOT)$(PREFIX)/$(BIN)/tsvnc  $(PREFIX)/$(LIB)/tsvnc
 -	./wr_tool $(ROOT)$(PREFIX)/$(BIN)/sshvnc $(PREFIX)/$(LIB)/sshvnc
-+	cp -p $(MAN)/ssvnc.1 $(ROOT)$(PREFIX)/$(MANDIR)/ssvnc-gui.1
++	cp -p $(MAN)/man1/ssvnc.1 $(ROOT)$(PREFIX)/$(MANDIR)/man1/ssvnc-gui.1
 +	./wr_tool $(ROOT)$(PREFIX)/$(BIN)/ssvnc-gui  $(PREFIX)/$(LIB)/ssvnc
++	./wr_tool $(ROOT)$(PREFIX)/$(BIN)/ssvnc-ts  $(PREFIX)/$(LIB)/tsvnc
 +	./wr_tool $(ROOT)$(PREFIX)/$(BIN)/ssvnc-stunnel  $(PREFIX)/$(LIB)/util/ss_vncviewer
  	if [ "X$(APPS)" != X ]; then mkdir -p $(ROOT)$(PREFIX)/$(APPS); fi
  	if [ "X$(APPS)" != X ]; then cp -p ssvnc.desktop $(ROOT)$(PREFIX)/$(APPS); fi
  	if [ "X$(BINNAME)" != X ]; then cp -p $(VIEWER) $(ROOT)$(PREFIX)/$(BIN)/$(BINNAME); fi
- 	if [ "X$(BINNAME)" != X ]; then cp -p $(MAN)/ssvncviewer.1 $(ROOT)$(PREFIX)/$(MANDIR)/$(BINNAME).1; fi
+ 	if [ "X$(BINNAME)" != X ]; then cp -p $(MAN)/man1/ssvncviewer.1 $(ROOT)$(PREFIX)/$(MANDIR)/man1/$(BINNAME).1; fi
 +	if [ "X$(DOCS)" != X ]; then mkdir -p $(ROOT)$(PREFIX)/$(DOCS); fi
 +	if [ "X$(DOCS)" != X ]; then cp -p scripts/util/stunnel-server.conf $(ROOT)$(PREFIX)/$(DOCS); fi
 +	if [ "X$(DOCS)" != X ]; then cp -p README $(ROOT)$(PREFIX)/$(DOCS); fi
