@@ -280,6 +280,7 @@
     SUBDIR += py-kanjilib
     SUBDIR += py-mecab
     SUBDIR += py-tegaki
+    SUBDIR += py-tegaki-gtk
     SUBDIR += py-zinnia
     SUBDIR += pycodec
     SUBDIR += pycodec-zope
