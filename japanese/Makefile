@@ -395,6 +395,7 @@
     SUBDIR += yc.el
     SUBDIR += zangband
     SUBDIR += zinnia
+    SUBDIR += zinnia-tomoe
     SUBDIR += zipcodes
     SUBDIR += zope-ejsplitter
     SUBDIR += zope-jamailhost

@@ -1,0 +1,8 @@
+Zinnia is a simple, customizable and portable online hand recognition system
+based on Support Vector Machines. Zinnia simply receives user pen strokes as a
+sequence of coordinate data and outputs n-best characters sorted by SVM
+confidence. To keep portability, Zinnia doesn't have any rendering
+functionality. In addition to recognition, Zinnia provides training module that
+allows us to create any hand-written recognition systems with low-cost.
+
+WWW: http://zinnia.sourceforge.net/
