@@ -139,7 +139,9 @@ bin/yiic
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/requirements/messages/pt/yii.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/requirements/messages/ro/yii.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/requirements/messages/ru/yii.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/requirements/messages/sk/yii.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/requirements/messages/sv/yii.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/requirements/messages/ta_in/yii.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/requirements/messages/vi/yii.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/requirements/messages/zh_cn/yii.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/requirements/messages/zh_tw/yii.php
@@ -171,6 +173,7 @@ bin/yiic
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/requirements/views/pt/index.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/requirements/views/ro/index.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/requirements/views/ru/index.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/requirements/views/sk/index.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/requirements/views/sv/index.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/requirements/views/zh/index.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/requirements/views/zh_cn/index.php
@@ -179,6 +182,7 @@ bin/yiic
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/requirements/views/zh_cn
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/requirements/views/zh
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/requirements/views/sv
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/requirements/views/sk
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/requirements/views/ru
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/requirements/views/ro
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/requirements/views/pt
@@ -197,7 +201,9 @@ bin/yiic
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/requirements/messages/zh_tw
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/requirements/messages/zh_cn
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/requirements/messages/vi
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/requirements/messages/ta_in
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/requirements/messages/sv
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/requirements/messages/sk
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/requirements/messages/ru
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/requirements/messages/ro
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/requirements/messages/pt
@@ -399,6 +405,7 @@ bin/yiic
 %%DATADIR%%/framework/cli/views/webapp/themes/classic/views/system/.yii
 %%DATADIR%%/framework/collections/CAttributeCollection.php
 %%DATADIR%%/framework/collections/CConfiguration.php
+%%DATADIR%%/framework/collections/CTypedMap.php
 %%DATADIR%%/framework/collections/CList.php
 %%DATADIR%%/framework/collections/CListIterator.php
 %%DATADIR%%/framework/collections/CMap.php
@@ -1038,31 +1045,44 @@ bin/yiic
 %%DATADIR%%/framework/messages/el/yii.php
 %%DATADIR%%/framework/messages/el/zii.php
 %%DATADIR%%/framework/messages/es/yii.php
+%%DATADIR%%/framework/messages/es/zii.php
 %%DATADIR%%/framework/messages/fr/yii.php
+%%DATADIR%%/framework/messages/fr/zii.php
 %%DATADIR%%/framework/messages/he/yii.php
 %%DATADIR%%/framework/messages/he/zii.php
 %%DATADIR%%/framework/messages/hu/yii.php
 %%DATADIR%%/framework/messages/id/yii.php
+%%DATADIR%%/framework/messages/id/zii.php
 %%DATADIR%%/framework/messages/it/yii.php
+%%DATADIR%%/framework/messages/it/zii.php
 %%DATADIR%%/framework/messages/ja/yii.php
+%%DATADIR%%/framework/messages/ja/zii.php
+%%DATADIR%%/framework/messages/lv/yii.php
+%%DATADIR%%/framework/messages/lv/zii.php
 %%DATADIR%%/framework/messages/nl/yii.php
+%%DATADIR%%/framework/messages/nl/zii.php
 %%DATADIR%%/framework/messages/no/yii.php
 %%DATADIR%%/framework/messages/pl/yii.php
+%%DATADIR%%/framework/messages/pl/zii.php
 %%DATADIR%%/framework/messages/pt/yii.php
 %%DATADIR%%/framework/messages/ro/yii.php
 %%DATADIR%%/framework/messages/ru/yii.php
 %%DATADIR%%/framework/messages/ru/zii.php
+%%DATADIR%%/framework/messages/sk/yii.php
+%%DATADIR%%/framework/messages/sk/zii.php
 %%DATADIR%%/framework/messages/sr_sr/yii.php
 %%DATADIR%%/framework/messages/sr_yu/yii.php
 %%DATADIR%%/framework/messages/sv/yii.php
 %%DATADIR%%/framework/messages/sv/zii.php
 %%DATADIR%%/framework/messages/ta_in/yii.php
+%%DATADIR%%/framework/messages/ta_in/zii.php
 %%DATADIR%%/framework/messages/th/yii.php
 %%DATADIR%%/framework/messages/uk/yii.php
 %%DATADIR%%/framework/messages/uk/zii.php
 %%DATADIR%%/framework/messages/vi/yii.php
 %%DATADIR%%/framework/messages/vi/zii.php
 %%DATADIR%%/framework/messages/zh_cn/yii.php
+%%DATADIR%%/framework/messages/zh_cn/zii.php
 %%DATADIR%%/framework/messages/zh_tw/yii.php
 %%DATADIR%%/framework/test/CDbFixtureManager.php
 %%DATADIR%%/framework/test/CDbTestCase.php
@@ -1120,7 +1140,9 @@ bin/yiic
 %%DATADIR%%/framework/vendors/TextHighlighter/Text/Highlighter/Renderer/HtmlTags.php
 %%DATADIR%%/framework/vendors/TextHighlighter/Text/Highlighter/Renderer/JSON.php
 %%DATADIR%%/framework/vendors/TextHighlighter/Text/Highlighter/Renderer/XML.php
+%%DATADIR%%/framework/vendors/TextHighlighter/Text/Highlighter/SH.php
 %%DATADIR%%/framework/vendors/TextHighlighter/Text/Highlighter/SQL.php
+%%DATADIR%%/framework/vendors/TextHighlighter/Text/Highlighter/VBSCRIPT.php
 %%DATADIR%%/framework/vendors/TextHighlighter/Text/Highlighter/XML.php
 %%DATADIR%%/framework/vendors/TextHighlighter/Text/README
 %%DATADIR%%/framework/vendors/TextHighlighter/Text/TODO
@@ -1141,7 +1163,9 @@ bin/yiic
 %%DATADIR%%/framework/vendors/TextHighlighter/Text/python.xml
 %%DATADIR%%/framework/vendors/TextHighlighter/Text/ruby.xml
 %%DATADIR%%/framework/vendors/TextHighlighter/Text/sample.css
+%%DATADIR%%/framework/vendors/TextHighlighter/Text/sh.xml
 %%DATADIR%%/framework/vendors/TextHighlighter/Text/sql.xml
+%%DATADIR%%/framework/vendors/TextHighlighter/Text/vbscript.xml
 %%DATADIR%%/framework/vendors/TextHighlighter/Text/xml.xml
 %%DATADIR%%/framework/vendors/TextHighlighter/highlight.css
 %%DATADIR%%/framework/vendors/adodb/LICENSE.txt
@@ -1156,7 +1180,6 @@ bin/yiic
 %%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/Interchange.php
 %%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/Interchange/Directive.php
 %%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/Interchange/Id.php
-%%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/Interchange/Namespace.php
 %%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/InterchangeBuilder.php
 %%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/Validator.php
 %%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/ValidatorAtom.php
@@ -1176,7 +1199,6 @@ bin/yiic
 %%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/Attr.IDBlacklistRegexp.txt
 %%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/Attr.IDPrefix.txt
 %%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/Attr.IDPrefixLocal.txt
-%%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/Attr.txt
 %%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/AutoFormat.AutoParagraph.txt
 %%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/AutoFormat.Custom.txt
 %%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/AutoFormat.DisplayLinkURI.txt
@@ -1186,19 +1208,16 @@ bin/yiic
 %%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/AutoFormat.RemoveEmpty.RemoveNbsp.Exceptions.txt
 %%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/AutoFormat.RemoveEmpty.RemoveNbsp.txt
 %%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/AutoFormat.RemoveEmpty.txt
-%%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/AutoFormat.txt
-%%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/AutoFormatParam.PurifierLinkifyDocURL.txt
-%%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/AutoFormatParam.txt
+%%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/AutoFormat.RemoveSpansWithoutAttributes.txt
 %%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/CSS.AllowImportant.txt
 %%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/CSS.AllowTricky.txt
 %%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/CSS.AllowedProperties.txt
 %%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/CSS.DefinitionRev.txt
+%%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/CSS.ForbiddenProperties.txt
 %%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/CSS.MaxImgLength.txt
 %%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/CSS.Proprietary.txt
-%%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/CSS.txt
 %%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/Cache.DefinitionImpl.txt
 %%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/Cache.SerializerPath.txt
-%%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/Cache.txt
 %%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/Core.AggressivelyFixLt.txt
 %%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/Core.CollectErrors.txt
 %%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/Core.ColorKeywords.txt
@@ -1212,20 +1231,16 @@ bin/yiic
 %%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/Core.Language.txt
 %%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/Core.LexerImpl.txt
 %%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/Core.MaintainLineNumbers.txt
+%%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/Core.NormalizeNewlines.txt
 %%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/Core.RemoveInvalidImg.txt
+%%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/Core.RemoveProcessingInstructions.txt
 %%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/Core.RemoveScriptContents.txt
-%%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/Core.txt
 %%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/Filter.Custom.txt
 %%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/Filter.ExtractStyleBlocks.Escaping.txt
 %%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/Filter.ExtractStyleBlocks.Scope.txt
 %%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/Filter.ExtractStyleBlocks.TidyImpl.txt
 %%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/Filter.ExtractStyleBlocks.txt
 %%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/Filter.YouTube.txt
-%%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/Filter.txt
-%%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/FilterParam.ExtractStyleBlocksEscaping.txt
-%%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/FilterParam.ExtractStyleBlocksScope.txt
-%%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/FilterParam.ExtractStyleBlocksTidyImpl.txt
-%%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/FilterParam.txt
 %%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/HTML.Allowed.txt
 %%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/HTML.AllowedAttributes.txt
 %%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/HTML.AllowedElements.txt
@@ -1237,6 +1252,7 @@ bin/yiic
 %%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/HTML.DefinitionID.txt
 %%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/HTML.DefinitionRev.txt
 %%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/HTML.Doctype.txt
+%%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/HTML.FlashAllowFullScreen.txt
 %%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/HTML.ForbiddenAttributes.txt
 %%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/HTML.ForbiddenElements.txt
 %%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/HTML.MaxImgLength.txt
@@ -1250,14 +1266,12 @@ bin/yiic
 %%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/HTML.TidyRemove.txt
 %%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/HTML.Trusted.txt
 %%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/HTML.XHTML.txt
-%%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/HTML.txt
 %%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/Output.CommentScriptContents.txt
+%%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/Output.FlashCompat.txt
 %%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/Output.Newline.txt
 %%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/Output.SortAttr.txt
 %%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/Output.TidyFormat.txt
-%%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/Output.txt
 %%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/Test.ForceNoIconv.txt
-%%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/Test.txt
 %%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/URI.AllowedSchemes.txt
 %%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/URI.Base.txt
 %%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/URI.DefaultScheme.txt
@@ -1274,7 +1288,6 @@ bin/yiic
 %%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/URI.MungeResources.txt
 %%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/URI.MungeSecretKey.txt
 %%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/URI.OverrideAllowedSchemes.txt
-%%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/URI.txt
 %%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/info.ini
 %%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/EntityLookup/entities.ser
 %%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/Filter/ExtractStyleBlocks.php
@@ -1384,6 +1397,19 @@ bin/yiic
 %%DATADIR%%/framework/views/he/profile-callstack.php
 %%DATADIR%%/framework/views/he/profile-summary-firebug.php
 %%DATADIR%%/framework/views/he/profile-summary.php
+%%DATADIR%%/framework/views/hr/error.php
+%%DATADIR%%/framework/views/hr/error400.php
+%%DATADIR%%/framework/views/hr/error403.php
+%%DATADIR%%/framework/views/hr/error404.php
+%%DATADIR%%/framework/views/hr/error500.php
+%%DATADIR%%/framework/views/hr/error503.php
+%%DATADIR%%/framework/views/hr/exception.php
+%%DATADIR%%/framework/views/hr/log-firebug.php
+%%DATADIR%%/framework/views/hr/log.php
+%%DATADIR%%/framework/views/hr/profile-callstack-firebug.php
+%%DATADIR%%/framework/views/hr/profile-callstack.php
+%%DATADIR%%/framework/views/hr/profile-summary-firebug.php
+%%DATADIR%%/framework/views/hr/profile-summary.php
 %%DATADIR%%/framework/views/id/error.php
 %%DATADIR%%/framework/views/id/error400.php
 %%DATADIR%%/framework/views/id/error403.php
@@ -1425,6 +1451,19 @@ bin/yiic
 %%DATADIR%%/framework/views/ja/profile-summary.php
 %%DATADIR%%/framework/views/log-firebug.php
 %%DATADIR%%/framework/views/log.php
+%%DATADIR%%/framework/views/lv/error.php
+%%DATADIR%%/framework/views/lv/error400.php
+%%DATADIR%%/framework/views/lv/error403.php
+%%DATADIR%%/framework/views/lv/error404.php
+%%DATADIR%%/framework/views/lv/error500.php
+%%DATADIR%%/framework/views/lv/error503.php
+%%DATADIR%%/framework/views/lv/exception.php
+%%DATADIR%%/framework/views/lv/log-firebug.php
+%%DATADIR%%/framework/views/lv/log.php
+%%DATADIR%%/framework/views/lv/profile-callstack-firebug.php
+%%DATADIR%%/framework/views/lv/profile-callstack.php
+%%DATADIR%%/framework/views/lv/profile-summary-firebug.php
+%%DATADIR%%/framework/views/lv/profile-summary.php
 %%DATADIR%%/framework/views/nl/error.php
 %%DATADIR%%/framework/views/nl/error400.php
 %%DATADIR%%/framework/views/nl/error403.php
@@ -1507,6 +1546,19 @@ bin/yiic
 %%DATADIR%%/framework/views/ru/profile-callstack.php
 %%DATADIR%%/framework/views/ru/profile-summary-firebug.php
 %%DATADIR%%/framework/views/ru/profile-summary.php
+%%DATADIR%%/framework/views/sk/error.php
+%%DATADIR%%/framework/views/sk/error400.php
+%%DATADIR%%/framework/views/sk/error403.php
+%%DATADIR%%/framework/views/sk/error404.php
+%%DATADIR%%/framework/views/sk/error500.php
+%%DATADIR%%/framework/views/sk/error503.php
+%%DATADIR%%/framework/views/sk/exception.php
+%%DATADIR%%/framework/views/sk/log-firebug.php
+%%DATADIR%%/framework/views/sk/log.php
+%%DATADIR%%/framework/views/sk/profile-callstack-firebug.php
+%%DATADIR%%/framework/views/sk/profile-callstack.php
+%%DATADIR%%/framework/views/sk/profile-summary-firebug.php
+%%DATADIR%%/framework/views/sk/profile-summary.php
 %%DATADIR%%/framework/views/sv/error.php
 %%DATADIR%%/framework/views/sv/error400.php
 %%DATADIR%%/framework/views/sv/error403.php
@@ -1572,6 +1624,8 @@ bin/yiic
 %%DATADIR%%/framework/views/zh_tw/profile-callstack.php
 %%DATADIR%%/framework/views/zh_tw/profile-summary-firebug.php
 %%DATADIR%%/framework/views/zh_tw/profile-summary.php
+%%DATADIR%%/framework/web/CSqlDataProvider.php
+%%DATADIR%%/framework/web/CArrayDataProvider.php
 %%DATADIR%%/framework/web/CActiveDataProvider.php
 %%DATADIR%%/framework/web/CAssetManager.php
 %%DATADIR%%/framework/web/CBaseController.php
@@ -1638,13 +1692,46 @@ bin/yiic
 %%DATADIR%%/framework/web/js/source/jquery.multifile.js
 %%DATADIR%%/framework/web/js/source/jquery.rating.js
 %%DATADIR%%/framework/web/js/source/jquery.treeview.async.js
+%%DATADIR%%/framework/web/js/source/jquery.treeview.edit.js
 %%DATADIR%%/framework/web/js/source/jquery.treeview.js
 %%DATADIR%%/framework/web/js/source/jquery.yii.js
 %%DATADIR%%/framework/web/js/source/jquery.yiiactiveform.js
 %%DATADIR%%/framework/web/js/source/jquery.yiitab.js
+%%DATADIR%%/framework/web/js/source/jui/MIT-LICENSE.txt
+%%DATADIR%%/framework/web/js/source/jui/css/base/images/ui-bg_flat_0_aaaaaa_40x100.png
+%%DATADIR%%/framework/web/js/source/jui/css/base/images/ui-bg_flat_75_ffffff_40x100.png
+%%DATADIR%%/framework/web/js/source/jui/css/base/images/ui-bg_glass_55_fbf9ee_1x400.png
+%%DATADIR%%/framework/web/js/source/jui/css/base/images/ui-bg_glass_65_ffffff_1x400.png
+%%DATADIR%%/framework/web/js/source/jui/css/base/images/ui-bg_glass_75_dadada_1x400.png
+%%DATADIR%%/framework/web/js/source/jui/css/base/images/ui-bg_glass_75_e6e6e6_1x400.png
+%%DATADIR%%/framework/web/js/source/jui/css/base/images/ui-bg_glass_95_fef1ec_1x400.png
+%%DATADIR%%/framework/web/js/source/jui/css/base/images/ui-bg_highlight-soft_75_cccccc_1x100.png
+%%DATADIR%%/framework/web/js/source/jui/css/base/images/ui-icons_222222_256x240.png
+%%DATADIR%%/framework/web/js/source/jui/css/base/images/ui-icons_2e83ff_256x240.png
+%%DATADIR%%/framework/web/js/source/jui/css/base/images/ui-icons_454545_256x240.png
+%%DATADIR%%/framework/web/js/source/jui/css/base/images/ui-icons_888888_256x240.png
+%%DATADIR%%/framework/web/js/source/jui/css/base/images/ui-icons_cd0a0a_256x240.png
+%%DATADIR%%/framework/web/js/source/jui/css/base/jquery-ui.css
+%%DATADIR%%/framework/web/js/source/jui/css/base/jquery.ui.accordion.css
+%%DATADIR%%/framework/web/js/source/jui/css/base/jquery.ui.all.css
+%%DATADIR%%/framework/web/js/source/jui/css/base/jquery.ui.autocomplete.css
+%%DATADIR%%/framework/web/js/source/jui/css/base/jquery.ui.base.css
+%%DATADIR%%/framework/web/js/source/jui/css/base/jquery.ui.button.css
+%%DATADIR%%/framework/web/js/source/jui/css/base/jquery.ui.core.css
+%%DATADIR%%/framework/web/js/source/jui/css/base/jquery.ui.datepicker.css
+%%DATADIR%%/framework/web/js/source/jui/css/base/jquery.ui.dialog.css
+%%DATADIR%%/framework/web/js/source/jui/css/base/jquery.ui.progressbar.css
+%%DATADIR%%/framework/web/js/source/jui/css/base/jquery.ui.resizable.css
+%%DATADIR%%/framework/web/js/source/jui/css/base/jquery.ui.selectable.css
+%%DATADIR%%/framework/web/js/source/jui/css/base/jquery.ui.slider.css
+%%DATADIR%%/framework/web/js/source/jui/css/base/jquery.ui.tabs.css
+%%DATADIR%%/framework/web/js/source/jui/css/base/jquery.ui.theme.css
+%%DATADIR%%/framework/web/js/source/jui/js/jquery-ui-i18n.min.js
+%%DATADIR%%/framework/web/js/source/jui/js/jquery-ui.min.js
 %%DATADIR%%/framework/web/js/source/rating/delete.gif
 %%DATADIR%%/framework/web/js/source/rating/jquery.rating.css
 %%DATADIR%%/framework/web/js/source/rating/star.gif
+%%DATADIR%%/framework/web/js/source/treeview/images/ajax-loader.gif
 %%DATADIR%%/framework/web/js/source/treeview/images/file.gif
 %%DATADIR%%/framework/web/js/source/treeview/images/folder-closed.gif
 %%DATADIR%%/framework/web/js/source/treeview/images/folder.gif
@@ -1700,43 +1787,7 @@ bin/yiic
 %%DATADIR%%/framework/yiic.php
 %%DATADIR%%/framework/yiilite.php
 %%DATADIR%%/framework/yiit.php
-%%DATADIR%%/framework/zii/CHANGELOG
-%%DATADIR%%/framework/zii/LICENSE
-%%DATADIR%%/framework/zii/README
-%%DATADIR%%/framework/zii/UPGRADE
 %%DATADIR%%/framework/zii/behaviors/CTimestampBehavior.php
-%%DATADIR%%/framework/zii/vendors/README.html
-%%DATADIR%%/framework/zii/vendors/jui/MIT-LICENSE.txt
-%%DATADIR%%/framework/zii/vendors/jui/css/base/images/ui-anim_basic_16x16.gif
-%%DATADIR%%/framework/zii/vendors/jui/css/base/images/ui-bg_flat_0_aaaaaa_40x100.png
-%%DATADIR%%/framework/zii/vendors/jui/css/base/images/ui-bg_flat_75_ffffff_40x100.png
-%%DATADIR%%/framework/zii/vendors/jui/css/base/images/ui-bg_glass_55_fbf9ee_1x400.png
-%%DATADIR%%/framework/zii/vendors/jui/css/base/images/ui-bg_glass_65_ffffff_1x400.png
-%%DATADIR%%/framework/zii/vendors/jui/css/base/images/ui-bg_glass_75_dadada_1x400.png
-%%DATADIR%%/framework/zii/vendors/jui/css/base/images/ui-bg_glass_75_e6e6e6_1x400.png
-%%DATADIR%%/framework/zii/vendors/jui/css/base/images/ui-bg_glass_95_fef1ec_1x400.png
-%%DATADIR%%/framework/zii/vendors/jui/css/base/images/ui-bg_highlight-soft_75_cccccc_1x100.png
-%%DATADIR%%/framework/zii/vendors/jui/css/base/images/ui-icons_222222_256x240.png
-%%DATADIR%%/framework/zii/vendors/jui/css/base/images/ui-icons_2e83ff_256x240.png
-%%DATADIR%%/framework/zii/vendors/jui/css/base/images/ui-icons_454545_256x240.png
-%%DATADIR%%/framework/zii/vendors/jui/css/base/images/ui-icons_888888_256x240.png
-%%DATADIR%%/framework/zii/vendors/jui/css/base/images/ui-icons_cd0a0a_256x240.png
-%%DATADIR%%/framework/zii/vendors/jui/css/base/jquery-ui.css
-%%DATADIR%%/framework/zii/vendors/jui/css/base/jquery.ui.accordion.css
-%%DATADIR%%/framework/zii/vendors/jui/css/base/jquery.ui.all.css
-%%DATADIR%%/framework/zii/vendors/jui/css/base/jquery.ui.autocomplete.css
-%%DATADIR%%/framework/zii/vendors/jui/css/base/jquery.ui.base.css
-%%DATADIR%%/framework/zii/vendors/jui/css/base/jquery.ui.button.css
-%%DATADIR%%/framework/zii/vendors/jui/css/base/jquery.ui.core.css
-%%DATADIR%%/framework/zii/vendors/jui/css/base/jquery.ui.datepicker.css
-%%DATADIR%%/framework/zii/vendors/jui/css/base/jquery.ui.dialog.css
-%%DATADIR%%/framework/zii/vendors/jui/css/base/jquery.ui.progressbar.css
-%%DATADIR%%/framework/zii/vendors/jui/css/base/jquery.ui.resizable.css
-%%DATADIR%%/framework/zii/vendors/jui/css/base/jquery.ui.slider.css
-%%DATADIR%%/framework/zii/vendors/jui/css/base/jquery.ui.tabs.css
-%%DATADIR%%/framework/zii/vendors/jui/css/base/jquery.ui.theme.css
-%%DATADIR%%/framework/zii/vendors/jui/js/jquery-ui-i18n.min.js
-%%DATADIR%%/framework/zii/vendors/jui/js/jquery-ui.min.js
 %%DATADIR%%/framework/zii/widgets/CBaseListView.php
 %%DATADIR%%/framework/zii/widgets/CBreadcrumbs.php
 %%DATADIR%%/framework/zii/widgets/CDetailView.php
@@ -1766,6 +1817,7 @@ bin/yiic
 %%DATADIR%%/framework/zii/widgets/grid/CLinkColumn.php
 %%DATADIR%%/framework/zii/widgets/jui/CJuiAccordion.php
 %%DATADIR%%/framework/zii/widgets/jui/CJuiAutoComplete.php
+%%DATADIR%%/framework/zii/widgets/jui/CJuiButton.php
 %%DATADIR%%/framework/zii/widgets/jui/CJuiDatePicker.php
 %%DATADIR%%/framework/zii/widgets/jui/CJuiDialog.php
 %%DATADIR%%/framework/zii/widgets/jui/CJuiDraggable.php
@@ -1786,15 +1838,6 @@ bin/yiic
 @dirrm %%DATADIR%%/framework/zii/widgets/assets/detailview
 @dirrm %%DATADIR%%/framework/zii/widgets/assets
 @dirrm %%DATADIR%%/framework/zii/widgets
-@dirrm %%DATADIR%%/framework/zii/vendors/jui/js
-@dirrm %%DATADIR%%/framework/zii/vendors/jui/css/base/images
-@dirrm %%DATADIR%%/framework/zii/vendors/jui/css/base
-@dirrm %%DATADIR%%/framework/zii/vendors/jui/css
-@dirrm %%DATADIR%%/framework/zii/vendors/jui
-@dirrm %%DATADIR%%/framework/zii/vendors
-@dirrm %%DATADIR%%/framework/zii/tests
-@dirrm %%DATADIR%%/framework/zii/messages
-@dirrm %%DATADIR%%/framework/zii/docs
 @dirrm %%DATADIR%%/framework/zii/behaviors
 @dirrm %%DATADIR%%/framework/zii
 @dirrm %%DATADIR%%/framework/web/widgets/views
@@ -1807,6 +1850,11 @@ bin/yiic
 @dirrm %%DATADIR%%/framework/web/js/source/treeview/images
 @dirrm %%DATADIR%%/framework/web/js/source/treeview
 @dirrm %%DATADIR%%/framework/web/js/source/rating
+@dirrm %%DATADIR%%/framework/web/js/source/jui/js
+@dirrm %%DATADIR%%/framework/web/js/source/jui/css/base/images
+@dirrm %%DATADIR%%/framework/web/js/source/jui/css/base
+@dirrm %%DATADIR%%/framework/web/js/source/jui/css
+@dirrm %%DATADIR%%/framework/web/js/source/jui
 @dirrm %%DATADIR%%/framework/web/js/source/autocomplete
 @dirrm %%DATADIR%%/framework/web/js/source
 @dirrm %%DATADIR%%/framework/web/js
@@ -1821,15 +1869,18 @@ bin/yiic
 @dirrm %%DATADIR%%/framework/views/vi
 @dirrm %%DATADIR%%/framework/views/uk
 @dirrm %%DATADIR%%/framework/views/sv
+@dirrm %%DATADIR%%/framework/views/sk
 @dirrm %%DATADIR%%/framework/views/ru
 @dirrm %%DATADIR%%/framework/views/ro
 @dirrm %%DATADIR%%/framework/views/pt
 @dirrm %%DATADIR%%/framework/views/pl
 @dirrm %%DATADIR%%/framework/views/no
 @dirrm %%DATADIR%%/framework/views/nl
+@dirrm %%DATADIR%%/framework/views/lv
 @dirrm %%DATADIR%%/framework/views/ja
 @dirrm %%DATADIR%%/framework/views/it
 @dirrm %%DATADIR%%/framework/views/id
+@dirrm %%DATADIR%%/framework/views/hr
 @dirrm %%DATADIR%%/framework/views/he
 @dirrm %%DATADIR%%/framework/views/fr
 @dirrm %%DATADIR%%/framework/views/es
@@ -1851,7 +1902,6 @@ bin/yiic
 @dirrm %%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/Language
 @dirrm %%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/Filter
 @dirrm %%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/EntityLookup
-@dirrm %%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/DefinitionCache/Serializer/HTML
 @dirrm %%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/DefinitionCache/Serializer
 @dirrm %%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/DefinitionCache
 @dirrm %%DATADIR%%/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema
@@ -1882,12 +1932,14 @@ bin/yiic
 @dirrm %%DATADIR%%/framework/messages/sv
 @dirrm %%DATADIR%%/framework/messages/sr_yu
 @dirrm %%DATADIR%%/framework/messages/sr_sr
+@dirrm %%DATADIR%%/framework/messages/sk
 @dirrm %%DATADIR%%/framework/messages/ru
 @dirrm %%DATADIR%%/framework/messages/ro
 @dirrm %%DATADIR%%/framework/messages/pt
 @dirrm %%DATADIR%%/framework/messages/pl
 @dirrm %%DATADIR%%/framework/messages/no
 @dirrm %%DATADIR%%/framework/messages/nl
+@dirrm %%DATADIR%%/framework/messages/lv
 @dirrm %%DATADIR%%/framework/messages/ja
 @dirrm %%DATADIR%%/framework/messages/it
 @dirrm %%DATADIR%%/framework/messages/id
