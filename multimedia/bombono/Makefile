@@ -6,21 +6,24 @@
 #
 
 PORTNAME=	bombono
-PORTVERSION=	0.8.1
+PORTVERSION=	1.0.0
 CATEGORIES=	multimedia
-MASTER_SITES=	SF/bombono/bombono-dvd/0.8
+MASTER_SITES=	SF/bombono/bombono-dvd/1.0
 DISTNAME=	bombono-dvd-${PORTVERSION}
 
 MAINTAINER=	c0rn@o2.pl
 COMMENT=	DVD authoring program
 
-LIB_DEPENDS=	gtkmm-2.4.1:${PORTSDIR}/x11-toolkits/gtkmm24 \
-		xml++-2.6.2:${PORTSDIR}/textproc/libxml++26
 BUILD_DEPENDS=	GraphicsMagick>=1.1.7:${PORTSDIR}/graphics/GraphicsMagick \
-		mjpegtools>=1.9.0:${PORTSDIR}/multimedia/mjpegtools \
-		dvdread-config:${PORTSDIR}/multimedia/libdvdread
-RUN_DEPENDS=	${BUILD_DEPENDS} \
+		mjpegtools>=1.9.0:${PORTSDIR}/multimedia/mjpegtools
+LIB_DEPENDS=	gtkmm-2.4.1:${PORTSDIR}/x11-toolkits/gtkmm24 \
+		xml++-2.6.2:${PORTSDIR}/textproc/libxml++26 \
+		lavfile:${PORTSDIR}/multimedia/mjpegtools \
+		dvdread:${PORTSDIR}/multimedia/libdvdread \
+		avcodec:${PORTSDIR}/multimedia/ffmpeg
+RUN_DEPENDS=	GraphicsMagick>=1.1.7:${PORTSDIR}/graphics/GraphicsMagick \
 		dvda-author:${PORTSDIR}/audio/dvda-author \
+		enca:${PORTSDIR}/converters/enca \
 		growisofs:${PORTSDIR}/sysutils/dvd+rw-tools \
 		toolame:${PORTSDIR}/audio/toolame
 
@@ -30,7 +33,8 @@ USE_GCC=	4.2+
 USE_SCONS=	yes
 USE_GETTEXT=	yes
 MAKE_JOBS_SAFE=	yes
-SCONS_ENV=	CCFLAGS="${CCFLAGS}" CXXFLAGS="${CXXFLAGS}" \
+SCONS_ENV=	CCFLAGS="${CCFLAGS} -I${LOCALBASE}/include" \
+		CXXFLAGS="${CXXFLAGS} -I${LOCALBASE}/include" \
 		LINKFLAGS="${LINKFLAGS}" PKGCONFIGDIR="${PKGCONFIGDIR}" \
 		CPPPATH="${CPPPATH}" LIBPATH="${LIBPATH}" PREFIX="${PREFIX}" \
 		CC="${CC}" CXX="${CXX}" \
