@@ -1,0 +1,38 @@
+--- ./plugins/node.d/squeezebox_.in.orig	2010-03-09 22:23:57.000000000 +0100
++++ ./plugins/node.d/squeezebox_.in	2010-03-09 22:24:16.000000000 +0100
+@@ -157,7 +157,7 @@ if [ "$CMD" = "years" ]; then
+ 		# echo "graph_order y0"
+ 		echo -n "graph_order y"; echo $years_array | sed 's/ / y/g'
+ 
+-		for i in `seq 0 $no_of_years`; do
++		for i in `jot - 0 $no_of_years`; do
+ 			year=$(echo ${arr1[$i]})
+ 			if [ $year = 0 ]; then
+ 				echo y0.label No year
+@@ -172,7 +172,7 @@ if [ "$CMD" = "years" ]; then
+ 		done
+ 		exit 0
+ 	fi 
+-	for i in `seq 0 $no_of_years`; do
++	for i in `jot - 0 $no_of_years`; do
+ 		year=$(echo ${arr1[$i]})
+ 		echo -n "y${year}.value "
+ 		printf "%b" "albums 0 0 year:${year}\nexit\n" | $NC $HOST $PORT | sed 's/%3A/:/g' | cut -d ':' -f 3
+@@ -183,7 +183,7 @@ elif [ "$CMD" = "signalstrength" -o "$CM
+             echo "graph_category Squeezebox"
+             COUNT=$(printf "%b" "player count ?\nexit\n" | $NC $HOST $PORT | cut -d " " -f 3)
+             (( COUNT-- ))
+-            for ID in $(seq 0 $COUNT); do
++            for ID in $(jot - 0 $COUNT); do
+                 MAC=$(printf "%b" "player id $ID ?\nexit\n" | $NC $HOST $PORT | cut -d " " -f 4 | sed 's/%3A/:/g')
+ 		NAME=$(printf "%b" "player name $MAC ?\nexit\n" | $NC $HOST $PORT | cut -d " " -f 4 | sed 's/%20/ /g')
+ 		MAC2=$(echo $MAC | sed 's/://g; s/\./_/g')
+@@ -193,7 +193,7 @@ elif [ "$CMD" = "signalstrength" -o "$CM
+         fi
+         COUNT=$(printf "%b" "player count ?\nexit\n" | $NC $HOST $PORT | cut -d " " -f 3)
+         (( COUNT-- ))
+-        for ID in $(seq 0 $COUNT); do
++        for ID in $(jot - 0 $COUNT); do
+             MAC=$(printf "%b" "player id $ID ?\nexit\n" | $NC $HOST $PORT | cut -d " " -f 4 | sed 's/%3A/:/g')
+             VAL=$(printf "%b" "$MAC $CMD ?\nexit\n"| $NC $HOST $PORT | cut -d " " -f 2- | sed "s/$CMD //")
+             MAC2=$(echo $MAC| sed 's/://g')
