@@ -1,0 +1,11 @@
+--- ./plugins/node.d/colour_tester.in.orig	2010-03-09 22:23:28.000000000 +0100
++++ ./plugins/node.d/colour_tester.in	2010-03-09 22:23:46.000000000 +0100
+@@ -29,7 +29,7 @@ NUMCOL=$(($I - 1))
+ 
+ 
+ do_ () { # Fetch
+-   for I in $(seq 1 $NUMCOL); do
++   for I in $(jot - 1 $NUMCOL); do
+        echo "l$I.value $I"
+    done
+ }
