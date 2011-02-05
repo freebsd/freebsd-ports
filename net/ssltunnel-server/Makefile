@@ -7,6 +7,7 @@
 
 PORTNAME=	ssltunnel
 PORTVERSION=	1.18
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://www.hsc.fr/ressources/outils/ssltunnel/download/
 PKGNAMESUFFIX=	-server
@@ -15,13 +16,16 @@ MAINTAINER=	utisoft@gmail.com
 COMMENT=	PPP over SSL virtual private networking (server part)
 
 LICENSE=	BSD
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+=	--disable-client
 
-.include <bsd.port.pre.mk>
+OPTIONS=	TCPWRAPPERS "libwrap support" off
+
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--disable-client
+
+.include <bsd.port.options.mk>
 
 .if defined(WITH_TCPWRAPPERS)
-CONFIGURE_ARGS+=	--with-libwrap
+CONFIGURE_ARGS+=--with-libwrap
 .endif
 
 post-patch:
@@ -36,11 +40,11 @@ post-patch:
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-	${INSTALL_MAN} ${WRKSRC}/README ${DOCSDIR}
-	${INSTALL_MAN} ${WRKSRC}/LISEZ-MOI ${DOCSDIR}
+	${INSTALL_MAN} ${WRKSRC}/README ${DOCSDIR}/server.README
+	${INSTALL_MAN} ${WRKSRC}/LISEZ-MOI ${DOCSDIR}/server.LISEZ-MOI
 .endif
 	${INSTALL_SCRIPT} ${WRKSRC}/server/pppserver.sh ${PREFIX}/etc/rc.d/ssltunnel.sh.sample
-	${INSTALL_DATA} ${WRKSRC}/server/users.new ${PREFIX}/etc/ssltunnel/users.sample
+	${INSTALL_DATA} ${WRKSRC}/server/users.new ${ETCDIR}/users.sample
 	@${CAT} ${PKGMESSAGE} | ${SED} "s|PREFIX|${PREFIX}|g"
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
