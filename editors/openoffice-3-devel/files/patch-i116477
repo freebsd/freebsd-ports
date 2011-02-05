@@ -365,8 +365,8 @@
 +# vim: set noet sw=4 ts=4:
 --- RepositoryFixes.mk~	2010-12-23 11:31:10.000000000 +0900
 +++ RepositoryFixes.mk	2011-01-22 18:43:30.000000000 +0900
-@@ -134,5 +134,22 @@
- gb_Library_TARGETS := $(filter-out icuuc,$(gb_Library_TARGETS))
+@@ -166,6 +166,23 @@
+ 
  endif
  
 +ifeq ($(OS),FREEBSD)
@@ -386,5 +386,6 @@
 +
 +endif
 +
- # vim: set noet sw=4 ts=4:
+ # we do not require a known rule for these, when using system libs
  
+ ifeq ($(USE_SYSTEM_STL),YES)
