@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	POE-Test-Loops
-PORTVERSION=	1.036
+PORTVERSION=	1.040
 CATEGORIES=	devel perl5
-MASTER_SITES=	CPAN
+MASTER_SITES=	CPAN/${PORTNAME:C/-.*//}/RCAPUTO
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	freebsd@beardz.net
@@ -16,7 +16,7 @@ COMMENT=	Reusable tests for POE Loop authors
 
 PERL_CONFIGURE=	yes
 
-MAN3=	POE::Test::Loops.3
-MAN1=	poe-gen-tests.1
+MAN1=		poe-gen-tests.1
+MAN3=		POE::Test::Loops.3
 
 .include <bsd.port.mk>
