@@ -1,8 +1,7 @@
-Bazaar-NG is a distributed version control system from Canonical.
-Bazaar-NG allows you to keep old versions of files and directories (usually
-source code), keep a log of who, when, and why changes occurred, etc., like SVN,
-CVS, or RCS. Bazaar-NG is distributed, which gives it significant advantages and
-some disadvantages compared to SVN and CVS. The bzr implementation is the next
-Bazaar version from Canonical called Bazaar-NG.
+Bazaar (bzr) is a decentralized revision control system, designed to be
+easy for developers and end users alike.  Bazaar is part of the GNU
+project to develop a complete free operating systemand a project of
+Canonical.  Bazaar directly supports both central version control (like
+cvs/svn) and distributed version control (like git/hg).
 
-WWW: http://bazaar-vcs.org/
+WWW: http://bazaar.canonical.com/
