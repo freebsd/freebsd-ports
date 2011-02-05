@@ -6,47 +6,40 @@
 #
 
 PORTNAME=	stratagus
-PORTVERSION=	2.2.4
-PORTREVISION=	3
+PORTVERSION=	2.2.5.5
 CATEGORIES=	games
-MASTER_SITES=	SF
-EXTRACT_SUFX=	-src.tar.gz
+MASTER_SITES=	http://launchpadlibrarian.net/59493540/
+DISTNAME=	${PORTNAME}_${PORTVERSION}
+EXTRACT_SUFX=	.orig.tar.gz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Free cross-platform real-time strategy gaming engine
 
 LIB_DEPENDS=	png.6:${PORTSDIR}/graphics/png
 
-OPTIONS=	OPENGL "Enable OpenGL support" on \
-		MIKMOD "Enable Mikmod support" off \
+OPTIONS=	MIKMOD "Enable Mikmod support" off \
 		MNG "Enable MNG support" off \
 		THEORA "Enable Theora support" off \
-		VORBIS "Enable Ogg Vorbis support" off
+		VORBIS "Enable Ogg Vorbis support" on
 
+LICENSE=	GPLv2
+USE_GCC=	4.4+
 USE_LUA=	5.0+
 USE_SDL=	sdl
-USE_DOS2UNIX=	yes
+USE_GL=		gl
+USE_AUTOTOOLS=	aclocal autoheader autoconf
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--with-extra-includes=${LUA_INCDIR} \
-		--with-extra-libs=${LUA_LIBDIR}
+		--with-extra-libs=${LUA_LIBDIR} \
+		--without-gles
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 MAKE_JOBS_UNSAFE=	yes
 
 PORTDOCS=	*
 PLIST_FILES=	bin/stratagus
 
-CPPFLAGS=	-I${LOCALBASE}/include
-LDFLAGS=	-L${LOCALBASE}/lib -lm
-
 .include <bsd.port.pre.mk>
-
-.if !defined(WITH_OPENGL)
-CONFIGURE_ARGS+=--without-opengl
-.else
-USE_GL=		gl
-CONFIGURE_ARGS+=--with-opengl
-.endif
 
 .if defined(WITH_MIKMOD)
 LIB_DEPENDS+=	mikmod.2:${PORTSDIR}/audio/libmikmod
@@ -76,9 +69,8 @@ CONFIGURE_ARGS+=--with-vorbis
 CONFIGURE_ARGS+=--without-vorbis
 .endif
 
-post-patch:
-	@${REINPLACE_CMD} -e 's|-O2 -pipe|| ; \
-		 s|-ldl||' ${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
+pre-configure:
+	@(cd ${WRKSRC}; ./autogen.sh)
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/stratagus ${PREFIX}/bin
