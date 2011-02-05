@@ -1,2 +1,2 @@
-Although the port builds, it is nonfunctional on amd64 and sparc64 due to the
-absence of opendx.
+Although the port builds, it is nonfunctional on sparc64 due to the absence
+of opendx.
