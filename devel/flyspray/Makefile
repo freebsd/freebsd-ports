@@ -23,8 +23,9 @@ NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 
 OPTIONS=	GRAPHVIZ "Install Graphviz for task dependency graphs" off \
+		MYSQL "Use MySQL Database Interface" off \
 		MYSQLI "Use MySQLi Database Interface" on \
-		MYSQL "Use MySQL Database Interface" off
+		POSTGRES "Use PostgreSQL Database Interface" off
 
 FLYSPRAYDIR=	${PREFIX}/share/${PORTNAME}
 ATTACHMENTDIR=	${DBDIR}/${PORTNAME}/attachments
@@ -54,7 +55,7 @@ SUB_LIST+=	FLYSPRAYDIR="${FLYSPRAYDIR}" \
 
 .include <bsd.port.pre.mk>
 
-.if !defined(WITHOUT_MYSQL)
+.if defined(WITH_MYSQL)
 USE_PHP+=	mysql
 .endif
 
@@ -62,7 +63,11 @@ USE_PHP+=	mysql
 USE_PHP+=	mysqli
 .endif
 
-.ifdef WITH_GRAPHVIZ
+.if defined(WITH_POSTGRES)
+USE_PHP+=	pgsql
+.endif
+
+.if defined(WITH_GRAPHVIZ)
 RUN_DEPENDS+=	${LOCALBASE}/bin/dot:${PORTSDIR}/graphics/graphviz
 .endif
 
