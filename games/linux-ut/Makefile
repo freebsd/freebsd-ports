@@ -10,7 +10,7 @@ PORTVERSION=	${UTVERSION}
 PORTREVISION=	3
 PORTEPOCH=	1
 CATEGORIES=	games linux
-MASTER_SITES=	http://liflg.0wnitsch.de/files/final/:p436 \
+MASTER_SITES=	http://liflg.holarse.net/files/final/:p436 \
 		http://www.utpg.org/patches/:p451
 DISTFILES=	${PATCH436FILES} \
 		${PATCH451FILES}
