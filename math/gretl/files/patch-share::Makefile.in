@@ -1,6 +1,6 @@
---- share/Makefile.in.orig	2008-07-30 23:25:31.000000000 +0900
-+++ share/Makefile.in	2008-08-02 02:34:37.000000000 +0900
-@@ -10,7 +10,7 @@
+--- share/Makefile.in.orig	2010-08-23 08:47:12.000000000 -0400
++++ share/Makefile.in	2011-02-05 04:47:43.000000000 -0500
+@@ -13,7 +13,7 @@
  sharesrc = $(topsrc)/share
  pdfdir = ../doc/tex
  
@@ -9,25 +9,8 @@
  
  AUTO_HELPFILES = \
  	gretlgui.hlp \
-@@ -36,14 +36,14 @@
- all: $(query_make_help)
- 
- help:
--	make -C ../doc/commands help-all
-+	$(MAKE) -C ../doc/commands help-all
- 
- .PHONY :
- 
- install: installdirs install_datafiles install_scripts install_functions \
- 	install_fonts install_help
- 	$(INSTALL_DATA) $(sharesrc)/gretl.stamp $(DESTDIR)$(gretldir)/gretl.stamp
--	make -C bcih install
-+	$(MAKE) -C bcih install
- 
- install-strip: install
- 
-@@ -69,20 +69,20 @@
- 	$(INSTALL_DATA) $(sharesrc)/functions/gretlfunc.dtd $(DESTDIR)$(gretldir)/functions 
+@@ -80,22 +80,22 @@
+ 	$(INSTALL_DATA) $(sharesrc)/functions/criteria.gfn $(DESTDIR)$(gretldir)/functions 
  
  install_man: gretl.1
 -	$(tooldir)/mkinstalldirs $(DESTDIR)$(prefix)/share/man/man1
@@ -56,3 +39,12 @@
  
  install_fonts:
  	for f in $(sharesrc)/fonts/*.ttf ; do \
+@@ -112,7 +112,7 @@
+ 	$(tooldir)/mkinstalldirs $(DESTDIR)$(gretldir)/scripts/misc 
+ 	$(tooldir)/mkinstalldirs $(DESTDIR)$(gretldir)/db
+ 	$(tooldir)/mkinstalldirs $(DESTDIR)$(gretldir)/functions
+-	$(tooldir)/mkinstalldirs $(DESTDIR)$(gretldir)/functions/docs
++#	$(tooldir)/mkinstalldirs $(DESTDIR)$(gretldir)/functions/docs
+ 	$(tooldir)/mkinstalldirs $(DESTDIR)$(gretldir)/fonts
+ 
+ clean:
