@@ -4,11 +4,15 @@ Configuration Instructions for Flyspray
 0) If you are upgrading from a previous version of flyspray, please skip to
    the Upgrading section below.
 
-1) Create a mysql database for Flyspray to use.  Here is one way to do that,
-   from the unix/linux command line, entering your mysql root password when
-   prompted:
+1) Create a database for Flyspray to use.  Here is one way to do that, from 
+   the unix/linux command line, entering your mysql root password (in case
+   using mysql backend) when prompted:
 
+For MySQL:
 # mysqladmin -u root -p create flyspray
+
+For PostgreSQL:
+# createdb -U pgsql flyspray
 
 2) Insert the following configuration into your Apache httpd.conf:
 
@@ -41,8 +45,6 @@ Configuration Instructions for Flyspray
 7) Report any bugs you find back to http://bugs.flyspray.org/ or the mailing
    list linked from the Flyspray homepage.
 
-8) Note that this version of Flyspray does not support PostgreSQL.
-
 Upgrading from previous versions of Flyspray
 ============================================
 
@@ -50,8 +52,9 @@ You can upgrade from a previous version of Flyspray by doing the following:
 
 0) read %%DOCSDIR%%/UPGRADING.txt.
 
-1) back up your old flyspray task database using "mysqldump".  No, really,
-   you seriously run the risk of losing data if you don't do this.
+1) back up your old flyspray task database using "mysqldump" for mysql and
+   "pg_dump" for postgresql.  No, really, you seriously run the risk of 
+   losing data if you don't do this.
 
 2) save a copy of %%FLYSPRAYDIR%%/flyspray.conf.php before running
    portupgrade.  This will need to be restored after you've upgraded the
