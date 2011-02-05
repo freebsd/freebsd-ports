@@ -1,7 +1,5 @@
-Index: configure
-diff -u configure.orig configure
---- configure.orig	Fri May 19 04:30:13 2006
-+++ configure	Sat May 20 04:04:39 2006
+--- configure.orig	2009-05-07 16:24:25.000000000 +0200
++++ configure	2010-11-09 10:26:27.000000000 +0100
 @@ -1586,6 +1586,7 @@
  fi
  echo "$as_me:$LINENO: result: yes" >&5
@@ -10,7 +8,7 @@ diff -u configure.orig configure
  test "$program_prefix" != NONE &&
    program_transform_name="s,^,$program_prefix,;$program_transform_name"
  # Use a double $ so make ignores it.
-@@ -5125,7 +5126,7 @@
+@@ -5147,7 +5148,7 @@
  	fi
  
  	saved_LIBS=$LIBS
@@ -19,7 +17,7 @@ diff -u configure.orig configure
            do
  	    LIBS="$saved_LIBS -l$dbname"
  	    cat >conftest.$ac_ext <<_ACEOF
-@@ -5135,6 +5136,7 @@
+@@ -5157,6 +5158,7 @@
  cat confdefs.h >>conftest.$ac_ext
  cat >>conftest.$ac_ext <<_ACEOF
  /* end confdefs.h.  */
@@ -27,7 +25,7 @@ diff -u configure.orig configure
  #include <db.h>
  int
  main ()
-@@ -5882,7 +5884,7 @@
+@@ -5904,7 +5906,7 @@
  	fi
  
  	saved_LIBS=$LIBS
@@ -36,7 +34,7 @@ diff -u configure.orig configure
            do
  	    LIBS="$saved_LIBS -l$dbname"
  	    cat >conftest.$ac_ext <<_ACEOF
-@@ -5892,6 +5894,7 @@
+@@ -5914,6 +5916,7 @@
  cat confdefs.h >>conftest.$ac_ext
  cat >>conftest.$ac_ext <<_ACEOF
  /* end confdefs.h.  */
@@ -44,7 +42,7 @@ diff -u configure.orig configure
  #include <db.h>
  int
  main ()
-@@ -7193,6 +7196,8 @@
+@@ -7215,6 +7218,8 @@
    SASLAUTHD_TRUE='#'
    SASLAUTHD_FALSE=
  fi
@@ -53,7 +51,7 @@ diff -u configure.orig configure
  
  echo "$as_me:$LINENO: checking if I should include saslauthd" >&5
  echo $ECHO_N "checking if I should include saslauthd... $ECHO_C" >&6
-@@ -10650,7 +10655,7 @@
+@@ -10672,7 +10677,7 @@
    echo $ECHO_N "(cached) $ECHO_C" >&6
  else
    ac_check_lib_save_LIBS=$LIBS
@@ -62,7 +60,7 @@ diff -u configure.orig configure
  cat >conftest.$ac_ext <<_ACEOF
  #line $LINENO "configure"
  /* confdefs.h.  */
-@@ -11060,7 +11065,7 @@
+@@ -11082,7 +11087,7 @@
      GSSAPIBASE_STATIC_LIBS="$GSSAPIBASE_LIBS $gssapi_dir/libgssapi_krb5.a $gssapi_dir/libkrb5.a $gssapi_dir/libk5crypto.a $gssapi_dir/libcom_err.a ${K5SUPSTATIC}"
    elif test "$gss_impl" = "heimdal"; then
      CPPFLAGS="$CPPFLAGS -DKRB5_HEIMDAL"
@@ -71,7 +69,25 @@ diff -u configure.orig configure
      GSSAPIBASE_STATIC_LIBS="$GSSAPIBASE_STATIC_LIBS $gssapi_dir/libgssapi.a $gssapi_dir/libkrb5.a $gssapi_dir/libasn1.a $gssapi_dir/libroken.a $gssapi_dir/libcom_err.a ${LIB_CRYPT}"
    elif test "$gss_impl" = "cybersafe03"; then
  # Version of CyberSafe with two libraries
-@@ -11898,7 +11903,7 @@
+@@ -11119,7 +11124,7 @@
+ # in gssapi\rfckrb5.h
+ #
+ if test "$gssapi" != "no"; then
+-  if test "$gss_impl" = "cybersafe" -o "$gss_impl" = "cybersafe03"; then
++  if test "$gss_impl" = "cybersafe" -o "$gss_impl" = "cybersafe03" -o "$gss_impl" = "heimdal"; then
+     cat >conftest.$ac_ext <<_ACEOF
+ #line $LINENO "configure"
+ /* confdefs.h.  */
+@@ -11190,7 +11195,7 @@
+ 
+   fi
+ 
+-  if test "$gss_impl" = "cybersafe" -o "$gss_impl" = "cybersafe03"; then
++  if test "$gss_impl" = "cybersafe" -o "$gss_impl" = "cybersafe03" -o "$gss_impl" = "heimdal"; then
+     cat >conftest.$ac_ext <<_ACEOF
+ #line $LINENO "configure"
+ /* confdefs.h.  */
+@@ -11920,7 +11925,7 @@
    echo $ECHO_N "(cached) $ECHO_C" >&6
  else
    ac_check_lib_save_LIBS=$LIBS
