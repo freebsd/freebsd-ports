@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	kipi-plugins
-PORTVERSION=	1.4.0
-PORTREVISION=	1
+PORTVERSION=	1.8.0
 PORTEPOCH=	1
 CATEGORIES=	graphics kde
 MASTER_SITES=	SF/kipi/${PORTNAME}/${PORTVERSION}
@@ -16,7 +15,8 @@ MAINTAINER=	kris@pcbsd.org
 COMMENT=	KDE4 kipi graphics plugins
 
 LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2 \
-		kipi.7:${PORTSDIR}/graphics/kdegraphics4
+		kipi.8:${PORTSDIR}/graphics/kdegraphics4 \
+		qjson.0:${PORTSDIR}/devel/qjson
 RUN_DEPENDS=	convert:${PORTSDIR}/graphics/ImageMagick
 
 LATEST_LINK=	${PORTNAME}-kde4
