@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	sys-uname
-PORTVERSION=	0.8.4
+PORTVERSION=	0.8.5
 CATEGORIES=	sysutils rubygems
 MASTER_SITES=	RG
 
