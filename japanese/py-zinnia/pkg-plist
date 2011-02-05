@@ -1,0 +1,6 @@
+%%PYTHON_SITELIBDIR%%/_zinnia.so
+%%PYTHON_SITELIBDIR%%/zinnia.py
+%%PYTHON_SITELIBDIR%%/zinnia.pyc
+%%PYTHON_SITELIBDIR%%/zinnia.pyo
+@dirrmtry %%PYTHON_SITELIBDIR%%
+@dirrmtry %%PYTHON_LIBDIR%%

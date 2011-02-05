@@ -279,6 +279,7 @@
     SUBDIR += ptex
     SUBDIR += py-kanjilib
     SUBDIR += py-mecab
+    SUBDIR += py-zinnia
     SUBDIR += pycodec
     SUBDIR += pycodec-zope
     SUBDIR += qkc
