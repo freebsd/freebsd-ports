@@ -393,6 +393,7 @@
     SUBDIR += yasou-fpw
     SUBDIR += yc.el
     SUBDIR += zangband
+    SUBDIR += zinnia
     SUBDIR += zipcodes
     SUBDIR += zope-ejsplitter
     SUBDIR += zope-jamailhost
