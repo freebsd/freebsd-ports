@@ -1032,6 +1032,7 @@
     SUBDIR += msp430-gcc
     SUBDIR += msp430-gdb
     SUBDIR += msp430-libc
+    SUBDIR += mspdebug
     SUBDIR += msrc0
     SUBDIR += nana
     SUBDIR += nant

@@ -1,0 +1,47 @@
+--- Makefile.orig	2010-11-09 08:40:57.000000000 +1100
++++ Makefile	2011-02-05 12:36:25.710676671 +1100
+@@ -26,17 +26,27 @@
+ 	READLINE_LIBS =
+ else
+ 	READLINE_CFLAGS = -DUSE_READLINE
+-	READLINE_LIBS = -lreadline
++	READLINE_LIBS = -lreadline -ltermcap
+ endif
+ 
+-# Mac OS X/MacPorts stuff
+ UNAME := $(shell sh -c 'uname -s')
+-ifeq ($(UNAME),Darwin)
+-	MACPORTS_CFLAGS = -I/opt/local/include
+-	MACPORTS_LDFLAGS = -L/opt/local/lib
++ifeq ($(UNAME),Darwin) # Mac OS X/MacPorts stuff
++	PORTS_CFLAGS = -I/opt/local/include
++	PORTS_LDFLAGS = -L/opt/local/lib
+ else
+-	MACPORTS_CFLAGS =
+-	MACPORTS_LDFLAGS =
++  ifeq ($(UNAME),OpenBSD) # OpenBSD Ports stuff
++	PORTS_CFLAGS = `pkg-config --cflags libelf libusb`
++	PORTS_LDFLAGS = `pkg-config --libs libelf libusb`
++  else
++    ifeq ($(UNAME),FreeBSD) # FreeBSD Ports stuff
++# This is only needed prior to FreeBSD 8.x to find libusb
++	PORTS_CFLAGS = -I${LOCALBASE}/include
++	PORTS_LDFLAGS = -L${LOCALBASE}/lib
++    else
++	PORTS_CFLAGS =
++	PORTS_LDFLAGS =
++    endif
++  endif
+ endif
+ 
+ MSPDEBUG_CFLAGS = -O1 -Wall -Wno-char-subscripts -ggdb
+@@ -60,7 +70,7 @@
+ 	  reader.o vector.o output_util.o expr.o fet_error.o binfile.o \
+ 	  fet_db.o usbutil.o titext.o srec.o device.o coff.o opdb.o output.o \
+ 	  cmddb.o stdcmd.o prog.o flash_bsl.o
+-	$(CC) $(LDFLAGS) $(MACPORTS_LDFLAGS) -o $@ $^ -lusb $(READLINE_LIBS)
++	$(CC) $(LDFLAGS) $(PORTS_LDFLAGS) -o $@ $^ -lusb $(READLINE_LIBS)
+ 
+ .c.o:
+-	$(CC) $(CFLAGS) $(MACPORTS_CFLAGS) $(READLINE_CFLAGS) $(MSPDEBUG_CFLAGS) -o $@ -c $*.c
++	$(CC) $(CFLAGS) $(PORTS_CFLAGS) $(READLINE_CFLAGS) $(MSPDEBUG_CFLAGS) -o $@ -c $*.c
