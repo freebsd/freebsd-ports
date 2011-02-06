@@ -29,7 +29,7 @@ LICENSE_COMB=	dual
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--datadir=${DATADIR} --verbose --disable-tests \
+CONFIGURE_ARGS+=--datadir=${DATADIR} --verbose --disable-tests \
 		--with-glu --with-opengl --with-xrandr \
 		--without-capi --without-gphoto --without-gsm \
 		--without-v4l --without-mpg123 --without-sane \
@@ -37,7 +37,10 @@ CONFIGURE_ARGS=	--datadir=${DATADIR} --verbose --disable-tests \
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" \
 		FLEX="${LOCALBASE}/bin/flex"
-USE_LDCONFIG=	${PREFIX}/lib ${PREFIX}/lib/wine
+WINELIBDIR?=	${PREFIX}/lib
+.if !defined(USE_LDCONFIG32)
+USE_LDCONFIG=	${WINELIBDIR} ${WINELIBDIR}/wine
+.endif
 MAKE_JOBS_SAFE=	yes
 MAN1=		msiexec.1 notepad.1 regedit.1 regsvr32.1 widl.1 wine.1 \
 		wineboot.1 winebuild.1 winecfg.1 wineconsole.1 winedbg.1 \
@@ -133,8 +136,8 @@ post-install:
 	          ${MAN1PREFIX}/man/fr.UTF-8/man1/wineserver.1
 	@-${RMDIR} -p ${MAN1PREFIX}/man/de.UTF-8/man1 \
 	              ${MAN1PREFIX}/man/fr.UTF-8/man1
-	${MV} -f ${PREFIX}/lib/libwine.so.1.0 ${PREFIX}/lib/libwine.so.1
-	${LN} -sf libwine.so.1 ${PREFIX}/lib/libwine.so
+	${MV} -f ${WINELIBDIR}/libwine.so.1.0 ${WINELIBDIR}/libwine.so.1
+	${LN} -sf libwine.so.1 ${WINELIBDIR}/libwine.so
 .if !defined(NOPORTDOCS)
 	-@${MKDIR} ${DOCSDIR}
 .for i in README ANNOUNCE AUTHORS
