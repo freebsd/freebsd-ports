@@ -7,6 +7,7 @@
 
 PORTNAME=	lightning
 DISTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	deskutils
 MASTER_SITES=	${MASTER_SITE_MOZILLA_EXTENDED}
 MASTER_SITE_SUBDIR=	calendar/${PORTNAME}/releases/${DISTVERSION}b1/source
@@ -18,7 +19,7 @@ COMMENT=	An integrated calendar for Thunderbird and SeaMonkey
 OPTIONS+=	THUNDERBIRD "Install Thunderbird 3.0" on \
 		SEAMONKEY "Install SeaMonkey 2.0" off
 
-CONFLICTS=	spidermonkey-1.[0-7]*
+CONFLICTS_BUILD=	spidermonkey-1.[0-7]*
 USE_AUTOTOOLS=	autoconf213 libtool
 ALL_TARGET=	default
 CONFIGURE_ENV=	LOCALBASE=${LOCALBASE}
