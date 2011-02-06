@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	musicpd
-PORTVERSION=	0.15.15
+PORTVERSION=	0.16.1
 CATEGORIES=	audio ipv6
 MASTER_SITES=	SF/${PORTNAME}/mpd/${PORTVERSION}
 DISTNAME=	mpd-${PORTVERSION}
@@ -227,6 +227,12 @@ CONFIGURE_ARGS+=--enable-lsr
 post-patch:
 	@${REINPLACE_CMD} -e "s/%%MPDDIR%%/${PREFIX:C/\//\\\//g}\/${MPDDIR:C/\//\\\//g}/g" -e "s/%%MPDUSER%%/${MPDUSER}/g" \
 		${WRKSRC}/doc/mpdconf.example
+.if (${OSVERSION} < 800000)
+	${REINPLACE_CMD} -e 's/nan[f]\{0,1\}(\"\")/NAN/g' \
+		${WRKSRC}/src/crossfade.c \
+		${WRKSRC}/src/player_thread.c \
+		${WRKSRC}/src/player_control.c
+.endif
 .if defined(NOPORTDOCS)
 	@${REINPLACE_CMD} -e 's|install-docDATA ||' \
 		${WRKSRC}/Makefile.in
