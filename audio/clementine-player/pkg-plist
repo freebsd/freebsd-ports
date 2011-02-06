@@ -1,6 +1,11 @@
 bin/clementine-player
 share/applications/clementine.desktop
 share/icons/hicolor/64x64/apps/application-x-clementine.png
+share/icons/hicolor/scalable/apps/application-x-clementine.svg
+share/icons/ubuntu-mono-dark/apps/24/clementine-panel.png
+share/icons/ubuntu-mono-dark/apps/24/clementine-panel-grey.png
+share/icons/ubuntu-mono-light/apps/24/clementine-panel.png
+share/icons/ubuntu-mono-light/apps/24/clementine-panel-grey.png
 %%VSL%%%%DATADIR%%/projectm-presets/Aderrasi - Agitator.milk
 %%VSL%%%%DATADIR%%/projectm-presets/Aderrasi - Aimless (Gravity Directive Mix).milk
 %%VSL%%%%DATADIR%%/projectm-presets/Aderrasi - Aimless (Spirogravity Mix).milk
@@ -572,6 +577,12 @@ share/icons/hicolor/64x64/apps/application-x-clementine.png
 %%VSL%%%%DATADIR%%/projectm-presets/project.tga
 %%VSL%%%%DATADIR%%/projectm-presets/shifter - escape the worm - Eo.S. + Phat - Before_It_Eats_Your_Brain_Mix_v2.milk
 %%VSL%%%%DATADIR%%/projectm-presets/shifter - escape the worm - Eo.S. + Phat 5362.milk
-%%VSL%%@dirrm %%DATADIR%%
 %%VSL%%@dirrm %%DATADIR%%/projectm-presets
+%%VSL%%@dirrm %%DATADIR%%
 @dirrmtry share/applications
+@dirrmtry share/icons/ubuntu-mono-light/apps/24
+@dirrmtry share/icons/ubuntu-mono-light/apps
+@dirrmtry share/icons/ubuntu-mono-light
+@dirrmtry share/icons/ubuntu-mono-dark/apps/24
+@dirrmtry share/icons/ubuntu-mono-dark/apps
+@dirrmtry share/icons/ubuntu-mono-dark
