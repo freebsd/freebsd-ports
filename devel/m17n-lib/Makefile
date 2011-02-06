@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	m17n-lib
-PORTVERSION=	1.6.1
-PORTREVISION=	2
+PORTVERSION=	1.6.2
 CATEGORIES=	devel
 MASTER_SITES=	http://www.m17n.org/m17n-lib-download/ \
 		http://anthesphoria.net/FreeBSD/ports/distfiles/
@@ -16,13 +15,13 @@ MAINTAINER=	nikola.lecic@anthesphoria.net
 COMMENT=	A library for the multilingual text handling
 
 BUILD_DEPENDS=	bison:${PORTSDIR}/devel/bison \
-		m17n-db>=1.6.1:${PORTSDIR}/devel/m17n-db
+		m17n-db>=1.6.2:${PORTSDIR}/devel/m17n-db
 LIB_DEPENDS=	fontconfig.1:${PORTSDIR}/x11-fonts/fontconfig \
 		freetype.9:${PORTSDIR}/print/freetype2 \
 		fribidi.3:${PORTSDIR}/converters/fribidi \
 		gd.4:${PORTSDIR}/graphics/gd \
 		otf.0:${PORTSDIR}/print/libotf
-RUN_DEPENDS=	m17n-db>=1.6.1:${PORTSDIR}/devel/m17n-db
+RUN_DEPENDS=	m17n-db>=1.6.2:${PORTSDIR}/devel/m17n-db
 
 MAKE_JOBS_UNSAFE=	yes
 
