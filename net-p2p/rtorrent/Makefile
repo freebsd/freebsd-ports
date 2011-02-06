@@ -6,8 +6,7 @@
 #
 
 PORTNAME?=	rtorrent
-PORTVERSION?=	0.8.6
-PORTREVISION?=	1
+PORTVERSION?=	0.8.7
 CATEGORIES=	net-p2p
 MASTER_SITES=	http://libtorrent.rakshasa.no/downloads/ \
 		${MASTER_SITE_LOCAL}
@@ -16,24 +15,24 @@ MASTER_SITE_SUBDIR=	flz/rtorrent/
 MAINTAINER?=	flz@FreeBSD.org
 COMMENT?=	BitTorrent Client written in C++
 
-BUILD_DEPENDS?=	libtorrent=0.12.6_1:${PORTSDIR}/net-p2p/libtorrent
-RUN_DEPENDS?=	libtorrent=0.12.6_1:${PORTSDIR}/net-p2p/libtorrent
+BUILD_DEPENDS?=	libtorrent=0.12.7:${PORTSDIR}/net-p2p/libtorrent
+RUN_DEPENDS?=	libtorrent=0.12.7:${PORTSDIR}/net-p2p/libtorrent
 LIB_DEPENDS?=	curl.6:${PORTSDIR}/ftp/curl
 
 CONFLICTS?=	rtorrent-devel-[0-9]*
 
-MAN1=		rtorrent.1
-
 USE_GCC=	4.2+
 
 GNU_CONFIGURE=	yes
+CONFIGURE_ENV+= LDFLAGS="${LDFLAGS} -pthread"
 CONFIGURE_ARGS=	--disable-debug
 
 SUB_FILES=	pkg-message
 
 PORTDOCS=	README
 
-OPTIONS=	XMLRPC "Compile with xmlrpc-c support" on
+OPTIONS=	XMLRPC "Compile with xmlrpc-c support" on \
+		IPV6 "Enable IPv6 support" off
 
 .include <bsd.port.pre.mk>
 
@@ -42,6 +41,10 @@ CONFIGURE_ARGS+=	--with-xmlrpc-c
 LIB_DEPENDS+=	xmlrpc.3:${PORTSDIR}/net/xmlrpc-c-devel
 .else
 CONFIGURE_ARGS+=	--with-xmlrpc-c=no
+.endif
+
+.if defined(WITH_IPV6)
+CONFIGURE_ARGS+=	--enable-ipv6
 .endif
 
 post-patch:
