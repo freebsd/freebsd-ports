@@ -167,11 +167,10 @@ POSTFIX_AUXLIBS+=	-L${OPENSSLLIB} ${LDFLAGS} -lssl -lcrypto
 .endif
 
 .if defined(WITH_SPF)
-BROKEN=			At the moment, SPF support is unavailable for ${PORTNAME}-${DISTVERSION}
 LIB_DEPENDS+=		spf2.3:${PORTSDIR}/mail/libspf2
 PATCH_SITES+=		${MASTER_SITE_LOCAL}
 PATCH_SITE_SUBDIR=	mm
-PATCHFILES+=		postfix-2.7.1-libspf2-1.2.x-4.patch.gz
+PATCHFILES+=		postfix-2.8.0-libspf2-1.2.x-0.patch.gz
 PATCH_DIST_STRIP=	-p1
 POSTFIX_CCARGS+=	-DHAVE_NS_TYPE -DHAS_SPF -I${LOCALBASE}/include
 POSTFIX_AUXLIBS+=	-L${LOCALBASE}/lib -lspf2
