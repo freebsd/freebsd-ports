@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	linkchecker
-PORTVERSION=	5.5
+PORTVERSION=	6.3
 CATEGORIES=	www python
 MASTER_SITES=	SF/${PORTNAME}/${PORTVERSION}/
 DISTNAME=	LinkChecker-${PORTVERSION}
@@ -15,6 +15,12 @@ DISTNAME=	LinkChecker-${PORTVERSION}
 MAINTAINER=	beat@FreeBSD.org
 COMMENT=	Check HTML documents for broken links
 
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cssutils>=0.9.5:${PORTSDIR}/www/py-cssutils \
+		${PYTHON_PKGNAMEPREFIX}utidy>=0.2:${PORTSDIR}/www/py-utidy
+
+LICENSE=	GPLv2
+
+USE_BZIP2=	yes
 USE_PYTHON=		2.5+
 USE_PYDISTUTILS=	yes
 INSTALLS_EGGINFO=	yes
