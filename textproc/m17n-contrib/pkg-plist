@@ -4,6 +4,7 @@ bin/tbl2mim.awk
 share/m17n/as-inscript.mim
 share/m17n/as-phonetic.mim
 share/m17n/ath-phonetic.mim
+share/m17n/be-kbd.mim
 share/m17n/bla-phonetic.mim
 share/m17n/bn-inscript.mim
 share/m17n/bn-probhat.mim
@@ -22,6 +23,7 @@ share/m17n/hi-phonetic.mim
 share/m17n/hi-remington.mim
 share/m17n/icons/as-inscript.png
 share/m17n/icons/as-phonetic.png
+share/m17n/icons/be-kbd.png
 share/m17n/icons/bn-inscript.png
 share/m17n/icons/bn-probhat.png
 share/m17n/icons/cs-kbd.png
