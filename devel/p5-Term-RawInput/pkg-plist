@@ -1,0 +1,5 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Term/RawInput/.packlist
+%%SITE_PERL%%/Term/RawInput.pm
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Term/RawInput
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Term
+@dirrmtry %%SITE_PERL%%/Term
