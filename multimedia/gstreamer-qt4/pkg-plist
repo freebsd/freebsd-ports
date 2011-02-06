@@ -120,6 +120,7 @@ libdata/pkgconfig/QtGStreamerUi-0.10.pc
 libdata/pkgconfig/QtGStreamerUtils-0.10.pc
 @dirrm lib/QtGStreamer
 @dirrm include/QtGStreamer/QGst/Ui
+@dirrm include/QtGStreamer/QGst/Utils
 @dirrm include/QtGStreamer/QGst
 @dirrm include/QtGStreamer/QGlib
 @dirrm include/QtGStreamer
