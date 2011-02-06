@@ -1,6 +1,23 @@
---- src/CMakeLists.txt.orig	2010-06-30 16:09:59.000000000 +0800
-+++ src/CMakeLists.txt	2010-06-30 16:13:10.000000000 +0800
-@@ -509,6 +509,7 @@ add_executable(clementine
+--- src/CMakeLists.txt.orig	2010-12-10 15:26:29.000000000 +0100
++++ src/CMakeLists.txt	2010-12-29 19:47:49.000000000 +0100
+@@ -772,7 +772,6 @@
+   ${QTSINGLECOREAPPLICATION_LIBRARIES}
+   ${QTIOCOMPRESSOR_LIBRARIES}
+   ${CMAKE_THREAD_LIBS_INIT}
+-  dl
+   z
+ )
+ 
+@@ -842,7 +841,7 @@
+   # command but they're actually used by libraries that appear after them, so
+   # they end up getting ignored.  This appends them to the very end of the link
+   # line, ensuring they're always used.
+-  target_link_libraries(clementine_lib -lX11 -ldl)
++  target_link_libraries(clementine_lib -lX11)
+ endif (UNIX AND NOT APPLE)
+ 
+ add_dependencies(clementine_lib qtsingleapplication)
+@@ -870,6 +869,7 @@
    ${CLEMENTINE-WIN32-RESOURCES}
    main.cpp
  )
