@@ -3,8 +3,7 @@
 # $FreeBSD$
 #
 # PROVIDE: cf-serverd
-# REQUIRE: SERVERS
-# BEFORE:  DAEMON
+# REQUIRE: LOGIN
 # KEYWORD: shutdown
 #
 # Add the following line to /etc/rc.conf[.local] to enable cf-serverd(8)
