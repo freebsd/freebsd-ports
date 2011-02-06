@@ -2240,6 +2240,7 @@
     SUBDIR += p5-Term-ProgressBar
     SUBDIR += p5-Term-Prompt
     SUBDIR += p5-Term-Query
+    SUBDIR += p5-Term-RawInput
     SUBDIR += p5-Term-ReadKey
     SUBDIR += p5-Term-ReadLine-Zoid
     SUBDIR += p5-Term-ReadPassword
