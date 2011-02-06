@@ -16,8 +16,6 @@ COMMENT=	Astropulse for BOINC
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-MANUAL_PACKAGE_BUILDING=	tinderbox does not understand :patch depend targets
-
 BUILD_DEPENDS=	${LOCALBASE}/include/fftw3.h:${PORTSDIR}/math/fftw3 \
 		${LOCALBASE}/bin/bash:${PORTSDIR}/shells/bash \
 		${NONEXISTENT}:${PORTSDIR}/astro/boinc-setiathome-enhanced:patch
@@ -69,9 +67,10 @@ PLIST_SUB+=	X11="@comment "
 CFLAGS+=	-mtune=native
 .endif
 
+SETI_WORK!=	cd ${.CURDIR}/../boinc-setiathome-enhanced && ${MAKE} -V WRKSRC
 CONFIGURE_ENV+=	BOINCDIR="${NONEXISTENT}" \
 		BOINC_DIR="${NONEXISTENT}" \
-		SETI_BOINC_DIR="${PORTSDIR}/astro/boinc-setiathome-enhanced/work/setiathome-svn-412"
+		SETI_BOINC_DIR="${SETI_WORK}"
 CONFIGURE_ARGS+=	--disable-static-client \
 			--with-boinc-platform=${ARCH}-portbld-freebsd
 
