@@ -6,8 +6,7 @@
 #
 
 PORTNAME?=	libtorrent
-PORTVERSION?=	0.12.6
-PORTREVISION?=	1
+PORTVERSION?=	0.12.7
 CATEGORIES=	net-p2p
 MASTER_SITES=	http://libtorrent.rakshasa.no/downloads/ \
 		${MASTER_SITE_LOCAL}
@@ -28,7 +27,8 @@ USE_OPENSSL=	yes
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 
-OPTIONS=	KQUEUE "Use kqueue(2) support" on
+OPTIONS=	KQUEUE "Use kqueue(2) support" on \
+		IPV6 "Enable IPv6 support" off
 
 .include <bsd.port.pre.mk>
 
@@ -46,6 +46,10 @@ post-patch:
 
 .if !defined(WITHOUT_KQUEUE)
 CONFIGURE_ARGS+=	--with-kqueue
+.endif
+
+.if defined(WITH_IPV6)
+CONFIGURE_ARGS+=	--enable-ipv6
 .endif
 
 .include <bsd.port.post.mk>
