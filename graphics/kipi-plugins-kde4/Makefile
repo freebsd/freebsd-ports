@@ -15,7 +15,7 @@ MAINTAINER=	kris@pcbsd.org
 COMMENT=	KDE4 kipi graphics plugins
 
 LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2 \
-		kipi.8:${PORTSDIR}/graphics/kdegraphics4 \
+		kipi.7:${PORTSDIR}/graphics/kdegraphics4 \
 		qjson.0:${PORTSDIR}/devel/qjson
 RUN_DEPENDS=	convert:${PORTSDIR}/graphics/ImageMagick
 

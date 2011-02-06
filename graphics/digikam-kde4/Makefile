@@ -19,7 +19,7 @@ LIB_DEPENDS=	tiff.4:${PORTSDIR}/graphics/tiff \
 		png.6:${PORTSDIR}/graphics/png \
 		jasper.4:${PORTSDIR}/graphics/jasper \
 		lqr-1.3:${PORTSDIR}/graphics/liblqr-1 \
-		kipi.8:${PORTSDIR}/graphics/kdegraphics4
+		kipi.7:${PORTSDIR}/graphics/kdegraphics4
 
 LATEST_LINK=	${PORTNAME}-kde4
 
