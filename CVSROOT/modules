@@ -274,7 +274,6 @@ accerciser                      ports/accessibility/accerciser
 accessibility_orca              ports/accessibility/orca
 accrete                         ports/astro/accrete
 ace                             ports/devel/ace
-ace+tao                         ports/devel/ace+tao
 ace+tao-doc                     ports/devel/ace+tao-doc
 acfax                           ports/comms/acfax
 ach                             ports/www/ach
@@ -2793,7 +2792,6 @@ dwm                             ports/x11-wm/dwm
 dwoo                            ports/www/dwoo
 dxf2fig                         ports/cad/dxf2fig
 dxpc                            ports/x11/dxpc
-dylan                           ports/lang/dylan
 dynagen                         ports/emulators/dynagen
 dynagui                         ports/emulators/dynagui
 dynamag                         ports/x11/dynamag
@@ -5173,6 +5171,7 @@ gstreamer-plugins-vp8           ports/multimedia/gstreamer-plugins-vp8
 gstreamer-plugins-wavpack       ports/audio/gstreamer-plugins-wavpack
 gstreamer-plugins-x264          ports/multimedia/gstreamer-plugins-x264
 gstreamer-plugins-xvid          ports/multimedia/gstreamer-plugins-xvid
+gstreamer-qt4                   ports/multimedia/gstreamer-qt4
 gstreamermm                     ports/multimedia/gstreamermm
 gsubedit                        ports/multimedia/gsubedit
 gsview                          ports/print/gsview
@@ -5791,6 +5790,7 @@ hugs                            ports/lang/hugs
 hulgalugha                      ports/misc/hulgalugha
 humanzip                        ports/textproc/humanzip
 hunch                           ports/security/hunch
+hupnp                           ports/net/hupnp
 husky-base                      ports/news/husky-base
 husky-base-devel                ports/news/husky-base-devel
 husky-bsopack                   ports/news/husky-bsopack
@@ -6420,7 +6420,6 @@ ja-nvi-euc-jp                   ports/japanese/nvi-euc-jp
 ja-nvi-iso-2022-jp              ports/japanese/nvi-iso-2022-jp
 ja-nvi-sjis                     ports/japanese/nvi-sjis
 ja-ochusha                      ports/japanese/ochusha
-ja-oleo                         ports/japanese/oleo
 ja-onew                         ports/japanese/onew
 ja-otojiro-fpw                  ports/japanese/otojiro-fpw
 ja-p5-Acme-Lou                  ports/japanese/p5-Acme-Lou
@@ -6499,6 +6498,9 @@ ja-prn                          ports/japanese/prn
 ja-ptex                         ports/japanese/ptex
 ja-py-kanjilib                  ports/japanese/py-kanjilib
 ja-py-mecab                     ports/japanese/py-mecab
+ja-py-tegaki                    ports/japanese/py-tegaki
+ja-py-tegaki-gtk                ports/japanese/py-tegaki-gtk
+ja-py-zinnia                    ports/japanese/py-zinnia
 ja-pycodec                      ports/japanese/pycodec
 ja-pycodec-zope                 ports/japanese/pycodec-zope
 ja-qkc                          ports/japanese/qkc
@@ -6563,6 +6565,8 @@ ja-tcl76                        ports/japanese/tcl76
 ja-tcl80                        ports/japanese/tcl80
 ja-tdiary                       ports/japanese/tdiary
 ja-teTeX                        ports/japanese/teTeX
+ja-tegaki-recognize             ports/japanese/tegaki-recognize
+ja-tegaki-zinnia-japanese       ports/japanese/tegaki-zinnia-japanese
 ja-tetex                        ports/japanese/teTeX
 ja-texfamily                    ports/japanese/texfamily
 ja-texfamily-vfn2a              ports/japanese/texfamily-vfn2a
@@ -6618,6 +6622,8 @@ ja-xyaku                        ports/japanese/xyaku
 ja-yasou-fpw                    ports/japanese/yasou-fpw
 ja-yc.el                        ports/japanese/yc.el
 ja-zangband                     ports/japanese/zangband
+ja-zinnia                       ports/japanese/zinnia
+ja-zinnia-tomoe                 ports/japanese/zinnia-tomoe
 ja-zipcodes                     ports/japanese/zipcodes
 ja-zope-ejsplitter              ports/japanese/zope-ejsplitter
 ja-zope-jamailhost              ports/japanese/zope-jamailhost
@@ -6642,7 +6648,6 @@ jaf                             ports/java/jaf
 jaffm                           ports/x11-fm/jaffm
 jag                             ports/games/jag
 jaggedalliance2                 ports/games/jaggedalliance2
-jahshaka                        ports/multimedia/jahshaka
 jai                             ports/java/jai
 jai-imageio                     ports/java/jai-imageio
 jailadmin                       ports/sysutils/jailadmin
@@ -7253,6 +7258,7 @@ kimwitu++                       ports/devel/kimwitu++
 kinemage                        ports/biology/kinemage
 kino                            ports/multimedia/kino
 kinterbasdb                     ports/databases/kinterbasdb
+kio-upnp-ms                     ports/net/kio-upnp-ms
 kio_p7zip                       ports/archivers/kio_p7zip
 kipi-plugins                    ports/graphics/kipi-plugins
 kipi-plugins-kde4               ports/graphics/kipi-plugins-kde4
@@ -8988,6 +8994,7 @@ luminance                       ports/graphics/luminance
 luna                            ports/astro/luna
 luola                           ports/games/luola
 lupe                            ports/x11/lupe
+lurker                          ports/mail/lurker
 lusca-head                      ports/www/lusca-head
 lusernet                        ports/news/lusernet
 lush                            ports/lang/lush
@@ -9799,6 +9806,7 @@ msp430-binutils                 ports/devel/msp430-binutils
 msp430-gcc                      ports/devel/msp430-gcc
 msp430-gdb                      ports/devel/msp430-gdb
 msp430-libc                     ports/devel/msp430-libc
+mspdebug                        ports/devel/mspdebug
 msql                            ports/databases/msql
 msql3                           ports/databases/msql3
 msrc0                           ports/devel/msrc0
@@ -10499,6 +10507,7 @@ octave-forge-engine             ports/math/octave-forge-engine
 octave-forge-es                 ports/math/octave-forge-es
 octave-forge-fenv               ports/math/octave-forge-fenv
 octave-forge-financial          ports/math/octave-forge-financial
+octave-forge-fits               ports/math/octave-forge-fits
 octave-forge-fpl                ports/math/octave-forge-fpl
 octave-forge-ga                 ports/math/octave-forge-ga
 octave-forge-general            ports/math/octave-forge-general
@@ -11297,6 +11306,7 @@ p5-CPAN-SQLite                  ports/devel/p5-CPAN-SQLite
 p5-CPAN-YACSmoke                ports/devel/p5-CPAN-YACSmoke
 p5-CPANPLUS                     ports/devel/p5-CPANPLUS
 p5-CPANPLUS-Dist-Build          ports/devel/p5-CPANPLUS-Dist-Build
+p5-CPS                          ports/devel/p5-CPS
 p5-CQL-Parser                   ports/textproc/p5-CQL-Parser
 p5-CSP                          ports/security/p5-CSP
 p5-CSS                          ports/textproc/p5-CSS
@@ -14212,6 +14222,7 @@ p5-Tcl                          ports/lang/p5-Tcl
 p5-Tcl-Tk                       ports/x11-toolkits/p5-Tcl-Tk
 p5-TeX-Encode                   ports/textproc/p5-TeX-Encode
 p5-TeX-Hyphen                   ports/textproc/p5-TeX-Hyphen
+p5-Tee                          ports/devel/p5-Tee
 p5-Telnet-Cisco                 ports/net-mgmt/p5-Telnet-Cisco
 p5-Template-Alloy               ports/www/p5-Template-Alloy
 p5-Template-DBI                 ports/databases/p5-Template-DBI
@@ -14740,6 +14751,7 @@ p5-WeakRef                      ports/devel/p5-WeakRef
 p5-Weather-Underground          ports/astro/p5-Weather-Underground
 p5-Web-Scraper                  ports/www/p5-Web-Scraper
 p5-Web-Scraper-Config           ports/www/p5-Web-Scraper-Config
+p5-Web-oEmbed                   ports/www/p5-Web-oEmbed
 p5-WebService-Basecamp          ports/www/p5-WebService-Basecamp
 p5-WebService-Bloglines         ports/www/p5-WebService-Bloglines
 p5-WebService-BuzzurlAPI        ports/www/p5-WebService-BuzzurlAPI
@@ -15759,6 +15771,7 @@ p5-cpan-sqlite                  ports/devel/p5-CPAN-SQLite
 p5-cpan-yacsmoke                ports/devel/p5-CPAN-YACSmoke
 p5-cpanplus                     ports/devel/p5-CPANPLUS
 p5-cpanplus-dist-build          ports/devel/p5-CPANPLUS-Dist-Build
+p5-cps                          ports/devel/p5-CPS
 p5-cql-parser                   ports/textproc/p5-CQL-Parser
 p5-crypt-anubis                 ports/security/p5-Crypt-Anubis
 p5-crypt-appletwofish           ports/security/p5-Crypt-AppleTwoFish
@@ -18363,6 +18376,7 @@ p5-task-weaken                  ports/devel/p5-Task-Weaken
 p5-tatsumaki                    ports/www/p5-Tatsumaki
 p5-tcl                          ports/lang/p5-Tcl
 p5-tcl-tk                       ports/x11-toolkits/p5-Tcl-Tk
+p5-tee                          ports/devel/p5-Tee
 p5-telnet-cisco                 ports/net-mgmt/p5-Telnet-Cisco
 p5-template-alloy               ports/www/p5-Template-Alloy
 p5-template-dbi                 ports/databases/p5-Template-DBI
@@ -18819,6 +18833,7 @@ p5-wap-wbxml                    ports/converters/p5-WAP-wbxml
 p5-wddx                         ports/textproc/p5-WDDX
 p5-weakref                      ports/devel/p5-WeakRef
 p5-weather-underground          ports/astro/p5-Weather-Underground
+p5-web-oembed                   ports/www/p5-Web-oEmbed
 p5-web-scraper                  ports/www/p5-Web-Scraper
 p5-web-scraper-config           ports/www/p5-Web-Scraper-Config
 p5-webservice-basecamp          ports/www/p5-WebService-Basecamp
@@ -21946,6 +21961,7 @@ pylot                           ports/www/pylot
 pymacs                          ports/devel/pymacs
 pymol                           ports/biology/pymol
 pymongo                         ports/databases/pymongo
+pymorph                         ports/graphics/pymorph
 pymsgauth                       ports/mail/pymsgauth
 pymsn                           ports/net-im/pymsn
 pyne                            ports/news/pyne
@@ -22130,7 +22146,6 @@ qsvn                            ports/devel/qsvn
 qsynth                          ports/audio/qsynth
 qt-bluecurve-theme              ports/x11-themes/qt-bluecurve-theme
 qt-faststart                    ports/multimedia/qt-faststart
-qt-ibase-plugin                 ports/databases/qt-ibase-plugin
 qt-mysql-plugin                 ports/databases/qt-mysql-plugin
 qt-odbc-plugin                  ports/databases/qt-odbc-plugin
 qt-pgsql-plugin                 ports/databases/qt-pgsql-plugin
@@ -22371,7 +22386,6 @@ rawio                           ports/benchmarks/rawio
 rawrec                          ports/audio/rawrec
 rawstudio                       ports/graphics/rawstudio
 rawtherapee                     ports/graphics/rawtherapee
-ray++                           ports/graphics/ray++
 raysfilter                      ports/mail/raysfilter
 rayshade                        ports/graphics/rayshade
 razor-agents                    ports/mail/razor-agents
@@ -23245,6 +23259,7 @@ rubygem-prawn-layout            ports/print/rubygem-prawn-layout
 rubygem-prawn-security          ports/print/rubygem-prawn-security
 rubygem-prawn-svg               ports/print/rubygem-prawn-svg
 rubygem-ptreloaded              ports/devel/rubygem-ptreloaded
+rubygem-qmail                   ports/mail/rubygem-qmail
 rubygem-rack                    ports/www/rubygem-rack
 rubygem-rack-cache              ports/www/rubygem-rack-cache
 rubygem-rack-mount              ports/www/rubygem-rack-mount
