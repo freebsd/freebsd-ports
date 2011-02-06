@@ -21,6 +21,9 @@ bin/typetrainer
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/typetrainer/run.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/typetrainer/run.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/typetrainer/run.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/typetrainer/stat.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/typetrainer/stat.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/typetrainer/stat.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/typetrainer/tutors/__init__.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/typetrainer/tutors/__init__.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/typetrainer/tutors/__init__.pyo
