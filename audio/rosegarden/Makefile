@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	rosegarden
-PORTVERSION=	10.10
+PORTVERSION=	11.02
 CATEGORIES=	audio
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}/
 
@@ -22,7 +22,7 @@ LIB_DEPENDS+=	lrdf.2:${PORTSDIR}/textproc/liblrdf \
 		fftw3f.5:${PORTSDIR}/math/fftw3-float \
 		asound.2:${PORTSDIR}/audio/alsa-lib \
 		lirc_client:${PORTSDIR}/comms/lirc
-		
+
 LICENSE=	GPLv2
 
 USE_BZIP2=	yes
