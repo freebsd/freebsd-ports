@@ -530,6 +530,7 @@
     SUBDIR += gperf
     SUBDIR += gpsim
     SUBDIR += gputils
+    SUBDIR += grantlee
     SUBDIR += gsoap
     SUBDIR += gstreamer-plugins-gconf
     SUBDIR += gstreamer-plugins-gio
