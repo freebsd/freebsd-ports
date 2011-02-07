@@ -3571,7 +3571,7 @@ do-fetch:
 				SORTED_MASTER_SITES_CMD_TMP="${SORTED_MASTER_SITES_DEFAULT_CMD}" ; \
 			fi; \
 			for site in `eval $$SORTED_MASTER_SITES_CMD_TMP ${_RANDOMIZE_SITES}`; do \
-			    ${ECHO_MSG} "=> Attempting to fetch from $${site}."; \
+			    ${ECHO_MSG} "=> Attempting to fetch $${site}/$${file}"; \
 				CKSIZE=`alg=SIZE; ${DISTINFO_DATA}`; \
 				case $${file} in \
 				*/*)	${MKDIR} $${file%/*}; \
@@ -3623,7 +3623,7 @@ do-fetch:
 				SORTED_PATCH_SITES_CMD_TMP="${SORTED_PATCH_SITES_DEFAULT_CMD}" ; \
 			fi; \
 			for site in `eval $$SORTED_PATCH_SITES_CMD_TMP`; do \
-			    ${ECHO_MSG} "=> Attempting to fetch from $${site}."; \
+			    ${ECHO_MSG} "=> Attempting to fetch $${site}/$${file}"; \
 				CKSIZE=`alg=SIZE; ${DISTINFO_DATA}`; \
 				case $${file} in \
 				*/*)	${MKDIR} $${file%/*}; \
