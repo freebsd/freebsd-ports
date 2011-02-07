@@ -1,38 +1,28 @@
 --- Makefile.orig
 +++ Makefile
-@@ -51,19 +51,12 @@
- #CC=gcc
- #LD=gcc
+@@ -48,20 +48,12 @@
  else
--CC?=gcc
+ CC?=gcc
+ CXX?=g++
 -LD=gcc
-+CC?=cc
 +LD=$(CC)
+ AR=ar
+ RANLIB=ranlib
  
 -# this nice line comes from the linux kernel makefile
 -BASE_ARCH:=$(shell uname -m | sed -e s/i.86/i386/ -e s/sun4u/sparc/ -e s/sparc64/sparc/ -e s/arm.*/arm/ -e s/sa110/arm/ -e s/alpha/axp/)
-+ARCH=$(shell uname -m)
  OS=$(shell uname)
  
 -ifeq ($(OS),FreeBSD)
--ARCH=freebsd_$(BASE_ARCH)
+-ARCH?=freebsd_$(BASE_ARCH)
 -else
--ARCH=$(BASE_ARCH)
+-ARCH?=$(BASE_ARCH)
 -endif
 -
  SHARED_LIBRARY_EXTENSION=so
  endif
  
-@@ -161,7 +154,7 @@
- LIB=lib
- endif
- 
--LDFLAGS_CLIENT=-ljpeg -lz -L$(X11BASE)/$(LIB) -lX11 -lXext -lXxf86dga -lXxf86vm -lXinerama $(shell curl-config --libs)
-+LDFLAGS_CLIENT=-ljpeg -lz -L$(X11BASE)/$(LIB) -lX11 -lXext -lXxf86dga -lXxf86vm -lXinerama $(shell curl-config --libs) $(PTHREAD_LIBS)
- LDFLAGS_DED=-lz $(shell curl-config --libs)
- LDFLAGS_MODULE=-shared
- LDFLAGS_TV_SERVER=-lz
-@@ -217,10 +210,8 @@
+@@ -252,12 +244,9 @@
  ######################################################################################################
  # Helper functions
  ######################################################################################################
@@ -40,8 +30,11 @@
 -	$(CC) $(CFLAGS_COMMON) -c $< -o $@
 -DO_CXX=echo "  > Compiling (c++) $<" && \
 -	$(CXX) $(CFLAGS_COMMON) $(CXXFLAGS_COMMON) -c $< -o $@
+-DO_RES=echo "  > Compiling resource $<" && \
+-	$(RES) $(RESFLAGS_COMMON) -i $< -o $@
 +DO_CC=$(CC) $(CFLAGS_COMMON) -c $< -o $@
 +DO_CXX=$(CXX) $(CFLAGS_COMMON) $(CXXFLAGS_COMMON) -c $< -o $@
- 
++DO_RES=$(RES) $(RESFLAGS_COMMON) -i $< -o $@
  
  DO_CC_CLIENT=$(DO_CC) $(CFLAGS_CLIENT)
+ DO_CC_DED=$(DO_CC) $(CFLAGS_DED)
