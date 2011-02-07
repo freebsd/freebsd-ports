@@ -4999,6 +4999,7 @@ grake                           ports/multimedia/grake
 gramofile                       ports/audio/gramofile
 gramps                          ports/science/gramps
 grande                          ports/games/grande
+grantlee                        ports/devel/grantlee
 granulate                       ports/misc/granulate
 grap                            ports/textproc/grap
 graphicboot                     ports/sysutils/graphicboot
@@ -14268,6 +14269,7 @@ p5-Term-Menus                   ports/devel/p5-Term-Menus
 p5-Term-ProgressBar             ports/devel/p5-Term-ProgressBar
 p5-Term-Prompt                  ports/devel/p5-Term-Prompt
 p5-Term-Query                   ports/devel/p5-Term-Query
+p5-Term-RawInput                ports/devel/p5-Term-RawInput
 p5-Term-ReadKey                 ports/devel/p5-Term-ReadKey
 p5-Term-ReadLine-Zoid           ports/devel/p5-Term-ReadLine-Zoid
 p5-Term-ReadPassword            ports/devel/p5-Term-ReadPassword
@@ -18422,6 +18424,7 @@ p5-term-menus                   ports/devel/p5-Term-Menus
 p5-term-progressbar             ports/devel/p5-Term-ProgressBar
 p5-term-prompt                  ports/devel/p5-Term-Prompt
 p5-term-query                   ports/devel/p5-Term-Query
+p5-term-rawinput                ports/devel/p5-Term-RawInput
 p5-term-readkey                 ports/devel/p5-Term-ReadKey
 p5-term-readline-zoid           ports/devel/p5-Term-ReadLine-Zoid
 p5-term-readpassword            ports/devel/p5-Term-ReadPassword
