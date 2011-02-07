@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	utils
-PORTVERSION=	0.3.0
+PORTVERSION=	0.4.0
 CATEGORIES=	devel python
-MASTER_SITES=	http://www.voidspace.org.uk/cgi-bin/voidspace/
+MASTER_SITES=	http://www.voidspace.org.uk/downloads/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTNAME=	downman.py?file=pythonutils-${PORTVERSION}
+DISTNAME=	pythonutils-${PORTVERSION}
 
 MAINTAINER=	daniel@netwalk.org
 COMMENT=	General utility modules that simplify common programming in Python
