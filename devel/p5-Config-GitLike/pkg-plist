@@ -1,0 +1,8 @@
+%%SITE_PERL%%/mach/auto/Config/GitLike/.packlist
+%%SITE_PERL%%/Config/GitLike/Cascaded.pm
+%%SITE_PERL%%/Config/GitLike/Git.pm
+%%SITE_PERL%%/Config/GitLike.pm
+@dirrm %%SITE_PERL%%/mach/auto/Config/GitLike
+@dirrm %%SITE_PERL%%/mach/auto/Config
+@dirrm %%SITE_PERL%%/Config/GitLike
+@dirrm %%SITE_PERL%%/Config
