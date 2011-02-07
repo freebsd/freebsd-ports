@@ -5,21 +5,28 @@
 # PROVIDE: rspamd
 # REQUIRE: LOGIN
 # KEYWORD: shutdown
-
 #
-# Add the following line to /etc/rc.conf to enable countd:
-# rspamd (bool):          Set to "NO" by default.
-#                          Set it to "YES" to enable rspamd.
+# Add the following line to /etc/rc.conf to enable rspamd:
+#
+# rspamd_enable (bool):		Set to "NO" by default.
+#							Set it to "YES" to enable rspamd.
+#
+# rspamd_user (str):		Default to "nobody".
+#
+# rspamd_group (str):		Default to "nobody".
 
 . /etc/rc.subr
 
-name="rspamd"
+name=rspamd
 rcvar=`set_rcvar`
-procname="%%PREFIX%%/bin/rspamd"
+command=%%PREFIX%%/bin/rspamd
 restart_precmd="rspamd_checkconfig"
 reload_precmd="rspamd_checkconfig"
 configtest_cmd="rspamd_checkconfig"
 reopenlog_cmd="reopenlog_cmd"
+
+pidfile="$rspamd_pidfile"
+required_files=%%PREFIX%%/etc/rspamd.xml
 
 load_rc_config $name
 
@@ -28,14 +35,12 @@ load_rc_config $name
 : ${rspamd_user="nobody"}
 : ${rspamd_group="nobody"}
 
-pidfile="$rspamd_pidfile"
-
 stop_postcmd="rm -f $rspamd_pidfile"
 
 rspamd_checkconfig()
 {
-	echo "Performing sanity check on rspamd configuration:"
-	eval ${command} -t
+        echo "Performing sanity check on rspamd configuration:"
+        eval ${command} -t
 }
 
 reopenlog_cmd()
@@ -43,10 +48,10 @@ reopenlog_cmd()
    pkill -USR1 -F $rspamd_pidfile
 }
 
-extra_commands="reload configtest reopenlog"
 sig_reload="HUP"
 
-command="$procname"
 command_args="-u ${rspamd_user} -g ${rspamd_group} -c /usr/local/etc/rspamd.xml"
 
+extra_commands="reload configtest reopenlog"
 run_rc_command "$1"
+

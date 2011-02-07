@@ -14,13 +14,12 @@ etc/rspamd.xml.sample
 %%ETCDIR%%/plugins/lua/whitelist.lua
 %%ETCDIR%%/plugins/lua/phishing.lua
 %%ETCDIR%%/plugins/lua/trie.lua
+%%ETCDIR%%/plugins/lua/emails.lua
 %%ETCDIR%%/lua/regexp/drugs.lua
 %%ETCDIR%%/lua/regexp/fraud.lua
 %%ETCDIR%%/lua/regexp/headers.lua
 %%ETCDIR%%/lua/regexp/lotto.lua
 %%ETCDIR%%/lua/rspamd.lua
-lib/librspamd_ipmark.so
-lib/librspamd_regmark.so
 lib/librspamdclient.so.%%RSPAMDVERSION%%
 lib/librspamdclient.so
 lib/librspamdclient_static.a
