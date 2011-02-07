@@ -29,6 +29,12 @@ SHLIBS=		dcmdata dcmdsig dcmimage dcmimgle dcmjpeg dcmnet \
 SHLIBVER=	${PORTVERSION:R:R}
 PLIST_SUB=	SHLIBVER=${SHLIBVER}
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "amd64"
+CFLAGS+=	-fPIC
+.endif
+
 post-install:
 .for shlib in ${SHLIBS}
 	@${MV} ${PREFIX}/lib/lib${shlib}.so ${PREFIX}/lib/lib${shlib}.so.${SHLIBVER}
@@ -36,4 +42,4 @@ post-install:
 .endfor
 
 #.include "Makefile.man"
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
