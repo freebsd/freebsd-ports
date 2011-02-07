@@ -6,23 +6,20 @@
 #
 
 PORTNAME=	warsow
-PORTVERSION=	0.5
-PORTREVISION=	4
+PORTVERSION=	0.6
 CATEGORIES=	games
-MASTER_SITES=	http://woe.crying-wolves.net/ \
-		http://www.derchris.eu/warsow/ \
-		http://warsow.hangy.de/ \
-		http://static.warsow.net/release/ \
-		http://rewq.de/scratch/wsw05/ \
-		http://weseo.de/downloads/
+MASTER_SITES=	http://www.zcdn.org/dl/ \
+		http://www.derchris.eu/warsow/
 DISTNAME=	${PORTNAME}_${PORTVERSION}_sdk
 DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	A fast paced first person shooter game
 
+LICENSE=	GPLv2
+
 LIB_DEPENDS=	curl.6:${PORTSDIR}/ftp/curl
-RUN_DEPENDS=	${DATADIR}/basewsw/data0_05.pk3:${PORTSDIR}/games/warsow-data
+RUN_DEPENDS=	${DATADIR}/basewsw/data0_06.pk3:${PORTSDIR}/games/warsow-data
 
 ONLY_FOR_ARCHS=	i386 amd64
 USE_GMAKE=	yes
@@ -30,7 +27,6 @@ USE_ZIP=	yes
 
 WRKSRC=		${WRKDIR}/source
 ALL_TARGET=	game
-MAKE_ARGS=	PTHREAD_LIBS="${PTHREAD_LIBS}"
 RELEASEDIR=	${WRKSRC}/release
 WSWSUBDIR=	basewsw
 
@@ -117,17 +113,17 @@ post-patch: .SILENT
 # so allows us not to install any wrapper scripts.
 	${REINPLACE_CMD} -e 's|path", "\.|path", "${DATADIR}|' \
 		${WRKSRC}/qcommon/files.c
-# FreeBSD does not use stupid `64' suffix for 64-bit readdir(3)
-	${REINPLACE_CMD} -e 's/FILE64_SOURCE)/& || defined(__FreeBSD__)/' \
-		${WRKSRC}/unix/unix_fs.c
 # Adjust architecture names, get rid of ``freebsd_'' prefix
 	${REINPLACE_CMD} -e 's/x86_64/amd64/ ; s/freebsd_//' \
 		${WRKSRC}/gameshared/q_arch.h
 # Resolve name collision with jpeg-8
 	${REINPLACE_CMD} -e 's|jpeg_mem_src|local_jpeg_mem_src|' \
 		${WRKSRC}/ref_gl/r_image.c
-
-
+# Add missing #include's
+	${REINPLACE_CMD} -e '24s|^|#include <sys/socket.h>|' \
+		${WRKSRC}/qcommon/net.c
+	${REINPLACE_CMD} -e '19s|^|#include <stdint.h>|' \
+		${WRKSRC}/unix/unix_xpm.c
 
 do-install:
 .for b in ${WSWBIN}

@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	data
-PORTVERSION=	0.5
+PORTVERSION=	0.6
 CATEGORIES=	games
-MASTER_SITES=	http://woe.crying-wolves.net/ \
+MASTER_SITES=	http://www.zcdn.org/dl/ \
 		http://www.derchris.eu/warsow/ \
-		http://warsow.hangy.de/ \
-		http://static.warsow.net/release/ \
-		http://rewq.de/scratch/wsw05/ \
-		http://weseo.de/downloads/
+		http://www.derchris.eu/warsow/:mappack \
+		http://static.warsow.net/release/:mappack \
+		http://rewq.de/scratch/wsw05/:mappack \
+		http://weseo.de/downloads/:mappack
 PKGNAMEPREFIX=	warsow-
 DISTNAME=	${PKGNAMEPREFIX:S/-//}_${PORTVERSION}_unified
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
@@ -21,6 +21,9 @@ DIST_SUBDIR=	${PKGNAMEPREFIX:S/-//}
 
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Warsow data files
+
+# Package size below is for default set of OPTIONS
+NO_PACKAGE=	Package will be 550MB, set FORCE_PACKAGE if you really want it
 
 ONLY_FOR_ARCHS=	i386 amd64
 USE_ZIP=	yes
@@ -40,7 +43,7 @@ OPTIONS=	MAPPACK		"Install community map pack"	on
 .include <bsd.port.options.mk>
 
 .if defined(WITH_MAPPACK)
-DISTFILES+=	warsow_comunity_map_pack_01${EXTRACT_SUFX}
+DISTFILES+=	warsow_comunity_map_pack_01${EXTRACT_SUFX}:mappack
 PLIST_SUB+=	MAPPACK=""
 .else
 PLIST_SUB+=	MAPPACK="@comment "
