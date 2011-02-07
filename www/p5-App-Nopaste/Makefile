@@ -6,25 +6,28 @@
 #
 
 PORTNAME=	App-Nopaste
-PORTVERSION=	0.22
+PORTVERSION=	0.25
 CATEGORIES=	www perl5
-MASTER_SITES=	CPAN
+MASTER_SITES=	CPAN/../../authors/id/S/SP/SPANG/
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	bapt@FreeBSD.org
 COMMENT=	Easy access to any pastebin
 
-BUILD_DEPENDS+=	${SITE_PERL}/WWW/Mechanize.pm:${PORTSDIR}/www/p5-WWW-Mechanize \
-		${SITE_PERL}/MooseX/Getopt.pm:${PORTSDIR}/devel/p5-MooseX-Getopt
+BUILD_DEPENDS+=	p5-WWW-Mechanize>=0:${PORTSDIR}/www/p5-WWW-Mechanize \
+		p5-MooseX-Getopt>=0.17:${PORTSDIR}/devel/p5-MooseX-Getopt \
+		p5-Moose>=0.74:${PORTSDIR}/devel/p5-Moose
 
-RUN_DEPENDS+=	${SITE_PERL}/WWW/Mechanize.pm:${PORTSDIR}/www/p5-WWW-Mechanize \
-		${SITE_PERL}/MooseX/Getopt.pm:${PORTSDIR}/devel/p5-MooseX-Getopt
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-OPTIONS=	CLIPBOARD "Support Clipboard" On \
+OPTIONS=	CLIPBOARD "Support X11 Clipboard" On \
 		PASTEBIN "Support pastebin.com" On \
-		GITHUB "Support github" Off
+		GITHUB "Support github" On
 
 PERL_CONFIGURE=	yes
+
+LICENSE_COMB=	dual
+LICENSE=	ART20 GPLv1
 
 CONFLICTS=	p5-WebService-NoPaste-0*
 
@@ -35,7 +38,6 @@ MAN3=		App::Nopaste.3 \
 		App::Nopaste::Service.3 \
 		App::Nopaste::Service::Debian.3 \
 		App::Nopaste::Service::Gist.3 \
-		App::Nopaste::Service::Husk.3 \
 		App::Nopaste::Service::Mathbin.3 \
 		App::Nopaste::Service::PastebinCom.3 \
 		App::Nopaste::Service::Pastie.3 \
@@ -46,18 +48,15 @@ MAN3=		App::Nopaste.3 \
 
 .include <bsd.port.pre.mk>
 .if defined(WITH_PASTEBIN)
-BUILD_DEPENDS+=	${SITE_PERL}/WWW/Pastebin/PastebinCom/Create.pm:${PORTSDIR}/www/p5-WWW-Pastebin-PastebinCom-Create
-RUN_DEPENDS+=	${SITE_PERL}/WWW/Pastebin/PastebinCom/Create.pm:${PORTSDIR}/www/p5-WWW-Pastebin-PastebinCom-Create
+BUILD_DEPENDS+=	p5-WWW-Pastebin-PastebinCom-Create>=0:${PORTSDIR}/www/p5-WWW-Pastebin-PastebinCom-Create
+RUN_DEPENDS+=	p5-WWW-Pastebin-PastebinCom-Create>=0:${PORTSDIR}/www/p5-WWW-Pastebin-PastebinCom-Create
 .endif
 .if defined(WITH_CLIPBOARD)
-BUILD_DEPENDS+=	${SITE_PERL}/Clipboard.pm:${PORTSDIR}/x11/p5-Clipboard
-RUN_DEPENDS+=	${SITE_PERL}/Clipboard.pm:${PORTSDIR}/x11/p5-Clipboard
+BUILD_DEPENDS+=	p5-Clipboard>=0:${PORTSDIR}/x11/p5-Clipboard
+RUN_DEPENDS+=	p5-Clipboard>=0:${PORTSDIR}/x11/p5-Clipboard
 .endif
 .if defined(WITH_GITHUB)
-BUILD_DEPENDS+=	${SITE_PERL}/Git.pm:${PORTSDIR}/devel/git \
-		${SITE_PERL}/Config/INI/Reader.pm:${PORTSDIR}/devel/p5-Config-INI
-
-RUN_DEPENDS+=	${SITE_PERL}/Git.pm:${PORTSDIR}/devel/git \
-		${SITE_PERL}/Config/INI/Reader.pm:${PORTSDIR}/devel/p5-Config-INI
+BUILD_DEPENDS+=	p5-Config-GitLike>=0:${PORTSDIR}/devel/p5-Config-GitLike
+RUN_DEPENDS+=	p5-Config-GitLike>=0:${PORTSDIR}/devel/p5-Config-GitLike
 .endif
 .include <bsd.port.post.mk>
