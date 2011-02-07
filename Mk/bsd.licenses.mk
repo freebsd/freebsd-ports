@@ -609,7 +609,7 @@ ${_LICENSE_COOKIE}:
 .			for lic in ${_LICENSE_TO_ASK}
 	@${ECHO_CMD} "${lic}:${_LICENSE_FILE_${lic}}" >> ${_LICENSE_ASK_DATA}
 .			endfor
-	@menu_cmd="${DIALOG} --hline \"This port requires you to accept at least one license\" --menu \"License for ${PKGNAME} (dual)\" 21 70 15"; \
+	@menu_cmd="${DIALOG} --title \"This port requires you to accept at least one license\" --menu \"License for ${PKGNAME} (dual)\" 21 70 15"; \
 	tmpfile=$$(mktemp -t portlicenses); \
 	for lic in ${_LICENSE_TO_ASK}; do \
 		menu_cmd="$${menu_cmd} VIEW_$${lic} \"View the license $${lic}\" USE_$${lic} \"Accept the license $${lic}\""; \
@@ -634,7 +634,7 @@ ${_LICENSE_COOKIE}:
 .			for lic in ${_LICENSE_TO_ASK}
 	@${ECHO_CMD} "${lic}:${_LICENSE_FILE_${lic}}" >> ${_LICENSE_ASK_DATA}
 .			endfor
-	@menu_cmd="${DIALOG} --hline \"This port requires you to accept all mentioned licenses\" --menu \"License for ${PKGNAME} (multi)\" 21 70 15"; \
+	@menu_cmd="${DIALOG} --title \"This port requires you to accept all mentioned licenses\" --menu \"License for ${PKGNAME} (multi)\" 21 70 15"; \
 	tmpfile=$$(mktemp -t portlicenses); \
 	for lic in ${_LICENSE_TO_ASK}; do \
 		menu_cmd="$${menu_cmd} VIEW_$${lic} \"View the license $${lic}\""; \
