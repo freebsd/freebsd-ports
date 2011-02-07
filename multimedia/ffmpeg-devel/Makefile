@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	ffmpeg
-DISTVERSION=	2010-12-29
+DISTVERSION=	2011-02-07
 CATEGORIES=	multimedia audio ipv6 net
-MASTER_SITES=	${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	mm
+MASTER_SITES=	http://git.ffmpeg.org/?p=ffmpeg.git;sf=tgz;a=snapshot;h=${GIT_SNAPSHOT};
+DISTNAME=	ffmpeg-${GIT_SUFFIX}
 
 MAINTAINER=	mm@FreeBSD.org
 COMMENT=	Realtime audio/video encoder/converter and streaming server
@@ -20,10 +20,13 @@ CONFLICTS=	ffmpeg-0.*
 
 LATEST_LINK=	ffmpeg-devel
 
-WRKSRC=		${WRKDIR}/ffmpeg-export-${DISTVERSION}
+GIT_SNAPSHOT=	5bea615dc383cf3617c5057db4fbc6832fc64137
+
+GIT_SUFFIX=	${GIT_SNAPSHOT:C/^(.......).*$/\1/g}
+FETCH_BEFORE_ARGS+=	-o ffmpeg-${GIT_SUFFIX}${EXTRACT_SUFX}
+
 HAS_CONFIGURE=	yes
 CONFIGURE_LOG=	config.err
-USE_XZ=		yes
 USE_GMAKE=	yes
 MAKE_JOBS_SAFE=	yes
 WANT_SDL=	yes
