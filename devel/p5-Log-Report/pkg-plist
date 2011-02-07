@@ -6,6 +6,8 @@ bin/xgettext-perl
 %%SITE_PERL%%/Log/Report/Die.pod
 %%SITE_PERL%%/Log/Report/Dispatcher.pm
 %%SITE_PERL%%/Log/Report/Dispatcher.pod
+%%SITE_PERL%%/Log/Report/Dispatcher/Callback.pm
+%%SITE_PERL%%/Log/Report/Dispatcher/Callback.pod
 %%SITE_PERL%%/Log/Report/Dispatcher/File.pm
 %%SITE_PERL%%/Log/Report/Dispatcher/File.pod
 %%SITE_PERL%%/Log/Report/Dispatcher/Log4perl.pm
