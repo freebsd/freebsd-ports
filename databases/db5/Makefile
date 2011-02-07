@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	db51
-PORTVERSION=	5.1.19.0
+PORTVERSION=	5.1.25.0
 CATEGORIES=	databases java
 MASTER_SITES=	http://download.oracle.com/berkeley-db/ 
 PKGNAMEPREFIX?=
