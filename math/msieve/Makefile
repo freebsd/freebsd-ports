@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	msieve
-PORTVERSION=	1.46
+PORTVERSION=	1.48
 CATEGORIES=	math
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	\
@@ -20,7 +20,7 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/libecm.a:${PORTSDIR}/math/gmp-ecm
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 USE_GMAKE=	yes
-CFLAGS+=	-D_FILE_OFFSET_BITS=64 -I${LOCALBASE}/include
+CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 MAKE_ENV=	LDFLAGS="${LDFLAGS}" PTHREAD_LIBS="${PTHREAD_LIBS}" ECM=1
 
@@ -60,5 +60,8 @@ do-install:
 	${MKDIR} ${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
 .endif
+
+regression-test test check: build
+	@( cd ${WRKSRC} ; ./msieve -q -d 1 2385734365243128176756453434347656453122245767798 )
 
 .include <bsd.port.post.mk>
