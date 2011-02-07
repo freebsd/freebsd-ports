@@ -1347,6 +1347,7 @@
     SUBDIR += p5-Config-AutoConf
     SUBDIR += p5-Config-Fast
     SUBDIR += p5-Config-General
+    SUBDIR += p5-Config-GitLike
     SUBDIR += p5-Config-INI
     SUBDIR += p5-Config-INI-MVP
     SUBDIR += p5-Config-INI-Simple
