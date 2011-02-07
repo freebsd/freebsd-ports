@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	rspamd
-PORTVERSION=	0.3.5
+PORTVERSION=	0.3.6
 CATEGORIES=	mail
 MASTER_SITES=	http://highsecure.ru/
 
@@ -21,7 +21,7 @@ OPTIONS=	RSPAMD_GPERF "Enable google perf-tools profiling" off \
 		RSPAMD_JUDY "Enable Judy arrays usage for performance" off \
 		RSPAMD_REDIRECTOR "Install HTTP redirector" off
 
-USE_RC_SUBR=	rspamd.sh
+USE_RC_SUBR=	rspamd
 
 LICENSE=	BSD
 
@@ -35,6 +35,9 @@ USE_LDCONFIG=	yes
 
 USE_GNOME=	glib20
 USE_LUA=	5.1-
+
+MAN8=	rspamd.8
+MAN1=	rspamc.1
 
 .include <bsd.port.pre.mk>
 
@@ -51,7 +54,7 @@ USE_LUA=	5.1-
  USE_PERL=	5.8+
  CMAKE_ARGS+=	-DENABLE_REDIRECTOR=ON
  PLIST_SUB+=	REDIRECTOR=""
- USE_RC_SUBR+=	redirector.sh
+ USE_RC_SUBR+=	rspamd_redirector
  RUN_DEPENDS+=	\
 	p5-IO-Socket-SSL>=0:${PORTSDIR}/security/p5-IO-Socket-SSL \
 	p5-IO-String>=0:${PORTSDIR}/devel/p5-IO-String \
