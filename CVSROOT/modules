@@ -11648,6 +11648,7 @@ p5-Config-Auto                  ports/devel/p5-Config-Auto
 p5-Config-AutoConf              ports/devel/p5-Config-AutoConf
 p5-Config-Fast                  ports/devel/p5-Config-Fast
 p5-Config-General               ports/devel/p5-Config-General
+p5-Config-GitLike               ports/devel/p5-Config-GitLike
 p5-Config-INI                   ports/devel/p5-Config-INI
 p5-Config-INI-MVP               ports/devel/p5-Config-INI-MVP
 p5-Config-INI-Simple            ports/devel/p5-Config-INI-Simple
@@ -15719,6 +15720,7 @@ p5-config-auto                  ports/devel/p5-Config-Auto
 p5-config-autoconf              ports/devel/p5-Config-AutoConf
 p5-config-fast                  ports/devel/p5-Config-Fast
 p5-config-general               ports/devel/p5-Config-General
+p5-config-gitlike               ports/devel/p5-Config-GitLike
 p5-config-ini                   ports/devel/p5-Config-INI
 p5-config-ini-mvp               ports/devel/p5-Config-INI-MVP
 p5-config-ini-simple            ports/devel/p5-Config-INI-Simple
