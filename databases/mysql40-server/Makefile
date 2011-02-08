@@ -71,9 +71,6 @@ CONFIGURE_ARGS+=--with-named-thread-libs=${PTHREAD_LIBS}
 CFLAGS+=	${PTHREAD_CFLAGS}
 .endif
 
-.if ${OSVERSION} >= 700000
-USE_GCC=	3.4
-.endif
 .if defined(BUILD_OPTIMIZED)
 CFLAGS+=	-O3 -fno-omit-frame-pointer -fno-gcse
 .endif
@@ -86,7 +83,7 @@ WANT_MYSQL_VER=	40
 
 LATEST_LINK=	mysql40-server
 
-CONFLICTS=	mysql-server-[35].* mysql-server-4.[1-9].*
+CONFLICTS_INSTALL=	mysql-server-[35].* mysql-server-4.[1-9].*
 
 USE_RC_SUBR=	mysql-server.sh
 
@@ -121,6 +118,8 @@ post-patch:
 .if defined(WITH_PROC_SCOPE_PTH)
 	@${REINPLACE_CMD} -e "s|PTHREAD_SCOPE_SYSTEM|PTHREAD_SCOPE_PROCESS|g" ${WRKSRC}/libmysqld/lib_sql.cc ${WRKSRC}/sql/mysqld.cc
 .endif
+	@${REINPLACE_CMD} -e 's|\&\& defined(__GNUC__)|\&\& defined(__GNUC__) \&\& 0|' \
+		${WRKSRC}/include/my_global.h
 
 post-install:
 .if !defined(PACKAGE_BUILDING)
@@ -132,7 +131,7 @@ post-install:
 .if defined(CLIENT_ONLY)
 LATEST_LINK=	mysql40-client
 
-CONFLICTS=	mysql-client-[35].* mysql-client-4.[1-9].*
+CONFLICTS_INSTALL=	mysql-client-[35].* mysql-client-4.[1-9].*
 
 MAN1=		mysql.1 mysqladmin.1 mysqldump.1 mysqlshow.1
 
@@ -148,6 +147,8 @@ post-patch:
 .if defined(WITH_PROC_SCOPE_PTH)
 	@${REINPLACE_CMD} -e "s|PTHREAD_SCOPE_SYSTEM|PTHREAD_SCOPE_PROCESS|g" ${WRKSRC}/tools/mysqlmanager.c
 .endif
+	@${REINPLACE_CMD} -e 's|\&\& defined(__GNUC__)|\&\& defined(__GNUC__) \&\& 0|' \
+		${WRKSRC}/include/my_global.h
 
 .else
 # MySQL-Scripts part
@@ -161,7 +162,7 @@ RUN_DEPENDS+=	${SITE_PERL}/File/Temp.pm:${PORTSDIR}/devel/p5-File-Temp
 
 LATEST_LINK=	mysql40-scripts
 
-CONFLICTS=	mysql-scripts-[35].* mysql-scripts-4.[1-9].*
+CONFLICTS_INSTALL=	mysql-scripts-[35].* mysql-scripts-4.[1-9].*
 
 MAN1=		mysql_zap.1 mysqlaccess.1 mysqld_multi.1 mysql_fix_privilege_tables.1
 
