@@ -6,21 +6,22 @@
 #
 
 PORTNAME=	yajl
-PORTVERSION=	1.0.9
-PORTREVISION=	1
+PORTVERSION=	1.0.11
 CATEGORIES=	devel
-MASTER_SITES=	http://cloud.github.com/downloads/lloyd/yajl/
+MASTER_SITES=	LOCAL/bapt \
+		http://files.etoilebsd.net/yajl/
 
 MAINTAINER=	bapt@FreeBSD.org
 COMMENT=	A Portable JSON parsing and serialization library in ANSI C
 
+GITREF=		f4baae0
+DISTNAME=	lloyd-${PORTNAME}-${PORTVERSION}-0-g${GITREF}
+WRKSRC=		${WRKDIR}/lloyd-${PORTNAME}-${GITREF}
+PLIST_SUB=	VERSION=${PORTVERSION}
+
+LICENSE=	BSD
+
 USE_LDCONFIG=	yes
 USE_CMAKE=	yes
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 700042
-USE_GCC=	4.2+
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
