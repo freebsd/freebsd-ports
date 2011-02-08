@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	mailfront
-PORTVERSION=	1.12
+PORTVERSION=	1.18
 CATEGORIES=	mail
-MASTER_SITES=	http://untroubled.org/${PORTNAME}/
+MASTER_SITES=	http://untroubled.org/${PORTNAME}/ \
+		http://untroubled.org/${PORTNAME}/archive/
 
 MAINTAINER=	tarkhil@over.ru
 COMMENT=	Mail server network protocol front-ends
