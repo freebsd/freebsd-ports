@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gnupg
-PORTVERSION=	2.0.16
-PORTREVISION=	6
+PORTVERSION=	2.0.17
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_GNUPG}
 MASTER_SITE_SUBDIR=	gnupg
@@ -47,8 +46,7 @@ INFO=		gnupg
 OPTIONS=	LDAP "LDAP keyserver interface" off \
 		SCDAEMON "Enable Smartcard daemon (with libusb)" off \
 		CURL "Use the real curl library (worked around if no)" on \
-		GPGSM "Enable GPGSM (require LDAP)" off \
-		CAMELLIA "Enable Camellia algorithm" on \
+		GPGSM "Enable GPGSM (requires LDAP)" off \
 		KDNS "Use DNS CERT helper" off \
 		STD_SOCKET "Use standard socket for agent" off \
 		NLS "National Language Support" off
@@ -72,10 +70,6 @@ PLIST_SUB+=	LDAP=""
 .else
 CONFIGURE_ARGS+=--disable-ldap
 PLIST_SUB+=	LDAP="@comment "
-.endif
-
-.if defined(WITH_CAMELLIA) && !defined(WITHOUT_CAMELLIA)
-CONFIGURE_ARGS+=--enable-camellia
 .endif
 
 .if defined(WITH_KDNS) && !defined(WITHOUT_KDNS)
