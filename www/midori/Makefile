@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	midori
-PORTVERSION=	0.2.9
+PORTVERSION=	0.3.0
 CATEGORIES=	www xfce
 MASTER_SITES=	${MASTER_SITE_XFCE}
 MASTER_SITE_SUBDIR=	src/apps/${PORTNAME}/${PORTVERSION:R}/
@@ -44,6 +44,8 @@ USE_LDCONFIG=	yes
 .if !defined(WITHOUT_NLS)
 USE_GETTEXT=	yes
 .endif
+
+PLIST_SUB=	VERSION="${PORTVERSION:R}"
 
 OPTIONS=	NLS "Enable Native Language support" on \
 		USERDOCS "Build user documentation" off \
