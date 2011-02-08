@@ -27,7 +27,6 @@ include/mysql/my_getopt.h
 include/mysql/my_global.h
 include/mysql/my_list.h
 include/mysql/my_net.h
-include/mysql/my_no_pthread.h
 include/mysql/my_pthread.h
 include/mysql/my_sys.h
 include/mysql/my_xml.h

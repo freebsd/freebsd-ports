@@ -1,6 +1,6 @@
---- support-files/CMakeLists.txt.orig	2010-12-23 13:26:23.000000000 +0100
-+++ support-files/CMakeLists.txt	2010-12-23 13:29:45.000000000 +0100
-@@ -40,12 +40,14 @@
+--- support-files/CMakeLists.txt.orig	2011-01-19 23:37:09.000000000 +0100
++++ support-files/CMakeLists.txt	2011-02-07 22:52:05.238344276 +0100
+@@ -40,15 +40,18 @@
    SET(inst_location ${INSTALL_SUPPORTFILESDIR})
  ENDIF()
  
@@ -14,16 +14,12 @@
 +ENDIF()
  
  IF(UNIX)
-   # XXX: again, used elsewhere (scripts/), should be standardised in
-@@ -56,6 +58,7 @@
-     SET(prefix ${CMAKE_INSTALL_PREFIX})
-   ENDIF()
-  
+   SET(prefix ${CMAKE_INSTALL_PREFIX})
 +IF(FALSE)
    FOREACH(script  mysqld_multi.server mysql-log-rotate binary-configure
      config.medium.ini config.small.ini config.huge.ini ndb-config-2-node.ini)
      CONFIGURE_FILE(${CMAKE_CURRENT_SOURCE_DIR}/${script}.sh 
-@@ -73,8 +76,10 @@
+@@ -66,8 +69,10 @@
    IF(INSTALL_SUPPORTFILESDIR)
      INSTALL(FILES magic DESTINATION ${inst_location} COMPONENT SupportFiles)
    ENDIF()
@@ -34,7 +30,7 @@
    CONFIGURE_FILE(MySQL-shared-compat.spec.sh ${CMAKE_CURRENT_BINARY_DIR}/MySQL-shared-compat.spec @ONLY)
    CONFIGURE_FILE(mysql.spec.sh ${CMAKE_CURRENT_BINARY_DIR}/mysql.spec @ONLY)
    CONFIGURE_FILE(mysql.spec.sh ${CMAKE_CURRENT_BINARY_DIR}/mysql.${VERSION}.spec @ONLY)
-@@ -92,3 +97,4 @@
+@@ -85,3 +90,4 @@
      PERMISSIONS OWNER_READ OWNER_WRITE OWNER_EXECUTE GROUP_READ 
      GROUP_EXECUTE WORLD_READ WORLD_EXECUTE)
  ENDIF()

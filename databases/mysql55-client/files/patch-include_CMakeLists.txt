@@ -1,5 +1,5 @@
---- include/CMakeLists.txt.orig	2010-12-03 18:58:24.000000000 +0100
-+++ include/CMakeLists.txt	2010-12-23 16:16:14.000000000 +0100
+--- include/CMakeLists.txt.orig	2011-01-19 23:37:08.000000000 +0100
++++ include/CMakeLists.txt	2011-02-07 22:42:05.129894470 +0100
 @@ -27,9 +27,6 @@
    my_list.h
    my_alloc.h
@@ -10,11 +10,3 @@
  )
  
  SET(HEADERS 
-@@ -59,6 +56,6 @@
- )
- 
- INSTALL(FILES ${HEADERS} DESTINATION ${INSTALL_INCLUDEDIR} COMPONENT Development)
--INSTALL(DIRECTORY mysql/ DESTINATION ${INSTALL_INCLUDEDIR}  COMPONENT Development FILES_MATCHING PATTERN "*.h" )
-+INSTALL(DIRECTORY mysql/ DESTINATION ${INSTALL_INCLUDEDIR}/mysql COMPONENT Development FILES_MATCHING PATTERN "*.h")
- 
- 
