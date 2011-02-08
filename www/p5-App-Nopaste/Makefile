@@ -8,7 +8,7 @@
 PORTNAME=	App-Nopaste
 PORTVERSION=	0.25
 CATEGORIES=	www perl5
-MASTER_SITES=	CPAN/../../authors/id/S/SP/SPANG/
+MASTER_SITES=	CPAN/../../authors/id/S/SA/SARTAK/
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	bapt@FreeBSD.org
