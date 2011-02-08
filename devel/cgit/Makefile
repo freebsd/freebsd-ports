@@ -41,6 +41,7 @@ post-extract:
 
 post-patch:
 	@${REINPLACE_CMD} -e '/^CC =/d' ${WRKSRC}/git/Makefile
+	@${REINPLACE_CMD} -e 's/-pthread/${PTHREAD_LIBS}/'  ${WRKSRC}/Makefile
 
 post-install:
 	@${MKDIR} /var/cache/${PORTNAME}
