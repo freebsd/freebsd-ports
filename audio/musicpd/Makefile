@@ -7,6 +7,7 @@
 
 PORTNAME=	musicpd
 PORTVERSION=	0.16.1
+PORTREVISION=	1
 CATEGORIES=	audio ipv6
 MASTER_SITES=	SF/${PORTNAME}/mpd/${PORTVERSION}
 DISTNAME=	mpd-${PORTVERSION}
@@ -227,6 +228,8 @@ CONFIGURE_ARGS+=--enable-lsr
 post-patch:
 	@${REINPLACE_CMD} -e "s/%%MPDDIR%%/${PREFIX:C/\//\\\//g}\/${MPDDIR:C/\//\\\//g}/g" -e "s/%%MPDUSER%%/${MPDUSER}/g" \
 		${WRKSRC}/doc/mpdconf.example
+	${REINPLACE_CMD} -e 's/tremor == xno/tremor = xno/' \
+		${WRKSRC}/configure
 .if (${OSVERSION} < 800000)
 	${REINPLACE_CMD} -e 's/nan[f]\{0,1\}(\"\")/NAN/g' \
 		${WRKSRC}/src/crossfade.c \
