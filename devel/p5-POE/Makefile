@@ -6,17 +6,16 @@
 #
 
 PORTNAME=	POE
-PORTVERSION=	1.294
+PORTVERSION=	1.299
 CATEGORIES=	devel perl5
-MASTER_SITES=	CPAN
+MASTER_SITES=	CPAN/${PORTNAME}/RCAPUTO
 PKGNAMEPREFIX=	p5-
-DISTNAME=	${PORTNAME}-${PORTVERSION:C/0+$//}
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Multitasking and networking framework for perl
 
 BUILD_DEPENDS=	p5-IO-Tty>=1.08:${PORTSDIR}/devel/p5-IO-Tty \
-		p5-POE-Test-Loops>=1.036:${PORTSDIR}/devel/p5-POE-Test-Loops
+		p5-POE-Test-Loops>=1.040:${PORTSDIR}/devel/p5-POE-Test-Loops
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
