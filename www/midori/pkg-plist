@@ -1,6 +1,6 @@
 bin/midori
 etc/xdg/midori/search
-include/midori-0.2/extensions/history-list.h
+include/midori-%%VERSION%%/extensions/history-list.h
 lib/midori/libadblock.so
 lib/midori/libaddons.so
 lib/midori/libcolorful-tabs.so
@@ -93,6 +93,7 @@ share/icons/hicolor/scalable/apps/midori.svg
 share/icons/hicolor/scalable/categories/extension.svg
 share/icons/hicolor/scalable/status/news-feed.svg
 %%NLS%%share/locale/ast/LC_MESSAGES/midori.mo
+%%NLS%%share/locale/ar/LC_MESSAGES/midori.mo
 %%NLS%%share/locale/ca/LC_MESSAGES/midori.mo
 %%NLS%%share/locale/cs/LC_MESSAGES/midori.mo
 %%NLS%%share/locale/da/LC_MESSAGES/midori.mo
@@ -157,8 +158,8 @@ share/vala/vapi/history-list.vapi
 @dirrm %%DOCSDIR%%
 @dirrmtry share/applications
 @dirrm lib/midori
-@dirrm include/midori-0.2/extensions
-@dirrm include/midori-0.2
+@dirrm include/midori-%%VERSION%%/extensions
+@dirrm include/midori-%%VERSION%%
 @dirrm etc/xdg/midori
 @dirrmtry etc/xdg
 @exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
