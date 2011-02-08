@@ -21,9 +21,7 @@ libexec/mailfront/plugin-cvm-validate.so
 libexec/mailfront/plugin-mailrules.so
 libexec/mailfront/plugin-patterns.so
 libexec/mailfront/plugin-qmail-validate.so
-libexec/mailfront/plugin-reject.so
-libexec/mailfront/plugin-relayclient.so
-libexec/mailfront/plugin-require-auth.so
+libexec/mailfront/plugin-spamassassin.so
 libexec/mailfront/protocol-qmqp.so
 libexec/mailfront/protocol-qmtp.so
 libexec/mailfront/protocol-smtp.so
@@ -53,6 +51,7 @@ libexec/mailfront/protocol-smtp.so
 %%PORTDOCS%%%%DOCSDIR%%/plugin-reject.html
 %%PORTDOCS%%%%DOCSDIR%%/plugin-relayclient.html
 %%PORTDOCS%%%%DOCSDIR%%/plugin-require-auth.html
+%%PORTDOCS%%%%DOCSDIR%%/plugin-spamassassin.html
 %%PORTDOCS%%%%DOCSDIR%%/plugin-template.html
 %%PORTDOCS%%%%DOCSDIR%%/pop3front.html
 %%PORTDOCS%%%%DOCSDIR%%/protocol-qmqp.html
