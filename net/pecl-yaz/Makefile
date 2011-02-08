@@ -7,7 +7,7 @@
 
 PORTNAME=	yaz
 PORTVERSION=	1.0.14
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net pear
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
@@ -19,11 +19,12 @@ COMMENT=	A PECL extension that implements a Z39.50 client
 
 LIB_DEPENDS=	yaz.4:${PORTSDIR}/net/yaz
 
-BROKEN=		does not configure
-
 USE_PHP=	yes
 USE_PHPEXT=	yes
 
 CONFIGURE_ARGS=	--with-yaz=${LOCALBASE}
+
+pre-configure:
+	@${REINPLACE_CMD} -e 's|YAZVERSION|YAZ_VERSION|g' ${WRKSRC}/configure
 
 .include <bsd.port.mk>
