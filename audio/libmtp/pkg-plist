@@ -9,7 +9,6 @@ bin/mtp-folders
 bin/mtp-format
 bin/mtp-getfile
 bin/mtp-getplaylist
-bin/mtp-hotplug
 bin/mtp-newfolder
 bin/mtp-newplaylist
 bin/mtp-playlists

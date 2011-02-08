@@ -6,19 +6,21 @@
 #
 
 PORTNAME=	libmtp
-PORTVERSION=	1.0.3
+PORTVERSION=	1.0.5
 CATEGORIES=	audio
 MASTER_SITES=	SF
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	c0rn@o2.pl
 COMMENT=	Media Transfer Protocol (MTP) library
 
-LIB_DEPENDS=	iconv:${PORTSDIR}/converters/libiconv
+LICENSE=	LGPL21
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	LDFLAGS="${LDFLAGS}" CPPFLAGS="${CPPFLAGS}"
 USE_GNOME=	gnomehack
 USE_LDCONFIG=	yes
+USE_ICONV=	yes
+MAKE_JOBS_SAFE=	yes
 
 CPPFLAGS=	-I${LOCALBASE}/include
 LDFLAGS=	-L${LOCALBASE}/lib -liconv
