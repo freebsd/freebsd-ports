@@ -16,6 +16,8 @@
 #			just before mysql starts.
 # mysql_dbdir (str):	Default to "/var/db/mysql"
 #			Base database directory.
+# mysql_pidfile (str):	Custum PID file path and name.
+#			Default to "${mysql_dbdir}/${hostname}.pid".
 # mysql_socket (str):	Default to "/tmp/mysql.sock"
 #			Unix socket file.
 # mysql_args (str):	Custom additional arguments to be passed
@@ -33,11 +35,10 @@ load_rc_config $name
 : ${mysql_limits="NO"}
 : ${mysql_dbdir="/var/db/mysql"}
 : ${mysql_socket="/tmp/mysql.sock"}
-: ${mysql_args=""}
 
 mysql_user="mysql"
 mysql_limits_args="-e -U ${mysql_user}"
-pidfile="${mysql_dbdir}/`/bin/hostname`.pid"
+pidfile=${mysql_pidfile:-"${mysql_dbdir}/`/bin/hostname`.pid"}
 command="/usr/sbin/daemon"
 command_args="-c -f %%PREFIX%%/bin/mysqld_safe --defaults-extra-file=${mysql_dbdir}/my.cnf --user=${mysql_user} --datadir=${mysql_dbdir} --socket=${mysql_socket} --pid-file=${pidfile} ${mysql_args}"
 procname="%%PREFIX%%/libexec/mysqld"

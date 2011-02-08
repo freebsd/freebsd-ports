@@ -6,9 +6,10 @@
 #
 
 PORTNAME?=	mysql
-PORTVERSION=	5.0.91
+PORTVERSION=	5.0.92
 CATEGORIES=	databases
-MASTER_SITES=	http://downloads.mysql.com/archives/mysql-5.0/
+MASTER_SITES=	${MASTER_SITE_MYSQL}
+MASTER_SITE_SUBDIR=	MySQL-5.0
 PKGNAMESUFFIX?=	-server
 
 MAINTAINER=	ale@FreeBSD.org
@@ -99,9 +100,12 @@ WANT_MYSQL_VER=	50
 
 LATEST_LINK=	mysql50-server
 
-CONFLICTS=	mysql-server-[34].* mysql-server-5.[1-9].*
+CONFLICTS_INSTALL=	mysql-server-[34].* mysql-server-5.[1-9].*
 
 USE_RC_SUBR=	mysql-server.sh
+
+USERS=		mysql
+GROUPS=		mysql
 
 .if !defined(WITHOUT_INNODB)
 PLIST_SUB+=	INNODB=""
@@ -110,6 +114,7 @@ PLIST_SUB+=	INNODB="@comment "
 .endif
 
 .if defined(WITH_NDB)
+USE_LDCONFIG=	${PREFIX}/lib/mysql
 PLIST_SUB+=	NDB=""
 .else
 PLIST_SUB+=	NDB="@comment "
@@ -175,7 +180,6 @@ post-patch:
 
 post-install:
 .if !defined(PACKAGE_BUILDING)
-	@${SETENV} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 	@${CAT} ${PKGMESSAGE}
 .endif
 
@@ -184,7 +188,7 @@ post-install:
 .if defined(CLIENT_ONLY)
 LATEST_LINK=	mysql50-client
 
-CONFLICTS=	mysql-client-[34].* mysql-client-5.[1-9].*
+CONFLICTS_INSTALL=	mysql-client-[34].* mysql-client-5.[1-9].*
 
 MAN1=		mysql_config.1 mysql_upgrade.1 mysql.1 mysqladmin.1 \
 		mysqlbinlog.1 mysqlbug.1 mysqlcheck.1 \
@@ -216,7 +220,7 @@ RUN_DEPENDS+=	${SITE_PERL}/File/Temp.pm:${PORTSDIR}/devel/p5-File-Temp
 
 LATEST_LINK=	mysql50-scripts
 
-CONFLICTS=	mysql-scripts-[34].* mysql-scripts-5.[1-9].*
+CONFLICTS_INSTALL=	mysql-scripts-[34].* mysql-scripts-5.[1-9].*
 
 MAN1=		msql2mysql.1 mysql_convert_table_format.1 mysql_explain_log.1 mysql_find_rows.1 \
 		mysql_fix_extensions.1 mysql_secure_installation.1 \
