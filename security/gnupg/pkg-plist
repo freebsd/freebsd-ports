@@ -34,7 +34,6 @@ sbin/applygnupgdefaults
 %%PORTDOCS%%%%DOCSDIR%%/examples/pwpattern.list
 %%PORTDOCS%%%%DOCSDIR%%/examples/scd-event
 %%PORTDOCS%%%%DOCSDIR%%/examples/trustlist.txt
-%%PORTDOCS%%%%DOCSDIR%%/faq.html
 %%PORTDOCS%%%%DATADIR%%/com-certs.pem
 %%DATADIR%%/gpg-conf.skel
 %%PORTDOCS%%%%DATADIR%%/help.be.txt
