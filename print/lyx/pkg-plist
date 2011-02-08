@@ -25,6 +25,7 @@ bin/tex2lyx
 %%NLS%%share/locale/ru/LC_MESSAGES/lyx.mo
 %%NLS%%share/locale/sk/LC_MESSAGES/lyx.mo
 %%NLS%%share/locale/sr/LC_MESSAGES/lyx.mo
+%%NLS%%share/locale/sv/LC_MESSAGES/lyx.mo
 %%NLS%%share/locale/tr/LC_MESSAGES/lyx.mo
 %%NLS%%share/locale/uk/LC_MESSAGES/lyx.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/lyx.mo
