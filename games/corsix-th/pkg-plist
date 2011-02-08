@@ -52,10 +52,16 @@ bin/CorsixTH
 %%DATADIR%%/Bitmap/tree_leaf.bmp
 %%DATADIR%%/Bitmap/tree_level.bmp
 %%DATADIR%%/Levels/Example.map
+%%DATADIR%%/Levels/avatar.level
+%%DATADIR%%/Levels/avatar.map
+%%DATADIR%%/Levels/demo.level
 %%DATADIR%%/Levels/example.level
+%%DATADIR%%/Levels/original05.level
 %%DATADIR%%/Lua/api_version.lua
 %%DATADIR%%/Lua/app.lua
 %%DATADIR%%/Lua/audio.lua
+%%DATADIR%%/Lua/base_config.lua
+%%DATADIR%%/Lua/calls_dispatcher.lua
 %%DATADIR%%/Lua/class.lua
 %%DATADIR%%/Lua/config_finder.lua
 %%DATADIR%%/Lua/diagnosis/diag_blood_machine.lua
@@ -72,6 +78,8 @@ bin/CorsixTH
 %%DATADIR%%/Lua/dialogs/bank_manager.lua
 %%DATADIR%%/Lua/dialogs/bottom_panel.lua
 %%DATADIR%%/Lua/dialogs/build_room.lua
+%%DATADIR%%/Lua/dialogs/calls_dispatcher.lua
+%%DATADIR%%/Lua/dialogs/cheats.lua
 %%DATADIR%%/Lua/dialogs/confirm_dialog.lua
 %%DATADIR%%/Lua/dialogs/custom_game.lua
 %%DATADIR%%/Lua/dialogs/directory_browser.lua
@@ -152,6 +160,8 @@ bin/CorsixTH
 %%DATADIR%%/Lua/game_ui.lua
 %%DATADIR%%/Lua/graphics.lua
 %%DATADIR%%/Lua/hospital.lua
+%%DATADIR%%/Lua/humanoid_actions/answer_call.lua
+%%DATADIR%%/Lua/humanoid_actions/call_checkpoint.lua
 %%DATADIR%%/Lua/humanoid_actions/die.lua
 %%DATADIR%%/Lua/humanoid_actions/idle.lua
 %%DATADIR%%/Lua/humanoid_actions/knock_door.lua
@@ -184,6 +194,7 @@ bin/CorsixTH
 %%DATADIR%%/Lua/languages/simplified_chinese.lua
 %%DATADIR%%/Lua/languages/spanish.lua
 %%DATADIR%%/Lua/languages/swedish.lua
+%%DATADIR%%/Lua/languages/traditional_chinese.lua
 %%DATADIR%%/Lua/map.lua
 %%DATADIR%%/Lua/objects/analyser.lua
 %%DATADIR%%/Lua/objects/autopsy.lua
