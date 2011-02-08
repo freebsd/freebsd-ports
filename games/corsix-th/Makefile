@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	corsixth
-DISTVERSION=	0.Beta4
+DISTVERSION=	0.Beta5
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 PROJECTHOST=	corsix-th
@@ -14,6 +14,8 @@ DISTNAME=	CorsixTH-${DISTVERSION:S/0.//}-Source
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Open source clone of Theme Hospital
+
+LICENSE=	MIT
 
 RUN_DEPENDS=	timidity:${PORTSDIR}/audio/timidity
 
