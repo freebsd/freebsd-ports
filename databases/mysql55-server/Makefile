@@ -6,8 +6,8 @@
 #
 
 PORTNAME?=	mysql
-PORTVERSION=	5.5.8
-PORTREVISION?=	3
+PORTVERSION=	5.5.9
+PORTREVISION?=	0
 CATEGORIES=	databases ipv6
 MASTER_SITES=	${MASTER_SITE_MYSQL}
 MASTER_SITE_SUBDIR=	MySQL-5.5
@@ -37,7 +37,9 @@ CMAKE_ARGS+=	-DINSTALL_DOCDIR="share/doc/mysql" \
 		-DINSTALL_SCRIPTDIR="bin" \
 		-DINSTALL_SHAREDIR="share" \
 		-DINSTALL_SQLBENCHDIR="share/mysql" \
-		-DINSTALL_SUPPORTFILESDIR="share/mysql"
+		-DINSTALL_SUPPORTFILESDIR="share/mysql" \
+		-DWITH_LIBEDIT=0 \
+		-DWITH_LIBWRAP=1
 
 .ifdef USE_MYSQL
 .error You have `USE_MYSQL' variable defined either in environment or in make(1) arguments. Please undefine and try again.
