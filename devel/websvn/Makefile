@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	websvn
-PORTVERSION=	2.3.0
+PORTVERSION=	2.3.2
 CATEGORIES=	devel www
-MASTER_SITES=	http://websvn.tigris.org/files/documents/1380/47175/
+MASTER_SITES=	http://websvn.tigris.org/files/documents/1380/48737/
 
 MAINTAINER=	ychsiao@ychsiao.org
 COMMENT=	Subversion repository web frontend
