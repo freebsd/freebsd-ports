@@ -1,0 +1,10 @@
+--- ./src/CMakeLists.txt.orig	2010-07-22 00:12:15.000000000 +0200
++++ ./src/CMakeLists.txt	2011-02-08 14:32:53.832389559 +0100
+@@ -86,5 +86,6 @@
+   # 64-bit systems which use 'lib64'
+   INSTALL(TARGETS yajl LIBRARY DESTINATION lib${LIB_SUFFIX})
+   INSTALL(TARGETS yajl_s ARCHIVE DESTINATION lib${LIB_SUFFIX})
+-  INSTALL(DIRECTORY api/ DESTINATION include/yajl)
++  INSTALL(FILES ${PUB_HDRS} DESTINATION include/yajl)
++  INSTALL(FILES ${incDir}/yajl_version.h DESTINATION include/yajl)
+ ENDIF()
