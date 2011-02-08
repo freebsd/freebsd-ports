@@ -6,17 +6,20 @@
 #
 
 PORTNAME=	cppcheck
-PORTVERSION=	1.46.1
+PORTVERSION=	1.47
 CATEGORIES=	devel
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}/
 
 MAINTAINER=	bf@FreeBSD.org
 COMMENT=	Static analysis of C/C++ code
 
+LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre
+
 USE_GMAKE=	yes
 USE_BZIP2=	yes
-LDFLAGS+=	${PTHREAD_LIBS}
-MAKE_ENV+=	LDFLAGS="${LDFLAGS}"
+LDFLAGS+=	${PTHREAD_LIBS} -L${LOCALBASE}/lib
+CPPFLAGS+=	-I${LOCALBASE}/include
+MAKE_ENV+=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 
 PLIST_FILES=	bin/cppcheck
 
@@ -28,7 +31,7 @@ BUILD_DEPENDS=	xsltproc:${PORTSDIR}/textproc/libxslt \
 
 MANCOMPRESSED=	no
 MAN1=		cppcheck.1
-ALL_TARGET+=	cppcheck.1
+ALL_TARGET+=	man
 
 post-install:
 	@${INSTALL_MAN} ${WRKSRC}/cppcheck.1 ${PREFIX}/man/man1
