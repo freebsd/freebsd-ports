@@ -1,4 +1,4 @@
-# New ports collection makefile for:  gcin
+# New ports collection makefile for:  zh-gcin
 # Date created:                   Feb 18 2004
 # Whom:                           Shen Chuan-Hsing
 #
@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gcin
-PORTVERSION=	1.4.5
-PORTREVISION=	3
+PORTVERSION=	1.5.6
 CATEGORIES=	chinese textproc gnome
 MASTER_SITES=	http://cle.linux.org.tw/gcin/download/:main \
 		http://ftp.twaren.net/local-distfiles/gcin/:main \
@@ -18,13 +17,13 @@ EXTRACT_ONLY=	gcin-${PORTVERSION}.tar.bz2
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A traditional chinese input utility in X
 
-CONFLICTS=	zh-gcin-devel-[0-9]*
+LICENSE=	LGPL21
 
 USE_BZIP2=	YES
 HAS_CONFIGURE=	YES
 USE_GNOME=	gtk20
 USE_GMAKE=	YES
-USE_XORG=	xtst
+USE_XORG=	x11 xtst
 INSTALLS_ICONS=	YES
 USE_LDCONFIG=	YES
 OPTIONS=	ANTHY		"enable Japanese anthy IM module" off \
@@ -67,8 +66,6 @@ post-extract:
 	  	noseeadd.rb
 	@${REINPLACE_CMD} -e 's,cj.gtab,cj.gtab noseeing.gtab,' \
 		${WRKSRC}/data/Makefile
-	@${REINPLACE_CMD} -e 's,noseeing-inst,noseeing-inst noseeadd.rb,' \
-		${WRKSRC}/scripts/Makefile
 .endif
 
 post-patch:
@@ -86,11 +83,12 @@ post-patch:
 		${WRKSRC}/scripts/Makefile
 	@${REINPLACE_CMD} -e 's,bash,sh,; s/&//; s,/opt/gnome,${LOCALBASE},;' \
 		${WRKSRC}/scripts/utf8-edit ${WRKSRC}/scripts/gcin-user-setup \
-		${WRKSRC}/scripts/gtab.append_prepare
+		${WRKSRC}/scripts/gtab.append_prepare \
+		${WRKSRC}/scripts/tsin-gtab-import \
+		${WRKSRC}/scripts/tsin-gtab-edit
 	@${REINPLACE_CMD} -e 's,bash,sh,; s/&//; 12,13 s/=/ /; \
 		s/export/setenv/; s/mozilla-firefox/firefox3/;' \
 		${WRKSRC}/scripts/html-browser
-	@${REINPLACE_CMD} -e 's,wget,fetch,' ${WRKSRC}/scripts/noseeing-inst
 	@${REINPLACE_CMD} -e 's,gcin-im-client.h,im-client/gcin-im-client.h,;' \
 		${WRKSRC}/gtk-im/gtkimcontextgcin.c
 	@${REINPLACE_CMD} -e 's,/usr/X11R6,${LOCALBASE},' \
