@@ -165,8 +165,10 @@ ros/stacks/ros_tutorials/turtlesim/Makefile
 ros/stacks/ros_tutorials/turtlesim/ROS_NOBUILD
 ros/stacks/ros_tutorials/turtlesim/bin/draw_square
 ros/stacks/ros_tutorials/turtlesim/bin/mimic
+ros/stacks/ros_tutorials/turtlesim/bin/turtle_teleop_key
 ros/stacks/ros_tutorials/turtlesim/bin/turtlesim_node
 ros/stacks/ros_tutorials/turtlesim/images/box-turtle.png
+ros/stacks/ros_tutorials/turtlesim/images/diamondback.png
 ros/stacks/ros_tutorials/turtlesim/images/palette.png
 ros/stacks/ros_tutorials/turtlesim/images/robot-turtle.png
 ros/stacks/ros_tutorials/turtlesim/images/sea-turtle.png
@@ -239,6 +241,7 @@ ros/stacks/ros_tutorials/turtlesim/srv_gen/cpp/include/turtlesim/TeleportRelativ
 ros/stacks/ros_tutorials/turtlesim/srv_gen/generated
 ros/stacks/ros_tutorials/turtlesim/tutorials/draw_square.cpp
 ros/stacks/ros_tutorials/turtlesim/tutorials/mimic.cpp
+ros/stacks/ros_tutorials/turtlesim/tutorials/teleop_turtle_key.cpp
 @dirrm ros/stacks/ros_tutorials/turtlesim/tutorials
 @dirrm ros/stacks/ros_tutorials/turtlesim/srv_gen/cpp/include/turtlesim
 @dirrm ros/stacks/ros_tutorials/turtlesim/srv_gen/cpp/include
