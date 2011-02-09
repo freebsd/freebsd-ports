@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	ros_tutorials
-PORTVERSION=	0.2.3
+PORTVERSION=	0.2.4
 CATEGORIES=	devel
 MASTER_SITES=	ftp://rene-ladan.nl/pub/distfiles/ros/
 DIST_SUBDIR=	ros
@@ -68,7 +68,7 @@ do-install:
     roscpp_tutorials/bin/notify_connect roscpp_tutorials/bin/parameters \
     roscpp_tutorials/bin/sleep roscpp_tutorials/bin/talker \
     roscpp_tutorials/bin/timers turtlesim/bin/draw_square turtlesim/bin/mimic \
-    turtlesim/bin/turtlesim_node
+    turtlesim/bin/turtle_teleop_key turtlesim/bin/turtlesim_node
 	${STRIP_CMD} ${PREFIX}/ros/stacks/${PORTNAME}/${f}
 	${CHMOD} 0555 ${PREFIX}/ros/stacks/${PORTNAME}/${f}
 .endfor
