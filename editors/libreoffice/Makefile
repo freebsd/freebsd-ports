@@ -7,7 +7,7 @@
 
 PORTNAME=	libreoffice
 PORTVERSION=	3.3.0
-PORTREVISION=	3
+PORTREVISION=	4
 LOVERSION=	3.3.0.4
 CATEGORIES=	editors
 MASTER_SITES=	http://download.documentfoundation.org/libreoffice/src/ \
@@ -37,6 +37,10 @@ DISTFILES+=	${PORTNAME}-${components}-${LOVERSION}.tar.bz2
 
 LICENSE_COMB=	dual
 LICENSE=	LGPL3 MPL
+
+# for dynamic plist generation
+PLISTD?=	${WRKDIR}/plist_dirs
+PLISTF?=	${WRKDIR}/plist_files
 
 # not tested on other platforms and at leat plist will be wrong because of LOARCH not expendanded correctly
 ONLY_FOR_ARCH=	i386 amd64
@@ -104,13 +108,13 @@ OPTIONS=	WEBDAV	"Support webdav protocol" off \
 		GNOME	"Better integration in gnome environnement" off \
 		JAVA	"Add Java support (XML Filters, macros)" off
 
-LOLANGS=	bg ca de es fa fi fr hu it ja ko lt lv nl pl pt-BR ru sl sv
+LOCALIZED_LANG?=	en-US
 
 CONFIGURE_ARGS+=	--without-download \
 			--with-binsuffix=no \
-			--with-dict=ALL \
+			--with-dict="${LOCALIZED_LANG}" \
 			--with-myspell-dicts \
-			--with-lang="en-US ${LOLANGS}"\
+			--with-lang="${LOCALIZED_LANG}"\
 			--disable-odk \
 			--with-build-version="FreeBSD ports ${PKGVERSION}" \
 			--with-vendor="FreeBSD ports ${PKGVERSION}" \
@@ -137,7 +141,6 @@ CONFIGURE_ARGS+=	--without-download \
 			--with-system-expat \
 			--with-system-openssl \
 			--with-system-curl \
-			--with-system-neon \
 			--with-system-libwpd \
 			--with-system-libwpg \
 			--with-system-libwps \
@@ -185,7 +188,7 @@ MAKE_ENV+=	GPERF=${LOCALBASE}/bin/gperf \
 
 CFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/db${BDB_VER} -L${LOCALBASE}/lib
 
-USE_GNOME=	gtk20
+USE_GNOME=	gtk20 desktopfileutils
 USE_AUTOTOOLS=	autoconf automake:env
 
 .if defined(WITH_WEBDAV)
@@ -207,19 +210,15 @@ USE_KDE4=	kdelibs
 USE_QT_VER=	4
 CONFIGURE_ARGS+=	--enable-kde4 QT4DIR="${QT_PREFIX}" QT4LIB="${QT_LIBDIR}" QT4INC="${QT_INCDIR}" KDE4DIR="${KDE4_PREFIX}"
 QT_COMPONENTS+=		moc_build
-PLIST_SUB+=	KDEOPT=""
 .else
 CONFIGURE_ARGS+=	--disable-kde4
-PLIST_SUB+=	KDEOPT="@comment "
 .endif
 
 .if defined(WITH_GNOME)
 USE_GNOME+=		gconf2  gnomevfs2
 CONFIGURE_ARGS+=	--enable-gconf --enable-gnome-vfs
-PLIST_SUB+=	GNOMEOPT=""
 .else
 CONFIGURE_ARGS+=	--disable-gconf --disable-gnome-vfs
-PLIST_SUB+=	GNOMEOPT="@comment "
 .endif
 
 .if defined(WITH_JAVA)
@@ -248,8 +247,6 @@ DISTFILES+=	798b2ffdc8bcfe7bca2cf92b62caf685-rhino1_5R5.zip:OOo \
 		79600e696a98ff95c2eba976f7a8dfbb-liblayout.zip:OOo \
 		d4c4d91ab3a8e52a2e69d48d34ef4df4-core.zip:OOo
 
-PLIST_SUB+=	JAVAOPT=""
-PLIST_SUB+=	NOJAVA="@comment "
 USE_JAVA=	1.4+
 BUILD_DEPENDS+=	ant:${PORTSDIR}/devel/apache-ant \
 		${JAVALIBDIR}/junit.jar:${PORTSDIR}/java/junit \
@@ -267,22 +264,24 @@ CONFIGURE_ARGS+=	--with-ant-home=${LOCALBASE}/share/java/apache-ant/ \
 			--with-xalan-jar=${JAVALIBDIR}/xalan.jar \
 			--with-serializer-jar=${JAVALIBDIR}/serializer.jar
 .else
-PLIST_SUB+=	JAVAOPT="@comment "
-PLIST_SUB+=	NOJAVA=""
 BUILD_DEPENDS+=	xsltproc:${PORTSDIR}/textproc/libxslt
 CONFIGURE_ARGS+=	--without-java
 .endif
 
 .include <bsd.port.pre.mk>
-
-PLIST_SUB+=	LOVER=3.3
-.if (${ARCH} == "amd64")
-LOARCH=	x86_64
-.elif (${ARCH} == "i386")
-LOARCH=	x86
-.endif
-
-PLIST_SUB+=	LOARCH=${LOARCH}
+pre-fetch:
+	@${ECHO_CMD}
+	@${ECHO_CMD} "you can build a localized version of libreoffice by setting"
+	@${ECHO_CMD} "LOCALIZED_LANG=xx"
+	@${ECHO_CMD} "where xx can one or more of the following:"
+	@${ECHO_CMD} "af ar as ast be-BY bg bn bo br brx bs ca-XV ca cs cy da de dgo dz el"
+	@${ECHO_CMD} "en-GB en-ZA eo es et eu fa fi fr ga gl gu he hi-IN hi hr hu id is it"
+	@${ECHO_CMD} "ja ka kid kk km kn ko kok ks ku lo lt lv mai mk ml mn mni mr my nb ne"
+	@${ECHO_CMD} "nl nn nr ns oc om or pa-IN pl pt-BR pt ro ru rw sa-IN sat sd sh si sk"
+	@${ECHO_CMD} "sl sq sr ss st sv sw-TZ ta te tg th tn tr ts ug uk ur-IN uz ve vi xh"
+	@${ECHO_CMD} "zh-CN zh-TW zu"
+	@${ECHO_CMD}
+	@${ECHO_CMD} "Current setting: ${LOCALIZED_LANG}"
 
 post-extract:
 	@${MKDIR} ${WRKSRC}/build/${PORTNAME}
@@ -290,6 +289,9 @@ post-extract:
 	@${MV} ${WRKDIR}/${PORTNAME}-${component}-${LOVERSION}/* ${WRKSRC}/build/${PORTNAME}/
 	@${RMDIR} ${WRKDIR}/${PORTNAME}-${component}-${LOVERSION}/
 .endfor
+	@${MV} ${WRKDIR}/${PORTNAME}-brand-freebsd/*.png ${WRKSRC}/build/${PORTNAME}/artwork/brand/
+	@${MV} ${WRKDIR}/${PORTNAME}-brand-freebsd/shell*.png ${WRKSRC}/build/${PORTNAME}/artwork/brand/shell
+	@${RMDIR} ${WRKDIR}/${PORTNAME}-brand-freebsd
 	@${TOUCH} ${WRKSRC}/build/${PORTNAME}/unpack
 	@${MKDIR} ${WRKSRC}/clone
 	@${TOUCH} ${WRKSRC}/clone/repos_changed
@@ -313,6 +315,7 @@ post-patch:
 .endif
 
 post-install:
+	@${RM} -f ${PLISTF} ${PLISTD}
 	@${RM} ${LODESTDIR}/${PREFIX}/share/applications/*.desktop
 	@${MV} ${LODESTDIR}/${PREFIX}/share/mime/packages/openoffice.xml ${LODESTDIR}/${PREFIX}/share/mime/packages/libreoffice.xml
 
@@ -320,6 +323,29 @@ post-install:
 .for component in base calc draw math impress writer
 	@cd ${LODESTDIR}/${PREFIX}/share/applications; ${LN} -s ../../lib/${PORTNAME}/share/xdg/${component}.desktop ${PORTNAME}-${component}.desktop
 .endfor
+
+	@cd ${LODESTDIR}/${PREFIX}/lib && ${FIND} -H -s * -type f -o -type l | \
+		${SED} -e 's|^|lib/|' >> ${PLISTF}
+	@cd ${LODESTDIR}/${PREFIX}/lib && ${FIND} -d * -type d | \
+		${SED} -e 's|^|@dirrm lib/|' >> ${PLISTD}
+
+
+.for subdir in icons pixmaps mime applications
+	@cd ${LODESTDIR}/${PREFIX}/share/${subdir} && ${FIND} -H -s * -type f -o -type l | \
+		${SED} -e 's|^|share/${subdir}/|' >> ${PLISTF}
+.endfor
+
+	@${ECHO_CMD} "@unexec ${RMDIR} %D/share/applications 2>/dev/null || ${TRUE}" >> ${PLISTD}
+
+	@cd ${LODESTDIR}/${PREFIX}/bin && ${FIND} -H -s * -type f -o -type l | \
+		${SED} -e 's|^|bin/|' >> ${PLISTF}
+
+	@${ECHO_CMD} "@exec ${LOCALBASE}/bin/update-desktop-database > /dev/null || ${TRUE}" >> ${TMPPLIST}
+	@${ECHO_CMD} "@unexec ${LOCALBASE}/bin/update-desktop-database > /dev/null || ${TRUE}" >> ${TMPPLIST}
+	@${SORT} ${WRKDIR}/plist_files >> ${TMPPLIST}
+	@${SORT} -r ${WRKDIR}/plist_dirs >> ${TMPPLIST}
+
 	@cd ${LODESTDIR}/${PREFIX} ; ${TAR} cfp - . | ${TAR} xfp - -C ${PREFIX}
+	@${LOCALBASE}/bin/update-desktop-database 2>/dev/null || ${TRUE}
 
 .include <bsd.port.post.mk>
