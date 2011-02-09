@@ -1,5 +1,5 @@
 --- tftpd.c.orig	2004-02-27 10:05:26.000000000 +0800
-+++ tftpd.c	2011-01-26 18:08:01.000000000 +0800
++++ tftpd.c	2011-02-09 14:18:04.000000000 +0800
 @@ -60,6 +60,9 @@
  char directory[MAXLEN] = "/tftpboot/";
  int retry_timeout = S_TIMEOUT;
@@ -49,10 +49,10 @@
 -                    select(FD_SETSIZE, &rfds, NULL, NULL, &tv);
 +                    rv = select(FD_SETSIZE, &rfds, NULL, NULL, &tv);
 +               if (rv < 0) {
-+                    logger(LOG_ERR, "%s: %d: select: %s",
-+                           __FILE__, __LINE__, strerror(errno));
 +                    if (errno == EINTR)
 +                        continue;
++                    logger(LOG_ERR, "%s: %d: select: %s",
++                           __FILE__, __LINE__, strerror(errno));
 +
 +                    /* Clear the bits, they are undefined! */
 +                    FD_ZERO(&rfds);
