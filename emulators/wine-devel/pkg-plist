@@ -685,6 +685,7 @@ lib/wine/avifile.dll16.so
 lib/wine/avrt.dll.so
 lib/wine/bcrypt.dll.so
 lib/wine/browseui.dll.so
+lib/wine/cabarc.exe.so
 lib/wine/cabinet.dll.so
 lib/wine/cacls.exe.so
 lib/wine/capi2032.dll.so
@@ -821,6 +822,7 @@ lib/wine/fakedlls/avifile.dll16
 lib/wine/fakedlls/avrt.dll
 lib/wine/fakedlls/bcrypt.dll
 lib/wine/fakedlls/browseui.dll
+lib/wine/fakedlls/cabarc.exe
 lib/wine/fakedlls/cabinet.dll
 lib/wine/fakedlls/cacls.exe
 lib/wine/fakedlls/capi2032.dll
@@ -1092,6 +1094,7 @@ lib/wine/fakedlls/opengl32.dll
 lib/wine/fakedlls/pdh.dll
 lib/wine/fakedlls/pidgen.dll
 lib/wine/fakedlls/ping.exe
+lib/wine/fakedlls/plugplay.exe
 lib/wine/fakedlls/powrprof.dll
 lib/wine/fakedlls/printui.dll
 lib/wine/fakedlls/progman.exe
@@ -1218,6 +1221,7 @@ lib/wine/fakedlls/winejoystick.drv
 lib/wine/fakedlls/winemapi.dll
 lib/wine/fakedlls/winemenubuilder.exe
 lib/wine/fakedlls/winemine.exe
+lib/wine/fakedlls/winemsibuilder.exe
 lib/wine/fakedlls/winenas.drv
 lib/wine/fakedlls/wineoss.drv
 lib/wine/fakedlls/winepath.exe
@@ -1576,6 +1580,7 @@ lib/wine/opengl32.dll.so
 lib/wine/pdh.dll.so
 lib/wine/pidgen.dll.so
 lib/wine/ping.exe.so
+lib/wine/plugplay.exe.so
 lib/wine/powrprof.dll.so
 lib/wine/printui.dll.so
 lib/wine/progman.exe.so
@@ -1702,6 +1707,7 @@ lib/wine/winejoystick.drv.so
 lib/wine/winemapi.dll.so
 lib/wine/winemenubuilder.exe.so
 lib/wine/winemine.exe.so
+lib/wine/winemsibuilder.exe.so
 lib/wine/winenas.drv.so
 lib/wine/wineoss.drv.so
 lib/wine/winepath.exe.so
