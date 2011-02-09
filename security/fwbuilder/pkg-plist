@@ -18,11 +18,13 @@ share/fwbuilder-%%BUILD_VERSION%%/configlets/bsd/update_addresses
 share/fwbuilder-%%BUILD_VERSION%%/configlets/bsd/update_carp
 share/fwbuilder-%%BUILD_VERSION%%/configlets/bsd/update_pfsync
 share/fwbuilder-%%BUILD_VERSION%%/configlets/bsd/update_vlans
+share/fwbuilder-%%BUILD_VERSION%%/configlets/dd-wrt-jffs/check_utilities
 share/fwbuilder-%%BUILD_VERSION%%/configlets/dd-wrt-jffs/installer_commands_reg_user
 share/fwbuilder-%%BUILD_VERSION%%/configlets/dd-wrt-jffs/installer_commands_root
 share/fwbuilder-%%BUILD_VERSION%%/configlets/dd-wrt-jffs/routing_functions
 share/fwbuilder-%%BUILD_VERSION%%/configlets/dd-wrt-jffs/script_skeleton
 share/fwbuilder-%%BUILD_VERSION%%/configlets/dd-wrt-jffs/top_comment
+share/fwbuilder-%%BUILD_VERSION%%/configlets/dd-wrt-nvram/check_utilities
 share/fwbuilder-%%BUILD_VERSION%%/configlets/dd-wrt-nvram/installer_commands_reg_user
 share/fwbuilder-%%BUILD_VERSION%%/configlets/dd-wrt-nvram/installer_commands_root
 share/fwbuilder-%%BUILD_VERSION%%/configlets/dd-wrt-nvram/routing_functions
@@ -163,8 +165,8 @@ share/fwbuilder-%%BUILD_VERSION%%/help/en_US/release_notes_4.0.1.html
 share/fwbuilder-%%BUILD_VERSION%%/help/en_US/release_notes_4.1.0.html
 share/fwbuilder-%%BUILD_VERSION%%/help/en_US/release_notes_4.1.1.html
 share/fwbuilder-%%BUILD_VERSION%%/help/en_US/release_notes_4.1.2.html
+share/fwbuilder-%%BUILD_VERSION%%/help/en_US/release_notes_4.1.3.html
 share/fwbuilder-%%BUILD_VERSION%%/help/en_US/state_sync_configuration.png
-share/fwbuilder-%%BUILD_VERSION%%/help/en_US/summary.html
 share/fwbuilder-%%BUILD_VERSION%%/help/en_US/tip01.html
 share/fwbuilder-%%BUILD_VERSION%%/help/en_US/tip02.html
 share/fwbuilder-%%BUILD_VERSION%%/help/en_US/tip03.html
@@ -230,7 +232,6 @@ share/fwbuilder-%%BUILD_VERSION%%/templates.xml
 @dirrm share/fwbuilder-%%BUILD_VERSION%%/configlets/freebsd
 @dirrm share/fwbuilder-%%BUILD_VERSION%%/configlets/dd-wrt-nvram
 @dirrm share/fwbuilder-%%BUILD_VERSION%%/configlets/dd-wrt-jffs
-@dirrm share/fwbuilder-%%BUILD_VERSION%%/configlets/cisco
 @dirrm share/fwbuilder-%%BUILD_VERSION%%/configlets/bsd
 @dirrm share/fwbuilder-%%BUILD_VERSION%%/configlets
 @dirrm share/fwbuilder-%%BUILD_VERSION%%

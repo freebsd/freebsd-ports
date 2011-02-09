@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	libfwbuilder
-DISTVERSION=	4.1.2
+DISTVERSION=	4.1.3
 PORTVERSION=	${DISTVERSION}
 CATEGORIES=	security
 .if defined(BUILD)
