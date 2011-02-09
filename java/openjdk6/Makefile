@@ -6,19 +6,18 @@
 #
 
 PORTNAME=	openjdk6
-PORTVERSION=	b20
-PORTREVISION=	8
+PORTVERSION=	b21
 CATEGORIES=	java devel
 MASTER_SITES=	http://download.java.net/openjdk/jdk6/promoted/${PORTVERSION}/ \
-		https://jaxp.dev.java.net/files/documents/913/150648/:jaxp \
-		https://jax-ws.dev.java.net/files/documents/4202/150724/:jaxws \
-		https://jax-ws.dev.java.net/files/documents/4202/150725/:jaf \
+		https://java.net/downloads/jaxp/jdk7/:jaxp \
+		https://java.net/downloads/jax-ws/OpenJDK6/:jaxws \
+		https://java.net/downloads/jax-ws/OpenJDK6/:jaf \
 		http://icedtea.classpath.org/builds/icedtea6/src/ \
-		http://icedtea.classpath.org/builds/icedtea6/src/drops/:jaxp \
-		http://icedtea.classpath.org/builds/icedtea6/src/drops/:jaxws \
-		http://icedtea.classpath.org/builds/icedtea6/src/drops/:jaf \
+		http://icedtea.classpath.org/download/drops/:jaxp \
+		http://icedtea.classpath.org/download/drops/:jaxws \
+		http://icedtea.classpath.org/download/drops/:jaf \
 		${MASTER_SITE_APACHE:S,%SUBDIR%/,ant/binaries/:ant,} \
-		http://icedtea.classpath.org/download/source/:icedtea \
+		http://icedtea.classpath.org/download/source/:itweb \
 		http://download.java.net/openjdk/jtreg/promoted/${JTREGVERSION}/:jtreg
 DISTNAME=	openjdk-6-src-${PORTVERSION}-${OPENJDK_BUILDDATE}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
@@ -40,7 +39,7 @@ RUN_DEPENDS=	javavm:${PORTSDIR}/java/javavmwrapper \
 
 LICENSE=	GPLv2
 
-OPENJDK_BUILDDATE=	21_jun_2010
+OPENJDK_BUILDDATE=	20_jan_2011
 
 OPTIONS=	DEBUG "Enable legacy debugging support" off \
 		FASTDEBUG "Include fastdebug build" off \
@@ -57,16 +56,16 @@ USE_MOTIF=	yes
 USE_XORG=	xtst xi xt x11
 MAKE_JOBS_UNSAFE=	yes
 
-JAXP_BUILD=	b20
-JAXPFILE=	jdk6-jaxp-${JAXP_BUILD}.zip
+JAXP_BUILD=	1_4_4
+JAXPFILE=	jaxp-${JAXP_BUILD}.zip
 JAXWS_BUILD=	b20
 JAXWSFILE=	jdk6-jaxws-${JAXWS_BUILD}.zip
 JAF_BUILD=	b20
 JAFFILE=	jdk6-jaf-${JAF_BUILD}.zip
-ICEDTEAVERSION=	1.9.4
-ICEDTEAFILE=	icedtea6-${ICEDTEAVERSION}${EXTRACT_SUFX}
-JTREGVERSION=	b03
-JTREGFILE=	jtreg-4_0-bin-${JTREGVERSION}-31_mar_2009.zip
+ITWEBVERSION=	1.0
+ITWEBFILE=	icedtea-web-${ITWEBVERSION}${EXTRACT_SUFX}
+JTREGVERSION=	b02
+JTREGFILE=	jtreg-4.1-bin-${JTREGVERSION}_21_may_2010.zip
 
 # do not depend on devel/apache-ant to avoid circular dependency, but
 # use .tar.bz2 distfile to avoid duplicated downloads
@@ -145,20 +144,20 @@ OPENJDK_OSARCH=	bsd-${ARCH:S/i386/i586/}
 .endif
 
 .if defined(WITH_WEB)
-DISTFILES+=	${ICEDTEAFILE}:icedtea
-EXTRACT_ONLY+=	${ICEDTEAFILE}
-EXTRA_PATCHES+=	${FILESDIR}/icedtea.patch ${FILESDIR}/plugin.patch
+DISTFILES+=	${ITWEBFILE}:itweb
+EXTRACT_ONLY+=	${ITWEBFILE}
+EXTRA_PATCHES+=	${FILESDIR}/plugin.patch
 BUILD_DEPENDS+=	${LOCALBASE}/bin/pkg-config:${PORTSDIR}/devel/pkg-config \
 		${LOCALBASE}/libdata/pkgconfig/glib-2.0.pc:${PORTSDIR}/devel/glib20 \
 		${LOCALBASE}/libdata/pkgconfig/gtk+-2.0.pc:${PORTSDIR}/x11-toolkits/gtk20 \
 		${LOCALBASE}/libdata/pkgconfig/mozilla-plugin.pc:${PORTSDIR}/www/libxul
-ICEDTEADIR=	${WRKDIR}/icedtea6-${ICEDTEAVERSION}
-ICEDTEA_JAVAC=	${WRKSRC}/build/${OPENJDK_OSARCH}/j2sdk-image/bin/javac
-ICEDTEA_JAR=	${WRKSRC}/build/${OPENJDK_OSARCH}/j2sdk-image/bin/jar
+ITWEBDIR=	${WRKDIR}/icedtea-web-${ITWEBVERSION}
+ITWEB_JAVAC=	${WRKSRC}/build/${OPENJDK_OSARCH}/j2sdk-image/bin/javac
+ITWEB_JAR=	${WRKSRC}/build/${OPENJDK_OSARCH}/j2sdk-image/bin/jar
 .if defined(WITH_DEBUG)
-ICEDTEA_DEBUG_FLAGS=-g
+ITWEB_DEBUG_FLAGS=-g
 .endif
-ICEDTEA_JAVAC_FLAGS=${ICEDTEA_DEBUG_FLAGS} -encoding utf-8 -J-Xmx1024m -source 6 -target 6
+ITWEB_JAVAC_FLAGS=${ITWEB_DEBUG_FLAGS} -encoding utf-8 -J-Xmx1024m -source 6 -target 6
 .endif
 
 .if defined(WITH_TEST)
@@ -245,63 +244,71 @@ post-patch:
 .if defined(WITH_WEB) || defined(WITH_TEST)
 post-build:
 .if defined(WITH_WEB)
-	@${MKDIR} ${ICEDTEADIR}/build/lib
+	@${MKDIR} ${ITWEBDIR}/build/lib
 	@( \
-		cd ${ICEDTEADIR}/plugin/icedteanp; \
+		cd ${ITWEBDIR}/plugin/icedteanp; \
 		${MAKE} -f ${FILESDIR}/Makefile.plugin depend all install \
-		    DEBUG_FLAGS="${ICEDTEA_DEBUG_FLAGS}" \
-		    LIBDIR=${ICEDTEADIR}/build/lib \
+		    DEBUG_FLAGS="${ITWEB_DEBUG_FLAGS}" \
+		    LIBDIR=${ITWEBDIR}/build/lib \
 		    LIBOWN=${UID} \
 		    LIBGRP=`${ID} -g` \
 		    LOCALBASE=${LOCALBASE} \
 		    JDK_UPDATE_VERSION=${PORTVERSION:S/^b//} \
-		    PLUGIN_VERSION="OpenJDK6 ${PORTVERSION}" \
+		    PLUGIN_VERSION="IcedTea-Web ${ITWEBVERSION}" \
 	)
-	@${FIND} -s ${ICEDTEADIR}/netx -name '*.java' > \
-	    ${ICEDTEADIR}/netx-source-files.txt
-	@${MKDIR} ${ICEDTEADIR}/netx.build/lib
-	@${ICEDTEA_JAVAC} ${ICEDTEA_JAVAC_FLAGS} -d ${ICEDTEADIR}/netx.build \
-	    @${ICEDTEADIR}/netx-source-files.txt
-	@${CP} -r ${ICEDTEADIR}/netx/net/sourceforge/jnlp/resources \
-	    ${ICEDTEADIR}/netx.build/net/sourceforge/jnlp
+	@${FIND} -s ${ITWEBDIR}/netx -name '*.java' > \
+	    ${ITWEBDIR}/netx-source-files.txt
+	@${MKDIR} ${ITWEBDIR}/netx.build/lib
+	@${ITWEB_JAVAC} ${ITWEB_JAVAC_FLAGS} -d ${ITWEBDIR}/netx.build \
+	    @${ITWEBDIR}/netx-source-files.txt
+	@${CP} -r ${ITWEBDIR}/netx/net/sourceforge/jnlp/resources \
+	    ${ITWEBDIR}/netx.build/net/sourceforge/jnlp
 	@( \
-		cd ${ICEDTEADIR}/netx.build; \
-		${ICEDTEA_JAR} cf ${ICEDTEADIR}/build/lib/netx.jar \
+		cd ${ITWEBDIR}/netx.build; \
+		${ITWEB_JAR} cf ${ITWEBDIR}/build/lib/netx.jar \
 		    javax/jnlp net \
 	)
 	@( \
-		cd ${ICEDTEADIR}/netx; \
-		${ICEDTEA_JAR} uf ${ICEDTEADIR}/build/lib/netx.jar \
+		cd ${ITWEBDIR}/netx; \
+		${ITWEB_JAR} uf ${ITWEBDIR}/build/lib/netx.jar \
 		    `${FIND} . -type f -not -name '*.java'` \
 	)
-	@${CP} ${ICEDTEADIR}/netx/net/sourceforge/jnlp/resources/about.jnlp \
-	    ${ICEDTEADIR}/build/lib
-	@${FIND} -s ${ICEDTEADIR}/plugin/icedteanp/java -name '*.java' > \
-	    ${ICEDTEADIR}/liveconnect-source-files.txt
-	@${MKDIR} ${ICEDTEADIR}/liveconnect/lib
-	@${ICEDTEA_JAVAC} ${ICEDTEA_JAVAC_FLAGS} -d ${ICEDTEADIR}/liveconnect \
-	    -classpath ${ICEDTEADIR}/netx.build \
-	    @${ICEDTEADIR}/liveconnect-source-files.txt
+	@${CP} ${ITWEBDIR}/netx/net/sourceforge/jnlp/resources/about.jnlp \
+	    ${ITWEBDIR}/build/lib
+	@${FIND} -s ${ITWEBDIR}/plugin/icedteanp/java -name '*.java' > \
+	    ${ITWEBDIR}/liveconnect-source-files.txt
+	@${MKDIR} ${ITWEBDIR}/liveconnect/lib
+	@${ITWEB_JAVAC} ${ITWEB_JAVAC_FLAGS} -d ${ITWEBDIR}/liveconnect \
+	    -classpath ${ITWEBDIR}/netx.build \
+	    @${ITWEBDIR}/liveconnect-source-files.txt
 	@( \
-		cd ${ICEDTEADIR}/liveconnect; \
-		${ICEDTEA_JAR} cf ${ICEDTEADIR}/build/lib/plugin.jar \
+		cd ${ITWEBDIR}/liveconnect; \
+		${ITWEB_JAR} cf ${ITWEBDIR}/build/lib/plugin.jar \
 		    netscape sun/applet \
 	)
-	@${FIND} -s ${ICEDTEADIR}/extra -name '*.java' > \
-	    ${ICEDTEADIR}/extra-source-files.txt
-	@${MKDIR} ${ICEDTEADIR}/extra-lib
-	@${ICEDTEA_JAVAC} ${ICEDTEA_JAVAC_FLAGS} -d ${ICEDTEADIR}/extra-lib \
-	    -classpath ${ICEDTEADIR}/netx.build \
-	    @${ICEDTEADIR}/extra-source-files.txt
-	@${CP} -r ${ICEDTEADIR}/extra/net/sourceforge/jnlp/about/resources \
-	    ${ICEDTEADIR}/extra-lib/net/sourceforge/jnlp/about
+	@${FIND} -s ${ITWEBDIR}/extra -name '*.java' > \
+	    ${ITWEBDIR}/extra-source-files.txt
+	@${MKDIR} ${ITWEBDIR}/extra-lib
+	@${ITWEB_JAVAC} ${ITWEB_JAVAC_FLAGS} -d ${ITWEBDIR}/extra-lib \
+	    -classpath ${ITWEBDIR}/netx.build \
+	    @${ITWEBDIR}/extra-source-files.txt
+	@${CP} -r ${ITWEBDIR}/extra/net/sourceforge/jnlp/about/resources \
+	    ${ITWEBDIR}/extra-lib/net/sourceforge/jnlp/about
 	@( \
-		cd ${ICEDTEADIR}/extra-lib; \
-		${ICEDTEA_JAR} cf ${ICEDTEADIR}/build/lib/about.jar net \
+		cd ${ITWEBDIR}/extra-lib; \
+		${ITWEB_JAR} cf ${ITWEBDIR}/build/lib/about.jar net \
 	)
-	@${CP} -Rp ${ICEDTEADIR}/build/lib \
+	@${MKDIR} ${ITWEBDIR}/build/lib/desktop
+	@${SED} 's|PATH_TO_ITWEB_SETTINGS|${PREFIX}/openjdk6/bin/itweb-settings|' \
+	    ${ITWEBDIR}/itweb-settings.desktop.in > \
+	    ${ITWEBDIR}/build/lib/desktop/itweb-settings.desktop
+	@${SED} 's|PATH_TO_JAVAWS|${PREFIX}/openjdk6/bin/javaws|' \
+	    ${ITWEBDIR}/javaws.desktop.in > \
+	    ${ITWEBDIR}/build/lib/desktop/javaws.desktop
+	@${CP} ${ITWEBDIR}/javaws.png ${ITWEBDIR}/build/lib/desktop
+	@${CP} -Rp ${ITWEBDIR}/build/lib \
 	    ${WRKSRC}/build/${OPENJDK_OSARCH}/j2sdk-image/jre
-	@${CP} ${ICEDTEADIR}/netx/javaws.1 \
+	@${CP} ${ITWEBDIR}/netx/javaws.1 \
 	    ${WRKSRC}/build/${OPENJDK_OSARCH}/j2sdk-image/man/man1/javaws.1
 .endif
 .if defined(WITH_TEST)
