@@ -34,6 +34,48 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="8d04cfbd-344d-11e0-8669-0025222482c5">
+    <topic>mediawiki -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>mediawiki</name>
+	<range><lt>1.16.2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Medawiki reports:</p>
+	<blockquote cite="http://lists.wikimedia.org/pipermail/mediawiki-announce/2011-February/000095.html">
+	  <p>An arbitrary script inclusion vulnerability was discovered. The
+	    vulnerability only allows execution of files with names ending in
+	    ".php" which are already present in the local filesystem. Only servers
+	    running Microsoft Windows and possibly Novell Netware are affected.
+	    Despite these mitigating factors, all users are advised to upgrade,
+	    since there is a risk of complete server compromise. MediaWiki 1.8.0
+	    and later is affected.</p>
+	  <p>Security researcher mghack discovered a CSS injection
+	    vulnerability. For Internet Explorer and similar browsers, this is
+	    equivalent to an XSS vulnerability, that is to say, it allows the
+	    compromise of wiki user accounts. For other browsers, it allows private
+	    data such as IP addresses and browsing patterns to be sent to a malicious
+	    external web server. It affects all versions of MediaWiki. All users are
+	    advised to upgrade.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2011-0047</cvename>
+      <url>https://bugzilla.wikimedia.org/show_bug.cgi?id=27094</url>
+      <url>https://bugzilla.wikimedia.org/show_bug.cgi?id=27093</url>
+      <url>http://svn.wikimedia.org/svnroot/mediawiki/tags/REL1_16_2/phase3/RELEASE-NOTES</url>
+      <url>http://lists.wikimedia.org/pipermail/mediawiki-announce/2011-February/000095.html</url>
+    </references>
+    <dates>
+      <discovery>2011-02-01</discovery>
+      <entry>2011-02-09</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="8c93e997-30e0-11e0-b300-485d605f4717">
     <topic>wordpress -- SQL injection vulnerability</topic>
     <affects>
