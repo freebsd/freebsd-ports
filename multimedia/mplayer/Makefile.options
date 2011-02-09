@@ -221,6 +221,7 @@ CONFIGURE_ARGS+=	--disable-tv-v4l1 \
 .if defined(WITH_LIBRTMP)
 LIB_DEPENDS+=	rtmp.0:${PORTSDIR}/multimedia/rtmpdump
 CONFIGURE_ARGS+=	--enable-librtmp
+EXTRA_LIBS+=		-lrtmp
 .else
 CONFIGURE_ARGS+=	--disable-librtmp
 .endif
