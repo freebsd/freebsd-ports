@@ -2752,6 +2752,7 @@
     SUBDIR += py-bitarray
     SUBDIR += py-bitstring
     SUBDIR += py-boto
+    SUBDIR += py-boto-devel
     SUBDIR += py-cclib
     SUBDIR += py-celementtree
     SUBDIR += py-cfgparse
