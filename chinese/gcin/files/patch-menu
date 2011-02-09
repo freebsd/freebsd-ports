@@ -1,11 +1,8 @@
---- menu/Makefile.bak	Mon Oct 30 12:44:59 2006
-+++ menu/Makefile	Mon Oct 30 12:43:10 2006
-@@ -10,14 +10,10 @@
- 	   install gcin-setup.desktop /usr/share/applications; \
- 	   install -d /usr/lib/menu; \
+--- menu/Makefile.bak	2010-11-19 04:16:50.000000000 +0800
++++ menu/Makefile	2010-11-19 04:18:35.000000000 +0800
+@@ -12,12 +12,8 @@
  	   install -m 644 $(MENUS) /usr/lib/menu; \
--	   which update-menus >& /dev/null && update-menus || exit 0; \
-+	   which update-menus > /dev/null 2>&1 && update-menus || exit 0; \
+ 	   which update-menus > /dev/null 2>&1 && update-menus || exit 0; \
  	else \
 -	   install -d $(libdir)/menu; \
 -	   install -m 644 $(MENUS) $(libdir)/menu; \

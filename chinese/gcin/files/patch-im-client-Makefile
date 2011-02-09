@@ -1,0 +1,11 @@
+--- im-client/Makefile.orig	2009-12-12 19:28:49.000000000 +0800
++++ im-client/Makefile	2010-11-20 18:09:18.000000000 +0800
+@@ -20,7 +20,7 @@
+ 	$(CC) -x c -c $(CFLAGS) $<
+ 
+ $(SOFILEVER):   $(OBJS)
+-	$(CC) $(SO_FLAGS) -Wl,-soname,libgcin-im-client.so.1 $(OBJS) -lX11 -o $@
++	$(CC) $(SO_FLAGS) -Wl,-soname,libgcin-im-client.so.1 $(OBJS) -o $@
+ 	ln -sf $(SOFILEVER) $(SOFILE)
+ 	ln -sf $(SOFILEVER) $(SOFILE).1
+ 	$(MAKE) -C ../gtk-im
