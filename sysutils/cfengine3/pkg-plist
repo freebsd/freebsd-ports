@@ -1,8 +1,6 @@
-@comment $FreeBSD$
-lib/libpromises.la
-lib/libpromises.a
 sbin/cf-agent
 sbin/cf-execd
+sbin/cf-hub
 sbin/cf-key
 sbin/cf-know
 sbin/cf-monitord
@@ -10,17 +8,23 @@ sbin/cf-promises
 sbin/cf-report
 sbin/cf-runagent
 sbin/cf-serverd
+lib/libpromises.la
+lib/libpromises.so
+lib/libpromises.so.1
 %%DOCSDIR%%/ChangeLog
 %%DOCSDIR%%/INSTALL
 %%DOCSDIR%%/NEWS
 %%DOCSDIR%%/README
+%%DOCSDIR%%/active_directory.cf
+%%DOCSDIR%%/app_baseline.cf
 %%DOCSDIR%%/cfengine_stdlib.cf
+%%DOCSDIR%%/inputs/cfengine_stdlib.cf
 %%DOCSDIR%%/inputs/failsafe.cf
-%%DOCSDIR%%/inputs/library.cf
 %%DOCSDIR%%/inputs/promises.cf
 %%DOCSDIR%%/inputs/site.cf
 %%DOCSDIR%%/inputs/update.cf
 %%DOCSDIR%%/promise_knowledge.cf
+%%DOCSDIR%%/unit_abort.cf
 %%DOCSDIR%%/unit_accessed_before.cf
 %%DOCSDIR%%/unit_accumulated_time.cf
 %%DOCSDIR%%/unit_acl.cf
@@ -79,6 +83,7 @@ sbin/cf-serverd
 %%DOCSDIR%%/unit_execd.cf
 %%DOCSDIR%%/unit_execresult.cf
 %%DOCSDIR%%/unit_expand.cf
+%%DOCSDIR%%/unit_failedcommand.cf
 %%DOCSDIR%%/unit_failsafe.cf
 %%DOCSDIR%%/unit_file_change_detection.cf
 %%DOCSDIR%%/unit_file_owner_list_template.cf
@@ -87,6 +92,7 @@ sbin/cf-serverd
 %%DOCSDIR%%/unit_fileperms.cf
 %%DOCSDIR%%/unit_filesexist.cf
 %%DOCSDIR%%/unit_filesexist2.cf
+%%DOCSDIR%%/unit_filesize.cf
 %%DOCSDIR%%/unit_fix_names.cf
 %%DOCSDIR%%/unit_getenv.cf
 %%DOCSDIR%%/unit_getfields.cf
@@ -95,6 +101,7 @@ sbin/cf-serverd
 %%DOCSDIR%%/unit_getindixes.cf
 %%DOCSDIR%%/unit_getregistry.cf
 %%DOCSDIR%%/unit_getuid.cf
+%%DOCSDIR%%/unit_getusers.cf
 %%DOCSDIR%%/unit_global_list_expansion.cf
 %%DOCSDIR%%/unit_global_list_expansion_2.cf
 %%DOCSDIR%%/unit_grep.cf
@@ -104,8 +111,10 @@ sbin/cf-serverd
 %%DOCSDIR%%/unit_hashmatch.cf
 %%DOCSDIR%%/unit_hashuncomment.cf
 %%DOCSDIR%%/unit_helloworld.cf
+%%DOCSDIR%%/unit_host2ip.cf
 %%DOCSDIR%%/unit_hostrange.cf
 %%DOCSDIR%%/unit_hostsseen.cf
+%%DOCSDIR%%/unit_hub.cf
 %%DOCSDIR%%/unit_id.cf
 %%DOCSDIR%%/unit_insert_users.cf
 %%DOCSDIR%%/unit_intarray.cf
@@ -160,6 +169,7 @@ sbin/cf-serverd
 %%DOCSDIR%%/unit_process_matching2.cf
 %%DOCSDIR%%/unit_process_matching3.cf
 %%DOCSDIR%%/unit_process_signalling.cf
+%%DOCSDIR%%/unit_product.cf
 %%DOCSDIR%%/unit_promises.cf
 %%DOCSDIR%%/unit_readlist.cf
 %%DOCSDIR%%/unit_readtcp.cf
@@ -174,6 +184,7 @@ sbin/cf-serverd
 %%DOCSDIR%%/unit_remoteclasses.cf
 %%DOCSDIR%%/unit_remove_deadlinks.cf
 %%DOCSDIR%%/unit_rename.cf
+%%DOCSDIR%%/unit_repairedcommand.cf
 %%DOCSDIR%%/unit_report_custom.cf
 %%DOCSDIR%%/unit_report_diffs.cf
 %%DOCSDIR%%/unit_report_state.cf
@@ -194,6 +205,7 @@ sbin/cf-serverd
 %%DOCSDIR%%/unit_service_start.cf
 %%DOCSDIR%%/unit_setuidlog.cf
 %%DOCSDIR%%/unit_setvar.cf
+%%DOCSDIR%%/unit_software_dist.cf
 %%DOCSDIR%%/unit_splitstring.cf
 %%DOCSDIR%%/unit_sql.cf
 %%DOCSDIR%%/unit_storage.cf
@@ -203,6 +215,8 @@ sbin/cf-serverd
 %%DOCSDIR%%/unit_syslog.cf
 %%DOCSDIR%%/unit_syslog2.cf
 %%DOCSDIR%%/unit_template.cf
+%%DOCSDIR%%/unit_template2.cf
+%%DOCSDIR%%/unit_test_environment.cf
 %%DOCSDIR%%/unit_tidy_all_files.cf
 %%DOCSDIR%%/unit_translatepath.cf
 %%DOCSDIR%%/unit_update.cf
@@ -210,10 +224,15 @@ sbin/cf-serverd
 %%DOCSDIR%%/unit_user_edit_method.cf
 %%DOCSDIR%%/unit_userexists.cf
 %%DOCSDIR%%/unit_varclass.cf
+%%DOCSDIR%%/unit_varexpansion.cf
 %%DOCSDIR%%/unit_varnet.cf
 %%DOCSDIR%%/unit_vars.cf
 %%DOCSDIR%%/unit_warnifline.cf
 %%DOCSDIR%%/unit_webserver.cf
 %%DOCSDIR%%/unit_zenoss.cf
+%%DOCSDIR%%/win_emergency.cf
+%%DOCSDIR%%/win_registry.cf
+%%DOCSDIR%%/win_schedule.cf
+%%DOCSDIR%%/win_services.cf
 @dirrm %%DOCSDIR%%/inputs
 @dirrm %%DOCSDIR%%
