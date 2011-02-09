@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tea
-DISTVERSION=	28.1.2
+DISTVERSION=	28.1.4
 CATEGORIES=	editors
 MASTER_SITES=	SF/${PORTNAME}-editor/${PORTNAME}-editor/${PORTVERSION}
 
@@ -16,7 +16,6 @@ COMMENT=	A simple and powerful Qt4-based text editor
 LICENSE=	GPLv3
 
 USE_BZIP2=	yes
-USE_XLIB=	yes
 USE_QT_VER=	4
 QT_COMPONENTS=	qmake_build moc_build rcc_build corelib gui script svg xml
 
@@ -27,19 +26,14 @@ OPTIONS=	ASPELL	"Build with GNU Aspell support"	on
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_ASPELL)
-LIB_DEPENDS+=	aspell.16:${PORTSDIR}/textproc/aspell
-QMAKEFLAGS+=	USE_ASPELL=true
+LIB_DEPENDS=	aspell.16:${PORTSDIR}/textproc/aspell
+QMAKEFLAGS=	USE_ASPELL=true
 .else
-QMAKEFLAGS+=	USE_ASPELL=false
+QMAKEFLAGS=	USE_ASPELL=false
 .endif
 
-post-patch:
-	@${REINPLACE_CMD} -e '/aspell/s,/usr,${LOCALBASE},' ${WRKSRC}/src.pro
-	@${REINPLACE_CMD} -e 's|/usr/X11R6/include/X11|X11|' ${WRKSRC}/qxtwindowsystem_x11.cpp
-
 do-configure:
-	@(cd ${BUILD_WRKSRC} && ${SETENV} ${MAKE_ENV} \
-		${QMAKE} ${QMAKEFLAGS} PREFIX=$PREFIX})
+	@cd ${BUILD_WRKSRC} && ${SETENV} ${MAKE_ENV} ${QMAKE} ${QMAKEFLAGS}
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/${PORTNAME} ${PREFIX}/bin
