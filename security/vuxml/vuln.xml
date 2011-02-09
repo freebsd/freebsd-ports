@@ -204,7 +204,7 @@ Note:  Please add new entries to the beginning of this file.
   </vuln>
 
   <vuln vid="c8c927e5-2891-11e0-8f26-00151735203a">
-    <topic>bugzilla -- multiple seriuos vulnerabilities</topic>
+    <topic>bugzilla -- multiple serious vulnerabilities</topic>
     <affects>
       <package>
 	<name>bugzilla</name>
