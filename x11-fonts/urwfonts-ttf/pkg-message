@@ -6,5 +6,5 @@ $ xset fp+ /usr/local/lib/X11/fonts/urwfonts-ttf
 $ xset fp rehash
 
 or by adding it to your X-server configuration file (usually
-/etc/X11/XF86Config) and restarting the X-server.
+/etc/X11/xorg.conf) and restarting the X-server.
 ============================================================
