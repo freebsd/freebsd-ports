@@ -7,10 +7,10 @@
 #
 
 PORTNAME=	wordpress
-PORTVERSION=	3.0.4
+PORTVERSION=	3.0.5
 CATEGORIES=	german www
 MASTER_SITES=	http://freebsd.unixfreunde.de/sources/
-DISTNAME=	wordpress_304-de
+DISTNAME=	wordpress_305-de
 
 MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	A state-of-the-art semantic personal publishing platform
