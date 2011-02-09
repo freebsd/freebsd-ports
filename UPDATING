@@ -5,6 +5,14 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20110209:
+  AFFECTS: users of www/testlink
+  AUTHOR: tota@FreeBSD.org
+
+  Testlink 1.9.1 was released. Before updating, you should read carefully
+  the included README file because this release requires a manual update
+  of the database scheme.
+
 20110125:
   AFFECTS: users of lang/perl5.12
   AUTHOR: skv@FreeBSD.org

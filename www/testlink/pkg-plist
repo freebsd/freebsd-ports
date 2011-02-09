@@ -18,7 +18,6 @@
 %%WWWDIR%%/custom/README
 %%WWWDIR%%/custom/_cf_radio_head.php
 %%WWWDIR%%/custom_config.inc.php.example
-%%PORTDOCS%%%%WWWDIR%%/docs
 %%WWWDIR%%/firstLogin.php
 %%WWWDIR%%/gui/drag_and_drop/css/context-menu.css
 %%WWWDIR%%/gui/drag_and_drop/css/drag-drop-folder-tree.css
@@ -108,6 +107,7 @@
 %%WWWDIR%%/gui/templates/inc_show_bug_table.tpl
 %%WWWDIR%%/gui/templates/inc_show_hide_mgmt.tpl
 %%WWWDIR%%/gui/templates/inc_tinymce_init.tpl
+%%WWWDIR%%/gui/templates/inc_tree_control.tpl
 %%WWWDIR%%/gui/templates/inc_update.tpl
 %%WWWDIR%%/gui/templates/infoWindow.tpl
 %%WWWDIR%%/gui/templates/input_dimensions.conf
@@ -172,6 +172,8 @@
 %%WWWDIR%%/gui/templates/requirements/reqSpecView.tpl
 %%WWWDIR%%/gui/templates/requirements/reqTcAssign.tpl
 %%WWWDIR%%/gui/templates/requirements/reqTcBulkAssignment.tpl
+%%WWWDIR%%/gui/templates/requirements/reqViewRevisionRO.tpl
+%%WWWDIR%%/gui/templates/requirements/reqViewRevisionViewer.tpl
 %%WWWDIR%%/gui/templates/requirements/reqViewVersions.tpl
 %%WWWDIR%%/gui/templates/requirements/reqViewVersionsViewer.tpl
 %%WWWDIR%%/gui/templates/results/charts.tpl
@@ -225,8 +227,6 @@
 %%WWWDIR%%/gui/templates/testcases/tcSearchResults.tpl
 %%WWWDIR%%/gui/templates/testcases/tcStepEdit.tpl
 %%WWWDIR%%/gui/templates/testcases/tcStepEditViewer.tpl
-%%WWWDIR%%/gui/templates/testcases/tcStepEdit_m1.tpl
-%%WWWDIR%%/gui/templates/testcases/tcStepEdit_m2.tpl
 %%WWWDIR%%/gui/templates/testcases/tcTree.tpl
 %%WWWDIR%%/gui/templates/testcases/tcView.tpl
 %%WWWDIR%%/gui/templates/testcases/tcView_viewer.tpl
@@ -243,6 +243,7 @@
 %%WWWDIR%%/gui/themes/default/css/tl_print.css
 %%WWWDIR%%/gui/themes/default/css/tl_treemenu.css
 %%WWWDIR%%/gui/themes/default/images/45px-Nuvola_apps_bug.png
+%%WWWDIR%%/gui/themes/default/images/accept.png
 %%WWWDIR%%/gui/themes/default/images/answer.png
 %%WWWDIR%%/gui/themes/default/images/apply_f2.png
 %%WWWDIR%%/gui/themes/default/images/apply_f2_16.png
@@ -275,6 +276,7 @@
 %%WWWDIR%%/gui/themes/default/images/edit-undo.png
 %%WWWDIR%%/gui/themes/default/images/edit_icon.png
 %%WWWDIR%%/gui/themes/default/images/error.gif
+%%WWWDIR%%/gui/themes/default/images/error_triangle.png
 %%WWWDIR%%/gui/themes/default/images/exec_icon.png
 %%WWWDIR%%/gui/themes/default/images/export.png
 %%WWWDIR%%/gui/themes/default/images/export_import.png
@@ -469,6 +471,12 @@
 %%WWWDIR%%/install/sql/alter_tables/1.8/mysql/DB.1.2/z_final_step.sql
 %%WWWDIR%%/install/sql/alter_tables/1.8/postgres/DB.1.2/db_schema_update.sql
 %%WWWDIR%%/install/sql/alter_tables/1.8/postgres/DB.1.2/z_final_step.sql
+%%WWWDIR%%/install/sql/alter_tables/1.9.1/mssql/DB.1.4/step1/db_schema_update.sql
+%%WWWDIR%%/install/sql/alter_tables/1.9.1/mssql/DB.1.4/stepZ/z_final_step.sql
+%%WWWDIR%%/install/sql/alter_tables/1.9.1/mysql/DB.1.4/step1/db_schema_update.sql
+%%WWWDIR%%/install/sql/alter_tables/1.9.1/mysql/DB.1.4/stepZ/z_final_step.sql
+%%WWWDIR%%/install/sql/alter_tables/1.9.1/postgres/DB.1.4/step1/db_schema_update.sql
+%%WWWDIR%%/install/sql/alter_tables/1.9.1/postgres/DB.1.4/stepZ/z_final_step.sql
 %%WWWDIR%%/install/sql/alter_tables/1.9/mssql/DB.1.3/step1/db_schema_update.sql
 %%WWWDIR%%/install/sql/alter_tables/1.9/mssql/DB.1.3/stepZ/z_final_step.sql
 %%WWWDIR%%/install/sql/alter_tables/1.9/mysql/DB.1.3/step1/db_schema_update.sql
@@ -490,6 +498,7 @@
 %%WWWDIR%%/lib/ajax/dragdroptprojectnodes.php
 %%WWWDIR%%/lib/ajax/dragdroptreenodes.php
 %%WWWDIR%%/lib/ajax/getUsersWithRight.php
+%%WWWDIR%%/lib/ajax/getreqlog.php
 %%WWWDIR%%/lib/ajax/getrequirementnodes.php
 %%WWWDIR%%/lib/ajax/gettestcasesummary.php
 %%WWWDIR%%/lib/ajax/gettprojectnodes.php
@@ -552,6 +561,7 @@
 %%WWWDIR%%/lib/api/sample_clients/php/sample.inc.php
 %%WWWDIR%%/lib/api/sample_clients/php/util.php
 %%WWWDIR%%/lib/api/sample_clients/python/clientGetProjects.py
+%%WWWDIR%%/lib/api/sample_clients/python/clientGetTestCaseForTestSuite.py
 %%WWWDIR%%/lib/api/sample_clients/python/clientSample.py
 %%WWWDIR%%/lib/api/sample_clients/ruby/clientSample.rb
 %%WWWDIR%%/lib/api/sample_extended_server/extended_server.php
@@ -720,6 +730,7 @@
 %%WWWDIR%%/lib/requirements/reqSpecView.php
 %%WWWDIR%%/lib/requirements/reqTcAssign.php
 %%WWWDIR%%/lib/requirements/reqView.php
+%%WWWDIR%%/lib/requirements/reqViewRevision.php
 %%WWWDIR%%/lib/results/charts.inc.php
 %%WWWDIR%%/lib/results/charts.php
 %%WWWDIR%%/lib/results/displayMgr.php
@@ -821,6 +832,9 @@
 %%WWWDIR%%/locale/zh_CN/texts.php
 %%WWWDIR%%/login.php
 %%WWWDIR%%/logout.php
+%%WWWDIR%%/logs/config_check.txt
+%%WWWDIR%%/logs/userlog0.log
+%%WWWDIR%%/logs/userlog1.log
 %%WWWDIR%%/lostPassword.php
 %%WWWDIR%%/sysinfo.php
 %%WWWDIR%%/third_party/Zend/Registry.php
@@ -1047,6 +1061,13 @@
 %%WWWDIR%%/third_party/color_picker/picker.html
 %%WWWDIR%%/third_party/color_picker/picker.js
 %%WWWDIR%%/third_party/dBug/dBug.php
+%%WWWDIR%%/third_party/daisydiff/css/diff.css
+%%WWWDIR%%/third_party/daisydiff/src/Diff.php
+%%WWWDIR%%/third_party/daisydiff/src/HTMLDiff.php
+%%WWWDIR%%/third_party/daisydiff/src/Nodes.php
+%%WWWDIR%%/third_party/daisydiff/src/Sanitizer.php
+%%WWWDIR%%/third_party/daisydiff/src/StringUtils.php
+%%WWWDIR%%/third_party/daisydiff/src/Xml.php
 %%WWWDIR%%/third_party/diff/diff.css
 %%WWWDIR%%/third_party/diff/diff.php
 %%WWWDIR%%/third_party/ext-js/INCLUDE_ORDER.txt
@@ -2504,22 +2525,66 @@
 %%WWWDIR%%/third_party/pchart/pChart/pData.class
 %%WWWDIR%%/third_party/phpexcel/oleread.inc
 %%WWWDIR%%/third_party/phpexcel/reader.php
-%%WWWDIR%%/third_party/phpmailer/ChangeLog.txt
 %%WWWDIR%%/third_party/phpmailer/LICENSE
 %%WWWDIR%%/third_party/phpmailer/README
+%%WWWDIR%%/third_party/phpmailer/aboutus.html
+%%WWWDIR%%/third_party/phpmailer/changelog.txt
 %%WWWDIR%%/third_party/phpmailer/class.phpmailer.php
+%%WWWDIR%%/third_party/phpmailer/class.pop3.php
 %%WWWDIR%%/third_party/phpmailer/class.smtp.php
+%%WWWDIR%%/third_party/phpmailer/docs/Callback_function_notes.txt
+%%WWWDIR%%/third_party/phpmailer/docs/DomainKeys_notes.txt
+%%WWWDIR%%/third_party/phpmailer/docs/Note_for_SMTP_debugging.txt
+%%WWWDIR%%/third_party/phpmailer/docs/extending.html
+%%WWWDIR%%/third_party/phpmailer/docs/faq.html
+%%WWWDIR%%/third_party/phpmailer/docs/pop3_article.txt
+%%WWWDIR%%/third_party/phpmailer/docs/use_gmail.txt
+%%WWWDIR%%/third_party/phpmailer/examples/contents.html
+%%WWWDIR%%/third_party/phpmailer/examples/images/phpmailer.gif
+%%WWWDIR%%/third_party/phpmailer/examples/images/phpmailer_mini.gif
+%%WWWDIR%%/third_party/phpmailer/examples/index.html
+%%WWWDIR%%/third_party/phpmailer/examples/test_db_smtp_basic.php
+%%WWWDIR%%/third_party/phpmailer/examples/test_mail_advanced.php
+%%WWWDIR%%/third_party/phpmailer/examples/test_mail_basic.php
+%%WWWDIR%%/third_party/phpmailer/examples/test_pop_before_smtp_advanced.php
+%%WWWDIR%%/third_party/phpmailer/examples/test_pop_before_smtp_basic.php
+%%WWWDIR%%/third_party/phpmailer/examples/test_sendmail_advanced.php
+%%WWWDIR%%/third_party/phpmailer/examples/test_sendmail_basic.php
+%%WWWDIR%%/third_party/phpmailer/examples/test_smtp_advanced.php
+%%WWWDIR%%/third_party/phpmailer/examples/test_smtp_advanced_no_auth.php
+%%WWWDIR%%/third_party/phpmailer/examples/test_smtp_basic.php
+%%WWWDIR%%/third_party/phpmailer/examples/test_smtp_basic_no_auth.php
+%%WWWDIR%%/third_party/phpmailer/examples/test_smtp_gmail_advanced.php
+%%WWWDIR%%/third_party/phpmailer/examples/test_smtp_gmail_basic.php
+%%WWWDIR%%/third_party/phpmailer/language/phpmailer.lang-ar.php
 %%WWWDIR%%/third_party/phpmailer/language/phpmailer.lang-br.php
+%%WWWDIR%%/third_party/phpmailer/language/phpmailer.lang-ca.php
+%%WWWDIR%%/third_party/phpmailer/language/phpmailer.lang-ch.php
 %%WWWDIR%%/third_party/phpmailer/language/phpmailer.lang-cz.php
 %%WWWDIR%%/third_party/phpmailer/language/phpmailer.lang-de.php
-%%WWWDIR%%/third_party/phpmailer/language/phpmailer.lang-en.php
+%%WWWDIR%%/third_party/phpmailer/language/phpmailer.lang-dk.php
 %%WWWDIR%%/third_party/phpmailer/language/phpmailer.lang-es.php
+%%WWWDIR%%/third_party/phpmailer/language/phpmailer.lang-et.php
+%%WWWDIR%%/third_party/phpmailer/language/phpmailer.lang-fi.php
+%%WWWDIR%%/third_party/phpmailer/language/phpmailer.lang-fo.php
 %%WWWDIR%%/third_party/phpmailer/language/phpmailer.lang-fr.php
+%%WWWDIR%%/third_party/phpmailer/language/phpmailer.lang-hu.php
 %%WWWDIR%%/third_party/phpmailer/language/phpmailer.lang-it.php
+%%WWWDIR%%/third_party/phpmailer/language/phpmailer.lang-ja.php
 %%WWWDIR%%/third_party/phpmailer/language/phpmailer.lang-nl.php
 %%WWWDIR%%/third_party/phpmailer/language/phpmailer.lang-no.php
+%%WWWDIR%%/third_party/phpmailer/language/phpmailer.lang-pl.php
+%%WWWDIR%%/third_party/phpmailer/language/phpmailer.lang-ro.php
+%%WWWDIR%%/third_party/phpmailer/language/phpmailer.lang-ru.php
 %%WWWDIR%%/third_party/phpmailer/language/phpmailer.lang-se.php
 %%WWWDIR%%/third_party/phpmailer/language/phpmailer.lang-tr.php
+%%WWWDIR%%/third_party/phpmailer/language/phpmailer.lang-zh.php
+%%WWWDIR%%/third_party/phpmailer/language/phpmailer.lang-zh_cn.php
+%%WWWDIR%%/third_party/phpmailer/test/contents.html
+%%WWWDIR%%/third_party/phpmailer/test/phpmailerTest.php
+%%WWWDIR%%/third_party/phpmailer/test/test.png
+%%WWWDIR%%/third_party/phpmailer/test/test_callback.php
+%%WWWDIR%%/third_party/phpmailer/test/testemail.php
 %%WWWDIR%%/third_party/phpxmlrpc/Changelog
 %%WWWDIR%%/third_party/phpxmlrpc/NEWS
 %%WWWDIR%%/third_party/phpxmlrpc/README
@@ -3222,7 +3287,11 @@
 @dirrm %%WWWDIR%%/third_party/prototype
 @dirrm %%WWWDIR%%/third_party/phpxmlrpc/lib
 @dirrm %%WWWDIR%%/third_party/phpxmlrpc
+@dirrm %%WWWDIR%%/third_party/phpmailer/test
 @dirrm %%WWWDIR%%/third_party/phpmailer/language
+@dirrm %%WWWDIR%%/third_party/phpmailer/examples/images
+@dirrm %%WWWDIR%%/third_party/phpmailer/examples
+@dirrm %%WWWDIR%%/third_party/phpmailer/docs
 @dirrm %%WWWDIR%%/third_party/phpmailer
 @dirrm %%WWWDIR%%/third_party/phpexcel
 @dirrm %%WWWDIR%%/third_party/pchart/pChart
@@ -3390,6 +3459,9 @@
 @dirrm %%WWWDIR%%/third_party/ext-js/adapter
 @dirrm %%WWWDIR%%/third_party/ext-js
 @dirrm %%WWWDIR%%/third_party/diff
+@dirrm %%WWWDIR%%/third_party/daisydiff/src
+@dirrm %%WWWDIR%%/third_party/daisydiff/css
+@dirrm %%WWWDIR%%/third_party/daisydiff
 @dirrm %%WWWDIR%%/third_party/dBug
 @dirrm %%WWWDIR%%/third_party/color_picker/img
 @dirrm %%WWWDIR%%/third_party/color_picker
@@ -3484,6 +3556,19 @@
 @dirrm %%WWWDIR%%/install/sql/alter_tables/1.9/mssql/DB.1.3/step1
 @dirrm %%WWWDIR%%/install/sql/alter_tables/1.9/mssql/DB.1.3
 @dirrm %%WWWDIR%%/install/sql/alter_tables/1.9/mssql
+@dirrm %%WWWDIR%%/install/sql/alter_tables/1.9.1/postgres/DB.1.4/stepZ
+@dirrm %%WWWDIR%%/install/sql/alter_tables/1.9.1/postgres/DB.1.4/step1
+@dirrm %%WWWDIR%%/install/sql/alter_tables/1.9.1/postgres/DB.1.4
+@dirrm %%WWWDIR%%/install/sql/alter_tables/1.9.1/postgres
+@dirrm %%WWWDIR%%/install/sql/alter_tables/1.9.1/mysql/DB.1.4/stepZ
+@dirrm %%WWWDIR%%/install/sql/alter_tables/1.9.1/mysql/DB.1.4/step1
+@dirrm %%WWWDIR%%/install/sql/alter_tables/1.9.1/mysql/DB.1.4
+@dirrm %%WWWDIR%%/install/sql/alter_tables/1.9.1/mysql
+@dirrm %%WWWDIR%%/install/sql/alter_tables/1.9.1/mssql/DB.1.4/stepZ
+@dirrm %%WWWDIR%%/install/sql/alter_tables/1.9.1/mssql/DB.1.4/step1
+@dirrm %%WWWDIR%%/install/sql/alter_tables/1.9.1/mssql/DB.1.4
+@dirrm %%WWWDIR%%/install/sql/alter_tables/1.9.1/mssql
+@dirrm %%WWWDIR%%/install/sql/alter_tables/1.9.1
 @dirrm %%WWWDIR%%/install/sql/alter_tables/1.9
 @dirrm %%WWWDIR%%/install/sql/alter_tables/1.8/postgres/DB.1.2
 @dirrm %%WWWDIR%%/install/sql/alter_tables/1.8/postgres
