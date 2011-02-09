@@ -79,6 +79,7 @@ include/fwb-4/fwbuilder/libfwbuilder-config.h
 include/fwb-4/fwbuilder/libfwbuilder-version.h
 include/fwb-4/fwbuilder/physAddress.h
 include/fwb-4/fwbuilder/snmp.h
+include/fwb-4/fwbuilder/uint128.h
 lib/libfwcompiler.so.9.1.0
 lib/libfwcompiler.so.9
 lib/libfwcompiler.so
