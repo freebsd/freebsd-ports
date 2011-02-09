@@ -6,86 +6,76 @@
 #
 
 PORTNAME=	snort
-PORTVERSION=	2.8.6.1
+PORTVERSION=	2.9.0.3
 CATEGORIES=	security
-MASTER_SITES=	LOCAL
-MASTER_SITE_SUBDIR=     clsung
+MASTER_SITES=	SF/snort/snort
 
-MAINTAINER=	clsung@FreeBSD.org
+PATCH_DIST_STRIP=	-p1
+
+MAINTAINER=	wfreeman@gmail.com
 COMMENT=	Lightweight network intrusion detection system
 
 LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre
+BUILD_DEPENDS=	daq>=0.5_1:${PORTSDIR}/net/daq \
+		${LOCALBASE}/lib/libnet11/libnet.a:${PORTSDIR}/net/libnet
+RUN_DEPENDS=	daq>=0.5_1:${PORTSDIR}/net/daq \
+		${LOCALBASE}/lib/libnet11/libnet.a:${PORTSDIR}/net/libnet
 
-CONFLICTS?=	snort-1.* snort-2.[0-7].*
-
-OPTIONS=	DYNAMIC "Enable dynamic plugin support" on \
-		FLEXRESP "Flexible response to events" off \
-		FLEXRESP2 "Flexible response to events (version 2)" off \
+OPTIONS=	IPV6 "Enable IPv6 support" off \
+		MPLS "Enable MPLS support" on \
+		GRE "Enable GRE support" on \
+		TARGETBASED "Enable Targetbased support" off \
+		DECODERPRE "Enable Decoded-Preprocessor-Rules" on \
+		ZLIB "Enable GZIP support" on \
+		NORMALIZER "Enable Normalizer" on \
+		REACT "Enable React" on \
+		PERFPROFILE "Enable Performance Profiling" on \
+		FLEXRESP3 "Flexible response to events (version 3)" on \
 		MYSQL "Enable MySQL support" off \
 		ODBC "Enable ODBC support" off \
 		POSTGRESQL "Enable PostgreSQL support" off \
 		PRELUDE "Enable Prelude NIDS integration" off \
-		PERPROFILE "Enable Performance Profiling" off \
-		SNORTSAM "Enable output plugin to SnortSam" off \
-		IPV6 "Enable IPv6 support" off
+		SNORTSAM "Unofficial Snortsam Patch" off
+
+.include <bsd.port.options.mk>
 
 USE_RC_SUBR=	snort.sh
 SUB_FILES=	pkg-message
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	LDFLAGS="${LDFLAGS}"
-PATCH_DIST_STRIP=	-p1
 MAKE_JOBS_UNSAFE=	yes
 
 CONFIG_DIR?=	${PREFIX}/etc/snort
 CONFIG_FILES=	classification.config gen-msg.map reference.config \
-		sid-msg.map snort.conf threshold.conf unicode.map
+		snort.conf threshold.conf unicode.map
 RULES_DIR=	${PREFIX}/etc/snort/rules
 LOGS_DIR=	/var/log/snort
 
 MAN8=		snort.8
 DOCS=		RELEASE.NOTES doc/AUTHORS doc/BUGS doc/CREDITS \
 		doc/README* doc/USAGE doc/*.pdf
+PREPROC_RULE_DIR=	${RULES_DIR}/../preproc_rules
+PREPROC_RULES=		decoder.rules preprocessor.rules sensitive-data.rules
 
-.include <bsd.port.pre.mk>
-
-.if defined(WITH_FLEXRESP)
-LIBNET_CONFIG?=		${LOCALBASE}/bin/libnet10-config
-.elif defined(WITH_FLEXRESP2)
+USE_AUTOTOOLS=	libtool
+USE_LDCONFIG=	yes
 LIBNET_CONFIG?=		${LOCALBASE}/bin/libnet11-config
-.endif
-
-.if exists(${LIBNET_CONFIG})
 LIBNET_CFLAGS!=	${LIBNET_CONFIG} --cflags
 LIBNET_LIBS!=	${LIBNET_CONFIG} --libs
 LIBNET_INCDIR=	${LIBNET_CFLAGS:M-I*:S/-I//}
 LIBNET_LIBDIR=	${LIBNET_LIBS:M-L*:S/-L//}
-.endif
 
-.if !defined(WITHOUT_DYNAMIC)
-USE_AUTOTOOLS=	libtool
-USE_LDCONFIG=	yes
-CONFIGURE_ARGS+=	--enable-dynamicplugin
+CONFIGURE_ARGS+=	--enable-dynamicplugin --enable-build-dynamic-examples \
+			--enable-reload --enable-reload-restart \
+			--disable-corefiles \
+			--with-dnet-includes=${LIBNET_INCDIR} \
+			--with-dnet-libraries=${LIBNET_LIBDIR}
+
 PLIST_SUB+=	DYNAMIC=""
-.else
-PLIST_SUB+=	DYNAMIC="@comment "
-.endif
 
-.if defined(WITH_FLEXRESP)
-.if defined(WITH_FLEXRESP2)
-IGNORE=			options FLEXRESP and FLEXRESP2 are mutually exclusive
-.endif
-BUILD_DEPENDS+=		${LIBNET_CONFIG}:${PORTSDIR}/net/libnet10
-CONFIGURE_ARGS+=	--enable-flexresp \
-			--with-libnet-includes=${LIBNET_INCDIR} \
-			--with-libnet-libraries=${LIBNET_LIBDIR}
-.endif
-
-.if defined(WITH_FLEXRESP2)
-LIB_DEPENDS+=		dnet.1:${PORTSDIR}/net/libdnet
-BUILD_DEPENDS+=		${LIBNET_CONFIG}:${PORTSDIR}/net/libnet
-CONFIGURE_ARGS+=	--enable-flexresp2 \
-			--with-libnet-includes=${LIBNET_INCDIR} \
-			--with-libnet-libraries=${LIBNET_LIBDIR}
+.if defined(WITH_FLEXRESP3)
+CONFIGURE_ARGS+=	--enable-flexresp3 \
+			--enable-active-response
 .endif
 
 .if defined(WITH_MYSQL)
@@ -122,18 +112,47 @@ CONFIGURE_ARGS+=	--disable-prelude
 PLIST_SUB+=		PRELUDE="@comment "
 .endif
 
-.if defined(WITH_PERPROFILE)
-CONFIGURE_ARGS+=	--enable-perfprofiling
-.endif
-
-.if defined(WITH_SNORTSAM)
-USE_AUTOTOOLS+=	automake
-PATCH_SITES+=http://www.snortsam.net/files/snort-plugin/:snortsam
-PATCHFILES+=snortsam-2.8.6.diff.gz:snortsam
+.if defined(WITH_PERFPROFILE)
+CONFIGURE_ARGS+=	--enable-perfprofiling --enable-ppm
 .endif
 
 .if defined(WITH_IPV6)
 CONFIGURE_ARGS+=	--enable-ipv6
+.endif
+
+.if defined(WITH_GRE)
+CONFIGURE_ARGS+=	--enable-gre
+.endif
+
+.if defined(WITH_MPLS)
+CONFIGURE_ARGS+=	--enable-mpls
+.endif
+
+.if defined(WITH_TARGETBASED)
+CONFIGURE_ARGS+=	--enable-targetbased
+.endif
+
+.if defined(WITH_DECODERPRE)
+CONFIGURE_ARGS+=	--enable-decoder-preprocessor-rules
+.endif
+
+.if defined(WITH_ZLIB)
+CONFIGURE_ARGS+=	--enable-zlib
+.endif
+
+.if defined(WITH_NORMALIZER)
+CONFIGURE_ARGS+=	--enable-normalizer
+.endif
+
+.if defined(WITH_REACT)
+CONFIGURE_ARGS+=	--enable-react
+.endif
+
+.if defined(WITH_SNORTSAM)
+USE_AUTOTOOLS+= automake
+PATCH_SITES+=	http://www.snortsam.net/files/snort-plugin/:snortsam \
+		http://www.secnap.com/downloads/:snortsam
+PATCHFILES+=	snortsam-2.9.0.3.diff.gz:snortsam
 .endif
 
 post-patch:
@@ -142,23 +161,25 @@ post-patch:
 .endif
 
 pre-configure:
-.if defined(WITH_SNORTSAM)
-	@cd ${WRKSRC} && ${SH} ${WRKSRC}/autojunk.sh
-.endif
 	${FIND} ${WRKSRC} -name 'Makefile.in' | ${XARGS} ${REINPLACE_CMD} -e \
 	    's|lib/snort_|lib/snort/|g'
 	${REINPLACE_CMD} "s,/etc/snort.conf,${CONFIG_DIR}/snort.conf," \
 		${WRKSRC}/src/snort.c ${WRKSRC}/snort.8
 	${REINPLACE_CMD} -e 's|lib/snort_|lib/snort/|g' ${WRKSRC}/etc/snort.conf
+	${REINPLACE_CMD} -e 's|^dynamicdetection|#dynamicdetection|' ${WRKSRC}/etc/snort.conf
+	${REINPLACE_CMD} -e '/var HOME_NET/s/any/[YOU_NEED_TO_SET_HOME_NET_IN_snort.conf]/' ${WRKSRC}/etc/snort.conf
 	${REINPLACE_CMD} -e 's|libdir)/pkgconfig|prefix)/libdata/pkgconfig|' ${WRKSRC}/Makefile.in
-.if defined(WITH_FLEXRESP) || defined(WITH_FLEXRESP2)
 	${REINPLACE_CMD} -e 's|libnet-config|${LIBNET_CONFIG}|g' ${WRKSRC}/configure
+.if !defined(WITH_IPV6)
+	${REINPLACE_CMD} -e 's|^ipvar |var |' ${WRKSRC}/etc/snort.conf
+	${REINPLACE_CMD} -e '/normalize_ip6/s/^preprocessor/#preprocessor/'  ${WRKSRC}/etc/snort.conf
+	${REINPLACE_CMD} -e '/normalize_icmp6/s/^preprocessor/#preprocessor/'  ${WRKSRC}/etc/snort.conf
 .endif
-.if defined(WITHOUT_DYNAMIC)
-	${REINPLACE_CMD} -e "s,-am: install-libLTLIBRARIES,-am:," \
-		${WRKSRC}/src/dynamic-plugins/sf_engine/Makefile.in
-	@${CAT} ${PATCHDIR}/pkg-message-dynamicplugin
-	@sleep 5
+.if defined(WITH_DECODERPRE)
+	${REINPLACE_CMD} -e '/^# include .PREPROC_RULE/s/# include/include/' ${WRKSRC}/etc/snort.conf
+.endif
+.if defined(WITH_SNORTSAM)
+	@cd ${WRKSRC} && ${SH} ${WRKSRC}/autojunk.sh
 .endif
 
 pre-install:
@@ -170,9 +191,19 @@ pre-install:
 .endif
 
 post-install:
-.if !defined(WITHOUT_DYNAMIC)
-	@${LIBTOOL} --finish ${LOCALBASE}/snort/dynamicpreprocessor
+.if defined(WITH_SNORTSAM)
+	# mss: only doing this because snortsam patch/autojunk messes up paths
+	# life is too short to figure out why.
+	@${MKDIR} ${LOCALBASE}/lib/snort/dynamicrules
+	@cd ${LOCALBASE}/lib && ${MKDIR} snort/dynamicrules &&  ${MKDIR} snort/dynamicengine &&  ${MKDIR} snort/dynamicpreprocessor
+	@cd ${LOCALBASE}/lib && ${MV} snort_dynamicrules/* snort/dynamicrules
+	@cd ${LOCALBASE}/lib && ${MV} snort_dynamicengine/* snort/dynamicengine
+	@cd ${LOCALBASE}/lib && ${MV} snort_dynamicpreprocessor/* snort/dynamicpreprocessor
+	@cd ${LOCALBASE}/lib && ${${RMDIR} snort_dynamic*
+	@${MKDIR} ${LOCALBASE}/libdata/pkgconfig/ && ${MV} ${LOCALBASE}/lib/pkgconfig/snort.pc ${LOCALBASE}/libdata/pkgconfig/snort.pc
+	@${RMDIR} ${LOCALBASE}/lib/pkgconfig
 .endif
+	@${LIBTOOL} --finish ${LOCALBASE}/snort/dynamicpreprocessor
 	[ -d ${CONFIG_DIR} ] || ${MKDIR} ${CONFIG_DIR}
 	[ -d ${EXAMPLESDIR} ] || ${MKDIR} ${EXAMPLESDIR}
 	[ -d ${RULES_DIR} ] || ${MKDIR} ${RULES_DIR}
@@ -189,6 +220,15 @@ post-install:
 	@${MKDIR} ${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${DOCSDIR}
 .endif
+.if defined(WITH_DECODERPRE)
+	@${MKDIR} ${PREPROC_RULE_DIR}
+.for f in ${PREPROC_RULES}
+	${INSTALL_DATA} ${WRKSRC}/preproc_rules/${f} ${PREPROC_RULE_DIR}/${f}-sample
+	@if [ ! -f ${PREPROC_RULE_DIR}/${f} ]; then \
+		${CP} -p ${PREPROC_RULE_DIR}/${f}-sample ${PREPROC_RULE_DIR}/${f} ; \
+	fi
+.endfor
+.endif
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
