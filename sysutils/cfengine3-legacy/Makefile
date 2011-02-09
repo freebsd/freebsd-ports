@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	cfengine
-PORTVERSION=	3.0.5p1
-PORTREVISION=	1
+PORTVERSION=	3.1.4
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.cfengine.org/tarballs/
 
@@ -21,7 +20,6 @@ WITH_BDB_VER?=	47
 USE_BDB=	yes
 USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes
-BUILD_DEPENDS=
 # EXAMPLESDIR=	${PREFIX}/share/examples/cfengine3
 DOCSDIR=	${PREFIX}/share/doc/cfengine3
 CONFIGURE_ARGS=	--docdir=${DOCSDIR} \
@@ -32,17 +30,18 @@ CONFIGURE_ENV+=	BERKELEY_DB_CFLAGS=-I${BDB_INCLUDE_DIR} \
 		BERKELEY_DB_LDFLAGS=-L${BDB_LIB_DIR} \
 		BERKELEY_DB_LIB=-l${BDB_LIB_NAME}
 
-OPTIONS=        PCRE	"Enable Perl-compatible regular expressions"		on
+OPTIONS=	PCRE	"Enable Perl-compatible regular expressions"		on
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_PCRE)
-BUILD_DEPENDS+= pcre-config:${PORTSDIR}/devel/pcre
-CONFIGURE_ARGS+= --with-pcre=${LOCALBASE}
+BUILD_DEPENDS+=	pcre-config:${PORTSDIR}/devel/pcre
+CONFIGURE_ARGS+=	--with-pcre=${LOCALBASE}
 .endif
 
-MAN8=   cf-agent.8   cf-key.8      cf-monitord.8   \
-        cf-report.8  cf-serverd.8  cf-execd.8      \
-        cf-know.8    cf-promises.8 cf-runagent.8
+MAN8=	cf-agent.8	cf-key.8	cf-monitord.8	\
+	cf-report.8	cf-serverd.8	cf-execd.8	\
+	cf-know.8	cf-promises.8	cf-runagent.8	\
+	cf-hub.8
 
 post-patch:
 		@# ${REINPLACE_CMD} -e '/^pkgdatadir/s!=.*!= ${EXAMPLESDIR}!'\
