@@ -7,7 +7,7 @@
 
 PORTNAME=	openjdk6
 PORTVERSION=	b20
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	java devel
 MASTER_SITES=	http://download.java.net/openjdk/jdk6/promoted/${PORTVERSION}/ \
 		https://jaxp.dev.java.net/files/documents/913/150648/:jaxp \
