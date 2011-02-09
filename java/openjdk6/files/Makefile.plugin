@@ -33,6 +33,9 @@ STRIP=		-s
 .error "PLUGIN_VERSION not defined"
 .endif
 
+PLUGIN_NAME=IcedTea-Web Plugin
+PACKAGE_URL=http://icedtea.classpath.org/wiki/IcedTea-Web
+
 MOZILLA_VERSION!=${LOCALBASE}/bin/pkg-config --modversion mozilla-plugin
 MOZILLA_VERSION2!=/usr/bin/printf "%d%02d%02d%02d" ${MOZILLA_VERSION:C/\./ /g}
 
@@ -42,7 +45,9 @@ PLUGIN_CFLAGS!=	${LOCALBASE}/bin/pkg-config --cflags ${PLUGIN_PKG_INC}
 PLUGIN_LIBS!=	${LOCALBASE}/bin/pkg-config --libs ${PLUGIN_PKG_LIB}
 
 CFLAGS+=	-DJDK_UPDATE_VERSION="\"${JDK_UPDATE_VERSION}\"" \
+		-DPLUGIN_NAME="\"${PLUGIN_NAME}\"" \
 		-DPLUGIN_VERSION="\"${PLUGIN_VERSION}\"" \
+		-DPACKAGE_URL="\"${PACKAGE_URL}\"" \
 		-DMOZILLA_VERSION_COLLAPSED="${MOZILLA_VERSION2}" \
 		${PLUGIN_CFLAGS}
 LDFLAGS+=	${PLUGIN_LIBS}

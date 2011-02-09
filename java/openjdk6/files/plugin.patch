@@ -1,6 +1,6 @@
 $FreeBSD$
 
-Applied patches from IcedTea6-1.9.2:
+Applied patches from IcedTea6-1.9.4 and updated for IcedTea-Web 1.0:
 
 patches/hotspot/original/update-bootclasspath.patch
 patches/icedtea-demo-swingapplet.patch
@@ -11,17 +11,17 @@ patches/extensions/liveconnect.patch
 Note:	patches/hotspot/original/update-bootclasspath.patch was applied without
 	rhino support.
 
---- hotspot/src/share/vm/runtime/os.cpp.orig	2010-06-21 17:12:21.000000000 -0400
-+++ hotspot/src/share/vm/runtime/os.cpp	2010-09-09 16:24:52.000000000 -0400
-@@ -884,6 +884,8 @@
+--- hotspot/src/share/vm/runtime/os.cpp.orig	2011-01-20 18:51:22.000000000 -0500
++++ hotspot/src/share/vm/runtime/os.cpp	2011-01-25 15:56:17.000000000 -0500
+@@ -1032,6 +1032,8 @@
          "%/lib/jsse.jar:"
          "%/lib/jce.jar:"
          "%/lib/charsets.jar:"
-+        "%/lib/netx.jar:"
-+        "%/lib/plugin.jar:"
-         "%/classes";
-     char* sysclasspath = format_boot_path(classpath_format, home, home_len, fileSep, pathSep);
-     if (sysclasspath == NULL) return false;
++	"%/lib/netx.jar:"
++	"%/lib/plugin.jar:"
+ 
+         // ## TEMPORARY hack to keep the legacy launcher working when
+         // ## only the boot module is installed (cf. j.l.ClassLoader)
 --- jdk/make/docs/NON_CORE_PKGS.gmk.orig	2010-06-21 17:15:08.000000000 -0400
 +++ jdk/make/docs/NON_CORE_PKGS.gmk	2010-09-09 16:26:01.000000000 -0400
 @@ -84,6 +84,10 @@
@@ -43,9 +43,16 @@ Note:	patches/hotspot/original/update-bootclasspath.patch was applied without
 +                   $(SMARTCARDIO_PKGS) \
 +                   $(JNLP_PKGS) \
 +                   $(JAVASCRIPT_PKGS)
---- jdk/make/launchers/Makefile.orig	2010-06-21 17:15:08.000000000 -0400
-+++ jdk/make/launchers/Makefile	2010-09-09 16:25:05.000000000 -0400
-@@ -67,6 +67,7 @@
+--- jdk/make/launchers/Makefile.orig	2011-01-20 18:54:05.000000000 -0500
++++ jdk/make/launchers/Makefile	2011-02-09 12:58:47.000000000 -0500
+@@ -61,12 +61,14 @@
+ $(call make-launcher, apt, com.sun.tools.apt.Main, , )
+ $(call make-launcher, extcheck, com.sun.tools.extcheck.Main, , )
+ $(call make-launcher, idlj, com.sun.tools.corba.se.idl.toJavaPortable.Compile, , )
++$(call make-launcher, itweb-settings, net.sourceforge.jnlp.controlpanel.ControlPanel, , )
+ $(call make-launcher, jar, sun.tools.jar.Main, , )
+ $(call make-launcher, jarsigner, sun.security.tools.JarSigner, , )
+ $(call make-launcher, javac, com.sun.tools.javac.Main, , )
  $(call make-launcher, javadoc, com.sun.tools.javadoc.Main, , )
  $(call make-launcher, javah, com.sun.tools.javah.Main, , )
  $(call make-launcher, javap, sun.tools.javap.Main, , )
