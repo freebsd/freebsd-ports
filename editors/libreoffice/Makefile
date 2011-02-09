@@ -289,9 +289,6 @@ post-extract:
 	@${MV} ${WRKDIR}/${PORTNAME}-${component}-${LOVERSION}/* ${WRKSRC}/build/${PORTNAME}/
 	@${RMDIR} ${WRKDIR}/${PORTNAME}-${component}-${LOVERSION}/
 .endfor
-	@${MV} ${WRKDIR}/${PORTNAME}-brand-freebsd/*.png ${WRKSRC}/build/${PORTNAME}/artwork/brand/
-	@${MV} ${WRKDIR}/${PORTNAME}-brand-freebsd/shell*.png ${WRKSRC}/build/${PORTNAME}/artwork/brand/shell
-	@${RMDIR} ${WRKDIR}/${PORTNAME}-brand-freebsd
 	@${TOUCH} ${WRKSRC}/build/${PORTNAME}/unpack
 	@${MKDIR} ${WRKSRC}/clone
 	@${TOUCH} ${WRKSRC}/clone/repos_changed
