@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Text-NSP
-PORTVERSION=	1.17
+PORTVERSION=	1.21
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -18,6 +18,7 @@ PERL_CONFIGURE=	5.8.0+
 
 MAN1=	combig.pl.1 count.pl.1 \
 	count2huge.pl.1 \
+	find-compounds.pl.1 \
 	huge-count.pl.1 \
 	huge-delete.pl.1 huge-split.pl.1 \
 	huge-merge.pl.1 huge-sort.pl.1 \
