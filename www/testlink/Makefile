@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	testlink
-PORTVERSION=	1.9.0
+PORTVERSION=	1.9.1
 CATEGORIES=	www devel
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	${PORTNAME}/TestLink%201.9/TestLink%20${PORTVERSION}
@@ -14,10 +14,8 @@ MASTER_SITE_SUBDIR=	${PORTNAME}/TestLink%201.9/TestLink%20${PORTVERSION}
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	A web based test management and test execution system
 
-USE_ZIP=	yes
 USE_PHP=	gd iconv mbstring
 WANT_PHP_WEB=	yes
-USE_DOS2UNIX=	yes
 NO_BUILD=	yes
 PLIST_SUB=	WWWOWN=${WWWOWN} WWWGRP=${WWWGRP}
 
