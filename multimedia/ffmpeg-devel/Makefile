@@ -8,7 +8,9 @@
 PORTNAME=	ffmpeg
 DISTVERSION=	2011-02-07
 CATEGORIES=	multimedia audio ipv6 net
-MASTER_SITES=	http://git.ffmpeg.org/?p=ffmpeg.git;sf=tgz;a=snapshot;h=${GIT_SNAPSHOT};
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	mm
+		
 DISTNAME=	ffmpeg-${GIT_SUFFIX}
 
 MAINTAINER=	mm@FreeBSD.org
@@ -21,10 +23,9 @@ CONFLICTS=	ffmpeg-0.*
 LATEST_LINK=	ffmpeg-devel
 
 GIT_SNAPSHOT=	5bea615dc383cf3617c5057db4fbc6832fc64137
-
 GIT_SUFFIX=	${GIT_SNAPSHOT:C/^(.......).*$/\1/g}
-FETCH_BEFORE_ARGS+=	-o ffmpeg-${GIT_SUFFIX}${EXTRACT_SUFX}
 
+USE_XZ=		yes
 HAS_CONFIGURE=	yes
 CONFIGURE_LOG=	config.err
 USE_GMAKE=	yes
