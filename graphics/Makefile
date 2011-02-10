@@ -692,6 +692,7 @@
     SUBDIR += pear-Image_Graph
     SUBDIR += pear-Image_GraphViz
     SUBDIR += pear-Image_Transform
+    SUBDIR += pecl-gmagick
     SUBDIR += pecl-imagick
     SUBDIR += pecl-imlib2
     SUBDIR += pecl-qrencode
