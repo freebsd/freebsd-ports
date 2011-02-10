@@ -25,13 +25,16 @@ if ( $tmp[0] eq ".if" && $tmp[1] eq "\${LOCALIZED_LANG}" ) { $LANG=$tmp2[1];
 	}
 }
 close FILE;
-print "md5 OOo* > MD5SUMS.log\n";
+$oootag= `cd ..; make -V OOOTAG2`;
+chomp($oootag);
+$md5sumname = "$oootag" . "_md5sums.txt";
+print "md5 OOo* > $md5sumname\n";
 
 $arc= `uname -m`;
 if ($arc == "amd64" ) {
-print "sudo -u `who am i | awk '{print \$1}'` ssh build.good-day.net mkdir -p /home/ftp/pub/OpenOffice.org/contrib/freebsdx86-64/`\n";
-print "sudo -u `who am i | awk '{print \$1}'` scp OOo* MD5SUMS.log build.good-day.net:/home/ftp/pub/OpenOffice.org/contrib/freebsdx86-64/`\n";
+print "sudo -u `who am i | awk '{print \$1}'` ssh build.good-day.net mkdir -p /home/ftp/pub/OpenOffice.org/contrib/freebsdx86-64/\n";
+print "sudo -u `who am i | awk '{print \$1}'` scp OOo* $md5sumname build.good-day.net:/home/ftp/pub/OpenOffice.org/contrib/freebsdx86-64/\n";
 } else { 
-print "sudo -u `who am i | awk '{print \$1}'` ssh build.good-day.net mkdir -p /home/ftp/pub/OpenOffice.org/contrib/freebsdx86/`\n";
-print "sudo -u `who am i | awk '{print \$1}'` scp OOo* MD5SUMS.log build.good-day.net:/home/ftp/pub/OpenOffice.org/contrib/freebsdx86/`\n";
+print "sudo -u `who am i | awk '{print \$1}'` ssh build.good-day.net mkdir -p /home/ftp/pub/OpenOffice.org/contrib/freebsdx86/\n";
+print "sudo -u `who am i | awk '{print \$1}'` scp OOo* $md5sumname build.good-day.net:/home/ftp/pub/OpenOffice.org/contrib/freebsdx86/\n";
 }
