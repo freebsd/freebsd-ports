@@ -252,6 +252,7 @@
     SUBDIR += gimp-data-extras
     SUBDIR += gimp-focusblur-plugin
     SUBDIR += gimp-gap
+    SUBDIR += gimp-gmic-plugin
     SUBDIR += gimp-greycstoration
     SUBDIR += gimp-help
     SUBDIR += gimp-lqr-plugin
