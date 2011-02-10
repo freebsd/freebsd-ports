@@ -17,6 +17,8 @@ COMMENT=	GNU All Mobile Management Utilities - Development version
 
 RUN_DEPENDS=	cdialog:${PORTSDIR}/devel/cdialog
 
+IGNORE=		the devel release are currently suspended, install comms/gammu, new release is 1.29.0
+
 CMAKE_ARGS+=	-DINSTALL_LIBDATA_DIR=${PREFIX}/libdata
 
 USE_CMAKE=	yes
