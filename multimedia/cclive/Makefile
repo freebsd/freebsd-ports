@@ -6,35 +6,31 @@
 #
 
 PORTNAME=	cclive
-PORTVERSION=	0.6.5
-PORTREVISION=	1
+PORTVERSION=	0.7.2
 CATEGORIES=	multimedia net
-MASTER_SITES=	GOOGLE_CODE
+MASTER_SITES=	SF/${PORTNAME}/${PORTVERSION:R} \
+		GOOGLE_CODE
 
 MAINTAINER=	kimelto@gmail.com
 COMMENT=	Lightweight command line video extraction tool
 
-LIB_DEPENDS=	curl.6:${PORTSDIR}/ftp/curl \
+LIB_DEPENDS=	boost_system.4:${PORTSDIR}/devel/boost-libs \
+		curl.6:${PORTSDIR}/ftp/curl \
 		pcre.0:${PORTSDIR}/devel/pcre \
 		quvi.3:${PORTSDIR}/multimedia/quvi
 
 MAN1=		cclive.1
-
 PLIST_FILES=	bin/cclive
 
-USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
-USE_GCC=	4.2+
 MAKE_JOBS_SAFE=	yes
-USE_GNOME=	pkgconfig
+MANCOMPRESSED=	yes
+USE_CMAKE=	yes
+USE_GCC=	4.2+
 
 LICENSE=	GPLv3
 
-.include <bsd.port.pre.mk>
+post-patch:
+	@${REINPLACE_CMD} -e '/install / s|share/||' ${WRKSRC}/man1/CMakeLists.txt
 
-.if ${OSVERSION} < 700000
-IGNORE=		does not compile
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
