@@ -21162,6 +21162,7 @@ py-bittorrent                   ports/net-p2p/py-bittorrent
 py-bittorrent-core              ports/net-p2p/py-bittorrent-core
 py-bitvector                    ports/math/py-bitvector
 py-boto                         ports/devel/py-boto
+py-boto-devel                   ports/devel/py-boto-devel
 py-bottle                       ports/www/py-bottle
 py-breve                        ports/devel/py-Breve
 py-bsdconv                      ports/converters/py-bsdconv
