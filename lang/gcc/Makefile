@@ -99,8 +99,10 @@ INFO=		gcc${SUFFIX}/cpp \
 		gcc${SUFFIX}/gccinstall \
 		gcc${SUFFIX}/gccint \
 		gcc${SUFFIX}/gfortran \
-		gcc${SUFFIX}/libgomp \
-		gcc${SUFFIX}/libquadmath
+		gcc${SUFFIX}/libgomp
+.if ${ARCH} != "ia64" && ${ARCH} != "sparc64"
+INFO+=		gcc${SUFFIX}/libquadmath
+.endif
 
 .if ! defined(WITHOUT_JAVA)
 DISTFILES+=	gcc-java-${VERSIONSTRING}${EXTRACT_SUFX}
