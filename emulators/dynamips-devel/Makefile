@@ -7,7 +7,7 @@
 
 PORTNAME=	dynamips
 DISTVERSION=	0.2.8-RC2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	emulators
 MASTER_SITES=	http://www.ipflow.utc.fr/dynamips/
 PKGNAMESUFFIX=	-devel
@@ -18,6 +18,7 @@ COMMENT=	Cisco 1700/2600/3600/3700/7200 Simulator
 LIB_DEPENDS=	elf.0:${PORTSDIR}/devel/libelf
 
 CONFLICTS=	dynamips-[0-9]*
+LICENSE=	GPLv2
 
 USE_GMAKE=	yes
 ALL_TARGET=	${PORTNAME} nvram_export
