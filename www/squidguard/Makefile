@@ -14,6 +14,9 @@ MASTER_SITES=	http://www.squidguard.org/Downloads/
 MAINTAINER=	mad@madpilot.net
 COMMENT=	A fast redirector for squid
 
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 RUN_DEPENDS=	${LOCALBASE}/sbin/squid:${PORTSDIR}/www/squid
 
 USE_BDB=	3+
@@ -44,9 +47,16 @@ SUB_LIST=	PORTNAME=${PORTNAME} \
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
 OPTIONS=	SAMPLE_BL	"Install sample blacklists" On \
-		LDAP		"Enable LDAP support" Off
+		LDAP		"Enable LDAP support" Off \
+		QUOTE_STRING	"Add quoted string patch" Off
 
 .include <bsd.port.pre.mk>
+
+.if defined(WITH_QUOTE_STRING)
+PATCH_SITES=	http://www.squidguard.org/Downloads/
+PATCHFILES=	Contrib/squidGuard-1.4-quoted_string_support.diff
+PATCH_DIST_STRIP=-p2
+.endif
 
 .if defined(WITH_LDAP)
 CONFIGURE_ARGS+=	--with-ldap
