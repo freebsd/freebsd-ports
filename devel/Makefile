@@ -3243,6 +3243,7 @@
     SUBDIR += rubygem-templater
     SUBDIR += rubygem-test-unit
     SUBDIR += rubygem-thor
+    SUBDIR += rubygem-tilt
     SUBDIR += rubygem-transactionsimple
     SUBDIR += rubygem-treetop
     SUBDIR += rubygem-trollop
