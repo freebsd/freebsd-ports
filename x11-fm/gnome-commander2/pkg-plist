@@ -7,11 +7,9 @@ lib/gnome-commander/libgcmd.so.0
 lib/gnome-commander/plugins/libcvs.a
 lib/gnome-commander/plugins/libcvs.la
 lib/gnome-commander/plugins/libcvs.so
-lib/gnome-commander/plugins/libcvs.so.0
 lib/gnome-commander/plugins/libfileroller.a
 lib/gnome-commander/plugins/libfileroller.la
 lib/gnome-commander/plugins/libfileroller.so
-lib/gnome-commander/plugins/libfileroller.so.0
 share/applications/gnome-commander.desktop
 share/gnome/help/gnome-commander/C/figures/create_archive.png
 share/gnome/help/gnome-commander/C/figures/dev_cd.png
