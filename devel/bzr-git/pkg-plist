@@ -27,6 +27,9 @@ bin/bzr-upload-pack
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/git/fetch.py
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/git/fetch.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/git/fetch.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/git/help.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/git/help.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/git/help.pyo
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/git/hg.py
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/git/hg.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/git/hg.pyo
