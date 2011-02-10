@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	bluefish
-PORTVERSION=	2.0.0
-PORTREVISION=	2
+PORTVERSION=	2.0.2
 CATEGORIES=	www editors
 MASTER_SITES=	SF
 
@@ -16,7 +15,8 @@ MAINTAINER=	sylvio@FreeBSD.org
 COMMENT=	HTML editor designed for the experienced web designer
 
 LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre \
-		aspell.16:${PORTSDIR}/textproc/aspell
+		aspell.16:${PORTSDIR}/textproc/aspell \
+		enchant.1:${PORTSDIR}/textproc/enchant
 
 INSTALLS_ICONS=	yes
 USE_LDCONFIG=	yes
