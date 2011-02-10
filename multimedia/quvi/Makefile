@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	quvi
-PORTVERSION=	0.2.12
+PORTVERSION=	0.2.13
 CATEGORIES=	multimedia devel
 MASTER_SITES=	GOOGLE_CODE \
 		SF/${PORTNAME}/${PORTVERSION:R}/
@@ -16,30 +16,27 @@ COMMENT=	Query video library for Youtube like websites
 
 LIB_DEPENDS=	curl.6:${PORTSDIR}/ftp/curl
 
+OPTIONS=	NSFW "Enable adult website support" off
+
 LICENSE=	GPLv3
 
 CONFIGURE_ARGS=	--enable-broken --enable-examples
-CONFIGURE_ENV=	CPPFLAGS='${CPPFLAGS} -I${WRKSRC}/include \
-		-I${LOCALBASE}/include'
+CONFIGURE_ENV=	CPPFLAGS='${CPPFLAGS}'
+CPPFLAGS+=	-I${WRKSRC}/include -I${LOCALBASE}/include
 GNU_CONFIGURE=	yes
-USE_BZIP2=	yes
 USE_GNOME=	gnomehack pkgconfig
 USE_ICONV=	yes
 USE_LDCONFIG=	yes
 USE_LUA=	yes
+USE_XZ=		yes
 
 MAN1=		quvi.1
-PLIST_SUB=	SHLIB_VER="${SHLIB_VER}"
-
-OPTIONS=	NSFW "Enable adult website support" off
-
-SHLIB_VER=	3
 
 .if defined(NOPORTDOCS)
 CONFIGURE_ARGS+=--without-doc
 .endif
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if defined(WITH_NSFW)
 CONFIGURE_ARGS+=--enable-nsfw
@@ -54,4 +51,4 @@ post-patch:
 		${WRKSRC}/doc/Makefile.in
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
