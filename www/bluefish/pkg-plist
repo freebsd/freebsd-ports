@@ -295,12 +295,12 @@ share/xml/bluefish/catalog.xml
 %%DATADIR%%/bflib/bflib_xhtml.xml.gz
 %%DATADIR%%/bluefish_splash.png
 %%DATADIR%%/encodings
+%%DATADIR%%/snippets
 %%DATADIR%%/templates/C_header
 %%DATADIR%%/templates/C_header_GPL
 %%DATADIR%%/templates/HTML_5
 %%DATADIR%%/templates/PHP
 %%DATADIR%%/templates/XHTML_1.0
-%%DATADIR%%/snippets
 %%PORTDOCS%%%%DOCSDIR%%/bflang/sample.bflang2
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/bflang
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
