@@ -1,6 +1,6 @@
---- data/bflang/Makefile.in.orig	2010-09-16 09:20:07.000000000 -0300
-+++ data/bflang/Makefile.in	2011-02-08 11:13:16.000000000 -0200
-@@ -374,26 +374,7 @@
+--- ./data/bflang/Makefile.in.orig	2010-09-16 08:20:07.000000000 -0400
++++ ./data/bflang/Makefile.in	2011-01-31 14:05:03.000000000 -0500
+@@ -374,26 +374,6 @@
  	test -n "$$files" || exit 0; \
  	echo " ( cd '$(DESTDIR)$(bflangrngdir)' && rm -f" $$files ")"; \
  	cd "$(DESTDIR)$(bflangrngdir)" && rm -f $$files
@@ -16,7 +16,7 @@
 -	  echo " $(INSTALL_DATA) $$files '$(DESTDIR)$(bflangsampledir)'"; \
 -	  $(INSTALL_DATA) $$files "$(DESTDIR)$(bflangsampledir)" || exit $$?; \
 -	done
- 
+-
 -uninstall-bflangsampleDATA:
 -	@$(NORMAL_UNINSTALL)
 -	@list='$(bflangsample_DATA)'; test -n "$(bflangsampledir)" || list=; \
