@@ -4,12 +4,12 @@
 #
 # $FreeBSD$
 
-PORTNAME=	latex-pgf
-PORTVERSION=	2.00
-PORTREVISION=	3
+PORTNAME=	pgf
+PORTVERSION=	2.10
 CATEGORIES=	print
 MASTER_SITES=	SF/pgf/pgf/version%20${PORTVERSION}
-DISTNAME=	${PORTNAME:S/^latex-//}-${PORTVERSION}
+PKGNAMEPREFIX=	latex-
+DISTNAME=	${PORTNAME}_${PORTVERSION}.tds
 
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	A LaTeX package for TeX Portable Graphic Format
@@ -18,31 +18,35 @@ BUILD_DEPENDS=	mktexlsr:${PORTSDIR}/print/teTeX-base
 RUN_DEPENDS=	latex:${PORTSDIR}/print/teTeX-base
 
 NO_BUILD=	YES
+USE_ZIP=	YES
 PLIST_SUB=	MKTEXLSR=${MKTEXLSR} \
 		CLASSDIR=${CLASSDIR} \
 		TEXMFDIR=${TEXMFDIR}
-PORTDOCS=	AUTHORS ChangeLog FILES INSTALL README TODO \
-		pgfmanual.pdf \
-		version-for-vtex version-for-tex4ht version-for-pdftex	\
-		version-for-dvips version-for-dvipdfm text-en macros	\
-		licenses images
+PORTDOCS= AUTHORS ChangeLog FILES INSTALL README TODO images licenses	\
+		macros pgfmanual.pdf text-en version-for-dvipdfm	\
+		version-for-dvipdfmx version-for-dvips			\
+		version-for-pdftex version-for-tex4ht version-for-vtex	\
+		version-for-xetex
 
 TEXMFDIR=	share/texmf
 TEXMFDIR_LSR=	${LOCALBASE}/${TEXMFDIR}/ls-R
 MKTEXLSR=	${LOCALBASE}/bin/mktexlsr
-WRKSRC=		${WRKDIR}/${PORTNAME:S/^latex-//}-${PORTVERSION}
 CLASSDIR=	${TEXMFDIR}/tex
 
 do-install:
-.for C in context generic latex plain
-	${MKDIR} ${PREFIX}/${CLASSDIR}/${C}/${PORTNAME:S/^latex-//}
-	${CP} -R ${WRKSRC}/${C}/pgf/* \
-		${PREFIX}/${CLASSDIR}/${C}/${PORTNAME:S/^latex-//}
-	${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/${CLASSDIR}/${C}/${PORTNAME:S/^latex-//}
+.for C in generic latex plain
+	${MKDIR} ${PREFIX}/${CLASSDIR}/${C}
+	${CP} -R ${WRKDIR}/tex/${C}/${PORTNAME} \
+		${PREFIX}/${CLASSDIR}/${C}/
+	${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/${CLASSDIR}/${C}/${PORTNAME}
 .endfor
+	${MKDIR} ${PREFIX}/${CLASSDIR}/context/third
+	${CP} -R ${WRKDIR}/tex/context/third/${PORTNAME} \
+		${PREFIX}/${CLASSDIR}/context/third/
+	${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/${CLASSDIR}/context/third/${PORTNAME}
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
-	${CP} -R ${WRKSRC}/doc/generic/pgf/* ${DOCSDIR}
+	${CP} -R ${WRKDIR}/doc/generic/pgf/* ${DOCSDIR}
 	${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${DOCSDIR}
 .endif
 

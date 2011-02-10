@@ -1,38 +1,59 @@
 @comment $FreeBSD$
-%%CLASSDIR%%/context/pgf/basiclayer/t-pgf.tex
-%%CLASSDIR%%/context/pgf/basiclayer/t-pgfbma.tex
-%%CLASSDIR%%/context/pgf/basiclayer/t-pgfbim.tex
-%%CLASSDIR%%/context/pgf/basiclayer/t-pgfbla.tex
-%%CLASSDIR%%/context/pgf/basiclayer/t-pgfbpl.tex
-%%CLASSDIR%%/context/pgf/basiclayer/t-pgfbpt.tex
-%%CLASSDIR%%/context/pgf/basiclayer/t-pgfbsh.tex
-%%CLASSDIR%%/context/pgf/basiclayer/t-pgfbsn.tex
-%%CLASSDIR%%/context/pgf/basiclayer/t-pgfcor.tex
-%%CLASSDIR%%/context/pgf/frontendlayer/t-tikz.tex
-%%CLASSDIR%%/context/pgf/math/t-pgfmat.tex
-%%CLASSDIR%%/context/pgf/systemlayer/t-pgfsys.tex
-%%CLASSDIR%%/context/pgf/utilities/t-pgfcal.tex
-%%CLASSDIR%%/context/pgf/utilities/t-pgffor.tex
-%%CLASSDIR%%/context/pgf/utilities/t-pgfkey.tex
-%%CLASSDIR%%/context/pgf/utilities/t-pgfmod.tex
-%%CLASSDIR%%/context/pgf/utilities/t-pgfrcs.tex
+%%CLASSDIR%%/context/third/pgf/basiclayer/t-pgf.tex
+%%CLASSDIR%%/context/third/pgf/basiclayer/t-pgfbim.tex
+%%CLASSDIR%%/context/third/pgf/basiclayer/t-pgfbla.tex
+%%CLASSDIR%%/context/third/pgf/basiclayer/t-pgfbma.tex
+%%CLASSDIR%%/context/third/pgf/basiclayer/t-pgfbpl.tex
+%%CLASSDIR%%/context/third/pgf/basiclayer/t-pgfbpt.tex
+%%CLASSDIR%%/context/third/pgf/basiclayer/t-pgfbsh.tex
+%%CLASSDIR%%/context/third/pgf/basiclayer/t-pgfbsn.tex
+%%CLASSDIR%%/context/third/pgf/basiclayer/t-pgfcor.tex
+%%CLASSDIR%%/context/third/pgf/frontendlayer/t-tikz.tex
+%%CLASSDIR%%/context/third/pgf/math/t-pgfmat.tex
+%%CLASSDIR%%/context/third/pgf/systemlayer/t-pgfsys.tex
+%%CLASSDIR%%/context/third/pgf/utilities/t-pgfcal.tex
+%%CLASSDIR%%/context/third/pgf/utilities/t-pgffor.tex
+%%CLASSDIR%%/context/third/pgf/utilities/t-pgfkey.tex
+%%CLASSDIR%%/context/third/pgf/utilities/t-pgfmod.tex
+%%CLASSDIR%%/context/third/pgf/utilities/t-pgfrcs.tex
 %%CLASSDIR%%/generic/pgf/basiclayer/pgfcore.code.tex
+%%CLASSDIR%%/generic/pgf/basiclayer/pgfcorearrows.code.tex
+%%CLASSDIR%%/generic/pgf/basiclayer/pgfcoreexternal.code.tex
+%%CLASSDIR%%/generic/pgf/basiclayer/pgfcoregraphicstate.code.tex
 %%CLASSDIR%%/generic/pgf/basiclayer/pgfcoreimage.code.tex
 %%CLASSDIR%%/generic/pgf/basiclayer/pgfcorelayers.code.tex
-%%CLASSDIR%%/generic/pgf/basiclayer/pgfcorepatterns.code.tex
-%%CLASSDIR%%/generic/pgf/basiclayer/pgfcoretransparency.code.tex
-%%CLASSDIR%%/generic/pgf/basiclayer/pgfcorearrows.code.tex
-%%CLASSDIR%%/generic/pgf/basiclayer/pgfcoregraphicstate.code.tex
 %%CLASSDIR%%/generic/pgf/basiclayer/pgfcoreobjects.code.tex
 %%CLASSDIR%%/generic/pgf/basiclayer/pgfcorepathconstruct.code.tex
 %%CLASSDIR%%/generic/pgf/basiclayer/pgfcorepathprocessing.code.tex
 %%CLASSDIR%%/generic/pgf/basiclayer/pgfcorepathusage.code.tex
+%%CLASSDIR%%/generic/pgf/basiclayer/pgfcorepatterns.code.tex
 %%CLASSDIR%%/generic/pgf/basiclayer/pgfcorepoints.code.tex
 %%CLASSDIR%%/generic/pgf/basiclayer/pgfcorequick.code.tex
 %%CLASSDIR%%/generic/pgf/basiclayer/pgfcorescopes.code.tex
 %%CLASSDIR%%/generic/pgf/basiclayer/pgfcoreshade.code.tex
 %%CLASSDIR%%/generic/pgf/basiclayer/pgfcoretransformations.code.tex
-%%CLASSDIR%%/generic/pgf/frontendlayer/tikz/tikz.code.tex
+%%CLASSDIR%%/generic/pgf/basiclayer/pgfcoretransparency.code.tex
+%%CLASSDIR%%/generic/pgf/frontendlayer/svg/svgpgf.cfg
+%%CLASSDIR%%/generic/pgf/frontendlayer/svg/svgpgf.xmt
+%%CLASSDIR%%/generic/pgf/frontendlayer/svg/svgtest.cfg
+%%CLASSDIR%%/generic/pgf/frontendlayer/svg/svgtest.tex
+%%CLASSDIR%%/generic/pgf/frontendlayer/svg/svgtest.xml
+%%CLASSDIR%%/generic/pgf/frontendlayer/tikz/libraries/circuits/tikzlibrarycircuits.code.tex
+%%CLASSDIR%%/generic/pgf/frontendlayer/tikz/libraries/circuits/tikzlibrarycircuits.ee.IEC.code.tex
+%%CLASSDIR%%/generic/pgf/frontendlayer/tikz/libraries/circuits/tikzlibrarycircuits.ee.code.tex
+%%CLASSDIR%%/generic/pgf/frontendlayer/tikz/libraries/circuits/tikzlibrarycircuits.logic.CDH.code.tex
+%%CLASSDIR%%/generic/pgf/frontendlayer/tikz/libraries/circuits/tikzlibrarycircuits.logic.IEC.code.tex
+%%CLASSDIR%%/generic/pgf/frontendlayer/tikz/libraries/circuits/tikzlibrarycircuits.logic.US.code.tex
+%%CLASSDIR%%/generic/pgf/frontendlayer/tikz/libraries/circuits/tikzlibrarycircuits.logic.code.tex
+%%CLASSDIR%%/generic/pgf/frontendlayer/tikz/libraries/datavisualization/tikzlibrarydatavisualization.3d.code.tex
+%%CLASSDIR%%/generic/pgf/frontendlayer/tikz/libraries/datavisualization/tikzlibrarydatavisualization.barcharts.code.tex
+%%CLASSDIR%%/generic/pgf/frontendlayer/tikz/libraries/datavisualization/tikzlibrarydatavisualization.code.tex
+%%CLASSDIR%%/generic/pgf/frontendlayer/tikz/libraries/datavisualization/tikzlibrarydatavisualization.formats.functions.code.tex
+%%CLASSDIR%%/generic/pgf/frontendlayer/tikz/libraries/datavisualization/tikzlibrarydatavisualization.polar.code.tex
+%%CLASSDIR%%/generic/pgf/frontendlayer/tikz/libraries/datavisualization/tikzlibrarydatavisualization.sparklines.code.tex
+%%CLASSDIR%%/generic/pgf/frontendlayer/tikz/libraries/graphs/tikzlibrarygraphs.basic.code.tex
+%%CLASSDIR%%/generic/pgf/frontendlayer/tikz/libraries/graphs/tikzlibrarygraphs.code.tex
+%%CLASSDIR%%/generic/pgf/frontendlayer/tikz/libraries/tikzexternalshared.code.tex
 %%CLASSDIR%%/generic/pgf/frontendlayer/tikz/libraries/tikzlibrary3d.code.tex
 %%CLASSDIR%%/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryarrows.code.tex
 %%CLASSDIR%%/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryautomata.code.tex
@@ -51,7 +72,11 @@
 %%CLASSDIR%%/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryer.code.tex
 %%CLASSDIR%%/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryfadings.code.tex
 %%CLASSDIR%%/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryfit.code.tex
+%%CLASSDIR%%/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryfixedpointarithmetic.code.tex
 %%CLASSDIR%%/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryfolding.code.tex
+%%CLASSDIR%%/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryfpu.code.tex
+%%CLASSDIR%%/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryintersections.code.tex
+%%CLASSDIR%%/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarylindenmayersystems.code.tex
 %%CLASSDIR%%/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarymatrix.code.tex
 %%CLASSDIR%%/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarymindmap.code.tex
 %%CLASSDIR%%/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarypatterns.code.tex
@@ -60,6 +85,7 @@
 %%CLASSDIR%%/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryplotmarks.code.tex
 %%CLASSDIR%%/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarypositioning.code.tex
 %%CLASSDIR%%/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryscopes.code.tex
+%%CLASSDIR%%/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryshadings.code.tex
 %%CLASSDIR%%/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryshadows.code.tex
 %%CLASSDIR%%/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryshapes.arrows.code.tex
 %%CLASSDIR%%/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryshapes.callouts.code.tex
@@ -71,65 +97,95 @@
 %%CLASSDIR%%/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryshapes.multipart.code.tex
 %%CLASSDIR%%/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryshapes.symbols.code.tex
 %%CLASSDIR%%/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarysnakes.code.tex
+%%CLASSDIR%%/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryspy.code.tex
+%%CLASSDIR%%/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarysvg.path.code.tex
 %%CLASSDIR%%/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarythrough.code.tex
 %%CLASSDIR%%/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarytopaths.code.tex
 %%CLASSDIR%%/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarytrees.code.tex
+%%CLASSDIR%%/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryturtle.code.tex
+%%CLASSDIR%%/generic/pgf/frontendlayer/tikz/tikz.code.tex
+%%CLASSDIR%%/generic/pgf/libraries/datavisualization/pgflibrarydatavisualization.barcharts.code.tex
+%%CLASSDIR%%/generic/pgf/libraries/datavisualization/pgflibrarydatavisualization.formats.functions.code.tex
+%%CLASSDIR%%/generic/pgf/libraries/datavisualization/pgflibrarydatavisualization.polar.code.tex
+%%CLASSDIR%%/generic/pgf/libraries/decorations/pgflibrarydecorations.footprints.code.tex
+%%CLASSDIR%%/generic/pgf/libraries/decorations/pgflibrarydecorations.fractals.code.tex
+%%CLASSDIR%%/generic/pgf/libraries/decorations/pgflibrarydecorations.markings.code.tex
+%%CLASSDIR%%/generic/pgf/libraries/decorations/pgflibrarydecorations.pathmorphing.code.tex
+%%CLASSDIR%%/generic/pgf/libraries/decorations/pgflibrarydecorations.pathreplacing.code.tex
+%%CLASSDIR%%/generic/pgf/libraries/decorations/pgflibrarydecorations.shapes.code.tex
+%%CLASSDIR%%/generic/pgf/libraries/decorations/pgflibrarydecorations.text.code.tex
 %%CLASSDIR%%/generic/pgf/libraries/pgflibraryarrows.code.tex
+%%CLASSDIR%%/generic/pgf/libraries/pgflibraryfadings.code.tex
+%%CLASSDIR%%/generic/pgf/libraries/pgflibraryfixedpointarithmetic.code.tex
+%%CLASSDIR%%/generic/pgf/libraries/pgflibraryfpu.code.tex
+%%CLASSDIR%%/generic/pgf/libraries/pgflibraryintersections.code.tex
+%%CLASSDIR%%/generic/pgf/libraries/pgflibrarylindenmayersystems.code.tex
 %%CLASSDIR%%/generic/pgf/libraries/pgflibrarypatterns.code.tex
 %%CLASSDIR%%/generic/pgf/libraries/pgflibraryplothandlers.code.tex
 %%CLASSDIR%%/generic/pgf/libraries/pgflibraryplotmarks.code.tex
-%%CLASSDIR%%/generic/pgf/libraries/pgflibraryshapes.arrows.code.tex
-%%CLASSDIR%%/generic/pgf/libraries/pgflibraryshapes.code.tex
-%%CLASSDIR%%/generic/pgf/libraries/pgflibraryshapes.geometric.code.tex
-%%CLASSDIR%%/generic/pgf/libraries/pgflibraryshapes.misc.code.tex
-%%CLASSDIR%%/generic/pgf/libraries/pgflibraryshapes.multipart.code.tex
-%%CLASSDIR%%/generic/pgf/libraries/pgflibraryshapes.symbols.code.tex
+%%CLASSDIR%%/generic/pgf/libraries/pgflibraryprofiler.code.tex
+%%CLASSDIR%%/generic/pgf/libraries/pgflibraryshadings.code.tex
 %%CLASSDIR%%/generic/pgf/libraries/pgflibrarysnakes.code.tex
-%%CLASSDIR%%/generic/pgf/libraries/pgflibrarydecorations.footprints.code.tex
-%%CLASSDIR%%/generic/pgf/libraries/pgflibrarydecorations.fractals.code.tex
-%%CLASSDIR%%/generic/pgf/libraries/pgflibrarydecorations.markings.code.tex
-%%CLASSDIR%%/generic/pgf/libraries/pgflibrarydecorations.pathmorphing.code.tex
-%%CLASSDIR%%/generic/pgf/libraries/pgflibrarydecorations.pathreplacing.code.tex
-%%CLASSDIR%%/generic/pgf/libraries/pgflibrarydecorations.shapes.code.tex
-%%CLASSDIR%%/generic/pgf/libraries/pgflibrarydecorations.text.code.tex
-%%CLASSDIR%%/generic/pgf/libraries/pgflibraryfadings.code.tex
-%%CLASSDIR%%/generic/pgf/libraries/pgflibraryshapes.callouts.code.tex
-%%CLASSDIR%%/generic/pgf/libraries/pgflibraryshapes.gates.logic.IEC.code.tex
-%%CLASSDIR%%/generic/pgf/libraries/pgflibraryshapes.gates.logic.US.code.tex
+%%CLASSDIR%%/generic/pgf/libraries/pgflibrarysvg.path.code.tex
+%%CLASSDIR%%/generic/pgf/libraries/shapes/circuits/pgflibraryshapes.gates.ee.IEC.code.tex
+%%CLASSDIR%%/generic/pgf/libraries/shapes/circuits/pgflibraryshapes.gates.ee.code.tex
+%%CLASSDIR%%/generic/pgf/libraries/shapes/circuits/pgflibraryshapes.gates.logic.IEC.code.tex
+%%CLASSDIR%%/generic/pgf/libraries/shapes/circuits/pgflibraryshapes.gates.logic.US.code.tex
+%%CLASSDIR%%/generic/pgf/libraries/shapes/circuits/pgflibraryshapes.gates.logic.code.tex
+%%CLASSDIR%%/generic/pgf/libraries/shapes/pgflibraryshapes.arrows.code.tex
+%%CLASSDIR%%/generic/pgf/libraries/shapes/pgflibraryshapes.callouts.code.tex
+%%CLASSDIR%%/generic/pgf/libraries/shapes/pgflibraryshapes.code.tex
+%%CLASSDIR%%/generic/pgf/libraries/shapes/pgflibraryshapes.geometric.code.tex
+%%CLASSDIR%%/generic/pgf/libraries/shapes/pgflibraryshapes.misc.code.tex
+%%CLASSDIR%%/generic/pgf/libraries/shapes/pgflibraryshapes.multipart.code.tex
+%%CLASSDIR%%/generic/pgf/libraries/shapes/pgflibraryshapes.symbols.code.tex
 %%CLASSDIR%%/generic/pgf/math/pgfmath.code.tex
-%%CLASSDIR%%/generic/pgf/math/pgfmathbase.code.tex
 %%CLASSDIR%%/generic/pgf/math/pgfmathcalc.code.tex
-%%CLASSDIR%%/generic/pgf/math/pgfmathoperations.code.tex
+%%CLASSDIR%%/generic/pgf/math/pgfmathfloat.code.tex
+%%CLASSDIR%%/generic/pgf/math/pgfmathfunctions.base.code.tex
+%%CLASSDIR%%/generic/pgf/math/pgfmathfunctions.basic.code.tex
+%%CLASSDIR%%/generic/pgf/math/pgfmathfunctions.code.tex
+%%CLASSDIR%%/generic/pgf/math/pgfmathfunctions.comparison.code.tex
+%%CLASSDIR%%/generic/pgf/math/pgfmathfunctions.misc.code.tex
+%%CLASSDIR%%/generic/pgf/math/pgfmathfunctions.random.code.tex
+%%CLASSDIR%%/generic/pgf/math/pgfmathfunctions.round.code.tex
+%%CLASSDIR%%/generic/pgf/math/pgfmathfunctions.trigonometric.code.tex
 %%CLASSDIR%%/generic/pgf/math/pgfmathparser.code.tex
-%%CLASSDIR%%/generic/pgf/math/pgfmathrnd.code.tex
-%%CLASSDIR%%/generic/pgf/math/pgfmathtrig.code.tex
 %%CLASSDIR%%/generic/pgf/math/pgfmathutil.code.tex
+%%CLASSDIR%%/generic/pgf/modules/pgfmoduledatavisualization.code.tex
 %%CLASSDIR%%/generic/pgf/modules/pgfmoduledecorations.code.tex
 %%CLASSDIR%%/generic/pgf/modules/pgfmodulematrix.code.tex
+%%CLASSDIR%%/generic/pgf/modules/pgfmoduleoo.code.tex
+%%CLASSDIR%%/generic/pgf/modules/pgfmoduleparser.code.tex
 %%CLASSDIR%%/generic/pgf/modules/pgfmoduleplot.code.tex
 %%CLASSDIR%%/generic/pgf/modules/pgfmoduleshapes.code.tex
 %%CLASSDIR%%/generic/pgf/modules/pgfmodulesnakes.code.tex
+%%CLASSDIR%%/generic/pgf/modules/pgfmodulesorting.code.tex
+%%CLASSDIR%%/generic/pgf/rendering/pgfrenderpoints.code.tex
+%%CLASSDIR%%/generic/pgf/rendering/pgfrendertransform.code.tex
 %%CLASSDIR%%/generic/pgf/systemlayer/pgf.cfg
+%%CLASSDIR%%/generic/pgf/systemlayer/pgfsys-common-pdf-via-dvi.def
 %%CLASSDIR%%/generic/pgf/systemlayer/pgfsys-common-pdf.def
 %%CLASSDIR%%/generic/pgf/systemlayer/pgfsys-common-postscript.def
 %%CLASSDIR%%/generic/pgf/systemlayer/pgfsys-common-svg.def
 %%CLASSDIR%%/generic/pgf/systemlayer/pgfsys-dvi.def
 %%CLASSDIR%%/generic/pgf/systemlayer/pgfsys-dvipdfm.def
+%%CLASSDIR%%/generic/pgf/systemlayer/pgfsys-dvipdfmx.def
 %%CLASSDIR%%/generic/pgf/systemlayer/pgfsys-dvips.def
 %%CLASSDIR%%/generic/pgf/systemlayer/pgfsys-pdftex.def
 %%CLASSDIR%%/generic/pgf/systemlayer/pgfsys-tex4ht.def
 %%CLASSDIR%%/generic/pgf/systemlayer/pgfsys-textures.def
 %%CLASSDIR%%/generic/pgf/systemlayer/pgfsys-vtex.def
+%%CLASSDIR%%/generic/pgf/systemlayer/pgfsys-xetex.def
 %%CLASSDIR%%/generic/pgf/systemlayer/pgfsys.code.tex
 %%CLASSDIR%%/generic/pgf/systemlayer/pgfsysprotocol.code.tex
 %%CLASSDIR%%/generic/pgf/systemlayer/pgfsyssoftpath.code.tex
-%%CLASSDIR%%/generic/pgf/systemlayer/pgfsys-common-pdf-via-dvi.def
-%%CLASSDIR%%/generic/pgf/systemlayer/pgfsys-dvipdfmx.def
-%%CLASSDIR%%/generic/pgf/systemlayer/pgfsys-xetex.def
 %%CLASSDIR%%/generic/pgf/utilities/pgfcalendar.code.tex
 %%CLASSDIR%%/generic/pgf/utilities/pgfexternal.tex
+%%CLASSDIR%%/generic/pgf/utilities/pgfexternalwithdepth.tex
 %%CLASSDIR%%/generic/pgf/utilities/pgffor.code.tex
 %%CLASSDIR%%/generic/pgf/utilities/pgfkeys.code.tex
+%%CLASSDIR%%/generic/pgf/utilities/pgfkeysfiltered.code.tex
 %%CLASSDIR%%/generic/pgf/utilities/pgfrcs.code.tex
 %%CLASSDIR%%/generic/pgf/utilities/pgfutil-common.tex
 %%CLASSDIR%%/generic/pgf/utilities/pgfutil-context.def
@@ -159,15 +215,21 @@
 %%CLASSDIR%%/latex/pgf/compatibility/pgflibrarytikztrees.sty
 %%CLASSDIR%%/latex/pgf/compatibility/pgfnodes.sty
 %%CLASSDIR%%/latex/pgf/compatibility/pgfshade.sty
+%%CLASSDIR%%/latex/pgf/doc/pgfmanual.code.tex
+%%CLASSDIR%%/latex/pgf/doc/pgfmanual.pdflinks.code.tex
+%%CLASSDIR%%/latex/pgf/doc/pgfmanual.prettyprinter.code.tex
+%%CLASSDIR%%/latex/pgf/doc/pgfmanual.sty
+%%CLASSDIR%%/latex/pgf/frontendlayer/libraries/tikzlibraryexternal.code.tex
 %%CLASSDIR%%/latex/pgf/frontendlayer/pgfpict2e.sty
 %%CLASSDIR%%/latex/pgf/frontendlayer/tikz.sty
 %%CLASSDIR%%/latex/pgf/math/pgfmath.sty
 %%CLASSDIR%%/latex/pgf/systemlayer/pgfsys.sty
 %%CLASSDIR%%/latex/pgf/utilities/pgfcalendar.sty
 %%CLASSDIR%%/latex/pgf/utilities/pgffor.sty
-%%CLASSDIR%%/latex/pgf/utilities/pgfpages.sty
 %%CLASSDIR%%/latex/pgf/utilities/pgfkeys.sty
+%%CLASSDIR%%/latex/pgf/utilities/pgfpages.sty
 %%CLASSDIR%%/latex/pgf/utilities/pgfrcs.sty
+%%CLASSDIR%%/latex/pgf/utilities/tikzexternal.sty
 %%CLASSDIR%%/latex/pgf/utilities/xxcolor.sty
 %%CLASSDIR%%/plain/pgf/basiclayer/pgf.tex
 %%CLASSDIR%%/plain/pgf/basiclayer/pgfbaseimage.tex
@@ -194,24 +256,37 @@
 @dirrm %%CLASSDIR%%/latex/pgf/utilities
 @dirrm %%CLASSDIR%%/latex/pgf/systemlayer
 @dirrm %%CLASSDIR%%/latex/pgf/math
+@dirrm %%CLASSDIR%%/latex/pgf/frontendlayer/libraries
 @dirrm %%CLASSDIR%%/latex/pgf/frontendlayer
+@dirrm %%CLASSDIR%%/latex/pgf/doc
 @dirrm %%CLASSDIR%%/latex/pgf/compatibility
 @dirrm %%CLASSDIR%%/latex/pgf/basiclayer
+@dirrm %%CLASSDIR%%/latex/pgf
 @dirrm %%CLASSDIR%%/generic/pgf/utilities
 @dirrm %%CLASSDIR%%/generic/pgf/systemlayer
-@dirrm %%CLASSDIR%%/generic/pgf/math
+@dirrm %%CLASSDIR%%/generic/pgf/rendering
 @dirrm %%CLASSDIR%%/generic/pgf/modules
+@dirrm %%CLASSDIR%%/generic/pgf/math
+@dirrm %%CLASSDIR%%/generic/pgf/libraries/shapes/circuits
+@dirrm %%CLASSDIR%%/generic/pgf/libraries/shapes
+@dirrm %%CLASSDIR%%/generic/pgf/libraries/decorations
+@dirrm %%CLASSDIR%%/generic/pgf/libraries/datavisualization
 @dirrm %%CLASSDIR%%/generic/pgf/libraries
+@dirrm %%CLASSDIR%%/generic/pgf/frontendlayer/tikz/libraries/graphs
+@dirrm %%CLASSDIR%%/generic/pgf/frontendlayer/tikz/libraries/datavisualization
+@dirrm %%CLASSDIR%%/generic/pgf/frontendlayer/tikz/libraries/circuits
 @dirrm %%CLASSDIR%%/generic/pgf/frontendlayer/tikz/libraries
 @dirrm %%CLASSDIR%%/generic/pgf/frontendlayer/tikz
+@dirrm %%CLASSDIR%%/generic/pgf/frontendlayer/svg
 @dirrm %%CLASSDIR%%/generic/pgf/frontendlayer
 @dirrm %%CLASSDIR%%/generic/pgf/basiclayer
 @dirrm %%CLASSDIR%%/generic/pgf
-@dirrm %%CLASSDIR%%/context/pgf/utilities
-@dirrm %%CLASSDIR%%/context/pgf/systemlayer
-@dirrm %%CLASSDIR%%/context/pgf/math
-@dirrm %%CLASSDIR%%/context/pgf/frontendlayer
-@dirrm %%CLASSDIR%%/context/pgf/basiclayer
-@dirrm %%CLASSDIR%%/context/pgf
+@dirrm %%CLASSDIR%%/context/third/pgf/utilities
+@dirrm %%CLASSDIR%%/context/third/pgf/systemlayer
+@dirrm %%CLASSDIR%%/context/third/pgf/math
+@dirrm %%CLASSDIR%%/context/third/pgf/frontendlayer
+@dirrm %%CLASSDIR%%/context/third/pgf/basiclayer
+@dirrm %%CLASSDIR%%/context/third/pgf/
+@dirrmtry %%CLASSDIR%%/context/third
 @exec %%MKTEXLSR%% %D/%%TEXMFDIR%%
 @unexec %%MKTEXLSR%% %D/%%TEXMFDIR%%
