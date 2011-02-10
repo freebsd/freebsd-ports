@@ -1,0 +1,6 @@
+%%SITE_PERL%%/Dist/CheckConflicts.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Dist/CheckConflicts/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Dist/CheckConflicts
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Dist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto
+@dirrmtry %%SITE_PERL%%/Dist
