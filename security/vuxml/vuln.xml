@@ -34,6 +34,52 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="35ecdcbe-3501-11e0-afcd-0015f2db7bde">
+    <topic>webkit-gtk2 -- Multiple vurnabilities.</topic>
+    <affects>
+      <package>
+	<name>webkit-gtk2</name>
+	<range><lt>1.2.7</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Gustavo Noronha Silva reports:</p>
+	<blockquote cite="http://permalink.gmane.org/gmane.os.opendarwin.webkit.gtk/405">
+	  <p>This release has essentially security fixes. Refer to the 
+	     WebKit/gtk/NEWS file inside the tarball for details. We would like
+	     to thank the Red Hat security team (Huzaifa Sidhpurwala in
+	     particular) and Michael Gilbert from Debian for their help in
+	     checking (and pushing!) security issues affecting the WebKitGTK+
+	     stable branch for this release.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2010-2901</cvename>
+      <cvename>CVE-2010-4040</cvename>
+      <cvename>CVE-2010-4042</cvename>
+      <cvename>CVE-2010-4199</cvename>
+      <cvename>CVE-2010-4492</cvename>
+      <cvename>CVE-2010-4493</cvename>
+      <cvename>CVE-2010-4578</cvename>
+      <cvename>CVE-2011-0482</cvename>
+      <cvename>CVE-2011-0778</cvename>
+      <url>https://bugs.webkit.org/show_bug.cgi?id=48328</url>
+      <url>https://bugs.webkit.org/show_bug.cgi?id=50710</url>
+      <url>https://bugs.webkit.org/show_bug.cgi?id=50840</url>
+      <url>https://bugs.webkit.org/show_bug.cgi?id=50932</url>
+      <url>https://bugs.webkit.org/show_bug.cgi?id=51993</url>
+      <url>https://bugs.webkit.org/show_bug.cgi?id=53265</url>
+      <url>https://bugs.webkit.org/show_bug.cgi?id=53276</url>
+      <url>http://permalink.gmane.org/gmane.os.opendarwin.webkit.gtk/405</url>
+    </references>
+    <dates>
+      <discovery>2011-02-08</discovery>
+      <entry>2011-02-10</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="ce6ce2f8-34ac-11e0-8103-00215c6a37bb">
     <topic>awstats -- arbitrary commands execution vulnerability</topic>
     <affects>
