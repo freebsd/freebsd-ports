@@ -34,6 +34,63 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="2eda0c54-34ab-11e0-8103-00215c6a37bb">
+    <topic>opera -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+        <name>opera</name>
+        <name>opera-devel</name>
+        <name>linux-opera</name>
+        <range><lt>11.01</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Opera reports:</p>
+	<blockquote cite="http://www.opera.com/docs/changelogs/unix/1101/">
+	  <p>Opera 11.01 is a recommended upgrade offering security and
+	    stability enhancements.</p>
+	  <p>The following security vulnerabilities have been fixed:</p>
+	  <ul> 
+	    <li>Removed support for "<code>javascript:</code>" URLs in
+	      CSS -o-link values, to make it easier for sites to filter
+	      untrusted CSS.</li>
+	    <li>Fixed an issue where large form inputs could allow
+	      execution of arbitrary code, as reported by Jordi Chancel;
+	      see our <a href="http://www.opera.com/support/kb/view/982/">advisory</a>.</li> 
+	    <li>Fixed an issue which made it possible to carry out
+	      clickjacking attacks against internal opera: URLs;
+	      see our <a href="http://www.opera.com/support/kb/view/983/">advisory</a>.</li> 
+	    <li>Fixed issues which allowed web pages to gain limited
+	      access to files on the user's computer; see our
+	      <a href="http://www.opera.com/support/kb/view/984/">advisory</a>.</li> 
+	    <li>Fixed an issue where email passwords were not immediately
+	      deleted when deleting private data; see our
+	      <a href="http://www.opera.com/support/kb/view/986/">advisory</a>.</li> 
+	  </ul> 
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2011-0450</cvename>
+      <cvename>CVE-2011-0681</cvename>
+      <cvename>CVE-2011-0682</cvename>
+      <cvename>CVE-2011-0683</cvename>
+      <cvename>CVE-2011-0684</cvename>
+      <cvename>CVE-2011-0685</cvename>
+      <cvename>CVE-2011-0686</cvename>
+      <cvename>CVE-2011-0687</cvename>
+      <url>http://www.opera.com/support/kb/view/982/</url>
+      <url>http://www.opera.com/support/kb/view/983/</url>
+      <url>http://www.opera.com/support/kb/view/984/</url>
+      <url>http://secunia.com/advisories/43023</url>
+    </references>
+    <dates>
+      <discovery>2011-01-26</discovery>
+      <entry>2011-02-10</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="bd760627-3493-11e0-8103-00215c6a37bb">
     <topic>django -- multiple vulnerabilities</topic>
     <affects>
