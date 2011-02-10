@@ -2049,6 +2049,7 @@
     SUBDIR += p5-Package-DeprecationManager
     SUBDIR += p5-Package-Generator
     SUBDIR += p5-Package-Stash
+    SUBDIR += p5-Package-Stash-XS
     SUBDIR += p5-PadWalker
     SUBDIR += p5-Parallel-ForkManager
     SUBDIR += p5-Parallel-Iterator
