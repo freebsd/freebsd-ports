@@ -7,6 +7,7 @@
 
 PORTNAME=	vlc
 DISTVERSION=	1.1.7
+PORTREVISION=	1
 PORTEPOCH=	3
 CATEGORIES=	multimedia audio ipv6 net www
 MASTER_SITES=	http://download.videolan.org/pub/videolan/${PORTNAME}/${DISTVERSION}/ \
@@ -30,7 +31,6 @@ OPTIONS=	A52 "A52 DVD audio decoder" On \
 		DTS "DTS DVD audio decoder" On \
 		DVDREAD "DVD Playback support" On \
 		DVDNAV "DVD menu navigation" On \
-		DVBPSI "DVBPSI mux/demux support" Off \
 		FAAD "Faad audio decoder (mp4/aac) support" On \
 		FLAC "Flac audio codec support" On \
 		FLUID "Enable Fluidsynth MIDI support" Off \
@@ -261,14 +261,6 @@ CONFIGURE_ARGS+=--disable-dca
 .else
 LIB_DEPENDS+=	dca.0:${PORTSDIR}/multimedia/libdca
 CONFIGURE_ARGS+=--enable-dca
-.endif
-
-.if defined(WITH_DVBPSI)
-LIB_DEPENDS+=	dvbpsi.6:${PORTSDIR}/multimedia/libdvbpsi
-CONFIGURE_ARGS+=--enable-dvb --enable-dvbpsi \
-		--with-dvbpsi=${LOCALBASE}
-.else
-CONFIGURE_ARGS+=--disable-dvb --disable-dvbpsi
 .endif
 
 .if defined(WITHOUT_DVDREAD)
@@ -604,7 +596,7 @@ CONFIGURE_ARGS+=	--enable-twolame
 .endif
 
 .if defined(WITH_UPNP)
-LIB_DEPENDS+=	upnp.4:${PORTSDIR}/devel/upnp
+LIB_DEPENDS+=	upnp.5:${PORTSDIR}/devel/upnp
 CONFIGURE_ARGS+=--enable-upnp
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-modules__services_discovery__upnp_intel.cpp
 .else
@@ -613,10 +605,12 @@ CONFIGURE_ARGS+=--disable-upnp
 
 # Video for Linux and DVB (Digital Video Broadcast) support
 .if defined(WITHOUT_V4L)
-CONFIGURE_ARGS+=--disable-v4l
+CONFIGURE_ARGS+=--disable-v4l --disable-dvb --disable-dvbpsi
 .else
 BUILD_DEPENDS+=	v4l_compat>=1.0.20100321:${PORTSDIR}/multimedia/v4l_compat
-CONFIGURE_ARGS+=--enable-v4l
+LIB_DEPENDS+=	dvbpsi.6:${PORTSDIR}/multimedia/libdvbpsi
+CONFIGURE_ARGS+=--enable-v4l --enable-dvb --enable-dvbpsi \
+		--with-dvbpsi=${LOCALBASE}
 .endif
 
 .if defined(WITHOUT_VCD)
