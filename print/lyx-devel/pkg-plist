@@ -291,6 +291,7 @@ bin/tex2lyx
 %%DATADIR%%/examples/de/tufte-handout.lyx
 %%DATADIR%%/examples/docbook_article.lyx
 %%DATADIR%%/examples/el/splash.lyx
+%%DATADIR%%/examples/enumitem.lyx
 %%DATADIR%%/examples/es/Braille.lyx
 %%DATADIR%%/examples/es/ItemizeBullets.lyx
 %%DATADIR%%/examples/es/ejemplo_con_lyx.lyx
@@ -439,6 +440,7 @@ bin/tex2lyx
 %%DATADIR%%/images/buffer-write-as.png
 %%DATADIR%%/images/buffer-write.png
 %%DATADIR%%/images/build-program.png
+%%DATADIR%%/images/busy.gif
 %%DATADIR%%/images/change-accept.png
 %%DATADIR%%/images/change-next.png
 %%DATADIR%%/images/change-reject.png
@@ -1030,6 +1032,7 @@ bin/tex2lyx
 %%DATADIR%%/images/split-view_horizontal.png
 %%DATADIR%%/images/split-view_vertical.png
 %%DATADIR%%/images/standard.png
+%%DATADIR%%/images/tabular-feature_align-decimal.png
 %%DATADIR%%/images/tabular-feature_append-column.png
 %%DATADIR%%/images/tabular-feature_append-row.png
 %%DATADIR%%/images/tabular-feature_delete-column.png
@@ -1177,6 +1180,7 @@ bin/tex2lyx
 %%DATADIR%%/layouts/extletter.layout
 %%DATADIR%%/layouts/extreport.layout
 %%DATADIR%%/layouts/figs-within-sections.module
+%%DATADIR%%/layouts/fix-cm.module
 %%DATADIR%%/layouts/fixltx2e.module
 %%DATADIR%%/layouts/foils.layout
 %%DATADIR%%/layouts/foottoend.module
@@ -1409,6 +1413,9 @@ bin/tex2lyx
 %%DATADIR%%/scripts/legacy_lyxpreview2ppm.pyc
 %%DATADIR%%/scripts/legacy_lyxpreview2ppm.pyo
 %%DATADIR%%/scripts/listerrors
+%%DATADIR%%/scripts/lyxpak.py
+%%DATADIR%%/scripts/lyxpak.pyc
+%%DATADIR%%/scripts/lyxpak.pyo
 %%DATADIR%%/scripts/lyxpreview-lytex2bitmap.py
 %%DATADIR%%/scripts/lyxpreview-lytex2bitmap.pyc
 %%DATADIR%%/scripts/lyxpreview-lytex2bitmap.pyo
