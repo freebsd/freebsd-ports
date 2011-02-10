@@ -6,19 +6,20 @@
 #
 
 PORTNAME=	focusblur
-PORTVERSION=	3.2.4
-PORTREVISION=	4
+PORTVERSION=	3.2.6
 CATEGORIES=	graphics
-MASTER_SITES=	http://sudakyo.hp.infoseek.co.jp/gimp/fblur/ \
-		http://www.dindin.ru/download/
+MASTER_SITES=	http://registry.gimp.org/files/
 PKGNAMEPREFIX=	gimp-
 PKGNAMESUFFIX=	-plugin
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Gimp realistic focus blur plugin
 
-LIB_DEPENDS=	gimp-2.0:${PORTSDIR}/graphics/gimp-app \
-		fftw3.5:${PORTSDIR}/math/fftw3
+LIB_DEPENDS=	fftw3.5:${PORTSDIR}/math/fftw3 \
+		gimp-2.0:${PORTSDIR}/graphics/gimp-app
+
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
@@ -31,7 +32,6 @@ PLIST_SUB=	PLUGIN_DIR=${PLUGIN_DIR}
 
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
-CONFIGURE_ARGS+=	--disable-rpath
 
 .if !defined(WITHOUT_NLS)
 USE_GETTEXT=	yes
