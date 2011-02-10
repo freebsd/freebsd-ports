@@ -1591,6 +1591,7 @@
     SUBDIR += p5-Directory-Queue
     SUBDIR += p5-Directory-Scratch
     SUBDIR += p5-Directory-Scratch-Structured
+    SUBDIR += p5-Dist-CheckConflicts
     SUBDIR += p5-Dist-Joseki
     SUBDIR += p5-EV
     SUBDIR += p5-Env-PS1
