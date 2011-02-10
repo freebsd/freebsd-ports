@@ -66,6 +66,6 @@ languagepack:
 	@cd ${WRKDIR}/langpack_tmp/opt/ ; \
 		${MKDIR} ../${INSTALLATION_BASEDIR} ; \
 		${MV} * ../${INSTALLATION_BASEDIR} ; cd .. ; \
-		${TAR} cfj ${WRKDIR}/../${PACKAGE_BASENAME}_langpack_${LOCALIZED_LANG}.tar.bz2 ${INSTALLATION_BASEDIR}
+		${TAR} cfj ${WRKDIR}/../OOo_${PACKAGE_BASENAME}_langpack_${LOCALIZED_LANG}.tbz ${INSTALLATION_BASEDIR}
 .endif
 .endif
