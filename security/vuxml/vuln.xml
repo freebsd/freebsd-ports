@@ -34,6 +34,42 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="ce6ce2f8-34ac-11e0-8103-00215c6a37bb">
+    <topic>awstats -- arbitrary commands execution vulnerability</topic>
+    <affects>
+      <package>
+	<name>awstats</name>
+	<range><lt>7.0,1</lt></range>
+      </package>
+      <package>
+	<name>awstats-devel</name>
+	<range><gt>0</gt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Awstats change log reports:</p>
+	<blockquote cite="http://awstats.sourceforge.net/docs/awstats_changelog.txt">
+	  <ul>
+	    <li>Security fix (Traverse directory of LoadPlugin)</li>
+	    <li>Security fix (Limit config to defined directory
+	      to avoid access to external config file via a nfs
+	      or webdav link).</li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2010-4367</cvename>
+      <url>http://www.exploitdevelopment.com/Vulnerabilities/2010-WEB-001.html</url>
+      <url>http://awstats.sourceforge.net/docs/awstats_changelog.txt</url>
+    </references>
+    <dates>
+      <discovery>2010-05-01</discovery>
+      <entry>2011-02-10</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="2eda0c54-34ab-11e0-8103-00215c6a37bb">
     <topic>opera -- multiple vulnerabilities</topic>
     <affects>
