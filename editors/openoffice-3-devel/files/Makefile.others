@@ -28,7 +28,7 @@ sdk:
 	@cd ${WRKDIR}/sdk_tmp/opt/openoffice* ; \
 		${MKDIR} ../${INSTALLATION_BASEDIR}_sdk ; \
 		${MV} * ../${INSTALLATION_BASEDIR}_sdk ; cd .. ; \
-		${TAR} cfj ${WRKDIR}/../OOo-Dev-SDK_${PACKAGE_BASENAME}_en-US.tbz ${INSTALLATION_BASEDIR}_sdk
+		${TAR} cfj ${WRKDIR}/../OOo-Dev-SDK_${PACKAGE_BASENAME}_install_en-US.tbz ${INSTALLATION_BASEDIR}_sdk
 
 ure:
 	@${ECHO_MSG} "===>   Make Uno Runtime Environment of OpenOffice.org"
@@ -39,7 +39,7 @@ ure:
 	@cd ${WRKDIR}/ure_tmp/opt/openoffice* ; \
 		${MKDIR} ../${INSTALLATION_BASEDIR} ; \
 		${MV} * ../${INSTALLATION_BASEDIR} ; cd .. ; \
-		${TAR} cfj ${WRKDIR}/../OOo-Dev-URE_${PACKAGE_BASENAME}_en-US.tbz ${INSTALLATION_BASEDIR}
+		${TAR} cfj ${WRKDIR}/../OOo-Dev-URE_${PACKAGE_BASENAME}_install_en-US.tbz ${INSTALLATION_BASEDIR}
 
 solver:
 	@${ECHO_MSG} "===>   Make Solver of OpenOffice.org"
