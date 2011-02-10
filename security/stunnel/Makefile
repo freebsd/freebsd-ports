@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	stunnel
-PORTVERSION=	4.34
-PORTREVISION=	2
+PORTVERSION=	4.35
 CATEGORIES=	security
-MASTER_SITES=	http://www.stunnel.org/download/stunnel/src/ \
+MASTER_SITES=	ftp://ftp.stunnel.org/stunnel/%SUBDIR%/ \
 		http://mirrors.zerg.biz/stunnel/%SUBDIR%/ \
 		ftp://stunnel.mirt.net/stunnel/%SUBDIR%/ \
 		ftp://ftp.nluug.nl/pub/networking/stunnel/%SUBDIR%/ \
