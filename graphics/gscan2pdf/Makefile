@@ -65,6 +65,5 @@ post-patch:
 	@${REINPLACE_CMD} -e 's/--parents/-p/g;s|$$sharedir/man|${MANPREFIX}/man|g;s|1p|1|g'\
 		-e '/SITEPREFIX/s|/usr|${PREFIX}|' ${WRKSRC}/Makefile.PL
 	@${REINPLACE_CMD} -e 's|/usr/share|${PREFIX}/share|g' ${WRKSRC}/bin/${PORTNAME}
-	@${REINPLACE_CMD} -e '8745,8748d' ${WRKSRC}/bin/${PORTNAME}
 
 .include <bsd.port.mk>
