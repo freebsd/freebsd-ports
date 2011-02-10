@@ -6,6 +6,11 @@ mode, which must be enabled for Linux binaries to run, is now
 enabled. Linux mode can be enabled permanently with the linux_enable
 variable of rc.conf(5).
 
+If you want to use shared memory in Linux applications, you need to set up
+a link from /dev/shm to a suitable place, e.g. by adding the following line
+to /etc/devfs.conf (takes effect on each boot):
+	link /tmp shm
+
 To make use of NIS you have to adjust yp.conf and nsswitch.conf in
 /compat/linux/etc/ accordingly. For example:
 
