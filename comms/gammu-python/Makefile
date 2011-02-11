@@ -9,6 +9,9 @@ PKGNAMESUFFIX=		-python
 
 CONFLICTS=		gammu-[1-9]* gammu-devel-[1-9]*
 
+DEPRECATED=		since version 1.29.0 comms/gammu uses python by default
+EXPIRATION_DATE=	2011-05-11
+
 WITH_PYTHON_GAMMU=	yes
 
 MASTERDIR=		${.CURDIR}/../gammu
