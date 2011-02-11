@@ -1534,3 +1534,5 @@ graphics/ray++||2011-02-04|Has expired: Does not compile on supported versions o
 japanese/oleo||2011-02-04|Has expired: Does not compile on supported versions of FreeBSD
 lang/dylan||2011-02-04|Has expired: does not build
 multimedia/jahshaka||2011-02-04|Has expired: Does not compile on supported versions of FreeBSD
+audio/libjackasyn|audio/jack|2011-02-11|Has expired: development has ceased; try audio/jack instead
+audio/xmms-jackasyn|audio/xmms-jack|2011-02-11|Has expired: development has ceased; try audio/xmms-jack instead
