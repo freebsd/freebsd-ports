@@ -4440,6 +4440,7 @@ gimp-app                        ports/graphics/gimp-app
 gimp-data-extras                ports/graphics/gimp-data-extras
 gimp-focusblur-plugin           ports/graphics/gimp-focusblur-plugin
 gimp-gap                        ports/graphics/gimp-gap
+gimp-gmic-plugin                ports/graphics/gimp-gmic-plugin
 gimp-greycstoration             ports/graphics/gimp-greycstoration
 gimp-gutenprint                 ports/print/gimp-gutenprint
 gimp-help                       ports/graphics/gimp-help
@@ -10509,6 +10510,7 @@ octave-forge-es                 ports/math/octave-forge-es
 octave-forge-fenv               ports/math/octave-forge-fenv
 octave-forge-financial          ports/math/octave-forge-financial
 octave-forge-fits               ports/math/octave-forge-fits
+octave-forge-fl-core            ports/math/octave-forge-fl-core
 octave-forge-fpl                ports/math/octave-forge-fpl
 octave-forge-ga                 ports/math/octave-forge-ga
 octave-forge-general            ports/math/octave-forge-general
@@ -12164,6 +12166,7 @@ p5-Dir-Watch                    ports/devel/p5-Dir-Watch
 p5-Directory-Queue              ports/devel/p5-Directory-Queue
 p5-Directory-Scratch            ports/devel/p5-Directory-Scratch
 p5-Directory-Scratch-Structured  ports/devel/p5-Directory-Scratch-Structured
+p5-Dist-CheckConflicts          ports/devel/p5-Dist-CheckConflicts
 p5-Dist-Joseki                  ports/devel/p5-Dist-Joseki
 p5-DocSet                       ports/textproc/p5-DocSet
 p5-EBook-Tools                  ports/textproc/p5-EBook-Tools
@@ -13713,6 +13716,7 @@ p5-Package-Constants            ports/devel/p5-Package-Constants
 p5-Package-DeprecationManager   ports/devel/p5-Package-DeprecationManager
 p5-Package-Generator            ports/devel/p5-Package-Generator
 p5-Package-Stash                ports/devel/p5-Package-Stash
+p5-Package-Stash-XS             ports/devel/p5-Package-Stash-XS
 p5-PadWalker                    ports/devel/p5-PadWalker
 p5-Padre                        ports/editors/p5-Padre
 p5-Palm                         ports/palm/p5-Palm
@@ -16254,6 +16258,7 @@ p5-dir-watch                    ports/devel/p5-Dir-Watch
 p5-directory-queue              ports/devel/p5-Directory-Queue
 p5-directory-scratch            ports/devel/p5-Directory-Scratch
 p5-directory-scratch-structured  ports/devel/p5-Directory-Scratch-Structured
+p5-dist-checkconflicts          ports/devel/p5-Dist-CheckConflicts
 p5-dist-joseki                  ports/devel/p5-Dist-Joseki
 p5-djabberd                     ports/net-im/p5-DJabberd
 p5-dmoz-parserdf                ports/databases/p5-DMOZ-ParseRDF
@@ -17732,6 +17737,7 @@ p5-package-constants            ports/devel/p5-Package-Constants
 p5-package-deprecationmanager   ports/devel/p5-Package-DeprecationManager
 p5-package-generator            ports/devel/p5-Package-Generator
 p5-package-stash                ports/devel/p5-Package-Stash
+p5-package-stash-xs             ports/devel/p5-Package-Stash-XS
 p5-padre                        ports/editors/p5-Padre
 p5-padwalker                    ports/devel/p5-PadWalker
 p5-palm                         ports/palm/p5-Palm
@@ -19898,6 +19904,7 @@ pecl-fileinfo                   ports/sysutils/pecl-fileinfo
 pecl-fribidi                    ports/converters/pecl-fribidi
 pecl-gearman                    ports/devel/pecl-gearman
 pecl-geoip                      ports/net/pecl-geoip
+pecl-gmagick                    ports/graphics/pecl-gmagick
 pecl-gnupg                      ports/security/pecl-gnupg
 pecl-handlersocket              ports/databases/pecl-handlersocket
 pecl-haru                       ports/print/pecl-haru
@@ -23357,6 +23364,7 @@ rubygem-test-unit               ports/devel/rubygem-test-unit
 rubygem-thin                    ports/www/rubygem-thin
 rubygem-thor                    ports/devel/rubygem-thor
 rubygem-tidy                    ports/textproc/rubygem-tidy
+rubygem-tilt                    ports/devel/rubygem-tilt
 rubygem-tmail                   ports/mail/rubygem-tmail
 rubygem-transactionsimple       ports/devel/rubygem-transactionsimple
 rubygem-treetop                 ports/devel/rubygem-treetop
