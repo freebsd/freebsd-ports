@@ -14,7 +14,7 @@ DISTNAME=	${PORTNAME}-v${PORTVERSION:S/./_/g}-src
 EXTRACT_SUFX=	-tar.gz
 DIST_SUBDIR=	openh323
 
-MAINTAINER=	steve@energistic.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A H323 Video Conferencing library
 
 LIB_DEPENDS=	pt_r.1:${PORTSDIR}/devel/pwlib
