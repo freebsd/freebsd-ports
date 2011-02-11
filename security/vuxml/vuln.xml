@@ -34,6 +34,37 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="1cae628c-3569-11e0-8e81-0022190034c0">
+    <topic>rubygem-mail -- Remote Arbitrary Shell Command Injection Vulnerability</topic>
+    <affects>
+      <package>
+	<name>rubygem-mail</name>
+	<range><lt>2.2.15</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Secunia reports:</p>
+	<blockquote cite="http://secunia.com/advisories/43077/">
+	  <p>Input passed via an email from address is not properly sanitised
+	    in the "deliver()" function (lib/mail/network/delivery_methods/sendmail.rb)
+	    before being used as a command line argument. This can be exploited
+	    to inject arbitrary shell commands.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <bid>46021</bid>
+      <cvename>CVE-2011-0739</cvename>
+      <url>http://secunia.com/advisories/43077/</url>
+      <url>http://groups.google.com/group/mail-ruby/browse_thread/thread/e93bbd05706478dd?pli=1</url>
+    </references>
+    <dates>
+      <discovery>2011-01-25</discovery>
+      <entry>2011-02-10</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="7c492ea2-3566-11e0-8e81-0022190034c0">
     <topic>plone -- Remote Security Bypass</topic>
     <affects>
