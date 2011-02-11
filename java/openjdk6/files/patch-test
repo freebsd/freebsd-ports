@@ -1,4 +1,4 @@
---- jdk/test/com/sun/management/OperatingSystemMXBean/TestTotalSwap.sh.orig	2011-02-10 12:34:40.000000000 -0500
+--- jdk/test/com/sun/management/OperatingSystemMXBean/TestTotalSwap.sh	2011-02-10 12:34:40.000000000 -0500
 +++ jdk/test/com/sun/management/OperatingSystemMXBean/TestTotalSwap.sh	2011-02-10 12:37:00.000000000 -0500
 @@ -72,6 +72,16 @@
     done
