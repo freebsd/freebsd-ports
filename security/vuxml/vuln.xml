@@ -34,6 +34,53 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="4a3482da-3624-11e0-b995-001b2134ef46">
+    <topic>linux-flashplugin -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>linux-flashplugin</name>
+	<range><le>9.0r289</le></range>
+      </package>
+      <package>
+	<name>linux-f8-flashplugin</name>
+	<name>linux-f10-flashplugin</name>
+	<range><lt>10.2r152</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Adobe Product Security Incident Response Team reports:</p>
+	<blockquote cite="http://www.adobe.com/support/security/bulletins/apsb11-02.html">
+	  <p>Critical vulnerabilities have been identified in
+	    Adobe Flash Player 10.1.102.64 and earlier versions for
+	    Windows, Macintosh, Linux, and Solaris. These vulnerabilities
+	    could cause the application to crash and could potentially
+	    allow an attacker to take control of the affected system.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2011-0558</cvename>
+      <cvename>CVE-2011-0559</cvename>
+      <cvename>CVE-2011-0560</cvename>
+      <cvename>CVE-2011-0561</cvename>
+      <cvename>CVE-2011-0571</cvename>
+      <cvename>CVE-2011-0572</cvename>
+      <cvename>CVE-2011-0573</cvename>
+      <cvename>CVE-2011-0574</cvename>
+      <cvename>CVE-2011-0575</cvename>
+      <cvename>CVE-2011-0577</cvename>
+      <cvename>CVE-2011-0578</cvename>
+      <cvename>CVE-2011-0607</cvename>
+      <cvename>CVE-2011-0608</cvename>
+      <url>http://www.adobe.com/support/security/bulletins/apsb11-02.html</url>
+    </references>
+    <dates>
+      <discovery>2011-02-08</discovery>
+      <entry>2011-02-11</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="53bde960-356b-11e0-8e81-0022190034c0">
     <topic>mupdf -- Remote System Access</topic>
     <affects>
