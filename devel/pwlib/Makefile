@@ -14,7 +14,7 @@ MASTER_SITES= 	SF/openh323/${PORTNAME}/${PORTVERSION}
 DISTNAME=	ptlib-v${PORTVERSION:S/./_/g}-src
 DIST_SUBDIR=	openh323
 
-MAINTAINER=	steve@energistic.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A cross platform C++ library, used by OpenH323
 
 LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2
