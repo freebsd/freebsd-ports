@@ -7,21 +7,25 @@
 
 PORTNAME=	unison
 PORTVERSION=	2.32.52
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://www.cis.upenn.edu/~bcpierce/unison/download/releases/${DISTNAME}/
 DISTFILES=	${EXTRACT_ONLY} ${EXTRA_DOCS}
 DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
 EXTRACT_ONLY=	${PORTNAME}-${PORTVERSION}.tar.gz
 
-MAINTAINER=	daniel+unison@pelleg.org
+MAINTAINER=	mad@madpilot.net
 COMMENT=	A user-level file synchronization tool
 
 PLIST_SUB=	PORTVERSION=${PORTVERSION}
 USE_GMAKE=	yes
+WANT_GNOME=	yes
 MAKE_ARGS=	CFLAGS=""
 CONFLICTS=	unison-devel-[0-9]* unison-nox11-[0-9]*
 
 MAKE_JOBS_UNSAFE=	yes
+
+LICENCE=	GPLv3
 
 .include <bsd.port.pre.mk>
 
@@ -43,6 +47,8 @@ BUILD_DEPENDS+=	ocamlc:${PORTSDIR}/lang/ocaml \
 RUN_DEPENDS+=	lablgtk2:${PORTSDIR}/x11-toolkits/ocaml-lablgtk2
 PATCH_DEPENDS+=	${BUILD_DEPENDS}
 CONFLICTS+=	ocaml-nox11*
+USE_GNOME=	desktopfileutils
+SUB_FILES+=	${PORTNAME}.desktop
 .else
 MAKE_ARGS+=	UISTYLE=text
 PLIST_SUB+=	TEXT="@comment "
@@ -68,6 +74,8 @@ post-install:
 .endif
 .if defined(WITH_GTK2)
 	@${INSTALL_PROGRAM} ${WRKSRC}/unison-text ${PREFIX}/bin
+	@${INSTALL_DATA} ${WRKDIR}/${PORTNAME}.desktop ${DESKTOPDIR}
+	@-update-desktop-database > /dev/null
 	@${CAT} ${PKGMESSAGE}
 .else
 	@${CAT} ${PKGMESSAGE}.nox11
