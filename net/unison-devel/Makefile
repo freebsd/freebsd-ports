@@ -14,7 +14,7 @@ DISTFILES=	${EXTRACT_ONLY} ${EXTRA_DOCS}
 DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
 EXTRACT_ONLY=	${PORTNAME}-${PORTVERSION}.tar.gz
 
-MAINTAINER=	daniel+unison@pelleg.org
+MAINTAINER=	mad@madpilot.net
 COMMENT=	A user-level file synchronization tool
 
 PLIST_SUB=	PORTVERSION=${PORTVERSION}
