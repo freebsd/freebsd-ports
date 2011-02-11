@@ -6,18 +6,23 @@
 #
 
 PORTNAME=	pssh
-PORTVERSION=	2.1.1
+PORTVERSION=	2.2.2
 CATEGORIES=	security net sysutils
 MASTER_SITES=	GOOGLE_CODE \
-		LOACL/brooks
+		LOCAL/brooks
 
 MAINTAINER=	brooks@FreeBSD.org
 COMMENT=	Parallel versions of the openssh tools
 
+LICENSE=	BSD
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 RUN_DEPENDS=	rsync:${PORTSDIR}/net/rsync
 
-USE_PYTHON=	YES
-USE_PYDISTUTILS=easy_install
+MAN1=		pssh.1
+
+USE_PYTHON=	yes
+USE_PYDISTUTILS=	yes
 
 PROJECTHOST=	parallel-ssh
 
