@@ -34,6 +34,36 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="53bde960-356b-11e0-8e81-0022190034c0">
+    <topic>mupdf -- Remote System Access</topic>
+    <affects>
+      <package>
+	<name>mupdf</name>
+	<range><gt>0</gt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Secunia reports:</p>
+	<blockquote cite="http://secunia.com/advisories/43020/">
+	  <p>The vulnerability is caused due to an error within the
+	    "closedctd()" function in fitz/filt_dctd.c when processing PDF
+	    files containing certain malformed JPEG images. This can be
+	    exploited to cause a stack corruption by e.g. tricking a user
+	    into opening a specially crafted PDF file.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <bid>46027</bid>
+      <url>http://secunia.com/advisories/43020/</url>
+    </references>
+    <dates>
+      <discovery>2011-01-26</discovery>
+      <entry>2011-02-10</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="1cae628c-3569-11e0-8e81-0022190034c0">
     <topic>rubygem-mail -- Remote Arbitrary Shell Command Injection Vulnerability</topic>
     <affects>
