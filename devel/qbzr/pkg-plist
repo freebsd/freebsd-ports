@@ -51,6 +51,9 @@
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/conflicts.py
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/conflicts.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/conflicts.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/decorators.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/decorators.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/decorators.pyo
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/diff.py
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/diff.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/diff.pyo
@@ -108,9 +111,9 @@
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/log.py
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/log.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/log.pyo
-%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/loggraphprovider.py
-%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/loggraphprovider.pyc
-%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/loggraphprovider.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/loggraphviz.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/loggraphviz.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/loggraphviz.pyo
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/logmodel.py
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/logmodel.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/logmodel.pyo
@@ -177,9 +180,6 @@
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/tests/__init__.py
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/tests/__init__.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/tests/__init__.pyo
-%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/tests/excepthookwatcher.py
-%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/tests/excepthookwatcher.pyc
-%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/tests/excepthookwatcher.pyo
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/tests/mock.py
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/tests/mock.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/tests/mock.pyo
@@ -219,9 +219,9 @@
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/tests/test_log.py
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/tests/test_log.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/tests/test_log.pyo
-%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/tests/test_loggraphprovider.py
-%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/tests/test_loggraphprovider.pyc
-%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/tests/test_loggraphprovider.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/tests/test_loggraphviz.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/tests/test_loggraphviz.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/tests/test_loggraphviz.pyo
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/tests/test_logmodel.py
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/tests/test_logmodel.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/tests/test_logmodel.pyo
