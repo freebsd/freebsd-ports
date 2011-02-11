@@ -2,13 +2,18 @@ bin/xboard
 bin/cmail
 share/icons/hicolor/48x48/apps/xboard.png
 share/icons/hicolor/scalable/apps/xboard.svg
+share/applications/xboard.desktop
+share/games/xboard/wood_d.xpm
+share/games/xboard/wood_l.xpm
 @dirrmtry share/icons/hicolor/48x48/apps
 @dirrmtry share/icons/hicolor/48x48
-@dirrmtry share/icons/hicolor
-@dirrmtry share/icons
-@dirrmtry share
 @dirrmtry share/icons/hicolor/scalable/apps
 @dirrmtry share/icons/hicolor/scalable
 @dirrmtry share/icons/hicolor
 @dirrmtry share/icons
-@dirrmtry share
+@dirrmtry share/applications
+@dirrmtry share/games/xboard
+@dirrmtry share/games
+@unexec if cmp -s %D/etc/xboard.conf.dist %D/etc/xboard.conf; then rm -f %D/etc/xboard.conf; fi
+etc/xboard.conf.dist
+@exec cp -pn %D/%F %B/orbit.conf

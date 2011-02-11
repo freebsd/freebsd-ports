@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xboard
-PORTVERSION=	4.4.4
+PORTVERSION=	4.5.0
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	xboard
@@ -18,7 +18,8 @@ OPTIONS=	XAW3D	"Use Xaw3d widgets (instead of Xaw)"	On
 
 USE_XORG=	xt xpm xaw
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+=CFLAGS="-I${LOCALBASE}/include -L${LOCALBASE}/lib"
+CONFIGURE_ARGS+=CFLAGS="-I${LOCALBASE}/include -L${LOCALBASE}/lib" \
+		MKDIR_P="${MKDIR}"
 MAN6=		xboard.6
 INFO=		xboard
 USE_PERL5_BUILD=yes
@@ -34,13 +35,19 @@ LIB_DEPENDS+=	Xaw3d.${XAWVER}:${PORTSDIR}/x11-toolkits/Xaw3d
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "sparc64"
-BROKEN=		Does not install on sparc64
+BROKEN=	Does not install on sparc64
 .endif
 
 post-patch:
-		@${REINPLACE_CMD} -e 's/fairymax/gnuchessx/' ${WRKSRC}/xboard.h
+	@${REINPLACE_CMD} -e 's/fairymax/gnuchessx/' \
+		${WRKSRC}/xboard.h ${WRKSRC}/xboard.conf.in
+	@${REINPLACE_CMD} -e '/^#include..malloc.h/d' \
+		${WRKSRC}/engineoutput.c ${WRKSRC}/uci.c
+	@${REINPLACE_CMD} -e 's:INSTALL.*sysconfdir):&/$$$$files.dist:' \
+		${WRKSRC}/Makefile.in
 
 post-install:
-		@${INSTALL_SCRIPT} ${WRKSRC}/cmail ${PREFIX}/bin/
+	@${INSTALL_SCRIPT} ${WRKSRC}/cmail ${PREFIX}/bin/
+	@${CP} -pn ${PREFIX}/etc/xboard.conf.dist ${PREFIX}/etc/xboard.conf
 
 .include <bsd.port.post.mk>
