@@ -1,5 +1,6 @@
 @comment $FreeBSD$
 bin/dict
+bin/dict_lookup
 bin/dictl
 @unexec if cmp -s %D/etc/dict.conf.sample %D/etc/dict.conf; then rm -f %D/etc/dict.conf; fi
 etc/dict.conf.sample
