@@ -37,6 +37,7 @@ bin/extract_fastq
 bin/extract_qual
 bin/extract_seq
 bin/get_comment
+bin/hash_exp
 bin/hash_extract
 bin/hash_list
 bin/hash_sff
