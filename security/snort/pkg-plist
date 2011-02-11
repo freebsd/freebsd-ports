@@ -161,6 +161,7 @@ etc/snort/preproc_rules/sensitive-data.rules-sample
 %%PORTDOCS%%%%DOCSDIR%%/README.thresholding
 %%PORTDOCS%%%%DOCSDIR%%/README.u2boat
 %%PORTDOCS%%%%DOCSDIR%%/README.variables
+%%PORTDOCS%%%%DOCSDIR%%/README.rzb_saac
 %%PORTDOCS%%%%DOCSDIR%%/RELEASE.NOTES
 %%PORTDOCS%%%%DOCSDIR%%/TODO
 %%PORTDOCS%%%%DOCSDIR%%/USAGE

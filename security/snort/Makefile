@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	snort
-PORTVERSION=	2.9.0.3
+PORTVERSION=	2.9.0.4
 CATEGORIES=	security
 MASTER_SITES=	SF/snort/snort
 
@@ -60,16 +60,21 @@ PREPROC_RULES=		decoder.rules preprocessor.rules sensitive-data.rules
 USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
 LIBNET_CONFIG?=		${LOCALBASE}/bin/libnet11-config
+.if exists(${LIBNET_CONFIG})
 LIBNET_CFLAGS!=	${LIBNET_CONFIG} --cflags
 LIBNET_LIBS!=	${LIBNET_CONFIG} --libs
+.else
+LIBNET_CFLAGS=	-I${LOCALBASE}/include/libnet11
+LIBNET_LIBS=	-L${LOCALBASE}/lib/libnet11 -lnet
+.endif
 LIBNET_INCDIR=	${LIBNET_CFLAGS:M-I*:S/-I//}
 LIBNET_LIBDIR=	${LIBNET_LIBS:M-L*:S/-L//}
 
-CONFIGURE_ARGS+=	--enable-dynamicplugin --enable-build-dynamic-examples \
-			--enable-reload --enable-reload-restart \
-			--disable-corefiles \
-			--with-dnet-includes=${LIBNET_INCDIR} \
-			--with-dnet-libraries=${LIBNET_LIBDIR}
+CONFIGURE_ARGS=	--enable-dynamicplugin --enable-build-dynamic-examples \
+		--enable-reload --enable-reload-restart \
+		--disable-corefiles \
+		--with-dnet-includes=${LIBNET_INCDIR} \
+		--with-dnet-libraries=${LIBNET_LIBDIR}
 
 PLIST_SUB+=	DYNAMIC=""
 
@@ -149,9 +154,8 @@ CONFIGURE_ARGS+=	--enable-react
 .endif
 
 .if defined(WITH_SNORTSAM)
-USE_AUTOTOOLS+= automake
-PATCH_SITES+=	http://www.snortsam.net/files/snort-plugin/:snortsam \
-		http://www.secnap.com/downloads/:snortsam
+USE_AUTOTOOLS+=	automake
+PATCH_SITES+=	http://www.snortsam.net/files/snort-plugin/:snortsam
 PATCHFILES+=	snortsam-2.9.0.3.diff.gz:snortsam
 .endif
 
@@ -161,10 +165,8 @@ post-patch:
 .endif
 
 pre-configure:
-	${FIND} ${WRKSRC} -name 'Makefile.in' | ${XARGS} ${REINPLACE_CMD} -e \
-	    's|lib/snort_|lib/snort/|g'
-	${REINPLACE_CMD} "s,/etc/snort.conf,${CONFIG_DIR}/snort.conf," \
-		${WRKSRC}/src/snort.c ${WRKSRC}/snort.8
+	${FIND} ${WRKSRC} -name 'Makefile.in' | ${XARGS} ${REINPLACE_CMD} -e 's|lib/snort_|lib/snort/|g'
+	${REINPLACE_CMD} "s,/etc/snort.conf,${CONFIG_DIR}/snort.conf," ${WRKSRC}/src/snort.c ${WRKSRC}/snort.8
 	${REINPLACE_CMD} -e 's|lib/snort_|lib/snort/|g' ${WRKSRC}/etc/snort.conf
 	${REINPLACE_CMD} -e 's|^dynamicdetection|#dynamicdetection|' ${WRKSRC}/etc/snort.conf
 	${REINPLACE_CMD} -e '/var HOME_NET/s/any/[YOU_NEED_TO_SET_HOME_NET_IN_snort.conf]/' ${WRKSRC}/etc/snort.conf
@@ -199,7 +201,7 @@ post-install:
 	@cd ${LOCALBASE}/lib && ${MV} snort_dynamicrules/* snort/dynamicrules
 	@cd ${LOCALBASE}/lib && ${MV} snort_dynamicengine/* snort/dynamicengine
 	@cd ${LOCALBASE}/lib && ${MV} snort_dynamicpreprocessor/* snort/dynamicpreprocessor
-	@cd ${LOCALBASE}/lib && ${${RMDIR} snort_dynamic*
+	@cd ${LOCALBASE}/lib && ${RMDIR} snort_dynamic*
 	@${MKDIR} ${LOCALBASE}/libdata/pkgconfig/ && ${MV} ${LOCALBASE}/lib/pkgconfig/snort.pc ${LOCALBASE}/libdata/pkgconfig/snort.pc
 	@${RMDIR} ${LOCALBASE}/lib/pkgconfig
 .endif
