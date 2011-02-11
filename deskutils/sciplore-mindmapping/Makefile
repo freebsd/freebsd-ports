@@ -6,32 +6,38 @@
 #
 
 PORTNAME=	sciplore-mindmapping
-PORTVERSION=	0.b013
-PORTREVISION=	1
+PORTVERSION=	0.b014
 CATEGORIES=	deskutils java
 MASTER_SITES=	SF
-MASTER_SITE_SUBDIR=	splmm/beta13
-DISTNAME=	SciPlore_MindMapping_AllOS_v013b
+MASTER_SITE_SUBDIR=	splmm/beta14
+DISTNAME=	SciPlore_MindMapping_AllOS_v014b
 # we use the binary distribution - it's 25% smaller than the source .zip
 # and does not depend on devel/apache-ant
 
 MAINTAINER=	mandree@FreeBSD.org
 COMMENT=	Mind Mapping tool with Reference and PDF Management
 
+BUILD_DEPENDS=	update-mime-database:${PORTSDIR}/misc/shared-mime-info
+RUN_DEPENDS=	update-mime-database:${PORTSDIR}/misc/shared-mime-info
+
 LICENSE=	GPLv2
 
 USE_ZIP=	yes
 USE_JAVA=	yes
+USE_GNOME=	desktopfileutils
 JAVA_VENDOR=	freebsd
 JAVA_VERSION=	1.6
 NO_BUILD=	yes
-DATADIR=	${JAVASHAREDIR}/${PORTNAME}
+JDATADIR=	${JAVASHAREDIR}/${PORTNAME}
+icon=		${DATADIR}/${PORTNAME}-icon48x48.png
 
 WRKSRC=		${WRKDIR}
+SUB_FILES=	sciplore-mindmapping.desktop
 
 post-patch:
-		${REINPLACE_CMD} -e 's/readlink -mn/readlink -n/' \
-		    -e 's,/etc/freemind,${DATADIR},' \
+		${REINPLACE_CMD} -e 's/readlink -mn/readlink -n/g' \
+		    -e 's,/etc/freemind,${JDATADIR},g' \
+		    -e 's,/\.freemind,/.SciPloreMindMapping,g' \
 		    ${WRKSRC}/SciploreMindMapping.sh
 
 do-install:
@@ -42,12 +48,22 @@ do-install:
 # We can't install into $DOCSDIR or support NOPORTDOCS
 # since the documentation is an integral part of the
 # installation, as online help via the program menus.
-		${MKDIR} ${DATADIR}
-		(cd ${WRKSRC} && ${COPYTREE_SHARE} \* ${DATADIR})
-		${PRINTF} '#!/bin/sh\nexport JAVA_HOME=%s\nexec %s\n' \
-		    '${JAVA_HOME}' '${DATADIR}/SciploreMindMapping.sh' \
+		${MKDIR} ${JDATADIR}
+		(cd ${WRKSRC} && ${COPYTREE_SHARE} \* ${JDATADIR})
+		${PRINTF} '#!/bin/sh\nexport JAVA_HOME="%s"\nexec "%s" "$$@"\n' \
+		    '${JAVA_HOME}' '${JDATADIR}/SciploreMindMapping.sh' \
 		    >${PREFIX}/bin/${PORTNAME}
-		${CHMOD} a=rx ${DATADIR}/SciploreMindMapping.sh \
+		${CHMOD} a=rx ${JDATADIR}/SciploreMindMapping.sh \
 		    ${PREFIX}/bin/${PORTNAME}
+		${MKDIR} ${DATADIR}
+		${INSTALL_DATA} ${FILESDIR}/splmm48.png "${icon}"
+		${MKDIR} ${DESKTOPDIR}
+		${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.desktop ${DESKTOPDIR}
+		${MKDIR} ${PREFIX}/share/mime/packages
+		${INSTALL_DATA} ${FILESDIR}/${PORTNAME}.xml ${PREFIX}/share/mime/packages/
+
+post-install:
+	        @-update-desktop-database > /dev/null
+	        @-update-mime-database ${PREFIX}/share/mime > /dev/null
 
 .include <bsd.port.mk>
