@@ -57,7 +57,7 @@ CMAKE_ARGS+=	-DWITH_LensFun:BOOL=OFF
 .endif
 
 .if defined(WITH_MARBLE)
-LIB_DEPENDS+=	marblewidget.11:${PORTSDIR}/astro/marble
+LIB_DEPENDS+=	marblewidget.10:${PORTSDIR}/astro/marble
 PLIST_SUB+=		MARBLE=""
 .else
 CMAKE_ARGS+=	-DWITH_MarbleWidget:BOOL=OFF
