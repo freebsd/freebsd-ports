@@ -1,9 +1,0 @@
-#!/bin/sh
-#
-# $FreeBSD$
-
-if [ "$2" != "DEINSTALL" ]; then
-	exit 0
-fi
-
-%%PERL%% -i -pe "s|\" server restore client amrecover ndmp\"|\" client amrecover ndmp\"|" ${PKG_PREFIX}/%%SITE_PERL_REL%%/Amanda/Constants.pm

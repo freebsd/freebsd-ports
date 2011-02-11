@@ -23,7 +23,7 @@ DISTNAME=	${PORTNAME}-${VERSION}
 DISTFILES=	INIT.${VERSION}.tgz ast-ksh.${VERSION}.tgz
 DIST_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	joe@zircon.seattle.wa.us
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Official AT&T release of KornShell 93
 
 CONFLICTS=	ksh93-devel-200*
