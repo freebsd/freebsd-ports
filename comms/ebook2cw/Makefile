@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	ebook2cw
-PORTVERSION=	0.7.0
-PORTREVISION?=	1
+PORTVERSION=	0.8.0
 CATEGORIES=	comms hamradio
 MASTER_SITES=	http://fkurz.net/ham/ebook2cw/ \
 		${MASTER_SITE_LOCAL}
@@ -16,7 +15,8 @@ MASTER_SITE_SUBDIR=	db
 MAINTAINER=	db@FreeBSD.org
 COMMENT=	Convert textfiles into cw as a mp3 file
 
-LIB_DEPENDS=	mp3lame:${PORTSDIR}/audio/lame
+LIB_DEPENDS=	mp3lame:${PORTSDIR}/audio/lame \
+		vorbis:${PORTSDIR}/audio/libvorbis
 
 MAN1=		ebook2cw.1
 
