@@ -12,7 +12,7 @@ MASTER_SITES=	SF/snort/snort
 
 PATCH_DIST_STRIP=	-p1
 
-MAINTAINER=	wfreeman@gmail.com
+MAINTAINER=	wfreeman@sourcefire.com
 COMMENT=	Lightweight network intrusion detection system
 
 LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre
