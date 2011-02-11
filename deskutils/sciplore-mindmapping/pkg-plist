@@ -1,4 +1,5 @@
 bin/sciplore-mindmapping
+share/applications/sciplore-mindmapping.desktop
 share/java/sciplore-mindmapping/GPLv2
 share/java/sciplore-mindmapping/SciploreMindMapping.sh
 share/java/sciplore-mindmapping/accessories/LICENSE.MIT
@@ -73,10 +74,12 @@ share/java/sciplore-mindmapping/doc/freemind_vi.mm
 share/java/sciplore-mindmapping/freemind.xsd
 share/java/sciplore-mindmapping/lib/SimplyHTML/SimplyHTML.jar
 share/java/sciplore-mindmapping/lib/SimplyHTML/gnu-regexp-1.1.4.jar
+share/java/sciplore-mindmapping/lib/JabRef-2.6.jar
 share/java/sciplore-mindmapping/lib/bindings.jar
 share/java/sciplore-mindmapping/lib/commons-lang-2.0.jar
 share/java/sciplore-mindmapping/lib/forms-1.0.5.jar
 share/java/sciplore-mindmapping/lib/freemind.jar
+share/java/sciplore-mindmapping/lib/icu4j-4_6.jar
 share/java/sciplore-mindmapping/lib/intellij/annotations.jar
 share/java/sciplore-mindmapping/lib/intellij/forms_rt.jar
 share/java/sciplore-mindmapping/lib/javabib-bin.jar
@@ -129,6 +132,11 @@ share/java/sciplore-mindmapping/plugins/svg/pdf-transcoder.jar
 share/java/sciplore-mindmapping/plugins/svg/svg_plugin.jar
 share/java/sciplore-mindmapping/plugins/svg/xerces_2_5_0.jar
 share/java/sciplore-mindmapping/plugins/svg/xml-apis.jar
+share/java/sciplore-mindmapping/sciplore-mindmapping.desktop
+%%DATADIR%%/sciplore-mindmapping-icon48x48.png
+share/mime/packages/sciplore-mindmapping.xml
+@dirrm share/sciplore-mindmapping
+@dirrmtry share/applications
 @dirrm share/java/sciplore-mindmapping/plugins/svg
 @dirrm share/java/sciplore-mindmapping/plugins/script
 @dirrm share/java/sciplore-mindmapping/plugins/latex
@@ -145,3 +153,7 @@ share/java/sciplore-mindmapping/plugins/svg/xml-apis.jar
 @dirrm share/java/sciplore-mindmapping/browser
 @dirrm share/java/sciplore-mindmapping/accessories
 @dirrm share/java/sciplore-mindmapping
+@exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || :
+@exec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
+@unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || :
+@unexec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
