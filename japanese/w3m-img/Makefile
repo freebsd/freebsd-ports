@@ -15,8 +15,8 @@ MASTERDIR=	${.CURDIR}/../../www/w3m
 PKGDIR=		${.CURDIR}
 PLIST=		${MASTERDIR}/pkg-plist
 
-JAPANESE=	Yes
-INLINE_IMAGE=	yes
+WITH_JAPANESE=	Yes
+WITH_INLINE_IMAGE=	yes
 CONFLICTS=	ja-w3m-0.5.* w3m-0.5.* w3m-m17n-0.5.* w3m-img-0.5.* w3m-m17n-img-0.5.*
 
 .include "${MASTERDIR}/Makefile"
