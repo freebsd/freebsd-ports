@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	dict
-PORTVERSION=	1.11.2
+PORTVERSION=	1.12.0
 CATEGORIES=	textproc
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}d/${PORTNAME}d-${PORTVERSION}
 DISTNAME=	${PORTNAME}d-${PORTVERSION}
@@ -27,7 +27,7 @@ USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool
 ALL_TARGET=	dict
 INSTALL_TARGET=	install.dict
-MAN1=		dict.1 dictl.1
+MAN1=		dict.1 dictl.1 dict_lookup.1
 
 post-patch:
 	${REINPLACE_CMD} -e 's|/etc/|${PREFIX}/etc/|g' ${WRKSRC}/dict.1.in
