@@ -1,24 +1,12 @@
 Description: Let the configure script succeed on FreeBSD.
- Add FreeBSD to the list of supported operating systems.
  Fix a bashism (test = instead of ==).
 Forwarded: yes
 Author: Peter Pentchev <roam@FreeBSD.org>
-Last-Update: 2011-01-24
+Last-Update: 2011-02-10
 
-Index: b/configure
-===================================================================
---- a/configure	2010-10-09 15:01:50.000000000 +0300
-+++ b/configure	2011-01-24 09:24:48.000000000 +0200
-@@ -2675,7 +2675,7 @@
-        guess_host_os=${with_host_os}
-         fi
-           case ${guess_host_os} in
--       GNU/kFreeBSD|*inux*)
-+       GNU/kFreeBSD|*inux*|FreeBSD)
-        host_os=linux
-        { $as_echo "$as_me:${as_lineno-$LINENO}: result: Linux" >&5
- $as_echo "Linux" >&6; }
-@@ -10534,9 +10534,9 @@
+--- a/configure
++++ b/configure
+@@ -10531,9 +10531,9 @@
  
  
  ac_gecode_library_architecture=-${VERSION_DASHES}${ac_gecode_library_architecture}
