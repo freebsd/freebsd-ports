@@ -34,6 +34,41 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="44ccfab0-3564-11e0-8e81-0022190034c0">
+    <topic>exim -- local privilege escalation</topic>
+    <affects>
+      <package>
+	<name>exim</name>
+	<name>exim-ldap</name>
+	<name>exim-ldap2</name>
+	<name>exim-mysql</name>
+	<name>exim-postgresql</name>
+	<name>exim-sa-exim</name>
+	<range><lt>4.74</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>exim.org reports:</p>
+	<blockquote cite="ftp://ftp.exim.org/pub/exim/ChangeLogs/ChangeLog-4.74">
+	  <p>CVE-2011-0017 - check return value of setuid/setgid. This is a
+	      privilege escalation vulnerability whereby the Exim run-time user
+	      can cause root to append content of the attacker's choosing to
+	      arbitrary files.
+	  </p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2011-0017</cvename>
+      <url>ftp://ftp.exim.org/pub/exim/ChangeLogs/ChangeLog-4.74</url>
+    </references>
+    <dates>
+      <discovery>2011-01-31</discovery>
+      <entry>2011-02-10</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="f2b43905-3545-11e0-8e81-0022190034c0">
     <topic>openoffice.org -- Multiple vulnerabilities</topic>
     <affects>
