@@ -14954,7 +14954,7 @@
  /* Signals */
  
 --- jdk/src/solaris/native/com/sun/management/UnixOperatingSystem_md.c	2011-01-20 18:54:41.000000000 -0500
-+++ jdk/src/solaris/native/com/sun/management/UnixOperatingSystem_md.c	2011-02-01 17:46:56.000000000 -0500
++++ jdk/src/solaris/native/com/sun/management/UnixOperatingSystem_md.c	2011-02-10 18:31:00.000000000 -0500
 @@ -32,10 +32,16 @@
  
  #include <sys/types.h>
@@ -14972,7 +14972,13 @@
  #include <ctype.h>
  #include <dirent.h>
  #include <errno.h>
-@@ -46,16 +52,22 @@
+@@ -43,19 +49,28 @@
+ #include <limits.h>
+ #include <stdlib.h>
+ #include <unistd.h>
++#if defined(__FreeBSD__)
++#include <vm/vm_param.h>
++#endif
  
  static jlong page_size = 0;
  
@@ -14996,7 +15002,7 @@
      struct dirent* p;
      if (readdir_r(dirp, entry, &p) == 0) {
          return p;
-@@ -124,7 +136,7 @@
+@@ -124,7 +139,7 @@
      free(strtab);
      return available ? ((jlong)avail * page_size) :
                         ((jlong)total * page_size);
@@ -15005,21 +15011,36 @@
      int ret;
      FILE *fp;
      jlong total = 0, avail = 0;
-@@ -138,6 +150,13 @@
+@@ -138,6 +153,28 @@
      avail = (jlong)si.freeswap * si.mem_unit;
  
      return available ? avail : total;
++#elif defined(__FreeBSD__)
++    struct xswdev xsw;
++    size_t mibsize, size;
++    jlong npages;
++    int mib[16], n;
++
++    mibsize = sizeof(mib) / sizeof(mib[0]);
++    if (sysctlnametomib("vm.swap_info", mib, &mibsize) == -1)
++	return (0);
++    for (n = 0, npages = 0; ; n++) {
++	mib[mibsize] = n;
++	size = sizeof(xsw);
++	if (sysctl(mib, mibsize + 1, &xsw, &size, NULL, 0) == -1)
++	    break;
++	npages += xsw.xsw_nblks;
++	if (available)
++	    npages -= xsw.xsw_used;
++    }
++    return (npages * page_size);
 +#else /* _ALLBSD_SOURCE */
-+    /*
-+     * XXXBSD: there's no way available to get swap info in
-+     *         FreeBSD.  Usage of libkvm is not an option here
-+     */
-+    // throw_internal_error(env, "Unimplemented in FreeBSD");
++    // throw_internal_error(env, "Unimplemented in BSD");
 +    return (0);
  #endif
  }
  
-@@ -179,7 +198,7 @@
+@@ -179,7 +216,7 @@
  
      JVM_Close(fd);
      return (jlong) psinfo.pr_size * 1024;
@@ -15028,20 +15049,39 @@
      FILE *fp;
      unsigned long vsize = 0;
  
-@@ -197,6 +216,12 @@
+@@ -197,6 +234,31 @@
  
      fclose(fp);
      return (jlong)vsize;
++#elif defined(__FreeBSD__)
++    FILE *fp;
++    unsigned long end, start;
++    jlong total = 0;
++
++    if ((fp = fopen("/proc/curproc/map", "r")) == NULL) {
++        throw_internal_error(env, "Unable to open /proc/curproc/map");
++        return -1;
++    }
++
++    for (;;) {
++	// Ignore everything except start and end entries
++	if (fscanf(fp, "0x%lx 0x%lx %*[^\n]\n", &start, &end) != 2 || start > end)
++	    break;
++	total += end - start;
++    }
++
++    fclose(fp);
++    return total;
 +#else /* _ALLBSD_SOURCE */
 +    /*
-+     * XXXBSD: there's no way available to do it in FreeBSD, AFAIK.
++     * XXXBSD: there's no way available to get vsize in BSD.
 +     */
-+    // throw_internal_error(env, "Unimplemented in FreeBSD");
++    // throw_internal_error(env, "Unimplemented in BSD");
 +    return (64 * MB);
  #endif
  }
  
-@@ -222,9 +247,13 @@
+@@ -222,9 +284,13 @@
      jlong cpu_time_ns;
      struct tms time;
  
@@ -15057,15 +15097,19 @@
      clk_tck = 100;
  #endif
      if (clk_tck == -1) {
-@@ -244,22 +273,51 @@
+@@ -244,32 +310,70 @@
  Java_com_sun_management_UnixOperatingSystem_getFreePhysicalMemorySize
    (JNIEnv *env, jobject mbean)
  {
-+#ifdef _ALLBSD_SOURCE
-+    /*
-+     * XXXBSD: there's no way available to do it in FreeBSD, AFAIK.
-+     */
-+    // throw_internal_error(env, "Unimplemented in FreeBSD");
++#if defined (__FreeBSD__)
++    int npages;
++    size_t size;
++    size = sizeof(npages);
++    if (sysctlbyname("vm.stats.vm.v_free_count", &npages, &size, NULL, 0) == - 1)
++	return (0);
++    return ((jlong)npages * page_size);
++#elif defined(_ALLBSD_SOURCE)
++    // throw_internal_error(env, "Unimplemented in BSD");
 +    return (128 * MB);
 +#else
      jlong num_avail_physical_pages = sysconf(_SC_AVPHYS_PAGES);
@@ -15099,17 +15143,32 @@
  Java_com_sun_management_UnixOperatingSystem_getOpenFileDescriptorCount
    (JNIEnv *env, jobject mbean)
  {
-+#ifdef _ALLBSD_SOURCE
-+    /*
-+     * XXXBSD: there's no way available to do it in FreeBSD, AFAIK.
-+     */
-+    // throw_internal_error(env, "Unimplemented in FreeBSD");
++#if defined(_ALLBSD_SOURCE) && !defined(__FreeBSD__)
++    // throw_internal_error(env, "Unimplemented in BSD");
 +    return (100);
 +#else /* solaris/linux */
      DIR *dirp;
      struct dirent dbuf;
      struct dirent* dentp;
-@@ -282,6 +340,7 @@
+     jlong fds = 0;
+ 
++#if defined(__FreeBSD__)
++    dirp = opendir("/dev/fd");
++    if (dirp == NULL) {
++        throw_internal_error(env, "Unable to open directory /dev/fd");
++        return -1;
++    }
++#else
+     dirp = opendir("/proc/self/fd");
+     if (dirp == NULL) {
+         throw_internal_error(env, "Unable to open directory /proc/self/fd");
+         return -1;
+     }
++#endif
+ 
+     // iterate through directory entries, skipping '.' and '..'
+     // each entry represents an open file descriptor.
+@@ -282,6 +386,7 @@
      closedir(dirp);
      // subtract by 1 which was the fd open for this implementation
      return (fds - 1);
