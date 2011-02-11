@@ -247,6 +247,7 @@
     SUBDIR += phonon-gstreamer
     SUBDIR += phonon-vlc
     SUBDIR += phonon-xine
+    SUBDIR += photofilmstrip
     SUBDIR += pitivi
     SUBDIR += playd
     SUBDIR += podcatcher
