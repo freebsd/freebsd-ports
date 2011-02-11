@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	unison
-PORTVERSION=	2.27.157
-PORTREVISION?=	2
+PORTVERSION=	2.32.52
 CATEGORIES=	net
 MASTER_SITES=	http://www.cis.upenn.edu/~bcpierce/unison/download/releases/${DISTNAME}/
 DISTFILES=	${EXTRACT_ONLY} ${EXTRA_DOCS}
@@ -21,6 +20,8 @@ PLIST_SUB=	PORTVERSION=${PORTVERSION}
 USE_GMAKE=	yes
 MAKE_ARGS=	CFLAGS=""
 CONFLICTS=	unison-devel-[0-9]* unison-nox11-[0-9]*
+
+MAKE_JOBS_UNSAFE=	yes
 
 .include <bsd.port.pre.mk>
 
