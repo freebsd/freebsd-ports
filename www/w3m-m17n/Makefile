@@ -14,7 +14,7 @@ MASTERDIR=	${.CURDIR}/../w3m
 PKGDIR=		${.CURDIR}
 PLIST=		${MASTERDIR}/pkg-plist
 
-M17N=	yes
+WITH_M17N=	yes
 CONFLICTS=	ja-w3m-0.5.* ja-w3m-img-0.5.* w3m-0.5.* w3m-img-0.5.* w3m-m17n-img-0.5.*
 
 .include "${MASTERDIR}/Makefile"
