@@ -7,7 +7,7 @@
 
 PORTNAME=	openjdk6
 PORTVERSION=	b21
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	java devel
 MASTER_SITES=	http://download.java.net/openjdk/jdk6/promoted/${PORTVERSION}/ \
 		https://java.net/downloads/jaxp/jdk7/:jaxp \
@@ -45,6 +45,7 @@ OPENJDK_BUILDDATE=	20_jan_2011
 OPTIONS=	DEBUG "Enable legacy debugging support" off \
 		FASTDEBUG "Include fastdebug build" off \
 		IPV6 "Enable IPv6 support" off \
+		SOUND "Enable sound support" off \
 		WEB "Enable the browser plugin and Java Web Start" off \
 		POLICY "Install the Unlimited Strength Policy Files" off \
 		TEST "Add support for running regression test" off
@@ -142,6 +143,14 @@ ALL_TARGET=	debug_build
 OPENJDK_OSARCH=	bsd-${ARCH:S/i386/i586/}-debug
 .else
 OPENJDK_OSARCH=	bsd-${ARCH:S/i386/i586/}
+.endif
+
+.if defined(WITH_SOUND)
+EXTRA_PATCHES+=	${FILESDIR}/alsa-enable.patch
+LIB_DEPENDS+=	asound.2:${PORTSDIR}/audio/alsa-lib
+RUN_DEPENDS+=	${LOCALBASE}/lib/alsa-lib/libasound_module_pcm_oss.so:${PORTSDIR}/audio/alsa-plugins
+.else
+EXTRA_PATCHES+=	${FILESDIR}/alsa-disable.patch
 .endif
 
 .if defined(WITH_WEB)
