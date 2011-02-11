@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	roundcube
-DISTVERSION=	0.5
+DISTVERSION=	0.5.1
 PORTEPOCH=	1
 CATEGORIES?=	mail www
 MASTER_SITES=	SF/${PORTNAME}mail/${PORTNAME}mail/${DISTVERSION:U}
@@ -101,6 +101,8 @@ post-patch:
 		${WRKSRC}/program/localization/*/labels.inc \
 		${WRKSRC}/program/steps/addressbook/mailto.inc \
 		${WRKSRC}/skins/default/functions.js
+	@${REINPLACE_CMD} "s/'mail|/'${MAIL}|/g" ${WRKSRC}/plugins/*/*.php
+	@${REINPLACE_CMD} "s/|mail'/|${MAIL}'/g" ${WRKSRC}/plugins/*/*.php
 	@${REINPLACE_CMD} "s/_task=mail/_task=${MAIL}/g" \
 		${WRKSRC}/program/js/app.js
 	@${REINPLACE_CMD} "s/\"mail\"/\"${MAIL}\"/g" \
