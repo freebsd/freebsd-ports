@@ -1,3 +1,4 @@
+%%WWWDIR%%/ChangeLog
 %%WWWDIR%%/LICENCE
 %%WWWDIR%%/README
 %%WWWDIR%%/docs/de_DE/about.html
@@ -74,6 +75,8 @@
 %%WWWDIR%%/docs/general/img/nagvis-1.4-context-ssh-1.png
 %%WWWDIR%%/docs/general/img/nagvis-1.4-gadget-label-hover.png
 %%WWWDIR%%/docs/general/img/sample-weathermap.jpg
+%%WWWDIR%%/docs/general/img/std_bar.png
+%%WWWDIR%%/docs/general/img/std_speedo2.png
 %%WWWDIR%%/etc/.htaccess
 %%WWWDIR%%/etc/apache2-nagvis.conf-sample
 %%WWWDIR%%/etc/automaps/__automap.cfg
@@ -433,6 +436,7 @@
 %%WWWDIR%%/share/server/core/classes/CoreTemplateSystem.php
 %%WWWDIR%%/share/server/core/classes/CoreUriHandler.php
 %%WWWDIR%%/share/server/core/classes/GlobalBackendInterface.php
+%%WWWDIR%%/share/server/core/classes/GlobalBackendTest.php
 %%WWWDIR%%/share/server/core/classes/GlobalBackendmerlinmy.php
 %%WWWDIR%%/share/server/core/classes/GlobalBackendmklivestatus.php
 %%WWWDIR%%/share/server/core/classes/GlobalBackendndomy.php
@@ -496,6 +500,7 @@
 %%WWWDIR%%/share/server/core/functions/debug.php
 %%WWWDIR%%/share/server/core/functions/oldPhpVersionFixes.php
 %%WWWDIR%%/share/userfiles/gadgets/gadgets_core.php
+%%WWWDIR%%/share/userfiles/gadgets/std_bar.php
 %%WWWDIR%%/share/userfiles/gadgets/std_speedometer.php
 %%WWWDIR%%/share/userfiles/gadgets/std_speedometer2.php
 %%WWWDIR%%/share/userfiles/images/gadgets/dummy
