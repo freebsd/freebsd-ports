@@ -7,6 +7,7 @@
 
 PORTNAME=	gammu
 PORTVERSION=	1.29.0
+PORTREVISION=	1
 CATEGORIES=	comms
 MASTER_SITES=	http://dl.cihar.com/gammu/releases/ \
 		http://dl.cihar.com.nyud.net/gammu/releases/
@@ -21,14 +22,9 @@ CONFLICTS=	gammu-devel-[1-9]* gammu-python-[1-9]*
 CMAKE_ARGS+=	-DINSTALL_LIBDATA_DIR=${LOCALBASE}/libdata
 
 USE_CMAKE=	yes
-USE_GNOME=	pkgconfig
-
-.if defined(WITH_PYTHON_GAMMU)
-USE_PYTHON=	YES
-PLIST_SUB=	WITH_PYTHON_GAMMU=""
-.else
-PLIST_SUB=	WITH_PYTHON_GAMMU="@comment "
-.endif
+USE_PYTHON=	yes
+USE_GETTEXT=	yes
+USE_GNOME=	glib20
 
 PORTDOCS=	*
 
@@ -45,12 +41,10 @@ MAN7=		gammu-smsd-files.7 gammu-smsd-mysql.7 gammu-smsd-pgsql.7 \
 
 .endif
 
-.if defined(WITH_PYTHON_GAMMU)
 post-install:
 .for opt in -Qold -O
 	${PYTHON_CMD} ${opt} -m compileall -l ${PYTHONPREFIX_SITELIBDIR}/gammu
 .endfor
-.endif
 
 .include <bsd.port.pre.mk>
 
