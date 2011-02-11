@@ -2,5 +2,5 @@ SHA256 (alpine-2.00/alpine-2.00.tar.bz2) = c85db8405af90375ba2440c85b7952d809961
 SIZE (alpine-2.00/alpine-2.00.tar.bz2) = 5222673
 SHA256 (alpine-2.00/quota.patch.gz) = 383717cbe36c62a6008f9d7e1ce56e755fc0ec49eef25fcf11f2cbebbbaffe12
 SIZE (alpine-2.00/quota.patch.gz) = 3123
-SHA256 (alpine-2.00/maildir.patch.gz) = 2bbe262c02be6c98e596541fdf823b04014d989a7c4cb735e92cd681cc396b59
-SIZE (alpine-2.00/maildir.patch.gz) = 32216
+SHA256 (alpine-2.00/maildir.patch.gz) = 60d98c7dca0932316e23ccb226b4db85d1896de9a1a37259a2afcea153be4477
+SIZE (alpine-2.00/maildir.patch.gz) = 32737
