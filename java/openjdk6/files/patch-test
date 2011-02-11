@@ -1,3 +1,31 @@
+--- jdk/test/com/sun/management/OperatingSystemMXBean/TestTotalSwap.sh.orig	2011-02-10 12:34:40.000000000 -0500
++++ jdk/test/com/sun/management/OperatingSystemMXBean/TestTotalSwap.sh	2011-02-10 12:37:00.000000000 -0500
+@@ -72,6 +72,16 @@
+    done
+ }
+ 
++freebsd_swap_size()
++{
++   total_swap=0
++   for i in `/usr/sbin/swapinfo -k | awk '{print $2}' | grep -v blocks`
++   do
++      # swapinfo -k returns size in blocks of 1024 bytes.
++      total_swap=`expr $i \* 1024 + $total_swap`
++   done
++}
++
+ # Test GetTotalSwapSpaceSize if we are running on Unix
+ total_swap=0
+ case `uname -s` in
+@@ -80,7 +90,7 @@
+        runOne GetTotalSwapSpaceSize $total_swap 
+        ;;
+      FreeBSD )
+-       total_swap=`free -b | grep -i swap | awk '{print $2}'`
++       freebsd_swap_size
+        runOne GetTotalSwapSpaceSize $total_swap 
+        ;;
+     * )
 --- jdk/test/java/nio/channels/SocketChannel/LocalAddress.java	2010-01-18 12:03:26.000000000 +0100
 +++ jdk/test/java/nio/channels/SocketChannel/LocalAddress.java	2010-01-18 12:03:42.000000000 +0100
 @@ -40,7 +40,7 @@
