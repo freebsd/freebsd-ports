@@ -1,6 +1,6 @@
---- Makefile.am.orig	2009-04-17 17:27:57.000000000 -0300
-+++ Makefile.am	2010-01-22 21:18:51.000000000 -0200
-@@ -70,15 +70,13 @@
+--- ./Makefile.am.orig	2011-02-02 10:24:56.000000000 +0100
++++ ./Makefile.am	2011-02-02 10:50:06.000000000 +0100
+@@ -68,8 +68,6 @@
  
  ETTER_PASSIVE_FILE = etter.finger.os
  ETTER_PASSIVE = $(ETTER_PASSIVE_FILE).gz
@@ -9,33 +9,15 @@
  
  NTOPDATA = ntop-cert.pem \
             $(ETTER_PASSIVE) \
-            oui.txt.gz \
-            specialMAC.txt.gz \
--	   GeoIPASNum.dat \
--	   GeoLiteCity.dat
-+	   GeoIPASNum.dat.gz \
-+	   GeoLiteCity.dat.gz
- 
- NTOPHTML = html html/*.js html/*.html  html/*.gif html/*.jpg html/*.ico html/*.png \
-            html/*.css html/*.dtd \
-@@ -270,8 +268,6 @@
- 
- install: install-recursive
- 
--	cd @GEO_DIR@; make install
--
- 	@mkdir -p $(DESTDIR)/$(CFG_DBFILE_DIR)
- 
- 	@echo ""
-@@ -341,7 +337,6 @@
+@@ -337,7 +335,6 @@
  	chcon -t textrel_shlib_t $(DESTDIR)$(libdir)/*ntop*.so
  
- install-data-local: ntop.txt ntop.html faq.html
+ install-data-local: ntop.txt ntop.html faq.html dnetter
 -	@$(top_srcdir)/mkinstalldirs $(DESTDIR)/$(libdir)/plugins;
  	@if ! test -d $(DESTDIR)/$(datadir)/ntop; then \
  	  $(top_srcdir)/mkinstalldirs $(DESTDIR)/$(datadir)/ntop; \
  	  touch $(DESTDIR)/$(datadir)/ntop/warnuser; \
-@@ -376,21 +371,6 @@
+@@ -373,21 +370,6 @@
  	@echo ""
  	@echo ""
  	@echo -n "Preparing "
@@ -57,16 +39,7 @@
  	@echo -n "New file lines are:  "
  	@gunzip -c oui.txt.gz | wc -l
  	@echo ""
-@@ -400,7 +380,7 @@
- 
- # download the Novell SAP Protocol information table
- dnsapt:
--	@(cd Internet; wget -c http://www.iana.org/assignments/novell-sap-numbers)
-+	@(cd Internet; fetch http://www.iana.org/assignments/novell-sap-numbers)
- 
- # download the passive ethernet fingerprint database
- dnetter:
-@@ -409,34 +389,6 @@
+@@ -406,34 +388,6 @@
  	@echo "Preparing "
  	@echo ""
  

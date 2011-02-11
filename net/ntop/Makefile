@@ -6,18 +6,10 @@
 #
 
 PORTNAME=	ntop
-PORTVERSION=	3.3.10
-PORTREVISION=	7
+PORTVERSION=	4.0.1
 CATEGORIES=	net
-MASTER_SITES=	http://www.ntop.org/trac/export/4103/trunk/ntop/3rd_party/ \
-		SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
-DISTFILES=	etter.finger.os.gz \
-		GeoIPASNum.dat.gz \
-		GeoLiteCity.dat.gz \
-		oui.txt.gz \
-		specialMAC.txt.gz \
-		${PORTNAME}-${PORTVERSION}.tar.gz
-EXTRACT_ONLY=	${PORTNAME}-${PORTVERSION}.tar.gz
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
+DISTFILES=	${PORTNAME}-${PORTVERSION}.tar.gz
 
 MAINTAINER=	sylvio@FreeBSD.org
 COMMENT=	Network monitoring tool with command line and web interfaces
@@ -34,7 +26,7 @@ DBDIR?=		/var/db
 MAKE_JOBS_SAFE=	yes
 USE_AUTOTOOLS=	libtool automake autoconf
 USE_GNOME=	libxml2
-USE_LUA=	5.1
+USE_PYTHON=	2.6+
 USE_GMAKE=	yes
 USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes
@@ -61,18 +53,12 @@ USE_RC_SUBR=	ntop.sh
 ##    WITH_LOCALE:        Enable locale (i18n) support.
 ##    WITH_PCAP_PORT:     Use libpcap from ports.
 ##    WITH_XMLDUMP:       Enable XML Dump support.
-##    WITHOUT_TCPWRAPPER: Disable TCP wrapper support.
 ##
 OPTIONS=	LOCALE "Enable locale (i18n) support." Off \
 		PCAP_PORT "Use libpcap from ports." Off \
-		XMLDUMP "Enable XML Dump support." Off \
-		TCPWRAPPER "Enable TCP wrapper support" On
+		XMLDUMP "Enable XML Dump support." Off
 
 .include <bsd.port.pre.mk>
-
-.if defined(WITH_TCPWRAPPER)
-CONFIGURE_ARGS+=	--with-tcpwrap
-.endif
 
 .if defined(WITH_PCAP_PORT)
 BUILD_DEPENDS+=		${LOCALBASE}/lib/libpcap.a:${PORTSDIR}/net/libpcap
@@ -99,14 +85,6 @@ CONFIGURE_ENV+=		CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include/libxml2 \
 BROKEN=		does not configure on 6.X
 .endif
 
-post-extract:
-	@${RM} ${WRKSRC}/configureextra/FREEBSD
-	@${CP} ${_DISTDIR}/etter.finger.os.gz ${WRKSRC}
-	@${CP} ${_DISTDIR}/GeoIPASNum.dat.gz ${WRKSRC}
-	@${CP} ${_DISTDIR}/GeoLiteCity.dat.gz ${WRKSRC}
-	@${CP} ${_DISTDIR}/oui.txt.gz ${WRKSRC}
-	@${CP} ${_DISTDIR}/specialMAC.txt.gz ${WRKSRC}
-
 pre-configure:
 	@cd ${WRKSRC} && ${SETENV} ${SCRIPTS_ENV} ${SH} autogen.sh --noconfig
 
@@ -116,7 +94,5 @@ pre-install:
 post-install:
 	@${MKDIR} ${DBDIR}/ntop
 	@${CHOWN} -R nobody:nobody ${DBDIR}/ntop
-	@${INSTALL} -d ${ETCDIR}/l7-patterns
-	@cd ${WRKSRC}/l7-patterns/&&${COPYTREE_SHARE} . ${ETCDIR}/l7-patterns
 
 .include <bsd.port.post.mk>
