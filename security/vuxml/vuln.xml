@@ -34,6 +34,52 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="f2b43905-3545-11e0-8e81-0022190034c0">
+    <topic>openoffice.org -- Multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>openoffice.org</name>
+	<range><lt>3.3.0</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>OpenOffice.org Security Team reports:</p>
+	<blockquote cite="http://www.openoffice.org/security/bulletin.html">
+	  <p>Fixed in OpenOffice.org 3.3</p>
+	  <ul>
+	    <li><a href="http://www.openoffice.org/security/cves/CVE-2010-2935_CVE-2010-2936.html">
+		CVE-2010-2935 / CVE-2010-2936</a>: Security Vulnerability in OpenOffice.org related to PowerPoint document processing</li>
+	    <li><a href="http://www.openoffice.org/security/cves/CVE-2010-3450.html">
+		CVE-2010-3450</a>: Security Vulnerability in OpenOffice.org related to Extensions and filter package files</li>
+	    <li><a href="http://www.openoffice.org/security/cves/CVE-2010-3451_CVE-2010-3452.html">
+		CVE-2010-3451 / CVE-2010-3452</a>: Security Vulnerability in OpenOffice.org related to RTF document processing </li>
+	    <li><a href="http://www.openoffice.org/security/cves/CVE-2010-3453_CVE-2010-3454.html">
+		CVE-2010-3453 / CVE-2010-3454</a>: Security Vulnerability in OpenOffice.org related to Word document processing  </li>
+	    <li><a href="http://www.openoffice.org/security/cves/CVE-2010-3689.html">
+		CVE-2010-3689</a>: Insecure LD_LIBRARY_PATH usage in OpenOffice.org shell scripts </li>
+	    <li><a href="http://www.openoffice.org/security/cves/CVE-2010-3702_CVE-2010-3704.html">
+		CVE-2010-3702 / CVE-2010-3704</a>: Security Vulnerability in OpenOffice.org's PDF Import extension resulting from 3rd party library XPDF</li>
+	    <li><a href="http://www.openoffice.org/security/cves/CVE-2010-4008_CVE-2010-4494.html">
+		CVE-2010-4008 / CVE-2010-4494</a>: Possible Security Vulnerability in OpenOffice.org resulting from 3rd party library LIBXML2 </li>
+	    <li><a href="http://www.openoffice.org/security/cves/CVE-2010-4253.html">
+		CVE-2010-4253</a>: Security Vulnerability in OpenOffice.org related to PNG file processing </li>
+	    <li><a href="http://www.openoffice.org/security/cves/CVE-2010-4643.html">
+		CVE-2010-4643</a>: Security Vulnerability in OpenOffice.org related to TGA file processing  </li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://www.openoffice.org/security/bulletin.html</url>
+      <url>http://secunia.com/advisories/40775/</url>
+    </references>
+    <dates>
+      <discovery>2010-08-04</discovery>
+      <entry>2011-02-10</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="35ecdcbe-3501-11e0-afcd-0015f2db7bde">
     <topic>webkit-gtk2 -- Multiple vurnabilities.</topic>
     <affects>
