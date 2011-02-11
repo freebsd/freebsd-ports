@@ -4,7 +4,7 @@
 #
 # $FreeBSD$
 #
-# Make sure that your configuration DOES NOT set AN?Y gcc-related
+# Make sure that your configuration DOES NOT set ANY gcc-related
 # variables.  ksh93 will not compile if you set even the seemingly
 # most unrelated variable related to gcc configuration.  This means
 # especially any flag which attempts to set the cputype.  Setting the
@@ -26,14 +26,13 @@ DIST_SUBDIR=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Official AT&T release of KornShell 93
 
-CONFLICTS=	ksh93-devel-200*
 MANUAL_PACKAGE_BUILD=Doesn't build in tinderbox environment
 
-VERSION=	2010-03-09
+VERSION=	2011-02-08
 RESTRICTED=	Source recipient must acknowledge license
 
+FETCH_ARGS=	-Rr
 FETCH_ENV=	HTTP_AUTH='basic:*:I accept www.opensource.org/licenses/cpl:.'
-FETCH_CMD=	/usr/bin/fetch -Rr		# see bin/76134
 NO_WRKSUBDIR=	yes
 MAKE_ENV=	CCFLAGS="${CFLAGS}"
 .if defined(WANT_STATIC)
@@ -42,9 +41,7 @@ MAKE_ENV+=	LDFLAGS=-static
 
 MAN1=		ksh93.1
 
-.include <bsd.port.pre.mk>
-
-INSTALLROOT=	${WRKSRC}/arch/freebsd${OSREL:R}.${ARCH}
+INSTALLROOT=	${WRKSRC}/arch/freebsd.${ARCH}
 
 do-build:
 	@cd ${WRKSRC} && ${SETENV} -i ${MAKE_ENV} ${SH} bin/package make
@@ -60,7 +57,7 @@ do-install:
 .endfor
 
 post-install:
-	@${ECHO} "updating /etc/shells"
+	@${ECHO} "Updating /etc/shells"
 	@${CP} /etc/shells /etc/shells.bak
 	@(${GREP} -v ${PREFIX}/bin/ksh93 /etc/shells.bak; \
 	  ${ECHO_CMD} ${PREFIX}/bin/ksh93) >/etc/shells
@@ -71,4 +68,4 @@ test: build
 	    ${SETENV} SHELL=${INSTALLROOT}/bin/ksh \
 		${INSTALLROOT}/bin/ksh shtests
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
