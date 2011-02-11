@@ -1,5 +1,0 @@
-This plugin enables xmms to playback sound via the JACK audio server. The
-plugin is actually a port of the xmms OSS sound output plugin to JACK, using
-libjackasyn.
-
-WWW:	http://gige.xdv.org/libjackasyn/xmms.php

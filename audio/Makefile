@@ -375,7 +375,6 @@
     SUBDIR += libgme
     SUBDIR += libgpod
     SUBDIR += libid3tag
-    SUBDIR += libjackasyn
     SUBDIR += liblastfm
     SUBDIR += liblo
     SUBDIR += liblscp
@@ -844,7 +843,6 @@
     SUBDIR += xmms-gbsplay
     SUBDIR += xmms-infopipe
     SUBDIR += xmms-jack
-    SUBDIR += xmms-jackasyn
     SUBDIR += xmms-kde
     SUBDIR += xmms-kj
     SUBDIR += xmms-ladspa
