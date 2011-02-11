@@ -43,8 +43,6 @@ Note:  Please add new entries to the beginning of this file.
       </package>
       <package>
         <name>de-wordpress</name>
-	<name>zh-wordpress-zh_CN</name>
-	<name>zh-wordpress-zh_TW</name>
 	<range><lt>3.0.2</lt></range>
       </package>
     </affects>
@@ -66,7 +64,6 @@ Note:  Please add new entries to the beginning of this file.
     <dates>
       <discovery>2010-11-16</discovery>
       <entry>2011-02-05</entry>
-      <modified>2011-02-09</modified>
     </dates>
   </vuln>
 

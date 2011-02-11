@@ -1,7 +1,0 @@
-for (var i = 0; i < activityIds.length; ++i) {
-  var desktop = activityById(activityIds[i]);
-  desktop.wallpaperPlugin = "image";
-  desktop.wallpaperMode = "SingleImage";
-  desktop.currentConfigGroup = new Array("Wallpaper", "image");
-  desktop.writeConfig("wallpaper", "%%PREFIX%%/share/wallpapers/stripes-freebsd-blue/");
-}

@@ -1,8 +1,0 @@
-This package provides the basic applications for the KDE system. Installing
-this package (and its dependencies) will provide you with everything required
-for a minimal, functional KDE desktop (but note that you still may need to
-install and configure an X server, for example XFree86).
-
-WWW: http://www.kde.org/
-
---AlanE <kde@freebsd.org>

@@ -1,8 +1,0 @@
-CC          = gcc -g -O -fwritable-strings
-INCLUDES    = -I${LOCALBASE}/include -I${LOCALBASE}/include/tk8.4 -I${LOCALBASE}/include/tcl8.4 -I${LOCALBASE}/include/uclmmbase
-LIBS        = -L${LOCALBASE}/lib -ltk84 -ltcl84 -luclmmbase -lX11 -lz -lm
-CFLAGS      = $(INCLUDES) -DDIFF_BYTE_ORDER -DFREEBSD -DNORANDPROTO -DDEFINED_ERRLIST -Wall -DAUTH -DHAVE_ZLIB -DFreeBSD
-
-all::	sdr 
-install:
-	install -s -c -o root -g wheel -m 555 sdr ${PREFIX}/bin
