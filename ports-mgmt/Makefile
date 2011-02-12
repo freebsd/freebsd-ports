@@ -5,6 +5,7 @@
 
    SUBDIR += bpkg
    SUBDIR += bpm
+   SUBDIR += bxpkg
    SUBDIR += distilator
    SUBDIR += fastest_sites
    SUBDIR += genplist
