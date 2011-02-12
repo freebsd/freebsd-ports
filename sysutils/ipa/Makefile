@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ipa
-PORTVERSION=	2.0.9
+PORTVERSION=	2.1
 CATEGORIES=	sysutils
 MASTER_SITES=	SF/ipa-system
 
@@ -50,14 +50,13 @@ CONFIGURE_ARGS+=	--disable-thresholds
 CONFIGURE_ARGS+=	--enable-ctl-creds
 .endif
 
+.include <bsd.port.pre.mk>
+
+PLIST_FILES=	bin/ipa bin/ipactl bin/ipastat include/ipa_mod.h
+
 MAN3=		ipa_mod.3
 MAN5=		ipa.conf.5 ipastat.conf.5
 MAN8=		ipa.8 ipactl.8 ipastat.8
 MANLANG=	"" ru.KOI8-R
 
-do-install:
-	cd ${WRKSRC}/src && ${MAKE} install
-	cd ${WRKSRC}/man && ${MAKE} install-am
-	cd ${WRKSRC}/man/ru.KOI8-R && ${MAKE} install
-
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
