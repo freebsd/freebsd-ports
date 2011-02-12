@@ -8062,7 +8062,6 @@ libircclient                    ports/irc/libircclient
 libirman                        ports/comms/libirman
 libisofs                        ports/devel/libisofs
 libixp                          ports/devel/libixp
-libjackasyn                     ports/audio/libjackasyn
 libjbigi                        ports/math/libjbigi
 libjingle                       ports/net-im/libjingle
 libjit                          ports/lang/libjit
@@ -20080,6 +20079,7 @@ phoon                           ports/astro/phoon
 phoronix-test-suite             ports/benchmarks/phoronix-test-suite
 photo_gallery                   ports/www/photo_gallery
 photoclip                       ports/graphics/photoclip
+photofilmstrip                  ports/multimedia/photofilmstrip
 photopc                         ports/graphics/photopc
 php-Auth_OpenID                 ports/security/php-Auth_OpenID
 php-Auth_OpenID2                ports/security/php-Auth_OpenID2
@@ -23124,6 +23124,7 @@ rubygem-dm-core                 ports/databases/rubygem-dm-core
 rubygem-dm-do-adapter           ports/databases/rubygem-dm-do-adapter
 rubygem-dm-migrations           ports/databases/rubygem-dm-migrations
 rubygem-dm-mysql-adapter        ports/databases/rubygem-dm-mysql-adapter
+rubygem-dm-postgres-adapter     ports/databases/rubygem-dm-postgres-adapter
 rubygem-dm-serializer           ports/databases/rubygem-dm-serializer
 rubygem-dm-timestamps           ports/databases/rubygem-dm-timestamps
 rubygem-dm-transactions         ports/databases/rubygem-dm-transactions
@@ -26698,7 +26699,6 @@ xmms-infinity                   ports/graphics/xmms-infinity
 xmms-infopipe                   ports/audio/xmms-infopipe
 xmms-iris                       ports/graphics/xmms-iris
 xmms-jack                       ports/audio/xmms-jack
-xmms-jackasyn                   ports/audio/xmms-jackasyn
 xmms-jess                       ports/graphics/xmms-jess
 xmms-kde                        ports/audio/xmms-kde
 xmms-kj                         ports/audio/xmms-kj
