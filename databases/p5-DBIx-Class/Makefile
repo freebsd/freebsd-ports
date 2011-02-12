@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	DBIx-Class
-PORTVERSION=	0.08126
+PORTVERSION=	0.08127
 CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
-MASTER_SITE_SUBDIR=	../by-authors/id/A/AR/ARCANEZ
+MASTER_SITE_SUBDIR=	../by-authors/id/A/AB/ABRAXXA
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
@@ -17,7 +17,7 @@ COMMENT=	Extensible and flexible object <-> relational mapper
 
 TEST_DEPENDS=	p5-Test-Exception>=0:${PORTSDIR}/devel/p5-Test-Exception \
 		p5-Test-Simple>=0.90:${PORTSDIR}/devel/p5-Test-Simple \
-		p5-Test-Warn>=0:${PORTSDIR}/devel/p5-Test-Warn \
+		p5-Test-Warn>=0.21:${PORTSDIR}/devel/p5-Test-Warn \
 		p5-DBD-SQLite>=0:${PORTSDIR}/databases/p5-DBD-SQLite
 RUN_DEPENDS=	p5-Carp-Clan>=6.0:${PORTSDIR}/devel/p5-Carp-Clan \
 		p5-Class-Accessor-Grouped>=0.09003:${PORTSDIR}/devel/p5-Class-Accessor-Grouped \
@@ -35,7 +35,7 @@ RUN_DEPENDS=	p5-Carp-Clan>=6.0:${PORTSDIR}/devel/p5-Carp-Clan \
 		p5-Scope-Guard>=0.03:${PORTSDIR}/devel/p5-Scope-Guard \
 		p5-Context-Preserve>=0.01:${PORTSDIR}/devel/p5-Context-Preserve \
 		p5-Try-Tiny>=0.04:${PORTSDIR}/lang/p5-Try-Tiny \
-		p5-namespace-clean>=0.14:${PORTSDIR}/devel/p5-namespace-clean \
+		p5-namespace-clean>=0.20:${PORTSDIR}/devel/p5-namespace-clean \
 		p5-Math-Base36>=0.07:${PORTSDIR}/math/p5-Math-Base36
 
 OPTIONS=	SQLT "SQL::Translator (generate DDL from schema)" Off
