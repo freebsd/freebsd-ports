@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	sakura
-PORTVERSION=	2.3.8
+PORTVERSION=	2.4.0
 CATEGORIES=	x11-toolkits gnome
 MASTER_SITES=	http://www.pleyades.net/david/projects/sakura/
 
@@ -16,6 +16,7 @@ COMMENT=	A terminal emulator based on GTK and VTE
 USE_GNOME=	vte
 USE_GETTEXT=	yes
 USE_CMAKE=	yes
+USE_BZIP2=	yes
 
 MAN1=		sakura.1
 
