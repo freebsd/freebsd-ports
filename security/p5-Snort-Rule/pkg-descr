@@ -4,4 +4,4 @@ list of bad hosts and build an array of snort rule objects from that
 list. Then write that list using the string() method to a snort rules
 file.
 
-WWW: http://www.cpan.org/modules/by-authors/id/S/SA/SAXJAZMAN/Snort/
+WWW: http://search.cpan.org/dist/Snort-Rule/

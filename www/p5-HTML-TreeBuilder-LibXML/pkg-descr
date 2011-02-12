@@ -9,4 +9,4 @@ Currently, this module implements good enough methods
 for work with Web::Scraper.
 
 Author:	MATSUNO Tokuhiro <tokuhirom+cpan@gmail.com>
-WWW:	http://search.cpan.org/~tokuhirom/HTML-TreeBuilder-LibXML/
+WWW:	http://search.cpan.org/dist/HTML-TreeBuilder-LibXML/

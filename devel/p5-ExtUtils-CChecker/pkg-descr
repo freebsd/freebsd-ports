@@ -7,4 +7,4 @@ Objects in this class provide an extension around ExtUtils::CBuilder to
 simplify the creation of a .c file, compiling, linking and running it, 
 to test if a certain feature is present.
 
-WWW: http://search.cpan.org/~pevans/ExtUtils-CChecker-0.02/
+WWW: http://search.cpan.org/dist/ExtUtils-CChecker/
