@@ -58,6 +58,10 @@ bin/typetrainer
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/typetrainer/ui/main.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/typetrainer/ui/main.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/typetrainer/ui/main.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/typetrainer/ui/stat.glade
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/typetrainer/ui/stat.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/typetrainer/ui/stat.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/typetrainer/ui/stat.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/typetrainer/util.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/typetrainer/util.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/typetrainer/util.pyo
