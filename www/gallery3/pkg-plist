@@ -44,6 +44,7 @@
 %%WWWDIR%%/lib/jquery.js
 %%WWWDIR%%/lib/jquery.localscroll.js
 %%WWWDIR%%/lib/jquery.scrollTo.js
+%%WWWDIR%%/lib/json2-min.js
 %%WWWDIR%%/lib/superfish/css/superfish.css
 %%WWWDIR%%/lib/superfish/images/arrows-ffffff-rtl.png
 %%WWWDIR%%/lib/superfish/images/arrows-ffffff.png
@@ -152,6 +153,7 @@
 %%WWWDIR%%/modules/gallery/config/routes.php
 %%WWWDIR%%/modules/gallery/config/session.php
 %%WWWDIR%%/modules/gallery/config/upload.php
+%%WWWDIR%%/modules/gallery/config/user_agents.php
 %%WWWDIR%%/modules/gallery/controllers/admin.php
 %%WWWDIR%%/modules/gallery/controllers/admin_advanced_settings.php
 %%WWWDIR%%/modules/gallery/controllers/admin_dashboard.php
@@ -162,6 +164,7 @@
 %%WWWDIR%%/modules/gallery/controllers/admin_sidebar.php
 %%WWWDIR%%/modules/gallery/controllers/admin_theme_options.php
 %%WWWDIR%%/modules/gallery/controllers/admin_themes.php
+%%WWWDIR%%/modules/gallery/controllers/admin_upgrade_checker.php
 %%WWWDIR%%/modules/gallery/controllers/albums.php
 %%WWWDIR%%/modules/gallery/controllers/combined.php
 %%WWWDIR%%/modules/gallery/controllers/file_proxy.php
@@ -218,9 +221,13 @@
 %%WWWDIR%%/modules/gallery/helpers/module.php
 %%WWWDIR%%/modules/gallery/helpers/movie.php
 %%WWWDIR%%/modules/gallery/helpers/photo.php
+%%WWWDIR%%/modules/gallery/helpers/random.php
 %%WWWDIR%%/modules/gallery/helpers/site_status.php
+%%WWWDIR%%/modules/gallery/helpers/system.php
 %%WWWDIR%%/modules/gallery/helpers/task.php
 %%WWWDIR%%/modules/gallery/helpers/theme.php
+%%WWWDIR%%/modules/gallery/helpers/tree_rest.php
+%%WWWDIR%%/modules/gallery/helpers/upgrade_checker.php
 %%WWWDIR%%/modules/gallery/helpers/user_profile.php
 %%WWWDIR%%/modules/gallery/helpers/xml.php
 %%WWWDIR%%/modules/gallery/hooks/init_gallery.php
@@ -319,6 +326,7 @@
 %%WWWDIR%%/modules/gallery/views/permissions_form.html.php
 %%WWWDIR%%/modules/gallery/views/quick_delete_confirm.html.php
 %%WWWDIR%%/modules/gallery/views/reauthenticate.html.php
+%%WWWDIR%%/modules/gallery/views/upgrade_checker_block.html.php
 %%WWWDIR%%/modules/gallery/views/upgrader.html.php
 %%WWWDIR%%/modules/gallery/views/user_languages_block.html.php
 %%WWWDIR%%/modules/gallery/views/user_profile.html.php
@@ -326,9 +334,11 @@
 %%WWWDIR%%/modules/gallery/views/welcome_message.html.php
 %%WWWDIR%%/modules/gallery/views/welcome_message_loader.html.php
 %%WWWDIR%%/modules/image_block/helpers/image_block_block.php
+%%WWWDIR%%/modules/image_block/helpers/image_block_installer.php
 %%WWWDIR%%/modules/image_block/module.info
 %%WWWDIR%%/modules/image_block/views/image_block_block.html.php
 %%WWWDIR%%/modules/info/helpers/info_block.php
+%%WWWDIR%%/modules/info/helpers/info_installer.php
 %%WWWDIR%%/modules/info/helpers/info_theme.php
 %%WWWDIR%%/modules/info/module.info
 %%WWWDIR%%/modules/info/views/info_block.html.php
@@ -348,13 +358,45 @@
 %%WWWDIR%%/modules/notification/views/item_updated.html.php
 %%WWWDIR%%/modules/notification/views/user_profile_notification.html.php
 %%WWWDIR%%/modules/organize/controllers/organize.php
-%%WWWDIR%%/modules/organize/css/organize_theme.css
+%%WWWDIR%%/modules/organize/css/organize_dialog.css
+%%WWWDIR%%/modules/organize/css/organize_frame.css
 %%WWWDIR%%/modules/organize/helpers/organize_event.php
 %%WWWDIR%%/modules/organize/helpers/organize_installer.php
-%%WWWDIR%%/modules/organize/helpers/organize_theme.php
-%%WWWDIR%%/modules/organize/lib/Gallery3WebClient.swf
 %%WWWDIR%%/modules/organize/module.info
+%%WWWDIR%%/modules/organize/vendor/ext/css/ext-all.css
+%%WWWDIR%%/modules/organize/vendor/ext/css/ux-all.css
+%%WWWDIR%%/modules/organize/vendor/ext/images/default/box/tb-blue.gif
+%%WWWDIR%%/modules/organize/vendor/ext/images/default/button/btn.gif
+%%WWWDIR%%/modules/organize/vendor/ext/images/default/dd/drop-no.gif
+%%WWWDIR%%/modules/organize/vendor/ext/images/default/dd/drop-yes.gif
+%%WWWDIR%%/modules/organize/vendor/ext/images/default/form/text-bg.gif
+%%WWWDIR%%/modules/organize/vendor/ext/images/default/form/trigger.gif
+%%WWWDIR%%/modules/organize/vendor/ext/images/default/grid/invalid_line.gif
+%%WWWDIR%%/modules/organize/vendor/ext/images/default/grid/loading.gif
+%%WWWDIR%%/modules/organize/vendor/ext/images/default/panel/tool-sprites.gif
+%%WWWDIR%%/modules/organize/vendor/ext/images/default/panel/white-top-bottom.gif
+%%WWWDIR%%/modules/organize/vendor/ext/images/default/progress/progress-bg.gif
+%%WWWDIR%%/modules/organize/vendor/ext/images/default/qtip/bg.gif
+%%WWWDIR%%/modules/organize/vendor/ext/images/default/s.gif
+%%WWWDIR%%/modules/organize/vendor/ext/images/default/shadow-c.png
+%%WWWDIR%%/modules/organize/vendor/ext/images/default/shadow-lr.png
+%%WWWDIR%%/modules/organize/vendor/ext/images/default/shadow.png
+%%WWWDIR%%/modules/organize/vendor/ext/images/default/toolbar/bg.gif
+%%WWWDIR%%/modules/organize/vendor/ext/images/default/tree/arrows.gif
+%%WWWDIR%%/modules/organize/vendor/ext/images/default/tree/drop-add.gif
+%%WWWDIR%%/modules/organize/vendor/ext/images/default/tree/drop-between.gif
+%%WWWDIR%%/modules/organize/vendor/ext/images/default/tree/drop-over.gif
+%%WWWDIR%%/modules/organize/vendor/ext/images/default/tree/folder-open.gif
+%%WWWDIR%%/modules/organize/vendor/ext/images/default/tree/folder.gif
+%%WWWDIR%%/modules/organize/vendor/ext/images/default/tree/loading.gif
+%%WWWDIR%%/modules/organize/vendor/ext/images/default/window/left-corners.png
+%%WWWDIR%%/modules/organize/vendor/ext/images/default/window/left-right.png
+%%WWWDIR%%/modules/organize/vendor/ext/images/default/window/right-corners.png
+%%WWWDIR%%/modules/organize/vendor/ext/images/default/window/top-bottom.png
+%%WWWDIR%%/modules/organize/vendor/ext/images/fam/delete.gif
+%%WWWDIR%%/modules/organize/vendor/ext/js/ext-organize-bundle.js
 %%WWWDIR%%/modules/organize/views/organize_dialog.html.php
+%%WWWDIR%%/modules/organize/views/organize_frame.html.php
 %%WWWDIR%%/modules/recaptcha/controllers/admin_recaptcha.php
 %%WWWDIR%%/modules/recaptcha/css/recaptcha.css
 %%WWWDIR%%/modules/recaptcha/helpers/recaptcha.php
@@ -401,7 +443,7 @@
 %%WWWDIR%%/modules/server_add/helpers/server_add_theme.php
 %%WWWDIR%%/modules/server_add/js/admin.js
 %%WWWDIR%%/modules/server_add/js/server_add.js
-%%WWWDIR%%/modules/server_add/models/server_add_file.php
+%%WWWDIR%%/modules/server_add/models/server_add_entry.php
 %%WWWDIR%%/modules/server_add/module.info
 %%WWWDIR%%/modules/server_add/views/admin_server_add.html.php
 %%WWWDIR%%/modules/server_add/views/server_add_tree.html.php
@@ -423,6 +465,7 @@
 %%WWWDIR%%/modules/tag/helpers/tag_items_rest.php
 %%WWWDIR%%/modules/tag/helpers/tag_rest.php
 %%WWWDIR%%/modules/tag/helpers/tag_rss.php
+%%WWWDIR%%/modules/tag/helpers/tag_task.php
 %%WWWDIR%%/modules/tag/helpers/tag_theme.php
 %%WWWDIR%%/modules/tag/helpers/tags_rest.php
 %%WWWDIR%%/modules/tag/models/tag.php
@@ -457,6 +500,7 @@
 %%WWWDIR%%/modules/watermark/helpers/watermark_installer.php
 %%WWWDIR%%/modules/watermark/module.info
 %%WWWDIR%%/modules/watermark/views/admin_watermarks.html.php
+%%WWWDIR%%/php.ini
 %%WWWDIR%%/robots.txt
 %%WWWDIR%%/system/KohanaLicense.html
 %%WWWDIR%%/system/config/cache.php
@@ -756,7 +800,24 @@
 @dirrm %%WWWDIR%%/modules/recaptcha/controllers
 @dirrm %%WWWDIR%%/modules/recaptcha
 @dirrm %%WWWDIR%%/modules/organize/views
-@dirrm %%WWWDIR%%/modules/organize/lib
+@dirrm %%WWWDIR%%/modules/organize/vendor/ext/js
+@dirrm %%WWWDIR%%/modules/organize/vendor/ext/images/fam
+@dirrm %%WWWDIR%%/modules/organize/vendor/ext/images/default/window
+@dirrm %%WWWDIR%%/modules/organize/vendor/ext/images/default/tree
+@dirrm %%WWWDIR%%/modules/organize/vendor/ext/images/default/toolbar
+@dirrm %%WWWDIR%%/modules/organize/vendor/ext/images/default/qtip
+@dirrm %%WWWDIR%%/modules/organize/vendor/ext/images/default/progress
+@dirrm %%WWWDIR%%/modules/organize/vendor/ext/images/default/panel
+@dirrm %%WWWDIR%%/modules/organize/vendor/ext/images/default/grid
+@dirrm %%WWWDIR%%/modules/organize/vendor/ext/images/default/form
+@dirrm %%WWWDIR%%/modules/organize/vendor/ext/images/default/dd
+@dirrm %%WWWDIR%%/modules/organize/vendor/ext/images/default/button
+@dirrm %%WWWDIR%%/modules/organize/vendor/ext/images/default/box
+@dirrm %%WWWDIR%%/modules/organize/vendor/ext/images/default
+@dirrm %%WWWDIR%%/modules/organize/vendor/ext/images
+@dirrm %%WWWDIR%%/modules/organize/vendor/ext/css
+@dirrm %%WWWDIR%%/modules/organize/vendor/ext
+@dirrm %%WWWDIR%%/modules/organize/vendor
 @dirrm %%WWWDIR%%/modules/organize/helpers
 @dirrm %%WWWDIR%%/modules/organize/css
 @dirrm %%WWWDIR%%/modules/organize/controllers
