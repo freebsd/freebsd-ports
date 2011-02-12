@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ipa_ip6fw
-PORTVERSION=	1.0.2
+PORTVERSION=	1.1
 CATEGORIES=	net
 MASTER_SITES=	SF/ipa-system/modules/ipa_ip6fw
 
