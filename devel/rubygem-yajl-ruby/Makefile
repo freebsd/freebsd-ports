@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	yajl-ruby
-PORTVERSION=	0.8.0
+PORTVERSION=	0.8.1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
