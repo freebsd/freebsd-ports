@@ -19,6 +19,8 @@ USE_PHP=	mysql pcre xml session ctype filter json
 WANT_PHP_WEB=	yes
 IGNORE_WITH_PHP=	4
 
+LICENSE=	GPLv2
+
 TYPO3DIR=	www/${DISTNAME}
 SITEDIR?=	www/typo3
 SITESRC=	${WRKDIR}/${EDITION}-${PORTVERSION}
