@@ -8,6 +8,8 @@ bin/traffic_sac
 bin/traffic_server
 bin/traffic_shell
 bin/tsxs
+libexec/trafficserver/conf_remap.la
+libexec/trafficserver/conf_remap.so
 %%ETCDIR%%/admin_access.config
 %%ETCDIR%%/ae_ua.config
 %%ETCDIR%%/body_factory/default/.body_factory_info
@@ -43,7 +45,6 @@ bin/tsxs
 %%ETCDIR%%/icp.config
 %%ETCDIR%%/ip_allow.config
 %%ETCDIR%%/log_hosts.config
-%%ETCDIR%%/logs.config
 %%ETCDIR%%/logs_xml.config
 %%ETCDIR%%/mgmt_allow.config
 %%ETCDIR%%/mgr.cnf
@@ -64,8 +65,6 @@ bin/tsxs
 include/ts/experimental.h
 include/ts/remap.h
 include/ts/ts.h
-include/ts/ts_private.h
-include/ts/ts_private_frozen.h
 @dirrm %%DATADIR%%
 @dirrm libexec/trafficserver
 @dirrm include/ts
