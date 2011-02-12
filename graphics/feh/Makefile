@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	feh
-PORTVERSION=	1.11.1
+PORTVERSION=	1.11.2
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.chaosdorf.de/~derf/feh/ \
 		${MASTER_SITE_LOCAL}
