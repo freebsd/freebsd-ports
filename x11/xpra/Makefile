@@ -7,6 +7,7 @@
 
 PORTNAME=	xpra
 PORTVERSION=	0.0.7.17p1
+PORTREVISION=	1
 CATEGORIES=	x11
 MASTER_SITES=	http://winswitch.org/src/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S!p!-!}
@@ -20,6 +21,7 @@ BUILD_DEPENDS=	cython:${PORTSDIR}/lang/cython \
 RUN_DEPENDS=	cython:${PORTSDIR}/lang/cython \
 		ipython:${PORTSDIR}/devel/ipython \
 		${PYTHON_SITELIBDIR}/gtk-2.0/gtk/__init__.py:${PORTSDIR}/x11-toolkits/py-gtk2 \
+		${PYTHON_SITELIBDIR}/PIL/__init__.py:${PORTSDIR}/graphics/py-imaging \
 		Xvfb:${PORTSDIR}/x11-servers/xorg-vfbserver
 
 MAN1=		${PORTNAME}.1
