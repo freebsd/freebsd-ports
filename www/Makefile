@@ -1409,6 +1409,7 @@
     SUBDIR += phpwiki
     SUBDIR += phpwiki13
     SUBDIR += pivot-weblog
+    SUBDIR += pivotx
     SUBDIR += piwigo
     SUBDIR += piwik
     SUBDIR += planet
