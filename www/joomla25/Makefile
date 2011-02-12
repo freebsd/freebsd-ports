@@ -6,6 +6,7 @@
 
 PORTNAME=	joomla
 PORTVERSION=	1.6.0
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://joomlacode.org/gf/download/frsrelease/13869/60196/
 DISTNAME=	Joomla_${PORTVERSION}-Stable-Full_Package
@@ -18,7 +19,8 @@ NO_BUILD=	yes
 FETCH_ARGS=	-apR
 USE_BZIP2=	yes
 USE_MYSQL=	yes
-USE_PHP=	mysql pcre xml zlib session gd pdf json mbstring
+USE_PHP=	mysql pcre xml zlib session gd pdf json mbstring \
+		simplexml
 WANT_PHP_WEB=	yes
 PKGMESSAGE=	${WRKDIR}/pkg-message
 SUB_FILES=	pkg-message
