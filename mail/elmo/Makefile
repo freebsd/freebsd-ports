@@ -7,21 +7,28 @@
 
 PORTNAME=	elmo
 PORTVERSION=	1.3.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}%20devel/${PORTVERSION}
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	dhn@FreeBSD.org
 COMMENT=	Receive, filter, read, compose and send mail at the text console
 
-CONFLICTS=	elmo-devel-*
+CONFLICTS=	elmo-devel-[0-9]*
 
 GNU_CONFIGURE=	yes
 USE_ICONV=	yes
 USE_OPENSSL=	yes
 USE_PERL5_RUN=	yes
-CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
+
+CPPFLAGS=	-I${LOCALBASE}/include
+LDFLAGS=	-L${LOCALBASE}/lib
+CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" \
+		LDFLAGS="${LDFLAGS}"
+MAKE_JOBS_SAFE=	yes
 
 MAN1=		elmo.1 elmoconf.pl.1
 
@@ -36,8 +43,8 @@ USE_GETTEXT=	yes
 
 .include <bsd.port.pre.mk>
 
-.if exists(${LOCALBASE}/lib/libgpgme03.so) || defined(WITH_GPGME)
-LIB_DEPENDS+=	gpgme03:${PORTSDIR}/security/gpgme03
+.if exists(${LOCALBASE}/lib/libgpgme.so) || defined(WITH_GPGME)
+LIB_DEPENDS+=	gpgme.18:${PORTSDIR}/security/gpgme
 .else
 pre-everything::
 	@${ECHO_CMD}
@@ -48,6 +55,8 @@ pre-everything::
 post-patch:
 	@${REINPLACE_CMD} -e "s|/usr/bin/env perl|${PERL} -w|" \
 		${WRKSRC}/src/elmoconf.pl
+	@${REINPLACE_CMD} -e 's|gpgme4|gpgme|g' -e 's|== "|= "|g' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|gpgme4|gpgme|g' ${WRKSRC}/src/pgp.c
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
