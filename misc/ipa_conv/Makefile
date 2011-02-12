@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	ipa_conv
-PORTVERSION=	1.0
+PORTVERSION=	1.1
 CATEGORIES=	misc
-MASTER_SITES=	http://ipa-system.sourceforge.net/modules/ipa_conv/ \
-		LOCAL/avl
+MASTER_SITES=	SF/ipa-system/modules/ipa_conv
 
 MAINTAINER=	simon@comsys.ntu-kpi.kiev.ua
 COMMENT=	IPA accounting/database module for converting statistics
@@ -17,8 +16,8 @@ COMMENT=	IPA accounting/database module for converting statistics
 BUILD_DEPENDS=	${LOCALBASE}/include/ipa_mod.h:${PORTSDIR}/sysutils/ipa
 
 USE_BZIP2=	yes
-GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
+GNU_CONFIGURE=	yes
 
 PLIST_FILES=	lib/ipa_conv.la lib/ipa_conv.so
 
