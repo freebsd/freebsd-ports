@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	buildbot-slave
-PORTVERSION=	0.8.1
+PORTVERSION=	0.8.2
 CATEGORIES=	devel python
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	buildbot/buildbot/${PORTVERSION}
