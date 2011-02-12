@@ -6,12 +6,11 @@
 #
 
 PORTNAME=	merkaartor
-PORTVERSION=	0.17.0
-PORTREVISION=	1
+PORTVERSION=	0.17.2
 CATEGORIES=	astro
-MASTER_SITES=	http://www.merkaartor.be/attachments/download/192/
+MASTER_SITES=	http://www.merkaartor.be/attachments/download/253/
 
-MAINTAINER=	slaven@rezic.de
+MAINTAINER=	dev2@heesakkers.info
 COMMENT=	An openstreetmap mapping program
 
 BUILD_DEPENDS=	${LOCALBASE}/include/boost/concept_check.hpp:${PORTSDIR}/devel/boost-libs
@@ -19,6 +18,7 @@ BUILD_DEPENDS=	${LOCALBASE}/include/boost/concept_check.hpp:${PORTSDIR}/devel/bo
 LICENSE=	GPLv2
 
 USE_BZIP2=	yes
+USE_LDCONFIG=	yes
 
 USE_QT_VER=	4
 QT_COMPONENTS=	qmake_build uic_build moc_build rcc_build \
