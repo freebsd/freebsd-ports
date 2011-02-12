@@ -8,8 +8,8 @@
 PORTNAME=	bin-msvcrt
 PORTVERSION=	r${RUNTIMEVERSION}.a${APIVERSION}
 CATEGORIES=	devel
-MASTER_SITES=	SF/mingw/MinGW%20Runtime/mingwrt-${RUNTIMEVERSION}:runtime \
-		SF/mingw/MinGW%20API%20for%20MS-Windows/w32api-${APIVERSION}:api
+MASTER_SITES=	SF/mingw/MinGW/BaseSystem/RuntimeLibrary/MinGW-RT/mingwrt-${RUNTIMEVERSION}:runtime \
+		SF/mingw/MinGW/BaseSystem/RuntimeLibrary/Win32-API/w32api-${APIVERSION}:api
 PKGNAMEPREFIX=	mingw32-
 DISTFILES=	mingwrt-${RUNTIMEVERSION}-mingw32-dev${EXTRACT_SUFX}:runtime \
 		mingwrt-${RUNTIMEVERSION}-mingw32-dll${EXTRACT_SUFX}:runtime \
