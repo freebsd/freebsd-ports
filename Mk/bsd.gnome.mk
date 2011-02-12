@@ -448,8 +448,8 @@ libgsf_gnome_DETECT=		${LOCALBASE}/libdata/pkgconfig/libgsf-gnome-1.pc
 libgsf_gnome_USE_GNOME_IMPL=	gconf2 libgsf gnomevfs2
 
 pygobject_DETECT=		${LOCALBASE}/libdata/pkgconfig/pygobject-2.0.pc
-pygobject_BUILD_DEPENDS=	pygobject-codegen-2.0:${PORSTDIR}/devel/py-gobject
-pygobject_RUN_DEPENDS=		pygobject-codegen-2.0:${PORSTDIR}/devel/py-gobject
+pygobject_BUILD_DEPENDS=	pygobject-codegen-2.0:${PORTSDIR}/devel/py-gobject
+pygobject_RUN_DEPENDS=		pygobject-codegen-2.0:${PORTSDIR}/devel/py-gobject
 pygobject_USE_GNOME_IMPL=	glib20
 
 pygtk2_DETECT=			${LOCALBASE}/libdata/pkgconfig/pygtk-2.0.pc
