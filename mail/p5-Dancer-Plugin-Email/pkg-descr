@@ -4,4 +4,4 @@ how you wish to send the email in your application's YAML
 configuration file, then call the email keyword passing the
 necessary parameters.
 
-WWW: http://search.cpan.org/~ironcamel/Dancer-Plugin-Email/
+WWW: http://search.cpan.org/dist/Dancer-Plugin-Email/

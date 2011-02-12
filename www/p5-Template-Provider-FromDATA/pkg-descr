@@ -4,4 +4,4 @@ This module allows you to store your templates inline with your code
 in the __DATA__ section. It will search any number of classes
 specified.
 
-WWW: http://search.cpan.org/~bricas/Template-Provider-FromDATA-0.08
+WWW: http://search.cpan.org/dist/Template-Provider-FromDATA/
