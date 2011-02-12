@@ -3,6 +3,7 @@
 %%LIBAWLDIR%%/dba/grant-on-all-tables.sh
 %%LIBAWLDIR%%/dba/schema-management.sql
 %%LIBAWLDIR%%/inc/AWLUtilities.php
+%%LIBAWLDIR%%/inc/AWLUtilities.php.in
 %%LIBAWLDIR%%/inc/AuthPlugin.php
 %%LIBAWLDIR%%/inc/AuthPlugins.php
 %%LIBAWLDIR%%/inc/AwlDBDialect.php
