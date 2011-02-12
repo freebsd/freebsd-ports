@@ -2,13 +2,12 @@ IPA_IP6FW -- IPA accounting module for FreeBSD IPv6 Firewall
 
 Main features:
 
-- The module is designed for traffic accounting from FreeBSD IPv6
-  Firewall rules byte counters;
+- The module is designed for traffic accounting from IPv6 Firewall
+  rules byte counters;
 - The module understands IPv6 Firewall rules byte counters overflow;
-- It is possible to summarize and subtract statistics from IPv6
-  Firewall rules byte counters;
-- It is possible to distinguish IPv6 Firewall rules with the same
-  numbers;
+- It is possible to summarize and subtract statistics of IPv6 Firewall
+  rules byte counters;
+- It is possible to distinguish IPv6 Firewall rules with the same numbers;
 - IPv6 Firewall rules can be dynamically added to and deleted from
   the system, the module correctly works in such situations.
 

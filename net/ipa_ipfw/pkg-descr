@@ -2,13 +2,12 @@ IPA_IPFW -- IPA accounting module for FreeBSD IP Firewall
 
 Main features:
 
-- The module is designed for traffic accounting from FreeBSD IP
-  Firewall (including IPFW2) rules byte counters;
+- The module is designed for traffic accounting from IP Firewall
+  (including IPFW2) rules byte counters;
 - The module understands IP Firewall rules byte counters overflow;
-- It is possible to summarize and subtract statistics from IP Firewall
+- It is possible to summarize and subtract statistics of IP Firewall
   rules byte counters;
-- It is possible to distinguish IP Firewall rules with the same
-  numbers;
+- It is possible to distinguish IP Firewall rules with the same numbers;
 - IP Firewall rules can be dynamically added to and deleted from
   the system, the module correctly works in such situations.
 
