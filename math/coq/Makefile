@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	coq
-DISTVERSION=	8.3
+DISTVERSION=	8.3pl1
 PORTEPOCH=	1
 CATEGORIES=	math
 MASTER_SITES=	http://coq.inria.fr/distrib/V${DISTVERSION}/files/ \
