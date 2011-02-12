@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	firefox-sync
-PORTVERSION=	1.6.2
+PORTVERSION=	1.6.3
 PORTEPOCH=	2
 CATEGORIES=	www
 MASTER_SITES=	http://hg.mozilla.org/services/fx-sync/archive/${DISTVERSION}${EXTRACT_SUFX}/
