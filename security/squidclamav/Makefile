@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	squidclamav
-PORTVERSION=	5.4
+PORTVERSION=	5.7
 CATEGORIES=	security
 MASTER_SITES=	SF
 
