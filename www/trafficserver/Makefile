@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	trafficserver
-PORTVERSION=	2.1.4
+PORTVERSION=	2.1.5
 CATEGORIES=	www
 MASTER_SITES=	APACHE/${PORTNAME}
 DISTNAME=	${PORTNAME}-${PORTVERSION}-unstable
@@ -14,11 +14,11 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-unstable
 MAINTAINER=	jnlin@csie.nctu.edu.tw
 COMMENT=	A fast, scalable and extensible HTTP proxy server
 
-LICENSE=	ASL
-
 LIB_DEPENDS=	execinfo.1:${PORTSDIR}/devel/libexecinfo \
 		expat.6:${PORTSDIR}/textproc/expat2 \
 		pcre.0:${PORTSDIR}/devel/pcre
+
+LICENSE=	ASL
 
 USE_AUTOTOOLS=	autoconf automake libtool
 USE_BZIP2=	yes
