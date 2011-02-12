@@ -7,6 +7,8 @@ etc/bash_completion.d/apt
 etc/bash_completion.d/apt-build
 etc/bash_completion.d/aptitude
 etc/bash_completion.d/aspell
+etc/bash_completion.d/autoconf
+etc/bash_completion.d/automake
 etc/bash_completion.d/autorpm
 etc/bash_completion.d/bash-builtins
 etc/bash_completion.d/bind-utils
@@ -26,6 +28,7 @@ etc/bash_completion.d/coreutils
 etc/bash_completion.d/cowsay
 etc/bash_completion.d/cpan2dist
 etc/bash_completion.d/cpio
+etc/bash_completion.d/crontab
 etc/bash_completion.d/cryptsetup
 etc/bash_completion.d/cups
 etc/bash_completion.d/cvs
@@ -36,8 +39,11 @@ etc/bash_completion.d/dict
 etc/bash_completion.d/dpkg
 etc/bash_completion.d/dselect
 etc/bash_completion.d/dsniff
+etc/bash_completion.d/dvd+rw-tools
+etc/bash_completion.d/e2fsprogs
 etc/bash_completion.d/findutils
 etc/bash_completion.d/freeciv
+etc/bash_completion.d/freerdp
 etc/bash_completion.d/fuse
 etc/bash_completion.d/gcc
 etc/bash_completion.d/gcl
@@ -50,12 +56,15 @@ etc/bash_completion.d/gpg
 etc/bash_completion.d/gpg2
 etc/bash_completion.d/gzip
 etc/bash_completion.d/heimdal
+etc/bash_completion.d/helpers/perl
 etc/bash_completion.d/hping2
 etc/bash_completion.d/iconv
+etc/bash_completion.d/iftop
 etc/bash_completion.d/ifupdown
 etc/bash_completion.d/imagemagick
 etc/bash_completion.d/info
 etc/bash_completion.d/ipmitool
+etc/bash_completion.d/iproute2
 etc/bash_completion.d/ipsec
 etc/bash_completion.d/iptables
 etc/bash_completion.d/ipv6calc
@@ -71,6 +80,8 @@ etc/bash_completion.d/lilo
 etc/bash_completion.d/links
 etc/bash_completion.d/lintian
 etc/bash_completion.d/lisp
+etc/bash_completion.d/lrzip
+etc/bash_completion.d/lsof
 etc/bash_completion.d/lvm
 etc/bash_completion.d/lzma
 etc/bash_completion.d/lzop
@@ -97,6 +108,7 @@ etc/bash_completion.d/net-tools
 etc/bash_completion.d/nmap
 etc/bash_completion.d/ntpdate
 etc/bash_completion.d/openldap
+etc/bash_completion.d/open-iscsi
 etc/bash_completion.d/openssl
 etc/bash_completion.d/p4
 etc/bash_completion.d/perl
@@ -130,14 +142,17 @@ etc/bash_completion.d/samba
 etc/bash_completion.d/sbcl
 etc/bash_completion.d/screen
 etc/bash_completion.d/service
+etc/bash_completion.d/sh
 etc/bash_completion.d/shadow
 etc/bash_completion.d/sitecopy
 etc/bash_completion.d/smartctl
 etc/bash_completion.d/snownews
+etc/bash_completion.d/sqlite3
 etc/bash_completion.d/ssh
 etc/bash_completion.d/sshfs
 etc/bash_completion.d/strace
 etc/bash_completion.d/svk
+etc/bash_completion.d/sysbench
 etc/bash_completion.d/sysctl
 etc/bash_completion.d/sysv-rc
 etc/bash_completion.d/tar
@@ -158,9 +173,12 @@ etc/bash_completion.d/xm
 etc/bash_completion.d/xmllint
 etc/bash_completion.d/xmlwf
 etc/bash_completion.d/xmms
+etc/bash_completion.d/xmodmap
 etc/bash_completion.d/xrandr
+etc/bash_completion.d/xrdb
 etc/bash_completion.d/xsltproc
 etc/bash_completion.d/xz
 etc/bash_completion.d/yp-tools
 etc/bash_completion.d/yum-arch
+@dirrm etc/bash_completion.d/helpers
 @dirrm etc/bash_completion.d
