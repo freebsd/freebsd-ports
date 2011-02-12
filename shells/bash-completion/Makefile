@@ -6,8 +6,7 @@
 #
 
 PORTNAME=		bash-completion
-PORTVERSION=	1.2
-PORTREVISION=	2
+PORTVERSION=	1.3
 PORTEPOCH=		1
 CATEGORIES=		shells
 MASTER_SITES=	http://bash-completion.alioth.debian.org/files/
@@ -26,7 +25,8 @@ GNU_CONFIGURE=	yes
 .include <bsd.port.pre.mk>
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|/usr/local|${PREFIX}|g; \
+	@${ECHO_CMD} You can safely ignore this next error...
+	-@${REINPLACE_CMD} -e 's|/usr/local|${PREFIX}|g; \
 		s|/etc/bash_completion|${PREFIX}&|g; \
 		s|/usr\(/sbin/postconf\)|${PREFIX}\1|g; \
 		s|/usr\(/lib/rpm/macros\)|${PREFIX}\1|g; \
@@ -36,7 +36,8 @@ post-patch:
 		s|/usr/share/info|&:${PREFIX}/info|g; \
 		s|\$$(sysconfdir)/profile.d|${PREFIX}/bin|g; \
 		s|\(FLAC\)|\1\|flv\|FLV|' \
-		${WRKSRC}/bash_completion ${WRKSRC}/Makefile.in ${WRKSRC}/contrib/*
+		${WRKSRC}/bash_completion ${WRKSRC}/Makefile.in \
+		${WRKSRC}/completions/* ${WRKSRC}/completions/helpers/*
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
