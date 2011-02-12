@@ -11,7 +11,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	SF/${PORTNAME}
 PKGNAMEPREFIX=	gimp-
 PKGNAMESUFFIX=	-plugin
-DISTNAME=	${PORTNAME}_${PORTVERSION}_testing
+DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	cvs-src@yandex.ru
 COMMENT=	GREYC's Magic Image Converter
@@ -30,6 +30,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
+USE_GNOME=	gtk20
 USE_XORG=	x11 xext xrandr
 
 PLUGIN_DIR?=	libexec/gimp/2.2/plug-ins
@@ -62,9 +63,9 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/gmic ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/man/gmic.1.gz ${MANPREFIX}/man/man1
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}/img
-	@${CP} -R ${WRKSRC}/html/*.* ${DOCSDIR}
-	@(cd ${WRKSRC}/html/img && ${COPYTREE_SHARE} \* ${DOCSDIR}/img)
+	@${MKDIR} ${DOCSDIR}/html/img
+	@${CP} -R ${WRKSRC}/html/*.* ${DOCSDIR}/html
+	@(cd ${WRKSRC}/html/img && ${COPYTREE_SHARE} \* ${DOCSDIR}/html/img)
 .endif
 .if defined(WITH_BASH)
 	${INSTALL_SCRIPT} ${WRKSRC}/src/gmic_bashcompletion.sh \
