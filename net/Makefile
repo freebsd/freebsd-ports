@@ -228,6 +228,7 @@
     SUBDIR += hinfo
     SUBDIR += hlmaster
     SUBDIR += honeyd
+    SUBDIR += hostapd
     SUBDIR += howl
     SUBDIR += hping
     SUBDIR += hping-devel
