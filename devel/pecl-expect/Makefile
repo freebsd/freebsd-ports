@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	expect
-PORTVERSION=	0.2.7
+PORTVERSION=	0.2.9
 CATEGORIES=	devel pear
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
