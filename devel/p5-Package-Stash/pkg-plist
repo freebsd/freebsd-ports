@@ -1,5 +1,9 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Package/Stash/.packlist
+bin/package-stash-conflicts
 %%SITE_PERL%%/Package/Stash.pm
-@dirrmtry %%SITE_PERL%%/Package
+%%SITE_PERL%%/Package/Stash/Conflicts.pm
+%%SITE_PERL%%/Package/Stash/PP.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Package/Stash/.packlist
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Package/Stash
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Package
+@dirrmtry %%SITE_PERL%%/Package/Stash
+@dirrmtry %%SITE_PERL%%/Package
