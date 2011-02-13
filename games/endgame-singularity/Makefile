@@ -6,14 +6,13 @@
 #
 
 PORTNAME=	singularity
-PORTVERSION=	0.30
-PORTREVISION=	4
+PORTVERSION=	0.30b
 CATEGORIES=	games
-MASTER_SITES=	http://emhsoft.com/singularity/ CENKES
+MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 PKGNAMEPREFIX=	endgame-
 EXTRACT_SUFX=	-src.tar.gz
 
-MAINTAINER=	freebsd-ports@sslash.org.ua
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simulates the life of a true AI
 
 RUN_DEPENDS=	py*-game>=1.8:${PORTSDIR}/devel/py-game \
@@ -23,6 +22,7 @@ USE_PYDISTUTILS=yes
 USE_PYTHON=	yes
 USE_SDL=	image mixer
 PORTDOCS=	AUTHORS Changelog README.txt TODO
+PROJECTHOST=	${PKGNAMEPREFIX}${PORTNAME}
 
 OPTIONS=	MUSIC "Install original music pack" on
 

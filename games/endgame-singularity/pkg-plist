@@ -101,12 +101,14 @@ bin/singularity
 %%DATADIR%%/bases_en_US.dat
 %%DATADIR%%/bases_es_AR.dat
 %%DATADIR%%/bases_fr_FR.dat
+%%DATADIR%%/bases_it_IT.dat
 %%DATADIR%%/bases_sv_SE.dat
 %%DATADIR%%/events.dat
 %%DATADIR%%/events_de_DE.dat
 %%DATADIR%%/events_en_US.dat
 %%DATADIR%%/events_es_AR.dat
 %%DATADIR%%/events_fr_FR.dat
+%%DATADIR%%/events_it_IT.dat
 %%DATADIR%%/events_sv_SE.dat
 %%DATADIR%%/fonts/DejaVuSans.ttf
 %%DATADIR%%/fonts/acknowtt.ttf
@@ -116,19 +118,23 @@ bin/singularity
 %%DATADIR%%/images/icon.png
 %%DATADIR%%/intro_de_DE.dat
 %%DATADIR%%/intro_en_US.dat
+%%DATADIR%%/intro_es_AR.dat
 %%DATADIR%%/intro_fr_FR.dat
+%%DATADIR%%/intro_it_IT.dat
 %%DATADIR%%/intro_sv_SE.dat
 %%DATADIR%%/items.dat
 %%DATADIR%%/items_de_DE.dat
 %%DATADIR%%/items_en_US.dat
 %%DATADIR%%/items_es_AR.dat
 %%DATADIR%%/items_fr_FR.dat
+%%DATADIR%%/items_it_IT.dat
 %%DATADIR%%/items_sv_SE.dat
 %%DATADIR%%/locations.dat
 %%DATADIR%%/locations_de_DE.dat
 %%DATADIR%%/locations_en_US.dat
 %%DATADIR%%/locations_es_AR.dat
 %%DATADIR%%/locations_fr_FR.dat
+%%DATADIR%%/locations_it_IT.dat
 %%DATADIR%%/locations_sv_SE.dat
 %%DATADIR%%/music/.keep_me
 %%DATADIR%%/music-src/Advanced Simulacra.psy
@@ -151,12 +157,14 @@ bin/singularity
 %%DATADIR%%/strings_en_US.dat
 %%DATADIR%%/strings_es_AR.dat
 %%DATADIR%%/strings_fr_FR.dat
+%%DATADIR%%/strings_it_IT.dat
 %%DATADIR%%/strings_sv_SE.dat
 %%DATADIR%%/techs.dat
 %%DATADIR%%/techs_de_DE.dat
 %%DATADIR%%/techs_en_US.dat
 %%DATADIR%%/techs_es_AR.dat
 %%DATADIR%%/techs_fr_FR.dat
+%%DATADIR%%/techs_it_IT.dat
 %%DATADIR%%/techs_sv_SE.dat
 @dirrm %%PYTHON_SITELIBDIR%%/singularity/graphics
 @dirrm %%PYTHON_SITELIBDIR%%/singularity/screens
