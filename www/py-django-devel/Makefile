@@ -9,8 +9,7 @@ PORTNAME=	django
 PORTVERSION=	${REVISION}
 PORTEPOCH=	1
 CATEGORIES=	www python
-MASTER_SITES=	http://www.cs.nctu.edu.tw/~lwhsu/ports/distfiles/ \
-		${MASTER_SITE_LOCAL}
+MASTER_SITES=	http://www.cs.nctu.edu.tw/~lwhsu/ports/distfiles/
 MASTER_SITE_SUBDIR=	lwhsu/django
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 PKGNAMESUFFIX=	-devel
@@ -20,7 +19,7 @@ DIST_SUBDIR=	python
 MAINTAINER=	lwhsu@FreeBSD.org
 COMMENT=	High-level Python Web framework
 
-REVISION=	15044
+REVISION=	15524
 
 USE_BZIP2=	yes
 USE_GETTEXT=	yes
