@@ -6,19 +6,18 @@
 #
 
 PORTNAME=	IO-Compress-Lzma
-PORTVERSION=	2.030
-PORTREVISION=	1
+PORTVERSION=	2.033
 CATEGORIES=	archivers perl5
-MASTER_SITES=	CPAN
+MASTER_SITES=	CPAN/../../authors/id/P/PM/PMQS
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Write lzma files/buffers
 
-BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Compress/Raw/Lzma.pm:${PORTSDIR}/archivers/p5-Compress-Raw-Lzma \
-		${SITE_PERL}/IO/Compress/Base.pm:${PORTSDIR}/archivers/p5-IO-Compress
-RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Compress/Raw/Lzma.pm:${PORTSDIR}/archivers/p5-Compress-Raw-Lzma \
-		${SITE_PERL}/IO/Compress/Base.pm:${PORTSDIR}/archivers/p5-IO-Compress
+BUILD_DEPENDS=	p5-Compress-Raw-Lzma>=2.033:${PORTSDIR}/archivers/p5-Compress-Raw-Lzma \
+		p5-IO-Compress>=2.033:${PORTSDIR}/archivers/p5-IO-Compress
+RUN_DEPENDS=	p5-Compress-Raw-Lzma>=2.033:${PORTSDIR}/archivers/p5-Compress-Raw-Lzma \
+		p5-IO-Compress>=2.033:${PORTSDIR}/archivers/p5-IO-Compress
 
 PERL_CONFIGURE=	yes
 
