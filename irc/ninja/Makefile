@@ -8,27 +8,27 @@
 PORTNAME=	ninja
 PORTVERSION=	1.5.8.1
 CATEGORIES=	irc
-MASTER_SITES=	ftp://ninja.qoop.org/ninja/sources/
+MASTER_SITES=	http://www.bayofrum.net/dist/${PORTNAME}/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	utisoft@gmail.com
 COMMENT=	Another ircII based irc client
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	IRCLIB="${IRCLIB}"
-NO_LATEST_LINK=	yes
+CONFIGURE_ENV=	IRCLIB="${DATADIR}"
+DISABLE_MAKE_JOBS=	yes
 
-IRCLIB=		${PREFIX}/share/ninja
+LATEST_LINK=	irc-ninja
 
 post-patch:
-	@${REINPLACE_CMD} -e "s|%%IRCLIB%%|${IRCLIB}|g" \
+	@${REINPLACE_CMD} -e "s|%%IRCLIB%%|${DATADIR}|g" \
 		${WRKSRC}/include/config.h.dist
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/ninja ${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKSRC}/ninjawserv ${PREFIX}/bin
-	@${MKDIR} ${IRCLIB}/translation
-	${INSTALL_DATA} ${WRKSRC}/translation/* ${IRCLIB}/translation
+	@${MKDIR} ${DATADIR}/translation
+	${INSTALL_DATA} ${WRKSRC}/translation/* ${DATADIR}/translation
 
 .include <bsd.port.mk>
