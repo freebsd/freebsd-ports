@@ -104,6 +104,7 @@
     SUBDIR += p5-IO-Compress
     SUBDIR += p5-IO-Compress-Lzf
     SUBDIR += p5-IO-Compress-Lzma
+    SUBDIR += p5-IO-Compress-Lzop
     SUBDIR += p5-IO-Zlib
     SUBDIR += p5-Mac-Macbinary
     SUBDIR += p5-POE-Filter-Bzip2
