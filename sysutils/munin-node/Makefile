@@ -12,7 +12,7 @@ CATEGORIES=	sysutils perl5
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}%20stable/${PORTVERSION}
 PKGNAMESUFFIX=	-node
 
-MAINTAINER=	des@FreeBSD.org
+MAINTAINER=	flo@FreeBSD.org
 COMMENT=	Node-specific part of Munin
 
 BUILD_DEPENDS=	${SITE_PERL}/Module/Build.pm:${PORTSDIR}/devel/p5-Module-Build \
