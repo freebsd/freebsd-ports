@@ -20,7 +20,7 @@ USE_GMAKE=	yes
 USE_BZIP2=	yes
 USE_LDCONFIG=	${PREFIX}/lib/inspircd
 USE_RC_SUBR=	inspircd.sh
-DISABLE_MAKE_JOBS=	yes
+MAKE_JOBS_UNSAFE=	yes
 
 INSPIRCD_USR?=	ircd
 INSPIRCD_UID?=	72
