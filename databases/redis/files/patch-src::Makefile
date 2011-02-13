@@ -1,0 +1,24 @@
+--- src/Makefile.orig	2010-12-24 09:29:14.000000000 +0300
++++ src/Makefile	2010-12-24 09:31:51.000000000 +0300
+@@ -9,6 +9,9 @@
+   CFLAGS?= -std=c99 -pedantic $(OPTIMIZATION) -Wall -W -D__EXTENSIONS__ -D_XPG6
+   CCLINK?= -ldl -lnsl -lsocket -lm -lpthread
+   DEBUG?= -g -ggdb 
++else ifeq ($(uname_S),FreeBSD)
++  CFLAGS?= $(CFLAGS)
++  CCLINK?= -pthread -lm
+ else
+   CFLAGS?= -std=c99 -pedantic $(OPTIMIZATION) -Wall -W $(ARCH) $(PROF)
+   CCLINK?= -lm -pthread
+@@ -19,9 +22,9 @@
+   CCLINK+= -ltcmalloc
+   CFLAGS+= -DUSE_TCMALLOC
+ endif
+-CCOPT= $(CFLAGS) $(CCLINK) $(ARCH) $(PROF)
++CCOPT= $(CFLAGS) $(CCLINK) $(PROF)
+ 
+-PREFIX= /usr/local
++PREFIX?= $(PREFIX)
+ INSTALL_BIN= $(PREFIX)/bin
+ INSTALL= cp -p
+ 
