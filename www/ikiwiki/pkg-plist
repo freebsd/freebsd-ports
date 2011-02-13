@@ -576,6 +576,9 @@
 %%DATADIR%%/themes/blueview/background_darkness.png
 %%DATADIR%%/themes/blueview/header_background.png
 %%DATADIR%%/themes/blueview/style.css
+%%DATADIR%%/themes/goldtype/background_darkness.png
+%%DATADIR%%/themes/goldtype/header_background.png
+%%DATADIR%%/themes/goldtype/style.css
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/IkiWiki/.packlist
 %%SITE_PERL%%/IkiWiki.pm
 %%SITE_PERL%%/IkiWiki/CGI.pm
@@ -825,6 +828,7 @@ share/locale/vi/LC_MESSAGES/ikiwiki.mo
 @dirrm %%DATADIR%%/templates
 @dirrm %%DATADIR%%/themes/actiontabs
 @dirrm %%DATADIR%%/themes/blueview
+@dirrm %%DATADIR%%/themes/goldtype
 @dirrm %%DATADIR%%/themes
 @dirrm %%DATADIR%%
 @dirrm %%SITE_PERL%%/IkiWiki/Plugin
