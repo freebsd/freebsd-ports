@@ -1326,6 +1326,7 @@ bwidget                         ports/x11-toolkits/bwidget
 bwm-ng                          ports/net-mgmt/bwm-ng
 bwn-firmware-kmod               ports/net/bwn-firmware-kmod
 bwping                          ports/net/bwping
+bxpkg                           ports/ports-mgmt/bxpkg
 byaccj                          ports/devel/byaccj
 bygfoot                         ports/games/bygfoot
 bzflag                          ports/games/bzflag
@@ -5542,6 +5543,7 @@ horde-turba                     ports/mail/horde-turba
 horde-vacation                  ports/mail/horde-vacation
 horde-whups                     ports/devel/horde-whups
 horde-wicked                    ports/www/horde-wicked
+hostapd                         ports/net/hostapd
 hot-babe                        ports/deskutils/hot-babe
 hotkeys                         ports/misc/hotkeys
 hotssh                          ports/security/hotssh
@@ -13985,6 +13987,7 @@ p5-SQL-Abstract-Plugin-InsertMulti  ports/databases/p5-SQL-Abstract-Plugin-Inser
 p5-SQL-Interp                   ports/databases/p5-SQL-Interp
 p5-SQL-ReservedWords            ports/databases/p5-SQL-ReservedWords
 p5-SQL-Statement                ports/databases/p5-SQL-Statement
+p5-SQL-Tokenizer                ports/lang/p5-SQL-Tokenizer
 p5-SQL-Translator               ports/databases/p5-SQL-Translator
 p5-SQLite-Work                  ports/databases/p5-SQLite-Work
 p5-SRU                          ports/www/p5-SRU
@@ -18239,6 +18242,7 @@ p5-sql-abstract-plugin-insertmulti  ports/databases/p5-SQL-Abstract-Plugin-Inser
 p5-sql-interp                   ports/databases/p5-SQL-Interp
 p5-sql-reservedwords            ports/databases/p5-SQL-ReservedWords
 p5-sql-statement                ports/databases/p5-SQL-Statement
+p5-sql-tokenizer                ports/lang/p5-SQL-Tokenizer
 p5-sql-translator               ports/databases/p5-SQL-Translator
 p5-sqlite-work                  ports/databases/p5-SQLite-Work
 p5-squatting                    ports/www/p5-Squatting
@@ -20485,6 +20489,7 @@ pire                            ports/devel/pire
 pisg                            ports/irc/pisg
 pitivi                          ports/multimedia/pitivi
 pivot-weblog                    ports/www/pivot-weblog
+pivotx                          ports/www/pivotx
 piwigo                          ports/www/piwigo
 piwik                           ports/www/piwik
 pixelize                        ports/graphics/pixelize
@@ -25339,6 +25344,7 @@ typhoon                         ports/databases/typhoon
 typo                            ports/www/typo
 typo3                           ports/www/typo3
 typo343                         ports/www/typo343
+typo344                         ports/www/typo344
 typolight                       ports/www/typolight
 tyrquake                        ports/games/tyrquake
 u++                             ports/lang/u++
