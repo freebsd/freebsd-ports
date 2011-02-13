@@ -10,7 +10,7 @@ PORTVERSION=	006
 CATEGORIES=	games
 MASTER_SITES=	GOOGLE_CODE CENKES
 
-MAINTAINER=	freebsd-ports@sslash.org.ua
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Music pack for endgame-singularity
 
 PROJECTHOST=	endgame-singularity
