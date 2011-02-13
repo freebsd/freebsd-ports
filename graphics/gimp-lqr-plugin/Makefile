@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	gimp-lqr-plugin
-PORTVERSION=	0.6.1
-PORTREVISION=	4
+PORTVERSION=	0.7.1
 CATEGORIES=	graphics
-MASTER_SITES=	http://liquidrescale.wdfiles.com/local--files/en:download-page/ \
+MASTER_SITES=	http://liquidrescale.wdfiles.com/local--files/en:download-page-sources/ \
 		http://mirror.amdmi3.ru/distfiles/
 
 MAINTAINER=	amdmi3@FreeBSD.org
