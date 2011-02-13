@@ -2640,6 +2640,7 @@ ros/ros/test/test_rospack/stack_overlay/stack/stack.xml
 ros/ros/test/test_rospack/structure_test/.hidden/manifest.xml
 ros/ros/test/test_rospack/structure_test/package1/manifest.xml
 ros/ros/test/test_rospack/structure_test/package2/manifest.xml
+ros/ros/test/test_rospack/structure_test/package2/rospack_nosubdirs
 ros/ros/test/test_rospack/structure_test/subdir1/package3/manifest.xml
 ros/ros/test/test_rospack/structure_test/subdir1/subdir1_1/package4/manifest.xml
 ros/ros/test/test_rospack/structure_test/subdir1/subdir1_1/package5/manifest.xml
@@ -3035,7 +3036,6 @@ ros/ros/tools/rosbag/scripts/fixbag.py
 ros/ros/tools/rosbag/scripts/fixbag_batch.py
 ros/ros/tools/rosbag/scripts/makerule.py
 ros/ros/tools/rosbag/scripts/savemsg.py
-ros/ros/tools/rosbag/scripts/slash.py
 ros/ros/tools/rosbag/scripts/topic_renamer.py
 ros/ros/tools/rosbag/src/bag.cpp
 ros/ros/tools/rosbag/src/buffer.cpp

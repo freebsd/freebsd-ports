@@ -1,0 +1,14 @@
+--- test/test_rosbagmigration/Makefile.orig	2009-07-20 03:49:11.000000000 +0200
++++ test/test_rosbagmigration/Makefile	2011-02-13 13:39:46.000000000 +0100
+@@ -4,7 +4,11 @@
+ 	@mkdir -p build
+ 	-mkdir -p bin
+ 	cd build && cmake -DCMAKE_TOOLCHAIN_FILE=`rospack find rosbuild`/rostoolchain.cmake ..
++ifneq ($(MAKE),)
++	cd build && $(MAKE) $(ROS_PARALLEL_JOBS)
++else
+ 	cd build && make $(ROS_PARALLEL_JOBS)
++endif
+ 
+ PACKAGE_NAME=$(shell basename $(PWD))
+ 

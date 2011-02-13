@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	ros
-PORTVERSION=	1.2.4
-PORTREVISION=	5
+PORTVERSION=	1.2.5
 CATEGORIES=	devel
 MASTER_SITES=	ftp://rene-ladan.nl/pub/distfiles/ros/
 DISTFILES=	ros-${PORTVERSION}.tar.bz2 SWIG-1.3.29-wx.tar.gz \
@@ -308,7 +307,7 @@ do-install:
     tools/rosbag/scripts/fix_md5sums.py \
     tools/rosbag/scripts/fix_moved_messages.py tools/rosbag/scripts/fixbag.py \
     tools/rosbag/scripts/fixbag_batch.py tools/rosbag/scripts/makerule.py \
-    tools/rosbag/scripts/savemsg.py tools/rosbag/scripts/slash.py \
+    tools/rosbag/scripts/savemsg.py \
     tools/rosbag/scripts/topic_renamer.py tools/rosbag/test/latched_pub.py \
     tools/rosbag/test/latched_sub.py tools/rosbagmigration/scripts/checkbag.py \
     tools/rosbagmigration/scripts/fixbag.py \
