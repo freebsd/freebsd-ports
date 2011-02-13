@@ -1,0 +1,4 @@
+Mscgen is a small program that parses Message Sequence Chart descriptions and
+produces PNG, SVG, EPS or server side image maps (ismaps) as the output.
+
+WWW:	http://www.mcternan.me.uk/mscgen/

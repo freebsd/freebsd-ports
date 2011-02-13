@@ -564,6 +564,7 @@
     SUBDIR += mmrecover
     SUBDIR += morpheus
     SUBDIR += moth
+    SUBDIR += mscgen
     SUBDIR += mtpaint
     SUBDIR += multivideo
     SUBDIR += mupdf
