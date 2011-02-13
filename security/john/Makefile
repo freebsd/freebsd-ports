@@ -7,7 +7,7 @@
 
 PORTNAME=	john
 PORTVERSION=	1.7.6
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	security
 MASTER_SITES=	http://www.openwall.com/john/g/ \
 		http://mirrors.kernel.org/openwall/projects/john/${PORTVERSION}/ \
@@ -15,11 +15,13 @@ MASTER_SITES=	http://www.openwall.com/john/g/ \
 		http://gd.tuwien.ac.at/opsys/linux/openwall/projects/john/${PORTVERSION}/
 
 PATCH_SITES=	${MASTER_SITES:H:H:S/$/\/contrib\//}
-PATCHFILES=	john-${PORTVERSION}-jumbo-9.diff.gz
+PATCHFILES=	john-${PORTVERSION}-jumbo-11.diff.gz
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Featureful Unix password cracker
+
+LICENSE=	GPLv2
 
 USE_BZIP2=	yes
 BUILD_WRKSRC=	${WRKDIR}/${DISTNAME}/src
@@ -76,8 +78,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/run/john.conf \
 		${PREFIX}/etc/john.conf.default
 .if !exists(${PREFIX}/etc/john.conf)
-	${INSTALL_DATA} ${WRKSRC}/run/john.conf \
-		${PREFIX}/etc/john.conf
+	${INSTALL_DATA} ${WRKSRC}/run/john.conf ${PREFIX}/etc
 .endif
 
 .if !defined(NOPORTDOCS)
