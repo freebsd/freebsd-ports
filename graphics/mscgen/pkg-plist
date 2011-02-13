@@ -1,0 +1,13 @@
+@comment $FreeBSD$
+bin/mscgen
+%%DOCSDIR%%/COPYING
+%%DOCSDIR%%/ChangeLog
+%%DOCSDIR%%/README
+%%DOCSDIR%%/examples/boxes_example.msc
+%%DOCSDIR%%/examples/client_server.msc
+%%DOCSDIR%%/examples/colour_sample.msc
+%%DOCSDIR%%/examples/msg_types.msc
+%%DOCSDIR%%/examples/simple_prog_desc.msc
+%%DOCSDIR%%/mscgen.lang
+@dirrm %%DOCSDIR%%/examples
+@dirrm %%DOCSDIR%%
