@@ -16,4 +16,6 @@ USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
 
+PLIST_FILES=	bin/tilt
+
 .include <bsd.port.mk>
