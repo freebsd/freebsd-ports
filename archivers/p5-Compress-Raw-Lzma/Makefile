@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	Compress-Raw-Lzma
-PORTVERSION=	2.031
-PORTREVISION=	1
+PORTVERSION=	2.033
 CATEGORIES=	archivers perl5
-MASTER_SITES=	CPAN
+MASTER_SITES=	CPAN/../../authors/id/P/PM/PMQS
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -20,6 +19,10 @@ PERL_CONFIGURE=	yes
 MAN3=		Compress::Raw::Lzma.3
 
 .include <bsd.port.pre.mk>
+
+.if (${ARCH} == "sparc64")
+LZMA_DEPEND=	xz
+.endif
 
 .if (${OSVERSION} > 900012) || ((${OSVERSION} > 800505) && (${OSVERSION} < 900000))
 LZMA_DEPEND?=	sys
