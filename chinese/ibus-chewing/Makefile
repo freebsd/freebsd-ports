@@ -11,7 +11,7 @@ CATEGORIES=	chinese
 MASTER_SITES=	GOOGLE_CODE
 DISTNAME=	${PORTNAME}-${PORTVERSION}-Source
 
-MAINTAINER=	eric@bsded.com
+MAINTAINER=	lihong@ieee.org
 COMMENT=	Chewing engine for IBus
 
 BUILD_DEPENDS=	gob2:${PORTSDIR}/devel/gob2 \
