@@ -11,7 +11,7 @@ CATEGORIES=	sysutils perl5
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}%20stable/${PORTVERSION}
 PKGNAMESUFFIX=	-common
 
-MAINTAINER=	des@FreeBSD.org
+MAINTAINER=	flo@FreeBSD.org
 COMMENT=	Common components between a munin node and server
 
 BUILD_DEPENDS=	${SITE_PERL}/Module/Build.pm:${PORTSDIR}/devel/p5-Module-Build \
