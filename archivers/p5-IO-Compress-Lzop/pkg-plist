@@ -1,0 +1,8 @@
+%%SITE_PERL%%/IO/Compress/Adapter/LZO.pm
+%%SITE_PERL%%/IO/Compress/Lzop.pm
+%%SITE_PERL%%/IO/Compress/Lzop/Constants.pm
+%%SITE_PERL%%/IO/Uncompress/Adapter/LZO.pm
+%%SITE_PERL%%/IO/Uncompress/UnLzop.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/IO/Compress/Lzop/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/IO/Compress/Lzop
+@dirrm %%SITE_PERL%%/IO/Compress/Lzop
