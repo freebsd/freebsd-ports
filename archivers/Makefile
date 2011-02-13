@@ -102,6 +102,7 @@
     SUBDIR += p5-Compress-Raw-Lzma
     SUBDIR += p5-Compress-Raw-Zlib
     SUBDIR += p5-IO-Compress
+    SUBDIR += p5-IO-Compress-Lzf
     SUBDIR += p5-IO-Compress-Lzma
     SUBDIR += p5-IO-Zlib
     SUBDIR += p5-Mac-Macbinary
