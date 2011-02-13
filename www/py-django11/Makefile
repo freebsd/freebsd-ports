@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	django
-PORTVERSION=	1.1.3
+PORTVERSION=	1.1.4
 CATEGORIES=	www python
 MASTER_SITES=	http://media.djangoproject.com/releases/${PORTVERSION}/ \
 		CHEESESHOP
