@@ -7,13 +7,14 @@
 
 PORTNAME=	enma
 PORTVERSION=	1.1.0
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	SF/${PORTNAME}/ENMA/${PORTVERSION}
 
 MAINTAINER=	umq@ueo.co.jp
 COMMENT=	A sender authentication milter supporting SPF and Sender ID
 
-BUILD_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/dns/libbind:checksum
+BUILD_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/dns/bind97:checksum
 
 .if defined(WITH_POSTFIX_MILTER) || defined(WITH_POSTFIX) || defined(WITH_POSTFIX_CURRENT)
 CONF_SUB=	${REINPLACE_CMD} -e '/milter\.postfix/s/false/true/' ${WRKSRC}/enma/etc/enma.conf.sample
@@ -24,7 +25,7 @@ RUN_DEPENDS+=	${LOCALBASE}/libexec/postfix/smtpd:${PORTSDIR}/mail/postfix
 .endif
 .endif
 
-BIND_PATH_CMD=	cd ${PORTSDIR}/dns/libbind && ${MAKE} -V WRKSRC
+BIND_PATH_CMD=	cd ${PORTSDIR}/dns/bind97 && ${MAKE} -V WRKSRC
 BIND_SRC_DIR=	${BASENAME} $$(${BIND_PATH_CMD})
 
 HAS_CONFIGURE=	yes
@@ -51,10 +52,16 @@ WITH_OPENSSL_PORT=	yes
 .include "${PORTSDIR}/Mk/bsd.openssl.mk"
 
 pre-configure:
-	cd ${PORTSDIR}/dns/libbind && ${MAKE} -DBATCH patch && \
+	cd ${PORTSDIR}/dns/bind97 && ${MAKE} -DBATCH patch && \
 	${LN} -s $$(${BIND_PATH_CMD}) ${WRKSRC}/build && \
 	cd ${WRKSRC}/build/$$(${BIND_SRC_DIR}) && \
-	./configure --prefix=${WRKSRC}/build/tmp_build --enable-threads && ${MAKE} && ${MAKE} install
+	./configure --prefix=${WRKSRC}/build/tmp_build --enable-threads && \
+	cd ${WRKSRC}/build/$$(${BIND_SRC_DIR})/lib/dns && \
+	${MAKE} include/dns/enumtype.h include/dns/enumclass.h && \
+	cd ${WRKSRC}/build/$$(${BIND_SRC_DIR})/lib/bind9 && \
+	${MAKE} && ${MAKE} install
+	${REINPLACE_CMD} -e 's/-lbind/-lbind9/' ${WRKSRC}/configure \
+	${WRKSRC}/enma/bin/Makefile.in ${WRKSRC}/enma/src/Makefile.in
 	$$(${CONF_SUB})
 
 post-install:
