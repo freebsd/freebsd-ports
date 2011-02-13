@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libecap
-PORTVERSION=	0.0.3
+PORTVERSION=	0.1.0
 CATEGORIES=	www security
 MASTER_SITES=	http://www.measurement-factory.com/tmp/ecap/
 
