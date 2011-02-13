@@ -14,6 +14,7 @@ DISTNAME=	${PORTNAME}_src-${PORTVERSION}
 MAINTAINER=	jumper99@gmx.de
 COMMENT=	The typo3 content management system
 
+NO_LATEST_LINK=	yes
 NO_BUILD=	yes
 USE_PHP=	mysql pcre xml session ctype filter json
 WANT_PHP_WEB=	yes
