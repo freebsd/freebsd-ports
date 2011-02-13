@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	redis
-DISTVERSION=	2.0.4
+DISTVERSION=	2.2.0-rc4
 CATEGORIES=	databases
 MASTER_SITES=	GOOGLE_CODE
 
@@ -17,10 +17,11 @@ LIB_DEPENDS=	execinfo.1:${PORTSDIR}/devel/libexecinfo
 
 CFLAGS+=	-I${LOCALBASE}/include
 
-CONFLICTS?=	redis-1.*
+CONFLICTS?=	redis-1.* redis-2.0.*
 
 USE_GMAKE=	yes
 USE_RC_SUBR=	redis.sh
+NO_LATEST_LINK=	yes
 BIN_FILES=	redis-benchmark redis-check-aof redis-check-dump \
 		redis-cli redis-server
 
@@ -47,21 +48,13 @@ SUB_LIST+=	PORTNAME="${PORTNAME}" \
 	REDIS_DBDIR="${REDIS_DBDIR}" \
 	REDIS_RUNDIR="${REDIS_RUNDIR}"
 
-PATTERN=	'16d;119d;15s|$$$$(ARCH) ||'
-.if !defined(WITH_DEBUG)
-PATTERN:=	${PATTERN:S/'$/;5s|^|\#|'/}
-.endif
-
-post-patch:
-	${REINPLACE_CMD} ${PATTERN} ${WRKSRC}/Makefile
-
 post-build:
 	${SED} ${SUB_LIST:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
 		${WRKSRC}/redis.conf > ${WRKDIR}/redis.conf
 
 do-install:
 	@PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
-	${INSTALL_PROGRAM} ${BIN_FILES:C!^!${WRKSRC}/!} ${PREFIX}/bin/
+	${INSTALL_PROGRAM} ${BIN_FILES:C!^!${WRKSRC}/src/!} ${PREFIX}/bin/
 	${INSTALL_DATA} ${WRKDIR}/redis.conf ${PREFIX}/etc/redis.conf.sample
 	@PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
