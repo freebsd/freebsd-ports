@@ -261,7 +261,6 @@
 @dirrm %%CLASSDIR%%/latex/pgf/doc
 @dirrm %%CLASSDIR%%/latex/pgf/compatibility
 @dirrm %%CLASSDIR%%/latex/pgf/basiclayer
-@dirrm %%CLASSDIR%%/latex/pgf
 @dirrm %%CLASSDIR%%/generic/pgf/utilities
 @dirrm %%CLASSDIR%%/generic/pgf/systemlayer
 @dirrm %%CLASSDIR%%/generic/pgf/rendering
