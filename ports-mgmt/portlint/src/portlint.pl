@@ -17,7 +17,7 @@
 # OpenBSD and NetBSD will be accepted.
 #
 # $FreeBSD$
-# $MCom: portlint/portlint.pl,v 1.207 2011/01/10 04:42:45 marcus Exp $
+# $MCom: portlint/portlint.pl,v 1.211 2011/02/13 21:09:18 marcus Exp $
 #
 
 use strict;
@@ -52,7 +52,7 @@ $portdir = '.';
 # version variables
 my $major = 2;
 my $minor = 13;
-my $micro = 3;
+my $micro = 4;
 
 sub l { '[{(]'; }
 sub r { '[)}]'; }
@@ -635,6 +635,10 @@ sub checkdescr {
 			if ($wwwurl !~ m|^https?://|) {
 				&perror("WARN", $file, -1, "WWW URL, $wwwurl should begin ".
 					"with \"http://\" or \"https://\".");
+			}
+			if ($wwwurl =~ m|^http://search.cpan.org/~|) {
+				&perror("WARN", $file, -1, "consider changing WWW URL to ".
+					"http://search.cpan.org/dist/$makevar{PORTNAME}");
 			}
 		}
 		$linecnt++;
@@ -2523,14 +2527,6 @@ DIST_SUBDIR EXTRACT_ONLY
 
 	}
 
-	if ($makevar{MASTER_SITE_SUBDIR}) {
-		print "OK: Checking MASTER_SITE_SUBDIR.\n" if ($verbose);
-		if ($makevar{MASTER_SITE_SUBDIR} =~ m|\.\./*authors|) {
-			&perror("WARN", $file, -1, "MASTER_SITE_SUBDIR uses ../authors ".
-				"SUBDIR.  Use one of the MASTER_SITE*CPAN macros instead.");
-		}
-	}
-
 	$pkg_version = $makevar{PKG_VERSION};
 
 	if ($makevar{CONFLICTS}) {
@@ -2890,6 +2886,13 @@ FETCH_DEPENDS DEPENDS_TARGET
 	}
 	foreach my $i (split(//, $manchapters)) {
 		next if ($i eq '');
+		print "XXX: Checking MAN $i\n";
+		my @mansecs = grep(/MAN\U$i\E=\s*(.*)/, split(/\n/, $tmp));
+		if (scalar @mansecs > 1) {
+			&perror("FATAL", $file, -1, "duplicate MAN$i macro.  ".
+				"Only the last MAN$i macro will be processed.  Use ".
+				"MAN$i+=... instead to append man pages.");
+		}
 		if ($tmp =~ /MAN\U$i\E=\s*([^\n]*)\n/) {
 			@mman = grep($_ !~ /^\s*$/, split(/\s+/, $1));
 			@pman = grep($_ !~ /^\s*$/,
