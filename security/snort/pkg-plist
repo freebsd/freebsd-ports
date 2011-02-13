@@ -11,7 +11,6 @@ etc/snort/gen-msg.map-sample
 @unexec if cmp  -s %D/etc/snort/reference.config-sample %D/etc/snort/reference.config; then rm -f %D/etc/snort/reference.config; fi
 etc/snort/reference.config-sample
 @exec if [ ! -f %D/etc/snort/reference.config ] ; then cp -p %D/%F %B/reference.config; fi
-@exec if [ ! -f %D/etc/snort/sid-msg.map ] ; then cp -p %D/%F %B/sid-msg.map; fi
 @unexec if cmp  -s %D/etc/snort/snort.conf-sample %D/etc/snort/snort.conf; then rm -f %D/etc/snort/snort.conf; fi
 etc/snort/snort.conf-sample
 @exec if [ ! -f %D/etc/snort/snort.conf ] ; then cp -p %D/%F %B/snort.conf; fi
