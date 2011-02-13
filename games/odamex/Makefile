@@ -7,7 +7,7 @@
 
 PORTNAME=	odamex
 PORTVERSION=	0.4.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/Odamex/${PORTVERSION}
 DISTNAME=	odamex-src-${PORTVERSION}
@@ -19,7 +19,8 @@ USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_SDL=	sdl mixer
 
-OPTIONS=	LAUNCHER "Enable GUI launcher program" off
+OPTIONS=	LAUNCHER "Enable GUI launcher program" off \
+		MIDI	 "Enable MIDI support (timidity)" off
 
 .include <bsd.port.pre.mk>
 
@@ -29,6 +30,10 @@ MAKE_ENV+=	WXRC_CMD="${WXRC_CMD}" WITH_LAUNCHER=yes
 PLIST_SUB+=	LAUNCHER=""
 .else
 PLIST_SUB+=	LAUNCHER="@comment "
+.endif
+
+.if defined(WITH_MIDI)
+RUN_DEPENDS+=	timidity:${PORTSDIR}/audio/timidity
 .endif
 
 post-patch:
