@@ -37,7 +37,7 @@ CONFIGURE_ARGS+=	--localstatedir=/var			\
 			--with-icondir=${PREFIX}/share/icons	\
 			--with-menudir=${DESKTOPDIR}		\
 			--with-domainsocket=${CUPS_SOCKET}	\
-			--with-pam-module="pam_unix.so"		\
+			--with-pam-module="unix"		\
 			--enable-ssl
 
 OPTIONS?=	GNUTLS		"Build with GNUTLS library" on \
@@ -74,6 +74,7 @@ CUPS_SUFFIX=	-client
 CUPS_SUFFIX=	-image
 LICENSE=	LGPL21
 .else
+PORTREVISION=	1
 CUPS_SUFFIX=	-base
 CONFLICTS+=	cupsddk-*
 .endif
