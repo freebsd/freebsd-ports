@@ -7,6 +7,7 @@
 
 PORTNAME=	Ocsinventory
 PORTVERSION=	1.1.2.1
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://launchpad.net/ocsinventory-unix-agent/stable-1.1.2/ocsinventory-unix-agent-${PORTVERSION}/+download/
@@ -27,8 +28,13 @@ FETCH_ARGS=
 LICENSE=	GPLv2
 USE_PERL5=	yes
 PERL_CONFIGURE=	yes
-IS_INTERACTIVE=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}${PKGNAMESUFFIX}-${PORTVERSION}
 MAN1=		ocsinventory-agent.1
+MAN3=		Ocsinventory::Agent::XML::Inventory.3
+SUB_FILES=	pkg-message
+SUB_LIST=	SITE_PERL=${SITE_PERL}
+
+post-install:
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
