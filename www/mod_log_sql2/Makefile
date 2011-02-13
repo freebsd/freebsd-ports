@@ -6,6 +6,7 @@
 
 PORTNAME=	mod_log_sql
 PORTVERSION=	1.101
+PORTREVISION=	1
 CATEGORIES=	www databases
 MASTER_SITES=	http://www.outoforder.cc/downloads/${PORTNAME}/
 PKGNAMEPREFIX=	${APACHE_PKGNAMEPREFIX}
@@ -29,18 +30,23 @@ USE_APACHE=	13+
 CONFIGURE_ENV+=	LIBS="-L${LOCALBASE}/lib -L${LOCALBASE}/lib/mysql"
 
 .include <bsd.port.pre.mk>
+
 .if defined(WITH_DBI) || exists(${LOCALBASE}/include/dbi/dbi.h)
 CONFIGURE_ARGS+=	--with-dbi=${LOCALBASE}
 LIB_DEPENDS+=		dbi.0:${PORTSDIR}/databases/libdbi
 .endif
-.   if ${APACHE_VERSION} == 13
+
+.if ${APACHE_VERSION} == 13
 WITHOUT_SSL=	YES
 APACHE2X=	"@comment "
-.   endif
+.endif
+
 .if defined(WITHOUT_SSL)
 CONFIGURE_ARGS+=	--disable-ssl
 SSL_PLIST=	"@comment "
-.else
 .endif
+
+post-install:
+	@${APXS} -e -a -n "${SHORTMODNAME}" "${APACHEMODDIR}/${MODULENAME}.so"
 
 .include <bsd.port.post.mk>
