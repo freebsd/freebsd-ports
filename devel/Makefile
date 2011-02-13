@@ -1052,6 +1052,7 @@
     SUBDIR += newt
     SUBDIR += ngpt
     SUBDIR += nini
+    SUBDIR += ninja
     SUBDIR += noweb
     SUBDIR += nspr
     SUBDIR += oaf
