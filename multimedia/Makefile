@@ -262,6 +262,7 @@
     SUBDIR += py-kaa-base
     SUBDIR += py-kaa-imlib2
     SUBDIR += py-kaa-metadata
+    SUBDIR += py-mlt
     SUBDIR += py-openlp
     SUBDIR += py-pybmp
     SUBDIR += py-qt4-multimedia
