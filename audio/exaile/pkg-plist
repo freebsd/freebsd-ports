@@ -516,10 +516,6 @@
 %%DATADIR%%/plugins/screensaverpause/__init__.py
 %%DATADIR%%/plugins/screensaverpause/__init__.pyc
 %%DATADIR%%/plugins/screensaverpause/__init__.pyo
-%%DATADIR%%/plugins/shoutcast/PLUGININFO
-%%DATADIR%%/plugins/shoutcast/__init__.py
-%%DATADIR%%/plugins/shoutcast/__init__.pyc
-%%DATADIR%%/plugins/shoutcast/__init__.pyo
 %%DATADIR%%/plugins/shutdown/PLUGININFO
 %%DATADIR%%/plugins/shutdown/__init__.py
 %%DATADIR%%/plugins/shutdown/__init__.pyc
@@ -916,7 +912,6 @@ share/pixmaps/exaile.png
 @dirrm %%DATADIR%%/plugins/xkeys
 @dirrm %%DATADIR%%/plugins/streamripper
 @dirrm %%DATADIR%%/plugins/shutdown
-@dirrm %%DATADIR%%/plugins/shoutcast
 @dirrm %%DATADIR%%/plugins/screensaverpause
 @dirrm %%DATADIR%%/plugins/replaygain
 @dirrm %%DATADIR%%/plugins/podcasts
