@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	Getopt-Lucid
-PORTVERSION=	0.18
-PORTREVISION=	2
+PORTVERSION=	0.19
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -21,6 +20,6 @@ RUN_DEPENDS+=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	5.6.0+
 
-MAN3=		Getopt::Lucid.3
+MAN3=		Getopt::Lucid.3 Getopt::Lucid::Exception.3
 
 .include <bsd.port.mk>
