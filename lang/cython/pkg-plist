@@ -181,6 +181,8 @@ bin/cygdb
 %%PYTHON_SITELIBDIR%%/Cython/Debugger/Tests/__init__.py
 %%PYTHON_SITELIBDIR%%/Cython/Debugger/Tests/__init__.pyc
 %%PYTHON_SITELIBDIR%%/Cython/Debugger/Tests/__init__.pyo
+%%PYTHON_SITELIBDIR%%/Cython/Debugger/Tests/codefile
+%%PYTHON_SITELIBDIR%%/Cython/Debugger/Tests/cfuncs.c
 %%PYTHON_SITELIBDIR%%/Cython/Debugger/Tests/TestLibCython.py
 %%PYTHON_SITELIBDIR%%/Cython/Debugger/Tests/TestLibCython.pyc
 %%PYTHON_SITELIBDIR%%/Cython/Debugger/Tests/TestLibCython.pyo
