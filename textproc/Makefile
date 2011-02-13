@@ -619,6 +619,7 @@
     SUBDIR += p5-SGML-DTDParse
     SUBDIR += p5-SGML-Parser-OpenSP
     SUBDIR += p5-SGMLSpm
+    SUBDIR += p5-SQL-Tokenizer
     SUBDIR += p5-SVG
     SUBDIR += p5-Search-Estraier
     SUBDIR += p5-Search-Odeum
