@@ -35,9 +35,11 @@
 %%WWWDIR%%/admin/jscripts/codepress/languages/text.css
 %%WWWDIR%%/admin/jscripts/codepress/languages/text.js
 %%WWWDIR%%/admin/jscripts/codepress/license.txt
+%%WWWDIR%%/admin/jscripts/imodal.js
 %%WWWDIR%%/admin/jscripts/index.html
 %%WWWDIR%%/admin/jscripts/mycode_sandbox.js
 %%WWWDIR%%/admin/jscripts/peeker.js
+%%WWWDIR%%/admin/jscripts/quick_perm_editor.js
 %%WWWDIR%%/admin/jscripts/tabs.js
 %%WWWDIR%%/admin/jscripts/themes.js
 %%WWWDIR%%/admin/jscripts/users.js
@@ -58,6 +60,7 @@
 %%WWWDIR%%/admin/modules/config/settings.php
 %%WWWDIR%%/admin/modules/config/smilies.php
 %%WWWDIR%%/admin/modules/config/spiders.php
+%%WWWDIR%%/admin/modules/config/thread_prefixes.php
 %%WWWDIR%%/admin/modules/config/warning.php
 %%WWWDIR%%/admin/modules/forum/announcements.php
 %%WWWDIR%%/admin/modules/forum/attachments.php
@@ -71,6 +74,7 @@
 %%WWWDIR%%/admin/modules/home/module_meta.php
 %%WWWDIR%%/admin/modules/home/preferences.php
 %%WWWDIR%%/admin/modules/home/version_check.php
+%%WWWDIR%%/admin/modules/index.html
 %%WWWDIR%%/admin/modules/style/index.html
 %%WWWDIR%%/admin/modules/style/module_meta.php
 %%WWWDIR%%/admin/modules/style/templates.php
@@ -78,6 +82,7 @@
 %%WWWDIR%%/admin/modules/tools/adminlog.php
 %%WWWDIR%%/admin/modules/tools/backupdb.php
 %%WWWDIR%%/admin/modules/tools/cache.php
+%%WWWDIR%%/admin/modules/tools/file_verification.php
 %%WWWDIR%%/admin/modules/tools/index.html
 %%WWWDIR%%/admin/modules/tools/mailerrors.php
 %%WWWDIR%%/admin/modules/tools/maillogs.php
@@ -86,6 +91,7 @@
 %%WWWDIR%%/admin/modules/tools/optimizedb.php
 %%WWWDIR%%/admin/modules/tools/php_info.php
 %%WWWDIR%%/admin/modules/tools/recount_rebuild.php
+%%WWWDIR%%/admin/modules/tools/statistics.php
 %%WWWDIR%%/admin/modules/tools/system_health.php
 %%WWWDIR%%/admin/modules/tools/tasks.php
 %%WWWDIR%%/admin/modules/tools/warninglog.php
@@ -102,22 +108,30 @@
 %%WWWDIR%%/admin/styles/default/forum.css
 %%WWWDIR%%/admin/styles/default/home.css
 %%WWWDIR%%/admin/styles/default/images/avatar_gallery.gif
+%%WWWDIR%%/admin/styles/default/images/background.gif
+%%WWWDIR%%/admin/styles/default/images/border-corners.png
+%%WWWDIR%%/admin/styles/default/images/border-sides.png
+%%WWWDIR%%/admin/styles/default/images/border-topbottom.png
+%%WWWDIR%%/admin/styles/default/images/close.gif
 %%WWWDIR%%/admin/styles/default/images/default_avatar.gif
 %%WWWDIR%%/admin/styles/default/images/icons/bullet_off.gif
 %%WWWDIR%%/admin/styles/default/images/icons/bullet_on.gif
 %%WWWDIR%%/admin/styles/default/images/icons/cross.gif
 %%WWWDIR%%/admin/styles/default/images/icons/custom.gif
+%%WWWDIR%%/admin/styles/default/images/icons/decrease.gif
 %%WWWDIR%%/admin/styles/default/images/icons/default.gif
 %%WWWDIR%%/admin/styles/default/images/icons/delete.gif
 %%WWWDIR%%/admin/styles/default/images/icons/error.gif
 %%WWWDIR%%/admin/styles/default/images/icons/find.gif
 %%WWWDIR%%/admin/styles/default/images/icons/group.gif
+%%WWWDIR%%/admin/styles/default/images/icons/increase.gif
 %%WWWDIR%%/admin/styles/default/images/icons/index.html
 %%WWWDIR%%/admin/styles/default/images/icons/logout.gif
 %%WWWDIR%%/admin/styles/default/images/icons/maillogs_thread.gif
 %%WWWDIR%%/admin/styles/default/images/icons/maillogs_user.gif
 %%WWWDIR%%/admin/styles/default/images/icons/make_default.gif
 %%WWWDIR%%/admin/styles/default/images/icons/mobile_user.gif
+%%WWWDIR%%/admin/styles/default/images/icons/no_change.gif
 %%WWWDIR%%/admin/styles/default/images/icons/run_task.gif
 %%WWWDIR%%/admin/styles/default/images/icons/search.gif
 %%WWWDIR%%/admin/styles/default/images/icons/success.gif
@@ -126,6 +140,7 @@
 %%WWWDIR%%/admin/styles/default/images/icons/warning.gif
 %%WWWDIR%%/admin/styles/default/images/icons/world.gif
 %%WWWDIR%%/admin/styles/default/images/index.html
+%%WWWDIR%%/admin/styles/default/images/loading.gif
 %%WWWDIR%%/admin/styles/default/images/login_logo.gif
 %%WWWDIR%%/admin/styles/default/images/logo.gif
 %%WWWDIR%%/admin/styles/default/images/menu_active_bg.gif
@@ -141,6 +156,7 @@
 %%WWWDIR%%/admin/styles/default/images/submit_bg.gif
 %%WWWDIR%%/admin/styles/default/images/templates.gif
 %%WWWDIR%%/admin/styles/default/images/thead_bg.gif
+%%WWWDIR%%/admin/styles/default/imodal.css
 %%WWWDIR%%/admin/styles/default/index.html
 %%WWWDIR%%/admin/styles/default/login.css
 %%WWWDIR%%/admin/styles/default/main.css
@@ -149,6 +165,7 @@
 %%WWWDIR%%/admin/styles/default/style.php
 %%WWWDIR%%/admin/styles/default/user.css
 %%WWWDIR%%/admin/styles/index.html
+%%WWWDIR%%/admin/styles/sharepoint/avatar_gallery.css
 %%WWWDIR%%/admin/styles/sharepoint/home.css
 %%WWWDIR%%/admin/styles/sharepoint/images/default_avatar.gif
 %%WWWDIR%%/admin/styles/sharepoint/images/dropdown_bg.gif
@@ -157,17 +174,20 @@
 %%WWWDIR%%/admin/styles/sharepoint/images/icons/bullet_on.gif
 %%WWWDIR%%/admin/styles/sharepoint/images/icons/cross.gif
 %%WWWDIR%%/admin/styles/sharepoint/images/icons/custom.gif
+%%WWWDIR%%/admin/styles/sharepoint/images/icons/decrease.gif
 %%WWWDIR%%/admin/styles/sharepoint/images/icons/default.gif
 %%WWWDIR%%/admin/styles/sharepoint/images/icons/delete.gif
 %%WWWDIR%%/admin/styles/sharepoint/images/icons/error.gif
 %%WWWDIR%%/admin/styles/sharepoint/images/icons/find.gif
 %%WWWDIR%%/admin/styles/sharepoint/images/icons/group.gif
+%%WWWDIR%%/admin/styles/sharepoint/images/icons/increase.gif
 %%WWWDIR%%/admin/styles/sharepoint/images/icons/index.html
 %%WWWDIR%%/admin/styles/sharepoint/images/icons/logout.gif
 %%WWWDIR%%/admin/styles/sharepoint/images/icons/maillogs_thread.gif
 %%WWWDIR%%/admin/styles/sharepoint/images/icons/maillogs_user.gif
 %%WWWDIR%%/admin/styles/sharepoint/images/icons/make_default.gif
 %%WWWDIR%%/admin/styles/sharepoint/images/icons/mobile_user.gif
+%%WWWDIR%%/admin/styles/sharepoint/images/icons/no_change.gif
 %%WWWDIR%%/admin/styles/sharepoint/images/icons/run_task.gif
 %%WWWDIR%%/admin/styles/sharepoint/images/icons/search.gif
 %%WWWDIR%%/admin/styles/sharepoint/images/icons/success.gif
@@ -188,6 +208,8 @@
 %%WWWDIR%%/admin/styles/sharepoint/images/popup_down.gif
 %%WWWDIR%%/admin/styles/sharepoint/images/sidebar_bg.gif
 %%WWWDIR%%/admin/styles/sharepoint/images/sidebar_bg2.gif
+%%WWWDIR%%/admin/styles/sharepoint/images/spinner.gif
+%%WWWDIR%%/admin/styles/sharepoint/images/spinner_big.gif
 %%WWWDIR%%/admin/styles/sharepoint/images/submenu_bg.gif
 %%WWWDIR%%/admin/styles/sharepoint/images/submit_bg.gif
 %%WWWDIR%%/admin/styles/sharepoint/images/templates.gif
@@ -196,8 +218,6 @@
 %%WWWDIR%%/admin/styles/sharepoint/login.css
 %%WWWDIR%%/admin/styles/sharepoint/main.css
 %%WWWDIR%%/admin/styles/sharepoint/popup.css
-%%WWWDIR%%/admin/styles/sharepoint/spinner.gif
-%%WWWDIR%%/admin/styles/sharepoint/spinner_big.gif
 %%WWWDIR%%/admin/styles/sharepoint/style.css
 %%WWWDIR%%/admin/styles/sharepoint/style.php
 %%WWWDIR%%/admin/styles/sharepoint/user.css
@@ -216,6 +236,9 @@
 %%WWWDIR%%/forumdisplay.php
 %%WWWDIR%%/global.php
 %%WWWDIR%%/htaccess.txt
+%%WWWDIR%%/images/add_buddy.gif
+%%WWWDIR%%/images/add_ignore.gif
+%%WWWDIR%%/images/arrow_down.gif
 %%WWWDIR%%/images/attachtypes/blank.gif
 %%WWWDIR%%/images/attachtypes/css.gif
 %%WWWDIR%%/images/attachtypes/doc.gif
@@ -293,6 +316,7 @@
 %%WWWDIR%%/images/english/postbit_quote.gif
 %%WWWDIR%%/images/english/postbit_replyall.gif
 %%WWWDIR%%/images/english/postbit_report.gif
+%%WWWDIR%%/images/english/postbit_reputation.gif
 %%WWWDIR%%/images/english/postbit_spam.gif
 %%WWWDIR%%/images/english/postbit_warn.gif
 %%WWWDIR%%/images/english/postbit_www.gif
@@ -376,6 +400,8 @@
 %%WWWDIR%%/images/pollbar.gif
 %%WWWDIR%%/images/printable.gif
 %%WWWDIR%%/images/re_pm.gif
+%%WWWDIR%%/images/remove_buddy.gif
+%%WWWDIR%%/images/remove_ignore.gif
 %%WWWDIR%%/images/send.gif
 %%WWWDIR%%/images/smilies/angel.gif
 %%WWWDIR%%/images/smilies/angry.gif
@@ -437,12 +463,15 @@
 %%WWWDIR%%/images/valid.gif
 %%WWWDIR%%/inc/3rdparty/diff/Diff/Engine/index.html
 %%WWWDIR%%/inc/3rdparty/diff/Diff/Engine/native.php
+%%WWWDIR%%/inc/3rdparty/diff/Diff/Engine/shell.php
 %%WWWDIR%%/inc/3rdparty/diff/Diff/Engine/string.php
 %%WWWDIR%%/inc/3rdparty/diff/Diff/Engine/xdiff.php
+%%WWWDIR%%/inc/3rdparty/diff/Diff/Mapped.php
 %%WWWDIR%%/inc/3rdparty/diff/Diff/Renderer/index.html
 %%WWWDIR%%/inc/3rdparty/diff/Diff/Renderer/inline.php
 %%WWWDIR%%/inc/3rdparty/diff/Diff/Renderer/unified.php
 %%WWWDIR%%/inc/3rdparty/diff/Diff/Renderer.php
+%%WWWDIR%%/inc/3rdparty/diff/Diff/ThreeWay.php
 %%WWWDIR%%/inc/3rdparty/diff/Diff/index.html
 %%WWWDIR%%/inc/3rdparty/diff/Diff.php
 %%WWWDIR%%/inc/3rdparty/diff/Diff3.php
@@ -465,6 +494,7 @@
 %%WWWDIR%%/inc/class_error.php
 %%WWWDIR%%/inc/class_feedgeneration.php
 %%WWWDIR%%/inc/class_feedparser.php
+%%WWWDIR%%/inc/class_graph.php
 %%WWWDIR%%/inc/class_language.php
 %%WWWDIR%%/inc/class_mailhandler.php
 %%WWWDIR%%/inc/class_moderation.php
@@ -485,8 +515,7 @@
 %%WWWDIR%%/inc/db_mysqli.php
 %%WWWDIR%%/inc/db_pdo.php
 %%WWWDIR%%/inc/db_pgsql.php
-%%WWWDIR%%/inc/db_sqlite2.php
-%%WWWDIR%%/inc/db_sqlite3.php
+%%WWWDIR%%/inc/db_sqlite.php
 %%WWWDIR%%/inc/functions.php
 %%WWWDIR%%/inc/functions_archive.php
 %%WWWDIR%%/inc/functions_calendar.php
@@ -498,6 +527,7 @@
 %%WWWDIR%%/inc/functions_modcp.php
 %%WWWDIR%%/inc/functions_online.php
 %%WWWDIR%%/inc/functions_post.php
+%%WWWDIR%%/inc/functions_posting.php
 %%WWWDIR%%/inc/functions_rebuild.php
 %%WWWDIR%%/inc/functions_search.php
 %%WWWDIR%%/inc/functions_serverstats.php
@@ -506,7 +536,6 @@
 %%WWWDIR%%/inc/functions_upload.php
 %%WWWDIR%%/inc/functions_user.php
 %%WWWDIR%%/inc/functions_warnings.php
-%%WWWDIR%%/inc/generic_error.php
 %%WWWDIR%%/inc/index.html
 %%WWWDIR%%/inc/init.php
 %%WWWDIR%%/inc/languages/english/admin/config_attachment_types.lang.php
@@ -524,6 +553,7 @@
 %%WWWDIR%%/inc/languages/english/admin/config_settings.lang.php
 %%WWWDIR%%/inc/languages/english/admin/config_smilies.lang.php
 %%WWWDIR%%/inc/languages/english/admin/config_spiders.lang.php
+%%WWWDIR%%/inc/languages/english/admin/config_thread_prefixes.lang.php
 %%WWWDIR%%/inc/languages/english/admin/config_warning.lang.php
 %%WWWDIR%%/inc/languages/english/admin/forum_akismet.lang.php
 %%WWWDIR%%/inc/languages/english/admin/forum_announcements.lang.php
@@ -544,6 +574,7 @@
 %%WWWDIR%%/inc/languages/english/admin/tools_adminlog.lang.php
 %%WWWDIR%%/inc/languages/english/admin/tools_backupdb.lang.php
 %%WWWDIR%%/inc/languages/english/admin/tools_cache.lang.php
+%%WWWDIR%%/inc/languages/english/admin/tools_file_verification.lang.php
 %%WWWDIR%%/inc/languages/english/admin/tools_mailerrors.lang.php
 %%WWWDIR%%/inc/languages/english/admin/tools_maillogs.lang.php
 %%WWWDIR%%/inc/languages/english/admin/tools_modlog.lang.php
@@ -551,6 +582,7 @@
 %%WWWDIR%%/inc/languages/english/admin/tools_optimizedb.lang.php
 %%WWWDIR%%/inc/languages/english/admin/tools_php_info.lang.php
 %%WWWDIR%%/inc/languages/english/admin/tools_recount_rebuild.lang.php
+%%WWWDIR%%/inc/languages/english/admin/tools_statistics.lang.php
 %%WWWDIR%%/inc/languages/english/admin/tools_system_health.lang.php
 %%WWWDIR%%/inc/languages/english/admin/tools_tasks.lang.php
 %%WWWDIR%%/inc/languages/english/admin/tools_warninglog.lang.php
@@ -620,6 +652,7 @@
 %%WWWDIR%%/inc/tasks/backupdb.php
 %%WWWDIR%%/inc/tasks/checktables.php
 %%WWWDIR%%/inc/tasks/dailycleanup.php
+%%WWWDIR%%/inc/tasks/delayedmoderation.php
 %%WWWDIR%%/inc/tasks/hourlycleanup.php
 %%WWWDIR%%/inc/tasks/index.html
 %%WWWDIR%%/inc/tasks/logcleanup.php
@@ -627,6 +660,7 @@
 %%WWWDIR%%/inc/tasks/promotions.php
 %%WWWDIR%%/inc/tasks/threadviews.php
 %%WWWDIR%%/inc/tasks/usercleanup.php
+%%WWWDIR%%/inc/tasks/userpruning.php
 %%WWWDIR%%/index.php
 %%WWWDIR%%/install/images/bullet.gif
 %%WWWDIR%%/install/images/content_bg.gif
@@ -667,6 +701,8 @@
 %%WWWDIR%%/install/resources/upgrade14.php
 %%WWWDIR%%/install/resources/upgrade15.php
 %%WWWDIR%%/install/resources/upgrade16.php
+%%WWWDIR%%/install/resources/upgrade17.php
+%%WWWDIR%%/install/resources/upgrade18.php
 %%WWWDIR%%/install/resources/upgrade2.php
 %%WWWDIR%%/install/resources/upgrade3.php
 %%WWWDIR%%/install/resources/upgrade4.php
@@ -686,6 +722,7 @@
 %%WWWDIR%%/jscripts/editor_themes/Office_2007/images/color.gif
 %%WWWDIR%%/jscripts/editor_themes/Office_2007/images/dropdown2.gif
 %%WWWDIR%%/jscripts/editor_themes/Office_2007/images/index.html
+%%WWWDIR%%/jscripts/editor_themes/Office_2007/images/television.gif
 %%WWWDIR%%/jscripts/editor_themes/Office_2007/images/toolbar.gif
 %%WWWDIR%%/jscripts/editor_themes/Office_2007/images/ui.gif
 %%WWWDIR%%/jscripts/editor_themes/Office_2007/index.html
@@ -695,6 +732,7 @@
 %%WWWDIR%%/jscripts/editor_themes/default/images/dropdown2.gif
 %%WWWDIR%%/jscripts/editor_themes/default/images/index.html
 %%WWWDIR%%/jscripts/editor_themes/default/images/separator.gif
+%%WWWDIR%%/jscripts/editor_themes/default/images/television.gif
 %%WWWDIR%%/jscripts/editor_themes/default/images/toolbar.gif
 %%WWWDIR%%/jscripts/editor_themes/default/index.html
 %%WWWDIR%%/jscripts/editor_themes/default/stylesheet.css
@@ -707,8 +745,6 @@
 %%WWWDIR%%/jscripts/popup_menu.js
 %%WWWDIR%%/jscripts/post.js
 %%WWWDIR%%/jscripts/prototype.js
-%%WWWDIR%%/jscripts/prototype.lite.js
-%%WWWDIR%%/jscripts/prototype.uncompressed.js
 %%WWWDIR%%/jscripts/rating.js
 %%WWWDIR%%/jscripts/scriptaculous.js
 %%WWWDIR%%/jscripts/slider.js
