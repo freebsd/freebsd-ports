@@ -19,6 +19,7 @@
 %%DATADIR%%/de.words
 %%DATADIR%%/dvorak_br_nativo.kbd
 %%DATADIR%%/dvorak_br_us.kbd
+%%DATADIR%%/dvorak_de_neo2.kbd
 %%DATADIR%%/dvorak_eo_eurokeys.kbd
 %%DATADIR%%/dvorak_eo_nativo.kbd
 %%DATADIR%%/dvorak_eo_uk.kbd
@@ -35,6 +36,8 @@
 %%DATADIR%%/eo.words
 %%DATADIR%%/es.paragraphs
 %%DATADIR%%/es.words
+%%DATADIR%%/eu.paragraphs
+%%DATADIR%%/eu.words
 %%DATADIR%%/fingers_position.txt
 %%DATADIR%%/fluid.png
 %%DATADIR%%/fr.paragraphs
@@ -57,6 +60,7 @@
 %%DATADIR%%/jtsuken_kk.kbd
 %%DATADIR%%/jtsuken_ru.kbd
 %%DATADIR%%/jtsuken_ru_typewriter.kbd
+%%DATADIR%%/jtsuken_ua.kbd
 %%DATADIR%%/key.png
 %%DATADIR%%/kk.paragraphs
 %%DATADIR%%/kk.words
@@ -102,6 +106,8 @@
 %%DATADIR%%/sv.paragraphs
 %%DATADIR%%/sv.words
 %%DATADIR%%/top10.png
+%%DATADIR%%/uk.paragraphs
+%%DATADIR%%/uk.words
 %%DATADIR%%/ur.paragraphs
 %%DATADIR%%/ur.words
 %%DATADIR%%/vi.paragraphs
@@ -120,6 +126,7 @@ share/locale/de/LC_MESSAGES/klavaro.mo
 share/locale/en_GB/LC_MESSAGES/klavaro.mo
 share/locale/eo/LC_MESSAGES/klavaro.mo
 share/locale/es/LC_MESSAGES/klavaro.mo
+share/locale/eu/LC_MESSAGES/klavaro.mo
 share/locale/fr/LC_MESSAGES/klavaro.mo
 share/locale/gl/LC_MESSAGES/klavaro.mo
 share/locale/hu/LC_MESSAGES/klavaro.mo
@@ -130,6 +137,7 @@ share/locale/pl/LC_MESSAGES/klavaro.mo
 share/locale/pt_BR/LC_MESSAGES/klavaro.mo
 share/locale/ru/LC_MESSAGES/klavaro.mo
 share/locale/sv/LC_MESSAGES/klavaro.mo
+share/locale/uk/LC_MESSAGES/klavaro.mo
 share/locale/ur/LC_MESSAGES/klavaro.mo
 share/locale/vi/LC_MESSAGES/klavaro.mo
 @dirrmtry share/locale/ur/LC_MESSAGES
