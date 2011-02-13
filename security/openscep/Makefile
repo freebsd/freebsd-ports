@@ -7,7 +7,7 @@
 
 PORTNAME=	openscep
 PORTVERSION=	0.4.2
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	security
 MASTER_SITES=	http://openscep.othello.ch/download/
 
@@ -23,6 +23,12 @@ USE_APACHE=	1.3+
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
+
+.include <bsd.port.pre.mk>
+
+.if ${APACHE_VERSION} > 13
+PLIST_DIRSTRY=	www/cgi-bin
+.endif
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 CONFIGURE_ENV=	CPPFLAGS=${CPPFLAGS} LIBS="-L${LOCALBASE}/lib"
@@ -72,4 +78,4 @@ post-install:
 	@PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
