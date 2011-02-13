@@ -12,7 +12,7 @@ CATEGORIES=	archivers games
 MASTER_SITES=	http://freebsd.nsu.ru/distfiles/
 
 MAINTAINER=	danfe@FreeBSD.org
-COMMENT=	Utility for extracting/creating Quake PAK files
+COMMENT=	Utility for manipulating of Quake PAK files
 
 PLIST_FILES=	bin/nwreckdum
 
