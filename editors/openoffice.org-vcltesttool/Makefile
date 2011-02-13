@@ -35,11 +35,7 @@ MAKE_JOBS_SAFE=	yes
 USE_JAVA=	yes
 JAVA_BUILD=	jdk
 JAVA_VENDOR=	freebsd bsdjava openjdk
-.if (${OSVERSION} >= 700000)
 JAVA_VERSION=	1.5 1.6
-.else
-JAVA_VERSION=	1.4 1.5 1.6
-.endif
 
 ONLY_FOR_ARCHS=	i386 amd64
 

@@ -53,11 +53,7 @@ MAKE_JOBS_SAFE=	yes
 USE_JAVA=	yes
 JAVA_BUILD=	jdk
 JAVA_VENDOR=	freebsd bsdjava openjdk
-.if (${OSVERSION} >= 700000)
 JAVA_VERSION=	1.5 1.6
-.else
-JAVA_VERSION=	1.4 1.5 1.6
-.endif
 
 .include <${FILESDIR}/Makefile.localized>
 
@@ -137,9 +133,6 @@ CONFIGURE_ARGS+=	--with-gnu-cp=${LOCALBASE}/bin/gcp		\
 
 .if ${ARCH} == amd64
 WITHOUT_MOZILLA=	yes
-.endif
-.if (${OSVERSION} <= 602102)
-EXTRA_PATCHES+=	${FILESDIR}/rtld-workaround-i66667
 .endif
 .if !defined(WITH_SYSTEM_FREETYPE) && defined(WITH_TTF_BYTECODE_ENABLED)
 EXTRA_PATCHES+=	 ${FILESDIR}/optpatch-freetype

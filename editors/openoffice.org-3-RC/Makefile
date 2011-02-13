@@ -58,11 +58,7 @@ MAKE_JOBS_SAFE=	yes
 USE_JAVA=	yes
 JAVA_BUILD=	jdk
 JAVA_VENDOR=	freebsd bsdjava openjdk
-.if (${OSVERSION} >= 700000)
 JAVA_VERSION=	1.5 1.6
-.else
-JAVA_VERSION=	1.4 1.5 1.6
-.endif
 
 .include <${FILESDIR}/Makefile.localized>
 
@@ -160,10 +156,6 @@ OOOEXTENSIONS+=		presenter/presenter-screen.oxt
 OOOEXTENSIONS+=		pdfimport/pdfimport.oxt
 OOOEXTENSIONS+=		swext/wiki-publisher.oxt
 OOOEXTENSIONS+=		report-builder.oxt
-
-.if (${OSVERSION} <= 602102)
-EXTRA_PATCHES+=	${FILESDIR}/rtld-workaround-i66667
-.endif
 
 ICONS=	${WRKSRC}/sysui/desktop/icons
 
