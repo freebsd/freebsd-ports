@@ -237,7 +237,6 @@
     SUBDIR += p5-Perl6-Subs
     SUBDIR += p5-Pugs-Compiler-Rule
     SUBDIR += p5-Quantum-Superpositions
-    SUBDIR += p5-SQL-Tokenizer
     SUBDIR += p5-Scalar-List-Utils
     SUBDIR += p5-Switch
     SUBDIR += p5-Tcl
