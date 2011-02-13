@@ -593,7 +593,6 @@ bin/zeopasswd
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ZODB/tests/loggingsupport.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ZODB/tests/loggingsupport.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ZODB/tests/multidb.txt
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ZODB/tests/new_oids_get_reused_on_abort.test
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ZODB/tests/sampledm.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ZODB/tests/sampledm.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ZODB/tests/sampledm.pyo
@@ -787,7 +786,6 @@ bin/zeopasswd
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ZEO/zrpc
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ZEO
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ZODB/FileStorage
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ZODB/scripts/manual_tests
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ZODB/scripts/tests
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ZODB/scripts
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ZODB/tests
