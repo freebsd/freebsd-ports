@@ -27,8 +27,14 @@ CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include -I${PYTHON_INCLUDED
 		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
 CONFIGURE_ARGS+=--enable-site-packages-prefix=${PREFIX}
 
+.include <bsd.port.pre.mk>
+
+.if (${OSVERSION} >= 800000) && (${ARCH} == "i386")
+CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS} -fstack-protector -I${LOCALBASE}/include"
+.endif
+
 post-patch:
 	${REINPLACE_CMD} -e "s,-lsnmp,-lnetsnmp," \
 		${WRKSRC}/configure
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
