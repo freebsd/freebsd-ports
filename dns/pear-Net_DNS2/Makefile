@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Net_DNS2
-PORTVERSION=	1.0.0
+PORTVERSION=	1.0.1
 CATEGORIES=	dns net pear
 
 MAINTAINER=	wen@FreeBSD.org
@@ -32,7 +32,8 @@ FILES=		Net/DNS2.php \
 		Net/DNS2/RR/RP.php Net/DNS2/RR/RRSIG.php Net/DNS2/RR/RT.php \
 		Net/DNS2/RR/SIG.php Net/DNS2/RR/SOA.php Net/DNS2/RR/SPF.php \
 		Net/DNS2/RR/SRV.php Net/DNS2/RR/SSHFP.php Net/DNS2/RR/TKEY.php \
-		Net/DNS2/RR/TSIG.php Net/DNS2/RR/TXT.php Net/DNS2/RR/X25.php \
+		Net/DNS2/RR/TSIG.php Net/DNS2/RR/TXT.php Net/DNS2/RR/WKS.php \
+		Net/DNS2/RR/X25.php \
 		Net/DNS2/RR.php Net/DNS2/Resolver.php Net/DNS2/Socket/Sockets.php \
 		Net/DNS2/Socket/Streams.php Net/DNS2/Socket.php Net/DNS2/Updater.php
 
