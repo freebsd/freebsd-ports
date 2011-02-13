@@ -649,6 +649,7 @@
     SUBDIR += qmpdclient
     SUBDIR += qsampler
     SUBDIR += qsynth
+    SUBDIR += quimup
     SUBDIR += raop_play
     SUBDIR += raproxy
     SUBDIR += raul
