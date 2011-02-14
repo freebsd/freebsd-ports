@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	cmus
-PORTVERSION=	2.3.3
-PORTREVISION=	3
+PORTVERSION=	2.3.4
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -21,7 +20,8 @@ USE_GMAKE=	yes
 USE_ICONV=	yes
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS+=prefix=${PREFIX} mandir=${MANPREFIX}/man \
-		exampledir=${EXAMPLESDIR}
+		exampledir=${EXAMPLESDIR} \
+		CONFIG_ALSA=n
 
 OPTIONS=	FLAC "FLAC (Free Lossless Audio Codec) support" Off \
 		MAD "MPEG Audio Decoder (libmad) support" On \
