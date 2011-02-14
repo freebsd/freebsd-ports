@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	Net_SMTP
-PORTVERSION=	1.4.4
+PORTVERSION=	1.5.0
 CATEGORIES=	net mail www pear
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	wen@FreeBSD.org
 COMMENT=	PEAR class that provides an implementation of the SMTP protocol
 
 BUILD_DEPENDS=	${PEARDIR}/Net/Socket.php:${PORTSDIR}/net/pear-Net_Socket
