@@ -1537,3 +1537,4 @@ multimedia/jahshaka||2011-02-04|Has expired: Does not compile on supported versi
 audio/libjackasyn|audio/jack|2011-02-11|Has expired: development has ceased; try audio/jack instead
 audio/xmms-jackasyn|audio/xmms-jack|2011-02-11|Has expired: development has ceased; try audio/xmms-jack instead
 lang/p5-SQL-Tokenizer|textproc/p5-SQL-Tokenizer|2011-02-13|Moved to a more appropriate category
+misc/wanpipe||2011-02-14|Removed
