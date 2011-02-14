@@ -6,15 +6,17 @@
 #
 
 PORTNAME=	Term-Menus
-PORTVERSION=	1.58
+PORTVERSION=	1.76
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
+MASTER_SITE_SUBDIR=	../../authors/id/R/RE/REEDFISH/
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	culot@FreeBSD.org
 COMMENT=	Create Powerful Terminal, Console and CMD Environment Menus
 
 BUILD_DEPENDS=	p5-Data-Dump-Streamer>0:${PORTSDIR}/devel/p5-Data-Dump-Streamer \
+		p5-Term-RawInput>=0:${PORTSDIR}/devel/p5-Term-RawInput \
 		p5-Term-ReadKey>=0:${PORTSDIR}/devel/p5-Term-ReadKey
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
