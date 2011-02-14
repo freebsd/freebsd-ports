@@ -6,18 +6,18 @@
 #
 
 PORTNAME=	pyro
-PORTVERSION=	4.1
+PORTVERSION=	4.3
 CATEGORIES=	devel python
 MASTER_SITES=	http://www.xs4all.nl/~irmen/pyro4/download/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTNAME=	Pyro-${PORTVERSION}
+DISTNAME=	Pyro4-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Distributed Object Middleware for Python(IPC/RPC)
 
-USE_PYTHON=	2.5+
+USE_PYTHON=		2.5+
 USE_PYDISTUTILS=	yes
-PYDISTUTILS_PKGNAME=	Pyro
+PYDISTUTILS_PKGNAME=	Pyro4
 
 .include <bsd.port.pre.mk>
 post-install:
