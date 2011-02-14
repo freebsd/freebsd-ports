@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	dhex
-PORTVERSION=	0.64
+PORTVERSION=	0.65
 CATEGORIES=	editors
 MASTER_SITES=	http://www.dettus.net/dhex/ \
 		CRITICAL
