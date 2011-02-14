@@ -58,6 +58,7 @@
     SUBDIR += linux-gid
     SUBDIR += magic
     SUBDIR += mars
+    SUBDIR += meshlab
     SUBDIR += netgen
     SUBDIR += ngspice_rework
     SUBDIR += opencascade
