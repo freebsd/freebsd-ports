@@ -62,7 +62,7 @@ CONFIGURE_ARGS+=--disable-lirc
 
 # Support for libchamplain is marked as experimental!
 .if defined(WITH_GPS)
-LIB_DEPENDS+=	champlain-0.4.1:${PORTSDIR}/graphics/libchamplain
+LIB_DEPENDS+=	champlain-0.8.1:${PORTSDIR}/graphics/libchamplain
 CONFIGURE_ARGS+=--enable-gps
 .else
 CONFIGURE_ARGS+=--disable-gps
