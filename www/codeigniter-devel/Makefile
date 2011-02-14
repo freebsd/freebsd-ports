@@ -4,25 +4,27 @@
 #
 # $FreeBSD$
 #
+
 PORTNAME=	codeigniter
-PORTVERSION=	2.0
+PORTVERSION=	2.0.1
 CATEGORIES=	www
-MASTER_SITES=	http://bitbucket.org/ellislab/codeigniter/get/ \
-		http://www.codeigniter.org.tw/download_files/
-DISTNAME=	98b57d21e524
-PKG_SUFX=	-devel
+MASTER_SITES=	https://bitbucket.org/ellislab/codeigniter-reactor/get/ \
+	http://www.codeigniter.org.tw/download_files/2.0.1/
+PKGNAMESUFFIX=	-devel
+DISTNAME=	a560339f28f1
 
 MAINTAINER=	appleboy.tw@gmail.com
 COMMENT=	A framework for developing PHP web applications
 
 USE_ZIP=	yes
+
 NO_BUILD=	yes
 USE_PHP=	session pcre
-NT_PHP_WEB=	yes
+WANT_PHP_WEB=	yes
 
 CI_SYS_DIR=	system
 CI_CONF_DIR=	application/config
-WRKSRC=	${WRKDIR}/codeigniter
+WRKSRC=	${WRKDIR}/codeigniter-reactor
 WWWDIR=	${PREFIX}/www/codeigniter
 PORTDOCS=	*
 
@@ -35,12 +37,15 @@ CI_CONF_FILES=	index.php ${CI_CONF_DIR}/autoload.php \
 		${CI_CONF_DIR}/doctypes.php \
 		${CI_CONF_DIR}/foreign_chars.php \
 		${CI_CONF_DIR}/profiler.php \
-		${CI_CONF_DIR}/hooks.php ${CI_CONF_DIR}/mimes.php \
+		${CI_CONF_DIR}/hooks.php \
+		${CI_CONF_DIR}/migration.php \
+		${CI_CONF_DIR}/mimes.php \
 		${CI_CONF_DIR}/routes.php ${CI_CONF_DIR}/smileys.php \
 		${CI_CONF_DIR}/user_agents.php
 
 # This is the rest of the CodeIgniter installation that doesn't change
 STD_BITS=	${CI_CONF_DIR}/index.html \
+		application/cache \
 		application/controllers \
 		application/core \
 		application/errors \
@@ -49,17 +54,17 @@ STD_BITS=	${CI_CONF_DIR}/index.html \
 		application/index.html \
 		application/language \
 		application/libraries \
+		application/logs \
+		application/migrations \
 		application/models \
-		application/views \
 		application/third_party \
-		${CI_SYS_DIR}/cache \
+		application/views \
 		${CI_SYS_DIR}/core \
 		${CI_SYS_DIR}/database \
 		${CI_SYS_DIR}/fonts \
 		${CI_SYS_DIR}/helpers \
 		${CI_SYS_DIR}/language \
-		${CI_SYS_DIR}/libraries \
-		${CI_SYS_DIR}/logs
+		${CI_SYS_DIR}/libraries
 
 OPTIONS=	APACHE "Configure for Apache-2.x" off \
 	PROD "Install for production server (see: make confighelp)" Off \
