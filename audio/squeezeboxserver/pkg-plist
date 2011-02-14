@@ -172,7 +172,6 @@ bin/softsqueeze
 %%SLIMDIR%%/CPAN/Log/Log4perl/Resurrector.pm
 %%SLIMDIR%%/CPAN/Log/Log4perl/Util.pm
 %%SLIMDIR%%/CPAN/Log/Log4perl/Util/Semaphore.pm
-%%SLIMDIR%%/CPAN/Math/VecStat.pm
 %%SLIMDIR%%/CPAN/Net/HTTP.pm
 %%SLIMDIR%%/CPAN/Net/HTTP/Methods.pm
 %%SLIMDIR%%/CPAN/Net/HTTP/NB.pm
@@ -439,16 +438,16 @@ bin/softsqueeze
 %%SLIMDIR%%/Changelog7.html
 %%SLIMDIR%%/Firmware/boom.version
 %%SLIMDIR%%/Firmware/boom_30.bin
-%%SLIMDIR%%/Firmware/boom_50.bin
+%%SLIMDIR%%/Firmware/boom_52.bin
 %%SLIMDIR%%/Firmware/receiver.version
-%%SLIMDIR%%/Firmware/receiver_65.bin
+%%SLIMDIR%%/Firmware/receiver_67.bin
 %%SLIMDIR%%/Firmware/squeezebox.version
 %%SLIMDIR%%/Firmware/squeezebox2.version
-%%SLIMDIR%%/Firmware/squeezebox2_130.bin
+%%SLIMDIR%%/Firmware/squeezebox2_132.bin
 %%SLIMDIR%%/Firmware/squeezebox_10.bin
 %%SLIMDIR%%/Firmware/squeezebox_40.bin
 %%SLIMDIR%%/Firmware/transporter.version
-%%SLIMDIR%%/Firmware/transporter_80.bin
+%%SLIMDIR%%/Firmware/transporter_82.bin
 %%SLIMDIR%%/Graphics/CODE2000.HTM
 %%SLIMDIR%%/Graphics/CODE2000.TTF
 %%SLIMDIR%%/Graphics/FreeSans.ttf
@@ -1486,6 +1485,7 @@ bin/softsqueeze
 %%SLIMDIR%%/License.nl.txt
 %%SLIMDIR%%/MySQL/COPYING
 %%SLIMDIR%%/MySQL/README
+%%SLIMDIR%%/MySQL/my-highmem.tt
 %%SLIMDIR%%/MySQL/my.tt
 %%SLIMDIR%%/MySQL/system.sql
 %%SLIMDIR%%/SQL/mysql/schema_10_down.sql
@@ -1824,11 +1824,6 @@ bin/softsqueeze
 %%SLIMDIR%%/Slim/Plugin/Podcast/Settings.pm
 %%SLIMDIR%%/Slim/Plugin/Podcast/install.xml
 %%SLIMDIR%%/Slim/Plugin/Podcast/strings.txt
-%%SLIMDIR%%/Slim/Plugin/Queen/HTML/EN/plugins/Queen/html/images/icon.png
-%%SLIMDIR%%/Slim/Plugin/Queen/Plugin.pm
-%%SLIMDIR%%/Slim/Plugin/Queen/ProtocolHandler.pm
-%%SLIMDIR%%/Slim/Plugin/Queen/install.xml
-%%SLIMDIR%%/Slim/Plugin/Queen/strings.txt
 %%SLIMDIR%%/Slim/Plugin/RS232/HTML/EN/plugins/RS232/settings/basic.html
 %%SLIMDIR%%/Slim/Plugin/RS232/Plugin.pm
 %%SLIMDIR%%/Slim/Plugin/RS232/Settings.pm
@@ -1893,12 +1888,22 @@ bin/softsqueeze
 %%SLIMDIR%%/Slim/Plugin/Sounds/ProtocolHandler.pm
 %%SLIMDIR%%/Slim/Plugin/Sounds/install.xml
 %%SLIMDIR%%/Slim/Plugin/Sounds/strings.txt
+%%SLIMDIR%%/Slim/Plugin/SpotifyLogi/HTML/EN/plugins/SpotifyLogi/html/images/icon.png
+%%SLIMDIR%%/Slim/Plugin/SpotifyLogi/Plugin.pm
+%%SLIMDIR%%/Slim/Plugin/SpotifyLogi/ProtocolHandler.pm
+%%SLIMDIR%%/Slim/Plugin/SpotifyLogi/install.xml
+%%SLIMDIR%%/Slim/Plugin/SpotifyLogi/strings.txt
 %%SLIMDIR%%/Slim/Plugin/TT/Clients.pm
 %%SLIMDIR%%/Slim/Plugin/TT/Prefs.pm
 %%SLIMDIR%%/Slim/Plugin/TT/README
 %%SLIMDIR%%/Slim/Plugin/Visualizer/Plugin.pm
 %%SLIMDIR%%/Slim/Plugin/Visualizer/install.xml
 %%SLIMDIR%%/Slim/Plugin/Visualizer/strings.txt
+%%SLIMDIR%%/Slim/Plugin/WiMP/HTML/EN/plugins/WiMP/html/images/icon.png
+%%SLIMDIR%%/Slim/Plugin/WiMP/Plugin.pm
+%%SLIMDIR%%/Slim/Plugin/WiMP/ProtocolHandler.pm
+%%SLIMDIR%%/Slim/Plugin/WiMP/install.xml
+%%SLIMDIR%%/Slim/Plugin/WiMP/strings.txt
 %%SLIMDIR%%/Slim/Plugin/iTunes/Common.pm
 %%SLIMDIR%%/Slim/Plugin/iTunes/HTML/EN/plugins/iTunes/settings/itunes.html
 %%SLIMDIR%%/Slim/Plugin/iTunes/Importer.pm
@@ -2132,8 +2137,22 @@ bin/softsqueeze
 @dirrm %%SLIMDIR%%/Slim/Plugin/iTunes/HTML/EN
 @dirrm %%SLIMDIR%%/Slim/Plugin/iTunes/HTML
 @dirrm %%SLIMDIR%%/Slim/Plugin/iTunes
+@dirrm %%SLIMDIR%%/Slim/Plugin/WiMP/HTML/EN/plugins/WiMP/html/images
+@dirrm %%SLIMDIR%%/Slim/Plugin/WiMP/HTML/EN/plugins/WiMP/html
+@dirrm %%SLIMDIR%%/Slim/Plugin/WiMP/HTML/EN/plugins/WiMP
+@dirrm %%SLIMDIR%%/Slim/Plugin/WiMP/HTML/EN/plugins
+@dirrm %%SLIMDIR%%/Slim/Plugin/WiMP/HTML/EN
+@dirrm %%SLIMDIR%%/Slim/Plugin/WiMP/HTML
+@dirrm %%SLIMDIR%%/Slim/Plugin/WiMP
 @dirrm %%SLIMDIR%%/Slim/Plugin/Visualizer
 @dirrm %%SLIMDIR%%/Slim/Plugin/TT
+@dirrm %%SLIMDIR%%/Slim/Plugin/SpotifyLogi/HTML/EN/plugins/SpotifyLogi/html/images
+@dirrm %%SLIMDIR%%/Slim/Plugin/SpotifyLogi/HTML/EN/plugins/SpotifyLogi/html
+@dirrm %%SLIMDIR%%/Slim/Plugin/SpotifyLogi/HTML/EN/plugins/SpotifyLogi
+@dirrm %%SLIMDIR%%/Slim/Plugin/SpotifyLogi/HTML/EN/plugins
+@dirrm %%SLIMDIR%%/Slim/Plugin/SpotifyLogi/HTML/EN
+@dirrm %%SLIMDIR%%/Slim/Plugin/SpotifyLogi/HTML
+@dirrm %%SLIMDIR%%/Slim/Plugin/SpotifyLogi
 @dirrm %%SLIMDIR%%/Slim/Plugin/Sounds/HTML/EN/plugins/Sounds/html/images
 @dirrm %%SLIMDIR%%/Slim/Plugin/Sounds/HTML/EN/plugins/Sounds/html
 @dirrm %%SLIMDIR%%/Slim/Plugin/Sounds/HTML/EN/plugins/Sounds
@@ -2196,13 +2215,6 @@ bin/softsqueeze
 @dirrm %%SLIMDIR%%/Slim/Plugin/RS232/HTML/EN
 @dirrm %%SLIMDIR%%/Slim/Plugin/RS232/HTML
 @dirrm %%SLIMDIR%%/Slim/Plugin/RS232
-@dirrm %%SLIMDIR%%/Slim/Plugin/Queen/HTML/EN/plugins/Queen/html/images
-@dirrm %%SLIMDIR%%/Slim/Plugin/Queen/HTML/EN/plugins/Queen/html
-@dirrm %%SLIMDIR%%/Slim/Plugin/Queen/HTML/EN/plugins/Queen
-@dirrm %%SLIMDIR%%/Slim/Plugin/Queen/HTML/EN/plugins
-@dirrm %%SLIMDIR%%/Slim/Plugin/Queen/HTML/EN
-@dirrm %%SLIMDIR%%/Slim/Plugin/Queen/HTML
-@dirrm %%SLIMDIR%%/Slim/Plugin/Queen
 @dirrm %%SLIMDIR%%/Slim/Plugin/Podcast/HTML/EN/plugins/Podcast/settings
 @dirrm %%SLIMDIR%%/Slim/Plugin/Podcast/HTML/EN/plugins/Podcast/html/images
 @dirrm %%SLIMDIR%%/Slim/Plugin/Podcast/HTML/EN/plugins/Podcast/html
@@ -2525,7 +2537,6 @@ bin/softsqueeze
 @dirrm %%SLIMDIR%%/CPAN/Net/UPnP
 @dirrm %%SLIMDIR%%/CPAN/Net/HTTP
 @dirrm %%SLIMDIR%%/CPAN/Net
-@dirrm %%SLIMDIR%%/CPAN/Math
 @dirrm %%SLIMDIR%%/CPAN/Log/Log4perl/Util
 @dirrm %%SLIMDIR%%/CPAN/Log/Log4perl/Layout/PatternLayout
 @dirrm %%SLIMDIR%%/CPAN/Log/Log4perl/Layout
