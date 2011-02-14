@@ -20,7 +20,7 @@ MAINTAINER=	wxs@FreeBSD.org
 COMMENT?=	The ISC Dynamic Host Configuration Protocol server
 
 PATCHLEVEL=	P1
-PORTREVISION_SERVER=	1
+PORTREVISION_SERVER=	2
 PORTREVISION_CLIENT=	0
 PORTREVISION_RELAY=	0
 
@@ -70,7 +70,7 @@ MAN8=		dhcpd.8
 MAN1=		omshell.1
 MAN3=		dhcpctl.3 omapi.3
 CFLAGS+=	-fPIC
-CONF_FILE=	dhcpd.conf
+CONF_FILE=	dhcpd.conf dhcpd6.conf
 .else
 MAN8=		dhcrelay.8
 .endif
@@ -152,6 +152,8 @@ do-install:
 	${MAKE} -C ${WRKSRC}/includes install
 	${MAKE} -C ${WRKSRC}/common install
 	${INSTALL_DATA} ${WRKSRC}/dhcpctl/dhcpctl.h ${PREFIX}/include
+	${INSTALL_DATA} ${WRKSRC}/doc/examples/dhcpd-dhcpv6.conf \
+		${PREFIX}/etc/dhcpd6.conf.sample
 .endif
 .if defined(WITH_DHCP_LDAP)
 	@${MKDIR} ${SCHEMA_DIR}
@@ -166,12 +168,16 @@ do-install:
 
 post-install:
 .if defined(CONF_FILE)
-	if [ ! -f ${PREFIX}/etc/${CONF_FILE} ]; then \
-		${CP} -p ${PREFIX}/etc/${CONF_FILE}.sample ${PREFIX}/etc/${CONF_FILE} ; \
+.for FILE in ${CONF_FILE}
+	if [ ! -f ${PREFIX}/etc/${FILE} ]; then \
+		${CP} -p ${PREFIX}/etc/${FILE}.sample ${PREFIX}/etc/${FILE} ; \
 	fi
+.endfor
 .endif
 .if ${SUBSYS} == client
 	${INSTALL_SCRIPT} ${WRKSRC}/client/scripts/freebsd ${PREFIX}/sbin/dhclient-script
+.elif ${SUBSYS} == server
+	@${LN} -sf isc-dhcpd ${PREFIX}/etc/rc.d/isc-dhcpd6
 .endif
 	@${SED} ${PKGMESSAGE_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
 		${MSG_FILE} > ${PKGMESSAGE}
