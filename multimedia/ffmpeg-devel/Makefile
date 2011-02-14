@@ -111,8 +111,7 @@ DOC_FILES=	Changelog COPYING.GPLv2 COPYING.GPLv3 COPYING.LGPLv2.1 \
 		COPYING.LGPLv3 CREDITS INSTALL LICENSE MAINTAINERS README
 # under doc subdirectory
 DOC_DOCFILES=	APIchanges TODO avutil.txt developer.html faq.html \
-		ffmpeg.html ffplay.html ffprobe.html \
-		ffserver.html general.html issue_tracker.txt \
+		ffmpeg.html ffprobe.html general.html issue_tracker.txt \
 		libavfilter.html optimization.txt rate_distortion.txt \
 		snow.txt soc.txt swscale.txt tablegen.txt viterbi.txt
 PORTDOCS=	*
@@ -153,9 +152,6 @@ FFMPEG_CFLAGS+=		-msse
 .ifndef(NOPORTDOCS)
 BUILD_DEPENDS+=		texi2html:${PORTSDIR}/textproc/texi2html
 MAN1+=		ffmpeg.1 ffprobe.1
-. ifndef(WITHOUT_FFSERVER)
-MAN1+=		ffserver.1
-. endif
 .endif
 
 # optimizations
@@ -207,6 +203,10 @@ CONFIGURE_ARGS+=	--disable-libfaac
 # ffserver
 .ifndef(WITHOUT_FFSERVER)
 PLIST_SUB+=	FFSERVER=""
+. ifndef(NOPORTDOCS)
+MAN1+=		ffserver.1
+DOC_DOCFILES+=	ffserver.html
+. endif
 .else
 PLIST_SUB+=	FFSERVER="@comment "
 CONFIGURE_ARGS+=	--disable-ffserver
@@ -266,6 +266,7 @@ USE_SDL+=	sdl
 PLIST_FILES+=	bin/ffplay
 .if !defined(NOPORTDOCS)
 MAN1+=	ffplay.1
+DOC_DOCFILES+=	ffplay.html
 .endif
 .else
 CONFIGURE_ARGS+=	--disable-ffplay
