@@ -2370,6 +2370,7 @@ devede                          ports/multimedia/devede
 devel_atlas                     ports/devel/atlas
 devel_atlas-devel               ports/devel/atlas-devel
 devel_lightning                 ports/devel/lightning
+devel_ninja                     ports/devel/ninja
 devel_rvm                       ports/devel/rvm
 devhelp                         ports/devel/devhelp
 devil                           ports/graphics/devil
@@ -6092,6 +6093,7 @@ ipython                         ports/devel/ipython
 irc                             ports/irc/irc
 irc2dc                          ports/irc/irc2dc
 ircII                           ports/irc/ircII
+irc_ninja                       ports/irc/ninja
 ircd-hybrid                     ports/irc/ircd-hybrid
 ircd-hybrid-ru                  ports/irc/ircd-hybrid-ru
 ircd-ratbox                     ports/irc/ircd-ratbox
@@ -9792,6 +9794,7 @@ mrundlg                         ports/deskutils/mrundlg
 mrxvt                           ports/x11/mrxvt
 mrxvt-devel                     ports/x11/mrxvt-devel
 ms-aspell                       ports/textproc/ms-aspell
+mscgen                          ports/graphics/mscgen
 mscompress                      ports/archivers/mscompress
 msdl                            ports/multimedia/msdl
 msend                           ports/net/msend
@@ -10260,7 +10263,6 @@ nil                             ports/games/nil
 nimuh                           ports/games/nimuh
 nini                            ports/devel/nini
 ninix-aya                       ports/games/ninix-aya
-ninja                           ports/irc/ninja
 ninvaders                       ports/games/nInvaders
 nip2                            ports/graphics/nip2
 nipper                          ports/net-mgmt/nipper
@@ -11892,6 +11894,7 @@ p5-DWH_File                     ports/databases/p5-DWH_File
 p5-Daemon-Generic               ports/net/p5-Daemon-Generic
 p5-Dancer                       ports/www/p5-Dancer
 p5-Dancer-Debug                 ports/devel/p5-Dancer-Debug
+p5-Dancer-Plugin-DBIC           ports/databases/p5-Dancer-Plugin-DBIC
 p5-Dancer-Plugin-DataFu         ports/www/p5-Dancer-Plugin-DataFu
 p5-Dancer-Plugin-Database       ports/databases/p5-Dancer-Plugin-Database
 p5-Dancer-Plugin-Email          ports/mail/p5-Dancer-Plugin-Email
@@ -12265,6 +12268,7 @@ p5-Facebook-Graph               ports/www/p5-Facebook-Graph
 p5-FastCGI                      ports/www/p5-FastCGI
 p5-Fax-Hylafax-Client           ports/comms/p5-Fax-Hylafax-Client
 p5-Feed-Find                    ports/www/p5-Feed-Find
+p5-Feersum                      ports/www/p5-Feersum
 p5-Fennec-Lite                  ports/devel/p5-Fennec-Lite
 p5-File-Append-TempFile         ports/devel/p5-File-Append-TempFile
 p5-File-Attributes              ports/devel/p5-File-Attributes
@@ -12738,7 +12742,9 @@ p5-IO-CSVHeaderFile             ports/textproc/p5-IO-CSVHeaderFile
 p5-IO-Capture                   ports/devel/p5-IO-Capture
 p5-IO-CaptureOutput             ports/devel/p5-IO-CaptureOutput
 p5-IO-Compress                  ports/archivers/p5-IO-Compress
+p5-IO-Compress-Lzf              ports/archivers/p5-IO-Compress-Lzf
 p5-IO-Compress-Lzma             ports/archivers/p5-IO-Compress-Lzma
+p5-IO-Compress-Lzop             ports/archivers/p5-IO-Compress-Lzop
 p5-IO-Digest                    ports/devel/p5-IO-Digest
 p5-IO-Handle-Util               ports/devel/p5-IO-Handle-Util
 p5-IO-Interactive               ports/devel/p5-IO-Interactive
@@ -13987,7 +13993,7 @@ p5-SQL-Abstract-Plugin-InsertMulti  ports/databases/p5-SQL-Abstract-Plugin-Inser
 p5-SQL-Interp                   ports/databases/p5-SQL-Interp
 p5-SQL-ReservedWords            ports/databases/p5-SQL-ReservedWords
 p5-SQL-Statement                ports/databases/p5-SQL-Statement
-p5-SQL-Tokenizer                ports/lang/p5-SQL-Tokenizer
+p5-SQL-Tokenizer                ports/textproc/p5-SQL-Tokenizer
 p5-SQL-Translator               ports/databases/p5-SQL-Translator
 p5-SQLite-Work                  ports/databases/p5-SQLite-Work
 p5-SRU                          ports/www/p5-SRU
@@ -15892,6 +15898,7 @@ p5-dancer                       ports/www/p5-Dancer
 p5-dancer-debug                 ports/devel/p5-Dancer-Debug
 p5-dancer-plugin-database       ports/databases/p5-Dancer-Plugin-Database
 p5-dancer-plugin-datafu         ports/www/p5-Dancer-Plugin-DataFu
+p5-dancer-plugin-dbic           ports/databases/p5-Dancer-Plugin-DBIC
 p5-dancer-plugin-email          ports/mail/p5-Dancer-Plugin-Email
 p5-dancer-session-memcached     ports/databases/p5-Dancer-Session-Memcached
 p5-danga-socket                 ports/devel/p5-Danga-Socket
@@ -16368,6 +16375,7 @@ p5-fcgi-procmanager             ports/www/p5-FCGI-ProcManager
 p5-fcgi-spawn                   ports/www/p5-FCGI-Spawn
 p5-fear-api                     ports/www/p5-FEAR-API
 p5-feed-find                    ports/www/p5-Feed-Find
+p5-feersum                      ports/www/p5-Feersum
 p5-fennec-lite                  ports/devel/p5-Fennec-Lite
 p5-ffmpeg-command               ports/multimedia/p5-FFmpeg-Command
 p5-file-append-tempfile         ports/devel/p5-File-Append-TempFile
@@ -16887,7 +16895,9 @@ p5-io-bufferedselect            ports/devel/p5-IO-BufferedSelect
 p5-io-capture                   ports/devel/p5-IO-Capture
 p5-io-captureoutput             ports/devel/p5-IO-CaptureOutput
 p5-io-compress                  ports/archivers/p5-IO-Compress
+p5-io-compress-lzf              ports/archivers/p5-IO-Compress-Lzf
 p5-io-compress-lzma             ports/archivers/p5-IO-Compress-Lzma
+p5-io-compress-lzop             ports/archivers/p5-IO-Compress-Lzop
 p5-io-csvheaderfile             ports/textproc/p5-IO-CSVHeaderFile
 p5-io-digest                    ports/devel/p5-IO-Digest
 p5-io-handle-util               ports/devel/p5-IO-Handle-Util
@@ -18242,7 +18252,7 @@ p5-sql-abstract-plugin-insertmulti  ports/databases/p5-SQL-Abstract-Plugin-Inser
 p5-sql-interp                   ports/databases/p5-SQL-Interp
 p5-sql-reservedwords            ports/databases/p5-SQL-ReservedWords
 p5-sql-statement                ports/databases/p5-SQL-Statement
-p5-sql-tokenizer                ports/lang/p5-SQL-Tokenizer
+p5-sql-tokenizer                ports/textproc/p5-SQL-Tokenizer
 p5-sql-translator               ports/databases/p5-SQL-Translator
 p5-sqlite-work                  ports/databases/p5-SQLite-Work
 p5-squatting                    ports/www/p5-Squatting
@@ -21471,6 +21481,7 @@ py-milter                       ports/mail/py-milter
 py-ming                         ports/graphics/py-ming
 py-miniupnpc                    ports/net/py-miniupnpc
 py-mlpy                         ports/science/py-mlpy
+py-mlt                          ports/multimedia/py-mlt
 py-mnemosyne                    ports/games/py-mnemosyne
 py-mock                         ports/devel/py-mock
 py-mongoengine                  ports/devel/py-mongoengine
@@ -22304,6 +22315,7 @@ quickie                         ports/www/quickie
 quickml                         ports/mail/quickml
 quicksynergy                    ports/sysutils/quicksynergy
 quilt                           ports/devel/quilt
+quimup                          ports/audio/quimup
 quintuple-agent                 ports/security/quintuple-agent
 quirc                           ports/irc/quirc
 quit                            ports/games/quit
@@ -22453,6 +22465,7 @@ redet                           ports/textproc/redet
 redir                           ports/net/redir
 redis                           ports/databases/redis
 redis1                          ports/databases/redis1
+redis2                          ports/databases/redis2
 redland                         ports/textproc/redland
 redland-bindings                ports/textproc/redland-bindings
 redland-bindings-python         ports/textproc/redland-bindings-python
