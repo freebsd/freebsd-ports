@@ -97,6 +97,10 @@
 %%PYTHON_SITELIBDIR%%/mpmath/libmp/backend.py
 %%PYTHON_SITELIBDIR%%/mpmath/libmp/backend.pyc
 %%PYTHON_SITELIBDIR%%/mpmath/libmp/backend.pyo
+%%PYTHON_SITELIBDIR%%/mpmath/libmp/exec_py2.py
+%%PYTHON_SITELIBDIR%%/mpmath/libmp/exec_py3.py
+%%PYTHON_SITELIBDIR%%/mpmath/libmp/exec_py2.pyc
+%%PYTHON_SITELIBDIR%%/mpmath/libmp/exec_py2.pyo
 %%PYTHON_SITELIBDIR%%/mpmath/libmp/gammazeta.py
 %%PYTHON_SITELIBDIR%%/mpmath/libmp/gammazeta.pyc
 %%PYTHON_SITELIBDIR%%/mpmath/libmp/gammazeta.pyo
@@ -143,8 +147,6 @@
 %%PYTHON_SITELIBDIR%%/mpmath/tests/extratest_bessel.pyc
 %%PYTHON_SITELIBDIR%%/mpmath/tests/extratest_bessel.pyo
 %%PYTHON_SITELIBDIR%%/mpmath/tests/extratest_gamma.py
-%%PYTHON_SITELIBDIR%%/mpmath/tests/extratest_gamma.pyc
-%%PYTHON_SITELIBDIR%%/mpmath/tests/extratest_gamma.pyo
 %%PYTHON_SITELIBDIR%%/mpmath/tests/extratest_zeta.py
 %%PYTHON_SITELIBDIR%%/mpmath/tests/extratest_zeta.pyc
 %%PYTHON_SITELIBDIR%%/mpmath/tests/extratest_zeta.pyo
@@ -236,8 +238,6 @@
 %%PYTHON_SITELIBDIR%%/mpmath/tests/test_visualization.pyc
 %%PYTHON_SITELIBDIR%%/mpmath/tests/test_visualization.pyo
 %%PYTHON_SITELIBDIR%%/mpmath/tests/torture.py
-%%PYTHON_SITELIBDIR%%/mpmath/tests/torture.pyc
-%%PYTHON_SITELIBDIR%%/mpmath/tests/torture.pyo
 %%PYTHON_SITELIBDIR%%/mpmath/usertools.py
 %%PYTHON_SITELIBDIR%%/mpmath/usertools.pyc
 %%PYTHON_SITELIBDIR%%/mpmath/usertools.pyo
