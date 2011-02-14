@@ -810,6 +810,9 @@ noc/fm/rules/classes/auth.pyo
 noc/fm/rules/classes/bgp.py
 noc/fm/rules/classes/bgp.pyc
 noc/fm/rules/classes/bgp.pyo
+noc/fm/rules/classes/chassis.py
+noc/fm/rules/classes/chassis.pyc
+noc/fm/rules/classes/chassis.pyo
 noc/fm/rules/classes/config.py
 noc/fm/rules/classes/config.pyc
 noc/fm/rules/classes/config.pyo
@@ -987,6 +990,27 @@ noc/fm/rules/classification/DLink/DES3xxx/link.pyo
 noc/fm/rules/classification/DLink/DES3xxx/security.py
 noc/fm/rules/classification/DLink/DES3xxx/security.pyc
 noc/fm/rules/classification/DLink/DES3xxx/security.pyo
+noc/fm/rules/classification/DLink/DxS/__init__.py
+noc/fm/rules/classification/DLink/DxS/__init__.pyc
+noc/fm/rules/classification/DLink/DxS/__init__.pyo
+noc/fm/rules/classification/DLink/DxS/bgp.py
+noc/fm/rules/classification/DLink/DxS/bgp.pyc
+noc/fm/rules/classification/DLink/DxS/bgp.pyo
+noc/fm/rules/classification/DLink/DxS/chassis.py
+noc/fm/rules/classification/DLink/DxS/chassis.pyc
+noc/fm/rules/classification/DLink/DxS/chassis.pyo
+noc/fm/rules/classification/DLink/DxS/config.py
+noc/fm/rules/classification/DLink/DxS/config.pyc
+noc/fm/rules/classification/DLink/DxS/config.pyo
+noc/fm/rules/classification/DLink/DxS/lbd.py
+noc/fm/rules/classification/DLink/DxS/lbd.pyc
+noc/fm/rules/classification/DLink/DxS/lbd.pyo
+noc/fm/rules/classification/DLink/DxS/link.py
+noc/fm/rules/classification/DLink/DxS/link.pyc
+noc/fm/rules/classification/DLink/DxS/link.pyo
+noc/fm/rules/classification/DLink/DxS/security.py
+noc/fm/rules/classification/DLink/DxS/security.pyc
+noc/fm/rules/classification/DLink/DxS/security.pyo
 noc/fm/rules/classification/DLink/__init__.py
 noc/fm/rules/classification/DLink/__init__.pyc
 noc/fm/rules/classification/DLink/__init__.pyo
@@ -1032,6 +1056,24 @@ noc/fm/rules/classification/Linksys/SPS2xx/link.pyo
 noc/fm/rules/classification/Linksys/__init__.py
 noc/fm/rules/classification/Linksys/__init__.pyc
 noc/fm/rules/classification/Linksys/__init__.pyo
+noc/fm/rules/classification/OS/FreeBSD/__init__.py
+noc/fm/rules/classification/OS/FreeBSD/__init__.pyc
+noc/fm/rules/classification/OS/FreeBSD/__init__.pyo
+noc/fm/rules/classification/OS/FreeBSD/chassis.py
+noc/fm/rules/classification/OS/FreeBSD/chassis.pyc
+noc/fm/rules/classification/OS/FreeBSD/chassis.pyo
+noc/fm/rules/classification/OS/FreeBSD/link.py
+noc/fm/rules/classification/OS/FreeBSD/link.pyc
+noc/fm/rules/classification/OS/FreeBSD/link.pyo
+noc/fm/rules/classification/OS/FreeBSD/memory.py
+noc/fm/rules/classification/OS/FreeBSD/memory.pyc
+noc/fm/rules/classification/OS/FreeBSD/memory.pyo
+noc/fm/rules/classification/OS/FreeBSD/security.py
+noc/fm/rules/classification/OS/FreeBSD/security.pyc
+noc/fm/rules/classification/OS/FreeBSD/security.pyo
+noc/fm/rules/classification/OS/__init__.py
+noc/fm/rules/classification/OS/__init__.pyc
+noc/fm/rules/classification/OS/__init__.pyo
 noc/fm/rules/classification/Zyxel/ZyNOS/__init__.py
 noc/fm/rules/classification/Zyxel/ZyNOS/__init__.pyc
 noc/fm/rules/classification/Zyxel/ZyNOS/__init__.pyo
@@ -1083,6 +1125,9 @@ noc/fm/rules/classification/system.pyo
 noc/fm/rules/correlation/__init__.py
 noc/fm/rules/correlation/__init__.pyc
 noc/fm/rules/correlation/__init__.pyo
+noc/fm/rules/correlation/chassis.py
+noc/fm/rules/correlation/chassis.pyc
+noc/fm/rules/correlation/chassis.pyo
 noc/fm/rules/correlation/dot11.py
 noc/fm/rules/correlation/dot11.pyc
 noc/fm/rules/correlation/dot11.pyo
@@ -2339,7 +2384,6 @@ noc/main/tests/refbook.pyo
 noc/manage.py
 noc/manage.pyc
 noc/manage.pyo
-noc/noc-0.6-py2.6.egg-info
 noc/peer/__init__.py
 noc/peer/__init__.pyc
 noc/peer/__init__.pyo
@@ -3010,6 +3054,12 @@ noc/sa/interfaces/iauthenticationform.pyo
 noc/sa/interfaces/icommands.py
 noc/sa/interfaces/icommands.pyc
 noc/sa/interfaces/icommands.pyo
+noc/sa/interfaces/iconfigfilter.py
+noc/sa/interfaces/iconfigfilter.pyc
+noc/sa/interfaces/iconfigfilter.pyo
+noc/sa/interfaces/iconfigvalidator.py
+noc/sa/interfaces/iconfigvalidator.pyc
+noc/sa/interfaces/iconfigvalidator.pyo
 noc/sa/interfaces/idbpostdelete.py
 noc/sa/interfaces/idbpostdelete.pyc
 noc/sa/interfaces/idbpostdelete.pyo
@@ -3040,9 +3090,15 @@ noc/sa/interfaces/igetconfig.pyo
 noc/sa/interfaces/igetdhcpbinding.py
 noc/sa/interfaces/igetdhcpbinding.pyc
 noc/sa/interfaces/igetdhcpbinding.pyo
+noc/sa/interfaces/igetdictlist.py
+noc/sa/interfaces/igetdictlist.pyc
+noc/sa/interfaces/igetdictlist.pyo
 noc/sa/interfaces/igetdot11associations.py
 noc/sa/interfaces/igetdot11associations.pyc
 noc/sa/interfaces/igetdot11associations.pyo
+noc/sa/interfaces/igetfdpneighbors.py
+noc/sa/interfaces/igetfdpneighbors.pyc
+noc/sa/interfaces/igetfdpneighbors.pyo
 noc/sa/interfaces/igetfqdn.py
 noc/sa/interfaces/igetfqdn.pyc
 noc/sa/interfaces/igetfqdn.pyo
@@ -3211,6 +3267,12 @@ noc/sa/migrations/0029_managedobjectattribute.pyo
 noc/sa/migrations/0030_merge_EdgeCore.py
 noc/sa/migrations/0030_merge_EdgeCore.pyc
 noc/sa/migrations/0030_merge_EdgeCore.pyo
+noc/sa/migrations/0031_management_object_rules.py
+noc/sa/migrations/0031_management_object_rules.pyc
+noc/sa/migrations/0031_management_object_rules.pyo
+noc/sa/migrations/0032_merge_DLink.py
+noc/sa/migrations/0032_merge_DLink.pyc
+noc/sa/migrations/0032_merge_DLink.pyo
 noc/sa/migrations/__init__.py
 noc/sa/migrations/__init__.pyc
 noc/sa/migrations/__init__.pyo
@@ -3319,6 +3381,22 @@ noc/sa/profiles/Alcatel/OS62xx/tests/Alcatel_OmniStack_LS_6200_1_5_1_7_get_versi
 noc/sa/profiles/Alcatel/OS62xx/tests/__init__.py
 noc/sa/profiles/Alcatel/OS62xx/tests/__init__.pyc
 noc/sa/profiles/Alcatel/OS62xx/tests/__init__.pyo
+noc/sa/profiles/Alcatel/TIMOS/__init__.py
+noc/sa/profiles/Alcatel/TIMOS/__init__.pyc
+noc/sa/profiles/Alcatel/TIMOS/__init__.pyo
+noc/sa/profiles/Alcatel/TIMOS/get_config.py
+noc/sa/profiles/Alcatel/TIMOS/get_config.pyc
+noc/sa/profiles/Alcatel/TIMOS/get_config.pyo
+noc/sa/profiles/Alcatel/TIMOS/get_version.py
+noc/sa/profiles/Alcatel/TIMOS/get_version.pyc
+noc/sa/profiles/Alcatel/TIMOS/get_version.pyo
+noc/sa/profiles/Alcatel/TIMOS/supported.csv
+noc/sa/profiles/Alcatel/TIMOS/tests/Alcatel_Alcatel_TIMOS_C_8_0_R3_get_version_0001.py
+noc/sa/profiles/Alcatel/TIMOS/tests/Alcatel_Alcatel_TIMOS_C_8_0_R3_get_version_0001.pyc
+noc/sa/profiles/Alcatel/TIMOS/tests/Alcatel_Alcatel_TIMOS_C_8_0_R3_get_version_0001.pyo
+noc/sa/profiles/Alcatel/TIMOS/tests/__init__.py
+noc/sa/profiles/Alcatel/TIMOS/tests/__init__.pyc
+noc/sa/profiles/Alcatel/TIMOS/tests/__init__.pyo
 noc/sa/profiles/Alcatel/__init__.py
 noc/sa/profiles/Alcatel/__init__.pyc
 noc/sa/profiles/Alcatel/__init__.pyo
@@ -3536,6 +3614,9 @@ noc/sa/profiles/Cisco/IOS/tests/Cisco_2800_12_4_25c__get_version_0001.pyo
 noc/sa/profiles/Cisco/IOS/tests/Cisco_3800_12_4_24_T1_get_version_0001.py
 noc/sa/profiles/Cisco/IOS/tests/Cisco_3800_12_4_24_T1_get_version_0001.pyc
 noc/sa/profiles/Cisco/IOS/tests/Cisco_3800_12_4_24_T1_get_version_0001.pyo
+noc/sa/profiles/Cisco/IOS/tests/Cisco_3800_12_4_24_T1_get_vlans_0001.py
+noc/sa/profiles/Cisco/IOS/tests/Cisco_3800_12_4_24_T1_get_vlans_0001.pyc
+noc/sa/profiles/Cisco/IOS/tests/Cisco_3800_12_4_24_T1_get_vlans_0001.pyo
 noc/sa/profiles/Cisco/IOS/tests/Cisco_C1900_15_0_1_M1_get_version_0001.py
 noc/sa/profiles/Cisco/IOS/tests/Cisco_C1900_15_0_1_M1_get_version_0001.pyc
 noc/sa/profiles/Cisco/IOS/tests/Cisco_C1900_15_0_1_M1_get_version_0001.pyo
@@ -3548,6 +3629,9 @@ noc/sa/profiles/Cisco/IOS/tests/Cisco_C3550_12_2_52_SE_get_version_0001.pyo
 noc/sa/profiles/Cisco/IOS/tests/Cisco_C3560_12_2_25_SEE4_get_version_0001.py
 noc/sa/profiles/Cisco/IOS/tests/Cisco_C3560_12_2_25_SEE4_get_version_0001.pyc
 noc/sa/profiles/Cisco/IOS/tests/Cisco_C3560_12_2_25_SEE4_get_version_0001.pyo
+noc/sa/profiles/Cisco/IOS/tests/Cisco_C3560_12_2_44_SE6_get_spanning_tree_0001.py
+noc/sa/profiles/Cisco/IOS/tests/Cisco_C3560_12_2_44_SE6_get_spanning_tree_0001.pyc
+noc/sa/profiles/Cisco/IOS/tests/Cisco_C3560_12_2_44_SE6_get_spanning_tree_0001.pyo
 noc/sa/profiles/Cisco/IOS/tests/Cisco_C3560_12_2_46_SE_get_lldp_neighbors_0001.py
 noc/sa/profiles/Cisco/IOS/tests/Cisco_C3560_12_2_46_SE_get_lldp_neighbors_0001.pyc
 noc/sa/profiles/Cisco/IOS/tests/Cisco_C3560_12_2_46_SE_get_lldp_neighbors_0001.pyo
@@ -3590,6 +3674,9 @@ noc/sa/profiles/Cisco/IOS/tests/Cisco_C3750_12_2_53_SE2_get_version_0002.pyo
 noc/sa/profiles/Cisco/IOS/tests/Cisco_CBS31X0_12_2_50_SE3_get_chassis_id_0001.py
 noc/sa/profiles/Cisco/IOS/tests/Cisco_CBS31X0_12_2_50_SE3_get_chassis_id_0001.pyc
 noc/sa/profiles/Cisco/IOS/tests/Cisco_CBS31X0_12_2_50_SE3_get_chassis_id_0001.pyo
+noc/sa/profiles/Cisco/IOS/tests/Cisco_CBS31X0_12_2_50_SE3_get_fqdn_0001.py
+noc/sa/profiles/Cisco/IOS/tests/Cisco_CBS31X0_12_2_50_SE3_get_fqdn_0001.pyc
+noc/sa/profiles/Cisco/IOS/tests/Cisco_CBS31X0_12_2_50_SE3_get_fqdn_0001.pyo
 noc/sa/profiles/Cisco/IOS/tests/Cisco_CBS31X0_12_2_50_SE3_get_lldp_neighbors_0001.py
 noc/sa/profiles/Cisco/IOS/tests/Cisco_CBS31X0_12_2_50_SE3_get_lldp_neighbors_0001.pyc
 noc/sa/profiles/Cisco/IOS/tests/Cisco_CBS31X0_12_2_50_SE3_get_lldp_neighbors_0001.pyo
@@ -3605,6 +3692,12 @@ noc/sa/profiles/Cisco/IOS/tests/Cisco_CBS31X0_12_2_50_SE3_get_version_0001.pyo
 noc/sa/profiles/Cisco/IOS/tests/Cisco_CBS31X0_12_2_50_SE3_get_version_0002.py
 noc/sa/profiles/Cisco/IOS/tests/Cisco_CBS31X0_12_2_50_SE3_get_version_0002.pyc
 noc/sa/profiles/Cisco/IOS/tests/Cisco_CBS31X0_12_2_50_SE3_get_version_0002.pyo
+noc/sa/profiles/Cisco/IOS/tests/Cisco_CBS31X0_12_2_50_SE3_get_vlans_0001.py
+noc/sa/profiles/Cisco/IOS/tests/Cisco_CBS31X0_12_2_50_SE3_get_vlans_0001.pyc
+noc/sa/profiles/Cisco/IOS/tests/Cisco_CBS31X0_12_2_50_SE3_get_vlans_0001.pyo
+noc/sa/profiles/Cisco/IOS/tests/Cisco_CBS31X0_12_2_55_SE_get_version_0001.py
+noc/sa/profiles/Cisco/IOS/tests/Cisco_CBS31X0_12_2_55_SE_get_version_0001.pyc
+noc/sa/profiles/Cisco/IOS/tests/Cisco_CBS31X0_12_2_55_SE_get_version_0001.pyo
 noc/sa/profiles/Cisco/IOS/tests/Cisco_Catalyst_4500_L3_Switch_12_2_31_SGA10_get_mac_address_table_0001.py
 noc/sa/profiles/Cisco/IOS/tests/Cisco_Catalyst_4500_L3_Switch_12_2_31_SGA10_get_mac_address_table_0001.pyc
 noc/sa/profiles/Cisco/IOS/tests/Cisco_Catalyst_4500_L3_Switch_12_2_31_SGA10_get_mac_address_table_0001.pyo
@@ -3617,6 +3710,9 @@ noc/sa/profiles/Cisco/IOS/tests/Cisco_Catalyst_4500_L3_Switch_12_2_37_SG1_get_ma
 noc/sa/profiles/Cisco/IOS/tests/Cisco_Catalyst_4500_L3_Switch_12_2_37_SG1_get_version_0001.py
 noc/sa/profiles/Cisco/IOS/tests/Cisco_Catalyst_4500_L3_Switch_12_2_37_SG1_get_version_0001.pyc
 noc/sa/profiles/Cisco/IOS/tests/Cisco_Catalyst_4500_L3_Switch_12_2_37_SG1_get_version_0001.pyo
+noc/sa/profiles/Cisco/IOS/tests/Cisco_EGR_12_3_17b_BC3_get_spanning_tree_0001.py
+noc/sa/profiles/Cisco/IOS/tests/Cisco_EGR_12_3_17b_BC3_get_spanning_tree_0001.pyc
+noc/sa/profiles/Cisco/IOS/tests/Cisco_EGR_12_3_17b_BC3_get_spanning_tree_0001.pyo
 noc/sa/profiles/Cisco/IOS/tests/Cisco_s222_rp_12_2_18_SXF13_get_mac_address_table_0001.py
 noc/sa/profiles/Cisco/IOS/tests/Cisco_s222_rp_12_2_18_SXF13_get_mac_address_table_0001.pyc
 noc/sa/profiles/Cisco/IOS/tests/Cisco_s222_rp_12_2_18_SXF13_get_mac_address_table_0001.pyo
@@ -3653,6 +3749,9 @@ noc/sa/profiles/Cisco/IOS/tests/Cisco_s72033_rp_12_2_33_SXI2_get_mac_address_tab
 noc/sa/profiles/Cisco/IOS/tests/Cisco_uBR7114_12_3_23_BC5_get_version_0001.py
 noc/sa/profiles/Cisco/IOS/tests/Cisco_uBR7114_12_3_23_BC5_get_version_0001.pyc
 noc/sa/profiles/Cisco/IOS/tests/Cisco_uBR7114_12_3_23_BC5_get_version_0001.pyo
+noc/sa/profiles/Cisco/IOS/tests/Cisco_uBR7114_12_3_32_BC5_get_vlans_0001.py
+noc/sa/profiles/Cisco/IOS/tests/Cisco_uBR7114_12_3_32_BC5_get_vlans_0001.pyc
+noc/sa/profiles/Cisco/IOS/tests/Cisco_uBR7114_12_3_32_BC5_get_vlans_0001.pyo
 noc/sa/profiles/Cisco/IOS/tests/__init__.py
 noc/sa/profiles/Cisco/IOS/tests/__init__.pyc
 noc/sa/profiles/Cisco/IOS/tests/__init__.pyo
@@ -3684,110 +3783,166 @@ noc/sa/profiles/Cisco/NXOS/supported.csv
 noc/sa/profiles/Cisco/__init__.py
 noc/sa/profiles/Cisco/__init__.pyc
 noc/sa/profiles/Cisco/__init__.pyo
-noc/sa/profiles/DLink/DES3xxx/__init__.py
-noc/sa/profiles/DLink/DES3xxx/__init__.pyc
-noc/sa/profiles/DLink/DES3xxx/__init__.pyo
-noc/sa/profiles/DLink/DES3xxx/add_vlan.py
-noc/sa/profiles/DLink/DES3xxx/add_vlan.pyc
-noc/sa/profiles/DLink/DES3xxx/add_vlan.pyo
-noc/sa/profiles/DLink/DES3xxx/get_arp.py
-noc/sa/profiles/DLink/DES3xxx/get_arp.pyc
-noc/sa/profiles/DLink/DES3xxx/get_arp.pyo
-noc/sa/profiles/DLink/DES3xxx/get_chassis_id.py
-noc/sa/profiles/DLink/DES3xxx/get_chassis_id.pyc
-noc/sa/profiles/DLink/DES3xxx/get_chassis_id.pyo
-noc/sa/profiles/DLink/DES3xxx/get_config.py
-noc/sa/profiles/DLink/DES3xxx/get_config.pyc
-noc/sa/profiles/DLink/DES3xxx/get_config.pyo
-noc/sa/profiles/DLink/DES3xxx/get_mac_address_table.py
-noc/sa/profiles/DLink/DES3xxx/get_mac_address_table.pyc
-noc/sa/profiles/DLink/DES3xxx/get_mac_address_table.pyo
-noc/sa/profiles/DLink/DES3xxx/get_version.py
-noc/sa/profiles/DLink/DES3xxx/get_version.pyc
-noc/sa/profiles/DLink/DES3xxx/get_version.pyo
-noc/sa/profiles/DLink/DES3xxx/get_vlans.py
-noc/sa/profiles/DLink/DES3xxx/get_vlans.pyc
-noc/sa/profiles/DLink/DES3xxx/get_vlans.pyo
-noc/sa/profiles/DLink/DES3xxx/remove_vlan.py
-noc/sa/profiles/DLink/DES3xxx/remove_vlan.pyc
-noc/sa/profiles/DLink/DES3xxx/remove_vlan.pyo
-noc/sa/profiles/DLink/DES3xxx/supported.csv
-noc/sa/profiles/DLink/DES3xxx/tests/DLink_DES_3026_4_30_B16_get_chassis_id_0001.py
-noc/sa/profiles/DLink/DES3xxx/tests/DLink_DES_3026_4_30_B16_get_chassis_id_0001.pyc
-noc/sa/profiles/DLink/DES3xxx/tests/DLink_DES_3026_4_30_B16_get_chassis_id_0001.pyo
-noc/sa/profiles/DLink/DES3xxx/tests/DLink_DES_3028_2_42_B01_get_chassis_id_0001.py
-noc/sa/profiles/DLink/DES3xxx/tests/DLink_DES_3028_2_42_B01_get_chassis_id_0001.pyc
-noc/sa/profiles/DLink/DES3xxx/tests/DLink_DES_3028_2_42_B01_get_chassis_id_0001.pyo
-noc/sa/profiles/DLink/DES3xxx/tests/DLink_DES_3526_6_00_B23_get_version_0001.py
-noc/sa/profiles/DLink/DES3xxx/tests/DLink_DES_3526_6_00_B23_get_version_0001.pyc
-noc/sa/profiles/DLink/DES3xxx/tests/DLink_DES_3526_6_00_B23_get_version_0001.pyo
-noc/sa/profiles/DLink/DES3xxx/tests/DLink_DES_3528_2_11_B020_get_version_0001.py
-noc/sa/profiles/DLink/DES3xxx/tests/DLink_DES_3528_2_11_B020_get_version_0001.pyc
-noc/sa/profiles/DLink/DES3xxx/tests/DLink_DES_3528_2_11_B020_get_version_0001.pyo
-noc/sa/profiles/DLink/DES3xxx/tests/DLink_DES_3828_4_50_B22_get_version_0001.py
-noc/sa/profiles/DLink/DES3xxx/tests/DLink_DES_3828_4_50_B22_get_version_0001.pyc
-noc/sa/profiles/DLink/DES3xxx/tests/DLink_DES_3828_4_50_B22_get_version_0001.pyo
-noc/sa/profiles/DLink/DES3xxx/tests/__init__.py
-noc/sa/profiles/DLink/DES3xxx/tests/__init__.pyc
-noc/sa/profiles/DLink/DES3xxx/tests/__init__.pyo
-noc/sa/profiles/DLink/DGS3xxx/__init__.py
-noc/sa/profiles/DLink/DGS3xxx/__init__.pyc
-noc/sa/profiles/DLink/DGS3xxx/__init__.pyo
-noc/sa/profiles/DLink/DGS3xxx/add_vlan.py
-noc/sa/profiles/DLink/DGS3xxx/add_vlan.pyc
-noc/sa/profiles/DLink/DGS3xxx/add_vlan.pyo
-noc/sa/profiles/DLink/DGS3xxx/get_arp.py
-noc/sa/profiles/DLink/DGS3xxx/get_arp.pyc
-noc/sa/profiles/DLink/DGS3xxx/get_arp.pyo
-noc/sa/profiles/DLink/DGS3xxx/get_chassis_id.py
-noc/sa/profiles/DLink/DGS3xxx/get_chassis_id.pyc
-noc/sa/profiles/DLink/DGS3xxx/get_chassis_id.pyo
-noc/sa/profiles/DLink/DGS3xxx/get_config.py
-noc/sa/profiles/DLink/DGS3xxx/get_config.pyc
-noc/sa/profiles/DLink/DGS3xxx/get_config.pyo
-noc/sa/profiles/DLink/DGS3xxx/get_mac_address_table.py
-noc/sa/profiles/DLink/DGS3xxx/get_mac_address_table.pyc
-noc/sa/profiles/DLink/DGS3xxx/get_mac_address_table.pyo
-noc/sa/profiles/DLink/DGS3xxx/get_portchannel.py
-noc/sa/profiles/DLink/DGS3xxx/get_portchannel.pyc
-noc/sa/profiles/DLink/DGS3xxx/get_portchannel.pyo
-noc/sa/profiles/DLink/DGS3xxx/get_version.py
-noc/sa/profiles/DLink/DGS3xxx/get_version.pyc
-noc/sa/profiles/DLink/DGS3xxx/get_version.pyo
-noc/sa/profiles/DLink/DGS3xxx/get_vlans.py
-noc/sa/profiles/DLink/DGS3xxx/get_vlans.pyc
-noc/sa/profiles/DLink/DGS3xxx/get_vlans.pyo
-noc/sa/profiles/DLink/DGS3xxx/highlight.py
-noc/sa/profiles/DLink/DGS3xxx/highlight.pyc
-noc/sa/profiles/DLink/DGS3xxx/highlight.pyo
-noc/sa/profiles/DLink/DGS3xxx/remove_vlan.py
-noc/sa/profiles/DLink/DGS3xxx/remove_vlan.pyc
-noc/sa/profiles/DLink/DGS3xxx/remove_vlan.pyo
-noc/sa/profiles/DLink/DGS3xxx/supported.csv
-noc/sa/profiles/DLink/DGS3xxx/tests/DLink_DGS_3100_24TG_3_00_43_get_version_0001.py
-noc/sa/profiles/DLink/DGS3xxx/tests/DLink_DGS_3100_24TG_3_00_43_get_version_0001.pyc
-noc/sa/profiles/DLink/DGS3xxx/tests/DLink_DGS_3100_24TG_3_00_43_get_version_0001.pyo
-noc/sa/profiles/DLink/DGS3xxx/tests/DLink_DGS_3426G_2_70_B54_get_version_0001.py
-noc/sa/profiles/DLink/DGS3xxx/tests/DLink_DGS_3426G_2_70_B54_get_version_0001.pyc
-noc/sa/profiles/DLink/DGS3xxx/tests/DLink_DGS_3426G_2_70_B54_get_version_0001.pyo
-noc/sa/profiles/DLink/DGS3xxx/tests/DLink_DGS_3627G_2_55_B10_get_chassis_id_0001.py
-noc/sa/profiles/DLink/DGS3xxx/tests/DLink_DGS_3627G_2_55_B10_get_chassis_id_0001.pyc
-noc/sa/profiles/DLink/DGS3xxx/tests/DLink_DGS_3627G_2_55_B10_get_chassis_id_0001.pyo
-noc/sa/profiles/DLink/DGS3xxx/tests/DLink_DGS_3627G_2_55_B10_get_portchannel_0001.py
-noc/sa/profiles/DLink/DGS3xxx/tests/DLink_DGS_3627G_2_55_B10_get_portchannel_0001.pyc
-noc/sa/profiles/DLink/DGS3xxx/tests/DLink_DGS_3627G_2_55_B10_get_portchannel_0001.pyo
-noc/sa/profiles/DLink/DGS3xxx/tests/DLink_DGS_3627G_2_82_B13_get_version_0001.py
-noc/sa/profiles/DLink/DGS3xxx/tests/DLink_DGS_3627G_2_82_B13_get_version_0001.pyc
-noc/sa/profiles/DLink/DGS3xxx/tests/DLink_DGS_3627G_2_82_B13_get_version_0001.pyo
-noc/sa/profiles/DLink/DGS3xxx/tests/__init__.py
-noc/sa/profiles/DLink/DGS3xxx/tests/__init__.pyc
-noc/sa/profiles/DLink/DGS3xxx/tests/__init__.pyo
+noc/sa/profiles/DLink/DES2108/__init__.py
+noc/sa/profiles/DLink/DES2108/__init__.pyc
+noc/sa/profiles/DLink/DES2108/__init__.pyo
+noc/sa/profiles/DLink/DES2108/add_vlan.py
+noc/sa/profiles/DLink/DES2108/add_vlan.pyc
+noc/sa/profiles/DLink/DES2108/add_vlan.pyo
+noc/sa/profiles/DLink/DES2108/get_chassis_id.py
+noc/sa/profiles/DLink/DES2108/get_chassis_id.pyc
+noc/sa/profiles/DLink/DES2108/get_chassis_id.pyo
+noc/sa/profiles/DLink/DES2108/get_mac_address_table.py
+noc/sa/profiles/DLink/DES2108/get_mac_address_table.pyc
+noc/sa/profiles/DLink/DES2108/get_mac_address_table.pyo
+noc/sa/profiles/DLink/DES2108/get_version.py
+noc/sa/profiles/DLink/DES2108/get_version.pyc
+noc/sa/profiles/DLink/DES2108/get_version.pyo
+noc/sa/profiles/DLink/DES2108/get_vlans.py
+noc/sa/profiles/DLink/DES2108/get_vlans.pyc
+noc/sa/profiles/DLink/DES2108/get_vlans.pyo
+noc/sa/profiles/DLink/DES2108/remove_vlan.py
+noc/sa/profiles/DLink/DES2108/remove_vlan.pyc
+noc/sa/profiles/DLink/DES2108/remove_vlan.pyo
+noc/sa/profiles/DLink/DES2108/tests/DLink_DES_2108_5_02_T05_get_mac_address_table_0001.py
+noc/sa/profiles/DLink/DES2108/tests/DLink_DES_2108_5_02_T05_get_mac_address_table_0001.pyc
+noc/sa/profiles/DLink/DES2108/tests/DLink_DES_2108_5_02_T05_get_mac_address_table_0001.pyo
+noc/sa/profiles/DLink/DES2108/tests/DLink_DES_2108_5_02_T05_get_version_0001.py
+noc/sa/profiles/DLink/DES2108/tests/DLink_DES_2108_5_02_T05_get_version_0001.pyc
+noc/sa/profiles/DLink/DES2108/tests/DLink_DES_2108_5_02_T05_get_version_0001.pyo
+noc/sa/profiles/DLink/DES2108/tests/DLink_DES_2108_5_02_T05_get_vlans_0001.py
+noc/sa/profiles/DLink/DES2108/tests/DLink_DES_2108_5_02_T05_get_vlans_0001.pyc
+noc/sa/profiles/DLink/DES2108/tests/DLink_DES_2108_5_02_T05_get_vlans_0001.pyo
+noc/sa/profiles/DLink/DES2108/tests/__init__.py
+noc/sa/profiles/DLink/DES2108/tests/__init__.pyc
+noc/sa/profiles/DLink/DES2108/tests/__init__.pyo
+noc/sa/profiles/DLink/DxS/__init__.py
+noc/sa/profiles/DLink/DxS/__init__.pyc
+noc/sa/profiles/DLink/DxS/__init__.pyo
+noc/sa/profiles/DLink/DxS/add_vlan.py
+noc/sa/profiles/DLink/DxS/add_vlan.pyc
+noc/sa/profiles/DLink/DxS/add_vlan.pyo
+noc/sa/profiles/DLink/DxS/get_arp.py
+noc/sa/profiles/DLink/DxS/get_arp.pyc
+noc/sa/profiles/DLink/DxS/get_arp.pyo
+noc/sa/profiles/DLink/DxS/get_chassis_id.py
+noc/sa/profiles/DLink/DxS/get_chassis_id.pyc
+noc/sa/profiles/DLink/DxS/get_chassis_id.pyo
+noc/sa/profiles/DLink/DxS/get_config.py
+noc/sa/profiles/DLink/DxS/get_config.pyc
+noc/sa/profiles/DLink/DxS/get_config.pyo
+noc/sa/profiles/DLink/DxS/get_dhcp_binding.py
+noc/sa/profiles/DLink/DxS/get_dhcp_binding.pyc
+noc/sa/profiles/DLink/DxS/get_dhcp_binding.pyo
+noc/sa/profiles/DLink/DxS/get_interface_status.py
+noc/sa/profiles/DLink/DxS/get_interface_status.pyc
+noc/sa/profiles/DLink/DxS/get_interface_status.pyo
+noc/sa/profiles/DLink/DxS/get_lldp_neighbors.py
+noc/sa/profiles/DLink/DxS/get_lldp_neighbors.pyc
+noc/sa/profiles/DLink/DxS/get_lldp_neighbors.pyo
+noc/sa/profiles/DLink/DxS/get_local_users.py
+noc/sa/profiles/DLink/DxS/get_local_users.pyc
+noc/sa/profiles/DLink/DxS/get_local_users.pyo
+noc/sa/profiles/DLink/DxS/get_mac_address_table.py
+noc/sa/profiles/DLink/DxS/get_mac_address_table.pyc
+noc/sa/profiles/DLink/DxS/get_mac_address_table.pyo
+noc/sa/profiles/DLink/DxS/get_portchannel.py
+noc/sa/profiles/DLink/DxS/get_portchannel.pyc
+noc/sa/profiles/DLink/DxS/get_portchannel.pyo
+noc/sa/profiles/DLink/DxS/get_version.py
+noc/sa/profiles/DLink/DxS/get_version.pyc
+noc/sa/profiles/DLink/DxS/get_version.pyo
+noc/sa/profiles/DLink/DxS/get_vlans.py
+noc/sa/profiles/DLink/DxS/get_vlans.pyc
+noc/sa/profiles/DLink/DxS/get_vlans.pyo
+noc/sa/profiles/DLink/DxS/highlight.py
+noc/sa/profiles/DLink/DxS/highlight.pyc
+noc/sa/profiles/DLink/DxS/highlight.pyo
+noc/sa/profiles/DLink/DxS/ping.py
+noc/sa/profiles/DLink/DxS/ping.pyc
+noc/sa/profiles/DLink/DxS/ping.pyo
+noc/sa/profiles/DLink/DxS/remove_vlan.py
+noc/sa/profiles/DLink/DxS/remove_vlan.pyc
+noc/sa/profiles/DLink/DxS/remove_vlan.pyo
+noc/sa/profiles/DLink/DxS/supported.csv
+noc/sa/profiles/DLink/DxS/tests/DLink_DES_3010G_4_30_B23_get_interface_status_0001.py
+noc/sa/profiles/DLink/DxS/tests/DLink_DES_3010G_4_30_B23_get_interface_status_0001.pyc
+noc/sa/profiles/DLink/DxS/tests/DLink_DES_3010G_4_30_B23_get_interface_status_0001.pyo
+noc/sa/profiles/DLink/DxS/tests/DLink_DES_3010G_4_30_B23_get_lldp_neighbors_0001.py
+noc/sa/profiles/DLink/DxS/tests/DLink_DES_3010G_4_30_B23_get_lldp_neighbors_0001.pyc
+noc/sa/profiles/DLink/DxS/tests/DLink_DES_3010G_4_30_B23_get_lldp_neighbors_0001.pyo
+noc/sa/profiles/DLink/DxS/tests/DLink_DES_3026_4_30_B16_get_mac_address_table_0001.py
+noc/sa/profiles/DLink/DxS/tests/DLink_DES_3026_4_30_B16_get_mac_address_table_0001.pyc
+noc/sa/profiles/DLink/DxS/tests/DLink_DES_3026_4_30_B16_get_mac_address_table_0001.pyo
+noc/sa/profiles/DLink/DxS/tests/DLink_DES_3028_2_42_B01_get_chassis_id_0001.py
+noc/sa/profiles/DLink/DxS/tests/DLink_DES_3028_2_42_B01_get_chassis_id_0001.pyc
+noc/sa/profiles/DLink/DxS/tests/DLink_DES_3028_2_42_B01_get_chassis_id_0001.pyo
+noc/sa/profiles/DLink/DxS/tests/DLink_DES_3028_2_42_B01_get_mac_address_table_0001.py
+noc/sa/profiles/DLink/DxS/tests/DLink_DES_3028_2_42_B01_get_mac_address_table_0001.pyc
+noc/sa/profiles/DLink/DxS/tests/DLink_DES_3028_2_42_B01_get_mac_address_table_0001.pyo
+noc/sa/profiles/DLink/DxS/tests/DLink_DES_3200_10_1_33_B007_get_version_0001.py
+noc/sa/profiles/DLink/DxS/tests/DLink_DES_3200_10_1_33_B007_get_version_0001.pyc
+noc/sa/profiles/DLink/DxS/tests/DLink_DES_3200_10_1_33_B007_get_version_0001.pyo
+noc/sa/profiles/DLink/DxS/tests/DLink_DES_3226S_4_03_B04_get_version_0001.py
+noc/sa/profiles/DLink/DxS/tests/DLink_DES_3226S_4_03_B04_get_version_0001.pyc
+noc/sa/profiles/DLink/DxS/tests/DLink_DES_3226S_4_03_B04_get_version_0001.pyo
+noc/sa/profiles/DLink/DxS/tests/DLink_DES_3326SR_4_03_B13_get_version_0001.py
+noc/sa/profiles/DLink/DxS/tests/DLink_DES_3326SR_4_03_B13_get_version_0001.pyc
+noc/sa/profiles/DLink/DxS/tests/DLink_DES_3326SR_4_03_B13_get_version_0001.pyo
+noc/sa/profiles/DLink/DxS/tests/DLink_DES_3526_6_00_B23_get_version_0001.py
+noc/sa/profiles/DLink/DxS/tests/DLink_DES_3526_6_00_B23_get_version_0001.pyc
+noc/sa/profiles/DLink/DxS/tests/DLink_DES_3526_6_00_B23_get_version_0001.pyo
+noc/sa/profiles/DLink/DxS/tests/DLink_DES_3528_2_11_B020_get_version_0001.py
+noc/sa/profiles/DLink/DxS/tests/DLink_DES_3528_2_11_B020_get_version_0001.pyc
+noc/sa/profiles/DLink/DxS/tests/DLink_DES_3528_2_11_B020_get_version_0001.pyo
+noc/sa/profiles/DLink/DxS/tests/DLink_DES_3828_4_50_B22_get_version_0001.py
+noc/sa/profiles/DLink/DxS/tests/DLink_DES_3828_4_50_B22_get_version_0001.pyc
+noc/sa/profiles/DLink/DxS/tests/DLink_DES_3828_4_50_B22_get_version_0001.pyo
+noc/sa/profiles/DLink/DxS/tests/DLink_DGS_3100_24TG_3_00_43_get_mac_address_table_0001.py
+noc/sa/profiles/DLink/DxS/tests/DLink_DGS_3100_24TG_3_00_43_get_mac_address_table_0001.pyc
+noc/sa/profiles/DLink/DxS/tests/DLink_DGS_3100_24TG_3_00_43_get_mac_address_table_0001.pyo
+noc/sa/profiles/DLink/DxS/tests/DLink_DGS_3100_24TG_3_00_43_get_version_0001.py
+noc/sa/profiles/DLink/DxS/tests/DLink_DGS_3100_24TG_3_00_43_get_version_0001.pyc
+noc/sa/profiles/DLink/DxS/tests/DLink_DGS_3100_24TG_3_00_43_get_version_0001.pyo
+noc/sa/profiles/DLink/DxS/tests/DLink_DGS_3200_10_1_62_B017_get_version_0001.py
+noc/sa/profiles/DLink/DxS/tests/DLink_DGS_3200_10_1_62_B017_get_version_0001.pyc
+noc/sa/profiles/DLink/DxS/tests/DLink_DGS_3200_10_1_62_B017_get_version_0001.pyo
+noc/sa/profiles/DLink/DxS/tests/DLink_DGS_3312SR_3_60_S22_get_version_0001.py
+noc/sa/profiles/DLink/DxS/tests/DLink_DGS_3312SR_3_60_S22_get_version_0001.pyc
+noc/sa/profiles/DLink/DxS/tests/DLink_DGS_3312SR_3_60_S22_get_version_0001.pyo
+noc/sa/profiles/DLink/DxS/tests/DLink_DGS_3426G_2_70_B54_get_version_0001.py
+noc/sa/profiles/DLink/DxS/tests/DLink_DGS_3426G_2_70_B54_get_version_0001.pyc
+noc/sa/profiles/DLink/DxS/tests/DLink_DGS_3426G_2_70_B54_get_version_0001.pyo
+noc/sa/profiles/DLink/DxS/tests/DLink_DGS_3627G_2_55_B10_get_chassis_id_0001.py
+noc/sa/profiles/DLink/DxS/tests/DLink_DGS_3627G_2_55_B10_get_chassis_id_0001.pyc
+noc/sa/profiles/DLink/DxS/tests/DLink_DGS_3627G_2_55_B10_get_chassis_id_0001.pyo
+noc/sa/profiles/DLink/DxS/tests/DLink_DGS_3627G_2_55_B10_get_mac_address_table_0001.py
+noc/sa/profiles/DLink/DxS/tests/DLink_DGS_3627G_2_55_B10_get_mac_address_table_0001.pyc
+noc/sa/profiles/DLink/DxS/tests/DLink_DGS_3627G_2_55_B10_get_mac_address_table_0001.pyo
+noc/sa/profiles/DLink/DxS/tests/DLink_DGS_3627G_2_55_B10_get_portchannel_0001.py
+noc/sa/profiles/DLink/DxS/tests/DLink_DGS_3627G_2_55_B10_get_portchannel_0001.pyc
+noc/sa/profiles/DLink/DxS/tests/DLink_DGS_3627G_2_55_B10_get_portchannel_0001.pyo
+noc/sa/profiles/DLink/DxS/tests/DLink_DGS_3627G_2_82_B13_get_version_0001.py
+noc/sa/profiles/DLink/DxS/tests/DLink_DGS_3627G_2_82_B13_get_version_0001.pyc
+noc/sa/profiles/DLink/DxS/tests/DLink_DGS_3627G_2_82_B13_get_version_0001.pyo
+noc/sa/profiles/DLink/DxS/tests/DLink_DGS_3627G_2_82_B20_get_dhcp_binding_0001.py
+noc/sa/profiles/DLink/DxS/tests/DLink_DGS_3627G_2_82_B20_get_dhcp_binding_0001.pyc
+noc/sa/profiles/DLink/DxS/tests/DLink_DGS_3627G_2_82_B20_get_dhcp_binding_0001.pyo
+noc/sa/profiles/DLink/DxS/tests/DLink_DGS_3627G_2_82_B20_ping_0001.py
+noc/sa/profiles/DLink/DxS/tests/DLink_DGS_3627G_2_82_B20_ping_0001.pyc
+noc/sa/profiles/DLink/DxS/tests/DLink_DGS_3627G_2_82_B20_ping_0001.pyo
+noc/sa/profiles/DLink/DxS/tests/__init__.py
+noc/sa/profiles/DLink/DxS/tests/__init__.pyc
+noc/sa/profiles/DLink/DxS/tests/__init__.pyo
 noc/sa/profiles/DLink/__init__.py
 noc/sa/profiles/DLink/__init__.pyc
 noc/sa/profiles/DLink/__init__.pyo
 noc/sa/profiles/EdgeCore/ES/__init__.py
 noc/sa/profiles/EdgeCore/ES/__init__.pyc
 noc/sa/profiles/EdgeCore/ES/__init__.pyo
+noc/sa/profiles/EdgeCore/ES/get_arp.py
+noc/sa/profiles/EdgeCore/ES/get_arp.pyc
+noc/sa/profiles/EdgeCore/ES/get_arp.pyo
 noc/sa/profiles/EdgeCore/ES/get_chassis_id.py
 noc/sa/profiles/EdgeCore/ES/get_chassis_id.pyc
 noc/sa/profiles/EdgeCore/ES/get_chassis_id.pyo
@@ -3809,12 +3964,36 @@ noc/sa/profiles/EdgeCore/ES/get_vlans.pyo
 noc/sa/profiles/EdgeCore/ES/highlight.py
 noc/sa/profiles/EdgeCore/ES/highlight.pyc
 noc/sa/profiles/EdgeCore/ES/highlight.pyo
+noc/sa/profiles/EdgeCore/ES/tests/EdgeCore_ES3510MA_1_2_4_2_get_chassis_id_0001.py
+noc/sa/profiles/EdgeCore/ES/tests/EdgeCore_ES3510MA_1_2_4_2_get_chassis_id_0001.pyc
+noc/sa/profiles/EdgeCore/ES/tests/EdgeCore_ES3510MA_1_2_4_2_get_chassis_id_0001.pyo
+noc/sa/profiles/EdgeCore/ES/tests/EdgeCore_ES3510MA_1_2_4_2_get_mac_address_table_0001.py
+noc/sa/profiles/EdgeCore/ES/tests/EdgeCore_ES3510MA_1_2_4_2_get_mac_address_table_0001.pyc
+noc/sa/profiles/EdgeCore/ES/tests/EdgeCore_ES3510MA_1_2_4_2_get_mac_address_table_0001.pyo
+noc/sa/profiles/EdgeCore/ES/tests/EdgeCore_ES3510MA_1_2_4_2_get_version_0001.py
+noc/sa/profiles/EdgeCore/ES/tests/EdgeCore_ES3510MA_1_2_4_2_get_version_0001.pyc
+noc/sa/profiles/EdgeCore/ES/tests/EdgeCore_ES3510MA_1_2_4_2_get_version_0001.pyo
+noc/sa/profiles/EdgeCore/ES/tests/EdgeCore_ES3510MA_1_2_4_2_get_vlans_0001.py
+noc/sa/profiles/EdgeCore/ES/tests/EdgeCore_ES3510MA_1_2_4_2_get_vlans_0001.pyc
+noc/sa/profiles/EdgeCore/ES/tests/EdgeCore_ES3510MA_1_2_4_2_get_vlans_0001.pyo
 noc/sa/profiles/EdgeCore/ES/tests/EdgeCore_ES3510_1_1_0_26_get_version_0001.py
 noc/sa/profiles/EdgeCore/ES/tests/EdgeCore_ES3510_1_1_0_26_get_version_0001.pyc
 noc/sa/profiles/EdgeCore/ES/tests/EdgeCore_ES3510_1_1_0_26_get_version_0001.pyo
 noc/sa/profiles/EdgeCore/ES/tests/EdgeCore_ES3510_1_1_0_26_get_vlans_0001.py
 noc/sa/profiles/EdgeCore/ES/tests/EdgeCore_ES3510_1_1_0_26_get_vlans_0001.pyc
 noc/sa/profiles/EdgeCore/ES/tests/EdgeCore_ES3510_1_1_0_26_get_vlans_0001.pyo
+noc/sa/profiles/EdgeCore/ES/tests/EdgeCore_ES3526S_1_0_3_8_get_chassis_id_0001.py
+noc/sa/profiles/EdgeCore/ES/tests/EdgeCore_ES3526S_1_0_3_8_get_chassis_id_0001.pyc
+noc/sa/profiles/EdgeCore/ES/tests/EdgeCore_ES3526S_1_0_3_8_get_chassis_id_0001.pyo
+noc/sa/profiles/EdgeCore/ES/tests/EdgeCore_ES3526S_1_0_3_8_get_mac_address_table_0001.py
+noc/sa/profiles/EdgeCore/ES/tests/EdgeCore_ES3526S_1_0_3_8_get_mac_address_table_0001.pyc
+noc/sa/profiles/EdgeCore/ES/tests/EdgeCore_ES3526S_1_0_3_8_get_mac_address_table_0001.pyo
+noc/sa/profiles/EdgeCore/ES/tests/EdgeCore_ES3526S_1_0_3_8_get_version_0001.py
+noc/sa/profiles/EdgeCore/ES/tests/EdgeCore_ES3526S_1_0_3_8_get_version_0001.pyc
+noc/sa/profiles/EdgeCore/ES/tests/EdgeCore_ES3526S_1_0_3_8_get_version_0001.pyo
+noc/sa/profiles/EdgeCore/ES/tests/EdgeCore_ES3526S_1_0_3_8_get_vlans_0001.py
+noc/sa/profiles/EdgeCore/ES/tests/EdgeCore_ES3526S_1_0_3_8_get_vlans_0001.pyc
+noc/sa/profiles/EdgeCore/ES/tests/EdgeCore_ES3526S_1_0_3_8_get_vlans_0001.pyo
 noc/sa/profiles/EdgeCore/ES/tests/EdgeCore_ES3526XA_1_SL_38_2_3_4_16_get_version_0001.py
 noc/sa/profiles/EdgeCore/ES/tests/EdgeCore_ES3526XA_1_SL_38_2_3_4_16_get_version_0001.pyc
 noc/sa/profiles/EdgeCore/ES/tests/EdgeCore_ES3526XA_1_SL_38_2_3_4_16_get_version_0001.pyo
@@ -3863,6 +4042,9 @@ noc/sa/profiles/EdgeCore/ES/tests/EdgeCore_ES4626_SFP_5_4_156_0_get_mac_address_
 noc/sa/profiles/EdgeCore/ES/tests/EdgeCore_ES4626_SFP_5_4_156_0_get_version_0001.py
 noc/sa/profiles/EdgeCore/ES/tests/EdgeCore_ES4626_SFP_5_4_156_0_get_version_0001.pyc
 noc/sa/profiles/EdgeCore/ES/tests/EdgeCore_ES4626_SFP_5_4_156_0_get_version_0001.pyo
+noc/sa/profiles/EdgeCore/ES/tests/EdgeCore_ES4626_SFP_6_0_220_33_get_arp_0001.py
+noc/sa/profiles/EdgeCore/ES/tests/EdgeCore_ES4626_SFP_6_0_220_33_get_arp_0001.pyc
+noc/sa/profiles/EdgeCore/ES/tests/EdgeCore_ES4626_SFP_6_0_220_33_get_arp_0001.pyo
 noc/sa/profiles/EdgeCore/ES/tests/EdgeCore_ES4626_SFP_6_0_220_33_get_chassis_id_0001.py
 noc/sa/profiles/EdgeCore/ES/tests/EdgeCore_ES4626_SFP_6_0_220_33_get_chassis_id_0001.pyc
 noc/sa/profiles/EdgeCore/ES/tests/EdgeCore_ES4626_SFP_6_0_220_33_get_chassis_id_0001.pyo
@@ -3994,6 +4176,12 @@ noc/sa/profiles/Force10/FTOS/tests/Force10_E600i_8_3_1_3d_get_version_0002.pyo
 noc/sa/profiles/Force10/FTOS/tests/Force10_E600i_8_3_1_3e_get_chassis_id_0001.py
 noc/sa/profiles/Force10/FTOS/tests/Force10_E600i_8_3_1_3e_get_chassis_id_0001.pyc
 noc/sa/profiles/Force10/FTOS/tests/Force10_E600i_8_3_1_3e_get_chassis_id_0001.pyo
+noc/sa/profiles/Force10/FTOS/tests/Force10_E600i_8_3_1_3e_get_local_users_0001.py
+noc/sa/profiles/Force10/FTOS/tests/Force10_E600i_8_3_1_3e_get_local_users_0001.pyc
+noc/sa/profiles/Force10/FTOS/tests/Force10_E600i_8_3_1_3e_get_local_users_0001.pyo
+noc/sa/profiles/Force10/FTOS/tests/Force10_E600i_8_4_1_0_get_version_0001.py
+noc/sa/profiles/Force10/FTOS/tests/Force10_E600i_8_4_1_0_get_version_0001.pyc
+noc/sa/profiles/Force10/FTOS/tests/Force10_E600i_8_4_1_0_get_version_0001.pyo
 noc/sa/profiles/Force10/FTOS/tests/Force10_S25N_7_7_1_1_get_arp_0001.py
 noc/sa/profiles/Force10/FTOS/tests/Force10_S25N_7_7_1_1_get_arp_0001.pyc
 noc/sa/profiles/Force10/FTOS/tests/Force10_S25N_7_7_1_1_get_arp_0001.pyo
@@ -4045,6 +4233,9 @@ noc/sa/profiles/Force10/FTOS/tests/Force10_S50N_8_3_2_0_get_version_0001.pyo
 noc/sa/profiles/Force10/FTOS/tests/Force10_S50N_8_3_2_0_get_version_0002.py
 noc/sa/profiles/Force10/FTOS/tests/Force10_S50N_8_3_2_0_get_version_0002.pyc
 noc/sa/profiles/Force10/FTOS/tests/Force10_S50N_8_3_2_0_get_version_0002.pyo
+noc/sa/profiles/Force10/FTOS/tests/Force10_S50N_8_4_2_1_get_version_0001.py
+noc/sa/profiles/Force10/FTOS/tests/Force10_S50N_8_4_2_1_get_version_0001.pyc
+noc/sa/profiles/Force10/FTOS/tests/Force10_S50N_8_4_2_1_get_version_0001.pyo
 noc/sa/profiles/Force10/FTOS/tests/__init__.py
 noc/sa/profiles/Force10/FTOS/tests/__init__.pyc
 noc/sa/profiles/Force10/FTOS/tests/__init__.pyo
@@ -4230,6 +4421,9 @@ noc/sa/profiles/HP/ProCurve/tests/HP_6120G_XG_Z_14_08_get_version_0001.pyo
 noc/sa/profiles/HP/ProCurve/tests/HP_6120G_XG_Z_14_08_get_vlans_0001.py
 noc/sa/profiles/HP/ProCurve/tests/HP_6120G_XG_Z_14_08_get_vlans_0001.pyc
 noc/sa/profiles/HP/ProCurve/tests/HP_6120G_XG_Z_14_08_get_vlans_0001.pyo
+noc/sa/profiles/HP/ProCurve/tests/HP_6120G_XG_Z_14_22_get_version_0001.py
+noc/sa/profiles/HP/ProCurve/tests/HP_6120G_XG_Z_14_22_get_version_0001.pyc
+noc/sa/profiles/HP/ProCurve/tests/HP_6120G_XG_Z_14_22_get_version_0001.pyo
 noc/sa/profiles/HP/ProCurve/tests/HP_6120XG_Z_14_08_get_lldp_neighbors_0001.py
 noc/sa/profiles/HP/ProCurve/tests/HP_6120XG_Z_14_08_get_lldp_neighbors_0001.pyc
 noc/sa/profiles/HP/ProCurve/tests/HP_6120XG_Z_14_08_get_lldp_neighbors_0001.pyo
@@ -4242,6 +4436,40 @@ noc/sa/profiles/HP/ProCurve/tests/__init__.pyo
 noc/sa/profiles/HP/ProCurve/tests/profile.py
 noc/sa/profiles/HP/ProCurve/tests/profile.pyc
 noc/sa/profiles/HP/ProCurve/tests/profile.pyo
+noc/sa/profiles/HP/ProCurve9xxx/__init__.py
+noc/sa/profiles/HP/ProCurve9xxx/__init__.pyc
+noc/sa/profiles/HP/ProCurve9xxx/__init__.pyo
+noc/sa/profiles/HP/ProCurve9xxx/add_vlan.py
+noc/sa/profiles/HP/ProCurve9xxx/add_vlan.pyc
+noc/sa/profiles/HP/ProCurve9xxx/add_vlan.pyo
+noc/sa/profiles/HP/ProCurve9xxx/get_chassis_id.py
+noc/sa/profiles/HP/ProCurve9xxx/get_chassis_id.pyc
+noc/sa/profiles/HP/ProCurve9xxx/get_chassis_id.pyo
+noc/sa/profiles/HP/ProCurve9xxx/get_config.py
+noc/sa/profiles/HP/ProCurve9xxx/get_config.pyc
+noc/sa/profiles/HP/ProCurve9xxx/get_config.pyo
+noc/sa/profiles/HP/ProCurve9xxx/get_fdp_neighbors.py
+noc/sa/profiles/HP/ProCurve9xxx/get_fdp_neighbors.pyc
+noc/sa/profiles/HP/ProCurve9xxx/get_fdp_neighbors.pyo
+noc/sa/profiles/HP/ProCurve9xxx/get_mac_address_table.py
+noc/sa/profiles/HP/ProCurve9xxx/get_mac_address_table.pyc
+noc/sa/profiles/HP/ProCurve9xxx/get_mac_address_table.pyo
+noc/sa/profiles/HP/ProCurve9xxx/get_portchannel.py
+noc/sa/profiles/HP/ProCurve9xxx/get_portchannel.pyc
+noc/sa/profiles/HP/ProCurve9xxx/get_portchannel.pyo
+noc/sa/profiles/HP/ProCurve9xxx/get_version.py
+noc/sa/profiles/HP/ProCurve9xxx/get_version.pyc
+noc/sa/profiles/HP/ProCurve9xxx/get_version.pyo
+noc/sa/profiles/HP/ProCurve9xxx/get_vlans.py
+noc/sa/profiles/HP/ProCurve9xxx/get_vlans.pyc
+noc/sa/profiles/HP/ProCurve9xxx/get_vlans.pyo
+noc/sa/profiles/HP/ProCurve9xxx/highlight.py
+noc/sa/profiles/HP/ProCurve9xxx/highlight.pyc
+noc/sa/profiles/HP/ProCurve9xxx/highlight.pyo
+noc/sa/profiles/HP/ProCurve9xxx/remove_vlan.py
+noc/sa/profiles/HP/ProCurve9xxx/remove_vlan.pyc
+noc/sa/profiles/HP/ProCurve9xxx/remove_vlan.pyo
+noc/sa/profiles/HP/ProCurve9xxx/supported.csv
 noc/sa/profiles/HP/__init__.py
 noc/sa/profiles/HP/__init__.pyc
 noc/sa/profiles/HP/__init__.pyo
@@ -4264,6 +4492,9 @@ noc/sa/profiles/Huawei/UMG8900/get_config.pyo
 noc/sa/profiles/Huawei/VRP/__init__.py
 noc/sa/profiles/Huawei/VRP/__init__.pyc
 noc/sa/profiles/Huawei/VRP/__init__.pyo
+noc/sa/profiles/Huawei/VRP/get_arp.py
+noc/sa/profiles/Huawei/VRP/get_arp.pyc
+noc/sa/profiles/Huawei/VRP/get_arp.pyo
 noc/sa/profiles/Huawei/VRP/get_config.py
 noc/sa/profiles/Huawei/VRP/get_config.pyc
 noc/sa/profiles/Huawei/VRP/get_config.pyo
@@ -4283,18 +4514,33 @@ noc/sa/profiles/Huawei/VRP/supported.csv
 noc/sa/profiles/Huawei/VRP/tests/Huawei_MA5200G_8_5_30_get_version_0001.py
 noc/sa/profiles/Huawei/VRP/tests/Huawei_MA5200G_8_5_30_get_version_0001.pyc
 noc/sa/profiles/Huawei/VRP/tests/Huawei_MA5200G_8_5_30_get_version_0001.pyo
+noc/sa/profiles/Huawei/VRP/tests/Huawei_NE40E_5_50_get_arp_0001.py
+noc/sa/profiles/Huawei/VRP/tests/Huawei_NE40E_5_50_get_arp_0001.pyc
+noc/sa/profiles/Huawei/VRP/tests/Huawei_NE40E_5_50_get_arp_0001.pyo
 noc/sa/profiles/Huawei/VRP/tests/Huawei_NE40E_5_50_get_version_0001.py
 noc/sa/profiles/Huawei/VRP/tests/Huawei_NE40E_5_50_get_version_0001.pyc
 noc/sa/profiles/Huawei/VRP/tests/Huawei_NE40E_5_50_get_version_0001.pyo
 noc/sa/profiles/Huawei/VRP/tests/Huawei_S8505_3_10_get_version_0001.py
 noc/sa/profiles/Huawei/VRP/tests/Huawei_S8505_3_10_get_version_0001.pyc
 noc/sa/profiles/Huawei/VRP/tests/Huawei_S8505_3_10_get_version_0001.pyo
+noc/sa/profiles/Huawei/VRP/tests/Huawei_S8505_3_10_get_vlans_0001.py
+noc/sa/profiles/Huawei/VRP/tests/Huawei_S8505_3_10_get_vlans_0001.pyc
+noc/sa/profiles/Huawei/VRP/tests/Huawei_S8505_3_10_get_vlans_0001.pyo
+noc/sa/profiles/Huawei/VRP/tests/Huawei_S8512_3_10_get_arp_0001.py
+noc/sa/profiles/Huawei/VRP/tests/Huawei_S8512_3_10_get_arp_0001.pyc
+noc/sa/profiles/Huawei/VRP/tests/Huawei_S8512_3_10_get_arp_0001.pyo
 noc/sa/profiles/Huawei/VRP/tests/Huawei_S8512_3_10_get_version_0001.py
 noc/sa/profiles/Huawei/VRP/tests/Huawei_S8512_3_10_get_version_0001.pyc
 noc/sa/profiles/Huawei/VRP/tests/Huawei_S8512_3_10_get_version_0001.pyo
+noc/sa/profiles/Huawei/VRP/tests/Huawei_S8512_3_10_get_vlans_0001.py
+noc/sa/profiles/Huawei/VRP/tests/Huawei_S8512_3_10_get_vlans_0001.pyc
+noc/sa/profiles/Huawei/VRP/tests/Huawei_S8512_3_10_get_vlans_0001.pyo
 noc/sa/profiles/Huawei/VRP/tests/Huawei_S9306_5_50_get_version_0001.py
 noc/sa/profiles/Huawei/VRP/tests/Huawei_S9306_5_50_get_version_0001.pyc
 noc/sa/profiles/Huawei/VRP/tests/Huawei_S9306_5_50_get_version_0001.pyo
+noc/sa/profiles/Huawei/VRP/tests/Huawei_S9306_5_50_get_vlans_0001.py
+noc/sa/profiles/Huawei/VRP/tests/Huawei_S9306_5_50_get_vlans_0001.pyc
+noc/sa/profiles/Huawei/VRP/tests/Huawei_S9306_5_50_get_vlans_0001.pyo
 noc/sa/profiles/Huawei/VRP/tests/__init__.py
 noc/sa/profiles/Huawei/VRP/tests/__init__.pyc
 noc/sa/profiles/Huawei/VRP/tests/__init__.pyo
@@ -4385,6 +4631,18 @@ noc/sa/profiles/Juniper/JUNOSe/get_version.py
 noc/sa/profiles/Juniper/JUNOSe/get_version.pyc
 noc/sa/profiles/Juniper/JUNOSe/get_version.pyo
 noc/sa/profiles/Juniper/JUNOSe/supported.csv
+noc/sa/profiles/Juniper/JUNOSe/tests/Juniper_ERX_310_10_0_0_release_0_0_get_version_0001.py
+noc/sa/profiles/Juniper/JUNOSe/tests/Juniper_ERX_310_10_0_0_release_0_0_get_version_0001.pyc
+noc/sa/profiles/Juniper/JUNOSe/tests/Juniper_ERX_310_10_0_0_release_0_0_get_version_0001.pyo
+noc/sa/profiles/Juniper/JUNOSe/tests/Juniper_ERX_310_10_3_0_release_0_0_get_version_0001.py
+noc/sa/profiles/Juniper/JUNOSe/tests/Juniper_ERX_310_10_3_0_release_0_0_get_version_0001.pyc
+noc/sa/profiles/Juniper/JUNOSe/tests/Juniper_ERX_310_10_3_0_release_0_0_get_version_0001.pyo
+noc/sa/profiles/Juniper/JUNOSe/tests/Juniper_ERX_310_9_2_0_patch_1_0_get_version_0001.py
+noc/sa/profiles/Juniper/JUNOSe/tests/Juniper_ERX_310_9_2_0_patch_1_0_get_version_0001.pyc
+noc/sa/profiles/Juniper/JUNOSe/tests/Juniper_ERX_310_9_2_0_patch_1_0_get_version_0001.pyo
+noc/sa/profiles/Juniper/JUNOSe/tests/__init__.py
+noc/sa/profiles/Juniper/JUNOSe/tests/__init__.pyc
+noc/sa/profiles/Juniper/JUNOSe/tests/__init__.pyo
 noc/sa/profiles/Juniper/SRCPE/__init__.py
 noc/sa/profiles/Juniper/SRCPE/__init__.pyc
 noc/sa/profiles/Juniper/SRCPE/__init__.pyo
@@ -4441,6 +4699,9 @@ noc/sa/profiles/MikroTik/RouterOS/__init__.pyo
 noc/sa/profiles/MikroTik/RouterOS/get_config.py
 noc/sa/profiles/MikroTik/RouterOS/get_config.pyc
 noc/sa/profiles/MikroTik/RouterOS/get_config.pyo
+noc/sa/profiles/MikroTik/RouterOS/get_version.py
+noc/sa/profiles/MikroTik/RouterOS/get_version.pyc
+noc/sa/profiles/MikroTik/RouterOS/get_version.pyo
 noc/sa/profiles/MikroTik/__init__.py
 noc/sa/profiles/MikroTik/__init__.pyc
 noc/sa/profiles/MikroTik/__init__.pyo
@@ -4465,6 +4726,9 @@ noc/sa/profiles/OS/FreeBSD/__init__.pyo
 noc/sa/profiles/OS/FreeBSD/get_arp.py
 noc/sa/profiles/OS/FreeBSD/get_arp.pyc
 noc/sa/profiles/OS/FreeBSD/get_arp.pyo
+noc/sa/profiles/OS/FreeBSD/get_fqdn.py
+noc/sa/profiles/OS/FreeBSD/get_fqdn.pyc
+noc/sa/profiles/OS/FreeBSD/get_fqdn.pyo
 noc/sa/profiles/OS/FreeBSD/get_version.py
 noc/sa/profiles/OS/FreeBSD/get_version.pyc
 noc/sa/profiles/OS/FreeBSD/get_version.pyo
@@ -4475,6 +4739,9 @@ noc/sa/profiles/OS/FreeBSD/tests/OS_amd64_8_1_STABLE_get_arp_0001.pyo
 noc/sa/profiles/OS/FreeBSD/tests/OS_amd64_8_1_STABLE_get_version_0001.py
 noc/sa/profiles/OS/FreeBSD/tests/OS_amd64_8_1_STABLE_get_version_0001.pyc
 noc/sa/profiles/OS/FreeBSD/tests/OS_amd64_8_1_STABLE_get_version_0001.pyo
+noc/sa/profiles/OS/FreeBSD/tests/OS_amd64_8_2_PRERELEASE_get_fqdn_0001.py
+noc/sa/profiles/OS/FreeBSD/tests/OS_amd64_8_2_PRERELEASE_get_fqdn_0001.pyc
+noc/sa/profiles/OS/FreeBSD/tests/OS_amd64_8_2_PRERELEASE_get_fqdn_0001.pyo
 noc/sa/profiles/OS/FreeBSD/tests/__init__.py
 noc/sa/profiles/OS/FreeBSD/tests/__init__.pyc
 noc/sa/profiles/OS/FreeBSD/tests/__init__.pyo
@@ -4554,6 +4821,9 @@ noc/sa/profiles/Ubiquiti/__init__.pyo
 noc/sa/profiles/Vyatta/Vyatta/__init__.py
 noc/sa/profiles/Vyatta/Vyatta/__init__.pyc
 noc/sa/profiles/Vyatta/Vyatta/__init__.pyo
+noc/sa/profiles/Vyatta/Vyatta/get_arp.py
+noc/sa/profiles/Vyatta/Vyatta/get_arp.pyc
+noc/sa/profiles/Vyatta/Vyatta/get_arp.pyo
 noc/sa/profiles/Vyatta/Vyatta/get_config.py
 noc/sa/profiles/Vyatta/Vyatta/get_config.pyc
 noc/sa/profiles/Vyatta/Vyatta/get_config.pyo
@@ -4561,6 +4831,21 @@ noc/sa/profiles/Vyatta/Vyatta/get_version.py
 noc/sa/profiles/Vyatta/Vyatta/get_version.pyc
 noc/sa/profiles/Vyatta/Vyatta/get_version.pyo
 noc/sa/profiles/Vyatta/Vyatta/supported.csv
+noc/sa/profiles/Vyatta/Vyatta/tests/Vyatta_VC_VC6_1_2010_08_20_get_arp_0001.py
+noc/sa/profiles/Vyatta/Vyatta/tests/Vyatta_VC_VC6_1_2010_08_20_get_arp_0001.pyc
+noc/sa/profiles/Vyatta/Vyatta/tests/Vyatta_VC_VC6_1_2010_08_20_get_arp_0001.pyo
+noc/sa/profiles/Vyatta/Vyatta/tests/Vyatta_VC_VC6_1_2010_08_20_get_version_0001.py
+noc/sa/profiles/Vyatta/Vyatta/tests/Vyatta_VC_VC6_1_2010_08_20_get_version_0001.pyc
+noc/sa/profiles/Vyatta/Vyatta/tests/Vyatta_VC_VC6_1_2010_08_20_get_version_0001.pyo
+noc/sa/profiles/Vyatta/Vyatta/tests/Vyatta_Vyatta_VC6_1_2010_10_16_get_arp_0001.py
+noc/sa/profiles/Vyatta/Vyatta/tests/Vyatta_Vyatta_VC6_1_2010_10_16_get_arp_0001.pyc
+noc/sa/profiles/Vyatta/Vyatta/tests/Vyatta_Vyatta_VC6_1_2010_10_16_get_arp_0001.pyo
+noc/sa/profiles/Vyatta/Vyatta/tests/Vyatta_Vyatta_VC6_1_2010_10_16_get_version_0001.py
+noc/sa/profiles/Vyatta/Vyatta/tests/Vyatta_Vyatta_VC6_1_2010_10_16_get_version_0001.pyc
+noc/sa/profiles/Vyatta/Vyatta/tests/Vyatta_Vyatta_VC6_1_2010_10_16_get_version_0001.pyo
+noc/sa/profiles/Vyatta/Vyatta/tests/__init__.py
+noc/sa/profiles/Vyatta/Vyatta/tests/__init__.pyc
+noc/sa/profiles/Vyatta/Vyatta/tests/__init__.pyo
 noc/sa/profiles/Vyatta/__init__.py
 noc/sa/profiles/Vyatta/__init__.pyc
 noc/sa/profiles/Vyatta/__init__.pyo
@@ -4610,6 +4895,9 @@ noc/sa/profiles/Zyxel/ZyNOS/get_mac_address_table.pyo
 noc/sa/profiles/Zyxel/ZyNOS/get_version.py
 noc/sa/profiles/Zyxel/ZyNOS/get_version.pyc
 noc/sa/profiles/Zyxel/ZyNOS/get_version.pyo
+noc/sa/profiles/Zyxel/ZyNOS/get_vlans.py
+noc/sa/profiles/Zyxel/ZyNOS/get_vlans.pyc
+noc/sa/profiles/Zyxel/ZyNOS/get_vlans.pyo
 noc/sa/profiles/Zyxel/ZyNOS/highlight.py
 noc/sa/profiles/Zyxel/ZyNOS/highlight.pyc
 noc/sa/profiles/Zyxel/ZyNOS/highlight.pyo
@@ -4617,6 +4905,12 @@ noc/sa/profiles/Zyxel/ZyNOS/supported.csv
 noc/sa/profiles/Zyxel/ZyNOS/tests/Zyxel_ES_2024A_3_80_TX_0__get_chassis_id_0001.py
 noc/sa/profiles/Zyxel/ZyNOS/tests/Zyxel_ES_2024A_3_80_TX_0__get_chassis_id_0001.pyc
 noc/sa/profiles/Zyxel/ZyNOS/tests/Zyxel_ES_2024A_3_80_TX_0__get_chassis_id_0001.pyo
+noc/sa/profiles/Zyxel/ZyNOS/tests/Zyxel_ES_2024A_3_80_TX_0__get_vlans_0001.py
+noc/sa/profiles/Zyxel/ZyNOS/tests/Zyxel_ES_2024A_3_80_TX_0__get_vlans_0001.pyc
+noc/sa/profiles/Zyxel/ZyNOS/tests/Zyxel_ES_2024A_3_80_TX_0__get_vlans_0001.pyo
+noc/sa/profiles/Zyxel/ZyNOS/tests/Zyxel_ES_2024A_3_80_TX_0__get_vlans_0002.py
+noc/sa/profiles/Zyxel/ZyNOS/tests/Zyxel_ES_2024A_3_80_TX_0__get_vlans_0002.pyc
+noc/sa/profiles/Zyxel/ZyNOS/tests/Zyxel_ES_2024A_3_80_TX_0__get_vlans_0002.pyo
 noc/sa/profiles/Zyxel/ZyNOS/tests/Zyxel_ES_2024A_3_90_TX_0__get_chassis_id_0001.py
 noc/sa/profiles/Zyxel/ZyNOS/tests/Zyxel_ES_2024A_3_90_TX_0__get_chassis_id_0001.pyc
 noc/sa/profiles/Zyxel/ZyNOS/tests/Zyxel_ES_2024A_3_90_TX_0__get_chassis_id_0001.pyo
@@ -4666,6 +4960,9 @@ noc/sa/profiles/f5/BIGIP/get_config.pyo
 noc/sa/profiles/f5/BIGIP/get_version.py
 noc/sa/profiles/f5/BIGIP/get_version.pyc
 noc/sa/profiles/f5/BIGIP/get_version.pyo
+noc/sa/profiles/f5/BIGIP/get_vlans.py
+noc/sa/profiles/f5/BIGIP/get_vlans.pyc
+noc/sa/profiles/f5/BIGIP/get_vlans.pyo
 noc/sa/profiles/f5/BIGIP/highlight.py
 noc/sa/profiles/f5/BIGIP/highlight.pyc
 noc/sa/profiles/f5/BIGIP/highlight.pyo
@@ -4676,6 +4973,9 @@ noc/sa/profiles/f5/BIGIP/tests/__init__.pyo
 noc/sa/profiles/f5/BIGIP/tests/f5_BIG_IP_10_2_0_1707_0_get_version_0001.py
 noc/sa/profiles/f5/BIGIP/tests/f5_BIG_IP_10_2_0_1707_0_get_version_0001.pyc
 noc/sa/profiles/f5/BIGIP/tests/f5_BIG_IP_10_2_0_1707_0_get_version_0001.pyo
+noc/sa/profiles/f5/BIGIP/tests/f5_BIG_IP_10_2_0_1707_0_get_vlans_0001.py
+noc/sa/profiles/f5/BIGIP/tests/f5_BIG_IP_10_2_0_1707_0_get_vlans_0001.pyc
+noc/sa/profiles/f5/BIGIP/tests/f5_BIG_IP_10_2_0_1707_0_get_vlans_0001.pyo
 noc/sa/profiles/f5/__init__.py
 noc/sa/profiles/f5/__init__.pyc
 noc/sa/profiles/f5/__init__.pyo
@@ -4739,6 +5039,7 @@ noc/scripts/noc-probe.py
 noc/scripts/noc-sae.py
 noc/scripts/post-install
 noc/scripts/post-update
+noc/scripts/ptytest.py
 noc/scripts/stdin-wrapper
 noc/scripts/sync-contrib
 noc/scripts/update-supported
@@ -4885,6 +5186,7 @@ noc/share/docs/en/nocbook/profiles/3Com/SuperStack/index.rst
 noc/share/docs/en/nocbook/profiles/AddPac/APOS/index.rst
 noc/share/docs/en/nocbook/profiles/Alcatel/AOS/index.rst
 noc/share/docs/en/nocbook/profiles/Alcatel/OS62xx/index.rst
+noc/share/docs/en/nocbook/profiles/Alcatel/TIMOS/index.rst
 noc/share/docs/en/nocbook/profiles/AlliedTelesis/AT8000S/index.rst
 noc/share/docs/en/nocbook/profiles/AlliedTelesis/AT8500/index.rst
 noc/share/docs/en/nocbook/profiles/Audiocodes/Mediant2000/index.rst
@@ -4897,6 +5199,7 @@ noc/share/docs/en/nocbook/profiles/Cisco/IOS/index.rst
 noc/share/docs/en/nocbook/profiles/Cisco/NXOS/index.rst
 noc/share/docs/en/nocbook/profiles/DLink/DES3xxx/index.rst
 noc/share/docs/en/nocbook/profiles/DLink/DGS3xxx/index.rst
+noc/share/docs/en/nocbook/profiles/DLink/DxS/index.rst
 noc/share/docs/en/nocbook/profiles/EdgeCore/ES/index.rst
 noc/share/docs/en/nocbook/profiles/Extreme/XOS/index.rst
 noc/share/docs/en/nocbook/profiles/Force10/FTOS/index.rst
@@ -4951,6 +5254,7 @@ noc/share/docs/en/nocbook/releasenotes/0.3.rst
 noc/share/docs/en/nocbook/releasenotes/0.4.rst
 noc/share/docs/en/nocbook/releasenotes/0.5.1.rst
 noc/share/docs/en/nocbook/releasenotes/0.5.rst
+noc/share/docs/en/nocbook/releasenotes/0.6.1.rst
 noc/share/docs/en/nocbook/releasenotes/0.6.rst
 noc/share/docs/en/nocbook/releasenotes/index.rst
 noc/share/docs/en/nocbook/sa/activator.rst
@@ -4992,8 +5296,10 @@ noc/share/docs/en/nocbook/vc/overview.rst
 noc/share/docs/ext/supported.py
 noc/share/linux/lsb/init.d/noc-launcher
 noc/share/linux/ubuntu/init.d/noc-launcher
+noc/share/mibs/AGENT-GENERAL-MIB.mib
 noc/share/mibs/AIRESPACE-REF-MIB.mib
 noc/share/mibs/AIRESPACE-WIRELESS-MIB.mib
+noc/share/mibs/ARP-Spoofing-Prevent-MIB.mib
 noc/share/mibs/BGP4-MIB.mib
 noc/share/mibs/BRIDGE-MIB.mib
 noc/share/mibs/CISCO-BGP4-MIB.mib
@@ -5013,6 +5319,7 @@ noc/share/mibs/CISCO-TC.mib
 noc/share/mibs/CISCO-VTP-MIB.mib
 noc/share/mibs/CISCOTRAP-MIB.mib
 noc/share/mibs/DIAL-CONTROL-MIB.mib
+noc/share/mibs/DLINK-ID-REC-MIB.mib
 noc/share/mibs/ENTITY-MIB.mib
 noc/share/mibs/F10-CHASSIS-MIB.mib
 noc/share/mibs/F5-BIGIP-COMMON-MIB.mib
@@ -5049,6 +5356,7 @@ noc/share/mibs/RFC1155-SMI.mib
 noc/share/mibs/RFC1213-MIB.mib
 noc/share/mibs/RMON-MIB.mib
 noc/share/mibs/RMON2-MIB.mib
+noc/share/mibs/SAFEGUARD-ENGINE-MIB.mib
 noc/share/mibs/SNMP-FRAMEWORK-MIB.mib
 noc/share/mibs/SNMPv2-CONF.mib
 noc/share/mibs/SNMPv2-MIB.mib
@@ -5375,6 +5683,7 @@ noc/vc/tests/vc.pyo
 @dirrm noc/share/docs/en/nocbook/profiles/EdgeCore
 @dirrm noc/share/docs/en/nocbook/profiles/DLink/DGS3xxx
 @dirrm noc/share/docs/en/nocbook/profiles/DLink/DES3xxx
+@dirrm noc/share/docs/en/nocbook/profiles/DLink/DxS
 @dirrm noc/share/docs/en/nocbook/profiles/DLink
 @dirrm noc/share/docs/en/nocbook/profiles/Cisco/NXOS
 @dirrm noc/share/docs/en/nocbook/profiles/Cisco/IOS
@@ -5390,6 +5699,7 @@ noc/vc/tests/vc.pyo
 @dirrm noc/share/docs/en/nocbook/profiles/AlliedTelesis/AT8500
 @dirrm noc/share/docs/en/nocbook/profiles/AlliedTelesis/AT8000S
 @dirrm noc/share/docs/en/nocbook/profiles/AlliedTelesis
+@dirrm noc/share/docs/en/nocbook/profiles/Alcatel/TIMOS
 @dirrm noc/share/docs/en/nocbook/profiles/Alcatel/OS62xx
 @dirrm noc/share/docs/en/nocbook/profiles/Alcatel/AOS
 @dirrm noc/share/docs/en/nocbook/profiles/Alcatel
@@ -5531,6 +5841,7 @@ noc/vc/tests/vc.pyo
 @dirrm noc/sa/profiles/Zebra
 @dirrm noc/sa/profiles/ZTE/ZXDSL531
 @dirrm noc/sa/profiles/ZTE
+@dirrm noc/sa/profiles/Vyatta/Vyatta/tests
 @dirrm noc/sa/profiles/Vyatta/Vyatta
 @dirrm noc/sa/profiles/Vyatta
 @dirrm noc/sa/profiles/Ubiquiti/AirOS
@@ -5555,6 +5866,7 @@ noc/vc/tests/vc.pyo
 @dirrm noc/sa/profiles/Juniper/ScreenOS/tests
 @dirrm noc/sa/profiles/Juniper/ScreenOS
 @dirrm noc/sa/profiles/Juniper/SRCPE
+@dirrm noc/sa/profiles/Juniper/JUNOSe/tests
 @dirrm noc/sa/profiles/Juniper/JUNOSe
 @dirrm noc/sa/profiles/Juniper/JUNOS/tests
 @dirrm noc/sa/profiles/Juniper/JUNOS
@@ -5566,6 +5878,7 @@ noc/vc/tests/vc.pyo
 @dirrm noc/sa/profiles/Huawei/UMG8900
 @dirrm noc/sa/profiles/Huawei
 @dirrm noc/sa/profiles/HP/iLO2
+@dirrm noc/sa/profiles/HP/ProCurve9xxx
 @dirrm noc/sa/profiles/HP/ProCurve/tests
 @dirrm noc/sa/profiles/HP/ProCurve
 @dirrm noc/sa/profiles/HP/GbE2/tests
@@ -5580,10 +5893,10 @@ noc/vc/tests/vc.pyo
 @dirrm noc/sa/profiles/EdgeCore/ES/tests
 @dirrm noc/sa/profiles/EdgeCore/ES
 @dirrm noc/sa/profiles/EdgeCore
-@dirrm noc/sa/profiles/DLink/DGS3xxx/tests
-@dirrm noc/sa/profiles/DLink/DGS3xxx
-@dirrm noc/sa/profiles/DLink/DES3xxx/tests
-@dirrm noc/sa/profiles/DLink/DES3xxx
+@dirrm noc/sa/profiles/DLink/DxS/tests
+@dirrm noc/sa/profiles/DLink/DxS
+@dirrm noc/sa/profiles/DLink/DES2108/tests
+@dirrm noc/sa/profiles/DLink/DES2108
 @dirrm noc/sa/profiles/DLink
 @dirrm noc/sa/profiles/Cisco/NXOS
 @dirrm noc/sa/profiles/Cisco/IOS/tests
@@ -5601,6 +5914,8 @@ noc/vc/tests/vc.pyo
 @dirrm noc/sa/profiles/AlliedTelesis/AT8500
 @dirrm noc/sa/profiles/AlliedTelesis/AT8000S
 @dirrm noc/sa/profiles/AlliedTelesis
+@dirrm noc/sa/profiles/Alcatel/TIMOS/tests
+@dirrm noc/sa/profiles/Alcatel/TIMOS
 @dirrm noc/sa/profiles/Alcatel/OS62xx/tests
 @dirrm noc/sa/profiles/Alcatel/OS62xx
 @dirrm noc/sa/profiles/Alcatel/AOS
@@ -5864,12 +6179,15 @@ noc/vc/tests/vc.pyo
 @dirrm noc/fm/rules/classification/f5
 @dirrm noc/fm/rules/classification/Zyxel/ZyNOS
 @dirrm noc/fm/rules/classification/Zyxel
+@dirrm noc/fm/rules/classification/OS/FreeBSD
+@dirrm noc/fm/rules/classification/OS
 @dirrm noc/fm/rules/classification/Linksys/SPS2xx
 @dirrm noc/fm/rules/classification/Linksys
 @dirrm noc/fm/rules/classification/Juniper/JUNOS
 @dirrm noc/fm/rules/classification/Juniper
 @dirrm noc/fm/rules/classification/Force10/FTOS
 @dirrm noc/fm/rules/classification/Force10
+@dirrm noc/fm/rules/classification/DLink/DxS
 @dirrm noc/fm/rules/classification/DLink/DES3xxx
 @dirrm noc/fm/rules/classification/DLink
 @dirrm noc/fm/rules/classification/Cisco/IOS
@@ -6005,10 +6323,6 @@ noc/vc/tests/vc.pyo
 @cwd %%NOCDBDIR%%
 @dirrmtry repo
 @dirrmtry backup
-@dirrmtry /
-@comment @unexec rmdir %%NOCDBDIR%%/repo 2>/dev/null || true
-@comment @unexec rmdir %%NOCDBDIR%%/backup 2>/dev/null || true
-@comment @unexec rmdir %%NOCDBDIR%% 2>/dev/null || true
+@unexec rmdir %%NOCDBDIR%% 2>/dev/null || true
 @cwd /
 @dirrmtry %%LOCALSTATE_DIR%%
-@comment @unexec rmdir %%LOCALSTATE_DIR%% 2>/dev/null || true

@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	noc
-PORTVERSION=	0.6
+PORTVERSION=	0.6.1
 CATEGORIES=	net-mgmt python
-MASTER_SITES=	http://redmine.nocproject.org/attachments/download/79/
+MASTER_SITES=	http://redmine.nocproject.org/attachments/download/102/
 DISTNAME=	noc-${PORTVERSION}
 
 MAINTAINER=	count@211.ru
@@ -32,7 +32,7 @@ RUN_DEPENDS=	django-admin.py:${PORTSDIR}/www/py-django \
 
 USE_PYTHON=	2.6+
 USE_PYDISTUTILS=	yes
-PYDISTUTILS_NOEGGINFO=	yes
+PYDISTUTILS_EGGINFODIR=	${NOCDIR}
 
 CONFLICTS=	noc-devel-[0-9].*
 
