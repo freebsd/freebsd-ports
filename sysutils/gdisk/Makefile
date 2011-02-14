@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gdisk
-PORTVERSION=	0.6.13
+PORTVERSION=	0.6.14
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	gptfdisk/gptfdisk/${PORTVERSION}
@@ -37,6 +37,7 @@ MAN8=		gdisk.8 sgdisk.8
 
 post-patch:
 	${REINPLACE_CMD} -e 's|/usr/include/||' ${WRKSRC}/guid.h
+	${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|' ${WRKSRC}/Makefile.freebsd
 
 do-install:
 .if !defined(NOPORTDOCS)
