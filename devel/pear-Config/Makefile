@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Config
-PORTVERSION=	1.10.11
+PORTVERSION=	1.10.12
 CATEGORIES=	devel www pear
 
 MAINTAINER=	miwi@FreeBSD.org
