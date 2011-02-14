@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	lftp
-PORTVERSION=	4.1.2
+PORTVERSION=	4.1.3
 CATEGORIES=	ftp ipv6
 MASTER_SITES=	http://ftp.yars.free.net/pub/source/lftp/ \
 		http://ftp.yars.free.net/pub/source/lftp/old/ \
@@ -41,11 +41,6 @@ OPTIONS=	OPENSSL "With OpenSSL support" on \
 		NLS "With i18n support" on
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 602109 || (${OSVERSION} > 700000 && ${OSVERSION} < 700029)
-BUILD_DEPENDS+=	${LOCALBASE}/lib/libreadline.so.6:${PORTSDIR}/devel/readline
-RUN_DEPENDS+=	${LOCALBASE}/lib/libreadline.so.6:${PORTSDIR}/devel/readline
-.endif
 
 .if !defined(WITHOUT_OPENSSL)
 .include "${PORTSDIR}/Mk/bsd.openssl.mk"
@@ -82,13 +77,15 @@ pre-configure:
 
 post-install:
 	@${INSTALL_DATA} ${WRKSRC}/lftp.conf ${PREFIX}/etc/lftp.conf.sample
-	@if [ ! -f ${PREFIX}/etc/lftp.conf ]; then \
-	${CP} -p ${PREFIX}/etc/lftp.conf.sample ${PREFIX}/etc/lftp.conf ; \
-	fi
+.if !exists(${PREFIX}/etc/lftp.conf)
+	${CP} -p ${PREFIX}/etc/lftp.conf.sample ${PREFIX}/etc/lftp.conf
+.endif
 
 .if !defined(NOPORTDOCS)
-	@${INSTALL} -d ${DOCSDIR}
-	@cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
+	${MKDIR} ${DOCSDIR}
+.for doc in ${PORTDOCS}
+	${INSTALL_DATA} ${WRKSRC}/${doc} ${DOCSDIR}
+.endfor
 .endif
 
 .include <bsd.port.post.mk>
