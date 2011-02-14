@@ -6,20 +6,21 @@
 #
 
 PORTNAME=	mercurialserver
-PORTVERSION=	1.0.1
+PORTVERSION=	1.1.0
 CATEGORIES=	devel python
 MASTER_SITES=	http://dev.lshift.net/paul/mercurial-server/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTNAME=	${SNAME}_${PORTVERSION}
+DISTNAME=	${SNAME}_${SVERSION}
 
 MAINTAINER=	aldis@bsdroot.lv
 COMMENT=	Software for hosting mercurial repositories
 
 RUN_DEPENDS=	hg:${PORTSDIR}/devel/mercurial
 
-WRKSRC=		${WRKDIR}/${SNAME}_${PORTVERSION}.orig
+WRKSRC=		${WRKDIR}/${SNAME}_${SVERSION}
 LICENSE=	GPLv2
 SNAME=		mercurial-server
+SVERSION=	1.1
 
 HGUSER=		hg
 HGGROUP=	hg
@@ -27,6 +28,7 @@ HGGROUP=	hg
 USE_PYTHON=	2.6+
 USE_PYDISTUTILS=YES
 PYDISTUTILS_PKGNAME=${SNAME}
+PYDISTUTILS_PKGVERSION=${SVERSION}
 
 CONF_FILES=	access.conf \
 		remote-hgrc.d/access.rc \
