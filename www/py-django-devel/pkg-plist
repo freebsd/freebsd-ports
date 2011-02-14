@@ -567,6 +567,9 @@ bin/django-admin.py
 %%PYTHON_SITELIBDIR%%/django/conf/urls/shortcut.py
 %%PYTHON_SITELIBDIR%%/django/conf/urls/shortcut.pyc
 %%PYTHON_SITELIBDIR%%/django/conf/urls/shortcut.pyo
+%%PYTHON_SITELIBDIR%%/django/conf/urls/static.py
+%%PYTHON_SITELIBDIR%%/django/conf/urls/static.pyc
+%%PYTHON_SITELIBDIR%%/django/conf/urls/static.pyo
 %%PYTHON_SITELIBDIR%%/django/contrib/__init__.py
 %%PYTHON_SITELIBDIR%%/django/contrib/__init__.pyc
 %%PYTHON_SITELIBDIR%%/django/contrib/__init__.pyo
