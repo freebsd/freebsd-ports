@@ -3324,6 +3324,7 @@
     SUBDIR += stfl
     SUBDIR += stlfilt
     SUBDIR += stlport
+    SUBDIR += stormlib-ghost++
     SUBDIR += str
     SUBDIR += strace
     SUBDIR += stringencoders
