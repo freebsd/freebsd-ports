@@ -1,7 +1,7 @@
---- ./Makefile.orig	2008-04-14 19:22:29.000000000 +0200
-+++ ./Makefile	2008-04-29 15:59:17.000000000 +0200
+--- ./Makefile.orig	2009-07-11 22:18:22.000000000 +0200
++++ ./Makefile	2011-02-14 14:34:38.000000000 +0100
 @@ -2,8 +2,9 @@
- BUILD	= jethro kraut cockney jive nyc ken ky00te newspeak nethackify
+ BUILD	= jethro kraut cockney jive nyc ken ky00te newspeak nethackify scramble
  OTHER	= eleet b1ff chef jibberish upside-down rasterman studly fudd \
  	  censor spammer uniencode pirate kenny scottish fanboy
 -CFLAGS	= -O2 -lfl
@@ -11,7 +11,37 @@
  INSTALL_PROGRAM = install
  
  # DEB_BUILD_OPTIONS suport, to control binary stripping.
-@@ -42,7 +43,7 @@
+@@ -19,13 +20,9 @@
+ all:	$(OTHER) $(BUILD) samples
+ 
+ install:	$(BUILD) $(OTHER)
+-	install -d $(DESTDIR)/usr/games
+-	$(INSTALL_PROGRAM) $(BUILD) $(DESTDIR)/usr/games/
+-	install $(OTHER) $(DESTDIR)/usr/games/
+-	install -d $(DESTDIR)/usr/share/man/man6
+-	install -m 0644 filters.6 $(DESTDIR)/usr/share/man/man6
+-	cd $(DESTDIR)/usr/share/man/man6 && \
+-		$(foreach prog,$(BUILD) $(OTHER),ln -s filters.6 $(prog).6;)
++	install -d $(DESTDIR)/$(PREFIX)/bin
++	$(INSTALL_PROGRAM) $(BUILD) $(DESTDIR)/$(PREFIX)/bin
++	install $(OTHER) $(DESTDIR)/$(PREFIX)/bin
+ 
+ samples:	$(BUILD) $(OTHER)
+ 	-rm -f SAMPLES
+@@ -33,33 +30,33 @@
+ 
+ clean:
+ 	$(RM) -f core *.o *~ $(BUILD) SAMPLES
+-	cd ky00te.dir && make clean
++	cd ky00te.dir && $(SETENV) $(MAKE_ENV) $(MAKE) $(MAKE_FLAGS) clean
+ 	rm -f kraut.dir/lex.yy.c
+-	cd nethackify.dir && make clean
+-	cd scramble.dir && make clean
++	cd nethackify.dir && $(SETENV) $(MAKE_ENV) $(MAKE) $(MAKE_FLAGS) clean
++	cd scramble.dir && $(SETENV) $(MAKE_ENV) $(MAKE) $(MAKE_FLAGS) clean
+ 
+ .SUFFIXES: .l
+ 
  .l:
  	$(RM) $*.c
  	$(LEX) -t $< > $*.c
@@ -20,3 +50,23 @@
  	$(RM) $*.c
  
  .SUFFIXES: .dir
+ 
+ .dir:	
+-	cd $<; make
++	cd $<; $(SETENV) $(MAKE_ENV) $(MAKE) $(MAKE_FLAGS)
+ 
+ ky00te:
+-	cd ky00te.dir && make
++	cd ky00te.dir && $(SETENV) $(MAKE_ENV) $(MAKE) $(MAKE_FLAGS)
+ 
+ kraut:
+ 	cd kraut.dir && lex kraut.l
+ 	cd kraut.dir && $(CC) kraut.c lex.yy.c -o ../kraut
+ 
+ nethackify:
+-	cd nethackify.dir && make
++	cd nethackify.dir && $(SETENV) $(MAKE_ENV) $(MAKE) $(MAKE_FLAGS)
+ 
+ scramble: 
+-	cd scramble.dir && make
++	cd scramble.dir && $(SETENV) $(MAKE_ENV) $(MAKE) $(MAKE_FLAGS)
