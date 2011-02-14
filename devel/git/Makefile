@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	git
-PORTVERSION=	1.7.3.5
+PORTVERSION=	1.7.4.1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_KERNEL_ORG}
 MASTER_SITE_SUBDIR=	software/scm/${PORTNAME}
@@ -111,6 +111,8 @@ MAN1=		git.1 \
 		git-receive-pack.1 \
 		git-reflog.1 \
 		git-relink.1 \
+		git-remote-ext.1 \
+		git-remote-fd.1 \
 		git-remote-helpers.1 \
 		git-remote.1 \
 		git-repack.1 \

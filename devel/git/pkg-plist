@@ -129,6 +129,8 @@ libexec/git-core/git-receive-pack
 libexec/git-core/git-reflog
 libexec/git-core/git-relink
 libexec/git-core/git-remote
+libexec/git-core/git-remote-ext
+libexec/git-core/git-remote-fd
 libexec/git-core/git-remote-testgit
 %%CURL%%libexec/git-core/git-remote-http
 %%CURL%%libexec/git-core/git-remote-https
@@ -253,6 +255,7 @@ share/git-core/templates/info/exclude
 %%GUI%%share/gitk/lib/msgs/hu.msg
 %%GUI%%share/gitk/lib/msgs/it.msg
 %%GUI%%share/gitk/lib/msgs/ja.msg
+%%GUI%%share/gitk/lib/msgs/pt_br.msg
 %%GUI%%share/gitk/lib/msgs/ru.msg
 %%GUI%%share/gitk/lib/msgs/sv.msg
 %%HTMLDOCS%%%%DOCSDIR%%/git-add.html
@@ -354,6 +357,10 @@ share/git-core/templates/info/exclude
 %%HTMLDOCS%%%%DOCSDIR%%/git-reflog.html
 %%HTMLDOCS%%%%DOCSDIR%%/git-relink.html
 %%HTMLDOCS%%%%DOCSDIR%%/git-remote.html
+%%HTMLDOCS%%%%DOCSDIR%%/git-remote-ext.html
+%%HTMLDOCS%%%%DOCSDIR%%/git-remote-ext.txt
+%%HTMLDOCS%%%%DOCSDIR%%/git-remote-fd.html
+%%HTMLDOCS%%%%DOCSDIR%%/git-remote-fd.txt
 %%HTMLDOCS%%%%DOCSDIR%%/git-remote-helpers.html
 %%HTMLDOCS%%%%DOCSDIR%%/git-remote-helpers.txt
 %%HTMLDOCS%%%%DOCSDIR%%/git-repack.html
@@ -797,6 +804,8 @@ share/git-core/templates/info/exclude
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes/1.7.3.3.txt
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes/1.7.3.4.txt
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes/1.7.3.5.txt
+%%HTMLDOCS%%%%DOCSDIR%%/RelNotes/1.7.4.txt
+%%HTMLDOCS%%%%DOCSDIR%%/RelNotes/1.7.4.1.txt
 %%GITWEB%%%%EXAMPLESDIR%%/gitweb/gitweb.cgi
 %%GITWEB%%%%EXAMPLESDIR%%/gitweb/static/gitweb.js
 %%GITWEB%%%%EXAMPLESDIR%%/gitweb/static/gitweb.css
@@ -854,6 +863,9 @@ share/git-core/templates/info/exclude
 %%CONTRIB%%share/git-core/contrib/fast-import/import-tars.perl
 %%CONTRIB%%share/git-core/contrib/fast-import/import-zips.py
 %%CONTRIB%%share/git-core/contrib/git-resurrect.sh
+%%CONTRIB%%share/git-core/contrib/git-shell-commands/README
+%%CONTRIB%%share/git-core/contrib/git-shell-commands/help
+%%CONTRIB%%share/git-core/contrib/git-shell-commands/list
 %%CONTRIB%%share/git-core/contrib/gitview/gitview
 %%CONTRIB%%share/git-core/contrib/gitview/gitview.txt
 %%CONTRIB%%share/git-core/contrib/hg-to-git/hg-to-git.py
@@ -913,6 +925,7 @@ share/git-core/templates/info/exclude
 %%CONTRIB%%@dirrm share/git-core/contrib/emacs
 %%CONTRIB%%@dirrm share/git-core/contrib/examples
 %%CONTRIB%%@dirrm share/git-core/contrib/fast-import
+%%CONTRIB%%@dirrm share/git-core/contrib/git-shell-commands
 %%CONTRIB%%@dirrm share/git-core/contrib/gitview
 %%CONTRIB%%@dirrm share/git-core/contrib/hg-to-git
 %%CONTRIB%%@dirrm share/git-core/contrib/hooks
