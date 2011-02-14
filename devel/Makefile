@@ -99,6 +99,7 @@
     SUBDIR += bisoncpp
     SUBDIR += bisongen
     SUBDIR += bmake
+    SUBDIR += bncsutil-ghost++
     SUBDIR += bnf
     SUBDIR += bnfc
     SUBDIR += boaconstructor
