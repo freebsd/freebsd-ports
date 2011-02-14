@@ -1,5 +1,5 @@
---- ./nethackify.dir/makefile.orig	Wed Jan 25 05:54:47 2006
-+++ ./nethackify.dir/makefile	Tue Jan  2 18:06:34 2007
+--- ./nethackify.dir/makefile.orig	2008-12-17 00:16:04.000000000 +0100
++++ ./nethackify.dir/makefile	2011-02-14 14:33:09.000000000 +0100
 @@ -1,5 +1,7 @@
 +CFLAGS+=	-trigraphs
 +

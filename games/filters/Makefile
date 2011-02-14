@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	filters
-PORTVERSION=	2.46
+PORTVERSION=	2.48
 CATEGORIES=	games perl5
 MASTER_SITES=	http://ftp.debian.org/debian/pool/main/f/filters/ \
 		CRITICAL
@@ -24,11 +24,12 @@ MAKE_JOBS_UNSAFE=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 PERLFILTERS=	b1ff censor chef eleet fudd jibberish kenny pirate rasterman \
-		spammer studly uniencode upside-down
-CFILTERS=	jethro kraut cockney jive nyc ken ky00te newspeak nethackify
+		spammer studly uniencode upside-down fanboy scottish
+CFILTERS=	jethro kraut cockney jive nyc ken ky00te newspeak nethackify \
+		scramble
 
 MAN1=		filters.1
-MLINKS=		filters.1 b1ff.1 \
+MLINKS=	filters.1 b1ff.1 \
 		filters.1 censor.1 \
 		filters.1 chef.1 \
 		filters.1 eleet.1 \
@@ -49,7 +50,10 @@ MLINKS=		filters.1 b1ff.1 \
 		filters.1 ken.1 \
 		filters.1 ky00te.1 \
 		filters.1 newspeak.1 \
-		filters.1 nethackify.1
+		filters.1 nethackify.1 \
+		filters.1 fanboy.1 \
+		filters.1 scottish.1 \
+		filters.1 scramble.1
 
 post-extract:
 	@${MV} ${WRKSRC}/${PORTNAME}.6 ${WRKSRC}/${MAN1}
