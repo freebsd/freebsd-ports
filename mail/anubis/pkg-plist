@@ -1,19 +1,24 @@
-@comment $FreeBSD$
+@stopdaemon anubis
+%%GSASL%%bin/anubisusr
+bin/msg2smtp.pl
 sbin/anubis
-etc/rc.d/anubis.sh.sample
-%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
-%%PORTDOCS%%%%DOCSDIR%%/INSTALL
-%%PORTDOCS%%%%DOCSDIR%%/NEWS
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/THANKS
-%%PORTDOCS%%%%DOCSDIR%%/TODO
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-%%EXAMPLESDIR%%/1anubisrc
-%%EXAMPLESDIR%%/2anubisrc
-%%PAM%%%%EXAMPLESDIR%%/pam/anubis
-%%PAM%%%%EXAMPLESDIR%%/pam/anubis.allow
-%%PAM%%%%EXAMPLESDIR%%/pam/anubis.deny
-%%PAM%%@dirrm %%EXAMPLESDIR%%/pam
-@dirrm %%EXAMPLESDIR%%
+%%GSASL%%sbin/anubisadm
+%%GUILE%%share/anubis/entire-msg.scm
+%%GUILE%%share/anubis/remailer.scm
+%%GUILE%%share/anubis/rot-13.scm
+%%NLS%%share/locale/da/LC_MESSAGES/anubis.mo
+%%NLS%%share/locale/de/LC_MESSAGES/anubis.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/anubis.mo
+%%NLS%%share/locale/id/LC_MESSAGES/anubis.mo
+%%NLS%%share/locale/it/LC_MESSAGES/anubis.mo
+%%NLS%%share/locale/ms/LC_MESSAGES/anubis.mo
+%%NLS%%share/locale/nb/LC_MESSAGES/anubis.mo
+%%NLS%%share/locale/nl/LC_MESSAGES/anubis.mo
+%%NLS%%share/locale/pl/LC_MESSAGES/anubis.mo
+%%NLS%%share/locale/ro/LC_MESSAGES/anubis.mo
+%%NLS%%share/locale/ru/LC_MESSAGES/anubis.mo
+%%NLS%%share/locale/sv/LC_MESSAGES/anubis.mo
 %%NLS%%share/locale/tr/LC_MESSAGES/anubis.mo
+%%NLS%%share/locale/uk/LC_MESSAGES/anubis.mo
+%%NLS%%share/locale/vi/LC_MESSAGES/anubis.mo
+@dirrm share/anubis

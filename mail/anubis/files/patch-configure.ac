@@ -1,0 +1,92 @@
+--- ./configure.ac.orig	2008-12-16 11:21:54.000000000 -0500
++++ ./configure.ac	2011-02-09 20:52:34.000000000 -0500
+@@ -77,7 +77,6 @@
+ ])
+ 
+ AC_CHECK_LIB(socket, socket)
+-AC_CHECK_LIB(nsl, gethostbyaddr)
+ 
+ AC_SUBST(INCLUDES)
+ case $build in
+@@ -143,10 +142,10 @@
+ else
+  AC_PATH_PROG(GPG, gpg)
+  findgpgmedir() { :
+-  if test -f "$1/include/gpgme.h"; then
++  if test -f "$1/include/gpgme/gpgme.h"; then
+    gpgmedir=1
+    INCLUDES="$INCLUDES -I$1/include"
+-   AC_MSG_CHECKING(for $1/include/gpgme.h)
++   AC_MSG_CHECKING(for $1/include/gpgme/gpgme.h)
+    AC_MSG_RESULT([yes])
+    return 0
+   fi
+@@ -158,7 +157,7 @@
+  if test $gpgmedir; then
+   AC_DEFINE(HAVE_GPGME_H, 1, [Define to 1 if HAVE_GPGME_H is requested.])
+  else
+-  AC_CHECK_HEADERS(gpgme.h)
++  AC_CHECK_HEADERS(gpgme/gpgme.h)
+  fi
+  ANUBIS_GPGFILES='$(GPGFILES)'
+  M4_DEFS="$M4_DEFS -DWITH_GPG"
+@@ -189,6 +188,7 @@
+ WITH_MYSQL=no
+ WITH_POSTGRES=no
+ WITH_GDBM=no
++WITH_GSASL=no
+ 
+ dnl Use option --with-gsasl to compile GSASL library support.
+ MU_CHECK_GSASL(0.2.3, [
+@@ -199,11 +199,21 @@
+     ANUBIS_BIN_ADM='$(adm_bin_programs)'
+     M4_DEFS="$M4_DEFS -DWITH_GSASL"
+ 
++    AC_ARG_WITH(gdbm,
++        AC_HELP_STRING([--with-gdbm],
++        [Configure to work with GDBM]),
++        [with_gdbm=${withval}],
++        [with_gdbm=no])
++    if test "$with_gdbm" = "yes"; then
+     AC_CHECK_LIB(gdbm, gdbm_open,
+                  [WITH_GDBM=yes
+                   LIBS="$LIBS -lgdbm"
+                   AC_DEFINE(HAVE_LIBGDBM,1,[Define if you have libgdbm])],
+-                 [AC_MSG_RESULT([Disabling GDBM support...])])
++                  with_gdbm=no)
++    fi
++    if test "$with_gdbm" = "yes"; then
++      AC_MSG_RESULT([Enabling GDBM support...])
++    fi
+ 
+     AC_ARG_WITH(mysql,
+ 	AC_HELP_STRING([--with-mysql],
+@@ -277,7 +287,8 @@
+ if test $with_gnutls = yes; then
+   AC_CHECK_HEADERS(gnutls/gnutls.h)
+   if test $ac_cv_header_gnutls_gnutls_h != no; then
+-    AM_PATH_LIBGNUTLS("1.0.0",
++    PKG_CHECK_MODULES([LIBGNUTLS],
++                      [gnutls >= 1.0.0],
+                       [M4_DEFS="$M4_DEFS -DWITH_SSL -DWITH_GNUTLS"
+                       AC_DEFINE(USE_GNUTLS, 1,
+                                 [Define to 1 if USE_GNUTLS is requested.])],
+@@ -327,8 +338,8 @@
+ 	[with_pam=no])
+ if test "$with_pam" = "yes"; then
+  AC_CHECK_LIB(pam, main,, with_pam=no)
+- AC_CHECK_LIB(pam_misc, main,, with_pam=no)
+- AC_CHECK_HEADERS(security/pam_appl.h security/pam_misc.h,, with_pam=no)
++ AC_CHECK_HEADER(security/pam_appl.h,, with_pam=no)
++ AC_CHECK_HEADER(security/openpam.h,, with_pam=no, [ #include <security/pam_appl.h> ])
+ fi
+ if test "$with_pam" = "yes"; then
+  AC_MSG_RESULT([Enabling PAM support...])
+@@ -342,7 +353,6 @@
+ 	[with_tcp_wrappers=no])
+ if test "$with_tcp_wrappers" = "yes"; then
+  AC_CHECK_LIB(wrap, main,, with_tcp_wrappers=no)
+- AC_CHECK_LIB(nsl, main,, with_tcp_wrappers=no)
+  AC_CHECK_HEADERS(tcpd.h,, with_tcp_wrappers=no)
+ fi
+ if test "$with_tcp_wrappers" = "yes"; then
