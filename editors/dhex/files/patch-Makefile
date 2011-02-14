@@ -1,5 +1,5 @@
---- ./Makefile.orig	2011-01-29 00:19:37.000000000 +0100
-+++ ./Makefile	2011-01-31 09:28:00.000000000 +0100
+--- ./Makefile.orig	2011-02-12 17:24:02.000000000 +0100
++++ ./Makefile	2011-02-14 10:11:00.000000000 +0100
 @@ -1,7 +1,7 @@
 -CC=		gcc
 -LDFLAGS=	-L/usr/lib	-L/usr/local/lib  	-L/usr/lib/ncurses	-L/usr/local/lib/ncurses
@@ -12,7 +12,7 @@
  #CFLAGS+= -ffunction-sections -fdata-sections
  #LDFLAGS+= --gc-sections 
  LIBS=		-lncurses
-@@ -29,5 +29,3 @@
+@@ -41,5 +41,3 @@
  
  clean:
  	rm -f dhex $(OFILES)
