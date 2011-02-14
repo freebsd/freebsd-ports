@@ -544,7 +544,6 @@
     SUBDIR += vifm
     SUBDIR += viz
     SUBDIR += voltcraft304
-    SUBDIR += wanpipe
     SUBDIR += whichman
     SUBDIR += window
     SUBDIR += wmScoreBoard
