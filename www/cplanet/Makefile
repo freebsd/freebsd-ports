@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cplanet
-PORTVERSION=	0.5
+PORTVERSION=	0.7
 CATEGORIES=	www textproc
 MASTER_SITES=	http://files.etoilebsd.net/cplanet/
 
@@ -20,8 +20,6 @@ LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2 \
 LICENSE=	BSD
 
 USE_BZIP2=	yes
-
-USE_ICONV=	yes
 
 MAN1=		cplanet.1
 
