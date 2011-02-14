@@ -18,7 +18,7 @@
 					  (Default = "xPERIODICx-")
 	(where xPERIODICx is any of hourly, daily, weekly, monthly, reboot)
 
-	xPERIODICx_zfsnap_delete_enable    - Delete old snapshots periodicaly
+	xPERIODICx_zfsnap_delete_enable    - Delete old snapshots periodically
 					     (values: YES | NO)
 	xPERIODICx_zfsnap_delete_flags	   - zfSnap generic flags
 					     (except -v and -d)
@@ -26,8 +26,8 @@
 	xPERIODICx_zfsnap_delete_prefixes  - Space separated list of prefixes
 					     of old zfSnap snapshots to delete
 					     'hourly-', 'daily-', 'weekly-',
-					     'monthly-' and 'reboot'  prefixes
-					     are hardcoded
+					     'monthly-' and 'reboot-' prefixes
+					     are hard-coded
 	(where xPERIODICx is any of daily, weekly, monthly)
 
 
@@ -46,5 +46,5 @@
 
 	Don't forget to check http://wiki.bsdroot.lv/zfsnap for more info.
 
-	Feedback wellcomed: zfsnap@bsdroot.lv
+	Feedback welcomed: zfsnap@bsdroot.lv
 
