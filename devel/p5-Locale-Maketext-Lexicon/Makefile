@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Locale-Maketext-Lexicon
-PORTVERSION=	0.84
+PORTVERSION=	0.85
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	Locale/DRTECH
@@ -15,11 +15,12 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Use other catalog formats in Locale::Maketext
 
-BUILD_DEPENDS=  p5-Locale-Maketext>=1.17:${PORTSDIR}/devel/p5-Locale-Maketext
+BUILD_DEPENDS=	p5-Locale-Maketext>=1.17:${PORTSDIR}/devel/p5-Locale-Maketext
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	YES
 
+MAN1=		xgettext.pl.1
 MAN3=		Locale::Maketext::Extract.3 \
 		Locale::Maketext::Extract::Plugin::Base.3 \
 		Locale::Maketext::Extract::Plugin::FormFu.3 \
@@ -31,13 +32,11 @@ MAN3=		Locale::Maketext::Extract.3 \
 		Locale::Maketext::Extract::Plugin::TextTemplate.3 \
 		Locale::Maketext::Extract::Plugin::YAML.3 \
 		Locale::Maketext::Extract::Run.3 \
+		Locale::Maketext::Lexicon.3 \
 		Locale::Maketext::Lexicon::Auto.3 \
 		Locale::Maketext::Lexicon::Gettext.3 \
 		Locale::Maketext::Lexicon::Msgcat.3 \
-		Locale::Maketext::Lexicon::Tie.3 \
-		Locale::Maketext::Lexicon.3
-
-MAN1=		xgettext.pl.1
+		Locale::Maketext::Lexicon::Tie.3
 
 .if !defined(NOPORTDOCS)
 PORTDOCS=	AUTHORS Changes README
