@@ -1,6 +1,7 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX/Aliases/.packlist
 %%SITE_PERL%%/MooseX/Aliases.pm
 %%SITE_PERL%%/MooseX/Aliases/Meta/Trait/Attribute.pm
+%%SITE_PERL%%/MooseX/Aliases/Meta/Trait/Class.pm
 %%SITE_PERL%%/MooseX/Aliases/Meta/Trait/Constructor.pm
 %%SITE_PERL%%/MooseX/Aliases/Meta/Trait/Method.pm
 @dirrmtry %%SITE_PERL%%/MooseX/Aliases/Meta/Trait
