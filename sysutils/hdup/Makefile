@@ -36,8 +36,8 @@ MAN5=		hdup.conf.5
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_GNUTAR_PORT)
-BUILD_DEPENDS+=	${LOCALBASE}/gtar:${PORTSDIR}/archivers/gtar
-RUN_DEPENDS+=	${LOCALBASE}/gtar:${PORTSDIR}/archivers/gtar
+BUILD_DEPENDS+=	gtar:${PORTSDIR}/archivers/gtar
+RUN_DEPENDS+=	gtar:${PORTSDIR}/archivers/gtar
 GNUTAR=		${LOCALBASE}/bin/gtar
 .else
 # bsdtar appeared
