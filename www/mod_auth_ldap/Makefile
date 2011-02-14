@@ -19,8 +19,11 @@ COMMENT=	Apache module to authenticate against an LDAP directory
 
 MAKE_JOBS_SAFE=  yes
 
+DEPRECATED=	apache 13/20 is sceduled for deletion, migrate to 2.2.x+ and mod_authnz_ldap now
+EXPIRATION_DATE=2011-05-01
+
 USE_OPENLDAP=	yes
-USE_APACHE=	2.0+
+USE_APACHE=	20
 AP_FAST_BUILD=	yes
 AP_GENPLIST=	yes
 SHORTMODNAME=	auth_ldap
