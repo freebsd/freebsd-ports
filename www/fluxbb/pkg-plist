@@ -1,5 +1,5 @@
-%%WWWDIR%%/.gitignore
 %%WWWDIR%%/COPYING
+%%WWWDIR%%/README
 %%WWWDIR%%/admin_bans.php
 %%WWWDIR%%/admin_categories.php
 %%WWWDIR%%/admin_censoring.php
@@ -100,7 +100,6 @@
 %%WWWDIR%%/lang/English/admin_maintenance.php
 %%WWWDIR%%/lang/English/admin_options.php
 %%WWWDIR%%/lang/English/admin_permissions.php
-%%WWWDIR%%/lang/English/admin_plugin_example.php
 %%WWWDIR%%/lang/English/admin_prune.php
 %%WWWDIR%%/lang/English/admin_ranks.php
 %%WWWDIR%%/lang/English/admin_reports.php
@@ -111,6 +110,7 @@
 %%WWWDIR%%/lang/English/help.php
 %%WWWDIR%%/lang/English/index.html
 %%WWWDIR%%/lang/English/index.php
+%%WWWDIR%%/lang/English/install.php
 %%WWWDIR%%/lang/English/login.php
 %%WWWDIR%%/lang/English/mail_templates/activate_email.tpl
 %%WWWDIR%%/lang/English/mail_templates/activate_password.tpl
@@ -118,6 +118,8 @@
 %%WWWDIR%%/lang/English/mail_templates/index.html
 %%WWWDIR%%/lang/English/mail_templates/new_reply.tpl
 %%WWWDIR%%/lang/English/mail_templates/new_reply_full.tpl
+%%WWWDIR%%/lang/English/mail_templates/new_topic.tpl
+%%WWWDIR%%/lang/English/mail_templates/new_topic_full.tpl
 %%WWWDIR%%/lang/English/mail_templates/rename.tpl
 %%WWWDIR%%/lang/English/mail_templates/welcome.tpl
 %%WWWDIR%%/lang/English/misc.php
@@ -129,11 +131,11 @@
 %%WWWDIR%%/lang/English/stopwords.txt
 %%WWWDIR%%/lang/English/topic.php
 %%WWWDIR%%/lang/English/userlist.php
+%%WWWDIR%%/lang/English/update.php
 %%WWWDIR%%/lang/index.html
 %%WWWDIR%%/login.php
 %%WWWDIR%%/misc.php
 %%WWWDIR%%/moderate.php
-%%WWWDIR%%/plugins/AMP_Example.php
 %%WWWDIR%%/plugins/index.html
 %%WWWDIR%%/post.php
 %%WWWDIR%%/profile.php
