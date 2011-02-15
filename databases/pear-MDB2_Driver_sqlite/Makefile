@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	MDB2_Driver_sqlite
-PORTVERSION=	1.5.0b2
+PORTVERSION=	1.5.0b3
 CATEGORIES=	databases www pear
 
 MAINTAINER=	miwi@FreeBSD.org

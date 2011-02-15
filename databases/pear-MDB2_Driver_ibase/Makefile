@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	MDB2_Driver_ibase
-DISTVERSION=	1.5.0b2
+DISTVERSION=	1.5.0b3
 CATEGORIES=	databases www pear
 
 MAINTAINER=	miwi@FreeBSD.org
@@ -14,6 +14,8 @@ COMMENT=	PEAR ibase MDB2 driver
 
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
 RUN_DEPENDS=	${BUILD_DEPENDS}
+
+USE_PHP=	interbase
 
 FILES=		MDB2/Driver/ibase.php \
 		MDB2/Driver/Datatype/ibase.php \
