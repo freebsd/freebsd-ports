@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	Mojolicious
-PORTVERSION=	0.999941
+PORTVERSION=	1.1
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
-MASTER_SITE_SUBDIR=	Mojolicious
+MASTER_SITE_SUBDIR=	Mojolicious/KRAIH
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	mopsfelder@gmail.com
@@ -17,13 +17,18 @@ COMMENT=	A high level MVC web framework written in Perl
 
 PERL_CONFIGURE=	yes
 
-MAN1=		mojo.1
+LICENSE=	ART20
+LICENSE_FILES=	${WRKSRC}/LICENSE
+
+MAN1=		hypnotoad.1 \
+		mojo.1
 MAN3=		Mojo.3 \
 		Mojo::Asset.3 \
 		Mojo::Asset::File.3 \
 		Mojo::Asset::Memory.3 \
 		Mojo::Base.3 \
 		Mojo::ByteStream.3 \
+		Mojo::Cache.3 \
 		Mojo::Client.3 \
 		Mojo::Command.3 \
 		Mojo::Content.3 \
@@ -52,6 +57,7 @@ MAN3=		Mojo.3 \
 		Mojo::Server::CGI.3 \
 		Mojo::Server::Daemon.3 \
 		Mojo::Server::FastCGI.3 \
+		Mojo::Server::Hypnotoad.3 \
 		Mojo::Server::PSGI.3 \
 		Mojo::Template.3 \
 		Mojo::Transaction.3 \
@@ -67,6 +73,7 @@ MAN3=		Mojo.3 \
 		Mojolicious::Command::Generate.3 \
 		Mojolicious::Command::Generate::App.3 \
 		Mojolicious::Command::Generate::Gitignore.3 \
+		Mojolicious::Command::Generate::Hypnotoad.3 \
 		Mojolicious::Command::Generate::LiteApp.3 \
 		Mojolicious::Command::Generate::Makefile.3 \
 		Mojolicious::Command::Get.3 \
@@ -82,6 +89,7 @@ MAN3=		Mojo.3 \
 		Mojolicious::Guides::CodingGuidelines.3 \
 		Mojolicious::Guides::Cookbook.3 \
 		Mojolicious::Guides::FAQ.3 \
+		Mojolicious::Guides::Growing.3 \
 		Mojolicious::Guides::Rendering.3 \
 		Mojolicious::Guides::Routing.3 \
 		Mojolicious::Lite.3 \
@@ -103,11 +111,11 @@ MAN3=		Mojo.3 \
 		Mojolicious::Routes.3 \
 		Mojolicious::Routes::Match.3 \
 		Mojolicious::Routes::Pattern.3 \
-		Mojolicious::Session.3 \
+		Mojolicious::Sessions.3 \
 		Mojolicious::Static.3 \
 		Mojolicious::Types.3 \
-		Test::Mojo.3 \
 		README.3 \
+		Test::Mojo.3 \
 		ojo.3
 
 .include <bsd.port.mk>

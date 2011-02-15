@@ -5,6 +5,7 @@
 %%SITE_PERL%%/Mojo/Asset/Memory.pm
 %%SITE_PERL%%/Mojo/Base.pm
 %%SITE_PERL%%/Mojo/ByteStream.pm
+%%SITE_PERL%%/Mojo/Cache.pm
 %%SITE_PERL%%/Mojo/Client.pm
 %%SITE_PERL%%/Mojo/Command.pm
 %%SITE_PERL%%/Mojo/Content.pm
@@ -33,6 +34,7 @@
 %%SITE_PERL%%/Mojo/Server/CGI.pm
 %%SITE_PERL%%/Mojo/Server/Daemon.pm
 %%SITE_PERL%%/Mojo/Server/FastCGI.pm
+%%SITE_PERL%%/Mojo/Server/Hypnotoad.pm
 %%SITE_PERL%%/Mojo/Server/PSGI.pm
 %%SITE_PERL%%/Mojo/Template.pm
 %%SITE_PERL%%/Mojo/Transaction.pm
@@ -48,6 +50,7 @@
 %%SITE_PERL%%/Mojolicious/Command/Generate.pm
 %%SITE_PERL%%/Mojolicious/Command/Generate/App.pm
 %%SITE_PERL%%/Mojolicious/Command/Generate/Gitignore.pm
+%%SITE_PERL%%/Mojolicious/Command/Generate/Hypnotoad.pm
 %%SITE_PERL%%/Mojolicious/Command/Generate/LiteApp.pm
 %%SITE_PERL%%/Mojolicious/Command/Generate/Makefile.pm
 %%SITE_PERL%%/Mojolicious/Command/Get.pm
@@ -63,6 +66,7 @@
 %%SITE_PERL%%/Mojolicious/Guides/CodingGuidelines.pod
 %%SITE_PERL%%/Mojolicious/Guides/Cookbook.pod
 %%SITE_PERL%%/Mojolicious/Guides/FAQ.pod
+%%SITE_PERL%%/Mojolicious/Guides/Growing.pod
 %%SITE_PERL%%/Mojolicious/Guides/Rendering.pod
 %%SITE_PERL%%/Mojolicious/Guides/Routing.pod
 %%SITE_PERL%%/Mojolicious/Lite.pm
@@ -84,12 +88,13 @@
 %%SITE_PERL%%/Mojolicious/Routes.pm
 %%SITE_PERL%%/Mojolicious/Routes/Match.pm
 %%SITE_PERL%%/Mojolicious/Routes/Pattern.pm
-%%SITE_PERL%%/Mojolicious/Session.pm
+%%SITE_PERL%%/Mojolicious/Sessions.pm
 %%SITE_PERL%%/Mojolicious/Static.pm
 %%SITE_PERL%%/Mojolicious/Types.pm
 %%SITE_PERL%%/README.pod
 %%SITE_PERL%%/Test/Mojo.pm
 %%SITE_PERL%%/ojo.pm
+bin/hypnotoad
 bin/mojo
 @dirrmtry %%SITE_PERL%%/Test
 @dirrmtry %%SITE_PERL%%/Mojolicious/Routes
