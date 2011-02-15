@@ -11,7 +11,7 @@ CATEGORIES=	devel
 MASTER_SITES=	http://plugins.geany.org/geany-plugins/
 
 MAINTAINER=	ar@null.lv
-COMMENT=	Plugins for lightwidth editor - geany
+COMMENT=	Plugins for lightweight editor - geany
 
 BUILD_DEPENDS=	geany:${PORTSDIR}/devel/geany
 RUN_DEPENDS=	geany:${PORTSDIR}/devel/geany
