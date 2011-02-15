@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	MailScanner
-PORTVERSION=	4.81.4
-PORTREVISION=	2
+PORTVERSION=	4.82.6
 CATEGORIES=	mail
 MASTER_SITES=	http://www.mailscanner.info/files/4/tar/
 DISTNAME=	${PORTNAME}-install-${PORTVERSION}-${PATCHLEVEL}
