@@ -1149,6 +1149,7 @@ bmpx                            ports/multimedia/bmpx
 bn-aspell                       ports/textproc/bn-aspell
 bnbt                            ports/net-p2p/bnbt
 bnc                             ports/irc/bnc
+bncsutil-ghost++                ports/devel/bncsutil-ghost++
 bnf                             ports/devel/bnf
 bnfc                            ports/devel/bnfc
 boa                             ports/www/boa
@@ -8229,6 +8230,7 @@ libpperl                        ports/devel/libpperl
 libprelude                      ports/security/libprelude
 libpreludedb                    ports/security/libpreludedb
 libpri                          ports/misc/libpri
+libprojectm                     ports/graphics/libprojectm
 libproplist                     ports/devel/libPropList
 libproxy                        ports/net/libproxy
 libproxy-gnome                  ports/net/libproxy-gnome
@@ -9275,6 +9277,7 @@ merlinmon                       ports/net/merlinmon
 mesa-demos                      ports/graphics/mesa-demos
 mesagl                          ports/graphics/mesagl
 mesgui                          ports/x11-toolkits/mesgui
+meshlab                         ports/cad/meshlab
 meshviewer                      ports/graphics/meshviewer
 mess                            ports/emulators/mess
 mess822                         ports/mail/mess822
@@ -9556,6 +9559,7 @@ mod_filter                      ports/www/mod_filter
 mod_flickr                      ports/www/mod_flickr
 mod_geoip                       ports/www/mod_geoip
 mod_geoip2                      ports/www/mod_geoip2
+mod_gnutls                      ports/www/mod_gnutls
 mod_gzip                        ports/www/mod_gzip
 mod_gzip2                       ports/www/mod_gzip2
 mod_h264_streaming              ports/www/mod_h264_streaming
@@ -20940,6 +20944,7 @@ proguard                        ports/java/proguard
 proj                            ports/graphics/proj
 projectcenter.app               ports/devel/projectcenter.app
 projectionlib                   ports/misc/projectionlib
+projectm-libvisual              ports/graphics/projectm-libvisual
 projectmanager                  ports/devel/projectmanager
 projectx                        ports/multimedia/projectx
 prokyon3                        ports/audio/prokyon3
@@ -24379,6 +24384,7 @@ stonesoup-sdl                   ports/games/stonesoup-sdl
 stonx                           ports/emulators/stonx
 stopwatch                       ports/x11-clocks/stopwatch
 stormbaancoureur                ports/games/stormbaancoureur
+stormlib-ghost++                ports/devel/stormlib-ghost++
 stow                            ports/sysutils/stow
 stowES                          ports/sysutils/stowES
 stowes                          ports/sysutils/stowES
@@ -25034,6 +25040,7 @@ torrentzip                      ports/archivers/torrentzip
 torrus                          ports/net-mgmt/torrus
 torsmo                          ports/sysutils/torsmo
 torsocks                        ports/net/torsocks
+tortoisehg1                     ports/devel/tortoisehg1
 tosha                           ports/audio/tosha
 toshctl                         ports/sysutils/toshctl
 tosvcd                          ports/multimedia/tosvcd
@@ -25825,7 +25832,6 @@ wanderlust-devel                ports/mail/wanderlust-devel
 wanderlust-emacs21              ports/mail/wanderlust-emacs21
 wanderlust-emacs22              ports/mail/wanderlust-emacs22
 wanderlust-xemacs21-mule        ports/mail/wanderlust-xemacs21-mule
-wanpipe                         ports/misc/wanpipe
 wanted-ports                    ports/ports-mgmt/wanted-ports
 waon                            ports/audio/waon
 wapiti                          ports/security/wapiti
