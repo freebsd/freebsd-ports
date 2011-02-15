@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	phprojekt
-PORTVERSION=	5.2.3
+PORTVERSION=	6.0.5
 CATEGORIES=	deskutils www
-MASTER_SITES=	http://www.phprojekt.com/download/
+MASTER_SITES=	http://www.phprojekt.com/downloads/
 DISTNAME=	${PORTNAME}
 
 MAINTAINER=	gerrit.beine@gmx.de
