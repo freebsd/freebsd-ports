@@ -2,6 +2,7 @@
 bin/box
 bin/box0.2
 include/box0.2/box/array.h
+include/box0.2/box/defaults.h
 include/box0.2/box/error.h
 include/box0.2/box/hashfunc.h
 include/box0.2/box/hashtable.h
@@ -14,6 +15,12 @@ include/box0.2/box/print.h
 include/box0.2/box/srcpos.h
 include/box0.2/box/str.h
 include/box0.2/box/types.h
+include/box0.2/box/version.h
+include/box0.2/box/virtmach.h
+include/box0.2/box/vmalloc.h
+include/box0.2/box/vmproc.h
+include/box0.2/box/vmsym.h
+include/box0.2/box/vmsymstuff.h
 lib/box0.2/lib/libg.a
 lib/box0.2/lib/libg.la
 lib/box0.2/lib/libg.so
@@ -38,7 +45,7 @@ lib/box0.2/pkg/electric.bxh
 lib/box0.2/pkg/g.bxh
 lib/box0.2/pkg/label.bxh
 lib/box0.2/pkg/math.bxh
-lib/box0.2/pkg/objects.bxh
+lib/box0.2/pkg/obj.bxh
 lib/box0.2/pkg/tools.bxh
 lib/libboxcore0.2.a
 lib/libboxcore0.2.la
