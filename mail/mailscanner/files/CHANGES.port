@@ -1,4 +1,9 @@
+Version 4.82.6
+==============
+- Upgrade to 4.82.6
+
 Version 4.81.4
+==============
 - Upgrade to 4.81.4
 - Added dependency for p5-Sys-SigAction port
 
@@ -14,7 +19,6 @@ Version 4.67.6
 Version 4.64.3
 ==============
 - Upgrade to 4.64.3
-
 
 Version 4.62.9
 ==============
