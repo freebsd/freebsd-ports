@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	hidesvn
-PORTVERSION=	1.0
+PORTVERSION=	1.1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://80386.nl/projects/${PORTNAME}/distfiles/
 
@@ -19,6 +19,7 @@ PLIST_FILES=	bin/${PORTNAME} lib/lib${PORTNAME}.so
 MAN1=		${PORTNAME}.1
 
 USE_LDCONFIG=	yes
+USE_XZ=		yes
 
 post-patch:
 	${REINPLACE_CMD} 's|/usr/local|${PREFIX}|' ${WRKSRC}/${PORTNAME}.sh
