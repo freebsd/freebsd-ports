@@ -69,6 +69,7 @@ bin/perlcritic
 %%SITE_PERL%%/Perl/Critic/Policy/ErrorHandling/RequireCarping.pm
 %%SITE_PERL%%/Perl/Critic/Policy/ErrorHandling/RequireCheckingReturnValueOfEval.pm
 %%SITE_PERL%%/Perl/Critic/Policy/InputOutput/ProhibitBacktickOperators.pm
+%%SITE_PERL%%/Perl/Critic/Policy/InputOutput/RequireEncodingWithUTF8Layer.pm
 %%SITE_PERL%%/Perl/Critic/Policy/InputOutput/ProhibitBarewordFileHandles.pm
 %%SITE_PERL%%/Perl/Critic/Policy/InputOutput/ProhibitExplicitStdin.pm
 %%SITE_PERL%%/Perl/Critic/Policy/InputOutput/ProhibitInteractiveTest.pm
@@ -87,6 +88,7 @@ bin/perlcritic
 %%SITE_PERL%%/Perl/Critic/Policy/Miscellanea/ProhibitUselessNoCritic.pm
 %%SITE_PERL%%/Perl/Critic/Policy/Miscellanea/RequireRcsKeywords.pm
 %%SITE_PERL%%/Perl/Critic/Policy/Modules/ProhibitAutomaticExportation.pm
+%%SITE_PERL%%/Perl/Critic/Policy/Modules/ProhibitConditionalUseStatements.pm
 %%SITE_PERL%%/Perl/Critic/Policy/Modules/ProhibitEvilModules.pm
 %%SITE_PERL%%/Perl/Critic/Policy/Modules/ProhibitExcessMainComplexity.pm
 %%SITE_PERL%%/Perl/Critic/Policy/Modules/ProhibitMultiplePackages.pm

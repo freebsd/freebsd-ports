@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	Perl-Critic
-PORTVERSION=	1.11.1
+PORTVERSION=	1.11.3
 CATEGORIES=	textproc devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -122,12 +122,14 @@ MAN3=	Perl::Critic.3 \
 	Perl::Critic::Policy::InputOutput::RequireCheckedClose.3 \
 	Perl::Critic::Policy::InputOutput::RequireCheckedOpen.3 \
 	Perl::Critic::Policy::InputOutput::RequireCheckedSyscalls.3 \
+	Perl::Critic::Policy::InputOutput::RequireEncodingWithUTF8Layer.3 \
 	Perl::Critic::Policy::Miscellanea::ProhibitFormats.3 \
 	Perl::Critic::Policy::Miscellanea::ProhibitTies.3 \
 	Perl::Critic::Policy::Miscellanea::ProhibitUnrestrictedNoCritic.3 \
 	Perl::Critic::Policy::Miscellanea::ProhibitUselessNoCritic.3 \
 	Perl::Critic::Policy::Miscellanea::RequireRcsKeywords.3 \
 	Perl::Critic::Policy::Modules::ProhibitAutomaticExportation.3 \
+	Perl::Critic::Policy::Modules::ProhibitConditionalUseStatements.3 \
 	Perl::Critic::Policy::Modules::ProhibitEvilModules.3 \
 	Perl::Critic::Policy::Modules::ProhibitExcessMainComplexity.3 \
 	Perl::Critic::Policy::Modules::ProhibitMultiplePackages.3 \
