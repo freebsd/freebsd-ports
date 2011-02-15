@@ -34,6 +34,34 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="553ec4ed-38d6-11e0-94b1-000c29ba66d2">
+    <topic>tomcat -- Cross-site scripting vulnerability</topic>
+    <affects>
+      <package>
+	<name>tomcat55</name>
+	<range><gt>5.5.0</gt><lt>5.5.32</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Tomcat security team reports:</p>
+	<blockquote cite="http://tomcat.apache.org/security-5.html#Fixed_in_Apache_Tomcat_5.5.32">
+          <p>The HTML Manager interface displayed web applciation
+            provided data, such as display names, without filtering.
+            A malicious web application could trigger script execution
+            by an administartive user when viewing the manager pages.</p>
+        </blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2011-0013</cvename>
+    </references>
+    <dates>
+      <discovery>2010-11-12</discovery>
+      <entry>2011-02-15</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="cd68ff50-362b-11e0-ad36-00215c6a37bb">
     <topic>phpMyAdmin -- multiple vulnerabilities</topic>
     <affects>
