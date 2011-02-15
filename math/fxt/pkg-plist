@@ -839,6 +839,8 @@ lib/libfxt.a
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/pellgen-gray-out.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/pellgray-rec-demo.cc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/pellgray-rec-out.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/perm-genus-demo.cc
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/perm-genus-out.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/perm-colex-demo.cc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/perm-colex-out.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/perm-derange-demo.cc
