@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gcin
-PORTVERSION=	1.5.6
+PORTVERSION=	1.5.8
 CATEGORIES=	chinese textproc gnome
 MASTER_SITES=	http://cle.linux.org.tw/gcin/download/:main \
 		http://ftp.twaren.net/local-distfiles/gcin/:main \
@@ -21,16 +21,16 @@ LICENSE=	LGPL21
 
 USE_BZIP2=	YES
 HAS_CONFIGURE=	YES
+CONFIGURE_ARGS+=	--use_gtk3=N
 USE_GNOME=	gtk20
 USE_GMAKE=	YES
-USE_XORG=	x11 xtst
+USE_XORG=	x11 xtst xext
 INSTALLS_ICONS=	YES
 USE_LDCONFIG=	YES
 OPTIONS=	ANTHY		"enable Japanese anthy IM module" off \
-		BOSHIAMY	"enable Boshiamy Input Method" on \
-		QT_IM_MODULE	"enable QT IM module" on
+		QT_IM_MODULE	"enable QT IM module" off
 
-MAN1=		gcin.1 gcin2tab.1 gcin-gb-toggle.1 gcin-kbm-toggle.1 \
+MAN1=		gcin.1 gcin-exit.1 gcin2tab.1 gcin-gb-toggle.1 gcin-kbm-toggle.1 \
 		gcin-message.1 gcin-setup.1 gtab-merge.1 juyin-learn.1 \
 		phoa2d.1 sim2trad.1 tsa2d32.1 tslearn.1
 
@@ -53,30 +53,16 @@ BUILD_DEPENDS+=	${LOCALBASE}/include/anthy/anthy.h:${PORTSDIR}/japanese/anthy
 RUN_DEPENDS+=	${LOCALBASE}/include/anthy/anthy.h:${PORTSDIR}/japanese/anthy
 .endif
 
-.if defined(WITH_BOSHIAMY)
-MASTER_SITES+=	http://cle.linux.org.tw/~edt1023/gcin/:boshiamy \
-		LOCAL/chinsan/gcin:boshiamy \
-		http://edt1023.sayya.org/gcin/:boshiamy
-DISTFILES+=	${BOSHIAMY_FILE}:boshiamy
-BOSHIAMY_FILE=	noseeing-12.tar.gz
-post-extract:
-	@${TAR} -C ${WRKSRC}/data/ -zxf ${DISTDIR}/${BOSHIAMY_FILE} \
-		noseeing.cin
-	@${TAR} -C ${WRKSRC}/scripts/ -zxf ${DISTDIR}/${BOSHIAMY_FILE} \
-	  	noseeadd.rb
-	@${REINPLACE_CMD} -e 's,cj.gtab,cj.gtab noseeing.gtab,' \
-		${WRKSRC}/data/Makefile
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e 's,&,,; 1 s,bash,sh,; \
-		s,QT_IM_DIR=/usr,QT_IM_DIR=$$prefix,; \
+		s,QT_IM_DIR=/usr,QT_IM_DIR=$$prefix,g; \
+		s,QT4_IM_DIR=/usr,QT4_IM_DIR=$$prefix,g; \
 		s,mandir=$$datadir,mandir=$$prefix,; \
-		s,/usr/share,$$prefix/share,; s,libdir)\/gcin,libdir),; \
-		s,/usr/lib/qt4/plugins/lib,${PREFIX}/lib/qt4/plugins,; \
-		s,gcc,$$CC,; s,gcin-$$GCIN_VERSION,gcin,' ${WRKSRC}/configure
+		s,/usr/share,$$prefix/share,; \
+		1, 300 s,gcc,$$CC,; s,gcin-$$GCIN_VERSION,gcin,' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's,\/usr\/share,$$(prefix)\/share,;' \
 		${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -e '93,95 d' ${WRKSRC}/gcin-common.cpp
 	@${REINPLACE_CMD} -e 's,/usr/local,/usr,g' \
 		${WRKSRC}/gtk-im/Makefile ${WRKSRC}/menu/Makefile
 	@${REINPLACE_CMD} -e 's,modify-XIM ,,; 8,10 d' \
@@ -87,7 +73,7 @@ post-patch:
 		${WRKSRC}/scripts/tsin-gtab-import \
 		${WRKSRC}/scripts/tsin-gtab-edit
 	@${REINPLACE_CMD} -e 's,bash,sh,; s/&//; 12,13 s/=/ /; \
-		s/export/setenv/; s/mozilla-firefox/firefox3/;' \
+		s/export/setenv/; s/$$UTF8ED/xdg-open/' \
 		${WRKSRC}/scripts/html-browser
 	@${REINPLACE_CMD} -e 's,gcin-im-client.h,im-client/gcin-im-client.h,;' \
 		${WRKSRC}/gtk-im/gtkimcontextgcin.c
@@ -98,12 +84,6 @@ post-patch:
 	@${REINPLACE_CMD} -e '/make/ d' ${WRKSRC}/IMdkit/lib/Makefile
 .ifdef NOPORTDOCS
 	@${REINPLACE_CMD} '/install.*DOC_DIR/d' ${WRKSRC}/Makefile
-.endif
-
-.if defined(WITH_BOSHIAMY)
-PLIST_SUB+=	BOSHIAMY=""
-.else
-PLIST_SUB+=	BOSHIAMY="@comment "
 .endif
 
 .if defined(WITH_QT_IM_MODULE)
