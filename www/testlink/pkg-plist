@@ -18,6 +18,7 @@
 %%WWWDIR%%/custom/README
 %%WWWDIR%%/custom/_cf_radio_head.php
 %%WWWDIR%%/custom_config.inc.php.example
+%%PORTDOCS%%%%WWWDIR%%/docs
 %%WWWDIR%%/firstLogin.php
 %%WWWDIR%%/gui/drag_and_drop/css/context-menu.css
 %%WWWDIR%%/gui/drag_and_drop/css/drag-drop-folder-tree.css
