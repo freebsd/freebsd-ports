@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	buildbot
-PORTVERSION=	0.8.2
+PORTVERSION=	0.8.3p1
 CATEGORIES=	devel python
-MASTER_SITES=	SF
+MASTER_SITES=	GOOGLE_CODE
 
 MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	Automated system from compile/test cycle to validate code changes
