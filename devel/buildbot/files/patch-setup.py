@@ -1,6 +1,6 @@
---- setup.py.orig	2011-02-12 22:21:14.000000000 +0800
-+++ setup.py	2011-02-12 22:23:41.000000000 +0800
-@@ -251,34 +251,6 @@
+--- setup.py.orig	2011-02-10 18:06:05.000000000 +0100
++++ setup.py	2011-02-10 18:06:15.000000000 +0100
+@@ -260,29 +260,6 @@
  py_25 = sys.version_info[0] > 2 or (sys.version_info[0] == 2 and sys.version_info[1] >= 5)
  py_26 = sys.version_info[0] > 2 or (sys.version_info[0] == 2 and sys.version_info[1] >= 6)
  
@@ -26,11 +26,6 @@
 -
 -    if os.getenv('NO_INSTALL_REQS'):
 -        setup_args['install_requires'] = None
--
--    entry_points={
--        'console_scripts': [
--            'buildbot = buildbot.scripts.runner:run'],
--        },
 -
  setup(**setup_args)
  
