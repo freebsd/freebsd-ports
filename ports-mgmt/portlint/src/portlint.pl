@@ -17,7 +17,7 @@
 # OpenBSD and NetBSD will be accepted.
 #
 # $FreeBSD$
-# $MCom: portlint/portlint.pl,v 1.211 2011/02/13 21:09:18 marcus Exp $
+# $MCom: portlint/portlint.pl,v 1.212 2011/02/15 16:12:07 marcus Exp $
 #
 
 use strict;
@@ -2886,7 +2886,6 @@ FETCH_DEPENDS DEPENDS_TARGET
 	}
 	foreach my $i (split(//, $manchapters)) {
 		next if ($i eq '');
-		print "XXX: Checking MAN $i\n";
 		my @mansecs = grep(/MAN\U$i\E=\s*(.*)/, split(/\n/, $tmp));
 		if (scalar @mansecs > 1) {
 			&perror("FATAL", $file, -1, "duplicate MAN$i macro.  ".
