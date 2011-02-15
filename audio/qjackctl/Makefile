@@ -6,26 +6,37 @@
 #
 
 PORTNAME=	qjackctl
-DISTVERSION=	0.3.4
-PORTREVISION=	3
+DISTVERSION=	0.3.7
 CATEGORIES=	audio
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}%20%28stable%29/${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Qt Interface for the JACK Audio Connection Kit
 
-LIB_DEPENDS=	jack.0:${PORTSDIR}/audio/jack
+LIB_DEPENDS=	asound:${PORTSDIR}/audio/alsa-lib \
+		jack.0:${PORTSDIR}/audio/jack
+
+LICENSE=	GPLv2
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
+INSTALLS_ICONS=	yes
 MAKE_JOBS_UNSAFE=yes
 USE_QT_VER=	4
-QT_COMPONENTS=	qmake_build moc_build uic_build rcc_build gui xml linguist_build
+QT_COMPONENTS=	qmake_build moc_build uic_build rcc_build gui xml linguist_build \
+		corelib dbus
 CFLAGS+=	${PTHREAD_CFLAGS} ${PTHREAD_LIBS}
-CONFIGURE_ARGS+=ac_cv_path_ac_moc=${LOCALBASE}/bin/moc-qt4 \
+CONFIGURE_ARGS+=--disable-portaudio \
+		ac_cv_path_ac_moc=${LOCALBASE}/bin/moc-qt4 \
 		ac_cv_path_ac_uic=${LOCALBASE}/bin/uic-qt4 \
 		ac_cv_path_ac_qmake=${LOCALBASE}/bin/qmake-qt4 \
 		ac_cv_path_ac_lupdate=${LOCALBASE}/bin/lupdate-qt4 \
 		ac_cv_path_ac_lrelease=${LOCALBASE}/bin/lrelease-qt4
+
+MAN1=		qjackctl.1
+MAN_COMPRESSED=	no
+
+post-patch:
+	${REINPLACE_CMD} -e 's|share/man|man|g' ${WRKSRC}/Makefile.in
 
 .include <bsd.port.mk>

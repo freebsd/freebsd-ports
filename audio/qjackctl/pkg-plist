@@ -1,8 +1,14 @@
 bin/qjackctl
-share/pixmaps/qjackctl.png
 share/applications/qjackctl.desktop
+share/icons/hicolor/32x32/apps/qjackctl.png
+share/locale/qjackctl_cs.qm
 share/locale/qjackctl_de.qm
 share/locale/qjackctl_es.qm
 share/locale/qjackctl_fr.qm
+share/locale/qjackctl_it.qm
 share/locale/qjackctl_ru.qm
 @dirrmtry share/applications
+@dirrmtry share/icons/hicolor/32x32/apps
+@dirrmtry share/icons/hicolor/32x32
+@dirrmtry share/icons/hicolor
+@dirrmtry share/icons
