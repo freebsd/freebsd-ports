@@ -17,3 +17,4 @@ bin/zcrm
 bin/zcset
 bin/zcvdel
 bin/zcvls
+bin/zccdump

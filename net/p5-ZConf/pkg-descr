@@ -2,6 +2,7 @@ A configuration system allowing for either file or LDAP backed storage.
 
 zccreate	Creates a new ZConf config or set.
 zcget	Reads a value from a ZConf config.
+zccdump	Dumps a ZConf config to ZML.
 zcls	Lists configured ZConf congigs and sets.
 zcrm	Remove a ZConf config or set.
 zcset	Sets a value in a ZConf config.
