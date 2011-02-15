@@ -1454,6 +1454,7 @@
     SUBDIR += py-cssutils
     SUBDIR += py-django
     SUBDIR += py-django-app-plugins
+    SUBDIR += py-django-classy-tags
     SUBDIR += py-django-devel
     SUBDIR += py-django-extensions
     SUBDIR += py-django-keyedcache
