@@ -1,0 +1,11 @@
+--- ./box/Makefile.in.orig	2011-02-13 18:23:20.000000000 -0800
++++ ./box/Makefile.in	2011-02-13 18:23:53.000000000 -0800
+@@ -329,7 +329,7 @@
+   paths.c main.c cmpproc.c bltinarray.c ast.c value.c \
+   compiler.c operator.c namespace.c autogen.c tsdesc.c
+ 
+-box_LDADD = $(LIBLTDL) libboxcore0.2.la
++box_LDADD = libboxcore0.2.la $(LIBLTDL)
+ box_LDFLAGS = -static
+ box_DEPENDENCIES = $(LTDLDEPS)
+ all: $(BUILT_SOURCES)
