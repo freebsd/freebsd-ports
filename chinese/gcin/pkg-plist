@@ -1,4 +1,5 @@
 bin/gcin
+bin/gcin-exit
 bin/gcin-gb-toggle
 bin/gcin-kbm-toggle
 bin/gcin-message
@@ -16,15 +17,14 @@ bin/tsin2gtab-phrase
 bin/tslearn
 lib/gtk-2.0/immodules/im-gcin.so
 @comment %%QT_IM_MODULE%%lib/qt4/plugins/inputmethods/im-gcin.so
-lib/gcin1.so
-lib/gcin2.so
-lib/libgcin-im-client.so
-lib/libgcin-im-client.so.1.2.2
-lib/libgcin-im-client.so.1
+lib/gcin/gcin1.so
+lib/gcin/gcin2.so
+lib/gcin/libgcin-im-client.so
+lib/gcin/libgcin-im-client.so.1.2.2
+lib/gcin/libgcin-im-client.so.1
 %%DATADIR%%/script/gcin-user-setup
 %%DATADIR%%/script/gtab.append_prepare
 %%DATADIR%%/script/html-browser
-@comment %%BOSHIAMY%%%%DATADIR%%/script/noseeadd.rb
 %%DATADIR%%/script/tsin-gtab-import
 %%DATADIR%%/script/tsin-gtab-edit
 %%DATADIR%%/script/utf8-edit
@@ -36,9 +36,7 @@ lib/libgcin-im-client.so.1
 %%DATADIR%%/table/cj543.gtab
 %%DATADIR%%/table/dayi3.gtab
 %%DATADIR%%/table/dvorak.kbm
-%%DATADIR%%/table/et-asdf.kbm
 %%DATADIR%%/table/et.kbm
-%%DATADIR%%/table/et26-asdf.kbm
 %%DATADIR%%/table/et26.kbm
 %%DATADIR%%/table/greek.gtab
 %%DATADIR%%/table/gtab.list
@@ -47,14 +45,12 @@ lib/libgcin-im-client.so.1
 %%DATADIR%%/table/jyutping.gtab
 %%DATADIR%%/table/latin-letters.gtab
 %%DATADIR%%/table/mitac.kbm
-%%BOSHIAMY%%%%DATADIR%%/table/noseeing.gtab
 %%DATADIR%%/table/phrase-ctrl.table
-%%DATADIR%%/table/pho-huge.tab
-%%DATADIR%%/table/pho.tab
+%%DATADIR%%/table/pho-huge.tab2
+%%DATADIR%%/table/pho.tab2
 %%DATADIR%%/table/phrase.table
 %%DATADIR%%/table/pinyin.gtab
 %%DATADIR%%/table/pinyin.kbm
-%%DATADIR%%/table/pinyin-asdf.kbm
 %%DATADIR%%/table/pin-juyin.xlt
 %%DATADIR%%/table/russian.gtab
 %%DATADIR%%/table/s2t.dat
@@ -66,7 +62,6 @@ lib/libgcin-im-client.so.1
 %%DATADIR%%/table/tsin32
 %%DATADIR%%/table/tsin32.idx
 %%DATADIR%%/table/zo.kbm
-%%DATADIR%%/table/zo-asdf.kbm
 %%PORTDOCS%%%%DOCSDIR%%/Changelog.html
 %%PORTDOCS%%%%DOCSDIR%%/README.html
 share/applications/gcin
@@ -126,5 +121,6 @@ share/icons/gcin.png
 @dirrmtry %%DATADIR%%
 @dirrmtry lib/gtk-2.0/immodules
 @dirrmtry lib/gtk-2.0
+@dirrmtry lib/gcin
 @exec gtk-query-immodules-2.0 > %D/etc/gtk-2.0/gtk.immodules
 @unexec gtk-query-immodules-2.0 > %D/etc/gtk-2.0/gtk.immodules
