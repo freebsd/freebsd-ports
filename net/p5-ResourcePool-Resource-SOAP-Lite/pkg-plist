@@ -1,5 +1,7 @@
 %%SITE_PERL%%/ResourcePool/Command/SOAP/Lite/Call.pm
+%%SITE_PERL%%/ResourcePool/Command/SOAP/Lite/Call.pod
 %%SITE_PERL%%/ResourcePool/Factory/SOAP/Lite.pm
+%%SITE_PERL%%/ResourcePool/Factory/SOAP/Lite.pod
 %%SITE_PERL%%/ResourcePool/Resource/SOAP/Lite.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/ResourcePool/Resource/SOAP/Lite/.packlist
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/ResourcePool/Resource/SOAP/Lite
