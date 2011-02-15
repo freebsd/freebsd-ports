@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xxxterm
-PORTVERSION=	1.275
+PORTVERSION=	1.303
 CATEGORIES=	www
 MASTER_SITES=	http://opensource.conformal.com/snapshots/xxxterm/
 EXTRACT_SUFX=	.tgz
@@ -16,7 +16,7 @@ COMMENT=	Minimalists vi-like web browser based on webkit and GTK+
 
 LIB_DEPENDS=	gnutls.40:${PORTSDIR}/security/gnutls \
 		soup-2.4:${PORTSDIR}/devel/libsoup \
-	   	webkit-1.0:${PORTSDIR}/www/webkit-gtk2
+		webkit-1.0:${PORTSDIR}/www/webkit-gtk2
 
 USE_GNOME=	gtk20 pkgconfig
 USE_PERL5_BUILD=YES
@@ -32,9 +32,9 @@ PLIST_DIRS+=	share/xxxterm
 BROKEN=		does not build due to missing arc4random_buf in libc
 .endif
 
-ICONS= 16 32 48 64 128
+ICONS=	16 32 48 64 128
 .for i in ${ICONS}
-PLIST_FILES+= share/xxxterm/xxxtermicon${i}.png
+PLIST_FILES+=	share/xxxterm/xxxtermicon${i}.png
 .endfor
 
 do-build:
