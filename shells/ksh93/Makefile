@@ -23,7 +23,7 @@ DISTNAME=	${PORTNAME}-${VERSION}
 DISTFILES=	INIT.${VERSION}.tgz ast-ksh.${VERSION}.tgz
 DIST_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Official AT&T release of KornShell 93
 
 MANUAL_PACKAGE_BUILD=Doesn't build in tinderbox environment
@@ -42,6 +42,9 @@ MAKE_ENV+=	LDFLAGS=-static
 MAN1=		ksh93.1
 
 INSTALLROOT=	${WRKSRC}/arch/freebsd.${ARCH}
+
+post-patch:
+	@${REINPLACE_CMD} -e '1825 D' ${WRKSRC}/bin/package
 
 do-build:
 	@cd ${WRKSRC} && ${SETENV} -i ${MAKE_ENV} ${SH} bin/package make
