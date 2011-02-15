@@ -840,6 +840,7 @@
     SUBDIR += spindown
     SUBDIR += spinner
     SUBDIR += squashfs-tools
+    SUBDIR += ssid
     SUBDIR += ssync
     SUBDIR += stalepid
     SUBDIR += stmpclean
