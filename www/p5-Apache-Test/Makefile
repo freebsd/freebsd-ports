@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	Apache-Test
-PORTVERSION=	1.33
+PORTVERSION=	1.36
 CATEGORIES=	www perl5
-MASTER_SITES=	CPAN
+MASTER_SITES=	CPAN/../../authors/id/P/PH/PHRED
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
@@ -27,7 +27,6 @@ IGNORE=		is already included in mod_perl2
 
 MAN3=		Apache::Test.3 \
 		Apache::TestConfig.3 \
-		Apache::TestConfigData.3 \
 		Apache::TestMB.3 \
 		Apache::TestMM.3 \
 		Apache::TestReport.3 \
