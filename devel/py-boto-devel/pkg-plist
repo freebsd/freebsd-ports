@@ -9,6 +9,7 @@ bin/launch_instance
 bin/list_instances
 bin/lss3
 bin/pyami_sendmail
+bin/route53
 bin/s3put
 bin/sdbadmin
 bin/taskadmin
