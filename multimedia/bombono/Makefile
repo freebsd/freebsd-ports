@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bombono
-PORTVERSION=	1.0.0
+PORTVERSION=	1.0.1
 CATEGORIES=	multimedia
 MASTER_SITES=	SF/bombono/bombono-dvd/1.0
 DISTNAME=	bombono-dvd-${PORTVERSION}
@@ -40,13 +40,7 @@ SCONS_ENV=	CCFLAGS="${CCFLAGS} -I${LOCALBASE}/include" \
 		CC="${CC}" CXX="${CXX}" \
 		DVDREAD_LIBPATH=${LOCALBASE}/lib DVDREAD_INCLUDE=${LOCALBASE}/include
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 700000
-BROKEN=		does not compile
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|-O2||' ${WRKSRC}/SConstruct
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

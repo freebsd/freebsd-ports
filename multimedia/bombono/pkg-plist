@@ -106,6 +106,7 @@ share/locale/it/LC_MESSAGES/bombono-dvd.mo
 share/locale/nn/LC_MESSAGES/bombono-dvd.mo
 share/locale/ru/LC_MESSAGES/bombono-dvd.mo
 share/locale/sv/LC_MESSAGES/bombono-dvd.mo
+share/locale/uk/LC_MESSAGES/bombono-dvd.mo
 share/locale/vi/LC_MESSAGES/bombono-dvd.mo
 @dirrmtry share/applications
 @dirrm %%DATADIR%%/resources/scons_authoring
