@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	tomcat
-PORTVERSION=	5.5.31
-PORTREVISION=	1
+PORTVERSION=	5.5.33
 CATEGORIES=	www java
 MASTER_SITES=	${MASTER_SITE_APACHE}
 MASTER_SITE_SUBDIR=	tomcat/tomcat-5/v${PORTVERSION}/bin
@@ -91,7 +90,7 @@ RUN_DEPENDS+=	cronolog:${PORTSDIR}/sysutils/cronolog-devel
 .endif
 
 .if ( defined(WITH_CRONOLOG) || (WITH_CRONOLOG_DEVEL) )
-LOG_PROCESSOR?= ${LOCALBASE}/sbin/cronolog 
+LOG_PROCESSOR?= ${LOCALBASE}/sbin/cronolog
 LOG_PROCESSOR_DIRECTIVES?= "\$$CATALINA_OUT \$$CATALINA_BASE/logs/catalina.out.\%Y_\%m_\%d.out"
 LOG_PROCESSOR_OPTS?= --link
 REDIRECT?=     "2\>\&1"
@@ -103,7 +102,7 @@ SUB_LIST+=     LOG_PROCESSOR=${LOG_PROCESSOR} \
 
 .if ( defined(WITH_CRONOLOG) && defined(WITH_CRONOLOG_DEVEL) )
 BROKEN=		You can only define one log pre-processor application.
-.endif 
+.endif
 
 pre-patch:
 	@${ECHO_MSG} "Installation settings:"
