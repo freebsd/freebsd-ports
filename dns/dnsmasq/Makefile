@@ -6,16 +6,18 @@
 #
 
 PORTNAME=	dnsmasq
-PORTVERSION=	2.55
+PORTVERSION=	2.56
 PORTEPOCH=	1
 CATEGORIES=	dns ipv6
 MASTER_SITES=	http://www.thekelleys.org.uk/dnsmasq/ \
-		http://homepages.uni-paderborn.de/mandree/
+		${MASTER_SITE_LOCAL}/
+MASTER_SITE_SUBDIR=	mandree
 EXTRACT_SUFX=	.tar.lzma
 
 MAINTAINER=	mandree@FreeBSD.org
 COMMENT=	Lightweight DNS forwarder, DHCP and TFTP server
 
+LICENSE=	GPLv2
 USE_XZ=		yes
 
 MAN8=		dnsmasq.8
@@ -31,7 +33,7 @@ MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}" PREFIX="${PREFIX}"
 OPTIONS=	IPV6 "IPv6 support" on
 OPTIONS+=	DBUS "DBUS support" off
 OPTIONS+=	NLS  "NLS and IDN support" on
-# unfortunately, NLS and IDN are inseparable in dnsmasq 2.51rc1, this
+# unfortunately, NLS and IDN are inseparable in dnsmasq 2.56, this
 # has been reported to Simon Kelley on 2009-10-01 by the port maintainer.
 
 .include <bsd.port.pre.mk>
