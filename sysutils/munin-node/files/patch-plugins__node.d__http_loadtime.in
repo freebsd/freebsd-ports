@@ -1,0 +1,11 @@
+--- ./plugins/node.d/http_loadtime.in.orig	2011-02-14 23:59:36.000000000 +0100
++++ ./plugins/node.d/http_loadtime.in	2011-02-14 23:59:56.000000000 +0100
+@@ -55,7 +55,7 @@
+     exit 0
+ fi
+ 
+-TMPDIR=`mktemp -d` || exit 1
++TMPDIR=`mktemp -d /tmp/munin.http_loadtime.XXXXXX` || exit 1
+ 
+ trap "rm -rf $TMPDIR" EXIT
+ 

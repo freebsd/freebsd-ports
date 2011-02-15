@@ -66,11 +66,11 @@ EOT
 
 newsyslog() {
     if yesno "Would you like me to set up log rotation" y; then
-	if grep -q /var/log/munin-node.log /etc/newsyslog.conf; then
+	if grep -q /var/log/munin/munin-node.log /etc/newsyslog.conf; then
 	    :
 	else
 	    cat >> /etc/newsyslog.conf <<EOT
-/var/log/munin-node.log			644  7	   *	@T00  Z	/var/run/munin/munin-node.pid
+/var/log/munin/munin-node.log			644  7	   *	@T00  Z	/var/run/munin/munin-node.pid
 EOT
 	fi
 	if [ -f ${PKG_PREFIX}/bin/munin-node-revive ]; then
