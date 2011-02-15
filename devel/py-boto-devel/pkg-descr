@@ -16,5 +16,7 @@ offered by Amazon Web Services. Currently, this includes:
   * Simple Notification Server (SNS)
   * Google Storage
   * Identity and Access Management (IAM)
+  * Route53 DNS Service (route53)
+  * Simple Email Service (SES)
 
 WWW: http://code.google.com/p/boto
