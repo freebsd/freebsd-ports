@@ -41,6 +41,14 @@ Note:  Please add new entries to the beginning of this file.
 	<name>tomcat55</name>
 	<range><gt>5.5.0</gt><lt>5.5.32</lt></range>
       </package>
+      <package>
+      	<name>tomcat6</name>
+	<range><gt>6.0.0</gt><lt>6.0.30</lt></range>
+      </package>
+      <package>
+        <name>tomcat7</name>
+        <range><gt>7.0.0</gt><lt>7.0.6</lt></range>
+      </package>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
@@ -55,6 +63,9 @@ Note:  Please add new entries to the beginning of this file.
     </description>
     <references>
       <cvename>CVE-2011-0013</cvename>
+      <url>http://tomcat.apache.org/security-5.html#Fixed_in_Apache_Tomcat_5.5.32</url>
+      <url>http://tomcat.apache.org/security-6.html#Fixed_in_Apache_Tomcat_6.0.30</url>
+      <url>http://tomcat.apache.org/security-7.html#Fixed_in_Apache_Tomcat_7.0.6</url>
     </references>
     <dates>
       <discovery>2010-11-12</discovery>
