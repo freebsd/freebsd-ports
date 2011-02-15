@@ -1,6 +1,6 @@
---- setup.py.orig	2010-08-09 10:54:05.000000000 +0800
-+++ setup.py	2010-08-09 11:06:44.000000000 +0800
-@@ -58,22 +58,4 @@
+--- setup.py.orig	2011-02-10 18:18:31.000000000 +0100
++++ setup.py	2011-02-10 18:18:42.000000000 +0100
+@@ -102,18 +102,4 @@
  if sys.platform == "win32":
      setup_args['zip_safe'] = False
  
@@ -9,17 +9,13 @@
 -    # to the setup args.
 -    import setuptools #@UnusedImport
 -except ImportError:
--    setup_args['scripts'] = [
--        'bin/buildslave'
--    ]
+-    pass
 -else:
 -    setup_args['install_requires'] = [
 -        'twisted >= 2.0.0',
 -    ]
--    setup_args['entry_points'] = {
--        'console_scripts': [
--            'buildslave = buildslave.scripts.runner:run',
--        ],
--    }
+-
+-    if os.getenv('NO_INSTALL_REQS'):
+-        setup_args['install_requires'] = None
 -
  setup(**setup_args)

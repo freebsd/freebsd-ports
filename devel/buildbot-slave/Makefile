@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	buildbot-slave
-PORTVERSION=	0.8.2
+PORTVERSION=	0.8.3
 CATEGORIES=	devel python
-MASTER_SITES=	SF
-MASTER_SITE_SUBDIR=	buildbot/buildbot/${PORTVERSION}
+MASTER_SITES=	GOOGLE_CODE
 
 MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	Slave part of Buildbot, an continuous integration system
 
+PROJECTHOST=	buildbot
 USE_PYTHON=	2.5+
 USE_PYDISTUTILS=	yes
 USE_TWISTED_RUN=	runner
