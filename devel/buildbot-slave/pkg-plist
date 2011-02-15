@@ -25,6 +25,9 @@ bin/buildslave
 %%PYTHON_SITELIBDIR%%/buildslave/commands/darcs.py
 %%PYTHON_SITELIBDIR%%/buildslave/commands/darcs.pyc
 %%PYTHON_SITELIBDIR%%/buildslave/commands/darcs.pyo
+%%PYTHON_SITELIBDIR%%/buildslave/commands/fs.py
+%%PYTHON_SITELIBDIR%%/buildslave/commands/fs.pyc
+%%PYTHON_SITELIBDIR%%/buildslave/commands/fs.pyo
 %%PYTHON_SITELIBDIR%%/buildslave/commands/git.py
 %%PYTHON_SITELIBDIR%%/buildslave/commands/git.pyc
 %%PYTHON_SITELIBDIR%%/buildslave/commands/git.pyo
@@ -37,6 +40,9 @@ bin/buildslave
 %%PYTHON_SITELIBDIR%%/buildslave/commands/registry.py
 %%PYTHON_SITELIBDIR%%/buildslave/commands/registry.pyc
 %%PYTHON_SITELIBDIR%%/buildslave/commands/registry.pyo
+%%PYTHON_SITELIBDIR%%/buildslave/commands/repo.py
+%%PYTHON_SITELIBDIR%%/buildslave/commands/repo.pyc
+%%PYTHON_SITELIBDIR%%/buildslave/commands/repo.pyo
 %%PYTHON_SITELIBDIR%%/buildslave/commands/shell.py
 %%PYTHON_SITELIBDIR%%/buildslave/commands/shell.pyc
 %%PYTHON_SITELIBDIR%%/buildslave/commands/shell.pyo
@@ -112,6 +118,9 @@ bin/buildslave
 %%PYTHON_SITELIBDIR%%/buildslave/test/unit/test_commands_darcs.py
 %%PYTHON_SITELIBDIR%%/buildslave/test/unit/test_commands_darcs.pyc
 %%PYTHON_SITELIBDIR%%/buildslave/test/unit/test_commands_darcs.pyo
+%%PYTHON_SITELIBDIR%%/buildslave/test/unit/test_commands_fs.py
+%%PYTHON_SITELIBDIR%%/buildslave/test/unit/test_commands_fs.pyc
+%%PYTHON_SITELIBDIR%%/buildslave/test/unit/test_commands_fs.pyo
 %%PYTHON_SITELIBDIR%%/buildslave/test/unit/test_commands_git.py
 %%PYTHON_SITELIBDIR%%/buildslave/test/unit/test_commands_git.pyc
 %%PYTHON_SITELIBDIR%%/buildslave/test/unit/test_commands_git.pyo
