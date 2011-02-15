@@ -142,6 +142,7 @@
     SUBDIR += daemontools
     SUBDIR += daemontools53
     SUBDIR += dar
+    SUBDIR += dc3dd
     SUBDIR += dc42wrap
     SUBDIR += dcfldd
     SUBDIR += dd_rescue
