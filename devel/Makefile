@@ -3400,6 +3400,7 @@
     SUBDIR += ucpp
     SUBDIR += udis86
     SUBDIR += umem
+    SUBDIR += umlgraph
     SUBDIR += universalindentgui
     SUBDIR += upnp
     SUBDIR += upp
