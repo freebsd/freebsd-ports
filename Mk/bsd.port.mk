@@ -5561,8 +5561,13 @@ ACTUAL-PACKAGE-DEPENDS?= \
 			fi; \
 		done); \
 		for dir in ${_LIB_RUN_DEPENDS:C,[^:]*:([^:]*):?.*,\1,}; do \
-			tmp=$${dir%/*}; \
-			dir=$${tmp\#\#*/}/$${dir\#\#*/}; \
+			tmp=$${dir\#${PORTSDIR}/}; \
+			if [ "$$tmp" = "$$dir" ]; then \
+				tmp=$${dir%/*}; \
+				dir=$${tmp\#\#*/}/$${dir\#\#*/}; \
+			else \
+				dir=$$tmp; \
+			fi; \
 			set -- $$origins; \
 			while [ $$\# -gt 1 ]; do \
 				if [ ! -d "${PORTSDIR}/$$2" ]; then \
