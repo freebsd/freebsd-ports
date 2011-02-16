@@ -6,9 +6,11 @@
 %%SITE_PERL%%/MooseX/ClassAttribute/Trait/Mixin/HasClassAttributes.pm
 %%SITE_PERL%%/MooseX/ClassAttribute/Trait/Attribute.pm
 %%SITE_PERL%%/MooseX/ClassAttribute/Trait/Role.pm
+%%SITE_PERL%%/MooseX/ClassAttribute/Trait/Role/Composite.pm
 %%SITE_PERL%%/MooseX/ClassAttribute/Trait/Class.pm
 %%SITE_PERL%%/MooseX/ClassAttribute/Trait/Application.pm
 @dirrmtry %%SITE_PERL%%/MooseX/ClassAttribute/Trait/Mixin
+@dirrmtry %%SITE_PERL%%/MooseX/ClassAttribute/Trait/Role
 @dirrmtry %%SITE_PERL%%/MooseX/ClassAttribute/Trait/Application
 @dirrmtry %%SITE_PERL%%/MooseX/ClassAttribute/Trait
 @dirrmtry %%SITE_PERL%%/MooseX/ClassAttribute/Meta/Role
