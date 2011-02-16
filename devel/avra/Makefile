@@ -1,6 +1,6 @@
 # New ports collection makefile for:    tavrasm
 # Date created:                         12 December 2003
-# Whom:                                 Wes Peters <wes@FreeBSD.org>
+# Whom:                                 Wes Peters <@FreeBSD.org>
 #
 # $FreeBSD$
 #
@@ -12,7 +12,7 @@ DISTVERSIONSUFFIX=	-src
 CATEGORIES=	devel
 MASTER_SITES=	SF
 
-MAINTAINER=	wes@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Macro Assembler for Atmel AVR microcontrollers
 
 WRKSRC=		${WRKDIR}

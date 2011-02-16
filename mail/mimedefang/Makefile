@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://www.mimedefang.org/static/
 
-MAINTAINER=	wes@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Milter based anti-spam and anti-virus filtering program
 
 BUILD_DEPENDS=	\

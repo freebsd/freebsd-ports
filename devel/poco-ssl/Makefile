@@ -13,7 +13,7 @@ MASTER_SITES=	SF/${PORTNAME}/sources/${PORTNAME}-${PORTVERSION}
 PKGNAMESUFFIX=	-ssl
 DISTNAME=	poco-${PORTVERSION}-all
 
-MAINTAINER=	wes@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C++ Portable Components library with NetSSL library
 
 LIB_DEPENDS=	odbc:${PORTSDIR}/databases/unixODBC

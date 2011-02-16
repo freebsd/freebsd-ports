@@ -10,7 +10,7 @@ PORTVERSION=	1.0.1
 CATEGORIES?=	devel
 MASTER_SITES=	SF
 
-MAINTAINER=	wes@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Bug-tracking system developed in PHP
 
 RUN_DEPENDS=	${LOCALBASE}/share/pear/DB.php:${PORTSDIR}/databases/pear-DB
