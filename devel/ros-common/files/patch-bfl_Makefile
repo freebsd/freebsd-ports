@@ -1,0 +1,14 @@
+--- bfl/Makefile.orig	2010-04-27 19:33:00.000000000 +0200
++++ bfl/Makefile	2011-02-16 17:23:33.000000000 +0100
+@@ -22,7 +22,11 @@
+ 	cd $(SOURCE_DIR) && patch -p0 < ../../$(PATCH)
+ 	mkdir -p $(SOURCE_DIR)/build-boost
+ 	cd $(SOURCE_DIR)/build-boost && $(CMAKE) $(CMAKE_ARGS) ..
++ifneq ($(MAKE),)
++	cd $(SOURCE_DIR)/build-boost && $(MAKE) $(ROS_PARALLEL_JOBS) && $(MAKE) install
++else
+ 	cd $(SOURCE_DIR)/build-boost && make $(ROS_PARALLEL_JOBS) && make install
++endif
+ 	touch installed
+ 
+ wiped: Makefile
