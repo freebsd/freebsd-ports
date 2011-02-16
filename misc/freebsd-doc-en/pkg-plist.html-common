@@ -27,6 +27,7 @@
 %%DOCSDIR%%/%%DOCLANG%%/articles/fonts/docbook.css
 %%DOCSDIR%%/%%DOCLANG%%/articles/formatting-media/docbook.css
 %%DOCSDIR%%/%%DOCLANG%%/articles/freebsd-questions/docbook.css
+%%DOCSDIR%%/%%DOCLANG%%/articles/freebsd-update-server/docbook.css
 %%DOCSDIR%%/%%DOCLANG%%/articles/geom-class/docbook.css
 %%DOCSDIR%%/%%DOCLANG%%/articles/gjournal-desktop/disklabel1.png
 %%DOCSDIR%%/%%DOCLANG%%/articles/gjournal-desktop/disklabel2.png
