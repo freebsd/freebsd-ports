@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	MooseX-ClassAttribute
-PORTVERSION=	0.21
+PORTVERSION=	0.23
 CATEGORIES=	devel perl5
-MASTER_SITES=	CPAN
+MASTER_SITES=	CPAN/../../authors/id/D/DR/DROLSKY
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
@@ -28,6 +28,7 @@ MAN3=		MooseX::ClassAttribute.3 \
 		MooseX::ClassAttribute::Trait::Attribute.3 \
 		MooseX::ClassAttribute::Trait::Class.3 \
 		MooseX::ClassAttribute::Trait::Mixin::HasClassAttributes.3 \
-		MooseX::ClassAttribute::Trait::Role.3
+		MooseX::ClassAttribute::Trait::Role.3 \
+		MooseX::ClassAttribute::Trait::Role::Composite.3
 
 .include <bsd.port.mk>
