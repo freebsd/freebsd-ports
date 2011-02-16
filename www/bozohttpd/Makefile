@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bozohttpd
-PORTVERSION=	20100621
+PORTVERSION=	20100920
 CATEGORIES=	www ipv6
 MASTER_SITES=	http://www.eterna.com.au/bozohttpd/ \
 		${MASTER_SITE_NETBSD}
@@ -53,5 +53,8 @@ CFLAGS+=	-UNO_CGIBIN_SUPPORT
 MAN8=		bozohttpd.8
 MANCOMPRESSED=	maybe
 PLIST_FILES=	libexec/bozohttpd
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|@@PREFIX@@|${LOCALBASE}|g' ${WRKSRC}/bozohttpd.8
 
 .include <bsd.port.post.mk>
