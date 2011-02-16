@@ -9,8 +9,8 @@ $FreeBSD$
  .Bd -literal
 -http stream tcp  nowait:600 httpd /usr/pkg/libexec/bozohttpd bozohttpd /var/www
 -http stream tcp6 nowait:600 httpd /usr/pkg/libexec/bozohttpd bozohttpd /var/www
-+http stream tcp  nowait:600 httpd /@@PREFI@@/libexec/bozohttpd bozohttpd /var/www
-+http stream tcp6 nowait:600 httpd /@@PREFIX@@/libexec/bozohttpd bozohttpd /var/www
++http stream tcp  nowait:600 httpd @@PREFIX@@/libexec/bozohttpd bozohttpd /var/www
++http stream tcp6 nowait:600 httpd @@PREFIX@@/libexec/bozohttpd bozohttpd /var/www
  .Ed
  .Pp
  This would serve web pages from
@@ -19,7 +19,7 @@ $FreeBSD$
  entry like:
  .Bd -literal
 -http stream tcp  nowait:600 httpd /usr/pkg/libexec/bozohttpd bozohttpd -v /var/vroot /var/www
-+http stream tcp  nowait:600 httpd /@@PREFIX@@/libexec/bozohttpd bozohttpd -v /var/vroot /var/www
++http stream tcp  nowait:600 httpd @@PREFIX@@/libexec/bozohttpd bozohttpd -v /var/vroot /var/www
  .Ed
  .Pp
  and inside
