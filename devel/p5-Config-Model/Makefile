@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	Config-Model
-PORTVERSION=	1.232
+PORTVERSION=	1.233
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	../../authors/id/D/DD/DDUMONT
@@ -21,6 +21,7 @@ RUN_DEPENDS=	p5-Carp-Assert-More>=0:${PORTSDIR}/devel/p5-Carp-Assert-More \
 		p5-Log-Log4perl>=1.11:${PORTSDIR}/devel/p5-Log-Log4perl \
 		p5-Moose>=0:${PORTSDIR}/devel/p5-Moose \
 		p5-Parse-RecDescent>=v1.90.0:${PORTSDIR}/devel/p5-Parse-RecDescent \
+		p5-Text-Autoformat>=0:${PORTSDIR}/textproc/p5-Text-Autoformat \
 		p5-YAML>=0:${PORTSDIR}/textproc/p5-YAML
 
 PERL_MODBUILD=	5.8.0+
@@ -50,11 +51,11 @@ MAN3=		Config::Model.3 \
 		Config::Model::ListId.3 Config::Model::Loader.3 \
 		Config::Model::Manual::ModelCreationAdvanced.3 \
 		Config::Model::Manual::ModelCreationIntroduction.3 \
+		Config::Model::Iterator.3 \
 		Config::Model::Node.3 Config::Model::ObjTreeScanner.3 \
 		Config::Model::Report.3 Config::Model::Searcher.3 \
 		Config::Model::SimpleUI.3 Config::Model::TermUI.3 \
 		Config::Model::Value.3 Config::Model::ValueComputer.3 \
-		Config::Model::WarpedNode.3 Config::Model::WarpedThing.3 \
-		Config::Model::WizardHelper.3
+		Config::Model::WarpedNode.3 Config::Model::WarpedThing.3
 
 .include <bsd.port.mk>
