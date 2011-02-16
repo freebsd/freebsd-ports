@@ -6,13 +6,15 @@
 #
 
 PORTNAME=	setproctitle
-PORTVERSION=	1.1
+PORTVERSION=	1.1.1
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sbrabez@gmail.com
 COMMENT=	Allow customization of the process title
+
+LICENSE=	BSD
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
