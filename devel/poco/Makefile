@@ -11,7 +11,7 @@ PORTVERSION=	1.3.6
 CATEGORIES=	devel net
 MASTER_SITES=	SF/${PORTNAME}/sources/${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	wes@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C++ Portable Components library
 
 GNU_CONFIGURE=	yes

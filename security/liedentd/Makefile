@@ -11,7 +11,7 @@ CATEGORIES=	security net
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR= wes
 
-MAINTAINER=	wes@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An ident server which refuses to divulge security information
 
 .include <bsd.port.mk>
