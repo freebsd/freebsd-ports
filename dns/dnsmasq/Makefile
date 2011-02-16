@@ -35,7 +35,8 @@ OPTIONS=	IPV6 "IPv6 support" on
 OPTIONS+=	DBUS "DBUS support" off
 OPTIONS+=	NLS  "NLS and IDN support" on
 # unfortunately, NLS and IDN are inseparable in dnsmasq 2.56, this
-# has been reported to Simon Kelley on 2009-10-01 by the port maintainer.
+# has been reported to Simon Kelley on 2009-10-01 and 2011-02-16
+# by the port maintainer.
 
 .include <bsd.port.pre.mk>
 
