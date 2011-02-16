@@ -55,6 +55,6 @@ MANCOMPRESSED=	maybe
 PLIST_FILES=	libexec/bozohttpd
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|@@PREFIX@@|${LOCALBASE}|g' ${WRKSRC}/bozohttpd.8
+	@${REINPLACE_CMD} -e 's|@@PREFIX@@|${PREFIX}|g' ${WRKSRC}/bozohttpd.8
 
 .include <bsd.port.post.mk>
