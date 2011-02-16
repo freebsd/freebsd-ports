@@ -183,6 +183,14 @@
 %%DOCSDIR%%/%%DOCLANG%%/articles/freebsd-questions/x53.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/freebsd-questions/x67.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/freebsd-questions/x92.html
+%%DOCSDIR%%/%%DOCLANG%%/articles/freebsd-update-server/TRADEMARKS.html
+%%DOCSDIR%%/%%DOCLANG%%/articles/freebsd-update-server/build.html
+%%DOCSDIR%%/%%DOCLANG%%/articles/freebsd-update-server/configuration.html
+%%DOCSDIR%%/%%DOCLANG%%/articles/freebsd-update-server/index.html
+%%DOCSDIR%%/%%DOCLANG%%/articles/freebsd-update-server/introduction.html
+%%DOCSDIR%%/%%DOCLANG%%/articles/freebsd-update-server/patch.html
+%%DOCSDIR%%/%%DOCLANG%%/articles/freebsd-update-server/prerequisites.html
+%%DOCSDIR%%/%%DOCLANG%%/articles/freebsd-update-server/tips.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/geom-class/TRADEMARKS.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/geom-class/geom.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/geom-class/index.html
@@ -1147,4 +1155,4 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/using-x11.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/using-xfce.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/why-port.html
-%%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/x5541.html
+%%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/x5542.html

@@ -23,6 +23,9 @@
 %%DOCSDIR%%/%%DOCLANG%%/articles/fonts/article.txt
 %%DOCSDIR%%/%%DOCLANG%%/articles/formatting-media/article.txt
 %%DOCSDIR%%/%%DOCLANG%%/articles/freebsd-questions/article.txt
+%%DOCSDIR%%/%%DOCLANG%%/articles/freebsd-update-server/article.txt
+%%DOCSDIR%%/%%DOCLANG%%/articles/freebsd-update-server/diff.txt
+%%DOCSDIR%%/%%DOCLANG%%/articles/freebsd-update-server/init.txt
 %%DOCSDIR%%/%%DOCLANG%%/articles/geom-class/article.txt
 %%DOCSDIR%%/%%DOCLANG%%/articles/gjournal-desktop/article.txt
 %%DOCSDIR%%/%%DOCLANG%%/articles/hats/article.txt
