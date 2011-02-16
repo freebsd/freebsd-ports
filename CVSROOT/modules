@@ -2248,6 +2248,7 @@ dbvis                           ports/java/dbvis
 dbxml                           ports/databases/dbXML
 dc20ctrl                        ports/graphics/dc20ctrl
 dc20pack                        ports/graphics/dc20pack
+dc3dd                           ports/sysutils/dc3dd
 dc3play                         ports/graphics/dc3play
 dc42wrap                        ports/sysutils/dc42wrap
 dcc                             ports/irc/dcc
@@ -4649,6 +4650,7 @@ gnarwl                          ports/mail/gnarwl
 gnash                           ports/graphics/gnash
 gnash-devel                     ports/graphics/gnash-devel
 gnat                            ports/lang/gnat
+gnat-aux                        ports/lang/gnat-aux
 gnat-doc-html                   ports/lang/gnat-doc-html
 gnat-doc-info                   ports/lang/gnat-doc-info
 gnat-doc-ps                     ports/lang/gnat-doc-ps
@@ -21256,6 +21258,7 @@ py-distribute                   ports/devel/py-distribute
 py-distutils-extra              ports/devel/py-distutils-extra
 py-django                       ports/www/py-django
 py-django-app-plugins           ports/www/py-django-app-plugins
+py-django-classy-tags           ports/www/py-django-classy-tags
 py-django-devel                 ports/www/py-django-devel
 py-django-extensions            ports/www/py-django-extensions
 py-django-keyedcache            ports/www/py-django-keyedcache
@@ -24313,6 +24316,7 @@ sshguard-ipfw                   ports/security/sshguard-ipfw
 sshguard-pf                     ports/security/sshguard-pf
 sshit                           ports/security/sshit
 sshmenu                         ports/deskutils/sshmenu
+ssid                            ports/sysutils/ssid
 ssl-admin                       ports/security/ssl-admin
 ssldump                         ports/net/ssldump
 sslh                            ports/net/sslh
@@ -25449,6 +25453,7 @@ umem                            ports/devel/umem
 umit                            ports/security/umit
 umix                            ports/audio/umix
 uml2svg                         ports/textproc/uml2svg
+umlgraph                        ports/devel/umlgraph
 umodplayer                      ports/audio/umodplayer
 umodunpack                      ports/misc/umodunpack
 umph                            ports/multimedia/umph
