@@ -6,12 +6,15 @@
 #
 
 PORTNAME=	dd_rescue
-PORTVERSION=	1.22
+PORTVERSION=	1.23
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.garloff.de/kurt/linux/ddrescue/
 
 MAINTAINER=	nobutaka@FreeBSD.org
 COMMENT=	A dd tool suitable for rescuing data from a medium with errors
+
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 ALL_TARGET=	default
