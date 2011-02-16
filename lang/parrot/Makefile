@@ -24,7 +24,7 @@ LICENSE=	ART20
 
 MAKE_JOBS_UNSAFE=	yes
 
-#USE_BZIP2=	yes
+USE_BZIP2=	yes
 USE_BISON=	build
 USE_PERL5=	5.8.0+
 USE_GMAKE=	yes
@@ -32,7 +32,7 @@ USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 
 CONFIGURE_SCRIPT=	Configure.pl
-CONFIGURE_ARGS=	--cc=${CC} --cxx=${CXX} --ld=${CC} --ccflags="${CFLAGS}" \
+CONFIGURE_ARGS=	--cc=${CC} --ld=${CC} --ccflags="${CFLAGS}" \
 		--ldflags="${LDFLAGS} -L/usr/lib -L${LOCALBASE}/lib" \
 		--icu-config=${LOCALBASE}/bin/icu-config \
 		--optimize --parrot_is_shared --inline \
@@ -67,14 +67,6 @@ x-generate-plist:
 		' | ${TR} -s '\n') > temp-pkg-plist
 
 .include <bsd.port.pre.mk>
-
-# JIT only works on x86
-.if ${ARCH} == "i386" || ${ARCH} == "amd64"
-CONFIGURE_ARGS+=	--jitcapable --execcapable
-PLIST_SUB+=	JIT=""
-.else
-PLIST_SUB+=	JIT="@comment "
-.endif
 
 .if ${ARCH} == ia64
 BROKEN=		Does not compile on ia64
