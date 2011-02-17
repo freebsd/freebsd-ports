@@ -16,7 +16,7 @@ PKGNAMEPREFIX=	isc-
 PKGNAMESUFFIX=	41-${SUBSYS}
 DISTFILES=	${PORTNAME}-${DISTVERSION}-${PATCHLEVEL}${EXTRACT_SUFX}
 
-MAINTAINER=	wxs@FreeBSD.org
+MAINTAINER=	douglas@douglasthrift.net
 COMMENT?=	The ISC Dynamic Host Configuration Protocol server
 
 PATCHLEVEL=	P1
