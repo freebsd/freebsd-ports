@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	varnish
-PORTVERSION=	2.1.4
-PORTREVISION=	1
+PORTVERSION=	2.1.5
 CATEGORIES=	www
-MASTER_SITES=	http://www.varnish-software.com/sites/default/files/
+MASTER_SITES=	http://repo.varnish-cache.org/source/
 
 MAINTAINER=	des@FreeBSD.org
 COMMENT=	The Varnish high-performance HTTP accelerator
