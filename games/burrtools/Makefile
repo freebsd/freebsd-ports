@@ -7,9 +7,10 @@
 #
 
 PORTNAME=	burrtools
-PORTVERSION=	0.6.0
+PORTVERSION=	0.6.1
 CATEGORIES=	games
-MASTER_SITES=	SF
+MASTER_SITES=	SF \
+		http://www.c-s.li/ports/
 
 MAINTAINER=	c-s@c-s.li
 COMMENT=	A puzzle solver
