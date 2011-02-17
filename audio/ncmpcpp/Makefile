@@ -7,6 +7,7 @@
 
 PORTNAME=	ncmpcpp
 PORTVERSION=	0.5.6
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://unkart.ovh.org/ncmpcpp/ \
 		http://mirror.mcx2.org/
@@ -33,6 +34,7 @@ OPTIONS=	CURL "Enable fetching lyrics from the Internet" on \
 		CLOCK "Enable clock-screen support" on \
 		UTF8 "Enable UTF8 support" on \
 		TAGLIB "Enable taglib support" off \
+		OUTPUTS "Enable outputs screen" on \
 		VISUALIZER "Enable music visualizer screen" on
 
 .include <bsd.port.pre.mk>
@@ -80,6 +82,12 @@ LIB_DEPENDS+=	tag:${PORTSDIR}/audio/taglib
 CONFIGURE_ARGS+=	--with-taglib
 .else
 CONFIGURE_ARGS+=	--with-taglib=no
+.endif
+
+.if !defined(WITHOUT_OUTPUTS)
+CONFIGURE_ARGS+=	--enable-outputs
+.else
+CONFIGURE_ARGS+=	--disable-outputs
 .endif
 
 .if !defined(WITHOUT_VISUALIZER)
