@@ -2,28 +2,26 @@
 # Date created:				18.01.2003
 # Whom:					Ulrich Spoerlein <q@uni.de>
 #
+# Last updated by:      Kristian Kræmmer Nielsen <freebsd.ports@com.jkkn.dk>
+# Date: January 7th, 2011
+#
 # $FreeBSD$
 #
 
 PORTNAME=	eggdrop
-PORTVERSION=	1.6.19
-PORTREVISION=	2
+PORTVERSION=	1.6.20
 CATEGORIES=	irc
 MASTER_SITES=	ftp://ftp.eggheads.org/pub/eggdrop/source/1.6/ \
-		LOCAL/beech
+	http://www.egghelp.org/files/patches/:ssl
 DISTNAME=	${PORTNAME}${PORTVERSION}
-
-PATCHFILES=	${PORTNAME}-${PORTVERSION}-ssl-rootie.patch.gz:ssl \
-		eggdrop1.6.19+ctcpfix.patch.gz:ctcpfix
-PATCH_SITES=	http://www.egghelp.org/files/patches/:ssl \
-		ftp://ftp.eggheads.org/pub/eggdrop/patches/official/1.6/:ctcpfix
+DISTFILES=	${PORTNAME}${PORTVERSION}.tar.bz2 \
+	${PORTNAME}-${PORTVERSION}-ssl.zip:ssl
 
 MAINTAINER=	beech@FreeBSD.org
 COMMENT=	The most popular open source Internet Relay Chat bot
 
-USE_TCL=	82+
+USE_TCL=	85+
 
-USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-tcllib=${LOCALBASE}/lib/libtcl${TCL_VER:S/.//}.so \
 		--with-tclinc=${TCL_INCLUDEDIR}/tcl.h
@@ -37,13 +35,13 @@ SUB_FILES=	pkg-message
 
 .include <bsd.port.pre.mk>
 
+LICENSE=	GPLv2
+
 .if defined(WITH_SSL)
+EXTRA_PATCHES=	${WRKDIR}/eggdrop-1.6.20-ssl.patch
+
 CFLAGS+=	-DHAVE_OPENSSL
 CONFIGURE_ARGS+=	--with-ssl
-.endif
-
-.if !defined(WITH_SSL)
-CONFIGURE_ARGS+=	--without-ssl
 .endif
 
 post-patch:
@@ -53,7 +51,7 @@ post-patch:
 post-configure:
 	@(cd ${WRKSRC}; ${MAKE} config)
 # Workaround broken relative path in SSL-patch
-	@(cd ${WRKSRC}/src && ${LN} -fs ../config.h)
+#	@(cd ${WRKSRC}/src && ${LN} -fs ../config.h)
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/eggdrop ${PREFIX}/bin
@@ -97,9 +95,17 @@ do-install:
 			${DATADIR}/language ";"
 	@${MKDIR} ${DATADIR}/scripts
 .for f in CONTENTS action.fix.tcl autobotchk alltools.tcl botchk \
-	cmd_resolve.tcl compat.tcl getops.tcl klined.tcl notes2.tcl ques5.tcl \
-	sentinel.tcl userinfo.tcl weed
+	cmd_resolve.tcl compat.tcl dccwhois.tcl getops.tcl klined.tcl notes2.tcl ques5.tcl \
+	quotepass.tcl quotepong.tcl sentinel.tcl userinfo.tcl weed
 	${INSTALL_DATA} ${WRKSRC}/scripts/${f} ${DATADIR}/scripts
+.endfor
+	@${MKDIR} ${DATADIR}/scripts/help
+.for f in cmd_resolve.help userinfo.help
+	${INSTALL_DATA} ${WRKSRC}/scripts/help/${f} ${DATADIR}/scripts/help
+.endfor
+	@${MKDIR} ${DATADIR}/scripts/help/msg
+.for f in userinfo.help
+	${INSTALL_DATA} ${WRKSRC}/scripts/help/msg/${f} ${DATADIR}/scripts/help/msg
 .endfor
 .for f in cmds1.help cmds2.help core.help
 	${INSTALL_DATA} ${WRKSRC}/help/${f} ${DATADIR}/help
@@ -113,9 +119,9 @@ do-install:
 .endfor
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-.for f in ABOUT AUTHORS BANS BOTNET BUG-REPORT COMPILE-GUIDE CONTENTS \
+.for f in ABOUT BANS BOTNET BUG-REPORT COMPILE-GUIDE CONTENTS \
 	FIRST-SCRIPT KNOWN-PROBLEMS MODULES PARTYLINE PATCH-HOWTO \
-	TEXT-SUBSTITUTIONS TRICKS UPDATES1.6 USERS WEIRD-MESSAGES \
+	TEXT-SUBSTITUTIONS TRICKS Changes1.6 USERS WEIRD-MESSAGES \
 	tcl-commands.doc
 	${INSTALL_DATA} ${WRKSRC}/doc/${f} ${DOCSDIR}
 .endfor
