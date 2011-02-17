@@ -1608,7 +1608,7 @@
 %%T%%/jre/lib/images/icons/sun-java_HighContrast.png
 %%T%%/jre/lib/images/icons/sun-java_HighContrastInverse.png
 %%T%%/jre/lib/images/icons/sun-java_LowContrast.png
-%%T%%/jre/lib/javaws.pack
+%%T%%/jre/lib/javaws.jar
 %%T%%/jre/lib/javaws/Java1.5.ico
 %%T%%/jre/lib/javaws/messages.properties
 %%T%%/jre/lib/javaws/messages_de.properties
