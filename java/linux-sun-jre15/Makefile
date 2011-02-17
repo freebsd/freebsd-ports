@@ -36,8 +36,8 @@ DL_JRE_VERSION=	${JRE_VERSION}_${JRE_REVISION}
 ONLY_FOR_ARCHS=	i386 amd64
 DOWNLOAD_URL?=	http://java.sun.com/javase/downloads/index_jdk5.jsp
 APP_HOME=	${PREFIX}/${PKGNAMEPREFIX}${PORTNAME}${JRE_VERSION}
-PACKED_JARS=	lib/charsets.jar lib/deploy.jar lib/ext/localedata.jar lib/javaws.jar lib/jsse.jar lib/plugin.jar lib/rt.jar
-UNPACK_CMD=	${APP_HOME}/bin/unpack200
+PACKED_JARS=	lib/charsets lib/deploy lib/ext/localedata lib/javaws lib/jsse lib/plugin lib/rt
+UNPACK_CMD=	${WRKSRC}/bin/unpack200
 
 .include <bsd.port.pre.mk>
 
@@ -53,7 +53,10 @@ do-extract:
 	@cd ${WRKDIR} \
 	&& ${TAIL} -n +683 ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX} > ${WRKDIR}/install.sfx \
 	&& ${CHMOD} +x ${WRKDIR}/install.sfx \
-	&& ${WRKDIR}/install.sfx > /dev/null
+	&& ${WRKDIR}/install.sfx -o > /dev/null
+.for i in ${PACKED_JARS}
+	@${UNPACK_CMD} -r ${WRKSRC}/${i}.pack ${WRKSRC}/${i}.jar
+.endfor
 
 post-patch:
 	@${FIND} ${WRKSRC} -name '*.orig' -print | ${XARGS} ${RM} -f
@@ -64,12 +67,6 @@ do-install:
 	${MKDIR} ${APP_HOME}
 	cd ${WRKSRC} && ${FIND} . -print \
 	  | ${CPIO} -pdmu -R ${LIBOWN}:${LIBGRP} ${APP_HOME}
-	for i in ${PACKED_JARS}; do \
-	  if [ -f ${APP_HOME}/`dirname $$i`/`basename $$i .jar`.pack ]; then \
-	    ${UNPACK_CMD} ${APP_HOME}/`dirname $$i`/`basename $$i .jar`.pack ${APP_HOME}/$$i; \
-	    ${RM} -f ${APP_HOME}/`dirname $$i`/`basename $$i .jar`.pack; \
-	  fi \
-	done
 
 post-install:
 	${LOCALBASE}/bin/registervm "${APP_HOME}/bin/java # Linux-Sun-JRE${PORTVERSION}"

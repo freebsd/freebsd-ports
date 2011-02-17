@@ -37,8 +37,8 @@ INSTALL_JDK_VERSION=	${DL_JDK_VERSION:S/_/./g}
 ONLY_FOR_ARCHS=	i386 amd64
 DOWNLOAD_URL?=	http://www.oracle.com/technetwork/java/archive-139210.html
 APP_HOME=	${PREFIX}/${PKGNAMEPREFIX}${PORTNAME}${JDK_VERSION}
-PACKED_JARS=	lib/tools.jar jre/lib/rt.jar jre/lib/jsse.jar jre/lib/charsets.jar jre/lib/ext/localedata.jar jre/lib/plugin.jar jre/javaws/javaws.jar
-UNPACK_CMD=	${APP_HOME}/lib/unpack
+PACKED_JARS=	jre/javaws/javaws jre/lib/charsets jre/lib/ext/localedata jre/lib/jsse jre/lib/plugin jre/lib/rt lib/tools
+UNPACK_CMD=	${WRKSRC}/lib/unpack
 
 .include <bsd.port.pre.mk>
 
@@ -54,7 +54,10 @@ do-extract:
 	@cd ${WRKDIR} \
 	&& ${TAIL} -n +558 ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX} > ${WRKDIR}/install.sfx \
 	&& ${CHMOD} +x ${WRKDIR}/install.sfx \
-	&& ${WRKDIR}/install.sfx > /dev/null
+	&& ${WRKDIR}/install.sfx -o > /dev/null
+.for i in ${PACKED_JARS}
+	@${UNPACK_CMD} ${WRKSRC}/${i}.pack ${WRKSRC}/${i}.jar && ${RM} -f ${WRKSRC}/${i}.pack
+.endfor
 
 post-patch:
 	@${FIND} ${WRKSRC} -name '*.orig' -print | ${XARGS} ${RM} -f
@@ -65,12 +68,6 @@ do-install:
 	${MKDIR} ${APP_HOME}
 	cd ${WRKSRC} && ${FIND} . -print \
 	  | ${CPIO} -pdmu -R ${LIBOWN}:${LIBGRP} ${APP_HOME}
-	for i in ${PACKED_JARS}; do \
-	  if [ -f ${APP_HOME}/`dirname $$i`/`basename $$i .jar`.pack ]; then \
-	    ${UNPACK_CMD} ${APP_HOME}/`dirname $$i`/`basename $$i .jar`.pack ${APP_HOME}/$$i; \
-	    ${RM} -f ${APP_HOME}/`dirname $$i`/`basename $$i .jar`.pack; \
-	  fi \
-	done
 
 post-install:
 	${LOCALBASE}/bin/registervm "${APP_HOME}/bin/java # Linux-Sun-JDK${PORTVERSION}"
