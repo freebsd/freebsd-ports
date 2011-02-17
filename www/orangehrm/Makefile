@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	orangehrm
-PORTVERSION=	2.6.0.2
+PORTVERSION=	2.6.1
 CATEGORIES=	www misc
-MASTER_SITES=	SF/${PORTNAME}/stable/2.6
+MASTER_SITES=	SF/${PORTNAME}/stable/${PORTVERSION}
 
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Open Source Human Resource Management
@@ -22,7 +22,8 @@ SUB_FILES=	pkg-message
 HRMDIR=		www/orangehrm
 
 pre-install:
-	@${FIND} -s -d ${WRKSRC} -type f | ${SED} "s#${WRKSRC}#${HRMDIR}#g" >${PLIST}
+	@${FIND} -s -d ${WRKSRC} -type l | ${SED} "s#${WRKSRC}#${HRMDIR}#g" >${PLIST}
+	@${FIND} -s -d ${WRKSRC} -type f | ${SED} "s#${WRKSRC}#${HRMDIR}#g" >>${PLIST}
 	@${FIND} -s -d ${WRKSRC} -type d  | ${SED} "s#${WRKSRC}#@dirrm ${HRMDIR}#g" >> ${PLIST}
 
 do-install:
