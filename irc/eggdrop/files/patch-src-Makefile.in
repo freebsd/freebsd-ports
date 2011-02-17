@@ -1,0 +1,11 @@
+--- src/Makefile.in	2011-01-07 06:12:27.000000000 +0100
++++ src/Makefile.in	2011-01-07 06:33:20.000000000 +0100
+@@ -18,7 +18,7 @@
+ LD = @CC@
+ STRIP = @STRIP@
+ CFLAGS = @CFLAGS@ -I.. -I$(top_srcdir) @DEFS@ $(CFLGS)
+-CPPFLAGS = @CPPFLAGS@
++CPPFLAGS = @CPPFLAGS@ '-D__PREFIX__="@prefix@"' 
+ 
+ eggdrop_objs = bg.o botcmd.o botmsg.o botnet.o chanprog.o cmds.o dcc.o \
+ dccutil.o dns.o flags.o language.o match.o main.o mem.o misc.o misc_file.o \
