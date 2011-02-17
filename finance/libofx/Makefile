@@ -6,12 +6,11 @@
 #
 
 PORTNAME=	libofx
-PORTVERSION=	0.9.1
-PORTREVISION=	4
+PORTVERSION=	0.9.2
 CATEGORIES=	finance
 MASTER_SITES=	SF
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	bsdkaffee@gmail.com
 COMMENT=	OpenSource implementation of the OFX (Open Financial eXchange)
 
 LIB_DEPENDS=	curl.6:${PORTSDIR}/ftp/curl \
@@ -24,11 +23,22 @@ USE_AUTOTOOLS=	aclocal autoheader automake autoconf libtool
 ACLOCAL_ARGS=	-I m4
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--disable-doxygen --disable-dot --disable-gengetopt \
-		--with-opensp-includes=${LOCALBASE}/include/OpenSP
+		--with-opensp-includes=${LOCALBASE}/include/OpenSP \
+		--with-opensp-libs=${LOCALBASE}/lib
+MAKE_JOBS_SAFE=	yes
 USE_LDCONFIG=	yes
 
 CPPFLAGS=	-I${LOCALBASE}/include
 LDFLAGS=	-L${LOCALBASE}/lib
+
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
+
+PORTDOCS=	*
+
+OPTIONS=	APIDOC "Install full API documentation" off
+
+.include <bsd.port.options.mk>
 
 post-install:
 .if !defined(NOPORTDOCS)
@@ -36,7 +46,9 @@ post-install:
 .for file in AUTHORS ChangeLog INSTALL NEWS README totest.txt
 	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
 .endfor
+.if defined(WITH_APIDOC)
 	@(cd ${WRKSRC}/doc; ${COPYTREE_SHARE} html ${DOCSDIR})
+.endif
 .endif
 
 .include <bsd.port.mk>
