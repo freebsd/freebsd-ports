@@ -1,10 +1,9 @@
 The JavaMail API provides a platform-independent and protocol-independent
 framework to build mail and messaging applications. The JavaMail API is
-implemented as a Java platform optional package and is also available as
-part of the Java platform, Enterprise Edition. All Java EE application
-servers, including GlassFish, provide an implementation of the JavaMail
-API. The JavaMail implementation in GlassFish is the source code from wh
--ich the JavaMail reference implementation is built. Many other applica
--tion servers use the same JavaMail reference implementation.
+available as an optional package for use with Java SE platform and is
+also included in the Java EE platform.
 
-WWW: http://java.sun.com/products/javamail/
+WWW: http://www.oracle.com/technetwork/java/javamail/
+
+- Alex Dupre
+ale@FreeBSD.org
