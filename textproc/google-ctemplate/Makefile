@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	google-ctemplate
-PORTVERSION=	0.97
+PORTVERSION=	0.99
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 DISTNAME=	ctemplate-${PORTVERSION}
@@ -17,12 +17,16 @@ COMMENT=	A simple but powerful template language for C++
 
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
+USE_GNOME=	pkgconfig
 
 .if !defined(NOPORTDOCS)
 PORTDOCS=	*
 .endif
 
 post-patch:
+	${REINPLACE_CMD} -e 's|^pkgconfigdir.*|pkgconfigdir = $${PREFIX}/libdata/pkgconfig|' \
+		${WRKSRC}/Makefile.in
+
 .if !defined(NOPORTDOCS)
 	@${REINPLACE_CMD} -e \
 		's|$$(prefix)/share/doc/$$(PACKAGE)-$$(VERSION)|${DOCSDIR}|' \

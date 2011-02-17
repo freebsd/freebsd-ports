@@ -16,9 +16,11 @@ include/ctemplate/template_string.h
 lib/libctemplate.a
 lib/libctemplate.la
 lib/libctemplate.so
-lib/libctemplate.so.0
+lib/libctemplate.so.1
 lib/libctemplate_nothreads.a
 lib/libctemplate_nothreads.la
 lib/libctemplate_nothreads.so
-lib/libctemplate_nothreads.so.0
+lib/libctemplate_nothreads.so.1
+libdata/pkgconfig/libctemplate.pc
+libdata/pkgconfig/libctemplate_nothreads.pc
 @dirrm include/ctemplate
