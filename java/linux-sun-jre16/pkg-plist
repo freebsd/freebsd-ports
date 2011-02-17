@@ -2,7 +2,6 @@
 %%T%%/.systemPrefs/.system.lock
 %%T%%/.systemPrefs/.systemRootModFile
 %%T%%/COPYRIGHT
-%%T%%/LICENSE
 %%T%%/README
 %%T%%/THIRDPARTYLICENSEREADME.txt
 %%T%%/Welcome.html
@@ -21,6 +20,8 @@
 %%T%%/bin/tnameserv
 %%T%%/bin/unpack200
 %%T%%/javaws/javaws
+%%T%%/lib/alt-rt.jar
+%%T%%/lib/alt-string.jar
 @exec	mkdir -p %D/%%T%%/lib/applet
 %%T%%/lib/audio/soundbank.gm
 %%T%%/lib/calendars.properties
@@ -42,11 +43,12 @@
 %%T%%/lib/deploy/messages_it.properties
 %%T%%/lib/deploy/messages_ja.properties
 %%T%%/lib/deploy/messages_ko.properties
+%%T%%/lib/deploy/messages_pt_BR.properties
 %%T%%/lib/deploy/messages_sv.properties
 %%T%%/lib/deploy/messages_zh_CN.properties
 %%T%%/lib/deploy/messages_zh_HK.properties
 %%T%%/lib/deploy/messages_zh_TW.properties
-%%T%%/lib/deploy/splash.jpg
+%%T%%/lib/deploy/splash.gif
 %%T%%/lib/desktop/applications/sun-java.desktop
 %%T%%/lib/desktop/applications/sun-javaws.desktop
 %%T%%/lib/desktop/applications/sun_java.desktop
@@ -110,14 +112,20 @@
 %%T%%/lib/fontconfig.RedHat.2.1.properties.src
 %%T%%/lib/fontconfig.RedHat.3.bfc
 %%T%%/lib/fontconfig.RedHat.3.properties.src
+%%T%%/lib/fontconfig.RedHat.4.bfc
+%%T%%/lib/fontconfig.RedHat.4.properties.src
 %%T%%/lib/fontconfig.RedHat.bfc
 %%T%%/lib/fontconfig.RedHat.properties.src
+%%T%%/lib/fontconfig.SuSE.11.bfc
+%%T%%/lib/fontconfig.SuSE.11.properties.src
 %%T%%/lib/fontconfig.SuSE.bfc
 %%T%%/lib/fontconfig.SuSE.properties.src
 %%T%%/lib/fontconfig.Sun.bfc
 %%T%%/lib/fontconfig.Sun.properties.src
 %%T%%/lib/fontconfig.Turbo.bfc
 %%T%%/lib/fontconfig.Turbo.properties.src
+%%T%%/lib/fontconfig.Ubuntu.bfc
+%%T%%/lib/fontconfig.Ubuntu.properties.src
 %%T%%/lib/fontconfig.bfc
 %%T%%/lib/fontconfig.properties.src
 %%T%%/lib/fonts/LucidaBrightDemiBold.ttf
@@ -166,6 +174,7 @@
 %%T%%/lib/i386/libnative_chmod_g.so
 %%T%%/lib/i386/libnet.so
 %%T%%/lib/i386/libnio.so
+%%T%%/lib/i386/libnpjp2.so
 %%T%%/lib/i386/libnpt.so
 %%T%%/lib/i386/librmi.so
 %%T%%/lib/i386/libsplashscreen.so
@@ -229,11 +238,14 @@
 %%T%%/lib/resources.jar
 %%T%%/lib/rt.jar
 %%T%%/lib/security/US_export_policy.jar
+%%T%%/lib/security/blacklist
 %%T%%/lib/security/cacerts
 %%T%%/lib/security/java.policy
 %%T%%/lib/security/java.security
 %%T%%/lib/security/javaws.policy
 %%T%%/lib/security/local_policy.jar
+%%T%%/lib/security/trusted.libraries
+%%T%%/lib/servicetag/jdk_header.png
 %%T%%/lib/sound.properties
 %%T%%/lib/zi/Africa/Abidjan
 %%T%%/lib/zi/Africa/Accra
@@ -298,13 +310,16 @@
 %%T%%/lib/zi/America/Argentina/La_Rioja
 %%T%%/lib/zi/America/Argentina/Mendoza
 %%T%%/lib/zi/America/Argentina/Rio_Gallegos
+%%T%%/lib/zi/America/Argentina/Salta
 %%T%%/lib/zi/America/Argentina/San_Juan
+%%T%%/lib/zi/America/Argentina/San_Luis
 %%T%%/lib/zi/America/Argentina/Tucuman
 %%T%%/lib/zi/America/Argentina/Ushuaia
 %%T%%/lib/zi/America/Aruba
 %%T%%/lib/zi/America/Asuncion
 %%T%%/lib/zi/America/Atikokan
 %%T%%/lib/zi/America/Bahia
+%%T%%/lib/zi/America/Bahia_Banderas
 %%T%%/lib/zi/America/Barbados
 %%T%%/lib/zi/America/Belem
 %%T%%/lib/zi/America/Belize
@@ -366,6 +381,7 @@
 %%T%%/lib/zi/America/Managua
 %%T%%/lib/zi/America/Manaus
 %%T%%/lib/zi/America/Martinique
+%%T%%/lib/zi/America/Matamoros
 %%T%%/lib/zi/America/Mazatlan
 %%T%%/lib/zi/America/Menominee
 %%T%%/lib/zi/America/Merida
@@ -383,6 +399,7 @@
 %%T%%/lib/zi/America/Noronha
 %%T%%/lib/zi/America/North_Dakota/Center
 %%T%%/lib/zi/America/North_Dakota/New_Salem
+%%T%%/lib/zi/America/Ojinaga
 %%T%%/lib/zi/America/Panama
 %%T%%/lib/zi/America/Pangnirtung
 %%T%%/lib/zi/America/Paramaribo
@@ -397,6 +414,8 @@
 %%T%%/lib/zi/America/Regina
 %%T%%/lib/zi/America/Resolute
 %%T%%/lib/zi/America/Rio_Branco
+%%T%%/lib/zi/America/Santa_Isabel
+%%T%%/lib/zi/America/Santarem
 %%T%%/lib/zi/America/Santiago
 %%T%%/lib/zi/America/Santo_Domingo
 %%T%%/lib/zi/America/Sao_Paulo
@@ -421,6 +440,7 @@
 %%T%%/lib/zi/Antarctica/Casey
 %%T%%/lib/zi/Antarctica/Davis
 %%T%%/lib/zi/Antarctica/DumontDUrville
+%%T%%/lib/zi/Antarctica/Macquarie
 %%T%%/lib/zi/Antarctica/Mawson
 %%T%%/lib/zi/Antarctica/McMurdo
 %%T%%/lib/zi/Antarctica/Palmer
@@ -441,7 +461,6 @@
 %%T%%/lib/zi/Asia/Beirut
 %%T%%/lib/zi/Asia/Bishkek
 %%T%%/lib/zi/Asia/Brunei
-%%T%%/lib/zi/Asia/Calcutta
 %%T%%/lib/zi/Asia/Choibalsan
 %%T%%/lib/zi/Asia/Chongqing
 %%T%%/lib/zi/Asia/Colombo
@@ -452,6 +471,7 @@
 %%T%%/lib/zi/Asia/Dushanbe
 %%T%%/lib/zi/Asia/Gaza
 %%T%%/lib/zi/Asia/Harbin
+%%T%%/lib/zi/Asia/Ho_Chi_Minh
 %%T%%/lib/zi/Asia/Hong_Kong
 %%T%%/lib/zi/Asia/Hovd
 %%T%%/lib/zi/Asia/Irkutsk
@@ -462,7 +482,8 @@
 %%T%%/lib/zi/Asia/Kamchatka
 %%T%%/lib/zi/Asia/Karachi
 %%T%%/lib/zi/Asia/Kashgar
-%%T%%/lib/zi/Asia/Katmandu
+%%T%%/lib/zi/Asia/Kathmandu
+%%T%%/lib/zi/Asia/Kolkata
 %%T%%/lib/zi/Asia/Krasnoyarsk
 %%T%%/lib/zi/Asia/Kuala_Lumpur
 %%T%%/lib/zi/Asia/Kuching
@@ -473,6 +494,7 @@
 %%T%%/lib/zi/Asia/Manila
 %%T%%/lib/zi/Asia/Muscat
 %%T%%/lib/zi/Asia/Nicosia
+%%T%%/lib/zi/Asia/Novokuznetsk
 %%T%%/lib/zi/Asia/Novosibirsk
 %%T%%/lib/zi/Asia/Omsk
 %%T%%/lib/zi/Asia/Oral
@@ -486,7 +508,6 @@
 %%T%%/lib/zi/Asia/Riyadh87
 %%T%%/lib/zi/Asia/Riyadh88
 %%T%%/lib/zi/Asia/Riyadh89
-%%T%%/lib/zi/Asia/Saigon
 %%T%%/lib/zi/Asia/Sakhalin
 %%T%%/lib/zi/Asia/Samarkand
 %%T%%/lib/zi/Asia/Seoul
@@ -624,6 +645,7 @@
 %%T%%/lib/zi/Pacific/Apia
 %%T%%/lib/zi/Pacific/Auckland
 %%T%%/lib/zi/Pacific/Chatham
+%%T%%/lib/zi/Pacific/Chuuk
 %%T%%/lib/zi/Pacific/Easter
 %%T%%/lib/zi/Pacific/Efate
 %%T%%/lib/zi/Pacific/Enderbury
@@ -649,14 +671,13 @@
 %%T%%/lib/zi/Pacific/Pago_Pago
 %%T%%/lib/zi/Pacific/Palau
 %%T%%/lib/zi/Pacific/Pitcairn
-%%T%%/lib/zi/Pacific/Ponape
+%%T%%/lib/zi/Pacific/Pohnpei
 %%T%%/lib/zi/Pacific/Port_Moresby
 %%T%%/lib/zi/Pacific/Rarotonga
 %%T%%/lib/zi/Pacific/Saipan
 %%T%%/lib/zi/Pacific/Tahiti
 %%T%%/lib/zi/Pacific/Tarawa
 %%T%%/lib/zi/Pacific/Tongatapu
-%%T%%/lib/zi/Pacific/Truk
 %%T%%/lib/zi/Pacific/Wake
 %%T%%/lib/zi/Pacific/Wallis
 %%T%%/lib/zi/SystemV/AST4
@@ -727,6 +748,7 @@
 @dirrm %%T%%/lib/zi/America
 @dirrm %%T%%/lib/zi/Africa
 @dirrm %%T%%/lib/zi
+@dirrm %%T%%/lib/servicetag
 @dirrm %%T%%/lib/security
 @dirrm %%T%%/lib/oblique-fonts
 @dirrm %%T%%/lib/management
