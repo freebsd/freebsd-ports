@@ -500,6 +500,7 @@
     SUBDIR += glrparser
     SUBDIR += glui
     SUBDIR += gmake
+    SUBDIR += gnatpython
     SUBDIR += gnome-common
     SUBDIR += gnome-crash
     SUBDIR += gnome-js-common
