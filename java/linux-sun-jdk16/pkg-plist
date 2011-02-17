@@ -57,7 +57,6 @@
 %%T%%/db/bin/dblook
 %%T%%/db/bin/dblook.bat
 %%T%%/db/bin/derby_common.bat
-%%T%%/db/bin/derby_common.sh
 %%T%%/db/bin/ij
 %%T%%/db/bin/ij.bat
 %%T%%/db/bin/setEmbeddedCP
@@ -131,14 +130,14 @@
 %%T%%/db/demo/databases/toursdb/seg0/c400.dat
 %%T%%/db/demo/databases/toursdb/seg0/c41.dat
 %%T%%/db/demo/databases/toursdb/seg0/c411.dat
-%%T%%/db/demo/databases/toursdb/seg0/c420.dat
-%%T%%/db/demo/databases/toursdb/seg0/c431.dat
+%%T%%/db/demo/databases/toursdb/seg0/c421.dat
+%%T%%/db/demo/databases/toursdb/seg0/c430.dat
 %%T%%/db/demo/databases/toursdb/seg0/c441.dat
-%%T%%/db/demo/databases/toursdb/seg0/c450.dat
+%%T%%/db/demo/databases/toursdb/seg0/c451.dat
 %%T%%/db/demo/databases/toursdb/seg0/c461.dat
-%%T%%/db/demo/databases/toursdb/seg0/c471.dat
-%%T%%/db/demo/databases/toursdb/seg0/c480.dat
-%%T%%/db/demo/databases/toursdb/seg0/c491.dat
+%%T%%/db/demo/databases/toursdb/seg0/c470.dat
+%%T%%/db/demo/databases/toursdb/seg0/c481.dat
+%%T%%/db/demo/databases/toursdb/seg0/c490.dat
 %%T%%/db/demo/databases/toursdb/seg0/c4a1.dat
 %%T%%/db/demo/databases/toursdb/seg0/c4b1.dat
 %%T%%/db/demo/databases/toursdb/seg0/c4c0.dat
@@ -147,7 +146,14 @@
 %%T%%/db/demo/databases/toursdb/seg0/c4f0.dat
 %%T%%/db/demo/databases/toursdb/seg0/c501.dat
 %%T%%/db/demo/databases/toursdb/seg0/c51.dat
-%%T%%/db/demo/databases/toursdb/seg0/c510.dat
+%%T%%/db/demo/databases/toursdb/seg0/c511.dat
+%%T%%/db/demo/databases/toursdb/seg0/c521.dat
+%%T%%/db/demo/databases/toursdb/seg0/c530.dat
+%%T%%/db/demo/databases/toursdb/seg0/c541.dat
+%%T%%/db/demo/databases/toursdb/seg0/c551.dat
+%%T%%/db/demo/databases/toursdb/seg0/c560.dat
+%%T%%/db/demo/databases/toursdb/seg0/c571.dat
+%%T%%/db/demo/databases/toursdb/seg0/c580.dat
 %%T%%/db/demo/databases/toursdb/seg0/c60.dat
 %%T%%/db/demo/databases/toursdb/seg0/c71.dat
 %%T%%/db/demo/databases/toursdb/seg0/c81.dat
@@ -163,6 +169,8 @@
 %%T%%/db/demo/programs/demo.html
 %%T%%/db/demo/programs/derbylogo128_bluebg.png
 %%T%%/db/demo/programs/localcal/README
+%%T%%/db/demo/programs/localcal/build.xml
+@exec	mkdir -p %D/%%T%%/db/demo/programs/localcal/lib
 %%T%%/db/demo/programs/localcal/src/AddEventRequest.java
 %%T%%/db/demo/programs/localcal/src/CalEvent.java
 %%T%%/db/demo/programs/localcal/src/CalendarController.java
@@ -194,6 +202,7 @@
 %%T%%/db/demo/programs/nserverdemo/simpleserversample.html
 %%T%%/db/demo/programs/readme.html
 %%T%%/db/demo/programs/scores/README
+%%T%%/db/demo/programs/scores/build.xml
 %%T%%/db/demo/programs/scores/customizeMe.properties
 %%T%%/db/demo/programs/scores/java/client/org/apache/derbyDemo/scores/app/Scores.java
 %%T%%/db/demo/programs/scores/java/client/org/apache/derbyDemo/scores/data/Data.java
@@ -328,6 +337,9 @@
 %%T%%/db/docs/html/adminguide/cadminsslclient.html
 %%T%%/db/docs/html/adminguide/cadminsslkeys.html
 %%T%%/db/docs/html/adminguide/cadminsslserver.html
+%%T%%/db/docs/html/adminguide/common.css
+%%T%%/db/docs/html/adminguide/commonltr.css
+%%T%%/db/docs/html/adminguide/commonrtl.css
 %%T%%/db/docs/html/adminguide/index.html
 %%T%%/db/docs/html/adminguide/radminapps811974.html
 %%T%%/db/docs/html/adminguide/radminappsclientxmp.html
@@ -465,13 +477,11 @@
 %%T%%/db/docs/html/devguide/cdevcsecure41285.html
 %%T%%/db/docs/html/devguide/cdevcsecure42374.html
 %%T%%/db/docs/html/devguide/cdevcsecure51876.html
-%%T%%/db/docs/html/devguide/cdevcsecure55054.html
 %%T%%/db/docs/html/devguide/cdevcsecure60146.html
 %%T%%/db/docs/html/devguide/cdevcsecure67151.html
 %%T%%/db/docs/html/devguide/cdevcsecure79358.html
 %%T%%/db/docs/html/devguide/cdevcsecure863446.html
 %%T%%/db/docs/html/devguide/cdevcsecure863546.html
-%%T%%/db/docs/html/devguide/cdevcsecure863611.html
 %%T%%/db/docs/html/devguide/cdevcsecure863676.html
 %%T%%/db/docs/html/devguide/cdevcsecure864242.html
 %%T%%/db/docs/html/devguide/cdevcsecure864642.html
@@ -490,6 +500,7 @@
 %%T%%/db/docs/html/devguide/cdevcsecureDbOwner.html
 %%T%%/db/docs/html/devguide/cdevcsecuree.html
 %%T%%/db/docs/html/devguide/cdevcsecuregrantrevokeaccess.html
+%%T%%/db/docs/html/devguide/cdevcsecureprivileges.html
 %%T%%/db/docs/html/devguide/cdevcsecureroles.html
 %%T%%/db/docs/html/devguide/cdevdeploy11201.html
 %%T%%/db/docs/html/devguide/cdevdeploy12748.html
@@ -545,6 +556,7 @@
 %%T%%/db/docs/html/devguide/cdevdvlp846402.html
 %%T%%/db/docs/html/devguide/cdevdvlp91854.html
 %%T%%/db/docs/html/devguide/cdevdvlp96597.html
+%%T%%/db/docs/html/devguide/cdevdvlpinmemdb.html
 %%T%%/db/docs/html/devguide/cdevin10613.html
 %%T%%/db/docs/html/devguide/cdevin38113.html
 %%T%%/db/docs/html/devguide/cdevin55108.html
@@ -553,7 +565,6 @@
 %%T%%/db/docs/html/devguide/cdevresman19524.html
 %%T%%/db/docs/html/devguide/cdevresman89722.html
 %%T%%/db/docs/html/devguide/cdevresman92946.html
-%%T%%/db/docs/html/devguide/cdevsetprop1003847.html
 %%T%%/db/docs/html/devguide/cdevsetprop11108.html
 %%T%%/db/docs/html/devguide/cdevsetprop11561.html
 %%T%%/db/docs/html/devguide/cdevsetprop12821.html
@@ -564,7 +575,6 @@
 %%T%%/db/docs/html/devguide/cdevsetprop24843.html
 %%T%%/db/docs/html/devguide/cdevsetprop32443.html
 %%T%%/db/docs/html/devguide/cdevsetprop34818.html
-%%T%%/db/docs/html/devguide/cdevsetprop38343.html
 %%T%%/db/docs/html/devguide/cdevsetprop44147.html
 %%T%%/db/docs/html/devguide/cdevsetprop824451.html
 %%T%%/db/docs/html/devguide/cdevsetprop824500.html
@@ -593,6 +603,8 @@
 %%T%%/db/docs/html/devguide/cdevspecialtfoptexample.html
 %%T%%/db/docs/html/devguide/cdevspecialtfoptimizer.html
 %%T%%/db/docs/html/devguide/cdevspecialtfopttune.html
+%%T%%/db/docs/html/devguide/cdevspecialtfrestr.html
+%%T%%/db/docs/html/devguide/cdevspecialudt.html
 %%T%%/db/docs/html/devguide/cdevstandards806118.html
 %%T%%/db/docs/html/devguide/cdevstandardsxml.html
 %%T%%/db/docs/html/devguide/cdevstart16043.html
@@ -655,7 +667,6 @@
 %%T%%/db/docs/html/devguide/rdevcsecure305.html
 %%T%%/db/docs/html/devguide/rdevcsecure379.html
 %%T%%/db/docs/html/devguide/rdevcsecure557.html
-%%T%%/db/docs/html/devguide/rdevcsecure608.html
 %%T%%/db/docs/html/devguide/rdevcsecure622.html
 %%T%%/db/docs/html/devguide/rdevcsecure766.html
 %%T%%/db/docs/html/devguide/rdevcsecure871406.html
@@ -721,6 +732,9 @@
 %%T%%/db/docs/html/getstart/cgsquck70629.html
 %%T%%/db/docs/html/getstart/cgstutorialintro.html
 %%T%%/db/docs/html/getstart/cgsusingtoolsutils.html
+%%T%%/db/docs/html/getstart/common.css
+%%T%%/db/docs/html/getstart/commonltr.css
+%%T%%/db/docs/html/getstart/commonrtl.css
 %%T%%/db/docs/html/getstart/cwwdactivities.html
 %%T%%/db/docs/html/getstart/cwwdsummary.html
 %%T%%/db/docs/html/getstart/getstart-single.html
@@ -754,8 +768,10 @@
 %%T%%/db/docs/html/getstart/twwdactivity2.html
 %%T%%/db/docs/html/getstart/twwdactivity3_Setup.html
 %%T%%/db/docs/html/getstart/twwdactivity4.html
-%%T%%/db/docs/html/images/java_db_type.jpg
 %%T%%/db/docs/html/images/logowithtext.jpg
+%%T%%/db/docs/html/ref/common.css
+%%T%%/db/docs/html/ref/commonltr.css
+%%T%%/db/docs/html/ref/commonrtl.css
 %%T%%/db/docs/html/ref/crefjavadb.html
 %%T%%/db/docs/html/ref/crefjavbclobnot.html
 %%T%%/db/docs/html/ref/crefjavccns.html
@@ -789,6 +805,11 @@
 %%T%%/db/docs/html/ref/crefsqljrenamestatements.html
 %%T%%/db/docs/html/ref/index.html
 %%T%%/db/docs/html/ref/ref-single.html
+%%T%%/db/docs/html/ref/rref_syscs_get_xplain_mode.html
+%%T%%/db/docs/html/ref/rref_syscs_get_xplain_schema.html
+%%T%%/db/docs/html/ref/rref_syscs_set_xplain_mode.html
+%%T%%/db/docs/html/ref/rref_syscs_set_xplain_schema.html
+%%T%%/db/docs/html/ref/rref_xplain_tables.html
 %%T%%/db/docs/html/ref/rrefaltertablecompress.html
 %%T%%/db/docs/html/ref/rrefapi1003363.html
 %%T%%/db/docs/html/ref/rrefapi1005026.html
@@ -810,6 +831,7 @@
 %%T%%/db/docs/html/ref/rrefattrib72457.html
 %%T%%/db/docs/html/ref/rrefattrib88843.html
 %%T%%/db/docs/html/ref/rrefattribcollation.html
+%%T%%/db/docs/html/ref/rrefattribdrop.html
 %%T%%/db/docs/html/ref/rrefattribencryptkey.html
 %%T%%/db/docs/html/ref/rrefattribfailover.html
 %%T%%/db/docs/html/ref/rrefattribnewbootpw.html
@@ -880,6 +902,7 @@
 %%T%%/db/docs/html/ref/rreffuncatan.html
 %%T%%/db/docs/html/ref/rreffuncatan2.html
 %%T%%/db/docs/html/ref/rreffuncceil.html
+%%T%%/db/docs/html/ref/rreffunccoalesce.html
 %%T%%/db/docs/html/ref/rreffunccos.html
 %%T%%/db/docs/html/ref/rreffunccosh.html
 %%T%%/db/docs/html/ref/rreffunccot.html
@@ -1004,6 +1027,7 @@
 %%T%%/db/docs/html/ref/rrefproperauthdn.html
 %%T%%/db/docs/html/ref/rrefproperauthpw.html
 %%T%%/db/docs/html/ref/rrefproperbootall.html
+%%T%%/db/docs/html/ref/rrefproperbuiltinalgorithm.html
 %%T%%/db/docs/html/ref/rrefpropercachedn.html
 %%T%%/db/docs/html/ref/rrefproperdurability.html
 %%T%%/db/docs/html/ref/rrefproperlogbuffersize.html
@@ -1047,8 +1071,10 @@
 %%T%%/db/docs/html/ref/rrefsistabs79888.html
 %%T%%/db/docs/html/ref/rrefsistabslilanguageitemsysstatistics.html
 %%T%%/db/docs/html/ref/rrefsistabssyscolperms.html
+%%T%%/db/docs/html/ref/rrefsistabssysperms.html
 %%T%%/db/docs/html/ref/rrefsistabssysroles.html
 %%T%%/db/docs/html/ref/rrefsistabssysroutineperms.html
+%%T%%/db/docs/html/ref/rrefsistabssyssequences.html
 %%T%%/db/docs/html/ref/rrefsistabssystableperms.html
 %%T%%/db/docs/html/ref/rrefso2.html
 %%T%%/db/docs/html/ref/rrefsql9241891.html
@@ -1150,26 +1176,41 @@
 %%T%%/db/docs/html/ref/rrefsqlj97870.html
 %%T%%/db/docs/html/ref/rrefsqlj98067.html
 %%T%%/db/docs/html/ref/rrefsqljargmatching.html
+%%T%%/db/docs/html/ref/rrefsqljcreatesequence.html
 %%T%%/db/docs/html/ref/rrefsqljcreatesynonym.html
+%%T%%/db/docs/html/ref/rrefsqljcreatetype.html
+%%T%%/db/docs/html/ref/rrefsqljcrossjoin.html
 %%T%%/db/docs/html/ref/rrefsqljcurrentdate.html
 %%T%%/db/docs/html/ref/rrefsqljcurrentschema.html
 %%T%%/db/docs/html/ref/rrefsqljcurrenttimestamp.html
 %%T%%/db/docs/html/ref/rrefsqljdoubleprecision.html
+%%T%%/db/docs/html/ref/rrefsqljdropsequence.html
 %%T%%/db/docs/html/ref/rrefsqljdropsynonym.html
+%%T%%/db/docs/html/ref/rrefsqljdroptype.html
 %%T%%/db/docs/html/ref/rrefsqljgenerationclause.html
 %%T%%/db/docs/html/ref/rrefsqljgrant.html
 %%T%%/db/docs/html/ref/rrefsqljmod.html
+%%T%%/db/docs/html/ref/rrefsqljnaturaljoin.html
+%%T%%/db/docs/html/ref/rrefsqljnextvaluefor.html
 %%T%%/db/docs/html/ref/rrefsqljoffsetfetch.html
 %%T%%/db/docs/html/ref/rrefsqljrenamecolumnstatement.html
 %%T%%/db/docs/html/ref/rrefsqljrenametablestatement.html
 %%T%%/db/docs/html/ref/rrefsqljrevoke.html
 %%T%%/db/docs/html/ref/rrefsqljtfinvoke.html
 %%T%%/db/docs/html/ref/rrefsqljtypexml.html
+%%T%%/db/docs/html/ref/rrefsqljudt.html
+%%T%%/db/docs/html/ref/rrefsqljusing.html
 %%T%%/db/docs/html/ref/rrefstringlimits.html
 %%T%%/db/docs/html/ref/rrefsynonymname.html
 %%T%%/db/docs/html/ref/rrefsyscschecktablefunc.html
 %%T%%/db/docs/html/ref/rrefsyscsdiagtables.html
 %%T%%/db/docs/html/ref/rrefsyscsruntimestatsfunc.html
+%%T%%/db/docs/html/ref/rrefsysxplain_resultset_timings.html
+%%T%%/db/docs/html/ref/rrefsysxplain_resultsets.html
+%%T%%/db/docs/html/ref/rrefsysxplain_scan_props.html
+%%T%%/db/docs/html/ref/rrefsysxplain_sort_props.html
+%%T%%/db/docs/html/ref/rrefsysxplain_statement_timings.html
+%%T%%/db/docs/html/ref/rrefsysxplain_statements.html
 %%T%%/db/docs/html/ref/rreftableexpression.html
 %%T%%/db/docs/html/ref/rreftablename.html
 %%T%%/db/docs/html/ref/rreftablesubquery.html
@@ -1183,6 +1224,9 @@
 %%T%%/db/docs/html/ref/rrefviewname.html
 %%T%%/db/docs/html/ref/rrefyearfunc.html
 %%T%%/db/docs/html/ref/toc.html
+%%T%%/db/docs/html/tools/common.css
+%%T%%/db/docs/html/tools/commonltr.css
+%%T%%/db/docs/html/tools/commonrtl.css
 %%T%%/db/docs/html/tools/ctools1003034.html
 %%T%%/db/docs/html/tools/ctools1004764.html
 %%T%%/db/docs/html/tools/ctoolsdblook.html
@@ -1273,6 +1317,7 @@
 %%T%%/db/docs/html/tools/rtoolsijcomref97975.html
 %%T%%/db/docs/html/tools/rtoolsijcomrefdescribe.html
 %%T%%/db/docs/html/tools/rtoolsijcomrefshow.html
+%%T%%/db/docs/html/tools/rtoolsijlocale.html
 %%T%%/db/docs/html/tools/rtoolsijpropref10135.html
 %%T%%/db/docs/html/tools/rtoolsijpropref12236.html
 %%T%%/db/docs/html/tools/rtoolsijpropref25589.html
@@ -1311,6 +1356,11 @@
 %%T%%/db/docs/html/tools/ttoolsjarload1002986.html
 %%T%%/db/docs/html/tools/ttoolsjarload1003059.html
 %%T%%/db/docs/html/tools/ttoolsjarload1003120.html
+%%T%%/db/docs/html/tuning/common.css
+%%T%%/db/docs/html/tuning/commonltr.css
+%%T%%/db/docs/html/tuning/commonrtl.css
+%%T%%/db/docs/html/tuning/ctun_xplain_style.html
+%%T%%/db/docs/html/tuning/ctun_xplain_tables.html
 %%T%%/db/docs/html/tuning/ctundepth1002853.html
 %%T%%/db/docs/html/tuning/ctundepth1003116.html
 %%T%%/db/docs/html/tuning/ctundepth1003209.html
@@ -1384,6 +1434,8 @@
 %%T%%/db/docs/html/tuning/ctunperf816059.html
 %%T%%/db/docs/html/tuning/ctunperf816635.html
 %%T%%/db/docs/html/tuning/ctunperf98197.html
+%%T%%/db/docs/html/tuning/ctunperfinmemdb.html
+%%T%%/db/docs/html/tuning/ctunperfstatistics.html
 %%T%%/db/docs/html/tuning/ctunperftablefunctions.html
 %%T%%/db/docs/html/tuning/ctunpropref1002477.html
 %%T%%/db/docs/html/tuning/ctunpropref11181.html
@@ -1503,6 +1555,11 @@
 %%T%%/db/javadoc/jdbc3/org/apache/derby/tools/package-summary.html
 %%T%%/db/javadoc/jdbc3/org/apache/derby/tools/package-tree.html
 %%T%%/db/javadoc/jdbc3/org/apache/derby/tools/sysinfo.html
+%%T%%/db/javadoc/jdbc3/org/apache/derby/vti/RestrictedVTI.html
+%%T%%/db/javadoc/jdbc3/org/apache/derby/vti/Restriction.AND.html
+%%T%%/db/javadoc/jdbc3/org/apache/derby/vti/Restriction.ColumnQualifier.html
+%%T%%/db/javadoc/jdbc3/org/apache/derby/vti/Restriction.OR.html
+%%T%%/db/javadoc/jdbc3/org/apache/derby/vti/Restriction.html
 %%T%%/db/javadoc/jdbc3/org/apache/derby/vti/VTICosting.html
 %%T%%/db/javadoc/jdbc3/org/apache/derby/vti/VTIEnvironment.html
 %%T%%/db/javadoc/jdbc3/org/apache/derby/vti/package-frame.html
@@ -1565,6 +1622,11 @@
 %%T%%/db/javadoc/jdbc4/org/apache/derby/tools/package-summary.html
 %%T%%/db/javadoc/jdbc4/org/apache/derby/tools/package-tree.html
 %%T%%/db/javadoc/jdbc4/org/apache/derby/tools/sysinfo.html
+%%T%%/db/javadoc/jdbc4/org/apache/derby/vti/RestrictedVTI.html
+%%T%%/db/javadoc/jdbc4/org/apache/derby/vti/Restriction.AND.html
+%%T%%/db/javadoc/jdbc4/org/apache/derby/vti/Restriction.ColumnQualifier.html
+%%T%%/db/javadoc/jdbc4/org/apache/derby/vti/Restriction.OR.html
+%%T%%/db/javadoc/jdbc4/org/apache/derby/vti/Restriction.html
 %%T%%/db/javadoc/jdbc4/org/apache/derby/vti/VTICosting.html
 %%T%%/db/javadoc/jdbc4/org/apache/derby/vti/VTIEnvironment.html
 %%T%%/db/javadoc/jdbc4/org/apache/derby/vti/package-frame.html
@@ -3172,6 +3234,7 @@
 %%T%%/jre/javaws/javaws
 %%T%%/jre/lib/alt-rt.jar
 %%T%%/jre/lib/alt-string.jar
+@exec	mkdir -p %D/%%T%%/jre/lib/applet
 %%T%%/jre/lib/audio/soundbank.gm
 %%T%%/jre/lib/calendars.properties
 %%T%%/jre/lib/charsets.jar
@@ -3924,6 +3987,7 @@
 %%T%%/lib/visualvm/platform/core/locale/org-openide-filesystems_ja.jar
 %%T%%/lib/visualvm/platform/core/locale/org-openide-filesystems_zh_CN.jar
 %%T%%/lib/visualvm/platform/core/org-openide-filesystems.jar
+@exec	mkdir -p %D/%%T%%/lib/visualvm/platform/docs
 %%T%%/lib/visualvm/platform/lib/boot.jar
 %%T%%/lib/visualvm/platform/lib/locale/boot_ja.jar
 %%T%%/lib/visualvm/platform/lib/locale/boot_zh_CN.jar
@@ -4763,6 +4827,7 @@
 @dirrm %%T%%/lib/visualvm/platform/modules
 @dirrm %%T%%/lib/visualvm/platform/lib/locale
 @dirrm %%T%%/lib/visualvm/platform/lib
+@dirrm %%T%%/lib/visualvm/platform/docs
 @dirrm %%T%%/lib/visualvm/platform/core/locale
 @dirrm %%T%%/lib/visualvm/platform/core
 @dirrm %%T%%/lib/visualvm/platform/config/Modules
