@@ -12252,6 +12252,7 @@ p5-ExtUtils-Command             ports/devel/p5-ExtUtils-Command
 p5-ExtUtils-Constant            ports/devel/p5-ExtUtils-Constant
 p5-ExtUtils-Depends             ports/devel/p5-ExtUtils-Depends
 p5-ExtUtils-Install             ports/devel/p5-ExtUtils-Install
+p5-ExtUtils-LibBuilder          ports/devel/p5-ExtUtils-LibBuilder
 p5-ExtUtils-MakeMaker           ports/devel/p5-ExtUtils-MakeMaker
 p5-ExtUtils-MakeMaker-Coverage  ports/devel/p5-ExtUtils-MakeMaker-Coverage
 p5-ExtUtils-Manifest            ports/devel/p5-ExtUtils-Manifest
@@ -12602,6 +12603,7 @@ p5-HTML-Parser                  ports/www/p5-HTML-Parser
 p5-HTML-Perlinfo                ports/www/p5-HTML-Perlinfo
 p5-HTML-PrettyPrinter           ports/www/p5-HTML-PrettyPrinter
 p5-HTML-Prototype               ports/www/p5-HTML-Prototype
+p5-HTML-QRCode                  ports/textproc/p5-HTML-QRCode
 p5-HTML-Query                   ports/www/p5-HTML-Query
 p5-HTML-QuickCheck              ports/www/p5-HTML-QuickCheck
 p5-HTML-RSSAutodiscovery        ports/www/p5-HTML-RSSAutodiscovery
@@ -14477,6 +14479,7 @@ p5-Text-ParagraphDiff           ports/textproc/p5-Text-ParagraphDiff
 p5-Text-ParseWords              ports/textproc/p5-Text-ParseWords
 p5-Text-Password-Pronounceable  ports/security/p5-Text-Password-Pronounceable
 p5-Text-Patch                   ports/textproc/p5-Text-Patch
+p5-Text-QRCode                  ports/textproc/p5-Text-QRCode
 p5-Text-Query                   ports/textproc/p5-Text-Query
 p5-Text-Query-SQL               ports/databases/p5-Text-Query-SQL
 p5-Text-Quote                   ports/textproc/p5-Text-Quote
@@ -16362,6 +16365,7 @@ p5-extutils-command             ports/devel/p5-ExtUtils-Command
 p5-extutils-constant            ports/devel/p5-ExtUtils-Constant
 p5-extutils-depends             ports/devel/p5-ExtUtils-Depends
 p5-extutils-install             ports/devel/p5-ExtUtils-Install
+p5-extutils-libbuilder          ports/devel/p5-ExtUtils-LibBuilder
 p5-extutils-makemaker           ports/devel/p5-ExtUtils-MakeMaker
 p5-extutils-makemaker-coverage  ports/devel/p5-ExtUtils-MakeMaker-Coverage
 p5-extutils-manifest            ports/devel/p5-ExtUtils-Manifest
@@ -16734,6 +16738,7 @@ p5-html-parser                  ports/www/p5-HTML-Parser
 p5-html-perlinfo                ports/www/p5-HTML-Perlinfo
 p5-html-prettyprinter           ports/www/p5-HTML-PrettyPrinter
 p5-html-prototype               ports/www/p5-HTML-Prototype
+p5-html-qrcode                  ports/textproc/p5-HTML-QRCode
 p5-html-query                   ports/www/p5-HTML-Query
 p5-html-quickcheck              ports/www/p5-HTML-QuickCheck
 p5-html-resolvelink             ports/www/p5-HTML-ResolveLink
@@ -18642,6 +18647,7 @@ p5-text-parsewords              ports/textproc/p5-Text-ParseWords
 p5-text-password-pronounceable  ports/security/p5-Text-Password-Pronounceable
 p5-text-patch                   ports/textproc/p5-Text-Patch
 p5-text-pdf                     ports/print/p5-Text-PDF
+p5-text-qrcode                  ports/textproc/p5-Text-QRCode
 p5-text-query                   ports/textproc/p5-Text-Query
 p5-text-query-sql               ports/databases/p5-Text-Query-SQL
 p5-text-quote                   ports/textproc/p5-Text-Quote
