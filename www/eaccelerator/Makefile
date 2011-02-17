@@ -15,6 +15,8 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/eAccelerator%20${PORTVERSION}/ \
 MAINTAINER=	ale@FreeBSD.org
 COMMENT=	A free open-source PHP accelerator & optimizer
 
+OPTIONS=	DOCCOMM "Retain doc-comments in internal php structures" off
+
 USE_PHP=	yes
 USE_PHPIZE=	yes
 USE_PHP_BUILD=	yes
@@ -34,6 +36,10 @@ PKGMESSAGE=	${WRKDIR}/pkg-message
 PORTDOCS=	*
 
 .include <bsd.port.pre.mk>
+
+.if defined(WITH_DOCCOMM)
+CONFIGURE_ARGS+=--with-eaccelerator-doc-comment-inclusion
+.endif
 
 do-install:
 	@${MKDIR} ${PREFIX}/lib/php/${PHP_EXT_DIR}
