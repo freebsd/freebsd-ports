@@ -7,7 +7,7 @@
 
 PORTNAME=	sdl_mixer
 PORTVERSION=	1.2.11
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	http://www.libsdl.org/projects/SDL_mixer/release/
 DISTNAME=	SDL_mixer-${PORTVERSION}
@@ -34,10 +34,10 @@ OPTIONS=	MIKMOD		"Enable MOD music via libMikMod"	On \
 .include <bsd.port.pre.mk>
 
 .if defined(WITHOUT_MIKMOD)
-CONFIGURE_ARGS+=--disable-music-libmikmod
+CONFIGURE_ARGS+=--disable-music-mod
 .else
 LIB_DEPENDS+=	mikmod.2:${PORTSDIR}/audio/libmikmod
-CONFIGURE_ARGS+=--enable-music-libmikmod
+CONFIGURE_ARGS+=--enable-music-mod
 .endif
 
 .if defined(WITHOUT_FLAC)
