@@ -46,12 +46,18 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pycryptopp/test/test_ecdsa.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pycryptopp/test/test_ecdsa.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pycryptopp/test/test_ecdsa.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pycryptopp/test/test_from_Nikratio.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pycryptopp/test/test_from_Nikratio.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pycryptopp/test/test_from_Nikratio.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pycryptopp/test/test_rsa.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pycryptopp/test/test_rsa.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pycryptopp/test/test_rsa.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pycryptopp/test/test_sha256.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pycryptopp/test/test_sha256.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pycryptopp/test/test_sha256.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pycryptopp/test/test_startup.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pycryptopp/test/test_startup.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pycryptopp/test/test_startup.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pycryptopp/testvectors/KAT_AES/ECBGFSbox128e.txt
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pycryptopp/testvectors/KAT_AES/ECBGFSbox256e.txt
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pycryptopp/testvectors/KAT_AES/ECBKeySbox128e.txt
@@ -66,7 +72,7 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/share/doc/pycryptopp/COPYING.GPL
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/share/doc/pycryptopp/COPYING.TGPPL.html
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/share/doc/pycryptopp/README.txt
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cryptopp/extraversion.h
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/embeddedcryptopp/extraversion.h
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pycryptopp/cipher
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pycryptopp/hash
@@ -78,5 +84,5 @@
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/share/doc/pycryptopp
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/share/doc
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/share
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/cryptopp
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/embeddedcryptopp
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%
