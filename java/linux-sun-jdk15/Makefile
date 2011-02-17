@@ -32,10 +32,10 @@ NO_BUILD=	yes
 USE_LINUX=	yes
 USE_LINUX_APPS=	xorglibs
 JDK_VERSION=	1.5.0
-JDK_REVISION=	16
+JDK_REVISION=	22
 DL_JDK_VERSION=	${JDK_VERSION}_${JDK_REVISION}
 ONLY_FOR_ARCHS=	i386 amd64
-DOWNLOAD_URL?=	http://java.sun.com/javase/downloads/index_jdk5.jsp
+DOWNLOAD_URL?=	http://www.oracle.com/technetwork/java/archive-139210.html
 APP_HOME=	${PREFIX}/${PKGNAMEPREFIX}${PORTNAME}${JDK_VERSION}
 PACKED_JARS=	lib/tools.jar jre/lib/rt.jar jre/lib/jsse.jar jre/lib/charsets.jar jre/lib/deploy.jar jre/lib/ext/localedata.jar jre/lib/plugin.jar jre/javaws/javaws.jar
 UNPACK_CMD=	${APP_HOME}/bin/unpack200
@@ -52,7 +52,7 @@ pre-everything::
 do-extract:
 	@${MKDIR} ${WRKDIR}
 	@cd ${WRKDIR} \
-	&& ${TAIL} -n +750 ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX} > ${WRKDIR}/install.sfx \
+	&& ${TAIL} -n +766 ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX} > ${WRKDIR}/install.sfx \
 	&& ${CHMOD} +x ${WRKDIR}/install.sfx \
 	&& ${WRKDIR}/install.sfx > /dev/null
 

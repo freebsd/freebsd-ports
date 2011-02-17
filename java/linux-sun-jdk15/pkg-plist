@@ -1658,6 +1658,7 @@
 %%T%%/jre/lib/security/java.security
 %%T%%/jre/lib/security/javaws.policy
 %%T%%/jre/lib/security/local_policy.jar
+%%T%%/jre/lib/servicetag/jdk_header.png
 %%T%%/jre/lib/sound.properties
 %%T%%/jre/lib/zi/Africa/Abidjan
 %%T%%/jre/lib/zi/Africa/Accra
@@ -1722,6 +1723,7 @@
 %%T%%/jre/lib/zi/America/Argentina/La_Rioja
 %%T%%/jre/lib/zi/America/Argentina/Mendoza
 %%T%%/jre/lib/zi/America/Argentina/Rio_Gallegos
+%%T%%/jre/lib/zi/America/Argentina/Salta
 %%T%%/jre/lib/zi/America/Argentina/San_Juan
 %%T%%/jre/lib/zi/America/Argentina/San_Luis
 %%T%%/jre/lib/zi/America/Argentina/Tucuman
@@ -1822,6 +1824,7 @@
 %%T%%/jre/lib/zi/America/Regina
 %%T%%/jre/lib/zi/America/Resolute
 %%T%%/jre/lib/zi/America/Rio_Branco
+%%T%%/jre/lib/zi/America/Santarem
 %%T%%/jre/lib/zi/America/Santiago
 %%T%%/jre/lib/zi/America/Santo_Domingo
 %%T%%/jre/lib/zi/America/Sao_Paulo
@@ -1887,7 +1890,7 @@
 %%T%%/jre/lib/zi/Asia/Kamchatka
 %%T%%/jre/lib/zi/Asia/Karachi
 %%T%%/jre/lib/zi/Asia/Kashgar
-%%T%%/jre/lib/zi/Asia/Katmandu
+%%T%%/jre/lib/zi/Asia/Kathmandu
 %%T%%/jre/lib/zi/Asia/Kolkata
 %%T%%/jre/lib/zi/Asia/Krasnoyarsk
 %%T%%/jre/lib/zi/Asia/Kuala_Lumpur
@@ -2409,6 +2412,7 @@
 @dirrm %%T%%/jre/lib/zi/America
 @dirrm %%T%%/jre/lib/zi/Africa
 @dirrm %%T%%/jre/lib/zi
+@dirrm %%T%%/jre/lib/servicetag
 @dirrm %%T%%/jre/lib/security
 @dirrm %%T%%/jre/lib/oblique-fonts
 @dirrm %%T%%/jre/lib/management
