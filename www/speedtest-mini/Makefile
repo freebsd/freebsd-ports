@@ -7,30 +7,30 @@
 
 PORTNAME=	speedtest-mini
 PORTVERSION=	2.1.5
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://files.speedtest.ookla.com/releases/
-DISTFILES=	mini${EXTRACT_SUFX}
+DISTNAME=	mini
 
 MAINTAINER=	gx@bsdplanet.ru
 COMMENT=	Mini bandwidth speed test on your own server
 
-USE_ZIP=	YES
-NO_BUILD=	YES
+NO_BUILD=	yes
+SUB_FILES=	pkg-message
+USE_ZIP=	yes
 WRKSRC=		${WRKDIR}
-SPEEDTEST?=	www/speedtest-mini
 
 pre-install:
-
-	if [ ! -f ${WRKSRC}/index-php.html ]; then ${CP} \
-		${WRKSRC}/index-php.html ${WRKSRC}/index.html; fi
+	@cd ${WRKSRC}/ && \
+		${MV} pkg-message .pkg-message && \
+		[ -f index-php.html ] && ${CP} index-php.html index.html \
 
 do-install:
-	@${MKDIR} ${PREFIX}/${SPEEDTEST}
-	@${CHOWN} ${WWWOWN}:${WWWGRP} ${PREFIX}/${SPEEDTEST}
-	@${CHMOD} 755 ${PREFIX}/${SPEEDTEST}
-	${CP} -R ${WRKSRC}/ ${PREFIX}/${SPEEDTEST}
+	${MKDIR} -m 755 ${WWWDIR}/
+	${CP} -pR ${WRKSRC}/* ${WWWDIR}/
+	${CHOWN} ${WWWOWN}:${WWWGRP} ${WWWDIR}/
 
 post-install:
-	@${CAT} ${PKGMESSAGE}
+	@${CAT} ${WRKSRC}/.pkg-message
 
 .include <bsd.port.mk>
