@@ -6,21 +6,25 @@
 #
 
 PORTNAME=	Text-BibTeX
-PORTVERSION=	0.38
+PORTVERSION=	0.52
 CATEGORIES=	textproc perl5
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN:C/$/:text,btparse/g}
-MASTER_SITE_SUBDIR=	../by-authors/id/A/AM/AMBS/Text/:text \
-			../by-authors/id/A/AM/AMBS/btparse/:btparse
+MASTER_SITES=	CPAN
+MASTER_SITE_SUBDIR=	../../authors/id/A/AM/AMBS/Text
 PKGNAMEPREFIX=	p5-
-DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}:text \
-		btparse-${BTPARSE_VER}${EXTRACT_SUFX}:btparse
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Manipulate BibTeX files from perl
 
-BTPARSE_VER=	0.35
+BUILD_DEPENDS=	p5-Config-AutoConf>=0.16:${PORTSDIR}/devel/p5-Config-AutoConf \
+		p5-ExtUtils-LibBuilder>0.02:${PORTSDIR}/devel/p5-ExtUtils-LibBuilder \
+		p5-Capture-Tiny>=0.06:${PORTSDIR}/devel/p5-Capture-Tiny
 
-PERL_CONFIGURE=	yes
+PERL_MODBUILD=	yes
+
+MAN1=		bt_format_names.1 bt_input.1 bt_language.1 \
+		bt_macros.1 bt_misc.1 bt_post_processing.1 \
+		bt_postprocess.1 bt_split_names.1 bt_traversal.1 \
+		btool_faq.1 btparse.1
 
 MAN3=		Text::BibTeX.3 \
 		Text::BibTeX::Bib.3 \
@@ -31,8 +35,7 @@ MAN3=		Text::BibTeX.3 \
 		Text::BibTeX::Name.3 \
 		Text::BibTeX::NameFormat.3 \
 		Text::BibTeX::Structure.3 \
-		Text::BibTeX::Value.3 \
-		btool_faq.3
+		Text::BibTeX::Value.3
 
 .include <bsd.port.pre.mk>
 
