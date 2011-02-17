@@ -11,10 +11,13 @@ CATEGORIES=	java mail
 MASTER_SITES=	http://kenai.com/downloads/javamail/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	ale@FreeBSD.org
 COMMENT=	A Reference Implementation of JSR 919
 
 RUN_DEPENDS=	${JAVALIBDIR}/activation.jar:${PORTSDIR}/java/jaf
+
+LICENSE=	GPLv2 CDDL
+LICENSE_COMB=	dual
 
 USE_ZIP=	YES
 USE_JAVA=	YES
