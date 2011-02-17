@@ -937,6 +937,7 @@
 %%T%%/jre/javaws/resources/miniSplash.jpg
 %%T%%/jre/javaws/resources/splash.jpg
 %%T%%/jre/javaws/sunlogo64x30.gif
+@exec	mkdir -p %D/%%T%%/jre/lib/applet
 %%T%%/jre/lib/audio/soundbank.gm
 %%T%%/jre/lib/charsets.jar
 %%T%%/jre/lib/cmm/CIEXYZ.pf
