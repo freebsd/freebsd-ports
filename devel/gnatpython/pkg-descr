@@ -1,0 +1,5 @@
+GNATPython is a python package to ease development of testsuites and/or
+build scripts in a portable way.  It is an extension to Ada which exports
+GNAT.Expect.TTY and requires the GNAT AUX compiler.
+
+WWW: http://forge.open-do.org/projects/gnatpython
