@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pycryptopp
-PORTVERSION=	0.5.25
+PORTVERSION=	0.5.29
 CATEGORIES=	security python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -24,8 +24,8 @@ PYEASYINSTALL_ARCHDEP=	yes
 
 post-extract:
 	@${REINPLACE_CMD} -e 's#<malloc.h>#<stdlib.h>#g' \
-		${WRKSRC}/cryptopp/rijndael.cpp \
-		${WRKSRC}/cryptopp/config.h \
-		${WRKSRC}/cryptopp/secblock.h
+		${WRKSRC}/embeddedcryptopp/rijndael.cpp \
+		${WRKSRC}/embeddedcryptopp/config.h \
+		${WRKSRC}/embeddedcryptopp/secblock.h
 
 .include <bsd.port.mk>
