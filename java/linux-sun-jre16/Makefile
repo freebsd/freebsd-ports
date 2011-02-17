@@ -31,10 +31,10 @@ NO_BUILD=	yes
 USE_LINUX=	yes
 USE_LINUX_APPS=	xorglibs
 JRE_VERSION=	1.6.0
-JRE_REVISION=	03
+JRE_REVISION=	24
 DL_JRE_VERSION=	${JRE_VERSION}_${JRE_REVISION}
 ONLY_FOR_ARCHS=	i386 amd64
-DOWNLOAD_URL?=	http://java.sun.com/javase/downloads/index.jsp
+DOWNLOAD_URL?=	http://www.oracle.com/technetwork/java/javase/downloads/index.html
 APP_HOME=	${PREFIX}/${PKGNAMEPREFIX}${PORTNAME}${JRE_VERSION}
 PACKED_JARS=	lib/charsets.jar lib/deploy.jar lib/ext/localedata.jar lib/javaws.jar lib/jsse.jar lib/plugin.jar lib/rt.jar
 UNPACK_CMD=	${APP_HOME}/bin/unpack200
@@ -51,7 +51,7 @@ pre-everything::
 do-extract:
 	@${MKDIR} ${WRKDIR}
 	@cd ${WRKDIR} \
-	&& ${TAIL} -n +403 ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX} > ${WRKDIR}/install.sfx \
+	&& ${TAIL} -n +162 ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX} > ${WRKDIR}/install.sfx \
 	&& ${CHMOD} +x ${WRKDIR}/install.sfx \
 	&& ${WRKDIR}/install.sfx > /dev/null
 
