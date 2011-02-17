@@ -1890,6 +1890,7 @@
     SUBDIR += p5-Method-Signatures-Simple
     SUBDIR += p5-Mixin-Linewise
     SUBDIR += p5-Mknod
+    SUBDIR += p5-Mock-Quick
     SUBDIR += p5-Module-Build
     SUBDIR += p5-Module-Build-Convert
     SUBDIR += p5-Module-Build-Kwalitee
