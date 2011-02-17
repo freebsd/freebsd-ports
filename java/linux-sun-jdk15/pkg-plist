@@ -1500,6 +1500,7 @@
 %%T%%/jre/bin/tnameserv
 %%T%%/jre/bin/unpack200
 %%T%%/jre/javaws/javaws
+@exec	mkdir -p %D/%%T%%/jre/lib/applet
 %%T%%/jre/lib/audio/soundbank.gm
 %%T%%/jre/lib/charsets.jar
 %%T%%/jre/lib/classlist
