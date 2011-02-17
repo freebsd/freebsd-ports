@@ -157,6 +157,7 @@
     SUBDIR += lapack
     SUBDIR += lapack++
     SUBDIR += lapack95
+    SUBDIR += lapacke
     SUBDIR += laspack
     SUBDIR += ldouble
     SUBDIR += lensnns
