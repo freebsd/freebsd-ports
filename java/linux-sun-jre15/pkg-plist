@@ -182,6 +182,7 @@
 %%T%%/lib/security/java.security
 %%T%%/lib/security/javaws.policy
 %%T%%/lib/security/local_policy.jar
+%%T%%/lib/servicetag/jdk_header.png
 %%T%%/lib/sound.properties
 %%T%%/lib/zi/Africa/Abidjan
 %%T%%/lib/zi/Africa/Accra
@@ -246,7 +247,9 @@
 %%T%%/lib/zi/America/Argentina/La_Rioja
 %%T%%/lib/zi/America/Argentina/Mendoza
 %%T%%/lib/zi/America/Argentina/Rio_Gallegos
+%%T%%/lib/zi/America/Argentina/Salta
 %%T%%/lib/zi/America/Argentina/San_Juan
+%%T%%/lib/zi/America/Argentina/San_Luis
 %%T%%/lib/zi/America/Argentina/Tucuman
 %%T%%/lib/zi/America/Argentina/Ushuaia
 %%T%%/lib/zi/America/Aruba
@@ -345,6 +348,7 @@
 %%T%%/lib/zi/America/Regina
 %%T%%/lib/zi/America/Resolute
 %%T%%/lib/zi/America/Rio_Branco
+%%T%%/lib/zi/America/Santarem
 %%T%%/lib/zi/America/Santiago
 %%T%%/lib/zi/America/Santo_Domingo
 %%T%%/lib/zi/America/Sao_Paulo
@@ -389,7 +393,6 @@
 %%T%%/lib/zi/Asia/Beirut
 %%T%%/lib/zi/Asia/Bishkek
 %%T%%/lib/zi/Asia/Brunei
-%%T%%/lib/zi/Asia/Calcutta
 %%T%%/lib/zi/Asia/Choibalsan
 %%T%%/lib/zi/Asia/Chongqing
 %%T%%/lib/zi/Asia/Colombo
@@ -400,6 +403,7 @@
 %%T%%/lib/zi/Asia/Dushanbe
 %%T%%/lib/zi/Asia/Gaza
 %%T%%/lib/zi/Asia/Harbin
+%%T%%/lib/zi/Asia/Ho_Chi_Minh
 %%T%%/lib/zi/Asia/Hong_Kong
 %%T%%/lib/zi/Asia/Hovd
 %%T%%/lib/zi/Asia/Irkutsk
@@ -410,7 +414,8 @@
 %%T%%/lib/zi/Asia/Kamchatka
 %%T%%/lib/zi/Asia/Karachi
 %%T%%/lib/zi/Asia/Kashgar
-%%T%%/lib/zi/Asia/Katmandu
+%%T%%/lib/zi/Asia/Kathmandu
+%%T%%/lib/zi/Asia/Kolkata
 %%T%%/lib/zi/Asia/Krasnoyarsk
 %%T%%/lib/zi/Asia/Kuala_Lumpur
 %%T%%/lib/zi/Asia/Kuching
@@ -434,7 +439,6 @@
 %%T%%/lib/zi/Asia/Riyadh87
 %%T%%/lib/zi/Asia/Riyadh88
 %%T%%/lib/zi/Asia/Riyadh89
-%%T%%/lib/zi/Asia/Saigon
 %%T%%/lib/zi/Asia/Sakhalin
 %%T%%/lib/zi/Asia/Samarkand
 %%T%%/lib/zi/Asia/Seoul
@@ -681,6 +685,7 @@
 @dirrm %%T%%/lib/zi/America
 @dirrm %%T%%/lib/zi/Africa
 @dirrm %%T%%/lib/zi
+@dirrm %%T%%/lib/servicetag
 @dirrm %%T%%/lib/security
 @dirrm %%T%%/lib/oblique-fonts
 @dirrm %%T%%/lib/management
