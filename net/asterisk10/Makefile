@@ -47,6 +47,7 @@ OPTIONS=	OGGVORBIS	"Enable Ogg Vorbis support" on \
 		IODBC		"Enable iODBC support" off \
 		UODBC		"Enable unixODBC support" on \
 		POSTGRES	"Enable PostgreSQL support" on \
+		MYSQL		"Enable MySQL support" off \
 		RADIUS		"Enable RADIUS accounting support" on \
 		SNMP		"Enable SNMP support" on \
 		H323		"Enable H.323 support" on \
@@ -151,6 +152,14 @@ CONFIGURE_ARGS+=	--without-postgres
 PLIST_SUB+=	WITH_POSTGRES=""
 USE_PGSQL=	yes
 CONFIGURE_ARGS+=	--with-postgres
+.endif
+
+.if !defined(WITH_MYSQL)
+PLIST_SUB+=	WITH_MYSQL="@comment "
+.else
+PLIST_SUB+=	WITH_MYSQL=""
+USE_MYSQL=	yes
+EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-menuselect-tree-mysql.diff
 .endif
 
 .if !defined(WITH_OGGVORBIS)
