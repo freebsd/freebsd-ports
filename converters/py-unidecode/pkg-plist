@@ -73,6 +73,9 @@
 %%PYTHON_SITELIBDIR%%/unidecode/x018.py
 %%PYTHON_SITELIBDIR%%/unidecode/x018.pyc
 %%PYTHON_SITELIBDIR%%/unidecode/x018.pyo
+%%PYTHON_SITELIBDIR%%/unidecode/x01d.py
+%%PYTHON_SITELIBDIR%%/unidecode/x01d.pyc
+%%PYTHON_SITELIBDIR%%/unidecode/x01d.pyo
 %%PYTHON_SITELIBDIR%%/unidecode/x01e.py
 %%PYTHON_SITELIBDIR%%/unidecode/x01e.pyc
 %%PYTHON_SITELIBDIR%%/unidecode/x01e.pyo
@@ -106,6 +109,9 @@
 %%PYTHON_SITELIBDIR%%/unidecode/x028.py
 %%PYTHON_SITELIBDIR%%/unidecode/x028.pyc
 %%PYTHON_SITELIBDIR%%/unidecode/x028.pyo
+%%PYTHON_SITELIBDIR%%/unidecode/x02c.py
+%%PYTHON_SITELIBDIR%%/unidecode/x02c.pyc
+%%PYTHON_SITELIBDIR%%/unidecode/x02c.pyo
 %%PYTHON_SITELIBDIR%%/unidecode/x02e.py
 %%PYTHON_SITELIBDIR%%/unidecode/x02e.pyc
 %%PYTHON_SITELIBDIR%%/unidecode/x02e.pyo
