@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	EnthoughtBase
-PORTVERSION=	3.0.6
+PORTVERSION=	3.1.0
 CATEGORIES=	devel python
 MASTER_SITES=	http://enthought.com/repo/ets/ \
 		CHEESESHOP
