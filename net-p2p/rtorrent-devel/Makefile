@@ -7,7 +7,7 @@
 
 PORTNAME=	rtorrent-devel
 PORTVERSION=	0.8.6
-PORTREVISION=	0
+PORTREVISION=	1
 DISTNAME=	${PORTNAME:S/-devel//}-${PORTVERSION}
 
 MAINTAINER=	flz@FreeBSD.org
@@ -23,6 +23,8 @@ PLIST=		${.CURDIR}/pkg-plist
 DESCR=		${MASTERDIR}/pkg-descr
 
 CONFLICTS=	rtorrent-[0-9]*
+
+MAN1=	rtorrent.1
 
 USE_GCC=	4.2+
 
