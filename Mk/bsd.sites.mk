@@ -1406,8 +1406,6 @@ MASTER_SITE_XFREE+= \
 
 .if !defined(IGNORE_MASTER_SITE_XORG)
 MASTER_SITE_XORG+= \
-	ftp://ftp.gwdg.de/pub/x11/x.org/pub/%SUBDIR%/ \
-	ftp://ftp.cica.es/pub/X/pub/%SUBDIR%/ \
 	ftp://ftp.cs.cuhk.edu.hk/pub/X11/%SUBDIR%/ \
 	ftp://ftp.unicamp.br/pub/X11/releases/%SUBDIR%/ \
 	ftp://ftp.ntua.gr/pub/X11/X.org/%SUBDIR%/ \
