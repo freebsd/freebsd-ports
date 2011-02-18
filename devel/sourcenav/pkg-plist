@@ -43,6 +43,7 @@ sourcenav/libexec/snavigator/ccase-history-individual.sh
 sourcenav/libexec/snavigator/ccase-history.sh
 sourcenav/libexec/snavigator/ccase-lock-individual.sh
 sourcenav/libexec/snavigator/ccase-unlock-individual.sh
+sourcenav/libexec/snavigator/dbcompact
 sourcenav/libexec/snavigator/dbcp
 sourcenav/libexec/snavigator/dbdump
 sourcenav/libexec/snavigator/dbimp
