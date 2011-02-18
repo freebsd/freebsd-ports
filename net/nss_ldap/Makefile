@@ -7,9 +7,10 @@
 
 PORTNAME=	nss_ldap
 PORTVERSION=	1.${NSS_LDAP_VERSION}
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	net
-MASTER_SITES=	http://www.padl.com/download/
+MASTER_SITES=	http://www.padl.com/download/ \
+		LOCAL/martymac
 DISTNAME=	${PORTNAME}-${NSS_LDAP_VERSION}
 
 MAINTAINER=	mikeg@bsd-box.net
@@ -26,9 +27,6 @@ USE_LDCONFIG=	yes
 USE_OPENLDAP=	yes
 
 OPTIONS=	LCLASS "Enable login classes via the loginClass attribute" on
-
-PLIST_FILES=	etc/nss_ldap.conf.sample \
-		lib/nss_ldap.so.1
 
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -Wl,-rpath,${LOCALBASE}/lib"
@@ -54,6 +52,13 @@ CFLAGS+="-DHAVE_LOGIN_CLASSES"
 post-extract:
 	${CP} ${FILESDIR}/bsdnss.c ${WRKSRC}
 
+post-patch:
+	@${REINPLACE_CMD} -e 's,/etc/ldap\.,${PREFIX}/etc/nss_ldap.,g' \
+		-e 's,/etc/openldap/ldap\.,${PREFIX}/etc/openldap/ldap.,g' \
+		${WRKSRC}/ldap.conf
+	@${REINPLACE_CMD} 's,/etc/ldap\.,${PREFIX}/etc/nss_ldap.,g' \
+		${WRKSRC}/${MAN5}
+
 # XXX: newer autoconf's rely on the compiler result, not the preprocessor
 #      for checking headers, so the configure.in needs to be fixed upstream
 #      to properly include dependencies
@@ -65,11 +70,12 @@ post-configure:
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/nss_ldap.so ${PREFIX}/lib/nss_ldap.so.1
 	${INSTALL_DATA} ${WRKSRC}/ldap.conf ${PREFIX}/etc/nss_ldap.conf.sample
-	@${REINPLACE_CMD} 's,/etc/ldap.,${PREFIX}/etc/nss_ldap.,g' \
-		${WRKSRC}/${MAN5}
 	${INSTALL_MAN} ${WRKSRC}/${MAN5} ${MAN5PREFIX}/man/man5
 
 post-install:
+.if !exists(${PREFIX}/etc/nss_ldap.conf)
+	${CP} -p ${PREFIX}/etc/nss_ldap.conf.sample ${PREFIX}/etc/nss_ldap.conf
+.endif
 .if !defined(PACKAGE_BUILDING)
 	@${CAT} ${PKGMESSAGE}
 .endif
