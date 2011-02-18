@@ -4659,6 +4659,7 @@ gnat-doc-txt                    ports/lang/gnat-doc-txt
 gnat-gcc42                      ports/lang/gnat-gcc42
 gnat-gcc43                      ports/lang/gnat-gcc43
 gnat-gcc44                      ports/lang/gnat-gcc44
+gnatpython                      ports/devel/gnatpython
 gnats                           ports/databases/gnats
 gnats4                          ports/databases/gnats4
 gnatsweb4                       ports/databases/gnatsweb4
@@ -7611,6 +7612,7 @@ lanmap                          ports/net-mgmt/lanmap
 lapack                          ports/math/lapack
 lapack++                        ports/math/lapack++
 lapack95                        ports/math/lapack95
+lapacke                         ports/math/lapacke
 lapispuzzle                     ports/games/lapispuzzle
 larbin                          ports/www/larbin
 larswm                          ports/x11-wm/larswm
@@ -13181,6 +13183,7 @@ p5-Method-Alias                 ports/devel/p5-Method-Alias
 p5-Method-Signatures-Simple     ports/devel/p5-Method-Signatures-Simple
 p5-Mixin-Linewise               ports/devel/p5-Mixin-Linewise
 p5-Mknod                        ports/devel/p5-Mknod
+p5-Mock-Quick                   ports/devel/p5-Mock-Quick
 p5-Modern-Perl                  ports/lang/p5-Modern-Perl
 p5-Module-Build                 ports/devel/p5-Module-Build
 p5-Module-Build-Convert         ports/devel/p5-Module-Build-Convert
@@ -13852,6 +13855,7 @@ p5-Pod-Autopod                  ports/textproc/p5-Pod-Autopod
 p5-Pod-Constants                ports/textproc/p5-Pod-Constants
 p5-Pod-Coverage                 ports/devel/p5-Pod-Coverage
 p5-Pod-Coverage-Moose           ports/devel/p5-Pod-Coverage-Moose
+p5-Pod-Coverage-TrustPod        ports/devel/p5-Pod-Coverage-TrustPod
 p5-Pod-DocBook                  ports/textproc/p5-Pod-DocBook
 p5-Pod-Elemental                ports/textproc/p5-Pod-Elemental
 p5-Pod-Escapes                  ports/textproc/p5-Pod-Escapes
@@ -14356,6 +14360,7 @@ p5-Test-Module-Used             ports/devel/p5-Test-Module-Used
 p5-Test-More-UTF8               ports/devel/p5-Test-More-UTF8
 p5-Test-Most                    ports/devel/p5-Test-Most
 p5-Test-Net-RabbitMQ            ports/devel/p5-Test-Net-RabbitMQ
+p5-Test-NoTabs                  ports/devel/p5-Test-NoTabs
 p5-Test-NoWarnings              ports/devel/p5-Test-NoWarnings
 p5-Test-Number-Delta            ports/devel/p5-Test-Number-Delta
 p5-Test-Object                  ports/devel/p5-Test-Object
@@ -17305,6 +17310,7 @@ p5-mkdoc-xml                    ports/textproc/p5-MKDoc-XML
 p5-mknod                        ports/devel/p5-Mknod
 p5-mldbm                        ports/databases/p5-MLDBM
 p5-mldbm-sync                   ports/databases/p5-MLDBM-Sync
+p5-mock-quick                   ports/devel/p5-Mock-Quick
 p5-mocked                       ports/devel/p5-mocked
 p5-modern-perl                  ports/lang/p5-Modern-Perl
 p5-module-build                 ports/devel/p5-Module-Build
@@ -17905,6 +17911,7 @@ p5-pod-autopod                  ports/textproc/p5-Pod-Autopod
 p5-pod-constants                ports/textproc/p5-Pod-Constants
 p5-pod-coverage                 ports/devel/p5-Pod-Coverage
 p5-pod-coverage-moose           ports/devel/p5-Pod-Coverage-Moose
+p5-pod-coverage-trustpod        ports/devel/p5-Pod-Coverage-TrustPod
 p5-pod-docbook                  ports/textproc/p5-Pod-DocBook
 p5-pod-elemental                ports/textproc/p5-Pod-Elemental
 p5-pod-escapes                  ports/textproc/p5-Pod-Escapes
@@ -18522,6 +18529,7 @@ p5-test-module-used             ports/devel/p5-Test-Module-Used
 p5-test-more-utf8               ports/devel/p5-Test-More-UTF8
 p5-test-most                    ports/devel/p5-Test-Most
 p5-test-net-rabbitmq            ports/devel/p5-Test-Net-RabbitMQ
+p5-test-notabs                  ports/devel/p5-Test-NoTabs
 p5-test-nowarnings              ports/devel/p5-Test-NoWarnings
 p5-test-number-delta            ports/devel/p5-Test-Number-Delta
 p5-test-object                  ports/devel/p5-Test-Object
