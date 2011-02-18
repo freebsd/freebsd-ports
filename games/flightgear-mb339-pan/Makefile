@@ -10,7 +10,7 @@ PORTVERSION=	2.1
 PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://hcilab.uniud.it/pan/downloads/
-DISTNAME=	mb339pan
+DISTNAME=	mb339pan_${PORTVERSION}
 
 MAINTAINER=	martymac@FreeBSD.org
 COMMENT=	A simulation of the MB-339 PAN aerobatic jet
