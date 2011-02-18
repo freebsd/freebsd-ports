@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	pcc
-PORTVERSION=	0.9.9.101228
+PORTVERSION=	0.9.9.20110216
 PORTREVISION?=	0
 CATEGORIES=	lang
 MASTER_SITES=	ftp://pcc.ludd.ltu.se/pub/pcc/ \
