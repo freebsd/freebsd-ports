@@ -10,7 +10,7 @@ PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	SF/${PORTNAME}/
 
-MAINTAINER=	michael@fun-box.ru
+MAINTAINER=	m.tsatsenko@gmail.com
 COMMENT=	Shows package dependencies in tree views
 
 LICENSE=	GPLv2

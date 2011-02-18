@@ -10,7 +10,7 @@ PORTVERSION=	0.0.8
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	michael@fun-box.ru
+MAINTAINER=	m.tsatsenko@gmail.com
 COMMENT=	Command line WebDAV client and Ruby library
 
 USE_RUBY=	yes
