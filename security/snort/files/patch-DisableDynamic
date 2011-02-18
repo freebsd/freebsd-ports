@@ -1,0 +1,95 @@
+Index: src/fpcreate.c
+===================================================================
+RCS file: /usr/cvsroot/sfeng/ims/sfsnort/snort/src/fpcreate.c,v
+retrieving revision 1.107.2.2
+diff -u -p -r1.107.2.2 fpcreate.c
+--- src/fpcreate.c	11 Jan 2011 22:54:40 -0000	1.107.2.2
++++ src/fpcreate.c	17 Feb 2011 20:06:49 -0000
+@@ -70,6 +70,8 @@
+ #include "dynamic-plugins/sp_preprocopt.h"
+ #endif
+ 
++#include "dynamic-plugins/sf_dynamic_define.h"
++
+   
+ /*
+  *  Content flag values
+@@ -1810,9 +1812,11 @@ static int fpAddPortGroupRule(PORT_GROUP
+         fpAddAllContents(pg->pgPms[PM_TYPE__CONTENT], otn, id, pmd, fp);
+ #endif
+ 
++#ifdef DYNAMIC_PLUGIN
+     /* No content added */
+     if (pmd == preproc_opt_pmds)
+         FreePmdList(pmd);
++#endif
+ 
+     if (fpFinishPortGroupRule(pg, PM_TYPE__MAX, otn, NULL, fp) != 0)
+         return -1;
+Index: src/dynamic-plugins/sf_dynamic_define.h
+===================================================================
+RCS file: /usr/cvsroot/sfeng/ims/sfsnort/snort/src/dynamic-plugins/sf_dynamic_define.h,v
+retrieving revision 1.15.4.1
+diff -u -p -r1.15.4.1 sf_dynamic_define.h
+--- src/dynamic-plugins/sf_dynamic_define.h	3 Jan 2011 19:58:05 -0000	1.15.4.1
++++ src/dynamic-plugins/sf_dynamic_define.h	17 Feb 2011 20:06:49 -0000
+@@ -96,5 +96,15 @@ typedef enum {
+ #endif
+ #endif
+ 
++/* Parameters are rule info pointer, int to indicate URI or NORM,
++ * and list pointer */
++#define CONTENT_NORMAL            0x01
++#define CONTENT_HTTP_URI          0x02
++#define CONTENT_HTTP_HEADER       0x04
++#define CONTENT_HTTP_CLIENT_BODY  0x08
++#define CONTENT_HTTP_METHOD       0x10
++#define CONTENT_HTTP (CONTENT_HTTP_URI|CONTENT_HTTP_HEADER|\
++                CONTENT_HTTP_CLIENT_BODY|CONTENT_HTTP_METHOD)
++
+ #endif /* _SF_DYNAMIC_DEFINE_H_ */
+ 
+Index: src/dynamic-plugins/sf_dynamic_engine.h
+===================================================================
+RCS file: /usr/cvsroot/sfeng/ims/sfsnort/snort/src/dynamic-plugins/sf_dynamic_engine.h,v
+retrieving revision 1.54.2.1
+diff -u -p -r1.54.2.1 sf_dynamic_engine.h
+--- src/dynamic-plugins/sf_dynamic_engine.h	3 Jan 2011 19:58:06 -0000	1.54.2.1
++++ src/dynamic-plugins/sf_dynamic_engine.h	17 Feb 2011 20:06:49 -0000
+@@ -77,15 +77,6 @@ typedef struct _FPContentInfo
+ 
+ } FPContentInfo;
+ 
+-/* Parameters are rule info pointer, int to indicate URI or NORM,
+- * and list pointer */
+-#define CONTENT_NORMAL            0x01
+-#define CONTENT_HTTP_URI          0x02
+-#define CONTENT_HTTP_HEADER       0x04
+-#define CONTENT_HTTP_CLIENT_BODY  0x08
+-#define CONTENT_HTTP_METHOD       0x10
+-#define CONTENT_HTTP (CONTENT_HTTP_URI|CONTENT_HTTP_HEADER|\
+-        CONTENT_HTTP_CLIENT_BODY|CONTENT_HTTP_METHOD)
+ typedef int (*GetDynamicContentsFunction)(void *, int, FPContentInfo **);
+ typedef int (*GetDynamicPreprocOptFpContentsFunc)(void *, FPContentInfo **);
+ typedef void (*RuleFreeFunc)(void *);
+Index: src/preprocessors/Stream5/snort_stream5_tcp.c
+===================================================================
+RCS file: /usr/cvsroot/sfeng/ims/sfsnort/snort/src/preprocessors/Stream5/snort_stream5_tcp.c,v
+retrieving revision 1.296.2.5
+diff -u -p -r1.296.2.5 snort_stream5_tcp.c
+--- src/preprocessors/Stream5/snort_stream5_tcp.c	7 Jan 2011 20:06:05 -0000	1.296.2.5
++++ src/preprocessors/Stream5/snort_stream5_tcp.c	17 Feb 2011 20:06:49 -0000
+@@ -816,12 +816,12 @@ void Stream5TcpRegisterRuleOptions(void)
+     RegisterPreprocessorRuleOption("stream_reassemble", &s5TcpStreamReassembleRuleOptionInit,
+                                    &s5TcpStreamReassembleRuleOptionEval, &s5TcpStreamReassembleRuleOptionCleanup,
+                                    NULL, NULL, NULL, NULL);
+-#endif
+ 
+ #ifdef PERF_PROFILING
+     RegisterPreprocessorProfile("stream_size", &streamSizePerfStats, 4, &preprocRuleOptionPerfStats);
+     RegisterPreprocessorProfile("reassemble", &streamReassembleRuleOptionPerfStats, 4, &preprocRuleOptionPerfStats);
+ #endif
++#endif
+ 
+ }
+ 

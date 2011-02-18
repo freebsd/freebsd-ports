@@ -1,0 +1,27 @@
+Index: src/preprocessors/HttpInspect/client/hi_client.c
+===================================================================
+diff -u -p -r1.97.2.2 hi_client.c
+--- src/preprocessors/HttpInspect/client/hi_client.c	27 Jan 2011 00:15:39 -0000	1.97.2.2
++++ src/preprocessors/HttpInspect/client/hi_client.c	17 Feb 2011 18:48:41 -0000
+@@ -1907,6 +1907,8 @@ static INLINE const u_char *hi_client_ex
+         return p;
+     }
+     header_ptr->content_len.len = 0;
++    header_ptr->header.uri = start;
++    header_ptr->header.uri_end = end;
+ 
+     /* This is to skip past the HTTP/1.0 (or 1.1) version string */
+     if (IsHttpVersion(&p, end))
+Index: src/preprocessors/HttpInspect/server/hi_server.c
+===================================================================ls
+diff -u -p -r1.59.2.3 hi_server.c
+--- src/preprocessors/HttpInspect/server/hi_server.c	27 Jan 2011 00:15:56 -0000	1.59.2.3
++++ src/preprocessors/HttpInspect/server/hi_server.c	17 Feb 2011 18:48:41 -0000
+@@ -601,6 +601,7 @@ static INLINE const u_char *hi_server_ex
+     offset = (u_char*)p;
+ 
+     header_ptr->header.uri = p;
++    header_ptr->header.uri_end = end;
+     header_ptr->content_encoding.compress_fmt = 0;
+     header_ptr->content_len.len = 0;
+ 
