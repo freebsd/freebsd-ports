@@ -9,7 +9,7 @@ CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	michael@fun-box.ru
+MAINTAINER=	m.tsatsenko@gmail.com
 COMMENT=	Return zodiac for a given date
 
 RUN_DEPENDS=	p5-DateTime>=0:${PORTSDIR}/devel/p5-DateTime \

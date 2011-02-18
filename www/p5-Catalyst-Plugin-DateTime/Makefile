@@ -10,7 +10,7 @@ MASTER_SITES=   CPAN
 PKGNAMEPREFIX=  p5-
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=     michael@fun-box.ru
+MAINTAINER=	m.tsatsenko@gmail.com
 COMMENT=        DateTime support for Catalyst
 
 RUN_DEPENDS=    p5-Catalyst-Runtime>=5.7000:${PORTSDIR}/www/p5-Catalyst-Runtime \
