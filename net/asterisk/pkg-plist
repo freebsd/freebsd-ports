@@ -426,6 +426,7 @@ include/asterisk/xmldoc.h
 lib/asterisk/modules/app_celgenuserevent.so
 lib/asterisk/modules/app_confbridge.so
 lib/asterisk/modules/app_minivm.so
+%%WITH_MYSQL%%lib/asterisk/modules/app_mysql.so
 lib/asterisk/modules/app_originate.so
 lib/asterisk/modules/app_playtones.so
 lib/asterisk/modules/app_readexten.so
@@ -533,6 +534,7 @@ lib/asterisk/modules/app_zapateller.so
 lib/asterisk/modules/cdr_csv.so
 lib/asterisk/modules/cdr_custom.so
 lib/asterisk/modules/cdr_manager.so
+%%WITH_MYSQL%%lib/asterisk/modules/cdr_mysql.so
 %%WITH_POSTGRES%%lib/asterisk/modules/cdr_pgsql.so
 %%WITH_RADIUS%%lib/asterisk/modules/cdr_radius.so
 %%WITH_SQLITE%%lib/asterisk/modules/cdr_sqlite.so
@@ -613,6 +615,7 @@ lib/asterisk/modules/res_agi.so
 lib/asterisk/modules/res_calendar.so
 %%WITH_EXCHANGE%%lib/asterisk/modules/res_calendar_ews.so
 lib/asterisk/modules/res_clioriginate.so
+%%WITH_MYSQL%%lib/asterisk/modules/res_config_mysql.so
 %%WITH_POSTGRES%%lib/asterisk/modules/res_config_pgsql.so
 lib/asterisk/modules/res_convert.so
 lib/asterisk/modules/res_crypto.so

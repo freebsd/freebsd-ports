@@ -1,0 +1,25 @@
+--- menuselect-tree.orig	2011-02-11 17:33:25.000000000 +0200
++++ menuselect-tree	2011-02-11 17:33:52.000000000 +0200
+@@ -4,14 +4,12 @@
+ <category name="MENUSELECT_ADDONS" displayname="Add-ons (See README-addons.txt)" remove_on_change="addons/modules.link">
+ <member name="app_mysql" displayname="Simple Mysql Interface" remove_on_change="addons/app_mysql.o addons/app_mysql.so">
+ 	<depend>mysqlclient</depend>
+-	<defaultenabled>no</defaultenabled>
+ </member>
+ <member name="app_saycountpl" displayname="Say polish counting words" remove_on_change="addons/app_saycountpl.o addons/app_saycountpl.so">
+ 	<defaultenabled>no</defaultenabled>
+ </member>
+ <member name="cdr_mysql" displayname="MySQL CDR Backend" remove_on_change="addons/cdr_mysql.o addons/cdr_mysql.so">
+ 	<depend>mysqlclient</depend>
+-	<defaultenabled>no</defaultenabled>
+ </member>
+ <member name="chan_mobile" displayname="Bluetooth Mobile Device Channel Driver" remove_on_change="addons/chan_mobile.o addons/chan_mobile.so">
+ 	<depend>bluetooth</depend>
+@@ -25,7 +23,6 @@
+ </member>
+ <member name="res_config_mysql" displayname="MySQL RealTime Configuration Driver" remove_on_change="addons/res_config_mysql.o addons/res_config_mysql.so">
+ 	<depend>mysqlclient</depend>
+-	<defaultenabled>no</defaultenabled>
+ </member>
+ </category>
+ <category name="MENUSELECT_APPS" displayname="Applications" remove_on_change="apps/modules.link">
