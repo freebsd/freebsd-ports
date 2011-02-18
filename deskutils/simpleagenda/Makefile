@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	simpleagenda
-PORTVERSION=	0.41
+PORTVERSION=	0.41.1
 CATEGORIES=	deskutils gnustep
 MASTER_SITES=	http://coyote.octets.fr/pub/gnustep/
 DISTNAME=	SimpleAgenda-${PORTVERSION}
