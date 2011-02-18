@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	keynav
-DISTVERSION=	0.20101014.3067
+DISTVERSION=	0.20101224.3183
 PORTEPOCH=	1
 CATEGORIES=	x11
 MASTER_SITES=	http://semicomplete.googlecode.com/files/
