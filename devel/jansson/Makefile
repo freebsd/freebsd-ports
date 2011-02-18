@@ -7,6 +7,7 @@
 
 PORTNAME=	jansson
 PORTVERSION=	1.3
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.digip.org/jansson/releases/
 
