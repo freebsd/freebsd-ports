@@ -6,9 +6,8 @@
 #
 
 PORTNAME=	shelldap
-PORTVERSION=	0.2
-PORTREVISION=	1
-CATEGORIES=	net
+PORTVERSION=	0.4
+CATEGORIES=	net perl5
 MASTER_SITES=	http://www.martini.nu/misc/
 
 MAINTAINER=	mahlon@martini.nu
@@ -30,11 +29,10 @@ PLIST_FILES=	bin/shelldap
 NO_BUILD=	yes
 
 post-extract:
-	${MKDIR} ${WRKSRC}/man/man1
-	${LOCALBASE}/bin/pod2man < ${WRKSRC}/shelldap > ${WRKSRC}/man/man1/shelldap.1
+	${LOCALBASE}/bin/pod2man < ${WRKSRC}/shelldap > ${WRKSRC}/shelldap.1
 
 do-install:
-	${INSTALL_MAN} ${WRKSRC}/man/man1/shelldap.1 ${MANPREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/shelldap.1 ${MANPREFIX}/man/man1
 	${INSTALL_SCRIPT} ${WRKSRC}/shelldap ${PREFIX}/bin
 
 .include <bsd.port.mk>
