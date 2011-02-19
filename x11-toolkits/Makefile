@@ -308,6 +308,7 @@
     SUBDIR += wxgtk28-contrib-common
     SUBDIR += wxgtk28-unicode
     SUBDIR += wxgtk28-unicode-contrib
+    SUBDIR += wxgtk29
     SUBDIR += xbae
     SUBDIR += xforms
     SUBDIR += xforms-i18n
