@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	pgdbf
-PORTVERSION=	0.5.4
+PORTVERSION=	0.5.5
 CATEGORIES=	databases
 MASTER_SITES=	SF
 
-MAINTAINER=	kirk@daycos.com
+MAINTAINER=	kirk@strauser.com
 COMMENT=	Convert XBase / FoxPro tables to PostgreSQL
 
 LICENSE=	GPLv3
