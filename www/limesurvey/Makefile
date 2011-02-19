@@ -6,16 +6,16 @@
 #
 
 PORTNAME=	limesurvey
-PORTVERSION=	1.90
-PORTREVISION=	2
+PORTVERSION=	1.91RC4
 CATEGORIES=	www
-MASTER_SITES=	SF/${PORTNAME}/1._LimeSurvey_stable/${PORTVERSION}+/
-DISTNAME=	${PORTNAME}${PORTVERSION:S^.^^}plus-build9321-20101023
+MASTER_SITES=	SF/${PORTNAME}/2._LimeSurvey_unstable/${PORTVERSION:S/R/_R/}/
+DISTNAME=	${PORTNAME}${PORTVERSION:S^.^^}-build9797-20110215
 
 MAINTAINER=	janos.mohacsi@bsd.hu
 COMMENT=	A PHP-based survey building and runing system
 
-USE_PHP=	mysql session mbstring pcre iconv gd ldap ctype
+USE_PHP=	ctype dom gd iconv ldap mbstring mysql pcre simplexml \
+		session xmlwriter
 
 WWWDOCROOT?=		www
 PHPSURVEYORURL?=	${PORTNAME}
