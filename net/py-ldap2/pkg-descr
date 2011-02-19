@@ -1,8 +1,8 @@
 
                             LDAP Wrapper for Python
-                                       
+
    This module provides an LDAP API to Python in the spirit of RFC1823.
-   
+
 Some cool things people have done with ldapmodule
 
      * LANL phone book (source)
