@@ -1,0 +1,8 @@
+%%SITE_PERL%%/Class/DBI/Plugin/DeepAbstractSearch.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/DBI/Plugin/DeepAbstractSearch/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/DBI/Plugin/DeepAbstractSearch
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/DBI/Plugin
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/DBI
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class
+@dirrmtry %%SITE_PERL%%/Class/DBI/Plugin
+@dirrmtry %%SITE_PERL%%/Class/DBI
