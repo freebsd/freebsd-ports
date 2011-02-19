@@ -20,6 +20,14 @@ etc/gnugk.ini.default
 %%EXAMPLESDIR%%/%%PORTNAME%%/sql.ini
 %%EXAMPLESDIR%%/%%PORTNAME%%/status.ini
 %%EXAMPLESDIR%%/%%PORTNAME%%/vqueue.ini
+%%EXAMPLESDIR%%/%%PORTNAME%%/uri.ini
+%%EXAMPLESDIR%%/%%PORTNAME%%/syslog.ini
+%%EXAMPLESDIR%%/%%PORTNAME%%/qos.ini
+%%EXAMPLESDIR%%/%%PORTNAME%%/p2pnat.ini
+%%EXAMPLESDIR%%/%%PORTNAME%%/odbc.ini
+%%EXAMPLESDIR%%/%%PORTNAME%%/nat.ini
+%%EXAMPLESDIR%%/%%PORTNAME%%/h350.ini
+%%EXAMPLESDIR%%/%%PORTNAME%%/enum.ini
 @dirrm %%EXAMPLESDIR%%/%%PORTNAME%%
 @dirrmtry %%EXAMPLESDIR%%
 %%PORTDOCS%%%%DOCSDIR%%/%%PORTNAME%%/keepalive.txt
@@ -27,5 +35,7 @@ etc/gnugk.ini.default
 %%PORTDOCS%%%%DOCSDIR%%/%%PORTNAME%%/performance.txt
 %%PORTDOCS%%%%DOCSDIR%%/%%PORTNAME%%/radauth.txt
 %%PORTDOCS%%%%DOCSDIR%%/%%PORTNAME%%/trace_levels.txt
+%%PORTDOCS%%%%DOCSDIR%%/%%PORTNAME%%/pwlib_bugs.txt
+%%PORTDOCS%%%%DOCSDIR%%/%%PORTNAME%%/identifiers.txt
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/%%PORTNAME%%
 %%PORTDOCS%%@dirrmtry %%DOCSDIR%%
