@@ -1,4 +1,3 @@
-bin/hash_passwords.pl
 bin/mojomojo_cgi.pl
 bin/mojomojo_create.pl
 bin/mojomojo_fastcgi.pl
@@ -7,14 +6,13 @@ bin/mojomojo_server.pl
 bin/mojomojo_spawn_db.pl
 bin/mojomojo_test.pl
 bin/mojomojo_update_db.pl
-bin/textile2markdown.pl
-bin/wikispaces2markdown.pl
 %%SITE_PERL%%/MojoMojo.pm
 %%SITE_PERL%%/MojoMojo/Controller/Admin.pm
 %%SITE_PERL%%/MojoMojo/Controller/Attachment.pm
 %%SITE_PERL%%/MojoMojo/Controller/Comment.pm
 %%SITE_PERL%%/MojoMojo/Controller/Export.pm
 %%SITE_PERL%%/MojoMojo/Controller/Gallery.pm
+%%SITE_PERL%%/MojoMojo/Controller/Image.pm
 %%SITE_PERL%%/MojoMojo/Controller/JSON.pm
 %%SITE_PERL%%/MojoMojo/Controller/Journal.pm
 %%SITE_PERL%%/MojoMojo/Controller/Jsrpc.pm
@@ -24,14 +22,25 @@ bin/wikispaces2markdown.pl
 %%SITE_PERL%%/MojoMojo/Controller/Tag.pm
 %%SITE_PERL%%/MojoMojo/Controller/User.pm
 %%SITE_PERL%%/MojoMojo/Declaw.pm
+%%SITE_PERL%%/MojoMojo/Extensions/Counter.pm
+%%SITE_PERL%%/MojoMojo/Extension.pm
 %%SITE_PERL%%/MojoMojo/Formatter.pm
 %%SITE_PERL%%/MojoMojo/Formatter/Amazon.pm
 %%SITE_PERL%%/MojoMojo/Formatter/CPANHyperlink.pm
 %%SITE_PERL%%/MojoMojo/Formatter/Comment.pm
 %%SITE_PERL%%/MojoMojo/Formatter/Defang.pm
+%%SITE_PERL%%/MojoMojo/Formatter/Dir.pm
 %%SITE_PERL%%/MojoMojo/Formatter/DocBook.pm
 %%SITE_PERL%%/MojoMojo/Formatter/DocBook/Colorize.pm
 %%SITE_PERL%%/MojoMojo/Formatter/Emote.pm
+%%SITE_PERL%%/MojoMojo/Formatter/File.pm
+%%SITE_PERL%%/MojoMojo/Formatter/File/DocBook.pm
+%%SITE_PERL%%/MojoMojo/Formatter/File/Image.pm
+%%SITE_PERL%%/MojoMojo/Formatter/File/Pod.pm
+%%SITE_PERL%%/MojoMojo/Formatter/File/Text.pm
+%%SITE_PERL%%/MojoMojo/Formatter/GoogleSearch.pm
+%%SITE_PERL%%/MojoMojo/Formatter/GoogleCalendar.pm
+%%SITE_PERL%%/MojoMojo/Formatter/IDLink.pm
 %%SITE_PERL%%/MojoMojo/Formatter/IRCLog.pm
 %%SITE_PERL%%/MojoMojo/Formatter/Include.pm
 %%SITE_PERL%%/MojoMojo/Formatter/Main.pm
@@ -41,8 +50,10 @@ bin/wikispaces2markdown.pl
 %%SITE_PERL%%/MojoMojo/Formatter/Redirect.pm
 %%SITE_PERL%%/MojoMojo/Formatter/SyntaxHighlight.pm
 %%SITE_PERL%%/MojoMojo/Formatter/TOC.pm
+%%SITE_PERL%%/MojoMojo/Formatter/Text.pm
 %%SITE_PERL%%/MojoMojo/Formatter/Textile.pm
 %%SITE_PERL%%/MojoMojo/Formatter/Wiki.pm
+%%SITE_PERL%%/MojoMojo/Formatter/WikipediaLink.pm
 %%SITE_PERL%%/MojoMojo/Formatter/YouTube.pm
 %%SITE_PERL%%/MojoMojo/I18N.pm
 %%SITE_PERL%%/MojoMojo/I18N/ca.js.po
@@ -59,6 +70,7 @@ bin/wikispaces2markdown.pl
 %%SITE_PERL%%/MojoMojo/I18N/it.po
 %%SITE_PERL%%/MojoMojo/I18N/ja.js.po
 %%SITE_PERL%%/MojoMojo/I18N/ja.po
+%%SITE_PERL%%/MojoMojo/I18N/ko.po
 %%SITE_PERL%%/MojoMojo/I18N/no.js.po
 %%SITE_PERL%%/MojoMojo/I18N/no.po
 %%SITE_PERL%%/MojoMojo/I18N/pl.js.po
@@ -122,6 +134,7 @@ bin/wikispaces2markdown.pl
 %%SITE_PERL%%/MojoMojo/root/base/edithelp/markdown.tt
 %%SITE_PERL%%/MojoMojo/root/base/edithelp/textile.tt
 %%SITE_PERL%%/MojoMojo/root/base/export.tt
+%%SITE_PERL%%/MojoMojo/root/base/extensions/counter.tt
 %%SITE_PERL%%/MojoMojo/root/base/feeds.tt
 %%SITE_PERL%%/MojoMojo/root/base/footer.tt
 %%SITE_PERL%%/MojoMojo/root/base/gallery.tt
@@ -184,11 +197,11 @@ bin/wikispaces2markdown.pl
 %%SITE_PERL%%/MojoMojo/root/base/user/register.tt
 %%SITE_PERL%%/MojoMojo/root/base/user/user_search.tt
 %%SITE_PERL%%/MojoMojo/root/base/user/validate.tt
+%%SITE_PERL%%/MojoMojo/root/forms/admin/delete.yml
 %%SITE_PERL%%/MojoMojo/root/forms/admin/role_form.yml
 %%SITE_PERL%%/MojoMojo/root/forms/admin/settings.yml
 %%SITE_PERL%%/MojoMojo/root/forms/comment/comment.yml
 %%SITE_PERL%%/MojoMojo/root/forms/defaults.yml
-%%SITE_PERL%%/MojoMojo/root/forms/pageadmin/delete.yml
 %%SITE_PERL%%/MojoMojo/root/forms/pageadmin/edit.yml
 %%SITE_PERL%%/MojoMojo/root/forms/user/editprofile.yml
 %%SITE_PERL%%/MojoMojo/root/forms/user/login.yml
@@ -281,7 +294,6 @@ bin/wikispaces2markdown.pl
 %%SITE_PERL%%/MojoMojo/root/static/gfx/poweredby.png
 %%SITE_PERL%%/MojoMojo/root/static/gfx/uploadbutton.png
 %%SITE_PERL%%/MojoMojo/root/static/js/edit.js
-%%SITE_PERL%%/MojoMojo/root/static/js/fat.js
 %%SITE_PERL%%/MojoMojo/root/static/js/jquery.autocomplete.js
 %%SITE_PERL%%/MojoMojo/root/static/js/jquery.cookies.2.0.1.min.js
 %%SITE_PERL%%/MojoMojo/root/static/js/jquery.editinplace.js
@@ -302,12 +314,12 @@ bin/wikispaces2markdown.pl
 %%SITE_PERL%%/MojoMojo/root/static/json/pl.po.json
 %%SITE_PERL%%/MojoMojo/root/static/json/ru.po.json
 %%SITE_PERL%%/MojoMojo/root/static/mm-logo.png
+%%SITE_PERL%%/MojoMojo/root/static/Crystal_Clear_action_stop.png
 %%SITE_PERL%%/MojoMojo/root/static/mojomojo.css
 %%SITE_PERL%%/MojoMojo/root/static/overrides.css
 %%SITE_PERL%%/MojoMojo/root/static/pod.css
 %%SITE_PERL%%/MojoMojo/root/static/reset.css
 %%SITE_PERL%%/MojoMojo/root/static/robots.txt
-%%SITE_PERL%%/MojoMojo/root/static/shrinkedhead.jpg
 %%SITE_PERL%%/MojoMojo/root/static/spinner.gif
 %%SITE_PERL%%/MojoMojo/root/static/themes/catalyst/generic.css
 %%SITE_PERL%%/MojoMojo/root/static/themes/catalyst/images/global/box_bg_gray.png
@@ -339,8 +351,9 @@ bin/wikispaces2markdown.pl
 %%SITE_PERL%%/MojoMojo/root/static/themes/catalyst/theme.css
 %%SITE_PERL%%/MojoMojo/root/static/themes/catapulse/config.rb
 %%SITE_PERL%%/MojoMojo/root/static/themes/catapulse/ie.css
+%%SITE_PERL%%/MojoMojo/root/static/themes/catapulse/images/bg.gif
+%%SITE_PERL%%/MojoMojo/root/static/themes/catapulse/images/catalyst_logo.png
 %%SITE_PERL%%/MojoMojo/root/static/themes/catapulse/images/grid.png
-%%SITE_PERL%%/MojoMojo/root/static/themes/catapulse/images/mainbg.jpg
 %%SITE_PERL%%/MojoMojo/root/static/themes/catapulse/print.css
 %%SITE_PERL%%/MojoMojo/root/static/themes/catapulse/src/ie.sass
 %%SITE_PERL%%/MojoMojo/root/static/themes/catapulse/src/print.sass
@@ -458,6 +471,7 @@ bin/wikispaces2markdown.pl
 @dirrmtry %%SITE_PERL%%/MojoMojo/root/static/gfx
 @dirrmtry %%SITE_PERL%%/MojoMojo/resources/logo
 @dirrmtry %%SITE_PERL%%/MojoMojo/root/static/js
+@dirrmtry %%SITE_PERL%%/MojoMojo/root/base/extensions
 @dirrmtry %%SITE_PERL%%/MojoMojo/root/base/rest
 @dirrmtry %%SITE_PERL%%/MojoMojo/root/base/user
 @dirrmtry %%SITE_PERL%%/MojoMojo/root/base/page
@@ -472,6 +486,8 @@ bin/wikispaces2markdown.pl
 @dirrmtry %%SITE_PERL%%/MojoMojo/resources
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MojoMojo
 @dirrmtry %%SITE_PERL%%/MojoMojo/root/base
+@dirrmtry %%SITE_PERL%%/MojoMojo/Extensions
+@dirrmtry %%SITE_PERL%%/MojoMojo/Formatter/File
 @dirrmtry %%SITE_PERL%%/MojoMojo/Formatter
 @dirrmtry %%SITE_PERL%%/MojoMojo/Schema
 @dirrmtry %%SITE_PERL%%/MojoMojo/Model

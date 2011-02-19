@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	MojoMojo
-PORTVERSION=	0.999042
-PORTREVISION=	1
+PORTVERSION=	1.03
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	../by-authors/id/M/MR/MRAMBERG
@@ -61,6 +60,7 @@ RUN_DEPENDS=	\
 	p5-HTML-FormFu-Model-DBIC>=0:${PORTSDIR}/www/p5-HTML-FormFu-Model-DBIC \
 	p5-HTML-Strip>=1.04:${PORTSDIR}/www/p5-HTML-Strip \
 	p5-HTML-TagCloud>=0:${PORTSDIR}/www/p5-HTML-TagCloud \
+	p5-HTML-TOC>=0:${PORTSDIR}/www/p5-HTML-Toc \
 	p5-Image-ExifTool>=0:${PORTSDIR}/graphics/p5-Image-ExifTool \
 	p5-Imager>=0:${PORTSDIR}/graphics/p5-Imager \
 	p5-Image-Math-Constrain>=0:${PORTSDIR}/graphics/p5-Image-Math-Constrain \
@@ -83,12 +83,17 @@ BUILD_DEPENDS=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
+LICENSE_COMB=	dual
+LICENSE=	ART20 GPLv1
+
 MAN1=	mojomojo_cgi.pl.1 \
 	mojomojo_create.pl.1 \
 	mojomojo_fastcgi.pl.1 \
 	mojomojo_fastcgi_manage.pl.1 \
 	mojomojo_server.pl.1 \
-	mojomojo_test.pl.1
+	mojomojo_spawn_db.pl.1 \
+	mojomojo_test.pl.1 \
+	mojomojo_update_db.pl.1
 
 MAN3=	MojoMojo.3 \
 	MojoMojo::Controller::Admin.3 \
@@ -96,6 +101,7 @@ MAN3=	MojoMojo.3 \
 	MojoMojo::Controller::Comment.3 \
 	MojoMojo::Controller::Export.3 \
 	MojoMojo::Controller::Gallery.3 \
+	MojoMojo::Controller::Image.3 \
 	MojoMojo::Controller::JSON.3 \
 	MojoMojo::Controller::Journal.3 \
 	MojoMojo::Controller::Jsrpc.3 \
@@ -105,14 +111,25 @@ MAN3=	MojoMojo.3 \
 	MojoMojo::Controller::Tag.3 \
 	MojoMojo::Controller::User.3 \
 	MojoMojo::Declaw.3 \
+	MojoMojo::Extension.3 \
+	MojoMojo::Extensions::Counter.3 \
 	MojoMojo::Formatter.3 \
 	MojoMojo::Formatter::Amazon.3 \
 	MojoMojo::Formatter::CPANHyperlink.3 \
 	MojoMojo::Formatter::Comment.3 \
 	MojoMojo::Formatter::Defang.3 \
+	MojoMojo::Formatter::Dir.3 \
 	MojoMojo::Formatter::DocBook.3 \
 	MojoMojo::Formatter::DocBook::Colorize.3 \
 	MojoMojo::Formatter::Emote.3 \
+	MojoMojo::Formatter::File.3 \
+	MojoMojo::Formatter::File::DocBook.3 \
+	MojoMojo::Formatter::File::Image.3 \
+	MojoMojo::Formatter::File::Pod.3 \
+	MojoMojo::Formatter::File::Text.3 \
+	MojoMojo::Formatter::GoogleSearch.3 \
+	MojoMojo::Formatter::GoogleCalendar.3 \
+	MojoMojo::Formatter::IDLink.3 \
 	MojoMojo::Formatter::IRCLog.3 \
 	MojoMojo::Formatter::Include.3 \
 	MojoMojo::Formatter::Main.3 \
@@ -122,8 +139,10 @@ MAN3=	MojoMojo.3 \
 	MojoMojo::Formatter::Redirect.3 \
 	MojoMojo::Formatter::SyntaxHighlight.3 \
 	MojoMojo::Formatter::TOC.3 \
+	MojoMojo::Formatter::Text.3 \
 	MojoMojo::Formatter::Textile.3 \
 	MojoMojo::Formatter::Wiki.3 \
+	MojoMojo::Formatter::WikipediaLink.3 \
 	MojoMojo::Formatter::YouTube.3 \
 	MojoMojo::I18N.3 \
 	MojoMojo::Installation.3 \
@@ -157,6 +176,7 @@ MAN3=	MojoMojo.3 \
 	MojoMojo::Schema::ResultSet::Person.3 \
 	MojoMojo::Schema::ResultSet::Role.3 \
 	MojoMojo::Schema::ResultSet::Tag.3 \
+	MojoMojo::View::Email.3 \
 	MojoMojo::View::JSON.3 \
 	MojoMojo::View::TT.3 \
 	MojoMojo::WordDiff.3 \
