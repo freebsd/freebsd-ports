@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Const-Fast
-PORTVERSION=	0.006
+PORTVERSION=	0.007
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	../../authors/id/L/LE/LEONT/
@@ -18,6 +18,9 @@ COMMENT=	Facility for creating read-only scalars, arrays, and hashes
 RUN_DEPENDS=    p5-Sub-Exporter>=0:${PORTSDIR}/devel/p5-Sub-Exporter 
 
 PERL_CONFIGURE=	YES
+
+LICENSE_COMB=	dual
+LICENSE=	ART20 GPLv1
 
 MAN3=	Const::Fast.3
 
