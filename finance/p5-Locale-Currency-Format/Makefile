@@ -6,16 +6,18 @@
 #
 
 PORTNAME=	Locale-Currency-Format
-PORTVERSION=	1.26
+PORTVERSION=	1.28
 CATEGORIES=	finance perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl functions for formatting monetary values
 
 PERL_CONFIGURE=	yes
+
+LICENSE_COMB=	dual
+LICENSE=	ART20 GPLv1
 
 MAN3=		Locale::Currency::Format.3
 
