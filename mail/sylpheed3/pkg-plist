@@ -1,12 +1,4 @@
 bin/sylpheed
-%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
-%%PORTDOCS%%%%DOCSDIR%%/ChangeLog.ja
-%%PORTDOCS%%%%DOCSDIR%%/INSTALL
-%%PORTDOCS%%%%DOCSDIR%%/INSTALL.ja
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/README.ja
-%%PORTDOCS%%%%DOCSDIR%%/TODO
-%%PORTDOCS%%%%DOCSDIR%%/TODO.ja
 include/sylpheed/plugin.h
 include/sylpheed/sylph/account.h
 include/sylpheed/sylph/base64.h
@@ -37,6 +29,7 @@ include/sylpheed/sylph/recv.h
 include/sylpheed/sylph/session.h
 include/sylpheed/sylph/smtp.h
 include/sylpheed/sylph/socket.h
+include/sylpheed/sylph/socks.h
 include/sylpheed/sylph/ssl.h
 include/sylpheed/sylph/stringtable.h
 include/sylpheed/sylph/syl-marshal.h
@@ -48,42 +41,19 @@ include/sylpheed/sylph/virtual.h
 include/sylpheed/sylph/xml.h
 lib/libsylph-0.la
 lib/libsylph-0.so
+lib/libsylph-0.so.2
 lib/libsylpheed-plugin-0.la
 lib/libsylpheed-plugin-0.so
-lib/libsylph-0.so.1
-lib/libsylpheed-plugin-0.so.1
+lib/libsylpheed-plugin-0.so.2
 share/applications/sylpheed.desktop
-share/locale/be/LC_MESSAGES/sylpheed.mo
-share/locale/cs/LC_MESSAGES/sylpheed.mo
-share/locale/bg/LC_MESSAGES/sylpheed.mo
-share/locale/da/LC_MESSAGES/sylpheed.mo
-share/locale/de/LC_MESSAGES/sylpheed.mo
-share/locale/el/LC_MESSAGES/sylpheed.mo
-share/locale/es/LC_MESSAGES/sylpheed.mo
-share/locale/et/LC_MESSAGES/sylpheed.mo
-share/locale/fr/LC_MESSAGES/sylpheed.mo
-share/locale/gl/LC_MESSAGES/sylpheed.mo
-share/locale/hr/LC_MESSAGES/sylpheed.mo
-share/locale/hu/LC_MESSAGES/sylpheed.mo
-share/locale/it/LC_MESSAGES/sylpheed.mo
-share/locale/ja/LC_MESSAGES/sylpheed.mo
-share/locale/ko/LC_MESSAGES/sylpheed.mo
-share/locale/lt/LC_MESSAGES/sylpheed.mo
-share/locale/nl/LC_MESSAGES/sylpheed.mo
-share/locale/pl/LC_MESSAGES/sylpheed.mo
-share/locale/pt_BR/LC_MESSAGES/sylpheed.mo
-share/locale/ro/LC_MESSAGES/sylpheed.mo
-share/locale/ru/LC_MESSAGES/sylpheed.mo
-share/locale/sk/LC_MESSAGES/sylpheed.mo
-share/locale/sl/LC_MESSAGES/sylpheed.mo
-share/locale/sr/LC_MESSAGES/sylpheed.mo
-share/locale/sv/LC_MESSAGES/sylpheed.mo
-share/locale/tr/LC_MESSAGES/sylpheed.mo
-share/locale/uk/LC_MESSAGES/sylpheed.mo
-share/locale/vi/LC_MESSAGES/sylpheed.mo
-share/locale/zh_CN/LC_MESSAGES/sylpheed.mo
-share/locale/zh_TW/LC_MESSAGES/sylpheed.mo
-share/pixmaps/sylpheed.png
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog.ja
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL.ja
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/README.ja
+%%PORTDOCS%%%%DOCSDIR%%/TODO
+%%PORTDOCS%%%%DOCSDIR%%/TODO.ja
 %%PORTDOCS%%%%DOCSDIR%%/faq/de/sylpheed-faq-1.html
 %%PORTDOCS%%%%DOCSDIR%%/faq/de/sylpheed-faq-2.html
 %%PORTDOCS%%%%DOCSDIR%%/faq/de/sylpheed-faq-3.html
@@ -118,6 +88,8 @@ share/pixmaps/sylpheed.png
 %%PORTDOCS%%%%DOCSDIR%%/manual/en/sylpheed-19.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/en/sylpheed-2.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/en/sylpheed-20.html
+%%PORTDOCS%%%%DOCSDIR%%/manual/en/sylpheed-21.html
+%%PORTDOCS%%%%DOCSDIR%%/manual/en/sylpheed-22.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/en/sylpheed-3.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/en/sylpheed-4.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/en/sylpheed-5.html
@@ -153,7 +125,37 @@ share/pixmaps/sylpheed.png
 %%PORTDOCS%%%%DOCSDIR%%/manual/ja/sylpheed-8.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/ja/sylpheed-9.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/ja/sylpheed.html
-%%PORTDOCS%%%%DOCSDIR%%/manual/ja/sylpheed.sgml
+share/locale/be/LC_MESSAGES/sylpheed.mo
+share/locale/bg/LC_MESSAGES/sylpheed.mo
+share/locale/cs/LC_MESSAGES/sylpheed.mo
+share/locale/da/LC_MESSAGES/sylpheed.mo
+share/locale/de/LC_MESSAGES/sylpheed.mo
+share/locale/el/LC_MESSAGES/sylpheed.mo
+share/locale/es/LC_MESSAGES/sylpheed.mo
+share/locale/et/LC_MESSAGES/sylpheed.mo
+share/locale/fr/LC_MESSAGES/sylpheed.mo
+share/locale/gl/LC_MESSAGES/sylpheed.mo
+share/locale/hr/LC_MESSAGES/sylpheed.mo
+share/locale/hu/LC_MESSAGES/sylpheed.mo
+share/locale/it/LC_MESSAGES/sylpheed.mo
+share/locale/ja/LC_MESSAGES/sylpheed.mo
+share/locale/ko/LC_MESSAGES/sylpheed.mo
+share/locale/lt/LC_MESSAGES/sylpheed.mo
+share/locale/nl/LC_MESSAGES/sylpheed.mo
+share/locale/pl/LC_MESSAGES/sylpheed.mo
+share/locale/pt_BR/LC_MESSAGES/sylpheed.mo
+share/locale/ro/LC_MESSAGES/sylpheed.mo
+share/locale/ru/LC_MESSAGES/sylpheed.mo
+share/locale/sk/LC_MESSAGES/sylpheed.mo
+share/locale/sl/LC_MESSAGES/sylpheed.mo
+share/locale/sr/LC_MESSAGES/sylpheed.mo
+share/locale/sv/LC_MESSAGES/sylpheed.mo
+share/locale/tr/LC_MESSAGES/sylpheed.mo
+share/locale/uk/LC_MESSAGES/sylpheed.mo
+share/locale/vi/LC_MESSAGES/sylpheed.mo
+share/locale/zh_CN/LC_MESSAGES/sylpheed.mo
+share/locale/zh_TW/LC_MESSAGES/sylpheed.mo
+share/pixmaps/sylpheed.png
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/manual/ja
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/manual/en
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/manual
@@ -164,6 +166,6 @@ share/pixmaps/sylpheed.png
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/faq/de
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/faq
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrmtry share/applications
 @dirrm include/sylpheed/sylph
 @dirrm include/sylpheed
-@dirrmtry share/applications
