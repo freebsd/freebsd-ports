@@ -8,6 +8,7 @@ bin/handel.pl
 %%SITE_PERL%%/Handel/Constants.pm
 %%SITE_PERL%%/Handel/L10N/bg.pm
 %%SITE_PERL%%/Handel/L10N/fr.pm
+%%SITE_PERL%%/Handel/L10N/de.pm
 %%SITE_PERL%%/Handel/L10N/en_us.pm
 %%SITE_PERL%%/Handel/Checkout/Message.pm
 %%SITE_PERL%%/Handel/Checkout/Stash.pm
