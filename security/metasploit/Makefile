@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	metasploit
-DISTVERSION=	3.3.3
+DISTVERSION=	3.5.1
 CATEGORIES=	security
-MASTER_SITES=	http://www.metasploit.com/releases/
+MASTER_SITES=	http://www.metasploit.com/releases/ \
+		http://updates.metasploit.com/data/releases/
 DISTNAME=	framework-${DISTVERSION}
 
 MAINTAINER=	onatan@gmail.com
