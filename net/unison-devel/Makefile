@@ -17,6 +17,9 @@ EXTRACT_ONLY=	${PORTNAME}-${PORTVERSION}.tar.gz
 MAINTAINER=	mad@madpilot.net
 COMMENT=	A user-level file synchronization tool
 
+IGNORE=		No devel release available at present. \
+		Install net/unison which is the latest stable version.
+
 PLIST_SUB=	PORTVERSION=${PORTVERSION}
 USE_GMAKE=	yes
 MAKE_ARGS=	CFLAGS=""
