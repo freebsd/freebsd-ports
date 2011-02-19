@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	Handel
-PORTVERSION=	1.00011
-PORTREVISION=	4
+PORTVERSION=	1.00013
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -15,22 +14,27 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Simple ecommerce framework with AxKit/Catalyst support
 
-BUILD_DEPENDS=	${SITE_PERL}/Error.pm:${PORTSDIR}/lang/p5-Error \
-	${SITE_PERL}/Class/Accessor/Grouped.pm:${PORTSDIR}/devel/p5-Class-Accessor-Grouped \
-	${SITE_PERL}/Data/Currency.pm:${PORTSDIR}/finance/p5-Data-Currency \
-	${SITE_PERL}/${PERL_ARCH}/DBD/SQLite.pm:${PORTSDIR}/databases/p5-DBD-SQLite \
-	${SITE_PERL}/DBIx/Class/UUIDColumns.pm:${PORTSDIR}/databases/p5-DBIx-Class-UUIDColumns \
-	${SITE_PERL}/DBIx/Class/Validation.pm:${PORTSDIR}/databases/p5-DBIx-Class-Validation \
-	${SITE_PERL}/SQL/Translator.pm:${PORTSDIR}/databases/p5-SQL-Translator \
-	${SITE_PERL}/Finance/Currency/Convert/WebserviceX.pm:${PORTSDIR}/finance/p5-Finance-Currency-Convert-WebserviceX \
-	${SITE_PERL}/DateTime/Format/MySQL.pm:${PORTSDIR}/devel/p5-DateTime-Format-MySQL \
-	${SITE_PERL}/Module/Starter.pm:${PORTSDIR}/devel/p5-Module-Starter \
-	${SITE_PERL}/FormValidator/Simple.pm:${PORTSDIR}/textproc/p5-FormValidator-Simple \
-	${SITE_PERL}/Locale/Currency/Format.pm:${PORTSDIR}/finance/p5-Locale-Currency-Format \
-	${SITE_PERL}/${PERL_ARCH}/Clone.pm:${PORTSDIR}/devel/p5-Clone
+BUILD_DEPENDS=	p5-Error>=0.17016:${PORTSDIR}/lang/p5-Error \
+	p5-Class-Accessor-Grouped>=0.09003:${PORTSDIR}/devel/p5-Class-Accessor-Grouped \
+	p5-Data-Currency>=0.04002:${PORTSDIR}/finance/p5-Data-Currency \
+	p5-DBD-SQLite>=1.29:${PORTSDIR}/databases/p5-DBD-SQLite \
+	p5-DBIx-Class-UUIDColumns>=0.02005:${PORTSDIR}/databases/p5-DBIx-Class-UUIDColumns \
+	p5-DBIx-Class-Validation>=0.02005:${PORTSDIR}/databases/p5-DBIx-Class-Validation \
+	p5-SQL-Translator>=0.11006:${PORTSDIR}/databases/p5-SQL-Translator \
+	p5-Finance-Currency-Convert-WebserviceX>=0.07001:${PORTSDIR}/finance/p5-Finance-Currency-Convert-WebserviceX \
+	p5-DateTime-Format-MySQL>=0.04:${PORTSDIR}/devel/p5-DateTime-Format-MySQL \
+	p5-Module-Starter>=1.54:${PORTSDIR}/devel/p5-Module-Starter \
+	p5-FormValidator-Simple>=0.28:${PORTSDIR}/textproc/p5-FormValidator-Simple \
+	p5-Locale-Currency-Format>=1.28:${PORTSDIR}/finance/p5-Locale-Currency-Format \
+	p5-Clone>=0.31:${PORTSDIR}/devel/p5-Clone \
+	p5-Class-ISA>=0.36:${PORTSDIR}/devel/p5-Class-ISA \
+	p5-File-Path>=2.08:${PORTSDIR}/devel/p5-File-Path
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	5.6.0+
+
+LICENSE_COMB=	dual
+LICENSE=	ART20 GPLv1
 
 MAN1=	handel.pl.1
 MAN3=	Handel::Iterator.3 \
@@ -42,6 +46,7 @@ MAN3=	Handel::Iterator.3 \
 	Handel::Constants.3 \
 	Handel::L10N::bg.3 \
 	Handel::L10N::fr.3 \
+	Handel::L10N::de.3 \
 	Handel::L10N::en_us.3 \
 	Handel::Checkout::Message.3 \
 	AxKit::XSP::Handel::Order.3 \
