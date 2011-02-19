@@ -1,7 +1,9 @@
 bin/ots_gui
 bin/taxsolve_CA_540_2010
+bin/taxsolve_MA_1_2010
 bin/taxsolve_NC_D400_2010
 bin/taxsolve_NJ_1040_2010
+bin/taxsolve_NY_IT201_2010
 bin/taxsolve_OH_IT1040_2010
 bin/taxsolve_PA_40_2010
 bin/taxsolve_US_1040_2010
