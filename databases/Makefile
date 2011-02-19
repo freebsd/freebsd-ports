@@ -294,6 +294,7 @@
     SUBDIR += p5-Class-DBI-Pg
     SUBDIR += p5-Class-DBI-Plugin
     SUBDIR += p5-Class-DBI-Plugin-AbstractCount
+    SUBDIR += p5-Class-DBI-Plugin-DeepAbstractSearch
     SUBDIR += p5-Class-DBI-Plugin-Iterator
     SUBDIR += p5-Class-DBI-Plugin-Pager
     SUBDIR += p5-Class-DBI-Plugin-RetrieveAll
