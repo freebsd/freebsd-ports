@@ -19,6 +19,9 @@
 %%PYTHON_SITELIBDIR%%/dns/flags.py
 %%PYTHON_SITELIBDIR%%/dns/flags.pyc
 %%PYTHON_SITELIBDIR%%/dns/flags.pyo
+%%PYTHON_SITELIBDIR%%/dns/hash.py
+%%PYTHON_SITELIBDIR%%/dns/hash.pyc
+%%PYTHON_SITELIBDIR%%/dns/hash.pyo
 %%PYTHON_SITELIBDIR%%/dns/inet.py
 %%PYTHON_SITELIBDIR%%/dns/inet.pyc
 %%PYTHON_SITELIBDIR%%/dns/inet.pyo
@@ -247,15 +250,16 @@
 %%PYTHON_SITELIBDIR%%/dns/zone.py
 %%PYTHON_SITELIBDIR%%/dns/zone.pyc
 %%PYTHON_SITELIBDIR%%/dns/zone.pyo
-%%EXAMPLESDIR%%/ddns.py
-%%EXAMPLESDIR%%/mx.py
-%%EXAMPLESDIR%%/name.py
-%%EXAMPLESDIR%%/reverse.py
-%%EXAMPLESDIR%%/xfr.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ddns.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/e164.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/mx.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/name.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/reverse.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/reverse_name.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/xfr.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/zonediff.py
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
 @dirrm %%PYTHON_SITELIBDIR%%/dns/rdtypes/IN
 @dirrm %%PYTHON_SITELIBDIR%%/dns/rdtypes/ANY
 @dirrm %%PYTHON_SITELIBDIR%%/dns/rdtypes
 @dirrm %%PYTHON_SITELIBDIR%%/dns
-@dirrm %%EXAMPLESDIR%%
-@dirrmtry %%PYTHON_SITELIBDIR%%
-@dirrmtry %%PYTHON_LIBDIR%%
