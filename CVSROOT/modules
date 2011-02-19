@@ -13284,6 +13284,7 @@ p5-MooseX-Types                 ports/devel/p5-MooseX-Types
 p5-MooseX-Types-Common          ports/devel/p5-MooseX-Types-Common
 p5-MooseX-Types-DateTime-ButMaintained  ports/devel/p5-MooseX-Types-DateTime-ButMaintained
 p5-MooseX-Types-DateTimeX       ports/devel/p5-MooseX-Types-DateTimeX
+p5-MooseX-Types-JSON            ports/devel/p5-MooseX-Types-JSON
 p5-MooseX-Types-Path-Class      ports/devel/p5-MooseX-Types-Path-Class
 p5-MooseX-Types-Signal          ports/devel/p5-MooseX-Types-Signal
 p5-MooseX-Types-Structured      ports/devel/p5-MooseX-Types-Structured
@@ -17413,6 +17414,7 @@ p5-moosex-types                 ports/devel/p5-MooseX-Types
 p5-moosex-types-common          ports/devel/p5-MooseX-Types-Common
 p5-moosex-types-datetime-butmaintained  ports/devel/p5-MooseX-Types-DateTime-ButMaintained
 p5-moosex-types-datetimex       ports/devel/p5-MooseX-Types-DateTimeX
+p5-moosex-types-json            ports/devel/p5-MooseX-Types-JSON
 p5-moosex-types-path-class      ports/devel/p5-MooseX-Types-Path-Class
 p5-moosex-types-signal          ports/devel/p5-MooseX-Types-Signal
 p5-moosex-types-structured      ports/devel/p5-MooseX-Types-Structured
