@@ -6,17 +6,17 @@
 #
 
 PORTNAME=	haproxy
-PORTVERSION=	1.4.10
+PORTVERSION=	1.4.11
 CATEGORIES=	net www
 MASTER_SITES=	http://haproxy.1wt.eu/download/1.4/src/
 
 MAINTAINER=	freebsd@linepoint.com
 COMMENT=	The Reliable, High Performance TCP/HTTP Load Balancer
 
-CONFLICTS=     haproxy-devel*
+CONFLICTS=	haproxy-devel*
 
-LICENSE_COMB=   multi
-LICENSE=        GPLv2 LGPL21
+LICENSE_COMB=	multi
+LICENSE=	GPLv2 LGPL21
 
 USE_RC_SUBR=	haproxy
 USE_GMAKE=	YES
