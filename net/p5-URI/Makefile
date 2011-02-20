@@ -6,15 +6,16 @@
 #
 
 PORTNAME=	URI
-PORTVERSION=	1.56
+PORTVERSION=	1.58
 CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
+MASTER_SITE_SUBDIR=	../../authors/id/G/GA/GAAS
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl5 interface to Uniform Resource Identifier (URI) references
 
-PERL_CONFIGURE=	5.6.1+
+PERL_CONFIGURE=	5.8.1+
 
 MAN3=		URI.3 \
 		URI::Escape.3 \
