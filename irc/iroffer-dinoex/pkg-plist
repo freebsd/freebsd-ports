@@ -1,7 +1,13 @@
 bin/iroffer
-bin/de-iroffer
-bin/fr-iroffer
-bin/it-iroffer
+bin/iroffer-de
+bin/iroffer-fr
+bin/iroffer-it
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL-linux-de.html
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL-linux-en.html
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL-linux-fr.html
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL-linux-it.html
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL-vhost-de.html
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL-vhost-fr.html
 %%PORTDOCS%%%%DOCSDIR%%/LICENSE
 %%PORTDOCS%%%%DOCSDIR%%/LIESMICH.modDinoex
 %%PORTDOCS%%%%DOCSDIR%%/README-iroffer.txt
@@ -12,6 +18,9 @@ bin/it-iroffer
 %%PORTDOCS%%%%DOCSDIR%%/help-admin-en.txt
 %%PORTDOCS%%%%DOCSDIR%%/help-admin-fr.txt
 %%PORTDOCS%%%%DOCSDIR%%/help-admin-it.txt
+%%PORTDOCS%%%%DOCSDIR%%/iroffer.1.html
+%%PORTDOCS%%%%DOCSDIR%%/iroffer.1.ps
+%%PORTDOCS%%%%DOCSDIR%%/iroffer.1.txt
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/beispiel.config
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/exemple.config
@@ -20,7 +29,10 @@ bin/it-iroffer
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/iroffer.cron
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ruby-sample.rb
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/sample.config
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/htdocs/info.txt.rb
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/htdocs/iroffer-state.css
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/htdocs/md5.txt.rb
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/htdocs/robots.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/htdocs/sfv.txt.rb
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/htdocs
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
