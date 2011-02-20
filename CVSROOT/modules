@@ -11559,6 +11559,7 @@ p5-Class-DBI-Pager              ports/databases/p5-Class-DBI-Pager
 p5-Class-DBI-Pg                 ports/databases/p5-Class-DBI-Pg
 p5-Class-DBI-Plugin             ports/databases/p5-Class-DBI-Plugin
 p5-Class-DBI-Plugin-AbstractCount  ports/databases/p5-Class-DBI-Plugin-AbstractCount
+p5-Class-DBI-Plugin-DeepAbstractSearch  ports/databases/p5-Class-DBI-Plugin-DeepAbstractSearch
 p5-Class-DBI-Plugin-Iterator    ports/databases/p5-Class-DBI-Plugin-Iterator
 p5-Class-DBI-Plugin-Pager       ports/databases/p5-Class-DBI-Plugin-Pager
 p5-Class-DBI-Plugin-RetrieveAll  ports/databases/p5-Class-DBI-Plugin-RetrieveAll
@@ -15648,6 +15649,7 @@ p5-class-dbi-pager              ports/databases/p5-Class-DBI-Pager
 p5-class-dbi-pg                 ports/databases/p5-Class-DBI-Pg
 p5-class-dbi-plugin             ports/databases/p5-Class-DBI-Plugin
 p5-class-dbi-plugin-abstractcount  ports/databases/p5-Class-DBI-Plugin-AbstractCount
+p5-class-dbi-plugin-deepabstractsearch  ports/databases/p5-Class-DBI-Plugin-DeepAbstractSearch
 p5-class-dbi-plugin-iterator    ports/databases/p5-Class-DBI-Plugin-Iterator
 p5-class-dbi-plugin-pager       ports/databases/p5-Class-DBI-Plugin-Pager
 p5-class-dbi-plugin-retrieveall  ports/databases/p5-Class-DBI-Plugin-RetrieveAll
@@ -26194,6 +26196,7 @@ wxgtk28-contrib                 ports/x11-toolkits/wxgtk28-contrib
 wxgtk28-contrib-common          ports/x11-toolkits/wxgtk28-contrib-common
 wxgtk28-unicode                 ports/x11-toolkits/wxgtk28-unicode
 wxgtk28-unicode-contrib         ports/x11-toolkits/wxgtk28-unicode-contrib
+wxgtk29                         ports/x11-toolkits/wxgtk29
 wxguitar                        ports/audio/wxguitar
 wxmaxima                        ports/math/wxMaxima
 wxsvg                           ports/graphics/wxsvg
