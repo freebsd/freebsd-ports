@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	iroffer
-PORTVERSION=	3.25
+PORTVERSION=	3.26
 CATEGORIES=	irc
 MASTER_SITES=	http://iroffer.dinoex.net/
 PKGNAMESUFFIX=	-dinoex${PKGNAMESUFFIX2}
@@ -22,7 +22,22 @@ HAS_CONFIGURE=	yes
 CONFIGURE_SCRIPT=	Configure
 MAN1=		iroffer.1
 CONFIGURE_ARGS=	CC="${CC}" LDFLAGS="${LDFLAGS}" LOCALBASE="${LOCALBASE}"
+ALL_TARGET=	all-lang doc
 USE_RC_SUBR=	iroffer-dinoex
+
+IROFFER_DOCS=	README-iroffer.txt README.modDinoex LIESMICH.modDinoex \
+		LICENSE THANKS TODO \
+		help-admin-de.txt help-admin-en.txt \
+		help-admin-fr.txt help-admin-it.txt \
+		doc/iroffer.1.txt doc/iroffer.1.html doc/iroffer.1.ps \
+		doc/INSTALL-linux-de.html doc/INSTALL-linux-en.html \
+		doc/INSTALL-linux-fr.html doc/INSTALL-linux-it.html \
+		doc/INSTALL-vhost-de.html doc/INSTALL-vhost-fr.html
+IROFFER_EXAMPLES= iroffer.cron \
+		sample.config beispiel.config exemple.config \
+		header.html footer.html ruby-sample.rb
+IROFFER_HTDOCS=	iroffer-state.css robots.txt \
+		info.txt.rb md5.txt.rb sfv.txt.rb
 
 OPTIONS=	CURL	"build ftp/http support"	on \
 		RUBY	"build RUBY script support"	on \
@@ -40,7 +55,7 @@ LIB_DEPENDS+=	GeoIP:${PORTSDIR}/net/GeoIP
 CONFIGURE_ARGS+=	-geoip
 .endif
 .if !defined(WITHOUT_UPNP)
-LIB_DEPENDS+=	miniupnpc.4:${PORTSDIR}/net/miniupnpc
+LIB_DEPENDS+=	miniupnpc.5:${PORTSDIR}/net/miniupnpc
 CONFIGURE_ARGS+=	-upnp
 .endif
 .if !defined(WITHOUT_RUBY)
@@ -49,52 +64,25 @@ CONFIGURE_ARGS+=	-ruby
 .include "${PORTSDIR}/Mk/bsd.ruby.mk"
 .endif
 
-post-build:
-	${MV} ${WRKSRC}/iroffer ${WRKSRC}/en-iroffer
-	${RM} -rf ${WRKSRC}/obj
-	@cd ${WRKSRC} && ./Lang de
-	@cd ${WRKSRC} && ${MAKE}
-	${MV} ${WRKSRC}/iroffer ${WRKSRC}/de-iroffer
-	${RM} -rf ${WRKSRC}/obj
-	@cd ${WRKSRC} && ./Lang it
-	@cd ${WRKSRC} && ${MAKE}
-	${MV} ${WRKSRC}/iroffer ${WRKSRC}/it-iroffer
-	${RM} -rf ${WRKSRC}/obj
-	@cd ${WRKSRC} && ./Lang fr
-	@cd ${WRKSRC} && ${MAKE}
-	${MV} ${WRKSRC}/iroffer ${WRKSRC}/fr-iroffer
-	${MV} ${WRKSRC}/en-iroffer ${WRKSRC}/iroffer
-
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/iroffer ${PREFIX}/bin/
-	${INSTALL_PROGRAM} ${WRKSRC}/de-iroffer ${PREFIX}/bin/
-	${INSTALL_PROGRAM} ${WRKSRC}/it-iroffer ${PREFIX}/bin/
-	${INSTALL_PROGRAM} ${WRKSRC}/fr-iroffer ${PREFIX}/bin/
+	${INSTALL_PROGRAM} ${WRKSRC}/iroffer-de ${PREFIX}/bin/
+	${INSTALL_PROGRAM} ${WRKSRC}/iroffer-it ${PREFIX}/bin/
+	${INSTALL_PROGRAM} ${WRKSRC}/iroffer-fr ${PREFIX}/bin/
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README-iroffer.txt ${DOCSDIR}/
-	${INSTALL_DATA} ${WRKSRC}/README.modDinoex ${DOCSDIR}/
-	${INSTALL_DATA} ${WRKSRC}/LIESMICH.modDinoex ${DOCSDIR}/
-	${INSTALL_DATA} ${WRKSRC}/LICENSE ${DOCSDIR}/
-	${INSTALL_DATA} ${WRKSRC}/THANKS ${DOCSDIR}/
-	${INSTALL_DATA} ${WRKSRC}/TODO ${DOCSDIR}/
-	${INSTALL_DATA} ${WRKSRC}/help-admin-en.txt ${DOCSDIR}/
-	${INSTALL_DATA} ${WRKSRC}/help-admin-de.txt ${DOCSDIR}/
-	${INSTALL_DATA} ${WRKSRC}/help-admin-it.txt ${DOCSDIR}/
-	${INSTALL_DATA} ${WRKSRC}/help-admin-fr.txt ${DOCSDIR}/
+.for i in ${IROFFER_DOCS}
+	${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}/
+.endfor
 .endif
 .if !defined(NOPORTEXAMPLES)
 	${MKDIR} ${EXAMPLESDIR}/htdocs
-	${INSTALL_DATA} ${WRKSRC}/iroffer.cron ${EXAMPLESDIR}/
-	${INSTALL_DATA} ${WRKSRC}/sample.config ${EXAMPLESDIR}/
-	${INSTALL_DATA} ${WRKSRC}/beispiel.config ${EXAMPLESDIR}/
-	${INSTALL_DATA} ${WRKSRC}/exemple.config ${EXAMPLESDIR}/
-	${INSTALL_DATA} ${WRKSRC}/header.html ${EXAMPLESDIR}/
-	${INSTALL_DATA} ${WRKSRC}/footer.html ${EXAMPLESDIR}/
-	${INSTALL_DATA} ${WRKSRC}/ruby-sample.rb ${EXAMPLESDIR}/
-	${INSTALL_DATA} ${WRKSRC}/htdocs/iroffer-state.css \
-		${WRKSRC}/htdocs/robots.txt \
-		${EXAMPLESDIR}/htdocs/
+.for i in ${IROFFER_HTDOCS}
+	${INSTALL_DATA} ${WRKSRC}/htdocs/${i} ${EXAMPLESDIR}/htdocs/
+.endfor
+.for i in ${IROFFER_EXAMPLES}
+	${INSTALL_DATA} ${WRKSRC}/${i} ${EXAMPLESDIR}/
+.endfor
 .endif
 	${INSTALL_MAN} ${WRKSRC}/iroffer.1 ${PREFIX}/man/man1/
 	@${CAT} ${PKGMESSAGE}
