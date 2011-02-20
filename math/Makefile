@@ -472,6 +472,7 @@
     SUBDIR += py-numpy
     SUBDIR += py-plastex
     SUBDIR += py-probstat
+    SUBDIR += py-pybloom
     SUBDIR += py-pymc
     SUBDIR += py-scientific
     SUBDIR += py-svgmath
