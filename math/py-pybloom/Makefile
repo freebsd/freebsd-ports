@@ -14,7 +14,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	lwhsu@FreeBSD.org
 COMMENT=	A Probabilistic data structure
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}bitarray>0:${PORTSDIR}/devel/py-bitarray
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}bitarray>0:${PORTSDIR}/devel/py-bitarray
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	easy_install
