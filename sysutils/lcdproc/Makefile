@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	lcdproc
-PORTVERSION=	0.5.3
-PORTREVISION=	1
+PORTVERSION=	0.5.4
 CATEGORIES=	sysutils
 MASTER_SITES=	SF
 
@@ -15,6 +14,9 @@ MAINTAINER=	bsdfan@nurfuerspam.de
 COMMENT=	A client/server suite for LCD devices
 
 ONLY_FOR_ARCHS=	i386 amd64
+
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 USE_AUTOTOOLS=	autoconf automake aclocal
 GNU_CONFIGURE=	yes
@@ -31,8 +33,11 @@ MAN1=		lcdexec.1 lcdproc.1
 MAN5=		lcdproc-config.5
 MAN8=		LCDd.8
 
-OPTIONS=	USB "Enable USB support" off
+OPTIONS=	USB "Enable USB support" off \
+		LIBFTDI "Enable libftdi support (requires USB)" off \
+		LIBHID "Enable libhid support (requires USB)" off
 
+# Empty args to aclocal required!
 ACLOCAL_ARGS=
 
 LCDPROC_DRIVERS=bayrad \
@@ -55,6 +60,7 @@ LCDPROC_DRIVERS=bayrad \
 		MtxOrb \
 		NoritakeVFD \
 		pyramid \
+		SureElec \
 		sed1330 \
 		sed1520 \
 		serialPOS \
@@ -65,7 +71,7 @@ LCDPROC_DRIVERS=bayrad \
 		text \
 		tyan
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if defined(WITH_USB)
 . if ${OSVERSION} < 800069
@@ -78,9 +84,32 @@ PLIST_SUB+=		USB=""
 LCDPROC_DRIVERS+=IOWarrior \
 		picolcd \
 		shuttleVFD
+
+. if defined(WITH_LIBFTDI)
+LIB_DEPENDS+=		ftdi.18:${PORTSDIR}/devel/libftdi
+CONFIGURE_ARGS+=	--enable-libftdi
+PLIST_SUB+=		FTDI=""
+LCDPROC_DRIVERS+=i2500vfd \
+		lis \
+		ula200
+. else
+CONFIGURE_ARGS+=	--disable-libftdi
+PLIST_SUB+=		FTDI="@comment "
+. endif
+
+. if defined(WITH_LIBHID)
+LIB_DEPENDS+=		hid:${PORTSDIR}/devel/libhid
+CONFIGURE_ARGS+=	--enable-libhid
+PLIST_SUB+=		HID=""
+LCDPROC_DRIVERS+=mdm166a
+. else
+CONFIGURE_ARGS+=	--disable-libhid
+PLIST_SUB+=		HID="@comment "
+. endif
+
 .else
-CONFIGURE_ARGS+=	--without-libusb
-PLIST_SUB+=		USB="@comment "
+CONFIGURE_ARGS+=	--without-libusb --disable-libftdi --disable-libhid
+PLIST_SUB+=		USB="@comment " FTDI="@comment " HID="@comment "
 .endif
 
 post-patch:
@@ -92,4 +121,4 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/clients/lcdexec/lcdexec.conf ${PREFIX}/etc/lcdexec.conf.sample
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

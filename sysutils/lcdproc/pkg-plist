@@ -1,11 +1,5 @@
-bin/fortune.pl
-bin/iosock.pl
 bin/lcdexec
-bin/lcdident.pl
-bin/lcdmetar.pl
 bin/lcdproc
-bin/tail.pl
-bin/x11amp.pl
 etc/LCDd.conf.sample
 etc/lcdexec.conf.sample
 etc/lcdproc.conf.sample
@@ -23,14 +17,18 @@ lib/lcdproc/bayrad.so
 lib/lcdproc/curses.so
 lib/lcdproc/glk.so
 lib/lcdproc/hd44780.so
+%%FTDI%%lib/lcdproc/i2500vfd.so
 lib/lcdproc/icp_a106.so
 lib/lcdproc/lb216.so
 lib/lcdproc/lcdm001.so
+%%FTDI%%lib/lcdproc/lis.so
 lib/lcdproc/lcterm.so
+%%HID%%lib/lcdproc/mdm166a.so
 lib/lcdproc/ms6931.so
 lib/lcdproc/mtc_s16209x.so
 %%USB%%lib/lcdproc/picolcd.so
 lib/lcdproc/pyramid.so
+lib/lcdproc/SureElec.so
 lib/lcdproc/sed1330.so
 lib/lcdproc/sed1520.so
 lib/lcdproc/serialPOS.so
@@ -41,5 +39,6 @@ lib/lcdproc/stv5730.so
 lib/lcdproc/t6963.so
 lib/lcdproc/text.so
 lib/lcdproc/tyan.so
+%%FTDI%%lib/lcdproc/ula200.so
 sbin/LCDd
 @dirrm lib/lcdproc
