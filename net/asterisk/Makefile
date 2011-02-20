@@ -41,7 +41,8 @@ MAKE_ENV=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 		DOCSDIR=${DOCSDIR} \
 		ASTCFLAGS="${CFLAGS}"
 MAN8=		asterisk.8 astgenkey.8 autosupport.8 safe_asterisk.8
-CONFLICTS=	asterisk*-1.2* asterisk*-1.4* asterisk*-1.6*
+CONFLICTS_BUILD=	linuxthreads-*
+CONFLICTS_INSTALL=	asterisk*-1.2* asterisk*-1.4* asterisk*-1.6*
 
 OPTIONS=	OGGVORBIS	"Enable Ogg Vorbis support" on \
 		IODBC		"Enable iODBC support" off \
