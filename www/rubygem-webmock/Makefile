@@ -6,15 +6,16 @@
 #
 
 PORTNAME=	webmock
-PORTVERSION=	1.6.1
+PORTVERSION=	1.6.2
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
-COMMENT=	allows stubbing HTTP requests and setting expectations on HTTP requests
+COMMENT=	Allows stubbing HTTP requests and setting expectations on the requests
 
 RUN_DEPENDS=	rubygem-crack>=0.1.7:${PORTSDIR}/devel/rubygem-crack \
-  				rubygem-addressable>=2.2.2:${PORTSDIR}/www/rubygem-addressable
+		rubygem-addressable>=2.2.2:${PORTSDIR}/www/rubygem-addressable
+
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
