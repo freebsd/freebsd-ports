@@ -74,7 +74,7 @@ CUPS_SUFFIX=	-client
 CUPS_SUFFIX=	-image
 LICENSE=	LGPL21
 .else
-PORTREVISION=	1
+PORTREVISION=	2
 CUPS_SUFFIX=	-base
 CONFLICTS+=	cupsddk-*
 .endif
@@ -355,6 +355,7 @@ post-install:
 .if !defined(WITHOUT_GHOSTSCRIPT) || defined(WITH_XPDF)
 	${INSTALL_PROGRAM} ${WRKSRC}/filter/pdftops ${PREFIX}/libexec/cups/filter/
 .endif
+	${LN} -s ${PREFIX}/bin/lpr ${PREFIX}/bin/lpr-cups
 	${INSTALL} -d ${CUPS_ETCDIR}/
 	${CP} -p ${WRKSRC}/conf/snmp.conf ${WRKSRC}/conf/snmp.conf.N
 .for f in cupsd.conf mime.convs mime.types snmp.conf
