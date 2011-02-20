@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	netcdf
-PORTVERSION=	0.6.4
+PORTVERSION=	0.6.5
 CATEGORIES=	math ruby
 MASTER_SITES=	http://ruby.gfd-dennou.org/products/ruby-netcdf/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
