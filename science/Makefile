@@ -152,6 +152,7 @@
     SUBDIR += py-openbabel
     SUBDIR += py-paida
     SUBDIR += py-pydicom
+    SUBDIR += py-scimath
     SUBDIR += py-scipy
     SUBDIR += pybrain
     SUBDIR += pycdf
