@@ -47,6 +47,7 @@ bin/lpoptions
 bin/lppasswd
 bin/lpq
 bin/lpr
+bin/lpr-cups
 bin/lprm
 bin/lpstat
 bin/ppdc
