@@ -1,4 +1,5 @@
 bin/upnpc
+bin/external-ip
 include/miniupnpc/declspec.h
 include/miniupnpc/igd_desc_parse.h
 include/miniupnpc/miniupnpc.h
@@ -8,5 +9,5 @@ include/miniupnpc/upnpreplyparse.h
 include/miniupnpc/upnperrors.h
 lib/libminiupnpc.a
 lib/libminiupnpc.so
-lib/libminiupnpc.so.4
+lib/libminiupnpc.so.5
 @dirrm include/miniupnpc

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	miniupnpc
-PORTVERSION=	1.4
+PORTVERSION=	1.5
 CATEGORIES?=	net
 MASTER_SITES=	http://miniupnp.free.fr/files/
 
@@ -14,7 +14,7 @@ MAINTAINER=	dinoex@FreeBSD.org
 COMMENT?=	UPnP IGD client lightweight library
 
 LICENSE=	BSD
-LICENSE_FILE=	${WRKSRC}/LICENCE
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 HAS_CONFIGURE=	yes
 USE_GMAKE=	yes
