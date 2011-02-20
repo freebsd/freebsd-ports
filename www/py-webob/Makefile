@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	webob
-PORTVERSION=	1.0
+PORTVERSION=	1.0.2
 PORTREVISION=	0
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP \
@@ -21,10 +21,12 @@ PYDISTUTILS_PKGNAME=	WebOb
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	easy_install
 
+USE_BZIP2=	yes
+
 .if !defined(NOPORTDOCS)
 post-install:
 	${MKDIR} ${DOCSDIR}
-	cd ${WRKSRC}/docs/_build && ${COPYTREE_SHARE} . ${DOCSDIR}
+	cd ${WRKSRC}/docs && ${COPYTREE_SHARE} . ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
