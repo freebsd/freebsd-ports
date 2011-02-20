@@ -1,20 +1,20 @@
 @comment $FreeBSD$
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%
-%%PORTDOCS%%%%DOCSDIR%%/comment-example.html
-%%PORTDOCS%%%%DOCSDIR%%/differences.html
-%%PORTDOCS%%%%DOCSDIR%%/do-it-yourself.html
-%%PORTDOCS%%%%DOCSDIR%%/file-example.html
-%%PORTDOCS%%%%DOCSDIR%%/genindex.html
-%%PORTDOCS%%%%DOCSDIR%%/index.html
-%%PORTDOCS%%%%DOCSDIR%%/jsonrpc-example.html
-%%PORTDOCS%%%%DOCSDIR%%/license.html
-%%PORTDOCS%%%%DOCSDIR%%/modindex.html
-%%PORTDOCS%%%%DOCSDIR%%/modules/dec.html
-%%PORTDOCS%%%%DOCSDIR%%/modules/webob.html
-%%PORTDOCS%%%%DOCSDIR%%/news.html
-%%PORTDOCS%%%%DOCSDIR%%/reference.html
-%%PORTDOCS%%%%DOCSDIR%%/search.html
-%%PORTDOCS%%%%DOCSDIR%%/test-file.html
-%%PORTDOCS%%%%DOCSDIR%%/wiki-example.html
+%%PORTDOCS%%%%DOCSDIR%%/comment-example.txt
+%%PORTDOCS%%%%DOCSDIR%%/conf.py
+%%PORTDOCS%%%%DOCSDIR%%/differences.txt
+%%PORTDOCS%%%%DOCSDIR%%/do-it-yourself.txt
+%%PORTDOCS%%%%DOCSDIR%%/file-example.txt
+%%PORTDOCS%%%%DOCSDIR%%/index.txt
+%%PORTDOCS%%%%DOCSDIR%%/jsonrpc-example-code/test_jsonrpc.txt
+%%PORTDOCS%%%%DOCSDIR%%/jsonrpc-example.txt
+%%PORTDOCS%%%%DOCSDIR%%/license.txt
+%%PORTDOCS%%%%DOCSDIR%%/modules/dec.txt
+%%PORTDOCS%%%%DOCSDIR%%/modules/webob.txt
+%%PORTDOCS%%%%DOCSDIR%%/news.txt
+%%PORTDOCS%%%%DOCSDIR%%/reference.txt
+%%PORTDOCS%%%%DOCSDIR%%/test-file.txt
+%%PORTDOCS%%%%DOCSDIR%%/wiki-example.txt
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/modules
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/jsonrpc-example-code
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
