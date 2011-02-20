@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	fluxbox
-PORTVERSION=	1.1.1
-PORTREVISION=	2
+PORTVERSION=	1.3.0
 CATEGORIES=	x11-wm
 MASTER_SITES=	SF
 DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}
@@ -25,9 +24,10 @@ WANT_GNOME=	yes
 GNU_CONFIGURE=	yes
 
 DOCS=		AUTHORS COPYING ChangeLog NEWS README TODO
-MAN1=		fbrun.1 fbsetbg.1 fbsetroot.1 fluxbox.1 fluxstyle.1 \
+MAN1=		fbrun.1 fbsetbg.1 fbsetroot.1 fluxbox.1 \
 		startfluxbox.1 fluxbox-remote.1
-MAN5=		fluxbox-keys.5
+MAN5=		fluxbox-apps.5 fluxbox-keys.5 fluxbox-menu.5 \
+		fluxbox-style.5
 DOCSVERSION=	20060629
 
 OPTIONS=	DOCHTML "Install html documentation" off \
