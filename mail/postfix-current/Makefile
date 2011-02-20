@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	postfix
-DISTVERSION=	2.8-20101108
+DISTVERSION=	2.9-20110219
 PORTEPOCH=	4
 CATEGORIES=	mail ipv6
 MASTER_SITES=	ftp://ftp.porcupine.org/mirrors/postfix-release/experimental/ \
@@ -21,8 +21,13 @@ DIST_SUBDIR=	${PORTNAME}
 MAINTAINER=	mnag@FreeBSD.org
 COMMENT=	A secure alternative to widely-used Sendmail
 
-CONFLICTS=	courier-0.* postfix-1.* postfix-2.* postfix-current-2.[0-79]* \
+CONFLICTS=	courier-0.* postfix-1.* postfix-2.* postfix-base-2.* \
+		postfix-current-2.[0-8]* postfix-current-base-2.[0-8]* \
 		sendmail-8.* sendmail+*-8.* smail-3.* zmailer-2.*
+
+.if !defined(BATCH) && !defined(PACKAGE_BUILDING)
+IS_INTERACTIVE=	yes
+.endif
 
 MAKE_JOBS_SAFE=	yes
 USE_SUBMAKE=	yes
@@ -31,7 +36,7 @@ SCRIPTS_ENV+=	POSTFIX_DEFAULT_MTA="${POSTFIX_DEFAULT_MTA}"
 
 # back compat pull in settings from POSTFIX_OPTIONS for convenience when
 # make config is run (happens first time port is built, too)
-.for o in SASL2 SASLKRB5 SASLKRB5MIT TLS BDB MySQL PgSQL OpenLDAP CDB NIS VDA Test
+.for o in SASL2 SASLKRB5 SASLKRB5MIT TLS BDB MySQL PgSQL OpenLDAP CDB NIS VDA Test SPF
 STATUS_${o}=off
 .endfor
 .if defined(POSTFIX_OPTIONS)
@@ -42,19 +47,22 @@ STATUS_${o}=on
 
 OPTIONS=	PCRE		"Perl Compatible Regular Expressions"			on \
 		SASL2		"Cyrus SASLv2 (Simple Auth. and Sec. Layer)"		${STATUS_SASL2} \
-		DOVECOT		"Dovecot SASL authentication method"			off \
+		DOVECOT		"Dovecot 1.x SASL authentication method"		off \
+		DOVECOT2	"Dovecot 2.x SASL authentication method"		off \
 		SASLKRB5	"If your SASL req. Kerberos5 select this option"	${STATUS_SASLKRB5} \
 		SASLKMIT	"If your SASL req. MIT Kerberos5 select this option"	${STATUS_SASLKRB5MIT} \
 		TLS		"Enable SSL and TLS support"				${STATUS_TLS} \
 		BDB		"Berkeley DB (choose version with WITH_BDB_VER)"	${STATUS_BDB} \
 		MYSQL		"MySQL maps (choose version with WITH_MYSQL_VER)"	${STATUS_MySQL} \
-		PGSQL		"PostgreSQL maps (choose with DEFAULT_PGSQL_VER)"	${STATUS_PgSQL} \
+		PGSQL		"PostgreSQL maps (pick ver. with DEFAULT_PGSQL_VER)"	${STATUS_PgSQL} \
 		SQLITE		"SQLite maps"						off \
 		OPENLDAP	"OpenLDAP maps (choose ver. with WITH_OPENLDAP_VER)"	${STATUS_OpenLDAP} \
+		LDAP_SASL	"Enable OpenLDAP client-to-server auth via SASL"	off \
 		CDB		"CDB maps lookups"					${STATUS_CDB} \
 		NIS		"NIS maps lookups"					${STATUS_NIS} \
 		VDA		"VDA (Virtual Delivery Agent 32Bit)"			${STATUS_VDA} \
 		TEST		"SMTP/LMTP test server and generator"			${STATUS_Test} \
+		SPF		"SPF support (via libspf2 1.2.x)"			${STATUS_SPF} \
 		INST_BASE	"Install into /usr and /etc/postfix"			off
 
 .include <bsd.port.options.mk>
@@ -70,7 +78,7 @@ MAN5=	access.5 aliases.5 bounce.5 canonical.5 cidr_table.5 generic.5 \
 
 MAN8=	anvil.8 bounce.8 cleanup.8 discard.8 dnsblog.8 error.8 flush.8 local.8 master.8 \
 	oqmgr.8 pickup.8 pipe.8 postscreen.8 proxymap.8 qmgr.8 qmqpd.8 scache.8 showq.8 \
-	smtp.8 smtpd.8 spawn.8 tlsmgr.8 trivial-rewrite.8 verify.8 virtual.8
+	smtp.8 smtpd.8 spawn.8 tlsmgr.8 tlsproxy.8 trivial-rewrite.8 verify.8 virtual.8
 
 MLINKS=	sendmail.1 mailq.1 \
 	sendmail.1 newaliases.1 \
@@ -119,8 +127,16 @@ POSTFIX_CCARGS+=	-DUSE_SASL_AUTH -DUSE_CYRUS_SASL -I${LOCALBASE}/include -I${LOC
 POSTFIX_AUXLIBS+=	-L${LOCALBASE}/lib -lsasl2 -lpam -lcrypt
 .endif
 
+.if defined(WITH_DOVECOT) && defined(WITH_DOVECOT2)
+BROKEN=			Select only one Dovecot option
+.endif
+
+.if defined(WITH_DOVECOT) || defined(WITH_DOVECOT2)
 .if defined(WITH_DOVECOT)
 RUN_DEPENDS+=		dovecot:${PORTSDIR}/mail/dovecot
+.else
+RUN_DEPENDS+=		dovecot:${PORTSDIR}/mail/dovecot2
+.endif
 POSTFIX_CCARGS+=	-DUSE_SASL_AUTH -DDEF_SERVER_SASL_TYPE=\\\"dovecot\\\"
 _REQUIRE+=		dovecot
 .endif
@@ -147,6 +163,10 @@ POSTFIX_AUXLIBS+=	-Wl,--rpath,$${KRB5_HOME:-${LOCALBASE}}/lib -lkrb5 -lcrypto -l
 .include "${PORTSDIR}/Mk/bsd.openssl.mk"
 POSTFIX_CCARGS+=	-DUSE_TLS -I${OPENSSLINC}
 POSTFIX_AUXLIBS+=	-L${OPENSSLLIB} ${LDFLAGS} -lssl -lcrypto
+.endif
+
+.if defined(WITH_SPF)
+BROKEN=			At the moment, SPF support is unavailable for ${PORTNAME}-${DISTVERSION}
 .endif
 
 .if defined(WITH_BDB)
@@ -183,6 +203,9 @@ WANT_OPENLDAP_VER=	${WITH_OPENLDAP_VER}
 POSTFIX_CCARGS+=	-DHAS_LDAP -I${LOCALBASE}/include
 POSTFIX_AUXLIBS+=	-L${LOCALBASE}/lib -lldap -llber
 _REQUIRE+=		slapd
+.if defined(WITH_LDAP_SASL)
+POSTFIX_CCARGS+=	-DUSE_LDAP_SASL
+.endif
 .endif
 
 .if defined(WITH_CDB)
@@ -197,7 +220,7 @@ _REQUIRE+=		ypserv
 .endif
 
 .if defined(WITH_VDA)
-BROKEN=		At the moment there is no VDA patch for ${PORTNAME}-${DISTVERSION} available
+BROKEN=		At the moment, VDA support is unavailable for ${PORTNAME}-${DISTVERSION}
 .endif
 
 .if defined(WITH_TEST)
@@ -210,7 +233,7 @@ PLIST_SUB+=	TEST="@comment "
 .endif
 
 .if defined(WITH_INST_BASE)
-PKGNAMESUFFIX+=	-base
+PKGNAMESUFFIX=	-current-base
 PREFIX=		/usr
 ETCDIR=		/etc/postfix
 USE_RCORDER=	postfix.sh

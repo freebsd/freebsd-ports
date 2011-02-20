@@ -1,5 +1,13 @@
 @unexec if cmp -s %D/libexec/postfix/main.cf %%PFETC%%/main.cf; then rm -f %%PFETC%%/main.cf; fi
 @unexec if cmp -s %D/libexec/postfix/master.cf %%PFETC%%/master.cf; then rm -f %%PFETC%%/master.cf; fi
+bin/mailq
+bin/newaliases
+%%TEST%%bin/qmqp-sink
+%%TEST%%bin/qmqp-source
+bin/qshape
+bin/rmail
+%%TEST%%bin/smtp-sink
+%%TEST%%bin/smtp-source
 libexec/postfix/anvil
 libexec/postfix/bounce
 libexec/postfix/cleanup
@@ -30,19 +38,11 @@ libexec/postfix/showq
 libexec/postfix/smtp
 libexec/postfix/smtpd
 libexec/postfix/spawn
+libexec/postfix/tlsmgr
+libexec/postfix/tlsproxy
 libexec/postfix/trivial-rewrite
 libexec/postfix/verify
 libexec/postfix/virtual
-libexec/postfix/tlsmgr
-@dirrm libexec/postfix
-bin/mailq
-bin/newaliases
-bin/qshape
-bin/rmail
-%%TEST%%bin/qmqp-sink
-%%TEST%%bin/qmqp-source
-%%TEST%%bin/smtp-sink
-%%TEST%%bin/smtp-source
 sbin/postalias
 sbin/postcat
 sbin/postconf
@@ -91,8 +91,6 @@ sbin/sendmail
 %%PORTDOCS%%%%DOCSDIR%%/INSTALL.html
 %%PORTDOCS%%%%DOCSDIR%%/IPV6_README
 %%PORTDOCS%%%%DOCSDIR%%/IPV6_README.html
-%%PORTDOCS%%%%DOCSDIR%%/TLS_README
-%%PORTDOCS%%%%DOCSDIR%%/TLS_README.html
 %%PORTDOCS%%%%DOCSDIR%%/LDAP_README
 %%PORTDOCS%%%%DOCSDIR%%/LDAP_README.html
 %%PORTDOCS%%%%DOCSDIR%%/LINUX_README
@@ -144,6 +142,8 @@ sbin/sendmail
 %%PORTDOCS%%%%DOCSDIR%%/STRESS_README.html
 %%PORTDOCS%%%%DOCSDIR%%/TLS_LEGACY_README
 %%PORTDOCS%%%%DOCSDIR%%/TLS_LEGACY_README.html
+%%PORTDOCS%%%%DOCSDIR%%/TLS_README
+%%PORTDOCS%%%%DOCSDIR%%/TLS_README.html
 %%PORTDOCS%%%%DOCSDIR%%/TUNING_README
 %%PORTDOCS%%%%DOCSDIR%%/TUNING_README.html
 %%PORTDOCS%%%%DOCSDIR%%/ULTRIX_README
@@ -171,6 +171,7 @@ sbin/sendmail
 %%PORTDOCS%%%%DOCSDIR%%/dnsblog.8.html
 %%PORTDOCS%%%%DOCSDIR%%/error.8.html
 %%PORTDOCS%%%%DOCSDIR%%/flush.8.html
+%%PORTDOCS%%%%DOCSDIR%%/generic.5.html
 %%PORTDOCS%%%%DOCSDIR%%/header_checks.5.html
 %%PORTDOCS%%%%DOCSDIR%%/index.html
 %%PORTDOCS%%%%DOCSDIR%%/ldap_table.5.html
@@ -180,8 +181,8 @@ sbin/sendmail
 %%PORTDOCS%%%%DOCSDIR%%/master.5.html
 %%PORTDOCS%%%%DOCSDIR%%/master.8.html
 %%PORTDOCS%%%%DOCSDIR%%/mysql_table.5.html
-%%PORTDOCS%%%%DOCSDIR%%/nisplus_table.5.html
 %%PORTDOCS%%%%DOCSDIR%%/newaliases.1.html
+%%PORTDOCS%%%%DOCSDIR%%/nisplus_table.5.html
 %%PORTDOCS%%%%DOCSDIR%%/oqmgr.8.html
 %%PORTDOCS%%%%DOCSDIR%%/pcre_table.5.html
 %%PORTDOCS%%%%DOCSDIR%%/pgsql_table.5.html
@@ -213,8 +214,8 @@ sbin/sendmail
 %%PORTDOCS%%%%DOCSDIR%%/qshape.1.html
 %%PORTDOCS%%%%DOCSDIR%%/regexp_table.5.html
 %%PORTDOCS%%%%DOCSDIR%%/relocated.5.html
-%%PORTDOCS%%%%DOCSDIR%%/sendmail.1.html
 %%PORTDOCS%%%%DOCSDIR%%/scache.8.html
+%%PORTDOCS%%%%DOCSDIR%%/sendmail.1.html
 %%PORTDOCS%%%%DOCSDIR%%/showq.8.html
 %%PORTDOCS%%%%DOCSDIR%%/smtp-sink.1.html
 %%PORTDOCS%%%%DOCSDIR%%/smtp-source.1.html
@@ -223,15 +224,16 @@ sbin/sendmail
 %%PORTDOCS%%%%DOCSDIR%%/spawn.8.html
 %%PORTDOCS%%%%DOCSDIR%%/sqlite_table.5.html
 %%PORTDOCS%%%%DOCSDIR%%/tcp_table.5.html
+%%PORTDOCS%%%%DOCSDIR%%/tlsmgr.8.html
+%%PORTDOCS%%%%DOCSDIR%%/tlsproxy.8.html
 %%PORTDOCS%%%%DOCSDIR%%/trace.8.html
 %%PORTDOCS%%%%DOCSDIR%%/transport.5.html
 %%PORTDOCS%%%%DOCSDIR%%/trivial-rewrite.8.html
 %%PORTDOCS%%%%DOCSDIR%%/verify.8.html
 %%PORTDOCS%%%%DOCSDIR%%/virtual.5.html
 %%PORTDOCS%%%%DOCSDIR%%/virtual.8.html
-%%PORTDOCS%%%%DOCSDIR%%/tlsmgr.8.html
-%%PORTDOCS%%%%DOCSDIR%%/generic.5.html
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm libexec/postfix
 %%BASE%%@cwd /
 etc/postfix/LICENSE
 etc/postfix/TLS_LICENSE
