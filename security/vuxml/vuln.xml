@@ -34,6 +34,40 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="ae0e5835-3cad-11e0-b654-00215c6a37bb">
+    <topic>PivotX -- administrator password reset vulnerability</topic>
+    <affects>
+      <package>
+	<name>pivotx</name>
+	<range><lt>2.2.4</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>US CERT reports:</p>
+	<blockquote cite="http://www.kb.cert.org/vuls/id/175068">
+	  <p>PivotX contains a vulnerability that allows an
+	    attacker to change the password of any account
+	    just by guessing the username.  Version 2.2.4 has
+	    been reported to not be affected.
+	    This vulnerability is being exploited in the wild
+	    and users should immediately upgrade to 2.2.5 or
+	    later.  Mitigation steps for users that have been
+	    compromised have been posted to the <a
+	      href="http://forum.pivotx.net/viewtopic.php?f=2&amp;t=1967">PivotX
+	    Support Community</a>.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2011-1035</cvename>
+    </references>
+    <dates>
+      <discovery>2011-02-18</discovery>
+      <entry>2011-02-20</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="553ec4ed-38d6-11e0-94b1-000c29ba66d2">
     <topic>tomcat -- Cross-site scripting vulnerability</topic>
     <affects>
