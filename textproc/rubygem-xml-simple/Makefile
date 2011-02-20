@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	xml-simple
-PORTVERSION=	1.0.12
+PORTVERSION=	1.0.14
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
