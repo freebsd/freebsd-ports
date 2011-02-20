@@ -20,7 +20,7 @@ DIST_SUBDIR=	${PORTNAME}
 MAINTAINER=	sahil@FreeBSD.org
 COMMENT=	A secure alternative to widely-used Sendmail
 
-VDAVERSION=	2.7.0
+VDAVERSION=	2.8.0
 CONFLICTS=	courier-0.* postfix-1.* postfix-2.[0-79].* postfix-base-2.[0-79].* \
 		postfix-current-2.* postfix-current-base-2.* sendmail-8.* \
 		sendmail+*-8.* smail-3.* zmailer-2.*
@@ -229,9 +229,7 @@ POSTFIX_CCARGS+=	-DHAS_NIS
 _REQUIRE+=		ypserv
 .endif
 
-# 32Bit VDA patch (64Bit has different patch)
 .if defined(WITH_VDA)
-BROKEN=			At the moment, VDA support is unavailable for ${PORTNAME}-${DISTVERSION}
 PATCH_SITES+=		http://vda.sourceforge.net/VDA/:vda
 PATCHFILES+=		postfix-vda-${VDAVERSION}.patch:vda
 PATCH_DIST_STRIP=	-p1
