@@ -957,6 +957,7 @@
     SUBDIR += ruby-spread
     SUBDIR += ruby-tcpsocketpipe
     SUBDIR += ruby-tserver
+    SUBDIR += rubygem-amqp
     SUBDIR += rubygem-bunny
     SUBDIR += rubygem-geoip
     SUBDIR += rubygem-ipaddress
