@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	TurboJson
-PORTVERSION=	1.3
+PORTVERSION=	1.3.1
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP \
 		http://www.turbogears.org/2.0/downloads/2.0.1/ \
