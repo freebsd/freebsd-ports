@@ -3403,6 +3403,7 @@
     SUBDIR += truc
     SUBDIR += u-boot
     SUBDIR += uclmmbase
+    SUBDIR += ucommon
     SUBDIR += ucpp
     SUBDIR += udis86
     SUBDIR += umem
