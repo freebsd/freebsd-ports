@@ -18,9 +18,15 @@ PLIST_FILES=	%%LUA_MODSHAREDIR%%/sysctl.lua \
 		%%LUA_MODLIBDIR%%/sysctl/core.so
 PLIST_DIRS=	%%LUA_MODLIBDIR%%/sysctl
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 900030
+BROKEN=	Does not build
+.endif
+
 do-install:
 	${MKDIR} ${LUA_MODLIBDIR}/sysctl
 	${INSTALL_SCRIPT} ${WRKSRC}/sysctl.lua ${LUA_MODSHAREDIR}/sysctl.lua
 	${INSTALL_SCRIPT} ${WRKSRC}/sysctl/core.so ${LUA_MODLIBDIR}/sysctl/core.so
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
