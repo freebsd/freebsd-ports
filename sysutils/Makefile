@@ -642,6 +642,7 @@
     SUBDIR += pear-Log
     SUBDIR += pear-Translation2
     SUBDIR += pecl-fileinfo
+    SUBDIR += pecl-mogilefs
     SUBDIR += pecl-proctitle
     SUBDIR += penv
     SUBDIR += perf
