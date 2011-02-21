@@ -1538,3 +1538,7 @@ audio/libjackasyn|audio/jack|2011-02-11|Has expired: development has ceased; try
 audio/xmms-jackasyn|audio/xmms-jack|2011-02-11|Has expired: development has ceased; try audio/xmms-jack instead
 lang/p5-SQL-Tokenizer|textproc/p5-SQL-Tokenizer|2011-02-13|Moved to a more appropriate category
 misc/wanpipe||2011-02-14|Removed
+devel/root||2011-02-21|Has expired: Port does not build on supported versions of FreeBSD
+net/ztelnet||2011-02-21|Has expired: unfetchable
+print/kaspaliste||2011-02-21|Has expired: yes
+sysutils/perf||2011-02-21|Has expired: Does not build on supported versions of FreeBSD

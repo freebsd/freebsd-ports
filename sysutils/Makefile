@@ -645,7 +645,6 @@
     SUBDIR += pecl-mogilefs
     SUBDIR += pecl-proctitle
     SUBDIR += penv
-    SUBDIR += perf
     SUBDIR += personality
     SUBDIR += pessulus
     SUBDIR += pflogx
