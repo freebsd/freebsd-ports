@@ -1,11 +1,8 @@
 bin/grisbi
-lib/grisbi/gnucash.a
 lib/grisbi/gnucash.la
 lib/grisbi/gnucash.so
-lib/grisbi/ofx.a
 lib/grisbi/ofx.la
 lib/grisbi/ofx.so
-lib/grisbi/openssl.a
 lib/grisbi/openssl.la
 lib/grisbi/openssl.so
 share/applications/grisbi.desktop
@@ -40,16 +37,14 @@ share/applications/grisbi.desktop
 %%NLS%%share/locale/cs/LC_MESSAGES/grisbi.mo
 %%NLS%%share/locale/da/LC_MESSAGES/grisbi.mo
 %%NLS%%share/locale/de/LC_MESSAGES/grisbi.mo
-%%PORTDOCS%%%%NLS%%share/locale/de/LC_MESSAGES/grisbi-tips.mo
 %%NLS%%share/locale/el/LC_MESSAGES/grisbi.mo
 %%NLS%%share/locale/eo/LC_MESSAGES/grisbi.mo
 %%NLS%%share/locale/es/LC_MESSAGES/grisbi.mo
-%%PORTDOCS%%%%NLS%%share/locale/es/LC_MESSAGES/grisbi-tips.mo
 %%NLS%%share/locale/fa/LC_MESSAGES/grisbi.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/grisbi.mo
-%%PORTDOCS%%%%NLS%%share/locale/fr/LC_MESSAGES/grisbi-tips.mo
 %%NLS%%share/locale/he/LC_MESSAGES/grisbi.mo
 %%NLS%%share/locale/it/LC_MESSAGES/grisbi.mo
+%%NLS%%share/locale/lv/LC_MESSAGES/grisbi.mo
 %%NLS%%share/locale/nl/LC_MESSAGES/grisbi.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/grisbi.mo
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/grisbi.mo
@@ -73,9 +68,11 @@ share/applications/grisbi.desktop
 %%DATADIR%%/categories/ru/empty.cgsb
 %%DATADIR%%/pixmaps/ac_asset.png
 %%DATADIR%%/pixmaps/ac_bank.png
+%%DATADIR%%/pixmaps/ac_bank_16.png
 %%DATADIR%%/pixmaps/ac_cash.png
 %%DATADIR%%/pixmaps/ac_home.png
 %%DATADIR%%/pixmaps/ac_liability.png
+%%DATADIR%%/pixmaps/ac_liability_16.png
 %%DATADIR%%/pixmaps/addresses.png
 %%DATADIR%%/pixmaps/amount.png
 %%DATADIR%%/pixmaps/archive.png
@@ -290,6 +287,7 @@ share/applications/grisbi.desktop
 %%DATADIR%%/pixmaps/impexp.png
 %%DATADIR%%/pixmaps/import.png
 %%DATADIR%%/pixmaps/importlg.png
+%%DATADIR%%/pixmaps/locale.png
 %%DATADIR%%/pixmaps/new-categ.png
 %%DATADIR%%/pixmaps/new-ib.png
 %%DATADIR%%/pixmaps/new-payee.png
@@ -316,7 +314,6 @@ share/applications/grisbi.desktop
 %%DATADIR%%/pixmaps/transdisplay.png
 %%DATADIR%%/pixmaps/transfer.png
 %%DATADIR%%/pixmaps/warnings.png
-%%PORTDOCS%%%%DATADIR%%/tips.txt
 share/icons/hicolor/48x48/apps/grisbi.png
 share/mime-info/grisbi.keys
 share/mime-info/grisbi.mime

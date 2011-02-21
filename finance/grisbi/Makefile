@@ -6,15 +6,17 @@
 #
 
 PORTNAME=	grisbi
-PORTVERSION=	0.6.0
+PORTVERSION=	0.8.1
 CATEGORIES=	finance
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}%20${PORTVERSION}/${PORTVERSION}/
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}%20stable/${PORTVERSION:R}.x/
 
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	A personnal accounting application
 
 LIB_DEPENDS=	ofx.4:${PORTSDIR}/finance/libofx	\
 		ssl.7:${PORTSDIR}/security/openssl
+
+LICENSE=	GPLv2
 
 USE_BZIP2=	yes
 USE_ICONV=	yes
