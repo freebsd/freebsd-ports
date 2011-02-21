@@ -16,6 +16,8 @@ COMMENT=	Main Memory Relational Database Management System
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
+BROKEN=		fails to patch
+
 USE_GMAKE=	yes
 MAKE_ENV=	OSTYPE="${OPSYS}" \
 		PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
