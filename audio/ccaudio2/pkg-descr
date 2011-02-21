@@ -3,4 +3,4 @@ audio data. This library is optimized for DSP frame presentation and for
 merging audio from multiple sources.  Support is provided for many common
 and popular sound file formats such as .au, .wav/RIFF, etc.
 
-WWW: http://www.gnutelephony.org/
+WWW: http://www.gnutelephony.org/index.php/GNU_ccAudio2
