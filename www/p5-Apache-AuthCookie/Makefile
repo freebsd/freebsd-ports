@@ -14,15 +14,16 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	A perl module to provide custom forms for reauthentication
 
-.if defined(WITH_MODPERL2)
+USE_APACHE=	13+
+.include <bsd.port.pre.mk>
+
+.if defined(WITH_MODPERL2) || ${APACHE_VERSION} > 13
 BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/mod_perl2.pm:${PORTSDIR}/www/mod_perl2
 RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/mod_perl2.pm:${PORTSDIR}/www/mod_perl2
-USE_APACHE=	2.0+
 .else
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/mod_perl.pm:${PORTSDIR}/www/mod_perl \
 		${SITE_PERL}/${PERL_ARCH}/Apache/Test.pm:${PORTSDIR}/www/p5-Apache-Test
 RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/mod_perl.pm:${PORTSDIR}/www/mod_perl
-USE_APACHE=	1.3
 .endif
 
 CURUSER?=	`whoami`
@@ -36,4 +37,4 @@ CONFIGURE_ENV+=	APACHE="${HTTPD}" \
 
 MAN3=		Apache::AuthCookie.3 Apache2::AuthCookie.3 Apache::AuthCookie::Util.3 Apache::AuthCookie::FAQ.3
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
