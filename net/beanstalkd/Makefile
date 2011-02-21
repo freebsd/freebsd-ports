@@ -6,11 +6,9 @@
 #
 
 PORTNAME=	beanstalkd
-PORTVERSION=	1.4.2
-PORTREVISION=	1
+PORTVERSION=	1.4.6
 CATEGORIES=	net
-MASTER_SITES=	http://xph.us/dist/beanstalkd/ \
-				http://xph.us/software/beanstalkd/rel/
+MASTER_SITES=	https://github.com/downloads/kr/beanstalkd/
 
 MAINTAINER=	vsevolod@FreeBSD.org
 COMMENT=	Fast, distributed, in-memory workqueue service
