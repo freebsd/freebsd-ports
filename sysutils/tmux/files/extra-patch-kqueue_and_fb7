@@ -1,0 +1,20 @@
+--- configure.orig	2011-02-21 14:37:37.000000000 +0800
++++ configure	2011-02-21 14:38:21.000000000 +0800
+@@ -222,9 +222,7 @@
+     FreeBSD|DragonFly)
+ 	cat <<EOF >>$CONFIG_H
+ #define HAVE_ASPRINTF
+-#define HAVE_BROKEN_KQUEUE
+ #define HAVE_BZERO
+-#define HAVE_CLOSEFROM
+ #define HAVE_DAEMON
+ #define HAVE_FGETLN
+ #define HAVE_FORKPTY
+@@ -245,6 +243,7 @@
+ 	cat <<EOF >>$CONFIG_MK
+ LIBS+= -lcurses -lutil -levent
+ SRCS+= osdep-freebsd.c \
++	compat/closefrom.c \
+ 	compat/vis.c \
+ 	compat/unvis.c \
+ 	compat/imsg-buffer.c \

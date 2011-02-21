@@ -1,0 +1,18 @@
+--- configure.orig	2011-02-21 10:52:19.000000000 +0800
++++ configure	2011-02-21 10:54:29.000000000 +0800
+@@ -224,7 +224,6 @@
+ #define HAVE_ASPRINTF
+ #define HAVE_BROKEN_KQUEUE
+ #define HAVE_BZERO
+-#define HAVE_CLOSEFROM
+ #define HAVE_DAEMON
+ #define HAVE_FGETLN
+ #define HAVE_FORKPTY
+@@ -245,6 +244,7 @@
+ 	cat <<EOF >>$CONFIG_MK
+ LIBS+= -lcurses -lutil -levent
+ SRCS+= osdep-freebsd.c \
++	compat/closefrom.c \
+ 	compat/vis.c \
+ 	compat/unvis.c \
+ 	compat/imsg-buffer.c \
