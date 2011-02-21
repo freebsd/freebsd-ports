@@ -1,0 +1,6 @@
+PHP MogileFS is a client library to communicate with MogileFS trackers.
+Those trackers are part of the distributed filesystem MogileFS created
+by Danga Interactive (http://www.danga.com/) and used in serveral large
+scale projects like LiveJournal.
+
+WWW: http://pecl.php.net/package/mogilefs
