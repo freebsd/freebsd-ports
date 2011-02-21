@@ -21629,6 +21629,7 @@ py-py-restclient                ports/www/py-py-restclient
 py-py2play                      ports/net-p2p/py-py2play
 py-pyPgSQL                      ports/databases/py-pyPgSQL
 py-pyang                        ports/net-mgmt/py-pyang
+py-pybloom                      ports/math/py-pybloom
 py-pybmp                        ports/multimedia/py-pybmp
 py-pycallgraph                  ports/devel/py-pycallgraph
 py-pycerberus                   ports/devel/py-pycerberus
@@ -21746,6 +21747,7 @@ py-s3cmd                        ports/net/py-s3cmd
 py-satchmo                      ports/www/py-satchmo
 py-scgi                         ports/www/py-scgi
 py-scientific                   ports/math/py-scientific
+py-scimath                      ports/science/py-scimath
 py-sciparam                     ports/x11-toolkits/py-SciParam
 py-scipy                        ports/science/py-scipy
 py-scrapy                       ports/www/py-scrapy
@@ -23124,6 +23126,7 @@ rubygem-activeresource          ports/www/rubygem-activeresource
 rubygem-activesupport           ports/devel/rubygem-activesupport
 rubygem-addressable             ports/www/rubygem-addressable
 rubygem-amazon-ecs              ports/www/rubygem-amazon-ecs
+rubygem-amqp                    ports/net/rubygem-amqp
 rubygem-analogger               ports/devel/rubygem-analogger
 rubygem-anemone                 ports/www/rubygem-anemone
 rubygem-archive-tar-minitar     ports/archivers/rubygem-archive-tar-minitar
