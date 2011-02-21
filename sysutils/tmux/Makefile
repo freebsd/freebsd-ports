@@ -7,7 +7,7 @@
 
 PORTNAME=	tmux
 PORTVERSION=	1.4
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	sysutils
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
@@ -29,11 +29,26 @@ CFLAGS+=	-I${LOCALBASE}/include
 #LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS+=	CFLAGS="${CFLAGS}" LDFLAGS="${LDFLAGS}"
 
+OPTIONS=		KQUEUE   "Build without define HAVE_BROKEN_KQUEUE " On
+
+# Now I set tmux build without #define HAVE_BROKEN_KQUEUE as default and an option,
+# If it still hang the system or other run error, try as upstream suggest:
+# http://sourceforge.net/mailarchive/forum.php?thread_name=20110125092121.GA15934%40yelena.nicm.ath.cx&forum_name=tmux-users
+
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 702104
-BROKEN=		fails to build with closefrom
-# More detailed message: http://svn.freebsd.org/viewvc/base/stable/7/sys/kern/syscalls.master?revision=195694&amp;view=markup
+EXTRA_PATCHES=	${PATCHDIR}/extra-patch-configure
+.endif
+
+.if !defined(WITHOUT_KQUEUE)
+.if ${OSVERSION} < 702104
+EXTRA_PATCHES=	${PATCHDIR}/extra-patch-kqueue_and_fb7
+.else
+EXTRA_PATCHES=	${PATCHDIR}/extra-patch-kqueue
+.endif
+.else
+EXTRA_PATCHES=	${PATCHDIR}/extra-patch-fb7
 .endif
 
 post-patch:

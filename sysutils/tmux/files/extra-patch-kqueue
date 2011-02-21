@@ -1,0 +1,10 @@
+--- configure.orig	2011-02-21 14:12:33.000000000 +0800
++++ configure	2011-02-21 14:13:00.000000000 +0800
+@@ -222,7 +222,6 @@
+     FreeBSD|DragonFly)
+ 	cat <<EOF >>$CONFIG_H
+ #define HAVE_ASPRINTF
+-#define HAVE_BROKEN_KQUEUE
+ #define HAVE_BZERO
+ #define HAVE_CLOSEFROM
+ #define HAVE_DAEMON
