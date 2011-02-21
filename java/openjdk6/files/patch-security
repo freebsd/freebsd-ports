@@ -1,0 +1,1665 @@
+--- hotspot/src/share/vm/memory/allocation.cpp	2011-01-20 18:51:20.000000000 -0500
++++ hotspot/src/share/vm/memory/allocation.cpp	2011-02-17 18:15:34.000000000 -0500
+@@ -377,6 +377,9 @@ size_t Arena::used() const {
+   return sum;                   // Return total consumed space.
+ }
+ 
++void Arena::signal_out_of_memory(size_t sz, const char* whence) const {
++  vm_exit_out_of_memory(sz, whence);
++}
+ 
+ // Grow a new Chunk
+ void* Arena::grow( size_t x ) {
+@@ -386,8 +389,9 @@ void* Arena::grow( size_t x ) {
+   Chunk *k = _chunk;            // Get filled-up chunk address
+   _chunk = new (len) Chunk(len);
+ 
+-  if (_chunk == NULL)
+-      vm_exit_out_of_memory(len * Chunk::aligned_overhead_size(), "Arena::grow");
++  if (_chunk == NULL) {
++    signal_out_of_memory(len * Chunk::aligned_overhead_size(), "Arena::grow");
++  }
+ 
+   if (k) k->set_next(_chunk);   // Append new chunk to end of linked list
+   else _first = _chunk;
+@@ -484,6 +488,7 @@ void* Arena::malloc(size_t size) {
+ // for debugging with UseMallocOnly
+ void* Arena::internal_malloc_4(size_t x) {
+   assert( (x&(sizeof(char*)-1)) == 0, "misaligned size" );
++  check_for_overflow(x, "Arena::internal_malloc_4");
+   if (_hwm + x > _max) {
+     return grow(x);
+   } else {
+--- hotspot/src/share/vm/memory/allocation.hpp	2011-01-20 18:51:20.000000000 -0500
++++ hotspot/src/share/vm/memory/allocation.hpp	2011-02-17 18:15:34.000000000 -0500
+@@ -194,6 +194,15 @@ protected:
+   friend class AllocStats;
+   debug_only(void* malloc(size_t size);)
+   debug_only(void* internal_malloc_4(size_t x);)
++
++  void signal_out_of_memory(size_t request, const char* whence) const;
++
++  void check_for_overflow(size_t request, const char* whence) const {
++    if (UINTPTR_MAX - request < (uintptr_t)_hwm) {
++      signal_out_of_memory(request, whence);
++    }
++  }
++
+  public:
+   Arena();
+   Arena(size_t init_size);
+@@ -207,6 +216,7 @@ protected:
+     assert(is_power_of_2(ARENA_AMALLOC_ALIGNMENT) , "should be a power of 2");
+     x = ARENA_ALIGN(x);
+     debug_only(if (UseMallocOnly) return malloc(x);)
++    check_for_overflow(x, "Arena::Amalloc");
+     NOT_PRODUCT(_bytes_allocated += x);
+     if (_hwm + x > _max) {
+       return grow(x);
+@@ -220,6 +230,7 @@ protected:
+   void *Amalloc_4(size_t x) {
+     assert( (x&(sizeof(char*)-1)) == 0, "misaligned size" );
+     debug_only(if (UseMallocOnly) return malloc(x);)
++    check_for_overflow(x, "Arena::Amalloc_4");
+     NOT_PRODUCT(_bytes_allocated += x);
+     if (_hwm + x > _max) {
+       return grow(x);
+@@ -240,6 +251,7 @@ protected:
+     size_t delta = (((size_t)_hwm + DALIGN_M1) & ~DALIGN_M1) - (size_t)_hwm;
+     x += delta;
+ #endif
++    check_for_overflow(x, "Arena::Amalloc_D");
+     NOT_PRODUCT(_bytes_allocated += x);
+     if (_hwm + x > _max) {
+       return grow(x); // grow() returns a result aligned >= 8 bytes.
+--- hotspot/src/share/vm/utilities/globalDefinitions_sparcWorks.hpp	2011-01-20 18:51:22.000000000 -0500
++++ hotspot/src/share/vm/utilities/globalDefinitions_sparcWorks.hpp	2011-02-17 18:15:34.000000000 -0500
+@@ -143,6 +143,17 @@ typedef unsigned int            uintptr_
+ #endif
+ #endif
+ 
++// On solaris 8, UINTPTR_MAX is defined as empty.  
++// Everywhere else it's an actual value.
++#if UINTPTR_MAX - 1 == -1
++#undef UINTPTR_MAX
++#ifdef _LP64
++#define UINTPTR_MAX UINT64_MAX
++#else
++#define UINTPTR_MAX UINT32_MAX
++#endif /* ifdef _LP64 */
++#endif
++
+ // Additional Java basic types
+ 
+ typedef unsigned char      jubyte;
+--- hotspot/src/share/vm/utilities/globalDefinitions_visCPP.hpp	2011-01-20 18:51:22.000000000 -0500
++++ hotspot/src/share/vm/utilities/globalDefinitions_visCPP.hpp	2011-02-17 18:15:34.000000000 -0500
+@@ -36,6 +36,7 @@
+ # include <stdio.h> // for va_list
+ # include <time.h>
+ # include <fcntl.h>
++# include <limits.h>
+ // Need this on windows to get the math constants (e.g., M_PI).
+ #define _USE_MATH_DEFINES
+ # include <math.h>
+@@ -94,6 +95,14 @@ typedef signed   int intptr_t;
+ typedef signed   int ssize_t;
+ #endif
+ 
++#ifndef UINTPTR_MAX
++#ifdef _WIN64
++#define UINTPTR_MAX _UI64_MAX
++#else
++#define UINTPTR_MAX _UI32_MAX
++#endif
++#endif
++
+ //----------------------------------------------------------------------------------------------------
+ // Additional Java basic types
+ 
+--- jaxp/build.properties	2011-01-20 18:51:34.000000000 -0500
++++ jaxp/build.properties	2011-02-17 18:15:35.000000000 -0500
+@@ -77,6 +77,9 @@
+ # Where patches to drop bundle sources live
+ patches.dir=patches
+ 
++# Patches to apply
++jaxp_src.patch.list=6927050.patch
++
+ # Sanity information
+ sanity.info= Sanity Settings:${line.separator}\
+   ant.home=${ant.home}${line.separator}\
+--- jaxp/patches/jaxp_src/6927050.patch	2011-02-18 18:33:00.000000000 -0500
++++ jaxp/patches/jaxp_src/6927050.patch	2011-02-18 18:34:31.000000000 -0500
+@@ -0,0 +1,311 @@
++--- src/com/sun/org/apache/xerces/internal/jaxp/validation/AbstractXMLSchema.java	2010-08-26 17:50:55.000000000 -0400
+++++ src/com/sun/org/apache/xerces/internal/jaxp/validation/AbstractXMLSchema.java	2011-02-18 18:14:28.000000000 -0500
++@@ -20,6 +20,8 @@
++ 
++ package com.sun.org.apache.xerces.internal.jaxp.validation;
++ 
+++import java.util.HashMap;
+++
++ import javax.xml.validation.Schema;
++ import javax.xml.validation.Validator;
++ import javax.xml.validation.ValidatorHandler;
++@@ -32,6 +34,16 @@
++ abstract class AbstractXMLSchema extends Schema implements
++         XSGrammarPoolContainer {
++ 
+++    /**
+++     * Map containing the initial values of features for
+++     * validators created using this grammar pool container.
+++     */
+++    private final HashMap fFeatures;
+++
+++    public AbstractXMLSchema() {
+++        fFeatures = new HashMap();
+++    }
+++
++     /*
++      * Schema methods
++      */
++@@ -50,4 +62,25 @@
++         return new ValidatorHandlerImpl(this);
++     }
++ 
+++    /*
+++     * XSGrammarPoolContainer methods
+++     */
+++
+++    /**
+++     * Returns the initial value of a feature for validators created
+++     * using this grammar pool container or null if the validators
+++     * should use the default value.
+++     */
+++    public final Boolean getFeature(String featureId) {
+++        return (Boolean) fFeatures.get(featureId);
+++    }
+++
+++    /*
+++     * Other methods
+++     */
+++
+++    final void setFeature(String featureId, boolean state) {
+++        fFeatures.put(featureId, state ? Boolean.TRUE : Boolean.FALSE);
+++    }
+++
++ } // AbstractXMLSchema
++--- src/com/sun/org/apache/xerces/internal/jaxp/validation/EmptyXMLSchema.java	2010-08-26 17:50:55.000000000 -0400
+++++ src/com/sun/org/apache/xerces/internal/jaxp/validation/EmptyXMLSchema.java	2011-02-18 18:33:41.000000000 -0500
++@@ -32,17 +32,10 @@
++  */
++ final class EmptyXMLSchema extends AbstractXMLSchema implements XMLGrammarPool {
++ 
++-    private static EmptyXMLSchema EMPTY_XML_SCHEMA_INSTANCE = new EmptyXMLSchema();
++-
++     /** Zero length grammar array. */
++     private static final Grammar [] ZERO_LENGTH_GRAMMAR_ARRAY = new Grammar [0];
++ 
++-    /** Returns the one and only instance of this class. */
++-    public static EmptyXMLSchema getInstance() {
++-        return EMPTY_XML_SCHEMA_INSTANCE;
++-    }
++-
++-    private EmptyXMLSchema() {}
+++    public EmptyXMLSchema() {}
++ 
++     /*
++      * XMLGrammarPool methods
++--- src/com/sun/org/apache/xerces/internal/jaxp/validation/XMLSchemaFactory.java	2010-08-27 16:13:40.000000000 -0400
+++++ src/com/sun/org/apache/xerces/internal/jaxp/validation/XMLSchemaFactory.java	2011-02-18 18:14:28.000000000 -0500
++@@ -228,21 +228,26 @@
++         
++         // Select Schema implementation based on grammar count.
++         final int grammarCount = pool.getGrammarCount();
+++        AbstractXMLSchema schema = null;
++         if (grammarCount > 1) {
++-            return new XMLSchema(new ReadOnlyGrammarPool(pool));
+++            schema = new XMLSchema(new ReadOnlyGrammarPool(pool));
++         }
++         else if (grammarCount == 1) {
++             Grammar[] grammars = pool.retrieveInitialGrammarSet(XMLGrammarDescription.XML_SCHEMA);
++-            return new SimpleXMLSchema(grammars[0]);
+++            schema = new SimpleXMLSchema(grammars[0]);
++         }
++         else {
++-            return EmptyXMLSchema.getInstance();
+++            schema = new EmptyXMLSchema();
++         }
+++        propagateFeatures(schema);
+++        return schema;
++     }
++     
++     public Schema newSchema() throws SAXException {
++         // Use a Schema that uses the system id as the equality source.
++-        return new WeakReferenceXMLSchema();
+++        AbstractXMLSchema schema = new WeakReferenceXMLSchema();
+++        propagateFeatures(schema);
+++        return schema;
++     }
++     
++     public boolean getFeature(String name) 
++@@ -371,6 +376,15 @@
++             }
++         }
++     }
+++
+++    private void propagateFeatures(AbstractXMLSchema schema) {
+++        schema.setFeature(XMLConstants.FEATURE_SECURE_PROCESSING, fSecurityManager != null);
+++        String[] features = fXMLSchemaLoader.getRecognizedFeatures();
+++        for (int i = 0; i < features.length; ++i) {
+++            boolean state = fXMLSchemaLoader.getFeature(features[i]);
+++            schema.setFeature(features[i], state);
+++        }
+++    }
++     
++     /** 
++      * Extension of XMLGrammarPoolImpl which exposes the number of
++--- src/com/sun/org/apache/xerces/internal/jaxp/validation/XMLSchemaValidatorComponentManager.java	2010-08-27 16:13:39.000000000 -0400
+++++ src/com/sun/org/apache/xerces/internal/jaxp/validation/XMLSchemaValidatorComponentManager.java	2011-02-18 18:14:28.000000000 -0500
++@@ -22,6 +22,8 @@
++ 
++ import java.util.HashMap;
++ import java.util.Locale;
+++import java.util.Iterator;
+++import java.util.Map;
++ 
++ import javax.xml.XMLConstants;
++ 
++@@ -159,6 +161,19 @@
++        
++     /** Validation manager. */
++     private ValidationManager fValidationManager;
+++
+++    //
+++    // Configuration
+++    //
+++
+++    /** Stores initial feature values for validator reset. */
+++    private final HashMap fInitFeatures = new HashMap();
+++
+++    /** Stores initial property values for validator reset. */
+++    private final HashMap fInitProperties = new HashMap();
+++
+++    /** Stores the initial security manager. */
+++    private final SecurityManager fInitSecurityManager;
++     
++     //
++     // User Objects
++@@ -211,9 +226,20 @@
++         fErrorReporter.putMessageFormatter(XSMessageFormatter.SCHEMA_DOMAIN, new XSMessageFormatter());
++         
++         // add all recognized features and properties and apply their defaults
++-        addRecognizedParamsAndSetDefaults(fEntityManager);
++-        addRecognizedParamsAndSetDefaults(fErrorReporter);
++-        addRecognizedParamsAndSetDefaults(fSchemaValidator); 
+++        addRecognizedParamsAndSetDefaults(fEntityManager, grammarContainer);
+++        addRecognizedParamsAndSetDefaults(fErrorReporter, grammarContainer);
+++        addRecognizedParamsAndSetDefaults(fSchemaValidator, grammarContainer);
+++
+++        // if the secure processing feature is set to true, add a security manager to the configuration
+++        Boolean secureProcessing = grammarContainer.getFeature(XMLConstants.FEATURE_SECURE_PROCESSING);
+++        if (Boolean.TRUE.equals(secureProcessing)) {
+++            fInitSecurityManager = new SecurityManager();
+++    }
+++        else {
+++            fInitSecurityManager = null;
+++        }
+++        fComponents.put(SECURITY_MANAGER, fInitSecurityManager);
+++
++     }
++ 
++     /**
++@@ -266,7 +292,6 @@
++         else if (USE_GRAMMAR_POOL_ONLY.equals(featureId) && value != fUseGrammarPoolOnly) {
++             throw new XMLConfigurationException(XMLConfigurationException.NOT_SUPPORTED, featureId);
++         }
++-        fConfigUpdated = true;
++         if (XMLConstants.FEATURE_SECURE_PROCESSING.equals(featureId)) {
++             if (_isSecureMode && !value) {
++                 throw new XMLConfigurationException(XMLConfigurationException.NOT_ALLOWED, XMLConstants.FEATURE_SECURE_PROCESSING);
++@@ -274,9 +299,14 @@
++             setProperty(SECURITY_MANAGER, value ? new SecurityManager() : null);
++             return;
++         }
+++        fConfigUpdated = true;
++         fEntityManager.setFeature(featureId, value);
++         fErrorReporter.setFeature(featureId, value);
++         fSchemaValidator.setFeature(featureId, value);
+++        if (!fInitFeatures.containsKey(featureId)) {
+++            boolean current = super.getFeature(featureId);
+++            fInitFeatures.put(featureId, current ? Boolean.TRUE : Boolean.FALSE);
+++        }
++         super.setFeature(featureId, value);
++     }
++     
++@@ -336,6 +366,9 @@
++             fComponents.put(propertyId, value);
++             return;
++         }
+++        if (!fInitProperties.containsKey(propertyId)) {
+++            fInitProperties.put(propertyId, super.getProperty(propertyId));
+++        }
++         super.setProperty(propertyId, value);
++     }
++     
++@@ -348,7 +381,7 @@
++      * @param component The component whose recognized features
++      * and properties will be added to the configuration
++      */
++-    public void addRecognizedParamsAndSetDefaults(XMLComponent component) {
+++    public void addRecognizedParamsAndSetDefaults(XMLComponent component, XSGrammarPoolContainer grammarContainer) {
++         
++         // register component's recognized features
++         final String[] recognizedFeatures = component.getRecognizedFeatures();
++@@ -359,7 +392,7 @@
++         addRecognizedProperties(recognizedProperties);
++ 
++         // set default values
++-        setFeatureDefaults(component, recognizedFeatures);
+++        setFeatureDefaults(component, recognizedFeatures, grammarContainer);
++         setPropertyDefaults(component, recognizedProperties);
++     }
++     
++@@ -406,10 +439,6 @@
++     void restoreInitialState() {
++         fConfigUpdated = true;
++         
++-        // Clear feature and property tables.
++-        fFeatures.clear();
++-        fProperties.clear();
++-        
++         // Remove error resolver and error handler
++         fComponents.put(ENTITY_RESOLVER, null);
++         fComponents.put(ERROR_HANDLER, null);
++@@ -418,21 +447,46 @@
++         setLocale(null);
++         fComponents.put(LOCALE, null);
++        
++-        // Restore component defaults.
++-        setFeatureDefaults(fEntityManager, fEntityManager.getRecognizedFeatures());
++-        setPropertyDefaults(fEntityManager, fEntityManager.getRecognizedProperties());
++-        setFeatureDefaults(fErrorReporter, fErrorReporter.getRecognizedFeatures());
++-        setPropertyDefaults(fErrorReporter, fErrorReporter.getRecognizedProperties());
++-        setFeatureDefaults(fSchemaValidator, fSchemaValidator.getRecognizedFeatures());
++-        setPropertyDefaults(fSchemaValidator, fSchemaValidator.getRecognizedProperties());
+++        // Restore initial security manager
+++        fComponents.put(SECURITY_MANAGER, fInitSecurityManager);
+++
+++        // Set the Locale back to null.
+++        setLocale(null);
+++        fComponents.put(LOCALE, null);
+++
+++        // Reset feature and property values to their initial values
+++        if (!fInitFeatures.isEmpty()) {
+++            Iterator iter = fInitFeatures.entrySet().iterator();
+++            while (iter.hasNext()) {
+++                Map.Entry entry = (Map.Entry) iter.next();
+++                String name = (String) entry.getKey();
+++                boolean value = ((Boolean) entry.getValue()).booleanValue();
+++                super.setFeature(name, value);
+++    }
+++            fInitFeatures.clear();
+++        }
+++        if (!fInitProperties.isEmpty()) {
+++            Iterator iter = fInitProperties.entrySet().iterator();
+++            while (iter.hasNext()) {
+++                Map.Entry entry = (Map.Entry) iter.next();
+++                String name = (String) entry.getKey();
+++                Object value = entry.getValue();
+++                super.setProperty(name, value);
+++            }
+++            fInitProperties.clear();
+++        }
++     }
++     
++     /** Sets feature defaults for the given component on this configuration. */
++-    private void setFeatureDefaults(final XMLComponent component, final String [] recognizedFeatures) {
+++    private void setFeatureDefaults(final XMLComponent component,
+++            final String [] recognizedFeatures, XSGrammarPoolContainer grammarContainer) {
++         if (recognizedFeatures != null) {
++             for (int i = 0; i < recognizedFeatures.length; ++i) {
++                 String featureId = recognizedFeatures[i];
++-                Boolean state = component.getFeatureDefault(featureId);
+++                Boolean state = grammarContainer.getFeature(featureId);
+++                if (state == null) {
+++                    state = component.getFeatureDefault(featureId);
+++                }
++                 if (state != null) {
++                     // Do not overwrite values already set on the configuration.
++                     if (!fFeatures.containsKey(featureId)) {
++--- src/com/sun/org/apache/xerces/internal/jaxp/validation/XSGrammarPoolContainer.java	2010-08-26 17:50:55.000000000 -0400
+++++ src/com/sun/org/apache/xerces/internal/jaxp/validation/XSGrammarPoolContainer.java	2011-02-18 18:14:28.000000000 -0500
++@@ -47,4 +47,11 @@
++      */
++     public boolean isFullyComposed();
++ 
+++    /**
+++     * Returns the initial value of a feature for validators created
+++     * using this grammar pool container or null if the validators
+++     * should use the default value.
+++     */
+++    public Boolean getFeature(String featureId);
+++
++ }
+--- jdk/make/sun/net/FILES_java.gmk	2011-01-20 18:54:06.000000000 -0500
++++ jdk/make/sun/net/FILES_java.gmk	2011-02-17 18:15:35.000000000 -0500
+@@ -34,6 +34,7 @@ FILES_java = \
+ 	sun/net/ProgressEvent.java \
+ 	sun/net/ProgressListener.java \
+ 	sun/net/ProgressMeteringPolicy.java \
++	sun/net/ResourceManager.java \
+ 	sun/net/TelnetInputStream.java \
+ 	sun/net/TelnetOutputStream.java \
+ 	sun/net/TelnetProtocolException.java \
+--- jdk/src/share/classes/com/sun/org/apache/xml/internal/security/transforms/Transform.java	2011-01-20 18:54:12.000000000 -0500
++++ jdk/src/share/classes/com/sun/org/apache/xml/internal/security/transforms/Transform.java	2011-02-17 18:15:35.000000000 -0500
+@@ -247,6 +247,8 @@ public final class Transform extends Sig
+ 
+       if (!_alreadyInitialized) {
+          _transformHash = new HashMap(10);
++         // make sure builtin algorithms are all registered first
++         com.sun.org.apache.xml.internal.security.Init.init();
+          _alreadyInitialized = true;
+       }
+    }
+@@ -274,19 +276,13 @@ public final class Transform extends Sig
+                "algorithm.alreadyRegistered", exArgs);
+          }
+ 
+-         ClassLoader cl = (ClassLoader) AccessController.doPrivileged(
+-             new PrivilegedAction() {
+-                 public Object run() {
+-                     return Thread.currentThread().getContextClassLoader();
+-                 }
+-             });
++         ClassLoader cl = Thread.currentThread().getContextClassLoader();
+ 
+          try {
+              Transform._transformHash.put
+                  (algorithmURI, Class.forName(implementingClass, true, cl));
+          } catch (ClassNotFoundException e) {
+-             // TODO Auto-generated catch block
+-             e.printStackTrace();
++             throw new RuntimeException(e);
+          }
+       }
+    }
+--- jdk/src/share/classes/java/awt/AWTEvent.java	2011-01-20 18:54:13.000000000 -0500
++++ jdk/src/share/classes/java/awt/AWTEvent.java	2011-02-17 18:15:34.000000000 -0500
+@@ -33,6 +33,12 @@ import java.lang.reflect.Field;
+ import java.util.logging.Logger;
+ import java.util.logging.Level;
+ 
++import java.security.AccessControlContext;
++import java.security.AccessController;
++import java.io.ObjectInputStream;
++import java.io.IOException;
++import sun.awt.AWTAccessor;
++
+ /**
+  * The root event class for all AWT events.
+  * This class and its subclasses supercede the original
+@@ -97,10 +103,33 @@ public abstract class AWTEvent extends E
+      */
+     protected boolean consumed = false;
+ 
++    /*
++     * The event's AccessControlContext.
++     */
++    private transient volatile AccessControlContext acc =
++        AccessController.getContext();
++
++    /*
++     * Returns the acc this event was constructed with.
++     */
++    final AccessControlContext getAccessControlContext() {
++        if (acc == null) {
++            throw new SecurityException("AWTEvent is missing AccessControlContext");
++        }
++            return acc;
++        }
++
+     transient boolean focusManagerIsDispatching = false;
+     transient boolean isPosted;
+ 
+     /**
++     * Indicates whether this AWTEvent was generated by the system as
++     * opposed to by user code.
++     */
++    private transient boolean isSystemGenerated;
++
++
++    /**
+      * The event mask for selecting component events.
+      */
+     public final static long COMPONENT_EVENT_MASK = 0x01;
+@@ -230,6 +259,19 @@ public abstract class AWTEvent extends E
+         if (!GraphicsEnvironment.isHeadless()) {
+             initIDs();
+         }
++        AWTAccessor.setAWTEventAccessor(new AWTAccessor.AWTEventAccessor() {
++                public void setSystemGenerated(AWTEvent ev) {
++                    ev.isSystemGenerated = true;
++                }
++
++                public boolean isSystemGenerated(AWTEvent ev) {
++                    return ev.isSystemGenerated;
++                }
++
++                public AccessControlContext getAccessControlContext(AWTEvent ev) {
++                    return ev.getAccessControlContext();
++                }
++        });
+     }
+ 
+     private static synchronized Field get_InputEvent_CanAccessSystemClipboard() {
+@@ -564,4 +606,11 @@ public abstract class AWTEvent extends E
+             }
+         }
+     }
++
++    private void readObject(ObjectInputStream in) 
++        throws ClassNotFoundException, IOException
++    {
++        this.acc = AccessController.getContext();
++        in.defaultReadObject();
++    }
+ } // class AWTEvent
+--- jdk/src/share/classes/java/awt/Component.java	2011-01-20 18:54:13.000000000 -0500
++++ jdk/src/share/classes/java/awt/Component.java	2011-02-17 18:15:35.000000000 -0500
+@@ -58,9 +58,11 @@ import java.lang.reflect.InvocationTarge
+ import java.lang.reflect.Method;
+ import java.security.AccessController;
+ import java.security.PrivilegedAction;
++import java.security.AccessControlContext;
+ import javax.accessibility.*;
+ import java.util.logging.*;
+ import java.applet.Applet;
++import sun.awt.AWTAccessor;
+ 
+ import sun.security.action.GetPropertyAction;
+ import sun.awt.AppContext;
+@@ -451,6 +453,12 @@ public abstract class Component implemen
+     static final Object LOCK = new AWTTreeLock();
+     static class AWTTreeLock {}
+ 
++    /*
++     * The component's AccessControlContext.
++     */
++    private transient volatile AccessControlContext acc =
++        AccessController.getContext();
++
+     /**
+      * Minimum size.
+      * (This field perhaps should have been transient).
+@@ -641,6 +649,16 @@ public abstract class Component implemen
+         return changeSupportLock;
+     }
+ 
++    /*
++     * Returns the acc this component was constructed with.
++     */
++    final AccessControlContext getAccessControlContext() {
++        if (acc == null) {
++            throw new SecurityException("Component is missing AccessControlContext");
++        }
++        return acc;
++    }
++
+     boolean isPacked = false;
+ 
+     /**
+@@ -778,6 +796,16 @@ public abstract class Component implemen
+             }
+     }
+ 
++    static {
++        AWTAccessor.setComponentAccessor(new AWTAccessor.ComponentAccessor() {
++                public AccessControlContext getAccessControlContext(Component comp) {
++                    return comp.getAccessControlContext();
++                }
++
++            });
++    }
++
++
+     /**
+      * Constructs a new component. Class <code>Component</code> can be
+      * extended directly to create a lightweight component that does not
+@@ -8317,6 +8345,8 @@ public abstract class Component implemen
+     {
+         changeSupportLock = new Object();
+ 
++        acc = AccessController.getContext();
++
+         s.defaultReadObject();
+ 
+         appContext = AppContext.getAppContext();
+--- jdk/src/share/classes/java/awt/EventDispatchThread.java	2011-01-20 18:54:13.000000000 -0500
++++ jdk/src/share/classes/java/awt/EventDispatchThread.java	2011-02-17 18:15:35.000000000 -0500
+@@ -284,10 +284,7 @@ class EventDispatchThread extends Thread
+                           // Threads in the AppContext
+ 
+         }
+-        // Can get and throw only unchecked exceptions
+-        catch (RuntimeException e) {
+-            processException(e, modalFiltersCount > 0);
+-        } catch (Error e) {
++        catch (Throwable e) {
+             processException(e, modalFiltersCount > 0);
+         }
+         return true;
+--- jdk/src/share/classes/java/awt/EventQueue.java	2011-01-20 18:54:13.000000000 -0500
++++ jdk/src/share/classes/java/awt/EventQueue.java	2011-02-17 18:15:35.000000000 -0500
+@@ -43,6 +43,12 @@ import sun.awt.AWTAutoShutdown;
+ import sun.awt.PeerEvent;
+ import sun.awt.SunToolkit;
+ 
++import java.security.AccessControlContext;
++import java.security.ProtectionDomain;
++
++import sun.misc.SharedSecrets;
++import sun.misc.JavaSecurityAccess;
++
+ /**
+  * <code>EventQueue</code> is a platform-independent class
+  * that queues events, both from the underlying peer classes
+@@ -554,6 +560,9 @@ public class EventQueue {
+         return null;
+     }
+ 
++    private static final JavaSecurityAccess javaSecurityAccess =
++        SharedSecrets.getJavaSecurityAccess();
++
+     /**
+      * Dispatches an event. The manner in which the event is
+      * dispatched depends upon the type of the event and the
+@@ -592,13 +601,49 @@ public class EventQueue {
+      * @throws NullPointerException if <code>event</code> is <code>null</code>
+      * @since           1.2
+      */
+-    protected void dispatchEvent(AWTEvent event) {
++    protected void dispatchEvent(final AWTEvent event) {
++        final Object src = event.getSource();
++        final PrivilegedAction<Void> action = new PrivilegedAction<Void>() {
++            public Void run() {
++                dispatchEventImpl(event, src);
++                return null;
++            }
++        };
++
++        final AccessControlContext stack = AccessController.getContext();
++        final AccessControlContext srcAcc = getAccessControlContextFrom(src);
++        final AccessControlContext eventAcc = event.getAccessControlContext();
++        if (srcAcc == null) {
++            javaSecurityAccess.doIntersectionPrivilege(action, stack, eventAcc);
++        } else {
++            javaSecurityAccess.doIntersectionPrivilege(
++                new PrivilegedAction<Void>() {
++                    public Void run() {
++                        javaSecurityAccess.doIntersectionPrivilege(action, eventAcc);
++                        return null;
++                    }
++                }, stack, srcAcc);
++        }
++    }
++
++    private static AccessControlContext getAccessControlContextFrom(Object src) {
++        return src instanceof Component ?
++            ((Component)src).getAccessControlContext() :
++            src instanceof MenuComponent ?
++                ((MenuComponent)src).getAccessControlContext() :
++                src instanceof TrayIcon ?
++                    ((TrayIcon)src).getAccessControlContext() :
++                    null;
++    }
++
++    /**
++     * Called from dispatchEvent() under a correct AccessControlContext  
++     */
++    private void dispatchEventImpl(final AWTEvent event, final Object src) {
+         event.isPosted = true;
+-        Object src = event.getSource();
+         if (event instanceof ActiveEvent) {
+             // This could become the sole method of dispatching in time.
+             setCurrentEventAndMostRecentTimeImpl(event);
+-
+             ((ActiveEvent)event).dispatch();
+         } else if (src instanceof Component) {
+             ((Component)src).dispatchEvent(event);
+--- jdk/src/share/classes/java/awt/MenuComponent.java	2011-01-20 18:54:14.000000000 -0500
++++ jdk/src/share/classes/java/awt/MenuComponent.java	2011-02-17 18:15:35.000000000 -0500
+@@ -32,6 +32,9 @@ import sun.awt.AppContext;
+ import sun.awt.SunToolkit;
+ import javax.accessibility.*;
+ 
++import java.security.AccessControlContext;
++import java.security.AccessController;
++
+ /**
+  * The abstract class <code>MenuComponent</code> is the superclass
+  * of all menu-related components. In this respect, the class
+@@ -99,6 +102,23 @@ public abstract class MenuComponent impl
+     boolean newEventsOnly = false;
+ 
+     /*
++     * The menu's AccessControlContext.
++     */
++    private transient volatile AccessControlContext acc =
++            AccessController.getContext();
++    
++    /*
++     * Returns the acc this menu component was constructed with.
++     */
++    final AccessControlContext getAccessControlContext() {
++        if (acc == null) {
++            throw new SecurityException(
++                    "MenuComponent is missing AccessControlContext");
++        }
++        return acc;
++    }
++
++    /*
+      * Internal constants for serialization.
+      */
+     final static String actionListenerK = Component.actionListenerK;
+@@ -385,6 +405,9 @@ public abstract class MenuComponent impl
+         throws ClassNotFoundException, IOException, HeadlessException
+     {
+         GraphicsEnvironment.checkHeadless();
++
++        acc = AccessController.getContext();
++
+         s.defaultReadObject();
+ 
+         appContext = AppContext.getAppContext();
+--- jdk/src/share/classes/java/awt/TrayIcon.java	2011-01-20 18:54:14.000000000 -0500
++++ jdk/src/share/classes/java/awt/TrayIcon.java	2011-02-17 18:15:35.000000000 -0500
+@@ -39,6 +39,8 @@ import java.awt.peer.TrayIconPeer;
+ import sun.awt.AppContext;
+ import sun.awt.SunToolkit;
+ import java.util.EventObject;
++import java.security.AccessControlContext;
++import java.security.AccessController;
+ 
+ /**
+  * A <code>TrayIcon</code> object represents a tray icon that can be
+@@ -89,6 +91,7 @@ import java.util.EventObject;
+  * @author Anton Tarasov
+  */
+ public class TrayIcon {
++
+     private Image image;
+     private String tooltip;
+     private PopupMenu popup;
+@@ -102,6 +105,24 @@ public class TrayIcon {
+     transient MouseMotionListener mouseMotionListener;
+     transient ActionListener actionListener;
+ 
++    /*
++     * The tray icon's AccessControlContext.
++     *
++     * Unlike the acc in Component, this field is made final
++     * because TrayIcon is not serializable.
++     */
++    private final AccessControlContext acc = AccessController.getContext();
++    
++    /*
++     * Returns the acc this tray icon was constructed with.
++     */
++    final AccessControlContext getAccessControlContext() {
++        if (acc == null) {
++            throw new SecurityException("TrayIcon is missing AccessControlContext");
++        }
++        return acc;
++    }
++
+     static {
+         Toolkit.loadLibraries();
+         if (!GraphicsEnvironment.isHeadless()) {
+--- jdk/src/share/classes/java/net/AbstractPlainDatagramSocketImpl.java	2011-01-20 18:54:16.000000000 -0500
++++ jdk/src/share/classes/java/net/AbstractPlainDatagramSocketImpl.java	2011-02-17 18:15:35.000000000 -0500
+@@ -28,6 +28,7 @@ import java.io.FileDescriptor;
+ import java.io.IOException;
+ import java.io.InterruptedIOException;
+ import java.util.Enumeration;
++import sun.net.ResourceManager;
+ 
+ /**
+  * Abstract datagram and multicast socket implementation base class.
+@@ -65,8 +66,15 @@ abstract class AbstractPlainDatagramSock
+      * Creates a datagram socket
+      */
+     protected synchronized void create() throws SocketException {
++        ResourceManager.beforeUdpCreate();
+         fd = new FileDescriptor();
+-        datagramSocketCreate();
++        try {
++            datagramSocketCreate();
++        } catch (SocketException ioe) {
++            ResourceManager.afterUdpClose();
++            fd = null;
++            throw ioe;
++        }
+     }
+ 
+     /**
+@@ -211,6 +219,7 @@ abstract class AbstractPlainDatagramSock
+     protected void close() {
+         if (fd != null) {
+             datagramSocketClose();
++            ResourceManager.afterUdpClose();
+             fd = null;
+         }
+     }
+--- jdk/src/share/classes/java/net/AbstractPlainSocketImpl.java	2011-01-20 18:54:16.000000000 -0500
++++ jdk/src/share/classes/java/net/AbstractPlainSocketImpl.java	2011-02-17 18:15:35.000000000 -0500
+@@ -33,6 +33,7 @@ import java.io.FileDescriptor;
+ import java.io.ByteArrayOutputStream;
+ 
+ import sun.net.ConnectionResetException;
++import sun.net.ResourceManager;
+ 
+ /**
+  * Default Socket Implementation. This implementation does
+@@ -69,6 +70,10 @@ abstract class AbstractPlainSocketImpl e
+     private int resetState;
+     private Object resetLock = new Object();
+ 
++   /* whether this Socket is a stream (TCP) socket or not (UDP)
++    */
++    private boolean stream;
++
+     /**
+      * Load net library into runtime.
+      */
+@@ -83,7 +88,19 @@ abstract class AbstractPlainSocketImpl e
+      */
+     protected synchronized void create(boolean stream) throws IOException {
+         fd = new FileDescriptor();
+-        socketCreate(stream);
++        this.stream = stream;
++        if (!stream) {
++            ResourceManager.beforeUdpCreate();
++            try {
++                socketCreate(false);
++            } catch (IOException ioe) {
++                ResourceManager.afterUdpClose();
++                fd = null;
++                throw ioe;
++            }
++        } else {
++            socketCreate(true);
++        }
+         if (socket != null)
+             socket.setCreated();
+         if (serverSocket != null)
+@@ -458,6 +475,9 @@ abstract class AbstractPlainSocketImpl e
+     protected void close() throws IOException {
+         synchronized(fdLock) {
+             if (fd != null) {
++                if (!stream) {
++                    ResourceManager.afterUdpClose();
++                }
+                 if (fdUseCount == 0) {
+                     if (closePending) {
+                         return;
+--- jdk/src/share/classes/java/security/AccessControlContext.java	2011-01-20 18:54:16.000000000 -0500
++++ jdk/src/share/classes/java/security/AccessControlContext.java	2011-02-17 18:15:35.000000000 -0500
+@@ -29,6 +29,9 @@ import java.util.ArrayList;
+ import java.util.List;
+ import sun.security.util.Debug;
+ import sun.security.util.SecurityConstants;
++import sun.misc.JavaSecurityAccess;
++import sun.misc.SharedSecrets;
++
+ 
+ /**
+  * An AccessControlContext is used to make system resource access decisions
+@@ -87,6 +90,36 @@ public final class AccessControlContext 
+     private static boolean debugInit = false;
+     private static Debug debug = null;
+ 
++    static {
++        // Set up JavaSecurityAccess in SharedSecrets
++        SharedSecrets.setJavaSecurityAccess(
++            new JavaSecurityAccess() {
++                public <T> T doIntersectionPrivilege(
++                    PrivilegedAction<T> action,
++                    final AccessControlContext stack,
++                    final AccessControlContext context)
++                {
++                    if (action == null) {
++                        throw new NullPointerException();
++                    }
++                    return AccessController.doPrivileged(
++                        action,
++                        new AccessControlContext(
++                            stack.getContext(), context).optimize()
++                    );
++                }
++
++                public <T> T doIntersectionPrivilege(
++                    PrivilegedAction<T> action,
++                    AccessControlContext context)
++                {
++                    return doIntersectionPrivilege(action,
++                        AccessController.getContext(), context);
++                }
++            }
++       );
++    }
++
+     static Debug getDebug()
+     {
+         if (debugInit)
+@@ -194,6 +227,24 @@ public final class AccessControlContext 
+     }
+ 
+     /**
++     * Constructor for JavaSecurityAccess.doIntersectionPrivilege()
++     */
++    AccessControlContext(ProtectionDomain[] context,
++                         AccessControlContext privilegedContext)
++    {
++        this.context = context;
++        this.privilegedContext = privilegedContext;
++        this.isPrivileged = true;
++    }
++
++    /**
++     * Returns this context's context.
++     */
++    ProtectionDomain[] getContext() {
++        return context;
++    }
++
++    /**
+      * Returns true if this context is privileged.
+      */
+     boolean isPrivileged()
+--- jdk/src/share/classes/javax/swing/Timer.java	2011-01-20 18:54:21.000000000 -0500
++++ jdk/src/share/classes/javax/swing/Timer.java	2011-02-17 18:15:35.000000000 -0500
+@@ -35,6 +35,10 @@ import java.util.concurrent.locks.*;
+ import java.awt.*;
+ import java.awt.event.*;
+ import java.io.Serializable;
++import java.io.*;
++import java.security.AccessControlContext;
++import java.security.AccessController;
++import java.security.PrivilegedAction;
+ import javax.swing.event.EventListenerList;
+ 
+ 
+@@ -174,6 +178,23 @@ public class Timer implements Serializab
+ 
+     private transient final Lock lock = new ReentrantLock();
+ 
++    /*
++     * The timer's AccessControlContext.
++     */
++     private transient volatile AccessControlContext acc =
++            AccessController.getContext();
++
++    /**
++      * Returns the acc this timer was constructed with.
++      */
++     final AccessControlContext getAccessControlContext() {
++       if (acc == null) {
++           throw new SecurityException(
++                   "Timer is missing AccessControlContext");
++       }
++       return acc;
++     }
++
+     // This field is maintained by TimerQueue.
+     // eventQueued can also be reset by the TimerQueue, but will only ever
+     // happen in applet case when TimerQueues thread is destroyed.
+@@ -191,7 +212,7 @@ public class Timer implements Serializab
+      *
+      * @param delay milliseconds for the initial and between-event delay
+      * @param listener  an initial listener; can be <code>null</code>
+-     *
++
+      * @see #addActionListener
+      * @see #setInitialDelay
+      * @see #setRepeats
+@@ -208,7 +229,6 @@ public class Timer implements Serializab
+         }
+     }
+ 
+-
+     /**
+      * DoPostEvent is a runnable class that fires actionEvents to
+      * the listeners on the EventDispatchThread, via invokeLater.
+@@ -589,7 +609,12 @@ public class Timer implements Serializab
+ 
+     void post() {
+         if (notify.compareAndSet(false, true) || !coalesce) {
+-            SwingUtilities.invokeLater(doPostEvent);
++            AccessController.doPrivileged(new PrivilegedAction<Void>() {
++                public Void run() {
++                    SwingUtilities.invokeLater(doPostEvent);
++                    return null;
++                 }
++            }, getAccessControlContext());
+         }
+     }
+ 
+@@ -611,4 +636,11 @@ public class Timer implements Serializab
+         timer.actionCommand = actionCommand;
+         return timer;
+     }
++
++     private void readObject(ObjectInputStream in) 
++        throws ClassNotFoundException, IOException
++     {
++        this.acc = AccessController.getContext();
++        in.defaultReadObject();
++     }
+ }
+--- jdk/src/share/classes/javax/swing/TransferHandler.java	2011-01-20 18:54:21.000000000 -0500
++++ jdk/src/share/classes/javax/swing/TransferHandler.java	2011-02-17 18:15:35.000000000 -0500
+@@ -41,6 +41,16 @@ import sun.swing.SwingUtilities2;
+ import sun.awt.AppContext;
+ import sun.swing.*;
+ 
++import java.security.AccessController;
++import java.security.PrivilegedAction;
++
++import java.security.AccessControlContext;
++import java.security.ProtectionDomain;
++import sun.misc.SharedSecrets;
++import sun.misc.JavaSecurityAccess;
++
++import sun.awt.AWTAccessor;
++
+ /**
+  * This class is used to handle the transfer of a <code>Transferable</code>
+  * to and from Swing components.  The <code>Transferable</code> is used to
+@@ -1640,7 +1650,37 @@ public class TransferHandler implements 
+             return true;
+         }
+ 
+-        public void actionPerformed(ActionEvent e) {
++        private static final JavaSecurityAccess javaSecurityAccess =
++            SharedSecrets.getJavaSecurityAccess();
++
++        public void actionPerformed(final ActionEvent e) {
++            final Object src = e.getSource();
++
++            final PrivilegedAction<Void> action = new PrivilegedAction<Void>() {
++                public Void run() {
++                    actionPerformedImpl(e);
++                    return null;
++                }
++            };
++
++            final AccessControlContext stack = AccessController.getContext();
++            final AccessControlContext srcAcc = AWTAccessor.getComponentAccessor().getAccessControlContext((Component)src);
++            final AccessControlContext eventAcc = AWTAccessor.getAWTEventAccessor().getAccessControlContext(e);
++
++                if (srcAcc == null) {
++                    javaSecurityAccess.doIntersectionPrivilege(action, stack, eventAcc);
++                } else {
++                    javaSecurityAccess.doIntersectionPrivilege(
++                        new PrivilegedAction<Void>() {
++                            public Void run() {
++                                javaSecurityAccess.doIntersectionPrivilege(action, eventAcc);
++                                return null;
++                             }
++                    }, stack, srcAcc);
++                }
++        }
++
++        private void actionPerformedImpl(ActionEvent e) {
+             Object src = e.getSource();
+             if (src instanceof JComponent) {
+                 JComponent c = (JComponent) src;
+--- jdk/src/share/classes/sun/awt/AWTAccessor.java	2011-02-17 18:15:35.000000000 -0500
++++ jdk/src/share/classes/sun/awt/AWTAccessor.java	2011-02-17 18:15:35.000000000 -0500
+@@ -0,0 +1,132 @@
++/*
++ * Copyright (c) 2011, Oracle and/or its affiliates. All rights reserved.
++ * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
++ *
++ * This code is free software; you can redistribute it and/or modify it
++ * under the terms of the GNU General Public License version 2 only, as
++ * published by the Free Software Foundation.  Oracle designates this
++ * particular file as subject to the "Classpath" exception as provided
++ * by Oracle in the LICENSE file that accompanied this code.
++ *
++ * This code is distributed in the hope that it will be useful, but WITHOUT
++ * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
++ * FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License
++ * version 2 for more details (a copy is included in the LICENSE file that
++ * accompanied this code).
++ *
++ * You should have received a copy of the GNU General Public License version
++ * 2 along with this work; if not, write to the Free Software Foundation,
++ * Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA.
++ *
++ * Please contact Oracle, 500 Oracle Parkway, Redwood Shores, CA 94065 USA
++ * or visit www.oracle.com if you need additional information or have any
++ * questions.
++ */
++
++package sun.awt;
++
++import java.awt.*;
++import java.awt.event.InputEvent;
++import java.awt.geom.Point2D;
++import java.awt.image.BufferedImage;
++
++import sun.misc.Unsafe;
++import java.awt.peer.ComponentPeer;
++
++import java.security.AccessController;
++import java.security.AccessControlContext;
++
++/**
++ * The AWTAccessor utility class.
++ * The main purpose of this class is to enable accessing
++ * private and package-private fields of classes from
++ * different classes/packages. See sun.misc.SharedSecretes
++ * for another example.
++ */
++public final class AWTAccessor {
++
++    private static final Unsafe unsafe = Unsafe.getUnsafe();
++
++    /*
++     * We don't need any objects of this class.
++     * It's rather a collection of static methods
++     * and interfaces.
++     */
++    private AWTAccessor() {
++    }
++
++    /*
++     * An interface of accessor for the java.awt.Component class.
++     */
++    public interface ComponentAccessor {
++        /*
++         * Returns the acc this component was constructed with.
++         */
++        AccessControlContext getAccessControlContext(Component comp);
++    }
++
++    /*
++     * An accessor for the AWTEvent class.
++     */
++    public interface AWTEventAccessor {
++        /**
++         * Sets the flag on this AWTEvent indicating that it was
++         * generated by the system.
++         */
++        void setSystemGenerated(AWTEvent ev);
++
++        /**
++         * Indicates whether this AWTEvent was generated by the system.
++         */
++        boolean isSystemGenerated(AWTEvent ev);
++
++
++        /*
++         * Returns the acc this event was constructed with.
++         */
++        AccessControlContext getAccessControlContext(AWTEvent ev);
++
++    }
++
++    /*
++     * Accessor instances are initialized in the static initializers of
++     * corresponding AWT classes by using setters defined below.
++     */
++    private static ComponentAccessor componentAccessor;
++    private static AWTEventAccessor awtEventAccessor;
++
++    /*
++     * Set an accessor object for the java.awt.Component class.
++     */
++    public static void setComponentAccessor(ComponentAccessor ca) {
++        componentAccessor = ca;
++    }
++
++    /*
++     * Retrieve the accessor object for the java.awt.Component class.
++     */
++    public static ComponentAccessor getComponentAccessor() {
++        if (componentAccessor == null) {
++            unsafe.ensureClassInitialized(Component.class);
++        }
++
++        return componentAccessor;
++    }
++
++    /*
++     * Set an accessor object for the java.awt.AWTEvent class.
++     */
++    public static void setAWTEventAccessor(AWTEventAccessor aea) {
++        awtEventAccessor = aea;
++    }
++
++    /*
++     * Retrieve the accessor object for the java.awt.AWTEvent class.
++     */
++    public static AWTEventAccessor getAWTEventAccessor() {
++        if (awtEventAccessor == null) {
++            unsafe.ensureClassInitialized(AWTEvent.class);
++        }
++        return awtEventAccessor;
++    }
++}
+--- jdk/src/share/classes/sun/font/FileFont.java	2011-01-20 18:54:25.000000000 -0500
++++ jdk/src/share/classes/sun/font/FileFont.java	2011-02-17 18:15:35.000000000 -0500
+@@ -48,6 +48,9 @@ import java.nio.channels.ClosedChannelEx
+ import java.util.HashSet;
+ import java.util.HashMap;
+ import java.awt.Font;
++import java.security.AccessController;
++import java.security.PrivilegedActionException;
++import java.security.PrivilegedExceptionAction;
+ 
+ public abstract class FileFont extends PhysicalFont {
+ 
+@@ -284,4 +287,49 @@ public abstract class FileFont extends P
+             });
+         }
+     }
++
++    protected String getPublicFileName() {
++        SecurityManager sm = System.getSecurityManager();
++        if (sm == null) {
++            return platName;
++        }
++        boolean canReadProperty = true;
++
++        try {
++            sm.checkPropertyAccess("java.io.tmpdir");
++        } catch (SecurityException e) {
++            canReadProperty = false;
++        }
++
++        if (canReadProperty) {
++            return platName;
++        }
++
++        final File f = new File(platName);
++
++         Boolean isTmpFile = Boolean.FALSE;
++         try {
++             isTmpFile = AccessController.doPrivileged(
++                 new PrivilegedExceptionAction<Boolean>() {
++                     public Boolean run() {
++                         File tmp = new File(System.getProperty("java.io.tmpdir"));
++                         try {
++                             String tpath = tmp.getCanonicalPath();
++                             String fpath = f.getCanonicalPath();
++
++                             return (fpath == null) || fpath.startsWith(tpath);
++                         } catch (IOException e) {
++                             return Boolean.TRUE;
++                         }
++                     }
++                 }
++             );
++         } catch (PrivilegedActionException e) {
++             // unable to verify whether value of java.io.tempdir will be
++             // exposed, so return only a name of the font file.
++             isTmpFile = Boolean.TRUE;
++         }
++
++         return  isTmpFile ? "temp file" : platName;
++     }
+ }
+--- jdk/src/share/classes/sun/font/TrueTypeFont.java	2011-01-20 18:54:25.000000000 -0500
++++ jdk/src/share/classes/sun/font/TrueTypeFont.java	2011-02-17 18:15:35.000000000 -0500
+@@ -504,7 +504,8 @@ public class TrueTypeFont extends FileFo
+                 break;
+ 
+             default:
+-                throw new FontFormatException("Unsupported sfnt " + platName);
++                throw new FontFormatException("Unsupported sfnt " +
++                                              getPublicFileName());
+             }
+ 
+             /* Now have the offset of this TT font (possibly within a TTC)
+@@ -1369,6 +1370,6 @@ public class TrueTypeFont extends FileFo
+ 
+     public String toString() {
+         return "** TrueType Font: Family="+familyName+ " Name="+fullName+
+-            " style="+style+" fileName="+platName;
++            " style="+style+" fileName="+getPublicFileName();
+     }
+ }
+--- jdk/src/share/classes/sun/font/Type1Font.java	2011-01-20 18:54:25.000000000 -0500
++++ jdk/src/share/classes/sun/font/Type1Font.java	2011-02-17 18:15:35.000000000 -0500
+@@ -677,7 +677,7 @@ public class Type1Font extends FileFont 
+ 
+     public String toString() {
+         return "** Type1 Font: Family="+familyName+ " Name="+fullName+
+-            " style="+style+" fileName="+platName;
++            " style="+style+" fileName="+getPublicFileName();
+     }
+ 
+ }
+--- jdk/src/share/classes/sun/misc/SharedSecrets.java	2011-01-20 18:54:27.000000000 -0500
++++ jdk/src/share/classes/sun/misc/SharedSecrets.java	2011-02-17 18:15:35.000000000 -0500
+@@ -31,6 +31,8 @@ import java.io.File;
+ import java.io.FileDescriptor;
+ import java.security.ProtectionDomain;
+ 
++import java.security.AccessController;
++
+ /** A repository of "shared secrets", which are a mechanism for
+     calling implementation-private methods in another package without
+     using reflection. A package-private class implements a public
+@@ -49,6 +51,7 @@ public class SharedSecrets {
+     private static JavaNetAccess javaNetAccess;
+     private static JavaIOFileDescriptorAccess javaIOFileDescriptorAccess;
+     private static JavaSecurityProtectionDomainAccess javaSecurityProtectionDomainAccess;
++    private static JavaSecurityAccess javaSecurityAccess;
+ 
+     public static JavaUtilJarAccess javaUtilJarAccess() {
+         if (javaUtilJarAccess == null) {
+@@ -124,4 +127,15 @@ public class SharedSecrets {
+ 
+         return javaSecurityProtectionDomainAccess;
+     }
++
++    public static void setJavaSecurityAccess(JavaSecurityAccess jsa) {
++        javaSecurityAccess = jsa;
++    }
++
++    public static JavaSecurityAccess getJavaSecurityAccess() {
++        if (javaSecurityAccess == null) {
++            unsafe.ensureClassInitialized(AccessController.class);
++        }
++        return javaSecurityAccess;
++    }
+ }
+--- jdk/src/share/classes/sun/misc/JavaSecurityAccess.java	2011-02-17 18:15:35.000000000 -0500
++++ jdk/src/share/classes/sun/misc/JavaSecurityAccess.java	2011-02-17 18:15:35.000000000 -0500
+@@ -0,0 +1,40 @@
++/*
++ * Copyright (c) 2011, Oracle and/or its affiliates. All rights reserved.
++ * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
++ *
++ * This code is free software; you can redistribute it and/or modify it
++ * under the terms of the GNU General Public License version 2 only, as
++ * published by the Free Software Foundation.  Oracle designates this
++ * particular file as subject to the "Classpath" exception as provided
++ * by Oracle in the LICENSE file that accompanied this code.
++ *
++ * This code is distributed in the hope that it will be useful, but WITHOUT
++ * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
++ * FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License
++ * version 2 for more details (a copy is included in the LICENSE file that
++ * accompanied this code).
++ *
++ * You should have received a copy of the GNU General Public License version
++ * 2 along with this work; if not, write to the Free Software Foundation,
++ * Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA.
++ *
++ * Please contact Oracle, 500 Oracle Parkway, Redwood Shores, CA 94065 USA
++ * or visit www.oracle.com if you need additional information or have any
++ * questions.
++ */
++
++package sun.misc;
++
++import java.security.AccessControlContext;
++import java.security.PrivilegedAction;
++
++public interface JavaSecurityAccess {
++
++    <T> T doIntersectionPrivilege(PrivilegedAction<T> action,
++                                  AccessControlContext stack,
++                                  AccessControlContext context);
++
++    <T> T doIntersectionPrivilege(PrivilegedAction<T> action,
++                                  AccessControlContext context);
++
++}
+--- jdk/src/share/classes/sun/misc/FloatingDecimal.java	2011-01-20 18:54:27.000000000 -0500
++++ jdk/src/share/classes/sun/misc/FloatingDecimal.java	2011-02-17 18:17:01.000000000 -0500
+@@ -1547,7 +1547,7 @@ public class FloatingDecimal{
+                 if ( (cmpResult = bigB.cmp( bigD ) ) > 0 ){
+                     overvalue = true; // our candidate is too big.
+                     diff = bigB.sub( bigD );
+-                    if ( (bigIntNBits == 1) && (bigIntExp > -expBias) ){
++                    if ( (bigIntNBits == 1) && (bigIntExp > -expBias+1) ){
+                         // candidate is a normalized exact power of 2 and
+                         // is too big. We will be subtracting.
+                         // For our purposes, ulp is the ulp of the
+--- jdk/src/share/classes/sun/net/ResourceManager.java	2011-02-17 18:15:35.000000000 -0500
++++ jdk/src/share/classes/sun/net/ResourceManager.java	2011-02-17 18:15:35.000000000 -0500
+@@ -0,0 +1,82 @@
++/*
++ * Copyright (c) 2011, Oracle and/or its affiliates. All rights reserved.
++ * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
++ *
++ * This code is free software; you can redistribute it and/or modify it
++ * under the terms of the GNU General Public License version 2 only, as
++ * published by the Free Software Foundation.  Oracle designates this
++ * particular file as subject to the "Classpath" exception as provided
++ * by Oracle in the LICENSE file that accompanied this code.
++ *
++ * This code is distributed in the hope that it will be useful, but WITHOUT
++ * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
++ * FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License
++ * version 2 for more details (a copy is included in the LICENSE file that
++ * accompanied this code).
++ *
++ * You should have received a copy of the GNU General Public License version
++ * 2 along with this work; if not, write to the Free Software Foundation,
++ * Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA.
++ *
++ * Please contact Oracle, 500 Oracle Parkway, Redwood Shores, CA 94065 USA
++ * or visit www.oracle.com if you need additional information or have any
++ * questions.
++ */
++
++package sun.net;
++
++import java.net.SocketException;
++import java.util.concurrent.atomic.AtomicInteger;
++import sun.security.action.GetPropertyAction;
++
++/**
++ * Manages count of total number of UDP sockets and ensures
++ * that exception is thrown if we try to create more than the
++ * configured limit.
++ *
++ * This functionality could be put in NetHooks some time in future.
++ */
++
++public class ResourceManager {
++
++    /* default maximum number of udp sockets per VM
++     * when a security manager is enabled.
++     * The default is 1024 which is high enough to be useful
++     * but low enough to be well below the maximum number
++     * of port numbers actually available on all OSes for
++     * such sockets (5000 on some versions of windows)
++     */
++
++    private static final int DEFAULT_MAX_SOCKETS = 1024;
++    private static final int maxSockets;
++    private static final AtomicInteger numSockets;
++
++    static {
++        String prop = java.security.AccessController.doPrivileged(
++            new GetPropertyAction("sun.net.maxDatagramSockets")
++        );
++        int defmax = DEFAULT_MAX_SOCKETS;
++        try {
++            if (prop != null) {
++                defmax = Integer.parseInt(prop);
++            }
++        } catch (NumberFormatException e) {}
++        maxSockets = defmax;
++        numSockets = new AtomicInteger(0);
++    }
++
++    public static void beforeUdpCreate() throws SocketException {
++        if (System.getSecurityManager() != null) {
++            if (numSockets.incrementAndGet() > maxSockets) {
++                numSockets.decrementAndGet();
++                throw new SocketException("maximum number of DatagramSockets reached");
++            }
++        }
++    }
++
++    public static void afterUdpClose() {
++        if (System.getSecurityManager() != null) {
++            numSockets.decrementAndGet();
++        }
++    }
++}
+--- jdk/src/share/classes/sun/nio/ch/DatagramChannelImpl.java	2011-01-20 18:54:27.000000000 -0500
++++ jdk/src/share/classes/sun/nio/ch/DatagramChannelImpl.java	2011-02-17 18:15:35.000000000 -0500
+@@ -32,6 +32,7 @@ import java.nio.ByteBuffer;
+ import java.nio.channels.*;
+ import java.nio.channels.spi.*;
+ import java.lang.ref.SoftReference;
++import sun.net.ResourceManager;
+ 
+ 
+ /**
+@@ -98,9 +99,15 @@ class DatagramChannelImpl
+         throws IOException
+     {
+         super(sp);
+-        this.fd = Net.socket(false);
+-        this.fdVal = IOUtil.fdVal(fd);
+-        this.state = ST_UNCONNECTED;
++        ResourceManager.beforeUdpCreate();
++        try {
++            this.fd = Net.socket(false);
++            this.fdVal = IOUtil.fdVal(fd);
++            this.state = ST_UNCONNECTED;
++        } catch (IOException ioe) {
++            ResourceManager.afterUdpClose();
++            throw ioe;
++        }
+     }
+ 
+     public DatagramChannelImpl(SelectorProvider sp, FileDescriptor fd)
+@@ -587,6 +594,7 @@ class DatagramChannelImpl
+     protected void implCloseSelectableChannel() throws IOException {
+         synchronized (stateLock) {
+             nd.preClose(fd);
++            ResourceManager.afterUdpClose();
+             long th;
+             if ((th = readerThread) != 0)
+                 NativeThread.signal(th);
+--- jdk/src/share/classes/sun/nio/ch/Net.java	2011-01-20 18:54:27.000000000 -0500
++++ jdk/src/share/classes/sun/nio/ch/Net.java	2011-02-17 18:15:35.000000000 -0500
+@@ -111,7 +111,7 @@ class Net {                             
+ 
+     // -- Socket operations --
+ 
+-    static FileDescriptor socket(boolean stream) {
++    static FileDescriptor socket(boolean stream) throws IOException {
+         return IOUtil.newFD(socket0(stream, false));
+     }
+ 
+--- jdk/src/solaris/bin/java_md.c	2011-01-20 18:54:40.000000000 -0500
++++ jdk/src/solaris/bin/java_md.c	2011-02-17 18:15:35.000000000 -0500
+@@ -484,7 +484,7 @@ CreateExecutionEnvironment(int *_argcp,
+        * LD_LIBRARY_PATH.  Note that this prevents any possible infinite
+        * loop of execv() because we test for the prefix, above.
+        */
+-      if (runpath != 0) {
++      if (runpath != NULL && (runpath[0] != '\0')) {
+         strcat(new_runpath, ":");
+         strcat(new_runpath, runpath);
+       }
+--- jdk/test/java/lang/Double/ParseDouble.java	2011-01-20 18:54:49.000000000 -0500
++++ jdk/test/java/lang/Double/ParseDouble.java	2011-02-17 18:17:01.000000000 -0500
+@@ -23,11 +23,12 @@
+ 
+ /*
+  * @test
+- * @bug 4160406 4705734 4707389 4826774 4895911
++ * @bug 4160406 4705734 4707389 4826774 4895911 4421494
+  * @summary Test for Double.parseDouble method and acceptance regex
+  */
+ 
+ import java.util.regex.*;
++import java.math.BigDecimal;
+ 
+ public class ParseDouble {
+ 
+@@ -416,7 +417,15 @@ public class ParseDouble {
+ 
+         "0x00100p1",
+         "0x00.100p1",
+-        "0x001.100p1"
++        "0x001.100p1",
++
++        // Limits
++
++        "1.7976931348623157E308",     // Double.MAX_VALUE
++        "4.9e-324",                   // Double.MIN_VALUE
++        "2.2250738585072014e-308",    // Double.MIN_NORMAL
++
++        "2.2250738585072012e-308",    // near Double.MIN_NORMAL
+     };
+ 
+     static String paddedBadStrings[];
+@@ -546,6 +555,42 @@ public class ParseDouble {
+ 
+     }
+ 
++    /**
++     * For each subnormal power of two, test at boundaries of
++     * region that should convert to that value.
++     */
++    private static void testSubnormalPowers() {
++        BigDecimal TWO = BigDecimal.valueOf(2);
++        // An ulp is the same for all subnormal values
++        BigDecimal ulp_BD = new BigDecimal(Double.MIN_VALUE);
++
++        System.out.println("Testing subnormal powers of two.");
++        for(int i = -1074; i <= -1022; i++) {
++            double d = Math.scalb(1.0, i);
++
++            /*
++             * The region [d - ulp/2, d + ulp/2] should round to d.
++             */
++            BigDecimal d_BD = new BigDecimal(d);
++
++            BigDecimal lowerBound = d_BD.subtract(ulp_BD.divide(TWO));
++            BigDecimal upperBound = d_BD.add(ulp_BD.divide(TWO));
++
++            double convertedLowerBound = Double.parseDouble(lowerBound.toString());
++            double convertedUpperBound = Double.parseDouble(upperBound.toString());
++
++            if (convertedLowerBound != d) {
++                System.out.printf("Exponent %d, unexpected lower bound converted to %a, not %a.%n",
++                                  i, convertedLowerBound, d);
++            }
++
++            if (convertedUpperBound != d) {
++                System.out.printf("Exponent %d, unexpected upper bound converted to %a, not %a.%n",
++                                  i, convertedUpperBound, d);
++            }
++        }
++    }
++
+     public static void main(String[] args) throws Exception {
+         rudimentaryTest();
+ 
+@@ -558,5 +603,7 @@ public class ParseDouble {
+         testRegex(paddedGoodStrings, false);
+         testRegex(badStrings, true);
+         testRegex(paddedBadStrings, true);
++
++        testSubnormalPowers();
+     }
+ }
