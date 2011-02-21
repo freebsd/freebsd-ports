@@ -1217,6 +1217,5 @@
     SUBDIR += zillion
     SUBDIR += zniper
     SUBDIR += zsync
-    SUBDIR += ztelnet
 
 .include <bsd.port.subdir.mk>

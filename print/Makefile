@@ -132,7 +132,6 @@
     SUBDIR += it-acroread8
     SUBDIR += jabref
     SUBDIR += jadetex
-    SUBDIR += kaspaliste
     SUBDIR += kcdlabel
     SUBDIR += kde_poster
     SUBDIR += kdeutils4-printer-applet

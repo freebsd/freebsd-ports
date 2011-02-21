@@ -1,4 +1,0 @@
-Perf is an XView program that reports kernel statistics for the local
-or a remote host. The program is a frontend to the rstatd daemon. The
-displayed window consists of one or more fields, each showing a
-specified parameter.

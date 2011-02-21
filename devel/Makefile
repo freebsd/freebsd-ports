@@ -3063,7 +3063,6 @@
     SUBDIR += rlwrap
     SUBDIR += roboctl
     SUBDIR += robodoc
-    SUBDIR += root
     SUBDIR += root-doc
     SUBDIR += ros
     SUBDIR += ros-common

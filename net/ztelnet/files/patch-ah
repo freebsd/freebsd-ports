@@ -1,8 +1,0 @@
-diff -uNr --exclude=*.orig work.old/ztelnet/arpa/tel-lnx.h work/ztelnet/arpa/tel-lnx.h
---- work.old/ztelnet/arpa/tel-lnx.h	Sun Apr 23 02:17:21 1995
-+++ work/ztelnet/arpa/tel-lnx.h	Thu Jan  1 09:00:00 1970
-@@ -1,4 +0,0 @@
--#include "/usr/include/arpa/telnet.h"
--#define TELOPT_ENVIRON  36      /* Environment variables */
--#define    ENV_VALUE       0
--#define    ENV_VAR       1
