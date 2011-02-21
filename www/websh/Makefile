@@ -7,7 +7,7 @@
 
 PORTNAME=	websh
 PORTVERSION=	3.6.0b5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www tcl
 MASTER_SITES=	${MASTER_SITE_APACHE}
 MASTER_SITE_SUBDIR=tcl/${PORTNAME}/source
@@ -82,6 +82,7 @@ do-install:
 .endif
 
 post-install:
+	@${APXS} -e -a -n "${SHORTMODNAME}" "${APACHEMODDIR}/mod_${MODULENAME}.so"
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.pre.mk>
