@@ -218,7 +218,7 @@ pre-configure:
 
 .if defined(WITH_TESTS) && ${OSVERSION} >= 700000
 post-build:
-	@if [ -f "${PY_NO_THREAD}" ]; then \
+	@if [ ! -f "${PY_NO_THREAD}" ]; then \
 		${MAKE} -C ${WRKSRC} check; \
 	fi
 .endif
