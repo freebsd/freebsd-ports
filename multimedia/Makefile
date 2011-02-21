@@ -143,6 +143,7 @@
     SUBDIR += kplayer-kde4
     SUBDIR += ksubeditor
     SUBDIR += ldvd
+    SUBDIR += libaacs
     SUBDIR += libdc1394
     SUBDIR += libdca
     SUBDIR += libdv

@@ -1,0 +1,8 @@
+include/libaacs/aacs.h
+include/libaacs/filesystem.h
+lib/libaacs.a
+lib/libaacs.la
+lib/libaacs.so
+lib/libaacs.so.0
+libdata/pkgconfig/libaacs.pc
+@dirrm include/libaacs
