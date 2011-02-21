@@ -7,6 +7,7 @@
 
 PORTNAME=	ntop
 PORTVERSION=	4.0.1
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 DISTFILES=	${PORTNAME}-${PORTVERSION}.tar.gz
@@ -17,9 +18,12 @@ COMMENT=	Network monitoring tool with command line and web interfaces
 LIB_DEPENDS=	gdbm.3:${PORTSDIR}/databases/gdbm \
 		event-1.4:${PORTSDIR}/devel/libevent
 BUILD_DEPENDS=	rrdtool>=1.2:${PORTSDIR}/databases/rrdtool \
+		dot:${PORTSDIR}/graphics/graphviz \
 		geoiplookup:${PORTSDIR}/net/GeoIP
 RUN_DEPENDS=	dot:${PORTSDIR}/graphics/graphviz \
-		${LOCALBASE}/lib/X11/fonts/URW/a010013l.afm:${PORTSDIR}/x11-fonts/urwfonts
+		${LOCALBASE}/lib/X11/fonts/URW/a010013l.afm:${PORTSDIR}/x11-fonts/urwfonts \
+		rrdtool>=1.2:${PORTSDIR}/databases/rrdtool \
+		geoiplookup:${PORTSDIR}/net/GeoIP
 
 DBDIR?=		/var/db
 
