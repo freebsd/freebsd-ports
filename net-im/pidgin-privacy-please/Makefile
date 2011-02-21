@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pidgin-privacy-please
-PORTVERSION=	0.6.3
+PORTVERSION=	0.6.4
 CATEGORIES=	net-im
 MASTER_SITES=	GOOGLE_CODE
 
