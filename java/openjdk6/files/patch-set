@@ -7173,13 +7173,14 @@
  #ifdef ZERO
  #define CPU      ZERO_LIBARCH
 --- hotspot/src/share/vm/utilities/globalDefinitions_gcc.hpp	2011-01-20 18:51:22.000000000 -0500
-+++ hotspot/src/share/vm/utilities/globalDefinitions_gcc.hpp	2011-02-01 17:47:12.000000000 -0500
-@@ -71,12 +71,25 @@
++++ hotspot/src/share/vm/utilities/globalDefinitions_gcc.hpp	2011-02-17 19:23:36.000000000 -0500
+@@ -71,12 +71,26 @@
  # include <sys/procfs.h>
  # endif
  
 -#ifdef LINUX
 +#if defined(LINUX) || defined(_ALLBSD_SOURCE)
++#define __STDC_LIMIT_MACROS
  #include <inttypes.h>
  #include <signal.h>
 +#ifndef __OpenBSD__
@@ -7202,7 +7203,7 @@
  
  // 4810578: varargs unsafe on 32-bit integer/64-bit pointer architectures
  // When __cplusplus is defined, NULL is defined as 0 (32-bit constant) in
-@@ -112,7 +125,7 @@
+@@ -112,7 +126,7 @@
  // pointer is stored as integer value.  On some platforms, sizeof(intptr_t) >
  // sizeof(void*), so here we want something which is integer type, but has the
  // same size as a pointer.
@@ -7211,7 +7212,7 @@
    #ifdef _LP64
      #define NULL_WORD  0L
    #else
-@@ -124,7 +137,7 @@
+@@ -124,7 +138,7 @@
    #define NULL_WORD  NULL
  #endif
  
@@ -7220,7 +7221,7 @@
  // Compiler-specific primitive types
  typedef unsigned short     uint16_t;
  #ifndef _UINT32_T
-@@ -144,7 +157,7 @@
+@@ -144,7 +158,7 @@
  // prior definition of intptr_t, and add "&& !defined(XXX)" above.
  #endif // _SYS_INT_TYPES_H
  
@@ -7229,7 +7230,7 @@
  
  // Additional Java basic types
  
-@@ -236,7 +249,9 @@
+@@ -236,7 +250,9 @@
  inline int g_isnan(float  f) { return isnand(f); }
  #endif
  inline int g_isnan(double f) { return isnand(f); }
