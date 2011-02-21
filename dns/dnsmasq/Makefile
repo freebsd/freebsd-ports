@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	dnsmasq
-PORTVERSION=	2.56
-PORTREVISION=	1
+PORTVERSION=	2.57
 PORTEPOCH=	1
 CATEGORIES=	dns ipv6
 MASTER_SITES=	http://www.thekelleys.org.uk/dnsmasq/ \
@@ -33,10 +32,9 @@ MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}" PREFIX="${PREFIX}"
 
 OPTIONS=	IPV6 "IPv6 support" on
 OPTIONS+=	DBUS "DBUS support" off
-OPTIONS+=	NLS  "NLS and IDN support" on
-# unfortunately, NLS and IDN are inseparable in dnsmasq 2.56, this
-# has been reported to Simon Kelley on 2009-10-01 and 2011-02-16
-# by the port maintainer.
+OPTIONS+=	NLS  "National Language Support (NLS, enables IDN)" on
+OPTIONS+=	IDN  "International Domain Names (IDN) WITHOUT NLS" off
+# unfortunately, NLS always enables IDN in dnsmasq 2.57
 
 .include <bsd.port.pre.mk>
 
@@ -53,18 +51,33 @@ USE_GETTEXT=	yes
 USE_GMAKE=	yes
 .else
 PLIST_SUB+=	NLS="@comment "
+.if defined(WITH_IDN)
+MAKE_ARGS+=	COPTS=-DHAVE_IDN
+LIB_DEPENDS+=	idn:${PORTSDIR}/dns/libidn
+.endif
 .endif
 
 .if defined(WITH_DBUS)
 LIB_DEPENDS+=	dbus-1:${PORTSDIR}/devel/dbus
 BUILD_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkg-config
 CFLAGS+=	-DHAVE_DBUS
-.if ${OSVERSION} < 700000
-LDFLAGS+=	${PTHREAD_LIBS}
-.endif
 .endif
 
 USE_RC_SUBR=	dnsmasq.sh
+
+pre-configure:
+	@:
+.if defined(WITH_IDN)
+.if defined(WITHOUT_NLS)
+	@if ${OBJDUMP} -p ${LOCALBASE}/lib/libidn.so \
+		| ${EGREP} -q "NEEDED[[:space:]]+lib(intl|iconv)\.so" ; \
+	then ${ECHO} ; ${ECHO} 'WARNING: dns/libidn was compiled with NLS support!' ; \
+	${ECHO} 'Recompile libidn WITHOUT_NLS to get rid of NLS dependencies.' ; ${ECHO} ; \
+	fi
+.else
+	@${ECHO} 'WARNING: IDN and NLS enabled, building IDN WITH NLS.'
+.endif
+.endif
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/dnsmasq ${PREFIX}/sbin
