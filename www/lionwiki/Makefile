@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	lionwiki
-PORTVERSION=	3.2.3
+PORTVERSION=	3.2.6
 CATEGORIES=	www
 MASTER_SITES=	http://lionwiki.0o.cz/download/${PORTVERSION}/
 
@@ -15,27 +15,27 @@ COMMENT=	Minimalis wiki, extensible, templatable and file based
 
 USE_PHP=	session ctype
 
-NO_WRKSUBDIR=	yes
+#NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
 ROOTFILES=	config.php index.php
 ROOTDIRS=	lang plugins templates var
 SUB_FILES=	pkg-message
 
 post-patch:
-	@(cd ${WRKSRC} && ${MV} config.php config.php.sample)
+	(cd ${WRKSRC} && ${MV} config.php config.php.sample)
 
 do-install:
-	@${MKDIR} ${WWWDIR}
-	@${INSTALL_DATA} ${WRKSRC}/config.php.sample ${WWWDIR}/
-	@if [ ! -f ${WWWDIR}/config.php ]; then \
+	${MKDIR} ${WWWDIR}
+	${INSTALL_DATA} ${WRKSRC}/config.php.sample ${WWWDIR}/
+	if [ ! -f ${WWWDIR}/config.php ]; then \
 		${CP} -p ${WWWDIR}/config.php.sample ${WWWDIR}/config.php; \
 	fi
-	@${INSTALL_DATA} ${WRKSRC}/index.php ${WWWDIR}/
+	${INSTALL_DATA} ${WRKSRC}/index.php ${WWWDIR}/
 .for dirs in ${ROOTDIRS}
-	@(cd ${WRKSRC} && ${COPYTREE_SHARE} ${dirs} ${WWWDIR}/ )
+	(cd ${WRKSRC} && ${COPYTREE_SHARE} ${dirs} ${WWWDIR}/ )
 .endfor
-	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${WWWDIR}
+	${CHOWN} -R ${WWWOWN}:${WWWGRP} ${WWWDIR}
 
 post-install:
-	@${CAT} ${PKGMESSAGE}
+	${CAT} ${PKGMESSAGE}
 .include <bsd.port.mk>
