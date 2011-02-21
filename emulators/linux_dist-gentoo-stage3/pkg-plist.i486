@@ -1006,18 +1006,6 @@
 %%PREFIX_SUBDIR%%usr/bin/curl-config
 %%PREFIX_SUBDIR%%usr/bin/cut
 %%PREFIX_SUBDIR%%usr/bin/cytune
-%%PREFIX_SUBDIR%%usr/bin/db4.7_archive
-%%PREFIX_SUBDIR%%usr/bin/db4.7_checkpoint
-%%PREFIX_SUBDIR%%usr/bin/db4.7_codegen
-%%PREFIX_SUBDIR%%usr/bin/db4.7_deadlock
-%%PREFIX_SUBDIR%%usr/bin/db4.7_dump
-%%PREFIX_SUBDIR%%usr/bin/db4.7_hotbackup
-%%PREFIX_SUBDIR%%usr/bin/db4.7_load
-%%PREFIX_SUBDIR%%usr/bin/db4.7_printlog
-%%PREFIX_SUBDIR%%usr/bin/db4.7_recover
-%%PREFIX_SUBDIR%%usr/bin/db4.7_stat
-%%PREFIX_SUBDIR%%usr/bin/db4.7_upgrade
-%%PREFIX_SUBDIR%%usr/bin/db4.7_verify
 %%PREFIX_SUBDIR%%usr/bin/db4.8_archive
 %%PREFIX_SUBDIR%%usr/bin/db4.8_checkpoint
 %%PREFIX_SUBDIR%%usr/bin/db4.8_deadlock
@@ -1759,9 +1747,6 @@
 %%PREFIX_SUBDIR%%usr/include/cursesw.h
 %%PREFIX_SUBDIR%%usr/include/cursslk.h
 %%PREFIX_SUBDIR%%usr/include/db.h
-%%PREFIX_SUBDIR%%usr/include/db4.7/db.h
-%%PREFIX_SUBDIR%%usr/include/db4.7/db_185.h
-%%PREFIX_SUBDIR%%usr/include/db4.7/db_cxx.h
 %%PREFIX_SUBDIR%%usr/include/db4.8/db.h
 %%PREFIX_SUBDIR%%usr/include/db4.8/db_185.h
 %%PREFIX_SUBDIR%%usr/include/db4.8/db_cxx.h
@@ -4102,17 +4087,11 @@
 %%PREFIX_SUBDIR%%usr/lib/libcurl.so.4.2.0
 %%PREFIX_SUBDIR%%usr/lib/libcurses.a
 %%PREFIX_SUBDIR%%usr/lib/libcurses.so
-%%PREFIX_SUBDIR%%usr/lib/libdb-4.7.a
-%%PREFIX_SUBDIR%%usr/lib/libdb-4.7.la
-%%PREFIX_SUBDIR%%usr/lib/libdb-4.7.so
 %%PREFIX_SUBDIR%%usr/lib/libdb-4.8.a
 %%PREFIX_SUBDIR%%usr/lib/libdb-4.8.la
 %%PREFIX_SUBDIR%%usr/lib/libdb-4.8.so
 %%PREFIX_SUBDIR%%usr/lib/libdb.a
 %%PREFIX_SUBDIR%%usr/lib/libdb.so
-%%PREFIX_SUBDIR%%usr/lib/libdb_cxx-4.7.a
-%%PREFIX_SUBDIR%%usr/lib/libdb_cxx-4.7.la
-%%PREFIX_SUBDIR%%usr/lib/libdb_cxx-4.7.so
 %%PREFIX_SUBDIR%%usr/lib/libdb_cxx-4.8.a
 %%PREFIX_SUBDIR%%usr/lib/libdb_cxx-4.8.la
 %%PREFIX_SUBDIR%%usr/lib/libdb_cxx-4.8.so
@@ -4288,7 +4267,7 @@
 %%PREFIX_SUBDIR%%usr/lib/libxml2.la
 %%PREFIX_SUBDIR%%usr/lib/libxml2.so
 %%PREFIX_SUBDIR%%usr/lib/libxml2.so.2
-%%PREFIX_SUBDIR%%usr/lib/libxml2.so.2.7.7
+%%PREFIX_SUBDIR%%usr/lib/libxml2.so.2.7.8
 %%PREFIX_SUBDIR%%usr/lib/libz.a
 %%PREFIX_SUBDIR%%usr/lib/libz.so
 %%PREFIX_SUBDIR%%usr/lib/locale/.keep_sys-libs_glibc-2.2
@@ -7654,49 +7633,6 @@
 %%PREFIX_SUBDIR%%usr/lib/python2.6/bisect.py
 %%PREFIX_SUBDIR%%usr/lib/python2.6/bisect.pyc
 %%PREFIX_SUBDIR%%usr/lib/python2.6/bisect.pyo
-%%PREFIX_SUBDIR%%usr/lib/python2.6/bsddb/__init__.py
-%%PREFIX_SUBDIR%%usr/lib/python2.6/bsddb/__init__.pyc
-%%PREFIX_SUBDIR%%usr/lib/python2.6/bsddb/__init__.pyo
-%%PREFIX_SUBDIR%%usr/lib/python2.6/bsddb/db.py
-%%PREFIX_SUBDIR%%usr/lib/python2.6/bsddb/db.pyc
-%%PREFIX_SUBDIR%%usr/lib/python2.6/bsddb/db.pyo
-%%PREFIX_SUBDIR%%usr/lib/python2.6/bsddb/dbobj.py
-%%PREFIX_SUBDIR%%usr/lib/python2.6/bsddb/dbobj.pyc
-%%PREFIX_SUBDIR%%usr/lib/python2.6/bsddb/dbobj.pyo
-%%PREFIX_SUBDIR%%usr/lib/python2.6/bsddb/dbrecio.py
-%%PREFIX_SUBDIR%%usr/lib/python2.6/bsddb/dbrecio.pyc
-%%PREFIX_SUBDIR%%usr/lib/python2.6/bsddb/dbrecio.pyo
-%%PREFIX_SUBDIR%%usr/lib/python2.6/bsddb/dbshelve.py
-%%PREFIX_SUBDIR%%usr/lib/python2.6/bsddb/dbshelve.pyc
-%%PREFIX_SUBDIR%%usr/lib/python2.6/bsddb/dbshelve.pyo
-%%PREFIX_SUBDIR%%usr/lib/python2.6/bsddb/dbtables.py
-%%PREFIX_SUBDIR%%usr/lib/python2.6/bsddb/dbtables.pyc
-%%PREFIX_SUBDIR%%usr/lib/python2.6/bsddb/dbtables.pyo
-%%PREFIX_SUBDIR%%usr/lib/python2.6/bsddb/dbutils.py
-%%PREFIX_SUBDIR%%usr/lib/python2.6/bsddb/dbutils.pyc
-%%PREFIX_SUBDIR%%usr/lib/python2.6/bsddb/dbutils.pyo
-%%PREFIX_SUBDIR%%usr/lib/python2.6/bsddb/test/__init__.py
-%%PREFIX_SUBDIR%%usr/lib/python2.6/bsddb/test/test_all.py
-%%PREFIX_SUBDIR%%usr/lib/python2.6/bsddb/test/test_associate.py
-%%PREFIX_SUBDIR%%usr/lib/python2.6/bsddb/test/test_basics.py
-%%PREFIX_SUBDIR%%usr/lib/python2.6/bsddb/test/test_compare.py
-%%PREFIX_SUBDIR%%usr/lib/python2.6/bsddb/test/test_compat.py
-%%PREFIX_SUBDIR%%usr/lib/python2.6/bsddb/test/test_cursor_pget_bug.py
-%%PREFIX_SUBDIR%%usr/lib/python2.6/bsddb/test/test_dbobj.py
-%%PREFIX_SUBDIR%%usr/lib/python2.6/bsddb/test/test_dbshelve.py
-%%PREFIX_SUBDIR%%usr/lib/python2.6/bsddb/test/test_dbtables.py
-%%PREFIX_SUBDIR%%usr/lib/python2.6/bsddb/test/test_distributed_transactions.py
-%%PREFIX_SUBDIR%%usr/lib/python2.6/bsddb/test/test_early_close.py
-%%PREFIX_SUBDIR%%usr/lib/python2.6/bsddb/test/test_get_none.py
-%%PREFIX_SUBDIR%%usr/lib/python2.6/bsddb/test/test_join.py
-%%PREFIX_SUBDIR%%usr/lib/python2.6/bsddb/test/test_lock.py
-%%PREFIX_SUBDIR%%usr/lib/python2.6/bsddb/test/test_misc.py
-%%PREFIX_SUBDIR%%usr/lib/python2.6/bsddb/test/test_pickle.py
-%%PREFIX_SUBDIR%%usr/lib/python2.6/bsddb/test/test_queue.py
-%%PREFIX_SUBDIR%%usr/lib/python2.6/bsddb/test/test_recno.py
-%%PREFIX_SUBDIR%%usr/lib/python2.6/bsddb/test/test_replication.py
-%%PREFIX_SUBDIR%%usr/lib/python2.6/bsddb/test/test_sequence.py
-%%PREFIX_SUBDIR%%usr/lib/python2.6/bsddb/test/test_thread.py
 %%PREFIX_SUBDIR%%usr/lib/python2.6/cProfile.py
 %%PREFIX_SUBDIR%%usr/lib/python2.6/cProfile.pyc
 %%PREFIX_SUBDIR%%usr/lib/python2.6/cProfile.pyo
@@ -8700,7 +8636,6 @@
 %%PREFIX_SUBDIR%%usr/lib/python2.6/keyword.pyo
 %%PREFIX_SUBDIR%%usr/lib/python2.6/lib-dynload/Python-2.6.6-py2.6.egg-info
 %%PREFIX_SUBDIR%%usr/lib/python2.6/lib-dynload/_bisect.so
-%%PREFIX_SUBDIR%%usr/lib/python2.6/lib-dynload/_bsddb.so
 %%PREFIX_SUBDIR%%usr/lib/python2.6/lib-dynload/_bytesio.so
 %%PREFIX_SUBDIR%%usr/lib/python2.6/lib-dynload/_codecs_cn.so
 %%PREFIX_SUBDIR%%usr/lib/python2.6/lib-dynload/_codecs_hk.so
@@ -9579,9 +9514,6 @@
 %%PREFIX_SUBDIR%%usr/lib/python2.6/test/test_binop.py
 %%PREFIX_SUBDIR%%usr/lib/python2.6/test/test_bisect.py
 %%PREFIX_SUBDIR%%usr/lib/python2.6/test/test_bool.py
-%%PREFIX_SUBDIR%%usr/lib/python2.6/test/test_bsddb.py
-%%PREFIX_SUBDIR%%usr/lib/python2.6/test/test_bsddb185.py
-%%PREFIX_SUBDIR%%usr/lib/python2.6/test/test_bsddb3.py
 %%PREFIX_SUBDIR%%usr/lib/python2.6/test/test_buffer.py
 %%PREFIX_SUBDIR%%usr/lib/python2.6/test/test_bufio.py
 %%PREFIX_SUBDIR%%usr/lib/python2.6/test/test_builtin.py
@@ -12647,7 +12579,6 @@
 %%PREFIX_SUBDIR%%usr/sbin/archive-conf
 %%PREFIX_SUBDIR%%usr/sbin/backup-tar
 %%PREFIX_SUBDIR%%usr/sbin/backup.sh
-%%PREFIX_SUBDIR%%usr/sbin/berkeley_db47_svc
 %%PREFIX_SUBDIR%%usr/sbin/chgpasswd
 %%PREFIX_SUBDIR%%usr/sbin/chpasswd
 %%PREFIX_SUBDIR%%usr/sbin/clockdiff
@@ -14205,14 +14136,14 @@
 %%PREFIX_SUBDIR%%usr/share/doc/libtool-2.2.10/README.bz2
 %%PREFIX_SUBDIR%%usr/share/doc/libtool-2.2.10/THANKS.bz2
 %%PREFIX_SUBDIR%%usr/share/doc/libtool-2.2.10/TODO.bz2
-%%PREFIX_SUBDIR%%usr/share/doc/libxml2-2.7.7/AUTHORS.bz2
-%%PREFIX_SUBDIR%%usr/share/doc/libxml2-2.7.7/ChangeLog.bz2
-%%PREFIX_SUBDIR%%usr/share/doc/libxml2-2.7.7/Copyright.bz2
-%%PREFIX_SUBDIR%%usr/share/doc/libxml2-2.7.7/NEWS.bz2
-%%PREFIX_SUBDIR%%usr/share/doc/libxml2-2.7.7/README.bz2
-%%PREFIX_SUBDIR%%usr/share/doc/libxml2-2.7.7/README.tests.bz2
-%%PREFIX_SUBDIR%%usr/share/doc/libxml2-2.7.7/TODO.bz2
-%%PREFIX_SUBDIR%%usr/share/doc/libxml2-2.7.7/TODO_SCHEMAS.bz2
+%%PREFIX_SUBDIR%%usr/share/doc/libxml2-2.7.8/AUTHORS.bz2
+%%PREFIX_SUBDIR%%usr/share/doc/libxml2-2.7.8/ChangeLog.bz2
+%%PREFIX_SUBDIR%%usr/share/doc/libxml2-2.7.8/Copyright.bz2
+%%PREFIX_SUBDIR%%usr/share/doc/libxml2-2.7.8/NEWS.bz2
+%%PREFIX_SUBDIR%%usr/share/doc/libxml2-2.7.8/README.bz2
+%%PREFIX_SUBDIR%%usr/share/doc/libxml2-2.7.8/README.tests.bz2
+%%PREFIX_SUBDIR%%usr/share/doc/libxml2-2.7.8/TODO.bz2
+%%PREFIX_SUBDIR%%usr/share/doc/libxml2-2.7.8/TODO_SCHEMAS.bz2
 %%PREFIX_SUBDIR%%usr/share/doc/m4-1.4.15/BACKLOG.bz2
 %%PREFIX_SUBDIR%%usr/share/doc/m4-1.4.15/ChangeLog.bz2
 %%PREFIX_SUBDIR%%usr/share/doc/m4-1.4.15/NEWS.bz2
@@ -14280,16 +14211,16 @@
 %%PREFIX_SUBDIR%%usr/share/doc/net-tools-1.60_p20090728014017-r1/README.bz2
 %%PREFIX_SUBDIR%%usr/share/doc/net-tools-1.60_p20090728014017-r1/README.ipv6.bz2
 %%PREFIX_SUBDIR%%usr/share/doc/net-tools-1.60_p20090728014017-r1/TODO.bz2
-%%PREFIX_SUBDIR%%usr/share/doc/openssh-5.6_p1-r2/CREDITS.bz2
-%%PREFIX_SUBDIR%%usr/share/doc/openssh-5.6_p1-r2/ChangeLog.bz2
-%%PREFIX_SUBDIR%%usr/share/doc/openssh-5.6_p1-r2/OVERVIEW.bz2
-%%PREFIX_SUBDIR%%usr/share/doc/openssh-5.6_p1-r2/README.bz2
-%%PREFIX_SUBDIR%%usr/share/doc/openssh-5.6_p1-r2/README.dns.bz2
-%%PREFIX_SUBDIR%%usr/share/doc/openssh-5.6_p1-r2/README.platform.bz2
-%%PREFIX_SUBDIR%%usr/share/doc/openssh-5.6_p1-r2/README.privsep.bz2
-%%PREFIX_SUBDIR%%usr/share/doc/openssh-5.6_p1-r2/README.tun.bz2
-%%PREFIX_SUBDIR%%usr/share/doc/openssh-5.6_p1-r2/TODO.bz2
-%%PREFIX_SUBDIR%%usr/share/doc/openssh-5.6_p1-r2/sshd_config.bz2
+%%PREFIX_SUBDIR%%usr/share/doc/openssh-5.8_p1/CREDITS.bz2
+%%PREFIX_SUBDIR%%usr/share/doc/openssh-5.8_p1/ChangeLog.bz2
+%%PREFIX_SUBDIR%%usr/share/doc/openssh-5.8_p1/OVERVIEW.bz2
+%%PREFIX_SUBDIR%%usr/share/doc/openssh-5.8_p1/README.bz2
+%%PREFIX_SUBDIR%%usr/share/doc/openssh-5.8_p1/README.dns.bz2
+%%PREFIX_SUBDIR%%usr/share/doc/openssh-5.8_p1/README.platform.bz2
+%%PREFIX_SUBDIR%%usr/share/doc/openssh-5.8_p1/README.privsep.bz2
+%%PREFIX_SUBDIR%%usr/share/doc/openssh-5.8_p1/README.tun.bz2
+%%PREFIX_SUBDIR%%usr/share/doc/openssh-5.8_p1/TODO.bz2
+%%PREFIX_SUBDIR%%usr/share/doc/openssh-5.8_p1/sshd_config.bz2
 %%PREFIX_SUBDIR%%usr/share/doc/openssl-1.0.0c/CHANGES.SSLeay.bz2
 %%PREFIX_SUBDIR%%usr/share/doc/openssl-1.0.0c/CHANGES.bz2
 %%PREFIX_SUBDIR%%usr/share/doc/openssl-1.0.0c/FAQ.bz2
@@ -29035,36 +28966,36 @@
 %%PREFIX_SUBDIR%%var/db/pkg/dev-libs/libpcre-8.02/environment.bz2
 %%PREFIX_SUBDIR%%var/db/pkg/dev-libs/libpcre-8.02/libpcre-8.02.ebuild
 %%PREFIX_SUBDIR%%var/db/pkg/dev-libs/libpcre-8.02/repository
-%%PREFIX_SUBDIR%%var/db/pkg/dev-libs/libxml2-2.7.7/BINPKGMD5
-%%PREFIX_SUBDIR%%var/db/pkg/dev-libs/libxml2-2.7.7/BUILD_TIME
-%%PREFIX_SUBDIR%%var/db/pkg/dev-libs/libxml2-2.7.7/CATEGORY
-%%PREFIX_SUBDIR%%var/db/pkg/dev-libs/libxml2-2.7.7/CBUILD
-%%PREFIX_SUBDIR%%var/db/pkg/dev-libs/libxml2-2.7.7/CFLAGS
-%%PREFIX_SUBDIR%%var/db/pkg/dev-libs/libxml2-2.7.7/CHOST
-%%PREFIX_SUBDIR%%var/db/pkg/dev-libs/libxml2-2.7.7/CONTENTS
-%%PREFIX_SUBDIR%%var/db/pkg/dev-libs/libxml2-2.7.7/COUNTER
-%%PREFIX_SUBDIR%%var/db/pkg/dev-libs/libxml2-2.7.7/CXXFLAGS
-%%PREFIX_SUBDIR%%var/db/pkg/dev-libs/libxml2-2.7.7/DEFINED_PHASES
-%%PREFIX_SUBDIR%%var/db/pkg/dev-libs/libxml2-2.7.7/DEPEND
-%%PREFIX_SUBDIR%%var/db/pkg/dev-libs/libxml2-2.7.7/DESCRIPTION
-%%PREFIX_SUBDIR%%var/db/pkg/dev-libs/libxml2-2.7.7/EAPI
-%%PREFIX_SUBDIR%%var/db/pkg/dev-libs/libxml2-2.7.7/FEATURES
-%%PREFIX_SUBDIR%%var/db/pkg/dev-libs/libxml2-2.7.7/HOMEPAGE
-%%PREFIX_SUBDIR%%var/db/pkg/dev-libs/libxml2-2.7.7/INHERITED
-%%PREFIX_SUBDIR%%var/db/pkg/dev-libs/libxml2-2.7.7/IUSE
-%%PREFIX_SUBDIR%%var/db/pkg/dev-libs/libxml2-2.7.7/KEYWORDS
-%%PREFIX_SUBDIR%%var/db/pkg/dev-libs/libxml2-2.7.7/LDFLAGS
-%%PREFIX_SUBDIR%%var/db/pkg/dev-libs/libxml2-2.7.7/LICENSE
-%%PREFIX_SUBDIR%%var/db/pkg/dev-libs/libxml2-2.7.7/NEEDED
-%%PREFIX_SUBDIR%%var/db/pkg/dev-libs/libxml2-2.7.7/NEEDED.ELF.2
-%%PREFIX_SUBDIR%%var/db/pkg/dev-libs/libxml2-2.7.7/PF
-%%PREFIX_SUBDIR%%var/db/pkg/dev-libs/libxml2-2.7.7/RDEPEND
-%%PREFIX_SUBDIR%%var/db/pkg/dev-libs/libxml2-2.7.7/SIZE
-%%PREFIX_SUBDIR%%var/db/pkg/dev-libs/libxml2-2.7.7/SLOT
-%%PREFIX_SUBDIR%%var/db/pkg/dev-libs/libxml2-2.7.7/USE
-%%PREFIX_SUBDIR%%var/db/pkg/dev-libs/libxml2-2.7.7/environment.bz2
-%%PREFIX_SUBDIR%%var/db/pkg/dev-libs/libxml2-2.7.7/libxml2-2.7.7.ebuild
-%%PREFIX_SUBDIR%%var/db/pkg/dev-libs/libxml2-2.7.7/repository
+%%PREFIX_SUBDIR%%var/db/pkg/dev-libs/libxml2-2.7.8/BINPKGMD5
+%%PREFIX_SUBDIR%%var/db/pkg/dev-libs/libxml2-2.7.8/BUILD_TIME
+%%PREFIX_SUBDIR%%var/db/pkg/dev-libs/libxml2-2.7.8/CATEGORY
+%%PREFIX_SUBDIR%%var/db/pkg/dev-libs/libxml2-2.7.8/CBUILD
+%%PREFIX_SUBDIR%%var/db/pkg/dev-libs/libxml2-2.7.8/CFLAGS
+%%PREFIX_SUBDIR%%var/db/pkg/dev-libs/libxml2-2.7.8/CHOST
+%%PREFIX_SUBDIR%%var/db/pkg/dev-libs/libxml2-2.7.8/CONTENTS
+%%PREFIX_SUBDIR%%var/db/pkg/dev-libs/libxml2-2.7.8/COUNTER
+%%PREFIX_SUBDIR%%var/db/pkg/dev-libs/libxml2-2.7.8/CXXFLAGS
+%%PREFIX_SUBDIR%%var/db/pkg/dev-libs/libxml2-2.7.8/DEFINED_PHASES
+%%PREFIX_SUBDIR%%var/db/pkg/dev-libs/libxml2-2.7.8/DEPEND
+%%PREFIX_SUBDIR%%var/db/pkg/dev-libs/libxml2-2.7.8/DESCRIPTION
+%%PREFIX_SUBDIR%%var/db/pkg/dev-libs/libxml2-2.7.8/EAPI
+%%PREFIX_SUBDIR%%var/db/pkg/dev-libs/libxml2-2.7.8/FEATURES
+%%PREFIX_SUBDIR%%var/db/pkg/dev-libs/libxml2-2.7.8/HOMEPAGE
+%%PREFIX_SUBDIR%%var/db/pkg/dev-libs/libxml2-2.7.8/INHERITED
+%%PREFIX_SUBDIR%%var/db/pkg/dev-libs/libxml2-2.7.8/IUSE
+%%PREFIX_SUBDIR%%var/db/pkg/dev-libs/libxml2-2.7.8/KEYWORDS
+%%PREFIX_SUBDIR%%var/db/pkg/dev-libs/libxml2-2.7.8/LDFLAGS
+%%PREFIX_SUBDIR%%var/db/pkg/dev-libs/libxml2-2.7.8/LICENSE
+%%PREFIX_SUBDIR%%var/db/pkg/dev-libs/libxml2-2.7.8/NEEDED
+%%PREFIX_SUBDIR%%var/db/pkg/dev-libs/libxml2-2.7.8/NEEDED.ELF.2
+%%PREFIX_SUBDIR%%var/db/pkg/dev-libs/libxml2-2.7.8/PF
+%%PREFIX_SUBDIR%%var/db/pkg/dev-libs/libxml2-2.7.8/RDEPEND
+%%PREFIX_SUBDIR%%var/db/pkg/dev-libs/libxml2-2.7.8/SIZE
+%%PREFIX_SUBDIR%%var/db/pkg/dev-libs/libxml2-2.7.8/SLOT
+%%PREFIX_SUBDIR%%var/db/pkg/dev-libs/libxml2-2.7.8/USE
+%%PREFIX_SUBDIR%%var/db/pkg/dev-libs/libxml2-2.7.8/environment.bz2
+%%PREFIX_SUBDIR%%var/db/pkg/dev-libs/libxml2-2.7.8/libxml2-2.7.8.ebuild
+%%PREFIX_SUBDIR%%var/db/pkg/dev-libs/libxml2-2.7.8/repository
 %%PREFIX_SUBDIR%%var/db/pkg/dev-libs/mpfr-2.4.2_p3/BINPKGMD5
 %%PREFIX_SUBDIR%%var/db/pkg/dev-libs/mpfr-2.4.2_p3/BUILD_TIME
 %%PREFIX_SUBDIR%%var/db/pkg/dev-libs/mpfr-2.4.2_p3/CATEGORY
@@ -29442,37 +29373,37 @@
 %%PREFIX_SUBDIR%%var/db/pkg/net-misc/iputils-20100418-r1/environment.bz2
 %%PREFIX_SUBDIR%%var/db/pkg/net-misc/iputils-20100418-r1/iputils-20100418-r1.ebuild
 %%PREFIX_SUBDIR%%var/db/pkg/net-misc/iputils-20100418-r1/repository
-%%PREFIX_SUBDIR%%var/db/pkg/net-misc/openssh-5.6_p1-r2/BINPKGMD5
-%%PREFIX_SUBDIR%%var/db/pkg/net-misc/openssh-5.6_p1-r2/BUILD_TIME
-%%PREFIX_SUBDIR%%var/db/pkg/net-misc/openssh-5.6_p1-r2/CATEGORY
-%%PREFIX_SUBDIR%%var/db/pkg/net-misc/openssh-5.6_p1-r2/CBUILD
-%%PREFIX_SUBDIR%%var/db/pkg/net-misc/openssh-5.6_p1-r2/CFLAGS
-%%PREFIX_SUBDIR%%var/db/pkg/net-misc/openssh-5.6_p1-r2/CHOST
-%%PREFIX_SUBDIR%%var/db/pkg/net-misc/openssh-5.6_p1-r2/CONTENTS
-%%PREFIX_SUBDIR%%var/db/pkg/net-misc/openssh-5.6_p1-r2/COUNTER
-%%PREFIX_SUBDIR%%var/db/pkg/net-misc/openssh-5.6_p1-r2/CXXFLAGS
-%%PREFIX_SUBDIR%%var/db/pkg/net-misc/openssh-5.6_p1-r2/DEFINED_PHASES
-%%PREFIX_SUBDIR%%var/db/pkg/net-misc/openssh-5.6_p1-r2/DEPEND
-%%PREFIX_SUBDIR%%var/db/pkg/net-misc/openssh-5.6_p1-r2/DESCRIPTION
-%%PREFIX_SUBDIR%%var/db/pkg/net-misc/openssh-5.6_p1-r2/EAPI
-%%PREFIX_SUBDIR%%var/db/pkg/net-misc/openssh-5.6_p1-r2/FEATURES
-%%PREFIX_SUBDIR%%var/db/pkg/net-misc/openssh-5.6_p1-r2/HOMEPAGE
-%%PREFIX_SUBDIR%%var/db/pkg/net-misc/openssh-5.6_p1-r2/INHERITED
-%%PREFIX_SUBDIR%%var/db/pkg/net-misc/openssh-5.6_p1-r2/IUSE
-%%PREFIX_SUBDIR%%var/db/pkg/net-misc/openssh-5.6_p1-r2/KEYWORDS
-%%PREFIX_SUBDIR%%var/db/pkg/net-misc/openssh-5.6_p1-r2/LDFLAGS
-%%PREFIX_SUBDIR%%var/db/pkg/net-misc/openssh-5.6_p1-r2/LICENSE
-%%PREFIX_SUBDIR%%var/db/pkg/net-misc/openssh-5.6_p1-r2/NEEDED
-%%PREFIX_SUBDIR%%var/db/pkg/net-misc/openssh-5.6_p1-r2/NEEDED.ELF.2
-%%PREFIX_SUBDIR%%var/db/pkg/net-misc/openssh-5.6_p1-r2/PF
-%%PREFIX_SUBDIR%%var/db/pkg/net-misc/openssh-5.6_p1-r2/PROVIDE
-%%PREFIX_SUBDIR%%var/db/pkg/net-misc/openssh-5.6_p1-r2/RDEPEND
-%%PREFIX_SUBDIR%%var/db/pkg/net-misc/openssh-5.6_p1-r2/SIZE
-%%PREFIX_SUBDIR%%var/db/pkg/net-misc/openssh-5.6_p1-r2/SLOT
-%%PREFIX_SUBDIR%%var/db/pkg/net-misc/openssh-5.6_p1-r2/USE
-%%PREFIX_SUBDIR%%var/db/pkg/net-misc/openssh-5.6_p1-r2/environment.bz2
-%%PREFIX_SUBDIR%%var/db/pkg/net-misc/openssh-5.6_p1-r2/openssh-5.6_p1-r2.ebuild
-%%PREFIX_SUBDIR%%var/db/pkg/net-misc/openssh-5.6_p1-r2/repository
+%%PREFIX_SUBDIR%%var/db/pkg/net-misc/openssh-5.8_p1/BINPKGMD5
+%%PREFIX_SUBDIR%%var/db/pkg/net-misc/openssh-5.8_p1/BUILD_TIME
+%%PREFIX_SUBDIR%%var/db/pkg/net-misc/openssh-5.8_p1/CATEGORY
+%%PREFIX_SUBDIR%%var/db/pkg/net-misc/openssh-5.8_p1/CBUILD
+%%PREFIX_SUBDIR%%var/db/pkg/net-misc/openssh-5.8_p1/CFLAGS
+%%PREFIX_SUBDIR%%var/db/pkg/net-misc/openssh-5.8_p1/CHOST
+%%PREFIX_SUBDIR%%var/db/pkg/net-misc/openssh-5.8_p1/CONTENTS
+%%PREFIX_SUBDIR%%var/db/pkg/net-misc/openssh-5.8_p1/COUNTER
+%%PREFIX_SUBDIR%%var/db/pkg/net-misc/openssh-5.8_p1/CXXFLAGS
+%%PREFIX_SUBDIR%%var/db/pkg/net-misc/openssh-5.8_p1/DEFINED_PHASES
+%%PREFIX_SUBDIR%%var/db/pkg/net-misc/openssh-5.8_p1/DEPEND
+%%PREFIX_SUBDIR%%var/db/pkg/net-misc/openssh-5.8_p1/DESCRIPTION
+%%PREFIX_SUBDIR%%var/db/pkg/net-misc/openssh-5.8_p1/EAPI
+%%PREFIX_SUBDIR%%var/db/pkg/net-misc/openssh-5.8_p1/FEATURES
+%%PREFIX_SUBDIR%%var/db/pkg/net-misc/openssh-5.8_p1/HOMEPAGE
+%%PREFIX_SUBDIR%%var/db/pkg/net-misc/openssh-5.8_p1/INHERITED
+%%PREFIX_SUBDIR%%var/db/pkg/net-misc/openssh-5.8_p1/IUSE
+%%PREFIX_SUBDIR%%var/db/pkg/net-misc/openssh-5.8_p1/KEYWORDS
+%%PREFIX_SUBDIR%%var/db/pkg/net-misc/openssh-5.8_p1/LDFLAGS
+%%PREFIX_SUBDIR%%var/db/pkg/net-misc/openssh-5.8_p1/LICENSE
+%%PREFIX_SUBDIR%%var/db/pkg/net-misc/openssh-5.8_p1/NEEDED
+%%PREFIX_SUBDIR%%var/db/pkg/net-misc/openssh-5.8_p1/NEEDED.ELF.2
+%%PREFIX_SUBDIR%%var/db/pkg/net-misc/openssh-5.8_p1/PF
+%%PREFIX_SUBDIR%%var/db/pkg/net-misc/openssh-5.8_p1/PROVIDE
+%%PREFIX_SUBDIR%%var/db/pkg/net-misc/openssh-5.8_p1/RDEPEND
+%%PREFIX_SUBDIR%%var/db/pkg/net-misc/openssh-5.8_p1/SIZE
+%%PREFIX_SUBDIR%%var/db/pkg/net-misc/openssh-5.8_p1/SLOT
+%%PREFIX_SUBDIR%%var/db/pkg/net-misc/openssh-5.8_p1/USE
+%%PREFIX_SUBDIR%%var/db/pkg/net-misc/openssh-5.8_p1/environment.bz2
+%%PREFIX_SUBDIR%%var/db/pkg/net-misc/openssh-5.8_p1/openssh-5.8_p1.ebuild
+%%PREFIX_SUBDIR%%var/db/pkg/net-misc/openssh-5.8_p1/repository
 %%PREFIX_SUBDIR%%var/db/pkg/net-misc/rsync-3.0.7/BINPKGMD5
 %%PREFIX_SUBDIR%%var/db/pkg/net-misc/rsync-3.0.7/BUILD_TIME
 %%PREFIX_SUBDIR%%var/db/pkg/net-misc/rsync-3.0.7/CATEGORY
@@ -31049,35 +30980,6 @@
 %%PREFIX_SUBDIR%%var/db/pkg/sys-libs/cracklib-2.8.16/cracklib-2.8.16.ebuild
 %%PREFIX_SUBDIR%%var/db/pkg/sys-libs/cracklib-2.8.16/environment.bz2
 %%PREFIX_SUBDIR%%var/db/pkg/sys-libs/cracklib-2.8.16/repository
-%%PREFIX_SUBDIR%%var/db/pkg/sys-libs/db-4.7.25_p4/BINPKGMD5
-%%PREFIX_SUBDIR%%var/db/pkg/sys-libs/db-4.7.25_p4/BUILD_TIME
-%%PREFIX_SUBDIR%%var/db/pkg/sys-libs/db-4.7.25_p4/CATEGORY
-%%PREFIX_SUBDIR%%var/db/pkg/sys-libs/db-4.7.25_p4/CBUILD
-%%PREFIX_SUBDIR%%var/db/pkg/sys-libs/db-4.7.25_p4/CFLAGS
-%%PREFIX_SUBDIR%%var/db/pkg/sys-libs/db-4.7.25_p4/CHOST
-%%PREFIX_SUBDIR%%var/db/pkg/sys-libs/db-4.7.25_p4/CONTENTS
-%%PREFIX_SUBDIR%%var/db/pkg/sys-libs/db-4.7.25_p4/COUNTER
-%%PREFIX_SUBDIR%%var/db/pkg/sys-libs/db-4.7.25_p4/CXXFLAGS
-%%PREFIX_SUBDIR%%var/db/pkg/sys-libs/db-4.7.25_p4/DEFINED_PHASES
-%%PREFIX_SUBDIR%%var/db/pkg/sys-libs/db-4.7.25_p4/DEPEND
-%%PREFIX_SUBDIR%%var/db/pkg/sys-libs/db-4.7.25_p4/DESCRIPTION
-%%PREFIX_SUBDIR%%var/db/pkg/sys-libs/db-4.7.25_p4/EAPI
-%%PREFIX_SUBDIR%%var/db/pkg/sys-libs/db-4.7.25_p4/FEATURES
-%%PREFIX_SUBDIR%%var/db/pkg/sys-libs/db-4.7.25_p4/HOMEPAGE
-%%PREFIX_SUBDIR%%var/db/pkg/sys-libs/db-4.7.25_p4/INHERITED
-%%PREFIX_SUBDIR%%var/db/pkg/sys-libs/db-4.7.25_p4/IUSE
-%%PREFIX_SUBDIR%%var/db/pkg/sys-libs/db-4.7.25_p4/KEYWORDS
-%%PREFIX_SUBDIR%%var/db/pkg/sys-libs/db-4.7.25_p4/LDFLAGS
-%%PREFIX_SUBDIR%%var/db/pkg/sys-libs/db-4.7.25_p4/LICENSE
-%%PREFIX_SUBDIR%%var/db/pkg/sys-libs/db-4.7.25_p4/NEEDED
-%%PREFIX_SUBDIR%%var/db/pkg/sys-libs/db-4.7.25_p4/NEEDED.ELF.2
-%%PREFIX_SUBDIR%%var/db/pkg/sys-libs/db-4.7.25_p4/PF
-%%PREFIX_SUBDIR%%var/db/pkg/sys-libs/db-4.7.25_p4/SIZE
-%%PREFIX_SUBDIR%%var/db/pkg/sys-libs/db-4.7.25_p4/SLOT
-%%PREFIX_SUBDIR%%var/db/pkg/sys-libs/db-4.7.25_p4/USE
-%%PREFIX_SUBDIR%%var/db/pkg/sys-libs/db-4.7.25_p4/db-4.7.25_p4.ebuild
-%%PREFIX_SUBDIR%%var/db/pkg/sys-libs/db-4.7.25_p4/environment.bz2
-%%PREFIX_SUBDIR%%var/db/pkg/sys-libs/db-4.7.25_p4/repository
 %%PREFIX_SUBDIR%%var/db/pkg/sys-libs/db-4.8.30/BINPKGMD5
 %%PREFIX_SUBDIR%%var/db/pkg/sys-libs/db-4.8.30/BUILD_TIME
 %%PREFIX_SUBDIR%%var/db/pkg/sys-libs/db-4.8.30/CATEGORY
@@ -31684,7 +31586,6 @@
 @dirrm %%PREFIX_SUBDIR%%var/db/pkg/sys-libs/gdbm-1.8.3-r4
 @dirrm %%PREFIX_SUBDIR%%var/db/pkg/sys-libs/e2fsprogs-libs-1.41.12
 @dirrm %%PREFIX_SUBDIR%%var/db/pkg/sys-libs/db-4.8.30
-@dirrm %%PREFIX_SUBDIR%%var/db/pkg/sys-libs/db-4.7.25_p4
 @dirrm %%PREFIX_SUBDIR%%var/db/pkg/sys-libs/cracklib-2.8.16
 @dirrm %%PREFIX_SUBDIR%%var/db/pkg/sys-libs
 @dirrm %%PREFIX_SUBDIR%%var/db/pkg/sys-kernel/linux-headers-2.6.30-r1
@@ -31746,7 +31647,7 @@
 @dirrm %%PREFIX_SUBDIR%%var/db/pkg/perl-core
 @dirrm %%PREFIX_SUBDIR%%var/db/pkg/net-misc/wget-1.12-r3
 @dirrm %%PREFIX_SUBDIR%%var/db/pkg/net-misc/rsync-3.0.7
-@dirrm %%PREFIX_SUBDIR%%var/db/pkg/net-misc/openssh-5.6_p1-r2
+@dirrm %%PREFIX_SUBDIR%%var/db/pkg/net-misc/openssh-5.8_p1
 @dirrm %%PREFIX_SUBDIR%%var/db/pkg/net-misc/iputils-20100418-r1
 @dirrm %%PREFIX_SUBDIR%%var/db/pkg/net-misc/curl-7.20.0-r2
 @dirrm %%PREFIX_SUBDIR%%var/db/pkg/net-misc
@@ -31763,7 +31664,7 @@
 @dirrm %%PREFIX_SUBDIR%%var/db/pkg/dev-libs/popt-1.16
 @dirrm %%PREFIX_SUBDIR%%var/db/pkg/dev-libs/openssl-1.0.0c
 @dirrm %%PREFIX_SUBDIR%%var/db/pkg/dev-libs/mpfr-2.4.2_p3
-@dirrm %%PREFIX_SUBDIR%%var/db/pkg/dev-libs/libxml2-2.7.7
+@dirrm %%PREFIX_SUBDIR%%var/db/pkg/dev-libs/libxml2-2.7.8
 @dirrm %%PREFIX_SUBDIR%%var/db/pkg/dev-libs/libpcre-8.02
 @dirrm %%PREFIX_SUBDIR%%var/db/pkg/dev-libs/libffi-3.0.9
 @dirrm %%PREFIX_SUBDIR%%var/db/pkg/dev-libs/gmp-4.3.2
@@ -32439,7 +32340,7 @@
 @dirrm %%PREFIX_SUBDIR%%usr/share/doc/pam-1.1.3
 @dirrm %%PREFIX_SUBDIR%%usr/share/doc/openssl-1.0.0c/html
 @dirrm %%PREFIX_SUBDIR%%usr/share/doc/openssl-1.0.0c
-@dirrm %%PREFIX_SUBDIR%%usr/share/doc/openssh-5.6_p1-r2
+@dirrm %%PREFIX_SUBDIR%%usr/share/doc/openssh-5.8_p1
 @dirrm %%PREFIX_SUBDIR%%usr/share/doc/net-tools-1.60_p20090728014017-r1
 @dirrm %%PREFIX_SUBDIR%%usr/share/doc/ncurses-5.7-r3
 @dirrm %%PREFIX_SUBDIR%%usr/share/doc/nano-2.2.5/html
@@ -32453,7 +32354,7 @@
 @dirrm %%PREFIX_SUBDIR%%usr/share/doc/man-1.6f-r4
 @dirrm %%PREFIX_SUBDIR%%usr/share/doc/make-3.81-r2
 @dirrm %%PREFIX_SUBDIR%%usr/share/doc/m4-1.4.15
-@dirrm %%PREFIX_SUBDIR%%usr/share/doc/libxml2-2.7.7
+@dirrm %%PREFIX_SUBDIR%%usr/share/doc/libxml2-2.7.8
 @dirrm %%PREFIX_SUBDIR%%usr/share/doc/libtool-2.2.10
 @dirrm %%PREFIX_SUBDIR%%usr/share/doc/libpcre-8.02/html
 @dirrm %%PREFIX_SUBDIR%%usr/share/doc/libpcre-8.02
@@ -32712,8 +32613,6 @@
 @dirrm %%PREFIX_SUBDIR%%usr/lib/python2.6/ctypes
 @dirrm %%PREFIX_SUBDIR%%usr/lib/python2.6/config
 @dirrm %%PREFIX_SUBDIR%%usr/lib/python2.6/compiler
-@dirrm %%PREFIX_SUBDIR%%usr/lib/python2.6/bsddb/test
-@dirrm %%PREFIX_SUBDIR%%usr/lib/python2.6/bsddb
 @dirrm %%PREFIX_SUBDIR%%usr/lib/python2.6
 @dirrm %%PREFIX_SUBDIR%%usr/lib/portage/pym/repoman
 @dirrm %%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/xml
@@ -33236,7 +33135,6 @@
 @dirrm %%PREFIX_SUBDIR%%usr/include/et
 @dirrm %%PREFIX_SUBDIR%%usr/include/e2p
 @dirrm %%PREFIX_SUBDIR%%usr/include/db4.8
-@dirrm %%PREFIX_SUBDIR%%usr/include/db4.7
 @dirrm %%PREFIX_SUBDIR%%usr/include/curl
 @dirrm %%PREFIX_SUBDIR%%usr/include/blkid
 @dirrm %%PREFIX_SUBDIR%%usr/include/bits
