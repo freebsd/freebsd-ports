@@ -7,6 +7,7 @@
 
 PORTNAME=	xterm
 PORTVERSION=	269
+PORTREVISION=	1
 CATEGORIES=	x11
 MASTER_SITES=	ftp://invisible-island.net/xterm/ \
 		http://voodoo.bawue.com/download/ \
@@ -27,6 +28,8 @@ CONFIGURE_ARGS+=--with-utempter --enable-narrowproto
 OPTIONS=	WIDE_CHARS "enable wide-character support" on \
 		256_COLOR "enable 256-color support" off \
 		DEC_LOCATOR "enable DECterm Locator support" off
+
+.include <bsd.port.options.mk>
 
 .if !defined(WITHOUT_WIDE_CHARS)
 CONFIGURE_ARGS+=	--enable-wide-chars --enable-luit
