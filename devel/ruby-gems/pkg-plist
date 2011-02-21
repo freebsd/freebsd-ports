@@ -24,7 +24,6 @@ lib/ruby/gems/%%RUBY_VER%%/specifications/sources-0.0.2.gemspec
 %%RUBY_SITELIBDIR%%/rubygems/commands/install_command.rb
 %%RUBY_SITELIBDIR%%/rubygems/commands/list_command.rb
 %%RUBY_SITELIBDIR%%/rubygems/commands/lock_command.rb
-%%RUBY_SITELIBDIR%%/rubygems/commands/mirror_command.rb
 %%RUBY_SITELIBDIR%%/rubygems/commands/owner_command.rb
 %%RUBY_SITELIBDIR%%/rubygems/commands/outdated_command.rb
 %%RUBY_SITELIBDIR%%/rubygems/commands/pristine_command.rb
@@ -62,8 +61,10 @@ lib/ruby/gems/%%RUBY_VER%%/specifications/sources-0.0.2.gemspec
 %%RUBY_SITELIBDIR%%/rubygems/gem_runner.rb
 %%RUBY_SITELIBDIR%%/rubygems/indexer.rb
 %%RUBY_SITELIBDIR%%/rubygems/install_update_options.rb
+%%RUBY_SITELIBDIR%%/rubygems/installer_test_case.rb
 %%RUBY_SITELIBDIR%%/rubygems/installer.rb
 %%RUBY_SITELIBDIR%%/rubygems/local_remote_options.rb
+%%RUBY_SITELIBDIR%%/rubygems/mock_gem_ui.rb
 %%RUBY_SITELIBDIR%%/rubygems/old_format.rb
 %%RUBY_SITELIBDIR%%/rubygems/package.rb
 %%RUBY_SITELIBDIR%%/rubygems/package_task.rb
@@ -73,6 +74,7 @@ lib/ruby/gems/%%RUBY_VER%%/specifications/sources-0.0.2.gemspec
 %%RUBY_SITELIBDIR%%/rubygems/package/tar_output.rb
 %%RUBY_SITELIBDIR%%/rubygems/package/tar_reader.rb
 %%RUBY_SITELIBDIR%%/rubygems/package/tar_reader/entry.rb
+%%RUBY_SITELIBDIR%%/rubygems/package/tar_test_case.rb
 %%RUBY_SITELIBDIR%%/rubygems/package/tar_writer.rb
 %%RUBY_SITELIBDIR%%/rubygems/platform.rb
 %%RUBY_SITELIBDIR%%/rubygems/remote_fetcher.rb
@@ -81,10 +83,9 @@ lib/ruby/gems/%%RUBY_VER%%/specifications/sources-0.0.2.gemspec
 %%RUBY_SITELIBDIR%%/rubygems/security.rb
 %%RUBY_SITELIBDIR%%/rubygems/server.rb
 %%RUBY_SITELIBDIR%%/rubygems/source_index.rb
-%%RUBY_SITELIBDIR%%/rubygems/source_info_cache.rb
-%%RUBY_SITELIBDIR%%/rubygems/source_info_cache_entry.rb
 %%RUBY_SITELIBDIR%%/rubygems/spec_fetcher.rb
 %%RUBY_SITELIBDIR%%/rubygems/specification.rb
+%%RUBY_SITELIBDIR%%/rubygems/test_case.rb
 %%RUBY_SITELIBDIR%%/rubygems/test_utilities.rb
 %%RUBY_SITELIBDIR%%/rubygems/text.rb
 %%RUBY_SITELIBDIR%%/rubygems/uninstaller.rb

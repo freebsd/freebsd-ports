@@ -1,15 +1,15 @@
---- ./lib/rubygems/commands/setup_command.rb.orig	2009-05-27 18:51:56.000000000 -0400
-+++ ./lib/rubygems/commands/setup_command.rb	2009-06-12 00:50:43.889103829 -0400
-@@ -115,6 +115,8 @@
+--- lib/rubygems/commands/setup_command.rb.orig	2011-02-10 14:01:36.000000000 +0000
++++ lib/rubygems/commands/setup_command.rb	2011-02-10 14:01:45.000000000 +0000
+@@ -112,6 +112,8 @@
  
      install_rdoc
  
 +    install_sources
 +
      say
-     say "-" * 78
-     say
-@@ -144,6 +146,23 @@
+     if @verbose then
+       say "-" * 78
+@@ -147,6 +149,23 @@
      end
    end
  
@@ -31,9 +31,9 @@
 +  end
 +
    def install_executables(bin_dir)
-     say "Installing gem executable"
+     say "Installing gem executable" if @verbose
  
-@@ -152,8 +171,6 @@
+@@ -155,8 +174,6 @@
      Dir.chdir 'bin' do
        bin_files = Dir['*']
  
