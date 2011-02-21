@@ -1,0 +1,6 @@
+The standard for machine-readable cataloging (MARC) records is documented at
+http://loc.gov/marc/. This package enables you to read existing MARC records
+from a file, string, or (using the YAZ extension), from a Z39.50 source. You
+can also use this package to create new MARC records.
+
+WWW: http://pear.php.net/package/File_MARC
