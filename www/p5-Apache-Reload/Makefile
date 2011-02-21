@@ -17,12 +17,13 @@ COMMENT=	Reload changed modules
 MAKE_JOBS_SAFE=	yes
 
 PERL_CONFIGURE=	yes
+USE_APACHE=	13+
 
 MAN3=		Apache2::Reload.3 Apache::Reload.3
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_MODPERL2)
+.if defined(WITH_MODPERL2) || ${APACHE_VERSION} > 13
 BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/mod_perl2.pm:${PORTSDIR}/www/mod_perl2
 RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/mod_perl2.pm:${PORTSDIR}/www/mod_perl2
 MAKE_ENV+=	MOD_PERL=2
