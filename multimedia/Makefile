@@ -144,6 +144,7 @@
     SUBDIR += ksubeditor
     SUBDIR += ldvd
     SUBDIR += libaacs
+    SUBDIR += libbluray
     SUBDIR += libdc1394
     SUBDIR += libdca
     SUBDIR += libdv

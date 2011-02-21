@@ -1,0 +1,12 @@
+include/libbluray/bluray.h
+include/libbluray/filesystem.h
+include/libbluray/keys.h
+include/libbluray/log_control.h
+include/libbluray/meta_data.h
+include/libbluray/overlay.h
+lib/libbluray.a
+lib/libbluray.la
+lib/libbluray.so
+lib/libbluray.so.0
+libdata/pkgconfig/libbluray.pc
+@dirrm include/libbluray

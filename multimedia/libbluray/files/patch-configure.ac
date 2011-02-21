@@ -1,0 +1,28 @@
+--- configure.ac.orig	2011-02-13 16:21:47.000000000 +0100
++++ configure.ac	2011-02-20 03:32:38.000000000 +0100
+@@ -35,7 +35,7 @@
+ pkg_config_missing="Could not find pkg-config.  Assuming..."
+ 
+ # configure options
+-AC_ARG_ENABLE([dlopen-crypto-libs],
++AC_ARG_WITH([dlopen-crypto-libs],
+   [AS_HELP_STRING([--with-dlopen-crypto-libs],
+   [use libaacs and libbdplus via dlopen (default is auto)])],
+   [use_dlopen_crypto_libs=$withval],
+@@ -120,7 +120,7 @@
+ 
+ # dlopen check
+ if [[ $use_dlopen_crypto_libs = "auto" ]]; then
+-  if test "${SYS}" != "mingw32" ; then
++  if test "${SYS}" != "mingw32" -a "${SYS}" == "${SYS#freebsd}" ; then
+       AC_CHECK_LIB([dl], [dlopen],
+         [DLOPEN_LDFLAGS="-ldl"; AC_MSG_NOTICE($using_dlopen_crypto_libs)
+          AC_DEFINE([DLOPEN_CRYPTO_LIBS], [1], ["Define to 1 if dlopening crypto libs"])],
+@@ -236,6 +236,7 @@
+   case $target_os in
+        linux*) java_os=linux ;;
+        win*)   java_os=win32 ;;
++       freebsd*) java_os=freebsd ;;
+        *)      java_os=$target_os ;;
+   esac
+ 
