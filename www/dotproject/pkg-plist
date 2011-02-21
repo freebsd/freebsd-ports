@@ -4,7 +4,9 @@ www/dotproject/LICENSE
 www/dotproject/README
 www/dotproject/base.php
 www/dotproject/classes/CustomFields.class.php
+www/dotproject/classes/auth.mysql.class.php
 www/dotproject/classes/authenticator.class.php
+www/dotproject/classes/csscolor.class.php
 www/dotproject/classes/customfieldsparser.class.php
 www/dotproject/classes/date.class.php
 www/dotproject/classes/dp.class.php
@@ -26,6 +28,9 @@ www/dotproject/db/upgrade_20_to_201.sql
 www/dotproject/db/upgrade_20alpha_to_20beta.sql
 www/dotproject/db/upgrade_20beta_to_20.sql
 www/dotproject/db/upgrade_211_to_212.sql
+www/dotproject/db/upgrade_212_to_213.sql
+www/dotproject/db/upgrade_213_to_214.sql
+www/dotproject/db/upgrade_214_to_215.sql
 www/dotproject/db/upgrade_21_to_211.sql
 www/dotproject/db/upgrade_21rc1_to_21rc2.sql
 www/dotproject/db/upgrade_21rc2_to_21.sql
@@ -34,12 +39,6 @@ www/dotproject/db/upgrade_contacts_company.php
 www/dotproject/db/upgrade_latest.php
 www/dotproject/db/upgrade_latest.sql
 www/dotproject/db/upgrade_permissions.php
-www/dotproject/files/.cvsignore
-www/dotproject/files/.htaccess
-www/dotproject/files/index.html
-www/dotproject/files/temp/.cvsignore
-www/dotproject/files/temp/.htaccess
-www/dotproject/files/temp/index.html
 www/dotproject/fileviewer.php
 www/dotproject/functions/admin_func.php
 www/dotproject/functions/forums_func.php
@@ -59,9 +58,8 @@ www/dotproject/images/googlemaps.gif
 www/dotproject/images/helpdesk.png
 www/dotproject/images/icons/1.gif
 www/dotproject/images/icons/admin.gif
+www/dotproject/images/icons/birthday.png
 www/dotproject/images/icons/calendar.gif
-www/dotproject/images/icons/ci.png
-www/dotproject/images/icons/co.png
 www/dotproject/images/icons/collapse.gif
 www/dotproject/images/icons/companies.gif
 www/dotproject/images/icons/customfields.png
@@ -130,9 +128,9 @@ www/dotproject/images/smartfolder.gif
 www/dotproject/images/trash_small.gif
 www/dotproject/images/view.week.gif
 www/dotproject/images/week.gif
-www/dotproject/includes/.cvsignore
 www/dotproject/includes/.htaccess
 www/dotproject/includes/config-dist.php
+www/dotproject/includes/dP_compat.php
 www/dotproject/includes/db_adodb.php
 www/dotproject/includes/db_connect.php
 www/dotproject/includes/gateway.pl
@@ -159,6 +157,7 @@ www/dotproject/install/install.inc.php
 www/dotproject/install/vw_idx_check.php
 www/dotproject/js/base.js
 www/dotproject/js/collapse.js
+www/dotproject/lib/PEAR.php
 www/dotproject/lib/PEAR/Contact_Vcard_Build.php
 www/dotproject/lib/PEAR/Contact_Vcard_Parse.php
 www/dotproject/lib/PEAR/Date.php
@@ -166,6 +165,8 @@ www/dotproject/lib/PEAR/Date/Calc.php
 www/dotproject/lib/PEAR/Date/Human.php
 www/dotproject/lib/PEAR/Date/Span.php
 www/dotproject/lib/PEAR/Date/TimeZone.php
+www/dotproject/lib/PEAR/FixPHP5PEARWarnings.php
+www/dotproject/lib/PEAR5.php
 www/dotproject/lib/adodb/adodb-csvlib.inc.php
 www/dotproject/lib/adodb/adodb-datadict.inc.php
 www/dotproject/lib/adodb/adodb-error.inc.php
@@ -379,29 +380,57 @@ www/dotproject/lib/fonts/FreeSerifBoldItalic.ttf
 www/dotproject/lib/fonts/FreeSerifItalic.ttf
 www/dotproject/lib/fonts/INSTALL
 www/dotproject/lib/fonts/README
+www/dotproject/lib/fonts/vera/COPYRIGHT.TXT
+www/dotproject/lib/fonts/vera/README.TXT
+www/dotproject/lib/fonts/vera/RELEASENOTES.TXT
+www/dotproject/lib/fonts/vera/Vera.ttf
+www/dotproject/lib/fonts/vera/VeraBI.ttf
+www/dotproject/lib/fonts/vera/VeraBd.ttf
+www/dotproject/lib/fonts/vera/VeraIt.ttf
+www/dotproject/lib/fonts/vera/VeraMoBI.ttf
+www/dotproject/lib/fonts/vera/VeraMoBd.ttf
+www/dotproject/lib/fonts/vera/VeraMoIt.ttf
+www/dotproject/lib/fonts/vera/VeraMono.ttf
+www/dotproject/lib/fonts/vera/VeraSe.ttf
+www/dotproject/lib/fonts/vera/VeraSeBd.ttf
+www/dotproject/lib/fonts/vera/local.conf
 www/dotproject/lib/index.html
 www/dotproject/lib/jpgraph/QPL.txt
 www/dotproject/lib/jpgraph/README
 www/dotproject/lib/jpgraph/README.dotproject
+www/dotproject/lib/jpgraph/VERSION
 www/dotproject/lib/jpgraph/index.html
-www/dotproject/lib/jpgraph/src/imgdata_diamonds.inc
-www/dotproject/lib/jpgraph/src/index.html
-www/dotproject/lib/jpgraph/src/jpg-config.inc
+www/dotproject/lib/jpgraph/src/gd_image.inc.php
+www/dotproject/lib/jpgraph/src/jpg-config.inc.php
 www/dotproject/lib/jpgraph/src/jpgraph.php
 www/dotproject/lib/jpgraph/src/jpgraph_bar.php
 www/dotproject/lib/jpgraph/src/jpgraph_canvas.php
 www/dotproject/lib/jpgraph/src/jpgraph_canvtools.php
+www/dotproject/lib/jpgraph/src/jpgraph_contour.php
+www/dotproject/lib/jpgraph/src/jpgraph_errhandler.inc.php
 www/dotproject/lib/jpgraph/src/jpgraph_error.php
 www/dotproject/lib/jpgraph/src/jpgraph_gantt.php
 www/dotproject/lib/jpgraph/src/jpgraph_gradient.php
 www/dotproject/lib/jpgraph/src/jpgraph_iconplot.php
+www/dotproject/lib/jpgraph/src/jpgraph_legend.inc.php
 www/dotproject/lib/jpgraph/src/jpgraph_line.php
 www/dotproject/lib/jpgraph/src/jpgraph_log.php
+www/dotproject/lib/jpgraph/src/jpgraph_meshinterpolate.inc.php
+www/dotproject/lib/jpgraph/src/jpgraph_mgraph.php
 www/dotproject/lib/jpgraph/src/jpgraph_pie.php
 www/dotproject/lib/jpgraph/src/jpgraph_pie3d.php
 www/dotproject/lib/jpgraph/src/jpgraph_plotband.php
-www/dotproject/lib/jpgraph/src/jpgraph_plotmark.inc
+www/dotproject/lib/jpgraph/src/jpgraph_plotline.php
+www/dotproject/lib/jpgraph/src/jpgraph_plotmark.inc.php
+www/dotproject/lib/jpgraph/src/jpgraph_polar.php
+www/dotproject/lib/jpgraph/src/jpgraph_radar.php
+www/dotproject/lib/jpgraph/src/jpgraph_rgb.inc.php
+www/dotproject/lib/jpgraph/src/jpgraph_text.inc.php
+www/dotproject/lib/jpgraph/src/jpgraph_ttf.inc.php
+www/dotproject/lib/jpgraph/src/jpgraph_utils.inc.php
+www/dotproject/lib/jpgraph/src/lang/de.inc.php
 www/dotproject/lib/jpgraph/src/lang/en.inc.php
+www/dotproject/lib/jpgraph/src/lang/prod.inc.php
 www/dotproject/lib/overlib/Mini/overlib_anchor_mini.js
 www/dotproject/lib/overlib/Mini/overlib_centerpopup_mini.js
 www/dotproject/lib/overlib/Mini/overlib_crossframe_mini.js
@@ -613,6 +642,7 @@ www/dotproject/modules/admin/addedituser.php
 www/dotproject/modules/admin/admin.class.php
 www/dotproject/modules/admin/do_perms_aed.php
 www/dotproject/modules/admin/do_user_aed.php
+www/dotproject/modules/admin/do_user_transfer.php
 www/dotproject/modules/admin/do_userrole_aed.php
 www/dotproject/modules/admin/images/helix-setup-user.png
 www/dotproject/modules/admin/images/helix-setup-users.png
@@ -628,6 +658,7 @@ www/dotproject/modules/admin/vw_usr_log.php
 www/dotproject/modules/admin/vw_usr_perms.php
 www/dotproject/modules/admin/vw_usr_roles.php
 www/dotproject/modules/admin/vw_usr_sessions.php
+www/dotproject/modules/admin/vw_usr_transfer.php
 www/dotproject/modules/calendar/addedit.php
 www/dotproject/modules/calendar/calendar.class.php
 www/dotproject/modules/calendar/clash.php
@@ -694,6 +725,8 @@ www/dotproject/modules/files/files.class.php
 www/dotproject/modules/files/folders_table.php
 www/dotproject/modules/files/functions.php
 www/dotproject/modules/files/images/back.png
+www/dotproject/modules/files/images/ci.png
+www/dotproject/modules/files/images/co.png
 www/dotproject/modules/files/images/down.png
 www/dotproject/modules/files/images/duplicate.png
 www/dotproject/modules/files/images/edit_add.png
@@ -1001,6 +1034,124 @@ www/dotproject/modules/links/links.class.php
 www/dotproject/modules/links/projects_tab.links.php
 www/dotproject/modules/links/setup.php
 www/dotproject/modules/links/tasks_tab.links.php
+www/dotproject/modules/projectdesigner/.cvsignore
+www/dotproject/modules/projectdesigner/config.php
+www/dotproject/modules/projectdesigner/configure.php
+www/dotproject/modules/projectdesigner/do_addtasks_aed.php
+www/dotproject/modules/projectdesigner/do_projectdesigner_aed.php
+www/dotproject/modules/projectdesigner/do_task_bulk_aed.php
+www/dotproject/modules/projectdesigner/gantt.php
+www/dotproject/modules/projectdesigner/images/add.png
+www/dotproject/modules/projectdesigner/images/down.png
+www/dotproject/modules/projectdesigner/images/filesave.png
+www/dotproject/modules/projectdesigner/images/printer.png
+www/dotproject/modules/projectdesigner/images/projectdesigner.jpg
+www/dotproject/modules/projectdesigner/images/projectdesigner.png
+www/dotproject/modules/projectdesigner/images/remove.png
+www/dotproject/modules/projectdesigner/images/up.png
+www/dotproject/modules/projectdesigner/index.js
+www/dotproject/modules/projectdesigner/index.php
+www/dotproject/modules/projectdesigner/jscalendar/ChangeLog
+www/dotproject/modules/projectdesigner/jscalendar/README
+www/dotproject/modules/projectdesigner/jscalendar/bugtest-hidden-selects.html
+www/dotproject/modules/projectdesigner/jscalendar/calendar-blue.css
+www/dotproject/modules/projectdesigner/jscalendar/calendar-blue2.css
+www/dotproject/modules/projectdesigner/jscalendar/calendar-brown.css
+www/dotproject/modules/projectdesigner/jscalendar/calendar-green.css
+www/dotproject/modules/projectdesigner/jscalendar/calendar-setup.js
+www/dotproject/modules/projectdesigner/jscalendar/calendar-setup_stripped.js
+www/dotproject/modules/projectdesigner/jscalendar/calendar-system.css
+www/dotproject/modules/projectdesigner/jscalendar/calendar-tas.css
+www/dotproject/modules/projectdesigner/jscalendar/calendar-win2k-1.css
+www/dotproject/modules/projectdesigner/jscalendar/calendar-win2k-2.css
+www/dotproject/modules/projectdesigner/jscalendar/calendar-win2k-cold-1.css
+www/dotproject/modules/projectdesigner/jscalendar/calendar-win2k-cold-2.css
+www/dotproject/modules/projectdesigner/jscalendar/calendar.js
+www/dotproject/modules/projectdesigner/jscalendar/calendar.php
+www/dotproject/modules/projectdesigner/jscalendar/calendar_stripped.js
+www/dotproject/modules/projectdesigner/jscalendar/dayinfo.html
+www/dotproject/modules/projectdesigner/jscalendar/doc/html/field-button.jpg
+www/dotproject/modules/projectdesigner/jscalendar/doc/html/reference-Z-S.css
+www/dotproject/modules/projectdesigner/jscalendar/doc/html/reference.css
+www/dotproject/modules/projectdesigner/jscalendar/doc/html/reference.html
+www/dotproject/modules/projectdesigner/jscalendar/doc/reference.pdf
+www/dotproject/modules/projectdesigner/jscalendar/img.gif
+www/dotproject/modules/projectdesigner/jscalendar/index.html
+www/dotproject/modules/projectdesigner/jscalendar/lang/calendar-af.js
+www/dotproject/modules/projectdesigner/jscalendar/lang/calendar-al.js
+www/dotproject/modules/projectdesigner/jscalendar/lang/calendar-bg.js
+www/dotproject/modules/projectdesigner/jscalendar/lang/calendar-big5-utf8.js
+www/dotproject/modules/projectdesigner/jscalendar/lang/calendar-big5.js
+www/dotproject/modules/projectdesigner/jscalendar/lang/calendar-br.js
+www/dotproject/modules/projectdesigner/jscalendar/lang/calendar-ca.js
+www/dotproject/modules/projectdesigner/jscalendar/lang/calendar-cs-utf8.js
+www/dotproject/modules/projectdesigner/jscalendar/lang/calendar-cs-win.js
+www/dotproject/modules/projectdesigner/jscalendar/lang/calendar-da.js
+www/dotproject/modules/projectdesigner/jscalendar/lang/calendar-de.js
+www/dotproject/modules/projectdesigner/jscalendar/lang/calendar-du.js
+www/dotproject/modules/projectdesigner/jscalendar/lang/calendar-el.js
+www/dotproject/modules/projectdesigner/jscalendar/lang/calendar-en.js
+www/dotproject/modules/projectdesigner/jscalendar/lang/calendar-es.js
+www/dotproject/modules/projectdesigner/jscalendar/lang/calendar-fi.js
+www/dotproject/modules/projectdesigner/jscalendar/lang/calendar-fr.js
+www/dotproject/modules/projectdesigner/jscalendar/lang/calendar-he-utf8.js
+www/dotproject/modules/projectdesigner/jscalendar/lang/calendar-hr-utf8.js
+www/dotproject/modules/projectdesigner/jscalendar/lang/calendar-hr.js
+www/dotproject/modules/projectdesigner/jscalendar/lang/calendar-hu.js
+www/dotproject/modules/projectdesigner/jscalendar/lang/calendar-it.js
+www/dotproject/modules/projectdesigner/jscalendar/lang/calendar-jp.js
+www/dotproject/modules/projectdesigner/jscalendar/lang/calendar-ko-utf8.js
+www/dotproject/modules/projectdesigner/jscalendar/lang/calendar-ko.js
+www/dotproject/modules/projectdesigner/jscalendar/lang/calendar-lt-utf8.js
+www/dotproject/modules/projectdesigner/jscalendar/lang/calendar-lt.js
+www/dotproject/modules/projectdesigner/jscalendar/lang/calendar-lv.js
+www/dotproject/modules/projectdesigner/jscalendar/lang/calendar-nl.js
+www/dotproject/modules/projectdesigner/jscalendar/lang/calendar-no.js
+www/dotproject/modules/projectdesigner/jscalendar/lang/calendar-pl-utf8.js
+www/dotproject/modules/projectdesigner/jscalendar/lang/calendar-pl.js
+www/dotproject/modules/projectdesigner/jscalendar/lang/calendar-pt.js
+www/dotproject/modules/projectdesigner/jscalendar/lang/calendar-ro.js
+www/dotproject/modules/projectdesigner/jscalendar/lang/calendar-ru.js
+www/dotproject/modules/projectdesigner/jscalendar/lang/calendar-ru_win_.js
+www/dotproject/modules/projectdesigner/jscalendar/lang/calendar-si.js
+www/dotproject/modules/projectdesigner/jscalendar/lang/calendar-sk.js
+www/dotproject/modules/projectdesigner/jscalendar/lang/calendar-sp.js
+www/dotproject/modules/projectdesigner/jscalendar/lang/calendar-sv.js
+www/dotproject/modules/projectdesigner/jscalendar/lang/calendar-tr.js
+www/dotproject/modules/projectdesigner/jscalendar/lang/calendar-zh.js
+www/dotproject/modules/projectdesigner/jscalendar/lang/cn_utf8.js
+www/dotproject/modules/projectdesigner/jscalendar/menuarrow.gif
+www/dotproject/modules/projectdesigner/jscalendar/menuarrow2.gif
+www/dotproject/modules/projectdesigner/jscalendar/multiple-dates.html
+www/dotproject/modules/projectdesigner/jscalendar/release-notes.html
+www/dotproject/modules/projectdesigner/jscalendar/simple-1.html
+www/dotproject/modules/projectdesigner/jscalendar/simple-2.html
+www/dotproject/modules/projectdesigner/jscalendar/simple-3.html
+www/dotproject/modules/projectdesigner/jscalendar/skins/aqua/active-bg.gif
+www/dotproject/modules/projectdesigner/jscalendar/skins/aqua/dark-bg.gif
+www/dotproject/modules/projectdesigner/jscalendar/skins/aqua/hover-bg.gif
+www/dotproject/modules/projectdesigner/jscalendar/skins/aqua/menuarrow.gif
+www/dotproject/modules/projectdesigner/jscalendar/skins/aqua/normal-bg.gif
+www/dotproject/modules/projectdesigner/jscalendar/skins/aqua/rowhover-bg.gif
+www/dotproject/modules/projectdesigner/jscalendar/skins/aqua/status-bg.gif
+www/dotproject/modules/projectdesigner/jscalendar/skins/aqua/theme.css
+www/dotproject/modules/projectdesigner/jscalendar/skins/aqua/title-bg.gif
+www/dotproject/modules/projectdesigner/jscalendar/skins/aqua/today-bg.gif
+www/dotproject/modules/projectdesigner/jscalendar/test-position.html
+www/dotproject/modules/projectdesigner/jscalendar/test.php
+www/dotproject/modules/projectdesigner/locales/en.inc
+www/dotproject/modules/projectdesigner/locales/pt.inc
+www/dotproject/modules/projectdesigner/printproject.php
+www/dotproject/modules/projectdesigner/projectdesigner.class.php
+www/dotproject/modules/projectdesigner/setup.php
+www/dotproject/modules/projectdesigner/sponsor.txt
+www/dotproject/modules/projectdesigner/vw_actions.php
+www/dotproject/modules/projectdesigner/vw_addtasks.php
+www/dotproject/modules/projectdesigner/vw_files.php
+www/dotproject/modules/projectdesigner/vw_gantt.php
+www/dotproject/modules/projectdesigner/vw_project.php
+www/dotproject/modules/projectdesigner/vw_projecttask.php
+www/dotproject/modules/projectdesigner/vw_tasks.php
 www/dotproject/modules/projects/addedit.php
 www/dotproject/modules/projects/admin_tab.viewuser.projects.php
 www/dotproject/modules/projects/admin_tab.viewuser.projects_gantt.php
@@ -1268,6 +1419,15 @@ www/dotproject/style/index.html
 @dirrm www/dotproject/modules/projects/reports
 @dirrm www/dotproject/modules/projects/images
 @dirrm www/dotproject/modules/projects
+@dirrm www/dotproject/modules/projectdesigner/locales
+@dirrm www/dotproject/modules/projectdesigner/jscalendar/skins/aqua
+@dirrm www/dotproject/modules/projectdesigner/jscalendar/skins
+@dirrm www/dotproject/modules/projectdesigner/jscalendar/lang
+@dirrm www/dotproject/modules/projectdesigner/jscalendar/doc/html
+@dirrm www/dotproject/modules/projectdesigner/jscalendar/doc
+@dirrm www/dotproject/modules/projectdesigner/jscalendar
+@dirrm www/dotproject/modules/projectdesigner/images
+@dirrm www/dotproject/modules/projectdesigner
 @dirrm www/dotproject/modules/links/images
 @dirrm www/dotproject/modules/links
 @dirrm www/dotproject/modules/install/images
@@ -1320,6 +1480,7 @@ www/dotproject/style/index.html
 @dirrm www/dotproject/lib/jpgraph/src/lang
 @dirrm www/dotproject/lib/jpgraph/src
 @dirrm www/dotproject/lib/jpgraph
+@dirrm www/dotproject/lib/fonts/vera
 @dirrm www/dotproject/lib/fonts
 @dirrm www/dotproject/lib/ezpdf/fonts
 @dirrm www/dotproject/lib/ezpdf
