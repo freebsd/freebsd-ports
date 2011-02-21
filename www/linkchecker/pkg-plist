@@ -31,6 +31,18 @@ bin/linkchecker-gui
 %%PYTHON_SITELIBDIR%%/linkcheck/ansicolor.py
 %%PYTHON_SITELIBDIR%%/linkcheck/ansicolor.pyc
 %%PYTHON_SITELIBDIR%%/linkcheck/ansicolor.pyo
+%%PYTHON_SITELIBDIR%%/linkcheck/bookmarks/chromium.py
+%%PYTHON_SITELIBDIR%%/linkcheck/bookmarks/opera.py
+%%PYTHON_SITELIBDIR%%/linkcheck/bookmarks/firefox.py
+%%PYTHON_SITELIBDIR%%/linkcheck/bookmarks/__init__.py
+%%PYTHON_SITELIBDIR%%/linkcheck/bookmarks/chromium.pyc
+%%PYTHON_SITELIBDIR%%/linkcheck/bookmarks/opera.pyc
+%%PYTHON_SITELIBDIR%%/linkcheck/bookmarks/firefox.pyc
+%%PYTHON_SITELIBDIR%%/linkcheck/bookmarks/__init__.pyc
+%%PYTHON_SITELIBDIR%%/linkcheck/bookmarks/chromium.pyo
+%%PYTHON_SITELIBDIR%%/linkcheck/bookmarks/opera.pyo
+%%PYTHON_SITELIBDIR%%/linkcheck/bookmarks/firefox.pyo
+%%PYTHON_SITELIBDIR%%/linkcheck/bookmarks/__init__.pyo
 %%PYTHON_SITELIBDIR%%/linkcheck/cache/__init__.py
 %%PYTHON_SITELIBDIR%%/linkcheck/cache/__init__.pyc
 %%PYTHON_SITELIBDIR%%/linkcheck/cache/__init__.pyo
@@ -529,9 +541,6 @@ bin/linkchecker-gui
 %%PYTHON_SITELIBDIR%%/linkcheck/logger/xmllog.py
 %%PYTHON_SITELIBDIR%%/linkcheck/logger/xmllog.pyc
 %%PYTHON_SITELIBDIR%%/linkcheck/logger/xmllog.pyo
-%%PYTHON_SITELIBDIR%%/linkcheck/firefox.py
-%%PYTHON_SITELIBDIR%%/linkcheck/firefox.pyc
-%%PYTHON_SITELIBDIR%%/linkcheck/firefox.pyo
 %%PYTHON_SITELIBDIR%%/linkcheck/mem.py
 %%PYTHON_SITELIBDIR%%/linkcheck/mem.pyc
 %%PYTHON_SITELIBDIR%%/linkcheck/mem.pyo
@@ -580,6 +589,7 @@ bin/linkchecker-gui
 @dirrm %%PYTHON_SITELIBDIR%%/linkcheck/configuration
 @dirrm %%PYTHON_SITELIBDIR%%/linkcheck/checker
 @dirrm %%PYTHON_SITELIBDIR%%/linkcheck/cache
+@dirrm %%PYTHON_SITELIBDIR%%/linkcheck/bookmarks
 @dirrm %%PYTHON_SITELIBDIR%%/linkcheck/HtmlParser
 @dirrm %%PYTHON_SITELIBDIR%%/linkcheck
 %%NLS%%share/locale/de/LC_MESSAGES/LinkChecker.mo
