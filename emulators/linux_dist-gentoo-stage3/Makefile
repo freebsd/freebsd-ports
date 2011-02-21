@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	gentoo-stage3
-PORTVERSION=	20110204
+PORTVERSION=	20110215
 CATEGORIES=	emulators linux
 MASTER_SITES=	${MASTER_SITE_GENTOO}
 MASTER_SITE_SUBDIR=	releases/x86/autobuilds/${PORTVERSION}
@@ -121,6 +121,8 @@ plist:
 	${ECHO_CMD} "@dirrmtry %%PREFIX_SUBDIR%%" >>pkg-plist.new
 
 update-port:
+	${MAKE} distclean
+	${MAKE} distclean GENTOO_OPTIMIZED=i686
 	${RM} ${DISTINFO_FILE}
 	${MAKE} makesum
 	${MV} ${DISTINFO_FILE} ${DISTINFO_FILE}.new
@@ -139,5 +141,7 @@ update-port:
 	${MV} pkg-plist.new pkg-plist.i686
 	${MAKE} deinstall
 	${RM} -rf ${PREFIX}/${PREFIX_SUBDIR}
+	${MAKE} distclean
+	${MAKE} distclean GENTOO_OPTIMIZED=i686
 
 .include <bsd.port.post.mk>
