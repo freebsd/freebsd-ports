@@ -37,10 +37,6 @@ OPTIONS=		KQUEUE   "Build without define HAVE_BROKEN_KQUEUE " On
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 702104
-EXTRA_PATCHES=	${PATCHDIR}/extra-patch-configure
-.endif
-
 .if !defined(WITHOUT_KQUEUE)
 .if ${OSVERSION} < 702104
 EXTRA_PATCHES=	${PATCHDIR}/extra-patch-kqueue_and_fb7
