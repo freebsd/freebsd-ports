@@ -7,7 +7,7 @@
 
 PORTNAME=	mimetex
 PORTVERSION=	20080906.1.70
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www math
 MASTER_SITES=	http://nivi.interfree.it/distfiles/${DIST_SUBDIR}/ \
 		http://www.forkosh.com/
@@ -23,16 +23,24 @@ USE_ZIP=	yes
 
 .include <bsd.port.pre.mk>
 
-FETCH_CMD=	/usr/bin/fetch -rR	# see PR bin/76134
+FETCH_ARGS=	-rR	# see PR bin/76134
 LN_OPTS=	-sf
 
-CGI_BIN=	${PREFIX}/www/cgi-bin/
+CGI_BIN=	${WWWDIR}/cgi-bin
 CGI_PRG=	${PORTNAME}.cgi
-WWW_DIR=	${PREFIX}/www/data/mimetex/
+WWW_DIR=	${WWWDIR}/data
 
 .if ${APACHE_VERSION} > 13
 PLIST_DIRSTRY+=	www/cgi-bin www/data
 .endif
+
+PLIST_SUB=	CGI_BIN="${CGI_BIN:S,^${PREFIX}/,,}" \
+		WWW_DIR="${WWW_DIR:S,^${PREFIX}/,,}"
+
+PORTDOCS=	${PORTNAME}.html
+
+SUB_FILES=	pkg-message
+SUB_LIST=	PORTDOCS=${PORTDOCS} WWW_DIR=${WWW_DIR}
 
 # usefull if you run mimetex on another machine
 .if defined(WITH_STATIC)
@@ -57,9 +65,9 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${CGI_PRG} ${CGI_BIN}/${CGI_PRG}
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.html ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${PORTDOCS} ${DOCSDIR}
 	${MKDIR} ${WWW_DIR}
-	${LN} ${LN_OPTS} ${DOCSDIR}/${PORTNAME}.html ${WWW_DIR}/index.html
+	${LN} ${LN_OPTS} ${DOCSDIR}/${PORTDOCS} ${WWW_DIR}/index.html
 
 post-install:
 	${CAT} ${PKGMESSAGE}

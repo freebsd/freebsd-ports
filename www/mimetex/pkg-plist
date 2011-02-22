@@ -1,6 +1,6 @@
 @comment $FreeBSD$
-%%PORTDOCS%%%%DOCSDIR%%/mimetex.html
-%%PORTDOCS%%www/data/mimetex/index.html
-www/cgi-bin/mimetex.cgi
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-%%PORTDOCS%%@dirrm www/data/mimetex
+%%PORTDOCS%%%%WWW_DIR%%/index.html
+%%CGI_BIN%%/mimetex.cgi
+@dirrm %%CGI_BIN%%
+%%PORTDOCS%%@dirrm %%WWW_DIR%%
+%%PORTDOCS%%@dirrm %%WWWDIR%%
