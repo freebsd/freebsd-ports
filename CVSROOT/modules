@@ -7793,6 +7793,7 @@ libXxf86vm                      ports/x11/libXxf86vm
 libYGP                          ports/devel/libYGP
 liba52                          ports/audio/liba52
 libaacplus                      ports/audio/libaacplus
+libaacs                         ports/multimedia/libaacs
 libadplug                       ports/audio/libadplug
 libafterbase                    ports/devel/libafterbase
 libafterimage                   ports/graphics/libafterimage
@@ -7818,6 +7819,7 @@ libbf                           ports/security/libbf
 libbfd                          ports/devel/libbfd
 libbgpdump                      ports/net/libbgpdump
 libbinio                        ports/devel/libbinio
+libbluray                       ports/multimedia/libbluray
 libbnr                          ports/devel/libbnr
 libboard                        ports/graphics/libboard
 libbobcat                       ports/devel/libbobcat
@@ -19407,6 +19409,7 @@ pear-File_Fortune               ports/textproc/pear-File_Fortune
 pear-File_Fstab                 ports/sysutils/pear-File_Fstab
 pear-File_Gettext               ports/sysutils/pear-File_Gettext
 pear-File_HtAccess              ports/security/pear-File_HtAccess
+pear-File_MARC                  ports/textproc/pear-File_MARC
 pear-File_PDF                   ports/print/pear-File_PDF
 pear-File_Passwd                ports/security/pear-File_Passwd
 pear-File_SMBPasswd             ports/security/pear-File_SMBPasswd
@@ -19695,6 +19698,7 @@ pear-file_fortune               ports/textproc/pear-File_Fortune
 pear-file_fstab                 ports/sysutils/pear-File_Fstab
 pear-file_gettext               ports/sysutils/pear-File_Gettext
 pear-file_htaccess              ports/security/pear-File_HtAccess
+pear-file_marc                  ports/textproc/pear-File_MARC
 pear-file_passwd                ports/security/pear-File_Passwd
 pear-file_pdf                   ports/print/pear-File_PDF
 pear-file_smbpasswd             ports/security/pear-File_SMBPasswd
@@ -19963,6 +19967,7 @@ pecl-mcve                       ports/devel/pecl-mcve
 pecl-mdbtools                   ports/databases/pecl-mdbtools
 pecl-memcache                   ports/databases/pecl-memcache
 pecl-memcached                  ports/databases/pecl-memcached
+pecl-mogilefs                   ports/sysutils/pecl-mogilefs
 pecl-mongo                      ports/databases/pecl-mongo
 pecl-ncurses                    ports/devel/pecl-ncurses
 pecl-newt                       ports/devel/pecl-newt
@@ -25407,6 +25412,7 @@ ucarp                           ports/net/ucarp
 ucc                             ports/lang/ucc
 ucl                             ports/archivers/ucl
 uclmmbase                       ports/devel/uclmmbase
+ucommon                         ports/devel/ucommon
 ucpp                            ports/devel/ucpp
 ucspi-ipc                       ports/sysutils/ucspi-ipc
 ucspi-proxy                     ports/sysutils/ucspi-proxy
