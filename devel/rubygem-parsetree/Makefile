@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	parsetree
-PORTVERSION=	3.0.6
+PORTVERSION=	3.0.7
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 DISTNAME=	ParseTree-${PORTVERSION}
@@ -14,8 +14,7 @@ MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Ruby parse tree tools
 
 RUN_DEPENDS=	rubygem-inline>=3.7.0:${PORTSDIR}/devel/rubygem-inline \
-		rubygem-sexp_processor>=3.0.1:${PORTSDIR}/devel/rubygem-sexp_processor \
-		rubygem-hoe>=1.8.2:${PORTSDIR}/devel/rubygem-hoe
+		rubygem-sexp_processor>=3.0.1:${PORTSDIR}/devel/rubygem-sexp_processor
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
