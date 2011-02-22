@@ -18,6 +18,7 @@ share/icons/hicolor/48x48/apps/viking.png
 %%NLS%%share/locale/id/LC_MESSAGES/viking.mo
 %%NLS%%share/locale/it/LC_MESSAGES/viking.mo
 %%NLS%%share/locale/ja/LC_MESSAGES/viking.mo
+%%NLS%%share/locale/jv/LC_MESSAGES/viking.mo
 %%NLS%%share/locale/lt/LC_MESSAGES/viking.mo
 %%NLS%%share/locale/lv/LC_MESSAGES/viking.mo
 %%NLS%%share/locale/nb/LC_MESSAGES/viking.mo
@@ -31,6 +32,8 @@ share/icons/hicolor/48x48/apps/viking.png
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/viking.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/viking.mo
 share/omf/viking/viking-C.omf
+%%NLS%%@dirrm share/locale/jv/LC_MESSAGES
+%%NLS%%@dirrm share/locale/jv
 @dirrmtry share/applications
 @dirrm share/omf/viking
 @dirrm share/gnome/help/viking/C/figures
