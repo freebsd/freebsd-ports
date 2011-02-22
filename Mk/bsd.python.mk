@@ -214,7 +214,7 @@ Python_Include_MAINTAINER=	python@FreeBSD.org
 #
 
 _PYTHON_PORTBRANCH=		2.6
-_PYTHON_ALLBRANCHES=		2.6 2.5 2.4 2.7 3.1 # preferred first
+_PYTHON_ALLBRANCHES=		2.6 2.5 2.4 2.7 3.1 3.2# preferred first
 _ZOPE_PORTBRANCH=		2.7
 _ZOPE_ALLBRANCHES=		2.7 2.8 2.9 2.10 3.2
 
@@ -369,8 +369,16 @@ PYTHON_PORTVERSION=	${PYTHON_DEFAULT_PORTVERSION}
 # Propagate the chosen python version to submakes.
 .MAKEFLAGS:	PYTHON_VERSION=python${_PYTHON_VERSION}
 
+# Python-3.2
+.if ${PYTHON_VERSION} == "python3.2"
+PYTHON_PORTVERSION?=3.2
+PYTHON_PORTSDIR=	${PORTSDIR}/lang/python32
+PYTHON_REL=			320
+PYTHON_SUFFIX=		32
+PYTHON_VER=			3.2
+
 # Python-3.1
-.if ${PYTHON_VERSION} == "python3.1"
+.elif ${PYTHON_VERSION} == "python3.1"
 PYTHON_PORTVERSION?=3.1.3
 PYTHON_PORTSDIR=	${PORTSDIR}/lang/python31
 PYTHON_REL=			313
@@ -428,6 +436,7 @@ check-makevars::
 	@${ECHO} "  python2.6 (default)"
 	@${ECHO} "  python2.7"
 	@${ECHO} "  python3.1"
+	@${ECHO} "  python3.2"
 	@${FALSE}
 .endif
 

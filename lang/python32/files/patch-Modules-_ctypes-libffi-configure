@@ -1,11 +1,11 @@
---- Modules/_ctypes/libffi/configure.orig	2008-05-24 00:06:50.000000000 +0900
-+++ Modules/_ctypes/libffi/configure	2008-10-09 20:24:02.000000000 +0900
-@@ -4725,7 +4725,7 @@
+--- Modules/_ctypes/libffi/configure.orig	2011-02-05 04:03:34.000000000 +0000
++++ Modules/_ctypes/libffi/configure	2011-02-05 04:04:43.000000000 +0000
+@@ -6289,7 +6289,7 @@
    rm -rf conftest*
    ;;
  
 -x86_64-*kfreebsd*-gnu|x86_64-*linux*|ppc*-*linux*|powerpc*-*linux*| \
 +amd64-*-freebsd*|x86_64-*kfreebsd*-gnu|x86_64-*linux*|ppc*-*linux*|powerpc*-*linux*| \
- s390*-*linux*|sparc*-*linux*)
+ s390*-*linux*|s390*-*tpf*|sparc*-*linux*)
    # Find out which ABI we are using.
    echo 'int i;' > conftest.$ac_ext

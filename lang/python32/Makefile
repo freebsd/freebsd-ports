@@ -4,8 +4,8 @@
 #
 # $FreeBSD$
 
-PORTNAME=	python31
-PORTVERSION=	3.1.3
+PORTNAME=	python32
+PORTVERSION=	3.2.0
 CATEGORIES=	lang python ipv6
 MASTER_SITES=	${PYTHON_MASTER_SITES}
 MASTER_SITE_SUBDIR=	${PYTHON_MASTER_SITE_SUBDIR}
@@ -27,12 +27,12 @@ INSTALL_TARGET=	altinstall
 MAN1=		${PYTHON_VERSION}.1
 
 USE_PYTHON=	yes
-PYTHON_VERSION=	python3.1
+PYTHON_VERSION=	python3.2
 PYTHON_NO_DEPENDS=	yes
 
 SHARED_WRKSRC=	${PYTHON_WRKSRC}/portbld.shared
-PLIST=		${WRKDIR}/PLIST
-PLIST_TEMPLATE?=${PKGDIR}/pkg-plist
+#PLIST=		${WRKDIR}/PLIST
+#PLIST_TEMPLATE?=${PKGDIR}/pkg-plist
 PLIST_SUB=	PYVER=${PYTHON_VERSION:S/python//} \
 		PYVER_WITHPAT=${PORTVERSION:S/.rc/rc/}
 EXAMPLESDIR=	${PREFIX}/share/examples/${PYTHON_VERSION}
@@ -110,6 +110,14 @@ CONFIGURE_ARGS+=	--disable-ipv6
 CONFIGURE_ARGS+=	--with-fpectl
 .endif
 
+pre-fetch:
+	@${ECHO_MSG} "
+	@${ECHO_MSG} "This is the first release of python-3.2,               "
+	@${ECHO_MSG} "We suggest do not use in production environment because"
+	@${ECHO_MSG} "there are some bugs what we have to figure out.        "
+	@${ECHO_MSG} "
+	@sleep 5
+
 pre-patch:
 	${CP} -r ${PATCH_WRKSRC}/Lib/plat-freebsd8 \
 		${PATCH_WRKSRC}/Lib/plat-freebsd9
@@ -144,8 +152,8 @@ pre-patch:
 post-configure:
 	${TAR} -C ${WRKSRC} -cf - . | ${TAR} -C ${SHARED_WRKSRC} -xf -
 	${LN} -sf ${PYTHON_WRKSRC}/Lib ${WRKSRC}/Lib
-	${SED} -e 's,^\(LDLIBRARY=\).*$$,\1libpython$$(VERSION).so,' \
-		-e 's,^\(BLDLIBRARY=\).*$$,\1-L. -lpython$$(VERSION),' \
+	${SED} -e 's,^\(LDLIBRARY=\).*$$,\1libpython$$(LDVERSION).so,' \
+		-e 's,^\(BLDLIBRARY=\).*$$,\1-L. -lpython$$(LDVERSION),' \
 		-e 's,^\(CFLAGSFORSHARED=\).*$$,\1$$(CCSHARED),' \
 		-e 's,^\(Makefile Modules/config.c:.*\)Makefile.pre,\1,' \
 		-e 's,^\(.(BUILDPYTHON)\: .*\).(LIBRARY),\1,' \
@@ -154,8 +162,8 @@ post-configure:
 
 pre-build:
 	cd ${SHARED_WRKSRC}; \
-	${SETENV} ${MAKE_ENV} ${MAKE} lib${PYTHON_VERSION}.so python; \
-	${LN} -f lib${PYTHON_VERSION}.so lib${PYTHON_VERSION}.so.1; \
+	${SETENV} ${MAKE_ENV} ${MAKE} lib${PYTHON_VERSION}mu.so python; \
+	${LN} -f lib${PYTHON_VERSION}mu.so lib${PYTHON_VERSION}mu.so.1; \
 	${LN} -f python ${PYTHON_VERSION:S/thon/thon-shared/}
 
 pre-su-install:
@@ -168,11 +176,6 @@ pre-su-install:
 .endfor
 
 pre-install:
-	${CAT} ${PLIST_TEMPLATE} | ${AWK} '{ print $$0; } \
-	/LIBDIR.*\.py$$/ && \
-	!/bad_coding|badsyntax|site-packages|py2_test_grammar|crlf|different_encoding|tests\/data/ \
-	{ print $$0 "o"; print $$0 "c"; }' > ${PLIST}
-
 	@# if openssl 0.9.8 is detected, _sha{256,512} module won't be installed
 	([ -f ${WRKSRC}/.without_own_sha ] && \
 		${GREP} -v 'lib-dynload/_sha' ${PLIST} > ${PLIST}.tmp && \
@@ -184,11 +187,11 @@ post-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/${PYTHON_VERSION:S/thon/thon-shared/}-config ${PREFIX}/bin
 
 	@# shared version of executable and library
-	${INSTALL_PROGRAM} ${SHARED_WRKSRC}/lib${PYTHON_VERSION}.so.1 \
+	${INSTALL_PROGRAM} ${SHARED_WRKSRC}/lib${PYTHON_VERSION}mu.so.1 \
 		${PREFIX}/lib
-	cd ${PREFIX}/lib; ${LN} -sf lib${PYTHON_VERSION}.so.1 \
+	cd ${PREFIX}/lib; ${LN} -sf lib${PYTHON_VERSION}mu.so.1 \
 		lib${PYTHON_VERSION}.so
-	${LN} -sf ${PREFIX}/lib/lib${PYTHON_VERSION}.so ${PYTHONPREFIX_LIBDIR}/config
+	${LN} -sf ${PREFIX}/lib/lib${PYTHON_VERSION}mu.so ${PYTHONPREFIX_LIBDIR}/config
 	${INSTALL_PROGRAM} \
 		${SHARED_WRKSRC}/${PYTHON_VERSION:S/thon/thon-shared/} \
 		${PREFIX}/bin
@@ -214,11 +217,6 @@ post-install:
 	@${MKDIR} ${DATADIR}
 	@cd ${PYTHON_WRKSRC}; ${TAR} -cf - Tools | \
 		(cd ${DATADIR}; ${TAR} -xf -)
-.endif
-.if !defined(NOPORTEXAMPLES)
-	@${MKDIR} ${EXAMPLESDIR}
-	@cd ${PYTHON_WRKSRC}/Demo; ${TAR} -cf - * | \
-		(cd ${EXAMPLESDIR}; ${TAR} -xf -)
 .endif
 
 	@${CAT} ${PKGMESSAGE}
