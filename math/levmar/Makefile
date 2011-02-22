@@ -7,7 +7,7 @@
 
 PORTNAME=	levmar
 PORTVERSION=	2.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	math
 MASTER_SITES=	http://www.ics.forth.gr/~lourakis/levmar/
 EXTRACT_SUFX=	.tgz
@@ -20,9 +20,11 @@ LICENSE=	GPLv2
 USE_LDCONFIG=	yes
 USE_FORTRAN=	yes
 
+OPTIONS=	PROFILE "Build a profiling library" Off
+
 .include <bsd.port.pre.mk>
 
-.if exists(${LOCALBASE}/lib/libgoto2.so)
+.if exists(${LOCALBASE}/lib/libgoto2p.so)
 WITH_BLAS?=	gotoblas
 .elif exists(${LOCALBASE}/lib/libatlas_r.so)
 WITH_BLAS?=	atlas
@@ -36,21 +38,20 @@ LIB_DEPENDS=	blas.2:${PORTSDIR}/math/blas \
 BLAS=		-lblas
 LAPACK=		-llapack
 .elif ${WITH_BLAS} == "gotoblas"
-LIB_DEPENDS=	goto2:${PORTSDIR}/math/gotoblas \
-		lapack.4:${PORTSDIR}/math/lapack
-BLAS=		-lpthread -lgoto2p
-LAPACK=		-lpthread -lgoto2p
+LIB_DEPENDS=	goto2p.1:${PORTSDIR}/math/gotoblas
+BLAS=		-lgoto2p
+LAPACK=		-lgoto2p
 .elif ${WITH_BLAS} == "atlas"
-LIB_DEPENDS=	atlas:${PORTSDIR}/math/atlas
-BLAS=		-pthread -lptf77blas -lptcblas -latlas_r
-LAPACK=		-pthread -lalapack_r
+LIB_DEPENDS=	atlas_r.2:${PORTSDIR}/math/atlas
+BLAS=		-lptf77blas -lptcblas -latlas_r
+LAPACK=		-lalapack_r
 .endif
 
-LDFLAGS+=	-L${LOCALBASE}/lib
-MAKE_ENV=	LDADD="${LAPACK} ${BLAS}" LDFLAGS="${LDFLAGS}"
-.for _u in AR NM RANLIB
-MAKE_ENV+=	${_u}="${LOCALBASE}/bin/${_u:L}"
-.endfor
+CFLAGS+=	${PTHREAD_CFLAGS}
+LDFLAGS+=	${PTHREAD_LIBS} -L${LOCALBASE}/lib
+SRCCONF=	${NONEXISTENT}
+MAKE_ENV=	LDADD="${LAPACK} ${BLAS}" LDFLAGS="${LDFLAGS}" \
+		SRCCONF="${SRCCONF}"
 
 .if !defined(NOPORTDOCS)
 PORTDOCS=	README.txt
@@ -63,8 +64,17 @@ PLIST_FILES=	include/levmar.h \
 	lib/liblevmar.so \
 	lib/liblevmar.so.2
 
-.if !(defined(NOPROFILE) || defined(NO_PROFILE) || defined(WITHOUT_PROFILE))
+.if defined(WITH_PROFILE)
+.if defined(NOPROFILE) || defined(NO_PROFILE) || defined(WITHOUT_PROFILE)
+IGNORE =	you have defined WITH_PROFILE, but have also defined\
+WITHOUT_PROFILE, NOPROFILE, or NO_PROFILE
+.elif !exists(/usr/lib/libc_p.a)
+IGNORE	=	you have chosen WITH_PROFILE, but have not installed the\
+base system profiling libraries
+.endif
 PLIST_FILES+=	lib/liblevmar_p.a
+.else
+MAKE_ENV+=	NO_PROFILE=
 .endif
 
 post-extract:
@@ -73,7 +83,7 @@ post-extract:
 	@${CP} ${FILESDIR}/Makefile.demo ${WRKSRC}/
 	@${REINPLACE_CMD} -e 's+%%CC%%+${CC}+g' \
 		-e 's+%%CFLAGS%%+${CFLAGS} -I${LOCALBASE}/include+g' \
-		-e 's+%%LDFLAGS%%+${LDFLAGS} -L${LOCALBASE}/lib+g' \
+		-e 's+%%LDFLAGS%%+${LDFLAGS}+g' \
 		-e 's+%%BLAS%%+${BLAS}+g' \
 		-e 's+%%LAPACK%%+${LAPACK}+g' \
 			${WRKSRC}/Makefile.demo
@@ -87,5 +97,10 @@ post-install:
 	@${MKDIR} ${EXAMPLESDIR}
 	@(cd ${WRKSRC}/ && ${INSTALL_DATA} ${PORTEXAMPLES} ${EXAMPLESDIR})
 .endif
+
+test check: install
+	@( cd ${WRKSRC} ; ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} Makefile.demo \
+	${_MAKE_JOBS} ${MAKE_ARGS} ${ALL_TARGET} )
+	${WRKSRC}/lmdemo
 
 .include <bsd.port.post.mk>
