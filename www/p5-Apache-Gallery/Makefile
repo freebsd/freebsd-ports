@@ -34,6 +34,7 @@ USE_APACHE=	1.3+
 BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Apache/Request.pm:${PORTSDIR}/www/p5-libapreq
 .else
 BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Apache2/Request.pm:${PORTSDIR}/www/p5-libapreq2
+PLIST_DIRSTRY+=	www/icons
 .endif
 
 MAN3=		Apache::Gallery.3
