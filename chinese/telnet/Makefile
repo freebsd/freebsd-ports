@@ -20,12 +20,11 @@ PLIST_FILES=	bin/zh-telnet
 
 .include <bsd.port.pre.mk>
 
-SRCBASE?=	${PORTSDIR}/../src
-.if exists (${SRCBASE}/contrib/telnet/telnet)
-SRCDIR=		${SRCBASE}/contrib/telnet/telnet
+.if exists (${SRC_BASE}/contrib/telnet/telnet)
+SRCDIR=		${SRC_BASE}/contrib/telnet/telnet
 CONTRIB_TELNET=	yes
-.elif exists (${SRCBASE}/usr.bin/telnet)
-SRCDIR=		${SRCBASE}/usr.bin/telnet
+.elif exists (${SRC_BASE}/usr.bin/telnet)
+SRCDIR=		${SRC_BASE}/usr.bin/telnet
 .else
 IGNORE=		need to build this port with the source code of telnet
 .endif
