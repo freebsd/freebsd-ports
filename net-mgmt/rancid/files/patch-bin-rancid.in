@@ -1,0 +1,13 @@
+--- control_rancid.old  2010-09-17 09:30:59.000000000 +0200
++++ bin/control_rancid.in      2010-09-17 09:33:03.000000000 +0200
+@@ -345,6 +345,10 @@
+ done
+ cd $DIR
+
++if [ $RCSSYS = svn ] ; then
++    $RCSSYS update >/dev/null 2>&1
++fi
++
+ # no routers, empty list or all 'down'
+ if [ ! -s routers.up ]
+ then	
