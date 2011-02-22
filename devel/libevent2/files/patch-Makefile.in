@@ -1,0 +1,20 @@
+--- Makefile.in.orig	2011-02-22 13:57:32.509779266 +0100
++++ Makefile.in	2011-02-22 14:03:10.651310739 +0100
+@@ -338,7 +338,7 @@
+ host_os = @host_os@
+ host_vendor = @host_vendor@
+ htmldir = @htmldir@
+-includedir = @includedir@
++includedir = @includedir@/event2/compat
+ infodir = @infodir@
+ install_sh = @install_sh@
+ libdir = @libdir@
+@@ -1130,7 +1130,7 @@
+ 
+ install-dvi-am:
+ 
+-install-exec-am: install-dist_binSCRIPTS install-libLTLIBRARIES
++install-exec-am: install-libLTLIBRARIES
+ 
+ install-html: install-html-recursive
+ 

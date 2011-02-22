@@ -782,6 +782,7 @@
     SUBDIR += libepp-nicbr
     SUBDIR += libev
     SUBDIR += libevent
+    SUBDIR += libevent2
     SUBDIR += libevocosm
     SUBDIR += libexecinfo
     SUBDIR += libffi
