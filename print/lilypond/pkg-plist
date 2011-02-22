@@ -257,6 +257,7 @@ lib/lilypond/%%PORTVERSION%%/python/midi.so
 %%DATADIR%%/%%PORTVERSION%%/scm/markup.scm
 %%DATADIR%%/%%PORTVERSION%%/scm/memory-trace.scm
 %%DATADIR%%/%%PORTVERSION%%/scm/midi.scm
+%%DATADIR%%/%%PORTVERSION%%/scm/modal-transforms.scm
 %%DATADIR%%/%%PORTVERSION%%/scm/music-functions.scm
 %%DATADIR%%/%%PORTVERSION%%/scm/output-lib.scm
 %%DATADIR%%/%%PORTVERSION%%/scm/output-ps.scm
