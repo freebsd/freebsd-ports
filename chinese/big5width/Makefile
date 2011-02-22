@@ -24,8 +24,7 @@ PLIST_SUB=	BASELOCALEDIR=${BASELOCALEDIR} \
 
 .include <bsd.port.pre.mk>
 
-SRCBASE?=	${PORTSDIR}/../src
-SRCDIR=		${SRCBASE}/share/mklocale
+SRCDIR=		${SRC_BASE}/share/mklocale
 
 .if !exists(${SRCDIR})
 IGNORE=		need to build this port with the locale source
