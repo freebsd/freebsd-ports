@@ -42,7 +42,7 @@ post-install:
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_MYSQL)
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}>=0:${PORTSDIR}/databases/py-MySQLdb
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}MySQLdb>=0:${PORTSDIR}/databases/py-MySQLdb
 .endif
 
 .if defined(WITH_XMPP)
