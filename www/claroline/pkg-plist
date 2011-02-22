@@ -914,6 +914,7 @@
 %%WWWDIR%%/claroline/lang/dutch_be/missing.install.lang.php
 %%WWWDIR%%/claroline/lang/dutch_be/missing.lang.php
 %%WWWDIR%%/claroline/lang/dutch_nl/complete.lang.php
+%%WWWDIR%%/claroline/lang/dutch_nl/install.lang.php
 %%WWWDIR%%/claroline/lang/dutch_nl/locale_settings.php
 %%WWWDIR%%/claroline/lang/dutch_nl/missing.install.lang.php
 %%WWWDIR%%/claroline/lang/dutch_nl/missing.lang.php
