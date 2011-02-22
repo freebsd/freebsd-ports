@@ -7,9 +7,10 @@
 
 PORTNAME=	htdig
 PORTVERSION=	3.2.0.b6
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	textproc www
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/3.2.0b6
+MASTER_SITES=	SF
+MASTER_SITE_SUBDIR=	${PORTNAME}/${PORTNAME}/3.2.0b6
 DISTNAME=	htdig-3.2.0b6
 
 MAINTAINER=	DougB@FreeBSD.org
@@ -40,6 +41,10 @@ OPTIONS=	APACHE "Include ${APACHE_PORT} as a dependency" on
 .if !defined(WITHOUT_APACHE)
 USE_APACHE=	1.3+
 CONFIGURE_ARGS+=	--with-apache=${LOCALBASE}/sbin
+.include "${PORTSDIR}/Mk/bsd.apache.mk"
+.  if ${APACHE_VERSION} > 13
+PLIST_DIRSTRY+=	www/cgi-bin www/data www/icons
+.  endif
 .endif
 
 post-patch:
