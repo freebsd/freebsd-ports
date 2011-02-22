@@ -1,9 +1,18 @@
 #! /bin/sh
 #
-# PROVIDE: named dnsmasq
-# REQUIRE: SERVERS cleanvar
-# BEFORE:  DAEMON
+# PROVIDE: dnsmasq
+# REQUIRE: SERVERS named
+# BEFORE:  DAEMON ntpdate rpcbind
 # KEYWORD: shutdown
+#
+# The BEFORE: line above contains individual services that have a
+# REQUIRE: named line, to make sure dnsmasq starts early enough
+# for those, in case dnsmasq is listed in /etc/resolv.conf.
+# 
+# The REQUIRE: named above is for configurations where named
+# acts as a resolver, and dnsmasq is used to "blend in" local
+# domain names.
+#
 #
 # Add the following line to /etc/rc.conf.local or /etc/rc.conf
 # to enable this service:
