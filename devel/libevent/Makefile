@@ -18,6 +18,10 @@ COMMENT=	Provides an API to execute callback functions on certain events
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
+USE_AUTOTOOLS=	aclocal autoheader libtoolize autoconf automake
+ACLOCAL_ARGS=	-I m4
+AUTOMAKE_ARGS=	--add-missing --force-missing --copy
+
 MAN3=	event.3 \
 	evdns.3
 MLINKS=	event.3 event_init.3 \
@@ -84,6 +88,9 @@ MLINKS=	event.3 event_init.3 \
 	- evdns_search_ndots_set.3 \
 	- evdns_set_log_fn.3 \
 	- evdns_config_windows_nameservers.3
+
+pre-configure:
+	@${MKDIR} ${WRKSRC}/m4
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,CFLAGS =,CFLAGS +=,' ${WRKSRC}/Makefile.in
