@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Redis-hiredis
-PORTVERSION=	0.9.2.3
+PORTVERSION=	0.9.2.5
 CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN/../../authors/id/N/NE/NEOPHENIX
 PKGNAMEPREFIX=	p5-
