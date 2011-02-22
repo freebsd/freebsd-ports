@@ -1,0 +1,18 @@
+The Arduino Uno uses a specific vendor ID of 0x2341 and product ID of 0x0001
+
+If you modify your Arduino Uno to use a DIFFERENT vendor ID or product ID, you
+can add your vendor/product combination to the files/ids.txt text file
+according to the example shown.  Additionally, this driver MAY work with
+generic ACM USB Serial Devices.  You would need to manually add the
+vendor ID and product ID for these devices as well.  For ACM devices that
+are modems, consider using or modifyig the 'umodem' driver.
+
+You will need to load the uarduno kernel module before connecting the Arduino UNO
+via USB to your computer.  The command to manually load the driver is:
+
+  kldload uarduno.ko
+
+To automatically load the driver on startup, add the following line to
+your /boot/loader.conf file:
+
+  uarduno_load="YES"

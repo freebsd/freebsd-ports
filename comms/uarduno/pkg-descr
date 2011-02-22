@@ -1,0 +1,16 @@
+The Arduino Uno (http://arduino.cc/) is an open source hardware micro-
+controller designed primarily for prototyping and experimentation.
+Although the devel/arduino port already exists for programming the device,
+it will not work properly with the newest Arduino hardware.  Previous
+versions of the Arduino used an FTDI USB to Serial interface.  The newest
+Arduino (beginning with the Uno) uses an on-board ATMel 8U2 controller
+to emulate a USB to Serial interface with its own custom Vendor ID and
+Hardware ID.  As a result, NONE of the existing FreeBSD USB to serial
+drivers can work with it.  This kernel driver supplies the necessary
+kernel support for the Arduino Uno on FreeBSD.
+
+Additionally, some 'ACM' USB Serial devices may work with this driver by
+manually adding their Vendor ID and Product ID combination to files/ids.txt
+
+Official web site
+WWW:  http://www.mrp3.com/uarduno.html

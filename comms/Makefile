@@ -145,6 +145,7 @@
     SUBDIR += tlf
     SUBDIR += trustedqsl
     SUBDIR += twpsk
+    SUBDIR += uarduno
     SUBDIR += uhso-kmod
     SUBDIR += uird
     SUBDIR += umcs7840
