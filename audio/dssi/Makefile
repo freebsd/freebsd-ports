@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	dssi
-PORTVERSION=	1.0.0
-PORTREVISION=	1
+PORTVERSION=	1.1.0
 CATEGORIES=	audio
 MASTER_SITES=	SF
 
@@ -26,7 +25,8 @@ GNU_CONFIGURE=	yes
 CFLAGS+=	-I${LOCALBASE}/include
 USE_GMAKE=	yes
 USE_GNOME=	gnomehack
-MAN1=		dssi_osc_send.1 dssi_osc_update.1 jack-dssi-host.1
+MAN1=		dssi_osc_send.1 dssi_osc_update.1 jack-dssi-host.1 \
+		dssi_analyse_plugin.1 dssi_list_plugins.1
 
 .if defined(WITH_QT)
 USE_QT_VER=	3
@@ -34,5 +34,8 @@ PLIST_SUB=	WITH_QT=""
 .else
 PLIST_SUB=	WITH_QT="@comment "
 .endif
+
+post-extract:
+	@${REINPLACE_CMD} -e 's#-ldl##g' ${WRKSRC}/examples/Makefile.in
 
 .include <bsd.port.mk>

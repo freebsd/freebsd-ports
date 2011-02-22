@@ -1,4 +1,6 @@
 bin/jack-dssi-host
+bin/dssi_analyse_plugin
+bin/dssi_list_plugins
 bin/dssi_osc_send
 bin/dssi_osc_update
 bin/trivial_synth
