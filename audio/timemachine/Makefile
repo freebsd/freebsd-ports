@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	timemachine
-PORTVERSION=	0.3.2
-PORTREVISION=	3
+PORTVERSION=	0.3.3
 CATEGORIES=	audio
 MASTER_SITES=	http://plugin.org.uk/timemachine/
 
