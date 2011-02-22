@@ -18,10 +18,6 @@ COMMENT=	Provides an API to execute callback functions on certain events
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
-USE_AUTOTOOLS=	aclocal autoheader libtoolize autoconf automake
-ACLOCAL_ARGS=	-I m4
-AUTOMAKE_ARGS=	--add-missing --force-missing --copy
-
 MAN3=	event.3 \
 	evdns.3
 MLINKS=	event.3 event_init.3 \
