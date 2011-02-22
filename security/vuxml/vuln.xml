@@ -34,6 +34,44 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="65d16342-3ec8-11e0-9df7-001c42d23634">
+    <topic>asterisk -- Exploitable Stack and Heap Array Overflows</topic>
+    <affects>
+     <package>
+       <name>asterisk14</name>
+       <range><gt>1.4.*</gt><lt>1.4.39.2</lt></range>
+     </package>
+     <package>
+	<name>asterisk16</name>
+	<range><gt>1.6.*</gt><lt>1.6.2.16.2</lt></range>
+     </package>
+     <package>
+       <name>asterisk18</name>
+       <range><gt>1.8.*</gt><lt>1.8.2.4</lt></range>
+     </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Asterisk Development Team reports:</p>
+	<blockquote cite="http://lists.digium.com/pipermail/asterisk-announce/2011-February/000302.html">
+	  <p>The releases of Asterisk 1.4.39.2, 1.6.1.22, 1.6.2.16.2, and
+	  1.8.2.4 resolve an issue that when decoding UDPTL packets, multiple
+	  heap based arrays can be made to overflow by specially
+	  crafted packets. Systems configured for T.38 pass through or
+	  termination are vulnerable. The issue and resolution are described
+	  in the AST-2011-002 security advisory.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+	<url>http://downloads.asterisk.org/pub/security/AST-2011-002.html</url>
+    </references>
+    <dates>
+      <discovery>2011-02-21</discovery>
+      <entry>2011-02-22</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="ae0e5835-3cad-11e0-b654-00215c6a37bb">
     <topic>PivotX -- administrator password reset vulnerability</topic>
     <affects>
