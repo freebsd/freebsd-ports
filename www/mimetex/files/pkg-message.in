@@ -1,6 +1,9 @@
 
 *********************************************************
 
-  See online documentation at http://localhost/mimetex/
+  See online documentation at 
+    %%DOCSDIR%%/%%PORTDOCS%%
+  or
+    %%WWW_DIR%%/index.html
 
 *********************************************************
