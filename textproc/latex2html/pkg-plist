@@ -165,6 +165,7 @@ lib/latex2html/l2hconf.pm
 %%DATADIR%%/readme.hthtml
 %%DATADIR%%/styles/CJK.perl
 %%DATADIR%%/styles/TEMPLATE.perl
+%%DATADIR%%/styles/SIunits.perl
 %%DATADIR%%/styles/afrikaan.perl
 %%DATADIR%%/styles/alltt.perl
 %%DATADIR%%/styles/american.perl
@@ -242,6 +243,7 @@ lib/latex2html/l2hconf.pm
 %%DATADIR%%/styles/report.perl
 %%DATADIR%%/styles/rgb.txt
 %%DATADIR%%/styles/romanian.perl
+%%DATADIR%%/styles/russian.perl
 %%DATADIR%%/styles/scottish.perl
 %%DATADIR%%/styles/seminar.perl
 %%DATADIR%%/styles/slides.perl
@@ -261,7 +263,6 @@ lib/latex2html/l2hconf.pm
 %%DATADIR%%/styles/wrapfig.perl
 %%DATADIR%%/styles/xspace.perl
 %%DATADIR%%/styles/xy.perl
-%%DATADIR%%/texinputs/floatflt.ins
 %%DATADIR%%/texinputs/frames.sty
 %%DATADIR%%/texinputs/heqn.sty
 %%DATADIR%%/texinputs/hthtml.sty
@@ -303,7 +304,6 @@ lib/latex2html/l2hconf.pm
 %%DATADIR%%/versions/techexpl.pl
 %%DATADIR%%/versions/unicode.pl
 %%DATADIR%%/versions/utf8.pl
-%%TEXMFDIR%%/tex/latex/html/floatflt.ins
 %%TEXMFDIR%%/tex/latex/html/frames.sty
 %%TEXMFDIR%%/tex/latex/html/heqn.sty
 %%TEXMFDIR%%/tex/latex/html/hthtml.sty
