@@ -8,7 +8,7 @@
 PORTNAME=	scimath
 PORTVERSION=	3.0.7
 CATEGORIES=	science math python
-MASTER_SITES=	http://www.enthought.com/repo/ETS/
+MASTER_SITES=	http://www.enthought.com/repo/ets/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	SciMath-${PORTVERSION}
 
