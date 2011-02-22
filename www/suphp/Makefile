@@ -7,7 +7,7 @@
 
 PORTNAME=	suphp
 PORTVERSION=	0.7.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	www
 MASTER_SITES=	http://www.suphp.org/download/ \
 		${MASTER_SITE_LOCAL:S|%SUBDIR%|koitsu|}
@@ -60,6 +60,7 @@ post-install:
 	@${STRIP_CMD} ${PREFIX}/sbin/suphp
 .endif
 	@${INSTALL_DATA} ${WRKSRC}/doc/suphp.conf-example ${PREFIX}/etc/suphp.conf-example
+	@${APXS} -e -a -n "${SHORTMODNAME}" "${APACHEMODDIR}/mod_${MODULENAME}.so"
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
