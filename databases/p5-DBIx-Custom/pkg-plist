@@ -1,18 +1,19 @@
 %%SITE_PERL%%/DBIx/Custom.pm
-%%SITE_PERL%%/DBIx/Custom/Guides/Ja.pod
-%%SITE_PERL%%/DBIx/Custom/Guides.pod
+%%SITE_PERL%%/DBIx/Custom/Guide/Ja.pod
+%%SITE_PERL%%/DBIx/Custom/Guide.pod
+%%SITE_PERL%%/DBIx/Custom/Model.pm
 %%SITE_PERL%%/DBIx/Custom/MySQL.pm
 %%SITE_PERL%%/DBIx/Custom/Query.pm
 %%SITE_PERL%%/DBIx/Custom/QueryBuilder.pm
-%%SITE_PERL%%/DBIx/Custom/QueryBuilder/TagProcessors.pm
 %%SITE_PERL%%/DBIx/Custom/Result.pm
 %%SITE_PERL%%/DBIx/Custom/SQLite.pm
+%%SITE_PERL%%/DBIx/Custom/Tag.pm
+%%SITE_PERL%%/DBIx/Custom/Where.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx/Custom/.packlist
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx/Custom
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%
-@dirrm %%SITE_PERL%%/DBIx/Custom/Guides
-@dirrm %%SITE_PERL%%/DBIx/Custom/QueryBuilder
+@dirrm %%SITE_PERL%%/DBIx/Custom/Guide
 @dirrmtry %%SITE_PERL%%/DBIx/Custom/SQL
 @dirrmtry %%SITE_PERL%%/DBIx/Custom
 @dirrmtry %%SITE_PERL%%/DBIx
