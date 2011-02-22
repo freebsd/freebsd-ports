@@ -33,6 +33,7 @@ CONFIGURE_ARGS+=	--prefix=${PREFIX} --mandir=${PREFIX}/man \
 			--with-libbind=${WRKSRC}/build/tmp_build
 USE_RC_SUBR=	milter-enma
 USE_GMAKE=	yes
+USE_PERL5_BUILD=yes
 LICENSE=	BSD
 LICENSE_FILE=	${WRKSRC}/LICENSE
 MANLANG=	"" ja_JP.UTF-8
