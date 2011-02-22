@@ -34,7 +34,14 @@ WRKSRC=	${WRKDIR}/${DISTNAME:S/r/rc/}
 
 .include <bsd.port.pre.mk>
 
-.if ((${OSVERSION} <= 800502) || (${OSVERSION} >= 900000 && ${OSVERSION} <= 900009)) && (${ARCH} == "i386" || ${ARCH} == "amd64")
+.if (${OSVERSION} <= 703100 || \
+(${OSVERSION} >= 800000 && ${OSVERSION} <= 800502) || \
+(${OSVERSION} >= 900000 && ${OSVERSION} <= 900009)) && \
+(${ARCH} == "i386" || ${ARCH} == "amd64")
+USE_FIXED_FENV=	yes
+.endif
+
+.if defined(USE_FIXED_FENV)
 MASTER_SITES+=	http://svn.freebsd.org/base/head/lib/msun/:fp
 .if ${ARCH} == "i386"
 FP_ARCH=	i387
@@ -71,7 +78,7 @@ post-patch:
 
 GCCLIBDIR_CMDS=	${FC} -print-file-name=libgfortran.so|${SED} -e s/libgfortran.so//
 pre-configure:
-.if ((${OSVERSION} <= 800502) || (${OSVERSION} >= 900000 && ${OSVERSION} <= 900009)) && (${ARCH} == "i386" || ${ARCH} == "amd64")
+.if defined(USE_FIXED_FENV)
 	@if [ "`${PKG_VERSION} -t \"\`\\\`${CC} -print-prog-name=as\\\` --version | ${AWK} 'NR==1 {sub(/\(GNU Binutils\)/,""); print $$3}'\`\" 2.18.49`" = ">" ] ; then \
 		${CP} ${DISTDIR}/${FP_ARCH}/fenv.c?p=203441 ${WRKSRC}/numpy/core/include/numpy/fenv/fenv.c; \
 		${CP} ${DISTDIR}/${FP_ARCH}/fenv.h?p=203441 ${WRKSRC}/numpy/core/include/numpy/fenv/fenv.h; \
@@ -93,7 +100,7 @@ pre-configure:
 	@${REINPLACE_CMD} -e "s+%%GCCLIBDIR%%+$$(${GCCLIBDIR_CMDS})+" ${WRKSRC}/numpy/distutils/system_info.py
 
 pre-install:
-.if ((${OSVERSION} <= 800502) || (${OSVERSION} >= 900000 && ${OSVERSION} <= 900009)) && (${ARCH} == "i386" || ${ARCH} == "amd64")
+.if defined(USE_FIXED_FENV)
 	@if [ "`${PKG_VERSION} -t \"\`\\\`${CC} -print-prog-name=as\\\` --version | ${AWK} 'NR==1 {sub(/\(GNU Binutils\)/,""); print $$3}'\`\" 2.18.49`" = ">" ] ; then \
 		${RM} ${WRKSRC}/numpy/core/include/numpy/fenv/fenv.c.bak; \
 	fi
@@ -106,7 +113,7 @@ post-install:
 	${INSTALL_DATA} ${WRKDIR}/numpy-ref.pdf ${DOCSDIR}
 	${INSTALL_DATA} ${WRKDIR}/numpy-user.pdf ${DOCSDIR}
 .endif
-.if ((${OSVERSION} <= 800502) || (${OSVERSION} >= 900000 && ${OSVERSION} <= 900009)) && (${ARCH} == "i386" || ${ARCH} == "amd64")
+.if defined(USE_FIXED_FENV)
 	@if [ "`${PKG_VERSION} -t \"\`\\\`${CC} -print-prog-name=as\\\` --version | ${AWK} 'NR==1 {sub(/\(GNU Binutils\)/,""); print $$3}'\`\" 2.18.49`" = ">" ] ; then \
 		${REINPLACE_CMD} -e "s|%%FENV%%||g" ${TMPPLIST}; \
 	else \
