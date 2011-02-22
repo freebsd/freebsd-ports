@@ -1,0 +1,27 @@
+--- configure.in.orig	2011-02-22 09:41:10.545704489 +0100
++++ configure.in	2011-02-22 09:41:48.422499326 +0100
+@@ -6,6 +6,8 @@
+ AM_CONFIG_HEADER(config.h)
+ dnl AM_MAINTAINER_MODE
+ 
++AC_CONFIG_MACRO_DIR([m4])
++
+ AC_CANONICAL_HOST
+ 
+ AC_DEFINE(NUMERIC_VERSION, 0x01040e00, [Numeric representation of the version])
+@@ -246,13 +248,14 @@
+         if ((kq = kqueue()) == -1)
+ 		exit(1);
+ 
++	memset(&ev, 0, sizeof(ev));
+ 	ev.ident = fd[[1]];
+ 	ev.filter = EVFILT_WRITE;
+ 	ev.flags = EV_ADD | EV_ENABLE;
+ 	n = kevent(kq, &ev, 1, NULL, 0, NULL);
+ 	if (n == -1)
+ 		exit(1);
+-	
++
+ 	read(fd[[0]], buf, sizeof(buf));
+ 
+ 	ts.tv_sec = 0;
