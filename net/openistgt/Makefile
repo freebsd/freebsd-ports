@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	istgt
-PORTVERSION=	20110103
+PORTVERSION=	20110219
 CATEGORIES=	net
 MASTER_SITES=	http://www.peach.ne.jp/archives/istgt/
 
 MAINTAINER=	aoyama@peach.ne.jp
-COMMENT=	An iSCSI target for FreeBSD 7.x
+COMMENT=	An iSCSI target for FreeBSD
 
 SUB_FILES=	pkg-message
 PKGMESSAGE=	${WRKDIR}/pkg-message
@@ -21,20 +21,25 @@ GNU_CONFIGURE=	yes
 MAN1=		istgt.1
 MANCOMPRESSED=	yes
 
-PORTDOCS=	README ChangeLog.jp QUICKSTART QUICKSTART.jp
+PLIST_FILES=	bin/istgt \
+		bin/istgtcontrol \
+		etc/rc.d/istgt \
+		%%ETCDIR%%/auth.conf.sample \
+		%%ETCDIR%%/istgt.conf.sample \
+		%%ETCDIR%%/istgt.large.conf.sample \
+		%%ETCDIR%%/istgtcontrol.conf.sample
+PLIST_DIRS=	%%ETCDIR%%
+PORTDOCS=	${DOCS:T}
+
+DOCS=		ChangeLog.jp README doc/QUICKSTART doc/QUICKSTART.jp
 
 post-extract:
-	@${MV} ${WRKSRC}/doc/Makefile.in ${WRKSRC}/doc/Makefile.tmp
-	@${SED} -e '/\/doc\/istgt/d' < ${WRKSRC}/doc/Makefile.tmp \
-		> ${WRKSRC}/doc/Makefile.in
+	@${REINPLACE_CMD} -e '/\/doc\/istgt/d' ${WRKSRC}/doc/Makefile.in
 
 post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
-	${INSTALL_MAN} ${WRKSRC}/README ${DOCSDIR}
-	${INSTALL_MAN} ${WRKSRC}/ChangeLog.jp ${DOCSDIR}
-	${INSTALL_MAN} ${WRKSRC}/doc/QUICKSTART ${DOCSDIR}
-	${INSTALL_MAN} ${WRKSRC}/doc/QUICKSTART.jp ${DOCSDIR}
+	cd ${WRKSRC} && ${INSTALL_MAN} ${DOCS} ${DOCSDIR}
 .endif
 	@${CAT} ${PKGMESSAGE}
 
