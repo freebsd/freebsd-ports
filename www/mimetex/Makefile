@@ -21,12 +21,18 @@ NO_WRKSUBDIR=	yes
 USE_APACHE=	1.3+
 USE_ZIP=	yes
 
+.include <bsd.port.pre.mk>
+
 FETCH_CMD=	/usr/bin/fetch -rR	# see PR bin/76134
 LN_OPTS=	-sf
 
 CGI_BIN=	${PREFIX}/www/cgi-bin/
 CGI_PRG=	${PORTNAME}.cgi
 WWW_DIR=	${PREFIX}/www/data/mimetex/
+
+.if ${APACHE_VERSION} > 13
+PLIST_DIRSTRY+=	www/cgi-bin www/data
+.endif
 
 # usefull if you run mimetex on another machine
 .if defined(WITH_STATIC)
@@ -59,4 +65,4 @@ post-install:
 	${CAT} ${PKGMESSAGE}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
