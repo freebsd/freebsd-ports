@@ -6,15 +6,14 @@
 #
 
 PORTNAME=	claroline
-PORTVERSION=	1.9.7
+PORTVERSION=	1.9.8
 CATEGORIES=	www
-MASTER_SITES=	SF/${PORTNAME}/Claroline/Claroline%20${PORTVERSION}
+MASTER_SITES=	SF/${PORTNAME}/Claroline/claroline%20${PORTVERSION}
 DISTNAME=	${PORTNAME}${PORTVERSION:S/.//g}
 
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Open Source eLearning and eWorking platform
 
-USE_ZIP=	yes
 NO_BUILD=	yes
 USE_PHP=	mysql
 WRKSRC=		${WRKDIR}/${DISTNAME}
