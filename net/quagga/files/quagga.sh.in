@@ -94,6 +94,11 @@ case "$1" in
 	quagga_cmd=${quagga_cmd#fast}
 	;;
 esac
+shift
+
+if [ $# -ge 1 ]; then
+	quagga_daemons="$*"
+fi
 
 case "${quagga_cmd}" in
     start)
