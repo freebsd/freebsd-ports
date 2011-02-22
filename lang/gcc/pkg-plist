@@ -11,6 +11,9 @@ bin/gcc%%SUFFIX%%
 bin/gcov%%SUFFIX%%
 bin/gfortran%%SUFFIX%%
 info/gcc%%SUFFIX%%/dir
+%%JAVA%%share/gcc-%%GCC_VER%%/python/libjava/aotcompile.py
+%%JAVA%%share/gcc-%%GCC_VER%%/python/libjava/classfile.py
+%%JAVA%%@dirrm share/gcc-%%GCC_VER%%/python/libjava
 share/gcc-%%GCC_VER%%/python/libstdcxx/__init__.py
 share/gcc-%%GCC_VER%%/python/libstdcxx/v6/__init__.py
 share/gcc-%%GCC_VER%%/python/libstdcxx/v6/printers.py
@@ -43,7 +46,4 @@ share/gcc-%%GCC_VER%%/python/libstdcxx/v6/printers.py
 %%JAVA%%libdata/pkgconfig/libgcj-4.6.pc
 %%JAVA%%share/java/libgcj-%%GCC_VER%%.jar
 %%JAVA%%share/java/libgcj-tools-%%GCC_VER%%.jar
-%%JAVA%%share/python/aotcompile.py
-%%JAVA%%share/python/classfile.py
-%%JAVA%%@dirrmtry share/python
 @comment Insert PLIST.lib here
