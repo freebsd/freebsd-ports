@@ -1,3 +1,4 @@
+include/Poco/Ascii.h
 include/Poco/ASCIIEncoding.h
 include/Poco/AbstractCache.h
 include/Poco/AbstractDelegate.h
@@ -104,8 +105,10 @@ include/Poco/DynamicFactory.h
 include/Poco/Environment.h
 include/Poco/Environment_UNIX.h
 include/Poco/Environment_VMS.h
+include/Poco/Environment_VX.h
 include/Poco/Environment_WIN32.h
 include/Poco/Environment_WIN32U.h
+include/Poco/Environment_WINCE.h
 include/Poco/ErrorHandler.h
 include/Poco/Event.h
 include/Poco/EventArgs.h
@@ -134,8 +137,10 @@ include/Poco/FileStream_POSIX.h
 include/Poco/FileStream_WIN32.h
 include/Poco/File_UNIX.h
 include/Poco/File_VMS.h
+include/Poco/File_VX.h
 include/Poco/File_WIN32.h
 include/Poco/File_WIN32U.h
+include/Poco/File_WINCE.h
 include/Poco/Format.h
 include/Poco/Formatter.h
 include/Poco/FormattingChannel.h
@@ -183,6 +188,7 @@ include/Poco/MetaProgramming.h
 include/Poco/Mutex.h
 include/Poco/Mutex_POSIX.h
 include/Poco/Mutex_WIN32.h
+include/Poco/Mutex_WINCE.h
 include/Poco/NObserver.h
 include/Poco/NamedEvent.h
 include/Poco/NamedEvent_UNIX.h
@@ -289,6 +295,7 @@ include/Poco/Notification.h
 include/Poco/NotificationCenter.h
 include/Poco/NotificationQueue.h
 include/Poco/NotificationStrategy.h
+include/Poco/Nullable.h
 include/Poco/NullChannel.h
 include/Poco/NullStream.h
 include/Poco/NumberFormatter.h
@@ -300,6 +307,7 @@ include/Poco/Path_UNIX.h
 include/Poco/Path_VMS.h
 include/Poco/Path_WIN32.h
 include/Poco/Path_WIN32U.h
+include/Poco/Path_WINCE.h
 include/Poco/PatternFormatter.h
 include/Poco/Pipe.h
 include/Poco/PipeImpl.h
@@ -310,6 +318,7 @@ include/Poco/PipeStream.h
 include/Poco/Platform.h
 include/Poco/Platform_POSIX.h
 include/Poco/Platform_VMS.h
+include/Poco/Platform_VX.h
 include/Poco/Platform_WIN32.h
 include/Poco/Poco.h
 include/Poco/PriorityDelegate.h
@@ -321,10 +330,13 @@ include/Poco/Process_UNIX.h
 include/Poco/Process_VMS.h
 include/Poco/Process_WIN32.h
 include/Poco/Process_WIN32U.h
+include/Poco/Process_WINCE.h
 include/Poco/PurgeStrategy.h
 include/Poco/RWLock.h
 include/Poco/RWLock_POSIX.h
+include/Poco/RWLock_VX.h
 include/Poco/RWLock_WIN32.h
+include/Poco/RWLock_WINCE.h
 include/Poco/Random.h
 include/Poco/RandomStream.h
 include/Poco/RefCountedObject.h
@@ -362,6 +374,7 @@ include/Poco/SharedLibrary.h
 include/Poco/SharedLibrary_HPUX.h
 include/Poco/SharedLibrary_UNIX.h
 include/Poco/SharedLibrary_VMS.h
+include/Poco/SharedLibrary_VX.h
 include/Poco/SharedLibrary_WIN32.h
 include/Poco/SharedLibrary_WIN32U.h
 include/Poco/SharedMemory.h
@@ -390,6 +403,7 @@ include/Poco/TaskManager.h
 include/Poco/TaskNotification.h
 include/Poco/TeeStream.h
 include/Poco/TemporaryFile.h
+include/Poco/TextBufferIterator.h
 include/Poco/TextConverter.h
 include/Poco/TextEncoding.h
 include/Poco/TextIterator.h
@@ -399,6 +413,7 @@ include/Poco/ThreadPool.h
 include/Poco/ThreadTarget.h
 include/Poco/Thread_POSIX.h
 include/Poco/Thread_WIN32.h
+include/Poco/Thread_WINCE.h
 include/Poco/TimedNotificationQueue.h
 include/Poco/Timer.h
 include/Poco/Timespan.h
@@ -451,6 +466,7 @@ include/Poco/Util/SystemConfiguration.h
 include/Poco/Util/Timer.h
 include/Poco/Util/TimerTask.h
 include/Poco/Util/TimerTaskAdapter.h
+include/Poco/Util/Units.h
 include/Poco/Util/Util.h
 include/Poco/Util/Validator.h
 include/Poco/Util/WinRegistryConfiguration.h
@@ -458,6 +474,7 @@ include/Poco/Util/WinRegistryKey.h
 include/Poco/Util/WinService.h
 include/Poco/Util/XMLConfiguration.h
 include/Poco/ValidArgs.h
+include/Poco/Version.h
 include/Poco/Void.h
 include/Poco/Windows1252Encoding.h
 include/Poco/WindowsConsoleChannel.h
@@ -475,21 +492,21 @@ include/Poco/XML/expat_external.h
 include/Poco/zconf.h
 include/Poco/zlib.h
 lib/libPocoFoundation.so
-lib/libPocoFoundation.so.9
+lib/libPocoFoundation.so.11
 lib/libPocoFoundationd.so
-lib/libPocoFoundationd.so.9
+lib/libPocoFoundationd.so.11
 lib/libPocoNet.so
-lib/libPocoNet.so.9
+lib/libPocoNet.so.11
 lib/libPocoNetd.so
-lib/libPocoNetd.so.9
+lib/libPocoNetd.so.11
 lib/libPocoUtil.so
-lib/libPocoUtil.so.9
+lib/libPocoUtil.so.11
 lib/libPocoUtild.so
-lib/libPocoUtild.so.9
+lib/libPocoUtild.so.11
 lib/libPocoXML.so
-lib/libPocoXML.so.9
+lib/libPocoXML.so.11
 lib/libPocoXMLd.so
-lib/libPocoXMLd.so.9
+lib/libPocoXMLd.so.11
 @dirrmtry include/Poco/DOM
 @dirrmtry include/Poco/Net
 @dirrmtry include/Poco/SAX
