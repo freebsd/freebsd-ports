@@ -1,0 +1,40 @@
+--- sample-config/template-object/localhost.cfg.in.orig	Sun Jun 10 02:13:05 2007
++++ sample-config/template-object/localhost.cfg.in	Fri Jul 20 13:46:46 2007
+@@ -5,7 +5,7 @@
+ #
+ # NOTE: This config file is intended to serve as an *extremely* simple 
+ #       example of how you can create configuration entries to monitor
+-#       the local (Linux) machine.
++#       the local (FreeBSD) machine.
+ #
+ ###############################################################################
+ 
+@@ -23,9 +23,9 @@
+ # Define a host for the local machine
+ 
+ define host{
+-        use                     linux-server            ; Name of host template to use
++        use                     freebsd-server          ; Name of host template to use
+ 							; This host definition will inherit all variables that are defined
+-							; in (or inherited by) the linux-server host template definition.
++							; in (or inherited by) the freebsd-server host template definition.
+         host_name               localhost
+         alias                   localhost
+         address                 127.0.0.1
+@@ -41,12 +41,12 @@
+ ###############################################################################
+ ###############################################################################
+ 
+-# Define an optional hostgroup for Linux machines
++# Define an optional hostgroup for FreeBSD machines
+ 
+ define hostgroup{
+-        hostgroup_name  linux-servers ; The name of the hostgroup
+-        alias           Linux Servers ; Long name of the group
+-        members         localhost     ; Comma separated list of hosts that belong to this group
++        hostgroup_name  freebsd-servers ; The name of the hostgroup
++        alias           FreeBSD Servers ; Long name of the group
++        members         localhost       ; Comma separated list of hosts that belong to this group
+         }
+ 
+ 

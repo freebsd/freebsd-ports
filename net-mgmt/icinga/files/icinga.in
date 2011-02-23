@@ -1,0 +1,103 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+
+# PROVIDE: icinga
+# REQUIRE: DAEMON
+# BEFORE: LOGIN
+# KEYWORD: shutdown
+
+#
+# Add the following lines to /etc/rc.conf to enable icinga:
+# icinga_enable (bool):    Set to "NO" by default.
+#                          Set it to "YES" to enable icinga.
+# icinga_precache (bool):  Set to "NO" by default.
+#                          Set it to "YES" to enable pre-caching.
+# icinga_flags (str):      Set to "" by default.
+# icinga_configfile (str): Set to "%%PREFIX%%/etc/icinga/icinga.cfg" by default.
+#
+
+. /etc/rc.subr
+
+name="icinga"
+rcvar=`set_rcvar`
+
+command="%%PREFIX%%/bin/icinga"
+command_args="-d"
+extra_commands="reload"
+pidfile="%%ICINGADIR%%/icinga.lock"
+icinga_user="%%ICINGAUSER%%"
+
+start_precmd="start_precmd"
+stop_postcmd="stop_postcmd"
+restart_precmd="icinga_checkconfig"
+reload_precmd="reload_precmd"
+sig_reload=HUP
+
+[ -z "${icinga_enable}" ]       && icinga_enable="NO"
+[ -z "${icinga_configfile}" ]   && icinga_configfile="%%PREFIX%%/etc/icinga/icinga.cfg"
+[ -z "${icinga_precache}" ]     && icinga_precache="NO"
+
+load_rc_config "${name}"
+
+required_files="${icinga_configfile}"
+command_args="${command_args} ${icinga_configfile}"
+
+icinga_cacheconfig() {
+  if ! checkyesno icinga_precache; then
+    return 0
+  fi
+
+  echo -n "Pre-Caching icinga configuration: "
+  ${command} -pv ${icinga_configfile} 2>&1 >/dev/null
+  if [ $? != 0 ]; then
+    echo "FAILED"
+    ${command} -v ${icinga_configfile}
+    return 1
+  else
+    command_args="-u -x ${command_args}"
+    echo "OK"
+  fi
+}
+
+icinga_checkconfig() {
+  echo -n "Performing sanity check of icinga configuration: "
+  ${command} -v ${icinga_configfile} 2>&1 >/dev/null
+  if [ $? != 0 ]; then
+    echo "FAILED"
+    ${command} -v ${icinga_configfile}
+    return 1
+  else
+    echo "OK"
+  fi
+}
+
+reload_precmd() {
+  if ! icinga_checkconfig; then
+    return 1
+  fi
+
+  if ! icinga_cacheconfig; then
+    return 1
+  fi
+}
+
+start_precmd() {
+  if ! icinga_checkconfig; then
+    return 1
+  fi
+
+  if ! icinga_cacheconfig; then
+    return 1
+  fi
+
+  su -m "${icinga_user}" -c "touch \"%%ICINGADIR%%/icinga.log\" \"%%ICINGADIR%%/status.sav\""
+  rm -f "%%ICINGADIR%%/rw/icinga.cmd"
+}
+
+stop_postcmd() {
+  rm -f "%%ICINGADIR%%/icinga.tmp" "%%ICINGADIR%%/rw/icinga.cmd"
+}
+
+run_rc_command "$1"

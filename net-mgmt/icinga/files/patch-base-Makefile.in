@@ -1,0 +1,15 @@
+--- base/Makefile.in~	2010-10-23 01:22:32.000000000 +0800
++++ base/Makefile.in	2011-02-16 13:42:58.000000000 +0800
+@@ -205,9 +205,9 @@
+ 	$(MAKE) install-basic
+ 
+ install-basic:
+-	$(INSTALL) -m 775 $(INSTALL_OPTS) -d $(DESTDIR)$(BINDIR)
+-	$(INSTALL) -m 774 $(INSTALL_OPTS) @icinga_name@ $(DESTDIR)$(BINDIR)
+-	$(INSTALL) -m 774 $(INSTALL_OPTS) @icingastats_name@ $(DESTDIR)$(BINDIR)
++	$(INSTALL) -m 755 $(INSTALL_OPTS) -d $(DESTDIR)$(BINDIR)
++	$(INSTALL) -m 755 $(INSTALL_OPTS) @icinga_name@ $(DESTDIR)$(BINDIR)
++	$(INSTALL) -m 755 $(INSTALL_OPTS) @icingastats_name@ $(DESTDIR)$(BINDIR)
+ 
+ strip-post-install:
+ 	$(STRIP) $(DESTDIR)$(BINDIR)/@icinga_name@

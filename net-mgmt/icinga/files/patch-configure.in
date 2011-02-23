@@ -1,0 +1,53 @@
+--- configure.in~	2010-10-23 01:22:32.000000000 +0800
++++ configure.in	2011-02-16 14:10:52.000000000 +0800
+@@ -6,7 +6,6 @@
+ 
+ AC_INIT(base/icinga.c)
+ AC_CONFIG_HEADER(include/config.h include/snprintf.h)
+-AC_PREFIX_DEFAULT(/usr/local/icinga)
+ 
+ PKG_NAME=icinga-core
+ PKG_VERSION="1.2.1"
+@@ -136,7 +135,15 @@
+ dnl Test for pthreads support - taken from ICU FreeBSD Port configure script
+ THREADLIBS=""
+ have_pthreads="no"
++have_thr="no"
+ 
++dnl Prefer libthr(3) over libpthread(3) due to serious process hanging issues
++AC_CHECK_LIB(thr,pthread_create)
++if test $ac_cv_lib_thr_pthread_create = yes; then
++	THREADLIBS="-lthr"
++	have_pthreads="yes"
++	have_thr="yes"
++else
+ dnl FreeBSD: Try ports/linuxthreads first - Mammad Zadeh <mammad@yahoo-inc.com>
+ dnl FreeBSD -pthread check - Jonathan McDowell <noodles@earth.li>
+ AC_DEFUN([AC_PTHREAD_FREEBSD],[
+@@ -197,6 +204,7 @@
+ if test $have_pthreads = "no"; then
+ 	AC_PTHREAD_FREEBSD
+ fi
++fi
+ 
+ AC_SUBST(THREADLIBS)
+ 
+@@ -215,7 +223,7 @@
+ AC_DEFINE_UNQUOTED(DEFAULT_NAGIOS_USER,"$icinga_user",[user name to run nagios])
+ AC_DEFINE_UNQUOTED(DEFAULT_ICINGA_GROUP,"$icinga_grp",[group name to run nagios])
+ AC_DEFINE_UNQUOTED(DEFAULT_NAGIOS_GROUP,"$icinga_grp",[group name to run nagios])
+-INSTALL_OPTS="-o $icinga_user -g $icinga_grp"
++INSTALL_OPTS="-o root -g wheel"
+ AC_SUBST(INSTALL_OPTS)
+ 
+ AC_ARG_WITH(command_user,AC_HELP_STRING([--with-command-user=<user>],[sets user name for command access]),command_user=$withval,command_user=$icinga_user)
+@@ -827,6 +835,9 @@
+ 
+ 	AC_DEFINE_UNQUOTED(EMBEDDEDPERL,,[Is embedded Perl being compiled in?])
+ 	PERLLIBS="`perl -MExtUtils::Embed -e ldopts`"
++	if test x$have_thr = xyes; then
++		PERLLIBS="`echo $PERLLIBS | sed 's#pthread #lthr #'`"
++	fi
+ 	PERLDIR="`perl -MConfig -e 'print $Config{installsitearch}'`"
+ 	CFLAGS="${CFLAGS} `perl -MExtUtils::Embed -e ccopts`"
+ 	USEPERL=yes
