@@ -7,6 +7,7 @@
 
 PORTNAME=	libfreefare
 PORTVERSION=	0.3.1
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://nfc-tools.googlecode.com/files/ \
 		http://romain.blogreen.org/distfiles/
@@ -14,7 +15,7 @@ MASTER_SITES=	http://nfc-tools.googlecode.com/files/ \
 MAINTAINER=	romain@FreeBSD.org
 COMMENT=	MIFARE contactless tag access library
 
-LIB_DEPENDS=	nfc.0:${PORTSDIR}/devel/libnfc
+LIB_DEPENDS=	nfc.1:${PORTSDIR}/devel/libnfc
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
