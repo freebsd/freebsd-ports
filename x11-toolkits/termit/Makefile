@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	termit
-PORTVERSION=	2.6.0
+PORTVERSION=	2.7.0
 CATEGORIES=	x11-toolkits gnome
 MASTER_SITES=	http://cloud.github.com/downloads/nonstop/termit/
 
