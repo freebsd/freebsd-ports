@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mpg123
-PORTVERSION=	1.12.5
+PORTVERSION=	1.13.1
 CATEGORIES=	audio ipv6
 MASTER_SITES=	SF \
 		http://www.mpg123.de/download/
@@ -14,8 +14,11 @@ MASTER_SITES=	SF \
 MAINTAINER=	novel@FreeBSD.org
 COMMENT=	Command-line player for mpeg layer 1, 2 and 3 audio
 
+LICENSE=	LGPL21
+
+USE_GNOME=	gnomehack ltverhack
 USE_BZIP2=	yes
-USE_AUTOTOOLS=	libltdl
+USE_AUTOTOOLS=	libtool libltdl
 USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes
@@ -46,9 +49,5 @@ WITH_CPU=	x86-64
 .if defined(WITH_CPU)
 CONFIGURE_ARGS+=--with-cpu=${WITH_CPU}
 .endif
-
-post-patch:
-	@${REINPLACE_CMD} 's|(libdir)/pkgconfig|(prefix)/libdata/pkgconfig|' \
-		${WRKSRC}/Makefile.in
 
 .include <bsd.port.post.mk>
