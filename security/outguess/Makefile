@@ -24,6 +24,7 @@ COMMENT=	Steganographic tool
 DOCDIR=		share/doc/outguess
 DOCS=		ChangeLog README STIRMARK-README TODO
 
+CONFLICTS_INSTALL=	csound-*
 GNU_CONFIGURE=	yes
 MAN1=		outguess.1
 PLIST=		${WRKDIR}/pkg-plist
