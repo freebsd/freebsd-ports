@@ -1,0 +1,9 @@
+Xerces-C++ is a validating XML parser from the Apache XML Project.
+It provides a shared library to parse, generate, mainpulate and
+validate XML documents from within your own application.
+
+For information on Xerces-C++ please see their homepage
+WWW: http://xml.apache.org/xerces-c/
+
+- Bjoern A. Zeeb
+bzeeb+freebsdports@zabbadoz.net
