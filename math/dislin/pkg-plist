@@ -703,6 +703,7 @@ dislin/chf/wgtxt.chf
 dislin/chf/widbar.chf
 dislin/chf/wimage.chf
 dislin/chf/winapp.chf
+dislin/chf/wincbk.chf
 dislin/chf/windbr.chf
 dislin/chf/window.chf
 dislin/chf/winfin.chf
@@ -873,13 +874,9 @@ dislin/libdislin_d.a
 dislin/libdislin_d.so
 dislin/libdislin_d.so.9
 dislin/libdislin_d.so.10
-dislin/lib/dislin_d-%%VER%%.a
-dislin/lib/dislin_d-%%VER%%.so
 dislin/libdislin.so
 dislin/libdislin.so.9
 dislin/libdislin.so.10
-dislin/lib/dislin-%%VER%%.a
-dislin/lib/dislin-%%VER%%.so
 dislin/libdislnc.a
 dislin/libdislnc_d.a
 dislin/libdislnc_d.so
@@ -890,6 +887,14 @@ dislin/libdislnc.so.9
 dislin/libdislnc.so.10
 dislin/libg2c.so
 dislin/libg2c.so.2
+%%DISLIN7%%dislin/lib/dislin-%%MAJ%%.0.a
+dislin/lib/dislin_d-%%VER%%.a
+%%DISLIN7%%dislin/lib/dislin_d-%%MAJ%%.0.so
+%%DISLIN7%%dislin/lib/dislin_d-%%MAJ%%.0.a
+dislin/lib/dislin-%%VER%%.so
+dislin/lib/dislin-%%VER%%.a
+%%DISLIN7%%dislin/lib/dislin-%%MAJ%%.0.so
+dislin/lib/dislin_d-%%VER%%.so
 dislin/license.txt
 dislin/man/appa.txt
 dislin/man/appb.txt
