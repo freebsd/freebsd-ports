@@ -1,0 +1,8 @@
+Gnake is a Nibbles clone for GNU/Linux and *BSD.
+It's played on a terminal (controlled by the curses library) with the
+keyboard: the game is really simple and that's why I like playing it even in
+the oh-my-god-my-graphics-card-costs-more-than-the-rest-of-the-computer era.
+
+For the list of available options, type ``gnake -h''.
+
+WWW: http://lightless.org/gnake/
