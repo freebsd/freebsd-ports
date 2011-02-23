@@ -319,6 +319,7 @@
     SUBDIR += gma
     SUBDIR += gmastermind
     SUBDIR += gmines
+    SUBDIR += gnake
     SUBDIR += gnarr
     SUBDIR += gnmm
     SUBDIR += gno3dtet
