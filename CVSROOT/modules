@@ -6960,7 +6960,6 @@ kartofel                        ports/games/kartofel
 kasablanca                      ports/ftp/kasablanca
 kash3                           ports/math/kash3
 kaskade                         ports/math/kaskade
-kaspaliste                      ports/print/kaspaliste
 katalog                         ports/misc/katalog
 katapult                        ports/deskutils/katapult
 katchtv                         ports/multimedia/katchtv
@@ -7919,6 +7918,7 @@ libesmtp                        ports/mail/libesmtp
 libetpan                        ports/mail/libetpan
 libev                           ports/devel/libev
 libevent                        ports/devel/libevent
+libevent2                       ports/devel/libevent2
 libevnet                        ports/net/libevnet
 libevocosm                      ports/devel/libevocosm
 libexecinfo                     ports/devel/libexecinfo
@@ -20030,7 +20030,6 @@ penv                            ports/sysutils/penv
 pep8                            ports/devel/pep8
 peps                            ports/graphics/peps
 perdition                       ports/mail/perdition
-perf                            ports/sysutils/perf
 performance                     ports/devel/performance
 perl2html                       ports/textproc/perl2html
 perl5.10                        ports/lang/perl5.10
@@ -22064,6 +22063,7 @@ python25                        ports/lang/python25
 python26                        ports/lang/python26
 python27                        ports/lang/python27
 python31                        ports/lang/python31
+python32                        ports/lang/python32
 pythoncad                       ports/cad/pythoncad
 pythonchess                     ports/games/pythonchess
 pythondirector                  ports/net/pythondirector
@@ -22641,7 +22641,6 @@ rocksndiamonds                  ports/games/rocksndiamonds
 rolo                            ports/deskutils/rolo
 romdict                         ports/textproc/romdict
 romeo                           ports/palm/romeo
-root                            ports/devel/root
 root-doc                        ports/devel/root-doc
 roottail                        ports/sysutils/roottail
 ros                             ports/devel/ros
@@ -25404,6 +25403,7 @@ ua                              ports/sysutils/ua
 ua-ispell                       ports/textproc/ua-ispell
 uade                            ports/audio/uade
 uae                             ports/emulators/uae
+uarduno                         ports/comms/uarduno
 ubench                          ports/benchmarks/ubench
 uberkey                         ports/security/uberkey
 ubh                             ports/news/ubh
@@ -27566,7 +27566,6 @@ zsnes                           ports/emulators/zsnes
 zssh                            ports/comms/zssh
 zsync                           ports/net/zsync
 ztcl                            ports/devel/ztcl
-ztelnet                         ports/net/ztelnet
 zthread                         ports/devel/zthread
 ztrack                          ports/games/ztrack
 zu-aspell                       ports/textproc/zu-aspell
