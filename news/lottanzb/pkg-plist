@@ -1,118 +1,453 @@
 bin/lottanzb
-%%PYTHON_SITELIBDIR%%/lottanzb/plugins/start_minimized/__init__.py
-%%PYTHON_SITELIBDIR%%/lottanzb/plugins/start_minimized/__init__.pyc
-%%PYTHON_SITELIBDIR%%/lottanzb/plugins/start_minimized/__init__.pyo
-%%PYTHON_SITELIBDIR%%/lottanzb/plugins/notification_area/__init__.py
-%%PYTHON_SITELIBDIR%%/lottanzb/plugins/notification_area/__init__.pyc
-%%PYTHON_SITELIBDIR%%/lottanzb/plugins/notification_area/__init__.pyo
-%%PYTHON_SITELIBDIR%%/lottanzb/plugins/categories/__init__.py
-%%PYTHON_SITELIBDIR%%/lottanzb/plugins/categories/postprocessor.py
-%%PYTHON_SITELIBDIR%%/lottanzb/plugins/categories/__init__.pyc
-%%PYTHON_SITELIBDIR%%/lottanzb/plugins/categories/postprocessor.pyc
-%%PYTHON_SITELIBDIR%%/lottanzb/plugins/categories/__init__.pyo
-%%PYTHON_SITELIBDIR%%/lottanzb/plugins/categories/postprocessor.pyo
-%%PYTHON_SITELIBDIR%%/lottanzb/plugins/newzbin/__init__.py
-%%PYTHON_SITELIBDIR%%/lottanzb/plugins/newzbin/interface.py
-%%PYTHON_SITELIBDIR%%/lottanzb/plugins/newzbin/__init__.pyc
-%%PYTHON_SITELIBDIR%%/lottanzb/plugins/newzbin/interface.pyc
-%%PYTHON_SITELIBDIR%%/lottanzb/plugins/newzbin/__init__.pyo
-%%PYTHON_SITELIBDIR%%/lottanzb/plugins/newzbin/interface.pyo
-%%PYTHON_SITELIBDIR%%/lottanzb/plugins/__init__.py
-%%PYTHON_SITELIBDIR%%/lottanzb/plugins/__init__.pyc
-%%PYTHON_SITELIBDIR%%/lottanzb/plugins/__init__.pyo
-%%PYTHON_SITELIBDIR%%/lottanzb/modes/local_frontend.py
-%%PYTHON_SITELIBDIR%%/lottanzb/modes/remote_frontend.py
-%%PYTHON_SITELIBDIR%%/lottanzb/modes/base.py
-%%PYTHON_SITELIBDIR%%/lottanzb/modes/__init__.py
-%%PYTHON_SITELIBDIR%%/lottanzb/modes/standalone.py
-%%PYTHON_SITELIBDIR%%/lottanzb/modes/local_frontend.pyc
-%%PYTHON_SITELIBDIR%%/lottanzb/modes/remote_frontend.pyc
-%%PYTHON_SITELIBDIR%%/lottanzb/modes/base.pyc
-%%PYTHON_SITELIBDIR%%/lottanzb/modes/__init__.pyc
-%%PYTHON_SITELIBDIR%%/lottanzb/modes/standalone.pyc
-%%PYTHON_SITELIBDIR%%/lottanzb/modes/local_frontend.pyo
-%%PYTHON_SITELIBDIR%%/lottanzb/modes/remote_frontend.pyo
-%%PYTHON_SITELIBDIR%%/lottanzb/modes/base.pyo
-%%PYTHON_SITELIBDIR%%/lottanzb/modes/__init__.pyo
-%%PYTHON_SITELIBDIR%%/lottanzb/modes/standalone.pyo
-%%PYTHON_SITELIBDIR%%/lottanzb/core.py
-%%PYTHON_SITELIBDIR%%/lottanzb/config.py
-%%PYTHON_SITELIBDIR%%/lottanzb/backend.py
 %%PYTHON_SITELIBDIR%%/lottanzb/__init__.py
-%%PYTHON_SITELIBDIR%%/lottanzb/hellaconfig.py
-%%PYTHON_SITELIBDIR%%/lottanzb/util.py
-%%PYTHON_SITELIBDIR%%/lottanzb/log.py
-%%PYTHON_SITELIBDIR%%/lottanzb/external/builderloader.py
-%%PYTHON_SITELIBDIR%%/lottanzb/external/__init__.py
-%%PYTHON_SITELIBDIR%%/lottanzb/external/builderloader.pyc
-%%PYTHON_SITELIBDIR%%/lottanzb/external/__init__.pyc
-%%PYTHON_SITELIBDIR%%/lottanzb/external/builderloader.pyo
-%%PYTHON_SITELIBDIR%%/lottanzb/external/__init__.pyo
-%%PYTHON_SITELIBDIR%%/lottanzb/gui/about.py
-%%PYTHON_SITELIBDIR%%/lottanzb/gui/download_list.py
-%%PYTHON_SITELIBDIR%%/lottanzb/gui/add_file.py
-%%PYTHON_SITELIBDIR%%/lottanzb/gui/__init__.py
-%%PYTHON_SITELIBDIR%%/lottanzb/gui/main.py
-%%PYTHON_SITELIBDIR%%/lottanzb/gui/prefs.py
-%%PYTHON_SITELIBDIR%%/lottanzb/gui/log.py
-%%PYTHON_SITELIBDIR%%/lottanzb/gui/modes/local_frontend.py
-%%PYTHON_SITELIBDIR%%/lottanzb/gui/modes/selection.py
-%%PYTHON_SITELIBDIR%%/lottanzb/gui/modes/remote_frontend.py
-%%PYTHON_SITELIBDIR%%/lottanzb/gui/modes/__init__.py
-%%PYTHON_SITELIBDIR%%/lottanzb/gui/modes/standalone.py
-%%PYTHON_SITELIBDIR%%/lottanzb/gui/modes/local_frontend.pyc
-%%PYTHON_SITELIBDIR%%/lottanzb/gui/modes/selection.pyc
-%%PYTHON_SITELIBDIR%%/lottanzb/gui/modes/remote_frontend.pyc
-%%PYTHON_SITELIBDIR%%/lottanzb/gui/modes/__init__.pyc
-%%PYTHON_SITELIBDIR%%/lottanzb/gui/modes/standalone.pyc
-%%PYTHON_SITELIBDIR%%/lottanzb/gui/modes/local_frontend.pyo
-%%PYTHON_SITELIBDIR%%/lottanzb/gui/modes/selection.pyo
-%%PYTHON_SITELIBDIR%%/lottanzb/gui/modes/remote_frontend.pyo
-%%PYTHON_SITELIBDIR%%/lottanzb/gui/modes/__init__.pyo
-%%PYTHON_SITELIBDIR%%/lottanzb/gui/modes/standalone.pyo
-%%PYTHON_SITELIBDIR%%/lottanzb/gui/about.pyc
-%%PYTHON_SITELIBDIR%%/lottanzb/gui/download_list.pyc
-%%PYTHON_SITELIBDIR%%/lottanzb/gui/add_file.pyc
-%%PYTHON_SITELIBDIR%%/lottanzb/gui/__init__.pyc
-%%PYTHON_SITELIBDIR%%/lottanzb/gui/main.pyc
-%%PYTHON_SITELIBDIR%%/lottanzb/gui/prefs.pyc
-%%PYTHON_SITELIBDIR%%/lottanzb/gui/log.pyc
-%%PYTHON_SITELIBDIR%%/lottanzb/gui/about.pyo
-%%PYTHON_SITELIBDIR%%/lottanzb/gui/download_list.pyo
-%%PYTHON_SITELIBDIR%%/lottanzb/gui/add_file.pyo
-%%PYTHON_SITELIBDIR%%/lottanzb/gui/__init__.pyo
-%%PYTHON_SITELIBDIR%%/lottanzb/gui/main.pyo
-%%PYTHON_SITELIBDIR%%/lottanzb/gui/prefs.pyo
-%%PYTHON_SITELIBDIR%%/lottanzb/gui/log.pyo
-%%PYTHON_SITELIBDIR%%/lottanzb/resources/__init__.py
-%%PYTHON_SITELIBDIR%%/lottanzb/resources/xdg.py
-%%PYTHON_SITELIBDIR%%/lottanzb/resources/platform.py
-%%PYTHON_SITELIBDIR%%/lottanzb/resources/__init__.pyc
-%%PYTHON_SITELIBDIR%%/lottanzb/resources/xdg.pyc
-%%PYTHON_SITELIBDIR%%/lottanzb/resources/platform.pyc
-%%PYTHON_SITELIBDIR%%/lottanzb/resources/__init__.pyo
-%%PYTHON_SITELIBDIR%%/lottanzb/resources/xdg.pyo
-%%PYTHON_SITELIBDIR%%/lottanzb/resources/platform.pyo
-%%PYTHON_SITELIBDIR%%/lottanzb/core.pyc
-%%PYTHON_SITELIBDIR%%/lottanzb/config.pyc
-%%PYTHON_SITELIBDIR%%/lottanzb/backend.pyc
 %%PYTHON_SITELIBDIR%%/lottanzb/__init__.pyc
-%%PYTHON_SITELIBDIR%%/lottanzb/hellaconfig.pyc
-%%PYTHON_SITELIBDIR%%/lottanzb/util.pyc
-%%PYTHON_SITELIBDIR%%/lottanzb/log.pyc
-%%PYTHON_SITELIBDIR%%/lottanzb/core.pyo
-%%PYTHON_SITELIBDIR%%/lottanzb/config.pyo
-%%PYTHON_SITELIBDIR%%/lottanzb/backend.pyo
 %%PYTHON_SITELIBDIR%%/lottanzb/__init__.pyo
-%%PYTHON_SITELIBDIR%%/lottanzb/hellaconfig.pyo
-%%PYTHON_SITELIBDIR%%/lottanzb/util.pyo
-%%PYTHON_SITELIBDIR%%/lottanzb/log.pyo
+%%PYTHON_SITELIBDIR%%/lottanzb/backend/__init__.py
+%%PYTHON_SITELIBDIR%%/lottanzb/backend/__init__.pyc
+%%PYTHON_SITELIBDIR%%/lottanzb/backend/__init__.pyo
+%%PYTHON_SITELIBDIR%%/lottanzb/backend/hubs/__init__.py
+%%PYTHON_SITELIBDIR%%/lottanzb/backend/hubs/__init__.pyc
+%%PYTHON_SITELIBDIR%%/lottanzb/backend/hubs/__init__.pyo
+%%PYTHON_SITELIBDIR%%/lottanzb/backend/hubs/capabilities.py
+%%PYTHON_SITELIBDIR%%/lottanzb/backend/hubs/capabilities.pyc
+%%PYTHON_SITELIBDIR%%/lottanzb/backend/hubs/capabilities.pyo
+%%PYTHON_SITELIBDIR%%/lottanzb/backend/hubs/config.py
+%%PYTHON_SITELIBDIR%%/lottanzb/backend/hubs/config.pyc
+%%PYTHON_SITELIBDIR%%/lottanzb/backend/hubs/config.pyo
+%%PYTHON_SITELIBDIR%%/lottanzb/backend/hubs/general/__init__.py
+%%PYTHON_SITELIBDIR%%/lottanzb/backend/hubs/general/__init__.pyc
+%%PYTHON_SITELIBDIR%%/lottanzb/backend/hubs/general/__init__.pyo
+%%PYTHON_SITELIBDIR%%/lottanzb/backend/hubs/general/download.py
+%%PYTHON_SITELIBDIR%%/lottanzb/backend/hubs/general/download.pyc
+%%PYTHON_SITELIBDIR%%/lottanzb/backend/hubs/general/download.pyo
+%%PYTHON_SITELIBDIR%%/lottanzb/backend/hubs/general/download_list.py
+%%PYTHON_SITELIBDIR%%/lottanzb/backend/hubs/general/download_list.pyc
+%%PYTHON_SITELIBDIR%%/lottanzb/backend/hubs/general/download_list.pyo
+%%PYTHON_SITELIBDIR%%/lottanzb/backend/hubs/general/updater.py
+%%PYTHON_SITELIBDIR%%/lottanzb/backend/hubs/general/updater.pyc
+%%PYTHON_SITELIBDIR%%/lottanzb/backend/hubs/general/updater.pyo
+%%PYTHON_SITELIBDIR%%/lottanzb/backend/hubs/log.py
+%%PYTHON_SITELIBDIR%%/lottanzb/backend/hubs/log.pyc
+%%PYTHON_SITELIBDIR%%/lottanzb/backend/hubs/log.pyo
+%%PYTHON_SITELIBDIR%%/lottanzb/backend/hubs/polling.py
+%%PYTHON_SITELIBDIR%%/lottanzb/backend/hubs/polling.pyc
+%%PYTHON_SITELIBDIR%%/lottanzb/backend/hubs/polling.pyo
+%%PYTHON_SITELIBDIR%%/lottanzb/backend/hubs/statistics.py
+%%PYTHON_SITELIBDIR%%/lottanzb/backend/hubs/statistics.pyc
+%%PYTHON_SITELIBDIR%%/lottanzb/backend/hubs/statistics.pyo
+%%PYTHON_SITELIBDIR%%/lottanzb/backend/interface/__init__.py
+%%PYTHON_SITELIBDIR%%/lottanzb/backend/interface/__init__.pyc
+%%PYTHON_SITELIBDIR%%/lottanzb/backend/interface/__init__.pyo
+%%PYTHON_SITELIBDIR%%/lottanzb/backend/interface/errors.py
+%%PYTHON_SITELIBDIR%%/lottanzb/backend/interface/errors.pyc
+%%PYTHON_SITELIBDIR%%/lottanzb/backend/interface/errors.pyo
+%%PYTHON_SITELIBDIR%%/lottanzb/backend/interface/multipart_post_handler.py
+%%PYTHON_SITELIBDIR%%/lottanzb/backend/interface/multipart_post_handler.pyc
+%%PYTHON_SITELIBDIR%%/lottanzb/backend/interface/multipart_post_handler.pyo
+%%PYTHON_SITELIBDIR%%/lottanzb/backend/interface/queries.py
+%%PYTHON_SITELIBDIR%%/lottanzb/backend/interface/queries.pyc
+%%PYTHON_SITELIBDIR%%/lottanzb/backend/interface/queries.pyo
+%%PYTHON_SITELIBDIR%%/lottanzb/backend/sessions/__init__.py
+%%PYTHON_SITELIBDIR%%/lottanzb/backend/sessions/__init__.pyc
+%%PYTHON_SITELIBDIR%%/lottanzb/backend/sessions/__init__.pyo
+%%PYTHON_SITELIBDIR%%/lottanzb/backend/sessions/base.py
+%%PYTHON_SITELIBDIR%%/lottanzb/backend/sessions/base.pyc
+%%PYTHON_SITELIBDIR%%/lottanzb/backend/sessions/base.pyo
+%%PYTHON_SITELIBDIR%%/lottanzb/backend/sessions/errors.py
+%%PYTHON_SITELIBDIR%%/lottanzb/backend/sessions/errors.pyc
+%%PYTHON_SITELIBDIR%%/lottanzb/backend/sessions/errors.pyo
+%%PYTHON_SITELIBDIR%%/lottanzb/backend/sessions/local.py
+%%PYTHON_SITELIBDIR%%/lottanzb/backend/sessions/local.pyc
+%%PYTHON_SITELIBDIR%%/lottanzb/backend/sessions/local.pyo
+%%PYTHON_SITELIBDIR%%/lottanzb/backend/sessions/remote.py
+%%PYTHON_SITELIBDIR%%/lottanzb/backend/sessions/remote.pyc
+%%PYTHON_SITELIBDIR%%/lottanzb/backend/sessions/remote.pyo
+%%PYTHON_SITELIBDIR%%/lottanzb/config/__init__.py
+%%PYTHON_SITELIBDIR%%/lottanzb/config/__init__.pyc
+%%PYTHON_SITELIBDIR%%/lottanzb/config/__init__.pyo
+%%PYTHON_SITELIBDIR%%/lottanzb/config/errors.py
+%%PYTHON_SITELIBDIR%%/lottanzb/config/errors.pyc
+%%PYTHON_SITELIBDIR%%/lottanzb/config/errors.pyo
+%%PYTHON_SITELIBDIR%%/lottanzb/config/hellanzb/__init__.py
+%%PYTHON_SITELIBDIR%%/lottanzb/config/hellanzb/__init__.pyc
+%%PYTHON_SITELIBDIR%%/lottanzb/config/hellanzb/__init__.pyo
+%%PYTHON_SITELIBDIR%%/lottanzb/config/hellanzb/music_types.py
+%%PYTHON_SITELIBDIR%%/lottanzb/config/hellanzb/music_types.pyc
+%%PYTHON_SITELIBDIR%%/lottanzb/config/hellanzb/music_types.pyo
+%%PYTHON_SITELIBDIR%%/lottanzb/config/hellanzb/servers.py
+%%PYTHON_SITELIBDIR%%/lottanzb/config/hellanzb/servers.pyc
+%%PYTHON_SITELIBDIR%%/lottanzb/config/hellanzb/servers.pyo
+%%PYTHON_SITELIBDIR%%/lottanzb/config/lotta.py
+%%PYTHON_SITELIBDIR%%/lottanzb/config/lotta.pyc
+%%PYTHON_SITELIBDIR%%/lottanzb/config/lotta.pyo
+%%PYTHON_SITELIBDIR%%/lottanzb/config/roots.py
+%%PYTHON_SITELIBDIR%%/lottanzb/config/roots.pyc
+%%PYTHON_SITELIBDIR%%/lottanzb/config/roots.pyo
+%%PYTHON_SITELIBDIR%%/lottanzb/config/sabnzbd/__init__.py
+%%PYTHON_SITELIBDIR%%/lottanzb/config/sabnzbd/__init__.pyc
+%%PYTHON_SITELIBDIR%%/lottanzb/config/sabnzbd/__init__.pyo
+%%PYTHON_SITELIBDIR%%/lottanzb/config/sabnzbd/categories.py
+%%PYTHON_SITELIBDIR%%/lottanzb/config/sabnzbd/categories.pyc
+%%PYTHON_SITELIBDIR%%/lottanzb/config/sabnzbd/categories.pyo
+%%PYTHON_SITELIBDIR%%/lottanzb/config/sabnzbd/logging.py
+%%PYTHON_SITELIBDIR%%/lottanzb/config/sabnzbd/logging.pyc
+%%PYTHON_SITELIBDIR%%/lottanzb/config/sabnzbd/logging.pyo
+%%PYTHON_SITELIBDIR%%/lottanzb/config/sabnzbd/misc.py
+%%PYTHON_SITELIBDIR%%/lottanzb/config/sabnzbd/misc.pyc
+%%PYTHON_SITELIBDIR%%/lottanzb/config/sabnzbd/misc.pyo
+%%PYTHON_SITELIBDIR%%/lottanzb/config/sabnzbd/newzbin.py
+%%PYTHON_SITELIBDIR%%/lottanzb/config/sabnzbd/newzbin.pyc
+%%PYTHON_SITELIBDIR%%/lottanzb/config/sabnzbd/newzbin.pyo
+%%PYTHON_SITELIBDIR%%/lottanzb/config/sabnzbd/nzbmatrix.py
+%%PYTHON_SITELIBDIR%%/lottanzb/config/sabnzbd/nzbmatrix.pyc
+%%PYTHON_SITELIBDIR%%/lottanzb/config/sabnzbd/nzbmatrix.pyo
+%%PYTHON_SITELIBDIR%%/lottanzb/config/sabnzbd/rss.py
+%%PYTHON_SITELIBDIR%%/lottanzb/config/sabnzbd/rss.pyc
+%%PYTHON_SITELIBDIR%%/lottanzb/config/sabnzbd/rss.pyo
+%%PYTHON_SITELIBDIR%%/lottanzb/config/sabnzbd/servers.py
+%%PYTHON_SITELIBDIR%%/lottanzb/config/sabnzbd/servers.pyc
+%%PYTHON_SITELIBDIR%%/lottanzb/config/sabnzbd/servers.pyo
+%%PYTHON_SITELIBDIR%%/lottanzb/config/section.py
+%%PYTHON_SITELIBDIR%%/lottanzb/config/section.pyc
+%%PYTHON_SITELIBDIR%%/lottanzb/config/section.pyo
+%%PYTHON_SITELIBDIR%%/lottanzb/core/__init__.py
+%%PYTHON_SITELIBDIR%%/lottanzb/core/__init__.pyc
+%%PYTHON_SITELIBDIR%%/lottanzb/core/__init__.pyo
+%%PYTHON_SITELIBDIR%%/lottanzb/core/component.py
+%%PYTHON_SITELIBDIR%%/lottanzb/core/component.pyc
+%%PYTHON_SITELIBDIR%%/lottanzb/core/component.pyo
+%%PYTHON_SITELIBDIR%%/lottanzb/core/constants.py
+%%PYTHON_SITELIBDIR%%/lottanzb/core/constants.pyc
+%%PYTHON_SITELIBDIR%%/lottanzb/core/constants.pyo
+%%PYTHON_SITELIBDIR%%/lottanzb/core/environ.py
+%%PYTHON_SITELIBDIR%%/lottanzb/core/environ.pyc
+%%PYTHON_SITELIBDIR%%/lottanzb/core/environ.pyo
+%%PYTHON_SITELIBDIR%%/lottanzb/core/ipc.py
+%%PYTHON_SITELIBDIR%%/lottanzb/core/ipc.pyc
+%%PYTHON_SITELIBDIR%%/lottanzb/core/ipc.pyo
+%%PYTHON_SITELIBDIR%%/lottanzb/core/log.py
+%%PYTHON_SITELIBDIR%%/lottanzb/core/log.pyc
+%%PYTHON_SITELIBDIR%%/lottanzb/core/log.pyo
+%%PYTHON_SITELIBDIR%%/lottanzb/gui/__init__.py
+%%PYTHON_SITELIBDIR%%/lottanzb/gui/__init__.pyc
+%%PYTHON_SITELIBDIR%%/lottanzb/gui/__init__.pyo
+%%PYTHON_SITELIBDIR%%/lottanzb/gui/about.py
+%%PYTHON_SITELIBDIR%%/lottanzb/gui/about.pyc
+%%PYTHON_SITELIBDIR%%/lottanzb/gui/about.pyo
+%%PYTHON_SITELIBDIR%%/lottanzb/gui/add_file.py
+%%PYTHON_SITELIBDIR%%/lottanzb/gui/add_file.pyc
+%%PYTHON_SITELIBDIR%%/lottanzb/gui/add_file.pyo
+%%PYTHON_SITELIBDIR%%/lottanzb/gui/add_url.py
+%%PYTHON_SITELIBDIR%%/lottanzb/gui/add_url.pyc
+%%PYTHON_SITELIBDIR%%/lottanzb/gui/add_url.pyo
+%%PYTHON_SITELIBDIR%%/lottanzb/gui/download_properties.py
+%%PYTHON_SITELIBDIR%%/lottanzb/gui/download_properties.pyc
+%%PYTHON_SITELIBDIR%%/lottanzb/gui/download_properties.pyo
+%%PYTHON_SITELIBDIR%%/lottanzb/gui/framework/__init__.py
+%%PYTHON_SITELIBDIR%%/lottanzb/gui/framework/__init__.pyc
+%%PYTHON_SITELIBDIR%%/lottanzb/gui/framework/__init__.pyo
+%%PYTHON_SITELIBDIR%%/lottanzb/gui/framework/messages.py
+%%PYTHON_SITELIBDIR%%/lottanzb/gui/framework/messages.pyc
+%%PYTHON_SITELIBDIR%%/lottanzb/gui/framework/messages.pyo
+%%PYTHON_SITELIBDIR%%/lottanzb/gui/framework/models.py
+%%PYTHON_SITELIBDIR%%/lottanzb/gui/framework/models.pyc
+%%PYTHON_SITELIBDIR%%/lottanzb/gui/framework/models.pyo
+%%PYTHON_SITELIBDIR%%/lottanzb/gui/framework/proxy.py
+%%PYTHON_SITELIBDIR%%/lottanzb/gui/framework/proxy.pyc
+%%PYTHON_SITELIBDIR%%/lottanzb/gui/framework/proxy.pyo
+%%PYTHON_SITELIBDIR%%/lottanzb/gui/framework/widgets.py
+%%PYTHON_SITELIBDIR%%/lottanzb/gui/framework/widgets.pyc
+%%PYTHON_SITELIBDIR%%/lottanzb/gui/framework/widgets.pyo
+%%PYTHON_SITELIBDIR%%/lottanzb/gui/help.py
+%%PYTHON_SITELIBDIR%%/lottanzb/gui/help.pyc
+%%PYTHON_SITELIBDIR%%/lottanzb/gui/help.pyo
+%%PYTHON_SITELIBDIR%%/lottanzb/gui/log.py
+%%PYTHON_SITELIBDIR%%/lottanzb/gui/log.pyc
+%%PYTHON_SITELIBDIR%%/lottanzb/gui/log.pyo
+%%PYTHON_SITELIBDIR%%/lottanzb/gui/main/__init__.py
+%%PYTHON_SITELIBDIR%%/lottanzb/gui/main/__init__.pyc
+%%PYTHON_SITELIBDIR%%/lottanzb/gui/main/__init__.pyo
+%%PYTHON_SITELIBDIR%%/lottanzb/gui/main/download_list.py
+%%PYTHON_SITELIBDIR%%/lottanzb/gui/main/download_list.pyc
+%%PYTHON_SITELIBDIR%%/lottanzb/gui/main/download_list.pyo
+%%PYTHON_SITELIBDIR%%/lottanzb/gui/main/info_bar.py
+%%PYTHON_SITELIBDIR%%/lottanzb/gui/main/info_bar.pyc
+%%PYTHON_SITELIBDIR%%/lottanzb/gui/main/info_bar.pyo
+%%PYTHON_SITELIBDIR%%/lottanzb/gui/main/speed_limit_menu.py
+%%PYTHON_SITELIBDIR%%/lottanzb/gui/main/speed_limit_menu.pyc
+%%PYTHON_SITELIBDIR%%/lottanzb/gui/main/speed_limit_menu.pyo
+%%PYTHON_SITELIBDIR%%/lottanzb/gui/messaging/__init__.py
+%%PYTHON_SITELIBDIR%%/lottanzb/gui/messaging/__init__.pyc
+%%PYTHON_SITELIBDIR%%/lottanzb/gui/messaging/__init__.pyo
+%%PYTHON_SITELIBDIR%%/lottanzb/gui/messaging/base.py
+%%PYTHON_SITELIBDIR%%/lottanzb/gui/messaging/base.pyc
+%%PYTHON_SITELIBDIR%%/lottanzb/gui/messaging/base.pyo
+%%PYTHON_SITELIBDIR%%/lottanzb/gui/messaging/download_import.py
+%%PYTHON_SITELIBDIR%%/lottanzb/gui/messaging/download_import.pyc
+%%PYTHON_SITELIBDIR%%/lottanzb/gui/messaging/download_import.pyo
+%%PYTHON_SITELIBDIR%%/lottanzb/gui/messaging/postprocessing_priority.py
+%%PYTHON_SITELIBDIR%%/lottanzb/gui/messaging/postprocessing_priority.pyc
+%%PYTHON_SITELIBDIR%%/lottanzb/gui/messaging/postprocessing_priority.pyo
+%%PYTHON_SITELIBDIR%%/lottanzb/gui/messaging/servers.py
+%%PYTHON_SITELIBDIR%%/lottanzb/gui/messaging/servers.pyc
+%%PYTHON_SITELIBDIR%%/lottanzb/gui/messaging/servers.pyo
+%%PYTHON_SITELIBDIR%%/lottanzb/gui/panel_menu.py
+%%PYTHON_SITELIBDIR%%/lottanzb/gui/panel_menu.pyc
+%%PYTHON_SITELIBDIR%%/lottanzb/gui/panel_menu.pyo
+%%PYTHON_SITELIBDIR%%/lottanzb/gui/prefs/__init__.py
+%%PYTHON_SITELIBDIR%%/lottanzb/gui/prefs/__init__.pyc
+%%PYTHON_SITELIBDIR%%/lottanzb/gui/prefs/__init__.pyo
+%%PYTHON_SITELIBDIR%%/lottanzb/gui/prefs/base.py
+%%PYTHON_SITELIBDIR%%/lottanzb/gui/prefs/base.pyc
+%%PYTHON_SITELIBDIR%%/lottanzb/gui/prefs/base.pyo
+%%PYTHON_SITELIBDIR%%/lottanzb/gui/prefs/general.py
+%%PYTHON_SITELIBDIR%%/lottanzb/gui/prefs/general.pyc
+%%PYTHON_SITELIBDIR%%/lottanzb/gui/prefs/general.pyo
+%%PYTHON_SITELIBDIR%%/lottanzb/gui/prefs/remote_access.py
+%%PYTHON_SITELIBDIR%%/lottanzb/gui/prefs/remote_access.pyc
+%%PYTHON_SITELIBDIR%%/lottanzb/gui/prefs/remote_access.pyo
+%%PYTHON_SITELIBDIR%%/lottanzb/gui/prefs/servers.py
+%%PYTHON_SITELIBDIR%%/lottanzb/gui/prefs/servers.pyc
+%%PYTHON_SITELIBDIR%%/lottanzb/gui/prefs/servers.pyo
+%%PYTHON_SITELIBDIR%%/lottanzb/gui/prefs/widgets.py
+%%PYTHON_SITELIBDIR%%/lottanzb/gui/prefs/widgets.pyc
+%%PYTHON_SITELIBDIR%%/lottanzb/gui/prefs/widgets.pyo
+%%PYTHON_SITELIBDIR%%/lottanzb/gui/restart.py
+%%PYTHON_SITELIBDIR%%/lottanzb/gui/restart.pyc
+%%PYTHON_SITELIBDIR%%/lottanzb/gui/restart.pyo
+%%PYTHON_SITELIBDIR%%/lottanzb/gui/sessions/__init__.py
+%%PYTHON_SITELIBDIR%%/lottanzb/gui/sessions/__init__.pyc
+%%PYTHON_SITELIBDIR%%/lottanzb/gui/sessions/__init__.pyo
+%%PYTHON_SITELIBDIR%%/lottanzb/gui/sessions/base.py
+%%PYTHON_SITELIBDIR%%/lottanzb/gui/sessions/base.pyc
+%%PYTHON_SITELIBDIR%%/lottanzb/gui/sessions/base.pyo
+%%PYTHON_SITELIBDIR%%/lottanzb/gui/sessions/local/__init__.py
+%%PYTHON_SITELIBDIR%%/lottanzb/gui/sessions/local/__init__.pyc
+%%PYTHON_SITELIBDIR%%/lottanzb/gui/sessions/local/__init__.pyo
+%%PYTHON_SITELIBDIR%%/lottanzb/gui/sessions/local/sabnzbd_pane.py
+%%PYTHON_SITELIBDIR%%/lottanzb/gui/sessions/local/sabnzbd_pane.pyc
+%%PYTHON_SITELIBDIR%%/lottanzb/gui/sessions/local/sabnzbd_pane.pyo
+%%PYTHON_SITELIBDIR%%/lottanzb/gui/sessions/remote.py
+%%PYTHON_SITELIBDIR%%/lottanzb/gui/sessions/remote.pyc
+%%PYTHON_SITELIBDIR%%/lottanzb/gui/sessions/remote.pyo
+%%PYTHON_SITELIBDIR%%/lottanzb/resources/__init__.py
+%%PYTHON_SITELIBDIR%%/lottanzb/resources/__init__.pyc
+%%PYTHON_SITELIBDIR%%/lottanzb/resources/__init__.pyo
+%%PYTHON_SITELIBDIR%%/lottanzb/resources/platform.py
+%%PYTHON_SITELIBDIR%%/lottanzb/resources/platform.pyc
+%%PYTHON_SITELIBDIR%%/lottanzb/resources/platform.pyo
+%%PYTHON_SITELIBDIR%%/lottanzb/resources/xdg.py
+%%PYTHON_SITELIBDIR%%/lottanzb/resources/xdg.pyc
+%%PYTHON_SITELIBDIR%%/lottanzb/resources/xdg.pyo
+%%PYTHON_SITELIBDIR%%/lottanzb/util/__init__.py
+%%PYTHON_SITELIBDIR%%/lottanzb/util/__init__.pyc
+%%PYTHON_SITELIBDIR%%/lottanzb/util/__init__.pyo
+%%PYTHON_SITELIBDIR%%/lottanzb/util/gobject_extras.py
+%%PYTHON_SITELIBDIR%%/lottanzb/util/gobject_extras.pyc
+%%PYTHON_SITELIBDIR%%/lottanzb/util/gobject_extras.pyo
+%%PYTHON_SITELIBDIR%%/lottanzb/util/gtk_extras.py
+%%PYTHON_SITELIBDIR%%/lottanzb/util/gtk_extras.pyc
+%%PYTHON_SITELIBDIR%%/lottanzb/util/gtk_extras.pyo
+%%PYTHON_SITELIBDIR%%/lottanzb/util/misc.py
+%%PYTHON_SITELIBDIR%%/lottanzb/util/misc.pyc
+%%PYTHON_SITELIBDIR%%/lottanzb/util/misc.pyo
+%%PYTHON_SITELIBDIR%%/lottanzb/util/regex.py
+%%PYTHON_SITELIBDIR%%/lottanzb/util/regex.pyc
+%%PYTHON_SITELIBDIR%%/lottanzb/util/regex.pyo
+%%PYTHON_SITELIBDIR%%/lottanzb/util/signalmanager.py
+%%PYTHON_SITELIBDIR%%/lottanzb/util/signalmanager.pyc
+%%PYTHON_SITELIBDIR%%/lottanzb/util/signalmanager.pyo
+%%PYTHON_SITELIBDIR%%/lottanzb/util/threading_extras.py
+%%PYTHON_SITELIBDIR%%/lottanzb/util/threading_extras.pyc
+%%PYTHON_SITELIBDIR%%/lottanzb/util/threading_extras.pyo
+%%PYTHON_SITELIBDIR%%/lottanzb/util/timer.py
+%%PYTHON_SITELIBDIR%%/lottanzb/util/timer.pyc
+%%PYTHON_SITELIBDIR%%/lottanzb/util/timer.pyo
+@dirrm %%PYTHON_SITELIBDIR%%/lottanzb/backend/hubs/general
+@dirrm %%PYTHON_SITELIBDIR%%/lottanzb/backend/hubs
+@dirrm %%PYTHON_SITELIBDIR%%/lottanzb/backend/interface
+@dirrm %%PYTHON_SITELIBDIR%%/lottanzb/backend/sessions
+@dirrm %%PYTHON_SITELIBDIR%%/lottanzb/backend
+@dirrm %%PYTHON_SITELIBDIR%%/lottanzb/config/hellanzb
+@dirrm %%PYTHON_SITELIBDIR%%/lottanzb/config/sabnzbd
+@dirrm %%PYTHON_SITELIBDIR%%/lottanzb/config
+@dirrm %%PYTHON_SITELIBDIR%%/lottanzb/core
+@dirrm %%PYTHON_SITELIBDIR%%/lottanzb/gui/framework
+@dirrm %%PYTHON_SITELIBDIR%%/lottanzb/gui/main
+@dirrm %%PYTHON_SITELIBDIR%%/lottanzb/gui/messaging
+@dirrm %%PYTHON_SITELIBDIR%%/lottanzb/gui/prefs
+@dirrm %%PYTHON_SITELIBDIR%%/lottanzb/gui/sessions/local
+@dirrm %%PYTHON_SITELIBDIR%%/lottanzb/gui/sessions
+@dirrm %%PYTHON_SITELIBDIR%%/lottanzb/gui
+@dirrm %%PYTHON_SITELIBDIR%%/lottanzb/resources
+@dirrm %%PYTHON_SITELIBDIR%%/lottanzb/util
+@dirrm %%PYTHON_SITELIBDIR%%/lottanzb
+share/application-registry/lottanzb.applications
+share/applications/lottanzb.desktop
+share/gnome/help/lottanzb/C/adding-downloads.page
+share/gnome/help/lottanzb/C/completed-downloads.page
+share/gnome/help/lottanzb/C/customizing-interface.page
+share/gnome/help/lottanzb/C/download-folder.page
+share/gnome/help/lottanzb/C/download-speed.page
+share/gnome/help/lottanzb/C/figures/lottanzb-logo.png
+share/gnome/help/lottanzb/C/figures/lottanzb-main-window.png
+share/gnome/help/lottanzb/C/incomplete-downloads.page
+share/gnome/help/lottanzb/C/index.page
+share/gnome/help/lottanzb/C/introduction.page
+share/gnome/help/lottanzb/C/keyboard-shortcuts.page
+share/gnome/help/lottanzb/C/license.page
+share/gnome/help/lottanzb/C/managing-downloads.page
+share/gnome/help/lottanzb/C/multiple-news-servers.page
+share/gnome/help/lottanzb/C/news-servers.page
+share/gnome/help/lottanzb/C/observed-nzb-folder.page
+share/gnome/help/lottanzb/C/post-processing.page
+share/gnome/help/lottanzb/C/prefs-general-tab.page
+share/gnome/help/lottanzb/C/prefs.page
+share/gnome/help/lottanzb/C/remote-access.page
+share/gnome/help/lottanzb/C/reporting-problems.page
+share/gnome/help/lottanzb/C/searching-download-list.page
+share/gnome/help/lottanzb/C/setting-up.page
+share/gnome/help/lottanzb/C/web-interface.page
+share/gnome/help/lottanzb/de/adding-downloads.page
+share/gnome/help/lottanzb/de/completed-downloads.page
+share/gnome/help/lottanzb/de/customizing-interface.page
+share/gnome/help/lottanzb/de/download-folder.page
+share/gnome/help/lottanzb/de/download-speed.page
+share/gnome/help/lottanzb/de/figures/lottanzb-logo.png
+share/gnome/help/lottanzb/de/figures/lottanzb-main-window.png
+share/gnome/help/lottanzb/de/incomplete-downloads.page
+share/gnome/help/lottanzb/de/index.page
+share/gnome/help/lottanzb/de/introduction.page
+share/gnome/help/lottanzb/de/keyboard-shortcuts.page
+share/gnome/help/lottanzb/de/license.page
+share/gnome/help/lottanzb/de/managing-downloads.page
+share/gnome/help/lottanzb/de/multiple-news-servers.page
+share/gnome/help/lottanzb/de/news-servers.page
+share/gnome/help/lottanzb/de/observed-nzb-folder.page
+share/gnome/help/lottanzb/de/post-processing.page
+share/gnome/help/lottanzb/de/prefs-general-tab.page
+share/gnome/help/lottanzb/de/prefs.page
+share/gnome/help/lottanzb/de/remote-access.page
+share/gnome/help/lottanzb/de/reporting-problems.page
+share/gnome/help/lottanzb/de/searching-download-list.page
+share/gnome/help/lottanzb/de/setting-up.page
+share/gnome/help/lottanzb/de/web-interface.page
+share/gnome/help/lottanzb/es/adding-downloads.page
+share/gnome/help/lottanzb/es/completed-downloads.page
+share/gnome/help/lottanzb/es/customizing-interface.page
+share/gnome/help/lottanzb/es/download-folder.page
+share/gnome/help/lottanzb/es/download-speed.page
+share/gnome/help/lottanzb/es/figures/lottanzb-logo.png
+share/gnome/help/lottanzb/es/figures/lottanzb-main-window.png
+share/gnome/help/lottanzb/es/incomplete-downloads.page
+share/gnome/help/lottanzb/es/index.page
+share/gnome/help/lottanzb/es/introduction.page
+share/gnome/help/lottanzb/es/keyboard-shortcuts.page
+share/gnome/help/lottanzb/es/license.page
+share/gnome/help/lottanzb/es/managing-downloads.page
+share/gnome/help/lottanzb/es/multiple-news-servers.page
+share/gnome/help/lottanzb/es/news-servers.page
+share/gnome/help/lottanzb/es/observed-nzb-folder.page
+share/gnome/help/lottanzb/es/post-processing.page
+share/gnome/help/lottanzb/es/prefs-general-tab.page
+share/gnome/help/lottanzb/es/prefs.page
+share/gnome/help/lottanzb/es/remote-access.page
+share/gnome/help/lottanzb/es/reporting-problems.page
+share/gnome/help/lottanzb/es/searching-download-list.page
+share/gnome/help/lottanzb/es/setting-up.page
+share/gnome/help/lottanzb/es/web-interface.page
+share/gnome/help/lottanzb/fr/adding-downloads.page
+share/gnome/help/lottanzb/fr/completed-downloads.page
+share/gnome/help/lottanzb/fr/customizing-interface.page
+share/gnome/help/lottanzb/fr/download-folder.page
+share/gnome/help/lottanzb/fr/download-speed.page
+share/gnome/help/lottanzb/fr/figures/lottanzb-logo.png
+share/gnome/help/lottanzb/fr/figures/lottanzb-main-window.png
+share/gnome/help/lottanzb/fr/incomplete-downloads.page
+share/gnome/help/lottanzb/fr/index.page
+share/gnome/help/lottanzb/fr/introduction.page
+share/gnome/help/lottanzb/fr/keyboard-shortcuts.page
+share/gnome/help/lottanzb/fr/license.page
+share/gnome/help/lottanzb/fr/managing-downloads.page
+share/gnome/help/lottanzb/fr/multiple-news-servers.page
+share/gnome/help/lottanzb/fr/news-servers.page
+share/gnome/help/lottanzb/fr/observed-nzb-folder.page
+share/gnome/help/lottanzb/fr/post-processing.page
+share/gnome/help/lottanzb/fr/prefs-general-tab.page
+share/gnome/help/lottanzb/fr/prefs.page
+share/gnome/help/lottanzb/fr/remote-access.page
+share/gnome/help/lottanzb/fr/reporting-problems.page
+share/gnome/help/lottanzb/fr/searching-download-list.page
+share/gnome/help/lottanzb/fr/setting-up.page
+share/gnome/help/lottanzb/fr/web-interface.page
+share/gnome/help/lottanzb/pt_BR/adding-downloads.page
+share/gnome/help/lottanzb/pt_BR/completed-downloads.page
+share/gnome/help/lottanzb/pt_BR/customizing-interface.page
+share/gnome/help/lottanzb/pt_BR/download-folder.page
+share/gnome/help/lottanzb/pt_BR/download-speed.page
+share/gnome/help/lottanzb/pt_BR/figures/lottanzb-logo.png
+share/gnome/help/lottanzb/pt_BR/figures/lottanzb-main-window.png
+share/gnome/help/lottanzb/pt_BR/incomplete-downloads.page
+share/gnome/help/lottanzb/pt_BR/index.page
+share/gnome/help/lottanzb/pt_BR/introduction.page
+share/gnome/help/lottanzb/pt_BR/keyboard-shortcuts.page
+share/gnome/help/lottanzb/pt_BR/license.page
+share/gnome/help/lottanzb/pt_BR/managing-downloads.page
+share/gnome/help/lottanzb/pt_BR/multiple-news-servers.page
+share/gnome/help/lottanzb/pt_BR/news-servers.page
+share/gnome/help/lottanzb/pt_BR/observed-nzb-folder.page
+share/gnome/help/lottanzb/pt_BR/post-processing.page
+share/gnome/help/lottanzb/pt_BR/prefs-general-tab.page
+share/gnome/help/lottanzb/pt_BR/prefs.page
+share/gnome/help/lottanzb/pt_BR/remote-access.page
+share/gnome/help/lottanzb/pt_BR/reporting-problems.page
+share/gnome/help/lottanzb/pt_BR/searching-download-list.page
+share/gnome/help/lottanzb/pt_BR/setting-up.page
+share/gnome/help/lottanzb/pt_BR/web-interface.page
+share/gnome/help/lottanzb/uk/adding-downloads.page
+share/gnome/help/lottanzb/uk/completed-downloads.page
+share/gnome/help/lottanzb/uk/customizing-interface.page
+share/gnome/help/lottanzb/uk/download-folder.page
+share/gnome/help/lottanzb/uk/download-speed.page
+share/gnome/help/lottanzb/uk/figures/lottanzb-logo.png
+share/gnome/help/lottanzb/uk/figures/lottanzb-main-window.png
+share/gnome/help/lottanzb/uk/incomplete-downloads.page
+share/gnome/help/lottanzb/uk/index.page
+share/gnome/help/lottanzb/uk/introduction.page
+share/gnome/help/lottanzb/uk/keyboard-shortcuts.page
+share/gnome/help/lottanzb/uk/license.page
+share/gnome/help/lottanzb/uk/managing-downloads.page
+share/gnome/help/lottanzb/uk/multiple-news-servers.page
+share/gnome/help/lottanzb/uk/news-servers.page
+share/gnome/help/lottanzb/uk/observed-nzb-folder.page
+share/gnome/help/lottanzb/uk/post-processing.page
+share/gnome/help/lottanzb/uk/prefs-general-tab.page
+share/gnome/help/lottanzb/uk/prefs.page
+share/gnome/help/lottanzb/uk/remote-access.page
+share/gnome/help/lottanzb/uk/reporting-problems.page
+share/gnome/help/lottanzb/uk/searching-download-list.page
+share/gnome/help/lottanzb/uk/setting-up.page
+share/gnome/help/lottanzb/uk/web-interface.page
+share/icons/hicolor/16x16/apps/lottanzb.png
+share/icons/hicolor/16x16/mimetypes/application-x-nzb.png
+share/icons/hicolor/22x22/apps/lottanzb.png
+share/icons/hicolor/24x24/apps/lottanzb.png
+share/icons/hicolor/24x24/mimetypes/application-x-nzb.png
+share/icons/hicolor/32x32/apps/lottanzb.png
+share/icons/hicolor/32x32/mimetypes/application-x-nzb.png
+share/icons/hicolor/48x48/apps/lottanzb.png
+share/icons/hicolor/48x48/mimetypes/application-x-nzb.png
+share/icons/hicolor/scalable/apps/lottanzb.svg
+share/icons/hicolor/scalable/mimetypes/application-x-nzb.svg
+share/locale/ar/LC_MESSAGES/lottanzb.mo
 share/locale/bg/LC_MESSAGES/lottanzb.mo
 share/locale/ca/LC_MESSAGES/lottanzb.mo
+share/locale/cs/LC_MESSAGES/lottanzb.mo
 share/locale/da/LC_MESSAGES/lottanzb.mo
 share/locale/de/LC_MESSAGES/lottanzb.mo
 share/locale/el/LC_MESSAGES/lottanzb.mo
 share/locale/en_AU/LC_MESSAGES/lottanzb.mo
+share/locale/en_CA/LC_MESSAGES/lottanzb.mo
 share/locale/en_GB/LC_MESSAGES/lottanzb.mo
 share/locale/es/LC_MESSAGES/lottanzb.mo
 share/locale/fr/LC_MESSAGES/lottanzb.mo
@@ -120,317 +455,86 @@ share/locale/he/LC_MESSAGES/lottanzb.mo
 share/locale/hu/LC_MESSAGES/lottanzb.mo
 share/locale/id/LC_MESSAGES/lottanzb.mo
 share/locale/it/LC_MESSAGES/lottanzb.mo
+share/locale/ja/LC_MESSAGES/lottanzb.mo
 share/locale/lv/LC_MESSAGES/lottanzb.mo
 share/locale/nb/LC_MESSAGES/lottanzb.mo
+share/locale/nds/LC_MESSAGES/lottanzb.mo
 share/locale/nl/LC_MESSAGES/lottanzb.mo
+share/locale/oc/LC_MESSAGES/lottanzb.mo
 share/locale/pl/LC_MESSAGES/lottanzb.mo
 share/locale/pt/LC_MESSAGES/lottanzb.mo
+share/locale/pt_BR/LC_MESSAGES/lottanzb.mo
 share/locale/ru/LC_MESSAGES/lottanzb.mo
+share/locale/sl/LC_MESSAGES/lottanzb.mo
 share/locale/sv/LC_MESSAGES/lottanzb.mo
+share/locale/ta/LC_MESSAGES/lottanzb.mo
 share/locale/tr/LC_MESSAGES/lottanzb.mo
 share/locale/uk/LC_MESSAGES/lottanzb.mo
 share/locale/zh_CN/LC_MESSAGES/lottanzb.mo
-share/locale/nds/LC_MESSAGES/lottanzb.mo
-share/apport/package-hooks/lottanzb.py
-%%DATADIR%%/ui/prefs_tab_general.ui
-%%DATADIR%%/ui/package_locked.png
-%%DATADIR%%/ui/mode_selection_dialog.ui
-%%DATADIR%%/ui/log_window.ui
-%%DATADIR%%/ui/local_frontend_config_view.ui
-%%DATADIR%%/ui/remote_frontend_config_view.ui
-%%DATADIR%%/ui/about_dialog.ui
-%%DATADIR%%/ui/logo.png
-%%DATADIR%%/ui/package.png
-%%DATADIR%%/ui/prefs_window.ui
-%%DATADIR%%/ui/main_window.ui
-%%DATADIR%%/ui/prefs_tab_servers.ui
-%%DATADIR%%/ui/plugin_notification_area_menu.ui
-%%DATADIR%%/ui/prefs_tab_plugins.ui
-%%DATADIR%%/ui/standalone_config_view.ui
-%%DATADIR%%/ui/plugin_newzbin_prefs.ui
-%%DATADIR%%/ui/add_file_dialog.ui
-%%DATADIR%%/ui/server_dialog.ui
-%%DATADIR%%/ui/plugin_newzbin_add_dialog.ui
-%%DATADIR%%/ui/small_lock.png
-%%DATADIR%%/ui/plugin_categories_prefs_tab.ui
-share/mime/packages/lottanzb.xml
+share/lottanzb/ui/about_dialog.ui
+share/lottanzb/ui/add_file_dialog.ui
+share/lottanzb/ui/add_url_dialog.ui
+share/lottanzb/ui/additional_software_dialog.ui
+share/lottanzb/ui/download_list.ui
+share/lottanzb/ui/info_bar.ui
+share/lottanzb/ui/log_window.ui
+share/lottanzb/ui/logo.png
+share/lottanzb/ui/main_window.ui
+share/lottanzb/ui/prefs_tab_general.ui
+share/lottanzb/ui/prefs_tab_remote_access.ui
+share/lottanzb/ui/prefs_tab_servers.ui
+share/lottanzb/ui/prefs_window.ui
+share/lottanzb/ui/properties_dialog.ui
+share/lottanzb/ui/restart_dialog.ui
+share/lottanzb/ui/server_dialog.ui
+share/lottanzb/ui/server_editor_pane.ui
+share/lottanzb/ui/session_selection_dialog.ui
+share/lottanzb/ui/session_selection_local.ui
+share/lottanzb/ui/session_selection_local_sabnzbd_pane.ui
+share/lottanzb/ui/session_selection_local_sabnzbd_pane_quick_install.ui
+share/lottanzb/ui/session_selection_local_sabnzbd_pane_quick_upgrade.ui
+share/lottanzb/ui/session_selection_local_sabnzbd_pane_searching.ui
+share/lottanzb/ui/session_selection_remote.ui
 share/mime/application/x-nzb.xml
-share/mime/subclasses
-share/mime/globs
-share/mime/globs2
-share/mime/magic
-share/mime/XMLnamespaces
-share/mime/aliases
-share/mime/types
-share/mime/generic-icons
-share/mime/icons
-share/mime/treemagic
-share/mime/mime.cache
-share/applications/lottanzb.desktop
-share/application-registry/lottanzb.applications
+share/mime/packages/lottanzb.xml
 share/mime-info/lottanzb.keys
 share/mime-info/lottanzb.mime
-share/icons/hicolor/48x48/apps/lottanzb.png
-share/icons/hicolor/48x48/mimetypes/application-x-nzb.png
-share/icons/hicolor/192x192/apps/lottanzb.png
-share/icons/hicolor/16x16/apps/lottanzb.png
-share/icons/hicolor/16x16/mimetypes/application-x-nzb.png
-share/icons/hicolor/24x24/apps/lottanzb.png
-share/icons/hicolor/24x24/mimetypes/application-x-nzb.png
-share/icons/hicolor/22x22/apps/lottanzb.png
-share/icons/hicolor/32x32/apps/lottanzb.png
-share/icons/hicolor/32x32/mimetypes/application-x-nzb.png
-share/gnome/help/lottanzb/tr/legal.xml
-share/gnome/help/lottanzb/tr/lottanzb.xml
-share/gnome/help/lottanzb/tr/figures/MainWindow.png
-share/gnome/help/lottanzb/tr/figures/Newzbin.png
-share/gnome/help/lottanzb/tr/figures/Processing.png
-share/gnome/help/lottanzb/tr/figures/DragDropQueue.png
-share/gnome/help/lottanzb/tr/figures/FileAddMenu.png
-share/gnome/help/lottanzb/tr/figures/Preferences.png
-share/gnome/help/lottanzb/tr/figures/UsageRemote.png
-share/gnome/help/lottanzb/tr/figures/UsageStandAlone.png
-share/gnome/help/lottanzb/tr/figures/PreferencesServer.png
-share/gnome/help/lottanzb/tr/figures/Paused.png
-share/gnome/help/lottanzb/tr/figures/PreferencesNewzbin.png
-share/gnome/help/lottanzb/tr/figures/DownloadingMultiple.png
-share/gnome/help/lottanzb/tr/figures/PreferencesServerEdit.png
-share/gnome/help/lottanzb/tr/figures/UsageLocal.png
-share/gnome/help/lottanzb/nl/legal.xml
-share/gnome/help/lottanzb/nl/lottanzb.xml
-share/gnome/help/lottanzb/nl/figures/MainWindow.png
-share/gnome/help/lottanzb/nl/figures/Newzbin.png
-share/gnome/help/lottanzb/nl/figures/Processing.png
-share/gnome/help/lottanzb/nl/figures/DragDropQueue.png
-share/gnome/help/lottanzb/nl/figures/FileAddMenu.png
-share/gnome/help/lottanzb/nl/figures/Preferences.png
-share/gnome/help/lottanzb/nl/figures/UsageRemote.png
-share/gnome/help/lottanzb/nl/figures/UsageStandAlone.png
-share/gnome/help/lottanzb/nl/figures/PreferencesServer.png
-share/gnome/help/lottanzb/nl/figures/Paused.png
-share/gnome/help/lottanzb/nl/figures/PreferencesNewzbin.png
-share/gnome/help/lottanzb/nl/figures/DownloadingMultiple.png
-share/gnome/help/lottanzb/nl/figures/PreferencesServerEdit.png
-share/gnome/help/lottanzb/nl/figures/UsageLocal.png
-share/gnome/help/lottanzb/nb/legal.xml
-share/gnome/help/lottanzb/nb/lottanzb.xml
-share/gnome/help/lottanzb/nb/figures/MainWindow.png
-share/gnome/help/lottanzb/nb/figures/Newzbin.png
-share/gnome/help/lottanzb/nb/figures/Processing.png
-share/gnome/help/lottanzb/nb/figures/DragDropQueue.png
-share/gnome/help/lottanzb/nb/figures/FileAddMenu.png
-share/gnome/help/lottanzb/nb/figures/Preferences.png
-share/gnome/help/lottanzb/nb/figures/UsageRemote.png
-share/gnome/help/lottanzb/nb/figures/UsageStandAlone.png
-share/gnome/help/lottanzb/nb/figures/PreferencesServer.png
-share/gnome/help/lottanzb/nb/figures/Paused.png
-share/gnome/help/lottanzb/nb/figures/PreferencesNewzbin.png
-share/gnome/help/lottanzb/nb/figures/DownloadingMultiple.png
-share/gnome/help/lottanzb/nb/figures/PreferencesServerEdit.png
-share/gnome/help/lottanzb/nb/figures/UsageLocal.png
-share/gnome/help/lottanzb/de/legal.xml
-share/gnome/help/lottanzb/de/lottanzb.xml
-share/gnome/help/lottanzb/de/figures/MainWindow.png
-share/gnome/help/lottanzb/de/figures/Newzbin.png
-share/gnome/help/lottanzb/de/figures/Processing.png
-share/gnome/help/lottanzb/de/figures/DragDropQueue.png
-share/gnome/help/lottanzb/de/figures/FileAddMenu.png
-share/gnome/help/lottanzb/de/figures/Preferences.png
-share/gnome/help/lottanzb/de/figures/UsageRemote.png
-share/gnome/help/lottanzb/de/figures/UsageStandAlone.png
-share/gnome/help/lottanzb/de/figures/PreferencesServer.png
-share/gnome/help/lottanzb/de/figures/Paused.png
-share/gnome/help/lottanzb/de/figures/PreferencesNewzbin.png
-share/gnome/help/lottanzb/de/figures/DownloadingMultiple.png
-share/gnome/help/lottanzb/de/figures/PreferencesServerEdit.png
-share/gnome/help/lottanzb/de/figures/UsageLocal.png
-share/gnome/help/lottanzb/C/legal.xml
-share/gnome/help/lottanzb/C/lottanzb.xml
-share/gnome/help/lottanzb/C/figures/MainWindow.png
-share/gnome/help/lottanzb/C/figures/Newzbin.png
-share/gnome/help/lottanzb/C/figures/Processing.png
-share/gnome/help/lottanzb/C/figures/DragDropQueue.png
-share/gnome/help/lottanzb/C/figures/FileAddMenu.png
-share/gnome/help/lottanzb/C/figures/Preferences.png
-share/gnome/help/lottanzb/C/figures/UsageRemote.png
-share/gnome/help/lottanzb/C/figures/UsageStandAlone.png
-share/gnome/help/lottanzb/C/figures/PreferencesServer.png
-share/gnome/help/lottanzb/C/figures/Paused.png
-share/gnome/help/lottanzb/C/figures/PreferencesNewzbin.png
-share/gnome/help/lottanzb/C/figures/DownloadingMultiple.png
-share/gnome/help/lottanzb/C/figures/PreferencesServerEdit.png
-share/gnome/help/lottanzb/C/figures/UsageLocal.png
-share/gnome/help/lottanzb/fr/legal.xml
-share/gnome/help/lottanzb/fr/lottanzb.xml
-share/gnome/help/lottanzb/fr/figures/MainWindow.png
-share/gnome/help/lottanzb/fr/figures/Newzbin.png
-share/gnome/help/lottanzb/fr/figures/Processing.png
-share/gnome/help/lottanzb/fr/figures/DragDropQueue.png
-share/gnome/help/lottanzb/fr/figures/FileAddMenu.png
-share/gnome/help/lottanzb/fr/figures/Preferences.png
-share/gnome/help/lottanzb/fr/figures/UsageRemote.png
-share/gnome/help/lottanzb/fr/figures/UsageStandAlone.png
-share/gnome/help/lottanzb/fr/figures/PreferencesServer.png
-share/gnome/help/lottanzb/fr/figures/Paused.png
-share/gnome/help/lottanzb/fr/figures/PreferencesNewzbin.png
-share/gnome/help/lottanzb/fr/figures/DownloadingMultiple.png
-share/gnome/help/lottanzb/fr/figures/PreferencesServerEdit.png
-share/gnome/help/lottanzb/fr/figures/UsageLocal.png
-share/gnome/help/lottanzb/en_GB/legal.xml
-share/gnome/help/lottanzb/en_GB/lottanzb.xml
-share/gnome/help/lottanzb/en_GB/figures/MainWindow.png
-share/gnome/help/lottanzb/en_GB/figures/Newzbin.png
-share/gnome/help/lottanzb/en_GB/figures/Processing.png
-share/gnome/help/lottanzb/en_GB/figures/DragDropQueue.png
-share/gnome/help/lottanzb/en_GB/figures/FileAddMenu.png
-share/gnome/help/lottanzb/en_GB/figures/Preferences.png
-share/gnome/help/lottanzb/en_GB/figures/UsageRemote.png
-share/gnome/help/lottanzb/en_GB/figures/UsageStandAlone.png
-share/gnome/help/lottanzb/en_GB/figures/PreferencesServer.png
-share/gnome/help/lottanzb/en_GB/figures/Paused.png
-share/gnome/help/lottanzb/en_GB/figures/PreferencesNewzbin.png
-share/gnome/help/lottanzb/en_GB/figures/DownloadingMultiple.png
-share/gnome/help/lottanzb/en_GB/figures/PreferencesServerEdit.png
-share/gnome/help/lottanzb/en_GB/figures/UsageLocal.png
-share/gnome/help/lottanzb/es/legal.xml
-share/gnome/help/lottanzb/es/lottanzb.xml
-share/gnome/help/lottanzb/es/figures/MainWindow.png
-share/gnome/help/lottanzb/es/figures/Newzbin.png
-share/gnome/help/lottanzb/es/figures/Processing.png
-share/gnome/help/lottanzb/es/figures/DragDropQueue.png
-share/gnome/help/lottanzb/es/figures/FileAddMenu.png
-share/gnome/help/lottanzb/es/figures/Preferences.png
-share/gnome/help/lottanzb/es/figures/UsageRemote.png
-share/gnome/help/lottanzb/es/figures/UsageStandAlone.png
-share/gnome/help/lottanzb/es/figures/PreferencesServer.png
-share/gnome/help/lottanzb/es/figures/Paused.png
-share/gnome/help/lottanzb/es/figures/PreferencesNewzbin.png
-share/gnome/help/lottanzb/es/figures/DownloadingMultiple.png
-share/gnome/help/lottanzb/es/figures/PreferencesServerEdit.png
-share/gnome/help/lottanzb/es/figures/UsageLocal.png
-share/gnome/help/lottanzb/da/legal.xml
-share/gnome/help/lottanzb/da/lottanzb.xml
-share/gnome/help/lottanzb/da/figures/MainWindow.png
-share/gnome/help/lottanzb/da/figures/Newzbin.png
-share/gnome/help/lottanzb/da/figures/Processing.png
-share/gnome/help/lottanzb/da/figures/DragDropQueue.png
-share/gnome/help/lottanzb/da/figures/FileAddMenu.png
-share/gnome/help/lottanzb/da/figures/Preferences.png
-share/gnome/help/lottanzb/da/figures/UsageRemote.png
-share/gnome/help/lottanzb/da/figures/UsageStandAlone.png
-share/gnome/help/lottanzb/da/figures/PreferencesServer.png
-share/gnome/help/lottanzb/da/figures/Paused.png
-share/gnome/help/lottanzb/da/figures/PreferencesNewzbin.png
-share/gnome/help/lottanzb/da/figures/DownloadingMultiple.png
-share/gnome/help/lottanzb/da/figures/PreferencesServerEdit.png
-share/gnome/help/lottanzb/da/figures/UsageLocal.png
-share/omf/lottanzb/lottanzb-tr.omf
-share/omf/lottanzb/lottanzb-nl.omf
-share/omf/lottanzb/lottanzb-nb.omf
-share/omf/lottanzb/lottanzb-de.omf
-share/omf/lottanzb/lottanzb-C.omf
-share/omf/lottanzb/lottanzb-fr.omf
-share/omf/lottanzb/lottanzb-en_GB.omf
-share/omf/lottanzb/lottanzb-es.omf
-share/omf/lottanzb/lottanzb-da.omf
+@dirrmtry share/mime/application
+@dirrmtry share/mime/packages
 @dirrmtry share/omf/lottanzb
-@dirrmtry share/locale/tr/LC_MESSAGES
-@dirrmtry share/locale/tr
-@dirrmtry share/locale/pt/LC_MESSAGES
-@dirrmtry share/locale/pt
-@dirrmtry share/locale/pl/LC_MESSAGES
-@dirrmtry share/locale/pl
-@dirrmtry share/locale/nl/LC_MESSAGES
-@dirrmtry share/locale/nl
-@dirrmtry share/locale/nb/LC_MESSAGES
-@dirrmtry share/locale/nb
-@dirrmtry share/locale/it/LC_MESSAGES
-@dirrmtry share/locale/it
-@dirrmtry share/locale/id/LC_MESSAGES
-@dirrmtry share/locale/id
-@dirrmtry share/locale/he/LC_MESSAGES
-@dirrmtry share/locale/he
-@dirrmtry share/locale/fr/LC_MESSAGES
-@dirrmtry share/locale/fr
-@dirrmtry share/locale/es/LC_MESSAGES
-@dirrmtry share/locale/es
-@dirrmtry share/locale/en_GB/LC_MESSAGES
-@dirrmtry share/locale/en_GB
-@dirrmtry share/locale/de/LC_MESSAGES
-@dirrmtry share/locale/de
-@dirrmtry share/locale/da/LC_MESSAGES
-@dirrmtry share/locale/da
-@dirrmtry share/locale/nds/LC_MESSAGES
-@dirrmtry share/locale/nds
-@dirrmtry share/locale
-@dirrmtry share/icons/hicolor/48x48/apps
-@dirrmtry share/icons/hicolor/48x48
-@dirrmtry share/icons/hicolor/32x32/apps
-@dirrmtry share/icons/hicolor/32x32
-@dirrmtry share/icons/hicolor/24x24/apps
-@dirrmtry share/icons/hicolor/24x24
-@dirrmtry share/icons/hicolor/22x22/apps
-@dirrmtry share/icons/hicolor/22x22
-@dirrmtry share/icons/hicolor/192x192/apps
-@dirrmtry share/icons/hicolor/192x192
-@dirrmtry share/icons/hicolor/16x16/apps
-@dirrmtry share/icons/hicolor/16x16
-@dirrmtry share/icons/hicolor
-@dirrmtry share/icons/gnome/scalable/mimetypes
-@dirrmtry share/icons/gnome/scalable
-@dirrmtry share/icons/gnome/48x48/mimetypes
-@dirrmtry share/icons/gnome/48x48
-@dirrmtry share/icons/gnome/32x32/mimetypes
-@dirrmtry share/icons/gnome/32x32
-@dirrmtry share/icons/gnome/24x24/mimetypes
-@dirrmtry share/icons/gnome/24x24
-@dirrmtry share/icons/gnome/16x16/mimetypes
-@dirrmtry share/icons/gnome/16x16
-@dirrmtry share/icons/gnome
-@dirrmtry share/icons
-@dirrmtry share/apport/package-hooks
-@dirrmtry share/apport
-@dirrm share/gnome/help/lottanzb/tr/figures
-@dirrm share/gnome/help/lottanzb/tr
-@dirrm share/gnome/help/lottanzb/nl/figures
-@dirrm share/gnome/help/lottanzb/nl
-@dirrm share/gnome/help/lottanzb/nb/figures
-@dirrm share/gnome/help/lottanzb/nb
-@dirrm share/gnome/help/lottanzb/fr/figures
-@dirrm share/gnome/help/lottanzb/fr
-@dirrm share/gnome/help/lottanzb/es/figures
-@dirrm share/gnome/help/lottanzb/es
-@dirrm share/gnome/help/lottanzb/en_GB/figures
-@dirrm share/gnome/help/lottanzb/en_GB
-@dirrm share/gnome/help/lottanzb/de/figures
-@dirrm share/gnome/help/lottanzb/de
-@dirrm share/gnome/help/lottanzb/da/figures
-@dirrm share/gnome/help/lottanzb/da
 @dirrm share/gnome/help/lottanzb/C/figures
 @dirrm share/gnome/help/lottanzb/C
-@dirrmtry share/gnome/help/lottanzb/po/figures
-@dirrmtry share/gnome/help/lottanzb/po
+@dirrm share/gnome/help/lottanzb/de/figures
+@dirrm share/gnome/help/lottanzb/de
+@dirrm share/gnome/help/lottanzb/es/figures
+@dirrm share/gnome/help/lottanzb/es
+@dirrm share/gnome/help/lottanzb/fr/figures
+@dirrm share/gnome/help/lottanzb/fr
+@dirrm share/gnome/help/lottanzb/pt_BR/figures
+@dirrm share/gnome/help/lottanzb/pt_BR
+@dirrm share/gnome/help/lottanzb/uk/figures
+@dirrm share/gnome/help/lottanzb/uk
 @dirrm share/gnome/help/lottanzb
-@dirrmtry lib/python2.6/site-packages/lottanzb/resources
-@dirrmtry lib/python2.6/site-packages/lottanzb/plugins/start_minimized
-@dirrmtry lib/python2.6/site-packages/lottanzb/plugins/notification_area
-@dirrmtry lib/python2.6/site-packages/lottanzb/plugins/newzbin
-@dirrmtry lib/python2.6/site-packages/lottanzb/plugins/categories
-@dirrmtry lib/python2.6/site-packages/lottanzb/plugins
-@dirrmtry lib/python2.6/site-packages/lottanzb/gui/modes
-@dirrmtry lib/python2.6/site-packages/lottanzb/gui
-@dirrmtry lib/python2.6/site-packages/lottanzb/external
 @dirrmtry share/gnome/help
 @dirrmtry share/gnome
-@dirrmtry share/applications
-@dirrm %%PYTHON_SITELIBDIR%%/lottanzb/modes
-@dirrmtry %%PYTHON_SITELIBDIR%%/lottanzb/hellalog
-@dirrm %%PYTHON_SITELIBDIR%%/lottanzb
-@dirrm %%DATADIR%%/ui
-@dirrm %%DATADIR%%
-@exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
-@unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
-@exec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
-@unexec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
-@exec %%LOCALBASE%%/bin/gtk-update-icon-cache -q -f %D/share/icons/hicolor 2>/dev/null || /usr/bin/true 
-@unexec %%LOCALBASE%%/bin/gtk-update-icon-cache -q -f %D/share/icons/hicolor 2>/dev/null || /usr/bin/true
+@dirrmtry share/icons/hicolor/16x16/mimetypes
+@dirrmtry share/icons/hicolor/16x16/apps
+@dirrmtry share/icons/hicolor/16x16
+@dirrmtry share/icons/hicolor/22x22/apps
+@dirrmtry share/icons/hicolor/22x22
+@dirrmtry share/icons/hicolor/24x24/apps
+@dirrmtry share/icons/hicolor/24x24
+@dirrmtry share/icons/hicolor/32x32/apps
+@dirrmtry share/icons/hicolor/32x32
+@dirrmtry share/icons/hicolor/48x48/mimetypes
+@dirrmtry share/icons/hicolor/48x48
+@dirrmtry share/icons/hicolor/scalable/apps
+@dirrmtry share/icons/hicolor/scalable/mimetypes
+@dirrmtry share/icons/hicolor/scalable
+@dirrmtry share/icons/hicolor
+@dirrmtry share/locale/nds/LC_MESSAGES
+@dirrmtry share/locale/nds
+@dirrmtry share/locale/oc/LC_MESSAGES
+@dirrmtry share/locale/oc
+@dirrm share/lottanzb/ui
+@dirrm share/lottanzb
