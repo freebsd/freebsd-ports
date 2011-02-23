@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Graphics-Primitive
-PORTVERSION=	0.52
+PORTVERSION=	0.53
 CATEGORIES=	graphics perl5
 MASTER_SITES=	CPAN/../by-authors/id/G/GP/GPHAT
 PKGNAMEPREFIX=	p5-
