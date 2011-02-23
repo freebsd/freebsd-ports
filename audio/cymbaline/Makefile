@@ -6,17 +6,14 @@
 #
 
 PORTNAME=	cymbaline
-PORTVERSION=	1.3b
-PORTREVISION=	2
+PORTVERSION=	1.3e
 CATEGORIES=	audio python
 MASTER_SITES=	http://www.silmarill.org/files/
 
 MAINTAINER=	novel@FreeBSD.org
-COMMENT=	Console frontend for mpg123
+COMMENT=	Console frontend for py-mad
 
-RUN_DEPENDS=	mpg123:${PORTSDIR}/audio/mpg123 \
-		aumix:${PORTSDIR}/audio/aumix \
-		${PYTHON_SITELIBDIR}/aomodule.so:${PORTSDIR}/audio/py-ao \
+RUN_DEPENDS=	${PYTHON_SITELIBDIR}/aomodule.so:${PORTSDIR}/audio/py-ao \
 		${PYTHON_SITELIBDIR}/madmodule.so:${PORTSDIR}/audio/py-mad
 
 USE_PYTHON=	yes
