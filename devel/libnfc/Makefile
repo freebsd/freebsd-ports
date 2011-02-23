@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libnfc
-PORTVERSION=	1.4.0
+PORTVERSION=	1.4.2
 CATEGORIES=	devel
 MASTER_SITES=	http://${PORTNAME}.googlecode.com/files/ \
     		http://romain.blogreen.org/distfiles/
