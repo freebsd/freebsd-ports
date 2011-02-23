@@ -7,6 +7,7 @@
 
 PORTNAME=	tinyproxy
 PORTVERSION=	1.8.2
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	www
 MASTER_SITES=	https://banu.com/pub/tinyproxy/1.8/
