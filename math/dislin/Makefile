@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	dislin
-PORTVERSION=	10.0
-PORTREVISION=	1
+PORTVERSION=	10.1
 CATEGORIES=	math
 MASTER_SITES=	ftp://ftp.gwdg.de/pub/grafik/dislin/unix/
 DISTNAME=	${PORTNAME}-${PORTVERSION}.fbsd${BINVER}
@@ -17,8 +16,6 @@ MAINTAINER=	sylvio@FreeBSD.org
 COMMENT=	A scientific data plotting package
 
 LIB_DEPENDS=	f2c.2:${PORTSDIR}/lang/f2c
-
-BROKEN=		fails to fetch (latest version is 10.1)
 
 RESTRICTED=	free for non-commercial use.
 USE_XORG=	x11
@@ -39,6 +36,16 @@ MAJ=		${PORTVERSION:R}
 USE_LDCONFIG=	yes
 
 .include <bsd.port.pre.mk>
+
+.if ${OSVERSION} > 700000 && ${OSVERSION} < 800000
+BINVER=
+BINDIR=
+PLIST_SUB+=	DISLIN7=""
+.else
+BINVER=		-7.0
+BINDIR=		_70
+PLIST_SUB+=	DISLIN7="@comment "
+.endif
 
 .if ${OSVERSION} > 800000
 BINVER=
