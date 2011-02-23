@@ -2,6 +2,9 @@
 bin/mifare-classic-format
 bin/mifare-classic-write-ndef
 bin/mifare-desfire-access
+bin/mifare-desfire-ev1-configure-ats
+bin/mifare-desfire-ev1-configure-default-key
+bin/mifare-desfire-ev1-configure-random-uid
 bin/mifare-desfire-format
 bin/mifare-desfire-info
 bin/mifare-desfire-write-ndef

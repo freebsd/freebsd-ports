@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libfreefare
-PORTVERSION=	0.2.3
+PORTVERSION=	0.3.1
 CATEGORIES=	devel
 MASTER_SITES=	http://nfc-tools.googlecode.com/files/ \
 		http://romain.blogreen.org/distfiles/
@@ -30,8 +30,8 @@ MLINKS=		freefare.3 freefare_free_tags.3 \
 		freefare.3 freefare_get_tag_type.3 \
 		freefare.3 freefare_get_tag_uid.3 \
 		freefare.3 freefare_get_tags.3 \
-		freefare_error.3 freefare_strerror.3 \
 		freefare_error.3 freefare_perror.3 \
+		freefare_error.3 freefare_strerror.3 \
 		freefare_error.3 freefare_strerror_r.3 \
 		mad.3 mad_free.3 \
 		mad.3 mad_get_aid.3 \
@@ -64,8 +64,15 @@ MLINKS=		freefare.3 freefare_free_tags.3 \
 		mifare_classic.3 mifare_classic_trailer_block.3 \
 		mifare_classic.3 mifare_classic_transfer.3 \
 		mifare_classic.3 mifare_classic_write.3 \
+		mifare_desfire.3 mifare_desfire_3k3des_key_new.3 \
+		mifare_desfire.3 mifare_desfire_3k3des_key_new_with_version.3 \
 		mifare_desfire.3 mifare_desfire_abort_transaction.3 \
+		mifare_desfire.3 mifare_desfire_aes_key_new.3 \
+		mifare_desfire.3 mifare_desfire_aes_key_new_with_version.3 \
+		mifare_desfire.3 mifare_desfire_aid_get_aid.3 \
 		mifare_desfire.3 mifare_desfire_authenticate.3 \
+		mifare_desfire.3 mifare_desfire_authenticate_aes.3 \
+		mifare_desfire.3 mifare_desfire_authenticate_iso.3 \
 		mifare_desfire.3 mifare_desfire_change_file_settings.3 \
 		mifare_desfire.3 mifare_desfire_change_key.3 \
 		mifare_desfire.3 mifare_desfire_change_key_settings.3 \
@@ -87,7 +94,9 @@ MLINKS=		freefare.3 freefare_free_tags.3 \
 		mifare_desfire.3 mifare_desfire_disconnect.3 \
 		mifare_desfire.3 mifare_desfire_format_picc.3 \
 		mifare_desfire.3 mifare_desfire_free_application_ids.3 \
+		mifare_desfire.3 mifare_desfire_free_mem.3 \
 		mifare_desfire.3 mifare_desfire_get_application_ids.3 \
+		mifare_desfire.3 mifare_desfire_get_card_uid.3 \
 		mifare_desfire.3 mifare_desfire_get_file_ids.3 \
 		mifare_desfire.3 mifare_desfire_get_file_settings.3 \
 		mifare_desfire.3 mifare_desfire_get_key_settings.3 \
@@ -95,6 +104,8 @@ MLINKS=		freefare.3 freefare_free_tags.3 \
 		mifare_desfire.3 mifare_desfire_get_value.3 \
 		mifare_desfire.3 mifare_desfire_get_value_ex.3 \
 		mifare_desfire.3 mifare_desfire_get_version.3 \
+		mifare_desfire.3 mifare_desfire_last_pcd_error.3 \
+		mifare_desfire.3 mifare_desfire_last_picc_error.3 \
 		mifare_desfire.3 mifare_desfire_limited_credit.3 \
 		mifare_desfire.3 mifare_desfire_limited_credit_ex.3 \
 		mifare_desfire.3 mifare_desfire_read_data.3 \
@@ -102,6 +113,9 @@ MLINKS=		freefare.3 freefare_free_tags.3 \
 		mifare_desfire.3 mifare_desfire_read_records.3 \
 		mifare_desfire.3 mifare_desfire_read_records_ex.3 \
 		mifare_desfire.3 mifare_desfire_select_application.3 \
+		mifare_desfire.3 mifare_desfire_set_ats.3 \
+		mifare_desfire.3 mifare_desfire_set_configuration.3 \
+		mifare_desfire.3 mifare_desfire_set_default_key.3 \
 		mifare_desfire.3 mifare_desfire_write_data.3 \
 		mifare_desfire.3 mifare_desfire_write_data_ex.3 \
 		mifare_desfire.3 mifare_desfire_write_record.3 \
@@ -120,6 +134,7 @@ MLINKS=		freefare.3 freefare_free_tags.3 \
 		mifare_ultralight.3 mifare_ultralight_get_uid.3 \
 		mifare_ultralight.3 mifare_ultralight_read.3 \
 		mifare_ultralight.3 mifare_ultralight_write.3 \
+		mifare_ultralight.3 mifare_ultralightc_authenticate.3 \
 		tlv.3 tlv_decode.3 \
 		tlv.3 tlv_encode.3
 
