@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	clamav
-PORTVERSION=	20110204
+PORTVERSION=	20110223
 CATEGORIES=	security
 MASTER_SITES=	http://www.clamav.net/snapshot/ \
 		LOCAL/garga/clamav-devel
@@ -21,7 +21,8 @@ OPTIONS=	ARC "Enable arch archives support" On \
 		LHA "Enable lha archives support" On \
 		UNZOO "Enable zoo archives support" On \
 		UNRAR "Enable rar archives support" On \
-		LLVM "Enable JIT Bytecode compiler" On \
+		LLVM "Enable JIT Bytecode compiler (bundled LLVM)" On \
+		LLVM_PORTS "Enable JIT Bytecode compiler (from Ports)" Off \
 		TESTS "Run compile-time tests (req. python)" On \
 		MILTER "Compile the milter interface" Off \
 		LDAP "libmilter was built with LDAP" Off \
@@ -144,9 +145,16 @@ USE_ICONV=	yes
 CONFIGURE_ARGS+=--without-iconv
 .endif
 
-.if defined(WITH_LLVM) && ${ARCH} != "sparc64"
+.if (defined(WITH_LLVM) || defined(WITH_LLVM_PORTS)) && ( ${ARCH} == "i386" || ${ARCH} == "amd64" )
 CONFIGURE_ARGS+=--enable-llvm
 USE_GMAKE=	yes
+. if defined(WITH_LLVM_PORTS)
+BUILD_DEPENDS+=	llvm-config:${PORTSDIR}/devel/llvm
+CONFIGURE_ARGS+=--with-system-llvm=${LOCALBASE}/bin/llvm-config
+. endif
+. if defined(WITH_LLVM) && defined(WITH_LLVM_PORTS)
+IGNORE=Select only one LLVM
+. endif
 . if defined(WITH_TESTS)
 USE_PYTHON_BUILD=	yes
 . endif
@@ -204,7 +212,7 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|0x100000000|0x100000000ULL|g' \
 		${WRKSRC}/libclamunrar/unrar.c
 
-.if defined(WITH_LLVM) && defined(WITH_TESTS)
+.if (defined(WITH_LLVM) || defined(WITH_LLVM_PORTS)) && defined(WITH_TESTS)
 pre-configure:
 	@if ! ${PYTHON_CMD} -c "import thread" >/dev/null 2>&1; then \
 		${ECHO_MSG} ""; \
