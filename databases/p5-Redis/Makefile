@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Redis
-PORTVERSION=	1.9020
+PORTVERSION=	1.9030
 CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN/../../authors/id/M/ME/MELO
 PKGNAMEPREFIX=	p5-
@@ -15,8 +15,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:C/0$//}
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl binding for Redis database
 
-BUILD_DEPENDS=	p5-Guard>=0:${PORTSDIR}/devel/p5-Guard \
-		p5-IO-String>=0:${PORTSDIR}/devel/p5-IO-String
+BUILD_DEPENDS=	p5-IO-String>=0:${PORTSDIR}/devel/p5-IO-String
 RUN_DEPENDS=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Test-Deep>=0:${PORTSDIR}/devel/p5-Test-Deep \
 		p5-Test-Exception>=0:${PORTSDIR}/devel/p5-Test-Exception
