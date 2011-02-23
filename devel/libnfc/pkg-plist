@@ -20,7 +20,7 @@ include/nfc/nfc.h
 lib/libnfc.a
 lib/libnfc.la
 lib/libnfc.so
-lib/libnfc.so.0
+lib/libnfc.so.1
 libdata/pkgconfig/libnfc.pc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pn53x.conf
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
