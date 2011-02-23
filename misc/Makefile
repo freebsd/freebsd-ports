@@ -387,6 +387,7 @@
     SUBDIR += p5-Acme-ButFirst
     SUBDIR += p5-Array-Compare
     SUBDIR += p5-Array-Diff
+    SUBDIR += p5-Array-FileReader
     SUBDIR += p5-Array-IntSpan
     SUBDIR += p5-Array-LineReader
     SUBDIR += p5-Array-PrintCols
