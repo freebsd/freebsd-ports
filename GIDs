@@ -84,6 +84,7 @@ twms:*:175:
 rt:*:180:
 nagios:*:181:
 noc:*:182:
+icinga:*:183:
 moinmoin:*:192:
 cups:*:193:
 saned:*:194:
