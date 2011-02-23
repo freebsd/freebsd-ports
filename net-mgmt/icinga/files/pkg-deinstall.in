@@ -1,0 +1,22 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+
+ICINGADIR=%%ICINGADIR%%
+ICINGAUSER=%%ICINGAUSER%%
+ICINGAGROUP=%%ICINGAGROUP%%
+
+if [ "$2" = "POST-DEINSTALL" ]; then
+  if /usr/sbin/pw group show "${ICINGAGROUP}" 2>&1 >/dev/null; then
+    echo "You should manually remove the \"${ICINGAGROUP}\" group."
+  fi
+
+  if /usr/sbin/pw user show "${ICINGAUSER}" 2>&1 >/dev/null; then
+    echo "You should manually remove the \"${ICINGAUSER}\" user."
+  fi
+
+  if [ -e "${ICINGADIR}" ]; then
+    echo "You should manually remove the \"${ICINGADIR}\" directory."
+  fi
+fi

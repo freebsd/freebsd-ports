@@ -1,0 +1,74 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+
+ICINGADIR=%%ICINGADIR%%
+ICINGAUSER=%%ICINGAUSER%%
+ICINGAGROUP=%%ICINGAGROUP%%
+ICINGAUID=%%ICINGAUID%%
+ICINGAGID=%%ICINGAGID%%
+
+ask() {
+  local question default answer
+
+  question=$1
+  default=$2
+  if [ -z "${PACKAGE_BUILDING}" ]; then
+    read -p "${question} [${default}]? " answer
+  fi
+  if [ "x${answer}" = "x" ]; then
+    answer=${default}
+  fi
+  echo ${answer}
+}
+
+yesno() {
+  local default question answer
+
+  question=$1
+  default=$2
+  while :; do
+    answer=$(ask "${question}" "${default}")
+    case "${answer}" in
+      [Yy][Ee][Ss]|[Yy])
+        return 0
+        ;;
+      [Nn][Oo]|[Nn])
+        return 1
+        ;;
+    esac
+    echo "Please answer yes or no."
+   done
+}
+
+if [ "$2" = "PRE-INSTALL" ]; then
+  if /usr/sbin/pw group show "${ICINGAGROUP}" 2>&1 >/dev/null; then
+    echo "You already have a \"${ICINGAGROUP}\" group, so I will use it."
+  else
+    echo "You need a \"${ICINGAGROUP}\" group."
+    if yesno "Would you like me to create it" "YES"; then
+      /usr/sbin/pw groupadd "${ICINGAGROUP}" -g "${ICINGAGID}" -h - || \
+        /usr/sbin/pw groupadd "${ICINGAGROUP}" -h - || exit
+      echo "Done."
+    else
+      echo "Please create the \"${ICINGAGROUP}\" group manually and try again."
+      exit 1
+    fi
+  fi
+
+  if /usr/sbin/pw user show "${ICINGAUSER}" 2>&1 >/dev/null; then
+    echo "You already have a \"${ICINGAUSER}\" user, so I will use it."
+  else
+    echo "You need a \"${ICINGAUSER}\" user."
+    if yesno "Would you like me to create it" "YES"; then
+      /usr/sbin/pw useradd "${ICINGAUSER}" -u "${ICINGAUID}" -g "${ICINGAGROUP}" -h - -d "${ICINGADIR}" \
+        -s /sbin/nologin -c "Icinga pseudo-user" || \
+        /usr/sbin/pw useradd "${ICINGAUSER}" -g "${ICINGAGROUP}" -h - -d "${ICINGADIR}" \
+        -s /sbin/nologin -c "Icinga pseudo-user" || exit
+    else
+      echo "Please create the \"${ICINGAUSER}\" user manually and try again."
+      exit 1
+    fi
+  fi
+fi

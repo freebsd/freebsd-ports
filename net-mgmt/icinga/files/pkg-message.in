@@ -1,0 +1,32 @@
+**********************************************************************
+
+ Enable Icinga in /etc/rc.conf with the following line:
+
+   icinga_enable="YES"
+
+ Configuration templates are available in %%PREFIX%%/etc/icinga as
+ *.cfg-sample files.  Copy them to *.cfg files where required and
+ edit to suit your needs.  Documentation is available in HTML form
+ in %%PREFIX%%/%%ICINGAWWWDIR%%/docs.
+
+ If you don't already have a web server running, you will need to
+ install and configure one to finish off your Icinga installation.
+ When used with Apache, the following should be sufficient to publish
+ the web component of Icinga (modify the allow list to suit):
+
+   <Directory %%PREFIX%%/%%ICINGAWWWDIR%%>
+     Order deny,allow
+     Deny from all
+     Allow from 127.0.0.1
+     php_flag engine on
+     php_admin_value open_basedir %%PREFIX%%/%%ICINGAWWWDIR%%/:%%ICINGADIR%%/
+   </Directory>
+
+   <Directory %%PREFIX%%/%%ICINGAWWWDIR%%/cgi-bin>
+     Options ExecCGI
+   </Directory>
+
+   ScriptAlias %%ICINGACGIURL%%/ %%PREFIX%%/%%ICINGAWWWDIR%%/cgi-bin/
+   Alias %%ICINGAHTMURL%%/ %%PREFIX%%/%%ICINGAWWWDIR%%/
+
+**********************************************************************

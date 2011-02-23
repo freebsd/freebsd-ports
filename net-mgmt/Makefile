@@ -80,6 +80,7 @@
     SUBDIR += grepip
     SUBDIR += gsnmp
     SUBDIR += horde-nic
+    SUBDIR += icinga
     SUBDIR += icmpmonitor
     SUBDIR += icmpquery
     SUBDIR += ifgraph
