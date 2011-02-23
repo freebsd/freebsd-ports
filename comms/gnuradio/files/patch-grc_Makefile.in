@@ -1,0 +1,11 @@
+--- grc/Makefile.in.orig	2011-02-21 00:21:58.000000000 -0500
++++ grc/Makefile.in	2011-02-21 00:22:10.000000000 -0500
+@@ -741,7 +741,7 @@
+ ourpythondir = $(grc_src_prefix)
+ ourpython_PYTHON = __init__.py
+ etcdir = $(gr_sysconfdir)
+-dist_etc_DATA = grc.conf
++dist_etc_DATA = 
+ EXTRA_DIST = \
+ 	$(srcdir)/__init__.py.in \
+ 	$(srcdir)/grc.conf.in

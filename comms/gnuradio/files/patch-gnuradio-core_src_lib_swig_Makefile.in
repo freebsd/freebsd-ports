@@ -1,0 +1,53 @@
+--- gnuradio-core/src/lib/swig/Makefile.in.orig	2009-07-06 02:19:53.000000000 -0400
++++ gnuradio-core/src/lib/swig/Makefile.in	2011-02-20 17:44:51.000000000 -0500
+@@ -140,7 +140,7 @@
+ 	$(swiginclude_HEADERS) $(top_srcdir)/Makefile.common \
+ 	$(top_srcdir)/Makefile.swig
+ subdir = gnuradio-core/src/lib/swig
+-ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
++ACLOCAL=true
+ am__aclocal_m4_deps = $(top_srcdir)/config/acx_cblas.m4 \
+ 	$(top_srcdir)/config/acx_pthread.m4 \
+ 	$(top_srcdir)/config/ax_boost_base.m4 \
+@@ -369,7 +369,7 @@
+ ETAGS = etags
+ CTAGS = ctags
+ DISTFILES = $(DIST_COMMON) $(DIST_SOURCES) $(TEXINFOS) $(EXTRA_DIST)
+-ACLOCAL = @ACLOCAL@
++ACLOCAL=true
+ ALLOCA = @ALLOCA@
+ ALSA_CFLAGS = @ALSA_CFLAGS@
+ ALSA_CPPFLAGS = @ALSA_CPPFLAGS@
+@@ -378,9 +378,9 @@
+ AMTAR = @AMTAR@
+ AR = @AR@
+ AS = @AS@
+-AUTOCONF = @AUTOCONF@
+-AUTOHEADER = @AUTOHEADER@
+-AUTOMAKE = @AUTOMAKE@
++AUTOCONF=true
++AUTOHEADER=true
++AUTOMAKE=true
+ AWK = @AWK@
+ BOOST_CPPFLAGS = @BOOST_CPPFLAGS@
+ BOOST_CXXFLAGS = @BOOST_CXXFLAGS@
+@@ -828,8 +828,8 @@
+ 
+ # This used to be set in configure.ac but is now defined here for all 
+ # Makefiles when this fragment is included.
+-STD_DEFINES_AND_INCLUDES = $(DEFINES) $(BOOST_CPPFLAGS) \
+-	$(OMNITHREAD_INCLUDES) $(GNURADIO_INCLUDES) $(GRUEL_INCLUDES)
++STD_DEFINES_AND_INCLUDES = $(DEFINES) $(OMNITHREAD_INCLUDES) \
++	$(BOOST_CPPFLAGS) $(GNURADIO_INCLUDES) $(GRUEL_INCLUDES)
+ 
+ 
+ # when including for compilation from pre-installed libraries and such,
+@@ -886,7 +886,7 @@
+ COMPILE_MBH = $(RUN_GUILE) $(top_srcdir)/mblock/src/scheme/gnuradio/compile-mbh.scm
+ 
+ # Base directory for example applications
+-exampledir = $(datadir)/gnuradio/examples
++exampledir = $(datadir)/examples/gnuradio
+ gr_docdir = $(docdir)-$(VERSION)
+ 
+ # System configuration files

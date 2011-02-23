@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gnuradio
-PORTVERSION=	3.1.3
-PORTREVISION=	7
+PORTVERSION=	3.2.2
 CATEGORIES=	comms astro hamradio
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	gnuradio
@@ -20,13 +19,19 @@ BUILD_DEPENDS=	sdcc>=3.0.0:${PORTSDIR}/lang/sdcc \
 		sdl-config:${PORTSDIR}/devel/sdl12 \
 		swig:${PORTSDIR}/devel/swig13 \
 		cppunit-config:${PORTSDIR}/devel/cppunit \
+		${LOCALBASE}/bin/cheetah:${PORTSDIR}/devel/py-cheetah \
+		py*-lxml>=0:${PORTSDIR}/devel/py-lxml \
+		${PYTHON_SITELIBDIR}/pygtk.py:${PORTSDIR}/x11-toolkits/py-gtk2 \
+		xdg-open:${PORTSDIR}/devel/xdg-utils \
 		guile:${PORTSDIR}/lang/guile
 LIB_DEPENDS=	fftw3:${PORTSDIR}/math/fftw3 \
 		fftw3f:${PORTSDIR}/math/fftw3-float \
-		boost_python:${PORTSDIR}/devel/boost-python-libs
+		boost_python:${PORTSDIR}/devel/boost-python-libs \
+		gsl:${PORTSDIR}/math/gsl
 RUN_DEPENDS=	${PYNUMPY} \
 		${PYTHON_SITELIBDIR}/ephem/__init__.py:${PORTSDIR}/astro/pyephem
 
+USE_GMAKE=	yes
 USE_PYTHON=	2.4+
 USE_WX=		2.6+
 WX_COMPS=	wx wx:build wx:run python:build python:run
@@ -38,6 +43,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
 CONFIGURE_ARGS=	--with-boost-include-dir="${LOCALBASE}/include/" \
+		--enable-grc \
 		--enable-usrp \
 		--enable-gr-usrp \
 		--disable-gr-audio-jack \
@@ -57,17 +63,19 @@ LIB_DEPENDS+=	usb:${PORTSDIR}/devel/libusb
 
 AUTOTOOLSFILES=	aclocal.m4
 
+PLIST_SUB+=	PORTVERSION=${PORTVERSION}
+
 post-patch:
-	@${REINPLACE_CMD} -e 's|2.61|%%AUTOCONF_VERSION%%|g' ${WRKSRC}/aclocal.m4
-	@${REINPLACE_CMD} -e 's|^GR_FORTRAN||g' ${WRKSRC}/configure.ac
 	@${FIND} ${WRKSRC} -type f -name "Makefile.in" | ${XARGS} \
 		-n 10 ${REINPLACE_CMD} -E -e \
 		's!^(ACLOCAL|AUTOCONF|AUTOMAKE|AUTOHEADER).+$$!\1=${TRUE}!' \
 		-e 's|/gnuradio/examples|/examples/gnuradio|'
+	@${REINPLACE_CMD} -e 's|^GR_FORTRAN||g' ${WRKSRC}/configure.ac
 	@${REINPLACE_CMD} -e 's|%%LIBDATA%%|${PREFIX}/libdata|' \
 	    ${WRKSRC}/gnuradio-core/Makefile.in ${WRKSRC}/usrp/Makefile.in \
-	    ${WRKSRC}/omnithread/Makefile.in ${WRKSRC}/gr-atsc/Makefile.in
-
+	    ${WRKSRC}/omnithread/Makefile.in ${WRKSRC}/pmt/Makefile.in \
+	    ${WRKSRC}/gr-usrp/Makefile.in ${WRKSRC}/gr-wxgui/Makefile.in \
+	    ${WRKSRC}/gruel/Makefile.in ${WRKSRC}/mblock/Makefile.in
 pre-install:
 	@${CP}	${FILESDIR}/wxgui_src_python_init.py \
 		${WRKSRC}/gr-wxgui/src/python/__init__.py
@@ -78,6 +86,8 @@ post-install:
 	    ${PREFIX}/etc/gnuradio/gr-audio-oss.conf.sample
 	@${INSTALL_DATA}	${WRKSRC}/gr-wxgui/gr-wxgui.conf \
 	    ${PREFIX}/etc/gnuradio/gr-wxgui.conf.sample
+	@${INSTALL_DATA}	${WRKSRC}/grc/grc.conf \
+	    ${PREFIX}/etc/gnuradio/grc.conf.sample
 .if	!defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
