@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Tail-Stat
-PORTVERSION=	0.08
+PORTVERSION=	0.09
 CATEGORIES=	sysutils perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	../by-authors/id/L/LO/LONERR
@@ -28,11 +28,11 @@ PERL_CONFIGURE=	yes
 USE_RC_SUBR=	tstatd
 SUB_LIST+=	RC_SUBR_SUFFIX=${RC_SUBR_SUFFIX}
 
-MAN1=		tstatd.1
-
 MAN3=		Tail::Stat.3 \
 		Tail::Stat::Plugin.3 \
 		Tail::Stat::Plugin::apache.3 \
+		Tail::Stat::Plugin::clamd.3 \
+		Tail::Stat::Plugin::cvsupd.3 \
 		Tail::Stat::Plugin::nginx.3 \
 		Tail::Stat::Plugin::spamd.3
 
