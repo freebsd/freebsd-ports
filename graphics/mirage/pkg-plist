@@ -19,6 +19,7 @@ share/locale/nl/LC_MESSAGES/mirage.mo
 share/locale/pl/LC_MESSAGES/mirage.mo
 share/locale/pt_BR/LC_MESSAGES/mirage.mo
 share/locale/ru/LC_MESSAGES/mirage.mo
+share/locale/ua/LC_MESSAGES/mirage.mo
 share/locale/zh_CN/LC_MESSAGES/mirage.mo
 %%DATADIR%%/mirage_blank.png
 %%DATADIR%%/stock_fullscreen.png
@@ -27,4 +28,6 @@ share/locale/zh_CN/LC_MESSAGES/mirage.mo
 share/pixmaps/mirage.png
 @dirrm %%DATADIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrmtry share/locale/ua/LC_MESSAGES
+@dirrmtry share/locale/ua
 @dirrmtry share/applications

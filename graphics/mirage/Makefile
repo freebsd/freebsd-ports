@@ -6,12 +6,14 @@
 #
 
 PORTNAME=	mirage
-PORTVERSION=	0.9.5.1
+PORTVERSION=	0.9.5.2
 CATEGORIES=	graphics
 MASTER_SITES=	BERLIOS/mirageiv
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	c0rn@o2.pl
 COMMENT=	Fast and simple image viewer
+
+LICENSE=	GPLv3
 
 USE_BZIP2=	yes
 USE_GNOME=	gtk20 pygtk2
