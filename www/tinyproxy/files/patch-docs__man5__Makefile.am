@@ -1,0 +1,12 @@
+--- docs/man5/Makefile.am.orig	2011-02-09 12:11:57.000000000 -0800
++++ docs/man5/Makefile.am	2011-02-09 12:12:10.000000000 -0800
+@@ -3,7 +3,8 @@
+ 
+ A2X_ARGS = \
+ 	-d manpage \
+-	-f manpage
++	-f manpage \
++	-L
+ 
+ man_MANS = \
+ 	$(MAN5_FILES:.txt=.5)
