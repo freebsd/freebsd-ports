@@ -1,10 +1,13 @@
 bin/mpg123
 include/mpg123.h
+lib/libmpg123.a
 lib/libmpg123.la
 lib/libmpg123.so
-lib/libmpg123.so.25
+lib/libmpg123.so.0
+lib/mpg123/output_dummy.a
 lib/mpg123/output_dummy.la
 lib/mpg123/output_dummy.so
+lib/mpg123/output_oss.a
 lib/mpg123/output_oss.la
 lib/mpg123/output_oss.so
 libdata/pkgconfig/libmpg123.pc
