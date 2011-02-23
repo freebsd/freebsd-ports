@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gnutls
-PORTVERSION=	2.11.5
+PORTVERSION=	2.11.6
 CATEGORIES=	security net
 MASTER_SITES=	http://alpha.gnu.org/gnu/gnutls/ \
 		ftp://ftp.gnutls.org/pub/gnutls/devel/
