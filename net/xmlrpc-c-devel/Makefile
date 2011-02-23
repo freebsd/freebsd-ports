@@ -17,7 +17,8 @@ COMMENT=	XML-RPC library for C and C++
 
 OPTIONS=	DEBUG "Compile with debugging information" off \
 		CURL "Compile with curl support" on \
-		LIBWWW "Compile with libwww support" on
+		LIBWWW "Compile with libwww support" on \
+		TOOLS "Build xmlrpc-c tools" on
 
 CONFLICTS=	xmlrpc-epi-0.* xmlrpc-c-[0-9]*
 
@@ -55,7 +56,19 @@ CONFIGURE_ARGS+=	--enable-libwww-client
 CONFIGURE_ARGS+=	--disable-libwww-client
 .endif
 
+.if defined(WITH_TOOLS)
+CONFIGURE_ARGS+=	--enable-tools
+PLIST_SUB+=		TOOLS=""
+MAN1+=			xml-rpc-api2cpp.1 xml-rpc-api2txt.1
+.else
+CONFIGURE_ARGS+=	--disable-tools
+PLIST_SUB+=		TOOLS="@comment "
+.endif
+
 .if defined(WITHOUT_LIBWWW) && defined(WITHOUT_CURL)
+. if defined(WITH_TOOLS)
+IGNORE=		xmlrpc-c tools requires CURL or LIBWWW support enabled
+. endif
 PLIST_SUB+=	CLIENT="@comment "
 .else
 PLIST_SUB+=	CLIENT=""
@@ -68,5 +81,7 @@ post-extract:
 post-patch:
 	@${GREP} -lR '\-lpthread' ${WRKSRC} | ${XARGS} ${REINPLACE_CMD} -e \
 		's|-lpthread|${PTHREAD_LIBS}|g'
+	@${REINPLACE_CMD} -e '/#include.*features.h/d' \
+		${WRKSRC}/tools/xmlrpc_pstream/xmlrpc_pstream.cpp
 
 .include <bsd.port.post.mk>

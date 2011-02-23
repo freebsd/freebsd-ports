@@ -1,4 +1,10 @@
 bin/xmlrpc-c-config
+%%TOOLS%%bin/xmlrpc
+%%TOOLS%%bin/xmlrpc_transport
+%%TOOLS%%bin/xml-rpc-api2cpp
+%%TOOLS%%bin/xml-rpc-api2txt
+%%TOOLS%%bin/xmlrpc_cpp_proxy
+%%TOOLS%%bin/xmlrpc_pstream
 include/XmlRpcCpp.h
 include/xmlrpc-c/abyss.h
 include/xmlrpc-c/abyss_unixsock.h
