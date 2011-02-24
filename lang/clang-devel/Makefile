@@ -104,7 +104,8 @@ post-patch:
 	    ${WRKSRC}/tools/clang/tools/scan-view/scan-view
 
 pre-build:
-	${LN} -s ${LOCALBASE}/include/llvm/Intrinsics.gen ${WRKSRC}/include/llvm/
+	${LN} -sf ${LOCALBASE}/include/llvm/Intrinsics.gen ${WRKSRC}/include/llvm/
+	cd ${WRKSRC}/utils/unittest/googletest && ${GMAKE}
 
 .if defined(NOPORTDOCS)
 post-build:
