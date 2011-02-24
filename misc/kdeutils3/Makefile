@@ -36,6 +36,8 @@ CONFIGURE_ARGS+=--with-pythondir=${LOCALBASE}
 
 USE_LDCONFIG=	yes
 
+BROKEN=		fails to build
+
 .include "${.CURDIR}/../../x11/kde3/Makefile.kde"
 
 post-patch:
