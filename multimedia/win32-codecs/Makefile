@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	win32-codecs
-DISTVERSION=	20100303
+DISTVERSION=	20110131
 PORTEPOCH=	1
 CATEGORIES=	multimedia audio
 MASTER_SITES=	http://www1.mplayerhq.hu/MPlayer/releases/codecs/ \
@@ -50,15 +50,6 @@ REMOVE_CODECS_FILES=	AvidQTAVUICodec.qtx QuickTimeEssentials.qtx QuickTime.qts \
 OPTIONS=	REALPLAYER	"Install realplayer codec"	on
 
 .include <bsd.port.pre.mk>
-
-#.if defined(WITH_QUICKTIME)
-#FORBIDDEN=	Remote code execution: http://vuxml.FreeBSD.org/24f6b1eb-43d5-11db-81e1-000e0c2e438a.html
-#ADDITIONAL_CODECS_DISTFILES+=	qt63dlls-20050115.tar.bz2 \
-#				qtextras-20041107.tar.bz2
-#PLIST_SUB+=	QUICKTIME=""
-#.else
-PLIST_SUB+=	QUICKTIME="@comment "
-#.endif
 
 .if !defined(WITHOUT_REALPLAYER)
 ADDITIONAL_CODECS_DISTFILES+=	rp9codecs-20050115.tar.bz2 \
