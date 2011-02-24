@@ -1124,8 +1124,8 @@ MASTER_SITE_SAVANNAH+= \
 
 .if !defined(IGNORE_MASTER_SITE_SOURCEFORGE)
 .for mirror in heanet sunet iweb switch surfnet kent freefr \
-		voxel jaist osdn nchc transact softlayer \
-		internode ufpr
+		voxel jaist osdn nchc ncu transact softlayer \
+		internode ufpr waix
 #		garr dfn ovh (redirect as of 2009-Sep-02)
 MASTER_SITE_SOURCEFORGE+= \
 	http://${mirror}.dl.sourceforge.net/project/%SUBDIR%/
