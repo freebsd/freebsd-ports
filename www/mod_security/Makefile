@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mod_security
-PORTVERSION=	2.5.12
+PORTVERSION=	2.5.13
 CATEGORIES=	www security
 MASTER_SITES=	SF/mod-security/modsecurity-apache/${PORTVERSION}
 PKGNAMEPREFIX=	${APACHE_PKGNAMEPREFIX}
@@ -61,8 +61,6 @@ PLIST_FILES+=	${APACHEETCDIR}/Includes/mod_security2.conf \
 	${APACHEETCDIR}/Includes/mod_security2/base_rules/modsecurity_40_generic_attacks.data \
 	${APACHEETCDIR}/Includes/mod_security2/base_rules/modsecurity_41_sql_injection_attacks.data \
 	${APACHEETCDIR}/Includes/mod_security2/base_rules/modsecurity_42_comment_spam.data \
-	${APACHEETCDIR}/Includes/mod_security2/base_rules/modsecurity_46_et_sql_injection.data \
-	${APACHEETCDIR}/Includes/mod_security2/base_rules/modsecurity_46_et_web_rules.data \
 	${APACHEETCDIR}/Includes/mod_security2/base_rules/modsecurity_50_outbound.data \
 	${APACHEETCDIR}/Includes/mod_security2/base_rules/modsecurity_50_outbound_malware.data \
 	${APACHEETCDIR}/Includes/mod_security2/base_rules/modsecurity_crs_20_protocol_violations.conf \
@@ -71,32 +69,36 @@ PLIST_FILES+=	${APACHEETCDIR}/Includes/mod_security2.conf \
 	${APACHEETCDIR}/Includes/mod_security2/base_rules/modsecurity_crs_30_http_policy.conf \
 	${APACHEETCDIR}/Includes/mod_security2/base_rules/modsecurity_crs_35_bad_robots.conf \
 	${APACHEETCDIR}/Includes/mod_security2/base_rules/modsecurity_crs_40_generic_attacks.conf \
-	${APACHEETCDIR}/Includes/mod_security2/base_rules/modsecurity_crs_41_phpids_converter.conf \
-	${APACHEETCDIR}/Includes/mod_security2/base_rules/modsecurity_crs_41_phpids_filters.conf \
 	${APACHEETCDIR}/Includes/mod_security2/base_rules/modsecurity_crs_41_sql_injection_attacks.conf \
 	${APACHEETCDIR}/Includes/mod_security2/base_rules/modsecurity_crs_41_xss_attacks.conf \
 	${APACHEETCDIR}/Includes/mod_security2/base_rules/modsecurity_crs_42_tight_security.conf \
 	${APACHEETCDIR}/Includes/mod_security2/base_rules/modsecurity_crs_45_trojans.conf \
 	${APACHEETCDIR}/Includes/mod_security2/base_rules/modsecurity_crs_47_common_exceptions.conf \
-	${APACHEETCDIR}/Includes/mod_security2/base_rules/modsecurity_crs_48_local_exceptions.conf \
-	${APACHEETCDIR}/Includes/mod_security2/base_rules/modsecurity_crs_49_enforcement.conf \
+	${APACHEETCDIR}/Includes/mod_security2/modsecurity_crs_48_local_exceptions.conf.example \
 	${APACHEETCDIR}/Includes/mod_security2/base_rules/modsecurity_crs_49_inbound_blocking.conf \
 	${APACHEETCDIR}/Includes/mod_security2/base_rules/modsecurity_crs_50_outbound.conf \
 	${APACHEETCDIR}/Includes/mod_security2/base_rules/modsecurity_crs_59_outbound_blocking.conf \
 	${APACHEETCDIR}/Includes/mod_security2/base_rules/modsecurity_crs_60_correlation.conf \
-	${APACHEETCDIR}/Includes/mod_security2/modsecurity_crs_10_config.conf \
-	${APACHEETCDIR}/Includes/mod_security2/optional_rules/modsecurity_crs_20_protocol_violations.conf \
-	${APACHEETCDIR}/Includes/mod_security2/optional_rules/modsecurity_crs_21_protocol_anomalies.conf \
+	${APACHEETCDIR}/Includes/mod_security2/modsecurity_crs_10_config.conf.example \
 	${APACHEETCDIR}/Includes/mod_security2/optional_rules/modsecurity_crs_40_experimental.conf \
-	${APACHEETCDIR}/Includes/mod_security2/optional_rules/modsecurity_crs_40_generic_attacks.conf \
+	${APACHEETCDIR}/Includes/mod_security2/optional_rules/modsecurity_crs_41_phpids_converter.conf \
+	${APACHEETCDIR}/Includes/mod_security2/optional_rules/modsecurity_crs_41_phpids_filters.conf \
 	${APACHEETCDIR}/Includes/mod_security2/optional_rules/modsecurity_crs_42_comment_spam.conf \
+	${APACHEETCDIR}/Includes/mod_security2/optional_rules/modsecurity_crs_43_csrf_protection.conf \
 	${APACHEETCDIR}/Includes/mod_security2/optional_rules/modsecurity_crs_46_et_sql_injection.conf \
+	${APACHEETCDIR}/Includes/mod_security2/optional_rules/modsecurity_46_et_sql_injection.data \
 	${APACHEETCDIR}/Includes/mod_security2/optional_rules/modsecurity_crs_46_et_web_rules.conf \
+	${APACHEETCDIR}/Includes/mod_security2/optional_rules/modsecurity_46_et_web_rules.data \
 	${APACHEETCDIR}/Includes/mod_security2/optional_rules/modsecurity_crs_49_header_tagging.conf \
 	${APACHEETCDIR}/Includes/mod_security2/optional_rules/modsecurity_crs_55_marketing.conf \
+	${APACHEETCDIR}/Includes/mod_security2/optional_rules/modsecurity_crs_55_application_defects.conf \
 	${APACHEETCDIR}/Includes/mod_security2/util/httpd-guardian.pl \
 	${APACHEETCDIR}/Includes/mod_security2/util/modsec-clamscan.pl \
-	${APACHEETCDIR}/Includes/mod_security2/util/runav.pl
+	${APACHEETCDIR}/Includes/mod_security2/util/runav.pl \
+	${APACHEETCDIR}/Includes/mod_security2/util/rules-updater.pl.in \
+	${APACHEETCDIR}/Includes/mod_security2/util/rules-updater.pl \
+	${APACHEETCDIR}/Includes/mod_security2/util/rules-updater-example.conf \
+	${APACHEETCDIR}/Includes/mod_security2/util/README
 .endif
 
 .if defined(WITH_LUA)
@@ -123,7 +125,7 @@ post-patch:
 		s|SecAuditLog.*logs/modsec_audit.log|SecAuditLog /var/log/httpd-modsec2_audit.log|; \
 		s|SecDebugLog.*logs/modsec_debug.log|SecDebugLog /var/log/httpd-modsec2_debug.log|; \
 		s|SecServerSignature "Apache/2.2.0 (Fedora)"|SecServerSignature "Apache/${APACHE_VERSION:C/[0-9]/\0./g}x (${OPSYS})"|; \
-		' ${WRKSRCTOP}/rules/modsecurity_crs_10_config.conf
+		' ${WRKSRCTOP}/rules/modsecurity_crs_10_config.conf.example
 .if defined(WITH_LUA)
 	${REINPLACE_CMD} -e 's|%%LUA_VER%%|${LUA_VER}|' ${WRKSRC}/configure
 .endif
