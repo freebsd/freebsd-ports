@@ -5,6 +5,18 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20110224:
+  AFFECTS: users of net/openldap24-{client,server}
+  AUTHOR: delphij@FreeBSD.org
+
+  OpenLDAP has been upgraded to 2.4.24, which requires a shared library
+  version bump.  Therefore, you need to reinstall all ports that depend on
+  it.  Please do something like:
+
+	# portupgrade -fr net/openldap24-client
+  or
+	# portmaster -r net/openldap24-client
+
 20110209:
   AFFECTS: users of www/testlink
   AUTHOR: tota@FreeBSD.org

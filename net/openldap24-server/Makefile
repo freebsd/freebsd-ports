@@ -6,7 +6,7 @@
 #
 
 PORTNAME=		openldap
-DISTVERSION=		2.4.23
+DISTVERSION=		2.4.24
 PORTREVISION=		${OPENLDAP_PORTREVISION}
 CATEGORIES=		net databases
 MASTER_SITES=		ftp://ftp.OpenLDAP.org/pub/OpenLDAP/%SUBDIR%/ \
@@ -41,6 +41,7 @@ BROKEN=			incompatible OpenLDAP version: ${WANT_OPENLDAP_VER}
 
 PORTREVISION_CLIENT=	0
 PORTREVISION_SERVER=	0
+OPENLDAP_SHLIB_MAJOR=	8
 
 OPTIONS=	SASL "With (Cyrus) SASL2 support" off \
 		FETCH "Enable fetch(3) support" on
@@ -48,6 +49,7 @@ OPTIONS=	SASL "With (Cyrus) SASL2 support" off \
 .if !defined(CLIENT_ONLY)
 OPTIONS+=	DYNACL "Run-time loadable ACL (experimental)" off \
 		ACI "Per-object ACI (experimental)" off \
+		BDB "With BerkeleyDB backend" on \
 		DNSSRV "With Dnssrv backend" off \
 		PASSWD "With Passwd backend" off \
 		PERL "With Perl backend" off \
@@ -59,7 +61,6 @@ OPTIONS+=	DYNACL "Run-time loadable ACL (experimental)" off \
 		SLP "With SLPv2 (RFC 2608) support" off \
 		SLAPI "With Netscape SLAPI plugin API" off \
 		TCP_WRAPPERS "With tcp wrapper support" on \
-		BDB "With BerkeleyDB support" on \
 		ACCESSLOG "With In-Directory Access Logging overlay" off \
 		AUDITLOG "With Audit Logging overlay" off \
 		COLLECT "With Collect overy Services overlay" off \
@@ -68,7 +69,6 @@ OPTIONS+=	DYNACL "Run-time loadable ACL (experimental)" off \
 		DEREF "With Dereference overlay" off \
 		DYNGROUP "With Dynamic Group overlay" off \
 		DYNLIST "With Dynamic List overlay" off \
-		LASTMOD "With Last Modification overlay" off \
 		MEMBEROF "With Reverse Group Membership overlay" off \
 		PPOLICY "With Password Policy overlay" off \
 		PROXYCACHE "With Proxy Cache overlay" off \
@@ -76,6 +76,7 @@ OPTIONS+=	DYNACL "Run-time loadable ACL (experimental)" off \
 		RETCODE "With Return Code testing overlay" off \
 		RWM "With Rewrite/Remap overlay" off \
 		SEQMOD "Sequential Modify overlay" on \
+		SSSVLV "With ServerSideSort/VLV overlay" off \
 		SYNCPROV "With Syncrepl Provider overlay" on \
 		TRANSLUCENT "With Translucent Proxy overlay" off \
 		UNIQUE "With attribute Uniqueness overlay" off \
@@ -147,6 +148,7 @@ SUB_LIST+=		LDAP_RUN_DIR=${LDAP_RUN_DIR} \
 
 CONFIGURE_ARGS=		--with-threads=posix \
 			--with-tls=openssl \
+			--disable-dependency-tracking \
 			--enable-dynamic
 
 .if defined(WITHOUT_FETCH)
@@ -167,7 +169,6 @@ CONFIGURE_ARGS+=	--disable-slapd \
 			--disable-monitor \
 			--disable-bdb \
 			--disable-relay \
-			--disable-glue \
 			--disable-syncprov
 SUB_FILES+=		pkg-message.client
 PKGMESSAGE=		${WRKSRC}/pkg-message.client
@@ -246,10 +247,6 @@ CONFIGURE_ARGS+=	--enable-dyngroup
 CONFIGURE_ARGS+=	--enable-dynlist
 .endif
 
-.if defined(WITH_LASTMOD)
-CONFIGURE_ARGS+=	--enable-lastmod
-.endif
-
 .if defined(WITH_MEMBEROF)
 CONFIGURE_ARGS+=	--enable-memberof
 .endif
@@ -278,6 +275,10 @@ CONFIGURE_ARGS+=	--enable-rwm
 CONFIGURE_ARGS+=	--disable-seqmod
 .else
 CONFIGURE_ARGS+=	--enable-seqmod
+.endif
+
+.if defined(WITH_SSSVLV)
+CONFIGURE_ARGS+=	--enable-sssvlv
 .endif
 
 .if defined(WITHOUT_SYNCPROV)
@@ -314,7 +315,7 @@ PLIST_SUB+=		BACK_BDB="@comment " \
 .else
 
 WITH_BDB_VER?=		46
-INVALID_BDB_VER=	42 50
+INVALID_BDB_VER=	42
 USE_BDB=		yes
 
 .if ${WITH_BDB_VER} >= 43
@@ -459,6 +460,7 @@ SUB_LIST+=		RC_DIR=${PREFIX} \
 .endif
 
 PLIST_SUB+=		${SUB_LIST}
+PLIST_SUB+=		SHLIB_MAJOR=${OPENLDAP_SHLIB_MAJOR}
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,%LOCALSTATEDIR%/run/,${LDAP_RUN_DIR}/,g' \
