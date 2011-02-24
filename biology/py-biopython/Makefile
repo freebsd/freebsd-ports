@@ -7,6 +7,7 @@
 
 PORTNAME=	biopython
 PORTVERSION=	1.54
+PORTREVISION=	1
 CATEGORIES=	biology python
 MASTER_SITES=	http://www.biopython.org/DIST/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -17,7 +18,7 @@ COMMENT=	A collection of Python modules for bioinformatics
 BUILD_DEPENDS=	${PYNUMPY}
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-USE_PYTHON=	2.4+
+USE_PYTHON=	2.5+
 USE_PYDISTUTILS=yes
 
 .if !defined(WITHOUT_REPORTLAB)

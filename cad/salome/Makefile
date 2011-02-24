@@ -6,6 +6,7 @@
 
 PORTNAME=	salome
 PORTVERSION=	5.1.4
+PORTREVISION=	1
 CATEGORIES=	cad science
 MASTER_SITES=	http://www.stasyan.com/devel/distfiles/
 DISTNAME=	src5.1.4

@@ -6,6 +6,7 @@
 
 PORTNAME=	speech-dispatcher
 PORTVERSION=	0.7.1
+PORTREVISION=	1
 CATEGORIES=	accessibility audio
 MASTER_SITES=	http://www.freebsoft.org/pub/projects/speechd/
 
@@ -95,7 +96,7 @@ CONFIGURE_ARGS+=	--without-nas
 .endif
 
 .ifdef(WITH_PYTHON)
-USE_PYTHON=	2.4+
+USE_PYTHON=	2.5+
 CONFIGURE_ARGS+=	--enable-python
 PLIST_SUB+=	PYTHON=""
 .else

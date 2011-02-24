@@ -7,7 +7,7 @@
 
 PORTNAME=	mma
 DISTVERSION=	1.6
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://www.mellowood.ca/${PORTNAME}/ \
 		http://nivi.interfree.it/distfiles/${PORTNAME}/
@@ -18,7 +18,7 @@ COMMENT=	Musical MIDI Accompaniment generator
 
 NO_BUILD=	yes
 
-USE_PYTHON=	2.4+
+USE_PYTHON=	2.5+
 
 OPTIONS=	TIMIDITY	"Install timidity++ as MIDI player" Off \
 		PLAYMIDI	"Install playmidi as MIDI player" Off
