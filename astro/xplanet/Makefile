@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xplanet
-PORTVERSION=	1.2.1
+PORTVERSION=	1.2.2
 CATEGORIES=	astro geography
 MASTER_SITES=	SF
 
