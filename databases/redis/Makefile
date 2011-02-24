@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	redis
-DISTVERSION=	2.2.0-rc4
+PORTVERSION=	2.2.1
 CATEGORIES=	databases
 MASTER_SITES=	GOOGLE_CODE
 
@@ -17,11 +17,10 @@ LIB_DEPENDS=	execinfo.1:${PORTSDIR}/devel/libexecinfo
 
 CFLAGS+=	-I${LOCALBASE}/include
 
-CONFLICTS?=	redis-1.* redis-2.0.*
+CONFLICTS?=	redis-2.0.*
 
 USE_GMAKE=	yes
 USE_RC_SUBR=	redis.sh
-NO_LATEST_LINK=	yes
 BIN_FILES=	redis-benchmark redis-check-aof redis-check-dump \
 		redis-cli redis-server
 
