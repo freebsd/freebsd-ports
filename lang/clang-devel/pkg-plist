@@ -38,6 +38,7 @@ include/clang/AST/Expr.h
 include/clang/AST/ExprCXX.h
 include/clang/AST/ExprObjC.h
 include/clang/AST/ExternalASTSource.h
+include/clang/AST/Mangle.h
 include/clang/AST/NestedNameSpecifier.h
 include/clang/AST/OperationKinds.h
 include/clang/AST/ParentMap.h
@@ -72,10 +73,12 @@ include/clang/Analysis/Analyses/LiveVariables.h
 include/clang/Analysis/Analyses/PseudoConstantAnalysis.h
 include/clang/Analysis/Analyses/ReachableCode.h
 include/clang/Analysis/Analyses/UninitializedValues.h
+include/clang/Analysis/Analyses/UninitializedValuesV2.h
 include/clang/Analysis/AnalysisContext.h
 include/clang/Analysis/AnalysisDiagnostic.h
 include/clang/Analysis/CFG.h
 include/clang/Analysis/CFGStmtMap.h
+include/clang/Analysis/DomainSpecific/CocoaConventions.h
 include/clang/Analysis/FlowSensitive/DataflowSolver.h
 include/clang/Analysis/FlowSensitive/DataflowValues.h
 include/clang/Analysis/ProgramPoint.h
@@ -85,6 +88,7 @@ include/clang/Analysis/Support/SaveAndRestore.h
 include/clang/Analysis/Visitors/CFGRecStmtDeclVisitor.h
 include/clang/Analysis/Visitors/CFGRecStmtVisitor.h
 include/clang/Analysis/Visitors/CFGStmtVisitor.h
+include/clang/Basic/ABI.h
 include/clang/Basic/AttrKinds.h
 include/clang/Basic/AttrList.inc
 include/clang/Basic/Builtins.def
@@ -112,6 +116,7 @@ include/clang/Basic/LangOptions.h
 include/clang/Basic/Linkage.h
 include/clang/Basic/MacroBuilder.h
 include/clang/Basic/OnDiskHashTable.h
+include/clang/Basic/OpenCLExtensions.def
 include/clang/Basic/OperatorKinds.def
 include/clang/Basic/OperatorKinds.h
 include/clang/Basic/PartialDiagnostic.h
@@ -143,43 +148,10 @@ include/clang/Basic/Version.h
 include/clang/Basic/Version.inc
 include/clang/Basic/Visibility.h
 include/clang/Basic/arm_neon.inc
-include/clang/Checker/AnalysisConsumer.h
-include/clang/Checker/BugReporter/BugReporter.h
-include/clang/Checker/BugReporter/BugType.h
-include/clang/Checker/BugReporter/PathDiagnostic.h
-include/clang/Checker/Checkers/DereferenceChecker.h
-include/clang/Checker/Checkers/LocalCheckers.h
-include/clang/Checker/DomainSpecific/CocoaConventions.h
-include/clang/Checker/FrontendActions.h
-include/clang/Checker/ManagerRegistry.h
-include/clang/Checker/PathDiagnosticClients.h
-include/clang/Checker/PathSensitive/AnalysisManager.h
-include/clang/Checker/PathSensitive/BasicValueFactory.h
-include/clang/Checker/PathSensitive/Checker.h
-include/clang/Checker/PathSensitive/CheckerHelpers.h
-include/clang/Checker/PathSensitive/CheckerVisitor.def
-include/clang/Checker/PathSensitive/CheckerVisitor.h
-include/clang/Checker/PathSensitive/ConstraintManager.h
-include/clang/Checker/PathSensitive/Environment.h
-include/clang/Checker/PathSensitive/ExplodedGraph.h
-include/clang/Checker/PathSensitive/GRBlockCounter.h
-include/clang/Checker/PathSensitive/GRCoreEngine.h
-include/clang/Checker/PathSensitive/GRExprEngine.h
-include/clang/Checker/PathSensitive/GRExprEngineBuilders.h
-include/clang/Checker/PathSensitive/GRState.h
-include/clang/Checker/PathSensitive/GRStateTrait.h
-include/clang/Checker/PathSensitive/GRSubEngine.h
-include/clang/Checker/PathSensitive/GRTransferFuncs.h
-include/clang/Checker/PathSensitive/GRWorkList.h
-include/clang/Checker/PathSensitive/MemRegion.h
-include/clang/Checker/PathSensitive/SValBuilder.h
-include/clang/Checker/PathSensitive/SVals.h
-include/clang/Checker/PathSensitive/Store.h
-include/clang/Checker/PathSensitive/SummaryManager.h
-include/clang/Checker/PathSensitive/SymbolManager.h
 include/clang/CodeGen/BackendUtil.h
 include/clang/CodeGen/CodeGenAction.h
 include/clang/CodeGen/ModuleBuilder.h
+include/clang/Config/config.h.cmake
 include/clang/Driver/Action.h
 include/clang/Driver/Arg.h
 include/clang/Driver/ArgList.h
@@ -229,6 +201,7 @@ include/clang/Frontend/FrontendPluginRegistry.h
 include/clang/Frontend/HeaderSearchOptions.h
 include/clang/Frontend/LangStandard.h
 include/clang/Frontend/LangStandards.def
+include/clang/Frontend/MultiplexConsumer.h
 include/clang/Frontend/PreprocessorOptions.h
 include/clang/Frontend/PreprocessorOutputOptions.h
 include/clang/Frontend/StmtXML.def
@@ -319,6 +292,42 @@ include/clang/Serialization/AttrPCHRead.inc
 include/clang/Serialization/AttrPCHWrite.inc
 include/clang/Serialization/Release+Asserts/AttrPCHRead.inc.tmp
 include/clang/Serialization/Release+Asserts/AttrPCHWrite.inc.tmp
+include/clang/StaticAnalyzer/Checkers/DereferenceChecker.h
+include/clang/StaticAnalyzer/Checkers/LocalCheckers.h
+include/clang/StaticAnalyzer/Core/BugReporter/BugReporter.h
+include/clang/StaticAnalyzer/Core/BugReporter/BugType.h
+include/clang/StaticAnalyzer/Core/BugReporter/PathDiagnostic.h
+include/clang/StaticAnalyzer/Core/CheckerManager.h
+include/clang/StaticAnalyzer/Core/CheckerProvider.h
+include/clang/StaticAnalyzer/Core/CheckerV2.h
+include/clang/StaticAnalyzer/Core/PathDiagnosticClients.h
+include/clang/StaticAnalyzer/Core/PathSensitive/AnalysisManager.h
+include/clang/StaticAnalyzer/Core/PathSensitive/BasicValueFactory.h
+include/clang/StaticAnalyzer/Core/PathSensitive/BlockCounter.h
+include/clang/StaticAnalyzer/Core/PathSensitive/Checker.h
+include/clang/StaticAnalyzer/Core/PathSensitive/CheckerHelpers.h
+include/clang/StaticAnalyzer/Core/PathSensitive/CheckerVisitor.def
+include/clang/StaticAnalyzer/Core/PathSensitive/CheckerVisitor.h
+include/clang/StaticAnalyzer/Core/PathSensitive/ConstraintManager.h
+include/clang/StaticAnalyzer/Core/PathSensitive/CoreEngine.h
+include/clang/StaticAnalyzer/Core/PathSensitive/Environment.h
+include/clang/StaticAnalyzer/Core/PathSensitive/ExplodedGraph.h
+include/clang/StaticAnalyzer/Core/PathSensitive/ExprEngine.h
+include/clang/StaticAnalyzer/Core/PathSensitive/ExprEngineBuilders.h
+include/clang/StaticAnalyzer/Core/PathSensitive/GRState.h
+include/clang/StaticAnalyzer/Core/PathSensitive/GRStateTrait.h
+include/clang/StaticAnalyzer/Core/PathSensitive/MemRegion.h
+include/clang/StaticAnalyzer/Core/PathSensitive/ObjCMessage.h
+include/clang/StaticAnalyzer/Core/PathSensitive/SValBuilder.h
+include/clang/StaticAnalyzer/Core/PathSensitive/SVals.h
+include/clang/StaticAnalyzer/Core/PathSensitive/Store.h
+include/clang/StaticAnalyzer/Core/PathSensitive/SubEngine.h
+include/clang/StaticAnalyzer/Core/PathSensitive/SummaryManager.h
+include/clang/StaticAnalyzer/Core/PathSensitive/SymbolManager.h
+include/clang/StaticAnalyzer/Core/PathSensitive/TransferFuncs.h
+include/clang/StaticAnalyzer/Core/PathSensitive/WorkList.h
+include/clang/StaticAnalyzer/Frontend/CheckerRegistration.h
+include/clang/StaticAnalyzer/Frontend/FrontendActions.h
 lib/clang/2.9/include/arm_neon.h
 lib/clang/2.9/include/emmintrin.h
 lib/clang/2.9/include/immintrin.h
@@ -335,7 +344,6 @@ lib/libclang.so
 lib/libclangAST.a
 lib/libclangAnalysis.a
 lib/libclangBasic.a
-lib/libclangChecker.a
 lib/libclangCodeGen.a
 lib/libclangDriver.a
 lib/libclangFrontend.a
@@ -346,6 +354,9 @@ lib/libclangParse.a
 lib/libclangRewrite.a
 lib/libclangSema.a
 lib/libclangSerialization.a
+lib/libclangStaticAnalyzerCheckers.a
+lib/libclangStaticAnalyzerCore.a
+lib/libclangStaticAnalyzerFrontend.a
 %%DATADIR%%/scanview.css
 %%DATADIR%%/sorttable.js
 %%PORTDOCS%%%%DOCSDIR%%/html.tar.gz
@@ -371,6 +382,12 @@ lib/libclangSerialization.a
 @dirrm lib/clang/2.9/include
 @dirrm lib/clang/2.9
 @dirrm lib/clang
+@dirrm include/clang/StaticAnalyzer/Frontend
+@dirrm include/clang/StaticAnalyzer/Core/PathSensitive
+@dirrm include/clang/StaticAnalyzer/Core/BugReporter
+@dirrm include/clang/StaticAnalyzer/Core
+@dirrm include/clang/StaticAnalyzer/Checkers
+@dirrm include/clang/StaticAnalyzer
 @dirrm include/clang/Serialization/Release+Asserts
 @dirrm include/clang/Serialization
 @dirrm include/clang/Sema
@@ -383,17 +400,14 @@ lib/libclangSerialization.a
 @dirrm include/clang/Frontend
 @dirrm include/clang/Driver/Release+Asserts
 @dirrm include/clang/Driver
+@dirrm include/clang/Config
 @dirrm include/clang/CodeGen
-@dirrm include/clang/Checker/PathSensitive
-@dirrm include/clang/Checker/DomainSpecific
-@dirrm include/clang/Checker/Checkers
-@dirrm include/clang/Checker/BugReporter
-@dirrm include/clang/Checker
 @dirrm include/clang/Basic/Release+Asserts
 @dirrm include/clang/Basic
 @dirrm include/clang/Analysis/Visitors
 @dirrm include/clang/Analysis/Support
 @dirrm include/clang/Analysis/FlowSensitive
+@dirrm include/clang/Analysis/DomainSpecific
 @dirrm include/clang/Analysis/Analyses
 @dirrm include/clang/Analysis
 @dirrm include/clang/AST/Release+Asserts

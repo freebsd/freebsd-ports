@@ -12,11 +12,12 @@ bin/llvm-ld
 bin/llvm-link
 bin/llvm-mc
 bin/llvm-nm
+bin/llvm-objdump
 bin/llvm-prof
 bin/llvm-ranlib
 bin/llvm-stub
 bin/llvmc
-bin/macho-dumpx
+bin/macho-dump
 bin/opt
 bin/tblgen
 include/llvm-c/Analysis.h
@@ -34,6 +35,7 @@ include/llvm-c/lto.h
 include/llvm/ADT/APFloat.h
 include/llvm/ADT/APInt.h
 include/llvm/ADT/APSInt.h
+include/llvm/ADT/ArrayRef.h
 include/llvm/ADT/BitVector.h
 include/llvm/ADT/DAGDeltaAlgorithm.h
 include/llvm/ADT/DeltaAlgorithm.h
@@ -50,6 +52,7 @@ include/llvm/ADT/ImmutableMap.h
 include/llvm/ADT/ImmutableSet.h
 include/llvm/ADT/InMemoryStruct.h
 include/llvm/ADT/IndexedMap.h
+include/llvm/ADT/IntEqClasses.h
 include/llvm/ADT/IntervalMap.h
 include/llvm/ADT/IntrusiveRefCntPtr.h
 include/llvm/ADT/NullablePtr.h
@@ -97,6 +100,7 @@ include/llvm/Analysis/DIBuilder.h
 include/llvm/Analysis/DOTGraphTraitsPass.h
 include/llvm/Analysis/DebugInfo.h
 include/llvm/Analysis/DomPrinter.h
+include/llvm/Analysis/DominanceFrontier.h
 include/llvm/Analysis/DominatorInternals.h
 include/llvm/Analysis/Dominators.h
 include/llvm/Analysis/FindUsedTypes.h
@@ -119,6 +123,8 @@ include/llvm/Analysis/MemoryBuiltins.h
 include/llvm/Analysis/MemoryDependenceAnalysis.h
 include/llvm/Analysis/PHITransAddr.h
 include/llvm/Analysis/Passes.h
+include/llvm/Analysis/PathNumbering.h
+include/llvm/Analysis/PathProfileInfo.h
 include/llvm/Analysis/PostDominators.h
 include/llvm/Analysis/ProfileInfo.h
 include/llvm/Analysis/ProfileInfoLoader.h
@@ -157,6 +163,7 @@ include/llvm/CodeGen/AsmPrinter.h
 include/llvm/CodeGen/BinaryObject.h
 include/llvm/CodeGen/CalcSpillWeights.h
 include/llvm/CodeGen/CallingConvLower.h
+include/llvm/CodeGen/EdgeBundles.h
 include/llvm/CodeGen/FastISel.h
 include/llvm/CodeGen/FunctionLoweringInfo.h
 include/llvm/CodeGen/GCMetadata.h
@@ -188,6 +195,7 @@ include/llvm/CodeGen/MachineInstrBuilder.h
 include/llvm/CodeGen/MachineJumpTableInfo.h
 include/llvm/CodeGen/MachineLocation.h
 include/llvm/CodeGen/MachineLoopInfo.h
+include/llvm/CodeGen/MachineLoopRanges.h
 include/llvm/CodeGen/MachineMemOperand.h
 include/llvm/CodeGen/MachineModuleInfo.h
 include/llvm/CodeGen/MachineModuleInfoImpls.h
@@ -285,14 +293,16 @@ include/llvm/MC/MCContext.h
 include/llvm/MC/MCDirectives.h
 include/llvm/MC/MCDisassembler.h
 include/llvm/MC/MCDwarf.h
+include/llvm/MC/MCELFObjectWriter.h
 include/llvm/MC/MCELFSymbolFlags.h
 include/llvm/MC/MCExpr.h
 include/llvm/MC/MCFixup.h
+include/llvm/MC/MCFixupKindInfo.h
 include/llvm/MC/MCInst.h
 include/llvm/MC/MCInstPrinter.h
 include/llvm/MC/MCLabel.h
 include/llvm/MC/MCMachOSymbolFlags.h
-include/llvm/MC/MCObjectFormat.h
+include/llvm/MC/MCMachObjectWriter.h
 include/llvm/MC/MCObjectStreamer.h
 include/llvm/MC/MCObjectWriter.h
 include/llvm/MC/MCParser/AsmCond.h
@@ -375,6 +385,7 @@ include/llvm/Support/NoFolder.h
 include/llvm/Support/OutputBuffer.h
 include/llvm/Support/PassNameParser.h
 include/llvm/Support/Path.h
+include/llvm/Support/PathV1.h
 include/llvm/Support/PathV2.h
 include/llvm/Support/PatternMatch.h
 include/llvm/Support/PluginLoader.h
@@ -393,7 +404,6 @@ include/llvm/Support/SMLoc.h
 include/llvm/Support/Signals.h
 include/llvm/Support/Solaris.h
 include/llvm/Support/SourceMgr.h
-include/llvm/Support/StableBasicBlockNumbering.h
 include/llvm/Support/StandardPasses.h
 include/llvm/Support/StringPool.h
 include/llvm/Support/SwapByteOrder.h
@@ -417,18 +427,20 @@ include/llvm/Target/Mangler.h
 include/llvm/Target/SubtargetFeature.h
 include/llvm/Target/Target.td
 include/llvm/Target/TargetAsmBackend.h
+include/llvm/Target/TargetAsmInfo.h
 include/llvm/Target/TargetAsmLexer.h
 include/llvm/Target/TargetAsmParser.h
 include/llvm/Target/TargetCallingConv.h
 include/llvm/Target/TargetCallingConv.td
 include/llvm/Target/TargetData.h
 include/llvm/Target/TargetELFWriterInfo.h
-include/llvm/Target/TargetFrameInfo.h
+include/llvm/Target/TargetFrameLowering.h
 include/llvm/Target/TargetInstrDesc.h
 include/llvm/Target/TargetInstrInfo.h
 include/llvm/Target/TargetInstrItineraries.h
 include/llvm/Target/TargetIntrinsicInfo.h
 include/llvm/Target/TargetJITInfo.h
+include/llvm/Target/TargetLibraryInfo.h
 include/llvm/Target/TargetLowering.h
 include/llvm/Target/TargetLoweringObjectFile.h
 include/llvm/Target/TargetMachine.h
@@ -444,7 +456,6 @@ include/llvm/Target/TargetSubtarget.h
 include/llvm/Transforms/IPO.h
 include/llvm/Transforms/IPO/InlinerPass.h
 include/llvm/Transforms/Instrumentation.h
-include/llvm/Transforms/RSProfiling.h
 include/llvm/Transforms/Scalar.h
 include/llvm/Transforms/Utils/AddrModeMatcher.h
 include/llvm/Transforms/Utils/BasicBlockUtils.h
@@ -465,7 +476,8 @@ include/llvm/Use.h
 include/llvm/User.h
 include/llvm/Value.h
 include/llvm/ValueSymbolTable.h
-lib/libBugpointPasses.so
+lib/BugpointPasses.so
+lib/LLVMHello.so
 lib/libCompilerDriver.a
 lib/libEnhancedDisassembly.a
 lib/libEnhancedDisassembly.so
@@ -493,7 +505,6 @@ lib/libLLVMCore.a
 lib/libLLVMCppBackend.a
 lib/libLLVMCppBackendInfo.a
 lib/libLLVMExecutionEngine.a
-lib/libLLVMHello.so
 lib/libLLVMInstCombine.a
 lib/libLLVMInstrumentation.a
 lib/libLLVMInterpreter.a
@@ -533,6 +544,7 @@ lib/libLLVMX86AsmPrinter.a
 lib/libLLVMX86CodeGen.a
 lib/libLLVMX86Disassembler.a
 lib/libLLVMX86Info.a
+lib/libLLVMX86Utils.a
 lib/libLLVMXCoreCodeGen.a
 lib/libLLVMXCoreInfo.a
 lib/libLLVMipa.a
@@ -540,7 +552,7 @@ lib/libLLVMipo.a
 lib/libLTO.a
 lib/libLTO.so
 lib/libUnitTestMain.a
-lib/libprofile_rt.so
+lib/profile_rt.so
 %%PORTDOCS%%%%DOCSDIR%%/html.tar.gz
 %%PORTDOCS%%%%DOCSDIR%%/html/AliasAnalysis.html
 %%PORTDOCS%%%%DOCSDIR%%/html/BitCodeFormat.html
@@ -629,6 +641,7 @@ lib/libprofile_rt.so
 %%PORTDOCS%%%%DOCSDIR%%/html/tutorial/OCamlLangImpl5.html
 %%PORTDOCS%%%%DOCSDIR%%/html/tutorial/OCamlLangImpl6.html
 %%PORTDOCS%%%%DOCSDIR%%/html/tutorial/OCamlLangImpl7.html
+%%PORTDOCS%%%%DOCSDIR%%/html/tutorial/OCamlLangImpl8.html
 %%PORTDOCS%%%%DOCSDIR%%/html/tutorial/index.html
 %%PORTDOCS%%%%DOCSDIR%%/ps/FileCheck.ps
 %%PORTDOCS%%%%DOCSDIR%%/ps/bugpoint.ps

@@ -7,7 +7,6 @@
 
 PORTNAME=	llvm
 DISTVERSION=	2.9.r${SVN_REV}
-PORTREVISION=	2
 CATEGORIES=	devel lang
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	brooks
@@ -60,11 +59,13 @@ MAN1=		bugpoint.1 lit.1 llc.1 lli.1 llvm-ar.1 \
 
 .include <bsd.port.pre.mk>
 
+.if !defined(SVN_REV)
 .if defined(BOOTSTRAP)
 LANG=		"C"
 SVN_REV!=	svn info http://llvm.org/svn/llvm-project/ | ${GREP} Revision | cut -d' ' -f2
 .else
 .include "Makefile.svn_rev"
+.endif
 .endif
 
 .if ${ARCH} == "sparc64"
@@ -130,17 +131,18 @@ PLIST_FILE_LIST=	bin/bugpoint \
 			bin/llc \
 			bin/lli \
 			bin/llvm* \
-			bin/macho-dumpx \
+			bin/macho-dump \
 			bin/opt \
 			bin/tblgen \
-			lib/libBugpointPasses.so \
+			lib/LLVMHello.so \
+			lib/BugpointPasses.so \
 			lib/libCompilerDriver.a \
 			lib/libEnhancedDisassembly.so \
 			lib/libEnhancedDisassembly.a \
 			lib/libLTO.* \
 			lib/libLLVM* \
 			lib/libUnitTestMain.a \
-			lib/libprofile_rt.so
+			lib/profile_rt.so
 PLIST_DIR_LIST=		include/llvm-c \
 			include/llvm
 build-plist:
