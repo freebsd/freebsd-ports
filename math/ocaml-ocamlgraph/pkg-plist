@@ -39,8 +39,12 @@
 %%OCAMLGRAPHDIR%%/topological.mli
 %%OCAMLGRAPHDIR%%/traverse.mli
 %%OCAMLGRAPHDIR%%/util.mli
+%%GUI%%%%OCAMLGRAPHDIR%%/dGraphContainer.mli
 %%GUI%%%%OCAMLGRAPHDIR%%/dGraphModel.mli
 %%GUI%%%%OCAMLGRAPHDIR%%/dGraphRandModel.mli
+%%GUI%%%%OCAMLGRAPHDIR%%/dGraphSubTree.mli
+%%GUI%%%%OCAMLGRAPHDIR%%/dGraphTreeLayout.mli
+%%GUI%%%%OCAMLGRAPHDIR%%/dGraphTreeModel.mli
 %%GUI%%%%OCAMLGRAPHDIR%%/dGraphView.mli
 %%GUI%%%%OCAMLGRAPHDIR%%/dGraphViewItem.mli
 %%GUI%%%%OCAMLGRAPHDIR%%/dgraph.cmi
