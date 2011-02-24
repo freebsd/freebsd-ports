@@ -506,6 +506,20 @@ but by default it doesn't.</dd>
 ago, actually, but it is only now being enforced. (The change was
 made to allow '.' in usernames).</dd>
 
+<dt><img alt="(common)" src="/errorlogs/images/blue-ball.gif"><a name=
+"clang">clang</a></dt>
+
+<dd>Your code does not run with the the experimental <tt>clang</tt> compiler.  See
+(TBA)
+for further information.</dd>
+
+<dt><img alt="(uncommon)" src="/errorlogs/images/purple-ball.gif"><a name=
+"clang-bug">clang bug</a></dt>
+
+<dd>You have tickled a bug in <tt>clang</tt> itself.  See
+(TBA)
+for further information.</dd>
+
 <dt><img alt="(transient)" src="/errorlogs/images/green-ball.gif"><a name=
 "cluster">cluster</a></dt>
 
@@ -521,13 +535,19 @@ fault.</dd>
 "configure">configure error</a></dt>
 
 <dd>The port's <tt>configure</tt> script produced some kind of
-error.</dd>
+error.
+(Note: using <tt>clang</tt> as the ports compiler can also trigger this message.)</dd>
 
 <dt><img alt="(common)" src="/errorlogs/images/blue-ball.gif"><a name=
 "coredump">coredump</a></dt>
 
 <dd>Some process in the build chain dropped core. While your port may indeed 
 be faulty, the process that dropped core should also be fixed.</dd>
+
+<dt><img alt="(uncommon)" src="/errorlogs/images/purple-ball.gif"><a name=
+"cpusetsize">cpusetsize</a></dt>
+
+<dd>This port needs to catch up with the <tt>cpusetsize</tt> sysctl change in 9-CURRENT.</dd>
 
 <dt><img alt="(common)" src="/errorlogs/images/blue-ball.gif"><a name=
 "dependobj">depend object</a></dt>
@@ -590,7 +610,7 @@ put sites with better connectivity near the beginning of
 <dd>Someone has marked this port as "forbidden", almost always due
 to security concerns.  See the logfile for more information.</dd>
 
-<dt><img alt="(common)" src="/errorlogs/images/blue-ball.gif"><a name=
+<dt><img alt="(uncommon)" src="/errorlogs/images/purple-ball.gif"><a name=
 "gcc-bug">gcc bug</a></dt>
 
 <dd>You have tickled a bug in gcc itself. See the
@@ -620,7 +640,8 @@ shared library version number changes.</dd>
 "ld">linker error</a></dt>
 
 <dd>There is a linker error which is caused by something other than
-those flagged elsewhere.</dd>
+those flagged elsewhere.
+(Note: using <tt>clang</tt> as the ports compiler can also trigger this message.)</dd>
 
 <dt><img alt="(common)" src="/errorlogs/images/blue-ball.gif"><a name=
 "makefile">makefile</a></dt>
@@ -656,7 +677,7 @@ permission.</dd>
 <dt><img alt="(common)" src="/errorlogs/images/blue-ball.gif"><a name=
 "newgcc">new compiler error</a></dt>
 
-<dd>gcc (2.95.x or above) does not like the source code. This is
+<dd>The newest version of gcc in the base does not like the source code. This is
 usually due to stricter C++ type checking or changes in register
 allocation policy.</dd>
 
@@ -719,6 +740,11 @@ problem.</dd>
 "segfault">segfault</a></dt>
 
 <dd>Some process in the build chain got a segmentation fault.</dd>
+
+<dt><img alt="(uncommon)" src="/errorlogs/images/purple-ball.gif"><a name=
+"sem_wait">sem_wait</a></dt>
+
+<dd>This port needs to catch up with semaphore changes in 9-CURRENT.</dd>
 
 <dt><img alt="(uncommon)" src="/errorlogs/images/purple-ball.gif"><a name=
 "stdio">stdio</a></dt>
