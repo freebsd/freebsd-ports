@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	polarssl
-PORTVERSION=	0.14.0
+PORTVERSION=	0.14.1
 DISTVERSIONSUFFIX=	-gpl
 CATEGORIES=	security devel
 MASTER_SITES=	http://polarssl.org/code/download/
@@ -20,7 +20,7 @@ LICENSE=	GPLv2
 USE_PERL5_BUILD=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
-PORTDOCS=	ChangeLog LICENSE README
+PORTDOCS=	ChangeLog README
 
 BINFILES=	aescrypt2 benchmark dh_client dh_genprime dh_server hello \
 		md5sum mpi_demo rsa_genkey rsa_sign rsa_verify selftest \
