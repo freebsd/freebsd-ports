@@ -12,7 +12,7 @@ PORTEPOCH=	1
 CATEGORIES=	www
 MASTER_SITES=	https://banu.com/pub/tinyproxy/1.8/
 
-MAINTAINER=	wxs@FreeBSD.org
+MAINTAINER=	marquis@roble.com
 COMMENT=	A small, efficient HTTP proxy server
 
 BUILD_DEPENDS=	asciidoc:${PORTSDIR}/textproc/asciidoc\
