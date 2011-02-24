@@ -960,6 +960,7 @@
     SUBDIR += vp
     SUBDIR += vrml2pov
     SUBDIR += vvv
+    SUBDIR += webp
     SUBDIR += whirlgif
     SUBDIR += white_dune
     SUBDIR += wildmagic
