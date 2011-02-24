@@ -790,7 +790,7 @@ lib/lib%%PYTHON_VERSION%%.so.1
 %%PYTHON_LIBDIR%%/lib-dynload/_codecs_tw.so
 %%PYTHON_LIBDIR%%/lib-dynload/_collections.so
 %%PYTHON_LIBDIR%%/lib-dynload/_csv.so
-%%PYTHON_LIBDIR%%/lib-dynload/_ctypes.so
+%%NOT_FOR_POWERPC%%%%PYTHON_LIBDIR%%/lib-dynload/_ctypes.so
 %%PYTHON_LIBDIR%%/lib-dynload/_ctypes_test.so
 %%PYTHON_LIBDIR%%/lib-dynload/_curses.so
 %%PYTHON_LIBDIR%%/lib-dynload/_curses_panel.so
