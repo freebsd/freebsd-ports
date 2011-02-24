@@ -1,25 +1,25 @@
---- configure.orig	2008-02-11 15:36:45.000000000 -0800
-+++ configure	2008-02-19 14:03:01.410279419 -0800
-@@ -31928,7 +31928,7 @@
-   echo $ECHO_N "(cached) $ECHO_C" >&6
+--- configure.orig	2011-01-31 12:53:50.000000000 -0800
++++ configure	2011-02-19 04:12:30.885900446 -0800
+@@ -21598,7 +21598,7 @@
+   $as_echo_n "(cached) " >&6
  else
    ac_check_lib_save_LIBS=$LIBS
 -LIBS="-liodbc  $LIBS"
 +LIBS="-liodbc  $LIBS $LTHREAD_LIBS"
- cat >conftest.$ac_ext <<_ACEOF
- /* confdefs.h.  */
- _ACEOF
-@@ -32004,7 +32004,7 @@
-   echo $ECHO_N "(cached) $ECHO_C" >&6
+ cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+ /* end confdefs.h.  */
+ 
+@@ -21646,7 +21646,7 @@
+   $as_echo_n "(cached) " >&6
  else
    ac_check_lib_save_LIBS=$LIBS
 -LIBS="-lodbc  $LIBS"
 +LIBS="-lodbc  $LIBS $LTHREAD_LIBS"
- cat >conftest.$ac_ext <<_ACEOF
- /* confdefs.h.  */
- _ACEOF
-@@ -32263,7 +32263,7 @@
- cat >>conftest.$ac_ext <<_ACEOF
+ cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+ /* end confdefs.h.  */
+ 
+@@ -21903,7 +21903,7 @@
+ 		cat confdefs.h - <<_ACEOF >conftest.$ac_ext
  /* end confdefs.h.  */
  
 -#include <unicode/utypes.h>
