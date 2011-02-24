@@ -10,6 +10,7 @@ COMMENT=	SNMP trap sender for rsyslog
 MNAME=	snmp
 MTYPES=	om
 LIB_DEPENDS=	netsnmp.20:${PORTSDIR}/net-mgmt/net-snmp
+BROKEN=	fails to build
 
 .include "${.CURDIR}/../rsyslog3/bsd.rsyslog.mk"
 .include <bsd.port.mk>
