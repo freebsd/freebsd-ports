@@ -5,26 +5,26 @@
 # $FreeBSD$
 #
 
-PORTNAME=		coverhunter
-PORTVERSION=		0.3
-PORTREVISION=	7
-CATEGORIES=		audio graphics
-MASTER_SITES=		SF
+PORTNAME=	coverhunter
+PORTVERSION=	0.3
+PORTREVISION=	8
+CATEGORIES=	audio graphics
+MASTER_SITES=	SF
 
-MAINTAINER=		ports@FreeBSD.org
-COMMENT=		A program fetching the covers of your digital music albums
+MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A program fetching the covers of your digital music albums
 
-RUN_DEPENDS=		${PYTHON_SITELIBDIR}/PIL/__init__.py:${PORTSDIR}/graphics/py-imaging
+RUN_DEPENDS=	${PYTHON_SITELIBDIR}/PIL/__init__.py:${PORTSDIR}/graphics/py-imaging
 
 USE_XORG=	x11
-USE_GNOME=		pygtk2
-USE_PYTHON=		2.4+
-NO_BUILD=		yes
+USE_GNOME=	pygtk2
+USE_PYTHON=	2.5+
+NO_BUILD=	yes
 
-PYC=			PYTHON="${PYTHON_CMD}" ${SH} ${SCRIPTDIR}/py-compile
+PYC=		PYTHON="${PYTHON_CMD}" ${SH} ${SCRIPTDIR}/py-compile
 
-BINDIR=			${PREFIX}/bin
-PKGLIBDIR=		${PREFIX}/lib/coverhunter
+BINDIR=		${PREFIX}/bin
+PKGLIBDIR=	${PREFIX}/lib/coverhunter
 
 MODULES=		__init__.py \
 			album.py \

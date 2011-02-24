@@ -1,6 +1,6 @@
 COMMENT=	${SAL_MODULE_UPPER} module of Salome platform
 
-USE_PYTHON=	2.4+
+USE_PYTHON=	2.5+
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 SAL_MODULE=	${PKGNAMESUFFIX:S/-//}

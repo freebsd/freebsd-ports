@@ -7,7 +7,7 @@
 
 PORTNAME=		streamtuner
 PORTVERSION=		0.99.99
-PORTREVISION=	17
+PORTREVISION=	18
 CATEGORIES=		audio www
 MASTER_SITES=		${MASTER_SITE_SAVANNAH}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -75,7 +75,7 @@ CONFIGURE_ARGS+=	--disable-python
 PLIST_SUB+=		PYTHON="@comment "
 .else
 PLIST_SUB+=		PYTHON=""
-USE_PYTHON=		2.4+
+USE_PYTHON=		2.5+
 # we need to manually include this, because USE_PYTHON is defined
 # after including bsd.port.pre.mk
 .include "${PORTSDIR}/Mk/bsd.python.mk"

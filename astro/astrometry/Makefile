@@ -7,6 +7,7 @@
 
 PORTNAME=	astrometry
 PORTVERSION=	0.34
+PORTREVISION=	1
 CATEGORIES=	astro
 MASTER_SITES=	http://www.astrometry.net/downloads/
 DISTNAME=	astrometry.net-${PORTVERSION}
@@ -21,7 +22,7 @@ LIB_DEPENDS=	cairo.2:${PORTSDIR}/graphics/cairo \
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/numpy:${PORTSDIR}/math/py-numpy
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/numpy:${PORTSDIR}/math/py-numpy
 
-USE_PYTHON=	2.4+
+USE_PYTHON=	2.5+
 USE_GMAKE=	yes
 ALL_TARGET=	all extra
 MAKE_ENV=	INSTALL_DIR=${PREFIX}/astrometry

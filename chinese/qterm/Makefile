@@ -7,7 +7,7 @@
 
 PORTNAME=	qterm
 PORTVERSION=	0.4.1
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	chinese
 MASTER_SITES=	 SF/qterm/qterm/${PORTVERSION}
 
@@ -23,7 +23,7 @@ CONFIGURE_ARGS=	--enable-mt --prefix=${PREFIX}
 CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib"
 
 .if !defined(WITHOUT_PYTHON)
-USE_PYTHON=	2.4+
+USE_PYTHON=	2.5+
 CONFIGURE_ARGS+=	--with-pythondir=${LOCALBASE}
 .endif
 

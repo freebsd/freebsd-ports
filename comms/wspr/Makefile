@@ -7,7 +7,7 @@
 
 PORTNAME=	wspr
 PORTVERSION=	2.00
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	comms hamradio
 MASTER_SITES=	http://www.physics.princeton.edu/pulsar/K1JT/
 MASTER_SITES=	${MASTER_SITE_LOCAL}
@@ -35,7 +35,7 @@ CONFIGURE_ARGS=	--enable-gfortran --prefix=${LOCALBASE} \
 		--with-portaudio-lib-dir=${LOCALBASE}/lib/portaudio2
 CONFIGURE_ENV=	CFLAGS+="-I${LOCALBASE}/include" \
 		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
-USE_PYTHON=	2.4+
+USE_PYTHON=	2.5+
 USE_AUTOTOOLS=	libtool
 PLIST_SUB=	PYVER=${PYTHON_VERSION:S/python//} \
 		PORTVERSION=${PORTVERSION}
