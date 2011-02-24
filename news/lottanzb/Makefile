@@ -8,28 +8,35 @@
 
 PORTNAME=	lottanzb
 PORTVERSION=	0.6
+PORTREVISION=	1
 CATEGORIES=	news
-MASTER_SITES=	http://www.lottanzb.org/releases/
+MASTER_SITES=	http://www.lottanzb.org/releases/ \
+		http://launchpadlibrarian.net/64247317/ \
+		http://www.c-s.li/ports/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	c-s@c-s.li
 COMMENT=	A pyGTK usenet frontend for hellanzb
 
-BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/kiwi:${PORTSDIR}/x11-toolkits/py-kiwi
-RUN_DEPENDS=	hellanzb.py:${PORTSDIR}/news/hellanzb \
+RUN_DEPENDS=	SABnzbd.py:${PORTSDIR}/news/sabnzbdplus \
+		yelp:${PORTSDIR}/x11/yelp \
+		par2:${PORTSDIR}/archivers/par2cmdline \
 		unrar:${PORTSDIR}/archivers/unrar \
-		${PYTHON_SITELIBDIR}/kiwi:${PORTSDIR}/x11-toolkits/py-kiwi \
-		scrollkeeper-uninstall:${PORTSDIR}/textproc/rarian
+		unzip:${PORTSDIR}/archivers/unzip \
+		${PYTHON_SITELIBDIR}/yenc.py:${PORTSDIR}/news/py-yenc \
+		${PYTHON_SITELIBDIR}/feedparser.py:${PORTSDIR}/textproc/py-feedparser \
+		${PYTHON_SITELIBDIR}/OpenSSL/__init__.py:${PORTSDIR}/security/py-openssl
+
+LICENSE=	GPLv3
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
 USE_GNOME=	desktopfileutils intltool
-USE_GETTEXT=	yes
 INSTALLS_ICONS=	yes
 INSTALLS_OMF=	yes
 
 PORTDOCS=	README NEWS
 
-MAN1=	lottanzb.1
+MAN1=		lottanzb.1
 
 .include <bsd.port.pre.mk>
 
@@ -46,6 +53,13 @@ post-install:
 .for f in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
 .endfor
+.endif
+
+.if !defined(WITHOUT_NLS)
+USE_GETTEXT=	yes
+PLIST_SUB+=	NLS=""
+.else
+PLIST_SUB+=	NLS="@comment "
 .endif
 
 .include <bsd.port.post.mk>

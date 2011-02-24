@@ -439,62 +439,62 @@ share/icons/hicolor/48x48/apps/lottanzb.png
 share/icons/hicolor/48x48/mimetypes/application-x-nzb.png
 share/icons/hicolor/scalable/apps/lottanzb.svg
 share/icons/hicolor/scalable/mimetypes/application-x-nzb.svg
-share/locale/ar/LC_MESSAGES/lottanzb.mo
-share/locale/bg/LC_MESSAGES/lottanzb.mo
-share/locale/ca/LC_MESSAGES/lottanzb.mo
-share/locale/cs/LC_MESSAGES/lottanzb.mo
-share/locale/da/LC_MESSAGES/lottanzb.mo
-share/locale/de/LC_MESSAGES/lottanzb.mo
-share/locale/el/LC_MESSAGES/lottanzb.mo
-share/locale/en_AU/LC_MESSAGES/lottanzb.mo
-share/locale/en_CA/LC_MESSAGES/lottanzb.mo
-share/locale/en_GB/LC_MESSAGES/lottanzb.mo
-share/locale/es/LC_MESSAGES/lottanzb.mo
-share/locale/fr/LC_MESSAGES/lottanzb.mo
-share/locale/he/LC_MESSAGES/lottanzb.mo
-share/locale/hu/LC_MESSAGES/lottanzb.mo
-share/locale/id/LC_MESSAGES/lottanzb.mo
-share/locale/it/LC_MESSAGES/lottanzb.mo
-share/locale/ja/LC_MESSAGES/lottanzb.mo
-share/locale/lv/LC_MESSAGES/lottanzb.mo
-share/locale/nb/LC_MESSAGES/lottanzb.mo
-share/locale/nds/LC_MESSAGES/lottanzb.mo
-share/locale/nl/LC_MESSAGES/lottanzb.mo
-share/locale/oc/LC_MESSAGES/lottanzb.mo
-share/locale/pl/LC_MESSAGES/lottanzb.mo
-share/locale/pt/LC_MESSAGES/lottanzb.mo
-share/locale/pt_BR/LC_MESSAGES/lottanzb.mo
-share/locale/ru/LC_MESSAGES/lottanzb.mo
-share/locale/sl/LC_MESSAGES/lottanzb.mo
-share/locale/sv/LC_MESSAGES/lottanzb.mo
-share/locale/ta/LC_MESSAGES/lottanzb.mo
-share/locale/tr/LC_MESSAGES/lottanzb.mo
-share/locale/uk/LC_MESSAGES/lottanzb.mo
-share/locale/zh_CN/LC_MESSAGES/lottanzb.mo
-share/lottanzb/ui/about_dialog.ui
-share/lottanzb/ui/add_file_dialog.ui
-share/lottanzb/ui/add_url_dialog.ui
-share/lottanzb/ui/additional_software_dialog.ui
-share/lottanzb/ui/download_list.ui
-share/lottanzb/ui/info_bar.ui
-share/lottanzb/ui/log_window.ui
-share/lottanzb/ui/logo.png
-share/lottanzb/ui/main_window.ui
-share/lottanzb/ui/prefs_tab_general.ui
-share/lottanzb/ui/prefs_tab_remote_access.ui
-share/lottanzb/ui/prefs_tab_servers.ui
-share/lottanzb/ui/prefs_window.ui
-share/lottanzb/ui/properties_dialog.ui
-share/lottanzb/ui/restart_dialog.ui
-share/lottanzb/ui/server_dialog.ui
-share/lottanzb/ui/server_editor_pane.ui
-share/lottanzb/ui/session_selection_dialog.ui
-share/lottanzb/ui/session_selection_local.ui
-share/lottanzb/ui/session_selection_local_sabnzbd_pane.ui
-share/lottanzb/ui/session_selection_local_sabnzbd_pane_quick_install.ui
-share/lottanzb/ui/session_selection_local_sabnzbd_pane_quick_upgrade.ui
-share/lottanzb/ui/session_selection_local_sabnzbd_pane_searching.ui
-share/lottanzb/ui/session_selection_remote.ui
+%%NLS%%share/locale/ar/LC_MESSAGES/lottanzb.mo
+%%NLS%%share/locale/bg/LC_MESSAGES/lottanzb.mo
+%%NLS%%share/locale/ca/LC_MESSAGES/lottanzb.mo
+%%NLS%%share/locale/cs/LC_MESSAGES/lottanzb.mo
+%%NLS%%share/locale/da/LC_MESSAGES/lottanzb.mo
+%%NLS%%share/locale/de/LC_MESSAGES/lottanzb.mo
+%%NLS%%share/locale/el/LC_MESSAGES/lottanzb.mo
+%%NLS%%share/locale/en_AU/LC_MESSAGES/lottanzb.mo
+%%NLS%%share/locale/en_CA/LC_MESSAGES/lottanzb.mo
+%%NLS%%share/locale/en_GB/LC_MESSAGES/lottanzb.mo
+%%NLS%%share/locale/es/LC_MESSAGES/lottanzb.mo
+%%NLS%%share/locale/fr/LC_MESSAGES/lottanzb.mo
+%%NLS%%share/locale/he/LC_MESSAGES/lottanzb.mo
+%%NLS%%share/locale/hu/LC_MESSAGES/lottanzb.mo
+%%NLS%%share/locale/id/LC_MESSAGES/lottanzb.mo
+%%NLS%%share/locale/it/LC_MESSAGES/lottanzb.mo
+%%NLS%%share/locale/ja/LC_MESSAGES/lottanzb.mo
+%%NLS%%share/locale/lv/LC_MESSAGES/lottanzb.mo
+%%NLS%%share/locale/nb/LC_MESSAGES/lottanzb.mo
+%%NLS%%share/locale/nds/LC_MESSAGES/lottanzb.mo
+%%NLS%%share/locale/nl/LC_MESSAGES/lottanzb.mo
+%%NLS%%share/locale/oc/LC_MESSAGES/lottanzb.mo
+%%NLS%%share/locale/pl/LC_MESSAGES/lottanzb.mo
+%%NLS%%share/locale/pt/LC_MESSAGES/lottanzb.mo
+%%NLS%%share/locale/pt_BR/LC_MESSAGES/lottanzb.mo
+%%NLS%%share/locale/ru/LC_MESSAGES/lottanzb.mo
+%%NLS%%share/locale/sl/LC_MESSAGES/lottanzb.mo
+%%NLS%%share/locale/sv/LC_MESSAGES/lottanzb.mo
+%%NLS%%share/locale/ta/LC_MESSAGES/lottanzb.mo
+%%NLS%%share/locale/tr/LC_MESSAGES/lottanzb.mo
+%%NLS%%share/locale/uk/LC_MESSAGES/lottanzb.mo
+%%NLS%%share/locale/zh_CN/LC_MESSAGES/lottanzb.mo
+%%DATADIR%%/ui/about_dialog.ui
+%%DATADIR%%/ui/add_file_dialog.ui
+%%DATADIR%%/ui/add_url_dialog.ui
+%%DATADIR%%/ui/additional_software_dialog.ui
+%%DATADIR%%/ui/download_list.ui
+%%DATADIR%%/ui/info_bar.ui
+%%DATADIR%%/ui/log_window.ui
+%%DATADIR%%/ui/logo.png
+%%DATADIR%%/ui/main_window.ui
+%%DATADIR%%/ui/prefs_tab_general.ui
+%%DATADIR%%/ui/prefs_tab_remote_access.ui
+%%DATADIR%%/ui/prefs_tab_servers.ui
+%%DATADIR%%/ui/prefs_window.ui
+%%DATADIR%%/ui/properties_dialog.ui
+%%DATADIR%%/ui/restart_dialog.ui
+%%DATADIR%%/ui/server_dialog.ui
+%%DATADIR%%/ui/server_editor_pane.ui
+%%DATADIR%%/ui/session_selection_dialog.ui
+%%DATADIR%%/ui/session_selection_local.ui
+%%DATADIR%%/ui/session_selection_local_sabnzbd_pane.ui
+%%DATADIR%%/ui/session_selection_local_sabnzbd_pane_quick_install.ui
+%%DATADIR%%/ui/session_selection_local_sabnzbd_pane_quick_upgrade.ui
+%%DATADIR%%/ui/session_selection_local_sabnzbd_pane_searching.ui
+%%DATADIR%%/ui/session_selection_remote.ui
 share/mime/application/x-nzb.xml
 share/mime/packages/lottanzb.xml
 share/mime-info/lottanzb.keys
@@ -536,5 +536,12 @@ share/mime-info/lottanzb.mime
 @dirrmtry share/locale/nds
 @dirrmtry share/locale/oc/LC_MESSAGES
 @dirrmtry share/locale/oc
-@dirrm share/lottanzb/ui
+@dirrm %%DATADIR%%/ui
 @dirrm share/lottanzb
+@exec mkdir -p %D/share/omf/lottanzb
+@exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
+@unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
+@exec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
+@unexec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
+@exec %%LOCALBASE%%/bin/gtk-update-icon-cache -q -f %D/share/icons/hicolor 2>/dev/null || /usr/bin/true
+@unexec %%LOCALBASE%%/bin/gtk-update-icon-cache -q -f %D/share/icons/hicolor 2>/dev/null || /usr/bin/true
