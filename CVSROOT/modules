@@ -4644,6 +4644,7 @@ gmsh                            ports/cad/gmsh
 gmsh-occ                        ports/cad/gmsh-occ
 gmt                             ports/graphics/gmt
 gmysql                          ports/databases/gmysql
+gnake                           ports/games/gnake
 gnapster                        ports/audio/gnapster
 gnarr                           ports/games/gnarr
 gnarwl                          ports/mail/gnarwl
@@ -5872,6 +5873,7 @@ ices                            ports/audio/ices
 ices0                           ports/audio/ices0
 icewm                           ports/x11-wm/icewm
 ici                             ports/lang/ici
+icinga                          ports/net-mgmt/icinga
 ickle                           ports/net-im/ickle
 icmake                          ports/devel/icmake
 icmpchat                        ports/net-im/icmpchat
@@ -11048,6 +11050,7 @@ p5-Archive-Zip                  ports/archivers/p5-Archive-Zip
 p5-Ark                          ports/www/p5-Ark
 p5-Array-Compare                ports/misc/p5-Array-Compare
 p5-Array-Diff                   ports/misc/p5-Array-Diff
+p5-Array-FileReader             ports/misc/p5-Array-FileReader
 p5-Array-Group                  ports/devel/p5-Array-Group
 p5-Array-IntSpan                ports/misc/p5-Array-IntSpan
 p5-Array-Iterator               ports/devel/p5-Array-Iterator
@@ -15140,6 +15143,7 @@ p5-arclog                       ports/sysutils/p5-arclog
 p5-ark                          ports/www/p5-Ark
 p5-array-compare                ports/misc/p5-Array-Compare
 p5-array-diff                   ports/misc/p5-Array-Diff
+p5-array-filereader             ports/misc/p5-Array-FileReader
 p5-array-group                  ports/devel/p5-Array-Group
 p5-array-intspan                ports/misc/p5-Array-IntSpan
 p5-array-iterator               ports/devel/p5-Array-Iterator
@@ -26407,6 +26411,7 @@ xephyr                          ports/x11-servers/xephyr
 xerces-c                        ports/textproc/xerces-c
 xerces-c2                       ports/textproc/xerces-c2
 xerces-c2-devel                 ports/textproc/xerces-c2-devel
+xerces-c3                       ports/textproc/xerces-c3
 xerces-j                        ports/textproc/xerces-j
 xev                             ports/x11/xev
 xevil                           ports/games/xevil
