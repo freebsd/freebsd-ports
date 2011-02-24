@@ -7,6 +7,7 @@
 
 PORTNAME=	moodle
 PORTVERSION=	2.0.2
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://download.moodle.org/stable20/ \
 		http://download2.moodle.org/stable20/ \
@@ -52,7 +53,7 @@ USE_PHP+=	ldap
 .endif
 
 .if !defined(WITHOUT_MIMETEX)
-RUN_DEPENDS+=	${LOCALBASE}/www/cgi-bin/mimetex.cgi:${PORTSDIR}/www/mimetex
+RUN_DEPENDS+=	${LOCALBASE}/www/mimetex/cgi-bin/mimetex.cgi:${PORTSDIR}/www/mimetex
 .endif
 
 NO_BUILD=	yes
@@ -84,7 +85,7 @@ do-install:
 	${CHMOD} 755 ${PREFIX}/${MOODLEDATADIR}
 	@${ECHO_CMD} '@exec ${CHMOD} 755 ${PREFIX}/${MOODLEDATADIR}' >> ${TMPPLIST}
 .if !defined(WITHOUT_MIMETEX)
-	${LN} -sf ${PREFIX}/www/cgi-bin/mimetex.cgi ${PREFIX}/${MOODLEDIR}/filter/tex/mimetex.freebsd
+	${LN} -sf ${PREFIX}/www/mimetex/cgi-bin/mimetex.cgi ${PREFIX}/${MOODLEDIR}/filter/tex/mimetex.freebsd
 .endif
 
 post-install:
