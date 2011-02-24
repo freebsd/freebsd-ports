@@ -11,6 +11,47 @@ bin/txt2tags
 %%EXAMPLESDIR%%/extras/gensite
 %%EXAMPLESDIR%%/extras/gvim-menu.vim
 %%EXAMPLESDIR%%/extras/html-update.sh
+%%EXAMPLESDIR%%/extras/markitup/sets/txt2tags/images/underline.png
+%%EXAMPLESDIR%%/extras/markitup/sets/txt2tags/images/code.png
+%%EXAMPLESDIR%%/extras/markitup/sets/txt2tags/images/disconnect.png
+%%EXAMPLESDIR%%/extras/markitup/sets/txt2tags/images/h1.png
+%%EXAMPLESDIR%%/extras/markitup/sets/txt2tags/images/h2.png
+%%EXAMPLESDIR%%/extras/markitup/sets/txt2tags/images/h3.png
+%%EXAMPLESDIR%%/extras/markitup/sets/txt2tags/images/h4.png
+%%EXAMPLESDIR%%/extras/markitup/sets/txt2tags/images/h5.png
+%%EXAMPLESDIR%%/extras/markitup/sets/txt2tags/images/italic.png
+%%EXAMPLESDIR%%/extras/markitup/sets/txt2tags/images/link.png
+%%EXAMPLESDIR%%/extras/markitup/sets/txt2tags/images/list-bullet.png
+%%EXAMPLESDIR%%/extras/markitup/sets/txt2tags/images/list-numeric.png
+%%EXAMPLESDIR%%/extras/markitup/sets/txt2tags/images/picture.png
+%%EXAMPLESDIR%%/extras/markitup/sets/txt2tags/images/preview.png
+%%EXAMPLESDIR%%/extras/markitup/sets/txt2tags/images/quotes.png
+%%EXAMPLESDIR%%/extras/markitup/sets/txt2tags/images/stroke.png
+%%EXAMPLESDIR%%/extras/markitup/sets/txt2tags/images/bold.png
+%%EXAMPLESDIR%%/extras/markitup/sets/txt2tags/readme.txt
+%%EXAMPLESDIR%%/extras/markitup/sets/txt2tags/set.js
+%%EXAMPLESDIR%%/extras/markitup/sets/txt2tags/style.css
+%%EXAMPLESDIR%%/extras/markitup/README
+%%EXAMPLESDIR%%/extras/pmwiki/t2tguiedit/underline.png
+%%EXAMPLESDIR%%/extras/pmwiki/t2tguiedit/comment.png
+%%EXAMPLESDIR%%/extras/pmwiki/t2tguiedit/comment0.png
+%%EXAMPLESDIR%%/extras/pmwiki/t2tguiedit/em.png
+%%EXAMPLESDIR%%/extras/pmwiki/t2tguiedit/empty.png
+%%EXAMPLESDIR%%/extras/pmwiki/t2tguiedit/extlink.png
+%%EXAMPLESDIR%%/extras/pmwiki/t2tguiedit/guiedit.js
+%%EXAMPLESDIR%%/extras/pmwiki/t2tguiedit/h1.png
+%%EXAMPLESDIR%%/extras/pmwiki/t2tguiedit/h2.png
+%%EXAMPLESDIR%%/extras/pmwiki/t2tguiedit/h3.png
+%%EXAMPLESDIR%%/extras/pmwiki/t2tguiedit/hr.png
+%%EXAMPLESDIR%%/extras/pmwiki/t2tguiedit/link.png
+%%EXAMPLESDIR%%/extras/pmwiki/t2tguiedit/ol.png
+%%EXAMPLESDIR%%/extras/pmwiki/t2tguiedit/README
+%%EXAMPLESDIR%%/extras/pmwiki/t2tguiedit/strike.png
+%%EXAMPLESDIR%%/extras/pmwiki/t2tguiedit/strong.png
+%%EXAMPLESDIR%%/extras/pmwiki/t2tguiedit/ul.png
+%%EXAMPLESDIR%%/extras/pmwiki/t2tguiedit/blank.png
+%%EXAMPLESDIR%%/extras/pmwiki/txt2tags.php
+%%EXAMPLESDIR%%/extras/dynartslides
 %%EXAMPLESDIR%%/extras/nanorc
 %%EXAMPLESDIR%%/extras/pagemaker.vim
 %%EXAMPLESDIR%%/extras/t2tmake.rb
@@ -18,7 +59,8 @@ bin/txt2tags
 %%EXAMPLESDIR%%/extras/txt2tags-gedit.lang
 %%EXAMPLESDIR%%/extras/txt2tags-kate.xml
 %%EXAMPLESDIR%%/extras/txt2tags-mode.el
-%%EXAMPLESDIR%%/extras/txt2tags-textmate.zip
+%%EXAMPLESDIR%%/extras/txt2tags.le
+%%EXAMPLESDIR%%/extras/txt2tags.jsf
 %%EXAMPLESDIR%%/extras/txt2tags.php
 %%EXAMPLESDIR%%/extras/txt2tags.vim
 %%EXAMPLESDIR%%/extras/txt2tagsrc
@@ -37,6 +79,11 @@ bin/txt2tags
 %%EXAMPLESDIR%%/module/README
 %%EXAMPLESDIR%%/module/module-body.py
 %%EXAMPLESDIR%%/module/module-full.py
+%%EXAMPLESDIR%%/sample-slides-80x25.art
+%%EXAMPLESDIR%%/sample.adoc
+%%EXAMPLESDIR%%/sample.art
+%%EXAMPLESDIR%%/sample.creole
+%%EXAMPLESDIR%%/sample.dbk
 %%EXAMPLESDIR%%/sample.doku
 %%EXAMPLESDIR%%/sample.gwiki
 %%EXAMPLESDIR%%/sample.html
@@ -45,6 +92,7 @@ bin/txt2tags
 %%EXAMPLESDIR%%/sample.mgp
 %%EXAMPLESDIR%%/sample.moin
 %%EXAMPLESDIR%%/sample.pm6
+%%EXAMPLESDIR%%/sample.pmw
 %%EXAMPLESDIR%%/sample.sgml
 %%EXAMPLESDIR%%/sample.t2t
 %%EXAMPLESDIR%%/sample.tex
@@ -53,6 +101,12 @@ bin/txt2tags
 %%EXAMPLESDIR%%/sample.xhtml
 @dirrm %%EXAMPLESDIR%%/module
 @dirrm %%EXAMPLESDIR%%/img
+@dirrm %%EXAMPLESDIR%%/extras/markitup/sets/txt2tags/images
+@dirrm %%EXAMPLESDIR%%/extras/markitup/sets/txt2tags
+@dirrm %%EXAMPLESDIR%%/extras/markitup/sets
+@dirrm %%EXAMPLESDIR%%/extras/markitup
+@dirrm %%EXAMPLESDIR%%/extras/pmwiki/t2tguiedit
+@dirrm %%EXAMPLESDIR%%/extras/pmwiki
 @dirrm %%EXAMPLESDIR%%/extras
 @dirrm %%EXAMPLESDIR%%/css
 @dirrm %%EXAMPLESDIR%%
