@@ -5,14 +5,14 @@
 # $FreeBSD$
 #
 
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	audio ruby
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Ruby Bindings for XMMS2
 
-LIB_DEPENDS+=	xmmsclient.5:${PORTSDIR}/audio/xmms2
+LIB_DEPENDS+=	xmmsclient.6:${PORTSDIR}/audio/xmms2
 
 MASTERDIR=	${.CURDIR}/../xmms2
 

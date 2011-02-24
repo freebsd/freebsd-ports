@@ -22,7 +22,6 @@ bin/xmms2d
 %%INCLUDEDIR%%/xmms/xmms_plugin.h
 %%INCLUDEDIR%%/xmms/xmms_sample.h
 %%INCLUDEDIR%%/xmms/xmms_streamtype.h
-%%INCLUDEDIR%%/xmms/xmms_strfunc.h
 %%INCLUDEDIR%%/xmms/xmms_util.h
 %%INCLUDEDIR%%/xmms/xmms_xformplugin.h
 %%INCLUDEDIR%%/xmmsc/xmmsc_compiler.h
@@ -70,15 +69,14 @@ lib/libxmmsclient-glib.so
 lib/libxmmsclient-glib.so.1
 lib/libxmmsclient-glib.so.1.0.0
 lib/libxmmsclient.so
-lib/libxmmsclient.so.5
-lib/libxmmsclient.so.5.0.0
+lib/libxmmsclient.so.6
+lib/libxmmsclient.so.6.0.0
 %%AIRPLAY%%%%LIBDIR%%/libxmms_airplay.so
 %%AO%%%%LIBDIR%%/libxmms_ao.so
 %%LIBDIR%%/libxmms_apefile.so
 %%LIBDIR%%/libxmms_asf.so
 %%LIBDIR%%/libxmms_asx.so
 %%AVCODEC%%%%LIBDIR%%/libxmms_avcodec.so
-%%AVCODEC%%%%LIBDIR%%/libxmms_avformat.so
 %%CDDA%%%%LIBDIR%%/libxmms_cdda.so
 %%LIBDIR%%/libxmms_cue.so
 %%CURL%%%%LIBDIR%%/libxmms_curl.so
@@ -89,7 +87,7 @@ lib/libxmmsclient.so.5.0.0
 %%LIBDIR%%/libxmms_file.so
 %%FLAC%%%%LIBDIR%%/libxmms_flac.so
 %%LIBDIR%%/libxmms_flv.so
-%%LIBDIR%%/libxmms_gme.so
+%%GME%%%%LIBDIR%%/libxmms_gme.so
 %%GVFS%%%%LIBDIR%%/libxmms_gvfs.so
 %%LIBDIR%%/libxmms_html.so
 %%ICES%%%%LIBDIR%%/libxmms_ices.so
@@ -117,6 +115,7 @@ lib/libxmmsclient.so.5.0.0
 %%SAMBA%%%%LIBDIR%%/libxmms_samba.so
 %%SID%%%%LIBDIR%%/libxmms_sid.so
 %%SPEEX%%%%LIBDIR%%/libxmms_speex.so
+%%TREMOR%%%%LIBDIR%%/libxmms_tremor.so
 %%LIBDIR%%/libxmms_tta.so
 %%VOCODER%%%%LIBDIR%%/libxmms_vocoder.so
 %%VORBIS%%%%LIBDIR%%/libxmms_vorbis.so

@@ -1,24 +1,27 @@
---- wscript~
-+++ wscript
-@@ -297,7 +297,7 @@ def configure(conf):
+--- wscript.orig	2010-02-19 18:43:54.000000000 +0100
++++ wscript	2010-03-17 15:21:16.184861151 +0100
+@@ -303,7 +303,7 @@
          conf.env['PKGCONFIGDIR'] = Options.options.pkgconfigdir
          print(conf.env['PKGCONFIGDIR'])
      else:
--        conf.env['PKGCONFIGDIR'] = os.path.join(conf.env["PREFIX"], "lib", "pkgconfig")
+-        conf.env['PKGCONFIGDIR'] = os.path.join(conf.env["LIBDIR"], "pkgconfig")
 +        conf.env['PKGCONFIGDIR'] = os.path.join(conf.env["PREFIX"], "libdata", "pkgconfig")
  
      if Options.options.config_prefix:
          for dir in Options.options.config_prefix:
-@@ -476,12 +476,5 @@ def set_options(opt):
+@@ -480,15 +480,6 @@
          opt.sub_options(o)
  
  def shutdown():
--    if Options.commands['install'] and os.geteuid() == 0:
+-    if Options.commands['install'] and (
+-            Options.options.ldconfig or
+-            (Options.options.ldconfig is None and os.geteuid() == 0)
+-            ):
 -        ldconfig = '/sbin/ldconfig'
 -        if os.path.isfile(ldconfig):
 -            libprefix = Utils.subst_vars('${PREFIX}/lib', Build.bld.env)
 -            try: Utils.cmd_output(ldconfig + ' ' + libprefix)
 -            except: pass
--
+ 
      if Options.options.run_tests:
-         os.system(os.path.join(os.getenv('WAF_HOME'), "default/tests/test_xmmstypes"))
+         os.system(os.path.join(blddir, "default/tests/test_xmmstypes"))

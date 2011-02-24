@@ -1,9 +1,13 @@
---- src/plugins/airplay/wscript~
-+++ src/plugins/airplay/wscript
-@@ -1,11 +1,6 @@
+--- src/plugins/airplay/wscript.orig	2010-02-19 18:43:54.000000000 +0100
++++ src/plugins/airplay/wscript	2010-03-17 15:14:34.459359323 +0100
+@@ -1,15 +1,6 @@
  from waftools.plugin import plugin
  
 -def plugin_configure(conf):
+-	# MinGW doesn't ship sys/select.h
+-	if not conf.check_cc(header_name='sys/select.h'):
+-		return False
+-
 -	if not conf.check_cfg(package="openssl", args="--cflags --libs", uselib_store="openssl"):
 -		return False
 -	return True
