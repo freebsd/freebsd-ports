@@ -2694,7 +2694,6 @@
     SUBDIR += pire
     SUBDIR += pkg-config
     SUBDIR += plan9port
-    SUBDIR += pmake
     SUBDIR += pmd
     SUBDIR += pmk
     SUBDIR += poco

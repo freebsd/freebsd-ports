@@ -1,7 +1,0 @@
-This is the parallel make(1) program originally developed for the Sprite
-operating system.  You can also build this port with support for the
-'customs' service.  Customs is a load-balancing system designed for a
-local area network of cooperating workstations.
-
-NOTE: this software's copyright restricts its use to non-commercial
-applications only.
