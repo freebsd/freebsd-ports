@@ -42,7 +42,6 @@ adobesvg-*		graphics/linux-adobesvg	Redistribution prohibited
 adom-*			games/adom		Copy of CD must be sent to
 						author
 aestats-*		games/aestats		Commercial use is prohibited
-AGSatellite0520*	net-p2p/linux-agsatellite	Unsure of licensing issues
 alephone/M1A1.zip	games/alephone-data	Bungie/Microsoft do not allow
 						charging for Marathon data
 						files
@@ -461,7 +460,6 @@ PDFlib-Lite-*.tar.gz	print/pdflib		Many odd restrictions on
 pgp*			security/pgp*		Various locality restrictions
 platon*			biology/platon		$5000 USD for commercial users,
 						free for academic
-pmake-*.tar.Z		devel/pmake		Non-commercial use only
 poseidonCE-*		java/poseidon		Redistribution is not permitted
 ppsmall-*		archivers/ppunpack	No commercial redistribution
 prodosemu.*		emulators/prodosemu	Restrictive copyright on the

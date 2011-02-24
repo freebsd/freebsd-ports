@@ -1543,3 +1543,5 @@ net/ztelnet||2011-02-21|Has expired: unfetchable
 print/kaspaliste||2011-02-21|Has expired: yes
 sysutils/perf||2011-02-21|Has expired: Does not build on supported versions of FreeBSD
 databases/redis1||2011-02-24|Removed
+devel/pmake||2011-02-24|Has expired: does not build on any supported version of FreeBSD
+net-p2p/linux-agsatellite||2011-02-24|Has expired: the whole service went to cloud
