@@ -7,7 +7,7 @@
 
 PORTNAME=	conky
 PORTVERSION=	1.8.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	SF
 
@@ -154,7 +154,7 @@ CONFIGURE_ARGS+=	--enable-weather-xoap
 .endif
 
 .if defined(WITH_XMMS2)
-LIB_DEPENDS+=		xmmsclient.5:${PORTSDIR}/audio/xmms2
+LIB_DEPENDS+=		xmmsclient.6:${PORTSDIR}/audio/xmms2
 CONFIGURE_ARGS+=	--enable-xmms2
 .else
 CONFIGURE_ARGS+=	--disable-xmms2

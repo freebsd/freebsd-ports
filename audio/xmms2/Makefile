@@ -6,11 +6,10 @@
 #
 
 PORTNAME?=	xmms2
-PORTVERSION=	0.6
-PORTREVISION=	8
-DISTVERSIONSUFFIX=DrMattDestruction
+PORTVERSION=	0.7
+DISTVERSIONSUFFIX=DrNo
 CATEGORIES?=	audio
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}%20DrMattDestruction
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}%20${DISTVERSIONSUFFIX}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT?=	Rewrite of xmms as a client/server system (developer release)
@@ -37,6 +36,7 @@ OPTIONS=	AIRPLAY	"Support output via Airport Express" off \
 		FAAD	"Support to playback AAC files" on \
 		FAM	"Support to update Media Library on file change" off \
 		FLAC	"Support to playback FLAC files" on \
+		GME	"Support to playback video game music files" off \
 		GVFS	"Support to playback files via GVFS" off \
 		ICES	"Support to playback files to an icecast server" off \
 		JACK	"Support to output via the Jack output server" off \
@@ -52,6 +52,7 @@ OPTIONS=	AIRPLAY	"Support output via Airport Express" off \
 		SAMBA	"Support to playback files via SMB" off \
 		SID	"Support to playback SID files" off \
 		SPEEX	"Support to playback SPEEX files" off \
+		TREMOR	"Support to playback OGG files" off \
 		VISUAL	"Support for visualization plugins" off \
 		VOCODER	"Phase Vocoder effect plugin" off \
 		VORBIS	"Support to playback OGG files" on \
@@ -160,6 +161,14 @@ PLIST_SUB+=	FLAC=""
 .else
 EXCLUDE+=	--without-plugins="flac"
 PLIST_SUB+=	FLAC="@comment "
+.endif
+
+.if !defined(WITHOUT_GME)
+LIB_DEPENDS+=	gme.0:${PORTSDIR}/audio/libgme
+PLIST_SUB+=	GME=""
+.else
+EXCLUDE+=	--without-plugins="gme"
+PLIST_SUB+=	GME="@comment "
 .endif
 
 .if !defined(WITHOUT_GVFS)
@@ -289,6 +298,14 @@ EXCLUDE+=	--without-plugins="speex"
 PLIST_SUB+=	SPEEX="@comment "
 .endif
 
+.if !defined(WITHOUT_TREMOR)
+LIB_DEPENDS+=	vorbisidec.1:${PORTSDIR}/audio/libtremor
+PLIST_SUB+=	TREMOR=""
+.else
+EXCLUDE+=	--without-plugins="tremor"
+PLIST_SUB+=	TREMOR="@comment "
+.endif
+
 # xmms2-ripper
 .if !defined(WITHOUT_VISUAL) && !defined(WITHOUT_VORBIS)
 LIB_DEPENDS+=	vorbisenc.2:${PORTSDIR}/audio/libvorbis
@@ -344,7 +361,7 @@ PLIST_SUB+=	XML="@comment "
 
 do-configure:
 	cd ${WRKSRC} && ./waf configure --conf-prefix=${LOCALBASE} \
-		--prefix=${PREFIX} --with-mandir=${PREFIX}/man ${EXCLUDE}
+		--prefix=${PREFIX} --mandir=${PREFIX}/man ${EXCLUDE}
 
 do-build:
 	cd ${WRKSRC} && ./waf build

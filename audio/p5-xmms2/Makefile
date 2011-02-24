@@ -5,14 +5,14 @@
 # $FreeBSD$
 #
 
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	audio perl5
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Perl Bindings for XMMS2
 
-LIB_DEPENDS+=	xmmsclient.5:${PORTSDIR}/audio/xmms2
+LIB_DEPENDS+=	xmmsclient.6:${PORTSDIR}/audio/xmms2
 
 MASTERDIR=	${.CURDIR}/../xmms2
 

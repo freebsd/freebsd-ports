@@ -1,8 +1,9 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/Audio/Collection.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/Audio/Glib.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/Audio/Sync.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Audio/XMMSClient.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Audio/XMMSClient/Collection.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Audio/XMMSClient/Glib.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Audio/XMMSClient/Sync.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Audio/XMMSClient/XMMSClient.so
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Audio/XMMSClient
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Audio
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Audio/XMMSClient
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Audio
