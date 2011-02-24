@@ -21,7 +21,8 @@ USE_GMAKE=	yes
 USE_GNOME=	gnomehack
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+=--with-pkgconfigdir=${PREFIX}/libdata/pkgconfig
+CONFIGURE_ARGS+=--with-pkgconfigdir=${PREFIX}/libdata/pkgconfig \
+		--enable-transcoder-iconv
 MAKE_ENV+=	XERCESCROOT=${WRKSRC}
 
 MAKE_JOBS_UNSAFE=yes

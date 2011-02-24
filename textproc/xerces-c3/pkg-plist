@@ -307,7 +307,6 @@ include/xercesc/util/SynchronizedStringPool.hpp
 include/xercesc/util/TransENameMap.c
 include/xercesc/util/TransENameMap.hpp
 include/xercesc/util/TransService.hpp
-include/xercesc/util/Transcoders/ICU/ICUTransService.hpp
 include/xercesc/util/Transcoders/Iconv/IconvTransService.hpp
 include/xercesc/util/TranscodingException.hpp
 include/xercesc/util/UTFDataFormatException.hpp
@@ -497,7 +496,6 @@ include/xercesc/xinclude/XIncludeUtils.hpp
 @dirrm include/xercesc/validators/DTD
 @dirrm include/xercesc/validators
 @dirrm include/xercesc/util/regx
-@dirrm include/xercesc/util/Transcoders/ICU
 @dirrm include/xercesc/util/Transcoders/Iconv
 @dirrm include/xercesc/util/Transcoders
 @dirrm include/xercesc/util/NetAccessors/Socket
