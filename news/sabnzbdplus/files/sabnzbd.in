@@ -46,7 +46,7 @@ sabnzbd_stop() {
     echo "Stopping $name"
     if [ -f "${sabnzbd_conf_dir}/sabnzbd.ini" ]; then
         apikey=`grep ^api_key ${sabnzbd_conf_dir}/sabnzbd.ini | tr -d " _"`
-        host=`grep -E '^host\ =\ [0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}' ${sabnzbd_conf_dir}/sabnzbd.ini | tr -dc '[0-9].'`
+        host=`grep -m1 -E '^host\ =\ [0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}' ${sabnzbd_conf_dir}/sabnzbd.ini | tr -dc '[0-9].'`
         if [ ${host} = "0.0.0.0" ] ; then host="localhost" ; fi
         port=`grep -m1 ^port ${sabnzbd_conf_dir}/sabnzbd.ini | tr -dc '[0-9]'`
         fetch -o /dev/null "http://${host}:${port}/api?mode=shutdown&${apikey}" > /dev/null 2>&1
