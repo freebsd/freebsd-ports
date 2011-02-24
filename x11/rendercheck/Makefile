@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	rendercheck
-PORTVERSION=	1.3
+PORTVERSION=	1.4
 CATEGORIES=	x11
 
 MAINTAINER=	ports@FreeBSD.org
