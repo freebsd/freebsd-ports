@@ -674,7 +674,7 @@ lib/lib%%PYTHON_VERSION%%.so.1
 %%32BIT_ONLY%%%%PYTHON_LIBDIR%%/lib-dynload/dl.so
 %%PYTHON_LIBDIR%%/lib-dynload/fcntl.so
 %%PYTHON_LIBDIR%%/lib-dynload/grp.so
-%%X86_ONLY%%%%PYTHON_LIBDIR%%/lib-dynload/imageop.so
+%%32BIT_ONLY%%%%PYTHON_LIBDIR%%/lib-dynload/imageop.so
 %%PYTHON_LIBDIR%%/lib-dynload/itertools.so
 %%PYTHON_LIBDIR%%/lib-dynload/math.so
 %%PYTHON_LIBDIR%%/lib-dynload/mmap.so
@@ -685,7 +685,7 @@ lib/lib%%PYTHON_VERSION%%.so.1
 %%PYTHON_LIBDIR%%/lib-dynload/pyexpat.so
 %%PYTHON_LIBDIR%%/lib-dynload/readline.so
 %%PYTHON_LIBDIR%%/lib-dynload/resource.so
-%%X86_ONLY%%%%PYTHON_LIBDIR%%/lib-dynload/rgbimg.so
+%%32BIT_ONLY%%%%PYTHON_LIBDIR%%/lib-dynload/rgbimg.so
 %%PYTHON_LIBDIR%%/lib-dynload/select.so
 %%PYTHON_LIBDIR%%/lib-dynload/strop.so
 %%PYTHON_LIBDIR%%/lib-dynload/syslog.so
