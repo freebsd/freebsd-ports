@@ -1,0 +1,4 @@
+pecl-tokyo_tyrant is a PHP extension provides object oriented API
+for communicating with Tokyo Tyrant key-value store.
+
+WWW: http://pecl.php.net/package/tokyo_tyrant/
