@@ -38,6 +38,8 @@ include/gstreamer-%%VERSION%%/gst/interfaces/xoverlay.h
 include/gstreamer-%%VERSION%%/gst/netbuffer/gstnetbuffer.h
 include/gstreamer-%%VERSION%%/gst/pbutils/codec-utils.h
 include/gstreamer-%%VERSION%%/gst/pbutils/descriptions.h
+include/gstreamer-%%VERSION%%/gst/pbutils/encoding-profile.h
+include/gstreamer-%%VERSION%%/gst/pbutils/encoding-target.h
 include/gstreamer-%%VERSION%%/gst/pbutils/gstdiscoverer.h
 include/gstreamer-%%VERSION%%/gst/pbutils/gstpluginsbaseversion.h
 include/gstreamer-%%VERSION%%/gst/pbutils/install-plugins.h
@@ -98,6 +100,8 @@ lib/gstreamer-%%VERSION%%/libgstdecodebin.la
 lib/gstreamer-%%VERSION%%/libgstdecodebin.so
 lib/gstreamer-%%VERSION%%/libgstdecodebin2.la
 lib/gstreamer-%%VERSION%%/libgstdecodebin2.so
+lib/gstreamer-%%VERSION%%/libgstencodebin.la
+lib/gstreamer-%%VERSION%%/libgstencodebin.so
 lib/gstreamer-%%VERSION%%/libgstffmpegcolorspace.la
 lib/gstreamer-%%VERSION%%/libgstffmpegcolorspace.so
 lib/gstreamer-%%VERSION%%/libgstgdp.la

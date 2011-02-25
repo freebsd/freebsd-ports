@@ -319,6 +319,7 @@
     SUBDIR += gstreamer-plugins-libcaca
     SUBDIR += gstreamer-plugins-libpng
     SUBDIR += gstreamer-plugins-libvisual
+    SUBDIR += gstreamer-plugins-opencv
     SUBDIR += gthumb
     SUBDIR += gtkam
     SUBDIR += gtkdps

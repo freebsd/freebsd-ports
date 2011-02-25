@@ -14,33 +14,30 @@ CATEGORIES?=	multimedia audio
 MASTER_SITES=	http://gstreamer.freedesktop.org/src/gst-plugins-base/:base \
 		http://gstreamer.freedesktop.org/src/gst-plugins-bad/:bad \
 		http://gstreamer.freedesktop.org/src/gst-plugins-good/:good \
-		http://gstreamer.freedesktop.org/src/gst-plugins-ugly/:ugly \
-		${MASTER_SITE_LOCAL:S|$|ahze/:base|} \
-		${MASTER_SITE_LOCAL:S|$|ahze/:good|} \
-		${MASTER_SITE_LOCAL:S|$|ahze/:bad|} \
-		${MASTER_SITE_LOCAL:S|$|ahze/:ugly|}
+		http://gstreamer.freedesktop.org/src/gst-plugins-ugly/:ugly
 PKGNAMESUFFIX?=	-plugins${GST_PLUGIN_SUFFIX}
 
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT?=	GStreamer written collection of plugins handling several media types
 
 BUILD_DEPENDS+=	v4l_compat>=1.0.20100321:${PORTSDIR}/multimedia/v4l_compat \
+		gstreamer>=0.10.32:${PORTSDIR}/multimedia/gstreamer \
 		orc>=0.4.11:${PORTSDIR}/devel/orc
 LIB_DEPENDS+=	gstreamer-0.10.0:${PORTSDIR}/multimedia/gstreamer \
 		orc-0.4.0:${PORTSDIR}/devel/orc
 
 CFLAGS:=	${CFLAGS} -O2 -Wno-format
 
-BASE_PORTVERSION=	0.10.31
+BASE_PORTVERSION=	0.10.32
 BASE_DISTNAME=		gst-plugins-base-${BASE_PORTVERSION}
 BASE_DISTFILE=		${BASE_DISTNAME}${EXTRACT_SUFX}
-BAD_PORTVERSION=	0.10.20
+BAD_PORTVERSION=	0.10.21
 BAD_DISTNAME=		gst-plugins-bad-${BAD_PORTVERSION}
 BAD_DISTFILE=		${BAD_DISTNAME}${EXTRACT_SUFX}
-GOOD_PORTVERSION=	0.10.26
+GOOD_PORTVERSION=	0.10.27
 GOOD_DISTNAME=		gst-plugins-good-${GOOD_PORTVERSION}
 GOOD_DISTFILE=		${GOOD_DISTNAME}${EXTRACT_SUFX}
-UGLY_PORTVERSION=	0.10.16
+UGLY_PORTVERSION=	0.10.17
 UGLY_DISTNAME=		gst-plugins-ugly-${UGLY_PORTVERSION}
 UGLY_DISTFILE=		${UGLY_DISTNAME}${EXTRACT_SUFX}
 DIST?=		good
@@ -96,9 +93,6 @@ WRKSRC=${WRKDIR}/${BAD_DISTNAME}
 PORTVERSION=	${BAD_PORTVERSION}
 DISTFILES+=	${BAD_DISTFILE}:bad
 PATCHDIR=	${.CURDIR}/../../multimedia/gstreamer-plugins-bad/files
-.if ${OSVERSION} < 700000
-BROKEN=		does not configure properly on 6.X (shm plugin)
-.endif
 .elif ${DIST}=="ugly"
 EXTRACT_ONLY=${UGLY_DISTFILE}
 WRKSRC=${WRKDIR}/${UGLY_DISTNAME}

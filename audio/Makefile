@@ -270,6 +270,7 @@
     SUBDIR += gstreamer-plugins-faac
     SUBDIR += gstreamer-plugins-faad
     SUBDIR += gstreamer-plugins-flac
+    SUBDIR += gstreamer-plugins-flite
     SUBDIR += gstreamer-plugins-fluendo-mp3
     SUBDIR += gstreamer-plugins-gme
     SUBDIR += gstreamer-plugins-gsm

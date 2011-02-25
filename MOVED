@@ -1550,3 +1550,4 @@ textproc/py-expat||2011-02-25|Removed, part of python since python25
 devel/py-ctypes||2011-02-25|Removed, part of python since python25
 security/py-hashlib||2011-02-25|Removed, part of python since python25
 www/py-hashlib||2011-02-25|Removed, part of python since python25
+x11/gstreamer-plugins-vdpau|multimedia/gstreamer-plugins-vdpau|2011-02-25|Move to the multimedia category
