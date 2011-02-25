@@ -6,6 +6,7 @@
 
 PORTNAME=	zconfig
 PORTVERSION=	2.8.0
+PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP \
 		http://www.zope.org/Members/fdrake/zconfig/
@@ -17,7 +18,7 @@ COMMENT=	ZConfig is a general use python configuration library
 
 WRKSRC=		${WRKDIR}/ZConfig-${PORTVERSION}
 
-USE_PYTHON=	2.4+
+USE_PYTHON=	2.5+
 USE_PYDISTUTILS=	easy_install
 
 PYDISTUTILS_PKGNAME=	ZConfig

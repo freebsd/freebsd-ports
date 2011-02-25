@@ -7,6 +7,7 @@
 
 PORTNAME=	TurboCheetah
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP \
 		http://files.turbogears.org/eggs/ \
@@ -18,7 +19,7 @@ COMMENT=	TurboGears plugin to support use of Cheetah templates
 
 RUN_DEPENDS=	cheetah:${PORTSDIR}/devel/py-cheetah
 
-USE_PYTHON=		2.4+
+USE_PYTHON=	2.5+
 USE_PYDISTUTILS=	easy_install
 
 .include <bsd.port.pre.mk>

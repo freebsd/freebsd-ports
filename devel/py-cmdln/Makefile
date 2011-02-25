@@ -7,6 +7,7 @@
 
 PORTNAME=	cmdln
 PORTVERSION=	1.1.2
+PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -15,7 +16,7 @@ MAINTAINER=	yzlin@FreeBSD.org
 COMMENT=	A python module for easily building good multi-command scripts
 
 USE_ZIP=	yes
-USE_PYTHON=	2.4+
+USE_PYTHON=	2.5+
 USE_PYDISTUTILS=	yes
 
 DOCSDIR=	${PREFIX}/share/doc/py-${PORTNAME}

@@ -8,7 +8,7 @@
 
 PORTNAME=	gdb
 PORTVERSION=	7.2
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	devel
 MASTER_SITES=   ${MASTER_SITE_GNU:S,$,:gdb,}
 MASTER_SITE_SUBDIR=gdb/:gdb
@@ -47,7 +47,7 @@ OPTIONS=	DEBUG "Build with debugging symbols" off \
 .include <bsd.port.options.mk>
 
 .if defined(WITH_PYTHON)
-USE_PYTHON=	2.4-2.7
+USE_PYTHON=	2.5-2.7
 .endif
 
 .include <bsd.port.pre.mk>

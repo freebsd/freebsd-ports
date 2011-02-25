@@ -7,6 +7,7 @@
 
 PORTNAME=	mercurial
 PORTVERSION=	1.7.5
+PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	http://mercurial.selenic.com/release/
 
@@ -19,7 +20,7 @@ PLIST_SUB+=	NLS=""
 .else
 PLIST_SUB+=	NLS="@comment "
 .endif
-USE_PYTHON=	2.4+
+USE_PYTHON=	2.5+
 USE_PYDISTUTILS=yes
 PYDISTUTILS_PKGNAME=	${PORTNAME}
 PYDISTUTILS_PKGVERSION=	${PORTVERSION}

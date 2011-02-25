@@ -7,6 +7,7 @@
 
 PORTNAME=	setuptools
 PORTVERSION=	0.6c11
+PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -15,7 +16,7 @@ MAINTAINER=	python@FreeBSD.org
 COMMENT=	Download, build, install, upgrade, and uninstall Python packages
 
 DIST_SUBDIR=	python
-USE_PYTHON=	2.4+
+USE_PYTHON=	2.5+
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_NOEGGINFO=	yes # XXX convert easy_install support to bsd.python.mk's
 PLIST_SUB=	VERSION=${PORTVERSION} PYVER=${PYTHON_VERSION:S/python//}

@@ -7,6 +7,7 @@
 
 PORTNAME=	bzrtools
 PORTVERSION=	2.3.1
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	https://launchpadlibrarian.net/63332821/
 
@@ -19,7 +20,7 @@ OPTIONS=	GRAPHVIZ "Enable graphviz for graph-ancestry" off \
 		RSYNC    "Enable rsync for rspush" on
 
 WRKSRC=	${WRKDIR}/bzrtools
-USE_PYTHON=	2.4+
+USE_PYTHON=	2.5+
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_PKGNAME=	BzrTools
 

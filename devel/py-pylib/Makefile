@@ -7,6 +7,7 @@
 
 PORTNAME=	pylib
 PORTVERSION=	1.2.0
+PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	${MASTER_SITE_CHEESESHOP}
 MASTER_SITE_SUBDIR=	source/p/py
@@ -16,7 +17,7 @@ DISTNAME=	py-${PORTVERSION}
 MAINTAINER=	yzlin@FreeBSD.org
 COMMENT=	An agile development and test support library
 
-USE_PYTHON=	2.4+
+USE_PYTHON=	2.5+
 USE_PYDISTUTILS=	easy_install
 PYDISTUTILS_PKGNAME=	py
 

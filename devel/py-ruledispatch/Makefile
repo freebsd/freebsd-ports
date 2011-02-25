@@ -7,7 +7,7 @@
 
 PORTNAME=	RuleDispatch
 PORTVERSION=	0.5.a1.r2506
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel python
 MASTER_SITES=	http://nivi.interfree.it/distfiles/${PORTNAME}/ \
 		http://peak.telecommunity.com/snapshots/
@@ -20,7 +20,7 @@ COMMENT=	Rule-based Dispatching and Generic Functions
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}PyProtocols>=1.0.a0.r2302:${PORTSDIR}/devel/py-protocols-devel \
 		${PYTHON_PKGNAMEPREFIX}Extremes>=1.1:${PORTSDIR}/devel/py-extremes
 
-USE_PYTHON=	2.4+
+USE_PYTHON=	2.5+
 USE_PYDISTUTILS=	easy_install
 PYDISTUTILS_PKGVERSION=	0.5a1.dev_r2506
 PYEASYINSTALL_ARCHDEP=	yes

@@ -7,6 +7,7 @@
 
 PORTNAME=	durus
 PORTVERSION=	3.9
+PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	http://www.mems-exchange.org/software/durus/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -15,7 +16,7 @@ DISTNAME=	Durus-${PORTVERSION}
 MAINTAINER=	wenheping@gmail.com
 COMMENT=	A persistent object storage system for Python
 
-USE_PYTHON=	2.4+
+USE_PYTHON=	2.5+
 USE_PYDISTUTILS=	easy_install
 PYEASYINSTALL_ARCHDEP=	yes
 PYDISTUTILS_PKGNAME=	Durus
