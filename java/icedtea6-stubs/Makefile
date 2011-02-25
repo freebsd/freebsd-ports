@@ -11,7 +11,7 @@ CATEGORIES=	java devel
 MASTER_SITES=	http://www.intricatesoftware.com/distfiles/
 DISTNAME=	jdk-7-icedtea-plugs-${PORTVERSION}
 
-MAINTAINER=	brian@getsnappy.com
+MAINTAINER=	openjdk@getsnappy.com
 COMMENT=	IcedTea6 binary plugs for openjdk
 
 BUILD_DEPENDS+=	unzip:${PORTSDIR}/archivers/unzip
