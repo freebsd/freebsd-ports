@@ -33,6 +33,10 @@ CONFIGURE_ARGS+=--enable-site-packages-prefix=${PREFIX}
 CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS} -fstack-protector -I${LOCALBASE}/include"
 .endif
 
+.if ${ARCH} == "i386" && ${OSVERSION} >= 800000
+BROKEN=		Does not link on i386: can't find symbol snmp_init in libnetsnmp
+.endif
+
 post-patch:
 	${REINPLACE_CMD} -e "s,-lsnmp,-lnetsnmp," \
 		${WRKSRC}/configure
