@@ -7,6 +7,7 @@
 
 PORTNAME=	phpserialize
 PORTVERSION=	0.4
+PORTREVISION=	1
 CATEGORIES=	devel lang www python
 MASTER_SITES=	http://www.hurring.com/scott/code/python/serialize/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -18,7 +19,7 @@ COMMENT=	A python implementation of PHP\'s native serialize() and unserialize()
 
 WRKSRC=		${WRKDIR}/v${PORTVERSION}
 
-USE_PYTHON=	2.4+
+USE_PYTHON=	2.5+
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_PKGNAME=	PHPSerialize
 

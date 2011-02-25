@@ -6,7 +6,7 @@
 
 PORTNAME=	cvs2svn
 PORTVERSION=	2.3.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel
 MASTER_SITES=	http://www.sourcehosting.net/freebsd/distfiles/ \
 		LOCAL/glarkin
@@ -19,7 +19,7 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 
 MAKE_JOBS_SAFE=	yes
 
-USE_PYTHON=	2.4+
+USE_PYTHON=	2.5+
 USE_PYDISTUTILS=	yes
 
 OPTIONS=	SUBVERSION "Build with subversion support" on \

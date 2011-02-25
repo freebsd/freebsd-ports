@@ -6,6 +6,7 @@
 
 PORTNAME=	pytemplate
 PORTVERSION=	1.5.1
+PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	http://www.bulot.org/downloads/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -16,7 +17,7 @@ COMMENT=	Pytemplate gives python developpers a starting framework
 BUILD_DEPENDS=	easy_install:${PORTSDIR}/devel/py-setuptools
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-USE_PYTHON=	2.4+
+USE_PYTHON=	2.5+
 USE_PYDISTUTILS=	yes
 
 EXAMPLESDIR=	${PREFIX}/share/examples/py-pytemplate

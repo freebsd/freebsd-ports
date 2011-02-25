@@ -6,11 +6,12 @@
 #
 
 PORTNAME=	boost-pyste
+PORTREVISION=	1
 COMMENT=	Boost.Python code generator
 
 CONFLICTS+=	boost-python-libs-1.3* boost-python-libs-1.40
 USE_BZIP2=	yes
-USE_PYTHON=	2.4+
+USE_PYTHON=	2.5+
 
 OPTIONS=	VERBOSE_BUILD	"Show compiler messages"	off \
 		DEBUG		"Build debugging symbols"	off \

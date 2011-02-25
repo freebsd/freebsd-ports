@@ -7,6 +7,7 @@
 
 PORTNAME=	json-py
 PORTVERSION=	3.4
+PORTREVISION=	1
 CATEGORIES=	devel lang www python
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/3_4
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -18,7 +19,7 @@ COMMENT=	A python implementation of a JSON (http//:json.org) reader/writer
 
 NO_WRKSUBDIR=	yes
 
-USE_PYTHON=	2.4+
+USE_PYTHON=	2.5+
 USE_ZIP=	yes
 
 do-build:

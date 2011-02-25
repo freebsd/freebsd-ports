@@ -7,6 +7,7 @@
 
 PORTNAME=	bazaar-ng
 PORTVERSION=	2.3.0
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	https://launchpadlibrarian.net/63496203/
 DISTNAME=	bzr-${PORTVERSION}
@@ -19,18 +20,13 @@ BUILD_DEPENDS=	pyrexc:${PORTSDIR}/devel/pyrex
 
 OPTIONS=	SFTP "Enable Paramiko for SFTP support" on
 
-USE_PYTHON=	2.4+
+USE_PYTHON=	2.5+
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_PKGNAME=	bzr
 
 MAN1=		bzr.1
 
 .include <bsd.port.pre.mk>
-
-# Included in 2.5
-.if (${PYTHON_VERSION} == python2.4)
-RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/cElementTree.so:${PORTSDIR}/devel/py-celementtree
-.endif
 
 .if !defined(WITHOUT_SFTP)
 RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/paramiko/__init__.py:${PORTSDIR}/security/py-paramiko
