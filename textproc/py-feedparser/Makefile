@@ -26,10 +26,6 @@ USE_PYDISTUTILS=	yes
 
 .include <bsd.port.pre.mk>
 
-.if ${PYTHON_REL} < 240
-RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/cjkcodecs/__init__.py:${PORTSDIR}/converters/py-cjkcodecs
-.endif
-
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
