@@ -7,7 +7,7 @@
 
 PORTNAME=	prewikka
 PORTVERSION=	0.9.17.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www security python
 MASTER_SITES=	http://www.prelude-ids.com/download/releases/%SUBDIR%/
 MASTER_SITE_SUBDIR=	${PORTNAME} ${PORTNAME}/old
@@ -21,7 +21,7 @@ BUILD_DEPENDS=	cheetah-compile:${PORTSDIR}/devel/py-cheetah
 LIB_DEPENDS=	prelude.20:${PORTSDIR}/security/libprelude \
 		preludedb.4:${PORTSDIR}/security/libpreludedb
 
-USE_PYTHON=		2.4+
+USE_PYTHON=		2.5+
 USE_PYDISTUTILS=	yes
 
 .if !defined(WITHOUT_NLS)

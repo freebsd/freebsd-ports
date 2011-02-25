@@ -7,7 +7,7 @@
 
 PORTNAME=	Lightbox
 PORTVERSION=	2.1
-#PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP \
 		http://nivi.interfree.it/distfiles/${PORTNAME}/
@@ -19,7 +19,7 @@ COMMENT=	Lightbox photo display widget for TurboGears
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}TurboGears>=1.0:${PORTSDIR}/www/py-turbogears
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}scriptaculous>=1.8.1:${PORTSDIR}/www/py-scriptaculous
 
-USE_PYTHON=	2.4+
+USE_PYTHON=	2.5+
 USE_PYDISTUTILS=	easy_install
 USE_ZIP=	yes
 

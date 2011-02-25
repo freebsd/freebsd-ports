@@ -7,6 +7,7 @@
 
 PORTNAME=	metacafe_dl
 PORTVERSION=	2007.09.13
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://www.arrakis.es/~rggi3/metacafe-dl/
 DISTNAME=	metacafe-dl-${PORTVERSION}
@@ -19,7 +20,7 @@ COMMENT=	A program for downloading videos from metacafe.com
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
 
-USE_PYTHON=	2.4+
+USE_PYTHON=	2.5+
 
 PLIST_FILES=	bin/metacafe-dl
 

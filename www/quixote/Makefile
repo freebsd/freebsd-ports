@@ -7,6 +7,7 @@
 
 PORTNAME=	quixote
 PORTVERSION=	2.6
+PORTREVISION=	1
 CATEGORIES=	www python
 MASTER_SITES=	http://quixote.ca/releases/ \
 		http://dryice.name/computer/FreeBSD/distfiles/
@@ -17,7 +18,7 @@ COMMENT=	A framework for developing web applications in Python
 
 RUN_DEPENDS+=	qpcheck.py:${PORTSDIR}/www/py-qpy
 
-USE_PYTHON=	2.4+
+USE_PYTHON=	2.5+
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_PKGNAME=	Quixote
 

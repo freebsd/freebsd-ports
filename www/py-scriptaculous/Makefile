@@ -7,7 +7,7 @@
 
 PORTNAME=	scriptaculous
 PORTVERSION=	1.8.1.1
-#PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	www python
 MASTER_SITES=	http://static.ossdl.de/tgwidgets/downloads/ \
 		http://nivi.interfree.it/distfiles/${PORTNAME}/
@@ -23,7 +23,7 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 PYDISTUTILS_PKGNAME=	Scriptaculous
 
 # Use the same version of www/py-turbogears
-USE_PYTHON=	2.4+
+USE_PYTHON=	2.5+
 USE_PYDISTUTILS=	easy_install
 USE_ZIP=	yes
 
