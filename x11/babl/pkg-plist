@@ -27,7 +27,11 @@ lib/babl-0.1/gggl.a
 lib/babl-0.1/gimp-8bit.a
 lib/babl-0.1/naive-CMYK.a
 lib/babl-0.1/sse-fixups.a
+lib/girepository-1.0/Babl-0.1.typelib
+share/gir-1.0/Babl-0.1.gir
 libdata/pkgconfig/babl.pc
 @dirrm lib/babl-0.1
 @dirrm include/babl-0.1/babl
 @dirrm include/babl-0.1
+@dirrmtry lib/girepository-1.0
+@dirrmtry share/gir-1.0

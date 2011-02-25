@@ -78,7 +78,6 @@
     SUBDIR += gdkxft
     SUBDIR += gdm
     SUBDIR += ggiterm
-    SUBDIR += gir-repository-babl
     SUBDIR += glproto
     SUBDIR += gmessage
     SUBDIR += gmrun

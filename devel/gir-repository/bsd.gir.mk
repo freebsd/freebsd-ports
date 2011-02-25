@@ -9,9 +9,6 @@ GIRDIR=		${LOCALBASE}/share/gir-1.0
 poppler_CATEGORY=	graphics
 poppler_GIR=	Poppler-0.8
 
-babl_CATEGORY=	x11
-babl_GIR=	Babl-0.1
-
 libnotify_CATEGORY=	devel
 libnotify_GIR=	Notify-0.4
 
@@ -56,11 +53,6 @@ LIB_DEPENDS+=	poppler-glib.5:${PORTSDIR}/graphics/poppler-gtk
 USE_GNOME+=	gtk20
 GIR_FILES=	Poppler-0.8
 CLEAR_DEPS+=	Gdk-2.0
-.endif
-
-.if ${GIR_NAME} == "babl"
-LIB_DEPENDS+=	babl-0.1.0:${PORTSDIR}/x11/babl
-GIR_FILES=	Babl-0.1
 .endif
 
 .if ${GIR_NAME} == "libnotify"
