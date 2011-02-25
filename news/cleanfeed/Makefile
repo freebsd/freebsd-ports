@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cleanfeed
-PORTVERSION=	20100602
+PORTVERSION=	20110224
 CATEGORIES=	news
 MASTER_SITES=	http://www.mixmin.net/cleanfeed/
 
