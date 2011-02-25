@@ -26,6 +26,8 @@ lib/gstreamer-%%VERSION%%/libgstcdxaparse.la
 lib/gstreamer-%%VERSION%%/libgstcdxaparse.so
 lib/gstreamer-%%VERSION%%/libgstcoloreffects.la
 lib/gstreamer-%%VERSION%%/libgstcoloreffects.so
+lib/gstreamer-%%VERSION%%/libgstcolorspace.la
+lib/gstreamer-%%VERSION%%/libgstcolorspace.so
 lib/gstreamer-%%VERSION%%/libgstdataurisrc.la
 lib/gstreamer-%%VERSION%%/libgstdataurisrc.so
 lib/gstreamer-%%VERSION%%/libgstdccp.la
@@ -38,6 +40,8 @@ lib/gstreamer-%%VERSION%%/libgstdvb.la
 lib/gstreamer-%%VERSION%%/libgstdvb.so
 lib/gstreamer-%%VERSION%%/libgstdvdspu.la
 lib/gstreamer-%%VERSION%%/libgstdvdspu.so
+lib/gstreamer-%%VERSION%%/libgstdvbsuboverlay.la
+lib/gstreamer-%%VERSION%%/libgstdvbsuboverlay.so
 lib/gstreamer-%%VERSION%%/libgstfestival.la
 lib/gstreamer-%%VERSION%%/libgstfestival.so
 lib/gstreamer-%%VERSION%%/libgstfreeze.la
@@ -56,8 +60,12 @@ lib/gstreamer-%%VERSION%%/libgstid3tag.la
 lib/gstreamer-%%VERSION%%/libgstid3tag.so
 lib/gstreamer-%%VERSION%%/libgstinvtelecine.la
 lib/gstreamer-%%VERSION%%/libgstinvtelecine.so
+lib/gstreamer-%%VERSION%%/libgstinterlace.la
+lib/gstreamer-%%VERSION%%/libgstinterlace.so
 lib/gstreamer-%%VERSION%%/libgstivfparse.la
 lib/gstreamer-%%VERSION%%/libgstivfparse.so
+lib/gstreamer-%%VERSION%%/libgstjp2kdecimator.la
+lib/gstreamer-%%VERSION%%/libgstjp2kdecimator.so
 lib/gstreamer-%%VERSION%%/libgstjpegformat.la
 lib/gstreamer-%%VERSION%%/libgstjpegformat.so
 lib/gstreamer-%%VERSION%%/libgstlegacyresample.la
@@ -103,8 +111,6 @@ lib/gstreamer-%%VERSION%%/libgstsdpelem.la
 lib/gstreamer-%%VERSION%%/libgstsdpelem.so
 lib/gstreamer-%%VERSION%%/libgstsegmentclip.la
 lib/gstreamer-%%VERSION%%/libgstsegmentclip.so
-lib/gstreamer-%%VERSION%%/libgstselector.la
-lib/gstreamer-%%VERSION%%/libgstselector.so
 lib/gstreamer-%%VERSION%%/libgstshm.la
 lib/gstreamer-%%VERSION%%/libgstshm.so
 lib/gstreamer-%%VERSION%%/libgstsiren.la
@@ -117,8 +123,6 @@ lib/gstreamer-%%VERSION%%/libgstsubenc.la
 lib/gstreamer-%%VERSION%%/libgstsubenc.so
 lib/gstreamer-%%VERSION%%/libgsttta.la
 lib/gstreamer-%%VERSION%%/libgsttta.so
-lib/gstreamer-%%VERSION%%/libgstvalve.la
-lib/gstreamer-%%VERSION%%/libgstvalve.so
 lib/gstreamer-%%VERSION%%/libgstvideomaxrate.la
 lib/gstreamer-%%VERSION%%/libgstvideomaxrate.so
 lib/gstreamer-%%VERSION%%/libgstvideomeasure.la
@@ -127,6 +131,8 @@ lib/gstreamer-%%VERSION%%/libgstvideosignal.la
 lib/gstreamer-%%VERSION%%/libgstvideosignal.so
 lib/gstreamer-%%VERSION%%/libgstvmnc.la
 lib/gstreamer-%%VERSION%%/libgstvmnc.so
+lib/gstreamer-%%VERSION%%/libgsty4mdec.la
+lib/gstreamer-%%VERSION%%/libgsty4mdec.so
 lib/libgstbasevideo-%%VERSION%%.a
 lib/libgstbasevideo-%%VERSION%%.la
 lib/libgstbasevideo-%%VERSION%%.so

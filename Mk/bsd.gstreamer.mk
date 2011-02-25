@@ -55,10 +55,10 @@ GST_SHLIB_VERSION=	1
 #
 _USE_GSTREAMER10_ALL=	a52dec aalib amrnb amrwbdec annodex bz2 cairo \
 			cdaudio cdparanoia dts dv dvd esound faac faad \
-			ffmpeg flac gconf gio gl gme gnomevfs gnonlin \
+			ffmpeg flac flite gconf gio gl gme gnomevfs gnonlin \
 			gsm hal jack jpeg ladspa lame libcaca libmms \
 			libpng libvisual mm mp3 mpeg2enc mpeg2dec musepack \
-			nas neon ogg pango pulse python resindvd schroedinger \
+			nas neon ogg opencv pango pulse python resindvd schroedinger \
 			sdl shout2 sidplay sndfile spc soundtouch soup \
 			speex taglib theora twolame v4l2 vorbis vdpau \
 			vp8 wavpack x264 xvid
@@ -100,6 +100,8 @@ faac_DEPENDS=	audio/gstreamer-plugins-faac
 faad_DEPENDS=	audio/gstreamer-plugins-faad
 
 flac_DEPENDS=	audio/gstreamer-plugins-flac
+
+flite_DEPENDS=	audio/gstreamer-plugins-flite
 
 fluendo-mp3_DEPENDS=	audio/gstreamer-plugins-fluendo-mp3
 
@@ -196,6 +198,8 @@ libpng_DEPENDS=	graphics/gstreamer-plugins-libpng
 
 libvisual_DEPENDS=	graphics/gstreamer-plugins-libvisual
 
+opencv_DEPENDS=	graphics/gstreamer-plugins-opencv
+
 # Multimedia Plugins Section
 bad_DEPENDS=	multimedia/gstreamer-plugins-bad
 
@@ -249,6 +253,8 @@ theora_DEPENDS=	multimedia/gstreamer-plugins-theora
 
 ugly_DEPENDS=	multimedia/gstreamer-plugins-ugly
 
+vdpau_DEPENDS=	multimedia/gstreamer-plugins-vdpau
+
 x264_DEPENDS=	multimedia/gstreamer-plugins-x264
 
 xvid_DEPENDS=	multimedia/gstreamer-plugins-xvid
@@ -256,10 +262,6 @@ xvid_DEPENDS=	multimedia/gstreamer-plugins-xvid
 # Net Plugins Section
 
 libmms_DEPENDS=	net/gstreamer-plugins-libmms
-
-# X11 Plugin Section
-
-vdpau_DEPENDS=	x11/gstreamer-plugins-vdpau
 
 # X11-Toolkits Plugins Section
 pango_DEPENDS=	x11-toolkits/gstreamer-plugins-pango

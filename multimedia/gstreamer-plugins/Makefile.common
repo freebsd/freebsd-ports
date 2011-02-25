@@ -49,6 +49,7 @@ BAD_GST_ALL_PLUGINS+= \
 		nas \
 		neon \
 		ofa \
+		opencv \
 		resindvd \
 		rsvg \
 		schro \
@@ -336,7 +337,7 @@ gst_hal_PLIST_FILES=	${GST_LIB_DIR}/libgsthalelements.la \
 gst_jack_LIB_DEPENDS+=	jack.0:${PORTSDIR}/audio/jack
 gst_jack_PLIST_FILES=	${GST_LIB_DIR}/libgstjack.la \
 		${GST_LIB_DIR}/libgstjack.so
-gst_jack_DIST=	bad
+gst_jack_DIST=	good
 
 # jpeg
 gst_jpeg_LIB_DEPENDS+=	jpeg.11:${PORTSDIR}/graphics/jpeg
@@ -428,6 +429,14 @@ gst_ogg_EXTRA_LIBS+=	-lgstriff-${VERSION}
 gst_ogg_PLIST_FILES=	${GST_LIB_DIR}/libgstogg.la \
 		${GST_LIB_DIR}/libgstogg.so
 gst_ogg_DIST=	base
+
+# opencv
+gst_opencv_BUILD_DEPENDS+=opencv<=2.1:${PORTSDIR}/graphics/opencv
+gst_opencv_RUN_DEPENDS+=opencv<=2.1:${PORTSDIR}/graphics/opencv
+gst_opencv_PLIST_FILES= ${GST_LIB_DIR}/libgstopencv.la \
+			${GST_LIB_DIR}/libgstopencv.a \
+			${GST_LIB_DIR}/libgstopencv.so
+gst_opencv_DIST=	bad
 
 # pango
 gst_pango_USE_GNOME+=	pango

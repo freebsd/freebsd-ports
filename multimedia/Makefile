@@ -109,6 +109,7 @@
     SUBDIR += gstreamer-plugins-theora
     SUBDIR += gstreamer-plugins-ugly
     SUBDIR += gstreamer-plugins-v4l2
+    SUBDIR += gstreamer-plugins-vdpau
     SUBDIR += gstreamer-plugins-vp8
     SUBDIR += gstreamer-plugins-x264
     SUBDIR += gstreamer-plugins-xvid
