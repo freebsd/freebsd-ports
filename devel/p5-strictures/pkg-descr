@@ -1,0 +1,6 @@
+strictures turns on indirect checking only when it thinks it's running
+in a compilation (or pod coverage) test - though if this causes undesired
+behaviour this can be overriden by setting the PERL_STRICTURES_EXTRA
+environment variable.
+
+WWW: http://search.cpan.org/dist/strictures/
