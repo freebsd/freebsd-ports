@@ -1,0 +1,20 @@
+%%SITE_PERL%%/oo.pm
+%%SITE_PERL%%/Moo.pm
+%%SITE_PERL%%/Moo/_Utils.pm
+%%SITE_PERL%%/Moo/Role.pm
+%%SITE_PERL%%/Moo/_mro.pm
+%%SITE_PERL%%/Moo/Object.pm
+%%SITE_PERL%%/Role/Tiny.pm
+%%SITE_PERL%%/Sub/Defer.pm
+%%SITE_PERL%%/Sub/Quote.pm
+%%SITE_PERL%%/Method/Inliner.pm
+%%SITE_PERL%%/Method/Generate/Accessor.pm
+%%SITE_PERL%%/Method/Generate/Constructor.pm
+%%SITE_PERL%%/Method/Generate/BuildAll.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Moo/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Moo
+@dirrm %%SITE_PERL%%/Moo
+@dirrmtry %%SITE_PERL%%/Role
+@dirrmtry %%SITE_PERL%%/Sub
+@dirrmtry %%SITE_PERL%%/Method/Generate
+@dirrmtry %%SITE_PERL%%/Method

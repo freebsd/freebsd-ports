@@ -1,0 +1,9 @@
+This module is an extremely light-weight, high-performance Moose
+replacement. It also avoids depending on any XS modules to allow
+simple deployments. The name Moo is based on the idea that it
+provides almost -but not quite- two thirds of Moose.
+
+Unlike Mouse this module does not aim at full Moose compatibility.
+See "INCOMPATIBILITIES" for more details.
+
+WWW: http://search.cpan.org/dist/Moo/
