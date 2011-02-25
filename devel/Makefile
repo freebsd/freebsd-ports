@@ -2779,7 +2779,6 @@
     SUBDIR += py-coverage
     SUBDIR += py-crcmod
     SUBDIR += py-ctags
-    SUBDIR += py-ctypes
     SUBDIR += py-cxx
     SUBDIR += py-daemon
     SUBDIR += py-dal

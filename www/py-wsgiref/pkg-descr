@@ -1,4 +1,0 @@
-wsgiref is a reference implementation of the WSGI standard. This is a
-backport of wsgiref which is included in Python 2.5
-
-WWW: http://cheeseshop.python.org/pypi/wsgiref 

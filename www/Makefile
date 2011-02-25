@@ -1535,7 +1535,6 @@
     SUBDIR += py-werkzeug
     SUBDIR += py-wikitools
     SUBDIR += py-wsgiauth
-    SUBDIR += py-wsgiref
     SUBDIR += pyblosxom
     SUBDIR += pyjamas
     SUBDIR += pylot

@@ -1010,7 +1010,6 @@
     SUBDIR += py-enchant
     SUBDIR += py-errorhandler
     SUBDIR += py-excelerator
-    SUBDIR += py-expat
     SUBDIR += py-feedparser
     SUBDIR += py-genshi
     SUBDIR += py-genshi-devel
