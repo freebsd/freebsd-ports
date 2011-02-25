@@ -10,6 +10,7 @@ bin/ctest
 %%DATADIR%%/Modules/CMakeASMCompiler.cmake.in
 %%DATADIR%%/Modules/CMakeASMInformation.cmake
 %%DATADIR%%/Modules/CMakeASM_MASMInformation.cmake
+%%DATADIR%%/Modules/CMakeASM_NASMInformation.cmake
 %%DATADIR%%/Modules/CMakeAddNewLanguage.txt
 %%DATADIR%%/Modules/CMakeBackwardCompatibilityC.cmake
 %%DATADIR%%/Modules/CMakeBackwardCompatibilityCXX.cmake
@@ -30,6 +31,7 @@ bin/ctest
 %%DATADIR%%/Modules/CMakeDetermineASM-ATTCompiler.cmake
 %%DATADIR%%/Modules/CMakeDetermineASMCompiler.cmake
 %%DATADIR%%/Modules/CMakeDetermineASM_MASMCompiler.cmake
+%%DATADIR%%/Modules/CMakeDetermineASM_NASMCompiler.cmake
 %%DATADIR%%/Modules/CMakeDetermineCCompiler.cmake
 %%DATADIR%%/Modules/CMakeDetermineCXXCompiler.cmake
 %%DATADIR%%/Modules/CMakeDetermineCompilerABI.cmake
@@ -71,6 +73,7 @@ bin/ctest
 %%DATADIR%%/Modules/CMakeTestASM-ATTCompiler.cmake
 %%DATADIR%%/Modules/CMakeTestASMCompiler.cmake
 %%DATADIR%%/Modules/CMakeTestASM_MASMCompiler.cmake
+%%DATADIR%%/Modules/CMakeTestASM_NASMCompiler.cmake
 %%DATADIR%%/Modules/CMakeTestCCompiler.cmake
 %%DATADIR%%/Modules/CMakeTestCXXCompiler.cmake
 %%DATADIR%%/Modules/CMakeTestCompilerCommon.cmake
@@ -136,6 +139,9 @@ bin/ctest
 %%DATADIR%%/Modules/CheckVariableExists.cmake
 %%DATADIR%%/Modules/Compiler/Clang-C.cmake
 %%DATADIR%%/Modules/Compiler/Clang-CXX.cmake
+%%DATADIR%%/Modules/Compiler/Cray-C.cmake
+%%DATADIR%%/Modules/Compiler/Cray-CXX.cmake
+%%DATADIR%%/Modules/Compiler/Cray-Fortran.cmake
 %%DATADIR%%/Modules/Compiler/G95-Fortran.cmake
 %%DATADIR%%/Modules/Compiler/GNU-C.cmake
 %%DATADIR%%/Modules/Compiler/GNU-CXX.cmake
@@ -150,6 +156,7 @@ bin/ctest
 %%DATADIR%%/Modules/Compiler/MIPSpro-C.cmake
 %%DATADIR%%/Modules/Compiler/MIPSpro-CXX.cmake
 %%DATADIR%%/Modules/Compiler/MIPSpro-Fortran.cmake
+%%DATADIR%%/Modules/Compiler/NAG-Fortran.cmake
 %%DATADIR%%/Modules/Compiler/PGI-C.cmake
 %%DATADIR%%/Modules/Compiler/PGI-CXX.cmake
 %%DATADIR%%/Modules/Compiler/PGI-Fortran.cmake
@@ -158,6 +165,9 @@ bin/ctest
 %%DATADIR%%/Modules/Compiler/PathScale-CXX.cmake
 %%DATADIR%%/Modules/Compiler/PathScale-Fortran.cmake
 %%DATADIR%%/Modules/Compiler/PathScale.cmake
+%%DATADIR%%/Modules/Compiler/SCO-C.cmake
+%%DATADIR%%/Modules/Compiler/SCO-CXX.cmake
+%%DATADIR%%/Modules/Compiler/SCO.cmake
 %%DATADIR%%/Modules/Compiler/SunPro-C.cmake
 %%DATADIR%%/Modules/Compiler/SunPro-CXX.cmake
 %%DATADIR%%/Modules/Compiler/SunPro-Fortran.cmake
@@ -369,12 +379,14 @@ bin/ctest
 %%DATADIR%%/Modules/Platform/CYGWIN-GNU-CXX.cmake
 %%DATADIR%%/Modules/Platform/CYGWIN-GNU-Fortran.cmake
 %%DATADIR%%/Modules/Platform/CYGWIN-GNU.cmake
+%%DATADIR%%/Modules/Platform/CYGWIN-windres.cmake
 %%DATADIR%%/Modules/Platform/CYGWIN.cmake
 %%DATADIR%%/Modules/Platform/Catamount.cmake
 %%DATADIR%%/Modules/Platform/Darwin-GNU-C.cmake
 %%DATADIR%%/Modules/Platform/Darwin-GNU-CXX.cmake
 %%DATADIR%%/Modules/Platform/Darwin-GNU-Fortran.cmake
 %%DATADIR%%/Modules/Platform/Darwin-GNU.cmake
+%%DATADIR%%/Modules/Platform/Darwin-NAG-Fortran.cmake
 %%DATADIR%%/Modules/Platform/Darwin-VisualAge-C.cmake
 %%DATADIR%%/Modules/Platform/Darwin-VisualAge-CXX.cmake
 %%DATADIR%%/Modules/Platform/Darwin-XL-C.cmake
@@ -409,6 +421,7 @@ bin/ctest
 %%DATADIR%%/Modules/Platform/Linux-Intel-CXX.cmake
 %%DATADIR%%/Modules/Platform/Linux-Intel-Fortran.cmake
 %%DATADIR%%/Modules/Platform/Linux-Intel.cmake
+%%DATADIR%%/Modules/Platform/Linux-NAG-Fortran.cmake
 %%DATADIR%%/Modules/Platform/Linux-PGI-C.cmake
 %%DATADIR%%/Modules/Platform/Linux-PGI-CXX.cmake
 %%DATADIR%%/Modules/Platform/Linux-PGI-Fortran.cmake
@@ -453,15 +466,16 @@ bin/ctest
 %%DATADIR%%/Modules/Platform/Windows-GNU-CXX.cmake
 %%DATADIR%%/Modules/Platform/Windows-GNU-Fortran.cmake
 %%DATADIR%%/Modules/Platform/Windows-GNU.cmake
+%%DATADIR%%/Modules/Platform/Windows-Intel-C.cmake
+%%DATADIR%%/Modules/Platform/Windows-Intel-CXX.cmake
+%%DATADIR%%/Modules/Platform/Windows-Intel-Fortran.cmake
 %%DATADIR%%/Modules/Platform/Windows-Intel.cmake
 %%DATADIR%%/Modules/Platform/Windows-NMcl.cmake
 %%DATADIR%%/Modules/Platform/Windows-cl.cmake
 %%DATADIR%%/Modules/Platform/Windows-cl.cmake.in
 %%DATADIR%%/Modules/Platform/Windows-df.cmake
-%%DATADIR%%/Modules/Platform/Windows-g++.cmake
-%%DATADIR%%/Modules/Platform/Windows-icl.cmake
-%%DATADIR%%/Modules/Platform/Windows-ifort.cmake
 %%DATADIR%%/Modules/Platform/Windows-wcl386.cmake
+%%DATADIR%%/Modules/Platform/Windows-windres.cmake
 %%DATADIR%%/Modules/Platform/Windows.cmake
 %%DATADIR%%/Modules/Platform/WindowsPaths.cmake
 %%DATADIR%%/Modules/Platform/Xenix.cmake
