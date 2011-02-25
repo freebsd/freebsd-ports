@@ -6,6 +6,7 @@ bin/rspamc
 etc/rspamd.xml.sample
 %%ETCDIR%%/2tld.inc
 %%ETCDIR%%/2tld.inc.orig
+%%ETCDIR%%/surbl-whitelist.inc
 %%ETCDIR%%/plugins/lua/forged_recipients.lua
 %%ETCDIR%%/plugins/lua/maillist.lua
 %%ETCDIR%%/plugins/lua/multimap.lua

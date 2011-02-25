@@ -14,6 +14,8 @@
 # rspamd_user (str):		Default to "nobody".
 #
 # rspamd_group (str):		Default to "nobody".
+#
+# rspamd_flags (str):		Default to "-c %%PREFIX%%/etc/rspamd.xml".
 
 . /etc/rc.subr
 
@@ -34,6 +36,7 @@ load_rc_config $name
 : ${rspamd_pidfile="/var/run/rspamd/rspamd.pid"}
 : ${rspamd_user="nobody"}
 : ${rspamd_group="nobody"}
+: ${rspamd_flags="-c %%PREFIX%%/etc/rspamd.xml"}
 
 stop_postcmd="rm -f $rspamd_pidfile"
 
@@ -50,7 +53,7 @@ reopenlog_cmd()
 
 sig_reload="HUP"
 
-command_args="-u ${rspamd_user} -g ${rspamd_group} -c /usr/local/etc/rspamd.xml"
+command_args="-u ${rspamd_user} -g ${rspamd_group} ${rspamd_flags}"
 
 extra_commands="reload configtest reopenlog"
 run_rc_command "$1"
