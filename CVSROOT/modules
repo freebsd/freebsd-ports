@@ -8541,7 +8541,6 @@ linux-XnViewMP                  ports/graphics/linux-XnViewMP
 linux-ac3d                      ports/graphics/linux-ac3d
 linux-adobesvg                  ports/graphics/linux-adobesvg
 linux-afaapps                   ports/sysutils/linux-afaapps
-linux-agsatellite               ports/net-p2p/linux-agsatellite
 linux-allegro                   ports/devel/linux-allegro
 linux-alsa-lib                  ports/audio/linux-alsa-lib
 linux-americasarmy              ports/games/linux-americasarmy
@@ -20643,7 +20642,6 @@ plzip                           ports/archivers/plzip
 pm-lib                          ports/mail/pm-lib
 pm3umpdl                        ports/audio/pm3umpdl
 pmacct                          ports/net-mgmt/pmacct
-pmake                           ports/devel/pmake
 pmap                            ports/sysutils/pmap
 pmars                           ports/games/pmars
 pmars-sdl                       ports/games/pmars-sdl
@@ -22501,7 +22499,6 @@ red5                            ports/www/red5
 redet                           ports/textproc/redet
 redir                           ports/net/redir
 redis                           ports/databases/redis
-redis1                          ports/databases/redis1
 redis2                          ports/databases/redis2
 redland                         ports/textproc/redland
 redland-bindings                ports/textproc/redland-bindings
@@ -25929,6 +25926,7 @@ weblint++                       ports/www/weblint++
 webmagick                       ports/www/WebMagick
 webmin                          ports/sysutils/webmin
 webobjects                      ports/www/webobjects
+webp                            ports/graphics/webp
 webpy                           ports/www/webpy
 webredirect                     ports/www/webredirect
 webreport                       ports/www/webreport
@@ -26699,6 +26697,7 @@ xml-parse.el                    ports/textproc/xml-parse.el
 xml-security                    ports/security/xml-security
 xml2rfc                         ports/textproc/xml2rfc
 xml2rfc-xxe                     ports/editors/xml2rfc-xxe
+xmlada                          ports/textproc/xmlada
 xmlcatmgr                       ports/textproc/xmlcatmgr
 xmlcharent                      ports/textproc/xmlcharent
 xmlcopyeditor                   ports/editors/xmlcopyeditor
