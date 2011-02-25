@@ -1,7 +1,7 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4
 #
-# $FreeBSD: /tmp/pcvs/ports/Mk/bsd.linux-rpm.mk,v 1.24 2010-10-28 21:00:06 erwin Exp $
+# $FreeBSD: /tmp/pcvs/ports/Mk/bsd.linux-rpm.mk,v 1.25 2011-02-25 11:00:59 pav Exp $
 #
 
 # Variables:
@@ -63,7 +63,7 @@ LINUX_RPM_ARCH?=	${ARCH}
 Linux_RPM_Post_Include=	bsd.linux-rpm.mk
 
 LINUX_DIST?=		fedora
-. if ${OSVERSION} < 800076
+. if ${OSVERSION} < 800076 || ${LINUX_OSRELEASE} == "2.4.2"
 LINUX_DIST_VER?=	4
 . else
 LINUX_DIST_VER?=	10

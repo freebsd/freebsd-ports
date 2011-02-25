@@ -48,7 +48,7 @@ LINUX_DIST_SUFFIX=	-f10
 .    else
 IGNORE=		valid values for OVERRIDE_LINUX_NONBASE_PORTS are \"f8\", \"f10\"
 .    endif
-.  elif ${OSVERSION} < 800076
+.  elif ${OSVERSION} < 800076 || ${LINUX_OSRELEASE} == "2.4.2"
 # default for OSVERSION < 800076
 LINUX_DIST_SUFFIX=
 .  else
