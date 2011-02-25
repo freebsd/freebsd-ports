@@ -7,16 +7,16 @@
 #
 
 PORTNAME=	midori
-PORTVERSION=	0.3.0
+PORTVERSION=	0.3.2
 CATEGORIES=	www xfce
 MASTER_SITES=	${MASTER_SITE_XFCE}
-MASTER_SITE_SUBDIR=	src/apps/${PORTNAME}/${PORTVERSION:R}/
+MASTER_SITE_SUBDIR=	src/apps/${PORTNAME}/${PORTVERSION:R}
 DIST_SUBDIR=	xfce4
 
 MAINTAINER=	kwm@FreeBSD.org
 COMMENT=	Lightweight web browser using WebKit browser engine
 
-LIB_DEPENDS=	webkit-1.0:${PORTSDIR}/www/webkit-gtk2 \
+LIB_DEPENDS=	webkit-1.0.13:${PORTSDIR}/www/webkit-gtk2 \
 		sqlite3.8:${PORTSDIR}/databases/sqlite3 \
 		notify.1:${PORTSDIR}/devel/libnotify
 BUILD_DEPENDS=	rsvg-convert:${PORTSDIR}/graphics/librsvg2 \
@@ -27,8 +27,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
-CONFIGURE_ARGS+=--disable-unique \
-		--disable-libidn \
+CONFIGURE_ARGS+=--disable-libidn \
 		--enable-libnotify \
 		--enable-addons \
 		--jobs=${MAKE_JOBS_NUMBER}
@@ -49,7 +48,8 @@ PLIST_SUB=	VERSION="${PORTVERSION:R}"
 
 OPTIONS=	NLS "Enable Native Language support" on \
 		USERDOCS "Build user documentation" off \
-		APIDOCS "Build api documentation" off
+		APIDOCS "Build api documentation" off \
+		UNIQUE "Enable single instance support" off
 
 .include <bsd.port.pre.mk>
 
@@ -79,6 +79,13 @@ PLIST_SUB+=	APIDOCS=""
 .else
 CONFIGURE_ARGS+=--disable-apidocs
 PLIST_SUB+=	APIDOCS="@comment "
+.endif
+
+.if defined(WITH_UNIQUE)
+LIB_DEPENDS+=	unique-1.0.2:${PORTSDIR}/x11-toolkits/unique
+CONFIGURE_ARGS+=--enable-unique
+.else
+CONFIGURE_ARGS+=--disable-unique
 .endif
 
 post-install:
