@@ -1,5 +1,0 @@
-Ctypes is a Python module allowing to create and manipulate
-C data types in Python. These can then be passed to C-functions
-loaded from dynamic link libraries.
-
-WWW: http://starship.python.net/crew/theller/ctypes/

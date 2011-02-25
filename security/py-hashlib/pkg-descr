@@ -1,4 +1,0 @@
-Python secure hash and message digest module MD5, SHA1, SHA224, SHA256, 
-SHA384 and SHA512 (backported from Python 2.5 for use on 2.3 and 2.4)
-
-WWW: http://code.krypto.org/python/hashlib/

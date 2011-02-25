@@ -110,18 +110,6 @@ Python_Include_MAINTAINER=	python@FreeBSD.org
 # PYXML				- Dependency line for the XML extension. As of Python-2.0,
 #					  this extension is in the base distribution.
 #
-# PYEXPAT			- Dependency line for the Expat XML Parser. As of Python-2.3.2,
-#					  this module is in the base distribution.
-#
-# PYCTYPES			- Dependency line for the ctypes package. As of Python-2.5,
-#					  this module is in the base distribution.
-#
-# PYHASHLIB			- Dependency line for the hashlib package. As of Python-2.5,
-#					  this module is in the base distribution.
-#
-# PYWSGIREF			- Dependency line for the wsgiref package. As of Python-2.5,
-#					  this module is in the base distribution.
-#
 # USE_PYTHON_PREFIX	- Says that the port installs in ${PYTHONBASE}.
 #
 # USE_PYDISTUTILS	- Use distutils as do-configure, do-build and do-install
@@ -568,30 +556,6 @@ PYDISTUTILS=	${PYTHON_LIBDIR}/distutils/core.py:${PYTHON_PORTSDIR}
 PYNUMERIC=		${PYTHON_SITELIBDIR}/Numeric/Numeric.py:${PORTSDIR}/math/py-numeric
 PYNUMPY=		${PYTHON_SITELIBDIR}/numpy/core/numeric.py:${PORTSDIR}/math/py-numpy
 PYXML=			${PYTHON_SITELIBDIR}/_xmlplus/__init__.py:${PORTSDIR}/textproc/py-xml
-
-.if defined(PYTHON_REL) && ${PYTHON_REL} < 232
-PYEXPAT=		${PYTHON_SITELIBDIR}/pyexpat.so:${PORTSDIR}/textproc/py-expat
-.else
-PYEXPAT=		${PYTHON_LIBDIR}/lib-dynload/pyexpat.so:${PYTHON_PORTSDIR}
-.endif
-
-.if defined(PYTHON_REL) && ${PYTHON_REL} < 250
-PYCTYPES=		${PYTHON_SITELIBDIR}/ctypes/__init__.py:${PORTSDIR}/devel/py-ctypes
-.else
-PYCTYPES=		${PYTHON_LIBDIR}/ctypes/__init__.py:${PYTHON_PORTSDIR}
-.endif
-
-.if defined(PYTHON_REL) && ${PYTHON_REL} < 250
-PYHASHLIB=		${PYTHON_SITELIBDIR}/hashlib.py:${PORTSDIR}/security/py-hashlib
-.else
-PYHASHLIB=		${PYTHON_LIBDIR}/hashlib.py:${PYTHON_PORTSDIR}
-.endif
-
-.if defined(PYTHON_REL) && ${PYTHON_REL} < 250
-PYWSGIREF=		${PYTHON_SITELIBDIR}/wsgiref/__init__.py:${PORTSDIR}/www/py-wsgiref
-.else
-PYWSGIREF=		${PYTHON_LIBDIR}/wsgiref/__init__.py:${PYTHON_PORTSIDR}
-.endif
 
 # dependencies
 PYTHON_NO_DEPENDS?=		NO

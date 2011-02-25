@@ -695,7 +695,6 @@
     SUBDIR += py-fchksum
     SUBDIR += py-gnupg
     SUBDIR += py-gnutls
-    SUBDIR += py-hashlib
     SUBDIR += py-keyring
     SUBDIR += py-m2crypto
     SUBDIR += py-mcrypt
