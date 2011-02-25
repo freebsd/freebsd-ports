@@ -7,6 +7,7 @@
 
 PORTNAME=	redis
 PORTVERSION=	2.2.1
+PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	GOOGLE_CODE
 
@@ -16,8 +17,6 @@ COMMENT=	A persistent key-value database with built-in net interface
 LIB_DEPENDS=	execinfo.1:${PORTSDIR}/devel/libexecinfo
 
 CFLAGS+=	-I${LOCALBASE}/include
-
-CONFLICTS?=	redis-2.0.*
 
 USE_GMAKE=	yes
 USE_RC_SUBR=	redis.sh

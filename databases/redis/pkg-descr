@@ -1,14 +1,19 @@
-Redis is a key-value database.  It is similar to memcached but the
-dataset is not volatile, and values can be strings, exactly like in
-memcached, but also lists and sets with atomic operations to push/pop
-elements.
+Redis is an open source, advanced key-value store.  It is often referred
+to as a data structure server since keys can contain strings, hashes,
+lists, sets and sorted sets.
 
-In order to be very fast but at the same time persistent the whole
-dataset is taken in memory and from time to time and/or when a number of
-changes to the dataset are performed it is written asynchronously on
-disk.  You may lost the last few queries that is acceptable in many
-applications but it is as fast as an in memory DB (Redis supports
-non-blocking master-slave replication in order to solve this problem by
-redundancy).
+You can run atomic operations on these types, like appending to a string;
+incrementing the value in a hash; pushing to a list; computing set
+intersection, union and difference; or getting the member with highest
+ranking in a sorted set.
 
-WWW: http://code.google.com/p/redis/
+In order to achieve its outstanding performance, Redis works with an
+in-memory dataset.  Depending on your use case, you can persist it either
+by dumping the dataset to disk every once in a while, or by appending each
+command to a log.
+
+Redis also supports trivial-to-setup master-slave replication, with very
+fast non-blocking first synchronization, auto-reconnection on net split
+and so forth.
+
+WWW: http://redis.io/
