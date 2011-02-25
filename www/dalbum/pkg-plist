@@ -81,7 +81,7 @@
 %%DALBUM_DIR%%/reindex.php
 %%DALBUM_DIR%%/showimg.php
 %%DALBUM_DIR%%/version.txt
-@dirrmtry %%DALBUM_DIR%%/pictures/Sample\ album
+@dirrmtry %%DALBUM_DIR%%/pictures/Sample album
 @dirrmtry %%DALBUM_DIR%%/pictures
 @dirrm %%DALBUM_DIR%%/include/lang
 @dirrm %%DALBUM_DIR%%/include

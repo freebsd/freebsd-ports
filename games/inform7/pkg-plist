@@ -97,9 +97,9 @@ bin/ni
 @dirrmtry %%DATADIR%%/Extensions/Reserved/Templates/Classic
 @dirrmtry %%DATADIR%%/Extensions/Reserved/Templates
 @dirrmtry %%DATADIR%%/Extensions/Reserved
-@dirrmtry %%DATADIR%%/Extensions/Graham\ Nelson
-@dirrmtry %%DATADIR%%/Extensions/Eric\ Eve
-@dirrmtry %%DATADIR%%/Extensions/Emily\ Short
-@dirrmtry %%DATADIR%%/Extensions/David\ Fisher
+@dirrmtry %%DATADIR%%/Extensions/Graham Nelson
+@dirrmtry %%DATADIR%%/Extensions/Eric Eve
+@dirrmtry %%DATADIR%%/Extensions/Emily Short
+@dirrmtry %%DATADIR%%/Extensions/David Fisher
 @dirrmtry %%DATADIR%%/Extensions
 @dirrmtry %%DATADIR%%

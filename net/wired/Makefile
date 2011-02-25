@@ -7,6 +7,7 @@
 
 PORTNAME=	wired
 PORTVERSION=	1.3.4
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://mirror.mcx2.org/
 
