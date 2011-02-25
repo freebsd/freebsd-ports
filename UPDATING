@@ -43,7 +43,7 @@ you update your ports collection, before attempting any port upgrades.
 
   Postfix 2.8 introduces minor incompatibilities with previous versions.
   Alias expansion, dns lookups, TLS support, milters and other features
-  are affected.  To avoid surprises, carefully review the RELEASE_NOTES. 
+  are affected.  To avoid surprises, carefully review the RELEASE_NOTES.
 
   If you upgrade from Postfix 2.6 or earlier, you must execute "postfix
   stop" and "postfix start" before you can use the postscreen(8) daemon.
