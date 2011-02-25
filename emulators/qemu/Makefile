@@ -7,7 +7,7 @@
 
 PORTNAME=	qemu
 PORTVERSION=	0.11.1
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	emulators
 MASTER_SITES=	${MASTER_SITE_SAVANNAH} \
 		http://bellard.org/qemu/
@@ -86,6 +86,7 @@ RUN_DEPENDS+=	${LOCALBASE}/sbin/smbd:${PORTSDIR}/net/samba34
 
 .if defined(WITH_KQEMU)
 BUILD_DEPENDS+=	kqemu-kmod-devel>=1.4.0pre1:${PORTSDIR}/emulators/kqemu-kmod-devel
+RUN_DEPENDS+=	kqemu-kmod-devel>=1.4.0pre1:${PORTSDIR}/emulators/kqemu-kmod-devel
 .else
 CONFIGURE_ARGS+=	--disable-kqemu
 .endif
