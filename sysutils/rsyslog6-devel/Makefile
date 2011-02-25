@@ -86,6 +86,10 @@ post-install:
 IGNORE=	with gssapi module is only supported on FreeBSD 7.x or later
 .endif
 
+.if ${MNAME} == "snmp" && ${ARCH} == "i386" && ${OSVERSION} >= 800000
+BROKEN=		Does not link on i386: can't find symbol snmp_timeout in libnetsnmp
+.endif
+
 CONFIGURE_ARGS+=	--disable-rsyslogd --disable-klog
 
 DESCR?=		${.CURDIR}/../rsyslog6-devel/pkg-descr
