@@ -146,11 +146,13 @@ share/locale/ca/LC_MESSAGES/gstreamer-%%VERSION%%.mo
 share/locale/cs/LC_MESSAGES/gstreamer-%%VERSION%%.mo
 share/locale/da/LC_MESSAGES/gstreamer-%%VERSION%%.mo
 share/locale/de/LC_MESSAGES/gstreamer-%%VERSION%%.mo
+share/locale/el/LC_MESSAGES/gstreamer-%%VERSION%%.mo
 share/locale/en_GB/LC_MESSAGES/gstreamer-%%VERSION%%.mo
 share/locale/eu/LC_MESSAGES/gstreamer-%%VERSION%%.mo
 share/locale/es/LC_MESSAGES/gstreamer-%%VERSION%%.mo
 share/locale/fi/LC_MESSAGES/gstreamer-%%VERSION%%.mo
 share/locale/fr/LC_MESSAGES/gstreamer-%%VERSION%%.mo
+share/locale/gl/LC_MESSAGES/gstreamer-%%VERSION%%.mo
 share/locale/hu/LC_MESSAGES/gstreamer-%%VERSION%%.mo
 share/locale/id/LC_MESSAGES/gstreamer-%%VERSION%%.mo
 share/locale/it/LC_MESSAGES/gstreamer-%%VERSION%%.mo

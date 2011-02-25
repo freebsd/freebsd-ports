@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	gstreamer
-PORTVERSION=	0.10.31
+PORTVERSION=	0.10.32
 CATEGORIES=	multimedia
 MASTER_SITES=	http://gstreamer.freedesktop.org/src/gstreamer/ \
 		GNOME
@@ -16,7 +16,7 @@ MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Development framework for creating media applications
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/flex:${PORTSDIR}/textproc/flex \
-		g-ir-scanner:${PORTSDIR}/devel/gobject-introspection
+		gobject-introspection>=0.9.12:${PORTSDIR}/devel/gobject-introspection
 RUN_DEPENDS=	${LOCALBASE}/share/gir-1.0/GLib-2.0.gir:${PORTSDIR}/devel/gobject-introspection
 
 LICENSE=	LGPL20
@@ -48,11 +48,6 @@ MAN1=	gst-feedback-${GST_VERSION}.1 gst-inspect-${GST_VERSION}.1 \
 	gst-xmllaunch-${GST_VERSION}.1
 
 .include <bsd.port.pre.mk>
-
-# workaround a gcc bug on 6.x
-.if ${OSVERSION} < 700000
-CONFIGURE_ENV+=	gst_cv_uint128_t="no"
-.endif
 
 .if (exists(${LOCALBASE}/lib/libcheck.a) || defined(WITH_CHECK))
 LIB_DEPENDS+=	check.0:${PORTSDIR}/devel/libcheck
