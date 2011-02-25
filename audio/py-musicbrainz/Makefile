@@ -18,8 +18,6 @@ DISTNAME=	libmusicbrainz-${PORTVERSION}
 MAINTAINER=	bsdkaffee@gmail.com
 COMMENT=	MusicBrainz bindings for Python
 
-BUILD_DEPENDS=	${PYCTYPES}
-RUN_DEPENDS=	${PYCTYPES}
 LIB_DEPENDS=	musicbrainz.4:${PORTSDIR}/audio/libmusicbrainz
 
 EXAMPLESDIR=	${PREFIX}/share/examples/py-${PORTNAME}

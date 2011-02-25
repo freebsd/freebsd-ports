@@ -16,7 +16,6 @@ MAINTAINER=	lwhsu@FreeBSD.org
 COMMENT=	Python wrapper for the GNUTLS library
 
 LIB_DEPENDS=	gnutls.40:${PORTSDIR}/security/gnutls
-RUN_DEPENDS=	${PYCTYPES}
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes

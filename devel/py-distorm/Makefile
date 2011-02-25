@@ -19,8 +19,6 @@ EXTRACT_ONLY=	${PORTNAME}64-pkg${PORTVERSION}.tar.bz2
 MAINTAINER=	bf@FreeBSD.org
 COMMENT=	Fast x86 and x86-64 disassembler library with Python interface
 
-RUN_DEPENDS=	${PYCTYPES}
-
 USE_BZIP2=	yes
 USE_PYTHON=	-2.7
 LICENSE=	BSD
