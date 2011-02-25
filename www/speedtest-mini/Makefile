@@ -7,7 +7,7 @@
 
 PORTNAME=	speedtest-mini
 PORTVERSION=	2.1.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	http://files.speedtest.ookla.com/releases/
 DISTNAME=	mini

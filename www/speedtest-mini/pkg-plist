@@ -3,6 +3,7 @@
 %%WWWDIR%%/index-aspx.html
 %%WWWDIR%%/index-jsp.html
 %%WWWDIR%%/index-php.html
+%%WWWDIR%%/index.html
 %%WWWDIR%%/speedtest.swf
 %%WWWDIR%%/speedtest/latency.txt
 %%WWWDIR%%/speedtest/random1000x1000.jpg
