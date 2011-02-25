@@ -19,6 +19,7 @@
 
 PORTNAME=	pyodbc
 PORTVERSION=	2.1.5
+PORTREVISION-	1
 CATEGORIES=	databases python
 MASTER_SITES=	GOOGLE_CODE
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -29,7 +30,7 @@ COMMENT=	ODBC connections for python
 
 USE_ZIP=	yes
 USE_GMAKE=	yes
-USE_PYTHON=	2.4+
+USE_PYTHON=	2.5+
 USE_PYDISTUTILS=	yes
 
 # again, shamelessly copied from datebase/postgres-odbc

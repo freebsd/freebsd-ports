@@ -7,6 +7,7 @@
 
 PORTNAME=	skytools
 PORTVERSION=	2.1.12
+PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	http://pgfoundry.org/frs/download.php/2872/
 
@@ -17,7 +18,7 @@ GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 
 USE_PGSQL=	yes
-USE_PYTHON=	2.4+
+USE_PYTHON=	2.5+
 INSTALLS_EGGINFO=	yes
 
 MAN1=	bulk_loader.1 cube_dispatcher.1 londiste.1 pgqadm.1 queue_mover.1 \

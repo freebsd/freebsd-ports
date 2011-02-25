@@ -7,7 +7,7 @@
 
 PORTNAME=	sabernetdcs
 PORTVERSION=	2.0.3
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	finance www
 MASTER_SITES=	SF/${PORTNAME}/SaberNet%20DCS/${PORTVERSION}
 PKGNAMESUFFIX=	-client
@@ -20,7 +20,7 @@ RUN_DEPENDS=	pygtk-codegen-2.0:${PORTSDIR}/x11-toolkits/py-gtk2 \
 		${PYTHONPREFIX_SITELIBDIR}/gtk-2.0/gobject/__init__.py:${PORTSDIR}/devel/py-gobject \
 		${PYTHONPREFIX_SITELIBDIR}/Pyro4/__init__.py:${PORTSDIR}/devel/py-pyro
 
-USE_PYTHON=	2.4+
+USE_PYTHON=	2.5+
 USE_PYDISTUTILS=	yes
 USE_BZIP2=	yes
 DOCSDIR=	${PREFIX}/share/doc/sndcs

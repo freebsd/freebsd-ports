@@ -7,7 +7,7 @@
 
 PORTNAME=	conduit
 PORTVERSION=	0.3.17
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	deskutils
 MASTER_SITES=	GNOME
 
@@ -28,7 +28,7 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/goocanvasmodule.so:${PORTSDIR}/graphics/py-goo
 		${LOCALBASE}/libdata/pkgconfig/dbus-python.pc:${PORTSDIR}/devel/py-dbus \
 		xdg-open:${PORTSDIR}/devel/xdg-utils
 
-USE_PYTHON=	2.4+
+USE_PYTHON=	2.5+
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_GETTEXT=	yes

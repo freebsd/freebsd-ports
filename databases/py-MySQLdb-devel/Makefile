@@ -16,7 +16,7 @@ DISTNAME=	MySQL-python-${DISTVERSION}
 MAINTAINER=	mnag@FreeBSD.org
 COMMENT=	Access a MySQL database through Python
 
-USE_PYTHON=		2.4+
+USE_PYTHON=		2.5+
 USE_PYDISTUTILS=	easy_install
 PYEASYINSTALL_ARCHDEP=	yes
 PYDISTUTILS_PKGNAME=	MySQL_python

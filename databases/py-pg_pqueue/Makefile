@@ -7,6 +7,7 @@
 
 PORTNAME=	pg_pqueue
 PORTVERSION=	1.0.2
+PORTREVISION=	1
 CATEGORIES=	databases python
 MASTER_SITES=	http://python.projects.postgresql.org/files/ \
 		CHEESESHOP
@@ -15,7 +16,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	wenheping@gmail.com
 COMMENT=	PostgreSQL PQ Protocol Modules
 
-USE_PYTHON=	2.4+
+USE_PYTHON=	2.5+
 USE_PYDISTUTILS=	easy_install
 PYEASYINSTALL_ARCHDEP=	yes
 

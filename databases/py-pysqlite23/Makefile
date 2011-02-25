@@ -7,6 +7,7 @@
 
 PORTNAME=	pysqlite
 PORTVERSION=	2.3.5
+PORTREVISION=	1
 CATEGORIES=	databases python
 MASTER_SITES=	http://initd.org/pub/software/pysqlite/releases/${PORTVERSION:C/\.[0-9]$//}/${PORTVERSION}/ \
 		${MASTER_SITE_GENTOO}
@@ -20,7 +21,7 @@ LIB_DEPENDS=	sqlite3.8:${PORTSDIR}/databases/sqlite3
 
 CONFLICTS=	py*-pysqlite-2.[0-24-9].*
 
-USE_PYTHON=	2.4+
+USE_PYTHON=	2.5+
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_BUILDARGS=	build_ext -I${LOCALBASE}/include -L${LOCALBASE}/lib
 DOCSBASE=	share/doc/py-${PORTNAME}2
