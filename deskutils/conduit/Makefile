@@ -53,11 +53,6 @@ RUN_DEPENDS+=	eog:${PORTSDIR}/graphics/eog
 CONFIGURE_ARGS+=	--enable-eog-plugin
 .endif
 
-.if ${PYTHON_REL} < 250
-BUILD_DEPENDS+=	${PYTHON_SITELIBDIR}/elementtree/__init__.py:${PORTSDIR}/devel/py-elementtree
-RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/elementtree/__init__.py:${PORTSDIR}/devel/py-elementtree
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|$$(libdir)/pkgconfig|${PREFIX}/libdata/pkgconfig|' \
 		${WRKSRC}/data/Makefile.in

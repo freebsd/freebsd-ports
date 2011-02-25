@@ -35,11 +35,4 @@ post-install:
 	cd ${WRKSRC}/examples && ${COPYTREE_SHARE} . ${EXAMPLESDIR}
 .endif
 
-.include <bsd.port.pre.mk>
-
-.if ${PYTHON_REL} < 250
-BUILD_DEPENDS+=	${PYTHON_SITELIBDIR}/elementtree/__init__.py:${PORTSDIR}/devel/py-elementtree
-RUN_DEPENDS+=	${BUILD_DEPENDS}
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

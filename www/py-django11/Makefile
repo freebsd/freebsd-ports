@@ -55,11 +55,7 @@ RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}MySQLdb>=1.2.2:${PORTSDIR}/databases/py-MyS
 .endif
 
 .if defined(WITH_SQLITE)
-.if ${PYTHON_REL} < 250
-RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/pysqlite2/__init__.py:${PORTSDIR}/databases/py-pysqlite23
-.else
 RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/_sqlite3.so:${PORTSDIR}/databases/py-sqlite3
-.endif
 .endif
 
 .if defined(WITH_FASTCGI)

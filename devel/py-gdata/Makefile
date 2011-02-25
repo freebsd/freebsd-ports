@@ -29,10 +29,6 @@ EXAMPLESDIR=	${PREFIX}/share/examples/py-${PORTNAME}
 
 .include <bsd.port.pre.mk>
 
-.if ${PYTHON_REL} < 250
-RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/elementtree/__init__.py:${PORTSDIR}/devel/py-elementtree
-.endif
-
 # avoid warning with Python > 2.5
 .if ${PYTHON_REL} > 250
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-src_atom-mock_service.py \

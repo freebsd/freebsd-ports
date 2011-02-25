@@ -38,10 +38,6 @@ RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}django-threaded-multihost>=0:${PORTSDIR}/ww
 	${PYTHON_PKGNAMEPREFIX}django-app-plugins>=0:${PORTSDIR}/www/py-django-app-plugins \
 	${PYTHON_PKGNAMEPREFIX}django-signals-ahoy>=0:${PORTSDIR}/www/py-django-signals-ahoy
 
-.if ${PYTHON_REL} < 250
-RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/elementtree/__init__.py:${PORTSDIR}/devel/py-elementtree
-.endif
-
 .if defined(WITH_DOCS)
 BUILD_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}sphinx>0:${PORTSDIR}/textproc/py-sphinx
 BUILD_DEPENDS+=	rst2xml>0:${PORTSDIR}/textproc/py-docutils
