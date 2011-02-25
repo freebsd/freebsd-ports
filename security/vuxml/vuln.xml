@@ -34,6 +34,35 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="be3dfe33-410b-11e0-9e02-00215c6a37bb">
+    <topic>openldap -- two security bypass vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>openldap-server</name>
+	<range><gt>2.4.0</gt><lt>2.4.24</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Secunia reports:</p>
+	<blockquote cite="http://secunia.com/advisories/43331/">
+	  <p>Two vulnerabilities have been reported in
+	    OpenLDAP, which can be exploited by malicious
+	    people to bypass certain security restrictions.</p>
+	  <p>The vulnerabilities are reported in versions
+	    prior to 2.4.24.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://secunia.com/advisories/43331/</url>
+    </references>
+    <dates>
+      <discovery>2011-02-14</discovery>
+      <entry>2011-02-25</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="65d16342-3ec8-11e0-9df7-001c42d23634">
     <topic>asterisk -- Exploitable Stack and Heap Array Overflows</topic>
     <affects>
