@@ -1,3 +1,5 @@
+etc/fonts/conf.avail/42-luxi-mono.conf
+etc/fonts/conf.d/42-luxi-mono.conf
 lib/X11/fonts/TTF/luximb.ttf
 lib/X11/fonts/TTF/luximbi.ttf
 lib/X11/fonts/TTF/luximr.ttf
@@ -10,3 +12,6 @@ lib/X11/fonts/TTF/luxisb.ttf
 lib/X11/fonts/TTF/luxisbi.ttf
 lib/X11/fonts/TTF/luxisr.ttf
 lib/X11/fonts/TTF/luxisri.ttf
+@dirrmtry etc/fonts/conf.d
+@dirrmtry etc/fonts/conf.avail
+@dirrmtry etc/fonts

@@ -64,6 +64,7 @@ IGNORE=		is for sparc64 only
 
 . if ${XORG_CAT} == "font"
 FONTDIR?=	${PORTNAME:C/.*-//g:S/type/Type/:S/ttf/TTF/:S/speedo/Speedo/}
+CONFIGURE_ARGS+=	--with-fontrootdir=${PREFIX}/lib/X11/fonts
 CONFIGURE_ENV+=	FONTROOTDIR=${PREFIX}/lib/X11/fonts
 NEED_MKFONTFOO=	yes
 
@@ -101,8 +102,8 @@ RUN_DEPENDS+=	${LOCALBASE}/bin/mkfontdir:${PORTSDIR}/x11-fonts/mkfontdir \
 post-install:
 .  if ${INSTALLS_TTF} == "yes"
 .   for _fontdir in ${FONTDIR}
-	@${ECHO_CMD} "@exec fc-cache -v %D/lib/X11/fonts/${_fontdir} 2>/dev/null || true" >> ${TMPPLIST}
-	@${ECHO_CMD} "@unexec fc-cache -v %D/lib/X11/fonts/${_fontdir} 2>/dev/null || true" >> ${TMPPLIST}
+	@${ECHO_CMD} "@exec fc-cache -s %D/lib/X11/fonts/${_fontdir} 2>/dev/null || true" >> ${TMPPLIST}
+	@${ECHO_CMD} "@unexec fc-cache -s %D/lib/X11/fonts/${_fontdir} 2>/dev/null || true" >> ${TMPPLIST}
 	@${ECHO_CMD} "@unexec rmdir %D/lib/X11/fonts/${_fontdir} 2>/dev/null || true" >> ${TMPPLIST}
 .   endfor
 .  endif

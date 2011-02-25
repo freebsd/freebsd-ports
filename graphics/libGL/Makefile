@@ -17,10 +17,6 @@ LIB_DEPENDS+=	drm:${PORTSDIR}/graphics/libdrm \
 
 USE_XORG=	glproto x11 xext xxf86vm xdamage xfixes dri2proto:both
 
-.ifndef WITHOUT_NOUVEAU
-EXTRA_PATCHES+=	${FILESDIR}/mesalib74-configure
-.endif
-
 do-install:
 	${RM} -f ${WRKSRC}/include/GL/glu*.h
 	cd ${WRKSRC}/src/mesa; ${GMAKE} install-libgl

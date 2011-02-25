@@ -7,6 +7,7 @@
 
 PORTNAME=	xf86-video-sunffb
 PORTVERSION=	1.2.1
+PORTREVISION=	1
 CATEGORIES=	x11-drivers
 
 MAINTAINER=	x11@FreeBSD.org

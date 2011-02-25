@@ -16,6 +16,7 @@ include/X11/Xmu/Misc.h
 include/X11/Xmu/StdCmap.h
 include/X11/Xmu/StdSel.h
 include/X11/Xmu/SysUtil.h
+include/X11/Xmu/WhitePoint.h
 include/X11/Xmu/WidgetNode.h
 include/X11/Xmu/WinUtil.h
 include/X11/Xmu/Xct.h
@@ -30,4 +31,7 @@ lib/libXmuu.so
 lib/libXmuu.so.1
 libdata/pkgconfig/xmu.pc
 libdata/pkgconfig/xmuu.pc
-@dirrm include/X11/Xmu
+%%DOCSDIR%%/Xmu.xml
+%%DOCSDIR%%/xlogo.svg
+@dirrmtry %%DOCSDIR%%
+@dirrmtry include/X11/Xmu

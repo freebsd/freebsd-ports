@@ -1,6 +1,3 @@
 This package contains a set of XTrap sample clients.  XTrap is an X Server
 extension which facilitates the capturing of server protocol and
 synthesizing core input events.
-
-- Joel Dahl
-joel@FreeBSD.org

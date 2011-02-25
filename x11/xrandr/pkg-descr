@@ -1,5 +1,2 @@
 This package contains xrandr, a primitive command line interface to
 the RandR extension.
-
-- Joel Dahl
-joel@FreeBSD.org

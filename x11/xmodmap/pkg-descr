@@ -1,5 +1,2 @@
 This package contains xmodmap, which is a program for editing and displaying
 the keyboard modifier map and keymap table in X.
-
-- Joel Dahl
-joel@FreeBSD.org

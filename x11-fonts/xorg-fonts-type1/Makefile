@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xorg-fonts-type1
-PORTVERSION=	7.5
+PORTVERSION=	7.5.1
 CATEGORIES=	x11-fonts
 MASTER_SITES=	# none
 DISTFILES=	# none

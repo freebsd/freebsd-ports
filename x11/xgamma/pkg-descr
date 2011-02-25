@@ -1,5 +1,2 @@
 This package contains xgamma, a tool for altering the gamma correction
 through the X server.
-
-- Joel Dahl
-joel@FreeBSD.org

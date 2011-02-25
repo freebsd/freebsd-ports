@@ -7,6 +7,7 @@
 
 PORTNAME=	xf86-video-mach64
 PORTVERSION=	6.8.2
+PORTREVISION=	1
 CATEGORIES=	x11-drivers
 
 MAINTAINER=	x11@FreeBSD.org
@@ -17,10 +18,4 @@ USE_GL=		gl
 XORG_CAT=	driver
 USE_XORG=	glproto videoproto xextproto xf86driproto xf86miscproto xineramaproto
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 700000
-USE_GCC=	4.2+
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

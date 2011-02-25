@@ -7,6 +7,7 @@
 
 PORTNAME=	xf86-input-synaptics
 PORTVERSION=	1.2.1
+PORTREVISION=	1
 CATEGORIES=	x11-drivers
 
 MAINTAINER=	x11@FreeBSD.org
@@ -27,10 +28,4 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/fdi/11-x11-synaptics.fdi \
 		${PREFIX}/share/hal/fdi/policy/10osvendor/
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 700000
-USE_GCC=	4.2+
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

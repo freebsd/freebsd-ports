@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	font-misc-misc
-PORTVERSION=	1.1.0
+PORTVERSION=	1.1.2
 CATEGORIES=	x11-fonts
 
 MAINTAINER=	x11@FreeBSD.org

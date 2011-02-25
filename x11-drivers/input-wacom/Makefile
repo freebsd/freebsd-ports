@@ -13,6 +13,7 @@ MASTER_SITES=	http://www.chillt.de/bsdwacom/:bsdwacom \
 		SF/linuxwacom/linuxwacom/${WACOM_VERSION}:linuxwacom
 DISTFILES=	${BSDWACOM}.tbz:bsdwacom \
 		${LINUXWACOM}.tar.bz2:linuxwacom
+EXTRACT_ONLY=	${BSDWACOM}.tbz
 
 MAINTAINER=	kamikaze@bsdforen.de
 COMMENT=	X.Org Wacom tablet driver and kernel module
@@ -22,7 +23,6 @@ MANCOMPRESSED=	yes
 
 USE_GMAKE=	yes
 USE_RC_SUBR=	wacom
-USE_LDCONFIG=	no
 
 KMODDIR?=	/boot/modules
 XINPUTMODDIR=	lib/xorg/modules/input
@@ -44,18 +44,20 @@ BSDWACOM=	bsdwacom-${KLD_VERSION}
 WACOM_VERSION=	0.8.2-2
 KLD_VERSION=	40
 
-OPTIONS=	UWACOMKLD "Install USB kernel module (ignored on 8.x)" ${KMOD_SUPPORTED}
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 800064
+OPTIONS=	UWACOMKLD "Install USB kernel module (not supported on 8.x)" Off
+.else
+OPTIONS=	UWACOMKLD "Install USB kernel module (not supported on 8.x)" On
+.endif
 
 .include <bsd.port.options.mk>
 
-.if ${OSVERSION} >= 800064
-KMOD_SUPPORTED=	Off
-.undef WITH_UWACOMKLD
-.else
-KMOD_SUPPORTED=	On
-.endif
-
 .if defined(WITH_UWACOMKLD)
+.if ${OSVERSION} >= 800064
+BROKEN=		does not build with USB support
+.endif
 PLIST_SUB+=	UWACOMKLD="uwacom.ko"
 PORTTYPE=	usb
 .else
@@ -63,22 +65,17 @@ PLIST_SUB+=	UWACOMKLD="@noinst UWACOMKLD uwacom.ko"
 PORTTYPE=	serial
 .endif
 
-.if ${OSVERSION} < 700000
-BROKEN=		does not compile on 6.X
-.endif
-
-post-patch:
-	@${LN} -s ../${LINUXWACOM} ${WRKDIR}/linuxwacom/
-
 do-configure:
-	@cd ${WRKDIR}/linuxwacom && ${SETENV} ${MAKE_ENV} ./run_configure
+	@cd ${WRKDIR}/linuxwacom \
+		&& ${LN} -s ${DISTDIR}/${DIST_SUBDIR}/${LINUXWACOM}.tar.bz2 \
+		&& ${SETENV} ${MAKE_ENV} ./run_configure
 
 do-build:
 .if defined(WITH_UWACOMKLD)
 	@cd ${WRKDIR}/uwacom \
 		&& ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_ARGS}
 .endif
-	@cd ${WRKDIR}/${LINUXWACOM} \
+	@cd ${WRKDIR}/linuxwacom/${LINUXWACOM} \
 		&& ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_ARGS}
 
 do-install:
@@ -88,7 +85,7 @@ do-install:
 .endif
 	@${MKDIR} ${PREFIX}/${XINPUTMODDIR} ${PREFIX}/${MAN4DIR}
 	@cd ${WRKDIR}/linuxwacom/${LINUXWACOM}/src/util/ \
-		&& ${SETENV} ${MAKE_ENV} ${GMAKE} ${INSTALL_TARGET}
+		&& ${SETENV} ${MAKE_ENV} ${GMAKE} install
 	@${INSTALL} ${WRKDIR}/linuxwacom/${LINUXWACOM}/src/xdrv/wacom_drv.so \
 		${PREFIX}/${XINPUTMODDIR}/
 	@${INSTALL_MAN} ${WRKDIR}/linuxwacom/${LINUXWACOM}/src/wacom.4x.gz \
@@ -101,8 +98,8 @@ plist: clean configure
 	@cd ${WRKDIR}/linuxwacom \
 		&& ${SETENV} ${MAKE_ENV} PREFIX=${WRKDIR}/plist ./run_configure
 	@${MKDIR} ${WRKDIR}/plist
-	@cd ${WRKDIR}/${LINUXWACOM}/src/util \
-		&& ${SETENV} ${MAKE_ENV} ${GMAKE} ${INSTALL_TARGET}
+	@cd ${WRKDIR}/linuxwacom/${LINUXWACOM}/src/util \
+		&& ${SETENV} ${MAKE_ENV} ${GMAKE} install
 	@cd ${WRKDIR}/linuxwacom \
 		&& ${SETENV} ${MAKE_ENV} ./run_configure
 	@${FIND} ${WRKDIR}/plist/ -not -type d \
@@ -120,4 +117,4 @@ post-install:
 	@${ECHO} "===>  Displaying pkg-message."
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

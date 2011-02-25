@@ -1,6 +1,3 @@
 This package contains xbiff, which displays a little image of a mailbox in
 the X Window System. The flag on the mailbox is down when there is no mail,
 and the flag goes up when new mail arrives.
-
-- Joel Dahl
-joel@FreeBSD.org

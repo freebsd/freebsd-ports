@@ -1,5 +1,2 @@
 This package contains xdriinfo, an utility that can be used to query
 configuration information of direct rendering devices.
-
-- Joel Dahl
-joel@FreeBSD.org

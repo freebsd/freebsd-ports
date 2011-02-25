@@ -1,3 +1,4 @@
+%%DOCSDIR%%/FSlib.txt
 include/X11/fonts/FSlib.h
 lib/libFS.so.6
 lib/libFS.so
@@ -5,3 +6,4 @@ lib/libFS.la
 lib/libFS.a
 libdata/pkgconfig/libfs.pc
 @dirrmtry include/X11/fonts
+@dirrm %%DOCSDIR%%

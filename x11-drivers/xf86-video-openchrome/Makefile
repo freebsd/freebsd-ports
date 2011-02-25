@@ -7,7 +7,7 @@
 
 PORTNAME=	xf86-video-openchrome
 PORTVERSION=	0.2.904
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11-drivers
 MASTER_SITES=	http://www.openchrome.org/releases/
 
@@ -24,10 +24,4 @@ MAKE_ARGS+=	drivermandir=${LOCALBASE}/man/man4
 
 ONLY_FOR_ARCHS=	amd64 i386 ia64
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 700000
-USE_GCC=	4.2+
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

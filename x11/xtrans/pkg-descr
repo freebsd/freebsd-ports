@@ -1,6 +1,3 @@
 This package contains xtrans, a library of code that is shared among X
 packages to handle network protocol transport in a modular fashion,
 allowing a single place to add new transport types.
-
-- Joel Dahl
-joel@FreeBSD.org

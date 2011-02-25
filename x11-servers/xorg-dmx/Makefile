@@ -6,14 +6,12 @@
 #
 
 PORTNAME=	xorg-dmx
-PORTVERSION=	1.7.5
+PORTVERSION=	1.7.7
 PORTEPOCH=	1
 CATEGORIES=	x11-servers
 
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	Distributed Multihead X from X.Org
-
-CONFLICTS=	XFree86-dmx-[0-9]*
 
 XORG_CAT=	xserver
 

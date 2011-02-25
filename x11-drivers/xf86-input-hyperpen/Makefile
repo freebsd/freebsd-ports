@@ -7,7 +7,7 @@
 
 PORTNAME=	xf86-input-hyperpen
 PORTVERSION=	1.3.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	x11-drivers
 
 MAINTAINER=	x11@FreeBSD.org
@@ -15,11 +15,4 @@ COMMENT=	X.Org hyperpen input driver
 
 XORG_CAT=	driver
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 700000
-USE_GCC=	4.2+
-.endif
-
-.include <bsd.port.post.mk>
-
+.include <bsd.port.mk>

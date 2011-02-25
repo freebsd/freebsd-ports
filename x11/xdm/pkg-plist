@@ -1,5 +1,6 @@
 bin/xdm
 bin/xdmshell
+lib/X11/xdm/authdir
 lib/X11/xdm/chooser
 lib/X11/xdm/libXdmGreet.a
 lib/X11/xdm/libXdmGreet.la
@@ -40,8 +41,13 @@ share/X11/app-defaults/Chooser
 @exec cp -n %D/%%EXAMPLESDIR%%/Xstartup %D/lib/X11/xdm/Xstartup
 @exec cp -n %D/%%EXAMPLESDIR%%/Xwilling %D/lib/X11/xdm/Xwilling
 @exec cp -n %D/%%EXAMPLESDIR%%/xdm-config %D/lib/X11/xdm/xdm-config
+@exec mkdir -p /var/lib/xdm/authdir
 @dirrmtry share/X11/app-defaults
 @dirrmtry share/X11
+@unexec rm -f /var/lib/xdm/authdir/authfiles/* 2>/dev/null || true
+@unexec rmdir /var/lib/xdm/authdir/authfiles 2>/dev/null || true
+@unexec rmdir /var/lib/xdm/authdir 2>/dev/null
+@unexec rmdir /var/lib/xdm 2>/dev/null
 @dirrm lib/X11/xdm/pixmaps
 @dirrm lib/X11/xdm
 @dirrm %%EXAMPLESDIR%%

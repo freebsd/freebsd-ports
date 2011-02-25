@@ -8,7 +8,7 @@
 PORTNAME=	xf86-video-nouveau
 PORTVERSION=	0.0.10.${SNAPDATE}
 DISTVERSIONSUFFIX=.${SNAPREV}
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11-drivers
 MASTER_SITES=	ftp://ftp.lissyara.su/users/Guest/distfiles/
 
@@ -58,10 +58,4 @@ maint-gen-distfile:
 	${RM} -rf ${GIT_WORK}
 
 .include "Makefile.rev"
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 700000 && ${ARCH} == "amd64"
-BROKEN=		does not compile on 6.X
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

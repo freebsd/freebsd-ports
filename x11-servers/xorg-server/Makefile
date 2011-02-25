@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xorg-server
-PORTVERSION=	1.7.5
+PORTVERSION=	1.7.7
 PORTEPOCH=	1
 CATEGORIES=	x11-servers
 MASTER_SITES=	http://xorg.freedesktop.org/releases/individual/xserver/
@@ -18,8 +18,6 @@ COMMENT=	X.Org X server and related programs
 LIB_DEPENDS=	drm:${PORTSDIR}/graphics/libdrm
 
 RUN_DEPENDS=	${LOCALBASE}/share/X11/xkb/rules/base.xml:${PORTSDIR}/x11/xkeyboard-config
-
-CONFLICTS=	XFree86-Server-*
 
 XORG_CAT=	xserver
 
@@ -133,10 +131,6 @@ pre-everything::
 	@${ECHO_MSG} "of this, but still want to run an X Server (for example using xdm/kdm/gdm,"
 	@${ECHO_MSG} "which will still run the server as root), you can cancel the build and set"
 	@${ECHO_MSG} "NO_SUID_XSERVER=YES in /etc/make.conf."
-.endif
-
-.if ${OSVERSION} < 700000
-USE_GCC=	4.2+
 .endif
 
 .include <bsd.port.post.mk>

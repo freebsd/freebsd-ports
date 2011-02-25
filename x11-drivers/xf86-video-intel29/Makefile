@@ -22,6 +22,4 @@ XORG_CAT=	driver
 USE_XORG=	xvmc xineramaproto xextproto x11 xf86driproto glproto
 MAN4=		intel.4x
 
-IGNORE=		we have to wait of GEM support to get ironlake chips to work
-
 .include <bsd.port.mk>

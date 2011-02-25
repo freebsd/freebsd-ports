@@ -1,5 +1,2 @@
 This package contains luit, a filter than can be run between an arbitrary
 application and a UTF-8 terminal emulator.
-
-- Joel Dahl
-joel@FreeBSD.org

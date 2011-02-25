@@ -21,6 +21,10 @@ DATADIR=	${PREFIX}/share/${PKGNAMEPREFIX}${PORTNAME}
 
 OPTIONS=	NVIDIA_GL	"Use NVIDIA's libraries"	off
 
+EXTRA_PATCHES+=	${FILESDIR}/patch-progs-xdemos-glxpixmap.c \
+		${FILESDIR}/patch-progs-xdemos-yuvrect_client.c
+
+
 do-install:
 	@for i in demos xdemos; do \
 		cd ${WRKSRC}/progs/$$i; \

@@ -9,4 +9,7 @@ lib/libICE.la
 lib/libICE.so
 lib/libICE.so.6
 libdata/pkgconfig/ice.pc
+%%DOCSDIR%%/ICElib.xml
+%%DOCSDIR%%/ice.xml
+@dirrm %%DOCSDIR%%
 @dirrm include/X11/ICE

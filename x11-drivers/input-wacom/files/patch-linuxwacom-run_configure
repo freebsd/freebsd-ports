@@ -1,21 +1,17 @@
---- linuxwacom/run_configure.orig	2008-12-26 02:09:57.000000000 +0100
-+++ linuxwacom/run_configure	2010-05-13 22:44:05.000000000 +0200
-@@ -1,10 +1,8 @@
+--- linuxwacom/run_configure.orig	2009-01-21 11:26:52.000000000 +0100
++++ linuxwacom/run_configure	2009-01-21 11:27:00.000000000 +0100
+@@ -1,7 +1,7 @@
  #!/bin/sh
  # $Id: run_configure 40 2008-12-26 01:08:35Z undo $
  
 -LINUXWACOM=0.8.2
 +LINUXWACOM=0.8.2-2
  
--rm -rf linuxwacom-${LINUXWACOM}
--tar xf linuxwacom-${LINUXWACOM}.tar.bz2
- mkdir linuxwacom-${LINUXWACOM}/src/util/asm
- mkdir linuxwacom-${LINUXWACOM}/src/util/linux
- mkdir linuxwacom-${LINUXWACOM}/src/xdrv/asm
-@@ -14,5 +12,5 @@
+ rm -rf linuxwacom-${LINUXWACOM}
+ tar xf linuxwacom-${LINUXWACOM}.tar.bz2
+@@ -14,5 +14,5 @@
  cp files/types.h linuxwacom-${LINUXWACOM}/src/xdrv/asm
  cp files/input.h linuxwacom-${LINUXWACOM}/src/xdrv/linux
  cd linuxwacom-${LINUXWACOM}
 -./configure --with-linux=yes --with-tcl=/usr/local/include/tcl8.4 --with-tk=/usr/local/include/tk8.4 --prefix=${PREFIX} --enable-dlloader CFLAGS="-I/usr/local/include"
 +./configure --with-linux=yes --with-tcl=/usr/local/include/tcl8.4 --with-tk=/usr/local/include/tk8.4 --prefix=${PREFIX} --enable-dlloader CFLAGS="-I/usr/local/include -DWCM_XORG_XSERVER_1_6=true"
- 

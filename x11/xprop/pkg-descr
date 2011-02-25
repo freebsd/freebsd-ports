@@ -1,5 +1,2 @@
 This package contains the xprop utility, which is for displaying window
 and font properties in an X server.
-
-- Joel Dahl
-joel@FreeBSD.org

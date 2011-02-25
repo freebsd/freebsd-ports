@@ -12,3 +12,5 @@ Every file that a sourcefile includes, directly or indirectly, is what
 makedepend calls a "dependency". These dependencies are then written to a 
 makefile in such a way that make will know which object files must be 
 recompiled when a dependency has changed.
+
+WWW: http://www.x.org/archive/X11R7.5/doc/man/man1/makedepend.1.html

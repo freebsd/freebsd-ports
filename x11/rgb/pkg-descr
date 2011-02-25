@@ -1,6 +1,3 @@
 This package contains showrgb, a program that reads an rgb color-name
 database compiled for use with the dbm database routines and converts it
 back to source form, printing the result to standard output.
-
-- Joel Dahl
-joel@FreeBSD.org

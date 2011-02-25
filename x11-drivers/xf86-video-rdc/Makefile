@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	xf86-video-rdc
-MASTER_SITES=	http://www.SpringDaemons.com/stas/
 PORTVERSION=	0.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-drivers
+MASTER_SITES=	http://www.SpringDaemons.com/stas/
 
 MAINTAINER=	stas@FreeBSD.org
 COMMENT=	X.Org RDC display driver
@@ -17,8 +17,6 @@ COMMENT=	X.Org RDC display driver
 #USE_GL=		gl
 XORG_CAT=	driver
 USE_XORG=	xvmc xf86driproto xextproto x11 glproto
-
-BROKEN=		does not compile
 
 do-install:
 	${MKDIR} ${PREFIX}/lib/xorg/modules/drivers

@@ -4,7 +4,7 @@ if [ "$2" != "POST-INSTALL" ]; then
 	exit 0
 fi
 
-PKG_PREFIX=${PKG_PREFIX:=/usr/X11R6}
+PKG_PREFIX=${PKG_PREFIX:=/usr/local}
 
 XINITCONFDIR=${PKG_PREFIX}/etc/X11/fs
 if [ ! -f ${XINITCONFDIR}/config ]; then

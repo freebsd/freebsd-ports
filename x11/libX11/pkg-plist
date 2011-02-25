@@ -1,23 +1,8 @@
-%%DOCSDIR%%/libX11.txt
-%%DOCSDIR%%/libX11.ps
-%%DOCSDIR%%/libX11.html
-%%DOCSDIR%%/Framework.txt
-%%DOCSDIR%%/LocaleDB.txt
-%%DOCSDIR%%/Trans.txt
-%%DOCSDIR%%/Framework.ps
-%%DOCSDIR%%/LocaleDB.ps
-%%DOCSDIR%%/Trans.ps
-%%DOCSDIR%%/Framework.html
-%%DOCSDIR%%/LocaleDB.html
-%%DOCSDIR%%/Trans.html
-%%DOCSDIR%%/xim.txt
-%%DOCSDIR%%/xim.ps
-%%DOCSDIR%%/xim.html
 include/X11/ImUtil.h
 include/X11/XKBlib.h
 include/X11/Xcms.h
-include/X11/Xlib.h
 include/X11/Xlib-xcb.h
+include/X11/Xlib.h
 include/X11/XlibConf.h
 include/X11/Xlibint.h
 include/X11/Xlocale.h
@@ -25,212 +10,210 @@ include/X11/Xregion.h
 include/X11/Xresource.h
 include/X11/Xutil.h
 include/X11/cursorfont.h
+lib/X11/XErrorDB
 lib/X11/Xcms.txt
-lib/libX11.a
-lib/libX11.la
-lib/libX11.so
-lib/libX11.so.6
+lib/X11/locale/C/Compose
+lib/X11/locale/C/XI18N_OBJS
+lib/X11/locale/C/XLC_LOCALE
+lib/X11/locale/am_ET.UTF-8/Compose
+lib/X11/locale/am_ET.UTF-8/XI18N_OBJS
+lib/X11/locale/am_ET.UTF-8/XLC_LOCALE
+lib/X11/locale/armscii-8/Compose
+lib/X11/locale/armscii-8/XI18N_OBJS
+lib/X11/locale/armscii-8/XLC_LOCALE
+lib/X11/locale/compose.dir
+lib/X11/locale/el_GR.UTF-8/Compose
+lib/X11/locale/el_GR.UTF-8/XI18N_OBJS
+lib/X11/locale/el_GR.UTF-8/XLC_LOCALE
+lib/X11/locale/en_US.UTF-8/Compose
+lib/X11/locale/en_US.UTF-8/XI18N_OBJS
+lib/X11/locale/en_US.UTF-8/XLC_LOCALE
+lib/X11/locale/fi_FI.UTF-8/Compose
+lib/X11/locale/fi_FI.UTF-8/XI18N_OBJS
+lib/X11/locale/fi_FI.UTF-8/XLC_LOCALE
+lib/X11/locale/georgian-academy/Compose
+lib/X11/locale/georgian-academy/XI18N_OBJS
+lib/X11/locale/georgian-academy/XLC_LOCALE
+lib/X11/locale/georgian-ps/Compose
+lib/X11/locale/georgian-ps/XI18N_OBJS
+lib/X11/locale/georgian-ps/XLC_LOCALE
+lib/X11/locale/ibm-cp1133/Compose
+lib/X11/locale/ibm-cp1133/XI18N_OBJS
+lib/X11/locale/ibm-cp1133/XLC_LOCALE
+lib/X11/locale/iscii-dev/Compose
+lib/X11/locale/iscii-dev/XI18N_OBJS
+lib/X11/locale/iscii-dev/XLC_LOCALE
+lib/X11/locale/isiri-3342/Compose
+lib/X11/locale/isiri-3342/XI18N_OBJS
+lib/X11/locale/isiri-3342/XLC_LOCALE
+lib/X11/locale/iso8859-1/Compose
+lib/X11/locale/iso8859-1/XI18N_OBJS
+lib/X11/locale/iso8859-1/XLC_LOCALE
+lib/X11/locale/iso8859-10/Compose
+lib/X11/locale/iso8859-10/XI18N_OBJS
+lib/X11/locale/iso8859-10/XLC_LOCALE
+lib/X11/locale/iso8859-11/Compose
+lib/X11/locale/iso8859-11/XI18N_OBJS
+lib/X11/locale/iso8859-11/XLC_LOCALE
+lib/X11/locale/iso8859-13/Compose
+lib/X11/locale/iso8859-13/XI18N_OBJS
+lib/X11/locale/iso8859-13/XLC_LOCALE
+lib/X11/locale/iso8859-14/Compose
+lib/X11/locale/iso8859-14/XI18N_OBJS
+lib/X11/locale/iso8859-14/XLC_LOCALE
+lib/X11/locale/iso8859-15/Compose
+lib/X11/locale/iso8859-15/XI18N_OBJS
+lib/X11/locale/iso8859-15/XLC_LOCALE
+lib/X11/locale/iso8859-2/Compose
+lib/X11/locale/iso8859-2/XI18N_OBJS
+lib/X11/locale/iso8859-2/XLC_LOCALE
+lib/X11/locale/iso8859-3/Compose
+lib/X11/locale/iso8859-3/XI18N_OBJS
+lib/X11/locale/iso8859-3/XLC_LOCALE
+lib/X11/locale/iso8859-4/Compose
+lib/X11/locale/iso8859-4/XI18N_OBJS
+lib/X11/locale/iso8859-4/XLC_LOCALE
+lib/X11/locale/iso8859-5/Compose
+lib/X11/locale/iso8859-5/XI18N_OBJS
+lib/X11/locale/iso8859-5/XLC_LOCALE
+lib/X11/locale/iso8859-6/Compose
+lib/X11/locale/iso8859-6/XI18N_OBJS
+lib/X11/locale/iso8859-6/XLC_LOCALE
+lib/X11/locale/iso8859-7/Compose
+lib/X11/locale/iso8859-7/XI18N_OBJS
+lib/X11/locale/iso8859-7/XLC_LOCALE
+lib/X11/locale/iso8859-8/Compose
+lib/X11/locale/iso8859-8/XI18N_OBJS
+lib/X11/locale/iso8859-8/XLC_LOCALE
+lib/X11/locale/iso8859-9/Compose
+lib/X11/locale/iso8859-9/XI18N_OBJS
+lib/X11/locale/iso8859-9/XLC_LOCALE
+lib/X11/locale/iso8859-9e/Compose
+lib/X11/locale/iso8859-9e/XI18N_OBJS
+lib/X11/locale/iso8859-9e/XLC_LOCALE
+lib/X11/locale/ja.JIS/Compose
+lib/X11/locale/ja.JIS/XI18N_OBJS
+lib/X11/locale/ja.JIS/XLC_LOCALE
+lib/X11/locale/ja.S90/Compose
+lib/X11/locale/ja.S90/XI18N_OBJS
+lib/X11/locale/ja.S90/XLC_LOCALE
+lib/X11/locale/ja.SJIS/Compose
+lib/X11/locale/ja.SJIS/XI18N_OBJS
+lib/X11/locale/ja.SJIS/XLC_LOCALE
+lib/X11/locale/ja.U90/Compose
+lib/X11/locale/ja.U90/XI18N_OBJS
+lib/X11/locale/ja.U90/XLC_LOCALE
+lib/X11/locale/ja/Compose
+lib/X11/locale/ja/XI18N_OBJS
+lib/X11/locale/ja/XLC_LOCALE
+lib/X11/locale/ja_JP.UTF-8/Compose
+lib/X11/locale/ja_JP.UTF-8/XI18N_OBJS
+lib/X11/locale/ja_JP.UTF-8/XLC_LOCALE
+lib/X11/locale/ko/Compose
+lib/X11/locale/ko/XI18N_OBJS
+lib/X11/locale/ko/XLC_LOCALE
+lib/X11/locale/ko_KR.UTF-8/Compose
+lib/X11/locale/ko_KR.UTF-8/XI18N_OBJS
+lib/X11/locale/ko_KR.UTF-8/XLC_LOCALE
+lib/X11/locale/koi8-c/Compose
+lib/X11/locale/koi8-c/XI18N_OBJS
+lib/X11/locale/koi8-c/XLC_LOCALE
+lib/X11/locale/koi8-r/Compose
+lib/X11/locale/koi8-r/XI18N_OBJS
+lib/X11/locale/koi8-r/XLC_LOCALE
+lib/X11/locale/koi8-u/Compose
+lib/X11/locale/koi8-u/XI18N_OBJS
+lib/X11/locale/koi8-u/XLC_LOCALE
+lib/X11/locale/locale.alias
+lib/X11/locale/locale.dir
+lib/X11/locale/microsoft-cp1251/Compose
+lib/X11/locale/microsoft-cp1251/XI18N_OBJS
+lib/X11/locale/microsoft-cp1251/XLC_LOCALE
+lib/X11/locale/microsoft-cp1255/Compose
+lib/X11/locale/microsoft-cp1255/XI18N_OBJS
+lib/X11/locale/microsoft-cp1255/XLC_LOCALE
+lib/X11/locale/microsoft-cp1256/Compose
+lib/X11/locale/microsoft-cp1256/XI18N_OBJS
+lib/X11/locale/microsoft-cp1256/XLC_LOCALE
+lib/X11/locale/mulelao-1/Compose
+lib/X11/locale/mulelao-1/XI18N_OBJS
+lib/X11/locale/mulelao-1/XLC_LOCALE
+lib/X11/locale/nokhchi-1/Compose
+lib/X11/locale/nokhchi-1/XI18N_OBJS
+lib/X11/locale/nokhchi-1/XLC_LOCALE
+lib/X11/locale/pt_BR.UTF-8/Compose
+lib/X11/locale/pt_BR.UTF-8/XI18N_OBJS
+lib/X11/locale/pt_BR.UTF-8/XLC_LOCALE
+lib/X11/locale/ru_RU.UTF-8/Compose
+lib/X11/locale/ru_RU.UTF-8/XI18N_OBJS
+lib/X11/locale/ru_RU.UTF-8/XLC_LOCALE
+lib/X11/locale/tatar-cyr/Compose
+lib/X11/locale/tatar-cyr/XI18N_OBJS
+lib/X11/locale/tatar-cyr/XLC_LOCALE
+lib/X11/locale/th_TH.UTF-8/Compose
+lib/X11/locale/th_TH.UTF-8/XI18N_OBJS
+lib/X11/locale/th_TH.UTF-8/XLC_LOCALE
+lib/X11/locale/th_TH/Compose
+lib/X11/locale/th_TH/XI18N_OBJS
+lib/X11/locale/th_TH/XLC_LOCALE
+lib/X11/locale/tscii-0/Compose
+lib/X11/locale/tscii-0/XI18N_OBJS
+lib/X11/locale/tscii-0/XLC_LOCALE
+lib/X11/locale/vi_VN.tcvn/Compose
+lib/X11/locale/vi_VN.tcvn/XI18N_OBJS
+lib/X11/locale/vi_VN.tcvn/XLC_LOCALE
+lib/X11/locale/vi_VN.viscii/Compose
+lib/X11/locale/vi_VN.viscii/XI18N_OBJS
+lib/X11/locale/vi_VN.viscii/XLC_LOCALE
+lib/X11/locale/zh_CN.UTF-8/Compose
+lib/X11/locale/zh_CN.UTF-8/XI18N_OBJS
+lib/X11/locale/zh_CN.UTF-8/XLC_LOCALE
+lib/X11/locale/zh_CN.gb18030/Compose
+lib/X11/locale/zh_CN.gb18030/XI18N_OBJS
+lib/X11/locale/zh_CN.gb18030/XLC_LOCALE
+lib/X11/locale/zh_CN.gbk/Compose
+lib/X11/locale/zh_CN.gbk/XI18N_OBJS
+lib/X11/locale/zh_CN.gbk/XLC_LOCALE
+lib/X11/locale/zh_CN/Compose
+lib/X11/locale/zh_CN/XI18N_OBJS
+lib/X11/locale/zh_CN/XLC_LOCALE
+lib/X11/locale/zh_HK.UTF-8/Compose
+lib/X11/locale/zh_HK.UTF-8/XI18N_OBJS
+lib/X11/locale/zh_HK.UTF-8/XLC_LOCALE
+lib/X11/locale/zh_HK.big5/Compose
+lib/X11/locale/zh_HK.big5/XI18N_OBJS
+lib/X11/locale/zh_HK.big5/XLC_LOCALE
+lib/X11/locale/zh_HK.big5hkscs/Compose
+lib/X11/locale/zh_HK.big5hkscs/XI18N_OBJS
+lib/X11/locale/zh_HK.big5hkscs/XLC_LOCALE
+lib/X11/locale/zh_TW.UTF-8/Compose
+lib/X11/locale/zh_TW.UTF-8/XI18N_OBJS
+lib/X11/locale/zh_TW.UTF-8/XLC_LOCALE
+lib/X11/locale/zh_TW.big5/Compose
+lib/X11/locale/zh_TW.big5/XI18N_OBJS
+lib/X11/locale/zh_TW.big5/XLC_LOCALE
+lib/X11/locale/zh_TW/Compose
+lib/X11/locale/zh_TW/XI18N_OBJS
+lib/X11/locale/zh_TW/XLC_LOCALE
 lib/libX11-xcb.a
 lib/libX11-xcb.la
 lib/libX11-xcb.so
 lib/libX11-xcb.so.1
-libdata/pkgconfig/x11.pc
+lib/libX11.a
+lib/libX11.la
+lib/libX11.so
+lib/libX11.so.6
 libdata/pkgconfig/x11-xcb.pc
-lib/X11/XErrorDB
-lib/X11/XKeysymDB
-lib/X11/locale/am_ET.UTF-8/XI18N_OBJS
-lib/X11/locale/am_ET.UTF-8/XLC_LOCALE
-lib/X11/locale/am_ET.UTF-8/Compose
-lib/X11/locale/armscii-8/XI18N_OBJS
-lib/X11/locale/armscii-8/XLC_LOCALE
-lib/X11/locale/armscii-8/Compose
-lib/X11/locale/C/XI18N_OBJS
-lib/X11/locale/C/XLC_LOCALE
-lib/X11/locale/C/Compose
-lib/X11/locale/el_GR.UTF-8/XI18N_OBJS
-lib/X11/locale/el_GR.UTF-8/XLC_LOCALE
-lib/X11/locale/el_GR.UTF-8/Compose
-lib/X11/locale/en_US.UTF-8/XI18N_OBJS
-lib/X11/locale/en_US.UTF-8/XLC_LOCALE
-lib/X11/locale/en_US.UTF-8/Compose
-lib/X11/locale/fi_FI.UTF-8/XI18N_OBJS
-lib/X11/locale/fi_FI.UTF-8/XLC_LOCALE
-lib/X11/locale/fi_FI.UTF-8/Compose
-lib/X11/locale/georgian-academy/XI18N_OBJS
-lib/X11/locale/georgian-academy/XLC_LOCALE
-lib/X11/locale/georgian-academy/Compose
-lib/X11/locale/georgian-ps/XI18N_OBJS
-lib/X11/locale/georgian-ps/XLC_LOCALE
-lib/X11/locale/georgian-ps/Compose
-lib/X11/locale/ibm-cp1133/XI18N_OBJS
-lib/X11/locale/ibm-cp1133/XLC_LOCALE
-lib/X11/locale/ibm-cp1133/Compose
-lib/X11/locale/iscii-dev/XI18N_OBJS
-lib/X11/locale/iscii-dev/XLC_LOCALE
-lib/X11/locale/iscii-dev/Compose
-lib/X11/locale/isiri-3342/XI18N_OBJS
-lib/X11/locale/isiri-3342/XLC_LOCALE
-lib/X11/locale/isiri-3342/Compose
-lib/X11/locale/iso8859-1/XI18N_OBJS
-lib/X11/locale/iso8859-1/XLC_LOCALE
-lib/X11/locale/iso8859-1/Compose
-lib/X11/locale/iso8859-10/XI18N_OBJS
-lib/X11/locale/iso8859-10/XLC_LOCALE
-lib/X11/locale/iso8859-10/Compose
-lib/X11/locale/iso8859-11/XI18N_OBJS
-lib/X11/locale/iso8859-11/XLC_LOCALE
-lib/X11/locale/iso8859-11/Compose
-lib/X11/locale/iso8859-13/XI18N_OBJS
-lib/X11/locale/iso8859-13/XLC_LOCALE
-lib/X11/locale/iso8859-13/Compose
-lib/X11/locale/iso8859-14/XI18N_OBJS
-lib/X11/locale/iso8859-14/XLC_LOCALE
-lib/X11/locale/iso8859-14/Compose
-lib/X11/locale/iso8859-15/XI18N_OBJS
-lib/X11/locale/iso8859-15/XLC_LOCALE
-lib/X11/locale/iso8859-15/Compose
-lib/X11/locale/iso8859-2/XI18N_OBJS
-lib/X11/locale/iso8859-2/XLC_LOCALE
-lib/X11/locale/iso8859-2/Compose
-lib/X11/locale/iso8859-3/XI18N_OBJS
-lib/X11/locale/iso8859-3/XLC_LOCALE
-lib/X11/locale/iso8859-3/Compose
-lib/X11/locale/iso8859-4/XI18N_OBJS
-lib/X11/locale/iso8859-4/XLC_LOCALE
-lib/X11/locale/iso8859-4/Compose
-lib/X11/locale/iso8859-5/XI18N_OBJS
-lib/X11/locale/iso8859-5/XLC_LOCALE
-lib/X11/locale/iso8859-5/Compose
-lib/X11/locale/iso8859-6/XI18N_OBJS
-lib/X11/locale/iso8859-6/XLC_LOCALE
-lib/X11/locale/iso8859-6/Compose
-lib/X11/locale/iso8859-7/XI18N_OBJS
-lib/X11/locale/iso8859-7/XLC_LOCALE
-lib/X11/locale/iso8859-7/Compose
-lib/X11/locale/iso8859-8/XI18N_OBJS
-lib/X11/locale/iso8859-8/XLC_LOCALE
-lib/X11/locale/iso8859-8/Compose
-lib/X11/locale/iso8859-9/XI18N_OBJS
-lib/X11/locale/iso8859-9/XLC_LOCALE
-lib/X11/locale/iso8859-9/Compose
-lib/X11/locale/iso8859-9e/XI18N_OBJS
-lib/X11/locale/iso8859-9e/XLC_LOCALE
-lib/X11/locale/iso8859-9e/Compose
-lib/X11/locale/ja/XI18N_OBJS
-lib/X11/locale/ja/XLC_LOCALE
-lib/X11/locale/ja/Compose
-lib/X11/locale/ja.JIS/XI18N_OBJS
-lib/X11/locale/ja.JIS/XLC_LOCALE
-lib/X11/locale/ja.JIS/Compose
-lib/X11/locale/ja_JP.UTF-8/XI18N_OBJS
-lib/X11/locale/ja_JP.UTF-8/XLC_LOCALE
-lib/X11/locale/ja_JP.UTF-8/Compose
-lib/X11/locale/ja.S90/XI18N_OBJS
-lib/X11/locale/ja.S90/XLC_LOCALE
-lib/X11/locale/ja.S90/Compose
-lib/X11/locale/ja.SJIS/XI18N_OBJS
-lib/X11/locale/ja.SJIS/XLC_LOCALE
-lib/X11/locale/ja.SJIS/Compose
-lib/X11/locale/ja.U90/XI18N_OBJS
-lib/X11/locale/ja.U90/XLC_LOCALE
-lib/X11/locale/ja.U90/Compose
-lib/X11/locale/ko/XI18N_OBJS
-lib/X11/locale/ko/XLC_LOCALE
-lib/X11/locale/ko/Compose
-lib/X11/locale/koi8-c/XI18N_OBJS
-lib/X11/locale/koi8-c/XLC_LOCALE
-lib/X11/locale/koi8-c/Compose
-lib/X11/locale/koi8-r/XI18N_OBJS
-lib/X11/locale/koi8-r/XLC_LOCALE
-lib/X11/locale/koi8-r/Compose
-lib/X11/locale/koi8-u/XI18N_OBJS
-lib/X11/locale/koi8-u/XLC_LOCALE
-lib/X11/locale/koi8-u/Compose
-lib/X11/locale/ko_KR.UTF-8/XI18N_OBJS
-lib/X11/locale/ko_KR.UTF-8/XLC_LOCALE
-lib/X11/locale/ko_KR.UTF-8/Compose
-lib/X11/locale/microsoft-cp1251/XI18N_OBJS
-lib/X11/locale/microsoft-cp1251/XLC_LOCALE
-lib/X11/locale/microsoft-cp1251/Compose
-lib/X11/locale/microsoft-cp1255/XI18N_OBJS
-lib/X11/locale/microsoft-cp1255/XLC_LOCALE
-lib/X11/locale/microsoft-cp1255/Compose
-lib/X11/locale/microsoft-cp1256/XI18N_OBJS
-lib/X11/locale/microsoft-cp1256/XLC_LOCALE
-lib/X11/locale/microsoft-cp1256/Compose
-lib/X11/locale/mulelao-1/XI18N_OBJS
-lib/X11/locale/mulelao-1/XLC_LOCALE
-lib/X11/locale/mulelao-1/Compose
-lib/X11/locale/nokhchi-1/XI18N_OBJS
-lib/X11/locale/nokhchi-1/XLC_LOCALE
-lib/X11/locale/nokhchi-1/Compose
-lib/X11/locale/pt_BR.UTF-8/XI18N_OBJS
-lib/X11/locale/pt_BR.UTF-8/XLC_LOCALE
-lib/X11/locale/pt_BR.UTF-8/Compose
-lib/X11/locale/ru_RU.UTF-8/XI18N_OBJS
-lib/X11/locale/ru_RU.UTF-8/XLC_LOCALE
-lib/X11/locale/ru_RU.UTF-8/Compose
-lib/X11/locale/tatar-cyr/XI18N_OBJS
-lib/X11/locale/tatar-cyr/XLC_LOCALE
-lib/X11/locale/tatar-cyr/Compose
-lib/X11/locale/th_TH/XI18N_OBJS
-lib/X11/locale/th_TH/XLC_LOCALE
-lib/X11/locale/th_TH/Compose
-lib/X11/locale/th_TH.UTF-8/XI18N_OBJS
-lib/X11/locale/th_TH.UTF-8/XLC_LOCALE
-lib/X11/locale/th_TH.UTF-8/Compose
-lib/X11/locale/tscii-0/XI18N_OBJS
-lib/X11/locale/tscii-0/XLC_LOCALE
-lib/X11/locale/tscii-0/Compose
-lib/X11/locale/vi_VN.tcvn/XI18N_OBJS
-lib/X11/locale/vi_VN.tcvn/XLC_LOCALE
-lib/X11/locale/vi_VN.tcvn/Compose
-lib/X11/locale/vi_VN.viscii/XI18N_OBJS
-lib/X11/locale/vi_VN.viscii/XLC_LOCALE
-lib/X11/locale/vi_VN.viscii/Compose
-lib/X11/locale/zh_CN/XI18N_OBJS
-lib/X11/locale/zh_CN/XLC_LOCALE
-lib/X11/locale/zh_CN/Compose
-lib/X11/locale/zh_CN.gb18030/XI18N_OBJS
-lib/X11/locale/zh_CN.gb18030/XLC_LOCALE
-lib/X11/locale/zh_CN.gb18030/Compose
-lib/X11/locale/zh_CN.gbk/XI18N_OBJS
-lib/X11/locale/zh_CN.gbk/XLC_LOCALE
-lib/X11/locale/zh_CN.gbk/Compose
-lib/X11/locale/zh_TW/XI18N_OBJS
-lib/X11/locale/zh_TW/XLC_LOCALE
-lib/X11/locale/zh_TW/Compose
-lib/X11/locale/zh_CN.UTF-8/XI18N_OBJS
-lib/X11/locale/zh_CN.UTF-8/XLC_LOCALE
-lib/X11/locale/zh_CN.UTF-8/Compose
-lib/X11/locale/zh_HK.big5/XI18N_OBJS
-lib/X11/locale/zh_HK.big5/XLC_LOCALE
-lib/X11/locale/zh_HK.big5/Compose
-lib/X11/locale/zh_HK.big5hkscs/XI18N_OBJS
-lib/X11/locale/zh_HK.big5hkscs/XLC_LOCALE
-lib/X11/locale/zh_HK.big5hkscs/Compose
-lib/X11/locale/zh_HK.UTF-8/XI18N_OBJS
-lib/X11/locale/zh_HK.UTF-8/XLC_LOCALE
-lib/X11/locale/zh_HK.UTF-8/Compose
-lib/X11/locale/zh_TW.big5/XI18N_OBJS
-lib/X11/locale/zh_TW.big5/XLC_LOCALE
-lib/X11/locale/zh_TW.big5/Compose
-lib/X11/locale/zh_TW.UTF-8/XI18N_OBJS
-lib/X11/locale/zh_TW.UTF-8/XLC_LOCALE
-lib/X11/locale/zh_TW.UTF-8/Compose
-lib/X11/locale/locale.alias
-lib/X11/locale/locale.dir
-lib/X11/locale/compose.dir
-@dirrmtry %%DOCSDIR%%
-@dirrm lib/X11/locale/zh_TW.UTF-8
+libdata/pkgconfig/x11.pc
 @dirrm lib/X11/locale/zh_TW.big5
-@dirrm lib/X11/locale/zh_HK.UTF-8
+@dirrm lib/X11/locale/zh_TW.UTF-8
+@dirrm lib/X11/locale/zh_TW
 @dirrm lib/X11/locale/zh_HK.big5hkscs
 @dirrm lib/X11/locale/zh_HK.big5
-@dirrm lib/X11/locale/zh_CN.UTF-8
-@dirrm lib/X11/locale/zh_TW
+@dirrm lib/X11/locale/zh_HK.UTF-8
 @dirrm lib/X11/locale/zh_CN.gbk
 @dirrm lib/X11/locale/zh_CN.gb18030
+@dirrm lib/X11/locale/zh_CN.UTF-8
 @dirrm lib/X11/locale/zh_CN
 @dirrm lib/X11/locale/vi_VN.viscii
 @dirrm lib/X11/locale/vi_VN.tcvn
@@ -245,15 +228,15 @@ lib/X11/locale/compose.dir
 @dirrm lib/X11/locale/microsoft-cp1256
 @dirrm lib/X11/locale/microsoft-cp1255
 @dirrm lib/X11/locale/microsoft-cp1251
-@dirrm lib/X11/locale/ko_KR.UTF-8
 @dirrm lib/X11/locale/koi8-u
 @dirrm lib/X11/locale/koi8-r
 @dirrm lib/X11/locale/koi8-c
+@dirrm lib/X11/locale/ko_KR.UTF-8
 @dirrm lib/X11/locale/ko
+@dirrm lib/X11/locale/ja_JP.UTF-8
 @dirrm lib/X11/locale/ja.U90
 @dirrm lib/X11/locale/ja.SJIS
 @dirrm lib/X11/locale/ja.S90
-@dirrm lib/X11/locale/ja_JP.UTF-8
 @dirrm lib/X11/locale/ja.JIS
 @dirrm lib/X11/locale/ja
 @dirrm lib/X11/locale/iso8859-9e
@@ -279,7 +262,7 @@ lib/X11/locale/compose.dir
 @dirrm lib/X11/locale/fi_FI.UTF-8
 @dirrm lib/X11/locale/en_US.UTF-8
 @dirrm lib/X11/locale/el_GR.UTF-8
-@dirrm lib/X11/locale/C
 @dirrm lib/X11/locale/armscii-8
 @dirrm lib/X11/locale/am_ET.UTF-8
+@dirrm lib/X11/locale/C
 @dirrm lib/X11/locale

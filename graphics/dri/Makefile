@@ -21,9 +21,9 @@ MAKE_JOBS_UNSAFE=	yes
 
 USE_XORG=	glproto x11 xext xxf86vm xdamage xfixes dri2proto
 
-.ifndef WITHOUT_NOUVEAU
-EXTRA_PATCHES+=	${FILESDIR}/mesalib74-configure
-.endif
+EXTRA_PATCHES+=	${FILESDIR}/patch-mach64_context.h \
+		${FILESDIR}/patch-sis_context.h
+
 
 do-install:
 	cd ${WRKSRC}/src/mesa; ${GMAKE} install-dri
