@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	twolame
-PORTVERSION=	0.3.12
+PORTVERSION=	0.3.13
 CATEGORIES=	audio
 MASTER_SITES=	SF \
 		http://www.ecs.soton.ac.uk/~njh/twolame/
-
 
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	MPEG Audio Layer 2 encoder
