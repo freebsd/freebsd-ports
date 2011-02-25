@@ -265,7 +265,7 @@ LIB_DEPENDS+=		ltdl.7:${PORTSDIR}/devel/libltdl
 #---------------------------------------------------------------------------
 
 .if defined(_AUTOTOOL_libtool) || defined(_AUTOTOOL_libtoolize)
-LIBTOOL_VERSION=	2.2.10
+LIBTOOL_VERSION=	2.4
 LIBTOOL_PORT=		devel/libtool
 
 . if defined(_AUTOTOOL_libtool) && ${_AUTOTOOL_libtool} == "yes"
@@ -302,7 +302,7 @@ LIBTOOLFILES?=		aclocal.m4
 LIBTOOLFILES?=		${CONFIGURE_SCRIPT}
 . endif
 
-LIBTOOL_DEPENDS=	libtool>=2.2:${PORTSDIR}/${LIBTOOL_PORT}
+LIBTOOL_DEPENDS=	libtool>=2.4:${PORTSDIR}/${LIBTOOL_PORT}
 BUILD_DEPENDS+=		${LIBTOOL_DEPENDS}
 .endif
 
