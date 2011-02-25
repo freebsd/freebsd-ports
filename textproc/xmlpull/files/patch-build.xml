@@ -1,7 +1,85 @@
-$FreeBSD$
-
---- build.xml.orig	Wed Feb  9 22:07:59 2005
-+++ build.xml	Wed Feb  9 22:08:01 2005
+--- build.xml.orig	2004-01-15 18:28:39.000000000 +0100
++++ build.xml	2011-02-25 14:27:15.000000000 +0100
+@@ -142,7 +142,7 @@
+   <!-- =================================================================== -->
+ 
+   <target name="api" depends="prepare">
+-    <javac debug="${debug}" deprecation="${deprecation}" target="1.1"
++    <javac debug="${debug}" deprecation="${deprecation}" target="1.1" source="1.2"
+        srcdir="${src_api}" destdir="${build_classes}" classpath="${build_classes}"/>
+   </target>
+ 
+@@ -157,7 +157,7 @@
+ 
+   <target name="samples" depends="xmlpull">
+     <mkdir dir="${build_samples}"/>
+-    <javac debug="${debug}" deprecation="${deprecation}" target="1.1"
++    <javac debug="${debug}" deprecation="${deprecation}" target="1.1" source="1.2"
+       srcdir="${src_samples}" destdir="${build_samples}"
+       classpath="${build_classes}"/>
+   </target>
+@@ -174,7 +174,7 @@
+ 
+   <target name="dom2_builder" depends="api">
+     <mkdir dir="${build_dom2_builder}"/>
+-    <javac debug="${debug}" deprecation="${deprecation}" target="1.1"
++    <javac debug="${debug}" deprecation="${deprecation}" target="1.1" source="1.2"
+        srcdir="${src_dom2_builder}" destdir="${build_dom2_builder}" 
+        classpath="${build_classes}"/>
+     <jar jarfile="${jar_dom2_builder}">
+@@ -184,7 +184,7 @@
+ 
+   <target name="parser_pool" depends="api">
+     <mkdir dir="${build_parser_pool}"/>
+-    <javac debug="${debug}" deprecation="${deprecation}" target="1.1"
++    <javac debug="${debug}" deprecation="${deprecation}" target="1.1" source="1.2"
+        srcdir="${src_parser_pool}" destdir="${build_parser_pool}" 
+        classpath="${build_classes}"/>
+     <jar jarfile="${jar_parser_pool}">
+@@ -194,7 +194,7 @@
+ 
+   <target name="sax2" depends="api">
+     <mkdir dir="${build_sax2}"/>
+-    <javac debug="${debug}" deprecation="${deprecation}" target="1.1"
++    <javac debug="${debug}" deprecation="${deprecation}" target="1.1" source="1.2"
+        srcdir="${src_sax2}" destdir="${build_sax2}">
+        <classpath>
+         <pathelement location="${build_classes}" />
+@@ -210,7 +210,7 @@
+ 
+   <target name="util" depends="api">
+     <mkdir dir="${build_util}"/>
+-    <javac debug="${debug}" deprecation="${deprecation}" target="1.1"
++    <javac debug="${debug}" deprecation="${deprecation}" target="1.1" source="1.2"
+        srcdir="${src_util}" destdir="${build_util}" classpath="${build_classes}"/>
+     <jar jarfile="${jar_util}">
+       <fileset dir="${build_util}"/>
+@@ -219,7 +219,7 @@
+ 
+   <target name="wrapper" depends="require_junit,util">
+     <mkdir dir="${build_wrapper}"/>
+-    <javac debug="${debug}" deprecation="${deprecation}" target="1.1"
++    <javac debug="${debug}" deprecation="${deprecation}" target="1.1" source="1.2"
+        srcdir="${src_wrapper}" destdir="${build_wrapper}" classpath="${build_classes}:${build_util}"/>
+     <jar jarfile="${jar_wrapper}">
+       <fileset dir="${build_wrapper}"/>
+@@ -228,14 +228,14 @@
+ 
+   <target name="wrapper_tests" depends="require_junit,wrapper">
+     <mkdir dir="${build_addons_tests}"/>
+-    <javac debug="${debug}" deprecation="${deprecation}" target="1.1"
++    <javac debug="${debug}" deprecation="${deprecation}" target="1.1" source="1.2"
+        srcdir="${src_wrapper_tests}" destdir="${build_wrapper}" 
+        classpath="${build_classes}:${build_util}:${build_wrapper}"/>
+   </target>
+ 
+   <target name="xmlrpc" depends="api">
+     <mkdir dir="${build_xmlrpc}"/>
+-    <javac debug="${debug}" deprecation="${deprecation}" target="1.1"
++    <javac debug="${debug}" deprecation="${deprecation}" target="1.1" source="1.2"
+        srcdir="${src_xmlrpc}" destdir="${build_xmlrpc}" classpath="${build_classes}"/>
+     <jar jarfile="${jar_xmlrpc}">
+       <fileset dir="${build_xmlrpc}"/>
 @@ -319,8 +319,9 @@
               windowtitle="${name} ${version} API"
               doctitle="${name}"
