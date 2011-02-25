@@ -59,7 +59,10 @@ share/applications/dvdstyler.desktop
 %%DATADIR%%/docs/help_en.zip
 %%DATADIR%%/docs/help_ja.zip
 %%DATADIR%%/docs/help_nb.zip
+%%DATADIR%%/docs/help_pl.zip
 %%DATADIR%%/docs/help_ru.zip
+%%DATADIR%%/docs/help_uk.zip
+%%DATADIR%%/docs/help_zh_CN.zip
 %%DATADIR%%/objects/ellipse.xml
 %%DATADIR%%/objects/frame.xml
 %%DATADIR%%/objects/image.xml
@@ -85,8 +88,10 @@ share/applications/dvdstyler.desktop
 %%DATADIR%%/rc/save.png
 %%DATADIR%%/templates/blue.dvdt
 %%DATADIR%%/templates/blue.png
+%%DATADIR%%/templates/blueWS.dvdt
 %%DATADIR%%/templates/travel.dvdt
 %%DATADIR%%/templates/travel.png
+%%DATADIR%%/templates/travelWS.dvdt
 %%DATADIR%%/templates/turbulence.dvdt
 %%DATADIR%%/templates/turbulence.png
 share/locale/cs/LC_MESSAGES/dvdstyler.mo
@@ -113,6 +118,9 @@ share/locale/sl/LC_MESSAGES/dvdstyler.mo
 share/locale/sr/LC_MESSAGES/dvdstyler.mo
 share/locale/sv/LC_MESSAGES/dvdstyler.mo
 share/locale/vi/LC_MESSAGES/dvdstyler.mo
+share/locale/uk/LC_MESSAGES/dvdstyler.mo
+share/locale/zh_CN/LC_MESSAGES/dvdstyler.mo
+share/locale/zh_TW/LC_MESSAGES/dvdstyler.mo
 share/pixmaps/dvdstyler.png
 @dirrm %%DATADIR%%/templates
 @dirrm %%DATADIR%%/rc
