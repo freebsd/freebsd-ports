@@ -6,7 +6,7 @@
 
 PORTNAME=	mediaproxy
 PORTVERSION=	1.8.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	http://mediaproxy.ag-projects.com/ \
 		http://mediaproxy.ag-projects.com/old/
@@ -18,7 +18,7 @@ USE_RC_SUBR=	mediaproxy.sh
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-USE_PYTHON=	2.4+
+USE_PYTHON=	2.5+
 
 OPTIONS=	ACCOUNTING "ACCOUNTING support (Requires MySQL)" off
 

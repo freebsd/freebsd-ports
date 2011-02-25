@@ -1,6 +1,4 @@
-MD5 (python/glewpy-0.7.4.tar.gz) = 3d2aae86aae328ab60897915bf9530fc
 SHA256 (python/glewpy-0.7.4.tar.gz) = 19434289d079d9f70d7dde75b6eb4d8ca6488a1427fb2786ebd6fe24fb97a0ec
 SIZE (python/glewpy-0.7.4.tar.gz) = 65262
-MD5 (python/glewpy-0.7.4-generatedsources.diff.bz2) = ee6ed1f96c0275d9f3968c91fa68b9d5
 SHA256 (python/glewpy-0.7.4-generatedsources.diff.bz2) = b143b18e981169b6bfefdc173138ca47e0bc8049d5a1b90b2cd24d8a1b615a5a
 SIZE (python/glewpy-0.7.4-generatedsources.diff.bz2) = 193256

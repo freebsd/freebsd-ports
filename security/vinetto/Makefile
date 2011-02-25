@@ -7,7 +7,7 @@
 
 PORTNAME=	vinetto
 PORTVERSION=	0.07
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-beta-${PORTVERSION}
 DISTNAME=	${PORTNAME}-beta-${PORTVERSION}
@@ -17,7 +17,7 @@ COMMENT=	A forensics tool to examine Thumbs.db files
 
 OPTIONS=	IMAGING "Build with ability to extract graphic thumbnails" on
 
-USE_PYTHON=	2.4+
+USE_PYTHON=	2.5+
 USE_PYDISTUTILS=yes
 PYDISTUTILS_PKGVERSION=	0.06alpha
 

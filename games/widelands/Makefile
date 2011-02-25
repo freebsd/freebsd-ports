@@ -7,7 +7,7 @@
 
 PORTNAME=	widelands
 DISTVERSION=	build13
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/Old%20releases%20%21%21%21/build-13/
 DISTNAME=	${PORTNAME:C/^w/W/}-${DISTVERSION:C/^b/B/}-src
@@ -20,7 +20,7 @@ LIB_DEPENDS=	png.6:${PORTSDIR}/graphics/png \
 
 USE_BZIP2=	yes
 USE_GETTEXT=	yes
-USE_PYTHON_BUILD=2.4+
+USE_PYTHON_BUILD=2.5+
 USE_SDL=	sdl mixer image net ttf gfx
 USE_GCC=	4.2+
 

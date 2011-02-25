@@ -7,6 +7,7 @@
 
 PORTNAME=	pysieved
 PORTVERSION=	1.0
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	mail python
 MASTER_SITES=	http://ports.internal.vlink.ru/distfiles/
@@ -15,7 +16,7 @@ MAINTAINER=	dsh@wizard.volgograd.ru
 COMMENT=	Python Managesieve Server
 
 USE_BZIP2=	yes
-USE_PYTHON=	2.4+
+USE_PYTHON=	2.5+
 USE_RC_SUBR=	${PORTNAME}
 
 PORTEXAMPLES=	pysieved.xinetd

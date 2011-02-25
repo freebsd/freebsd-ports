@@ -7,7 +7,7 @@
 
 PORTNAME=	sorl-thumbnail
 PORTVERSION=	3.2.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics python
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -17,7 +17,7 @@ COMMENT=	The sorl-thumbnail package provides an easy way to generate image thumb
 
 RUN_DEPENDS=	${LOCALBASE}/bin/pildriver.py:${PORTSDIR}/graphics/py-imaging
 
-USE_PYTHON=	2.4+
+USE_PYTHON=	2.5+
 USE_PYDISTUTILS=	yes
 
 DOCSDIR=	${PREFIX}/share/doc/py-${PORTNAME}

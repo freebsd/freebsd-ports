@@ -7,6 +7,7 @@
 
 PORTNAME=	xmpppy-irc
 PORTVERSION=	0.3
+PORTREVISION=	1
 CATEGORIES=	net-im python irc
 MASTER_SITES=	SF/xmpppy/PyIRCt/${PORTVERSION}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -18,7 +19,7 @@ COMMENT=	An xmpp to irc transport
 RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/xmpp/__init__.py:${PORTSDIR}/net-im/py-xmpppy \
 		${PYTHON_SITELIBDIR}/irclib.py:${PORTSDIR}/irc/py-irclib
 
-USE_PYTHON=	2.4+
+USE_PYTHON=	2.5+
 NO_BUILD=	yes
 FILES=		irc.py jep0106.py jep0133.py test_jep0106.py
 PFILES=		${FILES:S.^.%%PYTHON_SITELIBDIR%%/xmpp/irc/.}

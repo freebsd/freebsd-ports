@@ -8,6 +8,7 @@
 
 PORTNAME=	poker-engine
 PORTVERSION=	1.3.5
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://download.gna.org/pokersource/sources/
 
@@ -21,7 +22,7 @@ BUILD_DEPENDS=	${LOCALBASE}/bin/rsync:${PORTSDIR}/net/rsync \
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USE_GNOME=	pkgconfig
-USE_PYTHON=	2.4+
+USE_PYTHON=	2.5+
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 

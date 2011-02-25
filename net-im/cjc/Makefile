@@ -7,6 +7,7 @@
 
 PORTNAME=	cjc
 PORTVERSION=	1.0.0.675
+PORTREVISION=	1
 CATEGORIES=	net-im python
 MASTER_SITES=	CENKES http://jabberstudio.2nw.net/cjc/
 # svn export -r675 http://cjc.jajcus.net/svn/cjc/trunk cjc
@@ -17,7 +18,7 @@ COMMENT=	The Console Jabber Client
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyxmpp>=1.0.0.644:${PORTSDIR}/net-im/py-pyxmpp
 
 USE_BZIP2=	yes
-USE_PYTHON=	2.4+
+USE_PYTHON=	2.5+
 MAKE_ENV+=	prefix=${PREFIX} pkg_datadir=${DATADIR} INSTALL_DIR="${INSTALL} -d"
 MAKE_ARGS+=	-E prefix -E pkg_datadir -E pkg_docdir -E INSTALL -E INSTALL_DATA \
 		-E INSTALL_DIR

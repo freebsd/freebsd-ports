@@ -7,7 +7,7 @@
 
 PORTNAME=	gnomesudoku
 PORTVERSION=	0.6.0
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	games gnome
 MASTER_SITES=	SF/gnome-sudoku/gnome-sudoku/${PORTVERSION}
 DISTNAME=	gnome-sudoku-${PORTVERSION}
@@ -26,7 +26,7 @@ MAKE_ENV+=	DISPLAY="localhost:1001"
 .endif
 .endif
 
-USE_PYTHON=	2.4+
+USE_PYTHON=	2.5+
 USE_PYDISTUTILS=yes
 USE_GNOME=	gnomehack gnomeprefix pygnome2 pygnomedesktop
 

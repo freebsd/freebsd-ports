@@ -7,6 +7,7 @@
 
 PORTNAME=	gondola
 PORTVERSION=	1.1
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://arcticpaint.com/static/gondola/downloads/ \
 		http://mirror.amdmi3.ru/distfiles/
@@ -20,7 +21,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}rabbyt>=0.8.1:${PORTSDIR}/graphics/py-rabbyt
 		avbin>=7:${PORTSDIR}/multimedia/avbin
 
 USE_ZIP=	yes
-USE_PYTHON=	2.4+
+USE_PYTHON=	2.5+
 NO_BUILD=	yes
 
 SUB_FILES=	${PORTNAME}

@@ -7,6 +7,7 @@
 
 PORTNAME=	yahoo
 PORTVERSION=	0.3.20070314
+PORTREVISION=	1
 CATEGORIES=	net-im python
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=lofi
@@ -21,7 +22,7 @@ OPTIONS=	EJABBERD "Use transport with ejabberd" off
 RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/xmpp/__init__.py:${PORTSDIR}/net-im/py-xmpppy \
 		${PYTHON_SITELIBDIR}/DNS/__init__.py:${PORTSDIR}/dns/py-dns
 
-USE_PYTHON=	2.4+
+USE_PYTHON=	2.5+
 NO_BUILD=	yes
 FILES=		adhoc.py config.py jep0133.py roomlist.py xmlconfig.py \
 		yahoo_helpers.py avatar.py htmlutils.py migratespool.py toolbox.py \

@@ -8,6 +8,7 @@
 
 PORTNAME=	PyLucene
 PORTVERSION=	3.0.3
+PORTREVISION=	1
 CATEGORIES=	textproc devel python java
 MASTER_SITES=	${MASTER_SITE_APACHE}
 MASTER_SITE_SUBDIR=	lucene/pylucene
@@ -21,7 +22,7 @@ BUILD_DEPENDS=	ant:${PORTSDIR}/devel/apache-ant \
 		${PYTHON_PKGNAMEPREFIX}jcc>0:${PORTSDIR}/devel/py-jcc \
 		${NONEXISTENT}:${PORTSDIR}/textproc/lucene:extract
 
-USE_PYTHON=	2.4+
+USE_PYTHON=	2.5+
 USE_GCC=	4.2+
 USE_JAVA=	yes
 JAVA_VERSION=	1.4+

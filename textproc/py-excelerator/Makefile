@@ -7,6 +7,7 @@
 
 PORTNAME=	excelerator
 PORTVERSION=	0.6.4.1
+PORTREVISION=	1
 CATEGORIES=	textproc python
 MASTER_SITES=	SF/py${PORTNAME}/pyExcelerator/${PORTVERSION}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -16,7 +17,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Python library for generating Excel 97/2000/XP/2003 files
 
 USE_ZIP=	yes
-USE_PYTHON=	2.4+
+USE_PYTHON=	2.5+
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_PKGNAME=	pyExcelerator
 

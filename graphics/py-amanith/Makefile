@@ -7,7 +7,7 @@
 
 PORTNAME=	amanith
 PORTVERSION=	0.3.35
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	graphics python
 MASTER_SITES=	http://muksuluuri.ath.cx/~skyostil/projects/pyamanith/dist/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -21,7 +21,7 @@ LIB_DEPENDS=	amanith.1:${PORTSDIR}/graphics/amanith
 BUILD_DEPENDS=	swig:${PORTSDIR}/devel/swig13
 
 USE_GL=		glew
-USE_PYTHON=	2.4+
+USE_PYTHON=	2.5+
 USE_PYDISTUTILS=yes
 PYDISTUTILS_PKGNAME=	PyAmanith
 

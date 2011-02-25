@@ -7,6 +7,7 @@
 
 PORTNAME=	apolicy
 PORTVERSION=	0.73
+PORTREVISION=	1
 CATEGORIES=	mail python
 MASTER_SITES=	http://download.gna.org/apolicy/%SUBDIR%/ \
 		http://www.chifeng.name/dist/apolicy/%SUBDIR%/ \
@@ -19,7 +20,7 @@ COMMENT=	An ACL system for Postfix, as a policy daemon
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/spf.py:${PORTSDIR}/mail/py-spf \
 		${PYTHON_SITELIBDIR}/IPy.py:${PORTSDIR}/net-mgmt/py-ipy
 
-USE_PYTHON=	2.4+
+USE_PYTHON=	2.5+
 USE_PYDISTUTILS=yes
 USE_TWISTED=	yes
 NO_BUILD=	yes

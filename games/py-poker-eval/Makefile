@@ -8,6 +8,7 @@
 
 PORTNAME=	poker-eval
 PORTVERSION=	0.137
+PORTREVISION=	1
 CATEGORIES=	games python
 MASTER_SITES=	http://download.gna.org/pokersource/sources/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -19,7 +20,7 @@ COMMENT=	Python adaptor for the poker-eval toolkit
 LIB_DEPENDS=	poker-eval.1:${PORTSDIR}/games/poker-eval
 
 USE_GNOME=	pkgconfig
-USE_PYTHON=	2.4+
+USE_PYTHON=	2.5+
 GNU_CONFIGURE=	yes
 
 PLIST_SUB=	PYVER=${_PYTHON_VERSION:S/./_/}

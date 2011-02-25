@@ -7,6 +7,7 @@
 
 PORTNAME=	pyxmpp
 PORTVERSION=	1.1.1
+PORTREVISION=	1
 CATEGORIES=	net-im python
 MASTER_SITES=	http://pyxmpp.jajcus.net/downloads/ \
 		CENKES http://jabberstudio.2nw.net/pyxmpp/
@@ -20,7 +21,7 @@ BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/libxml2.py:${PORTSDIR}/textproc/py-libxml2 \
 		${PYTHON_PKGNAMEPREFIX}m2crypto>=0.18.2:${PORTSDIR}/security/py-m2crypto
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-USE_PYTHON=	2.4+
+USE_PYTHON=	2.5+
 USE_PYDISTUTILS=	yes
 
 post-patch:
