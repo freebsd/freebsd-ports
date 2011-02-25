@@ -7,6 +7,7 @@
 
 PORTNAME=	inform7
 PORTVERSION=	6G60
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://ftp.ifarchive.org/if-archive/infocom/compilers/inform7/source/:1 \
 		http://ifarchive.heanet.ie/if-archive/infocom/compilers/inform7/source/:1 \

@@ -28,8 +28,8 @@ bin/wiredctl
 @dirrmtry wired/tmp
 @dirrmtry wired/files/Uploads/.wired
 @dirrmtry wired/files/Uploads
-@dirrmtry wired/files/Drop\ Box/.wired
-@dirrmtry wired/files/Drop\ Box
+@dirrmtry wired/files/Drop Box/.wired
+@dirrmtry wired/files/Drop Box
 @dirrmtry wired/files
 @dirrmtry wired/etc
 @dirrmtry wired
