@@ -111,6 +111,7 @@ MYSQL40_LIBVER=		12
 MYSQL41_LIBVER=		14
 MYSQL50_LIBVER=		15
 MYSQL51_LIBVER=		16
+MYSQL52_LIBVER=		16
 MYSQL55_LIBVER=		16
 
 # Setting/finding MySQL version we want.
@@ -139,6 +140,14 @@ IGNORE=		cannot install: MySQL versions mismatch: mysql${_MYSQL_VER}-client is i
 .endif
 .endif
 
+.if (${MYSQL_VER} == "52")
+_MYSQL_CLIENT=	databases/mariadb
+_MYSQL_SERVER=	databases/mariadb
+.else
+_MYSQL_CLIENT=	databases/mysql${MYSQL_VER}-client
+_MYSQL_SERVER=	databases/mysql${MYSQL_VER}-server
+.endif
+
 .if (${USE_MYSQL} == "embedded")
 IGNORE_WITH_MYSQL=	323 40 41
 .endif
@@ -153,12 +162,12 @@ IGNORE=		cannot install: does not work with MySQL version ${MYSQL_VER} (MySQL ${
 .	endfor
 .endif # IGNORE_WITH_MYSQL
 .if (${USE_MYSQL} == "server" || ${USE_MYSQL} == "embedded")
-RUN_DEPENDS+=	${LOCALBASE}/libexec/mysqld:${PORTSDIR}/databases/mysql${MYSQL_VER}-server
+RUN_DEPENDS+=	${LOCALBASE}/libexec/mysqld:${PORTSDIR}/${_MYSQL_SERVER}
 .if (${USE_MYSQL} == "embedded")
-BUILD_DEPENDS+=	${LOCALBASE}/libexec/mysqld:${PORTSDIR}/databases/mysql${MYSQL_VER}-server
+BUILD_DEPENDS+=	${LOCALBASE}/libexec/mysqld:${PORTSDIR}/${_MYSQL_SERVER}
 .endif
 .else
-LIB_DEPENDS+=	mysqlclient.${MYSQL${MYSQL_VER}_LIBVER}:${PORTSDIR}/databases/mysql${MYSQL_VER}-client
+LIB_DEPENDS+=	mysqlclient.${MYSQL${MYSQL_VER}_LIBVER}:${PORTSDIR}/${_MYSQL_CLIENT}
 .endif
 .else
 IGNORE=		cannot install: unknown MySQL version: ${MYSQL_VER}
