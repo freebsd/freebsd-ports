@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	DBIx-Class-Schema-Loader
-PORTVERSION=	0.07002
+PORTVERSION=	0.07007
 CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
+MASTER_SITE_SUBDIR=	../../authors/id/R/RK/RKITOVER
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
@@ -25,6 +26,7 @@ RUN_DEPENDS=	\
 	p5-Class-Inspector>=0:${PORTSDIR}/devel/p5-Class-Inspector \
 	p5-DBIx-Class>=0.08114:${PORTSDIR}/databases/p5-DBIx-Class \
 	p5-Class-Unload>=0:${PORTSDIR}/devel/p5-Class-Unload \
+	p5-Class-Load>=0:${PORTSDIR}/devel/p5-Class-Load \
 	p5-File-Slurp>=9999.13:${PORTSDIR}/devel/p5-File-Slurp \
 	p5-List-MoreUtils>=0:${PORTSDIR}/lang/p5-List-MoreUtils \
 	p5-namespace-clean>=0:${PORTSDIR}/devel/p5-namespace-clean \
