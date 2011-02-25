@@ -49,12 +49,12 @@ bin/ant
 %%DATADIR%%/lib/ant-jsch.pom
 %%DATADIR%%/lib/ant-junit.jar
 %%DATADIR%%/lib/ant-junit.pom
+%%DATADIR%%/lib/ant-junit4.jar
+%%DATADIR%%/lib/ant-junit4.pom
 %%DATADIR%%/lib/ant-launcher.jar
 %%DATADIR%%/lib/ant-launcher.pom
 %%DATADIR%%/lib/ant-netrexx.jar
 %%DATADIR%%/lib/ant-netrexx.pom
-%%DATADIR%%/lib/ant-nodeps.jar
-%%DATADIR%%/lib/ant-nodeps.pom
 %%DATADIR%%/lib/ant-parent.pom
 %%DATADIR%%/lib/ant-swing.jar
 %%DATADIR%%/lib/ant-swing.pom
