@@ -7,6 +7,7 @@
 
 PORTNAME=	gnome-packagekit
 PORTVERSION=	2.32.0
+PORTREVISION=	1
 CATEGORIES=	ports-mgmt sysutils gnome
 MASTER_SITES=	GNOME
 
@@ -27,7 +28,7 @@ USE_GNOME=	gnomeprefix gnomehack intlhack gconf2 gnomemenus gnomedocutils \
 		desktopfileutils
 USE_GETTEXT=	yes
 USE_ICONV=	yes
-USE_PYTHON_BUILD=2.4+
+USE_PYTHON_BUILD=2.5+
 GCONF_SCHEMAS=	gnome-packagekit.schemas
 INSTALLS_ICONS=	yes
 INSTALLS_OMF=	yes

@@ -7,7 +7,7 @@
 
 PORTNAME=	xpn
 PORTVERSION=	1.2.6
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	news python
 MASTER_SITES=	http://xpn.altervista.org/codice/ \
 		http://nivi.interfree.it/distfiles/${PORTNAME}/
@@ -19,7 +19,7 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/gtk-2.0/gtk/__init__.py:${PORTSDIR}/x11-toolki
 
 NO_BUILD=	yes
 
-USE_PYTHON=	2.4+
+USE_PYTHON=	2.5+
 
 FIND_DIRS=	-type d
 FIND_DATA=	-type f -mindepth 2 -not -name "*~"

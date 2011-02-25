@@ -134,6 +134,9 @@ libdata/pkgconfig/libcollectdclient.pc
 %%XMMS%%lib/collectd/xmms.a
 %%XMMS%%lib/collectd/xmms.la
 %%XMMS%%lib/collectd/xmms.so
+%%ZFS_ARC%%lib/collectd/zfs_arc.a
+%%ZFS_ARC%%lib/collectd/zfs_arc.la
+%%ZFS_ARC%%lib/collectd/zfs_arc.so
 %%DATADIR%%/postgresql_default.conf
 %%DATADIR%%/types.db
 @dirrm lib/collectd

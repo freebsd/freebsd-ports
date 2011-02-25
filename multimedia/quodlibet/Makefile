@@ -7,7 +7,7 @@
 
 PORTNAME=	quodlibet
 PORTVERSION=	2.2
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	multimedia audio python gnome
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 
@@ -17,7 +17,7 @@ COMMENT=	A GTK+-based audio player written in Python
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/mutagen/__init__.py:${PORTSDIR}/audio/py-mutagen
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/mutagen/__init__.py:${PORTSDIR}/audio/py-mutagen
 
-USE_PYTHON=	2.4+
+USE_PYTHON=	2.5+
 USE_GNOME=	pygtk2
 USE_GETTEXT=	yes
 USE_PYDISTUTILS=	yes

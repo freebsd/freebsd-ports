@@ -7,6 +7,7 @@
 
 PORTNAME=	reportlab2
 PORTVERSION=	2.4
+PORTREVISION=	1
 CATEGORIES=	print python
 MASTER_SITES=	http://www.reportlab.com/ftp/ \
 		ftp://ftp.reportlab.org/
@@ -20,7 +21,7 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}imaging>0:${PORTSDIR}/graphics/py-imaging
 
 CONFLICTS=	py2[0-9]-reportlab-[0-9]*
 
-USE_PYTHON=	2.4+
+USE_PYTHON=	2.5+
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_PKGNAME=	reportlab
 

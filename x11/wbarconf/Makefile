@@ -7,7 +7,7 @@
 
 PORTNAME=	wbarconf
 PORTVERSION=	0.7.2
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	x11
 MASTER_SITES=	http://www.ihku.biz/wbarconf/
 DISTNAME=	wbarconf-${PORTVERSION}
@@ -18,7 +18,7 @@ COMMENT=	Configuration GUI for wbar
 RUN_DEPENDS=	wbar:${PORTSDIR}/x11/wbar
 
 USE_GNOME=	pygtk2
-USE_PYTHON=	2.4+
+USE_PYTHON=	2.5+
 USE_GETTEXT=	yes
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
