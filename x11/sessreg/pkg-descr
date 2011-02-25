@@ -1,5 +1,2 @@
 This package contains sessreg, which is a simple program for managing
 utmp/wtmp entries for xdm sessions.
-
-- Joel Dahl
-joel@FreeBSD.org

@@ -7,7 +7,7 @@
 
 PORTNAME=	xf86-video-radeonhd
 PORTVERSION=	1.3.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	x11-drivers
 
 MAINTAINER=	x11@FreeBSD.org
@@ -38,10 +38,6 @@ PLIST_SUB=	UTILS="@comment "
 post-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/utils/conntest/rhd_conntest ${PREFIX}/sbin
 	${INSTALL_PROGRAM} ${WRKSRC}/utils/conntest/rhd_dump ${PREFIX}/sbin
-.endif
-
-.if ${OSVERSION} < 700000
-USE_GCC=	4.2+
 .endif
 
 .include <bsd.port.post.mk>

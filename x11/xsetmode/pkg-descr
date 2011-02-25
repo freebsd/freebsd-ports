@@ -1,5 +1,2 @@
 This package contains xsetmode, which is a program for setting the mode
 of an X Input device to either absolute och relative.
-
-- Joel Dahl
-joel@FreeBSD.org

@@ -1,5 +1,2 @@
 This package contains xdpyinfo, which is a utility for displaying
 information about an X server.
-
-- Joel Dahl
-joel@FreeBSD.org

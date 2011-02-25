@@ -5,7 +5,7 @@
 # $FreeBSD$
 #
 
-PORTNAME=	xf86-video-ati
+PORTNAME=	xf86-video-ati613
 PORTVERSION=	6.13.2
 CATEGORIES=	x11-drivers
 
@@ -18,10 +18,4 @@ XORG_CAT=	driver
 USE_XORG=	xf86driproto xineramaproto videoproto xf86miscproto xextproto glproto
 MAN4=		ati.4x radeon.4x
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 700000
-USE_GCC=	4.2+
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

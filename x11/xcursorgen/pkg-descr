@@ -1,5 +1,2 @@
 This package contains xcursorgen, a program for creating an X cursor file
 from a collection of PNG images.
-
-- Joel Dahl
-joel@FreeBSD.org

@@ -1,5 +1,2 @@
 This package contains viewres, a graphical class browser that displays
 a tree showing the widget class hierarchy of the Athena Widget Set.
-
-- Joel Dahl
-joel@FreeBSD.org

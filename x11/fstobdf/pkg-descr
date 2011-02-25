@@ -1,5 +1,2 @@
 This package contains fstobdf, a program for generating BDF fonts from
 an X font server.
-
-- Joel Dahl
-joel@FreeBSD.org

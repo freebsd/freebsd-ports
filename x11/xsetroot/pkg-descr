@@ -1,6 +1,3 @@
 This package contains xsetroot, a root window paramteter setting utility
 for the X Window System, which allows you to change the appearance of the
 background ("root") window in X.
-
-- Joel Dahl
-joel@FreeBSD.org

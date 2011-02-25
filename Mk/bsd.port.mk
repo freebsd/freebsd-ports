@@ -1995,7 +1995,10 @@ X_FONTS_TYPE1_PORT=	${PORTSDIR}/x11-fonts/xorg-fonts-type1
 X_FONTS_ALIAS_PORT=	${PORTSDIR}/x11-fonts/font-alias
 
 .if defined(USE_IMAKE)
-BUILD_DEPENDS+=			imake:${X_IMAKE_PORT}
+CONFIGURE_ENV+=		IMAKECPP="${CPP}"
+MAKE_ENV+=		IMAKECPP="${CPP}"
+MAKE_FLAGS?=		CC="${CC}" CXX="${CXX}"
+BUILD_DEPENDS+=		imake:${X_IMAKE_PORT}
 .endif
 
 .if defined(USE_DISPLAY) && !defined(DISPLAY)

@@ -1,6 +1,3 @@
 This package contains Xnest, a nesting X Server that displays on an X Server.
 
 WWW: http://www.x.org/
-
-- Eric Anholt
-anholt@FreeBSD.org

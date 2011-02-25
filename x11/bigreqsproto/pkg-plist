@@ -1,4 +1,6 @@
 include/X11/extensions/bigreqsproto.h
 include/X11/extensions/bigreqstr.h
 libdata/pkgconfig/bigreqsproto.pc
+%%DOCSDIR%%/bigreq.xml
+@dirrm %%DOCSDIR%%
 @dirrmtry include/X11/extensions

@@ -2,6 +2,3 @@ This package contains the code for a network API translation layer to insulate X
 applications and libraries from OS network vagaries
 
 WWW: http://www.freedesktop.org/Software/xlibs
-
-- Eric Anholt
-anholt@FreeBSD.org

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xorg-macros
-PORTVERSION=	1.6.0
+PORTVERSION=	1.11.0
 CATEGORIES=	devel x11
 DISTNAME=	util-macros-$(PORTVERSION)
 

@@ -1,5 +1,2 @@
 This package contains xrefresh, which is a simple X program that causes
 all or part of your screen to be repainted.
-
-- Joel Dahl
-joel@FreeBSD.org

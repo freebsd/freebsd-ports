@@ -1,5 +1,2 @@
 This package contians xkill, which is a utility for forcing the X server
 to close connections to clients.
-
-- Joel Dahl
-joel@FreeBSD.org

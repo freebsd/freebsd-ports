@@ -7,7 +7,7 @@
 
 PORTNAME=	xdm
 PORTVERSION=	1.1.8
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11
 
 MAINTAINER=	x11@FreeBSD.org
@@ -39,5 +39,7 @@ post-install:
 .for f in ${CFFILES}
 	${CP} -n ${EXAMPLESDIR}/$f ${PREFIX}/lib/X11/xdm/$f
 .endfor
+	${MKDIR} /var/lib/xdm/authdir
+	${LN} -sf /var/lib/xdm/authdir ${PREFIX}/lib/X11/xdm/authdir
 
 .include <bsd.port.mk>

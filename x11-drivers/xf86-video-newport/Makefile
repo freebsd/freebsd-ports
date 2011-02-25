@@ -7,6 +7,7 @@
 
 PORTNAME=	xf86-video-newport
 PORTVERSION=	0.2.3
+PORTREVISION=	1
 CATEGORIES=	x11-drivers
 
 MAINTAINER=	x11@FreeBSD.org
@@ -21,10 +22,4 @@ post-patch:
 				 -e 's|MAXSHORT|SHRT_MAX|g' \
 				 ${WRKSRC}/src/newport_accel.c
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 700000
-USE_GCC=	4.2+
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

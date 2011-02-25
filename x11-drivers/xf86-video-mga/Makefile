@@ -25,11 +25,4 @@ pre-patch:
 		-e 's|MAXSHORT|SHRT_MAX|g' \
 		${WRKSRC}/src/mga_arc.c
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 700000
-USE_GCC=	4.2+
-.endif
-
-.include <bsd.port.post.mk>
-
+.include <bsd.port.mk>

@@ -180,6 +180,8 @@ XDrawText16.3 \
 XEmptyRegion.3 \
 XEnableAccessControl.3 \
 XEqualRegion.3 \
+XkbGetDetectableAutoRepeat.3 \
+XkbSetDetectableAutoRepeat.3 \
 XErrorEvent.3 \
 XEvent.3 \
 XEventsQueued.3 \
@@ -634,7 +636,6 @@ XkbGetBounceKeysDelay.3 \
 XkbGetCompatMap.3 \
 XkbGetControlsChanges.3 \
 XkbGetControls.3 \
-XkbGetDetectableAutorepeat.3 \
 XkbGetDeviceButtonActions.3 \
 XkbGetDeviceInfoChanges.3 \
 XkbGetDeviceInfo.3 \
@@ -734,7 +735,6 @@ XkbSetBounceKeysDelay.3 \
 XkbSetCompatMap.3 \
 XkbSetControls.3 \
 XkbSetDebuggingFlags.3 \
-XkbSetDetectableAutorepeat.3 \
 XkbSetDeviceButtonActions.3 \
 XkbSetDeviceInfo.3 \
 XkbSetIgnoreLockMods.3 \
@@ -817,3 +817,4 @@ XwcTextPerCharExtents.3 \
 XwcTextPropertyToTextList.3
 MAN5= \
 Compose.5 \
+XCompose.5

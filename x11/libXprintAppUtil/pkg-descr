@@ -1,5 +1,2 @@
 This package contains libXprintAppUtil, a group of Xprint application
 utility routines for X.Org.
-
-- Joel Dahl
-joel@FreeBSD.org

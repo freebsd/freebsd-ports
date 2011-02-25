@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xf86-input-keyboard
-PORTVERSION=	1.4.0
+PORTVERSION=	1.5.0
 CATEGORIES=	x11-drivers
 
 MAINTAINER=	x11@FreeBSD.org
@@ -16,11 +16,5 @@ XORG_CAT=	driver
 USE_XORG=	kbproto
 MAN4=		kbd.4x
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 700000
-USE_GCC=	4.2+
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
 

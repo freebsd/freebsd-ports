@@ -1,3 +1,5 @@
 Driver for Intel integrated graphics chipsets. It supports the i810,
 i810-DC100, i810e, i815, i830M, 845G, 852GM, 855GM, 865G, 915G, 915GM,
 945G, 945GM, 965G, 965Q, 946GZ and 965GM chipsets.
+
+WWW: http://www.x.org

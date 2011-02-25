@@ -1,5 +1,2 @@
 This package contains xsetpointer, which sets an X Input device
 as the main pointer.
-
-- Joel Dahl
-joel@FreeBSD.org

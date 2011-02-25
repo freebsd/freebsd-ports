@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xf86-video-ark
-PORTVERSION=	0.7.2
+PORTVERSION=	0.7.3
 CATEGORIES=	x11-drivers
 
 MAINTAINER=	x11@FreeBSD.org
@@ -15,10 +15,4 @@ COMMENT=	X.Org ark display driver
 XORG_CAT=	driver
 USE_XORG=	xextproto
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 700000
-USE_GCC=	4.2+
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

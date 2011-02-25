@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xf86-video-glint
-PORTVERSION=	1.2.4
+PORTVERSION=	1.2.5
 CATEGORIES=	x11-drivers
 
 MAINTAINER=	x11@FreeBSD.org
@@ -18,10 +18,4 @@ XORG_CAT=	driver
 USE_XORG=	xf86driproto videoproto xextproto xf86dgaproto glproto
 MAN4=		glint.4x
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 700000
-USE_GCC=	4.2+
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

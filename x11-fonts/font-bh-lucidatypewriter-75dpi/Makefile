@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	font-bh-lucidatypewriter-75dpi
-PORTVERSION=	1.0.1
+PORTVERSION=	1.0.3
 CATEGORIES=	x11-fonts
 
 MAINTAINER=	x11@FreeBSD.org

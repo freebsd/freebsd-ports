@@ -1,5 +1,2 @@
 This package contains setxkbmp, a program for setting the keyboard using
 the X Keyboard Extension.
-
-- Joel Dahl
-joel@FreeBSD.org

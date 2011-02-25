@@ -1,5 +1,4 @@
 This package contains bdftopcf, a font compiler for the X server and font
 server.
 
-- Joel Dahl
-joel@FreeBSD.org
+WWW: http://www.x.org/archive/X11R6.8.1/doc/bdftopcf.1.html

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libpciaccess
-PORTVERSION=	0.12.0
+PORTVERSION=	0.12.1
 CATEGORIES=	devel
 
 MAINTAINER=	x11@FreeBSD.org
@@ -16,7 +16,7 @@ BUILD_DEPENDS=	${LOCALBASE}/share/pciids/pci.ids:${PORTSDIR}/misc/pciids
 # XXX - Is it a runtime dep too?
 RUN_DEPENDS=	${LOCALBASE}/share/pciids/pci.ids:${PORTSDIR}/misc/pciids
 
-CONFIGURE_ARGS=	--with-pciids-path=${LOCALBASE}/share/pciids
+CONFIGURE_ARGS+=	--with-pciids-path=${LOCALBASE}/share/pciids
 
 XORG_CAT=	lib
 

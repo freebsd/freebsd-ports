@@ -1,6 +1,3 @@
 This package contains xvinfo, an application for printing out the
 capabilities of any video adaptors associated with the display that
 are accessible through the X-Video extension.
-
-- Joel Dahl
-joel@FreeBSD.org

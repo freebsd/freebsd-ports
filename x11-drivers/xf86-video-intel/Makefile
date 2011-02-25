@@ -7,7 +7,7 @@
 
 PORTNAME=	xf86-video-intel
 PORTVERSION=	2.7.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	x11-drivers
 
 MAINTAINER=	x11@FreeBSD.org
@@ -22,10 +22,4 @@ XORG_CAT=	driver
 USE_XORG=	xvmc xineramaproto xextproto x11 xf86driproto glproto
 MAN4=		intel.4x
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 700000
-USE_GCC=	4.2+
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

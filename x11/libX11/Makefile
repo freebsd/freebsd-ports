@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	libX11
-PORTVERSION=	1.3.3
-PORTREVISION=	1
+PORTVERSION=	1.3.6
 PORTEPOCH=	1
 CATEGORIES=	x11
 
@@ -21,11 +20,9 @@ RUN_DEPENDS+=	${LOCALBASE}/libdata/pkgconfig/xcb.pc:${PORTSDIR}/x11/libxcb
 XORG_CAT=	lib
 USE_XORG=	bigreqsproto xau xcmiscproto xdmcp xextproto xtrans \
 		kbproto:both inputproto xf86bigfontproto xproto:both
-USE_AUTOTOOLS=	aclocal autoheader automake autoconf libtool
-ACLOCAL_ARGS=	-I . -I ${LOCALBASE}/share/aclocal
-AUTOMAKE_ARGS=	--add-missing
 CONFIGURE_ARGS+=	--datadir=${PREFIX}/lib \
-			--with-xcb=yes
+			--with-xcb=yes \
+			--disable-specs
 CONFIGURE_ENV+=	ac_cv_path_PS2PDF=""
 
 .include "${.CURDIR}/manpages"

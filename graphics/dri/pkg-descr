@@ -3,6 +3,3 @@ DRI.  With an X Server configured for the DRI they allow direct rendering of
 hardware-accelerated OpenGL.
 
 WWW: http://dri.sourceforge.net/
-
-- Eric Anholt
-anholt@FreeBSD.org

@@ -6,14 +6,12 @@
 #
 
 PORTNAME=	xorg-vfbserver
-PORTVERSION=	1.7.5
+PORTVERSION=	1.7.7
 PORTEPOCH=	1
 CATEGORIES=	x11-servers
 
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	X virtual framebuffer server from X.Org
-
-CONFLICTS=	XFree86-VirtualFramebufferServer-*
 
 XORG_CAT=	xserver
 
