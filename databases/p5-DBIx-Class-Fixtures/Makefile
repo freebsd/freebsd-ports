@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	DBIx-Class-Fixtures
-PORTVERSION=	1.001010
+PORTVERSION=	1.001011
 CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
+MASTER_SITE_SUBDIR=	../../authors/id/J/JJ/JJNAPIORK
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	kuriyama@FreeBSD.org
@@ -18,7 +19,7 @@ RUN_DEPENDS=	\
 	p5-Class-Accessor-Grouped>=0.06:${PORTSDIR}/devel/p5-Class-Accessor-Grouped \
 	p5-Config-Any>=0.08:${PORTSDIR}/devel/p5-Config-Any \
 	p5-DBIx-Class>=0.08102:${PORTSDIR}/databases/p5-DBIx-Class \
-	p5-DBIx-Class-Schema-Loader>=0.04006:${PORTSDIR}/databases/p5-DBIx-Class-Schema-Loader \
+	p5-DBIx-Class-Schema-Loader>=0.07:${PORTSDIR}/databases/p5-DBIx-Class-Schema-Loader \
 	p5-Data-Dump-Streamer>=2.05:${PORTSDIR}/devel/p5-Data-Dump-Streamer \
 	p5-Data-Visitor>=0.15:${PORTSDIR}/devel/p5-Data-Visitor \
 	p5-DateTime>=0.41:${PORTSDIR}/devel/p5-DateTime \
