@@ -16,12 +16,8 @@ COMMENT=	Systems & network statistics collection daemon
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-USE_AUTOTOOLS=	autoheader aclocal libtool libtoolize automake autoconf libltdl
+USE_AUTOTOOLS=	libltdl
 WANT_GNOME=	yes
-
-AUTOMAKE_ARGS=		--add-missing --copy
-LIBTOOLIZE_ARGS=	--ltdl --copy --force
-ACLOCAL_ARGS=
 
 OPTIONS=	CGI		"Install collection.cgi (requires RRDTOOL)" 	Off \
 		BIND		"Enable BIND 9.5+ statistics"			On  \
@@ -41,7 +37,8 @@ OPTIONS=	CGI		"Install collection.cgi (requires RRDTOOL)" 	Off \
 		PGSQL		"Input: PostgreSQL" 				Off \
 		PING		"Input: Network latency (liboping)" 		On  \
 		SNMP		"Input: SNMP" 					On  \
-		XMMS		"Input: XMMS" 					Off
+		XMMS		"Input: XMMS" 					Off \
+		RRDTOOL		"Output: RRDTool" 				On
 
 MAN1=		collectd.1 collectd-nagios.1 collectdmon.1
 MAN5=		collectd.conf.5 collectd-email.5 collectd-exec.5 \
@@ -55,14 +52,6 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
 .include <bsd.port.pre.mk>
-
-.if ( ${OSVERSION} >= 800000 )
-OPTIONS+=	ZFS_ARC		"Input: ZFS ARC"				Off
-.else
-.undef WITH_ZFS_ARC
-.endif
-
-OPTIONS+=	RRDTOOL		"Output: RRDTool" 				On
 
 .if ( ${OSVERSION} < 601103 )
 BROKEN=		Need bind9 import post 6.1
@@ -134,6 +123,7 @@ CONFIGURE_ARGS=	--localstatedir=/var \
 		--disable-vserver \
 		--disable-wireless \
 		--disable-write_http \
+		--disable-zfs_arc \
 		--without-perl-bindings
 
 .if defined(WITH_DEBUG)
@@ -323,14 +313,6 @@ PLIST_SUB+=	XMMS=""
 .else
 CONFIGURE_ARGS+=--disable-xmms
 PLIST_SUB+=	XMMS="@comment "
-.endif
-
-.if defined(WITH_ZFS_ARC) && ( ${OSVERSION} >= 800000 )
-CONFIGURE_ARGS+=--enable-zfs_arc
-PLIST_SUB+=	ZFS_ARC=""
-.else
-CONFIGURE_ARGS+=--disable-zfs_arc
-PLIST_SUB+=	ZFS_ARC="@comment "
 .endif
 
 post-patch:
