@@ -7,7 +7,7 @@
 
 PORTNAME=	nvidia-driver
 DISTVERSION?=	256.53
-PORTREVISION?=	0			# As a reminder it can be overridden
+PORTREVISION?=	1			# As a reminder it can be overridden
 CATEGORIES=	x11 kld
 MASTER_SITES=	${MASTER_SITE_NVIDIA}
 ARCH_SUFX=	${ARCH:S/i386//:S/amd/_/}
