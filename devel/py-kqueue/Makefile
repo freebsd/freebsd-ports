@@ -26,9 +26,7 @@ MAKE_ENV=		MAINCC=${CC}
 .include <bsd.port.pre.mk>
 
 post-patch:
-.if ${PYTHON_REL} >= 230
 	@${REINPLACE_CMD} -e 's,@DEFS@,,' ${WRKSRC}/Makefile.pre.in
-.endif
 
 do-configure:
 	@(cd ${WRKSRC} && \
