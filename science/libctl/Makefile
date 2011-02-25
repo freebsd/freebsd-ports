@@ -16,6 +16,8 @@ COMMENT=	Control Language Library
 
 LIB_DEPENDS=	guile.20:${PORTSDIR}/lang/guile
 
+BROKEN=		does not build
+
 USE_AUTOTOOLS=	libtool
 USE_FORTRAN=	yes
 USE_LDCONFIG=	yes
