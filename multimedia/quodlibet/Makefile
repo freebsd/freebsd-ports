@@ -67,8 +67,6 @@ USE_GSTREAMER+=	flac
 
 .if !defined(WITHOUT_MUSEPACK) || !defined(WITHOUT_WAVPACK) \
 		|| !defined(WITHOUT_MPEG4IP)
-BUILD_DEPENDS+=	${PYCTYPES}
-RUN_DEPENDS+=	${PYCTYPES}
 .endif
 
 .if !defined(WITHOUT_MUSEPACK)

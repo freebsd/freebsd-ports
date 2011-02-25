@@ -14,8 +14,7 @@ PKGNAMESUFFIX=	${PYTHON_PKGNAMESUFFIX}
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	An enhanced Interactive Python shell
 
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/pexpect.py:${PORTSDIR}/misc/py-pexpect \
-		${PYCTYPES}
+RUN_DEPENDS=	${PYTHON_SITELIBDIR}/pexpect.py:${PORTSDIR}/misc/py-pexpect
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes

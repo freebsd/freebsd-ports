@@ -17,8 +17,6 @@ DISTNAME=	python-musicbrainz2-${DISTVERSION}
 MAINTAINER=	bsdkaffee@gmail.com
 COMMENT=	Next Generation Python bindings for MusicBrainz
 
-BUILD_DEPENDS=	${PYCTYPES}
-RUN_DEPENDS=	${PYCTYPES}
 LIB_DEPENDS=	discid.2:${PORTSDIR}/audio/libdiscid
 
 USE_PYTHON=	yes

@@ -15,8 +15,6 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	bsdkaffee@gmail.com
 COMMENT=	Python bindings for libtunepimp
 
-BUILD_DEPENDS=	${PYCTYPES}
-RUN_DEPENDS=	${PYCTYPES}
 LIB_DEPENDS=	tunepimp.5:${PORTSDIR}/audio/libtunepimp
 
 USE_PYTHON=	yes
