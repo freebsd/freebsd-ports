@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	pciids
-PORTVERSION=	20101124
+PORTVERSION=	20110206
 CATEGORIES=	misc
 MASTER_SITES=	LOCAL/sunpoet
 
@@ -33,7 +33,7 @@ CT_DATE!=	date "+%Y%m%d"
 CT_WRKSRC=	${WRKDIR}/tmp
 CT_DESTDIR=	${PORTNAME}-${CT_DATE}
 CT_TEMPDIR=	${CT_WRKSRC}/${CT_DESTDIR}
-CT_MASTER_SITE=	http://pciids.sourceforge.net/v2.2/
+CT_MASTER_SITE=	http://pciids.sourceforge.net/v2.2
 CT_DISTFILES=	pci.ids
 
 maketar: extract
