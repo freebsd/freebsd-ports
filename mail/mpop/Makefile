@@ -7,6 +7,7 @@
 
 PORTNAME=	mpop
 PORTVERSION=	1.0.23
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	SF
 
@@ -36,7 +37,7 @@ CONFIGURE_ARGS+=	--with-ssl=openssl
 .endif
 
 .if defined(WITH_GSASL)
-LIB_DEPENDS+=		gsasl.14:${PORTSDIR}/security/gsasl
+LIB_DEPENDS+=		gsasl.15:${PORTSDIR}/security/gsasl
 .else
 CONFIGURE_ARGS+=	--without-libgsasl-prefix
 .endif
