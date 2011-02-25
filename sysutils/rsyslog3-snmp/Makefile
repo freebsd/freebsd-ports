@@ -10,7 +10,13 @@ COMMENT=	SNMP trap sender for rsyslog
 MNAME=	snmp
 MTYPES=	om
 LIB_DEPENDS=	netsnmp.20:${PORTSDIR}/net-mgmt/net-snmp
-BROKEN=	fails to build
 
 .include "${.CURDIR}/../rsyslog3/bsd.rsyslog.mk"
-.include <bsd.port.mk>
+
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "i386" && ${OSVERSION} >= 800000
+BROKEN=		Does not link on i386: can't find symbol snmp_timeout in libnetsnmp
+.endif
+
+.include <bsd.port.post.mk>

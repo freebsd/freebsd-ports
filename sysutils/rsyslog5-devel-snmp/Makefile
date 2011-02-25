@@ -13,8 +13,6 @@ LIB_DEPENDS=	netsnmp.20:${PORTSDIR}/net-mgmt/net-snmp
 
 CONFIGURE_ARGS+=--enable-snmp
 
-BROKEN=	fails to build
-
 PLIST_FILES+=	lib/rsyslog/omsnmp.la \
 		lib/rsyslog/omsnmp.so
 
