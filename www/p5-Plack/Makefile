@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	Plack
-PORTVERSION=	0.9959
+PORTVERSION=	0.9972
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
-MASTER_SITE_SUBDIR=	Plack
+MASTER_SITE_SUBDIR=	../../authors/id/M/MI/MIYAGAWA
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	kuriyama@FreeBSD.org
@@ -17,7 +17,7 @@ COMMENT=	Perl extension of PSGI reference implementation and utilities
 
 RUN_DEPENDS=	\
 	p5-Devel-StackTrace>=1.23:${PORTSDIR}/devel/p5-Devel-StackTrace \
-	p5-Devel-StackTrace-AsHTML>=0.09:${PORTSDIR}/devel/p5-Devel-StackTrace-AsHTML \
+	p5-Devel-StackTrace-AsHTML>=0.11:${PORTSDIR}/devel/p5-Devel-StackTrace-AsHTML \
 	p5-File-ShareDir>=1.00:${PORTSDIR}/devel/p5-File-ShareDir \
 	p5-Filesys-Notify-Simple>0:${PORTSDIR}/devel/p5-Filesys-Notify-Simple \
 	p5-HTTP-Body>=1.06:${PORTSDIR}/www/p5-HTTP-Body \
@@ -55,7 +55,6 @@ MAN3=	HTTP::Message::PSGI.3 \
 	Plack::Handler::FCGI.3 \
 	Plack::Handler::HTTP::Server::PSGI.3 \
 	Plack::Handler::HTTP::Server::Simple.3 \
-	Plack::Handler::Net::FastCGI.3 \
 	Plack::Handler::Standalone.3 \
 	Plack::Loader.3 \
 	Plack::Loader::Delayed.3 \

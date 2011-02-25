@@ -23,7 +23,6 @@ bin/plackup
 %%SITE_PERL%%/Plack/Handler/FCGI.pm
 %%SITE_PERL%%/Plack/Handler/HTTP/Server/PSGI.pm
 %%SITE_PERL%%/Plack/Handler/HTTP/Server/Simple.pm
-%%SITE_PERL%%/Plack/Handler/Net/FastCGI.pm
 %%SITE_PERL%%/Plack/Handler/Standalone.pm
 %%SITE_PERL%%/Plack/Loader.pm
 %%SITE_PERL%%/Plack/Loader/Delayed.pm
@@ -85,8 +84,6 @@ bin/plackup
 %%SITE_PERL%%/Plack/Util/Accessor.pm
 %%SITE_PERL%%/auto/share/dist/Plack/baybridge.jpg
 %%SITE_PERL%%/auto/share/dist/Plack/face.jpg
-%%SITE_PERL%%/auto/share/dist/Plack/stuff../Hello.txt
-@dirrm %%SITE_PERL%%/auto/share/dist/Plack/stuff..
 @dirrm %%SITE_PERL%%/auto/share/dist/Plack
 @dirrm %%SITE_PERL%%/Plack/Util
 @dirrm %%SITE_PERL%%/Plack/Test
@@ -98,7 +95,6 @@ bin/plackup
 @dirrm %%SITE_PERL%%/Plack/Middleware/AccessLog
 @dirrm %%SITE_PERL%%/Plack/Middleware
 @dirrm %%SITE_PERL%%/Plack/Loader
-@dirrm %%SITE_PERL%%/Plack/Handler/Net
 @dirrm %%SITE_PERL%%/Plack/Handler/HTTP/Server
 @dirrm %%SITE_PERL%%/Plack/Handler/HTTP
 @dirrm %%SITE_PERL%%/Plack/Handler/Apache2
