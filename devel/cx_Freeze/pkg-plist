@@ -52,10 +52,13 @@ bin/cxfreeze
 %%PYTHON_SITELIBDIR%%/cx_Freeze/samples/simple/setup.py
 %%PYTHON_SITELIBDIR%%/cx_Freeze/samples/wx/setup.py
 %%PYTHON_SITELIBDIR%%/cx_Freeze/samples/wx/wxapp.py
+%%PYTHON_SITELIBDIR%%/cx_Freeze/samples/zope/setup.py
+%%PYTHON_SITELIBDIR%%/cx_Freeze/samples/zope/qotd.py
 %%PYTHON_SITELIBDIR%%/cx_Freeze/util.so
 %%PYTHON_SITELIBDIR%%/cx_Freeze/windist.py
 %%PYTHON_SITELIBDIR%%/cx_Freeze/windist.pyc
 %%PYTHON_SITELIBDIR%%/cx_Freeze/windist.pyo
+@dirrm %%PYTHON_SITELIBDIR%%/cx_Freeze/samples/zope
 @dirrm %%PYTHON_SITELIBDIR%%/cx_Freeze/samples/wx
 @dirrm %%PYTHON_SITELIBDIR%%/cx_Freeze/samples/service
 @dirrm %%PYTHON_SITELIBDIR%%/cx_Freeze/samples/simple
