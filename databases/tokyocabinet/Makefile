@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tokyocabinet
-PORTVERSION=	1.4.46
+PORTVERSION=	1.4.47
 CATEGORIES=	databases
 MASTER_SITES=	${MASTER_SITE_LOCAL} \
 		http://1978th.net/tokyocabinet/
@@ -84,7 +84,7 @@ CONFIGURE_ARGS+=	--enable-swab
 CONFIGURE_ARGS+=	--enable-uyield
 .endif
 
-SHLIB_VER=	9.9.0
+SHLIB_VER=	9.10.0
 SHLIB_VER_MAJ=	9
 
 PLIST_SUB+=	SHLIB_VER=${SHLIB_VER} SHLIB_VER_MAJ=${SHLIB_VER_MAJ}
