@@ -6,6 +6,23 @@ You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
 20110224:
+  AFFECTS: users of x11-drivers/xf86-video-ati
+  AUTHOR: miwi@FreeBSD.org
+
+  Xorg has been updated to 7.5.1. For all ATI users the driver
+  was updated to 6.14.0 but the old one is still available in
+  x11-drivers/xf86-video-ati613. For the new driver you may
+  need to add some stuff to your xorg.conf in the device section.
+
+	"Section "Device""
+	Option "int10" "on"
+	Option "BusType" "PCIE"
+	Option "RenderAccel" "on"
+	Option "AccelMethod" "exa"
+	Option "DynamicPM" "on"
+	Option "DRI" "on"
+
+20110224:
   AFFECTS: users of net/openldap24-{client,server}
   AUTHOR: delphij@FreeBSD.org
 
