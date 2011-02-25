@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	poco
-PORTVERSION=	1.3.6
+PORTVERSION=	1.4.1
 CATEGORIES=	devel net
 MASTER_SITES=	SF/${PORTNAME}/sources/${PORTNAME}-${PORTVERSION}
 PKGNAMESUFFIX=	-ssl
@@ -27,7 +27,10 @@ USE_LDCONFIG=	yes
 USE_MYSQL=	yes
 USE_SQLITE=	yes
 
-pre-build:
-	@${RM} ${WRKSRC}/Crypto/include/Poco/.DS_Store
-	@${RM} ${WRKSRC}/Crypto/include/Poco/._.DS_Store
+post-patch:
+	@${REINPLACE_CMD} -e 's#/usr/local#${LOCALBASE}#g' ${WRKSRC}/Data/ODBC/Makefile \
+		${WRKSRC}/Data/MySQL/Makefile \
+		${WRKSRC}/Data/ODBC/testsuite/Makefile \
+		${WRKSRC}/Data/MySQL/testsuite/Makefile
+
 .include <bsd.port.mk>
