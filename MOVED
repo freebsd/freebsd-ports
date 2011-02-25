@@ -1546,3 +1546,7 @@ databases/redis1||2011-02-24|Removed
 devel/pmake||2011-02-24|Has expired: does not build on any supported version of FreeBSD
 net-p2p/linux-agsatellite||2011-02-24|Has expired: the whole service went to cloud
 databases/redis2||2011-02-25|Removed, use databases/redis instead
+textproc/py-expat||2011-02-25|Removed, part of python since python25
+devel/py-ctypes||2011-02-25|Removed, part of python since python25
+security/py-hashlib||2011-02-25|Removed, part of python since python25
+www/py-hashlib||2011-02-25|Removed, part of python since python25
