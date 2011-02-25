@@ -6,16 +6,17 @@
 #
 
 PORTNAME=	Data-Localize
-PORTVERSION=	0.00018
+PORTVERSION=	0.00019
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
+MASTER_SITE_SUBDIR=	../../authors/id/D/DM/DMAKI
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Perl extension for alternate data localization API
 
 RUN_DEPENDS=	\
-	p5-Moose>0:${PORTSDIR}/devel/p5-Moose \
+	p5-Any-Moose>0:${PORTSDIR}/devel/p5-Any-Moose \
 	p5-MooseX-AttributeHelpers>0:${PORTSDIR}/devel/p5-MooseX-AttributeHelpers
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
