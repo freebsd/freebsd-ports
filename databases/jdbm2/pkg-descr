@@ -1,0 +1,13 @@
+JDBM is a transactional persistence engine for Java. It aims to be for Java
+what GDBM is for other languages: a fast, simple persistence engine.
+You can use it to store a mix of objects and BLOBs, and all updates are done
+in a transactionally safe manner. JDBM also provides scalable data structures,
+such as HTree and B+Tree, to support persistence of large object collections.
+JDBM2 provides HashMap and TreeMap which are backed by disk storage.
+It is very easy and fast way to persist your data.
+JDBM2 also have minimal hardware requirements and is highly embeddable.
+
+WWW: http://code.google.com/p/jdbm2/
+
+- Alex Dupre
+ale@FreeBSD.org
