@@ -71,16 +71,14 @@ ${SITE_PERL}/${PERL_ARCH}/FCGI.pm:${PORTSDIR}/www/p5-FastCGI
 .endif
 
 .if defined(WITH_MYSQL)
-USE_MYSQL=	YES
+USE_MYSQL=	client
 USE_PERL5_RUN=	YES
-RUN_DEPENDS+=\
-${SITE_PERL}/${PERL_ARCH}/DBD/mysql.pm:${PORTSDIR}/databases/p5-DBD-mysql${MYSQL_VER}
+RUN_DEPENDS+=
+${SITE_PERL}/${PERL_ARCH}/DBD/mysql.pm:${PORTSDIR}/databases/p5-DBD-mysql
 .endif
 
 .if defined(WITH_DB) && defined(WITH_MYSQL)
-RUN_DEPENDS+=\
-${LOCALBASE}/libexec/mysqld:${PORTSDIR}/databases/mysql${MYSQL_VER}-server \
-mysqlhotcopy:${PORTSDIR}/databases/mysql${MYSQL_VER}-scripts
+USE_MYSQL=	server
 .endif
 
 .if defined(WITH_PGSQL)
