@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	trac
-PORTVERSION=	0.11.7
-PORTREVISION=	2
+PORTVERSION=	0.12.1
 CATEGORIES=	japanese www devel python
 MASTER_SITES=	http://dist.bsdlab.org/ \
 		http://www.i-act.co.jp/project/products/downloads/
@@ -16,7 +15,8 @@ DISTNAME=	Trac-${PORTVERSION}.ja1
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	An enhanced wiki and issue tracking system for software projects
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Genshi>=0.5:${PORTSDIR}/textproc/py-genshi
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Genshi>=0.5:${PORTSDIR}/textproc/py-genshi \
+		${PYTHON_PKGNAMEPREFIX}Babel>=0.9:${PORTSDIR}/devel/py-babel
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 OPTIONS=	SILVERCITY "Use Silvercity for syntax highlighting" On \
