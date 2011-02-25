@@ -1,8 +1,6 @@
---- libltdl/config/ltmain.sh.orig	2009-06-29 12:36:19.000000000 -0500
-+++ libltdl/config/ltmain.sh	2009-06-29 12:57:44.000000000 -0500
-@@ -1010,6 +1010,21 @@
- func_infer_tag ()
- {
+--- libltdl/config/ltmain.sh.orig	2010-09-22 09:45:43.000000000 -0500
++++ libltdl/config/ltmain.sh	2011-01-18 12:59:46.000000000 -0600
+@@ -1376,2 +1376,17 @@
      $opt_debug
 +
 +    # FreeBSD-specific: where we install compilers with non-standard names
@@ -20,11 +18,7 @@
 +    fi
 +
      if test -n "$available_tags" && test -z "$tagname"; then
-       CC_quoted=
-       for arg in $CC; do
-@@ -1042,7 +1057,22 @@
- 	      break
- 	      ;;
+@@ -1412,3 +1427,18 @@
  	    esac
 -	  fi
 +
@@ -44,34 +38,22 @@
 +            fi
 +          fi
  	done
- 	# If $tagname still isn't set, then no tagged configuration
- 	# was found and let the user know that the "--tag" command
-@@ -2528,6 +2558,9 @@
- 	  ;;
- 	esac
+@@ -3516,2 +3546,5 @@
  	;;
 +      *-*-freebsd*)
 +	# FreeBSD doesn't need this...
 +	;;
        *)
- 	func_fatal_error "unknown suffix for \`$my_dlsyms'"
- 	;;
-@@ -4584,6 +4617,7 @@
- 	    *" $arg "*) ;;
- 	    * ) new_inherited_linker_flags="$new_inherited_linker_flags $arg" ;;
+@@ -5585,2 +5618,3 @@
  	esac
 +	deplibs="$deplibs $arg"
  	continue
- 	;;
- 
-@@ -5073,13 +5107,30 @@
- 	    finalize_deplibs="$deplib $finalize_deplibs"
- 	  else
- 	    compiler_flags="$compiler_flags $deplib"
+@@ -6155,9 +6189,26 @@
+ 	    func_append compiler_flags " $deplib"
 -	    if test "$linkmode" = lib ; then
 -		case "$new_inherited_linker_flags " in
 -		    *" $deplib "*) ;;
--		    * ) new_inherited_linker_flags="$new_inherited_linker_flags $deplib" ;;
+-		    * ) func_append new_inherited_linker_flags " $deplib" ;;
 -		esac
 -	    fi
  	  fi
@@ -99,5 +81,3 @@
 +	  esac # linkmode
 +
  	  continue
- 	  ;;
- 	-l*)

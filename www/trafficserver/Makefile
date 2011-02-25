@@ -42,4 +42,11 @@ BROKEN=		does not compile on 7.X
 pre-configure:
 	@cd ${WRKSRC} && ${AUTORECONF} -i
 
+# XXX: no, I don't know why this is needed for libtool > 2.2.10 but it's
+#      the only one, and a dirty hack will suffice.  Of course, using both
+#      autoreconf and the bsd.autotools.mk targets is bad too.
+#
+post-configure:
+	@${CP} ${LIBTOOL} ${WRKSRC}/libtool
+
 .include <bsd.port.post.mk>
