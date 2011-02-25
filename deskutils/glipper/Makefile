@@ -7,7 +7,7 @@
 
 PORTNAME=	glipper
 PORTVERSION=	1.0
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}%20${PORTVERSION}
 
@@ -19,7 +19,7 @@ USE_ICONV=	yes
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomeprefix gnomehack intltool pygnomedesktop pygnomeextras
-USE_PYTHON=	2.4+
+USE_PYTHON=	2.5+
 INSTALLS_ICONS=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--libdir=${PREFIX}/libexec

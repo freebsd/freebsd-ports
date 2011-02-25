@@ -7,6 +7,7 @@
 
 PORTNAME=	treeline
 PORTVERSION=	1.2.4
+PORTREVISION=	1
 CATEGORIES=	deskutils python
 MASTER_SITES=	${MASTER_SITE_BERLIOS:S/$/:treeline/} \
 		http://treeline.bellz.org/plugins/:plugins \
@@ -27,7 +28,7 @@ OPTIONS=	ASPELL "install with aspell support" off \
 
 WRKSRC=		${WRKDIR}/TreeLine
 USE_QT_VER=	4
-USE_PYTHON=	2.4+
+USE_PYTHON=	2.5+
 NO_BUILD=	yes
 LICENSE=	GPLv2
 

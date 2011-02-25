@@ -7,6 +7,7 @@
 
 PORTNAME=	sshfp
 PORTVERSION=	1.1.6
+PORTREVISION=	1
 CATEGORIES=	dns security
 MASTER_SITES=	ftp://ftp.xelerance.com/sshfp/ \
 		CRITICAL
@@ -17,7 +18,7 @@ COMMENT=	Generate SSHFP DNS records from knownhosts files or ssh-keyscan
 RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/dns/__init__.py:${PORTSDIR}/dns/py-dnspython
 
 NO_BUILD=	yes
-USE_PYTHON=	2.4+
+USE_PYTHON=	2.5+
 
 LICENSE=	GPLv2
 

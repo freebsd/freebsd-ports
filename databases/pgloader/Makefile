@@ -7,7 +7,7 @@
 
 PORTNAME=	pgloader
 PORTVERSION=	2.3.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	databases
 MASTER_SITES=	http://pgfoundry.org/frs/download.php/1814/
 
@@ -17,7 +17,7 @@ COMMENT=	Import CSV data and Large Object to PostgreSQL
 MAN1=		pgloader.1
 
 NO_BUILD=	yes
-USE_PYTHON=	2.4+
+USE_PYTHON=	2.5+
 
 RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/psycopg2/__init__.py:${PORTSDIR}/databases/py-psycopg2
 

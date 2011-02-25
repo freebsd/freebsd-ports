@@ -7,6 +7,7 @@
 
 PORTNAME=	openerp-server
 PORTVERSION=	5.0.15
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	finance python
 MASTER_SITES=	http://www.openerp.com/download/stable/source/
@@ -31,7 +32,7 @@ USE_RC_SUBR=	openerpd
 SUB_FILES=	openerp-server.conf pkg-message
 SUB_LIST=	PYTHON_SITELIBDIR=${PYTHON_SITELIBDIR}
 
-USE_PYTHON=			2.4+
+USE_PYTHON=			2.5+
 USE_PYDISTUTILS=		yes
 PYDISTUTILS_EGGINFO=		openerp_server-${PORTVERSION}-${PYTHON_VERSION:S/thon//}.egg-info
 

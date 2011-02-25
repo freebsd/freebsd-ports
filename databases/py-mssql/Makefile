@@ -7,6 +7,7 @@
 
 PORTNAME=	mssql
 PORTVERSION=	1.0.1
+PORTREVISION=	1
 CATEGORIES=	databases python
 MASTER_SITES=	SF/py${PORTNAME}/py${PORTNAME}/${PORTVERSION}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -17,7 +18,7 @@ COMMENT=	Python database interface for simple MS-SQL access
 
 LIB_DEPENDS=	sybdb.5:${PORTSDIR}/databases/freetds-msdblib
 
-USE_PYTHON=	2.4+
+USE_PYTHON=	2.5+
 USE_PYDISTUTILS=yes
 PYDISTUTILS_PKGNAME=	pymssql
 

@@ -7,7 +7,7 @@
 
 PORTNAME=	wine-doors
 PORTVERSION=	0.1.2
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	emulators
 MASTER_SITES=	http://www.wine-doors.org/releases/
 
@@ -23,7 +23,7 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/${PYLXML_EGG}:${PORTSDIR}/devel/py-lxml \
 		unzip:${PORTSDIR}/archivers/unzip \
 		wine:${PORTSDIR}/emulators/wine
 
-USE_PYTHON=	2.4+
+USE_PYTHON=	2.5+
 
 NO_BUILD=	yes
 

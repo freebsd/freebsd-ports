@@ -7,6 +7,7 @@
 
 PORTNAME=	psycopg2
 PORTVERSION=	2.3.2
+PORTREVISION=	1
 CATEGORIES=	databases python
 MASTER_SITES=	http://initd.org/psycopg/tarballs/ \
 		${MASTER_SITE_LOCAL}
@@ -17,7 +18,7 @@ MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	The high performance Python adapter for PostgreSQL
 
 USE_PGSQL=	yes
-USE_PYTHON=	2.4+
+USE_PYTHON=	2.5+
 USE_PYDISTUTILS=	yes
 
 DOCSDIR=	${PREFIX}/share/doc/py-psycopg2
