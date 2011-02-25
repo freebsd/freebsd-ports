@@ -7,7 +7,7 @@
 
 PORTNAME=	qq
 DISTVERSION=	v1.0.2-beta1_i386
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-im
 MASTER_SITES=	http://dl_dir.qq.com/linuxqq/
 DISTNAME=	linuxqq_${DISTVERSION}

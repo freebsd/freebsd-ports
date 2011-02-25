@@ -7,7 +7,7 @@
 
 PORTNAME=	nero
 PORTVERSION=	4.0.0.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils emulators
 MASTER_SITES=	http://ftp6.usw.nero.com/software/NeroLINUX/ \
 		ftp://ftp6.usw.nero.com/software/NeroLINUX/
