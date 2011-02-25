@@ -7,7 +7,7 @@
 
 PORTNAME=	echoping
 PORTVERSION=	6.0.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net ipv6
 MASTER_SITES=	ftp://ftp.internatif.org/pub/unix/echoping/
 

@@ -7,6 +7,7 @@
 
 PORTNAME=	gnarwl
 PORTVERSION=	3.6
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://www.onyxbits.de/sites/default/files/
 EXTRACT_SUFX=	.tgz

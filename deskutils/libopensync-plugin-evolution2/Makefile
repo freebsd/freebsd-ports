@@ -7,7 +7,7 @@
 
 PORTNAME=	libopensync-plugin-evolution2
 PORTVERSION=	0.22
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	deskutils
 MASTER_SITES=	http://www.opensync.org/download/releases/${PORTVERSION}/
 

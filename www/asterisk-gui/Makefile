@@ -7,7 +7,7 @@
 
 PORTNAME=	asterisk-gui
 PORTVERSION=	2.0.4
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	www
 MASTER_SITES=	http://downloads.asterisk.org/pub/telephony/asterisk-gui/releases/
 

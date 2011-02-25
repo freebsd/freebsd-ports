@@ -7,6 +7,7 @@
 
 PORTNAME=		nss-pam-ldapd
 PORTVERSION=		0.7.13
+PORTREVISION=	1
 CATEGORIES=		net
 MASTER_SITES=		http://arthurdejong.org/nss-pam-ldapd/ \
 			http://static.ipfw.ru/files/

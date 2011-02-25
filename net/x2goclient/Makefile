@@ -6,6 +6,7 @@
 
 PORTNAME=	x2goclient
 DISTVERSION=	3.01-5
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://x2go.obviously-nice.de/deb/pool-lenny/x2goclient/
 DISTNAME=	${PORTNAME}_${DISTVERSION}

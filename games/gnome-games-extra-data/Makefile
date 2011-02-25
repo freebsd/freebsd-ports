@@ -8,6 +8,7 @@
 
 PORTNAME=	gnome-games-extra-data
 PORTVERSION=	2.30.0
+PORTREVISION=	1
 CATEGORIES=	games gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2

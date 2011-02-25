@@ -7,7 +7,7 @@
 
 PORTNAME=	c_c++_reference
 PORTVERSION=	2.0.2
-PORTREVISION=	13
+PORTREVISION=	14
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.ee.fhm.edu/pub/unix/ide/KDevelop/
 DISTNAME=	c_cpp_reference-${PORTVERSION}_for_KDE_3.0

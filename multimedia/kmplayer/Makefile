@@ -7,7 +7,7 @@
 
 PORTNAME=	kmplayer
 PORTVERSION=	0.10.0c
-PORTREVISION=	5
+PORTREVISION=	6
 PORTEPOCH=	2
 CATEGORIES=	multimedia audio kde
 MASTER_SITES=	http://freebsd.ricin.com/ports/distfiles/ \

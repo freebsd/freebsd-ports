@@ -7,6 +7,7 @@
 
 PORTNAME=	lmtpd
 PORTVERSION=	0.10.7
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.oav.net/pll/ SF/pll/${PORTNAME}/${PORTVERSION}
 

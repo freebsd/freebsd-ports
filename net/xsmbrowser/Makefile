@@ -7,7 +7,7 @@
 
 PORTNAME=	xsmbrowser
 PORTVERSION=	3.4.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	net
 MASTER_SITES=	http://nuxo1.free.fr/logiciel_reseau/visu_reso/ \
 		http://mirror.uni-c.dk/gentoo/distfiles/

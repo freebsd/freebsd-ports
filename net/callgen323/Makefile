@@ -6,7 +6,7 @@
 
 PORTNAME=	callgen323
 DISTVERSION=	2.0.0.cvs.20060407
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.frm2.tum.de/pub/jpulz/FreeBSD/distfiles/
 

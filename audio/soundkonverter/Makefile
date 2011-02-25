@@ -6,6 +6,7 @@
 
 PORTNAME=	soundkonverter
 DISTVERSION=	0.9.94rc2
+PORTREVISION=	1
 CATEGORIES=	audio kde
 MASTER_SITES=	https://api.opensuse.org/public/source/home:HessiJames/soundkonverter/
 

@@ -7,7 +7,7 @@
 
 PORTNAME=	smoothblend
 PORTVERSION=	1.2
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	x11-themes kde
 MASTER_SITES=	http://www.p0z3r.org/downloads/
 PKGNAMEPREFIX=	kde-windeco-

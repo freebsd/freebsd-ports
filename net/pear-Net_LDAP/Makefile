@@ -7,6 +7,7 @@
 
 PORTNAME=	Net_LDAP
 DISTVERSION=	1.1.5
+PORTREVISION=	1
 CATEGORIES=	net pear
 
 MAINTAINER=	gerrit.beine@gmx.de

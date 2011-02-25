@@ -7,7 +7,7 @@
 
 PORTNAME=	cphone
 DISTVERSION=	0.3.2.cvs.20060407
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.frm2.tum.de/pub/jpulz/FreeBSD/distfiles/
 

@@ -7,6 +7,7 @@
 
 PORTNAME=	ZendFramework
 PORTVERSION=	1.11.2
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://framework.zend.com/releases/${DISTNAME}/ \
 		GENTOO/distfiles
