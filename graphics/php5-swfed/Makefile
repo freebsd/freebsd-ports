@@ -7,6 +7,7 @@
 
 PORTNAME=	swfed
 PORTVERSION=	0.31
+PORTREVISION=	1
 CATEGORIES=	graphics www
 MASTER_SITES=	SFJP
 MASTER_SITE_SUBDIR=	${PORTNAME}/51037
@@ -61,5 +62,10 @@ post-install:
 	@${MKDIR} ${WWWDIR}
 	@${CP} -R ${WRKDIR}/${DISTNAME}/www/ ${WWWDIR}
 	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${WWWDIR}
+
+x-generate-plist:
+	${FIND} ${WWWDIR} -type f | ${SORT} | ${SED} -e 's,${WWWDIR},%%WWWDIR%%,g' >> pkg-plist.new
+	${FIND} ${WWWDIR} -type d -depth | ${SORT} -r | ${SED} -e 's,${WWWDIR},@dirrm %%WWWDIR%%,g' >> pkg-plist.new
+	${ECHO} '@exec chown -R %%WWWOWN%%:%%WWWGRP%% %D/%%WWWDIR%%' >> pkg-plist.new
 
 .include <bsd.port.post.mk>
