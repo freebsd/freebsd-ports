@@ -7,13 +7,12 @@
 #
 
 PORTNAME=	gsasl
-PORTVERSION=	1.4.0
-PORTREVISION=	2
+PORTVERSION=	1.6.0
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	johans@FreeBSD.org
 COMMENT=	GNU SASL Library
 
 LIB_DEPENDS=	idn.16:${PORTSDIR}/dns/libidn \
@@ -23,7 +22,7 @@ LIB_DEPENDS=	idn.16:${PORTSDIR}/dns/libidn \
 USE_GNOME=	gnomehack gnometarget pkgconfig
 USE_PERL5_BUILD=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
+CONFIGURE_ENV=	LDFLAGS="${LDFLAGS}"
 USE_LDCONFIG=	yes
 
 INFO=	gsasl
@@ -36,14 +35,14 @@ USE_GETTEXT=	yes
 PLIST_SUB+=	NLS=""
 .endif
 
-CPPFLAGS=	-I${LOCALBASE}/include
-LDFLAGS=	-L${LOCALBASE}/lib
+CPPFLAGS=	-I/usr/include -I${LOCALBASE}/include
+LDFLAGS=	-L/usr/lib -L${LOCALBASE}/lib
 
 post-patch:
 .for file in \
 	lib/po/LINGUAS \
 	po/LINGUAS
-	@${REINPLACE_CMD} -e '1,2d' ${WRKSRC}/${file}
+	@${REINPLACE_CMD} -e '/^en@/d' ${WRKSRC}/${file}
 .endfor
 
 .include <bsd.port.pre.mk>

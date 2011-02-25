@@ -1,26 +1,23 @@
-
-$FreeBSD$
-
---- gl/Makefile.in.orig
-+++ gl/Makefile.in
-@@ -869,8 +869,6 @@
- 	sys/time.h-t unistd.h unistd.h-t wchar.h wchar.h-t wctype.h \
- 	wctype.h-t
+--- gl/Makefile.in.orig	2011-02-25 14:26:47.000000000 +0100
++++ gl/Makefile.in	2011-02-25 14:27:40.000000000 +0100
+@@ -1029,8 +1029,6 @@ MOSTLYCLEANFILES = core *.stackdump allo
+ 	sys/time.h-t unistd.h unistd.h-t warn-on-use.h warn-on-use.h-t \
+ 	wchar.h wchar.h-t wctype.h wctype.h-t
  MOSTLYCLEANDIRS = arpa netinet sys sys
 -CLEANFILES = configmake.h configmake.h-t charset.alias ref-add.sed \
 -	ref-del.sed
  DISTCLEANFILES = 
  MAINTAINERCLEANFILES = iconv_open-aix.h iconv_open-hpux.h \
  	iconv_open-irix.h iconv_open-osf.h iconv_open-solaris.h
-@@ -894,7 +892,6 @@
- libgl_la_LDFLAGS = $(AM_LDFLAGS) $(am__append_1)
+@@ -1057,7 +1055,6 @@ libgl_la_LDFLAGS = $(AM_LDFLAGS) -no-und
+ ARG_NONNULL_H = arg-nonnull.h
+ CXXDEFS_H = c++defs.h
  GPERF = gperf
- LINK_WARNING_H = $(top_srcdir)/lib/build-aux/link-warning.h
 -charset_alias = $(DESTDIR)$(libdir)/charset.alias
  charset_tmp = $(DESTDIR)$(libdir)/charset.tmp
+ WARN_ON_USE_H = warn-on-use.h
  all: $(BUILT_SOURCES)
- 	$(MAKE) $(AM_MAKEFLAGS) all-recursive
-@@ -1523,53 +1520,13 @@
+@@ -1719,53 +1716,13 @@ iconv_open-solaris.h: iconv_open-solaris
  # On systems with glibc-2.1 or newer, the file is redundant, therefore we
  # avoid installing it.
  

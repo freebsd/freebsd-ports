@@ -1,9 +1,6 @@
-
-$FreeBSD$
-
---- doc/gsasl.texi.orig
-+++ doc/gsasl.texi
-@@ -198,14 +198,6 @@
+--- doc/gsasl.texi.orig	2010-12-09 19:07:00.000000000 +0100
++++ doc/gsasl.texi	2011-02-25 14:25:22.000000000 +0100
+@@ -195,14 +195,6 @@ The design of the library and the intend
  applications and the library through the official API is illustrated
  below.
  
