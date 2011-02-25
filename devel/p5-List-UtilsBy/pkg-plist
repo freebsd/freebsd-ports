@@ -1,0 +1,5 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/List/UtilsBy/.packlist
+%%SITE_PERL%%/List/UtilsBy.pm
+@dirrmtry %%SITE_PERL%%/List
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/List/UtilsBy
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/List
