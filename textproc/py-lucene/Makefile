@@ -44,9 +44,7 @@ MAKE_ARGS+=	PREFIX=${PREFIX} PREFIX_PYTHON=${LOCALBASE} PYTHON=${PYTHON_CMD} \
 
 pre-build:
 		${CP} -R ${WRKDIR}/../../lucene/work/lucene-${LUCENE_VER} ${WRKSRC}/lucene-java-${LUCENE_VER}
-.if ${PYTHON_REL} > 250
 		@${REINPLACE_CMD} -e 's,-m jcc,-m jcc.__main__,' ${WRKSRC}/Makefile
-.endif
 
 #regression-test:
 #		cd ${WRKSRC}; env ${MAKE_ENV} ${GMAKE} test
