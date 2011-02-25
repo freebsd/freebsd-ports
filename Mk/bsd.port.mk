@@ -871,14 +871,6 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #				  change the owner and group of all files under ${WRKDIR}
 #				  to 0:0.  Set this variable if you want to turn off this
 #				  feature.
-#
-# For makesum:
-#
-# NO_SIZE		- Don't record size data in distinfo, needed
-#				  when the master site does not report file
-#				  sizes, or when multiple valid versions of
-#				  a distfile, having different sizes, exist.
-#
 # For patch:
 #
 # EXTRA_PATCHES	- Define this variable if you have patches not in
@@ -1229,7 +1221,7 @@ OSREL!=	${UNAME} -r | ${SED} -e 's/[-(].*//'
 .if exists(/usr/include/sys/param.h)
 OSVERSION!=	${AWK} '/^\#define[[:blank:]]__FreeBSD_version/ {print $$3}' < /usr/include/sys/param.h
 .elif exists(/usr/src/sys/sys/param.h)
-OSVERSION!=	${AWK} '/^\#define[[:blank::]]__FreeBSD_version/ {print $$3}' < /usr/src/sys/sys/param.h
+OSVERSION!=	${AWK} '/^\#define[[:blank:]]__FreeBSD_version/ {print $$3}' < /usr/src/sys/sys/param.h
 .else
 OSVERSION!=	${SYSCTL} -n kern.osreldate
 .endif
@@ -4930,9 +4922,7 @@ makesum: check-checksum-algorithms
 					$$alg_executable $$file >> ${DISTINFO_FILE}; \
 				fi; \
 			done; \
-			if [ -z "${NO_SIZE}" ]; then \
-				${ECHO_CMD} "SIZE ($$file) = "`${LS} -ALln $$file | ${AWK} '{print $$5}'` >> ${DISTINFO_FILE}; \
-			fi; \
+			${ECHO_CMD} "SIZE ($$file) = "`${LS} -ALln $$file | ${AWK} '{print $$5}'` >> ${DISTINFO_FILE}; \
 		done \
 	)
 	@for file in ${_IGNOREFILES}; do \
