@@ -1,0 +1,21 @@
+#!/bin/sh
+# $FreeBSD$
+
+PATH=/bin:/usr/sbin
+USER=murmur
+GROUP=murmur
+RUNDIR=/var/run/murmur
+
+case $2 in
+	POST-DEINSTALL)
+		if pw group show ${GROUP} 2>&1 > /dev/null; then
+			echo "You should manually remove the \"${GROUP}\" group."
+		fi
+
+		if pw user show ${USER} 2>&1 > /dev/null; then
+			echo "You should manually remove the \"${USER}\" user."
+		fi
+
+		rm -Rf ${RUNDIR}
+		;;
+esac

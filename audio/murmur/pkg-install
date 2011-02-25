@@ -37,26 +37,4 @@ case $2 in
 		chown -R ${USER}:${GROUP} ${LOGDIR} ${DBDIR} ${RUNDIR}
 
 		;;
-
-	POST-DEINSTALL)
-		if pw group show ${GROUP} 2> /dev/null; then
-			if pw group del ${GROUP}; then
-				echo "Removed group \"${GROUP}\"."
-			else
-				echo "Removing group \"${GROUP}\" failed..."
-				exit 1
-			fi
-		fi
-
-		if pw user show ${USER} 2> /dev/null; then
-			if pw userdel ${USER}; then
-				echo "Removed user \"${USER}\"."
-			else
-				echo "Removing user \"${USER}\" failed..."
-				exit 1
-			fi
-		fi
-
-		rm -Rf ${PIDDIR}
-		;;
 esac
