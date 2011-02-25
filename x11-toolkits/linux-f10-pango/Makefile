@@ -6,11 +6,13 @@
 #
 
 PORTNAME=	pango
-PORTVERSION=	1.22.3
-PORTREVISION=	1
+PORTVERSION=	1.28.3
+DISTVERSIONSUFFIX=	-1.fc10
 CATEGORIES=	x11-toolkits linux
+MASTER_SITES=	LOCAL
+MASTER_SITE_SUBDIR=	netchild/rpms/${LINUX_DIST}${LINUX_DIST_VER}
+MASTER_SITE_SRC_SUBDIR=	netchild/rpms/${LINUX_DIST}${LINUX_DIST_VER}
 PKGNAMEPREFIX=	linux-f10-
-DISTNAME=	${PORTNAME}-${PORTVERSION}-${RPMVERSION}
 
 MAINTAINER=	freebsd-emulation@FreeBSD.org
 COMMENT=	The pango library (Linux Fedora 10)
@@ -29,6 +31,6 @@ USE_LDCONFIG=	yes
 DESCR=		${.CURDIR}/../${PORTNAME}/pkg-descr
 
 post-install:
-	@${PREFIX}/usr/bin/pango-querymodules-32 > ${PREFIX}/etc/pango/i386-redhat-linux-gnu/pango.modules
+	@${PREFIX}/usr/bin/pango-querymodules-32 > ${PREFIX}/etc/pango/i686-pc-linux-gnu/pango.modules
 
 .include <bsd.port.mk>
