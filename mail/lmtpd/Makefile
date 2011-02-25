@@ -24,6 +24,8 @@ OPTIONS+=	BDB "Support for Berkeley DB" on
 OPTIONS+=	TRE "Support for TRE regexp (Approx regexp)" on
 OPTIONS+=	SIEVE "Support for SIEVE regexp (Approx regexp)" on
 
+BROKEN=		doesn't build
+
 .include <bsd.port.pre.mk>
 
 .if defined(LMTPD_WITH_BDB_VER)
