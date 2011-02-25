@@ -7,6 +7,7 @@
 
 PORTNAME=	cherrypy
 PORTVERSION=	2.3.0
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	www python
 MASTER_SITES=	http://download.cherrypy.org/${PORTNAME}/${PORTVERSION}/
@@ -17,7 +18,7 @@ DISTNAME=	CherryPy-${PORTVERSION:C/\.b$/beta/}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A pythonic, object-oriented web development framework
 
-USE_PYTHON=	2.4+
+USE_PYTHON=	2.5+
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_PKGNAME=	CherryPy
 

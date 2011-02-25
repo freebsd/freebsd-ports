@@ -7,6 +7,7 @@
 
 PORTNAME=	jToolkit
 PORTVERSION=	0.7.8
+PORTREVISION=	1
 CATEGORIES=	www python
 MASTER_SITES=	SF
 
@@ -17,7 +18,7 @@ RUN_DEPENDS=	py*-kid>=0.9.5:${PORTSDIR}/devel/py-kid
 # Has optional dependencies on database engines
 # Can optionally use py-lucene (on i386)
 
-USE_PYTHON=	2.4+
+USE_PYTHON=	2.5+
 USE_PYDISTUTILS=yes
 PYSETUP=	${PORTNAME}Setup.py
 

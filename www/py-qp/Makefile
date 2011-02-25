@@ -7,6 +7,7 @@
 
 PORTNAME=	qp
 PORTVERSION=	2.0
+PORTREVISION=	1
 CATEGORIES=	www python
 MASTER_SITES=	http://www.mems-exchange.org/software/qp/ \
 		${MASTER_SITE_LOCAL} \
@@ -21,7 +22,7 @@ BUILD_DEPENDS+=	durus:${PORTSDIR}/devel/py-durus
 BUILD_DEPENDS+=	pythoni:${PORTSDIR}/devel/py-repl
 RUN_DEPENDS+=	${BUILD_DEPENDS}
 
-USE_PYTHON=	2.4+
+USE_PYTHON=	2.5+
 USE_PYDISTUTILS=	yes
 SUB_FILES+=	pkg-message
 SUB_LIST+=	PYTHON_VERSION=${PYTHON_VERSION}

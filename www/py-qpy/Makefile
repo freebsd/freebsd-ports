@@ -7,6 +7,7 @@
 
 PORTNAME=	qpy
 PORTVERSION=	1.6
+PORTREVISION=	1
 CATEGORIES=	www python
 MASTER_SITES=	http://www.mems-exchange.org/software/qpy/ \
 		${MASTER_SITE_LOCAL} \
@@ -16,7 +17,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Generating safely-quoted html text from python code
 
-USE_PYTHON=	2.4+
+USE_PYTHON=	2.5+
 USE_PYDISTUTILS=	yes
 
 .include <bsd.port.pre.mk>

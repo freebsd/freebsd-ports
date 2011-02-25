@@ -7,6 +7,7 @@
 
 PORTNAME=	cherrypy
 PORTVERSION=	3.1.2
+PORTREVISION=	1
 CATEGORIES=	www python
 MASTER_SITES=	http://download.cherrypy.org/cherrypy/${PORTVERSION}/ \
 		http://nivi.interfree.it/distfiles/${PORTNAME}/
@@ -22,7 +23,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cheetah>=2.0.1:${PORTSDIR}/devel/py-cheetah
 EXAMPLESDIR=	${PREFIX}/share/examples/${PKGNAMEPREFIX}${PORTNAME}
 .endif
 
-USE_PYTHON=	2.4+
+USE_PYTHON=	2.5+
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_PKGNAME=	CherryPy
 

@@ -7,6 +7,7 @@
 
 PORTNAME=	trac
 PORTVERSION=	0.12.2
+PORTREVISION=	1
 CATEGORIES=	www devel python
 MASTER_SITES=	http://ftp.edgewall.com/pub/trac/ \
 		ftp://ftp.edgewall.com/pub/trac/
@@ -27,7 +28,7 @@ OPTIONS=	SILVERCITY "Use Silvercity for syntax highlighting" On \
 		SUBVERSION "Support for subversion RCS" On
 CONFLICTS=	ja-trac-*
 
-USE_PYTHON=	2.4+
+USE_PYTHON=	2.5+
 USE_PYDISTUTILS=	easy_install
 PYDISTUTILS_PKGNAME=	Trac
 PYDISTUTILS_NOEGGINFO=	yes

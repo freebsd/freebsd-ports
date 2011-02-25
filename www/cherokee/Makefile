@@ -7,6 +7,7 @@
 
 PORTNAME=	cherokee
 PORTVERSION=	1.0.19
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://www.cherokee-project.com/download/1.0/${PORTVERSION}/ \
 		http://cherokee.osuosl.org/1.0/${PORTVERSION}/ \
@@ -99,7 +100,7 @@ OPTIONS=	IPV6	  "IPv6 support"	on	\
 .include <bsd.port.options.mk>
 
 .ifdef WITH_ADMIN
-USE_PYTHON=	2.4+
+USE_PYTHON=	2.5+
 PLIST_SUB+=	ADMIN=""
 .else
 CONFIGURE_ARGS+=--disable-admin
