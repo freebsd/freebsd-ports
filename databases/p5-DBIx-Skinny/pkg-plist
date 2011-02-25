@@ -20,6 +20,7 @@
 %%SITE_PERL%%/DBIx/Skinny/SQL.pm
 %%SITE_PERL%%/DBIx/Skinny/SQL/Oracle.pm
 %%SITE_PERL%%/DBIx/Skinny/Schema.pm
+%%SITE_PERL%%/DBIx/Skinny/Util.pm
 @dirrm %%SITE_PERL%%/DBIx/Skinny/SQL
 @dirrm %%SITE_PERL%%/DBIx/Skinny/Profiler
 @dirrm %%SITE_PERL%%/DBIx/Skinny/Manual/JA
