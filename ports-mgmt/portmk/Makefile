@@ -13,6 +13,9 @@ DISTFILES=
 MAINTAINER=	portmgr@FreeBSD.org
 COMMENT=	Development version of bsd.port.mk
 
+DEPRECATED=		has not been kept up to date for > 6 months
+EXPIRATION_DATE=	2011-04-24
+
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
 NO_BUILD=	yes
