@@ -7,6 +7,7 @@
 
 PORTNAME=	veusz
 PORTVERSION=	1.10
+PORTREVISION=	1
 CATEGORIES=	science kde
 MASTER_SITES=	http://download.gna.org/veusz/
 
@@ -24,7 +25,7 @@ USE_GL=		gl
 USE_QT_VER=	4
 QT_COMPONENTS=  gui corelib rcc moc uic linguist opengl
 
-USE_PYTHON=	2.4+
+USE_PYTHON=	2.5+
 USE_PYDISTUTILS=	yes
 INSTALLS_EGGINFO=	yes
 

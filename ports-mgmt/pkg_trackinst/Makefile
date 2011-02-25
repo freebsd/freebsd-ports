@@ -6,13 +6,14 @@
 
 PORTNAME=	pkg_trackinst
 PORTVERSION=	1.2.3
+PORTREVISION=	1
 CATEGORIES=	ports-mgmt
 MASTER_SITES=	http://people.freebsd.org/~perky/distfiles/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PkgDB/pkg-plist generator by tracking installation
 
-USE_PYTHON=	2.4+
+USE_PYTHON=	2.5+
 INSTALLS_EGGINFO=	yes
 MAKE_ENV=	PYTHON_CMD=${PYTHON_CMD}
 

@@ -7,7 +7,7 @@
 
 PORTNAME=	clive
 PORTVERSION=	1.0.2
-#PORTREVISION=	0
+PORTREVISION=	1
 #PORTEPOCH=	0
 CATEGORIES=	multimedia
 MASTER_SITES=	http://download.gna.org/clive/1.0.x/ \
@@ -28,7 +28,7 @@ GNU_CONFIGURE=	yes
 
 USE_BZIP2=	yes
 # not compatible with 3.0
-USE_PYTHON=	2.4-2.6
+USE_PYTHON=	2.5-2.7
 
 .if !defined(NO_INSTALL_MANPAGES)
 MAN1=	${PORTNAME}.1 ${PORTNAME}-passwd.1

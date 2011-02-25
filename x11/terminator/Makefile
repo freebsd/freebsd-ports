@@ -7,6 +7,7 @@
 
 PORTNAME=	terminator
 PORTVERSION=	0.93
+PORTREVISION=	1
 CATEGORIES=	x11 python
 MASTER_SITES=	http://launchpadlibrarian.net/44348818/ \
 		http://hur.st/mirror/terminator/
@@ -17,7 +18,7 @@ COMMENT=	Multiple GNOME terminals in one window
 OPTIONS=	NLS	"Native language support" 	on \
 		GCONF	"Use GNOME Terminal settings"	on
 
-USE_PYTHON=	2.4+
+USE_PYTHON=	2.5+
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_PKGNAME=	Terminator
 

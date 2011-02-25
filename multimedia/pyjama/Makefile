@@ -6,7 +6,7 @@
 
 PORTNAME=	pyjama
 PORTVERSION=	0.3.0.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	multimedia python
 MASTER_SITES=	http://launchpadlibrarian.net/26637583/
 DISTNAME=	pyjama-0.3.0.1_all
@@ -21,7 +21,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pysqlite>=2.3:${PORTSDIR}/databases/py-pysql
 
 NO_BUILD=	yes
 
-USE_PYTHON=	2.4+
+USE_PYTHON=	2.5+
 USE_GSTREAMER=	core good bad
 USE_GNOME=	pygtk2
 USE_GETTEXT=	yes

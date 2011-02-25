@@ -7,7 +7,7 @@
 
 PORTNAME=	torrent_swapper
 PORTVERSION=	1.0
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	net-p2p
 MASTER_SITES=	SF/bit-torrent/bit-torrent/Torrent%20Swapper
 DISTNAME=	swapper
@@ -21,7 +21,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}m2crypto>=0.19.1:${PORTSDIR}/security/py-m2c
 DEPRECATED=	development has ceased (last release is of 2006)
 EXPIRATION_DATE=	2011-04-11
 
-USE_PYTHON=	2.4+
+USE_PYTHON=	2.5+
 USE_WX=		2.6+
 WX_COMPS=	python
 WX_UNICODE=	yes

@@ -7,6 +7,7 @@
 
 PORTNAME=	jailkit
 PORTVERSION=	2.13
+PORTREVISION=	1
 CATEGORIES=	shells
 MASTER_SITES=	http://olivier.sessink.nl/jailkit/ \
 		http://www.sfr-fresh.com/unix/privat/
@@ -15,7 +16,7 @@ MAINTAINER=	sylvio@FreeBSD.org
 COMMENT=	Jailkit is a set of utilities to limit user account
 
 GNU_CONFIGURE=	yes
-USE_PYTHON=	2.4+
+USE_PYTHON=	2.5+
 
 SHELLS=		/etc/shells
 

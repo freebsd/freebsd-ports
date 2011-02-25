@@ -7,7 +7,7 @@
 
 PORTNAME=	xbmc
 PORTVERSION=	10.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia
 MASTER_SITES=	http://mirrors.xbmc.org/releases/source/ \
 		http://fneufn.eu/freebsd/xbmc/
@@ -66,7 +66,7 @@ USE_XORG=	xinerama xt xmu xrandr
 USE_GL=		glu
 USE_SDL=	image mixer sdl
 USE_MYSQL=	yes
-USE_PYTHON=	2.4-2.6
+USE_PYTHON=	2.5-2.6
 MAKE_JOBS_SAFE=	yes
 NOPRECIOUSMAKEVARS=	yes
 INSTALLS_ICONS=	yes

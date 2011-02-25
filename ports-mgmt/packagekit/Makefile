@@ -7,7 +7,7 @@
 
 PORTNAME=	PackageKit
 PORTVERSION=	0.6.11
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES=	ports-mgmt sysutils
 MASTER_SITES=	http://www.packagekit.org/releases/
 
@@ -30,7 +30,7 @@ USE_GETTEXT=	yes
 USE_GNOME=	glib20 intltool
 USE_ICONV=	yes
 USE_LDCONFIG=	yes
-USE_PYTHON_BUILD=	2.4+
+USE_PYTHON_BUILD=	2.5+
 GNU_CONFIGURE=	yes
 CPPFLAGS=	-I${LOCALBASE}/include
 LDFLAGS=	-L${LOCALBASE}/lib -lexecinfo

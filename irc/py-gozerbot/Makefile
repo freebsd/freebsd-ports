@@ -7,7 +7,7 @@
 
 PORTNAME=	gozerbot
 PORTVERSION=	0.8.1.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	irc python
 MASTER_SITES=	http://gozerbot.org/media/tarball/ \
 		${MASTER_SITE_GOOGLE_CODE}
@@ -17,7 +17,7 @@ DISTNAME=	gozerbot-${PORTVERSION}
 MAINTAINER=	sten@blinkenlights.nl
 COMMENT=	Gozerbot - A modular Python IRC and Jabber bot
 
-USE_PYTHON=	2.4+
+USE_PYTHON=	2.5+
 USE_PYDISTUTILS=	yes
 SUB_FILES=		pkg-message
 
