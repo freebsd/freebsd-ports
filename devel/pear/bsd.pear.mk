@@ -15,6 +15,12 @@ DIST_SUBDIR=	PEAR
 
 RUN_DEPENDS+=	pear:${PORTSDIR}/devel/pear
 
+.if defined(PEAR_CATSRC)
+PEARWRKSRC?=    ${WRKSRC}/${CATEGORY}
+.else
+PEARWRKSRC?=    ${WRKSRC}
+.endif
+
 .if !defined(USE_PHPIZE)
 NO_BUILD=	yes
 .endif
@@ -171,7 +177,7 @@ do-install-files: do-install-files-msg
 	@${MKDIR} ${INSTDIR}/${dir}
 . endfor
 . for file in ${FILES}
-	@${INSTALL_DATA} ${WRKSRC}/${file} ${INSTDIR}/${file}
+	@${INSTALL_DATA} ${PEARWRKSRC}/${file} ${INSTDIR}/${file}
 . endfor
 
 do-install-docs: do-install-docs-msg
