@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	babl
-PORTVERSION=	0.1.2
+PORTVERSION=	0.1.4
 CATEGORIES=	x11
 MASTER_SITES=	ftp://ftp.gimp.org/pub/%SUBDIR%/ \
 		http://gimp.mirrors.hoobly.com/%SUBDIR%/ \
@@ -19,6 +19,8 @@ MASTER_SITE_SUBDIR=	babl/${PORTVERSION:R}
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Dynamic pixel format conversion library
+
+BUILD_DEPENDS=	g-ir-scanner:${PORTSDIR}/devel/gobject-introspection
 
 USE_LDCONFIG=	yes
 USE_BZIP2=	yes

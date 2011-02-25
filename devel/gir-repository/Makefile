@@ -17,7 +17,6 @@ COMMENT=	Introspection information for various libraries
 NO_BUILD=	yes
 
 RUN_DEPENDS=	${GIRDIR}/${poppler_GIR}.gir:${PORTSDIR}/${poppler_CATEGORY}/gir-repository-poppler \
-		${GIRDIR}/${babl_GIR}.gir:${PORTSDIR}/${babl_CATEGORY}/gir-repository-babl \
 		${GIRDIR}/${libnotify_GIR}.gir:${PORTSDIR}/${libnotify_CATEGORY}/gir-repository-libnotify \
 		${GIRDIR}/${vte_GIR}.gir:${PORTSDIR}/${vte_CATEGORY}/gir-repository-vte \
 		${GIRDIR}/${goocanvas_GIR}.gir:${PORTSDIR}/${goocanvas_CATEGORY}/gir-repository-goocanvas
