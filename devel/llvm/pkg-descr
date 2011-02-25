@@ -7,4 +7,4 @@ Low Level Virtual Machine (LLVM) is:
   virtual machine. It does not require garbage collection or run-time
   code generation.
 
-WWW:	http://llvm.cs.uiuc.edu/
+WWW:	http://llvm.org/
