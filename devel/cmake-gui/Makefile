@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cmake
-PORTVERSION=	2.8.3
+PORTVERSION=	2.8.4
 CATEGORIES=	devel
 MASTER_SITES=	http://www.${PORTNAME}.org/files/v${PORTVERSION:C/\.[[:digit:]]+$//}/
 PKGNAMESUFFIX=	-gui
@@ -25,12 +25,6 @@ MAN1=		cmake-gui.1
 BUILD_WRKSRC=	${WRKSRC}/Source/QtDialog
 INSTALL_WRKSRC=	${BUILD_WRKSRC}
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 700042
-CMAKE_USE_PTHREAD=	yes
-.endif
-
 post-patch:
 	@(${FIND} ${WRKSRC}/Modules -name "*.cmake" -print0; \
 		${FIND} ${WRKSRC}/Tests -name "CMakeLists.txt" -print0 ) | \
@@ -48,4 +42,4 @@ post-install:
 	${MKDIR} ${MANPREFIX}/man/man1
 	${INSTALL_MAN} ${WRKSRC}/cmake-gui.1 ${MANPREFIX}/man/man1
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
