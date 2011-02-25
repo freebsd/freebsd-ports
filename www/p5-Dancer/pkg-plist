@@ -8,6 +8,7 @@ bin/dancer
 %%SITE_PERL%%/Dancer/Cookies.pm
 %%SITE_PERL%%/Dancer/Deployment.pod
 %%SITE_PERL%%/Dancer/Development.pod
+%%SITE_PERL%%/Dancer/Development/Integration.pod
 %%SITE_PERL%%/Dancer/Engine.pm
 %%SITE_PERL%%/Dancer/Error.pm
 %%SITE_PERL%%/Dancer/FileUtils.pm
@@ -23,8 +24,10 @@ bin/dancer
 %%SITE_PERL%%/Dancer/Logger/Abstract.pm
 %%SITE_PERL%%/Dancer/Logger/Console.pm
 %%SITE_PERL%%/Dancer/Logger/File.pm
+%%SITE_PERL%%/Dancer/MIME.pm
 %%SITE_PERL%%/Dancer/ModuleLoader.pm
 %%SITE_PERL%%/Dancer/Object.pm
+%%SITE_PERL%%/Dancer/Object/Singleton.pm
 %%SITE_PERL%%/Dancer/Plugin.pm
 %%SITE_PERL%%/Dancer/Plugin/Ajax.pm
 %%SITE_PERL%%/Dancer/Plugins.pod
@@ -60,7 +63,9 @@ bin/dancer
 @dirrm %%SITE_PERL%%/Dancer/Route
 @dirrm %%SITE_PERL%%/Dancer/Request
 @dirrm %%SITE_PERL%%/Dancer/Plugin
+@dirrm %%SITE_PERL%%/Dancer/Object
 @dirrm %%SITE_PERL%%/Dancer/Logger
 @dirrm %%SITE_PERL%%/Dancer/Handler
+@dirrm %%SITE_PERL%%/Dancer/Development
 @dirrm %%SITE_PERL%%/Dancer
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Dancer

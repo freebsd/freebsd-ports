@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	Dancer
-PORTVERSION=	1.2003
+PORTVERSION=	1.3011
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
-MASTER_SITE_SUBDIR=	../../authors/id/X/XS/XSAWYERX
+MASTER_SITE_SUBDIR=	../../authors/id/S/SU/SUKRIA
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	kuriyama@FreeBSD.org
@@ -24,6 +24,9 @@ RUN_DEPENDS=	\
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 OPTIONS=	YAML "Enable YAML implementation in Perl" On
+
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
 
 .include <bsd.port.options.mk>
 
@@ -41,6 +44,7 @@ MAN3=	Dancer.3 \
 	Dancer::Cookies.3 \
 	Dancer::Deployment.3 \
 	Dancer::Development.3 \
+	Dancer::Development::Integration.3 \
 	Dancer::Engine.3 \
 	Dancer::Error.3 \
 	Dancer::FileUtils.3 \
@@ -51,13 +55,16 @@ MAN3=	Dancer.3 \
 	Dancer::Logger::Abstract.3 \
 	Dancer::Logger::Console.3 \
 	Dancer::Logger::File.3 \
+	Dancer::MIME.3 \
 	Dancer::ModuleLoader.3 \
 	Dancer::Object.3 \
+	Dancer::Object::Singleton.3 \
 	Dancer::Plugin.3 \
 	Dancer::Plugin::Ajax.3 \
 	Dancer::Plugins.3 \
 	Dancer::Request.3 \
 	Dancer::Request::Upload.3 \
+	Dancer::Response.3 \
 	Dancer::Route::Cache.3 \
 	Dancer::Serializer.3 \
 	Dancer::Serializer::JSON.3 \
