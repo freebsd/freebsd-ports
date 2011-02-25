@@ -16,8 +16,6 @@ DISTNAME=	jabberpy-${PORTVERSION}-0
 MAINTAINER=	flz@FreeBSD.org
 COMMENT=	A Python Jabber library
 
-RUN_DEPENDS=	${PYEXPAT}
-
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_PKGNAME=	jabber.py
