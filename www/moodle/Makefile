@@ -71,7 +71,7 @@ USE_PHP+=	ldap
 .endif
 
 .if !defined(WITHOUT_MIMETEX)
-RUN_DEPENDS+=	${LOCALBASE}/www/cgi-bin/mimetex.cgi:${PORTSDIR}/www/mimetex
+RUN_DEPENDS+=	${LOCALBASE}/www/mimetex/cgi-bin/mimetex.cgi:${PORTSDIR}/www/mimetex
 .endif
 
 NO_BUILD=	yes
