@@ -7,7 +7,7 @@
 
 PORTNAME=	xhtml
 PORTVERSION=	1.1.${RECDATE}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.w3.org/TR/2007/WD-xhtml11-${RECDATE}/
 DISTNAME=	xhtml11
@@ -43,6 +43,10 @@ SGMLCAT_RM=	${XMLCATMGR} -sc ${SGMLCAT} remove \
 
 DTDDIR=		share/xml/${PORTNAME}/1.1/dtd
 XSDDIR=		share/xml/${PORTNAME}/1.1/xsd
+
+post-patch:
+	${REINPLACE_CMD} -i '' 's|SGMLDECL "xml1.dcl"|-- SGMLDECL "xml1.dcl" --|g' \
+		 ${WRKSRC}/DTD/xhtml11.cat
 
 do-install:
 	${MKDIR} ${PREFIX}/${DTDDIR}
