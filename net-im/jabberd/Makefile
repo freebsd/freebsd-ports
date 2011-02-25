@@ -7,6 +7,7 @@
 
 PORTNAME=	jabberd
 PORTVERSION=	2.2.13
+PORTREVISION=	1
 CATEGORIES=	net-im
 MASTER_SITES=	http://codex.xiaoka.com/pub/jabberd2/releases/
 DIST_SUBDIR=	jabber
@@ -171,7 +172,7 @@ CONFIGURE_ARGS+=	--with-sasl=cyrus
 LIB_DEPENDS+=	sasl2.2:${PORTSDIR}/security/cyrus-sasl2
 .else
 CONFIGURE_ARGS+=	--with-sasl=gsasl
-LIB_DEPENDS+=	gsasl.14:${PORTSDIR}/security/gsasl
+LIB_DEPENDS+=	gsasl.15:${PORTSDIR}/security/gsasl
 .endif
 
 MAN8=		c2s.8 jabberd.8 router.8 s2s.8 sm.8
