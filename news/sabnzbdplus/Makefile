@@ -17,7 +17,8 @@ COMMENT=	A web-interface based binary newsgrabber in python, with nzb support
 
 RUN_DEPENDS=	cheetah:${PORTSDIR}/devel/py-cheetah \
 		${PYTHON_SITELIBDIR}/cherrypy/__init__.py:${PORTSDIR}/www/py-cherrypy \
-		${PYTHON_SITELIBDIR}/pythonutils/configobj.py:${PORTSDIR}/devel/py-utils
+		${PYTHON_SITELIBDIR}/pythonutils/configobj.py:${PORTSDIR}/devel/py-utils \
+		${PYTHON_SITELIBDIR}/_sqlite3.so:${PORTSDIR}/databases/py-sqlite3
 
 LICENSE=	GPLv2
 
@@ -41,16 +42,6 @@ OPTIONS=	PAR2CMDLINE "Required for postprocessing of par files." on \
 		OPENSSL "SSL support" on
 
 .include <bsd.port.pre.mk>
-
-.if ${PYTHON_REL} < 250
-RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/cElementTree.so:${PORTSDIR}/devel/py-celementtree
-.endif
-
-.if ${PYTHON_REL} < 250
-RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/pysqlite2/__init__.py:${PORTSDIR}/databases/py-pysqlite23
-.else
-RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/_sqlite3.so:${PORTSDIR}/databases/py-sqlite3
-.endif
 
 .if !defined(WITHOUT_PAR2CMDLINE)
 RUN_DEPENDS+=	par2repair:${PORTSDIR}/archivers/par2cmdline

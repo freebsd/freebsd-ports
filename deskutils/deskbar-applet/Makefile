@@ -48,11 +48,6 @@ CONFIGURE_ARGS+=--disable-evolution
 PLIST_SUB+=	EVO="@comment "
 .endif
 
-.if ${PYTHON_REL} < 250
-BUILD_DEPENDS+=	${PYTHON_SITELIBDIR}/elementtree/__init__.py:${PORTSDIR}/devel/py-elementtree
-RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/elementtree/__init__.py:${PORTSDIR}/devel/py-elementtree
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g ; \
 		s|%%LOCALBASE%%|${LOCALBASE}|g' \
