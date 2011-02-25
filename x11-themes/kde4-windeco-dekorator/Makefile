@@ -7,7 +7,7 @@
 
 PORTNAME=	dekorator
 PORTVERSION=	0.4.0.2
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	x11-themes kde
 MASTER_SITES=	http://www.kde-look.org/CONTENT/content-files/
 PKGNAMEPREFIX=	kde4-windeco-

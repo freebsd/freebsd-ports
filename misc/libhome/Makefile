@@ -7,6 +7,7 @@
 
 PORTNAME=	libhome
 PORTVERSION=	0.10.2
+PORTREVISION=	1
 CATEGORIES=	misc
 MASTER_SITES=	ftp://ftp.oav.net/pll/ SF/pll/${PORTNAME}/${PORTVERSION}
 

@@ -7,7 +7,7 @@
 
 PORTNAME=	geekclock
 PORTVERSION=	1.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	x11-clocks deskutils kde
 MASTER_SITES=	http://w2f2.com/projects/${PORTNAME}/
 PKGNAMEPREFIX=	plasma-applet-

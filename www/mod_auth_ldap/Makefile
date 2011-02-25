@@ -7,7 +7,7 @@
 
 PORTNAME=	mod_auth_ldap
 PORTVERSION=	2.12
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	http://www.muquit.com/muquit/software/mod_auth_ldap/ \
 		LOCAL

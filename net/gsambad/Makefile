@@ -7,7 +7,7 @@
 
 PORTNAME=	gsambad
 PORTVERSION=	0.1.9
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	net
 MASTER_SITES=	http://mange.dynalias.org/linux/${PORTNAME}/
 

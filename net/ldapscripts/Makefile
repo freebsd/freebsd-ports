@@ -7,6 +7,7 @@
 
 PORTNAME=	ldapscripts
 PORTVERSION=	1.10.0
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION} \
 		http://contribs.martymac.org/ldapscripts/

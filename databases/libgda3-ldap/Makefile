@@ -6,7 +6,7 @@
 #   $MCom: ports/databases/libgda3-ldap/Makefile,v 1.2 2008/02/26 21:23:34 kwm Exp $
 #
 
-PORTREVISION?=	1
+PORTREVISION?=	2
 CATEGORIES=	databases gnome
 PKGNAMESUFFIX?=	-ldap
 

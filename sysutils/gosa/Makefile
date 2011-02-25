@@ -8,6 +8,7 @@
 PORTNAME=	gosa
 PORTVERSION=	2.6.10
 DISTVERSIONPREFIX=	combined-
+PORTREVISION=	1
 CATEGORIES=	sysutils www
 MASTER_SITES=	http://oss.gonicus.de/pub/gosa/ \
 		http://oss.gonicus.de/pub/gosa/archive/

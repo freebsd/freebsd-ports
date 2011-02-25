@@ -7,7 +7,7 @@
 
 PORTNAME=	postfixadmin
 PORTVERSION=	2.3.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail www
 MASTER_SITES=	http://vivi.cat.pdx.edu/sm-pfa-plugin/
 PKGNAMEPREFIX=	squirrelmail-

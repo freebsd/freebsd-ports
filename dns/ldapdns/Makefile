@@ -7,7 +7,7 @@
 
 PORTNAME=	ldapdns
 PORTVERSION=	2.06
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	dns
 MASTER_SITES=	http://www.nimh.org/dl/
 

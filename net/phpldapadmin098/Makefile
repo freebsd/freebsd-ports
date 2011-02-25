@@ -7,6 +7,7 @@
 
 PORTNAME=	phpldapadmin098
 PORTVERSION=	0.9.8.5
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	net www
 MASTER_SITES=	SF/phpldapadmin/phpldapadmin/${PORTVERSION}

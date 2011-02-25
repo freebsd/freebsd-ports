@@ -8,7 +8,7 @@
 
 PORTNAME=	showimg
 PORTVERSION=	0.9.5
-PORTREVISION=	7
+PORTREVISION=	8
 PORTEPOCH=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.jalix.org/projects/${PORTNAME}/download/${PORTVERSION}/ \

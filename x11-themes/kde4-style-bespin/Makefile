@@ -7,7 +7,7 @@
 
 PORTNAME=	bespin
 PORTVERSION=	200912030441
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	x11-themes kde
 MASTER_SITES=	http://meatwad.mouf.net/~steve/
 PKGNAMEPREFIX=	kde4-style-

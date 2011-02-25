@@ -7,6 +7,7 @@
 
 PORTNAME=	DB_ldap2
 PORTVERSION=	0.5.1
+PORTREVISION=	1
 CATEGORIES=	databases net pear
 
 MAINTAINER=	miwi@FreeBSD.org

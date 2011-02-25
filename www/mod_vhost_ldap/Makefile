@@ -7,7 +7,7 @@
 
 PORTNAME=	mod_vhost_ldap
 PORTVERSION=	1.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	http://alioth.debian.org/frs/download.php/1422/
 DISTNAME=	${PORTNAME:S/_/-/g}-${PORTVERSION}

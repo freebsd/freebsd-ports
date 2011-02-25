@@ -7,7 +7,7 @@
 
 PORTNAME=	adtool
 PORTVERSION=	1.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	http://gp2x.org/adtool/
 

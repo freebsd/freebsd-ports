@@ -6,6 +6,7 @@
 
 PORTNAME=      bangarang
 PORTVERSION=   1.0.1
+PORTREVISION=	1
 CATEGORIES=    multimedia
 MASTER_SITES=  http://opendesktop.org/CONTENT/content-files/
 DISTNAME=      113305-bangarang-1.0.1
