@@ -7,6 +7,7 @@
 
 PORTNAME=	commons-utilities
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://devio.us/~dereckson/software/commons-utilities/
 
@@ -23,7 +24,7 @@ RUN_DEPENDS=	p5-Image-ExifTool>=0:${PORTSDIR}/graphics/p5-Image-ExifTool \
 
 NO_BUILD=	yes
 USE_PERL5_RUN=	yes
-USE_PYTHON=	2.4+
+USE_PYTHON=	2.5+
 
 LICENSE=	GPLv3
 

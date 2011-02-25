@@ -7,7 +7,7 @@
 
 PORTNAME=	outerspace
 PORTVERSION=	0.2.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	games
 MASTER_SITES=	SF/ospace/OSLauncher/${PORTVERSION}
 
@@ -16,7 +16,7 @@ COMMENT=	On-line strategy game
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/pygame/__init__.py:${PORTSDIR}/devel/py-game
 
-USE_PYTHON=	2.4+
+USE_PYTHON=	2.5+
 NO_BUILD=	yes
 
 SUB_FILES=	outerspace

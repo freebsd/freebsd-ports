@@ -7,7 +7,7 @@
 
 PORTNAME=	dblatex
 PORTVERSION=	0.2.12
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	textproc
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
@@ -20,7 +20,7 @@ RUN_DEPENDS=	xsltproc:${PORTSDIR}/textproc/libxslt \
 		etex:${PORTSDIR}/print/teTeX-base
 
 USE_BZIP2=	yes
-USE_PYTHON=	2.4+
+USE_PYTHON=	2.5+
 USE_PYDISTUTILS=yes
 PYDISTUTILS_INSTALLARGS=	-c -O1 --prefix=${PREFIX} \
 				--catalogs=${PREFIX}/share/xml/catalog.ports

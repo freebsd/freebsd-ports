@@ -7,6 +7,7 @@
 
 PORTNAME=	email
 PORTVERSION=	3.0.1
+PORTREVISION=	1
 CATEGORIES=	mail python
 MASTER_SITES=	http://cheeseshop.python.org/packages/source/e/email/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -16,7 +17,7 @@ MAINTAINER=	mnag@FreeBSD.org
 COMMENT=	Email package for Python 2.3 or upper
 
 DIST_SUBDIR=	python
-USE_PYTHON=	2.4+
+USE_PYTHON=	2.5+
 USE_PYDISTUTILS=	yes
 
 CONFLICTS=	py*-mimelib-2.* py*-email-2.*

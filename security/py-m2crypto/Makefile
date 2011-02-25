@@ -7,6 +7,7 @@
 
 PORTNAME=	m2crypto
 PORTVERSION=	0.20
+PORTREVISION=	1
 CATEGORIES=	security python
 MASTER_SITES=	CHEESESHOP \
 		http://chandlerproject.org/pub/Projects/MeTooCrypto/
@@ -19,7 +20,7 @@ COMMENT=	Crypto and SSL toolkit for Python
 
 BUILD_DEPENDS=	swig1.3:${PORTSDIR}/devel/swig13
 
-USE_PYTHON=	2.4+
+USE_PYTHON=	2.5+
 USE_OPENSSL=	yes
 USE_PYDISTUTILS=	easy_install
 PYEASYINSTALL_ARCHDEP=	yes

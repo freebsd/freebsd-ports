@@ -5,6 +5,7 @@
 
 PORTNAME=	wapiti
 PORTVERSION=	1.1.6
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
@@ -13,7 +14,7 @@ COMMENT=	Wapiti is a vulnerability scanner for web applications
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/tidy:${PORTSDIR}/www/py-utidy
 
-USE_PYTHON=	2.4+
+USE_PYTHON=	2.5+
 NO_BUILD=	yes
 PORTDOCS=	README
 

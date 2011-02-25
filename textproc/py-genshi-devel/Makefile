@@ -7,6 +7,7 @@
 
 PORTNAME=	Genshi
 PORTVERSION=	0.6.1052
+PORTREVISION=	1
 CATEGORIES=	textproc www python
 MASTER_SITES=	ftp://ftp.renatasystems.org/pub/FreeBSD/ports/distfiles/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -15,7 +16,7 @@ PKGNAMESUFFIX=	-devel
 MAINTAINER=	alexey@renatasystems.org
 COMMENT=	Python toolkit for stream-based generation of output for the web
 
-USE_PYTHON=	2.4+
+USE_PYTHON=	2.5+
 USE_PYDISTUTILS=	easy_install
 
 WRKSRC=		${WRKDIR}/genshi

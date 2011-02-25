@@ -7,6 +7,7 @@
 
 PORTNAME=	punjab
 PORTVERSION=	0.14
+PORTREVISION=	1
 CATEGORIES=	net-im python
 MASTER_SITES=	http://code.stanziq.com/punjab/releases/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,7 +15,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	ports@c0decafe.net
 COMMENT=	HTTP XMPP client interface
 
-USE_PYTHON=	2.4+
+USE_PYTHON=	2.5+
 USE_PYDISTUTILS=yes
 USE_TWISTED=	words web conch names
 

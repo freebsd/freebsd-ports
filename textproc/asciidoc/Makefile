@@ -7,13 +7,14 @@
 
 PORTNAME=	asciidoc
 PORTVERSION=	8.6.1
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	SF
 
 MAINTAINER=	peter.schuller@infidyne.com
 COMMENT=	A text document format for writing short documents and man pages
 
-USE_PYTHON=	2.4+
+USE_PYTHON=	2.5+
 USE_GMAKE=	yes
 MAKE_ENV=	INSTALL="${INSTALL}" INSTALL_PROGRAM="${INSTALL_PROGRAM}" \
 		INSTALL_SCRIPT="${INSTALL_SCRIPT}" INSTALL_DATA="${INSTALL_DATA}"

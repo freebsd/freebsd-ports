@@ -7,6 +7,7 @@
 
 PORTNAME=	tmda
 PORTVERSION=	1.1.12
+PORTREVISION=	1
 CATEGORIES=	mail python
 MASTER_SITES=	ftp://tmda.net/pub/tmda/releases/ \
 		${MASTER_SITE_LOCAL}
@@ -20,7 +21,7 @@ COMMENT=	Python-based SPAM reduction system
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/cdbmodule.so:${PORTSDIR}/databases/py-cdb
 .endif
 
-USE_PYTHON=	2.4+
+USE_PYTHON=	2.5+
 
 SUB_FILES=	pkg-message
 
