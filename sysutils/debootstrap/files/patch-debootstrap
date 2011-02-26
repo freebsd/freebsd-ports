@@ -1,0 +1,11 @@
+--- debootstrap.orig	2011-02-26 21:36:23.197635062 +0100
++++ debootstrap	2011-02-26 21:50:23.274213717 +0100
+@@ -384,6 +384,8 @@
+ 
+ if [ "$ARCH" != "" ]; then
+ 	true
++elif [ "`uname -s`" = "FreeBSD" ]; then
++	ARCH=kfreebsd-`/sbin/sysctl -n hw.machine_arch`
+ elif [ -x /usr/bin/dpkg ] && \
+      /usr/bin/dpkg --print-architecture >/dev/null 2>&1; then
+ 	ARCH=`/usr/bin/dpkg --print-architecture`

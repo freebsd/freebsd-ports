@@ -147,6 +147,7 @@
     SUBDIR += dcfldd
     SUBDIR += dd_rescue
     SUBDIR += ddrescue
+    SUBDIR += debootstrap
     SUBDIR += decomment
     SUBDIR += deleted
     SUBDIR += deltup

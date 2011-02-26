@@ -1,0 +1,35 @@
+sbin/debootstrap
+share/debootstrap/functions
+share/debootstrap/scripts/sarge
+share/debootstrap/scripts/sid
+share/debootstrap/scripts/hoary.buildd
+share/debootstrap/scripts/hardy
+share/debootstrap/scripts/intrepid
+share/debootstrap/scripts/etch
+share/debootstrap/scripts/woody
+share/debootstrap/scripts/sarge.buildd
+share/debootstrap/scripts/unstable
+share/debootstrap/scripts/karmic
+share/debootstrap/scripts/etch-m68k
+share/debootstrap/scripts/hoary
+share/debootstrap/scripts/potato
+share/debootstrap/scripts/warty.buildd
+share/debootstrap/scripts/lenny
+share/debootstrap/scripts/maverick
+share/debootstrap/scripts/stable
+share/debootstrap/scripts/dapper
+share/debootstrap/scripts/testing
+share/debootstrap/scripts/feisty
+share/debootstrap/scripts/sarge.fakechroot
+share/debootstrap/scripts/breezy
+share/debootstrap/scripts/squeeze
+share/debootstrap/scripts/warty
+share/debootstrap/scripts/jaunty
+share/debootstrap/scripts/gutsy
+share/debootstrap/scripts/lucid
+share/debootstrap/scripts/natty
+share/debootstrap/scripts/woody.buildd
+share/debootstrap/scripts/edgy
+share/debootstrap/scripts/wheezy
+@dirrm share/debootstrap/scripts
+@dirrm share/debootstrap

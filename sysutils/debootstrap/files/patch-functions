@@ -1,0 +1,50 @@
+--- functions.orig	2011-02-22 01:25:08.000000000 +0100
++++ functions	2011-02-26 21:46:35.811100782 +0100
+@@ -232,7 +232,11 @@
+ 	# args: dest checksum size
+ 	local expchecksum="$2"
+ 	local expsize="$3"
+-	relchecksum=`sha${SHA_SIZE}sum < "$1" | sed 's/ .*$//'`
++	if [ "`uname -s`" = "FreeBSD" ]; then
++		relchecksum=`sha${SHA_SIZE} < "$1"`
++	else
++		relchecksum=`sha${SHA_SIZE}sum < "$1" | sed 's/ .*$//'`
++	fi
+ 	relsize=`wc -c < "$1"`
+ 	if [ "$expsize" -ne "$relsize" ] || [ "$expchecksum" != "$relchecksum" ]; then
+ 		return 1
+@@ -510,9 +514,9 @@
+ 		local i=
+ 		if [ "$normi" != "" ]; then
+ 			i="$normi"
+-		elif [ -x /bin/bunzip2 ] && [ "$bz2i" != "" ]; then
++		elif [ -x /bin/bunzip2 -o -x /usr/bin/bunzip2 ] && [ "$bz2i" != "" ]; then
+ 			i="$bz2i"
+-		elif [ -x /bin/gunzip ] && [ "$gzi" != "" ]; then
++		elif [ -x /bin/gunzip -o -x /usr/bin/gunzip ] && [ "$gzi" != "" ]; then
+ 			i="$gzi"
+ 		fi
+ 		if [ "$i" != "" ]; then
+@@ -538,11 +542,11 @@
+ 			ext="$ext $normi ."
+ 			i="$normi"
+ 		fi
+-		if [ -x /bin/bunzip2 ] && [ "$bz2i" != "" ]; then
++		if [ -x /bin/bunzip2 -o -x /usr/bin/bunzip2 ] && [ "$bz2i" != "" ]; then
+ 			ext="$ext $bz2i bz2"
+ 			i="${i:-$bz2i}"
+ 		fi
+-		if [ -x /bin/gunzip ] && [ "$gzi" != "" ]; then
++		if [ -x /bin/gunzip -o -x /usr/bin/gunzip ] && [ "$gzi" != "" ]; then
+ 			ext="$ext $gzi gz"
+ 			i="${i:-$gzi}"
+ 		fi
+@@ -676,7 +680,7 @@
+ 	    for c in $COMPONENTS; do
+ 		local path="dists/$SUITE/$c/binary-$ARCH/Packages"
+ 		local pkgdest="$TARGET/$($DLDEST pkg "$SUITE" "$c" "$ARCH" "$m" "$path")"
+-		if [ -x /bin/gunzip ] && get "$m/${path}.gz" "${pkgdest}.gz"; then
++		if [ -x /bin/gunzip -o -x /usr/bin/gunzip ] && get "$m/${path}.gz" "${pkgdest}.gz"; then
+ 			rm -f "$pkgdest"
+ 			gunzip "$pkgdest.gz"
+ 		elif get "$m/$path" "$pkgdest"; then
