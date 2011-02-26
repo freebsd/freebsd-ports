@@ -2,6 +2,7 @@
 %%SITE_PERL%%/ExtUtils/Constant.pm
 %%SITE_PERL%%/ExtUtils/Constant/Aaargh56Hash.pm
 %%SITE_PERL%%/ExtUtils/Constant/Base.pm
+%%SITE_PERL%%/ExtUtils/Constant/ProxySubs.pm
 %%SITE_PERL%%/ExtUtils/Constant/Utils.pm
 %%SITE_PERL%%/ExtUtils/Constant/XS.pm
 @dirrm %%SITE_PERL%%/ExtUtils/Constant
