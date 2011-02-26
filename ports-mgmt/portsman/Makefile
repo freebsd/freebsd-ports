@@ -16,6 +16,9 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-rc2
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An ncurses based front-end to manage the FreeBSD ports collection
 
+DEPRECATED=		hardwires an ancient version of INDEX
+EXPIRATION_DATE=	2011-04-26
+
 MAN1=		portsman.1
 MAN5=		portsmanrc.5
 GNU_CONFIGURE=	yes
