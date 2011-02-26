@@ -37,7 +37,7 @@ PORTDOCS=	AUTHORS CREDITS ChangeLog FAQ README TODO
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_LIRC)
-LIB_DEPENDS+=		lirc_client.1:${PORTSDIR}/comms/lirc
+LIB_DEPENDS+=		lirc_client.2:${PORTSDIR}/comms/lirc
 CONFIGURE_ARGS+=	--with-lirc
 .endif
 

@@ -80,7 +80,7 @@ PLIST_SUB+=	TRACKER="@comment "
 #.endif
 
 .if defined(WITH_LIRC)
-LIB_DEPENDS+=	lirc_client.1:${PORTSDIR}/comms/lirc
+LIB_DEPENDS+=	lirc_client.2:${PORTSDIR}/comms/lirc
 PLIST_SUB+=	LIRC=""
 TOTEM_PLUGINS:=	${TOTEM_PLUGINS} lirc
 .else

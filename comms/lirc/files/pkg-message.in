@@ -1,0 +1,49 @@
+**********************************************************************
+This port does not contain any FreeBSD device drivers for infrared
+devices. This port installs the LIRC daemons and tools for interacting
+with drivers that support the LIRC device interface.
+
+You will need to obtain third party device drivers or port the Linux
+drivers in ${WRKSRC}/drivers to use the LIRC port.
+
+Update for 0.9:  Known working with this update are FTDI-based USB
+IR receivers/transmitters like described here,
+
+	http://www.huitsing.nl/irftdi/
+
+and if you use (at the time of writing, support probably will be
+committed to the version in ports soon) webcamd svn,
+
+	http://www.selasky.org/hans_petter/video4bsd/
+
+then MCE USB based ones driven by the Linux mceusb driver as well
+remotes coming with USB DVB tuners that by default work with the
+Linux drivers used in webcamd should also work, i.e. if webcamd
+creates a /dev/lircX device node check if e.g.
+
+	mode2 -d /dev/lirc0
+
+reports pulses and spaces when triggering the remote at the receiver,
+if it does you probably will be able to use lirc.
+
+Some other userland drivers will probably also work (like others
+using libusb), they just were not tested.
+
+The lirc documentation should be accessible at:
+
+	%%LOCALBASE%%/share/doc/lirc/html/index.html
+
+Some example configs should have been installed here:
+
+	%%LOCALBASE%%/share/examples/lirc/remotes
+
+USB DVB tuner remotes won't be in there though because the webcamd
+svn /dev/lircX support for those is kind of a `hack' that works
+different from Linux (emulating rc5-like pulses), but as long as
+mode2 sees data (meaning the Linux drivers used by webcamd support
+the remote), you should be able to create configs by using irrecord
+like described here:
+
+	file://%%LOCALBASE%%/share/doc/lirc/html/help.html#new_remote
+
+**********************************************************************

@@ -52,6 +52,7 @@ lib/totem/plugins/gromit/libgromit.so
 %%LIRC%%lib/totem/plugins/lirc/liblirc.a
 %%LIRC%%lib/totem/plugins/lirc/liblirc.la
 %%LIRC%%lib/totem/plugins/lirc/liblirc.so
+%%LIRC%%lib/totem/plugins/lirc/totem_lirc_default
 lib/totem/plugins/media-player-keys/libmedia_player_keys.a
 lib/totem/plugins/media-player-keys/libmedia_player_keys.la
 lib/totem/plugins/media-player-keys/libmedia_player_keys.so

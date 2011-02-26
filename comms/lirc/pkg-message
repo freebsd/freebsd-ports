@@ -1,8 +1,0 @@
-**********************************************************************
-This port does not contain any FreeBSD device drivers for infrared
-devices. This port installs the LIRC daemons and tools for interacting
-with drivers that support the LIRC device interface.
-
-You will need to obtain third party device drivers or port the Linux
-drivers in ${WRKSRC}/drivers to use the LIRC port.
-**********************************************************************

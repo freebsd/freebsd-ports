@@ -82,8 +82,10 @@ CONFIGURE_ARGS+=	--without-curl
 .endif
 
 .if defined(WITH_LIRC)
-LIB_DEPENDS+=	lirc_client.1:${PORTSDIR}/comms/lirc
+LIB_DEPENDS+=	lirc_client.2:${PORTSDIR}/comms/lirc
 CONFIGURE_ARGS+=	--enable-lirc
+CONFIGURE_ENV+=		LIRC_CFLAGS="-I${LOCALBASE}/include" \
+			LIRC_LIBS="-L${LOCALBASE}/libs -llirc_client"
 .else
 CONFIGURE_ARGS+=	--disable-lirc
 .endif

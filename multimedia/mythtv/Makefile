@@ -83,7 +83,7 @@ PLIST_SUB+=	BINDINGS="@comment "
 .endif
 
 .if defined(WITH_LIRC)
-LIB_DEPENDS+=	lirc_client.1:${PORTSDIR}/comms/lirc
+LIB_DEPENDS+=	lirc_client.2:${PORTSDIR}/comms/lirc
 .endif
 
 .if defined(WITH_MYSQL_LOCAL)

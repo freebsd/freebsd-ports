@@ -7,7 +7,7 @@
 
 PORTNAME=	lirc
 PORTVERSION=	0.0.5
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	comms python
 MASTER_SITES=	SF/py${PORTNAME}/py${PORTNAME}/${PORTVERSION}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -16,7 +16,7 @@ DISTNAME=	pylirc-${PORTVERSION}
 MAINTAINER=	lewiz@compsoc.man.ac.uk
 COMMENT=	Lirc support library for Python
 
-LIB_DEPENDS=	lirc_client.1:${PORTSDIR}/comms/lirc
+LIB_DEPENDS=	lirc_client.2:${PORTSDIR}/comms/lirc
 
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib

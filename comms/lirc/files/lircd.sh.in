@@ -20,7 +20,7 @@ load_rc_config ${name}
 : ${lircd_device="/dev/lirc0"}
 
 procname=%%PREFIX%%/sbin/lircd
-pidfile=/var/run/lircd.pid
+pidfile=/var/run/lirc/lircd.pid
 lircd_config="%%PREFIX%%/etc/lircd.conf"
 required_files=${lircd_config}
 command="%%PREFIX%%/sbin/lircd"

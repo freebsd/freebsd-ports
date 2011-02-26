@@ -8,12 +8,13 @@ bin/irxevent
 bin/lircrcd
 bin/mode2
 %%SMODE2%%bin/smode2
+bin/pronto2lirc
 bin/xmode2
 include/lirc/lirc_client.h
 lib/liblirc_client.a
 lib/liblirc_client.la
 lib/liblirc_client.so
-lib/liblirc_client.so.1
+lib/liblirc_client.so.2
 sbin/lircd
 sbin/lircmd
 @dirrm include/lirc

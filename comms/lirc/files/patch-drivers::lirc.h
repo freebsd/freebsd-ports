@@ -1,10 +1,21 @@
---- drivers/lirc.h.orig	Sun Aug 21 21:45:04 2005
-+++ drivers/lirc.h	Sun Aug 21 21:45:11 2005
-@@ -8,6 +8,7 @@
+--- drivers/lirc.h.orig
++++ drivers/lirc.h
+@@ -9,12 +9,17 @@
+ #if defined(__linux__)
+ #include <linux/types.h>
  #include <linux/ioctl.h>
- #else
- #include <sys/types.h>
-+#include <sys/ioctl.h>
- typedef u_int32_t __u32;
+-#elif defined(_NetBSD_)
++#elif defined(_NetBSD_) || defined(__FreeBSD__)
+ #include <sys/ioctl.h>
+ #elif defined(_CYGWIN_)
+ #define __USE_LINUX_IOCTL_DEFS
+ #include <sys/ioctl.h>
  #endif
++#ifndef __linux__
++#include <stdint.h>
++#define __u32 uint32_t
++#define __u64 uint64_t
++#endif
  
+ #define PULSE_BIT       0x01000000
+ #define PULSE_MASK      0x00FFFFFF
