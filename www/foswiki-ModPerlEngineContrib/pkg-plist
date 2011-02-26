@@ -1,0 +1,21 @@
+%%FWDIR%%/data/System/ModPerlEngineContrib.txt
+%%FWDIR%%/lib/Foswiki/Contrib/ModPerlEngineContrib/DEPENDENCIES
+%%FWDIR%%/lib/Foswiki/Contrib/ModPerlEngineContrib/MANIFEST
+%%FWDIR%%/lib/Foswiki/Contrib/ModPerlEngineContrib/build.pl
+%%FWDIR%%/lib/Foswiki/Contrib/ModPerlEngineContrib.pm
+%%FWDIR%%/lib/Foswiki/Engine/Apache/MP13.pm
+%%FWDIR%%/lib/Foswiki/Engine/Apache.pm
+%%FWDIR%%/lib/Foswiki/Engine/Apache2/MP20.pm
+%%FWDIR%%/lib/Foswiki/Engine/Apache2.pm
+%%FWDIR%%/tools/mod_perl_startup.pl
+@dirrmtry %%FWDIR%%/data/System
+@dirrmtry %%FWDIR%%/data
+@dirrm %%FWDIR%%/lib/Foswiki/Contrib/ModPerlEngineContrib
+@dirrmtry %%FWDIR%%/lib/Foswiki/Contrib
+@dirrm %%FWDIR%%/lib/Foswiki/Engine/Apache
+@dirrm %%FWDIR%%/lib/Foswiki/Engine/Apache2
+@dirrmtry %%FWDIR%%/lib/Foswiki/Engine
+@dirrmtry %%FWDIR%%/lib/Foswiki
+@dirrmtry %%FWDIR%%/lib
+@dirrmtry %%FWDIR%%/tools
+@dirrmtry %%FWDIR%%
