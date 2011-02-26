@@ -1,0 +1,9 @@
+%%SITE_PERL%%/Test/Reporter/Transport/Metabase.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/Reporter/Transport/Metabase/.packlist
+@dirrmtry %%SITE_PERL%%/Test/Reporter/Transport
+@dirrmtry %%SITE_PERL%%/Test/Reporter
+@dirrmtry %%SITE_PERL%%/Test
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/Reporter/Transport/Metabase
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/Reporter/Transport
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/Reporter
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test
