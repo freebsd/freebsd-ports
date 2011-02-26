@@ -1143,6 +1143,7 @@
     SUBDIR += p5-Plack-Middleware-Header
     SUBDIR += p5-Plack-Middleware-IEnosniff
     SUBDIR += p5-Plack-Middleware-JSConcat
+    SUBDIR += p5-Plack-Middleware-Precompressed
     SUBDIR += p5-Plack-Middleware-ReverseProxy
     SUBDIR += p5-Plack-Middleware-Session
     SUBDIR += p5-Plack-Middleware-Status
