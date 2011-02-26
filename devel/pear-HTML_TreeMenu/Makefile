@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	HTML_TreeMenu
-PORTVERSION=	1.2.1
+PORTVERSION=	1.2.2
 CATEGORIES=	devel www pear
 
 MAINTAINER=	miwi@FreeBSD.org
@@ -15,6 +15,7 @@ COMMENT=	Provides an API to create a HTML tree
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
 RUN_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
 
+PEAR_CATSRC=	yes
 CATEGORY=	HTML
 FILES=		TreeMenu.php
 DATA=		TreeMenu.js images/branch.gif images/branchbottom.gif \
