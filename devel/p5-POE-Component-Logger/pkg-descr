@@ -4,6 +4,3 @@ places at once (e.g.  to STDERR and Syslog at the same time) and also to
 flexibly define your logger's output.
 
 WWW: http://search.cpan.org/dist/POE-Component-Logger/
-
--- Sergey Skvortsov
-skv@FreeBSD.org

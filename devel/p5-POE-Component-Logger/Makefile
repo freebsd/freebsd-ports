@@ -6,16 +6,17 @@
 #
 
 PORTNAME=	POE-Component-Logger
-PORTVERSION=	1.00
+PORTVERSION=	1.10
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	skv@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	A POE logging class
 
-BUILD_DEPENDS=	${SITE_PERL}/POE.pm:${PORTSDIR}/devel/p5-POE \
-		${SITE_PERL}/LWP/Parallel.pm:${PORTSDIR}/www/p5-ParallelUA
+BUILD_DEPENDS=	p5-POE>=1.293:${PORTSDIR}/devel/p5-POE \
+		p5-Log-Dispatch>=2.26:${PORTSDIR}/devel/p5-Log-Dispatch \
+		p5-Log-Dispatch-Config>=1.03:${PORTSDIR}/devel/p5-Log-Dispatch-Config
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
