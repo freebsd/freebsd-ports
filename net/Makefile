@@ -243,6 +243,7 @@
     SUBDIR += iaxmodem
     SUBDIR += icmpinfo
     SUBDIR += icpld
+    SUBDIR += iet
     SUBDIR += ifdepd
     SUBDIR += iffinder
     SUBDIR += ifstat

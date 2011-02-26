@@ -1,0 +1,21 @@
+#!/bin/sh
+
+# PROVIDE: ietd 
+# REQUIRE: NETWORKING SERVERS DAEMON ldconfig resolv
+# BEFORE:  LOGIN
+# KEYWORD: shutdown
+
+. /etc/rc.subr
+name="ietd"
+command=%%PREFIX%%/sbin/${name}
+stop_precmd="ietd_prestop"
+required_modules="iet"
+rcvar=`set_rcvar`
+
+ietd_prestop()
+{
+	%%PREFIX%%/sbin/ietadm --op delete
+}
+
+load_rc_config $name
+run_rc_command "$1"

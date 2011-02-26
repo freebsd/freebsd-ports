@@ -1,0 +1,21 @@
+modules/iet.ko
+@exec mkdir -p %D/etc/iet
+@unexec (cmp -s %D/%%DATADIR%%/ietd.conf %D/etc/iet/ietd.conf && rm -f %D/etc/iet/ietd.conf) || true
+%%DATADIR%%/ietd.conf
+@exec [ -f %B/ietd.conf ] || cp %B/%f %D/etc/iet/ietd.conf
+@unexec (cmp -s %D/%%DATADIR%%/initiators.allow %D/etc/iet/initiators.allow && rm -f %D/etc/iet/initiators.allow) || true
+%%DATADIR%%/initiators.allow
+@exec [ -f %B/initiators.allow ] || cp %B/%f %D/etc/iet/initiators.allow
+@unexec (cmp -s %D/%%DATADIR%%/initiators.deny %D/etc/iet/initiators.deny && rm -f %D/etc/iet/initiators.deny) || true
+%%DATADIR%%/initiators.deny
+@exec [ -f %B/initiators.deny ] || cp %B/%f %D/etc/iet/initiators.deny
+@unexec (cmp -s %D/%%DATADIR%%/targets.allow %D/etc/iet/targets.allow && rm -f %D/etc/iet/targets.allow) || true
+%%DATADIR%%/targets.allow
+@exec [ -f %B/targets.allow ] || cp %B/%f %D/etc/iet/targets.allow
+@dirrmtry etc/iet
+@dirrm %%DATADIR%%
+sbin/ietd
+sbin/ietadm
+@exec /usr/sbin/kldxref %%KMODDIR%%
+@unexec /usr/sbin/kldxref %%KMODDIR%%
+@dirrmtry %%KMODDIR%%
