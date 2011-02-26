@@ -133,7 +133,7 @@ AUTOMAKE_ARGS=--add-missing --copy --gnu
 
 #Dependency from HDF5
 .if !${SAL_MODULE} == "randomizer" &&  !${SAL_MODULE} == "yacs" && !${SAL_MODULE} == "hello" && !${SAL_MODULE} == "pyhello"
-LIB_DEPENDS+=		hdf5.0:${PORTSDIR}/science/hdf5
+LIB_DEPENDS+=		hdf5.6:${PORTSDIR}/science/hdf5-18
 CONFIGURE_ARGS+=	--with-hdf5=${LOCALBASE}
 AUTOTOOLS_ENV+= 	HDF5HOME=${LOCALBASE}
 .endif

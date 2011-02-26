@@ -7,14 +7,14 @@
 
 PORTNAME=	med
 DISTVERSION=	2.3.6
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	french science
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Modelisation et Echanges de Donnees
 
 BUILD_DEPENDS=	wish${TK_VER}:${PORTSDIR}/x11-toolkits/tk${SHORT_TK_VER}
-LIB_DEPENDS=	hdf5.0:${PORTSDIR}/science/hdf5
+LIB_DEPENDS=	hdf5.6:${PORTSDIR}/science/hdf5-18
 RUN_DEPENDS=	wish${TK_VER}:${PORTSDIR}/x11-toolkits/tk${SHORT_TK_VER}
 
 LICENSE=	GPLv3
