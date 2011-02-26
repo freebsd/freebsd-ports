@@ -2265,6 +2265,7 @@
     SUBDIR += p5-Term-Screen
     SUBDIR += p5-Term-Shell
     SUBDIR += p5-Term-Size
+    SUBDIR += p5-Term-Title
     SUBDIR += p5-Term-UI
     SUBDIR += p5-Term-VT102
     SUBDIR += p5-Term-Visual
