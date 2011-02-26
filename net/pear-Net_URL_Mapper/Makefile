@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Net_URL_Mapper
-PORTVERSION=	0.9.0
+PORTVERSION=	0.9.1
 CATEGORIES=	net www pear
 
 MAINTAINER=	miwi@FreeBSD.org
