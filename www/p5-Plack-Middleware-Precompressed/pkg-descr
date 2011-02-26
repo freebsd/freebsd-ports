@@ -1,0 +1,13 @@
+Plack::Middleware::Precompressed is an alternative (or rather,
+complement) to middlewares like Deflater, which will compress response
+bodies on the fly.  For dynamic resources, that behaviour is
+necessary, but for static resources it is a waste: identical entities
+will be compressed over and over.  Instead, Precompressed allows you
+to compress static resources once, e.g. as part of your build process,
+and then serve the compressed resource in place of the uncompressed
+one for compression-enabled clients.
+
+To do so, it appends a .gz suffix to the request URI and tries to
+serve that.  If that fails, it will try again with the unmodified URI.
+
+WWW: http://search.cpan.org/dist/Plack-Middleware-Precompressed/
