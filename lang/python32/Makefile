@@ -6,13 +6,14 @@
 
 PORTNAME=	python32
 PORTVERSION=	3.2.0
+PORTREVISION=	1
 CATEGORIES=	lang python ipv6
 MASTER_SITES=	${PYTHON_MASTER_SITES}
 MASTER_SITE_SUBDIR=	${PYTHON_MASTER_SITE_SUBDIR}
 DISTFILES=	${PYTHON_DISTFILE}
 
 MAINTAINER=	python@FreeBSD.org
-COMMENT?=	An interpreted object-oriented programming language
+COMMENT=	An interpreted object-oriented programming language
 
 DIST_SUBDIR=	python
 WRKSRC=		${PYTHON_WRKSRC}/portbld.static
@@ -31,8 +32,6 @@ PYTHON_VERSION=	python3.2
 PYTHON_NO_DEPENDS=	yes
 
 SHARED_WRKSRC=	${PYTHON_WRKSRC}/portbld.shared
-#PLIST=		${WRKDIR}/PLIST
-#PLIST_TEMPLATE?=${PKGDIR}/pkg-plist
 PLIST_SUB=	PYVER=${PYTHON_VERSION:S/python//} \
 		PYVER_WITHPAT=${PORTVERSION:S/.rc/rc/}
 EXAMPLESDIR=	${PREFIX}/share/examples/${PYTHON_VERSION}
@@ -110,14 +109,6 @@ CONFIGURE_ARGS+=	--disable-ipv6
 CONFIGURE_ARGS+=	--with-fpectl
 .endif
 
-pre-fetch:
-	@${ECHO_MSG} "
-	@${ECHO_MSG} "This is the first release of python-3.2,               "
-	@${ECHO_MSG} "We suggest do not use in production environment because"
-	@${ECHO_MSG} "there are some bugs what we have to figure out.        "
-	@${ECHO_MSG} "
-	@sleep 5
-
 pre-patch:
 	${CP} -r ${PATCH_WRKSRC}/Lib/plat-freebsd8 \
 		${PATCH_WRKSRC}/Lib/plat-freebsd9
@@ -174,12 +165,6 @@ pre-su-install:
 		${PYTHONPREFIX_LIBDIR}/${platform}/
 .endfor
 .endfor
-
-pre-install:
-	@# if openssl 0.9.8 is detected, _sha{256,512} module won't be installed
-	([ -f ${WRKSRC}/.without_own_sha ] && \
-		${GREP} -v 'lib-dynload/_sha' ${PLIST} > ${PLIST}.tmp && \
-		${CAT} ${PLIST}.tmp > ${PLIST}) || ${TRUE}
 
 post-install:
 	@# install config providers
