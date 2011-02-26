@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	mpich2
-PORTVERSION=	1.3
+DISTVERSION=	1.3.2p1
 PORTEPOCH=	5
 CATEGORIES=	net parallel
-MASTER_SITES=	http://www.mcs.anl.gov/research/projects/mpich2/downloads/tarballs/${PORTVERSION}/
+MASTER_SITES=	http://www.mcs.anl.gov/research/projects/mpich2/downloads/tarballs/${DISTVERSION}/
 DIST_SUBDIR=	mpich
 
 MAINTAINER=	ports@FreeBSD.org
@@ -27,6 +27,11 @@ RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
 # - WITH_SMPD		use SMPD instead of MPD for OS-mixed cluster
 # - WITH_RECV_TIMEOUT	set a non-default MPIEXEC_RECV_TIMEOUT
 #-----------------------------------------------------------------------
+
+LICENSE=	MPICH
+LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
+LICENSE_NAME=	MPICH
+LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 
 .if defined(MAINTAINER_MODE)
 WITH_RECV_TIMEOUT?=	100
@@ -62,7 +67,7 @@ USE_LDCONFIG=	yes
 
 SUB_FILES=	pkg-message
 
-VERSO=		2.0
+VERSO=		2.2
 VERSOM=		${VERSO:R}
 PLIST_SUB=	VER=${VERSO} VERM=${VERSOM}
 .if defined(WITHOUT_X11)
@@ -174,14 +179,13 @@ pre-configure:
 		${WRKSRC}/${cnf}
 .endfor
 
-post-configure:
-	${REINPLACE_CMD} -e 's|$${exec_prefix}|${PREFIX}|g;	\
-		s|$${prefix}|${PREFIX}|g'			\
-		${WRKSRC}/src/packaging/pkgconfig/mpich2-ch3.pc
+pre-install:
+	@${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${WRKSRC}/bin
+	@${PYTHON_CMD} -O ${PYTHON_LIBDIR}/compileall.py  ${WRKSRC}/bin
 
 post-install:
-	@${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${PREFIX}/bin
-	@${PYTHON_CMD} -O ${PYTHON_LIBDIR}/compileall.py ${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/bin/*.pyc ${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/bin/*.pyo ${PREFIX}/bin
 	@${ECHO_CMD} "MPD_SECRETWORD=change_on_install" > ${WRKDIR}/mpd.conf.dist
 	${INSTALL_DATA} ${WRKDIR}/mpd.conf.dist ${PREFIX}/etc/
 	if [ ! -e ${PREFIX}/etc/mpd.conf ]; then \
