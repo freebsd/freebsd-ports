@@ -91,7 +91,7 @@ USE_PGSQL=	yes
 
 .ifdef WITH_MODPERL2
 USE_APACHE=	2.2+
-RUN_DEPENDS+=	mod_perl>=2.0:${PORTSDIR}/www/mod_perl2
+RUN_DEPENDS+=	${APACHE_PKGNAMEPREFIX}mod_perl2>=2.0.0:${PORTSDIR}/www/mod_perl2
 .else
 USE_APACHE=	1.3+
 .endif
