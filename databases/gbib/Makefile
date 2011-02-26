@@ -14,6 +14,8 @@ MASTER_SITES=	http://gbib.seul.org/
 MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	Editor/browser for BibTeX bibliographic databases
 
+IGNORE=		Master site has disappeared
+
 USE_GNOME=	gnomelibs
 USE_GMAKE=	yes
 USE_GETTEXT=	yes
