@@ -4466,7 +4466,6 @@ gindent                         ports/devel/gindent
 gini                            ports/net/gini
 gio-fam-backend                 ports/devel/gio-fam-backend
 gir-repository                  ports/devel/gir-repository
-gir-repository-babl             ports/x11/gir-repository-babl
 gir-repository-goocanvas        ports/graphics/gir-repository-goocanvas
 gir-repository-libnotify        ports/devel/gir-repository-libnotify
 gir-repository-poppler          ports/graphics/gir-repository-poppler
@@ -5127,6 +5126,7 @@ gstreamer-plugins-esound        ports/audio/gstreamer-plugins-esound
 gstreamer-plugins-faac          ports/audio/gstreamer-plugins-faac
 gstreamer-plugins-faad          ports/audio/gstreamer-plugins-faad
 gstreamer-plugins-flac          ports/audio/gstreamer-plugins-flac
+gstreamer-plugins-flite         ports/audio/gstreamer-plugins-flite
 gstreamer-plugins-fluendo-mp3   ports/audio/gstreamer-plugins-fluendo-mp3
 gstreamer-plugins-fluendo-mpegdemux  ports/multimedia/gstreamer-plugins-fluendo-mpegdemux
 gstreamer-plugins-gconf         ports/devel/gstreamer-plugins-gconf
@@ -5157,6 +5157,7 @@ gstreamer-plugins-musicbrainz   ports/audio/gstreamer-plugins-musicbrainz
 gstreamer-plugins-nas           ports/audio/gstreamer-plugins-nas
 gstreamer-plugins-neon          ports/www/gstreamer-plugins-neon
 gstreamer-plugins-ogg           ports/audio/gstreamer-plugins-ogg
+gstreamer-plugins-opencv        ports/graphics/gstreamer-plugins-opencv
 gstreamer-plugins-pango         ports/x11-toolkits/gstreamer-plugins-pango
 gstreamer-plugins-pulse         ports/audio/gstreamer-plugins-pulse
 gstreamer-plugins-resindvd      ports/multimedia/gstreamer-plugins-resindvd
@@ -5174,7 +5175,7 @@ gstreamer-plugins-theora        ports/multimedia/gstreamer-plugins-theora
 gstreamer-plugins-twolame       ports/audio/gstreamer-plugins-twolame
 gstreamer-plugins-ugly          ports/multimedia/gstreamer-plugins-ugly
 gstreamer-plugins-v4l2          ports/multimedia/gstreamer-plugins-v4l2
-gstreamer-plugins-vdpau         ports/x11/gstreamer-plugins-vdpau
+gstreamer-plugins-vdpau         ports/multimedia/gstreamer-plugins-vdpau
 gstreamer-plugins-vorbis        ports/audio/gstreamer-plugins-vorbis
 gstreamer-plugins-vp8           ports/multimedia/gstreamer-plugins-vp8
 gstreamer-plugins-wavpack       ports/audio/gstreamer-plugins-wavpack
@@ -6767,6 +6768,7 @@ jdb                             ports/databases/jdb
 jdbc-oracle8i                   ports/databases/jdbc-oracle8i
 jdbc-oracle9i                   ports/databases/jdbc-oracle9i
 jdbcpool                        ports/java/jdbcpool
+jdbm2                           ports/databases/jdbm2
 jde                             ports/java/jde
 jdic                            ports/x11-toolkits/jdic
 jdictionary                     ports/textproc/jdictionary
@@ -12949,6 +12951,7 @@ p5-List-PowerSet                ports/devel/p5-List-PowerSet
 p5-List-Rotation-Cycle          ports/devel/p5-List-Rotation-Cycle
 p5-List-Uniq                    ports/devel/p5-List-Uniq
 p5-List-Util-WeightedRoundRobin  ports/misc/p5-List-Util-WeightedRoundRobin
+p5-List-UtilsBy                 ports/devel/p5-List-UtilsBy
 p5-Locale-Codes                 ports/misc/p5-Locale-Codes
 p5-Locale-Currency-Format       ports/finance/p5-Locale-Currency-Format
 p5-Locale-Geocode               ports/misc/p5-Locale-Geocode
@@ -13243,6 +13246,7 @@ p5-MojoMojo                     ports/www/p5-MojoMojo
 p5-Mojolicious                  ports/www/p5-Mojolicious
 p5-Mon                          ports/net-mgmt/p5-Mon
 p5-MongoDB                      ports/databases/p5-MongoDB
+p5-Moo                          ports/devel/p5-Moo
 p5-Moose                        ports/devel/p5-Moose
 p5-Moose-Autobox                ports/devel/p5-Moose-Autobox
 p5-Moose-Policy                 ports/devel/p5-Moose-Policy
@@ -17074,6 +17078,7 @@ p5-list-powerset                ports/devel/p5-List-PowerSet
 p5-list-rotation-cycle          ports/devel/p5-List-Rotation-Cycle
 p5-list-uniq                    ports/devel/p5-List-Uniq
 p5-list-util-weightedroundrobin  ports/misc/p5-List-Util-WeightedRoundRobin
+p5-list-utilsby                 ports/devel/p5-List-UtilsBy
 p5-lj-cache                     ports/sysutils/p5-LJ-Cache
 p5-lj-spellcheck                ports/textproc/p5-LJ-SpellCheck
 p5-lj-textmessage               ports/sysutils/p5-LJ-TextMessage
@@ -17375,6 +17380,7 @@ p5-mojolicious                  ports/www/p5-Mojolicious
 p5-mojomojo                     ports/www/p5-MojoMojo
 p5-mon                          ports/net-mgmt/p5-Mon
 p5-mongodb                      ports/databases/p5-MongoDB
+p5-moo                          ports/devel/p5-Moo
 p5-moose                        ports/devel/p5-Moose
 p5-moose-autobox                ports/devel/p5-Moose-Autobox
 p5-moose-policy                 ports/devel/p5-Moose-Policy
@@ -18309,6 +18315,7 @@ p5-storable                     ports/devel/p5-Storable
 p5-storable-amf                 ports/converters/p5-Storable-AMF
 p5-stream                       ports/devel/p5-Stream
 p5-stream-reader                ports/devel/p5-Stream-Reader
+p5-strictures                   ports/devel/p5-strictures
 p5-string-approx                ports/devel/p5-String-Approx
 p5-string-bufferstack           ports/textproc/p5-String-BufferStack
 p5-string-camelcase             ports/textproc/p5-String-CamelCase
@@ -20004,6 +20011,7 @@ pecl-syck                       ports/textproc/pecl-syck
 pecl-tcpwrap                    ports/security/pecl-tcpwrap
 pecl-tidy                       ports/www/pecl-tidy
 pecl-timezonedb                 ports/misc/pecl-timezonedb
+pecl-tokyo_tyrant               ports/databases/pecl-tokyo_tyrant
 pecl-uploadprogress             ports/devel/pecl-uploadprogress
 pecl-uuid                       ports/devel/pecl-uuid
 pecl-vld                        ports/devel/pecl-vld
@@ -21258,7 +21266,6 @@ py-cryptkit                     ports/security/py-cryptkit
 py-cssutils                     ports/www/py-cssutils
 py-csv                          ports/textproc/py-csv
 py-ctags                        ports/devel/py-ctags
-py-ctypes                       ports/devel/py-ctypes
 py-cups                         ports/print/py-cups
 py-curl                         ports/ftp/py-curl
 py-cxx                          ports/devel/py-cxx
@@ -21317,7 +21324,6 @@ py-eventlet                     ports/net/py-eventlet
 py-excelerator                  ports/textproc/py-excelerator
 py-exif                         ports/graphics/py-exif
 py-exiv2                        ports/graphics/py-exiv2
-py-expat                        ports/textproc/py-expat
 py-extended_threading           ports/devel/py-extended_threading
 py-extremes                     ports/devel/py-extremes
 py-eyed3                        ports/audio/py-eyed3
@@ -21410,7 +21416,6 @@ py-gui                          ports/x11-toolkits/py-gui
 py-gvgen                        ports/graphics/py-gvgen
 py-gyp-devel                    ports/devel/py-gyp-devel
 py-h5py                         ports/science/py-h5py
-py-hashlib                      ports/security/py-hashlib
 py-hashring                     ports/devel/py-hashring
 py-hcluster                     ports/science/py-hcluster
 py-html2text                    ports/textproc/py-html2text
@@ -21934,7 +21939,6 @@ py-wmdockapps                   ports/x11-toolkits/py-wmdockapps
 py-wordnet                      ports/textproc/py-wordnet
 py-wsgi_xmlrpc                  ports/devel/py-wsgi_xmlrpc
 py-wsgiauth                     ports/www/py-wsgiauth
-py-wsgiref                      ports/www/py-wsgiref
 py-wsgiutils                    ports/devel/py-wsgiutils
 py-wxPython24                   ports/x11-toolkits/py-wxPython24
 py-wxPython26                   ports/x11-toolkits/py-wxPython26
@@ -22499,7 +22503,6 @@ red5                            ports/www/red5
 redet                           ports/textproc/redet
 redir                           ports/net/redir
 redis                           ports/databases/redis
-redis2                          ports/databases/redis2
 redland                         ports/textproc/redland
 redland-bindings                ports/textproc/redland-bindings
 redland-bindings-python         ports/textproc/redland-bindings-python
@@ -26435,6 +26438,7 @@ xf86-input-void                 ports/x11-drivers/xf86-input-void
 xf86-video-apm                  ports/x11-drivers/xf86-video-apm
 xf86-video-ark                  ports/x11-drivers/xf86-video-ark
 xf86-video-ati                  ports/x11-drivers/xf86-video-ati
+xf86-video-ati613               ports/x11-drivers/xf86-video-ati613
 xf86-video-chips                ports/x11-drivers/xf86-video-chips
 xf86-video-cirrus               ports/x11-drivers/xf86-video-cirrus
 xf86-video-cyrix                ports/x11-drivers/xf86-video-cyrix
