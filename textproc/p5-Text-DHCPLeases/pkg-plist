@@ -1,0 +1,6 @@
+%%SITE_PERL%%/Text/DHCPLeases.pm
+%%SITE_PERL%%/Text/DHCPLeases/Object.pm
+%%SITE_PERL%%/Text/DHCPLeases/Object/Iterator.pm
+@dirrm %%SITE_PERL%%/Text/DHCPLeases/Object
+@dirrm %%SITE_PERL%%/Text/DHCPLeases
+@dirrmtry %%SITE_PERL%%/Text

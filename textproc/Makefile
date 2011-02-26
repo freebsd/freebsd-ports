@@ -687,6 +687,7 @@
     SUBDIR += p5-Text-Chomp
     SUBDIR += p5-Text-Context
     SUBDIR += p5-Text-Context-EitherSide
+    SUBDIR += p5-Text-DHCPLeases
     SUBDIR += p5-Text-Decorator
     SUBDIR += p5-Text-Delimited
     SUBDIR += p5-Text-Diff
