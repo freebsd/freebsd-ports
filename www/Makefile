@@ -1562,6 +1562,7 @@
     SUBDIR += resin2
     SUBDIR += resin3
     SUBDIR += retawq
+    SUBDIR += reviewboard
     SUBDIR += rnews
     SUBDIR += roundup
     SUBDIR += rssowl
