@@ -1141,6 +1141,7 @@
     SUBDIR += p5-Plack-Middleware-Deflater
     SUBDIR += p5-Plack-Middleware-File-Sass
     SUBDIR += p5-Plack-Middleware-Header
+    SUBDIR += p5-Plack-Middleware-IEnosniff
     SUBDIR += p5-Plack-Middleware-JSConcat
     SUBDIR += p5-Plack-Middleware-ReverseProxy
     SUBDIR += p5-Plack-Middleware-Session

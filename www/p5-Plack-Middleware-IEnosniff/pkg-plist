@@ -1,0 +1,5 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Plack/Middleware/IEnosniff/.packlist
+%%SITE_PERL%%/Plack/Middleware/IEnosniff.pm
+@dirrmtry %%SITE_PERL%%/Plack/Middleware
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Plack/Middleware/IEnosniff
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Plack/Middleware
