@@ -1,29 +1,42 @@
---- daemons/hw_hiddev.c.orig	Sun Jul 10 18:04:11 2005
-+++ daemons/hw_hiddev.c	Thu Nov 23 14:41:52 2006
-@@ -19,14 +19,19 @@
+--- daemons/hw_hiddev.c.orig
++++ daemons/hw_hiddev.c
+@@ -22,9 +22,17 @@
  #include <stdio.h>
  #include <sys/fcntl.h>
+ #include <sys/ioctl.h>
++#include <errno.h>
  
-+#ifdef __FreeBSD__
++#ifdef HAVE_USBHID_H
 +#include <usbhid.h>
-+#else  /* assume Linux */
++#endif
++#ifdef HAVE_LINUX_TYPES_H
  #include <linux/types.h>
++#endif
++#ifdef HAVE_LINUX_HIDDEV_H
  #include <linux/hiddev.h>
 +#endif
  
  #include "hardware.h"
  #include "ir_remote.h"
- #include "lircd.h"
- #include "receive.h"
--
-+#include <errno.h>
-+#include <string.h>
+@@ -135,6 +143,7 @@ struct hardware hw_sb0540 = {
+ };
+ #endif
  
- static int hiddev_init();
- static int hiddev_deinit(void);
-@@ -103,7 +108,11 @@
++#ifdef HAVE_LINUX_HIDDEV_H
+ /* Apple Mac mini USB IR Receiver */
+ struct hardware hw_macmini = {
+ 	"/dev/usb/hiddev0",	/* "device" */
+@@ -152,6 +161,7 @@ struct hardware hw_macmini = {
+ 	NULL,			/* readdata */
+ 	"macmini"		/* name */
+ };
++#endif
+ 
+ #ifdef HAVE_LINUX_HIDDEV_FLAG_UREF
+ /* Samsung USB IR Receiver */
+@@ -191,7 +201,11 @@ int hiddev_init()
  	logprintf(LOG_INFO, "initializing '%s'", hw.device);
- 	
+ 
  	if ((hw.fd = open(hw.device, O_RDONLY)) < 0) {
 -		logprintf(LOG_ERR, "unable to open '%s'", hw.device);
 +		logprintf(LOG_ERR,
@@ -33,10 +46,10 @@
 +                          errno );
  		return 0;
  	}
- 	
-@@ -143,38 +152,117 @@
- }
  
+@@ -235,8 +249,40 @@ int hiddev_decode(struct ir_remote *remo
+ 	return 1;
+ }
  
 +/*
 + * Read a record from the remote control, decode it and return a
@@ -69,34 +82,42 @@
 +        struct hiddev_event
 +        {
 +		unsigned hid;
-+		int16_t value;
++		int32_t value;
 +        };
 +#endif
  	struct hiddev_event event;
+ 	struct hiddev_event asus_events[8];
  	int rd;
- 	/* Remotec Mediamaster specific */
- 	static int wheel_count = 0;
- 	static int x_movement = 0;
-+        static int repeat_count = 0;
- 	int y_movement=0;
- 	int x_direction=0;
- 	int y_direction=0;
- 	
- 	LOGPRINTF(1, "hiddev_rec");
- 	
+@@ -253,9 +299,41 @@ char *hiddev_rec(struct ir_remote *remot
+ 
+ 	last = end;
+ 	gettimeofday(&start, NULL);
 +#ifdef __FreeBSD__
-+	rd = read(hw.fd, inbuf, sizeof inbuf);
-+                if (rd != sizeof inbuf) {
-+		logprintf(LOG_ERR,
-+                                  "Really read %d bytes from '%s', expected %d",
-+                                  rd,
-+                                  hw.device,
-+                                  sizeof inbuf );
-+		return 0;
++	if (!strcmp(hw.name, "dvico")) {
++		rd = read(hw.fd, inbuf, sizeof inbuf);
++		if (rd != sizeof inbuf) {
++			logprintf(LOG_ERR,
++					  "Really read %d bytes from '%s', expected %d",
++					  rd,
++					  hw.device,
++					  sizeof inbuf );
++			return 0;
++		}
++		event.hid = 0x10046;             /* XXX not in FreeBSD */
++		event.value = * (int16_t *) (&inbuf [1]);
++	} else {
++		rd = read(hw.fd, &event.value, sizeof event.value);
++		if (rd != sizeof event.value) {
++			logprintf(LOG_ERR,
++					  "Really read %d bytes from '%s', expected %d",
++					  rd,
++					  hw.device,
++					  sizeof event.value );
++			return 0;
++		}
++		event.hid = 0x10046;             /* XXX not in FreeBSD */
 +	}
-+	event.hid = 0x10046;             /* XXX not in FreeBSD */
-+	event.value = * (int16_t *) (&inbuf [1]);
-+                rd = sizeof event;                          /* to make code happy */
++	rd = sizeof event;                          /* to make code happy */
 +#else
  	rd = read(hw.fd, &event, sizeof event);
 +#endif
@@ -107,54 +128,22 @@
 +                                  rd,
 +                                  hw.device,
 +                                  sizeof event );
+ 		logperror(LOG_ERR, NULL);
+ 		hiddev_deinit();
  		return 0;
- 	}
+@@ -515,6 +593,7 @@ char *sb0540_rec(struct ir_remote *remot
+ }
+ #endif
  
- 	LOGPRINTF(1, "hid 0x%X  value 0x%X", event.hid, event.value);
++#ifdef HAVE_LINUX_HIDDEV_H
+ /*
+  * Apple Mac mini USB IR Receiver specific code.
+  *
+@@ -566,6 +645,7 @@ char *macmini_rec(struct ir_remote *remo
  
- 	pre_code = event.hid;
--	main_code = event.value;
--
-+	main_code = event.value & 0xffff;                   /* only 16 bits */
- 	/*
- 	 * This stuff is probably dvico specific.
- 	 * I don't have any other hid devices to test...
- 	 */
--	if (event.hid == 0x10046) {
--		repeat_flag = (main_code & dvico_repeat_mask);
-+	if (pre_code == 0x10046) {
-+                if (main_code & dvico_repeat_mask) /* repeated press */
-+                	repeat_count++;                /* count them */
-+                else
-+                	repeat_count = 0;              /* reset */
-+                repeat_flag = repeat_count > 2; /* real repeat flag */
- 		main_code = (main_code & ~dvico_repeat_mask);
--		return decode_all(remotes);
-+                        /*
-+                         * Skip this if we're working around the premature
-+                         * repeat.
-+                         */
-+                        if (repeat_flag || (repeat_count == 0))
-+                        {
-+				char *foo;
-+
-+                        	foo = decode_all(remotes);
-+                                /*
-+                                 * XXX Experimental code.  Chop off the first 12
-+                                 * bytes of the hex code, which FreeBSD does not
-+                                 * provide, and which I suspect nobody cares
-+                                 * about.
-+                                 *
-+                                 * For some reason, we can get NULL back here,
-+                                 * so we need to check for that before returning
-+                                 * address 0xc.
-+                                 */
-+                                if (foo)
-+                                  foo = &foo [12];     /* chop off the leading chars. */
-+                                return foo;
-+                        }
-+                        else
-+                        	return 0;                    /* no data */
- 	}
- 	/* Remotec Mediamaster specific code */
- 	/* Y-Coordinate,
+ 	return decode_all(remotes);
+ }
++#endif
+ 
+ /*
+  * Samsung/Cypress USB IR Receiver specific code

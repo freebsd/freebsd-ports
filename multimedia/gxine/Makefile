@@ -54,7 +54,7 @@ PLIST_SUB+=	NLS=""
 .endif
 
 .if defined(WITH_LIRC)
-LIB_DEPENDS+=	lirc_client.1:${PORTSDIR}/comms/lirc
+LIB_DEPENDS+=	lirc_client.2:${PORTSDIR}/comms/lirc
 CONFIGURE_ARGS+=	--enable-lirc
 .else
 CONFIGURE_ARGS+=	--disable-lirc

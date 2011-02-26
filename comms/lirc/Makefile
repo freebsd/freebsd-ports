@@ -6,18 +6,21 @@
 #
 
 PORTNAME=	lirc
-PORTVERSION=	0.8.0
-PORTREVISION=	2
+PORTVERSION=	0.9.0p1
+PORTREVISION=	4
 CATEGORIES=	comms
-MASTER_SITES=	SF/${PORTNAME}/LIRC/${PORTVERSION}
+MASTER_SITES=	http://lirc.org/software/snapshots/
+DISTNAME=	${PORTNAME}-${PORTVERSION:S/p1/-pre1/}
 
-MAINTAINER=	doconnor@gsoft.com.au
-COMMENT=	Linux Infared Remote Control
+MAINTAINER=	nox@FreeBSD.org
+COMMENT=	Linux Infrared Remote Control
 
-USE_AUTOTOOLS=	libtool
+USE_AUTOTOOLS=	libtool automake autoheader aclocal autoconf
+ACLOCAL_ARGS=	-I "${ACLOCAL_DIR}" -I ${LOCALBASE}/share/aclocal
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_XORG=	x11
+USE_PYTHON=	yes
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
@@ -26,9 +29,13 @@ CPPFLAGS+=		-I${LOCALBASE}/include
 LDFLAGS+=		-L${LOCALBASE}/lib
 CONFIGURE_ENV+=		CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 
-OPTIONS=	IRMAN "Build with libirman support" On
+OPTIONS=	MINIMAL "Build with minmal dependencies" Off \
+		DEBUG "Build debug version" Off
 
 USE_RC_SUBR=	lircd.sh
+PORTDOCS=	html images irxevent.keys lirc.css lirc.hwdb
+PORTEXAMPLES=	remotes
+SUB_FILES=	pkg-message
 
 .include <bsd.port.pre.mk>
 
@@ -39,11 +46,16 @@ PLIST_SUB+=	SMODE2=
 PLIST_SUB+=	SMODE2="@comment "
 .endif
 
-.if defined(WITH_IRMAN)
+.if defined(WITHOUT_MINIMAL)
 BUILD_DEPENDS+=		${LOCALBASE}/lib/libirman.a:${PORTSDIR}/comms/libirman
-CONFIGURE_ARGS+=	--with-driver=irman --with-driver=dvico
+LIB_DEPENDS+=		ftdi.18:${PORTSDIR}/devel/libftdi
+CONFIGURE_ARGS+=	--with-driver=userspace
 .else
-CONFIGURE_ARGS+=	--with-driver=any --with-driver=dvico
+CONFIGURE_ARGS+=	--with-driver=dvico
+.endif
+
+.if defined(WITH_DEBUG)
+CONFIGURE_ARGS+=	--enable-debug
 .endif
 
 MAN1=		ircat.1 irexec.1 irpty.1 irrecord.1 irsend.1 irw.1 \
@@ -51,6 +63,14 @@ MAN1=		ircat.1 irexec.1 irpty.1 irrecord.1 irsend.1 irw.1 \
 MAN8=		lircd.8 lircmd.8
 
 post-install:
+.if !defined(NOPORTDOCS)
+	@(cd ${WRKSRC}/doc && ${COPYTREE_SHARE} html ${DOCSDIR}/)
+	@(cd ${WRKSRC}/doc && ${COPYTREE_SHARE} images ${DOCSDIR}/)
+	@(cd ${WRKSRC}/doc && ${INSTALL_DATA} irxevent.keys lirc.css lirc.hwdb ${DOCSDIR}/)
+.endif
+.if !defined(NOPORTEXAMPLES)
+	@(cd ${WRKSRC} && ${COPYTREE_SHARE} remotes ${EXAMPLESDIR}/)
+.endif
 	@${MKDIR} /var/run/lirc
 	@${CAT} ${PKGMESSAGE}
 

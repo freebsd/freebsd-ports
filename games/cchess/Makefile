@@ -7,6 +7,7 @@
 
 PORTNAME=	cchess
 PORTVERSION=	1.4
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	ftp://local-distfiles.freebsd.org.cn/pub/china-ports/hamigua/
 
@@ -14,7 +15,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Very simple Chinese chess program
 
 LIB_DEPENDS=	alleg.42:${PORTSDIR}/devel/allegro \
-		lirc_client.1:${PORTSDIR}/comms/lirc
+		lirc_client.2:${PORTSDIR}/comms/lirc
 
 USE_GMAKE=	yes
 

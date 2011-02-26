@@ -744,7 +744,7 @@ share/rhythmbox/uri-new.ui
 @dirrm lib/rhythmbox/plugins/mmkeys
 %%PYTHON%%@dirrm lib/rhythmbox/plugins/magnatune
 %%PYTHON%%@dirrm lib/rhythmbox/plugins/lyrics
-%%LIRC%%@dirrm lib/rhythmbox/plugins/lirc
+%%LIRC%%@dirrm lib/rhythmbox/plugins/rblirc
 %%PYTHON%%@dirrm lib/rhythmbox/plugins/jamendo
 @dirrm lib/rhythmbox/plugins/iradio
 %%IPOD%%@dirrm lib/rhythmbox/plugins/ipod

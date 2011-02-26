@@ -1,0 +1,116 @@
+--- configure.ac.orig
++++ configure.ac
+@@ -97,6 +97,14 @@ case "${host_os}" in
+     devdir_default="/usr/lirc/dev/"
+     use_fifos="yes"
+     ;;
++  freebsd*)
++    dnl PortAudio for UNIX OSS
++    portaudio_lib_other="-lm -lpthread ${forkpty}"
++
++    dnl default devdir
++    devdir_default="/dev"
++    use_fifos="yes"
++    ;;
+   *)
+     dnl Unix OSS configuration
+ 
+@@ -318,70 +326,22 @@ AH_TEMPLATE([SYSCONFDIR],
+ AH_TEMPLATE([USE_SYSLOG],
+ 	[define if you want to log to syslog instead of logfile])
+ 
+-if test -n "${LIBUSB_CONFIG}"; then
++AC_CHECK_FUNCS(strchrnul strnlen)
++
++AC_CHECK_HEADER(libusb.h)
++if test "$ac_cv_header_libusb_h" = yes -o -n "${LIBUSB_CONFIG}"; then
+   AC_DEFINE(HAVE_LIBUSB)
+   possible_drivers="${possible_drivers} (atilibusb) (awlibusb) (dfclibusb) (commandir) (srm7500libusb)" 
+ fi
+ 
+-AC_CHECK_LIB(caraca_client, caraca_init,
+-  AC_DEFINE(HAVE_LIBCARACA)
+-  possible_drivers="${possible_drivers} (caraca)"
+-)
+ AC_CHECK_HEADER(ftdi.h,
+   AC_DEFINE(HAVE_FTDI)
+   possible_drivers="${possible_drivers} (ftdi)"
+ )
+-AC_CHECK_HEADER(iguanaIR.h,
+-  AC_DEFINE(HAVE_IGUANAIR)
+-  possible_drivers="${possible_drivers} (iguanaIR)"
+-)
+ AC_CHECK_LIB(irman, ir_strerror,
+   AC_DEFINE(HAVE_LIBIRMAN)
+   possible_drivers="${possible_drivers} (irman)"
+ )
+-AC_CHECK_LIB(irman_sw, ir_strerror,
+-  AC_DEFINE(HAVE_LIBIRMAN_SW)
+-  possible_drivers="${possible_drivers} (irman_sw)"
+-)
+-dnl audio driver requires PortAudio library installed and some linker flags
+-AC_CHECK_HEADERS(portaudio.h,[
+-  AC_CHECK_LIB(portaudio, Pa_Initialize,[
+-    AC_DEFINE(HAVE_LIBPORTAUDIO)
+-    possible_drivers="${possible_drivers} (audio)"
+-    ],,${portaudio_lib_other}
+-  )]
+-)
+-dnl audio_alsa driver requires ALSA library installed and some linker flags
+-have_alsa=no
+-AC_CHECK_HEADERS(alsa/asoundlib.h,[
+-  AC_CHECK_LIB(asound, snd_pcm_open,[
+-    AC_DEFINE(HAVE_LIBALSA)
+-    have_alsa=yes
+-    possible_drivers="${possible_drivers} (audio_alsa)"
+-    ],,
+-  )]
+-)
+-dnl alsa_usb driver requires an ALSA that knows about our hwdep device
+-if test "$have_alsa" = "yes"; then
+-  AC_MSG_CHECKING(for ALSA SB RC hwdep support)
+-  AC_COMPILE_IFELSE([AC_LANG_PROGRAM([[
+-#include <alsa/asoundlib.h>
+-]], [[
+-  if (snd_hwdep_info_get_iface(NULL) == SND_HWDEP_IFACE_SB_RC) {}
+-]])],[
+-    AC_MSG_RESULT(yes)
+-    AC_DEFINE(HAVE_ALSA_SB_RC)
+-    possible_drivers="${possible_drivers} (alsa_usb)"
+-    ],[
+-    AC_MSG_RESULT(no)
+-  ])
+-fi
+-dnl creative_infracd driver requires linux scsi api
+-AC_CHECK_HEADERS(scsi/sg.h,[
+-  AC_DEFINE(HAVE_SCSI)
+-  possible_drivers="${possible_drivers} (creative_infracd)"
+-  ]
+-)
+ dnl dev_input driver requires linux input device api
+ AC_CHECK_HEADERS(linux/input.h,[
+   AC_DEFINE(HAVE_LINUX_DEVINPUT)
+@@ -411,17 +371,18 @@ AC_CHECK_HEADERS([linux/hiddev.h],[
+ #endif
+ ]
+ )
++dnl FreeBSD usbhid.h - patched daemons/hw_hiddev.c needs testing
++AC_CHECK_HEADERS([usbhid.h],[
++  dnl possible_drivers="${possible_drivers} (asusdh) (bw6130) (dvico) (macmini)"
++  possible_drivers="${possible_drivers} (bw6130) (dvico)"
++  ], [], []
++)
+ dnl dsp driver requires linux soundcard api
+ AC_CHECK_HEADERS(sys/soundcard.h,[
+   AC_DEFINE(HAVE_SOUNDCARD)
+   possible_drivers="${possible_drivers} (dsp)"
+   ]
+ )
+-dnl i2cuser driver requires the Linux I2C API
+-AC_CHECK_HEADERS(linux/i2c-dev.h,[
+-  possible_drivers="${possible_drivers} (i2cuser)"
+-  ]
+-)
+ 
+ dnl here we see what driver the user wants.
+ 
