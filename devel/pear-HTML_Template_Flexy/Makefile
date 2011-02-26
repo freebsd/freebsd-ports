@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	HTML_Template_Flexy
-PORTVERSION=	1.3.9
+PORTVERSION=	1.3.11
 CATEGORIES=	devel www pear
 
 MAINTAINER=	miwi@FreeBSD.org
@@ -20,6 +20,7 @@ OPTIONS=	PEAR_HTML_JAVASCRIPT "PEAR::HTML_Javascript support" off \
 		PEAR_FILE_GETTEXT "PEAR::File_Gettext support" off \
 		PEAR_TRANSLATION2 "PEAR::Translation2 support" off
 
+PEAR_CATSRC=	yes
 CATEGORY=	HTML/Template
 FILES=		Flexy.php Flexy/example.ini Flexy/Element.php \
 		Flexy/Element/Xul.php Flexy/Factory.php Flexy/Assign.php \
