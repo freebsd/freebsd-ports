@@ -1,5 +1,5 @@
---- setup.py.orig	2010-12-28 17:51:43.000000000 +0800
-+++ setup.py	2011-02-21 21:08:22.000000000 +0800
+--- setup.py.orig	2011-02-26 04:56:47.906445474 +0800
++++ setup.py	2011-02-26 04:56:49.969976034 +0800
 @@ -21,7 +21,7 @@
  COMPILED_WITH_PYDEBUG = hasattr(sys, 'gettotalrefcount')
  
@@ -27,16 +27,7 @@
                                     extra_link_args=readline_extra_link_args,
                                     libraries=readline_libs) )
          else:
-@@ -724,6 +724,8 @@
-                                    depends=['hashlib.h']) )
-             exts.append( Extension('_sha512', ['sha512module.c'],
-                                    depends=['hashlib.h']) )
-+        else:
-+            open('.without_own_sha', 'w')
- 
-         if COMPILED_WITH_PYDEBUG or not have_usable_openssl:
-             # no openssl at all, use our own md5 and sha1
-@@ -1139,12 +1141,13 @@
+@@ -1139,12 +1139,13 @@
          # provided by the ncurses library.
          panel_library = 'panel'
          if curses_library.startswith('ncurses'):
@@ -51,7 +42,7 @@
                                     libraries = curses_libs) )
          elif curses_library == 'curses' and platform != 'darwin':
                  # OSX has an old Berkeley curses, not good enough for
-@@ -1157,6 +1160,7 @@
+@@ -1157,6 +1158,7 @@
                  curses_libs = ['curses']
  
              exts.append( Extension('_curses', ['_cursesmodule.c'],
@@ -59,7 +50,7 @@
                                     libraries = curses_libs) )
          else:
              missing.append('_curses')
-@@ -1309,7 +1313,7 @@
+@@ -1309,7 +1311,7 @@
              macros = dict()
              libraries = []
  
@@ -68,7 +59,7 @@
              # FreeBSD's P1003.1b semaphore support is very experimental
              # and has many known problems. (as of June 2008)
              macros = dict()
-@@ -1352,8 +1356,7 @@
+@@ -1352,8 +1354,7 @@
          # End multiprocessing
  
          # Platform-specific libraries
@@ -78,7 +69,7 @@
              or platform.startswith("gnukfreebsd")):
              exts.append( Extension('ossaudiodev', ['ossaudiodev.c']) )
          else:
-@@ -1868,8 +1871,7 @@
+@@ -1868,8 +1869,7 @@
            # If you change the scripts installed here, you also need to
            # check the PyBuildScripts command above, and change the links
            # created by the bininstall target in Makefile.pre.in
