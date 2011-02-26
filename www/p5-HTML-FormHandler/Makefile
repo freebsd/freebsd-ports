@@ -1,13 +1,14 @@
 # New ports collection makefile for:  HTML-FormHandler
-# Whom: gugu
-# Date created: 03 December 2009
+# Date created:		2009-12-03
+# Whom:			gugu
 # $FreeBSD$
 
 PORTNAME=	HTML-FormHandler
-PORTVERSION=	0.32005
+PORTVERSION=	0.33002
 PORTEPOCH=	1
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
+MASTER_SITE_SUBDIR=	../../authors/id/G/GS/GSHANK
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	az@FreeBSD.org
@@ -26,7 +27,9 @@ BUILD_DEPENDS=	p5-DateTime>=0:${PORTSDIR}/devel/p5-DateTime \
 		p5-aliased>=0:${PORTSDIR}/devel/p5-aliased \
 		p5-namespace-autoclean>=0.09:${PORTSDIR}/devel/p5-namespace-autoclean \
 		p5-File-ShareDir-Install>=0.3:${PORTSDIR}/devel/p5-File-ShareDir-Install
+
 RUN_DEPENDS:=	${BUILD_DEPENDS}
+
 TEST_DEPENDS=	p5-Test-Exception>=0:${PORTSDIR}/devel/p5-Test-Exception \
 		p5-Test-Differences>=0:${PORTSDIR}/devel/p5-Test-Differences
 
@@ -34,6 +37,8 @@ PERL_CONFIGURE=	5.8.0+
 MAN3=	HTML::FormHandler.3 \
 	HTML::FormHandler::Field.3 HTML::FormHandler::TraitFor::I18N.3 \
 	HTML::FormHandler::Render::WithTT.3 HTML::FormHandler::Field::NoValue.3 \
+	HTML::FormHandler::BuildPages.3 \
+	HTML::FormHandler::Field::Button.3 \
 	HTML::FormHandler::Field::Boolean.3 HTML::FormHandler::Field::Checkbox.3 \
 	HTML::FormHandler::Field::Compound.3 HTML::FormHandler::Field::Date.3 \
 	HTML::FormHandler::Field::DateMDY.3 HTML::FormHandler::Field::DateTime.3 \
@@ -46,7 +51,7 @@ MAN3=	HTML::FormHandler.3 \
 	HTML::FormHandler::Field::MonthName.3 HTML::FormHandler::Field::Multiple.3 \
 	HTML::FormHandler::Field::Nested.3 HTML::FormHandler::Field::Password.3 \
 	HTML::FormHandler::Field::PasswordConf.3 HTML::FormHandler::Field::PosInteger.3 \
-	HTML::FormHandler::Field::PrimaryKey.3 HTML::FormHandler::Field::Radio.3 \
+	HTML::FormHandler::Field::PrimaryKey.3 \
 	HTML::FormHandler::Field::Repeatable.3 \
 	HTML::FormHandler::Field::Repeatable::Instance.3 \
 	HTML::FormHandler::Field::Reset.3 \
@@ -65,15 +70,20 @@ MAN3=	HTML::FormHandler.3 \
 	HTML::FormHandler::Manual::Tutorial.3 HTML::FormHandler::Meta::Role.3 \
 	HTML::FormHandler::Model.3 HTML::FormHandler::Model::CDBI.3 \
 	HTML::FormHandler::Moose.3 HTML::FormHandler::Field::Captcha.3 \
-	HTML::FormHandler::Moose::Role.3 HTML::FormHandler::Render::Simple.3 \
+	HTML::FormHandler::Moose::Role.3 \
+	HTML::FormHandler::Page.3 \
+	HTML::FormHandler::Page::Simple.3 \
+	HTML::FormHandler::Pages.3 \
+	HTML::FormHandler::Render::Simple.3 \
 	HTML::FormHandler::Render::Table.3 HTML::FormHandler::Result.3 \
 	HTML::FormHandler::Result::Role.3 HTML::FormHandler::Types.3 \
-	HTML::FormHandler::Validate.3 HTML::FormHandler::Validate::Actions.3 \
+	HTML::FormHandler::Validate.3 \
 	HTML::FormHandler::Widget::Form::Simple.3 \
 	HTML::FormHandler::Widget::Form::Table.3 \
 	HTML::FormHandler::Widget::Wrapper::Simple.3 \
 	HTML::FormHandler::TraitFor::Captcha.3 \
 	HTML::FormHandler::Widget::Wrapper::Fieldset.3 \
+	HTML::FormHandler::Widget::Field::Button.3 \
 	HTML::FormHandler::Widget::Field::NoRender.3 \
 	HTML::FormHandler::Widget::Field::Textarea.3 \
 	HTML::FormHandler::Widget::Field::Password.3 \
@@ -102,6 +112,7 @@ MAN3=	HTML::FormHandler.3 \
 	HTML::FormHandler::Widget::Field::Submit.3 \
 	HTML::FormHandler::Widget::Wrapper::None.3 \
 	HTML::FormHandler::Widget::Wrapper::Base.3 \
+	HTML::FormHandler::Wizard.3 \
 	HTML::FormHandler::Params.3 HTML::FormHandler::Base.3 \
 	HTML::FormHandler::BuildFields.3 HTML::FormHandler::Traits.3
 

@@ -1,4 +1,5 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/FormHandler/.packlist
+%%SITE_PERL%%/auto/share/dist/HTML-FormHandler/templates/widget/button.tt
 %%SITE_PERL%%/auto/share/dist/HTML-FormHandler/templates/widget/text.tt
 %%SITE_PERL%%/auto/share/dist/HTML-FormHandler/templates/widget/form_end.tt
 %%SITE_PERL%%/auto/share/dist/HTML-FormHandler/templates/widget/reset.tt
@@ -17,8 +18,10 @@
 %%SITE_PERL%%/HTML/FormHandler.pm
 %%SITE_PERL%%/HTML/FormHandler/Base.pm
 %%SITE_PERL%%/HTML/FormHandler/BuildFields.pm
+%%SITE_PERL%%/HTML/FormHandler/BuildPages.pm
 %%SITE_PERL%%/HTML/FormHandler/Field.pm
 %%SITE_PERL%%/HTML/FormHandler/Field/Boolean.pm
+%%SITE_PERL%%/HTML/FormHandler/Field/Button.pm
 %%SITE_PERL%%/HTML/FormHandler/Field/Checkbox.pm
 %%SITE_PERL%%/HTML/FormHandler/Field/Captcha.pm
 %%SITE_PERL%%/HTML/FormHandler/Field/Compound.pm
@@ -45,7 +48,6 @@
 %%SITE_PERL%%/HTML/FormHandler/Field/PasswordConf.pm
 %%SITE_PERL%%/HTML/FormHandler/Field/PosInteger.pm
 %%SITE_PERL%%/HTML/FormHandler/Field/PrimaryKey.pm
-%%SITE_PERL%%/HTML/FormHandler/Field/Radio.pm
 %%SITE_PERL%%/HTML/FormHandler/Field/Repeatable.pm
 %%SITE_PERL%%/HTML/FormHandler/Field/Repeatable/Instance.pm
 %%SITE_PERL%%/HTML/FormHandler/Field/Reset.pm
@@ -81,6 +83,9 @@
 %%SITE_PERL%%/HTML/FormHandler/Model/Object.pm
 %%SITE_PERL%%/HTML/FormHandler/Moose.pm
 %%SITE_PERL%%/HTML/FormHandler/Moose/Role.pm
+%%SITE_PERL%%/HTML/FormHandler/Page.pm
+%%SITE_PERL%%/HTML/FormHandler/Page/Simple.pm
+%%SITE_PERL%%/HTML/FormHandler/Pages.pm
 %%SITE_PERL%%/HTML/FormHandler/Params.pm
 %%SITE_PERL%%/HTML/FormHandler/Render/Simple.pm
 %%SITE_PERL%%/HTML/FormHandler/Render/Table.pm
@@ -92,8 +97,8 @@
 %%SITE_PERL%%/HTML/FormHandler/Traits.pm
 %%SITE_PERL%%/HTML/FormHandler/TraitFor/I18N.pm
 %%SITE_PERL%%/HTML/FormHandler/TraitFor/Captcha.pm
-%%SITE_PERL%%/HTML/FormHandler/Validate/Actions.pm
 %%SITE_PERL%%/HTML/FormHandler/Widget/ApplyRole.pm
+%%SITE_PERL%%/HTML/FormHandler/Widget/Field/Button.pm
 %%SITE_PERL%%/HTML/FormHandler/Widget/Field/Checkbox.pm
 %%SITE_PERL%%/HTML/FormHandler/Widget/Field/CheckboxGroup.pm
 %%SITE_PERL%%/HTML/FormHandler/Widget/Field/Compound.pm
@@ -118,6 +123,7 @@
 %%SITE_PERL%%/HTML/FormHandler/Widget/Wrapper/None.pm
 %%SITE_PERL%%/HTML/FormHandler/Widget/Wrapper/Simple.pm
 %%SITE_PERL%%/HTML/FormHandler/Widget/Wrapper/Table.pm
+%%SITE_PERL%%/HTML/FormHandler/Wizard.pm
 @dirrmtry %%SITE_PERL%%/HTML/FormHandler/Widget/Wrapper
 @dirrmtry %%SITE_PERL%%/HTML/FormHandler/Widget/Form/Role
 @dirrmtry %%SITE_PERL%%/HTML/FormHandler/Widget/Form
@@ -125,6 +131,7 @@
 @dirrmtry %%SITE_PERL%%/HTML/FormHandler/Widget/Field
 @dirrmtry %%SITE_PERL%%/HTML/FormHandler/Widget
 @dirrmtry %%SITE_PERL%%/HTML/FormHandler/Validate
+@dirrmtry %%SITE_PERL%%/HTML/FormHandler/Page
 @dirrmtry %%SITE_PERL%%/HTML/FormHandler/Result
 @dirrmtry %%SITE_PERL%%/HTML/FormHandler/Render
 @dirrmtry %%SITE_PERL%%/HTML/FormHandler/Moose
