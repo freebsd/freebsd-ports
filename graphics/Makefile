@@ -615,6 +615,7 @@
     SUBDIR += p5-Color-Palette
     SUBDIR += p5-Color-Rgb
     SUBDIR += p5-Color-Scheme
+    SUBDIR += p5-Convert-Color
     SUBDIR += p5-GD
     SUBDIR += p5-GD-Arrow
     SUBDIR += p5-GD-Barcode
