@@ -1,0 +1,8 @@
+iSCSI Enterprise Target is a simple open source iSCSI target with
+professional features, that works well in enterprise environments
+under real workloads, and is scalable and versatile enough to meet
+the challenge of future storage needs and developments.
+
+The port work was originally done by QuadStor.
+
+WWW:	http://iscsitarget.sourceforge.net/
