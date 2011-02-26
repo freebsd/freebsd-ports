@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	groonga
-PORTVERSION=	1.0.6
+PORTVERSION=	1.1.0
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_LOCAL} \
 		http://groonga.org/files/groonga/

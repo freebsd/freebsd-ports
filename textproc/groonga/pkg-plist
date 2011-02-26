@@ -1,5 +1,6 @@
 bin/grntest
 bin/groonga
+bin/groonga-suggest-create-dataset
 etc/groonga/init.d/redhat/sysconfig/groonga
 etc/groonga/init.d/redhat/groonga
 etc/groonga/groonga.conf
