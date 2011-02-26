@@ -1894,6 +1894,7 @@
     SUBDIR += p5-Memoize
     SUBDIR += p5-Memoize-ExpireLRU
     SUBDIR += p5-Meta-Builder
+    SUBDIR += p5-Metabase-Fact
     SUBDIR += p5-Method-Alias
     SUBDIR += p5-Method-Signatures-Simple
     SUBDIR += p5-Mixin-Linewise
