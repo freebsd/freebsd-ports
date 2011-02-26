@@ -10,6 +10,7 @@ MASTERDIR=	${.CURDIR}/../salome
 
 PORTNAME=	salome
 PKGNAMESUFFIX=	-kernel
+PORTREVISION=	1
 SAL_MODULE_UPPER=	KERNEL
 
 .include "${MASTERDIR}/Makefile"

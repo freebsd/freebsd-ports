@@ -7,7 +7,7 @@
 
 PORTNAME=	ecs
 PORTVERSION=	1.3.3
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	science
 MASTER_SITES=	http://rd.edf.com/fichiers/fckeditor/File/EDF%20RD/Code_Saturne/Fichiers/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.//g}
@@ -18,7 +18,7 @@ COMMENT=	Code_Saturne Preprocessor
 
 LIB_DEPENDS=	med.2:${PORTSDIR}/french/med		\
 		bft.1:${PORTSDIR}/science/bft		\
-		hdf5.0:${PORTSDIR}/science/hdf5		\
+		hdf5.6:${PORTSDIR}/science/hdf5-18	\
 		cgns.0:${PORTSDIR}/science/cgnslib
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
