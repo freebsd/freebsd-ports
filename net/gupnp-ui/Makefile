@@ -11,7 +11,7 @@ PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	http://www.gupnp.org/sources/${PORTNAME}/
 
-MAINTAINER=	miwi@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Framework for UPnP devices
 
 LIB_DEPENDS=	soup-2.4.1:${PORTSDIR}/devel/libsoup \
