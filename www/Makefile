@@ -1459,6 +1459,7 @@
     SUBDIR += py-django-app-plugins
     SUBDIR += py-django-classy-tags
     SUBDIR += py-django-devel
+    SUBDIR += py-django-evolution
     SUBDIR += py-django-extensions
     SUBDIR += py-django-keyedcache
     SUBDIR += py-django-livesettings
