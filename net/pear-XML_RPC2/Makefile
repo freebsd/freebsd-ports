@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	XML_RPC2
-PORTVERSION=	1.0.5
-PORTREVISION=	1
+PORTVERSION=	1.0.7
 CATEGORIES=	net devel pear
 
 MAINTAINER=	miwi@FreeBSD.org
@@ -17,6 +16,7 @@ BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear \
 		${PEARDIR}/Cache/Lite.php:${PORTSDIR}/sysutils/pear-Cache_Lite
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
+PEAR_CATSRC=	yes
 USE_PHP=	curl
 
 FILES=		XML/RPC2/Backend/Php/Value/Array.php \
