@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Net_Whois
-PORTVERSION=	1.0.3
+PORTVERSION=	1.0.4
 CATEGORIES=	net pear
 
 MAINTAINER=	miwi@FreeBSD.org
