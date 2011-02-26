@@ -458,6 +458,7 @@
     SUBDIR += mod_auth_pgsql2
     SUBDIR += mod_auth_pubtkt
     SUBDIR += mod_auth_remote
+    SUBDIR += mod_auth_tkt
     SUBDIR += mod_auth_useragent
     SUBDIR += mod_auth_xradius
     SUBDIR += mod_authenticache
