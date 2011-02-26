@@ -248,6 +248,7 @@
     SUBDIR += fnord
     SUBDIR += formication
     SUBDIR += foswiki
+    SUBDIR += foswiki-ModPerlEngineContrib
     SUBDIR += fpc-fastcgi
     SUBDIR += fpc-httpd13
     SUBDIR += fpc-httpd20
