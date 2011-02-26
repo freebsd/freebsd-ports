@@ -6,19 +6,20 @@
 #
 
 PORTNAME=	Services_W3C_CSSValidator
-PORTVERSION=	0.1.0
+PORTVERSION=	0.2.2
 CATEGORIES=	www pear
 
 MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	PHP interface to W3C CSS Validator API
 
-BUILD_DEPENDS=	${PEARDIR}/HTTP/Request.php:${PORTSDIR}/www/pear-HTTP_Request
-RUN_DEPENDS=	${PEARDIR}/HTTP/Request.php:${PORTSDIR}/www/pear-HTTP_Request
+BUILD_DEPENDS=	${PEARDIR}/HTTP/Request2.php:${PORTSDIR}/www/pear-HTTP_Request2
+RUN_DEPENDS=	${PEARDIR}/HTTP/Request2.php:${PORTSDIR}/www/pear-HTTP_Request2
+
+PEAR_CATSRC=	yes
 
 CATEGORY=	Services
-
-FILES=		CSSValidator.php CSSValidator/Error.php CSSValidator/Message.php \
-		CSSValidator/Response.php CSSValidator/Warning.php
+FILES=		W3C/CSSValidator.php W3C/CSSValidator/Error.php W3C/CSSValidator/Message.php \
+		W3C/CSSValidator/Response.php W3C/CSSValidator/Warning.php
 TESTS=		AllTests.php fragment.css Services_W3C_CSSValidatorTest.php
 EXAMPLES=	examples/foo.css examples/fragment.css examples/pear_manual.css \
 		examples/validate_atrules.php examples/validate_byfile.php \
