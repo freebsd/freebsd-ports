@@ -1225,6 +1225,7 @@
     SUBDIR += p5-CPAN-Inject
     SUBDIR += p5-CPAN-Meta
     SUBDIR += p5-CPAN-Mini
+    SUBDIR += p5-CPAN-Reporter
     SUBDIR += p5-CPAN-SQLite
     SUBDIR += p5-CPAN-YACSmoke
     SUBDIR += p5-CPANPLUS
