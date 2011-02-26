@@ -7,7 +7,7 @@
 
 PORTNAME=	ncs
 PORTVERSION=	1.3.3
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	science parallel
 MASTER_SITES=	http://rd.edf.com/fichiers/fckeditor/File/EDF%20RD/Code_Saturne/Fichiers/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.//g}
