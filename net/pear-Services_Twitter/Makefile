@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Services_Twitter
-PORTVERSION=	0.6.0
+PORTVERSION=	0.6.3
 CATEGORIES=	net www pear
 
 MAINTAINER=	miwi@FreeBSD.org
@@ -18,6 +18,7 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 
 USE_PHP=	json simplexml mbstring
 
+PEAR_CATSRC=	yes
 FILES=		Services/Twitter.php Services/Twitter/Exception.php
 DATA=		api.rng api.xml
 TESTS=		000-statuses-public_timeline.phpt \
