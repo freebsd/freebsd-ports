@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	URI_Template
-PORTVERSION=	0.3.1
+PORTVERSION=	0.3.3
 CATEGORIES=	net pear
 
 MAINTAINER=	miwi@FreeBSD.org
@@ -15,6 +15,7 @@ COMMENT=	Parser for URI Templates
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
 RUN_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
 
+PEAR_CATSRC=	yes
 CATEGORY=	URI
 FILES=		Template.php
 TESTS=		AllTests.php
