@@ -9,7 +9,7 @@ PORTNAME=	IO-Toolkit
 PORTVERSION=	1.008
 PORTREVISION=	1
 CATEGORIES=	devel perl5
-MASTER_SITES=	CPAN
+MASTER_SITES=	http://backpan.perl.org/authors/id/L/LI/LINMAR/${PORTNAME:S/-//}/
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	ychsiao@ychsiao.org
