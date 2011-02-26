@@ -1,0 +1,6 @@
+mod_auth_tkt is a lightweight single-sign-on authentication module for
+apache, supporting versions 1.3.x, 2.0.x, and 2.2.x.  It uses secure
+cookie-based tickets to implement a single-signon framework that works
+across multiple apache instances and servers.
+
+WWW: http://www.openfusion.com.au/labs/mod_auth_tkt/

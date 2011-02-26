@@ -1,0 +1,14 @@
+libexec/apache22/mod_auth_tkt.so
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cgi/Apache/AuthTkt.pm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cgi/AuthTktConfig.pm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cgi/login.cgi
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cgi/logout.cgi
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cgi/tkt.css
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/conf/02_auth_tkt.conf
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/conf/auth_tkt_cgi.conf
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/conf
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/cgi/Apache
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/cgi
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
