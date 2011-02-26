@@ -8,8 +8,7 @@
 PORTNAME=	beast
 PORTVERSION=	0.7.2
 CATEGORIES=	audio
-MASTER_SITES=	ftp://beast.gtk.org/pub/beast/v0.7/ \
-		http://beast.gtk.org/beast-ftp/v0.7/
+MASTER_SITES=	http://beast.testbit.eu/_dist/beast/v${PORTVERSION:R}/
 
 MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	A powerful music composition and modular synthesis application

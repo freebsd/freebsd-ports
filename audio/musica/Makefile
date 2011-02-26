@@ -8,7 +8,7 @@ PORTNAME=	musica
 PORTVERSION=	1.1.4
 PORTREVISION=	1
 CATEGORIES=	audio
-MASTER_SITES=	http://www-ict.its.tudelft.nl/~erik/open-source/musica/
+MASTER_SITES=	http://ict.ewi.tudelft.nl/~erik/open-source/musica/
 
 MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	GTK based midi player
