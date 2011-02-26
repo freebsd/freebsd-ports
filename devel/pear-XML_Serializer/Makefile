@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	XML_Serializer
-PORTVERSION=	0.20.0
+PORTVERSION=	0.20.2
 CATEGORIES=	devel www pear
 
 MAINTAINER=	miwi@FreeBSD.org
@@ -15,6 +15,8 @@ COMMENT=	PEAR Swiss-army knive for reading and writing XML files
 BUILD_DEPENDS=	${PEARDIR}/XML/Parser.php:${PORTSDIR}/devel/pear-XML_Parser \
 		${PEARDIR}/XML/Util.php:${PORTSDIR}/devel/pear-XML_Util
 RUN_DEPENDS=	${BUILD_DEPENDS}
+
+PEAR_CATSRC=	yes
 
 CATEGORY=	XML
 FILES=		Serializer.php Unserializer.php
@@ -68,16 +70,6 @@ TESTS=		req-13564.phpt bug-13896.phpt bug-15602.phpt \
 		Unserializer_Scalars_TestCase.php
 DOCS=		todo.txt
 _DOCSDIR=	doc
-
-post-extract:
-.for file in ${FILES}
-	@${REINPLACE_CMD} -e "s|@package_version@|${PORTVERSION}|" ${WRKSRC}/${file}
-	@${FIND} ${WRKSRC} -name "*.bak" -delete
-.endfor
-.for file in ${EXAMPLES}
-	@${REINPLACE_CMD} -e "s|@package_version@|${PORTVERSION}|" ${WRKSRC}/examples/${file}
-	@${FIND} ${WRKSRC}/examples -name "*.bak" -delete
-.endfor
 
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/devel/pear/bsd.pear.mk"
