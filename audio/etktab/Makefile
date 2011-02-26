@@ -15,7 +15,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} canada_multi-3.2.etk \
 DIST_SUBDIR=	${PORTNAME}
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
-MAINTAINER=	erkkila@cc.jyu.fi
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Guitar tablature editor
 
 RUN_DEPENDS=	wish8.4:${PORTSDIR}/x11-toolkits/tk84
