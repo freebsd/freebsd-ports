@@ -1364,6 +1364,7 @@
     SUBDIR += p5-Config-Model
     SUBDIR += p5-Config-Objective
     SUBDIR += p5-Config-Options
+    SUBDIR += p5-Config-Perl-V
     SUBDIR += p5-Config-Properties
     SUBDIR += p5-Config-Record
     SUBDIR += p5-Config-Setting
