@@ -8,7 +8,8 @@
 PORTNAME=	Net-Subnets
 PORTVERSION=	1.02
 CATEGORIES=	net perl5
-MASTER_SITES=	http://backpan.cpan.org/authors/id/K/KR/KRAIH/
+MASTER_SITES=	http://backpan.perl.org/authors/id/K/KR/KRAIH/ \
+		http://backpan.cpan.org/authors/id/K/KR/KRAIH/
 MASTER_SITE_SUBDIR=	Net
 PKGNAMEPREFIX=	p5-
 
