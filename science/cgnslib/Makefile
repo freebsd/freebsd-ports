@@ -6,14 +6,18 @@
 #
 
 PORTNAME=	cgnslib
-DISTVERSION=	2.5-3
-PORTREVISION=	2
+DISTVERSION=	2.5-5
 CATEGORIES=	science
-MASTER_SITES=	SF/cgns/${PORTNAME}_2.5/Release%203
+MASTER_SITES=	SF/cgns/${PORTNAME}_${PORTVERSION:R}/Release%20${PORTVERSION:E}
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	CFD General Notation System library code
+
+LICENSE=	AS-IS
+LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
+LICENSE_NAME=	AS-IS
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-shared=all
@@ -21,7 +25,7 @@ MAKE_ENV=	PTHREAD_LIBS="${PTHREAD_LIBS}"
 USE_LDCONFIG=	yes
 
 .if !defined(WITHOUT_HDF5)
-LIB_DEPENDS+=	hdf5.0:${PORTSDIR}/science/hdf5
+LIB_DEPENDS+=	hdf5.6:${PORTSDIR}/science/hdf5-18
 CONFIGURE_ARGS+=--with-hdf5=${LOCALBASE}
 PLIST_SUB=	HDF5=""
 .else
