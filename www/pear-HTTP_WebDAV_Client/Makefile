@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	HTTP_WebDAV_Client
-PORTVERSION=	1.0.0
+PORTVERSION=	1.0.1
 CATEGORIES=	www devel pear
 
 MAINTAINER=	miwi@FreeBSD.org
@@ -15,6 +15,7 @@ COMMENT=	WebDAV Stream Wrapper Class
 BUILD_DEPENDS=	${PEARDIR}/HTTP/Request.php:${PORTSDIR}/www/pear-HTTP_Request
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
+PEAR_CATSRC=	yes
 CATEGORY=	HTTP/WebDAV
 FILES=		Client.php Client/Stream.php \
 		Tools/_parse_lock_response.php \
