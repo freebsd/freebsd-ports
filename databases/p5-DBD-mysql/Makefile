@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	DBD-mysql
-PORTVERSION=	4.017
+PORTVERSION=	4.018
 CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -17,6 +17,9 @@ COMMENT?=	MySQL driver for the Perl5 Database Interface (DBI)
 
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI
 RUN_DEPENDS=	${BUILD_DEPENDS}
+
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
 
 CONFLICTS?=	p5-Mysql-modules-[0-9]* p5-DBD-mysql[45][0-9]-[0-9]*
 
