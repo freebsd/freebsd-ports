@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://www.gupnp.org/sources/${PORTNAME}/
 
-MAINTAINER=	miwi@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Helpers for audio/video applications using GUPnP
 
 LIB_DEPENDS=	gupnp-1.0:${PORTSDIR}/net/gupnp
