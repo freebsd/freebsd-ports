@@ -1,0 +1,10 @@
+This module provides conversions between commonly used ways to express
+colors. It provides conversions between color spaces such as RGB and
+HSV, and it provides ways to look up colors by a name.
+
+This class provides a base for subclasses which represent particular
+color values in particular spaces. The base class provides methods to
+represent the color in a few convenient forms, though subclasses may
+provide more specific details for the space in question.
+
+WWW: http://search.cpan.org/dist/Convert-Color/

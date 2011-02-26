@@ -1,0 +1,16 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Convert/Color/.packlist
+%%SITE_PERL%%/Convert/Color.pm
+%%SITE_PERL%%/Convert/Color/CMY.pm
+%%SITE_PERL%%/Convert/Color/CMYK.pm
+%%SITE_PERL%%/Convert/Color/HSL.pm
+%%SITE_PERL%%/Convert/Color/HSV.pm
+%%SITE_PERL%%/Convert/Color/HueBased.pm
+%%SITE_PERL%%/Convert/Color/RGB.pm
+%%SITE_PERL%%/Convert/Color/RGB16.pm
+%%SITE_PERL%%/Convert/Color/RGB8.pm
+%%SITE_PERL%%/Convert/Color/VGA.pm
+%%SITE_PERL%%/Convert/Color/X11.pm
+@dirrm %%SITE_PERL%%/Convert/Color
+@dirrmtry %%SITE_PERL%%/Convert
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Convert/Color
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Convert
