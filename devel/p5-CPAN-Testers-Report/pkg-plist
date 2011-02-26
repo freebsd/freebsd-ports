@@ -1,0 +1,16 @@
+%%SITE_PERL%%/CPAN/Testers/Report.pm
+%%SITE_PERL%%/CPAN/Testers/Fact/PerlConfig.pm
+%%SITE_PERL%%/CPAN/Testers/Fact/LegacyReport.pm
+%%SITE_PERL%%/CPAN/Testers/Fact/InstalledModules.pm
+%%SITE_PERL%%/CPAN/Testers/Fact/TesterComment.pm
+%%SITE_PERL%%/CPAN/Testers/Fact/Prereqs.pm
+%%SITE_PERL%%/CPAN/Testers/Fact/TestSummary.pm
+%%SITE_PERL%%/CPAN/Testers/Fact/TestOutput.pm
+%%SITE_PERL%%/CPAN/Testers/Fact/TestEnvironment.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/CPAN/Testers/Report/.packlist
+@dirrmtry %%SITE_PERL%%/CPAN/Testers/Fact
+@dirrmtry %%SITE_PERL%%/CPAN/Testers
+@dirrmtry %%SITE_PERL%%/CPAN
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/CPAN/Testers/Report
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/CPAN/Testers
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/CPAN
