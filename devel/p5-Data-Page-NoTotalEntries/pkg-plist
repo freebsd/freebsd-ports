@@ -1,0 +1,8 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/Page/NoTotalEntries/.packlist
+%%SITE_PERL%%/Data/Page/NoTotalEntries.pm
+%%SITE_PERL%%/Data/Page/README.pod
+@dirrmtry %%SITE_PERL%%/Data/Page
+@dirrmtry %%SITE_PERL%%/Data
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/Page/NoTotalEntries
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/Page
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data
