@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Translation2
-DISTVERSION=	2.0.3
+DISTVERSION=	2.0.4
 PORTEPOCH=	1
 CATEGORIES=	sysutils devel pear
 
@@ -17,6 +17,7 @@ BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 USE_PHP=	yes
+PEAR_CATSRC=	yes
 
 LATEST_LINK=	pear-Translation2
 OPTIONS=	PEAR_CACHE_LITE "PEAR::Cache_Lite support" off \
@@ -62,10 +63,6 @@ EXAMPLES=	gettext_admin.php gettext_domains.ini gettext_langs.ini \
 		Translation2_example.php Translation2_example.sql \
 		Translation2_gettext_example.php Translation2_example_multitable.sql
 _EXAMPLESDIR=	docs/examples
-
-post-extract:
-	${MKDIR} ${WRKSRC}/Translation2
-	${MV} ${WRKSRC}/[A-D]* ${WRKSRC}/Translation2
 
 .if defined(WITH_PEAR_CACHE_LITE)
 RUN_DEPENDS+=	${PEARDIR}/Cache/Lite.php:${PORTSDIR}/sysutils/pear-Cache_Lite
