@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	Services_W3C_HTMLValidator
-DISTVERSION=	1.0.0RC2
-PORTREVISION=	2
+PORTVERSION=	1.0.0
+PORTEPOCH=	1
 CATEGORIES=	www pear
 
 MAINTAINER=	miwi@FreeBSD.org
@@ -18,15 +18,15 @@ BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear \
 RUN_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear \
 		${PEARDIR}/HTTP/Request2.php:${PORTSDIR}/www/pear-HTTP_Request2
 
+PEAR_CATSRC=	yes
 CATEGORY=	Services
-FILES=		HTMLValidator.php HTMLValidator/Error.php HTMLValidator/Message.php \
-		HTMLValidator/Response.php HTMLValidator/Warning.php
+FILES=		W3C/HTMLValidator.php W3C/HTMLValidator/Error.php W3C/HTMLValidator/Message.php \
+		W3C/HTMLValidator/Response.php W3C/HTMLValidator/Warning.php
 _EXAMPLESDIR=	docs/examples
 EXAMPLES=	example.html validate_byfile.php  \
 		validate_byuri.php validate_fragment.php \
 		validate_responsexml.php \
 		PHPUnit/URIValidationTest.php PHPUnit/ValidationSuite.php
-
 
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/devel/pear/bsd.pear.mk"
