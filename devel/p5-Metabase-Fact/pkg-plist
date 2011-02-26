@@ -1,0 +1,27 @@
+bin/metabase-profile
+%%SITE_PERL%%/Metabase/Report.pm
+%%SITE_PERL%%/Metabase/Fact.pm
+%%SITE_PERL%%/Metabase/User/Secret.pm
+%%SITE_PERL%%/Metabase/User/Profile.pm
+%%SITE_PERL%%/Metabase/User/FullName.pm
+%%SITE_PERL%%/Metabase/User/EmailAddress.pm
+%%SITE_PERL%%/Metabase/Fact/String.pm
+%%SITE_PERL%%/Metabase/Fact/Hash.pm
+%%SITE_PERL%%/Metabase/Resource.pm
+%%SITE_PERL%%/Metabase/Resource/metabase.pm
+%%SITE_PERL%%/Metabase/Resource/perl.pm
+%%SITE_PERL%%/Metabase/Resource/metabase/user.pm
+%%SITE_PERL%%/Metabase/Resource/metabase/fact.pm
+%%SITE_PERL%%/Metabase/Resource/cpan.pm
+%%SITE_PERL%%/Metabase/Resource/perl/commit.pm
+%%SITE_PERL%%/Metabase/Resource/cpan/distfile.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Metabase/Fact/.packlist
+@dirrmtry %%SITE_PERL%%/Metabase/Fact
+@dirrmtry %%SITE_PERL%%/Metabase/Resource/cpan
+@dirrmtry %%SITE_PERL%%/Metabase/Resource/metabase
+@dirrmtry %%SITE_PERL%%/Metabase/Resource/perl
+@dirrmtry %%SITE_PERL%%/Metabase/Resource
+@dirrmtry %%SITE_PERL%%/Metabase/User
+@dirrmtry %%SITE_PERL%%/Metabase
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Metabase/Fact
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Metabase
