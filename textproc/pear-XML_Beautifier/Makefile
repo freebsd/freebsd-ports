@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	XML_Beautifier
-PORTVERSION=	1.2.0
+PORTVERSION=	1.2.2
 CATEGORIES=	textproc devel pear
 
 MAINTAINER=	miwi@FreeBSD.org
@@ -16,6 +16,7 @@ BUILD_DEPENDS=	${PEARDIR}/XML/Parser.php:${PORTSDIR}/devel/pear-XML_Parser \
 		${PEARDIR}/XML/Util.php:${PORTSDIR}/devel/pear-XML_Util
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
+PEAR_WRKSRC=	yes
 CATEGORY=	XML
 FILES=		Beautifier/Renderer.php Beautifier/Tokenizer.php \
 		Beautifier/Renderer/Plain.php Beautifier.php
