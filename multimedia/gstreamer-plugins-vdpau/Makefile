@@ -6,7 +6,7 @@
 #
 
 PORTREVISION=	0
-CATEGORIES=	x11
+CATEGORIES=	multimedia
 
 COMMENT=	Gstreamer nvidia vdpau plugin
 
