@@ -12,7 +12,7 @@ MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	../../authors/id/C/CL/CLKAO
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	jihuang@gate.sinica.edu.tw
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	VCP source driver for bk exported cvs repository
 
 BUILD_DEPENDS=	${SITE_PERL}/VCP.pm:${PORTSDIR}/devel/p5-VCP-autrijus
