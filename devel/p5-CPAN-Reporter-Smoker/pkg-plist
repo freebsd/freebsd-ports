@@ -1,0 +1,7 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/CPAN/Reporter/Smoker/.packlist
+%%SITE_PERL%%/CPAN/Reporter/Smoker.pm
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/CPAN/Reporter/Smoker
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/CPAN/Reporter
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/CPAN
+@dirrmtry %%SITE_PERL%%/CPAN/Reporter
+@dirrmtry %%SITE_PERL%%/CPAN
