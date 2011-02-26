@@ -9,8 +9,9 @@ PORTNAME=	xdx
 PORTVERSION=	2.4
 PORTREVISION=	4
 CATEGORIES=	comms hamradio
-MASTER_SITES=	http://pg4i.chronos.org.uk/download/ \
-		http://www.qsl.net/pg4i/download/
+MASTER_SITES=	http://www.chronos.org.uk/download/ \
+		${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	db
 
 MAINTAINER=	matt@chronos.org.uk
 COMMENT=	Amateur Radio DX cluster monitor
