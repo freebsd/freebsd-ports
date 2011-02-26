@@ -34,5 +34,6 @@ post-patch:
 post-install:
 	@${INSTALL_MAN} ${WRKSRC}/debootstrap.8 \
 		${MAN8PREFIX}/man/man8/debootstrap.8
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
