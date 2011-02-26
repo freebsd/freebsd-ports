@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	File_Find
-PORTVERSION=	1.3.0
+PORTVERSION=	1.3.1
 CATEGORIES=	sysutils www pear
 
 MAINTAINER=	miwi@FreeBSD.org
@@ -15,6 +15,7 @@ COMMENT=	PEAR class that facillitates the search of filesystems
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
+PEAR_CATSRC=	yes
 CATEGORY=	File
 FILES=		Find.php
 TESTS=		setup.php 01glob.phpt 02maptree.phpt 03maptreemultiple.phpt \
