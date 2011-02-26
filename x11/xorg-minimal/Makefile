@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	xorg
-PORTVERSION=	7.4
-PORTREVISION=	5
+PORTVERSION=	7.5.1
 CATEGORIES=	x11 x11-servers
 MASTER_SITES=	# none
 PKGNAMESUFFIX=	-minimal
@@ -22,11 +21,15 @@ NO_BUILD=	yes
 VIDEO_DRIVER?=	vesa
 
 RUN_DEPENDS+=	${LOCALBASE}/bin/Xorg:${PORTSDIR}/x11-servers/xorg-server \
-		${LOCALBASE}/lib/xorg/modules/drivers/${VIDEO_DRIVER}_drv.so:${PORTSDIR}/x11-drivers/xf86-video-${VIDEO_DRIVER} \
 		${LOCALBASE}/lib/xorg/modules/input/mouse_drv.so:${PORTSDIR}/x11-drivers/xf86-input-mouse \
 		${LOCALBASE}/lib/xorg/modules/input/kbd_drv.so:${PORTSDIR}/x11-drivers/xf86-input-keyboard \
 		${LOCALBASE}/bin/xinit:${PORTSDIR}/x11/xinit \
 		${LOCALBASE}/bin/xauth:${PORTSDIR}/x11/xauth
+.if ${VIDEO_DRIVER} == "nvidia"
+RUN_DEPENDS+=	${LOCALBASE}/lib/xorg/modules/drivers/nvidia_drv.so:${PORTSDIR}/x11/nvidia-driver
+.else
+		${LOCALBASE}/lib/xorg/modules/drivers/${VIDEO_DRIVER}_drv.so:${PORTSDIR}/x11-drivers/xf86-video-${VIDEO_DRIVER} \
+.endif
 
 do-install:
 
