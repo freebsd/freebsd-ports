@@ -7,7 +7,7 @@
 
 PORTNAME=	scotch
 PORTVERSION=	5.0.6
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	cad science
 MASTER_SITES=	http://gforge.inria.fr/frs/download.php/3795/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
