@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Net_Traceroute
-PORTVERSION=	0.21.2
+PORTVERSION=	0.21.3
 CATEGORIES=	net pear
 
 MAINTAINER=	miwi@FreeBSD.org
