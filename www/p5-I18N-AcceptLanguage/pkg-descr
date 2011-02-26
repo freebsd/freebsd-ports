@@ -1,0 +1,5 @@
+I18N::AcceptLanguage matches language preference to available
+languages per rules defined in RFC 2616, section 14.4: HTTP/1.1 -
+Header Field Definitions - Accept-Language.
+
+WWW: http://search.cpan.org/dist/I18N-AcceptLanguage/
