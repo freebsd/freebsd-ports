@@ -1,6 +1,6 @@
---- Makefile.in.orig	2009-10-07 19:18:28.000000000 +0200
-+++ Makefile.in	2009-10-09 21:41:59.000000000 +0200
-@@ -195,61 +195,61 @@
+--- Makefile.in.orig	2011-01-31 19:23:28.000000000 +0100
++++ Makefile.in	2011-02-02 22:51:16.000000000 +0100
+@@ -127,61 +127,61 @@
  install:  install-preamble FORCE_TARGET 
  	if [ ! -d ${DESTDIR}${prefix} ] ; then $(MKDIR_P) ${DESTDIR}${prefix} ; fi
  	if [ ! -d ${DESTDIR}${datarootdir} ] ; then $(MKDIR_P) ${DESTDIR}${datarootdir} ; fi
@@ -12,8 +12,8 @@
  	if [ ! -d ${DESTDIR}${exec_prefix} ] ; then $(MKDIR_P) ${DESTDIR}${exec_prefix} ; fi
  	if [ ! -d ${DESTDIR}${libdir} ] ; then $(MKDIR_P) ${DESTDIR}${libdir} ; fi
  	${MAKE} install-local
- 	$(INSTALL_DATA) src/include/mpi.h ${DESTDIR}${includedir}/mpi.h
- 	$(INSTALL_DATA) lib/lib${MPILIBNAME}.a ${DESTDIR}${libdir}/lib${MPILIBNAME}.a
+ 	$(INSTALL_DATA)  src/include/mpi.h ${DESTDIR}${includedir}/mpi.h
+ 	$(INSTALL_DATA)  lib/lib${MPILIBNAME}.a ${DESTDIR}${libdir}/lib${MPILIBNAME}.a
 -	if [ ! -d ${DESTDIR}${docdir} ] ; then $(MKDIR_P) ${DESTDIR}${docdir} ; fi
 -	@if test -d $(srcdir)/www && cd $(srcdir)/www ; then \
 -	 for name in * ; do \
@@ -108,21 +108,21 @@
 +%%PORTDOCS%%	  fi ; \
 +%%PORTDOCS%%	 done ; \
 +%%PORTDOCS%%	fi
- 	if [ -s src/mpi/romio/include/mpiof.h ] ; then $(INSTALL_DATA) src/mpi/romio/include/mpiof.h ${DESTDIR}${includedir}/mpiof.h ; fi
- 	if [ -s src/mpi/romio/include/mpio.h ] ; then $(INSTALL_DATA) src/mpi/romio/include/mpio.h ${DESTDIR}${includedir}/mpio.h ; fi
- 	if [ -s lib/lib${MPIFLIBNAME}.a ] ; then $(INSTALL_DATA) lib/lib${MPIFLIBNAME}.a ${DESTDIR}${libdir}/lib${MPIFLIBNAME}.a ; fi
-@@ -263,10 +263,10 @@
- 	if [ -s lib/libf${MPILIBNAME}.@SHLIB_EXT@ ] ; then $(CREATESHLIB) -version-info $(ABIVERSION) --mode=install lib/libf${MPILIBNAME}.@SHLIB_EXT@ ${DESTDIR}${libdir}/libf${MPILIBNAME}.@SHLIB_EXT@ ; fi
- 	if [ -s lib/lib${MPILIBNAME}f90.@SHLIB_EXT@ ] ; then $(CREATESHLIB) -version-info $(ABIVERSION) --mode=install lib/lib${MPILIBNAME}f90.@SHLIB_EXT@ ${DESTDIR}${libdir}/lib${MPILIBNAME}f90.@SHLIB_EXT@ ; fi
- 	if [ -s lib/lib${MPICXXLIBNAME}.@SHLIB_EXT@ ] ; then $(CREATESHLIB) -version-info $(ABIVERSION) --mode=install lib/lib${MPICXXLIBNAME}.@SHLIB_EXT@ ${DESTDIR}${libdir}/lib${MPICXXLIBNAME}.@SHLIB_EXT@ ; fi
--	if [ -s $(srcdir)/doc/userguide/user.pdf ] ; then $(INSTALL_DATA) $(srcdir)/doc/userguide/user.pdf ${DESTDIR}${docdir}/user.pdf ; fi
--	if [ -s $(srcdir)/doc/installguide/install.pdf ] ; then $(INSTALL_DATA) $(srcdir)/doc/installguide/install.pdf ${DESTDIR}${docdir}/install.pdf ; fi
--	if [ -s $(srcdir)/doc/smpd/smpd_pmi.pdf ] ; then $(INSTALL_DATA) $(srcdir)/doc/smpd/smpd_pmi.pdf ${DESTDIR}${docdir}/smpd_pmi.pdf ; fi
--	if [ -s $(srcdir)/doc/logging/logging.pdf ] ; then $(INSTALL_DATA) $(srcdir)/doc/logging/logging.pdf ${DESTDIR}${docdir}/logging.pdf ; fi
-+%%PORTDOCS%%	if [ -s $(srcdir)/doc/userguide/user.pdf ] ; then $(INSTALL_DATA) $(srcdir)/doc/userguide/user.pdf ${DESTDIR}${docdir}/user.pdf ; fi
-+%%PORTDOCS%%	if [ -s $(srcdir)/doc/installguide/install.pdf ] ; then $(INSTALL_DATA) $(srcdir)/doc/installguide/install.pdf ${DESTDIR}${docdir}/install.pdf ; fi
-+%%PORTDOCS%%	if [ -s $(srcdir)/doc/smpd/smpd_pmi.pdf ] ; then $(INSTALL_DATA) $(srcdir)/doc/smpd/smpd_pmi.pdf ${DESTDIR}${docdir}/smpd_pmi.pdf ; fi
-+%%PORTDOCS%%	if [ -s $(srcdir)/doc/logging/logging.pdf ] ; then $(INSTALL_DATA) $(srcdir)/doc/logging/logging.pdf ${DESTDIR}${docdir}/logging.pdf ; fi
+ 	if [ -s src/mpi/romio/include/mpiof.h ] ; then $(INSTALL_DATA)  src/mpi/romio/include/mpiof.h ${DESTDIR}${includedir}/mpiof.h ; fi
+ 	if [ -s src/mpi/romio/include/mpio.h ] ; then $(INSTALL_DATA)  src/mpi/romio/include/mpio.h ${DESTDIR}${includedir}/mpio.h ; fi
+ 	if [ -s lib/lib${MPIFLIBNAME}.a ] ; then $(INSTALL_DATA)  lib/lib${MPIFLIBNAME}.a ${DESTDIR}${libdir}/lib${MPIFLIBNAME}.a ; fi
+@@ -195,10 +195,10 @@
+ 	if [ -s lib/libf${MPILIBNAME}.@SHLIB_EXT@ ] ; then $(CREATESHLIB) -version-info $(ABIVERSION) --mode=install  lib/libf${MPILIBNAME}.@SHLIB_EXT@ ${DESTDIR}${libdir}/libf${MPILIBNAME}.@SHLIB_EXT@ ; fi
+ 	if [ -s lib/lib${MPILIBNAME}f90.@SHLIB_EXT@ ] ; then $(CREATESHLIB) -version-info $(ABIVERSION) --mode=install  lib/lib${MPILIBNAME}f90.@SHLIB_EXT@ ${DESTDIR}${libdir}/lib${MPILIBNAME}f90.@SHLIB_EXT@ ; fi
+ 	if [ -s lib/lib${MPICXXLIBNAME}.@SHLIB_EXT@ ] ; then $(CREATESHLIB) -version-info $(ABIVERSION) --mode=install --clink="@CXX_SHL@" lib/lib${MPICXXLIBNAME}.@SHLIB_EXT@ ${DESTDIR}${libdir}/lib${MPICXXLIBNAME}.@SHLIB_EXT@ ; fi
+-	if [ -s $(srcdir)/doc/userguide/user.pdf ] ; then $(INSTALL_DATA)  $(srcdir)/doc/userguide/user.pdf ${DESTDIR}${docdir}/user.pdf ; fi
+-	if [ -s $(srcdir)/doc/installguide/install.pdf ] ; then $(INSTALL_DATA)  $(srcdir)/doc/installguide/install.pdf ${DESTDIR}${docdir}/install.pdf ; fi
+-	if [ -s $(srcdir)/doc/smpd/smpd_pmi.pdf ] ; then $(INSTALL_DATA)  $(srcdir)/doc/smpd/smpd_pmi.pdf ${DESTDIR}${docdir}/smpd_pmi.pdf ; fi
+-	if [ -s $(srcdir)/doc/logging/logging.pdf ] ; then $(INSTALL_DATA)  $(srcdir)/doc/logging/logging.pdf ${DESTDIR}${docdir}/logging.pdf ; fi
++%%PORTDOCS%%	if [ -s $(srcdir)/doc/userguide/user.pdf ] ; then $(INSTALL_DATA)  $(srcdir)/doc/userguide/user.pdf ${DESTDIR}${docdir}/user.pdf ; fi
++%%PORTDOCS%%	if [ -s $(srcdir)/doc/installguide/install.pdf ] ; then $(INSTALL_DATA)  $(srcdir)/doc/installguide/install.pdf ${DESTDIR}${docdir}/install.pdf ; fi
++%%PORTDOCS%%	if [ -s $(srcdir)/doc/smpd/smpd_pmi.pdf ] ; then $(INSTALL_DATA)  $(srcdir)/doc/smpd/smpd_pmi.pdf ${DESTDIR}${docdir}/smpd_pmi.pdf ; fi
++%%PORTDOCS%%	if [ -s $(srcdir)/doc/logging/logging.pdf ] ; then $(INSTALL_DATA)  $(srcdir)/doc/logging/logging.pdf ${DESTDIR}${docdir}/logging.pdf ; fi
  	(cd src/env && $(MAKE) INSTALL_STRIP_FLAG=$(INSTALL_STRIP_FLAG) install)
  	(cd src/packaging/pkgconfig && $(MAKE) INSTALL_STRIP_FLAG=$(INSTALL_STRIP_FLAG) install)
  	(cd src/packaging/envmods && $(MAKE) INSTALL_STRIP_FLAG=$(INSTALL_STRIP_FLAG) install)

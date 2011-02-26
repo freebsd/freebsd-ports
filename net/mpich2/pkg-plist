@@ -98,10 +98,6 @@ bin/parkill
 %%JAVA%%bin/slog2navigator
 %%JAVA%%bin/slog2print
 %%JAVA%%bin/slog2updater
-bin/smtpd.pyc
-bin/smtpd.pyo
-bin/smtpd2.6.pyc
-bin/smtpd2.6.pyo
 etc/mpe_callstack_ldflags.conf
 etc/mpe_f77env.conf
 etc/mpe_graphics.conf
@@ -777,5 +773,8 @@ etc/mpd.conf.dist
 %%JAVA%%@dirrm lib/trace_rlog
 @dirrm include/primitives
 @cwd %%LOCALBASE%%
-libdata/pkgconfig/mpich2-ch3.pc
+libdata/pkgconfig/mpich2-c.pc
+libdata/pkgconfig/mpich2-cxx.pc
+libdata/pkgconfig/mpich2-f77.pc
+libdata/pkgconfig/mpich2-f90.pc
 @comment libdata/pkgconfig/openpa.pc
