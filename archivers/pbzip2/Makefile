@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	pbzip2
-PORTVERSION=	1.1.1
+PORTVERSION=	1.1.2
 CATEGORIES=	archivers
 MASTER_SITES=	http://compression.ca/pbzip2/
 DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
