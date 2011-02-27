@@ -31,9 +31,12 @@ USE_PYTHON=	yes
 PYTHON_VERSION=	python3.2
 PYTHON_NO_DEPENDS=	yes
 
+PYABIVER=	# default empty, for after appending
+
 SHARED_WRKSRC=	${PYTHON_WRKSRC}/portbld.shared
 PLIST_SUB=	PYVER=${PYTHON_VERSION:S/python//} \
-		PYVER_WITHPAT=${PORTVERSION:S/.rc/rc/}
+		PYVER_WITHPAT=${PORTVERSION:S/.rc/rc/} \
+		PYABIVER=${PYABIVER}
 EXAMPLESDIR=	${PREFIX}/share/examples/${PYTHON_VERSION}
 DATADIR=	${PREFIX}/share/${PYTHON_VERSION}
 
@@ -83,10 +86,13 @@ CONFIGURE_ENV+=		LDFLAGS="${LDFLAGS}"
 
 .if !defined(WITHOUT_UCS4) && !defined(WITH_UCS2)
 CONFIGURE_ARGS+=	--with-wide-unicode
+PYABIVER:=	${PYABIVER}u
 .endif
 
 .if defined(WITHOUT_PYMALLOC)
 CONFIGURE_ARGS+=	--without-pymalloc
+.else
+PYABIVER:=	m${PYABIVER}
 .endif
 
 .if ${ARCH} == sparc64
@@ -153,8 +159,8 @@ post-configure:
 
 pre-build:
 	cd ${SHARED_WRKSRC}; \
-	${SETENV} ${MAKE_ENV} ${MAKE} lib${PYTHON_VERSION}mu.so python; \
-	${LN} -f lib${PYTHON_VERSION}mu.so lib${PYTHON_VERSION}mu.so.1; \
+	${SETENV} ${MAKE_ENV} ${MAKE} lib${PYTHON_VERSION}${PYABIVER}.so python; \
+	${LN} -f lib${PYTHON_VERSION}${PYABIVER}.so lib${PYTHON_VERSION}${PYABIVER}.so.1; \
 	${LN} -f python ${PYTHON_VERSION:S/thon/thon-shared/}
 
 pre-su-install:
@@ -172,11 +178,11 @@ post-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/${PYTHON_VERSION:S/thon/thon-shared/}-config ${PREFIX}/bin
 
 	@# shared version of executable and library
-	${INSTALL_PROGRAM} ${SHARED_WRKSRC}/lib${PYTHON_VERSION}mu.so.1 \
+	${INSTALL_PROGRAM} ${SHARED_WRKSRC}/lib${PYTHON_VERSION}${PYABIVER}.so.1 \
 		${PREFIX}/lib
-	cd ${PREFIX}/lib; ${LN} -sf lib${PYTHON_VERSION}mu.so.1 \
+	cd ${PREFIX}/lib; ${LN} -sf lib${PYTHON_VERSION}${PYABIVER}.so.1 \
 		lib${PYTHON_VERSION}.so
-	${LN} -sf ${PREFIX}/lib/lib${PYTHON_VERSION}mu.so ${PYTHONPREFIX_LIBDIR}/config
+	${LN} -sf ${PREFIX}/lib/lib${PYTHON_VERSION}${PYABIVER}.so ${PYTHONPREFIX_LIBDIR}/config
 	${INSTALL_PROGRAM} \
 		${SHARED_WRKSRC}/${PYTHON_VERSION:S/thon/thon-shared/} \
 		${PREFIX}/bin
