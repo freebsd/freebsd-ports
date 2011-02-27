@@ -7,6 +7,7 @@
 
 PORTNAME=	trafshow
 PORTVERSION=	5.2.3
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	net
 MASTER_SITES=	ftp://renatasystems.org/pub/FreeBSD/ports/distfiles/ \
@@ -22,6 +23,8 @@ ALL_TARGET=	trafshow
 
 MAN1=		trafshow.1
 
+OPTIONS=        IPV6           "Build with IPv6 support" off
+
 .include <bsd.port.pre.mk>
 
 post-patch:
@@ -30,6 +33,10 @@ post-patch:
 		${WRKSRC}/colormask.c ${WRKSRC}/trafshow.1 ${WRKSRC}/trafshow.c
 .if ${OSVERSION} >= 800074
 	@${PATCH} -d ${WRKSRC} < ${FILESDIR}/extra-patch-800074+
+.endif
+
+.if defined(WITH_IPV6)
+CFLAGS+=	-DINET6
 .endif
 
 do-install:
