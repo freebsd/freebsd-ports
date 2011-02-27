@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	gmic
-PORTVERSION=	1.4.8.1
+PORTVERSION=	1.4.8.2
 CATEGORIES=	graphics
-MASTER_SITES=	SF/${PORTNAME}
+MASTER_SITES=	SF/${PORTNAME} \
+		SF/${PORTNAME}/old
 PKGNAMEPREFIX=	gimp-
 PKGNAMESUFFIX=	-plugin
 DISTNAME=	${PORTNAME}_${PORTVERSION}
@@ -16,7 +17,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 MAINTAINER=	cvs-src@yandex.ru
 COMMENT=	GREYC's Magic Image Converter
 
-LIB_DEPENDS=	GraphicsMagick++.1:${PORTSDIR}/graphics/GraphicsMagick \
+LIB_DEPENDS=	GraphicsMagick++.6:${PORTSDIR}/graphics/GraphicsMagick13 \
 		IlmImf.6:${PORTSDIR}/graphics/OpenEXR \
 		Magick++.4:${PORTSDIR}/graphics/ImageMagick \
 		avcodec.1:${PORTSDIR}/multimedia/ffmpeg \
@@ -69,7 +70,7 @@ do-install:
 .endif
 .if defined(WITH_BASH)
 	${INSTALL_SCRIPT} ${WRKSRC}/src/gmic_bashcompletion.sh \
-		${PREFIX}/etc/bash_completion.d
+		${PREFIX}/etc/bash_completion.d/gmic_bashcompletion.sh
 .endif
 
 .include <bsd.port.post.mk>
