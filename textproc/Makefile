@@ -1004,7 +1004,6 @@
     SUBDIR += py-asv
     SUBDIR += py-chardet
     SUBDIR += py-creole
-    SUBDIR += py-csv
     SUBDIR += py-docutils
     SUBDIR += py-dsv
     SUBDIR += py-empy
