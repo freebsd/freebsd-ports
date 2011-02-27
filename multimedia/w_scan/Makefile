@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	w_scan
-PORTVERSION=	20100529
+PORTVERSION=	20110206
 CATEGORIES=	multimedia
 MASTER_SITES=	http://wirbel.htpc-forum.de/w_scan/
 
