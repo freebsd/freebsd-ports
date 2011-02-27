@@ -15,6 +15,9 @@ DISTNAME=	jm-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A distributed file sharing program for GNOME
 
+DEPRECATED=	It's no longer maintained since 2003, and its dependencies can't be fetched
+EXPIRATION_DATE=	2011-03-27
+
 LIB_DEPENDS=	gnet.7:${PORTSDIR}/net/gnet
 
 USE_GNOME=	gnomehack gnomeprefix libglade
