@@ -13,7 +13,7 @@ MASTER_SITES=	SF
 DISTNAME=	Foswiki-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	glarkin@FreeBSD.org
+MAINTAINER=	skv@FreeBSD.org
 COMMENT=	A free and open source enterprise wiki
 
 BUILD_DEPENDS=	p5-Error>=0:${PORTSDIR}/lang/p5-Error
