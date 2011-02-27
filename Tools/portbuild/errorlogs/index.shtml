@@ -429,12 +429,6 @@ the problems run much deeper, in which case <tt>ONLY_FOR_ARCHS</tt>
 may be needed.</dd>
 
 <dt><img alt="(uncommon)" src="/errorlogs/images/purple-ball.gif"><a name=
-"assert">assert</a></dt>
-
-<dd>Compilation failed due to an assert.  This is often a variation
-on <tt>arch</tt> or <tt>missing header</tt>.</dd>
-
-<dt><img alt="(uncommon)" src="/errorlogs/images/purple-ball.gif"><a name=
 "autoconf">autoconf</a></dt>
 
 <dd>Your port depends on <tt>autoconf</tt>, but the <tt>Makefile</tt>
@@ -476,15 +470,6 @@ invalid category.</dd>
 "checksum">checksum</a></dt>
 
 <dd>The checksum of one or more of the files is incorrect.</dd>
-
-<dt><img alt="(uncommon)" src="/errorlogs/images/purple-ball.gif"><a name=
-"chown">chown</a></dt>
-
-<dd><tt>POSIX</tt> has deprecated the usage
-"<tt>chown user.group filename</tt>" in favor of
-"<tt>chown user:group filename</tt>". This happened quite some time
-ago, actually, but it is only now being enforced. (The change was
-made to allow '.' in usernames).</dd>
 
 <dt><img alt="(common)" src="/errorlogs/images/blue-ball.gif"><a name=
 "clang">clang</a></dt>
@@ -654,6 +639,11 @@ Another possibility is that your port is deleting some directories
 it is not supposed to, or incorrectly modifying some directory's
 permission.</dd>
 
+<dt><img alt="(uncommon)" src="/errorlogs/images/purple-ball.gif"><a name=
+"nested_declaration">nested_declaration</a></dt>
+
+<dd>There is a nested declaration in the source code.</dd>
+
 <dt><img alt="(common)" src="/errorlogs/images/blue-ball.gif"><a name=
 "newgcc">new compiler error</a></dt>
 
@@ -682,11 +672,6 @@ this change helps avoid having a stale version of <tt>perl</tt>
 in the base system, it also means that many ports now need to include
 <tt>USE_PERL5</tt>.</dd>
 
-<dt><img alt="(uncommon)" src="/errorlogs/images/purple-ball.gif"><a name=
-"perl5">perl5</a></dt>
-
-<dd>There is a problem in processing a <tt>perl5</tt> module.</dd>
-
 <dt><img alt="(common)" src="/errorlogs/images/blue-ball.gif"><a name=
 "plist">PLIST</a></dt>
 
@@ -701,11 +686,6 @@ that much harder.</dd>
 
 <dd>The <tt>make</tt> process terminated unexpectedly, due to
 something like a signal 11 or bus error.</dd>
-
-<dt><img alt="(uncommon)" src="/errorlogs/images/purple-ball.gif"><a name=
-"python">python</a></dt>
-
-<dd>The <tt>Makefile</tt> needs to define <tt>USE_PYTHON</tt>.</dd>
 
 <dt><img alt="(uncommon)" src="/errorlogs/images/purple-ball.gif"><a name=
 "runaway">runaway process</a></dt>
@@ -727,23 +707,9 @@ problem.</dd>
 <dd>This port needs to catch up with semaphore changes in 9-CURRENT.</dd>
 
 <dt><img alt="(uncommon)" src="/errorlogs/images/purple-ball.gif"><a name=
-"stdio">stdio</a></dt>
+"termios">termios</a></dt>
 
-<dd>You need to bring your port up to date with the current
-<tt>&lt;stdio.h&gt;</tt>.</dd>
-
-<dt><img alt="(uncommon)" src="/errorlogs/images/purple-ball.gif"><a name=
-"struct">struct changes</a></dt>
-
-<dd>Your port is trying to refer to structure elements that are not
-really there. This is often due to changes in the underlying
-include files.</dd>
-
-<dt><img alt="(uncommon)" src="/errorlogs/images/purple-ball.gif"><a name=
-"sysvipc">sysvipc</a></dt>
-
-<dd>Your port is interacting badly with the System V InterProcess
-Communication code.</dd>
+<dd>This port needs to catch up with the <tt>termios.h</tt> changes in src.</dd>
 
 <dt><img alt="(uncommon)" src="/errorlogs/images/purple-ball.gif"><a name=
 "threads">threads</a></dt>
@@ -758,15 +724,9 @@ the thread libraries.</dd>
 fault.  Linimon is trying to figure out this problem.</dd>
 
 <dt><img alt="(uncommon)" src="/errorlogs/images/purple-ball.gif"><a name=
-"usexlib">USE_XLIB</a></dt>
+"utmp_x">utmp_x</a></dt>
 
-<dd>You should specify <tt>USE_XLIB</tt> for this port since it
-appears to use X.</dd>
-
-<dt><img alt="(uncommon)" src="/errorlogs/images/purple-ball.gif"><a name=
-"varargs">varargs</a></dt>
-
-<dd><tt>varargs.h</tt> is obsolete with newer versions of <tt>gcc</tt>.</dd>
+<dd>This port needs to catch up with the <tt>utmp_x.h</tt> changes in src.</dd>
 
 <dt><img alt="(uncommon)" src="/errorlogs/images/purple-ball.gif"><a name=
 "wrkdir">WRKDIR</a></dt>
@@ -789,6 +749,7 @@ errors are not common enough to try to catch.</dd>
 that used to be detected by the AI script, but are now uncommon enough to
 be skipped:</p>
 
+<dl>
 <dt><img alt="(uncommon)" src="/errorlogs/images/purple-ball.gif"><a name=
 "alignment">alignment</a></dt>
 
@@ -801,6 +762,12 @@ structure.</dd>
 <dd>Your port depends on Apache (in particular, the <tt>apxs</tt>
 binary) but the <tt>Makefile</tt> doesn't have Apache in
 <tt>BUILD_DEPENDS</tt> and/or <tt>LIB_DEPENDS</tt>.</dd>
+
+<dt><img alt="(uncommon)" src="/errorlogs/images/purple-ball.gif"><a name=
+"assert">assert</a></dt>
+
+<dd>Compilation failed due to an assert.  This is often a variation
+on <tt>arch</tt> or <tt>missing header</tt>.</dd>
 
 <dt><img alt="(uncommon)" src="/errorlogs/images/purple-ball.gif"><a name=
 "awk">awk</a></dt>
@@ -823,6 +790,15 @@ instead, or define <tt>USE_BISON</tt>.</dd>
 but by default it doesn't.</dd>
 
 <dt><img alt="(uncommon)" src="/errorlogs/images/purple-ball.gif"><a name=
+"chown">chown</a></dt>
+
+<dd><tt>POSIX</tt> has deprecated the usage
+"<tt>chown user.group filename</tt>" in favor of
+"<tt>chown user:group filename</tt>". This happened quite some time
+ago, actually, but it is only now being enforced. (The change was
+made to allow '.' in usernames).</dd>
+
+<dt><img alt="(uncommon)" src="/errorlogs/images/purple-ball.gif"><a name=
 "elf">ELF</a></dt>
 
 <dd>The port does not properly work in the new ELF world. It is
@@ -830,9 +806,9 @@ probably looking for an <tt>a.out</tt> object (e.g.,
 <tt>crt0.o</tt>).</dd>
 
 <dt><img alt="(uncommon)" src="/errorlogs/images/purple-ball.gif"><a name=
-"elf">f77</a></dt>
+"f77">f77</a></dt>
 
-<dd><tt>gcc</td> in base no longer includes the <tt>Fortran</tt> compiler
+<dd><tt>gcc</tt> in base no longer includes the <tt>Fortran</tt> compiler
 by default.</dd>
 
 <dt><img alt="(uncommon)" src="/errorlogs/images/purple-ball.gif"><a name=
@@ -879,13 +855,18 @@ using <tt>${MOTIFLIB}</tt>. See <a href=
 "http://www.freebsd.org/doc/en_US.ISO8859-1/books/porters-handbook/porting-motif.html">handbook</a>
 for details.</dd>
 
-<dt><img alt="(uncommon)" src="/errorlogs/images/green-ball.gif"><a name=
+<dt><img alt="(uncommon)" src="/errorlogs/images/purple-ball.gif"><a name=
 "munmap">munmap</a></dt>
 
 <dd>POSIX specifies that munmap cannot be called on a zero-length file.
 Because of this, during 4.X builds, if cp tries to copy a zero-length file, it
 may fail saying, "cp: ...: Invalid argument".  This is a problem with the 
 bindist image on pointyhat, and not the fault of the porter.</dd>
+
+<dt><img alt="(uncommon)" src="/errorlogs/images/purple-ball.gif"><a name=
+"perl5">perl5</a></dt>
+
+<dd>There is a problem in processing a <tt>perl5</tt> module.</dd>
 
 <dt><img alt="(uncommon)" src="/errorlogs/images/purple-ball.gif"><a name=
 "pod2man">pod2man</a></dt>
@@ -895,6 +876,11 @@ system, but your port's documentation process depends on it. While
 this change helps avoid having a stale version of <tt>perl</tt>
 in the base system, it also means that many ports now need to include
 <tt>USE_PERL5</tt>.</dd>
+
+<dt><img alt="(uncommon)" src="/errorlogs/images/purple-ball.gif"><a name=
+"python">python</a></dt>
+
+<dd>The <tt>Makefile</tt> needs to define <tt>USE_PYTHON</tt>.</dd>
 
 <dt><img alt="(uncommon)" src="/errorlogs/images/purple-ball.gif"><a name=
 "sed">sed</a></dt>
@@ -912,12 +898,31 @@ of <tt>${REINPLACE_COMMAND}</tt> but having left
 <dd><tt>machine/soundcard.h</tt> has been moved.</dd>
 
 <dt><img alt="(uncommon)" src="/errorlogs/images/purple-ball.gif"><a name=
+"stdio">stdio</a></dt>
+
+<dd>You need to bring your port up to date with the current
+<tt>&lt;stdio.h&gt;</tt>.</dd>
+
+<dt><img alt="(uncommon)" src="/errorlogs/images/purple-ball.gif"><a name=
 "stl">stl</a></dt>
 
 <dd>Your port requires the <tt>STL</tt> library but cannot find it.</dd>
 
 <dt><img alt="(uncommon)" src="/errorlogs/images/purple-ball.gif"><a name=
-"wait">uname</a></dt>
+"struct">struct changes</a></dt>
+
+<dd>Your port is trying to refer to structure elements that are not
+really there. This is often due to changes in the underlying
+include files.</dd>
+
+<dt><img alt="(uncommon)" src="/errorlogs/images/purple-ball.gif"><a name=
+"sysvipc">sysvipc</a></dt>
+
+<dd>Your port is interacting badly with the System V InterProcess
+Communication code.</dd>
+
+<dt><img alt="(uncommon)" src="/errorlogs/images/purple-ball.gif"><a name=
+"uname">uname</a></dt>
 
 <dd>For a short period of time, gcc was not handling uname properly.</dd>
 
@@ -941,6 +946,17 @@ through if you are sure it's correct regardless of what
 often due to misuse of a union.</dd>
 
 <dt><img alt="(uncommon)" src="/errorlogs/images/purple-ball.gif"><a name=
+"usexlib">USE_XLIB</a></dt>
+
+<dd>You should specify <tt>USE_XLIB</tt> for this port since it
+appears to use X.</dd>
+
+<dt><img alt="(uncommon)" src="/errorlogs/images/purple-ball.gif"><a name=
+"varargs">varargs</a></dt>
+
+<dd><tt>varargs.h</tt> is obsolete with newer versions of <tt>gcc</tt>.</dd>
+
+<dt><img alt="(uncommon)" src="/errorlogs/images/purple-ball.gif"><a name=
 "xfree4man">X manpage</a></dt>
 
 <dd>This port does not install a manpage but <tt>imake</tt> rules are
@@ -949,6 +965,7 @@ most likely fixed by changing <tt>ComplexProgramTarget()</tt> in
 <tt>Imakefile</tt> to <tt>ComplexProgramTargetNoMan()</tt>. Note that
 defining <tt>NO_INSTALL_MANPAGES</tt> in the <tt>Makefile</tt> is no
 longer sufficient in XFree86-4.</dd>
+</dl>
 
 <hr>
 <center><a href="http://www.freebsd.org/ports/">The ports page</a>
