@@ -1,5 +1,6 @@
 @comment $FreeBSD$
 bin/wxmaxima
+share/locale/ca/LC_MESSAGES/wxMaxima.mo
 share/locale/cs/LC_MESSAGES/wxMaxima.mo
 share/locale/da/LC_MESSAGES/wxMaxima.mo
 share/locale/de/LC_MESSAGES/wxMaxima.mo
@@ -17,6 +18,9 @@ share/locale/zh_TW/LC_MESSAGES/wxMaxima.mo
 %%DATADIR%%/COPYING
 %%DATADIR%%/README
 %%DATADIR%%/autocomplete.txt
+%%DATADIR%%/maxima.png
+%%DATADIR%%/options.png
+%%DATADIR%%/styles.png
 %%DATADIR%%/tips.txt
 %%DATADIR%%/wxmathml.lisp
 %%DATADIR%%/wxmaxima.png
