@@ -21,6 +21,9 @@ bin/tg-admin
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/command/info.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/command/info.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/command/info.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/command/kid2genshi.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/command/kid2genshi.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/command/kid2genshi.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/command/quickstart.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/command/quickstart.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/command/quickstart.pyo
@@ -54,12 +57,18 @@ bin/tg-admin
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/feed/feed.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/feed/feed.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/feed/rss2_0.kid
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/filters/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/filters/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/filters/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/filters/base.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/filters/base.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/filters/base.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/filters/safemultipart.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/filters/safemultipart.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/filters/safemultipart.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/finddata.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/finddata.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/finddata.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/genericfunctions.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/genericfunctions.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/genericfunctions.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/i18n/__init__.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/i18n/__init__.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/i18n/__init__.pyo
@@ -740,6 +749,24 @@ bin/tg-admin
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/i18n/kidutils.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/i18n/kidutils.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/i18n/kidutils.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/i18n/pygettext/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/i18n/pygettext/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/i18n/pygettext/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/i18n/pygettext/catalog.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/i18n/pygettext/catalog.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/i18n/pygettext/catalog.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/i18n/pygettext/msgfmt.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/i18n/pygettext/msgfmt.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/i18n/pygettext/msgfmt.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/i18n/pygettext/pygettext.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/i18n/pygettext/pygettext.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/i18n/pygettext/pygettext.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/i18n/sagettext/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/i18n/sagettext/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/i18n/sagettext/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/i18n/sagettext/model.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/i18n/sagettext/model.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/i18n/sagettext/model.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/i18n/sogettext/__init__.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/i18n/sogettext/__init__.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/i18n/sogettext/__init__.pyo
@@ -776,6 +803,9 @@ bin/tg-admin
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/identity/__init__.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/identity/__init__.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/identity/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/identity/base.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/identity/base.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/identity/base.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/identity/conditions.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/identity/conditions.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/identity/conditions.pyo
@@ -807,7 +837,6 @@ bin/tg-admin
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/qstemplates/__init__.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/qstemplates/__init__.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/qstemplates/qsbase/+einame+.egg-info/PKG-INFO
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/qstemplates/qsbase/+einame+.egg-info/paster_plugins.txt
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/qstemplates/qsbase/+einame+.egg-info/sqlobject.txt_tmpl
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/qstemplates/qsbase/+package+/__init__.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/qstemplates/qsbase/+package+/__init__.pyc
@@ -821,7 +850,8 @@ bin/tg-admin
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/qstemplates/qsbase/+package+/templates/__init__.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/qstemplates/qsbase/+package+/templates/__init__.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/qstemplates/qsbase/+package+/templates/__init__.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/qstemplates/quickstart/+package+/commands.py_tmpl
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/qstemplates/qsbase/MANIFEST.in_tmpl
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/qstemplates/quickstart/+package+/command.py_tmpl
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/qstemplates/quickstart/+package+/config/__init__.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/qstemplates/quickstart/+package+/config/__init__.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/qstemplates/quickstart/+package+/config/__init__.pyo
@@ -830,17 +860,38 @@ bin/tg-admin
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/qstemplates/quickstart/+package+/controllers.py_tmpl
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/qstemplates/quickstart/+package+/json.py_tmpl
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/qstemplates/quickstart/+package+/model.py_tmpl
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/qstemplates/quickstart/+package+/static/css/login.css_tmpl
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/qstemplates/quickstart/+package+/static/css/style.css
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/qstemplates/quickstart/+package+/static/images/header_inner.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/qstemplates/quickstart/+package+/static/images/contentbg.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/qstemplates/quickstart/+package+/static/images/error.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/qstemplates/quickstart/+package+/static/images/favicon.ico
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/qstemplates/quickstart/+package+/static/images/header_inner2.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/qstemplates/quickstart/+package+/static/images/headerbg.png
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/qstemplates/quickstart/+package+/static/images/info.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/qstemplates/quickstart/+package+/static/images/inputbg.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/qstemplates/quickstart/+package+/static/images/loginbg.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/qstemplates/quickstart/+package+/static/images/loginbottombg.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/qstemplates/quickstart/+package+/static/images/loginheader-left.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/qstemplates/quickstart/+package+/static/images/loginheader-right.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/qstemplates/quickstart/+package+/static/images/menu-item-actibg-first.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/qstemplates/quickstart/+package+/static/images/menu-item-actibg.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/qstemplates/quickstart/+package+/static/images/menu-item-border.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/qstemplates/quickstart/+package+/static/images/menubg.png
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/qstemplates/quickstart/+package+/static/images/ok.png
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/qstemplates/quickstart/+package+/templates/login.kid
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/qstemplates/quickstart/+package+/templates/master.kid
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/qstemplates/quickstart/+package+/templates/welcome.kid
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/qstemplates/quickstart/+package+/static/images/pagebg.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/qstemplates/quickstart/+package+/static/images/star.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/qstemplates/quickstart/+package+/static/images/strype2.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/qstemplates/quickstart/+package+/static/images/tg_under_the_hood.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/qstemplates/quickstart/+package+/static/images/under_the_hood_blue.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/qstemplates/quickstart/+package+/static/images/warning.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/qstemplates/quickstart/+package+/templates/login.html_tmpl
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/qstemplates/quickstart/+package+/templates/master.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/qstemplates/quickstart/+package+/templates/welcome.html
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/qstemplates/quickstart/+package+/tests/__init__.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/qstemplates/quickstart/+package+/tests/__init__.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/qstemplates/quickstart/+package+/tests/__init__.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/qstemplates/quickstart/+package+/tests/test_controllers.py_tmpl
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/qstemplates/quickstart/+package+/tests/test_json.py_tmpl
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/qstemplates/quickstart/+package+/tests/test_model.py_tmpl
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/qstemplates/quickstart/README.txt_tmpl
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/qstemplates/quickstart/dev.cfg_tmpl
@@ -911,8 +962,7 @@ bin/tg-admin
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/static/images/transp.png
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/static/images/trash.png
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/static/images/widgets.png
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/static/js/MochiKit_1_3.js
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/static/js/MochiKit_1_4.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/static/js/MochiKit.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/static/js/__init__.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/static/js/__init__.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/static/js/__init__.pyo
@@ -947,13 +997,17 @@ bin/tg-admin
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/tests/catwalk_models/single_join.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/tests/config.cfg
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/tests/configfile.cfg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/tests/form.html
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/tests/form.kid
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/tests/genshi_new_text_format.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/tests/genshi_old_text_format.txt
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/tests/locale/en/LC_MESSAGES/messages.mo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/tests/locale/en/LC_MESSAGES/messages.po
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/tests/locale/fi/LC_MESSAGES/messages.mo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/tests/locale/fi/LC_MESSAGES/messages.po
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/tests/othertemplate.kid
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/tests/paginate.kid
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/tests/paginate.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/tests/simple.html
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/tests/simple.kid
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/tests/simplecheetah.tmpl
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/tests/test_catwalk.py
@@ -980,12 +1034,18 @@ bin/tg-admin
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/tests/test_form_controllers.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/tests/test_form_controllers.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/tests/test_form_controllers.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/tests/test_genericfunctions.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/tests/test_genericfunctions.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/tests/test_genericfunctions.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/tests/test_paginate.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/tests/test_paginate.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/tests/test_paginate.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/tests/test_restmethod.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/tests/test_restmethod.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/tests/test_restmethod.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/tests/test_scheduler.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/tests/test_scheduler.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/tests/test_scheduler.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/tests/test_session_mapper.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/tests/test_session_mapper.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/tests/test_session_mapper.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/tests/test_sqlalchemy.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/tests/test_sqlalchemy.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/tests/test_sqlalchemy.pyo
@@ -995,6 +1055,9 @@ bin/tg-admin
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/tests/test_testutil.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/tests/test_testutil.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/tests/test_testutil.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/tests/test_toscawidgets.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/tests/test_toscawidgets.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/tests/test_toscawidgets.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/tests/test_util.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/tests/test_util.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/tests/test_util.pyo
@@ -1005,9 +1068,6 @@ bin/tg-admin
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/tests/test_view.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/tests/test_view.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/tests/textfmt.tmpl
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/tests/util.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/tests/util.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/tests/util.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/testutil.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/testutil.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/testutil.pyo
@@ -1017,21 +1077,11 @@ bin/tg-admin
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/toolbox/admi18n/__init__.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/toolbox/admi18n/__init__.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/toolbox/admi18n/__init__.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/toolbox/admi18n/catalog.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/toolbox/admi18n/catalog.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/toolbox/admi18n/catalog.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/toolbox/admi18n/inter.kid
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/toolbox/admi18n/internationalization.kid
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/toolbox/admi18n/language.kid
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/toolbox/admi18n/languageManagement.kid
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/toolbox/admi18n/msgfmt.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/toolbox/admi18n/msgfmt.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/toolbox/admi18n/msgfmt.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/toolbox/admi18n/po_view.kid
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/toolbox/admi18n/pygettext.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/toolbox/admi18n/pygettext.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/toolbox/admi18n/pygettext.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/toolbox/admi18n/stringCollection.kid
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/toolbox/admi18n/internationalization.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/toolbox/admi18n/language.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/toolbox/admi18n/languageManagement.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/toolbox/admi18n/po_view.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/toolbox/admi18n/stringCollection.html
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/toolbox/base.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/toolbox/base.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/toolbox/base.pyo
@@ -1041,9 +1091,9 @@ bin/tg-admin
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/toolbox/catwalk/browse.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/toolbox/catwalk/browse.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/toolbox/catwalk/browse.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/toolbox/catwalk/browse_grid.kid
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/toolbox/catwalk/catwalk.kid
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/toolbox/catwalk/columns.kid
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/toolbox/catwalk/browse_grid.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/toolbox/catwalk/catwalk.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/toolbox/catwalk/columns.html
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/toolbox/catwalk/static/css/catwalk.css
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/toolbox/catwalk/static/javascript/browse.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/toolbox/catwalk/static/javascript/catwalk.js
@@ -1056,11 +1106,11 @@ bin/tg-admin
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/toolbox/catwalk/static/javascript/greybox/greybox_inline.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/toolbox/catwalk/static/javascript/greybox/logo.png
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/toolbox/catwalk/static/javascript/greybox/overlay.png
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/toolbox/console.kid
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/toolbox/console.html
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/toolbox/designer/__init__.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/toolbox/designer/__init__.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/toolbox/designer/__init__.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/toolbox/designer/modelDesigner.kid
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/toolbox/designer/modelDesigner.html
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/toolbox/designer/static/css/style.css
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/toolbox/designer/static/diagram/images/back.gif
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/toolbox/designer/static/diagram/images/shadow.png
@@ -1077,7 +1127,6 @@ bin/tg-admin
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/toolbox/designer/static/diagram/js/settings.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/toolbox/designer/static/diagram/js/sql_types.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/toolbox/designer/static/diagram/styles/bar.css
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/toolbox/designer/static/diagram/styles/foo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/toolbox/designer/static/diagram/styles/style.css
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/toolbox/designer/static/diagram/styles/style.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/toolbox/designer/static/images/info.png
@@ -1085,9 +1134,9 @@ bin/tg-admin
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/toolbox/designer/static/sessions/Survey.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/toolbox/designer/static/sessions/TurboTunes.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/toolbox/designer/static/sessions/WebShop.js
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/toolbox/info.kid
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/toolbox/main.kid
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/toolbox/master.kid
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/toolbox/info.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/toolbox/main.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/toolbox/master.html
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/toolbox/shell.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/toolbox/shell.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/toolbox/shell.pyo
@@ -1104,6 +1153,9 @@ bin/tg-admin
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/view/base.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/view/base.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/view/base.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/view/genshisupport.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/view/genshisupport.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/view/genshisupport.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/view/templates/__init__.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/view/templates/__init__.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/view/templates/__init__.pyo
@@ -1253,6 +1305,7 @@ bin/tg-admin
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/widgets/tests/__init__.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/widgets/tests/__init__.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/widgets/tests/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/widgets/tests/form.html
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/widgets/tests/form.kid
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/widgets/tests/test_datagrid.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/widgets/tests/test_datagrid.pyc
@@ -1278,16 +1331,20 @@ bin/tg-admin
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/widgets/tests/test_widgets.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/widgets/tests/test_widgets.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/widgets/tests/test_widgets.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/widgets/tests/two_forms.html
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/widgets/tests/two_forms.kid
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/widgets/tests/widget.kid
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/command
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/feed
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/filters
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/i18n/data/de/LC_MESSAGES
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/i18n/data/de
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/i18n/data/sl/LC_MESSAGES
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/i18n/data/sl
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/i18n/data
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/i18n/pygettext
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/i18n/sagettext
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/i18n/sogettext
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/i18n/tests
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/turbogears/i18n
