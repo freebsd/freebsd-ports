@@ -164,9 +164,14 @@ share/applications/gpodder.desktop
 share/dbus-1/services/org.gpodder.service
 %%PORTDOCS%%%%DOCSDIR%%/PKG-INFO
 %%PORTDOCS%%%%DOCSDIR%%/README
+%%DATADIR%%/audio-locked.png
+%%DATADIR%%/audio.png
 %%DATADIR%%/credits.txt
+%%DATADIR%%/download.png
 %%DATADIR%%/folder.png
 %%DATADIR%%/ipod.png
+%%DATADIR%%/locked-overlay.png
+%%DATADIR%%/locked.png
 %%DATADIR%%/mtp.png
 %%DATADIR%%/podcast-0.png
 %%DATADIR%%/podcast-1.png
@@ -174,6 +179,8 @@ share/dbus-1/services/org.gpodder.service
 %%DATADIR%%/podcast-3.png
 %%DATADIR%%/podcast-4.png
 %%DATADIR%%/podcast-all.png
+%%DATADIR%%/video-locked.png
+%%DATADIR%%/video.png
 %%DATADIR%%/ui/desktop/gpodder.ui
 %%DATADIR%%/ui/desktop/gpodderaddpodcast.ui
 %%DATADIR%%/ui/desktop/gpodderchannel.ui
