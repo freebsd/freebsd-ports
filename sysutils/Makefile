@@ -688,6 +688,7 @@
     SUBDIR += pwgen2
     SUBDIR += pwsafe
     SUBDIR += py-bcfg2
+    SUBDIR += py-drmaa
     SUBDIR += py-filelike
     SUBDIR += py-psutil
     SUBDIR += py-stdiff
