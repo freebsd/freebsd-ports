@@ -1,14 +1,5 @@
---- ssmtp.c.orig	2008-03-06 22:01:22.000000000 +0200
-+++ ssmtp.c	2009-12-04 02:22:14.000000000 +0200
-@@ -10,7 +10,7 @@
-  See COPYRIGHT for the license
- 
- */
--#define VERSION "2.62"
-+#define VERSION "2.62.3"
- #define _GNU_SOURCE
- 
- #include <sys/socket.h>
+--- ssmtp.c.orig	2009-11-23 11:55:11.000000000 +0200
++++ ssmtp.c	2011-02-21 02:56:10.000000000 +0200
 @@ -25,6 +25,7 @@
  #include <string.h>
  #include <ctype.h>
@@ -111,48 +102,16 @@
  	}
  	(void)strip_post_ws(p);
  
-@@ -347,28 +366,26 @@
- /*
- standardise() -- Trim off '\n's and double leading dots
- */
--void standardise(char *str)
-+bool_t standardise(char *str, bool_t *linestart)
- {
- 	size_t sl;
- 	char *p;
--
--	if((p = strchr(str, '\n'))) {
+@@ -363,7 +382,7 @@
+ 	*linestart = False;
+ 
+ 	if((p = strchr(str, '\n'))) {
 -		*p = (char)NULL;
--	}
-+	bool_t leadingdot = False;
- 
- 	/* Any line beginning with a dot has an additional dot inserted;
--	not just a line consisting solely of a dot. Thus we have to slide
--	the buffer down one */
--	sl = strlen(str);
-+	not just a line consisting solely of a dot. Thus we have to move
-+	the buffer start up one */
- 
--	if(*str == '.') {
--		if((sl + 2) > BUF_SZ) {
--			die("standardise() -- Buffer overflow");
--		}
--		(void)memmove((str + 1), str, (sl + 1));	/* Copy trailing \0 */
-+	if(*linestart && *str == '.') {
-+		leadingdot = True;
-+	}
-+	*linestart = False;
- 
--		*str = '.';
-+	if((p = strchr(str, '\n'))) {
 +		*p = '\0';
-+		*linestart = True;
+ 		*linestart = True;
  	}
-+	return(leadingdot);
- }
- 
- /*
-@@ -386,7 +403,7 @@
+ 	return(leadingdot);
+@@ -384,7 +403,7 @@
  		while(fgets(buf, sizeof(buf), fp)) {
  			/* Make comments invisible */
  			if((p = strchr(buf, '#'))) {
@@ -161,19 +120,7 @@
  			}
  
  			/* Ignore malformed lines and comments */
-@@ -485,6 +502,11 @@
- 				die("from_format() -- snprintf() failed");
- 			}
- 		}
-+		else {
-+			if(snprintf(buf, BUF_SZ, "%s", str) == -1) {
-+				die("from_format() -- snprintf() failed");
-+			}
-+		}
- 	}
- 
- #if 0
-@@ -516,11 +538,11 @@
+@@ -519,11 +543,11 @@
  #endif
  
  	/* Ignore missing usernames */
@@ -187,7 +134,7 @@
  		die("rcpt_save() -- strdup() failed");
  	}
  
-@@ -545,7 +567,7 @@
+@@ -548,7 +572,7 @@
  	(void)fprintf(stderr, "*** rcpt_parse(): str = [%s]\n", str);
  #endif
  
@@ -196,7 +143,7 @@
  		die("rcpt_parse(): strdup() failed");
  	}
  	q = p;
-@@ -573,7 +595,7 @@
+@@ -576,7 +600,7 @@
  		}
  
  		/* End of string? */
@@ -205,7 +152,7 @@
  			got_addr = True;
  		}
  
-@@ -581,7 +603,7 @@
+@@ -584,7 +608,7 @@
  		if((*q == ',') && (in_quotes == False)) {
  			got_addr = True;
  
@@ -214,7 +161,7 @@
  		}
  
  		if(got_addr) {
-@@ -665,7 +687,7 @@
+@@ -668,7 +692,7 @@
  	(void)fprintf(stderr, "header_save(): str = [%s]\n", str);
  #endif
  
@@ -223,7 +170,7 @@
  		die("header_save() -- strdup() failed");
  	}
  	ht->string = p;
-@@ -673,7 +695,7 @@
+@@ -676,7 +700,7 @@
  	if(strncasecmp(ht->string, "From:", 5) == 0) {
  #if 1
  		/* Hack check for NULL From: line */
@@ -232,7 +179,7 @@
  			return;
  		}
  #endif
-@@ -736,19 +758,19 @@
+@@ -739,19 +763,19 @@
  void header_parse(FILE *stream)
  {
  	size_t size = BUF_SZ, len = 0;
@@ -256,7 +203,7 @@
  				die("header_parse() -- realloc() failed");
  			}
  			q = (p + len);
-@@ -773,9 +795,9 @@
+@@ -776,9 +800,9 @@
  						in_header = False;
  
  				default:
@@ -268,7 +215,7 @@
  						}
  						header_save(p);
  
-@@ -806,9 +828,9 @@
+@@ -809,9 +833,9 @@
  						in_header = False;
  
  				default:
@@ -280,7 +227,7 @@
  						}
  						header_save(p);
  
-@@ -873,11 +895,11 @@
+@@ -876,11 +900,11 @@
  		char *rightside;
  		/* Make comments invisible */
  		if((p = strchr(buf, '#'))) {
@@ -294,7 +241,7 @@
  
  		/* Parse out keywords */
  		p=firsttok(&begin, "= \t\n");
-@@ -887,7 +909,7 @@
+@@ -890,7 +914,7 @@
  		}
  		if(p && q) {
  			if(strcasecmp(p, "Root") == 0) {
@@ -303,16 +250,16 @@
  					die("parse_config() -- strdup() failed");
  				}
  
-@@ -896,7 +918,7 @@
+@@ -904,7 +928,7 @@
+ 					port = atoi(r);
  				}
- 			}
- 			else if(strcasecmp(p, "MailHub") == 0) {
+ 
 -				if((mailhost = strdup(q)) == (char *)NULL) {
 +				if((mailhost = strdup(q)) == NULL) {
  					die("parse_config() -- strdup() failed");
  				}
  
-@@ -946,7 +968,7 @@
+@@ -949,7 +973,7 @@
  					mail_domain = strdup(q);
  				}
  
@@ -321,7 +268,7 @@
  					die("parse_config() -- strdup() failed");
  				}
  				rewrite_domain = True;
-@@ -1022,7 +1044,7 @@
+@@ -1025,7 +1049,7 @@
  				}
  			}
  			else if(strcasecmp(p, "TLSCert") == 0) {
@@ -330,7 +277,7 @@
  					die("parse_config() -- strdup() failed");
  				}
  
-@@ -1033,7 +1055,7 @@
+@@ -1036,7 +1060,7 @@
  #endif
  			/* Command-line overrides these */
  			else if(strcasecmp(p, "AuthUser") == 0 && !auth_user) {
@@ -339,7 +286,7 @@
  					die("parse_config() -- strdup() failed");
  				}
  
-@@ -1042,7 +1064,7 @@
+@@ -1045,7 +1069,7 @@
  				}
  			}
  			else if(strcasecmp(p, "AuthPass") == 0 && !auth_pass) {
@@ -348,7 +295,7 @@
  					die("parse_config() -- strdup() failed");
  				}
  
-@@ -1051,7 +1073,7 @@
+@@ -1054,7 +1078,7 @@
  				}
  			}
  			else if(strcasecmp(p, "AuthMethod") == 0 && !auth_method) {
@@ -357,7 +304,7 @@
  					die("parse_config() -- strdup() failed");
  				}
  
-@@ -1104,11 +1126,11 @@
+@@ -1107,11 +1131,11 @@
  #ifdef INET6
  	struct addrinfo hints, *ai0, *ai;
  	char servname[NI_MAXSERV];
@@ -366,12 +313,12 @@
  #else
  	struct sockaddr_in name;
  	struct hostent *hent;
--	int s, namelen;
-+	int s = -1, namelen;
+-	int i, s, namelen;
++	int i, s = -1, namelen;
  #endif
  
  #ifdef HAVE_SSL
-@@ -1301,7 +1323,7 @@
+@@ -1310,7 +1334,7 @@
  			buf[i++] = c;
  		}
  	}
@@ -380,43 +327,7 @@
  
  	return(buf);
  }
-@@ -1356,12 +1378,12 @@
- */
- ssize_t smtp_write(int fd, char *format, ...)
- {
--	char buf[(BUF_SZ + 1)];
-+	char buf[(BUF_SZ + 2)];
- 	va_list ap;
- 	ssize_t outbytes = 0;
- 
- 	va_start(ap, format);
--	if(vsnprintf(buf, (BUF_SZ - 2), format, ap) == -1) {
-+	if(vsnprintf(buf, (BUF_SZ - 1), format, ap) == -1) {
- 		die("smtp_write() -- vsnprintf() failed");
- 	}
- 	va_end(ap);
-@@ -1399,16 +1421,18 @@
- */
- int ssmtp(char *argv[])
- {
--	char buf[(BUF_SZ + 1)], *p, *q;
-+	char b[(BUF_SZ + 2)], *buf = b+1, *p, *q;
- #ifdef MD5AUTH
- 	char challenge[(BUF_SZ + 1)];
- #endif
- 	struct passwd *pw;
- 	int i, sock;
- 	uid_t uid;
--	bool_t minus_v_save;
-+	bool_t minus_v_save, leadingdot, linestart = True;
- 	int timeout = 0;
-+	int bufsize = sizeof(b)-1;
- 
-+	b[0] = '.';
- 	outbytes = 0;
- 	ht = &headers;
- 
-@@ -1423,14 +1447,14 @@
+@@ -1434,14 +1458,14 @@
  	}
  
  	if((p = strtok(pw->pw_gecos, ";,"))) {
@@ -433,7 +344,7 @@
  		uad = append_domain(pw->pw_name);
  	}
  
-@@ -1478,7 +1502,7 @@
+@@ -1489,7 +1513,7 @@
  	/* Try to log in if username was supplied */
  	if(auth_user) {
  #ifdef MD5AUTH
@@ -442,93 +353,7 @@
  			auth_pass = strdup("");
  		}
  
-@@ -1491,12 +1515,12 @@
- 			}
- 			strncpy(challenge, strchr(buf,' ') + 1, sizeof(challenge));
- 
--			memset(buf, 0, sizeof(buf));
-+			memset(buf, 0, bufsize);
- 			crammd5(challenge, auth_user, auth_pass, buf);
- 		}
- 		else {
- #endif
--		memset(buf, 0, sizeof(buf));
-+		memset(buf, 0, bufsize);
- 		to64frombits(buf, auth_user, strlen(auth_user));
- 		if (use_oldauth) {
- 			outbytes += smtp_write(sock, "AUTH LOGIN %s", buf);
-@@ -1508,7 +1532,7 @@
- 				die("Server didn't like our AUTH LOGIN (%s)", buf);
- 			}
- 			/* we assume server asked us for Username */
--			memset(buf, 0, sizeof(buf));
-+			memset(buf, 0, bufsize);
- 			to64frombits(buf, auth_user, strlen(auth_user));
- 			outbytes += smtp_write(sock, buf);
- 		}
-@@ -1517,7 +1541,7 @@
- 		if(smtp_read(sock, buf) != 3) {
- 			die("Server didn't accept AUTH LOGIN (%s)", buf);
- 		}
--		memset(buf, 0, sizeof(buf));
-+		memset(buf, 0, bufsize);
- 
- 		to64frombits(buf, auth_pass, strlen(auth_pass));
- #ifdef MD5AUTH
-@@ -1626,28 +1650,40 @@
- 	  stdio functions like fgets in the first place */
- 	fcntl(STDIN_FILENO,F_SETFL,O_NONBLOCK);
- 
--	/* don't hang forever when reading from stdin */
--	while(!feof(stdin) && timeout < MEDWAIT) {
--		if (!fgets(buf, sizeof(buf), stdin)) {
-+	while(!feof(stdin)) {
-+		if (!fgets(buf, bufsize, stdin)) {
- 			/* if nothing was received, then no transmission
- 			 * over smtp should be done */
- 			sleep(1);
--			timeout++;
-+			/* don't hang forever when reading from stdin */
-+			if (++timeout >= MEDWAIT) {
-+				log_event(LOG_ERR, "killed: timeout on stdin while reading body -- message saved to dead.letter.");
-+				die("Timeout on stdin while reading body");
-+			}
- 			continue;
- 		}
- 		/* Trim off \n, double leading .'s */
--		standardise(buf);
--
--		outbytes += smtp_write(sock, "%s", buf);
-+		leadingdot = standardise(buf, &linestart);
- 
-+		if (linestart || feof(stdin)) {
-+			linestart = True;
-+			outbytes += smtp_write(sock, "%s", leadingdot ? b : buf);
-+		} else {
-+			if (log_level > 0) {
-+				log_event(LOG_INFO, "Sent a very long line in chunks");
-+			}
-+			if (leadingdot) {
-+				outbytes += fd_puts(sock, b, sizeof(b));
-+			} else {
-+				outbytes += fd_puts(sock, buf, bufsize);
-+			}
-+		}
- 		(void)alarm((unsigned) MEDWAIT);
- 	}
--	/* End of body */
--
--	if (timeout >= MEDWAIT) {
--		log_event(LOG_ERR, "killed: timeout on stdin while reading body -- message saved to dead.letter.");
--		die("Timeout on stdin while reading body");
-+	if(!linestart) {
-+		smtp_write(sock, "");
- 	}
-+	/* End of body */
- 
- 	outbytes += smtp_write(sock, ".");
- 	(void)alarm((unsigned) MAXWAIT);
-@@ -1714,7 +1750,7 @@
+@@ -1737,7 +1761,7 @@
  		j = 0;
  
  		add = 1;
@@ -537,7 +362,7 @@
  			switch(argv[i][j]) {
  #ifdef INET6
  			case '6':
-@@ -1732,14 +1768,14 @@
+@@ -1755,14 +1779,14 @@
  					if((!argv[i][(j + 1)])
  						&& argv[(i + 1)]) {
  						auth_user = strdup(argv[i+1]);
@@ -554,7 +379,7 @@
  							die("parse_options() -- strdup() failed");
  						}
  					}
-@@ -1749,14 +1785,14 @@
+@@ -1772,14 +1796,14 @@
  					if((!argv[i][(j + 1)])
  						&& argv[(i + 1)]) {
  						auth_pass = strdup(argv[i+1]);
@@ -571,7 +396,7 @@
  							die("parse_options() -- strdup() failed");
  						}
  					}
-@@ -1847,14 +1883,14 @@
+@@ -1870,14 +1894,14 @@
  			case 'F':
  				if((!argv[i][(j + 1)]) && argv[(i + 1)]) {
  					minus_F = strdup(argv[(i + 1)]);
@@ -588,7 +413,7 @@
  						die("parse_options() -- strdup() failed");
  					}
  				}
-@@ -1866,14 +1902,14 @@
+@@ -1889,14 +1913,14 @@
  			case 'r':
  				if((!argv[i][(j + 1)]) && argv[(i + 1)]) {
  					minus_f = strdup(argv[(i + 1)]);
