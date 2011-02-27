@@ -11,7 +11,7 @@ PORTREVISION=	11
 CATEGORIES=	emulators
 MASTER_SITES=	http://www.squish.net/generator/files/
 
-MAINTAINER=	alepulver@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	SEGA Genesis emulator
 
 LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg

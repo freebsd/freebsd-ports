@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	alepulver
 PKGNAMEPREFIX=	xmms-
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/^/v/}
 
-MAINTAINER=	alepulver@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Dual Spectogram visualization plugin for XMMS
 
 LIB_DEPENDS=	xmms.4:${PORTSDIR}/multimedia/xmms

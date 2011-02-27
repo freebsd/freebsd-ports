@@ -21,7 +21,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:src \
 DIST_SUBDIR=	${PORTNAME}
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
-MAINTAINER=	alepulver@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Enhanced Quake2 OpenGL only engine with Lazarus support
 
 EXTRACT_DEPENDS=unzip:${PORTSDIR}/archivers/unzip

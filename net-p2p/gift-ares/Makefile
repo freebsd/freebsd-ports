@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_BERLIOS}
 MASTER_SITE_SUBDIR=	gift-ares
 DISTNAME=	gift-ares-${PORTVERSION}
 
-MAINTAINER=	alepulver@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	giFT plugin for the Ares peer-to-peer filesharing network
 
 LIB_DEPENDS=	gift.0:${PORTSDIR}/net-p2p/gift

@@ -11,7 +11,7 @@ CATEGORIES=	net-p2p java
 MASTER_SITES=	http://main2.frostwire.com/frostwire/${PORTVERSION}/
 DISTNAME=	${PORTNAME}-${PORTVERSION}.noarch
 
-MAINTAINER=	alepulver@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Java based Gnutella and Bittorrent client
 
 RUN_DEPENDS=	java:${PORTSDIR}/java/javavmwrapper

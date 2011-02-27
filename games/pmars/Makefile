@@ -11,7 +11,7 @@ PORTREVISION=	3
 CATEGORIES=	games
 MASTER_SITES=	SF/corewar/pMARS/${PORTVERSION}
 
-MAINTAINER=	alepulver@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A portable corewar system with ICWS'94 extensions
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/src

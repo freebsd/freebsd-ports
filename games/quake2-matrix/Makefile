@@ -12,7 +12,7 @@ MASTER_SITES=	http://qudos.quakedev.com/linux/quake2/mods/
 PKGNAMEPREFIX=	${Q2PKGNAMEPREFIX}
 DISTNAME=	Matrix-v${PORTVERSION}.fixed.Linux
 
-MAINTAINER=	alepulver@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Matrix modification for Quake II
 
 USE_BZIP2=	yes

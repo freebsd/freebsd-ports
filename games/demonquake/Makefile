@@ -14,7 +14,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		DemonQuake-data${EXTRACT_SUFX}
 
-MAINTAINER=	alepulver@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Another improved Quake engine based on FuhQuake
 
 LIB_DEPENDS+=	jpeg.11:${PORTSDIR}/graphics/jpeg \

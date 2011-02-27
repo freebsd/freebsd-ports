@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	alepulver
 PKGNAMEPREFIX=	linux-enemyterritory-
 DISTNAME=	1.2-test13-l
 
-MAINTAINER=	alepulver@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Shrub - An Enemy Territory Modification
 
 RUN_DEPENDS=	et:${PORTSDIR}/games/linux-enemyterritory

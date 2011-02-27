@@ -16,7 +16,7 @@ EXTRACT_SUFX=	.bz2
 DISTFILES=	#
 DIST_SUBDIR=	${PKGNAMEPREFIX}${PORTNAME}
 
-MAINTAINER=	alepulver@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Doom data files (Doom, Doom II, Hexen, Heretic and Strife)
 
 USE_BZIP2=	yes

@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://corewar.co.uk/ankerl/
 
-MAINTAINER=	alepulver@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Memory Array Redcode Simulator, just like exhaust and pMARS
 
 REINPLACE_ARGS=	-i ''

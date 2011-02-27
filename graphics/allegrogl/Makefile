@@ -11,7 +11,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	SF/${PORTNAME}/AllegroGL%20source/${PORTVERSION}
 DISTNAME=	alleggl-${PORTVERSION}
 
-MAINTAINER=	alepulver@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	OpenGL inteface for Allegro library
 
 LIB_DEPENDS=	alleg.42:${PORTSDIR}/devel/allegro

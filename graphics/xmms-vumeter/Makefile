@@ -12,7 +12,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	SF/${PORTNAME}plugin/${PORTNAME}plugin/VU%20meter%20v${PORTVERSION}
 PKGNAMEPREFIX=	xmms-
 
-MAINTAINER=	alepulver@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Analog VUmeter plugin for XMMS
 
 LIB_DEPENDS=	xmms.4:${PORTSDIR}/multimedia/xmms

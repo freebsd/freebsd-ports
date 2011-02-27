@@ -11,7 +11,7 @@ PORTREVISION=	4
 CATEGORIES=	games
 MASTER_SITES=	http://www.sourcefiles.org/Games/Arcade/Block_Based/Tetris/
 
-MAINTAINER=	alepulver@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Atris: Alizarin Tetris
 
 USE_GMAKE=	yes

@@ -12,7 +12,7 @@ CATEGORIES=	games
 MASTER_SITES=	http://www.schwardtnet.de/alienblaster/archives/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	alepulver@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Alien Blaster
 
 USE_GMAKE=	yes

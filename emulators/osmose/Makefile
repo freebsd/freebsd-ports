@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	pav
 DISTNAME=	${PORTNAME}-final-src
 
-MAINTAINER=	alepulver@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Sega Master System emulator
 
 BUILD_DEPENDS=	nasm:${PORTSDIR}/devel/nasm

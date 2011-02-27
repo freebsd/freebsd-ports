@@ -10,7 +10,7 @@ PORTVERSION=	0.99.2
 CATEGORIES=	games
 MASTER_SITES=	SF/greenridge/Bomns%20for%20Linux/Bomns%20for%20Linux%20${PORTVERSION}
 
-MAINTAINER=	alepulver@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The best old-school deathmatch game EVER (only for two players)
 
 USE_BZIP2=	yes

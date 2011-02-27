@@ -15,7 +15,7 @@ DISTFILES=	${Q3DATAFILE}:data \
 		${Q3PATCHFILE}:patch
 DIST_SUBDIR=	${Q3PKGNAMEPREFIX}data
 
-MAINTAINER=	alepulver@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Quake III Arena for Linux
 
 USE_ZIP=	yes

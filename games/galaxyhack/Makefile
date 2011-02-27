@@ -13,7 +13,7 @@ MASTER_SITES=	SF
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
-MAINTAINER=	alepulver@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	AI script based strategy game
 
 LIB_DEPENDS=	boost_filesystem.4:${PORTSDIR}/devel/boost-libs \

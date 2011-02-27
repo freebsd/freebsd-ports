@@ -19,7 +19,7 @@ DISTFILES=	#
 DIST_SUBDIR=	alephone
 EXTRACT_ONLY=	#
 
-MAINTAINER=	alepulver@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Free scenarios for the Aleph One engine
 
 RUN_DEPENDS=	alephone:${PORTSDIR}/games/alephone

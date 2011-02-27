@@ -11,7 +11,7 @@ CATEGORIES=	shells
 MASTER_SITES=	SF
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	alepulver@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GNU bash shell extended with visual two-panel file browser
 
 GNU_CONFIGURE=	yes

@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	releases/gcc-${GCC_VER}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:gpc \
 		gcc-core-${GCC_VER}${EXTRACT_SUFX}
 
-MAINTAINER=	alepulver@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GNU Pascal compiler
 
 BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash \

@@ -11,7 +11,7 @@ PORTREVISION=	10
 CATEGORIES=	x11-fm
 MASTER_SITES=	http://www.determinate.net/webdata/data/
 
-MAINTAINER=	alepulver@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A 3D filesystem browser
 
 LIB_DEPENDS=	smpeg.1:${PORTSDIR}/multimedia/smpeg

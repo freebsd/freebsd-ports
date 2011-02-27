@@ -12,7 +12,7 @@ CATEGORIES=	net-p2p java
 MASTER_SITES=	http://bittyrant.cs.washington.edu/dist_010807/
 DISTNAME=	BitTyrant-src
 
-MAINTAINER=	alepulver@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Java BitTorrent client optimized for fast download performance
 
 BUILD_DEPENDS=	${JAVALIBDIR}/log4j.jar:${PORTSDIR}/devel/log4j \

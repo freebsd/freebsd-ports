@@ -12,7 +12,7 @@ CATEGORIES=	games
 MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}_src_${PORTVERSION:S/.//}
 
-MAINTAINER=	alepulver@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	BSP node builder for OpenGL ports of the DOOM game engine
 
 USE_GMAKE=	yes

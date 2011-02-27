@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.doomworld.com/hr2/
 PKGNAMEPREFIX=	${DMPKGNAMEPREFIX}
 DISTNAME=	hr2final
 
-MAINTAINER=	alepulver@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Hell Revealed II is a megawad, a 32-level replacement for DooM II
 
 USE_ZIP=	yes

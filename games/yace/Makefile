@@ -11,7 +11,7 @@ CATEGORIES=	games
 MASTER_SITES=	http://corewar.co.uk/ankerl/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
-MAINTAINER=	alepulver@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Yet Another Corewars Evolver
 
 USE_BZIP2=	yes

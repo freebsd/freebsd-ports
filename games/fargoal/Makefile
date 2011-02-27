@@ -12,7 +12,7 @@ CATEGORIES=	games
 MASTER_SITES=	SF/squidfighter/${PORTNAME}/20040630
 DISTNAME=	${PORTNAME}${PORTVERSION}
 
-MAINTAINER=	alepulver@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Remake of classic roguelike game "Sword of Fargoal"
 
 LIB_DEPENDS=	alleg.42:${PORTSDIR}/devel/allegro

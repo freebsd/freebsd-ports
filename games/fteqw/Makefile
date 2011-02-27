@@ -12,7 +12,7 @@ CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/Source/${PORTVERSION}
 DISTNAME=	ftesrc${PORTVERSION}-all
 
-MAINTAINER=	alepulver@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	QuakeWorld client with cool features, but still compatible
 
 USE_DOS2UNIX=	yes

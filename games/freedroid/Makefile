@@ -11,7 +11,7 @@ PORTREVISION=	11
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}Classic/FreedroidClassic-${PORTVERSION}
 
-MAINTAINER=	alepulver@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Freedroid is a clone of the classic game "Paradroid"
 
 USE_SDL=	mixer image sdl

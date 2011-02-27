@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://www.update.uu.se/~zrajm/programs/ratmen/
 
-MAINTAINER=	alepulver@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple program for displaying a menu in a window
 
 USE_XORG=	x11

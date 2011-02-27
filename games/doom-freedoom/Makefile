@@ -12,7 +12,7 @@ MASTER_SITES=	SF/${PORTNAME}/OldFiles
 PKGNAMEPREFIX=	${DMPKGNAMEPREFIX}
 DISTNAME=	${PORTNAME}-iwad-${PORTVERSION}
 
-MAINTAINER=	alepulver@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Complete Doom-based game IWAD that is Free Software
 
 USE_ZIP=	yes

@@ -21,7 +21,7 @@ PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	SF
 
-MAINTAINER=	alepulver@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	License analysis tool for Open Source software
 
 BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash \

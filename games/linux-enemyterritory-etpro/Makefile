@@ -18,7 +18,7 @@ MASTER_SITES=	http://bani.anime.net/etpro/ \
 PKGNAMEPREFIX=	linux-enemyterritory-
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/./_/g}
 
-MAINTAINER=	alepulver@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	ET Pro - The Enemy Territory Competition Mod
 
 RUN_DEPENDS=	et:${PORTSDIR}/games/linux-enemyterritory

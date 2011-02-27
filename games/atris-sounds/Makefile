@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.wkiri.com/projects/atris/
 PKGNAMESUFFIX=	-sounds
 DISTNAME=	${PORTNAME}${PKGNAMESUFFIX}-${PORTVERSION}
 
-MAINTAINER=	alepulver@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Sounds for Atris: Alizarin Tetris
 
 RUN_DEPENDS=	atris:${PORTSDIR}/games/atris

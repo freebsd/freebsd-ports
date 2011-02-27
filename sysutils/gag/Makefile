@@ -11,7 +11,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}_${PORTVERSION}
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
-MAINTAINER=	alepulver@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Graphical Boot Manager
 
 DEPRECATED=	no point in having it as a port, can be downloaded from the website and burned

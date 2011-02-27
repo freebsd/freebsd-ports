@@ -12,7 +12,7 @@ CATEGORIES=	games
 MASTER_SITES=	http://offload1.icculus.org/excido/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
-MAINTAINER=	alepulver@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A portable fast-paced 3d shooter
 
 LIB_DEPENDS=	physfs.1:${PORTSDIR}/devel/physfs

@@ -17,7 +17,7 @@ DISTFILES=	${PORTNAME}_source_${PORTVERSION}.7z:ezquake \
 		${PORTNAME}_linux-x86_${PORTVERSION}${EXTRACT_SUFX}:ezquake \
 		unzip101e.zip:minizip
 
-MAINTAINER=	alepulver@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Modern QuakeWorld client
 
 EXTRACT_DEPENDS=unzip:${PORTSDIR}/archivers/unzip \

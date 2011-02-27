@@ -10,7 +10,7 @@ PORTVERSION=	5.2
 CATEGORIES=	games
 MASTER_SITES=	http://games.moria.org.uk/doom/bsp/download/
 
-MAINTAINER=	alepulver@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Node builder for Doom
 
 USE_BZIP2=	yes

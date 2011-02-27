@@ -12,7 +12,7 @@ CATEGORIES=	games
 MASTER_SITES=	SF
 DISTNAME=	q3cel-${PORTVERSION}-src
 
-MAINTAINER=	alepulver@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Quake III engine with Cell Shading capabilities
 
 ONLY_FOR_ARCHS=	i386

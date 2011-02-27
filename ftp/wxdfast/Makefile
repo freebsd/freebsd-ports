@@ -12,7 +12,7 @@ CATEGORIES=	ftp www
 MASTER_SITES=	SF/dfast/wxDownload%20Fast/${PORTVERSION}
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
-MAINTAINER=	alepulver@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A great multithreaded and multi-platform download manager
 
 USE_GETTEXT=	yes
