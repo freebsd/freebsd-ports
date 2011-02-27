@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	emelfm2
-PORTVERSION=	0.7.4
+PORTVERSION=	0.7.5
 CATEGORIES=	x11-fm
 MASTER_SITES=	http://emelfm2.net/rel/
 
