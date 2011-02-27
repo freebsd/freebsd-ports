@@ -897,6 +897,7 @@
     SUBDIR += separate
     SUBDIR += sharpconstruct
     SUBDIR += shim
+    SUBDIR += shiva-collections
     SUBDIR += shotwell
     SUBDIR += show
     SUBDIR += showimg

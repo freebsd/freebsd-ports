@@ -1,0 +1,18 @@
+The Graphics Transformation Languages is a set of libraries for using and
+integrating transformation algorithms (such as filter or color conversion) in
+graphics applications.
+The goal is to provide the tools, languages and libraries to create generic
+transformation for graphics. Those transformations could then be used by
+different programs (Krita, The Gimp, CinePaint, gegl...).
+
+Currently the focus is on developing two languages, designed for two different
+implementations.
+- OpenCTL which is a GPL compatible of the Color Transformation Language, this
+  language is dedicated at transforming the value of a single pixel (for
+  instance brightness adjustement or desaturate). CTL is designed to be part of
+  the Color Management process.
+- OpenShiva is inspired by Adobe's Hydra language from the AIF Toolkit, Shiva
+  is a language that apply a kernel-like transformations on an image, that means
+  it works using more than one pixel.
+
+WWW: http://opengtl.org
