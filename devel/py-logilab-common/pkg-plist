@@ -249,6 +249,9 @@ bin/pytest
 %%PYTHON_SITELIBDIR%%/logilab/common/ureports/text_writer.py
 %%PYTHON_SITELIBDIR%%/logilab/common/ureports/text_writer.pyc
 %%PYTHON_SITELIBDIR%%/logilab/common/ureports/text_writer.pyo
+%%PYTHON_SITELIBDIR%%/logilab/common/urllib2ext.py
+%%PYTHON_SITELIBDIR%%/logilab/common/urllib2ext.pyc
+%%PYTHON_SITELIBDIR%%/logilab/common/urllib2ext.pyo
 %%PYTHON_SITELIBDIR%%/logilab/common/vcgutils.py
 %%PYTHON_SITELIBDIR%%/logilab/common/vcgutils.pyc
 %%PYTHON_SITELIBDIR%%/logilab/common/vcgutils.pyo
