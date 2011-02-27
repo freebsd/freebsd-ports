@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	Device-Modem
-PORTVERSION=	1.51
+PORTVERSION=	1.53
 CATEGORIES=	comms perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	skv@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl class to interface generic modems (AT-compliant)
 
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Device/SerialPort.pm:${PORTSDIR}/comms/p5-Device-SerialPort
