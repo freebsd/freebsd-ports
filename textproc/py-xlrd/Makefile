@@ -15,7 +15,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	dikshie@sfc.wide.ad.jp
 COMMENT=	Reading data and formatting information from Excel files
 
-USE_PYTHON=	2.5-2.6
+USE_PYTHON=	2.5-2.7
 USE_PYDISTUTILS=	yes
 
 .include <bsd.port.mk>
