@@ -1,21 +1,27 @@
 #!/bin/sh
 
-# PROVIDE: ietd 
-# REQUIRE: NETWORKING SERVERS DAEMON ldconfig resolv
-# BEFORE:  LOGIN
+# $FreeBSD$
+#
+# PROVIDE: ietd
+# REQUIRE: LOGIN
 # KEYWORD: shutdown
 
 . /etc/rc.subr
+
 name="ietd"
-command=%%PREFIX%%/sbin/${name}
-stop_precmd="ietd_prestop"
-required_modules="iet"
 rcvar=`set_rcvar`
+
+command=%%PREFIX%%/sbin/${name}
+required_modules="iet"
+stop_precmd="ietd_prestop"
+
+load_rc_config $name
+
+: ${ietd_enable:="NO"}
 
 ietd_prestop()
 {
 	%%PREFIX%%/sbin/ietadm --op delete
 }
 
-load_rc_config $name
 run_rc_command "$1"
