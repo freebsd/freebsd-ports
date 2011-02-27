@@ -8,6 +8,7 @@
 PORTNAME=	xf86-video-ati613
 PORTVERSION=	6.13.2
 CATEGORIES=	x11-drivers
+DISTNAME=	xf86-video-ati-${PORTVERSION}
 
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	X.Org ati display driver
