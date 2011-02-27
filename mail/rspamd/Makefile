@@ -7,6 +7,7 @@
 
 PORTNAME=	rspamd
 PORTVERSION=	0.3.7
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://highsecure.ru/
 
@@ -43,7 +44,7 @@ MAN1=	rspamc.1
 
 .if defined(WITH_RSPAMD_GPERF)
  CMAKE_ARGS+=	-DENABLE_GPERF_TOOLS=ON
- LIB_DEPENDS+=	profiler.0:${PORTSDIR}/devel/google-perftools
+ LIB_DEPENDS+=	profiler.1:${PORTSDIR}/devel/google-perftools
 .endif
 
 .if defined(WITH_RSPAMD_JUDY)

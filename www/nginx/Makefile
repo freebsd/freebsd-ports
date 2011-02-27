@@ -7,6 +7,7 @@
 
 PORTNAME=	nginx
 PORTVERSION=	0.8.54
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://sysoev.ru/nginx/
 MASTER_SITES+=	${MASTER_SITE_LOCAL}
@@ -138,7 +139,7 @@ CATEGORIES+=	ipv6
 .endif
 
 .if defined(WITH_GOOGLE_PERFTOOLS)
-LIB_DEPENDS+=	profiler.0:${PORTSDIR}/devel/google-perftools
+LIB_DEPENDS+=	profiler.1:${PORTSDIR}/devel/google-perftools
 CONFIGURE_ARGS+=--with-google_perftools_module
 .endif
 
