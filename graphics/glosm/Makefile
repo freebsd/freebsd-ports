@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	glosm
-PORTVERSION=	0.0.1
+PORTVERSION=	0.0.2
 CATEGORIES=	graphics geography
-MASTER_SITES=	http://github.com/downloads/AMDmi3/glosm/ \
+MASTER_SITES=	http://cloud.github.com/downloads/AMDmi3/glosm/ \
 		http://mirror.amdmi3.ru/distfiles/
 
 MAINTAINER=	amdmi3@FreeBSD.org
@@ -19,12 +19,11 @@ LIB_DEPENDS=	png.6:${PORTSDIR}/graphics/png \
 
 USE_BZIP2=	yes
 USE_CMAKE=	yes
-USE_GL=		gl glu glut
+USE_GL=		gl
+USE_SDL=	sdl
 MAKE_JOBS_SAFE=	yes
 
-PORTDOCS=	README
-
-PLIST_FILES=	bin/glosm-tiler bin/glosm-viewer lib/libglosm.so
+PORTDOCS=	README ChangeLog
 
 regression-test:
 	cd ${BUILD_WRKSRC} && ctest
