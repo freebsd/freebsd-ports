@@ -58,6 +58,10 @@ LATEST_LINK=		${PORTNAME}${gcc_suffix}
 IGNORE=			only works on 7.0+
 .endif
 
+.if ${OSVERSION} >= 900000
+BROKEN=         Does not install (missing distinfo for FreeBSD-9)
+.endif
+
 srcdir=			${WRKDIR}/gcc-${PORTVERSION}
 gcc_suffix=		44
 fsf_mans=		fsf-funding gfdl gpl

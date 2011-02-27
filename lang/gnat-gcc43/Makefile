@@ -55,6 +55,10 @@ LATEST_LINK=		${PORTNAME}${gcc_suffix}
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} >= 900000
+BROKEN=         Does not install (missing distinfo for FreeBSD-9)
+.endif
+
 srcdir=			${WRKDIR}/gcc-${PORTVERSION}
 gcc_suffix=		43
 fsf_mans=		fsf-funding gfdl gpl
