@@ -1,0 +1,16 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/SQL/Maker/.packlist
+%%SITE_PERL%%/SQL/Maker.pm
+%%SITE_PERL%%/SQL/Maker/Condition.pm
+%%SITE_PERL%%/SQL/Maker/Plugin/InsertMulti.pm
+%%SITE_PERL%%/SQL/Maker/SQLType.pm
+%%SITE_PERL%%/SQL/Maker/Select.pm
+%%SITE_PERL%%/SQL/Maker/Select/Oracle.pm
+%%SITE_PERL%%/SQL/Maker/SelectSet.pm
+%%SITE_PERL%%/SQL/Maker/Util.pm
+%%SITE_PERL%%/SQL/README.pod
+@dirrm %%SITE_PERL%%/SQL/Maker/Select
+@dirrm %%SITE_PERL%%/SQL/Maker/Plugin
+@dirrm %%SITE_PERL%%/SQL/Maker
+@dirrmtry %%SITE_PERL%%/SQL
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/SQL/Maker
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/SQL
