@@ -415,19 +415,6 @@ it is merely for your aid.</p>
 
 <p>
 <dl>
-<dt><img alt="(uncommon)" src="/errorlogs/images/purple-ball.gif"><a name=
-"alignment">alignment</a></dt>
-
-<dd>You've managed to confuse the assembler with a misaligned
-structure.</dd>
-
-<dt><img alt="(uncommon)" src="/errorlogs/images/purple-ball.gif"><a name=
-"apxs">apxs</a></dt>
-
-<dd>Your port depends on Apache (in particular, the <tt>apxs</tt>
-binary) but the <tt>Makefile</tt> doesn't have Apache in
-<tt>BUILD_DEPENDS</tt> and/or <tt>LIB_DEPENDS</tt>.</dd>
-
 <dt><img alt="(common)" src="/errorlogs/images/blue-ball.gif"><a name=
 "arch">arch</a></dt>
 
@@ -484,13 +471,6 @@ than e.g. "new compiler error".</dd>
 
 <dd>The <tt>CATEGORIES</tt> line in <tt>Makefile</tt> includes an
 invalid category.</dd>
-
-<dt><img alt="(uncommon)" src="/errorlogs/images/purple-ball.gif"><a name=
-"cgi-bin">cgi-bin</a></dt>
-
-<dd>Your port assumes that a directory (usually
-<tt>/usr/local/www/cgi-bin</tt>) already exists,
-but by default it doesn't.</dd>
 
 <dt><img alt="(common)" src="/errorlogs/images/blue-ball.gif"><a name=
 "checksum">checksum</a></dt>
@@ -753,11 +733,6 @@ problem.</dd>
 <tt>&lt;stdio.h&gt;</tt>.</dd>
 
 <dt><img alt="(uncommon)" src="/errorlogs/images/purple-ball.gif"><a name=
-"stl">stl</a></dt>
-
-<dd>Your port requires the <tt>STL</tt> library but cannot find it.</dd>
-
-<dt><img alt="(uncommon)" src="/errorlogs/images/purple-ball.gif"><a name=
 "struct">struct changes</a></dt>
 
 <dd>Your port is trying to refer to structure elements that are not
@@ -815,6 +790,19 @@ that used to be detected by the AI script, but are now uncommon enough to
 be skipped:</p>
 
 <dt><img alt="(uncommon)" src="/errorlogs/images/purple-ball.gif"><a name=
+"alignment">alignment</a></dt>
+
+<dd>You've managed to confuse the assembler with a misaligned
+structure.</dd>
+
+<dt><img alt="(uncommon)" src="/errorlogs/images/purple-ball.gif"><a name=
+"apxs">apxs</a></dt>
+
+<dd>Your port depends on Apache (in particular, the <tt>apxs</tt>
+binary) but the <tt>Makefile</tt> doesn't have Apache in
+<tt>BUILD_DEPENDS</tt> and/or <tt>LIB_DEPENDS</tt>.</dd>
+
+<dt><img alt="(uncommon)" src="/errorlogs/images/purple-ball.gif"><a name=
 "awk">awk</a></dt>
 
 <dd><tt>awk</tt> is complaining about some kind of bogus string
@@ -826,6 +814,13 @@ expression.</dd>
 <dd>Your port requires <tt>bison</tt>, which does not exist in
 4.x-stable or newer anymore. Either patch it to use <tt>byacc</tt>
 instead, or define <tt>USE_BISON</tt>.</dd>
+
+<dt><img alt="(uncommon)" src="/errorlogs/images/purple-ball.gif"><a name=
+"cgi-bin">cgi-bin</a></dt>
+
+<dd>Your port assumes that a directory (usually
+<tt>/usr/local/www/cgi-bin</tt>) already exists,
+but by default it doesn't.</dd>
 
 <dt><img alt="(uncommon)" src="/errorlogs/images/purple-ball.gif"><a name=
 "elf">ELF</a></dt>
@@ -878,7 +873,7 @@ using <tt>${MOTIFLIB}</tt>. See <a href=
 "http://www.freebsd.org/doc/en_US.ISO8859-1/books/porters-handbook/porting-motif.html">handbook</a>
 for details.</dd>
 
-<dt><img alt="(transient)" src="/errorlogs/images/green-ball.gif"><a name=
+<dt><img alt="(uncommon)" src="/errorlogs/images/green-ball.gif"><a name=
 "munmap">munmap</a></dt>
 
 <dd>POSIX specifies that munmap cannot be called on a zero-length file.
@@ -909,6 +904,11 @@ of <tt>${REINPLACE_COMMAND}</tt> but having left
 "soundcard.h">soundcard.h</a></dt>
 
 <dd><tt>machine/soundcard.h</tt> has been moved.</dd>
+
+<dt><img alt="(uncommon)" src="/errorlogs/images/purple-ball.gif"><a name=
+"stl">stl</a></dt>
+
+<dd>Your port requires the <tt>STL</tt> library but cannot find it.</dd>
 
 <dt><img alt="(uncommon)" src="/errorlogs/images/purple-ball.gif"><a name=
 "values.h">values.h</a></dt>
