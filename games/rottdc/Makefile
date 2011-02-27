@@ -11,7 +11,7 @@ PORTREVISION=	5
 CATEGORIES=	games
 MASTER_SITES=	SF/sdl-dc/${PORTNAME}/1.0-2
 
-MAINTAINER=	alepulver@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Apogee's Rise Of The Triad source port
 
 USE_BZIP2=	yes

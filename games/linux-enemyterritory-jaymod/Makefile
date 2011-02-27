@@ -15,7 +15,7 @@ MASTER_SITES=	http://jaymod.clanfu.org/lib/downloads/ \
 		http://www.spherens.com/zen/et/distro/
 PKGNAMEPREFIX=	linux-enemyterritory-
 
-MAINTAINER=	alepulver@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Jaymod - An Enemy Territory Modification
 
 RUN_DEPENDS=	et:${PORTSDIR}/games/linux-enemyterritory

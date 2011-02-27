@@ -15,7 +15,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		pak-5evq3.pk3
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
-MAINTAINER=	alepulver@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The Marriage of XreaL and Icculus.org Q3 w/ Improvements
 
 LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2

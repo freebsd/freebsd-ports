@@ -19,7 +19,7 @@ PKGNAMESUFFIX=	-demo
 DISTNAME=	linuxq3ademo-${DISTVERSION}.x86
 EXTRACT_SUFX=	.gz.sh
 
-MAINTAINER=	alepulver@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Quake III Arena Demo
 
 USE_LINUX=	yes

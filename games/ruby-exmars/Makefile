@@ -11,7 +11,7 @@ CATEGORIES=	games ruby
 MASTER_SITES=	http://corewar.co.uk/ankerl/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 
-MAINTAINER=	alepulver@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Ruby interface to the exMARS Memory Array Redcode Simulator
 
 USE_RUBY=	yes

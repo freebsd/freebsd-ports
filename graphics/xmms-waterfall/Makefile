@@ -12,7 +12,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	http://www.sethoscope.net/waterfall/
 PKGNAMEPREFIX=	xmms-
 
-MAINTAINER=	alepulver@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Yet another XMMS spectrum analyzer
 
 LIB_DEPENDS=	xmms.4:${PORTSDIR}/multimedia/xmms

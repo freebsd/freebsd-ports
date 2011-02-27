@@ -11,7 +11,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	http://grx.gnu.de/download/
 DISTNAME=	${PORTNAME}${PORTVERSION:S/.//g}
 
-MAINTAINER=	alepulver@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A 2D graphics library
 
 USE_GMAKE=	yes

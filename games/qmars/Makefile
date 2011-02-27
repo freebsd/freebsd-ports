@@ -11,7 +11,7 @@ CATEGORIES=	games
 MASTER_SITES=	http://corewar.co.uk/ankerl/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
-MAINTAINER=	alepulver@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Quicker Mars is heavily optimized to be as fast as possible
 
 BUILD_DEPENDS=	makedepend:${PORTSDIR}/devel/makedepend

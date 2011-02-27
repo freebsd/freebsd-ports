@@ -13,7 +13,7 @@ CATEGORIES=	games
 MASTER_SITES=	http://alioth.debian.org/frs/download.php/2191/
 DISTNAME=	${PORTNAME}_w_fonts-${PORTVERSION}
 
-MAINTAINER=	alepulver@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Educational arcade game starring Tux
 
 USE_GMAKE=	yes

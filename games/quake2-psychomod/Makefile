@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	alepulver
 PKGNAMEPREFIX=	${Q2PKGNAMEPREFIX}
 
-MAINTAINER=	alepulver@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Psychomod modification for Quake II
 
 USE_BZIP2=	yes

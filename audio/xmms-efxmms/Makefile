@@ -12,7 +12,7 @@ CATEGORIES=	audio
 MASTER_SITES=	SF/efxmms/EFXmms/EFXmms%20${PORTVERSION}
 DISTNAME=	EFXmms-${PORTVERSION}
 
-MAINTAINER=	alepulver@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Send the XMMS audio output through a queue of multiple effect plugins
 
 LIB_DEPENDS=	xmms.4:${PORTSDIR}/multimedia/xmms

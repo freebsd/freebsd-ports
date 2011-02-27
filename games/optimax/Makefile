@@ -16,7 +16,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		fsh88.zip \
 		fsh94draft01.zip
 
-MAINTAINER=	alepulver@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Core War optimizer written in Perl
 
 RUN_DEPENDS=	${SITE_PERL}/mach/Tk.pm:${PORTSDIR}/x11-toolkits/p5-Tk

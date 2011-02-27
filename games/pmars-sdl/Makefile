@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.cs.helsinki.fi/u/jpihlaja/cw/pmars-sdl/
 PKGNAMESUFFIX=	-sdl
 DISTNAME=	${PORTNAME}-${PORTVERSION}-5
 
-MAINTAINER=	alepulver@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Port of pMARS using the Simple Directmedia Library
 
 USE_SDL=	sdl

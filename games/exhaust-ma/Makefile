@@ -11,7 +11,7 @@ CATEGORIES=	games
 MASTER_SITES=	http://corewar.co.uk/ankerl/
 DISTNAME=	${PORTNAME}
 
-MAINTAINER=	alepulver@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Redcode simulator easy to embed into applications
 
 USE_ZIP=	yes

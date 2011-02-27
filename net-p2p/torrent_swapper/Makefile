@@ -12,7 +12,7 @@ CATEGORIES=	net-p2p
 MASTER_SITES=	SF/bit-torrent/bit-torrent/Torrent%20Swapper
 DISTNAME=	swapper
 
-MAINTAINER=	alepulver@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Sociable P2P network client based on Bittorrent
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}m2crypto>=0.19.1:${PORTSDIR}/security/py-m2crypto \

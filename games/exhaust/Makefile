@@ -10,7 +10,7 @@ PORTVERSION=	1.9.2
 CATEGORIES=	games
 MASTER_SITES=	http://www.cs.helsinki.fi/u/jpihlaja/exhaust/
 
-MAINTAINER=	alepulver@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Redcode simulator easy to embed into applications
 
 PLIST_FILES=	bin/${PORTNAME}

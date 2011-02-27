@@ -12,7 +12,7 @@ CATEGORIES=	security
 MASTER_SITES=	http://www.semanticgap.com/myps/release/
 EXTRACT_SUFX=	.src.tgz
 
-MAINTAINER=	alepulver@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Easy-to-use password manager compatible with Password Safe
 
 BUILD_DEPENDS=	qmake:${PORTSDIR}/devel/qmake

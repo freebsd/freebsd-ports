@@ -12,7 +12,7 @@ CATEGORIES=	games
 MASTER_SITES=	http://alioth.debian.org/frs/download.php/2209/
 DISTNAME=	${PORTNAME}_w_fonts-${PORTVERSION}
 
-MAINTAINER=	alepulver@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An educational typing tutor starring Tux the Linux Penguin
 
 USE_GMAKE=	yes

@@ -16,7 +16,7 @@ DISTFILES=	${PORTNAME}${PORTVERSION:S/.//}.zip:koth \
 		corestep.c:corestep
 EXTRACT_ONLY=	${DISTFILES:C/:[[:alpha:]]+$//:N*.pl:N*.c}
 
-MAINTAINER=	alepulver@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Accessory programs for pMARS (Core War simulator)
 
 USE_ZIP=	yes

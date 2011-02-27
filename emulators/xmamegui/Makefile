@@ -12,7 +12,7 @@ CATEGORIES=	emulators java
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	alepulver
 
-MAINTAINER=	alepulver@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	SDLMAME frontend that has been written using Java
 
 DEPRECATED=	development has ceased; try emulators/qmc2 instead

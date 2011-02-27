@@ -21,7 +21,7 @@ DISTFILES=	worldofpadman.run:full \
 EXTRACT_ONLY=	worldofpadman.run \
 		wop_patch_1_2.run
 
-MAINTAINER=	alepulver@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	World of Padman (WoP) is an open source FPS game
 
 USE_MAKESELF=	yes

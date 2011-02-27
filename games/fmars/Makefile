@@ -11,7 +11,7 @@ PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	http://users.v-lo.krakow.pl/~michal/
 
-MAINTAINER=	alepulver@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fast Memory Array Redcode Simulator
 
 BUILD_DEPENDS=	guile:${PORTSDIR}/lang/guile

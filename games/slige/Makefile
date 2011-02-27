@@ -11,7 +11,7 @@ CATEGORIES=	games
 MASTER_SITES=	http://members.aol.com/dmchess/
 DISTNAME=	${PORTNAME}src
 
-MAINTAINER=	alepulver@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	DOOM level generator
 
 USE_ZIP=	yes

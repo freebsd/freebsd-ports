@@ -19,7 +19,7 @@ MASTER_SITES=	ftp://ftp.3drealms.com/share/ \
 PKGNAMEPREFIX=	${DN3DPKGNAMEPREFIX}
 DISTFILES=	#
 
-MAINTAINER=	alepulver@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Duke Nukem 3D Data
 
 USE_ZIP=	yes

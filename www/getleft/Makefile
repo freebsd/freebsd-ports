@@ -12,7 +12,7 @@ CATEGORIES=	www ftp
 MASTER_SITES=	SF/${PORTNAME}down/${PORTNAME}-devel/${PORTVERSION}
 DISTNAME=	Getleft-${PORTVERSION}
 
-MAINTAINER=	alepulver@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Web site downloader
 
 RUN_DEPENDS=	${LOCALBASE}/lib/Tktable2.10/libTktable2.10.so:${PORTSDIR}/x11-toolkits/tktable \

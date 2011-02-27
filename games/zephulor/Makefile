@@ -12,7 +12,7 @@ CATEGORIES=	games
 MASTER_SITES=	http://www.hollowworks.com/downloads/adventuresonplanetzephulor/files/
 DISTNAME=	${PORTNAME}-source
 
-MAINTAINER=	alepulver@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Adventures on Planet Zephulor
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/pygame/__init__.py:${PORTSDIR}/devel/py-game \

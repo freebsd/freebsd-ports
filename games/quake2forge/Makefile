@@ -12,7 +12,7 @@ CATEGORIES=	games
 MASTER_SITES=	https://www.spoerlein.net/pub/
 DISTNAME=	quake2-${PORTVERSION}
 
-MAINTAINER=	alepulver@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	First Person Shooter with many addons available
 
 USE_AUTOTOOLS=	autoconf libtool

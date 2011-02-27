@@ -16,7 +16,7 @@ PKGNAMEPREFIX=	alephone-
 DISTFILES=	#
 DIST_SUBDIR=	alephone
 
-MAINTAINER=	alepulver@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Released Marathon data files for the Aleph One port
 
 RUN_DEPENDS=	alephone:${PORTSDIR}/games/alephone

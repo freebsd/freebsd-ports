@@ -12,7 +12,7 @@ MASTER_SITES=	#
 DISTNAME=	thisTest
 EXTRACT_SUFX=	.jar
 
-MAINTAINER=	alepulver@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Java unit testing framework
 
 DEPRECATED=	development has ceased; website disappeared

@@ -12,7 +12,7 @@ CATEGORIES=	games
 MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}-0.04
 
-MAINTAINER=	alepulver@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An 3D Air Hockey, which uses SDL & OpenGL
 
 DEPRECATED=	development has ceased

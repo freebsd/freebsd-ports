@@ -14,7 +14,7 @@ PKGNAMEPREFIX=	linux-
 DISTNAME=	ut2003demo-lnx-${PORTVERSION}
 EXTRACT_SUFX=	.sh.bin
 
-MAINTAINER=	alepulver@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Unreal Tournament 2003 demo
 
 USE_LINUX=	yes

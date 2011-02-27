@@ -15,7 +15,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		${PORTNAME}-v0.15b1331-linux${EXTRACT_SUFX}
 DIST_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	alepulver@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Improved NQ engine with ZQuake and FuhQuake graphical effects
 
 LIB_DEPENDS=	png.6:${PORTSDIR}/graphics/png

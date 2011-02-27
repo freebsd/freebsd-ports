@@ -11,7 +11,7 @@ PORTREVISION=	7
 CATEGORIES=	games
 MASTER_SITES=	http://koti.mbnet.fi/~turol/sdlquake2/
 
-MAINTAINER=	alepulver@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Combination of R1Q2 and R1GL with SDL code from Quake2Forge
 
 LIB_DEPENDS=	execinfo.1:${PORTSDIR}/devel/libexecinfo

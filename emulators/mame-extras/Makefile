@@ -19,7 +19,7 @@ DISTFILES=	#
 DIST_SUBDIR=	${PORTNAME}${PKGNAMESUFFIX}
 EXTRACT_ONLY=	#
 
-MAINTAINER=	alepulver@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Additional files for MAME (Multi Arcade Machine Emulator)
 
 USE_ZIP=	yes

@@ -11,7 +11,7 @@ CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-dev/1.2%20BETA%2C%20Release%202
 DISTNAME=	${PORTNAME}_${DISTVERSION}_src
 
-MAINTAINER=	alepulver@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Corewars Redcode Evolver
 
 USE_DOS2UNIX=	../*.txt

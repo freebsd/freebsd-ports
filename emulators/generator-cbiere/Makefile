@@ -14,7 +14,7 @@ MASTER_SITES=	http://www.squish.net/generator/cbiere/generator/
 PKGNAMESUFFIX=	-cbiere
 DISTNAME=	${PORTNAME}-0.35${PKGNAMESUFFIX}-r4
 
-MAINTAINER=	alepulver@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	SEGA Genesis emulator
 
 LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg

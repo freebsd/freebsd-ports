@@ -12,7 +12,7 @@ CATEGORIES=	games
 MASTER_SITES=	http://qudos.quakedev.com/linux/quake2/engines/Q2P/
 DISTNAME=	Q2P-0.2-2006-12-31
 
-MAINTAINER=	alepulver@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Ehnaced OpenGL only Quake II engine
 
 USE_BZIP2=	yes

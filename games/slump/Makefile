@@ -10,7 +10,7 @@ PORTVERSION=	0.003.01
 CATEGORIES=	games
 MASTER_SITES=	http://www.samiam.org/software/
 
-MAINTAINER=	alepulver@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fork of SLIGE that is optimized for making FreeDoom maps
 
 USE_BZIP2=	yes

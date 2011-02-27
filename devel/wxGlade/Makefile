@@ -11,7 +11,7 @@ CATEGORIES=	devel x11-toolkits python
 MASTER_SITES=	SF
 DISTNAME=	wxGlade-${PORTVERSION}
 
-MAINTAINER=	alepulver@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GUI builder for wxPython/wxWindows written in Python
 
 WRKSRC=		${WRKDIR}/wxGlade-${PORTVERSION}

@@ -11,7 +11,7 @@ PORTREVISION=	5
 CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.billsgames.com/unix/x/ttt/
 
-MAINTAINER=	alepulver@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple one or two player Tic Tac Toe game
 
 USE_GMAKE=	yes

@@ -14,7 +14,7 @@ PKGNAMEPREFIX=	${Q2PKGNAMEPREFIX}
 DISTNAME=	${PORTNAME}src${PORTVERSION:S/.//}
 EXTRACT_SUFX=	.shar.Z
 
-MAINTAINER=	alepulver@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Quake II: The Reckoning (Xatrix) Mission Pack
 
 NO_WRKSUBDIR=	yes

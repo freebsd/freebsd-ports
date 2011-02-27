@@ -16,7 +16,7 @@ DISTFILES=	#
 DIST_SUBDIR=	${LATEST_LINK}
 EXTRACT_ONLY=	#
 
-MAINTAINER=	alepulver@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Quake II extras (high quality textures and skins)
 
 USE_ZIP=	yes

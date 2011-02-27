@@ -12,7 +12,7 @@ CATEGORIES=	games
 MASTER_SITES=	SF/battle4mandicor/Battle%20for%20Mandicor/${PORTVERSION}.1
 EXTRACT_SUFX=	-src.tar.gz
 
-MAINTAINER=	alepulver@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Battle for Mandicor is free RTS fantasy game using Stratagus
 
 LIB_DEPENDS=	png.6:${PORTSDIR}/graphics/png \

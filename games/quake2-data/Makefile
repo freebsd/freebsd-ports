@@ -16,7 +16,7 @@ PKGNAMEPREFIX=	${Q2PKGNAMEPREFIX}
 DISTFILES=	${Q2_UPDATE}:data \
 		${Q2_SRC}:src
 
-MAINTAINER=	alepulver@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Quake II data files
 
 #XXX need info-unzip for q2-314-demo-x86.exe

@@ -11,7 +11,7 @@ CATEGORIES=	games
 MASTER_SITES=	http://sjeng.org/ftp/
 DISTNAME=	Sjeng-Free-${PORTVERSION}
 
-MAINTAINER=	alepulver@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Chess engine supporting chess variations
 
 LIB_DEPENDS=	gdbm.3:${PORTSDIR}/databases/gdbm

@@ -11,7 +11,7 @@ PORTREVISION=	5
 CATEGORIES=	ftp www
 MASTER_SITES=	SF/${PORTNAME}/OldFiles
 
-MAINTAINER=	alepulver@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An http/ftp downloader with a nice GUI
 
 USE_WX=		2.6+

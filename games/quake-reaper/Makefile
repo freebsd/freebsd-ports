@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.mindspring.com/~win32ch/
 PKGNAMEPREFIX=	${Q1PKGNAMEPREFIX}
 DISTNAME=	reaprb81
 
-MAINTAINER=	alepulver@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Quake 1 bots
 
 USE_ZIP=	yes

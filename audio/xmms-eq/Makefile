@@ -13,7 +13,7 @@ MASTER_SITES=	SF/${PORTNAME}u/${PORTNAME}-xmms-src/${PORTVERSION}
 PKGNAMEPREFIX=	xmms-
 DISTNAME=	${PORTNAME}-xmms-${PORTVERSION}
 
-MAINTAINER=	alepulver@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A realtime graphical equalizer plugin for XMMS
 
 LIB_DEPENDS=	xmms.4:${PORTSDIR}/multimedia/xmms

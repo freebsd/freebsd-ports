@@ -11,7 +11,7 @@ PORTREVISION=	2
 CATEGORIES=	net-p2p java www
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/Beta%201.4
 
-MAINTAINER=	alepulver@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Cross-platform PHP-driven web-based BitTorrent client
 
 RUN_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip

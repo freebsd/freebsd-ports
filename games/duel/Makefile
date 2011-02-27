@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	alepulver
 DISTNAME=	lin${PORTNAME}
 
-MAINTAINER=	alepulver@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An overhead, OpenGL space shooter
 
 LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2 \

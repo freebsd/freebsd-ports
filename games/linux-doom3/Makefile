@@ -15,7 +15,7 @@ PKGNAMEPREFIX=	linux-
 DISTNAME=	${PORTNAME}-linux-${PORTVERSION}.x86
 EXTRACT_SUFX=	.run
 
-MAINTAINER=	alepulver@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Doom III for Linux
 
 USE_LINUX=	yes

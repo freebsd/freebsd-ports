@@ -14,7 +14,7 @@ MASTER_SITES=	${MASTER_SITE_IDSOFTWARE}
 MASTER_SITE_SUBDIR=	wolf/linux
 DISTNAME=	wolf-linux-${PORTVERSION}.x86
 
-MAINTAINER=	alepulver@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Return to Castle Wolfenstein for Linux
 
 USE_MAKESELF=	yes

@@ -11,7 +11,7 @@ CATEGORIES=	games
 MASTER_SITES=	http://www.cs.helsinki.fi/u/jpihlaja/exhaust/
 PKGNAMESUFFIX=	-doc
 
-MAINTAINER=	alepulver@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Redcode simulator easy to embed into applications (docs)
 
 NO_BUILD=	yes
