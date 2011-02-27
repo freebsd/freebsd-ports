@@ -1,21 +1,13 @@
---- Makefile.orig	2010-12-16 00:51:55.000000000 +0300
-+++ Makefile	2011-01-15 15:03:11.000000000 +0300
-@@ -19,7 +19,6 @@
- deps/amf: update_deps
- 
- update_deps: rebar.config
--	[ -d wwwroot/player ] || git clone git://github.com/erlyvideo/erlyplayer wwwroot/player
- 	./rebar get-deps
- 
- 
-@@ -32,8 +31,8 @@
+--- Makefile.orig	2011-02-14 09:13:24.000000000 +0300
++++ Makefile	2011-02-14 20:40:40.000000000 +0300
+@@ -21,8 +21,8 @@
  
  compile: ebin/mmap.so
  	ERL_LIBS=$(ERL_LIBS) erl -make
+-	(cd deps/ibrowse && make)
 -	(cd deps/erlydtl && make)
--	(cd deps/mpegts && make)
++	(cd deps/ibrowse && gmake)
 +	(cd deps/erlydtl && gmake)
-+	(cd deps/mpegts && gmake)
  
  ebin/mmap.so: src/core/mmap.c
  	$(NIF_FLAGS) -o $@ $< -I $(NIFDIR) || touch $@
