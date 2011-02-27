@@ -6,6 +6,7 @@
 
 PORTNAME=	opengtl
 PORTVERSION=	0.9.15
+PORTREVISION=	1
 CATEGORIES=	graphics devel
 MASTER_SITES=	http://download.${PORTNAME}.org/
 DISTNAME=	OpenGTL-${PORTVERSION}
@@ -26,6 +27,14 @@ MAKE_JOBS_SAFE=	yes
 USE_CMAKE=	yes
 USE_LDCONFIG=	yes
 CMAKE_USE_PTHREAD=	yes
+
+OPTIONS=	SHIVA	"Install filters and generators" on
+
+.include <bsd.port.options.mk>
+
+.ifndef(WITHOUT_SHIVA)
+RUN_DEPENDS+=	${LOCALBASE}/share/OpenGTL/shiva/kernels/oilify.shiva:${PORTSDIR}/graphics/shiva-collections
+.endif
 
 post-patch:
 # Disable latex doc, it's not ready yet.
