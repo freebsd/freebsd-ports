@@ -1,0 +1,6 @@
+bin/cpan-listchanges
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/cpan/listchanges/.packlist
+%%SITE_PERL%%/App/cpanlistchanges.pm
+@dirrmtry %%SITE_PERL%%/App
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/cpan/listchanges
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/cpan

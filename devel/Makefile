@@ -2475,6 +2475,7 @@
     SUBDIR += p5-constant-boolean
     SUBDIR += p5-constant-def
     SUBDIR += p5-constant-lexical
+    SUBDIR += p5-cpan-listchanges
     SUBDIR += p5-doxygenfilter
     SUBDIR += p5-enum
     SUBDIR += p5-ex-lib
