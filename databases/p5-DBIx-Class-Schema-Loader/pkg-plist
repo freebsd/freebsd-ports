@@ -3,12 +3,16 @@ bin/dbicdump
 %%SITE_PERL%%/DBIx/Class/Schema/Loader.pm
 %%SITE_PERL%%/DBIx/Class/Schema/Loader/Base.pm
 %%SITE_PERL%%/DBIx/Class/Schema/Loader/DBI.pm
+%%SITE_PERL%%/DBIx/Class/Schema/Loader/DBI/ADO.pm
+%%SITE_PERL%%/DBIx/Class/Schema/Loader/DBI/ADO/MS_Jet.pm
+%%SITE_PERL%%/DBIx/Class/Schema/Loader/DBI/ADO/Microsoft_SQL_Server.pm
 %%SITE_PERL%%/DBIx/Class/Schema/Loader/DBI/Component/QuotedDefault.pm
 %%SITE_PERL%%/DBIx/Class/Schema/Loader/DBI/DB2.pm
 %%SITE_PERL%%/DBIx/Class/Schema/Loader/DBI/InterBase.pm
 %%SITE_PERL%%/DBIx/Class/Schema/Loader/DBI/Informix.pm
 %%SITE_PERL%%/DBIx/Class/Schema/Loader/DBI/MSSQL.pm
 %%SITE_PERL%%/DBIx/Class/Schema/Loader/DBI/ODBC.pm
+%%SITE_PERL%%/DBIx/Class/Schema/Loader/DBI/ODBC/ACCESS.pm
 %%SITE_PERL%%/DBIx/Class/Schema/Loader/DBI/ODBC/Firebird.pm
 %%SITE_PERL%%/DBIx/Class/Schema/Loader/DBI/ODBC/Microsoft_SQL_Server.pm
 %%SITE_PERL%%/DBIx/Class/Schema/Loader/DBI/ODBC/SQL_Anywhere.pm
@@ -29,14 +33,15 @@ bin/dbicdump
 %%SITE_PERL%%/DBIx/Class/Schema/Loader/RelBuilder/Compat/v0_040.pm
 %%SITE_PERL%%/DBIx/Class/Schema/Loader/RelBuilder/Compat/v0_05.pm
 %%SITE_PERL%%/DBIx/Class/Schema/Loader/RelBuilder/Compat/v0_06.pm
-@dirrmtry %%SITE_PERL%%/DBIx/Class/Schema/Loader/RelBuilder/Compat
-@dirrmtry %%SITE_PERL%%/DBIx/Class/Schema/Loader/RelBuilder
-@dirrmtry %%SITE_PERL%%/DBIx/Class/Schema/Loader/Optional
-@dirrmtry %%SITE_PERL%%/DBIx/Class/Schema/Loader/Manual
-@dirrmtry %%SITE_PERL%%/DBIx/Class/Schema/Loader/DBI/Sybase
-@dirrmtry %%SITE_PERL%%/DBIx/Class/Schema/Loader/DBI/ODBC
-@dirrmtry %%SITE_PERL%%/DBIx/Class/Schema/Loader/DBI/Component
-@dirrmtry %%SITE_PERL%%/DBIx/Class/Schema/Loader/DBI
+@dirrm %%SITE_PERL%%/DBIx/Class/Schema/Loader/RelBuilder/Compat
+@dirrm %%SITE_PERL%%/DBIx/Class/Schema/Loader/RelBuilder
+@dirrm %%SITE_PERL%%/DBIx/Class/Schema/Loader/Optional
+@dirrm %%SITE_PERL%%/DBIx/Class/Schema/Loader/Manual
+@dirrm %%SITE_PERL%%/DBIx/Class/Schema/Loader/DBI/Sybase
+@dirrm %%SITE_PERL%%/DBIx/Class/Schema/Loader/DBI/ODBC
+@dirrm %%SITE_PERL%%/DBIx/Class/Schema/Loader/DBI/Component
+@dirrm %%SITE_PERL%%/DBIx/Class/Schema/Loader/DBI/ADO
+@dirrm %%SITE_PERL%%/DBIx/Class/Schema/Loader/DBI
 @dirrmtry %%SITE_PERL%%/DBIx/Class/Schema/Loader
 @dirrmtry %%SITE_PERL%%/DBIx/Class/Schema
 @dirrmtry %%SITE_PERL%%/DBIx/Class
