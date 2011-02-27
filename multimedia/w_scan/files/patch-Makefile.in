@@ -1,9 +1,9 @@
 --- a/Makefile.in
 +++ b/Makefile.in
-@@ -208,7 +208,7 @@ __VERSION = $(shell date +%Y%m%d)
+@@ -209,7 +209,7 @@ __VERSION = $(shell date +%Y%m%d)
  __OLDVER = $(shell cat configure.in | grep AC_INIT | sed -e "s|\[|\\\[|g" -e "s|\]|\\\]|g")
  AUTOMAKE_OPTIONS = dist-bzip2 no-dist-gzip
- w_scan_SOURCES = atsc_psip_section.c atsc_psip_section.h config.h countries.c countries.h descriptors.c descriptors.h diseqc.c diseqc.h dump-dvbscan.c dump-dvbscan.h dump-kaffeine.c dump-kaffeine.h dump-vdr.c dump-vdr.h dump-xine.c dump-xine.h dvbscan.c dvbscan.h extended_frontend.h list.h lnb.c lnb.h parse-dvbscan.c parse-dvbscan.h satellites.c satellites.h scan.c scan.h section.c section.h version.h
+ w_scan_SOURCES = atsc_psip_section.c atsc_psip_section.h config.h countries.c countries.h descriptors.c descriptors.h diseqc.c diseqc.h dump-dvbscan.c dump-dvbscan.h dump-kaffeine.c dump-kaffeine.h dump-vdr.c dump-vdr.h dump-xine.c dump-xine.h dump-mplayer.c dump-mplayer.h dump-vlc-m3u.c dump-vlc-m3u.h dvbscan.c dvbscan.h extended_frontend.h list.h lnb.c lnb.h parse-dvbscan.c parse-dvbscan.h satellites.c satellites.h scan.c scan.h section.c section.h version.h
 -bin_SCRIPTS = w_scan_start.sh
 +#bin_SCRIPTS = w_scan_start.sh
  dist_man_MANS = doc/w_scan.1
