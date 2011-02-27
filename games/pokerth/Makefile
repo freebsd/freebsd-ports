@@ -6,14 +6,16 @@
 #
 
 PORTNAME=	pokerth
-PORTVERSION=	0.8.1
-PORTREVISION=	1
+PORTVERSION=	0.8.3
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/0.8
 DISTNAME=	PokerTH-${PORTVERSION}-src
 
 MAINTAINER=	mad@madpilot.net
 COMMENT=	A poker game written in C++/QT4
+
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	boost_thread.4:${PORTSDIR}/devel/boost-libs \
 		mikmod.2:${PORTSDIR}/audio/libmikmod \
@@ -26,7 +28,8 @@ USE_BZIP2=	yes
 USE_GMAKE=	yes
 MAKE_JOBS_SAFE=	yes
 USE_QT_VER=	4
-QT_COMPONENTS=	gui corelib network sql qmake_build moc_build rcc_build uic_build
+QT_COMPONENTS=	gui corelib network sql sql-sqlite3 qmake_build \
+		moc_build rcc_build uic_build
 USE_SDL=	mixer
 HAS_CONFIGURE=	yes
 QMAKE_ARGS+=	-unix PREFIX=${PREFIX}
@@ -46,6 +49,7 @@ post-patch:
 		-e 's|(-lcurl)|\1 -liconv|g' \
 		-e 's:boost_([a-z]+)-[-|a-z|0-9|_]*:boost_\1:g' \
 		-e 's|LIB_DIRS =.*|LIB_DIRS = ${LOCALBASE}/lib|g' \
+		-e '/^QMAKE_CXXFLAGS.*/d' \
 		${WRKSRC}/*.pro
 
 do-configure:
