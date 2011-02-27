@@ -74,6 +74,7 @@ post-install:
 .endif
 .if defined(WITH_GTK2)
 	@${INSTALL_PROGRAM} ${WRKSRC}/unison-text ${PREFIX}/bin
+	@${MKDIR} ${DESKTOPDIR}
 	@${INSTALL_DATA} ${WRKDIR}/${PORTNAME}.desktop ${DESKTOPDIR}
 	@-update-desktop-database > /dev/null
 	@${CAT} ${PKGMESSAGE}
