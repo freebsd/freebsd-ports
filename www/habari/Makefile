@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	habari
-PORTVERSION=	0.6.3
+PORTVERSION=	0.6.6
 CATEGORIES=	www
-MASTER_SITES=	http://dist.habariproject.org/ \
-		http://habari.jp/dist/
+MASTER_SITES=	http://habariproject.org/dist/ \
+		http://launchpadlibrarian.net/60087200/
 
 MAINTAINER=	ayu@commun.jp
 COMMENT=	Next-generation free software blogging platform
@@ -18,7 +18,6 @@ USE_ZIP=	yes
 USE_PHP=	pdo pcre simplexml session tokenizer iconv mbstring
 WANT_PHP_WEB=	yes
 NO_BUILD=	yes
-NO_WRKSUBDIR=	yes
 
 OPTIONS=	MYSQL "Use MySQL" on \
 		PGSQL "Use PostgreSQL" off \
