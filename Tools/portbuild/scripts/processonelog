@@ -50,6 +50,8 @@ elif bzgrep -qE '(configure: error:|Script.*configure.*failed unexpectedly|scrip
     reason="arch"; tag="arch"
   elif bzgrep -qE "configure: error: [Pp]erl (5.* required|version too old)" $1; then
     reason="perl"; tag="perl"
+  elif bzgrep -q 'sem_wait: Invalid argument' $1; then
+    reason="sem_wait"; tag="sem_wait"
   else
     reason="configure_error"; tag="configure"
   fi
@@ -58,15 +60,7 @@ elif bzgrep -q "Couldn't fetch it - please try" $1; then
 elif bzgrep -q "Error: shared library \".*\" does not exist" $1; then
   reason="LIB_DEPENDS"; tag="libdepends"
 elif bzgrep -qE "\.(c|cc|cxx|cpp|h|y)[1-9:]+ .+\.h: No such file" $1; then
-  if bzgrep -qE "(X11/.*|Xosdefs)\.h: No such file" $1; then
-	if bzgrep -q "XFree86-.*\.tgz" $1; then
-	  reason="missing_header"; tag="header"
-	else
-	  reason="USE_XLIB"; tag="usexlib"
-	fi
-  else
-	reason="missing_header"; tag="header"
-  fi
+  reason="missing_header"; tag="header"
 elif bzgrep -qE '(nested function.*declared but never defined|warning: nested extern declaration)' $1; then
   reason="nested_declaration"; tag="nested_declaration"
 # note: must be run before compiler_error
@@ -79,19 +73,14 @@ elif bzgrep -qE '(parse error|too (many|few) arguments to|argument.*doesn.*proto
   reason="compiler_error"; tag="cc"
 elif bzgrep -qE '(ANSI C.. forbids|is a contravariance violation|changed for new ANSI .for. scoping|[0-9]: passing .* changes signedness|lacks a cast|redeclared as different kind of symbol|invalid type .* for default argument to|wrong type argument to unary exclamation mark|duplicate explicit instantiation of|incompatible types in assignment|assuming . on overloaded member function|call of overloaded .* is ambiguous|declaration of C function .* conflicts with|initialization of non-const reference type|using typedef-name .* after|[0-9]: size of array .* is too large|fixed or forbidden register .* for class|assignment of read-only variable|error: label at end of compound statement|error:.*(has no|is not a) member|error:.*is (private|protected)|error: uninitialized member|error: unrecognized command line option)' $1; then
   reason="new_compiler_error"; tag="newgcc"
-# XXX MCL a subset of uname?
 # XXX MCL must preceed badc++
 elif bzgrep -qE "error: invalid conversion from .*dirent" $1; then
   reason="dirent"; tag="dirent"
 elif bzgrep -qE '(syntax error before|friend declaration|no matching function for call to|.main. must return .int.|invalid conversion from|cannot be used as a macro name as it is an operator in C\+\+|is not a member of type|after previous specification in|no class template named|because worst conversion for the former|better than worst conversion|no match for.*operator|no match for call to|undeclared in namespace|is used as a type, but is not|error: array bound forbidden|error: class definition|error: expected constructor|error: there are no arguments|error:.*cast.*loses precision|ISO C\+\+ does not support|error: invalid pure specifier)' $1; then
   reason="bad_C++_code"; tag="badc++"
-# XXX MCL hopefully this one is only temporary, error has been backed out 20100120
-# XXX MCL must preceed gcc4
-elif bzgrep -qE "(AttributeError: .module. object has no attribute .uname|POSIX::uname not implemented on this architecture|error: redefinition of .*(uname|utsname))" $1; then
-  reason="uname"; tag="uname"
 elif bzgrep -qE 'error: (array type has incomplete element type|conflicts with new declaration|expected.*before .class|expected primary expression|extra qualification .* on member|.*has incomplete type|invalid cast from type .* to type|invalid lvalue in (assignment|decrement|increment|unary)|invalid storage class for function|lvalue required as (increment operator|left operand)|.*should have been declared inside|static declaration of.*follows non-static declaration|two or more data types in declaration specifiers|.* was not declared in this scope)' $1; then
   reason="gcc4_error"; tag="gcc4"
-elif bzgrep -qE '(/usr/libexec/elf/ld: cannot find|undefined reference to|cannot open -l.*: No such file)' $1; then
+elif bzgrep -qE '(/usr/libexec/elf/ld: cannot find|undefined reference to|cannot open -l.*: No such file|error: linker command failed with exit code 1)' $1; then
   reason="linker_error"; tag="ld"
 elif bzgrep -q 'install: .*: No such file' $1; then
   reason="install_error"; tag="install"
@@ -115,10 +104,12 @@ elif bzgrep -qE "automake(.*): not found" $1; then
   reason="automake"; tag="automake"
 elif bzgrep -q 'Checksum mismatch' $1; then
   reason="checksum"; tag="checksum"
-elif bzgrep -qE 'chown:.*[Ii]nvalid argument' $1; then
-  reason="chown"; tag="chown"
+elif bzgrep -qE "(clang: error:|clang++: error:|error: cannot compile this.*yet|error: clang frontend command failed|error:.*ignoring directive for now|error: (invalid|unknown use of) instruction mnemonic|error:.*please report this as a bug|error: unknown argument)" $1; then
+  reason="clang-bug"; tag="clang-bug"
 elif bzgrep -q "Shared object \"libc.so.6\" not found, required by" $1; then
   reason="compat6x"; tag="compat6x"
+elif bzgrep -q "Fatal error .failed to get sysctl kern.sched.cpusetsize" $1; then
+  reason="cpusetsize"; tag="cpusetsize"
 elif bzgrep -q "error in dependency .*, exiting" $1; then
   reason="depend_package"; tag="dependpkg"
 elif bzgrep -qE "pkg_(add|create):.*(can't find enough temporary space|projected size of .* exceeds available free space)" $1; then
@@ -131,14 +122,14 @@ elif bzgrep -qE "Member name contains .\.\." $1; then
   reason="fetch"; tag="fetch"
 elif bzgrep -qE "(pnohang: killing make checksum|fetch: transfer timed out)" $1; then
   reason="fetch_timeout"; tag="fetch-timeout"
-elif bzgrep -qE "(f77: not found|f77:No such file or directory|Unable to find a fortran compiler)" $1; then
-  reason="f77"; tag="f77"
 elif bzgrep -q "See <URL:http://gcc.gnu.org/bugs.html> for instructions." $1; then
   reason="gcc_bug"; tag="gcc-bug"
 elif bzgrep -qE "(Run-time system build failed for some reason|tar: Error opening archive: Failed to open.*No such file or directory)" $1; then
   reason="install_error"; tag="install"
 elif bzgrep -qE "(cc: .*libintl.*: No such file or directory|cc: ndbm\.so: No such file or directory|error: The X11 shared library could not be loaded|libtool: link: cannot find the library|relocation against dynamic symbol|Shared object.*not found, required by)" $1; then
   reason="linker_error"; tag="ld"
+elif bzgrep -q "libtool: finish: invalid argument" $1; then
+  reason="libtool"; tag="libtool"
 elif bzgrep -q "Could not create Makefile" $1; then
   reason="makefile"; tag="makefile"
 elif bzgrep -v "regression-test.continuing" $1 | grep -qE "make.*(cannot open [Mm]akefile|don.t know how to make|fatal errors encountered|No rule to make target|built-in)"; then
@@ -147,28 +138,16 @@ elif bzgrep -q "/usr/.*/man/.*: No such file or directory" $1; then
   reason="manpage"; tag="manpage"
 elif bzgrep -q "out of .* hunks .*--saving rejects to" $1; then
   reason="patch"; tag="patch"
-elif bzgrep -qE "(/usr/local/bin/(perl|perl5.6.1):.*(not found|No such file or directory)|cp:.*site_perl: No such file or directory|perl(.*): Perl is not installed, try .pkg_add -r perl|Perl .* required--this is only version)" $1; then
+elif bzgrep -qE "((perl|perl5.6.1):.*(not found|No such file or directory)|cp:.*site_perl: No such file or directory|perl(.*): Perl is not installed, try .pkg_add -r perl|Perl .* required--this is only version)" $1; then
   reason="perl"; tag="perl"
-elif bzgrep -q 'BEGIN failed--compilation aborted at ..Makefile.PL line' $1; then
-  reason="perl5"; tag="perl5"
-elif bzgrep -qE "(Abort trap|Bus error|Signal 1[01])" $1; then
+elif bzgrep -qE "(Abort trap|Bus error|Error 127|Killed: 9|Signal 1[01])" $1; then
   reason="process_failed"; tag="process"
-elif bzgrep -q "python: not found" $1; then
-  reason="python"; tag="python"
 elif bzgrep -qE "(USER   PID  PPID  PGID.*JOBC STAT  TT       TIME COMMAND|pnohang: killing make package)" $1; then
   reason="runaway_process"; tag="runaway"
 elif bzgrep -q "Segmentation fault" $1; then
   reason="segfault"; tag="segfault"
-elif bzgrep -q "initializer element is not constant" $1; then
-  reason="stdio"; tag="stdio"
-elif bzgrep -q "structure has no member named" $1; then
-  reason="struct_changes"; tag="struct"
-elif bzgrep -q "shminit failed: Permission denied" $1; then
-  reason="sysvipc"; tag="sysvipc"
-elif bzgrep -qE "(/usr/bin/ld: cannot find -l(pthread|XThrStub)|cannot find -lc_r|checking for.*lc_r\.\.\. no|Error: pthreads are required to build this package|Please install/update your POSIX threads (pthreads) library|requires.*thread support|: The -pthread option is deprecated)" $1; then
+elif bzgrep -qE "(/usr/bin/ld: cannot find -l(pthread|XThrStub)|cannot find -lc_r|Error: pthreads are required to build this package|Please install/update your POSIX threads (pthreads) library|requires.*thread support|: The -pthread option is deprecated)" $1; then
   reason="threads"; tag="threads"
-elif bzgrep -q "<varargs.h> is obsolete with this version of GCC" $1; then
-  reason="varargs"; tag="varargs"
 elif bzgrep -qi 'read-only file system' $1; then
   reason="WRKDIR"; tag="wrkdir"
 
