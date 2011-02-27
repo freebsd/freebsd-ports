@@ -1,7 +1,0 @@
-UUID object and generation functions for Python.
-
-The uuid module here is part of the standard library for
-Python 2.5, distributed under the Python software license.
-
-
-WWW: http://pypi.python.org/pypi/uuid/

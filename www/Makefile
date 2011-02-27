@@ -1525,10 +1525,8 @@
     SUBDIR += py-textile
     SUBDIR += py-tgwebservices
     SUBDIR += py-tornado
-    SUBDIR += py-turbodjango
     SUBDIR += py-turbogears
     SUBDIR += py-turbogears2
-    SUBDIR += py-turbosetup
     SUBDIR += py-twistedWeb
     SUBDIR += py-twistedWeb2
     SUBDIR += py-urlgrabber
