@@ -1,4 +1,4 @@
-# New ports collection makefile for:	sympa
+# Ports collection Makefile for:	sympa
 # Date created:				29 November 2003
 # Whom:					Autrijus Tang <autrijus@autrijus.org>
 #
@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	sympa
-PORTVERSION=	6.1.3
+PORTVERSION=	6.1.4
 CATEGORIES=	mail
 MASTER_SITES=	http://www.sympa.org/distribution/ \
 		http://www.sympa.org/distribution/old/
