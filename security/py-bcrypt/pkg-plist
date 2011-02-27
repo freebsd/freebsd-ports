@@ -1,7 +1,0 @@
-%%PYTHON_SITELIBDIR%%/bcrypt/__init__.py
-%%PYTHON_SITELIBDIR%%/bcrypt/__init__.pyc
-%%PYTHON_SITELIBDIR%%/bcrypt/__init__.pyo
-%%PYTHON_SITELIBDIR%%/bcrypt/_bcrypt.so
-@dirrm %%PYTHON_SITELIBDIR%%/bcrypt
-@dirrm %%PYTHON_SITELIBDIR%%
-@dirrm %%PYTHON_LIBDIR%%
