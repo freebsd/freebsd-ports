@@ -12,6 +12,8 @@ share/gimp/scripts/bates-layers-transform.scm
 share/gimp/scripts/bercovich-lomo.scm
 share/gimp/scripts/conte-draw-tools.scm
 share/gimp/scripts/cozens-match-colours.scm
+share/gimp/scripts/cprogrammer-midnight-sepia.scm
+share/gimp/scripts/cprogrammer-roy-richtenstein.scm
 share/gimp/scripts/death-cross-processing-effect.scm
 share/gimp/scripts/death-lomo-effect.scm
 share/gimp/scripts/death-shape-tools.scm
@@ -102,7 +104,6 @@ share/gimp/scripts/tissier-diffusion-filter.scm
 share/gimp/scripts/torres-analogize.scm
 share/gimp/scripts/trefftzs-pencil-sketch.scm
 share/gimp/scripts/trefftzs-pixel-gradient.scm
-share/gimp/scripts/wade-copy-visible-and-paste.scm
 share/gimp/scripts/wade-powertone.scm
 share/gimp/scripts/xtns-bodor-chrominium.scm
 share/gimp/scripts/xtns-demartin-liquid-water.scm
