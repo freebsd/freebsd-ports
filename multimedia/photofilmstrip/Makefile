@@ -8,6 +8,7 @@
 
 PORTNAME=	photofilmstrip
 PORTVERSION=	1.4.0
+PORTREVISION=	1
 CATEGORIES=	multimedia python
 MASTER_SITES=	SF/photostoryx/${PORTNAME}/${PORTVERSION}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -21,13 +22,13 @@ RUN_DEPENDS=	mplayer:${PORTSDIR}/multimedia/mplayer \
 USE_PYTHON=	yes
 USE_WX=		2.8+
 WX_COMPS=	python:lib
+WX_UNICODE=	yes
 USE_GETTEXT=	yes
 
 LICENSE=	GPLv2
 
 pre-everything::
-	@${ECHO_MSG} "To run ${PORTNAME}, you must have the Unicode version of py-wxPython28 installed."
-	@${ECHO_MSG} "You must also have sqlite3 installed with extensions enabled."
+	@${ECHO_MSG} "To run ${PORTNAME}, you must have sqlite3 installed with extensions enabled."
 
 ALL_TARGET=	compile
 
