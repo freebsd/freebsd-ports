@@ -85,11 +85,12 @@ lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/ems_event_hook.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/ems_flv_streams.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/ems_hook_http.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/ems_http.beam
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/ems_http_erlyvideo_api.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/ems_http_file.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/ems_http_flv.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/ems_http_push.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/ems_http_rtmpt.beam
-lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/ems_http_stats.beam
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/ems_http_switch_source.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/ems_http_templates.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/ems_license_client.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/ems_media.beam
@@ -128,9 +129,13 @@ lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/mpegts_file_media.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/mpegts_media.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/mpegts_passive_media.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/password_publish.beam
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/proxy_media.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/referer_check.beam
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/remove_useless_prefix.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/reverse_mpegts.beam
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/rtmp_dump.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/rtmp_media.beam
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/rtmp_proxy.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/rtmp_publish.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/rtmp_session.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/rtsp_media.beam
@@ -161,6 +166,7 @@ lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/apps/apps_push.erl
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/apps/apps_recording.erl
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/apps/apps_stat_collector.erl
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/apps/apps_streaming.erl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/apps/remove_useless_prefix.erl
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/auth/apps_rewrite_play.erl
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/auth/apps_rewrite_publish.erl
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/auth/auth_users_limit.erl
@@ -195,11 +201,12 @@ lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/erlyvideo_ctl.erl
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/hooks/ems_event_hook.erl
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/hooks/ems_hook_http.erl
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/http/ems_http.erl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/http/ems_http_erlyvideo_api.erl
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/http/ems_http_file.erl
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/http/ems_http_flv.erl
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/http/ems_http_push.erl
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/http/ems_http_rtmpt.erl
-lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/http/ems_http_stats.erl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/http/ems_http_switch_source.erl
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/http/ems_http_templates.erl
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/jsonerl.erl
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/jsonerl.hrl
@@ -221,10 +228,13 @@ lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/media/media_ticker.erl
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/media/mpegts_file_media.erl
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/media/mpegts_media.erl
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/media/mpegts_passive_media.erl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/media/proxy_media.erl
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/media/rtmp_media.erl
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/media/rtsp_media.erl
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/meta_access.hrl
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/reverse_mpegts.erl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/rtmp/rtmp_dump.erl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/rtmp/rtmp_proxy.erl
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/rtmp/rtmp_publish.erl
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/rtmp/rtmp_session.erl
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/rtmp/shared_objects/shared_object.erl
@@ -237,6 +247,13 @@ lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/tpl/_gen_consumer.tpl
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/tpl/_gen_event.tpl
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/tpl/_gen_fsm.tpl
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/tpl/_gen_server.tpl
+lib/erlang/lib/ibrowse-2.1.3/ebin/ibrowse.beam
+lib/erlang/lib/ibrowse-2.1.3/ebin/ibrowse_app.beam
+lib/erlang/lib/ibrowse-2.1.3/ebin/ibrowse_http_client.beam
+lib/erlang/lib/ibrowse-2.1.3/ebin/ibrowse_lb.beam
+lib/erlang/lib/ibrowse-2.1.3/ebin/ibrowse_lib.beam
+lib/erlang/lib/ibrowse-2.1.3/ebin/ibrowse_sup.beam
+lib/erlang/lib/ibrowse-2.1.3/ebin/ibrowse_test.beam
 lib/erlang/lib/log4erl-%%PORTVERSION%%/ebin/console_appender.beam
 lib/erlang/lib/log4erl-%%PORTVERSION%%/ebin/dummy_appender.beam
 lib/erlang/lib/log4erl-%%PORTVERSION%%/ebin/email_msg.beam
@@ -287,13 +304,11 @@ lib/erlang/lib/log4erl-%%PORTVERSION%%/src/xml_appender.erl
 lib/erlang/lib/mpegts-%%PORTVERSION%%/ebin/ems_http_mpegts.beam
 lib/erlang/lib/mpegts-%%PORTVERSION%%/ebin/iphone_streams.beam
 lib/erlang/lib/mpegts-%%PORTVERSION%%/ebin/mpeg2_crc32.beam
-lib/erlang/lib/mpegts-%%PORTVERSION%%/ebin/mpeg2_crc32.so
 lib/erlang/lib/mpegts-%%PORTVERSION%%/ebin/mpegts.app
 lib/erlang/lib/mpegts-%%PORTVERSION%%/ebin/mpegts.beam
 lib/erlang/lib/mpegts-%%PORTVERSION%%/ebin/mpegts_file_reader.beam
 lib/erlang/lib/mpegts-%%PORTVERSION%%/ebin/mpegts_play.beam
 lib/erlang/lib/mpegts-%%PORTVERSION%%/ebin/mpegts_reader.beam
-lib/erlang/lib/mpegts-%%PORTVERSION%%/ebin/mpegts_reader.so
 lib/erlang/lib/mpegts-%%PORTVERSION%%/ebin/mpegts_sup.beam
 lib/erlang/lib/rtmp-%%PORTVERSION%%/contrib/rtmp_bench
 lib/erlang/lib/rtmp-%%PORTVERSION%%/contrib/so_bench
@@ -316,9 +331,10 @@ lib/erlang/lib/rtmp-%%PORTVERSION%%/include/rtmp.hrl
 lib/erlang/lib/rtp-%%PORTVERSION%%/ebin/ertp.app
 lib/erlang/lib/rtp-%%PORTVERSION%%/ebin/ertp.beam
 lib/erlang/lib/rtp-%%PORTVERSION%%/ebin/ertp_sup.beam
-lib/erlang/lib/rtp-%%PORTVERSION%%/ebin/rtp_server.beam
+lib/erlang/lib/rtp-%%PORTVERSION%%/ebin/rtp_rtsp.beam
 lib/erlang/lib/rtp-%%PORTVERSION%%/ebin/sdp.beam
 lib/erlang/lib/rtp-%%PORTVERSION%%/ebin/sdp_tests.beam
+lib/erlang/lib/rtp-%%PORTVERSION%%/include/rtp.hrl
 lib/erlang/lib/rtp-%%PORTVERSION%%/include/sdp.hrl
 lib/erlang/lib/rtsp-%%PORTVERSION%%/ebin/rtsp.app
 lib/erlang/lib/rtsp-%%PORTVERSION%%/ebin/rtsp.beam
@@ -327,66 +343,924 @@ lib/erlang/lib/rtsp-%%PORTVERSION%%/ebin/rtsp_listener.beam
 lib/erlang/lib/rtsp-%%PORTVERSION%%/ebin/rtsp_socket.beam
 lib/erlang/lib/rtsp-%%PORTVERSION%%/ebin/rtsp_sup.beam
 lib/erlang/lib/rtsp-%%PORTVERSION%%/include/rtsp.hrl
-lib/erlang/lib/rtsp-%%PORTVERSION%%/include/sdp.hrl
 %%WWWDIR%%/wwwroot/admin.html
-%%WWWDIR%%/wwwroot/blueprint/ie.css
-%%WWWDIR%%/wwwroot/blueprint/plugins/buttons/icons/cross.png
-%%WWWDIR%%/wwwroot/blueprint/plugins/buttons/icons/key.png
-%%WWWDIR%%/wwwroot/blueprint/plugins/buttons/icons/tick.png
-%%WWWDIR%%/wwwroot/blueprint/plugins/buttons/readme.txt
-%%WWWDIR%%/wwwroot/blueprint/plugins/buttons/screen.css
-%%WWWDIR%%/wwwroot/blueprint/plugins/fancy-type/readme.txt
-%%WWWDIR%%/wwwroot/blueprint/plugins/fancy-type/screen.css
-%%WWWDIR%%/wwwroot/blueprint/plugins/link-icons/icons/doc.png
-%%WWWDIR%%/wwwroot/blueprint/plugins/link-icons/icons/email.png
-%%WWWDIR%%/wwwroot/blueprint/plugins/link-icons/icons/external.png
-%%WWWDIR%%/wwwroot/blueprint/plugins/link-icons/icons/feed.png
-%%WWWDIR%%/wwwroot/blueprint/plugins/link-icons/icons/im.png
-%%WWWDIR%%/wwwroot/blueprint/plugins/link-icons/icons/pdf.png
-%%WWWDIR%%/wwwroot/blueprint/plugins/link-icons/icons/visited.png
-%%WWWDIR%%/wwwroot/blueprint/plugins/link-icons/icons/xls.png
-%%WWWDIR%%/wwwroot/blueprint/plugins/link-icons/readme.txt
-%%WWWDIR%%/wwwroot/blueprint/plugins/link-icons/screen.css
-%%WWWDIR%%/wwwroot/blueprint/plugins/rtl/readme.txt
-%%WWWDIR%%/wwwroot/blueprint/plugins/rtl/screen.css
-%%WWWDIR%%/wwwroot/blueprint/print.css
-%%WWWDIR%%/wwwroot/blueprint/screen.css
-%%WWWDIR%%/wwwroot/blueprint/src/forms.css
-%%WWWDIR%%/wwwroot/blueprint/src/grid.css
-%%WWWDIR%%/wwwroot/blueprint/src/grid.png
-%%WWWDIR%%/wwwroot/blueprint/src/ie.css
-%%WWWDIR%%/wwwroot/blueprint/src/print.css
-%%WWWDIR%%/wwwroot/blueprint/src/reset.css
-%%WWWDIR%%/wwwroot/blueprint/src/typography.css
-%%WWWDIR%%/wwwroot/chat.html
-%%WWWDIR%%/wwwroot/conf/audio/Caller.as
-%%WWWDIR%%/wwwroot/conf/audio/Caller.mxml
-%%WWWDIR%%/wwwroot/conf/audio/Caller.swf
-%%WWWDIR%%/wwwroot/conf/audio/index.html
-%%WWWDIR%%/wwwroot/conf/index.html
-%%WWWDIR%%/wwwroot/conf/player/Player.as
-%%WWWDIR%%/wwwroot/conf/player/Player.mxml
-%%WWWDIR%%/wwwroot/conf/player/Player.swf
-%%WWWDIR%%/wwwroot/conf/player/VideoContainer.as
-%%WWWDIR%%/wwwroot/conf/player/VideoSource.as
-%%WWWDIR%%/wwwroot/conf/player/VideoSourceEvent.as
-%%WWWDIR%%/wwwroot/conf/player/VideoStream.as
-%%WWWDIR%%/wwwroot/conf/player/ev-disabled.png
-%%WWWDIR%%/wwwroot/conf/player/ev-normal.png
-%%WWWDIR%%/wwwroot/conf/player/ev-pressed.png
+%%WWWDIR%%/wwwroot/admin/adapter/ext/ext-base-debug.js
+%%WWWDIR%%/wwwroot/admin/adapter/ext/ext-base.js
+%%WWWDIR%%/wwwroot/admin/adapter/jquery/ext-jquery-adapter-debug.js
+%%WWWDIR%%/wwwroot/admin/adapter/jquery/ext-jquery-adapter.js
+%%WWWDIR%%/wwwroot/admin/adapter/prototype/ext-prototype-adapter-debug.js
+%%WWWDIR%%/wwwroot/admin/adapter/prototype/ext-prototype-adapter.js
+%%WWWDIR%%/wwwroot/admin/adapter/yui/ext-yui-adapter-debug.js
+%%WWWDIR%%/wwwroot/admin/adapter/yui/ext-yui-adapter.js
+%%WWWDIR%%/wwwroot/admin/delete.gif
+%%WWWDIR%%/wwwroot/admin/ext-all.js
+%%WWWDIR%%/wwwroot/admin/images/disk.png
+%%WWWDIR%%/wwwroot/admin/images/email_go.png
+%%WWWDIR%%/wwwroot/admin/images/layout-browser-hd-bg.gif
+%%WWWDIR%%/wwwroot/admin/images/layout-icon.gif
+%%WWWDIR%%/wwwroot/admin/images/page_attach.png
+%%WWWDIR%%/wwwroot/admin/images/printer.png
+%%WWWDIR%%/wwwroot/admin/images/spellcheck.png
+%%WWWDIR%%/wwwroot/admin/layout-browser.css
+%%WWWDIR%%/wwwroot/admin/resources/charts.swf
+%%WWWDIR%%/wwwroot/admin/resources/css/README.txt
+%%WWWDIR%%/wwwroot/admin/resources/css/debug.css
+%%WWWDIR%%/wwwroot/admin/resources/css/ext-all-notheme.css
+%%WWWDIR%%/wwwroot/admin/resources/css/ext-all.css
+%%WWWDIR%%/wwwroot/admin/resources/css/reset-min.css
+%%WWWDIR%%/wwwroot/admin/resources/css/structure/borders.css
+%%WWWDIR%%/wwwroot/admin/resources/css/structure/box.css
+%%WWWDIR%%/wwwroot/admin/resources/css/structure/button.css
+%%WWWDIR%%/wwwroot/admin/resources/css/structure/combo.css
+%%WWWDIR%%/wwwroot/admin/resources/css/structure/core.css
+%%WWWDIR%%/wwwroot/admin/resources/css/structure/date-picker.css
+%%WWWDIR%%/wwwroot/admin/resources/css/structure/dd.css
+%%WWWDIR%%/wwwroot/admin/resources/css/structure/debug.css
+%%WWWDIR%%/wwwroot/admin/resources/css/structure/dialog.css
+%%WWWDIR%%/wwwroot/admin/resources/css/structure/editor.css
+%%WWWDIR%%/wwwroot/admin/resources/css/structure/form.css
+%%WWWDIR%%/wwwroot/admin/resources/css/structure/grid.css
+%%WWWDIR%%/wwwroot/admin/resources/css/structure/layout.css
+%%WWWDIR%%/wwwroot/admin/resources/css/structure/list-view.css
+%%WWWDIR%%/wwwroot/admin/resources/css/structure/menu.css
+%%WWWDIR%%/wwwroot/admin/resources/css/structure/panel-reset.css
+%%WWWDIR%%/wwwroot/admin/resources/css/structure/panel.css
+%%WWWDIR%%/wwwroot/admin/resources/css/structure/pivotgrid.css
+%%WWWDIR%%/wwwroot/admin/resources/css/structure/progress.css
+%%WWWDIR%%/wwwroot/admin/resources/css/structure/qtips.css
+%%WWWDIR%%/wwwroot/admin/resources/css/structure/reset.css
+%%WWWDIR%%/wwwroot/admin/resources/css/structure/resizable.css
+%%WWWDIR%%/wwwroot/admin/resources/css/structure/slider.css
+%%WWWDIR%%/wwwroot/admin/resources/css/structure/tabs.css
+%%WWWDIR%%/wwwroot/admin/resources/css/structure/toolbar.css
+%%WWWDIR%%/wwwroot/admin/resources/css/structure/tree.css
+%%WWWDIR%%/wwwroot/admin/resources/css/structure/window.css
+%%WWWDIR%%/wwwroot/admin/resources/css/theme-access/borders.css
+%%WWWDIR%%/wwwroot/admin/resources/css/theme-access/box.css
+%%WWWDIR%%/wwwroot/admin/resources/css/theme-access/button.css
+%%WWWDIR%%/wwwroot/admin/resources/css/theme-access/combo.css
+%%WWWDIR%%/wwwroot/admin/resources/css/theme-access/core.css
+%%WWWDIR%%/wwwroot/admin/resources/css/theme-access/date-picker.css
+%%WWWDIR%%/wwwroot/admin/resources/css/theme-access/dd.css
+%%WWWDIR%%/wwwroot/admin/resources/css/theme-access/debug.css
+%%WWWDIR%%/wwwroot/admin/resources/css/theme-access/dialog.css
+%%WWWDIR%%/wwwroot/admin/resources/css/theme-access/editor.css
+%%WWWDIR%%/wwwroot/admin/resources/css/theme-access/form.css
+%%WWWDIR%%/wwwroot/admin/resources/css/theme-access/grid.css
+%%WWWDIR%%/wwwroot/admin/resources/css/theme-access/layout.css
+%%WWWDIR%%/wwwroot/admin/resources/css/theme-access/list-view.css
+%%WWWDIR%%/wwwroot/admin/resources/css/theme-access/menu.css
+%%WWWDIR%%/wwwroot/admin/resources/css/theme-access/panel.css
+%%WWWDIR%%/wwwroot/admin/resources/css/theme-access/progress.css
+%%WWWDIR%%/wwwroot/admin/resources/css/theme-access/qtips.css
+%%WWWDIR%%/wwwroot/admin/resources/css/theme-access/resizable.css
+%%WWWDIR%%/wwwroot/admin/resources/css/theme-access/slider.css
+%%WWWDIR%%/wwwroot/admin/resources/css/theme-access/tabs.css
+%%WWWDIR%%/wwwroot/admin/resources/css/theme-access/toolbar.css
+%%WWWDIR%%/wwwroot/admin/resources/css/theme-access/tree.css
+%%WWWDIR%%/wwwroot/admin/resources/css/theme-access/window.css
+%%WWWDIR%%/wwwroot/admin/resources/css/theme-gray/borders.css
+%%WWWDIR%%/wwwroot/admin/resources/css/theme-gray/box.css
+%%WWWDIR%%/wwwroot/admin/resources/css/theme-gray/button.css
+%%WWWDIR%%/wwwroot/admin/resources/css/theme-gray/combo.css
+%%WWWDIR%%/wwwroot/admin/resources/css/theme-gray/core.css
+%%WWWDIR%%/wwwroot/admin/resources/css/theme-gray/date-picker.css
+%%WWWDIR%%/wwwroot/admin/resources/css/theme-gray/dd.css
+%%WWWDIR%%/wwwroot/admin/resources/css/theme-gray/debug.css
+%%WWWDIR%%/wwwroot/admin/resources/css/theme-gray/dialog.css
+%%WWWDIR%%/wwwroot/admin/resources/css/theme-gray/editor.css
+%%WWWDIR%%/wwwroot/admin/resources/css/theme-gray/form.css
+%%WWWDIR%%/wwwroot/admin/resources/css/theme-gray/grid.css
+%%WWWDIR%%/wwwroot/admin/resources/css/theme-gray/layout.css
+%%WWWDIR%%/wwwroot/admin/resources/css/theme-gray/list-view.css
+%%WWWDIR%%/wwwroot/admin/resources/css/theme-gray/menu.css
+%%WWWDIR%%/wwwroot/admin/resources/css/theme-gray/panel.css
+%%WWWDIR%%/wwwroot/admin/resources/css/theme-gray/pivotgrid.css
+%%WWWDIR%%/wwwroot/admin/resources/css/theme-gray/progress.css
+%%WWWDIR%%/wwwroot/admin/resources/css/theme-gray/qtips.css
+%%WWWDIR%%/wwwroot/admin/resources/css/theme-gray/resizable.css
+%%WWWDIR%%/wwwroot/admin/resources/css/theme-gray/slider.css
+%%WWWDIR%%/wwwroot/admin/resources/css/theme-gray/tabs.css
+%%WWWDIR%%/wwwroot/admin/resources/css/theme-gray/toolbar.css
+%%WWWDIR%%/wwwroot/admin/resources/css/theme-gray/tree.css
+%%WWWDIR%%/wwwroot/admin/resources/css/theme-gray/window.css
+%%WWWDIR%%/wwwroot/admin/resources/css/visual/borders.css
+%%WWWDIR%%/wwwroot/admin/resources/css/visual/box.css
+%%WWWDIR%%/wwwroot/admin/resources/css/visual/button.css
+%%WWWDIR%%/wwwroot/admin/resources/css/visual/combo.css
+%%WWWDIR%%/wwwroot/admin/resources/css/visual/core.css
+%%WWWDIR%%/wwwroot/admin/resources/css/visual/date-picker.css
+%%WWWDIR%%/wwwroot/admin/resources/css/visual/dd.css
+%%WWWDIR%%/wwwroot/admin/resources/css/visual/debug.css
+%%WWWDIR%%/wwwroot/admin/resources/css/visual/dialog.css
+%%WWWDIR%%/wwwroot/admin/resources/css/visual/editor.css
+%%WWWDIR%%/wwwroot/admin/resources/css/visual/form.css
+%%WWWDIR%%/wwwroot/admin/resources/css/visual/grid.css
+%%WWWDIR%%/wwwroot/admin/resources/css/visual/layout.css
+%%WWWDIR%%/wwwroot/admin/resources/css/visual/list-view.css
+%%WWWDIR%%/wwwroot/admin/resources/css/visual/menu.css
+%%WWWDIR%%/wwwroot/admin/resources/css/visual/panel.css
+%%WWWDIR%%/wwwroot/admin/resources/css/visual/pivotgrid.css
+%%WWWDIR%%/wwwroot/admin/resources/css/visual/progress.css
+%%WWWDIR%%/wwwroot/admin/resources/css/visual/qtips.css
+%%WWWDIR%%/wwwroot/admin/resources/css/visual/resizable.css
+%%WWWDIR%%/wwwroot/admin/resources/css/visual/slider.css
+%%WWWDIR%%/wwwroot/admin/resources/css/visual/tabs.css
+%%WWWDIR%%/wwwroot/admin/resources/css/visual/toolbar.css
+%%WWWDIR%%/wwwroot/admin/resources/css/visual/tree.css
+%%WWWDIR%%/wwwroot/admin/resources/css/visual/window.css
+%%WWWDIR%%/wwwroot/admin/resources/css/xtheme-access.css
+%%WWWDIR%%/wwwroot/admin/resources/css/xtheme-blue.css
+%%WWWDIR%%/wwwroot/admin/resources/css/xtheme-gray.css
+%%WWWDIR%%/wwwroot/admin/resources/css/yourtheme.css
+%%WWWDIR%%/wwwroot/admin/resources/expressinstall.swf
+%%WWWDIR%%/wwwroot/admin/resources/images/access/box/corners-blue.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/access/box/corners.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/access/box/l-blue.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/access/box/l.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/access/box/r-blue.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/access/box/r.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/access/box/tb-blue.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/access/box/tb.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/access/button/arrow.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/access/button/btn.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/access/button/group-cs.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/access/button/group-lr.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/access/button/group-tb.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/access/button/s-arrow-b-noline.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/access/button/s-arrow-b.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/access/button/s-arrow-bo.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/access/button/s-arrow-noline.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/access/button/s-arrow-o.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/access/button/s-arrow.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/access/editor/tb-sprite.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/access/form/checkbox.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/access/form/clear-trigger.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/access/form/clear-trigger.psd
+%%WWWDIR%%/wwwroot/admin/resources/images/access/form/date-trigger.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/access/form/date-trigger.psd
+%%WWWDIR%%/wwwroot/admin/resources/images/access/form/error-tip-corners.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/access/form/exclamation.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/access/form/radio.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/access/form/search-trigger.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/access/form/search-trigger.psd
+%%WWWDIR%%/wwwroot/admin/resources/images/access/form/text-bg.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/access/form/trigger-tpl.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/access/form/trigger.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/access/form/trigger.psd
+%%WWWDIR%%/wwwroot/admin/resources/images/access/grid/arrow-left-white.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/access/grid/arrow-right-white.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/access/grid/col-move-bottom.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/access/grid/col-move-top.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/access/grid/columns.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/access/grid/dirty.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/access/grid/done.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/access/grid/drop-no.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/access/grid/drop-yes.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/access/grid/footer-bg.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/access/grid/grid-blue-hd.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/access/grid/grid-blue-split.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/access/grid/grid-hrow.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/access/grid/grid-loading.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/access/grid/grid-split.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/access/grid/grid-vista-hd.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/access/grid/grid3-hd-btn.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/access/grid/grid3-hrow-over.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/access/grid/grid3-hrow.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/access/grid/grid3-special-col-bg.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/access/grid/grid3-special-col-sel-bg.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/access/grid/group-by.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/access/grid/group-collapse.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/access/grid/group-expand-sprite.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/access/grid/group-expand.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/access/grid/hd-pop.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/access/grid/hmenu-asc.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/access/grid/hmenu-desc.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/access/grid/hmenu-lock.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/access/grid/hmenu-lock.png
+%%WWWDIR%%/wwwroot/admin/resources/images/access/grid/hmenu-unlock.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/access/grid/hmenu-unlock.png
+%%WWWDIR%%/wwwroot/admin/resources/images/access/grid/invalid_line.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/access/grid/loading.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/access/grid/mso-hd.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/access/grid/nowait.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/access/grid/page-first-disabled.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/access/grid/page-first.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/access/grid/page-last-disabled.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/access/grid/page-last.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/access/grid/page-next-disabled.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/access/grid/page-next.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/access/grid/page-prev-disabled.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/access/grid/page-prev.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/access/grid/pick-button.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/access/grid/refresh.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/access/grid/row-check-sprite.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/access/grid/row-expand-sprite.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/access/grid/row-over.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/access/grid/row-sel.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/access/grid/sort-hd.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/access/grid/sort_asc.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/access/grid/sort_desc.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/access/grid/wait.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/access/menu/checked.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/access/menu/group-checked.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/access/menu/item-over.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/access/menu/menu-parent.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/access/menu/menu.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/access/menu/unchecked.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/access/panel/corners-sprite.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/access/panel/left-right.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/access/panel/light-hd.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/access/panel/tool-sprite-tpl.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/access/panel/tool-sprites.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/access/panel/tools-sprites-trans.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/access/panel/top-bottom.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/access/panel/white-corners-sprite.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/access/panel/white-left-right.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/access/panel/white-top-bottom.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/access/progress/progress-bg.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/access/qtip/close.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/access/qtip/tip-anchor-sprite.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/access/qtip/tip-sprite.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/access/shared/glass-bg.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/access/shared/hd-sprite.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/access/shared/left-btn.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/access/shared/right-btn.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/access/sizer/e-handle-dark.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/access/sizer/e-handle.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/access/sizer/ne-handle-dark.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/access/sizer/ne-handle.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/access/sizer/nw-handle-dark.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/access/sizer/nw-handle.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/access/sizer/s-handle-dark.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/access/sizer/s-handle.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/access/sizer/se-handle-dark.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/access/sizer/se-handle.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/access/sizer/square.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/access/sizer/sw-handle-dark.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/access/sizer/sw-handle.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/access/slider/slider-bg.png
+%%WWWDIR%%/wwwroot/admin/resources/images/access/slider/slider-thumb.png
+%%WWWDIR%%/wwwroot/admin/resources/images/access/slider/slider-v-bg.png
+%%WWWDIR%%/wwwroot/admin/resources/images/access/slider/slider-v-thumb.png
+%%WWWDIR%%/wwwroot/admin/resources/images/access/tabs/scroll-left.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/access/tabs/scroll-right.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/access/tabs/tab-btm-inactive-left-bg.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/access/tabs/tab-btm-inactive-right-bg.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/access/tabs/tab-btm-left-bg.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/access/tabs/tab-btm-right-bg.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/access/tabs/tab-close.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/access/tabs/tab-strip-bg.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/access/tabs/tab-strip-btm-bg.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/access/tabs/tabs-sprite.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/access/toolbar/bg.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/access/toolbar/btn-arrow-light.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/access/toolbar/btn-arrow.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/access/toolbar/btn-over-bg.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/access/toolbar/gray-bg.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/access/toolbar/more.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/access/toolbar/s-arrow-bo.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/access/toolbar/tb-btn-sprite.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/access/toolbar/tb-xl-btn-sprite.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/access/toolbar/tb-xl-sep.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/access/tree/arrows.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/access/tree/drop-add.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/access/tree/drop-between.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/access/tree/drop-no.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/access/tree/drop-over.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/access/tree/drop-under.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/access/tree/drop-yes.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/access/tree/elbow-end-minus-nl.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/access/tree/elbow-end-minus.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/access/tree/elbow-end-plus-nl.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/access/tree/elbow-end-plus.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/access/tree/elbow-end.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/access/tree/elbow-line.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/access/tree/elbow-minus-nl.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/access/tree/elbow-minus.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/access/tree/elbow-plus-nl.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/access/tree/elbow-plus.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/access/tree/elbow.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/access/tree/folder-open.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/access/tree/folder.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/access/tree/leaf.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/access/tree/loading.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/access/tree/s.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/access/window/icon-error.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/access/window/icon-info.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/access/window/icon-question.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/access/window/icon-warning.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/access/window/left-corners.png
+%%WWWDIR%%/wwwroot/admin/resources/images/access/window/left-right.png
+%%WWWDIR%%/wwwroot/admin/resources/images/access/window/right-corners.png
+%%WWWDIR%%/wwwroot/admin/resources/images/access/window/top-bottom.png
+%%WWWDIR%%/wwwroot/admin/resources/images/default/box/corners-blue.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/default/box/corners.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/default/box/l-blue.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/default/box/l.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/default/box/r-blue.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/default/box/r.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/default/box/tb-blue.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/default/box/tb.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/default/button/arrow.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/default/button/btn.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/default/button/group-cs.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/default/button/group-lr.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/default/button/group-tb.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/default/button/s-arrow-b-noline.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/default/button/s-arrow-b.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/default/button/s-arrow-bo.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/default/button/s-arrow-noline.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/default/button/s-arrow-o.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/default/button/s-arrow.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/default/dd/drop-add.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/default/dd/drop-no.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/default/dd/drop-yes.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/default/editor/tb-sprite.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/default/form/checkbox.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/default/form/clear-trigger.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/default/form/clear-trigger.psd
+%%WWWDIR%%/wwwroot/admin/resources/images/default/form/date-trigger.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/default/form/date-trigger.psd
+%%WWWDIR%%/wwwroot/admin/resources/images/default/form/error-tip-corners.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/default/form/exclamation.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/default/form/radio.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/default/form/search-trigger.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/default/form/search-trigger.psd
+%%WWWDIR%%/wwwroot/admin/resources/images/default/form/text-bg.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/default/form/trigger-square.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/default/form/trigger-square.psd
+%%WWWDIR%%/wwwroot/admin/resources/images/default/form/trigger-tpl.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/default/form/trigger.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/default/form/trigger.psd
+%%WWWDIR%%/wwwroot/admin/resources/images/default/gradient-bg.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/default/grid/arrow-left-white.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/default/grid/arrow-right-white.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/default/grid/col-move-bottom.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/default/grid/col-move-top.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/default/grid/columns.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/default/grid/dirty.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/default/grid/done.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/default/grid/drop-no.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/default/grid/drop-yes.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/default/grid/footer-bg.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/default/grid/grid-blue-hd.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/default/grid/grid-blue-split.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/default/grid/grid-hrow.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/default/grid/grid-loading.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/default/grid/grid-split.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/default/grid/grid-vista-hd.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/default/grid/grid3-hd-btn.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/default/grid/grid3-hrow-over.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/default/grid/grid3-hrow.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/default/grid/grid3-rowheader.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/default/grid/grid3-special-col-bg.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/default/grid/grid3-special-col-sel-bg.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/default/grid/group-by.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/default/grid/group-collapse.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/default/grid/group-expand-sprite.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/default/grid/group-expand.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/default/grid/hd-pop.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/default/grid/hmenu-asc.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/default/grid/hmenu-desc.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/default/grid/hmenu-lock.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/default/grid/hmenu-lock.png
+%%WWWDIR%%/wwwroot/admin/resources/images/default/grid/hmenu-unlock.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/default/grid/hmenu-unlock.png
+%%WWWDIR%%/wwwroot/admin/resources/images/default/grid/invalid_line.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/default/grid/loading.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/default/grid/mso-hd.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/default/grid/nowait.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/default/grid/page-first-disabled.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/default/grid/page-first.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/default/grid/page-last-disabled.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/default/grid/page-last.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/default/grid/page-next-disabled.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/default/grid/page-next.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/default/grid/page-prev-disabled.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/default/grid/page-prev.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/default/grid/pick-button.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/default/grid/refresh-disabled.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/default/grid/refresh.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/default/grid/row-check-sprite.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/default/grid/row-expand-sprite.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/default/grid/row-over.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/default/grid/row-sel.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/default/grid/sort-hd.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/default/grid/sort_asc.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/default/grid/sort_desc.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/default/grid/wait.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/default/layout/collapse.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/default/layout/expand.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/default/layout/gradient-bg.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/default/layout/mini-bottom.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/default/layout/mini-left.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/default/layout/mini-right.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/default/layout/mini-top.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/default/layout/ns-collapse.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/default/layout/ns-expand.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/default/layout/panel-close.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/default/layout/panel-title-bg.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/default/layout/panel-title-light-bg.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/default/layout/stick.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/default/layout/stuck.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/default/layout/tab-close-on.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/default/layout/tab-close.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/default/menu/checked.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/default/menu/group-checked.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/default/menu/item-over.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/default/menu/menu-parent.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/default/menu/menu.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/default/menu/unchecked.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/default/panel/corners-sprite.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/default/panel/left-right.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/default/panel/light-hd.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/default/panel/tool-sprite-tpl.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/default/panel/tool-sprites.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/default/panel/tools-sprites-trans.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/default/panel/top-bottom.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/default/panel/top-bottom.png
+%%WWWDIR%%/wwwroot/admin/resources/images/default/panel/white-corners-sprite.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/default/panel/white-left-right.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/default/panel/white-top-bottom.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/default/progress/progress-bg.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/default/qtip/bg.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/default/qtip/close.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/default/qtip/tip-anchor-sprite.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/default/qtip/tip-sprite.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/default/s.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/default/shadow-c.png
+%%WWWDIR%%/wwwroot/admin/resources/images/default/shadow-lr.png
+%%WWWDIR%%/wwwroot/admin/resources/images/default/shadow.png
+%%WWWDIR%%/wwwroot/admin/resources/images/default/shared/blue-loading.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/default/shared/calendar.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/default/shared/glass-bg.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/default/shared/hd-sprite.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/default/shared/large-loading.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/default/shared/left-btn.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/default/shared/loading-balls.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/default/shared/right-btn.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/default/shared/warning.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/default/sizer/e-handle-dark.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/default/sizer/e-handle.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/default/sizer/ne-handle-dark.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/default/sizer/ne-handle.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/default/sizer/nw-handle-dark.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/default/sizer/nw-handle.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/default/sizer/s-handle-dark.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/default/sizer/s-handle.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/default/sizer/se-handle-dark.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/default/sizer/se-handle.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/default/sizer/square.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/default/sizer/sw-handle-dark.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/default/sizer/sw-handle.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/default/slider/slider-bg.png
+%%WWWDIR%%/wwwroot/admin/resources/images/default/slider/slider-thumb.png
+%%WWWDIR%%/wwwroot/admin/resources/images/default/slider/slider-v-bg.png
+%%WWWDIR%%/wwwroot/admin/resources/images/default/slider/slider-v-thumb.png
+%%WWWDIR%%/wwwroot/admin/resources/images/default/tabs/scroll-left.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/default/tabs/scroll-right.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/default/tabs/scroller-bg.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/default/tabs/tab-btm-inactive-left-bg.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/default/tabs/tab-btm-inactive-right-bg.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/default/tabs/tab-btm-left-bg.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/default/tabs/tab-btm-over-left-bg.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/default/tabs/tab-btm-over-right-bg.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/default/tabs/tab-btm-right-bg.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/default/tabs/tab-close.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/default/tabs/tab-strip-bg.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/default/tabs/tab-strip-bg.png
+%%WWWDIR%%/wwwroot/admin/resources/images/default/tabs/tab-strip-btm-bg.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/default/tabs/tabs-sprite.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/default/toolbar/bg.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/default/toolbar/btn-arrow-light.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/default/toolbar/btn-arrow.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/default/toolbar/btn-over-bg.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/default/toolbar/gray-bg.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/default/toolbar/more.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/default/toolbar/tb-bg.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/default/toolbar/tb-btn-sprite.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/default/toolbar/tb-xl-btn-sprite.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/default/toolbar/tb-xl-sep.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/default/tree/arrows.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/default/tree/drop-add.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/default/tree/drop-between.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/default/tree/drop-no.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/default/tree/drop-over.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/default/tree/drop-under.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/default/tree/drop-yes.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/default/tree/elbow-end-minus-nl.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/default/tree/elbow-end-minus.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/default/tree/elbow-end-plus-nl.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/default/tree/elbow-end-plus.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/default/tree/elbow-end.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/default/tree/elbow-line.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/default/tree/elbow-minus-nl.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/default/tree/elbow-minus.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/default/tree/elbow-plus-nl.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/default/tree/elbow-plus.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/default/tree/elbow.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/default/tree/folder-open.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/default/tree/folder.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/default/tree/leaf.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/default/tree/loading.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/default/tree/s.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/default/window/icon-error.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/default/window/icon-info.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/default/window/icon-question.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/default/window/icon-warning.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/default/window/left-corners.png
+%%WWWDIR%%/wwwroot/admin/resources/images/default/window/left-corners.psd
+%%WWWDIR%%/wwwroot/admin/resources/images/default/window/left-right.png
+%%WWWDIR%%/wwwroot/admin/resources/images/default/window/left-right.psd
+%%WWWDIR%%/wwwroot/admin/resources/images/default/window/right-corners.png
+%%WWWDIR%%/wwwroot/admin/resources/images/default/window/right-corners.psd
+%%WWWDIR%%/wwwroot/admin/resources/images/default/window/top-bottom.png
+%%WWWDIR%%/wwwroot/admin/resources/images/default/window/top-bottom.psd
+%%WWWDIR%%/wwwroot/admin/resources/images/gray/button/btn-arrow.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/gray/button/btn-sprite.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/gray/button/btn.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/gray/button/group-cs.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/gray/button/group-lr.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/gray/button/group-tb.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/gray/button/s-arrow-bo.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/gray/button/s-arrow-o.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/gray/form/clear-trigger.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/gray/form/date-trigger.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/gray/form/search-trigger.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/gray/form/trigger-square.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/gray/form/trigger.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/gray/gradient-bg.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/gray/grid/col-move-bottom.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/gray/grid/col-move-top.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/gray/grid/grid3-hd-btn.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/gray/grid/grid3-hrow-over.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/gray/grid/grid3-hrow-over2.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/gray/grid/grid3-hrow.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/gray/grid/grid3-hrow2.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/gray/grid/grid3-special-col-bg.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/gray/grid/grid3-special-col-bg2.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/gray/grid/grid3-special-col-sel-bg.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/gray/grid/group-collapse.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/gray/grid/group-expand-sprite.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/gray/grid/group-expand.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/gray/grid/page-first.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/gray/grid/page-last.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/gray/grid/page-next.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/gray/grid/page-prev.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/gray/grid/refresh.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/gray/grid/row-expand-sprite.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/gray/grid/sort-hd.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/gray/grid/sort_asc.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/gray/grid/sort_desc.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/gray/menu/group-checked.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/gray/menu/item-over-disabled.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/gray/menu/item-over.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/gray/menu/menu-parent.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/gray/panel/corners-sprite.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/gray/panel/left-right.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/gray/panel/light-hd.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/gray/panel/tool-sprite-tpl.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/gray/panel/tool-sprites.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/gray/panel/tools-sprites-trans.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/gray/panel/top-bottom.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/gray/panel/top-bottom.png
+%%WWWDIR%%/wwwroot/admin/resources/images/gray/panel/white-corners-sprite.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/gray/panel/white-left-right.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/gray/panel/white-top-bottom.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/gray/progress/progress-bg.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/gray/qtip/bg.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/gray/qtip/close.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/gray/qtip/tip-anchor-sprite.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/gray/qtip/tip-sprite.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/gray/s.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/gray/shared/hd-sprite.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/gray/shared/left-btn.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/gray/shared/right-btn.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/gray/sizer/e-handle.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/gray/sizer/ne-handle.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/gray/sizer/nw-handle.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/gray/sizer/s-handle.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/gray/sizer/se-handle.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/gray/sizer/square.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/gray/sizer/sw-handle.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/gray/slider/slider-thumb.png
+%%WWWDIR%%/wwwroot/admin/resources/images/gray/slider/slider-v-thumb.png
+%%WWWDIR%%/wwwroot/admin/resources/images/gray/tabs/scroll-left.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/gray/tabs/scroll-right.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/gray/tabs/scroller-bg.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/gray/tabs/tab-btm-inactive-left-bg.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/gray/tabs/tab-btm-inactive-right-bg.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/gray/tabs/tab-btm-left-bg.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/gray/tabs/tab-btm-over-left-bg.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/gray/tabs/tab-btm-over-right-bg.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/gray/tabs/tab-btm-right-bg.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/gray/tabs/tab-close.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/gray/tabs/tab-strip-bg.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/gray/tabs/tab-strip-bg.png
+%%WWWDIR%%/wwwroot/admin/resources/images/gray/tabs/tab-strip-btm-bg.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/gray/tabs/tabs-sprite.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/gray/toolbar/bg.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/gray/toolbar/btn-arrow-light.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/gray/toolbar/btn-arrow.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/gray/toolbar/btn-over-bg.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/gray/toolbar/gray-bg.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/gray/toolbar/more.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/gray/toolbar/tb-bg.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/gray/toolbar/tb-btn-sprite.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/gray/tree/arrows.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/gray/tree/elbow-end-minus-nl.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/gray/tree/elbow-end-minus.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/gray/tree/elbow-end-plus-nl.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/gray/tree/elbow-end-plus.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/gray/window/icon-error.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/gray/window/icon-info.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/gray/window/icon-question.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/gray/window/icon-warning.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/gray/window/left-corners.png
+%%WWWDIR%%/wwwroot/admin/resources/images/gray/window/left-right.png
+%%WWWDIR%%/wwwroot/admin/resources/images/gray/window/right-corners.png
+%%WWWDIR%%/wwwroot/admin/resources/images/gray/window/top-bottom.png
+%%WWWDIR%%/wwwroot/admin/resources/images/vista/basic-dialog/bg-center.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/vista/basic-dialog/bg-left.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/vista/basic-dialog/bg-right.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/vista/basic-dialog/close.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/vista/basic-dialog/collapse.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/vista/basic-dialog/dlg-bg.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/vista/basic-dialog/e-handle.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/vista/basic-dialog/expand.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/vista/basic-dialog/hd-sprite.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/vista/basic-dialog/s-handle.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/vista/basic-dialog/se-handle.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/vista/basic-dialog/w-handle.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/vista/gradient-bg.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/vista/grid/grid-split.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/vista/grid/grid-vista-hd.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/vista/layout/collapse.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/vista/layout/expand.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/vista/layout/gradient-bg.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/vista/layout/ns-collapse.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/vista/layout/ns-expand.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/vista/layout/panel-close.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/vista/layout/panel-title-bg.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/vista/layout/panel-title-light-bg.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/vista/layout/stick.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/vista/layout/tab-close-on.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/vista/layout/tab-close.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/vista/qtip/bg.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/vista/qtip/tip-sprite.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/vista/s.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/vista/sizer/e-handle-dark.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/vista/sizer/e-handle.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/vista/sizer/ne-handle-dark.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/vista/sizer/ne-handle.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/vista/sizer/nw-handle-dark.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/vista/sizer/nw-handle.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/vista/sizer/s-handle-dark.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/vista/sizer/s-handle.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/vista/sizer/se-handle-dark.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/vista/sizer/se-handle.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/vista/sizer/sw-handle-dark.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/vista/sizer/sw-handle.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/vista/tabs/tab-btm-inactive-left-bg.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/vista/tabs/tab-btm-inactive-right-bg.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/vista/tabs/tab-btm-left-bg.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/vista/tabs/tab-btm-right-bg.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/vista/tabs/tab-sprite.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/vista/toolbar/gray-bg.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/vista/toolbar/tb-btn-sprite.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/yourtheme/README.txt
+%%WWWDIR%%/wwwroot/admin/resources/images/yourtheme/box/corners-blue.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/yourtheme/box/corners.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/yourtheme/box/l-blue.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/yourtheme/box/l.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/yourtheme/box/r-blue.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/yourtheme/box/r.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/yourtheme/box/tb-blue.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/yourtheme/box/tb.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/yourtheme/button/arrow.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/yourtheme/button/btn.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/yourtheme/button/group-cs.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/yourtheme/button/group-lr.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/yourtheme/button/group-tb.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/yourtheme/button/s-arrow-b-noline.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/yourtheme/button/s-arrow-b.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/yourtheme/button/s-arrow-bo.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/yourtheme/button/s-arrow-noline.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/yourtheme/button/s-arrow-o.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/yourtheme/button/s-arrow.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/yourtheme/dd/drop-add.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/yourtheme/dd/drop-no.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/yourtheme/dd/drop-yes.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/yourtheme/editor/tb-sprite.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/yourtheme/form/checkbox.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/yourtheme/form/clear-trigger.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/yourtheme/form/clear-trigger.psd
+%%WWWDIR%%/wwwroot/admin/resources/images/yourtheme/form/date-trigger.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/yourtheme/form/date-trigger.psd
+%%WWWDIR%%/wwwroot/admin/resources/images/yourtheme/form/error-tip-corners.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/yourtheme/form/exclamation.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/yourtheme/form/radio.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/yourtheme/form/search-trigger.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/yourtheme/form/search-trigger.psd
+%%WWWDIR%%/wwwroot/admin/resources/images/yourtheme/form/text-bg.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/yourtheme/form/trigger-square.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/yourtheme/form/trigger-square.psd
+%%WWWDIR%%/wwwroot/admin/resources/images/yourtheme/form/trigger-tpl.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/yourtheme/form/trigger.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/yourtheme/form/trigger.psd
+%%WWWDIR%%/wwwroot/admin/resources/images/yourtheme/gradient-bg.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/yourtheme/grid/arrow-left-white.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/yourtheme/grid/arrow-right-white.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/yourtheme/grid/col-move-bottom.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/yourtheme/grid/col-move-top.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/yourtheme/grid/columns.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/yourtheme/grid/dirty.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/yourtheme/grid/done.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/yourtheme/grid/drop-no.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/yourtheme/grid/drop-yes.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/yourtheme/grid/footer-bg.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/yourtheme/grid/grid-blue-hd.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/yourtheme/grid/grid-blue-split.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/yourtheme/grid/grid-hrow.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/yourtheme/grid/grid-loading.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/yourtheme/grid/grid-split.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/yourtheme/grid/grid-vista-hd.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/yourtheme/grid/grid3-hd-btn.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/yourtheme/grid/grid3-hrow-over.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/yourtheme/grid/grid3-hrow.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/yourtheme/grid/grid3-special-col-bg.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/yourtheme/grid/grid3-special-col-sel-bg.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/yourtheme/grid/group-by.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/yourtheme/grid/group-collapse.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/yourtheme/grid/group-expand-sprite.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/yourtheme/grid/group-expand.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/yourtheme/grid/hd-pop.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/yourtheme/grid/hmenu-asc.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/yourtheme/grid/hmenu-desc.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/yourtheme/grid/hmenu-lock.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/yourtheme/grid/hmenu-lock.png
+%%WWWDIR%%/wwwroot/admin/resources/images/yourtheme/grid/hmenu-unlock.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/yourtheme/grid/hmenu-unlock.png
+%%WWWDIR%%/wwwroot/admin/resources/images/yourtheme/grid/invalid_line.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/yourtheme/grid/loading.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/yourtheme/grid/mso-hd.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/yourtheme/grid/nowait.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/yourtheme/grid/page-first-disabled.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/yourtheme/grid/page-first.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/yourtheme/grid/page-last-disabled.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/yourtheme/grid/page-last.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/yourtheme/grid/page-next-disabled.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/yourtheme/grid/page-next.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/yourtheme/grid/page-prev-disabled.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/yourtheme/grid/page-prev.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/yourtheme/grid/pick-button.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/yourtheme/grid/refresh.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/yourtheme/grid/row-check-sprite.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/yourtheme/grid/row-expand-sprite.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/yourtheme/grid/row-over.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/yourtheme/grid/row-sel.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/yourtheme/grid/sort-hd.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/yourtheme/grid/sort_asc.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/yourtheme/grid/sort_desc.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/yourtheme/grid/wait.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/yourtheme/layout/collapse.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/yourtheme/layout/expand.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/yourtheme/layout/gradient-bg.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/yourtheme/layout/mini-bottom.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/yourtheme/layout/mini-left.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/yourtheme/layout/mini-right.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/yourtheme/layout/mini-top.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/yourtheme/layout/ns-collapse.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/yourtheme/layout/ns-expand.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/yourtheme/layout/panel-close.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/yourtheme/layout/panel-title-bg.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/yourtheme/layout/panel-title-light-bg.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/yourtheme/layout/stick.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/yourtheme/layout/stuck.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/yourtheme/layout/tab-close-on.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/yourtheme/layout/tab-close.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/yourtheme/menu/checked.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/yourtheme/menu/group-checked.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/yourtheme/menu/item-over.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/yourtheme/menu/menu-parent.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/yourtheme/menu/menu.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/yourtheme/menu/unchecked.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/yourtheme/panel/corners-sprite.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/yourtheme/panel/left-right.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/yourtheme/panel/light-hd.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/yourtheme/panel/tool-sprite-tpl.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/yourtheme/panel/tool-sprites.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/yourtheme/panel/tools-sprites-trans.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/yourtheme/panel/top-bottom.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/yourtheme/panel/top-bottom.png
+%%WWWDIR%%/wwwroot/admin/resources/images/yourtheme/panel/white-corners-sprite.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/yourtheme/panel/white-left-right.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/yourtheme/panel/white-top-bottom.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/yourtheme/progress/progress-bg.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/yourtheme/qtip/bg.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/yourtheme/qtip/close.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/yourtheme/qtip/tip-anchor-sprite.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/yourtheme/qtip/tip-sprite.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/yourtheme/s.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/yourtheme/shadow-c.png
+%%WWWDIR%%/wwwroot/admin/resources/images/yourtheme/shadow-lr.png
+%%WWWDIR%%/wwwroot/admin/resources/images/yourtheme/shadow.png
+%%WWWDIR%%/wwwroot/admin/resources/images/yourtheme/shared/blue-loading.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/yourtheme/shared/calendar.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/yourtheme/shared/glass-bg.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/yourtheme/shared/hd-sprite.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/yourtheme/shared/large-loading.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/yourtheme/shared/left-btn.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/yourtheme/shared/loading-balls.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/yourtheme/shared/right-btn.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/yourtheme/shared/warning.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/yourtheme/sizer/e-handle-dark.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/yourtheme/sizer/e-handle.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/yourtheme/sizer/ne-handle-dark.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/yourtheme/sizer/ne-handle.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/yourtheme/sizer/nw-handle-dark.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/yourtheme/sizer/nw-handle.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/yourtheme/sizer/s-handle-dark.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/yourtheme/sizer/s-handle.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/yourtheme/sizer/se-handle-dark.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/yourtheme/sizer/se-handle.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/yourtheme/sizer/square.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/yourtheme/sizer/sw-handle-dark.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/yourtheme/sizer/sw-handle.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/yourtheme/slider/slider-bg.png
+%%WWWDIR%%/wwwroot/admin/resources/images/yourtheme/slider/slider-thumb.png
+%%WWWDIR%%/wwwroot/admin/resources/images/yourtheme/slider/slider-v-bg.png
+%%WWWDIR%%/wwwroot/admin/resources/images/yourtheme/slider/slider-v-thumb.png
+%%WWWDIR%%/wwwroot/admin/resources/images/yourtheme/tabs/scroll-left.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/yourtheme/tabs/scroll-right.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/yourtheme/tabs/scroller-bg.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/yourtheme/tabs/tab-btm-inactive-left-bg.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/yourtheme/tabs/tab-btm-inactive-right-bg.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/yourtheme/tabs/tab-btm-left-bg.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/yourtheme/tabs/tab-btm-over-left-bg.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/yourtheme/tabs/tab-btm-over-right-bg.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/yourtheme/tabs/tab-btm-right-bg.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/yourtheme/tabs/tab-close.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/yourtheme/tabs/tab-strip-bg.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/yourtheme/tabs/tab-strip-bg.png
+%%WWWDIR%%/wwwroot/admin/resources/images/yourtheme/tabs/tab-strip-btm-bg.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/yourtheme/tabs/tabs-sprite.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/yourtheme/toolbar/bg.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/yourtheme/toolbar/btn-arrow-light.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/yourtheme/toolbar/btn-arrow.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/yourtheme/toolbar/btn-over-bg.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/yourtheme/toolbar/gray-bg.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/yourtheme/toolbar/more.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/yourtheme/toolbar/tb-bg.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/yourtheme/toolbar/tb-btn-sprite.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/yourtheme/toolbar/tb-xl-btn-sprite.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/yourtheme/toolbar/tb-xl-sep.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/yourtheme/tree/arrows.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/yourtheme/tree/drop-add.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/yourtheme/tree/drop-between.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/yourtheme/tree/drop-no.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/yourtheme/tree/drop-over.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/yourtheme/tree/drop-under.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/yourtheme/tree/drop-yes.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/yourtheme/tree/elbow-end-minus-nl.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/yourtheme/tree/elbow-end-minus.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/yourtheme/tree/elbow-end-plus-nl.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/yourtheme/tree/elbow-end-plus.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/yourtheme/tree/elbow-end.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/yourtheme/tree/elbow-line.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/yourtheme/tree/elbow-minus-nl.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/yourtheme/tree/elbow-minus.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/yourtheme/tree/elbow-plus-nl.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/yourtheme/tree/elbow-plus.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/yourtheme/tree/elbow.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/yourtheme/tree/folder-open.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/yourtheme/tree/folder.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/yourtheme/tree/leaf.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/yourtheme/tree/loading.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/yourtheme/tree/s.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/yourtheme/window/icon-error.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/yourtheme/window/icon-info.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/yourtheme/window/icon-question.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/yourtheme/window/icon-warning.gif
+%%WWWDIR%%/wwwroot/admin/resources/images/yourtheme/window/left-corners.png
+%%WWWDIR%%/wwwroot/admin/resources/images/yourtheme/window/left-corners.psd
+%%WWWDIR%%/wwwroot/admin/resources/images/yourtheme/window/left-right.png
+%%WWWDIR%%/wwwroot/admin/resources/images/yourtheme/window/left-right.psd
+%%WWWDIR%%/wwwroot/admin/resources/images/yourtheme/window/right-corners.png
+%%WWWDIR%%/wwwroot/admin/resources/images/yourtheme/window/right-corners.psd
+%%WWWDIR%%/wwwroot/admin/resources/images/yourtheme/window/top-bottom.png
+%%WWWDIR%%/wwwroot/admin/resources/images/yourtheme/window/top-bottom.psd
 %%WWWDIR%%/wwwroot/erlyvideo-sq.png
 %%WWWDIR%%/wwwroot/erlyvideo-t.png
 %%WWWDIR%%/wwwroot/erlyvideo.png
 %%WWWDIR%%/wwwroot/expressInstall.swf
 %%WWWDIR%%/wwwroot/favicon.ico
-%%WWWDIR%%/wwwroot/flowplayer/flowplayer-3.1.4.min.js
-%%WWWDIR%%/wwwroot/flowplayer/flowplayer-3.1.5.swf
 %%WWWDIR%%/wwwroot/flowplayer/flowplayer-3.2.4.min.js
 %%WWWDIR%%/wwwroot/flowplayer/flowplayer-3.2.5.swf
 %%WWWDIR%%/wwwroot/flowplayer/flowplayer.captions-3.2.2.swf
 %%WWWDIR%%/wwwroot/flowplayer/flowplayer.captions.js
 %%WWWDIR%%/wwwroot/flowplayer/flowplayer.content-3.2.0.swf
-%%WWWDIR%%/wwwroot/flowplayer/flowplayer.controls-3.1.5.swf
 %%WWWDIR%%/wwwroot/flowplayer/flowplayer.controls-3.2.3.swf
 %%WWWDIR%%/wwwroot/flowplayer/flowplayer.rtmp-3.1.3.swf
 %%WWWDIR%%/wwwroot/flowplayer/index.html
@@ -397,51 +1271,112 @@ lib/erlang/lib/rtsp-%%PORTVERSION%%/include/sdp.hrl
 %%WWWDIR%%/wwwroot/js/jsSO.js
 %%WWWDIR%%/wwwroot/js/netconnection.js
 %%WWWDIR%%/wwwroot/js/swfobject.js
-%%WWWDIR%%/wwwroot/jsSO/jsSO.mxml
-%%WWWDIR%%/wwwroot/jsSO/jsSO.swf
-%%WWWDIR%%/wwwroot/jsso.html
-%%WWWDIR%%/wwwroot/mini/index.html
-%%WWWDIR%%/wwwroot/mini/player/Player.as
-%%WWWDIR%%/wwwroot/mini/player/Player.swf
+%%WWWDIR%%/wwwroot/jwplayer/jwplayer.js
+%%WWWDIR%%/wwwroot/jwplayer/license.txt
+%%WWWDIR%%/wwwroot/jwplayer/player.swf
+%%WWWDIR%%/wwwroot/jwplayer/preview.jpg
+%%WWWDIR%%/wwwroot/jwplayer/swfobject.js
+%%WWWDIR%%/wwwroot/jwplayer/yt.swf
 %%WWWDIR%%/wwwroot/phone/Phone.as
 %%WWWDIR%%/wwwroot/phone/Phone.mxml
 %%WWWDIR%%/wwwroot/phone/Phone.swf
 %%WWWDIR%%/wwwroot/phone/index.html
-%%WWWDIR%%/wwwroot/push/push.as
-%%WWWDIR%%/wwwroot/push/push.swf
-%%WWWDIR%%/wwwroot/stats.html
-%%WWWDIR%%/wwwroot/stats/stats.as
-%%WWWDIR%%/wwwroot/stats/stats.mxml
-%%WWWDIR%%/wwwroot/stats/stats.swf
-%%WWWDIR%%/wwwroot/videoconf.html
-%%WWWDIR%%/wwwroot/videoconf/VideoContainer.as
-%%WWWDIR%%/wwwroot/videoconf/Videoconf.as
-%%WWWDIR%%/wwwroot/videoconf/Videoconf.mxml
-%%WWWDIR%%/wwwroot/videoconf/Videoconf.swf
-%%WWWDIR%%/wwwroot/videoconf/videoconf.as
-%%WWWDIR%%/wwwroot/videoconf/videoconf.mxml
-%%WWWDIR%%/wwwroot/videoconf/videoconf.swf
-@dirrm %%WWWDIR%%/wwwroot/videoconf
-@dirrm %%WWWDIR%%/wwwroot/stats
-@dirrm %%WWWDIR%%/wwwroot/push
 @dirrm %%WWWDIR%%/wwwroot/phone
-@dirrm %%WWWDIR%%/wwwroot/mini/player
-@dirrm %%WWWDIR%%/wwwroot/mini
-@dirrm %%WWWDIR%%/wwwroot/jsSO
+@dirrm %%WWWDIR%%/wwwroot/jwplayer
 @dirrm %%WWWDIR%%/wwwroot/js
 @dirrm %%WWWDIR%%/wwwroot/flowplayer
-@dirrm %%WWWDIR%%/wwwroot/conf/player
-@dirrm %%WWWDIR%%/wwwroot/conf/audio
-@dirrm %%WWWDIR%%/wwwroot/conf
-@dirrm %%WWWDIR%%/wwwroot/blueprint/src
-@dirrm %%WWWDIR%%/wwwroot/blueprint/plugins/rtl
-@dirrm %%WWWDIR%%/wwwroot/blueprint/plugins/link-icons/icons
-@dirrm %%WWWDIR%%/wwwroot/blueprint/plugins/link-icons
-@dirrm %%WWWDIR%%/wwwroot/blueprint/plugins/fancy-type
-@dirrm %%WWWDIR%%/wwwroot/blueprint/plugins/buttons/icons
-@dirrm %%WWWDIR%%/wwwroot/blueprint/plugins/buttons
-@dirrm %%WWWDIR%%/wwwroot/blueprint/plugins
-@dirrm %%WWWDIR%%/wwwroot/blueprint
+@dirrm %%WWWDIR%%/wwwroot/admin/resources/images/yourtheme/window
+@dirrm %%WWWDIR%%/wwwroot/admin/resources/images/yourtheme/tree
+@dirrm %%WWWDIR%%/wwwroot/admin/resources/images/yourtheme/toolbar
+@dirrm %%WWWDIR%%/wwwroot/admin/resources/images/yourtheme/tabs
+@dirrm %%WWWDIR%%/wwwroot/admin/resources/images/yourtheme/slider
+@dirrm %%WWWDIR%%/wwwroot/admin/resources/images/yourtheme/sizer
+@dirrm %%WWWDIR%%/wwwroot/admin/resources/images/yourtheme/shared
+@dirrm %%WWWDIR%%/wwwroot/admin/resources/images/yourtheme/qtip
+@dirrm %%WWWDIR%%/wwwroot/admin/resources/images/yourtheme/progress
+@dirrm %%WWWDIR%%/wwwroot/admin/resources/images/yourtheme/panel
+@dirrm %%WWWDIR%%/wwwroot/admin/resources/images/yourtheme/menu
+@dirrm %%WWWDIR%%/wwwroot/admin/resources/images/yourtheme/layout
+@dirrm %%WWWDIR%%/wwwroot/admin/resources/images/yourtheme/grid
+@dirrm %%WWWDIR%%/wwwroot/admin/resources/images/yourtheme/form
+@dirrm %%WWWDIR%%/wwwroot/admin/resources/images/yourtheme/editor
+@dirrm %%WWWDIR%%/wwwroot/admin/resources/images/yourtheme/dd
+@dirrm %%WWWDIR%%/wwwroot/admin/resources/images/yourtheme/button
+@dirrm %%WWWDIR%%/wwwroot/admin/resources/images/yourtheme/box
+@dirrm %%WWWDIR%%/wwwroot/admin/resources/images/yourtheme
+@dirrm %%WWWDIR%%/wwwroot/admin/resources/images/vista/toolbar
+@dirrm %%WWWDIR%%/wwwroot/admin/resources/images/vista/tabs
+@dirrm %%WWWDIR%%/wwwroot/admin/resources/images/vista/sizer
+@dirrm %%WWWDIR%%/wwwroot/admin/resources/images/vista/qtip
+@dirrm %%WWWDIR%%/wwwroot/admin/resources/images/vista/layout
+@dirrm %%WWWDIR%%/wwwroot/admin/resources/images/vista/grid
+@dirrm %%WWWDIR%%/wwwroot/admin/resources/images/vista/basic-dialog
+@dirrm %%WWWDIR%%/wwwroot/admin/resources/images/vista
+@dirrm %%WWWDIR%%/wwwroot/admin/resources/images/gray/window
+@dirrm %%WWWDIR%%/wwwroot/admin/resources/images/gray/tree
+@dirrm %%WWWDIR%%/wwwroot/admin/resources/images/gray/toolbar
+@dirrm %%WWWDIR%%/wwwroot/admin/resources/images/gray/tabs
+@dirrm %%WWWDIR%%/wwwroot/admin/resources/images/gray/slider
+@dirrm %%WWWDIR%%/wwwroot/admin/resources/images/gray/sizer
+@dirrm %%WWWDIR%%/wwwroot/admin/resources/images/gray/shared
+@dirrm %%WWWDIR%%/wwwroot/admin/resources/images/gray/qtip
+@dirrm %%WWWDIR%%/wwwroot/admin/resources/images/gray/progress
+@dirrm %%WWWDIR%%/wwwroot/admin/resources/images/gray/panel
+@dirrm %%WWWDIR%%/wwwroot/admin/resources/images/gray/menu
+@dirrm %%WWWDIR%%/wwwroot/admin/resources/images/gray/grid
+@dirrm %%WWWDIR%%/wwwroot/admin/resources/images/gray/form
+@dirrm %%WWWDIR%%/wwwroot/admin/resources/images/gray/button
+@dirrm %%WWWDIR%%/wwwroot/admin/resources/images/gray
+@dirrm %%WWWDIR%%/wwwroot/admin/resources/images/default/window
+@dirrm %%WWWDIR%%/wwwroot/admin/resources/images/default/tree
+@dirrm %%WWWDIR%%/wwwroot/admin/resources/images/default/toolbar
+@dirrm %%WWWDIR%%/wwwroot/admin/resources/images/default/tabs
+@dirrm %%WWWDIR%%/wwwroot/admin/resources/images/default/slider
+@dirrm %%WWWDIR%%/wwwroot/admin/resources/images/default/sizer
+@dirrm %%WWWDIR%%/wwwroot/admin/resources/images/default/shared
+@dirrm %%WWWDIR%%/wwwroot/admin/resources/images/default/qtip
+@dirrm %%WWWDIR%%/wwwroot/admin/resources/images/default/progress
+@dirrm %%WWWDIR%%/wwwroot/admin/resources/images/default/panel
+@dirrm %%WWWDIR%%/wwwroot/admin/resources/images/default/menu
+@dirrm %%WWWDIR%%/wwwroot/admin/resources/images/default/layout
+@dirrm %%WWWDIR%%/wwwroot/admin/resources/images/default/grid
+@dirrm %%WWWDIR%%/wwwroot/admin/resources/images/default/form
+@dirrm %%WWWDIR%%/wwwroot/admin/resources/images/default/editor
+@dirrm %%WWWDIR%%/wwwroot/admin/resources/images/default/dd
+@dirrm %%WWWDIR%%/wwwroot/admin/resources/images/default/button
+@dirrm %%WWWDIR%%/wwwroot/admin/resources/images/default/box
+@dirrm %%WWWDIR%%/wwwroot/admin/resources/images/default
+@dirrm %%WWWDIR%%/wwwroot/admin/resources/images/access/window
+@dirrm %%WWWDIR%%/wwwroot/admin/resources/images/access/tree
+@dirrm %%WWWDIR%%/wwwroot/admin/resources/images/access/toolbar
+@dirrm %%WWWDIR%%/wwwroot/admin/resources/images/access/tabs
+@dirrm %%WWWDIR%%/wwwroot/admin/resources/images/access/slider
+@dirrm %%WWWDIR%%/wwwroot/admin/resources/images/access/sizer
+@dirrm %%WWWDIR%%/wwwroot/admin/resources/images/access/shared
+@dirrm %%WWWDIR%%/wwwroot/admin/resources/images/access/qtip
+@dirrm %%WWWDIR%%/wwwroot/admin/resources/images/access/progress
+@dirrm %%WWWDIR%%/wwwroot/admin/resources/images/access/panel
+@dirrm %%WWWDIR%%/wwwroot/admin/resources/images/access/menu
+@dirrm %%WWWDIR%%/wwwroot/admin/resources/images/access/grid
+@dirrm %%WWWDIR%%/wwwroot/admin/resources/images/access/form
+@dirrm %%WWWDIR%%/wwwroot/admin/resources/images/access/editor
+@dirrm %%WWWDIR%%/wwwroot/admin/resources/images/access/button
+@dirrm %%WWWDIR%%/wwwroot/admin/resources/images/access/box
+@dirrm %%WWWDIR%%/wwwroot/admin/resources/images/access
+@dirrm %%WWWDIR%%/wwwroot/admin/resources/images
+@dirrm %%WWWDIR%%/wwwroot/admin/resources/css/visual
+@dirrm %%WWWDIR%%/wwwroot/admin/resources/css/theme-gray
+@dirrm %%WWWDIR%%/wwwroot/admin/resources/css/theme-access
+@dirrm %%WWWDIR%%/wwwroot/admin/resources/css/structure
+@dirrm %%WWWDIR%%/wwwroot/admin/resources/css
+@dirrm %%WWWDIR%%/wwwroot/admin/resources
+@dirrm %%WWWDIR%%/wwwroot/admin/images
+@dirrm %%WWWDIR%%/wwwroot/admin/adapter/yui
+@dirrm %%WWWDIR%%/wwwroot/admin/adapter/prototype
+@dirrm %%WWWDIR%%/wwwroot/admin/adapter/jquery
+@dirrm %%WWWDIR%%/wwwroot/admin/adapter/ext
+@dirrm %%WWWDIR%%/wwwroot/admin/adapter
+@dirrm %%WWWDIR%%/wwwroot/admin
 @dirrm %%WWWDIR%%/wwwroot
 @dirrm %%WWWDIR%%
 @dirrm lib/erlang/lib/rtsp-%%PORTVERSION%%/include
@@ -460,6 +1395,8 @@ lib/erlang/lib/rtsp-%%PORTVERSION%%/include/sdp.hrl
 @dirrm lib/erlang/lib/log4erl-%%PORTVERSION%%/include
 @dirrm lib/erlang/lib/log4erl-%%PORTVERSION%%/ebin
 @dirrm lib/erlang/lib/log4erl-%%PORTVERSION%%
+@dirrm lib/erlang/lib/ibrowse-2.1.3/ebin
+@dirrm lib/erlang/lib/ibrowse-2.1.3
 @dirrm lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/tpl
 @dirrm lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/test
 @dirrm lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/rtmp/shared_objects
@@ -492,20 +1429,7 @@ lib/erlang/lib/rtsp-%%PORTVERSION%%/include/sdp.hrl
 @dirrm lib/erlang/lib/amf-%%PORTVERSION%%
 @dirrmtry %%ETCDIR%%
 @cwd /var
-lib/%%PORTNAME%%/snmp/ERLYVIDEO-MIB.funcs
-lib/%%PORTNAME%%/snmp/ERLYVIDEO-MIB.mib
-lib/%%PORTNAME%%/snmp/agent/conf/agent.conf
-lib/%%PORTNAME%%/snmp/agent/conf/community.conf
-lib/%%PORTNAME%%/snmp/agent/conf/context.conf
-lib/%%PORTNAME%%/snmp/agent/conf/standard.conf
-lib/%%PORTNAME%%/snmp/agent/conf/usm.conf
-lib/%%PORTNAME%%/snmp/agent/conf/vacm.conf
-@dirrmtry lib/%%PORTNAME%%/snmp/agent/conf
-@exec /bin/mkdir %D/lib/%%PORTNAME%%/snmp/agent/db
-@dirrmtry lib/%%PORTNAME%%/snmp/agent/db
-@dirrmtry lib/%%PORTNAME%%/snmp/agent
-@dirrmtry lib/%%PORTNAME%%/snmp
-@exec /bin/mkdir %D/lib/%%PORTNAME%%/movies
+@exec /bin/mkdir -p %D/lib/%%PORTNAME%%/movies
 @dirrmtry lib/%%PORTNAME%%/movies
 @exec /bin/mkdir %D/lib/%%PORTNAME%%/plugins
 @dirrmtry lib/%%PORTNAME%%/plugins

@@ -1,4 +1,4 @@
-## New ports collection makefile for:   erlyvideo
+# New ports collection makefile for:    erlyvideo
 # Date created:                         14 January 2011
 # Whom:                                 Ruslan Mahmatkhanov <cvs-src@yandex.ru>
 #
@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	erlyvideo
-PORTVERSION=	2.5.11
+PORTVERSION=	2.6.3
 CATEGORIES=	net
 MASTER_SITES=	http://host5.webstroy.ru/
-DISTNAME=	${PORTNAME}-${PORTNAME}-v${PORTVERSION}-0-g${GITVERSION}
 
 MAINTAINER=	cvs-src@yandex.ru
 COMMENT=	RTMP flash streaming server written in erlang
@@ -26,15 +25,13 @@ USE_GMAKE=	yes
 ERLANGDIR=	${PREFIX}/lib/erlang
 ERLYDIR=	${ERLANGDIR}/lib/${PORTNAME}-${PORTVERSION}
 ERLYVIDEO=	ebin src include lib Emakefile
-GITVERSION=	25cf0c2
-FETCH_ARGS=	-pRr
-DEPSLIST=	amf log4erl erlydtl erlmedia mpegts rtmp rtp rtsp
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTNAME}-1cf9504
+DEPSLIST=	amf log4erl erlydtl erlmedia mpegts rtmp rtp rtsp ibrowse
 PLIST_SUB=	PORTNAME=${PORTNAME} PORTVERSION=${PORTVERSION}
 
 post-patch:
 	@${REINPLACE_CMD} -e 's#/etc/#${PREFIX}/etc/#g' \
-		${WRKSRC}/src/${PORTNAME}.erl ${WRKSRC}/contrib/erlyctl
+		${WRKSRC}/src/${PORTNAME}.erl ${WRKSRC}/contrib/erlyctl \
+		${WRKSRC}/deps/erlmedia/src/ems_log.erl
 	@${REINPLACE_CMD} -e 's#"wwwroot"#"${PREFIX}/www/${PORTNAME}/wwwroot"#g' \
 		${WRKSRC}/priv/${PORTNAME}.conf.sample
 	@${REINPLACE_CMD} -e 's#"movies"#"/var/lib/${PORTNAME}/movies"#g' \
@@ -59,9 +56,8 @@ do-install:
 	${CP} ${WRKSRC}/priv/${PORTNAME}.conf.sample ${ETCDIR}/${PORTNAME}.conf.sample
 	${CP} ${WRKSRC}/priv/log4erl.conf.debian ${ETCDIR}/log4erl.conf.sample
 	${CP} ${WRKSRC}/priv/production.config.debian ${ETCDIR}/production.config.sample
-	(cd ${WRKSRC} && ${COPYTREE_SHARE} snmp /var/lib/${PORTNAME})
 .for dep in ${DEPSLIST}
-	cd ${WRKSRC}/deps/${dep} && make DESTROOT= ERLANG_ROOT=${ERLANGDIR} \
+	cd ${WRKSRC}/deps/${dep} && ${GMAKE} DESTROOT= ERLANG_ROOT=${ERLANGDIR} \
 	VERSION=${PORTVERSION} install
 .endfor
 .include <bsd.port.mk>
