@@ -7,7 +7,7 @@
 
 PORTNAME=	scriptaculous
 PORTVERSION=	1.8.1.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www python
 MASTER_SITES=	http://static.ossdl.de/tgwidgets/downloads/ \
 		http://nivi.interfree.it/distfiles/${PORTNAME}/
@@ -17,7 +17,7 @@ DISTNAME=	Scriptaculous-${PORTVERSION}
 MAINTAINER=	python@FreeBSD.org
 COMMENT=	Scriptaculous packaged as TurboGears widgets
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}TurboGears>=1.0.1:${PORTSDIR}/www/py-turbogears
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}TurboGears>=1.1.2:${PORTSDIR}/www/py-turbogears
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PYDISTUTILS_PKGNAME=	Scriptaculous

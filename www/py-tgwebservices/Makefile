@@ -7,7 +7,7 @@
 
 PORTNAME=	tgwebservices
 PORTVERSION=	1.2.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP \
 		LOCAL/nivit/${PYTGWEBSERVICES}/
@@ -17,7 +17,7 @@ DISTNAME=	TGWebServices-${PORTVERSION}
 MAINTAINER=	python@FreeBSD.org
 COMMENT=	Multiprotocol Web Services for TurboGears
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}TurboGears>=1.0.1:${PORTSDIR}/www/py-turbogears \
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}TurboGears>=1.1.2:${PORTSDIR}/www/py-turbogears \
 		${PYTHON_PKGNAMEPREFIX}Genshi>=0.3.6:${PORTSDIR}/textproc/py-genshi
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
