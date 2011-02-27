@@ -8,6 +8,7 @@
 
 PORTNAME=	freecell-solver
 PORTVERSION=	3.6.0
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://freebsd.unixfreunde.de/sources/ \
 		BERLIOS/fc-solve
@@ -39,7 +40,7 @@ CFLAGS+=	-I${LOCALBASE}/include
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_TCMALLOC)
-LIB_DEPENDS+=	tcmalloc.0:${PORTSDIR}/devel/google-perftools
+LIB_DEPENDS+=	tcmalloc.1:${PORTSDIR}/devel/google-perftools
 CMAKE_ARGS+=	-DFCS_USE_TCMALLOC:BOOL=ON
 .endif
 
