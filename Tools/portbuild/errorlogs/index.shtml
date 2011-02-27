@@ -830,6 +830,12 @@ probably looking for an <tt>a.out</tt> object (e.g.,
 <tt>crt0.o</tt>).</dd>
 
 <dt><img alt="(uncommon)" src="/errorlogs/images/purple-ball.gif"><a name=
+"elf">f77</a></dt>
+
+<dd><tt>gcc</td> in base no longer includes the <tt>Fortran</tt> compiler
+by default.</dd>
+
+<dt><img alt="(uncommon)" src="/errorlogs/images/purple-ball.gif"><a name=
 "ffs_conflict">ffs conflict</a></dt>
 
 <dd>Both <tt>/usr/include/machine/cpufunc.h</tt> and
@@ -909,6 +915,11 @@ of <tt>${REINPLACE_COMMAND}</tt> but having left
 "stl">stl</a></dt>
 
 <dd>Your port requires the <tt>STL</tt> library but cannot find it.</dd>
+
+<dt><img alt="(uncommon)" src="/errorlogs/images/purple-ball.gif"><a name=
+"wait">uname</a></dt>
+
+<dd>For a short period of time, gcc was not handling uname properly.</dd>
 
 <dt><img alt="(uncommon)" src="/errorlogs/images/purple-ball.gif"><a name=
 "values.h">values.h</a></dt>
