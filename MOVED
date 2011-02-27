@@ -1552,3 +1552,4 @@ security/py-hashlib||2011-02-25|Removed, part of python since python25
 www/py-hashlib||2011-02-25|Removed, part of python since python25
 x11/gstreamer-plugins-vdpau|multimedia/gstreamer-plugins-vdpau|2011-02-25|Move to the multimedia category
 x11/gir-repository-babl|x11/babl|2011-02-25|Merged into babl
+net/gnet|net/gnet2|2011-02-27|It is no longer maintained as well as updated, try to use net/gnet2
