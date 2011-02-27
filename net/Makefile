@@ -184,7 +184,6 @@
     SUBDIR += gkrellmwireless
     SUBDIR += gkrellmwireless2
     SUBDIR += glflow
-    SUBDIR += gnet
     SUBDIR += gnet2
     SUBDIR += gnetcat
     SUBDIR += gnoemoe
