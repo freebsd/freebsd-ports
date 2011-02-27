@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	Net_LDAP2
-PORTVERSION=	2.0.7
-PORTREVISION=	1
+PORTVERSION=	2.0.11
 PORTEPOCH=	1
 CATEGORIES=	net pear
 
@@ -17,6 +16,7 @@ COMMENT=	OO interface for searching and manipulating LDAP-entries
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
 RUN_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
 
+PEAR_CATSRC=	yes
 USE_PHP=	ldap
 CATEGORY=	Net
 FILES=		LDAP2.php LDAP2/LDIF.php \
