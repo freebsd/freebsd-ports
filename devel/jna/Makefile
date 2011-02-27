@@ -19,10 +19,8 @@ COMMENT=	Java access to native shared libraries
 USE_ANT=	yes
 USE_GMAKE=	yes
 USE_JAVA=	1.4+
-USE_XLIB=	yes
 USE_ZIP=	yes
-
-BROKEN=		does not build
+USE_XORG=       x11 xt
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 DOCSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}-doc
