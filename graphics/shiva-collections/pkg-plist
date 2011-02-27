@@ -1,0 +1,35 @@
+share/OpenGTL/shiva/kernels/AntiBullify.shiva
+share/OpenGTL/shiva/kernels/Bullify.shiva
+share/OpenGTL/shiva/kernels/Caleidoscope.shiva
+share/OpenGTL/shiva/kernels/CentralAbsorbtion.shiva
+share/OpenGTL/shiva/kernels/CheckerBoard.shiva
+share/OpenGTL/shiva/kernels/ConcentricCircles.shiva
+share/OpenGTL/shiva/kernels/Contraction.shiva
+share/OpenGTL/shiva/kernels/Disco.shiva
+share/OpenGTL/shiva/kernels/Droste.shiva
+share/OpenGTL/shiva/kernels/Expansion.shiva
+share/OpenGTL/shiva/kernels/FractalExplorer.shiva
+share/OpenGTL/shiva/kernels/LensCorrection.shiva
+share/OpenGTL/shiva/kernels/MandelbrotSet.shiva
+share/OpenGTL/shiva/kernels/Metaball.shiva
+share/OpenGTL/shiva/kernels/MirrorImpose.shiva
+share/OpenGTL/shiva/kernels/Moire.shiva
+share/OpenGTL/shiva/kernels/Mosaic.shiva
+share/OpenGTL/shiva/kernels/PerlinNoise.shiva
+share/OpenGTL/shiva/kernels/RadialGradient.shiva
+share/OpenGTL/shiva/kernels/Ripples.shiva
+share/OpenGTL/shiva/kernels/RotativeBlur.shiva
+share/OpenGTL/shiva/kernels/Roundify.shiva
+share/OpenGTL/shiva/kernels/Sea.shiva
+share/OpenGTL/shiva/kernels/Sectorize.shiva
+share/OpenGTL/shiva/kernels/Singleball.shiva
+share/OpenGTL/shiva/kernels/Slices.shiva
+share/OpenGTL/shiva/kernels/Something.shiva
+share/OpenGTL/shiva/kernels/StereographicProjection.shiva
+share/OpenGTL/shiva/kernels/SunRay.shiva
+share/OpenGTL/shiva/kernels/SuperNova.shiva
+share/OpenGTL/shiva/kernels/ZigZag.shiva
+share/OpenGTL/shiva/kernels/oilify.shiva
+@dirrm share/OpenGTL/shiva/kernels
+@dirrmtry share/OpenGTL/shiva
+@dirrmtry share/OpenGTL
