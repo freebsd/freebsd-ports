@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	scrotwm
-PORTVERSION=	0.9.27
+PORTVERSION=	0.9.28
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://opensource.conformal.com/snapshots/scrotwm/ \
 		http://scrotwm.org/snapshot/
