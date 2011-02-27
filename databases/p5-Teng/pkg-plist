@@ -1,0 +1,21 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Teng/.packlist
+%%SITE_PERL%%/Teng.pm
+%%SITE_PERL%%/Teng/Iterator.pm
+%%SITE_PERL%%/Teng/Plugin/BulkInsert.pm
+%%SITE_PERL%%/Teng/Plugin/Count.pm
+%%SITE_PERL%%/Teng/Plugin/FindOrCreate.pm
+%%SITE_PERL%%/Teng/Plugin/Pager.pm
+%%SITE_PERL%%/Teng/Plugin/Pager/MySQLFoundRows.pm
+%%SITE_PERL%%/Teng/Plugin/Replace.pm
+%%SITE_PERL%%/Teng/QueryBuilder.pm
+%%SITE_PERL%%/Teng/Row.pm
+%%SITE_PERL%%/Teng/Schema.pm
+%%SITE_PERL%%/Teng/Schema/Declare.pm
+%%SITE_PERL%%/Teng/Schema/Dumper.pm
+%%SITE_PERL%%/Teng/Schema/Loader.pm
+%%SITE_PERL%%/Teng/Schema/Table.pm
+@dirrm %%SITE_PERL%%/Teng/Schema
+@dirrm %%SITE_PERL%%/Teng/Plugin/Pager
+@dirrm %%SITE_PERL%%/Teng/Plugin
+@dirrm %%SITE_PERL%%/Teng
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Teng
