@@ -251,17 +251,20 @@
 %%WWWDIR%%/system/installer/sqlite.php
 %%WWWDIR%%/system/installer/style.css
 %%WWWDIR%%/system/installer/theme.php
-%%WWWDIR%%/system/locale/da/LC_MESSAGES/habari-da.po
+%%WWWDIR%%/system/locale/ca/LC_MESSAGES/habari.mo
 %%WWWDIR%%/system/locale/da/LC_MESSAGES/habari.mo
-%%WWWDIR%%/system/locale/de/LC_MESSAGES/habari-de.po
 %%WWWDIR%%/system/locale/de/LC_MESSAGES/habari.mo
+%%WWWDIR%%/system/locale/en-gb/LC_MESSAGES/habari.mo
 %%WWWDIR%%/system/locale/en-us/LC_MESSAGES/habari.mo
-%%WWWDIR%%/system/locale/en-us/LC_MESSAGES/habari.po
+%%WWWDIR%%/system/locale/es/LC_MESSAGES/habari.mo
+%%WWWDIR%%/system/locale/fr/LC_MESSAGES/habari.mo
 %%WWWDIR%%/system/locale/habari.pot
 %%WWWDIR%%/system/locale/index.html
-%%WWWDIR%%/system/locale/ja/LC_MESSAGES/habari-ja.po
+%%WWWDIR%%/system/locale/it/LC_MESSAGES/habari.mo
 %%WWWDIR%%/system/locale/ja/LC_MESSAGES/habari.mo
-%%WWWDIR%%/system/locale/zh-tw/LC_MESSAGES/habari-zh_TW.po
+%%WWWDIR%%/system/locale/pl/LC_MESSAGES/habari.mo
+%%WWWDIR%%/system/locale/pt/LC_MESSAGES/habari.mo
+%%WWWDIR%%/system/locale/zh-cn/LC_MESSAGES/habari.mo
 %%WWWDIR%%/system/locale/zh-tw/LC_MESSAGES/habari.mo
 %%WWWDIR%%/system/plugins/coredashmodules/coredashmodules.plugin.php
 %%WWWDIR%%/system/plugins/coredashmodules/coredashmodules.plugin.xml
@@ -468,14 +471,30 @@
 @dirrm %%WWWDIR%%/system/plugins
 @dirrm %%WWWDIR%%/system/locale/zh-tw/LC_MESSAGES
 @dirrm %%WWWDIR%%/system/locale/zh-tw
+@dirrm %%WWWDIR%%/system/locale/zh-cn/LC_MESSAGES
+@dirrm %%WWWDIR%%/system/locale/zh-cn
+@dirrm %%WWWDIR%%/system/locale/pt/LC_MESSAGES
+@dirrm %%WWWDIR%%/system/locale/pt
+@dirrm %%WWWDIR%%/system/locale/pl/LC_MESSAGES
+@dirrm %%WWWDIR%%/system/locale/pl
 @dirrm %%WWWDIR%%/system/locale/ja/LC_MESSAGES
 @dirrm %%WWWDIR%%/system/locale/ja
+@dirrm %%WWWDIR%%/system/locale/it/LC_MESSAGES
+@dirrm %%WWWDIR%%/system/locale/it
+@dirrm %%WWWDIR%%/system/locale/fr/LC_MESSAGES
+@dirrm %%WWWDIR%%/system/locale/fr
+@dirrm %%WWWDIR%%/system/locale/es/LC_MESSAGES
+@dirrm %%WWWDIR%%/system/locale/es
 @dirrm %%WWWDIR%%/system/locale/en-us/LC_MESSAGES
 @dirrm %%WWWDIR%%/system/locale/en-us
+@dirrm %%WWWDIR%%/system/locale/en-gb/LC_MESSAGES
+@dirrm %%WWWDIR%%/system/locale/en-gb
 @dirrm %%WWWDIR%%/system/locale/de/LC_MESSAGES
 @dirrm %%WWWDIR%%/system/locale/de
 @dirrm %%WWWDIR%%/system/locale/da/LC_MESSAGES
 @dirrm %%WWWDIR%%/system/locale/da
+@dirrm %%WWWDIR%%/system/locale/ca/LC_MESSAGES
+@dirrm %%WWWDIR%%/system/locale/ca
 @dirrm %%WWWDIR%%/system/locale
 @dirrm %%WWWDIR%%/system/installer/images
 @dirrm %%WWWDIR%%/system/installer
