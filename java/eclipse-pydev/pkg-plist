@@ -54,11 +54,9 @@ lib/eclipse/plugins/com.python.pydev_%%PORTVERSION%%/LICENSE.TXT
 lib/eclipse/plugins/com.python.pydev_%%PORTVERSION%%/META-INF/APTANA.DSA
 lib/eclipse/plugins/com.python.pydev_%%PORTVERSION%%/META-INF/APTANA.SF
 lib/eclipse/plugins/com.python.pydev_%%PORTVERSION%%/META-INF/MANIFEST.MF
-lib/eclipse/plugins/com.python.pydev_%%PORTVERSION%%/activation.jar
 lib/eclipse/plugins/com.python.pydev_%%PORTVERSION%%/icons/class_hi.gif
 lib/eclipse/plugins/com.python.pydev_%%PORTVERSION%%/icons/python_file.gif
 lib/eclipse/plugins/com.python.pydev_%%PORTVERSION%%/icons/searchm_obj.gif
-lib/eclipse/plugins/com.python.pydev_%%PORTVERSION%%/mail.jar
 lib/eclipse/plugins/com.python.pydev_%%PORTVERSION%%/plugin.properties
 lib/eclipse/plugins/com.python.pydev_%%PORTVERSION%%/plugin.xml
 lib/eclipse/plugins/com.python.pydev_%%PORTVERSION%%/pydev.jar
@@ -115,25 +113,42 @@ lib/eclipse/plugins/org.python.pydev.debug_%%PORTVERSION%%/icons/breakmarker.gif
 lib/eclipse/plugins/org.python.pydev.debug_%%PORTVERSION%%/icons/breakmarker_conditional.gif
 lib/eclipse/plugins/org.python.pydev.debug_%%PORTVERSION%%/icons/breakmarker_gray.gif
 lib/eclipse/plugins/org.python.pydev.debug_%%PORTVERSION%%/icons/breakmarker_gray_conditional.gif
+lib/eclipse/plugins/org.python.pydev.debug_%%PORTVERSION%%/icons/failures.gif
 lib/eclipse/plugins/org.python.pydev.debug_%%PORTVERSION%%/icons/greendot.gif
 lib/eclipse/plugins/org.python.pydev.debug_%%PORTVERSION%%/icons/greendot_big.gif
 lib/eclipse/plugins/org.python.pydev.debug_%%PORTVERSION%%/icons/ironpython_run.png
 lib/eclipse/plugins/org.python.pydev.debug_%%PORTVERSION%%/icons/ironpython_unit.png
-lib/eclipse/plugins/org.python.pydev.debug_%%PORTVERSION%%/icons/junit.gif
 lib/eclipse/plugins/org.python.pydev.debug_%%PORTVERSION%%/icons/jython_run.png
 lib/eclipse/plugins/org.python.pydev.debug_%%PORTVERSION%%/icons/jython_unit.png
+lib/eclipse/plugins/org.python.pydev.debug_%%PORTVERSION%%/icons/ovr16/error_ovr.gif
+lib/eclipse/plugins/org.python.pydev.debug_%%PORTVERSION%%/icons/ovr16/failed_ovr.gif
+lib/eclipse/plugins/org.python.pydev.debug_%%PORTVERSION%%/icons/ovr16/success_ovr.gif
 lib/eclipse/plugins/org.python.pydev.debug_%%PORTVERSION%%/icons/python_16x16.png
 lib/eclipse/plugins/org.python.pydev.debug_%%PORTVERSION%%/icons/python_coverage.png
 lib/eclipse/plugins/org.python.pydev.debug_%%PORTVERSION%%/icons/python_refactor.png
 lib/eclipse/plugins/org.python.pydev.debug_%%PORTVERSION%%/icons/python_run.png
 lib/eclipse/plugins/org.python.pydev.debug_%%PORTVERSION%%/icons/python_unit.png
+lib/eclipse/plugins/org.python.pydev.debug_%%PORTVERSION%%/icons/pyunit.png
+lib/eclipse/plugins/org.python.pydev.debug_%%PORTVERSION%%/icons/pyunit_old.png
 lib/eclipse/plugins/org.python.pydev.debug_%%PORTVERSION%%/icons/reddot.GIF
 lib/eclipse/plugins/org.python.pydev.debug_%%PORTVERSION%%/icons/testerrors_ovr.gif
 lib/eclipse/plugins/org.python.pydev.debug_%%PORTVERSION%%/icons/testfailures_ovr.gif
 lib/eclipse/plugins/org.python.pydev.debug_%%PORTVERSION%%/icons/watch_exp.gif
 lib/eclipse/plugins/org.python.pydev.debug_%%PORTVERSION%%/plugin.xml
 lib/eclipse/plugins/org.python.pydev.debug_%%PORTVERSION%%/pydev-debug.jar
+lib/eclipse/plugins/org.python.pydev.debug_%%PORTVERSION%%/pysrc/_pydev_SimpleXMLRPCServer.py
+lib/eclipse/plugins/org.python.pydev.debug_%%PORTVERSION%%/pysrc/_pydev_getopt.py
+lib/eclipse/plugins/org.python.pydev.debug_%%PORTVERSION%%/pysrc/_pydev_xmlrpclib.py
 lib/eclipse/plugins/org.python.pydev.debug_%%PORTVERSION%%/pysrc/coverage.py
+lib/eclipse/plugins/org.python.pydev.debug_%%PORTVERSION%%/pysrc/pydev_imports.py
+lib/eclipse/plugins/org.python.pydev.debug_%%PORTVERSION%%/pysrc/pydev_localhost.py
+lib/eclipse/plugins/org.python.pydev.debug_%%PORTVERSION%%/pysrc/pydev_runfiles.py
+lib/eclipse/plugins/org.python.pydev.debug_%%PORTVERSION%%/pysrc/pydev_runfiles_nose.py
+lib/eclipse/plugins/org.python.pydev.debug_%%PORTVERSION%%/pysrc/pydev_runfiles_parallel.py
+lib/eclipse/plugins/org.python.pydev.debug_%%PORTVERSION%%/pysrc/pydev_runfiles_parallel_client.py
+lib/eclipse/plugins/org.python.pydev.debug_%%PORTVERSION%%/pysrc/pydev_runfiles_pytest.py
+lib/eclipse/plugins/org.python.pydev.debug_%%PORTVERSION%%/pysrc/pydev_runfiles_unittest.py
+lib/eclipse/plugins/org.python.pydev.debug_%%PORTVERSION%%/pysrc/pydev_runfiles_xml_rpc.py
 lib/eclipse/plugins/org.python.pydev.debug_%%PORTVERSION%%/pysrc/pydevd.py
 lib/eclipse/plugins/org.python.pydev.debug_%%PORTVERSION%%/pysrc/pydevd_additional_thread_info.py
 lib/eclipse/plugins/org.python.pydev.debug_%%PORTVERSION%%/pysrc/pydevd_comm.py
@@ -205,6 +220,7 @@ lib/eclipse/plugins/org.python.pydev.django_templates_%%PORTVERSION%%/icons/djan
 lib/eclipse/plugins/org.python.pydev.django_templates_%%PORTVERSION%%/icons/element.gif
 lib/eclipse/plugins/org.python.pydev.django_templates_%%PORTVERSION%%/plugin.properties
 lib/eclipse/plugins/org.python.pydev.django_templates_%%PORTVERSION%%/plugin.xml
+lib/eclipse/plugins/org.python.pydev.django_templates_%%PORTVERSION%%/retroweaver-rt.jar
 lib/eclipse/plugins/org.python.pydev.django_templates_%%PORTVERSION%%/templates/default-templates-filters.xml
 lib/eclipse/plugins/org.python.pydev.django_templates_%%PORTVERSION%%/templates/default-templates-tags.xml
 lib/eclipse/plugins/org.python.pydev.django_templates_%%PORTVERSION%%/templates/default-templates.xml
@@ -623,6 +639,8 @@ lib/eclipse/plugins/org.python.pydev_%%PORTVERSION%%/PySrc/interpreterInfo.py
 lib/eclipse/plugins/org.python.pydev_%%PORTVERSION%%/PySrc/jyimportsTipper.py
 lib/eclipse/plugins/org.python.pydev_%%PORTVERSION%%/PySrc/pycompletion.py
 lib/eclipse/plugins/org.python.pydev_%%PORTVERSION%%/PySrc/pycompletionserver.py
+lib/eclipse/plugins/org.python.pydev_%%PORTVERSION%%/PySrc/pydev_imports.py
+lib/eclipse/plugins/org.python.pydev_%%PORTVERSION%%/PySrc/pydev_localhost.py
 lib/eclipse/plugins/org.python.pydev_%%PORTVERSION%%/PySrc/pydev_sitecustomize/sitecustomize.py
 lib/eclipse/plugins/org.python.pydev_%%PORTVERSION%%/PySrc/pydevconsole.py
 lib/eclipse/plugins/org.python.pydev_%%PORTVERSION%%/PySrc/pydevconsole_code_for_ironpython.py
@@ -652,6 +670,7 @@ lib/eclipse/plugins/org.python.pydev_%%PORTVERSION%%/icons/decoration_static_obj
 lib/eclipse/plugins/org.python.pydev_%%PORTVERSION%%/icons/environment_obj.gif
 lib/eclipse/plugins/org.python.pydev_%%PORTVERSION%%/icons/error_small.gif
 lib/eclipse/plugins/org.python.pydev_%%PORTVERSION%%/icons/expand.gif
+lib/eclipse/plugins/org.python.pydev_%%PORTVERSION%%/icons/failures.gif
 lib/eclipse/plugins/org.python.pydev_%%PORTVERSION%%/icons/field_private_obj.gif
 lib/eclipse/plugins/org.python.pydev_%%PORTVERSION%%/icons/field_protected_obj.gif
 lib/eclipse/plugins/org.python.pydev_%%PORTVERSION%%/icons/field_public_obj.gif
@@ -661,6 +680,7 @@ lib/eclipse/plugins/org.python.pydev_%%PORTVERSION%%/icons/filter.gif
 lib/eclipse/plugins/org.python.pydev_%%PORTVERSION%%/icons/folder.gif
 lib/eclipse/plugins/org.python.pydev_%%PORTVERSION%%/icons/forward_nav.gif
 lib/eclipse/plugins/org.python.pydev_%%PORTVERSION%%/icons/gotten_from.txt
+lib/eclipse/plugins/org.python.pydev_%%PORTVERSION%%/icons/history_list.gif
 lib/eclipse/plugins/org.python.pydev_%%PORTVERSION%%/icons/home_nav.gif
 lib/eclipse/plugins/org.python.pydev_%%PORTVERSION%%/icons/jar_desc_obj.gif
 lib/eclipse/plugins/org.python.pydev_%%PORTVERSION%%/icons/jar_l_obj.gif
@@ -713,6 +733,7 @@ lib/eclipse/plugins/org.python.pydev_%%PORTVERSION%%/icons/python_unit.png
 lib/eclipse/plugins/org.python.pydev_%%PORTVERSION%%/icons/refresh_nav.gif
 lib/eclipse/plugins/org.python.pydev_%%PORTVERSION%%/icons/relaunch.png
 lib/eclipse/plugins/org.python.pydev_%%PORTVERSION%%/icons/relaunch1.png
+lib/eclipse/plugins/org.python.pydev_%%PORTVERSION%%/icons/relaunch_errors.png
 lib/eclipse/plugins/org.python.pydev_%%PORTVERSION%%/icons/remove.gif
 lib/eclipse/plugins/org.python.pydev_%%PORTVERSION%%/icons/remove_nature.png
 lib/eclipse/plugins/org.python.pydev_%%PORTVERSION%%/icons/sample.gif
@@ -786,6 +807,7 @@ lib/eclipse/plugins/org.python.pydev_%%PORTVERSION%%/retroweaver-rt.jar
 @dirrm lib/eclipse/plugins/org.python.pydev.debug_%%PORTVERSION%%/pysrc/tests/samples
 @dirrm lib/eclipse/plugins/org.python.pydev.debug_%%PORTVERSION%%/pysrc/tests
 @dirrm lib/eclipse/plugins/org.python.pydev.debug_%%PORTVERSION%%/pysrc
+@dirrm lib/eclipse/plugins/org.python.pydev.debug_%%PORTVERSION%%/icons/ovr16
 @dirrm lib/eclipse/plugins/org.python.pydev.debug_%%PORTVERSION%%/icons
 @dirrm lib/eclipse/plugins/org.python.pydev.debug_%%PORTVERSION%%/META-INF
 @dirrm lib/eclipse/plugins/org.python.pydev.debug_%%PORTVERSION%%
@@ -818,8 +840,10 @@ lib/eclipse/plugins/org.python.pydev_%%PORTVERSION%%/retroweaver-rt.jar
 @dirrm lib/eclipse/plugins/com.python.pydev.analysis_%%PORTVERSION%%/icons
 @dirrm lib/eclipse/plugins/com.python.pydev.analysis_%%PORTVERSION%%/META-INF
 @dirrm lib/eclipse/plugins/com.python.pydev.analysis_%%PORTVERSION%%
-@dirrm lib/eclipse/plugins
+@dirrmtry lib/eclipse/plugins
 @dirrm lib/eclipse/features/org.python.pydev.feature_%%PORTVERSION%%/META-INF
 @dirrm lib/eclipse/features/org.python.pydev.feature_%%PORTVERSION%%
 @dirrm lib/eclipse/features/org.python.pydev.django_templates.feature_%%PORTVERSION%%/META-INF
 @dirrm lib/eclipse/features/org.python.pydev.django_templates.feature_%%PORTVERSION%%
+@dirrmtry lib/eclipse/features
+@exec mkdir -p %D/lib/eclipse/plugins/com.python.pydev.codecompletion_%%PORTVERSION%%/icons
