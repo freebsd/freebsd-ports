@@ -7,6 +7,7 @@
 
 PORTNAME=	DBIx-Class-Schema-Loader
 PORTVERSION=	0.07009
+PORTREVISION=	1
 CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	../../authors/id/R/RK/RKITOVER
@@ -19,7 +20,6 @@ RUN_DEPENDS=	\
 	p5-Data-Dump>1.06:${PORTSDIR}/devel/p5-Data-Dump \
 	p5-Lingua-EN-Inflect-Number>=1.1:${PORTSDIR}/textproc/p5-Lingua-EN-Inflect-Number \
 	p5-Lingua-EN-Inflect-Phrase>=0.02:${PORTSDIR}/textproc/p5-Lingua-EN-Inflect-Phrase \
-	p5-Digest-MD5>=2.36:${PORTSDIR}/security/p5-Digest-MD5 \
 	p5-Class-Accessor-Grouped>=0.10002:${PORTSDIR}/devel/p5-Class-Accessor-Grouped \
 	p5-MRO-Compat>=0.09:${PORTSDIR}/devel/p5-MRO-Compat \
 	p5-Class-C3-Componentised>=1.0008:${PORTSDIR}/devel/p5-Class-C3-Componentised \
@@ -64,7 +64,6 @@ RUN_DEPENDS+=	p5-DBD-Oracle>=0.19:${PORTSDIR}/databases/p5-DBD-Oracle
 .endif
 
 PERL_CONFIGURE=	5.8.0+
-CONFIGURE_ARGS=	--skipdeps
 
 MAN1=	dbicdump.1
 MAN3=	DBIx::Class::Schema::Loader.3 \
