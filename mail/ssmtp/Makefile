@@ -6,46 +6,48 @@
 #
 
 PORTNAME=	ssmtp
-PORTVERSION=	2.62.3
+PORTVERSION=	2.64
 CATEGORIES=	mail ipv6
 MASTER_SITES=	${MASTER_SITE_DEBIAN_POOL}
-DISTNAME=	${PORTNAME}_2.62.orig
+DISTFILES=	${PORTNAME}_${PORTVERSION}.orig${EXTRACT_SUFX}
 
 MAINTAINER=	aragon@phat.za.net
 COMMENT=	Extremely simple MTA to get mail off the system to a mail hub
 
-WRKSRC=		${WRKDIR}/${PORTNAME}
-
+USE_BZIP2=	yes
 USE_OPENSSL=	yes
-
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
+GROUPS=		ssmtp
+SHAREGRP=	ssmtp
+BINMODE=	2555
+SHAREMODE=	640
+BINGRP=		ssmtp
+
+SUB_FILES+=	pkg-message
+PKGMESSAGE=	${WRKDIR}/pkg-message
+CONFIGURE_ARGS=	--enable-ssl --enable-md5auth
 MAKE_ENV+=	TARGET_ARCH=
-
-SSMTP_GROUP=	ssmtp
-SSMTP_GID=	916
-
-SUB_FILES=	pkg-install pkg-deinstall pkg-message
-SUB_LIST+=	SSMTP_GROUP="${SSMTP_GROUP}" \
-		SSMTP_GID="${SSMTP_GID}" \
-		ETCDIR="${ETCDIR}" \
-		CHOWN="${CHOWN}" CHMOD="${CHMOD}" PW="${PW}"
-
-CONFIGURE_ARGS=	--enable-ssl
 CFLAGS+=	-I${OPENSSLINC}
 LDFLAGS+=	-L${OPENSSLLIB}
 MAILERCONF=	/etc/mail/mailer.conf
 
 MAN8=		ssmtp.8
+MAN5=		ssmtp.conf.5
 
-.include <bsd.port.pre.mk>
+OPTIONS=	LOGFILE		"Enable log file" off \
+		IPV6		"Enable IPv6 support" on \
+		USERPREFS	"Enable user defined revaliases" on \
+		XORIGIP		"Add X-Originating-IP header" on \
+
+.include <bsd.port.options.mk>
 
 .if defined(WITH_LOGFILE)
 CONFIGURE_ARGS+=	--enable-logfile
 .endif
 
-.if defined(WITH_MD5AUTH)
-CONFIGURE_ARGS+=	--enable-md5auth
+.if defined(WITH_XORIGIP)
+EXTRA_PATCHES=	${FILESDIR}/remote-addr.patch
 .endif
 
 .if !defined(WITHOUT_IPV6)
@@ -73,14 +75,15 @@ replace:
 	@${ECHO_CMD} "hoststat	/usr/bin/true" >> ${MAILERCONF}
 	@${ECHO_CMD} "purgestat	/usr/bin/true" >> ${MAILERCONF}
 
-pre-su-install:
-	@${SETENV} ${SCRIPTS_ENV} PKG_PREFIX=${PREFIX} \
-		${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
-
-post-install:
-	@${SETENV} ${SCRIPTS_ENV} PKG_PREFIX=${PREFIX} \
-		${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
-
+do-install:
+	@${INSTALL_PROGRAM} ${WRKSRC}/ssmtp ${PREFIX}/sbin/ssmtp
+	@${MKDIR} ${PREFIX}/etc/ssmtp
+	@${CHMOD} 750 ${PREFIX}/etc/ssmtp
+	@${CHGRP} ${SHAREGRP} ${PREFIX}/etc/ssmtp
+	@${INSTALL_DATA} ${WRKSRC}/revaliases ${PREFIX}/etc/ssmtp/revaliases.sample
+	@${INSTALL_DATA} ${WRKSRC}/ssmtp.conf ${PREFIX}/etc/ssmtp/ssmtp.conf.sample
+	@${INSTALL_MAN} ${WRKSRC}/ssmtp.8 ${MANPREFIX}/man/man8/ssmtp.8
+	@${INSTALL_MAN} ${WRKSRC}/ssmtp.conf.5 ${MANPREFIX}/man/man5/ssmtp.conf.5
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
