@@ -8,9 +8,9 @@
 PORTNAME=	cwdaemon
 PORTVERSION=	0.9.4
 CATEGORIES=	comms hamradio
-MASTER_SITES=	http://pg4i.chronos.org.uk/download/ \
-		http://www.qsl.net/pg4i/download/
-DIST_SUBDIR=	${PORTNAME}
+MASTER_SITES=	http://www.chronos.org.uk/download/ \
+		${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	db
 
 MAINTAINER=	db@FreeBSD.org
 COMMENT=	Amateur Radio cw (morse code) keyer daemon
