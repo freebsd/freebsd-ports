@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Crypt_CHAP
-PORTVERSION=	1.0.2
+PORTVERSION=	1.5.0
 CATEGORIES=	security www pear
 
 MAINTAINER=	miwi@FreeBSD.org
@@ -19,7 +19,7 @@ USE_PHP=	mcrypt mhash
 
 CATEGORY=	Crypt
 FILES=		CHAP.php
-TESTS=		chaptest.php
+TESTS=		Crypt_CHAP.phpt
 
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/devel/pear/bsd.pear.mk"
