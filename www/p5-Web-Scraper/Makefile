@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Web-Scraper
-PORTVERSION=	0.33
+PORTVERSION=	0.34
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	../by-authors/id/M/MI/MIYAGAWA
@@ -28,6 +28,9 @@ RUN_DEPENDS=	p5-HTML-Parser>0:${PORTSDIR}/www/p5-HTML-Parser \
 		p5-libwww>=5.827:${PORTSDIR}/www/p5-libwww
 
 PERL_CONFIGURE=	5.8.1+
+
+LICENSE_COMB=	dual
+LICENSE=	ART20 GPLv1
 
 MAN3=		Web::Scraper.3 Web::Scraper::Filter.3 Web::Scraper::LibXML.3
 
