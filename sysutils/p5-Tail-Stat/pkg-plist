@@ -1,3 +1,4 @@
+bin/tstatd
 %%SITE_PERL%%/Tail/Stat.pm
 %%SITE_PERL%%/Tail/Stat/Plugin.pm
 %%SITE_PERL%%/Tail/Stat/Plugin/apache.pm
