@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	nfdump
-PORTVERSION=	1.6.2
+PORTVERSION=	1.6.3p1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	SF/${PORTNAME}/stable/${PORTNAME}-${PORTVERSION}
 
@@ -22,6 +22,9 @@ LICENSE_FILE=	${WRKSRC}/BSD-license.txt
 #flow-tools support
 OPTIONS=	FT2NFDUMP	"With Flow-tools to nfdump converter" off \
 		NFPROFILE	"With nfprofile  (nfsen requires it)" on \
+		FIXTIMEBUG      "With fixing swap time bug of some v5" off \
+		READPCAP        "With pcap support" off \
+		NFTRACK         "With PortTracker support" off \
 		SFLOW		"Build sflow collector daemon also" off
 
 .include <bsd.port.pre.mk>
@@ -32,18 +35,29 @@ OPTIONS=	FT2NFDUMP	"With Flow-tools to nfdump converter" off \
 CONFIGURE_ARGS=		--enable-compat15
 .endif
 
-PLIST_FILES=	bin/nfcapd bin/nfdump bin/nfreplay bin/nfexpire
-MAN1=		nfcapd.1 nfdump.1 nfreplay.1 nfexpire.1
-MAN1+=		nfprofile.1 ft2nfdump.1 sfcapd.1
+PLIST_FILES=	bin/nfanon bin/nfcapd bin/nfdump bin/nfexpire bin/nfreplay
+MAN1=		nfanon.1 nfcapd.1 nfdump.1 nfexpire.1 nfreplay.1
+MAN1+=		ft2nfdump.1 nfprofile.1 sfcapd.1
 PORTDOCS=	AUTHORS ChangeLog INSTALL README
 
-.if defined(WITH_NFPROFILE)
+.if defined(WITH_FIXTIMEBUG)
+CONFIGURE_ARGS+=	--enable-fixtimebug
+.endif
 
-CONFIGURE_ARGS+=	--enable-nfprofile --with-rrdpath=${LOCALBASE}
+.if defined(WITH_NFPROFILE)
+CONFIGURE_ARGS+=	--enable-nfprofile
 PLIST_FILES+=	bin/nfprofile
-#MAN1+=		nfprofile.1
+.endif
+
+.if defined(WITH_NFTRACK)
+CONFIGURE_ARGS+=	--enable-nftrack
+PLIST_FILES+=	bin/nftrack
+.endif
+
+.if defined(WITH_NFPROFILE) || defined(WITH_NFTRACK)
+CONFIGURE_ARGS+=	--with-rrdpath=${LOCALBASE}
 BUILD_DEPENDS+=	rrdtool:${PORTSDIR}/databases/rrdtool
-RUN_DEPENDS+=	${BUILD_DEPENDS}
+RUN_DEPENDS+=	rrdtool:${PORTSDIR}/databases/rrdtool
 .endif
 
 #flow-tools support
@@ -51,7 +65,10 @@ RUN_DEPENDS+=	${BUILD_DEPENDS}
 BUILD_DEPENDS+=		flow-cat:${PORTSDIR}/net-mgmt/flow-tools
 CONFIGURE_ARGS+=	--enable-ftconv --with-ftpath=${LOCALBASE}
 PLIST_FILES+=	bin/ft2nfdump
-#MAN1+=		ft2nfdump.1
+.endif
+
+.if defined (WITH_READPCAP)
+CONFIGURE_ARGS+=	--enable-readpcap
 .endif
 
 #sflow capture support
@@ -60,6 +77,9 @@ CONFIGURE_ARGS+=	--enable-sflow
 PLIST_FILES+=	bin/sfcapd
 #MAN1+=		sfcapd.1
 .endif
+
+post-configure:
+	@${REINPLACE_CMD} -E -e 's/sfcapd\.1/sfcapd\.1 nfanon\.1/' ${WRKSRC}/man/Makefile
 
 .if !defined(NOPORTDOCS)
 post-install:
