@@ -1,17 +1,20 @@
+==============================================================================
 
-To use this software package, you need to properly configure and enable an application and
-database server. These components need to be enabled, respectively, in /etc/rc.conf.
+To use this software package, you need to properly configure and enable an
+application and database server. These components need to be enabled,
+respectively, in /etc/rc.conf.
 
 The %%DATABASE%% schema and default security credentials have been copied to:
 
-%%JSHOME%%/jasperserverCreate-%%DATABASE%%.ddl
+- %%JSHOME%%/js-create.ddl
+- %%JSHOME%%/quartz.ddl 
 and 
-%%JSHOME%%/jasperserverCreateDefaultSecurity-%%DATABASE%%.sql 
+- %%JSHOME%%/jasperserverCreateDefaultSecurity-%%DATABASE%%.sql 
 
 Take necessary precautions before loading this sql into the %%PORTNAME%% database.
 
 To create the %%PORTNAME%% database, you may choose to run the following target against
-%%PORTSDIR%%/databases/%%PORTNAME%%-%%PORTVERSION%%-src/%%PORTNAME%%/buildomatic/js-ant
+%%SRCDIR%%/%%PORTNAME%%/buildomatic/js-ant
 
 ./js-ant create-js-db (Creates the %%PORTNAME%% database)
 
@@ -20,4 +23,25 @@ If the %%PORTNAME%% database already exists, you may need to first drop the data
 
 Alternatively, you may choose to use the following method to create a suitable database:
  (mysql) mysql> create database jasperserver character set utf8;
+ (postgresql) create database jasperserver;
 
+
+==============  W A R N I N G   I M P O R T A N T   N O T E  =================
+
+If UPGRADING from 3.5.0 to 4.0:
+(taken from release notes of 4.0 from vendor)
+
+If you are upgrading from an older JasperServer version such as 3.5 then you
+must first upgrade to JasperServer 3.7 before upgrading to 4.0.
+Upgrading directly from JasperServer 3.5 to 4.0 is not a "certified" (i.e. fully
+QA tested) procedure.
+
+The steps to carry out this operation are fully documented in the JasperReports
+Server Installation Guide for the 3.7 release.  You will need to download the 
+JasperServer 3.7 release package to get the relevant files and documentation.
+To download the JasperServer 3.7 WAR file distribution zip package, go to the
+JasperForge.org website and to the JasperServer project.
+
+==============  W A R N I N G   I M P O R T A N T   N O T E  =================
+
+WWW: http://jasperforge.org/projects/jasperserver
