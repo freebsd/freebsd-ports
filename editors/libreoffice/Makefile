@@ -6,9 +6,8 @@
 #
 
 PORTNAME=	libreoffice
-PORTVERSION=	3.3.0
-PORTREVISION=	4
-LOVERSION=	3.3.0.4
+PORTVERSION=	3.3.1
+LOVERSION=	${PORTVERSION}.2
 CATEGORIES=	editors
 MASTER_SITES=	http://download.documentfoundation.org/libreoffice/src/ \
 		http://humppa.hu/libreoffice/ \
@@ -316,7 +315,8 @@ post-install:
 	@${RM} ${LODESTDIR}/${PREFIX}/share/applications/*.desktop
 	@${MV} ${LODESTDIR}/${PREFIX}/share/mime/packages/openoffice.xml ${LODESTDIR}/${PREFIX}/share/mime/packages/libreoffice.xml
 
-	@for img in ${LODESTDIR}/${PREFIX}/share/icons/hicolor/*/apps/ooo-* ${LODESTDIR}/${PREFIX}/share/pixmaps/ooo-*; do ${MV} $$img `${ECHO_CMD} $$img | ${SED} "s/ooo-/libreoffice-/"`; done
+	@for img in ${LODESTDIR}/${PREFIX}/share/icons/hicolor/*/apps/ooo-*; do ${MV} $$img `${ECHO_CMD} $$img | ${SED} "s/ooo-/libreoffice-/"`; done
+	@for pix in ${LODESTDIR}/${PREFIX}/share/pixmaps/ooo-*; do ${RM} $$pix; ${LN} -sf ${PREFIX}/share/icons/hicolor/48x48/`${BASENAME} $$pix | ${SED} "s/ooo-/libreoffice-/"` ${LODESTDIR}/${PREFIX}/share/pixmaps/; done
 .for component in base calc draw math impress writer
 	@cd ${LODESTDIR}/${PREFIX}/share/applications; ${LN} -s ../../lib/${PORTNAME}/share/xdg/${component}.desktop ${PORTNAME}-${component}.desktop
 .endfor
