@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	petite-chez
-PORTVERSION=	8.1
+PORTVERSION=	8.2
 CATEGORIES=	lang scheme
 MASTER_SITES=	http://www.scheme.com/download/ \
 		http://tx97.net/pub/distfiles/
