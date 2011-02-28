@@ -16,6 +16,8 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A CD player for the WindowMaker dock
 
+BROKEN=		does not build
+
 PLIST_FILES=	bin/wmcdplay
 WRKSRC=		${WRKDIR}/wmcdplay
 
