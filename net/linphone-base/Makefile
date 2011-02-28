@@ -10,7 +10,7 @@ PORTVERSION=	3.2.1
 PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES?=	net
-MASTER_SITES=	SAVANNAH/${PORTNAME}/stable/sources
+MASTER_SITES=	SAVANNAH/${PORTNAME}/3.2.x/sources
 
 MAINTAINER=	sylvio@FreeBSD.org
 COMMENT=	A web phone that supports SIP protocol
