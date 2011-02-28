@@ -16,6 +16,8 @@ COMMENT=	X.Org fpit input driver
 XORG_CAT=	driver
 USE_XORG=	xrandr
 
+BROKEN=		does not compile
+
 MAN4=		fpit.4x
 
 .include <bsd.port.mk>

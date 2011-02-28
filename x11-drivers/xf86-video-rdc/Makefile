@@ -18,6 +18,8 @@ COMMENT=	X.Org RDC display driver
 XORG_CAT=	driver
 USE_XORG=	xvmc xf86driproto xextproto x11 glproto
 
+BROKEN=		does not compile
+
 do-install:
 	${MKDIR} ${PREFIX}/lib/xorg/modules/drivers
 	${INSTALL_PROGRAM} ${WRKSRC}/src/.libs/rdc_drv.so \
