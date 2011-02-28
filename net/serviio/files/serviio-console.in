@@ -1,0 +1,17 @@
+#!/bin/sh
+### ====================================================================== ###
+##                                                                          ##
+##  Serviio Console ript                                                    ##
+##                                                                          ##
+### ====================================================================== ###
+
+SERVIIO_CONSOLE_HOME=%%JAVAJARDIR%%/serviio
+
+# Setup the classpath
+SERVIIO_CONSOLE_CLASS_PATH="$SERVIIO_CONSOLE_HOME/serviio-client.jar:$SERVIIO_CONSOLE_HOME/serviio.jar:$SERVIIO_CONSOLE_HOME/log4j.jar:$SERVIIO_CONSOLE_HOME/slf4j-api.jar:$SERVIIO_CONSOLE_HOME/slf4j-log4j12.jar:$SERVIIO_CONSOLE_HOME/jul-to-slf4j.jar:$SERVIIO_CONSOLE_HOME/org.restlet.jar:$SERVIIO_CONSOLE_HOME/org.restlet.ext.xstream.jar:$SERVIIO_CONSOLE_HOME/xstream.jar"
+
+# Setup Serviio specific properties
+JAVA_OPTS="-Dserviio.home=$SERVIIO_CONSOLE_HOME -Djava.net.preferIPv4Stack=true -Dffmpeg.location=%%LOCALBASE%%/bin/ffmpeg -Dlog4j.configuration=file:%%ETCDIR%%/console-log4j.properties"
+
+# Execute the JVM in the foreground
+exec java $JAVA_OPTS "$@" -classpath "$SERVIIO_CONSOLE_CLASS_PATH" org.serviio.console.ServiioConsole

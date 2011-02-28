@@ -1005,6 +1005,7 @@
     SUBDIR += ser
     SUBDIR += serveez
     SUBDIR += service-discovery-applet
+    SUBDIR += serviio
     SUBDIR += sflowtool
     SUBDIR += sharity-light
     SUBDIR += shelldap
