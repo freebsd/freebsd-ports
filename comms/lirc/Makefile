@@ -7,7 +7,7 @@
 
 PORTNAME=	lirc
 PORTVERSION=	0.9.0p1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	comms
 MASTER_SITES=	http://lirc.org/software/snapshots/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/p1/-pre1/}
