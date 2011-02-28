@@ -10,7 +10,7 @@ PORTNAME?=	vim
 #		! _NEVER_ reduce or lower PATCHLEVEL, even if the PATCHLEVEL
 #		! value # is added to BADPATCHES.  Doing otherwise will cause
 #		! PORTEPOCH to be needed, which we do NOT want.
-PATCHLEVEL=	81
+PATCHLEVEL=	121
 PORTVERSION=	7.3.${PATCHLEVEL}
 RELEASE=	vim-${PORTVERSION:C/\.[0-9a-z]*$//}
 PORTREVISION?=	0
