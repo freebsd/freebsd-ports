@@ -1557,3 +1557,4 @@ www/py-turbodjango||2011-02-27|Removed, part of python since python25
 www/py-turbosetup||2011-02-27|Removed, part of python since python25
 textproc/py-csv||2011-02-27|Removed, part of python since python25
 devel/py-uuid||2011-02-27|Removed, part of python since python25
+graphics/libv3d||2011-02-28|Has expired: unmaintained and failed to build for months

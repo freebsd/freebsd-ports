@@ -486,7 +486,6 @@
     SUBDIR += libsvg
     SUBDIR += libsvg-cairo
     SUBDIR += libungif
-    SUBDIR += libv3d
     SUBDIR += libvisual
     SUBDIR += libvisual-plugins
     SUBDIR += libvisual04
