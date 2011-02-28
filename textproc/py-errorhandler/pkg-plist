@@ -6,12 +6,9 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/errorhandler/__init__.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/errorhandler/__init__.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/errorhandler/__init__.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/errorhandler/license.txt
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/errorhandler/readme.txt
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/errorhandler/tests.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/errorhandler/tests.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/errorhandler/tests.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/errorhandler/version.txt
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/errorhandler
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%
