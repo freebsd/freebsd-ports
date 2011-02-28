@@ -859,6 +859,37 @@ share/doc/HTML/en/kmymoney/transactionform.png
 share/doc/HTML/en/kmymoney/translist.png
 share/doc/HTML/en/kmymoney/value_widget.png
 share/doc/HTML/en/kmymoney/whatsnew.docbook
+share/doc/HTML/es/kmymoney/common
+share/doc/HTML/es/kmymoney/credits.docbook
+share/doc/HTML/es/kmymoney/details-accounts.docbook
+share/doc/HTML/es/kmymoney/details-budgets.docbook
+share/doc/HTML/es/kmymoney/details-categories.docbook
+share/doc/HTML/es/kmymoney/details-currencies.docbook
+share/doc/HTML/es/kmymoney/details-database.docbook
+share/doc/HTML/es/kmymoney/details-forecast.docbook
+share/doc/HTML/es/kmymoney/details-formats.docbook
+share/doc/HTML/es/kmymoney/details-impexp.docbook
+share/doc/HTML/es/kmymoney/details-institutions.docbook
+share/doc/HTML/es/kmymoney/details-investments.docbook
+share/doc/HTML/es/kmymoney/details-ledgers.docbook
+share/doc/HTML/es/kmymoney/details-loans.docbook
+share/doc/HTML/es/kmymoney/details-payees.docbook
+share/doc/HTML/es/kmymoney/details-reconciliation.docbook
+share/doc/HTML/es/kmymoney/details-reports.docbook
+share/doc/HTML/es/kmymoney/details-schedules.docbook
+share/doc/HTML/es/kmymoney/details-search.docbook
+share/doc/HTML/es/kmymoney/details-settings.docbook
+share/doc/HTML/es/kmymoney/details-widgets.docbook
+share/doc/HTML/es/kmymoney/faq.docbook
+share/doc/HTML/es/kmymoney/firsttime.docbook
+share/doc/HTML/es/kmymoney/index.cache.bz2
+share/doc/HTML/es/kmymoney/index.docbook
+share/doc/HTML/es/kmymoney/installation.docbook
+share/doc/HTML/es/kmymoney/introduction.docbook
+share/doc/HTML/es/kmymoney/makemostof.docbook
+share/doc/HTML/es/kmymoney/man-kmymoney.1.docbook
+share/doc/HTML/es/kmymoney/reference.docbook
+share/doc/HTML/es/kmymoney/whatsnew.docbook
 share/doc/HTML/it/kmymoney/common
 share/doc/HTML/it/kmymoney/credits.docbook
 share/doc/HTML/it/kmymoney/details-accounts.docbook
@@ -1090,6 +1121,7 @@ share/mime/packages/x-kmymoney.xml
 @dirrm share/doc/HTML/pt_BR/kmymoney
 @dirrm share/doc/HTML/pt/kmymoney
 @dirrm share/doc/HTML/it/kmymoney
+@dirrm share/doc/HTML/es/kmymoney
 @dirrm share/doc/HTML/en/kmymoney
 @dirrm share/apps/kmymoney/templates/zh_TW
 @dirrm share/apps/kmymoney/templates/zh_HK
