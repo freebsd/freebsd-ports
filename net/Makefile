@@ -93,6 +93,7 @@
     SUBDIR += courier-authlib-ldap
     SUBDIR += cphone
     SUBDIR += crescendo
+    SUBDIR += crtmpserver
     SUBDIR += cryptcat
     SUBDIR += csocks
     SUBDIR += csync2

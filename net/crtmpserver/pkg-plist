@@ -1,0 +1,27 @@
+@stopdaemon crtmpserver
+@unexec if cmp -s %D/etc/crtmpserver.lua.sample %D/etc/crtmpserver.lua; then rm -f %D/etc/crtmpserver.lua; fi
+etc/crtmpserver.lua.sample
+@exec if [ ! -f %D/etc/crtmpserver.lua ] ; then cp -p %D/%F %B/crtmpserver.lua; fi
+
+lib/crtmpserver/liblua.so
+lib/crtmpserver/libcommon.so
+lib/crtmpserver/libthelib.so
+lib/crtmpserver/applications/flvplayback/libflvplayback.so
+lib/crtmpserver/applications/appselector/libappselector.so
+lib/crtmpserver/applications/samplefactory/libsamplefactory.so
+lib/crtmpserver/applications/vptests/libvptests.so
+lib/crtmpserver/applications/admin/libadmin.so
+lib/crtmpserver/applications/proxypublish/libproxypublish.so
+lib/crtmpserver/applications/stresstest/libstresstest.so
+lib/crtmpserver/applications/applestreamingclient/libapplestreamingclient.so
+sbin/crtmpserver
+@dirrmtry lib/crtmpserver/applications/flvplayback
+@dirrmtry lib/crtmpserver/applications/appselector
+@dirrmtry lib/crtmpserver/applications/samplefactory
+@dirrmtry lib/crtmpserver/applications/vptests
+@dirrmtry lib/crtmpserver/applications/admin
+@dirrmtry lib/crtmpserver/applications/proxypublish
+@dirrmtry lib/crtmpserver/applications/stresstest
+@dirrmtry lib/crtmpserver/applications/applestreamingclient
+@dirrmtry lib/crtmpserver/applications
+@dirrmtry lib/crtmpserver
