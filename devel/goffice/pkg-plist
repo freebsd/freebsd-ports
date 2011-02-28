@@ -350,6 +350,7 @@ libdata/pkgconfig/libgoffice-%%SHORT_VER%%.pc
 %%DOCSDIR%%-%%SHORT_VER%%/goffice-0.8-GORegression.html
 %%DOCSDIR%%-%%SHORT_VER%%/goffice-0.8-GOUndo.html
 %%DOCSDIR%%-%%SHORT_VER%%/goffice-0.8-GOUrl.html
+%%DOCSDIR%%-%%SHORT_VER%%/goffice-0.8-GOffice.html
 %%DOCSDIR%%-%%SHORT_VER%%/goffice-0.8-GogAxisMap.html
 %%DOCSDIR%%-%%SHORT_VER%%/goffice-0.8-GogChartMap.html
 %%DOCSDIR%%-%%SHORT_VER%%/goffice-0.8-GogGuru.html
@@ -365,7 +366,6 @@ libdata/pkgconfig/libgoffice-%%SHORT_VER%%.pc
 %%DOCSDIR%%-%%SHORT_VER%%/goffice-0.8-go-image.html
 %%DOCSDIR%%-%%SHORT_VER%%/goffice-0.8-go-plugin.html
 %%DOCSDIR%%-%%SHORT_VER%%/goffice-0.8-go-string.html
-%%DOCSDIR%%-%%SHORT_VER%%/goffice-0.8-goffice.html
 %%DOCSDIR%%-%%SHORT_VER%%/home.png
 %%DOCSDIR%%-%%SHORT_VER%%/index.html
 %%DOCSDIR%%-%%SHORT_VER%%/index.sgml
