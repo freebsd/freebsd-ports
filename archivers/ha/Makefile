@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://ftp.kiarchive.ru/pub/unix/arcers/
 DISTNAME=	ha0999
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	ache@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The HA archiver using the HSC compression method
 
 NO_WRKSUBDIR=	yes
