@@ -9,7 +9,8 @@ PORTNAME=	hutiter
 PORTVERSION=	5.4.0
 PORTREVISION=	4
 CATEGORIES=	science
-MASTER_SITES=	http://garr.dl.sourceforge.net/sourceforge/elmerfem/
+MASTER_SITES=	http://www.nic.funet.fi/index/files/index/elmer/src/old/ \
+		http://www.bezopasnik.org/unix/ports/distfiles/
 PKGNAMEPREFIX=	elmer-
 
 MAINTAINER=	sylvio@FreeBSD.org
