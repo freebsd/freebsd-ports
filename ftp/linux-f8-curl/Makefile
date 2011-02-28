@@ -17,6 +17,9 @@ COMMENT=	The command line tool for transferring files with URL syntax (Linux Fed
 
 CONFLICTS=	linux-curl-[0-9]* linux-f10-curl-[0-9]*
 
+DEPRECATED=	End of Life since Jan 7, 2009
+EXPIRATION_DATE=2011-04-01
+
 USE_LINUX_RPM=	yes
 LINUX_DIST_VER=	8
 RPMVERSION=	7.fc8

@@ -17,6 +17,9 @@ COMMENT=	RPM of gif and ungif libs (Linux Fedora 8)
 
 CONFLICTS=	linux-ungif-[0-9]* linux-f10-ungif-[0-9]*
 
+DEPRECATED=	End of Life since Jan 7, 2009
+EXPIRATION_DATE=2011-04-01
+
 ONLY_FOR_ARCHS=	i386 amd64
 USE_LINUX_RPM=	yes
 LINUX_NAME=	giflib

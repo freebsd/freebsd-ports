@@ -17,6 +17,9 @@ COMMENT=	Graphical toolkit for TCL (Linux Fedora 8)
 
 CONFLICTS=	linux-f10-tk85-[0-9]*
 
+DEPRECATED=	End of Life since Jan 7, 2009
+EXPIRATION_DATE=2011-04-01
+
 USE_LINUX_RPM=	yes
 USE_LINUX_APPS=	xorglibs
 LINUX_DIST_VER=	8

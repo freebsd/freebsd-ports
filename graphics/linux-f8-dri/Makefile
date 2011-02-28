@@ -30,6 +30,9 @@ COMMENT=	Mesa libGL runtime libraries and DRI drivers (Linux Fedora 8)
 
 CONFLICTS=	linux_dri-[0-9]* linux_dri-devel-[0-9]* linux-dri-[0-9]* linux-f10-dri-[0-9]*
 
+DEPRECATED=	End of Life since Jan 7, 2009
+EXPIRATION_DATE=2011-04-01
+
 ONLY_FOR_ARCHS=	i386 amd64
 USE_LINUX_RPM=	yes
 USE_LINUX_APPS=	xorglibs

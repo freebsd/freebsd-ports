@@ -17,6 +17,8 @@ COMMENT=	An implementation of the Audio File Library from SGI (Linux Fedora 8)
 
 CONFLICTS=	linux-libaudiofile-[0-9]* linux-f10-libaudiofile-[0-9]*
 
+DEPRECATED=	End of Life since Jan 7, 2009
+EXPIRATION_DATE=2011-04-01
 USE_LINUX_RPM=	yes
 LINUX_NAME=	audiofile
 LINUX_DIST_VER=	8

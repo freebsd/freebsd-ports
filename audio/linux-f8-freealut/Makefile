@@ -17,6 +17,9 @@ COMMENT=	A free implementation of OpenAL's ALUT standard (Linux Fedora 8)
 
 CONFLICTS=	linux-freealut-[0-9]* linux-f10-freealut-[0-9]*
 
+DEPRECATED=	End of Life since Jan 7, 2009
+EXPIRATION_DATE=2011-04-01
+
 USE_LINUX_RPM=	yes
 USE_LINUX_APPS=	openal
 LINUX_DIST_VER=	8

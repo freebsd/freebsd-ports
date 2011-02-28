@@ -104,6 +104,10 @@ ALWAYS_KEEP_DISTFILES=	yes
 
 CONFLICTS=		linux_base-gentoo* linux_base-fc4 linux_base-fc6 \
 			linux_base-f7 linux-glib2
+
+DEPRECATED=	End of Life since Jan 7, 2009
+EXPIRATION_DATE=2011-04-01
+
 ONLY_FOR_ARCHS=		i386 amd64
 LINUX_RPM_ARCH=		i386
 USE_LINUX_PREFIX=	yes

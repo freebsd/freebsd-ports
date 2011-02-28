@@ -90,6 +90,9 @@ ALWAYS_KEEP_DISTFILES=	YES
 
 CONFLICTS=		linux-xorg-libs-[0-9]* linux-f10-xorg-libs-[0-9]*
 
+DEPRECATED=	End of Life since Jan 7, 2009
+EXPIRATION_DATE=2011-04-01
+
 MAINTAINER=		freebsd-emulation@FreeBSD.org
 COMMENT=		Xorg libraries (Linux Fedora 8)
 
