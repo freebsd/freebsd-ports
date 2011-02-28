@@ -19,10 +19,10 @@ MASTER_SITES=	http://download.documentfoundation.org/libreoffice/src/ \
 MAINTAINER=	bapt@FreeBSD.org
 COMMENT=	Full integrated office productivity suite
 
-LOFFICE_COMPONENTS= artwork base bootstrap calc components extensions \
-		    extras filters help impress l10n libs-core libs-extern \
-		    libs-extern-sys libs-gui postprocess sdk testing \
-		    ure writer
+LOFFICE_COMPONENTS=	artwork base bootstrap calc components extensions \
+			extras filters help impress l10n libs-core libs-extern \
+			libs-extern-sys libs-gui postprocess sdk testing \
+			ure writer
 
 DIST_SUBDIR=	libreoffice
 DISTFILES+=	${PORTNAME}-build-${LOVERSION}.tar.gz
@@ -80,7 +80,7 @@ LIB_DEPENDS=	mdbsql.0:${PORTSDIR}/databases/mdbtools \
 		lpsolve55.1:${PORTSDIR}/math/lp_solve \
 		cppunit:${PORTSDIR}/devel/cppunit
 
-BUILD_DEPENDS=  zip:${PORTSDIR}/archivers/zip \
+BUILD_DEPENDS=	zip:${PORTSDIR}/archivers/zip \
 		unzip:${PORTSDIR}/archivers/unzip \
 		gcp:${PORTSDIR}/sysutils/coreutils \
 		gpatch:${PORTSDIR}/devel/patch \
@@ -325,7 +325,6 @@ post-install:
 		${SED} -e 's|^|lib/|' >> ${PLISTF}
 	@cd ${LODESTDIR}/${PREFIX}/lib && ${FIND} -d * -type d | \
 		${SED} -e 's|^|@dirrm lib/|' >> ${PLISTD}
-
 
 .for subdir in icons pixmaps mime applications
 	@cd ${LODESTDIR}/${PREFIX}/share/${subdir} && ${FIND} -H -s * -type f -o -type l | \
