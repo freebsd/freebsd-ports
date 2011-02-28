@@ -6,27 +6,17 @@
 #
 
 PORTNAME=	pysvg
-PORTVERSION=	0.2.0
+PORTVERSION=	0.2.1
 CATEGORIES=	graphics python
-MASTER_SITES=	http://www.codeboje.de/downloads/
-DISTNAME=	${PORTNAME:S|svg|SVG|}
+MASTER_SITES=	GOOGLE_CODE
 
 MAINTAINER=	duchateau.olivier@gmail.com
 COMMENT=	pySVG - creating svg with python
 
-NO_WRKSUBDIR=	yes
-
-USE_PYTHON=	yes
+USE_PYDISTUTILS=yes
+USE_PYTHON=	-2.7
 USE_ZIP=	yes
-PYDISTUTILS_BUILDARGS+=	--prefix=${PREFIX}
 
-do-build:
-	@cd ${WRKSRC}/src && \
-		${SETENV} ${MAKE_ENV} ${PYTHON_CMD} ${PYSETUP} build
-
-do-install:
-	@cd ${WRKSRC}/src && \
-		${SETENV} ${MAKE_ENV} ${PYTHON_CMD} ${PYSETUP} \
-			install ${PYDISTUTILS_BUILDARGS}
+PLIST_SUB=	PYDISTUTILS_EGGINFO=${PYDISTUTILS_EGGINFO}
 
 .include <bsd.port.mk>
