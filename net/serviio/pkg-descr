@@ -1,0 +1,19 @@
+Serviio is a free DLNA media server. It allows you to stream your
+media files (music, video or images) to any DLNA-certified renderer
+device (e.g. a TV set, Bluray player, games console) on your home
+network.
+
+Serviio uses a priority-based metadata extraction so that you can
+choose what metadata should describe your media files (e.g. audio
+track name, DVD cover, TV series and episodes names, etc.). These
+include metadata embedded into the media files themselves, locally
+stored metadata files and metadata that can be obtained online.
+With this powerful tool you will be able to build your Serviio media
+library easily and effectively.
+
+Serviio works with any DLNA compliant device (TV, Playstation 3,
+etc.) and some other (XBox 360). It supports profiles for particular
+devices so that it can be tuned to maximise the device's potential
+and/or minimize lack of media format playback support (via transcoding).
+
+WWW:	http://www.serviio.org/

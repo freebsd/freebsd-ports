@@ -1,0 +1,27 @@
+sbin/serviiod
+bin/serviio-console
+%%JAVAJARDIR%%/serviio/serviio-client.jar
+%%JAVAJARDIR%%/serviio/serviio.jar
+%%JAVAJARDIR%%/serviio/log4j.jar
+%%JAVAJARDIR%%/serviio/freemarker.jar
+%%JAVAJARDIR%%/serviio/derby.jar
+%%JAVAJARDIR%%/serviio/jaudiotagger.jar
+%%JAVAJARDIR%%/serviio/sanselan.jar
+%%JAVAJARDIR%%/serviio/slf4j-api.jar
+%%JAVAJARDIR%%/serviio/jul-to-slf4j.jar
+%%JAVAJARDIR%%/serviio/slf4j-log4j12.jar
+%%JAVAJARDIR%%/serviio/jcl-over-slf4j.jar
+%%JAVAJARDIR%%/serviio/jcs.jar
+%%JAVAJARDIR%%/serviio/concurrent.jar
+%%JAVAJARDIR%%/serviio/xstream.jar
+%%JAVAJARDIR%%/serviio/org.restlet.jar
+%%JAVAJARDIR%%/serviio/org.restlet.ext.xstream.jar
+%%JAVAJARDIR%%/serviio/httpcore.jar
+@dirrm %%JAVAJARDIR%%/serviio
+@unexec cmp %D/%%ETCDIR%%/profiles.xml %D/%%ETCDIR%%/profiles.dist.xml && rm -f %D/%%ETCDIR%%/profiles.xml || echo Modified profiles.xml remains in %D/%%ETCDIR%%
+@unexec cmp %D/%%ETCDIR%%/log4j.xml %D/%%ETCDIR%%/log4j.dist.xml && rm -f %D/%%ETCDIR%%/log4j.xml || echo Modified log4j.xml remains in %D/%%ETCDIR%%
+@unexec cmp %D/%%ETCDIR%%/console-log4j.properties %D/%%ETCDIR%%/console-log4j.dist.properties && rm -f %D/%%ETCDIR%%/console-log4j.properties || echo Modified console-log4j.properties remains in %D/%%ETCDIR%%
+%%ETCDIR%%/profiles.dist.xml
+%%ETCDIR%%/log4j.dist.xml
+%%ETCDIR%%/console-log4j.dist.properties
+@dirrmtry %%ETCDIR%%
