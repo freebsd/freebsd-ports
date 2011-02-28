@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	zsh
-PORTVERSION=	4.3.10
-PORTREVISION=	4
+PORTVERSION=	4.3.11
 CATEGORIES=	shells
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-dev/${PORTVERSION}:src \
 		SF/${PORTNAME}/${PORTNAME}-doc-dev/${PORTVERSION}:doc
@@ -15,7 +14,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-dev/${PORTVERSION}:src \
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:src ${DISTNAME}-doc${EXTRACT_SUFX}:doc
 .endif
 
-MAINTAINER=	des@FreeBSD.org
+MAINTAINER=	bapt@FreeBSD.org
 COMMENT=	The Z shell
 
 MAKE_JOBS_UNSAFE=	yes
@@ -36,8 +35,13 @@ CONFIGURE_ARGS=	--with-term-lib="ncursesw ncurses" --with-tcsetpgrp \
 		--enable-function-subdirs
 
 EXTRA_PATCHES=	${FILESDIR}/extra-patch-bsdtar
-EXTRA_COMPLETION_FILES=	_fstat _procstat _sockstat
+EXTRA_COMPLETION_FILES=	_sockstat
 EXTRA_COMPLETION_DIR=	Completion/BSD/Command
+
+LICENSE=	ZSH
+LICENSE_NAME=   ZSH license
+LICENSE_PERMS=  ${_LICENSE_PERMS_DEFAULT}
+LICENSE_FILE=	${WRKSRC}/LICENCE
 
 OPTIONS=	ZSH_GDBM	"Enable GDBM support (GPL)" off \
 		ZSH_MEM		"Enable zsh-mem and zsh-secure-free options" on \
