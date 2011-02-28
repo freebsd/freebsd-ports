@@ -10,7 +10,7 @@ PORTNAME=	clutter
 PORTVERSION=	1.4.0
 CATEGORIES=	graphics
 MASTER_SITES=	GNOME \
-		http://www.clutter-project.org/sources/${PORTNAME}/${PORTVERSION:R}/
+		http://source.clutter-project.org/sources/${PORTNAME}/${PORTVERSION:R}/
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	OpenGL based interactive canvas library
