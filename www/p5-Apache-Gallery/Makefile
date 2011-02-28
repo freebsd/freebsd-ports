@@ -6,14 +6,12 @@
 #
 
 PORTNAME=	Apache-Gallery
-PORTVERSION=	1.0.r3
-PORTREVISION=	5
+PORTVERSION=	1.0.1
 PORTEPOCH=	2
 CATEGORIES=	www perl5
 MASTER_SITES=	http://apachegallery.dk/download/ \
 		CPAN
 PKGNAMEPREFIX=	p5-
-DISTNAME=	${PORTNAME}-${PORTVERSION:S/.r3//}RC3
 
 MAINTAINER=	brix@FreeBSD.org
 COMMENT=	Apache::Gallery - mod_perl handler to create an image gallery
@@ -26,6 +24,7 @@ BUILD_DEPENDS=	${SITE_PERL}/URI/Escape.pm:${PORTSDIR}/net/p5-URI \
 		${SITE_PERL}/CGI.pm:${PORTSDIR}/www/p5-CGI.pm
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
+LICENSE=	ART10
 PERL_CONFIGURE=	yes
 USE_APACHE=	1.3+
 
@@ -42,12 +41,19 @@ DOC_FILES=	INSTALL LICENSE README TODO UPGRADE
 
 SUB_FILES+=	pkg-message
 
+post-patch:
+	@${CP} ${WRKSRC}/templates/bright/navdirectory.tpl ${WRKSRC}/templates/default
+	@${CP} ${WRKSRC}/templates/bright/navdirectory.tpl ${WRKSRC}/templates/new
+
 post-install:
 	@${MKDIR} ${PREFIX}/www/icons/gallery/
 	${INSTALL_DATA} ${WRKSRC}/htdocs/* \
 		${PREFIX}/www/icons/gallery/
+	@${MKDIR} ${DATADIR}/templates/bright
 	@${MKDIR} ${DATADIR}/templates/default
 	@${MKDIR} ${DATADIR}/templates/new
+	${INSTALL_DATA} ${WRKSRC}/templates/bright/* \
+		${DATADIR}/templates/bright/
 	${INSTALL_DATA} ${WRKSRC}/templates/default/* \
 		${DATADIR}/templates/default/
 	${INSTALL_DATA} ${WRKSRC}/templates/new/* \
