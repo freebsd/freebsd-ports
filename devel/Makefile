@@ -118,6 +118,7 @@
     SUBDIR += bouml
     SUBDIR += bouml-doc
     SUBDIR += bpython
+    SUBDIR += bsdbuild
     SUBDIR += bsdcflow
     SUBDIR += bufferpool
     SUBDIR += bug-buddy
