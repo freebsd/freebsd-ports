@@ -1542,7 +1542,7 @@
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/xrc.py
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/xrc.pyc
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/xrc.pyo
-%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wxPython-2.8.10.1-py2.6.egg-info
+%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wxPython-2.8.10.1-py%%PYTHON_VER%%.egg-info
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wxPython/__init__.py
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wxPython/__init__.pyc
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wxPython/__init__.pyo
