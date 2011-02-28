@@ -6,9 +6,11 @@
 #
 
 PORTNAME=	xz
-PORTVERSION=	5.0.0
+PORTVERSION=	5.0.1
 CATEGORIES=	archivers
-MASTER_SITES=	http://tukaani.org/xz/
+#MASTER_SITES=	http://tukaani.org/xz/
+# tukaani.org doesn't interop with fetch(1) as of 2011-02-28
+MASTER_SITES=	${MASTER_SITE_NETBSD}
 
 MAINTAINER=	naddy@FreeBSD.org
 COMMENT=	LZMA compression and decompression tools
@@ -16,6 +18,7 @@ COMMENT=	LZMA compression and decompression tools
 CONFLICTS=	lzma-[0-9]* lzmautils-[0-9]* lzmalib-[0-9]*
 
 MAKE_JOBS_SAFE=	yes
+USE_BZIP2=	yes
 USE_LDCONFIG=	yes
 USE_GNOME=	gnomehack
 GNU_CONFIGURE=	yes
@@ -28,7 +31,7 @@ CONFIGURE_ARGS=	--disable-nls
 CONFIGURE_TARGET=	${ARCH:S/amd64/x86_64/}-portbld-freebsd${OSREL}
 
 .if !defined(NOPORTDOCS)
-INSTALL_TARGET=	install install-dist_docDATA
+INSTALL_TARGET=	install install-dist_docDATA install-dist_examplesDATA
 .endif
 
 MAN1=	lzmainfo.1 xz.1 xzdec.1 xzdiff.1 xzgrep.1 xzless.1 xzmore.1
@@ -43,7 +46,8 @@ MLINKS=	xz.1 lzcat.1		xzdiff.1 lzcmp.1 \
 	xzgrep.1 xzegrep.1	xzgrep.1 xzfgrep.1
 
 PORTDOCS=	AUTHORS COPYING COPYING.GPLv2 NEWS README THANKS TODO \
-		faq.txt history.txt lzma-file-format.txt xz-file-format.txt
+		faq.txt history.txt lzma-file-format.txt xz-file-format.txt \
+		examples
 
 regression-test: build
 	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} check
