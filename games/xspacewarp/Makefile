@@ -15,6 +15,8 @@ MASTER_SITE_SUBDIR=	games
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Time Trek - like game for X Window System
 
+BROKEN=		does not compile
+
 USE_IMAKE=	yes
 USE_XORG=	x11 xaw xext xmu xt xpm sm ice
 NO_INSTALL_MANPAGES=	yes
