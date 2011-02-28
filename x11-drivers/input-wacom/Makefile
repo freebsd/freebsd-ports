@@ -24,6 +24,8 @@ MANCOMPRESSED=	yes
 USE_GMAKE=	yes
 USE_RC_SUBR=	wacom
 
+BROKEN=		does not patch
+
 KMODDIR?=	/boot/modules
 XINPUTMODDIR=	lib/xorg/modules/input
 MAN4DIR=	man/man4
