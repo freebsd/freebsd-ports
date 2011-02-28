@@ -1,0 +1,7 @@
+'usbmuxd' stands for "USB multiplexing daemon". This daemon is in
+charge of multiplexing connections over USB to an iPhone or iPod
+touch. To users, it means you can sync your music, contacts, photos,
+etc. over USB. To developers, it means you can connect to any
+listening localhost socket on the device.
+
+WWW: http://marcansoft.com/blog/iphonelinux/usbmuxd
