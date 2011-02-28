@@ -913,22 +913,40 @@ MASTER_SITE_PACKETSTORM+= \
 .endif
 
 .if !defined(IGNORE_MASTER_SITE_PERL_CPAN)
-MASTER_SITE_PERL_CPAN+=	\
-	ftp://ftp.cpan.org/pub/CPAN/modules/by-module/%SUBDIR%/ \
-	http://www.cpan.dk/modules/by-module/%SUBDIR%/ \
-	${MASTER_SITE_RINGSERVER:S,%SUBDIR%,lang/perl/CPAN/modules/by-module/&,} \
-	ftp://ftp.kddlabs.co.jp/lang/perl/CPAN/modules/by-module/%SUBDIR%/ \
-	http://ftp.jaist.ac.jp/pub/CPAN/modules/by-module/%SUBDIR%/ \
-	ftp://ftp.dti.ad.jp/pub/lang/CPAN/modules/by-module/%SUBDIR%/ \
-	ftp://ftp.sunet.se/pub/lang/perl/CPAN/modules/by-module/%SUBDIR%/ \
-	ftp://mirror.hiwaay.net/CPAN/modules/by-module/%SUBDIR%/ \
-	ftp://ftp.mirrorservice.org/sites/ftp.funet.fi/pub/languages/perl/CPAN/modules/by-module/%SUBDIR%/ \
-	http://at.cpan.org/modules/by-module/%SUBDIR%/ \
-	ftp://ftp.auckland.ac.nz/pub/perl/CPAN/modules/by-module/%SUBDIR%/ \
-	http://backpan.perl.org/modules/by-module/%SUBDIR%/ \
-	ftp://ftp.funet.fi/pub/languages/perl/CPAN/modules/by-module/%SUBDIR%/ \
-	http://cpan.nctu.edu.tw/modules/by-module/%SUBDIR%/ \
-	http://backpan.cpan.org/modules/by-module/%SUBDIR%/
+
+_PERL_CPAN_SORT?= modules/by-module
+
+# Please add URI to MASTER_SITE_PERL_CPAN_BY instead of this one.
+MASTER_SITE_PERL_CPAN?=
+
+MASTER_SITE_PERL_CPAN_BY+= \
+	ftp://ftp.cpan.org/pub/CPAN/%CPANSORT%/%SUBDIR%/ \
+	http://www.cpan.dk/%CPANSORT%/%SUBDIR%/ \
+	ftp://ftp.kddlabs.co.jp/lang/perl/CPAN/%CPANSORT%/%SUBDIR%/ \
+	http://ftp.jaist.ac.jp/pub/CPAN/%CPANSORT%/%SUBDIR%/ \
+	ftp://ftp.dti.ad.jp/pub/lang/CPAN/%CPANSORT%/%SUBDIR%/ \
+	ftp://ftp.sunet.se/pub/lang/perl/CPAN/%CPANSORT%/%SUBDIR%/ \
+	http://ring.nict.go.jp/archives/CPAN/%CPANSORT%/%SUBDIR%/ \
+	ftp://mirror.hiwaay.net/CPAN/%CPANSORT%/%SUBDIR%/ \
+	ftp://ftp.mirrorservice.org/sites/ftp.funet.fi/pub/languages/perl/CPAN/%CPANSORT%/%SUBDIR%/ \
+	http://at.cpan.org/%CPANSORT%/%SUBDIR%/ \
+	http://ring.riken.jp/archives/CPAN/%CPANSORT%/%SUBDIR%/ \
+	ftp://ftp.auckland.ac.nz/pub/perl/CPAN/%CPANSORT%/%SUBDIR%/ \
+	http://backpan.perl.org/%CPANSORT%/%SUBDIR%/ \
+	ftp://ftp.funet.fi/pub/languages/perl/CPAN/%CPANSORT%/%SUBDIR%/ \
+	http://cpan.nctu.edu.tw/%CPANSORT%/%SUBDIR%/
+
+_PERL_CPAN_FLAG = ${MASTER_SITE_SUBDIR:C/(CPAN):.*$/\1/}
+
+_PERL_CPAN_ID = ${MASTER_SITE_SUBDIR:C/^CPAN:(.)(.)(.*)$/\1\/\1\2\/\1\2\3/}
+
+.if !empty(_PERL_CPAN_ID) && ${_PERL_CPAN_FLAG:L} == "cpan"
+    _PERL_CPAN_SORT= authors/id/${_PERL_CPAN_ID}
+    MASTER_SITE_PERL_CPAN=${MASTER_SITE_PERL_CPAN_BY:S/%CPANSORT%/${_PERL_CPAN_SORT}/:S/%SUBDIR%//}
+.else
+    MASTER_SITE_PERL_CPAN=${MASTER_SITE_PERL_CPAN_BY:S/%CPANSORT%/${_PERL_CPAN_SORT}/}
+.endif
+
 .endif
 
 #
