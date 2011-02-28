@@ -1,307 +1,256 @@
 bin/aqbanking-cli
 bin/aqbanking-config
 bin/aqhbci-tool4
+%%WITH_PAYPAL%%bin/aqpaypal-tool
 bin/hbcixml3
-%%WITH_QT4%%bin/q4b-help1
-%%WITH_QT3%%bin/qb-help8
-include/aqbanking/abgui.h
-include/aqbanking/account.h
-include/aqbanking/account_be.h
-include/aqbanking/accstatus.h
-include/aqbanking/balance.h
-include/aqbanking/bankinfo.h
-include/aqbanking/bankinfoplugin.h
-include/aqbanking/bankinfoplugin_be.h
-include/aqbanking/bankinfoservice.h
-include/aqbanking/banking.h
-include/aqbanking/banking_be.h
-include/aqbanking/banking_cfg.h
-include/aqbanking/banking_imex.h
-include/aqbanking/banking_info.h
-include/aqbanking/banking_ob.h
-include/aqbanking/banking_simple.h
-include/aqbanking/banking_virt.h
-include/aqbanking/cellphoneproduct.h
-include/aqbanking/country.h
-include/aqbanking/error.h
-include/aqbanking/eutransferinfo.h
-include/aqbanking/httpsession.h
-include/aqbanking/imexporter.h
-include/aqbanking/imexporter_be.h
-include/aqbanking/job.h
-include/aqbanking/job_be.h
-include/aqbanking/jobcreatedatedtransfer.h
-include/aqbanking/jobcreatedatedtransfer_be.h
-include/aqbanking/jobcreatesto.h
-include/aqbanking/jobcreatesto_be.h
-include/aqbanking/jobdeletedatedtransfer.h
-include/aqbanking/jobdeletedatedtransfer_be.h
-include/aqbanking/jobdeletesto.h
-include/aqbanking/jobdeletesto_be.h
-include/aqbanking/jobeutransfer.h
-include/aqbanking/jobeutransfer_be.h
-include/aqbanking/jobgetbalance.h
-include/aqbanking/jobgetbalance_be.h
-include/aqbanking/jobgetdatedtransfers.h
-include/aqbanking/jobgetdatedtransfers_be.h
-include/aqbanking/jobgetstandingorders.h
-include/aqbanking/jobgetstandingorders_be.h
-include/aqbanking/jobgettransactions.h
-include/aqbanking/jobgettransactions_be.h
-include/aqbanking/jobinternaltransfer.h
-include/aqbanking/jobinternaltransfer_be.h
-include/aqbanking/jobloadcellphone.h
-include/aqbanking/jobloadcellphone_be.h
-include/aqbanking/jobmodifydatedtransfer.h
-include/aqbanking/jobmodifydatedtransfer_be.h
-include/aqbanking/jobmodifysto.h
-include/aqbanking/jobmodifysto_be.h
-include/aqbanking/jobsepadebitnote.h
-include/aqbanking/jobsepadebitnote_be.h
-include/aqbanking/jobsepatransfer.h
-include/aqbanking/jobsepatransfer_be.h
-include/aqbanking/jobsingledebitnote.h
-include/aqbanking/jobsingledebitnote_be.h
-include/aqbanking/jobsingletransfer.h
-include/aqbanking/jobsingletransfer_be.h
-include/aqbanking/message.h
-include/aqbanking/msgengine.h
-include/aqbanking/provider.h
-include/aqbanking/provider_be.h
-include/aqbanking/security.h
-include/aqbanking/system.h
-include/aqbanking/textkeydescr.h
-include/aqbanking/transaction.h
-include/aqbanking/transactionfns.h
-include/aqbanking/transactionlimits.h
-include/aqbanking/user.h
-include/aqbanking/userfns.h
-include/aqbanking/value.h
-include/aqbanking/version.h
-include/aqhbci/account.h
-include/aqhbci/aqhbci.h
-include/aqhbci/msgengine.h
-include/aqhbci/provider.h
-include/aqhbci/tanmethod.h
-include/aqhbci/user.h
-include/aqofxconnect/account.h
-include/aqofxconnect/aqofxconnect.h
-include/aqofxconnect/provider.h
-include/aqofxconnect/user.h
-include/aqofxconnect/version.h
-%%WITH_QT4%%include/q4banking/api.h
-%%WITH_QT4%%include/q4banking/banking.h
-%%WITH_QT4%%include/q4banking/cppgui.h
-%%WITH_QT4%%include/q4banking/qbaccountlist.h
-%%WITH_QT4%%include/q4banking/qbanking.h
-%%WITH_QT4%%include/q4banking/qbbankselector.h
-%%WITH_QT4%%include/q4banking/qbbankselector.ui.h
-%%WITH_QT4%%include/q4banking/qbcfgmodule.h
-%%WITH_QT4%%include/q4banking/qbcfgtab.h
-%%WITH_QT4%%include/q4banking/qbcfgtab.ui.h
-%%WITH_QT4%%include/q4banking/qbcfgtabpage.h
-%%WITH_QT4%%include/q4banking/qbcfgtabpageaccount.h
-%%WITH_QT4%%include/q4banking/qbcfgtabpageaccountgen.h
-%%WITH_QT4%%include/q4banking/qbcfgtabpageaccountgen.ui.h
-%%WITH_QT4%%include/q4banking/qbcfgtabpageaccounts.h
-%%WITH_QT4%%include/q4banking/qbcfgtabpageaccounts.ui.h
-%%WITH_QT4%%include/q4banking/qbcfgtabpagebackends.h
-%%WITH_QT4%%include/q4banking/qbcfgtabpagebackends.ui.h
-%%WITH_QT4%%include/q4banking/qbcfgtabpageuser.h
-%%WITH_QT4%%include/q4banking/qbcfgtabpageusergen.h
-%%WITH_QT4%%include/q4banking/qbcfgtabpageusergen.ui.h
-%%WITH_QT4%%include/q4banking/qbcfgtabpageusers.h
-%%WITH_QT4%%include/q4banking/qbcfgtabpageusers.ui.h
-%%WITH_QT4%%include/q4banking/qbcfgtabsettings.h
-%%WITH_QT4%%include/q4banking/qbeditaccount.h
-%%WITH_QT4%%include/q4banking/qbedituser.h
-%%WITH_QT4%%include/q4banking/qbflagstaff.h
-%%WITH_QT4%%include/q4banking/qbgui.h
-%%WITH_QT4%%include/q4banking/qbimporter.h
-%%WITH_QT4%%include/q4banking/qbimporter.ui.h
-%%WITH_QT4%%include/q4banking/qbjoblist.h
-%%WITH_QT4%%include/q4banking/qbmapaccount.h
-%%WITH_QT4%%include/q4banking/qbmapaccount.ui.h
-%%WITH_QT4%%include/q4banking/qbpickstartdate.h
-%%WITH_QT4%%include/q4banking/qbpickstartdate.ui.h
-%%WITH_QT4%%include/q4banking/qbplugindescrlist.h
-%%WITH_QT4%%include/q4banking/qbprintdialog.h
-%%WITH_QT4%%include/q4banking/qbprintdialog.ui.h
-%%WITH_QT4%%include/q4banking/qbprocesswatcher.h
-%%WITH_QT4%%include/q4banking/qbprocesswatcher.ui.h
-%%WITH_QT4%%include/q4banking/qbselectbackend.h
-%%WITH_QT4%%include/q4banking/qbselectbackend.ui.h
-%%WITH_QT4%%include/q4banking/qbselectbank.h
-%%WITH_QT4%%include/q4banking/qbselectbank.ui.h
-%%WITH_QT4%%include/q4banking/qbselectfromlist.h
-%%WITH_QT4%%include/q4banking/qbselectfromlist.ui.h
-%%WITH_QT4%%include/q4banking/qbuserlist.h
-%%WITH_QT4%%include/q4banking/qgui.h
-%%WITH_QT4%%include/q4banking/qguiinputbox.h
-%%WITH_QT4%%include/q4banking/qguiprogress.h
-%%WITH_QT4%%include/q4banking/qguiprogresswidget.h
-%%WITH_QT4%%include/q4banking/qguiprogresswidget.ui.h
-%%WITH_QT4%%include/q4banking/qguisimplebox.h
-%%WITH_QT4%%include/q4banking/qguisimplebox.ui.h
-%%WITH_QT3%%include/qbanking/api.h
-%%WITH_QT3%%include/qbanking/banking.h
-%%WITH_QT3%%include/qbanking/cppgui.h
-%%WITH_QT3%%include/qbanking/qbaccountlist.h
-%%WITH_QT3%%include/qbanking/qbanking.h
-%%WITH_QT3%%include/qbanking/qbbankselector.h
-%%WITH_QT3%%include/qbanking/qbbankselector.ui.h
-%%WITH_QT3%%include/qbanking/qbcfgmodule.h
-%%WITH_QT3%%include/qbanking/qbcfgtab.h
-%%WITH_QT3%%include/qbanking/qbcfgtab.ui.h
-%%WITH_QT3%%include/qbanking/qbcfgtabpage.h
-%%WITH_QT3%%include/qbanking/qbcfgtabpageaccount.h
-%%WITH_QT3%%include/qbanking/qbcfgtabpageaccountgen.h
-%%WITH_QT3%%include/qbanking/qbcfgtabpageaccountgen.ui.h
-%%WITH_QT3%%include/qbanking/qbcfgtabpageaccounts.h
-%%WITH_QT3%%include/qbanking/qbcfgtabpageaccounts.ui.h
-%%WITH_QT3%%include/qbanking/qbcfgtabpagebackends.h
-%%WITH_QT3%%include/qbanking/qbcfgtabpagebackends.ui.h
-%%WITH_QT3%%include/qbanking/qbcfgtabpageuser.h
-%%WITH_QT3%%include/qbanking/qbcfgtabpageusergen.h
-%%WITH_QT3%%include/qbanking/qbcfgtabpageusergen.ui.h
-%%WITH_QT3%%include/qbanking/qbcfgtabpageusers.h
-%%WITH_QT3%%include/qbanking/qbcfgtabpageusers.ui.h
-%%WITH_QT3%%include/qbanking/qbcfgtabsettings.h
-%%WITH_QT3%%include/qbanking/qbeditaccount.h
-%%WITH_QT3%%include/qbanking/qbedituser.h
-%%WITH_QT3%%include/qbanking/qbflagstaff.h
-%%WITH_QT3%%include/qbanking/qbgui.h
-%%WITH_QT3%%include/qbanking/qbimporter.h
-%%WITH_QT3%%include/qbanking/qbimporter.ui.h
-%%WITH_QT3%%include/qbanking/qbjoblist.h
-%%WITH_QT3%%include/qbanking/qbmapaccount.h
-%%WITH_QT3%%include/qbanking/qbmapaccount.ui.h
-%%WITH_QT3%%include/qbanking/qbpickstartdate.h
-%%WITH_QT3%%include/qbanking/qbpickstartdate.ui.h
-%%WITH_QT3%%include/qbanking/qbplugindescrlist.h
-%%WITH_QT3%%include/qbanking/qbprintdialog.h
-%%WITH_QT3%%include/qbanking/qbprintdialog.ui.h
-%%WITH_QT3%%include/qbanking/qbprocesswatcher.h
-%%WITH_QT3%%include/qbanking/qbprocesswatcher.ui.h
-%%WITH_QT3%%include/qbanking/qbselectbackend.h
-%%WITH_QT3%%include/qbanking/qbselectbackend.ui.h
-%%WITH_QT3%%include/qbanking/qbselectbank.h
-%%WITH_QT3%%include/qbanking/qbselectbank.ui.h
-%%WITH_QT3%%include/qbanking/qbselectfromlist.h
-%%WITH_QT3%%include/qbanking/qbselectfromlist.ui.h
-%%WITH_QT3%%include/qbanking/qbuserlist.h
-%%WITH_QT3%%include/qbanking/qgui.h
-%%WITH_QT3%%include/qbanking/qguiinputbox.h
-%%WITH_QT3%%include/qbanking/qguiprogress.h
-%%WITH_QT3%%include/qbanking/qguiprogresswidget.h
-%%WITH_QT3%%include/qbanking/qguiprogresswidget.ui.h
-%%WITH_QT3%%include/qbanking/qguisimplebox.h
-%%WITH_QT3%%include/qbanking/qguisimplebox.ui.h
-lib/aqbanking/plugins/29/bankinfo/at.la
-lib/aqbanking/plugins/29/bankinfo/at.so
-lib/aqbanking/plugins/29/bankinfo/at.xml
-lib/aqbanking/plugins/29/bankinfo/ca.la
-lib/aqbanking/plugins/29/bankinfo/ca.so
-lib/aqbanking/plugins/29/bankinfo/ca.xml
-lib/aqbanking/plugins/29/bankinfo/ch.la
-lib/aqbanking/plugins/29/bankinfo/ch.so
-lib/aqbanking/plugins/29/bankinfo/ch.xml
-lib/aqbanking/plugins/29/bankinfo/de.la
-lib/aqbanking/plugins/29/bankinfo/de.so
-lib/aqbanking/plugins/29/bankinfo/de.xml
-lib/aqbanking/plugins/29/bankinfo/us.la
-lib/aqbanking/plugins/29/bankinfo/us.so
-lib/aqbanking/plugins/29/bankinfo/us.xml
-lib/aqbanking/plugins/29/debugger/.keep_me
-lib/aqbanking/plugins/29/debugger/aqhbci/.keep_me
-%%WITH_QT3%%lib/aqbanking/plugins/29/debugger/aqhbci/aqhbci-qt3-debug
-%%WITH_QT4%%lib/aqbanking/plugins/29/debugger/aqhbci/aqhbci-qt4-debug
-%%WITH_QT4%%lib/aqbanking/plugins/29/debugger/aqhbci/qt4_debug.xml
-%%WITH_QT3%%lib/aqbanking/plugins/29/debugger/aqhbci/qt_debug.xml
-lib/aqbanking/plugins/29/frontends/.keep_me
-%%WITH_QT4%%lib/aqbanking/plugins/29/frontends/q4banking/cfgmodules/aqhbci.la
-%%WITH_QT4%%lib/aqbanking/plugins/29/frontends/q4banking/cfgmodules/aqhbci.so
-%%WITH_QT4%%lib/aqbanking/plugins/29/frontends/q4banking/cfgmodules/aqhbci.so.0
-%%WITH_QT4%%lib/aqbanking/plugins/29/frontends/q4banking/cfgmodules/aqofxconnect.la
-%%WITH_QT4%%lib/aqbanking/plugins/29/frontends/q4banking/cfgmodules/aqofxconnect.so
-%%WITH_QT4%%lib/aqbanking/plugins/29/frontends/q4banking/cfgmodules/aqofxconnect.so.0
-%%WITH_QT3%%lib/aqbanking/plugins/29/frontends/qbanking/cfgmodules/aqhbci.la
-%%WITH_QT3%%lib/aqbanking/plugins/29/frontends/qbanking/cfgmodules/aqhbci.so
-%%WITH_QT3%%lib/aqbanking/plugins/29/frontends/qbanking/cfgmodules/aqhbci.so.0
-%%WITH_QT3%%lib/aqbanking/plugins/29/frontends/qbanking/cfgmodules/aqofxconnect.la
-%%WITH_QT3%%lib/aqbanking/plugins/29/frontends/qbanking/cfgmodules/aqofxconnect.so
-%%WITH_QT3%%lib/aqbanking/plugins/29/frontends/qbanking/cfgmodules/aqofxconnect.so.0
-lib/aqbanking/plugins/29/imexporters/csv.la
-lib/aqbanking/plugins/29/imexporters/csv.so
-lib/aqbanking/plugins/29/imexporters/csv.xml
-lib/aqbanking/plugins/29/imexporters/ctxfile.la
-lib/aqbanking/plugins/29/imexporters/ctxfile.so
-lib/aqbanking/plugins/29/imexporters/ctxfile.xml
-lib/aqbanking/plugins/29/imexporters/dtaus.la
-lib/aqbanking/plugins/29/imexporters/dtaus.so
-lib/aqbanking/plugins/29/imexporters/dtaus.xml
-lib/aqbanking/plugins/29/imexporters/eri2.la
-lib/aqbanking/plugins/29/imexporters/eri2.so
-lib/aqbanking/plugins/29/imexporters/eri2.xml
-lib/aqbanking/plugins/29/imexporters/ofx.la
-lib/aqbanking/plugins/29/imexporters/ofx.so
-lib/aqbanking/plugins/29/imexporters/ofx.xml
-lib/aqbanking/plugins/29/imexporters/openhbci1.la
-lib/aqbanking/plugins/29/imexporters/openhbci1.so
-lib/aqbanking/plugins/29/imexporters/openhbci1.xml
-lib/aqbanking/plugins/29/imexporters/sepa.la
-lib/aqbanking/plugins/29/imexporters/sepa.so
-lib/aqbanking/plugins/29/imexporters/sepa.xml
-lib/aqbanking/plugins/29/imexporters/swift.la
-lib/aqbanking/plugins/29/imexporters/swift.so
-lib/aqbanking/plugins/29/imexporters/swift.xml
-lib/aqbanking/plugins/29/imexporters/xmldb.la
-lib/aqbanking/plugins/29/imexporters/xmldb.so
-lib/aqbanking/plugins/29/imexporters/xmldb.xml
-lib/aqbanking/plugins/29/imexporters/yellownet.la
-lib/aqbanking/plugins/29/imexporters/yellownet.so
-lib/aqbanking/plugins/29/imexporters/yellownet.xml
-lib/aqbanking/plugins/29/providers/aqhbci.la
-lib/aqbanking/plugins/29/providers/aqhbci.so
-lib/aqbanking/plugins/29/providers/aqhbci.xml
-lib/aqbanking/plugins/29/providers/aqnone.la
-lib/aqbanking/plugins/29/providers/aqnone.so
-lib/aqbanking/plugins/29/providers/aqnone.xml
-lib/aqbanking/plugins/29/providers/aqofxconnect.la
-lib/aqbanking/plugins/29/providers/aqofxconnect.so
-lib/aqbanking/plugins/29/providers/aqofxconnect.xml
-lib/aqbanking/plugins/29/wizards/.keep_me
-%%WITH_QT3%%lib/aqbanking/plugins/29/wizards/qt3-wizard
-%%WITH_QT3%%lib/aqbanking/plugins/29/wizards/qt3_wizard.xml
-%%WITH_QT4%%lib/aqbanking/plugins/29/wizards/qt4-wizard
-%%WITH_QT4%%lib/aqbanking/plugins/29/wizards/qt4_wizard.xml
-lib/gwenhywfar/plugins/47/dbio/dtaus.la
-lib/gwenhywfar/plugins/47/dbio/dtaus.so
-lib/gwenhywfar/plugins/47/dbio/dtaus.xml
-lib/gwenhywfar/plugins/47/dbio/swift.la
-lib/gwenhywfar/plugins/47/dbio/swift.so
-lib/gwenhywfar/plugins/47/dbio/swift.xml
+include/aqbanking5/aqbanking/ab_accountqueue.h
+include/aqbanking5/aqbanking/ab_accountqueuefns.h
+include/aqbanking5/aqbanking/ab_jobqueue.h
+include/aqbanking5/aqbanking/ab_queue.h
+include/aqbanking5/aqbanking/ab_queuefns.h
+include/aqbanking5/aqbanking/ab_userqueue.h
+include/aqbanking5/aqbanking/ab_userqueuefns.h
+include/aqbanking5/aqbanking/abgui.h
+include/aqbanking5/aqbanking/account.h
+include/aqbanking5/aqbanking/account_be.h
+include/aqbanking5/aqbanking/accstatus.h
+include/aqbanking5/aqbanking/balance.h
+include/aqbanking5/aqbanking/bankinfo.h
+include/aqbanking5/aqbanking/bankinfoplugin.h
+include/aqbanking5/aqbanking/bankinfoplugin_be.h
+include/aqbanking5/aqbanking/bankinfoservice.h
+include/aqbanking5/aqbanking/banking.h
+include/aqbanking5/aqbanking/banking_be.h
+include/aqbanking5/aqbanking/banking_cfg.h
+include/aqbanking5/aqbanking/banking_imex.h
+include/aqbanking5/aqbanking/banking_info.h
+include/aqbanking5/aqbanking/banking_ob.h
+include/aqbanking5/aqbanking/banking_simple.h
+include/aqbanking5/aqbanking/banking_virt.h
+include/aqbanking5/aqbanking/cellphoneproduct.h
+include/aqbanking5/aqbanking/country.h
+include/aqbanking5/aqbanking/dlg_editaccount.h
+include/aqbanking5/aqbanking/dlg_edituser.h
+include/aqbanking5/aqbanking/dlg_importer.h
+include/aqbanking5/aqbanking/dlg_newaccount_be.h
+include/aqbanking5/aqbanking/dlg_newuser_be.h
+include/aqbanking5/aqbanking/dlg_selectbackend.h
+include/aqbanking5/aqbanking/dlg_selectbankinfo.h
+include/aqbanking5/aqbanking/dlg_setup.h
+include/aqbanking5/aqbanking/dlg_setup_newuser.h
+include/aqbanking5/aqbanking/dlg_usertype_page_be.h
+include/aqbanking5/aqbanking/error.h
+include/aqbanking5/aqbanking/eutransferinfo.h
+include/aqbanking5/aqbanking/httpsession.h
+include/aqbanking5/aqbanking/imexporter.h
+include/aqbanking5/aqbanking/imexporter_be.h
+include/aqbanking5/aqbanking/job.h
+include/aqbanking5/aqbanking/job_be.h
+include/aqbanking5/aqbanking/jobcreatedatedtransfer.h
+include/aqbanking5/aqbanking/jobcreatedatedtransfer_be.h
+include/aqbanking5/aqbanking/jobcreatesto.h
+include/aqbanking5/aqbanking/jobcreatesto_be.h
+include/aqbanking5/aqbanking/jobdeletedatedtransfer.h
+include/aqbanking5/aqbanking/jobdeletedatedtransfer_be.h
+include/aqbanking5/aqbanking/jobdeletesto.h
+include/aqbanking5/aqbanking/jobdeletesto_be.h
+include/aqbanking5/aqbanking/jobeutransfer.h
+include/aqbanking5/aqbanking/jobeutransfer_be.h
+include/aqbanking5/aqbanking/jobgetbalance.h
+include/aqbanking5/aqbanking/jobgetbalance_be.h
+include/aqbanking5/aqbanking/jobgetdatedtransfers.h
+include/aqbanking5/aqbanking/jobgetdatedtransfers_be.h
+include/aqbanking5/aqbanking/jobgetstandingorders.h
+include/aqbanking5/aqbanking/jobgetstandingorders_be.h
+include/aqbanking5/aqbanking/jobgettransactions.h
+include/aqbanking5/aqbanking/jobgettransactions_be.h
+include/aqbanking5/aqbanking/jobinternaltransfer.h
+include/aqbanking5/aqbanking/jobinternaltransfer_be.h
+include/aqbanking5/aqbanking/jobloadcellphone.h
+include/aqbanking5/aqbanking/jobloadcellphone_be.h
+include/aqbanking5/aqbanking/jobmodifydatedtransfer.h
+include/aqbanking5/aqbanking/jobmodifydatedtransfer_be.h
+include/aqbanking5/aqbanking/jobmodifysto.h
+include/aqbanking5/aqbanking/jobmodifysto_be.h
+include/aqbanking5/aqbanking/jobsepadebitnote.h
+include/aqbanking5/aqbanking/jobsepadebitnote_be.h
+include/aqbanking5/aqbanking/jobsepatransfer.h
+include/aqbanking5/aqbanking/jobsepatransfer_be.h
+include/aqbanking5/aqbanking/jobsingledebitnote.h
+include/aqbanking5/aqbanking/jobsingledebitnote_be.h
+include/aqbanking5/aqbanking/jobsingletransfer.h
+include/aqbanking5/aqbanking/jobsingletransfer_be.h
+include/aqbanking5/aqbanking/message.h
+include/aqbanking5/aqbanking/msgengine.h
+include/aqbanking5/aqbanking/provider.h
+include/aqbanking5/aqbanking/provider_be.h
+include/aqbanking5/aqbanking/security.h
+include/aqbanking5/aqbanking/system.h
+include/aqbanking5/aqbanking/textkeydescr.h
+include/aqbanking5/aqbanking/transaction.h
+include/aqbanking5/aqbanking/transactionfns.h
+include/aqbanking5/aqbanking/transactionlimits.h
+include/aqbanking5/aqbanking/user.h
+include/aqbanking5/aqbanking/userfns.h
+include/aqbanking5/aqbanking/value.h
+include/aqbanking5/aqbanking/version.h
+include/aqbanking5/aqhbci/account.h
+include/aqbanking5/aqhbci/aqhbci.h
+include/aqbanking5/aqhbci/msgengine.h
+include/aqbanking5/aqhbci/provider.h
+include/aqbanking5/aqhbci/tanmethod.h
+include/aqbanking5/aqhbci/user.h
+include/aqbanking5/aqofxconnect/account.h
+include/aqbanking5/aqofxconnect/aqofxconnect.h
+include/aqbanking5/aqofxconnect/dlg_getinst.h
+include/aqbanking5/aqofxconnect/ofxhome.h
+include/aqbanking5/aqofxconnect/oh_institute_data.h
+include/aqbanking5/aqofxconnect/oh_institute_data_fns.h
+include/aqbanking5/aqofxconnect/oh_institute_spec.h
+include/aqbanking5/aqofxconnect/oh_institute_spec_fns.h
+include/aqbanking5/aqofxconnect/provider.h
+include/aqbanking5/aqofxconnect/user.h
+include/aqbanking5/aqofxconnect/version.h
+%%WITH_PAYPAL%%include/aqpaypal/aqpaypal.h
+%%WITH_PAYPAL%%include/aqpaypal/provider.h
+%%WITH_PAYPAL%%include/aqpaypal/user.h
+lib/aqbanking/plugins/%%AQB_SHLIB_VER%%/bankinfo/at.a
+lib/aqbanking/plugins/%%AQB_SHLIB_VER%%/bankinfo/at.la
+lib/aqbanking/plugins/%%AQB_SHLIB_VER%%/bankinfo/at.so
+lib/aqbanking/plugins/%%AQB_SHLIB_VER%%/bankinfo/at.xml
+lib/aqbanking/plugins/%%AQB_SHLIB_VER%%/bankinfo/ca.a
+lib/aqbanking/plugins/%%AQB_SHLIB_VER%%/bankinfo/ca.la
+lib/aqbanking/plugins/%%AQB_SHLIB_VER%%/bankinfo/ca.so
+lib/aqbanking/plugins/%%AQB_SHLIB_VER%%/bankinfo/ca.xml
+lib/aqbanking/plugins/%%AQB_SHLIB_VER%%/bankinfo/ch.a
+lib/aqbanking/plugins/%%AQB_SHLIB_VER%%/bankinfo/ch.la
+lib/aqbanking/plugins/%%AQB_SHLIB_VER%%/bankinfo/ch.so
+lib/aqbanking/plugins/%%AQB_SHLIB_VER%%/bankinfo/ch.xml
+lib/aqbanking/plugins/%%AQB_SHLIB_VER%%/bankinfo/de.a
+lib/aqbanking/plugins/%%AQB_SHLIB_VER%%/bankinfo/de.la
+lib/aqbanking/plugins/%%AQB_SHLIB_VER%%/bankinfo/de.so
+lib/aqbanking/plugins/%%AQB_SHLIB_VER%%/bankinfo/de.xml
+lib/aqbanking/plugins/%%AQB_SHLIB_VER%%/bankinfo/us.a
+lib/aqbanking/plugins/%%AQB_SHLIB_VER%%/bankinfo/us.la
+lib/aqbanking/plugins/%%AQB_SHLIB_VER%%/bankinfo/us.so
+lib/aqbanking/plugins/%%AQB_SHLIB_VER%%/bankinfo/us.xml
+lib/aqbanking/plugins/%%AQB_SHLIB_VER%%/imexporters/csv.a
+lib/aqbanking/plugins/%%AQB_SHLIB_VER%%/imexporters/csv.la
+lib/aqbanking/plugins/%%AQB_SHLIB_VER%%/imexporters/csv.so
+lib/aqbanking/plugins/%%AQB_SHLIB_VER%%/imexporters/csv.xml
+lib/aqbanking/plugins/%%AQB_SHLIB_VER%%/imexporters/ctxfile.a
+lib/aqbanking/plugins/%%AQB_SHLIB_VER%%/imexporters/ctxfile.la
+lib/aqbanking/plugins/%%AQB_SHLIB_VER%%/imexporters/ctxfile.so
+lib/aqbanking/plugins/%%AQB_SHLIB_VER%%/imexporters/ctxfile.xml
+lib/aqbanking/plugins/%%AQB_SHLIB_VER%%/imexporters/dtaus.a
+lib/aqbanking/plugins/%%AQB_SHLIB_VER%%/imexporters/dtaus.la
+lib/aqbanking/plugins/%%AQB_SHLIB_VER%%/imexporters/dtaus.so
+lib/aqbanking/plugins/%%AQB_SHLIB_VER%%/imexporters/dtaus.xml
+lib/aqbanking/plugins/%%AQB_SHLIB_VER%%/imexporters/eri2.a
+lib/aqbanking/plugins/%%AQB_SHLIB_VER%%/imexporters/eri2.la
+lib/aqbanking/plugins/%%AQB_SHLIB_VER%%/imexporters/eri2.so
+lib/aqbanking/plugins/%%AQB_SHLIB_VER%%/imexporters/eri2.xml
+lib/aqbanking/plugins/%%AQB_SHLIB_VER%%/imexporters/ofx.a
+lib/aqbanking/plugins/%%AQB_SHLIB_VER%%/imexporters/ofx.la
+lib/aqbanking/plugins/%%AQB_SHLIB_VER%%/imexporters/ofx.so
+lib/aqbanking/plugins/%%AQB_SHLIB_VER%%/imexporters/ofx.xml
+lib/aqbanking/plugins/%%AQB_SHLIB_VER%%/imexporters/openhbci1.a
+lib/aqbanking/plugins/%%AQB_SHLIB_VER%%/imexporters/openhbci1.la
+lib/aqbanking/plugins/%%AQB_SHLIB_VER%%/imexporters/openhbci1.so
+lib/aqbanking/plugins/%%AQB_SHLIB_VER%%/imexporters/openhbci1.xml
+lib/aqbanking/plugins/%%AQB_SHLIB_VER%%/imexporters/q43.a
+lib/aqbanking/plugins/%%AQB_SHLIB_VER%%/imexporters/q43.la
+lib/aqbanking/plugins/%%AQB_SHLIB_VER%%/imexporters/q43.so
+lib/aqbanking/plugins/%%AQB_SHLIB_VER%%/imexporters/q43.xml
+lib/aqbanking/plugins/%%AQB_SHLIB_VER%%/imexporters/sepa.a
+lib/aqbanking/plugins/%%AQB_SHLIB_VER%%/imexporters/sepa.la
+lib/aqbanking/plugins/%%AQB_SHLIB_VER%%/imexporters/sepa.so
+lib/aqbanking/plugins/%%AQB_SHLIB_VER%%/imexporters/sepa.xml
+lib/aqbanking/plugins/%%AQB_SHLIB_VER%%/imexporters/swift.a
+lib/aqbanking/plugins/%%AQB_SHLIB_VER%%/imexporters/swift.la
+lib/aqbanking/plugins/%%AQB_SHLIB_VER%%/imexporters/swift.so
+lib/aqbanking/plugins/%%AQB_SHLIB_VER%%/imexporters/swift.xml
+lib/aqbanking/plugins/%%AQB_SHLIB_VER%%/imexporters/xmldb.a
+lib/aqbanking/plugins/%%AQB_SHLIB_VER%%/imexporters/xmldb.la
+lib/aqbanking/plugins/%%AQB_SHLIB_VER%%/imexporters/xmldb.so
+lib/aqbanking/plugins/%%AQB_SHLIB_VER%%/imexporters/xmldb.xml
+lib/aqbanking/plugins/%%AQB_SHLIB_VER%%/imexporters/yellownet.a
+lib/aqbanking/plugins/%%AQB_SHLIB_VER%%/imexporters/yellownet.la
+lib/aqbanking/plugins/%%AQB_SHLIB_VER%%/imexporters/yellownet.so
+lib/aqbanking/plugins/%%AQB_SHLIB_VER%%/imexporters/yellownet.xml
+lib/aqbanking/plugins/%%AQB_SHLIB_VER%%/providers/aqhbci.a
+lib/aqbanking/plugins/%%AQB_SHLIB_VER%%/providers/aqhbci.la
+lib/aqbanking/plugins/%%AQB_SHLIB_VER%%/providers/aqhbci.so
+lib/aqbanking/plugins/%%AQB_SHLIB_VER%%/providers/aqhbci.xml
+lib/aqbanking/plugins/%%AQB_SHLIB_VER%%/providers/aqnone.a
+lib/aqbanking/plugins/%%AQB_SHLIB_VER%%/providers/aqnone.la
+lib/aqbanking/plugins/%%AQB_SHLIB_VER%%/providers/aqnone.so
+lib/aqbanking/plugins/%%AQB_SHLIB_VER%%/providers/aqnone.xml
+lib/aqbanking/plugins/%%AQB_SHLIB_VER%%/providers/aqofxconnect.a
+lib/aqbanking/plugins/%%AQB_SHLIB_VER%%/providers/aqofxconnect.la
+lib/aqbanking/plugins/%%AQB_SHLIB_VER%%/providers/aqofxconnect.so
+lib/aqbanking/plugins/%%AQB_SHLIB_VER%%/providers/aqofxconnect.xml
+%%WITH_PAYPAL%%lib/aqbanking/plugins/%%AQB_SHLIB_VER%%/providers/aqpaypal.a
+%%WITH_PAYPAL%%lib/aqbanking/plugins/%%AQB_SHLIB_VER%%/providers/aqpaypal.la
+%%WITH_PAYPAL%%lib/aqbanking/plugins/%%AQB_SHLIB_VER%%/providers/aqpaypal.so
+%%WITH_PAYPAL%%lib/aqbanking/plugins/%%AQB_SHLIB_VER%%/providers/aqpaypal.xml
+lib/gwenhywfar/plugins/%%GWEN_SHLIB_VER%%/dbio/dtaus.a
+lib/gwenhywfar/plugins/%%GWEN_SHLIB_VER%%/dbio/dtaus.la
+lib/gwenhywfar/plugins/%%GWEN_SHLIB_VER%%/dbio/dtaus.so
+lib/gwenhywfar/plugins/%%GWEN_SHLIB_VER%%/dbio/dtaus.xml
+lib/gwenhywfar/plugins/%%GWEN_SHLIB_VER%%/dbio/swift.a
+lib/gwenhywfar/plugins/%%GWEN_SHLIB_VER%%/dbio/swift.la
+lib/gwenhywfar/plugins/%%GWEN_SHLIB_VER%%/dbio/swift.so
+lib/gwenhywfar/plugins/%%GWEN_SHLIB_VER%%/dbio/swift.xml
+lib/libaqbanking.a
 lib/libaqbanking.la
 lib/libaqbanking.so
-lib/libaqbanking.so.31
+lib/libaqbanking.so.%%AQB_SHLIB_VER%%
+lib/libaqhbci.a
 lib/libaqhbci.la
 lib/libaqhbci.so
-lib/libaqhbci.so.17
+lib/libaqhbci.so.19
+lib/libaqnone.a
 lib/libaqnone.la
 lib/libaqnone.so
-lib/libaqnone.so.31
+lib/libaqnone.so.%%AQB_SHLIB_VER%%
+lib/libaqofxconnect.a
 lib/libaqofxconnect.la
 lib/libaqofxconnect.so
-lib/libaqofxconnect.so.5
-%%WITH_QT4%%lib/libq4banking.la
-%%WITH_QT4%%lib/libq4banking.so
-%%WITH_QT4%%lib/libq4banking.so.1
-%%WITH_QT3%%lib/libqbanking.la
-%%WITH_QT3%%lib/libqbanking.so
-%%WITH_QT3%%lib/libqbanking.so.8
+lib/libaqofxconnect.so.7
+%%WITH_PAYPAL%%lib/libaqpaypal.a
+%%WITH_PAYPAL%%lib/libaqpaypal.la
+%%WITH_PAYPAL%%lib/libaqpaypal.so
+%%WITH_PAYPAL%%lib/libaqpaypal.so.0
 libdata/pkgconfig/aqbanking.pc
 share/aclocal/aqbanking.m4
+share/aqbanking/aqbanking/typemaker2/c/ab_account.tm2
+share/aqbanking/aqbanking/typemaker2/c/ab_job.tm2
+share/aqbanking/aqbanking/typemaker2/c/ab_job_list.tm2
+share/aqbanking/aqbanking/typemaker2/c/ab_job_list2.tm2
+share/aqbanking/aqbanking/typemaker2/c/ab_user.tm2
+share/aqbanking/backends/aqhbci/dialogs/chipcard.png
+share/aqbanking/backends/aqhbci/dialogs/dlg_choose_usertype.dlg
+share/aqbanking/backends/aqhbci/dialogs/dlg_ddvcard.dlg
+share/aqbanking/backends/aqhbci/dialogs/dlg_ddvcard_special.dlg
+share/aqbanking/backends/aqhbci/dialogs/dlg_edituserddv.dlg
+share/aqbanking/backends/aqhbci/dialogs/dlg_edituserpintan.dlg
+share/aqbanking/backends/aqhbci/dialogs/dlg_edituserrdh.dlg
+share/aqbanking/backends/aqhbci/dialogs/dlg_importkeyfile.dlg
+share/aqbanking/backends/aqhbci/dialogs/dlg_newkeyfile.dlg
+share/aqbanking/backends/aqhbci/dialogs/dlg_newuser.dlg
+share/aqbanking/backends/aqhbci/dialogs/dlg_pintan.dlg
+share/aqbanking/backends/aqhbci/dialogs/dlg_pintan_special.dlg
+share/aqbanking/backends/aqhbci/dialogs/dlg_rdh_special.dlg
+share/aqbanking/backends/aqhbci/dialogs/keyfile.png
+share/aqbanking/backends/aqhbci/dialogs/pintan.png
 share/aqbanking/backends/aqhbci/hbci.xml
+share/aqbanking/backends/aqofxconnect/dialogs/dlg_edituser.dlg
+share/aqbanking/backends/aqofxconnect/dialogs/dlg_getinst.dlg
+share/aqbanking/backends/aqofxconnect/dialogs/dlg_newuser.dlg
+share/aqbanking/backends/aqofxconnect/dialogs/dlg_ofx_special.dlg
+%%WITH_PAYPAL%%share/aqbanking/backends/aqpaypal/dialogs/dlg_edituser.dlg
+%%WITH_PAYPAL%%share/aqbanking/backends/aqpaypal/dialogs/dlg_newuser.dlg
 share/aqbanking/bankinfo/at/banks.data
 share/aqbanking/bankinfo/at/bic.idx
 share/aqbanking/bankinfo/at/blz.idx
@@ -322,36 +271,25 @@ share/aqbanking/bankinfo/us/banks.data
 share/aqbanking/bankinfo/us/bic.idx
 share/aqbanking/bankinfo/us/blz.idx
 share/aqbanking/bankinfo/us/namloc.idx
-share/aqbanking/frontends/.keep_me
-%%WITH_QT4%%share/aqbanking/frontends/q4banking/help/de/images/qbcfgtabsettings-1.png
-%%WITH_QT4%%share/aqbanking/frontends/q4banking/help/de/images/qbcfgtabsettings-2.png
-%%WITH_QT4%%share/aqbanking/frontends/q4banking/help/de/images/qbcfgtabsettings-3.png
-%%WITH_QT4%%share/aqbanking/frontends/q4banking/help/de/images/qbeditaccount-1.png
-%%WITH_QT4%%share/aqbanking/frontends/q4banking/help/de/images/qbeditaccount-2.png
-%%WITH_QT4%%share/aqbanking/frontends/q4banking/help/de/images/qbedituser-1.png
-%%WITH_QT4%%share/aqbanking/frontends/q4banking/help/de/images/qbedituser-2.png
-%%WITH_QT4%%share/aqbanking/frontends/q4banking/help/de/qbcfgtabsettings.html
-%%WITH_QT4%%share/aqbanking/frontends/q4banking/help/de/qbeditaccount.html
-%%WITH_QT4%%share/aqbanking/frontends/q4banking/help/de/qbedituser.html
-%%WITH_QT3%%share/aqbanking/frontends/qbanking/help/de/images/qbcfgtabsettings-1.png
-%%WITH_QT3%%share/aqbanking/frontends/qbanking/help/de/images/qbcfgtabsettings-2.png
-%%WITH_QT3%%share/aqbanking/frontends/qbanking/help/de/images/qbcfgtabsettings-3.png
-%%WITH_QT3%%share/aqbanking/frontends/qbanking/help/de/images/qbeditaccount-1.png
-%%WITH_QT3%%share/aqbanking/frontends/qbanking/help/de/images/qbeditaccount-2.png
-%%WITH_QT3%%share/aqbanking/frontends/qbanking/help/de/images/qbedituser-1.png
-%%WITH_QT3%%share/aqbanking/frontends/qbanking/help/de/images/qbedituser-2.png
-%%WITH_QT3%%share/aqbanking/frontends/qbanking/help/de/qbcfgtabsettings.html
-%%WITH_QT3%%share/aqbanking/frontends/qbanking/help/de/qbeditaccount.html
-%%WITH_QT3%%share/aqbanking/frontends/qbanking/help/de/qbedituser.html
-%%WITH_QT3%%share/aqbanking/i18n/de.qm
+share/aqbanking/dialogs/dlg_editaccount.dlg
+share/aqbanking/dialogs/dlg_edituser.dlg
+share/aqbanking/dialogs/dlg_importer.dlg
+share/aqbanking/dialogs/dlg_selectbackend.dlg
+share/aqbanking/dialogs/dlg_selectbankinfo.dlg
+share/aqbanking/dialogs/dlg_setup.dlg
+share/aqbanking/dialogs/dlg_setup_newuser.dlg
+share/aqbanking/dialogs/dlg_usertype_pagedefault.dlg
+share/aqbanking/imexporters/csv/dialogs/csv_editprofile.dlg
 share/aqbanking/imexporters/csv/profiles/amex.conf
 share/aqbanking/imexporters/csv/profiles/aqmoney1.conf
 share/aqbanking/imexporters/csv/profiles/aqmoney2.conf
 share/aqbanking/imexporters/csv/profiles/bankaustria.conf
 share/aqbanking/imexporters/csv/profiles/cli-transfers.conf
 share/aqbanking/imexporters/csv/profiles/comdirect.conf
+share/aqbanking/imexporters/csv/profiles/consors-tagesgeld.conf
 share/aqbanking/imexporters/csv/profiles/default.conf
 share/aqbanking/imexporters/csv/profiles/diba.conf
+share/aqbanking/imexporters/csv/profiles/dkb-cash.conf
 share/aqbanking/imexporters/csv/profiles/dkb.conf
 share/aqbanking/imexporters/csv/profiles/full.conf
 share/aqbanking/imexporters/csv/profiles/hypovereinsbank.conf
@@ -374,6 +312,7 @@ share/aqbanking/imexporters/eri/profiles/default.conf
 share/aqbanking/imexporters/eri2/eriformat.xml
 share/aqbanking/imexporters/ofx/profiles/default.conf
 share/aqbanking/imexporters/openhbci1/profiles/default.conf
+share/aqbanking/imexporters/q43/profiles/default.conf
 share/aqbanking/imexporters/sepa/profiles/ccm.conf
 share/aqbanking/imexporters/sepa/profiles/default.conf
 share/aqbanking/imexporters/swift/profiles/amro940.conf
@@ -382,15 +321,22 @@ share/aqbanking/imexporters/swift/profiles/swiftmt940.conf
 share/aqbanking/imexporters/swift/profiles/swiftmt942.conf
 share/aqbanking/imexporters/xmldb/profiles/default.conf
 share/aqbanking/imexporters/yellownet/profiles/default.conf
-share/doc/aqbanking/AUTHORS
-share/doc/aqbanking/COPYING
-share/doc/aqbanking/ChangeLog
-share/doc/aqbanking/README
+share/aqbanking/typemaker2/c/ab_accountqueue.tm2
+share/aqbanking/typemaker2/c/ab_accountqueue_list.tm2
+share/aqbanking/typemaker2/c/ab_jobqueue.tm2
+share/aqbanking/typemaker2/c/ab_jobqueue_list.tm2
+share/aqbanking/typemaker2/c/ab_queue.tm2
+share/aqbanking/typemaker2/c/ab_userqueue.tm2
+share/aqbanking/typemaker2/c/ab_userqueue_list.tm2
 share/doc/aqhbci/aqhbci-tool/README
+%%WITH_PAYPAL%%share/doc/aqpaypal/aqpaypal-tool/README
 share/locale/de/LC_MESSAGES/aqbanking.mo
+%%WITH_PAYPAL%%@dirrm share/doc/aqpaypal/aqpaypal-tool
+%%WITH_PAYPAL%%@dirrm share/doc/aqpaypal
 @dirrm share/doc/aqhbci/aqhbci-tool
 @dirrm share/doc/aqhbci
-@dirrm share/doc/aqbanking
+@dirrm share/aqbanking/typemaker2/c
+@dirrm share/aqbanking/typemaker2
 @dirrm share/aqbanking/imexporters/yellownet/profiles
 @dirrm share/aqbanking/imexporters/yellownet
 @dirrm share/aqbanking/imexporters/xmldb/profiles
@@ -399,6 +345,8 @@ share/locale/de/LC_MESSAGES/aqbanking.mo
 @dirrm share/aqbanking/imexporters/swift
 @dirrm share/aqbanking/imexporters/sepa/profiles
 @dirrm share/aqbanking/imexporters/sepa
+@dirrm share/aqbanking/imexporters/q43/profiles
+@dirrm share/aqbanking/imexporters/q43
 @dirrm share/aqbanking/imexporters/openhbci1/profiles
 @dirrm share/aqbanking/imexporters/openhbci1
 @dirrm share/aqbanking/imexporters/ofx/profiles
@@ -411,43 +359,35 @@ share/locale/de/LC_MESSAGES/aqbanking.mo
 @dirrm share/aqbanking/imexporters/ctxfile/profiles
 @dirrm share/aqbanking/imexporters/ctxfile
 @dirrm share/aqbanking/imexporters/csv/profiles
+@dirrm share/aqbanking/imexporters/csv/dialogs
 @dirrm share/aqbanking/imexporters/csv
 @dirrm share/aqbanking/imexporters
-%%WITH_QT3%%@dirrm share/aqbanking/i18n
-%%WITH_QT3%%@dirrm share/aqbanking/frontends/qbanking/help/de/images
-%%WITH_QT3%%@dirrm share/aqbanking/frontends/qbanking/help/de
-%%WITH_QT3%%@dirrm share/aqbanking/frontends/qbanking/help
-%%WITH_QT3%%@dirrm share/aqbanking/frontends/qbanking
-%%WITH_QT4%%@dirrm share/aqbanking/frontends/q4banking/help/de/images
-%%WITH_QT4%%@dirrm share/aqbanking/frontends/q4banking/help/de
-%%WITH_QT4%%@dirrm share/aqbanking/frontends/q4banking/help
-%%WITH_QT4%%@dirrm share/aqbanking/frontends/q4banking
-@dirrm share/aqbanking/frontends
+@dirrm share/aqbanking/dialogs
 @dirrm share/aqbanking/bankinfo/us
 @dirrm share/aqbanking/bankinfo/de
 @dirrm share/aqbanking/bankinfo/ch
 @dirrm share/aqbanking/bankinfo/ca
 @dirrm share/aqbanking/bankinfo/at
 @dirrm share/aqbanking/bankinfo
+%%WITH_PAYPAL%%@dirrm share/aqbanking/backends/aqpaypal/dialogs
+%%WITH_PAYPAL%%@dirrm share/aqbanking/backends/aqpaypal
+@dirrm share/aqbanking/backends/aqofxconnect/dialogs
+@dirrm share/aqbanking/backends/aqofxconnect
+@dirrm share/aqbanking/backends/aqhbci/dialogs
 @dirrm share/aqbanking/backends/aqhbci
 @dirrm share/aqbanking/backends
+@dirrm share/aqbanking/aqbanking/typemaker2/c
+@dirrm share/aqbanking/aqbanking/typemaker2
+@dirrm share/aqbanking/aqbanking
 @dirrm share/aqbanking
-@dirrm lib/aqbanking/plugins/29/wizards
-@dirrm lib/aqbanking/plugins/29/providers
-@dirrm lib/aqbanking/plugins/29/imexporters
-%%WITH_QT3%%@dirrm lib/aqbanking/plugins/29/frontends/qbanking/cfgmodules
-%%WITH_QT3%%@dirrm lib/aqbanking/plugins/29/frontends/qbanking
-%%WITH_QT4%%@dirrm lib/aqbanking/plugins/29/frontends/q4banking/cfgmodules
-%%WITH_QT4%%@dirrm lib/aqbanking/plugins/29/frontends/q4banking
-@dirrm lib/aqbanking/plugins/29/frontends
-@dirrm lib/aqbanking/plugins/29/debugger/aqhbci
-@dirrm lib/aqbanking/plugins/29/debugger
-@dirrm lib/aqbanking/plugins/29/bankinfo
-@dirrm lib/aqbanking/plugins/29
+@dirrm lib/aqbanking/plugins/%%AQB_SHLIB_VER%%/providers
+@dirrm lib/aqbanking/plugins/%%AQB_SHLIB_VER%%/imexporters
+@dirrm lib/aqbanking/plugins/%%AQB_SHLIB_VER%%/bankinfo
+@dirrm lib/aqbanking/plugins/%%AQB_SHLIB_VER%%
 @dirrm lib/aqbanking/plugins
 @dirrm lib/aqbanking
-%%WITH_QT3%%@dirrm include/qbanking
-%%WITH_QT4%%@dirrm include/q4banking
-@dirrm include/aqofxconnect
-@dirrm include/aqhbci
-@dirrm include/aqbanking
+%%WITH_PAYPAL%%@dirrm include/aqpaypal
+@dirrm include/aqbanking5/aqofxconnect
+@dirrm include/aqbanking5/aqhbci
+@dirrm include/aqbanking5/aqbanking
+@dirrm include/aqbanking5

@@ -6,91 +6,77 @@
 #
 
 PORTNAME=	aqbanking
-PORTVERSION=	4.2.4
-PORTREVISION=	3
+DISTVERSION=	5.0.4
 CATEGORIES=	finance
 MASTER_SITES=	http://www2.aquamaniac.de/sites/download/
-DISTFILES=	download.php\?package=03\&release=50\&file=01\&dummy=${DISTNAME}${EXTRACT_SUFX}
+DISTFILES=	download.php\?package=03\&release=77\&file=01\&dummy=${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	bsdkaffee@gmail.com
 COMMENT=	Online banking interface and financial data framework
 
-LIB_DEPENDS=	gwenhywfar.58:${PORTSDIR}/devel/gwenhywfar \
+LIB_DEPENDS=	gwenhywfar.60:${PORTSDIR}/devel/gwenhywfar \
 		gmp.10:${PORTSDIR}/math/gmp
 
-GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_GETTEXT=	yes
+USE_AUTOTOOLS=	libtool
+USE_GNOME=	gnomehack pkgconfig
+
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
+
+OPTIONS=	APIDOC "Full API documentation (requires Doxygen)" off \
+		KTOBLZCHECK "KtoBlzCheck support" off \
+		PAYPAL "Build PayPal backend (separate license)" off
+
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--enable-release="yes"
+CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" \
+		LDFLAGS="${LDFLAGS}"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 MAKE_JOBS_UNSAFE=	yes
 
-CFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
-CPPFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
-LDFLAGS+=	-L${LOCALBASE}/lib
-CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS}" \
-		LDFLAGS="${LDFLAGS}"
+PLIST_SUB=	AQB_SHLIB_VER="${AQB_SHLIB_VER}" \
+		GWEN_SHLIB_VER="${GWEN_SHLIB_VER}"
+USE_LDCONFIG=	yes
 
-USE_LDCONFIG=	${PREFIX}/lib/aqbanking/plugins/29/bankinfo \
-		${PREFIX}/lib/aqbanking/plugins/29/imexporters \
-		${PREFIX}/lib/aqbanking/plugins/29/providers \
-		${PREFIX}/lib
-
-OPTIONS=	KTOBLZCHECK "KtoBlzCheck support" off \
-		QT3 "Build QT3 frontend" off \
-		QT4 "Build QT4 frontend" on
+AQB_SHLIB_VER=	33
+GWEN_SHLIB_VER=	60
 
 .include <bsd.port.options.mk>
 
-# no configure option to disable ktoblzcheck support (yet)
-.if defined(WITH_KTOBLZCHECK) || exists(${LOCALBASE}/lib/libktoblzcheck.so.4)
-LIB_DEPENDS+=	ktoblzcheck.6:${PORTSDIR}/finance/ktoblzcheck
+.if !defined(NOPORTDOCS) && defined(WITH_APIDOC)
+BUILD_DEPENDS+=	doxygen:${PORTSDIR}/devel/doxygen
+CONFIGURE_ARGS+=--enable-full-doc
+PORTDOCS=	apidoc
 .endif
 
-.if !defined(WITH_QT3) && !defined(WITH_QT4)
-CONFIGURE_ARGS+=--with-frontends=""
-.elif defined(WITH_QT3) && !defined(WITH_QT4)
-CONFIGURE_ARGS+=--with-frontends="qbanking"
-.elif !defined(WITH_QT3) && defined(WITH_QT4)
-CONFIGURE_ARGS+=--with-frontends="q4banking"
+.if defined(WITH_KTOBLZCHECK) || exists(${LOCALBASE}/lib/libktoblzcheck.so)
+LIB_DEPENDS+=	ktoblzcheck:${PORTSDIR}/finance/ktoblzcheck
 .endif
 
-.if defined(WITH_QT3)
-USE_QT_VER=	3
-QT_NONSTANDARD=	yes
-CONFIGURE_ENV+=	LIBS="${QTCFGLIBS} ${PTHREAD_LIBS}" \
-		QTDIR="${QT_PREFIX}"
-USE_LDCONFIG+=	${PREFIX}/lib/aqbanking/plugins/29/frontends/qbanking/cfgmodules
-PLIST_SUB+=	WITH_QT3=""
+.if defined(WITH_PAYPAL)
+CONFIGURE_ARGS+=--with-backends="aqhbci aqnone aqofxconnect aqpaypal"
+PLIST_SUB+=	WITH_PAYPAL=""
 .else
-PLIST_SUB+=     WITH_QT3="@comment "
+PLIST_SUB+=	WITH_PAYPAL="@comment "
 .endif
 
-.if defined(WITH_QT4)
-#USE_QT_VER=    4
-#QT_COMPONENTS= gui qt3support moc_build uic_build
-QT_NONSTANDARD=	yes
-.include "${PORTSDIR}/Mk/bsd.qt.mk"
-BUILD_DEPENDS+=	moc-qt4:${PORTSDIR}/devel/qt4-moc \
-		uic-qt4:${PORTSDIR}/devel/qt4-uic
-LIB_DEPENDS+=	QtGui.4:${PORTSDIR}/x11-toolkits/qt4-gui \
-		Qt3Support.4:${PORTSDIR}/devel/qt4-qt3support
-CONFIGURE_ENV+= LIBS="${QTCFGLIBS} ${PTHREAD_LIBS}" \
-		QTDIR="${QT_PREFIX}"
-USE_LDCONFIG+=	${PREFIX}/lib/aqbanking/plugins/29/frontends/q4banking/cfgmodules
-PLIST_SUB+=	WITH_QT4=""
-.else
-PLIST_SUB+=     WITH_QT4="@comment "
+post-patch:
+	${REINPLACE_CMD} -e 's|install-idataDATA install-iheaderHEADERS|install-iheaderHEADERS|' \
+		${WRKSRC}/Makefile.in
+
+post-build:
+.if !defined(NOPORTDOCS) && defined(WITH_APIDOC)
+	@cd ${WRKSRC} && ${GMAKE} srcdoc
 .endif
 
 post-install:
-# install dummy files for directories shared between QT3 & QT4 frontends
-.for dir in 	lib/aqbanking/plugins/29/debugger \
-		lib/aqbanking/plugins/29/debugger/aqhbci \
-		lib/aqbanking/plugins/29/frontends \
-		lib/aqbanking/plugins/29/wizards \
-		share/aqbanking/frontends
-			${MKDIR} ${PREFIX}/${dir}
-			${TOUCH} ${PREFIX}/${dir}/.keep_me
-.endfor
-	@${CAT} ${PKGMESSAGE}
+.if !defined(NOPORTDOCS) && defined(WITH_APIDOC)
+	${MKDIR} ${DOCSDIR}/apidoc
+	cd ${WRKSRC}/apidoc && \
+		${COPYTREE_SHARE} \* ${DOCSDIR}/apidoc
+.endif
 
 .include <bsd.port.mk>
