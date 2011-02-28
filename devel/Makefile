@@ -857,6 +857,7 @@
     SUBDIR += libpeak
     SUBDIR += libphish
     SUBDIR += libphk
+    SUBDIR += libplist
     SUBDIR += libpperl
     SUBDIR += libpthread-stubs
     SUBDIR += librcc
