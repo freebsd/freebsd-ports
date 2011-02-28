@@ -1,11 +1,12 @@
 [Desktop Entry]
 Encoding=UTF-8
-Name=Unison
+Name=Unison 2.32
 GenericName=File-synchronization tool
 Type=Application
 Terminal=false
 StartupNotify=true
 Categories=GTK;Utility;
-Exec=unison
+Exec=unison232
 Comment=Synchronize files (directories) over different disks (hosts)
+Comment[de]=Dateien oder Verzeichnisse über Festplatten oder Computer hinweg abgleichen
 Comment[ru]=Синхронизация файлов (каталогов) на нескольких дисках (компьютерах)
