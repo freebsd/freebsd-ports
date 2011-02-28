@@ -303,6 +303,7 @@ share/icons/hicolor/128x128/apps/gchemtable.png
 share/icons/hicolor/128x128/apps/gcrystal.png
 share/icons/hicolor/128x128/apps/gspectrum.png
 share/locale/de/LC_MESSAGES/gchemutils-%%VER%%.mo
+share/locale/el/LC_MESSAGES/gchemutils-%%VER%%.mo
 share/locale/es/LC_MESSAGES/gchemutils-%%VER%%.mo
 share/locale/fr/LC_MESSAGES/gchemutils-%%VER%%.mo
 share/locale/it/LC_MESSAGES/gchemutils-%%VER%%.mo
