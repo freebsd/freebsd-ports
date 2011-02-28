@@ -5,16 +5,35 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20110301:
+  AFFECTS: users of databases/jasperserver
+  AUTHOR: jhelfman@experts-exchange.com
+
+  (taken from release notes of 4.0 from vendor)
+  If you are upgrading from an older JasperServer version such as 3.5 then
+  you must first upgrade to JasperServer 3.7 before upgrading to 4.0.
+  Upgrading directly from JasperServer 3.5 to 4.0 is not a "certified"
+  (i.e. fully QA tested) procedure.
+
+  The steps to carry out this operation are fully documented in the
+  JasperReports Server Installation Guide for the 3.7 release.  You will
+  need to download the JasperServer 3.7 release package to get the relevant
+  files and documentation. To download the JasperServer 3.7 WAR file
+  distribution zip package, go to the JasperForge.org website and to the
+  JasperServer project.
+
+  http://jasperforge.org/projects/jasperserver
+
 20110228:
   AFFECTS: users of devel/ccache
   AUTHOR: Emanuel Haupt <ehaupt@FreeBSD.org>
 
   ccache now allows the use of non-default compilers such as clang. This
   requires adjustments of the ccache make glue.
- 
+
   Please (re)read the following document after updating ccache to
   ccache-3.1.4_1:
- 
+
   /usr/local/share/doc/ccache/ccache-howto-freebsd.txt
 
 20110227:
