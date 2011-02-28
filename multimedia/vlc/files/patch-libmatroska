@@ -1,0 +1,28 @@
+--- modules/demux/mkv/matroska_segment.cpp.orig	2011-02-28 22:00:54.000000000 +0100
++++ modules/demux/mkv/matroska_segment.cpp	2011-02-28 22:05:50.000000000 +0100
+@@ -220,6 +220,7 @@ void matroska_segment_c::LoadTags( KaxTa
+                     }
+                     ep->Up();
+                 }
++#if 0
+                 else if( MKV_IS_ID( el, KaxTagGeneral ) )
+                 {
+                     msg_Dbg( &sys.demuxer, "|   + General" );
+@@ -288,6 +289,7 @@ void matroska_segment_c::LoadTags( KaxTa
+                 {
+                     msg_Dbg( &sys.demuxer, "|   + Multi Title" );
+                 }
++#endif
+                 else
+                 {
+                     msg_Dbg( &sys.demuxer, "|   + LoadTag Unknown (%s)", typeid( *el ).name() );
+--- modules/demux/mkv/mkv.hpp.orig	2011-02-28 22:00:45.000000000 +0100
++++ modules/demux/mkv/mkv.hpp	2011-02-28 22:04:10.000000000 +0100
+@@ -92,7 +92,6 @@
+ #include "matroska/KaxSegment.h"
+ #include "matroska/KaxTag.h"
+ #include "matroska/KaxTags.h"
+-#include "matroska/KaxTagMulti.h"
+ #include "matroska/KaxTracks.h"
+ #include "matroska/KaxTrackAudio.h"
+ #include "matroska/KaxTrackVideo.h"
