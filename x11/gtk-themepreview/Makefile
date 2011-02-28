@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_LOCAL}	# http://www.users.monornet.hu/linux/files/
 MASTER_SITE_SUBDIR=	danfe
 DISTNAME=	ThemePreview-2-src
 
-MAINTAINER=	danfe@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A small application for preview your theme widgets in one small window
 
 GNU_CONFIGURE=	yes
