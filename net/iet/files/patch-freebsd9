@@ -1,0 +1,45 @@
+diff --git kernel/eventbsd.c kernel/eventbsd.c
+index f8572b1..fd98590 100644
+--- kernel/eventbsd.c
++++ kernel/eventbsd.c
+@@ -105,7 +105,11 @@ int iet_poll(struct cdev *dev, int poll_events, struct thread *td)
+ 	return (ret);
+ }
+ 
++#if __FreeBSD_version >= 900006
++int iet_mmap(struct cdev *dev, vm_ooffset_t offset, vm_paddr_t *paddr, int nprot, vm_memattr_t *memattr __unused)
++#else
+ int iet_mmap(struct cdev *dev, vm_offset_t offset, vm_paddr_t *paddr, int nprot)
++#endif
+ {
+ 	int page_idx;
+ 	page_t **bufs;
+diff --git kernel/ietbsd.h kernel/ietbsd.h
+index 32e20d3..fddc225 100644
+--- kernel/ietbsd.h
++++ kernel/ietbsd.h
+@@ -468,7 +468,11 @@ complete_all(wait_chan_t *chan)
+ #define init_waitqueue_head(h)	wait_chan_init(h, "iet")
+ #define wait_event_interruptible	wait_on_chan_interruptible
+ #define wait_event			wait_on_chan
++#if __FreeBSD_version >= 900032
++#define yield() kern_yield(curthread->td_user_pri)
++#else
+ #define yield	uio_yield
++#endif
+ #define timer_pending callout_pending
+ #define ARRAY_SIZE(x) (sizeof(x) / sizeof((x)[0]))
+ 
+diff --git kernel/iscsi.h kernel/iscsi.h
+index 611f839..1c3c391 100644
+--- kernel/iscsi.h
++++ kernel/iscsi.h
+@@ -432,7 +432,7 @@ extern void event_exit(void);
+ extern void iet_mmap_exit(void);
+ extern int iet_mmap_init(void);
+ int iet_poll(struct cdev *dev, int events, struct thread *td);
+-int iet_mmap(struct cdev *dev, vm_offset_t offset, vm_paddr_t *paddr, int nprot);
++d_mmap_t iet_mmap;
+ int iet_ioctl(struct cdev *dev, unsigned long cmd, caddr_t arg, int fflag, struct thread *td);
+ #endif
+ 

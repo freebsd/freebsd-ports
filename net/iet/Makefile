@@ -42,6 +42,12 @@ CONF_FILES=	ietd.conf initiators.allow initiators.deny targets.allow
 IGNORE=		requires kernel sources to build
 .endif
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 800107
+BROKEN=		requires 8.0-RELEASE or higher
+.endif
+
 pre-install:
 	${MKDIR} ${DATADIR} ${KMODDIR} ${CONFDIR}
 
@@ -50,4 +56,4 @@ post-install:
 	@[ -f ${CONFDIR}/${f} ] || ${CP} ${DATADIR}/${f} ${CONFDIR}/
 .endfor
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
