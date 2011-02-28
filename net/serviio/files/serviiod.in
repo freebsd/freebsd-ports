@@ -1,0 +1,16 @@
+#!/bin/sh
+### ====================================================================== ###
+##                                                                          ##
+##  Serviio start Script                                                    ##
+##                                                                          ##
+### ====================================================================== ###
+
+SERVIIO_HOME=%%JAVAJARDIR%%/serviio
+# Setup the classpath
+SERVIIO_CLASS_PATH="$SERVIIO_HOME/serviio.jar:$SERVIIO_HOME/derby.jar:$SERVIIO_HOME/jcs.jar:$SERVIIO_HOME/concurrent.jar:$SERVIIO_HOME/freemarker.jar:$SERVIIO_HOME/httpcore.jar:$SERVIIO_HOME/jaudiotagger.jar:$SERVIIO_HOME/jul-to-slf4j.jar:$SERVIIO_HOME/jcl-over-slf4j.jar:$SERVIIO_HOME/log4j.jar:$SERVIIO_HOME/sanselan.jar:$SERVIIO_HOME/slf4j-api.jar:$SERVIIO_HOME/slf4j-log4j12.jar:$SERVIIO_HOME/org.restlet.jar:$SERVIIO_HOME/org.restlet.ext.xstream.jar:$SERVIIO_HOME/xstream.jar:%%ETCDIR%%"
+
+# Setup Serviio specific properties
+JAVA_OPTS="-Djava.net.preferIPv4Stack=true -Djava.awt.headless=true -Dderby.system.home=/var/db/serviio -Dserviio.home=$SERVIIO_HOME -Dffmpeg.location=%%LOCALBASE%%/bin/ffmpeg"
+
+# Execute the JVM in the foreground
+exec java -Xmx384M $JAVA_OPTS "$@" -classpath "$SERVIIO_CLASS_PATH" org.serviio.MediaServer
