@@ -1,0 +1,37 @@
+#!/bin/sh
+
+# $FreeBSD$
+#
+# PROVIDE: crtmpserver
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# crtmpserver_enable (bool):   Set to NO by default.
+#               Set it to YES to enable doormand.
+# crtmpserver_config (path):   Set to %%PREFIX%%/etc/crtmpserver.lua
+#               by default.
+# crtmpserver_username (username): Set to crtmpserver
+#               by default.
+#
+
+. /etc/rc.subr
+
+name="crtmpserver"
+rcvar=${name}_enable
+
+command=%%PREFIX%%/sbin/${name}
+pidfile=/var/run/${name}.pid
+
+load_rc_config $name
+
+: ${crtmpserver_enable="NO"}
+: ${crtmpserver_config="%%PREFIX%%/etc/crtmpserver.lua"}
+
+crtmpserver_username="%%USERS%%"
+command_args="--daemon --uid=`id -u ${crtmpserver_username}` $crtmpserver_config"
+
+run_rc_command "$1"
+ps -axo pid,comm|grep crtmpserver|cut -d " " -f1 >/var/run/crtmpserver.pid

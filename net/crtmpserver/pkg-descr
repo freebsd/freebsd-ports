@@ -1,0 +1,15 @@
+High performance RTMP/RTSP streaming server
+ rtmpd is a high performance streaming server able to stream
+ (live or recorded) in the following technologies:
+  - To and from Flash (RTMP,RTMPE, RTMPS, RTMPT, RTMPTE)
+  - To and from embedded devices: iPhone, Android
+  - From surveillance cameras
+  - IP-TV using MPEG-TS and RTSP/RTCP/RTP protocols
+ Also, rtmpd can be used as a high performance rendes-vous server.
+ For example, it enables you to do:
+  - Audio/Video conferencing
+  - Online gaming
+  - Online collaboration
+  - Simple/complex chat applications
+
+WWW: http://www.rtmpd.com
