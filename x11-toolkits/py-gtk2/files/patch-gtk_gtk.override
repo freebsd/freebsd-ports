@@ -1,0 +1,15 @@
+--- gtk/gtk.override.orig	2011-02-28 12:22:04.000000000 +0100
++++ gtk/gtk.override	2011-02-28 12:23:00.000000000 +0100
+@@ -1151,9 +1151,10 @@ pygtk_main_watch_check(GSource *source)
+ #ifdef HAVE_PYSIGNAL_SETWAKEUPFD
+     PySignalWatchSource *real_source = (PySignalWatchSource *)source;
+     GPollFD *poll_fd = &real_source->fd;
+-    int data_size = 0;
++    unsigned char dummy;
++    gssize ret;
+     if (poll_fd->revents & G_IO_IN)
+-        data_size = read(poll_fd->fd, 0, 1);
++        ret = read(poll_fd->fd, &dummy, 1);
+ #endif
+ 
+     state = pyg_gil_state_ensure();
