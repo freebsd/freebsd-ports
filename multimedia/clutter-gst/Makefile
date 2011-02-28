@@ -6,7 +6,7 @@
 #   $MCom: ports/multimedia/clutter-gst/Makefile,v 1.6 2010/06/29 21:14:02 kwm Exp $
 
 PORTNAME=	clutter-gst
-PORTVERSION=	1.3.2
+PORTVERSION=	1.3.4
 CATEGORIES=	multimedia
 MASTER_SITES=	http://source.clutter-project.org/sources/${PORTNAME}/${PORTVERSION:R}/
 
