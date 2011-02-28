@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	webcamd
-PORTVERSION=	0.1.18
-PORTREVISION=	1
+PORTVERSION=	0.1.20
 CATEGORIES=	multimedia
 MASTER_SITES=	http://www.selasky.org/hans_petter/video4bsd/releases/
 
@@ -26,13 +25,17 @@ USE_BZIP2=	yes
 USE_LDCONFIG=	yes
 MAKE_JOBS_SAFE=	yes
 MANCOMPRESSED=	yes
-MAN4=		au0828.4 benq.4 bttv.4 conex.4 cpiax.4 cx23885.4 cx88.4 \
-		em28xx.4 et61x251.4 finepix.4 gl860.4 ibmcam.4 ivtv.4 \
-		jeilinj.4 m5602.4 mars.4 meye.4 mr97310a.4 ov519.4 ov534.4 \
-		pacxxx.4 pvrusb2.4 pwc.4 saa7134.4 saa7164.4 se401.4 si470x.4 \
-		sn9c102.4 sn9c20x.4 sonixj.4 spca5xx.4 sq905c.4 stk014.4 \
-		stv06xx.4 sunplus.4 t613.4 tv8532.4 usbvision.4 vc032x.4 \
-		w9966.4 w996x.4 zc0301.4 zc3xx.4 zoran.4 zr364xx.4
+MAN4=		a800.4 ce6230.4 dtv5100.4 gl861.4 mr800.4 pwc.4 sq905c.4 \
+		usbvision.4 af9005.4 cinergy.4 dw2102.4 gp8psk.4 \
+		mr97310a.4 s2255.4 stk014.4 uvc.4 af9015.4 conex.4 \
+		ec168.4 hdpvr.4 nova-t.4 se401.4 stv06xx.4 vc032x.4 \
+		anysee.4 cpiax.4 em28xx.4 ibmcam.4 opera.4 siano.4 \
+		sunplus.4 vp702x.4 au0828.4 cxusb.4 et61x251.4 \
+		jeilinj.4 ov519.4 sn9c102.4 t613.4 vp7045.4 au6610.4 \
+		dib0700.4 finepix.4 m5602.4 ov534.4 sn9c20x.4 ttusb2.4 \
+		zc3xx.4 b2c2.4 digitv.4 friio.4 m920x.4 pacxxx.4 \
+		sonixj.4 tv8532.4 zr364xx.4 benq.4 dtt200u.4 gl860.4 \
+		mars.4 pvrusb2.4 spca5xx.4 umt.4
 MAN8=		webcamd.8
 
 LIBDIR=		${PREFIX}/lib
