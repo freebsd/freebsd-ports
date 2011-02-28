@@ -14,6 +14,8 @@ MASTER_SITES=	http://www.euronet.nl/~rja/Xsnow/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Create a snowy and Santa-y desktop
 
+BROKEN=		does not compile
+
 USE_IMAKE=	yes
 USE_XORG=	xpm
 MAN6=		xsnow.6
