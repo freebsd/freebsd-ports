@@ -6,9 +6,8 @@
 #
 
 PORTNAME=	kmymoney
-PORTVERSION=	4.5.2
-PORTREVISION=	1
-CATEGORIES=	finance
+PORTVERSION=	4.5.3
+CATEGORIES=	finance kde
 MASTER_SITES=	SF/${PORTNAME}2/KMyMoney-KDE4/${PORTVERSION}
 
 MAINTAINER=	bsdkaffee@gmail.com
@@ -49,8 +48,8 @@ PLIST_SUB+=	WITH_CALENDAR="@comment "
 .endif
 
 .if defined(WITH_KBANKING)
-LIB_DEPENDS+=	aqbanking.31:${PORTSDIR}/finance/aqbanking
-QT_COMPONENTS+=	qt3support
+LIB_DEPENDS+=	gwengui-qt4.0:${PORTSDIR}/devel/gwenhywfar \
+		aqbanking.33:${PORTSDIR}/finance/aqbanking
 CMAKE_ARGS+=	-DENABLE_KBANKING:BOOL=ON
 PLIST_SUB+=	WITH_KBANKING=""
 .else
@@ -74,6 +73,10 @@ RUN_DEPENDS+=	${SITE_PERL}/Date/Manip.pm:${PORTSDIR}/devel/p5-Date-Manip \
 		${SITE_PERL}/${PERL_ARCH}/XML/Parser.pm:${PORTSDIR}/textproc/p5-XML-Parser \
 		${SITE_PERL}/XML/Writer.pm:${PORTSDIR}/textproc/p5-XML-Writer \
 		${SITE_PERL}/LWP.pm:${PORTSDIR}/www/p5-libwww
+.endif
+
+.if !defined(PACKAGE_BUILDING) && !exists(${LOCALBASE}/lib/libgwengui-qt4.so)
+BROKEN= Please rebuild devel/gwenhywfar with the WITH_QT4 option set
 .endif
 
 .include <bsd.port.mk>
