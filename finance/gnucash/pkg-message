@@ -1,0 +1,12 @@
+###############################################################################
+
+If you have enabled the DATABASE option and want to use any of the supported
+database backends, you also need to install:
+
+databases/libdbi-drivers
+
+And select the database type(s) you want to use.
+
+MySQL, PostgreSQL, and SQLite3 are supported in GnuCash.
+
+###############################################################################
