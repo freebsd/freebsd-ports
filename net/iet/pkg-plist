@@ -18,4 +18,4 @@ sbin/ietd
 sbin/ietadm
 @exec /usr/sbin/kldxref %%KMODDIR%%
 @unexec /usr/sbin/kldxref %%KMODDIR%%
-@dirrmtry %%KMODDIR%%
+@dirrmtry modules
