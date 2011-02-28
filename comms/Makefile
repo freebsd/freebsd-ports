@@ -68,6 +68,7 @@
     SUBDIR += kpsk
     SUBDIR += ktrack
     SUBDIR += libfec
+    SUBDIR += libimobiledevice
     SUBDIR += libirman
     SUBDIR += libsyncml
     SUBDIR += libticables
