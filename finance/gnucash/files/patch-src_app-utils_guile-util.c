@@ -1,11 +1,11 @@
---- src/app-utils/guile-util.c.orig	2008-01-08 10:06:47.000000000 +0900
-+++ src/app-utils/guile-util.c	2009-09-01 03:04:30.000000000 +0900
-@@ -1304,6 +1304,8 @@
+--- src/app-utils/guile-util.c.orig	2010-12-29 16:06:05.000000000 +0100
++++ src/app-utils/guile-util.c	2010-12-29 16:06:38.000000000 +0100
+@@ -1317,6 +1317,8 @@ gnc_parse_time_to_timet(const gchar *s, 
  
-   g_return_val_if_fail(s && format, -1);
+     g_return_val_if_fail(s && format, -1);
  
-+  bzero(&tm, sizeof(tm));
++    bzero(&tm, sizeof(tm));
 +
-   if (!strptime(s, format, &tm))
-     return -1;
+     if (!strptime(s, format, &tm))
+         return -1;
  

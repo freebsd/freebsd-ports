@@ -7,11 +7,9 @@
 #
 
 PORTNAME=	gnucash
-PORTVERSION=	2.2.9
-PORTREVISION=	10
+PORTVERSION=	2.4.3
 CATEGORIES=	finance gnome
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}%20%28stable%29/${PORTVERSION} \
-		http://www.gnucash.org/pub/gnucash/sources/stable/
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}%20%28stable%29/${PORTVERSION}
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Quicken-like money and finance manager
@@ -19,19 +17,22 @@ COMMENT=	Quicken-like money and finance manager
 BUILD_DEPENDS=	guile>=1.8.6:${PORTSDIR}/lang/guile \
     		${LOCALBASE}/share/guile/1.8/slibcat:${PORTSDIR}/lang/slib-guile
 LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt \
+		gnome-keyring.0:${PORTSDIR}/security/libgnome-keyring \
 		goffice-0.8.8:${PORTSDIR}/devel/goffice
 RUN_DEPENDS=	guile>=1.8.6:${PORTSDIR}/lang/guile \
 		${LOCALBASE}/share/guile/1.8/slibcat:${PORTSDIR}/lang/slib-guile \
 		${SITE_PERL}/LWP.pm:${PORTSDIR}/www/p5-libwww \
 		${SITE_PERL}/Date/Manip.pm:${PORTSDIR}/devel/p5-Date-Manip \
-		${SITE_PERL}/Finance/Quote.pm:${PORTSDIR}/finance/p5-Finance-Quote \
-		${SITE_PERL}/HTML/TableExtract.pm:${PORTSDIR}/www/p5-HTML-TableExtract \
-		${SITE_PERL}/Finance/QuoteHist.pm:${PORTSDIR}/finance/p5-Finance-QuoteHist
+		${SITE_PERL}/Finance/Quote.pm:${PORTSDIR}/finance/p5-Finance-Quote
 
-OPTIONS=	AQBANKING	"AqBanking support (HBCI/OpenHBCI)"	off \
-		OFX		"OFX support"				off \
-		POSTGRESQL	"Enable Postgresql as Backend"		off \
-		GCDOCS		"Install gnucash-docs"			on
+OPTIONS=	AQBANKING	"AqBanking support (HBCI/OpenHBCI)"	on \
+		OFX		"OFX support"				on \
+		DATABASE	"Enable SQL database backends"		off \
+		WEBKIT		"Use webkit instead of gtkhtml for the HTML engine" off \
+		PYTHON		"Install Python bindings"		off
+
+LICENSE=	GPLv3
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 USE_BZIP2=	yes
 USE_GETTEXT=	yes
@@ -40,16 +41,15 @@ USE_GMAKE=	yes
 MAKE_JOBS_SAFE=	yes
 USE_PERL5=	yes
 INSTALLS_ICONS=	yes
-USE_GNOME=	gnomeprefix libgsf_gnome libglade2 \
-		libgnomeprint libgnomeprintui gtkhtml3 libgnomeui
+USE_GNOME=	gnomeprefix libglade2 libgnomeui
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include"
-GC_LIBS=	-L${LOCALBASE}/lib -lintl
-CONFIGURE_ARGS=--with-glib-config=${GLIB_CONFIG} \
-		--disable-error-on-warning
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
+CONFIGURE_ARGS= --disable-error-on-warning \
+		--disable-doxygen
 
-MAN1=		gnc-prices.1 gnucash.1
+MAN1=		gnucash.1
 INFO=		gnucash-design
 
 GCONF_SCHEMAS=	apps_gnucash_dialog_business_common.schemas \
@@ -68,18 +68,17 @@ GCONF_SCHEMAS=	apps_gnucash_dialog_business_common.schemas \
 		apps_gnucash_window_pages_account_tree.schemas \
 		apps_gnucash_window_pages_register.schemas
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-# WITH_OPENHBCI is old synonym for aqbanking option
-.if defined(WITH_AQBANKING) || defined(WITH_OPENHBCI)
-LIB_DEPENDS+=	aqbanking.31:${PORTSDIR}/finance/aqbanking \
+.if defined(WITH_AQBANKING)
+LIB_DEPENDS+=	aqbanking.33:${PORTSDIR}/finance/aqbanking \
+		gwengui-gtk2.0:${PORTSDIR}/devel/gwenhywfar \
 		ktoblzcheck.6:${PORTSDIR}/finance/ktoblzcheck
 GCONF_SCHEMAS+=	apps_gnucash_dialog_hbci.schemas
-CONFIGURE_ARGS+=--enable-hbci
-GC_LIBS+=	-laqbanking
+CONFIGURE_ARGS+=--enable-aqbanking
 PLIST_SUB+=	AQBANKING=""
 .else
-CONFIGURE_ARGS+=--disable-hbci
+CONFIGURE_ARGS+=--disable-aqbanking
 PLIST_SUB+=	AQBANKING="@comment "
 .endif
 
@@ -92,20 +91,35 @@ CONFIGURE_ARGS+=--disable-ofx
 PLIST_SUB+=	OFX="@comment "
 .endif
 
-.if defined(WITH_POSTGRESQL)
-CONFIGURE_ARGS+=--enable-sql
-PLIST_SUB+=	PGBACKEND=""
-USE_PGSQL+=	yes
-GC_LIBS+=	-lpq
+.if defined(WITH_DATABASE)
+CONFIGURE_ARGS+=--enable-dbi
+LIB_DEPENDS+=	dbi.0:${PORTSDIR}/databases/libdbi
+PLIST_SUB+=	DATABASE=""
 .else
-CONFIGURE_ARGS+=--disable-sql
-PLIST_SUB+=	PGBACKEND="@comment "
+CONFIGURE_ARGS+=--disable-dbi
+PLIST_SUB+=	DATABASE="@comment "
 .endif
 
-.if !defined(WITHOUT_GCDOCS)
-RUN_DEPENDS+=	${LOCALBASE}/share/omf/gnucash-docs/gnucash-guide-C.omf:${PORTSDIR}/finance/gnucash-docs
+.if defined(WITH_WEBKIT)
+CONFIGURE_ARGS+=--with-html-engine=webkit
+LIB_DEPENDS+=	webkit-1.0.13:${PORSTDIR}/www/webkit-gtk2
+.else
+USE_GNOME+=	gtkhtml3
 .endif
 
-CONFIGURE_ENV+=	LIBS="${GC_LIBS}"
+.if defined(WITH_PYTHON)
+CONFIGURE_ARGS+=--enable-python-bindings
+USE_PYTHON=	yes
+PLIST_SUB+=	PYTHON=""
+ .else
+PLIST_SUB+=	PYTHON="@comment "
+.endif
 
-.include <bsd.port.post.mk>
+.if !defined(PACKAGE_BUILDING) && !exists(${LOCALBASE}/lib/libgwengui-gtk2.so.0)
+BROKEN=	Please rebuild devel/gwenhywfar with the WITH_GTK2 option set
+.endif
+
+post-install:
+	@${CAT} ${PKGMESSAGE}
+
+.include <bsd.port.mk>

@@ -4,20 +4,17 @@ bin/gnc-fq-helper
 bin/gnc-fq-update
 bin/gnc-test-env
 bin/gnucash
-bin/gnucash-bin
 bin/gnucash-env
 bin/gnucash-make-guids
 bin/gnucash-valgrind
 bin/update-gnucash-gconf
 etc/gnucash/config
+etc/gnucash/environment
 include/gnucash/Account.h
 include/gnucash/FreqSpec.h
 include/gnucash/GNCId.h
 include/gnucash/Period.h
 include/gnucash/Query.h
-include/gnucash/QueryCore.h
-include/gnucash/QueryNew.h
-include/gnucash/QueryObject.h
 include/gnucash/QuickFill.h
 include/gnucash/Recurrence.h
 include/gnucash/SX-book.h
@@ -31,7 +28,6 @@ include/gnucash/TransLog.h
 include/gnucash/Transaction.h
 include/gnucash/account-quickfill.h
 include/gnucash/basiccell.h
-include/gnucash/binreloc.h
 include/gnucash/cap-gains.h
 include/gnucash/cashobjects.h
 include/gnucash/cell-factory.h
@@ -39,11 +35,13 @@ include/gnucash/cellblock.h
 include/gnucash/checkboxcell.h
 include/gnucash/combocell.h
 include/gnucash/datecell.h
-include/gnucash/deprecated.h
 include/gnucash/dialog-account.h
 include/gnucash/dialog-book-close.h
 include/gnucash/dialog-column-view.h
 include/gnucash/dialog-commodity.h
+include/gnucash/dialog-custom-report.h
+include/gnucash/dialog-file-access.h
+include/gnucash/dialog-object-references.h
 include/gnucash/dialog-options.h
 include/gnucash/dialog-preferences.h
 include/gnucash/dialog-query-list.h
@@ -64,10 +62,10 @@ include/gnucash/glib-helpers.h
 include/gnucash/gnc-account-merge.h
 include/gnucash/gnc-account-sel.h
 include/gnucash/gnc-accounting-period.h
+include/gnucash/gnc-addr-quickfill.h
 include/gnucash/gnc-amount-edit.h
 include/gnucash/gnc-associate-account.h
 include/gnucash/gnc-basic-gobject.h
-include/gnucash/gnc-book.h
 include/gnucash/gnc-budget.h
 include/gnucash/gnc-commodity-edit.h
 include/gnucash/gnc-commodity.h
@@ -93,11 +91,11 @@ include/gnucash/gnc-druid-provider.h
 include/gnucash/gnc-druid.h
 include/gnucash/gnc-embedded-window.h
 include/gnucash/gnc-engine.h
+include/gnucash/gnc-entry-quickfill.h
 include/gnucash/gnc-euro.h
 include/gnucash/gnc-event.h
 include/gnucash/gnc-exp-parser.h
 include/gnucash/gnc-file.h
-include/gnucash/gnc-filepath-utils.h
 include/gnucash/gnc-frequency.h
 include/gnucash/gnc-general-search.h
 include/gnucash/gnc-general-select.h
@@ -107,18 +105,28 @@ include/gnucash/gnc-gui-query.h
 include/gnucash/gnc-help-utils.h
 include/gnucash/gnc-helpers.h
 include/gnucash/gnc-hooks.h
+include/gnucash/gnc-html-extras.h
+include/gnucash/gnc-html-factory.h
+include/gnucash/gnc-html-graph-gog-extras.h
+include/gnucash/gnc-html-graph-gog-gtkhtml.h
+include/gnucash/gnc-html-graph-gog-webkit.h
 include/gnucash/gnc-html-graph-gog.h
+include/gnucash/gnc-html-gtkhtml-p.h
+include/gnucash/gnc-html-gtkhtml.h
 include/gnucash/gnc-html-history.h
+include/gnucash/gnc-html-p.h
+include/gnucash/gnc-html-webkit-p.h
+include/gnucash/gnc-html-webkit.h
 include/gnucash/gnc-html.h
 include/gnucash/gnc-icons.h
 include/gnucash/gnc-import-desc-format.h
 include/gnucash/gnc-import-format-cb.h
+include/gnucash/gnc-keyring.h
 include/gnucash/gnc-main-window.h
 include/gnucash/gnc-menu-extensions.h
 include/gnucash/gnc-module-api.h
 include/gnucash/gnc-module.h
 include/gnucash/gnc-numeric.h
-include/gnucash/gnc-path.h
 include/gnucash/gnc-period-select.h
 include/gnucash/gnc-plugin-file-history.h
 include/gnucash/gnc-plugin-manager.h
@@ -147,10 +155,34 @@ include/gnucash/gnc-tree-view-commodity.h
 include/gnucash/gnc-tree-view-price.h
 include/gnucash/gnc-tree-view-sx-list.h
 include/gnucash/gnc-tree-view.h
-include/gnucash/gnc-ui-common.h
+include/gnucash/gnc-ui.h
 include/gnucash/gnc-ui-util.h
 include/gnucash/gnc-window.h
-include/gnucash/gncObject.h
+include/gnucash/gncAddress.h
+include/gnucash/gncAddressP.h
+include/gnucash/gncBillTerm.h
+include/gnucash/gncBillTermP.h
+include/gnucash/gncBusGuile.h
+include/gnucash/gncBusiness.h
+include/gnucash/gncCustomer.h
+include/gnucash/gncCustomerP.h
+include/gnucash/gncEmployee.h
+include/gnucash/gncEmployeeP.h
+include/gnucash/gncEntry.h
+include/gnucash/gncEntryP.h
+include/gnucash/gncIDSearch.h
+include/gnucash/gncInvoice.h
+include/gnucash/gncInvoiceP.h
+include/gnucash/gncJob.h
+include/gnucash/gncJobP.h
+include/gnucash/gncOrder.h
+include/gnucash/gncOrderP.h
+include/gnucash/gncOwner.h
+include/gnucash/gncOwnerP.h
+include/gnucash/gncTaxTable.h
+include/gnucash/gncTaxTableP.h
+include/gnucash/gncVendor.h
+include/gnucash/gncVendorP.h
 include/gnucash/gtable.h
 include/gnucash/guid.h
 include/gnucash/guile-util.h
@@ -172,6 +204,7 @@ include/gnucash/qofbackend-p.h
 include/gnucash/qofbackend.h
 include/gnucash/qofbook.h
 include/gnucash/qofbookmerge.h
+include/gnucash/qofbookslots.h
 include/gnucash/qofchoice.h
 include/gnucash/qofclass.h
 include/gnucash/qofevent.h
@@ -180,7 +213,6 @@ include/gnucash/qofid-p.h
 include/gnucash/qofid.h
 include/gnucash/qofinstance-p.h
 include/gnucash/qofinstance.h
-include/gnucash/qofla-dir.h
 include/gnucash/qoflog.h
 include/gnucash/qofobject.h
 include/gnucash/qofquery.h
@@ -200,10 +232,14 @@ include/gnucash/window-main-summarybar.h
 include/gnucash/window-report.h
 lib/gnucash/libgncmod-app-utils.la
 lib/gnucash/libgncmod-app-utils.so
-lib/gnucash/libgncmod-backend-file.la
-lib/gnucash/libgncmod-backend-file.so
-lib/gnucash/libgncmod-business-backend-file.la
-lib/gnucash/libgncmod-business-backend-file.so
+%%AQBANKING%%lib/gnucash/libgncmod-aqbanking.la
+%%AQBANKING%%lib/gnucash/libgncmod-aqbanking.so
+%%DATABASE%%lib/gnucash/libgncmod-backend-dbi.la
+%%DATABASE%%lib/gnucash/libgncmod-backend-dbi.so
+lib/gnucash/libgncmod-backend-xml.la
+lib/gnucash/libgncmod-backend-xml.so
+lib/gnucash/libgncmod-bi_import.la
+lib/gnucash/libgncmod-bi_import.so
 lib/gnucash/libgncmod-business-core.la
 lib/gnucash/libgncmod-business-core.so
 lib/gnucash/libgncmod-business-gnome.la
@@ -212,6 +248,8 @@ lib/gnucash/libgncmod-business-utils.la
 lib/gnucash/libgncmod-business-utils.so
 lib/gnucash/libgncmod-calculation.la
 lib/gnucash/libgncmod-calculation.so
+lib/gnucash/libgncmod-csv.la
+lib/gnucash/libgncmod-csv.so
 lib/gnucash/libgncmod-dialog-tax-table.la
 lib/gnucash/libgncmod-dialog-tax-table.so
 lib/gnucash/libgncmod-engine.la
@@ -222,8 +260,8 @@ lib/gnucash/libgncmod-gnome-search.la
 lib/gnucash/libgncmod-gnome-search.so
 lib/gnucash/libgncmod-gnome-utils.la
 lib/gnucash/libgncmod-gnome-utils.so
-%%AQBANKING%%lib/gnucash/libgncmod-aqbanking.la
-%%AQBANKING%%lib/gnucash/libgncmod-aqbanking.so
+lib/gnucash/libgncmod-html.la
+lib/gnucash/libgncmod-html.so
 lib/gnucash/libgncmod-ledger-core.la
 lib/gnucash/libgncmod-ledger-core.so
 lib/gnucash/libgncmod-locale-reports-us.la
@@ -253,13 +291,12 @@ lib/gnucash/libgncmod-tax-us.la
 lib/gnucash/libgncmod-tax-us.so
 lib/gnucash/libgncmod-utility-reports.la
 lib/gnucash/libgncmod-utility-reports.so
-lib/gnucash/libgncqof-backend-qsf.la
-lib/gnucash/libgncqof-backend-qsf.so
-lib/libgnc-backend-file-utils.la
-lib/libgnc-backend-file-utils.so
-lib/libgnc-backend-file-utils.so.0
-%%PGBACKEND%%lib/libgnc-backend-postgres.la
-%%PGBACKEND%%lib/libgnc-backend-postgres.so
+lib/libgnc-backend-sql.la
+lib/libgnc-backend-sql.so
+lib/libgnc-backend-sql.so.0
+lib/libgnc-backend-xml-utils.la
+lib/libgnc-backend-xml-utils.so
+lib/libgnc-backend-xml-utils.so.0
 lib/libgnc-business-ledger.la
 lib/libgnc-business-ledger.so
 lib/libgnc-business-ledger.so.0
@@ -275,6 +312,23 @@ lib/libgnc-module.so.0
 lib/libgnc-qof.la
 lib/libgnc-qof.so
 lib/libgnc-qof.so.1
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/gnucash/__init__.py
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/gnucash/__init__.pyc
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/gnucash/__init__.pyo
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/gnucash/_gnucash_core_c.la
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/gnucash/_gnucash_core_c.so
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/gnucash/function_class.py
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/gnucash/function_class.pyc
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/gnucash/function_class.pyo
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/gnucash/gnucash_business.py
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/gnucash/gnucash_business.pyc
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/gnucash/gnucash_business.pyo
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/gnucash/gnucash_core.py
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/gnucash/gnucash_core.pyc
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/gnucash/gnucash_core.pyo
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/gnucash/gnucash_core_c.py
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/gnucash/gnucash_core_c.pyc
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/gnucash/gnucash_core_c.pyo
 libexec/gnucash/overrides/gnucash-env
 libexec/gnucash/overrides/gnucash-make-guids
 libexec/gnucash/overrides/guile
@@ -295,6 +349,21 @@ share/gnucash/accounts/C/acctchrt_renter.gnucash-xea
 share/gnucash/accounts/C/acctchrt_retiremt.gnucash-xea
 share/gnucash/accounts/C/acctchrt_spouseinc.gnucash-xea
 share/gnucash/accounts/C/acctchrt_spouseretire.gnucash-xea
+share/gnucash/accounts/cs/acctchrt_brokerage.gnucash-xea
+share/gnucash/accounts/cs/acctchrt_carloan.gnucash-xea
+share/gnucash/accounts/cs/acctchrt_cdmoneymkt.gnucash-xea
+share/gnucash/accounts/cs/acctchrt_childcare.gnucash-xea
+share/gnucash/accounts/cs/acctchrt_common.gnucash-xea
+share/gnucash/accounts/cs/acctchrt_currency.gnucash-xea
+share/gnucash/accounts/cs/acctchrt_eduloan.gnucash-xea
+share/gnucash/accounts/cs/acctchrt_fixedassets.gnucash-xea
+share/gnucash/accounts/cs/acctchrt_homeloan.gnucash-xea
+share/gnucash/accounts/cs/acctchrt_homeown.gnucash-xea
+share/gnucash/accounts/cs/acctchrt_otherloan.gnucash-xea
+share/gnucash/accounts/cs/acctchrt_renter.gnucash-xea
+share/gnucash/accounts/cs/acctchrt_retiremt.gnucash-xea
+share/gnucash/accounts/cs/acctchrt_spouseinc.gnucash-xea
+share/gnucash/accounts/cs/acctchrt_spouseretire.gnucash-xea
 share/gnucash/accounts/da/acctchrt_car.gnucash-xea
 share/gnucash/accounts/da/acctchrt_common.gnucash-xea
 share/gnucash/accounts/da/acctchrt_homeloan.gnucash-xea
@@ -442,7 +511,6 @@ share/gnucash/accounts/hu_HU/acctchrt_retiremt.gnucash-xea
 share/gnucash/accounts/hu_HU/acctchrt_spouseinc.gnucash-xea
 share/gnucash/accounts/hu_HU/acctchrt_spouseretire.gnucash-xea
 share/gnucash/accounts/it/acctchrt_brokerage.gnucash-xea
-share/gnucash/accounts/it/acctchrt_business.gnucash-xea
 share/gnucash/accounts/it/acctchrt_carloan.gnucash-xea
 share/gnucash/accounts/it/acctchrt_checkbook.gnucash-xea
 share/gnucash/accounts/it/acctchrt_childcare.gnucash-xea
@@ -464,6 +532,7 @@ share/gnucash/accounts/ja/acctchrt_childcare.gnucash-xea
 share/gnucash/accounts/ja/acctchrt_common.gnucash-xea
 share/gnucash/accounts/ja/acctchrt_eduloan.gnucash-xea
 share/gnucash/accounts/ja/acctchrt_fixedassets.gnucash-xea
+share/gnucash/accounts/ja/acctchrt_full.gnucash-xea
 share/gnucash/accounts/ja/acctchrt_homeloan.gnucash-xea
 share/gnucash/accounts/ja/acctchrt_homeown.gnucash-xea
 share/gnucash/accounts/ja/acctchrt_otherloan.gnucash-xea
@@ -471,6 +540,38 @@ share/gnucash/accounts/ja/acctchrt_renter.gnucash-xea
 share/gnucash/accounts/ja/acctchrt_retiremt.gnucash-xea
 share/gnucash/accounts/ja/acctchrt_spouseinc.gnucash-xea
 share/gnucash/accounts/ja/acctchrt_spouseretire.gnucash-xea
+share/gnucash/accounts/ko/acctchrt_brokerage.gnucash-xea
+share/gnucash/accounts/ko/acctchrt_business.gnucash-xea
+share/gnucash/accounts/ko/acctchrt_carloan.gnucash-xea
+share/gnucash/accounts/ko/acctchrt_cdmoneymkt.gnucash-xea
+share/gnucash/accounts/ko/acctchrt_checkbook.gnucash-xea
+share/gnucash/accounts/ko/acctchrt_childcare.gnucash-xea
+share/gnucash/accounts/ko/acctchrt_common.gnucash-xea
+share/gnucash/accounts/ko/acctchrt_eduloan.gnucash-xea
+share/gnucash/accounts/ko/acctchrt_fixedassets.gnucash-xea
+share/gnucash/accounts/ko/acctchrt_homeloan.gnucash-xea
+share/gnucash/accounts/ko/acctchrt_homeown.gnucash-xea
+share/gnucash/accounts/ko/acctchrt_otherloan.gnucash-xea
+share/gnucash/accounts/ko/acctchrt_renter.gnucash-xea
+share/gnucash/accounts/ko/acctchrt_retiremt.gnucash-xea
+share/gnucash/accounts/ko/acctchrt_spouseinc.gnucash-xea
+share/gnucash/accounts/ko/acctchrt_spouseretire.gnucash-xea
+share/gnucash/accounts/lv/acctchrt_brokerage.gnucash-xea
+share/gnucash/accounts/lv/acctchrt_business.gnucash-xea
+share/gnucash/accounts/lv/acctchrt_carloan.gnucash-xea
+share/gnucash/accounts/lv/acctchrt_cdmoneymkt.gnucash-xea
+share/gnucash/accounts/lv/acctchrt_checkbook.gnucash-xea
+share/gnucash/accounts/lv/acctchrt_childcare.gnucash-xea
+share/gnucash/accounts/lv/acctchrt_common.gnucash-xea
+share/gnucash/accounts/lv/acctchrt_eduloan.gnucash-xea
+share/gnucash/accounts/lv/acctchrt_fixedassets.gnucash-xea
+share/gnucash/accounts/lv/acctchrt_homeloan.gnucash-xea
+share/gnucash/accounts/lv/acctchrt_homeown.gnucash-xea
+share/gnucash/accounts/lv/acctchrt_otherloan.gnucash-xea
+share/gnucash/accounts/lv/acctchrt_renter.gnucash-xea
+share/gnucash/accounts/lv/acctchrt_retiremt.gnucash-xea
+share/gnucash/accounts/lv/acctchrt_spouseinc.gnucash-xea
+share/gnucash/accounts/lv/acctchrt_spouseretire.gnucash-xea
 share/gnucash/accounts/nb/acctchrt_brokerage.gnucash-xea
 share/gnucash/accounts/nb/acctchrt_business.gnucash-xea
 share/gnucash/accounts/nb/acctchrt_carloan.gnucash-xea
@@ -488,7 +589,24 @@ share/gnucash/accounts/nb/acctchrt_renter.gnucash-xea
 share/gnucash/accounts/nb/acctchrt_retiremt.gnucash-xea
 share/gnucash/accounts/nb/acctchrt_spouseinc.gnucash-xea
 share/gnucash/accounts/nb/acctchrt_spouseretire.gnucash-xea
+share/gnucash/accounts/nl/acctchrt_checkbook.gnucash-xea
 share/gnucash/accounts/nl/acctchrt_full.gnucash-xea
+share/gnucash/accounts/pl/acctchrt_brokerage.gnucash-xea
+share/gnucash/accounts/pl/acctchrt_business.gnucash-xea
+share/gnucash/accounts/pl/acctchrt_carloan.gnucash-xea
+share/gnucash/accounts/pl/acctchrt_cdmoneymkt.gnucash-xea
+share/gnucash/accounts/pl/acctchrt_checkbook.gnucash-xea
+share/gnucash/accounts/pl/acctchrt_childcare.gnucash-xea
+share/gnucash/accounts/pl/acctchrt_common.gnucash-xea
+share/gnucash/accounts/pl/acctchrt_eduloan.gnucash-xea
+share/gnucash/accounts/pl/acctchrt_fixedassets.gnucash-xea
+share/gnucash/accounts/pl/acctchrt_homeloan.gnucash-xea
+share/gnucash/accounts/pl/acctchrt_homeown.gnucash-xea
+share/gnucash/accounts/pl/acctchrt_otherloan.gnucash-xea
+share/gnucash/accounts/pl/acctchrt_renter.gnucash-xea
+share/gnucash/accounts/pl/acctchrt_retiremt.gnucash-xea
+share/gnucash/accounts/pl/acctchrt_spouseinc.gnucash-xea
+share/gnucash/accounts/pl/acctchrt_spouseretire.gnucash-xea
 share/gnucash/accounts/pt_BR/acctchrt_brokerage.gnucash-xea
 share/gnucash/accounts/pt_BR/acctchrt_carloan.gnucash-xea
 share/gnucash/accounts/pt_BR/acctchrt_cdmoneymkt.gnucash-xea
@@ -565,6 +683,7 @@ share/gnucash/checks/deluxe.chk
 share/gnucash/checks/liberty.chk
 share/gnucash/checks/quicken.chk
 share/gnucash/checks/quicken_wallet.chk
+share/gnucash/checks/voucher.chk
 share/gnucash/doc/AUTHORS
 share/gnucash/doc/COPYING
 share/gnucash/doc/ChangeLog
@@ -573,6 +692,8 @@ share/gnucash/doc/ChangeLog.2004
 share/gnucash/doc/ChangeLog.2005
 share/gnucash/doc/ChangeLog.2006
 share/gnucash/doc/ChangeLog.2007
+share/gnucash/doc/ChangeLog.2008
+share/gnucash/doc/ChangeLog.2009
 share/gnucash/doc/DOCUMENTERS
 share/gnucash/doc/HACKING
 share/gnucash/doc/INSTALL
@@ -582,10 +703,12 @@ share/gnucash/doc/README
 share/gnucash/doc/README-de.win32-bin.txt
 share/gnucash/doc/README-fr.win32-bin.txt
 share/gnucash/doc/README-it.win32-bin.txt
+share/gnucash/doc/README-lv.win32-bin.txt
+share/gnucash/doc/README-nl.win32-bin.txt
+share/gnucash/doc/README-zh_CN.win32-bin.txt
 share/gnucash/doc/README.dependencies
 share/gnucash/doc/README.francais
 share/gnucash/doc/README.german
-share/gnucash/doc/README.patches
 share/gnucash/doc/README.win32-bin.txt
 share/gnucash/doc/examples/Money95bank_fr.qif
 share/gnucash/doc/examples/Money95invst_fr.qif
@@ -596,36 +719,32 @@ share/gnucash/doc/examples/abc-all.qif
 share/gnucash/doc/examples/abc.qif
 share/gnucash/doc/examples/bogus.qif
 share/gnucash/doc/examples/cbb-export.qif
-share/gnucash/doc/examples/currency.xac
-share/gnucash/doc/examples/currency_tree_xml.xac
+share/gnucash/doc/examples/currency_tree_xml.gnucash
 share/gnucash/doc/examples/every.qif
 share/gnucash/doc/examples/ms-money.qif
 share/gnucash/doc/examples/quicktest.qif
-share/gnucash/doc/examples/splitdemo.xac
 share/gnucash/doc/examples/swipe.qif
-share/gnucash/doc/examples/taxreport.xac
-share/gnucash/doc/examples/test.xac
-share/gnucash/doc/examples/test2.xac
-share/gnucash/doc/examples/test3.xac
-share/gnucash/doc/examples/test4.xac
-share/gnucash/doc/examples/trading.xac
-share/gnucash/doc/examples/trading2.xac
+share/gnucash/doc/examples/taxreport.gnucash
 share/gnucash/doc/examples/web.qif
-share/gnucash/doc/examples/xfer.xac
 share/gnucash/doc/guile-hackers.txt
 share/gnucash/doc/projects.html
 share/gnucash/glade/account.glade
 share/gnucash/glade/acctperiod.glade
+%%AQBANKING%%share/gnucash/glade/aqbanking.glade
+share/gnucash/glade/autoclear.glade
+share/gnucash/glade/bi_import.glade
 share/gnucash/glade/billterms.glade
 share/gnucash/glade/budget.glade
 share/gnucash/glade/businessprefs.glade
-share/gnucash/glade/chart-export.glade
 share/gnucash/glade/choose-owner.glade
 share/gnucash/glade/commodities.glade
 share/gnucash/glade/commodity.glade
+share/gnucash/glade/custom-report-dialog.glade
 share/gnucash/glade/customer.glade
 share/gnucash/glade/date-close.glade
 share/gnucash/glade/dialog-book-close.glade
+share/gnucash/glade/dialog-file-access.glade
+share/gnucash/glade/dialog-object-references.glade
 share/gnucash/glade/dialog-query-list.glade
 share/gnucash/glade/dialog-reset-warnings.glade
 share/gnucash/glade/druid-gconf-setup.glade
@@ -635,14 +754,13 @@ share/gnucash/glade/employee.glade
 share/gnucash/glade/exchange-dialog.glade
 share/gnucash/glade/fincalc.glade
 share/gnucash/glade/generic-import.glade
+share/gnucash/glade/gnc-csv-preview-dialog.glade
 share/gnucash/glade/gnc-date-format.glade
 share/gnucash/glade/gnc-gui-query.glade
-%%AQBANKING%%share/gnucash/glade/aqbanking.glade
 share/gnucash/glade/import-provider-format.glade
 share/gnucash/glade/invoice.glade
 share/gnucash/glade/job.glade
 share/gnucash/glade/lots.glade
-share/gnucash/glade/merge.glade
 share/gnucash/glade/newuser.glade
 share/gnucash/glade/order.glade
 share/gnucash/glade/payment.glade
@@ -676,45 +794,63 @@ share/gnucash/guile-modules/gnucash/gnome-utils.scm
 share/gnucash/guile-modules/gnucash/import-export/qif-import.scm
 share/gnucash/guile-modules/gnucash/main.scm
 share/gnucash/guile-modules/gnucash/price-quotes.scm
-share/gnucash/guile-modules/gnucash/report/account-piecharts.scm
-share/gnucash/guile-modules/gnucash/report/account-summary.scm
-share/gnucash/guile-modules/gnucash/report/advanced-portfolio.scm
+share/gnucash/guile-modules/gnucash/printf.scm
 share/gnucash/guile-modules/gnucash/report/aging.scm
-share/gnucash/guile-modules/gnucash/report/average-balance.scm
-share/gnucash/guile-modules/gnucash/report/balance-sheet.scm
-share/gnucash/guile-modules/gnucash/report/budget.scm
+share/gnucash/guile-modules/gnucash/report/balsheet-eg.css
+share/gnucash/guile-modules/gnucash/report/balsheet-eg.eguile.scm
 share/gnucash/guile-modules/gnucash/report/business-reports.scm
-share/gnucash/guile-modules/gnucash/report/cash-flow.scm
-share/gnucash/guile-modules/gnucash/report/category-barchart.scm
-share/gnucash/guile-modules/gnucash/report/daily-reports.scm
+share/gnucash/guile-modules/gnucash/report/customer-summary.scm
 share/gnucash/guile-modules/gnucash/report/easy-invoice.scm
-share/gnucash/guile-modules/gnucash/report/equity-statement.scm
+share/gnucash/guile-modules/gnucash/report/eguile-gnc.scm
+share/gnucash/guile-modules/gnucash/report/eguile-html-utilities.scm
+share/gnucash/guile-modules/gnucash/report/eguile-utilities.scm
 share/gnucash/guile-modules/gnucash/report/fancy-invoice.scm
-share/gnucash/guile-modules/gnucash/report/general-journal.scm
-share/gnucash/guile-modules/gnucash/report/general-ledger.scm
 share/gnucash/guile-modules/gnucash/report/hello-world.scm
-share/gnucash/guile-modules/gnucash/report/income-statement.scm
 share/gnucash/guile-modules/gnucash/report/invoice.scm
+share/gnucash/guile-modules/gnucash/report/job-report.scm
 share/gnucash/guile-modules/gnucash/report/locale-specific/de_DE.scm
 share/gnucash/guile-modules/gnucash/report/locale-specific/us.scm
-share/gnucash/guile-modules/gnucash/report/net-barchart.scm
 share/gnucash/guile-modules/gnucash/report/owner-report.scm
 share/gnucash/guile-modules/gnucash/report/payables.scm
-share/gnucash/guile-modules/gnucash/report/portfolio.scm
-share/gnucash/guile-modules/gnucash/report/price-scatter.scm
 share/gnucash/guile-modules/gnucash/report/receivables.scm
-share/gnucash/guile-modules/gnucash/report/register.scm
 share/gnucash/guile-modules/gnucash/report/report-gnome.scm
 share/gnucash/guile-modules/gnucash/report/report-system.scm
 share/gnucash/guile-modules/gnucash/report/standard-reports.scm
+share/gnucash/guile-modules/gnucash/report/standard-reports/account-piecharts.scm
+share/gnucash/guile-modules/gnucash/report/standard-reports/account-summary.scm
+share/gnucash/guile-modules/gnucash/report/standard-reports/advanced-portfolio.scm
+share/gnucash/guile-modules/gnucash/report/standard-reports/average-balance.scm
+share/gnucash/guile-modules/gnucash/report/standard-reports/balance-sheet.scm
+share/gnucash/guile-modules/gnucash/report/standard-reports/balsheet-eg.scm
+share/gnucash/guile-modules/gnucash/report/standard-reports/budget-balance-sheet.scm
+share/gnucash/guile-modules/gnucash/report/standard-reports/budget-barchart.scm
+share/gnucash/guile-modules/gnucash/report/standard-reports/budget-flow.scm
+share/gnucash/guile-modules/gnucash/report/standard-reports/budget-income-statement.scm
+share/gnucash/guile-modules/gnucash/report/standard-reports/budget.scm
+share/gnucash/guile-modules/gnucash/report/standard-reports/cash-flow.scm
+share/gnucash/guile-modules/gnucash/report/standard-reports/category-barchart.scm
+share/gnucash/guile-modules/gnucash/report/standard-reports/daily-reports.scm
+share/gnucash/guile-modules/gnucash/report/standard-reports/equity-statement.scm
+share/gnucash/guile-modules/gnucash/report/standard-reports/general-journal.scm
+share/gnucash/guile-modules/gnucash/report/standard-reports/general-ledger.scm
+share/gnucash/guile-modules/gnucash/report/standard-reports/income-statement.scm
+share/gnucash/guile-modules/gnucash/report/standard-reports/net-barchart.scm
+share/gnucash/guile-modules/gnucash/report/standard-reports/portfolio.scm
+share/gnucash/guile-modules/gnucash/report/standard-reports/price-scatter.scm
+share/gnucash/guile-modules/gnucash/report/standard-reports/register.scm
+share/gnucash/guile-modules/gnucash/report/standard-reports/sx-summary.scm
+share/gnucash/guile-modules/gnucash/report/standard-reports/transaction.scm
+share/gnucash/guile-modules/gnucash/report/standard-reports/trial-balance.scm
 share/gnucash/guile-modules/gnucash/report/stylesheet-easy.scm
 share/gnucash/guile-modules/gnucash/report/stylesheet-fancy.scm
+share/gnucash/guile-modules/gnucash/report/stylesheet-footer.scm
 share/gnucash/guile-modules/gnucash/report/stylesheet-plain.scm
 share/gnucash/guile-modules/gnucash/report/stylesheets.scm
+share/gnucash/guile-modules/gnucash/report/taxinvoice.css
+share/gnucash/guile-modules/gnucash/report/taxinvoice.eguile.scm
+share/gnucash/guile-modules/gnucash/report/taxinvoice.scm
 share/gnucash/guile-modules/gnucash/report/taxtxf-de_DE.scm
 share/gnucash/guile-modules/gnucash/report/taxtxf.scm
-share/gnucash/guile-modules/gnucash/report/transaction.scm
-share/gnucash/guile-modules/gnucash/report/trial-balance.scm
 share/gnucash/guile-modules/gnucash/report/utility-reports.scm
 share/gnucash/guile-modules/gnucash/report/view-column.scm
 share/gnucash/guile-modules/gnucash/report/welcome-to-gnucash.scm
@@ -735,8 +871,14 @@ share/gnucash/pixmaps/gnc-account-open-16.png
 share/gnucash/pixmaps/gnc-account-open.png
 share/gnucash/pixmaps/gnc-account.png
 share/gnucash/pixmaps/gnc-invoice-16.png
+share/gnucash/pixmaps/gnc-invoice-duplicate-16.png
+share/gnucash/pixmaps/gnc-invoice-duplicate.png
 share/gnucash/pixmaps/gnc-invoice-edit-16.png
 share/gnucash/pixmaps/gnc-invoice-edit.png
+share/gnucash/pixmaps/gnc-invoice-new-16.png
+share/gnucash/pixmaps/gnc-invoice-new.png
+share/gnucash/pixmaps/gnc-invoice-pay-16.png
+share/gnucash/pixmaps/gnc-invoice-pay.png
 share/gnucash/pixmaps/gnc-invoice-post-16.png
 share/gnucash/pixmaps/gnc-invoice-post.png
 share/gnucash/pixmaps/gnc-invoice-unpost-16.png
@@ -750,10 +892,14 @@ share/gnucash/pixmaps/gnc-sx-new-16.png
 share/gnucash/pixmaps/gnc-sx-new.png
 share/gnucash/pixmaps/gnc-transfer-16.png
 share/gnucash/pixmaps/gnc-transfer.png
+share/gnucash/pixmaps/gnucash-icon-128x128.png
 share/gnucash/pixmaps/gnucash-icon-16x16.png
+share/gnucash/pixmaps/gnucash-icon-256x256.png
 share/gnucash/pixmaps/gnucash-icon-32x32.png
 share/gnucash/pixmaps/gnucash-icon-48x48.bmp
 share/gnucash/pixmaps/gnucash-icon-48x48.png
+share/gnucash/pixmaps/gnucash-icon-64x64.png
+share/gnucash/pixmaps/gnucash-icon-96x96.png
 share/gnucash/pixmaps/gnucash-icon.ico
 share/gnucash/pixmaps/gnucash_splash.png
 share/gnucash/pixmaps/stock_split_title.png
@@ -779,6 +925,8 @@ share/gnucash/scm/hooks.scm
 share/gnucash/scm/html-acct-table.scm
 share/gnucash/scm/html-barchart.scm
 share/gnucash/scm/html-document.scm
+share/gnucash/scm/html-fonts.scm
+share/gnucash/scm/html-linechart.scm
 share/gnucash/scm/html-piechart.scm
 share/gnucash/scm/html-scatter.scm
 share/gnucash/scm/html-style-info.scm
@@ -812,11 +960,13 @@ share/gnucash/scm/xml-generator.scm
 share/gnucash/tip_of_the_day.list
 share/gnucash/ui/gnc-main-window-ui.xml
 share/gnucash/ui/gnc-plugin-account-tree-ui.xml
+%%AQBANKING%%share/gnucash/ui/gnc-plugin-aqbanking-ui.xml
 share/gnucash/ui/gnc-plugin-basic-commands-ui.xml
+share/gnucash/ui/gnc-plugin-bi_import-ui.xml
 share/gnucash/ui/gnc-plugin-budget-ui.xml
 share/gnucash/ui/gnc-plugin-business-ui.xml
+share/gnucash/ui/gnc-plugin-csv-ui.xml
 share/gnucash/ui/gnc-plugin-file-history-ui.xml
-%%AQBANKING%%share/gnucash/ui/gnc-plugin-aqbanking-ui.xml
 share/gnucash/ui/gnc-plugin-log-replay-ui.xml
 %%OFX%%share/gnucash/ui/gnc-plugin-ofx-ui.xml
 share/gnucash/ui/gnc-plugin-page-account-tree-ui.xml
@@ -833,32 +983,37 @@ share/gnucash/ui/gnc-reconcile-window-ui.xml
 share/gnucash/ui/gnc-sxed-to-create-window-ui.xml
 share/gnucash/ui/gnc-sxed-window-ui-full.xml
 share/gnucash/ui/gnc-sxed-window-ui.xml
-share/gnucash/xml/qsf/pilot-qsf-GnuCashInvoice.xml
-share/gnucash/xml/qsf/pilot-qsf-gncCustomer.xml
-share/gnucash/xml/qsf/qsf-map.xsd.xml
-share/gnucash/xml/qsf/qsf-object.xsd.xml
+share/gnucash/ui/osx_accel_map
+share/icons/hicolor/128x128/apps/gnucash-icon.png
 share/icons/hicolor/16x16/apps/gnucash-icon.png
 share/icons/hicolor/22x22/apps/gnucash-icon.png
 share/icons/hicolor/24x24/apps/gnucash-icon.png
+share/icons/hicolor/256x256/apps/gnucash-icon.png
 share/icons/hicolor/32x32/apps/gnucash-icon.png
 share/icons/hicolor/48x48/apps/gnucash-icon.png
+share/icons/hicolor/64x64/apps/gnucash-icon.png
+share/icons/hicolor/96x96/apps/gnucash-icon.png
 share/icons/hicolor/scalable/apps/gnucash-icon.svg
+share/locale/bg/LC_MESSAGES/gnucash.mo
 share/locale/ca/LC_MESSAGES/gnucash.mo
 share/locale/cs/LC_MESSAGES/gnucash.mo
 share/locale/da/LC_MESSAGES/gnucash.mo
 share/locale/de/LC_MESSAGES/gnucash.mo
-share/locale/de_CH/LC_MESSAGES/gnucash.mo
 share/locale/el/LC_MESSAGES/gnucash.mo
 share/locale/en_GB/LC_MESSAGES/gnucash.mo
 share/locale/es/LC_MESSAGES/gnucash.mo
 share/locale/es_NI/LC_MESSAGES/gnucash.mo
 share/locale/eu/LC_MESSAGES/gnucash.mo
+share/locale/fa/LC_MESSAGES/gnucash.mo
 share/locale/fi/LC_MESSAGES/gnucash.mo
 share/locale/fr/LC_MESSAGES/gnucash.mo
 share/locale/he/LC_MESSAGES/gnucash.mo
 share/locale/hu/LC_MESSAGES/gnucash.mo
 share/locale/it/LC_MESSAGES/gnucash.mo
 share/locale/ja/LC_MESSAGES/gnucash.mo
+share/locale/ko/LC_MESSAGES/gnucash.mo
+share/locale/lt/LC_MESSAGES/gnucash.mo
+share/locale/lv/LC_MESSAGES/gnucash.mo
 share/locale/nb/LC_MESSAGES/gnucash.mo
 share/locale/ne/LC_MESSAGES/gnucash.mo
 share/locale/nl/LC_MESSAGES/gnucash.mo
@@ -876,12 +1031,6 @@ share/locale/uk/LC_MESSAGES/gnucash.mo
 share/locale/vi/LC_MESSAGES/gnucash.mo
 share/locale/zh_CN/LC_MESSAGES/gnucash.mo
 share/locale/zh_TW/LC_MESSAGES/gnucash.mo
-share/xml/gnucash/xsl/README
-share/xml/gnucash/xsl/date-time.xsl
-share/xml/gnucash/xsl/gnucash-gnccustomer-vcard2.xsl
-share/xml/gnucash/xsl/gnucash-std.xsl
-share/xml/gnucash/xsl/string.xsl
-share/xml/gnucash/xsl/vcard-gnccustomer.pl
 @dirrmtry share/locale/rw/LC_MESSAGES
 @dirrmtry share/locale/rw
 @dirrmtry share/locale/fi/LC_MESSAGES
@@ -890,18 +1039,14 @@ share/xml/gnucash/xsl/vcard-gnccustomer.pl
 @dirrmtry share/locale/es_NI
 @dirrmtry share/locale/de_CH/LC_MESSAGES
 @dirrmtry share/locale/de_CH
-@dirrm share/xml/gnucash/xsl
-@dirrm share/xml/gnucash
-@dirrm share/gnucash/xml/qsf
-@dirrm share/gnucash/xml
 @dirrm share/gnucash/ui
 @dirrm share/gnucash/scm/qif-import
 @dirrm share/gnucash/scm/gnumeric
 @dirrm share/gnucash/scm
 @dirrm share/gnucash/pixmaps
 @dirrm share/gnucash/guile-modules/www
-@dirrm share/gnucash/guile-modules/srfi
 @dirrm share/gnucash/guile-modules/gnucash/tax
+@dirrm share/gnucash/guile-modules/gnucash/report/standard-reports
 @dirrm share/gnucash/guile-modules/gnucash/report/locale-specific
 @dirrm share/gnucash/guile-modules/gnucash/report
 @dirrm share/gnucash/guile-modules/gnucash/import-export
@@ -917,8 +1062,11 @@ share/xml/gnucash/xsl/vcard-gnccustomer.pl
 @dirrm share/gnucash/accounts/ru
 @dirrm share/gnucash/accounts/pt_PT
 @dirrm share/gnucash/accounts/pt_BR
+@dirrm share/gnucash/accounts/pl
 @dirrm share/gnucash/accounts/nl
 @dirrm share/gnucash/accounts/nb
+@dirrm share/gnucash/accounts/lv
+@dirrm share/gnucash/accounts/ko
 @dirrm share/gnucash/accounts/ja
 @dirrm share/gnucash/accounts/it
 @dirrm share/gnucash/accounts/hu_HU
@@ -934,11 +1082,13 @@ share/xml/gnucash/xsl/vcard-gnccustomer.pl
 @dirrm share/gnucash/accounts/de_CH
 @dirrm share/gnucash/accounts/de_AT
 @dirrm share/gnucash/accounts/da
+@dirrm share/gnucash/accounts/cs
 @dirrm share/gnucash/accounts/C
 @dirrm share/gnucash/accounts
 @dirrm share/gnucash
 @dirrm libexec/gnucash/overrides
 @dirrm libexec/gnucash
+%%PYTHON%%@dirrm %%PYTHON_SITELIBDIR%%/gnucash
 @dirrm lib/gnucash
 @dirrm include/gnucash
 @dirrm etc/gnucash
