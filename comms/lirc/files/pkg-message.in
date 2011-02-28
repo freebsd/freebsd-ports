@@ -11,15 +11,11 @@ IR receivers/transmitters like described here,
 
 	http://www.huitsing.nl/irftdi/
 
-and if you use (at the time of writing, support probably will be
-committed to the version in ports soon) webcamd svn,
-
-	http://www.selasky.org/hans_petter/video4bsd/
-
-then MCE USB based ones driven by the Linux mceusb driver as well
-remotes coming with USB DVB tuners that by default work with the
-Linux drivers used in webcamd should also work, i.e. if webcamd
-creates a /dev/lircX device node check if e.g.
+and if you use the recent multimedia/webcamd port then MCE USB based
+ones driven by the Linux mceusb driver as well remotes coming with
+USB DVB tuners that by default work with the Linux drivers used in
+webcamd should also work, i.e. if webcamd creates a /dev/lircX
+device node check if e.g.
 
 	mode2 -d /dev/lirc0
 
@@ -38,7 +34,7 @@ Some example configs should have been installed here:
 	%%LOCALBASE%%/share/examples/lirc/remotes
 
 USB DVB tuner remotes won't be in there though because the webcamd
-svn /dev/lircX support for those is kind of a `hack' that works
+/dev/lircX support for those is kind of a `hack' that works
 different from Linux (emulating rc5-like pulses), but as long as
 mode2 sees data (meaning the Linux drivers used by webcamd support
 the remote), you should be able to create configs by using irrecord
