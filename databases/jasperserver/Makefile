@@ -6,41 +6,45 @@
 #
 
 PORTNAME=	jasperserver
-PORTVERSION=	3.5.0
+PORTVERSION=	4.0.0
 CATEGORIES=	databases print java
-MASTER_SITES=	SF/${PORTNAME}/JasperServer/JasperServer%20${PORTVERSION}/:source1 \
-		http://www.glenbarber.us/ports/databases/${PORTNAME}/:source2
-DISTFILES=	${PORTNAME}-${PORTVERSION}-src.zip:source1 \
-		${PORTNAME}-${PORTVERSION}-maven-repository.tar.gz:source2
-EXTRACT_ONLY=	${PORTNAME}-${PORTVERSION}-src.zip
+MASTER_SITES=	SF/${PORTNAME}/JasperServer/JasperServer%20${PORTVERSION}/:source1
+DISTFILES=	jasperreports-server-cp-${PORTVERSION}-src.zip:source1 \
+		jasperreports-server-cp-${PORTVERSION}-maven-repository.zip:source1
+EXTRACT_ONLY=	jasperreports-server-cp-${PORTVERSION}-src.zip
 
 MAINTAINER=	jhelfman@experts-exchange.com
 COMMENT=	Open Source Java Reporting Library
 
 BUILD_DEPENDS=	mvn:${PORTSDIR}/devel/maven2
 
+MANUAL_PACKAGE_BUILDING=	Requires ~360MB sources to download
+
 LICENSE_COMB=	multi
 LICENSE=	GPLv2 MIT ASL
 
-SRCDIR=		${WRKDIR}/jasperserver-${PORTVERSION}-src
+SRCDIR=		${WRKDIR}/jasperreports-server-cp-${PORTVERSION}-src
 PATCH_WRKSRC=	${SRCDIR}
-WRKSRC=		${WRKDIR}/jasperserver-${PORTVERSION}-src/${PORTNAME}/buildomatic
-WRKDIR?=	${WRKDIRPREFIX}${.CURDIR}/work
-SQLSRC=		${WRKDIR}/jasperserver-${PORTVERSION}-src/${PORTNAME}/scripts
-JS=		${WRKDIR}/jasperserver-${PORTVERSION}-src/${PORTNAME}
+WRKSRC=		${SRCDIR}/${PORTNAME}/buildomatic
+WRKDIR=		${WRKDIRPREFIX}${.CURDIR}/work
+SQLSRC=		${WRKSRC}/install_resources/sql
+JS=		${SRCDIR}/${PORTNAME}
 JSREPO=		${JS}-repo
-JSMAVENTAR=	${PORTNAME}-${PORTVERSION}-maven-repository.tar.gz
+JSMAVENARCH=	jasperreports-server-cp-${PORTVERSION}-maven-repository.zip
 
 NO_WRKSUBDIR=	yes
 USE_JAVA=	yes
 JAVA_VENDOR?=	freebsd
-JAVA_VERSION?=	1.6+
+JAVA_VERSION?=	1.6
 USE_ZIP=	yes
+
 # use own DOS2UNIX in pre-patch, not the one from bsd.port.mk!
 DOS2UNIX_REGEX=	.*(css|dtd|java|js|txt|wsdd|xml|xsl)$$
 
 OPTIONS=	TOMCAT5 "Enable Tomcat 5.x support"	on \
-		TOMCAT6 "Enable Tomcat 6.x support"	off
+		TOMCAT6 "Enable Tomcat 6.x support"	off \
+		MYSQL   "Enable Mysql 5.x support"	on \
+		POSTGRESQL "Enable PostgreSQL 8.x support" off
 
 REPLACE_FILES=	${JS}/jasperserver-war/src/main/webappAdditions/WEB-INF/web.xml
 REPLACE_LIST_TEMP=	${SUB_LIST:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/}
@@ -52,39 +56,59 @@ SUB_LIST=	DATABASE=${DATABASE} \
 		JSTIMEOUT=${JSTIMEOUT} \
 		PORTNAME=${PORTNAME} \
 		PORTSDIR=${PORTSDIR} \
-		PORTVERSION=${PORTVERSION}
+		PORTVERSION=${PORTVERSION} \
+		SRCDIR=${SRCDIR}
+
+PLIST_SUB=	DATABASE=${DATABASE} \
+		JDBCLOC=${JDBCLOC} \
+		PORTNAME=${PORTNAME}
 
 .include <bsd.port.options.mk>
 
-# set a dummy user/passwd and the target database
-# else the build will fail
-# We need the native SQL client for several task after installation!
+.if defined(WITH_MYSQL)
 USE_MYSQL=	yes
 MYNAME?=	root
 MYPASS?=
 DATABASE=	mysql
-PLIST_SUB+=	JDBC="mysql-connector-java-5.1.5.jar" DATABASE=${DATABASE}
+PLIST_SUB+=	JDBC="mysql-connector-java-5.1.10.jar"
+.endif
+
+#use version 84, application is certified against this version
+.if defined(WITH_POSTGRESQL)
+USE_PGSQL=	yes
+WANT_PGSQL_VER= 84
+MYNAME?=	pgsql
+MYPASS?=	pgsql
+DATABASE=	postgresql
+JDBC=		postgresql-8.4-702.jdbc4.jar
+PLIST_SUB+=	JDBC=${JDBC}
+MASTER_SITES+=	http://jdbc.postgresql.org/download/:source2
+DISTFILES+=	postgresql-8.4-702.jdbc4.jar:source2
+.endif
 
 .if defined(WITH_TOMCAT5)
-BUILD_DEPENDS+=	tomcat>=5.5.31:${PORTSDIR}/www/tomcat55
-RUN_DEPENDS+=	tomcat>=5.5.31:${PORTSDIR}/www/tomcat55
 APPHOME?=	${LOCALBASE}/tomcat5.5
+BUILD_DEPENDS+= ${APPHOME}/bin/bootstrap.jar:${PORTSDIR}/www/tomcat55
+RUN_DEPENDS+=   ${APPHOME}/bin/bootstrap.jar:${PORTSDIR}/www/tomcat55
+APPTYPE=	tomcat5
 JSHOME?=	${APPHOME}/webapps/${PORTNAME}
 PLIST_SUB+=	APP_VERSION="tomcat5.5"
+JDBCLOC=	common/lib
 .endif
 
 .if defined(WITH_TOMCAT6)
-BUILD_DEPENDS+=	tomcat>=6.0.29:${PORTSDIR}/www/tomcat6
-RUN_DEPENDS+=	tomcat>=6.0.29:${PORTSDIR}/www/tomcat6
 APPHOME?=	${LOCALBASE}/apache-tomcat-6.0
+BUILD_DEPENDS+=	${APPHOME}/bin/bootstrap.jar:${PORTSDIR}/www/tomcat6
+RUN_DEPENDS+=	${APPHOME}/bin/bootstrap.jar:${PORTSDIR}/www/tomcat6
+APPTYPE=	tomcat6
 JSHOME?=	${APPHOME}/webapps/${PORTNAME}
 PLIST_SUB+=	APP_VERSION="apache-tomcat-6.0"
+JDBCLOC=	lib
 .endif
 
 DBHOST?=	localhost
 
 APP_PROPERTIES=	${SRCDIR}/${PORTNAME}/buildomatic/default_master.properties
-JS_PROPERTIES=	${SRCDIR}/${PORTNAME}/buildomatic/js-build.properties
 MAIL_PROPERTIES=${SRCDIR}/${PORTNAME}/buildomatic/build_conf/default/webapp/WEB-INF/js.quartz.properties
 
 JSPORT?=	8080
@@ -102,7 +126,15 @@ check-sanity:
 IGNORE=	you can only define one application server
 .elif ( !defined(WITH_TOMCAT5) && !defined(WITH_TOMCAT6) )
 IGNORE=	choose at least one application server
+.elif ( defined(WITH_MYSQL) && defined(WITH_POSTGRESQL) )
+IGNORE=	you can only define one database
+.elif ( !defined(WITH_MYSQL) && !defined(WITH_POSTGRESQL) )
+IGNORE=	choose at least one database
 .endif
+
+pre-fetch:
+# show the update warning before we fetch ~400MB sources
+	@${SH} ${PKGINSTALL} ${PORTNAME} PRE-INSTALL
 
 pre-extract:
 	@if [ -e ~/.m2 -o -L ~/.m2 ]; then \
@@ -129,22 +161,23 @@ post-patch:
 .endfor
 
 post-extract-script:
-	@${LN} -fs ${WRKDIR}/.m2 ~/.m2 && ${TAR} -C ${WRKDIR} -xf ${DISTDIR}/${JSMAVENTAR};\
+	@${LN} -fs ${WRKDIR}/.m2 ~/.m2 && ${UNZIP_CMD} -qq ${DISTDIR}/${JSMAVENARCH} -d ${WRKDIR}/.m2
 
 pre-build:
-	@${ECHO} "appServerDir = ${APPHOME}" > ${APP_PROPERTIES}
-	@${ECHO} "dbType = mysql" >> ${APP_PROPERTIES}
+	@${ECHO} "appServerType = ${APPTYPE}" > ${APP_PROPERTIES}
+	@${ECHO} "appServerDir = ${APPHOME}" >> ${APP_PROPERTIES}
+	@${ECHO} "dbType = ${DATABASE}" >> ${APP_PROPERTIES}
 	@${ECHO} "dbUsername = ${MYNAME}" >> ${APP_PROPERTIES}
 	@${ECHO} "dbPassword = ${MYPASS}" >> ${APP_PROPERTIES}
 	@${ECHO} "dbHost = ${DBHOST}" >> ${APP_PROPERTIES}
 
 	@( if [ -f ${LOCALBASE}/bin/mvn ] ; then \
-		${ECHO} "maven = ${LOCALBASE}/bin/mvn" > ${JS_PROPERTIES} ; \
+		${ECHO} "maven = ${JAVASHAREDIR}/maven2/bin/mvn" >> ${APP_PROPERTIES} ; \
 		else ${FALSE}; \
 	fi )
-	@${ECHO} "js-base-path = ${JS}" >> ${JS_PROPERTIES}
-	@${ECHO} "repo-path = ${JSREPO}">> ${JS_PROPERTIES}
-	@${CHMOD} 0755 ${SRCDIR}/${PORTNAME}/buildomatic/js-ant ${SRCDIR}/apache-ant/bin/ant
+	@${ECHO} "js-path = ${JS}" >> ${APP_PROPERTIES}
+	@${ECHO} "js-pro-path = ${JS}" >> ${APP_PROPERTIES}
+	@${ECHO} "js-repo-path = ${JSREPO}">> ${APP_PROPERTIES}
 
 do-build:
 	@( cd ${WRKSRC} && ./js-ant clean-config )
@@ -169,9 +202,15 @@ post-build:
 
 do-install:
 	@( cd ${WRKSRC} && ./js-ant deploy-webapp-ce )
-	@( cd ${SQLSRC} && ${INSTALL_DATA} ${DATABASE}/jasperserverCreate-${DATABASE}.ddl ${JSHOME} )
-	@( cd ${SQLSRC} && ${INSTALL_DATA} ${DATABASE}/jasperserverCreateDefaultSecurity-${DATABASE}.sql ${JSHOME} )
-	@${INSTALL} -m 640 ${MAIL_PROPERTIES} ${JSHOME}/WEB-INF/
+	@${INSTALL_DATA} ${FILESDIR}/jasperserverCreateDefaultSecurity-${DATABASE}.sql ${JSHOME}
+	@( cd ${SQLSRC} && ${INSTALL_DATA} ${DATABASE}/js-create.ddl ${JSHOME} )
+	@( cd ${SQLSRC} && ${INSTALL_DATA} ${DATABASE}/quartz.ddl ${JSHOME} )
+	@${INSTALL} -m 440 ${MAIL_PROPERTIES} ${JSHOME}/WEB-INF/
+
+.if ( defined(WITH_TOMCAT6) || defined(WITH_TOMCAT5) && !defined(WITH_MYSQL) )
+	${INSTALL_DATA} ${DISTDIR}/${JDBC} ${APPHOME}/${JDBCLOC}
+	@${RM} ${APPHOME}/${JDBCLOC}/postgresql-8.1-407.jdbc3.jar
+.endif
 
 post-install:
 	@${CAT} ${PKGMESSAGE}

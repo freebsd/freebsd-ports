@@ -1,0 +1,51 @@
+--- ./jasperserver/common/shared-config/applicationContext-themes.xml.orig	2011-02-18 14:52:56.000000000 -0800
++++ ./jasperserver/common/shared-config/applicationContext-themes.xml	2011-02-18 14:53:53.000000000 -0800
+@@ -14,7 +14,6 @@
+ 	     	
+ 	 -->
+ 
+-<!--
+     <bean id="themeResolver" class="org.springframework.web.servlet.theme.FixedThemeResolver">
+         <property name="defaultThemeName" value="default"/>
+     </bean>
+@@ -22,27 +21,32 @@
+     <bean id="themeSource" class="org.springframework.ui.context.support.ResourceBundleThemeSource">
+         <property name="basenamePrefix" value="themes."/>
+     </bean>
+--->
+ 
+ 	<!-- To run the themes from the repository, uncomment the three beans below and comment out the two beans above -->
+ 	
++<!--
+     <bean id="themeResolver" class="com.jaspersoft.jasperserver.war.themes.JSThemeResolver">
+         <property name="defaultThemeName">
+             <util:property-path path="configurationBean.themeDefaultName"/>
+         </property>
+         <property name="delegate" ref="jsThemeResolver"/>
+     </bean>
++-->
+ 
++<!--
+     <bean id="jsThemeResolver" class="com.jaspersoft.jasperserver.war.themes.MTThemeResolver">
+         <property name="defaultThemeName">
+             <util:property-path path="configurationBean.themeDefaultName"/>
+         </property>
+         <property name="tenantService" ref="${bean.hibernateTenantService}" />
+     </bean>
++-->
+ 
++<!--
+     <bean id="themeSource" class="com.jaspersoft.jasperserver.war.themes.RepositoryFolderThemeSourceImpl">
+         <property name="themeCache" ref="themeCache"/>
+     </bean>
++-->
+ 
+     <bean id="themeCache" class="com.jaspersoft.jasperserver.war.themes.ThemeCache">
+         <property name="repositoryService" ref="unsecureRepositoryService"/>
+@@ -84,4 +88,4 @@
+         <property name="themeSource" ref="themeSource" />
+     </bean>
+ 
+-</beans>       
+\ No newline at end of file
++</beans>       

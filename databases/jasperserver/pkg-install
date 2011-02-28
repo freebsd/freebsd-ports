@@ -1,0 +1,35 @@
+#!/bin/sh
+
+# $FreeBSD$
+
+BATCH=${BATCH:=no}
+
+if [ "$2" = "PRE-INSTALL" ]; then
+cat << _EOF
+==============  W A R N I N G   I M P O R T A N T   N O T E  =================
+
+If UPGRADING from 3.5.0 to 4.0:
+(taken from release notes of 4.0 from vendor)
+
+If you are upgrading from an older JasperServer version such as 3.5 then you
+must first upgrade to JasperServer 3.7 before upgrading to 4.0.
+Upgrading directly from JasperServer 3.5 to 4.0 is not a "certified" (i.e. fully
+QA tested) procedure.
+
+The steps to carry out this operation are fully documented in the JasperReports
+Server Installation Guide for the 3.7 release.  You will need to download the 
+JasperServer 3.7 release package to get the relevant files and documentation.
+To download the JasperServer 3.7 WAR file distribution zip package, go to the
+JasperForge.org website and to the JasperServer project.
+
+WWW: http://jasperforge.org/projects/jasperserver
+
+==============  W A R N I N G   I M P O R T A N T   N O T E  =================
+
+_EOF
+    if [ -z "${PACKAGE_BUILDING}" -a "${BATCH}" = "no" ]; then
+        read -p "Hit ^c now to stop, any key to continue: " -t 20 a || true
+        echo
+        echo
+    fi
+fi
