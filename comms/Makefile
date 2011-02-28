@@ -150,6 +150,7 @@
     SUBDIR += uird
     SUBDIR += umcs7840
     SUBDIR += unixcw
+    SUBDIR += usbmuxd
     SUBDIR += uticom
     SUBDIR += viewfax
     SUBDIR += vrflash
