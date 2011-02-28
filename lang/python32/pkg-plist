@@ -15,7 +15,7 @@ bin/python-shared%%PYVER%%-config
 bin/python%%PYVER%%%%PYABIVER%%
 bin/python%%PYVER%%%%PYABIVER%%-config
 lib/lib%%PYTHON_VERSION%%%%PYABIVER%%.a
-lib/lib%%PYTHON_VERSION%%.so
+lib/lib%%PYTHON_VERSION%%%%PYABIVER%%.so
 lib/lib%%PYTHON_VERSION%%%%PYABIVER%%.so.1
 libdata/pkgconfig/python-3.2.pc
 %%PYTHON_INCLUDEDIR%%%%PYABIVER%%/Python-ast.h
