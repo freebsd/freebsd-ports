@@ -1,6 +1,6 @@
---- Completion/Unix/Type/_tar_archive.orig	Fri Aug  4 08:41:07 2006
-+++ Completion/Unix/Type/_tar_archive	Tue Jul 24 15:34:29 2007
-@@ -14,15 +14,8 @@
+--- ./Completion/Unix/Type/_tar_archive.orig	2009-12-05 18:29:12.000000000 +0100
++++ ./Completion/Unix/Type/_tar_archive	2011-02-27 23:44:32.000000000 +0100
+@@ -14,17 +14,8 @@
  _description files expl 'archive file'
  
  if [[ "$1" = *[urtx]* ]]; then
@@ -8,13 +8,15 @@
 -    _files "$expl[@]" -g '*.((tar|TAR).(gz|GZ|Z)|tgz)(-.)'
 -  elif [[ "$1" = *[Ijy]* ]]; then
 -    _files "$expl[@]" -g '*.(tar|TAR).bz2(-.)'
+-  elif [[ "$1" = *J* ]]; then
+-    _files "$expl[@]" -g '*.(tar|TAR).(lzma|xz)(-.)'
 -  elif [[ "$_cmd_variant[$service]" == gnu ]]; then
--    _files "$expl[@]" -g '*.((tar|TAR)(.gz|.GZ|.Z|.bz2|)|tgz)(-.)'
+-    _files "$expl[@]" -g '*.((tar|TAR)(.gz|.GZ|.Z|.bz2|.lzma|.xz|)|(tbz|tgz|txz))(-.)'
 -  else
 -    _files "$expl[@]" -g '*.(tar|TAR)(-.)'
 -  fi
-+  # bsdtar/libarchive handle these automagically
-+  _files "$expl[@]" -g '*.((tar|TAR|iso|ISO|cpio).(|(gz|GZ|Z|bz2))|tgz|tbz|jar|zip)(-.)'
++   # bsdtar/libarchive handle these automagically
++   _files "$expl[@]" -g '*.((tar|TAR|iso|ISO|cpio).(|(gz|GZ|Z|bz2|lzma|xz))|tgz|tbz|jar|zip|txz)(-.)'
  else
    _files "$expl[@]"
  fi
