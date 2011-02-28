@@ -1,0 +1,24 @@
+bin/idevice_id
+bin/idevicebackup
+bin/ideviceimagemounter
+bin/ideviceinfo
+bin/idevicepair
+bin/idevicescreenshot
+bin/idevicesyslog
+include/libimobiledevice/afc.h
+include/libimobiledevice/file_relay.h
+include/libimobiledevice/installation_proxy.h
+include/libimobiledevice/libimobiledevice.h
+include/libimobiledevice/lockdown.h
+include/libimobiledevice/mobile_image_mounter.h
+include/libimobiledevice/mobilebackup.h
+include/libimobiledevice/mobilesync.h
+include/libimobiledevice/notification_proxy.h
+include/libimobiledevice/sbservices.h
+include/libimobiledevice/screenshotr.h
+lib/libimobiledevice.a
+lib/libimobiledevice.la
+lib/libimobiledevice.so
+lib/libimobiledevice.so.1
+libdata/pkgconfig/libimobiledevice-1.0.pc
+@dirrm include/libimobiledevice
