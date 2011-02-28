@@ -26,6 +26,8 @@ WRKSRC=		${WRKDIR}/kdebase-${PORTVERSION}
 
 PLIST_FILES=	bin/kompmgr
 
+BROKEN=		does not build
+
 .include <bsd.port.pre.mk>
 
 do-build:
