@@ -5,6 +5,17 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20110227:
+  AFFECTS: users of net/unison and net/unison-devel
+  AUTHOR:  mandree@FreeBSD.org
+
+  Unison has been upgraded to version 2.40, which uses a different wire
+  protocol than 2.32 did.  In order to support synchronization with
+  other computers where Unison is still at version 2.32, a new port
+  net/unison232 has been created.  It provides unison232 and if that is
+  GTK2-enabled, also unison232-text.  This unison232 port can be
+  installed in parallel with the existing net/unison port.
+
 20110224:
   AFFECTS: users of x11-drivers/xf86-video-ati
   AUTHOR: miwi@FreeBSD.org

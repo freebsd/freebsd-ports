@@ -1,6 +1,6 @@
-bin/unison
-%%TEXT%%share/applications/unison.desktop
-%%TEXT%%bin/unison-text
+bin/unison232
+%%TEXT%%share/applications/unison232.desktop
+%%TEXT%%bin/unison232-text
 %%PORTDOCS%%%%DOCSDIR%%/BUGS.txt
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
 %%PORTDOCS%%%%DOCSDIR%%/README

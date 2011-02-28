@@ -1,3 +1,6 @@
+This is Unison version 2.32, kept for compatibility with older
+installations on other computer across the network.      -- Matthias Andree
+
 Unison is a file-synchronization tool for Unix and Windows. It allows two
 replicas of a collection of files and directories to be stored on different
 hosts (or different disks on the same host), modified separately, and then
