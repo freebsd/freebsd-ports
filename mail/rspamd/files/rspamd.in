@@ -53,7 +53,7 @@ reopenlog_cmd()
 
 sig_reload="HUP"
 
-command_args="-u ${rspamd_user} -g ${rspamd_group} ${rspamd_flags}"
+command_args="-u ${rspamd_user} -g ${rspamd_group}"
 
 extra_commands="reload configtest reopenlog"
 run_rc_command "$1"
