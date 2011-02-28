@@ -15,7 +15,7 @@ MASTER_SITES=	http://twiki.org/p/pub/Codev/Release/ \
 DISTNAME=	TWiki-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	glarkin@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Flexible, powerful, and easy to use enterprise wiki
 
 RUN_DEPENDS=	\
