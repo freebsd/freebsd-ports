@@ -7,6 +7,7 @@
 
 PORTNAME=	ccache
 PORTVERSION=	3.1.4
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://samba.org/ftp/ccache/ CRITICAL
 
@@ -26,7 +27,7 @@ PORTDOCS=	*
 .if !defined(WITHOUT_COMPILER_LINKS)
 HOWTO=		ccache-howto-freebsd.txt
 CCLINKDIR=	libexec/ccache
-PLIST_DIRS=	${CCLINKDIR}
+PLIST_DIRS=	${CCLINKDIR}/world ${CCLINKDIR}
 SUB_FILES=	${HOWTO} pkg-message
 .endif
 
@@ -42,10 +43,10 @@ CCACHE_COMPILERS+=	clang clang++ llvm-gcc llvm-c++ llvm-g++
 .if defined(EXTRA_COMPILERS)
 CCACHE_COMPILERS+=	${EXTRA_COMPILERS}
 .endif
-WORLD_COMPILERS=	world-cc world-c++
 PLIST_FILES+=	${CCACHE_COMPILERS:S|^|${CCLINKDIR}/|} \
-		${WORLD_COMPILERS:S|^|${CCLINKDIR}/|}
-SUB_FILES+=	${WORLD_COMPILERS}
+		${CCACHE_COMPILERS:S|^|${CCLINKDIR}/world/|} \
+		${CCLINKDIR}/world/ccache
+SUB_FILES+=	world-ccache
 SUB_LIST+=	CCACHE_COMPILERS="${CCACHE_COMPILERS}" \
 		CCLINKDIR="${CCLINKDIR}" \
 		ICCPREFIX="${LOCALBASE}/intel_cc_80/bin" \
@@ -69,12 +70,11 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/ccache ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/${MAN1} ${PREFIX}/man/man1
 .if !defined(WITHOUT_COMPILER_LINKS)
-	@${MKDIR} ${PREFIX}/${CCLINKDIR}
+	@${MKDIR} ${PREFIX}/${CCLINKDIR}/world
+	${INSTALL_SCRIPT} ${WRKDIR}/world-ccache ${PREFIX}/${CCLINKDIR}/world/ccache
 .for link in ${CCACHE_COMPILERS}
 	${LN} -sf ${PREFIX}/bin/ccache ${PREFIX}/${CCLINKDIR}/${link}
-.endfor
-.for script in ${WORLD_COMPILERS}
-	${INSTALL_SCRIPT} ${WRKDIR}/${script} ${PREFIX}/${CCLINKDIR}
+	${LN} -sf ccache ${PREFIX}/${CCLINKDIR}/world/${link}
 .endfor
 .endif
 .if !defined(NOPORTDOCS)

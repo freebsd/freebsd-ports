@@ -1,0 +1,9 @@
+#!/bin/sh
+
+[ "${0##*/}" = "ccache" ] &&
+printf "Please, use one of the compiler links in\n%%PREFIX%%/%%CCLINKDIR%%/world\nto invoke ccache\n" >&2 &&
+exit 1
+
+unset CCACHE_PATH
+export CCACHE_COMPILERCHECK=content
+exec %%PREFIX%%/%%CCLINKDIR%%/${0##*/} "$@"
