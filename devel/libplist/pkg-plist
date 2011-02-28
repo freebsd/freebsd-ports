@@ -1,0 +1,29 @@
+bin/plutil
+bin/plutil-1.3
+include/plist/Array.h
+include/plist/Boolean.h
+include/plist/Data.h
+include/plist/Date.h
+include/plist/Dictionary.h
+include/plist/Integer.h
+include/plist/Node.h
+include/plist/Real.h
+include/plist/String.h
+include/plist/Structure.h
+include/plist/plist++.h
+include/plist/plist.h
+%%PYTHON%%include/plist/swig/plist.i
+lib/libplist++.so
+lib/libplist++.so.1
+lib/libplist++.so.1.1.3
+lib/libplist.so
+lib/libplist.so.1
+lib/libplist.so.1.1.3
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/plist/__init__.py
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/plist/_plist.so
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/plist/plist.py
+libdata/pkgconfig/libplist++.pc
+libdata/pkgconfig/libplist.pc
+%%PYTHON%%@dirrm %%PYTHON_SITELIBDIR%%/plist
+%%PYTHON%%@dirrm include/plist/swig
+@dirrm include/plist

@@ -1,0 +1,11 @@
+libimobiledevice is a software library that talks the protocols to
+support iPhone, iPod Touch and iPad devices on Linux. Unlike other
+projects, it does not depend on using any existing proprietary
+libraries and does not require jailbreaking. It allows other software
+to easily access the device's filesystem, retrieve information about
+the device and its internals, backup/restore the device, manage
+SpringBoard icons, manage installed applications, retrieve
+addressbook/calendars/notes and bookmarks and synchronize music and
+video to the device.
+
+WWW: http://www.libimobiledevice.org
