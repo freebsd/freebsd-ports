@@ -17,6 +17,9 @@ COMMENT=	Tool Command Language (Linux Fedora 8)
 
 CONFLICTS=	linux-f10-tcl85-[0-9]*
 
+DEPRECATED=	End of Life since Jan 7, 2009
+EXPIRATION_DATE=2011-04-01
+
 USE_LINUX_RPM=	yes
 LINUX_DIST_VER=	8
 RPMVERSION=	1.fc8

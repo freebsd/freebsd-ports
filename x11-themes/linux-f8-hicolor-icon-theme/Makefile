@@ -20,6 +20,9 @@ RUN_DEPENDS=	${LOCALBASE}/share/icons/hicolor/index.theme:${PORTSDIR}/misc/hicol
 
 CONFLICTS=	linux-hicolor-icon-theme-[0-9]* linux-f10-hicolor-icon-theme-[0-9]*
 
+DEPRECATED=	End of Life since Jan 7, 2009
+EXPIRATION_DATE=2011-04-01
+
 NO_BUILD=	yes
 USE_LINUX=	yes
 USE_LINUX_PREFIX=	yes

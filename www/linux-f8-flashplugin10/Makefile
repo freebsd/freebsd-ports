@@ -18,6 +18,9 @@ DIST_SUBDIR=	${PORTNAME}/${PORTVERSION}
 MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	Adobe Flash Player NPAPI Plugin
 
+DEPRECATED=	End of Life since Jan 7, 2009
+EXPIRATION_DATE=2011-04-01
+
 ONLY_FOR_ARCHS=	amd64 i386
 USE_LINUX=	yes
 USE_LINUX_APPS=	openssl curl libssh2 libidn nspr nss gtk2

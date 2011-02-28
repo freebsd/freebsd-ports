@@ -17,6 +17,9 @@ COMMENT=	The TIFF library, Linux/i386 binary (Linux Fedora 8)
 
 CONFLICTS=	linux-tiff-[0-9]* linux-f10-tiff-[0-9]*
 
+DEPRECATED=	End of Life since Jan 7, 2009
+EXPIRATION_DATE=2011-04-01
+
 ONLY_FOR_ARCHS=	amd64 i386
 USE_LINUX_RPM=	yes
 USE_LINUX_APPS=	jpeg

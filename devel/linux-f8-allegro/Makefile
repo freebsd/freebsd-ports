@@ -17,6 +17,9 @@ COMMENT=	Cross-platform game programming library (Linux Fedora 8)
 
 CONFLICTS=	linux-allegro-[0-9]* linux-f10-allegro-[0-9]*
 
+DEPRECATED=	End of Life since Jan 7, 2009
+EXPIRATION_DATE=2011-04-01
+
 USE_LINUX_RPM=		yes
 USE_LINUX_APPS=		xorglibs
 ONLY_FOR_ARCHS=		i386 amd64

@@ -20,6 +20,9 @@ COMMENT=	Motif toolkit Linux libraries
 
 CONFLICTS=	linux-openmotif-[0-9]* linux-f10-openmotif-[0-9]*
 
+DEPRECATED=	End of Life since Jan 7, 2009
+EXPIRATION_DATE=2011-04-01
+
 ONLY_FOR_ARCHS=	i386 amd64
 USE_LINUX_RPM=	yes
 USE_LINUX_APPS=	xorglibs

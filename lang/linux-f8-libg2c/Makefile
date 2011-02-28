@@ -17,6 +17,9 @@ COMMENT=	Fortran 77 shared library (Linux Fedora 8)
 
 CONFLICTS=	linux-libg2c-[0-9]* linux-f10-libg2c-[0-9]*
 
+DEPRECATED=	End of Life since Jan 7, 2009
+EXPIRATION_DATE=2011-04-01
+
 ONLY_FOR_ARCHS=	i386 amd64
 USE_LINUX_RPM=	yes
 LINUX_NAME=	compat-libf2c-34

@@ -15,6 +15,9 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-${RPMVERSION}
 MAINTAINER=	freebsd-emulation@FreeBSD.org
 COMMENT=	Runtime libraries for NAS (Linux Fedora 8)
 
+DEPRECATED=	End of Life since Jan 7, 2009
+EXPIRATION_DATE=2011-04-01
+
 USE_LINUX_RPM=	yes
 USE_LINUX_APPS=	xorglibs
 LINUX_DIST_VER=	8
