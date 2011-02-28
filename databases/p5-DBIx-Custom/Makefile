@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	DBIx-Custom
-PORTVERSION=	0.1651
+PORTVERSION=	0.1652
 CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	../../authors/id/K/KI/KIMOTO
@@ -21,7 +21,11 @@ BUILD_DEPENDS=	p5-DBD-SQLite>=1.25:${PORTSDIR}/databases/p5-DBD-SQLite \
 		p5-Time-Piece>=1.15:${PORTSDIR}/devel/p5-Time-Piece
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	YES
+PERL_CONFIGURE=	yes
+
+LICENSE_COMB=	dual
+LICENSE=	ART20 GPLv1
+
 MAN3=	DBIx::Custom.3 \
 	DBIx::Custom::Guide.3 \
 	DBIx::Custom::Guide::Ja.3 \
@@ -32,6 +36,7 @@ MAN3=	DBIx::Custom.3 \
 	DBIx::Custom::Result.3 \
 	DBIx::Custom::SQLite.3 \
 	DBIx::Custom::Tag.3 \
+	DBIx::Custom::Util.3 \
 	DBIx::Custom::Where.3
 
 .include <bsd.port.mk>
