@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libebml
-PORTVERSION=	1.0.0
+PORTVERSION=	1.2.0
 CATEGORIES=	textproc
 MASTER_SITES=	http://dl.matroska.org/downloads/libebml/ \
 		http://www.bunkus.org/videotools/mkvtoolnix/sources/

@@ -26,6 +26,6 @@ include/ebml/StdIOCallback.h
 include/ebml/c/libebml_t.h
 lib/libebml.a
 lib/libebml.so
-lib/libebml.so.2
+lib/libebml.so.3
 @dirrm include/ebml/c
 @dirrm include/ebml
