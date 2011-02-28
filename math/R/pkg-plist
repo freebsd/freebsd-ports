@@ -546,6 +546,8 @@ lib/R/library/grDevices/libs/grDevices.so
 %%NLS%%lib/R/library/grDevices/po/ja/LC_MESSAGES/grDevices.mo
 %%NLS%%lib/R/library/grDevices/po/ko/LC_MESSAGES/R-grDevices.mo
 %%NLS%%lib/R/library/grDevices/po/ko/LC_MESSAGES/grDevices.mo
+%%NLS%%lib/R/library/grDevices/po/pt_BR/LC_MESSAGES/R-grDevices.mo
+%%NLS%%lib/R/library/grDevices/po/pt_BR/LC_MESSAGES/grDevices.mo
 %%NLS%%lib/R/library/grDevices/po/ru/LC_MESSAGES/R-grDevices.mo
 %%NLS%%lib/R/library/grDevices/po/ru/LC_MESSAGES/grDevices.mo
 %%NLS%%lib/R/library/grDevices/po/zh_CN/LC_MESSAGES/R-grDevices.mo
@@ -580,6 +582,7 @@ lib/R/library/graphics/html/00Index.html
 %%NLS%%lib/R/library/graphics/po/it/LC_MESSAGES/R-graphics.mo
 %%NLS%%lib/R/library/graphics/po/ja/LC_MESSAGES/R-graphics.mo
 %%NLS%%lib/R/library/graphics/po/ko/LC_MESSAGES/R-graphics.mo
+%%NLS%%lib/R/library/graphics/po/pt_BR/LC_MESSAGES/R-graphics.mo
 %%NLS%%lib/R/library/graphics/po/ru/LC_MESSAGES/R-graphics.mo
 %%NLS%%lib/R/library/graphics/po/zh_CN/LC_MESSAGES/R-graphics.mo
 lib/R/library/grid/DESCRIPTION
@@ -655,6 +658,7 @@ lib/R/library/grid/libs/grid.so
 %%NLS%%lib/R/library/grid/po/ko/LC_MESSAGES/R-grid.mo
 %%NLS%%lib/R/library/grid/po/ko/LC_MESSAGES/grid.mo
 %%NLS%%lib/R/library/grid/po/pt_BR/LC_MESSAGES/grid.mo
+%%NLS%%lib/R/library/grid/po/pt_BR/LC_MESSAGES/R-grid.mo
 %%NLS%%lib/R/library/grid/po/ru/LC_MESSAGES/R-grid.mo
 %%NLS%%lib/R/library/grid/po/ru/LC_MESSAGES/grid.mo
 %%NLS%%lib/R/library/grid/po/zh_CN/LC_MESSAGES/R-grid.mo
@@ -1006,32 +1010,13 @@ lib/R/library/survival/Meta/links.rds
 lib/R/library/survival/Meta/nsInfo.rds
 lib/R/library/survival/Meta/package.rds
 lib/R/library/survival/NAMESPACE
+lib/R/library/survival/NEWS.Rd
 lib/R/library/survival/R/survival
 lib/R/library/survival/R/survival.rdb
 lib/R/library/survival/R/survival.rdx
 lib/R/library/survival/data/Rdata.rdb
 lib/R/library/survival/data/Rdata.rds
 lib/R/library/survival/data/Rdata.rdx
-lib/R/library/survival/data/leukemia.dat
-lib/R/library/survival/data/minn2000.dat
-lib/R/library/survival/data/minn2004.dat
-lib/R/library/survival/data/minndecennial.dat
-lib/R/library/survival/data/minnpred.dat
-lib/R/library/survival/data/pbcseq.dat
-lib/R/library/survival/data/us1996.dat
-lib/R/library/survival/data/us1997.dat
-lib/R/library/survival/data/us1998.dat
-lib/R/library/survival/data/us1999.dat
-lib/R/library/survival/data/us2000.dat
-lib/R/library/survival/data/us2001.dat
-lib/R/library/survival/data/us2002.dat
-lib/R/library/survival/data/us2003.dat
-lib/R/library/survival/data/us2004.dat
-lib/R/library/survival/data/usdecennial.dat
-lib/R/library/survival/data/usinfant.dat
-lib/R/library/survival/doc/validate.aux
-lib/R/library/survival/doc/validate.log
-lib/R/library/survival/doc/validate.pdf
 lib/R/library/survival/doc/validate.tex
 lib/R/library/survival/doc/index.html
 lib/R/library/survival/help/AnIndex
@@ -1087,6 +1072,7 @@ lib/R/library/tcltk/html/00Index.html
 %%NLS%%lib/R/library/tcltk/po/ja/LC_MESSAGES/tcltk.mo
 %%NLS%%lib/R/library/tcltk/po/ko/LC_MESSAGES/R-tcltk.mo
 %%NLS%%lib/R/library/tcltk/po/pt_BR/LC_MESSAGES/R-tcltk.mo
+%%NLS%%lib/R/library/tcltk/po/pt_BR/LC_MESSAGES/tcltk.mo
 %%NLS%%lib/R/library/tcltk/po/ru/LC_MESSAGES/R-tcltk.mo
 %%NLS%%lib/R/library/tcltk/po/ru/LC_MESSAGES/tcltk.mo
 %%NLS%%lib/R/library/tcltk/po/zh_CN/LC_MESSAGES/R-tcltk.mo
@@ -1121,6 +1107,7 @@ lib/R/library/tools/libs/tools.so
 %%NLS%%lib/R/library/tools/po/ja/LC_MESSAGES/tools.mo
 %%NLS%%lib/R/library/tools/po/ko/LC_MESSAGES/R-tools.mo
 %%NLS%%lib/R/library/tools/po/ko/LC_MESSAGES/tools.mo
+%%NLS%%lib/R/library/tools/po/pt_BR/LC_MESSAGES/R-tools.mo
 %%NLS%%lib/R/library/tools/po/pt_BR/LC_MESSAGES/tools.mo
 %%NLS%%lib/R/library/tools/po/ru/LC_MESSAGES/R-tools.mo
 %%NLS%%lib/R/library/tools/po/ru/LC_MESSAGES/tools.mo
@@ -1152,6 +1139,7 @@ lib/R/library/utils/misc/exDIF.dif
 %%NLS%%lib/R/library/utils/po/fr/LC_MESSAGES/R-utils.mo
 %%NLS%%lib/R/library/utils/po/ja/LC_MESSAGES/R-utils.mo
 %%NLS%%lib/R/library/utils/po/ko/LC_MESSAGES/R-utils.mo
+%%NLS%%lib/R/library/utils/po/pt_BR/LC_MESSAGES/R-utils.mo
 %%NLS%%lib/R/library/utils/po/ru/LC_MESSAGES/R-utils.mo
 %%NLS%%lib/R/library/utils/po/zh_CN/LC_MESSAGES/R-utils.mo
 %%X11%%lib/R/modules/R_X11.so
@@ -1281,6 +1269,8 @@ libdata/pkgconfig/libR.pc
 %%NLS%%@dirrm lib/R/library/utils/po/zh_CN
 %%NLS%%@dirrm lib/R/library/utils/po/ru/LC_MESSAGES
 %%NLS%%@dirrm lib/R/library/utils/po/ru
+%%NLS%%@dirrm lib/R/library/utils/po/pt_BR/LC_MESSAGES
+%%NLS%%@dirrm lib/R/library/utils/po/pt_BR
 %%NLS%%@dirrm lib/R/library/utils/po/ko/LC_MESSAGES
 %%NLS%%@dirrm lib/R/library/utils/po/ko
 %%NLS%%@dirrm lib/R/library/utils/po/ja/LC_MESSAGES
@@ -1566,6 +1556,8 @@ libdata/pkgconfig/libR.pc
 %%NLS%%@dirrm lib/R/library/graphics/po/zh_CN
 %%NLS%%@dirrm lib/R/library/graphics/po/ru/LC_MESSAGES
 %%NLS%%@dirrm lib/R/library/graphics/po/ru
+%%NLS%%@dirrm lib/R/library/graphics/po/pt_BR/LC_MESSAGES
+%%NLS%%@dirrm lib/R/library/graphics/po/pt_BR
 %%NLS%%@dirrm lib/R/library/graphics/po/ko/LC_MESSAGES
 %%NLS%%@dirrm lib/R/library/graphics/po/ko
 %%NLS%%@dirrm lib/R/library/graphics/po/ja/LC_MESSAGES
@@ -1589,6 +1581,8 @@ libdata/pkgconfig/libR.pc
 %%NLS%%@dirrm lib/R/library/grDevices/po/zh_CN
 %%NLS%%@dirrm lib/R/library/grDevices/po/ru/LC_MESSAGES
 %%NLS%%@dirrm lib/R/library/grDevices/po/ru
+%%NLS%%@dirrm lib/R/library/grDevices/po/pt_BR/LC_MESSAGES
+%%NLS%%@dirrm lib/R/library/grDevices/po/pt_BR
 %%NLS%%@dirrm lib/R/library/grDevices/po/ko/LC_MESSAGES
 %%NLS%%@dirrm lib/R/library/grDevices/po/ko
 %%NLS%%@dirrm lib/R/library/grDevices/po/ja/LC_MESSAGES
