@@ -1,0 +1,8 @@
+BSDBuild is a simple, self-contained and portable build system derived from the
+traditional 4.4BSD share/mk files. BSDBuild uses BSD-style makefiles, but
+without BSD make extensions (it uses standard Bourne script fragments instead),
+so the build system is portable to most operating systems and make flavors.
+Because BSDBuild is implemented as a library, makefiles are edited directly and
+never need to be "regenerated".
+
+WWW:	http://hypertriton.com/bsdbuild/
