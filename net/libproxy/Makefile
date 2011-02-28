@@ -18,7 +18,8 @@ USE_GMAKE=	yes
 USE_GNOME+=	gnomehack
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+		LDFLAGS="-L${LOCALBASE}/lib" \
+		ac_cv_func_malloc_0_nonnull=yes
 CONFIGURE_ARGS?=--without-gnome --without-kde --without-webkit \
 		--without-mozjs --without-networkmanager --with-python \
 		--with-envvar --with-file
