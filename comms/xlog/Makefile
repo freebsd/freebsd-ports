@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xlog
-PORTVERSION=	2.0.4
+PORTVERSION=	2.0.5
 CATEGORIES=	comms hamradio
 MASTER_SITES=	${MASTER_SITE_SAVANNAH} \
 		http://pg4i.chronos.org.uk/download/ \
@@ -26,6 +26,7 @@ CONFIGURE_ARGS=	--with-mime-update \
 LIB_DEPENDS+=	hamlib:${PORTSDIR}/comms/hamlib
 
 MAN1=		xlog.1
+LICENSE=	GPLv3
 
 .if defined(WITHOUT_NLS)
 CONFIGURE_ARGS+=	--disable-nls
