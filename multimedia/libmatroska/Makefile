@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libmatroska
-PORTVERSION=	1.0.0
+PORTVERSION=	1.1.0
 CATEGORIES=	multimedia audio
 MASTER_SITES=	http://dl.matroska.org/downloads/libmatroska/ \
 		http://www.bunkus.org/videotools/mkvtoolnix/sources/
@@ -14,7 +14,7 @@ MASTER_SITES=	http://dl.matroska.org/downloads/libmatroska/ \
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Extensible Multimedia Container Format
 
-LIB_DEPENDS=	ebml.2:${PORTSDIR}/textproc/libebml
+LIB_DEPENDS=	ebml.3:${PORTSDIR}/textproc/libebml
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
