@@ -1,5 +1,31 @@
 %%SITE_PERL%%/Apache/Gallery.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Apache/Gallery/.packlist
+%%DATADIR%%/templates/bright/README
+%%DATADIR%%/templates/bright/dircomment.tpl
+%%DATADIR%%/templates/bright/directory.tpl
+%%DATADIR%%/templates/bright/error.tpl
+%%DATADIR%%/templates/bright/file.tpl
+%%DATADIR%%/templates/bright/gallery.css
+%%DATADIR%%/templates/bright/index.tpl
+%%DATADIR%%/templates/bright/info.tpl
+%%DATADIR%%/templates/bright/interval.tpl
+%%DATADIR%%/templates/bright/intervalactive.tpl
+%%DATADIR%%/templates/bright/layout.tpl
+%%DATADIR%%/templates/bright/navdirectory.tpl
+%%DATADIR%%/templates/bright/navpicture.tpl
+%%DATADIR%%/templates/bright/nodircomment.tpl
+%%DATADIR%%/templates/bright/nopictureinfo.tpl
+%%DATADIR%%/templates/bright/orig.tpl
+%%DATADIR%%/templates/bright/picture.tpl
+%%DATADIR%%/templates/bright/scale.tpl
+%%DATADIR%%/templates/bright/pictureinfo.tpl
+%%DATADIR%%/templates/bright/refresh.tpl
+%%DATADIR%%/templates/bright/rss.tpl
+%%DATADIR%%/templates/bright/rss_item.tpl
+%%DATADIR%%/templates/bright/scaleactive.tpl
+%%DATADIR%%/templates/bright/showpicture.tpl
+%%DATADIR%%/templates/bright/slideshowisoff.tpl
+%%DATADIR%%/templates/bright/slideshowoff.tpl
 %%DATADIR%%/templates/default/dircomment.tpl
 %%DATADIR%%/templates/default/directory.tpl
 %%DATADIR%%/templates/default/error.tpl
@@ -10,6 +36,7 @@
 %%DATADIR%%/templates/default/interval.tpl
 %%DATADIR%%/templates/default/intervalactive.tpl
 %%DATADIR%%/templates/default/layout.tpl
+%%DATADIR%%/templates/default/navdirectory.tpl
 %%DATADIR%%/templates/default/navpicture.tpl
 %%DATADIR%%/templates/default/nodircomment.tpl
 %%DATADIR%%/templates/default/nopictureinfo.tpl
@@ -18,6 +45,8 @@
 %%DATADIR%%/templates/default/scale.tpl
 %%DATADIR%%/templates/default/pictureinfo.tpl
 %%DATADIR%%/templates/default/refresh.tpl
+%%DATADIR%%/templates/default/rss.tpl
+%%DATADIR%%/templates/default/rss_item.tpl
 %%DATADIR%%/templates/default/scaleactive.tpl
 %%DATADIR%%/templates/default/showpicture.tpl
 %%DATADIR%%/templates/default/slideshowisoff.tpl
@@ -32,6 +61,7 @@
 %%DATADIR%%/templates/new/interval.tpl
 %%DATADIR%%/templates/new/intervalactive.tpl
 %%DATADIR%%/templates/new/layout.tpl
+%%DATADIR%%/templates/new/navdirectory.tpl
 %%DATADIR%%/templates/new/navpicture.tpl
 %%DATADIR%%/templates/new/nodircomment.tpl
 %%DATADIR%%/templates/new/nopictureinfo.tpl
@@ -40,6 +70,8 @@
 %%DATADIR%%/templates/new/scale.tpl
 %%DATADIR%%/templates/new/pictureinfo.tpl
 %%DATADIR%%/templates/new/refresh.tpl
+%%DATADIR%%/templates/new/rss.tpl
+%%DATADIR%%/templates/new/rss_item.tpl
 %%DATADIR%%/templates/new/scaleactive.tpl
 %%DATADIR%%/templates/new/showpicture.tpl
 %%DATADIR%%/templates/new/slideshowisoff.tpl
@@ -66,6 +98,7 @@ www/icons/gallery/video-wmv.png
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Apache/Gallery
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Apache
 @dirrmtry %%SITE_PERL%%/Apache
+@dirrm %%DATADIR%%/templates/bright
 @dirrm %%DATADIR%%/templates/default
 @dirrm %%DATADIR%%/templates/new
 @dirrm %%DATADIR%%/templates
