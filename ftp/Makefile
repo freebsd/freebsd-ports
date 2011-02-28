@@ -46,7 +46,6 @@
     SUBDIR += hsftp
     SUBDIR += jftp
     SUBDIR += jftpgw
-    SUBDIR += junglemonkey
     SUBDIR += kasablanca
     SUBDIR += kbear
     SUBDIR += kftpgrabber
