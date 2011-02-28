@@ -10,8 +10,8 @@ PORTVERSION=	3.1
 PORTREVISION=	6
 PORTEPOCH=	1
 CATEGORIES=	net
-MASTER_SITES=	ftp://ftp.sasknow.com/pub/trafshow/ \
-		ftp://ftp.nsk.su/pub/RinetSoftware/
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	sem
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	sem@FreeBSD.org
