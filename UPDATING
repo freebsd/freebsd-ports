@@ -5,6 +5,18 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20110228:
+  AFFECTS: users of devel/ccache
+  AUTHOR: Emanuel Haupt <ehaupt@FreeBSD.org>
+
+  ccache now allows the use of non-default compilers such as clang. This
+  requires adjustments of the ccache make glue.
+ 
+  Please (re)read the following document after updating ccache to
+  ccache-3.1.4_1:
+ 
+  /usr/local/share/doc/ccache/ccache-howto-freebsd.txt
+
 20110227:
   AFFECTS: users of net/unison and net/unison-devel
   AUTHOR:  mandree@FreeBSD.org
