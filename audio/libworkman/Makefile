@@ -16,6 +16,8 @@ DISTNAME=	${PORTNAME}-1999-06-20
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Workman library required by some audio apps
 
+BROKEN=		does not build
+
 WRKSRC=		${WRKDIR}/libworkman
 USE_IMAKE=	yes
 USE_LDCONFIG=	yes
