@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	inkscape
-PORTVERSION=	0.48.0
-PORTREVISION=	3
+PORTVERSION=	0.48.1
 CATEGORIES=	graphics gnome
 MASTER_SITES=	SF
-MASTER_SITE_SUBDIR=${PORTNAME:L}/${PORTNAME:L}/0.48
+MASTER_SITE_SUBDIR=${PORTNAME:L}/${PORTNAME:L}/0.48.1
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	A program seeks to become a full featured open source SVG editor
@@ -60,14 +59,11 @@ CONFIGURE_ARGS+=	--enable-poppler-cairo
 CONFIGURE_ARGS+=	--enable-poppler-cairo=no
 .endif
 
-.if ${OSVERSION} < 700000
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-src_document.cpp
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|ieefp.h|ieeefp.h|' \
 		${WRKSRC}/src/2geom/bezier-utils.cpp
 	@${REINPLACE_CMD} -e 's|libpng >= 1.2|libpng14 >= 1.2|g' \
+		-e 's|-ldl||g' \
 	    	${WRKSRC}/configure
 	@${FIND} ${WRKSRC} -name "*.h" -o -name "*.cpp" | ${XARGS} \
 		${REINPLACE_CMD} -e 's|glib/gmessages.h|glib/gtestutils.h|g'
