@@ -17,6 +17,8 @@ EXTRACT_SUFX=	.tar.Z
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A DVI Previewer for the X Window System
 
+BROKEN=		does not build
+
 CONFLICTS=	teTeX-*
 
 DIST_SUBDIR=	xdvi
