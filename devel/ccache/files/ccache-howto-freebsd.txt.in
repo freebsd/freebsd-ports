@@ -2,12 +2,14 @@
 # $FreeBSD$
 #
 
-To use ccache add the following to /etc/make.conf
+To use ccache add the following to /etc/make.conf.
+You can replace cc and c++ with the compilers of your choice.
+(remember that only GCC and Clang can build world and kernel)
 
 .if (!empty(.CURDIR:M/usr/src*) || !empty(.CURDIR:M/usr/obj*))
 .if !defined(NOCCACHE)
-CC:=${CC:C,^cc,%%PREFIX%%/%%CCLINKDIR%%/world-cc,1}
-CXX:=${CXX:C,^c\+\+,%%PREFIX%%/%%CCLINKDIR%%/world-c++,1}
+CC:=${CC:C,^cc,%%PREFIX%%/%%CCLINKDIR%%/world/cc,1}
+CXX:=${CXX:C,^c\+\+,%%PREFIX%%/%%CCLINKDIR%%/world/c++,1}
 .endif
 .endif
 
@@ -47,18 +49,25 @@ reset PATH=$CCACHE_PATH and try again.
 Ccache has installed links for the following compilers
 %%CCACHE_COMPILERS%%
 in %%PREFIX%%/%%CCLINKDIR%%
+and %%PREFIX%%/%%CCLINKDIR%%/world
+
+Clang will return a lot of 'unused argument' warnings: they are harmless.
+Just add this to /etc/make.conf if you want to hide them:
+.if ${CC:T} == "clang"
+CFLAGS+=	-Qunused-arguments
+.endif
 
 !!! WARNING !!!
 Please make sure you have the compiler installed before you do this or your
 build will fail because it will not be able to find the compiler.
 
-Any time you change CC/CXX you need to reinstall devel/libtool15 or you 
+Any time you change CC/CXX you need to reinstall devel/libtool or you
 will run in to problems.
 
 --
 
 Ccache's default cache size is 1GB and this is larger than the default size of
-the root partition (/) on FreeBSD. To over come this you may specify a new 
+the root partition (/) on FreeBSD. To over come this you may specify a new
 cache location on a different partition with the following examples.
 
 For Korn/Bourne shells Add the following to /etc/profile:

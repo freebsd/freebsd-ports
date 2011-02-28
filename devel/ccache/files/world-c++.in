@@ -1,4 +1,0 @@
-#!/bin/sh
-unset CCACHE_PATH
-export CCACHE_COMPILERCHECK=content
-exec %%PREFIX%%/%%CCLINKDIR%%/c++ "$@"
