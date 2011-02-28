@@ -6,77 +6,91 @@
 #
 
 PORTNAME=	gwenhywfar
-PORTVERSION=	3.11.3
-PORTREVISION=	1
+PORTVERSION=	4.0.7
 CATEGORIES=	devel net security
 MASTER_SITES=	http://www2.aquamaniac.de/sites/download/
-DISTFILES=	download.php\?package=01\&release=31\&file=01\&dummy=${DISTNAME}${EXTRACT_SUFX}
+DISTFILES=	download.php\?package=01\&release=59\&file=01\&dummy=${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	bsdkaffee@gmail.com
 COMMENT=	Multi-platform helper library for networking and security applications
 
 LIB_DEPENDS=	gnutls.40:${PORTSDIR}/security/gnutls
 
-OPTIONS=	MEMDEBUG "Enable memory debugger statistic" off \
-		PORTDOCS "Install documentation (requires doxygen)" off
-
-USE_AUTOTOOLS=	libtool
 USE_GMAKE=	yes
-GNU_CONFIGURE=	yes
 USE_GETTEXT=	yes
 USE_OPENSSL=	yes
-USE_LDCONFIG=	${PREFIX}/lib \
-		${PREFIX}/lib/gwenhywfar/plugins/47/ct \
-		${PREFIX}/lib/gwenhywfar/plugins/47/dbio \
-		${PREFIX}/lib/gwenhywfar/plugins/47/configmgr
-CFLAGS+=	-I${LOCALBASE}/include
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
+USE_AUTOTOOLS=	libtool
+USE_GNOME=	gnomehack pkgconfig
+
+LICENSE=	LGPL21
+LICENSE_FILE=	${WRKSRC}/COPYING
+
+OPTIONS=	APIDOC "Full API documentation (requires Doxygen)" off \
+		MEMDEBUG "Enable memory debugger statistic" off \
+		FOX16 "Build FOX 1.6 GUI" off \
+		GTK2 "Build GTK 2.x GUI (for GnuCash)" on \
+		QT4 "Build Qt 4.x GUI (for KMyMoney)" on
+
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--enable-release="yes" \
+		--with-guis="${_GWEN_GUIS}"
+CPPFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
+LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 MAKE_JOBS_SAFE=	yes
 
-.if !defined(NOPORTEXAMPLES)
-# Examples to be installed from ${WRKSRC}/doc
-PORTEXAMPLES=	STYLE \
-		apidoc.h \
-		db2.png \
-		plugindescr.xml \
-		plugindescr.xsd \
-		plugindescr.xsd.in \
-		testdialog.xml
-.endif
+PLIST_SUB=	GWEN_SHLIB_VER="${GWEN_SHLIB_VER}"
+USE_LDCONFIG=	yes
 
-.include <bsd.port.pre.mk>
+GWEN_SHLIB_VER=	60
 
-# Enable printing of memory debugger statistic at runtime.
-.if defined(WITH_MEMDEBUG)
-CONFIGURE_ARGS+=	--enable-memtrace
-.endif
+.include <bsd.port.options.mk>
 
-.if defined(WITH_PORTDOCS)
+.if !defined(NOPORTDOCS) && defined(WITH_APIDOC)
 BUILD_DEPENDS+=	doxygen:${PORTSDIR}/devel/doxygen
-CONFIGURE_ARGS+=	--enable-full-doc
+CONFIGURE_ARGS+=--enable-full-doc
 PORTDOCS=	apidoc
 .endif
 
+.if defined(WITH_MEMDEBUG)
+CONFIGURE_ARGS+=--enable-memtrace
+.endif
+
+.if defined(WITH_FOX16)
+LIB_DEPENDS+=	FOX-1.6:${PORTSDIR}/x11-toolkits/fox16
+PLIST_SUB+=	WITH_FOX16=""
+_GWEN_GUIS+=	fox16
+.else
+PLIST_SUB+=	WITH_FOX16="@comment "
+.endif
+
+.if defined(WITH_GTK2)
+USE_GNOME+=	gtk20
+PLIST_SUB+=	WITH_GTK2=""
+_GWEN_GUIS+=	gtk2
+.else
+PLIST_SUB+=	WITH_GTK2="@comment "
+.endif
+
+.if defined(WITH_QT4)
+USE_QT_VER=	4
+QT_COMPONENTS=	gui moc_build uic_build
+QT_NONSTANDARD=	yes
+PLIST_SUB+=	WITH_QT4=""
+_GWEN_GUIS+=	qt4
+.else
+PLIST_SUB+=	WITH_QT4="@comment "
+.endif
+
 post-build:
-.if !defined(NOPORTDOCS) && defined(WITH_PORTDOCS)
+.if !defined(NOPORTDOCS) && defined(WITH_APIDOC)
 	@cd ${WRKSRC} && ${GMAKE} srcdoc
 .endif
 
 post-install:
-.if !defined(NOPORTDOCS) && defined(WITH_PORTDOCS)
-	@${ECHO_CMD} Installing documentation...
+.if !defined(NOPORTDOCS) && defined(WITH_APIDOC)
 	${MKDIR} ${DOCSDIR}/apidoc
-	@cd ${WRKSRC} && ${FIND} apidoc -mindepth 1 \! -type d \
-		-exec ${ECHO_CMD} "{} -> ${DOCSDIR}/{}" \; \
-		-exec ${INSTALL_DATA} ${WRKSRC}/{} ${DOCSDIR}/apidoc \;
-.endif
-.if !defined(NOPORTEXAMPLES)
-	@${ECHO_CMD} Installing examples...
-	${MKDIR} ${EXAMPLESDIR}
-.for file in ${PORTEXAMPLES}
-	${INSTALL_DATA} ${WRKSRC}/doc/${file} ${EXAMPLESDIR}
-.endfor
+	cd ${WRKSRC}/apidoc && \
+		${COPYTREE_SHARE} \* ${DOCSDIR}/apidoc
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
