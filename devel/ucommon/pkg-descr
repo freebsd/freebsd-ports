@@ -1,9 +1,9 @@
-GNU uCommon C++ is meant as a very light-weight C++ library to facilitate using C++
-design patterns even for very deeply embedded applications, such as for systems using
-uclibc along with posix threading support. For this reason, GNU uCommon C++ disables
-language features that consume memory or introduce runtime overhead, such as rtti and
-exception handling, and assumes one will mostly be linking applications with other pure
-C based libraries rather than using the overhead of the standard C++ library and other
-similar class frameworks. 
+GNU uCommon C++ is meant as a very light-weight C++ library to facilitate using
+C++ design patterns even for very deeply embedded applications, such as for
+systems using uclibc along with posix threading support. For this reason, GNU
+uCommon C++ disables language features that consume memory or introduce runtime
+overhead, such as rtti and exception handling, and assumes one will mostly be
+linking applications with other pure C based libraries rather than using the
+overhead of the standard C++ library and other similar class frameworks. 
 
 WWW: http://www.gnutelephony.org/index.php/GNU_uCommon_C%2B%2B
