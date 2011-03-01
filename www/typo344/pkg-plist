@@ -1,3 +1,3 @@
-@exec mkdir -p %D/www/typo3/typo3conf 2> /dev/null
-@exec [ -f %D/www/typo3/typo3conf/localconf.php ] || cp %D/www/typo3/typo3conf/localconf.php.dist %D/www/typo3/typo3conf/localconf.php
-@unexec if cmp -s %D/www/typo3/typo3conf/localconf.php %D/www/typo3/typo3conf/localconf.php.dist; then rm -f %D/www/typo3/typo3conf/localconf.php; fi
+@exec mkdir -p %D/www/typo344/typo3conf 2> /dev/null
+@exec [ -f %D/www/typo344/typo3conf/localconf.php ] || cp %D/www/typo344/typo3conf/localconf.php.dist %D/www/typo344/typo3conf/localconf.php
+@unexec if cmp -s %D/www/typo344/typo3conf/localconf.php %D/www/typo344/typo3conf/localconf.php.dist; then rm -f %D/www/typo344/typo3conf/localconf.php; fi
