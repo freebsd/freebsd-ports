@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	openjdk6
-PORTVERSION=	b21
-PORTREVISION=	3
+PORTVERSION=	b22
 CATEGORIES=	java devel
 MASTER_SITES=	http://download.java.net/openjdk/jdk6/promoted/${PORTVERSION}/ \
-		https://java.net/downloads/jaxp/jdk7/:jaxp \
+		http://download.java.net/jaxp/openjdk/jdk6/:jaxp \
 		https://java.net/downloads/jax-ws/OpenJDK6/:jaxws \
 		https://java.net/downloads/jax-ws/OpenJDK6/:jaf \
 		http://icedtea.classpath.org/builds/icedtea6/src/ \
@@ -40,7 +39,7 @@ RUN_DEPENDS=	javavm:${PORTSDIR}/java/javavmwrapper \
 
 LICENSE=	GPLv2
 
-OPENJDK_BUILDDATE=	20_jan_2011
+OPENJDK_BUILDDATE=	28_feb_2011
 
 OPTIONS=	DEBUG "Enable legacy debugging support" off \
 		FASTDEBUG "Include fastdebug build" off \
@@ -58,8 +57,8 @@ USE_MOTIF=	yes
 USE_XORG=	xtst xi xt x11
 MAKE_JOBS_UNSAFE=	yes
 
-JAXP_BUILD=	1_4_4
-JAXPFILE=	jaxp-${JAXP_BUILD}.zip
+JAXP_BUILD=	144_01
+JAXPFILE=	jaxp${JAXP_BUILD}.zip
 JAXWS_BUILD=	b20
 JAXWSFILE=	jdk6-jaxws-${JAXWS_BUILD}.zip
 JAF_BUILD=	b20
