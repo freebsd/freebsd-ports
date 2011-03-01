@@ -6,13 +6,15 @@
 #
 
 PORTNAME=	pyweblib
-PORTVERSION=	1.3.6
+PORTVERSION=	1.3.7
 CATEGORIES=	www
 MASTER_SITES=	http://www.stroeder.com/pylib/PyWebLib/download/ \
 		ftp://ftp.ipt.ru/pub/download/
 
 MAINTAINER=	bsam@ipt.ru
 COMMENT=	Yet another web programming framework for Python
+
+LICENSE=	GPLv2
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
