@@ -12,7 +12,7 @@ name="ietd"
 rcvar=`set_rcvar`
 
 command=%%PREFIX%%/sbin/${name}
-required_modules="iet"
+required_modules="%%PREFIX%%/modules/iet.ko:iet"
 stop_precmd="ietd_prestop"
 
 load_rc_config $name
