@@ -57,9 +57,6 @@ USE_XORG+=	fontsproto renderproto
 .  else
 IGNORE=		doesn't contain either "driver" or "input"
 .  endif
-.  if ${PORTNAME:M*-sun*}x != x && ${ARCH} != sparc64
-IGNORE=		is for sparc64 only
-.  endif
 . endif
 
 . if ${XORG_CAT} == "font"
