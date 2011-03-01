@@ -7,6 +7,7 @@
 
 PORTNAME=	webcamd
 PORTVERSION=	0.1.20
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	http://www.selasky.org/hans_petter/video4bsd/releases/
 
