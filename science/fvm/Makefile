@@ -18,7 +18,7 @@ COMMENT=	Code_Saturne Finite Volume Mesh
 
 LIB_DEPENDS=	med.2:${PORTSDIR}/french/med		\
 		bft.1:${PORTSDIR}/science/bft		\
-		hdf5.6:${PORTSDIR}/science/hdf5		\
+		hdf5.6:${PORTSDIR}/science/hdf5-18	\
 		cgns.0:${PORTSDIR}/science/cgnslib
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
