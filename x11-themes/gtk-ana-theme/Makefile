@@ -14,7 +14,7 @@ PKGNAMEPREFIX=	${TYPE}-
 PKGNAMESUFFIX=	-theme
 DISTNAME=	Ana
 
-MAINTAINER=	netchild@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Clean and white GTK engine
 
 LIB_DEPENDS=	rsvg-2:${PORTSDIR}/graphics/librsvg2
