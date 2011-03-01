@@ -6,11 +6,9 @@
 #
 
 PORTNAME=	pear
-PORTVERSION=	1.9.1
-PORTREVISION=	2
+PORTVERSION=	1.9.2
 CATEGORIES=	devel
-MASTER_SITES=	${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	mm
+MASTER_SITES=	http://freebsd.unixfreunde.de/pear/
 
 MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	PEAR framework for PHP
