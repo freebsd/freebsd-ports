@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	exipick
-PORTVERSION=	20061117.2
+PORTVERSION=	20100323.0
 CATEGORIES=	mail
 MASTER_SITES=	http://jetmore.org/john/code/
 DISTNAME=	${PORTNAME}.${PORTVERSION}
@@ -26,6 +26,7 @@ do-extract:
 
 do-build:
 	@${SED} -e '1s|/usr/bin/perl|${PERL}|' \
+		-e 's;\/local\/exim\/spool;\/var\/spool\/exim;g' \
 		${WRKSRC}/${DISTNAME} > ${WRKSRC}/${PORTNAME}.pl
 
 do-install:
