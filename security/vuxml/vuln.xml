@@ -2002,13 +2002,82 @@ Note:  Please add new entries to the beginning of this file.
     <affects>
       <package>
 	<name>chromium</name>
-	<range><lt>8.0.552.237</lt></range>
+	<range><lt>9.0.597.107</lt></range>
       </package>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
 	<p>Google Chrome Releases reports:</p>
 	<blockquote cite="http://googlechromereleases.blogspot.com/search/label/Stable%20updates">
+	  <p>Fixed in 9.0.597.107:<br/>
+	    [54262] High URL bar spoof. Credit to Jordi Chancel.<br/>
+	    [63732] High Crash with javascript dialogs. Credit to Sergey
+	      Radchenko.<br/>
+	    [68263] High Stylesheet node stale pointer. Credit to Sergey
+	      Glazunov.<br/>
+	    [68741] High Stale pointer with key frame rule. Credit to Sergey
+	      Glazunov.<br/>
+	    [70078] High Crash with forms controls. Credit to Stefan van
+	      Zanden.<br/>
+	    [70244] High Crash in SVG rendering. Credit to Slawomir Blazek.<br/>
+	    [64-bit Linux only] [70376] Medium Out-of-bounds read in pickle
+	       deserialization. Credit to Evgeniy Stepanov of the Chromium
+	       development community.<br/>
+	    [71114] High Stale node in table handling. Credit to Martin
+	       Barbella.<br/>
+	    [71115] High Stale pointer in table rendering. Credit to Martin
+	       Barbella.<br/>
+	    [71296] High Stale pointer in SVG animations. Credit to
+	       miaubiz.<br/>
+	    [71386] High Stale nodes in XHTML. Credit to wushi of team509.<br/>
+	    [71388] High Crash in textarea handling. Credit to wushi of
+	       team509.<br/>
+	    [71595] High Stale pointer in device orientation. Credit to Sergey
+	       Glazunov.<br/>
+	    [71717] Medium Out-of-bounds read in WebGL. Credit to miaubiz.<br/>
+	    [71855] High Integer overflow in textarea handling. Credit to
+	       miaubiz.<br/>
+	    [71960] Medium Out-of-bounds read in WebGL. Credit to Google Chrome
+	       Security Team (Inferno).<br/>
+	    [72214] High Accidental exposure of internal extension functions.
+	       Credit to Tavis Ormandy of the Google Security Team.<br/>
+	    [72437] High Use-after-free with blocked plug-ins. Credit to Chamal
+	       de Silva.<br/>
+	    [73235] High Stale pointer in layout. Credit to Martin Barbella.</p>
+
+	  <p>Fixed in 9.0.597.94:<br/>
+	    [67234] High Stale pointer in animation event handling. Credit to
+	      Rik Cabanier.<br/>
+	    [68120] High Use-after-free in SVG font faces. Credit to
+	      miaubiz.<br/>
+	    [69556] High Stale pointer with anonymous block handling. Credit to
+	      Martin Barbella.<br/>
+	    [69970] Medium Out-of-bounds read in plug-in handling. Credit to
+	      Bill Budge of Google.<br/>
+	    [70456] Medium Possible failure to terminate process on
+	      out-of-memory condition. Credit to David Warren of CERT/CC.</p>
+
+	  <p>Fixed in 9.0.597.84:<br/>
+	    [Mac only] [42989] Low Minor sandbox leak via stat(). Credit to
+	      Daniel Cheng of the Chromium development community.<br/>
+	    [55831] High Use-after-free in image loading. Credit to Aki
+	      Helin of OUSPG.<br/>
+	    [59081] Low Apply some restrictions to cross-origin drag + drop.
+	      Credit to Google Chrome Security Team (SkyLined) and the Google
+	      Security Team (Michal Zalewski, David Bloom).<br/>
+	    [62791] Low Browser crash with extension with missing key. Credit
+	      to Brian Kirchoff.<br/>
+	    [64051] High Crashing when printing in PDF event handler. Credit to
+	      Aki Helin of OUSPG.<br/>
+	    [65669] Low Handle merging of autofill profiles more gracefully.
+	      Credit to Google Chrome Security Team (Inferno).<br/>
+	    [Mac only] [66931] Low Work around a crash in the Mac OS 10.5 SSL
+	      libraries. Credit to Dan Morrison.<br/>
+	    [68244] Low Browser crash with bad volume setting. Credit to
+	      Matthew Heidermann.<br/>
+	    [69195] Critical Race condition in audio handling. Credit to the
+	      gamers of Reddit!</p>
+
 	  <p>Fixed in 8.0.552.237:<br/>
 	    [58053] Medium Browser crash in extensions notification handling.
 	      Credit to Eric Roman of the Chromium development community.<br/>
@@ -2143,7 +2212,7 @@ Note:  Please add new entries to the beginning of this file.
     <dates>
       <discovery>2010-10-19</discovery>
       <entry>2010-12-07</entry>
-      <modified>2011-01-23</modified>
+      <modified>2011-03-01</modified>
     </dates>
   </vuln>
 
