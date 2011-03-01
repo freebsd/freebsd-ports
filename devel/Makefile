@@ -531,6 +531,7 @@
     SUBDIR += googletest
     SUBDIR += gorm
     SUBDIR += gperf
+    SUBDIR += gprbuild-aux
     SUBDIR += gpsim
     SUBDIR += gputils
     SUBDIR += grantlee
