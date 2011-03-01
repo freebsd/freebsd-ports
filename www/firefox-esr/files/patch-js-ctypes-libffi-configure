@@ -1,0 +1,12 @@
+--- js/ctypes/libffi/configure.orig	2010-07-22 23:54:58.000000000 +0200
++++ js/ctypes/libffi/configure	2010-08-05 07:34:44.000000000 +0200
+@@ -21033,6 +21033,9 @@
+   powerpc-*-aix* | rs6000-*-aix*)
+ 	TARGET=POWERPC_AIX; TARGETDIR=powerpc
+ 	;;
++  powerpc64-*-freebsd*)
++	TARGET=POWERPC; TARGETDIR=powerpc
++	;;
+   powerpc-*-freebsd*)
+ 	TARGET=POWERPC_FREEBSD; TARGETDIR=powerpc
+ 	;;
