@@ -1,3 +1,4 @@
+bin/psychopy_post_inst.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/PKG-INFO
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/SOURCES.txt
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/dependency_links.txt
@@ -5,9 +6,27 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/scripts/psychopy_post_inst.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/top_level.txt
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/CHANGELOG.txt
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/LICENSES.txt
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/LICENSE.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/LICENSES.txt
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/README.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/_parallel.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/_parallel.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/_parallel.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/_quest.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/_quest.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/_quest.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/_shadersPygame.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/_shadersPygame.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/_shadersPygame.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/_shadersPyglet.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/_shadersPyglet.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/_shadersPyglet.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/app/Resources/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/app/Resources/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/app/Resources/__init__.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/app/Resources/compile16.png
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/app/Resources/compile32.png
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/app/Resources/filenew16.png
@@ -18,17 +37,14 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/app/Resources/filesave32.png
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/app/Resources/filesaveas16.png
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/app/Resources/filesaveas32.png
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/app/Resources/__init__.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/app/Resources/__init__.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/app/Resources/__init__.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/app/Resources/monitors16.png
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/app/Resources/monitors32.png
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/app/Resources/preferences16.png
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/app/Resources/preferences32.png
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/app/Resources/psychopySplash.png
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/app/Resources/psychopy.icns
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/app/Resources/psychopy.ico
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/app/Resources/psychopy.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/app/Resources/psychopySplash.png
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/app/Resources/redo16.png
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/app/Resources/redo32.png
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/app/Resources/run16.png
@@ -39,22 +55,33 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/app/Resources/stop32.png
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/app/Resources/undo16.png
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/app/Resources/undo32.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/app/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/app/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/app/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/app/appData.spec
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/app/builder/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/app/builder/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/app/builder/__init__.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/app/builder/builder.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/app/builder/builder.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/app/builder/builder.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/app/builder/components/add.png
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/app/builder/components/base.png
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/app/builder/components/_base.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/app/builder/components/_base.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/app/builder/components/_base.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/app/builder/components/components.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/app/builder/components/components.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/app/builder/components/components.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/app/builder/components/edit_add.png
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/app/builder/components/geometric.png
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/app/builder/components/__init__.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/app/builder/components/__init__.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/app/builder/components/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/app/builder/components/_base.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/app/builder/components/_base.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/app/builder/components/_base.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/app/builder/components/_visual.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/app/builder/components/_visual.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/app/builder/components/_visual.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/app/builder/components/add.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/app/builder/components/base.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/app/builder/components/code.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/app/builder/components/code.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/app/builder/components/code.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/app/builder/components/code.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/app/builder/components/edit_add.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/app/builder/components/geometric.png
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/app/builder/components/keyboard.png
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/app/builder/components/keyboard.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/app/builder/components/keyboard.pyc
@@ -82,24 +109,18 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/app/builder/components/text.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/app/builder/components/text.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/app/builder/components/text.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/app/builder/components/_visual.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/app/builder/components/_visual.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/app/builder/components/_visual.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/app/builder/experiment.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/app/builder/experiment.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/app/builder/experiment.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/app/builder/__init__.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/app/builder/__init__.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/app/builder/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/app/coder/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/app/coder/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/app/coder/__init__.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/app/coder/coder.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/app/coder/coder.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/app/coder/coder.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/app/coder/debugger.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/app/coder/debugger.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/app/coder/debugger.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/app/coder/__init__.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/app/coder/__init__.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/app/coder/__init__.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/app/coder/introspect.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/app/coder/introspect.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/app/coder/introspect.pyo
@@ -112,9 +133,9 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/app/dialogs.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/app/dialogs.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/app/dialogs.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/app/__init__.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/app/__init__.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/app/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/app/ipythonShell.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/app/ipythonShell.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/app/ipythonShell.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/app/psychopyApp.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/app/psychopyApp.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/app/psychopyApp.pyo
@@ -142,144 +163,215 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/data.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/data.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/data.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/builder/__init__.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/builder/__init__.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/builder/__init__.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/builder/psychophysicsStaircase/psychophysicsStaircase.psyexp
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/builder/stroop/stroop.psyexp
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/builder/stroop/trialTypes.csv
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/coder/GUI.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/coder/GUI.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/coder/GUI.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/coder/JND_staircase_analysis.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/coder/JND_staircase_analysis.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/coder/JND_staircase_analysis.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/coder/JND_staircase_exp.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/coder/JND_staircase_exp.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/coder/JND_staircase_exp.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/coder/MovieStim.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/coder/MovieStim.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/coder/MovieStim.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/coder/TrialHandler.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/coder/TrialHandler.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/coder/TrialHandler.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/coder/beach.jpg
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/coder/bits_plus_plus.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/coder/bits_plus_plus.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/coder/bits_plus_plus.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/coder/captureFrames.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/coder/captureFrames.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/coder/captureFrames.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/coder/cedrusRB730.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/coder/cedrusRB730.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/coder/cedrusRB730.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/coder/clockface.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/coder/clockface.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/coder/clockface.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/coder/colors.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/coder/colors.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/coder/colors.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/coder/counterphase.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/coder/counterphase.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/coder/counterphase.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/coder/customTextures.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/coder/customTextures.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/coder/customTextures.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/coder/dot_gabors.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/coder/dot_gabors.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/coder/dot_gabors.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/coder/dots.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/coder/dots.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/coder/dots.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/coder/elementArrays.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/coder/elementArrays.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/coder/elementArrays.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/coder/embeddedOpenGL.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/coder/embeddedOpenGL.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/coder/embeddedOpenGL.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/coder/face.jpg
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/coder/face_jpg.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/coder/face_jpg.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/coder/face_jpg.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/coder/gabor.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/coder/gabor.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/coder/gabor.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/coder/gammaMotionAnalysis.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/coder/gammaMotionAnalysis.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/coder/gammaMotionAnalysis.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/coder/gammaMotionNull.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/coder/gammaMotionNull.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/coder/gammaMotionNull.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/coder/imagesAndPatches.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/coder/imagesAndPatches.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/coder/imagesAndPatches.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/coder/__init__.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/coder/__init__.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/coder/__init__.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/coder/joystick_absXY.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/coder/joystick_absXY.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/coder/joystick_absXY.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/coder/joystick_rateXY.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/coder/joystick_rateXY.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/coder/joystick_rateXY.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/coder/mouse.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/coder/mouse.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/coder/mouse.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/coder/parallelPortOutput.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/coder/parallelPortOutput.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/coder/parallelPortOutput.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/coder/plaidcm.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/coder/plaidcm.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/coder/plaidcm.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/coder/plaid.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/coder/plaid.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/coder/plaid.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/coder/rotatingFlashingWedge.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/coder/rotatingFlashingWedge.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/coder/rotatingFlashingWedge.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/coder/screensAndWindows.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/coder/screensAndWindows.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/coder/screensAndWindows.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/coder/shapes.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/coder/shapes.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/coder/shapes.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/coder/soundStimuli.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/coder/soundStimuli.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/coder/soundStimuli.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/coder/starField.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/coder/starField.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/coder/starField.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/coder/sysInfo.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/coder/sysInfo.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/coder/sysInfo.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/coder/testmovie.mpg
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/coder/textStimuli.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/coder/textStimuli.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/coder/textStimuli_pygame.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/coder/textStimuli_pygame.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/coder/textStimuli_pygame.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/coder/textStimuli.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/coder/timeByFrames.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/coder/timeByFrames.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/coder/timeByFrames.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/coder/variousVisualStims.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/coder/variousVisualStims.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/coder/variousVisualStims.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/coder/visual_noise.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/coder/visual_noise.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/coder/visual_noise.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/__init__.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/__init__.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/builder/BART/README.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/builder/BART/balloons.xlsx
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/builder/BART/bart.psyexp
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/builder/BART/blueBalloon.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/builder/BART/greenBalloon.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/builder/BART/redBalloon.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/builder/BART/trialTypes.xlsx
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/builder/README.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/builder/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/builder/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/builder/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/builder/branchedExp/README.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/builder/branchedExp/branching.psyexp
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/builder/branchedExp/data/ID01_Sep_14_1830.xlsx
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/builder/branchedExp/trialTypes.xlsx
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/builder/navon/NavonTask.psyexp
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/builder/navon/README.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/builder/navon/bigHsmallH.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/builder/navon/bigHsmallS.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/builder/navon/bigSsmallH.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/builder/navon/bigSsmallS.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/builder/navon/mask.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/builder/navon/trialTypes.xlsx
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/builder/psychophysicsStaircase/README.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/builder/psychophysicsStaircase/psychophysicsStaircase.psyexp
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/builder/sternberg/README.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/builder/sternberg/mainTrials.xlsx
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/builder/sternberg/pracTrials.xlsx
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/builder/sternberg/sternberg.psyexp
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/builder/stroop/README.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/builder/stroop/stroop.psyexp
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/builder/stroop/trialTypes.xlsx
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/builder/stroopExtended/README.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/builder/stroopExtended/stroop.psyexp
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/builder/stroopExtended/stroopReverse.psyexp
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/builder/stroopExtended/trialTypes.xlsx
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/builder/stroopExtended/trialTypesReverse.xlsx
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/coder/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/coder/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/coder/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/coder/experiment control/JND_staircase_analysis.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/coder/experiment control/JND_staircase_analysis.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/coder/experiment control/JND_staircase_analysis.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/coder/experiment control/JND_staircase_exp.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/coder/experiment control/JND_staircase_exp.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/coder/experiment control/JND_staircase_exp.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/coder/experiment control/TrialHandler.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/coder/experiment control/TrialHandler.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/coder/experiment control/TrialHandler.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/coder/experiment control/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/coder/experiment control/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/coder/experiment control/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/coder/experiment control/autoDraw_autoLog.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/coder/experiment control/autoDraw_autoLog.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/coder/experiment control/autoDraw_autoLog.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/coder/experiment control/gammaMotionAnalysis.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/coder/experiment control/gammaMotionAnalysis.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/coder/experiment control/gammaMotionAnalysis.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/coder/experiment control/gammaMotionNull.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/coder/experiment control/gammaMotionNull.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/coder/experiment control/gammaMotionNull.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/coder/experiment control/logFiles.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/coder/experiment control/logFiles.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/coder/experiment control/logFiles.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/coder/experiment control/runtimeInfo.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/coder/experiment control/runtimeInfo.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/coder/experiment control/runtimeInfo.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/coder/experiment control/sysInfo.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/coder/experiment control/sysInfo.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/coder/experiment control/sysInfo.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/coder/hardware/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/coder/hardware/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/coder/hardware/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/coder/hardware/bits_plus_plus.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/coder/hardware/bits_plus_plus.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/coder/hardware/bits_plus_plus.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/coder/hardware/cedrusRB730.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/coder/hardware/cedrusRB730.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/coder/hardware/cedrusRB730.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/coder/hardware/egi_netstation.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/coder/hardware/egi_netstation.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/coder/hardware/egi_netstation.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/coder/hardware/ioLab_bbox.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/coder/hardware/ioLab_bbox.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/coder/hardware/ioLab_bbox.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/coder/hardware/joystick_absXY.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/coder/hardware/joystick_absXY.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/coder/hardware/joystick_absXY.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/coder/hardware/joystick_rateXY.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/coder/hardware/joystick_rateXY.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/coder/hardware/joystick_rateXY.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/coder/hardware/parallelPortOutput.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/coder/hardware/parallelPortOutput.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/coder/hardware/parallelPortOutput.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/coder/input/GUI.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/coder/input/GUI.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/coder/input/GUI.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/coder/input/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/coder/input/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/coder/input/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/coder/input/mouse.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/coder/input/mouse.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/coder/input/mouse.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/coder/stimuli/Campaign.ttf
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/coder/stimuli/MoviePause.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/coder/stimuli/MoviePause.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/coder/stimuli/MoviePause.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/coder/stimuli/MovieStim.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/coder/stimuli/MovieStim.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/coder/stimuli/MovieStim.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/coder/stimuli/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/coder/stimuli/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/coder/stimuli/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/coder/stimuli/beach.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/coder/stimuli/bufferImageStim.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/coder/stimuli/bufferImageStim.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/coder/stimuli/bufferImageStim.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/coder/stimuli/clockface.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/coder/stimuli/clockface.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/coder/stimuli/clockface.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/coder/stimuli/colors.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/coder/stimuli/colors.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/coder/stimuli/colors.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/coder/stimuli/counterphase.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/coder/stimuli/counterphase.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/coder/stimuli/counterphase.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/coder/stimuli/customTextures.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/coder/stimuli/customTextures.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/coder/stimuli/customTextures.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/coder/stimuli/dot_gabors.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/coder/stimuli/dot_gabors.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/coder/stimuli/dot_gabors.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/coder/stimuli/dots.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/coder/stimuli/dots.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/coder/stimuli/dots.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/coder/stimuli/elementArrays.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/coder/stimuli/elementArrays.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/coder/stimuli/elementArrays.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/coder/stimuli/embeddedOpenGL.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/coder/stimuli/embeddedOpenGL.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/coder/stimuli/embeddedOpenGL.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/coder/stimuli/face.jpg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/coder/stimuli/face_jpg.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/coder/stimuli/face_jpg.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/coder/stimuli/face_jpg.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/coder/stimuli/gabor.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/coder/stimuli/gabor.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/coder/stimuli/gabor.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/coder/stimuli/imagesAndPatches.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/coder/stimuli/imagesAndPatches.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/coder/stimuli/imagesAndPatches.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/coder/stimuli/jwpIntro.mov
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/coder/stimuli/plaid.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/coder/stimuli/plaid.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/coder/stimuli/plaid.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/coder/stimuli/plaidcm.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/coder/stimuli/plaidcm.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/coder/stimuli/plaidcm.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/coder/stimuli/ratingScale.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/coder/stimuli/ratingScale.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/coder/stimuli/ratingScale.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/coder/stimuli/rotatingFlashingWedge.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/coder/stimuli/rotatingFlashingWedge.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/coder/stimuli/rotatingFlashingWedge.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/coder/stimuli/screensAndWindows.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/coder/stimuli/screensAndWindows.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/coder/stimuli/screensAndWindows.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/coder/stimuli/shapes.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/coder/stimuli/shapes.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/coder/stimuli/shapes.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/coder/stimuli/soundStimuli.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/coder/stimuli/soundStimuli.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/coder/stimuli/soundStimuli.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/coder/stimuli/starField.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/coder/stimuli/starField.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/coder/stimuli/starField.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/coder/stimuli/textStimuli.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/coder/stimuli/textStimuli.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/coder/stimuli/textStimuli.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/coder/stimuli/textStimuli_pygame.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/coder/stimuli/textStimuli_pygame.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/coder/stimuli/textStimuli_pygame.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/coder/stimuli/variousVisualStims.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/coder/stimuli/variousVisualStims.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/coder/stimuli/variousVisualStims.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/coder/stimuli/visual_noise.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/coder/stimuli/visual_noise.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/coder/stimuli/visual_noise.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/coder/timing/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/coder/timing/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/coder/timing/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/coder/timing/pylabPlotFrameTimes.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/coder/timing/pylabPlotFrameTimes.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/coder/timing/pylabPlotFrameTimes.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/coder/timing/timeByFrames.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/coder/timing/timeByFrames.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/coder/timing/timeByFrames.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/event.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/event.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/event.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/ext/darwin.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/ext/darwin.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/ext/darwin.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/ext/__init__.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/ext/__init__.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/ext/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/ext/darwin.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/ext/darwin.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/ext/darwin.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/ext/linux.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/ext/linux.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/ext/linux.pyo
@@ -298,30 +390,36 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/gui.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/gui.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/gui.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/hardware/PR.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/hardware/PR.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/hardware/PR.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/hardware/cedrus.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/hardware/cedrus.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/hardware/cedrus.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/hardware/crs/bits.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/hardware/crs/bits.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/hardware/crs/bits.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/hardware/crs/__init__.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/hardware/crs/__init__.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/hardware/crs/__init__.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/hardware/forp.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/hardware/forp.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/hardware/forp.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/hardware/__init__.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/hardware/__init__.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/hardware/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/hardware/cedrus.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/hardware/cedrus.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/hardware/cedrus.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/hardware/crs/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/hardware/crs/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/hardware/crs/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/hardware/crs/bits.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/hardware/crs/bits.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/hardware/crs/bits.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/hardware/egi.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/hardware/egi.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/hardware/egi.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/hardware/forp.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/hardware/forp.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/hardware/forp.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/hardware/ioLabs.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/hardware/ioLabs.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/hardware/ioLabs.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/hardware/minolta.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/hardware/minolta.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/hardware/minolta.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/__init__.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/__init__.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/hardware/pr.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/hardware/pr.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/hardware/pr.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/info.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/info.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/info.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/log.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/log.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/log.pyo
@@ -334,30 +432,26 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/monitors/MonitorCenter.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/monitors/MonitorCenter.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/monitors/MonitorCenter.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/monitors/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/monitors/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/monitors/__init__.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/monitors/calibData.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/monitors/calibData.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/monitors/calibData.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/monitors/calibTools.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/monitors/calibTools.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/monitors/calibTools.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/monitors/__init__.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/monitors/__init__.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/monitors/__init__.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/monitors/psychopy.ico
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/parallel.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/_parallel.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/parallel.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/_parallel.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/parallel.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/_parallel.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/preferences/__init__.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/preferences/__init__.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/preferences/__init__.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/preferences/Darwin.spec
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/preferences/Darwin2.spec
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/preferences/FreeBSD.spec
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/preferences/Linux.spec
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/preferences/Windows.spec
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/preferences/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/preferences/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/preferences/__init__.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/preferences/configobj.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/preferences/configobj.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/preferences/configobj.pyo
@@ -370,24 +464,29 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/preferences/validate.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/preferences/validate.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/preferences/validate.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/prefsSite.cfg
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/prefs/mySiteKeys.cfg
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/prefs/mySiteKeys.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/prefs/mySiteKeys.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/prefs/mySiteKeys.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/prefs/mySitePrefs.cfg
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/_shadersPygame.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/_shadersPygame.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/_shadersPygame.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/_shadersPyglet.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/_shadersPyglet.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/_shadersPyglet.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/sound.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/sound.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/sound.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/tests/__init__.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/tests/__init__.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/tests/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/tests/data/elarray1_height.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/tests/data/elarray1_norm.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/tests/data/gabor1_height.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/tests/data/gabor1_norm.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/tests/data/gabor2_height.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/tests/data/gabor2_norm.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/tests/data/shape1_height.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/tests/data/shape1_norm.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/tests/data/testMovie.mp4
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/tests/data/text1_height.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/tests/data/text1_norm.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/tests/data/text2_height.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/tests/data/text2_norm.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/tests/data/wedge1_height.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/tests/data/wedge1_norm.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/tests/data/wedge2_height.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/tests/data/wedge2_norm.png
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/tests/run.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/tests/run.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/tests/run.pyo
@@ -400,27 +499,26 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/tests/testApp/testbuilder/testExperiment.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/tests/testApp/testbuilder/testExperiment.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/tests/testApp/testbuilder/testExperiment.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/tests/testMovie.mp4
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/tests/testVisual/__init__.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/tests/testVisual/__init__.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/tests/testVisual/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/tests/testVisual/qtTest.mov
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/tests/testVisual/testGamma.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/tests/testVisual/testGamma.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/tests/testVisual/testGamma.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/tests/testVisual/testMany.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/tests/testVisual/testMany.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/tests/testVisual/testMany.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/tests/testVisual/testMovie.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/tests/testVisual/testMovie.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/tests/testVisual/testMovie.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/tests/testVisual/testQuicktimeMovie.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/tests/testVisual/testQuicktimeMovie.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/tests/testVisual/testQuicktimeMovie.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/tests/todo.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/tests/utils.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/tests/utils.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/tests/utils.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/visual.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/visual.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/visual.pyo
-bin/psychopy_post_inst.py
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/scripts
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/app/Resources
@@ -428,20 +526,28 @@ bin/psychopy_post_inst.py
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/app/builder
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/app/coder
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/app
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/builder/grating
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/builder/BART
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/builder/branchedExp/data
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/builder/branchedExp
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/builder/navon
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/builder/psychophysicsStaircase
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/builder/sternberg
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/builder/stroop
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/builder/stroopExtended
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/builder
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/coder/experiment control
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/coder/hardware
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/coder/input
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/coder/stimuli
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/coder/timing
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos/coder
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/demos
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/ext
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/hardware/crs
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/hardware
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/monitors
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/prefs
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/preferences
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/serial
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/tests/data
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/tests/testApp/testbuilder
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/tests/testApp
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/psychopy/tests/testVisual
