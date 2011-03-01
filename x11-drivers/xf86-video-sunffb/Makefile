@@ -18,5 +18,6 @@ USE_GL=		gl
 XORG_CAT=	driver
 USE_XORG=	xf86driproto xextproto glproto
 MAN4=		sunffb.4x
+ONLY_FOR_ARCHS=	sparc64
 
 .include <bsd.port.mk>
