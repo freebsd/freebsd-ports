@@ -17,6 +17,7 @@ COMMENT=	Mozilla Thunderbird is standalone mail and news that stands above
 
 BUILD_DEPENDS=	nspr>=4.8:${PORTSDIR}/devel/nspr
 
+DEPRECATED=	Upstream support dropped. Please consider using mail/thunderbird instead
 USE_AUTOTOOLS=	autoconf213
 LATEST_LINK=	thunderbird3
 USE_GECKO=	gecko
