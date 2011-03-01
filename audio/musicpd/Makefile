@@ -7,7 +7,7 @@
 
 PORTNAME=	musicpd
 PORTVERSION=	0.16.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio ipv6
 MASTER_SITES=	SF/${PORTNAME}/mpd/${PORTVERSION}
 DISTNAME=	mpd-${PORTVERSION}
@@ -226,9 +226,13 @@ CONFIGURE_ARGS+=--enable-lsr
 .endif
 
 post-patch:
+# Fix issues with garbled sound for 24-bit on FreeBSD. This is fixed in git,
+# so should be removed with next update.
+	@${REINPLACE_CMD} -e '383,395d;421,430d' \
+		${WRKSRC}/src/output/oss_plugin.c
 	@${REINPLACE_CMD} -e "s/%%MPDDIR%%/${PREFIX:C/\//\\\//g}\/${MPDDIR:C/\//\\\//g}/g" -e "s/%%MPDUSER%%/${MPDUSER}/g" \
 		${WRKSRC}/doc/mpdconf.example
-	${REINPLACE_CMD} -e 's/tremor == xno/tremor = xno/' \
+	@${REINPLACE_CMD} -e 's/tremor == xno/tremor = xno/' \
 		${WRKSRC}/configure
 .if (${OSVERSION} < 800000)
 	${REINPLACE_CMD} -e 's/nan[f]\{0,1\}(\"\")/NAN/g' \
