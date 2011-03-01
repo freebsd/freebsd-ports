@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	ikiwiki
-PORTVERSION=	3.20110124
+PORTVERSION=	3.20110225
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_DEBIAN_POOL} \
 		http://kitenet.net/~joey/debian/unstable/
@@ -27,7 +27,6 @@ BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/HTML/Parser.pm:${PORTSDIR}/www/p5-HTML-
 		${SITE_PERL}/XML/Simple.pm:${PORTSDIR}/textproc/p5-XML-Simple
 RUN_DEPENDS=	${BUILD_DEPENDS} \
 		${SITE_PERL}/File/MimeInfo.pm:${PORTSDIR}/devel/p5-File-MimeInfo \
-		po4a>=0.39:${PORTSDIR}/textproc/po4a \
 		${SITE_PERL}/RPC/XML.pm:${PORTSDIR}/net/p5-RPC-XML \
 		${SITE_PERL}/XML/Feed.pm:${PORTSDIR}/textproc/p5-XML-Feed \
 		${SITE_PERL}/Authen/Passphrase.pm:${PORTSDIR}/security/p5-Authen-Passphrase
@@ -39,7 +38,8 @@ PERL_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_GETTEXT=	yes
 
-OPTIONS=	SEARCH "Install search backend" On \
+OPTIONS=	PO4A "Install translated underlays" On \
+		SEARCH "Install search backend" On \
 		W3M "Install w3m CGI wrapper" Off
 
 MAN1=		ikiwiki.1 ikiwiki-calendar.1 ikiwiki-makerepo.1 ikiwiki-transition.1 ikiwiki-update-wikilist.1
@@ -49,6 +49,14 @@ PORTEXAMPLES=	*
 
 .include <bsd.port.pre.mk>
 
+.if defined(WITH_PO4A)
+PLIST_SUB+=	PO4A=""
+RUN_DEPENDS+=	po4a>=0.39:${PORTSDIR}/textproc/po4a
+BUILD_DEPENDS+=	po4a>=0.39:${PORTSDIR}/textproc/po4a
+.else
+PLIST_SUB+=	PO4A="@comment "
+.endif
+
 .if defined(WITH_SEARCH)
 RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Digest/SHA1.pm:${PORTSDIR}/security/p5-Digest-SHA1 \
 		${SITE_PERL}/${PERL_ARCH}/Search/Xapian.pm:${PORTSDIR}/databases/p5-Search-Xapian \
@@ -57,12 +65,15 @@ RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Digest/SHA1.pm:${PORTSDIR}/security/p5-D
 
 .if defined(WITH_W3M)
 MAKE_ENV+=	W3M_CGI_BIN=${PREFIX}/libexec/w3m/cgi-bin
-PLIST_SUB=	W3M=""
+PLIST_SUB+=	W3M=""
 .else
-PLIST_SUB=	W3M="@comment "
+PLIST_SUB+=	W3M="@comment "
 .endif
 
 post-patch:
+	@${GREP} -rl '^#!/usr/bin/perl' ${WRKSRC} | \
+		${XARGS} ${REINPLACE_CMD} -i '' \
+		-e "s|#!/usr/bin/perl|#!${PERL}|"
 	@${REINPLACE_CMD} -i '' \
 		-e "s|/usr/bin/markdown|${LOCALBASE}/bin/markdown|" \
 		${WRKSRC}/IkiWiki/Plugin/mdwn.pm
@@ -91,6 +102,11 @@ post-patch:
 		-e "s|/etc/highlight|${LOCALBASE}/etc/highlight|" \
 		-e "s|/usr/share/highlight|${LOCALBASE}/share/highlight|" \
 		${WRKSRC}/IkiWiki/Plugin/highlight.pm
+.ifndef(WITH_PO4A)
+	@${REINPLACE_CMD} -i '' \
+		-e 's|^\(TRANSLATED_UNDERLAYS=\).*|\1|' \
+		${WRKSRC}/po/Makefile
+.endif
 .ifndef(WITH_W3M)
 	@${REINPLACE_CMD} -i '' \
 		-e '/w3m/d' \
