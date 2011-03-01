@@ -7,20 +7,24 @@
 
 PORTNAME=	tor
 DISTVERSION=	0.2.2.22-alpha
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security net ipv6
 MASTER_SITES=	http://www.torproject.org/dist/ \
-		ftp://tor.tomyn.com/pub/mirrors/tor/ \
 		ftp://ftp.bit.nl/mirror/tor/ \
+		http://cyberside.net.ee/tor/ \
+		http://mirrors.chaos-darmstadt.de/tor-mirror/dist/ \
 		http://tor-www.5coluna.com/dist/ \
 		http://tor.amorphis.eu/dist/ \
 		http://tor.askapache.com/dist/ \
 		http://tor.beme-it.de/dist/ \
 		http://tor.boinc.ch/dist/ \
 		http://tor.ccc.de/dist/ \
+		http://tor.homosu.net/dist/ \
 		http://tor.idnr.ws/dist/ \
-		http://tor.kamagurka.org/dist/ \
+		http://tor.searchprivate.com/dist/ \
+		http://tor.taiga-san.net/dist/ \
 		http://torproj.xpdm.us/dist/ \
+		http://torproject.nwlinux.us/dist/ \
 		http://www.oignon.net/dist/ \
 		http://www.torproject.org.nyud.net/dist/ \
 		http://www.torproject.us/dist/
@@ -29,10 +33,14 @@ PKGNAMESUFFIX=	-devel
 MAINTAINER=	bf@FreeBSD.org
 COMMENT=	An anonymizing overlay network for TCP
 
-LIB_DEPENDS=	event-1.4:${PORTSDIR}/devel/libevent
+LIB_DEPENDS=	event-2.0:${PORTSDIR}/devel/libevent2
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--with-openssl-dir="${OPENSSLBASE}" --disable-asciidoc
+CPPFLAGS+=	-I${LOCALBASE}/include/event2
+LDFLAGS+=	-L${LOCALBASE}/lib/event2
+CONFIGURE_ENV+=		CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
+
 MAKE_JOBS_UNSAFE=	yes
 
 OPTIONS=	BUFFREELISTS "freelists for buffer RAM" on \
@@ -45,6 +53,7 @@ USE_RC_SUBR=	tor
 SUB_FILES=	pkg-message
 
 CONFLICTS=	tor-[0-9]*
+CONFLICTS_BUILD=	libevent-[01]*
 
 MANCOMPRESSED=	no
 MAN1=		tor.1 tor-resolve.1 torify.1 tor-gencert.1
