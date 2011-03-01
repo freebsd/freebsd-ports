@@ -25,13 +25,21 @@ rcvar=${name}_enable
 command=%%PREFIX%%/sbin/${name}
 pidfile=/var/run/${name}.pid
 
+start_postcmd="${name}_poststart"
+
+crtmpserver_poststart()
+{
+	pgrep crtmpserver > /var/run/crtmpserver.pid
+}
+
 load_rc_config $name
 
 : ${crtmpserver_enable="NO"}
 : ${crtmpserver_config="%%PREFIX%%/etc/crtmpserver.lua"}
+: ${crtmpserver_username="%%USERS%%"}
 
-crtmpserver_username="%%USERS%%"
-command_args="--daemon --uid=`id -u ${crtmpserver_username}` $crtmpserver_config"
+required_files="$crtmpserver_config"
+
+command_args="--daemon --uid=`id -u ${crtmpserver_username}` $required_files"
 
 run_rc_command "$1"
-ps -axo pid,comm|grep crtmpserver|cut -d " " -f1 >/var/run/crtmpserver.pid
