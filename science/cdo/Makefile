@@ -7,9 +7,9 @@
 #
 
 PORTNAME=		cdo
-PORTVERSION=		1.4.6
+PORTVERSION=		1.4.7
 CATEGORIES=		science
-MASTER_SITES=		https://code.zmaw.de/attachments/download/466/ \
+MASTER_SITES=		https://code.zmaw.de/attachments/download/704/ \
 			LOCAL/sunpoet
 
 MAINTAINER=		sunpoet@FreeBSD.org
@@ -67,7 +67,6 @@ PLIST_SUB+=		JPEG2000=""
 
 .if !defined(WITHOUT_NETCDF)
 CONFIGURE_ARGS+=	--with-netcdf=${LOCALBASE}
-EXTRA_PATCHES+=		${FILESDIR}/extra-patch-src-Makefile.in
 .if (${NETCDF_VER} == 4)
 LIB_DEPENDS+=		netcdf.6:${PORTSDIR}/science/netcdf4
 .else
@@ -84,6 +83,14 @@ LIB_DEPENDS+=		proj.6:${PORTSDIR}/graphics/proj
 .if !defined(WITHOUT_SZIP)
 CONFIGURE_ARGS+=	--with-szlib=${LOCALBASE}
 LIB_DEPENDS+=		sz.2:${PORTSDIR}/science/szip
+.endif
+
+post-patch:
+.if !defined(WITHOUT_NETCDF)
+	${REINPLACE_CMD} \
+		-e '/bin_PROGRAMS = / s|$$| cdotest$$(EXEEXT)|' \
+		-e '/noinst_PROGRAMS = / s| cdotest$$(EXEEXT)||' \
+			${WRKSRC}/src/Makefile.in
 .endif
 
 post-build:
