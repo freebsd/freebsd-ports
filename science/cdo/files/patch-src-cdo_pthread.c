@@ -1,5 +1,5 @@
 --- src/cdo_pthread.c.orig	2007-08-29 17:15:32.000000000 +0800
-+++ src/cdo_pthread.c	2007-10-25 16:30:35.000000000 +0800
++++ src/cdo_pthread.c	2011-02-26 03:30:00.000000000 +0800
 @@ -32,8 +32,10 @@
  {
  #if  defined  (HAVE_LIBPTHREAD)
