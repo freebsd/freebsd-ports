@@ -6,21 +6,24 @@
 #
 
 PORTNAME=	tor
-DISTVERSION=	0.2.1.29
-PORTREVISION=	1
+DISTVERSION=	0.2.1.30
 CATEGORIES=	security net ipv6
 MASTER_SITES=	http://www.torproject.org/dist/ \
-		ftp://tor.tomyn.com/pub/mirrors/tor/ \
 		ftp://ftp.bit.nl/mirror/tor/ \
+		http://cyberside.net.ee/tor/ \
+		http://mirrors.chaos-darmstadt.de/tor-mirror/dist/ \
 		http://tor-www.5coluna.com/dist/ \
 		http://tor.amorphis.eu/dist/ \
 		http://tor.askapache.com/dist/ \
 		http://tor.beme-it.de/dist/ \
 		http://tor.boinc.ch/dist/ \
 		http://tor.ccc.de/dist/ \
+		http://tor.homosu.net/dist/ \
 		http://tor.idnr.ws/dist/ \
-		http://tor.kamagurka.org/dist/ \
+		http://tor.searchprivate.com/dist/ \
+		http://tor.taiga-san.net/dist/ \
 		http://torproj.xpdm.us/dist/ \
+		http://torproject.nwlinux.us/dist/ \
 		http://www.oignon.net/dist/ \
 		http://www.torproject.org.nyud.net/dist/ \
 		http://www.torproject.us/dist/
@@ -101,12 +104,8 @@ post-patch:
 		${WRKSRC}/contrib/tor-tsocks.conf.sample
 	@${REINPLACE_CMD} -e "s|tor-tsocks.conf|tor-tsocks.conf.sample|g" \
 		${WRKSRC}/contrib/Makefile.in
-	@${FIND} -X ${WRKSRC} -type f | ${XARGS} \
-		-n 10 ${REINPLACE_CMD} -E \
-		-e 's|-g -O2||g' \
-		-e 's|-O2||g' \
-		-e 's|-g -O||g' \
-		-e 's|netinet/in6|netinet6/in6|g'
+	@${REINPLACE_CMD} -e '\|CFLAGS=|{s|-g||;s|-O[0-9]\{0,1\}||;}' \
+		-e 's|netinet/in6||g' ${WRKSRC}/configure
 
 post-configure:
 	@${FIND} -X ${WRKSRC} -type f -name Makefile | ${XARGS} ${REINPLACE_CMD} -e \
