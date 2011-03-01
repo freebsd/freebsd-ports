@@ -16,7 +16,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	gogo@cs.uni-sb.de
 COMMENT=	A configuration management system written in Python
 
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/${PYLXML_EGG}:${PORTSDIR}/devel/py-lxml
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}lxml>0:${PORTSDIR}/devel/py-lxml
 RUN_DEPENDS+=	cheetah:${PORTSDIR}/devel/py-cheetah
 RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/gamin.py:${PORTSDIR}/devel/py-gamin
 
@@ -48,8 +48,4 @@ post-install:
 .endfor
 .endif
 
-.include <bsd.port.pre.mk>
-
-PYLXML_EGG!=	${MAKE} -f ${PORTSDIR}/devel/py-lxml/Makefile -V PYLXML_EGG
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
