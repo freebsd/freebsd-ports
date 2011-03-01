@@ -7,6 +7,7 @@
 
 PORTNAME=	crtmpserver
 PORTVERSION=	0.355
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://freebsd.rtmpd.com/
 
