@@ -32,6 +32,10 @@ MAN1=		dsss.1 rebuild.1
 MANUAL_PACKAGE_BUILD=	hangs on pointyhat
 .endif
 
+.if ${OSVERSION} >= 900027
+BROKEN=		does not build
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|share/man|man|' \
 		${WRKSRC}/dsss.conf
