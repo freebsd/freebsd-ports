@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	firefox
-DISTVERSION=	3.6.13
+DISTVERSION=	3.6.14
 PORTEPOCH=	1
 CATEGORIES=	www ipv6
 MASTER_SITES=	${MASTER_SITE_MOZILLA}
@@ -61,6 +61,15 @@ LIB_DEPENDS+=	pulse.0:${PORTSDIR}/audio/pulseaudio
 EXTRA_PATCHES=	${FILESDIR}/releng6_pulseaudio
 .else
 EXTRA_PATCHES=	${FILESDIR}/libsydney_oss
+.endif
+
+.if ${ARCH} == powerpc64
+.if ${OSVERSION} < 900033
+BROKEN=		Needs binutils 2.17.50 to build
+.else
+CONFIGURE_ENV+=	UNAME_m="powerpc64"
+CFLAGS+=	-mminimal-toc
+.endif
 .endif
 
 WRKSRC:=	${WRKSRC}-1.9.2
