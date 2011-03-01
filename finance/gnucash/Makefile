@@ -111,7 +111,7 @@ USE_GNOME+=	gtkhtml3
 CONFIGURE_ARGS+=--enable-python-bindings
 USE_PYTHON=	yes
 PLIST_SUB+=	PYTHON=""
- .else
+.else
 PLIST_SUB+=	PYTHON="@comment "
 .endif
 
