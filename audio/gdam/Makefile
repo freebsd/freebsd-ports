@@ -30,4 +30,10 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|-lglib -lgtk|-lglib-12 -lgtk-12|' ${WRKSRC}/skin/foreign/xmmsvis/Makefile.in
 	@${REINPLACE_CMD} -e 's|echo aout|echo elf|' ${WRKSRC}/ltconfig
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 900027
+BROKEN=		does not build
+.endif
+
+.include <bsd.port.post.mk>

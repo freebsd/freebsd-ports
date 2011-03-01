@@ -38,4 +38,10 @@ PORTSCOUT=	skipv:20110101
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/schismtracker ${PREFIX}/bin/${PORTNAME}
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 900027
+BROKEN=		does not build
+.endif
+
+.include <bsd.port.post.mk>
