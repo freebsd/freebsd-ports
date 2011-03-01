@@ -40,11 +40,15 @@
 %%WWWDIR%%/adminer/lang/ja.inc.php
 %%WWWDIR%%/adminer/lang/nl.inc.php
 %%WWWDIR%%/adminer/lang/pl.inc.php
+%%WWWDIR%%/adminer/lang/pt.inc.php
 %%WWWDIR%%/adminer/lang/ru.inc.php
 %%WWWDIR%%/adminer/lang/sk.inc.php
+%%WWWDIR%%/adminer/lang/sl.inc.php
 %%WWWDIR%%/adminer/lang/ta.inc.php
+%%WWWDIR%%/adminer/lang/tr.inc.php
 %%WWWDIR%%/adminer/lang/zh-tw.inc.php
 %%WWWDIR%%/adminer/lang/zh.inc.php
+%%WWWDIR%%/adminer/plugin.php
 %%WWWDIR%%/adminer/privileges.inc.php
 %%WWWDIR%%/adminer/procedure.inc.php
 %%WWWDIR%%/adminer/processlist.inc.php
@@ -61,6 +65,7 @@
 %%WWWDIR%%/adminer/static/editing.js
 %%WWWDIR%%/adminer/static/favicon.ico
 %%WWWDIR%%/adminer/static/functions.js
+%%WWWDIR%%/adminer/static/loader.gif
 %%WWWDIR%%/adminer/static/plus.gif
 %%WWWDIR%%/adminer/static/up.gif
 %%WWWDIR%%/adminer/table.inc.php
