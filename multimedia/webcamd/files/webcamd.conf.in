@@ -7,12 +7,11 @@ notify 100 {
 	action "env LD_PRELOAD=%%LIBHAL%%%%LIBCUSE%% %%PREFIX%%/etc/rc.d/webcamd start $cdev";
 };
 
-# Logitech USB webcams.
+# Vendor specific USB webcams and DVB devices.
 notify 100 {
 	match "system"		"USB";
 	match "subsystem"	"INTERFACE";
 	match "type"		"ATTACH";
-	match "vendor"		"0x046d";
 	match "intclass"	"0xff";
 	action "env LD_PRELOAD=%%LIBHAL%%%%LIBCUSE%% %%PREFIX%%/etc/rc.d/webcamd start $cdev";
 };
