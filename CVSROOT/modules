@@ -1250,6 +1250,7 @@ bsd_lpr                         ports/print/bsd_lpr
 bsdadminscripts                 ports/sysutils/bsdadminscripts
 bsdar                           ports/archivers/bsdar
 bsdbktr_tvtune                  ports/multimedia/bsdbktr_tvtune
+bsdbuild                        ports/devel/bsdbuild
 bsdcflow                        ports/devel/bsdcflow
 bsdconv                         ports/converters/bsdconv
 bsdcrashtar                     ports/sysutils/bsdcrashtar
@@ -1990,6 +1991,7 @@ crossvc                         ports/devel/crossvc
 crow                            ports/devel/crow
 crp                             ports/www/crp
 crrcsim                         ports/games/crrcsim
+crtmpserver                     ports/net/crtmpserver
 crux                            ports/biology/crux
 crw                             ports/graphics/crw
 cryptcat                        ports/net/cryptcat
@@ -2317,6 +2319,7 @@ de-wordpress                    ports/german/wordpress
 deadbeef                        ports/audio/deadbeef
 deal                            ports/games/deal
 deb2targz                       ports/archivers/deb2targz
+debootstrap                     ports/sysutils/debootstrap
 decibel                         ports/net-im/decibel
 decibel-audio-player            ports/audio/decibel-audio-player
 decomment                       ports/sysutils/decomment
@@ -3743,6 +3746,8 @@ fortytwo-encore                 ports/devel/fortytwo-encore
 fossil                          ports/devel/fossil
 fossology                       ports/devel/fossology
 foswiki                         ports/www/foswiki
+foswiki-ModPerlEngineContrib    ports/www/foswiki-ModPerlEngineContrib
+foswiki-modperlenginecontrib    ports/www/foswiki-ModPerlEngineContrib
 fotaq                           ports/games/fotaq
 fotofix                         ports/graphics/fotofix
 fowsr                           ports/astro/fowsr
@@ -4663,7 +4668,6 @@ gnatpython                      ports/devel/gnatpython
 gnats                           ports/databases/gnats
 gnats4                          ports/databases/gnats4
 gnatsweb4                       ports/databases/gnatsweb4
-gnet                            ports/net/gnet
 gnet2                           ports/net/gnet2
 gnetcat                         ports/net/gnetcat
 gnewtellium                     ports/net-p2p/gnewtellium
@@ -5919,6 +5923,7 @@ idled                           ports/sysutils/idled
 idnits                          ports/textproc/idnits
 idnkit                          ports/dns/idnkit
 iec16022                        ports/graphics/iec16022
+iet                             ports/net/iet
 iextract                        ports/sysutils/iextract
 ifc                             ports/lang/ifc
 ifd-devkit                      ports/security/ifd-devkit
@@ -6912,7 +6917,6 @@ jump                            ports/java/jump
 jumpgate                        ports/net/jumpgate
 jumpgis                         ports/graphics/jumpgis
 jumpgis-postgis                 ports/graphics/jumpgis-postgis
-junglemonkey                    ports/ftp/junglemonkey
 junicode                        ports/x11-fonts/junicode
 junipoll                        ports/net-mgmt/junipoll
 junit                           ports/java/junit
@@ -8069,6 +8073,7 @@ libidn                          ports/dns/libidn
 libieee1284                     ports/sysutils/libieee1284
 libijs                          ports/print/libijs
 libimg                          ports/graphics/libimg
+libimobiledevice                ports/comms/libimobiledevice
 libint                          ports/science/libint
 libiodbc                        ports/databases/libiodbc
 libiptcdata                     ports/graphics/libiptcdata
@@ -8235,6 +8240,7 @@ libpdtp                         ports/net-p2p/libpdtp
 libpeak                         ports/devel/libpeak
 libphish                        ports/devel/libphish
 libphk                          ports/devel/libphk
+libplist                        ports/devel/libplist
 libppd                          ports/print/libppd
 libpperl                        ports/devel/libpperl
 libprelude                      ports/security/libprelude
@@ -8391,7 +8397,6 @@ libutempter                     ports/sysutils/libutempter
 libutf                          ports/misc/libutf
 libutf-8                        ports/converters/libutf-8
 libutils                        ports/lang/libutils
-libv3d                          ports/graphics/libv3d
 libv4l                          ports/multimedia/libv4l
 libva                           ports/multimedia/libva
 libvanessa_adt                  ports/devel/libvanessa_adt
@@ -9529,6 +9534,7 @@ mod_auth_pgsql                  ports/www/mod_auth_pgsql
 mod_auth_pgsql2                 ports/www/mod_auth_pgsql2
 mod_auth_pubtkt                 ports/www/mod_auth_pubtkt
 mod_auth_remote                 ports/www/mod_auth_remote
+mod_auth_tkt                    ports/www/mod_auth_tkt
 mod_auth_useragent              ports/www/mod_auth_useragent
 mod_auth_xradius                ports/www/mod_auth_xradius
 mod_authenticache               ports/www/mod_authenticache
@@ -11322,7 +11328,10 @@ p5-CPAN-DistnameInfo            ports/devel/p5-CPAN-DistnameInfo
 p5-CPAN-Inject                  ports/devel/p5-CPAN-Inject
 p5-CPAN-Meta                    ports/devel/p5-CPAN-Meta
 p5-CPAN-Mini                    ports/devel/p5-CPAN-Mini
+p5-CPAN-Reporter                ports/devel/p5-CPAN-Reporter
+p5-CPAN-Reporter-Smoker         ports/devel/p5-CPAN-Reporter-Smoker
 p5-CPAN-SQLite                  ports/devel/p5-CPAN-SQLite
+p5-CPAN-Testers-Report          ports/devel/p5-CPAN-Testers-Report
 p5-CPAN-YACSmoke                ports/devel/p5-CPAN-YACSmoke
 p5-CPANPLUS                     ports/devel/p5-CPANPLUS
 p5-CPANPLUS-Dist-Build          ports/devel/p5-CPANPLUS-Dist-Build
@@ -11681,6 +11690,7 @@ p5-Config-MVP                   ports/devel/p5-Config-MVP
 p5-Config-Model                 ports/devel/p5-Config-Model
 p5-Config-Objective             ports/devel/p5-Config-Objective
 p5-Config-Options               ports/devel/p5-Config-Options
+p5-Config-Perl-V                ports/devel/p5-Config-Perl-V
 p5-Config-Properties            ports/devel/p5-Config-Properties
 p5-Config-Record                ports/devel/p5-Config-Record
 p5-Config-Setting               ports/devel/p5-Config-Setting
@@ -11702,6 +11712,7 @@ p5-Convert-Bencode              ports/converters/p5-Convert-Bencode
 p5-Convert-Bencode_XS           ports/converters/p5-Convert-Bencode_XS
 p5-Convert-BinHex               ports/converters/p5-Convert-BinHex
 p5-Convert-Binary-C             ports/converters/p5-Convert-Binary-C
+p5-Convert-Color                ports/graphics/p5-Convert-Color
 p5-Convert-IBM390               ports/converters/p5-Convert-IBM390
 p5-Convert-Morse                ports/converters/p5-Convert-Morse
 p5-Convert-PEM                  ports/converters/p5-Convert-PEM
@@ -11958,6 +11969,7 @@ p5-Data-Model                   ports/devel/p5-Data-Model
 p5-Data-ObjectDriver            ports/devel/p5-Data-ObjectDriver
 p5-Data-OptList                 ports/devel/p5-Data-OptList
 p5-Data-Page                    ports/databases/p5-Data-Page
+p5-Data-Page-NoTotalEntries     ports/devel/p5-Data-Page-NoTotalEntries
 p5-Data-Pageset                 ports/databases/p5-Data-Pageset
 p5-Data-ParseBinary             ports/devel/p5-Data-ParseBinary
 p5-Data-Password                ports/security/p5-Data-Password
@@ -12082,6 +12094,7 @@ p5-Declare-Constraints-Simple   ports/devel/p5-Declare-Constraints-Simple
 p5-DelimMatch                   ports/textproc/p5-DelimMatch
 p5-Devel-Arena                  ports/devel/p5-Devel-Arena
 p5-Devel-ArgNames               ports/devel/p5-Devel-ArgNames
+p5-Devel-Autoflush              ports/devel/p5-Devel-Autoflush
 p5-Devel-Backtrace              ports/devel/p5-Devel-Backtrace
 p5-Devel-BeginLift              ports/devel/p5-Devel-BeginLift
 p5-Devel-Caller                 ports/devel/p5-Devel-Caller
@@ -12741,6 +12754,7 @@ p5-Heap-Simple                  ports/devel/p5-Heap-Simple
 p5-Heap-Simple-Perl             ports/devel/p5-Heap-Simple-Perl
 p5-Heap-Simple-XS               ports/devel/p5-Heap-Simple-XS
 p5-Hook-LexWrap                 ports/devel/p5-Hook-LexWrap
+p5-I18N-AcceptLanguage          ports/www/p5-I18N-AcceptLanguage
 p5-I18N-Charset                 ports/misc/p5-I18N-Charset
 p5-I18N-LangTags                ports/misc/p5-I18N-LangTags
 p5-IDNA-Punycode                ports/textproc/p5-IDNA-Punycode
@@ -13186,6 +13200,8 @@ p5-Memcached-libmemcached       ports/databases/p5-Memcached-libmemcached
 p5-Memoize                      ports/devel/p5-Memoize
 p5-Memoize-ExpireLRU            ports/devel/p5-Memoize-ExpireLRU
 p5-Meta-Builder                 ports/devel/p5-Meta-Builder
+p5-Metabase-Client-Simple       ports/devel/p5-Metabase-Client-Simple
+p5-Metabase-Fact                ports/devel/p5-Metabase-Fact
 p5-Metadata                     ports/databases/p5-Metadata
 p5-Method-Alias                 ports/devel/p5-Method-Alias
 p5-Method-Signatures-Simple     ports/devel/p5-Method-Signatures-Simple
@@ -13219,6 +13235,7 @@ p5-Module-Load-Conditional      ports/devel/p5-Module-Load-Conditional
 p5-Module-Loaded                ports/devel/p5-Module-Loaded
 p5-Module-Manifest              ports/devel/p5-Module-Manifest
 p5-Module-Math-Depends          ports/devel/p5-Module-Math-Depends
+p5-Module-Metadata              ports/devel/p5-Module-Metadata
 p5-Module-Pluggable             ports/devel/p5-Module-Pluggable
 p5-Module-Pluggable-Fast        ports/devel/p5-Module-Pluggable-Fast
 p5-Module-Pluggable-Ordered     ports/devel/p5-Module-Pluggable-Ordered
@@ -13689,6 +13706,7 @@ p5-POE-Component-Pluggable      ports/devel/p5-POE-Component-Pluggable
 p5-POE-Component-RRDTool        ports/databases/p5-POE-Component-RRDTool
 p5-POE-Component-RSS            ports/devel/p5-POE-Component-RSS
 p5-POE-Component-RSSAggregator  ports/devel/p5-POE-Component-RSSAggregator
+p5-POE-Component-Resolver       ports/dns/p5-POE-Component-Resolver
 p5-POE-Component-SMTP           ports/mail/p5-POE-Component-SMTP
 p5-POE-Component-SNMP           ports/net-mgmt/p5-POE-Component-SNMP
 p5-POE-Component-SSLify         ports/security/p5-POE-Component-SSLify
@@ -13844,7 +13862,9 @@ p5-Plack-Middleware-Debug       ports/www/p5-Plack-Middleware-Debug
 p5-Plack-Middleware-Deflater    ports/www/p5-Plack-Middleware-Deflater
 p5-Plack-Middleware-File-Sass   ports/www/p5-Plack-Middleware-File-Sass
 p5-Plack-Middleware-Header      ports/www/p5-Plack-Middleware-Header
+p5-Plack-Middleware-IEnosniff   ports/www/p5-Plack-Middleware-IEnosniff
 p5-Plack-Middleware-JSConcat    ports/www/p5-Plack-Middleware-JSConcat
+p5-Plack-Middleware-Precompressed  ports/www/p5-Plack-Middleware-Precompressed
 p5-Plack-Middleware-ReverseProxy  ports/www/p5-Plack-Middleware-ReverseProxy
 p5-Plack-Middleware-Session     ports/www/p5-Plack-Middleware-Session
 p5-Plack-Middleware-Status      ports/www/p5-Plack-Middleware-Status
@@ -14013,6 +14033,7 @@ p5-SQL-Abstract                 ports/databases/p5-SQL-Abstract
 p5-SQL-Abstract-Limit           ports/databases/p5-SQL-Abstract-Limit
 p5-SQL-Abstract-Plugin-InsertMulti  ports/databases/p5-SQL-Abstract-Plugin-InsertMulti
 p5-SQL-Interp                   ports/databases/p5-SQL-Interp
+p5-SQL-Maker                    ports/databases/p5-SQL-Maker
 p5-SQL-ReservedWords            ports/databases/p5-SQL-ReservedWords
 p5-SQL-Statement                ports/databases/p5-SQL-Statement
 p5-SQL-Tokenizer                ports/textproc/p5-SQL-Tokenizer
@@ -14294,6 +14315,7 @@ p5-Template-Timer               ports/www/p5-Template-Timer
 p5-Template-Tiny                ports/textproc/p5-Template-Tiny
 p5-Template-Toolkit             ports/www/p5-Template-Toolkit
 p5-Template-Toolkit-Simple      ports/www/p5-Template-Toolkit-Simple
+p5-Teng                         ports/databases/p5-Teng
 p5-Tenjin                       ports/www/p5-Tenjin
 p5-Term-ANSIColor               ports/devel/p5-Term-ANSIColor
 p5-Term-ANSIScreen              ports/devel/p5-Term-ANSIScreen
@@ -14312,6 +14334,7 @@ p5-Term-Screen                  ports/devel/p5-Term-Screen
 p5-Term-Shell                   ports/devel/p5-Term-Shell
 p5-Term-ShellUI                 ports/shells/p5-Term-ShellUI
 p5-Term-Size                    ports/devel/p5-Term-Size
+p5-Term-Title                   ports/devel/p5-Term-Title
 p5-Term-UI                      ports/devel/p5-Term-UI
 p5-Term-VT102                   ports/devel/p5-Term-VT102
 p5-Term-Visual                  ports/devel/p5-Term-Visual
@@ -14385,6 +14408,7 @@ p5-Test-Pod-Coverage-Permissive  ports/devel/p5-Test-Pod-Coverage-Permissive
 p5-Test-Portability-Files       ports/devel/p5-Test-Portability-Files
 p5-Test-RandomResults           ports/devel/p5-Test-RandomResults
 p5-Test-Reporter                ports/devel/p5-Test-Reporter
+p5-Test-Reporter-Transport-Metabase  ports/devel/p5-Test-Reporter-Transport-Metabase
 p5-Test-Requires                ports/devel/p5-Test-Requires
 p5-Test-Script                  ports/devel/p5-Test-Script
 p5-Test-Script-Run              ports/devel/p5-Test-Script-Run
@@ -14440,6 +14464,7 @@ p5-Text-CharWidth               ports/textproc/p5-Text-CharWidth
 p5-Text-Chomp                   ports/textproc/p5-Text-Chomp
 p5-Text-Context                 ports/textproc/p5-Text-Context
 p5-Text-Context-EitherSide      ports/textproc/p5-Text-Context-EitherSide
+p5-Text-DHCPLeases              ports/textproc/p5-Text-DHCPLeases
 p5-Text-Decorator               ports/textproc/p5-Text-Decorator
 p5-Text-Delimited               ports/textproc/p5-Text-Delimited
 p5-Text-Diff                    ports/textproc/p5-Text-Diff
@@ -15771,6 +15796,7 @@ p5-config-model                 ports/devel/p5-Config-Model
 p5-config-mvp                   ports/devel/p5-Config-MVP
 p5-config-objective             ports/devel/p5-Config-Objective
 p5-config-options               ports/devel/p5-Config-Options
+p5-config-perl-v                ports/devel/p5-Config-Perl-V
 p5-config-properties            ports/devel/p5-Config-Properties
 p5-config-record                ports/devel/p5-Config-Record
 p5-config-setting               ports/devel/p5-Config-Setting
@@ -15795,6 +15821,7 @@ p5-convert-bencode_xs           ports/converters/p5-Convert-Bencode_XS
 p5-convert-ber                  ports/converters/p5-Convert-BER
 p5-convert-binary-c             ports/converters/p5-Convert-Binary-C
 p5-convert-binhex               ports/converters/p5-Convert-BinHex
+p5-convert-color                ports/graphics/p5-Convert-Color
 p5-convert-ibm390               ports/converters/p5-Convert-IBM390
 p5-convert-morse                ports/converters/p5-Convert-Morse
 p5-convert-pem                  ports/converters/p5-Convert-PEM
@@ -15807,9 +15834,13 @@ p5-corona                       ports/www/p5-Corona
 p5-cpan-checksums               ports/devel/p5-CPAN-Checksums
 p5-cpan-distnameinfo            ports/devel/p5-CPAN-DistnameInfo
 p5-cpan-inject                  ports/devel/p5-CPAN-Inject
+p5-cpan-listchanges             ports/devel/p5-cpan-listchanges
 p5-cpan-meta                    ports/devel/p5-CPAN-Meta
 p5-cpan-mini                    ports/devel/p5-CPAN-Mini
+p5-cpan-reporter                ports/devel/p5-CPAN-Reporter
+p5-cpan-reporter-smoker         ports/devel/p5-CPAN-Reporter-Smoker
 p5-cpan-sqlite                  ports/devel/p5-CPAN-SQLite
+p5-cpan-testers-report          ports/devel/p5-CPAN-Testers-Report
 p5-cpan-yacsmoke                ports/devel/p5-CPAN-YACSmoke
 p5-cpanplus                     ports/devel/p5-CPANPLUS
 p5-cpanplus-dist-build          ports/devel/p5-CPANPLUS-Dist-Build
@@ -15971,6 +16002,7 @@ p5-data-model                   ports/devel/p5-Data-Model
 p5-data-objectdriver            ports/devel/p5-Data-ObjectDriver
 p5-data-optlist                 ports/devel/p5-Data-OptList
 p5-data-page                    ports/databases/p5-Data-Page
+p5-data-page-nototalentries     ports/devel/p5-Data-Page-NoTotalEntries
 p5-data-pageset                 ports/databases/p5-Data-Pageset
 p5-data-parsebinary             ports/devel/p5-Data-ParseBinary
 p5-data-password                ports/security/p5-Data-Password
@@ -16190,6 +16222,7 @@ p5-declare-constraints-simple   ports/devel/p5-Declare-Constraints-Simple
 p5-delimmatch                   ports/textproc/p5-DelimMatch
 p5-devel-arena                  ports/devel/p5-Devel-Arena
 p5-devel-argnames               ports/devel/p5-Devel-ArgNames
+p5-devel-autoflush              ports/devel/p5-Devel-Autoflush
 p5-devel-backtrace              ports/devel/p5-Devel-Backtrace
 p5-devel-beginlift              ports/devel/p5-Devel-BeginLift
 p5-devel-caller                 ports/devel/p5-Devel-Caller
@@ -16865,6 +16898,7 @@ p5-http-size                    ports/www/p5-HTTP-Size
 p5-http-webtest                 ports/www/p5-HTTP-WebTest
 p5-httpd-log-filter             ports/www/p5-HTTPD-Log-Filter
 p5-httpd-user-manage            ports/www/p5-HTTPD-User-Manage
+p5-i18n-acceptlanguage          ports/www/p5-I18N-AcceptLanguage
 p5-i18n-charset                 ports/misc/p5-I18N-Charset
 p5-i18n-langtags                ports/misc/p5-I18N-LangTags
 p5-iCal-Parser                  ports/devel/p5-iCal-Parser
@@ -17299,6 +17333,8 @@ p5-memcached-libmemcached       ports/databases/p5-Memcached-libmemcached
 p5-memoize                      ports/devel/p5-Memoize
 p5-memoize-expirelru            ports/devel/p5-Memoize-ExpireLRU
 p5-meta-builder                 ports/devel/p5-Meta-Builder
+p5-metabase-client-simple       ports/devel/p5-Metabase-Client-Simple
+p5-metabase-fact                ports/devel/p5-Metabase-Fact
 p5-metadata                     ports/databases/p5-Metadata
 p5-method-alias                 ports/devel/p5-Method-Alias
 p5-method-signatures-simple     ports/devel/p5-Method-Signatures-Simple
@@ -17352,6 +17388,7 @@ p5-module-load-conditional      ports/devel/p5-Module-Load-Conditional
 p5-module-loaded                ports/devel/p5-Module-Loaded
 p5-module-manifest              ports/devel/p5-Module-Manifest
 p5-module-math-depends          ports/devel/p5-Module-Math-Depends
+p5-module-metadata              ports/devel/p5-Module-Metadata
 p5-module-pluggable             ports/devel/p5-Module-Pluggable
 p5-module-pluggable-fast        ports/devel/p5-Module-Pluggable-Fast
 p5-module-pluggable-ordered     ports/devel/p5-Module-Pluggable-Ordered
@@ -17903,7 +17940,9 @@ p5-plack-middleware-debug       ports/www/p5-Plack-Middleware-Debug
 p5-plack-middleware-deflater    ports/www/p5-Plack-Middleware-Deflater
 p5-plack-middleware-file-sass   ports/www/p5-Plack-Middleware-File-Sass
 p5-plack-middleware-header      ports/www/p5-Plack-Middleware-Header
+p5-plack-middleware-ienosniff   ports/www/p5-Plack-Middleware-IEnosniff
 p5-plack-middleware-jsconcat    ports/www/p5-Plack-Middleware-JSConcat
+p5-plack-middleware-precompressed  ports/www/p5-Plack-Middleware-Precompressed
 p5-plack-middleware-reverseproxy  ports/www/p5-Plack-Middleware-ReverseProxy
 p5-plack-middleware-session     ports/www/p5-Plack-Middleware-Session
 p5-plack-middleware-status      ports/www/p5-Plack-Middleware-Status
@@ -17994,6 +18033,7 @@ p5-poe-component-ladbi          ports/databases/p5-POE-Component-LaDBI
 p5-poe-component-logger         ports/devel/p5-POE-Component-Logger
 p5-poe-component-pcap           ports/net/p5-POE-Component-Pcap
 p5-poe-component-pluggable      ports/devel/p5-POE-Component-Pluggable
+p5-poe-component-resolver       ports/dns/p5-POE-Component-Resolver
 p5-poe-component-rrdtool        ports/databases/p5-POE-Component-RRDTool
 p5-poe-component-rss            ports/devel/p5-POE-Component-RSS
 p5-poe-component-rssaggregator  ports/devel/p5-POE-Component-RSSAggregator
@@ -18283,6 +18323,7 @@ p5-sql-abstract                 ports/databases/p5-SQL-Abstract
 p5-sql-abstract-limit           ports/databases/p5-SQL-Abstract-Limit
 p5-sql-abstract-plugin-insertmulti  ports/databases/p5-SQL-Abstract-Plugin-InsertMulti
 p5-sql-interp                   ports/databases/p5-SQL-Interp
+p5-sql-maker                    ports/databases/p5-SQL-Maker
 p5-sql-reservedwords            ports/databases/p5-SQL-ReservedWords
 p5-sql-statement                ports/databases/p5-SQL-Statement
 p5-sql-tokenizer                ports/textproc/p5-SQL-Tokenizer
@@ -18469,6 +18510,7 @@ p5-template-timer               ports/www/p5-Template-Timer
 p5-template-tiny                ports/textproc/p5-Template-Tiny
 p5-template-toolkit             ports/www/p5-Template-Toolkit
 p5-template-toolkit-simple      ports/www/p5-Template-Toolkit-Simple
+p5-teng                         ports/databases/p5-Teng
 p5-tenjin                       ports/www/p5-Tenjin
 p5-term-animation               ports/devel/p5-Term-Animation
 p5-term-ansicolor               ports/devel/p5-Term-ANSIColor
@@ -18487,6 +18529,7 @@ p5-term-screen                  ports/devel/p5-Term-Screen
 p5-term-shell                   ports/devel/p5-Term-Shell
 p5-term-shellui                 ports/shells/p5-Term-ShellUI
 p5-term-size                    ports/devel/p5-Term-Size
+p5-term-title                   ports/devel/p5-Term-Title
 p5-term-ui                      ports/devel/p5-Term-UI
 p5-term-visual                  ports/devel/p5-Term-Visual
 p5-term-vt102                   ports/devel/p5-Term-VT102
@@ -18561,6 +18604,7 @@ p5-test-portability-files       ports/devel/p5-Test-Portability-Files
 p5-test-postgresql              ports/databases/p5-Test-postgresql
 p5-test-randomresults           ports/devel/p5-Test-RandomResults
 p5-test-reporter                ports/devel/p5-Test-Reporter
+p5-test-reporter-transport-metabase  ports/devel/p5-Test-Reporter-Transport-Metabase
 p5-test-requires                ports/devel/p5-Test-Requires
 p5-test-script                  ports/devel/p5-Test-Script
 p5-test-script-run              ports/devel/p5-Test-Script-Run
@@ -18619,6 +18663,7 @@ p5-text-csv-simple              ports/textproc/p5-Text-CSV-Simple
 p5-text-csv_xs                  ports/textproc/p5-Text-CSV_XS
 p5-text-decorator               ports/textproc/p5-Text-Decorator
 p5-text-delimited               ports/textproc/p5-Text-Delimited
+p5-text-dhcpleases              ports/textproc/p5-Text-DHCPLeases
 p5-text-diff                    ports/textproc/p5-Text-Diff
 p5-text-diff-html               ports/textproc/p5-Text-Diff-HTML
 p5-text-diff-parser             ports/textproc/p5-Text-Diff-Parser
@@ -21264,7 +21309,6 @@ py-crcmod                       ports/devel/py-crcmod
 py-creole                       ports/textproc/py-creole
 py-cryptkit                     ports/security/py-cryptkit
 py-cssutils                     ports/www/py-cssutils
-py-csv                          ports/textproc/py-csv
 py-ctags                        ports/devel/py-ctags
 py-cups                         ports/print/py-cups
 py-curl                         ports/ftp/py-curl
@@ -21291,21 +21335,25 @@ py-django                       ports/www/py-django
 py-django-app-plugins           ports/www/py-django-app-plugins
 py-django-classy-tags           ports/www/py-django-classy-tags
 py-django-devel                 ports/www/py-django-devel
+py-django-evolution             ports/www/py-django-evolution
 py-django-extensions            ports/www/py-django-extensions
 py-django-keyedcache            ports/www/py-django-keyedcache
 py-django-livesettings          ports/www/py-django-livesettings
 py-django-profiles              ports/www/py-django-profiles
 py-django-registration          ports/www/py-django-registration
 py-django-signals-ahoy          ports/www/py-django-signals-ahoy
+py-django-storages              ports/www/py-django-storages
 py-django-tagging               ports/www/py-django-tagging
 py-django-threaded-multihost    ports/www/py-django-threaded-multihost
 py-django11                     ports/www/py-django11
+py-djblets                      ports/www/py-djblets
 py-dns                          ports/dns/py-dns
 py-dnspython                    ports/dns/py-dnspython
 py-docutils                     ports/textproc/py-docutils
 py-dojango                      ports/www/py-dojango
 py-dosage                       ports/deskutils/py-dosage
 py-dpkt                         ports/net/py-dpkt
+py-drmaa                        ports/sysutils/py-drmaa
 py-dsv                          ports/textproc/py-dsv
 py-dtflickr                     ports/www/py-dtflickr
 py-durus                        ports/devel/py-durus
@@ -21863,7 +21911,6 @@ py-transmissionrpc              ports/net-p2p/py-transmissionrpc
 py-trml2pdf                     ports/print/py-trml2pdf
 py-trustedpickle                ports/security/py-trustedpickle
 py-turbocheetah                 ports/devel/py-turbocheetah
-py-turbodjango                  ports/www/py-turbodjango
 py-turbogears                   ports/www/py-turbogears
 py-turbogears2                  ports/www/py-turbogears2
 py-turbojinja                   ports/devel/py-TurboJinja
@@ -21871,7 +21918,6 @@ py-turbojson                    ports/devel/py-turbojson
 py-turbojson11                  ports/devel/py-turbojson11
 py-turbokid                     ports/devel/py-turbokid
 py-turbomail                    ports/mail/py-turbomail
-py-turbosetup                   ports/www/py-turbosetup
 py-tvgrab                       ports/textproc/py-tvgrab
 py-twisted                      ports/devel/py-twisted
 py-twistedConch                 ports/security/py-twistedConch
@@ -21913,7 +21959,6 @@ py-urwid                        ports/devel/py-urwid
 py-usb                          ports/devel/py-usb
 py-utidy                        ports/www/py-utidy
 py-utils                        ports/devel/py-utils
-py-uuid                         ports/devel/py-uuid
 py-vertex                       ports/net-p2p/py-vertex
 py-virtualenv                   ports/devel/py-virtualenv
 py-virtualenvwrapper            ports/devel/py-virtualenvwrapper
@@ -22569,6 +22614,7 @@ retail                          ports/sysutils/retail
 retawq                          ports/www/retawq
 retranslator                    ports/security/retranslator
 revelation                      ports/security/revelation
+reviewboard                     ports/www/reviewboard
 rexima                          ports/audio/rexima
 rexx-curl                       ports/ftp/rexx-curl
 rexx-imc                        ports/lang/rexx-imc
@@ -23765,6 +23811,7 @@ serpentine                      ports/sysutils/serpentine
 serveez                         ports/net/serveez
 service-config                  ports/sysutils/service-config
 service-discovery-applet        ports/net/service-discovery-applet
+serviio                         ports/net/serviio
 servingxml                      ports/java/servingxml
 servlet-api                     ports/www/servlet-api
 session2                        ports/www/session2
@@ -23831,6 +23878,7 @@ shibboleth2-sp                  ports/security/shibboleth2-sp
 shim                            ports/graphics/shim
 shimmer                         ports/security/shimmer
 shishi                          ports/security/shishi
+shiva-collections               ports/graphics/shiva-collections
 shlock                          ports/sysutils/shlock
 shmap                           ports/devel/shmap
 shmux                           ports/net/shmux
@@ -25510,6 +25558,7 @@ unique                          ports/x11-toolkits/unique
 unison                          ports/net/unison
 unison-devel                    ports/net/unison-devel
 unison-nox11                    ports/net/unison-nox11
+unison232                       ports/net/unison232
 uniutils                        ports/sysutils/uniutils
 universalindentgui              ports/devel/universalindentgui
 unix2dos                        ports/converters/unix2dos
@@ -25570,6 +25619,7 @@ urwfonts                        ports/x11-fonts/urwfonts
 urwfonts-ttf                    ports/x11-fonts/urwfonts-ttf
 us-zipcodes                     ports/misc/us-zipcodes
 usbhotkey                       ports/sysutils/usbhotkey
+usbmuxd                         ports/comms/usbmuxd
 usbrh                           ports/misc/usbrh
 usbrh-libusb                    ports/misc/usbrh-libusb
 usbutil                         ports/sysutils/usbutil
