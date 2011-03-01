@@ -10,7 +10,6 @@ bin/yac2ncid
 etc/logrotate.d/ncid
 @dirrm etc/logrotate.d
 etc/rc.d/ncid-initmodem
-etc/rc.d/ncid-hangup
 etc/rc.d/ncid-page
 etc/rc.d/ncid-samba
 etc/rc.d/ncid-yac
@@ -23,7 +22,6 @@ etc/rc.d/ncid2ncid
 etc/rc.d/sip2ncid
 %%DATADIR%%/ncid-initmodem
 %%DATADIR%%/ncidrotate
-%%DATADIR%%/ncid-hangup
 %%DATADIR%%/ncid-kpopup
 %%DATADIR%%/ncid-mythtv
 %%DATADIR%%/ncid-page
