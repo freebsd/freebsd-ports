@@ -34,6 +34,89 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="45f102cd-4456-11e0-9580-4061862b8c22">
+    <topic>mozilla -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>firefox</name>
+	<range><gt>3.6.*,1</gt><lt>3.6.14,1</lt></range>
+	<range><gt>3.5.*,1</gt><lt>3.5.17,1</lt></range>
+      </package>
+      <package>
+	<name>libxul</name>
+	<range><gt>1.9.2.*</gt><lt>1.9.2.14</lt></range>
+      </package>
+      <package>
+	<name>linux-firefox</name>
+	<range><lt>3.6.14,1</lt></range>
+      </package>
+      <package>
+	<name>linux-firefox-devel</name>
+	<range><lt>3.5.17</lt></range>
+      </package>
+      <package>
+	<name>linux-seamonkey</name>
+	<range><gt>2.0.*</gt><lt>2.0.12</lt></range>
+      </package>
+      <package>
+	<name>linux-thunderbird</name>
+	<range><ge>3.1</ge><lt>3.1.8</lt></range>
+      </package>
+      <package>
+	<name>seamonkey</name>
+	<range><gt>2.0.*</gt><lt>2.0.12</lt></range>
+      </package>
+      <package>
+	<name>thunderbird</name>
+	<range><lt>3.1.8</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Mozilla Project reports:</p>
+	<blockquote cite="http://www.mozilla.org/security/known-vulnerabilities/">
+	  <p>MFSA 2011-01 Miscellaneous memory safety hazards (rv:1.9.2.14/ 1.9.1.17)</p>
+	  <p>MFSA 2011-02 Recursive eval call causes confirm dialogs to evaluate to true</p>
+	  <p>MFSA 2011-03 Use-after-free error in JSON.stringify</p>
+	  <p>MFSA 2011-04 Buffer overflow in JavaScript upvarMap</p>
+	  <p>MFSA 2011-05 Buffer overflow in JavaScript atom map</p>
+	  <p>MFSA 2011-06 Use-after-free error using Web Workers</p>
+	  <p>MFSA 2011-07 Memory corruption during text run construction (Windows)</p>
+	  <p>MFSA 2011-08 ParanoidFragmentSink allows javascript: URLs in chrome documents</p>
+	  <p>MFSA 2011-09 Crash caused by corrupted JPEG image</p>
+	  <p>MFSA 2011-10 CSRF risk with plugins and 307 redirects</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2010-1585</cvename>
+      <cvename>CVE-2011-0051</cvename>
+      <cvename>CVE-2011-0053</cvename>
+      <cvename>CVE-2011-0054</cvename>
+      <cvename>CVE-2011-0055</cvename>
+      <cvename>CVE-2011-0056</cvename>
+      <cvename>CVE-2011-0057</cvename>
+      <cvename>CVE-2011-0058</cvename>
+      <cvename>CVE-2011-0059</cvename>
+      <cvename>CVE-2011-0061</cvename>
+      <cvename>CVE-2011-0062</cvename>
+      <url>https://www.mozilla.org/security/announce/2011/mfsa2011-01.html</url>
+      <url>https://www.mozilla.org/security/announce/2011/mfsa2011-02.html</url>
+      <url>https://www.mozilla.org/security/announce/2011/mfsa2011-03.html</url>
+      <url>https://www.mozilla.org/security/announce/2011/mfsa2011-04.html</url>
+      <url>https://www.mozilla.org/security/announce/2011/mfsa2011-05.html</url>
+      <url>https://www.mozilla.org/security/announce/2011/mfsa2011-06.html</url>
+      <url>https://www.mozilla.org/security/announce/2011/mfsa2011-07.html</url>
+      <url>https://www.mozilla.org/security/announce/2011/mfsa2011-08.html</url>
+      <url>https://www.mozilla.org/security/announce/2011/mfsa2011-09.html</url>
+      <url>https://www.mozilla.org/security/announce/2011/mfsa2011-10.html</url>
+    </references>
+    <dates>
+      <discovery>2011-03-01</discovery>
+      <entry>2011-03-01</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="be3dfe33-410b-11e0-9e02-00215c6a37bb">
     <topic>openldap -- two security bypass vulnerabilities</topic>
     <affects>
