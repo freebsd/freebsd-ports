@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	ocsinventory-ng
-PORTVERSION=	1.3.2
-PORTREVISION=	2
+PORTVERSION=	1.3.3
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://launchpad.net/ocsinventory-server/stable-${PORTVERSION:R}/${PORTVERSION}/+download/
 DISTNAME=	OCSNG_UNIX_SERVER-${PORTVERSION}
