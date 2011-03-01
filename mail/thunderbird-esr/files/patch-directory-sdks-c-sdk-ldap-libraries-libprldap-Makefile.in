@@ -1,5 +1,5 @@
---- directory/c-sdk/ldap/libraries/libprldap/Makefile.in.orig	2008-09-11 16:38:35.000000000 +0200
-+++ directory/c-sdk/ldap/libraries/libprldap/Makefile.in	2009-12-09 08:53:46.000000000 +0100
+--- directory/sdks/c-sdk/ldap/libraries/libprldap/Makefile.in.orig	2008-09-11 16:38:35.000000000 +0200
++++ directory/sdks/c-sdk/ldap/libraries/libprldap/Makefile.in	2009-12-09 08:53:46.000000000 +0100
 @@ -147,6 +147,11 @@
  CUSTOM_LIBS=1
  endif
