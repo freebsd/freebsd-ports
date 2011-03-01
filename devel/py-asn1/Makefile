@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	asn1
-PORTVERSION=	0.0.9a
-PORTREVISION=	1
+PORTVERSION=	0.0.12a
 CATEGORIES=	devel python
 MASTER_SITES=	SF/py${PORTNAME}/py${PORTNAME}-devel/${PORTVERSION}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -30,7 +29,10 @@ BASEDOCS=	CHANGES \
 
 DOCDOCS=	notes.html
 
-EXAMPLE_FILES=	snmp.py \
+EXAMPLE_FILES=	ldap.py \
+		ocsp.py \
+		pkcs7.py \
+		snmp.py \
 		sshkey.py \
 		x509.py
 
