@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gegl
-PORTVERSION=	0.1.2
-PORTREVISION=	1
+PORTVERSION=	0.1.6
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.gimp.org/pub/gegl/0.1/
 
@@ -46,7 +45,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -lexecinfo"
 
-GEGL_MINOR=	101
+GEGL_MINOR=	105
 PLIST_SUB+=	GEGL_MINOR="${GEGL_MINOR}"
 
 EXAMPLES=	2geglbuffer gegl-paint geglbuffer-add-image \
