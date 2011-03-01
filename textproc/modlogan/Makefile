@@ -9,8 +9,7 @@ PORTNAME=	modlogan
 PORTVERSION=	0.8.13
 PORTREVISION=	10
 CATEGORIES=	textproc www
-MASTER_SITES=	http://jan.kneschke.de/projects/modlogan/download/ \
-		http://www.mirrorservice.org/sites/www.ibiblio.org/gentoo/distfiles/
+MASTER_SITES=	http://www.mirrorservice.org/sites/www.ibiblio.org/gentoo/distfiles/
 
 MAINTAINER=	netchild@FreeBSD.org
 COMMENT=	A modular log file analysis program
