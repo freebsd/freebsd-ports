@@ -3,11 +3,12 @@
 # Whom:			Michael Johnson <ahze@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/devel/gvfs/Makefile,v 1.66 2010/11/13 01:48:28 kwm Exp $
+#   $MCom: ports/devel/gvfs/Makefile,v 1.70 2011/01/31 19:06:42 kwm Exp $
 #
 
 PORTNAME=	gvfs
 PORTVERSION=	1.6.6
+PORTREVISION=	1
 CATEGORIES=	devel gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -18,8 +19,7 @@ COMMENT=	GNOME virtual file system
 LIB_DEPENDS=	dbus-1.3:${PORTSDIR}/devel/dbus \
     		hal.1:${PORTSDIR}/sysutils/hal \
 		soup-gnome-2.4.1:${PORTSDIR}/devel/libsoup-gnome \
-		gnome-keyring:${PORTSDIR}/security/gnome-keyring \
-		avahi-client.3:${PORTSDIR}/net/avahi-app
+		gnome-keyring:${PORTSDIR}/security/libgnome-keyring
 RUN_DEPENDS=	gnome-mount:${PORTSDIR}/sysutils/gnome-mount
 
 USE_BZIP2=	yes
@@ -32,6 +32,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	--disable-obexftp
 OPTIONS=	FUSE "Enable fuse" off \
+		AVAHI "Enable AVAHI" on \
 		SAMBA "Enable Samba" on \
 		GPHOTO2 "Enable Gphoto 2 camera support" on \
 		CDDA "Enable CDDA" on
@@ -71,15 +72,12 @@ CONFIGURE_ARGS+=	--disable-gphoto2
 PLIST_SUB+=	GPHOTO2="@comment "
 .endif
 
-.if ${OSVERSION} < 602112
-CONFIGURE_ARGS+=	--disable-archive
-PLIST_SUB+=	ARCHIVE="@comment "
+.if defined(WITH_AVAHI)
+LIB_DEPENDS+=	avahi-client.3:${PORTSDIR}/net/avahi-app
+PLIST_SUB+=	AVAHI=""
 .else
-PLIST_SUB+=	ARCHIVE=""
-.endif
-
-.if ${OSVERSION} < 700000
-BROKEN=		does not configure on 6.X
+CONFIGURE_ARGS+=--disable-avahi
+PLIST_SUB+=	AVAHI="@comment "
 .endif
 
 .include <bsd.port.post.mk>
