@@ -1,97 +1,15 @@
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/PKG-INFO
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/SOURCES.txt
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/dependency_links.txt
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/not-zip-safe
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/top_level.txt
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyasn1/__init__.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyasn1/__init__.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyasn1/__init__.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyasn1/v1/__init__.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyasn1/v1/__init__.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyasn1/v1/__init__.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyasn1/v1/error.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyasn1/v1/error.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyasn1/v1/error.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyasn1/v1/type/base.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyasn1/v1/type/base.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyasn1/v1/type/base.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyasn1/v1/type/tag.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyasn1/v1/type/tag.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyasn1/v1/type/tag.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyasn1/v1/type/univ.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyasn1/v1/type/univ.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyasn1/v1/type/univ.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyasn1/v1/type/__init__.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyasn1/v1/type/__init__.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyasn1/v1/type/__init__.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyasn1/v1/type/namedtype.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyasn1/v1/type/namedtype.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyasn1/v1/type/namedtype.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyasn1/v1/type/namedval.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyasn1/v1/type/namedval.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyasn1/v1/type/namedval.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyasn1/v1/type/error.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyasn1/v1/type/error.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyasn1/v1/type/error.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyasn1/v1/type/constraint.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyasn1/v1/type/constraint.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyasn1/v1/type/constraint.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyasn1/v1/type/char.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyasn1/v1/type/char.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyasn1/v1/type/char.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyasn1/v1/type/useful.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyasn1/v1/type/useful.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyasn1/v1/type/useful.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyasn1/v1/codec/__init__.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyasn1/v1/codec/__init__.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyasn1/v1/codec/__init__.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyasn1/v1/codec/ber/decoder.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyasn1/v1/codec/ber/decoder.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyasn1/v1/codec/ber/decoder.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyasn1/v1/codec/ber/encoder.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyasn1/v1/codec/ber/encoder.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyasn1/v1/codec/ber/encoder.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyasn1/v1/codec/ber/__init__.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyasn1/v1/codec/ber/__init__.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyasn1/v1/codec/ber/__init__.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyasn1/v1/codec/ber/eoo.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyasn1/v1/codec/ber/eoo.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyasn1/v1/codec/ber/eoo.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyasn1/v1/codec/cer/__init__.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyasn1/v1/codec/cer/__init__.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyasn1/v1/codec/cer/__init__.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyasn1/v1/codec/cer/encoder.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyasn1/v1/codec/cer/encoder.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyasn1/v1/codec/cer/encoder.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyasn1/v1/codec/cer/decoder.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyasn1/v1/codec/cer/decoder.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyasn1/v1/codec/cer/decoder.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyasn1/v1/codec/der/__init__.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyasn1/v1/codec/der/__init__.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyasn1/v1/codec/der/__init__.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyasn1/v1/codec/der/decoder.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyasn1/v1/codec/der/decoder.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyasn1/v1/codec/der/decoder.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyasn1/v1/codec/der/encoder.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyasn1/v1/codec/der/encoder.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyasn1/v1/codec/der/encoder.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%
+%%PORTDOCS%%%%DOCSDIR%%/CHANGES
+%%PORTDOCS%%%%DOCSDIR%%/LICENSE
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/TODO
+%%PORTDOCS%%%%DOCSDIR%%/notes.html
+%%EXAMPLESDIR%%/ldap.py
+%%EXAMPLESDIR%%/ocsp.py
+%%EXAMPLESDIR%%/pkcs7.py
 %%EXAMPLESDIR%%/snmp.py
 %%EXAMPLESDIR%%/sshkey.py
 %%EXAMPLESDIR%%/x509.py
-%%PORTDOCS%%%%DOCSDIR%%/CHANGES
-%%PORTDOCS%%%%DOCSDIR%%/LICENSE
-%%PORTDOCS%%%%DOCSDIR%%/TODO
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/notes.html
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyasn1/v1/codec/der
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyasn1/v1/codec/cer
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyasn1/v1/codec/ber
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyasn1/v1/codec
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyasn1/v1/type
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyasn1/v1
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyasn1
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%
 @dirrm %%EXAMPLESDIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrmtry %%PYTHON_SITELIBDIR%%
