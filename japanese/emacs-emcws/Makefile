@@ -154,6 +154,10 @@ EMACS_BASE=${LOCALBASE}
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} >= 900007
+BROKEN=		does not build
+.endif
+
 .if ${ARCH} == "ia64"
 BROKEN=		Segfault during build on ia64
 CFLAGS:=	${CFLAGS:C/-O.?/-O0/g}
