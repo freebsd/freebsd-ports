@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	heyu2
-PORTVERSION=	2.9.2
-PORTREVISION=	1
+PORTVERSION=	2.9.3
 CATEGORIES=	misc
 MASTER_SITES=	http://www.heyu.org/download/
 DISTNAME=	heyu-${PORTVERSION}
