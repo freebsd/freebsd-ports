@@ -60,7 +60,7 @@ OPTIONS=	OGGVORBIS	"Enable Ogg Vorbis support" on \
 		ILBC		"Enable iLBC codec" off \
 		SPANDSP		"Enable Spandsp faxing support" off \
 		EXCHANGE	"Enable Exchange calendar support" off \
-		NEWG711		"Enable new G711 Codes"
+		NEWG711		"Enable new G711 Codec" off
 
 ASTERISK_USER?=		asterisk
 ASTERISK_GROUP?=	asterisk
