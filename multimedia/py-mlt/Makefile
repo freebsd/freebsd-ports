@@ -7,12 +7,12 @@
 #
 
 PORTNAME=	mlt
-PORTVERSION=	0.6.0
+PORTVERSION=	0.6.2
 CATEGORIES=	multimedia python
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	corky1951@comcast.net
+MAINTAINER=	avilla@FreeBSD.org
 COMMENT=	Python bindings for the MLT multimedia framework
 
 BUILD_DEPENDS=	swig:${PORTSDIR}/devel/swig13
