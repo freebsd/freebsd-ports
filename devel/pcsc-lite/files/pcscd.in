@@ -17,4 +17,7 @@ rcvar="pcscd_enable"
 command="%%PREFIX%%/sbin/pcscd"
 
 load_rc_config "$name"
+
+: ${pcscd_enable="NO"}
+
 run_rc_command "$1"
