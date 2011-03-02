@@ -8,6 +8,7 @@
 
 PORTNAME=	gnucash
 PORTVERSION=	2.4.3
+PORTREVISION=	1
 CATEGORIES=	finance gnome
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}%20%28stable%29/${PORTVERSION}
 
@@ -16,8 +17,7 @@ COMMENT=	Quicken-like money and finance manager
 
 BUILD_DEPENDS=	guile>=1.8.6:${PORTSDIR}/lang/guile \
     		${LOCALBASE}/share/guile/1.8/slibcat:${PORTSDIR}/lang/slib-guile
-LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt \
-		gnome-keyring.0:${PORTSDIR}/security/libgnome-keyring \
+LIB_DEPENDS=	gnome-keyring.0:${PORTSDIR}/security/libgnome-keyring \
 		goffice-0.8.8:${PORTSDIR}/devel/goffice
 RUN_DEPENDS=	guile>=1.8.6:${PORTSDIR}/lang/guile \
 		${LOCALBASE}/share/guile/1.8/slibcat:${PORTSDIR}/lang/slib-guile \
@@ -36,7 +36,6 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 USE_BZIP2=	yes
 USE_GETTEXT=	yes
-USE_XORG=	xpm x11
 USE_GMAKE=	yes
 MAKE_JOBS_SAFE=	yes
 USE_PERL5=	yes
@@ -46,7 +45,7 @@ GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
-CONFIGURE_ARGS= --disable-error-on-warning \
+CONFIGURE_ARGS=	--disable-error-on-warning \
 		--disable-doxygen
 
 MAN1=		gnucash.1
@@ -115,7 +114,7 @@ PLIST_SUB+=	PYTHON=""
 PLIST_SUB+=	PYTHON="@comment "
 .endif
 
-.if !defined(PACKAGE_BUILDING) && !exists(${LOCALBASE}/lib/libgwengui-gtk2.so.0)
+.if !defined(PACKAGE_BUILDING) && defined(WITH_AQBANKING) && !exists(${LOCALBASE}/lib/libgwengui-gtk2.so.0)
 BROKEN=	Please rebuild devel/gwenhywfar with the WITH_GTK2 option set
 .endif
 
