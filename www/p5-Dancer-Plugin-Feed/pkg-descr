@@ -1,0 +1,4 @@
+Dancer plugin which provides an easy way to generate RSS or Atom feed.
+This module relies on XML::Feed.
+
+WWW: http://search.cpan.org/dist/Dancer-Plugin-Feed/
