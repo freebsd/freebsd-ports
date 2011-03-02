@@ -1,0 +1,20 @@
+The GNAT Programming Studio (GPS) is a cutting-edge Free Software IDE that
+streamlines the interaction between developers and their software.  With its
+intuitive interface, GPS is easy to use, simplying source navigation and
+highlighting fundamental ideas in the program.
+
+Features                          Tools
+  * Developer-friendly              * Language-sensitive editor
+  * Multi-language                  * Version control
+  * Multi-platform                  * Graphical debugger
+  * Modern GUI                      * Automatic code fixing
+  * Multiple document interface     * Graphs (call, dependencies, entities)
+  * Customizable                    * Application builder
+  * Extensible tool integration     * Visual file comparison
+  * Free Software                   * Source code reformatting
+                                    * Automatic body file generation
+                                    * intelligent source code navigation
+                                    * Project Explorer
+                                    * Project Wizard
+
+WWW: http://www.adacore.com/home/products/gnatpro/toolsuite/gps/

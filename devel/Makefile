@@ -532,6 +532,7 @@
     SUBDIR += gorm
     SUBDIR += gperf
     SUBDIR += gprbuild-aux
+    SUBDIR += gps
     SUBDIR += gpsim
     SUBDIR += gputils
     SUBDIR += grantlee
