@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	asterisk
-PORTVERSION=	1.8.2.4
-PORTREVISION=	1
+PORTVERSION=	1.8.3
 CATEGORIES=	net
 MASTER_SITES=	http://downloads.asterisk.org/pub/telephony/asterisk/ \
 		http://downloads.asterisk.org/pub/telephony/asterisk/old-releases/
@@ -60,7 +59,8 @@ OPTIONS=	OGGVORBIS	"Enable Ogg Vorbis support" on \
 		CURL		"Enable CURL support" on \
 		ILBC		"Enable iLBC codec" off \
 		SPANDSP		"Enable Spandsp faxing support" off \
-		EXCHANGE	"Enable Exchange calendar support" off
+		EXCHANGE	"Enable Exchange calendar support" off \
+		NEWG711		"Enable new G711 Codes"
 
 ASTERISK_USER?=		asterisk
 ASTERISK_GROUP?=	asterisk
@@ -251,6 +251,10 @@ PLIST_SUB+=	WITH_EXCHANGE="@comment "
 .else
 LIB_DEPENDS+=	neon.27:${PORTSDIR}/www/neon29
 PLIST_SUB+=	WITH_EXCHANGE=""
+.endif
+
+.if defined(WITH_NEWG711)
+EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-menuselect-tree-g711-new-codec.diff
 .endif
 
 .if defined(WITH_MISC_PATCHES)

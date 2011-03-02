@@ -1,14 +1,14 @@
---- configure.orig	2011-01-25 00:37:33.000000000 +0100
-+++ configure	2011-01-25 00:39:33.000000000 +0100
-@@ -621,7 +621,6 @@
+--- configure.orig	2011-01-09 22:40:34.000000000 +0100
++++ configure	2011-03-02 00:16:16.000000000 +0100
+@@ -600,7 +600,6 @@
  ac_default_prefix=/usr/local
  ac_default_prefix=/usr/local
  ac_default_prefix=/usr/local
 -ac_default_prefix=/usr
  ac_header_list=
- ac_subst_vars='SHELL
- PATH_SEPARATOR
-@@ -4279,9 +4278,9 @@
+ ac_subst_vars='LTLIBOBJS
+ PBX_SYSLOG
+@@ -4677,9 +4676,9 @@
  astheaderdir='${includedir}/asterisk'
  astlibdir='${libdir}/asterisk'
  astmandir='${mandir}'
@@ -20,7 +20,7 @@
  astkeydir='${astvarlibdir}'
  astspooldir='${localstatedir}/spool/asterisk'
  astlogdir='${localstatedir}/log/asterisk'
-@@ -4303,9 +4302,6 @@
+@@ -4701,9 +4700,6 @@
  
  case "${host_os}" in
       freebsd*)
@@ -30,16 +30,16 @@
       ;;
       openbsd*)
  
-@@ -27494,6 +27490,8 @@
- cat confdefs.h >>conftest.$ac_ext
- cat >>conftest.$ac_ext <<_ACEOF
+@@ -17558,6 +17554,8 @@
+ 
+ 	cat confdefs.h - <<_ACEOF >conftest.$ac_ext
  /* end confdefs.h.  */
-+#include <sys/types.h>
-+#include <sys/socket.h>
- #include <ifaddrs.h>
++ #include <sys/types.h>
++ #include <sys/socket.h>
+  #include <ifaddrs.h>
  int
  main ()
-@@ -45012,7 +45010,7 @@
+@@ -25364,7 +25362,7 @@
  
  	fi
  
@@ -47,4 +47,4 @@
 +	PLATFORM_OPENH323="h323_${OPENH323_SUFFIX}"
  
  	if test "${HAS_OPENH323:-unset}" != "unset"; then
- 	   { echo "$as_me:$LINENO: checking OpenH323 installation validity" >&5
+ 	   { $as_echo "$as_me:${as_lineno-$LINENO}: checking OpenH323 installation validity" >&5

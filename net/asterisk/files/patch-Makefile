@@ -1,5 +1,5 @@
---- Makefile.orig	2010-12-08 03:51:05.000000000 +0500
-+++ Makefile	2011-01-15 04:05:06.000000000 +0500
+--- Makefile.orig	2011-01-12 16:57:43.000000000 +0100
++++ Makefile	2011-03-02 11:34:26.000000000 +0100
 @@ -122,7 +122,7 @@
  OVERWRITE=y
  
@@ -32,28 +32,29 @@
    _ASTCFLAGS+=$(shell if test $(BSDVERSION) -lt 500016 ; then echo "-D_THREAD_SAFE"; fi)
  endif
  
-@@ -463,13 +465,17 @@
+@@ -463,13 +465,18 @@
  	done
- 	$(INSTALL) -m 644 doc/core-en_US.xml $(DESTDIR)$(ASTDATADIR)/static-http;
+ 	$(INSTALL) -m 644 doc/core-en_US.xml "$(DESTDIR)$(ASTDATADIR)/static-http";
  	if [ -d doc/tex/asterisk ] ; then \
--		$(INSTALL) -d $(DESTDIR)$(ASTDATADIR)/static-http/docs ; \
+-		$(INSTALL) -d "$(DESTDIR)$(ASTDATADIR)/static-http/docs" ; \
 +		$(INSTALL) -d $(DESTDIR)$(DOCSDIR) ; \
 +		$(INSTALL) -d $(DESTDIR)$(DOCSDIR)/images ; \
  		for n in doc/tex/asterisk/* ; do \
--			$(INSTALL) -m 644 $$n $(DESTDIR)$(ASTDATADIR)/static-http/docs ; \
+-			$(INSTALL) -m 644 $$n "$(DESTDIR)$(ASTDATADIR)/static-http/docs" ; \
 +			$(INSTALL) -m 644 $$n $(DESTDIR)$(DOCSDIR) ; \
  		done \
  	fi
 +	if [ ! -d $(DESTDIR)$(DOCSDIR)/images ]; then \
 +		$(MKDIR) $(DESTDIR)$(DOCSDIR)/images; \
 +	fi
++
  	for x in images/*.jpg; do \
--		$(INSTALL) -m 644 $$x $(DESTDIR)$(ASTDATADIR)/images ; \
+-		$(INSTALL) -m 644 $$x "$(DESTDIR)$(ASTDATADIR)/images" ; \
 +		$(INSTALL) -m 644 $$x $(DESTDIR)$(DOCSDIR)/images ; \
  	done
  	$(MAKE) -C sounds install
  
-@@ -529,6 +535,7 @@
+@@ -529,6 +536,7 @@
  	$(INSTALL) -d "$(DESTDIR)$(ASTSPOOLDIR)/dictate"
  	$(INSTALL) -d "$(DESTDIR)$(ASTSPOOLDIR)/meetme"
  	$(INSTALL) -d "$(DESTDIR)$(ASTSPOOLDIR)/monitor"
@@ -61,7 +62,7 @@
  	$(INSTALL) -d "$(DESTDIR)$(ASTSPOOLDIR)/system"
  	$(INSTALL) -d "$(DESTDIR)$(ASTSPOOLDIR)/tmp"
  	$(INSTALL) -d "$(DESTDIR)$(ASTSPOOLDIR)/voicemail"
-@@ -550,6 +557,7 @@
+@@ -550,6 +558,7 @@
  	$(INSTALL) -d "$(DESTDIR)$(ASTDATADIR)/static-http"
  	$(INSTALL) -d "$(DESTDIR)$(ASTMANDIR)/man8"
  	$(INSTALL) -d "$(DESTDIR)$(AGI_DIR)"
@@ -69,7 +70,7 @@
  
  bininstall: _all installdirs $(SUBDIRS_INSTALL)
  	$(INSTALL) -m 755 main/asterisk $(DESTDIR)$(ASTSBINDIR)/
-@@ -609,7 +617,7 @@
+@@ -609,7 +618,7 @@
  	@exit 1
  endif
  
@@ -78,7 +79,7 @@
  	@if [ -x /usr/sbin/asterisk-post-install ]; then \
  		/usr/sbin/asterisk-post-install $(DESTDIR) . ; \
  	fi
-@@ -651,29 +659,18 @@
+@@ -651,29 +660,18 @@
  		else \
  			echo "Installing $$x" ; \
  		fi ; \
