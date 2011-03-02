@@ -20,7 +20,7 @@ LIB_DEPENDS=	nspr4.1:${PORTSDIR}/devel/nspr \
 
 _MAJOR=	3
 _MINOR=	12
-_PATCH=	8
+_PATCH=	9
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/mozilla/security/nss
 
@@ -75,6 +75,8 @@ post-patch:
 	@cd ${WRKSRC} && \
 		${FIND} . -name "*.c" -o -name "*.h" | \
 		${XARGS} ${REINPLACE_CMD} -e 's|"nspr.h"|<nspr.h>|'
+	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g' \
+		${WRKSRC}/lib/softoken/manifest.mn
 
 do-install:
 	${MKDIR} ${PREFIX}/include/nss/nss ${PREFIX}/lib/nss
