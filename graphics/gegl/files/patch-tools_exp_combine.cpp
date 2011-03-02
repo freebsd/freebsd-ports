@@ -5,7 +5,7 @@
  #include <cmath>
  
 +#include <sys/param.h>
-+#if __FreeBSD_version < 704000 || (__FreeBSD_version > 800000 && __FreeBSD_version < 802000) || (__FreeBSD_version > 900000 && __FreeBSD_version < 900027)
++#if __FreeBSD_version <= 704100 || (__FreeBSD_version >= 800000 && __FreeBSD_version <= 802501) || (__FreeBSD_version >= 900000 && __FreeBSD_version < 900027)
 +#define log2f(x) (logf(x) / logf(2))
 +#endif
 +
