@@ -20,6 +20,8 @@ RUN_DEPENDS=	rubygem-mixlib-log>=0:${PORTSDIR}/devel/rubygem-mixlib-log \
 		rubygem-extlib>=0:${PORTSDIR}/devel/rubygem-extlib \
 		rubygem-json>=1.4.4:${PORTSDIR}/devel/rubygem-json
 
+BROKEN=		does not install
+
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
