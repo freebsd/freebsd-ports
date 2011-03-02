@@ -28,12 +28,16 @@ bin/virtualenvwrapper.sh
 %%PORTDOCS%%%%DOCSDIR%%/en/_sources/plugins.txt
 %%PORTDOCS%%%%DOCSDIR%%/en/_sources/scripts.txt
 %%PORTDOCS%%%%DOCSDIR%%/en/_sources/tips.txt
+%%PORTDOCS%%%%DOCSDIR%%/en/_static/agogo.css
 %%PORTDOCS%%%%DOCSDIR%%/en/_static/basic.css
+%%PORTDOCS%%%%DOCSDIR%%/en/_static/bgfooter.png
+%%PORTDOCS%%%%DOCSDIR%%/en/_static/bgtop.png
 %%PORTDOCS%%%%DOCSDIR%%/en/_static/contents.png
 %%PORTDOCS%%%%DOCSDIR%%/en/_static/doctools.js
 %%PORTDOCS%%%%DOCSDIR%%/en/_static/file.png
 %%PORTDOCS%%%%DOCSDIR%%/en/_static/jquery.js
 %%PORTDOCS%%%%DOCSDIR%%/en/_static/minus.png
+%%PORTDOCS%%%%DOCSDIR%%/en/_static/nature.css
 %%PORTDOCS%%%%DOCSDIR%%/en/_static/navigation.png
 %%PORTDOCS%%%%DOCSDIR%%/en/_static/plus.png
 %%PORTDOCS%%%%DOCSDIR%%/en/_static/pygments.css
@@ -62,12 +66,16 @@ bin/virtualenvwrapper.sh
 %%PORTDOCS%%%%DOCSDIR%%/es/_sources/plugins.txt
 %%PORTDOCS%%%%DOCSDIR%%/es/_sources/scripts.txt
 %%PORTDOCS%%%%DOCSDIR%%/es/_sources/tips.txt
+%%PORTDOCS%%%%DOCSDIR%%/es/_static/agogo.css
 %%PORTDOCS%%%%DOCSDIR%%/es/_static/basic.css
+%%PORTDOCS%%%%DOCSDIR%%/es/_static/bgfooter.png
+%%PORTDOCS%%%%DOCSDIR%%/es/_static/bgtop.png
 %%PORTDOCS%%%%DOCSDIR%%/es/_static/contents.png
 %%PORTDOCS%%%%DOCSDIR%%/es/_static/doctools.js
 %%PORTDOCS%%%%DOCSDIR%%/es/_static/file.png
 %%PORTDOCS%%%%DOCSDIR%%/es/_static/jquery.js
 %%PORTDOCS%%%%DOCSDIR%%/es/_static/minus.png
+%%PORTDOCS%%%%DOCSDIR%%/es/_static/nature.css
 %%PORTDOCS%%%%DOCSDIR%%/es/_static/navigation.png
 %%PORTDOCS%%%%DOCSDIR%%/es/_static/plus.png
 %%PORTDOCS%%%%DOCSDIR%%/es/_static/pygments.css
@@ -86,6 +94,47 @@ bin/virtualenvwrapper.sh
 %%PORTDOCS%%%%DOCSDIR%%/es/search.html
 %%PORTDOCS%%%%DOCSDIR%%/es/searchindex.js
 %%PORTDOCS%%%%DOCSDIR%%/es/tips.html
+%%PORTDOCS%%%%DOCSDIR%%/ja/_sources/command_ref.txt
+%%PORTDOCS%%%%DOCSDIR%%/ja/_sources/developers.txt
+%%PORTDOCS%%%%DOCSDIR%%/ja/_sources/extensions.txt
+%%PORTDOCS%%%%DOCSDIR%%/ja/_sources/history.txt
+%%PORTDOCS%%%%DOCSDIR%%/ja/_sources/hooks.txt
+%%PORTDOCS%%%%DOCSDIR%%/ja/_sources/index.txt
+%%PORTDOCS%%%%DOCSDIR%%/ja/_sources/install.txt
+%%PORTDOCS%%%%DOCSDIR%%/ja/_sources/plugins.txt
+%%PORTDOCS%%%%DOCSDIR%%/ja/_sources/scripts.txt
+%%PORTDOCS%%%%DOCSDIR%%/ja/_sources/tips.txt
+%%PORTDOCS%%%%DOCSDIR%%/ja/_static/agogo.css
+%%PORTDOCS%%%%DOCSDIR%%/ja/_static/basic.css
+%%PORTDOCS%%%%DOCSDIR%%/ja/_static/bgfooter.png
+%%PORTDOCS%%%%DOCSDIR%%/ja/_static/bgtop.png
+%%PORTDOCS%%%%DOCSDIR%%/ja/_static/contents.png
+%%PORTDOCS%%%%DOCSDIR%%/ja/_static/doctools.js
+%%PORTDOCS%%%%DOCSDIR%%/ja/_static/file.png
+%%PORTDOCS%%%%DOCSDIR%%/ja/_static/jquery.js
+%%PORTDOCS%%%%DOCSDIR%%/ja/_static/minus.png
+%%PORTDOCS%%%%DOCSDIR%%/ja/_static/nature.css
+%%PORTDOCS%%%%DOCSDIR%%/ja/_static/navigation.png
+%%PORTDOCS%%%%DOCSDIR%%/ja/_static/plus.png
+%%PORTDOCS%%%%DOCSDIR%%/ja/_static/pygments.css
+%%PORTDOCS%%%%DOCSDIR%%/ja/_static/searchtools.js
+%%PORTDOCS%%%%DOCSDIR%%/ja/_static/sphinxdoc.css
+%%PORTDOCS%%%%DOCSDIR%%/ja/_static/underscore.js
+%%PORTDOCS%%%%DOCSDIR%%/ja/command_ref.html
+%%PORTDOCS%%%%DOCSDIR%%/ja/developers.html
+%%PORTDOCS%%%%DOCSDIR%%/ja/extensions.html
+%%PORTDOCS%%%%DOCSDIR%%/ja/history.html
+%%PORTDOCS%%%%DOCSDIR%%/ja/hooks.html
+%%PORTDOCS%%%%DOCSDIR%%/ja/index.html
+%%PORTDOCS%%%%DOCSDIR%%/ja/install.html
+%%PORTDOCS%%%%DOCSDIR%%/ja/plugins.html
+%%PORTDOCS%%%%DOCSDIR%%/ja/scripts.html
+%%PORTDOCS%%%%DOCSDIR%%/ja/search.html
+%%PORTDOCS%%%%DOCSDIR%%/ja/searchindex.js
+%%PORTDOCS%%%%DOCSDIR%%/ja/tips.html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/ja/_static
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/ja/_sources
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/ja
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/es/_static
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/es/_sources
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/es
