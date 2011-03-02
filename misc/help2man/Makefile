@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	help2man
-PORTVERSION=	1.38.4
+PORTVERSION=	1.39.1
 CATEGORIES=	misc
 MASTER_SITES=	GNU/${PORTNAME}
 
@@ -34,7 +34,7 @@ CFLAGS+=	-lintl
 MANLANG=	"" ${LANGS}
 USE_GETTEXT=	yes
 
-LANGS=		de el fi fr it pl pt_BR ru sv vi
+LANGS=		de el fi fr it pl pt_BR ru sv uk vi
 
 PLIST_FILES+=	lib/bindtextdomain.so
 .for lang in ${LANGS}
