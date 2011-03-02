@@ -1,0 +1,14 @@
+--- Makefile.orig	2011-03-02 06:09:16.000000000 +0000
++++ Makefile	2011-03-02 06:10:20.000000000 +0000
+@@ -74,9 +74,10 @@
+ 	rm -f speedtest
+ 
+ install:
++	install -d $(INSTALLDIR)
+ 	cp cryptokit.cmi cryptokit.cma cryptokit.mli $(INSTALLDIR)
+ 	cp libcryptokit.a $(INSTALLDIR)
+-	if test -f dllcryptokit.so; then cp dllcryptokit.so $(INSTALLDIR)/stublibs; fi
++	if test -f dllcryptokit.so; then cp dllcryptokit.so $(INSTALLDIR); fi
+ 	if test -f cryptokit.cmxa; then cp cryptokit.cmxa cryptokit.cmx cryptokit.a $(INSTALLDIR); fi
+ 
+ doc: FORCE
