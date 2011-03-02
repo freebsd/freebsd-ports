@@ -1437,79 +1437,95 @@
 +	DataRecord	*Items;
  	PRStack		*list1, *list2;
  	PRStackElem	*node;
---- ../pr/tests/suspend.c	Sun Apr 25 11:01:02 2004
-+++ ../pr/tests/suspend.c	Mon Jul 25 22:28:14 2005
-@@ -74,5 +74,5 @@
+--- ../pr/tests/suspend.c.orig	2010-09-24 20:14:40.000000000 +0200
++++ ../pr/tests/suspend.c	2011-01-15 13:56:43.000000000 +0100
+@@ -62,14 +62,14 @@
+ Level_2_Thread(void *arg)
  {
      PR_Sleep(PR_MillisecondsToInterval(4 * 1000));
 -    printf("Level_2_Thread[0x%lx] exiting\n",PR_GetCurrentThread());
 +    printf("Level_2_Thread[%p] exiting\n",PR_GetCurrentThread());
      return;
  }
-@@ -81,5 +81,5 @@
+ 
+ void PR_CALLBACK
  Level_1_Thread(void *arg)
  {
 -    PRUint32 tmp = (PRUint32)arg;
 +    PRUint32 tmp = (PRUint32)(uintptr_t)arg;
      PRThreadScope scope = (PRThreadScope) tmp;
      PRThread *thr;
-@@ -96,5 +96,5 @@
+ 
+@@ -84,7 +84,7 @@
+     if (!thr) {
          printf("Could not create thread!\n");
      } else {
 -        printf("Level_1_Thread[0x%lx] created %15s thread 0x%lx\n",
 +        printf("Level_1_Thread[%p] created %15s thread %p\n",
              PR_GetCurrentThread(),
              (scope == PR_GLOBAL_THREAD) ?
-@@ -107,5 +107,5 @@
+             "PR_GLOBAL_THREAD" : "PR_LOCAL_THREAD",
+@@ -95,7 +95,7 @@
+     alive--;
      PR_Notify(mon);
      PR_ExitMonitor(mon);
 -    printf("Thread[0x%lx] exiting\n",PR_GetCurrentThread());
 +    printf("Thread[%p] exiting\n",PR_GetCurrentThread());
  }
  
-@@ -116,11 +116,12 @@
+ static PRStatus PR_CALLBACK print_thread(PRThread *thread, int i, void *arg)
+@@ -104,14 +104,15 @@
+     PRWord *registers;
  
      printf(
 -        "\nprint_thread[0x%lx]: %-20s - i = %ld\n",thread, 
-+        "\nprint_thread[%p]: %-20s - i = %d\n",thread, 
++        "\nprint_thread[%p]: %-20s - i = %ld\n",thread, 
          (PR_GLOBAL_THREAD == PR_GetThreadScope(thread)) ?
          "PR_GLOBAL_THREAD" : "PR_LOCAL_THREAD", i);
      registers = PR_GetGCRegisters(thread, 0, (int *)&words);
--    printf("Regsters R0 = 0x%x R1 = 0x%x R2 = 0x%x R3 = 0x%x\n",
--        registers[0],registers[1],registers[2],registers[3]);
+     if (registers)
+-        printf("Registers R0 = 0x%x R1 = 0x%x R2 = 0x%x R3 = 0x%x\n",
+-            registers[0],registers[1],registers[2],registers[3]);
 -    printf("Stack Pointer = 0x%lx\n", PR_GetSP(thread));
-+    printf("Regsters R0 = 0x%lx R1 = 0x%lx R2 = 0x%lx R3 = 0x%lx\n",
-+        (unsigned long)registers[0], (unsigned long)registers[1],
-+	(unsigned long)registers[2], (unsigned long)registers[3]);
++        printf("Regsters R0 = 0x%lx R1 = 0x%lx R2 = 0x%lx R3 = 0x%lx\n",
++           (unsigned long)registers[0], (unsigned long)registers[1],
++           (unsigned long)registers[2], (unsigned long)registers[3]);
 +    printf("Stack Pointer = %p\n", PR_GetSP(thread));
      return PR_SUCCESS;
  }
-@@ -150,5 +151,5 @@
+ 
+@@ -139,7 +140,7 @@
+             printf("Could not create thread!\n");
              alive--;
          }
 -        printf("Level_0_Thread[0x%lx] created %15s thread 0x%lx\n",
 +        printf("Level_0_Thread[%p] created %15s thread %p\n",
              PR_GetCurrentThread(),
              (scope1 == PR_GLOBAL_THREAD) ?
-@@ -161,7 +162,8 @@
+             "PR_GLOBAL_THREAD" : "PR_LOCAL_THREAD",
+@@ -151,9 +152,10 @@
      PR_EnumerateThreads(print_thread, NULL);
      registers = PR_GetGCRegisters(me, 1, (int *)&words);
--    printf("My Registers: R0 = 0x%x R1 = 0x%x R2 = 0x%x R3 = 0x%x\n",
--        registers[0],registers[1],registers[2],registers[3]);
+     if (registers)
+-        printf("My Registers: R0 = 0x%x R1 = 0x%x R2 = 0x%x R3 = 0x%x\n",
+-            registers[0],registers[1],registers[2],registers[3]);
 -    printf("My Stack Pointer = 0x%lx\n", PR_GetSP(me));
-+    printf("My Registers: R0 = 0x%lx R1 = 0x%lx R2 = 0x%lx R3 = 0x%lx\n",
-+        (unsigned long)registers[0], (unsigned long)registers[1],
-+	(unsigned long)registers[2], (unsigned long)registers[3]);
++        printf("My Registers: R0 = 0x%lx R1 = 0x%lx R2 = 0x%lx R3 = 0x%lx\n",
++            (unsigned long)registers[0], (unsigned long)registers[1],
++            (unsigned long)registers[2], (unsigned long)registers[3]);
 +    printf("My Stack Pointer = %p\n", PR_GetSP(me));
      PR_ResumeAll();
  
-@@ -227,4 +229,6 @@
+     /* Wait for all threads to exit */
+@@ -212,6 +214,8 @@
+     CreateThreadsUU();
      CreateThreadsKU();
      PR_Cleanup();
 +
 +    return 0;
  }
  
+ #endif /* XP_BEOS */
 --- ../pr/tests/testfile.c	Tue Jun 20 17:46:54 2000
 +++ ../pr/tests/testfile.c	Mon Jul 25 22:36:39 2005
 @@ -69,4 +69,7 @@
