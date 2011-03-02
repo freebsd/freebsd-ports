@@ -21,7 +21,7 @@ USE_LDCONFIG=	${PREFIX}/lib/event2
 OPTIONS=	OPENSSL "Enable OpenSSL support" on \
 		THREADS "Enable threads support" on
 
-CONFIGURE_ARGS+=	--libdir=${LOCALBASE}/lib/event2
+CONFIGURE_ARGS+=	--libdir=${PREFIX}/lib/event2
 
 .include <bsd.port.options.mk>
 
