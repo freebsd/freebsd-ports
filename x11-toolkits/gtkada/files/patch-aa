@@ -1,0 +1,11 @@
+--- testgtk/testcairo_printing.ads.orig	2010-12-03 08:55:04 +0000
++++ testgtk/testcairo_printing.ads
+@@ -48,7 +48,7 @@ package Testcairo_Printing is
+      Testcairo_Print_Operation_Record'Class;
+ 
+    overriding procedure Draw_Page
+-     (Op          : not null access Testcairo_Print_Operation_Record;
++     (Op          : access Testcairo_Print_Operation_Record;
+       Context     : Gtk_Print_Context;
+       Page_Number : Gint);
+    --  Handler responsible for printing pages
