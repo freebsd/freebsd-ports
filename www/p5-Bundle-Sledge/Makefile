@@ -18,7 +18,14 @@ COMMENT=	A bundle to install all modules used for Sledge
 BUILD_DEPENDS=	${PM_DEPENDS}
 RUN_DEPENDS=	${PM_DEPENDS}
 
+USE_APACHE=	13+
+.include <bsd.port.pre.mk>
+
+.if ${APACHE_VERSION} == 13
 PM_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Apache/Request.pm:${PORTSDIR}/www/p5-libapreq
+.else
+PM_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Apache2/Request.pm:${PORTSDIR}/www/p5-libapreq2
+.endif
 PM_DEPENDS+=	${SITE_PERL}/Apache/Reload.pm:${PORTSDIR}/www/p5-Apache-Reload
 PM_DEPENDS+=	${SITE_PERL}/Test/Inline.pm:${PORTSDIR}/devel/p5-Test-Inline
 PM_DEPENDS+=	${SITE_PERL}/Carp/Assert.pm:${PORTSDIR}/devel/p5-Carp-Assert
@@ -45,4 +52,4 @@ MAN3=		Bundle::Sledge.3
 
 JCODE=	${SITE_PERL}/Jcode.pm
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
