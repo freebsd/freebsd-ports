@@ -1416,7 +1416,7 @@ you update your ports collection, before attempting any port upgrades.
 
 20100207:
   AFFECTS: users of www/firefox
-  AUTHOR: beat@FreeBSD.org
+  AUTHORS: beat@FreeBSD.org, mandree@FreeBSD.org (Java plugin)
 
   The www/firefox port has been updated to 3.6.  From now on www/firefox
   will contain the most recent version of Firefox.  Older but still
@@ -1427,8 +1427,13 @@ you update your ports collection, before attempting any port upgrades.
   make sure all your addons are compatible with Firefox 3.6 and backup
   your ~/.mozilla directory prior to the first launch of Firefox 3.6.
 
-  The Java plugin will not work with Firefox 3.6.  If you need Java in
-  your browser, please use www/firefox35 instead.
+  Note that in order to use Java with Firefox 3.6, you need to install
+  java/openjdk6 and use the Iced Tea plugin.  To achieve that, each user
+  needs to create a symlink to the Icedtea plugin as described in the
+  Browsers/Firefox and Java[tm] Plugin section in the handbook:
+
+	ln -s /usr/local/openjdk6/jre/lib/IcedTeaPlugin.so \
+	$HOME/.mozilla/plugins
 
 20100207:
   AFFECTS: users of Mesa3D libraries and x11-drivers/xf86-video-nouveau
