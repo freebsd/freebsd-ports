@@ -10,7 +10,7 @@ PORTVERSION=	0.8.4
 CATEGORIES=	science
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION:R}.x/
 
-MAINTAINER=	c.petrik.sosa@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Distributed real-time 3D visualization tool for robotics researchers
 
 LIB_DEPENDS=	boost_regex.4:${PORTSDIR}/devel/boost-libs \

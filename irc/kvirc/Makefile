@@ -18,7 +18,7 @@ MASTER_SITES=	ftp://ftp.kvirc.de/pub/kvirc/%SUBDIR%/ \
 		http://kvirc.bcoos.net/%SUBDIR%/
 MASTER_SITE_SUBDIR=	${PORTVERSION}/source
 
-MAINTAINER=	c.petrik.sosa@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT?=	IRC client for KDE4
 
 .if !defined(PKGNAMESUFFIX)

@@ -10,7 +10,7 @@ PORTVERSION=	0.3.7
 CATEGORIES=	ftp
 MASTER_SITES=	http://www.bareftp.org/release/
 
-MAINTAINER=	c.petrik.sosa@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Ftp client made in C sharp
 
 GNU_CONFIGURE=	yes
