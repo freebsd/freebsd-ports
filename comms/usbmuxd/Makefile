@@ -26,7 +26,7 @@ PORTDOCS=	AUTHORS README README.devel
 .if ${OSVERSION} == 800107 || ${OSVERSION} == 900002
 HAVE_LIBUSB104!=	${GREP} --quiet "libusb_fill_bulk_transfer" \
 				/usr/include/libusb.h \
-				&& ${ECHO} yes || ${ECHO} no
+				&& ${ECHO_CMD} yes || ${ECHO_CMD} no
 .elif ${OSVERSION} > 800107 && ${OSVERSION} < 900000 || ${OSVERSION} > 900002
 HAVE_LIBUSB104=		yes
 .else
