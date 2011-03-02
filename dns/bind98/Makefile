@@ -12,8 +12,7 @@
 # release you can generally build it cleanly from the source - Doug
 
 PORTNAME=	bind98
-PORTVERSION=	9.8.0.r1
-PKGNAMESUFFIX=	-devel
+PORTVERSION=	9.8.0
 CATEGORIES=	dns net ipv6
 MASTER_SITES=	${MASTER_SITE_ISC} \
 		http://dougbarton.us/Downloads/%SUBDIR%/
@@ -26,7 +25,7 @@ MAINTAINER=	dougb@FreeBSD.org
 COMMENT=	The BIND DNS suite with updated DNSSEC and DNS64
 
 # ISC releases things like 9.4.0b3, which our versioning doesn't like
-ISCVERSION=	9.8.0rc1
+ISCVERSION=	9.8.0
 
 MAKE_JOBS_UNSAFE=	yes
 
@@ -35,7 +34,7 @@ CONFIGURE_ARGS=	--localstatedir=/var --disable-linux-caps \
 		--disable-symtable \
 		--with-randomdev=/dev/random
 
-CONFLICTS=	bind9*-9.[4567].* bind9-sdb-* host-* bind-tools-9.*
+CONFLICTS=	bind9*-9.[45679].* bind9-sdb-* host-* bind-tools-9.*
 
 OPTIONS=	SSL "Building without OpenSSL removes DNSSEC" on \
 		LINKS "Create conf file symlinks in ${PREFIX}" on \
