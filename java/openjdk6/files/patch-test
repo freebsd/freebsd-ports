@@ -48,6 +48,41 @@
          SocketChannel sc = SocketChannel.open(sa);
          boolean before = sc.socket().isInputShutdown();
          sc.socket().shutdownInput();
+--- jdk/test/java/nio/charset/Charset/default.sh	2011-03-01 14:11:37.000000000 -0500
++++ jdk/test/java/nio/charset/Charset/default.sh	2011-03-01 18:57:04.000000000 -0500
+@@ -76,22 +76,20 @@
+ 
+ }
+ 
+-go  en_US       iso-8859-1
+-go  ja_JP.utf8  utf-8
+-go  tr_TR       iso-8859-9
+-go  C           us-ascii
++go  en_US            iso-8859-1
++go  ja_JP.UTF-8      utf-8
++go  tr_TR.ISO-8859-9 iso-8859-9
++go  C                iso-8859-1
+ 
++# FreeBSD
+ if [ "$s" = FreeBSD ]; then
+-  go  ja_JP        x-euc-jp-linux
+-  go  ja_JP.eucjp  x-euc-jp-linux
+-  go  ja_JP.ujis   x-euc-jp-linux
+-  go  ja_JP.utf8   utf-8
++  go  ja_JP.eucJP    euc-jp
++  go  ja_JP.SJIS     shift_jis
+ fi
+ 
+ # Solaris
+ if [ "$s" = SunOS ]; then
+-  go  ja           x-eucjp-open
+-  go  ja_JP.eucJP  x-eucjp-open
+-  go  ja_JP.PCK    x-PCK
+-  go  ja_JP.UTF-8  utf-8
++  go  ja             x-eucjp-open
++  go  ja_JP.eucJP    x-eucjp-open
++  go  ja_JP.PCK      x-PCK
+ fi
 --- jdk/test/sun/net/InetAddress/nameservice/dns/cname.sh	2010-01-18 12:04:54.000000000 +0100
 +++ jdk/test/sun/net/InetAddress/nameservice/dns/cname.sh	2010-01-18 12:05:15.000000000 +0100
 @@ -33,7 +33,7 @@
