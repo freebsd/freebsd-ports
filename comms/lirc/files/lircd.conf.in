@@ -1,0 +1,558 @@
+
+# Please make this file available to others
+# by sending it to <lirc@bartelmus.de>
+#
+# (a first version of) this config file was automatically generated
+# using lirc-0.9.0-pre1(default) on Sat Feb  5 19:57:13 2011
+#
+# contributed by 
+#
+# brand:                       webcamd RC5 emulation
+# model no. of remote control: 
+# devices being controlled by this remote:
+#
+#   USB DVB tuner remotes supported by the Linux code used by webcamd
+#
+
+begin remote
+
+  name  webcamd_RC5_emu
+  bits           13
+  flags RC5
+  eps            30
+  aeps          100
+
+  one           900   900
+  zero          900   900
+  plead         900
+  gap          110000
+#  min_repeat      1
+#  suppress_repeat 1
+#  uncomment to suppress unwanted repeats
+  toggle_bit_mask 0x0
+
+      begin codes
+          KEY_ESC                  0x1001
+          KEY_1                    0x1002
+          KEY_2                    0x1003
+          KEY_3                    0x1004
+          KEY_4                    0x1005
+          KEY_5                    0x1006
+          KEY_6                    0x1007
+          KEY_7                    0x1008
+          KEY_8                    0x1009
+          KEY_9                    0x100a
+          KEY_0                    0x100b
+          KEY_MINUS                0x100c
+          KEY_EQUAL                0x100d
+          KEY_BACKSPACE            0x100e
+          KEY_TAB                  0x100f
+          KEY_Q                    0x1010
+          KEY_W                    0x1011
+          KEY_E                    0x1012
+          KEY_R                    0x1013
+          KEY_T                    0x1014
+          KEY_Y                    0x1015
+          KEY_U                    0x1016
+          KEY_I                    0x1017
+          KEY_O                    0x1018
+          KEY_P                    0x1019
+          KEY_LEFTBRACE            0x101a
+          KEY_RIGHTBRACE           0x101b
+          KEY_ENTER                0x101c
+          KEY_LEFTCTRL             0x101d
+          KEY_A                    0x101e
+          KEY_S                    0x101f
+          KEY_D                    0x1020
+          KEY_F                    0x1021
+          KEY_G                    0x1022
+          KEY_H                    0x1023
+          KEY_J                    0x1024
+          KEY_K                    0x1025
+          KEY_L                    0x1026
+          KEY_SEMICOLON            0x1027
+          KEY_APOSTROPHE           0x1028
+          KEY_GRAVE                0x1029
+          KEY_LEFTSHIFT            0x102a
+          KEY_BACKSLASH            0x102b
+          KEY_Z                    0x102c
+          KEY_X                    0x102d
+          KEY_C                    0x102e
+          KEY_V                    0x102f
+          KEY_B                    0x1030
+          KEY_N                    0x1031
+          KEY_M                    0x1032
+          KEY_COMMA                0x1033
+          KEY_DOT                  0x1034
+          KEY_SLASH                0x1035
+          KEY_RIGHTSHIFT           0x1036
+          KEY_KPASTERISK           0x1037
+          KEY_LEFTALT              0x1038
+          KEY_SPACE                0x1039
+          KEY_CAPSLOCK             0x103a
+          KEY_F1                   0x103b
+          KEY_F2                   0x103c
+          KEY_F3                   0x103d
+          KEY_F4                   0x103e
+          KEY_F5                   0x103f
+          KEY_F6                   0x1040
+          KEY_F7                   0x1041
+          KEY_F8                   0x1042
+          KEY_F9                   0x1043
+          KEY_F10                  0x1044
+          KEY_NUMLOCK              0x1045
+          KEY_SCROLLLOCK           0x1046
+          KEY_KP7                  0x1047
+          KEY_KP8                  0x1048
+          KEY_KP9                  0x1049
+          KEY_KPMINUS              0x104a
+          KEY_KP4                  0x104b
+          KEY_KP5                  0x104c
+          KEY_KP6                  0x104d
+          KEY_KPPLUS               0x104e
+          KEY_KP1                  0x104f
+          KEY_KP2                  0x1050
+          KEY_KP3                  0x1051
+          KEY_KP0                  0x1052
+          KEY_KPDOT                0x1053
+
+          KEY_ZENKAKUHANKAKU       0x1055
+          KEY_102ND                0x1056
+          KEY_F11                  0x1057
+          KEY_F12                  0x1058
+          KEY_RO                   0x1059
+          KEY_KATAKANA             0x105a
+          KEY_HIRAGANA             0x105b
+          KEY_HENKAN               0x105c
+          KEY_KATAKANAHIRAGANA     0x105d
+          KEY_MUHENKAN             0x105e
+          KEY_KPJPCOMMA            0x105f
+          KEY_KPENTER              0x1060
+          KEY_RIGHTCTRL            0x1061
+          KEY_KPSLASH              0x1062
+          KEY_SYSRQ                0x1063
+          KEY_RIGHTALT             0x1064
+          KEY_LINEFEED             0x1065
+          KEY_HOME                 0x1066
+          KEY_UP                   0x1067
+          KEY_PAGEUP               0x1068
+          KEY_LEFT                 0x1069
+          KEY_RIGHT                0x106a
+          KEY_END                  0x106b
+          KEY_DOWN                 0x106c
+          KEY_PAGEDOWN             0x106d
+          KEY_INSERT               0x106e
+          KEY_DELETE               0x106f
+          KEY_MACRO                0x1070
+          KEY_MUTE                 0x1071
+          KEY_VOLUMEDOWN           0x1072
+          KEY_VOLUMEUP             0x1073
+          KEY_POWER                0x1074
+          KEY_KPEQUAL              0x1075
+          KEY_KPPLUSMINUS          0x1076
+          KEY_PAUSE                0x1077
+          KEY_SCALE                0x1078
+
+          KEY_KPCOMMA              0x1079
+          KEY_HANGUEL              0x107a
+          KEY_HANJA                0x107b
+          KEY_YEN                  0x107c
+          KEY_LEFTMETA             0x107d
+          KEY_RIGHTMETA            0x107e
+          KEY_COMPOSE              0x107f
+
+          KEY_STOP                 0x1080
+          KEY_AGAIN                0x1081
+          KEY_PROPS                0x1082
+          KEY_UNDO                 0x1083
+          KEY_FRONT                0x1084
+          KEY_COPY                 0x1085
+          KEY_OPEN                 0x1086
+          KEY_PASTE                0x1087
+          KEY_FIND                 0x1088
+          KEY_CUT                  0x1089
+          KEY_HELP                 0x108a
+          KEY_MENU                 0x108b
+          KEY_CALC                 0x108c
+          KEY_SETUP                0x108d
+          KEY_SLEEP                0x108e
+          KEY_WAKEUP               0x108f
+          KEY_FILE                 0x1090
+          KEY_SENDFILE             0x1091
+          KEY_DELETEFILE           0x1092
+          KEY_XFER                 0x1093
+          KEY_PROG1                0x1094
+          KEY_PROG2                0x1095
+          KEY_WWW                  0x1096
+          KEY_MSDOS                0x1097
+          KEY_SCREENLOCK           0x1098
+          KEY_DIRECTION            0x1099
+          KEY_CYCLEWINDOWS         0x109a
+          KEY_MAIL                 0x109b
+          KEY_BOOKMARKS            0x109c
+          KEY_COMPUTER             0x109d
+          KEY_BACK                 0x109e
+          KEY_FORWARD              0x109f
+          KEY_CLOSECD              0x10a0
+          KEY_EJECTCD              0x10a1
+          KEY_EJECTCLOSECD         0x10a2
+          KEY_NEXTSONG             0x10a3
+          KEY_PLAYPAUSE            0x10a4
+          KEY_PREVIOUSSONG         0x10a5
+          KEY_STOPCD               0x10a6
+          KEY_RECORD               0x10a7
+          KEY_REWIND               0x10a8
+          KEY_PHONE                0x10a9
+          KEY_ISO                  0x10aa
+          KEY_CONFIG               0x10ab
+          KEY_HOMEPAGE             0x10ac
+          KEY_REFRESH              0x10ad
+          KEY_EXIT                 0x10ae
+          KEY_MOVE                 0x10af
+          KEY_EDIT                 0x10b0
+          KEY_SCROLLUP             0x10b1
+          KEY_SCROLLDOWN           0x10b2
+          KEY_KPLEFTPAREN          0x10b3
+          KEY_KPRIGHTPAREN         0x10b4
+          KEY_NEW                  0x10b5
+          KEY_REDO                 0x10b6
+
+          KEY_F13                  0x10b7
+          KEY_F14                  0x10b8
+          KEY_F15                  0x10b9
+          KEY_F16                  0x10ba
+          KEY_F17                  0x10bb
+          KEY_F18                  0x10bc
+          KEY_F19                  0x10bd
+          KEY_F20                  0x10be
+          KEY_F21                  0x10bf
+          KEY_F22                  0x10c0
+          KEY_F23                  0x10c1
+          KEY_F24                  0x10c2
+
+          KEY_PLAYCD	           0x10c8
+          KEY_PAUSECD              0x10c9
+          KEY_PROG3                0x10ca
+          KEY_PROG4                0x10cb
+          KEY_DASHBOARD            0x10cc
+          KEY_SUSPEND              0x10cd
+          KEY_CLOSE                0x10ce
+          KEY_PLAY                 0x10cf
+          KEY_FASTFORWARD          0x10d0
+          KEY_BASSBOOST            0x10d1
+          KEY_PRINT                0x10d2
+          KEY_HP                   0x10d3
+          KEY_CAMERA               0x10d4
+          KEY_SOUND                0x10d5
+          KEY_QUESTION             0x10d6
+          KEY_EMAIL                0x10d7
+          KEY_CHAT                 0x10d8
+          KEY_SEARCH               0x10d9
+          KEY_CONNECT              0x10da
+          KEY_FINANCE              0x10db
+          KEY_SPORT                0x10dc
+          KEY_SHOP                 0x10dd
+          KEY_ALTERASE             0x10de
+          KEY_CANCEL               0x10df
+          KEY_BRIGHTNESSDOWN       0x10e0
+          KEY_BRIGHTNESSUP         0x10e1
+          KEY_MEDIA                0x10e2
+
+          KEY_SWITCHVIDEOMODE      0x10e3
+          KEY_KBDILLUMTOGGLE       0x10e4
+          KEY_KBDILLUMDOWN         0x10e5
+          KEY_KBDILLUMUP           0x10e6
+
+          KEY_SEND                 0x10e7
+          KEY_REPLY                0x10e8
+          KEY_FORWARDMAIL          0x10e9
+          KEY_SAVE                 0x10ea
+          KEY_DOCUMENTS            0x10eb
+
+          KEY_BATTERY              0x10ec
+
+          KEY_BLUETOOTH            0x10ed
+          KEY_WLAN                 0x10ee
+          KEY_UWB                  0x10ef
+
+          KEY_UNKNOWN              0x10f0
+
+          KEY_VIDEO_NEXT           0x10f1
+          KEY_VIDEO_PREV           0x10f2
+          KEY_BRIGHTNESS_CYCLE     0x10f3
+          KEY_BRIGHTNESS_ZERO      0x10f4
+          KEY_DISPLAY_OFF          0x10f5
+
+          KEY_WIMAX                0x10f6
+          KEY_RFKILL               0x10f7
+
+          BTN_MISC                 0x1100
+          BTN_0                    0x1100
+          BTN_1                    0x1101
+          BTN_2                    0x1102
+          BTN_3                    0x1103
+          BTN_4                    0x1104
+          BTN_5                    0x1105
+          BTN_6                    0x1106
+          BTN_7                    0x1107
+          BTN_8                    0x1108
+          BTN_9                    0x1109
+
+          BTN_MOUSE                0x1110
+          BTN_LEFT                 0x1110
+          BTN_RIGHT                0x1111
+          BTN_MIDDLE               0x1112
+          BTN_SIDE                 0x1113
+          BTN_EXTRA                0x1114
+          BTN_FORWARD              0x1115
+          BTN_BACK                 0x1116
+          BTN_TASK                 0x1117
+
+          BTN_JOYSTICK             0x1120
+          BTN_TRIGGER              0x1120
+          BTN_THUMB                0x1121
+          BTN_THUMB2               0x1122
+          BTN_TOP                  0x1123
+          BTN_TOP2                 0x1124
+          BTN_PINKIE               0x1125
+          BTN_BASE                 0x1126
+          BTN_BASE2                0x1127
+          BTN_BASE3                0x1128
+          BTN_BASE4                0x1129
+          BTN_BASE5                0x112a
+          BTN_BASE6                0x112b
+          BTN_DEAD                 0x112f
+
+          BTN_GAMEPAD              0x1130
+          BTN_A                    0x1130
+          BTN_B                    0x1131
+          BTN_C                    0x1132
+          BTN_X                    0x1133
+          BTN_Y                    0x1134
+          BTN_Z                    0x1135
+          BTN_TL                   0x1136
+          BTN_TR                   0x1137
+          BTN_TL2                  0x1138
+          BTN_TR2                  0x1139
+          BTN_SELECT               0x113a
+          BTN_START                0x113b
+          BTN_MODE                 0x113c
+          BTN_THUMBL               0x113d
+          BTN_THUMBR               0x113e
+
+          BTN_DIGI                 0x1140
+          BTN_TOOL_PEN             0x1140
+          BTN_TOOL_RUBBER          0x1141
+          BTN_TOOL_BRUSH           0x1142
+          BTN_TOOL_PENCIL          0x1143
+          BTN_TOOL_AIRBRUSH        0x1144
+          BTN_TOOL_FINGER          0x1145
+          BTN_TOOL_MOUSE           0x1146
+          BTN_TOOL_LENS            0x1147
+          BTN_TOUCH                0x114a
+          BTN_STYLUS               0x114b
+          BTN_STYLUS2              0x114c
+          BTN_TOOL_DOUBLETAP       0x114d
+          BTN_TOOL_TRIPLETAP       0x114e
+          BTN_TOOL_QUADTAP         0x114f
+
+          BTN_WHEEL                0x1150
+          BTN_GEAR_DOWN            0x1150
+          BTN_GEAR_UP              0x1151
+
+          KEY_OK                   0x1160
+          KEY_SELECT               0x1161
+          KEY_GOTO                 0x1162
+          KEY_CLEAR                0x1163
+          KEY_POWER2               0x1164
+          KEY_OPTION               0x1165
+          KEY_INFO                 0x1166
+          KEY_TIME                 0x1167
+          KEY_VENDOR               0x1168
+          KEY_ARCHIVE              0x1169
+          KEY_PROGRAM              0x116a
+          KEY_CHANNEL              0x116b
+          KEY_FAVORITES            0x116c
+          KEY_EPG                  0x116d
+          KEY_PVR                  0x116e
+          KEY_MHP                  0x116f
+          KEY_LANGUAGE             0x1170
+          KEY_TITLE                0x1171
+          KEY_SUBTITLE             0x1172
+          KEY_ANGLE                0x1173
+          KEY_ZOOM                 0x1174
+          KEY_MODE                 0x1175
+          KEY_KEYBOARD             0x1176
+          KEY_SCREEN               0x1177
+          KEY_PC                   0x1178
+          KEY_TV                   0x1179
+          KEY_TV2                  0x117a
+          KEY_VCR                  0x117b
+          KEY_VCR2                 0x117c
+          KEY_SAT                  0x117d
+          KEY_SAT2                 0x117e
+          KEY_CD                   0x117f
+          KEY_TAPE                 0x1180
+          KEY_RADIO                0x1181
+          KEY_TUNER                0x1182
+          KEY_PLAYER               0x1183
+          KEY_TEXT                 0x1184
+          KEY_DVD                  0x1185
+          KEY_AUX                  0x1186
+          KEY_MP3                  0x1187
+          KEY_AUDIO                0x1188
+          KEY_VIDEO                0x1189
+          KEY_DIRECTORY            0x118a
+          KEY_LIST                 0x118b
+          KEY_MEMO                 0x118c
+          KEY_CALENDAR             0x118d
+          KEY_RED                  0x118e
+          KEY_GREEN                0x118f
+          KEY_YELLOW               0x1190
+          KEY_BLUE                 0x1191
+          KEY_CHANNELUP            0x1192
+          KEY_CHANNELDOWN          0x1193
+          KEY_FIRST                0x1194
+          KEY_LAST                 0x1195
+          KEY_AB                   0x1196
+          KEY_NEXT                 0x1197
+          KEY_RESTART              0x1198
+          KEY_SLOW                 0x1199
+          KEY_SHUFFLE              0x119a
+          KEY_BREAK                0x119b
+          KEY_PREVIOUS             0x119c
+          KEY_DIGITS               0x119d
+          KEY_TEEN                 0x119e
+          KEY_TWEN                 0x119f
+          KEY_VIDEOPHONE           0x11a0
+          KEY_GAMES                0x11a1
+          KEY_ZOOMIN               0x11a2
+          KEY_ZOOMOUT              0x11a3
+          KEY_ZOOMRESET            0x11a4
+          KEY_WORDPROCESSOR        0x11a5
+          KEY_EDITOR               0x11a6
+          KEY_SPREADSHEET          0x11a7
+          KEY_GRAPHICSEDITOR       0x11a8
+          KEY_PRESENTATION         0x11a9
+          KEY_DATABASE             0x11aa
+          KEY_NEWS                 0x11ab
+          KEY_VOICEMAIL            0x11ac
+          KEY_ADDRESSBOOK          0x11ad
+          KEY_MESSENGER            0x11ae
+          KEY_DISPLAYTOGGLE        0x11af
+          KEY_SPELLCHECK           0x11b0
+          KEY_LOGOFF               0x11b1
+
+          KEY_DOLLAR               0x11b2
+          KEY_EURO                 0x11b3
+
+          KEY_FRAMEBACK            0x11b4
+          KEY_FRAMEFORWARD         0x11b5
+          KEY_CONTEXT_MENU         0x11b6
+          KEY_MEDIA_REPEAT         0x11b7
+
+          KEY_DEL_EOL              0x11c0
+          KEY_DEL_EOS              0x11c1
+          KEY_INS_LINE             0x11c2
+          KEY_DEL_LINE             0x11c3
+
+          KEY_FN                   0x11d0
+          KEY_FN_ESC               0x11d1
+          KEY_FN_F1                0x11d2
+          KEY_FN_F2                0x11d3
+          KEY_FN_F3                0x11d4
+          KEY_FN_F4                0x11d5
+          KEY_FN_F5                0x11d6
+          KEY_FN_F6                0x11d7
+          KEY_FN_F7                0x11d8
+          KEY_FN_F8                0x11d9
+          KEY_FN_F9                0x11da
+          KEY_FN_F10               0x11db
+          KEY_FN_F11               0x11dc
+          KEY_FN_F12               0x11dd
+          KEY_FN_1                 0x11de
+          KEY_FN_2                 0x11df
+          KEY_FN_D                 0x11e0
+          KEY_FN_E                 0x11e1
+          KEY_FN_F                 0x11e2
+          KEY_FN_S                 0x11e3
+          KEY_FN_B                 0x11e4
+
+          KEY_BRL_DOT1             0x11f1
+          KEY_BRL_DOT2             0x11f2
+          KEY_BRL_DOT3             0x11f3
+          KEY_BRL_DOT4             0x11f4
+          KEY_BRL_DOT5             0x11f5
+          KEY_BRL_DOT6             0x11f6
+          KEY_BRL_DOT7             0x11f7
+          KEY_BRL_DOT8             0x11f8
+          KEY_BRL_DOT9             0x11f9
+          KEY_BRL_DOT10            0x11fa
+
+          KEY_NUMERIC_0            0x1200
+          KEY_NUMERIC_1            0x1201
+          KEY_NUMERIC_2            0x1202
+          KEY_NUMERIC_3            0x1203
+          KEY_NUMERIC_4            0x1204
+          KEY_NUMERIC_5            0x1205
+          KEY_NUMERIC_6            0x1206
+          KEY_NUMERIC_7            0x1207
+          KEY_NUMERIC_8            0x1208
+          KEY_NUMERIC_9            0x1209
+          KEY_NUMERIC_STAR         0x120a
+          KEY_NUMERIC_POUND        0x120b
+
+          KEY_CAMERA_FOCUS         0x1210
+          KEY_WPS_BUTTON           0x1211
+
+          KEY_TOUCHPAD_TOGGLE      0x1212
+          KEY_TOUCHPAD_ON          0x1213
+          KEY_TOUCHPAD_OFF         0x1214
+
+          BTN_TRIGGER_HAPPY        0x12c0
+          BTN_TRIGGER_HAPPY1       0x12c0
+          BTN_TRIGGER_HAPPY2       0x12c1
+          BTN_TRIGGER_HAPPY3       0x12c2
+          BTN_TRIGGER_HAPPY4       0x12c3
+          BTN_TRIGGER_HAPPY5       0x12c4
+          BTN_TRIGGER_HAPPY6       0x12c5
+          BTN_TRIGGER_HAPPY7       0x12c6
+          BTN_TRIGGER_HAPPY8       0x12c7
+          BTN_TRIGGER_HAPPY9       0x12c8
+          BTN_TRIGGER_HAPPY10      0x12c9
+          BTN_TRIGGER_HAPPY11      0x12ca
+          BTN_TRIGGER_HAPPY12      0x12cb
+          BTN_TRIGGER_HAPPY13      0x12cc
+          BTN_TRIGGER_HAPPY14      0x12cd
+          BTN_TRIGGER_HAPPY15      0x12ce
+          BTN_TRIGGER_HAPPY16      0x12cf
+          BTN_TRIGGER_HAPPY17      0x12d0
+          BTN_TRIGGER_HAPPY18      0x12d1
+          BTN_TRIGGER_HAPPY19      0x12d2
+          BTN_TRIGGER_HAPPY20      0x12d3
+          BTN_TRIGGER_HAPPY21      0x12d4
+          BTN_TRIGGER_HAPPY22      0x12d5
+          BTN_TRIGGER_HAPPY23      0x12d6
+          BTN_TRIGGER_HAPPY24      0x12d7
+          BTN_TRIGGER_HAPPY25      0x12d8
+          BTN_TRIGGER_HAPPY26      0x12d9
+          BTN_TRIGGER_HAPPY27      0x12da
+          BTN_TRIGGER_HAPPY28      0x12db
+          BTN_TRIGGER_HAPPY29      0x12dc
+          BTN_TRIGGER_HAPPY30      0x12dd
+          BTN_TRIGGER_HAPPY31      0x12de
+          BTN_TRIGGER_HAPPY32      0x12df
+          BTN_TRIGGER_HAPPY33      0x12e0
+          BTN_TRIGGER_HAPPY34      0x12e1
+          BTN_TRIGGER_HAPPY35      0x12e2
+          BTN_TRIGGER_HAPPY36      0x12e3
+          BTN_TRIGGER_HAPPY37      0x12e4
+          BTN_TRIGGER_HAPPY38      0x12e5
+          BTN_TRIGGER_HAPPY39      0x12e6
+          BTN_TRIGGER_HAPPY40      0x12e7
+      end codes
+
+end remote
+
+# also support by default remotes coming with MCE USB receivers
+include "%%EXAMPLESDIR%%/remotes/mceusb/lircd.conf.mceusb"
