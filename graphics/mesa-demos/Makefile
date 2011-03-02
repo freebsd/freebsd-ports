@@ -11,7 +11,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	CRITICAL/mesa3d:mesa,glut,demos
 PKGNAMEPREFIX=	mesa-
 
-MAINTAINER=	c.petrik.sosa@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	OpenGL demos distributed with Mesa
 
 USE_GL=		glu glut

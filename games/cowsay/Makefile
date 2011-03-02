@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.nog.net/pub/tony/cowsay/
 
-MAINTAINER=	c.petrik.sosa@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Configurable talking characters in ASCII art
 
 USE_PERL5=	yes
