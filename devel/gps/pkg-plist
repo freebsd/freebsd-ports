@@ -1,0 +1,646 @@
+bin/gps
+%%DOCSDIR%%/html/welcome.jpg
+%%DOCSDIR%%/html/visual-diff.jpg
+%%DOCSDIR%%/html/vcs-explorer.jpg
+%%DOCSDIR%%/html/vcs-activities.jpg
+%%DOCSDIR%%/html/user_guide.png
+%%DOCSDIR%%/html/tutorial.png
+%%DOCSDIR%%/html/triangle_x.png
+%%DOCSDIR%%/html/tooltips.jpg
+%%DOCSDIR%%/html/toolchains-config.jpg
+%%DOCSDIR%%/html/tip-of-the-day.jpg
+%%DOCSDIR%%/html/tasks.jpg
+%%DOCSDIR%%/html/task-manager.jpg
+%%DOCSDIR%%/html/target-configuration-dialog.jpg
+%%DOCSDIR%%/html/switch-editor-revert.jpg
+%%DOCSDIR%%/html/switch-editor.jpg
+%%DOCSDIR%%/html/square_x.png
+%%DOCSDIR%%/html/source-editor.jpg
+%%DOCSDIR%%/html/smart-completion.jpg
+%%DOCSDIR%%/html/shell-window.jpg
+%%DOCSDIR%%/html/servers-configuration.jpg
+%%DOCSDIR%%/html/search-options.jpg
+%%DOCSDIR%%/html/search-hide.jpg
+%%DOCSDIR%%/html/scenario-view.jpg
+%%DOCSDIR%%/html/scenarios.jpg
+%%DOCSDIR%%/html/save-dialog.jpg
+%%DOCSDIR%%/html/revision-view.jpg
+%%DOCSDIR%%/html/report-of-analysis_tree.jpg
+%%DOCSDIR%%/html/report-of-analysis_flat.jpg
+%%DOCSDIR%%/html/remote-view.jpg
+%%DOCSDIR%%/html/remote-view-full.jpg
+%%DOCSDIR%%/html/project-wizard.jpg
+%%DOCSDIR%%/html/project-view.jpg
+%%DOCSDIR%%/html/project-properties.jpg
+%%DOCSDIR%%/html/project-modified.jpg
+%%DOCSDIR%%/html/project-deps.jpg
+%%DOCSDIR%%/html/project-browser.jpg
+%%DOCSDIR%%/html/preferences-general.jpg
+%%DOCSDIR%%/html/overview.png
+%%DOCSDIR%%/html/outline-view.jpg
+%%DOCSDIR%%/html/open-from-project.jpg
+%%DOCSDIR%%/html/open-file.jpg
+%%DOCSDIR%%/html/naming-scheme.jpg
+%%DOCSDIR%%/html/messages.jpg
+%%DOCSDIR%%/html/memory-view.jpg
+%%DOCSDIR%%/html/main-gps.jpg
+%%DOCSDIR%%/html/locations-view.jpg
+%%DOCSDIR%%/html/key-shortcuts.jpg
+%%DOCSDIR%%/html/help_index.html
+%%DOCSDIR%%/html/gps-welcome.html
+%%DOCSDIR%%/html/gps-vcs-up-to-date.jpg
+%%DOCSDIR%%/html/gps-vcs-unknown.jpg
+%%DOCSDIR%%/html/gps-vcs-removed.jpg
+%%DOCSDIR%%/html/gps-vcs-not-registered.jpg
+%%DOCSDIR%%/html/gps-vcs-needs-update.jpg
+%%DOCSDIR%%/html/gps-vcs-needs-merge.jpg
+%%DOCSDIR%%/html/gps-vcs-modified.jpg
+%%DOCSDIR%%/html/gps-vcs-has-conflicts.jpg
+%%DOCSDIR%%/html/gps-vcs-added.jpg
+%%DOCSDIR%%/html/gps_title.gif
+%%DOCSDIR%%/html/gps-splash.png
+%%DOCSDIR%%/html/gps-splash-gpl.png
+%%DOCSDIR%%/html/gps-splash-academic.png
+%%DOCSDIR%%/html/gps_index.xml
+%%DOCSDIR%%/html/gps.html
+%%DOCSDIR%%/html/file-view.jpg
+%%DOCSDIR%%/html/explorer-scenario.jpg
+%%DOCSDIR%%/html/entity-view.jpg
+%%DOCSDIR%%/html/entity-browser.jpg
+%%DOCSDIR%%/html/dot_x.png
+%%DOCSDIR%%/html/docgen.jpg
+%%DOCSDIR%%/html/diamond_x.png
+%%DOCSDIR%%/html/dependency-browser.jpg
+%%DOCSDIR%%/html/colors.jpg
+%%DOCSDIR%%/html/circle_x.png
+%%DOCSDIR%%/html/canvas.jpg
+%%DOCSDIR%%/html/call-stack.jpg
+%%DOCSDIR%%/html/call-graph.jpg
+%%DOCSDIR%%/html/breakpoints.jpg
+%%DOCSDIR%%/html/bp-advanced.jpg
+%%DOCSDIR%%/html/assembly.jpg
+%%DOCSDIR%%/html/aliases.jpg
+%%DOCSDIR%%/html/about.jpg
+%%DATADIR%%/templates/simple_project/src/@_main_name_@.adb
+%%DATADIR%%/templates/simple_project/simple_project.gpt
+%%DATADIR%%/templates/simple_project/@_project_name_@.gpr
+%%DATADIR%%/templates/gtkada_minimal/src/@_main_name_@.adb
+%%DATADIR%%/templates/gtkada_minimal/@_project_name_@.gpr
+%%DATADIR%%/templates/gtkada_minimal/gtkada_minimal.gpt
+%%DATADIR%%/templates/aws_web_server/web_server.gpt
+%%DATADIR%%/templates/aws_web_server/tmplt/main.thtml
+%%DATADIR%%/templates/aws_web_server/src/@_project_name_@-main.adb
+%%DATADIR%%/templates/aws_web_server/src/@_project_name_@-dispatchers.ads
+%%DATADIR%%/templates/aws_web_server/src/@_project_name_@-dispatchers.adb
+%%DATADIR%%/templates/aws_web_server/src/@_project_name_@.ads
+%%DATADIR%%/templates/aws_web_server/@_project_name_@.gpr
+%%DATADIR%%/templates/aws_web_server/img/gps_logo.png
+%%DATADIR%%/templates/aws_web_server/css/style.css
+%%DATADIR%%/templates/aws_web_server_blocks/web_server_blocks.gpt
+%%DATADIR%%/templates/aws_web_server_blocks/tmplt/widget_counter.thtml
+%%DATADIR%%/templates/aws_web_server_blocks/tmplt/r_widget_counter.txml
+%%DATADIR%%/templates/aws_web_server_blocks/tmplt/main.thtml
+%%DATADIR%%/templates/aws_web_server_blocks/src/@_project_name_@-web_blocks.ads
+%%DATADIR%%/templates/aws_web_server_blocks/src/@_project_name_@-web_blocks.adb
+%%DATADIR%%/templates/aws_web_server_blocks/src/@_project_name_@-main.adb
+%%DATADIR%%/templates/aws_web_server_blocks/src/@_project_name_@-dispatchers.ads
+%%DATADIR%%/templates/aws_web_server_blocks/src/@_project_name_@-dispatchers.adb
+%%DATADIR%%/templates/aws_web_server_blocks/src/@_project_name_@-ajax.ads
+%%DATADIR%%/templates/aws_web_server_blocks/src/@_project_name_@-ajax.adb
+%%DATADIR%%/templates/aws_web_server_blocks/src/@_project_name_@.ads
+%%DATADIR%%/templates/aws_web_server_blocks/@_project_name_@.gpr
+%%DATADIR%%/templates/aws_web_server_blocks/open_readme.py
+%%DATADIR%%/templates/aws_web_server_blocks/makefile
+%%DATADIR%%/templates/aws_web_server_blocks/js/scriptaculous.js
+%%DATADIR%%/templates/aws_web_server_blocks/js/prototype.js
+%%DATADIR%%/templates/aws_web_server_blocks/js/behaviour.js
+%%DATADIR%%/templates/aws_web_server_blocks/js/aws.tjs
+%%DATADIR%%/templates/aws_web_server_blocks/js/aws_kernel.tjs
+%%DATADIR%%/templates/aws_web_server_blocks/js/ajax_api.tjs
+%%DATADIR%%/templates/aws_web_server_blocks/img/gps_logo.png
+%%DATADIR%%/templates/aws_web_server_blocks/gen/templates.tada
+%%DATADIR%%/templates/aws_web_server_blocks/css/style.css
+%%DATADIR%%/templates/aws_web_server_blocks/README
+%%DATADIR%%/templates/aws_simple_web_server/src/@_project_name_@-main.adb
+%%DATADIR%%/templates/aws_simple_web_server/src/@_project_name_@-callbacks.ads
+%%DATADIR%%/templates/aws_simple_web_server/src/@_project_name_@-callbacks.adb
+%%DATADIR%%/templates/aws_simple_web_server/src/@_project_name_@.ads
+%%DATADIR%%/templates/aws_simple_web_server/simple_web_server.gpt
+%%DATADIR%%/templates/aws_simple_web_server/@_project_name_@.gpr
+%%DATADIR%%/templates/ajis_hello/src_java/com/adacore/example/@_Main_Name_@.java
+%%DATADIR%%/templates/ajis_hello/src_ada/hello.ads
+%%DATADIR%%/templates/ajis_hello/src_ada/hello.adb
+%%DATADIR%%/templates/ajis_hello/@_project_name_@.gpr
+%%DATADIR%%/templates/ajis_hello/ajis_hello.gpt
+%%DATADIR%%/templates/ajis_hello/Makefile
+%%DATADIR%%/shell_commands.xml
+%%DATADIR%%/readonly.gpr
+%%DATADIR%%/predefined_ada.xml
+%%DATADIR%%/plug-ins/zoom.py
+%%DATADIR%%/plug-ins/xml_support.py
+%%DATADIR%%/plug-ins/xcov.py
+%%DATADIR%%/plug-ins/url.py
+%%DATADIR%%/plug-ins/toolchains.xml
+%%DATADIR%%/plug-ins/tip_of_the_day.py
+%%DATADIR%%/plug-ins/text_utils.py
+%%DATADIR%%/plug-ins/subversion.xml
+%%DATADIR%%/plug-ins/spark_support.py
+%%DATADIR%%/plug-ins/spark/spark.py
+%%DATADIR%%/plug-ins/sort_selection.py
+%%DATADIR%%/plug-ins/shell.py
+%%DATADIR%%/plug-ins/runtime.xml
+%%DATADIR%%/plug-ins/reset_gps_registry.py
+%%DATADIR%%/plug-ins/rectangles.py
+%%DATADIR%%/plug-ins/python_support.py
+%%DATADIR%%/plug-ins/python_doc.py
+%%DATADIR%%/plug-ins/protocols.xml
+%%DATADIR%%/plug-ins/projects.xml
+%%DATADIR%%/plug-ins/pipe.py
+%%DATADIR%%/plug-ins/os_utils.py
+%%DATADIR%%/plug-ins/navigation_utils.py
+%%DATADIR%%/plug-ins/methods.py
+%%DATADIR%%/plug-ins/locations_view_utils.py
+%%DATADIR%%/plug-ins/listvars.py
+%%DATADIR%%/plug-ins/languages.xml
+%%DATADIR%%/plug-ins/images/tip_task_manager.png
+%%DATADIR%%/plug-ins/images/tip_os_shell.png
+%%DATADIR%%/plug-ins/images/tip_notebook_tabs_position.png
+%%DATADIR%%/plug-ins/images/tip_multiple_views.png
+%%DATADIR%%/plug-ins/images/tip_multi_language_builder.png
+%%DATADIR%%/plug-ins/images/tip_makefile_support.png
+%%DATADIR%%/plug-ins/images/tip_keyboard_macro.png
+%%DATADIR%%/plug-ins/images/tip_jump_to_first_location.png
+%%DATADIR%%/plug-ins/images/tip_insert_spaces_with_tab.png
+%%DATADIR%%/plug-ins/images/tip_entity_view.png
+%%DATADIR%%/plug-ins/images/tip_entity_view_dnd.png
+%%DATADIR%%/plug-ins/images/tip_build_menu.png
+%%DATADIR%%/plug-ins/images/tip_all_occurrences.png
+%%DATADIR%%/plug-ins/icons.xml
+%%DATADIR%%/plug-ins/gps_utils/switches.py
+%%DATADIR%%/plug-ins/gps_utils/__init__.py
+%%DATADIR%%/plug-ins/gps_utils/highlighter.py
+%%DATADIR%%/plug-ins/gps_utils/gnat_rules.py
+%%DATADIR%%/plug-ins/gps_utils/gnatcheck_rules_editor.py
+%%DATADIR%%/plug-ins/gps_utils/gnatcheck_default.py
+%%DATADIR%%/plug-ins/gps_utils/console_process.py
+%%DATADIR%%/plug-ins/gpr.xml
+%%DATADIR%%/plug-ins/gnat_switches.py
+%%DATADIR%%/plug-ins/gnatstub.xml
+%%DATADIR%%/plug-ins/gnatstack.py
+%%DATADIR%%/plug-ins/gnatpsta.py
+%%DATADIR%%/plug-ins/gnatpp.xml
+%%DATADIR%%/plug-ins/gnatmetric.xml
+%%DATADIR%%/plug-ins/gnatdist_support.py
+%%DATADIR%%/plug-ins/gnatcheck.py
+%%DATADIR%%/plug-ins/git.xml
+%%DATADIR%%/plug-ins/git_support.py
+%%DATADIR%%/plug-ins/gcov.py
+%%DATADIR%%/plug-ins/expanded_code.py
+%%DATADIR%%/plug-ins/editors.py
+%%DATADIR%%/plug-ins/docgen_base_tags.py
+%%DATADIR%%/plug-ins/dispatching.py
+%%DATADIR%%/plug-ins/cvs.xml
+%%DATADIR%%/plug-ins/c_support.xml
+%%DATADIR%%/plug-ins/csharp.xml
+%%DATADIR%%/plug-ins/codepeer.py
+%%DATADIR%%/plug-ins/clearcase.xml
+%%DATADIR%%/plug-ins/childtree.png
+%%DATADIR%%/plug-ins/childtree2.png
+%%DATADIR%%/plug-ins/changelog.xml
+%%DATADIR%%/plug-ins/build_targets.xml
+%%DATADIR%%/plug-ins/build_modes.xml
+%%DATADIR%%/plug-ins/block_completion.py
+%%DATADIR%%/plug-ins/auto_highlight_occurrences.py
+%%DATADIR%%/plug-ins/align.py
+%%DATADIR%%/plug-ins/ada-support.xml
+%%DATADIR%%/plug-ins/ada_support.py
+%%DATADIR%%/plug-ins/Makefile.py
+%%DATADIR%%/perspectives.xml
+%%DATADIR%%/library/vi.py
+%%DATADIR%%/library/unused_entities.py
+%%DATADIR%%/library/unicode.py
+%%DATADIR%%/library/skeleton.py
+%%DATADIR%%/library/simple_project.py
+%%DATADIR%%/library/separate.py
+%%DATADIR%%/library/save_on_compile.py
+%%DATADIR%%/library/pygps/tree.py
+%%DATADIR%%/library/pygps/project.py
+%%DATADIR%%/library/pygps/notebook.py
+%%DATADIR%%/library/pygps/__init__.py
+%%DATADIR%%/library/ppc.xml
+%%DATADIR%%/library/open_file.py
+%%DATADIR%%/library/online_support.py
+%%DATADIR%%/library/occurrences.py
+%%DATADIR%%/library/local_history.py
+%%DATADIR%%/library/ispell.py
+%%DATADIR%%/library/isearch.py
+%%DATADIR%%/library/highlight_selection.py
+%%DATADIR%%/library/gnatr.xml
+%%DATADIR%%/library/gnatpp_switches.py
+%%DATADIR%%/library/first_subtype.py
+%%DATADIR%%/library/filepos.py
+%%DATADIR%%/library/filedeps.py
+%%DATADIR%%/library/execute_extended.py
+%%DATADIR%%/library/enter.xml
+%%DATADIR%%/library/emacs.xml
+%%DATADIR%%/library/eclipse.py
+%%DATADIR%%/library/dependencies.py
+%%DATADIR%%/library/debugger.py
+%%DATADIR%%/library/create_missing_dirs.py
+%%DATADIR%%/library/createfile.py
+%%DATADIR%%/library/copy_paste_toolbar.py
+%%DATADIR%%/library/copy_paste.py
+%%DATADIR%%/library/autognatpp.py
+%%DATADIR%%/library/autoformat.py
+%%DATADIR%%/library/auto_changelog.py
+%%DATADIR%%/library/addr2line.py
+%%DATADIR%%/library/GPS_old.py
+%%DATADIR%%/icons/other/welcome_header.png
+%%DATADIR%%/icons/other/get_started.png
+%%DATADIR%%/icons/other/button_tutorial.png
+%%DATADIR%%/icons/other/button_tutorial_over.png
+%%DATADIR%%/icons/other/button_overview.png
+%%DATADIR%%/icons/other/button_overview_over.png
+%%DATADIR%%/icons/other/button_guide.png
+%%DATADIR%%/icons/other/button_guide_over.png
+%%DATADIR%%/icons/other/adacore_logo.png
+%%DATADIR%%/icons/9px/wrench.png
+%%DATADIR%%/icons/9px/wrench_multi.png
+%%DATADIR%%/icons/9px/partially_covered_code.png
+%%DATADIR%%/icons/9px/non_executed_code.png
+%%DATADIR%%/icons/9px/line_might_have_code.png
+%%DATADIR%%/icons/9px/line_has_code.png
+%%DATADIR%%/icons/9px/executed_code.png
+%%DATADIR%%/icons/9px/build_warning.png
+%%DATADIR%%/icons/9px/build_warning_fixable.png
+%%DATADIR%%/icons/9px/build_style.png
+%%DATADIR%%/icons/9px/build_style_fixable.png
+%%DATADIR%%/icons/9px/build_error.png
+%%DATADIR%%/icons/9px/build_error_fixable.png
+%%DATADIR%%/icons/48px/gps_48.png
+%%DATADIR%%/icons/32px/gps_32.png
+%%DATADIR%%/icons/24px/undo_24.png
+%%DATADIR%%/icons/24px/syntax_check_24.png
+%%DATADIR%%/icons/24px/stop_24.png
+%%DATADIR%%/icons/24px/step_24.png
+%%DATADIR%%/icons/24px/stack_up_24.png
+%%DATADIR%%/icons/24px/stack_down_24.png
+%%DATADIR%%/icons/24px/semantic_check_24.png
+%%DATADIR%%/icons/24px/save_24.png
+%%DATADIR%%/icons/24px/redo_24.png
+%%DATADIR%%/icons/24px/play_24.png
+%%DATADIR%%/icons/24px/open_24.png
+%%DATADIR%%/icons/24px/next_24.png
+%%DATADIR%%/icons/24px/newfile_24.png
+%%DATADIR%%/icons/24px/goto_previous_24.png
+%%DATADIR%%/icons/24px/goto_next_24.png
+%%DATADIR%%/icons/24px/finish_24.png
+%%DATADIR%%/icons/24px/cut_24.png
+%%DATADIR%%/icons/24px/custom_build_24.png
+%%DATADIR%%/icons/24px/copy_24.png
+%%DATADIR%%/icons/24px/compute_xref_24.png
+%%DATADIR%%/icons/24px/compile_24.png
+%%DATADIR%%/icons/24px/clipboard_24.png
+%%DATADIR%%/icons/24px/cleanup_24.png
+%%DATADIR%%/icons/24px/build_main_24.png
+%%DATADIR%%/icons/24px/build_all_24.png
+%%DATADIR%%/icons/20px/vcs-up-to-date.png
+%%DATADIR%%/icons/20px/vcs-unknown.png
+%%DATADIR%%/icons/20px/vcs-removed.png
+%%DATADIR%%/icons/20px/vcs-not-registered.png
+%%DATADIR%%/icons/20px/vcs-needs-update.png
+%%DATADIR%%/icons/20px/vcs-needs-merge.png
+%%DATADIR%%/icons/20px/vcs-modified.png
+%%DATADIR%%/icons/20px/vcs-has-conflicts.png
+%%DATADIR%%/icons/20px/vcs-added.png
+%%DATADIR%%/icons/18px/undo_18.png
+%%DATADIR%%/icons/18px/syntax_check_18.png
+%%DATADIR%%/icons/18px/stop_18.png
+%%DATADIR%%/icons/18px/step_18.png
+%%DATADIR%%/icons/18px/stack_up_18.png
+%%DATADIR%%/icons/18px/stack_down_18.png
+%%DATADIR%%/icons/18px/semantic_check_18.png
+%%DATADIR%%/icons/18px/save_18.png
+%%DATADIR%%/icons/18px/redo_18.png
+%%DATADIR%%/icons/18px/play_18.png
+%%DATADIR%%/icons/18px/open_18.png
+%%DATADIR%%/icons/18px/next_18.png
+%%DATADIR%%/icons/18px/newfile_18.png
+%%DATADIR%%/icons/18px/goto_previous_18.png
+%%DATADIR%%/icons/18px/goto_next_18.png
+%%DATADIR%%/icons/18px/finish_18.png
+%%DATADIR%%/icons/18px/cut_18.png
+%%DATADIR%%/icons/18px/custom_build_18.png
+%%DATADIR%%/icons/18px/copy_18.png
+%%DATADIR%%/icons/18px/compute_xref_18.png
+%%DATADIR%%/icons/18px/compile_18.png
+%%DATADIR%%/icons/18px/clipboard_18.png
+%%DATADIR%%/icons/18px/cleanup_18.png
+%%DATADIR%%/icons/18px/build_main_18.png
+%%DATADIR%%/icons/18px/build_all_18.png
+%%DATADIR%%/icons/16px/warning.png
+%%DATADIR%%/icons/16px/undo_16.png
+%%DATADIR%%/icons/16px/syntax_check_16.png
+%%DATADIR%%/icons/16px/sync_to_remote.png
+%%DATADIR%%/icons/16px/sync_to_local.png
+%%DATADIR%%/icons/16px/stop_16.png
+%%DATADIR%%/icons/16px/step_16.png
+%%DATADIR%%/icons/16px/stack_up_16.png
+%%DATADIR%%/icons/16px/stack_down_16.png
+%%DATADIR%%/icons/16px/semantic_check_16.png
+%%DATADIR%%/icons/16px/save_16.png
+%%DATADIR%%/icons/16px/redo_16.png
+%%DATADIR%%/icons/16px/project_box_warning.png
+%%DATADIR%%/icons/16px/project_box.png
+%%DATADIR%%/icons/16px/project_box_pencil.png
+%%DATADIR%%/icons/16px/project_box_open.png
+%%DATADIR%%/icons/16px/project_box_open_altered.png
+%%DATADIR%%/icons/16px/project_box_error.png
+%%DATADIR%%/icons/16px/project_box_altered.png
+%%DATADIR%%/icons/16px/play_16.png
+%%DATADIR%%/icons/16px/open_16.png
+%%DATADIR%%/icons/16px/next_16.png
+%%DATADIR%%/icons/16px/newfile_b_16.png
+%%DATADIR%%/icons/16px/newfile_16.png
+%%DATADIR%%/icons/16px/gps_16.png
+%%DATADIR%%/icons/16px/goto_previous_16.png
+%%DATADIR%%/icons/16px/goto_next_16.png
+%%DATADIR%%/icons/16px/folder_open.png
+%%DATADIR%%/icons/16px/folder_o_open.png
+%%DATADIR%%/icons/16px/folder_o_closed.png
+%%DATADIR%%/icons/16px/folder_e_open.png
+%%DATADIR%%/icons/16px/folder_e_closed.png
+%%DATADIR%%/icons/16px/folder_closed.png
+%%DATADIR%%/icons/16px/finish_16.png
+%%DATADIR%%/icons/16px/file_warning.png
+%%DATADIR%%/icons/16px/file.png
+%%DATADIR%%/icons/16px/file_pencil.png
+%%DATADIR%%/icons/16px/file_error.png
+%%DATADIR%%/icons/16px/file_altered.png
+%%DATADIR%%/icons/16px/error.png
+%%DATADIR%%/icons/16px/entities/triangle_xs.png
+%%DATADIR%%/icons/16px/entities/triangle_x.png
+%%DATADIR%%/icons/16px/entities/triangle_s.png
+%%DATADIR%%/icons/16px/entities/triangle_ps.png
+%%DATADIR%%/icons/16px/entities/triangle_p.png
+%%DATADIR%%/icons/16px/entities/triangle.png
+%%DATADIR%%/icons/16px/entities/square_xs.png
+%%DATADIR%%/icons/16px/entities/square_x.png
+%%DATADIR%%/icons/16px/entities/square_s.png
+%%DATADIR%%/icons/16px/entities/square_ps.png
+%%DATADIR%%/icons/16px/entities/square_p.png
+%%DATADIR%%/icons/16px/entities/square.png
+%%DATADIR%%/icons/16px/entities/dot_xs.png
+%%DATADIR%%/icons/16px/entities/dot_x.png
+%%DATADIR%%/icons/16px/entities/dot_s.png
+%%DATADIR%%/icons/16px/entities/dot_ps.png
+%%DATADIR%%/icons/16px/entities/dot_p.png
+%%DATADIR%%/icons/16px/entities/dot.png
+%%DATADIR%%/icons/16px/entities/diamond_xs.png
+%%DATADIR%%/icons/16px/entities/diamond_x.png
+%%DATADIR%%/icons/16px/entities/diamond_s.png
+%%DATADIR%%/icons/16px/entities/diamond_ps.png
+%%DATADIR%%/icons/16px/entities/diamond_p.png
+%%DATADIR%%/icons/16px/entities/diamond.png
+%%DATADIR%%/icons/16px/entities/circle_xs.png
+%%DATADIR%%/icons/16px/entities/circle_x.png
+%%DATADIR%%/icons/16px/entities/circle_s.png
+%%DATADIR%%/icons/16px/entities/circle_ps.png
+%%DATADIR%%/icons/16px/entities/circle_p.png
+%%DATADIR%%/icons/16px/entities/circle.png
+%%DATADIR%%/icons/16px/debug_indicator.png
+%%DATADIR%%/icons/16px/debug_break.png
+%%DATADIR%%/icons/16px/cut_16.png
+%%DATADIR%%/icons/16px/custom_build_16.png
+%%DATADIR%%/icons/16px/copy_16.png
+%%DATADIR%%/icons/16px/compute_xref_16.png
+%%DATADIR%%/icons/16px/compile_16.png
+%%DATADIR%%/icons/16px/clipboard_16.png
+%%DATADIR%%/icons/16px/cleanup_16.png
+%%DATADIR%%/icons/16px/build_main_16.png
+%%DATADIR%%/icons/16px/build_all_16.png
+%%DATADIR%%/icons/16px/box.png
+%%DATADIR%%/gps-splash.png
+%%DATADIR%%/gps-animation.png
+%%DATADIR%%/gps-animation.gif
+%%DATADIR%%/docgen2/userdef.tmpl
+%%DATADIR%%/docgen2/tree.tmpl
+%%DATADIR%%/docgen2/tree_elem.tmpl
+%%DATADIR%%/docgen2/support/images/variable-spec.png
+%%DATADIR%%/docgen2/support/images/type-spec.png
+%%DATADIR%%/docgen2/support/images/tree_root.png
+%%DATADIR%%/docgen2/support/images/tree_item.png
+%%DATADIR%%/docgen2/support/images/treechildren_bg.png
+%%DATADIR%%/docgen2/support/images/treechildren_bg_bottom.png
+%%DATADIR%%/docgen2/support/images/subprogram-spec.png
+%%DATADIR%%/docgen2/support/images/sidebarframe.png
+%%DATADIR%%/docgen2/support/images/sidebarframebottom.png
+%%DATADIR%%/docgen2/support/images/rightside.png
+%%DATADIR%%/docgen2/support/images/rightsidebottom.png
+%%DATADIR%%/docgen2/support/images/package-spec.png
+%%DATADIR%%/docgen2/support/images/nav2_btn_up.png
+%%DATADIR%%/docgen2/support/images/nav2_btn_mo.png
+%%DATADIR%%/docgen2/support/images/nav1_btn_up.png
+%%DATADIR%%/docgen2/support/images/nav1_btn_mo.png
+%%DATADIR%%/docgen2/support/images/menubar.png
+%%DATADIR%%/docgen2/support/images/menubarbottom.png
+%%DATADIR%%/docgen2/support/images/link.png
+%%DATADIR%%/docgen2/support/images/generic-spec.png
+%%DATADIR%%/docgen2/support/images/arrow_open.png
+%%DATADIR%%/docgen2/support/images/arrow_close.png
+%%DATADIR%%/docgen2/support/docgen.js
+%%DATADIR%%/docgen2/support/docgen.css
+%%DATADIR%%/docgen2/src.tmpl
+%%DATADIR%%/docgen2/navigation.tmpl
+%%DATADIR%%/docgen2/navbutton.tmpl
+%%DATADIR%%/docgen2/multilink.tmpl
+%%DATADIR%%/docgen2/index_entry.tmpl
+%%DATADIR%%/docgen2/html.tmpl
+%%DATADIR%%/docgen2/entities.tmpl
+%%DATADIR%%/docgen2/custom/tags.css
+%%DATADIR%%/default.gpr
+%%DATADIR%%/aunit/test_suite.ads.tmpl
+%%DATADIR%%/aunit/test_suite.adb.tmpl
+%%DATADIR%%/aunit/test_case.ads.tmpl
+%%DATADIR%%/aunit/test_case.adb.tmpl
+%%DATADIR%%/aunit/harness.adb.tmpl
+%%DATADIR%%/activity_log.tmplt
+%%EXAMPLESDIR%%/xml/gnatmake.xml
+%%EXAMPLESDIR%%/xml/README
+%%EXAMPLESDIR%%/tutorial/struct/values-operations.ads
+%%EXAMPLESDIR%%/tutorial/struct/values-operations.adb
+%%EXAMPLESDIR%%/tutorial/struct/values.ads
+%%EXAMPLESDIR%%/tutorial/struct/values.adb
+%%EXAMPLESDIR%%/tutorial/struct/tokens.ads
+%%EXAMPLESDIR%%/tutorial/struct/tokens.adb
+%%EXAMPLESDIR%%/tutorial/struct/instructions.ads
+%%EXAMPLESDIR%%/tutorial/struct/instructions.adb
+%%EXAMPLESDIR%%/tutorial/sdc.gpr
+%%EXAMPLESDIR%%/tutorial/projects/prj4/src4.adb
+%%EXAMPLESDIR%%/tutorial/projects/prj4.gpr
+%%EXAMPLESDIR%%/tutorial/projects/prj3/src3.adb
+%%EXAMPLESDIR%%/tutorial/projects/prj3.gpr
+%%EXAMPLESDIR%%/tutorial/projects/prj2/src2.adb
+%%EXAMPLESDIR%%/tutorial/projects/prj2.gpr
+%%EXAMPLESDIR%%/tutorial/projects/prj1/src1.adb
+%%EXAMPLESDIR%%/tutorial/projects/prj1.gpr
+%%EXAMPLESDIR%%/tutorial/obj/.cvsignore
+%%EXAMPLESDIR%%/tutorial/input.txt
+%%EXAMPLESDIR%%/tutorial/common/stack.ads
+%%EXAMPLESDIR%%/tutorial/common/stack.adb
+%%EXAMPLESDIR%%/tutorial/common/sdc.ads
+%%EXAMPLESDIR%%/tutorial/common/sdc.adb
+%%EXAMPLESDIR%%/tutorial/common/screen_output.ads
+%%EXAMPLESDIR%%/tutorial/common/screen_output.adb
+%%EXAMPLESDIR%%/tutorial/common/input.ads
+%%EXAMPLESDIR%%/tutorial/common/input.adb
+%%EXAMPLESDIR%%/tutorial/common/except.ads
+%%EXAMPLESDIR%%/remote/src/instr.ads
+%%EXAMPLESDIR%%/remote/src/instr.adb
+%%EXAMPLESDIR%%/remote/src/gen_list.ads
+%%EXAMPLESDIR%%/remote/src/gen_list.adb
+%%EXAMPLESDIR%%/remote/src/demo1.adb
+%%EXAMPLESDIR%%/remote/remote.gpr
+%%EXAMPLESDIR%%/remote/obj/.cvsignore
+%%EXAMPLESDIR%%/remote/my_ssh
+%%EXAMPLESDIR%%/remote/README
+%%EXAMPLESDIR%%/python/remote_server_assign_variable.py
+%%EXAMPLESDIR%%/python/reformat_project.py
+%%EXAMPLESDIR%%/python/readonly.py
+%%EXAMPLESDIR%%/python/project_view.py
+%%EXAMPLESDIR%%/python/prefs.py
+%%EXAMPLESDIR%%/python/misc_text_utils.py
+%%EXAMPLESDIR%%/python/indent_all.py
+%%EXAMPLESDIR%%/python/hello_gtk.py
+%%EXAMPLESDIR%%/python/globals.py
+%%EXAMPLESDIR%%/python/doc.py
+%%EXAMPLESDIR%%/python/docgen_gtkada.py
+%%EXAMPLESDIR%%/python/colors.py
+%%EXAMPLESDIR%%/python/clipboards.py
+%%EXAMPLESDIR%%/python/build.py
+%%EXAMPLESDIR%%/python/bookmarks.py
+%%EXAMPLESDIR%%/python/ada_expansion.py
+%%EXAMPLESDIR%%/python/README
+%%EXAMPLESDIR%%/language/language_custom.h
+%%EXAMPLESDIR%%/language/language_custom.ads
+%%EXAMPLESDIR%%/language/gprcustom.c
+%%EXAMPLESDIR%%/language/gpr_custom.ads
+%%EXAMPLESDIR%%/language/gpr_custom.adb
+%%EXAMPLESDIR%%/language/README
+%%EXAMPLESDIR%%/language/Makefile
+%%EXAMPLESDIR%%/demo/struct/values-operations.ads
+%%EXAMPLESDIR%%/demo/struct/values-operations.adb
+%%EXAMPLESDIR%%/demo/struct/values.ads
+%%EXAMPLESDIR%%/demo/struct/values.adb
+%%EXAMPLESDIR%%/demo/struct/tokens.ads
+%%EXAMPLESDIR%%/demo/struct/tokens.adb
+%%EXAMPLESDIR%%/demo/struct/instructions.ads
+%%EXAMPLESDIR%%/demo/struct/instructions.adb
+%%EXAMPLESDIR%%/demo/projects/prj4/src4.adb
+%%EXAMPLESDIR%%/demo/projects/prj4.gpr
+%%EXAMPLESDIR%%/demo/projects/prj3/src3.adb
+%%EXAMPLESDIR%%/demo/projects/prj3.gpr
+%%EXAMPLESDIR%%/demo/projects/prj2/src2.adb
+%%EXAMPLESDIR%%/demo/projects/prj2.gpr
+%%EXAMPLESDIR%%/demo/projects/prj1/src1.adb
+%%EXAMPLESDIR%%/demo/projects/prj1.gpr
+%%EXAMPLESDIR%%/demo/obj/.cvsignore
+%%EXAMPLESDIR%%/demo/matrix_handling/matrix_utils.c
+%%EXAMPLESDIR%%/demo/matrix_handling/matrix.h
+%%EXAMPLESDIR%%/demo/matrix_handling/matrix.c
+%%EXAMPLESDIR%%/demo/matrix_handling/matrix_binding.ads
+%%EXAMPLESDIR%%/demo/matrix_handling/matrix_binding.adb
+%%EXAMPLESDIR%%/demo/input.txt
+%%EXAMPLESDIR%%/demo/demo.gpr
+%%EXAMPLESDIR%%/demo/common/stack.ads
+%%EXAMPLESDIR%%/demo/common/stack.adb
+%%EXAMPLESDIR%%/demo/common/sdc.ads
+%%EXAMPLESDIR%%/demo/common/sdc.adb
+%%EXAMPLESDIR%%/demo/common/screen_output.ads
+%%EXAMPLESDIR%%/demo/common/screen_output.adb
+%%EXAMPLESDIR%%/demo/common/input.ads
+%%EXAMPLESDIR%%/demo/common/input.adb
+%%EXAMPLESDIR%%/demo/common/except.ads
+@dirrm %%EXAMPLESDIR%%/xml
+@dirrm %%EXAMPLESDIR%%/tutorial/struct
+@dirrm %%EXAMPLESDIR%%/tutorial/projects/prj4
+@dirrm %%EXAMPLESDIR%%/tutorial/projects/prj3
+@dirrm %%EXAMPLESDIR%%/tutorial/projects/prj2
+@dirrm %%EXAMPLESDIR%%/tutorial/projects/prj1
+@dirrm %%EXAMPLESDIR%%/tutorial/projects
+@dirrm %%EXAMPLESDIR%%/tutorial/obj
+@dirrm %%EXAMPLESDIR%%/tutorial/matrix_handling
+@dirrm %%EXAMPLESDIR%%/tutorial/common
+@dirrm %%EXAMPLESDIR%%/tutorial
+@dirrm %%EXAMPLESDIR%%/remote/src
+@dirrm %%EXAMPLESDIR%%/remote/obj
+@dirrm %%EXAMPLESDIR%%/remote
+@dirrm %%EXAMPLESDIR%%/python
+@dirrm %%EXAMPLESDIR%%/language
+@dirrm %%EXAMPLESDIR%%/demo/struct
+@dirrm %%EXAMPLESDIR%%/demo/projects/prj4
+@dirrm %%EXAMPLESDIR%%/demo/projects/prj3
+@dirrm %%EXAMPLESDIR%%/demo/projects/prj2
+@dirrm %%EXAMPLESDIR%%/demo/projects/prj1
+@dirrm %%EXAMPLESDIR%%/demo/projects
+@dirrm %%EXAMPLESDIR%%/demo/obj
+@dirrm %%EXAMPLESDIR%%/demo/matrix_handling
+@dirrm %%EXAMPLESDIR%%/demo/common
+@dirrm %%EXAMPLESDIR%%/demo
+@dirrm %%EXAMPLESDIR%%
+@dirrm %%DATADIR%%/templates/simple_project/src
+@dirrm %%DATADIR%%/templates/simple_project/obj
+@dirrm %%DATADIR%%/templates/simple_project
+@dirrm %%DATADIR%%/templates/gtkada_minimal/src
+@dirrm %%DATADIR%%/templates/gtkada_minimal/obj
+@dirrm %%DATADIR%%/templates/gtkada_minimal
+@dirrm %%DATADIR%%/templates/aws_web_server/tmplt
+@dirrm %%DATADIR%%/templates/aws_web_server/src
+@dirrm %%DATADIR%%/templates/aws_web_server/img
+@dirrm %%DATADIR%%/templates/aws_web_server/css
+@dirrm %%DATADIR%%/templates/aws_web_server_blocks/tmplt
+@dirrm %%DATADIR%%/templates/aws_web_server_blocks/src
+@dirrm %%DATADIR%%/templates/aws_web_server_blocks/js
+@dirrm %%DATADIR%%/templates/aws_web_server_blocks/img
+@dirrm %%DATADIR%%/templates/aws_web_server_blocks/gen
+@dirrm %%DATADIR%%/templates/aws_web_server_blocks/css
+@dirrm %%DATADIR%%/templates/aws_web_server_blocks
+@dirrm %%DATADIR%%/templates/aws_web_server
+@dirrm %%DATADIR%%/templates/aws_simple_web_server/src
+@dirrm %%DATADIR%%/templates/aws_simple_web_server
+@dirrm %%DATADIR%%/templates/ajis_hello/src_java/com/adacore/example
+@dirrm %%DATADIR%%/templates/ajis_hello/src_java/com/adacore
+@dirrm %%DATADIR%%/templates/ajis_hello/src_java/com
+@dirrm %%DATADIR%%/templates/ajis_hello/src_java
+@dirrm %%DATADIR%%/templates/ajis_hello/src_ada
+@dirrm %%DATADIR%%/templates/ajis_hello/obj
+@dirrm %%DATADIR%%/templates/ajis_hello/binding
+@dirrm %%DATADIR%%/templates/ajis_hello/bin
+@dirrm %%DATADIR%%/templates/ajis_hello
+@dirrm %%DATADIR%%/templates
+@dirrm %%DATADIR%%/plug-ins/spark
+@dirrm %%DATADIR%%/plug-ins/images
+@dirrm %%DATADIR%%/plug-ins/gps_utils
+@dirrm %%DATADIR%%/library/pygps
+@dirrm %%DATADIR%%/library
+@dirrm %%DATADIR%%/icons/other
+@dirrm %%DATADIR%%/icons/9px
+@dirrm %%DATADIR%%/icons/48px
+@dirrm %%DATADIR%%/icons/32px
+@dirrm %%DATADIR%%/icons/24px
+@dirrm %%DATADIR%%/icons/20px
+@dirrm %%DATADIR%%/icons/18px
+@dirrm %%DATADIR%%/icons/16px/entities
+@dirrm %%DATADIR%%/icons/16px
+@dirrm %%DATADIR%%/icons
+@dirrm %%DATADIR%%/docgen2/support/images
+@dirrm %%DATADIR%%/docgen2/support
+@dirrm %%DATADIR%%/docgen2/custom
+@dirrm %%DATADIR%%/docgen2
+@dirrm %%DATADIR%%/aunit
+@dirrm %%DOCSDIR%%/html
+@dirrm %%DOCSDIR%%/pdf
+@dirrm %%DOCSDIR%%/txt
+@dirrm %%DOCSDIR%%
+@dirrmtry %%DATADIR%%/plug-ins
+@dirrmtry %%DATADIR%%
