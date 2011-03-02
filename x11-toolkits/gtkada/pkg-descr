@@ -1,0 +1,6 @@
+GtkAda is an Ada graphical toolkit based on Gtk+ widgets using the
+object-oriented features of the language.  Gtk+ is a graphical toolkit
+written in C for X-Window and Win32 that was originally developed as
+the basis for GIMP.
+
+WWW: http://libre.adacore.com/libre/tools/gtkada/

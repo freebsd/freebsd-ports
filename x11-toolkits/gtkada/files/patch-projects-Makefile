@@ -1,0 +1,13 @@
+--- projects/Makefile.orig	2011-03-01 12:18:08.000000000 +0000
++++ projects/Makefile	2011-03-01 12:18:51.000000000 +0000
+@@ -7,8 +7,8 @@
+ install: force
+ 	${MKDIR} $(prefix)/lib/gnat/
+ 	${MKDIR} $(prefix)/lib/gnat/gtkada
+-	$(MKDIR) $(prefix)/lib/pkgconfig/
+-	${CP} gtkada.pc $(prefix)/lib/pkgconfig/
++	$(MKDIR) $(prefix)/libdata/pkgconfig/
++	${CP} gtkada.pc $(prefix)/libdata/pkgconfig/
+ 	-${RM} ${prefix}/projects/gtkada*
+ 	./generate_prj.sh GtkAda "${prefix}" ${DEFAULT_LIBRARY_TYPE} ${SOVER} ""
+ 	${CP} gtkada.gpr ${prefix}/lib/gnat/
