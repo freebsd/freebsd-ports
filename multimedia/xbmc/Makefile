@@ -7,13 +7,15 @@
 
 PORTNAME=	xbmc
 PORTVERSION=	10.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	multimedia
-MASTER_SITES=	http://mirrors.xbmc.org/releases/source/ \
-		http://fneufn.eu/freebsd/xbmc/
+MASTER_SITES=	http://mirrors.xbmc.org/releases/source/
 
 MAINTAINER=	mickael.maillot@gmail.com
 COMMENT=	XBMC is an award winning media center application
+
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/LICENSE.GPL
 
 BUILD_DEPENDS=	enca:${PORTSDIR}/converters/enca \
 		gawk:${PORTSDIR}/lang/gawk \
@@ -38,6 +40,7 @@ LIB_DEPENDS=	asound.2:${PORTSDIR}/audio/alsa-lib	\
 		lzo2.2:${PORTSDIR}/archivers/lzo2 \
 		jasper.4:${PORTSDIR}/graphics/jasper \
 		jpeg.11:${PORTSDIR}/graphics/jpeg \
+		faad.2:${PORTSDIR}/audio/faad \
 		mad:${PORTSDIR}/audio/libmad \
 		modplug:${PORTSDIR}/audio/libmodplug \
 		mpeg2:${PORTSDIR}/multimedia/libmpeg2 \
@@ -76,8 +79,10 @@ USE_LDCONFIG=	${PREFIX}/lib/xbmc/system \
 		${PREFIX}/lib/xbmc/system/players/paplayer
 
 USE_DOS2UNIX=	xbmc/lib/libid3tag/libid3tag/compat.gperf
+PLIST_SUB+=	PYVER="${PYTHON_VERSION:S/python//:S/.//g}"
 
 OPTIONS=	AVAHI		"Enable Avahi support"			on \
+		LIBBLURAY	"Enable libbluray support"		on \
 		FAAC		"Enable FAAC support"			off \
 		HAL		"Enable HAL support"			on \
 		MMS		"Enable mms:// & mmsh:// support"	on \
@@ -97,10 +102,15 @@ DESKTOP_ENTRIES="XBMC" \
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
-CONFIGURE_ARGS+=--enable-external-libraries \
-		--disable-debug
+CONFIGURE_ARGS+=	--enable-external-libraries
 
 .include <bsd.port.pre.mk>
+
+.if defined(WITH_DEBUG)
+CONFIGURE_ARGS+=	--enable-debug
+.else
+CONFIGURE_ARGS+=	--disable-debug
+.endif
 
 .if ${ARCH} == i386
 PLIST_SUB+=	ARCH="x86"
@@ -113,6 +123,13 @@ CONFIGURE_ARGS+=	--enable-avahi
 LIB_DEPENDS+=	avahi-common.3:${PORTSDIR}/net/avahi-app
 .else
 CONFIGURE_ARGS+=	--disable-avahi
+.endif
+
+.if !defined(WITHOUT_LIBBLURAY)
+CONFIGURE_ARGS+=	--enable-libbluray
+LIB_DEPENDS+=	bluray.0:${PORTSDIR}/multimedia/libbluray
+.else
+CONFIGURE_ARGS+=	--disable-libbluray
 .endif
 
 .if defined(WITH_FAAC)
