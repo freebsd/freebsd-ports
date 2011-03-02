@@ -4970,6 +4970,7 @@ gplink                          ports/misc/gplink
 gplot                           ports/graphics/gplot
 gpodder                         ports/multimedia/gpodder
 gpp                             ports/textproc/gpp
+gprbuild-aux                    ports/devel/gprbuild-aux
 gpredict                        ports/comms/gpredict
 gprename                        ports/x11-fm/gprename
 gproftpd                        ports/ftp/gproftpd
