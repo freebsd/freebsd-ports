@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	arel
-PORTVERSION=	2.0.8
+PORTVERSION=	2.0.9
 CATEGORIES=	databases rubygems
 MASTER_SITES=	RG
 
