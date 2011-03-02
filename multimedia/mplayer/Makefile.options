@@ -133,6 +133,13 @@ LIB_DEPENDS+=		pulse.0:${PORTSDIR}/audio/pulseaudio
 CONFIGURE_ARGS+=	--disable-pulse
 .endif
 
+.if defined(WITH_BLURAY)
+LIB_DEPENDS+=		bluray.0:${PORTSDIR}/multimedia/libbluray
+CONFIGURE_ARGS+=	--enable-bluray
+.else
+CONFIGURE_ARGS+=	--disable-bluray
+.endif
+
 .if defined(WITH_SMB)
 LIB_DEPENDS+=		smbclient.0:${PORTSDIR}/net/samba-libsmbclient
 .else
