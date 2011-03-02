@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	sleuthkit
-PORTVERSION=	3.2.0
+PORTVERSION=	3.2.1
 CATEGORIES=	sysutils security
 MASTER_SITES=	SF
 
 MAINTAINER=	danfe@FreeBSD.org
-COMMENT=	The @stake Sleuth Kit for forensic analysis
+COMMENT=	The @stake Sleuth Kit for filesystem forensic analysis
 
 CONFLICTS=	ja-ls-[0-9]*
 
