@@ -1,7 +1,5 @@
-Index: configure.in
-===================================================================
---- configure.in	(revision 35649)
-+++ configure.in	(working copy)
+--- configure.in.orig	2010-12-17 07:17:41.000000000 +0100
++++ configure.in	2011-02-23 21:51:33.000000000 +0100
 @@ -19,10 +19,10 @@
  [
    if [[ "$host_vendor" != "apple" ]]; then
@@ -136,7 +134,15 @@ Index: configure.in
  if test "$use_mid" = "yes"; then
    final_message="$final_message\n  MID Support:\tYes"
    SDL_DEFINES="$SDL_DEFINES -DMID"
-@@ -1735,7 +1785,7 @@
+@@ -1418,7 +1468,6 @@
+     xbmc/cores/paplayer/NSFCodec/Makefile \
+     xbmc/cores/paplayer/SIDCodec/Makefile \
+     xbmc/cores/paplayer/vgmstream/Makefile \
+-    xbmc/cores/paplayer/SPCCodec/SNES/SNESAPU/Makefile \
+     xbmc/cores/paplayer/YMCodec/StSoundLibrary/Makefile \
+     xbmc/cores/playercorefactory/Makefile \
+     xbmc/karaoke/Makefile \
+@@ -1735,7 +1784,7 @@
        --enable-static \
        --disable-shared \
        --cc="$CC" &&
@@ -145,7 +151,7 @@ Index: configure.in
      mkdir -p `pwd`/../includes/dvdread
      cp `pwd`/../libdvdread/src/*.h `pwd`/../includes/dvdread
    else
-@@ -1744,13 +1794,14 @@
+@@ -1744,13 +1793,14 @@
        --prefix="${prefix}" --includedir="${includedir}" --libdir="${libdir}" --datadir="${datadir}" \
        --host=$host_alias \
        --build=$build_alias \
@@ -162,7 +168,7 @@ Index: configure.in
      mkdir -p `pwd`/../includes/dvdread
      cp `pwd`/../libdvdread/src/*.h `pwd`/../includes/dvdread
    fi
-@@ -1766,6 +1817,17 @@
+@@ -1766,6 +1816,17 @@
        --enable-static \
        --disable-shared \
        --cc="$CC"

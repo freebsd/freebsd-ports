@@ -16,14 +16,13 @@ lib/xbmc/system/libid3tag-%%ARCH%%-freebsd.so
 lib/xbmc/system/players/dvdplayer/libass-%%ARCH%%-freebsd.so
 lib/xbmc/system/players/dvdplayer/libdvdcss-%%ARCH%%-freebsd.so
 lib/xbmc/system/players/dvdplayer/libdvdnav-%%ARCH%%-freebsd.so
-lib/xbmc/system/players/paplayer/SNESAPU-%%ARCH%%-freebsd.so
 lib/xbmc/system/players/paplayer/adpcm-%%ARCH%%-freebsd.so
 lib/xbmc/system/players/paplayer/libsidplay2-%%ARCH%%-freebsd.so
 lib/xbmc/system/players/paplayer/nosefart-%%ARCH%%-freebsd.so
 lib/xbmc/system/players/paplayer/stsoundlibrary-%%ARCH%%-freebsd.so
 lib/xbmc/system/players/paplayer/timidity-%%ARCH%%-freebsd.so
 lib/xbmc/system/players/paplayer/vgmstream-%%ARCH%%-freebsd.so
-lib/xbmc/system/python/python26-%%ARCH%%-freebsd.so
+lib/xbmc/system/python/python%%PYVER%%-%%ARCH%%-freebsd.so
 lib/xbmc/xbmc-xrandr
 lib/xbmc/xbmc.bin
 %%DOCSDIR%%/LICENSE.GPL

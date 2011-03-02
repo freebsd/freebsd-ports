@@ -12,15 +12,6 @@
  #ifdef _LINUX
  #include <sys/types.h>
  #include <dirent.h>
-@@ -739,7 +744,7 @@
-       strPath = strHomePath;
-   }
- 
--#if defined(_LINUX) && !defined(__APPLE__)
-+#if ( defined(_LINUX) || defined(__FreeBSD__) ) && !defined(__APPLE__)
-   /* Change strPath accordingly when target is XBMC_HOME and when INSTALL_PATH
-    * and BIN_INSTALL_PATH differ
-    */
 @@ -1434,7 +1439,7 @@
  
  void CUtil::CacheSubtitles(const CStdString& strMovie, CStdString& strExtensionCached, XFILE::IFileCallback *pCallback )
@@ -39,15 +30,6 @@
    CLog::Log(LOGDEBUG,"%s: Done (time: %i ms)", __FUNCTION__, (int)(nextTimer - startTimer));
  
    CStdString strLExt;
-@@ -3211,7 +3216,7 @@
-   srand(seed);
- }
- 
--#ifdef _LINUX
-+#if defined(_LINUX) || defined(__FreeBSD__)
- bool CUtil::RunCommandLine(const CStdString& cmdLine, bool waitExit)
- {
-   CStdStringArray args;
 @@ -3440,6 +3445,22 @@
    if (result == 0)
      realpath(given_path, real_given_path);

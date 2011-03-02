@@ -1,6 +1,24 @@
---- ./Makefile.in.orig	2010-10-27 19:04:21.000000000 +0200
-+++ ./Makefile.in	2010-12-01 12:17:34.175401731 +0100
-@@ -507,7 +507,8 @@
+--- Makefile.in.orig	2010-12-17 07:17:41.000000000 +0100
++++ Makefile.in	2011-02-23 22:22:13.000000000 +0100
+@@ -71,7 +71,6 @@
+ 	xbmc/cores/paplayer/timidity \
+ 	xbmc/cores/paplayer/SIDCodec \
+ 	xbmc/cores/paplayer/YMCodec/StSoundLibrary \
+-	xbmc/cores/paplayer/SPCCodec/SNES/SNESAPU \
+ 	xbmc/cores/paplayer/vgmstream \
+ 
+ ifeq (@USE_INTERNAL_LIBA52@,1)
+@@ -363,9 +362,6 @@
+   endif
+ endif
+ 	$(MAKE) -C xbmc/cores/paplayer/YMCodec/StSoundLibrary	
+-ifeq ($(or $(findstring powerpc,$(ARCH)),$(findstring x86_64-linux,$(ARCH)),$(findstring arm, $(ARCH))),)
+-	$(MAKE) -C xbmc/cores/paplayer/SPCCodec/SNES/SNESAPU
+-endif
+ imagelib: dllloader
+ 	$(MAKE) -C xbmc/lib/cximage-6.0
+ 
+@@ -502,7 +498,8 @@
  	$(MAKE) -C tools/XBMCLive
  
  install-bin: xbmc.bin # developement convenience target
@@ -10,7 +28,7 @@
  
  ifeq ($(findstring osx,$(ARCH)), osx)
  	# TODO: add osx install
-@@ -516,45 +517,93 @@
+@@ -511,45 +508,93 @@
  
  install-binaries: install-scripts
  	@echo "Copying XBMC binary to $(DESTDIR)$(libdir)/xbmc/xbmc.bin"
