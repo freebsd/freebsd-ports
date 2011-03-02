@@ -6,7 +6,6 @@
 %%OCAML_SITELIBDIR%%/cryptokit/cryptokit.cmxa
 %%OCAML_SITELIBDIR%%/cryptokit/cryptokit.mli
 %%OCAML_SITELIBDIR%%/cryptokit/libcryptokit.a
-%%OCAML_SITELIBDIR%%/cryptokit/stublibs/dllcryptokit.so
-@dirrmtry %%OCAML_SITELIBDIR%%/cryptokit/stublibs
+%%OCAML_SITELIBDIR%%/cryptokit/dllcryptokit.so
 @dirrmtry %%OCAML_SITELIBDIR%%/cryptokit
 @dirrmtry %%OCAML_SITELIBDIR%%

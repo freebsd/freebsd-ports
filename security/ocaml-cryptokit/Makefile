@@ -7,7 +7,7 @@
 
 PORTNAME=	cryptokit
 PORTVERSION=	1.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	security
 MASTER_SITES=	http://caml.inria.fr/distrib/bazar-ocaml/
 PKGNAMEPREFIX=	ocaml-
@@ -43,8 +43,6 @@ pre-install:
 	@${REINPLACE_CMD} -E -e \
 		's|cp |${INSTALL_DATA} |' \
 		${WRKSRC}/Makefile
-# create installation dir
-	@${MKDIR} ${PREFIX}/${OCAML_SITELIBDIR}/${PORTNAME}/stublibs
 
 post-install:
 .ifndef(NOPORTDOCS)
