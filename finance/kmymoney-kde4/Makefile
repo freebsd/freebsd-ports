@@ -75,8 +75,8 @@ RUN_DEPENDS+=	${SITE_PERL}/Date/Manip.pm:${PORTSDIR}/devel/p5-Date-Manip \
 		${SITE_PERL}/LWP.pm:${PORTSDIR}/www/p5-libwww
 .endif
 
-.if !defined(PACKAGE_BUILDING) && !exists(${LOCALBASE}/lib/libgwengui-qt4.so)
-BROKEN= Please rebuild devel/gwenhywfar with the WITH_QT4 option set
+.if !defined(PACKAGE_BUILDING) && defined(WITH_KBANKING) && !exists(${LOCALBASE}/lib/libgwengui-qt4.so)
+IGNORE= Please rebuild devel/gwenhywfar with the WITH_QT4 option set
 .endif
 
 .include <bsd.port.mk>
