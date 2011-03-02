@@ -12,7 +12,7 @@ PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	devel linux
 MASTER_SITES=	http://www.libsdl.org/release/ \
-		ftp://ftp.icm.edu.pl/vol/rzm9/linux-pld/pool/s/SDL/
+		CRITICAL/rpm
 DISTNAME=	${PORTNAME:U}-${PORTVERSION:S/.1$/-1/}-1
 
 MAINTAINER=	freebsd-emulation@FreeBSD.org
