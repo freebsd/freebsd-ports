@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libxul
-DISTVERSION=	1.9.2.13
+DISTVERSION=	1.9.2.14
 CATEGORIES?=	www devel
 MASTER_SITES=	${MASTER_SITE_MOZILLA}
 MASTER_SITE_SUBDIR=	xulrunner/releases/${DISTVERSION}/source
@@ -58,6 +58,15 @@ LIB_DEPENDS+=	pulse.0:${PORTSDIR}/audio/pulseaudio
 EXTRA_PATCHES=	${FILESDIR}/releng6_pulseaudio
 .else
 EXTRA_PATCHES=	${FILESDIR}/libsydney_oss
+.endif
+
+.if ${ARCH} == powerpc64
+.if ${OSVERSION} < 900033
+BROKEN=		Needs binutils 2.17.50 to build
+.else
+CONFIGURE_ENV+=	UNAME_m="powerpc64"
+CFLAGS+=	-mminimal-toc
+.endif
 .endif
 
 .if defined(WITHOUT_DBUS)
