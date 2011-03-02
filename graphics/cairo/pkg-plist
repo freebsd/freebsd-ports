@@ -8,6 +8,7 @@ include/cairo/cairo-pdf.h
 include/cairo/cairo-ps.h
 include/cairo/cairo-script-interpreter.h
 include/cairo/cairo-svg.h
+include/cairo/cairo-tee.h
 include/cairo/cairo-version.h
 %%XCB%%include/cairo/cairo-xcb.h
 %%X11%%include/cairo/cairo-xlib-xrender.h
@@ -39,6 +40,7 @@ libdata/pkgconfig/cairo-pdf.pc
 libdata/pkgconfig/cairo-png.pc
 libdata/pkgconfig/cairo-ps.pc
 libdata/pkgconfig/cairo-svg.pc
+libdata/pkgconfig/cairo-tee.pc
 %%XCB%%libdata/pkgconfig/cairo-xcb.pc
 %%XCB%%libdata/pkgconfig/cairo-xcb-shm.pc
 %%X11%%libdata/pkgconfig/cairo-xlib.pc
