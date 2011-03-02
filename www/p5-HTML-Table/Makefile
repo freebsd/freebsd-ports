@@ -7,6 +7,7 @@
 
 PORTNAME=	HTML-Table
 PORTVERSION=	2.08a
+PORTREVISION=	1
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -19,5 +20,9 @@ PORTSCOUT=	skipv:2.08
 PERL_CONFIGURE=	yes
 
 MAN3=		HTML::Table.3
+
+post-extract:
+	@${REINPLACE_CMD} -e 's|2.08a|2.08_1|' ${WRKSRC}/lib/HTML/Table.pm
+	${RM}  ${WRKSRC}/lib/HTML/Table.pm.bak
 
 .include <bsd.port.mk>
