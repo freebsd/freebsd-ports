@@ -7,9 +7,8 @@
 PORTNAME=	openmotif
 PORTVERSION=	2.3.2
 CATEGORIES=	x11-toolkits linux
-MASTER_SITES=	ftp://ftp.motifzone.com/%SUBDIR%/ \
-		ftp://ftp.ics.com/openmotif/%SUBDIR%/
-MASTER_SITE_SUBDIR=	2.3/${PORTVERSION}
+MASTER_SITES=	ftp://ftp.ics.com/openmotif/2.3/${PORTVERSION}/ \
+		CRITICAL/rpm
 PKGNAMEPREFIX=	linux-f10-
 EXTRACT_SUFX=	-1.fc10.i386.rpm
 DIST_SUBDIR=	rpm
