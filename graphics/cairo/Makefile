@@ -8,7 +8,7 @@
 
 PORTNAME=	cairo
 PORTVERSION=	1.10.2
-PORTREVISION=	0
+PORTREVISION=	1
 PORTEPOCH?=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://cairographics.org/releases/
@@ -28,6 +28,7 @@ CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" \
 		LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--with-html-dir=${DOCSDIR} \
 		--disable-directfb \
+		--enable-tee \
 		--enable-gobject
 USE_GNOME=	glib20 gnomehack ltverhack referencehack
 USE_AUTOTOOLS=	libtool
