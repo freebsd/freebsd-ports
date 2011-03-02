@@ -18,6 +18,9 @@ lib/liblirc_client.so.2
 sbin/lircd
 sbin/lircmd
 @dirrm include/lirc
+@unexec if cmp -s %D/etc/lircd.conf.sample %D/etc/lircd.conf; then rm -f %D/etc/lircd.conf; fi
+etc/lircd.conf.sample
+@exec if [ ! -f %D/etc/lircd.conf ] ; then cp -p %D/%F %B/lircd.conf; fi
 @exec mkdir -p /var/run/lirc
-@unexec rm -f /var/run/lirc.pid 2> /dev/null || true
+@unexec rm -f /var/run/lircd.pid 2> /dev/null || true
 @unexec rm -rf /var/run/lircd 2> /dev/null || true
