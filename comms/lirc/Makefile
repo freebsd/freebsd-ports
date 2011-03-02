@@ -7,7 +7,7 @@
 
 PORTNAME=	lirc
 PORTVERSION=	0.9.0p1
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	comms
 MASTER_SITES=	http://lirc.org/software/snapshots/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/p1/-pre1/}
@@ -35,7 +35,7 @@ OPTIONS=	MINIMAL "Build with minmal dependencies" Off \
 USE_RC_SUBR=	lircd.sh
 PORTDOCS=	html images irxevent.keys lirc.css lirc.hwdb
 PORTEXAMPLES=	remotes
-SUB_FILES=	pkg-message
+SUB_FILES=	pkg-message lircd.conf
 
 .include <bsd.port.pre.mk>
 
@@ -71,6 +71,10 @@ post-install:
 .if !defined(NOPORTEXAMPLES)
 	@(cd ${WRKSRC} && ${COPYTREE_SHARE} remotes ${EXAMPLESDIR}/)
 .endif
+	@${INSTALL_DATA} ${WRKDIR}/lircd.conf ${PREFIX}/etc/lircd.conf.sample
+	@if [ ! -f ${PREFIX}/etc/lircd.conf ]; then \
+	    ${INSTALL_DATA} ${WRKDIR}/lircd.conf ${PREFIX}/etc; \
+	fi
 	@${MKDIR} /var/run/lirc
 	@${CAT} ${PKGMESSAGE}
 
