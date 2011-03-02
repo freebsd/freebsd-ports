@@ -1,5 +1,5 @@
---- ../passenger-3.0.3/build/nginx.rb.orig	2010-12-07 13:57:32.000000000 +0300
-+++ ../passenger-3.0.3/build/nginx.rb	2010-12-07 13:58:13.000000000 +0300
+--- ../passenger-3.0.4/build/nginx.rb.orig	2010-12-07 13:57:32.000000000 +0300
++++ ../passenger-3.0.4/build/nginx.rb	2010-12-07 13:58:13.000000000 +0300
 @@ -23,10 +23,7 @@
  
  desc "Build Nginx helper agent"
