@@ -33,12 +33,12 @@ Some example configs should have been installed here:
 
 	%%LOCALBASE%%/share/examples/lirc/remotes
 
-USB DVB tuner remotes won't be in there though because the webcamd
-/dev/lircX support for those is kind of a `hack' that works
-different from Linux (emulating rc5-like pulses), but as long as
-mode2 sees data (meaning the Linux drivers used by webcamd support
-the remote), you should be able to create configs by using irrecord
-like described here:
+The port now installs an example lircd.conf that's preconfigured
+for use with webcamd, either with USB DVB tuner remotes supported
+by the Linux drivers by default that webcamd uses, or for remotes
+supplied with MCE USB IR receivers.  If you want to create a config
+for a different remote using an IR receiver that works with mode2
+you can try using irrecord like described here:
 
 	file://%%LOCALBASE%%/share/doc/lirc/html/help.html#new_remote
 
