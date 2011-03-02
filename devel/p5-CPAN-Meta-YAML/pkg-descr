@@ -1,0 +1,6 @@
+This module implements a subset of the YAML specification for use in
+reading and writing CPAN metadata files like META.yml and MYMETA.yml.
+It should not be used for any other general YAML parsing or generation
+task.
+
+WWW: http://search.cpan.org/dist/CPAN-Meta-YAML/

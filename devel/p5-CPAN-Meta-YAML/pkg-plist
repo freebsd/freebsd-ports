@@ -1,0 +1,7 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/CPAN/Meta/YAML/.packlist
+%%SITE_PERL%%/CPAN/Meta/YAML.pm
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/CPAN/Meta/YAML
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/CPAN/Meta
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/CPAN
+@dirrmtry %%SITE_PERL%%/CPAN/Meta
+@dirrmtry %%SITE_PERL%%/CPAN
