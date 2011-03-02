@@ -870,6 +870,7 @@
     SUBDIR += py-netifaces
     SUBDIR += py-netstring
     SUBDIR += py-oauth
+    SUBDIR += py-oauth2
     SUBDIR += py-pcap
     SUBDIR += py-pcapy
     SUBDIR += py-pcs
