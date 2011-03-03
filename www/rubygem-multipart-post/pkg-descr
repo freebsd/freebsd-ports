@@ -1,0 +1,4 @@
+multipart-post adds a streamy multipart form post capability to Net::HTTP. Also
+supports other methods besides POST.
+
+WWW: http://github.com/nicksieger/multipart-post
