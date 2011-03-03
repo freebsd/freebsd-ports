@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xmltv
-PORTVERSION=	0.5.57
+PORTVERSION=	0.5.59
 CATEGORIES=	textproc perl5
 MASTER_SITES=	SF
 PKGNAMEPREFIX=	p5-
@@ -14,12 +14,17 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Set of programs to process TV (tvguide) listings in XML format
 
-BUILD_DEPENDS=	\
+XMLTV_DEPENDS=	\
 	${SITE_PERL}/${PERL_ARCH}/XML/Parser.pm:${PORTSDIR}/textproc/p5-XML-Parser \
 	${SITE_PERL}/XML/Twig.pm:${PORTSDIR}/textproc/p5-XML-Twig \
 	${SITE_PERL}/XML/Writer.pm:${PORTSDIR}/textproc/p5-XML-Writer \
 	${SITE_PERL}/Date/Manip.pm:${PORTSDIR}/devel/p5-Date-Manip \
+	${SITE_PERL}/${PERL_ARCH}/PerlIO/gzip.pm:${PORTSDIR}/archivers/p5-PerlIO-gzip \
+	${SITE_PERL}/CGI.pm:${PORTSDIR}/www/p5-CGI.pm \
+	${SITE_PERL}/Compress/Zlib.pm:${PORTSDIR}/archivers/p5-IO-Compress \
+	${SITE_PERL}/${PERL_ARCH}/Data/Dumper.pm:${PORTSDIR}/devel/p5-Data-Dumper \
 	${SITE_PERL}/LWP.pm:${PORTSDIR}/www/p5-libwww \
+	${SITE_PERL}/Parse/RecDescent.pm:${PORTSDIR}/devel/p5-Parse-RecDescent \
 	${SITE_PERL}/HTML/TreeBuilder.pm:${PORTSDIR}/www/p5-HTML-Tree \
 	${SITE_PERL}/${PERL_ARCH}/HTML/Parser.pm:${PORTSDIR}/www/p5-HTML-Parser \
 	${SITE_PERL}/${PERL_ARCH}/Tk/TableMatrix.pm:${PORTSDIR}/x11-toolkits/p5-Tk-TableMatrix \
@@ -28,7 +33,6 @@ BUILD_DEPENDS=	\
 	${SITE_PERL}/SOAP/Lite.pm:${PORTSDIR}/net/p5-SOAP-Lite \
 	${SITE_PERL}/${PERL_ARCH}/Term/ReadKey.pm:${PORTSDIR}/devel/p5-Term-ReadKey \
 	${SITE_PERL}/HTML/TableExtract.pm:${PORTSDIR}/www/p5-HTML-TableExtract \
-	${SITE_PERL}/HTML/LinkExtractor.pm:${PORTSDIR}/www/p5-HTML-LinkExtractor \
 	${SITE_PERL}/WWW/Mechanize.pm:${PORTSDIR}/www/p5-WWW-Mechanize \
 	${SITE_PERL}/Term/ProgressBar.pm:${PORTSDIR}/devel/p5-Term-ProgressBar \
 	${SITE_PERL}/Lingua/Preferred.pm:${PORTSDIR}/textproc/p5-Lingua-Preferred \
@@ -37,10 +41,10 @@ BUILD_DEPENDS=	\
 	${SITE_PERL}/Lingua/EN/Numbers/Ordinate.pm:${PORTSDIR}/textproc/p5-Lingua-EN-Numbers-Ordinate \
 	${SITE_PERL}/Archive/Zip.pm:${PORTSDIR}/archivers/p5-Archive-Zip \
 	${SITE_PERL}/HTTP/Cache/Transparent.pm:${PORTSDIR}/www/p5-HTTP-Cache-Transparent \
-	${SITE_PERL}/Date/Parse.pm:${PORTSDIR}/devel/p5-TimeDate \
-	${SITE_PERL}/File/Slurp.pm:${PORTSDIR}/devel/p5-File-Slurp \
-	${SITE_PERL}/${PERL_ARCH}/Text/Bidi.pm:${PORTSDIR}/converters/p5-Text-Bidi
-RUN_DEPENDS=	${BUILD_DEPENDS}
+	${SITE_PERL}/IO/Stringy.pm:${PORTSDIR}/devel/p5-IO-stringy \
+	${SITE_PERL}/Date/Parse.pm:${PORTSDIR}/devel/p5-TimeDate
+BUILD_DEPENDS=	${XMLTV_DEPENDS}
+RUN_DEPENDS=	${XMLTV_DEPENDS}
 
 USE_BZIP2=	yes
 PERL_CONFIGURE=	yes
@@ -60,13 +64,13 @@ PORTDOCS=	COPYING \
 .endif
 
 MAN1=	tv_cat.1 tv_check.1 tv_extractinfo_ar.1 tv_extractinfo_en.1 \
-	tv_find_grabbers.1 tv_grab_ar.1 \
+	tv_find_grabbers.1 \
 	tv_grab_ch_search.1 tv_grab_combiner.1 tv_grab_dk_dr.1 \
 	tv_grab_dtv_la.1 tv_grab_ee.1 tv_grab_es_laguiatv.1 \
-	tv_grab_es_miguiatv.1 tv_grab_fi.1 tv_grab_fr.1 tv_grab_hr.1 \
+	tv_grab_es_miguiatv.1 tv_grab_fi.1 tv_grab_fi_sv.1 tv_grab_fr.1 tv_grab_hr.1 \
 	tv_grab_huro.1 tv_grab_il.1 tv_grab_in.1 tv_grab_it.1 tv_grab_it_dvb.1 \
 	tv_grab_is.1 tv_grab_na_dd.1 tv_grab_na_icons.1 tv_grab_nl.1 \
-	tv_grab_no_gfeed.1 tv_grab_pt.1 tv_grab_re.1 tv_grab_se_swedb.1 \
+	tv_grab_no_gfeed.1 tv_grab_pt.1 tv_grab_pt_meo.1 tv_grab_re.1 tv_grab_se_swedb.1 \
 	tv_grab_uk_bleb.1 tv_grab_uk_rt.1 tv_grab_za.1 tv_grep.1 tv_imdb.1 \
 	tv_remove_some_overlapping.1 tv_sort.1 tv_split.1 tv_to_latex.1 \
 	tv_to_potatoe.1 tv_to_text.1 tv_validate_file.1 \

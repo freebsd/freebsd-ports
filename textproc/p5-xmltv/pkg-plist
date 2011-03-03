@@ -3,7 +3,6 @@ bin/tv_check
 bin/tv_extractinfo_ar
 bin/tv_extractinfo_en
 bin/tv_find_grabbers
-bin/tv_grab_ar
 bin/tv_grab_ch_search
 bin/tv_grab_combiner
 bin/tv_grab_dk_dr
@@ -13,6 +12,7 @@ bin/tv_grab_es_laguiatv
 bin/tv_grab_es_miguiatv
 bin/tv_grab_eu_epgdata
 bin/tv_grab_fi
+bin/tv_grab_fi_sv
 bin/tv_grab_fr
 bin/tv_grab_hr
 bin/tv_grab_huro
@@ -27,6 +27,7 @@ bin/tv_grab_na_icons
 bin/tv_grab_nl
 bin/tv_grab_no_gfeed
 bin/tv_grab_pt
+bin/tv_grab_pt_meo
 bin/tv_grab_re
 bin/tv_grab_se_swedb
 bin/tv_grab_uk_bleb
@@ -77,7 +78,6 @@ bin/tv_validate_grabber
 %%SITE_PERL%%/XMLTV/ValidateGrabber.pm
 %%SITE_PERL%%/XMLTV/Version.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/XMLTV/.packlist
-%%DATADIR%%/tv_grab_ch_search/channel_ids
 %%DATADIR%%/tv_grab_eu_epgdata/channel_ids
 %%DATADIR%%/tv_grab_huro/catmap.cz
 %%DATADIR%%/tv_grab_huro/catmap.hu
@@ -85,26 +85,27 @@ bin/tv_validate_grabber
 %%DATADIR%%/tv_grab_huro/catmap.sk
 %%DATADIR%%/tv_grab_huro/jobmap
 %%DATADIR%%/tv_grab_it/channel_ids
-%%DATADIR%%/tv_grab_it_dvb/channel_ids
 %%DATADIR%%/tv_grab_it_dvb/sky_it.dict
 %%DATADIR%%/tv_grab_it_dvb/sky_it.themes
 %%DATADIR%%/tv_grab_it_dvb/channel_ids
 %%DATADIR%%/tv_grab_uk_bleb/icon_urls
 %%DATADIR%%/tv_grab_uk_rt/channel_ids
 %%DATADIR%%/tv_grab_uk_rt/channels_platforms
+%%DATADIR%%/tv_grab_uk_rt/lineups/freesat.map
+%%DATADIR%%/tv_grab_uk_rt/lineups/freeview.map
 %%DATADIR%%/tv_grab_uk_rt/prog_titles_to_process
 %%DATADIR%%/tv_grab_uk_rt/regional_channels_by_postcode
 %%DATADIR%%/tv_grab_uk_rt/utf8_fixups
 %%DATADIR%%/xmltv.dtd
 %%DATADIR%%/xmltv-lineup.dtd
 www/cgi-bin/tv_pick.cgi
+@dirrm %%DATADIR%%/tv_grab_uk_rt/lineups
 @dirrm %%DATADIR%%/tv_grab_uk_rt
 @dirrm %%DATADIR%%/tv_grab_uk_bleb
 @dirrm %%DATADIR%%/tv_grab_it_dvb
 @dirrm %%DATADIR%%/tv_grab_it
 @dirrm %%DATADIR%%/tv_grab_huro
 @dirrm %%DATADIR%%/tv_grab_eu_epgdata
-@dirrm %%DATADIR%%/tv_grab_ch_search
 @dirrm %%DATADIR%%
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/XMLTV
 @dirrm %%SITE_PERL%%/XMLTV/ProgressBar

@@ -1,11 +1,11 @@
---- Makefile.PL.orig	Mon Feb 27 15:53:11 2006
-+++ Makefile.PL	Mon Feb 27 15:56:50 2006
-@@ -537,14 +537,14 @@ END
+--- Makefile.PL.orig	2010-11-22 07:04:58.000000000 +0100
++++ Makefile.PL	2011-03-03 14:50:27.000000000 +0100
+@@ -804,14 +804,14 @@
  	# Guess a default value for {install} based on whether
  	# prerequisites were found.
  	#
--	$info->{install} = $opt_yes || not $info->{missing};
-+	$info->{install} = 1; #$opt_yes || not $info->{missing};
+-	$info->{install} = (not $info->{exclude}) && ($opt_yes || not $info->{missing});
++	$info->{install} = 1;(not $info->{exclude}) && ($opt_yes || not $info->{missing});
  
  	print STDERR ($s, ' ' x (1 + $width - length $s),
  		      $info->{install} ? '[yes]' : '[no]',
@@ -17,7 +17,7 @@
  	# Need to set {install} for each component by prompting.
  	foreach my $info (@opt_components) {
  	    my $missing = $info->{missing};
-@@ -573,8 +573,8 @@ END
+@@ -840,8 +840,8 @@
  		die;
  	    }
  	
@@ -28,7 +28,7 @@
  	}
      }
  }
-@@ -778,8 +778,8 @@ END
+@@ -1045,8 +1045,8 @@
      }
  
      # Remove existing non-working 'uninstall' target.
