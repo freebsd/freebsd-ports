@@ -10,8 +10,7 @@ PORTVERSION=	0.3.7
 PORTREVISION=	14
 CATEGORIES=	deskutils xfce
 MASTER_SITES=	http://goodies.xfce.org/releases/notification-daemon-xfce/ \
-		CRITICAL
-MASTER_SITE_SUBDIR=xfce/4.6.2/src
+		CRITICAL/
 PKGNAMEPREFIX=	xfce4-
 DISTNAME=	${PORTNAME}-xfce-${PORTVERSION}
 DIST_SUBDIR=	xfce4
