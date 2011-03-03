@@ -1,106 +1,139 @@
 bin/xfce4-panel
-bin/xfce4-popup-windowlist
-etc/xdg/xfce4/panel/clock-14.rc
-etc/xdg/xfce4/panel/launcher-10.rc
-etc/xdg/xfce4/panel/launcher-7.rc
-etc/xdg/xfce4/panel/launcher-8.rc
-etc/xdg/xfce4/panel/launcher-9.rc
-etc/xdg/xfce4/panel/panels.xml
-etc/xdg/xfce4/panel/systray-4.rc
-etc/xdg/xfce4/panel/xfce4-menu-5.rc
-include/xfce4/libxfce4panel/libxfce4panel-enum-types.h
-include/xfce4/libxfce4panel/libxfce4panel.h
-include/xfce4/libxfce4panel/xfce-arrow-button.h
-include/xfce4/libxfce4panel/xfce-hvbox.h
-include/xfce4/libxfce4panel/xfce-itembar.h
-include/xfce4/libxfce4panel/xfce-panel-convenience.h
-include/xfce4/libxfce4panel/xfce-panel-enums.h
-include/xfce4/libxfce4panel/xfce-panel-external-plugin.h
-include/xfce4/libxfce4panel/xfce-panel-internal-plugin.h
-include/xfce4/libxfce4panel/xfce-panel-macros.h
-include/xfce4/libxfce4panel/xfce-panel-plugin-iface.h
-include/xfce4/libxfce4panel/xfce-panel-plugin.h
-include/xfce4/libxfce4panel/xfce-panel-window.h
-lib/libxfce4panel.a
-lib/libxfce4panel.la
-lib/libxfce4panel.so
-lib/libxfce4panel.so.2
-lib/xfce4/panel-plugins/libactions.a
-lib/xfce4/panel-plugins/libactions.la
-lib/xfce4/panel-plugins/libactions.so
-lib/xfce4/panel-plugins/libclock.a
-lib/xfce4/panel-plugins/libclock.la
-lib/xfce4/panel-plugins/libclock.so
-lib/xfce4/panel-plugins/libiconbox.a
-lib/xfce4/panel-plugins/libiconbox.la
-lib/xfce4/panel-plugins/libiconbox.so
-lib/xfce4/panel-plugins/liblauncher.a
-lib/xfce4/panel-plugins/liblauncher.la
-lib/xfce4/panel-plugins/liblauncher.so
-lib/xfce4/panel-plugins/libpager.a
-lib/xfce4/panel-plugins/libpager.la
-lib/xfce4/panel-plugins/libpager.so
-lib/xfce4/panel-plugins/libseparator.a
-lib/xfce4/panel-plugins/libseparator.la
-lib/xfce4/panel-plugins/libseparator.so
-lib/xfce4/panel-plugins/libshowdesktop.a
-lib/xfce4/panel-plugins/libshowdesktop.la
-lib/xfce4/panel-plugins/libshowdesktop.so
-lib/xfce4/panel-plugins/libsystray.a
-lib/xfce4/panel-plugins/libsystray.la
-lib/xfce4/panel-plugins/libsystray.so
-lib/xfce4/panel-plugins/libtasklist.a
-lib/xfce4/panel-plugins/libtasklist.la
-lib/xfce4/panel-plugins/libtasklist.so
-lib/xfce4/panel-plugins/libwindowlist.a
-lib/xfce4/panel-plugins/libwindowlist.la
-lib/xfce4/panel-plugins/libwindowlist.so
+bin/xfce4-popup-applicationsmenu
+bin/xfce4-popup-directorymenu
+bin/xfce4-popup-windowmenu
+etc/xdg/xfce4/panel/default.xml
+include/xfce4/libxfce4panel-1.0/libxfce4panel/libxfce4panel-config.h
+include/xfce4/libxfce4panel-1.0/libxfce4panel/libxfce4panel-enum-types.h
+include/xfce4/libxfce4panel-1.0/libxfce4panel/libxfce4panel-enums.h
+include/xfce4/libxfce4panel-1.0/libxfce4panel/libxfce4panel.h
+include/xfce4/libxfce4panel-1.0/libxfce4panel/xfce-arrow-button.h
+include/xfce4/libxfce4panel-1.0/libxfce4panel/xfce-hvbox.h
+include/xfce4/libxfce4panel-1.0/libxfce4panel/xfce-panel-convenience.h
+include/xfce4/libxfce4panel-1.0/libxfce4panel/xfce-panel-image.h
+include/xfce4/libxfce4panel-1.0/libxfce4panel/xfce-panel-macros-46.h
+include/xfce4/libxfce4panel-1.0/libxfce4panel/xfce-panel-macros.h
+include/xfce4/libxfce4panel-1.0/libxfce4panel/xfce-panel-plugin-provider.h
+include/xfce4/libxfce4panel-1.0/libxfce4panel/xfce-panel-plugin.h
+lib/libxfce4panel-1.0.a
+lib/libxfce4panel-1.0.la
+lib/libxfce4panel-1.0.so
+lib/libxfce4panel-1.0.so.3
+lib/xfce4/panel/migrate
+lib/xfce4/panel/plugins/libactions.a
+lib/xfce4/panel/plugins/libactions.la
+lib/xfce4/panel/plugins/libactions.so
+lib/xfce4/panel/plugins/libapplicationsmenu.a
+lib/xfce4/panel/plugins/libapplicationsmenu.la
+lib/xfce4/panel/plugins/libapplicationsmenu.so
+lib/xfce4/panel/plugins/libclock.a
+lib/xfce4/panel/plugins/libclock.la
+lib/xfce4/panel/plugins/libclock.so
+lib/xfce4/panel/plugins/libdirectorymenu.a
+lib/xfce4/panel/plugins/libdirectorymenu.la
+lib/xfce4/panel/plugins/libdirectorymenu.so
+lib/xfce4/panel/plugins/liblauncher.a
+lib/xfce4/panel/plugins/liblauncher.la
+lib/xfce4/panel/plugins/liblauncher.so
+lib/xfce4/panel/plugins/libpager.a
+lib/xfce4/panel/plugins/libpager.la
+lib/xfce4/panel/plugins/libpager.so
+lib/xfce4/panel/plugins/libseparator.a
+lib/xfce4/panel/plugins/libseparator.la
+lib/xfce4/panel/plugins/libseparator.so
+lib/xfce4/panel/plugins/libshowdesktop.a
+lib/xfce4/panel/plugins/libshowdesktop.la
+lib/xfce4/panel/plugins/libshowdesktop.so
+lib/xfce4/panel/plugins/libsystray.a
+lib/xfce4/panel/plugins/libsystray.la
+lib/xfce4/panel/plugins/libsystray.so
+lib/xfce4/panel/plugins/libtasklist.a
+lib/xfce4/panel/plugins/libtasklist.la
+lib/xfce4/panel/plugins/libtasklist.so
+lib/xfce4/panel/plugins/libwindowmenu.a
+lib/xfce4/panel/plugins/libwindowmenu.la
+lib/xfce4/panel/plugins/libwindowmenu.so
+lib/xfce4/panel/wrapper
 libdata/pkgconfig/libxfce4panel-1.0.pc
-%%NLS%%share/applications/xfce4-panel-manager.desktop
-share/gtk-doc/html/libxfce4panel/XfceArrowButton.html
-share/gtk-doc/html/libxfce4panel/XfceExternalPanelPlugin.html
-share/gtk-doc/html/libxfce4panel/XfceHVBox.html
-share/gtk-doc/html/libxfce4panel/XfceInternalPanelPlugin.html
-share/gtk-doc/html/libxfce4panel/XfceItembar.html
-share/gtk-doc/html/libxfce4panel/XfcePanelPlugin.html
-share/gtk-doc/html/libxfce4panel/XfcePanelWindow.html
-share/gtk-doc/html/libxfce4panel/home.png
-share/gtk-doc/html/libxfce4panel/index.html
-share/gtk-doc/html/libxfce4panel/index.sgml
-share/gtk-doc/html/libxfce4panel/ix01.html
-share/gtk-doc/html/libxfce4panel/ix02.html
-share/gtk-doc/html/libxfce4panel/left.png
-share/gtk-doc/html/libxfce4panel/libxfce4panel-Common-macros.html
-share/gtk-doc/html/libxfce4panel/libxfce4panel-Convenience-Widgets.html
-share/gtk-doc/html/libxfce4panel/libxfce4panel-Register-Plugins.html
-share/gtk-doc/html/libxfce4panel/libxfce4panel-Standard-Enumerations.html
-share/gtk-doc/html/libxfce4panel/libxfce4panel-fundamentals.html
-share/gtk-doc/html/libxfce4panel/libxfce4panel-panel.html
-share/gtk-doc/html/libxfce4panel/libxfce4panel-widgets.html
-share/gtk-doc/html/libxfce4panel/libxfce4panel.devhelp
-share/gtk-doc/html/libxfce4panel/libxfce4panel.devhelp2
-share/gtk-doc/html/libxfce4panel/right.png
-share/gtk-doc/html/libxfce4panel/style.css
-share/gtk-doc/html/libxfce4panel/up.png
-share/icons/hicolor/16x16/apps/xfce-system-exit.png
-share/icons/hicolor/16x16/apps/xfce-system-lock.png
-share/icons/hicolor/16x16/apps/xfce4-panel.png
-share/icons/hicolor/22x22/apps/xfce4-panel.png
-share/icons/hicolor/24x24/apps/xfce4-panel.png
-share/icons/hicolor/32x32/apps/xfce4-panel.png
-share/icons/hicolor/48x48/apps/xfce-mouse.png
-share/icons/hicolor/48x48/apps/xfce4-clock.png
-share/icons/hicolor/48x48/apps/xfce4-iconbox.png
-share/icons/hicolor/48x48/apps/xfce4-panel.png
-share/icons/hicolor/48x48/apps/xfce4-separator.png
-share/icons/hicolor/48x48/apps/xfce4-systray.png
-share/icons/hicolor/48x48/apps/xfce4-taskbar.png
+share/applications/panel-desktop-handler.desktop
+share/applications/panel-preferences.desktop
+%%DOCSDIR%%/README.gtkrc-2.0
+%%DOCSDIR%%/html/C/figures/actions.png
+%%DOCSDIR%%/html/C/figures/add-new-items.png
+%%DOCSDIR%%/html/C/figures/applicationsmenu.png
+%%DOCSDIR%%/html/C/figures/clock.png
+%%DOCSDIR%%/html/C/figures/directorymenu.png
+%%DOCSDIR%%/html/C/figures/launcher.png
+%%DOCSDIR%%/html/C/figures/pager.png
+%%DOCSDIR%%/html/C/figures/preferences.png
+%%DOCSDIR%%/html/C/figures/separator.png
+%%DOCSDIR%%/html/C/figures/systray.png
+%%DOCSDIR%%/html/C/figures/tasklist.png
+%%DOCSDIR%%/html/C/figures/windowmenu.png
+%%DOCSDIR%%/html/xfce4-panel.css
+%%DOCSDIR%%/html/C/actions.html
+%%DOCSDIR%%/html/C/add-new-items.html
+%%DOCSDIR%%/html/C/applicationsmenu.html
+%%DOCSDIR%%/html/C/clock.html
+%%DOCSDIR%%/html/C/directorymenu.html
+%%DOCSDIR%%/html/C/getting-started.html
+%%DOCSDIR%%/html/C/index.html
+%%DOCSDIR%%/html/C/launcher.html
+%%DOCSDIR%%/html/C/license.html
+%%DOCSDIR%%/html/C/pager.html
+%%DOCSDIR%%/html/C/preferences.html
+%%DOCSDIR%%/html/C/separator.html
+%%DOCSDIR%%/html/C/showdesktop.html
+%%DOCSDIR%%/html/C/systray.html
+%%DOCSDIR%%/html/C/tasklist.html
+%%DOCSDIR%%/html/C/theming.html
+%%DOCSDIR%%/html/C/windowmenu.html
+share/gtk-doc/html/libxfce4panel-1.0/XfceArrowButton.html
+share/gtk-doc/html/libxfce4panel-1.0/XfceHVBox.html
+share/gtk-doc/html/libxfce4panel-1.0/XfcePanelImage.html
+share/gtk-doc/html/libxfce4panel-1.0/XfcePanelPlugin.html
+share/gtk-doc/html/libxfce4panel-1.0/api-index-4-6.html
+share/gtk-doc/html/libxfce4panel-1.0/api-index-4-8.html
+share/gtk-doc/html/libxfce4panel-1.0/api-index-deprecated.html
+share/gtk-doc/html/libxfce4panel-1.0/api-index-full.html
+share/gtk-doc/html/libxfce4panel-1.0/home.png
+share/gtk-doc/html/libxfce4panel-1.0/index.html
+share/gtk-doc/html/libxfce4panel-1.0/index.sgml
+share/gtk-doc/html/libxfce4panel-1.0/left.png
+share/gtk-doc/html/libxfce4panel-1.0/libxfce4panel-1.0.devhelp
+share/gtk-doc/html/libxfce4panel-1.0/libxfce4panel-1.0.devhelp2
+share/gtk-doc/html/libxfce4panel-1.0/libxfce4panel-Commonly-used-plugin-macros.html
+share/gtk-doc/html/libxfce4panel-1.0/libxfce4panel-Convenience-Functions.html
+share/gtk-doc/html/libxfce4panel-1.0/libxfce4panel-GObject-Oriented-Panel-Plugin-Registers-Macros.html
+share/gtk-doc/html/libxfce4panel-1.0/libxfce4panel-Panel-Plugin-Register-Macros-(4.6-Style).html
+share/gtk-doc/html/libxfce4panel-1.0/libxfce4panel-Panel-Plugin-Register-Macros.html
+share/gtk-doc/html/libxfce4panel-1.0/libxfce4panel-Standard-Enumerations.html
+share/gtk-doc/html/libxfce4panel-1.0/libxfce4panel-Version-Information.html
+share/gtk-doc/html/libxfce4panel-1.0/libxfce4panel-fundamentals.html
+share/gtk-doc/html/libxfce4panel-1.0/libxfce4panel-miscelleanous.html
+share/gtk-doc/html/libxfce4panel-1.0/libxfce4panel-plugins.html
+share/gtk-doc/html/libxfce4panel-1.0/libxfce4panel-widgets.html
+share/gtk-doc/html/libxfce4panel-1.0/right.png
+share/gtk-doc/html/libxfce4panel-1.0/style.css
+share/gtk-doc/html/libxfce4panel-1.0/up.png
+%%NLS%%share/icons/hicolor/16x16/apps/xfce4-panel-menu.png
+%%NLS%%share/icons/hicolor/16x16/apps/xfce4-panel.png
+%%NLS%%share/icons/hicolor/22x22/apps/xfce4-panel-menu.png
+%%NLS%%share/icons/hicolor/22x22/apps/xfce4-panel.png
+%%NLS%%share/icons/hicolor/24x24/apps/xfce4-panel-menu.png
+%%NLS%%share/icons/hicolor/24x24/apps/xfce4-panel.png
+%%NLS%%share/icons/hicolor/32x32/apps/xfce4-panel-menu.png
+%%NLS%%share/icons/hicolor/32x32/apps/xfce4-panel.png
+%%NLS%%share/icons/hicolor/48x48/apps/xfce4-panel-menu.png
+%%NLS%%share/icons/hicolor/48x48/apps/xfce4-panel.png
+%%NLS%%share/icons/hicolor/scalable/apps/xfce4-panel.svg
 %%NLS%%share/locale/am/LC_MESSAGES/xfce4-panel.mo
 %%NLS%%share/locale/ar/LC_MESSAGES/xfce4-panel.mo
 %%NLS%%share/locale/ast/LC_MESSAGES/xfce4-panel.mo
 %%NLS%%share/locale/az/LC_MESSAGES/xfce4-panel.mo
 %%NLS%%share/locale/be/LC_MESSAGES/xfce4-panel.mo
 %%NLS%%share/locale/bg/LC_MESSAGES/xfce4-panel.mo
+%%NLS%%share/locale/bn/LC_MESSAGES/xfce4-panel.mo
 %%NLS%%share/locale/bn_IN/LC_MESSAGES/xfce4-panel.mo
 %%NLS%%share/locale/ca/LC_MESSAGES/xfce4-panel.mo
 %%NLS%%share/locale/cs/LC_MESSAGES/xfce4-panel.mo
@@ -121,9 +154,11 @@ share/icons/hicolor/48x48/apps/xfce4-taskbar.png
 %%NLS%%share/locale/gu/LC_MESSAGES/xfce4-panel.mo
 %%NLS%%share/locale/he/LC_MESSAGES/xfce4-panel.mo
 %%NLS%%share/locale/hi/LC_MESSAGES/xfce4-panel.mo
+%%NLS%%share/locale/hr/LC_MESSAGES/xfce4-panel.mo
 %%NLS%%share/locale/hu/LC_MESSAGES/xfce4-panel.mo
 %%NLS%%share/locale/hy/LC_MESSAGES/xfce4-panel.mo
 %%NLS%%share/locale/id/LC_MESSAGES/xfce4-panel.mo
+%%NLS%%share/locale/is/LC_MESSAGES/xfce4-panel.mo
 %%NLS%%share/locale/it/LC_MESSAGES/xfce4-panel.mo
 %%NLS%%share/locale/ja/LC_MESSAGES/xfce4-panel.mo
 %%NLS%%share/locale/ka/LC_MESSAGES/xfce4-panel.mo
@@ -137,7 +172,6 @@ share/icons/hicolor/48x48/apps/xfce4-taskbar.png
 %%NLS%%share/locale/ms/LC_MESSAGES/xfce4-panel.mo
 %%NLS%%share/locale/nb/LC_MESSAGES/xfce4-panel.mo
 %%NLS%%share/locale/nl/LC_MESSAGES/xfce4-panel.mo
-%%NLS%%share/locale/nn/LC_MESSAGES/xfce4-panel.mo
 %%NLS%%share/locale/pa/LC_MESSAGES/xfce4-panel.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/xfce4-panel.mo
 %%NLS%%share/locale/pt/LC_MESSAGES/xfce4-panel.mo
@@ -157,158 +191,58 @@ share/icons/hicolor/48x48/apps/xfce4-taskbar.png
 %%NLS%%share/locale/vi/LC_MESSAGES/xfce4-panel.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/xfce4-panel.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/xfce4-panel.mo
-share/xfce4/panel-plugins/actions.desktop
-share/xfce4/panel-plugins/clock.desktop
-share/xfce4/panel-plugins/iconbox.desktop
-share/xfce4/panel-plugins/launcher.desktop
-share/xfce4/panel-plugins/pager.desktop
-share/xfce4/panel-plugins/separator.desktop
-share/xfce4/panel-plugins/showdesktop.desktop
-share/xfce4/panel-plugins/systray.desktop
-share/xfce4/panel-plugins/tasklist.desktop
-share/xfce4/panel-plugins/windowlist.desktop
-@dirrmtry share/xfce4/panel-plugins
+share/xfce4/panel/plugins/actions.desktop
+share/xfce4/panel/plugins/applicationsmenu.desktop
+share/xfce4/panel/plugins/clock.desktop
+share/xfce4/panel/plugins/directorymenu.desktop
+share/xfce4/panel/plugins/launcher.desktop
+share/xfce4/panel/plugins/pager.desktop
+share/xfce4/panel/plugins/separator.desktop
+share/xfce4/panel/plugins/showdesktop.desktop
+share/xfce4/panel/plugins/systray.desktop
+share/xfce4/panel/plugins/tasklist.desktop
+share/xfce4/panel/plugins/windowmenu.desktop
+@dirrm share/xfce4/panel/plugins
+@dirrm share/xfce4/panel
 @dirrmtry share/xfce4
-%%NLS%%@dirrmtry share/applications
-%%NLS%%@dirrmtry share/locale/zh_TW/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/zh_TW
-%%NLS%%@dirrmtry share/locale/zh_CN/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/zh_CN
-%%NLS%%@dirrmtry share/locale/vi/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/vi
 %%NLS%%@dirrmtry share/locale/ur_PK/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/ur_PK
 %%NLS%%@dirrmtry share/locale/ur/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/ur
-%%NLS%%@dirrmtry share/locale/uk/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/uk
 %%NLS%%@dirrmtry share/locale/ug/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/ug
-%%NLS%%@dirrmtry share/locale/tr/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/tr
-%%NLS%%@dirrmtry share/locale/ta/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/ta
-%%NLS%%@dirrmtry share/locale/sv/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/sv
-%%NLS%%@dirrmtry share/locale/sq/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/sq
-%%NLS%%@dirrmtry share/locale/sk/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/sk
 %%NLS%%@dirrmtry share/locale/si/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/si
-%%NLS%%@dirrmtry share/locale/ru/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/ru
-%%NLS%%@dirrmtry share/locale/ro/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/ro
-%%NLS%%@dirrmtry share/locale/pt_BR/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/pt_BR
-%%NLS%%@dirrmtry share/locale/pt/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/pt
-%%NLS%%@dirrmtry share/locale/pl/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/pl
-%%NLS%%@dirrmtry share/locale/pa/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/pa
-%%NLS%%@dirrmtry share/locale/nn/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/nn
-%%NLS%%@dirrmtry share/locale/nl/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/nl
-%%NLS%%@dirrmtry share/locale/nb/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/nb
-%%NLS%%@dirrmtry share/locale/ms/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/ms
 %%NLS%%@dirrmtry share/locale/mr/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/mr
-%%NLS%%@dirrmtry share/locale/mk/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/mk
-%%NLS%%@dirrmtry share/locale/lv/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/lv
-%%NLS%%@dirrmtry share/locale/lt/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/lt
 %%NLS%%@dirrmtry share/locale/ku/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/ku
-%%NLS%%@dirrmtry share/locale/ko/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/ko
 %%NLS%%@dirrmtry share/locale/kk/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/kk
-%%NLS%%@dirrmtry share/locale/ka/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/ka
-%%NLS%%@dirrmtry share/locale/ja/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/ja
-%%NLS%%@dirrmtry share/locale/it/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/it
-%%NLS%%@dirrmtry share/locale/id/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/id
 %%NLS%%@dirrmtry share/locale/hy/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/hy
-%%NLS%%@dirrmtry share/locale/hu/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/hu
-%%NLS%%@dirrmtry share/locale/hi/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/hi
-%%NLS%%@dirrmtry share/locale/he/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/he
-%%NLS%%@dirrmtry share/locale/gu/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/gu
-%%NLS%%@dirrmtry share/locale/gl/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/gl
-%%NLS%%@dirrmtry share/locale/fr/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/fr
-%%NLS%%@dirrmtry share/locale/fi/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/fi
-%%NLS%%@dirrmtry share/locale/fa/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/fa
-%%NLS%%@dirrmtry share/locale/eu/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/eu
-%%NLS%%@dirrmtry share/locale/et/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/et
-%%NLS%%@dirrmtry share/locale/es/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/es
-%%NLS%%@dirrmtry share/locale/eo/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/eo
-%%NLS%%@dirrmtry share/locale/en_GB/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/en_GB
-%%NLS%%@dirrmtry share/locale/el/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/el
 %%NLS%%@dirrmtry share/locale/dz/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/dz
-%%NLS%%@dirrmtry share/locale/de/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/de
-%%NLS%%@dirrmtry share/locale/da/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/da
-%%NLS%%@dirrmtry share/locale/cs/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/cs
-%%NLS%%@dirrmtry share/locale/ca/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/ca
 %%NLS%%@dirrmtry share/locale/bn_IN/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/bn_IN
-%%NLS%%@dirrmtry share/locale/bg/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/bg
-%%NLS%%@dirrmtry share/locale/be/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/be
-%%NLS%%@dirrmtry share/locale/az/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/az
 %%NLS%%@dirrmtry share/locale/ast/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/ast
-%%NLS%%@dirrmtry share/locale/ar/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/ar
-%%NLS%%@dirrmtry share/locale/am/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/am
-@dirrmtry share/icons/hicolor/48x48/apps
-@dirrmtry share/icons/hicolor/48x48
-@dirrmtry share/icons/hicolor/32x32/apps
-@dirrmtry share/icons/hicolor/32x32
-@dirrmtry share/icons/hicolor/24x24/apps
-@dirrmtry share/icons/hicolor/24x24
-@dirrmtry share/icons/hicolor/22x22/apps
-@dirrmtry share/icons/hicolor/22x22
-@dirrmtry share/icons/hicolor/16x16/apps
-@dirrmtry share/icons/hicolor/16x16
-@dirrm share/gtk-doc/html/libxfce4panel
+@dirrmtry share/gtk-doc/html/libxfce4panel-1.0
 @dirrmtry share/gtk-doc/html
 @dirrmtry share/gtk-doc
-@dirrmtry lib/xfce4/panel-plugins
+@dirrm %%DOCSDIR%%/html/C/figures
+@dirrm %%DOCSDIR%%/html/C
+@dirrm %%DOCSDIR%%/html
+@dirrm %%DOCSDIR%%
+@dirrmtry share/applications
+@dirrmtry lib/xfce4/panel/plugins
+@dirrmtry lib/xfce4/panel
 @dirrmtry lib/xfce4
-@dirrm include/xfce4/libxfce4panel
+@dirrmtry include/xfce4/libxfce4panel-1.0/libxfce4panel
+@dirrmtry include/xfce4/libxfce4panel-1.0
 @dirrmtry include/xfce4
 @dirrmtry etc/xdg/xfce4/panel
 @dirrmtry etc/xdg/xfce4
 @dirrmtry etc/xdg
+@exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
+@unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true

@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	libxfce4menu
-PORTVERSION=	4.6.2
+PORTVERSION=	4.8.0
 CATEGORIES=	x11 xfce
 MASTER_SITES=	${MASTER_SITE_XFCE}
+DISTNAME=	libxfce4ui-${PORTVERSION}
 DIST_SUBDIR=	xfce4
 
 MAINTAINER=	oliver@FreeBSD.org
@@ -20,7 +21,7 @@ USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_GNOME=	glib20 gnomehack gnometarget gtk20 intltool intlhack pkgconfig
 USE_LDCONFIG=	yes
-USE_XFCE=	configenv libutil
+USE_XFCE=	configenv libutil xfconf
 
 CONFIGURE_ARGS=	--enable-gtk-doc-html=no \
 		--disable-debug

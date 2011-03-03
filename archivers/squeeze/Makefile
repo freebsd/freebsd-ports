@@ -7,6 +7,7 @@
 
 PORTNAME=	squeeze
 PORTVERSION=	0.2.3
+PORTREVISION=	1
 CATEGORIES=	archivers xfce
 MASTER_SITES=	${MASTER_SITE_XFCE}
 MASTER_SITE_SUBDIR=	src/apps/${PORTNAME}/${PORTVERSION:R}
@@ -22,7 +23,7 @@ LICENSE=	GPLv2
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
 
-USE_XFCE=	configenv panel thunar
+USE_XFCE=	configenv panel thunar thunarvfs
 USE_XORG=	x11
 USE_GNOME=	gnomehack gnometarget gtk20 glib20 intltool intlhack pkgconfig
 USE_BZIP2=	yes

@@ -7,9 +7,10 @@
 
 PORTNAME=	xfce4-timer-plugin
 PORTVERSION=	0.6.1
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	x11-clocks xfce
-MASTER_SITES=	http://goodies.xfce.org/releases/${PORTNAME}/
+MASTER_SITES=	${MASTER_SITE_XFCE}
+MASTER_SITE_SUBDIR=/src/panel-plugins/${PORTNAME}/${PORTVERSION:R}
 DIST_SUBDIR=	xfce4
 
 MAINTAINER=	miwi@FreeBSD.org

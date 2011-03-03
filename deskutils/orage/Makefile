@@ -6,15 +6,16 @@
 #
 
 PORTNAME=	orage
-PORTVERSION=	4.6.1
-PORTREVISION=	6
+PORTVERSION=	4.8.1
 CATEGORIES=	deskutils xfce
 MASTER_SITES=	${MASTER_SITE_XFCE}
-MASTER_SITE_SUBDIR=xfce/4.6.1/src
+MASTER_SITE_SUBDIR=/src/apps/${PORTNAME}/${PORTVERSION:R}
 DIST_SUBDIR=	xfce4
 
 MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	A calendar application to manage your time with XFce 4
+
+LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt
 
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS= yes
@@ -25,11 +26,12 @@ USE_GNOME=	gnometarget gtk20 intltool intlhack pkgconfig
 USE_XFCE=	configenv libgui panel
 USE_XORG=	xext xrender xinerama xi xrandr xcursor xcomposite xdamage x11 \
 		xfixes
+CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib"
 
 OPTIONS=	BDB	"Enable BDB support"		off \
 		ICAL	"Enable libical support"	off
 
-MAN1=		globaltime.1 orage.1
+MAN1=		globaltime.1 orage.1 tz_convert.1
 
 .include <bsd.port.pre.mk>
 

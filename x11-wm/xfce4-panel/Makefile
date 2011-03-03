@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	xfce4-panel
-PORTVERSION=	4.6.4
+PORTVERSION=	4.8.2
 CATEGORIES=	x11-wm xfce
 MASTER_SITES=	${MASTER_SITE_XFCE}
+MASTER_SITE_SUBDIR=/src/xfce/${PORTNAME}/${PORTVERSION:R}
 DIST_SUBDIR=	xfce4
 
 MAINTAINER=	oliver@FreeBSD.org
@@ -19,7 +20,7 @@ LIB_DEPENDS=	wnck-1.22:${PORTSDIR}/x11-toolkits/libwnck \
 
 CONFLICTS=	xfce4-systray-*
 GNU_CONFIGURE=	yes
-INSTALLS_ICONS= yes
+INSTALLS_ICONS=	yes
 USE_AUTOTOOLS=	libtool
 USE_BZIP2=	yes
 USE_GETTEXT=	yes
@@ -27,7 +28,7 @@ USE_GMAKE=	yes
 USE_GNOME=	gnomehack gnometarget gtk20 intltool intlhack pkgconfig
 USE_LDCONFIG=	yes
 USE_PERL5=	yes
-USE_XFCE=	configenv libexo libgui libutil
+USE_XFCE=	configenv garcon libexo libgui libutil libmenu
 USE_XORG=	x11 sm
 
 CONFIGURE_ARGS=	--enable-gtk-doc-html=no \

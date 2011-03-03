@@ -1,3 +1,4 @@
+
 # New ports collection makefile for:	xfburn
 # Date created:		2008 November 06
 # Whom:			J.R. Oldroyd <fbsd@opal.com>
@@ -6,10 +7,11 @@
 #
 
 PORTNAME=	xfburn
-PORTVERSION=	0.4.1
-PORTREVISION=	8
+PORTVERSION=	0.4.3
 CATEGORIES=	sysutils
-MASTER_SITES=	http://goodies.xfce.org/releases/xfburn/
+MASTER_SITES=	${MASTER_SITE_XFCE}
+MASTER_SITE_SUBDIR=/src/apps/${PORTNAME}/${PORTVERSION:R}
+DIST_SUBDIR=	xfce4
 
 MAINTAINER=	fbsd@opal.com
 COMMENT=	CD/DVD burning tool for Xfce

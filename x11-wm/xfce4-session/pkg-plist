@@ -10,20 +10,21 @@ lib/libxfsm-%%VERSION%%.a
 lib/libxfsm-%%VERSION%%.la
 lib/libxfsm-%%VERSION%%.so
 lib/libxfsm-%%VERSION%%.so.0
-lib/xfce4/splash/engines/libbalou.a
-lib/xfce4/splash/engines/libbalou.la
-lib/xfce4/splash/engines/libbalou.so
-lib/xfce4/splash/engines/libmice.a
-lib/xfce4/splash/engines/libmice.la
-lib/xfce4/splash/engines/libmice.so
-lib/xfce4/splash/engines/libsimple.a
-lib/xfce4/splash/engines/libsimple.la
-lib/xfce4/splash/engines/libsimple.so
+lib/xfce4/session/splash-engines/libbalou.a
+lib/xfce4/session/splash-engines/libbalou.la
+lib/xfce4/session/splash-engines/libbalou.so
+lib/xfce4/session/splash-engines/libmice.a
+lib/xfce4/session/splash-engines/libmice.la
+lib/xfce4/session/splash-engines/libmice.so
+lib/xfce4/session/splash-engines/libsimple.a
+lib/xfce4/session/splash-engines/libsimple.la
+lib/xfce4/session/splash-engines/libsimple.so
 libdata/pkgconfig/xfce4-session-2.0.pc
-libexec/balou-export-theme
-libexec/balou-install-theme
-libexec/xfsm-shutdown-helper
-%%NLS%%share/applications/xfce-session-settings.desktop
+lib/xfce4/session/balou-export-theme
+lib/xfce4/session/balou-install-theme
+lib/xfce4/session/xfsm-shutdown-helper
+share/applications/xfce-session-settings.desktop
+share/applications/xfce4-session-logout.desktop
 share/icons/hicolor/128x128/apps/xfce4-session.png
 share/icons/hicolor/48x48/apps/xfce4-autostart-editor.png
 share/icons/hicolor/48x48/apps/xfce4-session.png
@@ -43,6 +44,7 @@ share/icons/hicolor/scalable/apps/xfsm-shutdown.svg
 %%NLS%%share/locale/ast/LC_MESSAGES/xfce4-session.mo
 %%NLS%%share/locale/az/LC_MESSAGES/xfce4-session.mo
 %%NLS%%share/locale/be/LC_MESSAGES/xfce4-session.mo
+%%NLS%%share/locale/bn/LC_MESSAGES/xfce4-session.mo
 %%NLS%%share/locale/bn_IN/LC_MESSAGES/xfce4-session.mo
 %%NLS%%share/locale/ca/LC_MESSAGES/xfce4-session.mo
 %%NLS%%share/locale/cs/LC_MESSAGES/xfce4-session.mo
@@ -63,6 +65,7 @@ share/icons/hicolor/scalable/apps/xfsm-shutdown.svg
 %%NLS%%share/locale/gu/LC_MESSAGES/xfce4-session.mo
 %%NLS%%share/locale/he/LC_MESSAGES/xfce4-session.mo
 %%NLS%%share/locale/hi/LC_MESSAGES/xfce4-session.mo
+%%NLS%%share/locale/hr/LC_MESSAGES/xfce4-session.mo
 %%NLS%%share/locale/hu/LC_MESSAGES/xfce4-session.mo
 %%NLS%%share/locale/id/LC_MESSAGES/xfce4-session.mo
 %%NLS%%share/locale/it/LC_MESSAGES/xfce4-session.mo
@@ -99,12 +102,11 @@ share/icons/hicolor/scalable/apps/xfsm-shutdown.svg
 share/themes/Default/balou/logo.png
 share/themes/Default/balou/themerc
 share/xfce4/tips/tips
-share/xfce4/tips/tips.dat
 @dirrm share/xfce4/tips
 @dirrmtry share/xfce4
 @dirrm share/themes/Default/balou
-@dirrm share/themes/Default
-@dirrm share/themes
+@dirrmtry share/themes/Default
+@dirrmtry share/themes
 %%NLS%%@dirrmtry share/applications
 %%NLS%%@dirrmtry share/locale/zh_TW/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/zh_TW
@@ -230,9 +232,9 @@ share/xfce4/tips/tips.dat
 @dirrmtry share/icons/hicolor/48x48
 @dirrmtry share/icons/hicolor/128x128/apps
 @dirrmtry share/icons/hicolor/128x128
-@dirrm lib/xfce4/splash/engines
-@dirrm lib/xfce4/splash
-@dirrm lib/xfce4
+@dirrm lib/xfce4/session/splash-engines
+@dirrm lib/xfce4/session
+@dirrmtry lib/xfce4
 @dirrm include/xfce4/xfce4-session-%%VERSION%%/libxfsm
 @dirrm include/xfce4/xfce4-session-%%VERSION%%
 @dirrmtry include/xfce4

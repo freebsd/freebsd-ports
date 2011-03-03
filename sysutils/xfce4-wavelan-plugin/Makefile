@@ -7,9 +7,10 @@
 
 PORTNAME=	xfce4-wavelan-plugin
 PORTVERSION=	0.5.4
-PORTREVISION=	14
+PORTREVISION=	15
 CATEGORIES=	sysutils xfce
-MASTER_SITES=	http://goodies.xfce.org/releases/${PORTNAME}/
+MASTER_SITES=	${MASTER_SITE_XFCE}
+MASTER_SITE_SUBDIR=/src/panel-plugins/${PORTNAME}/${PORTVERSION:R}
 DIST_SUBDIR=	xfce4
 
 MAINTAINER=	miwi@FreeBSD.org
@@ -21,6 +22,11 @@ GNU_CONFIGURE=	yes
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnometarget gtk20 intltool intlhack pkgconfig
-USE_XFCE=	configenv panel
+USE_XFCE=	configenv libutil libgui panel
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|--libs "libxfce4panel-1.0"|& "libxfcegui4-1.0"|g; \
+		s|--cflags "libxfce4panel-1.0"|& "libxfcegui4-1.0"|g' \
+		${WRKSRC}/configure
 
 .include <bsd.port.mk>

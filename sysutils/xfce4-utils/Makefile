@@ -6,25 +6,36 @@
 #
 
 PORTNAME=	xfce4-utils
-PORTVERSION=	4.6.2
+PORTVERSION=	4.8.1
 CATEGORIES=	sysutils xfce
 MASTER_SITES=	${MASTER_SITE_XFCE}
+MASTER_SITE_SUBDIR=	src/xfce/xfce-utils/${PORTVERSION:R}
 DISTNAME=	xfce-utils-${PORTVERSION}
 DIST_SUBDIR=	xfce4
 
 MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	XFce 4 essential utilities and scripts
 
-CONFIGURE_ARGS+=--with-xsession-prefix=${PREFIX}
-GNU_CONFIGURE=	yes
-INSTALLS_ICONS= yes
-USE_BZIP2=	yes
-USE_GETTEXT=	yes
-USE_GMAKE=	yes
-USE_GNOME=	gnometarget gtk20 intltool intlhack pkgconfig
-USE_XFCE=	configenv libgui libutil panel
+CONFLICTS=	xfce4-utils-4.6*
 
-OPTIONS=	DBUS	"Enable D-BUS support"			on
+BUILD_DEPENDS=	p5-XML-Parser>=2.40:${PORTSDIR}/textproc/p5-XML-Parser
+
+DOCSDIR=	${PREFIX}/share/doc/${PORTNAME:S/4//}
+
+CONFIGURE_ARGS+=--with-xsession-prefix=${PREFIX} \
+		--disable-debug
+USE_AUTOTOOLS=	libtool
+GNU_CONFIGURE=	yes
+INSTALLS_ICONS=	yes
+USE_BZIP2=	yes
+USE_GMAKE=	yes
+USE_PERL5=	yes
+USE_GNOME=	gnomehack gtk20 intltool intlhack desktopfileutils pkgconfig
+USE_XFCE=	configenv libgui libmenu libutil xfconf
+USE_XORG=	x11
+
+OPTIONS=	DBUS	"Enable D-BUS support"			on \
+		NLS "Enable Native Language Support" on
 
 .include <bsd.port.pre.mk>
 
@@ -37,10 +48,22 @@ CONFIGURE_ARGS+=--disable-dbus
 PLIST_SUB+=	WITH_DBUS="@comment "
 .endif
 
+.if !defined(WITHOUT_NLS)
+USE_GETTEXT=	yes
+CONFIGURE_ARGS+=--enable-nls
+PLIST_SUB+=	NLS=""
+.else
+CONFIGURE_ARGS+=--disable-nls
+PLIST_SUB+=	NLS="@comment "
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} 's|/usr/local/share:|${LOCALBASE}/share:|' \
 		${WRKSRC}/scripts/startxfce4.in
 	@${REINPLACE_CMD} 's|/usr/local/share:||' \
 		${WRKSRC}/scripts/startxfce4.in
+
+post-install:
+	@-update-desktop-database
 
 .include <bsd.port.post.mk>

@@ -2,25 +2,63 @@ bin/xfwm4
 bin/xfwm4-settings
 bin/xfwm4-tweaks-settings
 bin/xfwm4-workspace-settings
-libexec/xfce4/xfwm4/helper-dialog
+lib/xfce4/xfwm4/helper-dialog
 share/applications/xfce-wm-settings.desktop
 share/applications/xfce-wmtweaks-settings.desktop
 share/applications/xfce-workspaces-settings.desktop
+share/doc/xfwm4/html/C/images/Makefile.am
+share/doc/xfwm4/html/C/images/compose_shortcut.png
+share/doc/xfwm4/html/C/images/decoration_style.png
+share/doc/xfwm4/html/C/images/focus.png
+share/doc/xfwm4/html/C/images/keyboard_shortcuts.png
+share/doc/xfwm4/html/C/images/misc_wm_prefs.png
+share/doc/xfwm4/html/C/images/titlebar.png
+share/doc/xfwm4/html/C/images/workspace_margins.png
+share/doc/xfwm4/html/C/images/xfwm_workspaces.png
+share/doc/xfwm4/html/C/index.html
+share/doc/xfwm4/html/da/images
+share/doc/xfwm4/html/da/index.html
+share/doc/xfwm4/html/el/images
+share/doc/xfwm4/html/el/index.html
+share/doc/xfwm4/html/fr/images/Makefile.am
+share/doc/xfwm4/html/fr/images/compose_shortcut.png
+share/doc/xfwm4/html/fr/images/decoration_style.png
+share/doc/xfwm4/html/fr/images/focus.png
+share/doc/xfwm4/html/fr/images/keyboard_shortcuts.png
+share/doc/xfwm4/html/fr/images/misc_wm_prefs.png
+share/doc/xfwm4/html/fr/images/titlebar.png
+share/doc/xfwm4/html/fr/images/workspace_margins.png
+share/doc/xfwm4/html/fr/images/xfwm_workspaces.png
+share/doc/xfwm4/html/gl/images
+share/doc/xfwm4/html/gl/index.html
+share/doc/xfwm4/html/it/images/Makefile.am
+share/doc/xfwm4/html/it/images/compose_shortcut.png
+share/doc/xfwm4/html/it/images/decoration_style.png
+share/doc/xfwm4/html/it/images/focus.png
+share/doc/xfwm4/html/it/images/keyboard_shortcuts.png
+share/doc/xfwm4/html/it/images/misc_wm_prefs.png
+share/doc/xfwm4/html/it/images/titlebar.png
+share/doc/xfwm4/html/it/images/workspace_margins.png
+share/doc/xfwm4/html/it/images/xfwm_workspaces.png
+share/doc/xfwm4/html/it/index.html
+share/doc/xfwm4/html/sv/images
+share/doc/xfwm4/html/sv/index.html
+share/doc/xfwm4/html/ug/images
+share/doc/xfwm4/html/ug/index.html
+share/doc/xfwm4/html/xfwm4.css
 share/icons/hicolor/48x48/apps/wmtweaks.png
 share/icons/hicolor/48x48/apps/xfce4-workspaces.png
 share/icons/hicolor/48x48/apps/xfwm4.png
 share/icons/hicolor/scalable/apps/wmtweaks.svg
 share/icons/hicolor/scalable/apps/xfce4-workspaces.svg
 share/icons/hicolor/scalable/apps/xfwm4.svg
-share/locale/ast/LC_MESSAGES/xfwm4.mo
-share/locale/kk/LC_MESSAGES/xfwm4.mo
-share/locale/ug/LC_MESSAGES/xfwm4.mo
-share/locale/ur_PK/LC_MESSAGES/xfwm4.mo
 share/locale/am/LC_MESSAGES/xfwm4.mo
 share/locale/ar/LC_MESSAGES/xfwm4.mo
+share/locale/ast/LC_MESSAGES/xfwm4.mo
 share/locale/az/LC_MESSAGES/xfwm4.mo
 share/locale/be/LC_MESSAGES/xfwm4.mo
 share/locale/bg/LC_MESSAGES/xfwm4.mo
+share/locale/bn/LC_MESSAGES/xfwm4.mo
 share/locale/bn_IN/LC_MESSAGES/xfwm4.mo
 share/locale/ca/LC_MESSAGES/xfwm4.mo
 share/locale/cs/LC_MESSAGES/xfwm4.mo
@@ -41,11 +79,13 @@ share/locale/gl/LC_MESSAGES/xfwm4.mo
 share/locale/gu/LC_MESSAGES/xfwm4.mo
 share/locale/he/LC_MESSAGES/xfwm4.mo
 share/locale/hi/LC_MESSAGES/xfwm4.mo
+share/locale/hr/LC_MESSAGES/xfwm4.mo
 share/locale/hu/LC_MESSAGES/xfwm4.mo
 share/locale/id/LC_MESSAGES/xfwm4.mo
 share/locale/it/LC_MESSAGES/xfwm4.mo
 share/locale/ja/LC_MESSAGES/xfwm4.mo
 share/locale/ka/LC_MESSAGES/xfwm4.mo
+share/locale/kk/LC_MESSAGES/xfwm4.mo
 share/locale/ko/LC_MESSAGES/xfwm4.mo
 share/locale/lt/LC_MESSAGES/xfwm4.mo
 share/locale/lv/LC_MESSAGES/xfwm4.mo
@@ -56,17 +96,20 @@ share/locale/nb/LC_MESSAGES/xfwm4.mo
 share/locale/nl/LC_MESSAGES/xfwm4.mo
 share/locale/pa/LC_MESSAGES/xfwm4.mo
 share/locale/pl/LC_MESSAGES/xfwm4.mo
-share/locale/pt_BR/LC_MESSAGES/xfwm4.mo
 share/locale/pt/LC_MESSAGES/xfwm4.mo
+share/locale/pt_BR/LC_MESSAGES/xfwm4.mo
 share/locale/ro/LC_MESSAGES/xfwm4.mo
 share/locale/ru/LC_MESSAGES/xfwm4.mo
+share/locale/si/LC_MESSAGES/xfwm4.mo
 share/locale/sk/LC_MESSAGES/xfwm4.mo
 share/locale/sq/LC_MESSAGES/xfwm4.mo
 share/locale/sv/LC_MESSAGES/xfwm4.mo
 share/locale/ta/LC_MESSAGES/xfwm4.mo
 share/locale/tr/LC_MESSAGES/xfwm4.mo
+share/locale/ug/LC_MESSAGES/xfwm4.mo
 share/locale/uk/LC_MESSAGES/xfwm4.mo
 share/locale/ur/LC_MESSAGES/xfwm4.mo
+share/locale/ur_PK/LC_MESSAGES/xfwm4.mo
 share/locale/vi/LC_MESSAGES/xfwm4.mo
 share/locale/zh_CN/LC_MESSAGES/xfwm4.mo
 share/locale/zh_TW/LC_MESSAGES/xfwm4.mo
@@ -87,12 +130,16 @@ share/themes/Daloa/xfwm4/close-active.png
 share/themes/Daloa/xfwm4/close-active.xpm
 share/themes/Daloa/xfwm4/close-inactive.png
 share/themes/Daloa/xfwm4/close-inactive.xpm
+share/themes/Daloa/xfwm4/close-prelight.png
+share/themes/Daloa/xfwm4/close-prelight.xpm
 share/themes/Daloa/xfwm4/close-pressed.png
 share/themes/Daloa/xfwm4/close-pressed.xpm
 share/themes/Daloa/xfwm4/hide-active.png
 share/themes/Daloa/xfwm4/hide-active.xpm
 share/themes/Daloa/xfwm4/hide-inactive.png
 share/themes/Daloa/xfwm4/hide-inactive.xpm
+share/themes/Daloa/xfwm4/hide-prelight.png
+share/themes/Daloa/xfwm4/hide-prelight.xpm
 share/themes/Daloa/xfwm4/hide-pressed.png
 share/themes/Daloa/xfwm4/hide-pressed.xpm
 share/themes/Daloa/xfwm4/left-active.png
@@ -103,18 +150,24 @@ share/themes/Daloa/xfwm4/maximize-active.png
 share/themes/Daloa/xfwm4/maximize-active.xpm
 share/themes/Daloa/xfwm4/maximize-inactive.png
 share/themes/Daloa/xfwm4/maximize-inactive.xpm
+share/themes/Daloa/xfwm4/maximize-prelight.png
+share/themes/Daloa/xfwm4/maximize-prelight.xpm
 share/themes/Daloa/xfwm4/maximize-pressed.png
 share/themes/Daloa/xfwm4/maximize-pressed.xpm
 share/themes/Daloa/xfwm4/maximize-toggled-active.png
 share/themes/Daloa/xfwm4/maximize-toggled-active.xpm
 share/themes/Daloa/xfwm4/maximize-toggled-inactive.png
 share/themes/Daloa/xfwm4/maximize-toggled-inactive.xpm
+share/themes/Daloa/xfwm4/maximize-toggled-prelight.png
+share/themes/Daloa/xfwm4/maximize-toggled-prelight.xpm
 share/themes/Daloa/xfwm4/maximize-toggled-pressed.png
 share/themes/Daloa/xfwm4/maximize-toggled-pressed.xpm
 share/themes/Daloa/xfwm4/menu-active.png
 share/themes/Daloa/xfwm4/menu-active.xpm
 share/themes/Daloa/xfwm4/menu-inactive.png
 share/themes/Daloa/xfwm4/menu-inactive.xpm
+share/themes/Daloa/xfwm4/menu-prelight.png
+share/themes/Daloa/xfwm4/menu-prelight.xpm
 share/themes/Daloa/xfwm4/menu-pressed.png
 share/themes/Daloa/xfwm4/menu-pressed.xpm
 share/themes/Daloa/xfwm4/right-active.png
@@ -125,24 +178,32 @@ share/themes/Daloa/xfwm4/shade-active.png
 share/themes/Daloa/xfwm4/shade-active.xpm
 share/themes/Daloa/xfwm4/shade-inactive.png
 share/themes/Daloa/xfwm4/shade-inactive.xpm
+share/themes/Daloa/xfwm4/shade-prelight.png
+share/themes/Daloa/xfwm4/shade-prelight.xpm
 share/themes/Daloa/xfwm4/shade-pressed.png
 share/themes/Daloa/xfwm4/shade-pressed.xpm
 share/themes/Daloa/xfwm4/shade-toggled-active.png
 share/themes/Daloa/xfwm4/shade-toggled-active.xpm
 share/themes/Daloa/xfwm4/shade-toggled-inactive.png
 share/themes/Daloa/xfwm4/shade-toggled-inactive.xpm
+share/themes/Daloa/xfwm4/shade-toggled-prelight.png
+share/themes/Daloa/xfwm4/shade-toggled-prelight.xpm
 share/themes/Daloa/xfwm4/shade-toggled-pressed.png
 share/themes/Daloa/xfwm4/shade-toggled-pressed.xpm
 share/themes/Daloa/xfwm4/stick-active.png
 share/themes/Daloa/xfwm4/stick-active.xpm
 share/themes/Daloa/xfwm4/stick-inactive.png
 share/themes/Daloa/xfwm4/stick-inactive.xpm
+share/themes/Daloa/xfwm4/stick-prelight.png
+share/themes/Daloa/xfwm4/stick-prelight.xpm
 share/themes/Daloa/xfwm4/stick-pressed.png
 share/themes/Daloa/xfwm4/stick-pressed.xpm
 share/themes/Daloa/xfwm4/stick-toggled-active.png
 share/themes/Daloa/xfwm4/stick-toggled-active.xpm
 share/themes/Daloa/xfwm4/stick-toggled-inactive.png
 share/themes/Daloa/xfwm4/stick-toggled-inactive.xpm
+share/themes/Daloa/xfwm4/stick-toggled-prelight.png
+share/themes/Daloa/xfwm4/stick-toggled-prelight.xpm
 share/themes/Daloa/xfwm4/stick-toggled-pressed.png
 share/themes/Daloa/xfwm4/stick-toggled-pressed.xpm
 share/themes/Daloa/xfwm4/themerc
@@ -174,24 +235,6 @@ share/themes/Daloa/xfwm4/top-right-active.png
 share/themes/Daloa/xfwm4/top-right-active.xpm
 share/themes/Daloa/xfwm4/top-right-inactive.png
 share/themes/Daloa/xfwm4/top-right-inactive.xpm
-share/themes/Daloa/xfwm4/close-prelight.xpm
-share/themes/Daloa/xfwm4/hide-prelight.xpm
-share/themes/Daloa/xfwm4/maximize-prelight.xpm
-share/themes/Daloa/xfwm4/maximize-toggled-prelight.xpm
-share/themes/Daloa/xfwm4/menu-prelight.xpm
-share/themes/Daloa/xfwm4/shade-prelight.xpm
-share/themes/Daloa/xfwm4/shade-toggled-prelight.xpm
-share/themes/Daloa/xfwm4/stick-prelight.xpm
-share/themes/Daloa/xfwm4/stick-toggled-prelight.xpm
-share/themes/Daloa/xfwm4/close-prelight.png
-share/themes/Daloa/xfwm4/hide-prelight.png
-share/themes/Daloa/xfwm4/maximize-prelight.png
-share/themes/Daloa/xfwm4/maximize-toggled-prelight.png
-share/themes/Daloa/xfwm4/menu-prelight.png
-share/themes/Daloa/xfwm4/shade-prelight.png
-share/themes/Daloa/xfwm4/shade-toggled-prelight.png
-share/themes/Daloa/xfwm4/stick-prelight.png
-share/themes/Daloa/xfwm4/stick-toggled-prelight.png
 share/themes/Default-4.0/xfwm4/README
 share/themes/Default-4.0/xfwm4/bottom-active.xpm
 share/themes/Default-4.0/xfwm4/bottom-inactive.xpm
@@ -332,109 +375,231 @@ share/themes/Default-4.2/xfwm4/top-right-active.xpm
 share/themes/Default-4.2/xfwm4/top-right-inactive.png
 share/themes/Default-4.2/xfwm4/top-right-inactive.xpm
 share/themes/Default-4.4/xfwm4/README
-share/themes/Default-4.4/xfwm4/themerc
-share/themes/Default-4.4/xfwm4/bottom-active.xpm
-share/themes/Default-4.4/xfwm4/bottom-inactive.xpm
-share/themes/Default-4.4/xfwm4/bottom-left-active.xpm
-share/themes/Default-4.4/xfwm4/bottom-left-inactive.xpm
-share/themes/Default-4.4/xfwm4/bottom-right-active.xpm
-share/themes/Default-4.4/xfwm4/bottom-right-inactive.xpm
-share/themes/Default-4.4/xfwm4/close-active.xpm
-share/themes/Default-4.4/xfwm4/close-inactive.xpm
-share/themes/Default-4.4/xfwm4/close-pressed.xpm
-share/themes/Default-4.4/xfwm4/hide-active.xpm
-share/themes/Default-4.4/xfwm4/hide-inactive.xpm
-share/themes/Default-4.4/xfwm4/hide-pressed.xpm
-share/themes/Default-4.4/xfwm4/left-active.xpm
-share/themes/Default-4.4/xfwm4/left-inactive.xpm
-share/themes/Default-4.4/xfwm4/maximize-active.xpm
-share/themes/Default-4.4/xfwm4/maximize-inactive.xpm
-share/themes/Default-4.4/xfwm4/maximize-pressed.xpm
-share/themes/Default-4.4/xfwm4/maximize-toggled-active.xpm
-share/themes/Default-4.4/xfwm4/maximize-toggled-inactive.xpm
-share/themes/Default-4.4/xfwm4/maximize-toggled-pressed.xpm
-share/themes/Default-4.4/xfwm4/menu-active.xpm
-share/themes/Default-4.4/xfwm4/menu-inactive.xpm
-share/themes/Default-4.4/xfwm4/menu-pressed.xpm
-share/themes/Default-4.4/xfwm4/right-active.xpm
-share/themes/Default-4.4/xfwm4/right-inactive.xpm
-share/themes/Default-4.4/xfwm4/shade-active.xpm
-share/themes/Default-4.4/xfwm4/shade-inactive.xpm
-share/themes/Default-4.4/xfwm4/shade-pressed.xpm
-share/themes/Default-4.4/xfwm4/shade-toggled-active.xpm
-share/themes/Default-4.4/xfwm4/shade-toggled-inactive.xpm
-share/themes/Default-4.4/xfwm4/shade-toggled-pressed.xpm
-share/themes/Default-4.4/xfwm4/stick-active.xpm
-share/themes/Default-4.4/xfwm4/stick-inactive.xpm
-share/themes/Default-4.4/xfwm4/stick-pressed.xpm
-share/themes/Default-4.4/xfwm4/stick-toggled-active.xpm
-share/themes/Default-4.4/xfwm4/stick-toggled-inactive.xpm
-share/themes/Default-4.4/xfwm4/stick-toggled-pressed.xpm
-share/themes/Default-4.4/xfwm4/title-1-active.xpm
-share/themes/Default-4.4/xfwm4/title-1-inactive.xpm
-share/themes/Default-4.4/xfwm4/title-2-active.xpm
-share/themes/Default-4.4/xfwm4/title-2-inactive.xpm
-share/themes/Default-4.4/xfwm4/title-3-active.xpm
-share/themes/Default-4.4/xfwm4/title-3-inactive.xpm
-share/themes/Default-4.4/xfwm4/title-4-active.xpm
-share/themes/Default-4.4/xfwm4/title-4-inactive.xpm
-share/themes/Default-4.4/xfwm4/title-5-active.xpm
-share/themes/Default-4.4/xfwm4/title-5-inactive.xpm
-share/themes/Default-4.4/xfwm4/top-left-active.xpm
-share/themes/Default-4.4/xfwm4/top-left-inactive.xpm
-share/themes/Default-4.4/xfwm4/top-right-active.xpm
-share/themes/Default-4.4/xfwm4/top-right-inactive.xpm
 share/themes/Default-4.4/xfwm4/bottom-active.png
+share/themes/Default-4.4/xfwm4/bottom-active.xpm
 share/themes/Default-4.4/xfwm4/bottom-inactive.png
+share/themes/Default-4.4/xfwm4/bottom-inactive.xpm
 share/themes/Default-4.4/xfwm4/bottom-left-active.png
+share/themes/Default-4.4/xfwm4/bottom-left-active.xpm
 share/themes/Default-4.4/xfwm4/bottom-left-inactive.png
+share/themes/Default-4.4/xfwm4/bottom-left-inactive.xpm
 share/themes/Default-4.4/xfwm4/bottom-right-active.png
+share/themes/Default-4.4/xfwm4/bottom-right-active.xpm
 share/themes/Default-4.4/xfwm4/bottom-right-inactive.png
+share/themes/Default-4.4/xfwm4/bottom-right-inactive.xpm
 share/themes/Default-4.4/xfwm4/close-active.png
+share/themes/Default-4.4/xfwm4/close-active.xpm
 share/themes/Default-4.4/xfwm4/close-inactive.png
+share/themes/Default-4.4/xfwm4/close-inactive.xpm
 share/themes/Default-4.4/xfwm4/close-pressed.png
+share/themes/Default-4.4/xfwm4/close-pressed.xpm
 share/themes/Default-4.4/xfwm4/hide-active.png
+share/themes/Default-4.4/xfwm4/hide-active.xpm
 share/themes/Default-4.4/xfwm4/hide-inactive.png
+share/themes/Default-4.4/xfwm4/hide-inactive.xpm
 share/themes/Default-4.4/xfwm4/hide-pressed.png
+share/themes/Default-4.4/xfwm4/hide-pressed.xpm
 share/themes/Default-4.4/xfwm4/left-active.png
+share/themes/Default-4.4/xfwm4/left-active.xpm
 share/themes/Default-4.4/xfwm4/left-inactive.png
+share/themes/Default-4.4/xfwm4/left-inactive.xpm
 share/themes/Default-4.4/xfwm4/maximize-active.png
+share/themes/Default-4.4/xfwm4/maximize-active.xpm
 share/themes/Default-4.4/xfwm4/maximize-inactive.png
+share/themes/Default-4.4/xfwm4/maximize-inactive.xpm
 share/themes/Default-4.4/xfwm4/maximize-pressed.png
+share/themes/Default-4.4/xfwm4/maximize-pressed.xpm
 share/themes/Default-4.4/xfwm4/maximize-toggled-active.png
+share/themes/Default-4.4/xfwm4/maximize-toggled-active.xpm
 share/themes/Default-4.4/xfwm4/maximize-toggled-inactive.png
+share/themes/Default-4.4/xfwm4/maximize-toggled-inactive.xpm
 share/themes/Default-4.4/xfwm4/maximize-toggled-pressed.png
+share/themes/Default-4.4/xfwm4/maximize-toggled-pressed.xpm
 share/themes/Default-4.4/xfwm4/menu-active.png
+share/themes/Default-4.4/xfwm4/menu-active.xpm
 share/themes/Default-4.4/xfwm4/menu-inactive.png
+share/themes/Default-4.4/xfwm4/menu-inactive.xpm
 share/themes/Default-4.4/xfwm4/menu-pressed.png
+share/themes/Default-4.4/xfwm4/menu-pressed.xpm
 share/themes/Default-4.4/xfwm4/right-active.png
+share/themes/Default-4.4/xfwm4/right-active.xpm
 share/themes/Default-4.4/xfwm4/right-inactive.png
+share/themes/Default-4.4/xfwm4/right-inactive.xpm
 share/themes/Default-4.4/xfwm4/shade-active.png
+share/themes/Default-4.4/xfwm4/shade-active.xpm
 share/themes/Default-4.4/xfwm4/shade-inactive.png
+share/themes/Default-4.4/xfwm4/shade-inactive.xpm
 share/themes/Default-4.4/xfwm4/shade-pressed.png
+share/themes/Default-4.4/xfwm4/shade-pressed.xpm
 share/themes/Default-4.4/xfwm4/shade-toggled-active.png
+share/themes/Default-4.4/xfwm4/shade-toggled-active.xpm
 share/themes/Default-4.4/xfwm4/shade-toggled-inactive.png
+share/themes/Default-4.4/xfwm4/shade-toggled-inactive.xpm
 share/themes/Default-4.4/xfwm4/shade-toggled-pressed.png
+share/themes/Default-4.4/xfwm4/shade-toggled-pressed.xpm
 share/themes/Default-4.4/xfwm4/stick-active.png
+share/themes/Default-4.4/xfwm4/stick-active.xpm
 share/themes/Default-4.4/xfwm4/stick-inactive.png
+share/themes/Default-4.4/xfwm4/stick-inactive.xpm
 share/themes/Default-4.4/xfwm4/stick-pressed.png
+share/themes/Default-4.4/xfwm4/stick-pressed.xpm
 share/themes/Default-4.4/xfwm4/stick-toggled-active.png
+share/themes/Default-4.4/xfwm4/stick-toggled-active.xpm
 share/themes/Default-4.4/xfwm4/stick-toggled-inactive.png
+share/themes/Default-4.4/xfwm4/stick-toggled-inactive.xpm
 share/themes/Default-4.4/xfwm4/stick-toggled-pressed.png
+share/themes/Default-4.4/xfwm4/stick-toggled-pressed.xpm
+share/themes/Default-4.4/xfwm4/themerc
 share/themes/Default-4.4/xfwm4/title-1-active.png
+share/themes/Default-4.4/xfwm4/title-1-active.xpm
 share/themes/Default-4.4/xfwm4/title-1-inactive.png
+share/themes/Default-4.4/xfwm4/title-1-inactive.xpm
 share/themes/Default-4.4/xfwm4/title-2-active.png
+share/themes/Default-4.4/xfwm4/title-2-active.xpm
 share/themes/Default-4.4/xfwm4/title-2-inactive.png
+share/themes/Default-4.4/xfwm4/title-2-inactive.xpm
 share/themes/Default-4.4/xfwm4/title-3-active.png
+share/themes/Default-4.4/xfwm4/title-3-active.xpm
 share/themes/Default-4.4/xfwm4/title-3-inactive.png
+share/themes/Default-4.4/xfwm4/title-3-inactive.xpm
 share/themes/Default-4.4/xfwm4/title-4-active.png
+share/themes/Default-4.4/xfwm4/title-4-active.xpm
 share/themes/Default-4.4/xfwm4/title-4-inactive.png
+share/themes/Default-4.4/xfwm4/title-4-inactive.xpm
 share/themes/Default-4.4/xfwm4/title-5-active.png
+share/themes/Default-4.4/xfwm4/title-5-active.xpm
 share/themes/Default-4.4/xfwm4/title-5-inactive.png
+share/themes/Default-4.4/xfwm4/title-5-inactive.xpm
 share/themes/Default-4.4/xfwm4/top-left-active.png
+share/themes/Default-4.4/xfwm4/top-left-active.xpm
 share/themes/Default-4.4/xfwm4/top-left-inactive.png
+share/themes/Default-4.4/xfwm4/top-left-inactive.xpm
 share/themes/Default-4.4/xfwm4/top-right-active.png
+share/themes/Default-4.4/xfwm4/top-right-active.xpm
 share/themes/Default-4.4/xfwm4/top-right-inactive.png
+share/themes/Default-4.4/xfwm4/top-right-inactive.xpm
+share/themes/Default-4.6/xfwm4/README
+share/themes/Default-4.6/xfwm4/bottom-active.png
+share/themes/Default-4.6/xfwm4/bottom-active.xpm
+share/themes/Default-4.6/xfwm4/bottom-inactive.png
+share/themes/Default-4.6/xfwm4/bottom-inactive.xpm
+share/themes/Default-4.6/xfwm4/bottom-left-active.png
+share/themes/Default-4.6/xfwm4/bottom-left-active.xpm
+share/themes/Default-4.6/xfwm4/bottom-left-inactive.png
+share/themes/Default-4.6/xfwm4/bottom-left-inactive.xpm
+share/themes/Default-4.6/xfwm4/bottom-right-active.png
+share/themes/Default-4.6/xfwm4/bottom-right-active.xpm
+share/themes/Default-4.6/xfwm4/bottom-right-inactive.png
+share/themes/Default-4.6/xfwm4/bottom-right-inactive.xpm
+share/themes/Default-4.6/xfwm4/close-active.png
+share/themes/Default-4.6/xfwm4/close-active.xpm
+share/themes/Default-4.6/xfwm4/close-inactive.png
+share/themes/Default-4.6/xfwm4/close-inactive.xpm
+share/themes/Default-4.6/xfwm4/close-prelight.png
+share/themes/Default-4.6/xfwm4/close-prelight.xpm
+share/themes/Default-4.6/xfwm4/close-pressed.png
+share/themes/Default-4.6/xfwm4/close-pressed.xpm
+share/themes/Default-4.6/xfwm4/hide-active.png
+share/themes/Default-4.6/xfwm4/hide-active.xpm
+share/themes/Default-4.6/xfwm4/hide-inactive.png
+share/themes/Default-4.6/xfwm4/hide-inactive.xpm
+share/themes/Default-4.6/xfwm4/hide-prelight.png
+share/themes/Default-4.6/xfwm4/hide-prelight.xpm
+share/themes/Default-4.6/xfwm4/hide-pressed.png
+share/themes/Default-4.6/xfwm4/hide-pressed.xpm
+share/themes/Default-4.6/xfwm4/left-active.png
+share/themes/Default-4.6/xfwm4/left-active.xpm
+share/themes/Default-4.6/xfwm4/left-inactive.png
+share/themes/Default-4.6/xfwm4/left-inactive.xpm
+share/themes/Default-4.6/xfwm4/maximize-active.png
+share/themes/Default-4.6/xfwm4/maximize-active.xpm
+share/themes/Default-4.6/xfwm4/maximize-inactive.png
+share/themes/Default-4.6/xfwm4/maximize-inactive.xpm
+share/themes/Default-4.6/xfwm4/maximize-prelight.png
+share/themes/Default-4.6/xfwm4/maximize-prelight.xpm
+share/themes/Default-4.6/xfwm4/maximize-pressed.png
+share/themes/Default-4.6/xfwm4/maximize-pressed.xpm
+share/themes/Default-4.6/xfwm4/maximize-toggled-active.png
+share/themes/Default-4.6/xfwm4/maximize-toggled-active.xpm
+share/themes/Default-4.6/xfwm4/maximize-toggled-inactive.png
+share/themes/Default-4.6/xfwm4/maximize-toggled-inactive.xpm
+share/themes/Default-4.6/xfwm4/maximize-toggled-prelight.png
+share/themes/Default-4.6/xfwm4/maximize-toggled-prelight.xpm
+share/themes/Default-4.6/xfwm4/maximize-toggled-pressed.png
+share/themes/Default-4.6/xfwm4/maximize-toggled-pressed.xpm
+share/themes/Default-4.6/xfwm4/menu-active.png
+share/themes/Default-4.6/xfwm4/menu-active.xpm
+share/themes/Default-4.6/xfwm4/menu-inactive.png
+share/themes/Default-4.6/xfwm4/menu-inactive.xpm
+share/themes/Default-4.6/xfwm4/menu-prelight.png
+share/themes/Default-4.6/xfwm4/menu-prelight.xpm
+share/themes/Default-4.6/xfwm4/menu-pressed.png
+share/themes/Default-4.6/xfwm4/menu-pressed.xpm
+share/themes/Default-4.6/xfwm4/right-active.png
+share/themes/Default-4.6/xfwm4/right-active.xpm
+share/themes/Default-4.6/xfwm4/right-inactive.png
+share/themes/Default-4.6/xfwm4/right-inactive.xpm
+share/themes/Default-4.6/xfwm4/shade-active.png
+share/themes/Default-4.6/xfwm4/shade-active.xpm
+share/themes/Default-4.6/xfwm4/shade-inactive.png
+share/themes/Default-4.6/xfwm4/shade-inactive.xpm
+share/themes/Default-4.6/xfwm4/shade-prelight.png
+share/themes/Default-4.6/xfwm4/shade-prelight.xpm
+share/themes/Default-4.6/xfwm4/shade-pressed.png
+share/themes/Default-4.6/xfwm4/shade-pressed.xpm
+share/themes/Default-4.6/xfwm4/shade-toggled-active.png
+share/themes/Default-4.6/xfwm4/shade-toggled-active.xpm
+share/themes/Default-4.6/xfwm4/shade-toggled-inactive.png
+share/themes/Default-4.6/xfwm4/shade-toggled-inactive.xpm
+share/themes/Default-4.6/xfwm4/shade-toggled-prelight.png
+share/themes/Default-4.6/xfwm4/shade-toggled-prelight.xpm
+share/themes/Default-4.6/xfwm4/shade-toggled-pressed.png
+share/themes/Default-4.6/xfwm4/shade-toggled-pressed.xpm
+share/themes/Default-4.6/xfwm4/stick-active.png
+share/themes/Default-4.6/xfwm4/stick-active.xpm
+share/themes/Default-4.6/xfwm4/stick-inactive.png
+share/themes/Default-4.6/xfwm4/stick-inactive.xpm
+share/themes/Default-4.6/xfwm4/stick-prelight.png
+share/themes/Default-4.6/xfwm4/stick-prelight.xpm
+share/themes/Default-4.6/xfwm4/stick-pressed.png
+share/themes/Default-4.6/xfwm4/stick-pressed.xpm
+share/themes/Default-4.6/xfwm4/stick-toggled-active.png
+share/themes/Default-4.6/xfwm4/stick-toggled-active.xpm
+share/themes/Default-4.6/xfwm4/stick-toggled-inactive.png
+share/themes/Default-4.6/xfwm4/stick-toggled-inactive.xpm
+share/themes/Default-4.6/xfwm4/stick-toggled-prelight.png
+share/themes/Default-4.6/xfwm4/stick-toggled-prelight.xpm
+share/themes/Default-4.6/xfwm4/stick-toggled-pressed.png
+share/themes/Default-4.6/xfwm4/stick-toggled-pressed.xpm
+share/themes/Default-4.6/xfwm4/themerc
+share/themes/Default-4.6/xfwm4/title-1-active.png
+share/themes/Default-4.6/xfwm4/title-1-active.xpm
+share/themes/Default-4.6/xfwm4/title-1-inactive.png
+share/themes/Default-4.6/xfwm4/title-1-inactive.xpm
+share/themes/Default-4.6/xfwm4/title-2-active.png
+share/themes/Default-4.6/xfwm4/title-2-active.xpm
+share/themes/Default-4.6/xfwm4/title-2-inactive.png
+share/themes/Default-4.6/xfwm4/title-2-inactive.xpm
+share/themes/Default-4.6/xfwm4/title-3-active.png
+share/themes/Default-4.6/xfwm4/title-3-active.xpm
+share/themes/Default-4.6/xfwm4/title-3-inactive.png
+share/themes/Default-4.6/xfwm4/title-3-inactive.xpm
+share/themes/Default-4.6/xfwm4/title-4-active.png
+share/themes/Default-4.6/xfwm4/title-4-active.xpm
+share/themes/Default-4.6/xfwm4/title-4-inactive.png
+share/themes/Default-4.6/xfwm4/title-4-inactive.xpm
+share/themes/Default-4.6/xfwm4/title-5-active.png
+share/themes/Default-4.6/xfwm4/title-5-active.xpm
+share/themes/Default-4.6/xfwm4/title-5-inactive.png
+share/themes/Default-4.6/xfwm4/title-5-inactive.xpm
+share/themes/Default-4.6/xfwm4/top-left-active.png
+share/themes/Default-4.6/xfwm4/top-left-active.xpm
+share/themes/Default-4.6/xfwm4/top-left-inactive.png
+share/themes/Default-4.6/xfwm4/top-left-inactive.xpm
+share/themes/Default-4.6/xfwm4/top-right-active.png
+share/themes/Default-4.6/xfwm4/top-right-active.xpm
+share/themes/Default-4.6/xfwm4/top-right-inactive.png
+share/themes/Default-4.6/xfwm4/top-right-inactive.xpm
 share/themes/Default/xfwm4/README
 share/themes/Default/xfwm4/bottom-active.png
 share/themes/Default/xfwm4/bottom-active.xpm
@@ -452,12 +617,16 @@ share/themes/Default/xfwm4/close-active.png
 share/themes/Default/xfwm4/close-active.xpm
 share/themes/Default/xfwm4/close-inactive.png
 share/themes/Default/xfwm4/close-inactive.xpm
+share/themes/Default/xfwm4/close-prelight.png
+share/themes/Default/xfwm4/close-prelight.xpm
 share/themes/Default/xfwm4/close-pressed.png
 share/themes/Default/xfwm4/close-pressed.xpm
 share/themes/Default/xfwm4/hide-active.png
 share/themes/Default/xfwm4/hide-active.xpm
 share/themes/Default/xfwm4/hide-inactive.png
 share/themes/Default/xfwm4/hide-inactive.xpm
+share/themes/Default/xfwm4/hide-prelight.png
+share/themes/Default/xfwm4/hide-prelight.xpm
 share/themes/Default/xfwm4/hide-pressed.png
 share/themes/Default/xfwm4/hide-pressed.xpm
 share/themes/Default/xfwm4/left-active.png
@@ -468,18 +637,24 @@ share/themes/Default/xfwm4/maximize-active.png
 share/themes/Default/xfwm4/maximize-active.xpm
 share/themes/Default/xfwm4/maximize-inactive.png
 share/themes/Default/xfwm4/maximize-inactive.xpm
+share/themes/Default/xfwm4/maximize-prelight.png
+share/themes/Default/xfwm4/maximize-prelight.xpm
 share/themes/Default/xfwm4/maximize-pressed.png
 share/themes/Default/xfwm4/maximize-pressed.xpm
 share/themes/Default/xfwm4/maximize-toggled-active.png
 share/themes/Default/xfwm4/maximize-toggled-active.xpm
 share/themes/Default/xfwm4/maximize-toggled-inactive.png
 share/themes/Default/xfwm4/maximize-toggled-inactive.xpm
+share/themes/Default/xfwm4/maximize-toggled-prelight.png
+share/themes/Default/xfwm4/maximize-toggled-prelight.xpm
 share/themes/Default/xfwm4/maximize-toggled-pressed.png
 share/themes/Default/xfwm4/maximize-toggled-pressed.xpm
 share/themes/Default/xfwm4/menu-active.png
 share/themes/Default/xfwm4/menu-active.xpm
 share/themes/Default/xfwm4/menu-inactive.png
 share/themes/Default/xfwm4/menu-inactive.xpm
+share/themes/Default/xfwm4/menu-prelight.png
+share/themes/Default/xfwm4/menu-prelight.xpm
 share/themes/Default/xfwm4/menu-pressed.png
 share/themes/Default/xfwm4/menu-pressed.xpm
 share/themes/Default/xfwm4/right-active.png
@@ -490,24 +665,32 @@ share/themes/Default/xfwm4/shade-active.png
 share/themes/Default/xfwm4/shade-active.xpm
 share/themes/Default/xfwm4/shade-inactive.png
 share/themes/Default/xfwm4/shade-inactive.xpm
+share/themes/Default/xfwm4/shade-prelight.png
+share/themes/Default/xfwm4/shade-prelight.xpm
 share/themes/Default/xfwm4/shade-pressed.png
 share/themes/Default/xfwm4/shade-pressed.xpm
 share/themes/Default/xfwm4/shade-toggled-active.png
 share/themes/Default/xfwm4/shade-toggled-active.xpm
 share/themes/Default/xfwm4/shade-toggled-inactive.png
 share/themes/Default/xfwm4/shade-toggled-inactive.xpm
+share/themes/Default/xfwm4/shade-toggled-prelight.png
+share/themes/Default/xfwm4/shade-toggled-prelight.xpm
 share/themes/Default/xfwm4/shade-toggled-pressed.png
 share/themes/Default/xfwm4/shade-toggled-pressed.xpm
 share/themes/Default/xfwm4/stick-active.png
 share/themes/Default/xfwm4/stick-active.xpm
 share/themes/Default/xfwm4/stick-inactive.png
 share/themes/Default/xfwm4/stick-inactive.xpm
+share/themes/Default/xfwm4/stick-prelight.png
+share/themes/Default/xfwm4/stick-prelight.xpm
 share/themes/Default/xfwm4/stick-pressed.png
 share/themes/Default/xfwm4/stick-pressed.xpm
 share/themes/Default/xfwm4/stick-toggled-active.png
 share/themes/Default/xfwm4/stick-toggled-active.xpm
 share/themes/Default/xfwm4/stick-toggled-inactive.png
 share/themes/Default/xfwm4/stick-toggled-inactive.xpm
+share/themes/Default/xfwm4/stick-toggled-prelight.png
+share/themes/Default/xfwm4/stick-toggled-prelight.xpm
 share/themes/Default/xfwm4/stick-toggled-pressed.png
 share/themes/Default/xfwm4/stick-toggled-pressed.xpm
 share/themes/Default/xfwm4/themerc
@@ -539,146 +722,128 @@ share/themes/Default/xfwm4/top-right-active.png
 share/themes/Default/xfwm4/top-right-active.xpm
 share/themes/Default/xfwm4/top-right-inactive.png
 share/themes/Default/xfwm4/top-right-inactive.xpm
-share/themes/Default/xfwm4/close-prelight.xpm
-share/themes/Default/xfwm4/hide-prelight.xpm
-share/themes/Default/xfwm4/maximize-prelight.xpm
-share/themes/Default/xfwm4/maximize-toggled-prelight.xpm
-share/themes/Default/xfwm4/menu-prelight.xpm
-share/themes/Default/xfwm4/shade-prelight.xpm
-share/themes/Default/xfwm4/shade-toggled-prelight.xpm
-share/themes/Default/xfwm4/stick-prelight.xpm
-share/themes/Default/xfwm4/stick-toggled-prelight.xpm
-share/themes/Default/xfwm4/close-prelight.png
-share/themes/Default/xfwm4/hide-prelight.png
-share/themes/Default/xfwm4/maximize-prelight.png
-share/themes/Default/xfwm4/maximize-toggled-prelight.png
-share/themes/Default/xfwm4/menu-prelight.png
-share/themes/Default/xfwm4/shade-prelight.png
-share/themes/Default/xfwm4/shade-toggled-prelight.png
-share/themes/Default/xfwm4/stick-prelight.png
-share/themes/Default/xfwm4/stick-toggled-prelight.png
 share/themes/Kokodi/xfwm4/README
-share/themes/Kokodi/xfwm4/themerc
-share/themes/Kokodi/xfwm4/bottom-active.xpm
-share/themes/Kokodi/xfwm4/bottom-inactive.xpm
-share/themes/Kokodi/xfwm4/bottom-left-active.xpm
-share/themes/Kokodi/xfwm4/bottom-left-inactive.xpm
-share/themes/Kokodi/xfwm4/bottom-right-active.xpm
-share/themes/Kokodi/xfwm4/bottom-right-inactive.xpm
-share/themes/Kokodi/xfwm4/close-active.xpm
-share/themes/Kokodi/xfwm4/close-inactive.xpm
-share/themes/Kokodi/xfwm4/close-pressed.xpm
-share/themes/Kokodi/xfwm4/hide-active.xpm
-share/themes/Kokodi/xfwm4/hide-inactive.xpm
-share/themes/Kokodi/xfwm4/hide-pressed.xpm
-share/themes/Kokodi/xfwm4/left-active.xpm
-share/themes/Kokodi/xfwm4/left-inactive.xpm
-share/themes/Kokodi/xfwm4/maximize-active.xpm
-share/themes/Kokodi/xfwm4/maximize-inactive.xpm
-share/themes/Kokodi/xfwm4/maximize-pressed.xpm
-share/themes/Kokodi/xfwm4/maximize-toggled-active.xpm
-share/themes/Kokodi/xfwm4/maximize-toggled-inactive.xpm
-share/themes/Kokodi/xfwm4/maximize-toggled-pressed.xpm
-share/themes/Kokodi/xfwm4/menu-active.xpm
-share/themes/Kokodi/xfwm4/menu-inactive.xpm
-share/themes/Kokodi/xfwm4/menu-pressed.xpm
-share/themes/Kokodi/xfwm4/right-active.xpm
-share/themes/Kokodi/xfwm4/right-inactive.xpm
-share/themes/Kokodi/xfwm4/shade-active.xpm
-share/themes/Kokodi/xfwm4/shade-inactive.xpm
-share/themes/Kokodi/xfwm4/shade-pressed.xpm
-share/themes/Kokodi/xfwm4/shade-toggled-active.xpm
-share/themes/Kokodi/xfwm4/shade-toggled-inactive.xpm
-share/themes/Kokodi/xfwm4/shade-toggled-pressed.xpm
-share/themes/Kokodi/xfwm4/stick-active.xpm
-share/themes/Kokodi/xfwm4/stick-inactive.xpm
-share/themes/Kokodi/xfwm4/stick-pressed.xpm
-share/themes/Kokodi/xfwm4/stick-toggled-active.xpm
-share/themes/Kokodi/xfwm4/stick-toggled-inactive.xpm
-share/themes/Kokodi/xfwm4/stick-toggled-pressed.xpm
-share/themes/Kokodi/xfwm4/title-1-active.xpm
-share/themes/Kokodi/xfwm4/title-1-inactive.xpm
-share/themes/Kokodi/xfwm4/title-2-active.xpm
-share/themes/Kokodi/xfwm4/title-2-inactive.xpm
-share/themes/Kokodi/xfwm4/title-3-active.xpm
-share/themes/Kokodi/xfwm4/title-3-inactive.xpm
-share/themes/Kokodi/xfwm4/title-4-active.xpm
-share/themes/Kokodi/xfwm4/title-4-inactive.xpm
-share/themes/Kokodi/xfwm4/title-5-active.xpm
-share/themes/Kokodi/xfwm4/title-5-inactive.xpm
-share/themes/Kokodi/xfwm4/top-left-active.xpm
-share/themes/Kokodi/xfwm4/top-left-inactive.xpm
-share/themes/Kokodi/xfwm4/top-right-active.xpm
-share/themes/Kokodi/xfwm4/top-right-inactive.xpm
 share/themes/Kokodi/xfwm4/bottom-active.png
+share/themes/Kokodi/xfwm4/bottom-active.xpm
 share/themes/Kokodi/xfwm4/bottom-inactive.png
+share/themes/Kokodi/xfwm4/bottom-inactive.xpm
 share/themes/Kokodi/xfwm4/bottom-left-active.png
+share/themes/Kokodi/xfwm4/bottom-left-active.xpm
 share/themes/Kokodi/xfwm4/bottom-left-inactive.png
+share/themes/Kokodi/xfwm4/bottom-left-inactive.xpm
 share/themes/Kokodi/xfwm4/bottom-right-active.png
+share/themes/Kokodi/xfwm4/bottom-right-active.xpm
 share/themes/Kokodi/xfwm4/bottom-right-inactive.png
+share/themes/Kokodi/xfwm4/bottom-right-inactive.xpm
 share/themes/Kokodi/xfwm4/close-active.png
+share/themes/Kokodi/xfwm4/close-active.xpm
 share/themes/Kokodi/xfwm4/close-inactive.png
-share/themes/Kokodi/xfwm4/close-pressed.png
-share/themes/Kokodi/xfwm4/hide-active.png
-share/themes/Kokodi/xfwm4/hide-inactive.png
-share/themes/Kokodi/xfwm4/hide-pressed.png
-share/themes/Kokodi/xfwm4/left-active.png
-share/themes/Kokodi/xfwm4/left-inactive.png
-share/themes/Kokodi/xfwm4/maximize-active.png
-share/themes/Kokodi/xfwm4/maximize-inactive.png
-share/themes/Kokodi/xfwm4/maximize-pressed.png
-share/themes/Kokodi/xfwm4/maximize-toggled-active.png
-share/themes/Kokodi/xfwm4/maximize-toggled-inactive.png
-share/themes/Kokodi/xfwm4/maximize-toggled-pressed.png
-share/themes/Kokodi/xfwm4/menu-active.png
-share/themes/Kokodi/xfwm4/menu-inactive.png
-share/themes/Kokodi/xfwm4/menu-pressed.png
-share/themes/Kokodi/xfwm4/right-active.png
-share/themes/Kokodi/xfwm4/right-inactive.png
-share/themes/Kokodi/xfwm4/shade-active.png
-share/themes/Kokodi/xfwm4/shade-inactive.png
-share/themes/Kokodi/xfwm4/shade-pressed.png
-share/themes/Kokodi/xfwm4/shade-toggled-active.png
-share/themes/Kokodi/xfwm4/shade-toggled-inactive.png
-share/themes/Kokodi/xfwm4/shade-toggled-pressed.png
-share/themes/Kokodi/xfwm4/stick-active.png
-share/themes/Kokodi/xfwm4/stick-inactive.png
-share/themes/Kokodi/xfwm4/stick-pressed.png
-share/themes/Kokodi/xfwm4/stick-toggled-active.png
-share/themes/Kokodi/xfwm4/stick-toggled-inactive.png
-share/themes/Kokodi/xfwm4/stick-toggled-pressed.png
-share/themes/Kokodi/xfwm4/title-1-active.png
-share/themes/Kokodi/xfwm4/title-1-inactive.png
-share/themes/Kokodi/xfwm4/title-2-active.png
-share/themes/Kokodi/xfwm4/title-2-inactive.png
-share/themes/Kokodi/xfwm4/title-3-active.png
-share/themes/Kokodi/xfwm4/title-3-inactive.png
-share/themes/Kokodi/xfwm4/title-4-active.png
-share/themes/Kokodi/xfwm4/title-4-inactive.png
-share/themes/Kokodi/xfwm4/title-5-active.png
-share/themes/Kokodi/xfwm4/title-5-inactive.png
-share/themes/Kokodi/xfwm4/top-left-active.png
-share/themes/Kokodi/xfwm4/top-left-inactive.png
-share/themes/Kokodi/xfwm4/top-right-active.png
-share/themes/Kokodi/xfwm4/top-right-inactive.png
-share/themes/Kokodi/xfwm4/close-prelight.xpm
-share/themes/Kokodi/xfwm4/hide-prelight.xpm
-share/themes/Kokodi/xfwm4/maximize-prelight.xpm
-share/themes/Kokodi/xfwm4/maximize-toggled-prelight.xpm
-share/themes/Kokodi/xfwm4/menu-prelight.xpm
-share/themes/Kokodi/xfwm4/shade-prelight.xpm
-share/themes/Kokodi/xfwm4/shade-toggled-prelight.xpm
-share/themes/Kokodi/xfwm4/stick-prelight.xpm
-share/themes/Kokodi/xfwm4/stick-toggled-prelight.xpm
+share/themes/Kokodi/xfwm4/close-inactive.xpm
 share/themes/Kokodi/xfwm4/close-prelight.png
+share/themes/Kokodi/xfwm4/close-prelight.xpm
+share/themes/Kokodi/xfwm4/close-pressed.png
+share/themes/Kokodi/xfwm4/close-pressed.xpm
+share/themes/Kokodi/xfwm4/hide-active.png
+share/themes/Kokodi/xfwm4/hide-active.xpm
+share/themes/Kokodi/xfwm4/hide-inactive.png
+share/themes/Kokodi/xfwm4/hide-inactive.xpm
 share/themes/Kokodi/xfwm4/hide-prelight.png
+share/themes/Kokodi/xfwm4/hide-prelight.xpm
+share/themes/Kokodi/xfwm4/hide-pressed.png
+share/themes/Kokodi/xfwm4/hide-pressed.xpm
+share/themes/Kokodi/xfwm4/left-active.png
+share/themes/Kokodi/xfwm4/left-active.xpm
+share/themes/Kokodi/xfwm4/left-inactive.png
+share/themes/Kokodi/xfwm4/left-inactive.xpm
+share/themes/Kokodi/xfwm4/maximize-active.png
+share/themes/Kokodi/xfwm4/maximize-active.xpm
+share/themes/Kokodi/xfwm4/maximize-inactive.png
+share/themes/Kokodi/xfwm4/maximize-inactive.xpm
 share/themes/Kokodi/xfwm4/maximize-prelight.png
+share/themes/Kokodi/xfwm4/maximize-prelight.xpm
+share/themes/Kokodi/xfwm4/maximize-pressed.png
+share/themes/Kokodi/xfwm4/maximize-pressed.xpm
+share/themes/Kokodi/xfwm4/maximize-toggled-active.png
+share/themes/Kokodi/xfwm4/maximize-toggled-active.xpm
+share/themes/Kokodi/xfwm4/maximize-toggled-inactive.png
+share/themes/Kokodi/xfwm4/maximize-toggled-inactive.xpm
 share/themes/Kokodi/xfwm4/maximize-toggled-prelight.png
+share/themes/Kokodi/xfwm4/maximize-toggled-prelight.xpm
+share/themes/Kokodi/xfwm4/maximize-toggled-pressed.png
+share/themes/Kokodi/xfwm4/maximize-toggled-pressed.xpm
+share/themes/Kokodi/xfwm4/menu-active.png
+share/themes/Kokodi/xfwm4/menu-active.xpm
+share/themes/Kokodi/xfwm4/menu-inactive.png
+share/themes/Kokodi/xfwm4/menu-inactive.xpm
 share/themes/Kokodi/xfwm4/menu-prelight.png
+share/themes/Kokodi/xfwm4/menu-prelight.xpm
+share/themes/Kokodi/xfwm4/menu-pressed.png
+share/themes/Kokodi/xfwm4/menu-pressed.xpm
+share/themes/Kokodi/xfwm4/right-active.png
+share/themes/Kokodi/xfwm4/right-active.xpm
+share/themes/Kokodi/xfwm4/right-inactive.png
+share/themes/Kokodi/xfwm4/right-inactive.xpm
+share/themes/Kokodi/xfwm4/shade-active.png
+share/themes/Kokodi/xfwm4/shade-active.xpm
+share/themes/Kokodi/xfwm4/shade-inactive.png
+share/themes/Kokodi/xfwm4/shade-inactive.xpm
 share/themes/Kokodi/xfwm4/shade-prelight.png
+share/themes/Kokodi/xfwm4/shade-prelight.xpm
+share/themes/Kokodi/xfwm4/shade-pressed.png
+share/themes/Kokodi/xfwm4/shade-pressed.xpm
+share/themes/Kokodi/xfwm4/shade-toggled-active.png
+share/themes/Kokodi/xfwm4/shade-toggled-active.xpm
+share/themes/Kokodi/xfwm4/shade-toggled-inactive.png
+share/themes/Kokodi/xfwm4/shade-toggled-inactive.xpm
 share/themes/Kokodi/xfwm4/shade-toggled-prelight.png
+share/themes/Kokodi/xfwm4/shade-toggled-prelight.xpm
+share/themes/Kokodi/xfwm4/shade-toggled-pressed.png
+share/themes/Kokodi/xfwm4/shade-toggled-pressed.xpm
+share/themes/Kokodi/xfwm4/stick-active.png
+share/themes/Kokodi/xfwm4/stick-active.xpm
+share/themes/Kokodi/xfwm4/stick-inactive.png
+share/themes/Kokodi/xfwm4/stick-inactive.xpm
 share/themes/Kokodi/xfwm4/stick-prelight.png
+share/themes/Kokodi/xfwm4/stick-prelight.xpm
+share/themes/Kokodi/xfwm4/stick-pressed.png
+share/themes/Kokodi/xfwm4/stick-pressed.xpm
+share/themes/Kokodi/xfwm4/stick-toggled-active.png
+share/themes/Kokodi/xfwm4/stick-toggled-active.xpm
+share/themes/Kokodi/xfwm4/stick-toggled-inactive.png
+share/themes/Kokodi/xfwm4/stick-toggled-inactive.xpm
 share/themes/Kokodi/xfwm4/stick-toggled-prelight.png
+share/themes/Kokodi/xfwm4/stick-toggled-prelight.xpm
+share/themes/Kokodi/xfwm4/stick-toggled-pressed.png
+share/themes/Kokodi/xfwm4/stick-toggled-pressed.xpm
+share/themes/Kokodi/xfwm4/themerc
+share/themes/Kokodi/xfwm4/title-1-active.png
+share/themes/Kokodi/xfwm4/title-1-active.xpm
+share/themes/Kokodi/xfwm4/title-1-inactive.png
+share/themes/Kokodi/xfwm4/title-1-inactive.xpm
+share/themes/Kokodi/xfwm4/title-2-active.png
+share/themes/Kokodi/xfwm4/title-2-active.xpm
+share/themes/Kokodi/xfwm4/title-2-inactive.png
+share/themes/Kokodi/xfwm4/title-2-inactive.xpm
+share/themes/Kokodi/xfwm4/title-3-active.png
+share/themes/Kokodi/xfwm4/title-3-active.xpm
+share/themes/Kokodi/xfwm4/title-3-inactive.png
+share/themes/Kokodi/xfwm4/title-3-inactive.xpm
+share/themes/Kokodi/xfwm4/title-4-active.png
+share/themes/Kokodi/xfwm4/title-4-active.xpm
+share/themes/Kokodi/xfwm4/title-4-inactive.png
+share/themes/Kokodi/xfwm4/title-4-inactive.xpm
+share/themes/Kokodi/xfwm4/title-5-active.png
+share/themes/Kokodi/xfwm4/title-5-active.xpm
+share/themes/Kokodi/xfwm4/title-5-inactive.png
+share/themes/Kokodi/xfwm4/title-5-inactive.xpm
+share/themes/Kokodi/xfwm4/top-left-active.png
+share/themes/Kokodi/xfwm4/top-left-active.xpm
+share/themes/Kokodi/xfwm4/top-left-inactive.png
+share/themes/Kokodi/xfwm4/top-left-inactive.xpm
+share/themes/Kokodi/xfwm4/top-right-active.png
+share/themes/Kokodi/xfwm4/top-right-active.xpm
+share/themes/Kokodi/xfwm4/top-right-inactive.png
+share/themes/Kokodi/xfwm4/top-right-inactive.xpm
 share/themes/Moheli/xfwm4/README
 share/themes/Moheli/xfwm4/bottom-active.png
 share/themes/Moheli/xfwm4/bottom-active.xpm
@@ -784,7 +949,6 @@ share/themes/Moheli/xfwm4/top-right-active.xpm
 share/themes/Moheli/xfwm4/top-right-inactive.png
 share/themes/Moheli/xfwm4/top-right-inactive.xpm
 share/themes/Sassandra/xfwm4/README
-share/themes/Sassandra/xfwm4/themerc
 share/themes/Sassandra/xfwm4/bottom-active.png
 share/themes/Sassandra/xfwm4/bottom-active.xpm
 share/themes/Sassandra/xfwm4/bottom-inactive.png
@@ -859,6 +1023,7 @@ share/themes/Sassandra/xfwm4/stick-toggled-inactive.png
 share/themes/Sassandra/xfwm4/stick-toggled-inactive.xpm
 share/themes/Sassandra/xfwm4/stick-toggled-pressed.png
 share/themes/Sassandra/xfwm4/stick-toggled-pressed.xpm
+share/themes/Sassandra/xfwm4/themerc
 share/themes/Sassandra/xfwm4/title-1-active.png
 share/themes/Sassandra/xfwm4/title-1-active.xpm
 share/themes/Sassandra/xfwm4/title-1-inactive.png
@@ -1303,88 +1468,66 @@ share/themes/Wallis/xfwm4/top-right-active.png
 share/themes/Wallis/xfwm4/top-right-active.xpm
 share/themes/Wallis/xfwm4/top-right-inactive.png
 share/themes/Wallis/xfwm4/top-right-inactive.xpm
-share/xfce4/doc/C/images/compose_shortcut.png
-share/xfce4/doc/C/images/decoration_style.png
-share/xfce4/doc/C/images/focus.png
-share/xfce4/doc/C/images/keyboard_shortcuts.png
-share/xfce4/doc/C/images/misc_wm_prefs.png
-share/xfce4/doc/C/images/titlebar.png
-share/xfce4/doc/C/images/workspace_margins.png
-share/xfce4/doc/C/images/xfwm_workspaces.png
-share/xfce4/doc/C/xfwm4.html
-share/xfce4/doc/fr/images/compose_shortcut.png
-share/xfce4/doc/fr/images/decoration_style.png
-share/xfce4/doc/fr/images/focus.png
-share/xfce4/doc/fr/images/keyboard_and_focus.png
-share/xfce4/doc/fr/images/keyboard_shortcuts.png
-share/xfce4/doc/fr/images/misc_wm_prefs.png
-share/xfce4/doc/fr/images/titlebar.png
-share/xfce4/doc/fr/images/workspace_margins.png
-share/xfce4/doc/fr/images/xfwm_workspaces.png
-share/xfce4/doc/fr/xfwm4.html
-share/xfce4/doc/it/images/compose_shortcut.png
-share/xfce4/doc/it/images/decoration_style.png
-share/xfce4/doc/it/images/focus.png
-share/xfce4/doc/it/images/keyboard_and_focus.png
-share/xfce4/doc/it/images/keyboard_shortcuts.png
-share/xfce4/doc/it/images/misc_wm_prefs.png
-share/xfce4/doc/it/images/titlebar.png
-share/xfce4/doc/it/images/workspace_margins.png
-share/xfce4/doc/it/images/xfwm_workspaces.png
-share/xfce4/doc/it/xfwm4.html
 share/xfwm4/defaults
-@dirrmtry lib/xfce4/mcs-plugins
-@dirrmtry lib/xfce4
-@dirrm libexec/xfce4/xfwm4
-@dirrm libexec/xfce4
-@dirrmtry share/locale/bn_IN/LC_MESSAGES
-@dirrmtry share/locale/bn_IN
-@dirrmtry share/locale/mr/LC_MESSAGES
-@dirrmtry share/locale/mr
-@dirrmtry share/locale/nb_NO/LC_MESSAGES
-@dirrmtry share/locale/nb_NO
-@dirrmtry share/locale/ast/LC_MESSAGES
-@dirrmtry share/locale/ast
-@dirrmtry share/locale/kk/LC_MESSAGES
-@dirrmtry share/locale/kk
-@dirrmtry share/locale/ug/LC_MESSAGES
-@dirrmtry share/locale/ug
+@dirrm share/xfwm4
+@dirrm share/themes/Wallis/xfwm4
+@dirrm share/themes/Wallis
+@dirrm share/themes/Tyrex/xfwm4
+@dirrm share/themes/Tyrex
+@dirrm share/themes/Therapy/xfwm4
+@dirrm share/themes/Therapy
+@dirrm share/themes/Stoneage/xfwm4
+@dirrm share/themes/Stoneage
+@dirrm share/themes/Sassandra/xfwm4
+@dirrm share/themes/Sassandra
+@dirrm share/themes/Moheli/xfwm4
+@dirrm share/themes/Moheli
+@dirrm share/themes/Kokodi/xfwm4
+@dirrm share/themes/Kokodi
+@dirrm share/themes/Default/xfwm4
+@dirrm share/themes/Default-4.6/xfwm4
+@dirrm share/themes/Default-4.6
+@dirrm share/themes/Default-4.4/xfwm4
+@dirrm share/themes/Default-4.4
+@dirrm share/themes/Default-4.2/xfwm4
+@dirrm share/themes/Default-4.2
+@dirrm share/themes/Default-4.0/xfwm4
+@dirrm share/themes/Default-4.0
+@dirrm share/themes/Default
+@dirrm share/themes/Daloa/xfwm4
+@dirrm share/themes/Daloa
+@dirrm share/themes
 @dirrmtry share/locale/ur_PK/LC_MESSAGES
 @dirrmtry share/locale/ur_PK
-@dirrmtry share/xfce4/doc/C/images
-@dirrmtry share/xfce4/doc/C
-@dirrmtry share/xfce4/doc/fr/images
-@dirrmtry share/xfce4/doc/fr
-@dirrmtry share/xfce4/doc/it/images
-@dirrmtry share/xfce4/doc/it
-@dirrmtry share/xfce4/doc
-@dirrmtry share/xfce4
-@dirrm share/themes/Daloa/xfwm4
-@dirrmtry share/themes/Daloa
-@dirrm share/themes/Default/xfwm4
-@dirrmtry share/themes/Default
-@dirrm share/themes/Default-4.0/xfwm4
-@dirrmtry share/themes/Default-4.0
-@dirrm share/themes/Default-4.2/xfwm4
-@dirrmtry share/themes/Default-4.2
-@dirrm share/themes/Default-4.4/xfwm4
-@dirrmtry share/themes/Default-4.4
-@dirrm share/themes/Kokodi/xfwm4
-@dirrmtry share/themes/Kokodi
-@dirrm share/themes/Moheli/xfwm4
-@dirrmtry share/themes/Moheli
-@dirrm share/themes/Sassandra/xfwm4
-@dirrmtry share/themes/Sassandra
-@dirrm share/themes/Stoneage/xfwm4
-@dirrmtry share/themes/Stoneage
-@dirrm share/themes/Therapy/xfwm4
-@dirrmtry share/themes/Therapy
-@dirrm share/themes/Tyrex/xfwm4
-@dirrmtry share/themes/Tyrex
-@dirrm share/themes/Wallis/xfwm4
-@dirrmtry share/themes/Wallis
-@dirrmtry share/xfwm4/themes
-@dirrmtry share/xfwm4
-@dirrmtry share/icons/hicolor/scalable/apps
-@dirrmtry share/icons/hicolor/scalable
-@dirrmtry share/themes
+@dirrmtry share/locale/ur/LC_MESSAGES
+@dirrmtry share/locale/ur
+@dirrmtry share/locale/ug/LC_MESSAGES
+@dirrmtry share/locale/ug
+@dirrmtry share/locale/si/LC_MESSAGES
+@dirrmtry share/locale/si
+@dirrmtry share/locale/mr/LC_MESSAGES
+@dirrmtry share/locale/mr
+@dirrmtry share/locale/kk/LC_MESSAGES
+@dirrmtry share/locale/kk
+@dirrmtry share/locale/dz/LC_MESSAGES
+@dirrmtry share/locale/dz
+@dirrmtry share/locale/bn_IN/LC_MESSAGES
+@dirrmtry share/locale/bn_IN
+@dirrmtry share/locale/ast/LC_MESSAGES
+@dirrmtry share/locale/ast
+@dirrm share/doc/xfwm4/html/ug
+@dirrm share/doc/xfwm4/html/sv
+@dirrm share/doc/xfwm4/html/it/images
+@dirrm share/doc/xfwm4/html/it
+@dirrm share/doc/xfwm4/html/gl
+@dirrm share/doc/xfwm4/html/el
+@dirrm share/doc/xfwm4/html/fr/images
+@dirrm share/doc/xfwm4/html/fr
+@dirrm share/doc/xfwm4/html/da
+@dirrm share/doc/xfwm4/html/C/images
+@dirrm share/doc/xfwm4/html/C
+@dirrm share/doc/xfwm4/html
+@dirrm share/doc/xfwm4
+@dirrmtry share/applications
+@dirrm lib/xfce4/xfwm4
+@dirrm lib/xfce4

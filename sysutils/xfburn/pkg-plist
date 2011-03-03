@@ -63,12 +63,10 @@ share/locale/ja/LC_MESSAGES/xfburn.mo
 share/locale/ko/LC_MESSAGES/xfburn.mo
 share/locale/lt/LC_MESSAGES/xfburn.mo
 share/locale/lv/LC_MESSAGES/xfburn.mo
-share/locale/nb_NO/LC_MESSAGES/xfburn.mo
 share/locale/nl/LC_MESSAGES/xfburn.mo
 share/locale/pa/LC_MESSAGES/xfburn.mo
 share/locale/pl/LC_MESSAGES/xfburn.mo
 share/locale/pt_BR/LC_MESSAGES/xfburn.mo
-share/locale/pt_PT/LC_MESSAGES/xfburn.mo
 share/locale/ru/LC_MESSAGES/xfburn.mo
 share/locale/sq/LC_MESSAGES/xfburn.mo
 share/locale/sv/LC_MESSAGES/xfburn.mo
@@ -77,6 +75,11 @@ share/locale/uk/LC_MESSAGES/xfburn.mo
 share/locale/ur/LC_MESSAGES/xfburn.mo
 share/locale/zh_CN/LC_MESSAGES/xfburn.mo
 share/locale/zh_TW/LC_MESSAGES/xfburn.mo
+share/locale/ast/LC_MESSAGES/xfburn.mo
+share/locale/kk/LC_MESSAGES/xfburn.mo
+share/locale/nb/LC_MESSAGES/xfburn.mo
+share/locale/pt/LC_MESSAGES/xfburn.mo
+share/locale/ur_PK/LC_MESSAGES/xfburn.mo
 @dirrm %%DATADIR%%
 @dirrmtry share/locale/ar/LC_MESSAGES
 @dirrmtry share/locale/ar
@@ -148,6 +151,12 @@ share/locale/zh_TW/LC_MESSAGES/xfburn.mo
 @dirrmtry share/locale/zh_CN
 @dirrmtry share/locale/zh_TW/LC_MESSAGES
 @dirrmtry share/locale/zh_TW
+@dirrmtry share/locale/ast/LC_MESSAGES
+@dirrmtry share/locale/ast
+@dirrmtry share/locale/kk/LC_MESSAGES
+@dirrmtry share/locale/kk
+@dirrmtry share/locale/ur_PK/LC_MESSAGES
+@dirrmtry share/locale/ur_PK
 @dirrmtry share/Thunar/sendto
 @dirrmtry share/Thunar
 @unexec /bin/rm %D/share/icons/hicolor/icon-theme.cache 2>/dev/null || /usr/bin/true

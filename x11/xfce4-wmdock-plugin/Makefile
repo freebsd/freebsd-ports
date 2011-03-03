@@ -7,12 +7,14 @@
 
 PORTNAME=	xfce4-wmdock-plugin
 PORTVERSION=	0.3.2
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	x11 xfce
 MASTER_SITES=	http://www.ibh.de/~ellguth/develop/
 
 MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	WMdock plugin for XFCE
+
+BROKEN=		Does not work with xfce 4.8
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes

@@ -3,3 +3,5 @@ share/xfce4/panel-plugins/generic-slider.desktop
 @dirrmtry lib/xfce4/xfce4/panel-plugins
 @dirrmtry lib/xfce4/xfce4
 @dirrmtry lib/xfce4
+@dirrmtry share/xfce4/panel-plugins
+@dirrmtry share/xfce4

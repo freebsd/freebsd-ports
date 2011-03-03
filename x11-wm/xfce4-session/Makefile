@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xfce4-session
-PORTVERSION=	4.6.2
+PORTVERSION=	4.8.0
 CATEGORIES=	x11-wm xfce
 MASTER_SITES=	${MASTER_SITE_XFCE}
 DIST_SUBDIR=	xfce4
@@ -26,12 +26,13 @@ USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomehack gnometarget gtk20 intltool intlhack pkgconfig
 USE_LDCONFIG=	yes
-USE_XFCE=	configenv libgui libutil xfconf
+USE_XFCE=	configenv libgui libmenu libutil xfconf
 USE_XORG=	x11 sm ice
 
 MAN1=		xfce4-session.1 xfce4-session-logout.1
 
-PLIST_SUB=	VERSION="${PORTVERSION:R}"
+#PLIST_SUB=	VERSION="${PORTVERSION:R}"
+PLIST_SUB=	VERSION="4.6"
 
 .if !defined(WITHOUT_NLS)
 USE_GETTEXT=	yes

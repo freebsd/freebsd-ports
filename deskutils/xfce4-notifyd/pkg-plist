@@ -1,28 +1,62 @@
 bin/xfce4-notifyd-config
-libexec/xfce4-notifyd
+lib/xfce4/notifyd/xfce4-notifyd
 share/applications/xfce4-notifyd-config.desktop
 share/dbus-1/services/org.freedesktop.Notifications.service
 share/icons/hicolor/48x48/apps/xfce4-notifyd.png
-share/themes/Default/xfce-notify-4.0/gtkrc
-share/themes/Smoke/xfce-notify-4.0/gtkrc
-share/themes/ZOMG-PONIES!/xfce-notify-4.0/gtkrc
+%%NLS%%share/locale/ast/LC_MESSAGES/xfce4-notifyd.mo
 %%NLS%%share/locale/ca/LC_MESSAGES/xfce4-notifyd.mo
 %%NLS%%share/locale/da/LC_MESSAGES/xfce4-notifyd.mo
 %%NLS%%share/locale/de/LC_MESSAGES/xfce4-notifyd.mo
 %%NLS%%share/locale/el/LC_MESSAGES/xfce4-notifyd.mo
 %%NLS%%share/locale/es/LC_MESSAGES/xfce4-notifyd.mo
+%%NLS%%share/locale/eu/LC_MESSAGES/xfce4-notifyd.mo
 %%NLS%%share/locale/fi/LC_MESSAGES/xfce4-notifyd.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/xfce4-notifyd.mo
+%%NLS%%share/locale/gl/LC_MESSAGES/xfce4-notifyd.mo
+%%NLS%%share/locale/hu/LC_MESSAGES/xfce4-notifyd.mo
 %%NLS%%share/locale/id/LC_MESSAGES/xfce4-notifyd.mo
+%%NLS%%share/locale/it/LC_MESSAGES/xfce4-notifyd.mo
+%%NLS%%share/locale/ja/LC_MESSAGES/xfce4-notifyd.mo
+%%NLS%%share/locale/kk/LC_MESSAGES/xfce4-notifyd.mo
+%%NLS%%share/locale/lv/LC_MESSAGES/xfce4-notifyd.mo
 %%NLS%%share/locale/nb/LC_MESSAGES/xfce4-notifyd.mo
 %%NLS%%share/locale/nl/LC_MESSAGES/xfce4-notifyd.mo
+%%NLS%%share/locale/pa/LC_MESSAGES/xfce4-notifyd.mo
+%%NLS%%share/locale/pl/LC_MESSAGES/xfce4-notifyd.mo
+%%NLS%%share/locale/pt/LC_MESSAGES/xfce4-notifyd.mo
+%%NLS%%share/locale/pt_BR/LC_MESSAGES/xfce4-notifyd.mo
 %%NLS%%share/locale/pt_PT/LC_MESSAGES/xfce4-notifyd.mo
+%%NLS%%share/locale/ru/LC_MESSAGES/xfce4-notifyd.mo
+%%NLS%%share/locale/si/LC_MESSAGES/xfce4-notifyd.mo
+%%NLS%%share/locale/sk/LC_MESSAGES/xfce4-notifyd.mo
 %%NLS%%share/locale/sq/LC_MESSAGES/xfce4-notifyd.mo
+%%NLS%%share/locale/sv/LC_MESSAGES/xfce4-notifyd.mo
 %%NLS%%share/locale/tr/LC_MESSAGES/xfce4-notifyd.mo
+%%NLS%%share/locale/ug/LC_MESSAGES/xfce4-notifyd.mo
+%%NLS%%share/locale/uk/LC_MESSAGES/xfce4-notifyd.mo
+%%NLS%%share/locale/zh_CN/LC_MESSAGES/xfce4-notifyd.mo
+%%NLS%%share/locale/zh_TW/LC_MESSAGES/xfce4-notifyd.mo
+%%NLS%%share/locale/cs/LC_MESSAGES/xfce4-notifyd.mo
+%%NLS%%share/locale/en_GB/LC_MESSAGES/xfce4-notifyd.mo
+%%NLS%%share/locale/ro/LC_MESSAGES/xfce4-notifyd.mo
+share/themes/Default/xfce-notify-4.0/gtkrc
+share/themes/Smoke/xfce-notify-4.0/gtkrc
+share/themes/ZOMG-PONIES!/xfce-notify-4.0/gtkrc
 @dirrm share/themes/ZOMG-PONIES!/xfce-notify-4.0
-@dirrm share/themes/ZOMG-PONIES!
+@dirrmtry share/themes/ZOMG-PONIES!
 @dirrm share/themes/Smoke/xfce-notify-4.0
-@dirrm share/themes/Smoke
+@dirrmtry share/themes/Smoke
 @dirrm share/themes/Default/xfce-notify-4.0
 @dirrmtry share/themes/Default
-@dirrmtry share/applications
+%%NLS%%@dirrmtry share/locale/ug/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/ug
+%%NLS%%@dirrmtry share/locale/si/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/si
+%%NLS%%@dirrmtry share/locale/kk/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/kk
+%%NLS%%@dirrmtry share/locale/ast/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/ast
+@dirrm lib/xfce4/notifyd
+@dirrmtry lib/xfce4
+@exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
+@unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true

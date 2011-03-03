@@ -10,37 +10,44 @@ bin/xfsettingsd
 etc/xdg/autostart/xfce4-settings-helper-autostart.desktop
 etc/xdg/xfce4/xfconf/xfce-perchannel-xml/xsettings.xml
 %%XRANDR%%%%NLS%%share/applications/xfce-display-settings.desktop
-%%NLS%%share/applications/xfce-keyboard-settings.desktop
-%%NLS%%share/applications/xfce-mouse-settings.desktop
-%%NLS%%share/applications/xfce-settings-manager.desktop
-%%NLS%%share/applications/xfce-ui-settings.desktop
-%%NLS%%share/applications/xfce4-accessibility-settings.desktop
-%%NLS%%share/applications/xfce4-settings-editor.desktop
-%%NLS%%share/locale/am/LC_MESSAGES/xfce4-settings.mo
+share/applications/xfce-keyboard-settings.desktop
+share/applications/xfce-mouse-settings.desktop
+share/applications/xfce-settings-manager.desktop
+share/applications/xfce-ui-settings.desktop
+share/applications/xfce4-accessibility-settings.desktop
+share/applications/xfce4-settings-editor.desktop
+%%NLS%%share/locale/ar/LC_MESSAGES/xfce4-settings.mo
 %%NLS%%share/locale/ast/LC_MESSAGES/xfce4-settings.mo
+%%NLS%%share/locale/bn/LC_MESSAGES/xfce4-settings.mo
 %%NLS%%share/locale/ca/LC_MESSAGES/xfce4-settings.mo
 %%NLS%%share/locale/cs/LC_MESSAGES/xfce4-settings.mo
 %%NLS%%share/locale/da/LC_MESSAGES/xfce4-settings.mo
 %%NLS%%share/locale/de/LC_MESSAGES/xfce4-settings.mo
 %%NLS%%share/locale/el/LC_MESSAGES/xfce4-settings.mo
+%%NLS%%share/locale/en_GB/LC_MESSAGES/xfce4-settings.mo
 %%NLS%%share/locale/es/LC_MESSAGES/xfce4-settings.mo
 %%NLS%%share/locale/eu/LC_MESSAGES/xfce4-settings.mo
 %%NLS%%share/locale/fi/LC_MESSAGES/xfce4-settings.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/xfce4-settings.mo
 %%NLS%%share/locale/gl/LC_MESSAGES/xfce4-settings.mo
+%%NLS%%share/locale/he/LC_MESSAGES/xfce4-settings.mo
+%%NLS%%share/locale/hr/LC_MESSAGES/xfce4-settings.mo
 %%NLS%%share/locale/hu/LC_MESSAGES/xfce4-settings.mo
 %%NLS%%share/locale/id/LC_MESSAGES/xfce4-settings.mo
+%%NLS%%share/locale/is/LC_MESSAGES/xfce4-settings.mo
 %%NLS%%share/locale/it/LC_MESSAGES/xfce4-settings.mo
 %%NLS%%share/locale/ja/LC_MESSAGES/xfce4-settings.mo
 %%NLS%%share/locale/kk/LC_MESSAGES/xfce4-settings.mo
 %%NLS%%share/locale/lv/LC_MESSAGES/xfce4-settings.mo
 %%NLS%%share/locale/nb/LC_MESSAGES/xfce4-settings.mo
 %%NLS%%share/locale/nl/LC_MESSAGES/xfce4-settings.mo
+%%NLS%%share/locale/pa/LC_MESSAGES/xfce4-settings.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/xfce4-settings.mo
 %%NLS%%share/locale/pt/LC_MESSAGES/xfce4-settings.mo
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/xfce4-settings.mo
 %%NLS%%share/locale/ro/LC_MESSAGES/xfce4-settings.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/xfce4-settings.mo
+%%NLS%%share/locale/si/LC_MESSAGES/xfce4-settings.mo
 %%NLS%%share/locale/sk/LC_MESSAGES/xfce4-settings.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/xfce4-settings.mo
 %%NLS%%share/locale/tr/LC_MESSAGES/xfce4-settings.mo
@@ -49,74 +56,21 @@ etc/xdg/xfce4/xfconf/xfce-perchannel-xml/xsettings.xml
 %%NLS%%share/locale/ur/LC_MESSAGES/xfce4-settings.mo
 %%NLS%%share/locale/ur_PK/LC_MESSAGES/xfce4-settings.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/xfce4-settings.mo
+%%NLS%%share/locale/zh_TW/LC_MESSAGES/xfce4-settings.mo
 @exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
 @unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
-%%NLS%%@dirrmtry share/locale/zh_CN/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/zh_CN
 %%NLS%%@dirrmtry share/locale/ur_PK/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/ur_PK
 %%NLS%%@dirrmtry share/locale/ur/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/ur
-%%NLS%%@dirrmtry share/locale/uk/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/uk
 %%NLS%%@dirrmtry share/locale/ug/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/ug
-%%NLS%%@dirrmtry share/locale/tr/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/tr
-%%NLS%%@dirrmtry share/locale/sv/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/sv
-%%NLS%%@dirrmtry share/locale/sk/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/sk
-%%NLS%%@dirrmtry share/locale/ru/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/ru
-%%NLS%%@dirrmtry share/locale/ro/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/ro
-%%NLS%%@dirrmtry share/locale/pt_BR/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/pt_BR
-%%NLS%%@dirrmtry share/locale/pt/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/pt
-%%NLS%%@dirrmtry share/locale/pl/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/pl
-%%NLS%%@dirrmtry share/locale/nl/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/nl
-%%NLS%%@dirrmtry share/locale/nb/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/nb
-%%NLS%%@dirrmtry share/locale/lv/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/lv
+%%NLS%%@dirrmtry share/locale/si/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/si
 %%NLS%%@dirrmtry share/locale/kk/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/kk
-%%NLS%%@dirrmtry share/locale/ja/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/ja
-%%NLS%%@dirrmtry share/locale/it/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/it
-%%NLS%%@dirrmtry share/locale/id/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/id
-%%NLS%%@dirrmtry share/locale/hu/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/hu
-%%NLS%%@dirrmtry share/locale/gl/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/gl
-%%NLS%%@dirrmtry share/locale/fr/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/fr
-%%NLS%%@dirrmtry share/locale/fi/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/fi
-%%NLS%%@dirrmtry share/locale/eu/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/eu
-%%NLS%%@dirrmtry share/locale/es/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/es
-%%NLS%%@dirrmtry share/locale/el/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/el
-%%NLS%%@dirrmtry share/locale/de/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/de
-%%NLS%%@dirrmtry share/locale/da/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/da
-%%NLS%%@dirrmtry share/locale/cs/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/cs
-%%NLS%%@dirrmtry share/locale/ca/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/ca
 %%NLS%%@dirrmtry share/locale/ast/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/ast
-%%NLS%%@dirrmtry share/locale/am/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/am
 @dirrmtry etc/xdg/xfce4/xfconf/xfce-perchannel-xml
 @dirrmtry etc/xdg/xfce4/xfconf
 @dirrmtry etc/xdg/xfce4

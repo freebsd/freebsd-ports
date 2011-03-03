@@ -73,16 +73,26 @@ share/Terminal/Terminal.glade
 %%PORTDOCS%%%%DOCSDIR%%/gl/preferences.html
 %%PORTDOCS%%%%DOCSDIR%%/gl/support.html
 %%PORTDOCS%%%%DOCSDIR%%/gl/usage.html
-%%PORTDOCS%%%%DOCSDIR%%/hr/advanced.html
-%%PORTDOCS%%%%DOCSDIR%%/hr/command-line.html
-%%PORTDOCS%%%%DOCSDIR%%/hr/copyright.html
-%%PORTDOCS%%%%DOCSDIR%%/hr/faq.html
-%%PORTDOCS%%%%DOCSDIR%%/hr/getting-started.html
-%%PORTDOCS%%%%DOCSDIR%%/hr/images
-%%PORTDOCS%%%%DOCSDIR%%/hr/index.html
-%%PORTDOCS%%%%DOCSDIR%%/hr/preferences.html
-%%PORTDOCS%%%%DOCSDIR%%/hr/support.html
-%%PORTDOCS%%%%DOCSDIR%%/hr/usage.html
+%%PORTDOCS%%%%DOCSDIR%%/el/advanced.html
+%%PORTDOCS%%%%DOCSDIR%%/el/command-line.html
+%%PORTDOCS%%%%DOCSDIR%%/el/copyright.html
+%%PORTDOCS%%%%DOCSDIR%%/el/faq.html
+%%PORTDOCS%%%%DOCSDIR%%/el/getting-started.html
+%%PORTDOCS%%%%DOCSDIR%%/el/index.html
+%%PORTDOCS%%%%DOCSDIR%%/el/preferences.html
+%%PORTDOCS%%%%DOCSDIR%%/el/support.html
+%%PORTDOCS%%%%DOCSDIR%%/el/usage.html
+%%PORTDOCS%%%%DOCSDIR%%/el/images
+%%PORTDOCS%%%%DOCSDIR%%/sv/advanced.html
+%%PORTDOCS%%%%DOCSDIR%%/sv/command-line.html
+%%PORTDOCS%%%%DOCSDIR%%/sv/copyright.html
+%%PORTDOCS%%%%DOCSDIR%%/sv/faq.html
+%%PORTDOCS%%%%DOCSDIR%%/sv/getting-started.html
+%%PORTDOCS%%%%DOCSDIR%%/sv/index.html
+%%PORTDOCS%%%%DOCSDIR%%/sv/preferences.html
+%%PORTDOCS%%%%DOCSDIR%%/sv/support.html
+%%PORTDOCS%%%%DOCSDIR%%/sv/usage.html
+%%PORTDOCS%%%%DOCSDIR%%/sv/images
 %%PORTDOCS%%%%DOCSDIR%%/id/advanced.html
 %%PORTDOCS%%%%DOCSDIR%%/id/command-line.html
 %%PORTDOCS%%%%DOCSDIR%%/id/copyright.html
@@ -287,8 +297,6 @@ share/pixmaps/terminal.xpm
 %%NLS%%@dirrmtry share/locale/id
 %%NLS%%@dirrmtry share/locale/hu/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/hu
-%%NLS%%@dirrmtry share/locale/hr/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/hr
 %%NLS%%@dirrmtry share/locale/he/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/he
 %%NLS%%@dirrmtry share/locale/gl/LC_MESSAGES
@@ -355,6 +363,8 @@ share/pixmaps/terminal.xpm
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/es
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/da
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/ca
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/el
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/sv
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/C/images
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/C
 %%PORTDOCS%%@dirrm %%DOCSDIR%%

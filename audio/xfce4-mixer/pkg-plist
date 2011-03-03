@@ -1,6 +1,12 @@
 bin/xfce4-mixer
 libexec/xfce4/panel-plugins/xfce4-mixer-plugin
 share/applications/xfce4-mixer.desktop
+share/locale/ast/LC_MESSAGES/xfce4-mixer.mo
+share/locale/lv/LC_MESSAGES/xfce4-mixer.mo
+share/locale/ro/LC_MESSAGES/xfce4-mixer.mo
+share/locale/sk/LC_MESSAGES/xfce4-mixer.mo
+share/locale/ur/LC_MESSAGES/xfce4-mixer.mo
+share/locale/ur_PK/LC_MESSAGES/xfce4-mixer.mo
 share/locale/am/LC_MESSAGES/xfce4-mixer.mo
 share/locale/ar/LC_MESSAGES/xfce4-mixer.mo
 share/locale/ca/LC_MESSAGES/xfce4-mixer.mo
@@ -90,3 +96,9 @@ share/xfce4/panel-plugins/xfce4-mixer-plugin.desktop
 @dirrm share/xfce4-mixer/icons/hicolor
 @dirrm share/xfce4-mixer/icons
 @dirrm share/xfce4-mixer
+@dirrmtry share/locale/ast/LC_MESSAGES
+@dirrmtry share/locale/ast
+@dirrmtry share/locale/ur_PK/LC_MESSAGES
+@dirrmtry share/locale/ur_PK
+@dirrmtry share/locale/ur/LC_MESSAGES
+@dirrmtry share/locale/ur

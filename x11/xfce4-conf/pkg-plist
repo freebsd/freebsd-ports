@@ -8,8 +8,8 @@ lib/libxfconf-0.a
 lib/libxfconf-0.la
 lib/libxfconf-0.so
 lib/libxfconf-0.so.2
+lib/xfce4/xfconf/xfconfd
 libdata/pkgconfig/libxfconf-0.pc
-libexec/xfconfd
 share/dbus-1/services/org.xfce.Xfconf.service
 share/gtk-doc/html/xfconf/ch01.html
 share/gtk-doc/html/xfconf/ch02.html
@@ -29,17 +29,21 @@ share/gtk-doc/html/xfconf/xfconf-xfconf-types.html
 share/gtk-doc/html/xfconf/xfconf-xfconf.html
 share/gtk-doc/html/xfconf/xfconf.devhelp
 share/gtk-doc/html/xfconf/xfconf.devhelp2
-%%NLS%%share/locale/am/LC_MESSAGES/xfconf.mo
+%%NLS%%share/locale/ar/LC_MESSAGES/xfconf.mo
 %%NLS%%share/locale/ast/LC_MESSAGES/xfconf.mo
+%%NLS%%share/locale/bn/LC_MESSAGES/xfconf.mo
 %%NLS%%share/locale/ca/LC_MESSAGES/xfconf.mo
 %%NLS%%share/locale/cs/LC_MESSAGES/xfconf.mo
 %%NLS%%share/locale/da/LC_MESSAGES/xfconf.mo
 %%NLS%%share/locale/de/LC_MESSAGES/xfconf.mo
+%%NLS%%share/locale/en_GB/LC_MESSAGES/xfconf.mo
 %%NLS%%share/locale/es/LC_MESSAGES/xfconf.mo
 %%NLS%%share/locale/eu/LC_MESSAGES/xfconf.mo
+%%NLS%%share/locale/el/LC_MESSAGES/xfconf.mo
 %%NLS%%share/locale/fi/LC_MESSAGES/xfconf.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/xfconf.mo
 %%NLS%%share/locale/gl/LC_MESSAGES/xfconf.mo
+%%NLS%%share/locale/he/LC_MESSAGES/xfconf.mo
 %%NLS%%share/locale/hu/LC_MESSAGES/xfconf.mo
 %%NLS%%share/locale/id/LC_MESSAGES/xfconf.mo
 %%NLS%%share/locale/it/LC_MESSAGES/xfconf.mo
@@ -48,11 +52,14 @@ share/gtk-doc/html/xfconf/xfconf.devhelp2
 %%NLS%%share/locale/lv/LC_MESSAGES/xfconf.mo
 %%NLS%%share/locale/nb/LC_MESSAGES/xfconf.mo
 %%NLS%%share/locale/nl/LC_MESSAGES/xfconf.mo
+%%NLS%%share/locale/pa/LC_MESSAGES/xfconf.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/xfconf.mo
 %%NLS%%share/locale/pt/LC_MESSAGES/xfconf.mo
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/xfconf.mo
 %%NLS%%share/locale/ro/LC_MESSAGES/xfconf.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/xfconf.mo
+%%NLS%%share/locale/si/LC_MESSAGES/xfconf.mo
+%%NLS%%share/locale/sk/LC_MESSAGES/xfconf.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/xfconf.mo
 %%NLS%%share/locale/tr/LC_MESSAGES/xfconf.mo
 %%NLS%%share/locale/ug/LC_MESSAGES/xfconf.mo
@@ -60,84 +67,25 @@ share/gtk-doc/html/xfconf/xfconf.devhelp2
 %%NLS%%share/locale/ur/LC_MESSAGES/xfconf.mo
 %%NLS%%share/locale/ur_PK/LC_MESSAGES/xfconf.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/xfconf.mo
-%%PERLBIND%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/Xfce4/Xfconf/Xfconf.so
-%%PERLBIND%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/Xfce4/Xfconf/Xfconf.bs
-%%PERLBIND%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/Xfce4/Xfconf/.packlist
-%%PERLBIND%%%%SITE_PERL%%/%%PERL_ARCH%%/Xfce4/Xfconf/Install/Files.pm
-%%PERLBIND%%%%SITE_PERL%%/%%PERL_ARCH%%/Xfce4/Xfconf/Install/xfconfperl.h
-%%PERLBIND%%%%SITE_PERL%%/%%PERL_ARCH%%/Xfce4/Xfconf/Install/xfconfperl-autogen.h
-%%PERLBIND%%%%SITE_PERL%%/%%PERL_ARCH%%/Xfce4/Xfconf/Install/xfconfperl.typemap
-%%PERLBIND%%%%SITE_PERL%%/%%PERL_ARCH%%/Xfce4/Xfconf.pm
-%%PERLBIND%%@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Xfce4/Xfconf
-%%PERLBIND%%@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Xfce4
-%%PERLBIND%%@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Xfce4/Xfconf/Install
-%%PERLBIND%%@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Xfce4/Xfconf
-%%PERLBIND%%@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Xfce4
-%%NLS%%@dirrmtry share/locale/zh_CN/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/zh_CN
+%%NLS%%share/locale/zh_TW/LC_MESSAGES/xfconf.mo
 %%NLS%%@dirrmtry share/locale/ur_PK/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/ur_PK
 %%NLS%%@dirrmtry share/locale/ur/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/ur
-%%NLS%%@dirrmtry share/locale/uk/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/uk
 %%NLS%%@dirrmtry share/locale/ug/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/ug
-%%NLS%%@dirrmtry share/locale/tr/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/tr
-%%NLS%%@dirrmtry share/locale/sv/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/sv
-%%NLS%%@dirrmtry share/locale/ru/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/ru
-%%NLS%%@dirrmtry share/locale/ro/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/ro
-%%NLS%%@dirrmtry share/locale/pt_BR/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/pt_BR
-%%NLS%%@dirrmtry share/locale/pt/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/pt
-%%NLS%%@dirrmtry share/locale/pl/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/pl
-%%NLS%%@dirrmtry share/locale/nl/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/nl
-%%NLS%%@dirrmtry share/locale/nb/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/nb
-%%NLS%%@dirrmtry share/locale/lv/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/lv
+%%NLS%%@dirrmtry share/locale/si/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/si
 %%NLS%%@dirrmtry share/locale/kk/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/kk
-%%NLS%%@dirrmtry share/locale/ja/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/ja
-%%NLS%%@dirrmtry share/locale/it/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/it
-%%NLS%%@dirrmtry share/locale/id/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/id
-%%NLS%%@dirrmtry share/locale/hu/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/hu
-%%NLS%%@dirrmtry share/locale/gl/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/gl
-%%NLS%%@dirrmtry share/locale/fr/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/fr
-%%NLS%%@dirrmtry share/locale/fi/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/fi
-%%NLS%%@dirrmtry share/locale/eu/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/eu
-%%NLS%%@dirrmtry share/locale/es/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/es
-%%NLS%%@dirrmtry share/locale/de/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/de
-%%NLS%%@dirrmtry share/locale/da/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/da
-%%NLS%%@dirrmtry share/locale/cs/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/cs
-%%NLS%%@dirrmtry share/locale/ca/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/ca
 %%NLS%%@dirrmtry share/locale/ast/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/ast
-%%NLS%%@dirrmtry share/locale/am/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/am
 @dirrm share/gtk-doc/html/xfconf
 @dirrmtry share/gtk-doc/html
 @dirrmtry share/gtk-doc
+@dirrmtry share/dbus-1
+@dirrm lib/xfce4/xfconf
+@dirrm lib/xfce4
 @dirrm include/xfce4/xfconf-0/xfconf
 @dirrm include/xfce4/xfconf-0
 @dirrmtry include/xfce4

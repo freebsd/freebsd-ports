@@ -6,7 +6,7 @@
 #    $MCom: ports/x11/libexo/Makefile,v 1.1 2006/10/02 21:05:55 ahze Exp $
 
 PORTNAME=	libexo
-PORTVERSION=	0.3.107
+PORTVERSION=	0.6.0
 CATEGORIES=	x11 xfce
 DISTNAME=	exo-${PORTVERSION}
 MASTER_SITES=	${MASTER_SITE_XFCE}
@@ -21,10 +21,10 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 WRKSRC=		${WRKDIR}/${DISTNAME}
 
 GNU_CONFIGURE=	yes
-INSTALLS_ICONS= yes
+INSTALLS_ICONS=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_GNOME=	glib20 gnomehack gnometarget gtk20 intltool intlhack pkgconfig
+USE_GNOME=	gnomehack glib20 gnometarget gtk20 intltool intlhack pkgconfig
 USE_LDCONFIG=	yes
 USE_PERL5=	yes
 USE_XFCE=	configenv libutil

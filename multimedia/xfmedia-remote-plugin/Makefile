@@ -7,15 +7,18 @@
 
 PORTNAME=	xfmedia-remote-plugin
 PORTVERSION=	0.2.2
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	multimedia audio xfce
-MASTER_SITES=	http://goodies.xfce.org/releases/${PORTNAME}/
+MASTER_SITES=	${MASTER_SITE_XFCE}
+MASTER_SITE_SUBDIR=/src/panel-plugins//${PORTNAME}/${PORTVERSION:R}
 DIST_SUBDIR=	xfce4
 
 MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	XFce 4 media remote plugin for xfce4-panel
 
 BUILD_DEPENDS=	xfce4-media>=0.9.2:${PORTSDIR}/multimedia/xfce4-media
+
+BROKEN=		Does not work with xfce 4.8
 
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
