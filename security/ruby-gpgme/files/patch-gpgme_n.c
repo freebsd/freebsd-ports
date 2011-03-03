@@ -1,11 +1,11 @@
---- gpgme_n.c.orig	Mon Dec 20 21:38:14 2004
-+++ gpgme_n.c	Mon Sep 29 21:35:59 2003
-@@ -34,7 +34,7 @@
-    this purpose.  */
+--- ./gpgme_n.c.orig	2009-09-16 00:00:05.000000000 -0400
++++ ./gpgme_n.c	2010-10-13 08:09:19.000000000 -0400
+@@ -411,6 +411,8 @@
+ static VALUE
+ rb_s_gpgme_new (VALUE dummy, VALUE rctx)
+ {
++  gpgme_check_version(NULL);
++
+   gpgme_ctx_t ctx;
+   gpgme_error_t err = gpgme_new (&ctx);
  
- #include "ruby.h"
--#include "gpgme.h"
-+#include "gpgme03/gpgme.h"
- 
- /* StringValuePtr is not available in 1.6. */
- #ifndef StringValuePtr
