@@ -13,7 +13,7 @@ COMMENT=	High performance media player supporting many formats
 .include "${.CURDIR}/Makefile.shared"
 
 OPTIONS=	DEBUG "Include debug symbols in mplayer's binaries" off
-OPTIONS+=	BLURAY "Build with libbluray suport" off
+OPTIONS+=	BLURAY "Build with libbluray support" off
 OPTIONS+=	RTCPU "Allow runtime CPU detection" on
 OPTIONS+=	OCFLAGS "Use optimized compiler flags" on
 OPTIONS+=	IPV6 "Include inet6 network support" on
