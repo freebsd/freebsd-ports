@@ -9,8 +9,7 @@ PORTNAME=	xfce4-generic-slider
 PORTVERSION=	0.0.20100827
 PORTREVISION=	1
 CATEGORIES=	deskutils
-MASTER_SITES=	CRITICAL
-MASTER_SITE_SUBDIR=xfce/4.6.2/src
+MASTER_SITES=	CRITICAL/
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	A slider plugin to adjust and/or monitor any numeric variable
