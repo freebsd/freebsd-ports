@@ -1,0 +1,122 @@
+etc/xdg/menus/xfce-applications.menu
+include/garcon-1/garcon/garcon-config.h
+include/garcon-1/garcon/garcon-environment.h
+include/garcon-1/garcon/garcon-marshal.h
+include/garcon-1/garcon/garcon-menu-directory.h
+include/garcon-1/garcon/garcon-menu-element.h
+include/garcon-1/garcon/garcon-menu-item-cache.h
+include/garcon-1/garcon/garcon-menu-item-pool.h
+include/garcon-1/garcon/garcon-menu-item.h
+include/garcon-1/garcon/garcon-menu-merger.h
+include/garcon-1/garcon/garcon-menu-node.h
+include/garcon-1/garcon/garcon-menu-parser.h
+include/garcon-1/garcon/garcon-menu-separator.h
+include/garcon-1/garcon/garcon-menu-tree-provider.h
+include/garcon-1/garcon/garcon-menu.h
+include/garcon-1/garcon/garcon.h
+lib/libgarcon-1.a
+lib/libgarcon-1.la
+lib/libgarcon-1.so
+lib/libgarcon-1.so.0
+libdata/pkgconfig/garcon-1.pc
+share/desktop-directories/xfce-accessories.directory
+share/desktop-directories/xfce-development.directory
+share/desktop-directories/xfce-education.directory
+share/desktop-directories/xfce-games.directory
+share/desktop-directories/xfce-graphics.directory
+share/desktop-directories/xfce-multimedia.directory
+share/desktop-directories/xfce-network.directory
+share/desktop-directories/xfce-office.directory
+share/desktop-directories/xfce-other.directory
+share/desktop-directories/xfce-science.directory
+share/desktop-directories/xfce-screensavers.directory
+share/desktop-directories/xfce-settings.directory
+share/desktop-directories/xfce-system.directory
+share/gtk-doc/html/garcon/GarconMenu.html
+share/gtk-doc/html/garcon/GarconMenuDirectory.html
+share/gtk-doc/html/garcon/GarconMenuElement.html
+share/gtk-doc/html/garcon/GarconMenuItem.html
+share/gtk-doc/html/garcon/GarconMenuItemCache.html
+share/gtk-doc/html/garcon/GarconMenuMerger.html
+share/gtk-doc/html/garcon/GarconMenuParser.html
+share/gtk-doc/html/garcon/GarconMenuSeparator.html
+share/gtk-doc/html/garcon/GarconMenuTreeProvider.html
+share/gtk-doc/html/garcon/api-index-full.html
+share/gtk-doc/html/garcon/garcon-Desktop-Environment-Configuration.html
+share/gtk-doc/html/garcon/garcon-Version-Information.html
+share/gtk-doc/html/garcon/garcon-garcon-menu-item-pool.html
+share/gtk-doc/html/garcon/garcon-garcon-menu-node.html
+share/gtk-doc/html/garcon/garcon-garcon.html
+share/gtk-doc/html/garcon/garcon-menus.html
+share/gtk-doc/html/garcon/garcon-miscellaneous.html
+share/gtk-doc/html/garcon/garcon-parsing.html
+share/gtk-doc/html/garcon/garcon.devhelp
+share/gtk-doc/html/garcon/garcon.devhelp2
+share/gtk-doc/html/garcon/home.png
+share/gtk-doc/html/garcon/index.html
+share/gtk-doc/html/garcon/index.sgml
+share/gtk-doc/html/garcon/left.png
+share/gtk-doc/html/garcon/object-tree.html
+share/gtk-doc/html/garcon/pt01.html
+share/gtk-doc/html/garcon/right.png
+share/gtk-doc/html/garcon/style.css
+share/gtk-doc/html/garcon/up.png
+share/locale/ar/LC_MESSAGES/garcon.mo
+share/locale/he/LC_MESSAGES/garcon.mo
+share/locale/nb/LC_MESSAGES/garcon.mo
+share/locale/ro/LC_MESSAGES/garcon.mo
+share/locale/bn/LC_MESSAGES/garcon.mo
+share/locale/ca/LC_MESSAGES/garcon.mo
+share/locale/cs/LC_MESSAGES/garcon.mo
+share/locale/da/LC_MESSAGES/garcon.mo
+share/locale/de/LC_MESSAGES/garcon.mo
+share/locale/el/LC_MESSAGES/garcon.mo
+share/locale/en_GB/LC_MESSAGES/garcon.mo
+share/locale/es/LC_MESSAGES/garcon.mo
+share/locale/eu/LC_MESSAGES/garcon.mo
+share/locale/fi/LC_MESSAGES/garcon.mo
+share/locale/fr/LC_MESSAGES/garcon.mo
+share/locale/gl/LC_MESSAGES/garcon.mo
+share/locale/hr/LC_MESSAGES/garcon.mo
+share/locale/hu/LC_MESSAGES/garcon.mo
+share/locale/id/LC_MESSAGES/garcon.mo
+share/locale/it/LC_MESSAGES/garcon.mo
+share/locale/ja/LC_MESSAGES/garcon.mo
+share/locale/kk/LC_MESSAGES/garcon.mo
+share/locale/ku/LC_MESSAGES/garcon.mo
+share/locale/lt/LC_MESSAGES/garcon.mo
+share/locale/lv/LC_MESSAGES/garcon.mo
+share/locale/nb_NO/LC_MESSAGES/garcon.mo
+share/locale/nl/LC_MESSAGES/garcon.mo
+share/locale/pa/LC_MESSAGES/garcon.mo
+share/locale/pl/LC_MESSAGES/garcon.mo
+share/locale/pt/LC_MESSAGES/garcon.mo
+share/locale/pt_BR/LC_MESSAGES/garcon.mo
+share/locale/pt_PT/LC_MESSAGES/garcon.mo
+share/locale/ru/LC_MESSAGES/garcon.mo
+share/locale/sq/LC_MESSAGES/garcon.mo
+share/locale/sv/LC_MESSAGES/garcon.mo
+share/locale/tr/LC_MESSAGES/garcon.mo
+share/locale/ug/LC_MESSAGES/garcon.mo
+share/locale/uk/LC_MESSAGES/garcon.mo
+share/locale/ur/LC_MESSAGES/garcon.mo
+share/locale/zh_CN/LC_MESSAGES/garcon.mo
+share/locale/zh_TW/LC_MESSAGES/garcon.mo
+@dirrmtry share/locale/ur/LC_MESSAGES
+@dirrmtry share/locale/ur
+@dirrmtry share/locale/ug/LC_MESSAGES
+@dirrmtry share/locale/ug
+@dirrmtry share/locale/nb_NO/LC_MESSAGES
+@dirrmtry share/locale/nb_NO
+@dirrmtry share/locale/ku/LC_MESSAGES
+@dirrmtry share/locale/ku
+@dirrmtry share/locale/kk/LC_MESSAGES
+@dirrmtry share/locale/kk
+@dirrm share/gtk-doc/html/garcon
+@dirrmtry share/gtk-doc/html
+@dirrmtry share/gtk-doc
+@dirrm share/desktop-directories
+@dirrm include/garcon-1/garcon
+@dirrm include/garcon-1
+@dirrmtry etc/xdg/menus
+@dirrmtry etc/xdg
