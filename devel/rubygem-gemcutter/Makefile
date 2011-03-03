@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gemcutter
-PORTVERSION=	0.6.1
+PORTVERSION=	0.7.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
