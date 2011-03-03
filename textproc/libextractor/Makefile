@@ -59,11 +59,11 @@ PLIST_SUB+=	VORBIS="@comment "
 
 patch-autotools-libtool::
 	@(cd ${PATCH_WRKSRC}; \
-	for file in ${LIBTOOLFILES}; do \
-		${CP} $$file $$file.tmp; \
+	for f in ${LIBTOOLFILES}; do \
+		${CP} $$f $$f.tmp; \
 		${SED} -e "/^ltmain=/s^\$$ac_aux_dir/ltmain.sh^${LTMAIN}^g" \
-			$$file.tmp > $$file; \
-		${RM} $$file.tmp; \
+			$$f.tmp > $$f; \
+		${RM} $$f.tmp; \
 	done);
 
 .include <bsd.port.post.mk>
