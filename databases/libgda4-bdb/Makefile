@@ -5,7 +5,7 @@
 # $FreeBSD$
 #
 
-PORTREVISION?=	1
+PORTREVISION?=	0
 CATEGORIES=	databases gnome
 PKGNAMESUFFIX?=	-bdb
 
@@ -18,7 +18,5 @@ INSTALL_WRKSRC=	${BUILD_WRKSRC}
 PLIST=		${.CURDIR}/pkg-plist
 
 LIBGDA4_SLAVE=	bdb
-
-BROKEN=		does not build
 
 .include "${MASTERDIR}/Makefile"

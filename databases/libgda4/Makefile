@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	libgda4
-PORTVERSION?=	4.2.2
+PORTVERSION?=	4.2.5
 PORTREVISION?=	0
 CATEGORIES=	databases gnome
 MASTER_SITES=	GNOME
@@ -41,8 +41,7 @@ CONFIGURE_ARGS=	--without-oracle \
 		--disable-crypto \
 		--enable-introspection=no
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LIBS="-L${LOCALBASE}/lib -lintl" \
-		ac_cv_path_MYSQL_CONFIG=${LOCALBASE}/bin/mysql_config
+		LIBS="-L${LOCALBASE}/lib -lintl"
 
 .if ${LIBGDA4_SLAVE}=="no"
 OPTIONS=	UI "Build UI tools" on
@@ -52,7 +51,7 @@ OPTIONS=	UI "Build UI tools" on
 INSTALLS_ICONS=	yes
 .endif
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 #VERSION=	${PORTVERSION:R}
 VERSION=	4.0
@@ -113,11 +112,6 @@ CONFIGURE_ARGS+=	--without-mdb
 .if ${LIBGDA4_SLAVE}=="jdbc"
 USE_JAVA=		yes
 JAVA_VENDOR=		bsdjava openjdk
-.if ${OSVERSION} < 700000
-BROKEN=		does not configure on 6.x
-.elif ${OSVERSION} < 800000
-BROKEN=		does not compile on 7.x
-.endif
 .else
 CONFIGURE_ARGS+=	--without-java
 .endif
@@ -125,10 +119,10 @@ CONFIGURE_ARGS+=	--without-java
 post-patch:
 	@${REINPLACE_CMD} -e 's|-ldl||g' \
 	    	${WRKSRC}/configure
-	@${REINPLACE_CMD} -e 's|include/db.h|include/db${BDB_VER}/db.h|g' \
-		-e 's|ldb47|ldb${BDB_VER}|g' \
-		-e 's|ldb|ldb${BDB_VER}|g' \
-		-e 's|libdb|libdb${BDB_VER}|g' \
+	@${REINPLACE_CMD} -e 's|"db.h|"db${BDB_VER}/db.h|g' \
+		-e 's|ldb47|l${BDB_LIB_NAME}|g' \
+		-e 's|ldb|l${BDB_LIB_NAME}|g' \
+		-e 's|libdb|lib${BDB_LIB_NAME}|g' \
 		${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|<db\.h>|<db${BDB_VER}/db.h>|' \
 	    	${WRKSRC}/providers/bdb/gda-bdb-provider.c \
@@ -154,6 +148,12 @@ pre-build:
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/data/config \
 		${PREFIX}/etc/libgda-${VERSION}/config.default
+.endif
+
+.include <bsd.port.pre.mk>
+
+.if ${LIBGDA4_SLAVE}=="jdbc" && ${OSVERSION} < 800000
+BROKEN=		does not compile on 7.x
 .endif
 
 .include <bsd.port.post.mk>
