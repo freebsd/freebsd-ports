@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Text-Password-Pronounceable
-PORTVERSION=	0.28
+PORTVERSION=	0.30
 CATEGORIES=	security textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
