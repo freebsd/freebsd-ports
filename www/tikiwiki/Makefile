@@ -10,7 +10,7 @@ PORTVERSION=	3.1
 CATEGORIES=	www
 MASTER_SITES=	SF/${PORTNAME}/TikiWiki%203.x%20-Betelgeuse-/Tiki%203.1/
 
-MAINTAINER=	miwi@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Powerful PHP based Wiki/CMS/Groupware
 
 USE_PHP=	gettext pcre posix session xml zlib
