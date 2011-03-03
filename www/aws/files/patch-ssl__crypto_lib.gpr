@@ -1,0 +1,10 @@
+--- ssl/crypto_lib.gpr.orig	2010-12-20 12:41:17 +0000
++++ ssl/crypto_lib.gpr
+@@ -29,7 +29,6 @@
+ 
+ with "../.build/projects/aws_config";
+ with "../.build/projects/aws_lib_shared";
+-with "dl_lib";
+ 
+ project Crypto_Lib is
+ 

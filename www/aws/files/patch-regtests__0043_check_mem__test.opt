@@ -1,0 +1,13 @@
+--- regtests/0043_check_mem/test.opt.orig	2010-12-13 14:42:37 +0000
++++ regtests/0043_check_mem/test.opt
+@@ -1,2 +1,10 @@
+ !ssl DEAD
+ !xmlada DEAD
++x86-dragonfly DEAD
++x86-freebsd DEAD
++x86-openbsd DEAD
++x86-netbsd DEAD
++x86_64-dragonfly DEAD
++x86_64-freebsd DEAD
++x86_64-openbsd DEAD
++x86_64-netbsd DEAD
