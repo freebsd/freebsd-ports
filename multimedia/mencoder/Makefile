@@ -13,7 +13,7 @@ RESTRICTED=	Port has restricted dependencies
 .include "${.CURDIR}/../mplayer/Makefile.shared"
 
 OPTIONS=	DEBUG "Include debug symbols in mencoder's binary" off
-OPTIONS+=	BLURAY "Build with libbluray suport" off
+OPTIONS+=	BLURAY "Build with libbluray support" off
 OPTIONS+=	FONTCONFIG "Enable fontconfig support" off
 OPTIONS+=	RTCPU "Allow runtime CPU detection" on
 OPTIONS+=	OCFLAGS "Use optimized compiler flags" on
