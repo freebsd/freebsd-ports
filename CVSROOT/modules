@@ -2374,6 +2374,7 @@ devcpu-data                     ports/sysutils/devcpu-data
 devede                          ports/multimedia/devede
 devel_atlas                     ports/devel/atlas
 devel_atlas-devel               ports/devel/atlas-devel
+devel_gps                       ports/devel/gps
 devel_lightning                 ports/devel/lightning
 devel_ninja                     ports/devel/ninja
 devel_rvm                       ports/devel/rvm
@@ -4975,7 +4976,6 @@ gpredict                        ports/comms/gpredict
 gprename                        ports/x11-fm/gprename
 gproftpd                        ports/ftp/gproftpd
 gprolog                         ports/lang/gprolog
-gps                             ports/net-mgmt/gps
 gpsbabel                        ports/astro/gpsbabel
 gpscorrelate                    ports/astro/gpscorrelate
 gpsd                            ports/astro/gpsd
@@ -5258,6 +5258,7 @@ gtk12                           ports/x11-toolkits/gtk12
 gtk20                           ports/x11-toolkits/gtk20
 gtk20-reference                 ports/x11-toolkits/gtk20-reference
 gtkabale                        ports/games/gtkabale
+gtkada                          ports/x11-toolkits/gtkada
 gtkam                           ports/graphics/gtkam
 gtkatlantic                     ports/games/gtkatlantic
 gtkballs                        ports/games/gtkballs
@@ -10143,6 +10144,7 @@ nessus-libnasl                  ports/security/nessus-libnasl
 nessus-libraries                ports/security/nessus-libraries
 nessus-plugins                  ports/security/nessus-plugins
 net-http                        ports/net/net-http
+net-mgmt_gps                    ports/net-mgmt/gps
 net-p2p_dcd                     ports/net-p2p/dcd
 net-snmp                        ports/net-mgmt/net-snmp
 net2ftp                         ports/ftp/net2ftp
@@ -11328,6 +11330,7 @@ p5-CPAN-Checksums               ports/devel/p5-CPAN-Checksums
 p5-CPAN-DistnameInfo            ports/devel/p5-CPAN-DistnameInfo
 p5-CPAN-Inject                  ports/devel/p5-CPAN-Inject
 p5-CPAN-Meta                    ports/devel/p5-CPAN-Meta
+p5-CPAN-Meta-YAML               ports/devel/p5-CPAN-Meta-YAML
 p5-CPAN-Mini                    ports/devel/p5-CPAN-Mini
 p5-CPAN-Reporter                ports/devel/p5-CPAN-Reporter
 p5-CPAN-Reporter-Smoker         ports/devel/p5-CPAN-Reporter-Smoker
@@ -11925,6 +11928,7 @@ p5-Dancer-Plugin-DBIC           ports/databases/p5-Dancer-Plugin-DBIC
 p5-Dancer-Plugin-DataFu         ports/www/p5-Dancer-Plugin-DataFu
 p5-Dancer-Plugin-Database       ports/databases/p5-Dancer-Plugin-Database
 p5-Dancer-Plugin-Email          ports/mail/p5-Dancer-Plugin-Email
+p5-Dancer-Plugin-Feed           ports/www/p5-Dancer-Plugin-Feed
 p5-Dancer-Session-Memcached     ports/databases/p5-Dancer-Session-Memcached
 p5-Danga-Socket                 ports/devel/p5-Danga-Socket
 p5-Danga-Socket-Callback        ports/devel/p5-Danga-Socket-Callback
@@ -15837,6 +15841,7 @@ p5-cpan-distnameinfo            ports/devel/p5-CPAN-DistnameInfo
 p5-cpan-inject                  ports/devel/p5-CPAN-Inject
 p5-cpan-listchanges             ports/devel/p5-cpan-listchanges
 p5-cpan-meta                    ports/devel/p5-CPAN-Meta
+p5-cpan-meta-yaml               ports/devel/p5-CPAN-Meta-YAML
 p5-cpan-mini                    ports/devel/p5-CPAN-Mini
 p5-cpan-reporter                ports/devel/p5-CPAN-Reporter
 p5-cpan-reporter-smoker         ports/devel/p5-CPAN-Reporter-Smoker
@@ -15958,6 +15963,7 @@ p5-dancer-plugin-database       ports/databases/p5-Dancer-Plugin-Database
 p5-dancer-plugin-datafu         ports/www/p5-Dancer-Plugin-DataFu
 p5-dancer-plugin-dbic           ports/databases/p5-Dancer-Plugin-DBIC
 p5-dancer-plugin-email          ports/mail/p5-Dancer-Plugin-Email
+p5-dancer-plugin-feed           ports/www/p5-Dancer-Plugin-Feed
 p5-dancer-session-memcached     ports/databases/p5-Dancer-Session-Memcached
 p5-danga-socket                 ports/devel/p5-Danga-Socket
 p5-danga-socket-callback        ports/devel/p5-Danga-Socket-Callback
@@ -21609,6 +21615,7 @@ py-numeric                      ports/math/py-numeric
 py-numexpr                      ports/math/py-numexpr
 py-numpy                        ports/math/py-numpy
 py-oauth                        ports/net/py-oauth
+py-oauth2                       ports/net/py-oauth2
 py-ocempgui                     ports/devel/py-ocempgui
 py-odbc                         ports/databases/py-odbc
 py-ode                          ports/devel/py-ode
