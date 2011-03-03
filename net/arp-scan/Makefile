@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	arp-scan
-PORTVERSION=	1.7
+PORTVERSION=	1.8
 CATEGORIES=	net
 MASTER_SITES=	http://www.nta-monitor.com/tools/${PORTNAME}/download/
 
