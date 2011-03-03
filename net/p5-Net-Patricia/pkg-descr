@@ -14,4 +14,4 @@ The BSD radix code is thoroughly described in "TCP/IP Illustrated,
 Volume 2" by Wright and Stevens and in the paper ``A Tree-Based
 Packet Routing Table for Berkeley Unix'' by Keith Sklower.
 
-WWW:	http://net.doit.wisc.edu/~plonka/Net-Patricia/
+WWW:	http://search.cpan.org/dist/Net-Patricia/
