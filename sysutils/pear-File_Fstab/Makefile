@@ -15,14 +15,16 @@ COMMENT=	PEAR class to read and write fstab files
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-#CATEGORY=	File
-FILES=		File/Fstab.php File/Fstab/Entry.php
+PEAR_CATSRC=	yes
+
+CATEGORY=	File
+FILES=		Fstab.php Fstab/Entry.php
 EXAMPLES=	example.php
 _EXAMPLESDIR=	.
 
 post-extract:
 .for file in ${FILES}
-	@${REINPLACE_CMD} -e "s|@package_version@|${PORTVERSION}|" ${WRKSRC}/${file}
+	@${REINPLACE_CMD} -e "s|@package_version@|${PORTVERSION}|" ${WRKSRC}/File/${file}
 .endfor
 
 .include <bsd.port.pre.mk>
