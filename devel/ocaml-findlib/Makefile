@@ -8,6 +8,7 @@
 
 PORTNAME=	findlib
 PORTVERSION=	1.2.6
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://download.camlcity.org/download/
 PKGNAMEPREFIX=	ocaml-
@@ -42,6 +43,9 @@ post-patch:
 		-e 's,(${PATTERN}+.*SITELIB),\1\$${BSD_INSTALL_DATA} \3,' \
 		${WRKSRC}/Makefile ${WRKSRC}/src/findlib/Makefile \
 		${WRKSRC}/src/findlib-toolbox/Makefile
+	@${REINPLACE_CMD} \
+		-e 's,path="@SITELIB@,&:${PREFIX}/lib/ocaml,' \
+		${WRKSRC}/findlib.conf.in
 
 post-install:
 .if !defined(NOPORTDOCS)
