@@ -9,6 +9,7 @@ PORTNAME=	jpeg
 PORTVERSION=	6b.34
 PORTREVISION=	2
 CATEGORIES=	graphics linux
+MASTER_SITES=	CRITICAL/rpm/${LINUX_RPM_ARCH}/fedora/${LINUX_DIST_VER}
 DISTNAME=	libjpeg-6b-34
 
 MAINTAINER=	freebsd-emulation@FreeBSD.org

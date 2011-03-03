@@ -9,7 +9,7 @@ PORTNAME=	allegro
 PORTVERSION=	4.0.3
 PORTREVISION=	4
 CATEGORIES=	devel linux
-MASTER_SITES=	http://membres.lycos.fr/ebotcazou/allegro/
+MASTER_SITES=	CRITICAL/rpm/${LINUX_RPM_ARCH}/fedora/${LINUX_DIST_VER}
 DISTNAME=	${PORTNAME}-${PORTVERSION}-1
 
 MAINTAINER=	freebsd-emulation@FreeBSD.org
