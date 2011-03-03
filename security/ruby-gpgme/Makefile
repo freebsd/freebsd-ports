@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	gpgme
-PORTVERSION=	0.2
-PORTREVISION=	1
+PORTVERSION=	1.0.8
 CATEGORIES=	security ruby
-MASTER_SITES=	http://deisui.org/~ueno/ruby/ruby-gpgme/
+MASTER_SITES=	${MASTER_SITE_RUBYFORGE}
+MASTER_SITE_SUBDIR=	ruby-gpgme
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DISTNAME=	ruby-${PORTNAME}-${PORTVERSION}
 DIST_SUBDIR=	ruby
@@ -17,7 +17,7 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	A Ruby interface to GnuPG Made Easy (GPGME)
 
-LIB_DEPENDS=	gpgme03.9:${PORTSDIR}/security/gpgme03
+LIB_DEPENDS=	gpgme.18:${PORTSDIR}/security/gpgme
 
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes
@@ -27,6 +27,9 @@ INSTALL_TARGET=	site-install
 
 DOCS=		doc
 EXAMPLES=	examples/*
+
+LICENSE=	LGPL21
+LICENSE_FILE=	${WRKSRC}/COPYING.LESSER
 
 post-build:
 .if !defined(NOPORTDOCS)
