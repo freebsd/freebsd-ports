@@ -8,14 +8,15 @@
 PORTNAME=	pcre
 PORTVERSION=	6.2.2
 CATEGORIES=	devel
-MASTER_SITES=	http://www.ocaml.info/ocaml_sources/
+MASTER_SITES=	http://hg.ocaml.info/release/pcre-ocaml/archive/
 PKGNAMEPREFIX=	ocaml-
-DISTNAME=	pcre-ocaml-${PORTVERSION}
+DISTNAME=	release-${PORTVERSION}
 
 MAINTAINER=	johans@FreeBSD.org
 COMMENT=	Perl compatible regular expressions for Objective Caml
 
 LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre
+WRKSRC=		${WRKDIR}/pcre-ocaml-${DISTNAME}
 
 USE_OCAML=	yes
 USE_OCAML_FINDLIB=	yes
@@ -27,7 +28,7 @@ USE_GMAKE=	yes
 EXAMPLESDIR=	${OCAML_EXAMPLESDIR}/${PORTNAME}
 
 post-install:
-.if !defined(NOPORTDOCS)
+.if !defined(NOPORTEXAMPLES)
 	@${MKDIR} ${EXAMPLESDIR}
 	@(cd ${WRKSRC}/examples && ${COPYTREE_SHARE} \* ${EXAMPLESDIR}/)
 .endif
