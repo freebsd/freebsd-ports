@@ -9,6 +9,7 @@ PORTNAME=		xorg-libs
 PORTVERSION=		6.8.2
 PORTREVISION=		7
 CATEGORIES=		x11 linux
+MASTER_SITES=		CRITICAL/rpm/${LINUX_RPM_ARCH}/fedora/${LINUX_DIST_VER}
 DISTFILES=		xorg-x11-libs-${PORTVERSION}-37.FC4.49.2.1.${LINUX_RPM_ARCH}.rpm \
 			xorg-x11-deprecated-libs-6.8.2-31.${LINUX_RPM_ARCH}.rpm
 

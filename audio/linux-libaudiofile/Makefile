@@ -9,6 +9,7 @@ PORTNAME=	libaudiofile
 PORTVERSION=	0.2.6
 PORTREVISION=	4
 CATEGORIES=	audio linux
+MASTER_SITES=	CRITICAL/rpm/${LINUX_RPM_ARCH}/fedora/${LINUX_DIST_VER}
 DISTNAME=	audiofile-${PORTVERSION}-2
 
 MAINTAINER=	freebsd-emulation@FreeBSD.org
