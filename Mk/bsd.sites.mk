@@ -135,8 +135,7 @@ MASTER_SITE_CRITICAL+=	\
 	http://energy.critical.ch/distfiles/%SUBDIR%/ \
 	http://snow.critical.ch/distfiles/%SUBDIR%/ \
 	http://www.bluestop.org/distfiles/%SUBDIR%/ \
-	http://fneu.fr/distfiles/%SUBDIR%/ \
-	ftp://saper.info/pub/FreeBSD/distfiles/%SUBDIR%/
+	http://fneu.fr/distfiles/%SUBDIR%/
 .endif
 
 .if !defined(IGNORE_MASTER_SITE_CSME)
