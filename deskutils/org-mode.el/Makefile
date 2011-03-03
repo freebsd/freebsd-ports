@@ -14,7 +14,7 @@ MASTER_SITES=	http://staff.science.uva.nl/~dominik/Tools/org/ \
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
 DISTNAME=	org-${PORTVERSION}
 
-MAINTAINER=	kaiw27@gmail.com
+MAINTAINER=	jhein@symmetricom.com
 COMMENT=	An Emacs mode for notes and project planning
 
 USE_EMACS=	yes
