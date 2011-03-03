@@ -18,8 +18,6 @@ COMMENT=	Open Source Java Reporting Library
 
 BUILD_DEPENDS=	mvn:${PORTSDIR}/devel/maven2
 
-MANUAL_PACKAGE_BUILDING=	Requires ~360MB sources to download
-
 LICENSE_COMB=	multi
 LICENSE=	GPLv2 MIT ASL
 
