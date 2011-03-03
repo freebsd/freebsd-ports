@@ -1,6 +1,7 @@
 www/validator/htdocs/about.html
 www/validator/htdocs/accesskeys.html
 www/validator/htdocs/base.css
+www/validator/htdocs/base.css.gz
 www/validator/htdocs/charset-select.html
 www/validator/htdocs/config/charset.cfg
 www/validator/htdocs/config/tidy.conf
@@ -67,9 +68,9 @@ www/validator/htdocs/dev/tests/html20.html
 www/validator/htdocs/dev/tests/html40-frameset.html
 www/validator/htdocs/dev/tests/html40-strict.html
 www/validator/htdocs/dev/tests/html40-transitional.html
-www/validator/htdocs/dev/tests/html401_doctypecase.html
 www/validator/htdocs/dev/tests/html401-strict.html
 www/validator/htdocs/dev/tests/html401-strict.xhtml
+www/validator/htdocs/dev/tests/html401_doctypecase.html
 www/validator/htdocs/dev/tests/html401_system.html
 www/validator/htdocs/dev/tests/html5-error-explanation.html
 www/validator/htdocs/dev/tests/html5-ok.html
@@ -140,6 +141,7 @@ www/validator/htdocs/dev/tests/xhtml_rdfa.xhtml
 www/validator/htdocs/dev/tests/xml-nodoctype-notwf.xml
 www/validator/htdocs/dev/tests/xml-nodoctype-wf.xml
 www/validator/htdocs/docs.css
+www/validator/htdocs/docs.css.gz
 www/validator/htdocs/docs/api.html
 www/validator/htdocs/docs/devel.html
 www/validator/htdocs/docs/errors.html
@@ -156,6 +158,7 @@ www/validator/htdocs/file-upload.html
 www/validator/htdocs/footer.html
 www/validator/htdocs/fragment-upload.html
 www/validator/htdocs/handheld.css
+www/validator/htdocs/handheld.css.gz
 www/validator/htdocs/header.html
 www/validator/htdocs/images/arrow-closed.png
 www/validator/htdocs/images/arrow-down.gif
@@ -190,6 +193,7 @@ www/validator/htdocs/images/lg_gradient.gif
 www/validator/htdocs/images/markup_validation_service.png
 www/validator/htdocs/images/markup_validation_service.psd
 www/validator/htdocs/images/no_w3c.png
+www/validator/htdocs/images/opensource-55x48.png
 www/validator/htdocs/images/ppm_1.png
 www/validator/htdocs/images/ppm_2.png
 www/validator/htdocs/images/ppm_3.png
@@ -341,11 +345,17 @@ www/validator/htdocs/index.html
 www/validator/htdocs/intro.html
 www/validator/htdocs/misc/compaq-logo.gif
 www/validator/htdocs/navbar.css
+www/validator/htdocs/navbar.css.gz
 www/validator/htdocs/no_referer.asis
 www/validator/htdocs/print.css
+www/validator/htdocs/print.css.gz
 www/validator/htdocs/results.css
+www/validator/htdocs/results.css.gz
 www/validator/htdocs/robots.txt
-www/validator/htdocs/scripts/mootools.js
+www/validator/htdocs/scripts/combined.js
+www/validator/htdocs/scripts/combined.js.gz
+www/validator/htdocs/scripts/mootools-1.2.5-core-nc.js
+www/validator/htdocs/scripts/mootools-1.2.5.1-more.js
 www/validator/htdocs/scripts/w3c-validator.js
 www/validator/htdocs/sgml-lib/IETF/HTML-2_0-Level_1.dtd
 www/validator/htdocs/sgml-lib/IETF/HTML-2_0-Strict-Level_1.dtd
@@ -355,6 +365,30 @@ www/validator/htdocs/sgml-lib/IETF/HTML-i18n.dtd
 www/validator/htdocs/sgml-lib/IETF/ISOlat1.ent
 www/validator/htdocs/sgml-lib/ISO-HTML/15445.dcl
 www/validator/htdocs/sgml-lib/ISO-HTML/15445.dtd
+www/validator/htdocs/sgml-lib/REC-MathML3-20101021/README.txt
+www/validator/htdocs/sgml-lib/REC-MathML3-20101021/isoamsa.ent
+www/validator/htdocs/sgml-lib/REC-MathML3-20101021/isoamsb.ent
+www/validator/htdocs/sgml-lib/REC-MathML3-20101021/isoamsc.ent
+www/validator/htdocs/sgml-lib/REC-MathML3-20101021/isoamsn.ent
+www/validator/htdocs/sgml-lib/REC-MathML3-20101021/isoamso.ent
+www/validator/htdocs/sgml-lib/REC-MathML3-20101021/isoamsr.ent
+www/validator/htdocs/sgml-lib/REC-MathML3-20101021/isobox.ent
+www/validator/htdocs/sgml-lib/REC-MathML3-20101021/isocyr1.ent
+www/validator/htdocs/sgml-lib/REC-MathML3-20101021/isocyr2.ent
+www/validator/htdocs/sgml-lib/REC-MathML3-20101021/isodia.ent
+www/validator/htdocs/sgml-lib/REC-MathML3-20101021/isogrk3.ent
+www/validator/htdocs/sgml-lib/REC-MathML3-20101021/isolat1.ent
+www/validator/htdocs/sgml-lib/REC-MathML3-20101021/isolat2.ent
+www/validator/htdocs/sgml-lib/REC-MathML3-20101021/isomfrk.ent
+www/validator/htdocs/sgml-lib/REC-MathML3-20101021/isomopf.ent
+www/validator/htdocs/sgml-lib/REC-MathML3-20101021/isomscr.ent
+www/validator/htdocs/sgml-lib/REC-MathML3-20101021/isonum.ent
+www/validator/htdocs/sgml-lib/REC-MathML3-20101021/isopub.ent
+www/validator/htdocs/sgml-lib/REC-MathML3-20101021/isotech.ent
+www/validator/htdocs/sgml-lib/REC-MathML3-20101021/mathml3-qname.mod
+www/validator/htdocs/sgml-lib/REC-MathML3-20101021/mathml3.dtd
+www/validator/htdocs/sgml-lib/REC-MathML3-20101021/mmlalias.ent
+www/validator/htdocs/sgml-lib/REC-MathML3-20101021/mmlextra.ent
 www/validator/htdocs/sgml-lib/REC-SMIL2-20051213/SMIL-anim.mod
 www/validator/htdocs/sgml-lib/REC-SMIL2-20051213/SMIL-control.mod
 www/validator/htdocs/sgml-lib/REC-SMIL2-20051213/SMIL-layout.mod
@@ -485,62 +519,64 @@ www/validator/htdocs/sgml-lib/REC-smil20-20050107/smil-model-1.mod
 www/validator/htdocs/sgml-lib/REC-smil20-20050107/smil-qname-1.mod
 www/validator/htdocs/sgml-lib/REC-xhtml-basic-20001219/xhtml-basic10-model-1.mod
 www/validator/htdocs/sgml-lib/REC-xhtml-basic-20001219/xhtml-basic10.dtd
-www/validator/htdocs/sgml-lib/REC-xhtml-basic-20080729/xhtml-basic11-model-1.mod
-www/validator/htdocs/sgml-lib/REC-xhtml-basic-20080729/xhtml-basic11.dtd
-www/validator/htdocs/sgml-lib/REC-xhtml-basic-20080729/xhtml-inputmode-1.mod
-www/validator/htdocs/sgml-lib/REC-xhtml-modularization-20081008/README.txt
-www/validator/htdocs/sgml-lib/REC-xhtml-modularization-20081008/xhtml-applet-1.mod
-www/validator/htdocs/sgml-lib/REC-xhtml-modularization-20081008/xhtml-arch-1.mod
-www/validator/htdocs/sgml-lib/REC-xhtml-modularization-20081008/xhtml-attribs-1.mod
-www/validator/htdocs/sgml-lib/REC-xhtml-modularization-20081008/xhtml-base-1.mod
-www/validator/htdocs/sgml-lib/REC-xhtml-modularization-20081008/xhtml-basic-form-1.mod
-www/validator/htdocs/sgml-lib/REC-xhtml-modularization-20081008/xhtml-basic-table-1.mod
-www/validator/htdocs/sgml-lib/REC-xhtml-modularization-20081008/xhtml-bdo-1.mod
-www/validator/htdocs/sgml-lib/REC-xhtml-modularization-20081008/xhtml-blkphras-1.mod
-www/validator/htdocs/sgml-lib/REC-xhtml-modularization-20081008/xhtml-blkpres-1.mod
-www/validator/htdocs/sgml-lib/REC-xhtml-modularization-20081008/xhtml-blkstruct-1.mod
-www/validator/htdocs/sgml-lib/REC-xhtml-modularization-20081008/xhtml-charent-1.mod
-www/validator/htdocs/sgml-lib/REC-xhtml-modularization-20081008/xhtml-csismap-1.mod
-www/validator/htdocs/sgml-lib/REC-xhtml-modularization-20081008/xhtml-datatypes-1.mod
-www/validator/htdocs/sgml-lib/REC-xhtml-modularization-20081008/xhtml-edit-1.mod
-www/validator/htdocs/sgml-lib/REC-xhtml-modularization-20081008/xhtml-events-1.mod
-www/validator/htdocs/sgml-lib/REC-xhtml-modularization-20081008/xhtml-form-1.mod
-www/validator/htdocs/sgml-lib/REC-xhtml-modularization-20081008/xhtml-frames-1.mod
-www/validator/htdocs/sgml-lib/REC-xhtml-modularization-20081008/xhtml-framework-1.mod
-www/validator/htdocs/sgml-lib/REC-xhtml-modularization-20081008/xhtml-hypertext-1.mod
-www/validator/htdocs/sgml-lib/REC-xhtml-modularization-20081008/xhtml-iframe-1.mod
-www/validator/htdocs/sgml-lib/REC-xhtml-modularization-20081008/xhtml-image-1.mod
-www/validator/htdocs/sgml-lib/REC-xhtml-modularization-20081008/xhtml-inlphras-1.mod
-www/validator/htdocs/sgml-lib/REC-xhtml-modularization-20081008/xhtml-inlpres-1.mod
-www/validator/htdocs/sgml-lib/REC-xhtml-modularization-20081008/xhtml-inlstruct-1.mod
-www/validator/htdocs/sgml-lib/REC-xhtml-modularization-20081008/xhtml-inlstyle-1.mod
-www/validator/htdocs/sgml-lib/REC-xhtml-modularization-20081008/xhtml-lat1.ent
-www/validator/htdocs/sgml-lib/REC-xhtml-modularization-20081008/xhtml-legacy-1.mod
-www/validator/htdocs/sgml-lib/REC-xhtml-modularization-20081008/xhtml-legacy-redecl-1.mod
-www/validator/htdocs/sgml-lib/REC-xhtml-modularization-20081008/xhtml-link-1.mod
-www/validator/htdocs/sgml-lib/REC-xhtml-modularization-20081008/xhtml-list-1.mod
-www/validator/htdocs/sgml-lib/REC-xhtml-modularization-20081008/xhtml-meta-1.mod
-www/validator/htdocs/sgml-lib/REC-xhtml-modularization-20081008/xhtml-nameident-1.mod
-www/validator/htdocs/sgml-lib/REC-xhtml-modularization-20081008/xhtml-notations-1.mod
-www/validator/htdocs/sgml-lib/REC-xhtml-modularization-20081008/xhtml-object-1.mod
-www/validator/htdocs/sgml-lib/REC-xhtml-modularization-20081008/xhtml-param-1.mod
-www/validator/htdocs/sgml-lib/REC-xhtml-modularization-20081008/xhtml-pres-1.mod
-www/validator/htdocs/sgml-lib/REC-xhtml-modularization-20081008/xhtml-qname-1.mod
-www/validator/htdocs/sgml-lib/REC-xhtml-modularization-20081008/xhtml-ruby-1.mod
-www/validator/htdocs/sgml-lib/REC-xhtml-modularization-20081008/xhtml-script-1.mod
-www/validator/htdocs/sgml-lib/REC-xhtml-modularization-20081008/xhtml-special.ent
-www/validator/htdocs/sgml-lib/REC-xhtml-modularization-20081008/xhtml-ssismap-1.mod
-www/validator/htdocs/sgml-lib/REC-xhtml-modularization-20081008/xhtml-struct-1.mod
-www/validator/htdocs/sgml-lib/REC-xhtml-modularization-20081008/xhtml-style-1.mod
-www/validator/htdocs/sgml-lib/REC-xhtml-modularization-20081008/xhtml-symbol.ent
-www/validator/htdocs/sgml-lib/REC-xhtml-modularization-20081008/xhtml-table-1.mod
-www/validator/htdocs/sgml-lib/REC-xhtml-modularization-20081008/xhtml-target-1.mod
-www/validator/htdocs/sgml-lib/REC-xhtml-modularization-20081008/xhtml-text-1.mod
-www/validator/htdocs/sgml-lib/REC-xhtml-print-20060920/xhtml-print10-model-1.mod
-www/validator/htdocs/sgml-lib/REC-xhtml-print-20060920/xhtml-print10.dtd
+www/validator/htdocs/sgml-lib/REC-xhtml-basic-20101123/xhtml-basic11-model-1.mod
+www/validator/htdocs/sgml-lib/REC-xhtml-basic-20101123/xhtml-basic11.dtd
+www/validator/htdocs/sgml-lib/REC-xhtml-basic-20101123/xhtml-inputmode-1.mod
+www/validator/htdocs/sgml-lib/REC-xhtml-modularization-20100729/README.txt
+www/validator/htdocs/sgml-lib/REC-xhtml-modularization-20100729/xhtml-applet-1.mod
+www/validator/htdocs/sgml-lib/REC-xhtml-modularization-20100729/xhtml-arch-1.mod
+www/validator/htdocs/sgml-lib/REC-xhtml-modularization-20100729/xhtml-attribs-1.mod
+www/validator/htdocs/sgml-lib/REC-xhtml-modularization-20100729/xhtml-base-1.mod
+www/validator/htdocs/sgml-lib/REC-xhtml-modularization-20100729/xhtml-basic-form-1.mod
+www/validator/htdocs/sgml-lib/REC-xhtml-modularization-20100729/xhtml-basic-table-1.mod
+www/validator/htdocs/sgml-lib/REC-xhtml-modularization-20100729/xhtml-bdo-1.mod
+www/validator/htdocs/sgml-lib/REC-xhtml-modularization-20100729/xhtml-blkphras-1.mod
+www/validator/htdocs/sgml-lib/REC-xhtml-modularization-20100729/xhtml-blkpres-1.mod
+www/validator/htdocs/sgml-lib/REC-xhtml-modularization-20100729/xhtml-blkstruct-1.mod
+www/validator/htdocs/sgml-lib/REC-xhtml-modularization-20100729/xhtml-charent-1.mod
+www/validator/htdocs/sgml-lib/REC-xhtml-modularization-20100729/xhtml-csismap-1.mod
+www/validator/htdocs/sgml-lib/REC-xhtml-modularization-20100729/xhtml-datatypes-1.mod
+www/validator/htdocs/sgml-lib/REC-xhtml-modularization-20100729/xhtml-edit-1.mod
+www/validator/htdocs/sgml-lib/REC-xhtml-modularization-20100729/xhtml-events-1.mod
+www/validator/htdocs/sgml-lib/REC-xhtml-modularization-20100729/xhtml-form-1.mod
+www/validator/htdocs/sgml-lib/REC-xhtml-modularization-20100729/xhtml-frames-1.mod
+www/validator/htdocs/sgml-lib/REC-xhtml-modularization-20100729/xhtml-framework-1.mod
+www/validator/htdocs/sgml-lib/REC-xhtml-modularization-20100729/xhtml-hypertext-1.mod
+www/validator/htdocs/sgml-lib/REC-xhtml-modularization-20100729/xhtml-iframe-1.mod
+www/validator/htdocs/sgml-lib/REC-xhtml-modularization-20100729/xhtml-image-1.mod
+www/validator/htdocs/sgml-lib/REC-xhtml-modularization-20100729/xhtml-inlphras-1.mod
+www/validator/htdocs/sgml-lib/REC-xhtml-modularization-20100729/xhtml-inlpres-1.mod
+www/validator/htdocs/sgml-lib/REC-xhtml-modularization-20100729/xhtml-inlstruct-1.mod
+www/validator/htdocs/sgml-lib/REC-xhtml-modularization-20100729/xhtml-inlstyle-1.mod
+www/validator/htdocs/sgml-lib/REC-xhtml-modularization-20100729/xhtml-lat1.ent
+www/validator/htdocs/sgml-lib/REC-xhtml-modularization-20100729/xhtml-legacy-1.mod
+www/validator/htdocs/sgml-lib/REC-xhtml-modularization-20100729/xhtml-legacy-redecl-1.mod
+www/validator/htdocs/sgml-lib/REC-xhtml-modularization-20100729/xhtml-link-1.mod
+www/validator/htdocs/sgml-lib/REC-xhtml-modularization-20100729/xhtml-list-1.mod
+www/validator/htdocs/sgml-lib/REC-xhtml-modularization-20100729/xhtml-meta-1.mod
+www/validator/htdocs/sgml-lib/REC-xhtml-modularization-20100729/xhtml-nameident-1.mod
+www/validator/htdocs/sgml-lib/REC-xhtml-modularization-20100729/xhtml-notations-1.mod
+www/validator/htdocs/sgml-lib/REC-xhtml-modularization-20100729/xhtml-object-1.mod
+www/validator/htdocs/sgml-lib/REC-xhtml-modularization-20100729/xhtml-param-1.mod
+www/validator/htdocs/sgml-lib/REC-xhtml-modularization-20100729/xhtml-pres-1.mod
+www/validator/htdocs/sgml-lib/REC-xhtml-modularization-20100729/xhtml-qname-1.mod
+www/validator/htdocs/sgml-lib/REC-xhtml-modularization-20100729/xhtml-ruby-1.mod
+www/validator/htdocs/sgml-lib/REC-xhtml-modularization-20100729/xhtml-script-1.mod
+www/validator/htdocs/sgml-lib/REC-xhtml-modularization-20100729/xhtml-special.ent
+www/validator/htdocs/sgml-lib/REC-xhtml-modularization-20100729/xhtml-ssismap-1.mod
+www/validator/htdocs/sgml-lib/REC-xhtml-modularization-20100729/xhtml-struct-1.mod
+www/validator/htdocs/sgml-lib/REC-xhtml-modularization-20100729/xhtml-style-1.mod
+www/validator/htdocs/sgml-lib/REC-xhtml-modularization-20100729/xhtml-symbol.ent
+www/validator/htdocs/sgml-lib/REC-xhtml-modularization-20100729/xhtml-table-1.mod
+www/validator/htdocs/sgml-lib/REC-xhtml-modularization-20100729/xhtml-target-1.mod
+www/validator/htdocs/sgml-lib/REC-xhtml-modularization-20100729/xhtml-text-1.mod
+www/validator/htdocs/sgml-lib/REC-xhtml-print-20101123/xhtml-print10-model-1.mod
+www/validator/htdocs/sgml-lib/REC-xhtml-print-20101123/xhtml-print10.dtd
 www/validator/htdocs/sgml-lib/REC-xhtml1-20020801/xhtml1-frameset.dtd
 www/validator/htdocs/sgml-lib/REC-xhtml1-20020801/xhtml1-strict.dtd
 www/validator/htdocs/sgml-lib/REC-xhtml1-20020801/xhtml1-transitional.dtd
+www/validator/htdocs/sgml-lib/REC-xhtml11-20101123/xhtml11-model-1.mod
+www/validator/htdocs/sgml-lib/REC-xhtml11-20101123/xhtml11.dtd
 www/validator/htdocs/sgml-lib/REC-xml-entity-names-20100401/README.txt
 www/validator/htdocs/sgml-lib/REC-xml-entity-names-20100401/html5-uppercase.ent
 www/validator/htdocs/sgml-lib/REC-xml-entity-names-20100401/htmlmathml-f.ent
@@ -561,8 +597,8 @@ www/validator/htdocs/sgml-lib/REC-xml-entity-names-20100401/isogrk3.ent
 www/validator/htdocs/sgml-lib/REC-xml-entity-names-20100401/isogrk4.ent
 www/validator/htdocs/sgml-lib/REC-xml-entity-names-20100401/isolat1.ent
 www/validator/htdocs/sgml-lib/REC-xml-entity-names-20100401/isolat2.ent
-www/validator/htdocs/sgml-lib/REC-xml-entity-names-20100401/isomopf.ent
 www/validator/htdocs/sgml-lib/REC-xml-entity-names-20100401/isomfrk.ent
+www/validator/htdocs/sgml-lib/REC-xml-entity-names-20100401/isomopf.ent
 www/validator/htdocs/sgml-lib/REC-xml-entity-names-20100401/isomscr.ent
 www/validator/htdocs/sgml-lib/REC-xml-entity-names-20100401/isonum.ent
 www/validator/htdocs/sgml-lib/REC-xml-entity-names-20100401/isopub.ent
@@ -578,32 +614,11 @@ www/validator/htdocs/sgml-lib/REC-xml-entity-names-20100401/xhtml1-symbol.ent
 www/validator/htdocs/sgml-lib/Specification/xmlspec-v20.dtd
 www/validator/htdocs/sgml-lib/Specification/xmlspec-v21.dtd
 www/validator/htdocs/sgml-lib/Specification/xmlspec.dtd
-www/validator/htdocs/sgml-lib/WD-MathML3-20100610/README.txt
-www/validator/htdocs/sgml-lib/WD-MathML3-20100610/isoamsa.ent
-www/validator/htdocs/sgml-lib/WD-MathML3-20100610/isoamsb.ent
-www/validator/htdocs/sgml-lib/WD-MathML3-20100610/isoamsc.ent
-www/validator/htdocs/sgml-lib/WD-MathML3-20100610/isoamsn.ent
-www/validator/htdocs/sgml-lib/WD-MathML3-20100610/isoamso.ent
-www/validator/htdocs/sgml-lib/WD-MathML3-20100610/isoamsr.ent
-www/validator/htdocs/sgml-lib/WD-MathML3-20100610/isobox.ent
-www/validator/htdocs/sgml-lib/WD-MathML3-20100610/isocyr1.ent
-www/validator/htdocs/sgml-lib/WD-MathML3-20100610/isocyr2.ent
-www/validator/htdocs/sgml-lib/WD-MathML3-20100610/isodia.ent
-www/validator/htdocs/sgml-lib/WD-MathML3-20100610/isogrk3.ent
-www/validator/htdocs/sgml-lib/WD-MathML3-20100610/isolat1.ent
-www/validator/htdocs/sgml-lib/WD-MathML3-20100610/isolat2.ent
-www/validator/htdocs/sgml-lib/WD-MathML3-20100610/isomopf.ent
-www/validator/htdocs/sgml-lib/WD-MathML3-20100610/isomfrk.ent
-www/validator/htdocs/sgml-lib/WD-MathML3-20100610/isomscr.ent
-www/validator/htdocs/sgml-lib/WD-MathML3-20100610/isonum.ent
-www/validator/htdocs/sgml-lib/WD-MathML3-20100610/isopub.ent
-www/validator/htdocs/sgml-lib/WD-MathML3-20100610/isotech.ent
-www/validator/htdocs/sgml-lib/WD-MathML3-20100610/mathml3-qname.mod
-www/validator/htdocs/sgml-lib/WD-MathML3-20100610/mathml3.dtd
-www/validator/htdocs/sgml-lib/WD-MathML3-20100610/mmlalias.ent
-www/validator/htdocs/sgml-lib/WD-MathML3-20100610/mmlextra.ent
 www/validator/htdocs/sgml-lib/WD-XHTMLplusMathMLplusSVG-20020809/xhtml-basic-svg-tiny.dtd
 www/validator/htdocs/sgml-lib/WD-XHTMLplusMathMLplusSVG-20020809/xhtml-math-svg.dtd
+www/validator/htdocs/sgml-lib/WD-xhtml-rdfa-20101109/xhtml-metaAttributes-2.mod
+www/validator/htdocs/sgml-lib/WD-xhtml-rdfa-20101109/xhtml-rdfa-2.dtd
+www/validator/htdocs/sgml-lib/WD-xhtml-rdfa-20101109/xhtml-rdfa-model-2.mod
 www/validator/htdocs/sgml-lib/XX-MathML2-20031104/README.txt
 www/validator/htdocs/sgml-lib/XX-MathML2-20031104/iso8879/isoamsa.ent
 www/validator/htdocs/sgml-lib/XX-MathML2-20031104/iso8879/isoamsb.ent
@@ -639,11 +654,8 @@ www/validator/htdocs/sgml-lib/XX-MathML2-20031104/iso9573-13/isotech.ent
 www/validator/htdocs/sgml-lib/XX-MathML2-20031104/mathml/mmlalias.ent
 www/validator/htdocs/sgml-lib/XX-MathML2-20031104/mathml/mmlextra.ent
 www/validator/htdocs/sgml-lib/XX-MathML2-20031104/mathml2-qname-1.mod
-www/validator/htdocs/sgml-lib/XX-MathML2-20031104/xhtml-math11-f.dtd
 www/validator/htdocs/sgml-lib/XX-MathML2-20031104/mathml2.dtd
-www/validator/htdocs/sgml-lib/XX-xhtml11-20090630/README.txt
-www/validator/htdocs/sgml-lib/XX-xhtml11-20090630/xhtml11-model-1.mod
-www/validator/htdocs/sgml-lib/XX-xhtml11-20090630/xhtml11.dtd
+www/validator/htdocs/sgml-lib/XX-MathML2-20031104/xhtml-math11-f.dtd
 www/validator/htdocs/sgml-lib/catalog.xml
 www/validator/htdocs/sgml-lib/sgml.dcl
 www/validator/htdocs/sgml-lib/sgml.dtd
@@ -653,13 +665,14 @@ www/validator/htdocs/sgml-lib/xml.dtd
 www/validator/htdocs/sgml-lib/xml.soc
 www/validator/htdocs/source/index.html
 www/validator/htdocs/style/base.css
+www/validator/htdocs/style/base.css.gz
 www/validator/htdocs/style/results.css
+www/validator/htdocs/style/results.css.gz
 www/validator/htdocs/tips.css
+www/validator/htdocs/tips.css.gz
 www/validator/htdocs/todo.html
 www/validator/htdocs/validator-news.xsl
 www/validator/htdocs/whatsnew.html
-www/validator/htdocs/xml-results.css
-www/validator/htdocs/xml-results.xsl
 www/validator/httpd/cgi-bin/check
 www/validator/httpd/cgi-bin/sendfeedback.pl
 www/validator/share/templates/en_US/backtop.tmpl
@@ -693,6 +706,7 @@ www/validator/share/templates/en_US/soap_output.tmpl
 www/validator/share/templates/en_US/soap_warnings.tmpl
 www/validator/share/templates/en_US/table.tmpl
 www/validator/share/templates/en_US/tip.tmpl
+www/validator/share/templates/en_US/ucn_fault.tmpl
 www/validator/share/templates/en_US/ucn_output.tmpl
 www/validator/share/templates/en_US/ucn_warnings.tmpl
 www/validator/share/templates/en_US/valid.tmpl
@@ -704,19 +718,19 @@ www/validator/share/templates/en_US/warnings.tmpl
 @dirrm www/validator/httpd
 @dirrm www/validator/htdocs/style
 @dirrm www/validator/htdocs/source
-@dirrm www/validator/htdocs/sgml-lib/XX-xhtml11-20090630
 @dirrm www/validator/htdocs/sgml-lib/XX-MathML2-20031104/mathml
 @dirrm www/validator/htdocs/sgml-lib/XX-MathML2-20031104/iso9573-13
 @dirrm www/validator/htdocs/sgml-lib/XX-MathML2-20031104/iso8879
 @dirrm www/validator/htdocs/sgml-lib/XX-MathML2-20031104
+@dirrm www/validator/htdocs/sgml-lib/WD-xhtml-rdfa-20101109
 @dirrm www/validator/htdocs/sgml-lib/WD-XHTMLplusMathMLplusSVG-20020809
-@dirrm www/validator/htdocs/sgml-lib/WD-MathML3-20100610
 @dirrm www/validator/htdocs/sgml-lib/Specification
 @dirrm www/validator/htdocs/sgml-lib/REC-xml-entity-names-20100401
+@dirrm www/validator/htdocs/sgml-lib/REC-xhtml11-20101123
 @dirrm www/validator/htdocs/sgml-lib/REC-xhtml1-20020801
-@dirrm www/validator/htdocs/sgml-lib/REC-xhtml-print-20060920
-@dirrm www/validator/htdocs/sgml-lib/REC-xhtml-modularization-20081008
-@dirrm www/validator/htdocs/sgml-lib/REC-xhtml-basic-20080729
+@dirrm www/validator/htdocs/sgml-lib/REC-xhtml-print-20101123
+@dirrm www/validator/htdocs/sgml-lib/REC-xhtml-modularization-20100729
+@dirrm www/validator/htdocs/sgml-lib/REC-xhtml-basic-20101123
 @dirrm www/validator/htdocs/sgml-lib/REC-xhtml-basic-20001219
 @dirrm www/validator/htdocs/sgml-lib/REC-smil20-20050107
 @dirrm www/validator/htdocs/sgml-lib/REC-smil-19980615
@@ -728,6 +742,7 @@ www/validator/share/templates/en_US/warnings.tmpl
 @dirrm www/validator/htdocs/sgml-lib/REC-SVG-20010904
 @dirrm www/validator/htdocs/sgml-lib/REC-SMIL3-20081201
 @dirrm www/validator/htdocs/sgml-lib/REC-SMIL2-20051213
+@dirrm www/validator/htdocs/sgml-lib/REC-MathML3-20101021
 @dirrm www/validator/htdocs/sgml-lib/ISO-HTML
 @dirrm www/validator/htdocs/sgml-lib/IETF
 @dirrm www/validator/htdocs/sgml-lib

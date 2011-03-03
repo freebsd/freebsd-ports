@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	validator
-PORTVERSION=	1.1
+PORTVERSION=	1.2
 CATEGORIES=	www
 MASTER_SITES=	http://validator.w3.org/dist/ \
 		http://www.cyberbotx.com/w3c-validator/
