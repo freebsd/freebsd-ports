@@ -23,6 +23,7 @@ RUN_DEPENDS=		${BUILD_DEPENDS} \
 			${LOCALBASE}/share/icons/Tango/index.theme:${PORTSDIR}/x11-themes/icons-tango \
 			wvHtml:${PORTSDIR}/textproc/wv
 
+PLIST_SUB=		PYTHON_VER=${PYTHON_VER}
 PROJECTHOST=		gwrite
 
 USE_PYTHON=		yes

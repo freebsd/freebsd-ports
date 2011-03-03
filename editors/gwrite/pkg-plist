@@ -26,7 +26,7 @@ bin/gwrite
 %%PYTHON_SITELIBDIR%%/gwrite/webkitlinkview.pyo
 %%PYTHON_SITELIBDIR%%/gwrite/docfilter.pyo
 %%PYTHON_SITELIBDIR%%/gwrite/webkitedit.pyo
-%%PYTHON_SITELIBDIR%%/gwrite-0.0.2-py2.6.egg-info
+%%PYTHON_SITELIBDIR%%/gwrite-0.0.2-py%%PYTHON_VER%%.egg-info
 share/locale/zh_CN/LC_MESSAGES/gwrite.mo
 share/pixmaps/gwrite.png
 share/applications/gwrite.desktop
