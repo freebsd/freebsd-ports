@@ -1,6 +1,6 @@
---- configure.in.orig	2008-12-05 07:58:47.000000000 +0100
-+++ configure.in	2008-12-05 08:02:26.000000000 +0100
-@@ -270,7 +270,6 @@
+--- configure.in.orig	2011-03-03 10:19:52.000000000 +0100
++++ configure.in	2011-03-03 10:20:37.000000000 +0100
+@@ -302,7 +302,6 @@
  dnl .
  dnl -------------------------------------------------------------------------
  
@@ -8,7 +8,7 @@
  PHP_HELP_SEPARATOR([SAPI modules:])
  PHP_SHLIB_SUFFIX_NAMES
  PHP_SAPI=default
-@@ -295,7 +294,6 @@
+@@ -327,7 +326,6 @@
  
  if test "$enable_maintainer_zts" = "yes"; then
    PTHREADS_ASSIGN_VARS
@@ -16,7 +16,16 @@
  fi
  
  divert(3)
-@@ -1136,7 +1134,7 @@
+@@ -611,8 +609,6 @@
+ asprintf \
+ )
+ 
+-dnl Some systems (like OpenSolaris) do not have nanosleep in libc
+-PHP_CHECK_FUNC_LIB(nanosleep, rt)
+ 
+ dnl Check for getaddrinfo, should be a better way, but...
+ dnl Also check for working getaddrinfo
+@@ -1162,7 +1158,7 @@
  EXPANDED_DATADIR=$datadir
  EXPANDED_PHP_CONFIG_FILE_PATH=`eval echo "$PHP_CONFIG_FILE_PATH"`
  EXPANDED_PHP_CONFIG_FILE_SCAN_DIR=`eval echo "$PHP_CONFIG_FILE_SCAN_DIR"`
@@ -25,10 +34,10 @@
  
  exec_prefix=$old_exec_prefix
  libdir=$old_libdir
-@@ -1388,22 +1386,19 @@
+@@ -1373,22 +1369,19 @@
    pharcmd_install=
  fi;
-
+ 
 -all_targets="$lcov_target \$(OVERALL_TARGET) \$(PHP_MODULES) \$(PHP_ZEND_EX) \$(PHP_CLI_TARGET) $pharcmd"
 -install_targets="$install_modules install-build install-headers install-programs $install_pear $pharcmd_install"
 +all_targets="$lcov_target \$(OVERALL_TARGET) \$(PHP_MODULES) \$(PHP_ZEND_EX) \$(PHP_CLI_TARGET) \$(PHP_CGI_TARGET) \$(PHP_FPM_TARGET) $pharcmd"
