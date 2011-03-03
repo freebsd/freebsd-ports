@@ -7,7 +7,7 @@
 
 PORTNAME=	dmd
 PKGNAMESUFFIX=	2
-PORTVERSION=	2.051
+PORTVERSION=	2.052
 CATEGORIES=	lang
 MASTER_SITES=	http://ftp.digitalmars.com/
 DISTNAME=	dmd.${PORTVERSION}
@@ -72,7 +72,7 @@ do-install:
 	${INSTALL_DATA} ${WRKDIR}/dmd2/linux/bin/dmd.conf ${PREFIX}/etc/dmd2.conf
 .endif
 	${INSTALL_PROGRAM} ${WRKSRC}/dmd ${PREFIX}/bin/dmd2
-	${INSTALL_DATA} ${WRKSRC}/../phobos/generated/freebsd/release/libphobos2.a ${PREFIX}/lib
+	${INSTALL_DATA} ${WRKSRC}/../phobos/generated/freebsd/release/32/libphobos2.a ${PREFIX}/lib
 	${MKDIR} ${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKDIR}/dmd2/linux/bin/dmd.conf ${EXAMPLESDIR}/dmd2.conf
 	cd ${WRKDIR}/dmd2 && ${COPYTREE_SHARE} samples ${EXAMPLESDIR}
