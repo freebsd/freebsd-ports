@@ -6,19 +6,20 @@
 #
 
 PORTNAME=	Module-Build
-PORTVERSION=	0.3607
-PORTREVISION=	1
+PORTVERSION=	0.3624
 CATEGORIES=	devel perl5
-MASTER_SITES=	CPAN
+MASTER_SITES=	CPAN/../../authors/id/D/DA/DAGOLDEN
 PKGNAMEPREFIX=	p5-
 #DISTNAME=	${PORTNAME}-${PORTVERSION:C/\.(..)$/\1/}
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Build and install Perl modules
 
-RUN_DEPENDS=	p5-YAML-Tiny>=1.40:${PORTSDIR}/textproc/p5-YAML-Tiny \
-		p5-ExtUtils-CBuilder>=0.15:${PORTSDIR}/devel/p5-ExtUtils-CBuilder \
-		p5-ExtUtils-ParseXS>=1.02:${PORTSDIR}/devel/p5-ExtUtils-ParseXS \
+RUN_DEPENDS=	p5-CPAN-Meta-YAML>=0.002:${PORTSDIR}/devel/p5-CPAN-Meta-YAML \
+		p5-Perl-OSType>=1.000:${PORTSDIR}/devel/p5-Perl-OSType \
+		p5-Module-Metadata>=1.000002:${PORTSDIR}/devel/p5-Module-Metadata \
+		p5-ExtUtils-CBuilder>=0.27:${PORTSDIR}/devel/p5-ExtUtils-CBuilder \
+		p5-ExtUtils-ParseXS>=2.21:${PORTSDIR}/devel/p5-ExtUtils-ParseXS \
 		p5-ExtUtils-Install>=1.54:${PORTSDIR}/devel/p5-ExtUtils-Install
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
@@ -60,7 +61,9 @@ MAN3=	inc::latest.3 \
 		Module::Build::Platform::aix.3 \
 		Module::Build::Platform::cygwin.3 \
 		Module::Build::Platform::darwin.3 \
-		Module::Build::Platform::os2.3
+		Module::Build::Platform::os2.3 \
+		Module::Build::Version.3 \
+		Module::Build::YAML.3
 
 .include <bsd.port.pre.mk>
 
