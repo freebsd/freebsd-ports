@@ -1428,9 +1428,10 @@ you update your ports collection, before attempting any port upgrades.
   your ~/.mozilla directory prior to the first launch of Firefox 3.6.
 
   Note that in order to use Java with Firefox 3.6, you need to install
-  java/openjdk6 and use the Iced Tea plugin.  To achieve that, each user
-  needs to create a symlink to the Icedtea plugin as described in the
-  Browsers/Firefox and Java[tm] Plugin section in the handbook:
+  java/openjdk6, build it with the "WEB" option enabled and use the Iced
+  Tea plugin.  To achieve the latter, each user needs to create a
+  symlink to the Icedtea plugin as described in the Browsers/Firefox and
+  Java[tm] Plugin section in the handbook:
 
 	ln -s /usr/local/openjdk6/jre/lib/IcedTeaPlugin.so \
 	$HOME/.mozilla/plugins
