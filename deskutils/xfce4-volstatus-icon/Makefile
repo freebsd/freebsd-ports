@@ -7,6 +7,7 @@
 
 PORTNAME=	xfce4-volstatus-icon
 PORTVERSION=	0.1.0
+PORTREVISION=	1
 CATEGORIES=	deskutils xfce
 MASTER_SITES=	${MASTER_SITE_XFCE}
 MASTER_SITE_SUBDIR=	src/apps/${PORTNAME}/${PORTVERSION:R}
@@ -17,6 +18,8 @@ COMMENT=	Notification area icon that allows safe removal of removable devices
 
 LIB_DEPENDS=	dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib \
 	hal.1:${PORTSDIR}/sysutils/hal
+
+BROKEN=		Does not work with xfce 4.8
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes

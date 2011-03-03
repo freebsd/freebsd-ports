@@ -1,9 +1,9 @@
 @comment $FreeBSD$
-lib/thunarx-1/thunar-archive-plugin.so
-lib/thunarx-1/thunar-archive-plugin.la
+lib/thunarx-2/thunar-archive-plugin.so
+lib/thunarx-2/thunar-archive-plugin.la
 libexec/thunar-archive-plugin/ark.tap
 libexec/thunar-archive-plugin/file-roller.tap
-@dirrmtry libexec/thunar-archive-plugin
+libexec/thunar-archive-plugin/gnome-file-roller.tap
 share/locale/ca/LC_MESSAGES/thunar-archive-plugin.mo
 share/locale/cs/LC_MESSAGES/thunar-archive-plugin.mo
 share/locale/de/LC_MESSAGES/thunar-archive-plugin.mo
@@ -20,6 +20,42 @@ share/locale/pl/LC_MESSAGES/thunar-archive-plugin.mo
 share/locale/pt_BR/LC_MESSAGES/thunar-archive-plugin.mo
 share/locale/ru/LC_MESSAGES/thunar-archive-plugin.mo
 share/locale/zh_TW/LC_MESSAGES/thunar-archive-plugin.mo
+share/locale/ar/LC_MESSAGES/thunar-archive-plugin.mo
+share/locale/ast/LC_MESSAGES/thunar-archive-plugin.mo
+share/locale/be/LC_MESSAGES/thunar-archive-plugin.mo
+share/locale/da/LC_MESSAGES/thunar-archive-plugin.mo
+share/locale/en_GB/LC_MESSAGES/thunar-archive-plugin.mo
+share/locale/es/LC_MESSAGES/thunar-archive-plugin.mo
+share/locale/fi/LC_MESSAGES/thunar-archive-plugin.mo
+share/locale/gl/LC_MESSAGES/thunar-archive-plugin.mo
+share/locale/hr/LC_MESSAGES/thunar-archive-plugin.mo
+share/locale/id/LC_MESSAGES/thunar-archive-plugin.mo
+share/locale/kk/LC_MESSAGES/thunar-archive-plugin.mo
+share/locale/lv/LC_MESSAGES/thunar-archive-plugin.mo
+share/locale/nb/LC_MESSAGES/thunar-archive-plugin.mo
+share/locale/pt/LC_MESSAGES/thunar-archive-plugin.mo
+share/locale/ro/LC_MESSAGES/thunar-archive-plugin.mo
+share/locale/sk/LC_MESSAGES/thunar-archive-plugin.mo
+share/locale/sq/LC_MESSAGES/thunar-archive-plugin.mo
+share/locale/sv/LC_MESSAGES/thunar-archive-plugin.mo
+share/locale/tr/LC_MESSAGES/thunar-archive-plugin.mo
+share/locale/ug/LC_MESSAGES/thunar-archive-plugin.mo
+share/locale/uk/LC_MESSAGES/thunar-archive-plugin.mo
+share/locale/ur/LC_MESSAGES/thunar-archive-plugin.mo
+share/locale/ur_PK/LC_MESSAGES/thunar-archive-plugin.mo
+share/locale/zh_CN/LC_MESSAGES/thunar-archive-plugin.mo
 share/icons/hicolor/16x16/apps/tap-create.png
 share/icons/hicolor/16x16/apps/tap-extract.png
 share/icons/hicolor/16x16/apps/tap-extract-to.png
+@dirrmtry libexec/thunar-archive-plugin
+@dirrmtry share/locale/ast/LC_MESSAGES
+@dirrmtry share/locale/ast
+@dirrmtry share/locale/kk/LC_MESSAGES
+@dirrmtry share/locale/kk
+@dirrmtry share/locale/ug/LC_MESSAGES
+@dirrmtry share/locale/ug
+@dirrmtry share/locale/ur/LC_MESSAGES
+@dirrmtry share/locale/ur
+@dirrmtry share/locale/ur_PK/LC_MESSAGES
+@dirrmtry share/locale/ur_PK
+

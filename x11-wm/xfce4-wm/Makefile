@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	xfce4-wm
-PORTVERSION=	4.6.2
+PORTVERSION=	4.8.1
 CATEGORIES=	x11-wm xfce
 MASTER_SITES=	${MASTER_SITE_XFCE}
+MASTER_SITE_SUBDIR=	src/xfce/xfwm4/${PORTVERSION:R}
 DISTNAME=	xfwm4-${PORTVERSION}
 DIST_SUBDIR=	xfce4
 
@@ -45,7 +46,7 @@ CONFIGURE_ARGS+=--disable-startup-notification
 .endif
 
 .if defined(WITH_REVMOUSE)
-EXTRA_PATCHES=  ${FILESDIR}/extrapatch-src__events.c
+EXTRA_PATCHES=	${FILESDIR}/extrapatch-src__events.c
 .endif
 
 post-patch:

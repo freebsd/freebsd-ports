@@ -1,176 +1,117 @@
-include/xfce4/libxfce4menu-0.1/libxfce4menu/libxfce4menu-config.h
-include/xfce4/libxfce4menu-0.1/libxfce4menu/libxfce4menu.h
-include/xfce4/libxfce4menu-0.1/libxfce4menu/xfce-menu-and-rules.h
-include/xfce4/libxfce4menu-0.1/libxfce4menu/xfce-menu-directory.h
-include/xfce4/libxfce4menu-0.1/libxfce4menu/xfce-menu-element.h
-include/xfce4/libxfce4menu-0.1/libxfce4menu/xfce-menu-environment.h
-include/xfce4/libxfce4menu-0.1/libxfce4menu/xfce-menu-item-cache.h
-include/xfce4/libxfce4menu-0.1/libxfce4menu/xfce-menu-item-pool.h
-include/xfce4/libxfce4menu-0.1/libxfce4menu/xfce-menu-item.h
-include/xfce4/libxfce4menu-0.1/libxfce4menu/xfce-menu-layout.h
-include/xfce4/libxfce4menu-0.1/libxfce4menu/xfce-menu-monitor.h
-include/xfce4/libxfce4menu-0.1/libxfce4menu/xfce-menu-move.h
-include/xfce4/libxfce4menu-0.1/libxfce4menu/xfce-menu-not-rules.h
-include/xfce4/libxfce4menu-0.1/libxfce4menu/xfce-menu-or-rules.h
-include/xfce4/libxfce4menu-0.1/libxfce4menu/xfce-menu-rules.h
-include/xfce4/libxfce4menu-0.1/libxfce4menu/xfce-menu-separator.h
-include/xfce4/libxfce4menu-0.1/libxfce4menu/xfce-menu-standard-rules.h
-include/xfce4/libxfce4menu-0.1/libxfce4menu/xfce-menu.h
-lib/libxfce4menu-0.1.a
-lib/libxfce4menu-0.1.la
-lib/libxfce4menu-0.1.so
-lib/libxfce4menu-0.1.so.0
-libdata/pkgconfig/libxfce4menu-0.1.pc
-share/gtk-doc/html/libxfce4menu/XfceMenu.html
-share/gtk-doc/html/libxfce4menu/XfceMenuAndRules.html
-share/gtk-doc/html/libxfce4menu/XfceMenuDirectory.html
-share/gtk-doc/html/libxfce4menu/XfceMenuElement.html
-share/gtk-doc/html/libxfce4menu/XfceMenuItem.html
-share/gtk-doc/html/libxfce4menu/XfceMenuItemCache.html
-share/gtk-doc/html/libxfce4menu/XfceMenuItemPool.html
-share/gtk-doc/html/libxfce4menu/XfceMenuLayout.html
-share/gtk-doc/html/libxfce4menu/XfceMenuNotRules.html
-share/gtk-doc/html/libxfce4menu/XfceMenuOrRules.html
-share/gtk-doc/html/libxfce4menu/XfceMenuRules.html
-share/gtk-doc/html/libxfce4menu/XfceMenuSeparator.html
-share/gtk-doc/html/libxfce4menu/XfceMenuStandardRules.html
-share/gtk-doc/html/libxfce4menu/fundamentals.html
-share/gtk-doc/html/libxfce4menu/home.png
-share/gtk-doc/html/libxfce4menu/index.html
-share/gtk-doc/html/libxfce4menu/index.sgml
-share/gtk-doc/html/libxfce4menu/internals.html
-share/gtk-doc/html/libxfce4menu/introduction.html
-share/gtk-doc/html/libxfce4menu/items.html
-share/gtk-doc/html/libxfce4menu/ix01.html
-share/gtk-doc/html/libxfce4menu/layout.html
-share/gtk-doc/html/libxfce4menu/left.png
-share/gtk-doc/html/libxfce4menu/libxfce4menu-Desktop-Environment.html
-share/gtk-doc/html/libxfce4menu/libxfce4menu-Initialization-and-Shutdown.html
-share/gtk-doc/html/libxfce4menu/libxfce4menu-Monitoring.html
-share/gtk-doc/html/libxfce4menu/libxfce4menu-Version-Information.html
-share/gtk-doc/html/libxfce4menu/libxfce4menu-XfceMenuMove.html
-share/gtk-doc/html/libxfce4menu/libxfce4menu.devhelp
-share/gtk-doc/html/libxfce4menu/libxfce4menu.devhelp2
-share/gtk-doc/html/libxfce4menu/menus.html
-share/gtk-doc/html/libxfce4menu/move.html
-share/gtk-doc/html/libxfce4menu/right.png
-share/gtk-doc/html/libxfce4menu/rules.html
-share/gtk-doc/html/libxfce4menu/style.css
-share/gtk-doc/html/libxfce4menu/up.png
-share/gtk-doc/html/libxfce4menu/utilities.html
-%%NLS%%share/locale/am/LC_MESSAGES/libxfce4menu-0.1.mo
-%%NLS%%share/locale/ast/LC_MESSAGES/libxfce4menu-0.1.mo
-%%NLS%%share/locale/ca/LC_MESSAGES/libxfce4menu-0.1.mo
-%%NLS%%share/locale/cs/LC_MESSAGES/libxfce4menu-0.1.mo
-%%NLS%%share/locale/da/LC_MESSAGES/libxfce4menu-0.1.mo
-%%NLS%%share/locale/de/LC_MESSAGES/libxfce4menu-0.1.mo
-%%NLS%%share/locale/el/LC_MESSAGES/libxfce4menu-0.1.mo
-%%NLS%%share/locale/en_GB/LC_MESSAGES/libxfce4menu-0.1.mo
-%%NLS%%share/locale/es/LC_MESSAGES/libxfce4menu-0.1.mo
-%%NLS%%share/locale/eu/LC_MESSAGES/libxfce4menu-0.1.mo
-%%NLS%%share/locale/fi/LC_MESSAGES/libxfce4menu-0.1.mo
-%%NLS%%share/locale/fr/LC_MESSAGES/libxfce4menu-0.1.mo
-%%NLS%%share/locale/gl/LC_MESSAGES/libxfce4menu-0.1.mo
-%%NLS%%share/locale/hu/LC_MESSAGES/libxfce4menu-0.1.mo
-%%NLS%%share/locale/id/LC_MESSAGES/libxfce4menu-0.1.mo
-%%NLS%%share/locale/it/LC_MESSAGES/libxfce4menu-0.1.mo
-%%NLS%%share/locale/ja/LC_MESSAGES/libxfce4menu-0.1.mo
-%%NLS%%share/locale/kk/LC_MESSAGES/libxfce4menu-0.1.mo
-%%NLS%%share/locale/ku/LC_MESSAGES/libxfce4menu-0.1.mo
-%%NLS%%share/locale/lv/LC_MESSAGES/libxfce4menu-0.1.mo
-%%NLS%%share/locale/nb/LC_MESSAGES/libxfce4menu-0.1.mo
-%%NLS%%share/locale/nl/LC_MESSAGES/libxfce4menu-0.1.mo
-%%NLS%%share/locale/nn/LC_MESSAGES/libxfce4menu-0.1.mo
-%%NLS%%share/locale/pa/LC_MESSAGES/libxfce4menu-0.1.mo
-%%NLS%%share/locale/pl/LC_MESSAGES/libxfce4menu-0.1.mo
-%%NLS%%share/locale/pt/LC_MESSAGES/libxfce4menu-0.1.mo
-%%NLS%%share/locale/pt_BR/LC_MESSAGES/libxfce4menu-0.1.mo
-%%NLS%%share/locale/ro/LC_MESSAGES/libxfce4menu-0.1.mo
-%%NLS%%share/locale/ru/LC_MESSAGES/libxfce4menu-0.1.mo
-%%NLS%%share/locale/sq/LC_MESSAGES/libxfce4menu-0.1.mo
-%%NLS%%share/locale/sv/LC_MESSAGES/libxfce4menu-0.1.mo
-%%NLS%%share/locale/tr/LC_MESSAGES/libxfce4menu-0.1.mo
-%%NLS%%share/locale/ug/LC_MESSAGES/libxfce4menu-0.1.mo
-%%NLS%%share/locale/uk/LC_MESSAGES/libxfce4menu-0.1.mo
-%%NLS%%share/locale/ur/LC_MESSAGES/libxfce4menu-0.1.mo
-%%NLS%%share/locale/ur_PK/LC_MESSAGES/libxfce4menu-0.1.mo
-%%NLS%%share/locale/zh_CN/LC_MESSAGES/libxfce4menu-0.1.mo
-%%NLS%%@dirrmtry share/locale/zh_CN/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/zh_CN
-%%NLS%%@dirrmtry share/locale/ur_PK/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/ur_PK
-%%NLS%%@dirrmtry share/locale/ur/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/ur
-%%NLS%%@dirrmtry share/locale/uk/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/uk
-%%NLS%%@dirrmtry share/locale/ug/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/ug
-%%NLS%%@dirrmtry share/locale/tr/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/tr
-%%NLS%%@dirrmtry share/locale/sv/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/sv
-%%NLS%%@dirrmtry share/locale/sq/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/sq
-%%NLS%%@dirrmtry share/locale/ru/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/ru
-%%NLS%%@dirrmtry share/locale/ro/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/ro
-%%NLS%%@dirrmtry share/locale/pt_BR/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/pt_BR
-%%NLS%%@dirrmtry share/locale/pt/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/pt
-%%NLS%%@dirrmtry share/locale/pl/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/pl
-%%NLS%%@dirrmtry share/locale/pa/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/pa
-%%NLS%%@dirrmtry share/locale/nn/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/nn
-%%NLS%%@dirrmtry share/locale/nl/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/nl
-%%NLS%%@dirrmtry share/locale/nb/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/nb
-%%NLS%%@dirrmtry share/locale/lv/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/lv
-%%NLS%%@dirrmtry share/locale/ku/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/ku
-%%NLS%%@dirrmtry share/locale/kk/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/kk
-%%NLS%%@dirrmtry share/locale/ja/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/ja
-%%NLS%%@dirrmtry share/locale/it/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/it
-%%NLS%%@dirrmtry share/locale/id/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/id
-%%NLS%%@dirrmtry share/locale/hu/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/hu
-%%NLS%%@dirrmtry share/locale/gl/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/gl
-%%NLS%%@dirrmtry share/locale/fr/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/fr
-%%NLS%%@dirrmtry share/locale/fi/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/fi
-%%NLS%%@dirrmtry share/locale/eu/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/eu
-%%NLS%%@dirrmtry share/locale/es/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/es
-%%NLS%%@dirrmtry share/locale/en_GB/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/en_GB
-%%NLS%%@dirrmtry share/locale/el/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/el
-%%NLS%%@dirrmtry share/locale/de/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/de
-%%NLS%%@dirrmtry share/locale/da/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/da
-%%NLS%%@dirrmtry share/locale/cs/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/cs
-%%NLS%%@dirrmtry share/locale/ca/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/ca
-%%NLS%%@dirrmtry share/locale/ast/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/ast
-%%NLS%%@dirrmtry share/locale/am/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/am
-@dirrm share/gtk-doc/html/libxfce4menu
+etc/xdg/xfce4/xfconf/xfce-perchannel-xml/xfce4-keyboard-shortcuts.xml
+include/xfce4/libxfce4kbd-private-2/libxfce4kbd-private/xfce-shortcut-dialog.h
+include/xfce4/libxfce4kbd-private-2/libxfce4kbd-private/xfce-shortcuts-grabber.h
+include/xfce4/libxfce4kbd-private-2/libxfce4kbd-private/xfce-shortcuts-provider.h
+include/xfce4/libxfce4kbd-private-2/libxfce4kbd-private/xfce-shortcuts.h
+include/xfce4/libxfce4ui-1/libxfce4ui/libxfce4ui-config.h
+include/xfce4/libxfce4ui-1/libxfce4ui/libxfce4ui-enum-types.h
+include/xfce4/libxfce4ui-1/libxfce4ui/libxfce4ui.h
+include/xfce4/libxfce4ui-1/libxfce4ui/xfce-dialogs.h
+include/xfce4/libxfce4ui-1/libxfce4ui/xfce-gdk-extensions.h
+include/xfce4/libxfce4ui-1/libxfce4ui/xfce-gtk-extensions.h
+include/xfce4/libxfce4ui-1/libxfce4ui/xfce-sm-client.h
+include/xfce4/libxfce4ui-1/libxfce4ui/xfce-spawn.h
+include/xfce4/libxfce4ui-1/libxfce4ui/xfce-titled-dialog.h
+lib/libxfce4kbd-private-2.a
+lib/libxfce4kbd-private-2.la
+lib/libxfce4kbd-private-2.so
+lib/libxfce4kbd-private-2.so.0
+lib/libxfce4ui-1.a
+lib/libxfce4ui-1.la
+lib/libxfce4ui-1.so
+lib/libxfce4ui-1.so.0
+libdata/pkgconfig/libxfce4kbd-private-2.pc
+libdata/pkgconfig/libxfce4ui-1.pc
+share/gtk-doc/html/libxfce4ui/XfceSMClient.html
+share/gtk-doc/html/libxfce4ui/home.png
+share/gtk-doc/html/libxfce4ui/index.html
+share/gtk-doc/html/libxfce4ui/index.sgml
+share/gtk-doc/html/libxfce4ui/ix01.html
+share/gtk-doc/html/libxfce4ui/left.png
+share/gtk-doc/html/libxfce4ui/libxfce4ui-extensions.html
+share/gtk-doc/html/libxfce4ui/libxfce4ui-fundamentals.html
+share/gtk-doc/html/libxfce4ui/libxfce4ui-introduction.html
+share/gtk-doc/html/libxfce4ui/libxfce4ui-libxfce4ui-config.html
+share/gtk-doc/html/libxfce4ui/libxfce4ui-sm.html
+share/gtk-doc/html/libxfce4ui/libxfce4ui-widgets.html
+share/gtk-doc/html/libxfce4ui/libxfce4ui-xfce-dialogs.html
+share/gtk-doc/html/libxfce4ui/libxfce4ui-xfce-gdk-extensions.html
+share/gtk-doc/html/libxfce4ui/libxfce4ui-xfce-gtk-extensions.html
+share/gtk-doc/html/libxfce4ui/libxfce4ui-xfce-spawn.html
+share/gtk-doc/html/libxfce4ui/libxfce4ui-xfce-titled-dialog.html
+share/gtk-doc/html/libxfce4ui/libxfce4ui.devhelp
+share/gtk-doc/html/libxfce4ui/libxfce4ui.devhelp2
+share/gtk-doc/html/libxfce4ui/right.png
+share/gtk-doc/html/libxfce4ui/style.css
+share/gtk-doc/html/libxfce4ui/up.png
+share/locale/ar/LC_MESSAGES/libxfce4ui.mo
+share/locale/ast/LC_MESSAGES/libxfce4ui.mo
+share/locale/bn/LC_MESSAGES/libxfce4ui.mo
+share/locale/ca/LC_MESSAGES/libxfce4ui.mo
+share/locale/cs/LC_MESSAGES/libxfce4ui.mo
+share/locale/da/LC_MESSAGES/libxfce4ui.mo
+share/locale/de/LC_MESSAGES/libxfce4ui.mo
+share/locale/el/LC_MESSAGES/libxfce4ui.mo
+share/locale/en_GB/LC_MESSAGES/libxfce4ui.mo
+share/locale/es/LC_MESSAGES/libxfce4ui.mo
+share/locale/eu/LC_MESSAGES/libxfce4ui.mo
+share/locale/fi/LC_MESSAGES/libxfce4ui.mo
+share/locale/fr/LC_MESSAGES/libxfce4ui.mo
+share/locale/gl/LC_MESSAGES/libxfce4ui.mo
+share/locale/he/LC_MESSAGES/libxfce4ui.mo
+share/locale/hr/LC_MESSAGES/libxfce4ui.mo
+share/locale/hu/LC_MESSAGES/libxfce4ui.mo
+share/locale/id/LC_MESSAGES/libxfce4ui.mo
+share/locale/is/LC_MESSAGES/libxfce4ui.mo
+share/locale/it/LC_MESSAGES/libxfce4ui.mo
+share/locale/ja/LC_MESSAGES/libxfce4ui.mo
+share/locale/kk/LC_MESSAGES/libxfce4ui.mo
+share/locale/ku/LC_MESSAGES/libxfce4ui.mo
+share/locale/lv/LC_MESSAGES/libxfce4ui.mo
+share/locale/nb/LC_MESSAGES/libxfce4ui.mo
+share/locale/nl/LC_MESSAGES/libxfce4ui.mo
+share/locale/pa/LC_MESSAGES/libxfce4ui.mo
+share/locale/pl/LC_MESSAGES/libxfce4ui.mo
+share/locale/pt/LC_MESSAGES/libxfce4ui.mo
+share/locale/pt_BR/LC_MESSAGES/libxfce4ui.mo
+share/locale/ro/LC_MESSAGES/libxfce4ui.mo
+share/locale/ru/LC_MESSAGES/libxfce4ui.mo
+share/locale/si/LC_MESSAGES/libxfce4ui.mo
+share/locale/sk/LC_MESSAGES/libxfce4ui.mo
+share/locale/sv/LC_MESSAGES/libxfce4ui.mo
+share/locale/tl_PH/LC_MESSAGES/libxfce4ui.mo
+share/locale/tr/LC_MESSAGES/libxfce4ui.mo
+share/locale/ug/LC_MESSAGES/libxfce4ui.mo
+share/locale/uk/LC_MESSAGES/libxfce4ui.mo
+share/locale/ur/LC_MESSAGES/libxfce4ui.mo
+share/locale/ur_PK/LC_MESSAGES/libxfce4ui.mo
+share/locale/zh_CN/LC_MESSAGES/libxfce4ui.mo
+share/locale/zh_TW/LC_MESSAGES/libxfce4ui.mo
+@dirrmtry share/locale/ur_PK/LC_MESSAGES
+@dirrmtry share/locale/ur_PK
+@dirrmtry share/locale/ur/LC_MESSAGES
+@dirrmtry share/locale/ur
+@dirrmtry share/locale/ug/LC_MESSAGES
+@dirrmtry share/locale/ug
+@dirrmtry share/locale/tl_PH/LC_MESSAGES
+@dirrmtry share/locale/tl_PH
+@dirrmtry share/locale/si/LC_MESSAGES
+@dirrmtry share/locale/si
+@dirrmtry share/locale/ku/LC_MESSAGES
+@dirrmtry share/locale/ku
+@dirrmtry share/locale/kk/LC_MESSAGES
+@dirrmtry share/locale/kk
+@dirrmtry share/locale/ast/LC_MESSAGES
+@dirrmtry share/locale/ast
+@dirrm share/gtk-doc/html/libxfce4ui
 @dirrmtry share/gtk-doc/html
-@dirrm include/xfce4/libxfce4menu-0.1/libxfce4menu
-@dirrm include/xfce4/libxfce4menu-0.1
+@dirrmtry share/gtk-doc
+@dirrm include/xfce4/libxfce4ui-1/libxfce4ui
+@dirrm include/xfce4/libxfce4ui-1
+@dirrm include/xfce4/libxfce4kbd-private-2/libxfce4kbd-private
+@dirrm include/xfce4/libxfce4kbd-private-2
 @dirrmtry include/xfce4
+@dirrm etc/xdg/xfce4/xfconf/xfce-perchannel-xml
+@dirrm etc/xdg/xfce4/xfconf
+@dirrm etc/xdg/xfce4
+@dirrm etc/xdg

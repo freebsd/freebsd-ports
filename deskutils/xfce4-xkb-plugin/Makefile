@@ -7,9 +7,10 @@
 
 PORTNAME=	xfce4-xkb-plugin
 PORTVERSION=	0.4.3
-PORTREVISION=	12
+PORTREVISION=	13
 CATEGORIES=	deskutils xfce
-MASTER_SITES=	http://goodies.xfce.org/releases/${PORTNAME}/
+MASTER_SITES=	${MASTER_SITE_XFCE}
+MASTER_SITE_SUBDIR=/src/panel-plugins/${PORTNAME}/${PORTVERSION:R}
 DIST_SUBDIR=	xfce4
 
 MAINTAINER=	des@FreeBSD.org

@@ -7,9 +7,10 @@
 
 PORTNAME=	xfce4-clipman-plugin
 PORTVERSION=	1.1.3
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	x11 xfce
-MASTER_SITES=	http://archive.xfce.org/src/panel-plugins/${PORTNAME}/1.1/
+MASTER_SITES=	${MASTER_SITE_XFCE}
+MASTER_SITE_SUBDIR=/src/panel-plugins/${PORTNAME}/${PORTVERSION:R}
 DIST_SUBDIR=	xfce4
 
 MAINTAINER=	rene@FreeBSD.org
@@ -19,6 +20,8 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 OPTIONS=	UNIQUE	"Enable Unique (single instance) support" on
+
+#BROKEN=		Does not work with xfce 4.8
 
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
@@ -38,5 +41,10 @@ CONFIGURE_ARGS+=	--enable-unique
 .else
 CONFIGURE_ARGS+=	--disable-unique
 .endif
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|exo-0\.3|exo-1|g; \
+		s|thunarx-1|thunarx-2|g' \
+		${WRKSRC}/configure
 
 .include <bsd.port.post.mk>

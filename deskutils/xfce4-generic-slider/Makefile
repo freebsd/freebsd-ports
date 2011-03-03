@@ -7,17 +7,21 @@
 
 PORTNAME=	xfce4-generic-slider
 PORTVERSION=	0.0.20100827
+PORTREVISION=	1
 CATEGORIES=	deskutils
 MASTER_SITES=	CRITICAL
+MASTER_SITE_SUBDIR=xfce/4.6.2/src
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	A slider plugin to adjust and/or monitor any numeric variable
 
-USE_XFCE=	panel
+#BROKEN=		Does not work with xfce 4.8
+
+USE_XFCE=	panel libutil libgui
 USE_GNOME=	pkgconfig
 
-CFLAGS+=	`pkg-config --cflags libxfce4panel-1.0`
-LDFLAGS+=	`pkg-config --libs libxfce4panel-1.0`
+CFLAGS+=	`pkg-config --cflags libxfce4panel-1.0 libxfcegui4-1.0`
+LDFLAGS+=	`pkg-config --libs libxfce4panel-1.0 libxfcegui4-1.0`
 
 LICENSE=	GPLv3
 

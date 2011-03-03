@@ -6,16 +6,18 @@
 #
 
 PORTNAME=	xfce4-settings
-PORTVERSION=	4.6.5
+PORTVERSION=	4.8.1
 CATEGORIES=	sysutils xfce
 MASTER_SITES=	${MASTER_SITE_XFCE}
+MASTER_SITE_SUBDIR=	src/xfce/${PORTNAME}/${PORTVERSION:R}
 DIST_SUBDIR=	xfce4
 
 MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	XFce 4 settings application
 
-LIB_DEPENDS=	wnck-1.22:${PORTSDIR}/x11-toolkits/libwnck \
-		dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib
+CONFLICTS=	xfce4-settings-4.6*
+
+LIB_DEPENDS=	dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib
 
 OPTIONS=	XKLAVIER	"Keyboard layout settings"		off \
 		XCURSOR		"Enable cursor themes support"		on \
@@ -23,15 +25,16 @@ OPTIONS=	XKLAVIER	"Keyboard layout settings"		off \
 		NOTIFY		"Enable notification support"		on \
 		NLS		"Enable Native Language Support"	on
 
-CONFIGURE_ARGS=	--disable-sound-settings --disable-debug
+CONFIGURE_ARGS=	--disable-sound-settings \
+		--disable-debug
 USE_AUTOTOOLS=	libtool
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gnometarget glib20 gtk20 desktopfileutils intltool intlhack \
-		libglade2 pkgconfig
-USE_XFCE=	configenv libexo libgui libutil xfconf
+USE_GNOME=	gnomehack glib20 gtk20 desktopfileutils intltool intlhack \
+		pkgconfig
+USE_XFCE=	configenv libexo libmenu libutil xfconf
 USE_XORG=	x11 xi
 
 .include <bsd.port.pre.mk>

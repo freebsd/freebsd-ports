@@ -7,7 +7,7 @@
 
 PORTNAME=	avant-window-navigator
 PORTVERSION=	0.3.2.1
-PORTREVISION?=	6
+PORTREVISION?=	7
 CATEGORIES=	x11
 MASTER_SITES=	http://launchpadlibrarian.net/26374006/ \
 		http://mirror.amdmi3.ru/distfiles/

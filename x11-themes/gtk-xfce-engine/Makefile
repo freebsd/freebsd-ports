@@ -1,3 +1,4 @@
+
 # New ports collection makefile for:	gtk-xfce-engine
 # Date Created:				10 October 2002
 # Whom:				 	olgeni@FreeBSD.org
@@ -6,8 +7,7 @@
 #
 
 PORTNAME=	gtk-xfce-engine
-PORTVERSION=	2.6.0
-PORTREVISION=	3
+PORTVERSION=	2.8.0
 CATEGORIES=	x11-themes xfce
 MASTER_SITES=	${MASTER_SITE_XFCE}
 DIST_SUBDIR=	xfce4

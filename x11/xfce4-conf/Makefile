@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xfce4-conf
-PORTVERSION=	4.6.2
+PORTVERSION=	4.8.0
 CATEGORIES=	x11 xfce
 MASTER_SITES=	${MASTER_SITE_XFCE}
 DISTNAME=	xfconf-${PORTVERSION}
@@ -42,7 +42,7 @@ MAN3=		Xfce4::Xfconf.3
 BUILD_DEPENDS+=	p5-ExtUtils-Depends>=0.300:${PORTSDIR}/devel/p5-ExtUtils-Depends \
 		p5-ExtUtils-PkgConfig>=1.12:${PORTSDIR}/devel/p5-ExtUtils-PkgConfig \
 		p5-Glib2>=1.200:${PORTSDIR}/devel/p5-Glib2
-RUN_DEPENDS+= ${BUILD_DEPENDS}
+RUN_DEPENDS+=	${BUILD_DEPENDS}
 CONFIGURE_ARGS+=--enable-perl-bindings
 PLIST_SUB+=	PERLBIND=""
 .else

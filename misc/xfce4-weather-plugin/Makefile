@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	xfce4-weather-plugin
-PORTVERSION=	0.7.3
-PORTREVISION=	5
+PORTVERSION=	0.7.4
 CATEGORIES=	misc xfce geography
-MASTER_SITES=	http://archive.xfce.org/src/panel-plugins/xfce4-weather-plugin/0.7/
+MASTER_SITES=	${MASTER_SITE_XFCE}
+MASTER_SITE_SUBDIR=/src/panel-plugins/${PORTNAME}/${PORTVERSION:R}
 DIST_SUBDIR=	xfce4
 
 MAINTAINER=	miwi@FreeBSD.org

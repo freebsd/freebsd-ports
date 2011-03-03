@@ -1,10 +1,12 @@
 libexec/xfce4/panel-plugins/xfce4-weather-plugin
 share/icons/hicolor/48x48/apps/xfce4-weather.png
 share/locale/ar/LC_MESSAGES/xfce4-weather-plugin.mo
+share/locale/ast/LC_MESSAGES/xfce4-weather-plugin.mo
 share/locale/ca/LC_MESSAGES/xfce4-weather-plugin.mo
 share/locale/cs/LC_MESSAGES/xfce4-weather-plugin.mo
 share/locale/da/LC_MESSAGES/xfce4-weather-plugin.mo
 share/locale/de/LC_MESSAGES/xfce4-weather-plugin.mo
+share/locale/el/LC_MESSAGES/xfce4-weather-plugin.mo
 share/locale/en_GB/LC_MESSAGES/xfce4-weather-plugin.mo
 share/locale/es/LC_MESSAGES/xfce4-weather-plugin.mo
 share/locale/eu/LC_MESSAGES/xfce4-weather-plugin.mo
@@ -23,10 +25,12 @@ share/locale/pa/LC_MESSAGES/xfce4-weather-plugin.mo
 share/locale/pl/LC_MESSAGES/xfce4-weather-plugin.mo
 share/locale/pt/LC_MESSAGES/xfce4-weather-plugin.mo
 share/locale/pt_BR/LC_MESSAGES/xfce4-weather-plugin.mo
+share/locale/ru/LC_MESSAGES/xfce4-weather-plugin.mo
 share/locale/sk/LC_MESSAGES/xfce4-weather-plugin.mo
 share/locale/sq/LC_MESSAGES/xfce4-weather-plugin.mo
 share/locale/sv/LC_MESSAGES/xfce4-weather-plugin.mo
 share/locale/tr/LC_MESSAGES/xfce4-weather-plugin.mo
+share/locale/ug/LC_MESSAGES/xfce4-weather-plugin.mo
 share/locale/uk/LC_MESSAGES/xfce4-weather-plugin.mo
 share/locale/ur/LC_MESSAGES/xfce4-weather-plugin.mo
 share/locale/ur_PK/LC_MESSAGES/xfce4-weather-plugin.mo
@@ -87,6 +91,10 @@ share/xfce4/weather/icons/liquid/99.png
 @dirrm share/xfce4/weather
 @dirrmtry share/xfce4/panel-plugins
 @dirrmtry share/xfce4
+@dirrmtry share/locale/ast/LC_MESSAGES
+@dirrmtry share/locale/ast
+@dirrmtry share/locale/ug/LC_MESSAGES
+@dirrmtry share/locale/ug
 @dirrmtry share/locale/ur_PK/LC_MESSAGES
 @dirrmtry share/locale/ur_PK
 @dirrmtry share/locale/ur/LC_MESSAGES

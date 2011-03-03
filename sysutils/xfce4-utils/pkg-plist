@@ -9,140 +9,177 @@ bin/xfterm4
 etc/xdg/autostart/xfconf-migration-4.6.desktop
 etc/xdg/xfce4/Xft.xrdb
 etc/xdg/xfce4/xinitrc
-libexec/xfce4/xfconf-migration/xfconf-migration-4.6.pl
+lib/xfce4/xfconf-migration/xfconf-migration-4.6.pl
+share/applications/xfce4-about.desktop
+share/applications/xfhelp4.desktop
+share/applications/xfrun4.desktop
 %%WITH_DBUS%%share/dbus-1/services/org.xfce.RunDialog.service
+%%DOCSDIR%%/html/C/BSD.html
+%%DOCSDIR%%/html/C/GPL.html
+%%DOCSDIR%%/html/C/LGPL.html
+%%DOCSDIR%%/html/C/images/about-dialog.png
+%%DOCSDIR%%/html/C/images/default-session.png
+%%DOCSDIR%%/html/C/images/run-dialog.png
+%%DOCSDIR%%/html/C/images/xfce-mouse.png
+%%DOCSDIR%%/html/C/index.html
+%%DOCSDIR%%/html/C/xfce-user-guide.html
+%%DOCSDIR%%/html/C/xfce-utils.html
+%%DOCSDIR%%/html/da/BSD.html
+%%DOCSDIR%%/html/da/GPL.html
+%%DOCSDIR%%/html/da/LGPL.html
+%%DOCSDIR%%/html/da/images
+%%DOCSDIR%%/html/da/index.html
+%%DOCSDIR%%/html/da/xfce-user-guide.html
+%%DOCSDIR%%/html/da/xfce-utils.html
+%%DOCSDIR%%/html/el/BSD.html
+%%DOCSDIR%%/html/el/GPL.html
+%%DOCSDIR%%/html/el/LGPL.html
+%%DOCSDIR%%/html/el/index.html
+%%DOCSDIR%%/html/el/xfce-user-guide.html
+%%DOCSDIR%%/html/el/xfce-utils.html
+%%DOCSDIR%%/html/el/images
+%%DOCSDIR%%/html/gl/BSD.html
+%%DOCSDIR%%/html/gl/GPL.html
+%%DOCSDIR%%/html/gl/LGPL.html
+%%DOCSDIR%%/html/gl/images
+%%DOCSDIR%%/html/gl/index.html
+%%DOCSDIR%%/html/gl/xfce-user-guide.html
+%%DOCSDIR%%/html/gl/xfce-utils.html
+%%DOCSDIR%%/html/it/BSD.html
+%%DOCSDIR%%/html/it/GPL.html
+%%DOCSDIR%%/html/it/LGPL.html
+%%DOCSDIR%%/html/it/images
+%%DOCSDIR%%/html/it/index.html
+%%DOCSDIR%%/html/it/xfce-user-guide.html
+%%DOCSDIR%%/html/it/xfce-utils.html
+%%DOCSDIR%%/html/ja/BSD.html
+%%DOCSDIR%%/html/ja/GPL.html
+%%DOCSDIR%%/html/ja/LGPL.html
+%%DOCSDIR%%/html/ja/images
+%%DOCSDIR%%/html/ja/index.html
+%%DOCSDIR%%/html/ja/xfce-user-guide.html
+%%DOCSDIR%%/html/ja/xfce-utils.html
+%%DOCSDIR%%/html/sv/BSD.html
+%%DOCSDIR%%/html/sv/GPL.html
+%%DOCSDIR%%/html/sv/LGPL.html
+%%DOCSDIR%%/html/sv/images
+%%DOCSDIR%%/html/sv/index.html
+%%DOCSDIR%%/html/sv/xfce-user-guide.html
+%%DOCSDIR%%/html/sv/xfce-utils.html
+%%DOCSDIR%%/html/ug/BSD.html
+%%DOCSDIR%%/html/ug/GPL.html
+%%DOCSDIR%%/html/ug/LGPL.html
+%%DOCSDIR%%/html/ug/images
+%%DOCSDIR%%/html/ug/index.html
+%%DOCSDIR%%/html/ug/xfce-user-guide.html
+%%DOCSDIR%%/html/ug/xfce-utils.html
+%%DOCSDIR%%/html/xfce-utils.css
 share/icons/hicolor/48x48/apps/xfce4-logo.png
-share/locale/ast/LC_MESSAGES/xfce-utils.mo
-share/locale/kk/LC_MESSAGES/xfce-utils.mo
-share/locale/nn/LC_MESSAGES/xfce-utils.mo
-share/locale/ug/LC_MESSAGES/xfce-utils.mo
-share/locale/ur_PK/LC_MESSAGES/xfce-utils.mo
-share/locale/af/LC_MESSAGES/xfce-utils.mo
-share/locale/am/LC_MESSAGES/xfce-utils.mo
-share/locale/ar/LC_MESSAGES/xfce-utils.mo
-share/locale/az/LC_MESSAGES/xfce-utils.mo
-share/locale/be/LC_MESSAGES/xfce-utils.mo
-share/locale/bg/LC_MESSAGES/xfce-utils.mo
-share/locale/bn_IN/LC_MESSAGES/xfce-utils.mo
-share/locale/ca/LC_MESSAGES/xfce-utils.mo
-share/locale/cs/LC_MESSAGES/xfce-utils.mo
-share/locale/da/LC_MESSAGES/xfce-utils.mo
-share/locale/de/LC_MESSAGES/xfce-utils.mo
-share/locale/dz/LC_MESSAGES/xfce-utils.mo
-share/locale/el/LC_MESSAGES/xfce-utils.mo
-share/locale/en_GB/LC_MESSAGES/xfce-utils.mo
-share/locale/eo/LC_MESSAGES/xfce-utils.mo
-share/locale/es/LC_MESSAGES/xfce-utils.mo
-share/locale/es_MX/LC_MESSAGES/xfce-utils.mo
-share/locale/et/LC_MESSAGES/xfce-utils.mo
-share/locale/eu/LC_MESSAGES/xfce-utils.mo
-share/locale/fa/LC_MESSAGES/xfce-utils.mo
-share/locale/fi/LC_MESSAGES/xfce-utils.mo
-share/locale/fr/LC_MESSAGES/xfce-utils.mo
-share/locale/gl/LC_MESSAGES/xfce-utils.mo
-share/locale/gu/LC_MESSAGES/xfce-utils.mo
-share/locale/he/LC_MESSAGES/xfce-utils.mo
-share/locale/hi/LC_MESSAGES/xfce-utils.mo
-share/locale/hu/LC_MESSAGES/xfce-utils.mo
-share/locale/hy/LC_MESSAGES/xfce-utils.mo
-share/locale/id/LC_MESSAGES/xfce-utils.mo
-share/locale/it/LC_MESSAGES/xfce-utils.mo
-share/locale/ja/LC_MESSAGES/xfce-utils.mo
-share/locale/ka/LC_MESSAGES/xfce-utils.mo
-share/locale/ko/LC_MESSAGES/xfce-utils.mo
-share/locale/ku/LC_MESSAGES/xfce-utils.mo
-share/locale/lt/LC_MESSAGES/xfce-utils.mo
-share/locale/lv/LC_MESSAGES/xfce-utils.mo
-share/locale/mk/LC_MESSAGES/xfce-utils.mo
-share/locale/mr/LC_MESSAGES/xfce-utils.mo
-share/locale/ms/LC_MESSAGES/xfce-utils.mo
-share/locale/nb/LC_MESSAGES/xfce-utils.mo
-share/locale/nl/LC_MESSAGES/xfce-utils.mo
-share/locale/pl/LC_MESSAGES/xfce-utils.mo
-share/locale/pa/LC_MESSAGES/xfce-utils.mo
-share/locale/pt_BR/LC_MESSAGES/xfce-utils.mo
-share/locale/pt/LC_MESSAGES/xfce-utils.mo
-share/locale/ro/LC_MESSAGES/xfce-utils.mo
-share/locale/ru/LC_MESSAGES/xfce-utils.mo
-share/locale/si/LC_MESSAGES/xfce-utils.mo
-share/locale/sk/LC_MESSAGES/xfce-utils.mo
-share/locale/sq/LC_MESSAGES/xfce-utils.mo
-share/locale/sv/LC_MESSAGES/xfce-utils.mo
-share/locale/ta/LC_MESSAGES/xfce-utils.mo
-share/locale/tr/LC_MESSAGES/xfce-utils.mo
-share/locale/uk/LC_MESSAGES/xfce-utils.mo
-share/locale/ur/LC_MESSAGES/xfce-utils.mo
-share/locale/vi/LC_MESSAGES/xfce-utils.mo
-share/locale/zh_CN/LC_MESSAGES/xfce-utils.mo
-share/locale/zh_TW/LC_MESSAGES/xfce-utils.mo
-share/xfce4/AUTHORS
-share/xfce4/COPYING
-share/xfce4/BSD
-share/xfce4/GPL
-share/xfce4/INFO
-share/xfce4/INFO.ca
-share/xfce4/INFO.de
-share/xfce4/INFO.es
-share/xfce4/INFO.fi
-share/xfce4/INFO.fr
-share/xfce4/INFO.it
-share/xfce4/INFO.ja
-share/xfce4/INFO.ru
-share/xfce4/INFO.uk
-share/xfce4/INFO.vi
-share/xfce4/LGPL
-share/xfce4/doc/C/index.html
-share/xfce4/doc/C/images/about-dialog.png
-share/xfce4/doc/C/images/run-dialog.png
-share/xfce4/doc/C/images/default-session.png
-share/xfce4/doc/C/images/link_xfce.jpg
-share/xfce4/doc/C/images/taskbar_settings.png
-share/xfce4/doc/C/BSD.html
-share/xfce4/doc/C/GPL.html
-share/xfce4/doc/C/LGPL.html
-share/xfce4/doc/C/xfce-utils.html
-share/xfce4/doc/C/xfce4-components.html
-share/xfce4/doc/C/xfce4-user-guide.html
-share/xfce4/doc/C/xfce4-intro.html
-share/xfce4/doc/C/xfce4-copyright.html
-share/xfce4/doc/C/xfce4-use.html
-share/xfce4/doc/C/xfce4-install.html
-share/xfce4/doc/fr/index.html
-share/xfce4/doc/it/index.html
-share/xfce4/doc/xfce.css
-share/xfce4/doc/xfce-chunk.css
-share/xfce4/doc/xfce-mouse.png
+%%NLS%%share/locale/af/LC_MESSAGES/xfce-utils.mo
+%%NLS%%share/locale/am/LC_MESSAGES/xfce-utils.mo
+%%NLS%%share/locale/ar/LC_MESSAGES/xfce-utils.mo
+%%NLS%%share/locale/ast/LC_MESSAGES/xfce-utils.mo
+%%NLS%%share/locale/az/LC_MESSAGES/xfce-utils.mo
+%%NLS%%share/locale/be/LC_MESSAGES/xfce-utils.mo
+%%NLS%%share/locale/bg/LC_MESSAGES/xfce-utils.mo
+%%NLS%%share/locale/bn/LC_MESSAGES/xfce-utils.mo
+%%NLS%%share/locale/bn_IN/LC_MESSAGES/xfce-utils.mo
+%%NLS%%share/locale/ca/LC_MESSAGES/xfce-utils.mo
+%%NLS%%share/locale/cs/LC_MESSAGES/xfce-utils.mo
+%%NLS%%share/locale/da/LC_MESSAGES/xfce-utils.mo
+%%NLS%%share/locale/de/LC_MESSAGES/xfce-utils.mo
+%%NLS%%share/locale/dz/LC_MESSAGES/xfce-utils.mo
+%%NLS%%share/locale/el/LC_MESSAGES/xfce-utils.mo
+%%NLS%%share/locale/en_GB/LC_MESSAGES/xfce-utils.mo
+%%NLS%%share/locale/eo/LC_MESSAGES/xfce-utils.mo
+%%NLS%%share/locale/es/LC_MESSAGES/xfce-utils.mo
+%%NLS%%share/locale/es_MX/LC_MESSAGES/xfce-utils.mo
+%%NLS%%share/locale/et/LC_MESSAGES/xfce-utils.mo
+%%NLS%%share/locale/eu/LC_MESSAGES/xfce-utils.mo
+%%NLS%%share/locale/fa/LC_MESSAGES/xfce-utils.mo
+%%NLS%%share/locale/fi/LC_MESSAGES/xfce-utils.mo
+%%NLS%%share/locale/fr/LC_MESSAGES/xfce-utils.mo
+%%NLS%%share/locale/gl/LC_MESSAGES/xfce-utils.mo
+%%NLS%%share/locale/gu/LC_MESSAGES/xfce-utils.mo
+%%NLS%%share/locale/he/LC_MESSAGES/xfce-utils.mo
+%%NLS%%share/locale/hi/LC_MESSAGES/xfce-utils.mo
+%%NLS%%share/locale/hr/LC_MESSAGES/xfce-utils.mo
+%%NLS%%share/locale/hu/LC_MESSAGES/xfce-utils.mo
+%%NLS%%share/locale/hy/LC_MESSAGES/xfce-utils.mo
+%%NLS%%share/locale/id/LC_MESSAGES/xfce-utils.mo
+%%NLS%%share/locale/it/LC_MESSAGES/xfce-utils.mo
+%%NLS%%share/locale/ja/LC_MESSAGES/xfce-utils.mo
+%%NLS%%share/locale/ka/LC_MESSAGES/xfce-utils.mo
+%%NLS%%share/locale/kk/LC_MESSAGES/xfce-utils.mo
+%%NLS%%share/locale/ko/LC_MESSAGES/xfce-utils.mo
+%%NLS%%share/locale/ku/LC_MESSAGES/xfce-utils.mo
+%%NLS%%share/locale/lt/LC_MESSAGES/xfce-utils.mo
+%%NLS%%share/locale/lv/LC_MESSAGES/xfce-utils.mo
+%%NLS%%share/locale/mk/LC_MESSAGES/xfce-utils.mo
+%%NLS%%share/locale/mr/LC_MESSAGES/xfce-utils.mo
+%%NLS%%share/locale/ms/LC_MESSAGES/xfce-utils.mo
+%%NLS%%share/locale/nb/LC_MESSAGES/xfce-utils.mo
+%%NLS%%share/locale/nl/LC_MESSAGES/xfce-utils.mo
+%%NLS%%share/locale/pa/LC_MESSAGES/xfce-utils.mo
+%%NLS%%share/locale/pl/LC_MESSAGES/xfce-utils.mo
+%%NLS%%share/locale/pt/LC_MESSAGES/xfce-utils.mo
+%%NLS%%share/locale/pt_BR/LC_MESSAGES/xfce-utils.mo
+%%NLS%%share/locale/ro/LC_MESSAGES/xfce-utils.mo
+%%NLS%%share/locale/ru/LC_MESSAGES/xfce-utils.mo
+%%NLS%%share/locale/si/LC_MESSAGES/xfce-utils.mo
+%%NLS%%share/locale/sk/LC_MESSAGES/xfce-utils.mo
+%%NLS%%share/locale/sq/LC_MESSAGES/xfce-utils.mo
+%%NLS%%share/locale/sv/LC_MESSAGES/xfce-utils.mo
+%%NLS%%share/locale/ta/LC_MESSAGES/xfce-utils.mo
+%%NLS%%share/locale/tr/LC_MESSAGES/xfce-utils.mo
+%%NLS%%share/locale/ug/LC_MESSAGES/xfce-utils.mo
+%%NLS%%share/locale/uk/LC_MESSAGES/xfce-utils.mo
+%%NLS%%share/locale/ur/LC_MESSAGES/xfce-utils.mo
+%%NLS%%share/locale/ur_PK/LC_MESSAGES/xfce-utils.mo
+%%NLS%%share/locale/vi/LC_MESSAGES/xfce-utils.mo
+%%NLS%%share/locale/zh_CN/LC_MESSAGES/xfce-utils.mo
+%%NLS%%share/locale/zh_TW/LC_MESSAGES/xfce-utils.mo
 share/xsessions/xfce.desktop
-@dirrmtry etc/xdg/autostart
+@exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
+@unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
+@dirrm share/xsessions
+%%NLS%%@dirrmtry share/locale/ur_PK/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/ur_PK
+%%NLS%%@dirrmtry share/locale/ur/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/ur
+%%NLS%%@dirrmtry share/locale/ug/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/ug
+%%NLS%%@dirrmtry share/locale/si/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/si
+%%NLS%%@dirrmtry share/locale/mr/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/mr
+%%NLS%%@dirrmtry share/locale/ku/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/ku
+%%NLS%%@dirrmtry share/locale/kk/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/kk
+%%NLS%%@dirrmtry share/locale/hy/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/hy
+%%NLS%%@dirrmtry share/locale/dz/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/dz
+%%NLS%%@dirrmtry share/locale/bn_IN/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/bn_IN
+%%NLS%%@dirrmtry share/locale/ast/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/ast
+@dirrm %%DOCSDIR%%/html/ug
+@dirrm %%DOCSDIR%%/html/sv
+@dirrm %%DOCSDIR%%/html/ja
+@dirrm %%DOCSDIR%%/html/it
+@dirrm %%DOCSDIR%%/html/gl
+@dirrm %%DOCSDIR%%/html/el
+@dirrm %%DOCSDIR%%/html/da
+@dirrm %%DOCSDIR%%/html/C/images
+@dirrm %%DOCSDIR%%/html/C
+@dirrm %%DOCSDIR%%/html
+@dirrm %%DOCSDIR%%
+%%WITH_DBUS%%@dirrmtry share/dbus-1/services
+%%WITH_DBUS%%@dirrmtry share/dbus-1
+@dirrm lib/xfce4/xfconf-migration
+@dirrmtry lib/xfce4
 @dirrmtry etc/xdg/xfce4
+@dirrmtry etc/xdg/autostart
 @dirrmtry etc/xdg
-@dirrmtry etc/xfce4
-@dirrm libexec/xfce4/xfconf-migration
-@dirrmtry libexec/xfce4
-@dirrmtry share/applications
-@dirrmtry share/icons/hicolor/48x48/apps
-@dirrmtry share/icons/hicolor/48x48
-@dirrmtry share/icons
-@dirrmtry share/locale/bn_IN/LC_MESSAGES
-@dirrmtry share/locale/bn_IN
-@dirrmtry share/locale/mr/LC_MESSAGES
-@dirrmtry share/locale/mr
-@dirrmtry share/locale/ast/LC_MESSAGES
-@dirrmtry share/locale/ast
-@dirrmtry share/locale/kk/LC_MESSAGES
-@dirrmtry share/locale/kk
-@dirrmtry share/locale/ug/LC_MESSAGES
-@dirrmtry share/locale/ug
-@dirrmtry share/locale/ur_PK/LC_MESSAGES
-@dirrmtry share/locale/ur_PK
-@dirrmtry share/xfce4/doc/C/images
-@dirrmtry share/xfce4/doc/C
-@dirrmtry share/xfce4/doc/fr
-@dirrmtry share/xfce4/doc/it
-@dirrmtry share/xfce4/doc
-@dirrmtry share/xfce4
-@dirrmtry share/icons/hicolor/scalable/apps
-@dirrmtry share/icons/hicolor/scalable
-@dirrmtry share/locale/hy/LC_MESSAGES
-@dirrmtry share/locale/hy
-@dirrmtry share/xsessions

@@ -7,8 +7,10 @@
 
 PORTNAME=	xfce4-notes-plugin
 PORTVERSION=	1.7.6
+PORTREVISION=	1
 CATEGORIES=	deskutils xfce
-MASTER_SITES=	http://archive.xfce.org/src/panel-plugins/${PORTNAME}/1.7/
+MASTER_SITES=	${MASTER_SITE_XFCE}
+MASTER_SITE_SUBDIR=/src/panel-plugins/${PORTNAME}/${PORTVERSION:R}
 DIST_SUBDIR=	xfce4
 
 MAINTAINER=	miwi@FreeBSD.org

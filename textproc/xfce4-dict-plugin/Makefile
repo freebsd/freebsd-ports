@@ -7,11 +7,12 @@
 
 PORTNAME=	xfce4-dict
 PORTVERSION=	0.6.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	textproc xfce
-MASTER_SITES=	http://archive.xfce.org/src/apps/${PORTNAME}/0.6/
-PKGNAMESUFFIX=	-plugin
+MASTER_SITES=	${MASTER_SITE_XFCE}
+MASTER_SITE_SUBDIR=/src/apps/${PORTNAME}/${PORTVERSION:R}
 DIST_SUBDIR=	xfce4
+PKGNAMESUFFIX=	-plugin
 
 MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	Xfce Plugin for searching for the translation or explanation of a word

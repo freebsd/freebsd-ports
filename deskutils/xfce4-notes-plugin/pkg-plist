@@ -2,7 +2,10 @@ bin/xfce4-notes
 bin/xfce4-notes-settings
 bin/xfce4-popup-notes
 etc/xdg/autostart/xfce4-notes-autostart.desktop
-libexec/xfce4/panel-plugins/xfce4-notes-plugin
+lib/xfce4/panel-plugins/libnotes.a
+lib/xfce4/panel-plugins/libnotes.la
+lib/xfce4/panel-plugins/libnotes.so
+lib/xfce4/panel-plugins/libnotes.so.0
 share/applications/xfce4-notes.desktop
 share/icons/hicolor/16x16/apps/xfce4-notes-plugin.png
 share/icons/hicolor/22x22/apps/xfce4-notes-plugin.png
@@ -63,9 +66,11 @@ share/locale/zh_TW/LC_MESSAGES/xfce4-notes-plugin.mo
 %%DATADIR%%/gtk-2.0/scrollbars/trough-scrollbar-vert.png
 %%DATADIR%%/pixmaps/notes-menu-active.png
 %%DATADIR%%/pixmaps/notes-menu.png
-share/xfce4/panel-plugins/xfce4-notes-plugin.desktop
+share/xfce4/panel-plugins/xfce4-notes-plugin-47.desktop
 @dirrmtry share/xfce4/panel-plugins
 @dirrmtry share/xfce4
+@dirrmtry lib/xfce4/panel-plugins
+@dirrmtry lib/xfce4
 @dirrm %%DATADIR%%/pixmaps
 @dirrm %%DATADIR%%/gtk-2.0/scrollbars
 @dirrm %%DATADIR%%/gtk-2.0

@@ -7,11 +7,12 @@
 
 PORTNAME=	xfce4-parole
 PORTVERSION=	0.2.0.2
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	multimedia xfce
-MASTER_SITES=	http://archive.xfce.org/src/apps/parole/0.2/
-DISTNAME=	parole-${PORTVERSION}
+MASTER_SITES=	${MASTER_SITE_XFCE}
+MASTER_SITE_SUBDIR=/src/apps/parole/0.2
 DIST_SUBDIR=	xfce4
+DISTNAME=	parole-${PORTVERSION}
 
 MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	Lightweight media player for Xfce4 based on the gstreamer engine

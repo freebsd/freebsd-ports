@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	xfce4-desktop
-PORTVERSION=	4.6.2
+PORTVERSION=	4.8.1
 CATEGORIES=	x11-wm xfce
 MASTER_SITES=	${MASTER_SITE_XFCE}
+MASTER_SITE_SUBDIR=	src/xfce/xfdesktop/${PORTVERSION:R}
 DISTNAME=	xfdesktop-${PORTVERSION}
 DIST_SUBDIR=	xfce4
 
@@ -18,13 +19,13 @@ COMMENT=	XFce 4 desktop background manager and root menu
 LIB_DEPENDS=	dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib
 
 GNU_CONFIGURE=	yes
-INSTALLS_ICONS= yes
+INSTALLS_ICONS=	yes
 USE_BZIP2=	yes
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
 USE_GNOME=	glib20 gnometarget gtk20 intltool intlhack pkgconfig
 USE_LDCONFIG=	yes
-USE_XFCE=	configenv libgui libmenu libutil panel xfconf
+USE_XFCE=	configenv garcon libgui libmenu libutil panel xfconf
 
 OPTIONS=	FAM	"Enable FAM support"		on \
 		THUNAR	"Enable thunar support"		on

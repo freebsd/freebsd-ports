@@ -1,14 +1,17 @@
 bin/globaltime
 bin/orage
-libexec/xfce4/panel-plugins/orageclock
+bin/tz_convert
+libexec/xfce4/panel-plugins/xfce4-orageclock-plugin
 share/applications/xfcalendar.desktop
 share/applications/xfce-xfcalendar-settings.desktop
+share/applications/globaltime.desktop
 share/dbus-1/services/org.xfce.calendar.service
 share/dbus-1/services/org.xfce.orage.service
 share/icons/hicolor/48x48/apps/xfcalendar.png
 share/icons/hicolor/scalable/apps/xfcalendar.svg
 share/locale/am/LC_MESSAGES/orage.mo
 share/locale/ar/LC_MESSAGES/orage.mo
+share/locale/ast/LC_MESSAGES/orage.mo
 share/locale/az/LC_MESSAGES/orage.mo
 share/locale/bg/LC_MESSAGES/orage.mo
 share/locale/da/LC_MESSAGES/orage.mo
@@ -45,6 +48,7 @@ share/locale/sv/LC_MESSAGES/orage.mo
 share/locale/ta/LC_MESSAGES/orage.mo
 share/locale/tr/LC_MESSAGES/orage.mo
 share/locale/ur/LC_MESSAGES/orage.mo
+share/locale/ur_PK/LC_MESSAGES/orage.mo
 share/locale/vi/LC_MESSAGES/orage.mo
 share/locale/be/LC_MESSAGES/orage.mo
 share/locale/ca/LC_MESSAGES/orage.mo
@@ -467,8 +471,210 @@ share/orage/zoneinfo/Pacific/Truk.ics
 share/orage/zoneinfo/Pacific/Wake.ics
 share/orage/zoneinfo/Pacific/Wallis.ics
 share/orage/zoneinfo/Pacific/Yap.ics
+share/orage/zoneinfo/CET.ics
+share/orage/zoneinfo/CST6CDT.ics
+share/orage/zoneinfo/Cuba.ics
+share/orage/zoneinfo/EET.ics
+share/orage/zoneinfo/EST.ics
+share/orage/zoneinfo/EST5EDT.ics
+share/orage/zoneinfo/Egypt.ics
+share/orage/zoneinfo/Eire.ics
+share/orage/zoneinfo/Factory.ics
+share/orage/zoneinfo/GB-Eire.ics
+share/orage/zoneinfo/GB.ics
+share/orage/zoneinfo/GMT+0.ics
+share/orage/zoneinfo/GMT-0.ics
+share/orage/zoneinfo/GMT.ics
+share/orage/zoneinfo/GMT0.ics
+share/orage/zoneinfo/Greenwich.ics
+share/orage/zoneinfo/HST.ics
+share/orage/zoneinfo/Hongkong.ics
+share/orage/zoneinfo/Iceland.ics
+share/orage/zoneinfo/Iran.ics
+share/orage/zoneinfo/Israel.ics
+share/orage/zoneinfo/Jamaica.ics
+share/orage/zoneinfo/Japan.ics
+share/orage/zoneinfo/Kwajalein.ics
+share/orage/zoneinfo/Libya.ics
+share/orage/zoneinfo/MET.ics
+share/orage/zoneinfo/MST.ics
+share/orage/zoneinfo/MST7MDT.ics
+share/orage/zoneinfo/NZ-CHAT.ics
+share/orage/zoneinfo/NZ.ics
+share/orage/zoneinfo/Navajo.ics
+share/orage/zoneinfo/PRC.ics
+share/orage/zoneinfo/PST8PDT.ics
+share/orage/zoneinfo/Poland.ics
+share/orage/zoneinfo/Portugal.ics
+share/orage/zoneinfo/ROC.ics
+share/orage/zoneinfo/ROK.ics
+share/orage/zoneinfo/Singapore.ics
+share/orage/zoneinfo/Turkey.ics
+share/orage/zoneinfo/UCT.ics
+share/orage/zoneinfo/UTC.ics
+share/orage/zoneinfo/Universal.ics
+share/orage/zoneinfo/W-SU.ics
+share/orage/zoneinfo/WET.ics
+share/orage/zoneinfo/Zulu.ics
+share/orage/zoneinfo/posixrules.ics
+share/orage/zoneinfo/Africa/Asmara.ics
+share/orage/zoneinfo/America/Atikokan.ics
+share/orage/zoneinfo/America/Atka.ics
+share/orage/zoneinfo/America/Bahia.ics
+share/orage/zoneinfo/America/Blanc-Sablon.ics
+share/orage/zoneinfo/America/Campo_Grande.ics
+share/orage/zoneinfo/America/Coral_Harbour.ics
+share/orage/zoneinfo/America/Danmarkshavn.ics
+share/orage/zoneinfo/America/Ensenada.ics
+share/orage/zoneinfo/America/Fort_Wayne.ics
+share/orage/zoneinfo/America/Knox_IN.ics
+share/orage/zoneinfo/America/Marigot.ics
+share/orage/zoneinfo/America/Moncton.ics
+share/orage/zoneinfo/America/Porto_Acre.ics
+share/orage/zoneinfo/America/Resolute.ics
+share/orage/zoneinfo/America/Santarem.ics
+share/orage/zoneinfo/America/St_Barthelemy.ics
+share/orage/zoneinfo/America/Toronto.ics
+share/orage/zoneinfo/America/Virgin.ics
+share/orage/zoneinfo/America/Argentina/ComodRivadavia.ics
+share/orage/zoneinfo/America/Argentina/La_Rioja.ics
+share/orage/zoneinfo/America/Argentina/Rio_Gallegos.ics
+share/orage/zoneinfo/America/Argentina/Salta.ics
+share/orage/zoneinfo/America/Argentina/San_Juan.ics
+share/orage/zoneinfo/America/Argentina/San_Luis.ics
+share/orage/zoneinfo/America/Argentina/Tucuman.ics
+share/orage/zoneinfo/America/Argentina/Ushuaia.ics
+share/orage/zoneinfo/America/Indiana/Petersburg.ics
+share/orage/zoneinfo/America/Indiana/Tell_City.ics
+share/orage/zoneinfo/America/Indiana/Vincennes.ics
+share/orage/zoneinfo/America/Indiana/Winamac.ics
+share/orage/zoneinfo/America/North_Dakota/Center.ics
+share/orage/zoneinfo/America/North_Dakota/New_Salem.ics
+share/orage/zoneinfo/Antarctica/Rothera.ics
+share/orage/zoneinfo/Asia/Ashkhabad.ics
+share/orage/zoneinfo/Asia/Choibalsan.ics
+share/orage/zoneinfo/Asia/Chongqing.ics
+share/orage/zoneinfo/Asia/Dacca.ics
+share/orage/zoneinfo/Asia/Ho_Chi_Minh.ics
+share/orage/zoneinfo/Asia/Kathmandu.ics
+share/orage/zoneinfo/Asia/Kolkata.ics
+share/orage/zoneinfo/Asia/Macau.ics
+share/orage/zoneinfo/Asia/Makassar.ics
+share/orage/zoneinfo/Asia/Oral.ics
+share/orage/zoneinfo/Asia/Qyzylorda.ics
+share/orage/zoneinfo/Asia/Riyadh87.ics
+share/orage/zoneinfo/Asia/Riyadh88.ics
+share/orage/zoneinfo/Asia/Riyadh89.ics
+share/orage/zoneinfo/Asia/Sakhalin.ics
+share/orage/zoneinfo/Asia/Tel_Aviv.ics
+share/orage/zoneinfo/Asia/Thimbu.ics
+share/orage/zoneinfo/Asia/Ulan_Bator.ics
+share/orage/zoneinfo/Atlantic/Faroe.ics
+share/orage/zoneinfo/Australia/ACT.ics
+share/orage/zoneinfo/Australia/Canberra.ics
+share/orage/zoneinfo/Australia/Currie.ics
+share/orage/zoneinfo/Australia/Eucla.ics
+share/orage/zoneinfo/Australia/LHI.ics
+share/orage/zoneinfo/Australia/NSW.ics
+share/orage/zoneinfo/Australia/North.ics
+share/orage/zoneinfo/Australia/Queensland.ics
+share/orage/zoneinfo/Australia/South.ics
+share/orage/zoneinfo/Australia/Tasmania.ics
+share/orage/zoneinfo/Australia/Victoria.ics
+share/orage/zoneinfo/Australia/West.ics
+share/orage/zoneinfo/Australia/Yancowinna.ics
+share/orage/zoneinfo/Brazil/Acre.ics
+share/orage/zoneinfo/Brazil/DeNoronha.ics
+share/orage/zoneinfo/Brazil/East.ics
+share/orage/zoneinfo/Brazil/West.ics
+share/orage/zoneinfo/Canada/Atlantic.ics
+share/orage/zoneinfo/Canada/Central.ics
+share/orage/zoneinfo/Canada/East-Saskatchewan.ics
+share/orage/zoneinfo/Canada/Eastern.ics
+share/orage/zoneinfo/Canada/Mountain.ics
+share/orage/zoneinfo/Canada/Newfoundland.ics
+share/orage/zoneinfo/Canada/Pacific.ics
+share/orage/zoneinfo/Canada/Saskatchewan.ics
+share/orage/zoneinfo/Canada/Yukon.ics
+share/orage/zoneinfo/Chile/Continental.ics
+share/orage/zoneinfo/Chile/EasterIsland.ics
+share/orage/zoneinfo/Etc/GMT+0.ics
+share/orage/zoneinfo/Etc/GMT+1.ics
+share/orage/zoneinfo/Etc/GMT+10.ics
+share/orage/zoneinfo/Etc/GMT+11.ics
+share/orage/zoneinfo/Etc/GMT+12.ics
+share/orage/zoneinfo/Etc/GMT+2.ics
+share/orage/zoneinfo/Etc/GMT+3.ics
+share/orage/zoneinfo/Etc/GMT+4.ics
+share/orage/zoneinfo/Etc/GMT+5.ics
+share/orage/zoneinfo/Etc/GMT+6.ics
+share/orage/zoneinfo/Etc/GMT+7.ics
+share/orage/zoneinfo/Etc/GMT+8.ics
+share/orage/zoneinfo/Etc/GMT+9.ics
+share/orage/zoneinfo/Etc/GMT-0.ics
+share/orage/zoneinfo/Etc/GMT-1.ics
+share/orage/zoneinfo/Etc/GMT-10.ics
+share/orage/zoneinfo/Etc/GMT-11.ics
+share/orage/zoneinfo/Etc/GMT-12.ics
+share/orage/zoneinfo/Etc/GMT-13.ics
+share/orage/zoneinfo/Etc/GMT-14.ics
+share/orage/zoneinfo/Etc/GMT-2.ics
+share/orage/zoneinfo/Etc/GMT-3.ics
+share/orage/zoneinfo/Etc/GMT-4.ics
+share/orage/zoneinfo/Etc/GMT-5.ics
+share/orage/zoneinfo/Etc/GMT-6.ics
+share/orage/zoneinfo/Etc/GMT-7.ics
+share/orage/zoneinfo/Etc/GMT-8.ics
+share/orage/zoneinfo/Etc/GMT-9.ics
+share/orage/zoneinfo/Etc/GMT.ics
+share/orage/zoneinfo/Etc/GMT0.ics
+share/orage/zoneinfo/Etc/Greenwich.ics
+share/orage/zoneinfo/Etc/UCT.ics
+share/orage/zoneinfo/Etc/UTC.ics
+share/orage/zoneinfo/Etc/Universal.ics
+share/orage/zoneinfo/Etc/Zulu.ics
+share/orage/zoneinfo/Europe/Guernsey.ics
+share/orage/zoneinfo/Europe/Isle_of_Man.ics
+share/orage/zoneinfo/Europe/Jersey.ics
+share/orage/zoneinfo/Europe/Mariehamn.ics
+share/orage/zoneinfo/Europe/Podgorica.ics
+share/orage/zoneinfo/Europe/Tiraspol.ics
+share/orage/zoneinfo/Europe/Volgograd.ics
+share/orage/zoneinfo/Mexico/BajaNorte.ics
+share/orage/zoneinfo/Mexico/BajaSur.ics
+share/orage/zoneinfo/Mexico/General.ics
+share/orage/zoneinfo/Mideast/Riyadh87.ics
+share/orage/zoneinfo/Mideast/Riyadh88.ics
+share/orage/zoneinfo/Mideast/Riyadh89.ics
+share/orage/zoneinfo/Pacific/Samoa.ics
+share/orage/zoneinfo/SystemV/AST4.ics
+share/orage/zoneinfo/SystemV/AST4ADT.ics
+share/orage/zoneinfo/SystemV/CST6.ics
+share/orage/zoneinfo/SystemV/CST6CDT.ics
+share/orage/zoneinfo/SystemV/EST5.ics
+share/orage/zoneinfo/SystemV/EST5EDT.ics
+share/orage/zoneinfo/SystemV/HST10.ics
+share/orage/zoneinfo/SystemV/MST7.ics
+share/orage/zoneinfo/SystemV/MST7MDT.ics
+share/orage/zoneinfo/SystemV/PST8.ics
+share/orage/zoneinfo/SystemV/PST8PDT.ics
+share/orage/zoneinfo/SystemV/YST9.ics
+share/orage/zoneinfo/SystemV/YST9YDT.ics
+share/orage/zoneinfo/US/Alaska.ics
+share/orage/zoneinfo/US/Aleutian.ics
+share/orage/zoneinfo/US/Arizona.ics
+share/orage/zoneinfo/US/Central.ics
+share/orage/zoneinfo/US/East-Indiana.ics
+share/orage/zoneinfo/US/Eastern.ics
+share/orage/zoneinfo/US/Hawaii.ics
+share/orage/zoneinfo/US/Indiana-Starke.ics
+share/orage/zoneinfo/US/Michigan.ics
+share/orage/zoneinfo/US/Mountain.ics
+share/orage/zoneinfo/US/Pacific.ics
+share/orage/zoneinfo/US/Samoa.ics
+share/orage/zoneinfo/tz_convert.par
 share/orage/zoneinfo/zones.tab
-share/xfce4/panel-plugins/orageclock.desktop
+share/xfce4/panel-plugins/xfce4-orageclock-plugin.desktop
 @dirrmtry libexec/xfce4/panel-plugins
 @dirrmtry libexec/xfce4
 @dirrmtry share/applications
@@ -482,12 +688,21 @@ share/xfce4/panel-plugins/orageclock.desktop
 @dirrm share/orage/zoneinfo/America/Argentina
 @dirrm share/orage/zoneinfo/America/Indiana
 @dirrm share/orage/zoneinfo/America/Kentucky
+@dirrm share/orage/zoneinfo/America/North_Dakota
 @dirrm share/orage/zoneinfo/America
 @dirrm share/orage/zoneinfo/Antarctica
 @dirrm share/orage/zoneinfo/Arctic
 @dirrm share/orage/zoneinfo/Asia
 @dirrm share/orage/zoneinfo/Atlantic
 @dirrm share/orage/zoneinfo/Australia
+@dirrm share/orage/zoneinfo/Brazil
+@dirrm share/orage/zoneinfo/Canada
+@dirrm share/orage/zoneinfo/Chile
+@dirrm share/orage/zoneinfo/Etc
+@dirrm share/orage/zoneinfo/Mexico
+@dirrm share/orage/zoneinfo/Mideast
+@dirrm share/orage/zoneinfo/SystemV
+@dirrm share/orage/zoneinfo/US
 @dirrm share/orage/zoneinfo/Europe
 @dirrm share/orage/zoneinfo/Indian
 @dirrm share/orage/zoneinfo/Pacific
