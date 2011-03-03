@@ -1,0 +1,5 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Perl/OSType/.packlist
+%%SITE_PERL%%/Perl/OSType.pm
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Perl/OSType
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Perl
+@dirrmtry %%SITE_PERL%%/Perl
