@@ -33,6 +33,7 @@
     SUBDIR += rox-session
     SUBDIR += tdfsb
     SUBDIR += thunar
+    SUBDIR += thunar-vfs
     SUBDIR += tkdesk
     SUBDIR += twander
     SUBDIR += worker
