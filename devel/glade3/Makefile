@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	glade3
-PORTVERSION=	3.7.1
+PORTVERSION=	3.7.3
 CATEGORIES=	devel gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -19,7 +19,7 @@ INSTALLS_ICONS=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnometarget gtk20 libxml2 gnomeprefix gnomehack \
-		gnomedocutils desktopfileutils ltverhack
+		gnomedocutils desktopfileutils ltverhack:10
 WANT_GNOME=	yes
 USE_GETTEXT=	yes
 INSTALLS_OMF=	yes
