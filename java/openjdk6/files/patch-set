@@ -16309,8 +16309,8 @@
      memset((char *) &if2, 0, sizeof(if2));
      strcpy(if2.ifr_name, name_utf);
  
---- jdk/src/solaris/native/java/net/PlainDatagramSocketImpl.c	2011-01-20 18:54:41.000000000 -0500
-+++ jdk/src/solaris/native/java/net/PlainDatagramSocketImpl.c	2011-02-01 17:46:56.000000000 -0500
+--- jdk/src/solaris/native/java/net/PlainDatagramSocketImpl.c	2011-02-28 11:06:49.000000000 -0500
++++ jdk/src/solaris/native/java/net/PlainDatagramSocketImpl.c	2011-03-03 15:31:37.000000000 -0500
 @@ -23,12 +23,12 @@
   * questions.
   */
@@ -16383,7 +16383,69 @@
  #else
      JVM_Connect(fd, 0, 0);
  #endif
-@@ -2374,18 +2388,30 @@
+@@ -1057,31 +1071,38 @@
+ Java_java_net_PlainDatagramSocketImpl_datagramSocketCreate(JNIEnv *env,
+                                                            jobject this) {
+     jobject fdObj = (*env)->GetObjectField(env, this, pdsi_fdID);
+-    int fd;
+-
+-    int arg = -1;
+-    int t = 1;
++    int fd, t = 1;
++#ifdef AF_INET6
++    int domain = ipv6_available() ? AF_INET6 : AF_INET;
++#else
++    int domain = AF_INET;
++#endif
+ 
+     if (IS_NULL(fdObj)) {
+         JNU_ThrowByName(env, JNU_JAVANETPKG "SocketException",
+                         "Socket closed");
+         return;
+-    } else {
+-#ifdef AF_INET6
+-        if (ipv6_available()) {
+-            fd =  JVM_Socket(AF_INET6, SOCK_DGRAM, 0);
+-        } else
+-#endif /* AF_INET6 */
+-            {
+-                fd =  JVM_Socket(AF_INET, SOCK_DGRAM, 0);
+-            }
+     }
+-    if (fd == JVM_IO_ERR) {
++
++    if ((fd = JVM_Socket(domain, SOCK_DGRAM, 0)) == JVM_IO_ERR) {
+         NET_ThrowByNameWithLastError(env, JNU_JAVANETPKG "SocketException",
+                        "Error creating socket");
+         return;
+     }
+ 
++#ifdef AF_INET6
++    /* Disable IPV6_V6ONLY to ensure dual-socket support */
++    if (domain == AF_INET6) {
++        int arg = 0;
++        if (setsockopt(fd, IPPROTO_IPV6, IPV6_V6ONLY, (char*)&arg,
++                       sizeof(int)) < 0) {
++            NET_ThrowNew(env, errno, "cannot set IPPROTO_IPV6");
++            close(fd);
++            return;
++        }
++    }
++#endif /* AF_INET6 */
++
+      setsockopt(fd, SOL_SOCKET, SO_BROADCAST, (char*) &t, sizeof(int));
+ 
+ #ifdef __linux__
+@@ -1094,7 +1115,7 @@
+      * On Linux for IPv6 sockets we must set the hop limit
+      * to 1 to be compatible with default ttl of 1 for IPv4 sockets.
+      */
+-    if (ipv6_available()) {
++    if (domain == AF_INET6) {
+         int ttl = 1;
+         setsockopt(fd, IPPROTO_IPV6, IPV6_MULTICAST_HOPS, (char *)&ttl,
+                    sizeof(ttl));
+@@ -2374,18 +2395,30 @@
              mname6.ipv6mr_interface = idx;
          }
  
@@ -16417,9 +16479,82 @@
                  }
              }
          }
---- jdk/src/solaris/native/java/net/PlainSocketImpl.c	2011-01-20 18:54:41.000000000 -0500
-+++ jdk/src/solaris/native/java/net/PlainSocketImpl.c	2011-02-01 17:46:57.000000000 -0500
-@@ -528,9 +528,11 @@
+--- jdk/src/solaris/native/java/net/PlainSocketImpl.c	2011-02-28 11:06:49.000000000 -0500
++++ jdk/src/solaris/native/java/net/PlainSocketImpl.c	2011-03-03 15:31:37.000000000 -0500
+@@ -253,7 +253,12 @@
+                                            jboolean stream) {
+     jobject fdObj, ssObj;
+     int fd;
+-    int arg = -1;
++    int type = (stream ? SOCK_STREAM : SOCK_DGRAM);
++#ifdef AF_INET6
++    int domain = ipv6_available() ? AF_INET6 : AF_INET;
++#else
++    int domain = AF_INET;
++#endif
+ 
+     if (socketExceptionCls == NULL) {
+         jclass c = (*env)->FindClass(env, "java/net/SocketException");
+@@ -267,25 +272,29 @@
+         (*env)->ThrowNew(env, socketExceptionCls, "null fd object");
+         return;
+     }
+-#ifdef AF_INET6
+-    if (ipv6_available()) {
+-        fd = JVM_Socket(AF_INET6, (stream ? SOCK_STREAM: SOCK_DGRAM), 0);
+-    } else
+-#endif /* AF_INET6 */
+-        {
+-            fd = JVM_Socket(AF_INET, (stream ? SOCK_STREAM: SOCK_DGRAM), 0);
+-        }
+-    if (fd == JVM_IO_ERR) {
++
++    if ((fd = JVM_Socket(domain, type, 0)) == JVM_IO_ERR) {
+         /* note: if you run out of fds, you may not be able to load
+          * the exception class, and get a NoClassDefFoundError
+          * instead.
+          */
+         NET_ThrowNew(env, errno, "can't create socket");
+         return;
+-    } else {
+-        (*env)->SetIntField(env, fdObj, IO_fd_fdID, fd);
+     }
+ 
++#ifdef AF_INET6
++    /* Disable IPV6_V6ONLY to ensure dual-socket support */
++    if (domain == AF_INET6) {
++        int arg = 0;
++        if (setsockopt(fd, IPPROTO_IPV6, IPV6_V6ONLY, (char*)&arg,
++                       sizeof(int)) < 0) {
++            NET_ThrowNew(env, errno, "cannot set IPPROTO_IPV6");
++            close(fd);
++            return;
++        }
++    }
++#endif /* AF_INET6 */
++
+     /*
+      * If this is a server socket then enable SO_REUSEADDR
+      * automatically and set to non blocking.
+@@ -294,9 +303,15 @@
+     if (ssObj != NULL) {
+         int arg = 1;
+         SET_NONBLOCKING(fd);
+-        JVM_SetSockOpt(fd, SOL_SOCKET, SO_REUSEADDR, (char*)&arg,
+-            sizeof(arg));
++        if (JVM_SetSockOpt(fd, SOL_SOCKET, SO_REUSEADDR, (char*)&arg,
++                           sizeof(arg)) < 0) {
++            NET_ThrowNew(env, errno, "cannot set SO_REUSEADDR");
++            close(fd);
++            return;
++        }
+     }
++
++    (*env)->SetIntField(env, fdObj, IO_fd_fdID, fd);
+ }
+ 
+ /*
+@@ -528,9 +543,11 @@
          if (connect_rv == JVM_IO_INTR) {
              JNU_ThrowByName(env, JNU_JAVAIOPKG "InterruptedIOException",
                              "operation interrupted");
@@ -16442,8 +16577,8 @@
  
  /*
   * The fd table and the number of file descriptors
---- jdk/src/solaris/native/java/net/net_util_md.c	2011-01-20 18:54:41.000000000 -0500
-+++ jdk/src/solaris/native/java/net/net_util_md.c	2011-02-01 17:46:57.000000000 -0500
+--- jdk/src/solaris/native/java/net/net_util_md.c	2011-02-28 11:06:49.000000000 -0500
++++ jdk/src/solaris/native/java/net/net_util_md.c	2011-03-03 16:56:30.000000000 -0500
 @@ -34,6 +34,15 @@
  #include <stdlib.h>
  #include <dlfcn.h>
@@ -16475,6 +16610,15 @@
  jint  IPv6_supported()
  {
  #ifndef AF_INET6
+@@ -229,7 +246,7 @@
+     int fd;
+     void *ipv6_fn;
+     SOCKADDR sa;
+-    int sa_len = sizeof(sa);
++    socklen_t sa_len = sizeof(sa);
+ 
+     fd = JVM_Socket(AF_INET6, SOCK_STREAM, 0) ;
+     if (fd < 0) {
 @@ -355,6 +372,7 @@
      close(fd);
      return JNI_TRUE;
@@ -16494,6 +16638,15 @@
          /*
           * On Linux if we are connecting to a link-local address
           * we need to specify the interface in the scope_id (2.4 kernel only)
+@@ -1086,7 +1108,7 @@
+     }
+ #endif
+ 
+-    rv = getsockopt(fd, level, opt, result, len);
++    rv = getsockopt(fd, level, opt, result, (socklen_t)len);
+     if (rv < 0) {
+         return rv;
+     }
 @@ -1133,6 +1155,24 @@
  #define IPTOS_PREC_MASK 0xe0
  #endif
@@ -16530,7 +16683,7 @@
      /*
       * SOL_SOCKET/{SO_SNDBUF,SO_RCVBUF} - On Solaris need to
       * ensure that value is <= max_buf as otherwise we get
-@@ -1212,6 +1256,83 @@
+@@ -1212,6 +1256,84 @@
      }
  #endif
  
@@ -16583,7 +16736,8 @@
 +     * SO_REUSEPORT as well for that combination.
 +     */
 +    if (level == SOL_SOCKET && opt == SO_REUSEADDR) {
-+        int sotype, arglen;
++        int sotype;
++        socklen_t arglen;
 +
 +        arglen = sizeof(sotype);
 +        if (getsockopt(fd, SOL_SOCKET, SO_TYPE, (void *)&sotype, &arglen) < 0) {
@@ -18400,11 +18554,54 @@
 +#ifdef __cplusplus
 +}
 +#endif
---- jdk/src/solaris/native/sun/nio/ch/Net.c	2011-01-20 18:54:43.000000000 -0500
-+++ jdk/src/solaris/native/sun/nio/ch/Net.c	2011-02-01 17:46:57.000000000 -0500
-@@ -140,8 +140,31 @@
+--- jdk/src/solaris/native/sun/nio/ch/Net.c	2011-02-28 11:06:50.000000000 -0500
++++ jdk/src/solaris/native/sun/nio/ch/Net.c	2011-03-03 16:07:56.000000000 -0500
+@@ -60,17 +60,33 @@
+                             jboolean reuse)
+ {
+     int fd;
+-
++    int type = (stream ? SOCK_STREAM : SOCK_DGRAM);
+ #ifdef AF_INET6
+-    if (ipv6_available())
+-        fd = socket(AF_INET6, (stream ? SOCK_STREAM : SOCK_DGRAM), 0);
+-    else
+-#endif /* AF_INET6 */
+-        fd = socket(AF_INET, (stream ? SOCK_STREAM : SOCK_DGRAM), 0);
++    int domain = ipv6_available() ? AF_INET6 : AF_INET;
++#else
++    int domain = AF_INET;
++#endif
+ 
++    fd = socket(domain, type, 0);
+     if (fd < 0) {
+         return handleSocketError(env, errno);
+     }
++
++#ifdef AF_INET6
++    /* Disable IPV6_V6ONLY to ensure dual-socket support */
++    if (domain == AF_INET6) {
++        int arg = 0;
++        if (setsockopt(fd, IPPROTO_IPV6, IPV6_V6ONLY, (char*)&arg,
++                       sizeof(int)) < 0) {
++            JNU_ThrowByNameWithLastError(env,
++                                         JNU_JAVANETPKG "SocketException",
++                                         "sun.nio.ch.Net.setIntOption");
++            close(fd);
++            return -1;
++        }
++    }
++#endif
++
+     if (reuse) {
+         int arg = 1;
+         if (NET_SetSockOpt(fd, SOL_SOCKET, SO_REUSEADDR, (char*)&arg,
+@@ -138,10 +154,33 @@
+ Java_sun_nio_ch_Net_localPort(JNIEnv *env, jclass clazz, jobject fdo)
+ {
      SOCKADDR sa;
-     int sa_len = SOCKADDR_LEN;
+-    int sa_len = SOCKADDR_LEN;
++    socklen_t sa_len = SOCKADDR_LEN;
      if (getsockname(fdval(env, fdo), (struct sockaddr *)&sa, &sa_len) < 0) {
 +#ifdef _ALLBSD_SOURCE
 + /*
@@ -18434,8 +18631,12 @@
      }
      return NET_GetPortFromSockaddr((struct sockaddr *)&sa);
  }
-@@ -153,12 +176,76 @@
-     int sa_len = SOCKADDR_LEN;
+@@ -150,15 +189,79 @@
+ Java_sun_nio_ch_Net_localInetAddress(JNIEnv *env, jclass clazz, jobject fdo)
+ {
+     SOCKADDR sa;
+-    int sa_len = SOCKADDR_LEN;
++    socklen_t sa_len = SOCKADDR_LEN;
      int port;
      if (getsockname(fdval(env, fdo), (struct sockaddr *)&sa, &sa_len) < 0) {
 -        handleSocketError(env, errno);
@@ -18513,25 +18714,7 @@
  
  #ifdef NEEDED
  
-@@ -224,7 +311,7 @@
-     int result;
-     struct linger linger;
-     void *arg;
--    int arglen;
-+    socklen_t arglen;
- 
-     if (NET_MapSocketOption(opt, &klevel, &kopt) < 0) {
-         JNU_ThrowByNameWithLastError(env,
-@@ -262,7 +349,7 @@
-     int result;
-     struct linger linger;
-     void *parg;
--    int arglen;
-+    socklen_t arglen;
- 
-     if (NET_MapSocketOption(opt, &klevel, &kopt) < 0) {
-         JNU_ThrowByNameWithLastError(env,
-@@ -304,9 +391,11 @@
+@@ -304,9 +407,11 @@
      switch (errorValue) {
          case EINPROGRESS:       /* Non-blocking connect */
              return 0;
