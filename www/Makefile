@@ -1615,6 +1615,7 @@
     SUBDIR += rubygem-mechanize
     SUBDIR += rubygem-mongrel
     SUBDIR += rubygem-mongrel_cluster
+    SUBDIR += rubygem-multipart-post
     SUBDIR += rubygem-nicovideo
     SUBDIR += rubygem-passenger
     SUBDIR += rubygem-rack
