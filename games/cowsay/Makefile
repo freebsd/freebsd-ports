@@ -9,7 +9,7 @@ PORTNAME=	cowsay
 PORTVERSION=	3.03
 PORTREVISION=	1
 CATEGORIES=	games
-MASTER_SITES=	ftp://ftp.nog.net/pub/tony/cowsay/
+MASTER_SITES=	http://www.nog.net/~tony/warez/
 
 MAINTAINER=	wxs@FreeBSD.org
 COMMENT=	Configurable talking characters in ASCII art
