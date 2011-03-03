@@ -1,0 +1,9 @@
+Modules that provide OS-specific behaviors often need to know if the
+current operating system matches a more generic type of operating
+systems.  For example, 'linux' is a type of 'Unix' operating system and
+so is 'freebsd'.
+
+This module provides a mapping between an operating system name as given
+by $^O and a more generic type.
+
+WWW: http://search.cpan.org/dist/Perl-OSType/
