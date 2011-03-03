@@ -7,14 +7,12 @@
 
 PORTNAME=	tmux
 PORTVERSION=	1.4
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	sysutils
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	A Terminal Multiplexer
-
-LIB_DEPENDS=	event-1.4:${PORTSDIR}/devel/libevent
 
 HAS_CONFIGURE=	yes
 
@@ -29,13 +27,20 @@ CFLAGS+=	-I${LOCALBASE}/include
 #LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS+=	CFLAGS="${CFLAGS}" LDFLAGS="${LDFLAGS}"
 
-OPTIONS=		KQUEUE   "Build without define HAVE_BROKEN_KQUEUE " On
+OPTIONS=		KQUEUE   "Build without define HAVE_BROKEN_KQUEUE " On \
+			LIBEVENT_STATIC	"Build with static libevent" Off
 
 # Now I set tmux build without #define HAVE_BROKEN_KQUEUE as default and an option,
 # If it still hang the system or other run error, try as upstream suggest:
 # http://sourceforge.net/mailarchive/forum.php?thread_name=20110125092121.GA15934%40yelena.nicm.ath.cx&forum_name=tmux-users
 
 .include <bsd.port.pre.mk>
+
+.if defined(WITH_LIBEVENT_STATIC)
+BUILD_DEPENDS+=	${LOCALBASE}/lib/libevent.a:${PORTSDIR}/devel/libevent
+.else
+LIB_DEPENDS=	event-1.4:${PORTSDIR}/devel/libevent
+.endif
 
 .if !defined(WITHOUT_KQUEUE)
 .if ${OSVERSION} < 702104
@@ -50,6 +55,10 @@ EXTRA_PATCHES=	${PATCHDIR}/extra-patch-fb7
 post-patch:
 	@${REINPLACE_CMD} -e 's#/usr/local#${LOCALBASE}#g' \
 		${WRKSRC}/Makefile
+.if defined(WITH_LIBEVENT_STATIC)
+	@${REINPLACE_CMD} -e 's|-levent|${LOCALBASE}/lib/libevent.a|g' \
+		${WRKSRC}/configure
+.endif
 
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/tmux ${PREFIX}/bin
