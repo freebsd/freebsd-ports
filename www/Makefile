@@ -50,6 +50,7 @@
     SUBDIR += autoindex
     SUBDIR += autoindex2
     SUBDIR += awffull
+    SUBDIR += aws
     SUBDIR += awstats
     SUBDIR += axis
     SUBDIR += b2evolution

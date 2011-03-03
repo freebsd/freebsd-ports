@@ -1,0 +1,27 @@
+--- docs/makefile.orig	2010-12-21 00:43:52.000000000 +0100
++++ docs/makefile	2010-12-21 00:45:25.000000000 +0100
+@@ -122,10 +122,9 @@
+ 	echo AWS Documentation built with success.
+ 	${MAKE} -C ../templates_parser doc
+ 
+-aws_docs: aws.texi aws.pdf aws.html aws.txt aws.info
++aws_docs: aws.texi aws.html aws.txt aws.info
+ 
+-sg_docs: style-guide.pdf style-guide.html style-guide.txt \
+-	style-guide.info
++sg_docs: style-guide.html style-guide.txt style-guide.info
+ 
+ setup:
+ 
+@@ -209,11 +208,9 @@
+ aws.texi: gen_texi check_texi
+ 
+ install:
+-	-$(CP) aws.pdf $(I_DOC)
+ 	-$(CP) aws.html $(I_DOC)
+ 	-$(CP) aws.txt $(I_DOC)
+ 	-$(CP) aws*.info* $(I_DOC)
+-	-$(CP) ../templates_parser/docs/templates_parser.pdf $(I_DOC)
+ 	-$(CP) ../templates_parser/docs/templates_parser.html $(I_DOC)
+ 	-$(CP) ../templates_parser/docs/templates_parser.txt $(I_DOC)
+ 	-$(CP) ../templates_parser/docs/templates_parser.info* $(I_DOC)
