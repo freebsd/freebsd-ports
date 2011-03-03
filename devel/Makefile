@@ -3191,6 +3191,7 @@
     SUBDIR += rubygem-gettext
     SUBDIR += rubygem-git
     SUBDIR += rubygem-grit
+    SUBDIR += rubygem-hashie
     SUBDIR += rubygem-highline
     SUBDIR += rubygem-hoe
     SUBDIR += rubygem-holidays
