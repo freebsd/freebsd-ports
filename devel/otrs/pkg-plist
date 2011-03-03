@@ -8,6 +8,7 @@ otrs/bin/otrs.AddGroup.pl
 otrs/bin/otrs.AddQueue.pl
 otrs/bin/otrs.AddRole.pl
 otrs/bin/otrs.AddRole2Group.pl
+otrs/bin/otrs.AddSystemAddress.pl
 otrs/bin/otrs.AddTicketType.pl
 otrs/bin/otrs.AddUser.pl
 otrs/bin/otrs.AddUser2Group.pl
@@ -272,12 +273,14 @@ otrs/var/httpd/htdocs/js/test/Core.Config.UnitTest.js
 otrs/var/httpd/htdocs/js/test/Core.Data.UnitTest.js
 otrs/var/httpd/htdocs/js/test/Core.Debug.UnitTest.js
 otrs/var/httpd/htdocs/js/test/Core.Form.UnitTest.js
+otrs/var/httpd/htdocs/js/test/Core.Form.Validate.UnitTest.js
 otrs/var/httpd/htdocs/js/test/Core.JSON.UnitTest.js
 otrs/var/httpd/htdocs/js/test/Core.JavaScriptEnhancements.UnitTest.js
 otrs/var/httpd/htdocs/js/test/Core.UI.Accessibility.UnitTest.js
 otrs/var/httpd/htdocs/js/test/Core.UI.Popup.UnitTest.js
 otrs/var/httpd/htdocs/js/test/JSUnitTest.html
 otrs/var/httpd/htdocs/js/test/sample/Core.AJAX.ContentUpdate1.html
+otrs/var/httpd/htdocs/js/test/sample/Core.AJAX.EmptyResponse.html
 otrs/var/httpd/htdocs/js/test/sample/Core.AJAX.FunctionCall1.html
 otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/.htaccess
 otrs/var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/CHANGES.html
@@ -622,6 +625,7 @@ otrs/var/httpd/htdocs/skins/Agent/default/img/icons/plus-button.png
 otrs/var/httpd/htdocs/skins/Agent/default/img/icons/product.ico
 otrs/var/httpd/htdocs/skins/Agent/default/img/icons/redled-small.png
 otrs/var/httpd/htdocs/skins/Agent/default/img/icons/reload.png
+otrs/var/httpd/htdocs/skins/Agent/default/img/icons/screen.png
 otrs/var/httpd/htdocs/skins/Agent/default/img/icons/tick.png
 otrs/var/httpd/htdocs/skins/Agent/default/img/icons/trash-can.png
 otrs/var/httpd/htdocs/skins/Agent/default/img/icons/undo.png
@@ -999,6 +1003,7 @@ otrs/Kernel/Output/HTML/ArticleCheckPGP.pm
 otrs/Kernel/Output/HTML/ArticleCheckSMIME.pm
 otrs/Kernel/Output/HTML/ArticleComposeCrypt.pm
 otrs/Kernel/Output/HTML/ArticleComposeSign.pm
+otrs/Kernel/Output/HTML/CustomerHeaderMetaTicketSearch.pm
 otrs/Kernel/Output/HTML/CustomerNewTicketQueueSelectionGeneric.pm
 otrs/Kernel/Output/HTML/CustomerUserGeneric.pm
 otrs/Kernel/Output/HTML/CustomerUserGenericTicket.pm
