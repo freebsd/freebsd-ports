@@ -1,4 +1,4 @@
-lib/%%PYTHON_VERSION%%/site-packages/xlwt-0.7.2-py2.6.egg-info
+lib/%%PYTHON_VERSION%%/site-packages/xlwt-0.7.2-py%%PYTHON_VER%%.egg-info
 lib/%%PYTHON_VERSION%%/site-packages/xlwt/BIFFRecords.py
 lib/%%PYTHON_VERSION%%/site-packages/xlwt/BIFFRecords.pyc
 lib/%%PYTHON_VERSION%%/site-packages/xlwt/BIFFRecords.pyo
