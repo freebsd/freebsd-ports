@@ -21,6 +21,7 @@ libexec/rancid/f10rancid
 libexec/rancid/f5rancid
 libexec/rancid/flogin
 libexec/rancid/fnrancid
+libexec/rancid/fnlogin
 libexec/rancid/francid
 libexec/rancid/hlogin
 libexec/rancid/hpuifilter
