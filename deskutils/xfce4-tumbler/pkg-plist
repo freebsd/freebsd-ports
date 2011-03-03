@@ -1,0 +1,122 @@
+include/tumbler-1/tumbler/tumbler-abstract-thumbnailer.h
+include/tumbler-1/tumbler/tumbler-cache-plugin.h
+include/tumbler-1/tumbler/tumbler-cache.h
+include/tumbler-1/tumbler/tumbler-config.h
+include/tumbler-1/tumbler/tumbler-enum-types.h
+include/tumbler-1/tumbler/tumbler-error.h
+include/tumbler-1/tumbler/tumbler-file-info.h
+include/tumbler-1/tumbler/tumbler-glib-extensions.h
+include/tumbler-1/tumbler/tumbler-marshal.h
+include/tumbler-1/tumbler/tumbler-provider-factory.h
+include/tumbler-1/tumbler/tumbler-provider-plugin.h
+include/tumbler-1/tumbler/tumbler-thumbnail-flavor.h
+include/tumbler-1/tumbler/tumbler-thumbnail.h
+include/tumbler-1/tumbler/tumbler-thumbnailer-provider.h
+include/tumbler-1/tumbler/tumbler-thumbnailer.h
+include/tumbler-1/tumbler/tumbler-util.h
+include/tumbler-1/tumbler/tumbler.h
+lib/libtumbler-1.a
+lib/libtumbler-1.la
+lib/libtumbler-1.so
+lib/libtumbler-1.so.0
+lib/tumbler-1/plugins/cache/tumbler-cache-plugin.so
+lib/tumbler-1/plugins/cache/tumbler-xdg-cache.a
+lib/tumbler-1/plugins/cache/tumbler-xdg-cache.la
+lib/tumbler-1/plugins/cache/tumbler-xdg-cache.so
+%%FFMPEG%%lib/tumbler-1/plugins/tumbler-ffmpeg-thumbnailer.a
+%%FFMPEG%%lib/tumbler-1/plugins/tumbler-ffmpeg-thumbnailer.la
+%%FFMPEG%%lib/tumbler-1/plugins/tumbler-ffmpeg-thumbnailer.so
+%%FONTS%%lib/tumbler-1/plugins/tumbler-font-thumbnailer.a
+%%FONTS%%lib/tumbler-1/plugins/tumbler-font-thumbnailer.la
+%%FONTS%%lib/tumbler-1/plugins/tumbler-font-thumbnailer.so
+%%JPEG%%lib/tumbler-1/plugins/tumbler-jpeg-thumbnailer.a
+%%JPEG%%lib/tumbler-1/plugins/tumbler-jpeg-thumbnailer.la
+%%JPEG%%lib/tumbler-1/plugins/tumbler-jpeg-thumbnailer.so
+%%PIXBUF%%lib/tumbler-1/plugins/tumbler-pixbuf-thumbnailer.a
+%%PIXBUF%%lib/tumbler-1/plugins/tumbler-pixbuf-thumbnailer.la
+%%PIXBUF%%lib/tumbler-1/plugins/tumbler-pixbuf-thumbnailer.so
+%%POPPLER%%lib/tumbler-1/plugins/tumbler-poppler-thumbnailer.a
+%%POPPLER%%lib/tumbler-1/plugins/tumbler-poppler-thumbnailer.la
+%%POPPLER%%lib/tumbler-1/plugins/tumbler-poppler-thumbnailer.so
+lib/tumbler-1/tumblerd
+libdata/pkgconfig/tumbler-1.pc
+share/dbus-1/services/org.xfce.Tumbler.Cache1.service
+share/dbus-1/services/org.xfce.Tumbler.Manager1.service
+share/dbus-1/services/org.xfce.Tumbler.Thumbnailer1.service
+%%APIDOCS%%share/gtk-doc/html/tumbler/TumblerAbstractThumbnailer.html
+%%APIDOCS%%share/gtk-doc/html/tumbler/TumblerCache.html
+%%APIDOCS%%share/gtk-doc/html/tumbler/TumblerThumbnail.html
+%%APIDOCS%%share/gtk-doc/html/tumbler/TumblerThumbnailerProvider.html
+%%APIDOCS%%share/gtk-doc/html/tumbler/api-index-full.html
+%%APIDOCS%%share/gtk-doc/html/tumbler/extension-api.html
+%%APIDOCS%%share/gtk-doc/html/tumbler/extension-tutorial.html
+%%APIDOCS%%share/gtk-doc/html/tumbler/home.png
+%%APIDOCS%%share/gtk-doc/html/tumbler/index.html
+%%APIDOCS%%share/gtk-doc/html/tumbler/index.sgml
+%%APIDOCS%%share/gtk-doc/html/tumbler/left.png
+%%APIDOCS%%share/gtk-doc/html/tumbler/miscellaneous.html
+%%APIDOCS%%share/gtk-doc/html/tumbler/object-tree.html
+%%APIDOCS%%share/gtk-doc/html/tumbler/pt01.html
+%%APIDOCS%%share/gtk-doc/html/tumbler/right.png
+%%APIDOCS%%share/gtk-doc/html/tumbler/style.css
+%%APIDOCS%%share/gtk-doc/html/tumbler/thumbnails.html
+%%APIDOCS%%share/gtk-doc/html/tumbler/tumbler-Error-Domain-and-Types.html
+%%APIDOCS%%share/gtk-doc/html/tumbler/tumbler-Various-Enumeration-Types.html
+%%APIDOCS%%share/gtk-doc/html/tumbler/tumbler-Version-Information-and-Compatibility-Checks.html
+%%APIDOCS%%share/gtk-doc/html/tumbler/tumbler-tumbler-file-info.html
+%%APIDOCS%%share/gtk-doc/html/tumbler/tumbler-tumbler-provider-factory.html
+%%APIDOCS%%share/gtk-doc/html/tumbler/tumbler-tumbler-provider-plugin.html
+%%APIDOCS%%share/gtk-doc/html/tumbler/tumbler.devhelp
+%%APIDOCS%%share/gtk-doc/html/tumbler/tumbler.devhelp2
+%%APIDOCS%%share/gtk-doc/html/tumbler/up.png
+%%NLS%%share/locale/ast/LC_MESSAGES/tumbler.mo
+%%NLS%%share/locale/bn/LC_MESSAGES/tumbler.mo
+%%NLS%%share/locale/ca/LC_MESSAGES/tumbler.mo
+%%NLS%%share/locale/da/LC_MESSAGES/tumbler.mo
+%%NLS%%share/locale/de/LC_MESSAGES/tumbler.mo
+%%NLS%%share/locale/en_GB/LC_MESSAGES/tumbler.mo
+%%NLS%%share/locale/eu/LC_MESSAGES/tumbler.mo
+%%NLS%%share/locale/fi/LC_MESSAGES/tumbler.mo
+%%NLS%%share/locale/fr/LC_MESSAGES/tumbler.mo
+%%NLS%%share/locale/gl/LC_MESSAGES/tumbler.mo
+%%NLS%%share/locale/hu/LC_MESSAGES/tumbler.mo
+%%NLS%%share/locale/id/LC_MESSAGES/tumbler.mo
+%%NLS%%share/locale/it/LC_MESSAGES/tumbler.mo
+%%NLS%%share/locale/ja/LC_MESSAGES/tumbler.mo
+%%NLS%%share/locale/kk/LC_MESSAGES/tumbler.mo
+%%NLS%%share/locale/lv/LC_MESSAGES/tumbler.mo
+%%NLS%%share/locale/pa/LC_MESSAGES/tumbler.mo
+%%NLS%%share/locale/pt/LC_MESSAGES/tumbler.mo
+%%NLS%%share/locale/pt_BR/LC_MESSAGES/tumbler.mo
+%%NLS%%share/locale/ru/LC_MESSAGES/tumbler.mo
+%%NLS%%share/locale/si/LC_MESSAGES/tumbler.mo
+%%NLS%%share/locale/sv/LC_MESSAGES/tumbler.mo
+%%NLS%%share/locale/tr/LC_MESSAGES/tumbler.mo
+%%NLS%%share/locale/ug/LC_MESSAGES/tumbler.mo
+%%NLS%%share/locale/uk/LC_MESSAGES/tumbler.mo
+%%NLS%%share/locale/zh_CN/LC_MESSAGES/tumbler.mo
+%%NLS%%share/locale/zh_TW/LC_MESSAGES/tumbler.mo
+%%NLS%%share/locale/ar/LC_MESSAGES/tumbler.mo
+%%NLS%%share/locale/cs/LC_MESSAGES/tumbler.mo
+%%NLS%%share/locale/el/LC_MESSAGES/tumbler.mo
+%%NLS%%share/locale/he/LC_MESSAGES/tumbler.mo
+%%NLS%%share/locale/nb/LC_MESSAGES/tumbler.mo
+%%NLS%%share/locale/pl/LC_MESSAGES/tumbler.mo
+%%NLS%%share/locale/ro/LC_MESSAGES/tumbler.mo
+%%NLS%%share/locale/ro/LC_MESSAGES/tumbler.mo
+%%NLS%%@dirrmtry share/locale/ug/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/ug
+%%NLS%%@dirrmtry share/locale/si/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/si
+%%NLS%%@dirrmtry share/locale/kk/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/kk
+%%NLS%%@dirrmtry share/locale/ast/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/ast
+%%APIDOCS%%@dirrm share/gtk-doc/html/tumbler
+%%APIDOCS%%@dirrmtry share/gtk-doc/html
+%%APIDOCS%%@dirrmtry share/gtk-doc
+@dirrm lib/tumbler-1/plugins/cache
+@dirrm lib/tumbler-1/plugins
+@dirrm lib/tumbler-1
+@dirrm include/tumbler-1/tumbler
+@dirrm include/tumbler-1
