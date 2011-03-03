@@ -133,8 +133,10 @@ MASTER_SITE_COMP_SOURCES+=	\
 MASTER_SITE_CRITICAL+=	\
 	http://critical.ch/distfiles/%SUBDIR%/ \
 	http://energy.critical.ch/distfiles/%SUBDIR%/ \
-	http://sauerkraut.critical.ch/distfiles/%SUBDIR%/ \
-	http://snow.critical.ch/distfiles/%SUBDIR%/
+	http://snow.critical.ch/distfiles/%SUBDIR%/ \
+	http://www.bluestop.org/distfiles/%SUBDIR%/ \
+	http://fneu.fr/distfiles/%SUBDIR%/ \
+	ftp://saper.info/pub/FreeBSD/distfiles/%SUBDIR%/
 .endif
 
 .if !defined(IGNORE_MASTER_SITE_CSME)
