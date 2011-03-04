@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	sqlite3
-PORTVERSION=	3.7.4
+PORTVERSION=	3.7.5
 CATEGORIES=	databases
 MASTER_SITES=	http://www.sqlite.org/ http://www2.sqlite.org/
-DISTNAME=	sqlite-src-3070400
+DISTNAME=	sqlite-src-3070500
 
 MAINTAINER=	pavelivolkov@googlemail.com
 COMMENT=	An SQL database engine in a C library
@@ -39,7 +39,7 @@ RAMTABLE?=	yes
 # Compilation Options For SQLite http://www.sqlite.org/compile.html
 OPTIONS=	\
 		FTS3		"Enable FTS3/4 (Full Text Search) module" on \
-		ICU		"Enable built with \"ICU\""		off \
+		ICU		"Enable built with ICU"			off \
 		RTREE		"Enable R*Tree module"			off \
 		RAMTABLE	"Store temporary tables in RAM = ${RAMTABLE}" off \
 		UPD_DEL_LIMIT	"ORDER BY and LIMIT on UPDATE and DELETE" off \
@@ -52,8 +52,6 @@ OPTIONS=	\
 		THREADSAFE	"Build thread-safe library"		on \
 		EXTENSION	"Allow loadable extensions"		on \
 		TCLWRAPPER	"Enable TCL wrapper"			off \
-		DEBUG		"Enable debugging & verbose explain"	off \
-		GCOV		"Enable coverage testing using gcov (broken)"	off \
 
 .include <bsd.port.options.mk>
 
@@ -70,15 +68,39 @@ MAN1=		sqlite3.1
 EXTRA_PATCHES+=		${FILESDIR}/pthread_equal_stub
 .endif
 
+#		DEBUG	"Enable debugging & verbose explain"	off \
+# This options used only for debug and is not required during normal work
+# applications or its libraries.
+#    This options can be specified on the command line.
+# Execute: make -D WITH_DEBUG ...
 .if defined(WITH_DEBUG)
 CONFIGURE_ARGS+=	--enable-debug
 CFLAGS+=		-Wall
 .endif
 
+#		GCOV	"Enable coverage testing using gcov/gprof"	off \
+# These options are only used for debugging, profiling the application.
+# And can cause errors when using the application or its libraries in other
+# products (for example build security/nss is BROKEN).
+#    This options can be specified on the command line.
+# Execute: make -D WITH_GCOV ...
 .if defined(WITH_GCOV)
-BROKEN=	WITH_GCOV breaks security/nss
 CONFIGURE_ARGS+=	--enable-gcov
 LDFLAGS+=		-fstack-protector
+.endif
+
+#    By default, the sqlite3_step() interface will automatically invoke
+# sqlite3_reset() to reset the prepared statement if necessary. This
+# compile-time option changes that behavior so that sqlite3_step() will
+# return SQLITE_MISUSE if it called again after returning anything other
+# than SQLITE_ROW, SQLITE_BUSY, or SQLITE_LOCKED unless there was an
+# intervening call to sqlite3_reset().
+#    A detailed description of this option, the compile can be found here:
+# http://www.sqlite.org/compile.html#omit_autoreset
+#    This options can be specified on the command line.
+# Execute: make -D WITH_OMIT_AUTORESET ...
+.if defined(WITH_OMIT_AUTORESET)
+CFLAGS+=		-DSQLITE_OMIT_AUTORESET=1
 .endif
 
 # This macro sets the default size of the page-cache for temporary files
@@ -167,7 +189,7 @@ MAKE_ENV+=		CPPFLAGS="-I. -I./src ${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 
 .include <bsd.port.pre.mk>
 
-.if ${TCL_VER} > 8.4
+.if defined(TCL_VER) && ${TCL_VER} > 8.4
 BUILD_DEPENDS+=		${LOCALBASE}/lib/tcl8/${TCL_VER}:${PORTSDIR}/lang/tcl-modules
 .if defined(WITH_TCLWRAPPER)
 RUN_DEPENDS+=		${LOCALBASE}/lib/tcl8/${TCL_VER}:${PORTSDIR}/lang/tcl-modules
@@ -181,10 +203,13 @@ RUN_DEPENDS+=		${LOCALBASE}/lib/tcl8/${TCL_VER}:${PORTSDIR}/lang/tcl-modules
 .ifndef TESTUSER
 IGNORE=	set the value of the variable TESTUSER corresponding normal (not root) user, from which will be tested
 .endif
+.ifndef WITH_TCLWRAPPER
+IGNORE=	for the purpose of test you want to include TCL wrapper
+.endif
 .endif
 
 test: build
-	@(cd ${WRKSRC} && ${CHOWN} ${TESTUSER} ${WRKSRC} && su ${TESTUSER} -c "${MAKE} test"; ${CHOWN} ${USER} ${WRKSRC})
+	@(cd ${WRKSRC} && ${CHOWN} -R ${TESTUSER} ${WRKSRC} && su ${TESTUSER} -c "${MAKE} test"; ${CHOWN} ${USER} ${WRKSRC})
 
 post-build:
 	@${ECHO_CMD}
