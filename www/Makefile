@@ -1241,7 +1241,7 @@
     SUBDIR += p5-WWW-Babelfish
     SUBDIR += p5-WWW-Baseball-NPB
     SUBDIR += p5-WWW-Comic
-    SUBDIR += p5-WWW-Contact   
+    SUBDIR += p5-WWW-Contact
     SUBDIR += p5-WWW-Curl
     SUBDIR += p5-WWW-DHL
     SUBDIR += p5-WWW-Dilbert
