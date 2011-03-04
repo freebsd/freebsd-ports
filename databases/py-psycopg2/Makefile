@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	psycopg2
-PORTVERSION=	2.3.2
-PORTREVISION=	1
+PORTVERSION=	2.4
 CATEGORIES=	databases python
-MASTER_SITES=	http://initd.org/psycopg/tarballs/ \
+MASTER_SITES=	http://initd.org/psycopg/tarballs/PSYCOPG-2-4/ \
 		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	miwi
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -29,7 +28,7 @@ EXAMPLES=	binary.py copy_from.py copy_to.py cursor.py dialtone.py \
 		mogrify.py myfirstrecipe.py notify.py simple.py somehackers.jpg \
 		threads.py typecast.py tz.py usercast.py whereareyou.jpg
 
-DOCS=		AUTHORS ChangeLog INSTALL README PKG-INFO
+DOCS=		AUTHORS ChangeLog INSTALL README NEWS PKG-INFO
 
 post-install:
 .if !defined(NOPORTEXAMPLES)
