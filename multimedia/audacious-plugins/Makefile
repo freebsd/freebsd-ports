@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	audacious-plugins
-PORTVERSION=	2.4.3
+PORTVERSION=	2.4.4
 CATEGORIES=	multimedia audio
 MASTER_SITES=	http://distfiles.atheme.org/
 EXTRACT_SUFX=	.tgz
