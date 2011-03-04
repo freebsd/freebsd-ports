@@ -1,0 +1,5 @@
+%%SITE_PERL%%/Test/EOL.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/EOL/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/EOL
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test
+@dirrmtry %%SITE_PERL%%/Test
