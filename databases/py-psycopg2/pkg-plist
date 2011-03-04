@@ -71,6 +71,9 @@
 %%PYTHON_SITELIBDIR%%/psycopg2/tests/test_transaction.py
 %%PYTHON_SITELIBDIR%%/psycopg2/tests/test_transaction.pyc
 %%PYTHON_SITELIBDIR%%/psycopg2/tests/test_transaction.pyo
+%%PYTHON_SITELIBDIR%%/psycopg2/tests/testconfig.py
+%%PYTHON_SITELIBDIR%%/psycopg2/tests/testconfig.pyc
+%%PYTHON_SITELIBDIR%%/psycopg2/tests/testconfig.pyo
 %%PYTHON_SITELIBDIR%%/psycopg2/tests/testutils.py
 %%PYTHON_SITELIBDIR%%/psycopg2/tests/testutils.pyc
 %%PYTHON_SITELIBDIR%%/psycopg2/tests/testutils.pyo
@@ -88,6 +91,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/INSTALL
 %%PORTDOCS%%%%DOCSDIR%%/PKG-INFO
 %%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/binary.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/copy_from.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/copy_to.py
