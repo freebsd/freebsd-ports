@@ -18,6 +18,7 @@
     SUBDIR += c-ares
     SUBDIR += checkdns
     SUBDIR += crossip
+    SUBDIR += curvedns
     SUBDIR += ddclient
     SUBDIR += dhid
     SUBDIR += dhisd

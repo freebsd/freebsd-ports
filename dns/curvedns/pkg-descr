@@ -1,0 +1,5 @@
+CurveDNS is a forwarding nameserver adding DNSCurve to DNS,
+and it's the first publicly released forwarding implementation
+that implements the DNSCurve protocol.
+
+WWW:    http://curvedns.on2it.net/

@@ -1,0 +1,25 @@
+#!/bin/sh
+# $FreeBSD$
+
+if ! pw groupshow %%CURVE_GROUP%% 2>/dev/null 1>&2; then
+	if pw groupadd %%CURVE_GROUP%% -g %%CURVE_GID%%; then
+		echo "Added group %%CURVE_GROUP%%"
+	else
+		echo "Adding group %%CURVE_GROUP%% failed..."
+		exit 1
+	fi
+fi
+
+if ! pw usershow %%CURVE_USER%% 2>/dev/null 1>&2; then
+	if pw useradd %%CURVE_USER%% -u %%CURVE_UID%% -g %%CURVE_GROUP%% -h - \
+		-s "/usr/sbin/nologin" -d "/" \
+		-c "Bind Sandbox"; \
+	then
+		echo "Added user %%CURVE_USER%%"
+	else
+		echo "Adding user %%CURVE_USER%% failed..."
+		exit 1
+	fi
+fi
+
+exit 0
