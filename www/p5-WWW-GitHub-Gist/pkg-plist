@@ -1,4 +1,4 @@
-bin/gist.pl
+bin/gist
 %%SITE_PERL%%/WWW/GitHub/Gist.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/GitHub/Gist/.packlist
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/GitHub/Gist
