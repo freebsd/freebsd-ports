@@ -1,0 +1,5 @@
+Faraday
+
+Modular HTTP client library using middleware heavily inspired by Rack.
+
+WWW: http://github.com/technoweenie/faraday
