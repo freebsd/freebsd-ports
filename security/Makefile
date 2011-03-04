@@ -364,7 +364,7 @@
     SUBDIR += osslsigncode
     SUBDIR += outguess
     SUBDIR += p5-Apache-Htpasswd
-    SUBDIR += p5-Auth-YubikeyDecrypter 
+    SUBDIR += p5-Auth-YubikeyDecrypter
     SUBDIR += p5-AuthCAS
     SUBDIR += p5-Authen-Bitcard
     SUBDIR += p5-Authen-Captcha
