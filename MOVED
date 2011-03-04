@@ -1384,6 +1384,7 @@ devel/gir-repository-libsoup|devel/libsoup|2010-11-20|merged into libsoup
 x11-toolkits/gir-repository-gtksourceview2|x11-toolkits/gtksourceview2|2010-11-20|merged into gtksourceview2
 security/gir-repository-gnome-keyring||2010-11-20|Not buildable
 devel/gir-repository-dbus|devel/gobject-introspection|2010-11-20|merged into gobject-introspection
+net/asterisk-addons|net/asterisk14-addons|2010-11-22|Renamed via repocopy
 devel/gdb6|devel/gdb66|2010-11-24|Directory renamed
 net-p2p/eiskaltdc|net-p2p/eiskaltdcpp-qt|2010-11-26|GUI ports separated
 japanese/uim-canna|textproc/uim|2010-11-26|integrated into textproc/uim
