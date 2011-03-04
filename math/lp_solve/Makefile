@@ -19,6 +19,10 @@ WRKSRC=		${WRKDIR}/${PORTNAME}_${PORTVERSION:R:R}
 
 USE_LDCONFIG=	yes
 
+.if defined(TMPDIR)
+BUILDENV=	${ENV} TMPDIR="${TMPDIR}"
+.endif
+
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "i386"
@@ -39,9 +43,9 @@ post-patch:
 		 s|-ldl||g"
 
 do-build:
-	cd ${WRKSRC}/lp_solve  ; ${SH} -x ccc
-	cd ${WRKSRC}/demo      ; ${SH} -x ccc
-	cd ${WRKSRC}/lpsolve55 ; ${SH} -x ccc
+	cd ${WRKSRC}/lp_solve  ; ${BUILDENV} ${SH} -x ccc
+	cd ${WRKSRC}/demo      ; ${BUILDENV} ${SH} -x ccc
+	cd ${WRKSRC}/lpsolve55 ; ${BUILDENV} ${SH} -x ccc
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/lp_solve/bin/${LPSOLVE_ARCH}/lp_solve ${PREFIX}/bin
