@@ -8,7 +8,7 @@
 
 PORTNAME=	PDL
 PORTVERSION=	2.4.4
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	math perl5
 MASTER_SITES=	CPAN/${PORTNAME}:cpan \
 		SF/pdl/PDL/${PORTVERSION}:sf
@@ -24,7 +24,7 @@ BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/PGPLOT.pm:${PORTSDIR}/graphics/pgperl \
 		${SITE_PERL}/Astro/FITS/Header.pm:${PORTSDIR}/astro/p5-Astro-FITS-Header \
 		${SITE_PERL}/${PERL_ARCH}/PGPLOT.pm:${PORTSDIR}/graphics/pgperl \
 		${SITE_PERL}/Term/ReadLine/readline.pm:${PORTSDIR}/devel/p5-ReadLine-Perl
-LIB_DEPENDS=	plplotd.9:${PORTSDIR}/math/plplot \
+LIB_DEPENDS=	plplotd.10:${PORTSDIR}/math/plplot \
 		fftw.2:${PORTSDIR}/math/fftw \
 		gsl.15:${PORTSDIR}/math/gsl
 RUN_DEPENDS=	${BUILD_DEPENDS}
