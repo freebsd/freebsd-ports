@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	homebank
-PORTVERSION=	4.3
+PORTVERSION=	4.4
 CATEGORIES=	finance
 MASTER_SITES=	http://homebank.free.fr/public/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	c0rn@o2.pl
 COMMENT=	Manage your personal accounts at home
 
 LICENSE=	GPLv2
