@@ -134,6 +134,7 @@ MASTER_SITE_CRITICAL+=	\
 	http://critical.ch/distfiles/%SUBDIR%/ \
 	http://energy.critical.ch/distfiles/%SUBDIR%/ \
 	http://snow.critical.ch/distfiles/%SUBDIR%/ \
+	http://sauerkraut.critical.ch/distfiles/%SUBDIR%/ \
 	http://www.bluestop.org/distfiles/%SUBDIR%/ \
 	http://fneu.fr/distfiles/%SUBDIR%/
 .endif
