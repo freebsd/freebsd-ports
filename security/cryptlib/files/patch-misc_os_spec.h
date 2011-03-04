@@ -1,6 +1,6 @@
---- misc/os_spec.h.orig	Fri Jul 14 08:31:41 2006
-+++ misc/os_spec.h	Fri Jul 14 08:31:18 2006
-@@ -481,7 +481,7 @@
+--- misc/os_spec.h.orig	2010-10-13 23:58:52.000000000 +0200
++++ misc/os_spec.h	2011-03-04 15:31:57.000000000 +0100
+@@ -601,7 +601,7 @@ typedef unsigned char		BYTE;
  
  #if defined( __WINDOWS__ ) || \
  	( defined( __UNIX__ ) && \

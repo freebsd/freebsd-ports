@@ -1,11 +1,11 @@
---- makefile.orig	Sat Jan 27 22:14:40 2007
-+++ makefile	Fri Mar 30 14:40:47 2007
-@@ -1340,7 +1340,7 @@
+--- makefile.orig	2010-11-19 04:08:54.000000000 +0100
++++ makefile	2011-03-04 15:30:09.000000000 +0100
+@@ -1651,7 +1651,7 @@ FreeBSD:
  	@if uname -m | grep "i[3,4,5,6]86" > /dev/null; then \
  		./tools/buildasm.sh $(AS) $(OBJPATH) ; \
  		make $(DEFINES) EXTRAOBJS="$(ASMOBJS)" CFLAGS="$(CFLAGS) -DUSE_ASM \
--			-fomit-frame-pointer -O3 -pthread" ; \
+-			-fomit-frame-pointer -pthread" ; \
 +			%%CFLAGS%% %%PTHREAD_CFLAGS%%" ; \
  	else \
- 		make $(DEFINES) EXTRAOBJS="$(ASMOBJS)" CFLAGS="$(CFLAGS) -DUSE_ASM \
- 			-fomit-frame-pointer -O3 -pthread" ; \
+ 		make $(DEFINES) CFLAGS="$(CFLAGS) -fomit-frame-pointer -pthread" ; \
+ 	fi

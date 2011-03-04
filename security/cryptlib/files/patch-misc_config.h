@@ -1,6 +1,6 @@
---- misc/config.h.orig	Fri Jul 14 08:18:03 2006
-+++ misc/config.h	Fri Jul 14 08:19:19 2006
-@@ -168,6 +168,7 @@
+--- misc/config.h.orig	2010-12-21 02:29:54.000000000 +0100
++++ misc/config.h	2011-03-04 15:31:57.000000000 +0100
+@@ -287,6 +287,7 @@
  
  /* General device usage */
  
