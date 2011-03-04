@@ -17,7 +17,7 @@ COMMENT=	Python Specializing Compiler
 
 ONLY_FOR_ARCHS=	i386
 
-USE_PYTHON=	yes
+USE_PYTHON=	25-26
 USE_PYDISTUTILS=yes
 
 WRKSRC=		${WRKDIR}/psyco-${PORTVERSION}
