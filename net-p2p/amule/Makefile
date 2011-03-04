@@ -7,6 +7,7 @@
 
 PORTNAME=	amule
 PORTVERSION=	2.2.6
+PORTREVISION=	1
 CATEGORIES=	net-p2p
 MASTER_SITES=	SF/${PORTNAME}/aMule/${PORTVERSION}
 DISTNAME=	aMule-${PORTVERSION}
@@ -149,7 +150,7 @@ PLIST_SUB+=		MONOLITHIC="@comment "
 .endif
 
 .if !defined(WITHOUT_UPNP)
-LIB_DEPENDS+=		upnp.4:${PORTSDIR}/devel/upnp
+LIB_DEPENDS+=		upnp.6:${PORTSDIR}/devel/upnp
 .else
 CONFIGURE_ARGS+=	--disable-upnp
 .endif
