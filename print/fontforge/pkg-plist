@@ -12,7 +12,7 @@ include/fontforge/bitmapcontrol.h
 include/fontforge/chardata.h
 include/fontforge/charset.h
 include/fontforge/config.h
-include/fontforge/configure-pfaedit.h
+include/fontforge/configure-fontforge.h
 include/fontforge/delta.h
 include/fontforge/dynamic.h
 include/fontforge/edgelist.h
@@ -21,6 +21,7 @@ include/fontforge/encoding.h
 include/fontforge/fffreetype.h
 include/fontforge/ffpython.h
 include/fontforge/fileutil.h
+include/fontforge/fontforge.h
 include/fontforge/fontforgevw.h
 include/fontforge/fvmetrics.h
 include/fontforge/gdraw.h
@@ -44,7 +45,6 @@ include/fontforge/mm.h
 include/fontforge/namehash.h
 include/fontforge/nonlineartrans.h
 include/fontforge/ofl.h
-include/fontforge/pfaedit.h
 include/fontforge/plugins.h
 include/fontforge/print.h
 include/fontforge/psfont.h
@@ -411,7 +411,6 @@ libdata/pkgconfig/fontforge.pc
 %%PORTDOCS%%%%DOCSDIR%%/eItalic.png
 %%PORTDOCS%%%%DOCSDIR%%/editcvt.png
 %%PORTDOCS%%%%DOCSDIR%%/editexample-fr.html
-%%PORTDOCS%%%%DOCSDIR%%/editexample-full.html
 %%PORTDOCS%%%%DOCSDIR%%/editexample.html
 %%PORTDOCS%%%%DOCSDIR%%/editexample2.html
 %%PORTDOCS%%%%DOCSDIR%%/editexample3.html
@@ -693,6 +692,7 @@ libdata/pkgconfig/fontforge.pc
 %%PORTDOCS%%%%DOCSDIR%%/prefs-script.png
 %%PORTDOCS%%%%DOCSDIR%%/prefs-sync.png
 %%PORTDOCS%%%%DOCSDIR%%/prefs-tt.png
+%%PORTDOCS%%%%DOCSDIR%%/prefs-ttinstrs.png
 %%PORTDOCS%%%%DOCSDIR%%/prefs.html
 %%PORTDOCS%%%%DOCSDIR%%/privatekey.png
 %%PORTDOCS%%%%DOCSDIR%%/privatekeymenu.png
@@ -986,7 +986,7 @@ share/locale/es/LC_MESSAGES/FontForge.mo
 share/locale/fr/LC_MESSAGES/FontForge.mo
 share/locale/it/LC_MESSAGES/FontForge.mo
 share/locale/ja/LC_MESSAGES/FontForge.mo
-share/locale/mal/LC_MESSAGES/FontForge.mo
+share/locale/ml/LC_MESSAGES/FontForge.mo
 share/locale/pl/LC_MESSAGES/FontForge.mo
 share/locale/ru/LC_MESSAGES/FontForge.mo
 share/locale/uk/LC_MESSAGES/FontForge.mo
