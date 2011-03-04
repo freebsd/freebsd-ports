@@ -20,6 +20,7 @@
     SUBDIR += cyberbit-ttfonts
     SUBDIR += cyr-rfx
     SUBDIR += dejavu
+    SUBDIR += doulos
     SUBDIR += droid-fonts-ttf
     SUBDIR += ecofont
     SUBDIR += encodings
