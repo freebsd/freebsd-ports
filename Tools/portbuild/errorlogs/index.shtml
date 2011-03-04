@@ -729,7 +729,7 @@ fault.  Linimon is trying to figure out this problem.</dd>
 <dd>This port needs to catch up with the <tt>utmp_x.h</tt> changes in src.</dd>
 
 <dt><img alt="(uncommon)" src="/errorlogs/images/purple-ball.gif"><a name=
-"wrkdir">WRKDIR</a></dt>
+"wrkdir">WRKDIR</a><a name="WRKDIR"></a></dt>
 
 <dd>The port is attempting to change something outside
 <tt>${WRKDIR}</tt>. See <a href=
