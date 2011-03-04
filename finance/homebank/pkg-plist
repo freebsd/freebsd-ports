@@ -17,6 +17,8 @@ share/applications/homebank.desktop
 %%DATADIR%%/help/00new4.0.html
 %%DATADIR%%/help/00new4.1.html
 %%DATADIR%%/help/00new4.2.html
+%%DATADIR%%/help/00new4.3.html
+%%DATADIR%%/help/00new4.4.html
 %%DATADIR%%/help/02balance.html
 %%DATADIR%%/help/02concepts.html
 %%DATADIR%%/help/02intro.html
@@ -134,11 +136,11 @@ share/applications/homebank.desktop
 %%DATADIR%%/icons/hicolor/16x16/actions/hb-ope-show.png
 %%DATADIR%%/icons/hicolor/16x16/actions/hb-ope-valid.png
 %%DATADIR%%/icons/hicolor/16x16/actions/hb-payee.png
+%%DATADIR%%/icons/hicolor/16x16/actions/hb-rep-balance.png
 %%DATADIR%%/icons/hicolor/16x16/actions/hb-rep-budget.png
-%%DATADIR%%/icons/hicolor/16x16/actions/hb-rep-car.png
-%%DATADIR%%/icons/hicolor/16x16/actions/hb-rep-over.png
 %%DATADIR%%/icons/hicolor/16x16/actions/hb-rep-stats.png
 %%DATADIR%%/icons/hicolor/16x16/actions/hb-rep-time.png
+%%DATADIR%%/icons/hicolor/16x16/actions/hb-rep-vehicle.png
 %%DATADIR%%/icons/hicolor/16x16/actions/lpi-help.png
 %%DATADIR%%/icons/hicolor/16x16/status/pm-cash.png
 %%DATADIR%%/icons/hicolor/16x16/status/pm-ccard.png
@@ -171,11 +173,11 @@ share/applications/homebank.desktop
 %%DATADIR%%/icons/hicolor/22x22/actions/hb-ope-valid.png
 %%DATADIR%%/icons/hicolor/22x22/actions/hb-payee.png
 %%DATADIR%%/icons/hicolor/22x22/actions/hb-rate.png
+%%DATADIR%%/icons/hicolor/22x22/actions/hb-rep-balance.png
 %%DATADIR%%/icons/hicolor/22x22/actions/hb-rep-budget.png
-%%DATADIR%%/icons/hicolor/22x22/actions/hb-rep-car.png
-%%DATADIR%%/icons/hicolor/22x22/actions/hb-rep-over.png
 %%DATADIR%%/icons/hicolor/22x22/actions/hb-rep-stats.png
 %%DATADIR%%/icons/hicolor/22x22/actions/hb-rep-time.png
+%%DATADIR%%/icons/hicolor/22x22/actions/hb-rep-vehicle.png
 %%DATADIR%%/icons/hicolor/22x22/actions/hb-view-bar.png
 %%DATADIR%%/icons/hicolor/22x22/actions/hb-view-line.png
 %%DATADIR%%/icons/hicolor/22x22/actions/hb-view-list.png
