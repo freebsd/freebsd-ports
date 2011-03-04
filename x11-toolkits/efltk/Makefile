@@ -40,8 +40,8 @@ USE_XORG=	x11 xext
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 800501
-BROKEN=		does not build
+.if ${OSVERSION} < 800069
+BROKEN=	does not build
 .endif
 
 .include <bsd.port.post.mk>
