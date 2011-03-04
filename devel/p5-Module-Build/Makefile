@@ -8,7 +8,8 @@
 PORTNAME=	Module-Build
 PORTVERSION=	0.3624
 CATEGORIES=	devel perl5
-MASTER_SITES=	CPAN/../../authors/id/D/DA/DAGOLDEN
+MASTER_SITES=	CPAN
+MASTER_SITE_SUBDIR=	CPAN:DAGOLDEN
 PKGNAMEPREFIX=	p5-
 #DISTNAME=	${PORTNAME}-${PORTVERSION:C/\.(..)$/\1/}
 
@@ -36,7 +37,7 @@ post-install:
 	@${ECHO_MSG} "===> Documentation installed in ${DOCSDIR}."
 .endif
 
-MAN3=	inc::latest.3 \
+MAN3=		inc::latest.3 \
 		Module::Build.3 \
   		Module::Build::Bundling.3 \
 		Module::Build::API.3 \
