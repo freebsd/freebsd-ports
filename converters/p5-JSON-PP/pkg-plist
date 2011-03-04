@@ -1,0 +1,8 @@
+bin/json_pp
+%%SITE_PERL%%/JSON/PP.pm
+%%SITE_PERL%%/JSON/PP/Boolean.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/JSON/PP/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/JSON/PP
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/JSON
+@dirrm %%SITE_PERL%%/JSON/PP
+@dirrmtry %%SITE_PERL%%/JSON
