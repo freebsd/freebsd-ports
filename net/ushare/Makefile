@@ -7,14 +7,14 @@
 
 PORTNAME=	ushare
 PORTVERSION=	1.1a
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	net
 MASTER_SITES=	http://ushare.geexbox.org/releases/
 
 MAINTAINER=	votdev@gmx.de
 COMMENT=	A lightweight UPnP (TM) A/V Media Server
 
-LIB_DEPENDS=	upnp.5:${PORTSDIR}/devel/upnp
+LIB_DEPENDS=	upnp.6:${PORTSDIR}/devel/upnp
 
 HAS_CONFIGURE=	yes
 USE_BZIP2=	yes
