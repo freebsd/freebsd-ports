@@ -1,0 +1,5 @@
+%%SITE_PERL%%/HTML/Defaultify.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/Defaultify/.packlist
+@dirrmtry %%SITE_PERL%%/HTML
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/Defaultify
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML
