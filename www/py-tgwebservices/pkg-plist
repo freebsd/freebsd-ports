@@ -27,30 +27,9 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tgwebservices/templates/__init__.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tgwebservices/templates/__init__.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tgwebservices/templates/__init__.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tgwebservices/templates/soap.html
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tgwebservices/templates/wsdl.html
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tgwebservices/tests/__init__.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tgwebservices/tests/__init__.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tgwebservices/tests/__init__.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tgwebservices/tests/fixtures.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tgwebservices/tests/fixtures.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tgwebservices/tests/fixtures.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tgwebservices/tests/test_controllers.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tgwebservices/tests/test_controllers.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tgwebservices/tests/test_controllers.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tgwebservices/tests/test_json.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tgwebservices/tests/test_json.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tgwebservices/tests/test_json.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tgwebservices/tests/test_soap.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tgwebservices/tests/test_soap.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tgwebservices/tests/test_soap.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tgwebservices/tests/test_xml.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tgwebservices/tests/test_xml.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tgwebservices/tests/test_xml.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tgwebservices/xml_.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tgwebservices/xml_.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tgwebservices/xml_.pyo
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tgwebservices/tests
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tgwebservices/templates
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tgwebservices
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO
