@@ -1,0 +1,19 @@
+%%SITE_PERL%%/mach/Text/LineFold.pm
+%%SITE_PERL%%/mach/Text/LineFold/JA_JP.pod
+%%SITE_PERL%%/mach/Unicode/GCString.pm
+%%SITE_PERL%%/mach/Unicode/GCString/JA_JP.pod
+%%SITE_PERL%%/mach/Unicode/LineBreak.pod
+%%SITE_PERL%%/mach/Unicode/LineBreak.pm
+%%SITE_PERL%%/mach/Unicode/LineBreak/Defaults.pm.sample
+%%SITE_PERL%%/mach/Unicode/LineBreak/Constants.pm
+%%SITE_PERL%%/mach/Unicode/LineBreak/JA_JP.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Unicode/LineBreak/.packlist
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Unicode/LineBreak/LineBreak.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Unicode/LineBreak/LineBreak.so
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Unicode/LineBreak
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Unicode
+@dirrmtry %%SITE_PERL%%/mach/Unicode/LineBreak
+@dirrmtry %%SITE_PERL%%/mach/Unicode/GCString
+@dirrmtry %%SITE_PERL%%/mach/Unicode
+@dirrmtry %%SITE_PERL%%/mach/Text/LineFold
+@dirrmtry %%SITE_PERL%%/mach/Text

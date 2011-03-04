@@ -781,6 +781,7 @@
     SUBDIR += p5-Unicode-CheckUTF8
     SUBDIR += p5-Unicode-EastAsianWidth
     SUBDIR += p5-Unicode-Escape
+    SUBDIR += p5-Unicode-LineBreak
     SUBDIR += p5-Unicode-Normalize
     SUBDIR += p5-Unicode-Unihan
     SUBDIR += p5-Validator-Custom
