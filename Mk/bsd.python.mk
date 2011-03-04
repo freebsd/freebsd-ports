@@ -83,9 +83,9 @@ Python_Include_MAINTAINER=	python@FreeBSD.org
 #
 # PYTHON_DEFAULT_VERSION
 #					- Version of the default python binary in your ${PATH}, in
-#					  the format "python2.6". Set this in your /etc/make.conf
+#					  the format "python2.7". Set this in your /etc/make.conf
 #					  in case you want to use an older version as a default.
-#					  default: python2.6
+#					  default: python2.7
 #
 # PYTHON_WRKSRC		- The ${WRKSRC} for your python version. Needed for
 #					  extensions like Tkinter, py-gdbm and py-expat, which
@@ -201,8 +201,8 @@ Python_Include_MAINTAINER=	python@FreeBSD.org
 #					  specific version of zope.
 #
 
-_PYTHON_PORTBRANCH=		2.6
-_PYTHON_ALLBRANCHES=		2.6 2.5 2.4 2.7 3.1 3.2# preferred first
+_PYTHON_PORTBRANCH=		2.7
+_PYTHON_ALLBRANCHES=		2.7 2.6 2.5 2.7 3.1 3.2# preferred first
 _ZOPE_PORTBRANCH=		2.7
 _ZOPE_ALLBRANCHES=		2.7 2.8 2.9 2.10 3.2
 
@@ -421,8 +421,8 @@ check-makevars::
 	@${ECHO} "Legal values are:"
 	@${ECHO} "  python2.4"
 	@${ECHO} "  python2.5"
-	@${ECHO} "  python2.6 (default)"
-	@${ECHO} "  python2.7"
+	@${ECHO} "  python2.6"
+	@${ECHO} "  python2.7 (default)"
 	@${ECHO} "  python3.1"
 	@${ECHO} "  python3.2"
 	@${FALSE}

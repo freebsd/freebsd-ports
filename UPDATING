@@ -5,6 +5,42 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20110304:
+  AFFECTS: users of lang/python* and py-*
+  AUTHOR: miwi@FreeBSD.org
+
+  The default version of Python has been changed from 2.6.x to 2.7.x.
+  If you have 2.6.x installed, perform an upgrade of lang/python26 to
+  lang/python27 with one of the following commands:
+
+  If using portupgrade:
+  # portupgrade -o lang/python27 lang/python26
+
+  If using portmaster:
+  # portmaster -o lang/python27 lang/python26
+
+  If you want to retain 2.6.x as default Python version, set the
+  PYTHON_DEFAULT_VERSION variable to 'python2.6' (without quotes) in
+  /etc/make.conf, then go to lang/python and perform the following
+  command:
+
+  # portupgrade -R python
+
+  Once the installed Python has been updated to 2.6, by using the
+  method above, it is required to run the upgrade-site-packages target in
+  lang/python to assure that site-packages are made available to the new
+  Python version.
+
+  If using portupgrade:
+  # cd /usr/ports/lang/python && make upgrade-site-packages
+
+  If using portmaster:
+  # cd /usr/ports/lang/python && make upgrade-site-packages -DUSE_PORTMASTER
+
+  The portmaster case can take quite some time to complete due to the lack of
+  cached information that the portupgrade suite uses (specifically pkg_which).
+  This is not the fault of portmaster.
+
 20110301:
   AFFECTS: users of databases/jasperserver
   AUTHOR: jhelfman@experts-exchange.com
