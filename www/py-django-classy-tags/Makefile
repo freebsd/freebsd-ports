@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	django-classy-tags
-PORTVERSION=	0.3.0
+PORTVERSION=	0.3.3
 CATEGORIES=	www python
 MASTER_SITES=	http://pypi.python.org/packages/source/d/${PORTNAME}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
