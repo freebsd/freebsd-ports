@@ -4,6 +4,7 @@
 %%RUBY_SITELIBDIR%%/wget.rb
 %%RUBY_SITELIBDIR%%/xml/dom/builder.rb
 %%RUBY_SITELIBDIR%%/xml/dom/core.rb
+%%RUBY_SITELIBDIR%%/xml/dom/digest.rb
 %%RUBY_SITELIBDIR%%/xml/dom/visitor.rb
 %%RUBY_SITELIBDIR%%/xml/dom2/attr.rb
 %%RUBY_SITELIBDIR%%/xml/dom2/cdatasection.rb
