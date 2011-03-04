@@ -263,6 +263,7 @@
     SUBDIR += surrealtodo
     SUBDIR += systempreferences
     SUBDIR += tagutils
+    SUBDIR += taskcoach
     SUBDIR += taskjuggler
     SUBDIR += taskstep
     SUBDIR += taskwarrior
