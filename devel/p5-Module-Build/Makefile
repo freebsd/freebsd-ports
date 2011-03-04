@@ -21,7 +21,8 @@ RUN_DEPENDS=	p5-CPAN-Meta-YAML>=0.002:${PORTSDIR}/devel/p5-CPAN-Meta-YAML \
 		p5-Module-Metadata>=1.000002:${PORTSDIR}/devel/p5-Module-Metadata \
 		p5-ExtUtils-CBuilder>=0.27:${PORTSDIR}/devel/p5-ExtUtils-CBuilder \
 		p5-ExtUtils-ParseXS>=2.21:${PORTSDIR}/devel/p5-ExtUtils-ParseXS \
-		p5-ExtUtils-Install>=1.54:${PORTSDIR}/devel/p5-ExtUtils-Install
+		p5-ExtUtils-Install>=1.54:${PORTSDIR}/devel/p5-ExtUtils-Install \
+		p5-version>=0.87:${PORTSDIR}/devel/p5-version
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 PORTSCOUT=	skipv:0.31012
