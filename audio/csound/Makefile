@@ -6,14 +6,12 @@
 #
 
 PORTNAME=	csound
-PORTVERSION=	5.12.1
-PORTREVISION=	3
+PORTVERSION=	5.13
 CATEGORIES=	audio lang
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}5/${PORTNAME}5.12/:src \
-		SF/${PORTNAME}/${PORTNAME}5/${PORTNAME}5.10/:manual
-# Developer does not include a newer version of the manual.
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}5/${PORTNAME}5.13/:src \
+		SF/${PORTNAME}/${PORTNAME}5/${PORTNAME}5.13/manual:manual
 MASTER_SITE_SUBDIR=	${PORTNAME:S/$/:src/}
-DISTNAME=	${PORTNAME:S/c/C/}${PORTVERSION}
+DISTNAME=	${PORTNAME:S/c/C/}${PORTVERSION}.0
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:src
 DIST_SUBDIR=	csound
 
@@ -21,7 +19,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Sound synthesizer
 
 LIB_DEPENDS=	sndfile:${PORTSDIR}/audio/libsndfile
-BUILD_DEPENDS=	${LOCALBASE}/bin/swig:${PORTSDIR}/devel/swig13
+BUILD_DEPENDS=	${LOCALBASE}/bin/swig:${PORTSDIR}/devel/swig13 \
+		${LOCALBASE}/bin/bison:${PORTSDIR}/devel/bison
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/
 USE_PYTHON=	2.6+
@@ -33,6 +32,8 @@ SCONS_ARGS+=	prefix=${PREFIX} CC=${CC} CXX=${CXX} \
 		buildWinsound=1 buildInterfaces=1 \
 		buildVirtual=1 buildCSEditor=1 buildDSSI=0 \
 		useGettext=1 dynamicCsoundLibrary=1 useDouble=1
+
+CONFLICTS_INSTALL=	outguess-*
 
 OPTIONS=	FLTKGUI "Build fltk plugin and GUI" on
 
@@ -55,7 +56,7 @@ SCONS_ARGS+=	useFLTK=0 buildCsound5GUI=0
 
 .if !defined(NOPORTDOCS)
 BUILD_DEPENDS+=		${LOCALBASE}/bin/unzip:${PORTSDIR}/archivers/unzip
-DISTFILES+=	Csound5.10_manual_html.zip:manual
+DISTFILES+=	Csound5.13_manual_html.zip:manual
 .endif
 
 post-patch: apply-slist

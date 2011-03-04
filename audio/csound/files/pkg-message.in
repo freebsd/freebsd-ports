@@ -2,3 +2,8 @@
 %%PREFIX%%/bin/mixer has been renamed to %%PREFIX%%/bin/cs_mixer so it
 won't conflict with /usr/bin/mixer
 =====================================================================
+
+===================-Support:-========================================
+Due to the complexity of this port, support requests must be done using
+http://www.cpetservices.com/site/tickets/misc.htm 
+=====================================================================
