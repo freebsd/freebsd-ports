@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	readline
-PORTVERSION=	6.1
+PORTVERSION=	6.2
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNU} \
 		ftp://ftp.cwru.edu/pub/bash/
@@ -15,6 +15,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ports@eitanadler.com
 COMMENT=	A library for editing command lines as they are typed
 
+LICENCE=	GPLv3
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
