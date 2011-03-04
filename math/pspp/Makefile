@@ -35,10 +35,6 @@ LDFLAGS=	-L${LOCALBASE}/lib
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 900010 && ${ARCH} == "i386"
-BROKEN=		does not build
-.endif
-
 .if defined(WITHOUT_NLS)
 CONFIGURE_ARGS+=	--disable-nls
 PLIST_SUB+=	NLS="@comment "
