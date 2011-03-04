@@ -26,7 +26,7 @@ you update your ports collection, before attempting any port upgrades.
 
   # portupgrade -R python
 
-  Once the installed Python has been updated to 2.6, by using the
+  Once the installed Python has been updated to 2.7, by using the
   method above, it is required to run the upgrade-site-packages target in
   lang/python to assure that site-packages are made available to the new
   Python version.
