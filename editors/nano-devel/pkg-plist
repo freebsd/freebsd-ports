@@ -1,4 +1,4 @@
-@comment $FreeBSD: /tmp/pcvs/ports/editors/nano-devel/pkg-plist,v 1.3 2009-08-12 18:57:33 tabthorpe Exp $
+@comment $FreeBSD: /tmp/pcvs/ports/editors/nano-devel/pkg-plist,v 1.4 2011-03-04 14:10:27 miwi Exp $
 bin/nano
 bin/rnano
 %%NLS%%share/locale/bg/LC_MESSAGES/nano.mo
@@ -32,40 +32,44 @@ bin/rnano
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/nano.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/nano.mo
 %%EXAMPLESDIR%%/nanorc.sample
-share/nano/awk.nanorc
-share/nano/fortran.nanorc
-share/nano/xml.nanorc
-share/nano/php.nanorc
-share/nano/tcl.nanorc
-share/nano/ocaml.nanorc
-share/nano/debian.nanorc
-share/nano/css.nanorc
-share/nano/objc.nanorc
-share/nano/gentoo.nanorc
-share/nano/asm.nanorc
-share/nano/c.nanorc
-share/nano/groff.nanorc
-share/nano/html.nanorc
-share/nano/java.nanorc
-share/nano/man-html/fr/nano.1.html
-share/nano/man-html/fr/nanorc.5.html
-share/nano/man-html/fr/rnano.1.html
-share/nano/man-html/nano.1.html
-share/nano/man-html/nanorc.5.html
-share/nano/man-html/rnano.1.html
-share/nano/man.nanorc
-share/nano/mutt.nanorc
-share/nano/nanorc.nanorc
-share/nano/patch.nanorc
-share/nano/perl.nanorc
-share/nano/pov.nanorc
-share/nano/python.nanorc
-share/nano/ruby.nanorc
-share/nano/sh.nanorc
-share/nano/tex.nanorc
-@dirrm share/nano/man-html/fr
-@dirrm share/nano/man-html
-@dirrm share/nano
+%%DATADIR%%/awk.nanorc
+%%DATADIR%%/cmake.nanorc
+%%DATADIR%%/fortran.nanorc
+%%DATADIR%%/xml.nanorc
+%%DATADIR%%/php.nanorc
+%%DATADIR%%/tcl.nanorc
+%%DATADIR%%/ocaml.nanorc
+%%DATADIR%%/debian.nanorc
+%%DATADIR%%/css.nanorc
+%%DATADIR%%/objc.nanorc
+%%DATADIR%%/gentoo.nanorc
+%%DATADIR%%/asm.nanorc
+%%DATADIR%%/c.nanorc
+%%DATADIR%%/groff.nanorc
+%%DATADIR%%/html.nanorc
+%%DATADIR%%/java.nanorc
+%%DATADIR%%/makefile.nanorc
+%%DATADIR%%/mgp.nanorc
+
+%%NLS%%%%DATADIR%%/man-html/fr/nano.1.html
+%%NLS%%%%DATADIR%%/man-html/fr/nanorc.5.html
+%%NLS%%%%DATADIR%%/man-html/fr/rnano.1.html
+%%DATADIR%%/man-html/nano.1.html
+%%DATADIR%%/man-html/nanorc.5.html
+%%DATADIR%%/man-html/rnano.1.html
+%%DATADIR%%/man.nanorc
+%%DATADIR%%/mutt.nanorc
+%%DATADIR%%/nanorc.nanorc
+%%DATADIR%%/patch.nanorc
+%%DATADIR%%/perl.nanorc
+%%DATADIR%%/pov.nanorc
+%%DATADIR%%/python.nanorc
+%%DATADIR%%/ruby.nanorc
+%%DATADIR%%/sh.nanorc
+%%DATADIR%%/tex.nanorc
+%%NLS%%@dirrm %%DATADIR%%/man-html/fr
+@dirrm %%DATADIR%%/man-html
+@dirrm %%DATADIR%%
 @dirrm %%EXAMPLESDIR%%
 %%NLS%%@dirrmtry share/locale/rw/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/rw

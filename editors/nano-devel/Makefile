@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	nano
-PORTVERSION=	2.1.99
+PORTVERSION=	2.3.0
 PORTREVISION=	1
 CATEGORIES=	editors
-MASTER_SITES=	http://www.nano-editor.org/dist/v2.1/ \
-		http://www.ewtoo.org/~astyanax/nano/dist/v2.1/
+MASTER_SITES=	http://www.nano-editor.org/dist/v${PORTVERSION:R}/ \
+		http://www.ewtoo.org/~astyanax/nano/dist/v${PORTVERSION:R}/
 PKGNAMESUFFIX=	-devel
-DISTNAME=	nano-${PORTVERSION}pre2
+#DISTNAME=	nano-${PORTVERSION}pre2
 
 MAINTAINER=	ports@eitanadler.com
 COMMENT=	Nano's ANOther editor, an enhanced free Pico clone
@@ -39,7 +39,7 @@ MAN5=		nanorc.5
 .include <bsd.port.pre.mk>
 
 # requires wide character curses
-.if (${OSVERSION} < 602107) || (${OSVERSION} >= 700000 && ${OSVERSION} < 700033)
+.if (${OSVERSION} >= 700000 && ${OSVERSION} < 700033)
 CONFIGURE_ARGS+=--disable-utf8
 .else
 CONFIGURE_ARGS+=--enable-utf8
