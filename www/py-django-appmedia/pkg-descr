@@ -1,0 +1,3 @@
+Support for serving static media from within django app directories
+
+WWW:	http://github.com/divio/django-appmedia
