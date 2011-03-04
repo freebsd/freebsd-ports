@@ -6,13 +6,16 @@
 
 PORTNAME=	xmms2-scrobbler
 PORTVERSION=	0.4.0
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	ftp://ftp.code-monkey.de/pub/${PORTNAME}/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A last.fm submission client for XMMS2
 
-LIB_DEPENDS=	xmmsclient.5:${PORTSDIR}/audio/xmms2 \
+LICENSE=	MIT
+
+LIB_DEPENDS=	xmmsclient.6:${PORTSDIR}/audio/xmms2 \
 		curl.6:${PORTSDIR}/ftp/curl
 
 USE_GMAKE=	yes
