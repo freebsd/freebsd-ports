@@ -21,19 +21,28 @@ libdata/pkgconfig/libexif.pc
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
 %%PORTDOCS%%%%DOCSDIR%%/README
+%%NLS%%share/locale/be/LC_MESSAGES/libexif-12.mo
+%%NLS%%share/locale/bs/LC_MESSAGES/libexif-12.mo
 %%NLS%%share/locale/cs/LC_MESSAGES/libexif-12.mo
 %%NLS%%share/locale/da/LC_MESSAGES/libexif-12.mo
 %%NLS%%share/locale/de/LC_MESSAGES/libexif-12.mo
 %%NLS%%share/locale/en_CA/LC_MESSAGES/libexif-12.mo
+%%NLS%%share/locale/en_GB/LC_MESSAGES/libexif-12.mo
 %%NLS%%share/locale/es/LC_MESSAGES/libexif-12.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/libexif-12.mo
+%%NLS%%share/locale/it/LC_MESSAGES/libexif-12.mo
+%%NLS%%share/locale/ja/LC_MESSAGES/libexif-12.mo
 %%NLS%%share/locale/nl/LC_MESSAGES/libexif-12.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/libexif-12.mo
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/libexif-12.mo
+%%NLS%%share/locale/pt/LC_MESSAGES/libexif-12.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/libexif-12.mo
 %%NLS%%share/locale/sk/LC_MESSAGES/libexif-12.mo
+%%NLS%%share/locale/sq/LC_MESSAGES/libexif-12.mo
 %%NLS%%share/locale/sr/LC_MESSAGES/libexif-12.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/libexif-12.mo
+%%NLS%%share/locale/tr/LC_MESSAGES/libexif-12.mo
 %%NLS%%share/locale/vi/LC_MESSAGES/libexif-12.mo
+%%NLS%%share/locale/zh_CN/LC_MESSAGES/libexif-12.mo
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm include/libexif
