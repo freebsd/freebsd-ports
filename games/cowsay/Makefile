@@ -10,6 +10,7 @@ PORTVERSION=	3.03
 PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://www.nog.net/~tony/warez/
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	wxs@FreeBSD.org
 COMMENT=	Configurable talking characters in ASCII art
@@ -20,6 +21,14 @@ NO_BUILD=	# defined
 
 MAN1=		cowsay.1
 MLINKS=		cowsay.1 cowthink.1
+
+.if defined(MAINTAINER_MODE)
+DISTFILES+=	${DISTNAME}${EXTRACT_SUFX}.sig
+verify: fetch
+	@${ECHO_MSG} "Checking ${DISTNAME}${EXTRACT_SUFX}"
+	@gpg --verify ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX}.sig 2>/dev/null || echo "Bad signature!"
+	@${ECHO_MSG} "Done"
+.endif
 
 do-install:
 	cd ${WRKSRC}; ${SH} install.sh ${PREFIX}

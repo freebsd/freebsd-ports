@@ -1,2 +1,4 @@
 SHA256 (cowsay-3.03.tar.gz) = 0b8672a7ac2b51183780db72618b42af8ec1ce02f6c05fe612510b650540b2af
 SIZE (cowsay-3.03.tar.gz) = 15189
+SHA256 (cowsay-3.03.tar.gz.sig) = b5ca879164549eed7d5a9da03f6307860142d91b000765508bb3cd1805cfd6f6
+SIZE (cowsay-3.03.tar.gz.sig) = 152
