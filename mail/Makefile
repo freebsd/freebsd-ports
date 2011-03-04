@@ -103,6 +103,7 @@
     SUBDIR += dovecot-managesieve
     SUBDIR += dovecot-sieve
     SUBDIR += dovecot2
+    SUBDIR += dovecot2-antispam-plugin
     SUBDIR += dovecot2-pigeonhole
     SUBDIR += drac
     SUBDIR += dracmail
