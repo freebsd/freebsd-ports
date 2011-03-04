@@ -2900,6 +2900,7 @@
     SUBDIR += py-pefile
     SUBDIR += py-period
     SUBDIR += py-phpserialize
+    SUBDIR += py-pika
     SUBDIR += py-pip
     SUBDIR += py-plex
     SUBDIR += py-ply
