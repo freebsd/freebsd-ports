@@ -16,6 +16,8 @@ EXTRACT_ONLY=
 MAINTAINER=	codeblock@eighthbit.net
 COMMENT=	A gist pastebin posting command
 
+CONFLICTS=	p5-WWW-GitHub-Gist-[0-9]*
+
 USE_RUBY=	YES
 NO_BUILD=	YES
 PLIST_FILES=	bin/gist
