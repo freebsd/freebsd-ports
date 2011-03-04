@@ -1,5 +1,5 @@
---- lib/Makefile.in.orig	2010-11-17 08:55:23.000000000 -0500
-+++ lib/Makefile.in	2011-02-02 15:59:26.000000000 -0500
+--- lib/Makefile.in.orig	2011-02-16 09:15:14.000000000 -0500
++++ lib/Makefile.in	2011-03-02 09:03:21.000000000 -0500
 @@ -38,6 +38,10 @@
    RPATH = $(DARWIN_RPATH)
  endif
@@ -29,16 +29,12 @@
  
  #### End of system configuration section. ####
  
-@@ -238,10 +242,10 @@
- LOBJS = $(SRCS:.c=.lo)
- AUX_LOBJ = $(CEPHES_SRC:.c=.lo) $(MINPACK_SRC:.c=.lo)
- 
--LIBTOOL = ../libtool
-+LIBTOOL = @LIBTOOL@
+@@ -241,7 +245,7 @@
+ LIBTOOL = ../libtool
  
  override CFLAGS += -I.. -I$(topsrc) -I$(libsrc) $(XML_CFLAGS) $(GLIB_CFLAGS) \
--	$(GMP_CFLAGS) $(FFTW_CFLAGS) $(RLIB_CFLAGS) -DHAVE_CONFIG_H
-+	$(GMP_CFLAGS) $(FFTW_CFLAGS) $(RLIB_CFLAGS) $(CPPFLAGS) -DHAVE_CONFIG_H
+-	$(GMP_CFLAGS) $(FFTW_CFLAGS) $(RLIB_CFLAGS) -DHAVE_CONFIG_H $(LIBDEF)
++	$(GMP_CFLAGS) $(FFTW_CFLAGS) $(RLIB_CFLAGS) $(CPPFLAGS) -DHAVE_CONFIG_H $(LIBDEF)
  
  COMPILE = $(LIBTOOL) --mode=compile $(CCV) -c $(CFLAGS) 
  

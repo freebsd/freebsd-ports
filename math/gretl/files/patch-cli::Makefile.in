@@ -1,5 +1,5 @@
 --- cli/Makefile.in.orig	2010-08-28 11:10:07.000000000 -0400
-+++ cli/Makefile.in	2011-02-02 15:28:13.000000000 -0500
++++ cli/Makefile.in	2011-03-02 07:41:07.000000000 -0500
 @@ -21,6 +21,10 @@
  
  quiet_build = @quiet_build@
@@ -11,7 +11,7 @@
  ifeq ($(CC),)
    CC = gcc
  endif
-@@ -55,10 +59,10 @@
+@@ -55,7 +59,7 @@
  
  DEFS = -DLOCALEDIR=\"$(localedir)\" -DHAVE_CONFIG_H
  
@@ -19,11 +19,7 @@
 +override CFLAGS += -I.. -I$(topsrc) -I$(libsrc) $(READLINE_CFLAGS) $(DEFS) $(CPPFLAGS)
  
  CLI = gretlcli$(EXEEXT)
--LIBTOOL = ../libtool
-+LIBTOOL = @LIBTOOL@
- 
- %.o: %.c
- 	$(CCECHO)
+ LIBTOOL = ../libtool
 @@ -68,7 +72,7 @@
  $(CLI): .deps $(OBJS)
  	$(LDECHO)

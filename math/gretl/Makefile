@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	gretl
-PORTVERSION=	1.9.3
+PORTVERSION=	1.9.4
 CATEGORIES=	math finance
 MASTER_SITES=	SF
 
@@ -16,7 +16,7 @@ COMMENT=	GNU Regression, Econometrics and Time-series Library
 
 LIB_DEPENDS=	fftw3.5:${PORTSDIR}/math/fftw3
 
-USE_AUTOTOOLS=	libtool
+GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
 USE_FORTRAN=	yes
 USE_GMAKE=	yes
@@ -36,7 +36,8 @@ OPTIONS=	ATLAS "Use Atlas for BLAS and LAPACK" off \
 		GUI "Build the graphical user interface and plugins" on \
 		NLS "Build with Natural Language Support" on \
 		ODBC "Build with unixODBC database support" off \
-		R "Build with libR support" off
+		R "Build with libR support" off \
+		SSE2 "Enable build-time auto-detection of SSE2 on i386 for RNG" off
 
 .include <bsd.port.pre.mk>
 
@@ -85,6 +86,12 @@ CONFIGURE_ARGS+=	--with-libR
 LIB_DEPENDS+=		R.0:${PORTSDIR}/math/R
 .else
 CONFIGURE_ARGS+=	--without-libR
+.endif
+
+.if ${ARCH} == "amd64" || (${ARCH} == "i386" && defined(WITH_SSE2))
+CONFIGURE_ARGS+=	--enable-sse2=yes
+.else
+CONFIGURE_ARGS+=	--enable-sse2=no
 .endif
 
 post-patch:
