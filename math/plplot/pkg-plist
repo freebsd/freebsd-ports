@@ -1,5 +1,3 @@
-bin/plm2gif
-bin/plpr
 %%TCLTK%%bin/plserver
 %%TCLTK%%bin/pltcl
 bin/pltek
@@ -38,8 +36,8 @@ lib/libplplotcxxd.so
 lib/libplplotcxxd.so.9
 lib/libplplotcxxd.so.9.3.0
 lib/libplplotd.so
-lib/libplplotd.so.9
-lib/libplplotd.so.9.8.0
+lib/libplplotd.so.10
+lib/libplplotd.so.10.0.0
 %%FORTRAN%%lib/libplplotf77cd.so
 %%FORTRAN%%lib/libplplotf77cd.so.9
 %%FORTRAN%%lib/libplplotf77cd.so.9.1.1
