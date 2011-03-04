@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	actionpack
-PORTVERSION=	3.0.3
+PORTVERSION=	3.0.5
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
@@ -17,7 +17,7 @@ RUN_DEPENDS=	rubygem-activesupport>=${PORTVERSION}:${PORTSDIR}/devel/rubygem-act
 	rubygem-tzinfo>=0.3.23:${PORTSDIR}/devel/rubygem-tzinfo \
 	rubygem-erubis>=2.6.6:${PORTSDIR}/www/rubygem-erubis \
 	rubygem-rack-mount>=0.6.13:${PORTSDIR}/www/rubygem-rack-mount \
-	rubygem-rack-test>=0.5.6:${PORTSDIR}/www/rubygem-rack-test \
+	rubygem-rack-test>=0.5.7:${PORTSDIR}/www/rubygem-rack-test \
 	rubygem-builder>=2.1.2:${PORTSDIR}/devel/rubygem-builder \
 	rubygem-i18n>=0.4:${PORTSDIR}/devel/rubygem-i18n
 
