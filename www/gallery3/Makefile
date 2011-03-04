@@ -7,6 +7,7 @@
 
 PORTNAME=	gallery3
 PORTVERSION=	3.0.1
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	SF/gallery/${PORTNAME}/${PORTVERSION}
 DISTNAME=	gallery-${PORTVERSION}
@@ -16,7 +17,8 @@ COMMENT=	Web based photo album organizer written in PHP
 
 USE_ZIP=	yes
 
-USE_PHP=	pcre session filter xml iconv spl simplexml json mysql
+USE_PHP=	pcre session filter xml iconv spl simplexml json mysql \
+		tokenizer
 WANT_PHP_WEB=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
