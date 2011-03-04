@@ -105,6 +105,10 @@
 # If you want to enable the parent/child match support define:
 #  WITH_MUTT_PARENT_CHILD_MATCH_PATCH
 #
+# If you want to be able to use a trash folder for deleted emails (especially useful
+# for example for googlemail) define:
+#  WITH_MUTT_TRASH_PATCH
+#
 # If you want to enable the internal SMTP relay support define:
 #  WITH_MUTT_SMTP
 #
@@ -118,7 +122,7 @@
 
 PORTNAME=	mutt-devel
 PORTVERSION=	1.5.21
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES+=	mail ipv6
 .if defined(WITH_MUTT_NNTP)
 CATEGORIES+=	news
@@ -199,6 +203,7 @@ OPTIONS=	MUTT_ASPELL			"Enable aspell support"		off \
 		MUTT_SLANG			"Enable slang support"		off \
 		MUTT_SMIME_OUTLOOK_COMPAT	"SMIME outlook compatible"	on \
 		MUTT_SMTP			"Enable SMTP relay support"	off \
+		MUTT_TRASH_PATCH		"Enable trash folder support"	off \
 		MUTT_XML			"Use XML tools for documentation"		on 
 .endif
 
@@ -281,7 +286,7 @@ MUTT_USES_SLANG=	yes
 .if defined(WITH_MUTT_NCURSES) && !defined(MUTT_USES_SLANG)
 MUTT_USES_NCURSES=	yes
 .endif
-.if !defined(MUTT_USES_SLANG) && !defined(WITHOUT_MUTT_SLANG) && !defined(MUTT_USES_NCURSES)
+.if !defined(MUTT_USES_SLANG) && !defined(WITHOUT_MUTT_SLANG)
 MUTT_USES_NCURSES=	yes
 .endif
 .if defined(WITHOUT_MUTT_SGMLFORMAT)
@@ -302,8 +307,8 @@ USE_ICONV=	yes
 .if defined(NOPORTDOCS)
 XML_USED=	no
 .endif
-.if defined(MUTT_USES_NCURSES)
 .if defined(WITH_MUTT_NCURSES_PORT) || exists(${LOCALBASE}/lib/libncurses.a)
+.if !defined(MUTT_USES_SLANG)
 MUTT_USES_NCURSES_PORT=	yes
 .endif
 .endif
