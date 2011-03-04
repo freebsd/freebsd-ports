@@ -6,12 +6,18 @@
 #
 
 PORTNAME=	pkcs11-helper
-PORTVERSION=	1.07
+PORTVERSION=	1.08
 CATEGORIES=	security devel
 MASTER_SITES=	http://www.opensc-project.org/files/${PORTNAME}/
 
 MAINTAINER=	ale@FreeBSD.org
 COMMENT=	A helper library for multiple PKCS\#11 providers
+
+LICENSE=	BSD GPLv2
+LICENSE_COMB=	dual
+LICENSE_FILE=	${WRKSRC}/COPYING
+LICENSE_FILE_BSD=	${WRKSRC}/COPYING.BSD
+LICENSE_FILE_GPLv2=	${WRKSRC}/COPYING.GPL
 
 USE_BZIP2=	yes
 USE_OPENSSL=	yes
@@ -40,6 +46,5 @@ post-patch:
 	@${REINPLACE_CMD} 's|install-data-am: install-man install-nodist_htmlDATA|install-data-am: install-man|' \
 		${WRKSRC}/man/Makefile.in
 .endif
-
 
 .include <bsd.port.mk>
