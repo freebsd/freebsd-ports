@@ -1599,6 +1599,7 @@
     SUBDIR += rubygem-domainatrix
     SUBDIR += rubygem-emk-sinatra-url-for
     SUBDIR += rubygem-erubis
+    SUBDIR += rubygem-faraday
     SUBDIR += rubygem-feed-normalizer
     SUBDIR += rubygem-feedzirra
     SUBDIR += rubygem-haml
