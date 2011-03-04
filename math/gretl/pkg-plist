@@ -345,6 +345,7 @@ libdata/pkgconfig/gretl.pc
 %%DATADIR%%/data/misc/np.gdt
 %%DATADIR%%/data/misc/nysewk.gdt
 %%DATADIR%%/data/misc/ooballot.gdt
+%%DATADIR%%/data/misc/nc_crime.gdt
 %%DATADIR%%/data/misc/penngrow.gdt
 %%DATADIR%%/data/misc/pension.gdt
 %%DATADIR%%/data/misc/poisson.gdt

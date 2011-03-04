@@ -1,5 +1,5 @@
---- share/Makefile.in.orig	2010-08-23 08:47:12.000000000 -0400
-+++ share/Makefile.in	2011-02-05 04:47:43.000000000 -0500
+--- share/Makefile.in.orig	2011-02-10 16:40:30.000000000 -0500
++++ share/Makefile.in	2011-03-02 07:43:03.000000000 -0500
 @@ -13,7 +13,7 @@
  sharesrc = $(topsrc)/share
  pdfdir = ../doc/tex
@@ -39,12 +39,3 @@
  
  install_fonts:
  	for f in $(sharesrc)/fonts/*.ttf ; do \
-@@ -112,7 +112,7 @@
- 	$(tooldir)/mkinstalldirs $(DESTDIR)$(gretldir)/scripts/misc 
- 	$(tooldir)/mkinstalldirs $(DESTDIR)$(gretldir)/db
- 	$(tooldir)/mkinstalldirs $(DESTDIR)$(gretldir)/functions
--	$(tooldir)/mkinstalldirs $(DESTDIR)$(gretldir)/functions/docs
-+#	$(tooldir)/mkinstalldirs $(DESTDIR)$(gretldir)/functions/docs
- 	$(tooldir)/mkinstalldirs $(DESTDIR)$(gretldir)/fonts
- 
- clean:

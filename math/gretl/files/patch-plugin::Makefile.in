@@ -1,5 +1,5 @@
---- plugin/Makefile.in.orig	2010-11-18 09:41:28.000000000 -0500
-+++ plugin/Makefile.in	2011-02-02 16:11:27.000000000 -0500
+--- plugin/Makefile.in.orig	2011-02-14 08:52:57.000000000 -0500
++++ plugin/Makefile.in	2011-03-02 09:02:20.000000000 -0500
 @@ -12,6 +12,10 @@
  INSTALL = @INSTALL@
  LN = @LN_S@
@@ -11,16 +11,7 @@
  build_gui = @build_gui@
  build_mailer = @build_mailer@
  have_odbc = @have_odbc@
-@@ -46,7 +50,7 @@
- 
- override CFLAGS += -I.. -I$(topsrc)/gui2 -DHAVE_CONFIG_H
- 
--LIBTOOL = ../libtool
-+LIBTOOL = @LIBTOOL@
- COMPILE = $(LIBTOOL) --mode=compile $(CCV) -c $(CFLAGS) 
- 
- ifeq ($(quiet_build),yes)
-@@ -197,7 +201,7 @@
+@@ -198,7 +202,7 @@
  
  override CFLAGS += $(GRETLINC) $(GTK_CFLAGS) $(GMP_CFLAGS) $(MPFR_CFLAGS) \
  	$(XML_CFLAGS) $(GRETL_LIBOLE2_CFLAGS) $(ZIP_CFLAGS) $(AUDIO_CFLAGS) \
@@ -29,7 +20,7 @@
  
  %.lo: %.c
  	$(CCECHO)
-@@ -339,13 +343,13 @@
+@@ -340,13 +344,13 @@
  .PHONY: 
  
  install: $(GRETLLIB) $(PLUGINS) $(URCDATA) $(DWDATA) installdirs 
