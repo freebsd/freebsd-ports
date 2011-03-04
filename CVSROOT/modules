@@ -853,6 +853,7 @@ awesome                         ports/x11-wm/awesome
 awesome2                        ports/x11-wm/awesome2
 awffull                         ports/www/awffull
 awka                            ports/lang/awka
+aws                             ports/www/aws
 awstats                         ports/www/awstats
 axe                             ports/editors/axe
 axel                            ports/ftp/axel
@@ -4198,6 +4199,7 @@ ganyremote                      ports/deskutils/ganyremote
 gap                             ports/math/gap
 gapcmon                         ports/sysutils/gapcmon
 gaphor                          ports/devel/gaphor
+garcon                          ports/sysutils/garcon
 garith                          ports/games/garith
 garlic                          ports/biology/garlic
 garmin-utils                    ports/comms/garmin-utils
@@ -13818,6 +13820,7 @@ p5-Penguin-Easy                 ports/devel/p5-Penguin-Easy
 p5-Perl-Critic                  ports/textproc/p5-Perl-Critic
 p5-Perl-Critic-Bangs            ports/textproc/p5-Perl-Critic-Bangs
 p5-Perl-MinimumVersion          ports/textproc/p5-Perl-MinimumVersion
+p5-Perl-OSType                  ports/devel/p5-Perl-OSType
 p5-Perl-Unsafe-Signals          ports/devel/p5-Perl-Unsafe-Signals
 p5-Perl-Version                 ports/devel/p5-Perl-Version
 p5-Perl6-Builtins               ports/devel/p5-Perl6-Builtins
@@ -17891,6 +17894,7 @@ p5-perl-critic                  ports/textproc/p5-Perl-Critic
 p5-perl-critic-bangs            ports/textproc/p5-Perl-Critic-Bangs
 p5-perl-ldap                    ports/net/p5-perl-ldap
 p5-perl-minimumversion          ports/textproc/p5-Perl-MinimumVersion
+p5-perl-ostype                  ports/devel/p5-Perl-OSType
 p5-perl-unsafe-signals          ports/devel/p5-Perl-Unsafe-Signals
 p5-perl-version                 ports/devel/p5-Perl-Version
 p5-perl6-builtins               ports/devel/p5-Perl6-Builtins
@@ -23280,6 +23284,7 @@ rubygem-graphviz                ports/graphics/rubygem-graphviz
 rubygem-grit                    ports/devel/rubygem-grit
 rubygem-gruff                   ports/graphics/rubygem-gruff
 rubygem-haml                    ports/www/rubygem-haml
+rubygem-hashie                  ports/devel/rubygem-hashie
 rubygem-highline                ports/devel/rubygem-highline
 rubygem-hoe                     ports/devel/rubygem-hoe
 rubygem-holidays                ports/devel/rubygem-holidays
@@ -23339,6 +23344,7 @@ rubygem-moneta                  ports/devel/rubygem-moneta
 rubygem-mongrel                 ports/www/rubygem-mongrel
 rubygem-mongrel_cluster         ports/www/rubygem-mongrel_cluster
 rubygem-msgpack                 ports/devel/rubygem-msgpack
+rubygem-multipart-post          ports/www/rubygem-multipart-post
 rubygem-mutter                  ports/devel/rubygem-mutter
 rubygem-ncurses                 ports/devel/rubygem-ncurses
 rubygem-needle                  ports/devel/rubygem-needle
@@ -23443,6 +23449,7 @@ rubygem-sequel                  ports/devel/rubygem-sequel
 rubygem-sexp_processor          ports/devel/rubygem-sexp_processor
 rubygem-shoulda                 ports/devel/rubygem-shoulda
 rubygem-simple-rss              ports/www/rubygem-simple-rss
+rubygem-simple_oauth            ports/net/rubygem-simple_oauth
 rubygem-sinatra                 ports/www/rubygem-sinatra
 rubygem-sinatra-respond_to      ports/www/rubygem-sinatra-respond_to
 rubygem-smtp_tls                ports/mail/rubygem-smtp_tls
@@ -24924,6 +24931,7 @@ thunar                          ports/x11-fm/thunar
 thunar-archive-plugin           ports/archivers/thunar-archive-plugin
 thunar-media-tags-plugin        ports/audio/thunar-media-tags-plugin
 thunar-svn-plugin               ports/devel/thunar-svn-plugin
+thunar-vfs                      ports/x11-fm/thunar-vfs
 thunar-volman-plugin            ports/sysutils/thunar-volman-plugin
 thunderbird                     ports/mail/thunderbird
 thunderbird-dictionaries        ports/mail/thunderbird-dictionaries
@@ -26584,6 +26592,7 @@ xfce4-systemload-plugin         ports/sysutils/xfce4-systemload-plugin
 xfce4-taskmanager               ports/x11/xfce4-taskmanager
 xfce4-timer-out-plugin          ports/x11-clocks/xfce4-timer-out-plugin
 xfce4-timer-plugin              ports/x11-clocks/xfce4-timer-plugin
+xfce4-tumbler                   ports/deskutils/xfce4-tumbler
 xfce4-utils                     ports/sysutils/xfce4-utils
 xfce4-verve-plugin              ports/x11/xfce4-verve-plugin
 xfce4-volstatus-icon            ports/deskutils/xfce4-volstatus-icon
