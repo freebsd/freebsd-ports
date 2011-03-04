@@ -1,0 +1,98 @@
+--- lp_solve/ccc.orig	2009-01-25 21:39:03.000000000 +0300
++++ lp_solve/ccc	2011-02-04 10:52:07.000000000 +0300
+@@ -2,31 +2,33 @@
+ src='../lp_MDO.c ../shared/commonlib.c ../colamd/colamd.c ../shared/mmio.c ../shared/myblas.c ../ini.c ../fortify.c ../lp_rlp.c ../lp_crash.c ../bfp/bfp_LUSOL/lp_LUSOL.c ../bfp/bfp_LUSOL/LUSOL/lusol.c ../lp_Hash.c ../lp_lib.c ../lp_wlp.c ../lp_matrix.c ../lp_mipbb.c ../lp_MPS.c ../lp_params.c ../lp_presolve.c ../lp_price.c ../lp_pricePSE.c ../lp_report.c ../lp_scale.c ../lp_simplex.c lp_solve.c ../lp_SOS.c ../lp_utils.c ../yacc_read.c'
+ c=cc
+ 
++tmp="${TMPDIR:-/tmp}"
++
+ #determine platform (32/64 bit)
+->/tmp/platform.c
+-echo '#include <stdlib.h>'>>/tmp/platform.c
+-echo '#include <stdio.h>'>>/tmp/platform.c
+-echo 'main(){printf("ux%d", (int) (sizeof(void *)*8));}'>>/tmp/platform.c
+-$c /tmp/platform.c -o /tmp/platform
+-PLATFORM=`/tmp/platform`
+-rm /tmp/platform /tmp/platform.c >/dev/null 2>&1
++>"${tmp}"/platform.c
++echo '#include <stdlib.h>'>>"${tmp}"/platform.c
++echo '#include <stdio.h>'>>"${tmp}"/platform.c
++echo 'main(){printf("ux%d", (int) (sizeof(void *)*8));}'>>"${tmp}"/platform.c
++$c "${tmp}"/platform.c -o "${tmp}"/platform
++PLATFORM=`"${tmp}"/platform`
++rm "${tmp}"/platform "${tmp}"/platform.c >/dev/null 2>&1
+ 
+ mkdir bin bin/$PLATFORM >/dev/null 2>&1
+ 
+ math=-lm
+ 
+ #check if this system has the isnan function
+->/tmp/isnan.c
+-echo '#include <stdio.h>'>>/tmp/isnan.c
+-echo '#include <stdlib.h>'>>/tmp/isnan.c
+-echo '#include <math.h>'>>/tmp/isnan.c
+-echo 'main(){isnan(0);}'>>/tmp/isnan.c
+-$c /tmp/isnan.c -o /tmp/isnan $math >/dev/null 2>&1
++>"${tmp}"/isnan.c
++echo '#include <stdio.h>'>>"${tmp}"/isnan.c
++echo '#include <stdlib.h>'>>"${tmp}"/isnan.c
++echo '#include <math.h>'>>"${tmp}"/isnan.c
++echo 'main(){isnan(0);}'>>"${tmp}"/isnan.c
++$c "${tmp}"/isnan.c -o "${tmp}"/isnan $math >/dev/null 2>&1
+ if [ $? = 0 ]
+ then NOISNAN=
+ else NOISNAN=-DNOISNAN
+ fi
+-rm /tmp/isnan.c /tmp/isnan >/dev/null 2>&1
++rm "${tmp}"/isnan.c "${tmp}"/isnan >/dev/null 2>&1
+ 
+ opts='-O3'
+ 
+--- lpsolve55/ccc.bak	2009-03-25 03:27:18.000000000 +0300
++++ lpsolve55/ccc	2011-02-04 11:00:40.000000000 +0300
+@@ -2,29 +2,31 @@
+ src='../lp_MDO.c ../shared/commonlib.c ../shared/mmio.c ../shared/myblas.c ../ini.c ../fortify.c ../colamd/colamd.c ../lp_rlp.c ../lp_crash.c ../bfp/bfp_LUSOL/lp_LUSOL.c ../bfp/bfp_LUSOL/LUSOL/lusol.c ../lp_Hash.c ../lp_lib.c ../lp_wlp.c ../lp_matrix.c ../lp_mipbb.c ../lp_MPS.c ../lp_params.c ../lp_presolve.c ../lp_price.c ../lp_pricePSE.c ../lp_report.c ../lp_scale.c ../lp_simplex.c ../lp_SOS.c ../lp_utils.c ../yacc_read.c'
+ c=cc
+ 
++tmp="${TMPDIR:-/tmp}"
++
+ #determine platform (32/64 bit)
+->/tmp/platform.c
+-echo '#include <stdlib.h>'>>/tmp/platform.c
+-echo '#include <stdio.h>'>>/tmp/platform.c
+-echo 'main(){printf("ux%d", (int) (sizeof(void *)*8));}'>>/tmp/platform.c
+-$c /tmp/platform.c -o /tmp/platform
+-PLATFORM=`/tmp/platform`
+-rm /tmp/platform /tmp/platform.c >/dev/null 2>&1
++>"${tmp}"/platform.c
++echo '#include <stdlib.h>'>>"${tmp}"/platform.c
++echo '#include <stdio.h>'>>"${tmp}"/platform.c
++echo 'main(){printf("ux%d", (int) (sizeof(void *)*8));}'>>"${tmp}"/platform.c
++$c "${tmp}"/platform.c -o "${tmp}"/platform
++PLATFORM=`"${tmp}"/platform`
++rm "${tmp}"/platform "${tmp}"/platform.c >/dev/null 2>&1
+ 
+ mkdir bin bin/$PLATFORM >/dev/null 2>&1
+ 
+ #check if this system has the isnan function
+->/tmp/isnan.c
+-echo '#include <stdio.h>'>>/tmp/isnan.c
+-echo '#include <stdlib.h>'>>/tmp/isnan.c
+-echo '#include <math.h>'>>/tmp/isnan.c
+-echo 'main(){isnan(0);}'>>/tmp/isnan.c
+-$c /tmp/isnan.c -o /tmp/isnan $math >/dev/null 2>&1
++>"${tmp}"/isnan.c
++echo '#include <stdio.h>'>>"${tmp}"/isnan.c
++echo '#include <stdlib.h>'>>"${tmp}"/isnan.c
++echo '#include <math.h>'>>"${tmp}"/isnan.c
++echo 'main(){isnan(0);}'>>"${tmp}"/isnan.c
++$c "${tmp}"/isnan.c -o "${tmp}"/isnan $math >/dev/null 2>&1
+ if [ $? = 0 ]
+ then NOISNAN=
+ else NOISNAN=-DNOISNAN
+ fi
+-rm /tmp/isnan.c /tmp/isnan >/dev/null 2>&1
++rm "${tmp}"/isnan.c "${tmp}"/isnan >/dev/null 2>&1
+ 
+ def=
+ so=
