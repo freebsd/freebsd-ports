@@ -18,44 +18,41 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/classytags/helpers.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/classytags/helpers.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/classytags/helpers.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/classytags/models.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/classytags/models.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/classytags/models.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/classytags/parser.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/classytags/parser.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/classytags/parser.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/classytags/tests.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/classytags/tests.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/classytags/tests.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/classytags/utils.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/classytags/utils.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/classytags/utils.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/classytags/values.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/classytags/values.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/classytags/values.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/testdata/__init__.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/testdata/__init__.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/testdata/__init__.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/testdata/_settings.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/testdata/_settings.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/testdata/_settings.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/testdata/models.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/testdata/models.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/testdata/models.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/testdata/templatetags/__init__.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/testdata/templatetags/__init__.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/testdata/templatetags/__init__.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/testdata/templatetags/ct_cycle.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/testdata/templatetags/ct_cycle.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/testdata/templatetags/ct_cycle.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/testdata/templatetags/ct_firstof.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/testdata/templatetags/ct_firstof.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/testdata/templatetags/ct_firstof.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/testdata/templatetags/ct_for.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/testdata/templatetags/ct_for.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/testdata/templatetags/ct_for.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/testdata/templatetags/ct_now.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/testdata/templatetags/ct_now.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/testdata/templatetags/ct_now.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/testdata/templatetags/ct_with.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/testdata/templatetags/ct_with.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/testdata/templatetags/ct_with.pyo
-@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/testdata/templatetags
-@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/testdata
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/classytags/test/project/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/classytags/test/project/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/classytags/test/project/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/classytags/test/project/models.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/classytags/test/project/models.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/classytags/test/project/models.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/classytags/test/project/testrunner.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/classytags/test/project/testrunner.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/classytags/test/project/testrunner.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/classytags/test/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/classytags/test/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/classytags/test/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/classytags/test/context_managers.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/classytags/test/context_managers.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/classytags/test/context_managers.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/classytags/test/run_tests.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/classytags/test/run_tests.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/classytags/test/run_tests.pyo
+@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/classytags/test/project
+@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/classytags/test
 @dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/classytags
 @dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO
 @dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%
