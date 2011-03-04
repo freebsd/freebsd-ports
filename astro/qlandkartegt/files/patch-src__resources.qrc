@@ -1,0 +1,24 @@
+--- ./src/resources.qrc.orig	2011-02-16 22:32:47.000000000 +0200
++++ ./src/resources.qrc	2011-02-26 17:27:33.000000000 +0200
+@@ -465,14 +465,14 @@
+         <file>webstuff/frame_top.png</file>
+         <file>webstuff/frame_top_left.png</file>
+         <file>icons/cache/Earthcache.png</file>
+-        <file>icons/cache/Event Cache.png</file>
++        <file>icons/cache/Event-Cache.png</file>
+         <file>icons/cache/Multi-cache.png</file>
+-        <file>icons/cache/Traditional Cache.png</file>
+-        <file>icons/cache/Wherigo Cache.png</file>
+-        <file>icons/cache/Unknown Cache.png</file>
+-        <file>icons/cache/Letterbox Hybrid.png</file>
+-        <file>icons/cache/Virtual Cache.png</file>
+-        <file>icons/cache/Webcam Cache.png</file>
++        <file>icons/cache/Traditional-Cache.png</file>
++        <file>icons/cache/Wherigo-Cache.png</file>
++        <file>icons/cache/Unknown-Cache.png</file>
++        <file>icons/cache/Letterbox-Hybrid.png</file>
++        <file>icons/cache/Virtual-Cache.png</file>
++        <file>icons/cache/Webcam-Cache.png</file>
+         <file>icons/cache/found8x8.png</file>
+         <file>webstuff/scale.png</file>
+     </qresource>

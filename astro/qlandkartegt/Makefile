@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	qlandkartegt
-PORTVERSION=	1.0.1
+PORTVERSION=	1.1.0
 CATEGORIES=	astro
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/QLandkarteGT%20${PORTVERSION}
 
@@ -27,6 +27,10 @@ MAKE_JOBS_SAFE=	yes
 SUB_FILES=	qlandkartegt
 
 MAN1=		qlandkartegt.1
+
+post-patch:
+	cd ${WRKSRC}/src/icons/cache/ &&\
+	for f in *" "*; do ${MV} "$$f" $${f% *}-$${f#* } ; done
 
 post-install:
 	${MV} ${PREFIX}/bin/qlandkartegt ${PREFIX}/bin/qlandkartegt.bin
