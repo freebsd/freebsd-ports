@@ -7,9 +7,9 @@
 
 PORTNAME=	trafshow
 PORTVERSION=	5.2.3
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
-CATEGORIES=	net
+CATEGORIES=	net ipv6
 MASTER_SITES=	ftp://renatasystems.org/pub/FreeBSD/ports/distfiles/ \
 		ftp://ftp.nsk.su/pub/RinetSoftware/
 EXTRACT_SUFX=	.tgz
@@ -23,7 +23,7 @@ ALL_TARGET=	trafshow
 
 MAN1=		trafshow.1
 
-OPTIONS=        IPV6           "Build with IPv6 support" off
+OPTIONS=        IPV6           "Build with IPv6 support" on
 
 .include <bsd.port.pre.mk>
 
