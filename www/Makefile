@@ -1458,6 +1458,7 @@
     SUBDIR += py-beautifulsoup30
     SUBDIR += py-bottle
     SUBDIR += py-cherrypy
+    SUBDIR += py-cherrypy-devel
     SUBDIR += py-cherrypy-old
     SUBDIR += py-clientform
     SUBDIR += py-cssutils
