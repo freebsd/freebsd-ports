@@ -7,6 +7,7 @@
 
 PORTNAME=	ethumb
 PORTVERSION=	0.1.0.52995
+PORTREVISION=	1
 CATEGORIES=	graphics enlightenment
 MASTER_SITES=	http://files.roorback.net/e17/2010-10-03/extra/
 

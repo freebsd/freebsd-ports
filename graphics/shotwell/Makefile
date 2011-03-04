@@ -7,6 +7,7 @@
 
 PORTNAME=	shotwell
 PORTVERSION=	0.7.2
+PORTREVISION=	1
 CATEGORIES=	graphics gnome
 MASTER_SITES=	http://www.yorba.org/download/shotwell/${PORTVERSION:R}/
 

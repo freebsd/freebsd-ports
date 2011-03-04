@@ -6,7 +6,7 @@
 
 PORTNAME=	swiggle
 PORTVERSION=	0.4
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	www
 MASTER_SITES=	http://homepage.univie.ac.at/l.ertl/swiggle/files/ \
 		http://bsd-geek.de/FreeBSD/distfiles/
