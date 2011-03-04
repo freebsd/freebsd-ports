@@ -1,0 +1,25 @@
+diff -rupN curvedns-0.88-unstable.orig/Makefile.in curvedns-0.88-unstable/Makefile.in
+--- curvedns-0.88-unstable/.orig/Makefile.in	2011-01-10 21:15:14.000000000 +0000
++++ curvedns-0.88-unstable/Makefile.in	2011-01-10 23:12:35.000000000 +0000
+@@ -8,9 +8,9 @@ NACLINC=nacl/build/include/$(ABI)
+ CDNSCFLAGS=-Wall -fno-strict-aliasing -O3 -I$(NACLINC)
+ 
+ # If you have libev at a non-standard place, specify that here:
+-#EV=
+-#EVCFLAGS=-I$(EV)/include
+-#EVLDFLAGS=-L$(EV)/lib
++EV=$(PREFIX)
++EVCFLAGS=-I$(EV)/include
++EVLDFLAGS=-L$(EV)/lib
+ 
+ CC=@CC@
+ CFLAGS=@CFLAGS@ $(CDNSCFLAGS) $(EVCFLAGS)
+@@ -33,7 +33,7 @@ distclean: clean
+ 	rm -f Makefile
+ 
+ install:
+-	@echo Sorry, no automated install. Copy the following binaries to your preferred destination path:
++	@echo Copieng the following binaries to /usr/local/bin
+ 	@echo "  $(TARGETS)"
+ 
+ debug.o: debug.c debug.h

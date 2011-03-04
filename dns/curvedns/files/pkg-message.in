@@ -1,0 +1,21 @@
+###########################################################
+
+     To start using curvedns, finish these tasks:
+
+------- generate/install keys -----------------------------
+ curvedns-keygen %%PREFIX%%/etc/curvedns ns1.example.net
+
+------- configure -----------------------------------------
+ $EDITOR %%PREFIX%%/etc/curvedns/run
+
+------- prepare/startup -----------------------------------
+ mkdir /var/service
+ ln -s %%PREFIX%%/etc/curvedns /var/service
+ echo svscan_enable=\"YES\" >> /etc/rc.conf
+ %%PREFIX%%/etc/rc.d/svscan start
+
+------- verify --------------------------------------------
+ dig @<curvedns-ip> auth-dom.example any
+ drill <curvedns-ip> auth-dom.example any
+
+###########################################################
