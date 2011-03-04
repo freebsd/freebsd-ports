@@ -13,8 +13,3 @@ Advantages over xcb:
 - By default, it is sticky on Gnome/Gtk. You can also specify option to turn 
   window decoration off (borderless). No more tedius desktop setup to install 
   it.
-
-WWW: http://www.gnomefiles.org/app.php?soft_id=322
-
-- Nosov Artem
-chip-set@mail.ru
