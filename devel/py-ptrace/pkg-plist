@@ -117,6 +117,9 @@ bin/strace.py
 %%PYTHON_SITELIBDIR%%/ptrace/signames.py
 %%PYTHON_SITELIBDIR%%/ptrace/signames.pyc
 %%PYTHON_SITELIBDIR%%/ptrace/signames.pyo
+%%PYTHON_SITELIBDIR%%/ptrace/six.py
+%%PYTHON_SITELIBDIR%%/ptrace/six.pyc
+%%PYTHON_SITELIBDIR%%/ptrace/six.pyo
 %%PYTHON_SITELIBDIR%%/ptrace/syscall/__init__.py
 %%PYTHON_SITELIBDIR%%/ptrace/syscall/__init__.pyc
 %%PYTHON_SITELIBDIR%%/ptrace/syscall/__init__.pyo
