@@ -15,6 +15,7 @@
     SUBDIR += bitmap-fonts
     SUBDIR += bitstream-vera
     SUBDIR += c64bdf
+    SUBDIR += charis
     SUBDIR += code2000
     SUBDIR += code2001
     SUBDIR += cyberbit-ttfonts
