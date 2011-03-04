@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	abcmidi
-PORTVERSION=	2010.02.23
+PORTVERSION=	2011.02.21
 CATEGORIES=	audio
 MASTER_SITES=	http://ifdo.ca/~seymour/runabc/
 DISTNAME=	abcMIDI-${PORTVERSION:S/./-/g}
