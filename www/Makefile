@@ -1070,6 +1070,7 @@
     SUBDIR += p5-HTTP-Session-State-MobileAgentID
     SUBDIR += p5-HTTP-SimpleLinkChecker
     SUBDIR += p5-HTTP-Size
+    SUBDIR += p5-HTTP-Tiny
     SUBDIR += p5-HTTP-WebTest
     SUBDIR += p5-HTTPD-Log-Filter
     SUBDIR += p5-HTTPD-User-Manage
