@@ -1140,6 +1140,7 @@
     SUBDIR += rubygem-liquid
     SUBDIR += rubygem-loofah
     SUBDIR += rubygem-markaby
+    SUBDIR += rubygem-multi_xml
     SUBDIR += rubygem-nokogiri
     SUBDIR += rubygem-opml
     SUBDIR += rubygem-rak
