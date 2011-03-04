@@ -202,7 +202,7 @@ Python_Include_MAINTAINER=	python@FreeBSD.org
 #
 
 _PYTHON_PORTBRANCH=		2.7
-_PYTHON_ALLBRANCHES=		2.7 2.6 2.5 2.7 3.1 3.2# preferred first
+_PYTHON_ALLBRANCHES=		2.7 2.6 2.5 2.4 3.1 3.2# preferred first
 _ZOPE_PORTBRANCH=		2.7
 _ZOPE_ALLBRANCHES=		2.7 2.8 2.9 2.10 3.2
 
