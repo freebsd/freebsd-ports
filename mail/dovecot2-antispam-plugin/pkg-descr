@@ -1,0 +1,16 @@
+The dovecot antispam plugin is aimed to help in spam systems training.
+Consider the following scenario. Your mailbox is flooded with tons of
+mail.  They are delivered to the configured folders based on the
+arbitrary spam system judgement. This judgement is not always correct
+or not always what you would like it to be, however. This is where
+this plugin comes into play.
+
+All you have to do is move the mail into the correct folder. All the
+rest in order to let the spam system know it made an error will be
+done automatically by this plugin.
+
+It watches for when you move the mail to some folder and acts
+accordingly.  The advantage of this approach is that the mail ends up
+in the right target folder directly and needs not be touched twice.
+
+WWW: http://hg.dovecot.org/dovecot-antispam-plugin/
