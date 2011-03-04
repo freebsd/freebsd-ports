@@ -8,6 +8,9 @@ include/upnp/ithread.h
 include/upnp/upnpconfig.h
 include/upnp/UpnpGlobal.h
 include/upnp/UpnpInet.h
+include/upnp/UpnpIntTypes.h
+include/upnp/UpnpStdInt.h
+include/upnp/UpnpUniStd.h
 include/upnp/upnp.h
 include/upnp/upnpdebug.h
 include/upnp/UpnpString.h
@@ -19,10 +22,10 @@ lib/libixml.so.2
 lib/libthreadutil.a
 lib/libthreadutil.la
 lib/libthreadutil.so
-lib/libthreadutil.so.5
+lib/libthreadutil.so.6
 lib/libupnp.a
 lib/libupnp.la
 lib/libupnp.so
-lib/libupnp.so.5
+lib/libupnp.so.6
 libdata/pkgconfig/libupnp.pc
 @dirrm include/upnp

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	upnp
-PORTVERSION=	1.6.10
+PORTVERSION=	1.6.12
 PORTEPOCH=	1
 CATEGORIES=	devel
 MASTER_SITES=	SF/p${PORTNAME}/p${PORTNAME}/libUPnP%20${PORTVERSION}
@@ -27,21 +27,18 @@ CONFIGURE_ENV+=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 		PTHREAD_LIBS="${PTHREAD_LIBS}"
 
 .if defined(NOPORTDOCS)
-CONFIGURE_ARGS=	--without-documentation
+CONFIGURE_ARGS+=	--without-documentation
 .else
-CONFIGURE_ARGS=	--with-documentation=${DOCSDIR}
+CONFIGURE_ARGS+=	--with-documentation=${DOCSDIR}
 PORTDOCS=	*
+.endif
+
+.if defined(WITH_DEBUG)
+CONFIGURE_ARGS+=	--enable-debug
 .endif
 
 post-patch:	.SILENT
 	${REINPLACE_CMD} '/^pkgconfigexecdir/s|$$(libdir)|$$(prefix)/libdata|' \
 		${WRKSRC}/Makefile.in
 
-.include <bsd.port.pre.mk>
-
-# strndup(3) was added in 7.2-RELEASE
-.if ${OSVERSION} < 702000
-EXTRA_PATCHES+=	${FILESDIR}/extra-upnp-src-api-UpnpString.c
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
