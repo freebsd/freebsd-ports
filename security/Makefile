@@ -352,6 +352,7 @@
     SUBDIR += openvpn
     SUBDIR += openvpn-admin
     SUBDIR += openvpn-auth-ldap
+    SUBDIR += openvpn-auth-radius
     SUBDIR += openvpn-beta
     SUBDIR += openvpn-devel
     SUBDIR += openvpn20
