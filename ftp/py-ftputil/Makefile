@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ftputil
-PORTVERSION=	2.2.2
+PORTVERSION=	2.5
 CATEGORIES=	ftp python
 MASTER_SITES=	# http://ftputil.sschwarzer.net/trac/attachment/wiki/Download/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
