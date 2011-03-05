@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	polarssl
-PORTVERSION=	0.14.1
+PORTVERSION=	0.14.2
 DISTVERSIONSUFFIX=	-gpl
 CATEGORIES=	security devel
 MASTER_SITES=	http://polarssl.org/code/download/
@@ -18,6 +18,7 @@ COMMENT=	Open Source embedded SSL/TLS cryptographic library
 LICENSE=	GPLv2
 
 USE_PERL5_BUILD=	yes
+USE_LDCONFIG=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 PORTDOCS=	ChangeLog README
