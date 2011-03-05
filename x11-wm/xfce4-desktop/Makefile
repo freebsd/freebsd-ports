@@ -25,7 +25,8 @@ USE_GETTEXT=	yes
 USE_GMAKE=	yes
 USE_GNOME=	glib20 gnometarget gtk20 intltool intlhack pkgconfig
 USE_LDCONFIG=	yes
-USE_XFCE=	configenv garcon libgui libmenu libutil panel xfconf
+USE_XFCE=	configenv garcon libgui libmenu libutil panel xfconf \
+		libexo
 
 OPTIONS=	FAM	"Enable FAM support"		on \
 		THUNAR	"Enable thunar support"		on
@@ -35,14 +36,10 @@ MAN1=		xfdesktop.1
 .include <bsd.port.pre.mk>
 
 .if !defined(WITHOUT_THUNAR)
-CONFIGURE_ARGS+=--enable-thunar-vfs --enable-thunarx --enable-exo
-USE_XFCE+=	libexo thunar
+CONFIGURE_ARGS+=--enable-thunar-vfs --enable-thunarx
+USE_XFCE+=	thunar
 .else
-CONFIGURE_ARGS+=--disable-thunar-vfs --disable-thunarx --disable-exo
-.endif
-
-.if !defined(WITHOUT_FAM)
-.else
+CONFIGURE_ARGS+=--disable-thunar-vfs --disable-thunarx
 .endif
 
 .include <bsd.port.post.mk>
