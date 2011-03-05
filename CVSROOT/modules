@@ -1545,6 +1545,7 @@ chaco                           ports/math/chaco
 chanta                          ports/games/chanta
 chaosreader                     ports/security/chaosreader
 chapping                        ports/games/chapping
+charis                          ports/x11-fonts/charis
 charmap                         ports/deskutils/charmap
 charva                          ports/devel/charva
 chbg                            ports/graphics/chbg
@@ -2078,6 +2079,7 @@ cursor-jimmac-theme             ports/x11-themes/cursor-jimmac-theme
 cursor-neutral-theme            ports/x11-themes/cursor-neutral-theme
 cursor-neutral-white-theme      ports/x11-themes/cursor-neutral-white-theme
 cursor-polar-theme              ports/x11-themes/cursor-polar-theme
+curvedns                        ports/dns/curvedns
 cuse4bsd-kmod                   ports/multimedia/cuse4bsd-kmod
 cutecom                         ports/comms/cutecom
 cutils                          ports/devel/cutils
@@ -2618,11 +2620,13 @@ dotconf++                       ports/devel/dotconf++
 dotfile                         ports/misc/dotfile
 dotproject                      ports/www/dotproject
 dotter                          ports/biology/dotter
+doulos                          ports/x11-fonts/doulos
 dovecot                         ports/mail/dovecot
 dovecot-antispam                ports/mail/dovecot-antispam
 dovecot-managesieve             ports/mail/dovecot-managesieve
 dovecot-sieve                   ports/mail/dovecot-sieve
 dovecot2                        ports/mail/dovecot2
+dovecot2-antispam-plugin        ports/mail/dovecot2-antispam-plugin
 dovecot2-pigeonhole             ports/mail/dovecot2-pigeonhole
 downtime                        ports/sysutils/downtime
 downtimed                       ports/sysutils/downtimed
@@ -7638,6 +7642,7 @@ laternamagica                   ports/graphics/laternamagica
 latex                           ports/print/latex
 latex-aa                        ports/print/latex-aa
 latex-aastex                    ports/print/latex-aastex
+latex-acm                       ports/print/latex-acm
 latex-arydshln                  ports/print/latex-arydshln
 latex-auto-greek                ports/print/latex-auto-greek
 latex-beamer                    ports/print/latex-beamer
@@ -8765,6 +8770,7 @@ linux-mplayer-plugin            ports/www/linux-mplayer-plugin
 linux-musicipserver             ports/audio/linux-musicipserver
 linux-nas-libs                  ports/audio/linux-nas-libs
 linux-nero                      ports/sysutils/linux-nero
+linux-neroaaccodec              ports/audio/linux-neroaaccodec
 linux-nerogame                  ports/games/linux-nerogame
 linux-ningpo-demo               ports/games/linux-ningpo-demo
 linux-nwnclient                 ports/games/linux-nwnclient
@@ -10802,6 +10808,7 @@ openvmps                        ports/net-mgmt/openvmps
 openvpn                         ports/security/openvpn
 openvpn-admin                   ports/security/openvpn-admin
 openvpn-auth-ldap               ports/security/openvpn-auth-ldap
+openvpn-auth-radius             ports/security/openvpn-auth-radius
 openvpn-beta                    ports/security/openvpn-beta
 openvpn-devel                   ports/security/openvpn-devel
 openvpn20                       ports/security/openvpn20
@@ -12592,6 +12599,7 @@ p5-HTML-ContentExtractor        ports/www/p5-HTML-ContentExtractor
 p5-HTML-Copy                    ports/textproc/p5-HTML-Copy
 p5-HTML-DOM                     ports/www/p5-HTML-DOM
 p5-HTML-Declare                 ports/www/p5-HTML-Declare
+p5-HTML-Defaultify              ports/www/p5-HTML-Defaultify
 p5-HTML-Diff                    ports/www/p5-HTML-Diff
 p5-HTML-Display                 ports/www/p5-HTML-Display
 p5-HTML-Element-Extended        ports/www/p5-HTML-Element-Extended
@@ -12739,6 +12747,7 @@ p5-HTTP-Session                 ports/www/p5-HTTP-Session
 p5-HTTP-Session-State-MobileAgentID  ports/www/p5-HTTP-Session-State-MobileAgentID
 p5-HTTP-SimpleLinkChecker       ports/www/p5-HTTP-SimpleLinkChecker
 p5-HTTP-Size                    ports/www/p5-HTTP-Size
+p5-HTTP-Tiny                    ports/www/p5-HTTP-Tiny
 p5-HTTP-WebTest                 ports/www/p5-HTTP-WebTest
 p5-HTTPD-Log-Filter             ports/www/p5-HTTPD-Log-Filter
 p5-HTTPD-User-Manage            ports/www/p5-HTTPD-User-Manage
@@ -12882,6 +12891,7 @@ p5-JSAN                         ports/lang/p5-JSAN
 p5-JSON                         ports/converters/p5-JSON
 p5-JSON-Any                     ports/converters/p5-JSON-Any
 p5-JSON-DWIW                    ports/converters/p5-JSON-DWIW
+p5-JSON-PP                      ports/converters/p5-JSON-PP
 p5-JSON-RPC                     ports/devel/p5-JSON-RPC
 p5-JSON-RPC-Common              ports/devel/p5-JSON-RPC-Common
 p5-JSON-RPC-Dispatcher          ports/devel/p5-JSON-RPC-Dispatcher
@@ -14366,6 +14376,7 @@ p5-Test-Dependencies            ports/devel/p5-Test-Dependencies
 p5-Test-Differences             ports/devel/p5-Test-Differences
 p5-Test-Dir                     ports/misc/p5-Test-Dir
 p5-Test-Distribution            ports/devel/p5-Test-Distribution
+p5-Test-EOL                     ports/devel/p5-Test-EOL
 p5-Test-Exception               ports/devel/p5-Test-Exception
 p5-Test-Expect                  ports/devel/p5-Test-Expect
 p5-Test-Fatal                   ports/devel/p5-Test-Fatal
@@ -14697,6 +14708,7 @@ p5-Unicode-CheckUTF8            ports/textproc/p5-Unicode-CheckUTF8
 p5-Unicode-EastAsianWidth       ports/textproc/p5-Unicode-EastAsianWidth
 p5-Unicode-Escape               ports/textproc/p5-Unicode-Escape
 p5-Unicode-IMAPUtf7             ports/converters/p5-Unicode-IMAPUtf7
+p5-Unicode-LineBreak            ports/textproc/p5-Unicode-LineBreak
 p5-Unicode-Lite                 ports/converters/p5-Unicode-Lite
 p5-Unicode-Map                  ports/converters/p5-Unicode-Map
 p5-Unicode-Map8                 ports/converters/p5-Unicode-Map8
@@ -16757,6 +16769,7 @@ p5-html-contentextractor        ports/www/p5-HTML-ContentExtractor
 p5-html-copy                    ports/textproc/p5-HTML-Copy
 p5-html-ctpp2                   ports/textproc/p5-HTML-CTPP2
 p5-html-declare                 ports/www/p5-HTML-Declare
+p5-html-defaultify              ports/www/p5-HTML-Defaultify
 p5-html-diff                    ports/www/p5-HTML-Diff
 p5-html-display                 ports/www/p5-HTML-Display
 p5-html-dom                     ports/www/p5-HTML-DOM
@@ -16905,6 +16918,7 @@ p5-http-session                 ports/www/p5-HTTP-Session
 p5-http-session-state-mobileagentid  ports/www/p5-HTTP-Session-State-MobileAgentID
 p5-http-simplelinkchecker       ports/www/p5-HTTP-SimpleLinkChecker
 p5-http-size                    ports/www/p5-HTTP-Size
+p5-http-tiny                    ports/www/p5-HTTP-Tiny
 p5-http-webtest                 ports/www/p5-HTTP-WebTest
 p5-httpd-log-filter             ports/www/p5-HTTPD-Log-Filter
 p5-httpd-user-manage            ports/www/p5-HTTPD-User-Manage
@@ -17047,6 +17061,7 @@ p5-jsan                         ports/lang/p5-JSAN
 p5-json                         ports/converters/p5-JSON
 p5-json-any                     ports/converters/p5-JSON-Any
 p5-json-dwiw                    ports/converters/p5-JSON-DWIW
+p5-json-pp                      ports/converters/p5-JSON-PP
 p5-json-rpc                     ports/devel/p5-JSON-RPC
 p5-json-rpc-common              ports/devel/p5-JSON-RPC-Common
 p5-json-rpc-dispatcher          ports/devel/p5-JSON-RPC-Dispatcher
@@ -18564,6 +18579,7 @@ p5-test-dependencies            ports/devel/p5-Test-Dependencies
 p5-test-differences             ports/devel/p5-Test-Differences
 p5-test-dir                     ports/misc/p5-Test-Dir
 p5-test-distribution            ports/devel/p5-Test-Distribution
+p5-test-eol                     ports/devel/p5-Test-EOL
 p5-test-exception               ports/devel/p5-Test-Exception
 p5-test-expect                  ports/devel/p5-Test-Expect
 p5-test-fatal                   ports/devel/p5-Test-Fatal
@@ -18876,6 +18892,7 @@ p5-unicode-checkutf8            ports/textproc/p5-Unicode-CheckUTF8
 p5-unicode-eastasianwidth       ports/textproc/p5-Unicode-EastAsianWidth
 p5-unicode-escape               ports/textproc/p5-Unicode-Escape
 p5-unicode-imaputf7             ports/converters/p5-Unicode-IMAPUtf7
+p5-unicode-linebreak            ports/textproc/p5-Unicode-LineBreak
 p5-unicode-lite                 ports/converters/p5-Unicode-Lite
 p5-unicode-map                  ports/converters/p5-Unicode-Map
 p5-unicode-map8                 ports/converters/p5-Unicode-Map8
@@ -21299,6 +21316,7 @@ py-chardet                      ports/textproc/py-chardet
 py-chart                        ports/graphics/py-chart
 py-cheetah                      ports/devel/py-cheetah
 py-cherrypy                     ports/www/py-cherrypy
+py-cherrypy-devel               ports/www/py-cherrypy-devel
 py-cherrypy-old                 ports/www/py-cherrypy-old
 py-ciphon                       ports/devel/py-ciphon
 py-cjkcodecs                    ports/converters/py-cjkcodecs
@@ -21661,6 +21679,7 @@ py-pf                           ports/security/py-PF
 py-pg8000                       ports/databases/py-pg8000
 py-pg_pqueue                    ports/databases/py-pg_pqueue
 py-phpserialize                 ports/devel/py-phpserialize
+py-pika                         ports/devel/py-pika
 py-pip                          ports/devel/py-pip
 py-pisa                         ports/converters/py-pisa
 py-plastex                      ports/math/py-plastex
@@ -23259,6 +23278,7 @@ rubygem-extlib                  ports/devel/rubygem-extlib
 rubygem-ezamar                  ports/textproc/rubygem-ezamar
 rubygem-ezcrypto                ports/security/rubygem-ezcrypto
 rubygem-facets                  ports/devel/rubygem-facets
+rubygem-faraday                 ports/www/rubygem-faraday
 rubygem-fast-stemmer            ports/devel/rubygem-fast-stemmer
 rubygem-fastercsv               ports/devel/rubygem-fastercsv
 rubygem-fastthread              ports/devel/rubygem-fastthread
@@ -23344,6 +23364,8 @@ rubygem-moneta                  ports/devel/rubygem-moneta
 rubygem-mongrel                 ports/www/rubygem-mongrel
 rubygem-mongrel_cluster         ports/www/rubygem-mongrel_cluster
 rubygem-msgpack                 ports/devel/rubygem-msgpack
+rubygem-multi_json              ports/devel/rubygem-multi_json
+rubygem-multi_xml               ports/textproc/rubygem-multi_xml
 rubygem-multipart-post          ports/www/rubygem-multipart-post
 rubygem-mutter                  ports/devel/rubygem-mutter
 rubygem-ncurses                 ports/devel/rubygem-ncurses
@@ -24653,6 +24675,7 @@ syslinux                        ports/sysutils/syslinux
 syslog-ng                       ports/sysutils/syslog-ng
 syslog-ng2                      ports/sysutils/syslog-ng2
 syslog-ng3                      ports/sysutils/syslog-ng3
+syslog-ng3-devel                ports/sysutils/syslog-ng3-devel
 syslogger                       ports/sysutils/syslogger
 sysmon                          ports/net-mgmt/sysmon
 system-config-printer           ports/print/system-config-printer
@@ -24709,6 +24732,7 @@ tapidbus                        ports/net/tapidbus
 tapioca-qt                      ports/net-im/tapioca-qt
 tardy                           ports/archivers/tardy
 tarsnap                         ports/sysutils/tarsnap
+taskcoach                       ports/deskutils/taskcoach
 taskjuggler                     ports/deskutils/taskjuggler
 taskstep                        ports/deskutils/taskstep
 taskwarrior                     ports/deskutils/taskwarrior
