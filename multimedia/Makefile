@@ -234,6 +234,7 @@
     SUBDIR += okle
     SUBDIR += openmovieeditor
     SUBDIR += openquicktime
+    SUBDIR += openshot
     SUBDIR += oqtencoder
     SUBDIR += oqtplayer
     SUBDIR += p5-Audio-M4P
