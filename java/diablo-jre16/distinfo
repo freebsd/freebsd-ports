@@ -8,5 +8,5 @@ SHA256 (diablo-latte-freebsd7-i386-1.6.0_07-b02.tar.bz2) = d4cfbdaa0a8d8f819b54b
 SIZE (diablo-latte-freebsd7-i386-1.6.0_07-b02.tar.bz2) = 28718252
 SHA256 (jce_policy-6.zip) = d0c2258c3364120b4dbf7dd1655c967eee7057ac6ae6334b5ea8ceb8bafb9262
 SIZE (jce_policy-6.zip) = 9101
-SHA256 (tzupdater-1_3_34-2010o.zip) = 59fc0fa38638efc956085850fb1b8cfdaa1d657019cb42be41779fbfdfb1188d
-SIZE (tzupdater-1_3_34-2010o.zip) = 256057
+SHA256 (tzupdater-1_3_35-2011b.zip) = 9e7e966082da08842fcdb462ead9ddd789490765bccfd8f03c7fe9fa429a7f99
+SIZE (tzupdater-1_3_35-2011b.zip) = 256834
