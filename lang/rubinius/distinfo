@@ -1,4 +1,4 @@
-SHA256 (rubinius-1.2.0.tar.gz) = 87435dfccd7d7d359545fe1ecd15e1202eded90a5a43d9a961001e2b23bb6b47
-SIZE (rubinius-1.2.0.tar.gz) = 8585180
+SHA256 (rubinius-1.2.2.tar.gz) = 91c1ca3bdc132525777eef0f6c42ca06e6226065570ade127ea528feb2129347
+SIZE (rubinius-1.2.2.tar.gz) = 9011164
 SHA256 (llvm-2.8.tgz) = 25addb742f1c6cc12877ed0ee924dda962d848368ee095be8e48342ae613d43b
 SIZE (llvm-2.8.tgz) = 9112527
