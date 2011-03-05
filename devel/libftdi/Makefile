@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	libftdi
-PORTVERSION=	0.17
-PORTREVISION=	1
+PORTVERSION=	0.18
 CATEGORIES=	devel
 MASTER_SITES=	http://www.intra2net.com/en/developer/libftdi/download/
 
