@@ -7,7 +7,7 @@
 
 PORTNAME=	urjtag
 PORTVERSION=	0.10
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel
 MASTER_SITES=	SF
 
@@ -49,7 +49,7 @@ EXTRA_PATCHES=	${FILESDIR}/extra-patch-usb
 
 .if !defined(WITHOUT_FTDI)
 CONFIGURE_ARGS+=	--with-libftdi
-LIB_DEPENDS+=	ftdi.18:${PORTSDIR}/devel/libftdi
+LIB_DEPENDS+=	ftdi.19:${PORTSDIR}/devel/libftdi
 .endif
 
 .if exists(${LOCALBASE}/lib/libreadline.so.6)

@@ -7,7 +7,7 @@
 
 PORTNAME=	lirc
 PORTVERSION=	0.9.0p1
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	comms
 MASTER_SITES=	http://lirc.org/software/snapshots/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/p1/-pre1/}
@@ -48,7 +48,7 @@ PLIST_SUB+=	SMODE2="@comment "
 
 .if defined(WITHOUT_MINIMAL)
 BUILD_DEPENDS+=		${LOCALBASE}/lib/libirman.a:${PORTSDIR}/comms/libirman
-LIB_DEPENDS+=		ftdi.18:${PORTSDIR}/devel/libftdi
+LIB_DEPENDS+=		ftdi.19:${PORTSDIR}/devel/libftdi
 CONFIGURE_ARGS+=	--with-driver=userspace
 .else
 CONFIGURE_ARGS+=	--with-driver=dvico

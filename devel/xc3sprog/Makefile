@@ -7,6 +7,7 @@
 
 PORTNAME=	xc3sprog
 PORTVERSION=	r449
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://FreeBSD.czest.pl/~wkoszek/ports/
 
