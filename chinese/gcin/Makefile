@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	gcin
-PORTVERSION=	1.5.8
+PORTVERSION=	1.5.9
 CATEGORIES=	chinese textproc gnome
-MASTER_SITES=	http://cle.linux.org.tw/gcin/download/:main \
-		http://ftp.twaren.net/local-distfiles/gcin/:main \
-		LOCAL/chinsan:main
+MASTER_SITES=	http://www.csie.nctu.edu.tw/~cp76/gcin/download/:main \
+		LOCAL/chinsan/gcin:main
 DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}:main
 EXTRACT_ONLY=	gcin-${PORTVERSION}.tar.bz2
 
@@ -59,10 +58,11 @@ post-patch:
 		s,QT4_IM_DIR=/usr,QT4_IM_DIR=$$prefix,g; \
 		s,mandir=$$datadir,mandir=$$prefix,; \
 		s,/usr/share,$$prefix/share,; \
-		1, 300 s,gcc,$$CC,; s,gcin-$$GCIN_VERSION,gcin,' ${WRKSRC}/configure
+		1, 300 s,gcc,$$CC,; s,gcin-$$GCIN_VERSION,gcin,; \
+		/GCIN_DEBUG/ d' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's,\/usr\/share,$$(prefix)\/share,;' \
 		${WRKSRC}/Makefile
-	@${REINPLACE_CMD} -e '93,95 d' ${WRKSRC}/gcin-common.cpp
+	@${REINPLACE_CMD} -e '94 s/gcin/gcin-setup/' ${WRKSRC}/gcin-common.cpp
 	@${REINPLACE_CMD} -e 's,/usr/local,/usr,g' \
 		${WRKSRC}/gtk-im/Makefile ${WRKSRC}/menu/Makefile
 	@${REINPLACE_CMD} -e 's,modify-XIM ,,; 8,10 d' \
