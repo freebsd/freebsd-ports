@@ -9,3 +9,5 @@ for working with Python module distributions.
 
     - Re-factoring the code, and releasing it in several distributions.
       This work is being done in the 0.7.x series but not yet released.
+
+WWW: http://pypi.python.org/pypi/distribute

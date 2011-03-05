@@ -15,14 +15,11 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	A Python packages installer, and Setuptools replacement
 
+CONFLICTS=	py[2-3][0-9]-setuptools-[0-9]*
+
 PLIST_SUB=	PYVER=${PYTHON_VER} VERSION=${PORTVERSION} SETUPTOOLS_VER=0.6c11
 
 PYDISTUTILS_NOEGGINFO=	yes
-# waiting for better times...
-PYEASYINSTALL_CMD=	${LOCALBASE}/bin/easy_install-${PYTHON_VER}
-CONFLICTS=	${PKGNAMEPREFIX}setuptools-[0-9]*
-# i.e. a support in bsd.python.mk
-
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 
