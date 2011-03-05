@@ -12,7 +12,7 @@
 #
 #  chef_client_enable="YES"
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name="chef_client"
 rcvar=`set_rcvar`
