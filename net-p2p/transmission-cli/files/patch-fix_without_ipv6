@@ -1,11 +1,11 @@
---- libtransmission/fdlimit.c.orig	2010-09-13 14:17:18.000000000 +0600
-+++ libtransmission/fdlimit.c	2010-09-13 14:04:19.000000000 +0600
-@@ -646,7 +646,7 @@
-     if( gFd->socketCount < gFd->socketLimit )
-         if( ( s = socket( domain, type, 0 ) ) < 0 )
-         {
+--- libtransmission/fdlimit.c.orig	2011-02-27 15:34:55.000000000 -0600
++++ libtransmission/fdlimit.c	2011-02-27 15:35:12.000000000 -0600
+@@ -609,7 +609,7 @@
+ 
+     if( gFd->socket_count < gFd->socket_limit )
+         if(( s = socket( domain, type, 0 )) < 0 )
 -            if( sockerrno != EAFNOSUPPORT )
 +            if( sockerrno != EPROTONOSUPPORT )
-                 tr_err( _( "Couldn't create socket: %s" ),
-                         tr_strerror( sockerrno ) );
-         }
+                 tr_err( _( "Couldn't create socket: %s" ), tr_strerror( sockerrno ) );
+ 
+     if( s > -1 )

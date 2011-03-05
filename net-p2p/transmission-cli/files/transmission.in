@@ -33,8 +33,8 @@ load_rc_config ${name}
 
 : ${transmission_enable:="NO"}
 : ${transmission_user:="transmission"}
-: ${transmission_conf_dir:="%%PREFIX%%/etc/transmission/home"}
-: ${transmission_download_dir:="%%PREFIX%%/etc/transmission/home/Downloads"}
+: ${transmission_conf_dir="%%PREFIX%%/etc/transmission/home"}
+: ${transmission_download_dir="%%PREFIX%%/etc/transmission/home/Downloads"}
 
 transmission_flags=" \
 	${transmission_watch_dir:+-c ${transmission_watch_dir}} \
