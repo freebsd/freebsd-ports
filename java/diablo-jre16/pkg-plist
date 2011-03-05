@@ -367,6 +367,7 @@ diablo-jre%%JRE_VERSION%%/lib/zi/America/New_York
 diablo-jre%%JRE_VERSION%%/lib/zi/America/Nipigon
 diablo-jre%%JRE_VERSION%%/lib/zi/America/Nome
 diablo-jre%%JRE_VERSION%%/lib/zi/America/Noronha
+%%TZUPDATE%%diablo-jre%%JRE_VERSION%%/lib/zi/America/North_Dakota/Beulah
 diablo-jre%%JRE_VERSION%%/lib/zi/America/North_Dakota/Center
 diablo-jre%%JRE_VERSION%%/lib/zi/America/North_Dakota/New_Salem
 %%TZUPDATE%%diablo-jre%%JRE_VERSION%%/lib/zi/America/Ojinaga

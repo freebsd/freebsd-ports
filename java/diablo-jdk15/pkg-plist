@@ -1783,6 +1783,7 @@ diablo-jdk%%JDK_VERSION%%/jre/lib/zi/America/New_York
 diablo-jdk%%JDK_VERSION%%/jre/lib/zi/America/Nipigon
 diablo-jdk%%JDK_VERSION%%/jre/lib/zi/America/Nome
 diablo-jdk%%JDK_VERSION%%/jre/lib/zi/America/Noronha
+%%TZUPDATE%%diablo-jdk%%JDK_VERSION%%/jre/lib/zi/America/North_Dakota/Beulah
 diablo-jdk%%JDK_VERSION%%/jre/lib/zi/America/North_Dakota/Center
 %%TZUPDATE%%diablo-jdk%%JDK_VERSION%%/jre/lib/zi/America/North_Dakota/New_Salem
 %%TZUPDATE%%diablo-jdk%%JDK_VERSION%%/jre/lib/zi/America/Ojinaga
