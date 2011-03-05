@@ -10,7 +10,6 @@ PORTVERSION=	3.03
 PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://www.nog.net/~tony/warez/
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	wxs@FreeBSD.org
 COMMENT=	Configurable talking characters in ASCII art
