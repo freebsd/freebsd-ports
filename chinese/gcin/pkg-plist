@@ -34,6 +34,7 @@ lib/gcin/libgcin-im-client.so.1
 %%DATADIR%%/table/cj.gtab
 %%DATADIR%%/table/cj5.gtab
 %%DATADIR%%/table/cj543.gtab
+%%DATADIR%%/table/colemak.kbm
 %%DATADIR%%/table/dayi3.gtab
 %%DATADIR%%/table/dvorak.kbm
 %%DATADIR%%/table/et.kbm
