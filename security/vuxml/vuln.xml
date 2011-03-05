@@ -34,6 +34,38 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="e27ca763-4721-11e0-bdc4-001e8c75030d">
+    <topic>subversion -- remote HTTP DoS vulnerability</topic>
+    <affects>
+      <package>
+	<name>subversion</name>
+	<range><ge>1.6</ge><le>1.6.15</le></range>
+	<range><ge>1.5</ge><le>1.6.9</le></range>
+      </package>
+      <package>
+        <name>subversion-freebsd</name>
+	<range><ge>1.6</ge><le>1.6.15</le></range>
+	<range><ge>1.5</ge><le>1.6.9</le></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Subversion project reports:</p>
+	<blockquote cite="http://subversion.apache.org/security/CVE-2011-0715-advisory.txt">
+	  <p>Subversion HTTP servers up to 1.5.9 (inclusive) or 1.6.15 (inclusive)
+             are vulnerable to a remotely triggerable NULL-pointer dereference.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2011-0715</cvename>
+    </references>
+    <dates>
+      <discovery>2011-02-27</discovery>
+      <entry>2011-03-05</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="45f102cd-4456-11e0-9580-4061862b8c22">
     <topic>mozilla -- multiple vulnerabilities</topic>
     <affects>
