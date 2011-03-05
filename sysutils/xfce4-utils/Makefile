@@ -7,6 +7,7 @@
 
 PORTNAME=	xfce4-utils
 PORTVERSION=	4.8.1
+PORTREVISION=	1
 CATEGORIES=	sysutils xfce
 MASTER_SITES=	${MASTER_SITE_XFCE}
 MASTER_SITE_SUBDIR=	src/xfce/xfce-utils/${PORTVERSION:R}
@@ -56,12 +57,6 @@ PLIST_SUB+=	NLS=""
 CONFIGURE_ARGS+=--disable-nls
 PLIST_SUB+=	NLS="@comment "
 .endif
-
-post-patch:
-	@${REINPLACE_CMD} 's|/usr/local/share:|${LOCALBASE}/share:|' \
-		${WRKSRC}/scripts/startxfce4.in
-	@${REINPLACE_CMD} 's|/usr/local/share:||' \
-		${WRKSRC}/scripts/startxfce4.in
 
 post-install:
 	@-update-desktop-database
