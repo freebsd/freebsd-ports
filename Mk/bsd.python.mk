@@ -516,7 +516,7 @@ PLIST_FILES+=	${PYDISTUTILS_EGGINFODIR:S;${PREFIX}/;;}/${egg}
 . endfor
 .endif
 
-# Fix for programs that build python from a GNU auto* enviornment
+# Fix for programs that build python from a GNU auto* environment
 CONFIGURE_ENV+=	PYTHON="${PYTHON_CMD}"
 
 # Zope-related variables
@@ -678,6 +678,9 @@ PYDISTUTILS_BUILD_TARGET?=		build
 PYDISTUTILS_INSTALL_TARGET?=	install
 
 .if defined(USE_PYDISTUTILS)
+LDSHARED?=	${CC} -shared
+MAKE_ENV+=	LDSHARED="${LDSHARED}"
+
 .if !target(do-configure) && !defined(HAS_CONFIGURE) && !defined(GNU_CONFIGURE)
 do-configure:
 	@(cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} ${PYTHON_CMD} ${PYSETUP} ${PYDISTUTILS_CONFIGURE_TARGET} ${PYDISTUTILS_CONFIGUREARGS})
