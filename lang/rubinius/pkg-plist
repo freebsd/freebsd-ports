@@ -180,6 +180,8 @@ lib/ruby/rubinius/rubinius/1.2/lib/erb.rb
 lib/ruby/rubinius/rubinius/1.2/lib/erb.rbc
 lib/ruby/rubinius/rubinius/1.2/lib/etc.rb
 lib/ruby/rubinius/rubinius/1.2/lib/etc.rbc
+lib/ruby/rubinius/rubinius/1.2/lib/expect.rb
+lib/ruby/rubinius/rubinius/1.2/lib/expect.rbc
 lib/ruby/rubinius/rubinius/1.2/lib/ext/bigdecimal/bigdecimal.so
 lib/ruby/rubinius/rubinius/1.2/lib/ext/bigdecimal/sample/linear.rb
 lib/ruby/rubinius/rubinius/1.2/lib/ext/bigdecimal/sample/linear.rbc
@@ -297,6 +299,8 @@ lib/ruby/rubinius/rubinius/1.2/lib/iconv.rb
 lib/ruby/rubinius/rubinius/1.2/lib/iconv.rbc
 lib/ruby/rubinius/rubinius/1.2/lib/io/nonblock.rb
 lib/ruby/rubinius/rubinius/1.2/lib/io/nonblock.rbc
+lib/ruby/rubinius/rubinius/1.2/lib/io/wait.rb
+lib/ruby/rubinius/rubinius/1.2/lib/io/wait.rbc
 lib/ruby/rubinius/rubinius/1.2/lib/ipaddr.rb
 lib/ruby/rubinius/rubinius/1.2/lib/ipaddr.rbc
 lib/ruby/rubinius/rubinius/1.2/lib/irb/cmd/chws.rb
@@ -497,6 +501,8 @@ lib/ruby/rubinius/rubinius/1.2/lib/racc/parser.rb
 lib/ruby/rubinius/rubinius/1.2/lib/racc/parser.rbc
 lib/ruby/rubinius/rubinius/1.2/lib/rational.rb
 lib/ruby/rubinius/rubinius/1.2/lib/rational.rbc
+lib/ruby/rubinius/rubinius/1.2/lib/rb-readline/rb-readline.rb
+lib/ruby/rubinius/rubinius/1.2/lib/rb-readline/rb-readline.rbc
 lib/ruby/rubinius/rubinius/1.2/lib/rb-readline/rbreadline.rb
 lib/ruby/rubinius/rubinius/1.2/lib/rb-readline/rbreadline.rbc
 lib/ruby/rubinius/rubinius/1.2/lib/rb-readline/readline.rb
@@ -637,6 +643,92 @@ lib/ruby/rubinius/rubinius/1.2/lib/rinda/ring.rb
 lib/ruby/rubinius/rubinius/1.2/lib/rinda/ring.rbc
 lib/ruby/rubinius/rubinius/1.2/lib/rinda/tuplespace.rb
 lib/ruby/rubinius/rubinius/1.2/lib/rinda/tuplespace.rbc
+lib/ruby/rubinius/rubinius/1.2/lib/rss/0.9.rb
+lib/ruby/rubinius/rubinius/1.2/lib/rss/0.9.rbc
+lib/ruby/rubinius/rubinius/1.2/lib/rss/1.0.rb
+lib/ruby/rubinius/rubinius/1.2/lib/rss/1.0.rbc
+lib/ruby/rubinius/rubinius/1.2/lib/rss/2.0.rb
+lib/ruby/rubinius/rubinius/1.2/lib/rss/2.0.rbc
+lib/ruby/rubinius/rubinius/1.2/lib/rss/atom.rb
+lib/ruby/rubinius/rubinius/1.2/lib/rss/atom.rbc
+lib/ruby/rubinius/rubinius/1.2/lib/rss/content/1.0.rb
+lib/ruby/rubinius/rubinius/1.2/lib/rss/content/1.0.rbc
+lib/ruby/rubinius/rubinius/1.2/lib/rss/content/2.0.rb
+lib/ruby/rubinius/rubinius/1.2/lib/rss/content/2.0.rbc
+lib/ruby/rubinius/rubinius/1.2/lib/rss/content.rb
+lib/ruby/rubinius/rubinius/1.2/lib/rss/content.rbc
+lib/ruby/rubinius/rubinius/1.2/lib/rss/converter.rb
+lib/ruby/rubinius/rubinius/1.2/lib/rss/converter.rbc
+lib/ruby/rubinius/rubinius/1.2/lib/rss/dublincore/1.0.rb
+lib/ruby/rubinius/rubinius/1.2/lib/rss/dublincore/1.0.rbc
+lib/ruby/rubinius/rubinius/1.2/lib/rss/dublincore/2.0.rb
+lib/ruby/rubinius/rubinius/1.2/lib/rss/dublincore/2.0.rbc
+lib/ruby/rubinius/rubinius/1.2/lib/rss/dublincore/atom.rb
+lib/ruby/rubinius/rubinius/1.2/lib/rss/dublincore/atom.rbc
+lib/ruby/rubinius/rubinius/1.2/lib/rss/dublincore.rb
+lib/ruby/rubinius/rubinius/1.2/lib/rss/dublincore.rbc
+lib/ruby/rubinius/rubinius/1.2/lib/rss/image.rb
+lib/ruby/rubinius/rubinius/1.2/lib/rss/image.rbc
+lib/ruby/rubinius/rubinius/1.2/lib/rss/itunes.rb
+lib/ruby/rubinius/rubinius/1.2/lib/rss/itunes.rbc
+lib/ruby/rubinius/rubinius/1.2/lib/rss/maker/0.9.rb
+lib/ruby/rubinius/rubinius/1.2/lib/rss/maker/0.9.rbc
+lib/ruby/rubinius/rubinius/1.2/lib/rss/maker/1.0.rb
+lib/ruby/rubinius/rubinius/1.2/lib/rss/maker/1.0.rbc
+lib/ruby/rubinius/rubinius/1.2/lib/rss/maker/2.0.rb
+lib/ruby/rubinius/rubinius/1.2/lib/rss/maker/2.0.rbc
+lib/ruby/rubinius/rubinius/1.2/lib/rss/maker/atom.rb
+lib/ruby/rubinius/rubinius/1.2/lib/rss/maker/atom.rbc
+lib/ruby/rubinius/rubinius/1.2/lib/rss/maker/base.rb
+lib/ruby/rubinius/rubinius/1.2/lib/rss/maker/base.rbc
+lib/ruby/rubinius/rubinius/1.2/lib/rss/maker/content.rb
+lib/ruby/rubinius/rubinius/1.2/lib/rss/maker/content.rbc
+lib/ruby/rubinius/rubinius/1.2/lib/rss/maker/dublincore.rb
+lib/ruby/rubinius/rubinius/1.2/lib/rss/maker/dublincore.rbc
+lib/ruby/rubinius/rubinius/1.2/lib/rss/maker/entry.rb
+lib/ruby/rubinius/rubinius/1.2/lib/rss/maker/entry.rbc
+lib/ruby/rubinius/rubinius/1.2/lib/rss/maker/feed.rb
+lib/ruby/rubinius/rubinius/1.2/lib/rss/maker/feed.rbc
+lib/ruby/rubinius/rubinius/1.2/lib/rss/maker/image.rb
+lib/ruby/rubinius/rubinius/1.2/lib/rss/maker/image.rbc
+lib/ruby/rubinius/rubinius/1.2/lib/rss/maker/itunes.rb
+lib/ruby/rubinius/rubinius/1.2/lib/rss/maker/itunes.rbc
+lib/ruby/rubinius/rubinius/1.2/lib/rss/maker/slash.rb
+lib/ruby/rubinius/rubinius/1.2/lib/rss/maker/slash.rbc
+lib/ruby/rubinius/rubinius/1.2/lib/rss/maker/syndication.rb
+lib/ruby/rubinius/rubinius/1.2/lib/rss/maker/syndication.rbc
+lib/ruby/rubinius/rubinius/1.2/lib/rss/maker/taxonomy.rb
+lib/ruby/rubinius/rubinius/1.2/lib/rss/maker/taxonomy.rbc
+lib/ruby/rubinius/rubinius/1.2/lib/rss/maker/trackback.rb
+lib/ruby/rubinius/rubinius/1.2/lib/rss/maker/trackback.rbc
+lib/ruby/rubinius/rubinius/1.2/lib/rss/maker.rb
+lib/ruby/rubinius/rubinius/1.2/lib/rss/maker.rbc
+lib/ruby/rubinius/rubinius/1.2/lib/rss/parser.rb
+lib/ruby/rubinius/rubinius/1.2/lib/rss/parser.rbc
+lib/ruby/rubinius/rubinius/1.2/lib/rss/rexmlparser.rb
+lib/ruby/rubinius/rubinius/1.2/lib/rss/rexmlparser.rbc
+lib/ruby/rubinius/rubinius/1.2/lib/rss/rss.rb
+lib/ruby/rubinius/rubinius/1.2/lib/rss/rss.rbc
+lib/ruby/rubinius/rubinius/1.2/lib/rss/slash.rb
+lib/ruby/rubinius/rubinius/1.2/lib/rss/slash.rbc
+lib/ruby/rubinius/rubinius/1.2/lib/rss/syndication.rb
+lib/ruby/rubinius/rubinius/1.2/lib/rss/syndication.rbc
+lib/ruby/rubinius/rubinius/1.2/lib/rss/taxonomy.rb
+lib/ruby/rubinius/rubinius/1.2/lib/rss/taxonomy.rbc
+lib/ruby/rubinius/rubinius/1.2/lib/rss/trackback.rb
+lib/ruby/rubinius/rubinius/1.2/lib/rss/trackback.rbc
+lib/ruby/rubinius/rubinius/1.2/lib/rss/utils.rb
+lib/ruby/rubinius/rubinius/1.2/lib/rss/utils.rbc
+lib/ruby/rubinius/rubinius/1.2/lib/rss/xml-stylesheet.rb
+lib/ruby/rubinius/rubinius/1.2/lib/rss/xml-stylesheet.rbc
+lib/ruby/rubinius/rubinius/1.2/lib/rss/xml.rb
+lib/ruby/rubinius/rubinius/1.2/lib/rss/xml.rbc
+lib/ruby/rubinius/rubinius/1.2/lib/rss/xmlparser.rb
+lib/ruby/rubinius/rubinius/1.2/lib/rss/xmlparser.rbc
+lib/ruby/rubinius/rubinius/1.2/lib/rss/xmlscanner.rb
+lib/ruby/rubinius/rubinius/1.2/lib/rss/xmlscanner.rbc
+lib/ruby/rubinius/rubinius/1.2/lib/rss.rb
+lib/ruby/rubinius/rubinius/1.2/lib/rss.rbc
 lib/ruby/rubinius/rubinius/1.2/lib/rubinius/agent.rb
 lib/ruby/rubinius/rubinius/1.2/lib/rubinius/agent.rbc
 lib/ruby/rubinius/rubinius/1.2/lib/rubinius/bert/bert.rb
@@ -682,6 +774,7 @@ lib/ruby/rubinius/rubinius/1.2/lib/rubinius/debugger/old/vm_commands.rbc
 lib/ruby/rubinius/rubinius/1.2/lib/rubinius/debugger.rb
 lib/ruby/rubinius/rubinius/1.2/lib/rubinius/debugger.rbc
 lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/2010/12/15/rubinius-has-a-blog/index.html
+lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/2011/02/17/rubinius-what-s-next/index.html
 lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/404.html
 lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/422.html
 lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/500.html
@@ -690,6 +783,7 @@ lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/about/one_one/index.ht
 lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/about/one_point_oh/index.html
 lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/about/one_point_one/index.html
 lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/blog/index.html
+lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/blog/posts_index/index.html
 lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/doc/de/appendix-a-glossary/index.html
 lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/doc/de/appendix-b-reading-list/index.html
 lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/doc/de/bootstrapping/index.html
@@ -756,10 +850,14 @@ lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/doc/en/bootstrapping/i
 lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/doc/en/build-system/index.html
 lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/doc/en/bytecode-compiler/ast/index.html
 lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/doc/en/bytecode-compiler/compiler/index.html
+lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/doc/en/bytecode-compiler/customization/index.html
+lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/doc/en/bytecode-compiler/encoder/index.html
 lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/doc/en/bytecode-compiler/generator/index.html
 lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/doc/en/bytecode-compiler/index.html
+lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/doc/en/bytecode-compiler/packager/index.html
 lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/doc/en/bytecode-compiler/parser/index.html
 lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/doc/en/bytecode-compiler/transformations/index.html
+lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/doc/en/bytecode-compiler/writer/index.html
 lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/doc/en/contributing/communication/index.html
 lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/doc/en/contributing/index.html
 lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/doc/en/contributing/style-guide/index.html
@@ -931,6 +1029,66 @@ lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/doc/ja/virtual-machine
 lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/doc/ja/virtual-machine/index.html
 lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/doc/ja/virtual-machine/instructions/index.html
 lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/doc/ja/what-is-rubinius/index.html
+lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/doc/pl/appendix-a-glossary/index.html
+lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/doc/pl/appendix-b-reading-list/index.html
+lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/doc/pl/bootstrapping/index.html
+lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/doc/pl/build-system/index.html
+lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/doc/pl/bytecode-compiler/ast/index.html
+lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/doc/pl/bytecode-compiler/compiler/index.html
+lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/doc/pl/bytecode-compiler/generator/index.html
+lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/doc/pl/bytecode-compiler/index.html
+lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/doc/pl/bytecode-compiler/parser/index.html
+lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/doc/pl/bytecode-compiler/transformations/index.html
+lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/doc/pl/contributing/communication/index.html
+lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/doc/pl/contributing/index.html
+lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/doc/pl/contributing/style-guide/index.html
+lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/doc/pl/garbage-collector/index.html
+lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/doc/pl/garbage-collector/large-objects/index.html
+lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/doc/pl/garbage-collector/mature-generation/index.html
+lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/doc/pl/garbage-collector/nursery/index.html
+lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/doc/pl/garbage-collector/young-generation/index.html
+lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/doc/pl/getting-started/building/index.html
+lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/doc/pl/getting-started/index.html
+lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/doc/pl/getting-started/requirements/index.html
+lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/doc/pl/getting-started/running-rubinius/index.html
+lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/doc/pl/getting-started/troubleshooting/index.html
+lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/doc/pl/how-to/fix-a-failing-spec/index.html
+lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/doc/pl/how-to/index.html
+lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/doc/pl/how-to/translate-documentation/index.html
+lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/doc/pl/how-to/write-a-blog-post/index.html
+lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/doc/pl/how-to/write-a-ruby-spec/index.html
+lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/doc/pl/how-to/write-a-ticket/index.html
+lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/doc/pl/how-to/write-documentation/index.html
+lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/doc/pl/index-of-terms/index.html
+lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/doc/pl/index.html
+lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/doc/pl/jit/index.html
+lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/doc/pl/ruby/blocks-and-procs/index.html
+lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/doc/pl/ruby/class-variables/index.html
+lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/doc/pl/ruby/classes-and-modules/index.html
+lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/doc/pl/ruby/constants/index.html
+lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/doc/pl/ruby/global-variables/index.html
+lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/doc/pl/ruby/index.html
+lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/doc/pl/ruby/instance-variables/index.html
+lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/doc/pl/ruby/local-variables/index.html
+lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/doc/pl/ruby/methods/index.html
+lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/doc/pl/ruby/scripts/index.html
+lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/doc/pl/specs/compiler/index.html
+lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/doc/pl/specs/index.html
+lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/doc/pl/specs/rubyspec/index.html
+lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/doc/pl/systems/c-api/index.html
+lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/doc/pl/systems/concurrency/index.html
+lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/doc/pl/systems/ffi/index.html
+lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/doc/pl/systems/index.html
+lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/doc/pl/systems/io/index.html
+lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/doc/pl/systems/primitives/index.html
+lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/doc/pl/tools/debugger/index.html
+lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/doc/pl/tools/index.html
+lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/doc/pl/tools/memory-analysis/index.html
+lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/doc/pl/tools/profiler/index.html
+lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/doc/pl/virtual-machine/custom-dispatch-logic/index.html
+lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/doc/pl/virtual-machine/index.html
+lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/doc/pl/virtual-machine/instructions/index.html
+lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/doc/pl/what-is-rubinius/index.html
 lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/doc/ru/appendix-a-glossary/index.html
 lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/doc/ru/appendix-b-reading-list/index.html
 lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/doc/ru/bootstrapping/index.html
@@ -991,8 +1149,11 @@ lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/doc/ru/virtual-machine
 lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/doc/ru/virtual-machine/index.html
 lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/doc/ru/virtual-machine/instructions/index.html
 lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/doc/ru/what-is-rubinius/index.html
+lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/feed/atom.xml
 lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/images/build.png
+lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/images/compilation_process.png
 lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/images/download.png
+lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/images/feed-icon16x16.png
 lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/images/report_bugs.png
 lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/images/rubinius_logo_black_on_white.png
 lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/index.html
@@ -1006,6 +1167,8 @@ lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/releases/1.0.1/index.h
 lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/releases/1.1.0/index.html
 lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/releases/1.1.1/index.html
 lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/releases/1.2.0/index.html
+lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/releases/1.2.1/index.html
+lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/releases/1.2.2/index.html
 lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/releases/index.html
 lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/roadmap/index.html
 lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/robots.txt
@@ -1013,8 +1176,8 @@ lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/stylesheets/applicatio
 lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/stylesheets/blueprint/ie.css
 lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/stylesheets/blueprint/print.css
 lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/stylesheets/blueprint/screen.css
-lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/stylesheets/colors.css
 lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/stylesheets/ie.css
+lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/stylesheets/pygments.css
 lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation.rb
 lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation.rbc
 lib/ruby/rubinius/rubinius/1.2/lib/rubygems/builder.rb
@@ -1221,6 +1384,8 @@ lib/ruby/rubinius/rubinius/1.2/lib/semaphore.rb
 lib/ruby/rubinius/rubinius/1.2/lib/semaphore.rbc
 lib/ruby/rubinius/rubinius/1.2/lib/set.rb
 lib/ruby/rubinius/rubinius/1.2/lib/set.rbc
+lib/ruby/rubinius/rubinius/1.2/lib/sha1.rb
+lib/ruby/rubinius/rubinius/1.2/lib/sha1.rbc
 lib/ruby/rubinius/rubinius/1.2/lib/shellwords.rb
 lib/ruby/rubinius/rubinius/1.2/lib/shellwords.rbc
 lib/ruby/rubinius/rubinius/1.2/lib/singleton.rb
@@ -1285,6 +1450,8 @@ lib/ruby/rubinius/rubinius/1.2/lib/test/unit.rb
 lib/ruby/rubinius/rubinius/1.2/lib/test/unit.rbc
 lib/ruby/rubinius/rubinius/1.2/lib/thread.rb
 lib/ruby/rubinius/rubinius/1.2/lib/thread.rbc
+lib/ruby/rubinius/rubinius/1.2/lib/thwait.rb
+lib/ruby/rubinius/rubinius/1.2/lib/thwait.rbc
 lib/ruby/rubinius/rubinius/1.2/lib/time.rb
 lib/ruby/rubinius/rubinius/1.2/lib/time.rbc
 lib/ruby/rubinius/rubinius/1.2/lib/timeout.rb
@@ -1602,6 +1769,7 @@ lib/ruby/rubinius/rubinius/1.2/runtime/platform/pointer.rbc
 lib/ruby/rubinius/rubinius/1.2/runtime/platform/posix.rbc
 lib/ruby/rubinius/rubinius/1.2/runtime/platform/struct.rbc
 lib/ruby/rubinius/rubinius/1.2/runtime/platform.conf
+lib/ruby/rubinius/rubinius/1.2/runtime/signature
 lib/ruby/rubinius/rubinius/1.2/runtime/signature.rbc
 @dirrm lib/ruby/rubinius/rubinius/1.2/lib/actor
 @dirrm lib/ruby/rubinius/rubinius/1.2/lib/bigdecimal
@@ -1663,6 +1831,10 @@ lib/ruby/rubinius/rubinius/1.2/runtime/signature.rbc
 @dirrm lib/ruby/rubinius/rubinius/1.2/lib/rexml/validation
 @dirrm lib/ruby/rubinius/rubinius/1.2/lib/rexml
 @dirrm lib/ruby/rubinius/rubinius/1.2/lib/rinda
+@dirrm lib/ruby/rubinius/rubinius/1.2/lib/rss/content
+@dirrm lib/ruby/rubinius/rubinius/1.2/lib/rss/dublincore
+@dirrm lib/ruby/rubinius/rubinius/1.2/lib/rss/maker
+@dirrm lib/ruby/rubinius/rubinius/1.2/lib/rss
 @dirrm lib/ruby/rubinius/rubinius/1.2/lib/rubinius/bert
 @dirrm lib/ruby/rubinius/rubinius/1.2/lib/rubinius/debugger/old
 @dirrm lib/ruby/rubinius/rubinius/1.2/lib/rubinius/debugger
@@ -1670,11 +1842,16 @@ lib/ruby/rubinius/rubinius/1.2/runtime/signature.rbc
 @dirrm lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/2010/12/15
 @dirrm lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/2010/12
 @dirrm lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/2010
+@dirrm lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/2011/02/17/rubinius-what-s-next
+@dirrm lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/2011/02/17
+@dirrm lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/2011/02
+@dirrm lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/2011
 @dirrm lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/about/1.1.1
 @dirrm lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/about/one_one
 @dirrm lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/about/one_point_oh
 @dirrm lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/about/one_point_one
 @dirrm lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/about
+@dirrm lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/blog/posts_index
 @dirrm lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/blog
 @dirrm lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/doc/de/appendix-a-glossary
 @dirrm lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/doc/de/appendix-b-reading-list
@@ -1742,9 +1919,13 @@ lib/ruby/rubinius/rubinius/1.2/runtime/signature.rbc
 @dirrm lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/doc/en/build-system
 @dirrm lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/doc/en/bytecode-compiler/ast
 @dirrm lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/doc/en/bytecode-compiler/compiler
+@dirrm lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/doc/en/bytecode-compiler/customization
+@dirrm lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/doc/en/bytecode-compiler/encoder
 @dirrm lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/doc/en/bytecode-compiler/generator
+@dirrm lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/doc/en/bytecode-compiler/packager
 @dirrm lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/doc/en/bytecode-compiler/parser
 @dirrm lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/doc/en/bytecode-compiler/transformations
+@dirrm lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/doc/en/bytecode-compiler/writer
 @dirrm lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/doc/en/bytecode-compiler
 @dirrm lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/doc/en/contributing/communication
 @dirrm lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/doc/en/contributing/style-guide
@@ -1916,6 +2097,66 @@ lib/ruby/rubinius/rubinius/1.2/runtime/signature.rbc
 @dirrm lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/doc/ja/virtual-machine
 @dirrm lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/doc/ja/what-is-rubinius
 @dirrm lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/doc/ja
+@dirrm lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/doc/pl/appendix-a-glossary
+@dirrm lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/doc/pl/appendix-b-reading-list
+@dirrm lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/doc/pl/bootstrapping
+@dirrm lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/doc/pl/build-system
+@dirrm lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/doc/pl/bytecode-compiler/ast
+@dirrm lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/doc/pl/bytecode-compiler/compiler
+@dirrm lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/doc/pl/bytecode-compiler/generator
+@dirrm lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/doc/pl/bytecode-compiler/parser
+@dirrm lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/doc/pl/bytecode-compiler/transformations
+@dirrm lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/doc/pl/bytecode-compiler
+@dirrm lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/doc/pl/contributing/communication
+@dirrm lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/doc/pl/contributing/style-guide
+@dirrm lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/doc/pl/contributing
+@dirrm lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/doc/pl/garbage-collector/large-objects
+@dirrm lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/doc/pl/garbage-collector/mature-generation
+@dirrm lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/doc/pl/garbage-collector/nursery
+@dirrm lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/doc/pl/garbage-collector/young-generation
+@dirrm lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/doc/pl/garbage-collector
+@dirrm lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/doc/pl/getting-started/building
+@dirrm lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/doc/pl/getting-started/requirements
+@dirrm lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/doc/pl/getting-started/running-rubinius
+@dirrm lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/doc/pl/getting-started/troubleshooting
+@dirrm lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/doc/pl/getting-started
+@dirrm lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/doc/pl/how-to/fix-a-failing-spec
+@dirrm lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/doc/pl/how-to/translate-documentation
+@dirrm lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/doc/pl/how-to/write-a-blog-post
+@dirrm lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/doc/pl/how-to/write-a-ruby-spec
+@dirrm lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/doc/pl/how-to/write-a-ticket
+@dirrm lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/doc/pl/how-to/write-documentation
+@dirrm lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/doc/pl/how-to
+@dirrm lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/doc/pl/index-of-terms
+@dirrm lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/doc/pl/jit
+@dirrm lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/doc/pl/ruby/blocks-and-procs
+@dirrm lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/doc/pl/ruby/class-variables
+@dirrm lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/doc/pl/ruby/classes-and-modules
+@dirrm lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/doc/pl/ruby/constants
+@dirrm lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/doc/pl/ruby/global-variables
+@dirrm lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/doc/pl/ruby/instance-variables
+@dirrm lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/doc/pl/ruby/local-variables
+@dirrm lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/doc/pl/ruby/methods
+@dirrm lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/doc/pl/ruby/scripts
+@dirrm lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/doc/pl/ruby
+@dirrm lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/doc/pl/specs/compiler
+@dirrm lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/doc/pl/specs/rubyspec
+@dirrm lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/doc/pl/specs
+@dirrm lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/doc/pl/systems/c-api
+@dirrm lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/doc/pl/systems/concurrency
+@dirrm lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/doc/pl/systems/ffi
+@dirrm lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/doc/pl/systems/io
+@dirrm lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/doc/pl/systems/primitives
+@dirrm lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/doc/pl/systems
+@dirrm lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/doc/pl/tools/debugger
+@dirrm lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/doc/pl/tools/memory-analysis
+@dirrm lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/doc/pl/tools/profiler
+@dirrm lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/doc/pl/tools
+@dirrm lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/doc/pl/virtual-machine/custom-dispatch-logic
+@dirrm lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/doc/pl/virtual-machine/instructions
+@dirrm lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/doc/pl/virtual-machine
+@dirrm lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/doc/pl/what-is-rubinius
+@dirrm lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/doc/pl
 @dirrm lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/doc/ru/appendix-a-glossary
 @dirrm lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/doc/ru/appendix-b-reading-list
 @dirrm lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/doc/ru/bootstrapping
@@ -1977,6 +2218,7 @@ lib/ruby/rubinius/rubinius/1.2/runtime/signature.rbc
 @dirrm lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/doc/ru/what-is-rubinius
 @dirrm lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/doc/ru
 @dirrm lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/doc
+@dirrm lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/feed
 @dirrm lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/images
 @dirrm lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/javascripts
 @dirrm lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/projects
@@ -1985,6 +2227,8 @@ lib/ruby/rubinius/rubinius/1.2/runtime/signature.rbc
 @dirrm lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/releases/1.1.0
 @dirrm lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/releases/1.1.1
 @dirrm lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/releases/1.2.0
+@dirrm lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/releases/1.2.1
+@dirrm lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/releases/1.2.2
 @dirrm lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/releases
 @dirrm lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/roadmap
 @dirrm lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/stylesheets/blueprint
