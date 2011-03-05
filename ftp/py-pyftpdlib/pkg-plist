@@ -1,19 +1,23 @@
 %%PYTHON_SITELIBDIR%%/pyftpdlib/__init__.py
 %%PYTHON_SITELIBDIR%%/pyftpdlib/__init__.pyc
 %%PYTHON_SITELIBDIR%%/pyftpdlib/__init__.pyo
+%%PYTHON_SITELIBDIR%%/pyftpdlib/contrib/__init__.py
+%%PYTHON_SITELIBDIR%%/pyftpdlib/contrib/__init__.pyc
+%%PYTHON_SITELIBDIR%%/pyftpdlib/contrib/__init__.pyo
+%%PYTHON_SITELIBDIR%%/pyftpdlib/contrib/authorizers.py
+%%PYTHON_SITELIBDIR%%/pyftpdlib/contrib/authorizers.pyc
+%%PYTHON_SITELIBDIR%%/pyftpdlib/contrib/authorizers.pyo
+%%PYTHON_SITELIBDIR%%/pyftpdlib/contrib/filesystems.py
+%%PYTHON_SITELIBDIR%%/pyftpdlib/contrib/filesystems.pyc
+%%PYTHON_SITELIBDIR%%/pyftpdlib/contrib/filesystems.pyo
+%%PYTHON_SITELIBDIR%%/pyftpdlib/contrib/handlers.py
+%%PYTHON_SITELIBDIR%%/pyftpdlib/contrib/handlers.pyc
+%%PYTHON_SITELIBDIR%%/pyftpdlib/contrib/handlers.pyo
 %%PYTHON_SITELIBDIR%%/pyftpdlib/ftpserver.py
 %%PYTHON_SITELIBDIR%%/pyftpdlib/ftpserver.pyc
 %%PYTHON_SITELIBDIR%%/pyftpdlib/ftpserver.pyo
+@dirrm %%PYTHON_SITELIBDIR%%/pyftpdlib/contrib
 @dirrm %%PYTHON_SITELIBDIR%%/pyftpdlib
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/basic_ftpd.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/keycert.pem
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/md5_ftpd.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/throttled_ftpd.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tls_ftpd.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/unix_daemon.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/unix_ftpd.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/winnt_ftpd.py
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
 %%PORTDOCS%%%%DOCSDIR%%/adoptions.lnk.html
 %%PORTDOCS%%%%DOCSDIR%%/faq.html
 %%PORTDOCS%%%%DOCSDIR%%/index.html
@@ -23,4 +27,13 @@
 %%PORTDOCS%%%%DOCSDIR%%/rfcs-compliance.html
 %%PORTDOCS%%%%DOCSDIR%%/roadmap.lnk.html
 %%PORTDOCS%%%%DOCSDIR%%/tutorial.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/basic_ftpd.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/keycert.pem
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/md5_ftpd.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/throttled_ftpd.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tls_ftpd.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/unix_daemon.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/unix_ftpd.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/winnt_ftpd.py
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
