@@ -7,7 +7,7 @@
 
 PORTNAME=	metacafe_dl
 PORTVERSION=	2007.09.13
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	http://www.arrakis.es/~rggi3/metacafe-dl/
 DISTNAME=	metacafe-dl-${PORTVERSION}
