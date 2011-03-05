@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	subversion
-PORTVERSION=	1.6.15
+PORTVERSION=	1.6.16
 PORTREVISION?=	0
 CATEGORIES+=	devel
 MASTER_SITES=	http://subversion.tigris.org/downloads/:main \
@@ -81,6 +81,7 @@ PLIST_SUB+=	MOD_DONTDOTHAT=""
 PLIST_SUB+=	MOD_DONTDOTHAT="@comment "
 .endif
 .else
+CONFIGURE_ARGS+=	--with-apxs=no
 PLIST_SUB+=	MOD_DAV_SVN="@comment "
 PLIST_SUB+=	MOD_DONTDOTHAT="@comment "
 SUB_LIST+=	MOD_DAV_SVN_INSTALL="NO"
