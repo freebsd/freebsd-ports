@@ -1,11 +1,11 @@
---- configure.in.orig	2009-03-07 20:14:41.000000000 +0300
-+++ configure.in	2009-03-07 20:15:29.000000000 +0300
+--- configure.in.orig	2011-02-28 15:03:24.000000000 +0200
++++ configure.in	2011-02-28 15:04:24.000000000 +0200
 @@ -7,30 +7,7 @@
- AC_PROG_CC
  AM_PROG_LIBTOOL
+ AC_PROG_CXX
  
 -dnl check for libusb-config
--AC_PATH_PROG(HAVELIBUSB, libusb-config, $PATH)
+-AC_CHECK_TOOL(HAVELIBUSB, libusb-config)
 -
 -if test ! -z "$HAVELIBUSB"; then
 -   LIBUSB_CFLAGS=`$HAVELIBUSB --cflags`

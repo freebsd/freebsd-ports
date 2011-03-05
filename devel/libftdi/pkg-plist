@@ -13,7 +13,7 @@ include/ftdi.h
 lib/libftdi.a
 lib/libftdi.la
 lib/libftdi.so
-lib/libftdi.so.18
+lib/libftdi.so.19
 %%BOOST%%lib/libftdipp.a
 %%BOOST%%lib/libftdipp.la
 %%BOOST%%lib/libftdipp.so
