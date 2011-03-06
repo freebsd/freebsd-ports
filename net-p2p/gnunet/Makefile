@@ -8,7 +8,7 @@
 
 PORTNAME=	gnunet
 PORTVERSION=	0.8.1b
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	net-p2p ipv6
 MASTER_SITES=	GNU \
 		http://gnunet.org/download/
@@ -24,7 +24,7 @@ LIB_DEPENDS=	adns.1:${PORTSDIR}/dns/adns \
 		esmtp.6:${PORTSDIR}/mail/libesmtp \
 		gmp.10:${PORTSDIR}/math/gmp \
 		gcrypt.17:${PORTSDIR}/security/libgcrypt \
-		extractor.2:${PORTSDIR}/textproc/libextractor \
+		extractor.3:${PORTSDIR}/textproc/libextractor \
 		microhttpd.12:${PORTSDIR}/www/libmicrohttpd
 
 OPTIONS=	MYSQL	"Enable MySQL support"		on \
