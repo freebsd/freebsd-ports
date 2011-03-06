@@ -1,9 +1,0 @@
---- net/mbus_handler.h	Thu Mar 16 08:21:37 2000
-+++ net/mbus_handler.h	Thu Sep 23 21:31:33 2004
-@@ -50,6 +50,4 @@
- #include "memory.h"
- #include "mbus.h"
--#include "mbus_config.h"
--
- 
- #ifdef WIN32
