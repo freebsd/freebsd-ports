@@ -1,17 +1,11 @@
---- h3/glide3/src/makefile.autoconf.am.orig	Fri Oct 27 19:20:00 2000
-+++ h3/glide3/src/makefile.autoconf.am	Tue Dec  5 05:45:11 2006
-@@ -101,7 +101,7 @@
- endif
- 
+--- h3/glide3/src/makefile.autoconf.am.orig	2000-10-27 06:20:00.000000000 -0500
++++ h3/glide3/src/makefile.autoconf.am	2011-03-06 14:46:41.000000000 -0600
+@@ -103,3 +103,3 @@
  if GL_AMD3D
 -GL_AMD3D_SRC = xtexdl_3dnow.S xdraw2_3dnow.S xdraw3_3dnow.S
 +GL_AMD3D_SRC = xtexdl_3dnow.S xdraw2_3dnow.S xdraw3_3dnow.S xdraw2_def.S xdraw3_def.S
  endif
- 
- VDEFS = $(FX_CHRIS_DENIS_ANTHONY_HACK_VDEFS) \
-@@ -138,41 +138,40 @@
- #
- # Special rules for assembly files.
+@@ -140,8 +140,8 @@
  #
 -PREPROCESSOR=/lib/cpp -$$ -I.
 -xdraw2.o : xdraw2.S xdraw2.inc.S fxgasm.h
@@ -25,9 +19,7 @@
 +xdraw3.lo : xdraw3.S fxgasm.h
 +	libtool --mode=compile $(CC) $(AFLAGS) -c -o $@ xdraw3.S
  
- # 3DNow!(tm) dependencies
- # XXX_def.obj targets are the default targets
- 
+@@ -151,17 +151,16 @@
  if GL_AMD3D
 -else
 -xdraw2_def.o: xdraw2.S xdraw2.inc.S fxgasm.h
@@ -55,10 +47,7 @@
 +xtexdl_3dnow.lo: xtexdl.S fxgasm.h 
 +	libtool --mode=compile $(CC) $(AFLAGS) -DGL_AMD3D -DUSE_PACKET_FIFO=1 -c -o $@ xtexdl.S
  
- endif
- 
- if FX_GLIDE_C_CPU_DETECT
- CPUSOURCES = cpudtect.c
+@@ -172,5 +171,5 @@
  else
 -CPUSOURCES = cpudtect.S
 +CPUSOURCES = cpudtect_asm.S
@@ -66,14 +55,12 @@
 -cpudtect.o cpudtect.lo: cpudtect.S
 +cpudtect_asm.o cpudtect_asm.lo: cpudtect.S
  	$(PREPROCESSOR) -DUSE_PACKET_FIFO=1 $< > $*.tmp.s
- 	$(CC) $(AFLAGS) -c -o $*.o $*.tmp.s
- 	$(CP) $*.o $*.lo
-@@ -212,7 +211,7 @@
- WHOLE_LIBS = $(top_builddir)/swlibs/fxmisc/libfxmisc.la \
-              $(top_builddir)/swlibs/newpci/pcilib/libfxpci.la \
+@@ -214,3 +213,3 @@
               $(top_builddir)/@FX_GLIDE_HW@/minihwc/libminihwc.la
 -LINK_LIBS  = -L/usr/X11R6/lib -lX11 -lXext -lXxf86dga -lXxf86vm
 +LINK_LIBS  = -L$(LOCALBASE)/lib -lX11 -lXext -lXxf86dga -lXxf86vm
  
- CLEANFILES = fxinline.h fxgasm.h
+@@ -224,2 +223,3 @@
+ fxgasm_SOURCES         = fxgasm.c gthread.c
++fxgasm_CFLAGS          = $(AM_CFLAGS)
  
