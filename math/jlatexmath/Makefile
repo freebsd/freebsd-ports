@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	jlatexmath
-PORTVERSION=	0.9.3
-PORTREVISION=	1
+PORTVERSION=	0.9.4
 CATEGORIES=	math java
 MASTER_SITES=	http://forge.scilab.org/upload/jlatexmath/files/ \
 		http://www.predatorlabs.net/dl/
@@ -23,7 +22,7 @@ JAVA_BUILD=	yes
 JAVA_RUN=	yes
 USE_ANT=	yes
 
-NO_WRKSUBDIR=	yes
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 OPTIONS=	FOP "textproc/fop plugin (required for math/scilab)" ON
 
