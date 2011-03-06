@@ -17,13 +17,14 @@ COMMENT=	Library for terminal-independent, full-screen output
 
 CONFLICTS=	ncurses-devel-*
 
-RELEASE=	5.7
+RELEASE=	5.8
 
 GNU_CONFIGURE=	yes
 CONFIGURE_SCRIPT=../configure
 CONFIGURE_ARGS=	--datadir=${PREFIX}/share/misc --disable-overwrite \
 		--enable-termcap --enable-bsdpad --enable-getcap \
 		--enable-colorfgbg --disable-home-terminfo \
+		--with-pkg-config=no \
 		--includedir=${PREFIX}/include/ncurses \
 		--with-shared \
 		--without-curses-h --with-termlib --program-prefix= \

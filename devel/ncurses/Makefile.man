@@ -5,15 +5,24 @@ MANCOMPRESSED=	yes
 MLINKS=
 
 MAN1=	\
+	adacursesw-config.1 \
 	captoinfo.1m \
 	clear.1 \
 	infocmp.1m \
 	infotocap.1m \
+	ncurses5-config.1 \
 	tic.1m \
 	toe.1m \
+	tabs.1 \
 	tput.1 \
 	tset.1
-MLINKS+=tset.1 reset.1
+MLINKS+=\
+	adacursesw-config.1 adacurses-config.1 \
+	tset.1 reset.1
+
+.if !defined(WITHOUT_WIDEC)
+MAN1+=	ncursesw5-config.1
+.endif
 
 MAN5=	term.5 terminfo.5
 MAN7=	term.7
@@ -59,6 +68,7 @@ MAN3=	curs_addch.3x \
 	curs_scr_dump.3x \
 	curs_scroll.3x \
 	curs_slk.3x \
+	curs_sp_funcs.3x \
 	curs_termattrs.3x \
 	curs_termcap.3x \
 	curs_terminfo.3x \
@@ -66,6 +76,7 @@ MAN3=	curs_addch.3x \
 	curs_touch.3x \
 	curs_trace.3x \
 	curs_util.3x \
+	curs_variables.3x \
 	curs_window.3x \
 	default_colors.3x \
 	define_key.3x \
@@ -75,6 +86,7 @@ MAN3=	curs_addch.3x \
 	legacy_coding.3x \
 	ncurses.3x \
 	resizeterm.3x \
+	term_variables.3x \
 	wresize.3x
 
 .if !defined(WITHOUT_WIDEC)
@@ -288,6 +300,7 @@ MLINKS+=\
 	curs_kernel.3x ripoffline.3x \
 	curs_kernel.3x savetty.3x \
 	curs_kernel.3x setsyx.3x \
+	curs_legacy.3x getattrs.3x \
 	curs_legacy.3x getbegx.3x \
 	curs_legacy.3x getbegy.3x \
 	curs_legacy.3x getcurx.3x \
@@ -299,6 +312,7 @@ MLINKS+=\
 	curs_memleaks.3x _nc_free_and_exit.3x \
 	curs_memleaks.3x _nc_freeall.3x \
 	curs_mouse.3x getmouse.3x \
+	curs_mouse.3x has_mouse.3x \
 	curs_mouse.3x mouse_trafo.3x \
 	curs_mouse.3x mouseinterval.3x \
 	curs_mouse.3x mousemask.3x \
@@ -315,7 +329,9 @@ MLINKS+=\
 	curs_opaque.3x is_leaveok.3x \
 	curs_opaque.3x is_nodelay.3x \
 	curs_opaque.3x is_notimeout.3x \
+	curs_opaque.3x is_pad.3x \
 	curs_opaque.3x is_scrollok.3x \
+	curs_opaque.3x is_subwin.3x \
 	curs_opaque.3x is_syncok.3x \
 	curs_opaque.3x is_timeout.3x \
 	curs_opaque.3x wgetparent.3x \
@@ -369,6 +385,123 @@ MLINKS+=\
 	curs_slk.3x slk_restore.3x \
 	curs_slk.3x slk_set.3x \
 	curs_slk.3x slk_touch.3x \
+	curs_slk.3x slk_wset.3x \
+	curs_sp_funcs.3x assume_default_colors_sp.3x \
+	curs_sp_funcs.3x baudrate_sp.3x \
+	curs_sp_funcs.3x beep_sp.3x \
+	curs_sp_funcs.3x can_change_color_sp.3x \
+	curs_sp_funcs.3x cbreak_sp.3x \
+	curs_sp_funcs.3x ceiling_panel.3x \
+	curs_sp_funcs.3x color_content_sp.3x \
+	curs_sp_funcs.3x curs_set_sp.3x \
+	curs_sp_funcs.3x def_prog_mode_sp.3x \
+	curs_sp_funcs.3x def_shell_mode_sp.3x \
+	curs_sp_funcs.3x define_key_sp.3x \
+	curs_sp_funcs.3x del_curterm_sp.3x \
+	curs_sp_funcs.3x delay_output_sp.3x \
+	curs_sp_funcs.3x doupdate_sp.3x \
+	curs_sp_funcs.3x echo_sp.3x \
+	curs_sp_funcs.3x endwin_sp.3x \
+	curs_sp_funcs.3x erasechar_sp.3x \
+	curs_sp_funcs.3x filter_sp.3x \
+	curs_sp_funcs.3x flash_sp.3x \
+	curs_sp_funcs.3x flushinp_sp.3x \
+	curs_sp_funcs.3x get_escdelay_sp.3x \
+	curs_sp_funcs.3x getmouse_sp.3x \
+	curs_sp_funcs.3x getwin_sp.3x \
+	curs_sp_funcs.3x ground_panel.3x \
+	curs_sp_funcs.3x halfdelay_sp.3x \
+	curs_sp_funcs.3x has_colors_sp.3x \
+	curs_sp_funcs.3x has_ic_sp.3x \
+	curs_sp_funcs.3x has_il_sp.3x \
+	curs_sp_funcs.3x has_key_sp.3x \
+	curs_sp_funcs.3x has_mouse_sp.3x \
+	curs_sp_funcs.3x init_color_sp.3x \
+	curs_sp_funcs.3x init_pair_sp.3x \
+	curs_sp_funcs.3x intrflush_sp.3x \
+	curs_sp_funcs.3x is_term_resized_sp.3x \
+	curs_sp_funcs.3x isendwin_sp.3x \
+	curs_sp_funcs.3x key_defined_sp.3x \
+	curs_sp_funcs.3x keybound_sp.3x \
+	curs_sp_funcs.3x keyname_sp.3x \
+	curs_sp_funcs.3x keyok_sp.3x \
+	curs_sp_funcs.3x killchar_sp.3x \
+	curs_sp_funcs.3x mcprint_sp.3x \
+	curs_sp_funcs.3x mouseinterval_sp.3x \
+	curs_sp_funcs.3x mousemask_sp.3x \
+	curs_sp_funcs.3x mvcur_sp.3x \
+	curs_sp_funcs.3x napms_sp.3x \
+	curs_sp_funcs.3x new_form_sp.3x \
+	curs_sp_funcs.3x new_menu_sp.3x \
+	curs_sp_funcs.3x new_prescr.3x \
+	curs_sp_funcs.3x newpad_sp.3x \
+	curs_sp_funcs.3x newterm_sp.3x \
+	curs_sp_funcs.3x newwin_sp.3x \
+	curs_sp_funcs.3x nl_sp.3x \
+	curs_sp_funcs.3x nocbreak_sp.3x \
+	curs_sp_funcs.3x noecho_sp.3x \
+	curs_sp_funcs.3x nofilter_sp.3x \
+	curs_sp_funcs.3x nonl_sp.3x \
+	curs_sp_funcs.3x noqiflush_sp.3x \
+	curs_sp_funcs.3x noraw_sp.3x \
+	curs_sp_funcs.3x pair_content_sp.3x \
+	curs_sp_funcs.3x putp_sp.3x \
+	curs_sp_funcs.3x qiflush_sp.3x \
+	curs_sp_funcs.3x raw_sp.3x \
+	curs_sp_funcs.3x reset_prog_mode_sp.3x \
+	curs_sp_funcs.3x reset_shell_mode_sp.3x \
+	curs_sp_funcs.3x resetty_sp.3x \
+	curs_sp_funcs.3x resize_term_sp.3x \
+	curs_sp_funcs.3x resizeterm_sp.3x \
+	curs_sp_funcs.3x restartterm_sp.3x \
+	curs_sp_funcs.3x ripoffline_sp.3x \
+	curs_sp_funcs.3x savetty_sp.3x \
+	curs_sp_funcs.3x scr_init_sp.3x \
+	curs_sp_funcs.3x scr_restore_sp.3x \
+	curs_sp_funcs.3x scr_set_sp.3x \
+	curs_sp_funcs.3x set_curterm_sp.3x \
+	curs_sp_funcs.3x set_escdelay_sp.3x \
+	curs_sp_funcs.3x set_tabsize_sp.3x \
+	curs_sp_funcs.3x slk_attr_set_sp.3x \
+	curs_sp_funcs.3x slk_attr_sp.3x \
+	curs_sp_funcs.3x slk_attroff_sp.3x \
+	curs_sp_funcs.3x slk_attron_sp.3x \
+	curs_sp_funcs.3x slk_attrset_sp.3x \
+	curs_sp_funcs.3x slk_clear_sp.3x \
+	curs_sp_funcs.3x slk_color_sp.3x \
+	curs_sp_funcs.3x slk_init_sp.3x \
+	curs_sp_funcs.3x slk_label_sp.3x \
+	curs_sp_funcs.3x slk_noutrefresh_sp.3x \
+	curs_sp_funcs.3x slk_refresh_sp.3x \
+	curs_sp_funcs.3x slk_restore_sp.3x \
+	curs_sp_funcs.3x slk_set_sp.3x \
+	curs_sp_funcs.3x slk_touch_sp.3x \
+	curs_sp_funcs.3x start_color_sp.3x \
+	curs_sp_funcs.3x term_attrs_sp.3x \
+	curs_sp_funcs.3x termattrs_sp.3x \
+	curs_sp_funcs.3x termname_sp.3x \
+	curs_sp_funcs.3x tgetent_sp.3x \
+	curs_sp_funcs.3x tgetflag_sp.3x \
+	curs_sp_funcs.3x tgetnum_sp.3x \
+	curs_sp_funcs.3x tgetstr_sp.3x \
+	curs_sp_funcs.3x tigetflag_sp.3x \
+	curs_sp_funcs.3x tigetnum_sp.3x \
+	curs_sp_funcs.3x tigetstr_sp.3x \
+	curs_sp_funcs.3x tputs_sp.3x \
+	curs_sp_funcs.3x typeahead_sp.3x \
+	curs_sp_funcs.3x unctrl_sp.3x \
+	curs_sp_funcs.3x unget_wch_sp.3x \
+	curs_sp_funcs.3x ungetch_sp.3x \
+	curs_sp_funcs.3x ungetmouse_sp.3x \
+	curs_sp_funcs.3x update_panels_sp.3x \
+	curs_sp_funcs.3x use_default_colors_sp.3x \
+	curs_sp_funcs.3x use_env_sp.3x \
+	curs_sp_funcs.3x use_legacy_coding_sp.3x \
+	curs_sp_funcs.3x vid_attr_sp.3x \
+	curs_sp_funcs.3x vid_puts_sp.3x \
+	curs_sp_funcs.3x vidattr_sp.3x \
+	curs_sp_funcs.3x vidputs_sp.3x \
+	curs_sp_funcs.3x wunctrl_sp.3x \
 	curs_termattrs.3x baudrate.3x \
 	curs_termattrs.3x erasechar.3x \
 	curs_termattrs.3x erasewchar.3x \
@@ -380,6 +513,10 @@ MLINKS+=\
 	curs_termattrs.3x term_attrs.3x \
 	curs_termattrs.3x termattrs.3x \
 	curs_termattrs.3x termname.3x \
+	curs_termcap.3x BC.3x \
+	curs_termcap.3x PC.3x \
+	curs_termcap.3x UP.3x \
+	curs_termcap.3x ospeed.3x \
 	curs_termcap.3x tgetent.3x \
 	curs_termcap.3x tgetflag.3x \
 	curs_termcap.3x tgetnum.3x \
@@ -395,12 +532,14 @@ MLINKS+=\
 	curs_terminfo.3x tigetflag.3x \
 	curs_terminfo.3x tigetnum.3x \
 	curs_terminfo.3x tigetstr.3x \
+	curs_terminfo.3x tiparm.3x \
 	curs_terminfo.3x tparm.3x \
 	curs_terminfo.3x tputs.3x \
 	curs_terminfo.3x vid_attr.3x \
 	curs_terminfo.3x vid_puts.3x \
 	curs_terminfo.3x vidattr.3x \
 	curs_terminfo.3x vidputs.3x \
+	curs_threads.3x get_escdelay.3x \
 	curs_threads.3x set_escdelay.3x \
 	curs_threads.3x set_tabsize.3x \
 	curs_threads.3x use_screen.3x \
@@ -414,6 +553,8 @@ MLINKS+=\
 	curs_trace.3x _nc_tracebits.3x \
 	curs_trace.3x _traceattr.3x \
 	curs_trace.3x _traceattr2.3x \
+	curs_trace.3x _tracecchar_t.3x \
+	curs_trace.3x _tracecchar_t2.3x \
 	curs_trace.3x _tracechar.3x \
 	curs_trace.3x _tracechtype.3x \
 	curs_trace.3x _tracechtype2.3x \
@@ -432,6 +573,15 @@ MLINKS+=\
 	curs_util.3x unctrl.3x \
 	curs_util.3x use_env.3x \
 	curs_util.3x wunctrl.3x \
+	curs_variables.3x COLORS.3x \
+	curs_variables.3x COLOR_PAIRS.3x \
+	curs_variables.3x COLS.3x \
+	curs_variables.3x ESCDELAY.3x \
+	curs_variables.3x LINES.3x \
+	curs_variables.3x TABSIZE.3x \
+	curs_variables.3x curscr.3x \
+	curs_variables.3x newscr.3x \
+	curs_variables.3x stdscr.3x \
 	curs_window.3x delwin.3x \
 	curs_window.3x derwin.3x \
 	curs_window.3x dupwin.3x \
@@ -445,9 +595,29 @@ MLINKS+=\
 	curs_window.3x wsyncup.3x \
 	default_colors.3x assume_default_colors.3x \
 	default_colors.3x use_default_colors.3x \
+	form_variables.3x TYPE_ALNUM.3x \
+	form_variables.3x TYPE_ALPHA.3x \
+	form_variables.3x TYPE_ENUM.3x \
+	form_variables.3x TYPE_INTEGER.3x \
+	form_variables.3x TYPE_IPV4.3x \
+	form_variables.3x TYPE_NUMERIC.3x \
+	form_variables.3x TYPE_REGEXP.3x \
 	legacy_coding.3x use_legacy_coding.3x \
 	resizeterm.3x is_term_resized.3x \
-	resizeterm.3x resize_term.3x
+	resizeterm.3x resize_term.3x \
+	term_variables.3x SP.3x \
+	term_variables.3x acs_map.3x \
+	term_variables.3x boolcodes.3x \
+	term_variables.3x boolfnames.3x \
+	term_variables.3x boolnames.3x \
+	term_variables.3x cur_term.3x \
+	term_variables.3x numcodes.3x \
+	term_variables.3x numfnames.3x \
+	term_variables.3x numnames.3x \
+	term_variables.3x strcodes.3x \
+	term_variables.3x strfnames.3x \
+	term_variables.3x strnames.3x \
+	term_variables.3x ttytype.3x
 
 .if !defined(WITHOUT_WIDEC)
 MLINKS+=\
@@ -555,6 +725,7 @@ MAN3+=	form.3x \
 	form_post.3x \
 	form_requestname.3x \
 	form_userptr.3x \
+	form_variables.3x \
 	form_win.3x
 MLINKS+=form_cursor.3x pos_form_cursor.3x \
 	form_data.3x data_ahead.3x \

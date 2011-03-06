@@ -1,6 +1,7 @@
 bin/clear
 bin/infocmp
 bin/reset
+bin/tabs
 bin/tput
 bin/tset
 %%TERMINFO%%bin/tic
