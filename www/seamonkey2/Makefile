@@ -62,6 +62,15 @@ EXTRA_PATCHES=	${FILESDIR}/releng6_pulseaudio
 EXTRA_PATCHES=	${FILESDIR}/libsydney_oss
 .endif
 
+.if ${ARCH} == powerpc64
+.if ${OSVERSION} < 900033
+BROKEN=		Needs binutils 2.17.50 to build
+.else
+CONFIGURE_ENV+=	UNAME_m="powerpc64"
+CFLAGS+=	-mminimal-toc
+.endif
+.endif
+
 MOZSRC:=	${WRKDIR}/comm-1.9.1/mozilla
 WRKSRC=		${WRKDIR}/comm-1.9.1
 
