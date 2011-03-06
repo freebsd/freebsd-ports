@@ -249,6 +249,7 @@ include/osgDB/FileNameUtils
 include/osgDB/FileUtils
 include/osgDB/ImageOptions
 include/osgDB/ImagePager
+include/osgDB/ImageProcessor
 include/osgDB/Input
 include/osgDB/InputStream
 include/osgDB/ObjectWrapper
@@ -453,6 +454,7 @@ include/osgUtil/DrawElementTypeSimplifier
 include/osgUtil/EdgeCollector
 include/osgUtil/Export
 include/osgUtil/GLObjectsVisitor
+include/osgUtil/GraphicsCostEstimator
 include/osgUtil/HalfWayMapGenerator
 include/osgUtil/HighlightMapGenerator
 include/osgUtil/IncrementalCompileOperation
