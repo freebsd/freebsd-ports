@@ -7,10 +7,12 @@ sbin/assplog
 %%DATADIR%%/files/blackdomains.txt
 %%DATADIR%%/files/blackre.txt
 %%DATADIR%%/files/blockreportlist.txt
+%%DATADIR%%/files/bombdatare.txt
 %%DATADIR%%/files/bombheaderre.txt
 %%DATADIR%%/files/bombre.txt
 %%DATADIR%%/files/bombsenderre.txt
 %%DATADIR%%/files/charsets.txt
+%%DATADIR%%/files/checkdomains.txt
 %%DATADIR%%/files/deny.txt
 %%DATADIR%%/files/denyalways.txt
 %%DATADIR%%/files/dnsbls.txt
@@ -19,10 +21,12 @@ sbin/assplog
 %%DATADIR%%/files/invalidptr.txt
 %%DATADIR%%/files/ipnp.txt
 %%DATADIR%%/files/nodelay.txt
+%%DATADIR%%/files/nodelayhelosre.txt
 %%DATADIR%%/files/nogrip.txt
 %%DATADIR%%/files/nookcaching.txt
 %%DATADIR%%/files/notls.txt
 %%DATADIR%%/files/nowhite.txt
+%%DATADIR%%/files/npre.txt
 %%DATADIR%%/files/preheaderre.txt
 %%DATADIR%%/files/rcptreplrules.txt
 %%DATADIR%%/files/redre.txt
