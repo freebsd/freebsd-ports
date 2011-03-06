@@ -1,0 +1,12 @@
+--- libevent.pc.in.orig	2010-08-15 15:21:18.000000000 +0200
++++ libevent.pc.in	2011-03-06 21:15:00.816214067 +0100
+@@ -10,7 +10,7 @@
+ Version: @VERSION@
+ Requires:
+ Conflicts:
+-Libs: -L${libdir} -levent
++Libs: -L${libdir} -levent-2.0
+ Libs.private: @LIBS@
+-Cflags: -I${includedir}
++Cflags: -I${includedir} -I${includedir}/event2/compat
+ 
