@@ -8,14 +8,14 @@
 PORTNAME=	xspeakfree
 PORTVERSION=	0.8.2
 PORTREVISION=	3
-CATEGORIES=	mbone net audio
+CATEGORIES=	audio tk mbone
 MASTER_SITES=	http://www.liquidx.org/distfiles/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tcl/Tk (wish) frontend to Speak Freely
 
 RUN_DEPENDS=	${LOCALBASE}/bin/wish8.4:${PORTSDIR}/x11-toolkits/tk84 \
-		${LOCALBASE}/bin/sfmike:${PORTSDIR}/mbone/speak_freely
+		${LOCALBASE}/bin/sfmike:${PORTSDIR}/audio/speak_freely
 
 NO_BUILD=	yes
 

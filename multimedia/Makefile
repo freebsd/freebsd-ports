@@ -331,6 +331,7 @@
     SUBDIR += vcdtools
     SUBDIR += vdpau-video
     SUBDIR += vdpauinfo
+    SUBDIR += vic
     SUBDIR += vlc
     SUBDIR += vodcatcher
     SUBDIR += vstream-client

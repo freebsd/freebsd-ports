@@ -8,7 +8,7 @@
 PORTNAME=	vat
 PORTVERSION=	4.0b2
 PORTREVISION=	3
-CATEGORIES=	mbone tk
+CATEGORIES=	audio mbone tk
 MASTER_SITES=	ftp://ftp.ee.lbl.gov/conferencing/vat/alpha-test/
 DISTFILES=	vatsrc-4.0b2.tar.gz
 

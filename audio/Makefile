@@ -654,6 +654,8 @@
     SUBDIR += quimup
     SUBDIR += raop_play
     SUBDIR += raproxy
+    SUBDIR += rat
+    SUBDIR += rat30
     SUBDIR += raul
     SUBDIR += rawrec
     SUBDIR += rbscrobbler
@@ -717,6 +719,7 @@
     SUBDIR += soundtouch
     SUBDIR += soundtracker
     SUBDIR += sox
+    SUBDIR += speak_freely
     SUBDIR += specimen
     SUBDIR += speex
     SUBDIR += spek
@@ -782,6 +785,7 @@
     SUBDIR += umix
     SUBDIR += umodplayer
     SUBDIR += vagalume
+    SUBDIR += vat
     SUBDIR += ventrilo-server
     SUBDIR += vitunes
     SUBDIR += voipong
@@ -887,6 +891,7 @@
     SUBDIR += xoscope
     SUBDIR += xpi-musicpm
     SUBDIR += xsidplay
+    SUBDIR += xspeakfree
     SUBDIR += xsynth-dssi
     SUBDIR += xtuner
     SUBDIR += xvmixer

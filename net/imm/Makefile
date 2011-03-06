@@ -8,7 +8,7 @@
 PORTNAME=	imm
 PORTVERSION=	3.5a1
 PORTREVISION=	3
-CATEGORIES=	mbone tk
+CATEGORIES=	net mbone tk
 MASTER_SITES=	ftp://ftp.hawaii.edu/paccom/imm-3.5a1/
 DISTNAME=	imm.source
 EXTRACT_SUFX=	.tar.Z
