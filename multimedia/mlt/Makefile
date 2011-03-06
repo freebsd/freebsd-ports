@@ -40,7 +40,7 @@ OPTIONS=	AVFORMAT	"Avformat module" on \
 		GTK2	"GTK2 module" on \
 		JACKRACK	"JACK Rack module" off \
 		KINO	"Kino module" on \
-		MMX	"MMX support (might cause problems on x86-64)" off \
+		MMX	"MMX support (might cause problems on amd64)" off \
 		QIMAGE	"Qimage module" on \
 		RESAMPLE	"Secret Rabbit Code module" on \
 		SOX	"Sound eXchange module" on \
