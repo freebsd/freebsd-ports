@@ -1,8 +1,6 @@
---- h5/glide3/src/makefile.autoconf.am.orig	Sun Nov 19 00:00:26 2000
-+++ h5/glide3/src/makefile.autoconf.am	Tue Dec  5 05:44:58 2006
-@@ -152,46 +152,40 @@
- #
- # Special rules for assembly files.
+--- h5/glide3/src/makefile.autoconf.am.orig	2000-11-18 10:00:26.000000000 -0600
++++ h5/glide3/src/makefile.autoconf.am	2011-03-06 14:49:35.000000000 -0600
+@@ -154,7 +154,6 @@
  #
 -PREPROCESSOR=/lib/cpp -$$ -I.
 +PREPROCESSOR=$(CPP) -$$ -I.
@@ -12,37 +10,31 @@
 -	$(CP) $*.o $*.lo
 +	libtool --mode=compile $(CC) $(AFLAGS) -c -o $*.o $*.tmp.s
  	$(RM) -f $*.tmp.s
- 
- xdraw2_3dnow.o xdraw2_3dnow.lo: xdraw2.s xdraw2.inc.s fxgasm.h
+@@ -163,4 +162,3 @@
  	$(PREPROCESSOR) -DGL_AMD3D -DUSE_PACKET_FIFO=1 $< > $*.tmp.s
 -	$(CC) $(AFLAGS) -c -o $*.o $*.tmp.s
 -	$(CP) $*.o $*.lo
 +	libtool --mode=compile $(CC) $(AFLAGS) -c -o $*.o $*.tmp.s
  	$(RM) -f $*.tmp.s
- 
- xdraw3_def.o xdraw3_def.lo: xdraw3.s fxgasm.h
+@@ -169,4 +167,3 @@
  	$(PREPROCESSOR) $< > $*.tmp.s
 -	$(CC) $(AFLAGS) -c -o $*.o $*.tmp.s
 -	$(CP) $*.o $*.lo
 +	libtool --mode=compile $(CC) $(AFLAGS) -c -o $*.o $*.tmp.s
  	$(RM) -f $*.tmp.s
- 
- xdraw3_3dnow.o xdraw3_3dnow.lo: xdraw3.s fxgasm.h
+@@ -175,4 +172,3 @@
  	$(PREPROCESSOR) -DGL_AMD3D -DUSE_PACKET_FIFO=1 $< > $*.tmp.s
 -	$(CC) $(AFLAGS) -c -o $*.o $*.tmp.s
 -	$(CP) $*.o $*.lo
 +	libtool --mode=compile $(CC) $(AFLAGS) -c -o $*.o $*.tmp.s
  	$(RM) -f $*.tmp.s
- 
- xtexdl_3dnow.o xtexdl_3dnow.lo: xtexdl.s fxgasm.h 
+@@ -181,4 +177,3 @@
  	$(PREPROCESSOR) -DGL_AMD3D -DUSE_PACKET_FIFO=1 $< > $*.tmp.s
 -	$(CC) $(AFLAGS) -c -o $*.o $*.tmp.s
 -	$(CP) $*.o $*.lo
 +	libtool --mode=compile $(CC) $(AFLAGS) -c -o $*.o $*.tmp.s
  	$(RM) -f $*.tmp.s
- 
- if FX_GLIDE_C_CPU_DETECT
- CPUSOURCES = cpudtect.c
+@@ -188,8 +183,7 @@
  else
 -CPUSOURCES = cpudtect.s 
 +CPUSOURCES = cpudtect_asm.s 
@@ -54,23 +46,17 @@
 -	$(CP) $*.o $*.lo
 +	libtool --mode=compile $(CC) $(AFLAGS) -c -o $*.o $*.tmp.s
  	$(RM) -f $*.tmp.s
- endif
- 
-@@ -202,7 +196,7 @@
- FX_GLIDE_CTRISETUP_SRC = gxdraw.c
- else
+@@ -204,3 +198,3 @@
  if GL_AMD3D
 -FX_GLIDE_CTRISETUP_SRC = xdraw2_3dnow.s xdraw3_3dnow.s
 +FX_GLIDE_CTRISETUP_SRC = xdraw2_3dnow.s xdraw3_3dnow.s xtexdl_3dnow.s xdraw2_def.s xdraw3_def.s
  else
- FX_GLIDE_CTRISETUP_SRC = xdraw2_def.s xdraw3_def.s
- endif
-@@ -214,7 +208,7 @@
-              $(top_builddir)/swlibs/newpci/pcilib/libfxpci.la \
- 			 $(top_builddir)/swlibs/$(TEXTURE_UTILITIES_DIR)/lib/libtexus.la \
+@@ -216,3 +210,3 @@
               $(top_builddir)/@FX_GLIDE_HW@/minihwc/libminihwc.la
 -LINK_LIBS  = -L/usr/X11R6/lib -lX11 -lXext -lXxf86dga -lXxf86vm -lm
 +LINK_LIBS  = -L$(LOCALBASE)/lib -lX11 -lXext -lXxf86dga -lXxf86vm -lm
  
- CLEANFILES = fxinline.h fxgasm.h
+@@ -231,2 +225,3 @@
+ fxgasm_DEPENDENCIES    = gthread.lo
++fxgasm_CFLAGS          = $(AM_CFLAGS)
  

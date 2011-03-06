@@ -20,7 +20,7 @@ USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_XORG=	x11 xxf86dga xxf86vm
 USE_LDCONFIG=	yes
-USE_AUTOTOOLS=	automake14 autoconf libtool
+USE_AUTOTOOLS=	automake autoconf libtool
 AUTOMAKE_ARGS=	-a
 
 MAKEFILE=	makefile.autoconf
