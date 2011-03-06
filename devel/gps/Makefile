@@ -21,6 +21,8 @@ BUILD_DEPENDS=	gnat-aux>20101204:${PORTSDIR}/lang/gnat-aux \
 RUN_DEPENDS=	gtkada>=2.22:${PORTSDIR}/x11-toolkits/gtkada
 LIB_DEPENDS=	gmp.10:${PORTSDIR}/math/gmp
 
+LATEST_LINK=	gps-ide
+
 GNU_CONFIGURE=		yes
 USE_GMAKE=		yes
 USE_BZIP2=		yes
