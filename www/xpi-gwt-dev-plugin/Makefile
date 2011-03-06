@@ -15,13 +15,12 @@ DISTNAME=	gwt-dev-plugin-${PORTVERSION}-partial
 MAINTAINER=	jonc@chen.org.nz
 COMMENT=	Google Web Toolkit Developer Plugin for Firefox
 
-BUILD_DEPENDS=	firefox3:${PORTSDIR}/www/firefox35 \
-		${LOCALBASE}/lib/libxul/xpidl:${PORTSDIR}/www/libxul
-RUN_DEPENDS=	firefox3:${PORTSDIR}/www/firefox35
+BUILD_DEPENDS=	${LOCALBASE}/lib/libxul/xpidl:${PORTSDIR}/www/libxul
 
 ONLY_FOR_ARCHS=	amd64 i386
 
 USE_BZIP2=	yes
+USE_FIREFOX_BUILD=	35
 USE_GMAKE=	yes
 
 WRKSRC=		${WRKDIR}/gwt-dev-plugin
