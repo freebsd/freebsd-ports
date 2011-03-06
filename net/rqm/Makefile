@@ -8,7 +8,7 @@
 PORTNAME=	rqm
 PORTVERSION=	1.0.0
 PORTREVISION=	1
-CATEGORIES=	mbone tk
+CATEGORIES=	net mbone tk
 MASTER_SITES=	http://www-mice.cs.ucl.ac.uk/multimedia/software/rqm/1.0.0/
 
 MAINTAINER=	ports@FreeBSD.org

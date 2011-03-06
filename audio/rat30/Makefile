@@ -8,7 +8,7 @@
 PORTNAME=	rat
 PORTVERSION=	3.0.35
 PORTREVISION=	2
-CATEGORIES=	mbone audio
+CATEGORIES=	audio mbone
 MASTER_SITES=	http://www-mice.cs.ucl.ac.uk/multimedia/software/rat/releases/${PORTVERSION}/ \
 		CENKES
 

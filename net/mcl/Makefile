@@ -8,7 +8,7 @@
 PORTNAME=	mcl
 PORTVERSION=	2.99.1
 PORTREVISION=	1
-CATEGORIES=	mbone net
+CATEGORIES=	net mbone
 MASTER_SITES=	http://www.inrialpes.fr/planete/people/roca/mcl/bin/
 DISTNAME=	mcl_v2.99.1
 EXTRACT_SUFX=	.tgz

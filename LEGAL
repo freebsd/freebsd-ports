@@ -492,7 +492,7 @@ savage/Samuraiwars*	games/linux-savage-samuraiwars	Freeware, but license
 						terms are unclear
 savage/SFE*		games/linux-savage	Freeware, but license terms
 						are unclear
-sdr-*			mbone/sdr		Crypto; export-controlled
+sdr-*			net/sdr			Crypto; export-controlled
 seatools_cli.tar	sysutils/seatools	Distfile should be loaded by
 						hand
 serialmail-*		mail/serialmail		No license -- see

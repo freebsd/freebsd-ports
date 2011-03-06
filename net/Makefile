@@ -251,6 +251,7 @@
     SUBDIR += igmpproxy
     SUBDIR += ilbc
     SUBDIR += imapproxy
+    SUBDIR += imm
     SUBDIR += iodine
     SUBDIR += ip6_int
     SUBDIR += ipa_ip6fw
@@ -376,6 +377,7 @@
     SUBDIR += mad_fcl
     SUBDIR += mars_nwe
     SUBDIR += mcast-tools
+    SUBDIR += mcl
     SUBDIR += mediaproxy
     SUBDIR += mediatomb
     SUBDIR += merlinmon
@@ -941,6 +943,7 @@
     SUBDIR += rmsg
     SUBDIR += roadrunner
     SUBDIR += rp-pppoe
+    SUBDIR += rqm
     SUBDIR += rshell
     SUBDIR += rsmb
     SUBDIR += rsplib
@@ -948,6 +951,7 @@
     SUBDIR += rtg
     SUBDIR += rtpbreak
     SUBDIR += rtpproxy
+    SUBDIR += rtptools
     SUBDIR += ruby-dict
     SUBDIR += ruby-icmp
     SUBDIR += ruby-ldap
@@ -1000,6 +1004,7 @@
     SUBDIR += scr_ipfm
     SUBDIR += scribe
     SUBDIR += sdl_net
+    SUBDIR += sdr
     SUBDIR += seda
     SUBDIR += sendemail
     SUBDIR += sendfile
@@ -1128,6 +1133,7 @@
     SUBDIR += twinkle
     SUBDIR += twitux
     SUBDIR += ucarp
+    SUBDIR += udpcast
     SUBDIR += udptunnel
     SUBDIR += udpxy
     SUBDIR += ulxmlrpcpp
@@ -1162,6 +1168,7 @@
     SUBDIR += wackford-squeers
     SUBDIR += wakeonlan
     SUBDIR += warppipe
+    SUBDIR += wb
     SUBDIR += whois
     SUBDIR += widentd
     SUBDIR += wire

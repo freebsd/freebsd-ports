@@ -7,7 +7,7 @@
 
 PORTNAME=	udpcast
 PORTVERSION=	0.${RELEASE_DATE}
-CATEGORIES=	mbone sysutils
+CATEGORIES=	net mbone sysutils
 MASTER_SITES=	http://udpcast.linux.lu/download/
 DISTNAME=	${PORTNAME}-${RELEASE_DATE}
 

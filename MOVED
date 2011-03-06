@@ -1559,3 +1559,16 @@ www/py-turbosetup||2011-02-27|Removed, part of python since python25
 textproc/py-csv||2011-02-27|Removed, part of python since python25
 devel/py-uuid||2011-02-27|Removed, part of python since python25
 graphics/libv3d||2011-02-28|Has expired: unmaintained and failed to build for months
+mbone/rat|audio/rat|2011-03-06|Changed category
+mbone/rat30|audio/rat30|2011-03-06|Changed category
+mbone/speak_freely|audio/speak_freely|2011-03-06|Changed category
+mbone/vat|audio/vat|2011-03-06|Changed category
+mbone/xspeakfree|audio/xspeakfree|2011-03-06|Changed category
+mbone/vic|multimedia/vic|2011-03-06|Changed category
+mbone/imm|net/imm|2011-03-06|Changed category
+mbone/mcl|net/mcl|2011-03-06|Changed category
+mbone/rqm|net/rqm|2011-03-06|Changed category
+mbone/rtptools|net/rtptools|2011-03-06|Changed category
+mbone/sdr|net/sdr|2011-03-06|Changed category
+mbone/udpcast|net/udpcast|2011-03-06|Changed category
+mbone/wb|net/wb|2011-03-06|Changed category

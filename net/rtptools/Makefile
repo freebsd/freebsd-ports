@@ -7,7 +7,7 @@
 
 PORTNAME=	rtptools
 PORTVERSION=	1.18
-CATEGORIES=	mbone
+CATEGORIES=	net mbone
 MASTER_SITES=	http://www.cs.columbia.edu/IRT/software/rtptools/download/
 
 MAINTAINER=	tut@nhamon.com.ua

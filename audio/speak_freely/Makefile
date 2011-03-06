@@ -7,7 +7,7 @@
 
 PORTNAME=	speak_freely
 PORTVERSION=	7.6a
-CATEGORIES=	mbone audio security
+CATEGORIES=	audio security mbone
 MASTER_SITES=	SF/speak-freely/speak-freely/${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
