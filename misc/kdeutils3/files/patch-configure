@@ -1,5 +1,5 @@
---- ./configure.orig	2008-08-20 19:53:06.000000000 +0400
-+++ ./configure	2009-05-19 21:14:00.000000000 +0400
+--- ./configure.orig	2008-08-20 17:53:06.000000000 +0200
++++ ./configure	2011-03-06 19:24:29.081634533 +0100
 @@ -22643,10 +22643,10 @@
  
  
@@ -258,7 +258,16 @@
  LIBGMP=
  
     kde_safe_cppflags=$CPPFLAGS
-@@ -38739,10 +38510,10 @@
+@@ -38405,6 +38176,8 @@
+    { (exit 1); exit 1; }; }
+   fi
+ fi
++enable_snmp=yes
++LIBSNMP="-lnetsnmp"
+ 
+  if test "x$enable_snmp" = xyes; then
+   include_ksim_monitors_snmp_TRUE=
+@@ -38739,10 +38512,10 @@
  
  
  
