@@ -17,7 +17,7 @@
 
 PORTNAME=	fossology
 PORTVERSION=	1.1.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	SF
 
@@ -27,7 +27,7 @@ COMMENT=	License analysis tool for Open Source software
 BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash \
 		${SITE_PERL}/Text/Template.pm:${PORTSDIR}/textproc/p5-Text-Template \
 		svn:${PORTSDIR}/devel/subversion
-LIB_DEPENDS=	extractor.2:${PORTSDIR}/textproc/libextractor
+LIB_DEPENDS=	extractor.3:${PORTSDIR}/textproc/libextractor
 RUN_DEPENDS=	cabextract:${PORTSDIR}/archivers/cabextract \
 		icat:${PORTSDIR}/sysutils/sleuthkit \
 		pdftotext:${PORTSDIR}/graphics/xpdf \

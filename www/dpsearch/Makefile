@@ -60,7 +60,7 @@ CONFIGURE_ARGS+=--without-aspell
 .endif
 
 .if !defined(WITHOUT_DPSEARCH_EXTRACT)
-LIB_DEPENDS+=	extractor.2:${PORTSDIR}/textproc/libextractor
+LIB_DEPENDS+=	extractor.3:${PORTSDIR}/textproc/libextractor
 .endif
 
 .if !defined(NO_OPENSSL) && !defined(WITHOUT_DPSEARCH_SSL)
