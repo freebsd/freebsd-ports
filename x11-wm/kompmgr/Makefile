@@ -26,14 +26,12 @@ WRKSRC=		${WRKDIR}/kdebase-${PORTVERSION}
 
 PLIST_FILES=	bin/kompmgr
 
-BROKEN=		does not build
-
 .include <bsd.port.pre.mk>
 
 do-build:
 	cd ${WRKSRC}/kwin/kompmgr && \
 	${CC} ${CFLAGS} -I${LOCALBASE}/include -L${LOCALBASE}/lib -lX11 -lXdamage\
-	-lXfixes -lXrender -lXcomposite -lm -o kompmgr kompmgr.c
+	-lXfixes -lXrender -lXcomposite -lXext -lm -o kompmgr kompmgr.c
 
 do-install:
 	cd ${WRKSRC}/kwin/kompmgr && ${INSTALL_PROGRAM} kompmgr\
