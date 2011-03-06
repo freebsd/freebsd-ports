@@ -80,7 +80,9 @@ share/applications/chromium-bsu.desktop
 %%NLS%%share/locale/de/LC_MESSAGES/chromium-bsu.mo
 %%NLS%%share/locale/es/LC_MESSAGES/chromium-bsu.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/chromium-bsu.mo
+%%NLS%%share/locale/it/LC_MESSAGES/chromium-bsu.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/chromium-bsu.mo
+%%NLS%%share/locale/zh_TW/LC_MESSAGES/chromium-bsu.mo
 share/pixmaps/chromium-bsu.png
 @dirrm %%DATADIR%%/wav
 @dirrm %%DATADIR%%/png
