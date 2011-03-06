@@ -676,6 +676,7 @@
     SUBDIR += javolution
     SUBDIR += jclassinfo
     SUBDIR += jcmdline
+    SUBDIR += jenkins
     SUBDIR += jep
     SUBDIR += jiic
     SUBDIR += jline
