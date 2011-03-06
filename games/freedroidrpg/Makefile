@@ -6,15 +6,13 @@
 #
 
 PORTNAME=	freedroidrpg
-PORTVERSION=	0.13
-PORTREVISION=	1
+PORTVERSION=	0.14.1
 CATEGORIES=	games
-MASTER_SITES=	SF/freedroid/freedroidRPG/freedroidRPG-${PORTVERSION}
+MASTER_SITES=	SF/freedroid/freedroidRPG/freedroidRPG-${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\\1/}/
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Modification of the classical Freedroid engine into an RPG
 
-USE_BZIP2=	yes
 USE_SDL=	sdl image mixer
 GNU_CONFIGURE=	yes
 MAKE_JOBS_SAFE=	yes
