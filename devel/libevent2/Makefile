@@ -7,6 +7,7 @@
 
 PORTNAME=	libevent2
 DISTVERSION=	2.0.10
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://monkey.org/~provos/
 DISTNAME=	${PORTNAME:S/2//}-${DISTVERSION}-stable

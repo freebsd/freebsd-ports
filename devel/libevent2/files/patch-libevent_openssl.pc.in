@@ -1,0 +1,12 @@
+--- libevent_openssl.pc.in.orig	2010-08-16 18:56:09.000000000 +0200
++++ libevent_openssl.pc.in	2011-03-06 21:15:11.687161250 +0100
+@@ -10,7 +10,7 @@
+ Version: @VERSION@
+ Requires: libevent
+ Conflicts:
+-Libs: -L${libdir} -levent_openssl
++Libs: -L${libdir} -levent_openssl-2.0
+ Libs.private: @LIBS@ -lcrypto -lssl
+-Cflags: -I${includedir}
++Cflags: -I${includedir} -I${includedir}/event2/compat
+ 
