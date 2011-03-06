@@ -33,7 +33,6 @@ SUBDIR += korean
 SUBDIR += lang
 SUBDIR += mail
 SUBDIR += math
-SUBDIR += mbone
 SUBDIR += misc
 SUBDIR += multimedia
 SUBDIR += net
