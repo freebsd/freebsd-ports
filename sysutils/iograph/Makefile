@@ -8,10 +8,13 @@
 PORTNAME=	iograph
 PORTVERSION=	0.9.1
 CATEGORIES=	sysutils
-MASTER_SITES=	http://mdolze.gmxhome.de/files/
+MASTER_SITES=	SF/iograph
 
 MAINTAINER=	bsdfan@nurfuerspam.de
 COMMENT=	Creates HTML statistics of network transfer
+
+LICENSE=	BSD
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 PLIST_FILES=	bin/iograph \
 		%%DATADIR%%/in.gif \
