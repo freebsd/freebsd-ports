@@ -6,14 +6,13 @@
 #
 
 PORTNAME=	youtube
-PORTVERSION=	2.1.8
+PORTVERSION=	2.4.8
 CATEGORIES=	multimedia
-MASTER_SITES=	http://trizen.go.ro/files/ \
+MASTER_SITES=	http://mirror.4bit.ws/ \
 		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	dhn
 PKGNAMESUFFIX=	-viewer
-DISTNAME=	${PORTNAME}${PKGNAMESUFFIX}
-EXTRACT_SUFX=	#none
+DISTNAME=	${PORTNAME}${PKGNAMESUFFIX}-${PORTVERSION}
 
 MAINTAINER=	dhn@FreeBSD.org
 COMMENT=	Search and play YouTube videos streaming in MPlayer
@@ -24,17 +23,12 @@ RUN_DEPENDS=	${SITE_PERL}/LWP/UserAgent.pm:${PORTSDIR}/www/p5-libwww \
 
 USE_PERL5_RUN=	yes
 NO_BUILD=	yes
-PLIST_FILES=	bin/${DISTNAME}
+PLIST_FILES=	bin/youtube-viewer
 
 post-patch:
-	@${REINPLACE_CMD} -e "s|#!/usr/bin/perl|#!${PERL}|g" ${WRKSRC}/${DISTNAME}
-
-do-extract:
-	@${MKDIR} ${WRKSRC}
-	@${CP} ${_DISTDIR}/${DISTNAME} ${WRKSRC}
+	@${REINPLACE_CMD} -e "s|#!/usr/bin/perl|#!${PERL}|g" ${WRKSRC}/youtube-viewer
 
 do-install:
-	@${INSTALL_SCRIPT} ${WRKSRC}/${DISTNAME} ${PREFIX}/bin/
-	@${CHMOD} +x ${PREFIX}/bin/${DISTNAME}
+	@${INSTALL_SCRIPT} ${WRKSRC}/youtube-viewer ${PREFIX}/bin/
 
 .include <bsd.port.mk>
