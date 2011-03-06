@@ -10784,6 +10784,7 @@ openscep                        ports/security/openscep
 opensched                       ports/textproc/opensched
 openser                         ports/net/openser
 opensfx                         ports/games/opensfx
+openshot                        ports/multimedia/openshot
 openslp                         ports/net/openslp
 opensonic                       ports/games/opensonic
 opensp                          ports/textproc/opensp
@@ -21362,6 +21363,7 @@ py-distribute                   ports/devel/py-distribute
 py-distutils-extra              ports/devel/py-distutils-extra
 py-django                       ports/www/py-django
 py-django-app-plugins           ports/www/py-django-app-plugins
+py-django-appmedia              ports/www/py-django-appmedia
 py-django-classy-tags           ports/www/py-django-classy-tags
 py-django-devel                 ports/www/py-django-devel
 py-django-evolution             ports/www/py-django-evolution
