@@ -1,16 +1,15 @@
 # New ports collection Makefile for:	praat
 # Date created:		21-Feb-2006
-# Whom:			jbacon
+# Whom:			Jason Bacon <jwbacon@tds.net>
 #
 # $FreeBSD$
 #
 
 PORTNAME=	praat
 PORTVERSION=	4.6.39
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio science
-MASTER_SITES=	http://www.neuro.mcw.edu/~bacon/Ports/distfiles/Praat/4639/ \
-		http://www.fon.hum.uva.nl/praat/
+MASTER_SITES=	http://personalpages.tds.net/~jwbacon/Ports/distfiles/
 DISTNAME=	praat4639_sources
 
 MAINTAINER=	jwbacon@tds.net
