@@ -3,6 +3,7 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/Basic/Example3.java
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/Basic/Example4.java
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/Basic/Example5.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Basic/Example6.java
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/Basic/Main.java
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/Basic/lion.png
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/Export/Convert.java
@@ -14,6 +15,7 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/Export/Main.java
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/Export/README
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/Export/build.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Export/conf.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/Export/lion.png
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/Macros/FooPackage.java
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/Macros/Main.java

@@ -18,7 +18,4 @@ The most of LaTeX commands are available and :
     PDF, PS or EPS (SVG export with shaped fonts works fine too);
 11) and probably other things I forgot...
 
-There is no dependency and no external programs to install : JLaTeXMath is
-fully functional by itself.
-
 WWW: http://forge.scilab.org/index.php/p/jlatexmath/
