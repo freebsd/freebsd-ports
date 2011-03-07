@@ -1,0 +1,16 @@
+--- conf/Makefile.orig	2011-03-03 00:19:41.555484014 +0100
++++ conf/Makefile	2011-03-03 00:20:17.791387420 +0100
+@@ -90,10 +90,10 @@
+ 	done
+ 	-if test x$(PAMDIR) != x; then \
+ 		$(INSTALL_DIR) -m 755 $(BUILDROOT)$(PAMDIR); \
+-		if test -r $(BUILDROOT)$(PAMDIR)/cups ; then \
+-			$(INSTALL_DATA) $(PAMFILE) $(BUILDROOT)$(PAMDIR)/cups.N ; \
++		if test -r $(BUILDROOT)$(PAMDIR)/cups.default ; then \
++			$(INSTALL_DATA) $(PAMFILE) $(BUILDROOT)$(PAMDIR)/cups.default.N ; \
+ 		else \
+-			$(INSTALL_DATA) $(PAMFILE) $(BUILDROOT)$(PAMDIR)/cups ; \
++			$(INSTALL_DATA) $(PAMFILE) $(BUILDROOT)$(PAMDIR)/cups.default ; \
+ 		fi ; \
+ 	fi
+ 
