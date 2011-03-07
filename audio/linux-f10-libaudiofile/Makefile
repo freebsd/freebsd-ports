@@ -12,7 +12,7 @@ MASTER_SITES=	CRITICAL/rpm/${LINUX_RPM_ARCH}/fedora/${LINUX_DIST_VER}
 PKGNAMEPREFIX=	linux-f10-
 DISTNAME=	${LINUX_NAME}-${PORTVERSION}-${RPMVERSION}
 
-MAINTAINER=	freebsd-emulation@FreeBSD.org
+MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	An implementation of the Audio File Library from SGI (Linux Fedora 10)
 
 CONTFLICTS=	linux-libaudiofile-[0-9]* linux-f8-libaudiofile-[0-9]*

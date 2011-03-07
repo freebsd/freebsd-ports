@@ -13,7 +13,7 @@ PKGNAMEPREFIX=	linux-
 PKGNAMESUFFIX=	-libs
 DISTNAME=	${PORTNAME}-${PORTVERSION}-${RPMVERSION}
 
-MAINTAINER=	freebsd-emulation@FreeBSD.org
+MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	Runtime libraries for NAS (Linux Fedora Core 4)
 
 USE_LINUX_RPM=	yes

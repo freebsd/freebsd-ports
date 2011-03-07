@@ -91,7 +91,7 @@ ALWAYS_KEEP_DISTFILES=	YES
 
 CONFLICTS=		linux-xorg-libs-[0-9]* linux-f8-xorg-libs-[0-9]*
 
-MAINTAINER=		freebsd-emulation@FreeBSD.org
+MAINTAINER=		emulation@FreeBSD.org
 COMMENT=		Xorg libraries (Linux Fedora 10)
 
 USE_LINUX_RPM=		yes

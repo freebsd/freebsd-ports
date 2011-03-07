@@ -12,7 +12,7 @@ CATEGORIES=	x11-toolkits linux
 PKGNAMEPREFIX=	linux-f8-
 DISTNAME=	${LINUX_NAME}-${PORTVERSION}-${RPMVERSION}
 
-MAINTAINER=	freebsd-emulation@FreeBSD.org
+MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	Gtk library (Linux Fedora 8)
 
 CONFLICTS=	linux-gtk-[0-9]* linux-f10-gtk-[0-9]*

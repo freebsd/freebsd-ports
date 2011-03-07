@@ -12,7 +12,7 @@ MASTER_SITES=		CRITICAL/rpm/${LINUX_RPM_ARCH}/fedora/${LINUX_DIST_VER}
 PKGNAMEPREFIX=		linux-f10-
 DISTNAME=		${PORTNAME}-${PORTVERSION}-${RPMVERSION}
 
-MAINTAINER=		freebsd-emulation@FreeBSD.org
+MAINTAINER=		emulation@FreeBSD.org
 COMMENT=		Callback Framework for C++ (Linux Fedora 10)
 
 CONFLICTS=		linux-libsigc++20-[0-9]* linux-f8-libsigc++20-[0-9]*

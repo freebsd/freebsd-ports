@@ -11,7 +11,7 @@ CATEGORIES=	sysutils linux
 MASTER_SITES=	CRITICAL/rpm/${LINUX_RPM_ARCH}/fedora/${LINUX_DIST_VER}
 DISTNAME=	${PORTNAME}-${PORTVERSION}-6.4
 
-MAINTAINER=	freebsd-emulation@FreeBSD.org
+MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	Linux psproc binaries
 
 USE_LINUX_RPM=	yes

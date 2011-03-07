@@ -14,7 +14,7 @@ EXTRACT_SUFX=	-0.1.i386.rpm
 DIST_SUBDIR=	rpm
 EXTRACT_ONLY=
 
-MAINTAINER=	freebsd-emulation@FreeBSD.org
+MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	Motif toolkit Linux libraries
 
 BUILD_DEPENDS=	rpm2cpio:${PORTSDIR}/archivers/rpm

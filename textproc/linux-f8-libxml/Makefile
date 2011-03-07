@@ -12,7 +12,7 @@ CATEGORIES=	textproc linux
 PKGNAMEPREFIX=	linux-f8-
 DISTNAME=	${PORTNAME}-${PORTVERSION}-${RPMVERSION}
 
-MAINTAINER=	freebsd-emulation@FreeBSD.org
+MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	Old libXML library for Gnome-1 application compatibility (Linux Fedora 8)
 
 CONFLICTS=	linux-libxml-[0-9]* linux-f10-libxml-[0-9]*

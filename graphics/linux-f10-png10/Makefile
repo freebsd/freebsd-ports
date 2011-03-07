@@ -12,7 +12,7 @@ MASTER_SITES=	CRITICAL/rpm/${LINUX_RPM_ARCH}/fedora/${LINUX_DIST_VER}
 PKGNAMEPREFIX=	linux-f10-
 DISTNAME=	${LINUX_NAME}-${PORTVERSION}-${RPMVERSION}
 
-MAINTAINER=	freebsd-emulation@FreeBSD.org
+MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	RPM of the PNG lib (old 1.0 version, Linux Fedora 10)
 
 CONFLICTS=	linux-png10-[0-9]* linux-f8-png10-[0-9]*

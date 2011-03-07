@@ -12,7 +12,7 @@ CATEGORIES=	textproc linux
 MASTER_SITES=	CRITICAL/rpm/${LINUX_RPM_ARCH}/fedora/${LINUX_DIST_VER}
 DISTNAME=	${PORTNAME}-${PORTVERSION}-6
 
-MAINTAINER=	freebsd-emulation@FreeBSD.org
+MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	Linux/i386 binary port of Expat XML-parsing library
 
 CONFLICTS=	linux-f8-expat-[0-9]* linux-f10-expat-[0-9]*

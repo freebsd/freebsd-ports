@@ -12,7 +12,7 @@ CATEGORIES=	graphics linux
 MASTER_SITES=	CRITICAL/rpm/${LINUX_RPM_ARCH}/fedora/${LINUX_DIST_VER}
 DISTNAME=	libpng10-${PORTVERSION}-2
 
-MAINTAINER=	freebsd-emulation@FreeBSD.org
+MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	RPM of the PNG lib (old 1.0 version)
 
 CONFLICTS=	linux-f8-png10-[0-9]* linux-f10-png10-[0-9]*

@@ -12,7 +12,7 @@ CATEGORIES=	audio linux
 MASTER_SITES=	CRITICAL/rpm/${LINUX_RPM_ARCH}/fedora/${LINUX_DIST_VER}
 DISTNAME=	${PORTNAME}-${PORTVERSION}-0.fc4.1
 
-MAINTAINER=	freebsd-emulation@FreeBSD.org
+MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	RPM of esound
 
 CONFLICTS=	linux-f8-esound-[0-9]* linux-f10-esound-[0-9]*

@@ -14,7 +14,7 @@ MASTER_SITES=	http://gstreamer.freedesktop.org/pkg/%SUBDIR%/ CRITICAL/rpm
 MASTER_SITE_SUBDIR=	${LINUX_DIST}/${LINUX_DIST_VER}/${LINUX_RPM_ARCH}/RPMS.gst010
 MASTER_SITE_SRC_SUBDIR=	${LINUX_DIST}/${LINUX_DIST_VER}/${LINUX_RPM_ARCH}/SRPMS.gst010
 
-MAINTAINER=	freebsd-emulation@FreeBSD.org
+MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	Linux pango binary
 
 CONFLICTS=	linux-f8-pango-[0-9]* linux-f10-pango-[0-9]*

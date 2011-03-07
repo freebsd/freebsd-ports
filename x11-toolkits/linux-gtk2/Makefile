@@ -13,7 +13,7 @@ MASTER_SITES=	CRITICAL/rpm/${LINUX_RPM_ARCH}/fedora/${LINUX_DIST_VER}
 DISTFILES=	${PORTNAME}-${PORTVERSION}-2.fc4.4.${LINUX_RPM_ARCH}.rpm \
 		${PORTNAME}-engines-2.6.3-2.${LINUX_RPM_ARCH}.rpm
 
-MAINTAINER=	freebsd-emulation@FreeBSD.org
+MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	GTK+ library, version 2.X, Linux binary
 
 CONFLICTS=	linux-f8-gtk2-[0-9]* linux-f10-gtk2-[0-9]*

@@ -21,7 +21,7 @@ DISTFILES=	${PORTNAME}-${PORTVERSION}-${RPMVERSION}.${LINUX_RPM_ARCH}.rpm \
 		pixman-0.12.0-3.fc10.${LINUX_RPM_ARCH}.rpm \
 		jasper-libs-1.900.1-8.fc9.${LINUX_RPM_ARCH}.rpm
 
-MAINTAINER=	freebsd-emulation@FreeBSD.org
+MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	GTK+ library, version 2.X (Linux Fedora 10)
 
 CONFLICTS=	linux-gtk2-[0-9]* linux-f8-gtk2-[0-9]*

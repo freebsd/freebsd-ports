@@ -12,7 +12,7 @@ CATEGORIES=	accessibility linux
 PKGNAMEPREFIX=	linux-f8-
 DISTNAME=	${PORTNAME}-${PORTVERSION}-${RPMVERSION}
 
-MAINTAINER=	freebsd-emulation@FreeBSD.org
+MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	Accessibility Toolkit, Linux/i386 binary (Linux Fedora 8)
 
 CONFLICTS=	linux-atk-[0-9]* linux-f10-atk-[0-9]*

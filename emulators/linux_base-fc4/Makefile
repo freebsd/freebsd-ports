@@ -16,7 +16,7 @@ DISTFILES=		${BIN_DISTFILES} ${SRC_DISTFILES}
 DIST_SUBDIR=		rpm/${LINUX_RPM_ARCH}/fedora/${PORTVERSION}
 EXTRACT_ONLY=		${BIN_DISTFILES}
 
-MAINTAINER=	freebsd-emulation@FreeBSD.org
+MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	Base set of packages needed in Linux mode (for i386/amd64)
 
 BIN_DISTFILES=	basesystem-8.0-5.noarch.rpm \

@@ -18,7 +18,7 @@ DISTFILES=	${PORTNAME}-${PORTVERSION}-${RPMVERSION}.${LINUX_RPM_ARCH}.rpm \
 		gtk-rezlooks-engine-0.6-5.fc8.${LINUX_RPM_ARCH}.rpm \
 		gtk-xfce-engine-2.4.2-1.fc8.${LINUX_RPM_ARCH}.rpm
 
-MAINTAINER=	freebsd-emulation@FreeBSD.org
+MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	GTK+ library, version 2.X (Linux Fedora 8)
 
 CONFLICTS=	linux-gtk2-[0-9]* linux-f10-gtk2-[0-9]*

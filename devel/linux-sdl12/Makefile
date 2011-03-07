@@ -15,7 +15,7 @@ MASTER_SITES=	http://www.libsdl.org/release/ \
 		CRITICAL/rpm
 DISTNAME=	${PORTNAME:U}-${PORTVERSION:S/.1$/-1/}-1
 
-MAINTAINER=	freebsd-emulation@FreeBSD.org
+MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	Cross-platform multi-media development API (linux version)
 
 CONFLICTS=	linux-f8-sdl12-[0-9]* linux-f10-sdl12-[0-9]*

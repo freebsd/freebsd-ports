@@ -12,7 +12,7 @@ CATEGORIES=	devel linux
 PKGNAMEPREFIX=	linux-f8-
 DISTNAME=	${PORTNAME}-${PORTVERSION}-${RPMVERSION}
 
-MAINTAINER=	freebsd-emulation@FreeBSD.org
+MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	Cross-platform game programming library (Linux Fedora 8)
 
 CONFLICTS=	linux-allegro-[0-9]* linux-f10-allegro-[0-9]*

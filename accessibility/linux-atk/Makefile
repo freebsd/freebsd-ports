@@ -12,7 +12,7 @@ CATEGORIES=	accessibility linux
 MASTER_SITES=	CRITICAL/rpm/${LINUX_RPM_ARCH}/fedora/${LINUX_DIST_VER}
 DISTNAME=	${PORTNAME}-${PORTVERSION}-1
 
-MAINTAINER=	freebsd-emulation@FreeBSD.org
+MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	Accessibility Toolkit, Linux/i386 binary
 
 CONFLICTS=	linux-f8-atk-[0-9]* linux-f10-atk-[0-9]*

@@ -12,7 +12,7 @@ PKGNAMEPREFIX=	linux-f8-
 PKGNAMESUFFIX=	-libs
 DISTNAME=	${PORTNAME}-${PORTVERSION}-${RPMVERSION}
 
-MAINTAINER=	freebsd-emulation@FreeBSD.org
+MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	Runtime libraries for NAS (Linux Fedora 8)
 
 DEPRECATED=	End of Life since Jan 7, 2009
