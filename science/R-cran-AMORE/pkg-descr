@@ -1,0 +1,6 @@
+R-cran-AMORE was born to release the TAO robust neural network algorithm
+to the R users. It has grown and I think it can be of interest for
+the users wanting to implement their own training algorithms as well as
+for those others whose needs lye only in the "user space".
+
+WWW: http://rwiki.sciviews.org/doku.php?id=packages:cran:amore

@@ -6,6 +6,7 @@
     SUBDIR += 2d-rewriter
     SUBDIR += 2dhf
     SUBDIR += InsightToolkit
+    SUBDIR += R-cran-AMORE
     SUBDIR += abinit
     SUBDIR += afni
     SUBDIR += at
