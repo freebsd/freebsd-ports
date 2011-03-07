@@ -7,6 +7,7 @@
 
 PORTNAME=	firefox-sync
 PORTVERSION=	1.6.3
+PORTREVISION=	1
 PORTEPOCH=	2
 CATEGORIES=	www
 MASTER_SITES=	http://hg.mozilla.org/services/fx-sync/archive/${DISTVERSION}${EXTRACT_SUFX}/
@@ -28,15 +29,12 @@ OPTIONS=	FF35 "Build for Firefox 3.5 instead of 3.6" Off
 .include <bsd.port.options.mk>
 
 .if defined(WITHOUT_FF35)
-FF_DEPENDS=	${LOCALBASE}/lib/firefox3/firefox:${PORTSDIR}/www/firefox
+USE_FIREFOX_BUILD=	36
 AMD64_ARCH=	amd64
 .else
-FF_DEPENDS=	${LOCALBASE}/lib/firefox3/firefox:${PORTSDIR}/www/firefox35
+USE_FIREFOX_BUILD=	35
 AMD64_ARCH=	x86_64
 .endif
-
-BUILD_DEPENDS+=	${FF_DEPENDS}
-RUN_DEPENDS+=	${FF_DEPENDS}
 
 REVID=		d52662c1c99b
 .if ${ARCH} == i386
