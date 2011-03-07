@@ -5,7 +5,7 @@
 # Shell in a Box Daemon startup script
 #
 # PROVIDE: shellinaboxd
-# REQUIRE: login
+# REQUIRE: LOGIN
 # KEYWORD: shutdown
 
 #
