@@ -15,6 +15,9 @@ DISTFILES=	i386-wb-1.59.tar.Z
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A shared drawing (whiteboard) tool using multicast
 
+DEPRECATED=	Unmaintained, anachronistic, mail freebsd-ports@FreeBSD.org if interested
+EXPIRATION=	2011-06-30
+
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
 STRIP=

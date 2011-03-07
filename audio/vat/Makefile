@@ -15,6 +15,9 @@ DISTFILES=	vatsrc-4.0b2.tar.gz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The Visual Audio Tool - multicast audioconferencing
 
+DEPRECATED=	Unmaintained, anachronistic, mail freebsd-ports@FreeBSD.org if interested
+EXPIRATION=	2011-06-30
+
 GSM_DIR=	${.CURDIR}/../../audio/gsm
 GSM_WORK=	${WRKDIRPREFIX}${GSM_DIR}/work/gsm-1.0-pl13
 

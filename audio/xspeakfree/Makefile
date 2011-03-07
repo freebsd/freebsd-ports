@@ -14,6 +14,9 @@ MASTER_SITES=	http://www.liquidx.org/distfiles/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tcl/Tk (wish) frontend to Speak Freely
 
+DEPRECATED=	Unmaintained, unfetchable, mail freebsd-ports@FreeBSD.org if interested
+EXPIRATION=	2011-06-30
+
 RUN_DEPENDS=	${LOCALBASE}/bin/wish8.4:${PORTSDIR}/x11-toolkits/tk84 \
 		${LOCALBASE}/bin/sfmike:${PORTSDIR}/audio/speak_freely
 

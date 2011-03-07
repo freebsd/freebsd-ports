@@ -14,6 +14,9 @@ DISTNAME=	${PORTNAME}-${RELEASE_DATE}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A file transfer tool using ethernet's multicast
 
+DEPRECATED=	Unmaintained, anachronistic, mail freebsd-ports@FreeBSD.org if interested
+EXPIRATION=	2011-06-30
+
 USE_GMAKE=	yes
 USE_PERL5_BUILD=	yes
 WRKSRC=	${WRKDIR}/${PORTNAME}-${RELEASE_DATE}

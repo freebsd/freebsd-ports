@@ -16,6 +16,9 @@ EXTRACT_SUFX=	.tar.Z
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Internet Image(or other data) Multicaster (and receiver)
 
+DEPRECATED=	Unmaintained, anachronistic, mail freebsd-ports@FreeBSD.org if interested
+EXPIRATION=	2011-06-30
+
 USE_TK=		84
 WRKSRC=		${WRKDIR}/mnm
 
