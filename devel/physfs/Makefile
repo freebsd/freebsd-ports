@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	physfs
-PORTVERSION=	2.0.1
+PORTVERSION=	2.0.2
 CATEGORIES=	devel
 MASTER_SITES=	http://offload1.icculus.org:9090/${PORTNAME}/downloads/
 
