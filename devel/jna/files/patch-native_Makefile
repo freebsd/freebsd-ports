@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- native/Makefile.orig
++++ native/Makefile
+@@ -135,7 +135,7 @@
+ ifeq ($(OS),freebsd)
+ ARCH=$(shell uname -m | sed 's/i.86/i386/g')
+ PCFLAGS+=-fPIC
+-CINCLUDES+=-I/usr/X11R6/include
++CINCLUDES+=-I/usr/local/include
+ LDFLAGS=-o $@ -shared 
+ CDEFINES+=-DHAVE_PROTECTION -DFFI_MMAP_EXEC_WRIT
+ endif
