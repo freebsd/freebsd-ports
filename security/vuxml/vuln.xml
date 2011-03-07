@@ -34,6 +34,35 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="cf96cd8d-48fb-11e0-98a6-0050569b2d21">
+    <topic>redmine -- XSS vulnerability</topic>
+    <affects>
+      <package>
+	<name>redmine</name>
+	<range><gt>1.0</gt><lt>1.1.2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Jean-Philippe Lang reports:</p>
+	<blockquote cite="http://www.redmine.org/news/53">
+	  <p>This maintenance release for 1.1.x users includes
+	    13 bug fixes since 1.1.1 and a security fix (XSS
+	    vulnerability affecting all Redmine versions from
+	    1.0.1 to 1.1.1).
+	  </p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://www.redmine.org/news/53</url>
+    </references>
+    <dates>
+      <discovery>2011-03-07</discovery>
+      <entry>2011-03-07</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="e27ca763-4721-11e0-bdc4-001e8c75030d">
     <topic>subversion -- remote HTTP DoS vulnerability</topic>
     <affects>
