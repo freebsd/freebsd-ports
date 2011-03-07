@@ -1205,6 +1205,7 @@
     SUBDIR += slides
     SUBDIR += smartdoc
     SUBDIR += sml-fxp
+    SUBDIR += smu
     SUBDIR += soothsayer
     SUBDIR += soprano
     SUBDIR += source-highlight
