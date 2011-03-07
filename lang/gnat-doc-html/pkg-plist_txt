@@ -1,8 +1,0 @@
-%%DOCSDIR%%/txt/arm95.txt
-%%DOCSDIR%%/txt/gcc.txt
-%%DOCSDIR%%/txt/gdb.txt
-%%DOCSDIR%%/txt/gnat_rm.txt
-%%DOCSDIR%%/txt/gnat_ug.txt
-%%DOCSDIR%%/txt/gvd.txt
-@dirrm %%DOCSDIR%%/txt
-@dirrm %%DOCSDIR%%
