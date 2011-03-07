@@ -1,0 +1,4 @@
+Statistics::R will permit the control of the the R (R-project) interpreter
+through Perl in different architectures and OS.
+
+WWW: http://search.cpan.org/dist/Statistics-R/
