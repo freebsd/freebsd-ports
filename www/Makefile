@@ -1603,6 +1603,7 @@
     SUBDIR += rubygem-emk-sinatra-url-for
     SUBDIR += rubygem-erubis
     SUBDIR += rubygem-faraday
+    SUBDIR += rubygem-faraday_middleware
     SUBDIR += rubygem-feed-normalizer
     SUBDIR += rubygem-feedzirra
     SUBDIR += rubygem-haml
