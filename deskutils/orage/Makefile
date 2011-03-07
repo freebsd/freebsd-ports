@@ -44,6 +44,11 @@ CONFIGURE_ARGS+=--with-bdb4=no
 
 .if defined(WITH_ICAL)
 LIB_DEPENDS+=	ical.44:${PORTSDIR}/devel/libical
+CONFIGURE_ENV+=	CFLAGS="${CLFAGS} -I${LOCALBASE}/include/libical"
+PLIST_SUB+=	WITH_ICAL="@comment "
+.else
+CONFIGURE_ARGS+=--disable-libical
+PLIST_SUB+=	WITH_ICAL=""
 .endif
 
 post-patch:
