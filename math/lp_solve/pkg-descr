@@ -1,7 +1,7 @@
 This is the lp_solve, A free linear programming solver that can process 
 standard MPL format, LP format or be accessed directly from your code
-via API calls from a library. This lp_solve versions is released under
+via API calls from a library. This lp_solve version is released under
 the LGPL license. See LGPL.txt.
 
-WWW: http://groups.yahoo.com/group/lp_solve/
+WWW: http://tech.groups.yahoo.com/group/lp_solve/
      http://sourceforge.net/projects/lpsolve/
