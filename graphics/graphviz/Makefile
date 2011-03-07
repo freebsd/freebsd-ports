@@ -331,6 +331,7 @@ PLIST_SUB+=		WITH_PYTHON="@comment "
 
 .if defined(WITH_RUBY)
 CONFIGURE_ARGS+=	--enable-ruby
+CONFIGURE_ENV+=		RUBY="${RUBY}"
 PLIST_SUB+=		WITH_RUBY=""
 USE_RUBY=		yes
 .include "${PORTSDIR}/Mk/bsd.ruby.mk"
