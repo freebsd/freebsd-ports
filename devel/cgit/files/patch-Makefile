@@ -1,25 +1,23 @@
---- ./Makefile.orig	2010-09-27 08:00:47.000000000 +0200
-+++ ./Makefile	2010-09-29 08:08:53.348328439 +0200
-@@ -1,9 +1,9 @@
- CGIT_VERSION = v0.8.3.4
+--- ./Makefile.orig	2011-03-05 14:23:12.000000000 +0100
++++ ./Makefile	2011-03-07 13:03:16.000000000 +0100
+@@ -1,8 +1,8 @@
+ CGIT_VERSION = v0.9
  CGIT_SCRIPT_NAME = cgit.cgi
 -CGIT_SCRIPT_PATH = /var/www/htdocs/cgit
 -CGIT_DATA_PATH = $(CGIT_SCRIPT_PATH)
 -CGIT_CONFIG = /etc/cgitrc
--CACHE_ROOT = /var/cache/cgit
 +CGIT_SCRIPT_PATH ?= /var/www/htdocs/cgit
 +CGIT_DATA_PATH ?= $(CGIT_SCRIPT_PATH)
 +CGIT_CONFIG ?= /etc/cgitrc
-+CACHE_ROOT ?= /var/cache/cgit
- SHA1_HEADER = <openssl/sha.h>
- GIT_VER = 1.7.3
- GIT_URL = http://www.kernel.org/pub/software/scm/git/git-$(GIT_VER).tar.bz2
-@@ -68,7 +68,7 @@
- 	$(QUIET_CC)$(CC) -o $*.o -c $(CFLAGS) $<
+ CACHE_ROOT = /var/cache/cgit
+ prefix = /usr
+ libdir = $(prefix)/lib
+@@ -118,7 +118,7 @@
+ OBJECTS += vector.o
+ 
+ ifdef NEEDS_LIBICONV
+-	EXTLIBS += -liconv
++	EXTLIBS += -L$(LOCALBASE)/lib -liconv
+ endif
  
  
--EXTLIBS = git/libgit.a git/xdiff/lib.a -lz -lcrypto -lpthread
-+EXTLIBS = git/libgit.a git/xdiff/lib.a -lz -lcrypto -lpthread -L${LOCALBASE}/lib -liconv
- OBJECTS =
- OBJECTS += cache.o
- OBJECTS += cgit.o
