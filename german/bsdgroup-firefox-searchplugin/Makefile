@@ -17,7 +17,7 @@ EXTRACT_ONLY=	yes
 MAINTAINER=	stefan.tell@crashmail.de
 COMMENT=	Firefox searchplugins for the www.BSDGroup.de board
 
-RUN_DEPENDS=	firefox3:${PORTSDIR}/www/firefox
+USE_FIREFOX=	yes
 
 NO_BUILD=	yes
 
