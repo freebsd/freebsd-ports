@@ -16,7 +16,7 @@ MAINTAINER=	daniel@netwalk.org
 COMMENT=	A web-interface based binary newsgrabber in python, with nzb support
 
 RUN_DEPENDS=	cheetah:${PORTSDIR}/devel/py-cheetah \
-		${PYTHON_SITELIBDIR}/cherrypy/__init__.py:${PORTSDIR}/www/py-cherrypy \
+		cherryd:${PORTSDIR}/www/py-cherrypy \
 		${PYTHON_SITELIBDIR}/pythonutils/configobj.py:${PORTSDIR}/devel/py-utils \
 		${PYTHON_SITELIBDIR}/_sqlite3.so:${PORTSDIR}/databases/py-sqlite3
 
