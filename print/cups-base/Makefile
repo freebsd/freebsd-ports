@@ -213,6 +213,9 @@ LIB_DEPENDS+=		usb:${PORTSDIR}/devel/libusb
 .else
 CONFIGURE_ARGS+=	--disable-libusb
 .endif
+.if ${OSVERSION} >= 800000
+CONFIGURE_ARGS+=	LIBS="-lssp_nonshared"
+.endif
 
 .if defined(CUPS_CLIENT)
 MAN1=	cups-config.1
