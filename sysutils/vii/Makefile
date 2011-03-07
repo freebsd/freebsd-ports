@@ -8,8 +8,7 @@
 PORTNAME=	vii
 PORTVERSION=	4.0
 CATEGORIES=	sysutils
-MASTER_SITES=	http://vii.sourceforge.net/ \
-		CRITICAL
+MASTER_SITES=	CRITICAL
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Execute a command repeatedly and scroll the output
@@ -21,6 +20,8 @@ PLIST_FILES=	bin/vii
 MAN1=		vii.1
 
 MAKE_ARGS+=	CFLAGS="${CFLAGS}"
+
+LICENSE=	GPLv2
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/${PORTNAME} ${PREFIX}/bin
