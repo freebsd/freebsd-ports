@@ -28,6 +28,7 @@ LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg \
 		gmp.10:${PORTSDIR}/math/gmp
 
 CONFLICTS=	pike7[28]-[0-9]*
+CONFLICTS_BUILD=nettle-[2-9]*
 
 OPTIONS=	TTF "Add FreeType 1 support" on \
 		FREETYPE "Add FreeType 2 support" on \
@@ -78,8 +79,7 @@ CONFIGURE_ARGS+=	--without-debug \
 		 --without-machine-code \
 		 --prefix=${PREFIX}
 
-MAKE_ARGS=	CONFIGUREARGS="${CONFIGURE_ARGS}" ac_cv_lib_nettle_md5_init=no \
-		ac_cv_lib_nettle_nettle_md5_init=no
+MAKE_ARGS=	CONFIGUREARGS="${CONFIGURE_ARGS}"
 
 USE_GETTEXT=	yes
 USE_BISON=	build
