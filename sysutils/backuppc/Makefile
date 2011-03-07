@@ -7,7 +7,7 @@
 
 PORTNAME=	backuppc
 PORTVERSION=	3.2.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	sysutils
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	${PORTNAME}/${PORTNAME}/${PORTVERSION}
@@ -36,6 +36,7 @@ OPTIONS=	COMPRESS_ZLIB "Perl5 interface to zlib compression library"	on \
 		FILE_RSYNCP "Perl Rsync client"					off \
 		SMBCLIENT "Samba client"					off \
 		NMBLOOKUP "NetBIOS Name lookup tool"				off \
+		LIBWWW "Perl5 library for WWW access (for FTP Xfer)"		off \
 		XML_RSS "Perl extension to manage RSS files"			off
 
 .include <bsd.port.options.mk>
@@ -54,6 +55,9 @@ RUN_DEPENDS+=	smbclient:${PORTSDIR}/net/samba-smbclient
 .endif
 .if defined(WITH_NMBLOOKUP)
 RUN_DEPENDS+=	nmblookup:${PORTSDIR}/net/samba-nmblookup
+.endif
+.if defined(WITH_LIBWWW)
+RUN_DEPENDS+=	p5-libwww>=0:${PORTSDIR}/www/p5-libwww
 .endif
 .if defined(WITH_XML_RSS)
 RUN_DEPENDS+=	${SITE_PERL}/XML/RSS.pm:${PORTSDIR}/textproc/p5-XML-RSS
