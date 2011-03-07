@@ -12,7 +12,7 @@ CATEGORIES=	textproc linux
 PKGNAMEPREFIX=	linux-f8-
 DISTNAME=	${PORTNAME}-${PORTVERSION}-${RPMVERSION}
 
-MAINTAINER=	freebsd-emulation@FreeBSD.org
+MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	Linux/i386 binary port of Expat XML-parsing library (Linux Fedora 8)
 
 CONFLICTS=	linux-expat-[0-9]* linux-f10-expat-[0-9]*

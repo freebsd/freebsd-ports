@@ -12,7 +12,7 @@ CATEGORIES=	devel linux
 PKGNAMEPREFIX=	linux-f8-
 DISTNAME=	${PORTNAME}-${PORTVERSION}-${RPMVERSION}
 
-MAINTAINER=	freebsd-emulation@FreeBSD.org
+MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	RPM of libglade (Linux Fedora 8)
 
 CONFLICTS=	linux-libglade-[0-9]* linux-f10-libglade-[0-9]*

@@ -12,7 +12,7 @@ CATEGORIES=		devel linux
 MASTER_SITES=		CRITICAL/rpm/${LINUX_RPM_ARCH}/fedora/${LINUX_DIST_VER}
 DISTNAME=		${PORTNAME}++20-${PORTVERSION}-${RPMVERSION}
 
-MAINTAINER=		freebsd-emulation@FreeBSD.org
+MAINTAINER=		emulation@FreeBSD.org
 COMMENT=		Callback Framework for C++ (linux version)
 
 CONFLICTS=		linux-f8-libsigc++20-[0-9]* linux-f10-libsigc++20-[0-9]*

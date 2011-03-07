@@ -12,7 +12,7 @@ CATEGORIES=	graphics linux
 PKGNAMEPREFIX=	linux-f8-
 DISTNAME=	${PORTNAME}-${PORTVERSION}-${RPMVERSION}
 
-MAINTAINER=	freebsd-emulation@FreeBSD.org
+MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	RPM of imlib (Linux Fedora 8)
 
 CONFLICTS=	linux-imlib-[0-9]* linux-f10-imlib-[0-9]*

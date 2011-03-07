@@ -12,7 +12,7 @@ CATEGORIES=	graphics linux
 MASTER_SITES=	CRITICAL/rpm/${LINUX_RPM_ARCH}/fedora/${LINUX_DIST_VER}
 DISTNAME=	libtiff-${PORTVERSION}-6.fc4.2
 
-MAINTAINER=	freebsd-emulation@FreeBSD.org
+MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	TIFF library, Linux/i386 binary
 
 CONFLICTS=	linux-f8-tiff-[0-9]* linux-f10-tiff-[0-9]*

@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	netchild/rpms/${LINUX_DIST}${LINUX_DIST_VER}
 MASTER_SITE_SRC_SUBDIR=	netchild/rpms/${LINUX_DIST}${LINUX_DIST_VER}
 PKGNAMEPREFIX=	linux-f10-
 
-MAINTAINER=	freebsd-emulation@FreeBSD.org
+MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	The pango library (Linux Fedora 10)
 
 CONFLICTS=	linux-pango-[0-9]* linux-f8-pango-[0-9]*

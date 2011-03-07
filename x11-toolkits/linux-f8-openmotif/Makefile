@@ -15,7 +15,7 @@ PKGNAMEPREFIX=	linux-f8-
 EXTRACT_SUFX=	-1.fc8.i386.rpm
 DIST_SUBDIR=	rpm
 
-MAINTAINER=	freebsd-emulation@FreeBSD.org
+MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	Motif toolkit Linux libraries
 
 CONFLICTS=	linux-openmotif-[0-9]* linux-f10-openmotif-[0-9]*

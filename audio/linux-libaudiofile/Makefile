@@ -12,7 +12,7 @@ CATEGORIES=	audio linux
 MASTER_SITES=	CRITICAL/rpm/${LINUX_RPM_ARCH}/fedora/${LINUX_DIST_VER}
 DISTNAME=	audiofile-${PORTVERSION}-2
 
-MAINTAINER=	freebsd-emulation@FreeBSD.org
+MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	RPM of audiofile
 
 CONFLICTS=	linux-f8-libaudiofile-[0-9]* linux-f10-libaudiofile-[0-9]*

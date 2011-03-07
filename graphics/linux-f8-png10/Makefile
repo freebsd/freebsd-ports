@@ -12,7 +12,7 @@ CATEGORIES=	graphics linux
 PKGNAMEPREFIX=	linux-f8-
 DISTNAME=	${LINUX_NAME}-${PORTVERSION}-${RPMVERSION}
 
-MAINTAINER=	freebsd-emulation@FreeBSD.org
+MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	RPM of the PNG lib (old 1.0 version, Linux Fedora 8)
 
 CONFLICTS=	linux-png10-[0-9]* linux-f10-png10-[0-9]*

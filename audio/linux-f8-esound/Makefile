@@ -12,7 +12,7 @@ CATEGORIES=	audio linux
 PKGNAMEPREFIX=	linux-f8-
 DISTNAME=	${LINUX_NAME}-${PORTVERSION}-${RPMVERSION}
 
-MAINTAINER=	freebsd-emulation@FreeBSD.org
+MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	RPM of esound (Linux Fedora 8)
 
 CONFLICTS=	linux-esound-[0-9]* linux-f10-esound-[0-9]*

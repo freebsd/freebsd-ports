@@ -17,7 +17,7 @@ DISTFILES=	VMware-workstation-${PORTVERSION:R}-${PORTVERSION:E}${EXTRACT_SUFX}:v
 		vmmon-only-${PORTVERSION:R}-20040727${EXTRACT_SUFX}:patch \
 		vmnet-only-${PORTVERSION:R}-20040705${EXTRACT_SUFX}:patch
 
-MAINTAINER=	freebsd-emulation@FreeBSD.org
+MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	A virtual machine emulator - a full PC in a window
 
 RUN_DEPENDS=	/dev/rtc:${PORTSDIR}/emulators/rtc

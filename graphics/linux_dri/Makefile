@@ -14,7 +14,7 @@ DISTFILES=	Mesa-linux-bin-${PORTVERSION}.tar.bz2 \
 		linux-libglide.tar.gz \
 		linux-dri-tools.tar.gz
 
-MAINTAINER=	freebsd-emulation@FreeBSD.org
+MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	Binary Linux DRI libraries for 3D hardware acceleration of linux apps
 
 CONFLICTS=	linux_dri-6.5.2006* linux-libGLU-[0-9]* linux-f8-dri-[0-9]* \

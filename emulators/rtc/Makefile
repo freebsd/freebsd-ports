@@ -12,7 +12,7 @@ CATEGORIES=	emulators linux kld
 MASTER_SITES=	# none
 DISTFILES=	# none
 
-MAINTAINER=	freebsd-emulation@FreeBSD.org
+MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	Kernel module which provides /dev/rtc device support
 
 WRKSRC=		${WRKDIR}/files

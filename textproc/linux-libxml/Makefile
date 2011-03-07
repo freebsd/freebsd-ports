@@ -12,7 +12,7 @@ CATEGORIES=	textproc linux
 MASTER_SITES=	CRITICAL/rpm/${LINUX_RPM_ARCH}/fedora/${LINUX_DIST_VER}
 DISTNAME=	${PORTNAME}-${PORTVERSION}-13
 
-MAINTAINER=	freebsd-emulation@FreeBSD.org
+MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	RPM of libxml
 
 CONFLICTS=	linux-f8-libxml-[0-9]* linux-f10-libxml-[0-9]*

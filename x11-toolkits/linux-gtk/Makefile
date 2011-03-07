@@ -14,7 +14,7 @@ CATEGORIES=	x11-toolkits linux
 MASTER_SITES=	CRITICAL/rpm/${LINUX_RPM_ARCH}/fedora/${LINUX_DIST_VER}
 DISTNAME=	gtk+-${PORTVERSION}-39
 
-MAINTAINER=	freebsd-emulation@FreeBSD.org
+MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	RPM of the Gtk lib
 
 CONFLICTS=	linux-f8-gtk-[0-9]* linux-f10-gtk-[0-9]*

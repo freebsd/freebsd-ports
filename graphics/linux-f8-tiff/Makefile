@@ -12,7 +12,7 @@ CATEGORIES=	graphics linux
 PKGNAMEPREFIX=	linux-f8-
 DISTNAME=	${LINUX_NAME}-${PORTVERSION}-${RPMVERSION}
 
-MAINTAINER=	freebsd-emulation@FreeBSD.org
+MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	The TIFF library, Linux/i386 binary (Linux Fedora 8)
 
 CONFLICTS=	linux-tiff-[0-9]* linux-f10-tiff-[0-9]*
