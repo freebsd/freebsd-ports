@@ -1,0 +1,4 @@
+XML::LibXML::SAX::ChunkParser's purpose is to simply keep parsing
+possibly incomplete XML fragments, for example, from a socket.
+
+WWW: http://search.cpan.org/dist/XML-LibXML-SAX-ChunkParser/
