@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	Net-GitHub
-PORTVERSION=	0.23
+PORTVERSION=	0.27
 CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
+MASTER_SITE_SUBDIR=	CPAN:FAYLAND
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	clsung@FreeBSD.org
@@ -41,6 +42,8 @@ MAN3=		Net::GitHub.3 Net::GitHub::V1.3 \
 		Net::GitHub::V2::Network.3 \
 		Net::GitHub::V2::NoRepo.3 \
 		Net::GitHub::V2::Object.3 \
+		Net::GitHub::V2::Organizations.3 \
+		Net::GitHub::V2::PullRequest.3 \
 		Net::GitHub::V2::Repositories.3 \
 		Net::GitHub::V2::Users.3
 

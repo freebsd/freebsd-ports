@@ -17,6 +17,8 @@
 %%SITE_PERL%%/Net/GitHub/V2/Network.pm
 %%SITE_PERL%%/Net/GitHub/V2/NoRepo.pm
 %%SITE_PERL%%/Net/GitHub/V2/Object.pm
+%%SITE_PERL%%/Net/GitHub/V2/Organizations.pm
+%%SITE_PERL%%/Net/GitHub/V2/PullRequest.pm
 %%SITE_PERL%%/Net/GitHub/V2/Repositories.pm
 %%SITE_PERL%%/Net/GitHub/V2/Users.pm
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/GitHub
