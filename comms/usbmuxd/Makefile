@@ -23,16 +23,7 @@ PORTDOCS=	AUTHORS README README.devel
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} == 800107 || ${OSVERSION} == 900002
-HAVE_LIBUSB104!=	${GREP} --quiet "libusb_fill_bulk_transfer" \
-				/usr/include/libusb.h \
-				&& ${ECHO_CMD} yes || ${ECHO_CMD} no
-.elif ${OSVERSION} > 800107 && ${OSVERSION} < 900000 || ${OSVERSION} > 900002
-HAVE_LIBUSB104=		yes
-.else
-HAVE_LIBUSB104=		no
-.endif
-.if ${HAVE_LIBUSB104} == "no"
+.if ${OSVERSION} <= 800107 || ${OSVERSION} >= 900000 && ${OSVERSION} <= 900002
 BROKEN=		requires libusb 1.0.4
 .endif
 
