@@ -1,0 +1,4 @@
+This module extends existing IO::Async classes with extra methods to
+allow the use of SSL or TLS-based connections using IO::Socket::SSL.
+
+WWW:	http://search.cpan.org/dist/IO-Async-SSL/

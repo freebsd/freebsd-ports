@@ -529,6 +529,7 @@
     SUBDIR += p5-GSSAPI
     SUBDIR += p5-GnuPG-Interface
     SUBDIR += p5-HTML-Email-Obfuscate
+    SUBDIR += p5-IO-Async-SSL
     SUBDIR += p5-IO-Socket-SSL
     SUBDIR += p5-Jifty-Plugin-OpenID
     SUBDIR += p5-MD5
