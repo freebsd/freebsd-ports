@@ -851,6 +851,7 @@
     SUBDIR += p5-XML-LibRSVG
     SUBDIR += p5-XML-LibXML
     SUBDIR += p5-XML-LibXML-Iterator
+    SUBDIR += p5-XML-LibXML-SAX-ChunkParser
     SUBDIR += p5-XML-LibXML-Simple
     SUBDIR += p5-XML-LibXSLT
     SUBDIR += p5-XML-Liberal
