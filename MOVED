@@ -1572,3 +1572,8 @@ mbone/rtptools|net/rtptools|2011-03-06|Changed category
 mbone/sdr|net/sdr|2011-03-06|Changed category
 mbone/udpcast|net/udpcast|2011-03-06|Changed category
 mbone/wb|net/wb|2011-03-06|Changed category
+lang/gnat-doc-html||2011-03-07|unmaintained and obsolete
+lang/gnat-doc-info||2011-03-07|unmaintained and obsolete
+lang/gnat-doc-ps||2011-03-07|unmaintained and obsolete
+lang/gnat-doc-texi||2011-03-07|unmaintained and obsolete
+lang/gnat-doc-txt||2011-03-07|unmaintained and obsolete
