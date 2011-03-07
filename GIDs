@@ -155,6 +155,7 @@ bnetd:*:700:
 bopm:*:717:
 openxpki:*:777:
 puppet:*:814:
+jenkins:*:818:
 openacs:*:820:
 dotlrn:*:821:
 netdisco:*:840:
