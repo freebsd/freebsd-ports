@@ -7,7 +7,7 @@
 
 PORTNAME=	refdb
 PORTVERSION=	0.9.9
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-src/${PORTNAME}-src-${PORTVERSION}-1
 DISTNAME=	${PORTNAME}-${PORTVERSION}-1
@@ -17,7 +17,7 @@ COMMENT=	Bibliographic reference database
 
 LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2 \
 		btparse.0:${PORTSDIR}/textproc/btparse \
-		dbi.0:${PORTSDIR}/databases/libdbi
+		dbi.1:${PORTSDIR}/databases/libdbi
 
 USE_GMAKE=	yes
 USE_ICONV=	yes

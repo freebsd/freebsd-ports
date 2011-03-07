@@ -7,7 +7,7 @@
 
 PORTNAME=	bmon
 PORTVERSION=	2.1.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net
 MASTER_SITES=	http://people.suug.ch/~tgr/bmon/files/
 
@@ -32,7 +32,7 @@ BUILD_DEPENDS=	rrdtool:${PORTSDIR}/databases/rrdtool
 .endif
 
 .if defined(WITH_DBI)
-LIB_DEPENDS=	dbi.0:${PORTSDIR}/databases/libdbi
+LIB_DEPENDS=	dbi.1:${PORTSDIR}/databases/libdbi
 .endif
 
 do-install:
