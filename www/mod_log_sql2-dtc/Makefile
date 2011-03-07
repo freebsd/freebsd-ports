@@ -6,7 +6,7 @@
 
 PORTNAME=	mod_log_sql
 PORTVERSION=	1.101
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	www databases
 MASTER_SITES=	http://www.outoforder.cc/downloads/${PORTNAME}/
 PKGNAMEPREFIX=	${APACHE_PKGNAMEPREFIX}
@@ -32,7 +32,7 @@ CONFIGURE_ENV+=	LIBS="-L${LOCALBASE}/lib -L${LOCALBASE}/lib/mysql"
 .include <bsd.port.pre.mk>
 .if defined(WITH_DBI) || exists(${LOCALBASE}/include/dbi/dbi.h)
 CONFIGURE_ARGS+=	--with-dbi=${LOCALBASE}
-LIB_DEPENDS+=		dbi.0:${PORTSDIR}/databases/libdbi
+LIB_DEPENDS+=		dbi.1:${PORTSDIR}/databases/libdbi
 .endif
 
 .include <bsd.port.post.mk>

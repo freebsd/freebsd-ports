@@ -7,7 +7,7 @@
 
 PORTNAME=	collectd
 PORTVERSION=	4.9.3
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://collectd.org/files/
 
@@ -188,7 +188,7 @@ PLIST_SUB+=	CURL="@comment "
 
 .if defined(WITH_DBI)
 CONFIGURE_ARGS+=--enable-dbi --with-libdbi=${LOCALBASE}
-LIB_DEPENDS+=	dbi.0:${PORTSDIR}/databases/libdbi
+LIB_DEPENDS+=	dbi.1:${PORTSDIR}/databases/libdbi
 PLIST_SUB+=	DBI=""
 .else
 CONFIGURE_ARGS+=--disable-dbi

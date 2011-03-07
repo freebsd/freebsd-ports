@@ -7,6 +7,7 @@
 
 PORTNAME=	syslog-ng
 PORTVERSION=	3.2b1
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.balabit.com/downloads/files/syslog-ng/sources/3.2beta1/source/
 PKGNAMESUFFIX=	3-devel
@@ -87,7 +88,7 @@ CONFIGURE_ARGS+=	--disable-pcre
 .endif
 
 .if defined(WITH_SQL)
-LIB_DEPENDS+=		dbi.0:${PORTSDIR}/databases/libdbi
+LIB_DEPENDS+=		dbi.1:${PORTSDIR}/databases/libdbi
 CONFIGURE_ENV+=		LIBDBI_LIBS="-ldbi"
 CONFIGURE_ARGS+=	--enable-sql
 .else
@@ -96,7 +97,7 @@ CONFIGURE_ARGS+=	--disable-sql
 
 .if defined(WITH_SQL)
 CONFIGURE_ARGS+=--enable-sql
-LIB_DEPENDS+= dbi.0:${PORTSDIR}/databases/libdbi
+LIB_DEPENDS+= dbi.1:${PORTSDIR}/databases/libdbi
 CONFIGURE_ENV+= LIBDBI_CFLAGS="-I/usr/local/include" \
 		LIBDBI_LIBS=" -ldbi"
 .endif
