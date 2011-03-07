@@ -1,5 +1,5 @@
---- source/Irrlicht/Makefile	2010-12-13 14:40:13.000000000 -0500
-+++ source/Irrlicht/Makefile	2010-12-13 14:46:13.000000000 -0500
+--- source/Irrlicht/Makefile	2011-03-07 18:03:16.000000000 -0500
++++ source/Irrlicht/Makefile	2011-03-07 18:10:51.000000000 -0500
 @@ -3,7 +3,7 @@
  VERSION_RELEASE = 2
  VERSION = $(VERSION_MAJOR).$(VERSION_MINOR).$(VERSION_RELEASE)
@@ -72,7 +72,7 @@
  
  #OSX specific options
  staticlib_osx sharedlib_osx install_osx: SYSTEM = MacOSX
-@@ -103,12 +102,12 @@
+@@ -103,20 +102,20 @@
  staticlib_win32: CPPFLAGS += -D_IRR_STATIC_LIB_
  
  ####################
@@ -85,11 +85,12 @@
 +# Builds Irrlicht as shared lib (libIrrlicht.so.versionNumber) and copies it into lib/FreeBSD
  sharedlib: $(LINKOBJ)
 -	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -shared -Wl,-soname,$(SHARED_LIB).$(VERSION_MAJOR).$(VERSION_MINOR) -o $(SHARED_LIB).$(VERSION) $^ $(LDFLAGS)
-+	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -shared -Wl,-soname,$(SHARED_LIB).$(VERSION) -o $(SHARED_LIB).$(VERSION) $^ $(LDFLAGS)
++	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -shared -Wl,-soname,$(SHARED_LIB).$(SHLIB_VER) -o $(SHARED_LIB).$(SHLIB_VER) $^ $(LDFLAGS)
  	mkdir -p $(LIB_PATH)
- 	cp $(SHARED_LIB).$(VERSION) $(LIB_PATH)
+-	cp $(SHARED_LIB).$(VERSION) $(LIB_PATH)
++	cp $(SHARED_LIB).$(SHLIB_VER) $(LIB_PATH)
  
-@@ -116,7 +115,7 @@
+ # Builds Irrlicht as static lib (libIrrlicht.a)
  $(STATIC_LIB): $(LINKOBJ)
  	$(AR) rs $@ $^
  

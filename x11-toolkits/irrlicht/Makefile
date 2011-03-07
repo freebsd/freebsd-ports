@@ -7,6 +7,7 @@
 
 PORTNAME=	irrlicht
 PORTVERSION=	1.7.2
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits graphics
 MASTER_SITES=	SF/${PORTNAME}/Irrlicht%20SDK/1.7/${PORTVERSION}
 
@@ -21,12 +22,13 @@ USE_DOS2UNIX=	Makefile *.cpp *.h *.txt
 USE_GMAKE=	yes
 USE_GL=		yes
 USE_LDCONFIG=	yes
+MAKE_ENV+=	SHLIB_VER=${SHARED_LIB_VER}
 
 PLIST_SUB+=	SHARED_LIB_VER=${SHARED_LIB_VER}
 SUB_FILES=	pkg-message
 BUILD_WRKSRC=	${WRKSRC}/source/Irrlicht
 
-SHARED_LIB_VER=	${PORTVERSION}
+SHARED_LIB_VER=	1
 EXAMPLEDIRS=	01.HelloWorld 02.Quake3Map 03.CustomSceneNode 04.Movement 05.UserInterface \
 		06.2DGraphics 07.Collision 08.SpecialFX 09.Meshviewer 10.Shaders \
 		11.PerPixelLighting 12.TerrainRendering 13.RenderToTexture 15.LoadIrrFile \
