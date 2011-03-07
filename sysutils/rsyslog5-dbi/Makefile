@@ -8,7 +8,7 @@ COMMENT=	LibDBI output module for rsyslog
 MASTERDIR=	${.CURDIR}/../rsyslog5
 
 MNAME=	libdbi
-LIB_DEPENDS=	dbi.0:${PORTSDIR}/databases/libdbi
+LIB_DEPENDS=	dbi.1:${PORTSDIR}/databases/libdbi
 
 CONFIGURE_ARGS+=--enable-libdbi
 
