@@ -1,0 +1,643 @@
+--- jdk/src/share/classes/com/sun/image/codec/jpeg/ImageFormatException.java	1969-12-31 19:00:00.000000000 -0500
++++ jdk/src/share/classes/com/sun/image/codec/jpeg/ImageFormatException.java	2008-03-31 18:04:57.000000000 -0400
+@@ -0,0 +1,51 @@
++/* ImageFormatException.java
++   Copyright (C) 2007 Matthew Flaschen
++
++   This file is part of IcedTea
++
++   IcedTea is free software; you can redistribute it and/or modify
++   it under the terms of the GNU General Public License as published by
++   the Free Software Foundation; either version 2, or (at your option)
++   any later version.
++
++   IcedTea is distributed in the hope that it will be useful, but
++   WITHOUT ANY WARRANTY; without even the implied warranty of
++   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
++   General Public License for more details.
++
++   You should have received a copy of the GNU General Public License
++   along with GNU Classpath; see the file COPYING.  If not, write to the
++   Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA
++   02110-1301 USA.
++
++   Linking this library statically or dynamically with other modules is
++   making a combined work based on this library.  Thus, the terms and
++   conditions of the GNU General Public License cover the whole
++   combination.
++
++   As a special exception, the copyright holders of this library give you
++   permission to link this library with independent modules to produce an
++   executable, regardless of the license terms of these independent
++   modules, and to copy and distribute the resulting executable under
++   terms of your choice, provided that you also meet, for each linked
++   independent module, the terms and conditions of the license of that
++   module.  An independent module is a module which is not derived from
++   or based on this library.  If you modify this library, you may extend
++   this exception to your version of the library, but you are not
++   obligated to do so.  If you do not wish to do so, delete this
++   exception statement from your version. */
++
++package com.sun.image.codec.jpeg;
++
++public class ImageFormatException extends RuntimeException
++{
++	public ImageFormatException()
++	{
++		this("");
++	}
++
++	public ImageFormatException(String s)
++	{
++		super(s);
++	}
++}
+--- jdk/src/share/classes/com/sun/image/codec/jpeg/JPEGCodec.java	1969-12-31 19:00:00.000000000 -0500
++++ jdk/src/share/classes/com/sun/image/codec/jpeg/JPEGCodec.java	2008-03-31 18:04:57.000000000 -0400
+@@ -0,0 +1,146 @@
++/* JPEGCodec.java -- 
++   Copyright (C) 2007 Free Software Foundation, Inc.
++   Copyright (C) 2007 Matthew Flaschen
++
++   This file is part of GNU Classpath.
++
++   GNU Classpath is free software; you can redistribute it and/or modify
++   it under the terms of the GNU General Public License as published by
++   the Free Software Foundation; either version 2, or (at your option)
++   any later version.
++
++   GNU Classpath is distributed in the hope that it will be useful, but
++   WITHOUT ANY WARRANTY; without even the implied warranty of
++   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
++   General Public License for more details.
++
++   You should have received a copy of the GNU General Public License
++   along with GNU Classpath; see the file COPYING.  If not, write to the
++   Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA
++   02110-1301 USA.
++
++   Linking this library statically or dynamically with other modules is
++   making a combined work based on this library.  Thus, the terms and
++   conditions of the GNU General Public License cover the whole
++   combination.
++
++   As a special exception, the copyright holders of this library give you
++   permission to link this library with independent modules to produce an
++   executable, regardless of the license terms of these independent
++   modules, and to copy and distribute the resulting executable under
++   terms of your choice, provided that you also meet, for each linked
++   independent module, the terms and conditions of the license of that
++   module.  An independent module is a module which is not derived from
++   or based on this library.  If you modify this library, you may extend
++   this exception to your version of the library, but you are not
++   obligated to do so.  If you do not wish to do so, delete this
++   exception statement from your version. */
++
++package com.sun.image.codec.jpeg;
++
++import java.io.InputStream;
++import java.io.OutputStream;
++import java.io.IOException;
++
++import java.awt.image.BufferedImage;
++import java.awt.image.Raster;
++
++import javax.imageio.*;
++import javax.imageio.stream.*;
++import javax.imageio.plugins.jpeg.*;
++
++import java.util.Iterator;
++
++public class JPEGCodec
++{
++
++	public static JPEGImageDecoder createJPEGDecoder(InputStream is)
++	{
++		return new ImageIOJPEGImageDecoder(is);
++	}
++
++	public static JPEGImageEncoder createJPEGEncoder(OutputStream os)
++	{
++		return null;
++	}
++
++	public static JPEGImageDecoder createJPEGDecoder(InputStream src, JPEGDecodeParam jdp)
++	{
++		return null; 
++	}
++        
++	public static JPEGImageEncoder createJPEGEncoder(OutputStream dest, JPEGEncodeParam jep)
++	{
++		return null;
++	}
++        
++	public static JPEGEncodeParam getDefaultJPEGEncodeParam(BufferedImage bi)
++	{
++		return null;
++	}
++        
++	public static JPEGEncodeParam getDefaultJPEGEncodeParam(int numBands, int colorID)
++	{
++		return null;
++	}
++		
++	public static JPEGEncodeParam getDefaultJPEGEncodeParam(JPEGDecodeParam jdp)
++	{
++		return null;
++	}
++        
++	public static JPEGEncodeParam getDefaultJPEGEncodeParam(Raster ras, int colorID)
++	{
++		return null;
++	}
++        
++
++	private static class ImageIOJPEGImageDecoder implements JPEGImageDecoder
++	{
++		
++		private static final String JPGMime = "image/jpeg";
++    
++		private ImageReader JPGReader;
++		
++		private InputStream in;
++		
++		private ImageIOJPEGImageDecoder (InputStream newIs)
++		{
++			in = newIs;
++			
++			Iterator<ImageReader> JPGReaderIter = ImageIO.getImageReadersByMIMEType(JPGMime);
++			if(JPGReaderIter.hasNext())
++			{
++				JPGReader  = JPGReaderIter.next();
++			}
++			
++			JPGReader.setInput(new MemoryCacheImageInputStream(in));
++		}
++
++		public BufferedImage decodeAsBufferedImage() throws IOException, ImageFormatException
++		{
++			return JPGReader.read(0);
++		}
++		
++		public Raster decodeAsRaster() throws IOException, ImageFormatException
++		{
++			return JPGReader.readRaster(0, null);
++		}
++		
++		public InputStream getInputStream()
++		{
++			return in;
++		}
++		
++		public JPEGDecodeParam getJPEGDecodeParam()
++		{
++			return null;
++		}
++
++		public void setJPEGDecodeParam(JPEGDecodeParam jdp)
++		{
++			return;
++		}
++
++	}
++}
+--- jdk/src/share/classes/com/sun/image/codec/jpeg/JPEGDecodeParam.java	1969-12-31 19:00:00.000000000 -0500
++++ jdk/src/share/classes/com/sun/image/codec/jpeg/JPEGDecodeParam.java	2008-03-31 18:04:57.000000000 -0400
+@@ -0,0 +1,50 @@
++/* JPEGImageDecoder.java -- 
++   Copyright (C) 2007 Free Software Foundation, Inc.
++   Copyright (C) 2007 Matthew Flaschen
++
++   This file is part of GNU Classpath.
++
++   GNU Classpath is free software; you can redistribute it and/or modify
++   it under the terms of the GNU General Public License as published by
++   the Free Software Foundation; either version 2, or (at your option)
++   any later version.
++
++   GNU Classpath is distributed in the hope that it will be useful, but
++   WITHOUT ANY WARRANTY; without even the implied warranty of
++   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
++   General Public License for more details.
++
++   You should have received a copy of the GNU General Public License
++   along with GNU Classpath; see the file COPYING.  If not, write to the
++   Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA
++   02110-1301 USA.
++
++   Linking this library statically or dynamically with other modules is
++   making a combined work based on this library.  Thus, the terms and
++   conditions of the GNU General Public License cover the whole
++   combination.
++
++   As a special exception, the copyright holders of this library give you
++   permission to link this library with independent modules to produce an
++   executable, regardless of the license terms of these independent
++   modules, and to copy and distribute the resulting executable under
++   terms of your choice, provided that you also meet, for each linked
++   independent module, the terms and conditions of the license of that
++   module.  An independent module is a module which is not derived from
++   or based on this library.  If you modify this library, you may extend
++   this exception to your version of the library, but you are not
++   obligated to do so.  If you do not wish to do so, delete this
++   exception statement from your version. */
++
++package com.sun.image.codec.jpeg;
++
++public interface JPEGDecodeParam
++{
++
++  public static final int COLOR_ID_UNKNOWN = 0;
++  public static final int COLOR_ID_RGBA = 1;
++  public static final int COLOR_ID_RGB = 2;
++  public static final int COLOR_ID_GRAY = 3;
++  public static final int COLOR_ID_YCbCrA = 4;
++  public static final int COLOR_ID_YCbCr = 5;
++}
+--- jdk/src/share/classes/com/sun/image/codec/jpeg/JPEGEncodeParam.java	1969-12-31 19:00:00.000000000 -0500
++++ jdk/src/share/classes/com/sun/image/codec/jpeg/JPEGEncodeParam.java	2008-03-31 18:04:57.000000000 -0400
+@@ -0,0 +1,139 @@
++/* JPEGEncodeParam.java -- 
++   Copyright (C) 2007 Free Software Foundation, Inc.
++
++   This file is part of GNU Classpath.
++
++   GNU Classpath is free software; you can redistribute it and/or modify
++   it under the terms of the GNU General Public License as published by
++   the Free Software Foundation; either version 2, or (at your option)
++   any later version.
++
++   GNU Classpath is distributed in the hope that it will be useful, but
++   WITHOUT ANY WARRANTY; without even the implied warranty of
++   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
++   General Public License for more details.
++
++   You should have received a copy of the GNU General Public License
++   along with GNU Classpath; see the file COPYING.  If not, write to the
++   Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA
++   02110-1301 USA.
++
++   Linking this library statically or dynamically with other modules is
++   making a combined work based on this library.  Thus, the terms and
++   conditions of the GNU General Public License cover the whole
++   combination.
++
++   As a special exception, the copyright holders of this library give you
++   permission to link this library with independent modules to produce an
++   executable, regardless of the license terms of these independent
++   modules, and to copy and distribute the resulting executable under
++   terms of your choice, provided that you also meet, for each linked
++   independent module, the terms and conditions of the license of that
++   module.  An independent module is a module which is not derived from
++   or based on this library.  If you modify this library, you may extend
++   this exception to your version of the library, but you are not
++   obligated to do so.  If you do not wish to do so, delete this
++   exception statement from your version. */
++
++package com.sun.image.codec.jpeg;
++
++public class JPEGEncodeParam
++{
++	public static final int COLOR_ID_UNKNOWN = 0;
++	public static final int COLOR_ID_RGBA = 1;
++	public static final int COLOR_ID_RGB = 2;
++	public static final int COLOR_ID_GRAY = 3;
++	public static final int COLOR_ID_YCbCrA = 4;
++	public static final int COLOR_ID_CMYK = 5;
++	public static final int COLOR_ID_YCbCr = 6;
++
++	public JPEGEncodeParam()
++	{
++	}
++
++	public void setQuality(float i, boolean b)
++        {
++        }	
++
++	public void setQuality(int i, boolean b)
++	{
++	}
++
++	public JPEGEncodeParam clone()
++	{
++	  return null;
++	}
++
++	public void setTableInfoValid(boolean b)
++	{
++	}
++
++	public void setImageInfoValid(boolean b)
++	{
++	}
++
++	public int getHorizontalSubsampling(int i)
++	{
++	  return 0;
++	}
++
++	public int getVerticalSubsampling(int i)
++        {
++          return 0;
++        }
++
++	public int getWidth()
++	{
++	  return 0;
++	}
++
++	public int getHeight()
++	{
++	  return 0;
++	}
++
++	public int getDensityUnit()
++        {
++          return 0;
++        }
++
++        public int getXDensity()
++        {
++          return 0;
++        }
++
++        public int getYDensity()
++        {
++          return 0;
++        }
++
++        public int getRestartInterval()
++        {
++          return 0;
++        }
++
++        public JPEGQTable getQTable(int i)
++        {
++          return new JPEGQTable();
++        }	
++
++	public void setDensityUnit(int i)
++	{
++	}
++
++	public void setXDensity(int i)
++	{
++	}
++
++	public void setYDensity(int i)
++	{
++	}
++
++	public void setRestartInterval(int i)
++	{
++	}
++
++	public void setQTable(int i, JPEGQTable jqt)
++	{
++	}
++}
+--- jdk/src/share/classes/com/sun/image/codec/jpeg/JPEGImageDecoder.java	1969-12-31 19:00:00.000000000 -0500
++++ jdk/src/share/classes/com/sun/image/codec/jpeg/JPEGImageDecoder.java	2008-03-31 18:04:57.000000000 -0400
+@@ -0,0 +1,60 @@
++/* JPEGImageDecoder.java -- 
++   Copyright (C) 2007 Free Software Foundation, Inc.
++   Copyright (C) 2007 Matthew Flaschen
++
++   This file is part of GNU Classpath.
++
++   GNU Classpath is free software; you can redistribute it and/or modify
++   it under the terms of the GNU General Public License as published by
++   the Free Software Foundation; either version 2, or (at your option)
++   any later version.
++
++   GNU Classpath is distributed in the hope that it will be useful, but
++   WITHOUT ANY WARRANTY; without even the implied warranty of
++   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
++   General Public License for more details.
++
++   You should have received a copy of the GNU General Public License
++   along with GNU Classpath; see the file COPYING.  If not, write to the
++   Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA
++   02110-1301 USA.
++
++   Linking this library statically or dynamically with other modules is
++   making a combined work based on this library.  Thus, the terms and
++   conditions of the GNU General Public License cover the whole
++   combination.
++
++   As a special exception, the copyright holders of this library give you
++   permission to link this library with independent modules to produce an
++   executable, regardless of the license terms of these independent
++   modules, and to copy and distribute the resulting executable under
++   terms of your choice, provided that you also meet, for each linked
++   independent module, the terms and conditions of the license of that
++   module.  An independent module is a module which is not derived from
++   or based on this library.  If you modify this library, you may extend
++   this exception to your version of the library, but you are not
++   obligated to do so.  If you do not wish to do so, delete this
++   exception statement from your version. */
++
++
++package com.sun.image.codec.jpeg;
++import java.awt.image.BufferedImage;
++import java.awt.image.Raster;
++
++import java.io.InputStream;
++import java.io.IOException;
++
++
++public interface JPEGImageDecoder
++{
++
++	public BufferedImage decodeAsBufferedImage() throws IOException, ImageFormatException;
++	
++	public Raster decodeAsRaster() throws IOException, ImageFormatException;
++	
++	public InputStream getInputStream();
++
++	public JPEGDecodeParam getJPEGDecodeParam();
++
++	public void setJPEGDecodeParam(JPEGDecodeParam jdp);
++}
+--- jdk/src/share/classes/com/sun/image/codec/jpeg/JPEGImageEncoder.java	1969-12-31 19:00:00.000000000 -0500
++++ jdk/src/share/classes/com/sun/image/codec/jpeg/JPEGImageEncoder.java	2008-03-31 18:04:57.000000000 -0400
+@@ -0,0 +1,71 @@
++/* JPEGImageEncoder.java -- 
++   Copyright (C) 2007 Free Software Foundation, Inc.
++
++   This file is part of GNU Classpath.
++
++   GNU Classpath is free software; you can redistribute it and/or modify
++   it under the terms of the GNU General Public License as published by
++   the Free Software Foundation; either version 2, or (at your option)
++   any later version.
++
++   GNU Classpath is distributed in the hope that it will be useful, but
++   WITHOUT ANY WARRANTY; without even the implied warranty of
++   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
++   General Public License for more details.
++
++   You should have received a copy of the GNU General Public License
++   along with GNU Classpath; see the file COPYING.  If not, write to the
++   Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA
++   02110-1301 USA.
++
++   Linking this library statically or dynamically with other modules is
++   making a combined work based on this library.  Thus, the terms and
++   conditions of the GNU General Public License cover the whole
++   combination.
++
++   As a special exception, the copyright holders of this library give you
++   permission to link this library with independent modules to produce an
++   executable, regardless of the license terms of these independent
++   modules, and to copy and distribute the resulting executable under
++   terms of your choice, provided that you also meet, for each linked
++   independent module, the terms and conditions of the license of that
++   module.  An independent module is a module which is not derived from
++   or based on this library.  If you modify this library, you may extend
++   this exception to your version of the library, but you are not
++   obligated to do so.  If you do not wish to do so, delete this
++   exception statement from your version. */
++
++package com.sun.image.codec.jpeg;
++
++import com.sun.image.codec.jpeg.*;
++import java.awt.image.BufferedImage;
++import java.awt.image.Raster;
++
++public class JPEGImageEncoder
++{
++	public JPEGImageEncoder()
++	{
++	}
++	
++	public JPEGEncodeParam getDefaultJPEGEncodeParam(BufferedImage bi)
++	{
++		return null;
++	}
++
++	public void setJPEGEncodeParam(JPEGEncodeParam p)
++	{
++	}
++
++	public void encode(BufferedImage bi, JPEGEncodeParam p)
++	{
++	}
++
++	public void encode(Raster bi)
++        {
++        }
++
++	public void encode(BufferedImage bi)
++        {
++        }
++
++}
+--- jdk/src/share/classes/com/sun/image/codec/jpeg/JPEGQTable.java	1969-12-31 19:00:00.000000000 -0500
++++ jdk/src/share/classes/com/sun/image/codec/jpeg/JPEGQTable.java	2008-03-31 18:04:57.000000000 -0400
+@@ -0,0 +1,44 @@
++/* JPEGQTable.java -- 
++   Copyright (C) 2007 Free Software Foundation, Inc.
++   Copyright (C) 2007 Matthew Flaschen
++
++   This file is part of GNU Classpath.
++
++   GNU Classpath is free software; you can redistribute it and/or modify
++   it under the terms of the GNU General Public License as published by
++   the Free Software Foundation; either version 2, or (at your option)
++   any later version.
++
++   GNU Classpath is distributed in the hope that it will be useful, but
++   WITHOUT ANY WARRANTY; without even the implied warranty of
++   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
++   General Public License for more details.
++
++   You should have received a copy of the GNU General Public License
++   along with GNU Classpath; see the file COPYING.  If not, write to the
++   Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA
++   02110-1301 USA.
++
++   Linking this library statically or dynamically with other modules is
++   making a combined work based on this library.  Thus, the terms and
++   conditions of the GNU General Public License cover the whole
++   combination.
++
++   As a special exception, the copyright holders of this library give you
++   permission to link this library with independent modules to produce an
++   executable, regardless of the license terms of these independent
++   modules, and to copy and distribute the resulting executable under
++   terms of your choice, provided that you also meet, for each linked
++   independent module, the terms and conditions of the license of that
++   module.  An independent module is a module which is not derived from
++   or based on this library.  If you modify this library, you may extend
++   this exception to your version of the library, but you are not
++   obligated to do so.  If you do not wish to do so, delete this
++   exception statement from your version. */
++
++package com.sun.image.codec.jpeg;
++
++public class JPEGQTable
++{
++
++}
+--- jdk/src/share/classes/com/sun/image/codec/jpeg/TruncatedFileException.java	1969-12-31 19:00:00.000000000 -0500
++++ jdk/src/share/classes/com/sun/image/codec/jpeg/TruncatedFileException.java	2008-03-31 19:38:37.000000000 -0400
+@@ -0,0 +1,58 @@
++/* TruncatedFileException.java
++   Copyright (C) 2007 Matthew Flaschen
++
++   This file is part of IcedTea
++
++   IcedTea is free software; you can redistribute it and/or modify
++   it under the terms of the GNU General Public License as published by
++   the Free Software Foundation; either version 2, or (at your option)
++   any later version.
++
++   IcedTea is distributed in the hope that it will be useful, but
++   WITHOUT ANY WARRANTY; without even the implied warranty of
++   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
++   General Public License for more details.
++
++   You should have received a copy of the GNU General Public License
++   along with GNU Classpath; see the file COPYING.  If not, write to the
++   Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA
++   02110-1301 USA.
++
++   Linking this library statically or dynamically with other modules is
++   making a combined work based on this library.  Thus, the terms and
++   conditions of the GNU General Public License cover the whole
++   combination.
++
++   As a special exception, the copyright holders of this library give you
++   permission to link this library with independent modules to produce an
++   executable, regardless of the license terms of these independent
++   modules, and to copy and distribute the resulting executable under
++   terms of your choice, provided that you also meet, for each linked
++   independent module, the terms and conditions of the license of that
++   module.  An independent module is a module which is not derived from
++   or based on this library.  If you modify this library, you may extend
++   this exception to your version of the library, but you are not
++   obligated to do so.  If you do not wish to do so, delete this
++   exception statement from your version. */
++
++package com.sun.image.codec.jpeg;
++
++import java.awt.image.BufferedImage;
++
++public class TruncatedFileException extends RuntimeException
++{
++	public TruncatedFileException()
++	{
++		this("");
++	}
++
++	public TruncatedFileException(String s)
++	{
++		super(s);
++	}
++
++	public BufferedImage getBufferedImage()
++	{
++	  return null;
++	}
++}
