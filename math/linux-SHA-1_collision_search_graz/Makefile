@@ -17,6 +17,9 @@ EXTRACT_SUFX=
 MAINTAINER=	freebsd-ports@t-b-o-h.com
 COMMENT=	Distributed client searching for weakness in SHA-1 hash
 
+DEPRECATED=	Project discontinued
+EXPIRATION_DATE=2011-04-07
+
 RUN_DEPENDS=	boinc_client:${PORTSDIR}/net/boinc-client
 
 # these must match settings in ${PORTSDIR}/net/boinc-client/Makefile
