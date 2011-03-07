@@ -5,11 +5,13 @@
 # $FreeBSD$
 #
 
+PORTREVISION=	1
+
 COMMENT=	LibDBI output module for rsyslog
 
 MNAME=	libdbi
 MTYPES=	om
-LIB_DEPENDS=	dbi.0:${PORTSDIR}/databases/libdbi
+LIB_DEPENDS=	dbi.1:${PORTSDIR}/databases/libdbi
 
 .include "${.CURDIR}/../rsyslog3/bsd.rsyslog.mk"
 .include <bsd.port.mk>
