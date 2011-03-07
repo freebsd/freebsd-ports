@@ -1,0 +1,9 @@
+The python bindings for yara.
+
+"YARA is a tool aimed at helping malware researchers to identify and classify
+malware samples. With YARA you can create descriptions of malware families
+based on textual or binary patterns contained on samples of those families.
+Each description consists of a set of strings and a Boolean expression which
+determines its logic."
+
+WWW: http://code.google.com/p/yara-project/

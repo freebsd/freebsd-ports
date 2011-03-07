@@ -1,0 +1,6 @@
+bin/yara
+include/yara.h
+lib/libyara.a
+lib/libyara.la
+lib/libyara.so
+lib/libyara.so.0
