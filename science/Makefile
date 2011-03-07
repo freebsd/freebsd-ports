@@ -7,6 +7,7 @@
     SUBDIR += 2dhf
     SUBDIR += InsightToolkit
     SUBDIR += R-cran-AMORE
+    SUBDIR += R-cran-bayesm
     SUBDIR += abinit
     SUBDIR += afni
     SUBDIR += at
