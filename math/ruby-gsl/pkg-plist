@@ -7,6 +7,8 @@
 %%RUBY_SITELIBDIR%%/ool/conmin.rb
 @dirrmtry %%RUBY_SITELIBDIR%%/ool
 @dirrm %%RUBY_SITELIBDIR%%/gsl
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/alf/alf.gp
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/alf/alf.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/blas/blas.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/blas/dnrm2.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/blas/level1.rb
@@ -26,7 +28,6 @@
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/complex/mul.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/complex/oscillator.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/complex/set.rb
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/const/hoge.txt
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/const/physconst.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/const/travel.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/deriv/demo.rb
@@ -100,6 +101,7 @@
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/histogram/power.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/histogram/rebin.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/histogram/smp.dat
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/histogram/xexp.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/integration/ahmed.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/integration/cosmology.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/integration/friedmann.gp
@@ -153,12 +155,15 @@
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/math/minmax.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/math/power.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/math/test.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/matrix/a.dat
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/matrix/add.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/matrix/b.dat
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/matrix/cat.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/matrix/colvectors.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/matrix/complex.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/matrix/det.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/matrix/diagonal.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/matrix/get_all.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/matrix/hilbert.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/matrix/iterator.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/matrix/matrix.rb
@@ -168,7 +173,9 @@
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/matrix/read.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/matrix/rowcol.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/matrix/set.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/matrix/set_all.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/matrix/view.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/matrix/view_all.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/matrix/write.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/min.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/monte/miser.rb
@@ -232,7 +239,6 @@
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/pdf/lognormal.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/pdf/neg-binomiral.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/pdf/pareto.rb
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/pdf/pareto.rb.bak
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/pdf/pascal.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/pdf/poisson.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/pdf/rayleigh-tail.rb
@@ -248,6 +254,7 @@
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/poly/cubic.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/poly/demo.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/poly/eval.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/poly/eval_derivs.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/poly/fit.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/poly/hermite.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/poly/poly.rb
@@ -260,6 +267,7 @@
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/random/qrng.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/random/randomwalk.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/random/randomwalk2d.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/random/rayleigh.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/random/rng.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/random/rngextra.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/roots/bisection.rb
@@ -313,11 +321,15 @@
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/vector/collect.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/vector/compare.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/vector/complex.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/vector/complex_get_all.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/vector/complex_set_all.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/vector/complex_view_all.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/vector/connect.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/vector/decimate.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/vector/diff.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/vector/filescan.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/vector/floor.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/vector/get_all.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/vector/gnuplot.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/vector/graph.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/vector/histogram.rb
@@ -330,11 +342,13 @@
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/vector/narray.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/vector/read.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/vector/set.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/vector/set_all.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/vector/smpv.dat
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/vector/test.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/vector/test_gslblock.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/vector/vector.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/vector/view.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/vector/view_all.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/vector/where.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/vector/write.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/vector/zip.rb
@@ -374,12 +388,15 @@
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/const
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/complex
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/blas
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/alf
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/AUTHORS
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/ChangeLog
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/THANKS
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/html/alf.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/html/blas.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/html/bspline.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/html/changes.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/html/cheb.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/html/cholesky_complex.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/html/combi.html
@@ -434,8 +451,10 @@
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/html/vector.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/html/vector_complex.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/html/wavelet.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/rd/alf.rd
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/rd/blas.rd
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/rd/bspline.rd
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/rd/changes.rd
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/rd/cheb.rd
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/rd/cholesky_complex.rd
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/rd/combi.rd
