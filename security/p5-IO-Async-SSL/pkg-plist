@@ -1,0 +1,6 @@
+@comment $FreeBSD$
+%%SITE_PERL%%/IO/Async/SSLStream.pm
+%%SITE_PERL%%/IO/Async/SSL.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/IO/Async/SSL/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/IO/Async/SSL
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/IO/Async
