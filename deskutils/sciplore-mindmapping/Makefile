@@ -25,7 +25,12 @@ LICENSE=	GPLv2
 USE_ZIP=	yes
 USE_JAVA=	yes
 USE_GNOME=	desktopfileutils
-JAVA_VENDOR=	freebsd
+JAVA_VENDOR=	freebsd openjdk
+# JAVA_VENDOR comments:
+# - blackdown UNSUITABLE (no 1.6 version)
+# - bsdjava UNSUITABLE
+#   (java.lang.NoClassDefFoundError: javax/xml/bind/JAXB)
+# - sun OK BUT SLOW
 JAVA_VERSION=	1.6
 NO_BUILD=	yes
 JDATADIR=	${JAVASHAREDIR}/${PORTNAME}
