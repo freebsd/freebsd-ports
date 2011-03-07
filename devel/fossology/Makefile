@@ -38,6 +38,8 @@ RUN_DEPENDS=	cabextract:${PORTSDIR}/archivers/cabextract \
 		bash:${PORTSDIR}/shells/bash \
 		wget:${PORTSDIR}/ftp/wget
 
+BROKEN=		does not compile
+
 USE_APACHE=	2.0+
 USE_CDRTOOLS=	yes
 USE_GMAKE=	yes
