@@ -5,7 +5,7 @@ include/dbi/dbi.h
 lib/libdbi.a
 lib/libdbi.la
 lib/libdbi.so
-lib/libdbi.so.0
+lib/libdbi.so.1
 %%PORTDOCS%%%%DOCSDIR%%/driver-guide.pdf
 %%PORTDOCS%%%%DOCSDIR%%/driver-guide/contact.html
 %%PORTDOCS%%%%DOCSDIR%%/driver-guide/copying-fdl.html
@@ -48,7 +48,6 @@ lib/libdbi.so.0
 %%PORTDOCS%%%%DOCSDIR%%/programmers-guide/terminology.html
 %%PORTDOCS%%%%DOCSDIR%%/programmers-guide/x267.html
 %%PORTDOCS%%%%DOCSDIR%%/programmers-guide/x276.html
-%%PORTDOCS%%%%DOCSDIR%%/programmers-guide/x278.html
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/programmers-guide
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/driver-guide
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
