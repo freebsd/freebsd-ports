@@ -106,11 +106,6 @@
     SUBDIR += gjs
     SUBDIR += gnat
     SUBDIR += gnat-aux
-    SUBDIR += gnat-doc-html
-    SUBDIR += gnat-doc-info
-    SUBDIR += gnat-doc-ps
-    SUBDIR += gnat-doc-texi
-    SUBDIR += gnat-doc-txt
     SUBDIR += gnat-gcc42
     SUBDIR += gnat-gcc43
     SUBDIR += gnat-gcc44
