@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mediathek
-PORTVERSION=	2.4.0
+PORTVERSION=	2.5.0
 CATEGORIES=	german java
 MASTER_SITES=	SF/zdfmediathk/Mediathek/Mediathek%20${PORTVERSION}
 DISTNAME=	Mediathek_${PORTVERSION}
@@ -25,8 +25,8 @@ SUB_FILES=	mediathek
 OPTIONS=	MPLAYER "mplayer zum Aufnehmen verwenden" on \
 		VLC "VLC zum Abspielen verwenden" on
 
-INSTALLFILES=	Bitte_lesen.txt Mediathek.jar \
-		releases.txt Kurzanleitung.pdf
+INSTALLFILES=	Mediathek.jar
+INSTALLDOCS=	make.txt releases.txt Kurzanleitung.pdf
 INSTALLLIBS=	commons-compress-1.1.jar commons-lang-2.5.jar \
 		jdom.jar rome-1.0.jar
 
@@ -57,8 +57,14 @@ do-install:
 .for i in ${INSTALLFILES}
 	@${INSTALL_DATA} ${WRKSRC}/${i} ${DATADIR}/
 .endfor
-.for j in ${INSTALLLIBS}
-	@${INSTALL_DATA} ${WRKSRC}/lib/${j} ${DATADIR}/lib/
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+.for i in ${INSTALLDOCS}
+		@${INSTALL_DATA} ${WRKSRC}/Anleitung/${i} ${DOCSDIR}/
+.endfor
+.endif
+.for i in ${INSTALLLIBS}
+	@${INSTALL_DATA} ${WRKSRC}/lib/${i} ${DATADIR}/lib/
 .endfor
 	@${INSTALL_SCRIPT} ${WRKDIR}/mediathek ${PREFIX}/bin
 
