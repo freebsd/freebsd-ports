@@ -8,7 +8,7 @@
 
 PORTNAME=	gnucash
 PORTVERSION=	2.4.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	finance gnome
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}%20%28stable%29/${PORTVERSION}
 
@@ -92,7 +92,7 @@ PLIST_SUB+=	OFX="@comment "
 
 .if defined(WITH_DATABASE)
 CONFIGURE_ARGS+=--enable-dbi
-LIB_DEPENDS+=	dbi.0:${PORTSDIR}/databases/libdbi
+LIB_DEPENDS+=	dbi.1:${PORTSDIR}/databases/libdbi
 PLIST_SUB+=	DATABASE=""
 .else
 CONFIGURE_ARGS+=--disable-dbi
