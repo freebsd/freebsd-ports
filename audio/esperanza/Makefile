@@ -18,6 +18,8 @@ COMMENT=	Advanced QT4 XMMS2 client
 
 LIB_DEPENDS=	xmmsclient++.4:${PORTSDIR}/audio/cpp-xmms2
 
+BROKEN=		does not compile
+
 USE_QT_VER=	4
 QT_COMPONENTS=	gui xml network imageformats_run \
 		qmake_build moc_build rcc_build uic_build
