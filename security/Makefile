@@ -719,6 +719,7 @@
     SUBDIR += py-twistedConch
     SUBDIR += py-twofish
     SUBDIR += py-xmlsec
+    SUBDIR += py-yara
     SUBDIR += qca-cyrus-sasl
     SUBDIR += qca-gnupg
     SUBDIR += qca-ossl
@@ -903,6 +904,7 @@
     SUBDIR += xyssl
     SUBDIR += yafic
     SUBDIR += yapet
+    SUBDIR += yara
     SUBDIR += yassl
     SUBDIR += yersinia
     SUBDIR += zebedee
