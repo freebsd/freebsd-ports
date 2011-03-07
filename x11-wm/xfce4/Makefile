@@ -22,6 +22,7 @@ OPTIONS=	ICONS		"Install a full icon theme"		on  \
 		APPFINDER	"Install the Xfce application finder"	on  \
 		MIXER		"Install the Xfce mixer application"	on  \
 		PRINT		"Install the Xfce printing helper"	on  \
+		SQUEEZE		"Install the Xfce archiver application"	on  \
 		GDM		"Install the login manager gdm"		off
 
 RUN_DEPENDS=	xfwm4:${PORTSDIR}/x11-wm/xfce4-wm \
@@ -75,6 +76,10 @@ RUN_DEPENDS+=	${LOCALBASE}/bin/xfce4-mixer:${PORTSDIR}/audio/xfce4-mixer
 
 .if !defined(WITHOUT_PRINT)
 RUN_DEPENDS+=	xfprint4:${PORTSDIR}/print/xfce4-print
+.endif
+
+.if !defined(WITHOUT_SQUEEZE)
+RUN_DEPENDS+=   squeeze:${PORTSDIR}/archivers/squeeze
 .endif
 
 do-install:	# empty
