@@ -1,0 +1,40 @@
+@comment $FreeBSD$
+%%SITE_PERL%%/Protocol/XMPP.pm
+%%SITE_PERL%%/Protocol/XMPP/Base.pm
+%%SITE_PERL%%/Protocol/XMPP/Contact.pm
+%%SITE_PERL%%/Protocol/XMPP/Element/Active.pm
+%%SITE_PERL%%/Protocol/XMPP/Element/Auth.pm
+%%SITE_PERL%%/Protocol/XMPP/Element/Bind.pm
+%%SITE_PERL%%/Protocol/XMPP/Element/Body.pm
+%%SITE_PERL%%/Protocol/XMPP/Element/Challenge.pm
+%%SITE_PERL%%/Protocol/XMPP/Element/Feature.pm
+%%SITE_PERL%%/Protocol/XMPP/Element/Features.pm
+%%SITE_PERL%%/Protocol/XMPP/Element/HTML.pm
+%%SITE_PERL%%/Protocol/XMPP/Element/IQ.pm
+%%SITE_PERL%%/Protocol/XMPP/Element/JID.pm
+%%SITE_PERL%%/Protocol/XMPP/Element/Mechanism.pm
+%%SITE_PERL%%/Protocol/XMPP/Element/Mechanisms.pm
+%%SITE_PERL%%/Protocol/XMPP/Element/Message.pm
+%%SITE_PERL%%/Protocol/XMPP/Element/Nick.pm
+%%SITE_PERL%%/Protocol/XMPP/Element/Presence.pm
+%%SITE_PERL%%/Protocol/XMPP/Element/Proceed.pm
+%%SITE_PERL%%/Protocol/XMPP/Element/Register.pm
+%%SITE_PERL%%/Protocol/XMPP/Element/Response.pm
+%%SITE_PERL%%/Protocol/XMPP/Element/Session.pm
+%%SITE_PERL%%/Protocol/XMPP/Element/StartTLS.pm
+%%SITE_PERL%%/Protocol/XMPP/Element/Subject.pm
+%%SITE_PERL%%/Protocol/XMPP/Element/Success.pm
+%%SITE_PERL%%/Protocol/XMPP/ElementBase.pm
+%%SITE_PERL%%/Protocol/XMPP/Handler.pm
+%%SITE_PERL%%/Protocol/XMPP/IQ/Roster.pm
+%%SITE_PERL%%/Protocol/XMPP/Message.pm
+%%SITE_PERL%%/Protocol/XMPP/Stream.pm
+%%SITE_PERL%%/Protocol/XMPP/TextElement.pm
+%%SITE_PERL%%/Protocol/XMPP/User.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Protocol/XMPP/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Protocol/XMPP
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Protocol
+@dirrmtry %%SITE_PERL%%/Protocol/XMPP/IQ
+@dirrmtry %%SITE_PERL%%/Protocol/XMPP/Element
+@dirrmtry %%SITE_PERL%%/Protocol/XMPP
+@dirrmtry %%SITE_PERL%%/Protocol
