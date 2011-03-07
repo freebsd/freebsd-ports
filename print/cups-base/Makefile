@@ -362,6 +362,12 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/conf/${f} ${CUPS_ETCDIR}/${f}.N
 	cd ${CUPS_ETCDIR}/; if test ! -f ${f}; then ${CP} -p ${f}.N ${f}; fi
 .endfor
+.if defined(WITH_PAM)
+	@if [ ! -f ${PREFIX}/etc/pam.d/cups ]; then \
+		${CP} -p ${PREFIX}/etc/pam.d/cups.default \
+		${PREFIX}/etc/pam.d/cups ; \
+	fi
+.endif
 	${MKDIR} ${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKDIR}/ulpt-cupsd.conf ${EXAMPLESDIR}/
 	${INSTALL_SCRIPT} ${WRKDIR}/ulpt-cupsd.sh ${PREFIX}/sbin/
