@@ -14,6 +14,9 @@ MASTER_SITES=	http://www-mice.cs.ucl.ac.uk/multimedia/software/rqm/1.0.0/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A graphical RTP quality monitor
 
+DEPRECATED=	Unmaintained, anachronistic, mail freebsd-ports@FreeBSD.org if interested
+EXPIRATION=	2011-06-30
+
 LIB_DEPENDS=	tk84.1:${PORTSDIR}/x11-toolkits/tk84
 BUILD_DEPENDS=	${LOCALBASE}/lib/libuclmmbase.a:${PORTSDIR}/devel/uclmmbase
 

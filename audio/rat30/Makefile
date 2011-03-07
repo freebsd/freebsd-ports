@@ -15,6 +15,9 @@ MASTER_SITES=	http://www-mice.cs.ucl.ac.uk/multimedia/software/rat/releases/${PO
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	IPv4/v6 Multicast and unicast audio conferencing tool
 
+DEPRECATED=	Unmaintained, anachronistic, mail freebsd-ports@FreeBSD.org if interested
+EXPIRATION=	2011-06-30
+
 USE_TK=		82
 USE_XORG=	x11 xext
 

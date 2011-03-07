@@ -16,6 +16,9 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Implementation of the ALC and NORM Reliable Multicast Protocols
 
+DEPRECATED=	Unmaintained, anachronistic, mail freebsd-ports@FreeBSD.org if interested
+EXPIRATION=	2011-06-30
+
 BUILD_DEPENDS=	makedepend:${PORTSDIR}/devel/makedepend \
 		gdome-config:${PORTSDIR}/textproc/gdome2 \
 		glib-gettextize:${PORTSDIR}/devel/glib20
