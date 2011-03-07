@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	sqlbuddy
-PORTVERSION=	1.3.2
+PORTVERSION=	1.3.3
 CATEGORIES=	databases www
 MASTER_SITES=	http://www.sqlbuddy.com/download/
-DISTNAME=	${PORTNAME}_1_3_2
+DISTNAME=	${PORTNAME}_1_3_3
 
 MAINTAINER=	horus.li@gmail.com
 COMMENT=	Web based MySQL administration with a set of PHP scripts
