@@ -6,16 +6,15 @@
 #
 
 PORTNAME=	sp
-PORTVERSION=	0.9.62
-PORTREVISION=	2
+PORTVERSION=	0.9.78
 CATEGORIES=	math
 PKGNAMEPREFIX=	R-cran-
-DISTNAME=	${PORTNAME}_0.9-62
+DISTNAME=	${PORTNAME}_${PORTVERSION:C/\./-/g:C/-/\./1}
 
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	R Classes and Methods for Spatial Data
 
-USE_R_MOD=  yes
-R_MOD_AUTOPLIST=  yes
+USE_R_MOD=  		yes
+R_MOD_AUTOPLIST=	yes
 
 .include <bsd.port.mk>
