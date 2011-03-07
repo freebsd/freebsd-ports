@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	tolua++
-PORTVERSION=	1.0.92
-PORTREVISION=	3
+PORTVERSION=	1.0.93
 CATEGORIES=	lang devel
 MASTER_SITES=	http://www.codenix.com/~tolua/ \
 		http://mirror.amdmi3.ru/distfiles/

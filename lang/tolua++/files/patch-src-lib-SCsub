@@ -1,8 +1,16 @@
---- src/lib/SCsub.orig	2005-11-28 16:51:15.000000000 +0300
-+++ src/lib/SCsub	2008-08-22 01:44:24.000000000 +0400
-@@ -10,4 +10,5 @@
+--- src/lib/SCsub.orig	2011-01-20 07:48:43.000000000 +0100
++++ src/lib/SCsub	2011-01-20 07:58:30.000000000 +0100
+@@ -9,10 +9,7 @@
+ 	'tolua_to.c',
  	]
  
- env.lib_target = env.Library('#/lib/'+env['tolua_lib'], sources)
+-env.lib_target_static = env.Library('#/lib/'+env['tolua_lib']+'_static', sources)
+-
+-if env['shared']:
+-	env.lib_target = env.SharedLibrary('#lib/'+env['tolua_lib'], sources)
+-else:
+-	env.lib_target = env.Library('#/lib/'+env['tolua_lib'], sources)
++env.lib_target_static = env.Library('#/lib/'+env['tolua_lib'], sources)
++env.lib_target = env.Library('#/lib/'+env['tolua_lib'], sources)
 +env.lib_target += env.SharedLibrary('#/lib/'+env['tolua_lib'], sources)
  
