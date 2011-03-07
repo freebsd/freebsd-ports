@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	ddate
-PORTVERSION=	2.12r
+PORTVERSION=	2.19
 PORTEPOCH=	1
 CATEGORIES=	misc
-MASTER_SITES=	http://www.kernel.org/pub/linux/utils/util-linux/ \
+MASTER_SITES=	http://www.kernel.org/pub/linux/utils/util-linux/v${PORTVERSION}/ \
 		CRITICAL
 DISTNAME=	util-linux-${PORTVERSION}
 
