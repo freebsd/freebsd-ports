@@ -6801,6 +6801,7 @@ jdresolve                       ports/www/jdresolve
 jed                             ports/editors/jed
 jedit                           ports/editors/jedit
 jedit-devel                     ports/editors/jedit-devel
+jenkins                         ports/devel/jenkins
 jep                             ports/devel/jep
 jericho-html                    ports/www/jericho-html
 jerm                            ports/comms/jerm
