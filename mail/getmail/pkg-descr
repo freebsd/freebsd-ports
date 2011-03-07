@@ -3,6 +3,8 @@ A POP3 and IMAP4 mail retriever with reliable Maildir and command delivery.
 Summary of features:
 - Retrieve mail from an unlimited number of POP3/IMAP4 mailboxes and servers. 
 - Support for POP3-over-SSL and IMAP-over-SSL, as well as SDPS
+  WARNING: even with SSL, "no certificate or key validation is done." so
+  that getmail does not detect or protect from man-in-the-middle attacks. 
 - Support for multidrop or domain mailboxes. 
 - Safe and reliable delivery to qmail-style Maildirs, as well as program
   (pipe) delivery for use with arbitrary external MDAs. Includes an MDA
