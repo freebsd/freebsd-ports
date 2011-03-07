@@ -7,14 +7,14 @@
 
 PORTNAME=	libdbi-drivers
 DISTVERSION=	0.8.3-1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	databases devel
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-0.8.3-1
 
 MAINTAINER=	delphij@FreeBSD.org
 COMMENT=	Drivers for libdbi
 
-LIB_DEPENDS=	dbi.0:${PORTSDIR}/databases/libdbi
+LIB_DEPENDS=	dbi.1:${PORTSDIR}/databases/libdbi
 
 USE_GNOME=	gnometarget lthack
 USE_AUTOTOOLS=	libtool
