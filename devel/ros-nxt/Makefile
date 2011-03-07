@@ -6,6 +6,7 @@
 
 PORTNAME=	ros-nxt
 PORTVERSION=	0.1.0
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	ftp://rene-ladan.nl/pub/distfiles/ros/
 DISTFILES=	nxt-${PORTVERSION}.tar.bz2 nxt-python-1.1.2.zip
@@ -22,9 +23,6 @@ STACKNAME=	${PORTNAME:S/ros-//}
 WRKSRC=		${WRKDIR}/${STACKNAME}
 
 # TODO port python-bluez for secondary bluetooth interface (no bluetooth here)
-
-#LIB_DEPENDS=	${PYTHON_SITELIBDIR}/usb.so:${PORTSDIR}/devel/py-usb
-# XXX above does not work, send-pr?
 
 EXTRACT_DEPENDS=unzip:${PORTSDIR}/archivers/unzip
 BUILD_DEPENDS=	rosmake:${PORTSDIR}/devel/ros \
@@ -71,6 +69,8 @@ post-extract:
 
 do-build:
 	(cd ${WRKSRC} ; ${MAKE_ENV} ${LOCALBASE}/bin/rosmake ${MAKE_ARGS})
+
+PLIST_SUB=	PYTHON_VER=${PYTHON_VER}
 
 do-install:
 	${MKDIR} ${PREFIX}/ros/stacks/${STACKNAME}

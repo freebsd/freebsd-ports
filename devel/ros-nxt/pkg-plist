@@ -203,7 +203,7 @@ ros/stacks/nxt/nxt_python/src/nxt/telegram.py
 ros/stacks/nxt/nxt_python/src/nxt/telegram.pyc
 ros/stacks/nxt/nxt_python/src/nxt/usbsock.py
 ros/stacks/nxt/nxt_python/src/nxt/usbsock.pyc
-ros/stacks/nxt/nxt_python/src/nxt_python-1.1.2-py2.6.egg-info
+ros/stacks/nxt/nxt_python/src/nxt_python-1.1.2-py%%PYTHON_VER%%.egg-info
 ros/stacks/nxt/nxt_python/test_sensors.py
 ros/stacks/nxt/nxt_python/ultrasonic.patch
 ros/stacks/nxt/nxt_ros/CMakeLists.txt
