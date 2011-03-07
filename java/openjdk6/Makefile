@@ -7,7 +7,7 @@
 
 PORTNAME=	openjdk6
 PORTVERSION=	b22
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	java devel
 MASTER_SITES=	http://download.java.net/openjdk/jdk6/promoted/${PORTVERSION}/ \
 		http://download.java.net/jaxp/openjdk/jdk6/:jaxp \
@@ -44,11 +44,12 @@ OPENJDK_BUILDDATE=	28_feb_2011
 
 OPTIONS=	DEBUG "Enable legacy debugging support" off \
 		FASTDEBUG "Include fastdebug build" off \
+		ICEDTEA "Apply additional patches from IcedTea" off \
 		IPV6 "Enable IPv6 support" off \
-		SOUND "Enable sound support" off \
-		WEB "Enable the browser plugin and Java Web Start" off \
 		POLICY "Install the Unlimited Strength Policy Files" off \
-		TEST "Add support for running regression test" off
+		SOUND "Enable sound support" off \
+		TEST "Add support for running regression test" off \
+		WEB "Enable the browser plugin and Java Web Start" off
 
 # java extracts directly to the cwd
 WRKSRC=		${WRKDIR}
@@ -127,6 +128,13 @@ MAKE_ENV=	LANG=C LC_ALL=C \
 		NO_DOCS=true \
 		MILESTONE=fcs
 
+.if defined(WITH_DEBUG)
+ALL_TARGET=	debug_build
+OPENJDK_OSARCH=	bsd-${ARCH:S/i386/i586/}-debug
+.else
+OPENJDK_OSARCH=	bsd-${ARCH:S/i386/i586/}
+.endif
+
 # disable FASTDEBUG_BUILD by default to improve compile time.
 .if defined(WITH_FASTDEBUG)
 MAKE_ENV+=	SKIP_FASTDEBUG_BUILD=false
@@ -134,15 +142,12 @@ MAKE_ENV+=	SKIP_FASTDEBUG_BUILD=false
 MAKE_ENV+=	SKIP_FASTDEBUG_BUILD=true
 .endif
 
-.if !defined(WITH_IPV6)
-MAKE_ENV+=	DONT_ENABLE_IPV6="YES"
+.if defined(WITH_ICEDTEA)
+EXTRA_PATCHES+=	${FILESDIR}/icedtea/jpegclasses.patch
 .endif
 
-.if defined(WITH_DEBUG)
-ALL_TARGET=	debug_build
-OPENJDK_OSARCH=	bsd-${ARCH:S/i386/i586/}-debug
-.else
-OPENJDK_OSARCH=	bsd-${ARCH:S/i386/i586/}
+.if !defined(WITH_IPV6)
+MAKE_ENV+=	DONT_ENABLE_IPV6="YES"
 .endif
 
 .if defined(WITH_SOUND)
@@ -151,6 +156,13 @@ LIB_DEPENDS+=	asound.2:${PORTSDIR}/audio/alsa-lib
 RUN_DEPENDS+=	${LOCALBASE}/lib/alsa-lib/libasound_module_pcm_oss.so:${PORTSDIR}/audio/alsa-plugins
 .else
 EXTRA_PATCHES+=	${FILESDIR}/alsa-disable.patch
+.endif
+
+.if defined(WITH_TEST)
+DISTFILES+=	${JTREGFILE}:jtreg
+EXTRACT_ONLY+=	${JTREGFILE}
+BUILD_DEPENDS+=	${LOCALBASE}/lib/X11/fonts/dejavu:${PORTSDIR}/x11-fonts/dejavu
+USE_DISPLAY=	yes
 .endif
 
 .if defined(WITH_WEB)
@@ -168,13 +180,6 @@ ITWEB_JAR=	${WRKSRC}/build/${OPENJDK_OSARCH}/j2sdk-image/bin/jar
 ITWEB_DEBUG_FLAGS=-g
 .endif
 ITWEB_JAVAC_FLAGS=${ITWEB_DEBUG_FLAGS} -encoding utf-8 -J-Xmx1024m -source 6 -target 6
-.endif
-
-.if defined(WITH_TEST)
-DISTFILES+=	${JTREGFILE}:jtreg
-EXTRACT_ONLY+=	${JTREGFILE}
-BUILD_DEPENDS+=	${LOCALBASE}/lib/X11/fonts/dejavu:${PORTSDIR}/x11-fonts/dejavu
-USE_DISPLAY=	yes
 .endif
 
 .if !defined(DISABLE_MAKE_JOBS)
