@@ -16,16 +16,16 @@ MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Place five pieces in a row on a 3d board
 
 MAKEFILE=	Makefile.linux
-MAKE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+MAKE_ENV=	LDFLAGS="-L${LOCALBASE}/lib"
 ALL_TARGET=	default
+CPPFLAGS=	-I${LOCALBASE}/include
 
 USE_SDL=	sdl
 USE_GL=		gl
 USE_XORG=	xmu xext x11
 USE_GMAKE=	yes
 
-WRKSRC=	${WRKDIR}/connectFive
+WRKSRC=		${WRKDIR}/connectFive
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|sdl-config|${SDL_CONFIG}|' ${WRKSRC}/Makefile.linux
