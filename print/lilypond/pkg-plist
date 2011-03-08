@@ -127,6 +127,7 @@ lib/lilypond/%%PORTVERSION%%/python/midi.so
 %%DATADIR%%/%%PORTVERSION%%/ly/arabic.ly
 %%DATADIR%%/%%PORTVERSION%%/ly/bagpipe.ly
 %%DATADIR%%/%%PORTVERSION%%/ly/catalan.ly
+%%DATADIR%%/%%PORTVERSION%%/ly/chord-glissando-init.ly
 %%DATADIR%%/%%PORTVERSION%%/ly/chord-modifiers-init.ly
 %%DATADIR%%/%%PORTVERSION%%/ly/chord-repetition-init.ly
 %%DATADIR%%/%%PORTVERSION%%/ly/declarations-init.ly
