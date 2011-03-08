@@ -30,6 +30,10 @@ include/gegl-0.1/operation/gegl-operation-sink.h
 include/gegl-0.1/operation/gegl-operation-source.h
 include/gegl-0.1/operation/gegl-operation-temporal.h
 include/gegl-0.1/operation/gegl-operation.h
+%%CAIRO%%lib/gegl-0.1/vector-fill.la
+%%CAIRO%%lib/gegl-0.1/vector-fill.so
+%%CAIRO%%lib/gegl-0.1/vector-stroke.la
+%%CAIRO%%lib/gegl-0.1/vector-stroke.so
 %%CAIRO%%lib/gegl-0.1/path.la
 %%CAIRO%%lib/gegl-0.1/path.so
 %%FFMPEG%%lib/gegl-0.1/ff-load.la
@@ -230,8 +234,8 @@ lib/gegl-0.1/svg-multiply.la
 lib/gegl-0.1/svg-multiply.so
 lib/gegl-0.1/svg-saturate.la
 lib/gegl-0.1/svg-saturate.so
-lib/gegl-0.1/text.la
-lib/gegl-0.1/text.so
+%%PANGOCAIRO%%lib/gegl-0.1/text.la
+%%PANGOCAIRO%%lib/gegl-0.1/text.so
 lib/gegl-0.1/threshold.la
 lib/gegl-0.1/threshold.so
 lib/gegl-0.1/unsharp-mask.la

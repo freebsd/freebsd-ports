@@ -51,7 +51,7 @@ PLIST_SUB+=	GEGL_MINOR="${GEGL_MINOR}"
 EXAMPLES=	2geglbuffer gegl-paint geglbuffer-add-image \
 		geglbuffer-clock hello-world hello-world-video
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if !defined(WITHOUT_CAIRO)
 LIB_DEPENDS+=	cairo.2:${PORTSDIR}/graphics/cairo
@@ -59,6 +59,21 @@ PLIST_SUB+=	CAIRO=""
 .else
 CONFIGURE_ARGS+=--without-cairo
 PLIST_SUB+=	CAIRO="@comment "
+.endif
+
+.if !defined(WITHOUT_PANGO)
+USE_GNOME+=	pango
+PLIST_SUB+=	PANGO=""
+.else
+CONFIGURE_ARGS+=--without-pango
+PLIST_SUB+=	PANGO="@comment "
+.endif
+
+.if !defined(WITHOUT_PANGO) && !defined(WITHOUT_CAIRO)
+PLIST_SUB+=	PANGOCAIRO=""
+.else
+CONFIGURE_ARGS+=--without-pangocairo
+PLIST_SUB+=	PANGOCAIRO="@comment "
 .endif
 
 .if !defined(WITHOUT_ENSCRIPT)
@@ -113,12 +128,6 @@ PLIST_SUB+=	OPENRAW="@comment "
 .if defined(WITHOUT_OPTIMIZE)
 CONFIGURE_ARGS+=--disable-mmx \
 		--disable-sse
-.endif
-
-.if !defined(WITHOUT_PANGO)
-USE_GNOME+=	pango
-.else
-CONFIGURE_ARGS+=--without-pango
 .endif
 
 .if !defined(WITHOUT_PNG)
@@ -196,4 +205,4 @@ post-install:
 .endfor
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
