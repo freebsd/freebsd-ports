@@ -137,6 +137,7 @@
 %%DATADIR%%/America/Mazatlan
 %%DATADIR%%/America/Menominee
 %%DATADIR%%/America/Merida
+%%DATADIR%%/America/Metlakatla
 %%DATADIR%%/America/Mexico_City
 %%DATADIR%%/America/Miquelon
 %%DATADIR%%/America/Moncton
@@ -149,9 +150,9 @@
 %%DATADIR%%/America/Nipigon
 %%DATADIR%%/America/Nome
 %%DATADIR%%/America/Noronha
+%%DATADIR%%/America/North_Dakota/Beulah
 %%DATADIR%%/America/North_Dakota/Center
 %%DATADIR%%/America/North_Dakota/New_Salem
-%%DATADIR%%/America/North_Dakota/Beulah
 %%DATADIR%%/America/Ojinaga
 %%DATADIR%%/America/Panama
 %%DATADIR%%/America/Pangnirtung
@@ -174,6 +175,7 @@
 %%DATADIR%%/America/Sao_Paulo
 %%DATADIR%%/America/Scoresbysund
 %%DATADIR%%/America/Shiprock
+%%DATADIR%%/America/Sitka
 %%DATADIR%%/America/St_Barthelemy
 %%DATADIR%%/America/St_Johns
 %%DATADIR%%/America/St_Kitts
