@@ -127,6 +127,8 @@ elif bzgrep -qE "(pnohang: killing make checksum|fetch: transfer timed out)" $1;
   reason="fetch_timeout"; tag="fetch-timeout"
 elif bzgrep -q "See <URL:http://gcc.gnu.org/bugs.html> for instructions." $1; then
   reason="gcc_bug"; tag="gcc-bug"
+elif bzgrep -qE "(missing separator|mixed implicit and normal rules|recipe commences before first target).*Stop" $1; then
+  reason="gmake"; tag="gmake"
 elif bzgrep -qE "(Run-time system build failed for some reason|tar: Error opening archive: Failed to open.*No such file or directory)" $1; then
   reason="install_error"; tag="install"
 elif bzgrep -qE "(cc: .*libintl.*: No such file or directory|cc: ndbm\.so: No such file or directory|error: The X11 shared library could not be loaded|libtool: link: cannot find the library|relocation against dynamic symbol|Shared object.*not found, required by)" $1; then
@@ -147,8 +149,6 @@ elif bzgrep -qE "(Abort trap|Bus error|Error 127|Killed: 9|Signal 1[01])" $1; th
   reason="process_failed"; tag="process"
 elif bzgrep -qE "(USER   PID  PPID  PGID.*JOBC STAT  TT       TIME COMMAND|pnohang: killing make package)" $1; then
   reason="runaway_process"; tag="runaway"
-elif bzgrep -q "Segmentation fault" $1; then
-  reason="segfault"; tag="segfault"
 elif bzgrep -qE "(/usr/bin/ld: cannot find -l(pthread|XThrStub)|cannot find -lc_r|Error: pthreads are required to build this package|Please install/update your POSIX threads (pthreads) library|requires.*thread support|: The -pthread option is deprecated)" $1; then
   reason="threads"; tag="threads"
 elif bzgrep -qi 'read-only file system' $1; then
@@ -171,6 +171,8 @@ elif bzgrep -q "cd: can't cd to" $1; then
   reason="NFS"; tag="nfs"
 elif bzgrep -q "pkg_create: make_dist: tar command failed with code" $1; then
   reason="PLIST"; tag="plist"
+elif bzgrep -q "Segmentation fault" $1; then
+  reason="segfault"; tag="segfault"
 
 else
   reason="???"; tag="unknown"
