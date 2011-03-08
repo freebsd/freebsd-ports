@@ -1,4 +1,3 @@
-
 # New ports collection makefile for:	cyphesis
 # Date created:				02 Oct 2005
 # Whom:					Oliver Lehmann <oliver@FreeBSD.org>
@@ -8,7 +7,7 @@
 
 PORTNAME=	cyphesis
 PORTVERSION=	0.5.21
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	net
 MASTER_SITES=	SF/worldforge/${PORTNAME}%20%28server%29/${PORTVERSION}
 
@@ -18,7 +17,7 @@ COMMENT=	A server for WorldForge games
 LIB_DEPENDS=	Atlas-0.6.1:${PORTSDIR}/devel/atlas-devel \
 		varconf-1.0.6:${PORTSDIR}/devel/varconf \
 		wfmath-0.3.4:${PORTSDIR}/math/wfmath \
-		mercator-0.2.8:${PORTSDIR}/devel/mercator \
+		mercator-0.3.1:${PORTSDIR}/devel/mercator \
 		skstream-0.3.5:${PORTSDIR}/net/skstream \
 		gcrypt.17:${PORTSDIR}/security/libgcrypt
 
@@ -30,7 +29,7 @@ USE_GNOME=	gnomehack
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 USE_PGSQL=	yes
-USE_PYTHON=	yes
+USE_PYTHON=	2.2-2.6
 
 CFLAGS+=	-I${LOCALBASE}/include
 
@@ -42,8 +41,12 @@ MAN1=		cyclient.1 cycmd.1 cyphesis.1 cyphesis-tools.1 cyaddrules.1 \
 post-patch:
 	@${REINPLACE_CMD} -e 's| install-dist_docDATA | |g' ${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -e 's| install-confbackupDATA | |g' ${WRKSRC}/data/Makefile.in
-	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
-			  -e 's|-lpython|${PTHREAD_LIBS} &|' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g; \
+		s|-lpython|${PTHREAD_LIBS} &|; \
+		s|mercator-0\.2|mercator-0\.3|g' \
+		${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|mercator-0\.2|mercator-0\.3|g' \
+		${WRKSRC}/client/Makefile.in
 	@${FIND} ${WRKSRC} -name Makefile.in | ${XARGS} \
 		${REINPLACE_CMD} -e 's|$$(datadir)/cyphesis|${DATADIR}|g'
 	@${REINPLACE_CMD} -e 's|/bash|/sh|' ${WRKSRC}/scripts/extract_revision.sh
