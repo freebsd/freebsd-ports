@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	Date-Manip
-PORTVERSION=	6.20
-PORTREVISION=	1
+PORTVERSION=	6.22
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
+MASTER_SITE_SUBDIR=	CPAN:SBECK
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	swills@FreeBSD.org
@@ -22,6 +22,7 @@ PERL_CONFIGURE=	YES
 MAN3=	Date::Manip.3 Date::Manip::Base.3 Date::Manip::Calc.3 \
 	Date::Manip::Changes5.3 Date::Manip::Changes5to6.3 \
 	Date::Manip::Changes6.3 Date::Manip::Config.3 \
+	Date::Manip::ConfigFile.3 \
 	Date::Manip::DM5.3 Date::Manip::DM5abbrevs.3 \
 	Date::Manip::DM6.3 Date::Manip::Date.3 \
 	Date::Manip::Delta.3 Date::Manip::Examples.3 \

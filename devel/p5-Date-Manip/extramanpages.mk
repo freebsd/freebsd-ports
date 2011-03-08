@@ -6,6 +6,7 @@ MAN3+=	Date::Manip::Lang::catalan.3 \
 	Date::Manip::Lang::german.3 \
 	Date::Manip::Lang::index.3 \
 	Date::Manip::Lang::italian.3 \
+	Date::Manip::Lang::norwegian.3 \
 	Date::Manip::Lang::polish.3 \
 	Date::Manip::Lang::portugue.3 \
 	Date::Manip::Lang::romanian.3 \
@@ -494,6 +495,7 @@ MAN3+=	Date::Manip::Lang::catalan.3 \
 	Date::Manip::Offset::off478.3 \
 	Date::Manip::Offset::off479.3 \
 	Date::Manip::Offset::off480.3 \
+	Date::Manip::Offset::off481.3 \
 	Date::Manip::TZ::a00.3 \
 	Date::Manip::TZ::afabid00.3 \
 	Date::Manip::TZ::afaccr00.3 \
@@ -559,6 +561,7 @@ MAN3+=	Date::Manip::Lang::catalan.3 \
 	Date::Manip::TZ::ambarb00.3 \
 	Date::Manip::TZ::ambele00.3 \
 	Date::Manip::TZ::ambeli00.3 \
+	Date::Manip::TZ::ambeul00.3 \
 	Date::Manip::TZ::amblan00.3 \
 	Date::Manip::TZ::amboa_00.3 \
 	Date::Manip::TZ::ambogo00.3 \

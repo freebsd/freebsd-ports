@@ -6,6 +6,7 @@
 %%SITE_PERL%%/Date/Manip/Lang/german.pm
 %%SITE_PERL%%/Date/Manip/Lang/index.pm
 %%SITE_PERL%%/Date/Manip/Lang/italian.pm
+%%SITE_PERL%%/Date/Manip/Lang/norwegian.pm
 %%SITE_PERL%%/Date/Manip/Lang/polish.pm
 %%SITE_PERL%%/Date/Manip/Lang/portugue.pm
 %%SITE_PERL%%/Date/Manip/Lang/romanian.pm
@@ -494,6 +495,7 @@
 %%SITE_PERL%%/Date/Manip/Offset/off478.pm
 %%SITE_PERL%%/Date/Manip/Offset/off479.pm
 %%SITE_PERL%%/Date/Manip/Offset/off480.pm
+%%SITE_PERL%%/Date/Manip/Offset/off481.pm
 %%SITE_PERL%%/Date/Manip/TZ/a00.pm
 %%SITE_PERL%%/Date/Manip/TZ/afabid00.pm
 %%SITE_PERL%%/Date/Manip/TZ/afaccr00.pm
@@ -559,6 +561,7 @@
 %%SITE_PERL%%/Date/Manip/TZ/ambarb00.pm
 %%SITE_PERL%%/Date/Manip/TZ/ambele00.pm
 %%SITE_PERL%%/Date/Manip/TZ/ambeli00.pm
+%%SITE_PERL%%/Date/Manip/TZ/ambeul00.pm
 %%SITE_PERL%%/Date/Manip/TZ/amblan00.pm
 %%SITE_PERL%%/Date/Manip/TZ/amboa_00.pm
 %%SITE_PERL%%/Date/Manip/TZ/ambogo00.pm
@@ -947,6 +950,7 @@
 %%SITE_PERL%%/Date/Manip/Changes5to6.pod
 %%SITE_PERL%%/Date/Manip/Changes6.pod
 %%SITE_PERL%%/Date/Manip/Config.pod
+%%SITE_PERL%%/Date/Manip/ConfigFile.pod
 %%SITE_PERL%%/Date/Manip/DM5.pm
 %%SITE_PERL%%/Date/Manip/DM5.pod
 %%SITE_PERL%%/Date/Manip/DM6.pm

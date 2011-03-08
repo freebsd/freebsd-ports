@@ -1,57 +1,6 @@
-       This is a set of routines designed to make any common
-       date/time manipulation easy to do.  Operations such as
-       comparing two times, calculating a time a given amount of
-       time from another, or parsing international times are all
-       easily done.
+Date::Manip is a series of modules designed to make any common date/time
+operation easy to do. Operations such as comparing two times, calculating a
+time a given amount of time from another, or parsing international times are
+all easily done.
 
-       Date::Manip deals only with the Gregorian calendar (the
-       one currently in use).  The Julian calendar defined leap
-       years as every 4th year.  The Gregorian calendar improved
-       this by making every 100th year NOT a leap year, unless it
-       was also the 400th year.  The Gregorian calendar has been
-       extrapolated back to the year 1000 AD and forward to the
-       year 9999 AD.  Note that in historical context, the Julian
-       calendar was in use until 1582 when the Gregorian calendar
-       was adopted by the Catholic church.  Protestant countries
-       did not accept it until later; Germany and Netherlands in
-       1698, British Empire in 1752, Russia in 1918.  Note that
-       the Gregorian calendar is itself imperfect.  Each year is
-       on average 26 seconds too long, which means that every
-       3,323 years, a day should be removed from the calendar.
-       No attempt is made to correct for that.
-
-       Date::Manip is therefore not equipped to truly deal with
-       historical dates, but should be able to perform
-       (virtually) any operation dealing with a modern time and
-       date.
-
-       Among other things, Date::Manip allow you to:
-
-       1.  Enter a date and be able to choose any format
-           convenient
-
-       2.  Compare two dates, entered in widely different formats
-           to determine which is earlier
-
-       3.  Extract any information you want from ANY date using a
-           format string similar to the Unix date command
-
-       4.  Determine the amount of time between two dates
-
-       5.  Add a time offset to a date to get a second date (i.e.
-           determine the date 132 days ago or 2 years and 3 months
-           after Jan 2, 1992)
-
-       6.  Work with dates with dates using international formats
-           (foreign month names, 12-10-95 referring to October rather than
-           December, etc.).
-
-       Each of these tasks is trivial (one or two lines at most)
-       with this package.
-
-       Although the word date is used extensively here, it is
-       actually somewhat misleading.  Date::Manip works with the
-       full date AND time (year, month, day, hour, minute,
-       second).
-
-WWW: http://www.cise.ufl.edu/~sbeck/
+WWW: http://search.cpan.org/dist/Date-Manip/
