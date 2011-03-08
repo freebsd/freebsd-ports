@@ -11,14 +11,17 @@ CATEGORIES=	japanese net comms linux
 MASTER_SITES=
 DISTNAME=	${PORTNAME}-linuxx86-${PORTVERSION}
 
-MAINTAINER=	tabthorpe@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Access virtual applications and desktops
 
 ONLY_FOR_ARCHS=	i386 amd64
-USE_LINUX=	f8
+USE_LINUX=	yes
 USE_LINUX_APPS=	openmotif jpeg png
 RESTRICTED=	License prohibits redistribution
 IS_INTERACTIVE=	"Noisy license agreement ignores stdin"
+BROKEN=		crashes with f10
+DEPRECATED=	"${BROKEN}"
+EXPIRATION_DATE=	2011-05-01
 
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
