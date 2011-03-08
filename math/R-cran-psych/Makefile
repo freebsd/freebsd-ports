@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	psych
-PORTVERSION=	1.0.91
-PORTREVISION=	2
+PORTVERSION=	1.0.94
 CATEGORIES=	math science
 PKGNAMEPREFIX=	R-cran-
-DISTNAME=	${PORTNAME}_1.0-91
+DISTNAME=	${PORTNAME}_${PORTVERSION:C/\./-/g:C/-/\./1}
 
 MAINTAINER=	drue@therub.org
 COMMENT=	Psych package for the R project
