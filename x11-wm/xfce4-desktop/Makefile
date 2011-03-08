@@ -7,7 +7,7 @@
 
 PORTNAME=	xfce4-desktop
 PORTVERSION=	4.8.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-wm xfce
 MASTER_SITES=	${MASTER_SITE_XFCE}
 MASTER_SITE_SUBDIR=	src/xfce/xfdesktop/${PORTVERSION:R}
@@ -29,18 +29,17 @@ USE_LDCONFIG=	yes
 USE_XFCE=	configenv garcon libgui libmenu libutil panel xfconf \
 		libexo
 
-OPTIONS=	FAM	"Enable FAM support"		on \
-		THUNAR	"Enable thunar support"		on
+OPTIONS=	THUNAR	"Enable thunar support"		on
 
 MAN1=		xfdesktop.1
 
 .include <bsd.port.pre.mk>
 
 .if !defined(WITHOUT_THUNAR)
-CONFIGURE_ARGS+=--enable-thunar-vfs --enable-thunarx
+CONFIGURE_ARGS+=--enable-thunarx
 USE_XFCE+=	thunar
 .else
-CONFIGURE_ARGS+=--disable-thunar-vfs --disable-thunarx
+CONFIGURE_ARGS+=--disable-thunarx
 .endif
 
 .include <bsd.port.post.mk>
