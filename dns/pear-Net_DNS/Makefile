@@ -7,6 +7,7 @@
 
 PORTNAME=	Net_DNS
 PORTVERSION=	1.0.7
+PORTREVISION=	1
 CATEGORIES=	dns net pear
 
 MAINTAINER=	miwi@FreeBSD.org
@@ -23,7 +24,7 @@ FILES=		DNS/RR/A.php DNS/RR/AAAA.php DNS/RR/CNAME.php DNS/RR/HINFO.php \
 		DNS/RR/MX.php DNS/RR/NAPTR.php DNS/RR/NS.php DNS/RR/PTR.php \
 		DNS/RR/SOA.php DNS/RR/SRV.php DNS/RR/TSIG.php DNS/RR/TXT.php \
 		DNS/Header.php DNS/Packet.php DNS/Question.php DNS/Resolver.php \
-		DNS/RR.php DNS.php
+		DNS/RR.php DNS/RR/RP.php DNS/RR/SPF.php DNS.php
 
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/devel/pear/bsd.pear.mk"
