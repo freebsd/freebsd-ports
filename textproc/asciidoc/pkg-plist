@@ -13,11 +13,13 @@ etc/asciidoc/docbook-xsl/htmlhelp.xsl
 etc/asciidoc/docbook-xsl/manpage.xsl
 etc/asciidoc/docbook-xsl/text.xsl
 etc/asciidoc/docbook-xsl/xhtml.xsl
-etc/asciidoc/docbook.conf
+etc/asciidoc/docbook45.conf
 etc/asciidoc/filters/code/code-filter.conf
 etc/asciidoc/filters/code/code-filter.py
 etc/asciidoc/filters/graphviz/graphviz-filter.conf
 etc/asciidoc/filters/graphviz/graphviz2png.py
+etc/asciidoc/filters/latex/latex-filter.conf
+etc/asciidoc/filters/latex/latex2png.py
 etc/asciidoc/filters/music/music-filter.conf
 etc/asciidoc/filters/music/music2png.py
 etc/asciidoc/filters/source/source-highlight-filter.conf
@@ -52,6 +54,7 @@ etc/asciidoc/images/icons/warning.png
 etc/asciidoc/javascripts/ASCIIMathML.js
 etc/asciidoc/javascripts/LaTeXMathML.js
 etc/asciidoc/javascripts/asciidoc-xhtml11.js
+etc/asciidoc/javascripts/slidy.js
 etc/asciidoc/javascripts/toc.js
 etc/asciidoc/lang-de.conf
 etc/asciidoc/lang-en.conf
@@ -61,9 +64,12 @@ etc/asciidoc/lang-hu.conf
 etc/asciidoc/lang-it.conf
 etc/asciidoc/lang-pt-BR.conf
 etc/asciidoc/lang-ru.conf
+etc/asciidoc/lang-uk.conf
 etc/asciidoc/latex.conf
+etc/asciidoc/slidy.conf
 etc/asciidoc/stylesheets/docbook-xsl.css
 etc/asciidoc/stylesheets/pygments.css
+etc/asciidoc/stylesheets/slidy.css
 etc/asciidoc/stylesheets/volnitsky.css
 etc/asciidoc/stylesheets/volnitsky-manpage.css
 etc/asciidoc/stylesheets/volnitsky-quirks.css
@@ -78,6 +84,7 @@ etc/asciidoc/xhtml11.conf
 @dirrm etc/asciidoc/docbook-xsl
 @dirrm etc/asciidoc/filters/code
 @dirrm etc/asciidoc/filters/graphviz
+@dirrm etc/asciidoc/filters/latex
 @dirrm etc/asciidoc/filters/music
 @dirrm etc/asciidoc/filters/source
 @dirrm etc/asciidoc/filters
