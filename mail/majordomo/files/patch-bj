@@ -1,5 +1,5 @@
---- approve.orig	Sun Apr  6 04:18:36 1997
-+++ approve	Wed Sep 10 00:57:40 1997
+--- approve.orig	2011-03-08 14:31:12.422976680 +0100
++++ approve	2011-03-08 14:31:06.810610862 +0100
 @@ -63,7 +63,7 @@
  #
  # $Locker:  $
@@ -9,3 +9,54 @@
  $MAILER = '/usr/sbin/sendmail' if -x '/usr/sbin/sendmail';
  
  die "Couldn't find a sendmail to invoke, please define!" 
+@@ -137,6 +137,7 @@
+ 
+ sub process_approve {
+     local($FILE) = shift;
++    my @words;
+     while (<$FILE>) {
+ 	if ((/^\tsubscribe\s/) || (/^\tunsubscribe\s/)) {
+ 	    if (!defined($reply_to)) {
+@@ -144,8 +145,8 @@
+ 		exit(1);
+ 	    }
+ 	    s/^\t//;
+-	    split;
+-	    $list = $_[1];
++	    @words = split;
++	    $list = $words[1];
+ 	    $list =~ tr/A-Z/a-z/;
+ 	    $passwd = $passwd{"$list\@$reply_to"};
+ 	    if (! $passwd) {
+@@ -214,6 +215,11 @@
+ 	    $from_skipped = 1;
+ 	    next;
+ 	}
++	if (/^delivered-to: $post_to/i) {
++		# Remove Delivered-To: lines that point to the list, since they
++		# will cause postfix to think that the message is looping.
++		next;
++	}
+ 	s/^~/~~/;
+ 	print MAIL $_;
+     }
+@@ -231,12 +237,13 @@
+ 	s/\n$//;
+ 	s/#.*//;
+ 	if (/^$/) { next; }
+-	split;
+-	$l = $_[0];	$l =~ tr/A-Z/a-z/;	# list
+-	$p = $_[1];				# password
+-	$m = $_[2];	$m =~ tr/A-Z/a-z/;	# majordomo@site
+-	split(/\@/, $m);
+-	$s = $_[1];	$s =~ tr/A-Z/a-z/;	# site
++	my @words = split;
++
++	$l = $words[0];	$l =~ tr/A-Z/a-z/;	# list
++	$p = $words[1];				# password
++	$m = $words[2];	$m =~ tr/A-Z/a-z/;	# majordomo@site
++	@words = split(/\@/, $m);
++	$s = $words[1];	$s =~ tr/A-Z/a-z/;	# site
+ 
+ 	$passwd{$l} = $p;
+ 	$passwd{"$l\@$m"} = $p;
