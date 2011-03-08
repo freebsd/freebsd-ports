@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	smu
-PORTVERSION=	1.2
+PORTVERSION=	1.3
 CATEGORIES=	textproc
 MASTER_SITES=	http://s01.de/~tox/files/smu/ \
 		http://mirror.4bit.ws/
