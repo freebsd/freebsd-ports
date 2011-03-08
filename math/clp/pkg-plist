@@ -1,5 +1,4 @@
 bin/clp
-include/coin/CbcOrClpParam.cpp
 include/coin/CbcOrClpParam.hpp
 include/coin/ClpCholeskyBase.hpp
 include/coin/ClpCholeskyDense.hpp
@@ -37,7 +36,6 @@ include/coin/ClpPrimalColumnPivot.hpp
 include/coin/ClpPrimalColumnSteepest.hpp
 include/coin/ClpQuadraticObjective.hpp
 include/coin/ClpSimplex.hpp
-include/coin/ClpSimplexDual.hpp
 include/coin/ClpSimplexNonlinear.hpp
 include/coin/ClpSimplexOther.hpp
 include/coin/ClpSimplexPrimal.hpp
