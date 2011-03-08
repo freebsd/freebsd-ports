@@ -1,0 +1,25 @@
+#!/bin/sh
+# $FreeBSD$
+
+EASYINSTALL_PTH=%%EASYINSTALL_PTH%%
+
+if [ $# -ne 2 ]; then
+    echo "usage: $0 distname { PRE-INSTALL | POST-INSTALL }" >&2
+    exit 1
+fi
+
+case $2 in
+     PRE-INSTALL)
+		if [ -f ${EASYINSTALL_PTH} ]; then
+		    mv ${EASYINSTALL_PTH} ${EASYINSTALL_PTH}.tmp
+		fi
+		;;
+     POST-INSTALL)
+		if [ -f ${EASYINSTALL_PTH}.tmp ]; then
+		    mv ${EASYINSTALL_PTH}.tmp ${EASYINSTALL_PTH}
+		fi
+		;;
+esac
+
+exit 0
+
