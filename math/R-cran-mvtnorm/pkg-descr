@@ -1,0 +1,4 @@
+R-cran-mvtnorm computes multivariate normal and t probabilities, quantiles,
+random deviates and densities.
+
+WWW: http://cran.r-project.org/package=mvtnorm
