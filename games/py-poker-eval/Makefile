@@ -20,7 +20,7 @@ COMMENT=	Python adaptor for the poker-eval toolkit
 LIB_DEPENDS=	poker-eval.1:${PORTSDIR}/games/poker-eval
 
 USE_GNOME=	pkgconfig
-USE_PYTHON=	2.5+
+USE_PYTHON=	2.5-2.6
 GNU_CONFIGURE=	yes
 
 PLIST_SUB=	PYVER=${_PYTHON_VERSION:S/./_/}
