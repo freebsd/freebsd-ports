@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	piwik
-PORTVERSION=	1.1.1
+PORTVERSION=	1.2
 CATEGORIES=	www
 MASTER_SITES=	http://builds.piwik.org/
 
@@ -23,9 +23,6 @@ NO_BUILD=	yes
 SUB_FILES=	pkg-message
 
 .include <bsd.port.pre.mk>
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|/bin/bash|/bin/sh|g' ${WRKSRC}/misc/cron/archive.sh
 
 pre-install:
 	@if [ ! -f ${LOCALBASE}/bin/php ]; then \
