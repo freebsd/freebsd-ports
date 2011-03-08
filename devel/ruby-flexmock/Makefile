@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	flexmock
-PORTVERSION=	0.8.11
+PORTVERSION=	0.9.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
