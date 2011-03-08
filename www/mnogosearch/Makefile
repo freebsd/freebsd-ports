@@ -6,19 +6,18 @@
 #
 
 PORTNAME=	mnogosearch
-PORTVERSION=	3.3.10
-PORTREVISION=	1
+PORTVERSION=	3.3.11
 CATEGORIES=	www databases
-MASTER_SITES=	http://www.mnogosearch.org/Download/
+MASTER_SITES=	http://www.mnogosearch.org/Download/ \
+		http://www.bayofrum.net/dist/${PORTNAME}/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	utisoft@gmail.com
 COMMENT=	Full featured SQL-based hypertext search engine
 
 MAN1=		indexer.1
 MAN5=		indexer.conf.5
 
-OPTIONS=	\
-		THREADS "Enable pthreads"		on  \
+OPTIONS=	THREADS "Enable pthreads"		on  \
 		SSL     "Enable SSL"			on  \
 		ASIAN   "Enable asian charsets"	off \
 		SYSLOG  "Send logs to syslog"   on  \
@@ -92,15 +91,22 @@ CONFIGURE_ARGS+=	--with-sqlite=${LOCALBASE}
 
 .if defined(WITHOUT_SQLITE) && !defined(WITH_MYSQL) && \
     !defined(WITH_MSQL) && !defined(WITH_PGSQL)
-BROKEN=	needs at least one database driver
+IGNORE=	needs at least one database driver
 .endif
 
-DOCS=	INSTALL ChangeLog
+DOCS=		ChangeLog INSTALL
+PORTDOCS=	*
 PORTEXAMPLES=	README *.conf
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|$${CONFIG_SHELL-/bin/sh} $$ac_aux_dir|$$ac_aux_dir|' \
-		${WRKSRC}/configure
+.if !defined (NOPORTDOCS)
+	@${REINPLACE_CMD} -e 's#$$(DESTDIR)$$(prefix)/doc#${DOCSDIR}#' \
+		${WRKSRC}/Makefile.in ${WRKSRC}/doc/Makefile.in
+.else
+	@${REINPLACE_CMD} -e \
+		's#^SUBDIRS = include src doc#SUBDIRS = include src#' \
+		${WRKSRC}/Makefile.in
+.endif
 
 pre-install-su:
 	@${MKDIR} ${DATADIR}/
@@ -108,13 +114,12 @@ pre-install-su:
 post-install:
 	${LN} -sf libmnogosearch.so \
 		${PREFIX}/lib/libmnogosearch-${PORTVERSION:R}.so.${SHLIB_VER}
-	${CHMOD} 700 /var/mnogosearch/cache
 	${CHOWN} -R ${WWWOWN}:${WWWGRP} /var/mnogosearch
 .if !defined (NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}/
-.for f in ${DOCS}
+.    for f in ${DOCS}
 	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}/
-.endfor
+.    endfor
 .endif
 .if !defined(NOPORTEXAMPLES)
 	${MKDIR} ${EXAMPLESDIR}/
