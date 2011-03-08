@@ -148,15 +148,17 @@
 %%WWWDIR%%/core/Tracker.php
 %%WWWDIR%%/core/Tracker/Action.php
 %%WWWDIR%%/core/Tracker/Config.php
-%%WWWDIR%%/core/Tracker/Cookie.php
 %%WWWDIR%%/core/Tracker/Db.php
 %%WWWDIR%%/core/Tracker/Db/Mysqli.php
 %%WWWDIR%%/core/Tracker/Db/Pdo/Mysql.php
 %%WWWDIR%%/core/Tracker/Db/Pdo/Pgsql.php
 %%WWWDIR%%/core/Tracker/GoalManager.php
+%%WWWDIR%%/core/Tracker/IgnoreCookie.php
+%%WWWDIR%%/core/Tracker/javascriptCode.tpl
 %%WWWDIR%%/core/Tracker/Visit.php
-%%WWWDIR%%/core/Tracker/javascriptTag.tpl
 %%WWWDIR%%/core/Translate.php
+%%WWWDIR%%/core/Segment.php
+%%WWWDIR%%/core/SegmentExpression.php
 %%WWWDIR%%/core/Unzip.php
 %%WWWDIR%%/core/Unzip/PclZip.php
 %%WWWDIR%%/core/Unzip/ZipArchive.php
@@ -186,6 +188,8 @@
 %%WWWDIR%%/core/Updates/0.7.php
 %%WWWDIR%%/core/Updates/0.9.1.php
 %%WWWDIR%%/core/Updates/1.1.php
+%%WWWDIR%%/core/Updates/1.2-rc1.php
+%%WWWDIR%%/core/Updates/1.2-rc2.php
 %%WWWDIR%%/core/Url.php
 %%WWWDIR%%/core/Version.php
 %%WWWDIR%%/core/View.php
@@ -236,8 +240,10 @@
 %%WWWDIR%%/lang/he.php
 %%WWWDIR%%/lang/hu.php
 %%WWWDIR%%/lang/id.php
+%%WWWDIR%%/lang/is.php
 %%WWWDIR%%/lang/it.php
 %%WWWDIR%%/lang/ja.php
+%%WWWDIR%%/lang/ka.php
 %%WWWDIR%%/lang/ko.php
 %%WWWDIR%%/lang/lt.php
 %%WWWDIR%%/lang/nb.php
@@ -337,6 +343,7 @@
 %%WWWDIR%%/libs/PclZip/pclzip.lib.php
 %%WWWDIR%%/libs/PiwikTracker/LICENSE.txt
 %%WWWDIR%%/libs/PiwikTracker/PiwikTracker.php
+%%WWWDIR%%/libs/README_LIBS
 %%WWWDIR%%/libs/Smarty/Config_File.class.php
 %%WWWDIR%%/libs/Smarty/Smarty.class.php
 %%WWWDIR%%/libs/Smarty/Smarty_Compiler.class.php
@@ -439,6 +446,7 @@
 %%WWWDIR%%/libs/Zend/Cache/Backend/ExtendedInterface.php
 %%WWWDIR%%/libs/Zend/Cache/Backend/File.php
 %%WWWDIR%%/libs/Zend/Cache/Backend/Interface.php
+%%WWWDIR%%/libs/Zend/Cache/Backend/Libmemcached.php
 %%WWWDIR%%/libs/Zend/Cache/Backend/Memcached.php
 %%WWWDIR%%/libs/Zend/Cache/Backend/Sqlite.php
 %%WWWDIR%%/libs/Zend/Cache/Backend/Static.php
@@ -461,12 +469,16 @@
 %%WWWDIR%%/libs/Zend/Config.php
 %%WWWDIR%%/libs/Zend/Config/Exception.php
 %%WWWDIR%%/libs/Zend/Config/Ini.php
+%%WWWDIR%%/libs/Zend/Config/Json.php
 %%WWWDIR%%/libs/Zend/Config/Writer.php
 %%WWWDIR%%/libs/Zend/Config/Writer/Array.php
 %%WWWDIR%%/libs/Zend/Config/Writer/FileAbstract.php
 %%WWWDIR%%/libs/Zend/Config/Writer/Ini.php
+%%WWWDIR%%/libs/Zend/Config/Writer/Json.php
 %%WWWDIR%%/libs/Zend/Config/Writer/Xml.php
+%%WWWDIR%%/libs/Zend/Config/Writer/Yaml.php
 %%WWWDIR%%/libs/Zend/Config/Xml.php
+%%WWWDIR%%/libs/Zend/Config/Yaml.php
 %%WWWDIR%%/libs/Zend/Db.php
 %%WWWDIR%%/libs/Zend/Db/Adapter/Abstract.php
 %%WWWDIR%%/libs/Zend/Db/Adapter/Db2.php
@@ -621,15 +633,32 @@
 %%WWWDIR%%/libs/Zend/Http/Exception.php
 %%WWWDIR%%/libs/Zend/Http/Response.php
 %%WWWDIR%%/libs/Zend/Http/Response/Stream.php
+%%WWWDIR%%/libs/Zend/Http/UserAgent.php
+%%WWWDIR%%/libs/Zend/Http/UserAgent/AbstractDevice.php
+%%WWWDIR%%/libs/Zend/Http/UserAgent/Bot.php
+%%WWWDIR%%/libs/Zend/Http/UserAgent/Checker.php
+%%WWWDIR%%/libs/Zend/Http/UserAgent/Console.php
+%%WWWDIR%%/libs/Zend/Http/UserAgent/Desktop.php
+%%WWWDIR%%/libs/Zend/Http/UserAgent/Device.php
+%%WWWDIR%%/libs/Zend/Http/UserAgent/Email.php
+%%WWWDIR%%/libs/Zend/Http/UserAgent/Exception.php
+%%WWWDIR%%/libs/Zend/Http/UserAgent/Features/Adapter/TeraWurfl.php
+%%WWWDIR%%/libs/Zend/Http/UserAgent/Features/Adapter/WurflApi.php
+%%WWWDIR%%/libs/Zend/Http/UserAgent/Features/Adapter/DeviceAtlas.php
+%%WWWDIR%%/libs/Zend/Http/UserAgent/Features/Exception.php
+%%WWWDIR%%/libs/Zend/Http/UserAgent/Features/Adapter.php
+%%WWWDIR%%/libs/Zend/Http/UserAgent/Feed.php
+%%WWWDIR%%/libs/Zend/Http/UserAgent/Mobile.php
+%%WWWDIR%%/libs/Zend/Http/UserAgent/Offline.php
+%%WWWDIR%%/libs/Zend/Http/UserAgent/Probe.php
+%%WWWDIR%%/libs/Zend/Http/UserAgent/Spam.php
+%%WWWDIR%%/libs/Zend/Http/UserAgent/Storage.php
+%%WWWDIR%%/libs/Zend/Http/UserAgent/Storage/NonPersistent.php
+%%WWWDIR%%/libs/Zend/Http/UserAgent/Storage/Exception.php
+%%WWWDIR%%/libs/Zend/Http/UserAgent/Storage/Session.php
+%%WWWDIR%%/libs/Zend/Http/UserAgent/Text.php
+%%WWWDIR%%/libs/Zend/Http/UserAgent/Validator.php
 %%WWWDIR%%/libs/Zend/LICENSE.txt
-%%WWWDIR%%/libs/Zend/Loader.php
-%%WWWDIR%%/libs/Zend/Loader/Autoloader.php
-%%WWWDIR%%/libs/Zend/Loader/Autoloader/Interface.php
-%%WWWDIR%%/libs/Zend/Loader/Autoloader/Resource.php
-%%WWWDIR%%/libs/Zend/Loader/Exception.php
-%%WWWDIR%%/libs/Zend/Loader/PluginLoader.php
-%%WWWDIR%%/libs/Zend/Loader/PluginLoader/Exception.php
-%%WWWDIR%%/libs/Zend/Loader/PluginLoader/Interface.php
 %%WWWDIR%%/libs/Zend/Log.php
 %%WWWDIR%%/libs/Zend/Log/Exception.php
 %%WWWDIR%%/libs/Zend/Log/FactoryInterface.php
@@ -638,6 +667,7 @@
 %%WWWDIR%%/libs/Zend/Log/Filter/Message.php
 %%WWWDIR%%/libs/Zend/Log/Filter/Priority.php
 %%WWWDIR%%/libs/Zend/Log/Filter/Suppress.php
+%%WWWDIR%%/libs/Zend/Log/Formatter/Abstract.php
 %%WWWDIR%%/libs/Zend/Log/Formatter/Firebug.php
 %%WWWDIR%%/libs/Zend/Log/Formatter/Interface.php
 %%WWWDIR%%/libs/Zend/Log/Formatter/Simple.php
@@ -682,6 +712,7 @@
 %%WWWDIR%%/libs/Zend/Mail/Storage/Writable/Maildir.php
 %%WWWDIR%%/libs/Zend/Mail/Transport/Abstract.php
 %%WWWDIR%%/libs/Zend/Mail/Transport/Exception.php
+%%WWWDIR%%/libs/Zend/Mail/Transport/File.php
 %%WWWDIR%%/libs/Zend/Mail/Transport/Sendmail.php
 %%WWWDIR%%/libs/Zend/Mail/Transport/Smtp.php
 %%WWWDIR%%/libs/Zend/Mime.php
@@ -689,6 +720,18 @@
 %%WWWDIR%%/libs/Zend/Mime/Exception.php
 %%WWWDIR%%/libs/Zend/Mime/Message.php
 %%WWWDIR%%/libs/Zend/Mime/Part.php
+%%WWWDIR%%/libs/Zend/OpenId.php
+%%WWWDIR%%/libs/Zend/OpenId/Consumer.php
+%%WWWDIR%%/libs/Zend/OpenId/Consumer/Storage/File.php
+%%WWWDIR%%/libs/Zend/OpenId/Consumer/Storage.php
+%%WWWDIR%%/libs/Zend/OpenId/Exception.php
+%%WWWDIR%%/libs/Zend/OpenId/Extension.php
+%%WWWDIR%%/libs/Zend/OpenId/Extension/Sreg.php
+%%WWWDIR%%/libs/Zend/OpenId/Provider.php
+%%WWWDIR%%/libs/Zend/OpenId/Provider/Storage.php
+%%WWWDIR%%/libs/Zend/OpenId/Provider/Storage/File.php
+%%WWWDIR%%/libs/Zend/OpenId/Provider/User.php
+%%WWWDIR%%/libs/Zend/OpenId/Provider/User/Session.php
 %%WWWDIR%%/libs/Zend/Registry.php
 %%WWWDIR%%/libs/Zend/Session.php
 %%WWWDIR%%/libs/Zend/Session/Abstract.php
@@ -938,7 +981,6 @@
 %%WWWDIR%%/misc/api_internal_call.php
 %%WWWDIR%%/misc/api_rest_call.php
 %%WWWDIR%%/misc/cron/archive.sh
-%%WWWDIR%%/misc/cron/archive.sh.bak
 %%WWWDIR%%/misc/cron/archive.windows.ps1
 %%WWWDIR%%/misc/crossdomain.xml
 %%WWWDIR%%/misc/download-count.txt
@@ -1033,6 +1075,9 @@
 %%WWWDIR%%/plugins/CoreUpdater/templates/update_new_version_available.tpl
 %%WWWDIR%%/plugins/CoreUpdater/templates/update_one_click_done.tpl
 %%WWWDIR%%/plugins/CoreUpdater/templates/update_welcome.tpl
+%%WWWDIR%%/plugins/CustomVariables/API.php
+%%WWWDIR%%/plugins/CustomVariables/Controller.php
+%%WWWDIR%%/plugins/CustomVariables/CustomVariables.php
 %%WWWDIR%%/plugins/DBStats/API.php
 %%WWWDIR%%/plugins/DBStats/Controller.php
 %%WWWDIR%%/plugins/DBStats/DBStats.php
@@ -1052,7 +1097,6 @@
 %%WWWDIR%%/plugins/ExamplePlugin/ExamplePlugin.php
 %%WWWDIR%%/plugins/ExamplePlugin/lang/en.php
 %%WWWDIR%%/plugins/ExamplePlugin/templates/piwikDownloads.tpl
-%%WWWDIR%%/plugins/ExamplePlugin/templates/websitesAndUsers.tpl
 %%WWWDIR%%/plugins/ExampleRssWidget/ExampleRssWidget.php
 %%WWWDIR%%/plugins/ExampleRssWidget/templates/styles.css
 %%WWWDIR%%/plugins/ExampleUI/API.php
@@ -1083,10 +1127,10 @@
 %%WWWDIR%%/plugins/Goals/templates/form_add_goal.tpl
 %%WWWDIR%%/plugins/Goals/templates/goals.css
 %%WWWDIR%%/plugins/Goals/templates/list_goal_edit.tpl
-%%WWWDIR%%/plugins/Goals/templates/list_top_segment.tpl
+%%WWWDIR%%/plugins/Goals/templates/list_top_dimension.tpl
 %%WWWDIR%%/plugins/Goals/templates/overview.tpl
 %%WWWDIR%%/plugins/Goals/templates/single_goal.tpl
-%%WWWDIR%%/plugins/Goals/templates/table_by_segment.tpl
+%%WWWDIR%%/plugins/Goals/templates/table_by_dimension.tpl
 %%WWWDIR%%/plugins/Goals/templates/title_and_evolution_graph.tpl
 %%WWWDIR%%/plugins/Installation/Controller.php
 %%WWWDIR%%/plugins/Installation/FormDatabaseSetup.php
@@ -1226,7 +1270,7 @@
 %%WWWDIR%%/plugins/Referers/images/searchEngines/holmes.ge.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/images.google.com.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/images.search.yahoo.com.png
-%%WWWDIR%%/plugins/Referers/images/searchEngines/images.yandex.ru.png
+%%WWWDIR%%/plugins/Referers/images/searchEngines/images.yandex.com.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/infospace.com.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/iwon.ask.com.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/ixquick.com.png
@@ -1275,6 +1319,7 @@
 %%WWWDIR%%/plugins/Referers/images/searchEngines/search.rr.com.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/search.seznam.cz.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/search.tiscali.it.png
+%%WWWDIR%%/plugins/Referers/images/searchEngines/search.winamp.com.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/search.www.ee.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/search.yahoo.com.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/search.yippy.com.png
@@ -1283,6 +1328,7 @@
 %%WWWDIR%%/plugins/Referers/images/searchEngines/searchservice.myspace.com.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/sm.aport.ru.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/smart.delfi.lv.png
+%%WWWDIR%%/plugins/Referers/images/searchEngines/start.iplay.com.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/startgoogle.startpagina.nl.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/suche.freenet.de.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/suche.gmx.net.png
@@ -1333,7 +1379,6 @@
 %%WWWDIR%%/plugins/Referers/images/searchEngines/www.hotbot.com.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/www.icq.com.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/www.ilse.nl.png
-%%WWWDIR%%/plugins/Referers/images/searchEngines/www.ireit.com.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/www.jungle-spider.de.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/www.kataweb.it.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/www.kvasir.no.png
@@ -1379,7 +1424,6 @@
 %%WWWDIR%%/plugins/Referers/images/searchEngines/www.websearch.com.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/www.witch.de.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/www.x-recherche.com.png
-%%WWWDIR%%/plugins/Referers/images/searchEngines/www.yandex.com.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/www.yasni.de.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/www.yougoo.fr.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/www.zoeken.nl.png
@@ -1389,6 +1433,7 @@
 %%WWWDIR%%/plugins/Referers/images/searchEngines/www3.zoek.nl.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/xx.gif
 %%WWWDIR%%/plugins/Referers/images/searchEngines/xx.png
+%%WWWDIR%%/plugins/Referers/images/searchEngines/yandex.com.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/yellowmap.de.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/zoohoo.cz.png
 %%WWWDIR%%/plugins/Referers/templates/index.tpl
@@ -1827,6 +1872,7 @@
 %%WWWDIR%%/plugins/UserSettings/images/plugins/silverlight.gif
 %%WWWDIR%%/plugins/UserSettings/images/plugins/windowsmedia.gif
 %%WWWDIR%%/plugins/UserSettings/images/screens/dual.gif
+%%WWWDIR%%/plugins/UserSettings/images/screens/mobile.gif
 %%WWWDIR%%/plugins/UserSettings/images/screens/normal.gif
 %%WWWDIR%%/plugins/UserSettings/images/screens/wide.gif
 %%WWWDIR%%/plugins/UserSettings/templates/index.tpl
@@ -1834,12 +1880,8 @@
 %%WWWDIR%%/plugins/UsersManager/Controller.php
 %%WWWDIR%%/plugins/UsersManager/UsersManager.php
 %%WWWDIR%%/plugins/UsersManager/images/add.png
-%%WWWDIR%%/plugins/UsersManager/images/edit.png
 %%WWWDIR%%/plugins/UsersManager/images/no-access.png
-%%WWWDIR%%/plugins/UsersManager/images/no.png
 %%WWWDIR%%/plugins/UsersManager/images/ok.png
-%%WWWDIR%%/plugins/UsersManager/images/remove.png
-%%WWWDIR%%/plugins/UsersManager/images/valid.png
 %%WWWDIR%%/plugins/UsersManager/templates/UsersManager.js
 %%WWWDIR%%/plugins/UsersManager/templates/UsersManager.tpl
 %%WWWDIR%%/plugins/UsersManager/templates/userSettings.js
@@ -1915,6 +1957,7 @@
 %%WWWDIR%%/themes/default/images/link.gif
 %%WWWDIR%%/themes/default/images/loading-blue.gif
 %%WWWDIR%%/themes/default/images/logo.png
+%%WWWDIR%%/themes/default/images/logo-header.png
 %%WWWDIR%%/themes/default/images/maximise.png
 %%WWWDIR%%/themes/default/images/minus.png
 %%WWWDIR%%/themes/default/images/ok.png
@@ -2028,6 +2071,7 @@
 @dirrm %%WWWDIR%%/plugins/Dashboard
 @dirrm %%WWWDIR%%/plugins/DBStats/templates
 @dirrm %%WWWDIR%%/plugins/DBStats
+@dirrm %%WWWDIR%%/plugins/CustomVariables
 @dirrm %%WWWDIR%%/plugins/CoreUpdater/templates
 @dirrm %%WWWDIR%%/plugins/CoreUpdater
 @dirrm %%WWWDIR%%/plugins/CorePluginsAdmin/templates
@@ -2072,6 +2116,13 @@
 @dirrm %%WWWDIR%%/libs/Zend/Session/Validator
 @dirrm %%WWWDIR%%/libs/Zend/Session/SaveHandler
 @dirrm %%WWWDIR%%/libs/Zend/Session
+@dirrm %%WWWDIR%%/libs/Zend/OpenId/Provider/User
+@dirrm %%WWWDIR%%/libs/Zend/OpenId/Provider/Storage
+@dirrm %%WWWDIR%%/libs/Zend/OpenId/Provider
+@dirrm %%WWWDIR%%/libs/Zend/OpenId/Extension
+@dirrm %%WWWDIR%%/libs/Zend/OpenId/Consumer/Storage
+@dirrm %%WWWDIR%%/libs/Zend/OpenId/Consumer
+@dirrm %%WWWDIR%%/libs/Zend/OpenId
 @dirrm %%WWWDIR%%/libs/Zend/Mime
 @dirrm %%WWWDIR%%/libs/Zend/Mail/Transport
 @dirrm %%WWWDIR%%/libs/Zend/Mail/Storage/Writable
@@ -2087,9 +2138,10 @@
 @dirrm %%WWWDIR%%/libs/Zend/Log/Formatter
 @dirrm %%WWWDIR%%/libs/Zend/Log/Filter
 @dirrm %%WWWDIR%%/libs/Zend/Log
-@dirrm %%WWWDIR%%/libs/Zend/Loader/PluginLoader
-@dirrm %%WWWDIR%%/libs/Zend/Loader/Autoloader
-@dirrm %%WWWDIR%%/libs/Zend/Loader
+@dirrm %%WWWDIR%%/libs/Zend/Http/UserAgent/Storage
+@dirrm %%WWWDIR%%/libs/Zend/Http/UserAgent/Features/Adapter
+@dirrm %%WWWDIR%%/libs/Zend/Http/UserAgent/Features
+@dirrm %%WWWDIR%%/libs/Zend/Http/UserAgent
 @dirrm %%WWWDIR%%/libs/Zend/Http/Response
 @dirrm %%WWWDIR%%/libs/Zend/Http/Client/Adapter
 @dirrm %%WWWDIR%%/libs/Zend/Http/Client
