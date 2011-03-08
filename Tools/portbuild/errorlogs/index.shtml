@@ -590,6 +590,12 @@ See <a href="http://wiki.freebsd.org/gcc4">the wiki page</a>
 for further information.</dd>
 
 <dt><img alt="(common)" src="/errorlogs/images/blue-ball.gif"><a name=
+"gmake">gmake</a></dt>
+
+<dd>Your code does not run with the latest, incompatible, gmake version
+(3.82.)</dd>
+
+<dt><img alt="(common)" src="/errorlogs/images/blue-ball.gif"><a name=
 "install">install error</a></dt>
 
 <dd>There was an error during installation.</dd>
