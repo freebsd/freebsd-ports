@@ -6,16 +6,21 @@
 #
 
 PORTNAME=	sinfp
+PORTREVISION=	${DBDATE}
+
+MAINTAINER=	sbrabez@gmail.com
+COMMENT=	Full operating system stack fingerprinting suite
 
 BUILD_DEPENDS=	p5-Net-SinFP>=2.02:${PORTSDIR}/security/p5-Net-SinFP
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PLIST=		""
-PLIST_FILES=	bin/${PORTNAME} %%DATADIR%%/${PORTNAME}.db
+PLIST_FILES=	bin/${PORTNAME} \
+		%%DATADIR%%/${PORTNAME}.db
 PLIST_DIRS=	%%DATADIR%%
 NO_BUILD=	yes
 MASTERDIR=	${.CURDIR}/../p5-Net-SinFP
-DBDATE=		20080419
+DBDATE=		20101224
 
 post-patch:
 	@${REINPLACE_CMD} -e 's!$$Bin/../db/!${DATADIR}/!' ${WRKSRC}/bin/${PORTNAME}.pl
