@@ -1307,9 +1307,7 @@ share/xsessions/XBMC.desktop
 @dirrm lib/xbmc/addons/visualization.waveform
 @dirrm lib/xbmc/addons/visualization.projectm
 @dirrm lib/xbmc/addons/visualization.glspectrum
-@dirrm lib/xbmc/addons/script.module.pysqlite/lib
 @dirrm lib/xbmc/addons/script.module.pysqlite
-@dirrm lib/xbmc/addons/script.module.pil/lib
 @dirrm lib/xbmc/addons/script.module.pil
 @dirrm lib/xbmc/addons/screensaver.rsxs.solarwinds
 @dirrm lib/xbmc/addons/screensaver.rsxs.plasma
