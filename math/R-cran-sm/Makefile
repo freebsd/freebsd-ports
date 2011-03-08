@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	sm
-PORTVERSION=	2.2.4
-PORTREVISION=	2
+PORTVERSION=	2.2.4.1
 CATEGORIES=	math
 PKGNAMEPREFIX=	R-cran-
-DISTNAME=	${PORTNAME}_2.2-4
+DISTNAME=	${PORTNAME}_2.2-4.1
 
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Smoothing methods for nonparametric regression and density estimation
