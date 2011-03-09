@@ -1,0 +1,7 @@
+Plack::Middleware::Expires is Apache's mod_expires for Plack. This
+middleware controls the setting of Expires HTTP header and the max-age
+directive of the Cache-Control HTTP header in server responses. Note:
+Expires works only for successful response and If exists Expires HTTP
+header already, this middleware does not override.
+
+WWW:	http://search.cpan.org/dist/Plack-Middleware-Expires/
