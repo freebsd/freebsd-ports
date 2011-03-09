@@ -117,7 +117,6 @@ MASTER_SITE_CHEESESHOP+=	\
 	http://pypi.d9t.de/${DISTNAME:S/${DISTVERSION}//:S/-//}/ \
 	http://pypi.inqbus.de/${DISTNAME:S/${DISTVERSION}//:S/-//}/ \
 	http://pypi.it.uwosh.edu/${DISTNAME:S/${DISTVERSION}//:S/-//}/ \
-	http://pypi.netsight.co.uk/${DISTNAME:S/${DISTVERSION}//:S/-//}/ \
 	http://pypi.python.jp/${DISTNAME:S/${DISTVERSION}//:S/-//}/ \
 	http://pypi.websushi.org/${DISTNAME:S/${DISTVERSION}//:S/-//}/ \
 	http://pypi.zopyx.com/${DISTNAME:S/${DISTVERSION}//:S/-//}/
@@ -136,7 +135,8 @@ MASTER_SITE_CRITICAL+=	\
 	http://snow.critical.ch/distfiles/%SUBDIR%/ \
 	http://sauerkraut.critical.ch/distfiles/%SUBDIR%/ \
 	http://www.bluestop.org/distfiles/%SUBDIR%/ \
-	http://fneu.fr/distfiles/%SUBDIR%/
+	http://fneu.fr/distfiles/%SUBDIR%/ \
+	ftp://ftp.c.saper.info/distfiles/%SUBDIR%/
 .endif
 
 .if !defined(IGNORE_MASTER_SITE_CSME)
@@ -246,8 +246,7 @@ MASTER_SITE_EXIM+=	\
 	http://sunsite.icm.edu.pl/pub/unix/mail/exim/exim/%SUBDIR%/ \
 	ftp://ftp.is.co.za/networking/mail/mta/exim/ftp/exim/%SUBDIR%/ \
 	ftp://mirrors.dominios.pt/pub/ftp.exim.org/exim/%SUBDIR%/ \
-	http://exim.n9.ru/ftp/exim/%SUBDIR%/ \
-	ftp://mirror.switch.ch/mirror/exim/exim/%SUBDIR%/ \
+	Ftp://mirror.switch.ch/mirror/exim/exim/%SUBDIR%/ \
 	http://mirror.switch.ch/ftp/mirror/exim/exim/%SUBDIR%/ \
 	ftp://ftp.reaper.org/pub/exim/exim/%SUBDIR%/ \
 	ftp://sunsite.cnlab-switch.ch/mirror/exim/exim/%SUBDIR%/ \
@@ -397,7 +396,6 @@ MASTER_SITE_FEDORA_LINUX+= \
 	http://mirror.anl.gov/pub/fedora-linux-core/%SUBDIR%/ \
 	ftp://mirror.anl.gov/pub/fedora-linux-core/%SUBDIR%/ \
 	ftp://ftp.cse.buffalo.edu/pub/Linux/fedora/linux/core/%SUBDIR%/ \
-	ftp://ftp.software.umn.edu/linux/fedora/core/%SUBDIR%/ \
 	ftp://ftp.applios.net/pub/fedora/linux/core/%SUBDIR%/ \
 	http://mirror.steadfast.net/fedora/core/%SUBDIR%/ \
 	http://mirror.eas.muohio.edu/fedora/linux/core/%SUBDIR%/ \
