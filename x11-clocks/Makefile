@@ -35,6 +35,7 @@
     SUBDIR += oclock
     SUBDIR += osdclock
     SUBDIR += pclock
+    SUBDIR += plasma-applet-adjustableclock
     SUBDIR += plasma-applet-geekclock
     SUBDIR += rclock
     SUBDIR += sanduhr
