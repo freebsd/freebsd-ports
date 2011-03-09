@@ -10,13 +10,3 @@
  
  /**********************
   * Non-free Components
-@@ -134,7 +136,9 @@
- #define HAS_GLX
- #define HAS_LINUX_NETWORK
- #define HAS_SDL_AUDIO
-+#if !defined(__FreeBSD__)
- #define HAS_LIRC
-+#endif
- #define HAS_SDL_WIN_EVENTS
- #ifdef HAVE_LIBPULSE
- #define HAS_PULSEAUDIO

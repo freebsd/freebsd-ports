@@ -7,7 +7,7 @@
 
 PORTNAME=	xbmc
 PORTVERSION=	10.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	multimedia
 MASTER_SITES=	http://mirrors.xbmc.org/releases/source/
 
@@ -69,7 +69,7 @@ USE_XORG=	xinerama xt xmu xrandr
 USE_GL=		glu
 USE_SDL=	image mixer sdl
 USE_MYSQL=	yes
-USE_PYTHON=	2.5-2.6
+USE_PYTHON=	2.5-2.7
 MAKE_JOBS_SAFE=	yes
 NOPRECIOUSMAKEVARS=	yes
 INSTALLS_ICONS=	yes
@@ -85,6 +85,7 @@ OPTIONS=	AVAHI		"Enable Avahi support"			on \
 		LIBBLURAY	"Enable libbluray support"		on \
 		FAAC		"Enable FAAC support"			off \
 		HAL		"Enable HAL support"			on \
+		LIRC		"Enable lirc support"			off \
 		MMS		"Enable mms:// & mmsh:// support"	on \
 		NONFREE		"Enable non-free components (rar, ccx, ffmpeg)"	off \
 		PULSE		"Enable PulseAudio support"		off \
@@ -146,6 +147,10 @@ LIB_DEPENDS+=	hal.1:${PORTSDIR}/sysutils/hal
 CONFIGURE_ARGS+=	--disable-hal
 .endif
 
+.if defined(WITH_LIRC)
+RUN_DEPENDS+=	lirc_client.2:${PORTSDIR}/comms/lirc
+.endif
+
 .if !defined(WITHOUT_MMS)
 CONFIGURE_ARGS+=	--enable-libmms
 LIB_DEPENDS+=	mms.0:${PORTSDIR}/net/libmms
@@ -192,7 +197,6 @@ PLIST_SUB+=	HTTPD="@comment "
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|#!/bin/bash|#!/bin/sh|' ${WRKSRC}/XBMC.xcodeproj/project.pbxproj
 	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g' \
 		${WRKSRC}/configure.in \
 		${WRKSRC}/lib/enca/configure \
@@ -252,6 +256,47 @@ post-patch:
 		${WRKSRC}/xbmc/screensavers/rsxs-0.9/configure \
 		${WRKSRC}/xbmc/visualizations/Goom/goom2k4-0/configure \
 		${WRKSRC}/xbmc/visualizations/Goom/goom2k4-0/gtk-gui-devel/configure
+	@${REINPLACE_CMD} -e "s;python2\.6;${PYTHON_VERSION};" \
+		-e "s;HAVE_LIBPYTHON2_6;HAVE_LIB${PYTHON_VERSION:U:S/./_/g};" \
+		${WRKSRC}/xbmc/lib/libPython/XBPyThread.cpp \
+		${WRKSRC}/xbmc/lib/libPython/XBPyThread.h \
+		${WRKSRC}/xbmc/lib/libPython/XBPythonDll.cpp \
+		${WRKSRC}/xbmc/lib/libPython/XBPythonDllFuncs.S \
+		${WRKSRC}/xbmc/lib/libPython/xbmcmodule/GUIPythonWindow.h \
+		${WRKSRC}/xbmc/lib/libPython/xbmcmodule/PythonAddon.h \
+		${WRKSRC}/xbmc/lib/libPython/xbmcmodule/PythonPlayer.h \
+		${WRKSRC}/xbmc/lib/libPython/xbmcmodule/action.h \
+		${WRKSRC}/xbmc/lib/libPython/xbmcmodule/control.h \
+		${WRKSRC}/xbmc/lib/libPython/xbmcmodule/controlbutton.cpp \
+		${WRKSRC}/xbmc/lib/libPython/xbmcmodule/controlcheckmark.cpp \
+		${WRKSRC}/xbmc/lib/libPython/xbmcmodule/controlfadelabel.cpp \
+		${WRKSRC}/xbmc/lib/libPython/xbmcmodule/controlgroup.cpp \
+		${WRKSRC}/xbmc/lib/libPython/xbmcmodule/controlimage.cpp \
+		${WRKSRC}/xbmc/lib/libPython/xbmcmodule/controllabel.cpp \
+		${WRKSRC}/xbmc/lib/libPython/xbmcmodule/controllist.cpp \
+		${WRKSRC}/xbmc/lib/libPython/xbmcmodule/controlprogress.cpp \
+		${WRKSRC}/xbmc/lib/libPython/xbmcmodule/controlradiobutton.cpp \
+		${WRKSRC}/xbmc/lib/libPython/xbmcmodule/controlslider.cpp \
+		${WRKSRC}/xbmc/lib/libPython/xbmcmodule/controlspin.cpp \
+		${WRKSRC}/xbmc/lib/libPython/xbmcmodule/controltextbox.cpp \
+		${WRKSRC}/xbmc/lib/libPython/xbmcmodule/dialog.cpp \
+		${WRKSRC}/xbmc/lib/libPython/xbmcmodule/dialog.h \
+		${WRKSRC}/xbmc/lib/libPython/xbmcmodule/infotagmusic.h \
+		${WRKSRC}/xbmc/lib/libPython/xbmcmodule/infotagvideo.h \
+		${WRKSRC}/xbmc/lib/libPython/xbmcmodule/keyboard.h \
+		${WRKSRC}/xbmc/lib/libPython/xbmcmodule/listitem.cpp \
+		${WRKSRC}/xbmc/lib/libPython/xbmcmodule/listitem.h \
+		${WRKSRC}/xbmc/lib/libPython/xbmcmodule/player.h \
+		${WRKSRC}/xbmc/lib/libPython/xbmcmodule/pyplaylist.cpp \
+		${WRKSRC}/xbmc/lib/libPython/xbmcmodule/pyplaylist.h \
+		${WRKSRC}/xbmc/lib/libPython/xbmcmodule/pyutil.h \
+		${WRKSRC}/xbmc/lib/libPython/xbmcmodule/window.h \
+		${WRKSRC}/xbmc/lib/libPython/xbmcmodule/winxml.cpp \
+		${WRKSRC}/xbmc/lib/libPython/xbmcmodule/winxml.h \
+		${WRKSRC}/xbmc/lib/libPython/xbmcmodule/winxmldialog.cpp \
+		${WRKSRC}/xbmc/lib/libPython/xbmcmodule/xbmcaddonmodule.cpp \
+		${WRKSRC}/xbmc/lib/libPython/xbmcmodule/xbmcguimodule.cpp \
+		${WRKSRC}/xbmc/lib/libPython/xbmcmodule/xbmcmodule.cpp
 
 pre-configure:
 	cd ${WRKSRC} && ./bootstrap
