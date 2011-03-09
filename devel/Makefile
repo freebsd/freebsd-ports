@@ -2590,6 +2590,7 @@
     SUBDIR += pear-PEAR_PackageFileManager2
     SUBDIR += pear-PEAR_PackageFileManager_Plugins
     SUBDIR += pear-PHPDoc
+    SUBDIR += pear-PHPTAL
     SUBDIR += pear-PHPUnit
     SUBDIR += pear-PHPUnit2
     SUBDIR += pear-PHPUnit3
