@@ -9,4 +9,6 @@ MASTERDIR=		${.CURDIR}/../petsc
 
 WITH_MPI=		yes
 
+BROKEN=		filesystem was touched prior to make install phase
+
 .include "${MASTERDIR}/Makefile"
