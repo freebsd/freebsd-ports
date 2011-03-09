@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libva
-PORTVERSION=	1.0.7
+PORTVERSION=	1.0.10
 CATEGORIES=	multimedia
 MASTER_SITES=	http://cgit.freedesktop.org/${PORTNAME}/snapshot/
 
@@ -50,7 +50,8 @@ post-patch:	.SILENT
 	${REINPLACE_CMD} -e 's|\($$libdir\)/dri|\1/va|' \
 		-e 's|$${libdir}/\(pkgconfig\)|$${prefix}/libdata/\1|' \
 		${WRKSRC}/configure.ac
-	${REINPLACE_CMD} 's/va\(info\)/\1/' ${WRKSRC}/test/Makefile.am
+	${REINPLACE_CMD} 's/va\(info\)/\1/' \
+		${WRKSRC}/test/vainfo/Makefile.am
 	${REINPLACE_CMD} 's/-ldl//' ${WRKSRC}/va/Makefile.am
 	${REINPLACE_CMD} 's/LDFLAGS.*/& -Wl,-lc/' \
 		${WRKSRC}/dummy_drv_video/Makefile.am \
