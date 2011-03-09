@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bitflu
-PORTVERSION=	1.10
+PORTVERSION=	1.35
 CATEGORIES=	net-p2p
 MASTER_SITES=	http://bitflu.workaround.ch/bitflu/ CENKES
 EXTRACT_SUFX=	.tgz
@@ -48,10 +48,6 @@ post-patch:
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME}.pl \
 		${PREFIX}/bin/${PORTNAME}
-	${INSTALL_SCRIPT} ${WRKSRC}/tools/fluconvert.pl \
-		${PREFIX}/bin/fluconvert.pl
-	${INSTALL_SCRIPT} ${WRKSRC}/tools/dumptorrent.pl \
-		${PREFIX}/bin/dumptorrent.pl
 	${MKDIR} ${PREFIX}/${PLUGINSDIR}
 	${INSTALL_DATA} ${WRKSRC}/plugins/Bitflu/*.pm ${PREFIX}/${PLUGINSDIR}/
 .if !defined(NOPORTEXAMPLES)
@@ -62,8 +58,6 @@ do-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/tools/fluconvert-README.txt \
-		${DOCSDIR}/fluconvert-README.txt
 .endif
 	@${CAT} ${PKGMESSAGE}
 
