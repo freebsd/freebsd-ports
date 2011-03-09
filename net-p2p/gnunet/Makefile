@@ -27,6 +27,8 @@ LIB_DEPENDS=	adns.1:${PORTSDIR}/dns/adns \
 		extractor.3:${PORTSDIR}/textproc/libextractor \
 		microhttpd.12:${PORTSDIR}/www/libmicrohttpd
 
+BROKEN=		does not configure
+
 OPTIONS=	MYSQL	"Enable MySQL support"		on \
 		PGSQL	"Enable PostgreSQL support"	off \
 		SQLITE	"Enable SQLite support"		off
