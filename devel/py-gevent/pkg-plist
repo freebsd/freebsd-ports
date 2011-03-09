@@ -23,6 +23,9 @@
 %%PYTHON_SITELIBDIR%%/gevent/http.py
 %%PYTHON_SITELIBDIR%%/gevent/http.pyc
 %%PYTHON_SITELIBDIR%%/gevent/http.pyo
+%%PYTHON_SITELIBDIR%%/gevent/httplib.py
+%%PYTHON_SITELIBDIR%%/gevent/httplib.pyc
+%%PYTHON_SITELIBDIR%%/gevent/httplib.pyo
 %%PYTHON_SITELIBDIR%%/gevent/hub.py
 %%PYTHON_SITELIBDIR%%/gevent/hub.pyc
 %%PYTHON_SITELIBDIR%%/gevent/hub.pyo
