@@ -196,3 +196,4 @@ dlna:*:933:933::0:0:DLNA Daemon:/nonexistent:/sbin/nologin
 torrus:*:934:934::0:0:torrus daemon:/nonexistent:/sbin/nologin
 erlyvideo:*:935:935::0:0:erlyvideo user:/nonexistent:/sbin/nologin
 crtmpserver:*:936:936::0:0:crtmpserver user:/nonexistent:/sbin/nologin
+get_iplayer:*:937:937::0:0:get_iplayer user:/nonexistent:/sbin/nologin
