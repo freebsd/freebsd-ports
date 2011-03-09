@@ -21,7 +21,7 @@ MLINKS+=\
 	tset.1 reset.1
 
 .if !defined(WITHOUT_WIDEC)
-MAN1+=	ncursesw5-config.1
+MAN1+=	ncursesw${NCURSESW_ABI_VER}-config.1
 .endif
 
 MAN5=	term.5 terminfo.5
