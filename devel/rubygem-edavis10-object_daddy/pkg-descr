@@ -1,0 +1,7 @@
+Object Daddy is a library (as well as a Ruby on Rails plugin) designed to
+assist in automating testing of large collections of objects, especially webs
+of ActiveRecord models. It is a descendent of the "Object Mother" pattern for
+creating objects for testing, and is related to the concept of an "object
+exemplar" or stereotype. This is a fork of the original object_daddy.
+
+WWW: https://github.com/edavis10/object_daddy
