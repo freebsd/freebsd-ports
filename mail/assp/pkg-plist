@@ -24,6 +24,7 @@ sbin/assplog
 %%DATADIR%%/files/nodelayhelosre.txt
 %%DATADIR%%/files/nogrip.txt
 %%DATADIR%%/files/nookcaching.txt
+%%DATADIR%%/files/nopbwhite.txt
 %%DATADIR%%/files/notls.txt
 %%DATADIR%%/files/nowhite.txt
 %%DATADIR%%/files/npre.txt
