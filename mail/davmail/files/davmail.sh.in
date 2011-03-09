@@ -1,4 +1,5 @@
 #!/bin/sh
-BASE="%BASE%"
+# $FreeBSD$
+BASE="%%DATADIR%%"
 for i in $BASE/lib/*; do export CLASSPATH=$CLASSPATH:$i; done
-java -cp $BASE/davmail.jar:$CLASSPATH:%JAVASHAREDIR%/classes/swt.jar davmail.DavGateway $1
+java -cp $BASE/davmail.jar:$CLASSPATH:%%JAVASHAREDIR%%/classes/swt.jar davmail.DavGateway $1

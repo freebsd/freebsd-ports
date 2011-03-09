@@ -1,4 +1,4 @@
-# New ports collection makefile for:	davmail
+# New ports collection Makefile for:	davmail
 # Date created:				28 Oct 2010
 # Whom:					John Prather
 #
@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	davmail
-PORTVERSION=	3.8.7
+PORTVERSION=	3.9.0
 CATEGORIES=	mail java
 MASTER_SITES=	SF/davmail/davmail/${PORTVERSION}
-DISTNAME=	${PORTNAME}-src-${PORTVERSION}-1558
+DISTNAME=	${PORTNAME}-src-${PORTVERSION}-1630
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	john.c.prather@gmail.com
@@ -23,16 +23,16 @@ JAVA_VERSION=	1.6+
 
 DATADIR=	${JAVASHAREDIR}/${PORTNAME}
 
-post-build:
-	${CP} ${FILESDIR}/davmail.sh.in ${WRKDIR}/davmail.sh
-	${REINPLACE_CMD} -e "s|%BASE%|${DATADIR}|" \
-			-e "s|%JAVASHAREDIR%|${JAVASHAREDIR}|" \
-		${WRKDIR}/davmail.sh
+USE_RC_SUBR=	davmail
+SUB_FILES=	davmail.sh
+SUB_LIST=	JAVASHAREDIR=${JAVASHAREDIR} \
+		JAVAJARDIR=${JAVAJARDIR} \
+		PORTNAME=${PORTNAME}
 
 do-install:
-	cd ${WRKSRC}/dist && ${FIND} . -type d \
+	@cd ${WRKSRC}/dist && ${FIND} . -type d \
 		-exec ${MKDIR} ${DATADIR}/\{} \;
-	cd ${WRKSRC}/dist && ${FIND} . -type f \
+	@cd ${WRKSRC}/dist && ${FIND} . -type f \
 		-not -name "*.deb" \
 		-not -name "*.tgz" \
 		-not -name "*.exe" \
@@ -41,6 +41,14 @@ do-install:
 		-not -name "*.war" \
 		-not -name "*.rpm" \
 		-exec ${INSTALL_DATA} \{} ${DATADIR}/\{} \;
-	${INSTALL_SCRIPT} ${WRKDIR}/davmail.sh ${PREFIX}/bin/davmail
+	@@${INSTALL_SCRIPT} ${WRKDIR}/davmail.sh ${PREFIX}/bin/davmail
+	@@${INSTALL_DATA} ${FILESDIR}/davmail.properties.sample \
+		${PREFIX}/etc
+
+post-install:
+	@if [ ! -f ${PREFIX}/etc/davmail.properties ]; then \
+		${CP} -p ${PREFIX}/etc/davmail.properties.sample \
+			${PREFIX}/etc/davmail.properties ; \
+	fi
 
 .include <bsd.port.mk>
