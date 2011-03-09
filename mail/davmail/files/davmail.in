@@ -1,0 +1,43 @@
+#!/bin/sh
+
+# $FreeBSD$
+#
+# PROVIDE: %%PORTNAME%%
+# REQUIRE: LOGIN
+#
+# Add the following lines to /etc/rc.conf or /etc/rc.conf.local to
+# enable %%PORTNAME%%:
+# %%PORTNAME%%_enable (bool):	Set to "NO" by default.
+# %%PORTNAME%%_config (path):	Set to 
+#				"%%PREFIX%%/etc/%%PORTNAME%%.properties"
+#				by default
+
+. /etc/rc.subr
+
+name="%%PORTNAME%%"
+rcvar=`set_rcvar`
+
+load_rc_config $name
+
+: ${%%PORTNAME%%_enable="NO"}
+: ${%%PORTNAME%%_config="%%PREFIX%%/etc/%%PORTNAME%%.properties"}
+
+start_cmd="${name}_start"
+
+procname="java"
+pidfile="/var/run/%%PORTNAME%%.pid"
+required_files=${%%PORTNAME%%_config}
+
+%%PORTNAME%%_start()
+{
+	if [ -z "$rc_fast" -a -n "$rc_pid" ]; then
+		echo 1>&2 "${name} already running? (pid=$rc_pid)."
+		return 1
+	fi
+	echo "Starting ${name}."
+	for i in %%DATADIR%%/lib/*; do export CLASSPATH=$CLASSPATH:$i; done
+	java -cp %%DATADIR%%/%%PORTNAME%%.jar:$CLASSPATH:%%JAVAJARDIR%%/swt.jar %%PORTNAME%%.DavGateway ${davmail_config} >> /var/log/%%PORTNAME%%-error.log 2>&1 &
+	echo -n $! > ${pidfile}
+}
+
+run_rc_command "$1"

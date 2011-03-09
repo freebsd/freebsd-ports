@@ -1,0 +1,34 @@
+# Sample davmail properties file
+#
+# $FreeBSD$
+#
+davmail.url=https://--your-exchange-server-uri--/owa
+davmail.popPort=1110
+davmail.imapPort=1143
+davmail.smtpPort=1025
+davmail.caldavPort=1080
+davmail.ldapPort=1389
+davmail.keepDelay=30
+davmail.sentKeepDelay=90
+davmail.caldavPastDelay=90
+davmail.imapIdleDelay=
+davmail.useSystemProxies=false
+davmail.enableProxy=false
+davmail.proxyHost=
+davmail.proxyPort=
+davmail.proxyUser=
+davmail.proxyPassword=
+davmail.ssl.keystoreType=JKS
+davmail.ssl.keyPass=
+davmail.ssl.keystoreFile=
+davmail.ssl.keystorePass=
+davmail.server=true
+davmail.server.certificate.hash=
+davmail.bindAddress=
+davmail.allowRemote=true
+davmail.disableUpdateCheck=false
+log4j.rootLogger=WARN
+log4j.logger.davmail=DEBUG
+log4j.logger.org.apache.commons.httpclient=WARN
+log4j.logger.httpclient.wire=WARN
+davmail.logFilePath=/var/log/davmail.log
