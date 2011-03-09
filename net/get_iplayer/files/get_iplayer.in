@@ -1,0 +1,52 @@
+#!/bin/sh
+
+# $FreeBSD$
+#
+# PROVIDE: get_iplayer
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf or /etc/rc.conf.local to
+# enable get_iplayer:
+# get_iplayer_enable (bool):	Set to "NO" by default.
+# get_iplayer_chdir (string):	Set to "/tmp" by default; this is where
+#				downloaded files are stored. Should be writable
+#				by get_iplayer user.
+# get_iplayer_flags (string):	Set to "" by default.
+# get_iplayer_bind_port (number):	Set to 9370 by default.
+# get_iplayer_listen_address (IP address):	Set to 127.0.0.1 by default.
+#
+##########################################################
+## WARNING:
+## For security reasons, do NOT set get_iplayer_bind_port
+## unless your box is firewalled to allow only connections
+## from your local subnet. It is safest to use SSH
+## tunnelling if remote access is needed.
+##########################################################
+
+
+. /etc/rc.subr
+
+name="get_iplayer"
+rcvar=`set_rcvar`
+
+load_rc_config $name
+
+: ${get_iplayer_enable="NO"}
+: ${get_iplayer_bind_port="9370"}
+: ${get_iplayer_listen_address="127.0.0.1"}
+: ${get_iplayer_chdir="/tmp"}
+
+command="/usr/sbin/daemon"
+command_args="-f -u ${name} -p /var/run/${name}/${name}.pid %%WWWDIR%%/${name}.cgi -p ${get_iplayer_bind_port} -l ${get_iplayer_listen_address} --getiplayer %%WWWDIR%%/${name}"
+procname="/usr/bin/perl"
+pidfile="/var/run/${name}/${name}.pid"
+
+start_precmd="${name}_prestart"
+
+get_iplayer_prestart()
+{
+	install -d -o ${name} -m755 /var/run/${name}
+}
+
+run_rc_command "$1"
