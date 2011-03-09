@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	vdpau-video
-DISTVERSION=	0.7.3.pre4
+DISTVERSION=	0.7.3
 CATEGORIES=	multimedia
 MASTER_SITES=	http://www.splitted-desktop.com/~gbeauchesne/${PORTNAME}/
 
@@ -45,6 +45,7 @@ post-patch:	.SILENT
 	${REINPLACE_CMD} -e '/LIBS/{ s/-ldl//; \
 		s/-lrt//; s/-lpthread/${PTHREAD_LIBS}/; }' \
 		-e 's|driverdir|& --define-variable prefix=${PREFIX}|' \
+		-e '/\^vdpau_version/s|$$CC -E|& ${CPPFLAGS}|' \
 		 ${WRKSRC}/configure
 	${REINPLACE_CMD} 's/^vdpau.*LDFLAGS.*/& \
 		-Wl,-lc ${VDPAU_PTHREAD_LIBS:S/^/-Wl,/}/' \
