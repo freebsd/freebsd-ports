@@ -15,7 +15,7 @@ COMMENT=	A procedural terrain library
 
 LIB_DEPENDS=	wfmath-0.3.4:${PORTSDIR}/math/wfmath
 
-USE_GNOME=	pkgconfig
+USE_GNOME=	pkgconfig gnomehack
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
