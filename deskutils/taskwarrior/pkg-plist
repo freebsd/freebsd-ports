@@ -1,33 +1,10 @@
 bin/task
-%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
-%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
-%%PORTDOCS%%%%DOCSDIR%%/COPYING
-%%PORTDOCS%%%%DOCSDIR%%/NEWS
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%DATADIR%%/rc/dark-16.theme
-%%DATADIR%%/rc/dark-256.theme
-%%DATADIR%%/rc/dark-blue-256.theme
-%%DATADIR%%/rc/dark-green-256.theme
-%%DATADIR%%/rc/dark-red-256.theme
-%%DATADIR%%/rc/dark-violets-256.theme
-%%DATADIR%%/rc/dark-yellow-green.theme
-%%DATADIR%%/rc/holidays-CA.rc
-%%DATADIR%%/rc/holidays-DE.rc
-%%DATADIR%%/rc/holidays-ES.rc
-%%DATADIR%%/rc/holidays-FR.rc
-%%DATADIR%%/rc/holidays-NL.rc
-%%DATADIR%%/rc/holidays-SE.rc
-%%DATADIR%%/rc/holidays-UK.rc
-%%DATADIR%%/rc/holidays-US.rc
-%%DATADIR%%/rc/light-16.theme
-%%DATADIR%%/rc/light-256.theme
-%%DATADIR%%/scripts/bash/task_completion.sh
-%%DATADIR%%/scripts/vim/README
-%%DATADIR%%/scripts/vim/ftdetect/task.vim
-%%DATADIR%%/scripts/vim/syntax/taskdata.vim
-%%DATADIR%%/scripts/vim/syntax/taskedit.vim
-%%DATADIR%%/scripts/vim/syntax/taskrc.vim
-%%DATADIR%%/scripts/zsh/_task
+%%DATADIR%%/AUTHORS
+%%DATADIR%%/ChangeLog
+%%DATADIR%%/COPYING
+%%DATADIR%%/INSTALL
+%%DATADIR%%/NEWS
+%%DATADIR%%/README
 %%DATADIR%%/i18n/strings.de-DE
 %%DATADIR%%/i18n/strings.en-US
 %%DATADIR%%/i18n/strings.es-ES
@@ -37,13 +14,51 @@ bin/task
 %%DATADIR%%/i18n/tips.de-DE
 %%DATADIR%%/i18n/tips.en-US
 %%DATADIR%%/i18n/tips.sv-SE
+%%DATADIR%%/rc/dark-16.theme
+%%DATADIR%%/rc/dark-256.theme
+%%DATADIR%%/rc/dark-blue-256.theme
+%%DATADIR%%/rc/dark-gray-256.theme
+%%DATADIR%%/rc/dark-green-256.theme
+%%DATADIR%%/rc/dark-red-256.theme
+%%DATADIR%%/rc/dark-violets-256.theme
+%%DATADIR%%/rc/dark-yellow-green.theme
+%%DATADIR%%/rc/holidays-AT.rc
+%%DATADIR%%/rc/holidays-CA.rc
+%%DATADIR%%/rc/holidays-DE.rc
+%%DATADIR%%/rc/holidays-DK.rc
+%%DATADIR%%/rc/holidays-ES.rc
+%%DATADIR%%/rc/holidays-FR.rc
+%%DATADIR%%/rc/holidays-IT.rc
+%%DATADIR%%/rc/holidays-NL.rc
+%%DATADIR%%/rc/holidays-NO.rc
+%%DATADIR%%/rc/holidays-NZ.rc
+%%DATADIR%%/rc/holidays-SE.rc
+%%DATADIR%%/rc/holidays-UK.rc
+%%DATADIR%%/rc/holidays-US.rc
+%%DATADIR%%/rc/light-16.theme
+%%DATADIR%%/rc/light-256.theme
+%%DATADIR%%/scripts/add-ons/export-csv.pl
+%%DATADIR%%/scripts/add-ons/export-ical.pl
+%%DATADIR%%/scripts/add-ons/export-xml.pl
+%%DATADIR%%/scripts/add-ons/export-xml.py
+%%DATADIR%%/scripts/add-ons/export-xml.rb
+%%DATADIR%%/scripts/add-ons/export-yaml.pl
+%%DATADIR%%/scripts/bash/task_completion.sh
+%%DATADIR%%/scripts/fish/task.fish
+%%DATADIR%%/scripts/vim/README
+%%DATADIR%%/scripts/vim/ftdetect/task.vim
+%%DATADIR%%/scripts/vim/syntax/taskdata.vim
+%%DATADIR%%/scripts/vim/syntax/taskedit.vim
+%%DATADIR%%/scripts/vim/syntax/taskrc.vim
+%%DATADIR%%/scripts/zsh/_task
 @dirrm %%DATADIR%%/scripts/zsh
 @dirrm %%DATADIR%%/scripts/vim/syntax
 @dirrm %%DATADIR%%/scripts/vim/ftdetect
 @dirrm %%DATADIR%%/scripts/vim
+@dirrm %%DATADIR%%/scripts/fish
 @dirrm %%DATADIR%%/scripts/bash
+@dirrm %%DATADIR%%/scripts/add-ons
 @dirrm %%DATADIR%%/scripts
 @dirrm %%DATADIR%%/i18n
 @dirrm %%DATADIR%%/rc
 @dirrm %%DATADIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
