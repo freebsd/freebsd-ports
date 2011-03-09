@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	zip
-PORTVERSION=	0.9.1
+PORTVERSION=	0.9.4
 CATEGORIES=	archivers ruby
 MASTER_SITES=	SF/ruby${PORTNAME}/ruby${PORTNAME}/${PORTVERSION}
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
@@ -17,7 +17,7 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	A Ruby module for reading and writing zip files
 
-MAKE_JOBS_SAFE=  yes
+MAKE_JOBS_SAFE=	yes
 
 USE_RUBY=	yes
 USE_RUBY_FEATURES=	zlib
