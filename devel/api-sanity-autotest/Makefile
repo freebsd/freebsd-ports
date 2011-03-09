@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	api-sanity-autotest
-PORTVERSION=	1.11
+PORTVERSION=	1.12
 CATEGORIES=	devel perl5
 MASTER_SITES=	http://linuxtesting.org/downloads/
 
@@ -40,7 +40,7 @@ post-patch:
 do-install:
 	@${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME}.pl ${PREFIX}/bin
 
-test: build
+check regression-test test: build
 	@(cd ${WRKSRC} && ./${PORTNAME}.pl -test )
 
 .include <bsd.port.mk>
