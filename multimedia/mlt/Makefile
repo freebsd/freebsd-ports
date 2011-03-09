@@ -6,7 +6,7 @@
 
 PORTNAME=	mlt
 PORTVERSION=	0.6.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}
 
@@ -40,16 +40,35 @@ OPTIONS=	AVFORMAT	"Avformat module" on \
 		GTK2	"GTK2 module" on \
 		JACKRACK	"JACK Rack module" off \
 		KINO	"Kino module" on \
-		MMX	"MMX support (might cause problems on amd64)" off \
 		QIMAGE	"Qimage module" on \
 		RESAMPLE	"Secret Rabbit Code module" on \
 		SOX	"Sound eXchange module" on \
-		SSE	"SSE support (requires MMX)" off \
-		SSE2	"SSE2 support (requires SSE)" off \
 		SWFDEC	"Swfdec module" on \
 		VORBIS	"Vorbis module" on
 
+#MMX	"MMX support (might cause problems on amd64)" off \
+#SSE	"SSE support (requires MMX)" off \
+#SSE2	"SSE2 support (requires SSE)" off \
+
 .include <bsd.port.options.mk>
+
+#.ifdef(WITH_MMX)
+#CONFIGURE_ARGS+=	--enable-mmx
+#.else
+#CONFIGURE_ARGS+=	--disable-mmx
+#.endif
+
+#.ifdef(WITH_SSE)
+#CONFIGURE_ARGS+=	--enable-sse
+#.else
+#CONFIGURE_ARGS+=	--disable-sse
+#.endif
+
+#.ifdef(WITH_SSE2)
+#CONFIGURE_ARGS+=	--enable-sse2
+#.else
+#CONFIGURE_ARGS+=	--disable-sse2
+#.endif
 
 .ifndef(WITHOUT_AVFORMAT)
 LIB_DEPENDS+=	avformat.1:${PORTSDIR}/multimedia/ffmpeg
@@ -109,12 +128,6 @@ CONFIGURE_ARGS+=	--disable-kino
 PLIST_SUB+=	KINO="@comment "
 .endif
 
-.ifdef(WITH_MMX)
-CONFIGURE_ARGS+=	--enable-mmx
-.else
-CONFIGURE_ARGS+=	--disable-mmx
-.endif
-
 .ifndef(WITHOUT_QIMAGE)
 LIB_DEPENDS+=	exif.12:${PORTSDIR}/graphics/libexif
 QT_COMPONENTS+=	gui svg xml
@@ -145,18 +158,6 @@ CONFIGURE_ARGS+=	--disable-sox
 PLIST_SUB+=	SOX="@comment "
 .endif
 
-.ifdef(WITH_SSE)
-CONFIGURE_ARGS+=	--enable-sse
-.else
-CONFIGURE_ARGS+=	--disable-sse
-.endif
-
-.ifdef(WITH_SSE2)
-CONFIGURE_ARGS+=	--enable-sse2
-.else
-CONFIGURE_ARGS+=	--disable-sse2
-.endif
-
 .ifndef(WITHOUT_SWFDEC)
 LIB_DEPENDS+=	swfdec-0.8.0:${PORTSDIR}/graphics/swfdec
 CONFIGURE_ARGS+=	--enable-swfdec
@@ -177,8 +178,7 @@ PLIST_SUB+=	VORBIS="@comment "
 
 pre-configure:
 	${REINPLACE_CMD} -e 's|-pthread|${PTHREAD_LIBS}|g' \
-		${WRKSRC}/configure \
-		${WRKSRC}/src/swig/*/build
+		${WRKSRC}/configure
 	${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' \
 		${WRKSRC}/src/framework/Makefile \
 		${WRKSRC}/src/melt/Makefile \
