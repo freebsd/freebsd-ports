@@ -1,0 +1,5 @@
+lib/kde4/plasma_applet_serverstatus.so
+share/apps/plasma-applet-serverstatus/plasma-applet-serverstatus.notifyrc
+share/kde4/services/plasma-applet-serverstatus.desktop
+share/locale/de/LC_MESSAGES/plasma-applet-serverstatus.mo
+@dirrm share/apps/plasma-applet-serverstatus
