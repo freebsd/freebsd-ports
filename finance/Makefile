@@ -25,6 +25,7 @@
     SUBDIR += ledger
     SUBDIR += ledgersmb
     SUBDIR += ledgersmb12
+    SUBDIR += libalkimia
     SUBDIR += libofx
     SUBDIR += libstocks
     SUBDIR += mybudget

@@ -1,0 +1,7 @@
+include/alkimia/alk_export.h
+include/alkimia/alkvalue.h
+lib/libalkimia.so
+lib/libalkimia.so.4
+lib/libalkimia.so.4.3.0
+libdata/pkgconfig/libalkimia.pc
+@dirrm include/alkimia
