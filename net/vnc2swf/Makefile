@@ -15,6 +15,9 @@ MASTER_SITES=	http://www.unixuser.org/~euske/${PORTNAME}/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	VNC Session Recorder to SWF Flash (Movie) format
 
+DEPRECATED=		Development is now superseded by deskutils/vnc2flv
+EXPIRATION_DATE=	2011-06-01
+
 USE_XORG=	xmu x11 xi xaw
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
