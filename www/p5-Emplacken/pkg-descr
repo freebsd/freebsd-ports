@@ -1,0 +1,12 @@
+Emplacken is a tool for managing a set of Plack applications based on
+config files. It also adds support for privilege dropping and error
+logs to those Plack servers that don't support these features
+natively.
+
+It works be reading a config file and using that to generate a PSGI
+application file based on your config. It knows how to generate
+Catalyst, Mojo, and Mason app files natively. For other apps, or more
+complicated setups, you can supply a template to Emplacken and it
+will use that to generate the PSGI app.
+
+WWW:	http://search.cpan.org/dist/Emplacken/
