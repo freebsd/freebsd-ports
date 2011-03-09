@@ -1145,6 +1145,7 @@
     SUBDIR += p5-Plack-Middleware-ConsoleLogger
     SUBDIR += p5-Plack-Middleware-Debug
     SUBDIR += p5-Plack-Middleware-Deflater
+    SUBDIR += p5-Plack-Middleware-Expires
     SUBDIR += p5-Plack-Middleware-File-Sass
     SUBDIR += p5-Plack-Middleware-Header
     SUBDIR += p5-Plack-Middleware-IEnosniff
