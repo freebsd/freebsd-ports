@@ -544,6 +544,7 @@
 %%GRASS_INST_DIR%%/docs/html/grass-dbf.html
 %%GRASS_INST_DIR%%/docs/html/grass_logo.txt
 %%GRASS_INST_DIR%%/docs/html/grass-ogr.html
+%%PGSQL%%%%GRASS_INST_DIR%%/docs/html/grass-pg.html
 %%GRASS_INST_DIR%%/docs/html/grass_start.png
 %%GRASS_INST_DIR%%/docs/html/g.region.html
 %%GRASS_INST_DIR%%/docs/html/g.remove.html
@@ -1342,6 +1343,7 @@
 %%GRASS_INST_DIR%%/driver/XDRIVER
 %%GRASS_INST_DIR%%/driver/db/dbf
 %%GRASS_INST_DIR%%/driver/db/ogr
+%%PGSQL%%%%GRASS_INST_DIR%%/driver/db/pg
 %%GRASS_INST_DIR%%/etc/FIPS.code
 %%GRASS_INST_DIR%%/etc/Init.sh
 %%GRASS_INST_DIR%%/etc/VERSIONNUMBER
@@ -2595,6 +2597,7 @@
 %%GRASS_INST_DIR%%/man/man1/g.tempfile.1
 %%GRASS_INST_DIR%%/man/man1/g.transform.1
 %%GRASS_INST_DIR%%/man/man1/g.version.1
+%%PGSQL%%%%GRASS_INST_DIR%%/man/man1/grass-pg.1
 %%GRASS_INST_DIR%%/man/man1/helptext.1
 %%GRASS_INST_DIR%%/man/man1/htmlmapdriver.1
 %%GRASS_INST_DIR%%/man/man1/i.ask.1

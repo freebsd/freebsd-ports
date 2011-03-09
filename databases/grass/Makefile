@@ -7,7 +7,7 @@
 
 PORTNAME=	grass
 PORTVERSION=	6.4.0
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	2
 CATEGORIES=	databases geography
 MASTER_SITES=	http://grass.itc.it/grass64/source/ \
@@ -110,12 +110,12 @@ PLIST_SUB+=	ODBC=""
 PLIST_SUB+=	ODBC="@comment "
 .endif
 
-.if defined(WITHOUT_PGSQL)
-CONFIGURE_ARGS+=--without-postgres
-PLIST_SUB+=	PGSQL="@comment "
-.else
+.if !defined(WITHOUT_PGSQL)
 USE_PGSQL=	yes
+CONFIGURE_ARGS+=--with-postgres
 PLIST_SUB+=	PGSQL=""
+.else
+PLIST_SUB+=	PGSQL="@comment "
 .endif
 
 .if defined(WITH_SQLITE)
