@@ -212,6 +212,7 @@ R-cran-coda                     ports/math/R-cran-coda
 R-cran-gpclib                   ports/math/R-cran-gpclib
 R-cran-igraph                   ports/math/R-cran-igraph
 R-cran-inline                   ports/math/R-cran-inline
+R-cran-mvtnorm                  ports/math/R-cran-mvtnorm
 R-cran-psych                    ports/math/R-cran-psych
 R-cran-sm                       ports/math/R-cran-sm
 R-cran-sp                       ports/math/R-cran-sp
@@ -22473,6 +22474,7 @@ r-cran-coda                     ports/math/R-cran-coda
 r-cran-gpclib                   ports/math/R-cran-gpclib
 r-cran-igraph                   ports/math/R-cran-igraph
 r-cran-inline                   ports/math/R-cran-inline
+r-cran-mvtnorm                  ports/math/R-cran-mvtnorm
 r-cran-psych                    ports/math/R-cran-psych
 r-cran-rsvgdevice               ports/math/R-cran-RSvgDevice
 r-cran-sm                       ports/math/R-cran-sm
