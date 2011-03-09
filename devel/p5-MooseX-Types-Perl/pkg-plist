@@ -1,0 +1,8 @@
+@comment $FreeBSD$
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX/Types/Perl/.packlist
+%%SITE_PERL%%/MooseX/Types/Perl.pm
+@dirrmtry %%SITE_PERL%%/MooseX/Types
+@dirrmtry %%SITE_PERL%%/MooseX
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX/Types/Perl
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX/Types
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX
