@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	faraday_middleware
-PORTVERSION=	0.3.1
+PORTVERSION=	0.3.2
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
