@@ -5,12 +5,4 @@
 *									*
 *   %%PREFIX%%/lib/perl5		(New location as of 0.80)	*
 *									*
-* If you have previously used a version of bitflu prior to 0.4x, you	*
-* may want to convert your data to the new storage plugin (which was	*
-* introduced along with the upstream bitflu re-write). Such conversions	*
-* can be done using fluconvert. If the package is built with		*
-* documentation, the instructions are installed at:			*
-*									*
-*   %%DOCSDIR%%/fluconvert-README.txt			*
-*									*
 *************************************************************************

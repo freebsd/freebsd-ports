@@ -1,9 +1,5 @@
 bin/bitflu
-bin/fluconvert.pl
-bin/dumptorrent.pl
-%%PORTDOCS%%%%DOCSDIR%%/fluconvert-README.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/bitflu.config
-%%PLUGINSDIR%%/00_StorageFarabDb.pm
 %%PLUGINSDIR%%/00_StorageVFS.pm
 %%PLUGINSDIR%%/10_AdminHTTP.pm
 %%PLUGINSDIR%%/10_AdminTelnet.pm
