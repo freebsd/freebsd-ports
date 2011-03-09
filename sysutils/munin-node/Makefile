@@ -7,7 +7,7 @@
 
 PORTNAME=	munin
 PORTVERSION=	1.4.5
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	sysutils perl5
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}%20stable/${PORTVERSION}
 PKGNAMESUFFIX=	-node
@@ -31,6 +31,7 @@ RUN_DEPENDS=	${SITE_PERL}/Cache/Cache.pm:${PORTSDIR}/devel/p5-Cache-Cache \
 USE_PERL5=	yes
 USE_GMAKE=	yes
 PKGMESSAGE=	${WRKDIR}/pkg-message
+REINPLACE_ARGS=	-i ""
 
 .include "${.CURDIR}/../munin-common/munin.mk"
 
@@ -63,6 +64,13 @@ MAN8=		munin.8
 
 SUB_FILES=	pkg-message munin-node-revive.sh
 USE_RC_SUBR=	munin-node
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' \
+		${WRKSRC}/node/sbin/munin-node \
+		${WRKSRC}/node/sbin/munin-node-configure \
+		${WRKSRC}/node/sbin/munin-run
+	@${FIND} ${WRKSRC}/node/sbin -type f -name "*.orig" -delete
 
 pre-su-install:
 	@${SETENV} ${SCRIPTS_ENV} PKG_PREFIX=${PREFIX} \

@@ -1,0 +1,12 @@
+--- node/sbin/munin-run.orig	Wed Oct 20 14:50:43 2010
++++ node/sbin/munin-run	Wed Oct 20 14:52:51 2010
+@@ -53,6 +53,9 @@ sub main
+         $ENV{$key} =~ /^(.*)$/;
+         $ENV{$key} = $1;
+     }
++    # plugins run in taint mode because the uid is changed, so the path
++    # must not contain writable directories.
++    $ENV{PATH}='/bin:/sbin:/usr/bin:/usr/sbin:%%PREFIX%%/bin:%%PREFIX%%/sbin';
+ 
+     $0 =~ /^(.*)$/;
+     $0 = $1;
