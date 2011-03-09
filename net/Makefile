@@ -178,6 +178,7 @@
     SUBDIR += gatekeeper
     SUBDIR += gateway6
     SUBDIR += generic-nqs
+    SUBDIR += get_iplayer
     SUBDIR += ggsd
     SUBDIR += gini
     SUBDIR += gkrellmmultiping2
