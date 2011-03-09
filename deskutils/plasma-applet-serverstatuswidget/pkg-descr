@@ -1,0 +1,6 @@
+Server Status Widget is a KDE 4 Plasma applet that lets you monitor one or more
+servers via pings, TCP connects or custom unix commands at a configurable
+interval.  The icon changes if a server does not respond to a check, optionally
+triggering configurable KDE notifications.
+
+WWW: http://kde-look.org/content/show.php?content=101336

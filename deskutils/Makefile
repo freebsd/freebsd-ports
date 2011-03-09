@@ -224,6 +224,7 @@
     SUBDIR += plasma-applet-fancytasks
     SUBDIR += plasma-applet-panelspacer
     SUBDIR += plasma-applet-playwolf
+    SUBDIR += plasma-applet-serverstatuswidget
     SUBDIR += plasma-applet-simpleweatherforecast
     SUBDIR += plasma-applet-teacooker
     SUBDIR += plasma-applet-yawp
