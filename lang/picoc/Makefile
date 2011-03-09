@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	picoc
-PORTVERSION=	1.0
-PORTREVISION=	1
+PORTVERSION=	2.1
 CATEGORIES=	lang devel
 MASTER_SITES=	GOOGLE_CODE
 
@@ -17,8 +16,11 @@ COMMENT=	Very small C interpreter for scripting
 LICENSE=	BSD
 
 USE_BZIP2=	yes
+USE_GMAKE=	yes
 
 PLIST_FILES=	bin/picoc
+
+WRKSRC=		${WRKDIR}/${PORTNAME}
 
 post-patch:
 	@${REINPLACE_CMD} -e "/-include/d" \
