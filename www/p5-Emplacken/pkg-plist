@@ -1,0 +1,21 @@
+@comment $FreeBSD$
+bin/emplacken
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Emplacken/.packlist
+%%SITE_PERL%%/Emplacken.pm
+%%SITE_PERL%%/Emplacken/App.pm
+%%SITE_PERL%%/Emplacken/App/Starman.pm
+%%SITE_PERL%%/Emplacken/CodeBuilder/Catalyst.pm
+%%SITE_PERL%%/Emplacken/CodeBuilder/Dancer.pm
+%%SITE_PERL%%/Emplacken/CodeBuilder/FromTemplate.pm
+%%SITE_PERL%%/Emplacken/CodeBuilder/Mason.pm
+%%SITE_PERL%%/Emplacken/CodeBuilder/Mojo.pm
+%%SITE_PERL%%/Emplacken/Role/CodeBuilder.pm
+%%SITE_PERL%%/Emplacken/Stderr.pm
+%%SITE_PERL%%/Emplacken/Types.pm
+%%SITE_PERL%%/Emplacken/Types/Internal.pm
+@dirrmtry %%SITE_PERL%%/Emplacken/Types
+@dirrmtry %%SITE_PERL%%/Emplacken/Role
+@dirrmtry %%SITE_PERL%%/Emplacken/CodeBuilder
+@dirrmtry %%SITE_PERL%%/Emplacken/App
+@dirrmtry %%SITE_PERL%%/Emplacken
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Emplacken
