@@ -545,6 +545,10 @@
 %%GRASS_INST_DIR%%/docs/html/grass_logo.txt
 %%GRASS_INST_DIR%%/docs/html/grass-ogr.html
 %%PGSQL%%%%GRASS_INST_DIR%%/docs/html/grass-pg.html
+%%MYSQL%%%%GRASS_INST_DIR%%/docs/html/grass-mysql.html
+%%MYSQL%%%%GRASS_INST_DIR%%/docs/html/grass-mesql.html
+%%ODBC%%%%GRASS_INST_DIR%%/docs/html/grass-odbc.html
+%%SQLITE%%%%GRASS_INST_DIR%%/docs/html/grass-sqlite.html
 %%GRASS_INST_DIR%%/docs/html/grass_start.png
 %%GRASS_INST_DIR%%/docs/html/g.region.html
 %%GRASS_INST_DIR%%/docs/html/g.remove.html
@@ -1344,6 +1348,9 @@
 %%GRASS_INST_DIR%%/driver/db/dbf
 %%GRASS_INST_DIR%%/driver/db/ogr
 %%PGSQL%%%%GRASS_INST_DIR%%/driver/db/pg
+%%MYSQL%%%%GRASS_INST_DIR%%/driver/db/mysql
+%%ODBC%%%%GRASS_INST_DIR%%/driver/db/odbc
+%%SQLITE%%%%GRASS_INST_DIR%%/driver/db/sqlite
 %%GRASS_INST_DIR%%/etc/FIPS.code
 %%GRASS_INST_DIR%%/etc/Init.sh
 %%GRASS_INST_DIR%%/etc/VERSIONNUMBER
@@ -2598,6 +2605,10 @@
 %%GRASS_INST_DIR%%/man/man1/g.transform.1
 %%GRASS_INST_DIR%%/man/man1/g.version.1
 %%PGSQL%%%%GRASS_INST_DIR%%/man/man1/grass-pg.1
+%%MYSQL%%%%GRASS_INST_DIR%%/man/man1/grass-mysql.1
+%%MYSQL%%%%GRASS_INST_DIR%%/man/man1/grass-mesql.1
+%%ODBC%%%%GRASS_INST_DIR%%/man/man1/grass-odbc.1
+%%SQLITE%%%%GRASS_INST_DIR%%/man/man1/grass-sqlite.1
 %%GRASS_INST_DIR%%/man/man1/helptext.1
 %%GRASS_INST_DIR%%/man/man1/htmlmapdriver.1
 %%GRASS_INST_DIR%%/man/man1/i.ask.1
