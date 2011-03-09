@@ -1,6 +1,23 @@
---- CMakeLists.txt.orig	2010-05-10 09:39:57.000000000 -0300
-+++ CMakeLists.txt	2010-05-20 14:37:08.000000000 -0300
-@@ -342,7 +342,9 @@
+--- CMakeLists.txt.orig	2011-01-17 19:38:13.000000000 +0800
++++ CMakeLists.txt	2011-03-01 19:52:50.000000000 +0800
+@@ -274,14 +274,15 @@
+ 
+ # {{{ Theme icons
+ file(GLOB icon_sources RELATIVE ${SOURCE_DIR} ${SOURCE_DIR}/themes/*/titlebar/*.png)
+-set(ALL_ICONS ${icon_sources})
+ 
+ foreach(icon ${icon_sources})
+     # Copy all icons to the build dir to simplify the following code.
+     # Source paths are interpreted relative to ${SOURCE_DIR}, target paths
+     # relative to ${BUILD_DIR}.
+     get_filename_component(icon_path ${icon} PATH)
++    get_filename_component(icon_name ${icon} NAME)
+     file(COPY ${icon} DESTINATION ${icon_path})
++    set(ALL_ICONS ${ALL_ICONS} "${icon_path}/${icon_name}")
+ endforeach()
+ 
+ macro(a_icon_convert match replacement input)
+@@ -343,7 +344,9 @@
      PATTERN "*.in" EXCLUDE)
  install(DIRECTORY ${SOURCE_DIR}/themes DESTINATION ${AWESOME_DATA_PATH}
      PATTERN "*.in" EXCLUDE)
