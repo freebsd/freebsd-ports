@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ImageMagick
-DISTVERSION=	6.6.6-10
+DISTVERSION=	6.6.7-10
 CATEGORIES=	graphics perl5
 MASTER_SITES=	ftp://ftp.imagemagick.org/pub/ImageMagick/ \
 		ftp://ftp.nluug.nl/pub/ImageMagick/ \
@@ -51,6 +51,7 @@ OPTIONS=\
 	IMAGEMAGICK_JPEG	"JPG format support" on \
 	IMAGEMAGICK_JPEG2000	"JPEG2000 format support" on \
 	IMAGEMAGICK_LCMS	"LCMS support" on \
+	IMAGEMAGICK_LZMA	"LZMA support" on \
 	IMAGEMAGICK_LQR		"Liquid Rescale support" on \
 	IMAGEMAGICK_MODULES	"Modules support" on \
 	IMAGEMAGICK_OPENEXR	"OpenEXR support (needs threads)" off \
@@ -58,7 +59,7 @@ OPTIONS=\
 	IMAGEMAGICK_PDF		"PDF format support" on \
 	IMAGEMAGICK_PERL	"Perl support" on \
 	IMAGEMAGICK_PNG		"PNG format support" on \
-	IMAGEMAGICK_SVG		"SVG format support" off \
+	IMAGEMAGICK_SVG		"SVG format support" on \
 	IMAGEMAGICK_TESTS	"Run bundled self-tests after build" on \
 	IMAGEMAGICK_TIFF	"TIFF format support" on \
 	IMAGEMAGICK_TTF		"Freetype support" on \
@@ -269,6 +270,15 @@ LDFLAGS+=		-L${LOCALBASE}/lib/graphviz
 CONFIGURE_ARGS+=	--without-gvc
 .endif
 
+# LZMA support
+.if !defined(WITHOUT_LZMA)
+. if (${OSVERSION} >= 900000 && ${OSVERSION} < 900012) || (${OSVERSION} < 800505)
+LIB_DEPENDS=		lzma:${PORTSDIR}/archivers/xz
+. endif
+.else
+CONFIGURE_ARGS+=	--without-lzma
+.endif
+
 # LCMS (Little CMS) color management
 .if !defined(WITHOUT_IMAGEMAGICK_LCMS)
 LIB_DEPENDS+=		lcms:${PORTSDIR}/graphics/lcms
@@ -308,16 +318,12 @@ PLIST_SUB+=		WMF="@comment "
 .endif
 
 # SVG (Scalable Vector Graphics) requires both libxml2 and X11
-.if defined(WITH_IMAGEMAGICK_SVG)
-. if defined(WITHOUT_X11)
-IGNORE=			svg support requires X11
-. else
+.if defined(WITH_IMAGEMAGICK_SVG) && !defined(WITHOUT_X11)
 USE_GNOME+=		libxml2
 LIB_DEPENDS+=		rsvg-2:${PORTSDIR}/graphics/librsvg2
 CONFIGURE_ARGS+=	--with-rsvg --with-xml
 CONFIGURE_ENV+=		RSVG_CFLAGS="-I${LOCALBASE}/include/librsvg-2" \
 			RSVG_LIBS="-L${LOCALBASE}/lib"
-. endif
 .else
 CONFIGURE_ARGS+=	--without-rsvg --without-xml
 .endif
@@ -389,6 +395,9 @@ pre-configure:
 	@${ECHO_CMD} '###################################################################'
 	@${ECHO_CMD} NOTICE: ${_IMAGEMAGICK_THREADS_PERL_MSG}. Building ImageMagick ${_IMAGEMAGICK_THREADS_MSG}.
 	@${ECHO_CMD} '###################################################################'
+.endif
+.if defined(WITH_IMAGEMAGICK_SVG) && defined(WITHOUT_X11)
+	@${ECHO_CMD} NOTICE: SVG format support disabled (WITHOUT_X11)
 .endif
 
 post-install:

@@ -149,6 +149,8 @@ lib/ImageMagick-%%PORTVERSION%%/config/type-dejavu.xml
 lib/ImageMagick-%%PORTVERSION%%/config/type-ghostscript.xml
 lib/ImageMagick-%%PORTVERSION%%/config/type-windows.xml
 lib/ImageMagick-%%PORTVERSION%%/modules-%%QBIT%%/coders/.keep
+%%MODULES%%lib/ImageMagick-%%PORTVERSION%%/modules-%%QBIT%%/coders/aai.la
+%%MODULES%%lib/ImageMagick-%%PORTVERSION%%/modules-%%QBIT%%/coders/aai.so
 %%MODULES%%lib/ImageMagick-%%PORTVERSION%%/modules-%%QBIT%%/coders/art.la
 %%MODULES%%lib/ImageMagick-%%PORTVERSION%%/modules-%%QBIT%%/coders/art.so
 %%MODULES%%lib/ImageMagick-%%PORTVERSION%%/modules-%%QBIT%%/coders/avs.la
@@ -420,6 +422,7 @@ libdata/pkgconfig/Wand.pc
 %%PORTDOCS%%%%DOCSDIR%%/images/cylinder_shaded.png
 %%PORTDOCS%%%%DOCSDIR%%/images/definitive-guide.png
 %%PORTDOCS%%%%DOCSDIR%%/images/difference.png
+%%PORTDOCS%%%%DOCSDIR%%/images/donate.png
 %%PORTDOCS%%%%DOCSDIR%%/images/examples.jpg
 %%PORTDOCS%%%%DOCSDIR%%/images/frame.jpg
 %%PORTDOCS%%%%DOCSDIR%%/images/fuzzy-magick.png
@@ -427,7 +430,10 @@ libdata/pkgconfig/Wand.pc
 %%PORTDOCS%%%%DOCSDIR%%/images/granite.png
 %%PORTDOCS%%%%DOCSDIR%%/images/imade_art2.jpg
 %%PORTDOCS%%%%DOCSDIR%%/images/label.gif
-%%PORTDOCS%%%%DOCSDIR%%/images/logo.eps
+%%PORTDOCS%%%%DOCSDIR%%/images/logo-sm-flop.png
+%%PORTDOCS%%%%DOCSDIR%%/images/logo-sm-fx.png
+%%PORTDOCS%%%%DOCSDIR%%/images/logo-sm.png
+%%PORTDOCS%%%%DOCSDIR%%/images/logo.png
 %%PORTDOCS%%%%DOCSDIR%%/images/logo.jpg
 %%PORTDOCS%%%%DOCSDIR%%/images/montage.jpg
 %%PORTDOCS%%%%DOCSDIR%%/images/navy.png
@@ -451,6 +457,7 @@ libdata/pkgconfig/Wand.pc
 %%PORTDOCS%%%%DOCSDIR%%/images/t-shirt.png
 %%PORTDOCS%%%%DOCSDIR%%/images/tricks.png
 %%PORTDOCS%%%%DOCSDIR%%/images/wand.ico
+%%PORTDOCS%%%%DOCSDIR%%/images/wand.png
 %%PORTDOCS%%%%DOCSDIR%%/images/white-highlight.png
 %%PORTDOCS%%%%DOCSDIR%%/images/wizard.jpg
 %%PORTDOCS%%%%DOCSDIR%%/images/wizard.png
@@ -934,6 +941,7 @@ libdata/pkgconfig/Wand.pc
 %%PORTDOCS%%%%DOCSDIR%%/www/api/MagickCore/struct__Ascii85Info.html
 %%PORTDOCS%%%%DOCSDIR%%/www/api/MagickCore/struct__BlobInfo.html
 %%PORTDOCS%%%%DOCSDIR%%/www/api/MagickCore/struct__CacheInfo.html
+%%PORTDOCS%%%%DOCSDIR%%/www/api/MagickCore/struct__CacheView.html
 %%PORTDOCS%%%%DOCSDIR%%/www/api/MagickCore/struct__CacheMethods.html
 %%PORTDOCS%%%%DOCSDIR%%/www/api/MagickCore/struct__ChannelStatistics.html
 %%PORTDOCS%%%%DOCSDIR%%/www/api/MagickCore/struct__ChromaticityInfo.html
@@ -1230,6 +1238,7 @@ libdata/pkgconfig/Wand.pc
 %%PORTDOCS%%%%DOCSDIR%%/www/api/enhance.html
 %%PORTDOCS%%%%DOCSDIR%%/www/api/exception.html
 %%PORTDOCS%%%%DOCSDIR%%/www/api/feature.html
+%%PORTDOCS%%%%DOCSDIR%%/www/api/fourier.html
 %%PORTDOCS%%%%DOCSDIR%%/www/api/fx.html
 %%PORTDOCS%%%%DOCSDIR%%/www/api/histogram.html
 %%PORTDOCS%%%%DOCSDIR%%/www/api/image.html
@@ -1317,17 +1326,24 @@ libdata/pkgconfig/Wand.pc
 %%PORTDOCS%%%%DOCSDIR%%/www/source/coder.xml
 %%PORTDOCS%%%%DOCSDIR%%/www/source/colors.xml
 %%PORTDOCS%%%%DOCSDIR%%/www/source/configure.xml
+%%PORTDOCS%%%%DOCSDIR%%/www/source/contrast.c
 %%PORTDOCS%%%%DOCSDIR%%/www/source/core.c
 %%PORTDOCS%%%%DOCSDIR%%/www/source/delegates.xml
 %%PORTDOCS%%%%DOCSDIR%%/www/source/english.xml
 %%PORTDOCS%%%%DOCSDIR%%/www/source/examples.pl
+%%PORTDOCS%%%%DOCSDIR%%/www/source/francais.xml
 %%PORTDOCS%%%%DOCSDIR%%/www/source/incantation.msl
 %%PORTDOCS%%%%DOCSDIR%%/www/source/locale.xml
 %%PORTDOCS%%%%DOCSDIR%%/www/source/log.xml
 %%PORTDOCS%%%%DOCSDIR%%/www/source/magic.xml
+%%PORTDOCS%%%%DOCSDIR%%/www/source/mgk.c
+%%PORTDOCS%%%%DOCSDIR%%/www/source/mime.xml
 %%PORTDOCS%%%%DOCSDIR%%/www/source/piechart.mvg
 %%PORTDOCS%%%%DOCSDIR%%/www/source/piechart.svg
+%%PORTDOCS%%%%DOCSDIR%%/www/source/policy.xml
+%%PORTDOCS%%%%DOCSDIR%%/www/source/thresholds.xml
 %%PORTDOCS%%%%DOCSDIR%%/www/source/type-ghostscript.xml
+%%PORTDOCS%%%%DOCSDIR%%/www/source/type-windows.xml
 %%PORTDOCS%%%%DOCSDIR%%/www/source/type.xml
 %%PORTDOCS%%%%DOCSDIR%%/www/source/wand.c
 %%PORTDOCS%%%%DOCSDIR%%/www/sponsors.html
