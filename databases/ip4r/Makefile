@@ -6,17 +6,15 @@
 #
 
 PORTNAME=	ip4r
-PORTVERSION=	1.03
-PORTREVISION=	1
+PORTVERSION=	1.05
 CATEGORIES=	databases net
-MASTER_SITES=	http://pgfoundry.org/frs/download.php/1581/
+MASTER_SITES=	http://pgfoundry.org/frs/download.php/2607/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	IPv4 and IPv4 range index type for PostgreSQL
 
 USE_PGSQL=	YES
 USE_GMAKE=	YES
-DEFAULT_PGSQL_VER=	81
 
 # 74 is not strictly true, but requires extracting the appropriate
 # postgresql-contrib tarball, and associated heavy lifting.
@@ -36,13 +34,4 @@ do-install:
 	@${INSTALL_DATA} ${WRKSRC}/README.ip4r \
 		${PREFIX}/share/doc/postgresql/contrib
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 700000
-.if ${ARCH} == "sparc64"
-BROKEN=		Does not find dependency gcc42
-.endif
-.endif
-
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
