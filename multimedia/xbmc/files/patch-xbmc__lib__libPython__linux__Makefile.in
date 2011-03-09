@@ -1,6 +1,6 @@
---- ./xbmc/lib/libPython/linux/Makefile.in.orig	2010-07-11 23:22:04.000000000 +0200
-+++ ./xbmc/lib/libPython/linux/Makefile.in	2010-12-01 12:17:34.245845263 +0100
-@@ -2,7 +2,7 @@
+--- xbmc/lib/libPython/linux/Makefile.in.orig	2010-12-17 07:17:41.000000000 +0100
++++ xbmc/lib/libPython/linux/Makefile.in	2011-03-07 14:55:55.000000000 +0100
+@@ -2,10 +2,13 @@
  CC=@CC@
  CFLAGS=@CFLAGS@
  LDFLAGS=@LDFLAGS@
@@ -8,4 +8,11 @@
 +SHELL=/bin/sh
  SYSDIR=../../../../system/python
  
- ifeq (@USE_PYTHON2_6@,1)
+-ifeq (@USE_PYTHON2_6@,1)
++ifeq (@USE_PYTHON2_7@,1)
++    PYVERSION=python2.7
++    SO=python27-$(ARCH).so
++else ifeq (@USE_PYTHON2_6@,1)
+     PYVERSION=python2.6
+     SO=python26-$(ARCH).so
+ else ifeq (@USE_PYTHON2_5@,1)

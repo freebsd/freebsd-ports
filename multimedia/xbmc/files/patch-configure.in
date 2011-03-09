@@ -1,5 +1,5 @@
 --- configure.in.orig	2010-12-17 07:17:41.000000000 +0100
-+++ configure.in	2011-02-23 21:51:33.000000000 +0100
++++ configure.in	2011-03-08 15:10:52.000000000 +0100
 @@ -19,10 +19,10 @@
  [
    if [[ "$host_vendor" != "apple" ]]; then
@@ -45,7 +45,16 @@
    i386-apple-darwin*)
       ARCH="x86-osx"
       # define i386 or x86_64, cannot use $HOSTTYPE as it reports x86_64 on 10.6 regardless of kernel flavor
-@@ -543,7 +561,11 @@
+@@ -507,6 +525,8 @@
+ # Add top source directory for all builds so we can use config.h
+ INCLUDES="$INCLUDES -I\$(abs_top_srcdir)"
+ 
++AC_CHECK_HEADER([sys/inotify.h], AC_DEFINE([HAVE_INOTIFY],[1],[""]),)
++
+ # Checks for boost headers using CXX instead of CC
+ AC_LANG_PUSH([C++])
+ AC_CHECK_HEADER([boost/shared_ptr.hpp],, AC_MSG_ERROR($missing_library))
+@@ -543,7 +563,11 @@
  AC_CHECK_LIB([ass], [ass_set_message_cb],,use_external_libass="no")
  AC_CHECK_LIB([bz2],         [main],, AC_MSG_ERROR($missing_library))
  AC_CHECK_LIB([jpeg],        [main],, AC_MSG_ERROR($missing_library)) # check for cximage
@@ -57,7 +66,7 @@
  AC_CHECK_LIB([lzo2],        [main],, AC_MSG_ERROR($missing_library))
  AC_CHECK_LIB([z],           [main],, AC_MSG_ERROR($missing_library))
  AC_CHECK_LIB([ssl],         [main],, AC_MSG_ERROR($missing_library))
-@@ -581,9 +603,6 @@
+@@ -581,9 +605,6 @@
  PKG_CHECK_MODULES([SAMPLERATE], [samplerate],
    [INCLUDES="$INCLUDES $SAMPLERATE_CFLAGS"; LIBS="$LIBS $SAMPLERATE_LIBS"],
    AC_MSG_ERROR($missing_library))
@@ -67,7 +76,7 @@
  PKG_CHECK_MODULES([FREETYPE2],  [freetype2],
    [INCLUDES="$INCLUDES $FREETYPE2_CFLAGS"; LIBS="$LIBS $FREETYPE2_LIBS"],
    AC_MSG_ERROR($missing_library))
-@@ -620,6 +639,29 @@
+@@ -620,6 +641,29 @@
    ]
  )
  
@@ -97,20 +106,18 @@
  # platform dependent libraries
  if test "$host_vendor" = "apple" ; then
    AC_CHECK_LIB([iconv],     [main],, AC_MSG_ERROR($missing_library))
-@@ -644,8 +686,10 @@
+@@ -644,8 +688,10 @@
    AC_CHECK_HEADER([FLAC/stream_decoder.h],, AC_MSG_ERROR($missing_library))
    AC_CHECK_LIB([smbclient],  [main],, AC_MSG_ERROR($missing_library))
    AC_CHECK_LIB([SDL_mixer],  [main],, AC_MSG_ERROR($missing_library))
--  AC_CHECK_LIB([dl],         [main],, AC_MSG_ERROR($missing_library))
--  AC_CHECK_LIB([resolv],     [main],, AC_MSG_ERROR($missing_library))
 +  if echo "$ARCH" | grep -vq freebsd; then
-+    AC_CHECK_LIB([dl],     [main],, AC_MSG_ERROR($missing_library))
-+    AC_CHECK_LIB([resolv],     [main],, AC_MSG_ERROR($missing_library))
+   AC_CHECK_LIB([dl],         [main],, AC_MSG_ERROR($missing_library))
+   AC_CHECK_LIB([resolv],     [main],, AC_MSG_ERROR($missing_library))
 +  fi
    AC_CHECK_LIB([jasper],     [main],, AC_MSG_ERROR($missing_library)) # check for cximage
    AC_CHECK_LIB([tiff],       [main],, AC_MSG_ERROR($missing_library))
    AC_CHECK_LIB([rt],         [clock_gettime],, AC_MSG_ERROR($missing_library))
-@@ -740,8 +784,8 @@
+@@ -740,8 +786,8 @@
    AC_MSG_RESULT($faac_disabled)
  else
    if test "$use_faac" = "yes"; then
@@ -121,7 +128,32 @@
    else
      AC_MSG_RESULT($faac_disabled)
    fi
-@@ -1211,6 +1255,12 @@
+@@ -919,7 +965,11 @@
+ 
+ # External Python
+ if test "$use_external_python" = "yes"; then
+-  AC_CHECK_LIB([python2.6], [main],
++  AC_CHECK_LIB([python2.7], [main],
++    [AC_DEFINE([HAVE_LIBPYTHON2_7], [1],
++    [Define to 1 if you have the 'python2.7' library.])
++    USE_PYTHON2_7=1],
++  [AC_CHECK_LIB([python2.6], [main],
+     [AC_DEFINE([HAVE_LIBPYTHON2_6], [1],
+     [Define to 1 if you have the 'python2.6' library.])
+     USE_PYTHON2_6=1],
+@@ -931,9 +981,10 @@
+     [AC_DEFINE([HAVE_LIBPYTHON2_4], [1],
+     [Define to 1 if you have the 'python2.4' library.])
+     USE_PYTHON2_4=1],
+-  [AC_MSG_ERROR($missing_library)] )] )] )
++  [AC_MSG_ERROR($missing_library)] )] )] )] )
+ 
+   AC_MSG_NOTICE($external_python_enabled)
++  test "$USE_PYTHON2_7" && AC_MSG_NOTICE([Using Python 2.7])
+   test "$USE_PYTHON2_6" && AC_MSG_NOTICE([Using Python 2.6])
+   test "$USE_PYTHON2_5" && AC_MSG_NOTICE([Using Python 2.5])
+   test "$USE_PYTHON2_4" && AC_MSG_NOTICE([Using Python 2.4])
+@@ -1211,6 +1262,12 @@
    final_message="$final_message\n  Bluray:\tNo"
  fi
  
@@ -134,7 +166,7 @@
  if test "$use_mid" = "yes"; then
    final_message="$final_message\n  MID Support:\tYes"
    SDL_DEFINES="$SDL_DEFINES -DMID"
-@@ -1418,7 +1468,6 @@
+@@ -1418,7 +1475,6 @@
      xbmc/cores/paplayer/NSFCodec/Makefile \
      xbmc/cores/paplayer/SIDCodec/Makefile \
      xbmc/cores/paplayer/vgmstream/Makefile \
@@ -142,7 +174,15 @@
      xbmc/cores/paplayer/YMCodec/StSoundLibrary/Makefile \
      xbmc/cores/playercorefactory/Makefile \
      xbmc/karaoke/Makefile \
-@@ -1735,7 +1784,7 @@
+@@ -1491,6 +1547,7 @@
+ AC_SUBST(USE_EXTERNAL_LIBMPEG2)
+ AC_SUBST(USE_EXTERNAL_LIBWAVPACK)
+ AC_SUBST(USE_EXTERNAL_PYTHON)
++AC_SUBST(USE_PYTHON2_7)
+ AC_SUBST(USE_PYTHON2_6)
+ AC_SUBST(USE_PYTHON2_5)
+ AC_SUBST(USE_PYTHON2_4)
+@@ -1735,7 +1792,7 @@
        --enable-static \
        --disable-shared \
        --cc="$CC" &&
@@ -151,13 +191,7 @@
      mkdir -p `pwd`/../includes/dvdread
      cp `pwd`/../libdvdread/src/*.h `pwd`/../includes/dvdread
    else
-@@ -1744,13 +1793,14 @@
-       --prefix="${prefix}" --includedir="${includedir}" --libdir="${libdir}" --datadir="${datadir}" \
-       --host=$host_alias \
-       --build=$build_alias \
--      --target=$target_alias \      
-+      --target=$target_alias \
-       --enable-static \
+@@ -1749,8 +1806,9 @@
        --disable-shared \
        --disable-strip \
        --disable-opts \
@@ -168,7 +202,7 @@
      mkdir -p `pwd`/../includes/dvdread
      cp `pwd`/../libdvdread/src/*.h `pwd`/../includes/dvdread
    fi
-@@ -1766,6 +1816,17 @@
+@@ -1766,6 +1824,17 @@
        --enable-static \
        --disable-shared \
        --cc="$CC"
