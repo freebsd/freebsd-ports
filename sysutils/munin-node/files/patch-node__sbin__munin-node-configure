@@ -1,0 +1,13 @@
+--- node/sbin/munin-node-configure.orig	Tue Oct  5 22:36:04 2010
++++ node/sbin/munin-node-configure	Tue Oct  5 22:37:57 2010
+@@ -28,6 +28,10 @@ use POSIX ();
+ use Data::Dumper;
+ use Carp;
+ 
++# plugins run in taint mode because the uid is changed, so the path
++# must not contain writable directories.
++$ENV{PATH}='/bin:/sbin:/usr/bin:/usr/sbin:%%PREFIX%%/bin:%%PREFIX%%/sbin';
++
+ use Munin::Common::Defaults;
+ use Munin::Node::Configure::PluginList;
+ use Munin::Node::Configure::Debug;
