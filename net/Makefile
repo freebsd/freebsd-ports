@@ -539,6 +539,7 @@
     SUBDIR += p5-Net-Address-Ethernet
     SUBDIR += p5-Net-Address-IPv4-Local
     SUBDIR += p5-Net-Amazon
+    SUBDIR += p5-Net-Amazon-AWSSign
     SUBDIR += p5-Net-Amazon-EC2
     SUBDIR += p5-Net-Amazon-MechanicalTurk
     SUBDIR += p5-Net-Amazon-S3
