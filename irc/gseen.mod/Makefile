@@ -7,7 +7,7 @@
 
 PORTNAME=	gseen.mod
 PORTVERSION=	1.1.1.p3
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	irc
 MASTER_SITES=	http://www.kreativrauschen.de/gseen.mod/
 DISTNAME=	${PORTNAME}.${PORTVERSION:S/p/dev/}
@@ -15,15 +15,16 @@ DISTNAME=	${PORTNAME}.${PORTVERSION:S/p/dev/}
 MAINTAINER=	gerrit.beine@gmx.de
 COMMENT=	A seen-module for the eggdrop IRC bot
 
+USE_TCL=	85+
+
 EXTRACT_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/irc/eggdrop:extract
 BUILD_DEPENDS=	eggdrop:${PORTSDIR}/irc/eggdrop
 RUN_DEPENDS=	eggdrop:${PORTSDIR}/irc/eggdrop
-LIB_DEPENDS=	tcl84.1:${PORTSDIR}/lang/tcl84
 
 WRKSRC=		${WRKDIR}/eggdrop
 
-CONFIGURE_ARGS+=	--with-tcllib=${LOCALBASE}/lib/libtcl84.so \
-			--with-tclinc=${LOCALBASE}/include/tcl84/tcl.h
+CONFIGURE_ARGS=	--with-tcllib=${LOCALBASE}/lib/libtcl${TCL_VER:S/.//}.so \
+		--with-tclinc=${TCL_INCLUDEDIR}/tcl.h
 
 GNU_CONGFIGURE=	yes
 
