@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	taskwarrior
-PORTVERSION=	1.9.3
+PORTVERSION=	1.9.4
 CATEGORIES=	deskutils
 MASTER_SITES=	http://taskwarrior.org/download/
 DISTNAME=	task-${PORTVERSION}
@@ -16,20 +16,14 @@ COMMENT=	A framework for supercharged task and contact management
 
 WRKSRC=		${WRKDIR}/${DISTNAME}
 
-GNU_CONFIGURE=	yes
+USE_LUA=	5.1
+USE_CMAKE=	yes
+CMAKE_OUTSOURCE=yes
+CMAKE_ARGS+=	-DTASK_DOCDIR:STRING=${DATADIR:S/${PREFIX}\///} \
+   		-DTASK_MAN1DIR:STRING=man/man1 \
+		-DTASK_MAN5DIR:STRING=man/man5
 
-MAN1=	task.1
-MAN5=	taskrc.5 task-faq.5 task-color.5 task-sync.5 task-tutorial.5
+MAN1=		task.1
+MAN5=		taskrc.5 task-faq.5 task-color.5 task-sync.5 task-tutorial.5
 
-CONFIGURE_ARGS+=--datadir=${DATADIR} --docdir=${DOCSDIR}
-
-PLIST_SUB+=	DISTVERSION=${DISTVERSION}
-
-.include <bsd.port.pre.mk>
-
-post-patch:
-.if defined(NOPORTDOCS)
-	${REINPLACE_CMD} -e '396,406d' ${WRKSRC}/Makefile.in
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
