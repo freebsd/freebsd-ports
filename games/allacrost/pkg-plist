@@ -350,8 +350,8 @@ share/locale/en@quot/LC_MESSAGES/allacrost.mo
 share/locale/es/LC_MESSAGES/allacrost.mo
 share/locale/fr/LC_MESSAGES/allacrost.mo
 share/locale/pt_BR/LC_MESSAGES/allacrost.mo
-@dirrm share/locale/en@quot/LC_MESSAGES
-@dirrm share/locale/en@quot
+@dirrmtry share/locale/en@quot/LC_MESSAGES
+@dirrmtry share/locale/en@quot
 @dirrm %%DATADIR%%/allacrost/txt
 @dirrm %%DATADIR%%/allacrost/snd
 @dirrm %%DATADIR%%/allacrost/mus
