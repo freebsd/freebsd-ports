@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	minitube
-PORTVERSION=	1.3
+PORTVERSION=	1.4
 CATEGORIES=	multimedia www
 MASTER_SITES=	http://flavio.tordini.org/files/minitube/
 
