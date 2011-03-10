@@ -7,6 +7,7 @@
 
 PORTNAME=	typo3
 PORTVERSION=	4.5.2
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	SF/${PORTNAME}/TYPO3%20Source%20and%20Dummy/TYPO3%20${PORTVERSION} \
 		http://dl1.typo3.org/TYPO3_${PORTVERSION}/
@@ -31,8 +32,8 @@ EDITION=	dummy
 DISTFILES+=	${DISTNAME}${EXTRACT_SUFX} ${EDITION}-${PORTVERSION}${EXTRACT_SUFX}
 
 OPTIONS=	CURL "Configure with cURL support" off \
-		GD "Configure with GDlib/freetype support" on \
-		IMAGICK "Configure with ImageMagick support" on \
+		GD "Configure with GDlib/freetype support" off \
+		IMAGICK "Configure with ImageMagick support" off \
 		MBSTRING "Configure with mbstring support" off \
 		ZLIB "Configure with zlib support" off
 
