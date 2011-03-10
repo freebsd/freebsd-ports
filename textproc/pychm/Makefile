@@ -10,7 +10,7 @@ PORTVERSION=	0.8.4
 CATEGORIES=	textproc python
 MASTER_SITES=	SF/gnochm/${PORTNAME}/${PORTVERSION}
 
-MAINTAINER=	radek@raadradd.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Bindings for CHMLIB library
 
 LIB_DEPENDS=	chm.0:${PORTSDIR}/misc/chmlib

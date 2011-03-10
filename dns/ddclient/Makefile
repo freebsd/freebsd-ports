@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	dns
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	radek@raadradd.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Update dynamic DNS entries
 
 .ifndef WITHOUT_SSL

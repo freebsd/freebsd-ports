@@ -12,7 +12,7 @@ CATEGORIES=	multimedia gnome
 MASTER_SITES=	${MASTER_SITE_SAVANNAH}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	radek@raadradd.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A simple GNOME panel applet for controlling XMMS
 
 BUILD_DEPENDS=	xmms:${PORTSDIR}/multimedia/xmms
