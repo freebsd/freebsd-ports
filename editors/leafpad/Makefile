@@ -12,7 +12,7 @@ CATEGORIES=	editors
 MASTER_SITES=	${MASTER_SITE_SAVANNAH}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	radek@raadradd.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GTK+ based simple text editor
 
 USE_GNOME=	gtk20 desktopfileutils intlhack

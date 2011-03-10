@@ -11,7 +11,7 @@ PORTREVISION=	6
 CATEGORIES=	deskutils python gnome
 MASTER_SITES=	SF
 
-MAINTAINER=	radek@raadradd.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A GNOME viewer for CHM files
 
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/chm/_chmlib.so:${PORTSDIR}/textproc/pychm
