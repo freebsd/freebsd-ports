@@ -34,6 +34,35 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="64691c49-4b22-11e0-a226-00e0815b8da8">
+    <topic>mailman -- XSS vulnerability</topic>
+    <affects>
+      <package>
+	<name>mailman</name>
+	<range><lt>2.1.14_1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>CVE reports:</p>
+	<blockquote cite="http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2011-0707">
+	  <p>Multiple cross-site scripting (XSS) vulnerabilities in
+	    Cgi/confirm.py in GNU Mailman 2.1.14 and earlier allow remote
+	    attackers to inject arbitrary web script or HTML via the (1)
+	    full name or (2) username field in a confirmation message.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2011-0707</cvename>
+      <url>http://mail.python.org/pipermail/mailman-announce/2011-February/000157.html</url>
+    </references>
+    <dates>
+      <discovery>2011-03-FIXME</discovery>
+      <entry>2011-03-10</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="cf96cd8d-48fb-11e0-98a6-0050569b2d21">
     <topic>redmine -- XSS vulnerability</topic>
     <affects>
