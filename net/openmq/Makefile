@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	openmq
-PORTVERSION=	4.5.b.22
+PORTVERSION=	4.5.b.29
 PORTEPOCH=	1
 CATEGORIES=	net java
-MASTER_SITES=	http://download.java.net/mq/open-mq/4.5/b22/ \
+MASTER_SITES=	http://download.java.net/mq/open-mq/4.5/b29/ \
 	 	http://download.java.net/maven/2/javax/javaee-api/6.0/:2 \
 		http://download.java.net/maven/2/com/sun/grizzly/grizzly-nio-framework/1.9.18a/:3 \
 		http://download.java.net/maven/2/com/sun/woodstock/dependlibs/jhall/2.0/:4
@@ -86,6 +86,8 @@ pre-install:
 		@${ECHO_CMD} "%%JAVAJARDIR%%/jms.jar" > ${PLIST}
 		@${ECHO_CMD} "%%JAVAJARDIR%%/imq.jar" >> ${PLIST}
 		@${ECHO_CMD} "%%JAVAJARDIR%%/fscontext.jar" >> ${PLIST}
+		@${ECHO_CMD} "%%JAVAJARDIR%%/jaxm-api.jar" >> ${PLIST}
+		@${ECHO_CMD} "%%JAVAJARDIR%%/imqxm.jar" >> ${PLIST}
 .endif
 
 do-install:
@@ -109,6 +111,8 @@ do-install:
 		@${INSTALL_DATA} ${WRKSRC}/dist/mq/lib/imq.jar ${JAVAJARDIR}
 		@${INSTALL_DATA} ${WRKSRC}/dist/mq/lib/jms.jar ${JAVAJARDIR}
 		@${INSTALL_DATA} ${WRKSRC}/dist/mq/lib/fscontext.jar ${JAVAJARDIR}
+		@${INSTALL_DATA} ${WRKSRC}/dist/mq/lib/jaxm-api.jar ${JAVAJARDIR}
+		@${INSTALL_DATA} ${WRKSRC}/dist/mq/lib/imqxm.jar ${JAVAJARDIR}
 .endif
 
 post-install:
