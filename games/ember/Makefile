@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	ember
-PORTVERSION=	0.5.8
-PORTREVISION=	3
+PORTVERSION=	0.6.0
 CATEGORIES=	games
 MASTER_SITES=	SF/worldforge/Ember%20%28OGRE%20client%29/${PORTVERSION} \
 		http://amber.worldforge.org/ember/releases/stable/
@@ -18,22 +17,27 @@ DISTFILES+=	${DISTNAME}${EXTRACT_SUFX} \
 MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	Ember is a WorldForge 3d client using the OGRE 3d library
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/libOgreMain-1.6.5.so:${PORTSDIR}/graphics/ogre3d
-RUN_DEPENDS=	${LOCALBASE}/lib/libOgreMain-1.6.5.so:${PORTSDIR}/graphics/ogre3d
+BUILD_DEPENDS=	${LOCALBASE}/lib/libOgreMain.so.1.7.2:${PORTSDIR}/graphics/ogre3d
+RUN_DEPENDS=	${LOCALBASE}/lib/libOgreMain.so.1.7.2:${PORTSDIR}/graphics/ogre3d
 LIB_DEPENDS=	sigc-2.0:${PORTSDIR}/devel/libsigc++20 \
 		eris-1.3:${PORTSDIR}/devel/eris \
 		varconf-1.0.6:${PORTSDIR}/devel/varconf \
 		mercator-0.2.8:${PORTSDIR}/devel/mercator \
 		wfut-0.2:${PORTSDIR}/devel/libwfut \
-		boost_thread.4:${PORTSDIR}/devel/boost-libs
+		boost_thread.4:${PORTSDIR}/devel/boost-libs \
+		CEGUIBase-0.7.5:${PORTSDIR}/graphics/cegui
 
-CONFIGURE_ARGS=	--with-png-prefix=${LOCALBASE} --enable-binreloc --program-transform-name= --disable-cppunit --enable-debug
+CONFIGURE_ARGS=	--with-png-prefix=${LOCALBASE} --enable-binreloc \
+		--program-transform-name= --disable-cppunit --enable-debug \
+		--with-toluaxx=${TOLUAXX_CMD}
 CONFIGURE_ENV+=	LUA_LIBS="-L${LUA_LIBDIR} -llua" \
-		LUA_CFLAGS="-I${LUA_INCDIR}"
+		LUA_CFLAGS="-I${LUA_INCDIR}" \
+		TOLUAXX="${TOLUAXX_CMD}"
 USE_SDL=	sdl
 GNU_CONFIGURE=	YES
 USE_LDCONFIG=	YES
 USE_LUA=	5.1
+LUA_COMPS=	toluaxx
 USE_OPENAL=	al alut
 USE_GNOME=	gnomehack
 USE_BZIP2=	YES
@@ -59,7 +63,7 @@ post-patch:
 		${WRKSRC}/ember.conf
 
 post-install:
-	(cd ${WRKDIR}/ember-media-${PORTVERSION}/media && ${FIND} . -type f -print | \
+	(cd ${WRKDIR}/media-${PORTVERSION}/media && ${FIND} . -type f -print | \
 		${CPIO} -pdmu -R${SHAREOWN}:${SHAREGRP} ${DATADIR}/media)
 	${FIND} ${DATADIR} -type d -print0 | ${XARGS} -0 ${CHMOD} 0755
 	${FIND} ${DATADIR} -type f -print0 | ${XARGS} -0 ${CHMOD} 0644

@@ -1371,7 +1371,6 @@ share/ember/media/shared/common/3d_skeletons/creatures/tubular/textures/pickerel
 share/ember/media/shared/common/3d_skeletons/creatures/tubular/textures/scaly_brown_white/D.png
 share/ember/media/shared/common/3d_skeletons/creatures/tubular/textures/scaly_brown_white/ogre.material
 share/ember/media/shared/common/3d_skeletons/insects/models/spider/animation/spider.skeleton
-share/ember/media/shared/common/3d_skeletons/insects/models/spider/spider.mesh
 share/ember/media/shared/common/3d_skeletons/insects/textures/carrion/D.png
 share/ember/media/shared/common/3d_skeletons/insects/textures/carrion/N.png
 share/ember/media/shared/common/3d_skeletons/insects/textures/carrion/S.png
@@ -1707,8 +1706,6 @@ share/ember/media/shared/gui/cegui/datafiles/layouts/TerrainEditor.layout
 share/ember/media/shared/gui/cegui/datafiles/layouts/EntityPicker.layout
 share/ember/media/shared/gui/cegui/datafiles/layouts/InspectWidget.layout
 share/ember/media/shared/gui/cegui/datafiles/layouts/Debug.layout
-share/ember/media/shared/gui/cegui/datafiles/layouts/Chat.layout
-share/ember/media/shared/gui/cegui/datafiles/layouts/Mover.layout
 share/ember/media/shared/gui/cegui/datafiles/layouts/Status.layout
 share/ember/media/shared/gui/cegui/datafiles/layouts/ScriptEdit.layout
 share/ember/media/shared/gui/cegui/datafiles/layouts/AssetsManager.layout
@@ -1730,7 +1727,6 @@ share/ember/media/shared/gui/cegui/datafiles/layouts/MakeEntityWidget.layout
 share/ember/media/shared/gui/cegui/datafiles/layouts/Label.layout
 share/ember/media/shared/gui/cegui/datafiles/layouts/IngameChatWidget.layout
 share/ember/media/shared/gui/cegui/datafiles/layouts/TypeManager.layout
-share/ember/media/shared/gui/cegui/datafiles/layouts/ConsoleWidget.layout
 share/ember/media/shared/gui/cegui/datafiles/layouts/JesusEditFile.layout
 share/ember/media/shared/gui/cegui/datafiles/layouts/GUILayout.xsd
 share/ember/media/shared/gui/cegui/datafiles/configs/cegui.config
@@ -1773,7 +1769,6 @@ share/ember/media/shared/scripting/lua/Environment.lua
 share/ember/media/shared/scripting/lua/Debug.lua
 share/ember/media/shared/scripting/lua/ModelEdit.lua
 share/ember/media/shared/scripting/lua/Inventory.lua
-share/ember/media/shared/scripting/lua/Chat.lua
 share/ember/media/shared/scripting/lua/EntityEditor.lua
 share/ember/media/shared/scripting/lua/EntityCreator.lua
 share/ember/media/shared/scripting/lua/TerrainEditor.lua
@@ -1795,6 +1790,25 @@ share/ember/media/shared/core/ember_splash.png
 share/ember/media/user/COPYING.txt
 share/ember/media/user/LICENSING.txt
 share/ember/media/user/README
+share/ember/media/shared/entityrecipes/fish.entityrecipe
+share/ember/media/shared/entityrecipes/sieve.entityrecipe
+share/ember/media/shared/entityrecipes/shovel.entityrecipe
+share/ember/media/shared/entityrecipes/fishingrod.entityrecipe
+share/ember/media/shared/gui/cegui/datafiles/layouts/ActionBar.layout
+share/ember/media/shared/gui/cegui/datafiles/layouts/QuickHelp.layout
+share/ember/media/shared/gui/cegui/datafiles/layouts/ActionBarCreator.layout
+share/ember/media/shared/gui/cegui/datafiles/layouts/Console.layout
+share/ember/media/shared/scripting/lua/ActionBarCreator.lua
+share/ember/media/shared/scripting/lua/ActionBar.lua
+share/ember/media/shared/scripting/lua/DefaultEntityActions.lua
+share/ember/media/shared/scripting/lua/MakeEntity.lua
+share/ember/media/shared/scripting/lua/Server.lua
+share/ember/media/shared/scripting/lua/QuickHelp.lua
+share/ember/media/shared/scripting/lua/Inspect.lua
+share/ember/media/shared/scripting/lua/ActionBarDefaultAction.lua
+share/ember/media/shared/scripting/lua/Console.lua
+share/ember/media/shared/common/3d_objects/environment/textures/smoke/smokecolors.png
+share/ember/media/shared/common/3d_objects/creatures/spider/spider.mesh
 @dirrm share/ember/media/shared/core
 @dirrm share/ember/media/shared/common/soundfx/items/saw
 @dirrm share/ember/media/shared/common/soundfx/items
