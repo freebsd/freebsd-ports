@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	cegui
-PORTVERSION=	0.6.2b
-PORTREVISION=	2
+PORTVERSION=	0.7.5
 CATEGORIES=	graphics devel
-MASTER_SITES=	SF/crayzedsgui/CEGUI%20Mk-2/0.6.2
+MASTER_SITES=	SF/crayzedsgui/CEGUI%20Mk-2/0.7.5
 DISTNAME=	${PORTNAME:U}-${PORTVERSION}
 
 MAINTAINER=	oliver@FreeBSD.org
@@ -18,11 +17,13 @@ COMMENT=	A library providing windowing and widgets for graphics APIs
 LIB_DEPENDS=	IL.2:${PORTSDIR}/graphics/devil \
 		pcre.0:${PORTSDIR}/devel/pcre \
 		freetype.9:${PORTSDIR}/print/freetype2
+BUILD_DEPENDS=	${LOCALBASE}/lib/libOgreMain.so.1.7.2:${PORTSDIR}/graphics/ogre3d
+RUN_DEPENDS=	${LOCALBASE}/lib/libOgreMain.so.1.7.2:${PORTSDIR}/graphics/ogre3d
 
 WRKSRC=		${WRKDIR}/${DISTNAME:S/2b/2/}
-CONFIGURE_ARGS=	--enable-toluacegui --disable-irrlicht-renderer \
+CONFIGURE_ARGS=	--disable-toluacegui --disable-irrlicht-renderer \
 		--disable-corona --enable-devil --disable-freeimage --disable-silly \
-		--disable-libxml --disable-xerces-c --disable-expat
+		--disable-libxml --disable-xerces-c --disable-expat --disable-samples
 
 CONFIGURE_ENV+=	Lua_LIBS="-L${LUA_LIBDIR} -llua -lm" \
 		Lua_CFLAGS="-I${LUA_INCDIR}" \
@@ -32,10 +33,13 @@ GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 USE_GL=		yes
 USE_LUA=	5.1
+LUA_COMPS=	toluaxx
+USE_PYTHON=	2.6+
 USE_GNOME=	gnomehack
+PLIST_SUB+=	WITH_OGRE=""
 
 .if !defined(NOPORTDOCS)
-PORTDOCS=	README COPYING AUTHORS ChangeLog TODO
+PORTDOCS=	README COPYING
 .endif
 
 post-patch:
@@ -43,22 +47,17 @@ post-patch:
 		s|"-lILU.*"|"-lm -L${LOCALBASE}/lib -lILU -lIL $$LIBS"|g; \
 		s|-lpthread|${PTHREAD_LIBS}|g; \
 		s|CEGUI_LUA_VER=..|CEGUI_LUA_VER=${USE_LUA:S/.//}|g; \
-		s|DevIL_CFLAGS=.*|DevIL_CFLAGS="-DUSE_DEVIL_LIBRARY -I${LOCALBASE}/include"|g' \
+		s|DevIL_CFLAGS=.*|DevIL_CFLAGS="-DUSE_DEVIL_LIBRARY -I${LOCALBASE}/include"|g; \
+		s|-release $$cegui_lib_version_suffix|-release ${PORTVERSION:C/\.[0-9]$//g} -version-number ${PORTVERSION:C/^[0-9]\.[0-9]\.//g}|g' \
 		${WRKSRC}/configure
-	@${REINPLACE_CMD} -e '/SUBDIRS/ s| Samples||g' ${WRKSRC}/Makefile.in
-	@${REINPLACE_CMD} -e 's|__linux__)|& \|\| defined(__FreeBSD__)|g' \
-		${WRKSRC}/include/CEGUIDynamicModule.h \
-		${WRKSRC}/src/CEGUIDynamicModule.cpp \
-		${WRKSRC}/Samples/common/src/CEGuiSample.cpp \
-		${WRKSRC}/src/CEGUISystem.cpp
-	@${REINPLACE_CMD} -e 's|ILvoid|void|g' \
-		${WRKSRC}/ImageCodecModules/DevILImageCodec/CEGUIDevILImageCodec.cpp
+	@${REINPLACE_CMD} -e 's|^SUBDIRS = tolua\+\+|SUBDIRS =|g' \
+		${WRKSRC}/cegui/include/ScriptingModules/LuaScriptModule/support/Makefile.in
 
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 .for docfile in ${PORTDOCS}
-	@${INSTALL_DATA} ${WRKSRC}/${docfile} ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/doc/${docfile} ${DOCSDIR}
 .endfor
 .endif
 
