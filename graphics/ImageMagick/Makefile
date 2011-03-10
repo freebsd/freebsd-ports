@@ -59,7 +59,7 @@ OPTIONS=\
 	IMAGEMAGICK_PDF		"PDF format support" on \
 	IMAGEMAGICK_PERL	"Perl support" on \
 	IMAGEMAGICK_PNG		"PNG format support" on \
-	IMAGEMAGICK_SVG		"SVG format support" on \
+	IMAGEMAGICK_SVG		"SVG format support (requires X11)" on \
 	IMAGEMAGICK_TESTS	"Run bundled self-tests after build" on \
 	IMAGEMAGICK_TIFF	"TIFF format support" on \
 	IMAGEMAGICK_TTF		"Freetype support" on \
@@ -397,7 +397,7 @@ pre-configure:
 	@${ECHO_CMD} '###################################################################'
 .endif
 .if defined(WITH_IMAGEMAGICK_SVG) && defined(WITHOUT_X11)
-	@${ECHO_CMD} NOTICE: SVG format support disabled (WITHOUT_X11)
+	@${ECHO_CMD} NOTICE: SVG format support disabled, requires X11
 .endif
 
 post-install:
