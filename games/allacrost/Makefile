@@ -7,6 +7,7 @@
 
 PORTNAME=	allacrost
 PORTVERSION=	1.0.2
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-demo/${PORTVERSION}
 DISTNAME=	${PORTNAME}_demo_source_${PORTVERSION}
@@ -14,12 +15,11 @@ DISTNAME=	${PORTNAME}_demo_source_${PORTVERSION}
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	A single player 2D role-playing game
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/libluabind.so:${PORTSDIR}/devel/luabind
-RUN_DEPENDS=	${LOCALBASE}/lib/libluabind.so:${PORTSDIR}/devel/luabind
 LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg \
 		png.6:${PORTSDIR}/graphics/png \
 		ogg.7:${PORTSDIR}/audio/libogg \
-		vorbis.4:${PORTSDIR}/audio/libvorbis
+		vorbis.4:${PORTSDIR}/audio/libvorbis \
+		boost_thread.4:${PORTSDIR}/devel/boost-libs
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
