@@ -1,0 +1,16 @@
+BUFR = Binary Universal Form for the Representation of meteorological data.
+BUFR is approved by WMO (World Meteorological Organization) as the standard
+universal exchange format for meteorological observations, gradually
+replacing a lot of older alphanumeric data formats.
+
+This module provides methods for decoding and encoding BUFR messages, and
+for displaying information in BUFR B and D tables and in BUFR flag and code
+tables.
+
+Installing this module also installs some programs: bufrread.pl,
+bufrresolve.pl, bufrencode.pl, bufr_reencode.pl and bufralter.pl. See
+https://wiki.met.no/bufr.pm/start for examples of use. For the majority of
+potential users of Geo::BUFR I would expect these programs to be all that
+you will need Geo::BUFR for.
+
+WWW: http://search.cpan.org/dist/Geo-BUFR/
