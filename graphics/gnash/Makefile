@@ -201,8 +201,8 @@ CONFIGURE_ARGS+=	--enable-renderer=`${ECHO} ${GNASH_RENDERERS} | ${TR} ' ' ,`
 #
 # Hardware acceleration options processing
 #
-.if defined(WITH_VAAPI) && !defined(WITHOUT_FFMPEG)
-.	if !defined(WITH_VAAPI)
+.if defined(WITH_VAAPI)
+.	if !defined(WITH_FFMPEG)
 IGNORE=			VAAPI currently works only with FFMPEG. Please rerun 'make config' and enable FFMPEG.
 .	endif
 LIB_DEPENDS+=		va.1:${PORTSDIR}/multimedia/libva
