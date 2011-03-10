@@ -21,5 +21,7 @@ SVNREV=		8600
 
 USE_APACHE=	2.2+
 
+BROKEN=		conflicting dependencies
+
 .include "${.CURDIR}/../foswiki/bsd.foswiki.mk"
 .include <bsd.port.mk>
