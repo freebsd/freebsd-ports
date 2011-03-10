@@ -1063,6 +1063,7 @@
     SUBDIR += ninja
     SUBDIR += noweb
     SUBDIR += nspr
+    SUBDIR += nxt-python
     SUBDIR += oaf
     SUBDIR += obby
     SUBDIR += obfuscatejs
