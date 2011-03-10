@@ -1,10 +1,15 @@
 To use imq-client in your Java application you need to add following jars
 to your classpath:
 
-%%JAVAJARDIR%%/imq.jar - Connector to IMQ broker. REQUIRED.
+%%JAVAJARDIR%%/imq.jar - Connector to IMQ broker. REQUIRED
 %%JAVAJARDIR%%/jms.jar - JMS 1.1 API classes. MOST LIKELY NEEDED
 			 If you have only one jms provider used in
                          your application or not using application
                          server you will need this. Otherwise other
                          jms provider will most likely to ship this.
 %%JAVAJARDIR%%/fscontext.jar - JDNI file based lookups. OPTIONAL
+%%JAVAJARDIR%%/jaxm-api.jar - Java API for XML Messaging 
+                             MOST LIKELY NEEDED for JAXM applications unless
+                         this api is provided by application server or OSGi
+                         container already.
+%%JAVAJARDIR%%/imqxm.jar - JAXM OpenMQ provider. REQUIRED for JAXM application

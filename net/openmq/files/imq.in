@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# Copyright (c) 2009 Radim Kolar. All rights reserved.
+# Copyright (c) 2009, 2010 Radim Kolar. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions
@@ -36,8 +36,9 @@
 #  imq_enable="YES"
 #  # optional
 #  imq_data="/var/spool/imq"
-#  imq_vmargs="-Xms192m -Xmx192m -Xss128k -XX:MaxGCPauseMillis=5000"
+#  imq_vmargs="-Xms150m -Xss128k -XX:MaxGCPauseMillis=5000"
 #  imq_brokerlist="hostname1:7676,hostname2:7676"
+#  imq_memory="256m"
 
 name="imq"
 . /etc/rc.subr
@@ -45,6 +46,8 @@ name="imq"
 # set defaults
 imq_enable=${imq_enable:-"NO"}
 imq_data=${imq_data:-"/var/spool/imq"}
+imq_vmargs=${imq_vmargs:-"-Xms150m -Xss128k -Xbatch -XX:MaxGCPauseMillis=5000"}
+imq_memory=${imq_memory:-"256m"}
 
 rcvar=`set_rcvar`
 load_rc_config $name
@@ -71,7 +74,21 @@ imq_start()
 {
   if [ -z "$rc_pid" ]; then
 	   echo -n "Starting $name"
-	   ${command} ${command_args} &
+	
+           # do we have memory limit defined?
+	   if [ -n "$imq_memory" ]; then
+                   #add imq_memory to vmargs
+		   echo "$imq_vmargs" | grep -q -- '-Xmx'
+		   if [ ! $? -eq 0 ]; then
+		       imq_vmargs="$imq_vmargs -Xmx${imq_memory}"
+		   fi
+           fi
+	   #run with imq_vmargs if defined
+	   if [ -n "$imq_vmargs" ]; then
+	        ${command} ${command_args} -vmargs "$imq_vmargs" &
+           else
+	   	${command} ${command_args} &
+	   fi
 	   echo -n $! > $pidfile
 	   echo "."
   else
@@ -93,11 +110,6 @@ imq_build_cmdline()
 	     if checkyesno autorestart; then
 	       command_args="$command_args -autorestart"
 	     fi
-	fi
-
-	#add imq_vmargs if needed
-	if [ -n "$imq_vmargs" ]; then
-	  command_args="$command_args -vmargs \"$imq_vmargs\""
 	fi
 
 	#load aditional command line arguments from broker config file
