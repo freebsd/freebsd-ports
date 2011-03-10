@@ -7,7 +7,7 @@
 
 PORTNAME=	xterm
 PORTVERSION=	269
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11
 MASTER_SITES=	ftp://invisible-island.net/xterm/ \
 		CRITICAL
@@ -19,6 +19,7 @@ COMMENT=	Terminal emulator for the X Window System
 BUILD_DEPENDS=	luit:${PORTSDIR}/x11/luit
 
 USE_XORG=	xaw xft
+USE_GNOME=	desktopfileutils
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
@@ -54,6 +55,9 @@ post-install:
 .for f in koi8rxterm resize uxterm xterm
 	@${CHMOD} ${BINMODE} ${PREFIX}/bin/${f}
 .endfor
+	@${MKDIR} ${PREFIX}/share/applications/
+	@${INSTALL_DATA} ${WRKSRC}/xterm.desktop ${PREFIX}/share/applications/
+	@-update-desktop-database
 
 .if defined(WITH_WIDE_CHARS)
 	@${CAT} ${PKGMESSAGE}
