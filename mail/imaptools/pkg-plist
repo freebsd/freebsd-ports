@@ -1,7 +1,7 @@
 bin/IMAPtoMbox.pl
 bin/MboxtoIMAP.pl
 bin/delIMAPdups.pl
-bin/delete_mailboxes.pl
+bin/delete_imap_mailboxes.pl
 bin/dumptoIMAP.pl
 bin/imapCapability.pl
 bin/imapPing.pl
