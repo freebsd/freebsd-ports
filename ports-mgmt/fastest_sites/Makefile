@@ -7,6 +7,7 @@
 
 PORTNAME=	fastest_sites
 PORTVERSION=	20081104
+PORTREVISION=	1
 CATEGORIES=	ports-mgmt
 MASTER_SITES=	http://www.semicomplete.com/files/fastest_sites/
 DISTNAME=	${PORTNAME}-${PORTVERSION}.py
