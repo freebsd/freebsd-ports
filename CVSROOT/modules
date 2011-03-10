@@ -4380,6 +4380,7 @@ gerbv                           ports/cad/gerbv
 geronimo                        ports/www/geronimo
 gerris                          ports/science/gerris
 gervill                         ports/audio/gervill
+get_iplayer                     ports/net/get_iplayer
 geta                            ports/dns/geta
 getbdf                          ports/x11-fonts/getbdf
 getdelta                        ports/sysutils/getdelta
@@ -7813,6 +7814,7 @@ libadplug                       ports/audio/libadplug
 libafterbase                    ports/devel/libafterbase
 libafterimage                   ports/graphics/libafterimage
 libaiff                         ports/audio/libaiff
+libalkimia                      ports/finance/libalkimia
 libamrnb                        ports/audio/libamrnb
 libamrwb                        ports/audio/libamrwb
 libao                           ports/audio/libao
@@ -12249,6 +12251,7 @@ p5-Email-Simple                 ports/mail/p5-Email-Simple
 p5-Email-Stuff                  ports/mail/p5-Email-Stuff
 p5-Email-Valid                  ports/mail/p5-Email-Valid
 p5-Email-Valid-Loose            ports/mail/p5-Email-Valid-Loose
+p5-Emplacken                    ports/www/p5-Emplacken
 p5-Encode                       ports/converters/p5-Encode
 p5-Encode-Detect                ports/converters/p5-Encode-Detect
 p5-Encode-DoubleEncodedUTF8     ports/converters/p5-Encode-DoubleEncodedUTF8
@@ -12974,6 +12977,7 @@ p5-Lingua-Stem-Snowball-No      ports/textproc/p5-Lingua-Stem-Snowball-No
 p5-Lingua-Stem-Snowball-Se      ports/textproc/p5-Lingua-Stem-Snowball-Se
 p5-Lingua-StopWords             ports/textproc/p5-Lingua-StopWords
 p5-Lingua-Treebank              ports/textproc/p5-Lingua-Treebank
+p5-List-AllUtils                ports/devel/p5-List-AllUtils
 p5-List-Compare                 ports/misc/p5-List-Compare
 p5-List-Cycle                   ports/devel/p5-List-Cycle
 p5-List-Group                   ports/devel/p5-List-Group
@@ -13330,6 +13334,7 @@ p5-MooseX-Types-DateTime-ButMaintained  ports/devel/p5-MooseX-Types-DateTime-But
 p5-MooseX-Types-DateTimeX       ports/devel/p5-MooseX-Types-DateTimeX
 p5-MooseX-Types-JSON            ports/devel/p5-MooseX-Types-JSON
 p5-MooseX-Types-Path-Class      ports/devel/p5-MooseX-Types-Path-Class
+p5-MooseX-Types-Perl            ports/devel/p5-MooseX-Types-Perl
 p5-MooseX-Types-Signal          ports/devel/p5-MooseX-Types-Signal
 p5-MooseX-Types-Structured      ports/devel/p5-MooseX-Types-Structured
 p5-MooseX-Types-VariantTable    ports/devel/p5-MooseX-Types-VariantTable
@@ -13365,6 +13370,7 @@ p5-Net-Address-IPv4-Local       ports/net/p5-Net-Address-IPv4-Local
 p5-Net-Akismet                  ports/www/p5-Net-Akismet
 p5-Net-Amazon                   ports/net/p5-Net-Amazon
 p5-Net-Amazon-AWIS              ports/www/p5-Net-Amazon-AWIS
+p5-Net-Amazon-AWSSign           ports/net/p5-Net-Amazon-AWSSign
 p5-Net-Amazon-EC2               ports/net/p5-Net-Amazon-EC2
 p5-Net-Amazon-MechanicalTurk    ports/net/p5-Net-Amazon-MechanicalTurk
 p5-Net-Amazon-S3                ports/net/p5-Net-Amazon-S3
@@ -13880,6 +13886,7 @@ p5-Plack-Middleware-AutoRefresh  ports/www/p5-Plack-Middleware-AutoRefresh
 p5-Plack-Middleware-ConsoleLogger  ports/www/p5-Plack-Middleware-ConsoleLogger
 p5-Plack-Middleware-Debug       ports/www/p5-Plack-Middleware-Debug
 p5-Plack-Middleware-Deflater    ports/www/p5-Plack-Middleware-Deflater
+p5-Plack-Middleware-Expires     ports/www/p5-Plack-Middleware-Expires
 p5-Plack-Middleware-File-Sass   ports/www/p5-Plack-Middleware-File-Sass
 p5-Plack-Middleware-Header      ports/www/p5-Plack-Middleware-Header
 p5-Plack-Middleware-IEnosniff   ports/www/p5-Plack-Middleware-IEnosniff
@@ -16399,6 +16406,7 @@ p5-email-simple                 ports/mail/p5-Email-Simple
 p5-email-stuff                  ports/mail/p5-Email-Stuff
 p5-email-valid                  ports/mail/p5-Email-Valid
 p5-email-valid-loose            ports/mail/p5-Email-Valid-Loose
+p5-emplacken                    ports/www/p5-Emplacken
 p5-encode                       ports/converters/p5-Encode
 p5-encode-compat                ports/converters/p5-Encode-compat
 p5-encode-detect                ports/converters/p5-Encode-Detect
@@ -17134,6 +17142,7 @@ p5-lingua-stem-snowball-no      ports/textproc/p5-Lingua-Stem-Snowball-No
 p5-lingua-stem-snowball-se      ports/textproc/p5-Lingua-Stem-Snowball-Se
 p5-lingua-stopwords             ports/textproc/p5-Lingua-StopWords
 p5-lingua-treebank              ports/textproc/p5-Lingua-Treebank
+p5-list-allutils                ports/devel/p5-List-AllUtils
 p5-list-compare                 ports/misc/p5-List-Compare
 p5-list-cycle                   ports/devel/p5-List-Cycle
 p5-list-group                   ports/devel/p5-List-Group
@@ -17497,6 +17506,7 @@ p5-moosex-types-datetime-butmaintained  ports/devel/p5-MooseX-Types-DateTime-But
 p5-moosex-types-datetimex       ports/devel/p5-MooseX-Types-DateTimeX
 p5-moosex-types-json            ports/devel/p5-MooseX-Types-JSON
 p5-moosex-types-path-class      ports/devel/p5-MooseX-Types-Path-Class
+p5-moosex-types-perl            ports/devel/p5-MooseX-Types-Perl
 p5-moosex-types-signal          ports/devel/p5-MooseX-Types-Signal
 p5-moosex-types-structured      ports/devel/p5-MooseX-Types-Structured
 p5-moosex-types-varianttable    ports/devel/p5-MooseX-Types-VariantTable
@@ -17537,6 +17547,7 @@ p5-net-aim                      ports/net-im/p5-Net-AIM
 p5-net-akismet                  ports/www/p5-Net-Akismet
 p5-net-amazon                   ports/net/p5-Net-Amazon
 p5-net-amazon-awis              ports/www/p5-Net-Amazon-AWIS
+p5-net-amazon-awssign           ports/net/p5-Net-Amazon-AWSSign
 p5-net-amazon-ec2               ports/net/p5-Net-Amazon-EC2
 p5-net-amazon-mechanicalturk    ports/net/p5-Net-Amazon-MechanicalTurk
 p5-net-amazon-s3                ports/net/p5-Net-Amazon-S3
@@ -17971,6 +17982,7 @@ p5-plack-middleware-autorefresh  ports/www/p5-Plack-Middleware-AutoRefresh
 p5-plack-middleware-consolelogger  ports/www/p5-Plack-Middleware-ConsoleLogger
 p5-plack-middleware-debug       ports/www/p5-Plack-Middleware-Debug
 p5-plack-middleware-deflater    ports/www/p5-Plack-Middleware-Deflater
+p5-plack-middleware-expires     ports/www/p5-Plack-Middleware-Expires
 p5-plack-middleware-file-sass   ports/www/p5-Plack-Middleware-File-Sass
 p5-plack-middleware-header      ports/www/p5-Plack-Middleware-Header
 p5-plack-middleware-ienosniff   ports/www/p5-Plack-Middleware-IEnosniff
@@ -19622,6 +19634,7 @@ pear-PEAR_PackageFileManager    ports/devel/pear-PEAR_PackageFileManager
 pear-PEAR_PackageFileManager2   ports/devel/pear-PEAR_PackageFileManager2
 pear-PEAR_PackageFileManager_Plugins  ports/devel/pear-PEAR_PackageFileManager_Plugins
 pear-PHPDoc                     ports/devel/pear-PHPDoc
+pear-PHPTAL                     ports/devel/pear-PHPTAL
 pear-PHPUnit                    ports/devel/pear-PHPUnit
 pear-PHPUnit2                   ports/devel/pear-PHPUnit2
 pear-PHPUnit3                   ports/devel/pear-PHPUnit3
@@ -19924,6 +19937,7 @@ pear-php_shell                  ports/shells/pear-PHP_Shell
 pear-php_uml                    ports/devel/pear-PHP_UML
 pear-phpdoc                     ports/devel/pear-PHPDoc
 pear-phpdocumentor              ports/devel/pear-PhpDocumentor
+pear-phptal                     ports/devel/pear-PHPTAL
 pear-phpunit                    ports/devel/pear-PHPUnit
 pear-phpunit2                   ports/devel/pear-PHPUnit2
 pear-phpunit3                   ports/devel/pear-PHPUnit3
@@ -20687,6 +20701,7 @@ planets                         ports/astro/planets
 planner                         ports/deskutils/planner
 planner.el                      ports/deskutils/planner.el
 plans                           ports/deskutils/plans
+plasma-applet-adjustableclock   ports/x11-clocks/plasma-applet-adjustableclock
 plasma-applet-apcups            ports/sysutils/plasma-applet-apcups
 plasma-applet-cwp               ports/deskutils/plasma-applet-cwp
 plasma-applet-daisy             ports/deskutils/plasma-applet-daisy
@@ -20695,6 +20710,7 @@ plasma-applet-ftpmonitor        ports/ftp/plasma-applet-ftpmonitor
 plasma-applet-geekclock         ports/x11-clocks/plasma-applet-geekclock
 plasma-applet-panelspacer       ports/deskutils/plasma-applet-panelspacer
 plasma-applet-playwolf          ports/deskutils/plasma-applet-playwolf
+plasma-applet-serverstatuswidget  ports/deskutils/plasma-applet-serverstatuswidget
 plasma-applet-simpleweatherforecast  ports/deskutils/plasma-applet-simpleweatherforecast
 plasma-applet-teacooker         ports/deskutils/plasma-applet-teacooker
 plasma-applet-yawp              ports/deskutils/plasma-applet-yawp
@@ -23284,6 +23300,7 @@ rubygem-do_sqlite3              ports/databases/rubygem-do_sqlite3
 rubygem-domainatrix             ports/www/rubygem-domainatrix
 rubygem-dragonfly               ports/graphics/rubygem-dragonfly
 rubygem-echoe                   ports/devel/rubygem-echoe
+rubygem-edavis10-object_daddy   ports/devel/rubygem-edavis10-object_daddy
 rubygem-elif                    ports/devel/rubygem-elif
 rubygem-emk-sinatra-url-for     ports/www/rubygem-emk-sinatra-url-for
 rubygem-erubis                  ports/www/rubygem-erubis
