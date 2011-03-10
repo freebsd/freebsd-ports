@@ -1,3 +1,4 @@
+bin/bitmap2component
 bin/cvpcb
 bin/eeschema
 bin/freeroute.jnlp
@@ -5,7 +6,6 @@ bin/gerbview
 bin/kicad
 bin/minizip
 bin/pcbnew
-bin/bitmap2component
 lib/kicad/plugins/netlist_form_pads-pcb.xsl
 share/applications/eeschema.desktop
 share/applications/kicad.desktop
@@ -27,16 +27,17 @@ share/mimelnk/application/x-kicad-schematic.desktop
 %%DATADIR%%/demos/complex_hierarchy/complex_hierarchy.net
 %%DATADIR%%/demos/complex_hierarchy/complex_hierarchy.pro
 %%DATADIR%%/demos/complex_hierarchy/complex_hierarchy.sch
+%%DATADIR%%/demos/ecc83/ecc83-pp-cache.lib
 %%DATADIR%%/demos/ecc83/ecc83-pp.brd
-%%DATADIR%%/demos/ecc83/ecc83-pp.cache.lib
 %%DATADIR%%/demos/ecc83/ecc83-pp.cmp
 %%DATADIR%%/demos/ecc83/ecc83-pp.net
 %%DATADIR%%/demos/ecc83/ecc83-pp.pro
 %%DATADIR%%/demos/ecc83/ecc83-pp.sch
+%%DATADIR%%/demos/ecc83/ecc83-pp_v2-cache.lib
 %%DATADIR%%/demos/ecc83/ecc83-pp_v2.brd
 %%DATADIR%%/demos/ecc83/ecc83-pp_v2.pro
 %%DATADIR%%/demos/ecc83/ecc83-pp_v2.sch
-%%DATADIR%%/demos/electric/electric.cache.lib
+%%DATADIR%%/demos/electric/electric-cache.lib
 %%DATADIR%%/demos/electric/electric.pro
 %%DATADIR%%/demos/electric/electric.sch
 %%DATADIR%%/demos/flat_hierarchy/flat_hierarchy-cache.lib
@@ -73,7 +74,6 @@ share/mimelnk/application/x-kicad-schematic.desktop
 %%DATADIR%%/demos/sonde xilinx/sonde xilinx-cache.lib
 %%DATADIR%%/demos/sonde xilinx/sonde xilinx.brd
 %%DATADIR%%/demos/sonde xilinx/sonde xilinx.cmp
-%%DATADIR%%/demos/sonde xilinx/sonde xilinx.drl
 %%DATADIR%%/demos/sonde xilinx/sonde xilinx.net
 %%DATADIR%%/demos/sonde xilinx/sonde xilinx.pro
 %%DATADIR%%/demos/sonde xilinx/sonde xilinx.sch
@@ -1340,6 +1340,8 @@ share/mimelnk/application/x-kicad-schematic.desktop
 %%DOCSDIR%%/internat/cs/kicad.po
 %%DOCSDIR%%/internat/de/kicad.mo
 %%DOCSDIR%%/internat/de/kicad.po
+%%DOCSDIR%%/internat/el_GR/kicad.mo
+%%DOCSDIR%%/internat/el_GR/kicad.po
 %%DOCSDIR%%/internat/es/kicad.mo
 %%DOCSDIR%%/internat/es/kicad.po
 %%DOCSDIR%%/internat/fi/kicad.mo
@@ -1350,6 +1352,8 @@ share/mimelnk/application/x-kicad-schematic.desktop
 %%DOCSDIR%%/internat/hu/kicad.po
 %%DOCSDIR%%/internat/it/kicad.mo
 %%DOCSDIR%%/internat/it/kicad.po
+%%DOCSDIR%%/internat/ja/kicad.mo
+%%DOCSDIR%%/internat/ja/kicad.po
 %%DOCSDIR%%/internat/ko/kicad.mo
 %%DOCSDIR%%/internat/ko/kicad.po
 %%DOCSDIR%%/internat/nl/kicad.mo
@@ -1445,11 +1449,13 @@ share/mimelnk/application/x-kicad-schematic.desktop
 @dirrm %%DOCSDIR%%/internat/pl
 @dirrm %%DOCSDIR%%/internat/nl
 @dirrm %%DOCSDIR%%/internat/ko
+@dirrm %%DOCSDIR%%/internat/ja
 @dirrm %%DOCSDIR%%/internat/it
 @dirrm %%DOCSDIR%%/internat/hu
 @dirrm %%DOCSDIR%%/internat/fr
 @dirrm %%DOCSDIR%%/internat/fi
 @dirrm %%DOCSDIR%%/internat/es
+@dirrm %%DOCSDIR%%/internat/el_GR
 @dirrm %%DOCSDIR%%/internat/de
 @dirrm %%DOCSDIR%%/internat/cs
 @dirrm %%DOCSDIR%%/internat/ca
