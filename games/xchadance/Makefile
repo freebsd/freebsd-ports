@@ -17,6 +17,8 @@ COMMENT=	Display a dancing girl "ChaCha."
 
 EXTRACT_DEPENDS=lha:${PORTSDIR}/archivers/lha
 
+BROKEN=		unfetchable
+
 USE_XORG=	x11
 MAKEFILE=	makefile
 NO_WRKSUBDIR=	yes
