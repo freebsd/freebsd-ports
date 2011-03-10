@@ -32,7 +32,7 @@ post-install:
 	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${DOCSDIR}
 .endif
 
-regression-test:
-	@(cd ${WRKSRC}/${PORTNAME} && ${PYTHON_CMD} ${PORTNAME}test.py)
+#regression-test:
+#	@(cd ${WRKSRC}/${PORTNAME} && ${PYTHON_CMD} ${PORTNAME}test.py)
 
 .include <bsd.port.mk>
