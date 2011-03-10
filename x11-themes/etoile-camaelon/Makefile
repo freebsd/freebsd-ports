@@ -36,9 +36,9 @@ post-install:
 	@${CAT} ${PKGMESSAGE}
 
 install-user:
-	@(. ${SYSMAKEDIR}/GNUstep.sh && defaults write Camaelon Theme Nesedah)
+	@(. ${GNUSTEP_MAKEFILES}/GNUstep.sh && defaults write Camaelon Theme Nesedah)
 
 deinstall-user:
-	@(. ${SYSMAKEDIR}/GNUstep.sh && defaults delete Camaelon Theme)
+	@(. ${GNUSTEP_MAKEFILES}/GNUstep.sh && defaults delete Camaelon Theme)
 
 .include <bsd.port.mk>
