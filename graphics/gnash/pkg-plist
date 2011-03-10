@@ -224,6 +224,9 @@ lib/gnash/libgnashrender.so.0
 lib/gnash/libgnashsound-%%GNASHVER%%.so
 lib/gnash/libgnashsound.la
 lib/gnash/libgnashsound.so
+%%VAAPI%%lib/gnash/libgnashvaapi-%%GNASHVER%%.so
+%%VAAPI%%lib/gnash/libgnashvaapi.la
+%%VAAPI%%lib/gnash/libgnashvaapi.so
 @comment %%NPAPI%%lib/gnash/libmozsdk.la
 @comment %%NPAPI%%lib/gnash/libmozsdk.so
 @comment %%NPAPI%%lib/gnash/libmozsdk.so.0

@@ -7,6 +7,7 @@
 
 PORTNAME=	gnash
 PORTVERSION=	0.8.8
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	GNU/${PORTNAME}/${PORTVERSION}/ \
 		http://mirror.amdmi3.ru/distfiles/
@@ -64,6 +65,7 @@ OPTIONS=	PLUGIN		"Enable browser plugin" on \
 		AGG		"Renderer: AGG" on \
 		OPENGL		"Renderer: OpenGL (broken)" off \
 		CAIRO		"Renderer: Cairo (experimental)" off \
+		VAAPI		"Enable VAAPI support (requres FFMPEG)" off \
 		FFMPEG		"Media handler: ffmpeg (+SDL sound output)" on \
 		GSTREAMER	"Media handler: GStreamer" off
 
@@ -195,6 +197,20 @@ IGNORE=			needs at least one renderer enabled. Please rerun 'make config' and en
 .endif
 
 CONFIGURE_ARGS+=	--enable-renderer=`${ECHO} ${GNASH_RENDERERS} | ${TR} ' ' ,`
+
+#
+# Hardware acceleration options processing
+#
+.if defined(WITH_VAAPI) && !defined(WITHOUT_FFMPEG)
+.	if !defined(WITH_VAAPI)
+IGNORE=			VAAPI currently works only with FFMPEG. Please rerun 'make config' and enable FFMPEG.
+.	endif
+LIB_DEPENDS+=		va.1:${PORTSDIR}/multimedia/libva
+PLIST_SUB+=		VAAPI=""
+.else
+CONFIGURE_ARGS+=	--enable-hwaccel=none # XVideo
+PLIST_SUB+=		VAAPI="@comment "
+.endif
 
 #
 # Media handler options processing
