@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Template-Mustache
-PORTVERSION=	v0.5.0
+PORTVERSION=	v0.5.1
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN/../../authors/id/P/PV/PVANDE
 PKGNAMEPREFIX=	p5-
@@ -15,8 +15,7 @@ MAINTAINER=	kurt.lidl@cello.com
 COMMENT=	Perl version of the fabulous Mustache template language
 
 BUILD_DEPENDS=	p5-YAML-Syck>=1.15:${PORTSDIR}/textproc/p5-YAML-Syck \
-		p5-Test-Mini>=v0:${PORTSDIR}/devel/p5-Test-Mini \
-		p5-Test-Mini-Unit>=v0:${PORTSDIR}/devel/p5-Test-Mini-Unit
+		p5-Test-Mini-Unit>=v1.0.3:${PORTSDIR}/devel/p5-Test-Mini-Unit
 
 PERL_CONFIGURE=	yes
 
