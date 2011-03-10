@@ -90,6 +90,7 @@ OPTIONS=	AVAHI		"Enable Avahi support"			on \
 		NONFREE		"Enable non-free components (rar, ccx, ffmpeg)"	off \
 		PULSE		"Enable PulseAudio support"		off \
 		RTMP		"RTMP support via librtmp"		off \
+		VAAPI		"Enable VAAPI support"			off \
 		VDPAU		"Enable VDPAU support"			off \
 		WEBSERVER	"Build Internal Webserver"		off
 
@@ -178,6 +179,13 @@ CONFIGURE_ARGS+=	--enable-rtmp
 LIB_DEPENDS+=	rtmp.0:${PORTSDIR}/multimedia/rtmpdump
 .else
 CONFIGURE_ARGS+=	--disable-rtmp
+.endif
+
+.if defined(WITH_VAAPI)
+LIB_DEPENDS+=	va.1:${PORTSDIR}/multimedia/libva
+CONFIGURE_ARGS+=	--enable-vaapi
+.else
+CONFIGURE_ARGS+=	--disable-vaapi
 .endif
 
 .if defined(WITH_VDPAU)
