@@ -21,6 +21,8 @@ USE_XORG=	x11 xext
 WRKSRC=		${WRKDIR}/${PORTNAME}
 MAN6=		mxico.6
 
+BROKEN=		bad plist
+
 pre-build:
 	@cd ${WRKSRC} && ${MV} Makefile Makefile~  && ${SED} \
 	 -e 's: BINDIR .*:BINDIR=${PREFIX}/bin:' \
