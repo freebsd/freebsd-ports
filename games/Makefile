@@ -593,6 +593,7 @@
     SUBDIR += noegnud-slashem
     SUBDIR += nonsense
     SUBDIR += npush
+    SUBDIR += nsnake
     SUBDIR += nuclearchess
     SUBDIR += numptyphysics
     SUBDIR += numptyphysics-npcomplete

@@ -1,0 +1,11 @@
+--- Makefile.orig	2011-03-08 18:04:22.000000000 +0100
++++ Makefile	2011-03-08 18:04:41.000000000 +0100
+@@ -27,7 +27,7 @@
+ INSTALL=	install
+ PREFIX=		/usr/local
+ VARBASE=	/var
+-MANPREFIX=	/share/man
++MANPREFIX=	/man
+ RM=		rm -f
+ 
+ all: ${PROG}
