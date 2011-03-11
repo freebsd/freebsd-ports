@@ -20,6 +20,9 @@ BUILD_DEPENDS=	bdftopcf:${PORTSDIR}/x11-fonts/bdftopcf
 RUN_DEPENDS=	mkfontdir:${PORTSDIR}/x11-fonts/mkfontdir \
 		mkfontscale:${PORTSDIR}/x11-fonts/mkfontscale
 
+DEPRECATED=     Distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 # distfile version
 BITMAP_FONTS_VER=	1.0
 BITMAP_FONTS_SIZE=	12 14 16 20 24

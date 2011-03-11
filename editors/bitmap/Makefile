@@ -17,6 +17,9 @@ PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
 MAINTAINER?=	ports@FreeBSD.org
 COMMENT?=	Bitmap-mule, Package to use bitmap in Emacs
 
+DEPRECATED=     Upstream disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 # ports version
 BITMAP_VER=		${BITMAP_MVER}${BITMAP_SNAP_PREFIX}${BITMAP_SNAP}
 # distfile version
