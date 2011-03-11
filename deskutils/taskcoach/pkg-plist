@@ -338,6 +338,12 @@ bin/taskcoach
 %%PYTHON_SITELIBDIR%%/taskcoachlib/gui/viewer/task.py
 %%PYTHON_SITELIBDIR%%/taskcoachlib/gui/viewer/task.pyc
 %%PYTHON_SITELIBDIR%%/taskcoachlib/gui/viewer/task.pyo
+%%PYTHON_SITELIBDIR%%/taskcoachlib/gui/wizard/__init__.py
+%%PYTHON_SITELIBDIR%%/taskcoachlib/gui/wizard/__init__.pyc
+%%PYTHON_SITELIBDIR%%/taskcoachlib/gui/wizard/__init__.pyo
+%%PYTHON_SITELIBDIR%%/taskcoachlib/gui/wizard/csvimport.py
+%%PYTHON_SITELIBDIR%%/taskcoachlib/gui/wizard/csvimport.pyc
+%%PYTHON_SITELIBDIR%%/taskcoachlib/gui/wizard/csvimport.pyo
 %%PYTHON_SITELIBDIR%%/taskcoachlib/help/__init__.py
 %%PYTHON_SITELIBDIR%%/taskcoachlib/help/__init__.pyc
 %%PYTHON_SITELIBDIR%%/taskcoachlib/help/__init__.pyo
@@ -860,6 +866,30 @@ bin/taskcoach
 %%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/customtreectrl.py
 %%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/customtreectrl.pyc
 %%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/customtreectrl.pyo
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/dateutil/__init__.py
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/dateutil/__init__.pyc
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/dateutil/__init__.pyo
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/dateutil/easter.py
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/dateutil/easter.pyc
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/dateutil/easter.pyo
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/dateutil/parser.py
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/dateutil/parser.pyc
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/dateutil/parser.pyo
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/dateutil/relativedelta.py
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/dateutil/relativedelta.pyc
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/dateutil/relativedelta.pyo
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/dateutil/rrule.py
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/dateutil/rrule.pyc
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/dateutil/rrule.pyo
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/dateutil/tz.py
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/dateutil/tz.pyc
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/dateutil/tz.pyo
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/dateutil/tzwin.py
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/dateutil/tzwin.pyc
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/dateutil/tzwin.pyo
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/dateutil/zoneinfo/__init__.py
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/dateutil/zoneinfo/__init__.pyc
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/dateutil/zoneinfo/__init__.pyo
 %%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/desktop/__init__.py
 %%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/desktop/__init__.pyc
 %%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/desktop/__init__.pyo
@@ -1000,6 +1030,8 @@ share/pixmaps/taskcoach.png
 @dirrm %%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/squaremap
 @dirrm %%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/lockfile
 @dirrm %%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/desktop
+@dirrm %%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/dateutil/zoneinfo
+@dirrm %%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/dateutil
 @dirrm %%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/chardet
 @dirrm %%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/calendar
 @dirrm %%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/aui
@@ -1018,6 +1050,7 @@ share/pixmaps/taskcoach.png
 @dirrm %%PYTHON_SITELIBDIR%%/taskcoachlib/iphone
 @dirrm %%PYTHON_SITELIBDIR%%/taskcoachlib/i18n
 @dirrm %%PYTHON_SITELIBDIR%%/taskcoachlib/help
+@dirrm %%PYTHON_SITELIBDIR%%/taskcoachlib/gui/wizard
 @dirrm %%PYTHON_SITELIBDIR%%/taskcoachlib/gui/viewer
 @dirrm %%PYTHON_SITELIBDIR%%/taskcoachlib/gui/dialog
 @dirrm %%PYTHON_SITELIBDIR%%/taskcoachlib/gui
