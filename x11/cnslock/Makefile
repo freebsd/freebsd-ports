@@ -15,6 +15,9 @@ MASTER_SITES=	http://www.dockapps.com/files/123/181/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A visual indicator of the states of the three "lock" buttons
 
+DEPRECATED=	Upstream disapear and distfile is no more available
+EXPIRATION_DATE=	2011-05-01
+
 PLIST_FILES=	bin/cnslock
 USE_GNOME=	gtk12
 USE_XORG=	x11 xpm

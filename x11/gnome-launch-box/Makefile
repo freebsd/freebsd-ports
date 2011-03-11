@@ -15,6 +15,9 @@ MASTER_SITE_SUBDIR=	jylefort
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An application launcher for the GNOME desktop
 
+DEPRECATED=	Upstream disapear and distfile is no more available
+EXPIRATION_DATE=	2011-05-01
+
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_GNOME=	libgnomeui evolutiondataserver gnomemenus gnomedesktop

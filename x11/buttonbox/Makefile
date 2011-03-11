@@ -16,6 +16,9 @@ DISTNAME=	${PORTNAME:S/b/B/g}-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Xlib-based application launcher
 
+DEPRECATED=	Upstream disapear and distfile is no more available
+EXPIRATION_DATE=	2011-05-01
+
 DOCDIR=		share/doc/${PORTNAME}
 DOCS=		COPYING ChangeLog DEDICATION README TODO
 PLIST=		${WRKDIR}/pkg-plist

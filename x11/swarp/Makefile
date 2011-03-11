@@ -20,6 +20,9 @@ MAKE_ARGS=	LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib -lX11" \
 			-DVERSION=\\\"${PORTVERSION}\\\"" \
 		LD=${CC}
 
+DEPRECATED=	Upstream disapear and distfile is no more available
+EXPIRATION_DATE=	2011-05-01
+
 USE_XORG=	x11
 PLIST_FILES=	bin/swarp
 PORTDOCS=	README

@@ -15,6 +15,9 @@ MASTER_SITE_SUBDIR=	petef
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GTK frontend for xset(1)
 
+DEPRECATED=	Upstream disapear and distfile is no more available
+EXPIRATION_DATE=	2011-05-01
+
 USE_GNOME=	gtk12
 USE_XORG=	xpm
 GNU_CONFIGURE=	yes

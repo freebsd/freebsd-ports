@@ -13,6 +13,9 @@ MASTER_SITES=	ftp://ftp.lemis.com/pub/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Utility to set title on an xterm
 
+DEPRECATED=	Upstream disapear and distfile is no more available
+EXPIRATION_DATE=	2011-05-01
+
 NO_WRKSUBDIR=	YES
 
 PLIST_FILES=	bin/xtset

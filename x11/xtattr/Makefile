@@ -15,6 +15,9 @@ MASTER_SITE_SUBDIR=	trevor
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A tool for changing xterm attributes
 
+DEPRECATED=	Upstream disapear and distfile is no more available
+EXPIRATION_DATE=	2011-05-01
+
 MAKEFILE=	${FILESDIR}/Makefile.bsd
 MAN1=		xtattr.1
 MANCOMPRESSED=	maybe

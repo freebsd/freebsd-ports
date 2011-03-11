@@ -16,6 +16,9 @@ DISTNAME=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Collection of icons related to the FreeBSD project
 
+DEPRECATED=	Upstream disapear and distfile is no more available
+EXPIRATION_DATE=	2011-05-01
+
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 

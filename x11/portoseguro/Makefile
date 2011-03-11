@@ -16,6 +16,9 @@ DISTNAME=	${PORTNAME}-alpha4
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Launch applications by clicking on an icon bar
 
+DEPRECATED=	Upstream disapear and distfile is no more available
+EXPIRATION_DATE=	2011-05-01
+
 CONFIGURE_ENV=	GTKCONFIG=${GTK_CONFIG}
 USE_AUTOTOOLS=	autoconf213
 GNU_CONFIGURE=	yes

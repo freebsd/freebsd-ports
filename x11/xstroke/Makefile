@@ -15,6 +15,9 @@ MASTER_SITES=	ftp://ftp.handhelds.org/projects/xstroke/release-0.5/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fullscreen gesture recognition
 
+DEPRECATED=	Upstream disapear and distfile is no more available
+EXPIRATION_DATE=	2011-05-01
+
 USE_BISON=	build
 USE_XORG=	xft x11 xext xi xtst
 USE_IMAKE=	yes
