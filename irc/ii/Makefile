@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ii
-PORTVERSION=	1.4
+PORTVERSION=	1.6
 CATEGORIES=	irc
 MASTER_SITES=	http://dl.suckless.org/tools/ \
 		http://laffaye.free.fr/distfiles/
