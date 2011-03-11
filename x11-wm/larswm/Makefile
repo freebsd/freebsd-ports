@@ -22,6 +22,9 @@ MAN1=		larsclock.1 larsmenu.1 larsremote.1 larswm.1
 MYPORTDOCS=	ChangeLog README README.9menu README.9wm \
 		sample.larswmrc sample.xsession
 
+DEPRECATED=     Upstream disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 post-install:
 .if !defined(NOPORTDOCS)
 	@$(MKDIR) $(DOCSDIR)

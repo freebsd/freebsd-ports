@@ -15,6 +15,9 @@ DISTNAME=	wmG-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Small GTK-based GNOME-compliant window manager
 
+DEPRECATED=	Upstream disapear and distfile is no more available
+EXPIRATION_DATE=	2011-05-01
+
 USE_XORG=	xpm
 USE_GNOME=	gnomehack gnomelibs gnomeprefix
 USE_GMAKE=	yes
