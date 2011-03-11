@@ -8,6 +8,9 @@
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Bitmap-mule, Package to use bitmap in Emacs21
 
+DEPRECATED=     Upstream disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 # This is a slave port.
 PORTCLASS=	slave
 
