@@ -1,3 +1,2 @@
-MD5 (perforce/2010.1.251161/bin.freebsd61sparc64/p4ftpd) = ae74ae66e2d290768cb6ec0c64c0d823
-SHA256 (perforce/2010.1.251161/bin.freebsd61sparc64/p4ftpd) = 45c0974807db9c36a5483b771158cfa831117c04844bf4971694ea6fd6d381c3
-SIZE (perforce/2010.1.251161/bin.freebsd61sparc64/p4ftpd) = 1008056
+SHA256 (perforce/2010.2.279478/bin.freebsd61sparc64/p4ftpd) = 6a19e1b321295fd1868b3d4de4c0aaebf180895731687463bf961c48c2cdc7b9
+SIZE (perforce/2010.2.279478/bin.freebsd61sparc64/p4ftpd) = 1042424

@@ -1,3 +1,2 @@
-MD5 (perforce/2010.1.251161/bin.freebsd70x86_64/p4ftpd) = 7dba3022fa63b8acc8414d26fb759818
-SHA256 (perforce/2010.1.251161/bin.freebsd70x86_64/p4ftpd) = fa87d473d2509eb5023330fb689fbed55443376c874001d7aa1b75113a6c7daf
-SIZE (perforce/2010.1.251161/bin.freebsd70x86_64/p4ftpd) = 855016
+SHA256 (perforce/2010.2.279478/bin.freebsd70x86_64/p4ftpd) = c69c903941ca56339647e776d206f7953944c2b57e4021ddd609dd56fd496a8a
+SIZE (perforce/2010.2.279478/bin.freebsd70x86_64/p4ftpd) = 884384
