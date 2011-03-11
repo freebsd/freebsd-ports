@@ -5,16 +5,19 @@
 # $FreeBSD$
 #
 
-PORTNAME=	cherrypy-devel
+PORTNAME=	cherrypy
 PORTVERSION=	3.2.0.r1
 PORTREVISION=	1
 CATEGORIES=	www python
-MASTER_SITES=	http://rj45.org/freebsd/distfiles/${PORTNAME}/
+MASTER_SITES=	http://rj45.org/freebsd/distfiles/${PORTNAME}${PKGNAMESUFFIX}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+PKGNAMESUFFIX=	-devel
 DISTNAME=	CherryPy-${PORTVERSION}
 
 MAINTAINER=	dab@rj45.org
 COMMENT=	A pythonic, object-oriented web development framework
+
+CONFLICTS=	${PYTHON_PKGNAMEPREFIX}${PORTNAME}-[0-9]*
 
 .if !defined(NOPORTEXAMPLES)
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cheetah>=2.0.1:${PORTSDIR}/devel/py-cheetah
@@ -31,8 +34,6 @@ post-install:
 	${MKDIR} ${EXAMPLESDIR}
 	(cd ${WRKSRC}/cherrypy/tutorial/ && ${COPYTREE_SHARE} \* ${EXAMPLESDIR})
 .endif
-	${RM} -R ${PYTHONPREFIX_SITELIBDIR}/${DISTNAME}*egg/cherrypy/tutorial
-
-CONFLICTS=	py26-cherrypy-3.[0-1]*
+	${RM} -R ${PYTHON_SITELIBDIR}/${PYEASYINSTALL_EGG}/cherrypy/tutorial
 
 .include <bsd.port.mk>
