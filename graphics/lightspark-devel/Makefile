@@ -6,13 +6,12 @@
 #
 
 PORTNAME=	lightspark
-DISTVERSION=	r20100625
-PORTREVISION=	1
+DISTVERSION=	r20110309
 CATEGORIES=	graphics
 MASTER_SITES=	http://mirror.amdmi3.ru/distfiles/
 PKGNAMESUFFIX=	-devel
 
-MAINTAINER=	amdmi3@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An alternative Flash Player implementation
 
 BUILD_DEPENDS=	${LOCALBASE}/include/llvm/Support/DataFlow.h:${PORTSDIR}/devel/llvm \
@@ -23,12 +22,14 @@ LIB_DEPENDS=	curl.6:${PORTSDIR}/ftp/curl \
 		pcrecpp.0:${PORTSDIR}/devel/pcre \
 		ftgl.2:${PORTSDIR}/graphics/ftgl \
 		avcodec.1:${PORTSDIR}/multimedia/ffmpeg \
-		fontconfig.1:${PORTSDIR}/x11-fonts/fontconfig
+		fontconfig.1:${PORTSDIR}/x11-fonts/fontconfig \
+		boost_system:${PORTSDIR}/devel/boost-libs \
+		rtmp.0:${PORTSDIR}/multimedia/rtmpdump \
+		xml\\+\\+-2.6:${PORTSDIR}/textproc/libxml++26 \
+		pulse.0:${PORTSDIR}/audio/pulseaudio
 
 ONLY_FOR_ARCHS=	i386 amd64
 ONLY_FOR_ARCHS_REASON=	Uses assembly code
-
-BROKEN=		does not compile
 
 USE_BZIP2=	yes
 USE_CMAKE=	yes
@@ -39,21 +40,18 @@ USE_GL=		gl glew
 MAKE_JOBS_SAFE=	yes
 USE_PERL5_BUILD=yes # for llvm-config; see ports/146711
 USE_LDCONFIG=	yes
-
-CXXFLAGS+=	-fpermissive
+USE_GETTEXT=	yes
+USE_GCC=	4.4+
 
 PORTDOCS=	*
 
+MAN1=		lightspark.1
+
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-OPTIONS=	PLUGIN	"Enable browser plugin" off \
-		SOUND	"Enable sound (requires libpulse)" on
+OPTIONS=	PLUGIN	"Enable browser plugin" off
 
 .include <bsd.port.options.mk>
-
-.if ${OSVERSION} < 700042
-BROKEN=		Does not compile on 6.x
-.endif
 
 .if defined(WITH_PLUGIN)
 USE_GNOME+=	gtk20
@@ -62,10 +60,9 @@ USE_WEBPLUGINS=	native
 WEBPLUGINS_FILES=liblightsparkplugin.so
 .include "${PORTSDIR}/www/firefox/Makefile.webplugins"
 CXXFLAGS+=	-I${LOCALBASE}/include/firefox3
-BUILD_DEPENDS+=	${LOCALBASE}/include/firefox3/npfunctions.h:${PORTSDIR}/www/firefox \
-		${LOCALBASE}/libdata/pkgconfig/mozilla-plugin.pc:${PORTSDIR}/www/libxul
-RUN_DEPENDS+=	${LOCALBASE}/include/firefox3/npfunctions.h:${PORTSDIR}/www/firefox \
-		${LOCALBASE}/libdata/pkgconfig/mozilla-plugin.pc:${PORTSDIR}/www/libxul
+USE_FIREFOX_BUILD=	36
+BUILD_DEPENDS+=	${LOCALBASE}/libdata/pkgconfig/mozilla-plugin.pc:${PORTSDIR}/www/libxul
+RUN_DEPENDS+=	${LOCALBASE}/libdata/pkgconfig/mozilla-plugin.pc:${PORTSDIR}/www/libxul
 PLIST_SUB+=	PLUGIN=""
 CMAKE_ARGS+=	-DCOMPILE_PLUGIN:BOOL=ON \
 		-DPLUGIN_DIRECTORY:STRING="${WEBPLUGINS_DIR}"
@@ -74,25 +71,11 @@ PLIST_SUB+=	PLUGIN="@comment "
 CMAKE_ARGS+=	-DCOMPILE_PLUGIN:BOOL=OFF
 .endif
 
-.if defined(WITH_SOUND)
-LIB_DEPENDS+=	pulse.0:${PORTSDIR}/audio/pulseaudio
-.else
-CMAKE_ARGS+=	-DENABLE_SOUND:BOOL=OFF
-.endif
-
-.if defined(WITH_PLUGIN)
-pre-everything::
-	@${ECHO_CMD} "Lightspark is currently in pre-alpha state, so only use its plugin"
-	@${ECHO_CMD} "if you know what you are doing; otherwise, expect browser crashes and hangs"
-	@${ECHO_CMD} "Also, you'll probably need to edit kernel source and bump SEM_MAX from 30"
-	@${ECHO_CMD} "to something much higher (1024 or so) to make the plugin work..."
-	@sleep 3
-.endif
-
 post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
 .endif
+	@${ECHO_CMD}; ${CAT} ${PKGMESSAGE}; ${ECHO_CMD}
 
 .include <bsd.port.mk>
