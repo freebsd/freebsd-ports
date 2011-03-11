@@ -6,4 +6,4 @@ classes and functions necessary for widget creation and callbacks. The library
 provides numerous widgets, all with the traditional dockapp appearance. Many
 common dockapps could already be rewritten to use this library.
 
-WWW: http://www.princeton.edu/~kmccarty/wmapp.html
+WWW: http://starplot.org/wmapp/

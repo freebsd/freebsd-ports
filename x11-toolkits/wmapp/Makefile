@@ -10,7 +10,7 @@ PORTNAME=	wmapp
 PORTVERSION=	0.0.4.3
 PORTREVISION=	2
 CATEGORIES=	x11-toolkits windowmaker
-MASTER_SITES=	http://www.princeton.edu/~kmccarty/downloads/
+MASTER_SITES=	http://starplot.org/wmapp/downloads/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A DockApp Graphics Library
