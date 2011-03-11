@@ -15,6 +15,9 @@ EXTRACT_SUFX=	c-src.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Window manager for low-memory systems, with title bars and shading
 
+DEPRECATED=     Upstream disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 BINS=		swm swmbg swmswitch
 DOCDIR=		share/doc/${PORTNAME}
 MAN1=		swm.1 swmbg.1

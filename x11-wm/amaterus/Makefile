@@ -14,6 +14,9 @@ MASTER_SITES=	http://www.taiyaki.org/amaterus/src/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A GTK+ window manager
 
+DEPRECATED=     Distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 LIB_DEPENDS=	xml.5:${PORTSDIR}/textproc/libxml
 
 USE_GNOME=	gtk12
