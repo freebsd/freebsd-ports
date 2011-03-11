@@ -151,7 +151,7 @@ EXTRA_PATCHES+=	${FILESDIR}/openssh-5.2p1-hpn13v6.diff
 .if defined(WITH_LPK)
 EXTRA_PATCHES+=		${FILESDIR}/contrib-openssh-lpk-5.1p1-0.3.10.patch
 USE_OPENLDAP=		yes
-CPPFLAGS+=		"-I${LOCALBASE}/include -DWITH_LDAP_PUBKEY"
+CPPFLAGS+=		-I${LOCALBASE}/include -DWITH_LDAP_PUBKEY
 CONFIGURE_ARGS+=	--with-libs='-lldap' --with-ldflags='-L${LOCALBASE}/lib' \
 			--with-cppflags='-I${LOCALBASE}/include -DWITH_LDAP_PUBKEY'
 .endif
