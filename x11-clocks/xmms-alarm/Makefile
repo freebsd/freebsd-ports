@@ -16,6 +16,9 @@ COMMENT=	Alarm timer plugin for the X Multimedia System
 
 LIB_DEPENDS=	xmms.4:${PORTSDIR}/multimedia/xmms
 
+DEPRECATED=     Upstream disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 USE_BZIP2=	yes
 USE_LDCONFIG=	yes
 USE_GNOME=	gnometarget gtk12

@@ -16,6 +16,9 @@ COMMENT=	A simple clock for desktop environment
 
 BUILD_DEPENDS=	qmake:${PORTSDIR}/devel/qmake
 
+DEPRECATED=     Upstream disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 WRKSRC=		${WRKDIR}/BDesktopClock
 
 USE_QT_VER=	3

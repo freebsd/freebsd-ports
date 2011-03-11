@@ -14,6 +14,9 @@ MASTER_SITES=	http://www.geocities.com/jl1n/wmtz/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Dockapp that displays the time in different time zones
 
+DEPRECATED=     Upstream disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 USE_GMAKE=	yes
 MAKE_ARGS=	CC="${CC}" FLAGS="${CFLAGS} -I${LOCALBASE}/include" \
 		LIBDIR="-L${LOCALBASE}/lib"

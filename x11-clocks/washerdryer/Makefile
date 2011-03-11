@@ -15,6 +15,9 @@ DISTNAME=	washerDryer-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A dockapp that keeps track of the loads in your washer and dryer
 
+DEPRECATED=     Upstream disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 WRKSRC=		${WRKDIR}/${DISTNAME}/washerDryer
 USE_GMAKE=	yes
 USE_BZIP2=	yes
