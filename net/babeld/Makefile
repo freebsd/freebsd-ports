@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	babeld
-PORTVERSION=	1.0.1
+PORTVERSION=	1.1.0
 CATEGORIES=	net
 MASTER_SITES=	http://www.pps.jussieu.fr/~jch/software/files/
 
