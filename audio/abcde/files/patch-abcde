@@ -1,38 +1,13 @@
---- abcde.old	Tue Nov 22 13:12:14 2005
-+++ abcde	Tue Nov 22 13:12:51 2005
-@@ -2169,6 +2169,7 @@
- 	HTTPGET=fetch
- 	NEEDCDROMID=y
- 	OSFLAVOUR=FBSD
-+	MD5SUM=md5
- elif [ X$(uname) = "XDarwin" ] ; then
- 	HTTPGET=curl
- 	OSFLAVOUR=OSX
-@@ -2453,17 +2453,18 @@
- 
- # Allow -o OUTPUT(1):OPTIONS(1),...,OUTPUT(N):OPTIONS(N) mode of operation
- if echo "$OUTPUTTYPE" | grep ":" > /dev/null 2>&1 ; then
--	for OUTPUT in $(echo $OUTPUTTYPE | tr , \ ); do
--		case "$OUTPUT" in
--			vorbis:*|ogg:*)	OGGENCODEROPTSCLI="$( echo $OUTPUT | cut -d: -f2- )" ;;
--			mp3:*)	MP3ENCODEROPTSCLI="$( echo $OUTPUT | cut -d: -f2- )" ;;
--			flac:*)	FLACENCODEROPTSCLI="$( echo $OUTPUT | cut -d: -f2- )" ;;
--			spx:*)	SPEEXENCODEROPTSCLI="$( echo $OUTPUT | cut -d: -f2- )" ;;
--			mpc:*)	MPPENCODEROPTSCLI="$( echo $OUTPUT | cut -d: -f2- )" ;;
-+	for OUTPUT in $(echo $OUTPUTTYPE | tr \  \| | tr , \ ); do
-+		TOUTPUT=$(echo $OUTPUT | tr \| \ )
-+		case "$TOUTPUT" in
-+			vorbis:*|ogg:*)	OGGENCODEROPTSCLI="$( echo $TOUTPUT | cut -d: -f2- )" ;;
-+			mp3:*)	MP3ENCODEROPTSCLI="$( echo $TOUTPUT | cut -d: -f2- )" ;;
-+			flac:*)	FLACENCODEROPTSCLI="$( echo $TOUTPUT | cut -d: -f2- )" ;;
-+			spx:*)	SPEEXENCODEROPTSCLI="$( echo $TOUTPUT | cut -d: -f2- )" ;;
-+			mpc:*)	MPPENCODEROPTSCLI="$( echo $TOUTPUT | cut -d: -f2- )" ;;
+--- ./abcde.orig	2010-05-29 11:02:44.000000000 +0200
++++ ./abcde	2011-03-11 07:56:10.638294344 +0100
+@@ -3569,8 +3569,8 @@
+ 			m4a:*)  AACENCODEROPTSCLI="$( echo $OUTPUT | cut -d: -f2- )" ;;
  		esac
  	done
--	for OUTPUT in $(echo $OUTPUTTYPE | tr , \ ); do
+-	for OUTPUT in "$(echo "$OUTPUTTYPE" | tr , \ )"; do
 -		TEMPOUTPUT=$( echo "$OUTPUT" | cut -d: -f1 )
-+	for OUTPUT in $(echo $OUTPUTTYPE | tr \  \| | tr , \ ); do
-+		TEMPOUTPUT=$( echo "$OUTPUT" | tr \| \ | cut -d: -f1 )
++	for OUTPUT in "$(echo "$OUTPUTTYPE" | tr \  \| | tr , \ )"; do
++		TEMPOUTPUT=$( echo "$OUTPUT" | tr \  \| | cut -d: -f1 )
  		TEMPOUTPUTTYPE="${TEMPOUTPUTTYPE:+$TEMPOUTPUTTYPE,}$TEMPOUTPUT"
  	done
  	OUTPUTTYPE="$TEMPOUTPUTTYPE"
