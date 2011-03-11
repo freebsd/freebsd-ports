@@ -7,11 +7,9 @@
 #
 
 PORTNAME=	libjpeg-turbo
-PORTVERSION=	1.0.1
+PORTVERSION=	1.1.0
 CATEGORIES=	graphics
-MASTER_SITES=	http://openmoko.spb.ru/repository/ \
-		SF/${PORTNAME}/${PORTVERSION} \
-		${MASTER_SITE_XCONTRIB}
+MASTER_SITES=	SF/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	bytestore@yandex.ru
 COMMENT=	SIMD-accelerated JPEG codec which provides both the libjpeg,TurboJPEG

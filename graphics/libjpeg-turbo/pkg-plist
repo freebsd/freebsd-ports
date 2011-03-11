@@ -1,6 +1,7 @@
 bin/cjpeg
 bin/djpeg
 bin/jpegtran
+bin/jpgtest
 bin/rdjpgcom
 bin/wrjpgcom
 include/jconfig.h
