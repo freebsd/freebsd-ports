@@ -15,7 +15,7 @@ MAINTAINER=	gslin@gslin.org
 COMMENT=	Moose types that check against Perl syntax
 
 RUN_DEPENDS=	p5-MooseX-Types>=0:${PORTSDIR}/devel/p5-MooseX-Types \
-		p5-Params-Utils>=0:${PORTSDIR}/devel/p5-Params-Util
+		p5-Params-Util>=0:${PORTSDIR}/devel/p5-Params-Util
 
 PERL_CONFIGURE=	yes
 
