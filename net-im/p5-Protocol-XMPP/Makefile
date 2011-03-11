@@ -7,6 +7,7 @@
 
 PORTNAME=	Protocol-XMPP
 PORTVERSION=	0.005
+PORTREVISION=	1
 CATEGORIES=	net-im perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:TEAM
@@ -16,9 +17,7 @@ MAINTAINER=	ports@c0decafe.net
 COMMENT=	Protocol-level support for XMPP interaction
 
 RUN_DEPENDS=	p5-Authen-SASL>=0:${PORTSDIR}/security/p5-Authen-SASL \
-		p5-Module-Load>=0:${PORTSDIR}/devel/p5-Module-Load \
-		p5-XML-LibXML-SAX-ChunkParser>=0.00003:${PORTSDIR}/textproc/p5-XML-LibXML-SAX-ChunkParser \
-		p5-parent>=0:${PORTSDIR}/devel/p5-parent
+		p5-XML-LibXML-SAX-ChunkParser>=0.00003:${PORTSDIR}/textproc/p5-XML-LibXML-SAX-ChunkParser
 
 PERL_CONFIGURE=	yes
 
@@ -55,4 +54,11 @@ MAN3=		Protocol::XMPP.3 \
 		Protocol::XMPP::TextElement.3 \
 		Protocol::XMPP::User.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 501000
+RUN_DEPENDS+=	p5-Module-Load>=0:${PORTSDIR}/devel/p5-Module-Load \
+		p5-parent>=0:${PORTSDIR}/devel/p5-parent
+.endif
+
+.include <bsd.port.post.mk>
