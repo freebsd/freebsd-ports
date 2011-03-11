@@ -16,7 +16,8 @@ COMMENT=	Off-Screen Mesa implementation of the OpenGL API
 
 LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2 \
     		talloc.2:${PORTSDIR}/devel/talloc
-BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/libxml2mod.so:${PORTSDIR}/textproc/py-libxml2
+BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/libxml2mod.so:${PORTSDIR}/textproc/py-libxml2 \
+    		makedepend:${PORTSDIR}/devel/makedepend
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 CONFLICTS=	mesagl-mangled-*
