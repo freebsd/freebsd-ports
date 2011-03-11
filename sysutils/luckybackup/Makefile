@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	luckybackup
-PORTVERSION=	0.4.4
+PORTVERSION=	0.4.5
 CATEGORIES=	sysutils
 MASTER_SITES=	SF/${PORTNAME}/${PORTVERSION}/source
 
@@ -33,7 +33,9 @@ post-patch:
 	${REINPLACE_CMD} -e 's|/usr/bin/||g' -e 's|/usr/share/pixmaps/||g' \
 		${WRKSRC}/menu/*.desktop
 	${REINPLACE_CMD} -e 's|/usr|${PREFIX}|g' \
-		${WRKSRC}/src/global.h ${WRKSRC}/src/scheduleDialog.cpp
+		${WRKSRC}/src/executenow.cpp \
+		${WRKSRC}/src/global.h \
+		${WRKSRC}/src/scheduleDialog.cpp
 
 do-configure:
 	cd ${WRKSRC} && ${QMAKE}
