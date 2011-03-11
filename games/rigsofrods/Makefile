@@ -19,7 +19,7 @@ COMMENT=	Truck, car, airplane and boat simulator with advanced physics
 
 LIB_DEPENDS=	zzip.13:${PORTSDIR}/devel/zziplib \
 		freetype.9:${PORTSDIR}/print/freetype2 \
-		CEGUIBase.3:${PORTSDIR}/graphics/cegui \
+		CEGUIBase-0.7.5:${PORTSDIR}/graphics/cegui \
 		freeimage.3:${PORTSDIR}/graphics/freeimage
 BUILD_DEPENDS=	${LOCALBASE}/lib/libOIS.so:${PORTSDIR}/devel/ois \
 		unzip:${PORTSDIR}/archivers/unzip
@@ -33,6 +33,8 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-source-${PORTVERSION}/build
 USE_WX=		2.6+
 WX_UNICODE=	yes
 MAKE_JOBS_SAFE=	yes
+
+BROKEN=		Does not work with CEGUI 0.7.x
 
 USE_CMAKE=	yes
 # CG unavailable for FreeBSD
