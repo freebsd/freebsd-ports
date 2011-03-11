@@ -16,9 +16,6 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A pager for sawfish without GNOME
 
-DEPRECATED=     Upstream disapear and distfile is no more available
-EXPIRATION_DATE=        2011-05-01
-
 BUILD_DEPENDS=	sawfish:${PORTSDIR}/x11-wm/sawfish
 RUN_DEPENDS=	sawfish:${PORTSDIR}/x11-wm/sawfish
 
