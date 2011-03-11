@@ -1,0 +1,53 @@
+--- configure.orig	2009-12-09 07:35:12.000000000 +0100
++++ configure	2011-02-10 18:25:18.165872253 +0100
+@@ -17889,13 +17889,13 @@
+                DATADIRNAME=share
+ else
+   CATOBJEXT=.mo
+-               DATADIRNAME=lib
++               DATADIRNAME=share
+ fi
+ 
+ 	    ;;
+ 	    *)
+ 	    CATOBJEXT=.mo
+-            DATADIRNAME=lib
++            DATADIRNAME=share
+ 	    ;;
+ 	    esac
+ fi
+@@ -18684,12 +18684,12 @@
+ if test "x$ac_cv_func_bind_textdomain_codeset" = x""yes; then
+   DATADIRNAME=share
+ else
+-  DATADIRNAME=lib
++  DATADIRNAME=share
+ fi
+ 
+     ;;
+     *)
+-    DATADIRNAME=lib
++    DATADIRNAME=share
+     ;;
+     esac
+ fi
+@@ -19625,7 +19625,7 @@
+   $as_echo_n "(cached) " >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-ldcmdata -lofstd  -lz -L/usr/local/dicom/lib -L/sw/lib $THREAD_LIBS $LIBS"
++LIBS="-ldcmdata -lofstd -loflog -lz -L/usr/local/lib $THREAD_LIBS $LIBS"
+ cat >conftest.$ac_ext <<_ACEOF
+ /* confdefs.h.  */
+ _ACEOF
+@@ -20391,8 +20391,8 @@
+ 
+ if (test $enable_libdcmdata = yes) && (test $FOUND_DCMDATA = yes); then
+ 	echo "Compiling with DCMTK support for DICOM files"
+-	AMIDE_LIBDCMDATA_LIBS="-L/usr/local/dicom/lib -ldcmdata -lofstd -lz $THREAD_LIBS"
+-	AMIDE_LIBDCMDATA_CFLAGS="-I/usr/local/dicom/include/dcmtk/dcmdata -I/usr/local/dicom/include/dcmtk/ofstd -I/usr/local/dicom/include -I/usr/include/dcmtk/dcmdata -I/usr/local/include/dcmtk/ofstd -I/sw/include/dcmtk/dcmdata -I/sw/include/dcmtk/ofstd -I/sw/include/dcmtk"
++	AMIDE_LIBDCMDATA_LIBS="-L/usr/local/lib -ldcmdata -lofstd -loflog -lz $THREAD_LIBS"
++	AMIDE_LIBDCMDATA_CFLAGS="-I/usr/local/include"
+ 
+ 
+ 

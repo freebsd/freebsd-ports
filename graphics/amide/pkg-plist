@@ -1,0 +1,60 @@
+bin/amide
+share/applications/amide.desktop
+share/gnome/help/amide/C/amide.xml
+share/gnome/help/amide/C/figures/amide_main_window.png
+share/gnome/help/amide/C/figures/study_tree.png
+share/gnome/help/amide/C/legal.xml
+share/gnome/help/amide/es/amide.xml
+share/gnome/help/amide/es/figures/amide_main_window.png
+share/gnome/help/amide/es/figures/study_tree.png
+share/gnome/help/amide/es/legal.xml
+share/gtk-doc/html/amitk/AmitkWidgets.html
+share/gtk-doc/html/amitk/SpaceObjects.html
+share/gtk-doc/html/amitk/amitk-AmitkCanvas.html
+share/gtk-doc/html/amitk/amitk-AmitkColorTableMenu.html
+share/gtk-doc/html/amitk/amitk-AmitkDataSet.html
+share/gtk-doc/html/amitk/amitk-AmitkFiducialMark.html
+share/gtk-doc/html/amitk/amitk-AmitkLineProfile.html
+share/gtk-doc/html/amitk/amitk-AmitkObject.html
+share/gtk-doc/html/amitk/amitk-AmitkObjectDialog.html
+share/gtk-doc/html/amitk/amitk-AmitkProgressDialog.html
+share/gtk-doc/html/amitk/amitk-AmitkRawData.html
+share/gtk-doc/html/amitk/amitk-AmitkRoi.html
+share/gtk-doc/html/amitk/amitk-AmitkSpace.html
+share/gtk-doc/html/amitk/amitk-AmitkSpaceEdit.html
+share/gtk-doc/html/amitk/amitk-AmitkStudy.html
+share/gtk-doc/html/amitk/amitk-AmitkThresholdsDialog.html
+share/gtk-doc/html/amitk/amitk-AmitkTreeView.html
+share/gtk-doc/html/amitk/amitk-AmitkVolume.html
+share/gtk-doc/html/amitk/amitk-amitk-canvas-object.html
+share/gtk-doc/html/amitk/amitk-amitk-color-table.html
+share/gtk-doc/html/amitk/amitk-amitk-common.html
+share/gtk-doc/html/amitk/amitk-amitk-filter.html
+share/gtk-doc/html/amitk/amitk-amitk-point.html
+share/gtk-doc/html/amitk/amitk-amitk-type.html
+share/gtk-doc/html/amitk/amitk-theory.html
+share/gtk-doc/html/amitk/amitk.devhelp
+share/gtk-doc/html/amitk/amitk.devhelp2
+share/gtk-doc/html/amitk/amitk_base.html
+share/gtk-doc/html/amitk/amitk_intro.html
+share/gtk-doc/html/amitk/amitk_objects.html
+share/gtk-doc/html/amitk/ch01.html
+share/gtk-doc/html/amitk/home.png
+share/gtk-doc/html/amitk/index.html
+share/gtk-doc/html/amitk/index.sgml
+share/gtk-doc/html/amitk/left.png
+share/gtk-doc/html/amitk/right.png
+share/gtk-doc/html/amitk/style.css
+share/gtk-doc/html/amitk/up.png
+%%NLS%%share/locale/zh_CN/LC_MESSAGES/amide.mo
+share/omf/amide/amide-C.omf
+share/omf/amide/amide-es.omf
+share/pixmaps/amide_logo.png
+share/pixmaps/amide_file_logo.png
+@dirrm share/gtk-doc/html/amitk
+@dirrm share/gnome/help/amide/es/figures
+@dirrm share/gnome/help/amide/es
+@dirrm share/gnome/help/amide/C/figures
+@dirrm share/gnome/help/amide/C
+@dirrm share/gnome/help/amide
+@dirrm share/omf/amide
