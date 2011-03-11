@@ -12,6 +12,9 @@ CATEGORIES=	x11-fonts
 MASTER_SITES=	http://crl.nmsu.edu/~mleisher/
 DISTNAME=	${PORTNAME}-${PORTVERSION:R}
 
+DEPRECATED=     Upstream disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 PATCH_SITES=	${MASTER_SITES}
 PATCHFILES=	${DISTNAME}-patch1
 

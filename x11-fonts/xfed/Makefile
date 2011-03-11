@@ -13,6 +13,9 @@ MASTER_SITES=	http://freebsd.unixfreunde.de/sources/ \
 		http://mirror2.unixfreunde.de/
 DISTNAME=	${PORTNAME}
 
+DEPRECATED=     Upstream disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A program that will let you edit X fonts (.bdf files)
 
