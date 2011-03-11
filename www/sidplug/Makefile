@@ -15,6 +15,9 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Commodore 64 psid audio plugin for Mozilla or Opera
 
+DEPRECATED=     Upstream disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 RUN_DEPENDS=	xsidplay:${PORTSDIR}/audio/xsidplay
 
 MAKE_ARGS=	CC="${CC}" OPTIMIZER="${CFLAGS} -I${LOCALBASE}/include"

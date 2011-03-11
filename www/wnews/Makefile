@@ -14,6 +14,9 @@ MASTER_SITES=	http://kerneled.org/projects/wnews/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An RSS news client for the UNIX console
 
+DEPRECATED=     Upstream disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 MAN1=		wnews.1
 MANCOMPRESSED=	yes
 PLIST_FILES=	bin/wnews

@@ -15,6 +15,9 @@ DISTNAME=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Links files into a HTML index for viewing and easy overview
 
+DEPRECATED=     Upstream disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 USE_PERL5=	yes
 
 WRKSRC=		${WRKDIR}/indexme
