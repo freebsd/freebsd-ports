@@ -14,6 +14,9 @@ MASTER_SITES=	http://www.dc.ds.pg.gda.pl/download/sources/stable/
 MAINTAINER=	az@FreeBSD.org
 COMMENT=	Direct Connect Hub clone for Unix
 
+DEPRECATED=	No fetch sources and looks like project abandoned
+EXPIRATION_DATE=	2011-04-02
+
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_RC_SUBR=	dcd.sh
