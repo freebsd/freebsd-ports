@@ -17,6 +17,7 @@ libdata/pkgconfig/libquvi.pc
 %%DATADIR%%/lua/util/trim.lua
 %%DATADIR%%/lua/website/README
 %%DATADIR%%/lua/website/academicearth.lua
+%%DATADIR%%/lua/website/arte.lua
 %%DATADIR%%/lua/website/bloomberg.lua
 %%DATADIR%%/lua/website/break.lua
 %%DATADIR%%/lua/website/buzzhumor.lua
@@ -41,11 +42,14 @@ libdata/pkgconfig/libquvi.pc
 %%DATADIR%%/lua/website/sapo.lua
 %%DATADIR%%/lua/website/sevenload.lua
 %%DATADIR%%/lua/website/spiegel.lua
+%%DATADIR%%/lua/website/tagtele.lua
 %%DATADIR%%/lua/website/theonion.lua
 %%DATADIR%%/lua/website/tmunderground.lua
 %%DATADIR%%/lua/website/vimeo.lua
 %%DATADIR%%/lua/website/youtube.lua
+%%NSFW%%%%DATADIR%%/lua/website/keezmovies.lua
 %%NSFW%%%%DATADIR%%/lua/website/tube8.lua
+%%NSFW%%%%DATADIR%%/lua/website/xhamster.lua
 %%NSFW%%%%DATADIR%%/lua/website/xvideos.lua
 %%NSFW%%%%DATADIR%%/lua/website/youjizz.lua
 @dirrm %%DATADIR%%/lua/website/quvi

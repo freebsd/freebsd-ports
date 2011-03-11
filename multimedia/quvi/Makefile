@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	quvi
-PORTVERSION=	0.2.13
+PORTVERSION=	0.2.14
 CATEGORIES=	multimedia devel
-MASTER_SITES=	GOOGLE_CODE \
-		SF/${PORTNAME}/${PORTVERSION:R}/
+MASTER_SITES=	SF/${PORTNAME}/${PORTVERSION:R}/ \
+		GOOGLE_CODE
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Query video library for Youtube like websites
