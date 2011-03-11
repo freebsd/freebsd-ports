@@ -23,6 +23,9 @@ DISTNAME=	rxvt-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Analog clock for X w/appointment reminder and mail notification
 
+DEPRECATED=     Upstream disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 USE_BZIP2=	yes
 USE_XORG=	x11 xau xdmcp ice xpm xv
 GNU_CONFIGURE=	yes

@@ -15,6 +15,9 @@ MASTER_SITE_SUBDIR=kris
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Another Window Maker calendar/clock dockapp
 
+DEPRECATED=     Upstream disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 WRKSRC=		${WRKDIR}/${DISTNAME}/Src
 
 USE_XORG=	xpm
