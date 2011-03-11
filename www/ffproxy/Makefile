@@ -8,7 +8,7 @@
 PORTNAME=	ffproxy
 PORTVERSION=	1.6
 CATEGORIES=	www
-MASTER_SITES=	http://faith.eu.org/${PORTNAME}/
+MASTER_SITES=	http://${PORTNAME}.sourceforge.net/${PORTNAME}/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Filtering HTTP proxy server
