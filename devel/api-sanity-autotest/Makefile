@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	api-sanity-autotest
-PORTVERSION=	1.12
+PORTVERSION=	1.12.1
 CATEGORIES=	devel perl5
 MASTER_SITES=	http://linuxtesting.org/downloads/
 
