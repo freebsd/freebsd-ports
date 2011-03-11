@@ -16,6 +16,9 @@ DISTNAME=	flat-1.2.x
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A GTK+ theme engine which gives GTK+ a flattened appearance
 
+DEPRECATED=     Upstream disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 USE_GNOME=	gtk12

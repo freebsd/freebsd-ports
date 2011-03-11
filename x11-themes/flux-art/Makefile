@@ -18,6 +18,9 @@ RUN_DEPENDS=	fluxbox:${PORTSDIR}/x11-wm/fluxbox
 
 CONFLICTS=	fluxbox-fluxmod-*
 
+DEPRECATED=     Upstream disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 USE_BZIP2=	yes
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}

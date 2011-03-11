@@ -16,6 +16,9 @@ DISTNAME=	gtkbe-1.2.x
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	BeOS look-alike GTK+ theme engine
 
+DEPRECATED=     Upstream disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 WRKSRC=		${WRKDIR}/GTKBeEngine
 
 USE_GNOME=	gtk12

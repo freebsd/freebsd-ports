@@ -20,6 +20,9 @@ COMMENT=	Clean and white GTK engine
 LIB_DEPENDS=	rsvg-2:${PORTSDIR}/graphics/librsvg2
 RUN_DEPENDS=	${LOCALBASE}/share/icons/Foxtrot/index.theme:${PORTSDIR}/x11-themes/gnome-themes-extras
 
+DEPRECATED=     Upstream disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 TYPE?=		gtk
 THEME_NAME=	Ana
 WRKSRC=		${WRKDIR}/${DISTNAME}
