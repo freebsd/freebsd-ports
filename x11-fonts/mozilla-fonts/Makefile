@@ -14,6 +14,9 @@ MASTER_SITES=	http://www.happygiraffe.net/dist/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Web fonts for Netscape/Mozilla
 
+DEPRECATED=     Upstream disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 BUILD_DEPENDS=	bdftopcf:${PORTSDIR}/x11-fonts/bdftopcf \
 		mkfontdir:${PORTSDIR}/x11-fonts/mkfontdir \
 		mkfontscale:${PORTSDIR}/x11-fonts/mkfontscale
