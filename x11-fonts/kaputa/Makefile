@@ -8,8 +8,7 @@
 PORTNAME=	kaputa
 PORTVERSION=	1.000
 CATEGORIES=	x11-fonts
-MASTER_SITES=	http://www.info.lk/slword/ \
-		CENKES/myports/${DIST_SUBDIR}
+MASTER_SITES=	http://www.kaputa.com/slword/
 DISTNAME=	${PORTNAME}unicode
 DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
 
