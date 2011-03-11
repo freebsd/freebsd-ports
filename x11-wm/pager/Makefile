@@ -9,12 +9,15 @@ PORTNAME=	pager
 PORTVERSION=	0.6
 PORTREVISION=	12
 CATEGORIES=	x11-wm
-MASTER_SITES=	http://freebsd.unixfreunde.de/sources/ \
-		http://mirror2.unixfreunde.de/
+MASTER_SITES=	SF
+MASTER_SITE_SUBDIR=	sawfish-pager
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A pager for sawfish without GNOME
+
+DEPRECATED=     Upstream disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
 
 BUILD_DEPENDS=	sawfish:${PORTSDIR}/x11-wm/sawfish
 RUN_DEPENDS=	sawfish:${PORTSDIR}/x11-wm/sawfish
