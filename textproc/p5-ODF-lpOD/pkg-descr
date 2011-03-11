@@ -1,0 +1,7 @@
+ODF::lpOD is an Open Document management interface. It allows the users to
+create or transform office documents, or to extract data from them. It can
+handle documents which comply with the Open Document Format international
+standard (ODF). It may handle text documents (ODT), spreadsheet documents(ODS),
+as well as presentation(ODP) or drawing documents (ODG).
+
+WWW: http://search.cpan.org/dist/ODF-lpOD/
