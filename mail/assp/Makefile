@@ -8,8 +8,7 @@
 PORTNAME=	assp
 PORTVERSION=	1.8.5.6
 CATEGORIES=	mail
-MASTER_SITES=	SF
-MASTER_SITE_SUBDIR=${PORTNAME}/ASSP%20Installation/${PORTNAME:U}_${PORTVERSION}-Install
+MASTER_SITES=	http://www.ringofsaturn.com/distfiles/
 DISTNAME=	${PORTNAME:U}_${PORTVERSION}-Install
 
 MAINTAINER=	rnejdl@ringofsaturn.com
