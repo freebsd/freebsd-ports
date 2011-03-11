@@ -3,6 +3,10 @@
 %%WWWDIR%%/cgit.png
 %%PORTDOCS%%%%DOCSDIR%%/cgitrc.5.txt
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
+lib/cgit/filters/commit-links.sh
+lib/cgit/filters/syntax-highlighting.sh
+@dirrm lib/cgit/filters
+@dirrm lib/cgit
 @dirrm %%WWWDIR%%
 @exec mkdir -p /var/cache/%%PORTNAME%%
 @unexec rmdir /var/cache/%%PORTNAME%% 2>/dev/null || true
