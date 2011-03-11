@@ -16,8 +16,6 @@ COMMENT=	Control Language Library
 
 LIB_DEPENDS=	guile.20:${PORTSDIR}/lang/guile
 
-BROKEN=		does not build
-
 USE_AUTOTOOLS=	libtool
 USE_FORTRAN=	yes
 USE_LDCONFIG=	yes
@@ -25,6 +23,10 @@ USE_LDCONFIG=	yes
 MAN1=		gen-ctl-io.1
 
 .include <bsd.port.pre.mk>
+
+.if ${ARCH} == "i386" || ${ARCH} == "sparc64"
+BROKEN=		Does not compile on i386 or sparc64
+.endif
 
 .if ${OSVERSION} < 700000
 USE_FORTRAN=	g77
