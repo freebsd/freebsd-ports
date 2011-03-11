@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	mkgmap
-PORTVERSION=	r1625
-CATEGORIES=	astro java
+PORTVERSION=	r1893
+CATEGORIES=	astro converters java
 MASTER_SITES=	http://www.mkgmap.org.uk/snapshots/ \
 		http://mirror.amdmi3.ru/distfiles/
 
