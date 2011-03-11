@@ -16,6 +16,9 @@ MASTER_SITE_SUBDIR=	petef
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Quick Perl/Tk file manager with support for regular expressions
 
+DEPRECATED=     Upstream disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Tk.pm:${PORTSDIR}/x11-toolkits/p5-Tk
 
 NO_BUILD=	yes

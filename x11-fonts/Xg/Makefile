@@ -15,6 +15,9 @@ DISTNAME=	libXg.utf.fonts
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	UNICODE fonts for use with 9term and sam
 
+DEPRECATED=     Upstream disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 BUILD_DEPENDS=	bdftopcf:${PORTSDIR}/x11-fonts/bdftopcf \
 		mkfontscale:${PORTSDIR}/x11-fonts/mkfontscale
 RUN_DEPENDS=	mkfontdir:${PORTSDIR}/x11-fonts/mkfontdir
