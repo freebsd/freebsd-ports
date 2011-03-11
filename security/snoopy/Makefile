@@ -4,7 +4,7 @@
 # $FreeBSD$
 
 PORTNAME=	snoopy
-PORTVERSION=	1.7.10
+PORTVERSION=	1.8.0
 CATEGORIES=	security
 MASTER_SITES=	SF/${PORTNAME}logger/
 
@@ -18,6 +18,7 @@ PLIST_FILES=	lib/snoopy.so bin/detect
 PORTDOCS=	README
 
 GNU_CONFIGURE=	yes
+USE_GMAKE=	yes
 
 post-patch:
 	@${REINPLACE_CMD} 's|/usr/local|${PREFIX}|g' ${WRKSRC}/README
