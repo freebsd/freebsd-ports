@@ -7,6 +7,7 @@
 
 PORTNAME=	cgit
 PORTVERSION=	0.9
+PORTREVISION=	1
 CATEGORIES=	devel www
 MASTER_SITES=	http://hjemli.net/git/cgit/snapshot/:cgit \
 		${MASTER_SITE_KERNEL_ORG:S/$/:git/g}
@@ -42,7 +43,8 @@ post-extract:
 
 post-patch:
 	@${REINPLACE_CMD} -e '/^CC =/d' ${WRKSRC}/git/Makefile
-	@${REINPLACE_CMD} -e 's/-pthread/${PTHREAD_LIBS}/'  ${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -e 's/-pthread/${PTHREAD_LIBS}/' \
+		-e 's,/usr,${PREFIX},g'  ${WRKSRC}/Makefile
 
 post-install:
 	@${MKDIR} /var/cache/${PORTNAME}
