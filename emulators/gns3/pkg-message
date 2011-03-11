@@ -1,0 +1,6 @@
+===============================================================================
+GNS3 FreeBSD limitations :
+
+There are some limitations with GNS3 under FreeBSD because qemu port isn't
+patched for suppporting PIX/ASA and UDP communications with Dynamips.
+===============================================================================
