@@ -5,7 +5,6 @@
 %%SITE_PERL%%/App/Nopaste/Service/Codepeek.pm
 %%SITE_PERL%%/App/Nopaste/Service/Debian.pm
 %%SITE_PERL%%/App/Nopaste/Service/Gist.pm
-%%SITE_PERL%%/App/Nopaste/Service/Mathbin.pm
 %%SITE_PERL%%/App/Nopaste/Service/PastebinCom.pm
 %%SITE_PERL%%/App/Nopaste/Service/Pastie.pm
 %%SITE_PERL%%/App/Nopaste/Service/Shadowcat.pm
