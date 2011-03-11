@@ -153,6 +153,8 @@ bin/uls.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ll/xist/css.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ll/xist/css.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ll/xist/css.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ll/xist/data/js/ul4.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ll/xist/data/px/spc.gif
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ll/xist/ns/__init__.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ll/xist/ns/__init__.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ll/xist/ns/__init__.pyo
@@ -300,6 +302,9 @@ bin/uls.py
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ll/orasql/scripts
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ll/orasql
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ll/scripts
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ll/xist/data/js
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ll/xist/data/px
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ll/xist/data
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ll/xist/ns
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ll/xist/scripts
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ll/xist
