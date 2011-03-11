@@ -1458,6 +1458,7 @@
     SUBDIR += py-beaker
     SUBDIR += py-beautifulsoup
     SUBDIR += py-beautifulsoup30
+    SUBDIR += py-blogofile
     SUBDIR += py-bottle
     SUBDIR += py-cherrypy
     SUBDIR += py-cherrypy-devel
