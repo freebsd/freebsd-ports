@@ -19,6 +19,9 @@ PATCHFILES=	workplace-1.0.a3+tj1.diff.gz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	File manager and launcher
 
+DEPRECATED=     Upstream disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 GNU_CONFIGURE=	yes
 USE_GNOME=	gtk12
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include/glib12 \
