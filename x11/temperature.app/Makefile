@@ -15,6 +15,9 @@ DISTNAME=	Temperature.app-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A dockable WindowMaker applet which displays the local temperature
 
+DEPRECATED=	Upstream disapear and distfile is no more available
+EXPIRATION_DATE=	2011-05-01
+
 RUN_DEPENDS=	wget:${PORTSDIR}/ftp/wget
 
 USE_XORG=	x11 xpm

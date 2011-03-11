@@ -16,6 +16,9 @@ EXTRACT_SUFX=	.gz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Script to convert WindowMaker RootMenu menus to new PropList format
 
+DEPRECATED=	Upstream disapear and distfile is no more available
+EXPIRATION_DATE=	2011-05-01
+
 USE_XORG=	x11
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes

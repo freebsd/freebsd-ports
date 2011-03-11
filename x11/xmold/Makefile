@@ -15,6 +15,9 @@ DISTNAME=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Mold spreading over your X11 screen
 
+DEPRECATED=	Upstream disapear and distfile is no more available
+EXPIRATION_DATE=	2011-05-01
+
 USE_IMAKE=	yes
 USE_XORG=	x11 xext
 NO_INSTALL_MANPAGES=	yes

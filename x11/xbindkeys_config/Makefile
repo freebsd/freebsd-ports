@@ -16,6 +16,9 @@ MASTER_SITE_SUBDIR=	trevor
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An easy to use gtk program for configuring Xbindkeys
 
+DEPRECATED=	Upstream disapear and distfile is no more available
+EXPIRATION_DATE=	2011-05-01
+
 RUN_DEPENDS=	${LOCALBASE}/bin/xbindkeys:${PORTSDIR}/x11/xbindkeys
 
 USE_GNOME=	gtk20

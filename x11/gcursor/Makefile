@@ -14,6 +14,9 @@ MASTER_SITES=	http://download.qballcow.nl/programs/gcursor/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A mouse cursor theme selector for GNOME
 
+DEPRECATED=	Upstream disapear and distfile is no more available
+EXPIRATION_DATE=	2011-05-01
+
 RUN_DEPENDS=	file-roller:${PORTSDIR}/archivers/file-roller
 
 USE_GMAKE=	yes

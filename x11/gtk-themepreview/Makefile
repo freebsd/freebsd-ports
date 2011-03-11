@@ -16,6 +16,9 @@ DISTNAME=	ThemePreview-2-src
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A small application for preview your theme widgets in one small window
 
+DEPRECATED=	Upstream disapear and distfile is no more available
+EXPIRATION_DATE=	2011-05-01
+
 GNU_CONFIGURE=	yes
 USE_GNOME=	gtk20
 USE_AUTOTOOLS=	automake:env
