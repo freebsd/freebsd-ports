@@ -1,16 +1,5 @@
 --- SABnzbd.py.orig	2010-06-26 13:24:26.000000000 -0400
 +++ SABnzbd.py	2010-08-17 23:46:04.347483234 -0400
-@@ -42,8 +42,8 @@
-     sys.exit(1)
- 
- import cherrypy
--if not cherrypy.__version__.startswith("3.2"):
--    print "Sorry, requires Python module Cherrypy 3.2 (use the included version)"
-+if not cherrypy.__version__.startswith("3.1"):
-+    print "Sorry, requires Python module Cherrypy 3.1 (use the included version)"
-     sys.exit(1)
- 
- from cherrypy import _cpserver
 @@ -214,7 +214,7 @@
          print "fork() failed"
          sys.exit(1)
