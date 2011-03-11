@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	hidesvn
-PORTVERSION=	1.1
+PORTVERSION=	1.2
 CATEGORIES=	sysutils
 MASTER_SITES=	http://80386.nl/projects/${PORTNAME}/distfiles/
 
