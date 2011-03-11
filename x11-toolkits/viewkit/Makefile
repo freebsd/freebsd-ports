@@ -17,6 +17,9 @@ DISTNAME=	libvk-Apr19-2243
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	ViewKit workalike from Hungry Programmers
 
+DEPRECATED=     Upstream disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 USE_AUTOTOOLS=	autoconf:env
 MOTIFPACKAGE?=	open-motif
 USE_MOTIF=	yes
