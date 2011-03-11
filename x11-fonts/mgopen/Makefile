@@ -9,7 +9,7 @@ PORTNAME=	mgopen
 PORTVERSION=	1.0
 PORTREVISION=	2
 CATEGORIES=	x11-fonts
-MASTER_SITES=	http://www.ellak.gr/fonts/mgopen/files/
+MASTER_SITES=	http://www.zvr.gr/typo/mgopen/files/
 DISTNAME=	MgOpen
 
 MAINTAINER=	ports@FreeBSD.org
