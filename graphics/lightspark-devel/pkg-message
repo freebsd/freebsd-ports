@@ -1,0 +1,5 @@
+To use lightpark, you'll need maximum number of POSIX 1003.1B
+semaphores bumped from default 30 to something much higher (>2048).
+On FreeBSD >= 8.1 you can do that via p1003_1b.sem_nsems_max sysctl,
+on earlier versions you'll have to edit kernel source to bump SEM_MAX
+and recompile the kernel.

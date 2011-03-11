@@ -1,32 +1,29 @@
---- CMakeLists.txt.orig	2010-06-24 19:55:35.000000000 +0400
-+++ CMakeLists.txt	2010-06-25 17:48:47.000000000 +0400
-@@ -50,17 +50,12 @@
- SET(LIBDIR "lib${LIB_SUFFIX}")
+--- CMakeLists.txt.orig	2011-03-07 07:10:16.000000000 +0300
++++ CMakeLists.txt	2011-03-09 01:26:56.000000000 +0300
+@@ -101,7 +101,7 @@
  
- # Setting variables
--SET(CMAKE_INSTALL_PREFIX "/usr" CACHE PATH "Install prefix" FORCE)
-+SET(CMAKE_INSTALL_PREFIX "/usr" CACHE PATH "Install prefix")
- SET(COMPILE_LIGHTSPARK TRUE CACHE BOOL "Compile Lightspark?")
- SET(COMPILE_TIGHTSPARK TRUE CACHE BOOL "Compile Tightspark?")
- SET(COMPILE_PLUGIN FALSE CACHE BOOL "Compile the Firefox Plugin?")
- SET(ENABLE_SOUND TRUE CACHE BOOL "Enable sound?")
- SET(PLUGIN_DIRECTORY "${LIBDIR}/mozilla/plugins" CACHE STRING "Directory to install Firefox plugin to")
--IF(NOT CMAKE_BUILD_TYPE)
--  SET(CMAKE_BUILD_TYPE RelWithDebInfo CACHE STRING
--      "Choose the type of build, options are: None Debug Release RelWithDebInfo Profile Debian"
--      FORCE)
--ENDIF(NOT CMAKE_BUILD_TYPE)
+ # Using relative folders, cmake happens by itself CMAKE_INSTALL_PREFIX
+ IF(UNIX)
+-	 SET(ETCDIR "/etc") #Using absolute folder
++	 SET(ETCDIR "etc")
+    SET(BINDIR "bin")
+    SET(DATADIR "${CMAKE_INSTALL_PREFIX}/share")
+    SET(LIBDIR "lib${LIB_SUFFIX}")
+@@ -142,7 +142,7 @@
+ INCLUDE(FindGLEW REQUIRED)
+ IF(UNIX)
+   INCLUDE(FindPkgConfig REQUIRED)
+-	pkg_check_modules(XMLPP REQUIRED libxml++-2.6>=2.33.1)
++	pkg_check_modules(XMLPP REQUIRED libxml++-2.6>=0)
+ ENDIF(UNIX)
  
- # Some directory shortcuts
- SET(CMAKE_MODULE_PATH ${PROJECT_SOURCE_DIR}/conf)
-@@ -110,8 +105,8 @@
- INCLUDE_DIRECTORIES(${LIBAVCODEC_INCLUDE_DIRS})
- INCLUDE_DIRECTORIES(${SOUND_LIBS_INCLUDE_DIRS})
- 
--SET(CMAKE_EXE_LINKER_FLAGS "-Wl,--as-needed -Wl,--no-undefined")
--SET(CMAKE_SHARED_LINKER_FLAGS "-Wl,--as-needed")
-+SET(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -Wl,--as-needed -Wl,--no-undefined")
-+SET(CMAKE_SHARED_LINKER_FLAGS "${CMAKE_SHARED_LINKER_FLAGS} -Wl,--as-needed")
- 
- IF(COMPILE_PLUGIN)
- 	pkg_check_modules(GTK REQUIRED gtk+-2.0 gtkglext-1.0)
+ if(WIN32)
+@@ -371,7 +371,7 @@
+     INSTALL(FILES ${CMAKE_CURRENT_SOURCE_DIR}/lightspark.frag DESTINATION ${DATADIR}/lightspark)
+     INSTALL(FILES ${CMAKE_CURRENT_SOURCE_DIR}/lightspark.vert DESTINATION ${DATADIR}/lightspark)
+     INSTALL(FILES ${CMAKE_CURRENT_SOURCE_DIR}/lightspark-blitter.vert DESTINATION ${DATADIR}/lightspark)
+-    INSTALL(FILES ${CMAKE_CURRENT_SOURCE_DIR}/docs/man/lightspark.1 DESTINATION share/man/man1)
++    INSTALL(FILES ${CMAKE_CURRENT_SOURCE_DIR}/docs/man/lightspark.1 DESTINATION man/man1)
+     INSTALL(TARGETS lightspark RUNTIME DESTINATION ${BINDIR})
+   ENDIF(UNIX)
+ ENDIF(COMPILE_LIGHTSPARK)
