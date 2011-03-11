@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	p4p
-PORTVERSION=	2010.1.257888
+PORTVERSION=	2010.2.279478
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.perforce.com/perforce/${P4VERSION}/bin.${PLATFORM}/ \
 		http://filehost.perforce.com/perforce/r${P4VERSION}/bin.${PLATFORM}/
