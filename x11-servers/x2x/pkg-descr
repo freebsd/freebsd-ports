@@ -19,3 +19,5 @@ side of the "to" display that it entered, it slides back onto the
 
 Unless the -nosel option is specified, x2x relays X selections from
 one display to the other.
+
+WWW: https://github.com/dottedmag/x2x

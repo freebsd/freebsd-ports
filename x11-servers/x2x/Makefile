@@ -9,7 +9,7 @@ PORTNAME=	x2x
 PORTVERSION=	1.27
 PORTREVISION=	3
 CATEGORIES=	x11-servers
-MASTER_SITES=	http://gatekeeper.dec.com/pub/DEC/SRC/x2x/
+MASTER_SITES=	http://cloud.github.com/downloads/dottedmag/x2x/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A program to link multiple X servers together
