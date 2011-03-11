@@ -32,6 +32,7 @@ share/doc/luckybackup/manual/data/OperationPropertiesAdvancedEmpty3.png
 share/doc/luckybackup/manual/data/OperationPropertiesAdvancedEmpty4.png
 share/doc/luckybackup/manual/data/OperationPropertiesAdvancedEmpty5.png
 share/doc/luckybackup/manual/data/OperationPropertiesAdvancedEmpty8.png
+share/doc/luckybackup/manual/data/OperationPropertiesAdvancedExecuteBefore.png
 share/doc/luckybackup/manual/data/OperationPropertiesAlsoExecuteBefore.png
 share/doc/luckybackup/manual/data/OperationPropertiesDuplicate.png
 share/doc/luckybackup/manual/data/OperationPropertiesSimpleBackup.png
@@ -47,6 +48,9 @@ share/doc/luckybackup/manual/data/PatternEditor3.png
 share/doc/luckybackup/manual/data/PatternEditor4.png
 share/doc/luckybackup/manual/data/ProfileNew.png
 share/doc/luckybackup/manual/data/about.png
+share/doc/luckybackup/manual/data/eMailDialog.png
+share/doc/luckybackup/manual/data/eMailMessage.png
+share/doc/luckybackup/manual/data/eMailTest.png
 share/doc/luckybackup/manual/data/gpl.png
 share/doc/luckybackup/manual/data/luckyb.png
 share/doc/luckybackup/manual/data/luckybackup_320.png
@@ -73,6 +77,7 @@ share/doc/luckybackup/manual/data/popup_ProfileRename.png
 share/doc/luckybackup/manual/data/rsync_InAction.png
 share/doc/luckybackup/manual/data/rsync_operations_aborted.png
 share/doc/luckybackup/manual/data/rsync_operations_completed.png
+share/doc/luckybackup/manual/data/rsync_shutdown_button.png
 share/doc/luckybackup/manual/data/scheduleAdd.png
 share/doc/luckybackup/manual/data/scheduleAdded.png
 share/doc/luckybackup/manual/data/scheduleEmpty.png
