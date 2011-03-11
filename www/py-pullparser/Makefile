@@ -15,6 +15,9 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A simple "pull API" for HTML parsing
 
+DEPRECATED=     Obsolete and deprecated
+EXPIRATION_DATE=        2011-05-01
+
 BUILD_DEPENDS=	${EASY_INSTALL_CMD}:${PORTSDIR}/devel/py-setuptools
 
 USE_PYTHON=	yes

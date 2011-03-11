@@ -16,6 +16,9 @@ DISTNAME=	w3-4.0pre.47
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	WWW browser based on emacs/mule
 
+DEPRECATED=     Upstream disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-emacs=yes
 INSTALL_TARGET=	install

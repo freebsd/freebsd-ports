@@ -15,6 +15,9 @@ EXTRACT_ONLY=	# empty
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A meta project that creates a WEB framework
 
+DEPRECATED=     Upstream disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/ez_web/ez_user_auth.py:${PORTSDIR}/www/py-ez_web \
 		${PYTHON_SITELIBDIR}/sqlcc/__init__.py:${PORTSDIR}/devel/py-sqlcc
 
