@@ -12496,6 +12496,7 @@ p5-Gearman-Client-Async         ports/devel/p5-Gearman-Client-Async
 p5-Gearman-Server               ports/devel/p5-Gearman-Server
 p5-Gearman-XS                   ports/devel/p5-Gearman-XS
 p5-Genezzo                      ports/databases/p5-Genezzo
+p5-Geo-BUFR                     ports/science/p5-Geo-BUFR
 p5-Geo-Cache                    ports/misc/p5-Geo-Cache
 p5-Geo-Caching                  ports/www/p5-Geo-Caching
 p5-Geo-Coder-Google             ports/misc/p5-Geo-Coder-Google
@@ -16647,6 +16648,7 @@ p5-gearman-client-async         ports/devel/p5-Gearman-Client-Async
 p5-gearman-server               ports/devel/p5-Gearman-Server
 p5-gearman-xs                   ports/devel/p5-Gearman-XS
 p5-genezzo                      ports/databases/p5-Genezzo
+p5-geo-bufr                     ports/science/p5-Geo-BUFR
 p5-geo-cache                    ports/misc/p5-Geo-Cache
 p5-geo-caching                  ports/www/p5-Geo-Caching
 p5-geo-coder-google             ports/misc/p5-Geo-Coder-Google
