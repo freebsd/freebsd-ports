@@ -1,0 +1,52 @@
+bin/blogofile
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/PKG-INFO
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/SOURCES.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/dependency_links.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/entry_points.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/not-zip-safe
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/requires.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/top_level.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blogofile/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blogofile/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blogofile/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blogofile/cache.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blogofile/cache.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blogofile/cache.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blogofile/config.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blogofile/config.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blogofile/config.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blogofile/controller.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blogofile/controller.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blogofile/controller.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blogofile/filter.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blogofile/filter.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blogofile/filter.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blogofile/main.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blogofile/main.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blogofile/main.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blogofile/server.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blogofile/server.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blogofile/server.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blogofile/site_init/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blogofile/site_init/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blogofile/site_init/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blogofile/site_init/_config.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blogofile/site_init/_config.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blogofile/site_init/_config.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blogofile/site_init/bare.zip
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blogofile/site_init/blog_features.zip
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blogofile/site_init/blog_unit_test.zip
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blogofile/site_init/blogofile_com.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blogofile/site_init/blogofile_com.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blogofile/site_init/blogofile_com.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blogofile/site_init/simple_blog.zip
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blogofile/util.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blogofile/util.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blogofile/util.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blogofile/writer.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blogofile/writer.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blogofile/writer.pyo
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blogofile/site_init
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blogofile
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%
