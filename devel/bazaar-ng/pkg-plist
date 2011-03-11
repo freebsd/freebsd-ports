@@ -1295,6 +1295,9 @@ bin/bzr
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/per_repository_reference/test_get_rev_id_for_revno.py
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/per_repository_reference/test_get_rev_id_for_revno.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/per_repository_reference/test_get_rev_id_for_revno.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/tests/per_repository_reference/test_graph.py
+%%PYTHON_SITELIBDIR%%/bzrlib/tests/per_repository_reference/test_graph.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/tests/per_repository_reference/test_graph.pyo
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/per_repository_reference/test_initialize.py
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/per_repository_reference/test_initialize.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/per_repository_reference/test_initialize.pyo
