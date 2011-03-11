@@ -9,7 +9,7 @@ PORTNAME=	aewm
 PORTVERSION=	1.2.7
 PORTREVISION=	3
 CATEGORIES=	x11-wm
-MASTER_SITES=	http://www.red-bean.com/~decklin/software/aewm/
+MASTER_SITES=	http://www.red-bean.com/decklin/aewm/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	ICCCM-compliant window manager based on 9wm
