@@ -1,4 +1,4 @@
 This library can read and write CSV files, including all extensions used by
 Excel - eg. quotes, newlines, 8 bit characters in fields, "0 etc.
 
-WWW: http://merjis.com/developers/csv
+WWW: http://forge.ocamlcore.org/projects/csv/
