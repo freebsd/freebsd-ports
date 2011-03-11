@@ -18,10 +18,12 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Futuristic action flight simulator and realtime strategy game
 
+BROKEN=		Does not work with CEGUI 0.7.x
+
 BUILD_DEPENDS=	${LOCALBASE}/lib/libiovmall.so:${PORTSDIR}/lang/io
 RUN_DEPENDS=	${BUILD_DEPENDS}
 LIB_DEPENDS=	sigc-1.2.5:${PORTSDIR}/devel/libsigc++12 \
-		CEGUIBase.3:${PORTSDIR}/graphics/cegui \
+		CEGUIBase-0.7.5:${PORTSDIR}/graphics/cegui \
 		png.6:${PORTSDIR}/graphics/png
 
 USE_BZIP2=	yes
