@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	xist
-PORTVERSION=	3.9
+PORTVERSION=	3.17.3
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP \
 		http://ftp.livinglogic.de/xist/
@@ -20,7 +20,7 @@ COMMENT=	An XML-based extensible HTML generator
 RUN_DEPENDS=	${PYXML} \
 		${PYTHON_PKGNAMEPREFIX}ll-core>=1.11.1:${PORTSDIR}/devel/py-ll-core \
 		${PYTHON_SITELIBDIR}/PIL.pth:${PORTSDIR}/graphics/py-imaging \
-		${PYTHON_PKGNAMEPREFIX}cssutils>=0.9.5:${PORTSDIR}/www/py-cssutils
+		${PYTHON_PKGNAMEPREFIX}cssutils>=0.9.7:${PORTSDIR}/www/py-cssutils
 
 USE_PYTHON=		2.6+
 USE_PYDISTUTILS=	easy_install
