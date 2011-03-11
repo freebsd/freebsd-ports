@@ -3,13 +3,19 @@ bin/qpyrun.py
 %%PYTHON_SITELIBDIR%%/qpy/__init__.py
 %%PYTHON_SITELIBDIR%%/qpy/__init__.pyc
 %%PYTHON_SITELIBDIR%%/qpy/__init__.pyo
-%%PYTHON_SITELIBDIR%%/qpy/c8.py
-%%PYTHON_SITELIBDIR%%/qpy/c8.pyc
-%%PYTHON_SITELIBDIR%%/qpy/c8.pyo
-%%PYTHON_SITELIBDIR%%/qpy/c8.so
+%%PYTHON_SITELIBDIR%%/qpy/__main__.py
+%%PYTHON_SITELIBDIR%%/qpy/__main__.pyc
+%%PYTHON_SITELIBDIR%%/qpy/__main__.pyo
+%%PYTHON_SITELIBDIR%%/qpy/ch.py
+%%PYTHON_SITELIBDIR%%/qpy/ch.pyc
+%%PYTHON_SITELIBDIR%%/qpy/ch.pyo
 %%PYTHON_SITELIBDIR%%/qpy/compile.py
 %%PYTHON_SITELIBDIR%%/qpy/compile.pyc
 %%PYTHON_SITELIBDIR%%/qpy/compile.pyo
+%%PYTHON_SITELIBDIR%%/qpy/quoted.py
+%%PYTHON_SITELIBDIR%%/qpy/quoted.pyc
+%%PYTHON_SITELIBDIR%%/qpy/quoted.pyo
+%%PYTHON_SITELIBDIR%%/qpy/quoted.so
 %%PYTHON_SITELIBDIR%%/qpy/qpcheck.py
 %%PYTHON_SITELIBDIR%%/qpy/qpcheck.pyc
 %%PYTHON_SITELIBDIR%%/qpy/qpcheck.pyo
@@ -19,6 +25,9 @@ bin/qpyrun.py
 %%PYTHON_SITELIBDIR%%/qpy/setup.py
 %%PYTHON_SITELIBDIR%%/qpy/setup.pyc
 %%PYTHON_SITELIBDIR%%/qpy/setup.pyo
+%%PYTHON_SITELIBDIR%%/qpy/translate.py
+%%PYTHON_SITELIBDIR%%/qpy/translate.pyc
+%%PYTHON_SITELIBDIR%%/qpy/translate.pyo
 @dirrm %%PYTHON_SITELIBDIR%%/qpy
 %%PORTDOCS%%%%DOCSDIR%%/CHANGES.txt
 %%PORTDOCS%%%%DOCSDIR%%/LICENSE.txt
