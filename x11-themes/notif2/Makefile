@@ -16,6 +16,9 @@ DISTNAME=	notif210-${GTKVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The Notif2 GTK theme engine following the new Motif look and feel
 
+DEPRECATED=     Upstream disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 USE_GNOME=	gtk12

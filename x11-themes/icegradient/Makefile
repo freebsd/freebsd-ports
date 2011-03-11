@@ -19,6 +19,9 @@ COMMENT=	A GTK+ gradient theme engine based on ThinIce
 
 WRKSRC=		${WRKDIR}/gtk-${PORTNAME}-0.0.5
 
+DEPRECATED=     Upstream disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 USE_GNOME=	gtk12
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes

@@ -18,6 +18,9 @@ COMMENT=	A theme engine based on GtkStep and Step-pastel
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-0.6
 
+DEPRECATED=     Upstream disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 USE_GNOME=	gtk12
 USE_AUTOTOOLS=	libtool
 

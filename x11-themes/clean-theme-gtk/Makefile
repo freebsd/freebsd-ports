@@ -16,6 +16,9 @@ DISTNAME=	clean___-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The Clean GTK theme engine
 
+DEPRECATED=     Upstream disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 WRKSRC=		${WRKDIR}/gtk-clean-theme
 
 GNU_CONFIGURE=	yes

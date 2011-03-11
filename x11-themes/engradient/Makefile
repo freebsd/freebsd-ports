@@ -18,6 +18,9 @@ COMMENT=	A GTK+ engine-gradient theme based off of the IceGradient theme
 
 WRKSRC=		${WRKDIR}/gtk-${PORTNAME}-${PORTVERSION}
 
+DEPRECATED=     Upstream disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 USE_GNOME=	gtk12
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
