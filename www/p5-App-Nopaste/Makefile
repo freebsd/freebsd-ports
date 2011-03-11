@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	App-Nopaste
-PORTVERSION=	0.26
+PORTVERSION=	0.27
 CATEGORIES=	www perl5
-MASTER_SITES=	CPAN/../../authors/id/S/SA/SARTAK/
+MASTER_SITES=	CPAN
+MASTER_SITE_SUBDIR=	CPAN:SARTAK
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	bapt@FreeBSD.org
@@ -38,7 +39,6 @@ MAN3=		App::Nopaste.3 \
 		App::Nopaste::Service.3 \
 		App::Nopaste::Service::Debian.3 \
 		App::Nopaste::Service::Gist.3 \
-		App::Nopaste::Service::Mathbin.3 \
 		App::Nopaste::Service::PastebinCom.3 \
 		App::Nopaste::Service::Pastie.3 \
 		App::Nopaste::Service::Codepeek.3 \
