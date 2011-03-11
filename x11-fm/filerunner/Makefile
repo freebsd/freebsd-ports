@@ -16,6 +16,9 @@ DISTNAME=	FileRunner-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Filemanager with FTP capabilities. Uses Tcl/Tk
 
+DEPRECATED=     Upstream disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 LIB_DEPENDS=	tk84.1:${PORTSDIR}/x11-toolkits/tk84
 
 MAKEFILE=	Makefile.freebsd_gcc

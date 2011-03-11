@@ -14,6 +14,9 @@ MASTER_SITES=	http://binary.is/download/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A lightweight file manager inspired by MacOS Finder
 
+DEPRECATED=     Upstream disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 USE_BZIP2=	yes
 USE_WX=		2.4-2.6
 ALL_TARGET=	${PORTNAME}
