@@ -21,6 +21,8 @@ BUILD_DEPENDS=	${LOCALBASE}/bin/rsync:${PORTSDIR}/net/rsync \
 		${PYTHON_SITELIBDIR}/libxslt.py:${PORTSDIR}/textproc/py-libxslt
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
+BROKEN=		conflicting dependencies (py26-* and py27-*)
+
 USE_GNOME=	pkgconfig
 USE_PYTHON=	2.5-2.6
 USE_GMAKE=	yes
