@@ -13,6 +13,9 @@ MASTER_SITES=	http://www.ruhr.de/home/nathan/FreeBSD/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A set of small utilities for the FreeBSD Documentation Projekt
 
+DEPRECATED=     Distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 USE_PERL5=	yes

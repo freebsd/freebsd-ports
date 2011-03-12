@@ -15,6 +15,9 @@ MASTER_SITES=	http://0xff.at/download/gpl/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	XML Parser and Validator
 
+DEPRECATED=     Upstream disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 FETCH_CMD=	/usr/bin/fetch
 USE_AUTOTOOLS=	libtool
 USE_GMAKE=	yes

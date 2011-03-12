@@ -18,6 +18,9 @@ COMMENT=	DocBook DSSSL stylesheets of Cygnus Slution
 RUN_DEPENDS=	${LOCALBASE}/share/sgml/docbook/dsssl/modular/frames/navbar.htm:${PORTSDIR}/textproc/dsssl-docbook-modular \
 		jade:${PORTSDIR}/textproc/jade
 
+DEPRECATED=     Distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 NO_BUILD=	yes
 USE_PERL5=	yes
 WRKSRC=		${WRKDIR}/stylesheets

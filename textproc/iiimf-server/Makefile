@@ -16,6 +16,9 @@ DISTNAME=	iiimf-src-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Internet/Intranet Input Method Server Framework
 
+DEPRECATED=     Upstream disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 LIB_DEPENDS=	iiimp.1:${PORTSDIR}/textproc/iiimf-protocol-lib
 
 ONLY_FOR_ARCHS=	i386

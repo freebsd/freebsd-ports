@@ -16,6 +16,9 @@ DISTFILES=	foiltex.dtx foiltex.ins
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A collection of LaTeX files for making foils
 
+DEPRECATED=     Upstream disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 BUILD_DEPENDS=	latex:${PORTSDIR}/print/teTeX-base
 RUN_DEPENDS=	latex:${PORTSDIR}/print/teTeX-base
 

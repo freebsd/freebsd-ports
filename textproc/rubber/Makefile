@@ -15,6 +15,9 @@ MASTER_SITES=	http://ebeffara.free.fr/pub/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A wrapper for LaTeX and friends
 
+DEPRECATED=     Upstream disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 RUN_DEPENDS=	latex:${PORTSDIR}/print/teTeX-base
 
 USE_PYTHON=	2.2+

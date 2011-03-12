@@ -16,6 +16,9 @@ DISTNAME=	iiimf-src-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	IIIMF UNIcode Table based generic composition engine
 
+DEPRECATED=     Upstream disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 LIB_DEPENDS=	iiimp.1:${PORTSDIR}/textproc/iiimf-protocol-lib \
 		iiimcf.3:${PORTSDIR}/textproc/iiimf-client-lib
 RUN_DEPENDS=	iiimd:${PORTSDIR}/textproc/iiimf-server

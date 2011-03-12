@@ -16,6 +16,9 @@ DISTNAME=	yaxpo
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Non-validating XML 1.0 + XMLNS processing suite for Objective Caml
 
+DEPRECATED=     Upstream disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 USE_OCAML=	yes
 ALL_TARGET=	yaxpo
 MAKE_JOBS_SAFE=	yes

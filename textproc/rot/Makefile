@@ -16,6 +16,9 @@ EXTRACT_SUFX=	.tar.Z
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Rotates a file so that lines become columns and vice versa
 
+DEPRECATED=     Upstream disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 ALL_TARGET=	${PORTNAME}
 
 MAN1=		rot.1

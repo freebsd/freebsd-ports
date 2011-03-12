@@ -14,6 +14,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	HTML highlighting misspellings using ispell compatible program
 
+DEPRECATED=     Upstream disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 RUN_DEPENDS=	ispell:${PORTSDIR}/textproc/ispell
 
 PERL_CONFIGURE=	yes

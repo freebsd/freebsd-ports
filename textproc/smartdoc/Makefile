@@ -16,6 +16,9 @@ DIST_SUBDIR=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	XML utility to create various documents
 
+DEPRECATED=     Upstream disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 BUILD_DEPENDS=	${MKCATALOG}:${PORTSDIR}/textproc/mkcatalog
 RUN_DEPENDS=	${MKCATALOG}:${PORTSDIR}/textproc/mkcatalog \
 		java:${PORTSDIR}/java/javavmwrapper
