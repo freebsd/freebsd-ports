@@ -22,6 +22,8 @@ BUILD_DEPENDS+=	durus:${PORTSDIR}/devel/py-durus
 BUILD_DEPENDS+=	pythoni:${PORTSDIR}/devel/py-repl
 RUN_DEPENDS+=	${BUILD_DEPENDS}
 
+BROKEN=		does not build
+
 USE_PYTHON=	2.5+
 USE_PYDISTUTILS=	yes
 SUB_FILES+=	pkg-message
