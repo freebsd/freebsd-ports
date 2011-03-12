@@ -21,7 +21,6 @@ LIB_DEPENDS=	gtkgl.5:${PORTSDIR}/x11-toolkits/gtkglarea
 
 USE_XORG=	x11
 USE_GNOME=	gdkpixbuf
-USE_GMAKE=	yes
 USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-GL-prefix=${LOCALBASE}/lib \
