@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mp3gain
-PORTVERSION=	1.5.1
+PORTVERSION=	1.5.2
 CATEGORIES=	audio
 MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}-${PORTVERSION:C/\./_/g}-src
@@ -18,12 +18,9 @@ LICENSE=	LGPL21
 
 PLIST_FILES=	bin/mp3gain
 USE_ZIP=	yes
+USE_DOS2UNIX=	yes
 
 NO_WRKSUBDIR=	yes
-
-pre-patch:
-	@${FIND} ${WRKDIR} -type f -print0 | ${XARGS} -0 \
-		${REINPLACE_CMD} -e 's/[[:cntrl:]]*$$//'
 
 post-patch:
 	@${CP} ${FILESDIR}/Makefile.main ${WRKSRC}/Makefile
