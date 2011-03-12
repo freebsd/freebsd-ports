@@ -16,6 +16,9 @@ MASTER_SITE_SUBDIR=	miwi
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C++ library to use templates in C/C++ projects
 
+DEPRECATED=     Deprecated please use ctpp2 textproc/ctpp2
+EXPIRATION_DATE=        2011-05-01
+
 USE_CMAKE=	yes
 USE_LDCONFIG=	yes
 
