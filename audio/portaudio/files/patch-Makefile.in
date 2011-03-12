@@ -1,5 +1,5 @@
---- Makefile.in.orig	Mon Mar 15 15:51:08 2004
-+++ Makefile.in	Mon Mar 15 15:51:59 2004
+--- Makefile.in.orig	2011-03-12 12:04:08.000000000 -0600
++++ Makefile.in	2011-03-12 12:04:22.000000000 -0600
 @@ -15,6 +15,7 @@
  DLL_LIBS = @DLL_LIBS@
  
@@ -46,3 +46,14 @@
  
  $(TESTS): bin/%: lib/$(PALIB) Makefile $(PAINC) pa_tests/%.c
  	$(CC) -o $@ $(CFLAGS) pa_tests/$*.c lib/$(PALIB) $(LIBS)
+@@ -89,8 +101,8 @@
+ %.o: %.c Makefile $(PAINC)
+ 	$(CC) -c $(CFLAGS) $< -o $@
+ 
+-bin:
++bin/:
+ 	mkdir bin
+ 
+-lib:
++lib/:
+ 	mkdir lib
