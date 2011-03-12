@@ -20,7 +20,6 @@ COMMENT=	A useful widget set complementary to GTK+
 USE_AUTOTOOLS=	libtool
 GNU_CONFIGURE=	yes
 USE_GNOME=	gtk12
-USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 
 .include <bsd.port.mk>
