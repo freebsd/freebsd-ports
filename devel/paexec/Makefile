@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	paexec
-PORTVERSION=	0.15.0
-PORTREVISION=	1
+PORTVERSION=	0.16
 CATEGORIES=	devel
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
@@ -21,8 +20,10 @@ RUN_DEPENDS=	runawk:${PORTSDIR}/lang/runawk
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-DOCS=		ChangeLog NEWS README
+DOCS=		NEWS README TODO
 MAN1=		paexec.1 paexec_reorder.1
+
+USE_PERL5_BUILD=	yes
 
 LICENSE=	MIT
 
@@ -38,7 +39,7 @@ do-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 .for doc in ${DOCS}
-	${INSTALL_DATA} ${WRKSRC}/${doc} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/${doc} ${DOCSDIR}
 .endfor
 .endif
 
