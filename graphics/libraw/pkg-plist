@@ -11,4 +11,6 @@ lib/libraw.so.2
 lib/libraw_r.a
 lib/libraw_r.so
 lib/libraw_r.so.2
+libdata/pkgconfig/libraw.pc
+libdata/pkgconfig/libraw_r.pc
 @dirrm include/libraw
