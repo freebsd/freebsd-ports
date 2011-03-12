@@ -788,6 +788,7 @@
     SUBDIR += rubygem-capistrano
     SUBDIR += rubygem-chef
     SUBDIR += rubygem-god
+    SUBDIR += rubygem-murder
     SUBDIR += rubygem-ohai
     SUBDIR += rubygem-sys-admin
     SUBDIR += rubygem-sys-cpu

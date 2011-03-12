@@ -1,0 +1,6 @@
+Murder is a method of using Bittorrent to distribute files to a large amount
+of servers within a production environment. This allows for scaleable and
+fast deploys in environments of hundreds to tens of thousands of servers
+where centralized distribution systems wouldn't otherwise function.
+
+WWW: http://github.com/lg/murder
