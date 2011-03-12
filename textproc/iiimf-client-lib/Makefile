@@ -16,6 +16,9 @@ DISTNAME=	iiimf-src-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Internet/Intranet Input Method Client Framework
 
+DEPRECATED=     Upstream disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 LIB_DEPENDS=	iiimp.1:${PORTSDIR}/textproc/iiimf-protocol-lib
 RUN_DEPENDS=	${LOCALBASE}/lib/iiim/csconv/csconv.so:${PORTSDIR}/textproc/iiimf-csconv
 

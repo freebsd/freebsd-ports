@@ -13,6 +13,9 @@ MASTER_SITES=	ftp://info.mcs.anl.gov/pub/sowing/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Text processing tools to generate documentation from source files
 
+DEPRECATED=     Upstream disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 BUILD_DEPENDS=	ppmtogif:${PORTSDIR}/graphics/netpbm	\
 		latex:${PORTSDIR}/print/teTeX-base
 RUN_DEPENDS=	ppmtogif:${PORTSDIR}/graphics/netpbm	\

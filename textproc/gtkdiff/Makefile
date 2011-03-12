@@ -14,6 +14,9 @@ MASTER_SITES=	TUCOWS
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A frontend for diff(1)
 
+DEPRECATED=     Upstream disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 USE_GNOME=	gnomehack gnomeprefix gnomelibs
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

@@ -15,6 +15,9 @@ DISTNAME=	iiimf-src-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Header files for Internet/Intranet Input Method Framework
 
+DEPRECATED=     Upstream disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 WRKSRC=		${WRKDIR}/${DISTNAME:S/src-//}
 USE_BZIP2=	yes
 NO_BUILD=	yes

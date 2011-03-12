@@ -14,6 +14,9 @@ DISTNAME=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Generate customized TEI-DTDs
 
+DEPRECATED=     Upstream disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 RUN_DEPENDS=	carthage:${PORTSDIR}/textproc/carthage \
 		${LOCALBASE}/share/sgml/tei/p4/tei2.dtd:${PORTSDIR}/textproc/tei-p4
 

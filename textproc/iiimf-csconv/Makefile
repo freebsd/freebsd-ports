@@ -16,6 +16,9 @@ DISTNAME=	iiimf-src-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Internet/Intranet Input Method Framework encoding convert library
 
+DEPRECATED=     Upstream disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 ONLY_FOR_ARCHS=	i386
 
 USE_BZIP2=	yes

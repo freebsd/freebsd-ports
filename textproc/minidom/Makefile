@@ -15,6 +15,9 @@ MASTER_SITES=	http://helm.cs.unibo.it/mml-widget/sources/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A minimal implementation of the Document Object Model
 
+DEPRECATED=     Upstream disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 LIB_DEPENDS=	xml2:${PORTSDIR}/textproc/libxml2
 
 USE_AUTOTOOLS=	libtool
