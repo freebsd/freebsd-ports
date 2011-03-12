@@ -1,0 +1,7 @@
+%%SITE_PERL%%/Math/Polygon/Tree.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/Polygon/Tree/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/Polygon/Tree
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/Polygon
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math
+@dirrm %%SITE_PERL%%/Math/Polygon
+@dirrmtry %%SITE_PERL%%/Math

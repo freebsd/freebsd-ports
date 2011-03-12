@@ -363,6 +363,7 @@
     SUBDIR += p5-Math-NumberCruncher
     SUBDIR += p5-Math-Pari
     SUBDIR += p5-Math-Polygon
+    SUBDIR += p5-Math-Polygon-Tree
     SUBDIR += p5-Math-Polynomial-Solve
     SUBDIR += p5-Math-RPN
     SUBDIR += p5-Math-Random
