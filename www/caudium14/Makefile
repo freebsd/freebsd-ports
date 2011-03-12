@@ -29,6 +29,7 @@ SUB_LIST+=	PIKEVERSION="${PIKEVERSION}"
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--without-debug --with-PiXSL --prefix=${PREFIX} \
 		 --with-pike=${LOCALBASE}/pike/${PIKEVERSION}/bin/pike
+CPPFLAGS+=	-I${WRKSRC}/src/cmods
 
 PLIST_SUB+=	PIKEVERSION=${PIKEVERSION}
 CONFLICTS+=	caudium12-[0-9]*
