@@ -7,6 +7,7 @@
 
 PORTNAME=	minitube
 PORTVERSION=	1.4
+PORTREVISION=	1
 CATEGORIES=	multimedia www
 MASTER_SITES=	http://flavio.tordini.org/files/minitube/
 
@@ -14,8 +15,9 @@ MAINTAINER=	makc@FreeBSD.org
 COMMENT=	A native YouTube client
 
 USE_QT_VER=	4
-QT_COMPONENTS=	gui network xml phonon phonon-gst \
+QT_COMPONENTS=	gui network xml dbus phonon phonon-gst \
 		qmake_build moc_build rcc_build imageformats_run
+USE_GSTREAMER=	ffmpeg
 HAS_CONFIGURE=	yes
 MAKE_JOBS_SAFE=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
