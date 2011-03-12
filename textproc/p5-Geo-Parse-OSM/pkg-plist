@@ -1,0 +1,10 @@
+%%SITE_PERL%%/Geo/Parse/OSM.pm
+%%SITE_PERL%%/Geo/Parse/OSM/Multipass.pm
+%%SITE_PERL%%/Geo/Parse/OSM/Singlepass.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Geo/Parse/OSM/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Geo/Parse/OSM
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Geo/Parse
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Geo
+@dirrm %%SITE_PERL%%/Geo/Parse/OSM
+@dirrmtry %%SITE_PERL%%/Geo/Parse
+@dirrmtry %%SITE_PERL%%/Geo
