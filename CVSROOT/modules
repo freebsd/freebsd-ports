@@ -461,6 +461,7 @@ amavisd-new                     ports/security/amavisd-new
 amb-plugins                     ports/audio/amb-plugins
 amberfish                       ports/textproc/amberfish
 amfm                            ports/misc/amfm
+amide                           ports/graphics/amide
 amigadepacker                   ports/archivers/amigadepacker
 amiwm                           ports/x11-wm/amiwm
 amoebax                         ports/games/amoebax
@@ -10379,6 +10380,7 @@ nserver                         ports/misc/nserver
 nsf                             ports/misc/nsf
 nslint                          ports/dns/nslint
 nsm-console                     ports/security/nsm-console
+nsnake                          ports/games/nsnake
 nsping                          ports/dns/nsping
 nspluginwrapper                 ports/www/nspluginwrapper
 nspluginwrapper-devel           ports/www/nspluginwrapper-devel
@@ -10436,6 +10438,7 @@ nxml                            ports/editors/nxml
 nxml-emacs21                    ports/editors/nxml-emacs21
 nxproxy                         ports/net/nxproxy
 nxserver                        ports/net/nxserver
+nxt-python                      ports/devel/nxt-python
 nxtvepg                         ports/multimedia/nxtvepg
 ny-aspell                       ports/textproc/ny-aspell
 nyh-hoc                         ports/math/nyh-hoc
@@ -13637,6 +13640,7 @@ p5-Number-WithError             ports/math/p5-Number-WithError
 p5-Number-WithError-LaTeX       ports/math/p5-Number-WithError-LaTeX
 p5-OAI-Harvester                ports/net/p5-OAI-Harvester
 p5-OAuth-Lite                   ports/net/p5-OAuth-Lite
+p5-ODF-lpOD                     ports/textproc/p5-ODF-lpOD
 p5-OLE-Storage_Lite             ports/devel/p5-OLE-Storage_Lite
 p5-OOTools                      ports/devel/p5-OOTools
 p5-ORLite                       ports/databases/p5-ORLite
@@ -17834,6 +17838,7 @@ p5-object-realize-later         ports/devel/p5-Object-Realize-Later
 p5-object-signature             ports/devel/p5-Object-Signature
 p5-object-simple                ports/devel/p5-Object-Simple
 p5-object-tiny                  ports/devel/p5-Object-Tiny
+p5-odf-lpod                     ports/textproc/p5-ODF-lpOD
 p5-ogg-vorbis-header            ports/audio/p5-Ogg-Vorbis-Header
 p5-ogg-vorbis-header-pureperl   ports/audio/p5-Ogg-Vorbis-Header-PurePerl
 p5-ole-storage_lite             ports/devel/p5-OLE-Storage_Lite
