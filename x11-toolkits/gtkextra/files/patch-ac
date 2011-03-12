@@ -1,9 +1,9 @@
 
 $FreeBSD$
 
---- Makefile.in.orig	Fri Mar  9 17:19:15 2001
-+++ Makefile.in	Sun Mar 11 12:36:59 2001
-@@ -448,6 +448,8 @@
+--- Makefile.in.orig	2001-11-30 16:28:45.000000000 +0100
++++ Makefile.in	2011-03-12 23:15:59.000000000 +0100
+@@ -448,17 +448,19 @@ install uninstall-am uninstall all-redir
  installdirs mostlyclean-generic distclean-generic clean-generic \
  maintainer-clean-generic clean mostlyclean distclean maintainer-clean
  
@@ -11,4 +11,24 @@ $FreeBSD$
 +	cp gtk.m4 gtk+extra.m4
  
  files:
-         @files=`ls $(DISTFILES) 2> /dev/null `; for p in $$files; do \
+-        @files=`ls $(DISTFILES) 2> /dev/null `; for p in $$files; do \
+-          echo $$p; \
+-        done
+-        @for subdir in $(SUBDIRS); do \
+-          files=`cd $$subdir; $(MAKE) files | grep -v "make\[[1-9]\]"`; \
+-          for file in $$files; do \
+-            echo $$subdir/$$file; \
+-          done; \
+-        done
++	@files=`ls $(DISTFILES) 2> /dev/null `; for p in $$files; do \
++	  echo $$p; \
++	done
++	@for subdir in $(SUBDIRS); do \
++	  files=`cd $$subdir; $(MAKE) files | grep -v "make\[[1-9]\]"`; \
++	  for file in $$files; do \
++	    echo $$subdir/$$file; \
++	  done; \
++	done
+ release:
+ 	rm -rf .deps */.deps
+ 	$(MAKE) distcheck
