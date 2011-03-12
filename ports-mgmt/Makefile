@@ -40,6 +40,7 @@
     SUBDIR += pkg_tree
     SUBDIR += pkgfe
     SUBDIR += pkgsearch
+    SUBDIR += pkgs_which
     SUBDIR += port-authoring-tools
     SUBDIR += port-maintenance-tools
     SUBDIR += portaudit

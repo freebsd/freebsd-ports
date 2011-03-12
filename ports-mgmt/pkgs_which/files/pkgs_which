@@ -1,0 +1,362 @@
+#! /usr/local/bin/perl -WT
+    eval 'exec /usr/local/bin/perl -S $0 ${1+"$@"}'
+        if 0; #$running_under_some_shell
+
+=head1 NAME
+
+pkgs_which - Quickly find packages where trees of files got installed
+
+=head1 SYNOPSIS
+
+pkgs_which [-oqvsd] {dir|file} [...]
+
+pkgs_which {-h|-?|--help}
+
+pkgs_which --man
+
+=head1 OPTIONS
+
+    --origins, -o      print package origins instead of names
+    --quiet, -q        only print actual package names
+    --verbose, -v      also print unmatched files
+    --sort, -s         sort package and file lists
+    --[no-]cacheall    read and cache all package file lists first
+
+    --debug, -d        emit additional debug information on stderr
+
+    --help, -h, -?     print a brief help message and quit
+    --man              show the full full documentation and quit
+
+Long options can be abbreviated to the shortest unambiguous string.
+Short options can be bundled (Example: pkgs_which -qo ...).
+
+=head1 DESCRIPTION
+
+pkgs_which is a tool to efficiently look up which FreeBSD ports or
+packages installed the files on its command line, or the files in the
+directories on the command line.
+
+pkgs_which
+
+=over
+
+=item * accepts files on the command line, which are looked up directly,
+
+=item * accepts directories on the command line, which are
+recursively scanned for regular files, which are then looked up,
+
+=item * accepts an arbitrary mix of files and directories on the command
+line,
+
+=item * prints each port or package only once,
+
+=item * prints port/package names by default, but can print origins
+instead (--origins option).
+
+=item * supports a "quiet" mode that emits output suitable for scripting
+and shell command expansion (see EXAMPLES below)
+
+=item * is optimized for efficient bulk lookups of data without
+assistance of an on-disk database.
+
+=back
+
+It is most useful for quickly obtaining a list of site-packages that
+need to be reinstalled after upgrading a script language interpreter to
+a new version that uses new directories for its site-packages, for
+instance, after a Python 2.6 => 2.7 or Perl 5.10 => 5.12 upgrade, and is
+a good companion to L<portmaster>(8).
+
+=head2 IMPLEMENTATION NOTES
+
+pkgs_which uses pkg_info -L to accelerate the process. It first obtains
+a list of all files, looks at a random one, looks up the corresponding
+package and records its name, and then purges all files belonging to it
+before looking up the next file.
+
+pkgs_which does not spawn subshells for pkg_info for security reasons,
+and makes sure to launder the pkg_info output.
+
+The --cacheall option (default on) makes pkgs_which read all package
+file lists upon start. This takes a few seconds on a GHz-class computer
+but voids the need to run pkg_info -W often later on.
+
+For looking up very few files, it is more efficient to use --no-cacheall.
+
+=head2 RELATED TOOLS
+
+pkgs_which performs a similar task to L<pkg_which>(1) that is part of
+the ports-mgmt/portupgrade port, but unlike the latter, it does not
+require a database, and is optimized for bulk lookups of entire
+directory trees.
+
+L<portmaster>(8) is a tool written by Doug Barton to upgrade installed
+ports and their dependencies that does not require port/package
+databases.
+
+=cut
+
+require 5.008_000;
+use strict;
+use English '-no_match_vars';
+use vars qw($UID $GID $EUID $EGID);
+use File::Find ();
+use Getopt::Long qw(:config no_ignore_case bundling);
+use Pod::Usage;
+
+# ### HARD WIRED CONFIGURATION HERE ###
+
+# Use a safe path
+$ENV{'PATH'} = '/bin:/usr/bin:/sbin:/usr/sbin';
+
+# Where pkg_info lives
+my $PKG_INFO = '/usr/sbin/pkg_info';
+
+# Which regexp to use for laundering tainted file
+# and package names - note that this must not be let
+# near a shell as it contains glob characters!
+my $UNTAINT  = qr|^([()[\]{}\-+@\w.,/\$%!=~:^ *?]+)$|;
+
+# Default for cacheall.
+my $cacheall = 1;
+
+# ### NO USER SERVICEABLE PARTS BELOW THIS LINE ###
+
+my $rc = 0;
+
+# Clean environment a bit
+delete @ENV{qw(IFS CDPATH ENV BASH_ENV)};
+
+# parse options
+my $man = 0;
+my $help = 0;
+my $debug = 0;
+my $verbose = 0;
+my $quiet = 0;
+my $origins = 0;
+my $sort = 0;
+
+GetOptions('help|h|?' => \$help,
+	    'man' => \$man,
+	    'cacheall!' => \$cacheall,
+	    'debug|d' => \$debug,
+	    'origins|o' => \$origins,
+	    'quiet|q' => sub { $quiet = 1; $verbose = 0;},
+	    'sort|s' => \$sort,
+	    'verbose|v' => sub { $verbose ++; $quiet = 0; })
+	    or pod2usage(2);
+pod2usage(1) if $help;
+pod2usage(-exitstatus => 0, -verbose => 2) if $man;
+
+unless (@ARGV) {
+    pod2usage(-exitstatus => 1,
+	-verbose => 0,
+	-message => "You must give a file or directory on the command line.");
+}
+
+# declare subroutines 
+
+sub wanted;
+sub debug;
+sub safebacktick(@);
+sub readcache();
+sub readorigins();
+
+# define variables
+
+my %ufiles = ();
+my @pkgs = ();
+
+my $wantsort = $sort ? sub { return sort @_; }
+                     : sub { return @_; };
+
+# Validate @ARGV
+my $idx = 0;
+while ($idx <= $#ARGV) {
+    if (lstat($ARGV[$idx]) > 0) {
+	$idx++;
+    } else {
+	warn "Cannot stat $ARGV[$idx]: $!, skipping";
+	delete $ARGV[$idx];
+	$rc = 1;
+    }
+};
+
+# Obtain file list
+File::Find::find({wanted => \&wanted,
+		  no_chdir => 1,
+		  untaint => 1},
+	      @ARGV);
+
+my @notfound=(); # to record files not matched
+
+# Obtain packge info if desired
+my ($f2p, $pfl) = readcache() if $cacheall;
+my %p2o = readorigins() if $cacheall and $origins;
+
+my $f;
+# main loop here:
+# - pick random file from hash,
+# - look up the package name (from hash or with pkg_info)
+# - look up list of files in package
+# - purge all files from package
+
+while ($f = each %ufiles) {
+    # Find package for file $f and store in $p:
+    debug "matching $f\n";
+    my $p = $cacheall ? $$f2p{$f} : safebacktick($PKG_INFO, '-qGW', $f);
+    if (!$p) {
+	debug "file $f not in packages\n";
+	push @notfound, $f;
+	delete $ufiles{$f};
+	next;
+    }
+    chomp $p;
+    if ($p !~ $UNTAINT) {
+	warn "tainted package name $p, skipping\n";
+	next;
+    } else {
+	$p = $1; # laundered
+    }
+    debug "got package $p\n";
+
+    # Obtain file list for package and purge from %ufiles:
+    push @pkgs, $p;
+    my @pf = $cacheall ? @{$$pfl{$p}} : safebacktick($PKG_INFO, '-qGL', $p);
+    chomp @pf;
+    debug "deleting files @pf\n";
+    delete @ufiles{@pf};
+    keys %ufiles; # reset hash iterator without overhead (void context)
+}
+
+# If desired, map package names to package origins:
+if ($origins) {
+    if ($cacheall) {
+	@pkgs = map { $p2o{$_}; } @pkgs;
+    } else {
+	@pkgs = map { $_ = safebacktick($PKG_INFO, '-qGo', $_); chomp $_; $_; } @pkgs;
+    }
+}
+
+# Output:
+print "Packages:\n" unless $quiet;
+print join("\n", &$wantsort(@pkgs)), "\n";
+print "\n" unless $quiet;
+if ($verbose) {
+    print "Unmatched files:\n", join("\n", &$wantsort(@notfound)), "\n\n";
+}
+
+exit $rc;
+
+# Subroutines ########################################################
+
+# wanted - used for File::Find as it traverses the tree,
+# we populate %ufiles.
+sub wanted {
+    my ($dev,$ino,$mode,$nlink,$uid,$gid);
+
+    if ((($dev,$ino,$mode,$nlink,$uid,$gid) = lstat($_)) && -f _)
+    {
+	# only record clean names
+	if ($_ =~ $UNTAINT and $1) {
+	    $ufiles{$1} = 1;
+	} else {
+	    debug "skipping tainted file name $_";
+	}
+    }
+}
+
+# if $debug is set, print a debug banner and the arguments to STDERR
+sub debug {
+    print STDERR "DEBUG: ", @_ if $debug;
+}
+
+# safe variant of @foo = `command` - doesn't invoke a shell.
+sub safebacktick(@) {
+    my @args = @_;
+    my @data = ();
+    my $pid;
+
+    die "Can't fork: $!" unless defined($pid = open(KID, "-|"));
+    if ($pid) {
+	@data = <KID>;
+	close KID
+	    or warn $! ? "Error reading from kid: $!"
+		       : "Exit status $? from kid.";
+    } else {
+	debug "running '", join("' '", @args), "'\n";
+	exec { $args[0] } @args;
+    }
+    return wantarray ? @data : $data[0];
+}
+
+# build a hash of file-to-package
+# and a hash of package-to-filelist (contains array references)
+# and return references to either.
+sub readcache() {
+    my %f2p = (); # file-to-package hash (string, string)
+    my %pfl = (); # package-files hash (string, array)
+    my @pkgs = map { $_ =~ $UNTAINT; $1; } safebacktick($PKG_INFO, '-EG', '-a');
+    my $n = scalar @pkgs;
+    debug "subreadcache: got $n packages.\n";
+    foreach my $i (@pkgs) {
+	my @fl = safebacktick($PKG_INFO, '-qGL', $i);
+	chomp @fl;
+	map {
+	    $_ =~ $UNTAINT;
+	    if ($1) {$f2p{$1} = $i;} else {warn "tainted file name in $i: $_"; }
+	} @fl;
+	$pfl{$i} = [@fl];
+    }
+    debug "subreadcache: got ", scalar keys %f2p, " files.\n";
+    return (\%f2p, \%pfl);
+}
+
+# build a hash of package-to-origin and return it
+sub readorigins() {
+    my %p2o = ();
+    my @ol = safebacktick($PKG_INFO, '-QGoa');
+    chomp @ol;
+    my ($k, $v);
+    map { $_ =~ $UNTAINT;
+	  ($k, $v) = split /:/,$_,2;
+	  $p2o{$k} = $v;
+    } @ol;
+    return %p2o;
+}
+
+__END__
+
+=pod
+
+=head1 EXAMPLES
+
+Obtain the sorted list of all packages that installed at least one file under
+/usr/local/lib/python2.6/site-packages:
+
+  pkgs_which --sort /usr/local/lib/python2.6/site-packages
+
+
+Upgrade all packages that installed at least one file under
+/usr/local/lib/python2.6/site-packages (this assumes a Bourne-shell such
+as sh, ash, ksh, bash):
+
+  portmaster -d $(pkgs_which -qo /usr/local/lib/python2.6/site-packages)
+
+=head1 SEE ALSO
+
+L<pkg_info>(8), L<portmaster>(8), L<portupgrade>(8), L<pkg_which>(8)
+
+=head1 HISTORY
+
+pkgs_which made its first appearance in the FreeBSD ports tree on
+2011-03-12. The current CVS Version tag is:
+
+ $FreeBSD$
+
+=head1 AUTHORS
+
+Matthias Andree <mandree@FreeBSD.org> - this script is under the GNU
+General Public License v3 or any later version.
+
+=cut
