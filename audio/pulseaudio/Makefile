@@ -73,6 +73,8 @@ EXTRA_PATCHES+=	${FILESDIR}/extra-patch-src_daemon_main.c \
 		${FILESDIR}/extra-patch-src_pulse_context.c
 .endif
 
+CONFIGURE_ARGS+=	--without-caps
+
 .if defined(WITH_JACK)
 LIB_DEPENDS+=	jack.0:${PORTSDIR}/audio/jack
 PLIST_SUB+=	JACK=""
