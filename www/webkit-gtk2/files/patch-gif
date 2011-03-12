@@ -1,0 +1,36 @@
+From bd6bf8e203cabe7073d4880c64a1ab86ebc1264b Mon Sep 17 00:00:00 2001
+From: Gustavo Noronha Silva <gns@gnome.org>
+Date: Tue, 8 Mar 2011 09:42:13 -0300
+Subject: [PATCH] Fix bad merge that left trailing semicolons on a couple if statements
+
+This was causing gifs to blink instead of animating. For more details
+look here: https://bugs.webkit.org/show_bug.cgi?id=55830
+---
+ .../image-decoders/gif/GIFImageDecoder.cpp         |    4 ++--
+ 1 files changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/WebCore/platform/image-decoders/gif/GIFImageDecoder.cpp b/WebCore/platform/image-decoders/gif/GIFImageDecoder.cpp
+index dc288fd..3bb2340 100644
+--- WebCore/platform/image-decoders/gif/GIFImageDecoder.cpp
++++ WebCore/platform/image-decoders/gif/GIFImageDecoder.cpp
+@@ -343,7 +343,7 @@ bool GIFImageDecoder::initFrameBuffer(unsigned frameIndex)
+ 
+         if ((prevMethod == RGBA32Buffer::DisposeNotSpecified) || (prevMethod == RGBA32Buffer::DisposeKeep)) {
+             // Preserve the last frame as the starting state for this frame.
+-            if (!buffer->copyBitmapData(*prevBuffer));
++            if (!buffer->copyBitmapData(*prevBuffer))
+                 return setFailed();
+         } else {
+             // We want to clear the previous frame to transparent, without
+@@ -357,7 +357,7 @@ bool GIFImageDecoder::initFrameBuffer(unsigned frameIndex)
+                     return setFailed();
+             } else {
+               // Copy the whole previous buffer, then clear just its frame.
+-              if (!buffer->copyBitmapData(*prevBuffer));
++              if (!buffer->copyBitmapData(*prevBuffer))
+                   return setFailed();
+               for (int y = prevRect.y(); y < prevRect.bottom(); ++y) {
+                   for (int x = prevRect.x(); x < prevRect.right(); ++x)
+-- 
+1.6.1
+
