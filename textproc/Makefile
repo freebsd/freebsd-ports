@@ -790,6 +790,7 @@
     SUBDIR += p5-Vroom
     SUBDIR += p5-WDDX
     SUBDIR += p5-WWW-Google-SiteMap
+    SUBDIR += p5-WWW-Wordnik-API
     SUBDIR += p5-WordNet-QueryData
     SUBDIR += p5-WordNet-Similarity
     SUBDIR += p5-XML-Atom
