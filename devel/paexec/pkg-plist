@@ -1,31 +1,32 @@
 bin/paexec
 bin/paexec_reorder
-%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
 %%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/1_div_X/1_div_X_cmd
+%%PORTDOCS%%%%DOCSDIR%%/TODO
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/1_div_X/1_div_X_run
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/all_substr/all_substr_cmd
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/1_div_X/1_div_X_cmd.in
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/1_div_X/Makefile
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/all_substr/all_substr_run
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/broken_echo/transport_broken_echo
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/broken_echo/transport_broken_echo2
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/broken_echo/transport_broken_toupper
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/broken_echo/transport_closed_stdin.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cc_wrapper/cc_wrapper_cmd
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/all_substr/all_substr_cmd.in
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/all_substr/Makefile
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/cc_wrapper/cc_wrapper_run
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cc_wrapper/cc_wrapper_cmd
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cc_wrapper/Makefile
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/cc_wrapper/func1.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/cc_wrapper/func2.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/cc_wrapper/func3.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/make_package/make_package_cmd
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/make_package/make_package_cmd__xxx_failed
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/make_package/make_package_tasks
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/make_package/make_package_tasks2
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/make_package/make_package_tasks_cycle
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/toupper/toupper_cmd
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/make_package/make_package_cmd__xxx_failed.in
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/make_package/make_package_cmd.in
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/make_package/Makefile
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/toupper/toupper_cmd.in
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/toupper/toupper_run
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/toupper/Makefile
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Makefile
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/1_div_X
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/all_substr
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/broken_echo
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/cc_wrapper
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/make_package
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/toupper
