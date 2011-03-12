@@ -94,16 +94,16 @@ bin/pip-%%PYTHON_VER%%
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pip/venv.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pip/venv.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pip/venv.pyo
-%%PORTDOCS%%%%DOCSDIR%%/branches.html
-%%PORTDOCS%%%%DOCSDIR%%/ci-server-step-by-step.html
-%%PORTDOCS%%%%DOCSDIR%%/configuration.html
-%%PORTDOCS%%%%DOCSDIR%%/how-to-contribute.html
-%%PORTDOCS%%%%DOCSDIR%%/index.html
-%%PORTDOCS%%%%DOCSDIR%%/license.html
-%%PORTDOCS%%%%DOCSDIR%%/news.html
-%%PORTDOCS%%%%DOCSDIR%%/requirement-format.html
-%%PORTDOCS%%%%DOCSDIR%%/running-tests.html
-%%PORTDOCS%%%%DOCSDIR%%/search.html
+%%PORTDOCS%%%%DOCSDIR%%/html/._ci-server-step-by-step.html
+%%PORTDOCS%%%%DOCSDIR%%/html/ci-server-step-by-step.html
+%%PORTDOCS%%%%DOCSDIR%%/html/configuration.html
+%%PORTDOCS%%%%DOCSDIR%%/html/how-to-contribute.html
+%%PORTDOCS%%%%DOCSDIR%%/html/index.html
+%%PORTDOCS%%%%DOCSDIR%%/html/news.html
+%%PORTDOCS%%%%DOCSDIR%%/html/requirement-format.html
+%%PORTDOCS%%%%DOCSDIR%%/html/running-tests.html
+%%PORTDOCS%%%%DOCSDIR%%/html/search.html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/html
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pip/vcs
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pip/commands
