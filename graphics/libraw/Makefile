@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libraw
-PORTVERSION=	0.13.1
+PORTVERSION=	0.13.2
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.libraw.su/data/
 DISTNAME=	LibRaw-${PORTVERSION}
@@ -21,8 +21,7 @@ LICENSE_COMB=	dual
 OPTIONS=	DEMOSAIC_PACK_GPL2	"Enable demosaic pack GPL2" off \
 		DEMOSAIC_PACK_GPL3	"Enable demosaic pack GPL3" off \
 		LCMS			"Build with lcms" on \
-		OPTIMIZED_CFLAGS	"Enable optimization" off \
-		SHARED_LIBS		"Install shared libraries" off
+		OPTIMIZED_CFLAGS	"Enable optimization" off
 
 .include <bsd.port.pre.mk>
 
@@ -61,14 +60,6 @@ CONFIGURE_ARGS+=--enable-demosaic-pack-gpl3=../LibRaw-demosaic-pack-GPL3-${PORTV
 CONFIGURE_ARGS+=--disable-demosaic-pack-gpl3
 .endif
 
-.if defined(WITH_SHARED_LIBS)
-EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-Makefile.in
-USE_LDCONFIG=	yes
-PLIST_SUB+=	SHAREDLIBS=""
-.else
-PLIST_SUB+=	SHAREDLIBS="@comment "
-.endif
-
 PORTDOCS=	API-C-eng.html API-C-rus.html API-CXX-eng.html API-CXX-rus.html \
 		API-datastruct-eng.html API-datastruct-rus.html API-notes-eng.html \
 		API-notes-rus.html API-overview-eng.html API-overview-rus.html \
@@ -92,8 +83,8 @@ do-install:
 .endfor
 
 .if defined(WITH_SHARED_LIBS)
-.for f in libraw.so.0 libraw_r.so.0
-	@${INSTALL_DATA} ${WRKSRC}/lib/${f} ${PREFIX}/lib
+.for f in libraw.so.2 libraw_r.so.2
+	@${INSTALL_DATA} ${WRKSRC}/lib/.libs/${f} ${PREFIX}/lib
 .endfor
 .for f in libraw libraw_r
 	@ cd ${PREFIX}/lib ; ${LN} -sf ${f}.so.0 ${f}.so
