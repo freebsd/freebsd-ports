@@ -19,6 +19,7 @@ MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Futuristic action flight simulator and realtime strategy game
 
 BROKEN=		Does not work with CEGUI 0.7.x
+DEPRECATED=	2011-05-01
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libiovmall.so:${PORTSDIR}/lang/io
 RUN_DEPENDS=	${BUILD_DEPENDS}
