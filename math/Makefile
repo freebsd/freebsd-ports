@@ -349,6 +349,7 @@
     SUBDIR += p5-Math-Geometry
     SUBDIR += p5-Math-Geometry-Planar
     SUBDIR += p5-Math-Geometry-Planar-GPC
+    SUBDIR += p5-Math-Geometry-Planar-GPC-Polygon
     SUBDIR += p5-Math-Geometry-Planar-Offset
     SUBDIR += p5-Math-Geometry-Voronoi
     SUBDIR += p5-Math-Gradient
