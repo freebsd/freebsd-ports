@@ -6,9 +6,9 @@ include/libraw/libraw_internal.h
 include/libraw/libraw_types.h
 include/libraw/libraw_version.h
 lib/libraw.a
-%%SHAREDLIBS%%lib/libraw.so
-%%SHAREDLIBS%%lib/libraw.so.0
+lib/libraw.so
+lib/libraw.so.2
 lib/libraw_r.a
-%%SHAREDLIBS%%lib/libraw_r.so
-%%SHAREDLIBS%%lib/libraw_r.so.0
+lib/libraw_r.so
+lib/libraw_r.so.2
 @dirrm include/libraw
