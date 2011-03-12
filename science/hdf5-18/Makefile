@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	hdf5
-PORTVERSION=	1.8.5
+PORTVERSION=	1.8.6
 CATEGORIES=	science archivers graphics
-MASTER_SITES=	ftp://ftp.hdfgroup.org/HDF5/current/src/ \
-		ftp://ftp.hdfgroup.org/HDF5/prev-releases/hdf5-${PORTVERSION}/src/
-DISTNAME=	${PORTNAME}-${PORTVERSION}-patch1
+MASTER_SITES=	ftp://ftp.hdfgroup.org/HDF5/prev-releases/hdf5-${PORTVERSION}/src/
+#DISTNAME=	${PORTNAME}-${PORTVERSION}-patch1
 
 MAINTAINER=	koziol@hdfgroup.org
 COMMENT=	Hierarchical Data Format library (from NCSA)
@@ -33,8 +32,8 @@ OPTIONS=	DEBUG	"Debug"			off \
 
 .include <bsd.port.pre.mk>
 
-.if !defined(WITH_DEBUG)
-CONFIGURE_ARGS+=--disable-debug --enable-production
+.if defined(WITH_DEBUG)
+CONFIGURE_ARGS+=	--enable-debug=all --disable-production
 .endif
 
 .if defined(WITH_FORTRAN)
