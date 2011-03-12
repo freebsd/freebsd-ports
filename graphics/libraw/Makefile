@@ -7,6 +7,7 @@
 
 PORTNAME=	libraw
 PORTVERSION=	0.13.2
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.libraw.su/data/
 DISTNAME=	LibRaw-${PORTVERSION}
@@ -82,14 +83,16 @@ do-install:
 	@${INSTALL_DATA} ${WRKSRC}/lib/${f} ${PREFIX}/lib
 .endfor
 
-.if defined(WITH_SHARED_LIBS)
 .for f in libraw.so.2 libraw_r.so.2
 	@${INSTALL_DATA} ${WRKSRC}/lib/.libs/${f} ${PREFIX}/lib
 .endfor
 .for f in libraw libraw_r
 	@ cd ${PREFIX}/lib ; ${LN} -sf ${f}.so.0 ${f}.so
 .endfor
-.endif
+
+.for f in libraw.pc libraw_r.pc
+	@${INSTALL_DATA} ${WRKSRC}/${f} ${PREFIX}/libdata/pkgconfig
+.endfor
 
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
