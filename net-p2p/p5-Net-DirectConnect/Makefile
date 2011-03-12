@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Net-DirectConnect
-PORTVERSION=	0.08
+PORTVERSION=	0.09
 CATEGORIES=	net-p2p net perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	../../authors/id/P/PR/PRO/
