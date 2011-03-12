@@ -18,7 +18,6 @@ COMMENT=	A general ide tool for GTK+/VDK
 LIB_DEPENDS=	vdk-2.6:${PORTSDIR}/x11-toolkits/vdk
 
 USE_GNOME=	gtk20
-USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--enable-opt=no
