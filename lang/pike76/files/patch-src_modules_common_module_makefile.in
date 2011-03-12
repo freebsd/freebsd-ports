@@ -1,0 +1,20 @@
+--- src/modules/common_module_makefile.in.orig	2011-03-12 19:54:33.000000000 +0100
++++ src/modules/common_module_makefile.in	2011-03-12 19:54:35.000000000 +0100
+@@ -58,7 +58,7 @@ $(MODULE_ARCHIVES) ThisIsAPhonyTargetBla
+ .c.o:
+ 	@echo "Compiling $<" ;\
+ 	rm -f $@.fail >/dev/null 2>&1; \
+-	if $(CC) $(PREFLAGS) $(CFLAGS) -c $< -o $@ ; then : ; else \
++	if $(CC) $(PREFLAGS) $(REAL_CPPFLAGS) $(CFLAGS) -c $< -o $@ ; then : ; else \
+ 	  status=$$?; \
+ 	  if test x"@noopt_retry@" = xyes ; then \
+ 	    echo "WARNING: Compiler failure! Trying without optimization!" >&2;\
+@@ -102,7 +102,7 @@ $(SRCDIR)/configure: $(SRCDIR)/configure
+ 	cd $(SRCDIR) && $(PIKE_SRC_DIR)/run_autoconfig .
+ 
+ config.status: $(SRCDIR)/configure
+-	AR="$(AR)" CFLAGS="$(REAL_CFLAGS)" LDFLAGS="$(REAL_LDFLAGS)" LDSHARED="$(REAL_LDSHARED)" CPPFLAGS="$(REAL_CPPFLAGS)" BUILDDIR="$(TMP_BUILDDIR)" BINDIR="$(TMP_BINDIR)" PIKE_SRC_DIR="$(PIKE_SRC_DIR)" BUILD_BASE="$(BUILD_BASE)" ./config.status --recheck
++	 ./config.status --recheck AR="$(AR)" CFLAGS="$(REAL_CFLAGS)" LDFLAGS="$(REAL_LDFLAGS)" LDSHARED="$(REAL_LDSHARED)" CPPFLAGS="$(REAL_CPPFLAGS)" BUILDDIR="$(TMP_BUILDDIR)" BINDIR="$(TMP_BINDIR)" PIKE_SRC_DIR="$(PIKE_SRC_DIR)" BUILD_BASE="$(BUILD_BASE)"
+ 
+ module.pmod: Makefile $(MODULE_PMOD_IN)
+ 	@if [ "x$(MODULE_PMOD_IN)" != "x" ]; then \
