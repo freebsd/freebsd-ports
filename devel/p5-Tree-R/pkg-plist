@@ -1,0 +1,8 @@
+%%SITE_PERL%%/Tree/R.pm
+%%SITE_PERL%%/auto/Tree/R/autosplit.ix
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Tree/R/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tree/R
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tree
+@dirrm %%SITE_PERL%%/auto/Tree/R
+@dirrmtry %%SITE_PERL%%/auto/Tree
+@dirrmtry %%SITE_PERL%%/Tree
