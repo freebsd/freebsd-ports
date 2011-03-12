@@ -136,6 +136,7 @@ lib/libhdf5_hl_cpp.so.6
 %%FORTRAN%%lib/libhdf5hl_fortran.la
 %%FORTRAN%%lib/libhdf5hl_fortran.so
 %%FORTRAN%%lib/libhdf5hl_fortran.so.6
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/README
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/c++/chunks.cpp
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/c++/compound.cpp
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/c++/create.cpp
@@ -162,7 +163,6 @@ lib/libhdf5_hl_cpp.so.6
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/c/ph5example.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/c/run-c-ex.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/hl/c++/ptExampleFL.cpp
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/hl/c++/ptExampleVL.cpp
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/hl/c++/run-hlc++-ex.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/hl/c/ex_ds1.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/hl/c/ex_image1.c
@@ -186,13 +186,32 @@ lib/libhdf5_hl_cpp.so.6
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/hl/c/image8.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/hl/c/pal_rgb.h
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/hl/c/ptExampleFL.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/hl/c/ptExampleVL.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/hl/c/run-hlc-ex.sh
+%%FORTRAN%%%%PORTEXAMPLES%%%%EXAMPLESDIR%%/hl/fortran/exlite.f90
+%%FORTRAN%%%%PORTEXAMPLES%%%%EXAMPLESDIR%%/hl/fortran/run-hlfortran-ex.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/hl/run-hl-ex.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/run-all-ex.sh
+%%FORTRAN%%%%PORTEXAMPLES%%%%EXAMPLESDIR%%/fortran/hyperslab.f90
+%%FORTRAN%%%%PORTEXAMPLES%%%%EXAMPLESDIR%%/fortran/compound.f90
+%%FORTRAN%%%%PORTEXAMPLES%%%%EXAMPLESDIR%%/fortran/grpit.f90
+%%FORTRAN%%%%PORTEXAMPLES%%%%EXAMPLESDIR%%/fortran/run-fortran-ex.sh
+%%FORTRAN%%%%PORTEXAMPLES%%%%EXAMPLESDIR%%/fortran/refobjexample.f90
+%%FORTRAN%%%%PORTEXAMPLES%%%%EXAMPLESDIR%%/fortran/dsetexample.f90
+%%FORTRAN%%%%PORTEXAMPLES%%%%EXAMPLESDIR%%/fortran/groupexample.f90
+%%FORTRAN%%%%PORTEXAMPLES%%%%EXAMPLESDIR%%/fortran/attrexample.f90
+%%FORTRAN%%%%PORTEXAMPLES%%%%EXAMPLESDIR%%/fortran/selectele.f90
+%%FORTRAN%%%%PORTEXAMPLES%%%%EXAMPLESDIR%%/fortran/grpsexample.f90
+%%FORTRAN%%%%PORTEXAMPLES%%%%EXAMPLESDIR%%/fortran/refregexample.f90
+%%FORTRAN%%%%PORTEXAMPLES%%%%EXAMPLESDIR%%/fortran/mountexample.f90
+%%FORTRAN%%%%PORTEXAMPLES%%%%EXAMPLESDIR%%/fortran/grpdsetexample.f90
+%%FORTRAN%%%%PORTEXAMPLES%%%%EXAMPLESDIR%%/fortran/rwdsetexample.f90
+%%FORTRAN%%%%PORTEXAMPLES%%%%EXAMPLESDIR%%/fortran/fileexample.f90
+%%FORTRAN%%%%PORTEXAMPLES%%%%EXAMPLESDIR%%/fortran/ph5example.f90
+%%FORTRAN%%%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/hl/fortran
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/hl/c++
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/hl/c
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/hl
+%%FORTRAN%%%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/fortran
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/c++
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/c
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
