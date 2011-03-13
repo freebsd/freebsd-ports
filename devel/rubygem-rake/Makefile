@@ -20,9 +20,7 @@ MANCOMPRESSED=	yes
 MAN1=		rake.1
 
 .include <bsd.port.pre.mk>
-.if ${RUBY_VER} == 1.8
 PLIST_FILES=	bin/rake
-.endif
 
 post-install:
 	${MV} ${PREFIX}/${GEM_LIB_DIR}/doc/rake.1.gz ${PREFIX}/man/man1
