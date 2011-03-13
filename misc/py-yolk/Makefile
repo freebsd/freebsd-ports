@@ -28,6 +28,10 @@ MAN1=	${PORTNAME}.1
 
 .include <bsd.port.pre.mk>
 
+.if ${PYTHON_REL} == 271 || ${PYTHON_REL} == 320
+IGNORE=	does not work with ${PYTHON_VERSION} (see http://goo.gl/SZpDN)
+.endif
+
 post-install:
 .if !defined (NO_INSTALL_MANPAGES)
 	@${INSTALL_DATA} ${WRKSRC}/docs/${PORTNAME}.1 ${MANPREFIX}/man/man1/${PORTNAME}.1
