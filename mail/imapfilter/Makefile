@@ -6,16 +6,15 @@
 #
 
 PORTNAME=	imapfilter
-PORTVERSION=	2.2.2
+PORTVERSION=	2.2.3
 CATEGORIES=	mail
-MASTER_SITES=	http://imapfilter.hellug.gr/source/
+MASTER_SITES=	http://cloud.github.com/downloads/lefcha/${PORTNAME}/
 
 MAINTAINER=	stefan@FreeBSD.org
 COMMENT=	IMAP mail filtering utility
 
 LIB_DEPENDS=	pcre:${PORTSDIR}/devel/pcre
 
-USE_BZIP2=	yes
 USE_LUA=	5.1
 USE_OPENSSL=	yes
 HAS_CONFIGURE=	yes
@@ -36,8 +35,8 @@ PLIST_FILES=	bin/imapfilter \
 		%%DATADIR%%/options.lua \
 		%%DATADIR%%/regex.lua \
 		%%DATADIR%%/set.lua \
-		%%EXAMPLESDIR%%/sample.config.lua \
-		%%EXAMPLESDIR%%/sample.extend.lua
+		%%EXAMPLESDIR%%/config.lua \
+		%%EXAMPLESDIR%%/extend.lua
 PLIST_DIRS=	%%DATADIR%% %%EXAMPLESDIR%%
 
 post-patch:
@@ -51,8 +50,8 @@ post-patch:
 post-install:
 	${STRIP_CMD} ${PREFIX}/bin/imapfilter
 	@${MKDIR} ${DATADIR} ${EXAMPLESDIR}
-	cd ${WRKSRC} && \
-		${INSTALL_DATA} sample.config.lua sample.extend.lua \
+	cd ${WRKSRC}/samples && \
+		${INSTALL_DATA} config.lua extend.lua \
 			${EXAMPLESDIR}
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
