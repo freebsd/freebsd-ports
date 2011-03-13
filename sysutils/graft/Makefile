@@ -13,6 +13,9 @@ MASTER_SITES=		http://www.gormand.com.au/peters/tools/graft/
 MAINTAINER=		ports@FreeBSD.org
 COMMENT=		Automatically manage symlinks in a directory hierarchy
 
+DEPRECATED=     Upstream disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 USE_PERL5=		yes
 
 PLIST_FILES=		bin/graft

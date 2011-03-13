@@ -13,6 +13,9 @@ MASTER_SITES=	http://growspd.brokep.com/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Quick utility to check files growth rate
 
+DEPRECATED=     Upstream disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 MAN1=		growspd.1
 PLIST_FILES=	bin/growspd
 

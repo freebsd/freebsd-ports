@@ -15,6 +15,9 @@ MASTER_SITE_SUBDIR=	contrib/old/srcs/utils
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Another WindowMaker load gauge
 
+DEPRECATED=     Upstream disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 USE_IMAKE=	yes
 USE_XORG=	xpm
 ALL_TARGET=	wmavgload

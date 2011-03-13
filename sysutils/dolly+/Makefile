@@ -14,6 +14,9 @@ DISTNAME=	dolly${PORTVERSION:S/./_/}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Improved version of dolly harddisk/partition network clone utility
 
+DEPRECATED=     Upstream disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 NO_WRKSUBDIR=	yes
 
 PROGRAM_BIN_FILES=	dollyC

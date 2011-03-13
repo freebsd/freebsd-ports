@@ -14,6 +14,9 @@ MASTER_SITES=	http://seiichisato.jp/dockapps/src/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A dockapp to monitor the LongRun(tm) status on Crusoe
 
+DEPRECATED=     Upstream disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 USE_XORG=	xpm
 USE_GNOME=	gnometarget
 GNU_CONFIGURE=	yes

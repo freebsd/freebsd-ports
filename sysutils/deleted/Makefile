@@ -14,6 +14,9 @@ MASTER_SITES=	ftp://ftp.kiarchive.ru/pub/unix/sysutl/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Daemon for garbage collection in directories with temporary files
 
+DEPRECATED=     Upstream disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 MAN1=		deleted.1
 MANCOMPRESSED=	yes
 PLIST_FILES=	bin/deleted

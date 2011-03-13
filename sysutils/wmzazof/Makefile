@@ -14,6 +14,9 @@ MASTER_SITES=	http://members.chello.be/cr49940/wmzazof/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A simple dockapp that displays the uptime, free and used memory
 
+DEPRECATED=     Upstream disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 LIB_DEPENDS=	dockapp.2:${PORTSDIR}/x11-wm/libdockapp
 
 USE_XORG=	xpm

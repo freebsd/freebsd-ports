@@ -15,6 +15,9 @@ MASTER_SITE_SUBDIR=	fenner
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	WindowMaker dockable hardware monitor for FreeBSD
 
+DEPRECATED=     Upstream disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 WRKSRC=		${WRKDIR}/wmhm/wmhm
 
 GNU_CONFIGURE=	yes

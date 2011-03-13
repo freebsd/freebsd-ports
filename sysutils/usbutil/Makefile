@@ -14,6 +14,9 @@ MASTER_SITES=	ftp://ftp.augustsson.net/pub/netbsd/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	USB developer utilities
 
+DEPRECATED=     Upstream disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 PLIST_FILES=	sbin/usbctl sbin/usbgen sbin/usbstats
 MAN8=		usbgen.8
 

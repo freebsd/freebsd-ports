@@ -16,6 +16,9 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}.orig
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A utility to split and join files
 
+DEPRECATED=     Upstream disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 USE_AUTOTOOLS=	automake14:env

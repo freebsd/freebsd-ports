@@ -14,6 +14,9 @@ MASTER_SITES=	http://www.cs.ubc.ca/~cmg/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Displays filesystem usage of mountpoints in a nice WindowMaker dockapp
 
+DEPRECATED=     Upstream disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 USE_XORG=	x11 xpm
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"

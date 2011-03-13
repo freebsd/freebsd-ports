@@ -13,6 +13,9 @@ MASTER_SITES=	http://tools.ana.com/utils/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Wrap a \"raw\" floppy image as an Apple DiskCopy 4.2 file
 
+DEPRECATED=     Upstream disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 MAKEFILE=	Makefile,freebsd
 MAKE_ENV=	BINDIR=${PREFIX}/bin SHAREDIR=${PREFIX} NO_MANCOMPRESS=yes
 MAN1=		dc42wrap.1

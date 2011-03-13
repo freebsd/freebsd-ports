@@ -15,6 +15,9 @@ MASTER_SITES=	http://mirror2.unixfreunde.de/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A plugin that scrolls in a panel a list of currently logged on users
 
+DEPRECATED=     Upstream disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 BUILD_DEPENDS=	${LOCALBASE}/include/gkrellm/gkrellm.h:${PORTSDIR}/sysutils/gkrellm
 RUN_DEPENDS=	gkrellm:${PORTSDIR}/sysutils/gkrellm
 

@@ -14,6 +14,9 @@ MASTER_SITES=	http://www.netsw.org/system/tools/process/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A daemon that logs out idle users and those users hogging resources
 
+DEPRECATED=     Upstream disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 NO_CDROM=	non-profit use and distribution only
 MANCOMPRESSED=	yes
 MAN5=		idled.cf.5

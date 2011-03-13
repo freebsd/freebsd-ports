@@ -14,6 +14,9 @@ MASTER_SITES=	http://www.fxp.org/~jedgar/wmlmmon/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	WM dock app to display info from MB power management controllers
 
+DEPRECATED=     Upstream disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 ONLY_FOR_ARCHS=	i386
 
 USE_XORG=	xpm

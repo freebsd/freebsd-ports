@@ -14,6 +14,9 @@ MASTER_SITES=	ftp://ftp.dinoex.de/pub/experiment/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Basic UPS monitor for the APC SmartUPS devices
 
+DEPRECATED=     Upstream disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 MAKEFILE=	makefile.bsdi
 RESTRICTED=	"must provide without modifications"
 
