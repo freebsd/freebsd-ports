@@ -11,7 +11,7 @@ CATEGORIES=	games
 MASTER_SITES=	http://www.catb.org/~esr/bluemoon/
 DISTNAME=	bluemoon-${PORTVERSION}
 
-MAINTAINER=	gjb@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Blue Moon card solitaire
 
 USE_GMAKE=	yes
