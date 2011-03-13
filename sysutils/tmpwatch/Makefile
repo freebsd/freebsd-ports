@@ -8,7 +8,7 @@
 PORTNAME=	tmpwatch
 PORTVERSION=	2.10.1
 CATEGORIES=	sysutils
-MASTER_SITES=	http://fedorahosted.org/releases/t/m/tmpwatch/
+MASTER_SITES=	https://fedorahosted.org/releases/t/m/tmpwatch/
 
 MAINTAINER=	bapt@FreeBSD.org
 COMMENT=	A utility for removing files based on when they were last accessed
