@@ -2341,6 +2341,7 @@ deegree-wms                     ports/graphics/deegree-wms
 deegree-wps                     ports/graphics/deegree-wps
 deegree-wpvs                    ports/graphics/deegree-wpvs
 defendguin                      ports/games/defendguin
+deheader                        ports/devel/deheader
 dejagnu                         ports/misc/dejagnu
 dejavu                          ports/x11-fonts/dejavu
 dekagen                         ports/audio/dekagen
@@ -12260,6 +12261,7 @@ p5-Encode-Detect                ports/converters/p5-Encode-Detect
 p5-Encode-DoubleEncodedUTF8     ports/converters/p5-Encode-DoubleEncodedUTF8
 p5-Encode-IMAPUTF7              ports/converters/p5-Encode-IMAPUTF7
 p5-Encode-JIS2K                 ports/converters/p5-Encode-JIS2K
+p5-Encode-Locale                ports/converters/p5-Encode-Locale
 p5-Encode-Punycode              ports/converters/p5-Encode-Punycode
 p5-Encode-compat                ports/converters/p5-Encode-compat
 p5-Encoding-FixLatin            ports/converters/p5-Encoding-FixLatin
@@ -12516,6 +12518,7 @@ p5-Geo-IP-PurePerl              ports/net/p5-Geo-IP-PurePerl
 p5-Geo-IPfree                   ports/net/p5-Geo-IPfree
 p5-Geo-KML                      ports/graphics/p5-Geo-KML
 p5-Geo-METAR                    ports/astro/p5-Geo-METAR
+p5-Geo-Parse-OSM                ports/textproc/p5-Geo-Parse-OSM
 p5-Geo-Point                    ports/graphics/p5-Geo-Point
 p5-Geo-Postcodes                ports/misc/p5-Geo-Postcodes
 p5-Geo-Postcodes-DK             ports/misc/p5-Geo-Postcodes-DK
@@ -13165,6 +13168,7 @@ p5-Math-GSL                     ports/math/p5-Math-GSL
 p5-Math-Geometry                ports/math/p5-Math-Geometry
 p5-Math-Geometry-Planar         ports/math/p5-Math-Geometry-Planar
 p5-Math-Geometry-Planar-GPC     ports/math/p5-Math-Geometry-Planar-GPC
+p5-Math-Geometry-Planar-GPC-Polygon  ports/math/p5-Math-Geometry-Planar-GPC-Polygon
 p5-Math-Geometry-Planar-Offset  ports/math/p5-Math-Geometry-Planar-Offset
 p5-Math-Geometry-Voronoi        ports/math/p5-Math-Geometry-Voronoi
 p5-Math-Gradient                ports/math/p5-Math-Gradient
@@ -13178,6 +13182,7 @@ p5-Math-Matrix                  ports/math/p5-Math-Matrix
 p5-Math-NumberCruncher          ports/math/p5-Math-NumberCruncher
 p5-Math-Pari                    ports/math/p5-Math-Pari
 p5-Math-Polygon                 ports/math/p5-Math-Polygon
+p5-Math-Polygon-Tree            ports/math/p5-Math-Polygon-Tree
 p5-Math-Polynomial-Solve        ports/math/p5-Math-Polynomial-Solve
 p5-Math-RPN                     ports/math/p5-Math-RPN
 p5-Math-Random                  ports/math/p5-Math-Random
@@ -13860,6 +13865,7 @@ p5-PerlIO-eol                   ports/devel/p5-PerlIO-eol
 p5-PerlIO-gzip                  ports/archivers/p5-PerlIO-gzip
 p5-PerlIO-via-Bzip2             ports/archivers/p5-PerlIO-via-Bzip2
 p5-PerlIO-via-MD5               ports/devel/p5-PerlIO-via-MD5
+p5-PerlIO-via-Unidecode         ports/converters/p5-PerlIO-via-Unidecode
 p5-PerlIO-via-dynamic           ports/devel/p5-PerlIO-via-dynamic
 p5-PerlIO-via-symlink           ports/devel/p5-PerlIO-via-symlink
 p5-PerlMenu                     ports/devel/p5-PerlMenu
@@ -14682,6 +14688,7 @@ p5-Tree-DAG_Node                ports/devel/p5-Tree-DAG_Node
 p5-Tree-Nary                    ports/textproc/p5-Tree-Nary
 p5-Tree-Node                    ports/devel/p5-Tree-Node
 p5-Tree-Parser                  ports/devel/p5-Tree-Parser
+p5-Tree-R                       ports/devel/p5-Tree-R
 p5-Tree-Simple                  ports/devel/p5-Tree-Simple
 p5-Tree-Simple-View             ports/devel/p5-Tree-Simple-View
 p5-Tree-Simple-VisitorFactory   ports/devel/p5-Tree-Simple-VisitorFactory
@@ -14844,6 +14851,7 @@ p5-WWW-Tumblr                   ports/www/p5-WWW-Tumblr
 p5-WWW-VenusEnvy                ports/www/p5-WWW-VenusEnvy
 p5-WWW-WebArchive               ports/www/p5-WWW-WebArchive
 p5-WWW-Wikipedia                ports/www/p5-WWW-Wikipedia
+p5-WWW-Wordnik-API              ports/textproc/p5-WWW-Wordnik-API
 p5-WWW-Yandex-TIC               ports/www/p5-WWW-Yandex-TIC
 p5-WWW-iTunesConnect            ports/www/p5-WWW-iTunesConnect
 p5-Want                         ports/devel/p5-Want
@@ -16418,6 +16426,7 @@ p5-encode-detect                ports/converters/p5-Encode-Detect
 p5-encode-doubleencodedutf8     ports/converters/p5-Encode-DoubleEncodedUTF8
 p5-encode-imaputf7              ports/converters/p5-Encode-IMAPUTF7
 p5-encode-jis2k                 ports/converters/p5-Encode-JIS2K
+p5-encode-locale                ports/converters/p5-Encode-Locale
 p5-encode-punycode              ports/converters/p5-Encode-Punycode
 p5-encoding-fixlatin            ports/converters/p5-Encoding-FixLatin
 p5-enum                         ports/devel/p5-enum
@@ -16669,6 +16678,7 @@ p5-geo-ip-pureperl              ports/net/p5-Geo-IP-PurePerl
 p5-geo-ipfree                   ports/net/p5-Geo-IPfree
 p5-geo-kml                      ports/graphics/p5-Geo-KML
 p5-geo-metar                    ports/astro/p5-Geo-METAR
+p5-geo-parse-osm                ports/textproc/p5-Geo-Parse-OSM
 p5-geo-point                    ports/graphics/p5-Geo-Point
 p5-geo-postcodes                ports/misc/p5-Geo-Postcodes
 p5-geo-postcodes-dk             ports/misc/p5-Geo-Postcodes-DK
@@ -17315,6 +17325,7 @@ p5-math-fixedprecision          ports/math/p5-Math-FixedPrecision
 p5-math-geometry                ports/math/p5-Math-Geometry
 p5-math-geometry-planar         ports/math/p5-Math-Geometry-Planar
 p5-math-geometry-planar-gpc     ports/math/p5-Math-Geometry-Planar-GPC
+p5-math-geometry-planar-gpc-polygon  ports/math/p5-Math-Geometry-Planar-GPC-Polygon
 p5-math-geometry-planar-offset  ports/math/p5-Math-Geometry-Planar-Offset
 p5-math-geometry-voronoi        ports/math/p5-Math-Geometry-Voronoi
 p5-math-gmp                     ports/math/p5-Math-GMP
@@ -17330,6 +17341,7 @@ p5-math-mpfr                    ports/math/p5-Math-MPFR
 p5-math-numbercruncher          ports/math/p5-Math-NumberCruncher
 p5-math-pari                    ports/math/p5-Math-Pari
 p5-math-polygon                 ports/math/p5-Math-Polygon
+p5-math-polygon-tree            ports/math/p5-Math-Polygon-Tree
 p5-math-polynomial-solve        ports/math/p5-Math-Polynomial-Solve
 p5-math-random                  ports/math/p5-Math-Random
 p5-math-random-isaac            ports/math/p5-Math-Random-ISAAC
@@ -17956,6 +17968,7 @@ p5-perlio-via-bzip2             ports/archivers/p5-PerlIO-via-Bzip2
 p5-perlio-via-dynamic           ports/devel/p5-PerlIO-via-dynamic
 p5-perlio-via-md5               ports/devel/p5-PerlIO-via-MD5
 p5-perlio-via-symlink           ports/devel/p5-PerlIO-via-symlink
+p5-perlio-via-unidecode         ports/converters/p5-PerlIO-via-Unidecode
 p5-perlmenu                     ports/devel/p5-PerlMenu
 p5-perlmol                      ports/science/p5-PerlMol
 p5-perlpoint-converters         ports/textproc/p5-PerlPoint-Converters
@@ -18902,6 +18915,7 @@ p5-tree-dag_node                ports/devel/p5-Tree-DAG_Node
 p5-tree-nary                    ports/textproc/p5-Tree-Nary
 p5-tree-node                    ports/devel/p5-Tree-Node
 p5-tree-parser                  ports/devel/p5-Tree-Parser
+p5-tree-r                       ports/devel/p5-Tree-R
 p5-tree-simple                  ports/devel/p5-Tree-Simple
 p5-tree-simple-view             ports/devel/p5-Tree-Simple-View
 p5-tree-simple-visitorfactory   ports/devel/p5-Tree-Simple-VisitorFactory
@@ -19098,6 +19112,7 @@ p5-www-twsms                    ports/www/p5-WWW-TWSMS
 p5-www-venusenvy                ports/www/p5-WWW-VenusEnvy
 p5-www-webarchive               ports/www/p5-WWW-WebArchive
 p5-www-wikipedia                ports/www/p5-WWW-Wikipedia
+p5-www-wordnik-api              ports/textproc/p5-WWW-Wordnik-API
 p5-www-yandex-tic               ports/www/p5-WWW-Yandex-TIC
 p5-wx                           ports/x11-toolkits/p5-Wx
 p5-wx-perl-processstream        ports/x11-toolkits/p5-Wx-Perl-ProcessStream
@@ -20672,6 +20687,7 @@ pkg_search                      ports/ports-mgmt/pkg_search
 pkg_trackinst                   ports/ports-mgmt/pkg_trackinst
 pkg_tree                        ports/ports-mgmt/pkg_tree
 pkgfe                           ports/ports-mgmt/pkgfe
+pkgs_which                      ports/ports-mgmt/pkgs_which
 pkgsearch                       ports/ports-mgmt/pkgsearch
 pkipplib                        ports/print/pkipplib
 pkpgcounter                     ports/print/pkpgcounter
@@ -21328,6 +21344,7 @@ py-bittornado-core              ports/net-p2p/py-bittornado-core
 py-bittorrent                   ports/net-p2p/py-bittorrent
 py-bittorrent-core              ports/net-p2p/py-bittorrent-core
 py-bitvector                    ports/math/py-bitvector
+py-blogofile                    ports/www/py-blogofile
 py-boto                         ports/devel/py-boto
 py-boto-devel                   ports/devel/py-boto-devel
 py-bottle                       ports/www/py-bottle
@@ -23407,6 +23424,7 @@ rubygem-msgpack                 ports/devel/rubygem-msgpack
 rubygem-multi_json              ports/devel/rubygem-multi_json
 rubygem-multi_xml               ports/textproc/rubygem-multi_xml
 rubygem-multipart-post          ports/www/rubygem-multipart-post
+rubygem-murder                  ports/sysutils/rubygem-murder
 rubygem-mutter                  ports/devel/rubygem-mutter
 rubygem-ncurses                 ports/devel/rubygem-ncurses
 rubygem-needle                  ports/devel/rubygem-needle
