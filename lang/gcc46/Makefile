@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	gcc
-PORTVERSION=	4.6.0.20110226
+PORTVERSION=	4.6.0.20110305
 CATEGORIES=	lang java
 MASTER_SITES=	${MASTER_SITE_GCC}
 MASTER_SITE_SUBDIR=	snapshots/${VERSIONSTRING}
@@ -49,9 +49,7 @@ OPTIONS=	LTO	"Enable link-time optimizations (LTO)"	off \
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_LTO)
-LIB_DEPENDS+=	elf.0:${PORTSDIR}/devel/libelf
-CONFIGURE_ARGS+=	--enable-lto=yes \
-			--with-libelf=${LOCALBASE}
+CONFIGURE_ARGS+=	--enable-lto=yes
 .else
 CONFIGURE_ARGS+=	--enable-lto=no
 .endif
