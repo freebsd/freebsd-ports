@@ -6,37 +6,23 @@
 #
 
 PORTNAME=	tmpwatch
-PORTVERSION=	2.9.6
+PORTVERSION=	2.10.1
 CATEGORIES=	sysutils
-MASTER_SITES=	${MASTER_SITE_FEDORA_LINUX}
-MASTER_SITE_SUBDIR=	5/source/SRPMS
-EXTRACT_SUFX=	-1.2.1.src.rpm
+MASTER_SITES=	http://fedorahosted.org/releases/t/m/tmpwatch/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	bapt@FreeBSD.org
 COMMENT=	A utility for removing files based on when they were last accessed
 
-EXTRACT_DEPENDS=rpm2cpio.pl:${PORTSDIR}/archivers/rpm2cpio
+USE_BZIP2=	yes
 
-CFLAGS+=	${CPPFLAGS} -DVERSION=\"${PORTVERSION}\"
+LICENSE=	GPLv2
+
+GNU_CONFIGURE=	yes
+
 MAN8=		tmpwatch.8
 PLIST_FILES=	sbin/tmpwatch
 
-do-extract:
-	${MKDIR} ${WRKDIR}
-	cd ${WRKDIR} && \
-		${LOCALBASE}/bin/rpm2cpio.pl ${DISTDIR}/${DISTFILES} | \
-		${CPIO} -iud
-	cd ${WRKDIR} && ${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} \
-		${WRKDIR}/${DISTNAME}.tar.gz ${EXTRACT_AFTER_ARGS}
-
 post-patch:
-	${REINPLACE_CMD} -E "s/^#include.+mntent.h.+//g" ${WRKSRC}/tmpwatch.c
-
-do-build:
-	cd ${WRKSRC} && ${CC} ${CFLAGS} ${LDFLAGS} -o tmpwatch tmpwatch.c
-
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/tmpwatch ${PREFIX}/sbin
-	${INSTALL_MAN} ${WRKSRC}/tmpwatch.8 ${MAN8PREFIX}/man/man8
+	@${REINPLACE_CMD} -E "s/^#include.+mntent.h.+//g" ${WRKSRC}/tmpwatch.c
 
 .include <bsd.port.mk>
