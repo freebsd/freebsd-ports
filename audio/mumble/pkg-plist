@@ -1,4 +1,6 @@
 bin/mumble
+%%BUNDLECELT%%lib/libcelt-mumble.so.0.7.0
+%%BUNDLECELT%%lib/libcelt-mumble.so.0.11.0
 %%MUMBLE11X%%bin/mumble11x
 share/applications/mumble.desktop
 share/services/mumble.protocol
