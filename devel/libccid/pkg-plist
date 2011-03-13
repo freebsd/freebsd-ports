@@ -1,6 +1,5 @@
 bin/RSA_SecurID_getpasswd
 lib/pcsc/drivers/ifd-ccid.bundle/Contents/FreeBSD/libccid.so
-lib/pcsc/drivers/ifd-ccid.bundle/Contents/FreeBSD/libccid.so.%%VER%%
 lib/pcsc/drivers/ifd-ccid.bundle/Contents/Info.plist
 sbin/Kobil_mIDentity_switch
 %%DOCSDIR%%/README_Kobil_mIDentity_switch.txt
