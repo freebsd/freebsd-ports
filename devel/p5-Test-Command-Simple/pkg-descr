@@ -1,0 +1,14 @@
+This test module is intended to simplify testing of external commands.
+It does so by running the command under IPC::Open3, closing the stdin
+immediately, and reading everything from the command's stdout and
+stderr. It then makes the output available to be tested.
+
+It is not (yet?) as feature-rich as Test::Cmd, but I think the interface
+to this is much simpler. Tests also plug directly into the Test::Builder
+framework, which plays nice with Test::More.
+
+As compared to Test::Command, this module is simpler, relying on the
+user to feed rc, stdout, and stderr to the appropriate other tests,
+presumably in Test::More, but not necessarily.
+
+WWW: http://search.cpan.org/dist/Test-Command-Simple/
