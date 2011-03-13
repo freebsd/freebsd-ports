@@ -12,7 +12,7 @@ MASTER_SITES=	http://people.sc.fsu.edu/~beerli/popgen/currentversion/ \
 		http://www.glenbarber.us/ports/${CATEGORIES}/${PORTNAME}/
 DISTNAME=	${PORTNAME}-${PORTVERSION}.src
 
-MAINTAINER=	gjb@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A program to estimate population sizes and migration rates
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/src
