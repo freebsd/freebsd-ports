@@ -1,7 +1,7 @@
 --- pbmtools/Makefile.orig	Thu Jun 25 13:30:38 1998
 +++ pbmtools/Makefile	Thu Jun 25 13:31:00 1998
-@@ -5,11 +5,11 @@
- CC = gcc
+@@ -5,11 +5,10 @@
+-CC = gcc
  
  # Options for the compiler
 -CFLAGS = -g -Wall -ansi -pedantic -I../libjbig
