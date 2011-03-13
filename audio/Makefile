@@ -808,6 +808,7 @@
     SUBDIR += wmfmixer
     SUBDIR += wmix
     SUBDIR += wmmixer
+    SUBDIR += wmmp
     SUBDIR += wmmp3
     SUBDIR += wmrecord
     SUBDIR += wmsmixer
