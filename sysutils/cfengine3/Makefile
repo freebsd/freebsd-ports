@@ -7,6 +7,7 @@
 
 PORTNAME=	cfengine
 PORTVERSION=	3.1.4
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.cfengine.org/tarballs/
 

@@ -8,18 +8,18 @@
 #
 # Add the following line to /etc/rc.conf[.local] to enable cf-execd(8)
 #
-# cf-execd_enable (bool):        Set to "NO" by default.
+# cf_execd_enable (bool):        Set to "NO" by default.
 #                               Set it to "YES" to enable cf-execd.
-# cf-execd_flags (str):          Custom additional arguments to be passed
+# cf_execd_flags (str):          Custom additional arguments to be passed
 #                               to cf-execd (default empty).
 #
 
 . /etc/rc.subr
 
-name="cf-execd"
+name="cf_execd"
 rcvar=${name}_enable
 
-command="%%PREFIX%%/sbin/${name}"
+command="%%PREFIX%%/sbin/cf-execd"
 
 load_rc_config $name
 

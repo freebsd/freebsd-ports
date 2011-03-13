@@ -8,18 +8,18 @@
 #
 # Add the following line to /etc/rc.conf[.local] to enable cf-serverd(8)
 #
-# cf-serverd_enable (bool):        Set to "NO" by default.
+# cf_serverd_enable (bool):        Set to "NO" by default.
 #                               Set it to "YES" to enable cf-serverd.
-# cf-serverd_flags (str):          Custom additional arguments to be passed
+# cf_serverd_flags (str):          Custom additional arguments to be passed
 #                               to cf-serverd (default empty).
 #
 
 . /etc/rc.subr
 
-name="cf-serverd"
+name="cf_serverd"
 rcvar=${name}_enable
 
-command="%%PREFIX%%/sbin/${name}"
+command="%%PREFIX%%/sbin/cf-serverd"
 
 load_rc_config $name
 
