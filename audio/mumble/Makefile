@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	mumble
-PORTVERSION=	1.2.1
-PORTREVISION=	2
+PORTVERSION=	1.2.3
 CATEGORIES=	audio
 MASTER_SITES=	SF/${PORTNAME}/Mumble/${PORTVERSION}
 
@@ -15,7 +14,6 @@ MAINTAINER=	marius@nuenneri.ch
 COMMENT=	A voice chat software primarily intended for use while gaming
 
 LIB_DEPENDS+=	speex.1:${PORTSDIR}/audio/speex \
-		celt.0:${PORTSDIR}/audio/celt \
 		sndfile.1:${PORTSDIR}/audio/libsndfile \
 		boost_iostreams:${PORTSDIR}/devel/boost-libs \
 		boost_python:${PORTSDIR}/devel/boost-python-libs \
@@ -31,12 +29,13 @@ USE_XORG=	ice
 HAS_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
 
-CONFIG=		no-server no-alsa no-speechd no-bundled-speex no-bundled-celt no-update \
+CONFIG=		no-server no-alsa no-speechd no-bundled-speex no-update \
 		no-g15 no-portaudio no-pulseaudio no-xevie no-embed-qt-translations
 
 OPTIONS=	DBUS "Enable D-Bus support" on \
 		BONJOUR "Enable Bonjour support" off \
 		MUMBLE11X "Enable mumble 1.1 support" off \
+		SYSCELT "Use system CELT libraries" off \
 
 MAN1=		mumble.1
 
@@ -50,6 +49,15 @@ BROKEN=		Does not compile on FreeBSD < 7.0
 CONFIG+=	no-dbus
 .else
 QT_COMPONENTS+=	dbus
+.endif
+
+.if defined(WITHOUT_SYSCELT)
+CONFIG+=	bundled-celt
+PLIST_SUB+=	BUNDLECELT=""
+.else
+CONFIG+=	no-bundled-celt
+PLIST_SUB+=	BUNDLECELT="@comment "
+LIB_DEPENDS+=	celt.0:${PORTSDIR}/audio/celt
 .endif
 
 .if defined(WITHOUT_BONJOUR)
@@ -69,10 +77,18 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|-ldl||' ${WRKSRC}/overlay_gl/overlay_gl.pro
 
 do-configure:
+.if defined(WITHOUT_SYSCELT)
 	cd ${WRKSRC} && ${SETENV} QMAKESPEC=${QMAKESPEC} ${QMAKE} PREFIX=${PREFIX} main.pro "CONFIG+=${CONFIG}"
+.else
+	cd ${WRKSRC} && ${SETENV} QMAKESPEC=${QMAKESPEC} ${QMAKE} PREFIX=${PREFIX} main.pro "CONFIG+=${CONFIG}" "DEFINES+=FREEBSD_SYSTEM_CELT=1"
+.endif
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/release/mumble ${PREFIX}/bin
+.if defined(WITHOUT_SYSCELT)
+	${INSTALL_LIB} ${WRKSRC}/release/libcelt0.so.0.11.0 ${PREFIX}/lib/libcelt-mumble.so.0.11.0
+	${INSTALL_LIB} ${WRKSRC}/release/libcelt0.so.0.7.0 ${PREFIX}/lib/libcelt-mumble.so.0.7.0
+.endif
 .if !defined(WITHOUT_MUMBLE11X)
 	${INSTALL_PROGRAM} ${WRKSRC}/release/mumble11x ${PREFIX}/bin
 .endif
