@@ -27,6 +27,6 @@ post-install:
 .endif
 
 post-build test:
-	cd ${WRKSRC} && ${SETENV} LD_LIBRARY_PATH=${WRKSRC}/libjbig ${MAKE} test
+	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} LD_LIBRARY_PATH=${WRKSRC}/libjbig ${MAKE} test
 
 .include <bsd.port.mk>

@@ -1,7 +1,7 @@
---- libjbig/Makefile.orig	Fri Apr 10 20:33:27 1998
+--- libjbig/Makefile	Fri Apr 10 20:33:27 1998
 +++ libjbig/Makefile	Wed Sep 16 11:57:16 1998
-@@ -5,9 +5,12 @@
- CC = gcc
+@@ -5,9 +5,11 @@
+-CC = gcc
  
  # Options for the compiler: A high optimization level is suggested
 -CFLAGS = -O -Wall -ansi -pedantic
@@ -21,7 +21,7 @@
  
 +$(SOJBIGLIB): jbig.so jbig_tab.so
 +	rm -f ${.TARGET}
-+	$(CC) -o ${.TARGET} -shared -Wl,-soname,${.TARGET} ${.ALLSRC}         
++	$(CC) -o ${.TARGET} ${LDFLAGS} -shared -Wl,-soname,${.TARGET} ${.ALLSRC}         
 +	ln -sf ${.TARGET} `echo ${.TARGET} | sed 's/\.so.*$$/.so/'`
 +	
  jbig.o: jbig.c jbig.h
