@@ -15,6 +15,9 @@ COMMENT=	A file modification/creation watcher
 
 WRKSRC=		${WRKDIR}/${DISTNAME:S/_/-/}
 
+DEPRECATED=     Upstream disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 GNU_CONFIGURE=	yes
 MAKE_ARGS=	CFLAGS="${CFLAGS} -DPIC -fPIC -D_REENTRANT -I." \
 		LDFLAGS="-shared"

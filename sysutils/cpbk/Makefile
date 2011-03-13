@@ -13,6 +13,9 @@ MASTER_SITES=	http://www.netsw.org/system/tools/fileutils/install/cpbk/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Backup Copy programm
 
+DEPRECATED=     Upstream disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 MAN1=		cpbk.1
 MANCOMPRESSED=	yes
 PLIST_FILES=	bin/cpbk

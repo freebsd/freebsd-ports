@@ -14,6 +14,9 @@ MASTER_SITES=	ftp://ports.jp.FreeBSD.org/pub/FreeBSD-jp/ports-jp/LOCAL_PORTS/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Partition-selectable boot loader for IBM-PC/AT compatibles
 
+DEPRECATED=     Upstream disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 BUILD_DEPENDS=	nasm:${PORTSDIR}/devel/nasm
 
 ONLY_FOR_ARCHS=	i386 amd64

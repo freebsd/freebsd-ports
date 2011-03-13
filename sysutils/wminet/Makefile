@@ -15,6 +15,9 @@ MASTER_SITES=	http://freebsd.unixfreunde.de/sources/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Window Maker dockable inetd monitor
 
+DEPRECATED=     Upstream disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 WRKSRC=		${WRKDIR}/wminet.app/wminet
 
 USE_XORG=	x11 xpm

@@ -13,6 +13,9 @@ MASTER_SITES=	http://creo.hu/~csaba/stuff/reclinker/ CENKES
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Recursive symlinking utility
 
+DEPRECATED=     Upstream disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 PLIST_FILES=	bin/${PORTNAME} bin/recdeleter bin/reclinktester
 MAKEFILE=	Makefile.m4
 ALL_TARGET=	${PORTNAME}

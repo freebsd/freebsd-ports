@@ -14,6 +14,9 @@ MASTER_SITES=	http://www.sra.co.jp/people/m-kasahr/wmpccard/src/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PCcard monitor for FreeBSD + PAO
 
+DEPRECATED=     Upstream disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 USE_XORG=	x11 xpm
 MAN1=		wmpccard.1.gz
 NO_MANCOMPRESS=	yes

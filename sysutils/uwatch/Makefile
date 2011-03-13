@@ -13,6 +13,9 @@ MASTER_SITES=	http://www.vocito.com/downloads/software/uwatch/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Monitor user logins and logouts
 
+DEPRECATED=     Upstream disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 MAN1=		uwatch.1
 MANCOMPRESSED=	yes
 PLIST_FILES=	bin/uwatch

@@ -13,6 +13,9 @@ MASTER_SITES=	http://people.FreeBSD.org/~foxfair/distfiles/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	System maintenance package written in Python and CSH
 
+DEPRECATED=     Upstream disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 BUILD_DEPENDS=	cvsup:${PORTSDIR}/net/cvsup
 RUN_DEPENDS=	cvsup:${PORTSDIR}/net/cvsup
 

@@ -14,6 +14,9 @@ MASTER_SITES=	http://linuxgamers.net/download/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An application launcher with simple XML-based configuration syntax
 
+DEPRECATED=     Upstream disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 GNU_CONFIGURE=	yes
 USE_GNOME=	gtk12 gdkpixbuf libxml2
 

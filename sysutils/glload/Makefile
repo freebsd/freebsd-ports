@@ -14,6 +14,9 @@ MASTER_SITES=	http://reality.exsgi.org/eile/misc/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Gl base load monitor
 
+DEPRECATED=     Upstream disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 USE_GL=		glut

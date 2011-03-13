@@ -13,6 +13,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Perl5 implementation of an LRU dictionary cache
 
+DEPRECATED=     Upstream disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 PERL_CONFIGURE=	yes
 
 MAN3=		LJ::Cache.3

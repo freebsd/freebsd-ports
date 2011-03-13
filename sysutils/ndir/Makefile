@@ -16,6 +16,9 @@ EXTRACT_SUFX=	-1.tar.gz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A featureful directory lister
 
+DEPRECATED=     Upstream disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 USE_GMAKE=	yes
 ALL_TARGET=	compile
 CFLAGS+=	-DNO_THOUSANDS_GROUPING

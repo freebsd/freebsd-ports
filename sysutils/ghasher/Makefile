@@ -14,6 +14,9 @@ MASTER_SITES=	http://asgaard.homelinux.org/code/ghasher/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GUI frontend to MD5 sum
 
+DEPRECATED=     Upstream disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 USE_GNOME=	gtk20 libglade2
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}

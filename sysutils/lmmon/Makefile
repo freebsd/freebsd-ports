@@ -14,6 +14,9 @@ MASTER_SITES=	http://www.fxp.org/~jedgar/lmmon/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Display information gathered from MB power management controller
 
+DEPRECATED=     Upstream disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 ONLY_FOR_ARCHS=	i386 amd64
 
 GNU_CONFIGURE=	yes
