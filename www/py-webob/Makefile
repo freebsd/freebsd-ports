@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	webob
-PORTVERSION=	1.0.3
+PORTVERSION=	1.0.4
 PORTREVISION=	0
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP \
@@ -21,7 +21,7 @@ PYDISTUTILS_PKGNAME=	WebOb
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	easy_install
 
-USE_BZIP2=	yes
+USE_ZIP=	yes
 
 .if !defined(NOPORTDOCS)
 post-install:
