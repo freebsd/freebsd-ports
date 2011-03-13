@@ -5,6 +5,13 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20110313:
+  AFFECTS: users of astro/boinc-setiathome-enhanced
+  AUTHOR: rene@FreeBSD.org
+
+  The setiathome client has been updated to version 6.12.  Before you
+  update, finish and report your current workunits to avoid losing them.
+
 20110304:
   AFFECTS: users of lang/python* and py-*
   AUTHOR: miwi@FreeBSD.org
