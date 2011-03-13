@@ -7,7 +7,7 @@
 
 PORTNAME=	tin
 PORTVERSION=	1.8.3
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES+=	news ipv6
 MASTER_SITES=	ftp://ftp.tin.org/pub/news/clients/tin/stable/ \
 		ftp://ftp.sunet.se/pub/news/readers/tin/stable/ \
@@ -22,7 +22,7 @@ MASTER_SITES=	ftp://ftp.tin.org/pub/news/clients/tin/stable/ \
 		ftp://ftp.cs.tu-berlin.de/pub/net/news/tin/stable/ \
 		ftp://ftp.informatik.uni-hamburg.de/pub/soft/news/tin/stable/
 
-MAINTAINER?=	johans@FreeBSD.org
+MAINTAINER=	johans@FreeBSD.org
 COMMENT=	Easy-to-use threaded newsreader with NOV/NNTP support
 
 LIB_DEPENDS=	uu.3:${PORTSDIR}/converters/uulib \
@@ -30,7 +30,6 @@ LIB_DEPENDS=	uu.3:${PORTSDIR}/converters/uulib \
 RUN_DEPENDS=	${LOCALBASE}/etc/mime.types:${PORTSDIR}/misc/mime-support
 
 USE_BZIP2=	yes
-USE_GETTEXT=	yes
 USE_GMAKE=	yes
 USE_ICONV=	yes
 GNU_CONFIGURE=	yes
@@ -58,16 +57,15 @@ CONFIGURE_ARGS+=--with-nntp-default-server=news \
 		--with-libdir=${PREFIX}/news/lib \
 		--with-defaults-dir=${PREFIX}/etc \
 		--with-editor=${TIN_EDITOR} \
-		--enable-nls \
 		--with-pcre=yes \
 		--with-screen=${TIN_SCREEN} \
 		--enable-break-long-lines \
 		--with-libiconv-prefix=${LOCALBASE} \
 		--with-mime-default-charset=US-ASCII \
 		--enable-ipv6
-CONFIGURE_ENV=	CFLAGS='${CFLAGS} -DNNTP_SERVER_FILE="\"${PREFIX}/etc/nntpserver\""' \
-		CPPFLAGS='${CPPFLAGS} -I${LOCALBASE}/include' \
-		LDFLAGS='${LDFLAGS} -L${LOCALBASE}/lib'
+CFLAGS+=	-DNNTP_SERVER_FILE=\\\"${PREFIX}/etc/nntpserver\\\"
+CPPFLAGS+=	-I${LOCALBASE}/include
+CONFIGURE_ENV=	LDFLAGS='${LDFLAGS} -L${LOCALBASE}/lib'
 ALL_TARGET=	build
 MAN1=		tin.1 w2r.pl.1 opt-case.pl.1 tinews.pl.1
 MAN5=		tin.5 tin_mbox.5 tin_mmdf.5
@@ -99,6 +97,15 @@ RUN_DEPENDS+=		metamail:${PORTSDIR}/mail/metamail
 CONFIGURE_ARGS+=	--with-metamail=${PREFIX}/bin/metamail
 .endif
 
+.ifdef	WITHOUT_NLS
+CONFIGURE_ARGS+=	--disable-nls
+PLIST_SUB+=		NLS="@comment "
+.else
+CONFIGURE_ARGS+=	--enable-nls
+USE_GETTEXT=		yes
+PLIST_SUB+=		NLS=""
+.endif
+
 post-patch:
 	${REINPLACE_CMD} -Ee 's:5/(mmdf|mbox):5/tin_\1:g' \
 		${WRKSRC}/src/Makefile.in
@@ -128,7 +135,9 @@ pre-build:
 .endif
 
 post-build:
+.ifndef	WITHOUT_NLS
 	cd ${WRKSRC}/po; ${GMAKE}
+.endif
 
 post-install:
 	cd ${WRKSRC}/doc; ${INSTALL_DATA} tin.defaults ${PREFIX}/etc/tin.defaults.dist
