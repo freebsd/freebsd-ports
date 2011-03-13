@@ -68,6 +68,8 @@
 @dirrm %%DOCSDIR%%/%%DOCLANG%%/articles/hats
 @dirrm %%DOCSDIR%%/%%DOCLANG%%/articles/gjournal-desktop
 @dirrm %%DOCSDIR%%/%%DOCLANG%%/articles/geom-class
+@dirrm %%DOCSDIR%%/%%DOCLANG%%/articles/freebsd-update-server/imagelib/callouts
+@dirrm %%DOCSDIR%%/%%DOCLANG%%/articles/freebsd-update-server/imagelib
 @dirrm %%DOCSDIR%%/%%DOCLANG%%/articles/freebsd-update-server
 @dirrm %%DOCSDIR%%/%%DOCLANG%%/articles/freebsd-questions
 @dirrm %%DOCSDIR%%/%%DOCLANG%%/articles/formatting-media
