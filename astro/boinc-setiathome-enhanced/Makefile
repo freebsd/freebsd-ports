@@ -5,11 +5,10 @@
 #
 
 PORTNAME=	boinc-setiathome-enhanced
-PORTVERSION=	6.08
-PORTREVISION=	4
+PORTVERSION=	6.12
 CATEGORIES=	astro
 MASTER_SITES=	ftp://rene-ladan.nl/pub/distfiles/
-DISTNAME=	setiathome-svn-412
+DISTNAME=	setiathome-svn-1008
 
 MAINTAINER=	rene@FreeBSD.org
 COMMENT=	Setiathome Enhanced for BOINC
@@ -22,7 +21,7 @@ BUILD_DEPENDS=	${LOCALBASE}/include/fftw3.h:${PORTSDIR}/math/fftw3 \
 RUN_DEPENDS=	boinc_client:${PORTSDIR}/net/boinc-client
 LIB_DEPENDS=	fftw3f:${PORTSDIR}/math/fftw3-float
 
-USE_BZIP2=	yes
+USE_XZ=		yes
 USE_AUTOTOOLS=	autoconf:env automake:env
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
@@ -64,7 +63,7 @@ CFLAGS+=	-mtune=native
 CONFIGURE_ENV+=	BOINCDIR="${NONEXISTENT}"
 
 CONFIGURE_ARGS+=	--disable-static-client --disable-server \
-			--disable-altivec \
+			--disable-altivec --disable-tests \
 			--with-boinc-platform=${ARCH}-portbld-freebsd
 
 SETI_SITE=	setiathome.berkeley.edu
@@ -79,6 +78,16 @@ PLIST_SUB+=	SETI_BINARY=${SETI_BINARY} \
 		SETI_SITE=${SETI_SITE} \
 		BOINC_HOME=${BOINC_HOME} \
 		PREFIX=${PREFIX}
+
+# str_replace.h is included in newer versions of net/boinc-client,
+# but it is not needed on FreeBSD
+post-patch:
+	${REINPLACE_CMD} -E -e "s|#include \"str_replace.h\"||" \
+		${WRKSRC}/client/main.cpp \
+		${WRKSRC}/client/sah_gfx.cpp \
+		${WRKSRC}/client/seti.cpp \
+		${WRKSRC}/client/timecvt.cpp \
+		${WRKSRC}/db/xml_util.cpp
 
 pre-configure:
 	(cd ${WRKSRC} ; ./_autosetup ; ${REINPLACE_CMD} -E -e \

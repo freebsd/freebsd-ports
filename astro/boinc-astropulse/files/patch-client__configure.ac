@@ -13,8 +13,8 @@
 -else
 -  AC_REVISION([$Revision: 163 $])
 -  AC_DEFINE(SVN_REV,"$Revision: 163 $",
-+  AC_REVISION([$Revision: 562 $])
-+  AC_DEFINE(SVN_REV,"$Revision: 562 $",
++  AC_REVISION([$Revision: 868 $])
++  AC_DEFINE(SVN_REV,"$Revision: 868 $",
      [Define to be the subversion revision number])
 -fi
  

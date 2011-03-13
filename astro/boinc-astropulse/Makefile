@@ -6,9 +6,10 @@
 
 PORTNAME=	boinc-astropulse
 PORTVERSION=	5.06
+PORTREVISION=	1
 CATEGORIES=	astro
 MASTER_SITES=	ftp://rene-ladan.nl/pub/distfiles/
-DISTNAME=	astropulse-svn-562
+DISTNAME=	astropulse-svn-868
 
 MAINTAINER=	rene@FreeBSD.org
 COMMENT=	Astropulse for BOINC
@@ -22,8 +23,8 @@ BUILD_DEPENDS=	${LOCALBASE}/include/fftw3.h:${PORTSDIR}/math/fftw3 \
 RUN_DEPENDS=	boinc_client:${PORTSDIR}/net/boinc-client
 LIB_DEPENDS=	fftw3f:${PORTSDIR}/math/fftw3-float
 
-USE_AUTOTOOLS=	autoconf:env automake:env
-USE_BZIP2=	yes
+USE_XZ=		yes
+USE_AUTOTOOLS=	autoconf:env automake:env libtool
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_GNOME=	pkgconfig
@@ -89,8 +90,9 @@ PLIST_SUB+=	AP_BINARY=${AP_BINARY} \
 		BOINC_HOME=${BOINC_HOME}
 
 pre-configure:
-	(cd ${WRKSRC} ; ./_autosetup ; ${REINPLACE_CMD} -E -e \
-	    "s|/bin/sh|${LOCALBASE}/bin/bash|" ./configure)
+	(cd ${WRKSRC} ; ./_autosetup)
+	${REINPLACE_CMD} -E -e "s|/bin/sh|${LOCALBASE}/bin/bash|" \
+	    ${WRKSRC}/configure
 
 do-install:
 	${INSTALL} -d -o ${BOINC_USER} -g ${BOINC_GROUP} ${BOINC_HOME}/projects
