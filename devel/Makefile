@@ -673,6 +673,7 @@
     SUBDIR += jakelib2
     SUBDIR += jam
     SUBDIR += jansson
+    SUBDIR += java-findbugs
     SUBDIR += java-util-concurrent
     SUBDIR += javolution
     SUBDIR += jclassinfo

@@ -1,0 +1,13 @@
+FindBugs looks for bugs in Java programs.  It is based on the concept of bug
+patterns.  A bug pattern is a code idiom that is often an error.  Bug patterns
+arise for a variety of reasons:
+
+* Difficult language features
+* Misunderstood API methods
+* Misunderstood invariants when code is modified during maintenance
+* Garden variety mistakes: typos, use of the wrong boolean operator 
+
+FindBugs uses static analysis to inspect Java bytecode for occurrences of
+bug patterns.
+
+WWW: http://findbugs.sourceforge.net/
