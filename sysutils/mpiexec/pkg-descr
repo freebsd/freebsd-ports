@@ -4,4 +4,4 @@ from within a PBS batch or interactive environment. Mpiexec uses
 the task manager library of PBS to spawn copies of the executable
 on the nodes in a PBS allocation.
 
-WWW:	http://www.osc.edu/~pw/mpiexec/index.php
+WWW:	http://www.osc.edu/~djohnson/mpiexec/index.php
