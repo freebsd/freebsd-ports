@@ -6,4 +6,4 @@ functions similar to camcontrol(8), but more powerful. For example,
 it can use SCSI Environmental Services not using FreeBSD ses(4), 
 read SCSI device logs, and much more. 
 
-WWW: http://sg.torque.net/sg/sg3_utils.html
+WWW: http://sg.danny.cz/sg/sg3_utils.html
