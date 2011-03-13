@@ -6,7 +6,8 @@
 #
 
 PORTNAME=	openmsx
-DISTVERSION=	0.8.1
+PORTVERSION=	0.8.1
+PORTREVISION=	1
 CATEGORIES=	emulators
 MASTER_SITES=	SF
 
@@ -14,8 +15,10 @@ MAINTAINER=	johans@FreeBSD.org
 COMMENT=	Open source MSX emulator
 
 LIB_DEPENDS=	xml2:${PORTSDIR}/textproc/libxml2 \
-		jack:${PORTSDIR}/audio/jack \
-		png:${PORTSDIR}/graphics/png
+		png:${PORTSDIR}/graphics/png \
+		ogg:${PORTSDIR}/audio/libogg \
+		vorbis:${PORTSDIR}/audio/libvorbis \
+		theora:${PORTSDIR}/multimedia/libtheora
 
 MAKE_ARGS+=	INSTALL_BINARY_DIR=${PREFIX}/bin \
 		INSTALL_SHARE_DIR=${DATADIR} \
@@ -25,8 +28,8 @@ MAKE_ARGS+=	INSTALL_BINARY_DIR=${PREFIX}/bin \
 MAKEFILE=	GNUmakefile
 USE_GL=		glew
 USE_GMAKE=	yes
-USE_TCL=	84+
-USE_SDL=	sdl image ttf
+USE_TCL=	85+
+USE_SDL=	sdl ttf
 USE_PYTHON=	2.5+
 
 .ifdef(NOPORTDOCS)
