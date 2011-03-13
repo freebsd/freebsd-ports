@@ -6,6 +6,7 @@
 
 PORTNAME=	boinc-setiathome-enhanced
 PORTVERSION=	6.12
+PORTREVISION=	1
 CATEGORIES=	astro
 MASTER_SITES=	ftp://rene-ladan.nl/pub/distfiles/
 DISTNAME=	setiathome-svn-1008
@@ -16,8 +17,7 @@ COMMENT=	Setiathome Enhanced for BOINC
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	${LOCALBASE}/include/fftw3.h:${PORTSDIR}/math/fftw3 \
-		${LOCALBASE}/bin/bash:${PORTSDIR}/shells/bash
+BUILD_DEPENDS=	${LOCALBASE}/include/fftw3.h:${PORTSDIR}/math/fftw3
 RUN_DEPENDS=	boinc_client:${PORTSDIR}/net/boinc-client
 LIB_DEPENDS=	fftw3f:${PORTSDIR}/math/fftw3-float
 
@@ -90,8 +90,7 @@ post-patch:
 		${WRKSRC}/db/xml_util.cpp
 
 pre-configure:
-	(cd ${WRKSRC} ; ./_autosetup ; ${REINPLACE_CMD} -E -e \
-	    "s|/bin/sh|${LOCALBASE}/bin/bash|" ./configure)
+	(cd ${WRKSRC} ; ./_autosetup)
 
 do-install:
 	${INSTALL} -d -o ${BOINC_USER} -g ${BOINC_GROUP} ${BOINC_HOME}/projects

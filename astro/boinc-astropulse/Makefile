@@ -6,7 +6,7 @@
 
 PORTNAME=	boinc-astropulse
 PORTVERSION=	5.06
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	astro
 MASTER_SITES=	ftp://rene-ladan.nl/pub/distfiles/
 DISTNAME=	astropulse-svn-868
@@ -18,7 +18,6 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	${LOCALBASE}/include/fftw3.h:${PORTSDIR}/math/fftw3 \
-		${LOCALBASE}/bin/bash:${PORTSDIR}/shells/bash \
 		${NONEXISTENT}:${PORTSDIR}/astro/boinc-setiathome-enhanced:patch
 RUN_DEPENDS=	boinc_client:${PORTSDIR}/net/boinc-client
 LIB_DEPENDS=	fftw3f:${PORTSDIR}/math/fftw3-float
@@ -91,8 +90,6 @@ PLIST_SUB+=	AP_BINARY=${AP_BINARY} \
 
 pre-configure:
 	(cd ${WRKSRC} ; ./_autosetup)
-	${REINPLACE_CMD} -E -e "s|/bin/sh|${LOCALBASE}/bin/bash|" \
-	    ${WRKSRC}/configure
 
 do-install:
 	${INSTALL} -d -o ${BOINC_USER} -g ${BOINC_GROUP} ${BOINC_HOME}/projects
