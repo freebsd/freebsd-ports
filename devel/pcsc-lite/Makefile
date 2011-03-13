@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	pcsc-lite
-PORTVERSION=	1.6.4
-PORTREVISION=	1
+PORTVERSION=	1.6.7
 PORTEPOCH=	2
 CATEGORIES=	devel security
-MASTER_SITES=	http://alioth.debian.org/frs/download.php/3337/
+MASTER_SITES=	http://alioth.debian.org/frs/download.php/3516/
 
 MAINTAINER=	arved@FreeBSD.org
 COMMENT=	A smartcard development library
@@ -52,7 +51,7 @@ post-patch:
 		s,libusb_strerror(ret),ret," ${WRKSRC}/configure \
 			${WRKSRC}/src/hotplug_libusb.c
 .if defined(NOPORTDOCS)
-	${REINPLACE_CMD} -e '/ifdhandler-3.tex/d' ${WRKSRC}/doc/Makefile.in
+	${REINPLACE_CMD} -e '/^install-data-am: / s|install-docDATA||' ${WRKSRC}/doc/Makefile.in
 .endif
 
 pre-everything::
@@ -64,9 +63,6 @@ pre-everything::
 .endif
 
 post-install:
-.if !defined(NOPORTDOCS)
-	${INSTALL_DATA} ${WRKSRC}/doc/README.DAEMON ${DOCSDIR}
-.endif
 .if !defined(NOPORTEXAMPLES)
 	@${MKDIR} ${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/example/Makefile.am ${EXAMPLESDIR}
