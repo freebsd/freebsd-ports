@@ -14,6 +14,9 @@ MASTER_SITES=	ftp://ftp.srware.com/pub/	\
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A multipole-accelerated inductance analysis program
 
+DEPRECATED=     Upstream disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 P_VERSION=	3.0
 
 HAS_CONFIGURE=	yes
