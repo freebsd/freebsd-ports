@@ -16,6 +16,9 @@ DISTFILES=	${PORTNAME}-${PORTVERSION:S/./_/}.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Configurable remote distributed denial of service tool detector
 
+DEPRECATED=     Upstream disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 ALL_TARGET=	rid
 
 DOCS=		README

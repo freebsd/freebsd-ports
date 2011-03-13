@@ -13,6 +13,9 @@ MASTER_SITES=	http://www.dakotacom.net/~donut/programs/ssh-multiadd/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tool to add multiple ssh keys to the authentication agent
 
+DEPRECATED=     Upstream disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 USE_PYTHON=	yes
 NO_BUILD=	yes
 MAN1=		ssh-multiadd.1

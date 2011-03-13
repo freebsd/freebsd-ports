@@ -13,6 +13,9 @@ MASTER_SITES=	ftp://ftp.pureftpd.org/pub/pure-ftpd/ftpmap/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Identify remote FTP server software by fingerprinting
 
+DEPRECATED=     Upstream disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 GNU_CONFIGURE=	yes
 
 DOCS=		AUTHORS NEWS README THANKS

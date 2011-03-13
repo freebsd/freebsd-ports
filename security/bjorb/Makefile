@@ -14,6 +14,9 @@ MASTER_SITES=	http://people.FreeBSD.org/~foxfair/distfiles/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Secure TCP relay software with SSL
 
+DEPRECATED=     Upstream disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 USE_OPENSSL=	YES
 USE_PERL5=	yes
 

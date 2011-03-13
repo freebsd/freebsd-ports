@@ -15,6 +15,9 @@ EXTRACT_ONLY=
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A distributed monitoring and intrusion detection system
 
+DEPRECATED=     Upstream disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 RUN_DEPENDS=	ptksh:${PORTSDIR}/x11-toolkits/p5-Tk
 
 NO_WRKSUBDIR=	yes

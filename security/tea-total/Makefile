@@ -14,6 +14,9 @@ MASTER_SITES=	http://www.alexholden.net/pub/${PORTNAME}/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Extremely small 128 bit private key based encryption/decryption system
 
+DEPRECATED=     Upstream disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 #	code is not 64-bit clean...
 ONLY_FOR_ARCHS=	i386
 

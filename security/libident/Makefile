@@ -14,6 +14,9 @@ MASTER_SITES=	http://www.remlab.net/files/libident/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A small library to interface the ident protocol server (rfc1413)
 
+DEPRECATED=     Upstream disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 USE_AUTOTOOLS=	libtool
 USE_GNOME=	gnometarget lthack
 GNU_CONFIGURE=	yes

@@ -14,6 +14,9 @@ MASTER_SITES=	http://shum.huji.ac.il/~schapiro/linux/pam_pop3/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	This module authenticates a user against a POP3 server
 
+DEPRECATED=     Upstream disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 do-build:

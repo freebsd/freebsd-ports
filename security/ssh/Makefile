@@ -17,6 +17,9 @@ MASTER_SITES=	ftp://ftp.ssh.com/pub/ssh/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Secure shell client and server (remote login program)
 
+DEPRECATED=     Upstream disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 CONFLICTS=	openssh-* openssh-portable-* openssh-gssapi-* ssh2-3.*
 NO_LATEST_LINK=	YES
 USE_AUTOTOOLS=	autoconf213

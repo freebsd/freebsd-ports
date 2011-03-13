@@ -15,6 +15,9 @@ MASTER_SITE_SUBDIR=poc
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Program for managing passwords on smartcards
 
+DEPRECATED=     Upstream disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 LIB_DEPENDS=	towitoko.2:${PORTSDIR}/devel/towitoko
 
 PLIST_FILES=	bin/poc
