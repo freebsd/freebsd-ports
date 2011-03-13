@@ -14,6 +14,9 @@ DISTNAME=	SnortSnarf-${PORTVERSION}.1
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Generate HTML report summaries from snort incident alerts
 
+DEPRECATED=     Upstream disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 RUN_DEPENDS=	${SITE_PERL}/Time/JulianDay.pm:${PORTSDIR}/devel/p5-Time-modules
 
 NO_BUILD=	yes

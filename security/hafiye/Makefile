@@ -15,6 +15,9 @@ MASTER_SITES=	http://www.enderunix.org/hafiye/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Multi Platform Customizable TCP/IP Packet Sniffer
 
+DEPRECATED=     Upstream disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 MAKE_ENV=	LDFLAGS="-lpcap"
 
 post-patch:

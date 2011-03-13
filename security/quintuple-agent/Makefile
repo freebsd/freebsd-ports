@@ -15,6 +15,9 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}.orig
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Quintuple Agent is a program that stores secrets for you
 
+DEPRECATED=     Upstream disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 USE_GETTEXT=	yes
 USE_GNOME=	glib12
 .ifndef(WITHOUT_X11)

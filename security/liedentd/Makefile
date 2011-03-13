@@ -14,4 +14,7 @@ MASTER_SITE_SUBDIR= wes
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An ident server which refuses to divulge security information
 
+DEPRECATED=     Upstream disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 .include <bsd.port.mk>

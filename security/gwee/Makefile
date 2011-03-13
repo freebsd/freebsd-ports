@@ -13,6 +13,9 @@ MASTER_SITES=	http://tigerteam.se/dl/gwee/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tool to exploit command execution vulnerabilities in web scripts
 
+DEPRECATED=     Upstream disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 USE_OPENSSL=	yes
 USE_PERL5=	yes
 USE_PYTHON=	yes

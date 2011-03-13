@@ -14,6 +14,9 @@ DISTNAME=	ident2-v${PORTVERSION}_FINAL
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An RFC1413 identification server which also supports random replies
 
+DEPRECATED=     Upstream disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 MAN8=		ident2.8

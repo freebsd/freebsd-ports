@@ -13,6 +13,9 @@ MASTER_SITES=	http://www.hairylemon.org/~ad/software/qident/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Query a remote IDENT (RFC 1413) server
 
+DEPRECATED=     Upstream disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 LIB_DEPENDS=	ident.0:${PORTSDIR}/security/libident
 
 MANSECTS=	1

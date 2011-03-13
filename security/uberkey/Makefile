@@ -13,6 +13,9 @@ MASTER_SITES=	http://www.linuks.mine.nu/uberkey/ LOCAL/chinsan
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A keylogger for x86 systems
 
+DEPRECATED=     Upstream disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 ONLY_FOR_ARCHS=	i386
 MAN8=		uberkey.8
 PLIST_FILES=	bin/uberkey
