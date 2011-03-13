@@ -7,24 +7,24 @@
 
 PORTNAME=	povray
 PORTVERSION=	3.1g
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.povray.org/pub/povray/%SUBDIR%/ \
-		ftp://ftp.gigabell.net/pub/unix/apps/graphics/povray/%SUBDIR%/ \
 		ftp://ftp.mirrorservice.org/sites/ftp.povray.org/pub/povray/%SUBDIR%/ \
-		ftp://ftp.fh-aachen.de/pub/mirror/ftp.povray.org/povray/%SUBDIR%/ \
 		${MASTER_SITE_RINGSERVER:S,%SUBDIR%,graphics/povray/%SUBDIR%,}
 MASTER_SITE_SUBDIR=	Old-Versions/Official-3.1g/Unix
 DISTNAME=	povray31
 DISTFILES=	povuni_s.tgz povuni_d.tgz
 
-MAINTAINER=	olli@fromme.com
+MAINTAINER=	bkoenig@alpha-tierchen.de
 COMMENT=	Persistence of Vision Ray Tracer
 
-#BUILD_DEPENDS=  unzip:${PORTSDIR}/archivers/unzip
 LIB_DEPENDS=	png.6:${PORTSDIR}/graphics/png
 
+OPTIONS=	X11 "X Window support" On
+
 DIST_SUBDIR=	povray31
+LATEST_LINK=	povray31
 
 #
 #   I think all of this needs some explanation.
@@ -34,18 +34,28 @@ DIST_SUBDIR=	povray31
 #   no UNIX source files for POV-Ray 3.1.
 #
 
+.include <bsd.port.pre.mk>
+
+.if !defined(WITHOUT_X11)
 USE_XORG=	x11
-MAN1=		povray.1
+ALL_TARGET=	newxwin
+POVBIN=		${BUILD_WRKSRC}/x-povray
+.else
+ALL_TARGET=	newunix
+POVBIN=		${BUILD_WRKSRC}/povray
+.endif
 
-POVLIB=		${PREFIX}/lib/povray31
+MAN1=		${LATEST_LINK}.1
 
-do-build:
-	@(cd ${WRKSRC}/source/unix; ${SETENV} ${MAKE_ENV} ${MAKE} newxwin)
+POVLIB=		${PREFIX}/lib/${LATEST_LINK}
+
+BUILD_WRKSRC=	${WRKSRC}/source/unix
+MAKEFILE=	makefile
 
 do-install:
 	@${MKDIR} ${POVLIB}/allscene
 	@${TOUCH} ${POVLIB}/allscene/.bla
-	@${INSTALL_PROGRAM} ${WRKSRC}/source/unix/x-povray ${PREFIX}/bin/povray
+	@${INSTALL_PROGRAM} ${POVBIN} ${PREFIX}/bin/${LATEST_LINK}
 	@(cd ${WRKSRC}; ${TAR} cpf - include scenes) | \
 		(cd ${POVLIB}; ${TAR} xpf -)
 	@${INSTALL_DATA} ${WRKSRC}/*.ini ${POVLIB}/
@@ -53,11 +63,11 @@ do-install:
 	@${INSTALL_DATA} ${WRKSRC}/*.txt ${POVLIB}/
 	@${INSTALL_DATA} ${WRKSRC}/*.gif ${WRKSRC}/*.xpm ${POVLIB}/
 	@${INSTALL_SCRIPT} ${WRKSRC}/allscene.sh ${POVLIB}/
-	@${RM} -f ${PREFIX}/man/man1/povray.1*
-	@${INSTALL_MAN} ${WRKSRC}/povray.1 ${PREFIX}/man/man1
+	@${MV} ${WRKSRC}/${PORTNAME}.1 ${WRKSRC}/${LATEST_LINK}.1
+	@${INSTALL_MAN} ${WRKSRC}/${LATEST_LINK}.1 ${PREFIX}/man/man1
 	@${CHMOD} -R a+rX,og-w ${POVLIB}
 
 post-install:
 	@${SH} ${FILESDIR}/script
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

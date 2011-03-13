@@ -1,4 +1,4 @@
-bin/povray
+bin/povray31
 lib/povray31/CMPL_Unix.doc
 lib/povray31/allscene.ini
 lib/povray31/allscene.sh
