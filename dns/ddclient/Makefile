@@ -7,7 +7,7 @@
 
 PORTNAME=	ddclient
 PORTVERSION=	3.8.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	dns
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
@@ -35,11 +35,13 @@ PORTDOCS=	COPYING COPYRIGHT Changelog README README.cisco README.ssl \
 post-patch:
 	@${GREP} -lr '/usr' ${WRKSRC} | ${XARGS} ${REINPLACE_CMD} -e 's|/usr|${PREFIX}|g'
 	@${REINPLACE_CMD} \
-		-e 's|/etc/ddclient|${PREFIX}/etc|' \
 		-e 's|/tmp|/var/tmp|' \
 		-e 's|/var/cache/ddclient|/var/tmp|' \
 		-e '/PATH/s|/etc:/usr/local/lib:||' \
-		-e 's|/usr.*perl|${PERL}|g' ${WRKSRC}/ddclient
+		-e 's|/usr.*perl|${PERL}|g' \
+		-e 's|/usr/local|${LOCALBASE}|g' \
+		-e 's|/etc/ddclient|${PREFIX}/etc|' \
+		${WRKSRC}/ddclient
 
 do-install:
 	@${INSTALL_DATA} ${WRKSRC}/sample-etc_ddclient.conf ${PREFIX}/etc/ddclient.conf.sample
