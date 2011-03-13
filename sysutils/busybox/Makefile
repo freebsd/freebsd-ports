@@ -9,7 +9,8 @@ PORTNAME=	busybox
 PORTVERSION=	1.18.4
 CATEGORIES=	sysutils misc shells
 MASTER_SITES=	http://www.busybox.net/downloads/ \
-		http://distfiles.gentoo.org/distfiles/
+		${MASTER_SITE_GENTOO}
+MASTER_SITE_SUBDIR=	distfiles
 
 MAINTAINER=	utisoft@gmail.com
 COMMENT=	Busybox for FreeBSD
