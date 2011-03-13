@@ -26,8 +26,4 @@ PLIST_FILES=	include/arena/align.h \
 		lib/libarena.a
 PLIST_DIRS=	include/arena
 
-post-patch:
-	@${REINPLACE_CMD} -E 's|^(PREFIX.*):=|\1?=|' \
-		${WRKSRC}/mk/Variables.mk
-
 .include <bsd.port.mk>
