@@ -1,4 +1,9 @@
 bin/openmsx
+%%DATADIR%%/extensions/README
+%%DATADIR%%/extensions/ASCII_MSX-DOS2/hardwareconfig.xml
+%%DATADIR%%/extensions/ASCII_MSX-DOS2/roms/SHA1SUMS
+%%DATADIR%%/extensions/Boosted_audio/hardwareconfig.xml
+%%DATADIR%%/extensions/Boosted_audio/roms/SHA1SUMS
 %%DATADIR%%/extensions/Checkmark_FM_Stereo_PAK/hardwareconfig.xml
 %%DATADIR%%/extensions/Checkmark_FM_Stereo_PAK/roms/SHA1SUMS
 %%DATADIR%%/extensions/DDX_3.0/hardwareconfig.xml
@@ -16,6 +21,7 @@ bin/openmsx
 %%DATADIR%%/extensions/MegaRAM_Disk/hardwareconfig.xml
 %%DATADIR%%/extensions/MegaRAM_Disk/roms/SHA1SUMS
 %%DATADIR%%/extensions/Mega_Flash_ROM_SCC/hardwareconfig.xml
+%%DATADIR%%/extensions/Mega_Flash_ROM_SCC_Plus/hardwareconfig.xml
 %%DATADIR%%/extensions/Microsol_CDX-2/hardwareconfig.xml
 %%DATADIR%%/extensions/Microsol_CDX-2/roms/SHA1SUMS
 %%DATADIR%%/extensions/OPL3Cartridge/hardwareconfig.xml
@@ -75,6 +81,7 @@ bin/openmsx
 %%DATADIR%%/icons/openMSX-logo-48.png
 %%DATADIR%%/icons/openMSX-logo-64.png
 %%DATADIR%%/init.tcl
+%%DATADIR%%/machines/README
 %%DATADIR%%/machines/Al_Alamiah_AX170/hardwareconfig.xml
 %%DATADIR%%/machines/Al_Alamiah_AX170/roms/SHA1SUMS
 %%DATADIR%%/machines/Boosted_MSX2_EN/README
@@ -83,15 +90,40 @@ bin/openmsx
 %%DATADIR%%/machines/C-BIOS_MSX1/hardwareconfig.xml
 %%DATADIR%%/machines/C-BIOS_MSX1/roms/cbios_logo_msx1.rom
 %%DATADIR%%/machines/C-BIOS_MSX1/roms/cbios_main_msx1.rom
+%%DATADIR%%/machines/C-BIOS_MSX1_BR/hardwareconfig.xml
+%%DATADIR%%/machines/C-BIOS_MSX1_BR/roms/cbios_logo_msx1.rom
+%%DATADIR%%/machines/C-BIOS_MSX1_BR/roms/cbios_main_msx1_br.rom
+%%DATADIR%%/machines/C-BIOS_MSX1_JP/hardwareconfig.xml
+%%DATADIR%%/machines/C-BIOS_MSX1_JP/roms/cbios_logo_msx1.rom
+%%DATADIR%%/machines/C-BIOS_MSX1_JP/roms/cbios_main_msx1_jp.rom
 %%DATADIR%%/machines/C-BIOS_MSX2+/hardwareconfig.xml
 %%DATADIR%%/machines/C-BIOS_MSX2+/roms/cbios_logo_msx2+.rom
 %%DATADIR%%/machines/C-BIOS_MSX2+/roms/cbios_main_msx2+.rom
 %%DATADIR%%/machines/C-BIOS_MSX2+/roms/cbios_music.rom
 %%DATADIR%%/machines/C-BIOS_MSX2+/roms/cbios_sub.rom
+%%DATADIR%%/machines/C-BIOS_MSX2+_BR/hardwareconfig.xml
+%%DATADIR%%/machines/C-BIOS_MSX2+_BR/roms/cbios_main_msx2+_br.rom
+%%DATADIR%%/machines/C-BIOS_MSX2+_BR/roms/cbios_music.rom
+%%DATADIR%%/machines/C-BIOS_MSX2+_BR/roms/cbios_sub.rom
+%%DATADIR%%/machines/C-BIOS_MSX2+_JP/hardwareconfig.xml
+%%DATADIR%%/machines/C-BIOS_MSX2+_JP/roms/cbios_logo_msx2+.rom
+%%DATADIR%%/machines/C-BIOS_MSX2+_JP/roms/cbios_main_msx2+_jp.rom
+%%DATADIR%%/machines/C-BIOS_MSX2+_JP/roms/cbios_music.rom
+%%DATADIR%%/machines/C-BIOS_MSX2+_JP/roms/cbios_sub.rom
 %%DATADIR%%/machines/C-BIOS_MSX2/hardwareconfig.xml
 %%DATADIR%%/machines/C-BIOS_MSX2/roms/cbios_logo_msx2.rom
 %%DATADIR%%/machines/C-BIOS_MSX2/roms/cbios_main_msx2.rom
 %%DATADIR%%/machines/C-BIOS_MSX2/roms/cbios_sub.rom
+%%DATADIR%%/machines/C-BIOS_MSX2_BR/hardwareconfig.xml
+%%DATADIR%%/machines/C-BIOS_MSX2_BR/roms/cbios_logo_msx2.rom
+%%DATADIR%%/machines/C-BIOS_MSX2_BR/roms/cbios_main_msx2_br.rom
+%%DATADIR%%/machines/C-BIOS_MSX2_BR/roms/cbios_sub.rom
+%%DATADIR%%/machines/C-BIOS_MSX2_JP/hardwareconfig.xml
+%%DATADIR%%/machines/C-BIOS_MSX2_JP/roms/cbios_logo_msx2.rom
+%%DATADIR%%/machines/C-BIOS_MSX2_JP/roms/cbios_main_msx2_jp.rom
+%%DATADIR%%/machines/C-BIOS_MSX2_JP/roms/cbios_sub.rom
+%%DATADIR%%/machines/CIEL_Expert-Turbo/hardwareconfig.xml
+%%DATADIR%%/machines/CIEL_Expert-Turbo/roms/SHA1SUMS
 %%DATADIR%%/machines/Canon_V-20/hardwareconfig.xml
 %%DATADIR%%/machines/Canon_V-20/roms/SHA1SUMS
 %%DATADIR%%/machines/Daewoo_CPC-300/hardwareconfig.xml
@@ -235,6 +267,8 @@ bin/openmsx
 %%DATADIR%%/machines/Sony_HB-F1XD/roms/SHA1SUMS
 %%DATADIR%%/machines/Sony_HB-F1XDJ/hardwareconfig.xml
 %%DATADIR%%/machines/Sony_HB-F1XDJ/roms/SHA1SUMS
+%%DATADIR%%/machines/Sony_HB-F5/hardwareconfig.xml
+%%DATADIR%%/machines/Sony_HB-F5/roms/SHA1SUMS
 %%DATADIR%%/machines/Sony_HB-F500P/hardwareconfig.xml
 %%DATADIR%%/machines/Sony_HB-F500P/roms/SHA1SUMS
 %%DATADIR%%/machines/Sony_HB-F700D/hardwareconfig.xml
@@ -280,13 +314,17 @@ bin/openmsx
 %%DATADIR%%/scripts/backwards_compatibility.tcl
 %%DATADIR%%/scripts/cheat.tcl
 %%DATADIR%%/scripts/cpuregs.tcl
+%%DATADIR%%/scripts/create_user_dirs.tcl
 %%DATADIR%%/scripts/cycle.tcl
 %%DATADIR%%/scripts/cycle_machine.tcl
 %%DATADIR%%/scripts/disasm.tcl
 %%DATADIR%%/scripts/example_tools.tcl
+%%DATADIR%%/scripts/filepool.tcl
 %%DATADIR%%/scripts/guess_title.tcl
 %%DATADIR%%/scripts/info_panel.tcl
+%%DATADIR%%/scripts/keybindings.tcl
 %%DATADIR%%/scripts/load_icons.tcl
+%%DATADIR%%/scripts/mode.tcl
 %%DATADIR%%/scripts/mog-overlay.tcl
 %%DATADIR%%/scripts/monitor.tcl
 %%DATADIR%%/scripts/multi_screenshot.tcl
@@ -306,7 +344,7 @@ bin/openmsx
 %%DATADIR%%/scripts/save_debuggable.tcl
 %%DATADIR%%/scripts/savestate.tcl
 %%DATADIR%%/scripts/scc_toys.tcl
-%%DATADIR%%/scripts/screencapture.tcl
+%%DATADIR%%/scripts/screenshot.tcl
 %%DATADIR%%/scripts/session_management.tcl
 %%DATADIR%%/scripts/shield.png
 %%DATADIR%%/scripts/showdebuggable.tcl
@@ -324,6 +362,7 @@ bin/openmsx
 %%DATADIR%%/scripts/umrcallback.tcl
 %%DATADIR%%/scripts/utils.tcl
 %%DATADIR%%/scripts/vdp.tcl
+%%DATADIR%%/scripts/vdp_access_test.tcl
 %%DATADIR%%/scripts/vdrive.tcl
 %%DATADIR%%/scripts/vu-meters.tcl
 %%DATADIR%%/scripts/widgets.tcl
@@ -461,7 +500,12 @@ bin/openmsx
 %%DATADIR%%/skins/throttle.png
 %%DATADIR%%/softwaredb.xml
 %%DATADIR%%/softwaredb1.dtd
+%%DATADIR%%/software/README
 %%DATADIR%%/systemroms/README
+%%DATADIR%%/unicodemaps/unicodemap.br_hotbit_1_1
+%%DATADIR%%/unicodemaps/unicodemap.br_hotbit_1_2
+%%DATADIR%%/unicodemaps/unicodemap.br_gradiente_1_0
+%%DATADIR%%/unicodemaps/unicodemap.br_gradiente_1_1
 %%DATADIR%%/unicodemaps/unicodemap.de
 %%DATADIR%%/unicodemaps/unicodemap.es
 %%DATADIR%%/unicodemaps/unicodemap.fr
@@ -473,6 +517,10 @@ bin/openmsx
 %%DATADIR%%/unicodemaps/unicodemap.proto_fr
 %%DATADIR%%/unicodemaps/unicodemap.proto_int
 %%DATADIR%%/unicodemaps/unicodemap.ru
+@dirrm %%DATADIR%%/extensions/ASCII_MSX-DOS2/roms
+@dirrm %%DATADIR%%/extensions/ASCII_MSX-DOS2
+@dirrm %%DATADIR%%/extensions/Boosted_audio/roms
+@dirrm %%DATADIR%%/extensions/Boosted_audio
 @dirrm %%DATADIR%%/extensions/Checkmark_FM_Stereo_PAK/roms
 @dirrm %%DATADIR%%/extensions/Checkmark_FM_Stereo_PAK
 @dirrm %%DATADIR%%/extensions/DDX_3.0/roms
@@ -490,6 +538,7 @@ bin/openmsx
 @dirrm %%DATADIR%%/extensions/MegaRAM_Disk/roms
 @dirrm %%DATADIR%%/extensions/MegaRAM_Disk
 @dirrm %%DATADIR%%/extensions/Mega_Flash_ROM_SCC
+@dirrm %%DATADIR%%/extensions/Mega_Flash_ROM_SCC_Plus
 @dirrm %%DATADIR%%/extensions/Microsol_CDX-2/roms
 @dirrm %%DATADIR%%/extensions/Microsol_CDX-2
 @dirrm %%DATADIR%%/extensions/OPL3Cartridge
@@ -551,10 +600,24 @@ bin/openmsx
 @dirrm %%DATADIR%%/machines/Boosted_MSX2_EN
 @dirrm %%DATADIR%%/machines/C-BIOS_MSX1/roms
 @dirrm %%DATADIR%%/machines/C-BIOS_MSX1
+@dirrm %%DATADIR%%/machines/C-BIOS_MSX1_BR/roms
+@dirrm %%DATADIR%%/machines/C-BIOS_MSX1_BR
+@dirrm %%DATADIR%%/machines/C-BIOS_MSX1_JP/roms
+@dirrm %%DATADIR%%/machines/C-BIOS_MSX1_JP
 @dirrm %%DATADIR%%/machines/C-BIOS_MSX2/roms
 @dirrm %%DATADIR%%/machines/C-BIOS_MSX2
+@dirrm %%DATADIR%%/machines/C-BIOS_MSX2_BR/roms
+@dirrm %%DATADIR%%/machines/C-BIOS_MSX2_BR
+@dirrm %%DATADIR%%/machines/C-BIOS_MSX2_JP/roms
+@dirrm %%DATADIR%%/machines/C-BIOS_MSX2_JP
 @dirrm %%DATADIR%%/machines/C-BIOS_MSX2+/roms
 @dirrm %%DATADIR%%/machines/C-BIOS_MSX2+
+@dirrm %%DATADIR%%/machines/C-BIOS_MSX2+_BR/roms
+@dirrm %%DATADIR%%/machines/C-BIOS_MSX2+_BR
+@dirrm %%DATADIR%%/machines/C-BIOS_MSX2+_JP/roms
+@dirrm %%DATADIR%%/machines/C-BIOS_MSX2+_JP
+@dirrm %%DATADIR%%/machines/CIEL_Expert-Turbo/roms
+@dirrm %%DATADIR%%/machines/CIEL_Expert-Turbo
 @dirrm %%DATADIR%%/machines/Canon_V-20/roms
 @dirrm %%DATADIR%%/machines/Canon_V-20
 @dirrm %%DATADIR%%/machines/Daewoo_CPC-300/roms
@@ -698,6 +761,8 @@ bin/openmsx
 @dirrm %%DATADIR%%/machines/Sony_HB-F1XD
 @dirrm %%DATADIR%%/machines/Sony_HB-F1XDJ/roms
 @dirrm %%DATADIR%%/machines/Sony_HB-F1XDJ
+@dirrm %%DATADIR%%/machines/Sony_HB-F5/roms
+@dirrm %%DATADIR%%/machines/Sony_HB-F5
 @dirrm %%DATADIR%%/machines/Sony_HB-F500P/roms
 @dirrm %%DATADIR%%/machines/Sony_HB-F500P
 @dirrm %%DATADIR%%/machines/Sony_HB-F700D/roms
@@ -745,6 +810,7 @@ bin/openmsx
 @dirrm %%DATADIR%%/skins/set4
 @dirrm %%DATADIR%%/skins/set5
 @dirrm %%DATADIR%%/skins
+@dirrm %%DATADIR%%/software
 @dirrm %%DATADIR%%/systemroms
 @dirrm %%DATADIR%%/unicodemaps
 @dirrm %%DATADIR%%
@@ -759,7 +825,7 @@ bin/openmsx
 %%PORTDOCS%%%%DOCSDIR%%/manual/manual-minty.css
 %%PORTDOCS%%%%DOCSDIR%%/manual/manual-purple.css
 %%PORTDOCS%%%%DOCSDIR%%/manual/manual.css
-%%PORTDOCS%%%%DOCSDIR%%/manual/nocartfound021.png
+%%PORTDOCS%%%%DOCSDIR%%/manual/nocartfound.png
 %%PORTDOCS%%%%DOCSDIR%%/manual/openmsx-control.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/setup.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/user.html
