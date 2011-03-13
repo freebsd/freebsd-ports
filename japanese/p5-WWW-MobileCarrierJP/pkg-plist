@@ -12,15 +12,21 @@ bin/www-mobilecarrierjp-dump_all.pl
 %%SITE_PERL%%/WWW/MobileCarrierJP/EZWeb/DeviceID.pm
 %%SITE_PERL%%/WWW/MobileCarrierJP/EZWeb/CIDR.pm
 %%SITE_PERL%%/WWW/MobileCarrierJP/EZWeb/Model.pm
-%%SITE_PERL%%/WWW/MobileCarrierJP/EZWeb/BREW.pm
-%%SITE_PERL%%/WWW/MobileCarrierJP/ThirdForce/HTTPHeader.pm
-%%SITE_PERL%%/WWW/MobileCarrierJP/ThirdForce/CIDR.pm
-%%SITE_PERL%%/WWW/MobileCarrierJP/ThirdForce/Service.pm
-%%SITE_PERL%%/WWW/MobileCarrierJP/ThirdForce/PictogramInfo.pm
-%%SITE_PERL%%/WWW/MobileCarrierJP/ThirdForce/UserAgent.pm
-%%SITE_PERL%%/WWW/MobileCarrierJP/ThirdForce/Java.pm
+%%SITE_PERL%%/WWW/MobileCarrierJP/Softbank/HTTPHeader.pm
+%%SITE_PERL%%/WWW/MobileCarrierJP/Softbank/Service.pm
+%%SITE_PERL%%/WWW/MobileCarrierJP/Softbank/Flash.pm
+%%SITE_PERL%%/WWW/MobileCarrierJP/Softbank/Display.pm
+%%SITE_PERL%%/WWW/MobileCarrierJP/Softbank/Java.pm
+%%SITE_PERL%%/WWW/MobileCarrierJP/Softbank/CIDR.pm
+%%SITE_PERL%%/WWW/MobileCarrierJP/Softbank/PictogramInfo.pm
 %%SITE_PERL%%/WWW/MobileCarrierJP/ThirdForce/Flash.pm
+%%SITE_PERL%%/WWW/MobileCarrierJP/ThirdForce/UserAgent.pm
+%%SITE_PERL%%/WWW/MobileCarrierJP/ThirdForce/Service.pm
 %%SITE_PERL%%/WWW/MobileCarrierJP/ThirdForce/Display.pm
+%%SITE_PERL%%/WWW/MobileCarrierJP/ThirdForce/HTTPHeader.pm
+%%SITE_PERL%%/WWW/MobileCarrierJP/ThirdForce/PictogramInfo.pm
+%%SITE_PERL%%/WWW/MobileCarrierJP/ThirdForce/CIDR.pm
+%%SITE_PERL%%/WWW/MobileCarrierJP/ThirdForce/Java.pm
 %%SITE_PERL%%/WWW/MobileCarrierJP/Declare.pm
 %%SITE_PERL%%/WWW/MobileCarrierJP.pm
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/MobileCarrierJP
@@ -29,5 +35,6 @@ bin/www-mobilecarrierjp-dump_all.pl
 @dirrmtry %%SITE_PERL%%/WWW/MobileCarrierJP/DoCoMo
 @dirrmtry %%SITE_PERL%%/WWW/MobileCarrierJP/EZWeb
 @dirrmtry %%SITE_PERL%%/WWW/MobileCarrierJP/ThirdForce
+@dirrmtry %%SITE_PERL%%/WWW/MobileCarrierJP/Softbank
 @dirrmtry %%SITE_PERL%%/WWW/MobileCarrierJP
 @dirrmtry %%SITE_PERL%%/WWW
