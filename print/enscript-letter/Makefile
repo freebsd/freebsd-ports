@@ -19,21 +19,15 @@ COMMENT=	ASCII to PostScript filter
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-nls --with-media=${PS}
 
+CONFLICTS?=	enscript-a4-* enscript-letterdj-*
+
 INFO=		enscript
 MAN1=		diffpp.1 enscript.1 sliceprint.1 states.1
 
 PAPERSIZE?=	letter
+PS=		Letter
 
-.if ${PAPERSIZE} == a4
-PS=A4
-CONFLICTS=	enscript-letter-* enscript-letterdj-*
-.elif ${PAPERSIZE} == letter
-PS=Letter
-CONFLICTS=	enscript-a4-* enscript-letterdj-*
-.elif ${PAPERSIZE} == letterdj
-PS=Letterdj
-CONFLICTS=	enscript-a4-* enscript-letter-*
-.else
+.if (${PAPERSIZE} != a4 && ${PAPERSIZE} != letter && ${PAPERSIZE} != letterdj)
 .BEGIN:
 	@${ECHO} "Error: invalid value for PAPERSIZE: \"${PAPERSIZE}\""
 	@${ECHO} "Possible values are:  a4, letter, or letterdj"
