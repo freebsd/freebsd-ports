@@ -8,7 +8,7 @@
 PORTNAME=	mpiexec
 PORTVERSION=	0.83
 CATEGORIES=	sysutils parallel
-MASTER_SITES=	http://www.osc.edu/~pw/mpiexec/
+MASTER_SITES=	http://www.osc.edu/~djohnson/mpiexec/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
