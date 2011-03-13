@@ -14,6 +14,9 @@ DISTNAME=	pash.sources
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A full-screen shell (commander GUI) for *nix.
 
+DEPRECATED=     Upstream disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 NO_WRKSUBDIR=	yes
 
 MAKEFILE=	makefile
