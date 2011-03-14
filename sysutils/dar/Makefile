@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	dar
-PORTVERSION=	2.3.10
+PORTVERSION=	2.3.11
 CATEGORIES=	sysutils archivers
 MASTER_SITES=	SF
 
