@@ -9,7 +9,7 @@ PORTNAME=	gupnp-igd
 PORTVERSION=	0.1.6
 PORTREVISION=	2
 CATEGORIES=	net
-MASTER_SITES=	http://www.gupnp.org/sources/${PORTNAME}/
+MASTER_SITES=	http://www.gupnp.org/sites/all/files/sources/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library to handle UPnP IGD port mapping
