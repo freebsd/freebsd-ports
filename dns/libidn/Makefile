@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	libidn
-PORTVERSION=	1.16
+PORTVERSION=	1.19
 CATEGORIES=	dns
-MASTER_SITES=	${MASTER_SITE_GNU_ALPHA} \
-		http://josefsson.org/libidn/releases/
+MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	gaod@hychen.org
