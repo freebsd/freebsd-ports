@@ -1,0 +1,10 @@
+--- Rakefile.orig	2011-03-07 20:44:41.000000000 +0100
++++ Rakefile	2011-03-14 14:06:13.000000000 +0100
+@@ -6,5 +6,6 @@
+ require 'rake'
+ require 'rake/testtask'
+ require 'rake/rdoctask'
++require 'thread'
+ 
+ require 'tasks/rails'
+\ No newline at end of file
