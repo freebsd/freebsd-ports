@@ -7,6 +7,7 @@
 
 PORTNAME=	libgcal
 PORTVERSION=	0.9.5
+PORTREVISION=	1
 CATEGORIES=	deskutils
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 
@@ -16,6 +17,9 @@ COMMENT=	Library allowing communication with google calendar and contacts
 LIB_DEPENDS=	curl:${PORTSDIR}/ftp/curl \
 		iconv:${PORTSDIR}/converters/libiconv \
 		xml2:${PORTSDIR}/textproc/libxml2
+
+LICENSE=	BSD
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 USE_BZIP2=	yes
 USE_CMAKE=	yes
