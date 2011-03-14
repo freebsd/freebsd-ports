@@ -5,12 +5,11 @@
 # $FreeBSD$
 
 PORTNAME=	netbeans
-PORTVERSION=	6.5
-PORTREVISION=	2
+DISTVERSION=	7.0beta2
 CATEGORIES=	java devel
-MASTER_SITES=	http://download.netbeans.org/netbeans/6.5/rc/zip/
+MASTER_SITES=	http://dlc.sun.com.edgesuite.net/netbeans/7.0/beta2/zip/
 PKGNAMESUFFIX=	-devel
-DISTNAME=	netbeans-${PORTVERSION}rc2-200810270001-ml
+DISTNAME=	netbeans-${DISTVERSION}-201102140001-ml
 
 MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	A full-featured integrated environment for Java
@@ -21,17 +20,18 @@ JAVA_VERSION=	1.5+
 NO_BUILD=	yes
 
 WRKSRC=		${WRKDIR}/netbeans
+PREFIXDIR=	${PREFIX}/netbeans70
 
-IGNORE=		No development version available right now. Please use java/netbeans instead.
+#IGNORE=		No development version available right now. Please use java/netbeans instead.
 
 do-patch:
 	@${REINPLACE_CMD} -i "" -e '19s|#||;19s|/path/to/jdk|${JAVA_HOME}|' \
 	    ${WRKSRC}/etc/netbeans.conf
 
 do-install:
-	@${MKDIR} ${PREFIX}/netbeans65
-	@(cd ${WRKSRC} && ${COPYTREE_SHARE} \* ${PREFIX}/netbeans65)
-	@${CHMOD} ${BINMODE} ${PREFIX}/netbeans65/bin/netbeans
-	@${LN} -sf ${PREFIX}/netbeans65/bin/netbeans ${PREFIX}/bin/netbeans65
+	@${MKDIR} ${PREFIXDIR}
+	@(cd ${WRKSRC} && ${COPYTREE_SHARE} \* ${PREFIXDIR})
+	@${CHMOD} ${BINMODE} ${PREFIXDIR}/bin/netbeans
+	@${LN} -sf ${PREFIXDIR}/bin/netbeans ${PREFIX}/bin/netbeans70
 
 .include <bsd.port.mk>
