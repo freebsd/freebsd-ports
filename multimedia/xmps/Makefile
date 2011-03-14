@@ -14,6 +14,9 @@ MASTER_SITES=	http://ftp.vin.bg.ac.yu/linux/mmedia/xmps/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	X MPEG Player System - a media player with a very nice GUI
 
+DEPRECATED=     Upstream has disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 USE_GETTEXT=	yes
 USE_SDL=	sdl
 USE_GNOME=	gnomeprefix gnomehack gnomelibs gdkpixbuf

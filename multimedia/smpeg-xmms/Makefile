@@ -16,6 +16,9 @@ MASTER_SITE_SUBDIR=	plugins/${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A mpeg video plugin for XMMS
 
+DEPRECATED=     Distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 LIB_DEPENDS=	smpeg.1:${PORTSDIR}/multimedia/smpeg \
 		xmms.4:${PORTSDIR}/multimedia/xmms
 

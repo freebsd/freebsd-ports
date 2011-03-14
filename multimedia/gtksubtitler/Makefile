@@ -15,6 +15,9 @@ DISTNAME=	${PORTNAME}-v${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A small GNOME program for editing and converting subtitles
 
+DEPRECATED=     Upstream disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 USE_GNOME=	gnomeprefix gnomelibs
 GNU_CONFIGURE=	yes
 

@@ -13,6 +13,9 @@ MASTER_SITES=		http://www.hakubi.us/hayes/
 MAINTAINER=		ports@FreeBSD.org
 COMMENT=		A filesystem-based playlist for Noatun
 
+DEPRECATED=     Upstream disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 LIB_DEPENDS=		noatun:${PORTSDIR}/multimedia/kdemultimedia3
 
 USE_KDEBASE_VER=	3

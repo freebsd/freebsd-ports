@@ -15,6 +15,9 @@ MASTER_SITES=	http://linvdr.org/download/tosvcd/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	SVCD transcoder
 
+DEPRECATED=     Upstream has disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 ONLY_FOR_ARCHS=	i386
 
 RUN_DEPENDS=	mpeg2enc:${PORTSDIR}/multimedia/mjpegtools \

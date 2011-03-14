@@ -15,6 +15,9 @@ DISTNAME=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	DV/RTP viewer
 
+DEPRECATED=     upstream has disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 LIB_DEPENDS=	dv.4:${PORTSDIR}/multimedia/libdv
 
 PLIST_FILES=	bin/xdvshow
