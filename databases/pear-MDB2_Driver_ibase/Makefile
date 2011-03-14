@@ -17,6 +17,8 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 
 USE_PHP=	interbase
 
+BROKEN=		fails to build
+
 FILES=		MDB2/Driver/ibase.php \
 		MDB2/Driver/Datatype/ibase.php \
 		MDB2/Driver/Function/ibase.php \
