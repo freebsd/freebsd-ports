@@ -17,6 +17,9 @@ DIST_SUBDIR=	microannex_xl
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	BSD tools for the MicroAnnex-XL Terminal Server
 
+DEPRECATED=     Upstream disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 WRKSRC=		${WRKDIR}/src
 
 EXTRACT_AFTER_ARGS=	| ${TAR} -xf - src

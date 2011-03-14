@@ -14,6 +14,9 @@ MASTER_SITES=	http://www.enderunix.org/knowlan/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	ARP-based LAN IP and MAC Address Extractor
 
+DEPRECATED=     Upstream disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 BUILD_DEPENDS=	${LIBNET_CONFIG}:${PORTSDIR}/net/libnet10
 
 HAS_CONFIGURE=	yes

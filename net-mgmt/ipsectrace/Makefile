@@ -14,6 +14,9 @@ MASTER_SITES=	http://chewies.net/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	IPSEC Traffic Profiler
 
+DEPRECATED=     Upstream disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 WRKSRC=		${WRKDIR}/${PORTNAME}
 MAKE_ARGS=	CXX="${CXX}" CXXFLAGS="${CXXFLAGS} -Wno-deprecated" \
 		LDFLAGS="${LDFLAGS} -lpcap" INCLUDES="${INCLUDES}"

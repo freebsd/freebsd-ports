@@ -14,6 +14,9 @@ MASTER_SITES=	http://ish.cx/~jason/arpscan/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple arp scanner
 
+DEPRECATED=     Upstream disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 LIB_DEPENDS=	dnet.1:${PORTSDIR}/net/libdnet
 
 GNU_CONFIGURE=	yes
