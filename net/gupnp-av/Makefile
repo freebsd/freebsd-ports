@@ -9,7 +9,7 @@ PORTNAME=	gupnp-av
 PORTVERSION=	0.5.4
 PORTREVISION=	1
 CATEGORIES=	net
-MASTER_SITES=	http://www.gupnp.org/sources/${PORTNAME}/
+MASTER_SITES=	http://www.gupnp.org/sites/all/files/sources/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Helpers for audio/video applications using GUPnP

@@ -9,7 +9,7 @@ PORTNAME=	gupnp-ui
 PORTVERSION=	0.1.1
 PORTREVISION=	2
 CATEGORIES=	net
-MASTER_SITES=	http://www.gupnp.org/sources/${PORTNAME}/
+MASTER_SITES=	http://www.gupnp.org/sites/all/files/sources/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Framework for UPnP devices
