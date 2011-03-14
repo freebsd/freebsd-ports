@@ -12,4 +12,6 @@ COMMENT=	The firebird driver for the Gambas database component
 
 MASTERDIR=	${.CURDIR}/../../lang/gambas2-base
 
+BROKEN=		does not build
+
 .include "${MASTERDIR}/Makefile"
