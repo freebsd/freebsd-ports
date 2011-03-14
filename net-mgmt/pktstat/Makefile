@@ -13,6 +13,9 @@ MASTER_SITES=	http://www.adaptive-enterprises.com.au/~d/software/pktstat/ CENKES
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Network traffic viewer
 
+DEPRECATED=     Upstream disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 GNU_CONFIGURE=	yes
 MAN1=		${PORTNAME}.1
 PLIST_FILES=	bin/${PORTNAME}

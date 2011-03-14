@@ -15,6 +15,9 @@ MASTER_SITES=	ftp://ftp.lexa.ru/pub/domestic/lexa/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Print lines contans IP matching a pattern in CIDR format
 
+DEPRECATED=     Upstream disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 LIB_DEPENDS=	pcre:${PORTSDIR}/devel/pcre
 
 PLIST_FILES=	bin/grepip

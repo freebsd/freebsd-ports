@@ -15,6 +15,9 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}_whois_new_query_fix
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Command-line tool to run a check on the usage of the RIPE Whois DB
 
+DEPRECATED=     Upstream disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 PERL_CONFIGURE=	yes
 
 MAN1=		asused.1
