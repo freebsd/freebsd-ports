@@ -15,6 +15,9 @@ PKGNAMESUFFIX=	-kmod
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	USB device driver for Windows CE handhelds
 
+DEPRECATED=     Upstream disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 MAN4=		uppc.4
 WRKSRC=		${WRKDIR}/${PORTNAME}
 

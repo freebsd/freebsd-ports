@@ -16,6 +16,9 @@ MASTER_SITES=	http://ftp.linux.in.th/palm/develope/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Disassembler and other tools for PalmOS binaries
 
+DEPRECATED=     Upstream disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 

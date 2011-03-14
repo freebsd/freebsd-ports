@@ -14,6 +14,9 @@ MASTER_SITES=	http://sitescooper.org/released/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	News site downloader for Palm computing devices
 
+DEPRECATED=     Upstream disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/HTML/Parser.pm:${PORTSDIR}/www/p5-HTML-Parser \
 		${SITE_PERL}/LWP.pm:${PORTSDIR}/www/p5-libwww \
 		${SITE_PERL}/URI/URL.pm:${PORTSDIR}/net/p5-URI \
