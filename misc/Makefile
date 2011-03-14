@@ -335,6 +335,7 @@
     SUBDIR += konq-plugins-kde4
     SUBDIR += kp
     SUBDIR += krecipes
+    SUBDIR += krecipes-kde4
     SUBDIR += ksig
     SUBDIR += kwatch
     SUBDIR += latex-mk
