@@ -19,6 +19,9 @@ EXTRACT_ONLY=
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A decentralized peer-to-peer file-sharing server (eDonkey2000 server)
 
+DEPRECATED=     Upstream disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 ONLY_FOR_ARCHS=	i386 amd64
 USE_LINUX=	yes
 NO_WRKSUBDIR=	yes

@@ -17,6 +17,9 @@ DISTNAME=	${PORTNAME}clc_${PORTVERSION}_i386
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	eDonkey2000 'core' command line client
 
+DEPRECATED=     Upstream disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 ONLY_FOR_ARCHS=	i386 amd64
 USE_LINUX=	yes
 NO_BUILD=	yes
