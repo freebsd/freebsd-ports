@@ -15,6 +15,9 @@ DISTFILES=	musixtex-${PORTVERSION}.tar.gz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A set of TeX macros to typeset music
 
+DEPRECATED=     Upstream disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 BUILD_DEPENDS=	initex:${PORTSDIR}/print/tex
 RUN_DEPENDS=	initex:${PORTSDIR}/print/tex
 

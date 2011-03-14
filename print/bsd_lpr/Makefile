@@ -15,6 +15,9 @@ DISTNAME=	bsd_lpr-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	BSD lpr suite
 
+DEPRECATED=     Upstream disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 CONFLICTS=	cups-base-[0-9]* LPRng-[0-9]*
 
 USE_BZIP2=	yes

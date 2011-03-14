@@ -15,6 +15,9 @@ DISTNAME=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Convert a document from troff to LaTeX
 
+DEPRECATED=     Upstream disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 IGNOREFILES=	${DISTNAME}${EXTRACT_SUFX}
 
 MAKEFILE=	Makefile.unix
