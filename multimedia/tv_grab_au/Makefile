@@ -16,6 +16,9 @@ MASTER_SITES=	http://www.tienza.es/crux/mirror/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	X 'tv_grab_au' is an XMLTV grabber for Australian TV programmes
 
+DEPRECATED=     Upstream has disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 RUN_DEPENDS=	tv_check:${PORTSDIR}/textproc/p5-xmltv
 
 NO_WRKSUBDIR=	yes

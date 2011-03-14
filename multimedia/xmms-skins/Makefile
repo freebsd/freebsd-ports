@@ -97,6 +97,9 @@ EXTRACT_ONLY=
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Skins for X Multimedia System (XMMS)
 
+DEPRECATED=     Distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 BUILD_DEPENDS=	xmms-config:${PORTSDIR}/multimedia/xmms
 
 USE_XORG=	x11

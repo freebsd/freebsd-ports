@@ -14,6 +14,9 @@ MASTER_SITES=	ftp://quenix2.dyndns.org/FreeBSD/ports/distfiles/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A fast tool to backup Video DVDs 'on the fly'
 
+DEPRECATED=     upstream and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 LIB_DEPENDS=	dvdread.4:${PORTSDIR}/multimedia/libdvdread
 
 WRKSRC=		${WRKDIR}/StreamDVD-${PORTVERSION}

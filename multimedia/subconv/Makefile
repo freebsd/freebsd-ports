@@ -14,6 +14,9 @@ MASTER_SITES=	http://linux.bydg.org/~yogin/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Converts DivX subtitles from one format to another
 
+DEPRECATED=     Upstream has disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 NO_BUILD=	yes

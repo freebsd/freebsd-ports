@@ -14,6 +14,9 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Re-write of the A/V multiplexer from the transcode distribution
 
+DEPRECATED=     Upstream has disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 ALL_TARGET=	a.out
 
 PLIST_FILES=	bin/tcmplex-panteltje

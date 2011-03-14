@@ -13,6 +13,9 @@ CATEGORIES=	multimedia linux
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Video codec
 
+DEPRECATED=     deprecated please use linux-f[89]-libtheora
+EXPIRATION_DATE=        2011-05-01
+
 CONFLICTS=	linux-f8-libtheora-[0-9]* linux-f10-libtheora-[0-9]*
 
 ONLY_FOR_ARCHS=	i386 amd64

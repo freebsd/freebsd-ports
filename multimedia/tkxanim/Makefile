@@ -15,6 +15,9 @@ MASTER_SITES=	http://freshmeat.net/redir/tkxanim/10652/url_tgz/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tcl/Tk frontend to xanim
 
+DEPRECATED=     Upstream has disapear and dstfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 RUN_DEPENDS=	xanim:${PORTSDIR}/multimedia/xanim
 USE_TK_RUN=	yes
 

@@ -17,6 +17,9 @@ EXTRACT_SUFX=	.gz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Microsoft NetShow video stream player
 
+DEPRECATED=     Distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 RESTRICTED=	"Commercial software"
 
 BROKEN=		does not fetch

@@ -17,6 +17,9 @@ DISTNAME=	avi-xmms-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An avifile based .avi and .asf file playback plugin for XMMS
 
+DEPRECATED=     Distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 LIB_DEPENDS=	xmms.4:${PORTSDIR}/multimedia/xmms
 
 ONLY_FOR_ARCHS=	i386

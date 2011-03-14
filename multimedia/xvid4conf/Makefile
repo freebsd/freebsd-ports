@@ -14,6 +14,9 @@ MASTER_SITES=	ftp://ftp.nerim.net/debian-marillat/pool/main/x/xvid4conf/ \
 MASTER_SITE_SUBDIR=lofi
 DISTNAME=	${PORTNAME}_${PORTVERSION}.orig
 
+DEPRECATED=     Upstream has disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	XviD configuration panel for transcode
 
