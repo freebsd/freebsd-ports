@@ -2,6 +2,7 @@ bin/cache-init
 bin/cache-update
 bin/find-updated
 bin/portindex
+bin/portdepends
 @unexec if cmp -s %D/etc/portindex.cfg.sample %D/etc/portindex.cfg ; then rm -f %D/etc/portindex.cfg ; fi
 etc/portindex.cfg.sample
 @exec [ ! -f %B/portindex.cfg ] && cp -p %B/%f %B/portindex.cfg || true
