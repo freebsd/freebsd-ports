@@ -7,6 +7,7 @@
 
 PORTNAME=	monotone
 PORTVERSION=	0.99.1
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.monotone.ca/downloads/${PORTVERSION}/
 
@@ -15,7 +16,7 @@ COMMENT=	A distributed version control system with digital signatures
 
 BUILD_DEPENDS=	${LOCALBASE}/include/boost/shared_ptr.hpp:${PORTSDIR}/devel/boost-libs
 LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre \
-		idn.16:${PORTSDIR}/dns/libidn \
+		idn.17:${PORTSDIR}/dns/libidn \
 		sqlite3.8:${PORTSDIR}/databases/sqlite3 \
 		botan.0:${PORTSDIR}/security/botan
 

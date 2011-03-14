@@ -7,7 +7,7 @@
 
 PORTNAME=	jabber
 PORTVERSION=	1.6.1.1
-PORTREVISION=	7
+PORTREVISION=	8
 PORTEPOCH=	1
 CATEGORIES=	net-im ipv6
 MASTER_SITES=	http://download.jabberd.org/jabberd14/ \
@@ -20,7 +20,7 @@ COMMENT=	XMPP/Jabber server daemon
 
 LIB_DEPENDS=	pth.20:${PORTSDIR}/devel/pth-hard \
 		popt.0:${PORTSDIR}/devel/popt \
-		idn.16:${PORTSDIR}/dns/libidn \
+		idn.17:${PORTSDIR}/dns/libidn \
 		expat.6:${PORTSDIR}/textproc/expat2 \
 		tasn1.4:${PORTSDIR}/security/libtasn1 \
 		gnutls.40:${PORTSDIR}/security/gnutls

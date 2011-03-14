@@ -8,7 +8,7 @@
 
 PORTNAME?=	libpurple
 PORTVERSION=	2.7.11
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES?=	net-im
 MASTER_SITES=	SF/pidgin/Pidgin/${PORTVERSION}
 DISTNAME=	pidgin-${PORTVERSION}
@@ -114,7 +114,7 @@ PLIST_SUB+=	VV="@comment "
 .endif
 
 .if !defined(WITHOUT_IDN)
-LIB_DEPENDS+=	idn.16:${PORTSDIR}/dns/libidn
+LIB_DEPENDS+=	idn.17:${PORTSDIR}/dns/libidn
 .else
 CONFIGURE_ARGS+=--disable-idn
 .endif

@@ -7,6 +7,7 @@
 
 PORTNAME=	dpsearch
 PORTVERSION=	4.53
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://dataparksearch.googlecode.com/files/ \
 		http://www.dataparksearch.org/
@@ -94,7 +95,7 @@ CONFIGURE_ARGS+=--enable-chasen
 .endif
 
 .if defined(WITH_DPSEARCH_IDN)
-LIB_DEPENDS+=	idn.16:${PORTSDIR}/dns/libidn
+LIB_DEPENDS+=	idn.17:${PORTSDIR}/dns/libidn
 CONFIGURE_ARGS+=--enable-idn
 .endif
 

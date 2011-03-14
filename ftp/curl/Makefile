@@ -7,6 +7,7 @@
 
 PORTNAME=	curl
 PORTVERSION=	7.21.3
+PORTREVISION=	1
 CATEGORIES=	ftp ipv6 www
 MASTER_SITES=	http://curl.haxx.se/download/ \
 		ftp://ftp.sunet.se/pub/www/utilities/curl/ \
@@ -161,7 +162,7 @@ CONFIGURE_ARGS+=	--disable-ldap --disable-ldaps
 .endif
 
 .if defined(WITH_LIBIDN)
-LIB_DEPENDS+=	idn.16:${PORTSDIR}/dns/libidn
+LIB_DEPENDS+=	idn.17:${PORTSDIR}/dns/libidn
 CONFIGURE_ARGS+=	--with-libidn=${LOCALBASE}
 .else
 CONFIGURE_ARGS+=	--without-libidn
