@@ -15,6 +15,9 @@ MASTER_SITES=	http://www.freebsdbrasil.com.br/~jmelo/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A point-to-point bandwith measurement tool
 
+DEPRECATED=     Upstream disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 MAN8=		bing.8
 
 do-install:

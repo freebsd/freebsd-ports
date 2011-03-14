@@ -13,6 +13,9 @@ MASTER_SITES=	http://network.terramail.pl/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A console chat application written with ncurse
 
+DEPRECATED=     Upstream disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 do-build:
 	cd ${WRKSRC}; \
 	${CXX} ${CXXFLAGS} -o ntalk ntalk.cpp -lncurses ${PTHREAD_LIBS}

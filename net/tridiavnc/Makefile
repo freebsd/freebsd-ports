@@ -17,6 +17,9 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Display X and Win32 desktops on remote X/Win32/Java displays
 
+DEPRECATED=     Upstream disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 USE_PERL5=	yes
 WRKSRC=		${WRKDIR}/unix/vnc_unixsrc
 USE_IMAKE=	yes

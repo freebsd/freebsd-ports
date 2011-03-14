@@ -15,6 +15,9 @@ MASTER_SITES=	CENKES
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Display and reset active TCP connections
 
+DEPRECATED=     Upstream disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 WRKSRC=		${WRKDIR}/${PORTNAME}
 MAKE_ARGS=	CFLAGS="${CFLAGS}" CC="${CC}"
 ALL_TARGET=	fbsd_x86

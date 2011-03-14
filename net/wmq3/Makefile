@@ -15,6 +15,9 @@ MASTER_SITES=	http://freebsd.unixfreunde.de/sources/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Dockapp that query and display information on Quake 3 servers
 
+DEPRECATED=     Upstream disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 RUN_DEPENDS=	qstat:${PORTSDIR}/games/qstat
 
 WRKSRC=		${WRKDIR}/${PORTNAME}/${PORTNAME}

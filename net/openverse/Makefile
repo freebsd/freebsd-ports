@@ -14,6 +14,9 @@ DISTNAME=	${PORTNAME}-0.8-7
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A visual chat program written in Tcl/Tk
 
+DEPRECATED=     Upstream disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 USE_TK_RUN=	yes
 USE_TCL_RUN=	yes
 NO_BUILD=	yes

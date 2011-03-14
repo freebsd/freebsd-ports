@@ -14,6 +14,9 @@ MASTER_SITES=	http://linux.ee.tku.edu.tw/~kids/resource/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A front-end of telnet client for multiple users or in private
 
+DEPRECATED=     Upstream disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 WRKSRC=		${WRKDIR}/bbsnet
 
 post-patch:

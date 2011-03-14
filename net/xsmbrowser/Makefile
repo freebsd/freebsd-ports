@@ -15,6 +15,9 @@ MASTER_SITES=	http://nuxo1.free.fr/logiciel_reseau/visu_reso/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tcl/Tk port of Windows Network Neighborhood
 
+DEPRECATED=     Upstream disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 RUN_DEPENDS=	${LOCALBASE}/bin/smbclient:${PORTSDIR}/${SAMBA_PORT} \
 		${LOCALBASE}/bin/expectk:${PORTSDIR}/lang/expect
 

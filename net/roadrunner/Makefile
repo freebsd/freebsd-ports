@@ -14,6 +14,9 @@ MASTER_SITES=	http://ftp.codefactory.se/pub/RoadRunner/source/roadrunner/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A portable BEEP protocol implementation
 
+DEPRECATED=     Upstream disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 USE_GNOME=	glib20 libxml2 pkgconfig
 USE_AUTOTOOLS=	libtool
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \

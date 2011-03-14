@@ -15,6 +15,9 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Transferring files over Internet via UDP
 
+DEPRECATED=     Upstream disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 PLIST_FILES=	bin/bcpc bin/bcps
 MAN1=		bcp.1
 MANCOMPRESSED=	yes

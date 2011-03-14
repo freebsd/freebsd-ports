@@ -17,6 +17,9 @@ DIST_SUBDIR=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Ubiquitous network routing analysis tool
 
+DEPRECATED=     Upstream disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 WRKSRC=		${WRKDIR}
 
 EXTRACT_CMD=		${CP}

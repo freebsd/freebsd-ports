@@ -17,6 +17,9 @@ MASTER_SITE_SUBDIR=	fenner
 MAINTAINER=		ports@FreeBSD.org
 COMMENT=		Generic Network Queuing System
 
+DEPRECATED=     Upstream disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 USE_BZIP2=		yes
 IS_INTERACTIVE=	yes
 NO_PACKAGE=		have to build on site due to the descriptors created in\

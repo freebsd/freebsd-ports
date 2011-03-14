@@ -14,6 +14,9 @@ DISTNAME=	WarpPipe-0.3.5-bsd
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Online multi-player gaming for the Nintendo GameCube
 
+DEPRECATED=     Upstream disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 LIB_DEPENDS=	c.4:${PORTSDIR}/misc/compat4x
 
 ONLY_FOR_ARCHS=	i386

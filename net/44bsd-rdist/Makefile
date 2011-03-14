@@ -15,6 +15,9 @@ MASTER_SITE_SUBDIR=	obrien
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The traditional 4.4BSD rdist
 
+DEPRECATED=     Upstream disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 USE_BZIP2=	yes
 
 NO_WRKSUBDIR=	yes

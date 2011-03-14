@@ -15,6 +15,9 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	\
 	UO Dense Protocol-Independent Multicast (PIM-DM) daemon for IPv4
 
+DEPRECATED=     Upstream disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 NO_MAN=		defined
 PIMDD_DOCS=	pimd-dense.html README CHANGES RELEASE.NOTES
 

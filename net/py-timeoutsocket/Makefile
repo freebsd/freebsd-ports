@@ -14,7 +14,10 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Timeout mechanism for TCP connections
 
-USE_PYTHON=	yes
+DEPRECATED=     Upstream disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
+RUSE_PYTHON=	yes
 USE_PYDISTUTILS=yes
 
 .include <bsd.port.mk>

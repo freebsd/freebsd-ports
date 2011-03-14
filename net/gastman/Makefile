@@ -15,6 +15,9 @@ DISTNAME=	${PORTNAME}-1.0-RC1
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Graphical Manager interface for Asterisk
 
+DEPRECATED=     Upstream disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 USE_GNOME=	gtk20
 USE_GMAKE=	yes
 
