@@ -6,10 +6,11 @@
 #
 
 PORTNAME=	Mouse
-PORTVERSION=	0.90
+PORTVERSION=	0.91
 PORTEPOCH=	1
 CATEGORIES=	devel perl5
-MASTER_SITES=	CPAN/../by-authors/id/G/GF/GFUJI
+MASTER_SITES=	CPAN
+MASTER_SITE_SUBDIR=	CPAN:GFUJI
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
@@ -18,8 +19,8 @@ COMMENT=	Moose minus the antlers
 BUILD_DEPENDS=	p5-Devel-PPPort>=3.19:${PORTSDIR}/devel/p5-Devel-PPPort \
 		p5-ExtUtils-ParseXS>=2.21:${PORTSDIR}/devel/p5-ExtUtils-ParseXS
 RUN_DEPENDS=	p5-Devel-PPPort>=3.19:${PORTSDIR}/devel/p5-Devel-PPPort \
-	p5-ExtUtils-ParseXS>=2.21:${PORTSDIR}/devel/p5-ExtUtils-ParseXS \
-	p5-MRO-Compat>=0:${PORTSDIR}/devel/p5-MRO-Compat
+		p5-ExtUtils-ParseXS>=2.21:${PORTSDIR}/devel/p5-ExtUtils-ParseXS \
+		p5-MRO-Compat>=0:${PORTSDIR}/devel/p5-MRO-Compat
 TEST_DEPENDS=	p5-Test-Simple>=0:${PORTSDIR}/devel/p5-Test-Simple \
 		p5-Test-Exception>=0:${PORTSDIR}/devel/p5-Test-Exception
 
