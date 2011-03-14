@@ -14,6 +14,9 @@ MASTER_SITES=	http://members.macconnect.com/users/j/jalex/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A text based Hotline (http://www.bigredh.com) client for Unix
 
+DEPRECATED=     Upstream disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 GNU_CONFIGURE=	yes
