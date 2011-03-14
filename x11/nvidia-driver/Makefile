@@ -10,13 +10,13 @@ DISTVERSION?=	256.53
 PORTREVISION?=	1			# As a reminder it can be overridden
 CATEGORIES=	x11 kld
 MASTER_SITES=	${MASTER_SITE_NVIDIA}
-ARCH_SUFX=	${ARCH:S/i386//:S/amd/_/}
 # MASTER_SITE_SUBDIR has to be set later because it depends on NVVERSION
 DISTNAME=	NVIDIA-FreeBSD-x86${ARCH_SUFX}-${DISTVERSION}
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	NVidia graphics card binary drivers for hardware OpenGL rendering
 
+ARCH_SUFX=	${ARCH:S/i386//:S/amd/_/}
 NO_PACKAGE=	should be recompiled for a particular FreeBSD kernel
 USE_GL=		gl
 USE_LDCONFIG=	yes
@@ -57,10 +57,8 @@ OPTIONS+=	WBINVD		"Enable heavy-weight cache-flush logic" off
 
 .include <bsd.port.pre.mk>
 
-# XXX Should use ${PKG_INFO} but it does not expand for some reason XXX
-#
-XSERVVERSION!=	/usr/sbin/pkg_info -qO x11-servers/xorg-server 2>/dev/null || true
-LIBGLVERSION!=	/usr/sbin/pkg_info -qO graphics/libGL 2>/dev/null || true
+XSERVVERSION!=	${PKG_INFO} -qO x11-servers/xorg-server 2>/dev/null || true
+LIBGLVERSION!=	${PKG_INFO} -qO graphics/libGL 2>/dev/null || true
 
 .if empty(XSERVVERSION)
 IGNORE=		needs an X server implementation installed
