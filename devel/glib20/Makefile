@@ -78,6 +78,10 @@ EXTRA_PATCHES+=	${FILESDIR}/extra-patch-glib_Makefile.in \
 #CONFIGURE_ENV+=	CFLAGS="-D__STDC_ISO_10646__"
 .endif
 
+.if defined(WITH_DEBUG)
+CONFIGURE_ARGS+=	--enable-debug=yes
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g' \
 		${WRKSRC}/glib/gutils.c
