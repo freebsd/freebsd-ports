@@ -150,7 +150,7 @@ Note:  Please add new entries to the beginning of this file.
 	<p>Subversion project reports:</p>
 	<blockquote cite="http://subversion.apache.org/security/CVE-2011-0715-advisory.txt">
 	  <p>Subversion HTTP servers up to 1.5.9 (inclusive) or 1.6.15 (inclusive)
-             are vulnerable to a remotely triggerable NULL-pointer dereference.</p>
+	    are vulnerable to a remotely triggerable NULL-pointer dereference.</p>
 	</blockquote>
       </body>
     </description>
