@@ -8,7 +8,7 @@
 
 PORTNAME=	system-config-printer
 PORTVERSION=	1.1.16
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	print gnome
 MASTER_SITES=	http://cyberelk.net/tim/data/${PORTNAME}/${PORTVERSION:R}/
 
@@ -37,8 +37,14 @@ USE_GNOME=	pygtk2
 MAN1=	system-config-printer-applet.1 system-config-printer.1
 PLIST_SUB=	PYTHON_VER=${PYTHON_VERSION:S/python//}
 
+INSTALLS_EGGINFO=	yes
+PYDISTUTILS_PKGNAME=	cupshelpers
+PYDISTUTILS_PKGVERSION=	1.0
+
 post-patch:
 	@${FIND} ${WRKSRC} -type f | ${XARGS} ${REINPLACE_CMD} -e \
 		's|%%LOCALBASE%%|${LOCALBASE}|g; s|%%PREFIX%%|${PREFIX}|g'
+	@${REINPLACE_CMD} -e 's|setup.py install|setup.py install -c -O1|g' \
+		${WRKSRC}/Makefile.in
 
 .include <bsd.port.mk>
