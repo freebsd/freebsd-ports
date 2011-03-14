@@ -4,9 +4,11 @@
 %%DATADIR%%/examples/REF.php
 %%DATADIR%%/examples/cache.php
 %%DATADIR%%/examples/cache-group.php
+%%DATADIR%%/examples/curl.php
 %%DATADIR%%/examples/query_Execute.php
 %%DATADIR%%/examples/queue.php
 %%DATADIR%%/examples/sessions.php
+%%DATADIR%%/examples/sqliteSessions.php
 %%DATADIR%%/examples/transactions.php
 %%DATADIR%%/mplt.php
 @dirrm %%DATADIR%%/examples
