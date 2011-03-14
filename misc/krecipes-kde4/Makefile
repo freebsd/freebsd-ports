@@ -6,48 +6,54 @@
 #
 
 PORTNAME=	krecipes
-PORTVERSION=	0.9.1
-PORTREVISION=	5
+DISTVERSION=	2.0-beta2
 CATEGORIES=	misc kde
-MASTER_SITES=	SF
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${DISTVERSION}
 
-MAINTAINER=	hank@millerfarm.com
-COMMENT=	Recipe database for cooks
+MAINTAINER=	bsdkaffee@gmail.com
+COMMENT=	Recipe database for KDE4
 
-USE_KDELIBS_VER=3
-USE_AUTOTOOLS=	libtool
+LIB_DEPENDS=	qimageblitz.4:${PORTSDIR}/x11/qimageblitz
+
+LATEST_LINK=	${PORTNAME}-kde4
+
+USE_CMAKE=	yes
+USE_GETTEXT=	yes
+USE_QT_VER=	4
+QT_COMPONENTS=	moc_build qmake_build rcc_build uic_build
+USE_KDE4=	automoc4 kdeprefix kdelibs sharedmime
+MAKE_JOBS_SAFE=	yes
+
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 OPTIONS=	SQLITE "Support for SQLite backend" on \
 		MYSQL "Support for MySQL backend" off \
 		POSTGRESQL "Support for PostgreSQL backend" off
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if defined(WITHOUT_SQLITE)
-CONFIGURE_ARGS+=	--without-sqlite
+CMAKE_ARGS+=	-DWITH_Sqlite:BOOL=OFF
 .else
 USE_SQLITE=	yes
+QT_COMPONENTS+=	sql-sqlite3_run
 .endif
 
 .if defined(WITH_MYSQL)
-RUN_DEPENDS+=	${LOCALBASE}/lib/plugins/sqldrivers/libqsqlmysql.so:${PORTSDIR}/databases/qt-mysql-plugin
-.else
-CONFIGURE_ARGS+=	--without-mysql
+USE_MYSQL=	yes
+QT_COMPONENTS+=	sql-mysql_run
 .endif
 
 .if defined(WITH_POSTGRESQL)
-RUN_DEPENDS+=	${LOCALBASE}/lib/plugins/sqldrivers/libqsqlpsql.so:${PORTSDIR}/databases/qt-pgsql-plugin
-.else
-CONFIGURE_ARGS+=	--without-postgresql
+USE_PGSQL=	yes
+QT_COMPONENTS+=	sql-pgsql_run
 .endif
-
-post-extract:
-	@${REINPLACE_CMD} -e 's|-O2||g'	${WRKSRC}/${CONFIGURE_SCRIPT}
 
 pre-configure:
+
 .if defined(WITHOUT_SQLITE) && !defined(WITH_MYSQL) && !defined(WITH_POSTGRESQL)
-	@${ECHO} "You must have at least one database backend"
-	@exit 1
+IGNORE=	at least one database backend must be selected, run 'make config' and select a database
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
