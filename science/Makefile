@@ -155,6 +155,7 @@
     SUBDIR += py-obspy.core
     SUBDIR += py-obspy.gse2
     SUBDIR += py-obspy.mseed
+    SUBDIR += py-obspy.signal
     SUBDIR += py-openbabel
     SUBDIR += py-paida
     SUBDIR += py-pydicom
