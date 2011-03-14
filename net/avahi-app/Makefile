@@ -3,11 +3,11 @@
 # Whom:			Joe Marcus Clarke <marcus@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/net/avahi-app/Makefile,v 1.14 2010/10/23 20:58:29 marcus Exp $
+#   $MCom: ports/net/avahi-app/Makefile,v 1.17 2011/03/13 17:23:19 kwm Exp $
 #
 
 PORTNAME=	avahi
-PORTVERSION=	0.6.28
+PORTVERSION=	0.6.29
 PORTREVISION?=	0
 CATEGORIES?=	net dns
 MASTER_SITES=	http://www.avahi.org/download/
@@ -164,8 +164,10 @@ avahi-post-install:
 			${PREFIX}/etc/avahi; \
 	fi
 .endfor
+.if ${AVAHI_SLAVE}=="no"
 	${INSTALL_DATA} ${FILESDIR}/org.freedesktop.Avahi.service \
 		${LOCALBASE}/share/dbus-1/system-services
+.endif
 .if !defined(PACKAGE_BUILDING) && (${AVAHI_SLAVE}=="no" || ${AVAHI_SLAVE}=="autoipd")
 	@${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 .endif
