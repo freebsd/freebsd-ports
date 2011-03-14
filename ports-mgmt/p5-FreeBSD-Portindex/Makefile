@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	FreeBSD-Portindex
-PORTVERSION=	2.2
-PORTREVISION=	1
+PORTVERSION=	2.3
 CATEGORIES=	ports-mgmt perl5
 MASTER_SITES=	http://www.infracaninophile.co.uk/portindex/
 PKGNAMEPREFIX=	p5-
@@ -27,7 +26,8 @@ CACHE_MODE?=	0775
 
 CFG_FILE=	portindex.cfg
 
-MAN1=		find-updated.1 cache-init.1 cache-update.1 portindex.1
+MAN1=		find-updated.1 cache-init.1 cache-update.1 portindex.1 \
+		portdepends.1
 
 post-install: install-conf install-cache
 
