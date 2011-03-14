@@ -14,6 +14,9 @@ MASTER_SITE_SUBDIR=	steve
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Extract binary files from multi-segment uuencoded postings
 
+DEPRECATED=     Upstream disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 MAKEFILE=	makefils/linux.mkf
 MAN1=		unpost.1
 PLIST_FILES=	bin/unpost
