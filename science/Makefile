@@ -153,6 +153,7 @@
     SUBDIR += py-mlpy
     SUBDIR += py-netCDF4
     SUBDIR += py-obspy.core
+    SUBDIR += py-obspy.mseed
     SUBDIR += py-openbabel
     SUBDIR += py-paida
     SUBDIR += py-pydicom
