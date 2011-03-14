@@ -8,4 +8,6 @@
 AWN_DESKTOP=    xfce4
 MASTERDIR=      ${.CURDIR}/../avant-window-navigator
 
+BROKEN=		does not configure
+
 .include <${MASTERDIR}/Makefile>
