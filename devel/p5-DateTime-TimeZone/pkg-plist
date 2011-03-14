@@ -1,3 +1,4 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/DateTime/TimeZone/.packlist
 %%SITE_PERL%%/DateTime/TimeZone.pm
 %%SITE_PERL%%/DateTime/TimeZone/Africa/Abidjan.pm
 %%SITE_PERL%%/DateTime/TimeZone/Africa/Accra.pm
@@ -137,6 +138,7 @@
 %%SITE_PERL%%/DateTime/TimeZone/America/Mazatlan.pm
 %%SITE_PERL%%/DateTime/TimeZone/America/Menominee.pm
 %%SITE_PERL%%/DateTime/TimeZone/America/Merida.pm
+%%SITE_PERL%%/DateTime/TimeZone/America/Metlakatla.pm
 %%SITE_PERL%%/DateTime/TimeZone/America/Mexico_City.pm
 %%SITE_PERL%%/DateTime/TimeZone/America/Miquelon.pm
 %%SITE_PERL%%/DateTime/TimeZone/America/Moncton.pm
@@ -149,6 +151,7 @@
 %%SITE_PERL%%/DateTime/TimeZone/America/Nipigon.pm
 %%SITE_PERL%%/DateTime/TimeZone/America/Nome.pm
 %%SITE_PERL%%/DateTime/TimeZone/America/Noronha.pm
+%%SITE_PERL%%/DateTime/TimeZone/America/North_Dakota/Beulah.pm
 %%SITE_PERL%%/DateTime/TimeZone/America/North_Dakota/Center.pm
 %%SITE_PERL%%/DateTime/TimeZone/America/North_Dakota/New_Salem.pm
 %%SITE_PERL%%/DateTime/TimeZone/America/Ojinaga.pm
@@ -172,6 +175,7 @@
 %%SITE_PERL%%/DateTime/TimeZone/America/Santo_Domingo.pm
 %%SITE_PERL%%/DateTime/TimeZone/America/Sao_Paulo.pm
 %%SITE_PERL%%/DateTime/TimeZone/America/Scoresbysund.pm
+%%SITE_PERL%%/DateTime/TimeZone/America/Sitka.pm
 %%SITE_PERL%%/DateTime/TimeZone/America/St_Johns.pm
 %%SITE_PERL%%/DateTime/TimeZone/America/St_Kitts.pm
 %%SITE_PERL%%/DateTime/TimeZone/America/St_Lucia.pm
@@ -413,6 +417,8 @@
 %%SITE_PERL%%/DateTime/TimeZone/Pacific/Wallis.pm
 %%SITE_PERL%%/DateTime/TimeZone/UTC.pm
 %%SITE_PERL%%/DateTime/TimeZone/WET.pm
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DateTime/TimeZone/
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DateTime
 @dirrmtry %%SITE_PERL%%/DateTime/TimeZone/Pacific
 @dirrmtry %%SITE_PERL%%/DateTime/TimeZone/OlsonDB
 @dirrmtry %%SITE_PERL%%/DateTime/TimeZone/Local

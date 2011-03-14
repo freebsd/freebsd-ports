@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	DateTime-TimeZone
-PORTVERSION=	1.26
-PORTREVISION=	2
+PORTVERSION=	1.29
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -20,7 +19,7 @@ RUN_DEPENDS=	p5-Class-Load>0:${PORTSDIR}/devel/p5-Class-Load \
 		p5-Params-Validate>=0.72:${PORTSDIR}/devel/p5-Params-Validate
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
-PERL_MODBUILD=	yes
+PERL_CONFIGURE=	yes
 
 MAN3=		DateTime::TimeZone.3 DateTime::TimeZone::Floating.3 \
 		DateTime::TimeZone::Local.3 DateTime::TimeZone::Local::Unix.3 \
