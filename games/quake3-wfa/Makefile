@@ -14,7 +14,7 @@ DISTFILES=	WFA35Engine.zip WFA35MapPack1.zip WFA35MapPack2.zip \
 		WFA_v35b.zip 35b_mappack1.zip
 DIST_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Quake III Arena Mod: Weapons Factory Arena
 
 NO_PACKAGE=	"Package will be 138MB, set FORCE_PACKAGE if you really want to build it"

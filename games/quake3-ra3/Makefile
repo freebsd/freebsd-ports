@@ -14,7 +14,7 @@ MASTER_SITES=	ftp://ftp.clanbase.com/pub/ \
 PKGNAMEPREFIX=	${Q3PKGNAMEPREFIX}
 DISTNAME=	${PORTNAME}${PORTVERSION:S/.//}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Quake III Arena Mod: Rocket Arena 3
 
 NO_PACKAGE=	"Package will be 102MB, set FORCE_PACKAGE if you really want to build it"

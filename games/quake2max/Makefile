@@ -17,7 +17,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:src \
 		${Q2MAX_DATA}:data
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	An OpenGL only Quake II engine modification
 
 EXTRACT_DEPENDS=unrar:${PORTSDIR}/archivers/unrar

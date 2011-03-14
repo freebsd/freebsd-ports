@@ -16,7 +16,7 @@ DISTNAME=	Lights.v${PORTVERSION}.Linux
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:data,src \
 		Lights-Bots${EXTRACT_SUFX}:src
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Lights modification for Quake II
 
 USE_BZIP2=	yes
