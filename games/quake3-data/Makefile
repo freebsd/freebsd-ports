@@ -15,7 +15,7 @@ PKGNAMEPREFIX=	${Q3PKGNAMEPREFIX}
 DISTNAME=	linuxq3apoint-${DISTVERSION}.x86
 EXTRACT_SUFX=	.run
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Quake III Arena data files
 
 NO_BUILD=	yes
