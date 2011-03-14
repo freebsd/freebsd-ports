@@ -13,6 +13,9 @@ MASTER_SITES=	http://www.iem.pw.edu.pl/ftp/distfiles/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	TCP/UDP connections tunneling tool via proxy or directly
 
+DEPRECATED=     Upstream disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 ALL_TARGET=	${PORTNAME}
 
 MAN1=	etunnel.1

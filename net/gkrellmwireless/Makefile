@@ -14,6 +14,9 @@ MASTER_SITES=	http://gkrellm.luon.net/files/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GKrellM wireless plugin
 
+DEPRECATED=     Upstream disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 BUILD_DEPENDS=	${LOCALBASE}/include/gkrellm/gkrellm.h:${PORTSDIR}/sysutils/gkrellm
 RUN_DEPENDS=	gkrellm:${PORTSDIR}/sysutils/gkrellm
 

@@ -15,6 +15,9 @@ DISTNAME=	${PORTNAME}_2_0
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The RTSP Proxy Kit is a reference implementation of an RTSP proxy
 
+DEPRECATED=     Upstream disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 HAS_CONFIGURE=	YES
 
 do-install:

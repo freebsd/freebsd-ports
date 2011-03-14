@@ -18,6 +18,9 @@ MASTER_SITE_SUBDIR=	dinoex
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A gnome frontend for tinyfuge
 
+DEPRECATED=     Upstream disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 RUN_DEPENDS=	tf:${PORTSDIR}/net/tinyfugue
 
 LICENSE=	GPLv2

@@ -14,6 +14,9 @@ MASTER_SITES=	ftp://ftp.openpkg.org/sources/DST/${PORTNAME}/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A straightforward SNTP daemon/utility
 
+DEPRECATED=     Upstream disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}" LIBS="-lm"
 CFLAGS+=	-DLOCKNAME='\"/var/run/msntp.pid\"'
 CFLAGS+=	-DSAVENAME='\"/var/db/msntp.state\"'

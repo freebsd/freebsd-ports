@@ -15,6 +15,9 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${DATAFILES}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	3D graphical version of the traceroute program
 
+DEPRECATED=     Upstream disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 BUILD_DEPENDS=	${LOCALBASE}/bin/host:${PORTSDIR}/dns/host
 RUN_DEPENDS=	${BUILD_DEPENDS}
 LIB_DEPENDS=	gtkgl.5:${PORTSDIR}/x11-toolkits/gtkglarea

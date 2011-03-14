@@ -14,6 +14,9 @@ MASTER_SITES=	http://linux.bydg.org/~yogin/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Qt LAN chat, compatible with Vypress Chat
 
+DEPRECATED=     Upstream disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 USE_QT_VER=	3
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes

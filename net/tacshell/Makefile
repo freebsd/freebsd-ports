@@ -13,6 +13,9 @@ MASTER_SITES=	http://www.rezrov.net/software/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Shell authentication for TACACS+ protocol
 
+DEPRECATED=     Upstream disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 GNU_CONFIGURE=	yes
 
 PORTDOCS=	README WHATSNEW ChangeLog

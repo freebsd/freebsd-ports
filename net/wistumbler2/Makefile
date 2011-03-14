@@ -15,6 +15,9 @@ DISTNAME=	wistumbler${PORTVERSION}-pre7
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Network Stumbler for WaveLAN/IEEE Wireless
 
+DEPRECATED=     Upstream disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 WRKSRC=		${WRKDIR}/${DISTNAME}
 
 USE_GNOME=	gtk20

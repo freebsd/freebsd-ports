@@ -14,6 +14,9 @@ MASTER_SITES=	http://www.icecrew.nl/software/gnoemoe/download/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Gnome MOO Client
 
+DEPRECATED=     Upstream disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 USE_RUBY=	yes
 USE_RUBY_FEATURES=	ruby18
 

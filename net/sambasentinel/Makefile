@@ -16,6 +16,9 @@ DISTNAME=	SambaSentinel-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	SambaSentinel is a gtk-frontend to smbstatus with additional features
 
+DEPRECATED=     Upstream disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 RUN_DEPENDS=	jags:${PORTSDIR}/net/jags
 
 PLIST_FILES=	bin/SambaSentinel

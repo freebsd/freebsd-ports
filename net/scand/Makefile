@@ -14,6 +14,9 @@ MASTER_SITES=	http://free.babolo.ru/src/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Flood scan detection and blocking daemon
 
+DEPRECATED=     Upstream disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 USE_RC_SUBR=	scand
 
 MAN8=		scand.8 scandctl.8

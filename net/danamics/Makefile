@@ -14,6 +14,9 @@ MASTER_SITES=	ftp://ftp.cs.uct.ac.za/pub/FreeBSD/distfiles-local/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Petri Net editor for correctness and performance analysis
 
+DEPRECATED=     Upstream disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 RUN_DEPENDS=	java:${PORTSDIR}/java/javavmwrapper
 
 USE_JAVA=	yes
