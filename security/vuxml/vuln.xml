@@ -52,19 +52,23 @@ Note:  Please add new entries to the beginning of this file.
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
 	<p>Avahi developers reports:</p>
-	<blockquote cite="http://avahi.org/milestone/Avahi 0.6.29">
-	  <p>Fix denial of services attack (CVE-2011-1002), which is caused
-             by incorrect fix for CVE=2010-2244.</p>
+	<blockquote cite="http://secunia.com/advisories/43361/">
+	  <p>A vulnerability has been reported in Avahi, which can be exploited
+	    by malicious people to cause a DoS (Denial of Service).
+	    The vulnerability is caused due to an error when processing certain
+	    UDP packets, which can be exploited to trigger an infinite loop by
+	    e.g. sending an empty packet to port 5353/UDP.</p>
 	</blockquote>
       </body>
     </description>
     <references>
      <cvename>CVE-2011-1002</cvename>
      <cvename>CVE-2010-2244</cvename>
-     <url>http://avahi.org/milestone/Avahi 0.6.29</url>
+     <url>http://secunia.com/advisories/43361/</url>
+     <url>https://bugzilla.redhat.com/show_bug.cgi?id=667187</url>
     </references>
     <dates>
-      <discovery>2011-03-09</discovery>
+      <discovery>2011-02-21</discovery>
       <entry>2011-03-13</entry>
     </dates>
   </vuln>
