@@ -19,6 +19,9 @@ EXTRACT_ONLY=	${RPMFILE}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT?=	Canon Bubble Jet Print Filter for Linux -- Common files
 
+DEPRECATED=     Upstream disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 EXTRACT_DEPENDS=	rpm2cpio.pl:${PORTSDIR}/archivers/rpm2cpio
 .if defined(SLAVE_PORT)
 RUN_DEPENDS=	stsmon:${PORTSDIR}/print/bjfiltercom \

@@ -14,6 +14,9 @@ DISTNAME=	c2ps-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A PostScript pretty-printer for C source
 
+DEPRECATED=     Upstream disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 MAN1=		c2ps.1
 PLIST_FILES=	bin/c2ps
 MAKE_ENV=	DEFAULT_PAPER_TYPE=${PS}

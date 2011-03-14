@@ -15,6 +15,9 @@ MASTER_SITES=	http://www.falk-henrich.de/download/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GUI for a2ps
 
+DEPRECATED=     Upstream disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 BUILD_DEPENDS=	a2ps:${PORTSDIR}/print/a2ps-letter
 RUN_DEPENDS=	a2ps:${PORTSDIR}/print/a2ps-letter
 

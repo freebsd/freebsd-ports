@@ -15,6 +15,9 @@ DISTNAME=	dvi2xx
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Convert dvi files to HP LaserJet or IBM 3812 format
 
+DEPRECATED=     Upstream disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 MAN1=		dvi2xx.1
 IGNOREFILES=	${DISTFILES}
 
