@@ -34,6 +34,41 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="8b986a05-4dbe-11e0-8b9a-02e0184b8d35">
+    <topic>avahi -- denial of service</topic>
+    <affects>
+      <package>
+	<name>avahi</name>
+	<name>avahi-app</name>
+	<name>avahi-autoipd</name>
+	<name>avahi-gtk</name>
+	<name>avahi-libdns</name>
+	<name>avahi-qt3</name>
+	<name>avahi-qt4</name>
+	<name>avahi-sharp</name>
+	<range><lt>0.6.29</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Avahi developers reports:</p>
+	<blockquote cite="http://avahi.org/milestone/Avahi 0.6.29">
+	  <p>Fix denial of services attack (CVE-2011-1002), which is caused
+             by incorrect fix for CVE=2010-2244.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+     <cvename>CVE-2011-1002</cvename>
+     <cvename>CVE-2010-2244</cvename>
+     <url>http://avahi.org/milestone/Avahi 0.6.29</url>
+    </references>
+    <dates>
+      <discovery>2011-03-FIXME</discovery>
+      <entry>2011-03-13</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="64691c49-4b22-11e0-a226-00e0815b8da8">
     <topic>mailman -- XSS vulnerability</topic>
     <affects>
