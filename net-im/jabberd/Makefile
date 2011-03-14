@@ -7,7 +7,7 @@
 
 PORTNAME=	jabberd
 PORTVERSION=	2.2.13
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-im
 MASTER_SITES=	http://codex.xiaoka.com/pub/jabberd2/releases/
 DIST_SUBDIR=	jabber
@@ -16,7 +16,7 @@ MAINTAINER=	mm@FreeBSD.org
 COMMENT=	Online presence and instant messaging server
 
 LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2 \
-		idn.16:${PORTSDIR}/dns/libidn \
+		idn.17:${PORTSDIR}/dns/libidn \
 		udns.0:${PORTSDIR}/dns/udns
 
 OPTIONS=	MYSQL "Support MySQL (storage/auth/reg)" on \

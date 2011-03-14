@@ -7,6 +7,7 @@
 
 PORTNAME=	Net-LibIDN
 PORTVERSION=	0.12
+PORTREVISION=	1
 CATEGORIES=	dns perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,7 +15,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	domi@nonsensss.de
 COMMENT=	This module provides access to the libidn library
 
-LIB_DEPENDS=	idn.16:${PORTSDIR}/dns/libidn
+LIB_DEPENDS=	idn.17:${PORTSDIR}/dns/libidn
 
 PERL_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--with-libidn=${PREFIX}/lib --with-libidn-inc=${PREFIX}/include

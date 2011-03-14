@@ -6,7 +6,7 @@
 
 PORTNAME=	mu-conference
 PORTVERSION=	0.8
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-im
 MASTER_SITES=	http://download.gna.org/mu-conference/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
@@ -15,7 +15,7 @@ MAINTAINER=	mm@FreeBSD.org
 COMMENT=	Multi-User Conferencing component for Jabber
 
 LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2 \
-		idn.16:${PORTSDIR}/dns/libidn
+		idn.17:${PORTSDIR}/dns/libidn
 
 USE_GNOME=	glib20 pkgconfig
 USE_RC_SUBR=	${PORTNAME}

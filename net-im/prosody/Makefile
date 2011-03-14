@@ -7,6 +7,7 @@
 
 PORTNAME=	prosody
 PORTVERSION=	0.7.0
+PORTREVISION=	1
 CATEGORIES=	net-im
 MASTER_SITES=	http://prosody.im/downloads/source/ \
 				http://redundancy.redundancy.org/mirror/

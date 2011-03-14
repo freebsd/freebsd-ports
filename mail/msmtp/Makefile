@@ -7,7 +7,7 @@
 
 PORTNAME=	msmtp
 PORTVERSION=	1.4.23
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail ipv6
 MASTER_SITES=	SF
 
@@ -54,7 +54,7 @@ CONFIGURE_ARGS+=	--without-libgsasl
 .endif
 
 .if !defined(WITHOUT_IDN)
-LIB_DEPENDS+=	idn.16:${PORTSDIR}/dns/libidn
+LIB_DEPENDS+=	idn.17:${PORTSDIR}/dns/libidn
 CONFIGURE_ARGS+=	--with-libidn
 .else
 CONFIGURE_ARGS+=	--without-libidn

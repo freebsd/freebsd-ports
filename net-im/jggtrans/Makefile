@@ -6,7 +6,7 @@
 
 PORTNAME=		jggtrans
 PORTVERSION=		2.2.4
-PORTREVISION=	1
+PORTREVISION=		2
 CATEGORIES=		net-im polish
 MASTER_SITES=		http://jggtrans.jajcus.net/downloads/ \
 			http://freebsd.e.pl/distfiles/
@@ -14,7 +14,7 @@ MASTER_SITES=		http://jggtrans.jajcus.net/downloads/ \
 MAINTAINER=		mg@fork.pl
 COMMENT=		Jabberd XMPP to GG instant messaging service gateway
 
-LIB_DEPENDS=		idn.16:${PORTSDIR}/dns/libidn \
+LIB_DEPENDS=		idn.17:${PORTSDIR}/dns/libidn \
 			expat.6:${PORTSDIR}/textproc/expat2 \
 			gadu.3:${PORTSDIR}/polish/libgadu
 

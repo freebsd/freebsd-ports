@@ -7,14 +7,14 @@
 
 PORTNAME=	mpop
 PORTVERSION=	1.0.23
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail
 MASTER_SITES=	SF
 
 MAINTAINER=	sylvio@FreeBSD.org
 COMMENT=	MPOP is a small and fast POP3 client
 
-LIB_DEPENDS=	idn.16:${PORTSDIR}/dns/libidn
+LIB_DEPENDS=	idn.17:${PORTSDIR}/dns/libidn
 
 OPTIONS=	GNUTLS  "Enable gnuTLS support" on \
 		GSASL "GNU SASL authentication support" on

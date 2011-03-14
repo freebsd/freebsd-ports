@@ -7,14 +7,14 @@
 
 PORTNAME=	campsite
 PORTVERSION=	2.6.7
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	www
 MASTER_SITES=	SF/${PORTNAME}/OldFiles
 
 MAINTAINER=	koutek@o-k.cz
 COMMENT=	The free and open multilingual web publishing tool for news sites
 
-LIB_DEPENDS=	idn.16:${PORTSDIR}/dns/libidn \
+LIB_DEPENDS=	idn.17:${PORTSDIR}/dns/libidn \
 		GraphicsMagick.1:${PORTSDIR}/graphics/GraphicsMagick
 BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash \
 		gm4:${PORTSDIR}/devel/m4 \

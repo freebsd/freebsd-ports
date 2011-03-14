@@ -7,6 +7,7 @@
 
 PORTNAME=	lynx
 PORTVERSION=	2.8.8d8
+PORTREVISION=	1
 CATEGORIES=	www ipv6
 MASTER_SITES=	http://lynx.isc.org/current/
 DISTNAME=	${PORTNAME}2.8.8dev.8
@@ -14,7 +15,7 @@ DISTNAME=	${PORTNAME}2.8.8dev.8
 MAINTAINER=	ache@FreeBSD.org
 COMMENT=	A non-graphical, text-based World-Wide Web client
 
-LIB_DEPENDS=	idn.16:${PORTSDIR}/dns/libidn
+LIB_DEPENDS=	idn.17:${PORTSDIR}/dns/libidn
 RUN_DEPENDS=	${LOCALBASE}/etc/mime.types:${PORTSDIR}/misc/mime-support
 
 CONFLICTS=	lynx-2.8.[0-7].*

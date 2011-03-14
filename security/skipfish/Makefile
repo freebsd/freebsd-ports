@@ -6,6 +6,7 @@
 
 PORTNAME=	skipfish
 PORTVERSION=	1.81b
+PORTREVISION=	1
 CATEGORIES=	security www
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 EXTRACT_SUFX=	.tgz
@@ -13,7 +14,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	rpsfa@rit.edu
 COMMENT=	A fully automated, active web application security reconnaissance tool
 
-LIB_DEPENDS=	idn.16:${PORTSDIR}/dns/libidn
+LIB_DEPENDS=	idn.17:${PORTSDIR}/dns/libidn
 
 LICENSE=	ASL
 LICENSE_FILE=	${WRKSRC}/COPYING

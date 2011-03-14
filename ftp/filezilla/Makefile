@@ -7,6 +7,7 @@
 
 PORTNAME=	filezilla
 PORTVERSION=	3.3.5.1
+PORTREVISION=	1
 CATEGORIES=	ftp
 MASTER_SITES=	SF/${PORTNAME}/FileZilla_Client/${PORTVERSION}
 DISTNAME=	FileZilla_${PORTVERSION}_src
@@ -18,7 +19,7 @@ RUN_DEPENDS=	xdg-open:${PORTSDIR}/devel/xdg-utils
 BUILD_DEPENDS=	${RUN_DEPENDS}
 LIB_DEPENDS=	gcrypt.17:${PORTSDIR}/security/libgcrypt \
 		gnutls.40:${PORTSDIR}/security/gnutls \
-		idn.16:${PORTSDIR}/dns/libidn \
+		idn.17:${PORTSDIR}/dns/libidn \
 		tinyxml.3:${PORTSDIR}/textproc/tinyxml
 
 LICENSE=	GPLv2

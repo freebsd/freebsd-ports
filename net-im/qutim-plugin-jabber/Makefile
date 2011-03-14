@@ -7,7 +7,7 @@
 
 PORTNAME=	jabber
 PORTVERSION=	0.2
-PORTREVISION=	3
+PORTREVISION=	4
 PORTEPOCH=	1
 CATEGORIES=	net-im
 MASTER_SITES=	http://qutim.org/download/ \
@@ -19,7 +19,7 @@ DISTNAME=	qutim-jabber_${PORTVERSION}_svn431
 MAINTAINER=	webmaster@kibab.com
 COMMENT=	Jabber protocol plugin for qutIM
 
-LIB_DEPENDS=	idn.16:${PORTSDIR}/dns/libidn
+LIB_DEPENDS=	idn.17:${PORTSDIR}/dns/libidn
 BUILD_DEPENDS=	${LOCALBASE}/bin/qutim:${PORTSDIR}/net-im/qutim
 RUN_DEPENDS=	${LOCALBASE}/bin/qutim:${PORTSDIR}/net-im/qutim
 
