@@ -8,11 +8,12 @@
 PORTNAME=	vstream-client
 PORTVERSION=	1.2
 CATEGORIES=	multimedia
-MASTER_SITES=	http://download.nicewarrior.org/${PORTNAME}/ \
-		http://www.exit.com/Archives/FreeBSD/
+MASTER_SITES=	GOOGLE_CODE
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The vstream library from the tivo-mplayer project
+
+USE_BZIP2=	yes
 
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX}
