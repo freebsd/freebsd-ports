@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	midori
-PORTVERSION=	0.3.2
+PORTVERSION=	0.3.3
 CATEGORIES=	www xfce
 MASTER_SITES=	${MASTER_SITE_XFCE}
 MASTER_SITE_SUBDIR=	src/apps/${PORTNAME}/${PORTVERSION:R}
@@ -21,6 +21,7 @@ LIB_DEPENDS=	webkit-1.0.13:${PORTSDIR}/www/webkit-gtk2 \
 		notify.1:${PORTSDIR}/devel/libnotify
 BUILD_DEPENDS=	rsvg-convert:${PORTSDIR}/graphics/librsvg2 \
 		valac:${PORTSDIR}/lang/vala
+RUN_DEPENDS=	${LOCALBASE}/share/certs/ca-root-nss.crt:${PORTSDIR}/security/ca_root_nss
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING
@@ -30,6 +31,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 CONFIGURE_ARGS+=--disable-libidn \
 		--enable-libnotify \
 		--enable-addons \
+		--enable-docs \
 		--jobs=${MAKE_JOBS_NUMBER}
 
 MAKE_JOBS_SAFE=	yes
@@ -47,7 +49,6 @@ USE_GETTEXT=	yes
 PLIST_SUB=	VERSION="${PORTVERSION:R}"
 
 OPTIONS=	NLS "Enable Native Language support" on \
-		USERDOCS "Build user documentation" off \
 		APIDOCS "Build api documentation" off \
 		UNIQUE "Enable single instance support" off
 
@@ -61,15 +62,6 @@ PLIST_SUB+=	NLS=""
 .else
 CONFIGURE_ARGS+=	--disable-nls
 PLIST_SUB+=	NLS="@comment "
-.endif
-
-.if defined(WITH_USERDOCS)
-BUILD_DEPENDS+=rst2html:${PORTSDIR}/textproc/py-docutils
-CONFIGURE_ARGS+=--enable-userdocs
-PLIST_SUB+=	USERDOCS=""
-.else
-CONFIGURE_ARGS+=--disable-userdocs
-PLIST_SUB+=	USERDOCS="@comment "
 .endif
 
 .if defined(WITH_APIDOCS)

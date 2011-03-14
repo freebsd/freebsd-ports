@@ -73,7 +73,8 @@ share/applications/midori.desktop
 %%APIDOCS%%%%DOCSDIR%%/api/midori/html/right.png
 %%APIDOCS%%%%DOCSDIR%%/api/midori/html/style.css
 %%APIDOCS%%%%DOCSDIR%%/api/midori/html/up.png
-%%USERDOCS%%%%DOCSDIR%%/user/midori.html
+%%DOCSDIR%%/faq.css
+%%DOCSDIR%%/faq.html
 share/icons/hicolor/16x16/apps/midori.png
 share/icons/hicolor/16x16/categories/extension.png
 share/icons/hicolor/16x16/status/news-feed.png
@@ -154,13 +155,10 @@ share/vala/vapi/history-list.vapi
 %%APIDOCS%%@dirrm %%DOCSDIR%%/api/katze/html
 %%APIDOCS%%@dirrm %%DOCSDIR%%/api/katze
 %%APIDOCS%%@dirrm %%DOCSDIR%%/api
-%%USERDOCS%%@dirrm %%DOCSDIR%%/user
 @dirrm %%DOCSDIR%%
-@dirrmtry share/applications
 @dirrm lib/midori
 @dirrm include/midori-%%VERSION%%/extensions
 @dirrm include/midori-%%VERSION%%
 @dirrm etc/xdg/midori
-@dirrmtry etc/xdg
 @exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
 @unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
