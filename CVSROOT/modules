@@ -14385,6 +14385,7 @@ p5-Test-Block                   ports/devel/p5-Test-Block
 p5-Test-Class                   ports/devel/p5-Test-Class
 p5-Test-ClassAPI                ports/devel/p5-Test-ClassAPI
 p5-Test-Cmd                     ports/devel/p5-Test-Cmd
+p5-Test-Command-Simple          ports/devel/p5-Test-Command-Simple
 p5-Test-Compile                 ports/devel/p5-Test-Compile
 p5-Test-Corpus-Audio-MPD        ports/audio/p5-Test-Corpus-Audio-MPD
 p5-Test-Cukes                   ports/databases/p5-Test-Cukes
@@ -18607,6 +18608,7 @@ p5-test-block                   ports/devel/p5-Test-Block
 p5-test-class                   ports/devel/p5-Test-Class
 p5-test-classapi                ports/devel/p5-Test-ClassAPI
 p5-test-cmd                     ports/devel/p5-Test-Cmd
+p5-test-command-simple          ports/devel/p5-Test-Command-Simple
 p5-test-compile                 ports/devel/p5-Test-Compile
 p5-test-corpus-audio-mpd        ports/audio/p5-Test-Corpus-Audio-MPD
 p5-test-cukes                   ports/databases/p5-Test-Cukes
@@ -26234,6 +26236,7 @@ wmminichess                     ports/games/wmminichess
 wmmixer                         ports/audio/wmmixer
 wmmoonclock                     ports/astro/wmmoonclock
 wmmount                         ports/sysutils/wmmount
+wmmp                            ports/audio/wmmp
 wmmp3                           ports/audio/wmmp3
 wmmsg                           ports/x11/wmmsg
 wmmultipop3                     ports/mail/wmmultipop3
