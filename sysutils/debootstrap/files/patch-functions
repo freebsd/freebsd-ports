@@ -1,5 +1,5 @@
 --- functions.orig	2011-02-22 01:25:08.000000000 +0100
-+++ functions	2011-02-26 21:46:35.811100782 +0100
++++ functions	2011-03-14 20:42:00.536562918 +0100
 @@ -232,7 +232,11 @@
  	# args: dest checksum size
  	local expchecksum="$2"
@@ -48,3 +48,68 @@
  			rm -f "$pkgdest"
  			gunzip "$pkgdest.gz"
  		elif get "$m/$path" "$pkgdest"; then
+@@ -934,12 +938,16 @@
+ 	    hurd-*)
+ 		;;
+ 	    *)
+-		umount_on_exit /dev/pts
+-		umount_on_exit /dev/shm
+-		umount_on_exit /proc/bus/usb
+-		umount_on_exit /proc
+-		umount "$TARGET/proc" 2>/dev/null || true
+-		in_target mount -t proc proc /proc
++		if [ `uname -s` = "FreeBSD" ] ; then
++			mount -t linprocfs proc $TARGET/proc
++		else
++			umount_on_exit /dev/pts
++			umount_on_exit /dev/shm
++			umount_on_exit /proc/bus/usb
++			umount_on_exit /proc
++			umount "$TARGET/proc" 2>/dev/null || true
++			in_target mount -t proc proc /proc
++		fi
+ 		if [ -d "$TARGET/sys" ] && \
+ 		   grep -q '[[:space:]]sysfs' /proc/filesystems 2>/dev/null; then
+ 			umount_on_exit /sys
+@@ -964,13 +972,17 @@
+ 	    hurd-*)
+ 		setup_devices_hurd ;;
+ 	    *)
+-		if [ -e "$DEVICES_TARGZ" ]; then
+-			zcat "$DEVICES_TARGZ" | (cd "$TARGET"; tar -xf -)
++		if [ "`uname -s`" = "FreeBSD" ]; then
++			mount -t devfs devfs $TARGET/dev
+ 		else
+-			if [ -e /dev/.devfsd ] ; then
+-				in_target mount -t devfs devfs /dev
++			if [ -e "$DEVICES_TARGZ" ]; then
++				zcat "$DEVICES_TARGZ" | (cd "$TARGET"; tar -xf -)
+ 			else
+-				error 1 NODEVTGZ "no %s. cannot create devices" "$DEVICES_TARGZ"
++				if [ -e /dev/.devfsd ] ; then
++					in_target mount -t devfs devfs /dev
++				else
++					error 1 NODEVTGZ "no %s. cannot create devices" "$DEVICES_TARGZ"
++				fi
+ 			fi
+ 		fi
+ 		;;
+@@ -1178,12 +1190,14 @@
+ 	    kfreebsd-*|hurd-*)
+ 		;;
+ 	    *)
+-		mknod "$1/test-dev-null" c 1 3 || return 1
+-		if ! echo test > "$1/test-dev-null"; then
++		if [ "`uname -s`" != "FreeBSD" ]; then
++			mknod "$1/test-dev-null" c 1 3 || return 1
++			if ! echo test > "$1/test-dev-null"; then
++				rm -f "$1/test-dev-null"
++				return 1
++			fi
+ 			rm -f "$1/test-dev-null"
+-			return 1
+ 		fi
+-		rm -f "$1/test-dev-null"
+ 		;;
+ 	esac
+ 
