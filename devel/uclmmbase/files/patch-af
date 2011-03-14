@@ -1,25 +1,23 @@
---- src/mbus_parser.c	Thu Jan 23 17:39:55 2003
-+++ src/mbus_parser.c	Thu Jan 23 17:41:26 2003
-@@ -158,6 +158,7 @@
- int mbus_parse_int(struct mbus_parser *m, int *i)
+--- src/mbus_parser.c	2006-09-13 13:36:11.000000000 -0400
++++ src/mbus_parser.c	2011-03-13 20:17:35.000000000 -0400
+@@ -159,4 +159,5 @@
  {
  	char	*p;
-+	long	l;
++	long	 l;
  
  	assert(m->magic == MBUS_PARSER_MAGIC);
- 
-@@ -166,11 +167,12 @@
- 		CHECK_OVERRUN;
+@@ -167,10 +168,11 @@
          }
  
--	*i = strtol(m->buffer, &p, 10);
--	if (((*i == LONG_MAX) || (*i == LONG_MIN)) && (errno == ERANGE)) {
+-	*i = (int) strtol(m->buffer, &p, 10);
+-	if (errno == ERANGE) {
+-		debug_msg("integer out of range: %d\n", *i);
 +	l = strtol(m->buffer, &p, 10);
-+	if (((l >= INT_MAX) || (l <= INT_MIN)) && (errno == ERANGE)) {
- 		debug_msg("integer out of range\n");
++	if (l > INT_MAX || l < INT_MIN || errno == ERANGE) {
++		debug_msg("integer out of range: %s\n", m->buffer);
+ 		abort();
  		return FALSE;
  	}
 +	*i = l;
  
  	if (p == m->buffer) {
- 		return FALSE;
