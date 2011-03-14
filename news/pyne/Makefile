@@ -15,6 +15,9 @@ MASTER_SITES=	http://www.soul-less.pwp.blueyonder.co.uk/pyne/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An X11 offline Newsreader/Emailer
 
+DEPRECATED=     Upstream disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 BUILD_WRKSRC=	${WRKDIR}/${DISTNAME}/src/po
 INSTALL_WRKSRC=	${WRKDIR}/${DISTNAME}/src/po
 

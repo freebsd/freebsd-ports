@@ -16,6 +16,9 @@ MASTER_SITES=	http://www25.big.jp/~jam/leafnode+/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Multi-user offline Usenet news package for small sites
 
+DEPRECATED=     Upstream disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 MAN8=		checkgroups.8 fetchnews.8 leafnode.8 texpire.8
 PKGINSTALL=	${WRKDIR}/INSTALL
 
