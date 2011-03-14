@@ -16,6 +16,9 @@ MASTER_SITES=	http://files.jabberstudio.org/kf/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A simple Jabber client using the GTK+ 2.0 toolkit
 
+DEPRECATED=     Upstream disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 LIB_DEPENDS=	loudmouth-1.0:${PORTSDIR}/net-im/loudmouth
 
 USE_XORG=	x11 xscrnsaver
