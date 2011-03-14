@@ -7,15 +7,14 @@
 
 PORTNAME=	shotwell
 PORTVERSION=	0.7.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics gnome
 MASTER_SITES=	http://www.yorba.org/download/shotwell/${PORTVERSION:R}/
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Open source photo manager for GNOME
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/libraw.a:${PORTSDIR}/graphics/libraw \
-		vala>=0.10.0:${PORTSDIR}/lang/vala
+BUILD_DEPENDS=	vala>=0.10.0:${PORTSDIR}/lang/vala
 LIB_DEPENDS=	sqlite3:${PORTSDIR}/databases/sqlite3 \
 		dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib \
 		gee.2:${PORTSDIR}/devel/libgee \
@@ -24,7 +23,8 @@ LIB_DEPENDS=	sqlite3:${PORTSDIR}/databases/sqlite3 \
 		exif.12:${PORTSDIR}/graphics/libexif \
 		gphoto2.2:${PORTSDIR}/graphics/libgphoto2 \
 		webkit:${PORTSDIR}/www/webkit-gtk2 \
-		unique-1.0.2:${PORTSDIR}/x11-toolkits/unique
+		unique-1.0.2:${PORTSDIR}/x11-toolkits/unique \
+		raw.2:${PORTSDIR}/graphics/libraw
 
 USE_BZIP2=	yes
 USE_GETTEXT=	yes
@@ -59,11 +59,6 @@ post-install:
 	@-update-desktop-database
 
 .include <bsd.port.pre.mk>
-
-# graphics/libraw
-.if exists(${LOCALBASE}/lib/libraw.so.0)
-LIB_DEPENDS+=	raw.0:${PORTSDIR}/graphics/libraw
-.endif
 
 # attempt at a DATADIR safe port
 .for dir in ${DATADIR:S,^${PREFIX}/,,:S,/, ,g}
