@@ -9,4 +9,4 @@ Modules
     nmb - Contains some of the NetBIOS over TCP/IP operations which is
           necessary for the smb module to operate. 
 
-WWW: http://miketeo.net/old/projects/pysmb/
+WWW: http://miketeo.net/wp/index.php/projects/pysmb
