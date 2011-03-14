@@ -2214,13 +2214,67 @@ Note:  Please add new entries to the beginning of this file.
     <affects>
       <package>
 	<name>chromium</name>
-	<range><lt>9.0.597.107</lt></range>
+	<range><lt>10.0.648.133</lt></range>
       </package>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
 	<p>Google Chrome Releases reports:</p>
 	<blockquote cite="http://googlechromereleases.blogspot.com/search/label/Stable%20updates">
+	  <p>Fixed in 10.0.648.133:<br/>
+	    [75712] High Memory corruption in style handling.
+	      Credit to Vincenzo Iozzo, Ralf Philipp Weinmann and Willem
+	      Pinckaers reported through ZDI.</p>
+
+	  <p>Fixed in 10.0.648.127:<br/>
+	    [42765] Low Possible to navigate or close the top location in a
+	      sandboxed frame. Credit to sirdarckcat of the Google Security
+	      Team.<br/>
+	    [Linux only] [49747] Low Work around an X server bug and crash with
+	      long messages. Credit to Louis Lang.<br/>
+	    [Linux only] [66962] Low Possible browser crash with parallel
+	      print()s. Credit to Aki Helin of OUSPG.<br/>
+	    [69187] Medium Cross-origin error message leak. Credit to Daniel
+	      Divricean.<br/>
+	    [69628] High Memory corruption with counter nodes. Credit to Martin
+	      Barbella.<br/>
+	    [70027] High Stale node in box layout. Credit to Martin
+	      Barbella.<br/>
+	    [70336] Medium Cross-origin error message leak with workers. Credit
+	      to Daniel Divricean.<br/>
+	    [70442] High Use after free with DOM URL handling. Credit to Sergey
+	      Glazunov.<br/>
+	    [Linux only] [70779] Medium Out of bounds read handling unicode
+	      ranges. Credit to miaubiz.<br/>
+	    [70877] High Same origin policy bypass in v8. Credit to Daniel
+	      Divricean.<br/>
+	    [70885] [71167] Low Pop-up blocker bypasses. Credit to Chamal de
+	      Silva.<br/>
+	    [71763] High Use-after-free in document script lifetime handling.
+	      Credit to miaubiz.<br/>
+	    [71788] High Out-of-bounds write in the OGG container. Credit to
+	      Google Chrome Security Team (SkyLined); plus subsequent
+	      independent discovery by David Weston of Microsoft and MSVR.<br/>
+	    [72028] High Stale pointer in table painting. Credit to Martin
+	      Barbella.<br/>
+	    [73026] High Use of corrupt out-of-bounds structure in video code.
+	      Credit to Tavis Ormandy of the Google Security Team.<br/>
+	    [73066] High Crash with the DataView object. Credit to Sergey
+	      Glazunov.<br/>
+	    [73134] High Bad cast in text rendering. Credit to miaubiz.<br/>
+	    [73196] High Stale pointer in WebKit context code. Credit to Sergey
+	      Glazunov.<br/>
+	    [73716] Low Leak of heap address in XSLT. Credit to Google Chrome
+	      Security Team (Chris Evans).<br/>
+	    [73746] High Stale pointer with SVG cursors. Credit to Sergey
+	      Glazunov.<br/>
+	    [74030] High DOM tree corruption with attribute handling. Credit to
+	      Sergey Glazunov.<br/>
+	    [74662] High Corruption via re-entrancy of RegExp code. Credit to
+	      Christian Holler.<br/>
+	    [74675] High Invalid memory access in v8. Credit to Christian
+	      Holler.</p>
+
 	  <p>Fixed in 9.0.597.107:<br/>
 	    [54262] High URL bar spoof. Credit to Jordi Chancel.<br/>
 	    [63732] High Crash with javascript dialogs. Credit to Sergey
@@ -2420,11 +2474,12 @@ Note:  Please add new entries to the beginning of this file.
     </description>
     <references>
       <url>http://googlechromereleases.blogspot.com/search/label/Stable%20updates</url>
+      <cvename>CVE-2011-1290</cvename>
     </references>
     <dates>
       <discovery>2010-10-19</discovery>
       <entry>2010-12-07</entry>
-      <modified>2011-03-01</modified>
+      <modified>2011-03-13</modified>
     </dates>
   </vuln>
 
