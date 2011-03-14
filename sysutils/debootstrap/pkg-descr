@@ -2,8 +2,10 @@ debootstrap is a tool which will install a Debian base system into
 a subdirectory of another, already installed system. It doesn't require an
 installation CD, just access to a Debian repository.
 
-In FreeBSD, you can use debootstrap to install Debian GNU/kFreeBSD into
+In FreeBSD, you can use debootstrap to install Debian into
 a subdirectory of your existing FreeBSD installation (i386 or amd64)
-and then run Debian GNU/kFreeBSD (i386 or amd64) in a jail or chroot.
+and then run Debian GNU/kFreeBSD (i386 or amd64) or Debian Linux (i386)
+in a jail or chroot.
 
 WWW:	http://wiki.debian.org/Debootstrap
+
