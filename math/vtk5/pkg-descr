@@ -1,15 +1,13 @@
-VTK - the Visualization Toolkit is an object oriented, high
-level library that allows one to easily write programs in C++, Tcl,
-Python and Java that do 3D visualization. 
-
-VTK enables users to concentrate on their work by providing a
-large number of excellent and feature packed high level functions that
-do visualization.  The library needs OpenGL to render the graphics and
-for FreeBSD machines Mesa is necessary. 
-
-The terms/copyright can be read in the docs dir/README.html. The patented 
-classes (few in number) are not to be used in commercial application 
-without a license from the patent/copyright holder (listed in the class
-header). Patented classes are listed in README.patented-classes.
+The Visualization Toolkit (VTK) is an open-source, freely available software
+system for 3D computer graphics, image processing and visualization. VTK
+consists of a C++ class library and several interpreted interface layers
+including Tcl/Tk, Java, and Python. Kitware, whose team created and continues
+to extend the toolkit, offers professional support and consulting services for
+VTK. VTK supports a wide variety of visualization algorithms including: scalar,
+vector, tensor, texture, and volumetric methods; and advanced modeling techniques
+such as: implicit modeling, polygon reduction, mesh smoothing, cutting, contouring,
+and Delaunay triangulation. VTK has an extensive information visualization
+framework, has a suite of 3D interaction widgets, supports parallel processing,
+and integrates with various databases on GUI toolkits such as Qt and Tk.
 
 WWW: http://www.vtk.org
