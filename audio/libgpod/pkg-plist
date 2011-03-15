@@ -1,15 +1,22 @@
+bin/ipod-read-sysinfo-extended
 include/gpod-1.0/gpod/itdb.h
 @dirrm include/gpod-1.0/gpod
 @dirrm include/gpod-1.0
-lib/libgpod.so.5
+%%MONO%%lib/libgpod/libgpod-sharp-test.exe
+%%MONO%%lib/libgpod/libgpod-sharp-test.exe.mdb
+%%MONO%%lib/libgpod/libgpod-sharp.dll
+%%MONO%%lib/libgpod/libgpod-sharp.dll.config
+%%MONO%%lib/libgpod/libgpod-sharp.dll.mdb
+%%MONO%%@dirrm lib/libgpod
+lib/libgpod.so.7
 lib/libgpod.so
 lib/libgpod.la
 lib/libgpod.a
 libdata/pkgconfig/libgpod-1.0.pc
+libdata/pkgconfig/libgpod-sharp.pc
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/gpod/__init__.py
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/gpod/__init__.pyc
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/gpod/__init__.pyo
-%%PYTHON%%%%PYTHON_SITELIBDIR%%/gpod/_gpod.a
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/gpod/_gpod.la
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/gpod/_gpod.so
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/gpod/gpod.py
@@ -51,7 +58,6 @@ share/locale/zh_CN/LC_MESSAGES/libgpod.mo
 %%PORTDOCS%%%%DOCSDIR%%/libgpod.devhelp
 %%PORTDOCS%%%%DOCSDIR%%/libgpod.devhelp2
 %%PORTDOCS%%%%DOCSDIR%%/photodb.html
-%%PORTDOCS%%%%DOCSDIR%%/up.png
 %%PORTDOCS%%%%DOCSDIR%%/right.png
 %%PORTDOCS%%%%DOCSDIR%%/style.css
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%PORTDOCS%%%%DOCSDIR%%/up.png
