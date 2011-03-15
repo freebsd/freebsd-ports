@@ -10,8 +10,7 @@ PORTNAME=	kisomandel
 PORTVERSION=	0.66
 PORTREVISION=	7
 CATEGORIES=	graphics
-MASTER_SITES=	${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	arved
+MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A fractal rendering program with nice 3d-display in realtime
