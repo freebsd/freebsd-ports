@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	lxsession
-PORTVERSION=	0.4.4
+PORTVERSION=	0.4.5
 CATEGORIES=	x11-wm
 MASTER_SITES=	SF/lxde/LXSession%20%28session%20manager%29/LXSession%20${PORTVERSION}
 
