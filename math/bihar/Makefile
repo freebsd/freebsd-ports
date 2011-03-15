@@ -16,6 +16,9 @@ EXTRACT_SUFX=	.tar
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Biharmonic equation in rectangular geometry and polar coordinates
 
+DEPRECATED=     Upstream disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 LIB_DEPENDS=	linpack.3:${PORTSDIR}/math/linpack
 
 # ${DISTFILES} is automatically created from the directory contents
