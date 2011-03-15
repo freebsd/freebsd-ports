@@ -2788,6 +2788,7 @@
     SUBDIR += py-aspects
     SUBDIR += py-aspyct
     SUBDIR += py-astng
+    SUBDIR += py-async
     SUBDIR += py-babel
     SUBDIR += py-bison
     SUBDIR += py-bitarray

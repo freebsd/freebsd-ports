@@ -1,0 +1,8 @@
+Async is one more attempt to make the definition and execution of asynchronous
+interdependent operations easy. For that to work, you may define tasks which
+communicate with each other by channels. Channels transfer items, which is very
+similar to bytes flowing through pipes uses in inter-process communication.
+Items will only be generated on demand, that is when you read from the
+respective output channel.
+
+WWW: http://packages.python.org/async/intro.html
