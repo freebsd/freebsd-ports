@@ -1,7 +1,7 @@
 Caml is a strongly-typed functional programming language from the
 ML family, close to Standard ML but slightly different.
 
-WWW: http://pauillac.inria.fr/caml/index-eng.html
+WWW: http://caml.inria.fr/
 
 The Caml Light system comprises the following parts: 
      - An interactive system, based on a read-eval-print loop.
