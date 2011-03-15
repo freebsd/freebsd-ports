@@ -14,6 +14,9 @@ MASTER_SITES=	http://jodrell.net/files/attic/translator/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A GTK+ frontend to the Babelfish translation service
 
+DEPRECATED=     Upstream disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Gtk2.pm:${PORTSDIR}/x11-toolkits/p5-Gtk2 \
 		${SITE_PERL}/${PERL_ARCH}/Gtk2/GladeXML.pm:${PORTSDIR}/x11-toolkits/p5-Glade2 \
 		${SITE_PERL}/${PERL_ARCH}/Gnome2/GConf.pm:${PORTSDIR}/devel/p5-Gnome2-GConf \

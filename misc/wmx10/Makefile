@@ -14,6 +14,9 @@ MASTER_SITES=	http://www.cs.uml.edu/~jhawkins/wmx10/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Remote control for X10 devices
 
+DEPRECATED=     Upstream disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 WRKSRC=		${WRKDIR}/wmx10.app/wmx10
 
 USE_XORG=	xpm x11 ice

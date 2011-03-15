@@ -15,6 +15,9 @@ DISTNAME=	${PORTNAME}-0.9.1-4
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Calculates the number of days between two dates
 
+DEPRECATED=     Upstream disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 ALL_TARGET=
 PLIST_FILES=	bin/datedif
 

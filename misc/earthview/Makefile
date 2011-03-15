@@ -16,6 +16,9 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Produces a view output of an arbitrary region of the Earth
 
+DEPRECATED=     Upstream disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 USE_XORG=	xpm
 CFLAGS+=	-I${LOCALBASE}/include
 ALL_TARGET=	earthview

@@ -14,6 +14,9 @@ MASTER_SITES=	http://telecom.inescporto.pt/~gjc/gnome-osd/${DISTVERSION:C|-.*$||
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An On-Screen-Display infrastructure using Pango text rendering
 
+DEPRECATED=     Upstream disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 USE_GNOME=	gnomehack gnomeprefix intlhack pygnome2
 USE_PYTHON=	yes
 USE_GMAKE=	yes
