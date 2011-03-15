@@ -14,6 +14,9 @@ MASTER_SITES=	http://yath.mine.nu/wmymail/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Check inbox using a WindowMaker DockApp
 
+DEPRECATED=     Upstream disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 LIB_DEPENDS=	dockapp.2:${PORTSDIR}/x11-wm/libdockapp
 RUN_DEPENDS=	fetchmail:${PORTSDIR}/mail/fetchmail
 

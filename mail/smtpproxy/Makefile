@@ -16,6 +16,9 @@ COMMENT=	SMTP proxy server
 MAKEFILE=	makefile
 DISABLE_SIZE=	yes
 
+DEPRECATED=     Upstream disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 MAN1=		smtp.proxy.1
 PLIST_FILES=	libexec/smtp.proxy
 PORTDOCS=	README rfc821.txt

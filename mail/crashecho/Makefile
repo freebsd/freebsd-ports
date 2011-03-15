@@ -18,6 +18,9 @@ DISTFILES=	${PORTNAME}-${PORTVERSION}-alt1.src${EXTRACT_SUFX}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An FTN JAM and *.MSG tosser
 
+DEPRECATED=     Upstream disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 EXTRACT_DEPENDS=rpm2cpio:${PORTSDIR}/archivers/rpm
 LIB_DEPENDS=	jam.2:${PORTSDIR}/mail/jamlib
 

@@ -15,6 +15,9 @@ DISTNAME=	messagewall_${PORTVERSION}.orig
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Free SMTP PROXY with filtering
 
+DEPRECATED=     Upstream disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 BUILD_DEPENDS=	${LOCALBASE}/include/firestring.h:${PORTSDIR}/misc/firestring \
 		${LOCALBASE}/include/firedns.h:${PORTSDIR}/dns/firedns
 

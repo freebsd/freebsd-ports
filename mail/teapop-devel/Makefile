@@ -14,6 +14,9 @@ MASTER_SITES=	ftp://ftp.toontown.org/pub/teapop/snapshots/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Yet another RFC1939 compliant POP3 server
 
+DEPRECATED=     Upstream disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 GNU_CONFIGURE=		yes
 CONFIGURE_ARGS=		--enable-flock
 

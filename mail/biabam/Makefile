@@ -14,6 +14,9 @@ MASTER_SITES=	http://mmj.dk/biabam/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A command-line attachment mailer
 
+DEPRECATED=     Upstream disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
 
 NO_BUILD=	yes

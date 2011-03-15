@@ -15,6 +15,9 @@ DISTNAME=	WMMail.app-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A little mail notifier for the Window Maker dock
 
+DEPRECATED=     Upstream disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 LIB_DEPENDS=	PropList.2:${PORTSDIR}/devel/libPropList
 
 USE_XORG=	xpm
