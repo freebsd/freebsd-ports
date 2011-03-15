@@ -56,4 +56,11 @@ regression-test: build
 RUN_DEPENDS+=	xz:${PORTSDIR}/archivers/xz
 .endif
 
+# supply result to skip a test that will abort configure if run as root
+.if ${OSVERSION} < 800040
+CONFIGURE_ENV+=	gl_cv_func_mknod_works=no
+.else
+CONFIGURE_ENV+= gl_cv_func_mknod_works=yes
+.endif
+
 .include <bsd.port.post.mk>
