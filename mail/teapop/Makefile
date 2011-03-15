@@ -11,11 +11,8 @@ CATEGORIES=	mail ipv6
 MASTER_SITES=	ftp://ftp.toontown.org/pub/teapop/ \
 		http://www.toontown.org/pub/teapop/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	pav@FreeBSD.org
 COMMENT=	Yet another RFC1939 compliant POP3 server
-
-DEPRECATED=     Upstream disapear and distfile is no more available
-EXPIRATION_DATE=        2011-05-01
 
 GNU_CONFIGURE=		yes
 CONFIGURE_ARGS=		--enable-flock
