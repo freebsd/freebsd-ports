@@ -7,7 +7,7 @@
 
 PORTNAME=	kipi-plugins
 PORTVERSION=	1.8.0
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	graphics kde
 MASTER_SITES=	SF/kipi/${PORTNAME}/${PORTVERSION}
@@ -39,7 +39,7 @@ OPTIONS=	GPOD "Enable Ipod Export plugin" ON \
 .include <bsd.port.options.mk>
 
 .if defined(WITH_GPOD)
-LIB_DEPENDS+=	gpod.5:${PORTSDIR}/audio/libgpod
+LIB_DEPENDS+=	gpod.7:${PORTSDIR}/audio/libgpod
 PLIST_SUB+=	GPOD=""
 .else
 CMAKE_ARGS+=	-DWITH_GLIB2:BOOL=OFF \

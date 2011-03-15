@@ -7,7 +7,7 @@
 
 PORTNAME=	last.fm
 PORTVERSION=	1.4.2.58240
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	audio net
 MASTER_SITES=	http://cdn.last.fm/client/src/
 DISTNAME=	${PORTNAME}-${PORTVERSION}.src
@@ -16,7 +16,7 @@ MAINTAINER=	arved@FreeBSD.org
 COMMENT=	Official last.fm radio player
 
 BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash
-LIB_DEPENDS=	gpod.5:${PORTSDIR}/audio/libgpod \
+LIB_DEPENDS=	gpod.7:${PORTSDIR}/audio/libgpod \
 		mad.2:${PORTSDIR}/audio/libmad \
 		samplerate.1:${PORTSDIR}/audio/libsamplerate \
 		fftw3f.5:${PORTSDIR}/math/fftw3-float

@@ -7,6 +7,7 @@
 
 PORTNAME=	gpodder
 PORTVERSION=	2.13
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	BERLIOS \
 		http://thp.io/2010/mygpoclient/:mygpoclient \
@@ -55,7 +56,7 @@ RUN_DEPENDS+=	py*-imaging>=0:${PORTSDIR}/graphics/py-imaging
 .endif
 
 .if defined(WITH_IPOD)
-LIB_DEPENDS+=	gpod.5:${PORTSDIR}/audio/libgpod
+LIB_DEPENDS+=	gpod.7:${PORTSDIR}/audio/libgpod
 RUN_DEPENDS+=	py*-mad>=0:${PORTSDIR}/audio/py-mad
 .if !exists(${PYTHON_SITELIBDIR}/gpod/__init__.py)
 IGNORE=		requires Python bindings for libgpod. Please uninstall libgpod and reinstall with Python support

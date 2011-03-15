@@ -8,7 +8,7 @@
 
 PORTNAME=	rhythmbox
 PORTVERSION=	0.12.8
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	audio gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -118,7 +118,7 @@ PLIST_SUB+=	PYTHON="@comment "
 .endif
 
 .if !defined(WITHOUT_IPOD)
-LIB_DEPENDS+=	gpod.5:${PORTSDIR}/audio/libgpod
+LIB_DEPENDS+=	gpod.7:${PORTSDIR}/audio/libgpod
 CONFIGURE_ARGS+=--with-ipod
 PLIST_SUB+=	IPOD=""
 .else

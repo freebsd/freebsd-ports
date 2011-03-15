@@ -7,6 +7,7 @@
 
 PORTNAME=	gnome-mplayer
 PORTVERSION=	1.0.0
+PORTREVISION=	1
 CATEGORIES=	multimedia gnome
 MASTER_SITES=	GOOGLE_CODE
 
@@ -63,7 +64,7 @@ CONFIGURE_ARGS+=	--without-libnotify
 .endif
 
 .if defined(WITH_GPOD)
-LIB_DEPENDS+=	gpod.5:${PORTSDIR}/audio/libgpod
+LIB_DEPENDS+=	gpod.7:${PORTSDIR}/audio/libgpod
 CONFIGURE_ARGS+=	--with-libgpod
 .else
 CONFIGURE_ARGS+=	--without-libgpod
