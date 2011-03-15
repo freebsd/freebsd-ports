@@ -2,6 +2,7 @@ bin/lxsession
 bin/lxsession-logout
 %%NLS%%share/locale/af/LC_MESSAGES/lxsession.mo
 %%NLS%%share/locale/ar/LC_MESSAGES/lxsession.mo
+%%NLS%%share/locale/ast/LC_MESSAGES/lxsession.mo
 %%NLS%%share/locale/bg/LC_MESSAGES/lxsession.mo
 %%NLS%%share/locale/bn/LC_MESSAGES/lxsession.mo
 %%NLS%%share/locale/bn_IN/LC_MESSAGES/lxsession.mo
@@ -44,7 +45,6 @@ bin/lxsession-logout
 %%NLS%%share/locale/sk/LC_MESSAGES/lxsession.mo
 %%NLS%%share/locale/sr/LC_MESSAGES/lxsession.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/lxsession.mo
-%%NLS%%share/locale/th/LC_MESSAGES/lxsession.mo
 %%NLS%%share/locale/tr/LC_MESSAGES/lxsession.mo
 %%NLS%%share/locale/uk/LC_MESSAGES/lxsession.mo
 %%NLS%%share/locale/ur/LC_MESSAGES/lxsession.mo
@@ -60,6 +60,8 @@ bin/lxsession-logout
 %%DATADIR%%/images/system-shutdown.png
 @dirrm %%DATADIR%%/images
 @dirrm %%DATADIR%%
+@dirrmtry share/locale/ast/LC_MESSAGES
+@dirrmtry share/locale/ast
 @dirrmtry share/locale/bn_IN/LC_MESSAGES
 @dirrmtry share/locale/bn_IN
 @dirrmtry share/locale/es_VE/LC_MESSAGES
