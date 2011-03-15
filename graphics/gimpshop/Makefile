@@ -9,14 +9,10 @@ PORTNAME=	gimpshop
 PORTVERSION=	2.2.11
 PORTREVISION=	15
 CATEGORIES=	graphics gnome
-MASTER_SITES=	http://www.plasticbugs.com/blogimg/ \
-		http://freebsd.powered.net/distfiles/
+MASTER_SITES=	http://www.computerdefense.org/gimpshop/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GIMP fork resembling Adobe Photoshop
-
-DEPRECATED=     Upstream disapear and distfile is no more available
-EXPIRATION_DATE=        2011-05-01
 
 LIB_DEPENDS=	wmf:${PORTSDIR}/graphics/libwmf \
 		aa:${PORTSDIR}/graphics/aalib \
