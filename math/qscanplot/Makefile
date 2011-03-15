@@ -15,6 +15,9 @@ MASTER_SITES=	# http://www.gae.ucm.es/~gonzalez/qscanplot/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A program to extract data from scanned plots, graphs and figures
 
+DEPRECATED=     Upstream disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 BUILD_DEPENDS=	qmake:${PORTSDIR}/devel/qmake
 
 USE_XORG=	x11 xext xinerama

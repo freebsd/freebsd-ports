@@ -16,6 +16,9 @@ DISTFILES=	${SRCS:.f=.f.gz}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Eigenvalue system package
 
+DEPRECATED=     Upstream disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 DIST_SUBDIR=	${PORTNAME}
 USE_LDCONFIG=	yes
 NO_WRKSUBDIR=	yes

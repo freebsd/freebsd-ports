@@ -15,6 +15,9 @@ DISTFILES=	fudgit_${PORTVERSION}.tar.gz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Multi-purpose data-processing and fitting program
 
+DEPRECATED=     Upstream disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 USE_GMAKE=	yes
 MAN1=		fudgit.1
 WRKSRC=		${WRKDIR}/${PORTNAME}_${PORTVERSION}

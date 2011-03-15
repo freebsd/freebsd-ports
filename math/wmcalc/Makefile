@@ -13,6 +13,9 @@ MASTER_SITES=	http://members.cox.net/ehf_dockapps/wmcalc/ \
 		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR= jedgar
 
+DEPRECATED=     Upstream disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple dockable calculator
 
