@@ -47,6 +47,7 @@
     SUBDIR += chillispot
     SUBDIR += choparp
     SUBDIR += cidr
+    SUBDIR += circe
     SUBDIR += cisco_conf
     SUBDIR += ciscoconf
     SUBDIR += clog

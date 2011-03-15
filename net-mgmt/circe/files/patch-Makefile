@@ -1,0 +1,82 @@
+--- ./Makefile.orig	2011-02-18 00:42:24.000000000 +0100
++++ ./Makefile	2011-03-13 19:47:52.000000000 +0100
+@@ -1,7 +1,7 @@
+ PREFIX ?= /usr/local
+ 
+-DIRFLAGS  =	-d -o root -g wheel -m 0555
+-EXFLAGS	  =	-Sp -o root -g wheel -m 0555
++DIRFLAGS  =	-d -o root -g wheel -m 0755
++EXFLAGS	  =	-Sp -o root -g wheel -m 0755
+ INFLAGS	  =	-Sp -o root -g wheel -m 0444
+ DIFFFLAGS =	-u
+ BINFILES  =	
+@@ -15,9 +15,8 @@
+ CONFFILES    = nac.conf
+ PERLLIBFILES = LibNAC.pm
+ IPFWFILES    = ipfw.begin ipfw.circe ipfw.common ipfw.end ipfw.init ipfw.local
+-DIRECTORIES  = /etc /etc/env.d /sbin /bin /libexec /libexec/nac \
+-               /share /share/nac /lib /lib/perl5 lib/perl5/site_perl \
+-			   /lib/perl5/site_perl/5.10.1
++DIRECTORIES  = /etc /etc/env /sbin /bin /libexec /libexec/nac \
++               /share /share/nac /lib
+ 
+ all:
+ 
+@@ -38,16 +37,14 @@
+ 	install $(INFLAGS) ${file} $(PREFIX)/share/nac/
+ .endfor
+ .for file in $(ENVFILES)
+-	install $(INFLAGS) ${file} $(PREFIX)/etc/env.d/
++	install $(INFLAGS) ${file} $(PREFIX)/etc/env/
+ .endfor
+ .for file in $(CONFFILES)
+ 	install ${INFLAGS} ${file} $(PREFIX)/etc/${file}.dist
+ .endfor
+-.for file in $(PERLLIBFILES)
+-	install ${INFLAGS} ${file} ${PREFIX}/lib/perl5/site_perl/5.10.1/
+-.endfor
++	install ${INFLAGS} $(PERLLIBFILES) $(SITE_PERL)
+ .for file in $(IPFWFILES)
+-	install ${INFLAGS} ipfw/${file} /etc/${file}.dist
++	install ${INFLAGS} ipfw/${file} ${PREFIX}/etc/${file}.dist
+ .endfor
+ 
+ diff : 
+@@ -64,16 +61,16 @@
+ 	diff $(DIFFFLAGS) ${file} $(PREFIX)/share/nac/${file} || echo
+ .endfor
+ .for file in $(ENVFILES)
+-	diff $(DIFFFLAGS) ${file} $(PREFIX)/etc/env.d/${file} || echo
++	diff $(DIFFFLAGS) ${file} $(PREFIX)/etc/env/${file} || echo
+ .endfor
+ .for file in $(CONFFILES)
+ 	diff $(DIFFFLAGS) ${file} $(PREFIX)/etc/${file}-sample || echo
+ .endfor
+ .for file in $(PERLLIBFILES)
+-	diff $(DIFFFLAGS) ${file} $(PREFIX)/lib/perl5/5.10.1/${file} || echo
++	diff $(DIFFFLAGS) ${file} $(SITE_PERL)/${file} || echo
+ .endfor
+ .for file in $(IPFWFILES)
+-	diff $(DIFFFLAGS) ${file} /etc/${file}.dist || echo
++	diff $(DIFFFLAGS) ${file} ${PREFIX}/etc/${file}.dist || echo
+ .endfor
+ 
+ deinstall :
+@@ -90,14 +87,14 @@
+ 	unlink $(PREFIX)/share/nac/${file} || echo
+ .endfor
+ .for file in $(ENVFILES)
+-	unlink $(PREFIX)/etc/env.d/${file} || echo
++	unlink $(PREFIX)/etc/env/${file} || echo
+ .endfor
+ .for file in $(CONFFILES)
+ 	unlink $(PREFIX)/etc/${file}.dist || echo
+ .endfor
+ .for file in $(PERLLIBFILES)
+-	unlink $(PREFIX)/lib/perl5/5.10.1/${file} || echo
++	unlink $(SITE_PERL)/${file} || echo
+ .endfor
+ .for file in $(IPFWFILES)
+-	unlink etc/${file}.dist || echo
++	unlink ${PREFIX}/etc/${file}.dist || echo
+ .endfor
