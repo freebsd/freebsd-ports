@@ -10,7 +10,7 @@ PORTNAME=	divxcalc
 PORTVERSION=	0.6
 PORTREVISION=	9
 CATEGORIES=	graphics
-MASTER_SITES=	http://imagef1.net.nz/divxcalc/
+MASTER_SITES=	http://www.axllent.org/uploads/files/divxcalc/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	DivX Calculator
