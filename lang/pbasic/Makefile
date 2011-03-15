@@ -17,6 +17,9 @@ COMMENT=	Phil Cockroft's Basic Interpreter (previously Rabbit Basic)
 # Ask jhs@freebsd.org if you want newer sources or author's latest e-mail
 #  (which is currently "phil@gmrs.isar.de" but changes a lot)
 
+DEPRECATED=     Upstream disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 ALL_TARGET=	freebsd
 MAKEFILE=	makefile
 MAN1=		pbasic.1

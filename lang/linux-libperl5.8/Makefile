@@ -17,6 +17,9 @@ DISTNAME=	${PORTNAME}${PORTVERSION:R}-${PORTVERSION}-67091cl
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library for embedding the perl interpreter (linux version)
 
+DEPRECATED=     Upstream disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 USE_LINUX_RPM=	yes
 USE_LDCONFIG=	yes
 ONLY_FOR_ARCHS=	i386 amd64

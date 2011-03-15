@@ -16,6 +16,9 @@ DISTNAME=	js-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	NJS (NGS) is a standalone JavaScript/ECMAScript interpreter
 
+DEPRECATED=     Upstream disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 CONFLICTS=	js-1.5.*
 
 USE_LDCONFIG=	yes

@@ -18,6 +18,9 @@ EXTRACT_ONLY=	${DISTFILES:M*.tar.*}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A productive development and delivery expert system tool
 
+DEPRECATED=     Upstream disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 WRKSRC=		${WRKDIR}/${PORTNAME}src/${PORTNAME}src
 
 MAKEFILE=	makefile.gcc

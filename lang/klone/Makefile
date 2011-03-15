@@ -15,6 +15,9 @@ DISTNAME=	Klone${PORTVERSION:E}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Small, Lisp-like interpreted language
 
+DEPRECATED=     Upstream disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 WRKSRC=		${WRKDIR}/Klone
 
 .include <bsd.port.pre.mk>
