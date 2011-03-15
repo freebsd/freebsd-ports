@@ -9,11 +9,9 @@ PORTNAME=	caml
 PORTVERSION=	0.75
 PORTREVISION=	3
 CATEGORIES=	lang elisp
-MASTER_SITES=	ftp://ftp.inria.fr/lang/caml-light/ \
-	ftp://sunsite.doc.ic.ac.uk/computing/programming/languages/ml/caml-light/ \
-	ftp://arcadia.informatik.uni-muenchen.de/pub/comp/programming/languages/functional/caml-light/ \
-	ftp://sunsite.icm.edu.pl/pub/programming/caml/ \
-	http://wwwfun.kurims.kyoto-u.ac.jp/soft/caml-light/
+MASTER_SITES=	http://caml.inria.fr/pub/distrib/caml-light-0.75/ \
+		ftp://arcadia.informatik.uni-muenchen.de/pub/comp/programming/languages/functional/caml-light/
+
 DISTNAME=	cl75unix
 
 MAINTAINER=	ports@FreeBSD.org
