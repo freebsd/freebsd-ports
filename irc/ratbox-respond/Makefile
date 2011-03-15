@@ -17,6 +17,9 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Client-side implementation of the challenge oper system in ircd-ratbox
 
+DEPRECATED=     Upstream disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 GNU_CONFIGURE=	yes
 USE_OPENSSL=	yes
 
