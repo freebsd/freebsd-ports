@@ -9,13 +9,10 @@ PORTNAME=	xinvest
 PORTVERSION=	2.6.9
 PORTREVISION=	2
 CATEGORIES=	finance deskutils
-MASTER_SITES=	http://xinvest.sunsite.dk/
+MASTER_SITES=	SF/${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A personal finance tracking and performance tool
-
-DEPRECATED=     Upstream disapear and distfile is no more available
-EXPIRATION_DATE=        2011-05-01
 
 USE_MOTIF=	yes
 USE_IMAKE=	yes
