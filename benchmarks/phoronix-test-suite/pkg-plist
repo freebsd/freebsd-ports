@@ -1,753 +1,366 @@
 bin/phoronix-test-suite
-%%DATADIR%%/pts/test-resources/scimark2/downloads.xml
-%%DATADIR%%/pts/test-resources/scimark2/parse-results.php
-%%DATADIR%%/pts/test-resources/scimark2/install.sh
-%%DATADIR%%/pts/test-resources/bwfirt/install.sh
-%%DATADIR%%/pts/test-resources/bwfirt/downloads.xml
-%%DATADIR%%/pts/test-resources/povray/parse-results.php
-%%DATADIR%%/pts/test-resources/povray/install.sh
-%%DATADIR%%/pts/test-resources/povray/downloads.xml
-%%DATADIR%%/pts/test-resources/c-ray/install.sh
-%%DATADIR%%/pts/test-resources/c-ray/downloads.xml
-%%DATADIR%%/pts/test-resources/c-ray/parse-results.php
-%%DATADIR%%/pts/test-resources/wine-water/install.sh
-%%DATADIR%%/pts/test-resources/wine-water/downloads.xml
-%%DATADIR%%/pts/test-resources/wine-vf2/install.sh
-%%DATADIR%%/pts/test-resources/wine-vf2/downloads.xml
-%%DATADIR%%/pts/test-resources/wine-metaballs/install.sh
-%%DATADIR%%/pts/test-resources/wine-metaballs/downloads.xml
-%%DATADIR%%/pts/test-resources/wine-hdr/install.sh
-%%DATADIR%%/pts/test-resources/wine-hdr/downloads.xml
-%%DATADIR%%/pts/test-resources/wine-fire2/install.sh
-%%DATADIR%%/pts/test-resources/wine-fire2/downloads.xml
-%%DATADIR%%/pts/test-resources/wine-domino/install.sh
-%%DATADIR%%/pts/test-resources/wine-domino/downloads.xml
-%%DATADIR%%/pts/test-resources/wine-cloth/install.sh
-%%DATADIR%%/pts/test-resources/wine-cloth/downloads.xml
-%%DATADIR%%/pts/test-resources/jxrendermark/downloads.xml
-%%DATADIR%%/pts/test-resources/jxrendermark/parse-results.php
-%%DATADIR%%/pts/test-resources/jxrendermark/install.sh
-%%DATADIR%%/pts/test-resources/qgears2/parse-results.php
-%%DATADIR%%/pts/test-resources/qgears2/install.sh
-%%DATADIR%%/pts/test-resources/qgears2/downloads.xml
-%%DATADIR%%/pts/test-resources/padman/parse-results.php
-%%DATADIR%%/pts/test-resources/padman/install.sh
-%%DATADIR%%/pts/test-resources/padman/downloads.xml
-%%DATADIR%%/pts/test-resources/bork/downloads.xml
-%%DATADIR%%/pts/test-resources/bork/pre.sh
-%%DATADIR%%/pts/test-resources/bork/post.sh
-%%DATADIR%%/pts/test-resources/bork/install.sh
-%%DATADIR%%/pts/test-resources/vdrift/parse-results.php
-%%DATADIR%%/pts/test-resources/vdrift/downloads.xml
-%%DATADIR%%/pts/test-resources/vdrift/install.sh
-%%DATADIR%%/pts/test-resources/unigine-tropics/parse-results.php
-%%DATADIR%%/pts/test-resources/unigine-tropics/install.sh
-%%DATADIR%%/pts/test-resources/unigine-tropics/downloads.xml
-%%DATADIR%%/pts/test-resources/unigine-sanctuary/parse-results.php
-%%DATADIR%%/pts/test-resources/unigine-sanctuary/install.sh
-%%DATADIR%%/pts/test-resources/unigine-sanctuary/downloads.xml
-%%DATADIR%%/pts/test-resources/ppracer/parse-results.php
-%%DATADIR%%/pts/test-resources/ppracer/install.sh
-%%DATADIR%%/pts/test-resources/ppracer/downloads.xml
-%%DATADIR%%/pts/test-resources/jgfxbat/parse-results.php
-%%DATADIR%%/pts/test-resources/jgfxbat/install.sh
-%%DATADIR%%/pts/test-resources/jgfxbat/downloads.xml
-%%DATADIR%%/pts/test-resources/j2dbench/parse-results.php
-%%DATADIR%%/pts/test-resources/j2dbench/install.sh
-%%DATADIR%%/pts/test-resources/j2dbench/downloads.xml
-%%DATADIR%%/pts/test-resources/idle/install.sh
-%%DATADIR%%/pts/test-resources/fhourstones/parse-results.php
-%%DATADIR%%/pts/test-resources/fhourstones/install.sh
-%%DATADIR%%/pts/test-resources/fhourstones/downloads.xml
-%%DATADIR%%/pts/test-resources/openssl/install.sh
-%%DATADIR%%/pts/test-resources/openssl/parse-results.php
-%%DATADIR%%/pts/test-resources/openssl/downloads.xml
-%%DATADIR%%/pts/test-resources/et/parse-results.php
-%%DATADIR%%/pts/test-resources/et/install.sh
-%%DATADIR%%/pts/test-resources/et/downloads.xml
-%%DATADIR%%/pts/test-resources/byte/parse-results.php
-%%DATADIR%%/pts/test-resources/byte/install.sh
-%%DATADIR%%/pts/test-resources/byte/downloads.xml
-%%DATADIR%%/pts/test-resources/encode-ogg/install.sh
-%%DATADIR%%/pts/test-resources/encode-ogg/downloads.xml
-%%DATADIR%%/pts/test-resources/yafray/install.sh
-%%DATADIR%%/pts/test-resources/yafray/install.sh.bak
-%%DATADIR%%/pts/test-resources/yafray/downloads.xml
-%%DATADIR%%/pts/test-resources/build-imagemagick/downloads.xml
-%%DATADIR%%/pts/test-resources/build-imagemagick/post.sh
-%%DATADIR%%/pts/test-resources/build-imagemagick/install.sh
-%%DATADIR%%/pts/test-resources/x11perf/parse-results.php
-%%DATADIR%%/pts/test-resources/x11perf/install.sh
-%%DATADIR%%/pts/test-resources/x11perf/downloads.xml
-%%DATADIR%%/pts/test-resources/specviewperf10/install.sh
-%%DATADIR%%/pts/test-resources/specviewperf10/parse-results.php
-%%DATADIR%%/pts/test-resources/specviewperf10/downloads.xml
-%%DATADIR%%/pts/test-resources/tremulous/downloads.xml
-%%DATADIR%%/pts/test-resources/tremulous/parse-results.php
-%%DATADIR%%/pts/test-resources/tremulous/install.sh
-%%DATADIR%%/pts/test-resources/compress-lzma/post.sh
-%%DATADIR%%/pts/test-resources/compress-lzma/pre.sh
-%%DATADIR%%/pts/test-resources/compress-lzma/install.sh
-%%DATADIR%%/pts/test-resources/compress-lzma/downloads.xml
-%%DATADIR%%/pts/test-resources/trislam/install.sh
-%%DATADIR%%/pts/test-resources/trislam/downloads.xml
-%%DATADIR%%/pts/test-resources/sqlite/post.sh
-%%DATADIR%%/pts/test-resources/sqlite/install.sh
-%%DATADIR%%/pts/test-resources/sqlite/downloads.xml
-%%DATADIR%%/pts/test-resources/build-php/post.sh
-%%DATADIR%%/pts/test-resources/build-php/install.sh
-%%DATADIR%%/pts/test-resources/build-php/downloads.xml
-%%DATADIR%%/pts/test-resources/build-linux-kernel/post.sh
-%%DATADIR%%/pts/test-resources/build-linux-kernel/install.sh
-%%DATADIR%%/pts/test-resources/build-linux-kernel/downloads.xml
-%%DATADIR%%/pts/test-resources/quake4/parse-results.php
-%%DATADIR%%/pts/test-resources/quake4/install.sh
-%%DATADIR%%/pts/test-resources/quake4/downloads.xml
-%%DATADIR%%/pts/test-resources/sunflow/downloads.xml
-%%DATADIR%%/pts/test-resources/sunflow/parse-results.php
-%%DATADIR%%/pts/test-resources/sunflow/install.sh
-%%DATADIR%%/pts/test-resources/ut2004-demo/parse-results.php
-%%DATADIR%%/pts/test-resources/ut2004-demo/install.sh
-%%DATADIR%%/pts/test-resources/ut2004-demo/downloads.xml
-%%DATADIR%%/pts/test-resources/compliance-ogl/downloads.xml
-%%DATADIR%%/pts/test-resources/compliance-ogl/parse-results.php
-%%DATADIR%%/pts/test-resources/compliance-ogl/install.sh
-%%DATADIR%%/pts/test-resources/ramspeed/parse-results.php
-%%DATADIR%%/pts/test-resources/ramspeed/downloads.xml
-%%DATADIR%%/pts/test-resources/ramspeed/install.sh
-%%DATADIR%%/pts/test-resources/encode-flac/downloads.xml
-%%DATADIR%%/pts/test-resources/encode-flac/install.sh
-%%DATADIR%%/pts/test-resources/fgl-glxgears/parse-results.php
-%%DATADIR%%/pts/test-resources/super-pi/downloads.xml
-%%DATADIR%%/pts/test-resources/super-pi/install.sh
-%%DATADIR%%/pts/test-resources/super-pi/parse-results.php
-%%DATADIR%%/pts/test-resources/build-mysql/install.sh
-%%DATADIR%%/pts/test-resources/build-mysql/post.sh
-%%DATADIR%%/pts/test-resources/build-mysql/downloads.xml
-%%DATADIR%%/pts/test-resources/gnupg/pre.sh
-%%DATADIR%%/pts/test-resources/gnupg/post.sh
-%%DATADIR%%/pts/test-resources/gnupg/install.sh
-%%DATADIR%%/pts/test-resources/gnupg/downloads.xml
-%%DATADIR%%/pts/test-resources/hmmer/install.sh
-%%DATADIR%%/pts/test-resources/hmmer/downloads.xml
-%%DATADIR%%/pts/test-resources/norsetto-shadow/parse-results.php
-%%DATADIR%%/pts/test-resources/norsetto-shadow/install.sh
-%%DATADIR%%/pts/test-resources/norsetto-shadow/downloads.xml
-%%DATADIR%%/pts/test-resources/compliance-acpi/parse-results.php
-%%DATADIR%%/pts/test-resources/compliance-acpi/install.sh
-%%DATADIR%%/pts/test-resources/encode-ape/install.sh
-%%DATADIR%%/pts/test-resources/encode-ape/downloads.xml
-%%DATADIR%%/pts/test-resources/etqw/parse-results.php
-%%DATADIR%%/pts/test-resources/etqw/install.sh
-%%DATADIR%%/pts/test-resources/etqw/install.sh.bak
-%%DATADIR%%/pts/test-resources/etqw/downloads.xml
-%%DATADIR%%/pts/test-resources/hdparm-read/parse-results.php
-%%DATADIR%%/pts/test-resources/hdparm-read/install.sh
-%%DATADIR%%/pts/test-resources/mrbayes/downloads.xml
-%%DATADIR%%/pts/test-resources/mrbayes/install.sh
-%%DATADIR%%/pts/test-resources/memory-bandwidth/install.sh
-%%DATADIR%%/pts/test-resources/memory-bandwidth/parse-results.php
-%%DATADIR%%/pts/test-resources/memory-bandwidth/downloads.xml
-%%DATADIR%%/pts/test-resources/xplane9/downloads.xml
-%%DATADIR%%/pts/test-resources/xplane9/install.sh
-%%DATADIR%%/pts/test-resources/xplane9/parse-results.php
-%%DATADIR%%/pts/test-resources/doom3/parse-results.php
-%%DATADIR%%/pts/test-resources/doom3/install.sh
-%%DATADIR%%/pts/test-resources/doom3/downloads.xml
-%%DATADIR%%/pts/test-resources/encode-mp3/downloads.xml
-%%DATADIR%%/pts/test-resources/encode-mp3/install.sh
-%%DATADIR%%/pts/test-resources/compliance-sensors/install.sh
-%%DATADIR%%/pts/test-resources/compliance-sensors/parse-results.php
-%%DATADIR%%/pts/test-resources/fract/install.sh
-%%DATADIR%%/pts/test-resources/fract/parse-results.php
-%%DATADIR%%/pts/test-resources/fract/downloads.xml
-%%DATADIR%%/pts/test-resources/sample-program/downloads.xml
-%%DATADIR%%/pts/test-resources/sample-program/install.sh
-%%DATADIR%%/pts/test-resources/ffmpeg/downloads.xml
-%%DATADIR%%/pts/test-resources/ffmpeg/install.sh
-%%DATADIR%%/pts/test-resources/build-apache/post.sh
-%%DATADIR%%/pts/test-resources/build-apache/install.sh
-%%DATADIR%%/pts/test-resources/build-apache/downloads.xml
-%%DATADIR%%/pts/test-resources/encode-wavpack/install.sh
-%%DATADIR%%/pts/test-resources/encode-wavpack/downloads.xml
-%%DATADIR%%/pts/test-resources/compress-7zip/parse-results.php
-%%DATADIR%%/pts/test-resources/compress-7zip/install.sh
-%%DATADIR%%/pts/test-resources/compress-7zip/downloads.xml
-%%DATADIR%%/pts/test-resources/compress-gzip/post.sh
-%%DATADIR%%/pts/test-resources/compress-gzip/pre.sh
-%%DATADIR%%/pts/test-resources/compress-gzip/install.sh
-%%DATADIR%%/pts/test-resources/video-extensions/downloads.xml
-%%DATADIR%%/pts/test-resources/video-extensions/install.sh
-%%DATADIR%%/pts/test-resources/video-extensions/parse-results.php
-%%DATADIR%%/pts/test-resources/espeak/downloads.xml
-%%DATADIR%%/pts/test-resources/espeak/install.sh
-%%DATADIR%%/pts/test-resources/warsow/downloads.xml
-%%DATADIR%%/pts/test-resources/warsow/install.sh
-%%DATADIR%%/pts/test-resources/warsow/parse-results.php
-%%DATADIR%%/pts/test-resources/build-mplayer/post.sh
-%%DATADIR%%/pts/test-resources/build-mplayer/pre.sh
-%%DATADIR%%/pts/test-resources/build-mplayer/install.sh
-%%DATADIR%%/pts/test-resources/build-mplayer/downloads.xml
-%%DATADIR%%/pts/test-resources/iozone/install.sh
-%%DATADIR%%/pts/test-resources/iozone/downloads.xml
-%%DATADIR%%/pts/test-resources/iozone/parse-results.php
-%%DATADIR%%/pts/test-resources/fio/downloads.xml
-%%DATADIR%%/pts/test-resources/fio/install.sh
-%%DATADIR%%/pts/test-resources/specviewperf9/install.sh
-%%DATADIR%%/pts/test-resources/specviewperf9/downloads.xml
-%%DATADIR%%/pts/test-resources/specviewperf9/parse-results.php
-%%DATADIR%%/pts/test-resources/gtkperf/downloads.xml
-%%DATADIR%%/pts/test-resources/gtkperf/install.sh
-%%DATADIR%%/pts/test-resources/gtkperf/parse-results.php
-%%DATADIR%%/pts/test-resources/urbanterror/install.sh
-%%DATADIR%%/pts/test-resources/urbanterror/downloads.xml
-%%DATADIR%%/pts/test-resources/urbanterror/parse-results.php
-%%DATADIR%%/pts/test-resources/etqw-demo/downloads.xml
-%%DATADIR%%/pts/test-resources/etqw-demo/install.sh
-%%DATADIR%%/pts/test-resources/etqw-demo/parse-results.php
-%%DATADIR%%/pts/test-resources/render-bench/downloads.xml
-%%DATADIR%%/pts/test-resources/render-bench/install.sh
-%%DATADIR%%/pts/test-resources/stresscpu2/install.sh
-%%DATADIR%%/pts/test-resources/stresscpu2/downloads.xml
-%%DATADIR%%/pts/test-resources/stresscpu2/parse-results.php
-%%DATADIR%%/pts/test-resources/compress-pbzip2/downloads.xml
-%%DATADIR%%/pts/test-resources/compress-pbzip2/pre.sh
-%%DATADIR%%/pts/test-resources/compress-pbzip2/install.sh
-%%DATADIR%%/pts/test-resources/compress-pbzip2/post.sh
-%%DATADIR%%/pts/test-resources/mafft/downloads.xml
-%%DATADIR%%/pts/test-resources/mafft/install.sh
-%%DATADIR%%/pts/test-resources/mafft/install.sh.bak
-%%DATADIR%%/pts/test-resources/openarena/install.sh
-%%DATADIR%%/pts/test-resources/openarena/downloads.xml
-%%DATADIR%%/pts/test-resources/openarena/parse-results.php
-%%DATADIR%%/pts/test-resources/lightsmark/downloads.xml
-%%DATADIR%%/pts/test-resources/lightsmark/install.sh
-%%DATADIR%%/pts/test-resources/lightsmark/parse-results.php
-%%DATADIR%%/pts/test-resources/java-scimark2/downloads.xml
-%%DATADIR%%/pts/test-resources/java-scimark2/install.sh
-%%DATADIR%%/pts/test-resources/java-scimark2/parse-results.php
-%%DATADIR%%/pts/test-resources/mencoder/downloads.xml
-%%DATADIR%%/pts/test-resources/mencoder/install.sh
-%%DATADIR%%/pts/test-resources/md-gromacs/downloads.xml
-%%DATADIR%%/pts/test-resources/md-gromacs/install.sh
-%%DATADIR%%/pts/test-resources/md-gromacs/parse-results.php
-%%DATADIR%%/pts/test-resources/nexuiz/parse-results.php
-%%DATADIR%%/pts/test-resources/nexuiz/downloads.xml
-%%DATADIR%%/pts/test-resources/nexuiz/install.sh
-%%DATADIR%%/pts/test-resources/glmark/downloads.xml
-%%DATADIR%%/pts/test-resources/glmark/install.sh
-%%DATADIR%%/pts/test-resources/glmark/parse-results.php
-%%DATADIR%%/pts/test-resources/graphics-magick/parse-results.php
-%%DATADIR%%/pts/test-resources/graphics-magick/downloads.xml
-%%DATADIR%%/pts/test-resources/graphics-magick/install.sh
-%%DATADIR%%/pts/test-resources/smokin-guns/install.sh
-%%DATADIR%%/pts/test-resources/smokin-guns/parse-results.php
-%%DATADIR%%/pts/test-resources/smokin-guns/downloads.xml
-%%DATADIR%%/pts/test-resources/prey/downloads.xml
-%%DATADIR%%/pts/test-resources/prey/parse-results.php
-%%DATADIR%%/pts/test-resources/prey/install.sh
-%%DATADIR%%/pts/base-test-resources/wine-humus-tests/parse-results.php
-%%DATADIR%%/pts/base-test-resources/wine-humus-tests/install.sh
-%%DATADIR%%/pts/base-test-resources/photo-sample/install.sh
-%%DATADIR%%/pts/base-test-resources/photo-sample/downloads.xml
-%%DATADIR%%/pts/base-test-resources/wine-unstable/post.php
-%%DATADIR%%/pts/base-test-resources/wine-unstable/install.sh
-%%DATADIR%%/pts/base-test-resources/wine-unstable/downloads.xml
-%%DATADIR%%/pts/base-test-resources/2d-test/post.php
-%%DATADIR%%/pts/base-test-resources/video-sample/install.sh
-%%DATADIR%%/pts/base-test-resources/video-sample/downloads.xml
-%%DATADIR%%/pts/base-test-resources/timed-audio-encode/install.sh
-%%DATADIR%%/pts/base-test-resources/timed-audio-encode/downloads.xml
-%%DATADIR%%/pts/base-test-resources/java-environment/post.php
-%%DATADIR%%/pts/test-suites/xsl/pts-suite-viewer.xsl
-%%DATADIR%%/pts/test-suites/universe-cli.xml
-%%DATADIR%%/pts/test-suites/bsd.xml
-%%DATADIR%%/pts/test-suites/gaming-free.xml
-%%DATADIR%%/pts/test-suites/opengl-demos.xml
-%%DATADIR%%/pts/test-suites/audio-encoding.xml
-%%DATADIR%%/pts/test-suites/computational.xml
-%%DATADIR%%/pts/test-suites/molecular-dynamics.xml
-%%DATADIR%%/pts/test-suites/memory.xml
-%%DATADIR%%/pts/test-suites/x-testing.xml
-%%DATADIR%%/pts/test-suites/xrender.xml
-%%DATADIR%%/pts/test-suites/netbook.xml
-%%DATADIR%%/pts/test-suites/filesystem.xml
-%%DATADIR%%/pts/test-suites/disk.xml
-%%DATADIR%%/pts/test-suites/gaming-closed.xml
-%%DATADIR%%/pts/test-suites/compilation.xml
-%%DATADIR%%/pts/test-suites/ioquake3-games.xml
-%%DATADIR%%/pts/test-suites/compression.xml
-%%DATADIR%%/pts/test-suites/wine-graphics.xml
-%%DATADIR%%/pts/test-suites/database.xml
-%%DATADIR%%/pts/test-suites/system-disk.xml
-%%DATADIR%%/pts/test-suites/video-encoding.xml
-%%DATADIR%%/pts/test-suites/universe-x.xml
-%%DATADIR%%/pts/test-suites/universe.xml
-%%DATADIR%%/pts/test-suites/system-compliance.xml
-%%DATADIR%%/pts/test-suites/opengl-workstation.xml
-%%DATADIR%%/pts/test-suites/gui-toolkits.xml
-%%DATADIR%%/pts/test-suites/java-opengl.xml
-%%DATADIR%%/pts/test-suites/linux-system.xml
-%%DATADIR%%/pts/test-suites/java.xml
-%%DATADIR%%/pts/test-suites/darwin.xml
-%%DATADIR%%/pts/test-suites/multicore.xml
-%%DATADIR%%/pts/test-suites/computational-biology.xml
-%%DATADIR%%/pts/test-suites/unigine.xml
-%%DATADIR%%/pts/test-suites/cryptography.xml
-%%DATADIR%%/pts/test-suites/ray-tracing.xml
-%%DATADIR%%/pts/test-suites/mesa.xml
-%%DATADIR%%/pts/test-suites/favorites.xml
-%%DATADIR%%/pts/test-suites/gaming.xml
-%%DATADIR%%/pts/test-suites/nevada.xml
-%%DATADIR%%/pts/test-suites/encoding.xml
-%%DATADIR%%/pts/base-test-profiles/java-environment.xml
-%%DATADIR%%/pts/base-test-profiles/photo-sample.xml
-%%DATADIR%%/pts/base-test-profiles/2d-test.xml
-%%DATADIR%%/pts/base-test-profiles/timed-audio-encode.xml
-%%DATADIR%%/pts/base-test-profiles/video-sample.xml
-%%DATADIR%%/pts/base-test-profiles/wine-humus-tests.xml
-%%DATADIR%%/pts/base-test-profiles/timed-build.xml
-%%DATADIR%%/pts/base-test-profiles/wine-unstable.xml
-%%DATADIR%%/pts/distro-scripts/install-centos-packages.sh
-%%DATADIR%%/pts/distro-scripts/install-freebsd-packages.sh
-%%DATADIR%%/pts/distro-scripts/install-netbsd-packages.sh
-%%DATADIR%%/pts/distro-scripts/install-arch-packages.sh
-%%DATADIR%%/pts/distro-scripts/install-pclinuxos-packages.sh
-%%DATADIR%%/pts/distro-scripts/install-ubuntu-packages.sh
-%%DATADIR%%/pts/distro-scripts/install-opensuse-packages.sh
-%%DATADIR%%/pts/distro-scripts/install-opensolaris-packages.sh
-%%DATADIR%%/pts/distro-scripts/install-mandrivalinux-packages.sh
-%%DATADIR%%/pts/distro-scripts/install-gentoo-packages.sh
-%%DATADIR%%/pts/distro-scripts/install-fedora-packages.sh
-%%DATADIR%%/pts/distro-scripts/install-pardus-packages.sh
-%%DATADIR%%/pts/test-profiles/xsl/pts-test-profile-viewer.xsl
-%%DATADIR%%/pts/test-profiles/smokin-guns.xml
-%%DATADIR%%/pts/test-profiles/warsow.xml
-%%DATADIR%%/pts/test-profiles/glmark.xml
-%%DATADIR%%/pts/test-profiles/nexuiz.xml
-%%DATADIR%%/pts/test-profiles/bwfirt.xml
-%%DATADIR%%/pts/test-profiles/vdrift.xml
-%%DATADIR%%/pts/test-profiles/ut2004-demo.xml
-%%DATADIR%%/pts/test-profiles/mafft.xml
-%%DATADIR%%/pts/test-profiles/lightsmark.xml
-%%DATADIR%%/pts/test-profiles/j2dbench.xml
-%%DATADIR%%/pts/test-profiles/graphics-magick.xml
-%%DATADIR%%/pts/test-profiles/fio.xml
-%%DATADIR%%/pts/test-profiles/encode-wavpack.xml
-%%DATADIR%%/pts/test-profiles/encode-mp3.xml
-%%DATADIR%%/pts/test-profiles/encode-flac.xml
-%%DATADIR%%/pts/test-profiles/encode-ape.xml
-%%DATADIR%%/pts/test-profiles/build-mysql.xml
-%%DATADIR%%/pts/test-profiles/wine-cloth.xml
-%%DATADIR%%/pts/test-profiles/urbanterror.xml
-%%DATADIR%%/pts/test-profiles/unigine-tropics.xml
-%%DATADIR%%/pts/test-profiles/et.xml
-%%DATADIR%%/pts/test-profiles/unigine-sanctuary.xml
-%%DATADIR%%/pts/test-profiles/trislam.xml
-%%DATADIR%%/pts/test-profiles/stresscpu2.xml
-%%DATADIR%%/pts/test-profiles/specviewperf10.xml
-%%DATADIR%%/pts/test-profiles/ramspeed.xml
-%%DATADIR%%/pts/test-profiles/ppracer.xml
-%%DATADIR%%/pts/test-profiles/openssl.xml
-%%DATADIR%%/pts/test-profiles/openarena.xml
-%%DATADIR%%/pts/test-profiles/mrbayes.xml
-%%DATADIR%%/pts/test-profiles/idle.xml
-%%DATADIR%%/pts/test-profiles/gnupg.xml
-%%DATADIR%%/pts/test-profiles/fract.xml
-%%DATADIR%%/pts/test-profiles/fgl-glxgears.xml
-%%DATADIR%%/pts/test-profiles/etqw-demo.xml
-%%DATADIR%%/pts/test-profiles/espeak.xml
-%%DATADIR%%/pts/test-profiles/compliance-sensors.xml
-%%DATADIR%%/pts/test-profiles/byte.xml
-%%DATADIR%%/pts/test-profiles/build-mplayer.xml
-%%DATADIR%%/pts/test-profiles/bork.xml
-%%DATADIR%%/pts/test-profiles/gtkperf.xml
-%%DATADIR%%/pts/test-profiles/c-ray.xml
-%%DATADIR%%/pts/test-profiles/mencoder.xml
-%%DATADIR%%/pts/test-profiles/compliance-ogl.xml
-%%DATADIR%%/pts/test-profiles/quake4.xml
-%%DATADIR%%/pts/test-profiles/prey.xml
-%%DATADIR%%/pts/test-profiles/etqw.xml
-%%DATADIR%%/pts/test-profiles/qgears2.xml
-%%DATADIR%%/pts/test-profiles/yafray.xml
-%%DATADIR%%/pts/test-profiles/x11perf.xml
-%%DATADIR%%/pts/test-profiles/wine-water.xml
-%%DATADIR%%/pts/test-profiles/wine-vf2.xml
-%%DATADIR%%/pts/test-profiles/wine-metaballs.xml
-%%DATADIR%%/pts/test-profiles/wine-domino.xml
-%%DATADIR%%/pts/test-profiles/xplane9.xml
-%%DATADIR%%/pts/test-profiles/jxrendermark.xml
-%%DATADIR%%/pts/test-profiles/compress-7zip.xml
-%%DATADIR%%/pts/test-profiles/video-extensions.xml
-%%DATADIR%%/pts/test-profiles/specviewperf9.xml
-%%DATADIR%%/pts/test-profiles/build-imagemagick.xml
-%%DATADIR%%/pts/test-profiles/iozone.xml
-%%DATADIR%%/pts/test-profiles/sunflow.xml
-%%DATADIR%%/pts/test-profiles/doom3.xml
-%%DATADIR%%/pts/test-profiles/norsetto-shadow.xml
-%%DATADIR%%/pts/test-profiles/java-scimark2.xml
-%%DATADIR%%/pts/test-profiles/wine-hdr.xml
-%%DATADIR%%/pts/test-profiles/encode-ogg.xml
-%%DATADIR%%/pts/test-profiles/fhourstones.xml
-%%DATADIR%%/pts/test-profiles/sqlite.xml
-%%DATADIR%%/pts/test-profiles/render-bench.xml
-%%DATADIR%%/pts/test-profiles/build-apache.xml
-%%DATADIR%%/pts/test-profiles/compress-lzma.xml
-%%DATADIR%%/pts/test-profiles/scimark2.xml
-%%DATADIR%%/pts/test-profiles/padman.xml
-%%DATADIR%%/pts/test-profiles/md-gromacs.xml
-%%DATADIR%%/pts/test-profiles/jgfxbat.xml
-%%DATADIR%%/pts/test-profiles/tremulous.xml
-%%DATADIR%%/pts/test-profiles/memory-bandwidth.xml
-%%DATADIR%%/pts/test-profiles/ffmpeg.xml
-%%DATADIR%%/pts/test-profiles/hmmer.xml
-%%DATADIR%%/pts/test-profiles/compress-pbzip2.xml
-%%DATADIR%%/pts/test-profiles/compress-gzip.xml
-%%DATADIR%%/pts/test-profiles/povray.xml
-%%DATADIR%%/pts/test-profiles/compliance-acpi.xml
-%%DATADIR%%/pts/test-profiles/build-linux-kernel.xml
-%%DATADIR%%/pts/test-profiles/wine-fire2.xml
-%%DATADIR%%/pts/test-profiles/hdparm-read.xml
-%%DATADIR%%/pts/test-profiles/build-php.xml
-%%DATADIR%%/pts/test-profiles/sample-program.xml
-%%DATADIR%%/pts/test-profiles/super-pi.xml
-%%DATADIR%%/pts/distro-xml/xsl/pts-exdep-viewer.xsl
-%%DATADIR%%/pts/distro-xml/xsl/pts-generic-exdep-viewer.xsl
-%%DATADIR%%/pts/distro-xml/pclinuxos-packages.xml
-%%DATADIR%%/pts/distro-xml/opensuse-packages.xml
-%%DATADIR%%/pts/distro-xml/netbsd-packages.xml
-%%DATADIR%%/pts/distro-xml/pardus-packages.xml
-%%DATADIR%%/pts/distro-xml/fedora-packages.xml
-%%DATADIR%%/pts/distro-xml/arch-packages.xml
-%%DATADIR%%/pts/distro-xml/ubuntu-packages.xml
-%%DATADIR%%/pts/distro-xml/generic-packages.xml
-%%DATADIR%%/pts/distro-xml/mac-packages.xml
-%%DATADIR%%/pts/distro-xml/centos-packages.xml
-%%DATADIR%%/pts/distro-xml/freebsd-packages.xml
-%%DATADIR%%/pts/distro-xml/freebsd-packages.xml.bak
-%%DATADIR%%/pts/distro-xml/mandrivalinux-packages.xml
-%%DATADIR%%/pts/distro-xml/opensolaris-packages.xml
-%%DATADIR%%/pts/distro-xml/gentoo-packages.xml
-%%DATADIR%%/pts-core/library/pts-functions_system_parsing.php
-%%DATADIR%%/pts-core/library/pts-functions_system_hardware.php
-%%DATADIR%%/pts-core/library/pts-functions_tests.php
-%%DATADIR%%/pts-core/library/pts-functions_directories.php
-%%DATADIR%%/pts-core/library/pts.php
-%%DATADIR%%/pts-core/library/pts-functions_system_graphics.php
-%%DATADIR%%/pts-core/library/pts-includes-batch.php
-%%DATADIR%%/pts-core/library/pts-functions_modules.php
-%%DATADIR%%/pts-core/library/pts-functions_config.php
-%%DATADIR%%/pts-core/library/pts-init.php
-%%DATADIR%%/pts-core/library/pts-includes-gtk.php
-%%DATADIR%%/pts-core/library/pts-includes-merge.php
-%%DATADIR%%/pts-core/library/pts-functions_vars.php
-%%DATADIR%%/pts-core/library/pts-includes-run.php
-%%DATADIR%%/pts-core/library/pts-includes-install_dependencies.php
-%%DATADIR%%/pts-core/library/pts-functions_assignments.php
-%%DATADIR%%/pts-core/library/pts-interfaces.php
-%%DATADIR%%/pts-core/library/pts-functions_pcqs.php
-%%DATADIR%%/pts-core/library/pts-functions_loading.php
-%%DATADIR%%/pts-core/library/pts-functions_shell.php
-%%DATADIR%%/pts-core/library/pts-functions_shell.php.bak
-%%DATADIR%%/pts-core/library/pts-functions_system.php
-%%DATADIR%%/pts-core/library/pts-functions_types.php
-%%DATADIR%%/pts-core/library/pts-functions_client.php
-%%DATADIR%%/pts-core/library/pts-includes-run_setup.php
-%%DATADIR%%/pts-core/library/pts-includes-gui.php
-%%DATADIR%%/pts-core/library/pts-functions.php
-%%DATADIR%%/pts-core/library/pts-functions_system_cpu.php
-%%DATADIR%%/pts-core/library/pts-functions_io.php
-%%DATADIR%%/pts-core/library/pts-functions_global.php
-%%DATADIR%%/pts-core/library/pts-functions_system_software.php
-%%DATADIR%%/pts-core/library/pts-includes-install.php
-%%DATADIR%%/pts-core/library/pts-functions_system_memory.php
-%%DATADIR%%/pts-core/library/pts-includes-run_options.php
-%%DATADIR%%/pts-core/library/pts-includes-misc.php
-%%DATADIR%%/pts-core/library/pts-includes-analytical.php
-%%DATADIR%%/pts-core/library/pts-functions_basic.php
-%%DATADIR%%/pts-core/static/general-options.txt
-%%DATADIR%%/pts-core/static/phoronix-test-suite.desktop
-%%DATADIR%%/pts-core/static/pts-user-config-viewer.xsl
-%%DATADIR%%/pts-core/static/make-download-cache-howto.txt
-%%DATADIR%%/pts-core/static/short-description.txt
-%%DATADIR%%/pts-core/static/hal-values-remove.txt
-%%DATADIR%%/pts-core/static/process-reporting-checks.txt
-%%DATADIR%%/pts-core/static/info-strings-replace.txt
-%%DATADIR%%/pts-core/static/module-variables.txt
-%%DATADIR%%/pts-core/static/option-command-aliases.txt
-%%DATADIR%%/pts-core/static/software-vendor-aliases.txt
-%%DATADIR%%/pts-core/static/info-strings-remove.txt
-%%DATADIR%%/pts-core/options/core_version.php
-%%DATADIR%%/pts-core/options/list_modules.php
-%%DATADIR%%/pts-core/options/reference_comparison.php
-%%DATADIR%%/pts-core/options/result_file_to_suite.php
-%%DATADIR%%/pts-core/options/global_login.php
-%%DATADIR%%/pts-core/options/analyze_all_runs.php
-%%DATADIR%%/pts-core/options/module_setup.php
-%%DATADIR%%/pts-core/options/clone_global_result.php
-%%DATADIR%%/pts-core/options/benchmark.php
-%%DATADIR%%/pts-core/options/list_tests.php
-%%DATADIR%%/pts-core/options/install_all.php
-%%DATADIR%%/pts-core/options/test_module.php
-%%DATADIR%%/pts-core/options/removed_option.php
-%%DATADIR%%/pts-core/options/force_install.php
-%%DATADIR%%/pts-core/options/default_run.php
-%%DATADIR%%/pts-core/options/result_file_to_pdf.php
-%%DATADIR%%/pts-core/options/batch_benchmark.php
-%%DATADIR%%/pts-core/options/remove_result.php
-%%DATADIR%%/pts-core/options/refresh_graphs.php
-%%DATADIR%%/pts-core/options/merge_results.php
-%%DATADIR%%/pts-core/options/result_info.php
-%%DATADIR%%/pts-core/options/list_saved_results.php
-%%DATADIR%%/pts-core/options/info.php
-%%DATADIR%%/pts-core/options/make_download_cache.php
-%%DATADIR%%/pts-core/options/upload_result.php
-%%DATADIR%%/pts-core/options/download_test_files.php
-%%DATADIR%%/pts-core/options/batch_run.php
-%%DATADIR%%/pts-core/options/debug_module.php
-%%DATADIR%%/pts-core/options/list_installed_tests.php
-%%DATADIR%%/pts-core/options/install_all_dependencies.php
-%%DATADIR%%/pts-core/options/remove_all_results.php
-%%DATADIR%%/pts-core/options/install_dependencies.php
-%%DATADIR%%/pts-core/options/default_benchmark.php
-%%DATADIR%%/pts-core/options/analyze_batch.php
-%%DATADIR%%/pts-core/options/run_test.php
-%%DATADIR%%/pts-core/options/system_info.php
-%%DATADIR%%/pts-core/options/list_test_usage.php
-%%DATADIR%%/pts-core/options/install_test.php
-%%DATADIR%%/pts-core/options/diagnostics.php
-%%DATADIR%%/pts-core/options/gui_gtk.php
-%%DATADIR%%/pts-core/options/list_possible_dependencies.php
-%%DATADIR%%/pts-core/options/show_result.php
-%%DATADIR%%/pts-core/options/list_all_tests.php
-%%DATADIR%%/pts-core/options/build_suite.php
-%%DATADIR%%/pts-core/options/initial_config.php
-%%DATADIR%%/pts-core/options/remove_installed_test.php
-%%DATADIR%%/pts-core/options/batch_setup.php
-%%DATADIR%%/pts-core/options/module_info.php
-%%DATADIR%%/pts-core/options/list_suites.php
-%%DATADIR%%/pts-core/test-libraries/root-access.sh
-%%DATADIR%%/pts-core/test-libraries/timer-start.sh
-%%DATADIR%%/pts-core/test-libraries/timed-kill.sh
-%%DATADIR%%/pts-core/test-libraries/timer-stop.sh
-%%DATADIR%%/pts-core/test-libraries/system-monitoring-start.sh
-%%DATADIR%%/pts-core/test-libraries/system-monitoring.php
-%%DATADIR%%/pts-core/test-libraries/system-monitoring-stop.sh
-%%DATADIR%%/pts-core/results-viewer/fonts/Sans.ttf
-%%DATADIR%%/pts-core/results-viewer/pts-logo.jpg
-%%DATADIR%%/pts-core/results-viewer/pts-viewer.css
-%%DATADIR%%/pts-core/results-viewer/pts-monitor-viewer.html
-%%DATADIR%%/pts-core/results-viewer/pts-logo.png
-%%DATADIR%%/pts-core/results-viewer/pts-results-viewer.xsl
-%%DATADIR%%/pts-core/results-viewer/pts.js
-%%DATADIR%%/pts-core/media/pts-icon.png
-%%DATADIR%%/pts-core/media/pts-308x160.png
-%%DATADIR%%/pts-core/media/phoronix-test-suite.png
-%%DATADIR%%/pts-core/modules/update_checker.php
-%%DATADIR%%/pts-core/modules/graphics_override.php
-%%DATADIR%%/pts-core/modules/timed_screenshot.php
-%%DATADIR%%/pts-core/modules/system_monitor.php
-%%DATADIR%%/pts-core/modules/graphics_event_checker.php
-%%DATADIR%%/pts-core/modules/dummy_script_module.sh
+%%BASH_COMPLETIONS%%etc/bash_completion.d/phoronix-test-suite
+%%X11%%share/applications/phoronix-test-suite.desktop
+%%X11%%share/icons/hicolor/48x48/apps/phoronix-test-suite.png
+%%X11%%share/icons/hicolor/64x64/apps/openbenchmarking.png
+%%X11%%share/icons/hicolor/64x64/mimetypes/application-x-openbenchmarking.png
+%%X11%%share/icons/hicolor/64x64/mimetypes/gnome-mime-application-x-openbenchmarking.png
+%%X11%%share/mime/application/x-openbenchmarking.xml
+%%X11%%share/mime/packages/openbenchmarking-mime.xml
+%%DATADIR%%/pts-core/commands/analyze_all_runs.php
+%%DATADIR%%/pts-core/commands/analyze_batch.php
+%%DATADIR%%/pts-core/commands/analyze_image_delta.php
+%%DATADIR%%/pts-core/commands/batch_benchmark.php
+%%DATADIR%%/pts-core/commands/batch_install.php
+%%DATADIR%%/pts-core/commands/batch_run.php
+%%DATADIR%%/pts-core/commands/batch_setup.php
+%%DATADIR%%/pts-core/commands/benchmark.php
+%%DATADIR%%/pts-core/commands/build_suite.php
+%%DATADIR%%/pts-core/commands/clone_openbenchmarking_result.php
+%%DATADIR%%/pts-core/commands/copy_run_in_result_file.php
+%%DATADIR%%/pts-core/commands/debug_install.php
+%%DATADIR%%/pts-core/commands/debug_run.php
+%%DATADIR%%/pts-core/commands/debug_test_download_links.php
+%%DATADIR%%/pts-core/commands/default_benchmark.php
+%%DATADIR%%/pts-core/commands/default_run.php
+%%DATADIR%%/pts-core/commands/diagnostics.php
+%%DATADIR%%/pts-core/commands/dump_core_storage.php
+%%DATADIR%%/pts-core/commands/dump_documentation.php
+%%DATADIR%%/pts-core/commands/dump_phodevi_smart_cache.php
+%%DATADIR%%/pts-core/commands/dump_possible_options.php
+%%DATADIR%%/pts-core/commands/extract_from_result_file.php
+%%DATADIR%%/pts-core/commands/finish_run.php
+%%DATADIR%%/pts-core/commands/force_install.php
+%%DATADIR%%/pts-core/commands/help.php
+%%DATADIR%%/pts-core/commands/info.php
+%%DATADIR%%/pts-core/commands/install_dependencies.php
+%%DATADIR%%/pts-core/commands/install_test.php
+%%DATADIR%%/pts-core/commands/list_available_suites.php
+%%DATADIR%%/pts-core/commands/list_available_tests.php
+%%DATADIR%%/pts-core/commands/list_available_virtual_suites.php
+%%DATADIR%%/pts-core/commands/list_installed_dependencies.php
+%%DATADIR%%/pts-core/commands/list_installed_suites.php
+%%DATADIR%%/pts-core/commands/list_installed_tests.php
+%%DATADIR%%/pts-core/commands/list_missing_dependencies.php
+%%DATADIR%%/pts-core/commands/list_modules.php
+%%DATADIR%%/pts-core/commands/list_possible_dependencies.php
+%%DATADIR%%/pts-core/commands/list_saved_results.php
+%%DATADIR%%/pts-core/commands/list_test_usage.php
+%%DATADIR%%/pts-core/commands/make_download_cache.php
+%%DATADIR%%/pts-core/commands/merge_results.php
+%%DATADIR%%/pts-core/commands/module_info.php
+%%DATADIR%%/pts-core/commands/module_setup.php
+%%DATADIR%%/pts-core/commands/network_setup.php
+%%DATADIR%%/pts-core/commands/openbenchmarking_launcher.php
+%%DATADIR%%/pts-core/commands/openbenchmarking_login.php
+%%DATADIR%%/pts-core/commands/openbenchmarking_refresh.php
+%%DATADIR%%/pts-core/commands/pts_version.php
+%%DATADIR%%/pts-core/commands/rebuild_composite_xml.php
+%%DATADIR%%/pts-core/commands/recover_run.php
+%%DATADIR%%/pts-core/commands/refresh_graphs.php
+%%DATADIR%%/pts-core/commands/remove_from_result_file.php
+%%DATADIR%%/pts-core/commands/remove_installed_test.php
+%%DATADIR%%/pts-core/commands/remove_result.php
+%%DATADIR%%/pts-core/commands/rename_identifier_in_result_file.php
+%%DATADIR%%/pts-core/commands/reorder_result_file.php
+%%DATADIR%%/pts-core/commands/result_file_to_csv.php
+%%DATADIR%%/pts-core/commands/result_file_to_pdf.php
+%%DATADIR%%/pts-core/commands/result_file_to_suite.php
+%%DATADIR%%/pts-core/commands/result_file_to_text.php
+%%DATADIR%%/pts-core/commands/run_test.php
+%%DATADIR%%/pts-core/commands/run_tests_in_suite.php
+%%DATADIR%%/pts-core/commands/show_result.php
+%%DATADIR%%/pts-core/commands/system_info.php
+%%DATADIR%%/pts-core/commands/system_sensors.php
+%%DATADIR%%/pts-core/commands/test_module.php
+%%DATADIR%%/pts-core/commands/upload_result.php
+%%DATADIR%%/pts-core/commands/user_config_get.php
+%%DATADIR%%/pts-core/commands/user_config_reset.php
+%%DATADIR%%/pts-core/commands/user_config_set.php
+%%DATADIR%%/pts-core/commands/validate_result_file.php
+%%DATADIR%%/pts-core/commands/validate_test_profile.php
+%%DATADIR%%/pts-core/commands/validate_test_suite.php
+%%DATADIR%%/pts-core/definitions/compatibility.xml
+%%DATADIR%%/pts-core/definitions/download-cache.xml
+%%DATADIR%%/pts-core/definitions/external-dependencies.xml
+%%DATADIR%%/pts-core/definitions/graph-config.xml
+%%DATADIR%%/pts-core/definitions/module-phoromatic.xml
+%%DATADIR%%/pts-core/definitions/module-settings.xml
+%%DATADIR%%/pts-core/definitions/result-file.xml
+%%DATADIR%%/pts-core/definitions/results-parser.xml
+%%DATADIR%%/pts-core/definitions/test-installation.xml
+%%DATADIR%%/pts-core/definitions/test-profile-downloads.xml
+%%DATADIR%%/pts-core/definitions/test-profile.xml
+%%DATADIR%%/pts-core/definitions/test-suite.xml
+%%DATADIR%%/pts-core/definitions/user-config.xml
+%%DATADIR%%/pts-core/definitions/xsl/pts-definitions-viewer.xsl
+%%DATADIR%%/pts-core/external-test-dependencies/scripts/install-angstrom-packages.sh
+%%DATADIR%%/pts-core/external-test-dependencies/scripts/install-arch-packages.sh
+%%DATADIR%%/pts-core/external-test-dependencies/scripts/install-debian-packages.sh
+%%DATADIR%%/pts-core/external-test-dependencies/scripts/install-fedora-packages.sh
+%%DATADIR%%/pts-core/external-test-dependencies/scripts/install-freebsd-packages.sh
+%%DATADIR%%/pts-core/external-test-dependencies/scripts/install-gentoo-packages.sh
+%%DATADIR%%/pts-core/external-test-dependencies/scripts/install-mandrivalinux-packages.sh
+%%DATADIR%%/pts-core/external-test-dependencies/scripts/install-netbsd-packages.sh
+%%DATADIR%%/pts-core/external-test-dependencies/scripts/install-openindiana-packages.sh
+%%DATADIR%%/pts-core/external-test-dependencies/scripts/install-opensolaris-packages.sh
+%%DATADIR%%/pts-core/external-test-dependencies/scripts/install-opensuse-packages.sh
+%%DATADIR%%/pts-core/external-test-dependencies/scripts/install-optware-packages.sh
+%%DATADIR%%/pts-core/external-test-dependencies/scripts/install-pardus-packages.sh
+%%DATADIR%%/pts-core/external-test-dependencies/scripts/install-pclinuxos-packages.sh
+%%DATADIR%%/pts-core/external-test-dependencies/scripts/install-ubuntu-packages.sh
+%%DATADIR%%/pts-core/external-test-dependencies/scripts/install-zenwalk-packages.sh
+%%DATADIR%%/pts-core/external-test-dependencies/xml/angstrom-packages.xml
+%%DATADIR%%/pts-core/external-test-dependencies/xml/arch-packages.xml
+%%DATADIR%%/pts-core/external-test-dependencies/xml/fedora-packages.xml
+%%DATADIR%%/pts-core/external-test-dependencies/xml/freebsd-packages.xml
+%%DATADIR%%/pts-core/external-test-dependencies/xml/freebsd-packages.xml.bak
+%%DATADIR%%/pts-core/external-test-dependencies/xml/generic-packages.xml
+%%DATADIR%%/pts-core/external-test-dependencies/xml/gentoo-packages.xml
+%%DATADIR%%/pts-core/external-test-dependencies/xml/mandrivalinux-packages.xml
+%%DATADIR%%/pts-core/external-test-dependencies/xml/netbsd-packages.xml
+%%DATADIR%%/pts-core/external-test-dependencies/xml/openindiana-packages.xml
+%%DATADIR%%/pts-core/external-test-dependencies/xml/opensolaris-packages.xml
+%%DATADIR%%/pts-core/external-test-dependencies/xml/opensuse-packages.xml
+%%DATADIR%%/pts-core/external-test-dependencies/xml/optware-packages.xml
+%%DATADIR%%/pts-core/external-test-dependencies/xml/pardus-packages.xml
+%%DATADIR%%/pts-core/external-test-dependencies/xml/pclinuxos-packages.xml
+%%DATADIR%%/pts-core/external-test-dependencies/xml/ubuntu-packages.xml
+%%DATADIR%%/pts-core/external-test-dependencies/xml/xsl/pts-exdep-viewer.xsl
+%%DATADIR%%/pts-core/external-test-dependencies/xml/xsl/pts-generic-exdep-viewer.xsl
+%%DATADIR%%/pts-core/external-test-dependencies/xml/zenwalk-packages.xml
 %%DATADIR%%/pts-core/modules/dummy_module.php
-%%DATADIR%%/pts-core/modules/email_results.php
+%%DATADIR%%/pts-core/modules/graphics_event_checker.php
+%%DATADIR%%/pts-core/modules/graphics_override.php
+%%DATADIR%%/pts-core/modules/phoromatic.php
+%%DATADIR%%/pts-core/modules/result_notifier.php
+%%DATADIR%%/pts-core/modules/system_monitor.php
+%%DATADIR%%/pts-core/modules/timed_screenshot.php
 %%DATADIR%%/pts-core/modules/toggle_screensaver.php
-%%DATADIR%%/pts-core/modules/gui_gtk_events.php
-%%DATADIR%%/pts-core/objects/pts_Graph/pts_Chart.php
-%%DATADIR%%/pts-core/objects/pts_Graph/pts_MultiPassFailGraph.php
-%%DATADIR%%/pts-core/objects/pts_Graph/pts_PassFailGraph.php
-%%DATADIR%%/pts-core/objects/pts_Graph/pts_BarGraph.php
-%%DATADIR%%/pts-core/objects/pts_Graph/pts_LineGraph.php
-%%DATADIR%%/pts-core/objects/pts_Graph/pts_Graph.php
-%%DATADIR%%/pts-core/objects/pts_Graph/pts_CustomGraph.php
-%%DATADIR%%/pts-core/objects/pts_Graph/pts_CandleStickGraph.php
-%%DATADIR%%/pts-core/objects/tandem_Xml/tandem_XmlReader.php
-%%DATADIR%%/pts-core/objects/tandem_Xml/tandem_XmlWriter.php
-%%DATADIR%%/pts-core/objects/tandem_Xml/pts_graph_config_tandem_XmlReader.php
-%%DATADIR%%/pts-core/objects/tandem_Xml/pts_test_tandem_XmlReader.php
-%%DATADIR%%/pts-core/objects/tandem_Xml/pts_config_tandem_XmlReader.php
-%%DATADIR%%/pts-core/objects/tandem_Xml/pts_results_tandem_XmlReader.php
-%%DATADIR%%/pts-core/objects/tandem_Xml/pts_suite_tandem_XmlReader.php
-%%DATADIR%%/pts-core/objects/tandem_Xml/pts_installed_test_tandem_XmlReader.php
-%%DATADIR%%/pts-core/objects/gtk/pts_gtk_button.php
-%%DATADIR%%/pts-core/objects/gtk/pts_gtk_window.php
-%%DATADIR%%/pts-core/objects/gtk/pts_gtk_menu_item.php
-%%DATADIR%%/pts-core/objects/gtk/pts_gtk_text_area.php
-%%DATADIR%%/pts-core/objects/bilde_renderer/bilde_jpg_renderer.php
-%%DATADIR%%/pts-core/objects/bilde_renderer/bilde_svg_renderer.php
-%%DATADIR%%/pts-core/objects/bilde_renderer/bilde_png_renderer.php
+%%DATADIR%%/pts-core/modules/update_checker.php
 %%DATADIR%%/pts-core/objects/bilde_renderer/bilde_gd_renderer.php
 %%DATADIR%%/pts-core/objects/bilde_renderer/bilde_gif_renderer.php
-%%DATADIR%%/pts-core/objects/bilde_renderer/bilde_swf_renderer.php
+%%DATADIR%%/pts-core/objects/bilde_renderer/bilde_jpg_renderer.php
+%%DATADIR%%/pts-core/objects/bilde_renderer/bilde_png_renderer.php
 %%DATADIR%%/pts-core/objects/bilde_renderer/bilde_renderer.php
-%%DATADIR%%/pts-core/objects/pts_test_run_request.php
-%%DATADIR%%/pts-core/objects/pts_installed_test_details.php
-%%DATADIR%%/pts-core/objects/pts_user_module_details.php
-%%DATADIR%%/pts-core/objects/pts_test_result.php
-%%DATADIR%%/pts-core/objects/pts_test_suite_details.php
-%%DATADIR%%/pts-core/objects/pts_option_interface.php
-%%DATADIR%%/pts-core/objects/pts_result_file_merge_test.php
-%%DATADIR%%/pts-core/objects/pts_pdf_template.php
-%%DATADIR%%/pts-core/objects/pts_result_file.php
-%%DATADIR%%/pts-core/objects/pts_result_file_merge_manager.php
-%%DATADIR%%/pts-core/objects/pts_module_option.php
-%%DATADIR%%/pts-core/objects/pts_sensor.php
-%%DATADIR%%/pts-core/objects/pts_result_merge_select.php
-%%DATADIR%%/pts-core/objects/pts_module_interface.php
-%%DATADIR%%/pts-core/objects/pts_test_file_download.php
-%%DATADIR%%/pts-core/objects/pts_test_result_details.php
-%%DATADIR%%/pts-core/objects/pts_run_option.php
-%%DATADIR%%/pts-core/objects/pts_test_option.php
+%%DATADIR%%/pts-core/objects/bilde_renderer/bilde_renderer.php.bak
+%%DATADIR%%/pts-core/objects/bilde_renderer/bilde_svg_renderer.php
+%%DATADIR%%/pts-core/objects/bilde_renderer/bilde_svgz_renderer.php
+%%DATADIR%%/pts-core/objects/bilde_renderer/bilde_swf_renderer.php
+%%DATADIR%%/pts-core/objects/display_modes/pts_basic_display_mode.php
+%%DATADIR%%/pts-core/objects/display_modes/pts_concise_display_mode.php
+%%DATADIR%%/pts-core/objects/display_modes/pts_display_mode_interface.php
+%%DATADIR%%/pts-core/objects/nye_Xml/nye_XmlReader.php
+%%DATADIR%%/pts-core/objects/nye_Xml/nye_XmlWriter.php
+%%DATADIR%%/pts-core/objects/nye_Xml/pts_config_nye_XmlReader.php
+%%DATADIR%%/pts-core/objects/nye_Xml/pts_external_dependencies_nye_XmlReader.php
+%%DATADIR%%/pts-core/objects/nye_Xml/pts_graph_config_nye_XmlReader.php
+%%DATADIR%%/pts-core/objects/nye_Xml/pts_parse_results_nye_XmlReader.php
+%%DATADIR%%/pts-core/objects/nye_Xml/pts_results_nye_XmlReader.php
+%%DATADIR%%/pts-core/objects/nye_Xml/pts_suite_nye_XmlReader.php
+%%DATADIR%%/pts-core/objects/nye_Xml/pts_test_downloads_nye_XmlReader.php
+%%DATADIR%%/pts-core/objects/nye_Xml/pts_test_nye_XmlReader.php
+%%DATADIR%%/pts-core/objects/phodevi/components/phodevi_audio.php
+%%DATADIR%%/pts-core/objects/phodevi/components/phodevi_chipset.php
+%%DATADIR%%/pts-core/objects/phodevi/components/phodevi_cpu.php
+%%DATADIR%%/pts-core/objects/phodevi/components/phodevi_disk.php
+%%DATADIR%%/pts-core/objects/phodevi/components/phodevi_gpu.php
+%%DATADIR%%/pts-core/objects/phodevi/components/phodevi_memory.php
+%%DATADIR%%/pts-core/objects/phodevi/components/phodevi_monitor.php
+%%DATADIR%%/pts-core/objects/phodevi/components/phodevi_motherboard.php
+%%DATADIR%%/pts-core/objects/phodevi/components/phodevi_system.php
+%%DATADIR%%/pts-core/objects/phodevi/parsers/phodevi_bsd_parser.php
+%%DATADIR%%/pts-core/objects/phodevi/parsers/phodevi_linux_parser.php
+%%DATADIR%%/pts-core/objects/phodevi/parsers/phodevi_osx_parser.php
+%%DATADIR%%/pts-core/objects/phodevi/parsers/phodevi_parser.php
+%%DATADIR%%/pts-core/objects/phodevi/parsers/phodevi_solaris_parser.php
+%%DATADIR%%/pts-core/objects/phodevi/parsers/phodevi_windows_parser.php
+%%DATADIR%%/pts-core/objects/phodevi/phodevi.php
+%%DATADIR%%/pts-core/objects/phodevi/phodevi_cache.php
+%%DATADIR%%/pts-core/objects/phodevi/phodevi_device_interface.php
+%%DATADIR%%/pts-core/objects/phodevi/phodevi_device_property.php
+%%DATADIR%%/pts-core/objects/phodevi/phodevi_sensor.php
+%%DATADIR%%/pts-core/objects/phodevi/sensors/cpu_fanspeed.php
+%%DATADIR%%/pts-core/objects/phodevi/sensors/cpu_freq.php
+%%DATADIR%%/pts-core/objects/phodevi/sensors/cpu_temp.php
+%%DATADIR%%/pts-core/objects/phodevi/sensors/cpu_usage.php
+%%DATADIR%%/pts-core/objects/phodevi/sensors/cpu_voltage.php
+%%DATADIR%%/pts-core/objects/phodevi/sensors/gpu_fanspeed.php
+%%DATADIR%%/pts-core/objects/phodevi/sensors/gpu_freq.php
+%%DATADIR%%/pts-core/objects/phodevi/sensors/gpu_temp.php
+%%DATADIR%%/pts-core/objects/phodevi/sensors/gpu_usage.php
+%%DATADIR%%/pts-core/objects/phodevi/sensors/hdd_read_speed.php
+%%DATADIR%%/pts-core/objects/phodevi/sensors/hdd_temp.php
+%%DATADIR%%/pts-core/objects/phodevi/sensors/hdd_write_speed.php
+%%DATADIR%%/pts-core/objects/phodevi/sensors/memory_usage.php
+%%DATADIR%%/pts-core/objects/phodevi/sensors/swap_usage.php
+%%DATADIR%%/pts-core/objects/phodevi/sensors/sys_fanspeed.php
+%%DATADIR%%/pts-core/objects/phodevi/sensors/sys_iowait.php
+%%DATADIR%%/pts-core/objects/phodevi/sensors/sys_power.php
+%%DATADIR%%/pts-core/objects/phodevi/sensors/sys_temp.php
+%%DATADIR%%/pts-core/objects/phodevi/sensors/sys_v12.php
+%%DATADIR%%/pts-core/objects/phodevi/sensors/sys_v3.php
+%%DATADIR%%/pts-core/objects/phodevi/sensors/sys_v5.php
+%%DATADIR%%/pts-core/objects/pts_Graph/pts_CandleStickGraph.php
+%%DATADIR%%/pts-core/objects/pts_Graph/pts_FilledLineGraph.php
+%%DATADIR%%/pts-core/objects/pts_Graph/pts_Graph.php
+%%DATADIR%%/pts-core/objects/pts_Graph/pts_HeatMapBarGraph.php
+%%DATADIR%%/pts-core/objects/pts_Graph/pts_HorizontalBarGraph.php
+%%DATADIR%%/pts-core/objects/pts_Graph/pts_ImageComparisonGraph.php
+%%DATADIR%%/pts-core/objects/pts_Graph/pts_LineGraph.php
+%%DATADIR%%/pts-core/objects/pts_Graph/pts_MultiPassFailGraph.php
+%%DATADIR%%/pts-core/objects/pts_Graph/pts_OverviewGraph.php
+%%DATADIR%%/pts-core/objects/pts_Graph/pts_PassFailGraph.php
+%%DATADIR%%/pts-core/objects/pts_Graph/pts_PieChart.php
+%%DATADIR%%/pts-core/objects/pts_Graph/pts_ResultFileSystemsTable.php
+%%DATADIR%%/pts-core/objects/pts_Graph/pts_ResultFileTable.php
+%%DATADIR%%/pts-core/objects/pts_Graph/pts_ScatterPlot.php
+%%DATADIR%%/pts-core/objects/pts_Graph/pts_Table.php
+%%DATADIR%%/pts-core/objects/pts_Graph/pts_TestCountPassGraph.php
+%%DATADIR%%/pts-core/objects/pts_Graph/pts_VerticalBarGraph.php
+%%DATADIR%%/pts-core/objects/pts_Graph/pts_graph_ir_value.php
+%%DATADIR%%/pts-core/objects/pts_argument_check.php
+%%DATADIR%%/pts-core/objects/pts_arrays.php
+%%DATADIR%%/pts-core/objects/pts_c.php
+%%DATADIR%%/pts-core/objects/pts_client.php
+%%DATADIR%%/pts-core/objects/pts_client.php.bak
+%%DATADIR%%/pts-core/objects/pts_compatibility.php
+%%DATADIR%%/pts-core/objects/pts_compression.php
+%%DATADIR%%/pts-core/objects/pts_config.php
+%%DATADIR%%/pts-core/objects/pts_documentation.php
+%%DATADIR%%/pts-core/objects/pts_download_speed_manager.php
+%%DATADIR%%/pts-core/objects/pts_external_dependencies.php
+%%DATADIR%%/pts-core/objects/pts_file_io.php
+%%DATADIR%%/pts-core/objects/pts_image.php
+%%DATADIR%%/pts-core/objects/pts_installed_test.php
+%%DATADIR%%/pts-core/objects/pts_math.php
+%%DATADIR%%/pts-core/objects/pts_merge.php
 %%DATADIR%%/pts-core/objects/pts_module.php
-%%DATADIR%%/pts-core/objects/pts_test_usage_details.php
-%%DATADIR%%/pts-core/objects/pts_test_profile_details.php
+%%DATADIR%%/pts-core/objects/pts_module_interface.php
+%%DATADIR%%/pts-core/objects/pts_module_manager.php
+%%DATADIR%%/pts-core/objects/pts_module_option.php
+%%DATADIR%%/pts-core/objects/pts_network.php
+%%DATADIR%%/pts-core/objects/pts_openbenchmarking.php
+%%DATADIR%%/pts-core/objects/pts_openbenchmarking_client.php
+%%DATADIR%%/pts-core/objects/pts_option_interface.php
+%%DATADIR%%/pts-core/objects/pts_pdf_template.php
+%%DATADIR%%/pts-core/objects/pts_phoroscript_interpreter.php
+%%DATADIR%%/pts-core/objects/pts_render.php
+%%DATADIR%%/pts-core/objects/pts_result_file.php
+%%DATADIR%%/pts-core/objects/pts_result_file_analyze_manager.php
+%%DATADIR%%/pts-core/objects/pts_result_file_analyzer.php
+%%DATADIR%%/pts-core/objects/pts_result_file_merge_manager.php
+%%DATADIR%%/pts-core/objects/pts_result_file_writer.php
+%%DATADIR%%/pts-core/objects/pts_result_merge_select.php
+%%DATADIR%%/pts-core/objects/pts_storage_object.php
+%%DATADIR%%/pts-core/objects/pts_strings.php
+%%DATADIR%%/pts-core/objects/pts_test_execution.php
+%%DATADIR%%/pts-core/objects/pts_test_file_download.php
+%%DATADIR%%/pts-core/objects/pts_test_install_manager.php
+%%DATADIR%%/pts-core/objects/pts_test_install_request.php
+%%DATADIR%%/pts-core/objects/pts_test_installer.php
+%%DATADIR%%/pts-core/objects/pts_test_notes_manager.php
+%%DATADIR%%/pts-core/objects/pts_test_option.php
+%%DATADIR%%/pts-core/objects/pts_test_profile.php
+%%DATADIR%%/pts-core/objects/pts_test_profile_downloads_writer.php
+%%DATADIR%%/pts-core/objects/pts_test_profile_parser.php
+%%DATADIR%%/pts-core/objects/pts_test_profile_writer.php
+%%DATADIR%%/pts-core/objects/pts_test_result.php
+%%DATADIR%%/pts-core/objects/pts_test_result_buffer.php
+%%DATADIR%%/pts-core/objects/pts_test_result_buffer_item.php
+%%DATADIR%%/pts-core/objects/pts_test_result_parser.php
+%%DATADIR%%/pts-core/objects/pts_test_result_parser_writer.php
+%%DATADIR%%/pts-core/objects/pts_test_result_regression_marker.php
 %%DATADIR%%/pts-core/objects/pts_test_run_manager.php
-%%DATADIR%%/pts-core/scripts/build-package-deb.php
-%%DATADIR%%/pts-core/scripts/build-package-rpm.php
-%%DATADIR%%/pts-core/scripts/launch-browser.sh
-%%DATADIR%%/pts-core/user-agreement.txt
+%%DATADIR%%/pts-core/objects/pts_test_run_options.php
+%%DATADIR%%/pts-core/objects/pts_test_suite.php
+%%DATADIR%%/pts-core/objects/pts_test_suite_parser.php
+%%DATADIR%%/pts-core/objects/pts_test_suite_writer.php
+%%DATADIR%%/pts-core/objects/pts_tests.php
+%%DATADIR%%/pts-core/objects/pts_tracker.php
+%%DATADIR%%/pts-core/objects/pts_types.php
+%%DATADIR%%/pts-core/objects/pts_user_io.php
+%%DATADIR%%/pts-core/objects/pts_validation.php
+%%DATADIR%%/pts-core/objects/pts_virtual_test_suite.php
+%%DATADIR%%/pts-core/openbenchmarking.org/openbenchmarking-mime.xml
+%%DATADIR%%/pts-core/openbenchmarking.org/schemas/result-file.xsd
+%%DATADIR%%/pts-core/openbenchmarking.org/schemas/results-parser.xsd
+%%DATADIR%%/pts-core/openbenchmarking.org/schemas/test-profile-downloads.xsd
+%%DATADIR%%/pts-core/openbenchmarking.org/schemas/test-profile.xsd
+%%DATADIR%%/pts-core/openbenchmarking.org/schemas/test-suite.xsd
+%%DATADIR%%/pts-core/openbenchmarking.org/schemas/types.xsd
 %%DATADIR%%/pts-core/phoronix-test-suite.php
-%%PORTDOCS%%%%DOCSDIR%%/CHANGE-LOG
-%%PORTDOCS%%%%DOCSDIR%%/COPYING
-%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
-%%PORTDOCS%%%%DOCSDIR%%/includes/pts-documentation.png
-%%PORTDOCS%%%%DOCSDIR%%/includes/pts-documentation.css
-%%PORTDOCS%%%%DOCSDIR%%/tips_and_tricks.html
-%%PORTDOCS%%%%DOCSDIR%%/specifications_xml_test.html
-%%PORTDOCS%%%%DOCSDIR%%/specifications_xml_suite.html
-%%PORTDOCS%%%%DOCSDIR%%/specifications_xml_download.html
-%%PORTDOCS%%%%DOCSDIR%%/sensor_monitoring.html
-%%PORTDOCS%%%%DOCSDIR%%/pts_options.html
-%%PORTDOCS%%%%DOCSDIR%%/install.html
-%%PORTDOCS%%%%DOCSDIR%%/index.html
-%%PORTDOCS%%%%DOCSDIR%%/default_files.html
-%%PORTDOCS%%%%DOCSDIR%%/writing_your_first_test.html
-%%PORTDOCS%%%%DOCSDIR%%/credits.html
-%%PORTDOCS%%%%DOCSDIR%%/writing_your_first_module.html
-share/icons/phoronix-test-suite.png
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/includes
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm %%DATADIR%%/pts/test-suites/xsl
-@dirrm %%DATADIR%%/pts/test-suites
-@dirrm %%DATADIR%%/pts/base-test-profiles
-@dirrm %%DATADIR%%/pts/distro-scripts
-@dirrm %%DATADIR%%/pts/test-profiles/xsl
-@dirrm %%DATADIR%%/pts/test-profiles
-@dirrm %%DATADIR%%/pts/base-test-resources/wine-humus-tests
-@dirrm %%DATADIR%%/pts/base-test-resources/photo-sample
-@dirrm %%DATADIR%%/pts/base-test-resources/wine-unstable
-@dirrm %%DATADIR%%/pts/base-test-resources/2d-test
-@dirrm %%DATADIR%%/pts/base-test-resources/video-sample
-@dirrm %%DATADIR%%/pts/base-test-resources/timed-audio-encode
-@dirrm %%DATADIR%%/pts/base-test-resources/java-environment
-@dirrm %%DATADIR%%/pts/base-test-resources
-@dirrm %%DATADIR%%/pts/test-resources/render-bench
-@dirrm %%DATADIR%%/pts/test-resources/stresscpu2
-@dirrm %%DATADIR%%/pts/test-resources/compress-pbzip2
-@dirrm %%DATADIR%%/pts/test-resources/mafft
-@dirrm %%DATADIR%%/pts/test-resources/openarena
-@dirrm %%DATADIR%%/pts/test-resources/lightsmark
-@dirrm %%DATADIR%%/pts/test-resources/java-scimark2
-@dirrm %%DATADIR%%/pts/test-resources/mencoder
-@dirrm %%DATADIR%%/pts/test-resources/md-gromacs
-@dirrm %%DATADIR%%/pts/test-resources/nexuiz
-@dirrm %%DATADIR%%/pts/test-resources/glmark
-@dirrm %%DATADIR%%/pts/test-resources/graphics-magick
-@dirrm %%DATADIR%%/pts/test-resources/smokin-guns
-@dirrm %%DATADIR%%/pts/test-resources/prey
-@dirrm %%DATADIR%%/pts/test-resources/fract
-@dirrm %%DATADIR%%/pts/test-resources/sample-program
-@dirrm %%DATADIR%%/pts/test-resources/ffmpeg
-@dirrm %%DATADIR%%/pts/test-resources/build-apache
-@dirrm %%DATADIR%%/pts/test-resources/encode-wavpack
-@dirrm %%DATADIR%%/pts/test-resources/compress-7zip
-@dirrm %%DATADIR%%/pts/test-resources/compress-gzip
-@dirrm %%DATADIR%%/pts/test-resources/video-extensions
-@dirrm %%DATADIR%%/pts/test-resources/espeak
-@dirrm %%DATADIR%%/pts/test-resources/warsow
-@dirrm %%DATADIR%%/pts/test-resources/build-mplayer
-@dirrm %%DATADIR%%/pts/test-resources/iozone
-@dirrm %%DATADIR%%/pts/test-resources/fio
-@dirrm %%DATADIR%%/pts/test-resources/specviewperf9
-@dirrm %%DATADIR%%/pts/test-resources/gtkperf
-@dirrm %%DATADIR%%/pts/test-resources/urbanterror
-@dirrm %%DATADIR%%/pts/test-resources/etqw-demo
-@dirrm %%DATADIR%%/pts/test-resources/compliance-acpi
-@dirrm %%DATADIR%%/pts/test-resources/encode-ape
-@dirrm %%DATADIR%%/pts/test-resources/etqw
-@dirrm %%DATADIR%%/pts/test-resources/hdparm-read
-@dirrm %%DATADIR%%/pts/test-resources/mrbayes
-@dirrm %%DATADIR%%/pts/test-resources/memory-bandwidth
-@dirrm %%DATADIR%%/pts/test-resources/xplane9
-@dirrm %%DATADIR%%/pts/test-resources/doom3
-@dirrm %%DATADIR%%/pts/test-resources/encode-mp3
-@dirrm %%DATADIR%%/pts/test-resources/compliance-sensors
-@dirrm %%DATADIR%%/pts/test-resources/compliance-ogl
-@dirrm %%DATADIR%%/pts/test-resources/ramspeed
-@dirrm %%DATADIR%%/pts/test-resources/encode-flac
-@dirrm %%DATADIR%%/pts/test-resources/fgl-glxgears
-@dirrm %%DATADIR%%/pts/test-resources/super-pi
-@dirrm %%DATADIR%%/pts/test-resources/build-mysql
-@dirrm %%DATADIR%%/pts/test-resources/gnupg
-@dirrm %%DATADIR%%/pts/test-resources/hmmer
-@dirrm %%DATADIR%%/pts/test-resources/norsetto-shadow
-@dirrm %%DATADIR%%/pts/test-resources/specviewperf10
-@dirrm %%DATADIR%%/pts/test-resources/tremulous
-@dirrm %%DATADIR%%/pts/test-resources/compress-lzma
-@dirrm %%DATADIR%%/pts/test-resources/trislam
-@dirrm %%DATADIR%%/pts/test-resources/sqlite
-@dirrm %%DATADIR%%/pts/test-resources/build-php
-@dirrm %%DATADIR%%/pts/test-resources/build-linux-kernel
-@dirrm %%DATADIR%%/pts/test-resources/quake4
-@dirrm %%DATADIR%%/pts/test-resources/sunflow
-@dirrm %%DATADIR%%/pts/test-resources/ut2004-demo
-@dirrm %%DATADIR%%/pts/test-resources/j2dbench
-@dirrm %%DATADIR%%/pts/test-resources/idle
-@dirrm %%DATADIR%%/pts/test-resources/fhourstones
-@dirrm %%DATADIR%%/pts/test-resources/openssl
-@dirrm %%DATADIR%%/pts/test-resources/et
-@dirrm %%DATADIR%%/pts/test-resources/byte
-@dirrm %%DATADIR%%/pts/test-resources/encode-ogg
-@dirrm %%DATADIR%%/pts/test-resources/yafray
-@dirrm %%DATADIR%%/pts/test-resources/build-imagemagick
-@dirrm %%DATADIR%%/pts/test-resources/x11perf
-@dirrm %%DATADIR%%/pts/test-resources/wine-cloth
-@dirrm %%DATADIR%%/pts/test-resources/jxrendermark
-@dirrm %%DATADIR%%/pts/test-resources/qgears2
-@dirrm %%DATADIR%%/pts/test-resources/padman
-@dirrm %%DATADIR%%/pts/test-resources/bork
-@dirrm %%DATADIR%%/pts/test-resources/vdrift
-@dirrm %%DATADIR%%/pts/test-resources/unigine-tropics
-@dirrm %%DATADIR%%/pts/test-resources/unigine-sanctuary
-@dirrm %%DATADIR%%/pts/test-resources/ppracer
-@dirrm %%DATADIR%%/pts/test-resources/jgfxbat
-@dirrm %%DATADIR%%/pts/test-resources/wine-domino
-@dirrm %%DATADIR%%/pts/test-resources/wine-fire2
-@dirrm %%DATADIR%%/pts/test-resources/wine-hdr
-@dirrm %%DATADIR%%/pts/test-resources/wine-metaballs
-@dirrm %%DATADIR%%/pts/test-resources/wine-vf2
-@dirrm %%DATADIR%%/pts/test-resources/wine-water
-@dirrm %%DATADIR%%/pts/test-resources/c-ray
-@dirrm %%DATADIR%%/pts/test-resources/povray
-@dirrm %%DATADIR%%/pts/test-resources/bwfirt
-@dirrm %%DATADIR%%/pts/test-resources/scimark2
-@dirrm %%DATADIR%%/pts/test-resources
-@dirrm %%DATADIR%%/pts/distro-xml/xsl
-@dirrm %%DATADIR%%/pts/distro-xml
-@dirrm %%DATADIR%%/pts
-@dirrm %%DATADIR%%/pts-core/library
+%%DATADIR%%/pts-core/pts-core.php
+%%DATADIR%%/pts-core/results-viewer/background-pattern.png
+%%DATADIR%%/pts-core/results-viewer/favicon.ico
+%%DATADIR%%/pts-core/results-viewer/horizontal-nav-bg-hover.png
+%%DATADIR%%/pts-core/results-viewer/horizontal-nav-bg.png
+%%DATADIR%%/pts-core/results-viewer/phoronix-test-suite.css
+%%DATADIR%%/pts-core/results-viewer/pts-header.png
+%%DATADIR%%/pts-core/results-viewer/pts-results-viewer.xsl
+%%DATADIR%%/pts-core/results-viewer/pts.js
+%%DATADIR%%/pts-core/static/bash_completion
+%%DATADIR%%/pts-core/static/certificates/openbenchmarking-server.pem
+%%DATADIR%%/pts-core/static/certificates/phoromatic-com.pem
+%%DATADIR%%/pts-core/static/error-gui.html
+%%DATADIR%%/pts-core/static/examples/apt-full-upgrade
+%%DATADIR%%/pts-core/static/examples/phoromatic-cron-starter
+%%DATADIR%%/pts-core/static/examples/phoromatic-init-starter
+%%DATADIR%%/pts-core/static/examples/phoromatic-tracker-update-kernel
+%%DATADIR%%/pts-core/static/examples/update-kernel-from-ubuntu-daily-ppa
+%%DATADIR%%/pts-core/static/examples/update-ubuntu-aptitude-full
+%%DATADIR%%/pts-core/static/graph-config-defaults.xml
+%%DATADIR%%/pts-core/static/images/openbenchmarking.png
+%%DATADIR%%/pts-core/static/images/phoronix-test-suite.png
+%%DATADIR%%/pts-core/static/images/pts-106x55.png
+%%DATADIR%%/pts-core/static/images/pts-158x82.jpg
+%%DATADIR%%/pts-core/static/images/pts-158x82.png
+%%DATADIR%%/pts-core/static/images/pts-308x160-t.png
+%%DATADIR%%/pts-core/static/images/pts-308x160.png
+%%DATADIR%%/pts-core/static/images/pts-icon.png
+%%DATADIR%%/pts-core/static/lists/hal-values-remove.list
+%%DATADIR%%/pts-core/static/lists/module-variables.list
+%%DATADIR%%/pts-core/static/lists/option-command-aliases.list
+%%DATADIR%%/pts-core/static/lists/process-reporting-checks.list
+%%DATADIR%%/pts-core/static/lists/software-vendor-aliases.list
+%%DATADIR%%/pts-core/static/scripts/build-package-deb.php
+%%DATADIR%%/pts-core/static/scripts/build-package-rpm.php
+%%DATADIR%%/pts-core/static/scripts/root-access.sh
+%%DATADIR%%/pts-core/static/short-description.txt
+%%DATADIR%%/pts-core/static/user-config-defaults.xml
+%%DATADIR%%/pts-core/static/xsl/pts-test-installation-viewer.xsl
+%%DATADIR%%/pts-core/static/xsl/pts-test-profile-viewer.xsl
+%%DATADIR%%/pts-core/static/xsl/pts-user-config-viewer.xsl
+%%DATADIR%%/pts-core/user-agreement.txt
+@dirrm %%DATADIR%%/pts-core/static/xsl
+@dirrm %%DATADIR%%/pts-core/static/scripts
+@dirrm %%DATADIR%%/pts-core/static/lists
+@dirrm %%DATADIR%%/pts-core/static/images
+@dirrm %%DATADIR%%/pts-core/static/examples
+@dirrm %%DATADIR%%/pts-core/static/certificates
 @dirrm %%DATADIR%%/pts-core/static
-@dirrm %%DATADIR%%/pts-core/options
-@dirrm %%DATADIR%%/pts-core/test-libraries
-@dirrm %%DATADIR%%/pts-core/results-viewer/fonts
 @dirrm %%DATADIR%%/pts-core/results-viewer
-@dirrm %%DATADIR%%/pts-core/media
-@dirrm %%DATADIR%%/pts-core/modules
+@dirrm %%DATADIR%%/pts-core/openbenchmarking.org/schemas
+@dirrm %%DATADIR%%/pts-core/openbenchmarking.org
 @dirrm %%DATADIR%%/pts-core/objects/pts_Graph
-@dirrm %%DATADIR%%/pts-core/objects/tandem_Xml
-@dirrm %%DATADIR%%/pts-core/objects/gtk
+@dirrm %%DATADIR%%/pts-core/objects/phodevi/sensors
+@dirrm %%DATADIR%%/pts-core/objects/phodevi/parsers
+@dirrm %%DATADIR%%/pts-core/objects/phodevi/components
+@dirrm %%DATADIR%%/pts-core/objects/phodevi
+@dirrm %%DATADIR%%/pts-core/objects/nye_Xml
+@dirrm %%DATADIR%%/pts-core/objects/display_modes
 @dirrm %%DATADIR%%/pts-core/objects/bilde_renderer
 @dirrm %%DATADIR%%/pts-core/objects
-@dirrm %%DATADIR%%/pts-core/scripts
+@dirrm %%DATADIR%%/pts-core/modules
+@dirrm %%DATADIR%%/pts-core/external-test-dependencies/xml/xsl
+@dirrm %%DATADIR%%/pts-core/external-test-dependencies/xml
+@dirrm %%DATADIR%%/pts-core/external-test-dependencies/scripts
+@dirrm %%DATADIR%%/pts-core/external-test-dependencies
+@dirrm %%DATADIR%%/pts-core/definitions/xsl
+@dirrm %%DATADIR%%/pts-core/definitions
+@dirrm %%DATADIR%%/pts-core/commands
 @dirrm %%DATADIR%%/pts-core
 @dirrm %%DATADIR%%
+%%BASH_COMPLETIONS%%@dirrmtry etc/bash_completion.d
+%%X11%%@dirrmtry share/applications
+%%X11%%@dirrmtry share/icons/hicolor/64x64/apps
