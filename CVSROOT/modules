@@ -6737,6 +6737,7 @@ java-checkstyle                 ports/java/java-checkstyle
 java-commapi                    ports/comms/java-commapi
 java-commapi-freebsd            ports/comms/java-commapi-freebsd
 java-cup                        ports/java/java-cup
+java-findbugs                   ports/devel/java-findbugs
 java-getopt                     ports/java/java-getopt
 java-mybatis                    ports/databases/java-mybatis
 java-tutorial                   ports/java/java-tutorial
