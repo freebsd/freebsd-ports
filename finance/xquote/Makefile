@@ -14,6 +14,9 @@ MASTER_SITES=	http://xinvest.sunsite.dk/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A quote retrieval tool for X
 
+DEPRECATED=     Upstream disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 LIB_DEPENDS=	Xbae.4:${PORTSDIR}/x11-toolkits/xbae
 
 USE_MOTIF=	yes
