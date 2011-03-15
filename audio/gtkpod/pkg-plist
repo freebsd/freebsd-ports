@@ -101,6 +101,7 @@ share/icons/hicolor/48x48/apps/gtkpod.png
 share/icons/hicolor/64x64/apps/gtkpod.png
 share/icons/hicolor/scalable/apps/gtkpod.svg
 share/applications/gtkpod.desktop
+share/locale/ca/LC_MESSAGES/gtkpod.mo
 share/locale/de/LC_MESSAGES/gtkpod.mo
 share/locale/es/LC_MESSAGES/gtkpod.mo
 share/locale/fr/LC_MESSAGES/gtkpod.mo

@@ -6,18 +6,17 @@
 #
 
 PORTNAME=	gtkpod
-PORTVERSION=	0.99.14
-PORTREVISION=	7
+PORTVERSION=	1.0.0
 CATEGORIES=	audio
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	GUI for Apple iPod using GTK2
 
+LICENSE=	GPLv2
+
 LIB_DEPENDS=	id3tag.0:${PORTSDIR}/audio/libid3tag \
-		gpod.5:${PORTSDIR}/audio/libgpod
-RUN_DEPENDS=	mp3gain:${PORTSDIR}/audio/mp3gain \
-		iconv:${PORTSDIR}/converters/libiconv
+		gpod.7:${PORTSDIR}/audio/libgpod
 
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
@@ -25,65 +24,43 @@ USE_GNOME=	gtk20 libglade2
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
 INSTALLS_ICONS=	yes
-WANT_GNOME=	yes
 MAN1=		gtkpod.1
 
-PORTDOCS=	ChangeLog README TODOandBUGS.txt TROUBLESHOOTING
+PORTDOCS=	ChangeLog NEWS README TODOandBUGS.txt TROUBLESHOOTING
 
-OPTIONS=	MPEG4IP	 "Enable AAC and H.264 support with MPEG4IP"	off \
-		VORBIS	 "Enable Ogg/Vorbis support (decoding)"		on \
-		FLAC	 "Enable FLAC support (decoding)"		on \
-		LAME	 "Enable encoding to MP3 format"		on \
-		GNOMEVFS "Enable iPod autodetection support"		off \
-		HAL	 "Enable HAL support"				off \
-		CURL	 "Build with coverart download support"		on
+OPTIONS=	VORBIS	"Enable Ogg/Vorbis support"		on \
+		FLAC	"Enable FLAC support"			on \
+		CURL	"Enable coverart download support"	on
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_MPEG4IP) && !defined(WITHOUT_MPEG4IP)
-LIB_DEPENDS+=	mp4v2.10:${PORTSDIR}/multimedia/mp4v2
-CONFIGURE_ARGS+=	--with-mp4v2
-# Define HAVE_GTK to unbreak the build with libmp4v2.so (it is built
-# without Gtk support by default, which can result in gtkpod breakage)
-MAKE_ARGS+=	CPPFLAGS="-DHAVE_GTK"
+.if defined(WITH_VORBIS)
+LIB_DEPENDS+=	vorbisfile.6:${PORTSDIR}/audio/libvorbis
 .else
-CONFIGURE_ARGS+=	--without-mp4v2
-.endif
-.for x in faac faad
-.  if exists(${LOCALBASE}/bin/${x})
-RUN_DEPENDS+=	${x}:${PORTSDIR}/audio/${x}
-.  endif
-.endfor
-
-.if defined(WITH_VORBIS) || exists(${LOCALBASE}/lib/libvorbis.so)
-LIB_DEPENDS+=	vorbis.4:${PORTSDIR}/audio/libvorbis
-RUN_DEPENDS+=	oggdec:${PORTSDIR}/audio/vorbis-tools
+CONFIGURE_ARGS+=	--without-ogg
 .endif
 
-.if defined(WITH_FLAC) || exists(${LOCALBASE}/lib/libFLAC.so)
+.if defined(WITH_FLAC)
 LIB_DEPENDS+=	FLAC.10:${PORTSDIR}/audio/flac
+.else
+CONFIGURE_ARGS+=	--without-flac
 .endif
 
-.if defined(WITH_LAME) || exists(${LOCALBASE}/bin/lame)
-RUN_DEPENDS+=	lame:${PORTSDIR}/audio/lame
-.endif
-
-.if defined(WITH_GNOMEVFS) || ${HAVE_GNOME:Mgnomevfs2}
-USE_GNOME+=	gnomevfs2
-.endif
-
-.if defined(WITH_HAL) || exists(${LOCALBASE}/lib/libhal.so)
-LIB_DEPENDS+=	hal.1:${PORTSDIR}/sysutils/hal
-.endif
-
-.if defined(WITH_CURL) || exists(${LOCALBASE}/lib/libcurl.so)
+.if defined(WITH_CURL)
 LIB_DEPENDS+=	curl.6:${PORTSDIR}/ftp/curl
+.else
+CONFIGURE_ARGS+=	--without-curl
 .endif
 
-pre-configure: .SILENT
+post-patch:
 # Install locale files correctly (to share dir instead of lib dir)
-	${REINPLACE_CMD} -e 's|DATADIRNAME=lib|DATADIRNAME=share|' \
+	@${REINPLACE_CMD} -e 's|DATADIRNAME=lib|DATADIRNAME=share|' \
 		${WRKSRC}/configure
+# FreeBSD does not have libdl
+	@${REINPLACE_CMD} -e 's| -ldl||' ${WRKSRC}/src/Makefile.in
+# Adjust location of <endian.h> header
+	@${REINPLACE_CMD} -e 's|endian\.h|sys/&|' ${WRKSRC}/configure \
+		${WRKSRC}/src/mp4file.c
 
 post-install:
 .if !defined(NOPORTDOCS)
