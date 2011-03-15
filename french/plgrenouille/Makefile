@@ -15,6 +15,9 @@ DISTNAME=	${PORTNAME}_${PORTVERSION:R}-${PORTVERSION:E}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Un client pour determiner votre bande passante a un raccordement large bande
 
+DEPRECATED=     Upstream disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 LIB_DEPENDS=	netsnmp.20:${PORTSDIR}/net-mgmt/net-snmp
 RUN_DEPENDS=	${SITE_PERL}/Net/SNMP.pm:${PORTSDIR}/net-mgmt/p5-Net-SNMP
 
