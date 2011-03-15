@@ -15,6 +15,9 @@ MASTER_SITE_SUBDIR=	znerd
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Clean room implementation of the Java Cryptograph Extension (JCE) API
 
+DEPRECATED=     Upstream disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 USE_JAVA=	yes
 
 NO_BUILD=	yes

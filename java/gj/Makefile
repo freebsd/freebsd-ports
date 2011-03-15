@@ -16,6 +16,9 @@ DISTNAME=	gjdist${GJDIST}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Extension of the Java programming language that supports generic types
 
+DEPRECATED=     Upstream disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 WRKSRC=		${WRKDIR}/gj
 
 NO_BUILD=	YES

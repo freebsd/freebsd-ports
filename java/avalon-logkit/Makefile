@@ -17,6 +17,9 @@ DISTNAME=	LogKit-${PORTVERSION}-bin
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Java toolkit designed for secure performance oriented logging
 
+DEPRECATED=     Upstream disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 USE_JAVA=	YES
 JAVA_VERSION=	1.3+
 NO_BUILD=	YES
