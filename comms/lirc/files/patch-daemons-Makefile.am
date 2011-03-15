@@ -1,0 +1,11 @@
+--- daemons/Makefile.am.orig
++++ daemons/Makefile.am
+@@ -83,7 +83,7 @@ irrecord_SOURCES = irrecord.c \
+ 		transmit.c transmit.h
+ 
+ irrecord_LDADD = libhw_module.a @hw_module_libs@ @receive@
+-irrecord_DEPENDENCIES = @receive@
++irrecord_DEPENDENCIES = libhw_module.a @receive@
+ 
+ ## maintainer mode stuff
+ EXTRA_PROGRAMS = lircd.simsend lircd.simrec slinke

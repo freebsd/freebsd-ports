@@ -23,6 +23,7 @@ USE_XORG=	x11
 USE_PYTHON=	yes
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
+MAKE_JOBS_SAFE=	yes
 
 CONFIGURE_ARGS=		--enable-sandboxed --with-devdir=/var/run/lirc
 CPPFLAGS+=		-I${LOCALBASE}/include
