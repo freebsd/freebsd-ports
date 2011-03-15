@@ -7,7 +7,7 @@
 
 PORTNAME=	wget
 DISTVERSION=	1.12
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	ftp www ipv6
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	wget
@@ -27,7 +27,8 @@ MAKE_JOBS_SAFE=	yes
 OPTIONS=	GNUTLS "Support for SSL via GnuTLS" Off \
 		IPV6 "Support for IPv6" On \
 		NLS "Native Language Support with gettext" On \
-		OPENSSL "Support for SSL via OpenSSL" On
+		OPENSSL "Support for SSL via OpenSSL" On \
+		IDN "Support IDN (Internationalized Domain Names)" On
 
 .include <bsd.port.pre.mk>
 
@@ -63,6 +64,13 @@ PLIST_SUB+=	NLS=""
 .else
 CONFIGURE_ARGS+=--disable-nls
 PLIST_SUB=	NLS="@comment "
+.endif
+
+.if !defined(WITHOUT_IDN)
+LIB_DEPENDS+=	idn:${PORTSDIR}/dns/libidn
+CONFIGURE_ARGS+=--enable-iri --with-libidn=${LOCALBASE}
+.else
+CONFIGURE_ARGS+=--disable-iri
 .endif
 
 MAN1=		wget.1
