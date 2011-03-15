@@ -6,25 +6,33 @@
 #
 
 PORTNAME=	libgpod
-PORTVERSION=	0.7.2
-PORTREVISION=	4
+PORTVERSION=	0.8.0
 CATEGORIES=	audio
-MASTER_SITES=	SF/gtkpod/${PORTNAME}/${PORTNAME}-${PORTVERSION}
+MASTER_SITES=	SF/gtkpod/${PORTNAME}/${PORTNAME}-${PORTVERSION:R}
 
-MAINTAINER=	danfe@FreeBSD.org
+MAINTAINER=	avilla@FreeBSD.org
 COMMENT=	A library for direct access of iPod contents
+
+LICENSE=	LGPL20
+
+LIB_DEPENDS=	plist.1:${PORTSDIR}/devel/libplist \
+		tag.1:${PORTSDIR}/audio/taglib \
+		sgutils2.2:${PORTSDIR}/sysutils/sg3_utils
 
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gtk20
+USE_SQLITE=	3
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	--without-hal --with-html-dir="${PREFIX}/share/doc"
 
-OPTIONS=	PYTHON	"Enable Python bindings"		off \
-		TOOLS	"Build SysInfo detection utility"	off
+OPTIONS=	PYTHON	"Enable Python bindings"	off \
+		MONO	"Enable Mono bindings"		off
+
+PORTDOCS=	ChangeLog NEWS README*
 
 .include <bsd.port.options.mk>
 
@@ -40,24 +48,41 @@ CONFIGURE_ARGS+=	--without-python
 PLIST_SUB+=	PYTHON="@comment "
 .endif
 
-# SysInfo detection utility is required in order to support iPod classic
-# and nano 3G
-.if defined(WITH_TOOLS) || exists(${LOCALBASE}/lib/libsgutils2.so)
-LIB_DEPENDS+=	sgutils2.2:${PORTSDIR}/sysutils/sg3_utils
-PLIST_FILES+=	bin/ipod-read-sysinfo-extended
+.if defined(WITH_MONO)
+USE_GNOME+=	gtksharp20
+CONFIGURE_ARGS+=	--with-mono
+PLIST_SUB+=	MONO=""
+.else
+CONFIGURE_ARGS+=	--without-mono
+PLIST_SUB+=	MONO="@comment "
 .endif
 
-post-patch: .SILENT
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} > 800107 && ${OSVERSION} < 900000 || ${OSVERSION} > 900002
+LIB_DEPENDS+=	imobiledevice.1:${PORTSDIR}/comms/libimobiledevice
+CONFIGURE_ENV+=	LIBUSB_CFLAGS=" " LIBUSB_LIBS="-lusb"
+.else
+CONFIGURE_ARGS+=	--without-libimobiledevice
+.endif
+
+post-patch:
 # Adjust pkgconfigdir to the FreeBSD world
-	${REINPLACE_CMD} -e \
+	@${REINPLACE_CMD} -e \
 		's,libdir)/pkgconfig,prefix)/libdata/pkgconfig,' \
-			${WRKSRC}/Makefile.in
+			${WRKSRC}/Makefile.in \
+			${WRKSRC}/bindings/mono/libgpod-sharp/Makefile.in
 # Allow to build tools without HAL
-	${REINPLACE_CMD} -e \
+	@${REINPLACE_CMD} -e \
 		'/noinst_PROGRAMS =/s,^,@HAVE_HAL_TRUE@,' \
 			${WRKSRC}/tools/Makefile.in
 .if defined(NOPORTDOCS)
-	${REINPLACE_CMD} -e 's, docs,,' ${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e 's, docs,,' ${WRKSRC}/Makefile.in
 .endif
 
-.include <bsd.port.mk>
+post-install:
+.if !defined(NOPORTDOCS)
+	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${DOCSDIR}
+.endif
+
+.include <bsd.port.post.mk>

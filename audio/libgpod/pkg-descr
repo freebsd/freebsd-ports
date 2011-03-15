@@ -9,6 +9,6 @@ duplicating code.
 
 libgpod supports playlists, smart playlists, playcounts, ratings, podcasts,
 cover art, audio and video.  Photo support is implemented as well.  Python
-bindings are optionally available too.
+and Mono bindings are optionally available too.
 
 WWW: http://www.gtkpod.org/libgpod.html
