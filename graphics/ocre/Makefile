@@ -16,6 +16,9 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple optical character recognition solution
 
+DEPRECATED=     Upstream disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 LIB_DEPENDS=	aspell.16:${PORTSDIR}/textproc/aspell
 RUN_DEPENDS=	display:${PORTSDIR}/graphics/ImageMagick \
 		gnuplot:${PORTSDIR}/math/gnuplot \

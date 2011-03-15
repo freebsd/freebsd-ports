@@ -14,6 +14,9 @@ MASTER_SITES=	http://www.medias.ne.jp/~takam/bsd/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Image capture programs for Webcam based SN9C101
 
+DEPRECATED=     Upstream disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 .if defined(WITHOUT_X11)
 COMPONENTS=	snx101shot
 .else

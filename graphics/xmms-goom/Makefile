@@ -16,6 +16,9 @@ DISTNAME=	${PORTNAME}-2k4-0-src
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A cool XMMS visualization
 
+DEPRECATED=     Upstream disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 BUILD_DEPENDS=	xmms-config:${PORTSDIR}/multimedia/xmms \
 		nasm:${PORTSDIR}/devel/nasm
 RUN_DEPENDS=	xmms:${PORTSDIR}/multimedia/xmms

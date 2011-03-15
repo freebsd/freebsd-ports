@@ -15,6 +15,9 @@ DISTNAME=	infinity-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A XMMS plug-in which generate full-screen interactive light effects
 
+DEPRECATED=     Upstream disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 LIB_DEPENDS=	xmms.4:${PORTSDIR}/multimedia/xmms
 RUN_DEPENDS=	xmms:${PORTSDIR}/multimedia/xmms
 

@@ -17,6 +17,9 @@ DISTNAME=	xli-${XLI_SNAPVER}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Xli, xsetbg, xview, xlito - utilities to display images on X11
 
+DEPRECATED=     Upstream disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 LIB_DEPENDS=	png.6:${PORTSDIR}/graphics/png \
 		jpeg.11:${PORTSDIR}/graphics/jpeg
 

@@ -16,6 +16,9 @@ EXTRACT_SUFX=	.tar.Z
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The Dynamic Object Rendering Environment
 
+DEPRECATED=     Upstream disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 USE_XORG=	x11
 USE_GMAKE=	yes
 WRKSRC=		${WRKDIR}/dore

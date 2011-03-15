@@ -15,6 +15,9 @@ DISTNAME=	pygdchart-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python interface to GDChart
 
+DEPRECATED=     Upstream disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 LIB_DEPENDS=	gdc.1:${PORTSDIR}/graphics/gdchart
 
 CONFLICTS=	${PYTHON_PKGNAMEPREFIX}gdchart-2.*

@@ -14,6 +14,9 @@ MASTER_SITES=	http://www.cs.wisc.edu/~schenney/sced/src/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	SCene EDitor for povray/renderman/genray/etc
 
+DEPRECATED=     Upstream disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 RUN_DEPENDS=	povray:${PORTSDIR}/graphics/povray
 
 USE_XORG=	x11 xt xaw

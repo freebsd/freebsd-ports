@@ -14,6 +14,9 @@ MASTER_SITES=	http://www.cs.duke.edu/~reynolds/cqcam/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Color Quickcam control program
 
+DEPRECATED=     Upstream disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg
 
 ONLY_FOR_ARCHS=	i386

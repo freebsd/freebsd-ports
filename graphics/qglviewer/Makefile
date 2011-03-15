@@ -15,6 +15,9 @@ MASTER_SITES=	http://www.gris.uni-tuebingen.de/grisalt/projects/qglviewer/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Use OpenGL to play around with three dimensional scenes
 
+DEPRECATED=     Upstream disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 USE_AUTOTOOLS=	libtool
 USE_QT_VER=	3
 USE_GMAKE=	yes

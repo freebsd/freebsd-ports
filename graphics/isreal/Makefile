@@ -16,6 +16,9 @@ EXTRACT_SUFX=	.tar
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An image classification utility
 
+DEPRECATED=     Upstream disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 PLIST_FILES=	bin/isreal
 USE_GNOME=	imlib
 CFLAGS:=	${CFLAGS} -I${LOCALBASE}/include

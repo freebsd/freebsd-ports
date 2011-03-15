@@ -13,6 +13,9 @@ MASTER_SITES=	http://www.haypocalc.com/perso/prog/greycstoration/ \
 				http://bio3k.softboard.ru/uploads/arch/
 PKGNAMEPREFIX=	gimp-
 
+DEPRECATED=     Upstream disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Gimp plugin used for noise reduction
 

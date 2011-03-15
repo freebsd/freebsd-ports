@@ -15,6 +15,9 @@ MASTER_SITES=	ftp://k332.feld.cvut.cz/pub/local/lemming/gtkfig/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Figure-drawing tool
 
+DEPRECATED=     Upstream disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 PLIST_FILES=	bin/gtkfig
 USE_GNOME=	gtk12
 GNU_CONFIGURE=	yes

@@ -14,6 +14,9 @@ MASTER_SITES=	http://people.freedesktop.org/~fxkuehl/driconf/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Configuration program for DRI drivers
 
+DEPRECATED=     Upstream disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/gtk-2.0/gtk/__init__.py:${PORTSDIR}/x11-toolkits/py-gtk2
 
 USE_GL=		glut

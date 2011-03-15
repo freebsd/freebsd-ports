@@ -14,6 +14,9 @@ MASTER_SITES=	ftp://ftp.sgi.com/opengl/contrib/ \
 DISTNAME=	libtk
 EXTRACT_SUFX=	.tar.Z
 
+DEPRECATED=     Upstream disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An OpenGL/Tk interface
 
