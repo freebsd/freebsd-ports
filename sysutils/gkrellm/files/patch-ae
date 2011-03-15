@@ -1,7 +1,7 @@
 Index: src/Makefile.src
 diff -u src/Makefile.src.orig src/Makefile.src
---- src/Makefile.src.orig	Mon Jul  1 11:13:04 2002
-+++ src/Makefile.src	Mon Jul  1 20:50:11 2002
+--- src/Makefile.src.orig	2002-07-01 11:13:04.000000000 +0900
++++ src/Makefile.src	2011-03-15 17:36:07.583082262 +0900
 @@ -21,7 +21,7 @@
  GTK_LIB = `$(GTK_CONFIG) --libs gthread`
  IMLIB_LIB = `imlib-config --libs-gdk`
@@ -11,3 +11,12 @@ diff -u src/Makefile.src.orig src/Makefile.src
  FLAGS+= $(PTHREAD_INC)
  
  LIBS = $(GTK_LIB) $(IMLIB_LIB) $(GTOP_LIBS) $(SYS_LIBS)
+@@ -83,7 +83,7 @@
+ 	$(INSTALL) -c -m $(MANMODE) ../gkrellm.1 $(MANDIR)/gkrellm.1
+ 
+ install_darwin:
+-    $(MAKE) install STRIP=
++	$(MAKE) install STRIP=
+     
+ install_netbsd:
+ 	$(MAKE) install
