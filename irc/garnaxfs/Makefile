@@ -14,6 +14,9 @@ DISTNAME=	garnax-f1.1
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A file serving bot for IRC
 
+DEPRECATED=     Upstream disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 MAKE_ENV=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" PTHREAD_LIBS="${PTHREAD_LIBS}"
 PLIST_FILES=	bin/garnaxfs etc/garnaxfs.sample
 

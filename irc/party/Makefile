@@ -14,6 +14,9 @@ MASTER_SITES=	http://www.vocito.com/downloads/software/party/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple multi-user chat system
 
+DEPRECATED=     Upstream disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 MAN1=	party.1
 
 .include <bsd.port.pre.mk>
