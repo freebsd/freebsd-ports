@@ -16,6 +16,9 @@ DISTNAME=	jadfb158
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Jad, a Java decompiler
 
+DEPRECATED=     Upstream disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 USE_ZIP=	yes
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
