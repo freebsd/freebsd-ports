@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	rar
-PORTVERSION=	4.0b6
-PORTEPOCH=	2
+PORTVERSION=	4.0.0
+PORTEPOCH=	3
 CATEGORIES=	archivers
 MASTER_SITES=	http://www.rarlab.com/rar/
-DISTNAME=	rarbsd-4.0.b6
+DISTNAME=	rarbsd-${PORTVERSION}
 
 MAINTAINER=	gabor@FreeBSD.org
 COMMENT=	File archiver (binary port)
