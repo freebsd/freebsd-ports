@@ -18,6 +18,9 @@ PATCHFILES=	connect-dos.patch realpath.patch
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A replacement ftp server for Un*x systems
 
+DEPRECATED=     Upstream disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 CONFLICTS=	wu-ftpd+ipv6-[0-9]* heimdal-[0-9]*
 
 USE_AUTOTOOLS=	autoconf213

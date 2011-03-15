@@ -14,6 +14,9 @@ MASTER_SITES=	http://prozilla.genesys.ro/downloads/prozilla/tarballs/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	ProZilla is a fast download accelerator
 
+DEPRECATED=     Upstream disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 USE_BZIP2=	yes
 USE_GETTEXT=	yes
 USE_GMAKE=	yes

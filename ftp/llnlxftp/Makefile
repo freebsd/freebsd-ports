@@ -16,6 +16,9 @@ EXTRACT_SUFX=	.tar.Z
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Motif FTP client
 
+DEPRECATED=     Upstream disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 PLIST_FILES=	bin/xftp lib/X11/app-defaults/XFtp
 WRKSRC=		${WRKDIR}/llnlxftp2.1/sources
 USE_MOTIF=	yes

@@ -14,6 +14,9 @@ MASTER_SITES=	ftp://ftp.bitchx.com/pub/shareware/ \
 		ftp://ftp.mayn.de/pub/unix/network/ftp/ \
 #		ftp://ftp.wxftp.seul.org/pub/wxftp/ # distfile changed there (md5sum)
 
+DEPRECATED=     Upstream disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	X Window System FTP client, with WSftp-like UI
 

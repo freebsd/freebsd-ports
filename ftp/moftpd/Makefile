@@ -16,6 +16,9 @@ MASTER_SITE_SUBDIR=	clement
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A powerful FTP server supporting IPv6, TLS, and much more
 
+DEPRECATED=     Upstream disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 USE_RC_SUBR=	moftpd
 USE_PERL5_BUILD=yes
 GNU_CONFIGURE=	yes

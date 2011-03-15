@@ -16,6 +16,9 @@ EXTRACT_SUFX=	.tar.Z
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Motif FTP client with drag-and-drop file transfer
 
+DEPRECATED=     Upstream disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 PLIST_FILES=	bin/xdir lib/X11/app-defaults/XDir
 MAN1=		xdir.1
 

@@ -13,6 +13,9 @@ MASTER_SITES=	ftp://ftp.cert.dfn.de/pub/tools/net/yale-tftpd/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Enhanced tftpd(8) from Yale University and cisco Systems
 
+DEPRECATED=     Upstream disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 NO_WRKSUBDIR=
 MAKE_ARGS=	ETCDIR=${PREFIX}/etc BINDIR=${PREFIX}/libexec MANDIR=${PREFIX}/man/man
 
