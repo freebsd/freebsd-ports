@@ -8,14 +8,10 @@ PORTNAME=	xquote
 PORTVERSION=	2.6.10
 PORTREVISION=	1
 CATEGORIES=	finance
-MASTER_SITES=	http://xinvest.sunsite.dk/ \
-		http://www.sourcefiles.org/Financial/Stockmarket/ CENKES
+MASTER_SITES=	SF/xinvest
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A quote retrieval tool for X
-
-DEPRECATED=     Upstream disapear and distfile is no more available
-EXPIRATION_DATE=        2011-05-01
 
 LIB_DEPENDS=	Xbae.4:${PORTSDIR}/x11-toolkits/xbae
 
