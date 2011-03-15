@@ -6,6 +6,7 @@
 
 PORTNAME=	amarok
 PORTVERSION=	2.4.0
+PORTREVISION=	1
 CATEGORIES=	audio kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/${PORTNAME}/${PORTVERSION}/src
@@ -47,7 +48,7 @@ OPTIONS=	GPOD "iPod support" on \
 .include <bsd.port.options.mk>
 
 .if defined(WITH_GPOD)
-LIB_DEPENDS+=	gpod.5:${PORTSDIR}/audio/libgpod
+LIB_DEPENDS+=	gpod.7:${PORTSDIR}/audio/libgpod
 PLIST_SUB+=	GPOD=""
 .else
 CMAKE_ARGS+=	-DWITH_Ipod:BOOL=Off
