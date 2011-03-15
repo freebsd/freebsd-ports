@@ -6,11 +6,9 @@
 #
 
 PORTNAME=	rspamd
-PORTVERSION=	0.3.7
-PORTREVISION=	2
+PORTVERSION=	0.3.8
 CATEGORIES=	mail
 MASTER_SITES=	http://highsecure.ru/
-DISTNAME=	${PORTNAME}-${PORTVERSION}_1
 
 MAINTAINER=	vsevolod@FreeBSD.org
 COMMENT=	Fast spam filtering system
