@@ -6,8 +6,7 @@
 #
 
 PORTNAME=		nbc
-PORTVERSION=		1.2.1.r3
-PORTREVISION=		2
+PORTVERSION=		1.2.1.r4
 CATEGORIES=		lang
 MASTER_SITES=		SF
 MASTER_SITE_SUBDIR=	bricxcc/NBC_NXC/NBC%20release%20${PORTVERSION:S/.r/%20r/}
@@ -18,6 +17,7 @@ MAINTAINER=		rene@FreeBSD.org
 COMMENT=		NBC is a programming language for the LEGO MINDSTORMS NXT product
 
 MAKE_JOBS_UNSAFE=	yes
+MAKEFILE=		nbcunix.mak
 
 OPTIONS=	ROBOCTL	"Include roboctl to communicate with the NXT"	off
 
@@ -50,8 +50,8 @@ PORTDOCS=		Changelog \
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|' ${WRKSRC}/Makefile
-	@${REINPLACE_CMD} -e 's|/usr/bin|${LOCALBASE}/bin|' ${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|' ${WRKSRC}/${MAKEFILE}
+	@${REINPLACE_CMD} -e 's|/usr/bin|${LOCALBASE}/bin|' ${WRKSRC}/${MAKEFILE}
 
 do-install:
 	${MKDIR} ${PREFIX}/include/nbc
