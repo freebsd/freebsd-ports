@@ -14,6 +14,9 @@ MASTER_SITES=	SF/gtk-webcore/gtk-webcore/${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Gtk+ WebCore embeddable web browser component
 
+DEPRECATED=     Abandonware, please use www/webkit-gtk2
+EXPIRATION_DATE=        2011-05-01
+
 BUILD_DEPENDS=	osb-nrcore>=0.5.2:${PORTSDIR}/www/osb-nrcore
 LIB_DEPENDS=	curl.6:${PORTSDIR}/ftp/curl
 RUN_DEPENDS=	osb-nrcore>=0.5.2:${PORTSDIR}/www/osb-nrcore

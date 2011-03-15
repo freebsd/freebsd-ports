@@ -14,6 +14,9 @@ MASTER_SITES=	SF/gtk-webcore/gtk-webcore/${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Gtk+ WebCore html rendering engine
 
+DEPRECATED=     Abandonware, please use www/webkit-gtk2
+EXPIRATION_DATE=        2011-05-01
+
 BUILD_DEPENDS=	osb-jscore>=0.5.2:${PORTSDIR}/lang/osb-jscore
 RUN_DEPENDS=	osb-jscore>=0.5.2:${PORTSDIR}/lang/osb-jscore
 
