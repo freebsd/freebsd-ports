@@ -9,8 +9,7 @@ PORTNAME=	fyre
 PORTVERSION=	1.0.0
 PORTREVISION=	11
 CATEGORIES=	graphics
-MASTER_SITES=	http://samy.kerneled.org/ports/ \
-		http://www.felinemenace.org/~nemo/
+MASTER_SITES=	http://releases.navi.cx/fyre/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Chaos map rendering system with GTK+-2 interface
