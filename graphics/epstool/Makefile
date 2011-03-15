@@ -17,6 +17,9 @@ MASTER_SITE_SUBDIR=	nonfree/support/ghostscript/ghostgum
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Create or extract preview bitmaps in EPS files
 
+DEPRECATED=     Upstream disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 USE_GHOSTSCRIPT_RUN=	yes
 
 USE_GMAKE=	yes

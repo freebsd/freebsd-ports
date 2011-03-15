@@ -14,6 +14,9 @@ DISTFILES=	giftrans.c giftrans.1
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A tool for GIF89a transparent option and interlace mode
 
+DEPRECATED=     Upstream disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 DIST_SUBDIR=	giftrans
 NO_WRKSUBDIR=	yes
 

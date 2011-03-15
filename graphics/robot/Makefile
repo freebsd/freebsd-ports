@@ -15,6 +15,9 @@ DISTNAME=	robot-beta
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Graph plotting and data analysis program using OpenLook
 
+DEPRECATED=     Upstream disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 BUILD_DEPENDS=	fsplit:${PORTSDIR}/devel/fortran-utils \
 		imake:${PORTSDIR}/devel/imake
 LIB_DEPENDS=	xview.3:${PORTSDIR}/x11-toolkits/xview

@@ -16,6 +16,9 @@ DISTNAME=	GridPix-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Present large images efficiently over the Internet
 
+DEPRECATED=     Upstream disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 BUILD_DEPENDS=	${LOCALBASE}/lib/libnetpbm.a:${PORTSDIR}/graphics/netpbm
 LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg
 

@@ -14,6 +14,9 @@ MASTER_SITES=	http://homepages.petech.ac.za/~bruces/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Image viewer for X Window System with interface similar to ACDSee
 
+DEPRECATED=     Upstream disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 USE_GNOME=	gnomehack imlib
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

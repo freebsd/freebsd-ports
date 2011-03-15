@@ -15,6 +15,9 @@ DISTNAME=	s3ssrc
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Enable TV-out on S3 graphics cards
 
+DEPRECATED=     Upstream disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 USE_ZIP=	yes
 USE_GMAKE=	yes
 NO_WRKSUBDIR=	yes

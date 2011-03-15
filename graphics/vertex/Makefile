@@ -14,6 +14,9 @@ MASTER_SITES=	http://wolfpack.twu.net/users/wolfpack/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A 3D modeller for generating efficient game models
 
+DEPRECATED=     Upstream disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 LIB_DEPENDS=	gtkgl.5:${PORTSDIR}/x11-toolkits/gtkglarea
 
 USE_BZIP2=	yes

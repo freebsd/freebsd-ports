@@ -15,6 +15,9 @@ DISTNAME=	${PORTNAME}.${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Utility to convert Windows icon files to xpm format
 
+DEPRECATED=     Upstream disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 PLIST_FILES=	bin/icod
 WRKSRC=		${WRKDIR}/icod
 ALL_TARGET=	icod

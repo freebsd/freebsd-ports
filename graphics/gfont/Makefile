@@ -14,6 +14,9 @@ MASTER_SITES=	ftp://ftp.ossp.org/pkg/tool/gfont/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Graphics Font - Create GIF image rendered with TeX-available Font
 
+DEPRECATED=     Upstream disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 BUILD_DEPENDS=	gsftopk:${PORTSDIR}/print/teTeX
 RUN_DEPENDS=	gsftopk:${PORTSDIR}/print/teTeX
 

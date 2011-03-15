@@ -14,6 +14,9 @@ MASTER_SITES=	http://linuxbrit.co.uk/downloads/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An object-based image creation/layout application
 
+DEPRECATED=     Upstream disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 LIB_DEPENDS=	xml2.5:${PORTSDIR}/textproc/libxml2
 
 XML_CONFIG?=	${LOCALBASE}/bin/xml2-config

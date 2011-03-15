@@ -19,6 +19,9 @@ LIB_DEPENDS=	png:${PORTSDIR}/graphics/png \
 		jpeg:${PORTSDIR}/graphics/jpeg \
 		tiff:${PORTSDIR}/graphics/tiff
 
+DEPRECATED=     Upstream disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 .if defined(USE_TK) && ${USE_TK} == 83
 PKGNAMESUFFIX=	-tk83
 USE_TK=		83

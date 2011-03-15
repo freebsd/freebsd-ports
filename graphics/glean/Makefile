@@ -17,6 +17,9 @@ EXTRACT_SUFX=	.tar.bz2
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Suite of OpenGL conformance tests
 
+DEPRECATED=     Upstream disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 LIB_DEPENDS=	tiff.4:${PORTSDIR}/graphics/tiff
 
 PLIST_FILES=	bin/glean

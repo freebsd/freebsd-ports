@@ -15,6 +15,9 @@ DISTNAME=	${PORTNAME}${PORTVERSION:S/.//}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A simple pixel editing tool to make datas for KISS
 
+DEPRECATED=     Upstream disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 BROKEN=		does not build
 
 WRKSRC=		${WRKDIR}/${PORTNAME}

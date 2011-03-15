@@ -14,6 +14,9 @@ MASTER_SITES=	http://homes.eco.auckland.ac.nz/chan079/fig2pstricks/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Convert xfig to pstricks
 
+DEPRECATED=     Upstream disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 USE_GMAKE=	yes
 
 PLIST_FILES=	bin/fig2pstricks

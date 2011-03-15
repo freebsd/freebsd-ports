@@ -14,6 +14,9 @@ MASTER_SITES=	http://corp.efnet.net/~lamer/pegasosppc/download/ CENKES
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Show images of various formats
 
+DEPRECATED=     Upstream disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 USE_SDL=	image gfx
 CFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
 LDFLAGS+=	-lSDL -lSDL_image -lSDL_gfx -L${LOCALBASE}/lib ${PTHREAD_LIBS}

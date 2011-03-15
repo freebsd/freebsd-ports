@@ -15,6 +15,9 @@ MASTER_SITES=	http://www.plasticbugs.com/blogimg/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GIMP fork resembling Adobe Photoshop
 
+DEPRECATED=     Upstream disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 LIB_DEPENDS=	wmf:${PORTSDIR}/graphics/libwmf \
 		aa:${PORTSDIR}/graphics/aalib \
 		exif:${PORTSDIR}/graphics/libexif \
