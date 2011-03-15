@@ -16,6 +16,9 @@ MASTER_SITES=	ftp://sunsite.dk/projects/Tensile/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Support lib for Tensile/NSL
 
+DEPRECATED=     Upstream disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool
 MAKE_ARGS=	CFLAGS="${CFLAGS}"

@@ -14,6 +14,9 @@ MASTER_SITES=	http://www.catb.org/~esr/mixal/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Assembler and interpreter for Donald Knuth's mythical MIX computer
 
+DEPRECATED=     Upstream disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 USE_GMAKE=	yes
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}"
 ALL_TARGET=	${PORTNAME}
