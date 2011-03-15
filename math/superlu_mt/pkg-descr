@@ -20,4 +20,4 @@ James Demmel,    Univ. of California Berkeley, demmel@cs.berkeley.edu
 John R. Gilbert, Xerox Palo Alto Research Center, gilbert@parc.xerox.com
 NOTE: This library has to be linked with BLAS or a thread safe replacement.
 
-WWW: http://www.nersc.gov/~xiaoye/SuperLU/
+WWW: http://crd.lbl.gov/~xiaoye/SuperLU/
