@@ -15,6 +15,9 @@ EXTRACT_SUFX=	.src.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Graphical FTP client based on the xforms library
 
+DEPRECATED=     Upstream disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 LIB_DEPENDS=	forms.1:${PORTSDIR}/x11-toolkits/xforms
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}.src

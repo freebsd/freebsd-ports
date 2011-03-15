@@ -14,6 +14,9 @@ MASTER_SITES=	http://pop-club.hp.infoseek.co.jp/emacs/emacs-wget/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple front-end to wget on Emacsen
 
+DEPRECATED=     Upstream disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 RUN_DEPENDS=	wget:${PORTSDIR}/ftp/wget
 
 NO_BUILD=	yes
