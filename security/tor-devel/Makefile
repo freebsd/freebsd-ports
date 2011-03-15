@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	tor
-DISTVERSION=	0.2.2.22-alpha
-PORTREVISION=	2
+DISTVERSION=	0.2.2.23-alpha
 CATEGORIES=	security net ipv6
 MASTER_SITES=	http://www.torproject.org/dist/ \
 		ftp://ftp.bit.nl/mirror/tor/ \
@@ -39,7 +38,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--with-openssl-dir="${OPENSSLBASE}" --disable-asciidoc
 CPPFLAGS+=	-I${LOCALBASE}/include/event2
 LDFLAGS+=	-L${LOCALBASE}/lib/event2
-CONFIGURE_ENV+=		CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
+CONFIGURE_ENV+=	LDFLAGS="${LDFLAGS}"
 
 MAKE_JOBS_UNSAFE=	yes
 
