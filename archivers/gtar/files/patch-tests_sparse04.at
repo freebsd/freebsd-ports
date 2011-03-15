@@ -1,0 +1,12 @@
+$FreeBSD$
+--- tests/sparse04.at.orig	2011-02-16 23:12:16.000000000 +0100
++++ tests/sparse04.at	2011-03-15 22:27:50.000000000 +0100
+@@ -34,7 +34,7 @@ m4_define([NAME_111],
+ 
+ AT_TAR_CHECK([
+ genfile --sparse --file NAME_111 --block-size 512 8M A || AT_SKIP_TEST
+-tar -c --sparse --posix NAME_111 | tar t
++tar -f - -c --sparse --posix NAME_111 | tar tf -
+ ],
+ [0],
+ [NAME_111
