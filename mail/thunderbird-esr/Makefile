@@ -112,9 +112,6 @@ pre-configure:
 	(cd ${MOZSRC}/js/src/ && ${AUTOCONF})
 
 port-pre-install:
-	${REINPLACE_CMD} -e 's|/usr/local|${PREFIX}|' \
-	${FAKEDIR}/bin/thunderbird
-	${RM} -f ${FAKEDIR}/bin/*.bak
 	${MKDIR} ${FAKEDIR}/lib/${PORTNAME}/defaults
 
 pre-install:
