@@ -8,17 +8,14 @@
 PORTNAME=	lookat
 PORTVERSION=	1.4.1
 CATEGORIES=	sysutils
-MASTER_SITES=	http://www.wagemakers.be/uploads/37/16/
+MASTER_SITES=	http://www.wagemakers.be/downloads/
 DISTNAME=	${PORTNAME}_bekijk-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	corky1951@comcast.net
 COMMENT=	A program to view Un*x text files and manual pages
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-
-DEPRECATED=     Upstream disapear and distfile is no more available
-EXPIRATION_DATE=        2011-05-01
 
 MAN1=		lookat.1
 
