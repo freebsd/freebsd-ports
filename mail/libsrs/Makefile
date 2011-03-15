@@ -15,6 +15,9 @@ DISTNAME=	${PORTNAME}.${PORTVERSION}eta
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Sender Rewriting Scheme (SRS) library and client
 
+DEPRECATED=     Upstream disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 USE_BZIP2=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}.3
 USE_GMAKE=	yes

@@ -15,6 +15,9 @@ DISTNAME=	wmMultiPop3-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A WindowMaker dockapp that checks multiple pop3 accounts for new mail
 
+DEPRECATED=     Upstream disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 BUILD_WRKSRC=		${WRKDIR}/${DISTNAME}/${PORTNAME}
 USE_XORG=	xpm
 

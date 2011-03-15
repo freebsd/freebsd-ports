@@ -17,6 +17,9 @@ DISTNAME=	solid-pop3d-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	SolidPop3 POP3 daemon (fully RFC1939 compliant)
 
+DEPRECATED=     Upstream disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-pam --enable-apop --enable-bulletins \
 		--enable-last --enable-mapping --enable-nonip --enable-connect

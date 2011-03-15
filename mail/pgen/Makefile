@@ -13,6 +13,9 @@ MASTER_SITES=	http://www.happygiraffe.net/dist/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tool to generate a procmailrc file with m4 macros
 
+DEPRECATED=     Upstream disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 GNU_CONFIGURE=	yes
 
 NO_BUILD=	yes

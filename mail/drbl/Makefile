@@ -13,6 +13,9 @@ MASTER_SITES=	http://www.agk.nnov.ru/drbl/prog/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Distributed Realtime Black List
 
+DEPRECATED=     Upstream disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
 USE_PERL5=	yes

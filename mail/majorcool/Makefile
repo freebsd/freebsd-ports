@@ -14,6 +14,9 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Web Interface to Majordomo
 
 
+DEPRECATED=     Upstream disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 BUILD_DEPENDS=	${LOCALBASE}/majordomo/majordomo.pl:${PORTSDIR}/mail/majordomo
 RUN_DEPENDS=	${BUILD_DEPENDS}
 

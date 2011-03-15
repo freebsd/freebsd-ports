@@ -16,6 +16,9 @@ MASTER_SITES=	http://vipul.net/perl/sources/spamcontrol/ricochet/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An automated agent for tracing and reporting internet junk mail
 
+DEPRECATED=     Upstream disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 RUN_DEPENDS=	${SITE_PERL}/Mail/Internet.pm:${PORTSDIR}/mail/p5-Mail-Tools \
 		${SITE_PERL}/${PERL_ARCH}/Net/DNS.pm:${PORTSDIR}/dns/p5-Net-DNS \
 		${SITE_PERL}/Text/Template.pm:${PORTSDIR}/textproc/p5-Text-Template \
