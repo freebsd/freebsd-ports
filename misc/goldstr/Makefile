@@ -14,6 +14,8 @@ MASTER_SITES=	http://it.geocities.com/andreamolteni/prog/goldstr/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Compute the golden string
 
+DEPRECATED=     Upstream disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
 GNU_CONFIGURE=	yes
 
 MAN1=		goldstr.1

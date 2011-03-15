@@ -15,6 +15,9 @@ MASTER_SITES=	http://qmc.pollaknet.at/program/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Quine-McClusky process simplification tool
 
+DEPRECATED=     Upstream disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 USE_BZIP2=	yes
 
 PLIST_FILES=	bin/qmc

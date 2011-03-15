@@ -14,6 +14,9 @@ MASTER_SITES=	http://elektra.e-technik.uni-ulm.de/~mbuck/download/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	X11/Xview TV Videotext/Teletext page viewer (.vtx files)
 
+DEPRECATED=     Upstream disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 BUILD_DEPENDS=	bdftopcf:${PORTSDIR}/x11-fonts/bdftopcf \
 		gawk:${PORTSDIR}/lang/gawk \
 		mkfontdir:${PORTSDIR}/x11-fonts/mkfontdir \

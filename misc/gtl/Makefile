@@ -16,6 +16,9 @@ DISTNAME=	GTL-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C++ STL-based support for graphs and graph algorithms
 
+DEPRECATED=     Upstream disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 RESTRICTED=	License forbids redistribution (source or binary)
 
 USE_LDCONFIG=	yes

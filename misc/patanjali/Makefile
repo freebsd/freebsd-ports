@@ -14,6 +14,9 @@ EXTRACT_SUFX=	.src.tar.gz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Displays a verse from Yoga Sutras of Patanjali
 
+DEPRECATED=     Upstream disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 PLIST=		${WRKDIR}/pkg-plist
 PLIST_DIRS=	share/patanjali
 SUTRAS=		patanjali-sutras-english.txt

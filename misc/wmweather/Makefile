@@ -13,6 +13,9 @@ MASTER_SITES=	http://www.godisch.de/debian/wmweather/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A WMaker dockapp which displays meteorological data for your city
 
+DEPRECATED=     Upstream disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 LIB_DEPENDS=	curl.6:${PORTSDIR}/ftp/curl
 BUILD_DEPENDS=	xmessage:${PORTSDIR}/x11/xmessage
 RUN_DEPENDS=	xmessage:${PORTSDIR}/x11/xmessage

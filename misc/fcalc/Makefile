@@ -15,6 +15,9 @@ DISTNAME=	${PORTNAME}-tcl
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	F/Calc is a calculator for photographic formulas
 
+DEPRECATED=     Upstream disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 RUN_DEPENDS=	${LOCALBASE}/lib/Tix8.4.3/Tix.tcl:${PORTSDIR}/x11-toolkits/tix
 
 NO_BUILD=	yes

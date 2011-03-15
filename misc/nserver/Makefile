@@ -16,6 +16,9 @@ COMMENT=	Nserver for the Nokia 9000 and 9110 Communicator
 # Original site http://www.users.globalnet.co.uk/~syrinx/9110/nserver.html
 # doesn't exist anymore
 
+DEPRECATED=     Upstream disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 USE_GMAKE=	yes
 
 PLIST_FILES=	sbin/nserver

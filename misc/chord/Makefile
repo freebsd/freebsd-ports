@@ -15,6 +15,9 @@ DISTNAME=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Produce PS sheet-music from text input
 
+DEPRECATED=     Upstream disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 CFLAGS+=	-DPAPERSIZE=US
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}"
 
