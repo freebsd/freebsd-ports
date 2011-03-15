@@ -5,10 +5,10 @@
 # $FreeBSD$
 
 PORTNAME=	gpsbabel
-PORTVERSION=	1.3.6
-PORTREVISION=	1
+PORTVERSION=	1.4.2
 CATEGORIES=	astro geography
-MASTER_SITES=	http://www.lexort.com/pkgsrc/distfiles/
+MASTER_SITES=	${MASTER_SITE_GENTOO}
+MASTER_SITE_SUBDIR=	distfiles
 
 MAINTAINER=	wenheping@gmail.com
 COMMENT=	A gps file translating tool

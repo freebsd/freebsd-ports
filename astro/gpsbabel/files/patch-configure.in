@@ -1,6 +1,0 @@
---- configure.in.orig	2008-05-04 22:26:37.000000000 +0000
-+++ configure.in	2008-08-04 13:35:52.000000000 +0000
-@@ -38,3 +38,2 @@
- AC_EXEEXT
--AC_SUBST(AC_EXEEXT)
- AC_C_BIGENDIAN
