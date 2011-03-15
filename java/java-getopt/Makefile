@@ -9,7 +9,7 @@ PORTNAME=	getopt
 PORTVERSION=	1.0.13
 PORTREVISION=	4
 CATEGORIES=	java devel
-MASTER_SITES=	ftp://ftp.urbanophile.com/pub/arenn/software/sources/
+MASTER_SITES=	http://www.urbanophile.com/~arenn/hacking/getopt/
 PKGNAMEPREFIX=	java-
 DISTNAME=	${PKGNAMEPREFIX}${PORTNAME}-${PORTVERSION}
 
