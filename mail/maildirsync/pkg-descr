@@ -2,4 +2,4 @@ maildirsync is a utility for online Maildir-synchronization.
 It is designed to be used in online (live) maildir folders,
 be fail-safe and optimized for minimal bandwidth.
 
-WWW:	http://hacks.dlux.hu/maildirsync/
+WWW:	http://code.google.com/p/maildirsync/

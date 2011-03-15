@@ -8,7 +8,7 @@
 PORTNAME=	maildirsync
 PORTVERSION=	1.1
 CATEGORIES=	mail perl5
-MASTER_SITES=	http://hacks.dlux.hu/maildirsync/
+MASTER_SITES=	GOOGLE_CODE
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Online synchronizer for Maildir-format mailboxes
