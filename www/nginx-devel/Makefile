@@ -7,7 +7,7 @@
 
 PORTNAME=	nginx
 PORTVERSION=	0.9.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	http://sysoev.ru/nginx/
 MASTER_SITES+=	${MASTER_SITE_LOCAL}
@@ -23,7 +23,7 @@ LICENSE=	BSD
 OPTIONS=	DEBUG			"Enable nginx debugging" off \
 		DEBUGLOG		"Enable debug log (--with-debug)" off \
 		FILE_AIO		"Enable file aio" off \
-		IPV6			"Enable IPv6" off \
+		IPV6			"Enable IPv6" on \
 		GOOGLE_PERFTOOLS	"Enable google perftools module" off \
 		HTTP_MODULE		"Enable HTTP module" on \
 		HTTP_ADDITION_MODULE	"Enable http_addition module" off \
@@ -132,7 +132,7 @@ CONFIGURE_ARGS+=--with-debug
 CONFIGURE_ARGS+=--with-file-aio
 .endif
 
-.if defined(WITH_IPV6)
+.if !defined(WITHOUT_IPV6)
 CONFIGURE_ARGS+=--with-ipv6
 CATEGORIES+=	ipv6
 .endif
