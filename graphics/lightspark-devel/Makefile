@@ -41,7 +41,7 @@ MAKE_JOBS_SAFE=	yes
 USE_PERL5_BUILD=yes # for llvm-config; see ports/146711
 USE_LDCONFIG=	yes
 USE_GETTEXT=	yes
-USE_GCC=	4.4+
+USE_GCC=	4.5+
 
 PORTDOCS=	*
 
