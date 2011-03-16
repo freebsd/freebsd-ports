@@ -7,6 +7,7 @@
 
 PORTNAME=	obspy.gse2
 PORTVERSION=	0.4.7
+PORTREVISION=	1
 CATEGORIES=	science python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -15,7 +16,7 @@ MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Read & write seismograms, Format GSE2
 
 BUILD_DEPENDS=	\
-		${PYTHON_PKGNAMEPREFIX}obspy.core>=0.4.6:${PORTSDIR}/science/py-obspy.core
+		${PYTHON_PKGNAMEPREFIX}obspy-core>=0.4.6:${PORTSDIR}/science/py-obspy-core
 
 USE_ZIP=		yes
 USE_PYTHON=		yes
