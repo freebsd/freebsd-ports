@@ -1,0 +1,7 @@
+%%SITE_PERL%%/LaTeX/ToUnicode.pm
+%%SITE_PERL%%/LaTeX/ToUnicode/Tables.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/LaTeX/ToUnicode/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/LaTeX/ToUnicode
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/LaTeX
+@dirrm %%SITE_PERL%%/LaTeX/ToUnicode
+@dirrmtry %%SITE_PERL%%/LaTeX

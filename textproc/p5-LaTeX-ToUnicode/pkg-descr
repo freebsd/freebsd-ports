@@ -1,0 +1,6 @@
+LaTeX::ToUnicode provides a method to convert LaTeX-style markups
+for accents etc. into their Unicode equivalents. It translates
+commands for special characters or accents into their Unicode
+equivalents and removes formatting commands.
+
+WWW:	http://search.cpan.org/dist/LaTeX-ToUnicode/
