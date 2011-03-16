@@ -21,7 +21,9 @@ RUN_DEPENDS=	gpg:${PORTSDIR}/security/gnupg \
 # fetch claims "Moved temporarily" without this - why? (inspired by deskutils/gtg)
 FETCH_ARGS=	-pRr
 
-CONFLICTS=	duplicity-devel-[0-9]*
+CONFLICTS=	duplicity-0.6.* duplicity-devel-[0-9]*
+
+NO_LATEST_LINK=	yes
 
 USE_PYTHON=	2.4+
 USE_PYDISTUTILS=yes
