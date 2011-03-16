@@ -5,7 +5,7 @@
  requires    'MooseX::POE'      =>    0.205;
  
 -build_requires   'Test::More'                   => 0.47;
--build_requires	 'POE::Filter::HTTP::Parser'	=> 0.02;
+-build_requires	 'POE::Filter::HTTP::Parser'	=> 1.06;
 -build_requires	 'Test::POE::Client::TCP'	=> 0.10;
 -
 -my $value = prompt( 'Do you want to test streaming ( requires POE::Component::Client::HTTP ) [y/N]?', 'N' );
