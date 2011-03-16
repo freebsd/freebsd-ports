@@ -17,6 +17,9 @@ DISTNAME=	python-${PORTNAME}-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GtkExtra Python Language Bindings
 
+DEPRECATED=	Abandoned upstream
+EXPIRATION_DATE=	2011-05-01
+
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/gtk-1.2/GTK.py:${PORTSDIR}/x11-toolkits/py-gtk
 LIB_DEPENDS=	gtkextra.17:${PORTSDIR}/x11-toolkits/gtkextra
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/gtk-1.2/GTK.py:${PORTSDIR}/x11-toolkits/py-gtk
