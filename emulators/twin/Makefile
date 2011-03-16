@@ -17,6 +17,9 @@ DISTNAME=	${PORTNAME}-src-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Willows Toolkit for migrating and developing Windows applications
 
+DEPRECATED=     Upstream disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 ONLY_FOR_ARCHS=	i386 alpha powerpc
 
 WRKSRC=		${WRKDIR}/${PORTNAME}

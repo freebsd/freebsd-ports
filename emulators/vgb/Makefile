@@ -17,6 +17,9 @@ EXTRACT_SUFX=	.tar.Z
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Nintendo GameBoy(tm) emulator
 
+DEPRECATED=     Distfile is no more available (lastest binaries provided by upstream are for 5.x)
+EXPIRATION_DATE=        2011-05-01
+
 WRKSRC=		${WRKDIR}/GB
 
 USE_XORG=	x11 xext

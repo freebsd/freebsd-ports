@@ -16,6 +16,9 @@ DISTNAME=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Tcl/Tk front end to the hfs program
 
+DEPRECATED=     Upstream disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 USE_TK=		yes
 PLIST_FILES=	bin/tkhfs
 RUN_DEPENDS=	hfs:${PORTSDIR}/emulators/hfs
