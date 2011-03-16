@@ -15,6 +15,9 @@ DISTNAME=	gnome-find-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Graphical version of the GNU "find" utility
 
+DEPRECATED=	Abandoned upstream
+EXPIRATION_DATE=	2011-05-01
+
 USE_GNOME=	gnomehack gnomeprefix libglade
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
