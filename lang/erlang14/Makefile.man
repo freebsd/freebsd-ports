@@ -8,6 +8,7 @@ MAN1=	ct_run.1 \
 	erlsrv.1 \
 	escript.1 \
 	run_erl.1 \
+	snmpc.1 \
 	start.1 \
 	start_erl.1 \
 	start_webtool.1 \
@@ -111,6 +112,7 @@ MAN3=	CosEventChannelAdmin.3 \
 	ct.3 \
 	ct_cover.3 \
 	ct_ftp.3 \
+	ct_hooks.3 \
 	ct_master.3 \
 	ct_rpc.3 \
 	ct_slave.3 \

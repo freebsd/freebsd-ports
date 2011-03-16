@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	erlang
-PORTVERSION=	r14b01
-PORTREVISION=	1
+PORTVERSION=	r14b02
 PORTEPOCH=	1
 CATEGORIES=	lang parallel java
 MASTER_SITES=	http://www.erlang.org/download/:erlangorg		\
@@ -17,7 +16,7 @@ MASTER_SITES=	http://www.erlang.org/download/:erlangorg		\
 		http://www.erlang.se/publications/:publications		\
 		http://www.sics.se/~joe/thesis/:joe			\
 		${MASTER_SITE_LOCAL:S/$/:local/:S,%SUBDIR%/,olgeni/,}
-DISTNAME=	otp_src_R14B01
+DISTNAME=	otp_src_R14B02
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:erlangorg	\
 		${ERLANG_MAN}:erlangorg			\
 		${ERLANG_DOCS}:erlangorg		\
@@ -97,9 +96,9 @@ LIB_DEPENDS+=		iodbc.3:${PORTSDIR}/databases/libiodbc
 .endif
 .endif
 
-ERLANG_MAN=	otp_doc_man_R14B01.tar.gz
+ERLANG_MAN=	otp_doc_man_R14B02.tar.gz
 .if !defined(NOPORTDOCS)
-ERLANG_DOCS=	otp_doc_html_R14B01.tar.gz
+ERLANG_DOCS=	otp_doc_html_R14B02.tar.gz
 .endif
 ERLANG_PLIST=	${WRKDIR}/pkg-plist
 
