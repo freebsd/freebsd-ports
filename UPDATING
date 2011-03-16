@@ -5,6 +5,20 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20110316:
+  AFFECTS: users of sysutils/duplicity
+  AUTHOR: peter.schuller@infidyne.com
+
+  sysutils/duplicity has been upgraded to 0.6.11. The old version
+  (0.5.20) is retained as sysutils/duplicity05. Duplicity 0.6 should
+  be generally compatible, but pay special attention to the new meaning
+  of the --archive-dir command. In particular, the archive dir is now
+  mandatory and defaults to ~/.cache/duplicity. You may have to
+  --exclude accordingly.  In addition, it is recommended you consult
+  the CHANGELOG, specifically the "New in v0.6.00 (2009/06/08)" section
+  which details the checkpoint/restore feature (enabled by default) and
+  its implications.
+
 20110313:
   AFFECTS: users of astro/boinc-setiathome-enhanced
   AUTHOR: rene@FreeBSD.org
