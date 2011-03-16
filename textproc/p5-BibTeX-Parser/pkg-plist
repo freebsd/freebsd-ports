@@ -1,0 +1,8 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/BibTeX/Parser/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/BibTeX/Parser
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/BibTeX
+%%SITE_PERL%%/BibTeX/Parser/Author.pm
+%%SITE_PERL%%/BibTeX/Parser/Entry.pm
+%%SITE_PERL%%/BibTeX/Parser.pm
+@dirrmtry %%SITE_PERL%%/BibTeX/Parser
+@dirrmtry %%SITE_PERL%%/BibTeX
