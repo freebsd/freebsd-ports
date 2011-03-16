@@ -9,7 +9,7 @@
 PORTNAME=	vmaps
 PORTVERSION=	1.1
 CATEGORIES=	devel python
-MASTER_SITES=	http://snafu.freedom.org/Vmaps/
+MASTER_SITES=	http://sovereignit.com/Vmaps/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	Vmaps-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
