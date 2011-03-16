@@ -25,4 +25,10 @@ USE_GMAKE=	yes
 CONFIGURE_ENV=	"CXXFLAGS=${CFLAGS} -I${LOCALBASE}/include"
 INSTALLS_ICONS=	yes
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 900027
+BROKEN=		does not build on 9.X after log2 addition
+.endif
+
+.include <bsd.port.post.mk>
