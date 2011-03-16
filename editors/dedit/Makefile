@@ -15,6 +15,9 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A simple GNOME i18n editor
 
+DEPRECATED=	Upstream disapear and distfile is no more available
+EXPIRATION_DATE=	2011-05-01
+
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 USE_GNOME=	gnomelibs gnomeprefix gnomehack gtk12 glib12 orbit

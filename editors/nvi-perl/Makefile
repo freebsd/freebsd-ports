@@ -20,6 +20,9 @@ PATCH_DIST_ARGS=-d ${WRKSRC}/.. --forward --quiet -E -p0
 PATCH_ARGS=	-d ${WRKSRC}/.. --forward --quiet -E -p0
 WRKSRC=		${WRKDIR}/${DISTNAME}/build
 
+DEPRECATED=	Distfile is no more available
+EXPIRATION_DATE=	2011-05-01
+
 USE_PERL5=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	OPTFLAG='-D_PATH_SYSEXRC=\"${PREFIX}/etc/vi.exrc\"'

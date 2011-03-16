@@ -16,6 +16,9 @@ DISTFILES=	${PORTNAME}.Z
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An interactive tutorial for the vi editor
 
+DEPRECATED=	Upstream disapear and distfile is no more available
+EXPIRATION_DATE=	2011-05-01
+
 EXTRACT_CMD=	uncompress
 EXTRACT_BEFORE_ARGS=	-c
 EXTRACT_AFTER_ARGS=	| tail -n 1759 | sh

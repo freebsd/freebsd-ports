@@ -15,6 +15,9 @@ MASTER_SITE_SUBDIR=	emacs
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Libraries of (GNU) Emacs Input Method
 
+DEPRECATED=	Distfile is no more available
+EXPIRATION_DATE=	2011-05-01
+
 LATEST_LINK=	leim21
 
 USE_EMACS=		yes
