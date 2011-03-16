@@ -8,8 +8,7 @@
 PORTNAME=	diakonos
 PORTVERSION=	0.8.12
 CATEGORIES=	editors ruby
-MASTER_SITES=	http://purepistos.net/diakonos/ \
-		http://distfiles.officialunix.com/
+MASTER_SITES=	http://diakonos.pist0s.ca/archives/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Linux editor for the masses
