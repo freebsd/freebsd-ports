@@ -7,6 +7,7 @@
 
 PORTNAME=	obspy.mseed
 PORTVERSION=	0.4.7
+PORTREVISION=	1
 CATEGORIES=	science python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,8 +15,8 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Read & write seismograms, Format MiniSeed
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}obspy.core>=0.4.6:${PORTSDIR}/science/py-obspy.core
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}obspy.core>=0.4.6:${PORTSDIR}/science/py-obspy.core
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}obspy-core>=0.4.6:${PORTSDIR}/science/py-obspy-core
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}obspy-core>=0.4.6:${PORTSDIR}/science/py-obspy-core
 
 USE_ZIP=		yes
 USE_PYTHON=		yes
