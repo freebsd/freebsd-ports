@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	xbmc
-PORTVERSION=	10.0
-PORTREVISION=	5
+PORTVERSION=	10.1
 CATEGORIES=	multimedia
 MASTER_SITES=	http://mirrors.xbmc.org/releases/source/
 
@@ -15,7 +14,6 @@ MAINTAINER=	mickael.maillot@gmail.com
 COMMENT=	XBMC is an award winning media center application
 
 LICENSE=	GPLv2
-LICENSE_FILE=	${WRKSRC}/LICENSE.GPL
 
 BUILD_DEPENDS=	enca:${PORTSDIR}/converters/enca \
 		gawk:${PORTSDIR}/lang/gawk \
@@ -51,8 +49,7 @@ LIB_DEPENDS=	asound.2:${PORTSDIR}/audio/alsa-lib	\
 		smbclient.0:${PORTSDIR}/net/samba-libsmbclient	\
 		sqlite3.8:${PORTSDIR}/databases/sqlite3 \
 		vorbis.4:${PORTSDIR}/audio/libvorbis \
-		wavpack.2:${PORTSDIR}/audio/wavpack \
-		Xtst:${PORTSDIR}/x11/libXtst
+		wavpack.2:${PORTSDIR}/audio/wavpack
 
 RUN_DEPENDS=	${LOCALBASE}/lib/alsa-lib/libasound_module_pcm_oss.so:${PORTSDIR}/audio/alsa-plugins \
 		${PYTHON_SITELIBDIR}/_sqlite3.so:${PORTSDIR}/databases/py-sqlite3 \
@@ -65,7 +62,7 @@ USE_GMAKE=	yes
 USE_GNOME=	pkgconfig
 USE_AUTOTOOLS=	autoconf libtool automake libltdl
 GNU_CONFIGURE=	yes
-USE_XORG=	xinerama xt xmu xrandr
+USE_XORG=	xinerama xt xmu xrandr xtst
 USE_GL=		glu
 USE_SDL=	image mixer sdl
 USE_MYSQL=	yes
@@ -149,7 +146,7 @@ CONFIGURE_ARGS+=	--disable-hal
 .endif
 
 .if defined(WITH_LIRC)
-RUN_DEPENDS+=	lirc_client.2:${PORTSDIR}/comms/lirc
+RUN_DEPENDS+=	lircd:${PORTSDIR}/comms/lirc
 .endif
 
 .if !defined(WITHOUT_MMS)
