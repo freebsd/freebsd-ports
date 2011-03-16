@@ -153,7 +153,6 @@
     SUBDIR += py-mlpy
     SUBDIR += py-netCDF4
     SUBDIR += py-obspy-core
-    SUBDIR += py-obspy.core
     SUBDIR += py-obspy.gse2
     SUBDIR += py-obspy.mseed
     SUBDIR += py-obspy.signal
