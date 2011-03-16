@@ -184,6 +184,7 @@
     SUBDIR += dump9660
     SUBDIR += dupfind
     SUBDIR += duplicity
+    SUBDIR += duplicity05
     SUBDIR += duplicity-devel
     SUBDIR += duply
     SUBDIR += dupmerge
