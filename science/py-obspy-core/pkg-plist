@@ -1,0 +1,81 @@
+bin/obspy-runtests
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/PKG-INFO
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/SOURCES.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/dependency_links.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/entry_points.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/namespace_packages.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/not-zip-safe
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/requires.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/top_level.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/core/LICENSE.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/core/README.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/core/VERSION.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/core/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/core/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/core/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/core/ascii.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/core/ascii.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/core/ascii.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/core/preview.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/core/preview.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/core/preview.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/core/scripts/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/core/scripts/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/core/scripts/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/core/scripts/runtests.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/core/scripts/runtests.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/core/scripts/runtests.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/core/stream.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/core/stream.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/core/stream.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/core/tests/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/core/tests/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/core/tests/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/core/tests/data/example.npz
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/core/tests/data/slist.ascii
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/core/tests/data/slist2.ascii
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/core/tests/data/tspair.ascii
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/core/tests/data/tspair2.ascii
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/core/tests/test_ascii.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/core/tests/test_ascii.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/core/tests/test_ascii.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/core/tests/test_preview.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/core/tests/test_preview.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/core/tests/test_preview.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/core/tests/test_stats.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/core/tests/test_stats.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/core/tests/test_stats.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/core/tests/test_stream.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/core/tests/test_stream.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/core/tests/test_stream.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/core/tests/test_trace.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/core/tests/test_trace.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/core/tests/test_trace.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/core/tests/test_utcdatetime.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/core/tests/test_utcdatetime.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/core/tests/test_utcdatetime.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/core/tests/test_util.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/core/tests/test_util.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/core/tests/test_util.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/core/tests/test_waveform_plugins.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/core/tests/test_waveform_plugins.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/core/tests/test_waveform_plugins.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/core/trace.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/core/trace.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/core/trace.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/core/utcdatetime.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/core/utcdatetime.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/core/utcdatetime.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/core/util.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/core/util.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/core/util.pyo
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/core/scripts
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/core/tests/data
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/core/tests
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/core
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%
