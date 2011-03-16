@@ -24,6 +24,8 @@ FETCH_ARGS=	-pRr
 
 CONFLICTS=	duplicity-[0-9]*
 
+IGNORE=		is older than the stable release; please use sysutils/duplicity
+
 USE_PYTHON=	2.4+
 USE_PYDISTUTILS=yes
 USE_GETTEXT=	yes
