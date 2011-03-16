@@ -1,0 +1,11 @@
+--- lib/Makefile.in.orig	2011-03-12 19:23:35.972793044 -0500
++++ lib/Makefile.in	2011-03-12 19:23:48.106791099 -0500
+@@ -226,7 +226,7 @@
+ g77_interface.c node.c symbol_table.c xmalloc.c xmath.c
+ 
+ libmatheval_la_LDFLAGS = -version-info 1:0:0
+-libmatheval_la_LIBADD = -lfl -lm
++libmatheval_la_LIBADD = -lfl_pic -lm
+ include_HEADERS = matheval.h
+ noinst_HEADERS = common.h error.h node.h symbol_table.h xmalloc.h	\
+ xmath.h
