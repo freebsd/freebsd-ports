@@ -15,7 +15,6 @@ MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	A scene-oriented, flexible 3D engine written in C++
 
 LIB_DEPENDS=	zzip.13:${PORTSDIR}/devel/zziplib \
-		IL.2:${PORTSDIR}/graphics/devil \
 		freetype.9:${PORTSDIR}/print/freetype2
 
 USE_LDCONFIG=	YES
