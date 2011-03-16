@@ -9,7 +9,7 @@ PORTNAME=	mico
 PORTVERSION=	2.3.12
 PORTREVISION=	4
 CATEGORIES=	devel
-MASTER_SITES=	http://www.mico.org/
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}%20${PORTVERSION}/
 
 PATCH_SITES=	http://mico.org/errata/
 PATCHFILES=	mico-2.3.12-secfix1.diff

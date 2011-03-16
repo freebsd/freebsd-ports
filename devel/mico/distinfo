@@ -1,6 +1,4 @@
-MD5 (mico-2.3.12.tar.gz) = b94252f78da414cc0c7122cdd2a4b2be
 SHA256 (mico-2.3.12.tar.gz) = f67663962c0fabfb459e0c14027fcd3ab9d809ba69cabdf9399abe467b9bbf4f
 SIZE (mico-2.3.12.tar.gz) = 2837502
-MD5 (mico-2.3.12-secfix1.diff) = 6248a4fbbdd542f062a515be03de0db9
 SHA256 (mico-2.3.12-secfix1.diff) = c1127b2afebb57bec2f89cd6ea427038c3667c2a39ffbf8243d1de1b0ccc9457
 SIZE (mico-2.3.12-secfix1.diff) = 547
