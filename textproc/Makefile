@@ -493,6 +493,7 @@
     SUBDIR += p5-LaTeX-Pod
     SUBDIR += p5-LaTeX-TOM
     SUBDIR += p5-LaTeX-Table
+    SUBDIR += p5-LaTeX-ToUnicode
     SUBDIR += p5-Lingua-Conjunction
     SUBDIR += p5-Lingua-EN-AddressParse
     SUBDIR += p5-Lingua-EN-Fathom
