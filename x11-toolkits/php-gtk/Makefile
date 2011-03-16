@@ -15,6 +15,9 @@ MASTER_SITES=	http://gtk.php.net/distributions/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An extension to use gtk in PHP-applications
 
+DEPRECATED=	Abandoned upstream, consider using x11-toolkits/php-gtk2
+EXPIRATION_DATE=	2011-05-01
+
 USE_AUTOTOOLS=	automake:env autoconf libtool:env
 GNU_CONFIGURE=	yes
 USE_PHP=	pcre
