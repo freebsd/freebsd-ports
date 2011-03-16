@@ -15,6 +15,9 @@ DISTNAME=	${PORTNAME}-4.0.16-lt
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Full screen editor based on MicroEMACS
 
+DEPRECATED=	Upstream disapear and distfile is no more available
+EXPIRATION_DATE=	2011-05-01
+
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}" DEFINES=""
 
 pre-patch:

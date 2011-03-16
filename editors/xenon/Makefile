@@ -15,6 +15,9 @@ MASTER_SITES=	http://sydney.proximity.com.au/~ben/xenon/dist/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple X-based text editor
 
+DEPRECATED=	Upstream disapear and distfile is no more available
+EXPIRATION_DATE=	2011-05-01
+
 USE_GMAKE=	yes
 USE_XORG=	xpm
 MAKEFILE=	${WRKSRC}/makefiles/Makefile.Linux

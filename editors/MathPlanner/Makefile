@@ -16,6 +16,9 @@ MASTER_SITES=	http://koti.mbnet.fi/jarmonik/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A mathematical design and publishing application
 
+DEPRECATED=     Upstream says project is canceled and no more distfiles can be found
+EXPIRATION_DATE=        2011-05-01
+
 USE_QT_VER=	3
 GNU_CONFIGURE=	yes
 

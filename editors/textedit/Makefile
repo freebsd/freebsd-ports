@@ -15,6 +15,9 @@ MASTER_SITE_SUBDIR=	fenner
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The OpenLook textedit application
 
+DEPRECATED=	Upstream disapear and distfile is no more available
+EXPIRATION_DATE=	2011-05-01
+
 LIB_DEPENDS=	xview.3:${PORTSDIR}/x11-toolkits/xview
 
 WRKSRC=		${WRKDIR}/textedit

@@ -20,6 +20,9 @@ PATCHFILES=	nvi-1.79.m17n-20040401.diff.gz
 MAINTAINER?=	ports@FreeBSD.org
 COMMENT?=	A clone of vi/ex, with multilingual patch, no default settings
 
+DEPRECATED=	Distfile is no more available
+EXPIRATION_DATE=	2011-05-01
+
 PATCH_DIST_ARGS=	-d ${WRKSRC}/.. --forward --quiet -E -p0 -f
 WRKSRC=		${WRKDIR}/${DISTNAME}/build
 
