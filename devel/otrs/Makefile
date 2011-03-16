@@ -39,6 +39,8 @@ BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Date/Pcalc.pm:${PORTSDIR}/devel/p5-Date
 		${SITE_PERL}/XML/FeedPP.pm:${PORTSDIR}/textproc/p5-XML-FeedPP
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
+BROKEN=		conflicting dependencies
+
 OPTIONS=	MYSQL "MySQL database support" on \
 		PGSQL "PostgreSQL database support" off \
 		MODPERL2 "ModPerl2 support" on \
