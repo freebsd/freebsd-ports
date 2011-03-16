@@ -27,6 +27,8 @@ USE_LDCONFIG=	yes
 MAN1=		dieharder.1
 MAN3=		libdieharder.3
 
+LICENSE=	GPLv2
+
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "ia64" || ${ARCH} == "sparc64"
