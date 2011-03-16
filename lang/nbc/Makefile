@@ -1,4 +1,4 @@
-# New ports collection makefile for:	nbcx
+# New ports collection makefile for:	nbc
 # Date created:				4 April 2007
 # Whom:					Ivan "Rambius" Ivanov <rambiusparkisanius@gmail.com>
 #					Jason Bacon <jwbacon@tds.net>
@@ -35,7 +35,6 @@ USE_GMAKE=		yes
 USE_DOS2UNIX=		yes
 USE_FPC=		fcl-base fcl-image
 
-SUB_FILES=		pkg-message
 WRKSRC=			${WRKDIR}/NXT
 
 PLIST_FILES=		bin/nbc \
@@ -62,8 +61,5 @@ do-install:
 	${INSTALL_DATA} ${WRKDIR}/doc/Changelog ${DOCSDIR}
 	${INSTALL_DATA} ${WRKDIR}/doc/Readme ${DOCSDIR}
 .endif
-
-post-install:
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
