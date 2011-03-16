@@ -9,12 +9,15 @@ PORTNAME=	basiliskII
 PORTVERSION=	1.0
 PORTREVISION=	10
 CATEGORIES=	emulators
-MASTER_SITES=	http://gwenole.beauchesne.info/projects/basilisk2/files/
+MASTER_SITES=	 http://gwenole.beauchesne.info/projects/basilisk2/files/
 MASTER_SITE_SUBDIR=	basilisk
 DISTNAME=	BasiliskII_src_01052006
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A free, portable, Open Source 68k Mac emulator
+
+DEPRECATED=     Distfile is no more available official website has older distfiles
+EXPIRATION_DATE=        2011-05-01
 
 WRKSRC=		${WRKDIR}/BasiliskII-${PORTVERSION}/src/Unix
 
