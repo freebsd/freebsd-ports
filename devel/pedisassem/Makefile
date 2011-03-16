@@ -14,6 +14,9 @@ DISTNAME=	dsasmsrc
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A disassembler for Win32 code (PE format)
 
+DEPRECATED=     Upstream disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 NO_WRKSUBDIR=	yes
 
 USE_ZIP=	yes

@@ -15,6 +15,9 @@ MASTER_SITES=	ftp://ftp.holywar.net/pub/templ/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Source code templates generator
 
+DEPRECATED=     Upstream disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}/templates

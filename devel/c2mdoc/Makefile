@@ -14,6 +14,9 @@ DISTFILES=
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Script to generate mdoc(7) markup from C functions
 
+DEPRECATED=     Upstream disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 RUN_DEPENDS=	cproto:${PORTSDIR}/devel/cproto
 
 NOMAN=

@@ -14,6 +14,9 @@ MASTER_SITES=	http://home.alphalink.com.au/~gnb/maketool/downloads/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GUI interface for make or gmake
 
+DEPRECATED=     Upstream disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 LIB_DEPENDS=	fontconfig.1:${PORTSDIR}/x11-fonts/fontconfig \
 		freetype.9:${PORTSDIR}/print/freetype2
 

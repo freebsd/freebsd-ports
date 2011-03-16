@@ -19,6 +19,9 @@ MAN1=		error.1
 MANCOMPRESSED=	maybe
 PLIST_FILES=	bin/error
 
+DEPRECATED=     Upstream disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 # MAN page COMPression SUFFIX
 .if !defined(NO_MANCOMPRESS)
 MANCOMPSUFFIX=	.gz

@@ -17,6 +17,9 @@ COMMENT=	Configuration management extensions to the Avalon Framework
 
 RUN_DEPENDS=	${JAVALIBDIR}/avalon-framework.jar:${PORTSDIR}/devel/avalon-framework
 
+DEPRECATED=     Upstream disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 USE_JAVA=	yes
 JAVA_VERSION=	1.2+
 NO_BUILD=	yes

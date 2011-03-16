@@ -15,6 +15,9 @@ MASTER_SITE_SUBDIR=	trevor
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Adds Fortran intrinsics missing from f2c
 
+DEPRECATED=     Upstream disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 USE_LDCONFIG=	yes
 USE_FORTRAN=	yes
 

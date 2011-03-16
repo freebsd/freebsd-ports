@@ -16,6 +16,9 @@ EXTRACT_SUFX=	.tar.Z
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Memory Profiler and Leak Detector
 
+DEPRECATED=     Upstream disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 NO_WRKSUBDIR=	yes
 MAKEFILE=	Makefile.i386
 MAN1=		mprof.1

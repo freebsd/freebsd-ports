@@ -14,6 +14,9 @@ MASTER_SITES=	http://www.annexia.org/_file/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library of basic structures and memory allocators for C
 
+DEPRECATED=     Upstream disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 BUILD_DEPENDS=	cdoc:${PORTSDIR}/devel/cdoc \
 		make+:${PORTSDIR}/devel/makeplus
 LIB_DEPENDS+=	pcre.0:${PORTSDIR}/devel/pcre

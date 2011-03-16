@@ -15,6 +15,9 @@ MASTER_SITE_SUBDIR=	ngpt-${PORTVERSION}.tar.gz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	NGPT is a next generation pthread implementation based on GNU pth
 
+DEPRECATED=     Upstream disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-tests=no --enable-maintainer=no \

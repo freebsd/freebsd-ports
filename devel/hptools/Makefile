@@ -15,6 +15,9 @@ DISTNAME=	${PORTNAME}-src-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	System RPL and assembly language tools for HP Calculators
 
+DEPRECATED=     Upstream disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 WRKSRC=		${WRKDIR}/Hptools/${CONFIGURE_TARGET}
 
 GNU_CONFIGURE=	yes

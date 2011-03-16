@@ -15,6 +15,9 @@ DISTNAME=	$(PORTNAME)-$(PORTVERSION:C/\.([0-9]*)$/@\1/)
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Generates man pages from C sources
 
+DEPRECATED=     Upstream disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 NO_WRKSUBDIR=	yes
 
 MAN1=	c2man.1

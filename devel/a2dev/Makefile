@@ -16,6 +16,9 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Apple II 6502 assembler, linker, loader, and object file viewer
 
+DEPRECATED=     Upstream disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 USE_GMAKE=	yes
 MAN1=		a2asm.1 a2link.1 a2load.1 a2objx.1
 

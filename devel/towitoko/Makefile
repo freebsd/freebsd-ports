@@ -13,6 +13,9 @@ MASTER_SITES=	http://www.geocities.com/cprados/files/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	UNIX driver for Towitoko smartcard readers
 
+DEPRECATED=     Upstream disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 USE_AUTOTOOLS=	libtool
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes

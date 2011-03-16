@@ -15,6 +15,9 @@ MASTER_SITES=	http://people.freebsd.org/~kbyanc/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A library easing embedding perl interpreters into C programs
 
+DEPRECATED=     Upstream disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 USE_AUTOTOOLS=	libtool
