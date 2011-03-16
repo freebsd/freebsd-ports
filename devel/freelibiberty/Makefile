@@ -15,6 +15,9 @@ DISTNAME=	libiberty-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A freely-redistributable libiberty clone
 
+DEPRECATED=     Upstream disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 CONFLICTS=	gnulibiberty-*
 
 USE_LDCONFIG=	yes

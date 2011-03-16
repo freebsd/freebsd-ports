@@ -18,6 +18,9 @@ DIST_SUBDIR=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Revolution is a rapid application development environment
 
+DEPRECATED=     Abandon upstream and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 RUN_DEPENDS=	xanim:${PORTSDIR}/multimedia/xanim
 
 NO_CDROM=	"Sale for profit is not permitted"

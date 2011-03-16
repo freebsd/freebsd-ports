@@ -13,6 +13,9 @@ MASTER_SITES=	ftp://ftp.ilog.fr/pub/Users/haible/gnu/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A converter between context diff and unidiff formats
 
+DEPRECATED=     Upstream disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 PROGRAMS=	cd2ud cdiffreverse ud2cd udiffreverse
 
 do-build:

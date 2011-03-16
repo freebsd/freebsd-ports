@@ -14,6 +14,9 @@ MASTER_SITES=	http://www.mazumdar.demon.co.uk/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A C99 Parser
 
+DEPRECATED=     Upstream disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 NO_WRKSUBDIR=	yes
 PLIST_FILES=	bin/c_parser
 

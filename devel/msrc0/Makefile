@@ -15,6 +15,9 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Meta source fake-out script for building ksb tools
 
+DEPRECATED=     Upstream disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 NO_BUILD=	yes
 PLIST_FILES=	bin/makeme
 WRKSRC=		${WRKDIR}/${PORTNAME}-0.6

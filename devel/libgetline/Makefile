@@ -14,6 +14,9 @@ DISTNAME=	${PORTNAME}-39-src
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A small, portable, and easy to use command line library
 
+DEPRECATED=     Upstream disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 MAN3=		getline.3
 
 WRKSRC=		${WRKDIR}/getline-39

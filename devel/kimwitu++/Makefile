@@ -16,6 +16,9 @@ MASTER_SITES=	http://www2.informatik.hu-berlin.de/~piefel/kimwitu++/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A tool for processing trees (i.e. terms)
 
+DEPRECATED=     Upstream disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 USE_BISON=	build
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes

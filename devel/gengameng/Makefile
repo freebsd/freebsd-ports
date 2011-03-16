@@ -14,6 +14,9 @@ MASTER_SITES=	http://ftp.osuosl.org/pub/FreeBSD/distfiles/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An SDL game engine library
 
+DEPRECATED=     Upstream disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 USE_AUTOTOOLS=	libtool
 USE_SDL=	image sdl
 GNU_CONFIGURE=	yes

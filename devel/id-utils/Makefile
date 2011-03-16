@@ -15,6 +15,9 @@ MASTER_SITE_SUBDIR=	idutils
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The classic Berkeley gid/lid tools for looking up variables in code
 
+DEPRECATED=     Upstream disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 CONFLICTS=	coreutils-[0-9]* linux-gid-[0-9]* sh-utils-[0-9]*
 
 USE_GMAKE=	yes

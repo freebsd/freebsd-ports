@@ -15,6 +15,9 @@ DISTNAME=	KXL-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A visual, sound library for games
 
+DEPRECATED=     Upstream disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 USE_AUTOTOOLS=	libtool
 USE_XORG=	xpm x11
 USE_LDCONFIG=	yes

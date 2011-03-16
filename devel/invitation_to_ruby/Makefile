@@ -18,6 +18,9 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Talk given by Jim Weirich, a brief introduction to Ruby
 
+DEPRECATED=     Upstream disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 NO_BUILD=	yes
 NO_CDROM=	\
 "no commercial use--see \<URL:http://creativecommons.org/licenses/by-nc/1.0/\>"

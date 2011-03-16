@@ -14,6 +14,9 @@ MASTER_SITES=	ftp://www.ctgi.net/pub/ctgi/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	List status of files checked out of RCS repositories
 
+DEPRECATED=     Upstream disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 PLIST_FILES=	bin/rinfo
 
 do-install:

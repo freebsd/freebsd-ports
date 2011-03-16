@@ -15,6 +15,9 @@ DISTNAME=	coro-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C library that implements coroutines
 
+DEPRECATED=     Upstream disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 ONLY_FOR_ARCHS=	i386
 
 HAS_CONFIGURE=	yes

@@ -16,6 +16,9 @@ DISTNAME=	sge030809
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A graphic library for the Simple DirectMedia Layer (SDL)
 
+DEPRECATED=     Upstream disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 

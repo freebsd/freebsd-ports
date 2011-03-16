@@ -14,6 +14,9 @@ MASTER_SITES=	http://www.annexia.org/_file/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Advanced build system for GNU Make
 
+DEPRECATED=     Upstream disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 BUILD_DEPENDS=	xmlto:${PORTSDIR}/textproc/xmlto
 RUN_DEPENDS=	gmake:${PORTSDIR}/devel/gmake
 
