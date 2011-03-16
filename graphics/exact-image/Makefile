@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	exact-image
-PORTVERSION=	0.8.1
-PORTREVISION=	1
+PORTVERSION=	0.8.4
 CATEGORIES=	graphics perl5 python
 MASTER_SITES=	http://dl.exactcode.de/oss/${PORTNAME}/
 
@@ -45,6 +44,7 @@ PLIST_FILES=	${BINS:S|^|bin/|} \
 		%%SITE_PERL%%/ExactImage.pm \
 		%%PYTHON_SITELIBDIR%%/ExactImage.py \
 		%%PYTHON_SITELIBDIR%%/_ExactImage.so
+LICENSE=	GPLv2
 
 post-extract:
 	@${RM} -rf ${WRKSRC}/agg-2.4/
@@ -80,10 +80,4 @@ do-install:
 		${INSTALL_SCRIPT} ExactImage.py ${PYTHONPREFIX_SITELIBDIR}/&&\
 		${INSTALL_PROGRAM} _ExactImage.so ${PYTHONPREFIX_SITELIBDIR}/
 
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == "i386"
-BROKEN=	does not build
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
