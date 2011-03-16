@@ -1,0 +1,13 @@
+--- RenderSystems/GL/CMakeLists.txt.orig	2010-11-03 19:24:48.000000000 +0100
++++ RenderSystems/GL/CMakeLists.txt	2011-03-15 10:40:52.000000000 +0100
+@@ -204,7 +204,9 @@
+ 
+ 
+ include_directories(
+-  ${CMAKE_CURRENT_SOURCE_DIR}/include
++  BEFORE ${CMAKE_CURRENT_SOURCE_DIR}/include
++)
++include_directories(
+   ${CMAKE_CURRENT_SOURCE_DIR}/src/GLSL/include
+   ${CMAKE_CURRENT_SOURCE_DIR}/src/atifs/include
+   ${CMAKE_CURRENT_SOURCE_DIR}/src/nvparse
