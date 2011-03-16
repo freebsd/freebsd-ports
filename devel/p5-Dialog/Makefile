@@ -11,11 +11,17 @@ CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	leeym@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Perl interface to dialog(3)
 
 PERL_CONFIGURE=	yes
 
 MAN3=		Dialog.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 900000 && ${ARCH} == "amd64"
+BROKEN=		Does not build
+.endif
+
+.include <bsd.port.post.mk>
