@@ -18,6 +18,8 @@ BUILD_DEPENDS=	scim:${PORTSDIR}/textproc/scim
 RUN_DEPENDS=	scim:${PORTSDIR}/textproc/scim
 LIB_DEPENDS=	chewing.3:${PORTSDIR}/chinese/libchewing
 
+BROKEN=		does not configure
+
 USE_BZIP2=	yes
 USE_GNOME=	intltool
 USE_GMAKE=	yes
