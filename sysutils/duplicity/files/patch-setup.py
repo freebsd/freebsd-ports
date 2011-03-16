@@ -1,6 +1,6 @@
---- setup.py.orig	2009-09-05 20:36:52.972675012 +0200
-+++ setup.py	2009-09-05 20:36:55.996611410 +0200
-@@ -31,6 +31,10 @@
+--- setup.py.orig	2009-01-09 16:05:11.000000000 +0200
++++ setup.py	2009-01-10 16:06:40.000000000 +0200
+@@ -12,6 +12,10 @@
  
  incdir_list = libdir_list = None
  
@@ -11,7 +11,7 @@
  if os.name == 'posix':
      LIBRSYNC_DIR = os.environ.get('LIBRSYNC_DIR', '')
      args = sys.argv[:]
-@@ -42,16 +46,9 @@
+@@ -23,16 +27,9 @@
          incdir_list = [os.path.join(LIBRSYNC_DIR, 'include')]
          libdir_list = [os.path.join(LIBRSYNC_DIR, 'lib')]
  

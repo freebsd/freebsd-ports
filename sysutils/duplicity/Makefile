@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	duplicity
-PORTVERSION=	0.5.20
-PORTREVISION=	2
+PORTVERSION=	0.6.11
 CATEGORIES=	sysutils
-MASTER_SITES=	http://code.launchpad.net/duplicity/0.5-series/${PORTVERSION}/+download/
+MASTER_SITES=	http://launchpad.net/duplicity/0.6-series/${PORTVERSION}/+download/
 
 MAINTAINER=	peter.schuller@infidyne.com
 COMMENT=	Untrusted backup using rsync algorithm
@@ -21,12 +20,24 @@ RUN_DEPENDS=	gpg:${PORTSDIR}/security/gnupg \
 # fetch claims "Moved temporarily" without this - why? (inspired by deskutils/gtg)
 FETCH_ARGS=	-pRr
 
-CONFLICTS=	duplicity-devel-[0-9]*
+CONFLICTS=	duplicity-0.5.* duplicity-devel-[0-9]*
 
 USE_PYTHON=	2.4+
 USE_PYDISTUTILS=yes
 USE_LDCONFIG=	yes
+
+.if !defined(WITHOUT_NLS)
 USE_GETTEXT=	yes
+PLIST_SUB+=	NLS=""
+.else
+PLIST_SUB+=	NLS="@comment "
+.endif
+
+.if defined(WITHOUT_NLS)
+post-patch:
+	@${REINPLACE_CMD} -e '54,63d' \
+		${WRKSRC}/setup.py
+.endif
 
 MAN1=		duplicity.1 rdiffdir.1
 
