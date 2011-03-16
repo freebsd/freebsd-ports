@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	libmatheval
-PORTVERSION=	1.1.5
-PORTREVISION=	3
+PORTVERSION=	1.1.7
 CATEGORIES=	devel math
 MASTER_SITES=	GNU
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -15,6 +14,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	demon@FreeBSD.org
 COMMENT=	A library of procedures for evaluating mathematical functions
 
+BUILD_DEPENDS=	flex>0:${PORTSDIR}/textproc/flex
 LIB_DEPENDS=	guile.20:${PORTSDIR}/lang/guile
 
 GNU_CONFIGURE=	yes
@@ -28,12 +28,4 @@ INFO=		libmatheval
 post-patch:
 	${RM} ${WRKSRC}/doc/libmatheval.info
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 700042
-.if ${ARCH} == "amd64"
-BROKEN=		Does not compile with GCC 4.2
-.endif
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
