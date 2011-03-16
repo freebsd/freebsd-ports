@@ -14,6 +14,8 @@ MASTER_SITE_SUBDIR=	quilt
 
 MAINTAINER=	doj@cubic.org
 COMMENT=	A collection of bash3 scripts to ease working with patch files
+DEPRECATED=	Depends on expired shells/bash3
+EXPIRATION_DATE=2011-05-01
 
 BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash3 \
 		gcp:${PORTSDIR}/sysutils/coreutils \
