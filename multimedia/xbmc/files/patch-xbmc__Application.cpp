@@ -1,15 +1,15 @@
---- ./xbmc/Application.cpp.orig	2010-10-31 14:58:11.000000000 +0100
-+++ ./xbmc/Application.cpp	2010-12-01 12:17:34.231763652 +0100
-@@ -494,6 +494,8 @@
+--- ./xbmc/Application.cpp.orig	2011-03-05 04:33:37.000000000 +0100
++++ ./xbmc/Application.cpp	2011-03-11 08:27:38.000000000 +0100
+@@ -495,6 +495,8 @@
    CLog::Log(LOGNOTICE, "-----------------------------------------------------------------------");
  #if defined(__APPLE__)
-   CLog::Log(LOGNOTICE, "Starting XBMC, Platform: Mac OS X (%s). Built on %s (SVN:%s)", g_sysinfo.GetUnameVersion().c_str(), __DATE__, SVN_REV);
+   CLog::Log(LOGNOTICE, "Starting XBMC, Platform: Mac OS X (%s). Built on %s (Git:%s)", g_sysinfo.GetUnameVersion().c_str(), __DATE__, GIT_REV);
 +#elif defined(__FreeBSD__)
-+  CLog::Log(LOGNOTICE, "Starting XBMC, Platform: FreeBSD (%s). Built on %s (SVN:%s)", g_sysinfo.GetUnameVersion().c_str(), __DATE__, SVN_REV);
++  CLog::Log(LOGNOTICE, "Starting XBMC, Platform: FreeBSD (%s). Built on %s (Git:%s)", g_sysinfo.GetUnameVersion().c_str(), __DATE__, GIT_REV);
  #elif defined(_LINUX)
-   CLog::Log(LOGNOTICE, "Starting XBMC, Platform: Linux (%s, %s). Built on %s (SVN:%s)", g_sysinfo.GetLinuxDistro().c_str(), g_sysinfo.GetUnameVersion().c_str(), __DATE__, SVN_REV);
+   CLog::Log(LOGNOTICE, "Starting XBMC, Platform: Linux (%s, %s). Built on %s (Git:%s)", g_sysinfo.GetLinuxDistro().c_str(), g_sysinfo.GetUnameVersion().c_str(), __DATE__, GIT_REV);
  #elif defined(_WIN32)
-@@ -777,6 +779,11 @@
+@@ -785,6 +787,11 @@
        }
      }
    }

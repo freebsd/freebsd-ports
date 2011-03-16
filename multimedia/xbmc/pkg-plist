@@ -167,6 +167,7 @@ share/icons/hicolor/48x48/apps/xbmc.png
 %%DATADIR%%/addons/script.recentlyadded/LICENSE.txt
 %%DATADIR%%/addons/script.recentlyadded/RecentlyAdded.py
 %%DATADIR%%/addons/script.recentlyadded/addon.xml
+%%DATADIR%%/addons/script.recentlyadded/changelog.txt
 %%DATADIR%%/addons/script.rss.editor/LICENSE.txt
 %%DATADIR%%/addons/script.rss.editor/addon.xml
 %%DATADIR%%/addons/script.rss.editor/default.py
