@@ -10,7 +10,7 @@ PORTREVISION=	1
 COMMENT=	Framework for interfacing Python and C++
 
 USE_BZIP2=	yes
-USE_PYTHON=	2.5+
+USE_PYTHON=	2.5-3.1
 
 OPTIONS=	VERBOSE_BUILD	"Show compiler messages"	off \
 		DEBUG		"Build debugging symbols"	off \
