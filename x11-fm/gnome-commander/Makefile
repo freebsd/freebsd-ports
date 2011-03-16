@@ -14,6 +14,9 @@ MASTER_SITES=	GNOME
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	File manager for Gnome
 
+DEPRECATED=	Gnome1 is deprecated, consider using gnome-commander2
+EXPIRATION_DATE=	2011-05-01
+
 .if defined(WITH_FAM)
 LIB_DEPENDS=	fam.0:${PORTSDIR}/devel/fam
 .else
