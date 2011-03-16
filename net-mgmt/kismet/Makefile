@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	kismet
-DISTVERSION=	2010-07-R1
+DISTVERSION=	2011-01-R1
 PORTEPOCH=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://www.kismetwireless.net/code/:1 \
@@ -22,7 +22,7 @@ GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
+CONFIGURE_ENV=	LDFLAGS="${LDFLAGS}"
 
 MAN1=		kismet.1 kismet_drone.1
 MAN5=		kismet.conf.5 kismet_drone.conf.5
@@ -37,6 +37,10 @@ OPTIONS=	PCRE "Build kismet with PCRE regex filters" on \
 PORTDOCS=	README manuf
 DISTFILES+=	manuf:2
 IGNOREFILES=	manuf
+.endif
+
+.ifndef(NOPORTEXAMPLES)
+PORTEXAMPLES=	*
 .endif
 
 .ifdef(WITH_PCRE)
@@ -92,6 +96,10 @@ post-install:
 	@${MKDIR} ${DOCSDIR}
 	@${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
 	@${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/manuf ${DOCSDIR}
+.endif
+.ifndef(NOPORTEXAMPLES)
+	@${MKDIR} ${EXAMPLESDIR}
+	@${INSTALL_DATA} ${WRKSRC}/ruby/* ${EXAMPLESDIR}
 .endif
 	@${INSTALL_DATA} ${WRKSRC}/conf/kismet.conf \
 		${PREFIX}/etc/kismet.conf.sample
