@@ -9,7 +9,7 @@ PORTNAME=	gresolver
 PORTVERSION=	0.0.5
 PORTREVISION=	5
 CATEGORIES=	dns
-MASTER_SITES=	http://jodrell.net/files/gresolver/
+MASTER_SITES=	http://jodrell.net/files/unsupported/gresolver/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A graphical DNS query tool using GTK+
