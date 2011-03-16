@@ -10,7 +10,7 @@ PORTNAME=	libfs++
 PORTVERSION=	0.1.7
 PORTREVISION=	2
 CATEGORIES=	devel
-MASTER_SITES=	http://bluebat.dnsalias.org/software/libfs++/%SUBDIR%/
+MASTER_SITES=	http://bluebat.dyndns.org/software/libfs++/%SUBDIR%/
 MASTER_SITE_SUBDIR=	. archive
 
 MAINTAINER=	ports@FreeBSD.org
