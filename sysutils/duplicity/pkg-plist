@@ -25,6 +25,9 @@ bin/rdiffdir
 %%PYTHON_SITELIBDIR%%/duplicity/backends/ftpbackend.py
 %%PYTHON_SITELIBDIR%%/duplicity/backends/ftpbackend.pyc
 %%PYTHON_SITELIBDIR%%/duplicity/backends/ftpbackend.pyo
+%%PYTHON_SITELIBDIR%%/duplicity/backends/giobackend.py
+%%PYTHON_SITELIBDIR%%/duplicity/backends/giobackend.pyc
+%%PYTHON_SITELIBDIR%%/duplicity/backends/giobackend.pyo
 %%PYTHON_SITELIBDIR%%/duplicity/backends/hsibackend.py
 %%PYTHON_SITELIBDIR%%/duplicity/backends/hsibackend.pyc
 %%PYTHON_SITELIBDIR%%/duplicity/backends/hsibackend.pyo
@@ -128,14 +131,17 @@ bin/rdiffdir
 @dirrm %%PYTHON_SITELIBDIR%%/duplicity
 %%PORTDOCS%%%%DOCSDIR%%/CHANGELOG
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
-%%PORTDOCS%%%%DOCSDIR%%/REPO-README
 %%PORTDOCS%%%%DOCSDIR%%/LOG-README
 %%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/REPO-README
 %%PORTDOCS%%%%DOCSDIR%%/tarfile-LICENSE
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-share/locale/en_GB/LC_MESSAGES/duplicity.mo
-share/locale/eo/LC_MESSAGES/duplicity.mo
-share/locale/io/LC_MESSAGES/duplicity.mo
-share/locale/zh_CN/LC_MESSAGES/duplicity.mo
-@dirrmtry share/locale/io/LC_MESSAGES
-@dirrmtry share/locale/io
+%%NLS%%share/locale/bg/LC_MESSAGES/duplicity.mo
+%%NLS%%share/locale/en_GB/LC_MESSAGES/duplicity.mo
+%%NLS%%share/locale/eo/LC_MESSAGES/duplicity.mo
+%%NLS%%share/locale/es/LC_MESSAGES/duplicity.mo
+%%NLS%%share/locale/io/LC_MESSAGES/duplicity.mo
+%%NLS%%share/locale/pt/LC_MESSAGES/duplicity.mo
+%%NLS%%share/locale/zh_CN/LC_MESSAGES/duplicity.mo
+%%NLS%%@dirrmtry share/locale/io/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/io
