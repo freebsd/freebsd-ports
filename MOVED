@@ -1578,3 +1578,4 @@ lang/gnat-doc-ps||2011-03-07|unmaintained and obsolete
 lang/gnat-doc-texi||2011-03-07|unmaintained and obsolete
 lang/gnat-doc-txt||2011-03-07|unmaintained and obsolete
 www/py-cherrypy-devel|www/py-cherrypy|2011-03-15|Removed, use www/py-cherrypy instead
+science/py-obspy.core|science/py-obspy-core|2011-03-16|Removed, use science/py-obspy-core instead
