@@ -1,24 +1,14 @@
-Index: edisplay.cc
-===================================================================
---- edisplay/edisplay.cc	(revision 1751)
-+++ edisplay/edisplay.cc	(revision 1752)
-@@ -269,12 +269,14 @@
-       
-       /* the following is specific to the engine */
-       einfo->info.display = dpy;
--      einfo->info.visual =
--	einfo->func.best_visual_get (dpy, DefaultScreen(dpy));
--      einfo->info.colormap =
--	einfo->func.best_colormap_get(dpy,DefaultScreen(dpy));
--
-+#ifdef WITHEVAS_X11_SCREEN
-+      einfo->info.screen = DefaultScreen(dpy);
-+      einfo->info.visual = einfo->func.best_visual_get(einfo);
-+      einfo->info.colormap = einfo->func.best_colormap_get(einfo);
+--- ./edisplay/edisplay.cc.orig	2011-03-15 09:03:47.000000000 -0400
++++ ./edisplay/edisplay.cc	2011-03-15 09:05:59.000000000 -0400
+@@ -27,7 +27,11 @@
+ #include "Evas_Engine_GL_X11.h"
+ #endif
+ 
++#if defined(__FreeBSD__)
++#include <sys/endian.h>
 +#else
-+      einfo->info.visual = einfo->func.best_visual_get(dpy, DefaultScreen(dpy));
-       einfo->info.colormap = einfo->func.best_colormap_get(dpy, DefaultScreen(dpy));
+ #include <endian.h>
 +#endif
-       einfo->info.drawable = win;
-       einfo->info.depth = depth;
-       
+ #include <algorithm>
+ #include <iostream>
+ #include <sstream>
