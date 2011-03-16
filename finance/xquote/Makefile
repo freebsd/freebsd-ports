@@ -10,7 +10,7 @@ PORTREVISION=	1
 CATEGORIES=	finance
 MASTER_SITES=	SF/xinvest
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	corky1951@comcast.net
 COMMENT=	A quote retrieval tool for X
 
 LIB_DEPENDS=	Xbae.4:${PORTSDIR}/x11-toolkits/xbae
