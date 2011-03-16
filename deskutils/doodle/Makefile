@@ -17,6 +17,8 @@ COMMENT=	Quickly search documents
 
 LIB_DEPENDS=	extractor.3:${PORTSDIR}/textproc/libextractor
 
+BROKEN=		does not configure with new libextractor
+
 GNU_CONFIGURE=	yes
 USE_GETTEXT=	yes
 USE_FAM=	yes
