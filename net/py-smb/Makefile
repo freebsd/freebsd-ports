@@ -7,13 +7,13 @@
 #
 
 PORTNAME=	smb
-PORTVERSION=	0.4.4
+PORTVERSION=	0.4.5
 CATEGORIES=	net python
 MASTER_SITES=	http://miketeo.net/files/Projects/py${PORTNAME}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	pysmb-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	cvs-src@yandex.ru
 COMMENT=	SMB/CIFS library written in Python
 
 USE_PYTHON=	yes
@@ -23,7 +23,7 @@ DATADIR=	${PREFIX}/share/py-smb
 DOCSDIR=	${PREFIX}/share/doc/py-smb
 
 do-install:
-.for file in nmb.py smb.py
+.for file in nmb.py smb.py pysmb_version.py
 	${INSTALL_SCRIPT} ${WRKSRC}/${file} ${PYTHON_SITELIBDIR}
 .endfor
 .for file in nmbquery smbcp smbdu smblistshare
