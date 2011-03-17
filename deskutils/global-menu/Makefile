@@ -6,8 +6,7 @@
 #
 
 PORTNAME=		gnome-globalmenu
-PORTVERSION=		0.7.5
-PORTREVISION=		6
+PORTVERSION=		0.7.10
 CATEGORIES=		deskutils
 MASTER_SITES=		http://gnome2-globalmenu.googlecode.com/files/
 
@@ -27,11 +26,25 @@ INSTALLS_ICONS=		yes
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 
+
+OPTIONS=		XFCE4_PANEL "Xfce panel applet" Off
+
+.include <bsd.port.options.mk>
+
+.if defined(WITHOUT_XFCE4_PANEL)
+CONFIGURE_ARGS+=	--without-xfce4-panel
+PLIST_SUB+=		XFCE4_PANEL="@comment "
+.else
+LIB_DEPENDS+=		libxfce4panel-1.0:${PORTSDIR}/x11-wm/xfce4-panel
+CONFIGURE_ARGS+=	--with-xfce4-panel
+PLIST_SUB+=		XFCE4_PANEL=""
+.endif
+
 .if !defined(WITHOUT_NLS)
 USE_GETTEXT=		yes
 PLIST_SUB+=		NLS=""
 .else
-CONFIGURE_ARGS+=--disable-nls
+CONFIGURE_ARGS+=	--disable-nls
 PLIST_SUB+=		NLS="@comment "
 .endif
 
