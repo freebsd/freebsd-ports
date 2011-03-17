@@ -14,6 +14,9 @@ MASTER_SITE_SUBDIR=	danfe
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GTK-based GUI frontend for cdrdao, disk-at-once audio CD recorder
 
+DEPRECATED=	Upstream disapear and no more distfiles available
+EXPIRATION_DATE=	2011-05-01
+
 RUN_DEPENDS=	cdrdao:${PORTSDIR}/sysutils/cdrdao
 
 USE_GNOME=	gnomelibs
