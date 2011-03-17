@@ -7,7 +7,7 @@
 # TODO: - configurable --enable-xxx for various additional dependancies
 
 PORTNAME=	scapy
-PORTVERSION=	2.1.1
+PORTVERSION=	2.2.0
 CATEGORIES=	net
 MASTER_SITES=	http://secdev.org/projects/scapy/files/
 
@@ -77,13 +77,12 @@ RUN_DEPENDS+=	${LOCALBASE}/bin/vpython:${PORTSDIR}/graphics/py-visual
 RUN_DEPENDS+=	${LOCALBASE}/bin/sox:${PORTSDIR}/audio/sox
 .endif
 
-SCAPY_MODULES=	nmap.py p0f.py queso.py
-
 post-patch:
 	@${REINPLACE_CMD} "s,share/man/man1,man/man1," ${WRKSRC}/setup.py
-	@${REINPLACE_CMD} "s,%%LOCALBASE%%,${LOCALBASE}," \
-		${SCAPY_MODULES:S,^,${WRKSRC}/scapy/modules/,} \
-		${WRKSRC}/scapy/config.py \
-		${WRKSRC}/scapy/utils6.py
+	@${REINPLACE_CMD} "s,/usr/share/,${LOCALBASE}/share/," \
+		${WRKSRC}/scapy/data.py ${WRKSRC}/scapy/utils6.py \
+		${WRKSRC}/scapy/modules/nmap.py
+	@${REINPLACE_CMD} "s,/etc/,${LOCALBASE}/etc/," \
+		${WRKSRC}/scapy/modules/p0f.py ${WRKSRC}/scapy/modules/queso.py
 
 .include <bsd.port.post.mk>
