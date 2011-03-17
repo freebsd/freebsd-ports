@@ -16643,7 +16643,7 @@
  #endif
  
 -    rv = getsockopt(fd, level, opt, result, len);
-+    rv = getsockopt(fd, level, opt, result, (socklen_t)len);
++    rv = getsockopt(fd, level, opt, result, (socklen_t *) len);
      if (rv < 0) {
          return rv;
      }
