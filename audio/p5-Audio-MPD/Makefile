@@ -6,13 +6,16 @@
 #
 
 PORTNAME=	Audio-MPD
-PORTVERSION=	1.102260
+PORTVERSION=	1.110560
 CATEGORIES=	audio perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Class to talk to MPD (Music Player Daemon) servers
+
+LICENSE_COMB=	dual
+LICENSE=	ART20 GPLv1
 
 BUILD_DEPENDS=	p5-Audio-MPD-Common>=0:${PORTSDIR}/audio/p5-Audio-MPD-Common \
 		p5-Getopt-Euclid>=0:${PORTSDIR}/devel/p5-Getopt-Euclid \
