@@ -18,10 +18,7 @@ USE_AUTOTOOLS=	libtool:env
 
 MAN8=		bsnmp-ucd.8
 
-.include <bsd.port.pre.mk>
+post-patch:
+	@${REINPLACE_CMD} -e '32,32 s/^.*/#include <sys\/queue.h>/' ${WRKSRC}/snmp_ucd.h
 
-.if ${OSVERSION} < 601000
-IGNORE=	bsnmpd lack of realization on FreeBSD < 6.1
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
