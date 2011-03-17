@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	Astro-FITS-Header
-PORTVERSION=	3.01
+PORTVERSION=	3.03
 CATEGORIES=	astro perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	Astro
@@ -18,7 +18,9 @@ COMMENT=	Object Orientated interface to FITS HDUs
 
 MAKE_JOBS_SAFE=  yes
 
-PERL_CONFIGURE=	yes
+LICENSE=	GPLv3
+
+PERL_MODBUILD=	yes
 
 MAN3=	Astro::FITS::Header.3 \
 	Astro::FITS::Header::AST.3 \
