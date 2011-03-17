@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	octave-forge
-PORTVERSION=	20100629
+PORTVERSION=	20110205
 CATEGORIES=	math
 MASTER_SITES=	#none
 DISTFILES=	#none
@@ -14,14 +14,6 @@ EXTRACT_ONLY=	#none
 
 MAINTAINER=	stephen@missouri.edu
 COMMENT=	Octave-forge metaport for math/octave
-
-# Status of packages:
-#  * java, jhandles, database are not completed.  If someone else wants to
-#    work on these, I would appreciate it.
-#  * vrml builds, but is non functional, as it depends on freewrl, which is
-#    not yet available on FreeBSD.
-#  * ann, fixed, ftp, parallel, vrml, graceplot, triangular do not build with
-#    octave-3.2.2.
 
 OPTIONS=	\
 	ACTUARIAL "Install package: actuarial" On \
@@ -35,10 +27,12 @@ OPTIONS=	\
 	COMMUNICATIONS "Install package: communications" On \
 	CONTROL "Install package: control" On \
 	DATA_SMOOTHING "Install package: data-smoothing" On \
+	DATAFRAME "Install package: dataframe" On \
 	ECONOMETRICS "Install package: econometrics" On \
 	ENGINE "Install package: engine" On \
 	ES "Install package: es" On \
 	FENV "Install package: fenv" On \
+	FITS "Install package: fits" On \
 	FINANCIAL "Install package: financial" On \
 	FPL "Install package: fpl" On \
 	GA "Install package: ga" On \
@@ -119,7 +113,7 @@ RUN_DEPENDS+=	${TARBALLS_DIR}/bim.tar.gz:${PORTSDIR}/math/octave-forge-bim
 .if defined(WITH_BIOINFO)
 RUN_DEPENDS+=	${TARBALLS_DIR}/bioinfo.tar.gz:${PORTSDIR}/math/octave-forge-bioinfo
 .endif
-.if defined(WITH_CIVIL-ENGINEERING)
+.if defined(WITH_CIVIL_ENGINEERING)
 RUN_DEPENDS+=	${TARBALLS_DIR}/civil-engineering.tar.gz:${PORTSDIR}/math/octave-forge-civil-engineering
 .endif
 .if defined(WITH_COMBINATORICS)
@@ -131,8 +125,11 @@ RUN_DEPENDS+=	${TARBALLS_DIR}/communications.tar.gz:${PORTSDIR}/math/octave-forg
 .if defined(WITH_CONTROL)
 RUN_DEPENDS+=	${TARBALLS_DIR}/control.tar.gz:${PORTSDIR}/math/octave-forge-control
 .endif
-.if defined(WITH_DATA-SMOOTHING)
+.if defined(WITH_DATA_SMOOTHING)
 RUN_DEPENDS+=	${TARBALLS_DIR}/data-smoothing.tar.gz:${PORTSDIR}/math/octave-forge-data-smoothing
+.endif
+.if defined(WITH_DATAFRAME)
+RUN_DEPENDS+=	${TARBALLS_DIR}/dataframe.tar.gz:${PORTSDIR}/math/octave-forge-dataframe
 .endif
 .if defined(WITH_ECONOMETRICS)
 RUN_DEPENDS+=	${TARBALLS_DIR}/econometrics.tar.gz:${PORTSDIR}/math/octave-forge-econometrics
@@ -145,6 +142,9 @@ RUN_DEPENDS+=	${TARBALLS_DIR}/es.tar.gz:${PORTSDIR}/math/octave-forge-es
 .endif
 .if defined(WITH_FENV)
 RUN_DEPENDS+=	${TARBALLS_DIR}/fenv.tar.gz:${PORTSDIR}/math/octave-forge-fenv
+.endif
+.if defined(WITH_FITS)
+RUN_DEPENDS+=	${TARBALLS_DIR}/fits.tar.gz:${PORTSDIR}/math/octave-forge-fits
 .endif
 .if defined(WITH_FINANCIAL)
 RUN_DEPENDS+=	${TARBALLS_DIR}/financial.tar.gz:${PORTSDIR}/math/octave-forge-financial
@@ -185,7 +185,7 @@ RUN_DEPENDS+=	${TARBALLS_DIR}/io.tar.gz:${PORTSDIR}/math/octave-forge-io
 .if defined(WITH_IRSA)
 RUN_DEPENDS+=	${TARBALLS_DIR}/irsa.tar.gz:${PORTSDIR}/math/octave-forge-irsa
 .endif
-.if defined(WITH_LINEAR-ALGEBRA)
+.if defined(WITH_LINEAR_ALGEBRA)
 RUN_DEPENDS+=	${TARBALLS_DIR}/linear-algebra.tar.gz:${PORTSDIR}/math/octave-forge-linear-algebra
 .endif
 .if defined(WITH_MAPPING)
@@ -194,7 +194,7 @@ RUN_DEPENDS+=	${TARBALLS_DIR}/mapping.tar.gz:${PORTSDIR}/math/octave-forge-mappi
 .if defined(WITH_MISCELLANEOUS)
 RUN_DEPENDS+=	${TARBALLS_DIR}/miscellaneous.tar.gz:${PORTSDIR}/math/octave-forge-miscellaneous
 .endif
-.if defined(WITH_MISSING-FUNCTIONS)
+.if defined(WITH_MISSING_FUNCTIONS)
 RUN_DEPENDS+=	${TARBALLS_DIR}/missing-functions.tar.gz:${PORTSDIR}/math/octave-forge-missing-functions
 .endif
 .if defined(WITH_MSH)
@@ -281,10 +281,10 @@ RUN_DEPENDS+=	${TARBALLS_DIR}/sockets.tar.gz:${PORTSDIR}/math/octave-forge-socke
 .if defined(WITH_SPECFUN)
 RUN_DEPENDS+=	${TARBALLS_DIR}/specfun.tar.gz:${PORTSDIR}/math/octave-forge-specfun
 .endif
-.if defined(WITH_SPECIAL-MATRIX)
+.if defined(WITH_SPECIAL_MATRIX)
 RUN_DEPENDS+=	${TARBALLS_DIR}/special-matrix.tar.gz:${PORTSDIR}/math/octave-forge-special-matrix
 .endif
-.if defined(WITH_SPLINE-GCVSPL)
+.if defined(WITH_SPLINE_GCVSPL)
 RUN_DEPENDS+=	${TARBALLS_DIR}/spline-gcvspl.tar.gz:${PORTSDIR}/math/octave-forge-spline-gcvspl
 .endif
 .if defined(WITH_SPLINES)
@@ -305,7 +305,7 @@ RUN_DEPENDS+=	${TARBALLS_DIR}/symband.tar.gz:${PORTSDIR}/math/octave-forge-symba
 .if defined(WITH_SYMBOLIC)
 RUN_DEPENDS+=	${TARBALLS_DIR}/symbolic.tar.gz:${PORTSDIR}/math/octave-forge-symbolic
 .endif
-.if defined(WITH_TCL-OCTAVE)
+.if defined(WITH_TCL_OCTAVE)
 RUN_DEPENDS+=	${TARBALLS_DIR}/tcl-octave.tar.gz:${PORTSDIR}/math/octave-forge-tcl-octave
 .endif
 .if defined(WITH_TIME)
@@ -331,8 +331,5 @@ do-build:
 
 do-install:
 	@${DO_NADA}
-
-check-all-octave-forge-depends:
-	@for p in ${.CURDIR}/../octave-forge-*; do (cd $$p;(make check-octave-forge-depends 2>/dev/null)||true); done | (grep dependency || true)
 
 .include <bsd.port.post.mk>
