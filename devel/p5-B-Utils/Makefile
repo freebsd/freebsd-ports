@@ -6,13 +6,16 @@
 #
 
 PORTNAME=	B-Utils
-PORTVERSION=	0.11
+PORTVERSION=	0.13
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Helper functions for op tree manipulation
+
+LICENSE_COMB=	dual
+LICENSE=	ART20 GPLv1
 
 BUILD_DEPENDS=	p5-ExtUtils-Depends>=0.302:${PORTSDIR}/devel/p5-ExtUtils-Depends
 RUN_DEPENDS=	${BUILD_DEPENDS}
