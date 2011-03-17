@@ -16,6 +16,8 @@ PKGNAMEPREFIX?=
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	A command line player for the .ay audio file format
 
+DEPRECATED=     Upstream disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
 USE_GMAKE=	yes
 MAKE_JOBS_SAFE=	yes
 

@@ -14,6 +14,9 @@ MASTER_SITES=	http://muksuluuri.ath.cx/~skyostil/projects/albumart/dist/
 MAINTAINER=	timbob@bigpond.com
 COMMENT=	GUI application for downloading album cover art
 
+DEPRECATED=     Upstream disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 USE_GMAKE=	yes
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
