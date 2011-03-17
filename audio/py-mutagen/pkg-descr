@@ -7,4 +7,4 @@ bitrate and length of MP3s. ID3 and APEv2 tags can be edited
 regardless of audio format. It can also manipulate Ogg streams
 on an individual packet/page level.
 
-WWW: http://www.sacredchao.net/quodlibet/wiki/Development/Mutagen
+WWW: http://code.google.com/p/mutagen/
