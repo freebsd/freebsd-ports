@@ -7,6 +7,7 @@
 
 PORTNAME=	mod_proxy_html
 PORTVERSION=	3.1.2
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://apache.webthing.com/${PORTNAME}/
 DISTNAME=	${PORTNAME}
