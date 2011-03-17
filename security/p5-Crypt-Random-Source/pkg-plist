@@ -1,0 +1,22 @@
+%%SITE_PERL%%/Crypt/Random/Source.pm
+%%SITE_PERL%%/Crypt/Random/Source/Base.pm
+%%SITE_PERL%%/Crypt/Random/Source/Base/File.pm
+%%SITE_PERL%%/Crypt/Random/Source/Base/Handle.pm
+%%SITE_PERL%%/Crypt/Random/Source/Base/Proc.pm
+%%SITE_PERL%%/Crypt/Random/Source/Base/RandomDevice.pm
+%%SITE_PERL%%/Crypt/Random/Source/Factory.pm
+%%SITE_PERL%%/Crypt/Random/Source/Strong.pm
+%%SITE_PERL%%/Crypt/Random/Source/Strong/devrandom.pm
+%%SITE_PERL%%/Crypt/Random/Source/Weak.pm
+%%SITE_PERL%%/Crypt/Random/Source/Weak/devurandom.pm
+%%SITE_PERL%%/Crypt/Random/Source/Weak/rand.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/Random/Source/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/Random/Source
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/Random
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt
+@dirrm %%SITE_PERL%%/Crypt/Random/Source/Weak
+@dirrm %%SITE_PERL%%/Crypt/Random/Source/Strong
+@dirrm %%SITE_PERL%%/Crypt/Random/Source/Base
+@dirrm %%SITE_PERL%%/Crypt/Random/Source
+@dirrmtry %%SITE_PERL%%/Crypt/Random
+@dirrmtry %%SITE_PERL%%/Crypt
