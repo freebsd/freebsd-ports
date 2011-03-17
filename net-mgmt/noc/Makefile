@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	noc
-PORTVERSION=	0.6.1
+PORTVERSION=	0.6.2
 CATEGORIES=	net-mgmt python
-MASTER_SITES=	http://redmine.nocproject.org/attachments/download/102/
+MASTER_SITES=	http://redmine.nocproject.org/attachments/download/104/
 DISTNAME=	noc-${PORTVERSION}
 
 MAINTAINER=	count@211.ru
