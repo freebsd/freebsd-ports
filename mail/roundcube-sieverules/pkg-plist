@@ -1,0 +1,51 @@
+%%WWWDIR%%/CHANGELOG
+%%WWWDIR%%/README
+%%WWWDIR%%/config.inc.php.dist
+%%WWWDIR%%/importFilters/avelsieve.php
+%%WWWDIR%%/importFilters/ingo.php
+%%WWWDIR%%/include/rcube_sieve.php
+%%WWWDIR%%/include/rcube_sieve_script.php
+%%WWWDIR%%/jquery.maskedinput.js
+%%WWWDIR%%/lib/Net/Sieve.php
+%%WWWDIR%%/localization/ca_ES.inc
+%%WWWDIR%%/localization/cs_CZ.inc
+%%WWWDIR%%/localization/de_CH.inc
+%%WWWDIR%%/localization/de_DE.inc
+%%WWWDIR%%/localization/en_GB.inc
+%%WWWDIR%%/localization/en_US.inc
+%%WWWDIR%%/localization/es_AR.inc
+%%WWWDIR%%/localization/es_ES.inc
+%%WWWDIR%%/localization/et_EE.inc
+%%WWWDIR%%/localization/fr_FR.inc
+%%WWWDIR%%/localization/hu_HU.inc
+%%WWWDIR%%/localization/it_IT.inc
+%%WWWDIR%%/localization/nl_NL.inc
+%%WWWDIR%%/localization/pl_PL.inc
+%%WWWDIR%%/localization/pt_PT.inc
+%%WWWDIR%%/localization/ro_RO.inc
+%%WWWDIR%%/localization/ru_RU.inc
+%%WWWDIR%%/localization/sk_SK.inc
+%%WWWDIR%%/localization/sl_SI.inc
+%%WWWDIR%%/localization/sv_SE.inc
+%%WWWDIR%%/sieverules.js
+%%WWWDIR%%/sieverules.php
+%%WWWDIR%%/skins/default/help.gif
+%%WWWDIR%%/skins/default/icons.gif
+%%WWWDIR%%/skins/default/icons.png
+%%WWWDIR%%/skins/default/ie6hacks.css
+%%WWWDIR%%/skins/default/iehacks.css
+%%WWWDIR%%/skins/default/safari.css
+%%WWWDIR%%/skins/default/sieverules.css
+%%WWWDIR%%/skins/default/templates/advancededitor.html
+%%WWWDIR%%/skins/default/templates/editsieverule.html
+%%WWWDIR%%/skins/default/templates/setupsieverules.html
+%%WWWDIR%%/skins/default/templates/sieverules.html
+@dirrm %%WWWDIR%%/skins/default/templates
+@dirrm %%WWWDIR%%/skins/default
+@dirrm %%WWWDIR%%/skins
+@dirrm %%WWWDIR%%/localization
+@dirrm %%WWWDIR%%/lib/Net
+@dirrm %%WWWDIR%%/lib
+@dirrm %%WWWDIR%%/include
+@dirrm %%WWWDIR%%/importFilters
+@dirrmtry %%WWWDIR%%

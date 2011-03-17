@@ -602,6 +602,7 @@
     SUBDIR += roundcube-groupvice
     SUBDIR += roundcube-mobilecube
     SUBDIR += roundcube-mvision2
+    SUBDIR += roundcube-sieverules
     SUBDIR += roundcube-umich
     SUBDIR += rspamd
     SUBDIR += rss2email
