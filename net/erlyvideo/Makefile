@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	erlyvideo
-PORTVERSION=	2.6.3
+PORTVERSION=	2.6.5
 CATEGORIES=	net
 MASTER_SITES=	http://host5.webstroy.ru/
 
@@ -27,11 +27,13 @@ ERLYDIR=	${ERLANGDIR}/lib/${PORTNAME}-${PORTVERSION}
 ERLYVIDEO=	ebin src include lib Emakefile
 DEPSLIST=	amf log4erl erlydtl erlmedia mpegts rtmp rtp rtsp ibrowse
 PLIST_SUB=	PORTNAME=${PORTNAME} PORTVERSION=${PORTVERSION}
+SUB_FILES=	pkg-deinstall
 
 post-patch:
 	@${REINPLACE_CMD} -e 's#/etc/#${PREFIX}/etc/#g' \
 		${WRKSRC}/src/${PORTNAME}.erl ${WRKSRC}/contrib/erlyctl \
-		${WRKSRC}/deps/erlmedia/src/ems_log.erl
+		${WRKSRC}/deps/erlmedia/src/ems_log.erl \
+		${WRKSRC}/priv/production.config.debian
 	@${REINPLACE_CMD} -e 's#"wwwroot"#"${PREFIX}/www/${PORTNAME}/wwwroot"#g' \
 		${WRKSRC}/priv/${PORTNAME}.conf.sample
 	@${REINPLACE_CMD} -e 's#"movies"#"/var/lib/${PORTNAME}/movies"#g' \
@@ -43,7 +45,7 @@ post-patch:
 do-install:
 	${MKDIR} ${ETCDIR} ${ERLYDIR} ${WWWDIR}
 .for dir in /var/lib/${PORTNAME}/movies /var/lib/${PORTNAME}/plugins \
-	/var/log/${PORTNAME}
+	/var/log/${PORTNAME} /var/cache/${PORTNAME}/licensed
 	${MKDIR} ${dir}
 .endfor
 .for entry in ${ERLYVIDEO}

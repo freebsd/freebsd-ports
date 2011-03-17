@@ -9,6 +9,7 @@ If you wish to completely delete erlyvideo, please remove
 this directories manually:
 /var/lib/erlyvideo
 /var/log/erlyvideo
+/var/cache/erlyvideo
 EOF
 
 exit 0

@@ -1436,3 +1436,6 @@ lib/erlang/lib/rtsp-%%PORTVERSION%%/include/rtsp.hrl
 @dirrmtry lib/%%PORTNAME%%
 @exec /bin/mkdir %D/log/%%PORTNAME%%
 @dirrmtry log/%%PORTNAME%%
+@exec /bin/mkdir -p %D/cache/%%PORTNAME%%/licensed
+@dirrmtry cache/%%PORTNAME%%/licensed
+@dirrmtry cache/%%PORTNAME%%
