@@ -3,7 +3,8 @@
 # $FreeBSD$
 #
 # PROVIDE: %%PORTNAME%%
-# REQUIRE: LOGIN
+# REQUIRE: DAEMON
+# BEFORE: LOGIN
 # KEYWORD: shutdown
 
 #
