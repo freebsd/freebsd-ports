@@ -15,6 +15,11 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Set of plugins for the libvisual framework
 
 LIB_DEPENDS=	visual.0:${PORTSDIR}/graphics/libvisual
+BUILD_DEPENDS=	imake:${PORTSDIR}/devel/imake
+
+BROKEN=		Broken objformat handling
+DEPRECATED=	has been broken for 3 years
+EXPIRATION_DATE=2011-04-17
 
 WANT_GNOME=	yes
 USE_GNOME=	gnometarget pkgconfig
@@ -25,12 +30,6 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 700029
-BROKEN=		Broken objformat handling
-.endif
-
-BUILD_DEPENDS=	imake:${PORTSDIR}/devel/imake
 
 .if defined(WITH_MPLAYER)
 BUILD_DEPENDS+=	mplayer:${PORTSDIR}/multimedia/mplayer

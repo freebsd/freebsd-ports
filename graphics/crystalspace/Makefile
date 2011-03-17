@@ -25,6 +25,8 @@ LIB_DEPENDS=	png.6:${PORTSDIR}/graphics/png \
 		CEGUIBase.3:${PORTSDIR}/graphics/cegui
 
 BROKEN=		does not compile
+DEPRECATED=	has been broken for a year
+EXPIRATION_DATE=2011-04-17
 
 CONFLICTS=	crystalspace-devel-[0-9]*
 

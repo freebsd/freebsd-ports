@@ -15,6 +15,10 @@ MASTER_SITE_SUBDIR=	arved
 MAINTAINER=	oleg@pobox.com
 COMMENT=	C++ Linear Algebra and Optimization classlib
 
+BROKEN=		Does not compile with GCC 4.2
+DEPRECATED=	does not build on FreeBSD 7.x or newer
+EXPIRATION_DATE=2011-04-17
+
 WRKSRC=		${WRKDIR}/LinAlg
 ALL_TARGET=	lib
 INSTALL_TARGET=	lib
@@ -36,10 +40,4 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/LinAlg
 .endif
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 700042
-BROKEN=		Does not compile with GCC 4.2
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

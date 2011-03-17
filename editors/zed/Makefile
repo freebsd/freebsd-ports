@@ -14,6 +14,10 @@ MASTER_SITES=	http://zed.c3po.it/
 MAINTAINER=	exile@chamber.ee
 COMMENT=	Simple, small, fast, highly configurable text editor
 
+BROKEN=		Does not compile with GCC 4.2
+DEPRECATED=	does not compile on FreeBSD 7.x or newer
+EXPIRATION_DATE=2011-04-17
+
 DOCS=		CHANGES zed.doc
 
 do-install:
@@ -24,10 +28,4 @@ do-install:
 	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${DOCSDIR}
 .endif
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 700042
-BROKEN=		Does not compile with GCC 4.2
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

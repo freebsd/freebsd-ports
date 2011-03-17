@@ -18,5 +18,7 @@ MASTERDIR=	${.CURDIR}/../../mail/roundcube
 DISTINFO_FILE=	${.CURDIR}/distinfo
 
 BROKEN=		bad distinfo
+DEPRECATED=	has been broken for almost a year
+EXPIRATION_DATE=2011-04-17
 
 .include "${MASTERDIR}/Makefile"

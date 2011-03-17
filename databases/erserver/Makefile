@@ -22,6 +22,10 @@ BUILD_DEPENDS=	ant:${PORTSDIR}/devel/apache-ant \
 RUN_DEPENDS=	${JAVAJARDIR}/log4j.jar:${PORTSDIR}/devel/log4j \
 		postgres:${PGSQL_PORT}
 
+BROKEN=		Does not compile with GCC 4.2
+DEPRECATED=	does not compile on FreeBSD 7.x or newer
+EXPIRATION_DATE=2011-04-17
+
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_JAVA=	yes
@@ -38,10 +42,6 @@ MAKE_ARGS=	sqldir=${DATADIR} templdir=${DATADIR} docdir=${DOCSDIR} \
 DEFAULT_PGSQL_VER?=74
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 700042
-BROKEN=		Does not compile with GCC 4.2
-.endif
 
 # Setting/finding PostgreSQL version we want.
 .if exists(${LOCALBASE}/bin/postmaster)

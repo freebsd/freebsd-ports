@@ -13,5 +13,7 @@ COMMENT=	The gambas Qt GUI component
 MASTERDIR=	${.CURDIR}/../../lang/gambas2-base
 
 BROKEN=	fails to build
+DEPRECATED=	has been broken for over a year
+EXPIRATION_DATE=2011-04-17
 
 .include "${MASTERDIR}/Makefile"

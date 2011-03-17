@@ -14,12 +14,17 @@ MASTER_SITES=	SF/newpki/${PORTNAME}/2.0.0-beta4
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C++ PKI libraries from newpki project
 
+BROKEN=		does not compile with OpenSSL 0.9.8b
+DEPRECATED=	does not compile on FreeBSD 7.x or newer
+EXPIRATION_DATE=2011-04-17
+
 WRKSRC=		${WRKDIR}/${PORTNAME}-2.0.0
 
 USE_OPENSSL=	yes
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 
+GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS+=	--includedir=${PREFIX}/include/newpki
 
@@ -33,18 +38,10 @@ PLIST_SUB+=	NLS=""
 CONFIGURE_ARGS+=	--with-libintl-prefix=${LOCALBASE}
 .endif
 
-GNU_CONFIGURE=	yes
-
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 700019
-BROKEN=		does not compile with OpenSSL 0.9.8b
-.endif
-
 pre-patch:
 	@${FIND} ${WRKSRC} -name '*.cpp' -or -name '*.h' | ${XARGS} ${REINPLACE_CMD} -e 's|||g'
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

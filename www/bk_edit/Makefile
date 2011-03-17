@@ -15,16 +15,14 @@ MASTER_SITES=	http://www.allesdurcheinander.de/nettools/bk_edit/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Bookmark Editor
 
+BROKEN=		Broken with gcc 4.2
+DEPRECATED=	does not compile on FreeBSD 7.x and newer
+EXPIRATION_DATE=2011-04-17
+
 USE_GNOME=	gtk12 libxml2
 USE_BISON=	build
 HAS_CONFIGURE=	yes
 MAKE_ENV=	LD="${CC}" LDFLAGS="${LDFLAGS}"
-
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 700042
-BROKEN=		Broken with gcc 4.2
-.endif
 
 post-patch:
 	@${FIND} ${WRKSRC} -name "*Makefile*" | ${XARGS} ${REINPLACE_CMD} -e \
@@ -39,4 +37,4 @@ do-install:
 	@${MKDIR} ${PREFIX}/lib/bkedit
 	${INSTALL_DATA} ${WRKSRC}/src/plugins/*.so ${PREFIX}/lib/bkedit
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

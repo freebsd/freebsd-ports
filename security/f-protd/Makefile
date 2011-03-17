@@ -20,6 +20,8 @@ RUN_DEPENDS=	${LOCALBASE}/f-prot/f-prot:${PORTSDIR}/security/f-prot \
 
 RESTRICTED=	Restrictive 60 day evaluation license
 BROKEN=		does not build
+DEPRECATED=	has been broken for over a year
+EXPIRATION_DATE=2011-04-17
 
 WRKSRC=		${WRKDIR}/f-prot
 NO_BUILD=	yes

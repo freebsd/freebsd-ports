@@ -20,6 +20,8 @@ COMMENT=	A platform-independent GUI administration client for the MySQL server
 BUILD_DEPENDS=	qmake:${PORTSDIR}/devel/qmake
 
 BROKEN=		does not compile
+DEPRECATED=	has been broken for almost a year
+EXPIRATION_DATE=2011-04-17
 
 USE_MYSQL=	yes
 IGNORE_WITH_MYSQL=323

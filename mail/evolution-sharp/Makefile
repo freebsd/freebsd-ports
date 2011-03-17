@@ -16,6 +16,8 @@ MAINTAINER=	bsd-sharp@googlegroups.com
 COMMENT=	Mono bindings for evolution
 
 BROKEN=		Doesn't accept current evolution version
+DEPRECATED=	has been broken for over a year
+EXPIRATION_DATE=2011-04-17
 
 BUILD_DEPENDS=	evolution:${PORTSDIR}/mail/evolution
 RUN_DEPENDS=	evolution:${PORTSDIR}/mail/evolution

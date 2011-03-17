@@ -22,6 +22,8 @@ BUILD_DEPENDS=\
 	${PYTHON_PKGNAMEPREFIX}lockfile>0:${PORTSDIR}/devel/py-lockfile
 
 BROKEN=		leaves behind files on deinstall
+DEPRECATED=	has been broken for a half year
+EXPIRATION_DATE=2011-04-17
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	easy_install

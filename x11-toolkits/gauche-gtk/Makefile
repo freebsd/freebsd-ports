@@ -21,6 +21,8 @@ BUILD_DEPENDS=	gosh:${PORTSDIR}/lang/gauche
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 BROKEN=		does not compile
+DEPRECATED=	has been broken for a year
+EXPIRATION_DATE=2011-04-17
 
 USE_GNOME=	gtk20 # this alters CONFIGURE_TARGET!
 GNU_CONFIGURE=	yes

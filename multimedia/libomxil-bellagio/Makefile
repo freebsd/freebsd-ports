@@ -17,6 +17,8 @@ COMMENT=	Bellagio is an implementation of the OpenMAX IL API
 LIB_DEPENDS=	avcodec.1:${PORTSDIR}/multimedia/ffmpeg
 
 BROKEN=		bad plist
+DEPRECATED=	has been broken for almost a year
+EXPIRATION_DATE=2011-04-17
 
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes

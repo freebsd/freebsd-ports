@@ -20,6 +20,8 @@ RUN_DEPENDS=	bltwish:${PORTSDIR}/x11-toolkits/blt \
 		${LOCALBASE}/lib/libtclreadline.so:${PORTSDIR}/devel/tclreadline
 
 BROKEN=		does not compile
+DEPRECATED=	has been broken for more than a year
+EXPIRATION_DATE=2011-04-17
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 USE_AUTOTOOLS=	aclocal automake autoconf libtool

@@ -27,6 +27,9 @@ BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4 \
 		${LOCALBASE}/include/nspr/prtypes.h:${PORTSDIR}/devel/nspr
 RUN_DEPENDS=	javavm:${PORTSDIR}/java/javavmwrapper
 
+BROKEN=		Does not compile with GCC 4.2
+DEPRECATED=	does not build on FreeBSD 7.x or newer
+EXPIRATION_DATE=2011-04-17
 
 OPTIONS=	DEBUG	"Enable debugging support"	off \
 		IPV6	"Enable IPv6 support"		off \
@@ -66,10 +69,6 @@ NATIVE_BOOTSTRAP_JDKS=	${LOCALBASE}/jdk1.4.2
 LINUX_BOOTSTRAP_JDKS=	${LOCALBASE}/linux-sun-jdk1.4.2
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 700042
-BROKEN=		Does not compile with GCC 4.2
-.endif
 
 .if defined(WITH_IPV6)
 CATEGORIES+=	ipv6

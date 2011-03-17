@@ -22,6 +22,10 @@ COMMENT=	The Tk toolkit with a NeXTSTEP look and more
 
 LIB_DEPENDS=	tcl80jp.1:${PORTSDIR}/japanese/tcl80
 
+BROKEN=		Broken with gcc 4.2
+DEPRECATED=	does not compile on FreeBSD 7.x or newer
+EXPIRATION_DATE=2011-04-17
+
 USE_XORG=	xpm
 USE_AUTOTOOLS=	autoconf213
 HAS_CONFIGURE=	yes
@@ -43,10 +47,6 @@ TOPDIR=		${WRKDIR}/${DISTNAME}
 PORTDOCDIR=	${PREFIX}/share/doc/tkstep${TCLVERSION}jp
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 700042
-BROKEN=		Broken with gcc 4.2
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e '/xpg4/d' ${WRKSRC}/configure.in

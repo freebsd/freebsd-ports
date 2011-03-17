@@ -23,6 +23,10 @@ PATCHFILES=	cap60.patch193 cap60.patch194 cap60.patch195 cap60.patch196 \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Columbia AppleTalk Package for UNIX
 
+BROKEN=		Broken with gcc 4.2
+DEPRECATED=	does not compile on FreeBSD 7.x or newer
+EXPIRATION_DATE=2011-04-17
+
 NO_CDROM=	Don't sell for profit
 WRKSRC=		${WRKDIR}/cap60
 DIST_SUBDIR=	cap60
@@ -61,10 +65,6 @@ READMES=	applications/papif applications/lwsrv applications/aufs \
 		doc applications support/uab support/ethertalk
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 700042
-BROKEN=		Broken with gcc 4.2
-.endif
 
 pre-patch:
 	@(cd ${WRKSRC}; \

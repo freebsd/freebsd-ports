@@ -14,6 +14,10 @@ MASTER_SITES=	http://www.losersjuegos.com.ar/_media/juegos/aqbubble/descargas/
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Game similar to snow bros
 
+BROKEN=		Broken with gcc 4.2
+DEPRECATED=	does not compile on FreeBSD 7.x or newer
+EXPIRATION_DATE=2011-04-17
+
 USE_SDL=	sdl mixer image
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
@@ -26,10 +30,6 @@ AQBUBBLEDIRS=	ima sonidos
 OPTIONS=	NLS "Native Language Support"	on
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 700042
-BROKEN=		Broken with gcc 4.2
-.endif
 
 .if defined(WITHOUT_NLS)
 CONFIGURE_ARGS+=	--disable-nls

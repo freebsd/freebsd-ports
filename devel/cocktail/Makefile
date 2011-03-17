@@ -15,18 +15,16 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 MAINTAINER=	wjw@withagen.nl
 COMMENT=	Compiler tools with attribute grammars
 
+BROKEN=		Segfault during build on FreeBSD >= 7.0
+DEPRECATED=	does not build on FreeBSD 7.x or newer
+EXPIRATION_DATE=2011-04-17
+
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 MAN1=		ag.1 puma.1 mpp.1 lalr.1 ell.1 bnf.1 ast.1 rex.1 mtc.1
 MAN2=		mtc.2
-
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 700000
-BROKEN=		Segfault during build on FreeBSD >= 7.0
-.endif
 
 post-extract:
 		${RM} -f ${WRKSRC}/mtc/m2c/SYSTEM_.h
 		${RM} -f ${WRKSRC}/mtc/m2c/SYSTEM_.c
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

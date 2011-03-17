@@ -16,6 +16,10 @@ COMMENT=	C++ PKI server from newpki project
 
 LIB_DEPENDS=	newpki.2:${PORTSDIR}/security/newpki-lib
 
+BROKEN=		does not compile with OpenSSL 0.9.8b
+DEPRECATED=	does not compile on FreeBSD 7.x or newer
+EXPIRATION_DATE=2011-04-17
+
 WRKSRC=		${WRKDIR}/${PORTNAME}-2.0.0
 
 GNU_CONFIGURE=	yes
@@ -44,12 +48,6 @@ PLIST_SUB+=	NLS=""
 CONFIGURE_ARGS+=	--with-libintl-prefix=${LOCALBASE}
 .endif
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 700019
-BROKEN=		does not compile with OpenSSL 0.9.8b
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure \
 		${WRKSRC}/publication/ldap/configure
@@ -58,4 +56,4 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/conf/config.conf ${PREFIX}/etc/newpki.conf.sample
 	${INSTALL_MAN} ${WRKSRC}/docs/newpki-server.1.gz ${MAN1PREFIX}/man/man1
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

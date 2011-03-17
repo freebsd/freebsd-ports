@@ -22,6 +22,8 @@ EXTRACT_AFTER_ARGS=	-b -e && \
 ONLY_FOR_ARCHS=		i386
 ONLY_FOR_ARCHS_REASON=	Has not yet been ported to FreeBSD/amd64
 BROKEN=			does not build
+DEPRECATED=		has been broken for over a half year
+EXPIRATION_DATE=	2011-04-17
 
 USE_GMAKE=	yes
 USE_GCC=	4.2+

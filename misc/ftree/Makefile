@@ -22,6 +22,8 @@ USE_LINUX=	yes
 NO_CDROM=	Non-commercial use only
 RESTRICTED=	Non-commercial use only
 BROKEN=		does not fetch
+DEPRECATED=	has been broken for over a half year
+EXPIRATION_DATE=2011-04-17
 
 WRKSRC=		${WRKDIR}/usr
 MAN1=		ftree.1

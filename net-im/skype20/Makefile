@@ -26,6 +26,8 @@ USE_LINUX_APPS+=dri
 .endif
 
 BROKEN=		This is the last version of skype that works on FreeBSD, but the distfile is no longer available from the vendor, and won't be in the future. We are working on alternative solutions.
+DEPRECATED=	has been broken for a year
+EXPIRATION_DATE=2011-04-17
 
 USE_BZIP2=	yes
 USE_LINUX=	yes

@@ -17,6 +17,10 @@ COMMENT=	A back-to-back (B2B) SIP user agent
 
 LIB_DEPENDS=	xml2.5:${PORTSDIR}/textproc/libxml2
 
+BROKEN=		Does not compile with GCC 4.2
+DEPRECATED=	does not compile on FreeBSD 7.x or newer
+EXPIRATION_DATE=2011-04-17
+
 USE_GMAKE=	yes
 ALL_TARGET=	b2bua
 CFLAGS+=	-Wno-deprecated
@@ -25,10 +29,6 @@ MAKE_ENV=	PTHREAD_LDFLAGS="${PTHREAD_LIBS}" \
 		VOCAL_USE_SYSTEM_LIBXML=true
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 700042
-BROKEN=		Does not compile with GCC 4.2
-.endif
 
 .if ${ARCH} == "sparc64"
 BROKEN=		Does not compile on sparc64

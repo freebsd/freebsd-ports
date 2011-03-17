@@ -50,6 +50,8 @@ RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/mod_perl.pm:${PORTSDIR}/www/mod_perl \
 		${BUILD_DEPENDS}
 
 BROKEN=		missing dependencies
+DEPRECATED=	has been broken for a half year
+EXPIRATION_DATE=2011-04-17
 
 MAKE_JOBS_UNSAFE=	yes
 
