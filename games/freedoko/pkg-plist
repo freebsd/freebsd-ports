@@ -206,6 +206,7 @@ bin/freedoko
 %%DATADIR%%/translations/de/bug_report
 %%DATADIR%%/translations/de/cards
 %%DATADIR%%/translations/de/chat
+%%DATADIR%%/translations/de/en
 %%DATADIR%%/translations/de/gui
 %%DATADIR%%/translations/de/help
 %%DATADIR%%/translations/de/menu
