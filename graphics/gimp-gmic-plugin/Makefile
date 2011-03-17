@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gmic
-PORTVERSION=	1.4.8.2
+PORTVERSION=	1.4.8.3
 CATEGORIES=	graphics
 MASTER_SITES=	SF/${PORTNAME} \
 		SF/${PORTNAME}/old
@@ -63,11 +63,6 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/gmic_gimp ${PREFIX}/${PLUGIN_DIR}
 	${INSTALL_PROGRAM} ${WRKSRC}/src/gmic ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/man/gmic.1.gz ${MANPREFIX}/man/man1
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}/html/img
-	@${CP} -R ${WRKSRC}/html/*.* ${DOCSDIR}/html
-	@(cd ${WRKSRC}/html/img && ${COPYTREE_SHARE} \* ${DOCSDIR}/html/img)
-.endif
 .if defined(WITH_BASH)
 	${INSTALL_SCRIPT} ${WRKSRC}/src/gmic_bashcompletion.sh \
 		${PREFIX}/etc/bash_completion.d/gmic_bashcompletion.sh
