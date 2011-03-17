@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	asn1
-PORTVERSION=	0.0.12a
+PORTVERSION=	0.0.13a
 CATEGORIES=	devel python
 MASTER_SITES=	SF/py${PORTNAME}/py${PORTNAME}-devel/${PORTVERSION}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -15,29 +15,22 @@ DISTNAME=	py${PORTNAME}-${PORTVERSION}
 MAINTAINER=	mhjacks@swbell.net
 COMMENT=	ASN.1 toolkit for Python
 
+LICENSE=	BSD
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
 USE_PYTHON=		yes
 USE_PYDISTUTILS=	easy_install
 PYDISTUTILS_PKGNAME=	pyasn1
 
 DOCSDIR=	${PREFIX}/share/doc/py-${PORTNAME}
-EXAMPLESDIR=	${PREFIX}/share/examples/py-${PORTNAME}
 
 BASEDOCS=	CHANGES \
 		README \
-		LICENSE \
 		TODO
 
-DOCDOCS=	notes.html
-
-EXAMPLE_FILES=	ldap.py \
-		ocsp.py \
-		pkcs7.py \
-		snmp.py \
-		sshkey.py \
-		x509.py
+DOCDOCS=	pyasn1-tutorial.html
 
 post-install:
-# docs
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 . for f in ${BASEDOCS}
@@ -47,10 +40,5 @@ post-install:
 	@${INSTALL_DATA} ${WRKSRC}/doc/${f} ${DOCSDIR}
 . endfor
 .endif
-# examples
-	@${MKDIR} ${EXAMPLESDIR}
-.for f in ${EXAMPLE_FILES}
-	@${INSTALL_DATA} ${WRKSRC}/examples/${f} ${EXAMPLESDIR}
-.endfor
 
 .include <bsd.port.mk>
