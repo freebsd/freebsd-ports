@@ -5,6 +5,22 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+
+20110317:
+  AFFECTS: users of www/uzbl
+  AUTHOR: Klaus Aehlig <aehlig@linta.de>
+
+  The port has been updated to version as of 2011/02/15. This introduces
+  the following incompatabilities.
+
+  - $UZBL_FIFO, $UZBL_TITLE are available to scripts as environment ariables,
+  but not as command-line arguments.
+  - environment variables are no longer expanded by the config parser
+  - download handling has changed
+  - cookie daemons are no longer supported
+
+  Users are advised to change their personal configuration files/scripts accordingly.
+
 20110316:
   AFFECTS: users of sysutils/duplicity
   AUTHOR: peter.schuller@infidyne.com
