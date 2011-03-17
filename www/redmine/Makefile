@@ -7,7 +7,7 @@
 
 PORTNAME=	redmine
 PORTVERSION=	1.1.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_RUBYFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -68,7 +68,7 @@ post-patch:
 
 do-install:
 	${MKDIR} ${WWWDIR}
-	(cd ${WRKSRC}/ && ${COPYTREE_SHARE} "*" ${WWWDIR} "! -name *.orig ! -name *.bak")
+	(cd ${WRKSRC}/ && ${COPYTREE_SHARE} "*" ${WWWDIR} "! ( -name *\.orig -o -name *\.bak )")
 
 	${MKDIR} ${WWWDIR}/public/plugin_assets
 	${CHOWN} -R ${WWWOWN}:${WWWGRP} ${WWWDIR}
