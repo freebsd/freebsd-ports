@@ -14,23 +14,27 @@ MAINTAINER=	aehlig@linta.de
 COMMENT=	Web interface tools which adhere to the unix philosophy
 
 LIB_DEPENDS=	webkit:${PORTSDIR}/www/webkit-gtk2
-RUN_DEPENDS=	socat:${PORTSDIR}/net/socat
+RUN_DEPENDS=	socat:${PORTSDIR}/net/socat \
+		${PYTHON_PKGNAMEPREFIX}gtk>=2:${PORTSDIR}/x11-toolkits/py-gtk2
 
 USE_GNOME=	gtk20
 USE_LDCONFIG=	yes
 USE_GMAKE=	yes
+USE_PYTHON=	yes
 
-GITDATE=	2010.11.25
-GITVERSION=	5180049
+GITDATE=	2011.03.14
+GITVERSION=	f3e52b2
 
 WRKSRC=		${WRKDIR}/Dieterbe-uzbl-${GITVERSION}
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+MAKE_JOBS_SAFE=	YES
+
 .if !defined(NOPORTDOCS)
 PORTDOCS=	AUTHORS README COMMUNITY CONTRIBUTING FAQ INSTALL TODO config-syntax \
-		multiple-instances-management performance url-editing config.h vim README.cookies
+		multiple-instances-management performance url-editing config.h vim
 .endif
 
 .if !defined(NOPORTDATA)
@@ -54,16 +58,15 @@ post-build:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/uzbl-core ${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/uzbl-cookie-manager ${PREFIX}/bin
 	${INSTALL_SCRIPT} ${WRKSRC}/src/uzbl-browser ${PREFIX}/bin
-.for f in uzbl-event-manager uzbl-cookie-daemon uzbl-tabbed
+.for f in uzbl-event-manager uzbl-tabbed
 	${INSTALL_SCRIPT} ${WRKSRC}/examples/data/scripts/${f} ${PREFIX}/bin
 .endfor
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/src/config.h ${DOCSDIR}
 .for f in COMMUNITY CONTRIBUTING FAQ INSTALL TODO config-syntax \
-		multiple-instances-management performance url-editing README.cookies
+		multiple-instances-management performance url-editing
 	${INSTALL_DATA} ${WRKSRC}/docs/${f} ${DOCSDIR}/${f}
 .endfor
 .for f in AUTHORS README

@@ -1,0 +1,46 @@
+--- examples/data/scripts/uzbl-tabbed.orig	2011-03-14 04:36:33.000000000 +0000
++++ examples/data/scripts/uzbl-tabbed	2011-03-15 16:45:32.000000000 +0000
+@@ -449,8 +449,12 @@
+ 
+         type, _, args = cmd.split(" ", 2)
+         if type == "EVENT":
+-            type, args = args.split(" ", 1)
++            type, args = (args + " ").split(" ", 1)
+             if type == "TITLE_CHANGED":
++                try:
++                    _,args,_ = args.split("'",2)
++                except:
++                    pass
+                 self.title = args.strip()
+                 self.title_changed(False)
+             elif type == "VARIABLE_SET":
+@@ -459,7 +463,13 @@
+                 try:
+                     val = int(val)
+                 except:
+-                    pass
++                    try:
++                        val = float(val)
++                    except:
++                        try:
++                            _, val, _ = val.split("'",2)
++                        except:
++                            pass
+ 
+                 if var in UZBL_TABBED_VARS:
+                     if config[var] != val:
+@@ -497,12 +507,12 @@
+                 self.parent.new_tab(args, '', 0, next=True)
+ 
+             elif type == "NEXT_TAB":
+-                if args:
++                if args.strip():
+                     self.parent.next_tab(int(args))
+                 else:
+                     self.parent.next_tab()
+             elif type == "PREV_TAB":
+-                if args:
++                if args.strip():
+                     self.parent.prev_tab(int(args))
+                 else:
+                     self.parent.prev_tab()
