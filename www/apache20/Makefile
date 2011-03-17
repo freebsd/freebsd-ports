@@ -58,7 +58,7 @@ USE_AUTOTOOLS=		autoconf libtool
 USE_PERL5=		yes
 USE_RC_SUBR=		apache2
 USE_APACHE=		common20
-LIBTOOLFILES=		configure
+LIBTOOLFILES=		configure.in
 USE_BZIP2=		yes
 
 MPM_ITK_VERSION?=	20061030-01
