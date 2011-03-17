@@ -273,7 +273,7 @@ CONFIGURE_ARGS+=	--without-gvc
 # LZMA support
 .if !defined(WITHOUT_LZMA)
 . if (${OSVERSION} >= 900000 && ${OSVERSION} < 900012) || (${OSVERSION} < 800505)
-LIB_DEPENDS=		lzma:${PORTSDIR}/archivers/xz
+LIB_DEPENDS+=		lzma:${PORTSDIR}/archivers/xz
 . endif
 .else
 CONFIGURE_ARGS+=	--without-lzma
