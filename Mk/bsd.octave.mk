@@ -17,7 +17,8 @@ DISTNAME=	${OCTAVE_PKGNAME}-${PORTVERSION}
 bsd_octave_mk_MAINTAINER=	stephen@missouri.edu
 
 BUILD_DEPENDS+=	octave:${PORTSDIR}/math/octave
-RUN_DEPENDS+=	octave:${PORTSDIR}/math/octave
+RUN_DEPENDS+=	octave:${PORTSDIR}/math/octave \
+		gmake:${PORTSDIR}/devel/gmake
 RUN_DEPENDS+=	${LOCALBASE}/share/octave/tarballs:${PORTSDIR}/math/octave-forge-base
 LIB_DEPENDS+=	pcre:${PORTSDIR}/devel/pcre
 USE_FORTRAN=	yes
