@@ -12,7 +12,7 @@ CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	pirzyk@uiuc.edu
+MAINTAINER=	pirzyk@FreeBSD.org
 COMMENT=	Configuration data as perl objects
 
 BUILD_DEPENDS=	${SITE_PERL}/Parse/Yapp.pm:${PORTSDIR}/devel/p5-Parse-Yapp \
