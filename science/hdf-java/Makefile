@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	hdf-java
-PORTVERSION=	2.6.1
+PORTVERSION=	2.7
 CATEGORIES=	science java
 MASTER_SITES=	http://www.hdfgroup.org/ftp/HDF5/hdf-java/src/ \
 		http://www.predatorlabs.net/dl/
@@ -21,6 +21,9 @@ USE_JAVA=	yes
 JAVA_VERSION=	1.5+
 JAVA_BUILD=	yes
 JAVA_RUN=	yes
+
+USE_DOS2UNIX=	yes
+DOS2UNIX_REGEX=	.*/examples/.*Makefile.in
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-jdk=${JAVA_HOME}/include,${JAVA_HOME}/jre/lib/ \

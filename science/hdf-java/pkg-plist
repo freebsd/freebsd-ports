@@ -1,5 +1,6 @@
 bin/hdfview.sh
 lib/libjhdf5.so
+%%PORTDOCS%%%%DOCSDIR%%/UsersGuide/RELEASE.txt
 %%PORTDOCS%%%%DOCSDIR%%/UsersGuide/images/chart_histogram.gif
 %%PORTDOCS%%%%DOCSDIR%%/UsersGuide/images/chart_line.gif
 %%PORTDOCS%%%%DOCSDIR%%/UsersGuide/images/class_diagram_object.jpg
@@ -9,7 +10,6 @@ lib/libjhdf5.so
 %%PORTDOCS%%%%DOCSDIR%%/UsersGuide/images/dataset_compound_2d.gif
 %%PORTDOCS%%%%DOCSDIR%%/UsersGuide/images/dataset_open_as.gif
 %%PORTDOCS%%%%DOCSDIR%%/UsersGuide/images/dataset_reorder.gif
-%%PORTDOCS%%%%DOCSDIR%%/UsersGuide/images/dataset_subset.gif
 %%PORTDOCS%%%%DOCSDIR%%/UsersGuide/images/dataset_subset_compound.gif
 %%PORTDOCS%%%%DOCSDIR%%/UsersGuide/images/dataset_subset_example1.gif
 %%PORTDOCS%%%%DOCSDIR%%/UsersGuide/images/dataset_subset_example2.gif
@@ -48,7 +48,6 @@ lib/libjhdf5.so
 %%PORTDOCS%%%%DOCSDIR%%/UsersGuide/images/new_attribute.gif
 %%PORTDOCS%%%%DOCSDIR%%/UsersGuide/images/new_dataset.gif
 %%PORTDOCS%%%%DOCSDIR%%/UsersGuide/images/new_file.gif
-%%PORTDOCS%%%%DOCSDIR%%/UsersGuide/images/new_group.gif
 %%PORTDOCS%%%%DOCSDIR%%/UsersGuide/images/new_image.gif
 %%PORTDOCS%%%%DOCSDIR%%/UsersGuide/images/property_attribute.gif
 %%PORTDOCS%%%%DOCSDIR%%/UsersGuide/images/property_general_dataset.gif
