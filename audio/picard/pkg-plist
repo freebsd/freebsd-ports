@@ -91,6 +91,45 @@ bin/picard
 %%PYTHON_SITELIBDIR%%/picard/plugins/__init__.py
 %%PYTHON_SITELIBDIR%%/picard/plugins/__init__.pyc
 %%PYTHON_SITELIBDIR%%/picard/plugins/__init__.pyo
+%%PYTHON_SITELIBDIR%%/picard/plugins/addrelease.py
+%%PYTHON_SITELIBDIR%%/picard/plugins/addrelease.pyc
+%%PYTHON_SITELIBDIR%%/picard/plugins/addrelease.pyo
+%%PYTHON_SITELIBDIR%%/picard/plugins/coverart.py
+%%PYTHON_SITELIBDIR%%/picard/plugins/coverart.pyc
+%%PYTHON_SITELIBDIR%%/picard/plugins/coverart.pyo
+%%PYTHON_SITELIBDIR%%/picard/plugins/cuesheet.py
+%%PYTHON_SITELIBDIR%%/picard/plugins/cuesheet.pyc
+%%PYTHON_SITELIBDIR%%/picard/plugins/cuesheet.pyo
+%%PYTHON_SITELIBDIR%%/picard/plugins/discnumber.py
+%%PYTHON_SITELIBDIR%%/picard/plugins/discnumber.pyc
+%%PYTHON_SITELIBDIR%%/picard/plugins/discnumber.pyo
+%%PYTHON_SITELIBDIR%%/picard/plugins/featartist.py
+%%PYTHON_SITELIBDIR%%/picard/plugins/featartist.pyc
+%%PYTHON_SITELIBDIR%%/picard/plugins/featartist.pyo
+%%PYTHON_SITELIBDIR%%/picard/plugins/fix_mp4_meta.py
+%%PYTHON_SITELIBDIR%%/picard/plugins/fix_mp4_meta.pyc
+%%PYTHON_SITELIBDIR%%/picard/plugins/fix_mp4_meta.pyo
+%%PYTHON_SITELIBDIR%%/picard/plugins/lastfm/__init__.py
+%%PYTHON_SITELIBDIR%%/picard/plugins/lastfm/__init__.pyc
+%%PYTHON_SITELIBDIR%%/picard/plugins/lastfm/__init__.pyo
+%%PYTHON_SITELIBDIR%%/picard/plugins/lastfm/ui_options_lastfm.py
+%%PYTHON_SITELIBDIR%%/picard/plugins/lastfm/ui_options_lastfm.pyc
+%%PYTHON_SITELIBDIR%%/picard/plugins/lastfm/ui_options_lastfm.pyo
+%%PYTHON_SITELIBDIR%%/picard/plugins/originalreleasedate.py
+%%PYTHON_SITELIBDIR%%/picard/plugins/originalreleasedate.pyc
+%%PYTHON_SITELIBDIR%%/picard/plugins/originalreleasedate.pyo
+%%PYTHON_SITELIBDIR%%/picard/plugins/replaygain/__init__.py
+%%PYTHON_SITELIBDIR%%/picard/plugins/replaygain/__init__.pyc
+%%PYTHON_SITELIBDIR%%/picard/plugins/replaygain/__init__.pyo
+%%PYTHON_SITELIBDIR%%/picard/plugins/replaygain/ui_options_replaygain.py
+%%PYTHON_SITELIBDIR%%/picard/plugins/replaygain/ui_options_replaygain.pyc
+%%PYTHON_SITELIBDIR%%/picard/plugins/replaygain/ui_options_replaygain.pyo
+%%PYTHON_SITELIBDIR%%/picard/plugins/swapprefix.py
+%%PYTHON_SITELIBDIR%%/picard/plugins/swapprefix.pyc
+%%PYTHON_SITELIBDIR%%/picard/plugins/swapprefix.pyo
+%%PYTHON_SITELIBDIR%%/picard/plugins/titlecase.py
+%%PYTHON_SITELIBDIR%%/picard/plugins/titlecase.pyc
+%%PYTHON_SITELIBDIR%%/picard/plugins/titlecase.pyo
 %%PYTHON_SITELIBDIR%%/picard/puidmanager.py
 %%PYTHON_SITELIBDIR%%/picard/puidmanager.pyc
 %%PYTHON_SITELIBDIR%%/picard/puidmanager.pyo
@@ -377,6 +416,8 @@ share/locale/zh_CN/LC_MESSAGES/picard.mo
 @dirrm %%PYTHON_SITELIBDIR%%/picard/util
 @dirrm %%PYTHON_SITELIBDIR%%/picard/ui/options
 @dirrm %%PYTHON_SITELIBDIR%%/picard/ui
+@dirrm %%PYTHON_SITELIBDIR%%/picard/plugins/replaygain
+@dirrm %%PYTHON_SITELIBDIR%%/picard/plugins/lastfm
 @dirrm %%PYTHON_SITELIBDIR%%/picard/plugins
 @dirrm %%PYTHON_SITELIBDIR%%/picard/musicdns
 @dirrm %%PYTHON_SITELIBDIR%%/picard/formats/mutagenext
