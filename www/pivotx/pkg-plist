@@ -139,8 +139,8 @@
 %%WWWDIR%%/pivotx/extensions/fancybox/fancy_title_left.png
 %%WWWDIR%%/pivotx/extensions/fancybox/fancy_title_main.png
 %%WWWDIR%%/pivotx/extensions/fancybox/fancy_title_over.png
-%%WWWDIR%%/pivotx/extensions/fancybox/fancybox-x.png
 %%WWWDIR%%/pivotx/extensions/fancybox/fancy_title_right.png
+%%WWWDIR%%/pivotx/extensions/fancybox/fancybox-x.png
 %%WWWDIR%%/pivotx/extensions/fancybox/fancybox-y.png
 %%WWWDIR%%/pivotx/extensions/fancybox/fancybox.png
 %%WWWDIR%%/pivotx/extensions/fancybox/jquery.easing-1.3.js
@@ -175,6 +175,8 @@
 %%WWWDIR%%/pivotx/fileupload.php
 %%WWWDIR%%/pivotx/first_defense.php
 %%WWWDIR%%/pivotx/forms.php
+%%WWWDIR%%/pivotx/includes/PasswordHash.php
+%%WWWDIR%%/pivotx/includes/Snoopy.class.php
 %%WWWDIR%%/pivotx/includes/blogroll.php
 %%WWWDIR%%/pivotx/includes/compat.php
 %%WWWDIR%%/pivotx/includes/editor/handle_upload.php
@@ -231,7 +233,7 @@
 %%WWWDIR%%/pivotx/includes/index.html
 %%WWWDIR%%/pivotx/includes/js/bookmarklet.js
 %%WWWDIR%%/pivotx/includes/js/index.html
-%%WWWDIR%%/pivotx/includes/js/jquery-1.4.4.min.js
+%%WWWDIR%%/pivotx/includes/js/jquery-1.5.min.js
 %%WWWDIR%%/pivotx/includes/js/jquery-plugins.js
 %%WWWDIR%%/pivotx/includes/js/jquery-ui-1.8.9.custom.min.js
 %%WWWDIR%%/pivotx/includes/js/jquery.Jcrop.min.js
@@ -257,9 +259,9 @@
 %%WWWDIR%%/pivotx/includes/magpie/rss_parse.inc
 %%WWWDIR%%/pivotx/includes/magpie/rss_utils.inc
 %%WWWDIR%%/pivotx/includes/markdown/License.txt
-%%WWWDIR%%/pivotx/includes/markdown/markdown.php
 %%WWWDIR%%/pivotx/includes/markdown/PHP Markdown Readme.txt
 %%WWWDIR%%/pivotx/includes/markdown/PHP SmartyPants Readme.txt
+%%WWWDIR%%/pivotx/includes/markdown/markdown.php
 %%WWWDIR%%/pivotx/includes/markdown/smartypants.php
 %%WWWDIR%%/pivotx/includes/markitup/images/bg-container.png
 %%WWWDIR%%/pivotx/includes/markitup/images/bg.png
@@ -324,6 +326,7 @@
 %%WWWDIR%%/pivotx/includes/markitup/set.js
 %%WWWDIR%%/pivotx/includes/mimeDecode.php
 %%WWWDIR%%/pivotx/includes/minify/.htaccess
+%%WWWDIR%%/pivotx/includes/minify/README.txt
 %%WWWDIR%%/pivotx/includes/minify/config.php
 %%WWWDIR%%/pivotx/includes/minify/groupsConfig.php
 %%WWWDIR%%/pivotx/includes/minify/index.php
@@ -332,7 +335,11 @@
 %%WWWDIR%%/pivotx/includes/minify/lib/HTTP/Encoder.php
 %%WWWDIR%%/pivotx/includes/minify/lib/JSMin.php
 %%WWWDIR%%/pivotx/includes/minify/lib/JSMinPlus.php
+%%WWWDIR%%/pivotx/includes/minify/lib/Minify.php
 %%WWWDIR%%/pivotx/includes/minify/lib/Minify/Build.php
+%%WWWDIR%%/pivotx/includes/minify/lib/Minify/CSS.php
+%%WWWDIR%%/pivotx/includes/minify/lib/Minify/CSS/Compressor.php
+%%WWWDIR%%/pivotx/includes/minify/lib/Minify/CSS/UriRewriter.php
 %%WWWDIR%%/pivotx/includes/minify/lib/Minify/Cache/APC.php
 %%WWWDIR%%/pivotx/includes/minify/lib/Minify/Cache/File.php
 %%WWWDIR%%/pivotx/includes/minify/lib/Minify/Cache/Memcache.php
@@ -343,9 +350,6 @@
 %%WWWDIR%%/pivotx/includes/minify/lib/Minify/Controller/MinApp.php
 %%WWWDIR%%/pivotx/includes/minify/lib/Minify/Controller/Page.php
 %%WWWDIR%%/pivotx/includes/minify/lib/Minify/Controller/Version1.php
-%%WWWDIR%%/pivotx/includes/minify/lib/Minify/CSS/Compressor.php
-%%WWWDIR%%/pivotx/includes/minify/lib/Minify/CSS/UriRewriter.php
-%%WWWDIR%%/pivotx/includes/minify/lib/Minify/CSS.php
 %%WWWDIR%%/pivotx/includes/minify/lib/Minify/HTML.php
 %%WWWDIR%%/pivotx/includes/minify/lib/Minify/ImportProcessor.php
 %%WWWDIR%%/pivotx/includes/minify/lib/Minify/Lines.php
@@ -353,14 +357,10 @@
 %%WWWDIR%%/pivotx/includes/minify/lib/Minify/Packer.php
 %%WWWDIR%%/pivotx/includes/minify/lib/Minify/Source.php
 %%WWWDIR%%/pivotx/includes/minify/lib/Minify/YUICompressor.php
-%%WWWDIR%%/pivotx/includes/minify/lib/Minify.php
 %%WWWDIR%%/pivotx/includes/minify/lib/Solar/Dir.php
-%%WWWDIR%%/pivotx/includes/minify/README.txt
 %%WWWDIR%%/pivotx/includes/minify/utils.php
-%%WWWDIR%%/pivotx/includes/PasswordHash.php
 %%WWWDIR%%/pivotx/includes/ping.php
 %%WWWDIR%%/pivotx/includes/send_trackback.php
-%%WWWDIR%%/pivotx/includes/Snoopy.class.php
 %%WWWDIR%%/pivotx/includes/spamping.php
 %%WWWDIR%%/pivotx/includes/streams.php
 %%WWWDIR%%/pivotx/includes/strip_punctuation.php
@@ -489,6 +489,8 @@
 %%WWWDIR%%/pivotx/modules/pages_sql.php
 %%WWWDIR%%/pivotx/modules/safeaddress.inc.php
 %%WWWDIR%%/pivotx/modules/smarty/Config_File.class.php
+%%WWWDIR%%/pivotx/modules/smarty/Smarty.class.php
+%%WWWDIR%%/pivotx/modules/smarty/Smarty_Compiler.class.php
 %%WWWDIR%%/pivotx/modules/smarty/debug.tpl
 %%WWWDIR%%/pivotx/modules/smarty/internals/core.assemble_plugin_filepath.php
 %%WWWDIR%%/pivotx/modules/smarty/internals/core.assign_smarty_interface.php
@@ -564,8 +566,6 @@
 %%WWWDIR%%/pivotx/modules/smarty/plugins/outputfilter.trimwhitespace.php
 %%WWWDIR%%/pivotx/modules/smarty/plugins/shared.escape_special_chars.php
 %%WWWDIR%%/pivotx/modules/smarty/plugins/shared.make_timestamp.php
-%%WWWDIR%%/pivotx/modules/smarty/Smarty.class.php
-%%WWWDIR%%/pivotx/modules/smarty/Smarty_Compiler.class.php
 %%WWWDIR%%/pivotx/modules/smarty/templatetags.php
 %%WWWDIR%%/pivotx/modules/zip.lib.php
 %%WWWDIR%%/pivotx/objects.php
@@ -613,7 +613,6 @@
 %%WWWDIR%%/pivotx/pics/ico_av.png
 %%WWWDIR%%/pivotx/pics/ico_g.png
 %%WWWDIR%%/pivotx/pics/ico_l.png
-%%WWWDIR%%/pivotx/pics/nix.gif
 %%WWWDIR%%/pivotx/pics/ico_m.png
 %%WWWDIR%%/pivotx/pics/ico_v.png
 %%WWWDIR%%/pivotx/pics/ico_y.png
@@ -635,11 +634,12 @@
 %%WWWDIR%%/pivotx/pics/index.html
 %%WWWDIR%%/pivotx/pics/information.png
 %%WWWDIR%%/pivotx/pics/lightbulb.png
-%%WWWDIR%%/pivotx/pics/note.png
 %%WWWDIR%%/pivotx/pics/lightbulb_off.png
 %%WWWDIR%%/pivotx/pics/lightning.png
 %%WWWDIR%%/pivotx/pics/loadingAnimation.gif
 %%WWWDIR%%/pivotx/pics/newspaper.png
+%%WWWDIR%%/pivotx/pics/nix.gif
+%%WWWDIR%%/pivotx/pics/note.png
 %%WWWDIR%%/pivotx/pics/page.png
 %%WWWDIR%%/pivotx/pics/page_add.png
 %%WWWDIR%%/pivotx/pics/page_delete.png
@@ -776,6 +776,7 @@
 %%WWWDIR%%/pivotx/templates_internal/.htaccess
 %%WWWDIR%%/pivotx/templates_internal/about.tpl
 %%WWWDIR%%/pivotx/templates_internal/advconfig.tpl
+%%WWWDIR%%/pivotx/templates_internal/assets/Jcrop.gif
 %%WWWDIR%%/pivotx/templates_internal/assets/arrows-ffffff.png
 %%WWWDIR%%/pivotx/templates_internal/assets/bg.gif
 %%WWWDIR%%/pivotx/templates_internal/assets/body_bg.png
@@ -787,7 +788,6 @@
 %%WWWDIR%%/pivotx/templates_internal/assets/formclass.css
 %%WWWDIR%%/pivotx/templates_internal/assets/header_bg.png
 %%WWWDIR%%/pivotx/templates_internal/assets/inputbg.png
-%%WWWDIR%%/pivotx/templates_internal/assets/Jcrop.gif
 %%WWWDIR%%/pivotx/templates_internal/assets/jquery.Jcrop.css
 %%WWWDIR%%/pivotx/templates_internal/assets/m_header.png
 %%WWWDIR%%/pivotx/templates_internal/assets/m_pivotx.css
@@ -821,8 +821,8 @@
 %%WWWDIR%%/pivotx/templates_internal/generic.tpl
 %%WWWDIR%%/pivotx/templates_internal/header_bg.png
 %%WWWDIR%%/pivotx/templates_internal/home.tpl
-%%WWWDIR%%/pivotx/templates_internal/inc_adminentrypager.tpl
 %%WWWDIR%%/pivotx/templates_internal/inc_adminentryfilter.tpl
+%%WWWDIR%%/pivotx/templates_internal/inc_adminentrypager.tpl
 %%WWWDIR%%/pivotx/templates_internal/inc_bookmarklet_header.tpl
 %%WWWDIR%%/pivotx/templates_internal/inc_footer.tpl
 %%WWWDIR%%/pivotx/templates_internal/inc_header.tpl

@@ -2,6 +2,7 @@
 
 Sample %%PREFIX%%/etc/apache22/Includes/pivotx.conf for the module
 version of PHP:
+
 	Alias /%%BLOGURL%% "%%WWWDIR%%"
 	<Directory "%%WWWDIR%%">
 	    AddType application/x-httpd-php .php
@@ -12,10 +13,18 @@ version of PHP:
 	    Order Deny,Allow
 	    Deny from All
 	    Allow from localhost
-	    ### Change ACL properly after adding the first user.
+	    ### Change above ACL properly after adding the first user.
 	</Directory>
-Adding the above aliases allows you to access the admin page at
+	<LocationMatch "^/*%%BLOGURL%%/+pivotx(?:/+(?:index(?:\..*)?)?)?$">
+	    Order Deny,Allow
+	    Deny from all
+	    Allow from localhost
+	    ### Change above ACL properly for loginable users.
+	</LocationMatch>
+
+Adding the above alias allows you to access the admin page at
   http://localhost/%%BLOGURL%%/pivotx/
+Use usernames that are hard to guess.
 
 %%DOCSDIR%%/example.htaccess is a sample .htaccess for %%WWWDIR%%.
 
