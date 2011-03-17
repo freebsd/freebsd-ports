@@ -10,12 +10,15 @@
 
 PORTNAME=	sphinxsearch
 PORTVERSION=	0.9.9
+PORTREVISION=	1
 CATEGORIES=	textproc databases
 MASTER_SITES=	http://sphinxsearch.com/files/
 DISTNAME=	sphinx-${PORTVERSION}
 
 MAINTAINER=	m.seaman@infracaninophile.co.uk
 COMMENT=	Sphinx Full-Text Search Engine
+
+LICENSE=	GPLv2
 
 # If expat is present on the system and configure finds it, it will
 # unconditionally link the output binary against it.  There's no way
@@ -144,6 +147,7 @@ do-install: install-bin install-docs install-examples
 install-bin:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/indexer ${PREFIX}/bin/indexer
 	${INSTALL_PROGRAM} ${WRKSRC}/src/search  ${PREFIX}/bin/search
+	${INSTALL_PROGRAM} ${WRKSRC}/src/spelldump ${PREFIX}/bin/spelldump
 	${INSTALL_PROGRAM} ${WRKSRC}/src/searchd ${PREFIX}/sbin/searchd
 	${INSTALL_DATA}    ${WRKSRC}/sphinx.conf.dist ${CFGFILE}.sample
 

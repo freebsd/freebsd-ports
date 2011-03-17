@@ -1,5 +1,6 @@
 bin/indexer
 bin/search
+bin/spelldump
 sbin/searchd
 @unexec if cmp -s %D/etc/sphinx.conf.sample %D/etc/sphinx.conf; then rm -f %D/etc/sphinx.conf; fi
 etc/sphinx.conf.sample
