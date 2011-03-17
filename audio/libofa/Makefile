@@ -7,28 +7,28 @@
 
 PORTNAME=	libofa
 PORTVERSION=	0.9.3
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	audio
-MASTER_SITES=	http://www.musicdns.org/files/
+MASTER_SITES=	GOOGLE_CODE
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	bsdkaffee@gmail.com
 COMMENT=	The Open Fingerprint Architecture Library
 
 LIB_DEPENDS=	fftw3.5:${PORTSDIR}/math/fftw3 \
 		expat.6:${PORTSDIR}/textproc/expat2 \
 		curl.6:${PORTSDIR}/ftp/curl
 
+PROJECTHOST=	musicip-libofa
+USE_DOS2UNIX=	yes
 USE_AUTOTOOLS=	libtool
-USE_GNOME=	pkgconfig
+USE_GNOME=	gnomehack pkgconfig
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
+MAKE_JOBS_SAFE=	yes
 USE_LDCONFIG=	yes
 
-.include <bsd.port.pre.mk>
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
-post-configure:
-	@${REINPLACE_CMD} -e "s|pcdir =.*|pcdir = ${PREFIX}/libdata/pkgconfig|g" \
-		${WRKSRC}/Makefile
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
