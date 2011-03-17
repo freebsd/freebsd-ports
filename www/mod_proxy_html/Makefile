@@ -10,10 +10,12 @@ PORTVERSION=	3.1.2
 CATEGORIES=	www
 MASTER_SITES=	http://apache.webthing.com/${PORTNAME}/
 DISTNAME=	${PORTNAME}
-DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
+DIST_SUBDIR=	mod_proxy_html
 
 MAINTAINER=	apache@FreeBSD.org
 COMMENT=	Apache module for rewriting HTML links in proxied content
+
+RUN_DEPENDS=	${LOCALBASE}/${APACHEMODDIR}/mod_xml2enc.so:${PORTSDIR}/www/mod_xml2enc
 
 MAKE_JOBS_SAFE=	yes
 
