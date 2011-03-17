@@ -6,14 +6,11 @@
 #
 
 PORTNAME=	taglib
-PORTVERSION=	1.6.3
+PORTVERSION=	1.7
 CATEGORIES=	audio
 MASTER_SITES=	http://developer.kde.org/~wheeler/files/src/ \
-		http://launchpad.net/taglib/trunk/1.6.3/+download/ \
-		ftp://ftp.musicbrainz.org/${MASTER_SITE_SUBDIR}/ \
-		http://uk.musicbrainz.org/${MASTER_SITE_SUBDIR}/ \
-		ftp://ftp.osuosl.org/pub/${MASTER_SITE_SUBDIR}/
-MASTER_SITE_SUBDIR=	pub/musicbrainz/users/luks/${PORTNAME}
+		http://cloud.github.com/downloads/taglib/taglib/ \
+		http://launchpad.net/taglib/trunk/${PORTVERSION}/+download/
 
 MAINTAINER=	bsdkaffee@gmail.com
 COMMENT=	Library for manipulating ID3 tags and Ogg comments
@@ -21,6 +18,11 @@ COMMENT=	Library for manipulating ID3 tags and Ogg comments
 USE_CMAKE=	yes
 USE_LDCONFIG=	yes
 MAKE_JOBS_SAFE=	yes
+
+LICENSE=	LGPL21 MPL
+LICENSE_COMB=	dual
+LICENSE_FILE_LGPL21=	${WRKSRC}/COPYING.LGPL
+LICENSE_FILE_MPL=	${WRKSRC}/COPYING.MPL
 
 CMAKE_ARGS=	-DWITH_ASF:BOOL=ON \
 		-DWITH_MP4:BOOL=ON

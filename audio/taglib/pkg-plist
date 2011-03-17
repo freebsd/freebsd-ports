@@ -1,11 +1,14 @@
 bin/taglib-config
 include/taglib/aifffile.h
 include/taglib/aiffproperties.h
+include/taglib/apefile.h
 include/taglib/apefooter.h
 include/taglib/apeitem.h
+include/taglib/apeproperties.h
 include/taglib/apetag.h
 include/taglib/asfattribute.h
 include/taglib/asffile.h
+include/taglib/asfpicture.h
 include/taglib/asfproperties.h
 include/taglib/asftag.h
 include/taglib/attachedpictureframe.h
@@ -13,6 +16,8 @@ include/taglib/audioproperties.h
 include/taglib/commentsframe.h
 include/taglib/fileref.h
 include/taglib/flacfile.h
+include/taglib/flacmetadatablock.h
+include/taglib/flacpicture.h
 include/taglib/flacproperties.h
 include/taglib/generalencapsulatedobjectframe.h
 include/taglib/id3v1genres.h
@@ -77,7 +82,7 @@ include/taglib/xingheader.h
 include/taglib/xiphcomment.h
 lib/libtag.so
 lib/libtag.so.1
-lib/libtag.so.1.6.3
+lib/libtag.so.1.7.0
 lib/libtag_c.so
 lib/libtag_c.so.0
 lib/libtag_c.so.0.0.0
