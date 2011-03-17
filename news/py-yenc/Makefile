@@ -8,11 +8,11 @@
 PORTNAME=	yenc
 PORTVERSION=	0.3
 CATEGORIES=	news python
-MASTER_SITES=	http://www.hellanzb.com/hellanzb-content/ \
+MASTER_SITES=	http://sabnzbd.sourceforge.net/
 		
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	kimelto@gmail.com
 COMMENT=	A yenc decoding module for Python in C
 
 USE_PYTHON=	yes
