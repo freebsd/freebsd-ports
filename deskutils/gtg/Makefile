@@ -7,7 +7,7 @@
 
 PORTNAME=	gtg
 PORTVERSION=	0.2.4
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	deskutils gnome python
 MASTER_SITES=	http://launchpad.net/gtg/0.2/${PORTVERSION}/+download/
 
@@ -16,14 +16,13 @@ COMMENT=	GTD organizer for the GNOME desktop environment
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/configobj.py:${PORTSDIR}/devel/py-configobj \
 		${PYTHON_PKGNAMEPREFIX}dbus>=0.82.4:${PORTSDIR}/devel/py-dbus \
-		${PYTHON_SITELIBDIR}/gtk-2.0/gobject/__init__.py:${PORTSDIR}/devel/py-gobject \
 		${PYTHON_SITELIBDIR}/xdg/__init__.py:${PORTSDIR}/devel/py-xdg
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 FETCH_ARGS=	-pRr
-USE_GNOME=	pygtk2 desktopfileutils
+USE_GNOME=	desktopfileutils pygobject pygtk2
 USE_GETTEXT=	yes
 INSTALLS_ICONS=	yes
 USE_PYTHON=	2.6+
@@ -36,7 +35,7 @@ OPTIONS=	CHEETAH "Needed for export plugin to work" off
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_CHEETAH)
-RUN_DEPENDS+=${LOCALBASE}/bin/cheetah:${PORTSDIR}/devel/py-cheetah
+RUN_DEPENDS+=	${LOCALBASE}/bin/cheetah:${PORTSDIR}/devel/py-cheetah
 .endif
 
 post-patch:
