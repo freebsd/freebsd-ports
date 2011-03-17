@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	freedoko
-PORTVERSION=	0.7.8
+PORTVERSION=	0.7.9
 CATEGORIES=	games
-MASTER_SITES=	SF/free-doko/FreeDoko%20source/${PORTVERSION}
+MASTER_SITES=	SF/free-doko/FreeDoko%20source
 DISTNAME=	FreeDoko_${PORTVERSION}.src
 
 MAINTAINER=	ports@FreeBSD.org
