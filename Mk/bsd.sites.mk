@@ -246,7 +246,7 @@ MASTER_SITE_EXIM+=	\
 	http://sunsite.icm.edu.pl/pub/unix/mail/exim/exim/%SUBDIR%/ \
 	ftp://ftp.is.co.za/networking/mail/mta/exim/ftp/exim/%SUBDIR%/ \
 	ftp://mirrors.dominios.pt/pub/ftp.exim.org/exim/%SUBDIR%/ \
-	Ftp://mirror.switch.ch/mirror/exim/exim/%SUBDIR%/ \
+	ftp://mirror.switch.ch/mirror/exim/exim/%SUBDIR%/ \
 	http://mirror.switch.ch/ftp/mirror/exim/exim/%SUBDIR%/ \
 	ftp://ftp.reaper.org/pub/exim/exim/%SUBDIR%/ \
 	ftp://sunsite.cnlab-switch.ch/mirror/exim/exim/%SUBDIR%/ \
