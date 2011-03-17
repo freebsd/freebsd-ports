@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	aqbanking
-DISTVERSION=	5.0.4
+DISTVERSION=	5.0.5
 CATEGORIES=	finance
 MASTER_SITES=	http://www2.aquamaniac.de/sites/download/
-DISTFILES=	download.php\?package=03\&release=77\&file=01\&dummy=${DISTNAME}${EXTRACT_SUFX}
+DISTFILES=	download.php\?package=03\&release=78\&file=01\&dummy=${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	bsdkaffee@gmail.com
 COMMENT=	Online banking interface and financial data framework
