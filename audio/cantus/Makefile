@@ -16,6 +16,9 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-1
 MAINTAINER=	old@old.com.ua
 COMMENT=	Tool for tagging and renaming MP3 and OGG/Vorbis files
 
+DEPRECATED=     Upstream disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_GNOME=	gnomelibs gnomehack gnomehier
