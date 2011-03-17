@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	xfce4-battery-plugin
-PORTVERSION=	0.5.1
-PORTREVISION=	9
+PORTVERSION=	1.0.0
 CATEGORIES=	sysutils xfce
 MASTER_SITES=	${MASTER_SITE_XFCE}
 MASTER_SITE_SUBDIR=/src/panel-plugins/${PORTNAME}/${PORTVERSION:R}
@@ -18,11 +17,27 @@ COMMENT=	Battery monitor panel plugin for XFce4
 
 ONLY_FOR_ARCHS=	i386 amd64
 
+USE_AUTOTOOLS=	libtool
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
-USE_GETTEXT=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gnometarget gtk20 intltool intlhack pkgconfig
-USE_XFCE=	configenv panel
+USE_GNOME=	gnomehack gtk20 glib20 intltool intlhack pkgconfig
+USE_XFCE=	configenv libgui libutil panel
+INSTALLS_ICONS=	yes
 
-.include <bsd.port.mk>
+CONFIGURE_ARGS=	--disable-debug
+
+OPTIONS=	NLS "Enable Native Language Support" on
+
+.include <bsd.port.pre.mk>
+
+.if !defined(WITHOUT_NLS)
+USE_GETTEXT=	yes
+CONFIGURE_ARGS+=--enable-nls
+PLIST_SUB+=	NLS=""
+.else
+CONFIGURE_ARGS+=--disable-nls
+PLIST_SUB+=	NLS="@comment "
+.endif
+
+.include <bsd.port.post.mk>
