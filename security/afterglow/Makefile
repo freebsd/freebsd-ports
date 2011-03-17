@@ -7,13 +7,17 @@
 
 PORTNAME=	afterglow
 PORTVERSION=	1.6.0
+PORTREVISION=	1
 CATEGORIES=	security graphics
 MASTER_SITES=	SF/${PORTNAME}/AfterGlow%201.x/${PORTVERSION}
 
 MAINTAINER=	pauls@utdallas.edu
 COMMENT=	A collection of graph-generating scripts
 
-RUN_DEPENDS=	dot:${PORTSDIR}/graphics/graphviz
+RUN_DEPENDS=	dot:${PORTSDIR}/graphics/graphviz \
+		${SITE_PERL}/Text/CSV.pm:${PORTSDIR}/textproc/p5-Text-CSV \
+		p5-Crypt-Rijndael>=0:${PORTSDIR}/security/p5-Crypt-Rijndael \
+		p5-IP-Anonymous>=0:${PORTSDIR}/net/p5-IP-Anonymous
 
 NO_BUILD=	yes
 
