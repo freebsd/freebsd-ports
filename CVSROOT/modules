@@ -1617,6 +1617,7 @@ cinc                            ports/emulators/cinc
 cinepaint                       ports/graphics/cinepaint
 cingb                           ports/emulators/cingb
 cint                            ports/lang/cint
+circe                           ports/net-mgmt/circe
 circuslinux                     ports/games/circuslinux
 cisco_conf                      ports/net-mgmt/cisco_conf
 ciscoconf                       ports/net-mgmt/ciscoconf
@@ -2771,6 +2772,7 @@ dungeoncrawl                    ports/games/dungeoncrawl
 dupfind                         ports/sysutils/dupfind
 duplicity                       ports/sysutils/duplicity
 duplicity-devel                 ports/sysutils/duplicity-devel
+duplicity05                     ports/sysutils/duplicity05
 duplo                           ports/devel/duplo
 duply                           ports/sysutils/duply
 dupmerge                        ports/sysutils/dupmerge
@@ -7542,6 +7544,7 @@ krb5                            ports/security/krb5
 krb5-appl                       ports/security/krb5-appl
 krdesktop                       ports/net/krdesktop
 krecipes                        ports/misc/krecipes
+krecipes-kde4                   ports/misc/krecipes-kde4
 krefty                          ports/deskutils/krefty
 krename                         ports/sysutils/krename
 krename-kde4                    ports/sysutils/krename-kde4
@@ -11204,6 +11207,7 @@ p5-Benchmark-Forking            ports/benchmarks/p5-Benchmark-Forking
 p5-Benchmark-Stopwatch          ports/benchmarks/p5-Benchmark-Stopwatch
 p5-BerkeleyDB                   ports/databases/p5-BerkeleyDB
 p5-Best                         ports/devel/p5-Best
+p5-BibTeX-Parser                ports/textproc/p5-BibTeX-Parser
 p5-Bigtop                       ports/www/p5-Bigtop
 p5-Bio-ASN1-EntrezGene          ports/biology/p5-Bio-ASN1-EntrezGene
 p5-Bio-Das                      ports/biology/p5-Bio-Das
@@ -12944,6 +12948,7 @@ p5-LaTeX-Encode                 ports/textproc/p5-LaTeX-Encode
 p5-LaTeX-Pod                    ports/textproc/p5-LaTeX-Pod
 p5-LaTeX-TOM                    ports/textproc/p5-LaTeX-TOM
 p5-LaTeX-Table                  ports/textproc/p5-LaTeX-Table
+p5-LaTeX-ToUnicode              ports/textproc/p5-LaTeX-ToUnicode
 p5-Layout-Manager               ports/graphics/p5-Layout-Manager
 p5-Lchown                       ports/sysutils/p5-Lchown
 p5-Lexical-Alias                ports/devel/p5-Lexical-Alias
@@ -15343,6 +15348,7 @@ p5-benchmark-stopwatch          ports/benchmarks/p5-Benchmark-Stopwatch
 p5-berkeleydb                   ports/databases/p5-BerkeleyDB
 p5-best                         ports/devel/p5-Best
 p5-bfd                          ports/devel/p5-BFD
+p5-bibtex-parser                ports/textproc/p5-BibTeX-Parser
 p5-bignum                       ports/math/p5-bignum
 p5-bigtop                       ports/www/p5-Bigtop
 p5-bind-conf_parser             ports/dns/p5-BIND-Conf_Parser
@@ -17108,6 +17114,7 @@ p5-latex-encode                 ports/textproc/p5-LaTeX-Encode
 p5-latex-pod                    ports/textproc/p5-LaTeX-Pod
 p5-latex-table                  ports/textproc/p5-LaTeX-Table
 p5-latex-tom                    ports/textproc/p5-LaTeX-TOM
+p5-latex-tounicode              ports/textproc/p5-LaTeX-ToUnicode
 p5-layout-manager               ports/graphics/p5-Layout-Manager
 p5-lchown                       ports/sysutils/p5-Lchown
 p5-lego-rcx                     ports/misc/p5-LEGO-RCX
@@ -21326,6 +21333,7 @@ py-astLib                       ports/astro/py-astLib
 py-astlib                       ports/astro/py-astLib
 py-astng                        ports/devel/py-astng
 py-asv                          ports/textproc/py-asv
+py-async                        ports/devel/py-async
 py-atspi                        ports/accessibility/py-atspi
 py-avahi                        ports/net/py-avahi
 py-axiom                        ports/databases/py-axiom
@@ -21369,7 +21377,6 @@ py-chardet                      ports/textproc/py-chardet
 py-chart                        ports/graphics/py-chart
 py-cheetah                      ports/devel/py-cheetah
 py-cherrypy                     ports/www/py-cherrypy
-py-cherrypy-devel               ports/www/py-cherrypy-devel
 py-cherrypy-old                 ports/www/py-cherrypy-old
 py-ciphon                       ports/devel/py-ciphon
 py-cjkcodecs                    ports/converters/py-cjkcodecs
@@ -21514,6 +21521,7 @@ py-gevent                       ports/devel/py-gevent
 py-gflags                       ports/devel/py-gflags
 py-gimp                         ports/graphics/py-gimp
 py-gingin                       ports/www/py-GinGin
+py-gitdb                        ports/devel/py-gitdb
 py-gitosis                      ports/devel/py-gitosis
 py-gitpython                    ports/devel/py-gitpython
 py-glewpy                       ports/graphics/py-glewpy
@@ -21692,6 +21700,10 @@ py-numexpr                      ports/math/py-numexpr
 py-numpy                        ports/math/py-numpy
 py-oauth                        ports/net/py-oauth
 py-oauth2                       ports/net/py-oauth2
+py-obspy-core                   ports/science/py-obspy-core
+py-obspy.gse2                   ports/science/py-obspy.gse2
+py-obspy.mseed                  ports/science/py-obspy.mseed
+py-obspy.signal                 ports/science/py-obspy.signal
 py-ocempgui                     ports/devel/py-ocempgui
 py-odbc                         ports/databases/py-odbc
 py-ode                          ports/devel/py-ode
