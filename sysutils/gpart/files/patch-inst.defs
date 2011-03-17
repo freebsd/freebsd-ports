@@ -1,5 +1,5 @@
---- inst.defs.orig	Sun May 14 21:04:24 2000
-+++ inst.defs	Sat Sep 16 17:41:38 2000
+--- ./inst.defs.orig	2000-12-13 23:45:49.000000000 +0100
++++ ./inst.defs	2011-03-17 01:15:54.000000000 +0100
 @@ -1,8 +1,8 @@
  #
  # installation directories for gpart

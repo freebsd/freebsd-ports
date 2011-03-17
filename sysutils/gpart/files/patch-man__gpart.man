@@ -1,5 +1,5 @@
---- man/gpart.man.orig	Sat Oct  4 04:34:37 2003
-+++ man/gpart.man	Sat Oct  4 04:34:43 2003
+--- ./man/gpart.man.orig	2001-02-07 18:54:18.000000000 +0100
++++ ./man/gpart.man	2011-03-17 01:15:54.000000000 +0100
 @@ -378,7 +378,7 @@
  drive without starting the scan loop in FreeBSD type
  
