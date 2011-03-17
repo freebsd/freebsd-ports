@@ -372,6 +372,7 @@
     SUBDIR += p5-Math-Random-MT
     SUBDIR += p5-Math-Random-MT-Auto
     SUBDIR += p5-Math-Random-OO
+    SUBDIR += p5-Math-Random-Secure
     SUBDIR += p5-Math-RandomOrg
     SUBDIR += p5-Math-Round
     SUBDIR += p5-Math-Round-Var
