@@ -2,6 +2,9 @@
 # ex:ts=4
 #
 # $FreeBSD$
+
+Licenses_db_Include_MAINTAINER=         portmgr@FreeBSD.org
+
 #
 # bsd.licenses.db.mk - License database for bsd.licenses.mk
 #

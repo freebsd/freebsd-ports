@@ -2,6 +2,9 @@
 # ex:ts=4
 #
 # $FreeBSD$
+
+Licenses_Include_MAINTAINER=         portmgr@FreeBSD.org
+
 #
 # bsd.licenses.mk - License auditing framework.
 #
