@@ -19,6 +19,8 @@ BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/HTML/Entities.pm:${PORTSDIR}/www/p5-HTM
 		${SITE_PERL}/${PERL_ARCH}/List/MoreUtils.pm:${PORTSDIR}/lang/p5-List-MoreUtils
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
+PORTSCOUT=	skipv:0.221
+
 PERL_CONFIGURE=	yes
 
 MAN3=	Geo::Parse::OSM.3 \
