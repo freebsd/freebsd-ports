@@ -21,18 +21,16 @@ COMMENT=	XML Security Library
 RUN_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkg-config
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
+BROKEN=		Does not compile on FreeBSD 7.X or newer
+DEPRECATED=	does not compile on FreeBSD 7.x or newer
+EXPIRATION_DATE=2011-04-17
+
 USE_OPENSSL=	yes
 USE_GNOME=	gnomehack libxslt
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
 MAN1=	xmlsec.1 xmlsec-config.1
-
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 700019
-BROKEN=		Does not compile on FreeBSD >= 7.0
-.endif
 
 post-install:
 .if !defined(NOPORTDOCS)
@@ -41,4 +39,4 @@ post-install:
 	@${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${DOCSDIR}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

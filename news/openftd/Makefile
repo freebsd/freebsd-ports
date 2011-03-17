@@ -24,6 +24,8 @@ LIB_DEPENDS=	curl.6:${PORTSDIR}/ftp/curl \
 		sexy.2:${PORTSDIR}/x11-toolkits/libsexy
 
 BROKEN=		does not configure
+DEPRECATED=	has been broken for almost a year
+EXPIRATION_DATE=2011-04-17
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes

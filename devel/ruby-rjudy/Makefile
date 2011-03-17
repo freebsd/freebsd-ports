@@ -18,6 +18,10 @@ COMMENT=	Interface to the Judy Arrays library
 
 LIB_DEPENDS=	Judy.1:${PORTSDIR}/devel/judy
 
+BROKEN=		Does not compile with GCC 4.2
+DEPRECATED=	does not compile on FreeBSD 7.x or newer
+EXPIRATION_DATE=2011-04-17
+
 WRKSRC=		${WRKDIR}/${DISTNAME}/ext/judy
 DOCSRC=		${WRKDIR}/${DISTNAME}/doc
 EXMSRC=		${WRKDIR}/${DISTNAME}/examples
@@ -43,10 +47,4 @@ post-install:
 .endfor
 .endif
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 700042
-BROKEN=		Does not compile with GCC 4.2
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -30,6 +30,8 @@ BUILD_DEPENDS=	${RUN_DEPENDS}
 BUILD_DEPENDS+=	${SITE_PERL}/Test/More.pm:${PORTSDIR}/devel/p5-Test-Simple
 
 BROKEN=		does not build
+DEPRECATED=	has been broken for over a year
+EXPIRATION_DATE=2011-04-17
 
 PERL_CONFIGURE=	yes
 WRKSRC=		${WRKDIR}/Perl6-Pugs-${PORTVERSION}

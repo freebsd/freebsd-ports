@@ -23,6 +23,8 @@ RUN_DEPENDS=	ElmerGrid:${PORTSDIR}/science/elmergrid		\
 		Mesh2D:${PORTSDIR}/science/elmer-meshgen2d
 
 BROKEN=		fails to compile with gcc4.4
+DEPRECATED=	has been broken for over a year
+EXPIRATION_DATE=2011-04-17
 
 USE_FORTRAN=	yes
 

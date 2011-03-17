@@ -23,6 +23,10 @@ LIB_DEPENDS=	gdbm.3:${PORTSDIR}/databases/gdbm \
 		gmp.10:${PORTSDIR}/math/gmp \
 		tk84.1:${PORTSDIR}/x11-toolkits/tk84
 
+BROKEN=		Does not compile with GCC 4.2
+DEPRECATED=	does not compile on FreeBSD 7.x or newer
+EXPIRATION_DATE=2011-04-17
+
 MOZART_DOCS=	mozart-${PORTVERSION}-doc.tar.gz
 
 SCRIPTS_ENV=	LN=${LN} PERL=${PERL}
@@ -46,10 +50,6 @@ CONFIGURE_ARGS=	--prefix=${PREFIX}/lib/oz \
 	--with-tkinclude=${LOCALBASE}/include/tk8.4
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 700042
-BROKEN=		Does not compile with GCC 4.2
-.endif
 
 .if ${ARCH} != "i386"
 BROKEN=		Does not compile on !i386

@@ -21,6 +21,8 @@ LIB_DEPENDS=	gdbm.3:${PORTSDIR}/databases/gdbm
 RUN_DEPENDS=	gosh:${PORTSDIR}/lang/gauche
 
 BROKEN=		does not compile
+DEPRECATED=	has been broken for more than a year
+EXPIRATION_DATE=2011-04-17
 
 WRKSRC=		${WRKDIR}/dbm
 MAKE_ARGS=	GOSH=gosh \

@@ -26,6 +26,10 @@ EXTRACT_ONLY=	hcfmdm-0.99.1.tar.gz hcfpcimodem-0.99lnxtbeta03042700.tar.gz
 MAINTAINER=	littlesavage@rambler.ru
 COMMENT=	Driver for the Conexant HCF PCI winmodem chipset (Acorp PIM/PIM2)
 
+BROKEN=		does not compile on 7.X or higher
+DEPRECATED=	does not compile on 7.X or higher
+EXPIRATION_DATE=2011-04-17
+
 MODULES_WITH_WORLD?=	yes
 ONLY_FOR_ARCHS=	i386
 SUB_FILES+=	pkg-message
@@ -39,14 +43,6 @@ LNXTDOCS=	README FAQ BUGS
 PORTDOCS=	${LNXTDOCS} 100498D_RM_HxF_Released.pdf
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 600100
-IGNORE=	is not for FreeBSD versions < 600100
-.endif
-
-.if ${OSVERSION} >= 700000
-BROKEN=	Does not compile at 7.x or higher
-.endif
 
 PLIST_SUB+=	KMODDIR=${KMODDIR}
 

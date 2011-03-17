@@ -24,6 +24,8 @@ BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/pysqlite2/_sqlite.so:${PORTSDIR}/databases/p
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 BROKEN=		does not build
+DEPRECATED=	has been broken for a half year
+EXPIRATION_DATE=2011-04-17
 
 WRKSRC=		${WRKDIR}/PenguinTV-${PORTVERSION}
 

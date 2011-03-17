@@ -15,6 +15,8 @@ MAINTAINER=	novel@FreeBSD.org
 COMMENT=	PowerPC architecture emulator
 
 BROKEN=		does not build
+DEPRECATED=	has been broken for over a half year
+EXPIRATION_DATE=2011-04-17
 
 GNU_CONFIGURE=	yes
 USE_XORG=	x11

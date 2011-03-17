@@ -15,13 +15,11 @@ MASTER_SITES=	http://shapeshifter.se/code/xwlans/release/ \
 MAINTAINER=	fli@shapeshifter.se
 COMMENT=	Utilty to display your wavelan signal strength on the X11 root-display
 
+BROKEN=		Does not compile with GCC 4.2
+DEPRECATED=	does not compile on FreeBSD 7.x or newer
+EXPIRATION_DATE=2011-04-17
+
 PLIST_FILES=	bin/xwlans
 USE_XORG=	x11
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 700042
-BROKEN=		Does not compile with GCC 4.2
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

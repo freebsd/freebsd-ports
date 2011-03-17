@@ -18,14 +18,12 @@ BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Tcl.pm:${PORTSDIR}/lang/p5-Tcl
 RUN_DEPENDS=	${BUILD_DEPENDS}
 LIB_DEPENDS=	tk84.1:${PORTSDIR}/x11-toolkits/tk84
 
+BROKEN=		something segfaults during build
+DEPRECATED=	has been broken for 2 year
+EXPIRATION_DATE=2011-04-17
+
 PERL_CONFIGURE=	yes
 
 MAN3=		Tcl::Tk.3
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 700000
-BROKEN=		something segfaults during build
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

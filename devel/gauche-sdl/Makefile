@@ -22,6 +22,8 @@ RUN_DEPENDS=	gosh:${PORTSDIR}/lang/gauche \
 		${LOCALBASE}/lib/X11/rgb.txt:${PORTSDIR}/x11/rgb
 
 BROKEN=		does not compile
+DEPRECATED=	has been broken for a year
+EXPIRATION_DATE=2011-04-17
 
 PLIST_SUB=	GAUCHE_VERSION="`gauche-config -V`"\
 		TARGET="${CONFIGURE_TARGET}"

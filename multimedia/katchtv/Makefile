@@ -21,6 +21,8 @@ RUN_DEPENDS=	kdepyuic:${PORTSDIR}/x11-toolkits/py-kde \
 		kaffeine:${PORTSDIR}/multimedia/kaffeine
 
 BROKEN=		does not work with new kaffeine
+DEPRECATED=	has been broken for a half year
+EXPIRATION_DATE=2011-04-17
 
 NO_BUILD=	yes
 USE_BZIP2=	yes

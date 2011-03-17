@@ -16,6 +16,8 @@ COMMENT=	Library to integrate XML features into OCaml
 BUILD_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/lang/ocaml:extract
 
 BROKEN=		does not build
+DEPRECATED=	has been broken for over a year
+EXPIRATION_DATE=2011-04-17
 
 ALL_TARGET=	prepare config/Makefile world world.opt
 INSTALL_TARGET=	installbyte installopt

@@ -17,6 +17,8 @@ MAINTAINER=	wenheping@gmail.com
 COMMENT=	R extension package for igraph
 
 BROKEN=		Does not build with R-2.11.0
+DEPRECATED=	has been broken for over a half year
+EXPIRATION_DATE=2011-04-17
 
 USE_R_MOD=	yes
 R_MOD_AUTOPLIST=	yes

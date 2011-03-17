@@ -27,6 +27,8 @@ MAINTAINER=	johnson.peter@gmail.com
 COMMENT=	FSF gcc-4.1 for DJGPP cross-development
 
 BROKEN=		Does not work with autoconf>=2.64 - no upstream fix.
+DEPRECATED=	has been broken for half a year
+EXPIRATION_DATE=2011-04-17
 
 BUILD_DEPENDS=	${TARGET}-as:${PORTSDIR}/devel/${PKGNAMEPREFIX}binutils \
 		${LOCALBASE}/${TARGET}/bin/stubify:${PORTSDIR}/devel/${PKGNAMEPREFIX}crx \

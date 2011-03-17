@@ -16,6 +16,8 @@ COMMENT=	A BitTorrent tracker with additional distributed functionality
 BUILD_DEPENDS=	${LOCALBASE}/lib/libSockets.a:${PORTSDIR}/net/Sockets
 
 BROKEN=		does not compile with new Sockets
+DEPRECATED=	has been broken for a half year
+EXPIRATION_DATE=2011-04-17
 
 USE_GMAKE=	yes
 USE_GNOME=	libxml2

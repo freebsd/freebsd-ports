@@ -17,6 +17,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An extension to use gtk2 in PHP-applications
 
 BROKEN=		does not compile
+DEPRECATED=	has been broken for over a half year
+EXPIRATION_DATE=2011-04-17
 
 USE_AUTOTOOLS=	automake:env autoconf libtool:env
 USE_PHP=	pcre

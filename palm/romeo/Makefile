@@ -16,20 +16,14 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The Palm ROM Discombobulator
 
+BROKEN=		Does not compile with GCC 4.2
+DEPRECATED=	does not compile on FreeBSD 7.x or newer
+EXPIRATION_DATE=2011-04-17
+
 PLIST_FILES=	bin/romeo
 USE_GMAKE=	yes
-
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == "alpha"
-BROKEN=		Does not compile on alpha
-.endif
-
-.if ${OSVERSION} >= 700042
-BROKEN=		Does not compile with GCC 4.2
-.endif
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/romeo ${PREFIX}/bin
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
