@@ -8,6 +8,7 @@
 %%SEARCHDIR%%/tools/size.sh
 %%SEARCHDIR%%/tools/grant.sql
 %%SEARCHDIR%%/tools/search.conf
+%%SEARCHDIR%%/tools/sphinx.conf
 %%SEARCHDIR%%/tools/cp_auto_gen.pl
 %%SEARCHDIR%%/doc/html2txt.pl
 %%SEARCHDIR%%/doc/cuted.old
@@ -21,7 +22,6 @@
 %%SEARCHDIR%%/lib/search1.js
 %%SEARCHDIR%%/lib/player.js
 %%SEARCHDIR%%/lib/psmisc.pm
-%%SEARCHDIR%%/lib/psconn.pm
 %%SEARCHDIR%%/lib/psweb.pm
 %%SEARCHDIR%%/lib/lib.css
 %%SEARCHDIR%%/lib/pssql.pm
@@ -72,17 +72,10 @@
 %%SEARCHDIR%%/web/img/dcuser.png
 %%SEARCHDIR%%/web/img/nrg.png
 %%SEARCHDIR%%/web/img/ftp.png
-%%SEARCHDIR%%/web/Net/DirectConnect/clihub.pm
-%%SEARCHDIR%%/web/Net/DirectConnect/hubcli.pm
-%%SEARCHDIR%%/web/Net/DirectConnect/hubhub.pm
-%%SEARCHDIR%%/web/Net/DirectConnect/hub.pm
-%%SEARCHDIR%%/web/Net/DirectConnect/clicli.pm
-%%SEARCHDIR%%/web/Net/DirectConnect.pm
 %%SEARCHDIR%%/web/lib/lib.js
 %%SEARCHDIR%%/web/lib/search1.js
 %%SEARCHDIR%%/web/lib/player.js
 %%SEARCHDIR%%/web/lib/psmisc.pm
-%%SEARCHDIR%%/web/lib/psconn.pm
 %%SEARCHDIR%%/web/lib/psweb.pm
 %%SEARCHDIR%%/web/lib/lib.css
 %%SEARCHDIR%%/web/lib/pssql.pm
@@ -105,22 +98,12 @@
 %%SEARCHDIR%%/web/.htaccess.dist
 %%SEARCHDIR%%/web/search1.css
 %%SEARCHDIR%%/web/search2.css
-%%SEARCHDIR%%/Net/DirectConnect/clihub.pm
-%%SEARCHDIR%%/Net/DirectConnect/hubcli.pm
-%%SEARCHDIR%%/Net/DirectConnect/hubhub.pm
-%%SEARCHDIR%%/Net/DirectConnect/hub.pm
-%%SEARCHDIR%%/Net/DirectConnect/clicli.pm
-%%SEARCHDIR%%/Net/DirectConnect.pm
 %%SEARCHDIR%%/COPYING
 %%SEARCHDIR%%/crawler.pl
 %%SEARCHDIR%%/confdef.pl
-@dirrm %%SEARCHDIR%%/Net/DirectConnect
-@dirrm %%SEARCHDIR%%/Net
 @dirrm %%SEARCHDIR%%/tools/prosearch/files
 @dirrm %%SEARCHDIR%%/tools/prosearch
 @dirrm %%SEARCHDIR%%/tools
-@dirrm %%SEARCHDIR%%/web/Net/DirectConnect
-@dirrm %%SEARCHDIR%%/web/Net
 @dirrm %%SEARCHDIR%%/web/img
 @dirrm %%SEARCHDIR%%/web/lib
 @dirrm %%SEARCHDIR%%/doc
