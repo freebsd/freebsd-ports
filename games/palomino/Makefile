@@ -48,10 +48,10 @@ BUILD_DEPENDS+=	${LOCALBASE}/include/linux/joystick.h:${PORTSDIR}/devel/linux-js
 RUN_DEPENDS+=	${LOCALBASE}/include/linux/joystick.h:${PORTSDIR}/devel/linux-js
 .endif
 
-.if !defined(WITHOUT_SDL)
-USE_SDL+=	sdl mixer
-BROKEN=		does not build
-.endif
+#.if !defined(WITHOUT_SDL)
+#USE_SDL+=	sdl mixer
+#BROKEN=		does not build
+#.endif
 
 .if defined(WITHOUT_PLIB)
 BUILD_DEPENDS+=	${LOCALBASE}/lib/libplibsl.a:${PORTSDIR}/x11-toolkits/plib
