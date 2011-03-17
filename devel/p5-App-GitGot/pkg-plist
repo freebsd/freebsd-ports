@@ -9,7 +9,11 @@
 %%SITE_PERL%%/App/GitGot/Command/status.pm
 %%SITE_PERL%%/App/GitGot/Command/update.pm
 %%SITE_PERL%%/App/GitGot/Command/version.pm
+%%SITE_PERL%%/App/GitGot/Outputter/light.pm
+%%SITE_PERL%%/App/GitGot/Outputter/dark.pm
+%%SITE_PERL%%/App/GitGot/Outputter.pm
 bin/got
+@dirrmtry %%SITE_PERL%%/App/GitGot/Outputter
 @dirrmtry %%SITE_PERL%%/App/GitGot/Command
 @dirrmtry %%SITE_PERL%%/App/GitGot
 @dirrmtry %%SITE_PERL%%/App
