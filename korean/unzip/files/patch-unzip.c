@@ -1,25 +1,25 @@
---- unzip.c.orig	Sun Jan 27 11:26:16 2002
-+++ unzip.c	Wed May 21 03:42:30 2003
-@@ -595,7 +595,8 @@
-   -o  overwrite files WITHOUT prompting      -aa treat ALL files as text\n \
-  -j  junk paths (do not make directories)   -v  be verbose/print version info\n\
-  %c-C%c match filenames case-insensitively    %c-L%c make (some) names \
--lowercase\n %-42s %c-V%c retain VMS version numbers\n%s";
-+lowercase\n %-42s %c-V%c retain VMS version numbers\n\
+--- unzip.c.orig	2009-04-17 03:26:52.000000000 +0900
++++ unzip.c	2011-02-15 11:25:36.000000000 +0900
+@@ -664,7 +664,8 @@
+   -j  junk paths (do not make directories)   -aa treat ALL files as text\n\
+   -U  use escapes for all non-ASCII Unicode  -UU ignore any Unicode fields\n\
+   -C  match filenames case-insensitively     -L  make (some) names \
+-lowercase\n %-42s  -V  retain VMS version numbers\n%s";
++lowercase\n %-42s  -V  retain VMS version numbers\n\
 +                                             -.  don't translate filenames\n%s";
- 
- static ZCONST char Far UnzipUsageLine5[] = "\
- Examples (see unzip.txt for more info):\n\
-@@ -1476,6 +1477,12 @@
-                         ++uO.ddotflag;
+ #else /* !VMS */
+ static ZCONST char Far UnzipUsageLine4[] = "\
+ modifiers:\n\
+@@ -1829,6 +1830,12 @@
+                         ++uO.cflxflag;
                      break;
- #endif /* !RISCOS && !CMS_MVS && !TANDEM */
-+ 		case ('.'):
-+                     if (negative)
-+                         uO.dotflag = FALSE, negative = 0;
-+                     else
-+                         uO.dotflag = TRUE;
-+                     break;
+ #endif /* UNIX */
++                case ('.'):
++                    if (negative)
++                        uO.dotflag = FALSE, negative = 0;
++                    else
++                        uO.dotflag = TRUE;
++                    break;
                  default:
                      error = TRUE;
                      break;
