@@ -7,7 +7,7 @@
 
 PORTNAME=	xiphos
 PORTVERSION=	3.1.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	misc gnome
 MASTER_SITES=	SF/gnomesword/Xiphos/${PORTVERSION}
 
@@ -26,7 +26,7 @@ USE_PYTHON_BUILD=	yes
 USE_GETTEXT=	yes
 INSTALLS_OMF=	yes
 INSTALLS_ICONS=	yes
-USE_GNOME=	gnomehack gnomeprefix gnometarget gnomelibs gtkhtml3 \
+USE_GNOME=	gnomehack gnomeprefix gnometarget gtkhtml3 \
 		intlhack libgsf
 
 do-configure:
