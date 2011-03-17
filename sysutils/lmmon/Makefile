@@ -9,13 +9,10 @@ PORTNAME=	lmmon
 PORTVERSION=	0.65
 PORTREVISION=	1
 CATEGORIES=	sysutils
-MASTER_SITES=	http://www.fxp.org/~jedgar/lmmon/
+MASTER_SITES=	LOCAL/bf
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	bf@FreeBSD.org
 COMMENT=	Display information gathered from MB power management controller
-
-DEPRECATED=     Upstream disapear and distfile is no more available
-EXPIRATION_DATE=        2011-05-01
 
 ONLY_FOR_ARCHS=	i386 amd64
 
@@ -23,6 +20,8 @@ GNU_CONFIGURE=	yes
 MAN8=		lmmon.8
 MANCOMPRESSED=	yes
 PLIST_FILES=	bin/lmmon
+
+LICENSE=	BSD
 
 FIXFILES=	configure configure.in lmmon.c
 
