@@ -22,6 +22,7 @@ USE_GMAKE=	yes
 MAKE_JOBS_SAFE=	yes
 MAN8=		gpart.8
 PLIST_FILES=	sbin/gpart
+CFLAGS+=	-std=c99
 
 .if defined(WANT_STATIC)
 MAKE_ARGS+=	LDFLAGS=-static
