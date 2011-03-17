@@ -124,6 +124,7 @@
     SUBDIR += lxsession
     SUBDIR += matchbox
     SUBDIR += matwm2
+    SUBDIR += mcwm
     SUBDIR += metacity
     SUBDIR += musca
     SUBDIR += mutter

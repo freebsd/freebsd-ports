@@ -1,0 +1,29 @@
+--- Makefile.orig	2011-03-16 18:19:22.000000000 +0100
++++ Makefile	2011-03-16 18:23:04.000000000 +0100
+@@ -3,12 +3,12 @@ DIST=mcwm-$(VERSION)
+ SRC=mcwm.c list.c config.h events.h list.h
+ DISTFILES=LICENSE Makefile NEWS README TODO WISHLIST mcwm.man $(SRC)
+ 
+-CC=gcc
+-CFLAGS=-g -std=c99 -Wall -Wextra -O2 -I/usr/local/include #-DDEBUG #-DDMALLOC
+-LDFLAGS=-L/usr/local/lib -lxcb -lxcb-keysyms -lxcb-icccm -lxcb-atom # -ldmalloc
++CFLAGS+=-g -std=c99 -Wall -Wextra -I/usr/local/include
++LDFLAGS+=-L/usr/local/lib -lxcb -lxcb-keysyms -lxcb-icccm -lxcb-atom 
+ 
+ RM=/bin/rm
+-PREFIX=/usr/local
++PREFIX?=/usr/local
++MANPREFIX = ${PREFIX}/man
+ 
+ TARGETS=mcwm
+ OBJS=mcwm.o list.o
+@@ -28,6 +28,9 @@ list.o: list.c list.h Makefile
+ 
+ install: $(TARGETS)
+ 	install -m 755 mcwm $(PREFIX)/bin
++	@echo installing manual page to ${DESTDIR}${MANPREFIX}/man1
++	@mkdir -p ${DESTDIR}${MANPREFIX}/man1
++	@sed "s/VERSION/${VERSION}/g" < mcwm.man > ${DESTDIR}${MANPREFIX}/man1/mcwm.1
+ 
+ deinstall:
+ 	$(RM) $(PREFIX)/bin/mcwm
