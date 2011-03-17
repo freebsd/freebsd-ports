@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	puppet
-PORTVERSION=	2.6.4
+PORTVERSION=	2.6.6
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.puppetlabs.com/downloads/puppet/
 
@@ -39,12 +39,17 @@ MAN5=	puppet.conf.5
 MAN8=	filebucket.8 pi.8 puppet.8 puppetca.8 puppetd.8 \
 	puppetdoc.8 puppetmasterd.8 puppetrun.8 ralsh.8 puppetqd.8
 
-OPTIONS=	MONGREL		"Run puppet server as a mongrel service"	Off
+OPTIONS=	MONGREL		"Run puppet server as a mongrel service"	Off \
+		PACKAGE_ORIGIN	"Use port origin as package name"		On
 
 .include <bsd.port.options.mk>
 
 .if defined(WITH_MONGREL)
 RUN_DEPENDS+=	rubygem-mongrel>=0:${PORTSDIR}/www/rubygem-mongrel
+.endif
+
+.if defined(WITH_PACKAGE_ORIGIN)
+EXTRA_PATCHES+=	${FILESDIR}/optpatch-package_origin
 .endif
 
 .include <bsd.port.pre.mk>
@@ -71,6 +76,7 @@ do-install:
 
 post-install:
 	${INSTALL} -d ${ETCDIR}
+	${INSTALL} -m 0644 ${WRKSRC}/conf/auth.conf ${ETCDIR}/auth.conf-dist
 	${RUBY} -I ${RUBY_SITELIBDIR} ${PREFIX}/sbin/puppetmasterd \
 		--confdir=${ETCDIR} \
 		--rundir=${PUPPET_RUNDIR} \
@@ -90,7 +96,6 @@ post-install:
 .endif
 .if !defined(NOPORTEXAMPLES)
 	cd ${WRKSRC}/examples/ && ${COPYTREE_SHARE} . ${EXAMPLESDIR}
-	${INSTALL} ${WRKSRC}/conf/auth.conf ${EXAMPLESDIR}/etc
 .endif
 	@${CAT} ${PKGMESSAGE}
 

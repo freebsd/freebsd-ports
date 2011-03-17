@@ -10,4 +10,5 @@ sbin/puppetmasterd
 sbin/puppetqd
 sbin/puppetrun
 %%ETCDIR%%/puppet.conf-dist
-@dirrmtry %%ETCDIR%%
+%%ETCDIR%%/auth.conf-dist
+@dirrmtry etc/puppet
