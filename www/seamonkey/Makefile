@@ -18,6 +18,7 @@ MAINTAINER=	gecko@FreeBSD.org
 COMMENT=	The open source, standards compliant web browser
 
 DEPRECATED=	Upstream support dropped. Please consider using www/seamonkey2 instead.
+FORBIDDEN=	several security vulnerabilities
 CONFLICTS=	seamonkey-2*
 USE_BZIP2=	yes
 USE_GMAKE=	yes
