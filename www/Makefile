@@ -574,6 +574,7 @@
     SUBDIR += mod_whatkilledus
     SUBDIR += mod_wsgi
     SUBDIR += mod_wsgi3
+    SUBDIR += mod_xml2enc
     SUBDIR += mod_xmlns
     SUBDIR += mod_xsendfile
     SUBDIR += moinmoin
