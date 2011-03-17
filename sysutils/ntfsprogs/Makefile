@@ -7,11 +7,11 @@
 
 PORTNAME=	ntfsprogs
 PORTVERSION=	2.0.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	SF/linux-ntfs/NTFS%20Tools%20and%20Library/${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	faust64@gmail.com
 COMMENT=	Utilities and library to manipulate NTFS partitions
 
 BUILD_DEPENDS=	fusefs-libs>2.5:${PORTSDIR}/sysutils/fusefs-libs
