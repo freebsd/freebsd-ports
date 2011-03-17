@@ -1,5 +1,5 @@
---- configure.orig	Sun Oct  3 08:47:46 1999
-+++ configure	Sun Jan 30 16:05:14 2000
+--- configure	1999-10-03 11:47:46.000000000 -0400
++++ configure	2011-03-17 17:24:35.000000000 -0400
 @@ -53,9 +53,9 @@
  
  echo "Configuring rqm v$VERSION for $OSTYPE"
@@ -8,17 +8,20 @@
 -TCL_LIBS="../tk-8.0/unix/libtk8.0.a ../tcl-8.0/unix/libtcl8.0.a"
 -TCL_INCL="-I../tk-8.0/generic -I../tcl-8.0/generic"
 +GCCWFLAGS="-W -Wall -Wbad-function-cast -Wmissing-prototypes -Wno-implicit-int"
-+TCL_LIBS="-L${PREFIX}/lib -ltk84 -ltcl84"
-+TCL_INCL="-I${PREFIX}/include/tk8.4/generic -I${PREFIX}/include/tcl8.4/generic"
++TCL_LIBS="-L${LOCALBASE}/lib -ltk%TK_DVER% -ltcl%TCL_DVER%"
++TCL_INCL="-I${LOCALBASE}/include/tk%TK_VER%/generic -I${LOCALBASE}/include/tcl%TCL_VER%/generic"
  DEFS=""
  
  AR="ar"
-@@ -103,7 +103,7 @@
+@@ -101,9 +101,9 @@
+ 	    PROFILE="-pg"
+ 	    ECHO="echo -e"
              ;;
-   FreeBSD ) CC="gcc"
+-  FreeBSD ) CC="gcc"
++  FreeBSD )
              WFLAGS=$GCCWFLAGS
 -	    INCLUDE="-I/usr/local/include"
-+	    INCLUDE="-I${LOCALBASE}/include"
++	    INCLUDE="-I${X11BASE}/include"
  	    LDLIBS="-lm"
  	    DEBUG="-g"
  	    CHAR="-fsigned-char"
@@ -28,8 +31,8 @@
  s@__WFLAGS__@$WFLAGS@
 -s@__INCLUDE__@$TCL_INCL $INCLUDE -I../common@g
 -s@__LDLIBS__@$TCL_LIBS -L../common -lcommon $LDLIBS@g
-+s@__INCLUDE__@$TCL_INCL $INCLUDE -I${PREFIX}/include/uclmmbase@g
-+s@__LDLIBS__@$TCL_LIBS -L${PREFIX}/lib -luclmmbase $LDLIBS@g
++s@__INCLUDE__@$TCL_INCL $INCLUDE -I${LOCALBASE}/include/uclmmbase@g
++s@__LDLIBS__@$TCL_LIBS -L${LOCALBASE}/lib -luclmmbase $LDLIBS@g
  s@__CHAR__@$CHAR@
  s@__DEBUG__@$DEBUG2@
  s@__OPTIMIZE__@$OPTIMIZE2@
