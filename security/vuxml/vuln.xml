@@ -34,6 +34,45 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="bfe9c75e-5028-11e0-b2d2-00215c6a37bb">
+    <topic>asterisk -- Multiple Vulnerabilities</topic>
+    <affects>
+     <package>
+       <name>asterisk16</name>
+       <range><gt>1.6.*</gt><lt>1.6.2.17.1</lt></range>
+     </package>
+     <package>
+       <name>asterisk18</name>
+       <range><gt>1.8.*</gt><lt>1.8.3.1</lt></range>
+     </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Asterisk Development Team reports:</p>
+	<blockquote cite="http://www.venturevoip.com/news.php?rssid=2521">
+	  <p>The releases of Asterisk 1.6.1.23, 1.6.2.17.1, and 1.8.3.1
+	    resolve two issues:</p>
+	  <ul>
+	    <li>Resource exhaustion in Asterisk Manager Interface
+	      (AST-2011-003)</li>
+	    <li>Remote crash vulnerability in TCP/TLS server
+	      (AST-2011-004)</li>
+	  </ul>
+	  <p>The issues and resolutions are described in the AST-2011-003
+	    and AST-2011-004 security advisories.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://downloads.asterisk.org/pub/security/AST-2011-003.html</url>
+      <url>http://downloads.asterisk.org/pub/security/AST-2011-004.html</url>
+    </references>
+    <dates>
+      <discovery>2011-03-01</discovery>
+      <entry>2011-03-16</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="8b986a05-4dbe-11e0-8b9a-02e0184b8d35">
     <topic>avahi -- denial of service</topic>
     <affects>
