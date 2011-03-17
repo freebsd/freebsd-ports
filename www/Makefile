@@ -1494,6 +1494,7 @@
     SUBDIR += py-formalchemy
     SUBDIR += py-formencode
     SUBDIR += py-funkload
+    SUBDIR += py-gunicorn
     SUBDIR += py-html5lib
     SUBDIR += py-httplib2
     SUBDIR += py-imdbpy
