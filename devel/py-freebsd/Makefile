@@ -18,7 +18,7 @@ DISTNAME=	py-freebsd-${PORTVERSION}
 MAINTAINER=	python@FreeBSD.org
 COMMENT=	Python interface to FreeBSD-specific system libraries
 
-USE_PYTHON=	2.5+
+USE_PYTHON=	2.5-2.6
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_PKGNAME=	py-freebsd
 
