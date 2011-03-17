@@ -9,16 +9,13 @@ PORTNAME=	epstool
 PORTVERSION=	3.08
 PORTREVISION=	3
 CATEGORIES=	graphics
-MASTER_SITES=	${MASTER_SITE_TEX_CTAN} \
-		ftp://mirror.cs.wisc.edu/pub/mirrors/ghost/ghostgum/ \
-		ftp://mirror.cs.wisc.edu/pub/mirrors/ghost/ghostgum/old/
-MASTER_SITE_SUBDIR=	nonfree/support/ghostscript/ghostgum
+MASTER_SITES=	${MASTER_SITE_TEX_CTAN:S/$/:1/} \
+		ftp://mirror.cs.wisc.edu/pub/mirrors/ghost/ghostgum/:2
+MASTER_SITE_SUBDIR=	support/ghostscript/ghostgum/:1
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:1,2
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	bf@FreeBSD.org
 COMMENT=	Create or extract preview bitmaps in EPS files
-
-DEPRECATED=     Upstream disapear and distfile is no more available
-EXPIRATION_DATE=        2011-05-01
 
 USE_GHOSTSCRIPT_RUN=	yes
 
@@ -32,6 +29,8 @@ MAKE_JOBS_UNSAFE=	yes
 
 MAN1=		epstool.1
 PLIST_FILES=	bin/epstool
+
+LICENSE=	GPLv2
 
 .if !defined(NOPORTDOCS)
 PORTDOCS=	epstool.htm gsview.css
