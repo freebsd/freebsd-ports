@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	ristretto
-PORTVERSION=	0.0.91
-PORTREVISION=	2
+PORTVERSION=	0.0.93
 CATEGORIES=	graphics xfce
 MASTER_SITES=	${MASTER_SITE_XFCE}
 MASTER_SITE_SUBDIR=	src/apps/${PORTNAME}/${PORTVERSION:R}
@@ -22,11 +21,11 @@ LIB_DEPENDS=	exif.12:${PORTSDIR}/graphics/libexif \
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
-USE_GNOME=	gtk20 glib20 intltool intlhack desktopfileutils pkgconfig
+USE_GNOME=	gnomehack gtk20 glib20 intltool intlhack desktopfileutils pkgconfig
 USE_GMAKE=	yes
 INSTALLS_ICONS=	yes
 USE_GETTEXT=	yes
-USE_XFCE=	configenv libutil libgui xfconf
+USE_XFCE=	configenv libmenu libutil xfconf
 
 post-patch:
 	@${REINPLACE_CMD} -e 's| docs||' ${WRKSRC}/Makefile.in
