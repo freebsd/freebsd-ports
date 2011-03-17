@@ -17,6 +17,8 @@ COMMENT=	POP/IMAP/SMTP/Caldav/Carddav/LDAP Exchange Gateway
 
 RUN_DEPENDS=	swt>=3.5:${PORTSDIR}/x11-toolkits/swt
 
+BROKEN=		fails to package
+
 USE_ANT=	yes
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+
