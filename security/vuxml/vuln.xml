@@ -34,6 +34,38 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="b13414c9-50ba-11e0-975a-000c29cc39d3">
+    <topic>hiawatha -- integer overflow in Content-Length header parsing</topic>
+    <affects>
+      <package>
+	<name>hiawatha</name>
+	<range><lt>7.4_1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Hugo Leisink reports:</p>
+	<blockquote cite="http://www.hiawatha-webserver.org/weblog/16">
+	  <p>A bug has been found in version 7.4 of the Hiawatha webserver,
+	    which could lead to a server crash. This is caused by an integer
+	    overflow in the routine that reads the HTTP request. A too large
+	    value of the Content-Length HTTP header results in an overflow.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://www.hiawatha-webserver.org/weblog/16</url>
+      <url>http://secunia.com/advisories/43660/</url>
+      <url>http://securityvulns.com/Zdocument902.html</url>
+      <url>http://packetstormsecurity.org/files/99021/Hiawatha-WebServer-7.4-Denial-Of-Service.html</url>
+      <url>http://seclists.org/bugtraq/2011/Mar/65</url>
+    </references>
+    <dates>
+      <discovery>2011-02-25</discovery>
+      <entry>2011-03-17</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="bfe9c75e-5028-11e0-b2d2-00215c6a37bb">
     <topic>asterisk -- Multiple Vulnerabilities</topic>
     <affects>
