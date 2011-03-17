@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	picard
-PORTVERSION=	0.12.1
-PORTREVISION=	5
+PORTVERSION=	0.13
 CATEGORIES=	audio python
 MASTER_SITES=	http://ftp.musicbrainz.org/pub/musicbrainz/picard/ \
 		ftp://ftp.musicbrainz.org/pub/musicbrainz/picard/ \
@@ -31,8 +30,14 @@ USE_PYTHON=	2.5+
 USE_PYDISTUTILS=yes
 INSTALLS_ICONS=	yes
 
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING.txt
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|libdiscid.so.0|libdiscid.so.2|g' \
 		${WRKSRC}/picard/disc.py
+	@${REINPLACE_CMD} -e "s|'picard.plugins',|'picard.plugins', 'picard.plugins.lastfm', 'picard.plugins.replaygain',|" \
+		${WRKSRC}/setup.py
+	@${CP} -R ${WRKSRC}/contrib/plugins/ ${WRKSRC}/picard/plugins
 
 .include <bsd.port.mk>
