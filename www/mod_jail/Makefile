@@ -6,21 +6,21 @@
 #
 
 PORTNAME=	mod_jail
-PORTVERSION=	0.4
-PORTREVISION=	2
+PORTVERSION=	0.5.1
 CATEGORIES=	www
-MASTER_SITES=	http://igorpopov.newmail.ru/
+MASTER_SITES=	http://mod-jail.googlecode.com/files/
 
 MAINTAINER=	apache@FreeBSD.org
 COMMENT=	Apache 1.3.x/2.0.xx module to enable an easy alternative to mod_chroot
 
-MAKE_JOBS_SAFE=  yes
+MAKE_JOBS_SAFE=	yes
 
-WRKSRC=		${WRKDIR}/mod_jail
+WRKSRC=		${WRKDIR}/mod_jail-0.5.1
 USE_APACHE=	1.3+
 AP_FAST_BUILD=	YES
 AP_GENPLIST=	YES
 
+NOPORTDOCS=	YES
 PORTDOCS=	changelog.html documentation.html download.html \
 		index.html
 
