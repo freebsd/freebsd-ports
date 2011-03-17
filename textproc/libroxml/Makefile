@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libroxml
-PORTVERSION=	2.0.1
+PORTVERSION=	2.0.2
 CATEGORIES=	textproc
 MASTER_SITES=	GOOGLE_CODE
 DISTNAME=	libroxml-${PORTVERSION}
@@ -27,5 +27,8 @@ PLIST_FILES=	bin/roxml \
 		lib/libroxml.so.0 \
 		lib/libroxml.a \
 		include/roxml.h
+
+pre-build:
+	@cd ${WRKSRC} && ${GMAKE} clean
 
 .include <bsd.port.mk>
