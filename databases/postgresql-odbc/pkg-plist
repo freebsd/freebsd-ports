@@ -1,5 +1,5 @@
 lib/psqlodbcw.la
-lib/psqlodbcw.so
+lib/libpsqlodbcw.so.0.0
 %%PORTDOCS%%%%DOCSDIR%%/odbc/config-opt.html
 %%PORTDOCS%%%%DOCSDIR%%/odbc/config.html
 %%PORTDOCS%%%%DOCSDIR%%/odbc/faq.html
