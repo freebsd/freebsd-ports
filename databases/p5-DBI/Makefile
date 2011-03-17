@@ -6,13 +6,16 @@
 #
 
 PORTNAME=	DBI
-PORTVERSION=	1.615
+PORTVERSION=	1.616
 CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	The perl5 Database Interface.  Required for DBD::* modules
+
+LICENSE_COMB=	dual
+LICENSE=	ART20 GPLv1
 
 RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Storable.pm:${PORTSDIR}/devel/p5-Storable
 BUILD_DEPENDS=	${RUN_DEPENDS}
@@ -60,6 +63,7 @@ MAN3=		Bundle::DBI.3 \
 		DBI::Gofer::Serializer::Base.3 \
 		DBI::Gofer::Serializer::Storable.3 \
 		DBI::Gofer::Transport::Base.3 \
+		DBD::Gofer::Transport::corostream.3 \
 		DBI::Gofer::Transport::pipeone.3 \
 		DBI::Gofer::Transport::stream.3 \
 		DBI::Profile.3 \

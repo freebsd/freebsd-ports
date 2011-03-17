@@ -14,6 +14,7 @@ bin/dbiproxy
 %%SITE_PERL%%/%%PERL_ARCH%%/DBD/Gofer/Policy/pedantic.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/DBD/Gofer/Policy/rush.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/DBD/Gofer/Transport/Base.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/DBD/Gofer/Transport/corostream.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/DBD/Gofer/Transport/null.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/DBD/Gofer/Transport/pipeone.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/DBD/Gofer/Transport/stream.pm
