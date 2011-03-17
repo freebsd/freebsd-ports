@@ -4,6 +4,7 @@ bin/smbdu
 bin/smblistshare
 %%PYTHON_SITELIBDIR%%/nmb.py
 %%PYTHON_SITELIBDIR%%/smb.py
+%%PYTHON_SITELIBDIR%%/pysmb_version.py
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/index.html
 %%PORTDOCS%%%%DOCSDIR%%/nmb.html
