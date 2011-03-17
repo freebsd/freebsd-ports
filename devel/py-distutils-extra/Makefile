@@ -6,14 +6,17 @@
 #
 
 PORTNAME=		distutils-extra
-PORTVERSION=		2.25
+PORTVERSION=		2.26
 CATEGORIES=		devel python
-MASTER_SITES=		http://launchpadlibrarian.net/64385628/
+MASTER_SITES=		http://launchpadlibrarian.net/66409382/
 PKGNAMEPREFIX=		${PYTHON_PKGNAMEPREFIX}
 DISTNAME=		python-${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=		jupengfei@gmail.com
 COMMENT=		Add support for i18n, documentation and icons to distutils
+
+LICENSE=		GPLv2
+LICENSE_FILE=		${WRKSRC}/LICENSE
 
 USE_PYTHON=		yes
 USE_PYDISTUTILS=	easy_install
