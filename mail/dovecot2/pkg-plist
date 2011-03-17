@@ -319,6 +319,9 @@ include/dovecot/utc-offset.h
 include/dovecot/var-expand.h
 include/dovecot/wildcard-match.h
 include/dovecot/write-full.h
+lib/dovecot/doveadm/lib10_doveadm_acl_plugin.a
+lib/dovecot/doveadm/lib10_doveadm_acl_plugin.la
+lib/dovecot/doveadm/lib10_doveadm_acl_plugin.so
 lib/dovecot/doveadm/lib10_doveadm_expire_plugin.a
 lib/dovecot/doveadm/lib10_doveadm_expire_plugin.la
 lib/dovecot/doveadm/lib10_doveadm_expire_plugin.so
@@ -388,6 +391,10 @@ lib/dovecot/libdovecot-login.a
 lib/dovecot/libdovecot-login.la
 lib/dovecot/libdovecot-login.so
 lib/dovecot/libdovecot-login.so.0
+lib/dovecot/libdovecot-sql.a
+lib/dovecot/libdovecot-sql.la
+lib/dovecot/libdovecot-sql.so
+lib/dovecot/libdovecot-sql.so.0
 lib/dovecot/libdovecot-storage.a
 lib/dovecot/libdovecot-storage.la
 lib/dovecot/libdovecot-storage.so
