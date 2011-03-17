@@ -6,4 +6,4 @@ bytes plus only 16 extra bytes per record), multiple concurrent read access
 are supported, and databases can be up to 4 Gb long, and they are portable
 across architectures. 
 
-WWW:	http://www.pureftpd.org/puredb/
+WWW:	http://pureftpd.sourceforge.net/puredb/

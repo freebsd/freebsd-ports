@@ -8,8 +8,7 @@
 PORTNAME=	puredb
 PORTVERSION=	2.1
 CATEGORIES=	databases
-MASTER_SITES=	http://download.pureftpd.org/pub/pure-ftpd/pure-db/ \
-		ftp://ftp.pureftpd.org/pub/pure-ftpd/pure-db/
+MASTER_SITES=	http://pureftpd.sourceforge.net/puredb/
 DISTNAME=	pure-db-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
