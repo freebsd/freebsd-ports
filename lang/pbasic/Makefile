@@ -12,13 +12,10 @@ MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	trevor
 DISTNAME=	${PORTNAME}-${PORTVERSION}-950813
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	jhs@berklix.com
 COMMENT=	Phil Cockroft's Basic Interpreter (previously Rabbit Basic)
-# Ask jhs@freebsd.org if you want newer sources or author's latest e-mail
-#  (which is currently "phil@gmrs.isar.de" but changes a lot)
-
-DEPRECATED=     Upstream disapear and distfile is no more available
-EXPIRATION_DATE=        2011-05-01
+# Ask maintainer if you want newer sources or author's latest e-mail
+#  (which is currently "phil@cockcroft.de")
 
 ALL_TARGET=	freebsd
 MAKEFILE=	makefile
