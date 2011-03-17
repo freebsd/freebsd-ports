@@ -1,6 +1,0 @@
-The GNU Ada compiler system built from GCC 4.3.2.
-
-Please add ${PREFIX}/bin/gcc43 to your PATH variable
-before using this port.
-
-WWW: http://gcc.gnu.org/

@@ -106,9 +106,6 @@
     SUBDIR += gjs
     SUBDIR += gnat
     SUBDIR += gnat-aux
-    SUBDIR += gnat-gcc42
-    SUBDIR += gnat-gcc43
-    SUBDIR += gnat-gcc44
     SUBDIR += gnustep-base
     SUBDIR += gnustep-guile
     SUBDIR += gnustep-libobjc
