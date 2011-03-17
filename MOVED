@@ -1579,6 +1579,6 @@ lang/gnat-doc-txt||2011-03-07|unmaintained and obsolete
 www/py-cherrypy-devel|www/py-cherrypy|2011-03-15|Removed, use www/py-cherrypy instead
 science/py-obspy.core|science/py-obspy-core|2011-03-16|Removed, use science/py-obspy-core instead
 devel/py-unit||2011-03-17|unmaintained and obsolete, include in python distribution since 2.1
-lang/gnat-gcc42||2011-03-17|Removed
-lang/gnat-gcc43||2011-03-17|Removed
-lang/gnat-gcc44||2011-03-17|Removed
+lang/gnat-gcc42||2011-03-17|Removed unmaintained and obsolete
+lang/gnat-gcc43||2011-03-17|Removed unmaintained and obsolete
+lang/gnat-gcc44||2011-03-17|Removed unmaintained and obsolete
