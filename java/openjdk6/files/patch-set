@@ -16578,7 +16578,7 @@
  /*
   * The fd table and the number of file descriptors
 --- jdk/src/solaris/native/java/net/net_util_md.c	2011-02-28 11:06:49.000000000 -0500
-+++ jdk/src/solaris/native/java/net/net_util_md.c	2011-03-03 16:56:30.000000000 -0500
++++ jdk/src/solaris/native/java/net/net_util_md.c	2011-03-17 15:21:37.000000000 -0400
 @@ -34,6 +34,15 @@
  #include <stdlib.h>
  #include <dlfcn.h>
@@ -16638,16 +16638,24 @@
          /*
           * On Linux if we are connecting to a link-local address
           * we need to specify the interface in the scope_id (2.4 kernel only)
-@@ -1086,7 +1108,7 @@
+@@ -1086,7 +1108,16 @@
      }
  #endif
  
--    rv = getsockopt(fd, level, opt, result, len);
-+    rv = getsockopt(fd, level, opt, result, (socklen_t *) len);
++#ifdef __solaris__
+     rv = getsockopt(fd, level, opt, result, len);
++#else
++    {
++        socklen_t socklen = *len;
++        rv = getsockopt(fd, level, opt, result, &socklen);
++        *len = socklen;
++    }
++#endif
++
      if (rv < 0) {
          return rv;
      }
-@@ -1133,6 +1155,24 @@
+@@ -1133,6 +1164,24 @@
  #define IPTOS_PREC_MASK 0xe0
  #endif
  
@@ -16672,7 +16680,7 @@
      /*
       * IPPROTO/IP_TOS :-
       * 1. IPv6 on Solaris: no-op and will be set in flowinfo
-@@ -1165,6 +1205,10 @@
+@@ -1165,6 +1214,10 @@
          *iptos &= (IPTOS_TOS_MASK | IPTOS_PREC_MASK);
      }
  
@@ -16683,7 +16691,7 @@
      /*
       * SOL_SOCKET/{SO_SNDBUF,SO_RCVBUF} - On Solaris need to
       * ensure that value is <= max_buf as otherwise we get
-@@ -1212,6 +1256,84 @@
+@@ -1212,6 +1265,84 @@
      }
  #endif
  
