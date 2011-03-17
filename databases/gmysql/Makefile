@@ -14,6 +14,9 @@ MASTER_SITES=	http://www.physik.TU-Berlin.DE/~ibex/ports/distfiles/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GTK+ frontend for mysql
 
+DEPRECATED=     Upstream disapear and distfile is no more available
+EXPIRATION_DATE=        2011-05-01
+
 LIB_DEPENDS=	mysqlclient.10:${PORTSDIR}/databases/mysql323-client
 
 USE_GNOME=	gtk12
