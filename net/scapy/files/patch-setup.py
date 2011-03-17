@@ -1,9 +1,9 @@
---- setup.py	2010-04-10 02:42:04.000000000 +0400
-+++ setup.py	2010-07-22 21:17:18.000000000 +0400
-@@ -42,7 +42,7 @@
+--- setup.py.orig	2011-02-28 05:11:55.000000000 +0300
++++ setup.py	2011-03-01 13:11:36.000000000 +0300
+@@ -47,7 +47,7 @@
  setup(
      name = 'scapy',
-     version = '2.1.1',
+     version = '2.2.0',
 -    packages=['scapy','scapy/arch', 'scapy/arch/windows', 'scapy/layers','scapy/asn1','scapy/tools','scapy/modules', 'scapy/crypto'],
 +    packages=['scapy','scapy/arch', 'scapy/layers','scapy/asn1','scapy/tools','scapy/modules', 'scapy/crypto'],
      scripts = SCRIPTS,
