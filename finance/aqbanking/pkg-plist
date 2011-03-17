@@ -94,6 +94,13 @@ include/aqbanking5/aqbanking/user.h
 include/aqbanking5/aqbanking/userfns.h
 include/aqbanking5/aqbanking/value.h
 include/aqbanking5/aqbanking/version.h
+include/aqbanking5/aqbankingpp/accountstatus.hpp
+include/aqbanking5/aqbankingpp/aqbankingppdecl.hpp
+include/aqbanking5/aqbankingpp/balance.hpp
+include/aqbanking5/aqbankingpp/cxxwrap.hpp
+include/aqbanking5/aqbankingpp/stringlist.hpp
+include/aqbanking5/aqbankingpp/time.hpp
+include/aqbanking5/aqbankingpp/value.hpp
 include/aqbanking5/aqhbci/account.h
 include/aqbanking5/aqhbci/aqhbci.h
 include/aqbanking5/aqhbci/msgengine.h
@@ -206,6 +213,10 @@ lib/libaqbanking.a
 lib/libaqbanking.la
 lib/libaqbanking.so
 lib/libaqbanking.so.%%AQB_SHLIB_VER%%
+lib/libaqbankingpp.a
+lib/libaqbankingpp.la
+lib/libaqbankingpp.so
+lib/libaqbankingpp.so.0
 lib/libaqhbci.a
 lib/libaqhbci.la
 lib/libaqhbci.so
@@ -389,5 +400,6 @@ share/locale/de/LC_MESSAGES/aqbanking.mo
 %%WITH_PAYPAL%%@dirrm include/aqpaypal
 @dirrm include/aqbanking5/aqofxconnect
 @dirrm include/aqbanking5/aqhbci
+@dirrm include/aqbanking5/aqbankingpp
 @dirrm include/aqbanking5/aqbanking
 @dirrm include/aqbanking5
