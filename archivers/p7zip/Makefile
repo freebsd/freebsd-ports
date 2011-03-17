@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	p7zip
-PORTVERSION=	9.13
-PORTREVISION=	1
+PORTVERSION=	9.20.1
 CATEGORIES=	archivers
 MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}_${DISTVERSION}_src_all
@@ -21,7 +20,6 @@ OPTIONS=	MINIMAL	"Support only .7z file format" off \
 USE_BZIP2=	yes
 MAKEFILE=	makefile
 WRKSRC=		${WRKDIR}/${PORTNAME}_${PORTVERSION}
-MAKE_JOBS_UNSAFE=	yes
 
 .include <bsd.port.options.mk>
 
@@ -67,11 +65,10 @@ post-patch:
 	${SED} -e 's!-O!${CFLAGS} ${PTHREAD_CFLAGS}!' \
 	       -e 's!g\+\+!${CXX}!' \
 	       -e 's!gcc!${CC}!' \
-	       -e '/LITTLE_ENDIAN/d' \
 	       -e 's/-D_LARGEFILE_SOURCE//' \
 	       -e 's/-D_FILE_OFFSET_BITS=64//' \
-	       -e 's/-lc_r/${PTHREAD_LIBS}/' \
-	       ${WRKSRC}/makefile.freebsd > ${WRKSRC}/makefile.machine
+	       -e 's/-lpthread/${PTHREAD_LIBS}/' \
+	       ${WRKSRC}/makefile.freebsd6 > ${WRKSRC}/makefile.machine
 	${REINPLACE_CMD} -e 's|{DEST_SHARE_DOC}|${DOCSDIR}|' \
 		${WRKSRC}/man1/*
 	${MV} ${WRKSRC}/README ${WRKSRC}/DOCS/readme.unix
