@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	VersionControl_Git
-PORTVERSION=	0.4.3
+PORTVERSION=	0.4.4
 CATEGORIES=	devel pear
 
 MAINTAINER=	miwi@FreeBSD.org
@@ -25,7 +25,7 @@ FILES=		VersionControl/Git.php \
 		VersionControl/Git/Util/Command.php \
 		VersionControl/Git/Util/RevListFetcher.php
 
-DOCS=		intro.xml tutorial.xml
+DOCS=		versioncontrol-git.xml
 _DOCSDIR=	doc
 
 TESTS=		README \
