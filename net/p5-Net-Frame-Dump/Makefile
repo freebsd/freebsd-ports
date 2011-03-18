@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Net-Frame-Dump
-PORTVERSION=	1.06
+PORTVERSION=	1.08
 CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -25,6 +25,7 @@ PERL_CONFIGURE=	yes
 MAN3=		Net::Frame::Dump.3 \
 		Net::Frame::Dump::Offline.3 \
 		Net::Frame::Dump::Online.3 \
+		Net::Frame::Dump::Online2.3 \
 		Net::Frame::Dump::Writer.3
 
 .include <bsd.port.mk>
