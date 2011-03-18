@@ -1,6 +1,7 @@
 %%SITE_PERL%%/Net/Frame/Dump.pm
 %%SITE_PERL%%/Net/Frame/Dump/Offline.pm
 %%SITE_PERL%%/Net/Frame/Dump/Online.pm
+%%SITE_PERL%%/Net/Frame/Dump/Online2.pm
 %%SITE_PERL%%/Net/Frame/Dump/Writer.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Frame/Dump/.packlist
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Frame/Dump
