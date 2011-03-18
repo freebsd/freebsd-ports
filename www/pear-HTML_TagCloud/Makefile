@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	HTML_TagCloud
-PORTVERSION=	0.2.4
+PORTVERSION=	1.0.0
 CATEGORIES=	www devel pear
 
 MAINTAINER=	miwi@FreeBSD.org
