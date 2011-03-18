@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cgiirc
-PORTVERSION=	0.5.9
+PORTVERSION=	0.5.10
 CATEGORIES=	irc www perl5
 MASTER_SITES=	http://cgiirc.org/releases/ \
 		SF/${PORTNAME}/cgi-irc/${PORTVERSION}
@@ -16,7 +16,8 @@ COMMENT=	IRC web gateway written in Perl
 
 USE_PERL5=	yes
 NO_BUILD=	yes
-
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/docs/COPYING
 pre-install:
 	@${MV} ${WRKSRC}/cgiirc.config ${WRKSRC}/cgiirc.config.sample 2>/dev/null || true
 
