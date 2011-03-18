@@ -29,7 +29,7 @@ CONFIGURE_ARGS=	--with-pkg-config-dir=${LOCALBASE}/libdata/pkgconfig
 .include "${.CURDIR}/../../x11/ruby-gnome2/Makefile.common"
 
 WRKSRC=		${RUBY_GNOME_WRKSRC}/libglade
-INSTALL_TARGET=	site-install
+INSTALL_TARGET=	site-install install
 
 RUBY_SHEBANG_FILES=	${WRKSRC}/bin/ruby-glade-create-template
 

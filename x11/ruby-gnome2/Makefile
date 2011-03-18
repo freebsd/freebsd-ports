@@ -29,7 +29,7 @@ CONFIGURE_ARGS=	--with-pkg-config-dir=${LOCALBASE}/libdata/pkgconfig
 .include "${.CURDIR}/Makefile.common"
 
 WRKSRC=		${RUBY_GNOME_WRKSRC}/gnome
-INSTALL_TARGET=	site-install
+INSTALL_TARGET=	site-install install
 
 DOCS_EN=	AUTHORS COPYING.LIB ChangeLog README README.gnome2-all
 
