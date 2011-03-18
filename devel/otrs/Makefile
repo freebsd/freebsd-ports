@@ -39,11 +39,8 @@ BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Date/Pcalc.pm:${PORTSDIR}/devel/p5-Date
 		${SITE_PERL}/XML/FeedPP.pm:${PORTSDIR}/textproc/p5-XML-FeedPP
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-BROKEN=		conflicting dependencies
-
 OPTIONS=	MYSQL "MySQL database support" on \
 		PGSQL "PostgreSQL database support" off \
-		MODPERL2 "ModPerl2 support" on \
 		REPORTS_MODULES "Reports support" on \
 		SMTP "Send email via SMTP" on \
 		POP3 "Fetch email via POP3" on \
@@ -76,6 +73,7 @@ CLEAN_FILES=	scripts/suse* scripts/redhat* \
 		var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/_source \
 		var/httpd/htdocs/skins/Agent/*/img/source
 
+USE_APACHE=	1.3+
 USE_PERL5=	yes
 
 .include <bsd.port.pre.mk>
@@ -90,11 +88,8 @@ RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBD/Pg.pm:${PORTSDIR}/databases/p5-DBD-P
 USE_PGSQL=	yes
 .endif
 
-.ifdef WITH_MODPERL2
-USE_APACHE=	2.2+
+.if ${APACHE_VERSION} > 13
 RUN_DEPENDS+=	${APACHE_PKGNAMEPREFIX}mod_perl2>=2.0.0:${PORTSDIR}/www/mod_perl2
-.else
-USE_APACHE=	1.3+
 .endif
 
 .ifdef WITH_REPORTS_MODULES
