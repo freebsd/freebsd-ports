@@ -10,8 +10,10 @@ PORTVERSION=	3.00
 PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
+.if !defined(NOPORTDATA) || make(makesum)
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} eng.traineddata.gz
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
+.endif
 
 MAINTAINER=	bf@FreeBSD.org
 COMMENT=	Commercial quality open source OCR engine
