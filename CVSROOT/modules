@@ -1552,6 +1552,7 @@ chapping                        ports/games/chapping
 charis                          ports/x11-fonts/charis
 charmap                         ports/deskutils/charmap
 charva                          ports/devel/charva
+charybdis                       ports/irc/charybdis
 chbg                            ports/graphics/chbg
 check_multi                     ports/net-mgmt/check_multi
 check_mysql_health              ports/net-mgmt/check_mysql_health
@@ -4671,9 +4672,6 @@ gnash                           ports/graphics/gnash
 gnash-devel                     ports/graphics/gnash-devel
 gnat                            ports/lang/gnat
 gnat-aux                        ports/lang/gnat-aux
-gnat-gcc42                      ports/lang/gnat-gcc42
-gnat-gcc43                      ports/lang/gnat-gcc43
-gnat-gcc44                      ports/lang/gnat-gcc44
 gnatpython                      ports/devel/gnatpython
 gnats                           ports/databases/gnats
 gnats4                          ports/databases/gnats4
@@ -5438,6 +5436,7 @@ harminv                         ports/science/harminv
 harvest                         ports/www/harvest
 hashcash                        ports/mail/hashcash
 haskell-mode.el                 ports/lang/haskell-mode.el
+hastmon                         ports/net-mgmt/hastmon
 hastymail                       ports/www/hastymail
 hastymail2                      ports/www/hastymail2
 hatari                          ports/emulators/hatari
@@ -9244,6 +9243,7 @@ mcstas                          ports/science/mcstas
 mctoolame-decoder               ports/audio/mctoolame-decoder
 mctoolame-encoder               ports/audio/mctoolame-encoder
 mcweject                        ports/sysutils/mcweject
+mcwm                            ports/x11-wm/mcwm
 md4coll                         ports/security/md4coll
 md5coll                         ports/security/md5coll
 md5deep                         ports/security/md5deep
@@ -9665,6 +9665,7 @@ mod_webkit                      ports/www/mod_webkit
 mod_whatkilledus                ports/www/mod_whatkilledus
 mod_wsgi                        ports/www/mod_wsgi
 mod_wsgi3                       ports/www/mod_wsgi3
+mod_xml2enc                     ports/www/mod_xml2enc
 mod_xmlns                       ports/www/mod_xmlns
 mod_xsendfile                   ports/www/mod_xsendfile
 mode-info                       ports/editors/mode-info
@@ -11811,6 +11812,7 @@ p5-Crypt-RSA                    ports/security/p5-Crypt-RSA
 p5-Crypt-Rabbit                 ports/security/p5-Crypt-Rabbit
 p5-Crypt-RandPasswd             ports/security/p5-Crypt-RandPasswd
 p5-Crypt-Random                 ports/security/p5-Crypt-Random
+p5-Crypt-Random-Source          ports/security/p5-Crypt-Random-Source
 p5-Crypt-Rijndael               ports/security/p5-Crypt-Rijndael
 p5-Crypt-Rijndael_PP            ports/security/p5-Crypt-Rijndael_PP
 p5-Crypt-SKey                   ports/security/p5-Crypt-SKey
@@ -13197,6 +13199,7 @@ p5-Math-Random-ISAAC-XS         ports/math/p5-Math-Random-ISAAC-XS
 p5-Math-Random-MT               ports/math/p5-Math-Random-MT
 p5-Math-Random-MT-Auto          ports/math/p5-Math-Random-MT-Auto
 p5-Math-Random-OO               ports/math/p5-Math-Random-OO
+p5-Math-Random-Secure           ports/math/p5-Math-Random-Secure
 p5-Math-RandomOrg               ports/math/p5-Math-RandomOrg
 p5-Math-Round                   ports/math/p5-Math-Round
 p5-Math-Round-Var               ports/math/p5-Math-Round-Var
@@ -15959,6 +15962,7 @@ p5-crypt-pgpsimple              ports/security/p5-Crypt-PGPSimple
 p5-crypt-primes                 ports/security/p5-Crypt-Primes
 p5-crypt-rabbit                 ports/security/p5-Crypt-Rabbit
 p5-crypt-random                 ports/security/p5-Crypt-Random
+p5-crypt-random-source          ports/security/p5-Crypt-Random-Source
 p5-crypt-randpasswd             ports/security/p5-Crypt-RandPasswd
 p5-crypt-rc4                    ports/security/p5-Crypt-RC4
 p5-crypt-rc5                    ports/security/p5-Crypt-RC5
@@ -17358,6 +17362,7 @@ p5-math-random-isaac-xs         ports/math/p5-Math-Random-ISAAC-XS
 p5-math-random-mt               ports/math/p5-Math-Random-MT
 p5-math-random-mt-auto          ports/math/p5-Math-Random-MT-Auto
 p5-math-random-oo               ports/math/p5-Math-Random-OO
+p5-math-random-secure           ports/math/p5-Math-Random-Secure
 p5-math-randomorg               ports/math/p5-Math-RandomOrg
 p5-math-round                   ports/math/p5-Math-Round
 p5-math-round-var               ports/math/p5-Math-Round-Var
@@ -21552,6 +21557,7 @@ py-gtkextra                     ports/x11-toolkits/py-gtkextra
 py-gtkglext                     ports/x11-toolkits/py-gtkglext
 py-gtksourceview                ports/x11-toolkits/py-gtksourceview
 py-gui                          ports/x11-toolkits/py-gui
+py-gunicorn                     ports/www/py-gunicorn
 py-gvgen                        ports/graphics/py-gvgen
 py-gyp-devel                    ports/devel/py-gyp-devel
 py-h5py                         ports/science/py-h5py
@@ -22047,7 +22053,6 @@ py-twitter                      ports/net/py-twitter
 py-twofish                      ports/security/py-twofish
 py-txamqp                       ports/net/py-txamqp
 py-unidecode                    ports/converters/py-unidecode
-py-unit                         ports/devel/py-unit
 py-unittestplus                 ports/devel/py-unittestplus
 py-urlgrabber                   ports/www/py-urlgrabber
 py-urlimport                    ports/devel/py-urlimport
@@ -22813,6 +22818,7 @@ roundcube-air                   ports/mail/roundcube-air
 roundcube-groupvice             ports/mail/roundcube-groupvice
 roundcube-mobilecube            ports/mail/roundcube-mobilecube
 roundcube-mvision2              ports/mail/roundcube-mvision2
+roundcube-sieverules            ports/mail/roundcube-sieverules
 roundcube-umich                 ports/mail/roundcube-umich
 roundup                         ports/www/roundup
 routers2                        ports/net-mgmt/routers2
