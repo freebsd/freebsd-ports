@@ -20,7 +20,7 @@ MAN3=		Dialog.3
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 900000 && ${ARCH} == "amd64"
+.if ${OSVERSION} >= 900000
 BROKEN=		Does not build
 .endif
 
