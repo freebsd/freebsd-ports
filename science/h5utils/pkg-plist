@@ -1,0 +1,31 @@
+bin/h5math
+bin/h5totxt
+bin/h5fromtxt
+bin/h5tovtk
+bin/h5topng
+%%DATADIR%%/colormaps/autumn
+%%DATADIR%%/colormaps/bluered
+%%DATADIR%%/colormaps/bone
+%%DATADIR%%/colormaps/colorcube
+%%DATADIR%%/colormaps/cool
+%%DATADIR%%/colormaps/copper
+%%DATADIR%%/colormaps/flag
+%%DATADIR%%/colormaps/gray
+%%DATADIR%%/colormaps/green
+%%DATADIR%%/colormaps/hot
+%%DATADIR%%/colormaps/hsv
+%%DATADIR%%/colormaps/jet
+%%DATADIR%%/colormaps/lines
+%%DATADIR%%/colormaps/pink
+%%DATADIR%%/colormaps/prism
+%%DATADIR%%/colormaps/spring
+%%DATADIR%%/colormaps/summer
+%%DATADIR%%/colormaps/vga
+%%DATADIR%%/colormaps/winter
+%%DATADIR%%/colormaps/yarg
+%%DATADIR%%/colormaps/yellow
+%%DATADIR%%/colormaps/dkbluered
+@dirrmtry bin
+@dirrm %%DATADIR%%/colormaps
+@dirrm %%DATADIR%%
+@dirrmtry share

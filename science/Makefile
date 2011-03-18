@@ -63,6 +63,7 @@
     SUBDIR += gsystem
     SUBDIR += gtamsanalyzer
     SUBDIR += gwyddion
+    SUBDIR += h5utils
     SUBDIR += harminv
     SUBDIR += hdf
     SUBDIR += hdf-java
