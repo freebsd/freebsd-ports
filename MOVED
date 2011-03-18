@@ -1583,3 +1583,4 @@ lang/gnat-gcc42||2011-03-17|Removed unmaintained and obsolete
 lang/gnat-gcc43||2011-03-17|Removed unmaintained and obsolete
 lang/gnat-gcc44||2011-03-17|Removed unmaintained and obsolete
 games/wormux-devel||2011-03-17|Project was renamed
+games/etuxracer|games/etracer|2011-03-18|Removed it is a duplicate of games/etracer
