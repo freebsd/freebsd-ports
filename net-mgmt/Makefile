@@ -74,6 +74,7 @@
     SUBDIR += flowviewer
     SUBDIR += fprobe
     SUBDIR += fruity
+    SUBDIR += glpi-plugins-fusioninventory-server
     SUBDIR += glpi-plugins-tracker-agent
     SUBDIR += glpi-plugins-tracker-server
     SUBDIR += gps
