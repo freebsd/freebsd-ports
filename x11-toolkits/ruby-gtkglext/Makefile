@@ -8,6 +8,7 @@
 
 PORTNAME=	gtkglext
 PORTVERSION=	${RUBY_GNOME_PORTVERSION}
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits ruby
 MASTER_SITES=	${RUBY_GNOME_MASTER_SITES}
 MASTER_SITE_SUBDIR=	${RUBY_GNOME_MASTER_SITE_SUBDIR}
@@ -21,7 +22,7 @@ COMMENT=	Ruby binding for GtkGLExt
 LIB_DEPENDS=	gtkglext-x11-1.0.0:${PORTSDIR}/x11-toolkits/gtkglext
 BUILD_DEPENDS+=	rubygem-pkg-config>=1.0.7:${PORTSDIR}/devel/rubygem-pkg-config
 RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR:S/${PREFIX}/${LOCALBASE}/}/gtk2.so:${PORTSDIR}/x11-toolkits/ruby-gtk2 \
-		${RUBY_SITEARCHLIBDIR:S/${PREFIX}/${LOCALBASE}/}/opengl.so:${PORTSDIR}/graphics/ruby-opengl
+		rubygem-opengl>=0.60.1:${PORTSDIR}/graphics/rubygem-opengl
 
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes
@@ -30,7 +31,7 @@ CONFIGURE_ARGS=	--with-pkg-config-dir=${LOCALBASE}/libdata/pkgconfig
 .include "${.CURDIR}/../../x11/ruby-gnome2/Makefile.common"
 
 WRKSRC=		${RUBY_GNOME_WRKSRC}/gtkglext
-INSTALL_TARGET=	site-install
+INSTALL_TARGET=	site-install install
 
 DOCS=		ChangeLog README
 
