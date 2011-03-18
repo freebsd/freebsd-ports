@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	rspamd
-PORTVERSION=	0.3.8
+PORTVERSION=	0.3.9
 CATEGORIES=	mail
 MASTER_SITES=	http://highsecure.ru/
 
