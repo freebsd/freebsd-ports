@@ -3,9 +3,10 @@
  To use ViewVC, modify the configuration file located at
  %%INSTDIR%%/viewvc.conf.
 
- There is no need for a web server - all you have to do is
- enable the standalone ViewVC server in rc.conf with the
- parameter viewvc_enable="YES". 
+ If no webserver was selected during installation, then
+ a rc script for running ViewVC standalone is installed.
+ To enable the standalone ViewVC server in rc.conf use
+ parameter viewvc_enable="YES".
 
  You can also adjust the user which runs the ViewVC standalone 
  server with the parameter "viewvc_user".

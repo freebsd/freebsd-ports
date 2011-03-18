@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	viewvc
-PORTVERSION=	1.1.8
-PORTREVISION=	1
+PORTVERSION=	1.1.9
 CATEGORIES=	devel python
 MASTER_SITES=	http://www.viewvc.org/ \
 		LOCAL/glarkin
@@ -16,7 +15,7 @@ MAINTAINER=	glarkin@FreeBSD.org
 COMMENT=	Web-based Version Control Repository Browsing
 
 OPTIONS=	SUBVERSION "use svn binding" on \
-		APACHE "Use ${APACHE_PORT} as webserver" on \
+		APACHE "Use apache as webserver" on \
 		LIGHTTPD "Use lighttpd as webserver" off \
 		MODPYTHON3 "Enable mod_python3 support (deprecated)" off \
 		MODWSGI3 "Enable mod_wsgi3 support" off \

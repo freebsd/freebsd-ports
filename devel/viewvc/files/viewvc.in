@@ -24,8 +24,7 @@
 # adjust the parameter viewvc_user and it should work.
 #
 # INFO:
-# The default port will change with the next release of ViewVC
-# from 7467 to 49152
+# ViewVC default tcp port: 49152
 # see http://viewvc.tigris.org/issues/show_bug.cgi?id=234
 
 . /etc/rc.subr
