@@ -553,6 +553,7 @@
     SUBDIR += nut
     SUBDIR += nut22
     SUBDIR += nvclock
+    SUBDIR += nvramtool
     SUBDIR += nvtv
     SUBDIR += oak
     SUBDIR += obliterate
