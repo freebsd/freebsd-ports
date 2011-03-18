@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libmp3splt
-PORTVERSION=	0.6
+PORTVERSION=	0.6.1a
 CATEGORIES=	audio
 MASTER_SITES=	SF/mp3splt/${PORTNAME}/${PORTVERSION}
 
@@ -20,6 +20,7 @@ MAKE_JOBS_SAFE=	yes
 
 OPTIONS=	MP3	"mp3 support"	on \
 		ID3	"id3tag support for the mp3"	on \
+		PCRE	"pcre support to set tags from input filename"	on \
 		VORBIS	"ogg vorbis support"	on \
 		NLS     "native language support"       on
 
@@ -44,6 +45,12 @@ PLIST_FILES+=	lib/libmp3splt/libsplt_mp3.a \
 		lib/libmp3splt/libsplt_mp3.so.0
 .endif
 
+.if defined(WITHOUT_PCRE)
+CONFIGURE_ARGS+=	--disable-pcre
+.else
+LIB_DEPENDS+=	pcre.0:${PORTSDIR}/devel/pcre
+.endif
+
 .if defined(WITHOUT_ID3)
 CONFIGURE_ARGS+=	--disable-id3tag
 .else
@@ -65,7 +72,7 @@ PLIST_FILES+=	lib/libmp3splt/libsplt_ogg.a \
 CONFIGURE_ARGS+=	--disable-nls
 .else
 USE_GETTEXT=	yes
-LANGUAGES=	de fr
+LANGUAGES=	de_DE es fr_FR
 .for language in ${LANGUAGES}
 PLIST_FILES+=	share/locale/${language}/LC_MESSAGES/libmp3splt.mo
 .endfor

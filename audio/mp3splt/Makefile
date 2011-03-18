@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mp3splt
-PORTVERSION=	2.2.9
+PORTVERSION=	2.3a
 CATEGORIES=	audio
 MASTER_SITES=	SF
 
@@ -32,7 +32,7 @@ PLIST_FILES=	bin/mp3splt bin/oggsplt
 CONFIGURE_ARGS+=	--disable-nls
 .else
 USE_GETTEXT=	yes
-LANGUAGES=	de fr
+LANGUAGES=	de_DE es fr_FR
 .for language in ${LANGUAGES}
 PLIST_FILES+=	share/locale/${language}/LC_MESSAGES/mp3splt.mo
 .endfor
