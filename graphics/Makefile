@@ -931,6 +931,7 @@
     SUBDIR += tcm
     SUBDIR += telak
     SUBDIR += tesseract
+    SUBDIR += tesseract-data
     SUBDIR += tgif
     SUBDIR += tif22pnm
     SUBDIR += tiff
