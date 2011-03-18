@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	Net-Dropbox-API
-PORTVERSION=	0.9
+PORTVERSION=	1.1
 CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	gslin@gslin.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	A dropbox API interface
 
 RUN_DEPENDS=	p5-Data-Random>=0:${PORTSDIR}/devel/p5-Data-Random \
