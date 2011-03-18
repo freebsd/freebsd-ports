@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	asn1
-PORTVERSION=	0.0.13a
+PORTVERSION=	0.0.13b
 CATEGORIES=	devel python
-MASTER_SITES=	SF/py${PORTNAME}/py${PORTNAME}-devel/${PORTVERSION}
+MASTER_SITES=	CHEESESHOP \
+		SF/py${PORTNAME}/py${PORTNAME}-devel/${PORTVERSION}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	py${PORTNAME}-${PORTVERSION}
 
@@ -33,12 +34,12 @@ DOCDOCS=	pyasn1-tutorial.html
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-. for f in ${BASEDOCS}
+.for f in ${BASEDOCS}
 	@${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
-. endfor
-. for f in ${DOCDOCS}
+.endfor
+.for f in ${DOCDOCS}
 	@${INSTALL_DATA} ${WRKSRC}/doc/${f} ${DOCSDIR}
-. endfor
+.endfor
 .endif
 
 .include <bsd.port.mk>
