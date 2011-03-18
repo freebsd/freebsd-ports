@@ -5,11 +5,10 @@
 # $FreeBSD$
 
 PORTNAME=	komodo-ide
-PORTVERSION=	6.0.2
-PORTREVISION?=	1
+PORTVERSION=	6.1.1
 CATEGORIES=	editors
 MASTER_SITES=	http://downloads.activestate.com/Komodo/releases/${PORTVERSION}/
-DISTNAME=	Komodo-IDE-${PORTVERSION}-59129-linux-libcpp6-x86
+DISTNAME=	Komodo-IDE-${PORTVERSION}-61234-linux-libcpp6-x86
 
 MAINTAINER=	dereckson@gmail.com
 COMMENT=	Multi-language editor from ActiveState

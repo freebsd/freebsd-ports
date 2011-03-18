@@ -848,6 +848,7 @@ share/applications/komodo-ide-6.desktop
 %%DATADIR%%/lib/mozilla/extensions/django_language@ActiveState.com/components/koDjango_UDL_Language.py
 %%DATADIR%%/lib/mozilla/extensions/django_language@ActiveState.com/install.rdf
 %%DATADIR%%/lib/mozilla/extensions/django_language@ActiveState.com/lexers/Django.lexres
+%%DATADIR%%/lib/mozilla/extensions/django_language@ActiveState.com/pylib/djangoLinter.py
 %%DATADIR%%/lib/mozilla/extensions/django_language@ActiveState.com/templates/All Languages/Django.django.html
 %%DATADIR%%/lib/mozilla/extensions/django_language@ActiveState.com/templates/Common/Django.django.html
 %%DATADIR%%/lib/mozilla/extensions/django_language@ActiveState.com/templates/Web/Django.django.html
@@ -957,7 +958,6 @@ share/applications/komodo-ide-6.desktop
 %%DATADIR%%/lib/mozilla/extensions/restructuredtext_language@ActiveState.com/install.rdf
 %%DATADIR%%/lib/mozilla/extensions/restructuredtext_language@ActiveState.com/lexers/reStructuredText.lexres
 %%DATADIR%%/lib/mozilla/extensions/restructuredtext_language@ActiveState.com/templates/All Languages/reStructuredText.rst
-%%DATADIR%%/lib/mozilla/extensions/restructuredtext_language@ActiveState.com/templates/Common/reStructuredText.rst
 %%DATADIR%%/lib/mozilla/extensions/rhtml_language@ActiveState.com/chrome.manifest
 %%DATADIR%%/lib/mozilla/extensions/rhtml_language@ActiveState.com/components/koRHTML_UDL_Language.py
 %%DATADIR%%/lib/mozilla/extensions/rhtml_language@ActiveState.com/install.rdf
@@ -1300,7 +1300,9 @@ share/applications/komodo-ide-6.desktop
 %%DATADIR%%/lib/mozilla/python/komodo/codeintel2/stdlibs/python-2.4.cix
 %%DATADIR%%/lib/mozilla/python/komodo/codeintel2/stdlibs/python-2.5.cix
 %%DATADIR%%/lib/mozilla/python/komodo/codeintel2/stdlibs/python-2.6.cix
+%%DATADIR%%/lib/mozilla/python/komodo/codeintel2/stdlibs/python-2.7.cix
 %%DATADIR%%/lib/mozilla/python/komodo/codeintel2/stdlibs/python3-3.1.cix
+%%DATADIR%%/lib/mozilla/python/komodo/codeintel2/stdlibs/python3-3.2.cix
 %%DATADIR%%/lib/mozilla/python/komodo/codeintel2/stdlibs/ruby.cix
 %%DATADIR%%/lib/mozilla/python/komodo/codeintel2/tcl_lexer.py
 %%DATADIR%%/lib/mozilla/python/komodo/codeintel2/tcl_parser.py
@@ -1450,6 +1452,7 @@ share/applications/komodo-ide-6.desktop
 %%DATADIR%%/lib/mozilla/python/komodo/pythonVersionUtils.py
 %%DATADIR%%/lib/mozilla/python/komodo/pyxpcomProfiler.py
 %%DATADIR%%/lib/mozilla/python/komodo/reflow.py
+%%DATADIR%%/lib/mozilla/python/komodo/reindent.py
 %%DATADIR%%/lib/mozilla/python/komodo/remotefilelib.py
 %%DATADIR%%/lib/mozilla/python/komodo/runutils.py
 %%DATADIR%%/lib/mozilla/python/komodo/scimozindent.py
@@ -4202,8 +4205,10 @@ share/applications/komodo-ide-6.desktop
 %%DATADIR%%/lib/support/dbgp/perllib/Syntax/Highlight/Perl/Improved.pm
 %%DATADIR%%/lib/support/dbgp/perllib/perl5db.pl
 %%DATADIR%%/lib/support/dbgp/python3lib/dbgp-1.0-py3.1.egg-info
+%%DATADIR%%/lib/support/dbgp/python3lib/dbgp-1.0-py3.2.egg-info
 %%DATADIR%%/lib/support/dbgp/python3lib/dbgp/__init__.py
 %%DATADIR%%/lib/support/dbgp/python3lib/dbgp/_client31.so
+%%DATADIR%%/lib/support/dbgp/python3lib/dbgp/_client32.cpython-32m.so
 %%DATADIR%%/lib/support/dbgp/python3lib/dbgp/_pyclient.py
 %%DATADIR%%/lib/support/dbgp/python3lib/dbgp/client.py
 %%DATADIR%%/lib/support/dbgp/python3lib/dbgp/common.py
@@ -4469,22 +4474,24 @@ share/applications/komodo-ide-6.desktop
 %%DATADIR%%/lib/support/samples/tools/Abbreviations/Perl/sheb.komodotool
 %%DATADIR%%/lib/support/samples/tools/Abbreviations/Perl/while.komodotool
 %%DATADIR%%/lib/support/samples/tools/Abbreviations/Python/class.komodotool
+%%DATADIR%%/lib/support/samples/tools/Abbreviations/Python/def.komodotool
 %%DATADIR%%/lib/support/samples/tools/Abbreviations/Python/doc.komodotool
 %%DATADIR%%/lib/support/samples/tools/Abbreviations/Python/for.komodotool
-%%DATADIR%%/lib/support/samples/tools/Abbreviations/Python/func.komodotool
 %%DATADIR%%/lib/support/samples/tools/Abbreviations/Python/main.komodotool
 %%DATADIR%%/lib/support/samples/tools/Abbreviations/Python/meth.komodotool
 %%DATADIR%%/lib/support/samples/tools/Abbreviations/Python/opts.komodotool
 %%DATADIR%%/lib/support/samples/tools/Abbreviations/Python/shebang.komodotool
+%%DATADIR%%/lib/support/samples/tools/Abbreviations/Python/try.komodotool
 %%DATADIR%%/lib/support/samples/tools/Abbreviations/Python/walk.komodotool
 %%DATADIR%%/lib/support/samples/tools/Abbreviations/Python3/class.komodotool
+%%DATADIR%%/lib/support/samples/tools/Abbreviations/Python3/def.komodotool
 %%DATADIR%%/lib/support/samples/tools/Abbreviations/Python3/doc.komodotool
 %%DATADIR%%/lib/support/samples/tools/Abbreviations/Python3/for.komodotool
-%%DATADIR%%/lib/support/samples/tools/Abbreviations/Python3/func.komodotool
 %%DATADIR%%/lib/support/samples/tools/Abbreviations/Python3/main.komodotool
 %%DATADIR%%/lib/support/samples/tools/Abbreviations/Python3/meth.komodotool
 %%DATADIR%%/lib/support/samples/tools/Abbreviations/Python3/opts.komodotool
 %%DATADIR%%/lib/support/samples/tools/Abbreviations/Python3/shebang.komodotool
+%%DATADIR%%/lib/support/samples/tools/Abbreviations/Python3/try.komodotool
 %%DATADIR%%/lib/support/samples/tools/Abbreviations/Python3/walk.komodotool
 %%DATADIR%%/lib/support/samples/tools/Abbreviations/RHTML/lia.komodotool
 %%DATADIR%%/lib/support/samples/tools/Abbreviations/RHTML/liai.komodotool
@@ -4921,7 +4928,6 @@ share/applications/komodo-ide-6.desktop
 @dirrm %%DATADIR%%/lib/mozilla/extensions/rhtml_language@ActiveState.com/lexers
 @dirrm %%DATADIR%%/lib/mozilla/extensions/rhtml_language@ActiveState.com/components
 @dirrm %%DATADIR%%/lib/mozilla/extensions/rhtml_language@ActiveState.com
-@dirrm %%DATADIR%%/lib/mozilla/extensions/restructuredtext_language@ActiveState.com/templates/Common
 @dirrm %%DATADIR%%/lib/mozilla/extensions/restructuredtext_language@ActiveState.com/templates/All Languages
 @dirrm %%DATADIR%%/lib/mozilla/extensions/restructuredtext_language@ActiveState.com/templates
 @dirrm %%DATADIR%%/lib/mozilla/extensions/restructuredtext_language@ActiveState.com/lexers
@@ -4989,6 +4995,7 @@ share/applications/komodo-ide-6.desktop
 @dirrm %%DATADIR%%/lib/mozilla/extensions/django_language@ActiveState.com/templates/Common
 @dirrm %%DATADIR%%/lib/mozilla/extensions/django_language@ActiveState.com/templates/All Languages
 @dirrm %%DATADIR%%/lib/mozilla/extensions/django_language@ActiveState.com/templates
+@dirrm %%DATADIR%%/lib/mozilla/extensions/django_language@ActiveState.com/pylib
 @dirrm %%DATADIR%%/lib/mozilla/extensions/django_language@ActiveState.com/lexers
 @dirrm %%DATADIR%%/lib/mozilla/extensions/django_language@ActiveState.com/components
 @dirrm %%DATADIR%%/lib/mozilla/extensions/django_language@ActiveState.com
