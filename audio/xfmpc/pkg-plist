@@ -6,12 +6,14 @@ share/locale/ca/LC_MESSAGES/xfmpc.mo
 share/locale/cs/LC_MESSAGES/xfmpc.mo
 share/locale/da/LC_MESSAGES/xfmpc.mo
 share/locale/de/LC_MESSAGES/xfmpc.mo
+share/locale/el/LC_MESSAGES/xfmpc.mo
 share/locale/en_GB/LC_MESSAGES/xfmpc.mo
 share/locale/es/LC_MESSAGES/xfmpc.mo
 share/locale/eu/LC_MESSAGES/xfmpc.mo
 share/locale/fi/LC_MESSAGES/xfmpc.mo
 share/locale/fr/LC_MESSAGES/xfmpc.mo
 share/locale/gl/LC_MESSAGES/xfmpc.mo
+share/locale/hr/LC_MESSAGES/xfmpc.mo
 share/locale/hu/LC_MESSAGES/xfmpc.mo
 share/locale/id/LC_MESSAGES/xfmpc.mo
 share/locale/it/LC_MESSAGES/xfmpc.mo
@@ -19,9 +21,13 @@ share/locale/ja/LC_MESSAGES/xfmpc.mo
 share/locale/nl/LC_MESSAGES/xfmpc.mo
 share/locale/pt/LC_MESSAGES/xfmpc.mo
 share/locale/pt_BR/LC_MESSAGES/xfmpc.mo
+share/locale/ru/LC_MESSAGES/xfmpc.mo
+share/locale/si/LC_MESSAGES/xfmpc.mo
+share/locale/sk/LC_MESSAGES/xfmpc.mo
 share/locale/sl/LC_MESSAGES/xfmpc.mo
 share/locale/sv/LC_MESSAGES/xfmpc.mo
 share/locale/tr/LC_MESSAGES/xfmpc.mo
+share/locale/ug/LC_MESSAGES/xfmpc.mo
 share/locale/uk/LC_MESSAGES/xfmpc.mo
 share/locale/ur/LC_MESSAGES/xfmpc.mo
 share/locale/ur_PK/LC_MESSAGES/xfmpc.mo
@@ -30,6 +36,10 @@ share/locale/zh_CN/LC_MESSAGES/xfmpc.mo
 @dirrmtry share/locale/ur_PK
 @dirrmtry share/locale/ur/LC_MESSAGES
 @dirrmtry share/locale/ur
+@dirrmtry share/locale/ug/LC_MESSAGES
+@dirrmtry share/locale/ug
+@dirrmtry share/locale/si/LC_MESSAGES
+@dirrmtry share/locale/si
 @dirrmtry share/locale/ast/LC_MESSAGES
 @dirrmtry share/locale/ast
 @dirrmtry share/applications
