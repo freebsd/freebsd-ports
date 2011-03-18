@@ -863,6 +863,7 @@
     SUBDIR += py-google
     SUBDIR += py-impacket
     SUBDIR += py-iplib
+    SUBDIR += py-kombu
     SUBDIR += py-ldap2
     SUBDIR += py-libcloud
     SUBDIR += py-libdnet
