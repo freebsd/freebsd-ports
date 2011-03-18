@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	IO-Async
-PORTVERSION=	0.39
+PORTVERSION=	0.40
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
-MASTER_SITE_SUBDIR=	../../authors/id/P/PE/PEVANS
+MASTER_SITE_SUBDIR=	CPAN:PEVANS
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
@@ -27,6 +27,7 @@ MAN3=		IO::Async.3 \
 		IO::Async::ChildManager.3 \
 		IO::Async::Connector.3 \
 		IO::Async::DetachedCode.3 \
+		IO::Async::FileStream.3 \
 		IO::Async::Function.3 \
 		IO::Async::Handle.3 \
 		IO::Async::Listener.3 \
