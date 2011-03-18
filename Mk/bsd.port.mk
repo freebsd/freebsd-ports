@@ -1396,10 +1396,6 @@ ETCDIR?=		${PREFIX}/etc/${PORTNAME}
 .include "${PORTSDIR}/Mk/bsd.linux-apps.mk"
 .endif
 
-.if defined(X_WINDOW_SYSTEM) && ${X_WINDOW_SYSTEM:L} != "xorg"
-IGNORE=		cannot be installed: bad X_WINDOW_SYSTEM setting; valid value is 'xorg'
-.endif
-
 .if ${X11BASE} != ${LOCALBASE}
 .BEGIN:
 	@${ECHO_MSG} "X11BASE is now deprecated.  Unset X11BASE in make.conf and try again."
@@ -2011,10 +2007,6 @@ BUILD_DEPENDS+=	Xvfb:${X_VFBSERVER_PORT} \
 CONFIGURE_ENV+=	DISPLAY="localhost:1001"
 MAKE_ENV+=		DISPLAY="localhost:1001"
 .endif
-.endif
-
-.if defined(USE_XPM)
-IGNORE=		USE_XPM is deprecated. Use USE_XORG=xpm instead.
 .endif
 
 XAWVER=				8
@@ -5600,7 +5592,7 @@ package-recursive: package
 		(cd $$dir; ${MAKE} package-noinstall); \
 	done
 
-# Show missing dependiencies
+# Show missing dependencies
 missing:
 	@_origins=$$(${PKG_INFO} -aoq); \
 	for dir in $$(${ALL-DEPENDS-LIST}); do \
