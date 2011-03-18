@@ -13,7 +13,7 @@ DISTNAME=	${PORTNAME}.${PORTVERSION}
 EXTRACT_SUFX=	.txt
 DIST_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	sbrabez@gmail.com
+MAINTAINER=	sbz@FreeBSD.org
 COMMENT=	Perl script to colorize the terminal ouput of GCC
 
 RUN_DEPENDS=	${SITE_PERL}/Term/ANSIColor.pm:${PORTSDIR}/devel/p5-Term-ANSIColor

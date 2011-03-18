@@ -11,7 +11,7 @@ PORTEPOCH=	2
 CATEGORIES=	security devel
 MASTER_SITES=	http://www.libssh2.org/download/
 
-MAINTAINER=	sbrabez@gmail.com
+MAINTAINER=	sbz@FreeBSD.org
 COMMENT=	A library implementing the SSH2 protocol
 
 USE_OPENSSL=	yes

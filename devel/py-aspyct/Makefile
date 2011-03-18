@@ -12,7 +12,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}%20beta%204
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	${PORTNAME:C/a/A/}-${PORTVERSION}_beta_4
 
-MAINTAINER=	sbrabez@gmail.com
+MAINTAINER=	sbz@FreeBSD.org
 COMMENT=	Python library including an aspect-oriented programming (AOP) engine
 
 USE_PYTHON=	2.5+

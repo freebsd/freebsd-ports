@@ -11,7 +11,7 @@ PORTREVISION=	4
 CATEGORIES=	security
 MASTER_SITES=	http://naughty.monkey.org/~dugsong/dsniff/
 
-MAINTAINER=	sbrabez@gmail.com
+MAINTAINER=	sbz@FreeBSD.org
 COMMENT=	Various sniffing utilities for penetration testing
 
 BUILD_DEPENDS=	${LIBNET_CONFIG}:${PORTSDIR}/net/libnet10 \

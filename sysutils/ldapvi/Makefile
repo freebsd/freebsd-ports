@@ -11,7 +11,7 @@ PORTREVISION=	3
 CATEGORIES=	sysutils net
 MASTER_SITES=	http://www.lichteblau.com/download/
 
-MAINTAINER=	sbrabez@gmail.com
+MAINTAINER=	sbz@FreeBSD.org
 COMMENT=	A tool to update LDAP entries with a text editor
 
 LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt

@@ -11,7 +11,7 @@ CATEGORIES=	graphics python
 MASTER_SITES=	http://software.inl.fr/releases/GvGen/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	sbrabez@gmail.com
+MAINTAINER=	sbz@FreeBSD.org
 COMMENT=	An easy python interface to generate dot files
 
 USE_PYTHON=	2.5+

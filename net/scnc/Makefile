@@ -10,7 +10,7 @@ PORTVERSION=	1.04
 CATEGORIES=	net security
 MASTER_SITES=	http://gomor.org/files/
 
-MAINTAINER=	sbrabez@gmail.com
+MAINTAINER=	sbz@FreeBSD.org
 COMMENT=	SSL Capable Netcat
 
 RUN_DEPENDS=	${SITE_PERL}/IO/Socket/SSL.pm:${PORTSDIR}/security/p5-IO-Socket-SSL \

@@ -12,7 +12,7 @@ MASTER_SITES=	CHEESESHOP
 DISTNAME=	py${PORTNAME}-${PORTVERSION}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	sbrabez@gmail.com
+MAINTAINER=	sbz@FreeBSD.org
 COMMENT=	Serial port encapsulation library for Python
 
 USE_PYTHON=	yes

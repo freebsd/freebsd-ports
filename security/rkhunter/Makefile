@@ -10,7 +10,7 @@ PORTVERSION=	1.3.8
 CATEGORIES=	security
 MASTER_SITES=	SF
 
-MAINTAINER=	sbrabez@gmail.com
+MAINTAINER=	sbz@FreeBSD.org
 COMMENT=	Rootkit detection tool
 
 OPTIONS=	LSOF "Use LSOF" on \

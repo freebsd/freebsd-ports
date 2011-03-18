@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.cs.tut.fi/~ask/aspects/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	python-${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	sbrabez@gmail.com
+MAINTAINER=	sbz@FreeBSD.org
 COMMENT=	Lightweight aspect oriented programming library for Python
 
 USE_GMAKE=	yes

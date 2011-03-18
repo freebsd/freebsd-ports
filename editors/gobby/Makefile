@@ -11,7 +11,7 @@ PORTREVISION=	3
 CATEGORIES=	editors
 MASTER_SITES=	http://releases.0x539.de/gobby/
 
-MAINTAINER=	sbrabez@gmail.com
+MAINTAINER=	sbz@FreeBSD.org
 COMMENT=	A free collaborative editor
 
 LIB_DEPENDS=	obby-0.4.1:${PORTSDIR}/devel/obby \
