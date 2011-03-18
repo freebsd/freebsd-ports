@@ -1,14 +1,14 @@
 # New ports collection makefile for: zephyr
-# Date created: 	2009-11-12
+# Date created: 	12 November 2009
 # Whom: 	Ben Kaduk <kaduk@mit.edu>
 #
 # $FreeBSD$
 #
 
 PORTNAME=	zephyr
-PORTVERSION=	3.0
+DISTVERSION=	3.0.1
 CATEGORIES=	net-im
-MASTER_SITES=	http://zephyr.1ts.org/export/2552/distribution/
+MASTER_SITES=	http://zephyr.1ts.org/export/2642/distribution/
 
 MAINTAINER=	kaduk-fbsd@mit.edu
 COMMENT=	An enterprise-scale distributed messaging system
@@ -29,14 +29,6 @@ OPTIONS=	HEIMDAL	"Use Heimdal Kerberos for ss/com_err"	no
 
 .include <bsd.port.options.mk>
 
-# On 6.X zephyr install libzephyr.so.4 and libzephyr.so.4.0 for others
-.if ${OSVERSION} < 700000
-PLIST_SUB+=	ZEPHYR_SHVERSION=4
-BROKEN=		bad plist
-.else
-PLIST_SUB+=	ZEPHYR_SHVERSION=4.0
-.endif
-
 .if defined(WITH_HEIMDAL)
 LIB_DEPENDS+=	ss.1:${PORTSDIR}/security/heimdal
 .if defined(HEIMDAL_HOME)
@@ -51,6 +43,6 @@ KRB5_DIR?=	${DESTDIR}/usr
 
 # it is an upstream bug that --with-krb5 needs a path
 CONFIGURE_ARGS=	--with-krb5="${KRB5_DIR}"
-CONFIGURE_ENV+= LDFLAGS="${LDFLAGS}" CPPFLAGS="${CPPFLAGS}"
+CONFIGURE_ENV+=	LDFLAGS="${LDFLAGS}" CPPFLAGS="${CPPFLAGS}"
 
 .include <bsd.port.mk>
