@@ -1,5 +1,4 @@
 bin/node
-bin/node-repl
 bin/node-waf
 include/node/config.h
 include/node/eio.h
@@ -11,8 +10,11 @@ include/node/node_events.h
 include/node/node_object_wrap.h
 include/node/node_version.h
 include/node/v8-debug.h
+include/node/v8-preparser.h
 include/node/v8-profiler.h
+include/node/v8-testing.h
 include/node/v8.h
+include/node/v8stdint.h
 lib/node/wafadmin/Build.py
 lib/node/wafadmin/Configure.py
 lib/node/wafadmin/Constants.py
@@ -62,6 +64,7 @@ lib/node/wafadmin/__init__.py
 lib/node/wafadmin/ansiterm.py
 lib/node/wafadmin/pproc.py
 lib/node/wafadmin/py3kfixes.py
+libdata/pkgconfig/nodejs.pc
 @dirrm lib/node/wafadmin/Tools
 @dirrm lib/node/wafadmin
 @dirrm lib/node
