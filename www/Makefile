@@ -1474,6 +1474,7 @@
     SUBDIR += py-django-extensions
     SUBDIR += py-django-keyedcache
     SUBDIR += py-django-livesettings
+    SUBDIR += py-django-mptt
     SUBDIR += py-django-profiles
     SUBDIR += py-django-registration
     SUBDIR += py-django-signals-ahoy
