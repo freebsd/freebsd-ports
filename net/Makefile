@@ -284,6 +284,7 @@
     SUBDIR += jakarta-commons-net
     SUBDIR += java-beepcore
     SUBDIR += jcifs
+    SUBDIR += jgroups
     SUBDIR += jicmp
     SUBDIR += jpcap
     SUBDIR += jrdesktop
