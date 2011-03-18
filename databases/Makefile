@@ -365,6 +365,7 @@
     SUBDIR += p5-DBIx-Class-Schema-Loader
     SUBDIR += p5-DBIx-Class-TimeStamp
     SUBDIR += p5-DBIx-Class-Tree
+    SUBDIR += p5-DBIx-Class-Tree-NestedSet
     SUBDIR += p5-DBIx-Class-UUIDColumns
     SUBDIR += p5-DBIx-Class-Validation
     SUBDIR += p5-DBIx-Class-WebForm
