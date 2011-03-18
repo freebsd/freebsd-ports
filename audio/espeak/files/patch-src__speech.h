@@ -1,6 +1,6 @@
---- src/speech.h	Fri Jan 26 10:11:59 2007
-+++ src/speech.h.port	Sat Jan 27 00:46:28 2007
-@@ -34,7 +34,7 @@
+--- ./src/speech.h.orig	2011-03-15 15:01:33.000000000 +0100
++++ ./src/speech.h	2011-03-18 10:12:28.000000000 +0100
+@@ -57,7 +57,7 @@
  
  // will look for espeak_data directory here, and also in user's home directory
  #ifndef PATH_ESPEAK_DATA
