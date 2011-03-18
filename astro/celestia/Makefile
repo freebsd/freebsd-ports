@@ -15,6 +15,8 @@ PKGNAMESUFFIX=	-${CELESTIA_UI}
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Scriptable space flight simulator for X
 
+LICENSE=	GPLv2
+
 LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg \
 		png.6:${PORTSDIR}/graphics/png
 
@@ -83,12 +85,8 @@ PLIST_SUB+=	KDE="@comment "
 
 PORTDOCS=	AUTHORS ChangeLog README
 
-DESKTOP_ENTRIES="Celestia" \
-		"Explore space" \
-		"celestia.png" \
-		"celestia" \
-		"Application;Astronomy;Education;Science;" \
-		${STARTUP_NOTIFY}
+DESKTOP_ENTRIES="Celestia" "Explore space" "celestia.png" "celestia" \
+		"Application;Astronomy;Education;Science;" ${STARTUP_NOTIFY}
 
 # Lua support should be optional, but the build fails without it
 USE_LUA=	5.0+
@@ -99,8 +97,8 @@ pre-patch:
 .for o in O2 ffast-math fexpensive-optimizations fomit-frame-pointer
 	@${REINPLACE_CMD} -e 's|-${o}||g' ${WRKSRC}/configure
 .endfor
-# Inhibit installation of copies of GPL (lots of them!) and remove bogus
-# argument from mv(1)
+# Inhibit installation of copies of GPL (lots of them; use LICENSE framework
+# instead) and remove bogus argument from mv(1)
 	@${REINPLACE_CMD} -e 's|COPYING||g ; s| -b|| ' ${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -e 's|=.*COPYING_\*)|=| ; \
 		/KDE_DIST/s|COPYING_[^ ]* ||g' ${WRKSRC}/locale/Makefile.in
