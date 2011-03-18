@@ -9,12 +9,12 @@ you update your ports collection, before attempting any port upgrades.
   AFFECTS: users of www/node and www/node-devel
   AUTHOR: araujo@FreeBSD.org
 
-  The port www/node was merged with www/node-devel since there is no more a
-  development version. Also www/node doesn't has followed the stable updstream
-  before this update.
+  The port www/node was merged with www/node-devel since there is no longer a
+  development version. Also www/node has not followed the stable upstream
+  prior to this update.
 
-  To keep www/node updated in your applications, you must use from now on
-  www/node instead www/node-devel, if you have been using the www/node-devel,
+  To keep www/node updated in your applications, from now on you must use
+  www/node instead of www/node-devel. If you have been using the www/node-devel,
   you must run one of the following commands to upgrade:
 
   # portmaster -o www/node www/node-devel
