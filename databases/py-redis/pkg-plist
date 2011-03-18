@@ -1,0 +1,13 @@
+%%PYTHON_SITELIBDIR%%/redis/__init__.py
+%%PYTHON_SITELIBDIR%%/redis/__init__.pyc
+%%PYTHON_SITELIBDIR%%/redis/__init__.pyo
+%%PYTHON_SITELIBDIR%%/redis/client.py
+%%PYTHON_SITELIBDIR%%/redis/client.pyc
+%%PYTHON_SITELIBDIR%%/redis/client.pyo
+%%PYTHON_SITELIBDIR%%/redis/connection.py
+%%PYTHON_SITELIBDIR%%/redis/connection.pyc
+%%PYTHON_SITELIBDIR%%/redis/connection.pyo
+%%PYTHON_SITELIBDIR%%/redis/exceptions.py
+%%PYTHON_SITELIBDIR%%/redis/exceptions.pyc
+%%PYTHON_SITELIBDIR%%/redis/exceptions.pyo
+@dirrm %%PYTHON_SITELIBDIR%%/redis
