@@ -8,7 +8,7 @@
 PORTNAME=	pkg_add_it
 PORTVERSION=	1.3.2
 CATEGORIES=	ports-mgmt
-MASTER_SITES=	http://www.unix-heaven.org/ports-mgmt/
+MASTER_SITES=	http://www.unix-heaven.org/FreeBSD/distfiles/
 
 MAINTAINER=	dnaeon@gmail.com
 COMMENT=	Interactive tool for package installation
