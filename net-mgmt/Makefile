@@ -193,6 +193,7 @@
     SUBDIR += p5-NSNMP
     SUBDIR += p5-Nagios-Object
     SUBDIR += p5-Nagios-Plugin
+    SUBDIR += p5-Nagios-Plugin-LDAP
     SUBDIR += p5-Nagios-Plugins-Memcached
     SUBDIR += p5-Net-ACL
     SUBDIR += p5-Net-Abuse-Utils

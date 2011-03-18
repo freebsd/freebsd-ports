@@ -1,0 +1,107 @@
+--- lib/Nagios/Plugin/LDAP.pm   2010-12-10 15:57:47.000000000 +0000
++++ lib/Nagios/Plugin/LDAP.pm   2010-12-10 15:58:13.000000000 +0000
+@@ -266,44 +266,67 @@
+     $self->_ldap_do_search($dst_ldap, '(&(objectClass=*)(contextCSN=*))', 'contextCSN')
+     or return;
+ 
+-  my $src_csn = $src_entry->get_value('contextCSN');
+-  my $dst_csn = $dst_entry->get_value('contextCSN');
++  foreach my $src_current_csn (@{$src_entry->{'asn'}->{'attributes'}->[0]->{'vals'}}) {      
++      my @csn=split('#',$src_current_csn);
++      my $src_server_id=$csn[2];      
++      
++      my $dst_current_csn;
++      my $dst_server_id;
++     foreach my $dst_temp_csn (@{$dst_entry->{'asn'}->{'attributes'}->[0]->{'vals'}}) {      
++        my @temp_csn=split('#',$dst_temp_csn);
++        $dst_server_id=$temp_csn[2];     
++        if ($dst_server_id eq $src_server_id){
++            $dst_current_csn=$dst_temp_csn;
++            last;
++        }
++     }
++
++      print "Host csn id: $src_server_id \n"  if $verbose;
++      print "Master csn id: $dst_server_id \n"  if $verbose;
++      print "Host csn: $src_current_csn \n"  if $verbose;      
++      print "Master csn: $dst_current_csn \n"  if $verbose;
++
++      my $src_csn = $src_current_csn;
++      my $dst_csn = $dst_current_csn;
++
++      print "Master CSN = $src_csn\n" if $verbose;
++      print "Slave  CSN = $dst_csn\n" if $verbose;
++
++      my ($YYYY, $MM, $DD, $hh, $mm, $ss);
++      ($YYYY, $MM, $DD, $hh, $mm, $ss) = $src_csn =~ /^(\d{4})(\d\d)(\d\d)(\d\d)(\d\d)(\d\d)/;
++      my $src_dt = DateTime->new(
++        year   => $YYYY,
++        month  => $MM,
++        day    => $DD,
++        hour   => $hh,
++        minute => $mm,
++        second => $ss
++      );
++      ($YYYY, $MM, $DD, $hh, $mm, $ss) = $dst_csn =~ /^(\d{4})(\d\d)(\d\d)(\d\d)(\d\d)(\d\d)/;
++      my $dst_dt = DateTime->new(
++        year   => $YYYY,
++        month  => $MM,
++        day    => $DD,
++        hour   => $hh,
++        minute => $mm,
++        second => $ss
++      );
++
++      my $delta = abs($src_dt->epoch - $dst_dt->epoch);
++
++      $self->add_message(
++        $self->check_threshold(check => $delta, warning => $warning, critical => $critical),
++        sprintf("csn id %s: %d seconds replication delta", $src_server_id,$delta));
++
++      $self->add_perfdata(
++        label     => "repl$src_server_id",
++        value     => $delta,
++        uom       => 's',
++        threshold => $self->threshold
++      );
+ 
+-  print "Master CSN = $src_csn\n" if $verbose;
+-  print "Slave  CSN = $dst_csn\n" if $verbose;
+-
+-  my ($YYYY, $MM, $DD, $hh, $mm, $ss);
+-  ($YYYY, $MM, $DD, $hh, $mm, $ss) = $src_csn =~ /^(\d{4})(\d\d)(\d\d)(\d\d)(\d\d)(\d\d)/;
+-  my $src_dt = DateTime->new(
+-    year   => $YYYY,
+-    month  => $MM,
+-    day    => $DD,
+-    hour   => $hh,
+-    minute => $mm,
+-    second => $ss
+-  );
+-  ($YYYY, $MM, $DD, $hh, $mm, $ss) = $dst_csn =~ /^(\d{4})(\d\d)(\d\d)(\d\d)(\d\d)(\d\d)/;
+-  my $dst_dt = DateTime->new(
+-    year   => $YYYY,
+-    month  => $MM,
+-    day    => $DD,
+-    hour   => $hh,
+-    minute => $mm,
+-    second => $ss
+-  );
+-
+-  my $delta = abs($src_dt->epoch - $dst_dt->epoch);
+-
+-  $self->add_message(
+-    $self->check_threshold(check => $delta, warning => $warning, critical => $critical),
+-    sprintf("%d seconds replication delta", $delta));
+-
+-  $self->add_perfdata(
+-    label     => 'repl',
+-    value     => $delta,
+-    uom       => 's',
+-    threshold => $self->threshold
+-  );
++      print "\n"  if $verbose;
++  }
+ 
+ }
+
