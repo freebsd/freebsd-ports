@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Net-EPP
-PORTVERSION=	0.15
+PORTVERSION=	0.16
 CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -21,7 +21,8 @@ RUN_DEPENDS+=	${SITE_PERL}/IO/Socket/SSL.pm:${PORTSDIR}/security/p5-IO-Socket-SS
 		${SITE_PERL}/${PERL_ARCH}/XML/LibXML.pm:${PORTSDIR}/textproc/p5-XML-LibXML \
 		p5-Digest-SHA1>=2.12:${PORTSDIR}/security/p5-Digest-SHA1
 
-MAN3=	Net::EPP::Client.3 \
+MAN3=	Net::EPP.3 \
+	Net::EPP::Client.3 \
 	Net::EPP::Frame.3 \
 	Net::EPP::Frame::Command::Create::Domain.3 \
 	Net::EPP::Protocol.3 \
@@ -33,11 +34,13 @@ MAN3=	Net::EPP::Client.3 \
 	Net::EPP::Frame::Command::Check::Domain.3 \
 	Net::EPP::Frame::Command::Check::Host.3 \
 	Net::EPP::Frame::Command::Create.3 \
+	Net::EPP::Frame::Command::Create::Host.3 \
 	Net::EPP::Frame::Command::Create::Contact.3 \
 	Net::EPP::Frame::Command::Delete.3 \
 	Net::EPP::Frame::Command::Delete::Contact.3 \
 	Net::EPP::Frame::Command::Delete::Domain.3 \
 	Net::EPP::Frame::Command::Delete::Host.3 \
+	Net::EPP::Frame::Command::Renew::Domain.3 \
 	Net::EPP::Frame::Command::Info.3 \
 	Net::EPP::Frame::Command::Info::Contact.3 \
 	Net::EPP::Frame::Command::Info::Domain.3 \
