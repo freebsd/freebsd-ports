@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	Net-Jifty
-PORTVERSION=	0.12
-PORTREVISION=	1
+PORTVERSION=	0.14
 CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -23,7 +22,7 @@ RUN_DEPENDS=	p5-libwww>=0:${PORTSDIR}/www/p5-libwww \
 		${SITE_PERL}/Email/Address.pm:${PORTSDIR}/mail/p5-Email-Address \
 		${SITE_PERL}/Hash/Merge.pm:${PORTSDIR}/textproc/p5-Hash-Merge \
 		${SITE_PERL}/Path/Class.pm:${PORTSDIR}/devel/p5-Path-Class \
-		${SITE_PERL}/${PERL_ARCH}/Moose.pm:${PORTSDIR}/devel/p5-Moose
+		${SITE_PERL}/Any/Moose.pm:${PORTSDIR}/devel/p5-Any-Moose
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
