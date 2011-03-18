@@ -6,40 +6,77 @@
 #
 
 PORTNAME=	tesseract
-DISTVERSION=	2.04
-PORTREVISION=	1
+PORTVERSION=	3.00
 CATEGORIES=	graphics
-MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE} CENKES
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${LANGFILES}
+MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
+		${TESSERACT_LANGS:O:u:S|$|.traineddata.gz|}
+EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	bf@FreeBSD.org
 COMMENT=	Commercial quality open source OCR engine
 
 LIB_DEPENDS=	tiff.4:${PORTSDIR}/graphics/tiff
 
+DIST_SUBDIR=	${PORTNAME}
 PROJECTHOST=	tesseract-ocr
-LANGS2_00?=	deu eng fra ita nld spa
-LANGS2_01?=	deu-f por vie
-LANGS2_04?=	eus
-
-.for _N in 2_00 2_01 2_04
-LANGFILES+=	${LANGS${_N}:S|^|${PORTNAME}-${_N:S|_|.|}.|:S|$|${EXTRACT_SUFX}|}
-.endfor
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	LIBTIFF_CFLAGS="-I${LOCALBASE}/include"\
 		LIBTIFF_LIBS="-L${LOCALBASE}/lib -ltiff"
+LICENSE=	ASL
+USE_LDCONFIG=	yes
+
+OPTIONS=	EXTRA_LANGUAGES "Install additional language data" Off
+
+.include <bsd.port.pre.mk>
+
+TESSERACT_XTERM ?=	${LOCALBASE}/bin/xterm
+
+.if defined(WITH_EXTRA_LANGUAGES) || make(makesum)
+TESSERACT_LANGS ?=	bul chi_tra chi_sim cat ces dan dan-frak deu deu-frak ell eng \
+		fin fra hun ind ita jpn kor lav lit nld nor pol por ron rus slk \
+		slv spa srp swe swe-frak tgl tur ukr vie
+.else
+TESSERACT_LANGS ?=	eng
+.endif
+
+.ifndef NOPORTDATA
+DATADIR=	${PREFIX}/share/tessdata
+PORTDATA=	${TESSERACT_LANGS:O:u:S|$|.traineddata|}
+.endif
+
+.ifndef NOPORTDOCS
 PORTDOCS=	AUTHORS ChangeLog NEWS README ReleaseNotes
+.endif
+
+.ifndef NOPORTEXAMPLES
 PORTEXAMPLES=	eurotext.tif phototest.tif
+.endif
+
+pre-fetch:
+	@${ECHO_MSG} ""
+	@${ECHO_MSG} "The choice of language data to be installed, and the fallback"
+	@${ECHO_MSG} "xterm-compatible terminal to be used for debugging purposes,"
+	@${ECHO_MSG} "may be overridden by defining TESSERACT_LANGS and "
+	@${ECHO_MSG} "TESSERACT_XTERM, respectively."
+	@${ECHO_MSG} ""
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|/usr/bin/X11/xterm|${LOCALBASE}/bin/xterm|'\
+	@${REINPLACE_CMD} -e 's|/usr/bin/xterm|${TESSERACT_XTERM}|'\
 		${WRKSRC}/ccutil/debugwin.cpp
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|'\
 		${WRKSRC}/configure
 
 post-install:
-	@cd ${WRKDIR}/tessdata/&&${COPYTREE_SHARE} . ${PREFIX}/share/tessdata/
+.ifndef NOPORTDATA
+	@${INSTALL} -d ${DATADIR}/
+.for datafile in ${PORTDATA}
+	@${GUNZIP_CMD} -c ${_DISTDIR}/${datafile}.gz > ${DATADIR}/${datafile}
+	@${CHOWN} ${SHAREOWN}:${SHAREGRP} ${DATADIR}/${datafile}
+	@${CHMOD} ${SHAREMODE} ${DATADIR}/${datafile}
+.endfor
+.endif
 .ifndef NOPORTDOCS
 	@${INSTALL} -d ${DOCSDIR}/
 	@cd ${WRKSRC}/&&${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}/
@@ -48,5 +85,8 @@ post-install:
 	@${INSTALL} -d ${EXAMPLESDIR}/
 	@cd ${WRKSRC}/&&${INSTALL_DATA} ${PORTEXAMPLES} ${EXAMPLESDIR}/
 .endif
+	@${ECHO_MSG} ""
+	@${CAT} ${PKGMESSAGE}
+	@${ECHO_MSG} ""
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
