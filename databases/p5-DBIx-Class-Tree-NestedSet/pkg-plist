@@ -1,0 +1,5 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx/Class/Tree/NestedSet/.packlist
+%%SITE_PERL%%/DBIx/Class/Tree/NestedSet.pm
+@dirrm %%SITE_PERL%%/DBIx/Class/Tree
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx/Class/Tree/NestedSet
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx/Class/Tree
