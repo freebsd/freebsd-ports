@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	Tatsumaki
-PORTVERSION=	0.1011
+PORTVERSION=	0.1012
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	../../authors/id/M/MI/MIYAGAWA
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	gslin@gslin.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Non-blocking web framework based on Plack and AnyEvent
 
 RUN_DEPENDS=	p5-Any-Moose>=0:${PORTSDIR}/devel/p5-Any-Moose \
