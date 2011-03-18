@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	Net-Riak
-PORTVERSION=	0.11
+PORTVERSION=	0.14
 CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	gslin@gslin.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Interface to Riak
 
 RUN_DEPENDS=	p5-JSON>0:${PORTSDIR}/converters/p5-JSON \
