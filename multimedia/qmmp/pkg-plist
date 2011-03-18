@@ -1,0 +1,115 @@
+bin/qmmp
+libexec/qmmp
+include/qmmp/abstractengine.h
+include/qmmp/audioparameters.h
+include/qmmp/buffer.h
+include/qmmp/decoder.h
+include/qmmp/decoderfactory.h
+include/qmmp/effect.h
+include/qmmp/effectfactory.h
+include/qmmp/enginefactory.h
+include/qmmp/fileinfo.h
+include/qmmp/inputsource.h
+include/qmmp/inputsourcefactory.h
+include/qmmp/metadatamanager.h
+include/qmmp/metadatamodel.h
+include/qmmp/output.h
+include/qmmp/outputfactory.h
+include/qmmp/qmmp.h
+include/qmmp/qmmpsettings.h
+include/qmmp/recycler.h
+include/qmmp/soundcore.h
+include/qmmp/statehandler.h
+include/qmmp/tagmodel.h
+include/qmmp/visual.h
+include/qmmp/visualfactory.h
+include/qmmp/volumecontrol.h
+include/qmmpui/abstractplaylistitem.h
+include/qmmpui/commandlinemanager.h
+include/qmmpui/commandlineoption.h
+include/qmmpui/detailsdialog.h
+include/qmmpui/filedialog.h
+include/qmmpui/filedialogfactory.h
+include/qmmpui/general.h
+include/qmmpui/generalfactory.h
+include/qmmpui/generalhandler.h
+include/qmmpui/mediaplayer.h
+include/qmmpui/metadataformatter.h
+include/qmmpui/playlistformat.h
+include/qmmpui/playlistitem.h
+include/qmmpui/playlistmanager.h
+include/qmmpui/playlistmodel.h
+include/qmmpui/playlistparser.h
+include/qmmpui/templateeditor.h
+lib/libqmmp.so
+lib/libqmmp.so.0
+lib/libqmmp.so.0.4
+lib/libqmmp.so.0.4.5
+lib/libqmmpui.so
+lib/libqmmpui.so.0
+lib/libqmmpui.so.0.4
+lib/libqmmpui.so.0.4.5
+lib/qmmp/CommandLineOptions/libincdecvolumeoption.so
+lib/qmmp/CommandLineOptions/libseekoption.so
+%%LADSPA%%lib/qmmp/Effect/libladspa.so
+%%BS2B%%lib/qmmp/Effect/libbs2b.so
+lib/qmmp/Effect/libsrconverter.so
+lib/qmmp/FileDialogs/libqmmpfiledialog.so
+lib/qmmp/General/libcovermanager.so
+lib/qmmp/General/libfileops.so
+lib/qmmp/General/libhal.so
+lib/qmmp/General/libhotkey.so
+lib/qmmp/General/libkdenotify.so
+lib/qmmp/General/liblyrics.so
+lib/qmmp/General/libmpris.so
+lib/qmmp/General/libnotifier.so
+lib/qmmp/General/libscrobbler.so
+lib/qmmp/General/libstatusicon.so
+%%FAAD%%lib/qmmp/Input/libaac.so
+%%CDIO%%lib/qmmp/Input/libcdaudio.so
+lib/qmmp/Input/libcue.so
+%%FFMPEG%%lib/qmmp/Input/libffmpeg.so
+%%FLAC%%lib/qmmp/Input/libflac.so
+lib/qmmp/Input/libmad.so
+%%MODPLUG%%lib/qmmp/Input/libmodplug.so
+%%MUSEPACK%%lib/qmmp/Input/libmpc.so
+%%MPLAYER%%lib/qmmp/Input/libmplayer.so
+lib/qmmp/Input/libsndfile.so
+lib/qmmp/Input/libvorbis.so
+lib/qmmp/Input/libwavpack.so
+%%JACK%%lib/qmmp/Output/libjack.so
+%%ALSA%%lib/qmmp/Output/libalsa.so
+lib/qmmp/Output/libnull.so
+lib/qmmp/Output/liboss.so
+%%PULSE_AUDIO%%lib/qmmp/Output/libpulseaudio.so
+lib/qmmp/PlaylistFormats/libm3uplaylistformat.so
+lib/qmmp/PlaylistFormats/libplsplaylistformat.so
+lib/qmmp/PlaylistFormats/libxspfplaylistformat.so
+lib/qmmp/Transports/libhttp.so
+lib/qmmp/Transports/libmms.so
+lib/qmmp/Visual/libanalyzer.so
+%%PROJECTM%%lib/qmmp/Visual/libprojectm.so
+share/applications/qmmp.desktop
+share/applications/qmmp_enqueue.desktop
+share/applications/qmmp_cue.desktop
+share/icons/hicolor/16x16/apps/qmmp.png
+share/icons/hicolor/32x32/apps/qmmp.png
+share/icons/hicolor/48x48/apps/qmmp.png
+@dirrmtry share/icons/hicolor/48x48/apps
+@dirrmtry share/icons/hicolor/48x48
+@dirrmtry share/icons/hicolor/32x32/apps
+@dirrmtry share/icons/hicolor/32x32
+@dirrmtry share/icons/hicolor/16x16/apps
+@dirrmtry share/icons/hicolor/16x16
+@dirrm include/qmmp
+@dirrm include/qmmpui
+@dirrm lib/qmmp/CommandLineOptions
+@dirrm lib/qmmp/Effect
+@dirrm lib/qmmp/FileDialogs
+@dirrm lib/qmmp/General
+@dirrm lib/qmmp/Input
+@dirrm lib/qmmp/Output
+@dirrm lib/qmmp/PlaylistFormats
+@dirrm lib/qmmp/Transports
+@dirrm lib/qmmp/Visual
+@dirrm lib/qmmp

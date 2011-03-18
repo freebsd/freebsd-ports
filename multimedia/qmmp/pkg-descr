@@ -1,0 +1,18 @@
+This program is an audio-player, written with help of Qt library.
+Its user interface is similar to winamp or xmms.
+
+features:
+	Last.fm scrobbler, D-Bus, Spectrum Analyzer, sample rate conversion,
+	streaming (MP3, Vorbis via IceCast/ShoutCast), projectm visualization,
+	device detection, MPRIS, global hotkey, video playback using Mplayer,
+	Bauer Stereophonic-to-Binaural DSP, projectM audio visulaliser,
+	lyrics (from LyricWiki.orig), and all skins for winamp and/or xmms
+input plugins:
+	MPEG1 layer 1/2/3, Ogg Vorbis, native FLAC, Musepack, WavePack,
+	ModPlug, WMA (and other formats provided by FFmpeg library), PCM WAVE,
+	AAC, CD audio and CUE (including flac, WavPack embeded cue)
+output plugins:
+	PulseAudio, OSS and Jack
+
+WWW: http://qmmp.ylsoftware.com/
+or http://code.google.com/p/qmmp/

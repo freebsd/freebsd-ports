@@ -273,6 +273,7 @@
     SUBDIR += py-qt4-phonon
     SUBDIR += pyjama
     SUBDIR += qdvdauthor
+    SUBDIR += qmmp
     SUBDIR += qt-faststart
     SUBDIR += qt4-multimedia
     SUBDIR += qt4-phonon
