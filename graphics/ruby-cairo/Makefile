@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	cairo
-PORTVERSION=	1.8.1
+PORTVERSION=	1.10.0
 CATEGORIES=	graphics ruby
 MASTER_SITES=	http://cairographics.org/releases/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
@@ -16,6 +16,7 @@ DISTNAME=	r${PORTNAME}-${PORTVERSION}
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Ruby binding for Cairo
 
+BUILD_DEPENDS=	rubygem-pkg-config>=1.0.7:${PORTSDIR}/devel/rubygem-pkg-config
 LIB_DEPENDS=	cairo.2:${PORTSDIR}/graphics/cairo
 
 USE_GNOME=	pkgconfig
@@ -23,11 +24,7 @@ USE_RUBY=	yes
 USE_RUBY_EXTCONF=yes
 CONFIGURE_ARGS+=--ruby=${RUBY}
 
-DOCS=		AUTHORS COPYING ChangeLog GPL NEWS README
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|/usr/local/lib/pkgconfig|${LOCALBASE}/libdata/pkgconfig|g' \
-		${WRKSRC}/pkg-config.rb
+DOCS=		AUTHORS COPYING GPL NEWS
 
 post-install:
 .if !defined(NOPORTEXAMPLES)
