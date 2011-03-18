@@ -967,7 +967,6 @@
     SUBDIR += wordplay
     SUBDIR += worldofpadman
     SUBDIR += wormux
-    SUBDIR += wormux-devel
     SUBDIR += wrogue
     SUBDIR += wtf
     SUBDIR += xabacus
