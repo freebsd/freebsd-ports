@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	x11
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}/
 
-MAINTAINER=	miwi@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GTK+ 2.0 terminal emulator with tabs
 
 LIB_DEPENDS=	dbus-glib-1:${PORTSDIR}/devel/dbus-glib

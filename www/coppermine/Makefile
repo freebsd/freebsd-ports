@@ -11,7 +11,7 @@ CATEGORIES=	www
 MASTER_SITES=	SF/${PORTNAME}/Coppermine/${PORTVERSION}%20%28stable%29/
 DISTNAME=	cpg${PORTVERSION}
 
-MAINTAINER=	miwi@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A web picture gallery script
 
 USE_PHP=	mysql pcre
