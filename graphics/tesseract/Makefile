@@ -7,10 +7,10 @@
 
 PORTNAME=	tesseract
 PORTVERSION=	3.00
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
-		${TESSERACT_LANGS:O:u:S|$|.traineddata.gz|}
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} eng.traineddata.gz
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	bf@FreeBSD.org
@@ -27,23 +27,13 @@ CONFIGURE_ENV=	LIBTIFF_CFLAGS="-I${LOCALBASE}/include"\
 LICENSE=	ASL
 USE_LDCONFIG=	yes
 
-OPTIONS=	EXTRA_LANGUAGES "Install additional language data" Off
-
 .include <bsd.port.pre.mk>
 
 TESSERACT_XTERM ?=	${LOCALBASE}/bin/xterm
 
-.if defined(WITH_EXTRA_LANGUAGES) || make(makesum)
-TESSERACT_LANGS ?=	bul chi_tra chi_sim cat ces dan dan-frak deu deu-frak ell eng \
-		fin fra hun ind ita jpn kor lav lit nld nor pol por ron rus slk \
-		slv spa srp swe swe-frak tgl tur ukr vie
-.else
-TESSERACT_LANGS ?=	eng
-.endif
-
 .ifndef NOPORTDATA
 DATADIR=	${PREFIX}/share/tessdata
-PORTDATA=	${TESSERACT_LANGS:O:u:S|$|.traineddata|}
+PORTDATA=	eng.traineddata
 .endif
 
 .ifndef NOPORTDOCS
@@ -56,10 +46,9 @@ PORTEXAMPLES=	eurotext.tif phototest.tif
 
 pre-fetch:
 	@${ECHO_MSG} ""
-	@${ECHO_MSG} "The choice of language data to be installed, and the fallback"
-	@${ECHO_MSG} "xterm-compatible terminal to be used for debugging purposes,"
-	@${ECHO_MSG} "may be overridden by defining TESSERACT_LANGS and "
-	@${ECHO_MSG} "TESSERACT_XTERM, respectively."
+	@${ECHO_MSG} "The fallback xterm-compatible terminal to be used"
+	@${ECHO_MSG} "for debugging purposes may be overridden by"
+	@${ECHO_MSG} "defining TESSERACT_XTERM"
 	@${ECHO_MSG} ""
 
 post-patch:
