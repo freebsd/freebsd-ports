@@ -15,6 +15,8 @@ COMMENT=	A computer role-playing game engine
 
 LIB_DEPENDS=	png.6:${PORTSDIR}/graphics/png
 
+BROKEN=		does not configure
+
 USE_SDL=	sdl image
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
