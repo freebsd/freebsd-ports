@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	lyx
-PORTVERSION=	${MAJOR_VERSION}.${MINOR_VERSION}.b4
+DISTVERSION=	${MAJOR_VERSION}.${MINOR_VERSION}.rc1
 CATEGORIES=	print editors
 MASTER_SITES=	ftp://ftp.lyx.org/pub/lyx/devel/${PORTNAME}-${MAJOR_VERSION}/${PRERELEASE}/ \
 		http://www-ftp.lip6.fr/ftp/pub/lyx/devel/${PORTNAME}-${MAJOR_VERSION}/${PRERELEASE}/ \
@@ -24,7 +24,7 @@ LIB_DEPENDS=	boost_regex.4:${PORTSDIR}/devel/boost-libs
 
 MAJOR_VERSION=	2.0
 MINOR_VERSION=	0
-PRERELEASE=	beta4
+PRERELEASE=	rc1
 
 LICENSE=	GPLv2
 CONFLICTS=	lyx-1.[0-9]*
