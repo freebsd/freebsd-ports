@@ -367,7 +367,8 @@ libidea-*		security/libidea	Crypto; export-controlled
 libots-*.alpha.rpm	lang/compaq-cc		Distribution not allowed
 Linux_MegaCli_*		sysutils/linux-megacli	Redistribution not allowed
 2*Linux_CLI*        sysutils/linux-megacli2 Redistribution not allowed
-*_FreeBSD_MegaCLI.zip   sysutils/megacli    May not be distrubuted in binary form
+*_FreeBSD_MegaCLI.zip	sysutils/megacli	Reproduction or redistribution
+						prohibited
 rpm/i386/fedora/4/gtk2-* x11-toolkits/linux-gtk2 LGPL binary, no source
 linuxq3ademo-*		games/linux-quake3-demo	Restrictive license by Loki
 						Software
