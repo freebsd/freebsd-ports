@@ -15,6 +15,8 @@ DISTNAME=	${PORTNAME}-v${PORTVERSION}
 MAINTAINER=	linpct@gmail.com
 COMMENT=	V8 javascript for client and server
 
+IGNORE=	is currently suspended, install www/node that is the current stable version
+
 LIB_DEPENDS=	execinfo.1:${PORTSDIR}/devel/libexecinfo
 
 MAN1=		node.1
