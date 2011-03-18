@@ -871,6 +871,7 @@
     SUBDIR += rubygem-imagesize
     SUBDIR += rubygem-image_science
     SUBDIR += rubygem-objectdetect
+    SUBDIR += rubygem-opengl
     SUBDIR += rubygem-railroad
     SUBDIR += rubygem-scruffy
     SUBDIR += rubygem-turing
