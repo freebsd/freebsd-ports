@@ -1,5 +1,5 @@
---- ./configure.in.orig	2010-07-11 22:10:12.000000000 +0100
-+++ ./configure.in	2010-07-11 22:10:49.000000000 +0100
+--- configure.in.orig	2010-08-18 15:41:30.584845747 +0300
++++ configure.in	2010-08-18 15:42:51.184443581 +0300
 @@ -1,7 +1,7 @@
  AC_PREREQ(2.50)
  AC_INIT(FAAC, 1.28, faac-dev@lists.sourceforge.net)
@@ -9,7 +9,12 @@
  
  AM_CONFIG_HEADER(config.h)
  
-@@ -32,10 +32,11 @@
+@@ -28,14 +28,17 @@ AC_CHECK_DECL(strcasecmp, MY_DEFINE(HAVE
+ AC_CHECK_LIB(gnugetopt, getopt_long)
+ 
+ AM_CONDITIONAL(WITH_MP4V2, false)
++AM_CONDITIONAL(WITH_EXT_MP4V2, false)
+ 
  AC_CHECK_DECLS([MP4Create, MP4MetadataDelete],
                 AC_CHECK_LIB(mp4v2, MP4MetadataDelete, external_mp4v2=yes,
                              external_mp4v2=no, -lstdc++),
@@ -18,6 +23,7 @@
  
  if test x$external_mp4v2 = xyes; then
    AC_MSG_NOTICE([*** Building with external mp4v2 ***])
++  AM_CONDITIONAL(WITH_EXT_MP4V2, true)
 +  MY_DEFINE(HAVE_LIBMP4V2)
  else
    if test x$WITHMP4V2 = xyes; then

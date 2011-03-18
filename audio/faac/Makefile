@@ -25,10 +25,9 @@ MAKE_JOBS_SAFE=	yes
 USE_AUTOTOOLS=	aclocal autoheader automake autoconf libtool
 ACLOCAL_ARGS=	-I . -I ${LOCALBASE}/share/aclocal
 AUTOMAKE_ARGS=	--add-missing
-CONFIGURE_ARGS= --with-mp4v2
+CONFIGURE_ARGS=	--with-mp4v2
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib" \
-		LIBS="-lmp4v2"
+		LDFLAGS="-L${LOCALBASE}/lib"
 USE_LDCONFIG=	yes
 
 MAN1=		faac.1
