@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	RTF-Tokenizer
-PORTVERSION=	1.10
+PORTVERSION=	1.13
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -18,7 +18,7 @@ PERL_CONFIGURE=	yes
 
 MAN3=	RTF::Tokenizer.3
 
-post-patch:
-	@${FIND} ${WRKSRC} -name ._Tokenizer.pm -delete
+#post-patch:
+#	@${FIND} ${WRKSRC} -name ._Tokenizer.pm -delete
 
 .include <bsd.port.mk>
