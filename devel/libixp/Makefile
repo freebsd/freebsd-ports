@@ -10,7 +10,7 @@ PORTVERSION=	0.5
 CATEGORIES=	devel
 MASTER_SITES=	http://dl.suckless.org/libs/
 
-MAINTAINER=	sbrabez@gmail.com
+MAINTAINER=	sbz@FreeBSD.org
 COMMENT=	Standalone client/server 9P library
 
 USE_LDCONFIG=	yes

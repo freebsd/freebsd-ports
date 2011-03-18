@@ -10,7 +10,7 @@ PORTVERSION=	0.7.1
 CATEGORIES=	security net
 MASTER_SITES=	SF
 
-MAINTAINER=	sbrabez@gmail.com
+MAINTAINER=	sbz@FreeBSD.org
 COMMENT=	A simple and easy to use TCP only port scanner (Console version)
 
 GNU_CONFIGURE=	yes

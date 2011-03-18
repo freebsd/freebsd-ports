@@ -13,7 +13,7 @@ MASTER_SITES=	http://launchpadlibrarian.net/58498441/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	pyOpenSSL-${PORTVERSION}
 
-MAINTAINER=	sbrabez@gmail.com
+MAINTAINER=	sbz@FreeBSD.org
 COMMENT=	Python interface to the OpenSSL library
 
 USE_PYTHON=	yes

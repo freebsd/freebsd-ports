@@ -8,7 +8,7 @@
 PORTNAME=	sinfp
 PORTREVISION=	${DBDATE}
 
-MAINTAINER=	sbrabez@gmail.com
+MAINTAINER=	sbz@FreeBSD.org
 COMMENT=	Full operating system stack fingerprinting suite
 
 BUILD_DEPENDS=	p5-Net-SinFP>=2.02:${PORTSDIR}/security/p5-Net-SinFP

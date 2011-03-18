@@ -11,7 +11,7 @@ CATEGORIES=	net python
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	sbrabez@gmail.com
+MAINTAINER=	sbz@FreeBSD.org
 COMMENT=	Python fast, simple packet creation / parsing module
 
 USE_PYTHON=	yes

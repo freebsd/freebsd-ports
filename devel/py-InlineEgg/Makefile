@@ -11,7 +11,7 @@ CATEGORIES=	devel security python
 MASTER_SITES=	http://oss.corest.com/repo/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	sbrabez@gmail.com
+MAINTAINER=	sbz@FreeBSD.org
 COMMENT=	Python module for writing inline assembler programs
 
 USE_PYTHON=	yes

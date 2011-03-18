@@ -12,7 +12,7 @@ CATEGORIES=	security
 MASTER_SITES=	http://www.crypticide.com/users/alecm/security/
 DISTNAME=	${PORTNAME},${PORTVERSION}
 
-MAINTAINER=	sbrabez@gmail.com
+MAINTAINER=	sbz@FreeBSD.org
 COMMENT=	Password-checking library
 
 MAN3=		cracklib.3

@@ -11,7 +11,7 @@ CATEGORIES=	devel
 MASTER_SITES=	http://dl.suckless.org/tools/
 DISTNAME=	${PORTNAME}-2
 
-MAINTAINER=	sbrabez@gmail.com
+MAINTAINER=	sbz@FreeBSD.org
 COMMENT=	Port of various original plan9 tools
 
 CFLAGS+=	-I. -c

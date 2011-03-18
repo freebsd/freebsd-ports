@@ -10,7 +10,7 @@ PORTVERSION=	1.4.16
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 
-MAINTAINER=	sbrabez@gmail.com
+MAINTAINER=	sbz@FreeBSD.org
 COMMENT=	An Issue-Tracking System for Knowledge Workers
 
 USE_PYTHON=	yes

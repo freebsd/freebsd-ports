@@ -11,7 +11,7 @@ CATEGORIES=	devel sysutils
 MASTER_SITES=	http://www.muppetlabs.com/~breadbox/pub/software/
 DISTNAME=	ELFkickers-${DISTVERSION}
 
-MAINTAINER=	sbrabez@gmail.com
+MAINTAINER=	sbz@FreeBSD.org
 COMMENT=	Collection of programs to manipulate ELF files
 
 USE_GMAKE=	yes
