@@ -1,6 +1,4 @@
-MD5 (freebsd-ls.releng_4_9_0_release.tar.gz) = 3b49345d4df0baeab3a7232b94c80b01
 SHA256 (freebsd-ls.releng_4_9_0_release.tar.gz) = 9de0108d9858031914f8122aa557130e808cc6b86411ff67cb17d1c39ca0caf7
 SIZE (freebsd-ls.releng_4_9_0_release.tar.gz) = 16923
-MD5 (jls-0.5.patch.gz) = db4a516d7a2f6f8f260eb8c48adb0558
 SHA256 (jls-0.5.patch.gz) = 13d6900c92bfaf2c76ce3a92cc817316dfc4f8e4bba82169a2cd8c7ec29f5ce5
 SIZE (jls-0.5.patch.gz) = 7073

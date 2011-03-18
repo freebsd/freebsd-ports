@@ -1,6 +1,4 @@
-MD5 (texinfo-4.7.tar.gz) = 72a57e378efb9898c9e41ca839554dae
 SHA256 (texinfo-4.7.tar.gz) = d54b75b4240e63ed5e30885c048e6e932886ecc0de662a6e1e1c278a7856b3ed
 SIZE (texinfo-4.7.tar.gz) = 1979183
-MD5 (texinfo-4.7-j.diff.gz) = b50bfcadbcf80b6f5a290a3b81adcd51
 SHA256 (texinfo-4.7-j.diff.gz) = 59d3bc825f1a2013b2a4a0cc4841c2d186d1e48d0a8339774ab00c078a75aa57
 SIZE (texinfo-4.7-j.diff.gz) = 23561
