@@ -55,4 +55,10 @@ do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/thefish ${PREFIX}/bin
 	@${INSTALL_MAN} ${WRKSRC}/thefish.1 ${PREFIX}/man/man1
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 900000
+BROKEN=		does not build
+.endif
+
+.include <bsd.port.post.mk>
