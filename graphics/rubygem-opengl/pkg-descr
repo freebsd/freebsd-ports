@@ -1,0 +1,4 @@
+ruby-opengl consists of Ruby extension modules that are bindings for the
+OpenGL, GLU, and GLUT libraries.
+
+WWW:	http://ruby-opengl.rubyforge.org/
