@@ -1,0 +1,7 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx/Class/Tree/.packlist
+%%SITE_PERL%%/DBIx/Class/Tree.pm
+%%SITE_PERL%%/DBIx/Class/Tree/AdjacencyList.pm
+%%SITE_PERL%%/DBIx/Class/Tree/AdjacencyList/Ordered.pm
+@dirrm %%SITE_PERL%%/DBIx/Class/Tree/AdjacencyList
+@dirrm %%SITE_PERL%%/DBIx/Class/Tree
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx/Class/Tree

@@ -1,0 +1,11 @@
+This module provides methods for working with adjacency lists.  The
+adjacency list model is a very common way of representing a tree
+structure.  In this model each row in a table has a prent ID column
+that references the primary key of another row in the same table.
+Because of this the primary key must only be one column and is usually
+some sort of integer.  The row with a parent ID of 0 is the root node
+and is usually the parent of all other rows.  Although, there is no
+limitation in this module that would stop you from having multiple
+root nodes.
+
+WWW: http://search.cpan.org/dist/DBIx-Class-Tree/
