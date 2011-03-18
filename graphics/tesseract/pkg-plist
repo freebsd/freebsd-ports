@@ -333,6 +333,6 @@ share/tessdata/tessconfigs/msdemo
 share/tessdata/tessconfigs/nobatch
 share/tessdata/tessconfigs/segdemo
 @dirrm include/tesseract
-@dirrm share/tessdata/configs
-@dirrm share/tessdata/tessconfigs
+@dirrmtry share/tessdata/configs
+@dirrmtry share/tessdata/tessconfigs
 @dirrmtry share/tessdata
