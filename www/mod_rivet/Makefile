@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	mod_rivet
-PORTVERSION=	2.0.0
-PORTREVISION=	1
+PORTVERSION=	2.0.2
 CATEGORIES=	www tcl
 MASTER_SITES=		${MASTER_SITE_APACHE}
 MASTER_SITE_SUBDIR=	tcl/rivet
@@ -16,9 +15,10 @@ DISTNAME=		rivet-${PORTVERSION}
 MAINTAINER=	cowbert@gmail.com
 COMMENT=	Embeds a Tcl interpreter in the Apache server
 
-WRKSRC=			${WRKDIR}/rivet-${PORTVERSION}
+WRKSRC=			${WRKDIR}/libapache2-mod-rivet-${PORTVERSION}
 
 MAKE_JOBS_SAFE=	yes
+LICENSE=		ASL
 
 USE_APACHE=	2.2+
 USE_AUTOTOOLS=	automake autoconf
@@ -34,18 +34,16 @@ CONFIGURE_ARGS+=	--with-apache-version=2 \
 			--with-tcl=${TCL_LIBDIR} --with-tclsh=${TCLSH} \
 			--with-rivet-target-dir=${PREFIX}/lib/rivet
 
-pre-configure:
-	@${ECHO_MSG} "Update dist install-sh with one from automake..."
-	${CP} -f ${AUTOMAKE_DIR}/install-sh ${WRKSRC}/tclconfig/install-sh
-	cd ${WRKSRC} && ${AUTORECONF} -v
-
 post-install:
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "===================================================="
 	@${ECHO_MSG} "Remember to modify your apache configuration file
-	@${ECHO_MSG} "to load mod_rivet:"
+	@${ECHO_MSG} "to load mod_rivet and set the appropriate handlers:"
 	@${ECHO_MSG} ""
-	@${ECHO_MSG} "LoadModule mod_rivet ${APACHEMODDIR}/mod_rivet.so"
+	@${ECHO_MSG} "LoadModule rivet_module ${APACHEMODDIR}/mod_rivet.so"
+	@${ECHO_MSG} ""
+	@${ECHO_MSG} "AddType application/x-httpd-rivet .rvt"
+	@${ECHO_MSG} "AddType application/x-rivet-tcl .tcl"
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "Visit http://tcl.apache.org/rivet/ for documentation"
 	@${ECHO_MSG} ""
