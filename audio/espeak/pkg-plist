@@ -4,7 +4,7 @@ include/espeak/speak_lib.h
 lib/libespeak.a
 lib/libespeak.so
 lib/libespeak.so.1
-lib/libespeak.so.1.1.44
+lib/libespeak.so.1.1.45
 %%PORTDOCS%%%%DOCSDIR%%/add_language.html
 %%PORTDOCS%%%%DOCSDIR%%/analyse.html
 %%PORTDOCS%%%%DOCSDIR%%/commands.html
@@ -46,6 +46,8 @@ lib/libespeak.so.1.1.44
 %%DATADIR%%/espeak-data/is_dict
 %%DATADIR%%/espeak-data/it_dict
 %%DATADIR%%/espeak-data/jbo_dict
+%%DATADIR%%/espeak-data/ka_dict
+%%DATADIR%%/espeak-data/kn_dict
 %%DATADIR%%/espeak-data/ku_dict
 %%DATADIR%%/espeak-data/la_dict
 %%DATADIR%%/espeak-data/lv_dict
@@ -104,7 +106,6 @@ lib/libespeak.so.1.1.44
 %%DATADIR%%/espeak-data/voices/!v/f3
 %%DATADIR%%/espeak-data/voices/!v/f4
 %%DATADIR%%/espeak-data/voices/!v/f5
-%%DATADIR%%/espeak-data/voices/!v/fast
 %%DATADIR%%/espeak-data/voices/!v/klatt
 %%DATADIR%%/espeak-data/voices/!v/klatt2
 %%DATADIR%%/espeak-data/voices/!v/klatt3
@@ -147,6 +148,8 @@ lib/libespeak.so.1.1.44
 %%DATADIR%%/espeak-data/voices/id
 %%DATADIR%%/espeak-data/voices/is
 %%DATADIR%%/espeak-data/voices/it
+%%DATADIR%%/espeak-data/voices/ka
+%%DATADIR%%/espeak-data/voices/kn
 %%DATADIR%%/espeak-data/voices/ku
 %%DATADIR%%/espeak-data/voices/la
 %%DATADIR%%/espeak-data/voices/lv
