@@ -6,19 +6,20 @@
 #
 
 PORTNAME=	Perlanet
-PORTVERSION=	0.53
+PORTVERSION=	0.54
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	../../authors/id/D/DA/DAVECROSS
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	gslin@gslin.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	A program for creating programs that aggregate web feeds
 
 RUN_DEPENDS=	p5-CHI>=0:${PORTSDIR}/devel/p5-CHI \
 		p5-DateTime>=0:${PORTSDIR}/devel/p5-DateTime \
 		p5-HTML-Tidy>=0:${PORTSDIR}/textproc/p5-HTML-Tidy \
 		p5-HTML-Scrubber>=0:${PORTSDIR}/www/p5-HTML-Scrubber \
+		p5-IO-Compress>=0:${PORTSDIR}/archivers/p5-IO-Compress \
 		p5-Moose>=0:${PORTSDIR}/devel/p5-Moose \
 		p5-MooseX-ConfigFromFile>=0:${PORTSDIR}/devel/p5-MooseX-ConfigFromFile \
 		p5-MooseX-Traits>=0:${PORTSDIR}/devel/p5-MooseX-Traits \
