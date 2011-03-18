@@ -19,11 +19,6 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	${LOCALBASE}/include/fftw3.h:${PORTSDIR}/math/fftw3 \
 		${NONEXISTENT}:${PORTSDIR}/astro/boinc-setiathome-enhanced:patch
-# stolen and adapted from bsd.port.mk
-.if (${OSVERSION} >= 900000 && ${OSVERSION} < 900012) || ${OSVERSION} < 800505
-BUILD_DEPENDS+=       ${LOCALBASE}/bin/xz:${PORTSDIR}/archivers/xz
-.endif
-
 RUN_DEPENDS=	boinc_client:${PORTSDIR}/net/boinc-client
 LIB_DEPENDS=	fftw3f:${PORTSDIR}/math/fftw3-float
 
@@ -48,6 +43,10 @@ BOINC_HOME?=	/var/db/boinc
 #OPTIONS=	X11		"Build screensaver (requires net/boinc-client with X11)" on
 
 .include <bsd.port.pre.mk>
+# stolen and adapted from bsd.port.mk
+.if (${OSVERSION} >= 900000 && ${OSVERSION} < 900012) || ${OSVERSION} < 800505
+BUILD_DEPENDS+=       ${LOCALBASE}/bin/xz:${PORTSDIR}/archivers/xz
+.endif
 
 # TODO fix upstream
 .if defined(WITHOUT_X11)
