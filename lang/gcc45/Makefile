@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	gcc
-PORTVERSION=	4.5.3.20110310
+PORTVERSION=	4.5.3.20110317
 CATEGORIES=	lang java
 MASTER_SITES=	${MASTER_SITE_GCC}
 MASTER_SITE_SUBDIR=	snapshots/${VERSIONSTRING}
@@ -162,8 +162,10 @@ pre-configure:
 	@${RM} -f ${SRCDIR}/gcc/*/*.info*
 	@${MKDIR} ${CONFIGURE_WRKSRC}
 
+.if defined(MAINTAINER_MODE)
 full-regression-test: build
 	cd ${WRKSRC}; ${GMAKE} -sk check
+.endif
 
 post-install:
 	${RM} -f ${PREFIX}/man/man7/fsf-funding.7 \
