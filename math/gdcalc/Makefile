@@ -16,7 +16,7 @@ COMMENT=	Gnome-based scientific calculator
 
 RUN_DEPENDS=	${LOCALBASE}/bin/gunits:${PORTSDIR}/math/units
 
-USE_GNOME=	gnomelibs gnomehier libgnomeui
+USE_GNOME=	gnomehier libgnomeui
 GNU_CONFIGURE=	yes
 
 .include <bsd.port.mk>
