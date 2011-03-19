@@ -11,7 +11,7 @@ CATEGORIES=	archivers
 MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}_${DISTVERSION}_src_all
 
-MAINTAINER=	nox@FreeBSD.org
+MAINTAINER=	kubito@gmail.com
 COMMENT=	File archiver with high compression ratio
 
 OPTIONS=	MINIMAL	"Support only .7z file format" off \
