@@ -34,6 +34,44 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="14a6f516-502f-11e0-b448-bbfa2731f9c7">
+    <topic>postfix -- plaintext command injection with SMTP over TLS</topic>
+    <affects>
+      <package>
+	<name>postfix</name>
+	<name>postfix-base</name>
+	<range><ge>2.7.*,1</ge><lt>2.7.3,1</lt></range>
+	<range><ge>2.6.*,1</ge><lt>2.6.9,1</lt></range>
+	<range><ge>2.5.*,2</ge><lt>2.5.12,2</lt></range>
+	<range><ge>2.4.*,1</ge><lt>2.4.16,1</lt></range>
+      </package>
+      <package>
+	<name>postfix-current</name>
+	<name>postfix-current-base</name>
+	<range><lt>2.9.20100120,4</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Wietse Venema has discovered a software flaw that allows
+	  an attacker to inject client commands into an SMTP session
+	  during the unprotected plaintext SMTP protocol phase, such
+	  that the server will execute those commands during the SMTP-
+	  over-TLS protocol phase when all communication is supposed
+	  to be protected.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2011-0411</cvename>
+      <url>http://www.postfix.org/CVE-2011-0411.html</url>
+      <url>http://secunia.com/advisories/43646/</url>
+    </references>
+    <dates>
+      <discovery>2011-03-07</discovery>
+      <entry>2011-03-19</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="b13414c9-50ba-11e0-975a-000c29cc39d3">
     <topic>hiawatha -- integer overflow in Content-Length header parsing</topic>
     <affects>
