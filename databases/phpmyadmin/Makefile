@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	phpMyAdmin
-DISTVERSION=	3.3.9.2
+DISTVERSION=	3.3.10
 CATEGORIES=	databases www
 MASTER_SITES=	SF/${PORTNAME:L}/${PORTNAME}/${PORTVERSION}
 DISTNAME=	${PORTNAME}-${DISTVERSION}-all-languages
@@ -25,12 +25,16 @@ NO_BUILD=	yes
 USE_PHP=	ctype mysql session filter mbstring
 .endif
 
+# Note: default settings will pull in X11 client support.  If you don't
+# want this, either turn off GD in the config dialog, or else turn off
+# FONTCONFIG in the graphics/gd port options.
+
 OPTIONS=	SUPHP	 "suPHP support" off \
 		BZ2	 "bzip2 library support" on \
-		GD	 "GD library support" on \
+		GD	 "GD library support (requires X11)" on \
 		MYSQLI	 "Improved MySQL support" off \
 		OPENSSL	 "OpenSSL support" on \
-		PDF	 "PDFlib support (implies GD)" on \
+		PDF	 "PDFlib support" on \
 		ZLIB	 "ZLIB support" on \
 		MCRYPT	 "MCrypt library support" on \
 		ZIP	 "Zip compression support" on
