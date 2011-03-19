@@ -2,7 +2,6 @@ bin/audinfo
 bin/snd
 bin/snd-info
 bin/sndplay
-%%X11%%lib/X11/app-defaults/Snd.ad
 %%PORTDOCS%%%%DOCSDIR%%/HISTORY.Snd
 %%PORTDOCS%%%%DOCSDIR%%/README.Snd
 %%PORTDOCS%%%%DOCSDIR%%/extsnd.html
@@ -56,7 +55,6 @@ bin/sndplay
 %%PORTDOCS%%%%DOCSDIR%%/pix/exptenvs.png
 %%PORTDOCS%%%%DOCSDIR%%/pix/fdbk.png
 %%PORTDOCS%%%%DOCSDIR%%/pix/fejer.png
-%%PORTDOCS%%%%DOCSDIR%%/pix/fftpop.png
 %%PORTDOCS%%%%DOCSDIR%%/pix/ffts.png
 %%PORTDOCS%%%%DOCSDIR%%/pix/firmant.png
 %%PORTDOCS%%%%DOCSDIR%%/pix/fm.png
@@ -94,7 +92,6 @@ bin/sndplay
 %%PORTDOCS%%%%DOCSDIR%%/pix/fmeq31.png
 %%PORTDOCS%%%%DOCSDIR%%/pix/fmeq32.png
 %%PORTDOCS%%%%DOCSDIR%%/pix/fmeq33.png
-%%PORTDOCS%%%%DOCSDIR%%/pix/fmeq34.png
 %%PORTDOCS%%%%DOCSDIR%%/pix/fmeq35.png
 %%PORTDOCS%%%%DOCSDIR%%/pix/fmeq36.png
 %%PORTDOCS%%%%DOCSDIR%%/pix/fmeq37.png
@@ -182,7 +179,6 @@ bin/sndplay
 %%PORTDOCS%%%%DOCSDIR%%/pix/noidchoices.png
 %%PORTDOCS%%%%DOCSDIR%%/pix/ncosfm.png
 %%PORTDOCS%%%%DOCSDIR%%/pix/ncossweep.png
-%%PORTDOCS%%%%DOCSDIR%%/pix/newbuttons.png
 %%PORTDOCS%%%%DOCSDIR%%/pix/nkcos.png
 %%PORTDOCS%%%%DOCSDIR%%/pix/noid2.png
 %%PORTDOCS%%%%DOCSDIR%%/pix/noid3.png
@@ -251,7 +247,6 @@ bin/sndplay
 %%PORTDOCS%%%%DOCSDIR%%/pix/sceq27.png
 %%PORTDOCS%%%%DOCSDIR%%/pix/sceq28.png
 %%PORTDOCS%%%%DOCSDIR%%/pix/sceq29.png
-%%PORTDOCS%%%%DOCSDIR%%/pix/sceq3.png
 %%PORTDOCS%%%%DOCSDIR%%/pix/sceq30.png
 %%PORTDOCS%%%%DOCSDIR%%/pix/sceq31.png
 %%PORTDOCS%%%%DOCSDIR%%/pix/sceq32.png
@@ -262,15 +257,12 @@ bin/sndplay
 %%PORTDOCS%%%%DOCSDIR%%/pix/sceq37.png
 %%PORTDOCS%%%%DOCSDIR%%/pix/sceq38.png
 %%PORTDOCS%%%%DOCSDIR%%/pix/sceq39.png
-%%PORTDOCS%%%%DOCSDIR%%/pix/sceq4.png
 %%PORTDOCS%%%%DOCSDIR%%/pix/sceq40.png
 %%PORTDOCS%%%%DOCSDIR%%/pix/sceq41.png
 %%PORTDOCS%%%%DOCSDIR%%/pix/sceq42.png
 %%PORTDOCS%%%%DOCSDIR%%/pix/sceq43.png
 %%PORTDOCS%%%%DOCSDIR%%/pix/sceq44.png
 %%PORTDOCS%%%%DOCSDIR%%/pix/sceq45.png
-%%PORTDOCS%%%%DOCSDIR%%/pix/sceq5.png
-%%PORTDOCS%%%%DOCSDIR%%/pix/sceq6.png
 %%PORTDOCS%%%%DOCSDIR%%/pix/sceq7.png
 %%PORTDOCS%%%%DOCSDIR%%/pix/sceq8.png
 %%PORTDOCS%%%%DOCSDIR%%/pix/sceq9.png
@@ -284,7 +276,6 @@ bin/sndplay
 %%PORTDOCS%%%%DOCSDIR%%/pix/sincube.png
 %%PORTDOCS%%%%DOCSDIR%%/pix/sinesummation.png
 %%PORTDOCS%%%%DOCSDIR%%/pix/smoothsq.png
-%%PORTDOCS%%%%DOCSDIR%%/pix/snd-gtkrc.png
 %%PORTDOCS%%%%DOCSDIR%%/pix/sndcmn.png
 %%PORTDOCS%%%%DOCSDIR%%/pix/sndosc.png
 %%PORTDOCS%%%%DOCSDIR%%/pix/sos.png
@@ -310,6 +301,7 @@ bin/sndplay
 %%PORTDOCS%%%%DOCSDIR%%/pix/toc-blank.png
 %%PORTDOCS%%%%DOCSDIR%%/pix/toc-minus.png
 %%PORTDOCS%%%%DOCSDIR%%/pix/toc-plus.png
+%%PORTDOCS%%%%DOCSDIR%%/pix/toolbar.png
 %%PORTDOCS%%%%DOCSDIR%%/pix/tritri.png
 %%PORTDOCS%%%%DOCSDIR%%/pix/uppergrf.png
 %%PORTDOCS%%%%DOCSDIR%%/pix/usync.png
@@ -319,7 +311,6 @@ bin/sndplay
 %%PORTDOCS%%%%DOCSDIR%%/pix/voxspectrum.png
 %%PORTDOCS%%%%DOCSDIR%%/pix/waver.png
 %%PORTDOCS%%%%DOCSDIR%%/pix/waver2.png
-%%PORTDOCS%%%%DOCSDIR%%/pix/waveshape.png
 %%PORTDOCS%%%%DOCSDIR%%/pix/wavo.png
 %%PORTDOCS%%%%DOCSDIR%%/pix/white-noise.png
 %%PORTDOCS%%%%DOCSDIR%%/pix/wt.png
@@ -359,7 +350,6 @@ bin/sndplay
 %%PORTDOCS%%%%DOCSDIR%%/tutorial/images/jpg/4_01-snd_pan_env.jpg
 %%PORTDOCS%%%%DOCSDIR%%/xen.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/DotEmacs
-%%X11%%%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Snd.gtkrc
 %%SCHEME%%%%DATADIR%%/analog-filter.scm
 %%SCHEME%%%%DATADIR%%/animals.scm
 %%SCHEME%%%%DATADIR%%/autosave.scm
@@ -392,7 +382,6 @@ bin/sndplay
 %%SCHEME%%%%DATADIR%%/grani.scm
 %%SCHEME%%%%DATADIR%%/gtk-effects-utils.scm
 %%SCHEME%%%%DATADIR%%/gtk-effects.scm
-%%SCHEME%%%%DATADIR%%/gtk-popup.scm
 %%SCHEME%%%%DATADIR%%/hooks.scm
 %%SCHEME%%%%DATADIR%%/index.scm
 %%SCHEME%%%%DATADIR%%/jcrev.scm
@@ -415,12 +404,10 @@ bin/sndplay
 %%SCHEME%%%%DATADIR%%/nrev.scm
 %%SCHEME%%%%DATADIR%%/oscope.scm
 %%SCHEME%%%%DATADIR%%/primes.scm
-%%SCHEME%%%%DATADIR%%/panic.scm
 %%SCHEME%%%%DATADIR%%/peak-phases.scm
 %%SCHEME%%%%DATADIR%%/piano.scm
 %%SCHEME%%%%DATADIR%%/play.scm
 %%SCHEME%%%%DATADIR%%/poly.scm
-%%SCHEME%%%%DATADIR%%/popup.scm
 %%SCHEME%%%%DATADIR%%/prc95.scm
 %%SCHEME%%%%DATADIR%%/pretty-print.scm
 %%SCHEME%%%%DATADIR%%/pvoc.scm
@@ -449,13 +436,11 @@ bin/sndplay
 %%SCHEME%%%%DATADIR%%/spokenword.scm
 %%SCHEME%%%%DATADIR%%/stochastic.scm
 %%SCHEME%%%%DATADIR%%/strad.scm
-%%SCHEME%%%%DATADIR%%/toolbar.scm
 %%SCHEME%%%%DATADIR%%/tools/check-help.scm
 %%SCHEME%%%%DATADIR%%/tools/gldata.scm
 %%SCHEME%%%%DATADIR%%/tools/make-index.scm
 %%SCHEME%%%%DATADIR%%/tools/makegl.scm
 %%SCHEME%%%%DATADIR%%/tools/makexg.scm
-%%SCHEME%%%%DATADIR%%/tools/nor.scm
 %%SCHEME%%%%DATADIR%%/tools/table.scm
 %%SCHEME%%%%DATADIR%%/tools/va.scm
 %%SCHEME%%%%DATADIR%%/tools/xgdata.scm
