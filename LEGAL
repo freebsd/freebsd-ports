@@ -30,10 +30,7 @@ ventrilo_srv-*		audio/ventrilo-server	May not be redistributed.
 aacplusenc-*		audio/aacplusenc	Unclear legal status
 ac3dlx*			graphics/linux-ac3d	Commercial license, no
 						distribution
-acroread/AdobeReader_*	print/acroread7		Must fill out redistribution
-						form at
-						http://www.adobe.com/products/acrobat/distribute.html
-acroread/AdobeReader_*	japanese/acroread	Must fill out redistribution
+acroread/AdbeRdr9.*	print/acroread9		Must fill out redistribution
 						form at
 						http://www.adobe.com/products/acrobat/distribute.html
 actx-*			games/actx		Contains commercial character
@@ -54,7 +51,7 @@ ads-java-novm-*		databases/adstudio	Only free for qualified Open Source
 						usages
 annelid-*		games/annelid		Redistribution is limited
 apache_*ssl_*		www/apache13-ssl	Crypto; export-controlled
-apache_mod_smooth_streaming-*  www/mod_smooth_streaming Not for commerical use
+apache_mod_smooth_streaming-*	www/mod_smooth_streaming Not for commerical use
 apache2/mod_traf_thief-*.c www/mod_traf_thief	No license
 AquaGatekeeper*		net/AquaGatekeeper	No redistribution allowed
 armyops*-linux.run	games/linux-americasarmy Redistribution is limited
@@ -118,12 +115,11 @@ dgd/*			net/dgd			License required for commercial
 						distribution of sources and/or
 						binaries into a corporate
 						environment
-dgd/* 			net/dgd-lpmud		No monetary gain.  No point in
+dgd/*			net/dgd-lpmud		No monetary gain.  No point in
 						distributing a package, since
 						it depends on dgd, which has
 						restrictions on distribution
 						Source tarball may go on CD-ROM
-dgd/*			net/dgd-net		Same as dgd
 diablo-caffe-freebsd*-*-* java/diablo-jdk15	License does not allow
 						distribution with fee
 diablo-latte-freebsd*-*-* java/diablo-jre15	License does not allow
@@ -149,7 +145,7 @@ doomsrc.zip		games/doom		Requested by id Software
 dr_freebsd_*.zip	sysutils/megarc		Must be downloaded manually
 drweb-qmail-*.tar.gz	security/drweb-qmail	Non-commercial or evaluation use
 dsnake-*		games/dsnake		License prohibits any reselling
-eagle-*.tgz		cad/linux-eagle		Usage permitted for
+eagle-lin-*.run		cad/linux-eagle5	Usage permitted for
 						non-commercial purposes only
 eawpats*		audio/eawpats		Some of the patches are not
 						for commercial use
@@ -170,7 +166,6 @@ ezmlm-*			mail/ezmlm		No license -- see
 						http://cr.yp.to/softwarelaw.html
 ezmlm-*			mail/ezmlm-idx		No license -- see
 						http://cr.yp.to/softwarelaw.html
-f-prot-sig*		security/f-prot-sig	Free for personal use only
 f-protd			security/f-protd	60 days free of trial for
 						everybody
 f6kuzzzz.taz		databases/libudbc	Downloading and redistribution
@@ -193,8 +188,6 @@ foiltex*		textproc/foiltex	Redistribution on a
 ttf-sil-gentium_*	x11-fonts/gentium	License forbids commercial
 						distribution without permission
 fp-freebsd-ws-*		security/f-prot		Free for personal use only
-freefem++-*		math/freefem++		No resale, not for commercial
-						usage
 freefonts-*		x11-fonts/freefonts	Some of the fonts are
 						shareware.  Some are freeware.
 						Permission must be obtained
@@ -235,7 +228,6 @@ gnome2/mcitymicrogui-default* x11-themes/metacity-theme-microgui Themes may
 gnupg-*			security/gnupg		Crypto; export-controlled
 goemon.tgz		audio/timidity		Uses copyrighted patches
 gogo239b.tgz		audio/gogo		Condition is not clear
-goodway*_free.zip	games/linux-goodway	Redistribution prohibited
 GoogleEarthLinux-*	astro/google-earth	Not really sure about the
 						redistribution terms
 goPod-*			misc/*gopod		Unclear legal status in EU
@@ -289,19 +281,15 @@ iperf-*			benchmarks/iperf	Cannot charge a fee for the
 IPv6socket_scrub.tar	net/ipv6socket_scrub	Not redistributable, license
 						agreement required
 j2me_wireless_toolkit*	java/sun-wtk		No redistribution allowed
-j2sdk-*-02b-FCS-linux-*	java/linux-blackdown-jdk13 License does not allow
-						distribution with fee
 j2sdk-*-doc.zip		java/jdk13-doc		This documentation is under
 						license and export control
 j2sdk-*-doc.zip		java/jdk14-doc		This documentation is under
 						license and export control
-j2sdk-*-FCS-linux-i386*	java/linux-blackdown-jdk12 License does not allow
-						distribution with fee
 j2sdk-*-linux-i586.bin	java/linux-sun-jdk13	Redistribution of repackaged
 						binaries not permitted
 j2sdk-*-linux-i586.bin	java/linux-sun-jdk14	Redistribution of repackaged
 						binaries not permitted
-j2sdk-*-linux-i586.bin	java/linux-blackdown-jdk14 License does not allow
+j2sdk-*-linux-i586.bin	java/linux-blackdown-jdk14	License does not allow
 						distribution with fee
 j2sdk-1_3_1-src.tar.gz	java/jdk13		Redistribution of pre-compiled
 						binaries is not permitted
@@ -328,19 +316,11 @@ javax_comm-*-solsparc.*	comms/java-commapi	No commercial use
 jbootstrap-*.tar.gz	java/jbootstrap		Redistribution of pre-compiled
 						binaries is not permitted
 jce-aba-*		java/jce-aba		Crypto; export-controlled
-jdk*_ELF.*.tar.gz	java/jdk11		License does not allow
-						distribution with fee
-jdk-*-linux-i586.tar.gz	java/linux-sun-jdk12	Redistribution of repackaged
-						binaries not permitted
-jdk1_2_2-src.tar.gz	java/jdk12		Redistribution of pre-compiled
-						binaries is not permitted
 jmf-*-alljava.zip	java/jmf		Redistribution of pre-compiled
 						binaries is not permitted
 john-*			security/john		Crypto; export-controlled
 jpgraph-1.*		graphics/jpgraph	Not for commercial use
 jpgraph-2.*		graphics/jpgraph2	Not for commercial use
-jre*i_ELF.*.tar.gz	java/jre		License does not allow
-						distribution with fee
 jre-1_5*-linux-*.bin	java/linux-sun-jre15	License does not allow
 						distribution with fee
 jre-6*-linux-*.bin	java/linux-sun-jre16	License does not allow
@@ -353,7 +333,7 @@ komodo-*		editors/komodo-edit	Distribution not permitted
 KASH3-*			math/kash3		Not for commercial distribution
 						or use
 KDE/ICONS-*		x11-themes/kde-icons-*	Unclear about licensing status
-ksh93*/*		shells/ksh93*		Must acknowledge license
+ksh93/*			shells/ksh93		Must acknowledge license
 kzip-*			archivers/kzip		No redistribution allowed
 ladder.tar		games/ladder		Possible copyright problems
 lame*			audio/lame		May be patented
@@ -366,7 +346,6 @@ ecw_jpeg_2000_*.zip	graphics/libecwj2	Must be downloaded manually from Ermapper 
 libidea-*		security/libidea	Crypto; export-controlled
 libots-*.alpha.rpm	lang/compaq-cc		Distribution not allowed
 Linux_MegaCli_*		sysutils/linux-megacli	Redistribution not allowed
-2*Linux_CLI*        sysutils/linux-megacli2 Redistribution not allowed
 *_FreeBSD_MegaCLI.zip	sysutils/megacli	Reproduction or redistribution
 						prohibited
 rpm/i386/fedora/4/gtk2-* x11-toolkits/linux-gtk2 LGPL binary, no source
@@ -383,8 +362,6 @@ l_fc_p*_*.*.*.tar.gz	lang/ifc		No redistribution allowed
 macopix-*.tar.gz	games/macopix		Contains commercial character
 						data
 MB339-PAN.zip		games/flightgear-mb339-pan Redistribution prohibited
-mbrola-freebsd/*	audio/mbrola		No commercial, military use;
-						voices cannot be sold
 mew-*.tar.gz		mail/mew		ITAR export-controlled (hooks
 						to pgp)
 mikachan-ttfonts/ver*.*	japanese/mikachan-ttfonts Do not sell distfile
@@ -401,9 +378,6 @@ mmv_*			misc/mmv		Restrictive/unclear copyright
 molden*			biology/molden		Free for academic, non-profit
 						usage; do not redistribute
 						source and executable
-motoya/*		japanese/motoya-ttfonts	Personal use only and some
-						limitation
-moviedb/*		misc/moviedb		No commercial use
 MPlayer*		multimedia/mplayer	Restricted binary distribution
 msql-*			databases/msql		Not free for commercial
 						organizations
@@ -421,8 +395,6 @@ netbeans5-*		java/netbeans5		Restrictive copyright
 NetComponents-*		java/netcomponents	No redistribution except as
 						part of a substantially
 						different product
-netscape-navigator-*	www/linux-netscape-navigator	No redistribution
-netscape-messenger-*	mail/linux-netscape-messenger	No redistribution
 netshow_linux.gz	multimedia/netshow	Commercial software
 nerolinux-*		sysutils/linux-nero	Must be downloaded from WWW and
 						a Serial Number must be bought
@@ -513,10 +485,9 @@ sid-milter-*		mail/sid-milter		May incorporate intellectual
 						property, possible patent issues
 ski-*.i386.rpm		emulators/ski		Restrictive license
 skype*			net/skype		Not for redistribution
-slimserver/*		audio/slimserver	Version 6.0 and above contain
-						non-redistributable firmware,
-						images, and documentation.  See
-						License.txt in the distribution
+squeezeboxserver-*	audio/squeezeboxserver	Contains non-redistributable
+						firmware, documentation, and
+						images
 socks5-*		net/socks5		No commercial use
 sof-*-cdrom-x86.run	games/linux-sof		Redistribution is limited
 SpaceAryarya-KXL-*	games/spacearyarya	Possible copyright infringement
@@ -525,9 +496,6 @@ speedmgmt*		net/pppoa		Not for redistribution -- see
 						/dsl/disclaimer_lx.htm
 srd-fpw*		japanese/srd-fpw	The original dictionary is not
 						free
-sscli_*			lang/cli		License is *very* restrictive --
-						please consult your lawyer
-						before using the software
 ssh-*			security/ssh*		Crypto; export-controlled
 *mod_ssl*		www/apache13-modssl	Crypto; export-controlled
 stat.tar.Z		math/unixstat		License does not allow
@@ -543,8 +511,6 @@ susv3.tar.bz2		misc/susv3		Redistribution of the
 svm_light.tar.gz	science/svmlight	The software must not be
 						further distributed without
 						prior permission of the author
-swing1_1_1*		java/jfc		Do not distribute without
-						value-added application
 systemc-2*.tgz		cad/systemc		License agreement required
 systemsim-cell-*	emulators/linux-systemsimcell	Redistribution of pre-compiled
 						binaries is not permitted
@@ -568,12 +534,6 @@ Tripwire-*-1.tar.gz	security/tripwire-131	Cannot be redistributed
 tripwire-*.tar.gz	security/tripwire12	Cannot be redistributed for
 						more than the cost of
 						duplication
-epson/ttf30.exe		japanese/epson-ttfonts	Cannot be redistributed,
-						cannot fetch outside from
-						Japan, user must have
-						Japanese version of Windows
-						and EPSON printer specified
-						by EULA
 tonicpoint-*		graphics/tonicpoint-viewer	Free for non-profit
 tuc-*			converters/tuc		Author does not allow
 						CD-ROM distribution
@@ -592,12 +552,11 @@ linux-unrealgold*	games/linux-unrealgold	Redistribution limited
 linux-ut/*		games/linux-ut		Redistribution limited
 uplink-demo		games/linux-uplink-demo	Redistribution limited
 ut2004-lnx-*		games/linux-ut2004-demo	Redistribution limited
-uzap.tar.gz             editors/uzap		Restrictive copyright
+uzap.tar.gz		editors/uzap		Restrictive copyright
 vdesk-*			x11/vdesk		Distributed without license
 vice-*			emulators/vice		ROMs are copyrighted by
 						Commodore Business Machines
 vwnc7.3.1/*		lang/visualworks	Do not redistribute
-vje30/*			japanese/vje30		Commercial software
 vmware-freebsd-tools.*	emulators/vmware-guestd4	Not sure if we can
 						redistribute this
 vmware-linux-tools.*	emulators/linux-vmware-toolbox4	Not sure if we can
@@ -637,9 +596,6 @@ xhime*.tgz		games/xhime		Contains commercial character
 						data
 xinvaders-*		games/xinvaders		Do not sell for profit
 xmame/*			emulators/xmame		Do not sell for fee
-X-Plane-Net-Install.gz	games/linux-x-plane-net-installer	Redistribution
-						prohibited
-linux-x-plane-*		games/linux-x-plane	Redistribution prohibited
 xmdiary-*		deskutils/xmdiary	Do not sell for profit
 xmms-wavpack-*		audio/xmms-wavpack	Missing license
 xrisk-*			games/xrisk		Possible copyright/trademark
@@ -666,7 +622,7 @@ twelf-*			lang/twelf		License is currently
 pfpro*			finance/pfpro		Only available for customers
 						subscribed to the VeriSign
 						PayFlow Pro Service
-simian-*                devel/simian            Have to agree to license
+simian-*		devel/simian		Have to agree to license
 						before download
 xGate/*			japanese/xgate		Requested by Orangesoft Inc.
 tw_cli-*		sysutils/tw_cli		Redistribution forbidden by
@@ -681,7 +637,7 @@ send-*			net-mgmt/send		Not redistributable, license
 rapid-*			math/rapid		No commercial use
 dtiquery-*		science/dtiquery	License agreement is required
 clustalw-*		biology/clustalw	No commercial use
-nttcp-*			benchmark/nttcp		No commercial use
+nttcp-*			benchmarks/nttcp	No commercial use
 TW-*.ttf		chinese/CNS11643-font	No redistribution or
 						commercial use is allowed
 festlex-ogi		audio/festlex-ogi	No commercial use
