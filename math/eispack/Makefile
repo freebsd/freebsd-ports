@@ -17,10 +17,10 @@ EXTRACT_ONLY=	#empty
 MAINTAINER=	bf@FreeBSD.org
 COMMENT=	Eigenvalue system package
 
-MASTER_SITES_NETLIB=	ftp://ftp.netlib.org/%SUBDIR% \
+MASTER_SITES_NETLIB=	ftp://ftp.netlib.org/%SUBDIR%/ \
 		http://www.netlib.org/%SUBDIR%/ \
 		http://www.netlib.no/netlib/%SUBDIR%/ \
-		http://netlib.sandia.gov/%SUBDIR% \
+		http://netlib.sandia.gov/%SUBDIR%/ \
 		ftp://ftp.mirrorservice.org/sites/netlib.bell-labs.com/netlib/%SUBDIR%/ \
 		http://artfiles.org/netlib.org/%SUBDIR%/ \
 		http://netlib.amss.ac.cn/%SUBDIR%/ \
