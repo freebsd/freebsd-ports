@@ -3273,7 +3273,6 @@ etrace                          ports/net/etrace
 etracer                         ports/games/etracer
 ettercap                        ports/net-mgmt/ettercap
 etunnel                         ports/net/etunnel
-etuxracer                       ports/games/etuxracer
 euchre                          ports/games/euchre
 eukleides                       ports/math/eukleides
 euler                           ports/science/euler
@@ -4603,6 +4602,7 @@ glpi-plugins-AdditionalReports  ports/textproc/glpi-plugins-AdditionalReports
 glpi-plugins-DataInjection      ports/textproc/glpi-plugins-DataInjection
 glpi-plugins-additionalreports  ports/textproc/glpi-plugins-AdditionalReports
 glpi-plugins-datainjection      ports/textproc/glpi-plugins-DataInjection
+glpi-plugins-fusioninventory-server  ports/net-mgmt/glpi-plugins-fusioninventory-server
 glpi-plugins-tracker-agent      ports/net-mgmt/glpi-plugins-tracker-agent
 glpi-plugins-tracker-server     ports/net-mgmt/glpi-plugins-tracker-server
 glpk                            ports/math/glpk
@@ -5403,6 +5403,7 @@ gyach                           ports/net-im/gyach
 gzrecover                       ports/archivers/gzrecover
 gzstream                        ports/devel/gzstream
 h2n                             ports/dns/h2n
+h5utils                         ports/science/h5utils
 ha                              ports/archivers/ha
 habari                          ports/www/habari
 hachoir-core                    ports/devel/hachoir-core
@@ -6828,6 +6829,7 @@ jggtrans                        ports/net-im/jggtrans
 jgnash                          ports/finance/jgnash
 jgrapht                         ports/java/jgrapht
 jgraphx                         ports/java/jgraphx
+jgroups                         ports/net/jgroups
 jhead                           ports/graphics/jhead
 jicmp                           ports/net/jicmp
 jid3lib                         ports/audio/jid3lib
@@ -10436,6 +10438,7 @@ nvidia-driver-96                ports/x11/nvidia-driver-96
 nvidia-settings                 ports/x11/nvidia-settings
 nvidia-texture-tools            ports/graphics/nvidia-texture-tools
 nvidia-xconfig                  ports/x11/nvidia-xconfig
+nvramtool                       ports/sysutils/nvramtool
 nvtv                            ports/sysutils/nvtv
 nwcc                            ports/lang/nwcc
 nwndata                         ports/games/nwndata
@@ -11897,6 +11900,8 @@ p5-DBIx-Class-ResultSet-HashRef  ports/databases/p5-DBIx-Class-ResultSet-HashRef
 p5-DBIx-Class-ResultSet-RecursiveUpdate  ports/databases/p5-DBIx-Class-ResultSet-RecursiveUpdate
 p5-DBIx-Class-Schema-Loader     ports/databases/p5-DBIx-Class-Schema-Loader
 p5-DBIx-Class-TimeStamp         ports/databases/p5-DBIx-Class-TimeStamp
+p5-DBIx-Class-Tree              ports/databases/p5-DBIx-Class-Tree
+p5-DBIx-Class-Tree-NestedSet    ports/databases/p5-DBIx-Class-Tree-NestedSet
 p5-DBIx-Class-UUIDColumns       ports/databases/p5-DBIx-Class-UUIDColumns
 p5-DBIx-Class-Validation        ports/databases/p5-DBIx-Class-Validation
 p5-DBIx-Class-WebForm           ports/databases/p5-DBIx-Class-WebForm
@@ -13376,6 +13381,7 @@ p5-NNTPClient                   ports/news/p5-NNTPClient
 p5-NSNMP                        ports/net-mgmt/p5-NSNMP
 p5-Nagios-Object                ports/net-mgmt/p5-Nagios-Object
 p5-Nagios-Plugin                ports/net-mgmt/p5-Nagios-Plugin
+p5-Nagios-Plugin-LDAP           ports/net-mgmt/p5-Nagios-Plugin-LDAP
 p5-Nagios-Plugins-Memcached     ports/net-mgmt/p5-Nagios-Plugins-Memcached
 p5-Net                          ports/net/p5-Net
 p5-Net-ACL                      ports/net-mgmt/p5-Net-ACL
@@ -16237,6 +16243,8 @@ p5-dbix-class-resultset-hashref  ports/databases/p5-DBIx-Class-ResultSet-HashRef
 p5-dbix-class-resultset-recursiveupdate  ports/databases/p5-DBIx-Class-ResultSet-RecursiveUpdate
 p5-dbix-class-schema-loader     ports/databases/p5-DBIx-Class-Schema-Loader
 p5-dbix-class-timestamp         ports/databases/p5-DBIx-Class-TimeStamp
+p5-dbix-class-tree              ports/databases/p5-DBIx-Class-Tree
+p5-dbix-class-tree-nestedset    ports/databases/p5-DBIx-Class-Tree-NestedSet
 p5-dbix-class-uuidcolumns       ports/databases/p5-DBIx-Class-UUIDColumns
 p5-dbix-class-validation        ports/databases/p5-DBIx-Class-Validation
 p5-dbix-class-webform           ports/databases/p5-DBIx-Class-WebForm
@@ -17567,6 +17575,7 @@ p5-mysql-diff                   ports/databases/p5-Mysql-Diff
 p5-mysql-genocide               ports/databases/p5-mysql-genocide
 p5-nagios-object                ports/net-mgmt/p5-Nagios-Object
 p5-nagios-plugin                ports/net-mgmt/p5-Nagios-Plugin
+p5-nagios-plugin-ldap           ports/net-mgmt/p5-Nagios-Plugin-LDAP
 p5-nagios-plugins-memcached     ports/net-mgmt/p5-Nagios-Plugins-Memcached
 p5-namespace-autoclean          ports/devel/p5-namespace-autoclean
 p5-namespace-clean              ports/devel/p5-namespace-clean
@@ -21613,6 +21622,7 @@ py-keyring                      ports/security/py-keyring
 py-kid                          ports/devel/py-kid
 py-kiwi                         ports/x11-toolkits/py-kiwi
 py-kjbuckets                    ports/devel/py-kjbuckets
+py-kombu                        ports/net/py-kombu
 py-kqueue                       ports/devel/py-kqueue
 py-ldap2                        ports/net/py-ldap2
 py-levenshtein                  ports/devel/py-levenshtein
@@ -21875,6 +21885,7 @@ py-rabbyt                       ports/graphics/py-rabbyt
 py-radix                        ports/net/py-radix
 py-rdflib                       ports/textproc/py-rdflib
 py-recaptcha                    ports/www/py-recaptcha
+py-redis                        ports/databases/py-redis
 py-relatorio                    ports/print/py-relatorio
 py-repl                         ports/devel/py-repl
 py-reportlab                    ports/print/py-reportlab
@@ -22324,6 +22335,7 @@ qmc                             ports/misc/qmc
 qmc2                            ports/emulators/qmc2
 qmhandle                        ports/mail/qmhandle
 qmls                            ports/cad/qmls
+qmmp                            ports/multimedia/qmmp
 qmpdclient                      ports/audio/qmpdclient
 qmqtool                         ports/mail/qmqtool
 qmrtg                           ports/mail/qmrtg
@@ -23314,6 +23326,7 @@ rubygem-colortools              ports/print/rubygem-colortools
 rubygem-columnize               ports/devel/rubygem-columnize
 rubygem-configuration           ports/devel/rubygem-configuration
 rubygem-crack                   ports/devel/rubygem-crack
+rubygem-cuba                    ports/www/rubygem-cuba
 rubygem-curb                    ports/ftp/rubygem-curb
 rubygem-daemon_controller       ports/devel/rubygem-daemon_controller
 rubygem-daemons                 ports/devel/rubygem-daemons
@@ -24968,6 +24981,7 @@ termlog                         ports/security/termlog
 terraform                       ports/misc/terraform
 teseq                           ports/misc/teseq
 tesseract                       ports/graphics/tesseract
+tesseract-data                  ports/graphics/tesseract-data
 testdisk                        ports/sysutils/testdisk
 testlink                        ports/www/testlink
 testu01                         ports/math/testu01
@@ -26325,7 +26339,6 @@ workrave                        ports/x11/workrave
 worldofpadman                   ports/games/worldofpadman
 worldtools                      ports/sysutils/worldtools
 wormux                          ports/games/wormux
-wormux-devel                    ports/games/wormux-devel
 wots                            ports/sysutils/wots
 wotsap                          ports/misc/wotsap
 wowzamediaserverpro             ports/net/wowzamediaserverpro
