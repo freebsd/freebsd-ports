@@ -7,7 +7,7 @@
 
 PORTNAME=	gtk2hs
 PORTVERSION=	0.10.0
-PORTREVISION=	6
+PORTREVISION=	7
 PORTEPOCH=	1
 CATEGORIES=	x11-toolkits haskell
 MASTER_SITES=	SF
@@ -22,7 +22,7 @@ LIB_DEPENDS=	gstreamer-0.10:${PORTSDIR}/multimedia/gstreamer \
 		gtkglext-x11-1.0:${PORTSDIR}/x11-toolkits/gtkglext
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-USE_GNOME=	gnomelibs gtk20 libglade2 gtksourceview2 gconf2 librsvg2 gnomevfs2
+USE_GNOME=	gtk20 libglade2 gtksourceview2 gconf2 librsvg2 gnomevfs2
 USE_GECKO=	libxul
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
