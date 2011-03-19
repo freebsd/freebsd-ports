@@ -3,6 +3,7 @@
 %%SITE_PERL%%/Audio/MPD/Common/Item/Directory.pm
 %%SITE_PERL%%/Audio/MPD/Common/Item/Playlist.pm
 %%SITE_PERL%%/Audio/MPD/Common/Item/Song.pm
+%%SITE_PERL%%/Audio/MPD/Common/Output.pm
 %%SITE_PERL%%/Audio/MPD/Common/Status.pm
 %%SITE_PERL%%/Audio/MPD/Common/Stats.pm
 %%SITE_PERL%%/Audio/MPD/Common/Time.pm
