@@ -1,6 +1,4 @@
-MD5 (xkbctrl/Imakefile) = 12125739f5bbbaaa43bcecd161fe580d
 SHA256 (xkbctrl/Imakefile) = 24ec16c583a447a33f5f50545f236603ff30480296e87e182c7a8d90bfa03b0c
 SIZE (xkbctrl/Imakefile) = 2322
-MD5 (xkbctrl/xkbctrl.c) = 7db64f67827adf216ed7fe8b29a66101
 SHA256 (xkbctrl/xkbctrl.c) = d3e43689f88f19738bb59a6c5d8b8df662493fc55edb3416c28ae4861a7b56e5
 SIZE (xkbctrl/xkbctrl.c) = 24710
