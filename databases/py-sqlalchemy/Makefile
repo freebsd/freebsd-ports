@@ -1,5 +1,5 @@
 # Ports collection makefile for:	py-sqlalchemy
-# Date created:				12 Auguest 2004
+# Date created:				12 August 2004
 # Whom:					Dryice Dong Liu <dryice@dryice.name>
 #
 # $FreeBSD$
@@ -27,6 +27,7 @@ OPTIONSFILE=	${PORT_DBDIR}/py-${PORTNAME}/options
 OPTIONS=	FIREBIRD "support FireBird" off
 OPTIONS+=	MSSQL "support MS SQL Server" off
 OPTIONS+=	MYSQL "support MySql" on
+OPTIONS+=	NOSE "install Nose for unit tests" off
 OPTIONS+=	POSTGRE "support PostGreSQL" on
 OPTIONS+=	SQLITE "support Sqlite" on
 OPTIONS+=	SYBASE "support Sybase" off
@@ -51,6 +52,10 @@ RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/pymssql.py:${PORTSDIR}/databases/py-mssql
 
 .if !defined(WITHOUT_MYSQL)
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}MySQLdb>=1.2.2:${PORTSDIR}/databases/py-MySQLdb
+.endif
+
+.if defined(WITH_NOSE)
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}nose-1.0.0:${PORTSDIR}/devel/py-nose
 .endif
 
 .if !defined(WITHOUT_POSTGRE)
