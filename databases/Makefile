@@ -653,6 +653,7 @@
     SUBDIR += py-bsddb3
     SUBDIR += py-cdb
     SUBDIR += py-cmemcache
+    SUBDIR += py-couchdb
     SUBDIR += py-dbf
     SUBDIR += py-dbutils
     SUBDIR += py-flask-sqlalchemy
