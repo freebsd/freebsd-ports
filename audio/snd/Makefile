@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	snd
-PORTVERSION=	11.13
+PORTVERSION=	12.0
 CATEGORIES=	audio
 MASTER_SITES=	ftp://ccrma-ftp.stanford.edu/pub/Lisp/ \
 		http://mirror.mcx2.org/
@@ -111,9 +111,6 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${i} ${PREFIX}/bin
 .endfor
 	${INSTALL_MAN} ${WRKSRC}/snd.1 ${MANPREFIX}/man/man1/
-.if !defined(WITHOUT_X11)
-	${INSTALL_DATA} ${WRKSRC}/Snd.ad ${PREFIX}/lib/X11/app-defaults/
-.endif
 .if !defined(WITHOUT_GUILE)
 	@${MKDIR} ${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/*.scm ${DATADIR}
@@ -151,9 +148,6 @@ do-install:
 .if !defined(NOPORTEXAMPLES)
 	@${MKDIR} ${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/DotEmacs ${EXAMPLESDIR}
-.if !defined(WITHOUT_X11)
-	${INSTALL_DATA} ${WRKSRC}/Snd.gtkrc ${EXAMPLESDIR}
-.endif
 .endif
 
 .include <bsd.port.post.mk>
