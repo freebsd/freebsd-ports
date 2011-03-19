@@ -6,19 +6,20 @@
 #
 
 PORTNAME=	CPAN-Meta
-PORTVERSION=	2.102400
+PORTVERSION=	2.110580
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
+MASTER_SITE_SUBDIR=	CPAN:DAGOLDEN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	jupengfei@gmail.com
 COMMENT=	The distribution metadata for a CPAN dist
 
-BUILD_DEPENDS=	p5-autodie>0:${PORTSDIR}/devel/p5-autodie	\
-		p5-JSON>=2:${PORTSDIR}/converters/p5-JSON	\
-		p5-Parse-CPAN-Meta>0:${PORTSDIR}/devel/p5-Parse-CPAN-Meta	\
-		p5-Test-Simple>0:${PORTSDIR}/devel/p5-Test-Simple		\
-		p5-Version-Requirements>0:${PORTSDIR}/devel/p5-Version-Requirements \
+BUILD_DEPENDS=	p5-CPAN-Meta-YAML>=0.002:${PORTSDIR}/devel/p5-CPAN-Meta-YAML	\
+		p5-JSON-PP>=2.27103:${PORTSDIR}/converters/p5-JSON-PP		\
+		p5-Parse-CPAN-Meta>=1.44:${PORTSDIR}/devel/p5-Parse-CPAN-Meta	\
+		p5-Test-Simple>=0:${PORTSDIR}/devel/p5-Test-Simple		\
+		p5-Version-Requirements>=0.101020:${PORTSDIR}/devel/p5-Version-Requirements \
 		p5-version>=0.82:${PORTSDIR}/devel/p5-version
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
