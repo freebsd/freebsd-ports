@@ -1,0 +1,11 @@
+--- ./Makefile.orig	2007-10-29 08:02:54.000000000 -0400
++++ ./Makefile	2011-03-18 18:59:23.000000000 -0400
+@@ -4,7 +4,7 @@
+ TAGLIB_INCLUDE = `taglib-config --cflags`
+ TAGLIB_LIBRARY = `taglib-config --libs`
+ 
+-CPP = g++
++CPP = $(CXX)
+ 
+ CPPFLAGS = -Wall $(TAGLIB_INCLUDE) $(LIBCDDB_INCLUDE) -c
+ LDFLAGS = $(TAGLIB_LIBRARY) $(LIBCDDB_LIBRARY)
