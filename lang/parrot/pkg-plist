@@ -72,10 +72,10 @@ include/parrot/%%PARROT_VER%%/parrot/runcore_trace.h
 include/parrot/%%PARROT_VER%%/parrot/scheduler.h
 include/parrot/%%PARROT_VER%%/parrot/scheduler_private.h
 include/parrot/%%PARROT_VER%%/parrot/settings.h
-include/parrot/%%PARROT_VER%%/parrot/stat.h
 include/parrot/%%PARROT_VER%%/parrot/string.h
 include/parrot/%%PARROT_VER%%/parrot/string_funcs.h
 include/parrot/%%PARROT_VER%%/parrot/sub.h
+include/parrot/%%PARROT_VER%%/parrot/thr_none.h
 include/parrot/%%PARROT_VER%%/parrot/thr_pthread.h
 include/parrot/%%PARROT_VER%%/parrot/thr_windows.h
 include/parrot/%%PARROT_VER%%/parrot/thread.h
@@ -149,6 +149,9 @@ include/parrot/%%PARROT_VER%%/pmc/pmc_parrotlibrary.h
 include/parrot/%%PARROT_VER%%/pmc/pmc_parrotthread.h
 include/parrot/%%PARROT_VER%%/pmc/pmc_pmcproxy.h
 include/parrot/%%PARROT_VER%%/pmc/pmc_pointer.h
+include/parrot/%%PARROT_VER%%/pmc/pmc_ptr.h
+include/parrot/%%PARROT_VER%%/pmc/pmc_ptrbuf.h
+include/parrot/%%PARROT_VER%%/pmc/pmc_ptrobj.h
 include/parrot/%%PARROT_VER%%/pmc/pmc_resizablebooleanarray.h
 include/parrot/%%PARROT_VER%%/pmc/pmc_resizablefloatarray.h
 include/parrot/%%PARROT_VER%%/pmc/pmc_resizableintegerarray.h
@@ -164,6 +167,7 @@ include/parrot/%%PARROT_VER%%/pmc/pmc_string.h
 include/parrot/%%PARROT_VER%%/pmc/pmc_stringbuilder.h
 include/parrot/%%PARROT_VER%%/pmc/pmc_stringhandle.h
 include/parrot/%%PARROT_VER%%/pmc/pmc_stringiterator.h
+include/parrot/%%PARROT_VER%%/pmc/pmc_structview.h
 include/parrot/%%PARROT_VER%%/pmc/pmc_sub.h
 include/parrot/%%PARROT_VER%%/pmc/pmc_task.h
 include/parrot/%%PARROT_VER%%/pmc/pmc_threadinterpreter.h
@@ -219,7 +223,9 @@ lib/parrot/%%PARROT_VER%%/include/test_more.pir
 lib/parrot/%%PARROT_VER%%/include/timer.pasm
 lib/parrot/%%PARROT_VER%%/include/tm.pasm
 lib/parrot/%%PARROT_VER%%/include/warnings.pasm
+lib/parrot/%%PARROT_VER%%/languages/JSON/JSON.pir
 lib/parrot/%%PARROT_VER%%/languages/data_json/Defines.mak
+lib/parrot/%%PARROT_VER%%/languages/data_json/JSON.nqp
 lib/parrot/%%PARROT_VER%%/languages/data_json/Rules.mak
 lib/parrot/%%PARROT_VER%%/languages/data_json/data_json.pbc
 lib/parrot/%%PARROT_VER%%/languages/data_json/data_json.pir
@@ -405,6 +411,7 @@ lib/parrot/%%PARROT_VER%%/library/YAML/Tiny.pbc
 lib/parrot/%%PARROT_VER%%/library/YAML/Tiny.pm
 lib/parrot/%%PARROT_VER%%/library/config.pbc
 lib/parrot/%%PARROT_VER%%/library/config.pir
+lib/parrot/%%PARROT_VER%%/library/crypto.declarations
 lib/parrot/%%PARROT_VER%%/library/distutils.pbc
 lib/parrot/%%PARROT_VER%%/library/distutils.pir
 lib/parrot/%%PARROT_VER%%/library/dumper.pbc
@@ -417,6 +424,7 @@ lib/parrot/%%PARROT_VER%%/library/ncurses.pbc
 lib/parrot/%%PARROT_VER%%/library/ncurses.pir
 lib/parrot/%%PARROT_VER%%/library/nqp-rx.pbc
 lib/parrot/%%PARROT_VER%%/library/nqp-setting.pbc
+lib/parrot/%%PARROT_VER%%/library/openssl.declarations
 lib/parrot/%%PARROT_VER%%/library/opsc.pbc
 lib/parrot/%%PARROT_VER%%/library/osutils.pbc
 lib/parrot/%%PARROT_VER%%/library/osutils.pir
@@ -613,6 +621,9 @@ src/parrot/%%PARROT_VER%%/pmc/parrotlibrary.dump
 src/parrot/%%PARROT_VER%%/pmc/parrotthread.dump
 src/parrot/%%PARROT_VER%%/pmc/pmcproxy.dump
 src/parrot/%%PARROT_VER%%/pmc/pointer.dump
+src/parrot/%%PARROT_VER%%/pmc/ptr.dump
+src/parrot/%%PARROT_VER%%/pmc/ptrbuf.dump
+src/parrot/%%PARROT_VER%%/pmc/ptrobj.dump
 src/parrot/%%PARROT_VER%%/pmc/resizablebooleanarray.dump
 src/parrot/%%PARROT_VER%%/pmc/resizablefloatarray.dump
 src/parrot/%%PARROT_VER%%/pmc/resizableintegerarray.dump
@@ -628,6 +639,7 @@ src/parrot/%%PARROT_VER%%/pmc/string.dump
 src/parrot/%%PARROT_VER%%/pmc/stringbuilder.dump
 src/parrot/%%PARROT_VER%%/pmc/stringhandle.dump
 src/parrot/%%PARROT_VER%%/pmc/stringiterator.dump
+src/parrot/%%PARROT_VER%%/pmc/structview.dump
 src/parrot/%%PARROT_VER%%/pmc/sub.dump
 src/parrot/%%PARROT_VER%%/pmc/task.dump
 src/parrot/%%PARROT_VER%%/pmc/threadinterpreter.dump
@@ -709,6 +721,7 @@ src/parrot/%%PARROT_VER%%/vtable.tbl
 @dirrm lib/parrot/%%PARROT_VER%%/languages/parrot
 @dirrm lib/parrot/%%PARROT_VER%%/languages/data_json/data_json
 @dirrm lib/parrot/%%PARROT_VER%%/languages/data_json
+@dirrm lib/parrot/%%PARROT_VER%%/languages/JSON
 @dirrmtry lib/parrot/%%PARROT_VER%%/languages
 @dirrm lib/parrot/%%PARROT_VER%%/include
 @dirrmtry lib/parrot/%%PARROT_VER%%/dynext

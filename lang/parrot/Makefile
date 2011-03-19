@@ -7,7 +7,6 @@
 
 PORTNAME=	parrot
 PORTVERSION=	${PARROT_VERSION}
-PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	ftp://ftp.parrot.org/pub/parrot/releases/devel/${PORTVERSION}/
 
@@ -35,7 +34,7 @@ CONFIGURE_SCRIPT=	Configure.pl
 CONFIGURE_ARGS=	--cc=${CC} --ld=${CC} --ccflags="${CFLAGS}" \
 		--ldflags="${LDFLAGS} -L/usr/lib -L${LOCALBASE}/lib" \
 		--icu-config=${LOCALBASE}/bin/icu-config \
-		--optimize --parrot_is_shared --inline \
+		--optimize --parrot_is_shared --inline --gc=gms \
 		--lex=${LOCALBASE}/bin/flex \
 		--yacc=${LOCALBASE}/bin/bison \
 		--verbose \
