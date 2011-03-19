@@ -531,6 +531,7 @@
     SUBDIR += p5-IO-Socket-INET6
     SUBDIR += p5-IO-Socket-Multicast
     SUBDIR += p5-IO-Socket-Multicast6
+    SUBDIR += p5-IP-Anonymous
     SUBDIR += p5-IP-Country
     SUBDIR += p5-IPC-Session
     SUBDIR += p5-JavaScript-RPC
@@ -592,7 +593,6 @@
     SUBDIR += p5-Net-HL7
     SUBDIR += p5-Net-Hiveminder
     SUBDIR += p5-Net-INET6Glue
-    SUBDIR += p5-Net-IP-Anonymous
     SUBDIR += p5-Net-IP-RangeCompare
     SUBDIR += p5-Net-IPTrie
     SUBDIR += p5-Net-IRR
