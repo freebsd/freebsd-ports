@@ -7,23 +7,59 @@
 
 PORTNAME=	eispack
 PORTVERSION=	1.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	math
-MASTER_SITES=	ftp://netlib.bell-labs.com/netlib/eispack/ \
-		ftp://ftp.mirrorservice.org/sites/netlib.bell-labs.com/netlib/eispack/
-DISTFILES=	${SRCS:.f=.f.gz}
+MASTER_SITES=	${MASTER_SITES_NETLIB:N*sandia*}
+MASTER_SITE_SUBDIR=	${PORTNAME}
+DISTFILES=	${SRCS}
+EXTRACT_ONLY=	#empty
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	bf@FreeBSD.org
 COMMENT=	Eigenvalue system package
 
-DEPRECATED=     Upstream disapear and distfile is no more available
-EXPIRATION_DATE=        2011-05-01
+MASTER_SITES_NETLIB=	ftp://ftp.netlib.org/%SUBDIR% \
+		http://www.netlib.org/%SUBDIR%/ \
+		http://www.netlib.no/netlib/%SUBDIR%/ \
+		http://netlib.sandia.gov/%SUBDIR% \
+		ftp://ftp.mirrorservice.org/sites/netlib.bell-labs.com/netlib/%SUBDIR%/ \
+		http://artfiles.org/netlib.org/%SUBDIR%/ \
+		http://netlib.amss.ac.cn/%SUBDIR%/ \
+		http://netlib.caspur.it/%SUBDIR%/ \
+		http://netlib.ccp14.ac.uk/%SUBDIR%/ \
+		http://netlib.enseeiht.fr/%SUBDIR%/ \
+		http://netlib.linux-mirror.org/%SUBDIR%/ \
+		http://phase.hpcc.jp/mirrors/netlib/%SUBDIR%/
 
 DIST_SUBDIR=	${PORTNAME}
-USE_LDCONFIG=	yes
 NO_WRKSUBDIR=	yes
 
 USE_FORTRAN=	yes
+USE_LDCONFIG=	yes
+
+SHLIB_MAJOR=	2
+PLIST_FILES=	lib/libeispack.a lib/libeispack.so lib/libeispack.so.${SHLIB_MAJOR}
+
+LDFLAGS+=	${FFLAGS}
+SRCCONF=	${NONEXISTENT}
+MAKE_ENV+=	LDFLAGS="${LDFLAGS}" SHLIB_MAJOR="${SHLIB_MAJOR}" \
+		SRCCONF="${SRCCONF}"
+
+OPTIONS=	PROFILE "Build and install a profiling library" Off
+
+.include <bsd.port.options.mk>
+
+.if defined(WITH_PROFILE)
+.if defined(NOPROFILE) || defined(NO_PROFILE) || defined(WITHOUT_PROFILE)
+IGNORE =	you have defined WITH_PROFILE, but have also defined\
+WITHOUT_PROFILE, NOPROFILE, or NO_PROFILE
+.elif !exists(/usr/lib/libc_p.a)
+IGNORE  =	you have chosen WITH_PROFILE, but have not installed the\
+base system profiling libraries
+.endif
+PLIST_FILES+=	lib/libeispack_p.a
+.else
+MAKE_ENV+=	NO_PROFILE=
+.endif
 
 SRCS =	csroot.f epslon.f pythag.f bakvec.f balanc.f balbak.f bandr.f \
 	bandv.f bisect.f bqr.f cbabk2.f cbal.f cg.f ch.f cinvit.f combak.f \
@@ -36,13 +72,8 @@ SRCS =	csroot.f epslon.f pythag.f bakvec.f balanc.f balbak.f bandr.f \
 	tql2.f tqlrat.f trbak1.f trbak3.f tred1.f tred2.f tred3.f tridib.f \
 	tsturm.f cdiv.f
 
-do-extract:
-	@${MKDIR} ${WRKDIR}
-.for file in ${SRCS}
-	@${GZCAT} ${_DISTDIR}/${file:.f=.f.gz} > ${WRKSRC}/${file}
-.endfor
-
-pre-build:
+post-extract:
+	@(cd ${_DISTDIR}; ${CP} ${SRCS} ${WRKSRC})
 	${CP} ${FILESDIR}/Makefile.lib ${WRKSRC}/Makefile
 
 .include <bsd.port.mk>
