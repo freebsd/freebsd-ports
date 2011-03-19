@@ -3647,7 +3647,7 @@ do-extract:
 		fi; \
 	done
 .if !defined(EXTRACT_PRESERVE_OWNERSHIP)
-	@if [ `${ID} -u` = 0 ]; then \
+	@if [ ${UID} = 0 ]; then \
 		${CHMOD} -R ug-s ${WRKDIR}; \
 		${CHOWN} -R 0:0 ${WRKDIR}; \
 	fi
@@ -4068,7 +4068,7 @@ check-umask:
 .if !target(install-mtree)
 install-mtree:
 	@${MKDIR} ${PREFIX}
-	@if [ `${ID} -u` != 0 ]; then \
+	@if [ ${UID} != 0 ]; then \
 		if [ -w ${PREFIX}/ ]; then \
 			${ECHO_MSG} "Warning: not superuser, you may get some errors during installation."; \
 		else \
@@ -4077,7 +4077,7 @@ install-mtree:
 		fi; \
 	fi
 .if !defined(NO_MTREE)
-	@if [ `${ID} -u` = 0 ]; then \
+	@if [ ${UID} = 0 ]; then \
 		if [ ! -f ${MTREE_FILE} ]; then \
 			${ECHO_MSG} "Error: mtree file \"${MTREE_FILE}\" is missing."; \
 			${ECHO_MSG} "Copy it from a suitable location (e.g., /usr/src/etc/mtree) and try again."; \
@@ -6127,7 +6127,7 @@ config:
 			${ECHO_CMD} WITHOUT_$${i}=true >> $${TMPOPTIONSFILE}; \
 		fi; \
 	done; \
-	if [ `${ID} -u` != 0 -a "x${INSTALL_AS_USER}" = "x" ]; then \
+	if [ ${UID} != 0 -a "x${INSTALL_AS_USER}" = "x" ]; then \
 		${ECHO_MSG} "===>  Switching to root credentials to write ${OPTIONSFILE}"; \
 		${SU_CMD} "${CAT} $${TMPOPTIONSFILE} > ${OPTIONSFILE}"; \
 		${ECHO_MSG} "===>  Returning to user credentials"; \
@@ -6220,7 +6220,7 @@ rmconfig:
 .if defined(OPTIONS) && exists(${OPTIONSFILE})
 	-@${ECHO_MSG} "===> Removing user-configured options for ${PKGNAME}"; \
 	optionsdir=${OPTIONSFILE}; optionsdir=$${optionsdir%/*}; \
-	if [ `${ID} -u` != 0 -a "x${INSTALL_AS_USER}" = "x" ]; then \
+	if [ ${UID} != 0 -a "x${INSTALL_AS_USER}" = "x" ]; then \
 		${ECHO_MSG} "===> Switching to root credentials to remove ${OPTIONSFILE} and $${optionsdir}"; \
 		${SU_CMD} "${RM} -f ${OPTIONSFILE} ; \
 			${RMDIR} $${optionsdir}"; \
