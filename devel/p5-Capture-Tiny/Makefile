@@ -6,17 +6,17 @@
 #
 
 PORTNAME=	Capture-Tiny
-PORTVERSION=	0.08
+PORTVERSION=	0.10
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
-MASTER_SITE_SUBDIR=	../../authors/id/D/DA/DAGOLDEN/
+MASTER_SITE_SUBDIR=	CPAN:DAGOLDEN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	bill.brinzer@gmail.com
 COMMENT=	Capture STDOUT and STDERR from Perl, XS or external programs
 
-PERL_CONFIGURE=	5.6.0+
+PERL_CONFIGURE=	yes
 
-MAN3=	Capture::Tiny.3
+MAN3=		Capture::Tiny.3
 
 .include <bsd.port.mk>
