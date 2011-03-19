@@ -1,7 +1,14 @@
+bin/getaddrinfo
+bin/getnameinfo
 %%SITE_PERL%%/%%PERL_ARCH%%/Socket/GetAddrInfo.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Socket/GetAddrInfo/Core.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Socket/GetAddrInfo/Emul.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Socket/GetAddrInfo/Socket6api.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Socket/GetAddrInfo/XS.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Socket/GetAddrInfo/.packlist
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Socket/GetAddrInfo/GetAddrInfo.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Socket/GetAddrInfo/GetAddrInfo.so
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Socket/GetAddrInfo
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Socket
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Socket/GetAddrInfo
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Socket

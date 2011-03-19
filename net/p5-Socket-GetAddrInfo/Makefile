@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Socket-GetAddrInfo
-PORTVERSION=	0.19
+PORTVERSION=	0.20
 CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,9 +14,14 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	sahil@FreeBSD.org
 COMMENT=	RFC 2553's getaddrinfo and getnameinfo functions
 
-BUILD_DEPENDS=	p5-ExtUtils-CChecker>=0.04:${PORTSDIR}/devel/p5-ExtUtils-CChecker
+BUILD_DEPENDS=	p5-ExtUtils-CChecker>=0.06:${PORTSDIR}/devel/p5-ExtUtils-CChecker
 
-MAN3=		Socket::GetAddrInfo.3
+MAN1=		getaddrinfo.1 \
+		getnameinfo.1
+
+MAN3=		Socket::GetAddrInfo.3 \
+		Socket::GetAddrInfo::Emul.3 \
+		Socket::GetAddrInfo::Socket6api.3
 
 PERL_CONFIGURE=	yes
 
