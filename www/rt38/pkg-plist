@@ -122,6 +122,7 @@ etc/rt38/schema.mysql-4.1
 %%SITE_PERL%%/RT/I18N/hu.po
 %%SITE_PERL%%/RT/I18N/i_default.pm
 %%SITE_PERL%%/RT/I18N/id.po
+%%SITE_PERL%%/RT/I18N/is.po
 %%SITE_PERL%%/RT/I18N/it.po
 %%SITE_PERL%%/RT/I18N/ja.po
 %%SITE_PERL%%/RT/I18N/nb.po
@@ -266,6 +267,7 @@ etc/rt38/schema.mysql-4.1
 %%SITE_PERL%%/RT/Users.pm
 %%SITE_PERL%%/RT/Users_Overlay.pm
 %%SITE_PERL%%/RT/Util.pm
+sbin/rt-attributes-viewer
 sbin/rt-clean-sessions
 sbin/rt-dump-database
 sbin/rt-email-dashboards
@@ -543,6 +545,7 @@ share/rt38/html/Install/Initialize.html
 share/rt38/html/Install/Sendmail.html
 share/rt38/html/Install/autohandler
 share/rt38/html/Install/index.html
+share/rt38/html/NoAuth/Login.html
 share/rt38/html/NoAuth/Logout.html
 share/rt38/html/NoAuth/Reminder.html
 share/rt38/html/NoAuth/RichText/FCKeditor/editor/_source/classes/fckcontextmenu.js
