@@ -62,10 +62,10 @@ include/mysql/sslopt-vars.h
 include/mysql/typelib.h
 lib/mysql/libmysqlclient.a
 lib/mysql/libmysqlclient.so
-lib/mysql/libmysqlclient.so.16
+lib/mysql/libmysqlclient.so.18
 lib/mysql/libmysqlclient_r.a
 lib/mysql/libmysqlclient_r.so
-lib/mysql/libmysqlclient_r.so.16
+lib/mysql/libmysqlclient_r.so.18
 lib/mysql/libmysqlservices.a
 share/aclocal/mysql.m4
 @dirrm include/mysql/mysql/psi

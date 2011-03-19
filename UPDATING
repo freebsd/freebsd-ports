@@ -5,6 +5,20 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20110319:
+  AFFECTS: users of databases/mysql55-client
+  AUTHOR: ale@FreeBSD.org
+
+  The shared library version of the client library was increased to reflect
+  ABI changes, and avoid compatibility problems with the client library
+  in MySQL 5.1, so client programs that use the 5.5 client library should
+  be recompiled against the 5.5.10 client library.
+  This can be achieved with:
+
+  # portmaster -r mysql-client-5.5
+  or
+  # portupgrade -fr mysql-client-5.5
+
 20110318:
   AFFECTS: users of www/node and www/node-devel
   AUTHOR: araujo@FreeBSD.org
