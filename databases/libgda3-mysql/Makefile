@@ -6,7 +6,7 @@
 #   $MCom: ports/databases/libgda3-mysql/Makefile,v 1.2 2008/02/26 21:23:35 kwm Exp $
 #
 
-PORTREVISION?=	1
+PORTREVISION?=	2
 CATEGORIES=	databases gnome
 PKGNAMESUFFIX?=	-mysql
 

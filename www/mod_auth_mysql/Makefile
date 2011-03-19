@@ -6,6 +6,7 @@
 
 PORTNAME=	mod_auth_mysql
 PORTVERSION=	3.2
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	SF/mod-auth-mysql/mod-auth-mysql/mod-auth-mysql-1.0
 PKGNAMEPREFIX=	${APACHE_PKGNAMEPREFIX}

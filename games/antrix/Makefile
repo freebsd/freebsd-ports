@@ -7,7 +7,7 @@
 
 PORTNAME=	antrix
 PORTVERSION=	1477
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	http://skillcoder.narod.ru/wow/antrix/ \
 		http://wtq.ru/wow/antrix/

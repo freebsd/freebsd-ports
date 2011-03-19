@@ -6,7 +6,7 @@
 
 PORTNAME=	mod_auth_mysql
 PORTVERSION=	3.0.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www
 MASTER_SITES=	SF/modauthmysql/modauthmysql/${PORTVERSION}
 PKGNAMESUFFIX=	_another

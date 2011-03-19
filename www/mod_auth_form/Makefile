@@ -7,7 +7,7 @@
 
 PORTNAME=	mod_auth_form
 PORTVERSION=	2.05
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	http://comp.uark.edu/~ajarthu/mod_auth_form/download.php?download=v2_05/
 PKGNAMEPREFIX=	${APACHE_PKGNAMEPREFIX}

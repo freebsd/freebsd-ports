@@ -6,6 +6,7 @@
 
 PORTNAME=	mod_auth_cookie_mysql2
 PORTVERSION=	0.9.a
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://home.digithi.de/digithi/dev/mod_auth_cookie_mysql/
 DISTNAME=	${PORTNAME}_0.9a

@@ -6,7 +6,7 @@
 
 PORTNAME=	mod_sqlinclude
 PORTVERSION=	1.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	SF/mod-sqlinclude/mod-sqlinclude/${PORTVERSION}
 EXTRACT_SUFX=	.tgz

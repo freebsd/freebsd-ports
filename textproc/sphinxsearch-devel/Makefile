@@ -9,6 +9,7 @@
 
 PORTNAME=	sphinxsearch
 PORTVERSION=	1.10b
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	textproc databases
 MASTER_SITES=	http://sphinxsearch.com/files/

@@ -7,7 +7,7 @@
 
 PORTNAME=	dbf2mysql
 PORTVERSION=	1.14
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	databases
 MASTER_SITES=	ftp://ftp.ntu.edu.tw/pub/MySQL/Downloads/Contrib/Old-Versions/ \
 		ftp://ftp.ip.pt/pub/mysql/Downloads/Contrib/Old-Versions/ \

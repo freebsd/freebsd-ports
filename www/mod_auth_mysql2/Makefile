@@ -7,6 +7,7 @@
 
 PORTNAME=	mod_auth_mysql
 PORTVERSION=	1.10
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://www.heuer.org/mod_auth_mysql/old/
 DISTNAME=	${PORTNAME}_${PORTVERSION}

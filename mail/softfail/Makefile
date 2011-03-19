@@ -7,6 +7,7 @@
 
 PORTNAME=	softfail
 PORTVERSION=	2.0
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://www6.freebsdbrasil.com.br/~eksffa/l/dev/qmail-smtpextfork/ \
 		${MASTER_SITE_LOCAL}

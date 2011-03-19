@@ -7,6 +7,7 @@
 
 PORTNAME=	libzdb
 PORTVERSION=	2.8
+PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	http://www.tildeslash.com/libzdb/dist/ \
 		http://www.c-s.li/ports/

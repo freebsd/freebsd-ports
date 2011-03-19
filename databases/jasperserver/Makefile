@@ -7,6 +7,7 @@
 
 PORTNAME=	jasperserver
 PORTVERSION=	4.0.0
+PORTREVISION=	1
 CATEGORIES=	databases print java
 MASTER_SITES=	SF/${PORTNAME}/JasperServer/JasperServer%20${PORTVERSION}/:source1
 DISTFILES=	jasperreports-server-cp-${PORTVERSION}-src.zip:source1 \

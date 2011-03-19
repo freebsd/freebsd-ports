@@ -7,6 +7,7 @@
 
 PORTNAME=	sysbench
 PORTVERSION=	0.4.12
+PORTREVISION=	1
 CATEGORIES=	benchmarks databases
 MASTER_SITES=	SF
 
