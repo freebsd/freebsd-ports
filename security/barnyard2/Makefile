@@ -7,6 +7,7 @@
 
 PORTNAME=	barnyard2
 PORTVERSION=	1.9
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://www.securixlive.com/download/barnyard2/
 

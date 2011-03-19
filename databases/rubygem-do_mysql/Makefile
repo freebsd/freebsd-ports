@@ -7,6 +7,7 @@
 
 PORTNAME=	do_mysql
 PORTVERSION=	0.10.2
+PORTREVISION=	1
 CATEGORIES=	databases rubygems
 MASTER_SITES=	RG
 

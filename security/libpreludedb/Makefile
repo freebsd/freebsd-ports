@@ -5,6 +5,7 @@
 
 PORTNAME=	libpreludedb
 PORTVERSION=	0.9.15.3
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://www.prelude-ids.com/download/releases/%SUBDIR%/
 MASTER_SITE_SUBDIR=	${PORTNAME} ${PORTNAME}/old

@@ -7,6 +7,7 @@
 
 PORTNAME=	mysql++
 PORTVERSION=	2.3.2
+PORTREVISION=	1
 CATEGORIES=	databases devel
 MASTER_SITES=	http://tangentsoft.net/mysql++/releases/
 PKGNAMESUFFIX=	-mysql${MYSQL_VER}

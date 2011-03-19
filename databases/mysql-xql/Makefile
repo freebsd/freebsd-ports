@@ -6,6 +6,7 @@
 
 PORTNAME=	mysql-xql
 PORTVERSION=	1.0.0
+PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	http://www.mysqludf.org/lib_mysqludf_xql/
 DISTNAME=	lib_mysqludf_xql-${PORTVERSION}

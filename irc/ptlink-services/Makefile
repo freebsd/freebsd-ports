@@ -7,6 +7,7 @@
 
 PORTNAME=	Services
 PORTVERSION=	3.9.2
+PORTREVISION=	1
 CATEGORIES=	irc
 MASTER_SITES=	ftp://ftp.sunsite.dk/projects/ptlink/ircsvs3/
 PKGNAMEPREFIX=	PTlink-

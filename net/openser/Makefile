@@ -7,6 +7,7 @@
 
 PORTNAME=	openser
 PORTVERSION=	1.2.3
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://openser.org/pub/openser/${PORTVERSION}/src/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-tls_src

@@ -7,6 +7,7 @@
 
 PORTNAME=	pinba_engine
 PORTVERSION=	2009.12.24
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://aston2.com/~raven/unix/pinba/ \
  		http://mks-chel.ru/~raven/FreeBSD/pinba/

@@ -10,7 +10,7 @@
 
 PORTNAME=	sphinxsearch
 PORTVERSION=	0.9.9
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc databases
 MASTER_SITES=	http://sphinxsearch.com/files/
 DISTNAME=	sphinx-${PORTVERSION}

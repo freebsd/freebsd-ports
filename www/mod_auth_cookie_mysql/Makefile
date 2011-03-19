@@ -6,6 +6,7 @@
 
 PORTNAME=	mod_auth_cookie_mysql
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://sheepkiller.nerim.net/ports/${PORTNAME}/
 # Original Location: http://www.qwk.net/opensource/mod_auth_cookie_mysql/mod_auth_cookie_mysql.tar.gz

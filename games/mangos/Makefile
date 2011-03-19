@@ -7,7 +7,7 @@
 
 PORTNAME=	mangos
 PORTVERSION=	5101
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	CENKES http://mangos-port.by.ru/ \
 		http://wow.omsktele.com/src/ \

@@ -6,6 +6,7 @@
 
 PORTNAME=	mod_mylo
 PORTVERSION=	0.2.2
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://sheepkiller.nerim.net/ports/${PORTNAME}/ \
 		ftp://ftp.nuug.no/pub/anders/distfiles/

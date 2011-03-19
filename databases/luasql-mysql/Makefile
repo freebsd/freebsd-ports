@@ -7,6 +7,7 @@
 
 PORTNAME=	luasql
 PORTVERSION=	2.1.1
+PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	http://luaforge.net/frs/download.php/${DISTFILE_REV}/
 PKGNAMESUFFIX=	-${LUASQL_DRIVER}

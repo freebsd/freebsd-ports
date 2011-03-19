@@ -6,7 +6,7 @@
 
 PORTNAME=	akonadi
 PORTVERSION=	1.4.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	databases kde ipv6
 MASTER_SITES=	http://download.${PORTNAME}-project.org/
 DIST_SUBDIR=	KDE

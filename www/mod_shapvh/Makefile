@@ -7,6 +7,7 @@
 
 PORTNAME=	mod_shapvh
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://www.crazygreek.co.uk/data/pages/mod_shapvh/
 DISTNAME=	${PORTNAME}

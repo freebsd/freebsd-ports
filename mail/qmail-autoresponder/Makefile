@@ -7,6 +7,7 @@
 
 PORTNAME=	qmail-autoresponder
 PORTVERSION=	0.97
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://untroubled.org/${PORTNAME}/
 

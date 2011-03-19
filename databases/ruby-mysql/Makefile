@@ -7,6 +7,7 @@
 
 PORTNAME=	mysql
 PORTVERSION=	2.8.2
+PORTREVISION=	1
 CATEGORIES=	databases ruby
 MASTER_SITES=	RF/mysql-ruby \
 		http://www.tmtm.org/downloads/mysql/ruby/
