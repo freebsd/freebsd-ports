@@ -9,17 +9,15 @@ PORTNAME=	blocksolve95
 PORTVERSION=	3.0
 PORTREVISION=	10
 CATEGORIES=	math parallel
-MASTER_SITES=	ftp://info.mcs.anl.gov/pub/BlockSolve95/	\
+MASTER_SITES=	ftp://ftp.mcs.anl.gov/pub/BlockSolve95/ \
+		http://ftp.mcs.anl.gov/pub/BlockSolve95/ \
 		ftp://ftp.irisa.fr/pub/mirrors/BlockSolve95/
 DISTNAME=	BlockSolve95
 EXTRACT_SUFX=	.tar.Z
 DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	bf@FreeBSD.org
 COMMENT=	Sofware for the efficient solution of large, sparse linear systems
-
-DEPRECATED=     Upstream disapear and distfile is no more available
-EXPIRATION_DATE=        2011-05-01
 
 BUILD_DEPENDS=	${MPIDIR}/lib/libmpich.a:${PORTSDIR}/net/mpich2
 LIB_DEPENDS=	f2c.2:${PORTSDIR}/lang/f2c
