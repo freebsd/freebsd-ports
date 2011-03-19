@@ -1,6 +1,4 @@
-MD5 (xorg/driver/bsdwacom-40.tbz) = 022a5225cca8bbf3af1014d32d5c12de
 SHA256 (xorg/driver/bsdwacom-40.tbz) = 42c37d321768ff29fef10eb088a87a83c94753a1b4ae5f92fd453781039a5df9
 SIZE (xorg/driver/bsdwacom-40.tbz) = 19305
-MD5 (xorg/driver/linuxwacom-0.8.2-2.tar.bz2) = bdfaf6da49b446e251ac1f98754a89a2
 SHA256 (xorg/driver/linuxwacom-0.8.2-2.tar.bz2) = 1d3b8dc397510309b14239291781135af0c4fab99907d8e0b8aad95465390733
 SIZE (xorg/driver/linuxwacom-0.8.2-2.tar.bz2) = 1098067
