@@ -89,6 +89,7 @@
     SUBDIR += crack
     SUBDIR += cracklib
     SUBDIR += crank
+    SUBDIR += create-cert
     SUBDIR += cryptlib
     SUBDIR += cryptopp
     SUBDIR += cryptplug
