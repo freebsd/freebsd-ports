@@ -9,7 +9,7 @@ PORTNAME=	eispack
 PORTVERSION=	1.0
 PORTREVISION=	3
 CATEGORIES=	math
-MASTER_SITES=	${MASTER_SITES_NETLIB:N*sandia*}
+MASTER_SITES=	${MASTER_SITES_NETLIB}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTFILES=	${SRCS}
 EXTRACT_ONLY=	#empty
@@ -19,9 +19,10 @@ COMMENT=	Eigenvalue system package
 
 MASTER_SITES_NETLIB=	ftp://ftp.netlib.org/%SUBDIR%/ \
 		http://www.netlib.org/%SUBDIR%/ \
-		http://www.netlib.no/netlib/%SUBDIR%/ \
-		http://netlib.sandia.gov/%SUBDIR%/ \
 		ftp://ftp.mirrorservice.org/sites/netlib.bell-labs.com/netlib/%SUBDIR%/ \
+		http://www.mirrorservice.org/sites/netlib.bell-labs.com/netlib/%SUBDIR%/ \
+		ftp://ftp.netlib.no/netlib/%SUBDIR%/ \
+		http://www.netlib.no/netlib/%SUBDIR%/ \
 		http://artfiles.org/netlib.org/%SUBDIR%/ \
 		http://netlib.amss.ac.cn/%SUBDIR%/ \
 		http://netlib.caspur.it/%SUBDIR%/ \
