@@ -28,14 +28,14 @@ LICENSE=	LGPL21 LGPL3
 LICENSE_COMB=	dual
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+CPPFLAGS=	"-I${LOCALBASE}/include"
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--datadir=${DATADIR} --verbose --disable-tests \
 		--with-glu --with-opengl --with-xrandr \
 		--without-capi --without-gphoto --without-gsm \
 		--without-v4l --without-mpg123 --without-sane \
 		--without-xcomposite --without-xinerama
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib" \
+CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib" \
 		FLEX="${LOCALBASE}/bin/flex"
 WINELIBDIR?=	${PREFIX}/lib
 .if !defined(USE_LDCONFIG32)
