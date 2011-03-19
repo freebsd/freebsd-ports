@@ -17,7 +17,7 @@ COMMENT=	A collection of graph-generating scripts
 RUN_DEPENDS=	dot:${PORTSDIR}/graphics/graphviz \
 		${SITE_PERL}/Text/CSV.pm:${PORTSDIR}/textproc/p5-Text-CSV \
 		p5-Crypt-Rijndael>=0:${PORTSDIR}/security/p5-Crypt-Rijndael \
-		p5-Net-IP-Anonymous>=0:${PORTSDIR}/net/p5-Net-IP-Anonymous
+		p5-IP-Anonymous>=0:${PORTSDIR}/net/p5-IP-Anonymous
 
 NO_BUILD=	yes
 
