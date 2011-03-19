@@ -1,4 +1,4 @@
-SHA256 (postfix/postfix-2.5.11.tar.gz) = 018b652df5853b5f37c768d7e80b986beb8118520a274e1b55e4b11cdac21043
-SIZE (postfix/postfix-2.5.11.tar.gz) = 3163461
+SHA256 (postfix/postfix-2.5.12.tar.gz) = 288b638c8f0750133c8ea160c915140d01e9f1eb217889babc983238850b6d3b
+SIZE (postfix/postfix-2.5.12.tar.gz) = 3166066
 SHA256 (postfix/postfix-2.5.6-vda-ng.patch.gz) = c4e4ff3da5b6bfa2648dc41bbf7ee56c1ba2f62e2c77a7885bc8044a1131f531
 SIZE (postfix/postfix-2.5.6-vda-ng.patch.gz) = 12388
