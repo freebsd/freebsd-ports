@@ -15,7 +15,7 @@ MASTER_SITES=	http://www.ijg.org/files/ \
 DISTNAME=	jpegsrc.v${DISTVERSION2}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		jpegexiforient.c:exif exifautotran.txt:exif
-DIST_SUBDIR=	${PORTNAME}${DISTVERSION2}
+DIST_SUBDIR=	${PORTNAME}${DISTVERSION2}2
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	dinoex@FreeBSD.org
