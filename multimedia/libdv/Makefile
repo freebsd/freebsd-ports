@@ -14,6 +14,8 @@ MASTER_SITES=	SF
 MAINTAINER=	bapt@FreeBSD.org
 COMMENT=	Quasar DV codec (libdv): software codec for DV video encoding format
 
+LICENSE=	LGPL21
+
 LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg \
 		popt.0:${PORTSDIR}/devel/popt
 
