@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	musicpd
-PORTVERSION=	0.16.1
-PORTREVISION=	2
+PORTVERSION=	0.16.2
 CATEGORIES=	audio ipv6
 MASTER_SITES=	SF/${PORTNAME}/mpd/${PORTVERSION}
 DISTNAME=	mpd-${PORTVERSION}
@@ -63,7 +62,7 @@ OPTIONS=	ID3TAG          "Support ID3 v1/v2 tags"                on \
 		HTTPD		"Support for httpd output streaming"	off \
 		SAMPLERATE	"Support sample rate conversion"	off
 
-MPDDIR=	var/mpd
+MPDDIR?=	/var/mpd
 MPDUSER=	mpd
 MPDGROUP=	mpd
 MPDCONF?=	mpd.conf
@@ -80,7 +79,7 @@ PLIST_SUB=	MPDUSER=${MPDUSER} \
 
 SUB_LIST+=	MPDUSER=${MPDUSER} \
 		MPDGROUP=${MPDGROUP} \
-		MPDDIR=${PREFIX}/${MPDDIR} \
+		MPDDIR=${MPDDIR} \
 		MPDUID=${MPDUID} \
 		MPDGID=${MPDGID} \
 		MPDCONF=${MPDCONF}
@@ -226,14 +225,10 @@ CONFIGURE_ARGS+=--enable-lsr
 .endif
 
 post-patch:
-# Fix issues with garbled sound for 24-bit on FreeBSD. This is fixed in git,
-# so should be removed with next update.
-	@${REINPLACE_CMD} -e '383,395d;421,430d' \
-		${WRKSRC}/src/output/oss_plugin.c
-	@${REINPLACE_CMD} -e "s/%%MPDDIR%%/${PREFIX:C/\//\\\//g}\/${MPDDIR:C/\//\\\//g}/g" -e "s/%%MPDUSER%%/${MPDUSER}/g" \
+# Replace ~/ with MPDDIR and make musicpd run as mpd by default
+	@${REINPLACE_CMD} -e 's,^#\([^"]*"\)~/,\1${MPDDIR}/,g' \
+		-e 's,^#\(user[^"]*"\)nobody,\1${MPDUSER},g' \
 		${WRKSRC}/doc/mpdconf.example
-	@${REINPLACE_CMD} -e 's/tremor == xno/tremor = xno/' \
-		${WRKSRC}/configure
 .if (${OSVERSION} < 800000)
 	${REINPLACE_CMD} -e 's/nan[f]\{0,1\}(\"\")/NAN/g' \
 		${WRKSRC}/src/crossfade.c \
@@ -251,8 +246,8 @@ post-install:
 		${CP} -p ${PREFIX}/etc/${MPDCONF}.sample \
 			${PREFIX}/etc/${MPDCONF} ; \
 	fi
-	@${MKDIR} ${PREFIX}/${MPDDIR}
-	@${CHOWN} -R ${MPDUSER}:${MPDGROUP} ${PREFIX}/${MPDDIR}
+	@${MKDIR} ${MPDDIR}
+	@${CHOWN} -R ${MPDUSER}:${MPDGROUP} ${MPDDIR}
 	@${ECHO_MSG}
 	@${CAT} ${PKGMESSAGE}
 	@${ECHO_MSG}
