@@ -7,7 +7,7 @@
 
 PORTNAME=	distribute
 PORTVERSION=	0.6.15
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -28,6 +28,23 @@ SUB_LIST=	EASYINSTALL_PTH=${EASYINSTALL_PTH}
 
 EASYINSTALL_PTH=	${PYTHON_SITELIBDIR}/easy-install.pth
 SITE_PY=	${PYTHON_SITELIBDIR}/site.py
+PYFILES=	site.py
+
+.include <bsd.port.pre.mk>
+
+.if ${PYTHON_REL} >= 320
+PYCACHE="__pycache__/%%PYMOD%%.cpython-${PYTHON_VER:S,.,,}"
+PLIST_DIRS=	"${PYTHONPREFIX_SITELIBDIR:S;${PREFIX}/;;}/__pycache__"
+.else
+PYCACHE="%%PYMOD%%"
+.endif
+
+.for m in ${PYFILES}
+.for ext in pyc pyo
+PLIST_FILES+=	"${PYTHONPREFIX_SITELIBDIR:S;${PREFIX}/;;}/${PYCACHE:S,%%PYMOD%%,${m:R},}.${ext}"
+.endfor
+.endfor
+
 pre-install:
 	PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 
@@ -38,4 +55,4 @@ post-install:
 	${CP} ${EASYINSTALL_PTH} ${EASYINSTALL_PTH}.dist
 	PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

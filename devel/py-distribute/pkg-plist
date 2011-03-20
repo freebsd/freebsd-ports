@@ -8,5 +8,3 @@ bin/easy_install-%%PYVER%%
 %%PYTHON_SITELIBDIR%%/setuptools-%%SETUPTOOLS_VER%%-py%%PYVER%%.egg-info
 %%PYTHON_SITELIBDIR%%/setuptools.pth
 %%PYTHON_SITELIBDIR%%/site.py
-%%PYTHON_SITELIBDIR%%/site.pyc
-%%PYTHON_SITELIBDIR%%/site.pyo
