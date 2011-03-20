@@ -1,11 +1,14 @@
 %%WWWDIR%%/cfg/bugzilla.cfg.php
 %%WWWDIR%%/cfg/const.inc.php
+%%WWWDIR%%/cfg/custom_reports.cfg.php
+%%WWWDIR%%/cfg/custom_reports.cfg.php.example
 %%WWWDIR%%/cfg/eventum.cfg.php
 %%WWWDIR%%/cfg/fogbugz.cfg.php
 %%WWWDIR%%/cfg/gforge.cfg.php
 %%WWWDIR%%/cfg/jira.cfg.php
 %%WWWDIR%%/cfg/jirasoap.cfg.php
 %%WWWDIR%%/cfg/mantis.cfg.php
+%%WWWDIR%%/cfg/polarion.cfg.php
 %%WWWDIR%%/cfg/redmine.cfg.php
 %%WWWDIR%%/cfg/reports.cfg.php
 %%WWWDIR%%/cfg/seapine.cfg.php
@@ -239,6 +242,47 @@
 %%WWWDIR%%/gui/templates/usermanagement/usersEdit.tpl
 %%WWWDIR%%/gui/templates/usermanagement/usersView.tpl
 %%WWWDIR%%/gui/templates/workAreaSimple.tpl
+%%WWWDIR%%/gui/templates_c/%%05^055^055DF0AD%%inc_del_onclick.tpl.php
+%%WWWDIR%%/gui/templates_c/%%11^116^1166AC39%%input_dimensions.conf%7CmainPage.php
+%%WWWDIR%%/gui/templates_c/%%19^194^19441EB5%%inc_refreshTreeWithFilters.tpl.php
+%%WWWDIR%%/gui/templates_c/%%25^252^2520047E%%projectEdit.tpl.php
+%%WWWDIR%%/gui/templates_c/%%2B^2B1^2B14B811%%inc_testsuite_viewer_rw.tpl.php
+%%WWWDIR%%/gui/templates_c/%%2E^2E1^2E11686C%%tcView_viewer.tpl.php
+%%WWWDIR%%/gui/templates_c/%%31^31A^31A35F5F%%inc_filter_panel.tpl.php
+%%WWWDIR%%/gui/templates_c/%%4E^4E2^4E21677E%%opt_transfer.inc.tpl.php
+%%WWWDIR%%/gui/templates_c/%%56^560^56038526%%inc_head.tpl.php
+%%WWWDIR%%/gui/templates_c/%%5A^5AB^5AB28840%%containerNew.tpl.php
+%%WWWDIR%%/gui/templates_c/%%5D^5DA^5DAE1AB0%%inc_ext_js.tpl.php
+%%WWWDIR%%/gui/templates_c/%%6C^6CF^6CF653EB%%input_dimensions.conf.php
+%%WWWDIR%%/gui/templates_c/%%72^72D^72DAF6E8%%main.tpl.php
+%%WWWDIR%%/gui/templates_c/%%74^746^746826BD%%mainPageLeft.tpl.php
+%%WWWDIR%%/gui/templates_c/%%7B^7B8^7B846452%%inc_testsuite_viewer_ro.tpl.php
+%%WWWDIR%%/gui/templates_c/%%7F^7FF^7FFDA7BA%%inc_help.tpl.php
+%%WWWDIR%%/gui/templates_c/%%84^842^842B53B9%%input_dimensions.conf%7CcontainerEdit.php
+%%WWWDIR%%/gui/templates_c/%%85^851^85132294%%error_icon.tpl.php
+%%WWWDIR%%/gui/templates_c/%%85^851^8516F146%%inc_attachments.tpl.php
+%%WWWDIR%%/gui/templates_c/%%86^869^86926229%%tcTree.tpl.php
+%%WWWDIR%%/gui/templates_c/%%86^86A^86A1E9DD%%projectView.tpl.php
+%%WWWDIR%%/gui/templates_c/%%93^934^9343D7AD%%inc_update.tpl.php
+%%WWWDIR%%/gui/templates_c/%%A1^A1C^A1CBA8B1%%mainPage.tpl.php
+%%WWWDIR%%/gui/templates_c/%%A3^A3A^A3A847C8%%inc_tcbody.tpl.php
+%%WWWDIR%%/gui/templates_c/%%A5^A55^A55CC92A%%inc_tree_control.tpl.php
+%%WWWDIR%%/gui/templates_c/%%A5^A5F^A5FC8C29%%input_dimensions.conf%7CtcNew.php
+%%WWWDIR%%/gui/templates_c/%%B0^B05^B05B9B66%%input_dimensions.conf%7CprojectEdit.php
+%%WWWDIR%%/gui/templates_c/%%B3^B39^B39DACD9%%inc_jsCfieldsValidation.tpl.php
+%%WWWDIR%%/gui/templates_c/%%B6^B6A^B6AD6561%%containerView.tpl.php
+%%WWWDIR%%/gui/templates_c/%%BB^BB4^BB4E6982%%tcView.tpl.php
+%%WWWDIR%%/gui/templates_c/%%C6^C6B^C6B55F84%%input_dimensions.conf%7CtreeFilterForm.php
+%%WWWDIR%%/gui/templates_c/%%CC^CC0^CC0255CA%%staticPage.tpl.php
+%%WWWDIR%%/gui/templates_c/%%CF^CF9^CF93EEF2%%input_dimensions.conf%7CprojectView.php
+%%WWWDIR%%/gui/templates_c/%%D4^D4D^D4D455CA%%tcNew.tpl.php
+%%WWWDIR%%/gui/templates_c/%%D7^D7E^D7E0C57C%%inc_filter_panel_js.tpl.php
+%%WWWDIR%%/gui/templates_c/%%E2^E21^E21A3209%%inc_msg_from_array.tpl.php
+%%WWWDIR%%/gui/templates_c/%%E2^E29^E296DC1C%%input_dimensions.conf%7CnavBar.php
+%%WWWDIR%%/gui/templates_c/%%E6^E68^E6831641%%navBar.tpl.php
+%%WWWDIR%%/gui/templates_c/%%EB^EBA^EBAFA72D%%tcEdit_New_viewer.tpl.php
+%%WWWDIR%%/gui/templates_c/%%F1^F13^F1313A5A%%frmInner.tpl.php
+%%WWWDIR%%/gui/templates_c/%%F5^F50^F501ED3C%%mainPageRight.tpl.php
 %%WWWDIR%%/gui/themes/default/css/testlink.css
 %%WWWDIR%%/gui/themes/default/css/tl_documents.css
 %%WWWDIR%%/gui/themes/default/css/tl_print.css
@@ -583,6 +627,7 @@
 %%WWWDIR%%/lib/bugtracking/int_jira.php
 %%WWWDIR%%/lib/bugtracking/int_jirasoap.php
 %%WWWDIR%%/lib/bugtracking/int_mantis.php
+%%WWWDIR%%/lib/bugtracking/int_polarion.php
 %%WWWDIR%%/lib/bugtracking/int_redmine.php
 %%WWWDIR%%/lib/bugtracking/int_seapine.php
 %%WWWDIR%%/lib/bugtracking/int_trac.php
@@ -721,6 +766,7 @@
 %%WWWDIR%%/lib/requirements/reqExport.php
 %%WWWDIR%%/lib/requirements/reqImport.php
 %%WWWDIR%%/lib/requirements/reqOverview.php
+%%WWWDIR%%/lib/requirements/reqPrint.php
 %%WWWDIR%%/lib/requirements/reqSearch.php
 %%WWWDIR%%/lib/requirements/reqSearchForm.php
 %%WWWDIR%%/lib/requirements/reqSpecCommands.class.php
@@ -769,6 +815,7 @@
 %%WWWDIR%%/lib/testcases/tcExecute.php
 %%WWWDIR%%/lib/testcases/tcExport.php
 %%WWWDIR%%/lib/testcases/tcImport.php
+%%WWWDIR%%/lib/testcases/tcPrint.php
 %%WWWDIR%%/lib/testcases/tcSearch.php
 %%WWWDIR%%/lib/testcases/tcSearchForm.php
 %%WWWDIR%%/lib/testcases/testcaseCommands.class.php
@@ -833,6 +880,7 @@
 %%WWWDIR%%/locale/zh_CN/texts.php
 %%WWWDIR%%/login.php
 %%WWWDIR%%/logout.php
+%%WWWDIR%%/logs/audits.log
 %%WWWDIR%%/logs/config_check.txt
 %%WWWDIR%%/logs/userlog0.log
 %%WWWDIR%%/logs/userlog1.log
@@ -3134,11 +3182,16 @@
 %%WWWDIR%%/third_party/tinymce/readme
 %%WWWDIR%%/third_party/user_contribution/cfields_for_computing_time.sql
 %%WWWDIR%%/third_party/user_contribution/convert_csv_to_testlink.rb
+%%WWWDIR%%/third_party/user_contribution/fakeRemoteExecServer/README.TXT
+%%WWWDIR%%/third_party/user_contribution/fakeRemoteExecServer/all_testsuites_remote_fake_exec.xml
+%%WWWDIR%%/third_party/user_contribution/fakeRemoteExecServer/client4fakeXMLRPCTestRunner.php
+%%WWWDIR%%/third_party/user_contribution/fakeRemoteExecServer/fakeXMLRPCTestRunner.php
 %%WWWDIR%%/third_party/user_contribution/migrate_cf_links.php
 %%WWWDIR%%/third_party/user_contribution/reassign_tc_id.php
 %%WWWDIR%%/third_party/xml-rpc/class-IXR.php
 @dirrmtry %%WWWDIR%%/upload_area
 @dirrm %%WWWDIR%%/third_party/xml-rpc
+@dirrm %%WWWDIR%%/third_party/user_contribution/fakeRemoteExecServer
 @dirrm %%WWWDIR%%/third_party/user_contribution
 @dirrm %%WWWDIR%%/third_party/tinymce/jscripts/tiny_mce/utils
 @dirrm %%WWWDIR%%/third_party/tinymce/jscripts/tiny_mce/themes/simple/images
