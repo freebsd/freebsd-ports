@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	foswiki
-PORTVERSION=	1.0.9
-PORTREVISION=	1
+PORTVERSION=	1.1.2
 CATEGORIES=	www
 MASTER_SITES=	SF
 DISTNAME=	Foswiki-${PORTVERSION}
@@ -16,34 +15,33 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	skv@FreeBSD.org
 COMMENT=	A free and open source enterprise wiki
 
-BUILD_DEPENDS=	p5-Error>=0:${PORTSDIR}/lang/p5-Error
-RUN_DEPENDS=	p5-Error>=0:${PORTSDIR}/lang/p5-Error
+RUN_DEPENDS=	p5-Error>=0.15:${PORTSDIR}/lang/p5-Error \
+		p5-Algorithm-Diff>=1.1901:${PORTSDIR}/devel/p5-Algorithm-Diff \
+		p5-Text-Diff>=0.35:${PORTSDIR}/textproc/p5-Text-Diff \
+		p5-Sort-Maker>=0.06:${PORTSDIR}/devel/p5-Sort-Maker
+
+LICENSE=	GPLv2
 
 USE_PERL5=	5.8.4+
 NO_BUILD=	yes
 
-OPTIONS=	OPTINT "Install Perl modules for intl character support" Off \
+OPTIONS=	OPTINT "Install Perl modules for intl character support" On \
 		OPTOTH "Install other optional Perl modules" On \
 		APACHE "Install Apache web server and sample config file" Off
 
 .include <bsd.port.options.mk>
 
 .if defined(WITH_OPTINT)
-BUILD_DEPENDS+=	p5-Locale-Maketext-Lexicon>=0:${PORTSDIR}/devel/p5-Locale-Maketext-Lexicon
 RUN_DEPENDS+=	p5-Locale-Maketext-Lexicon>=0:${PORTSDIR}/devel/p5-Locale-Maketext-Lexicon
 .endif
 
 .if defined(WITH_OPTOTH)
-BUILD_DEPENDS+=	p5-Apache-Htpasswd>=0:${PORTSDIR}/security/p5-Apache-Htpasswd \
-		p5-Archive-Tar>=0:${PORTSDIR}/archivers/p5-Archive-Tar \
-		p5-CGI-Session>=4.30:${PORTSDIR}/www/p5-CGI-Session \
-		p5-Digest-SHA1>=0:${PORTSDIR}/security/p5-Digest-SHA1 \
-		p5-Lingua-EN-Sentence>=0:${PORTSDIR}/textproc/p5-Lingua-EN-Sentence \
-		p5-libwww>=0:${PORTSDIR}/www/p5-libwww \
-		p5-Net>=1.19:${PORTSDIR}/net/p5-Net
 RUN_DEPENDS+=	p5-Apache-Htpasswd>=0:${PORTSDIR}/security/p5-Apache-Htpasswd \
 		p5-Archive-Tar>=0:${PORTSDIR}/archivers/p5-Archive-Tar \
-		p5-CGI-Session>=4.30:${PORTSDIR}/www/p5-CGI-Session \
+		p5-Cache-Cache>=0:${PORTSDIR}/devel/p5-Cache-Cache \
+		p5-CGI-Session>=4.40:${PORTSDIR}/www/p5-CGI-Session \
+		p5-CSS-Minifier-XS>=0:${PORTSDIR}/textproc/p5-CSS-Minifier-XS \
+		p5-JavaScript-Minifier-XS>=0:${PORTSDIR}/textproc/p5-JavaScript-Minifier-XS \
 		p5-Digest-SHA1>=0:${PORTSDIR}/security/p5-Digest-SHA1 \
 		p5-Lingua-EN-Sentence>=0:${PORTSDIR}/textproc/p5-Lingua-EN-Sentence \
 		p5-libwww>=0:${PORTSDIR}/www/p5-libwww \
@@ -82,6 +80,7 @@ SUB_FILES+=	pkg-message-noapache
 SUB_FILES+=	LocalSite.cfg
 
 post-patch:
+	@${RM} -rf ${WRKSRC}/lib/CPAN
 	@cd ${WRKSRC} && \
 		${REINPLACE_CMD} -i "" \
 		-e "s|^#[[:space:]]*\(.*\)/home/httpd/foswiki|\1${WWWDIR}|g" \

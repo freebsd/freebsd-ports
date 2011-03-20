@@ -26,7 +26,7 @@ PKGNAMEPREFIX?=	foswiki-
 PNAME=		${PORTNAME}
 FILESDIR?=	${.CURDIR}/../foswiki/files
 BUILD_DEPENDS+=	foswiki>=0:${PORTSDIR}/www/foswiki
-FWDIR?=		${WWWDIR}/${PNAME}
+FWDIR?=		${WWWDIR}
 .endif
 
 MASTER_SITES?=	http://www.sourcehosting.net/freebsd/distfiles/ \
@@ -46,15 +46,11 @@ RUN_DEPENDS+=	${FWDEP:C/([^=<>]*)([=<>]*)(.*)/foswiki-\1\20.0.\3:${PORTSDIR}\/ww
 
 make-dist:
 	${INSTALL} -d ${WRKDIR}/
-	#cd ${WRKDIR}/ && svn export -r ${SVNREV} ${SVNURL} && \
-	#	${MV} ${PNAME} ${DISTNAME} && \
-	#	${FIND} . -type d -empty | ${SED} -e 's|$$|/.keep_me|' | \
-	#	${XARGS} ${TOUCH} && \
-	#	${TAR} cjvf ${DISTNAME}.tar.bz2 ${DISTNAME}
 	cd ${WRKDIR}/ && svn export -r ${SVNREV} ${SVNURL} && \
 		${MV} ${PNAME} ${DISTNAME} && \
 		${FIND} . -type d -empty | ${SED} -e 's|$$|/.keep_me|' | \
-		${XARGS} ${TOUCH}
+		${XARGS} ${TOUCH} && \
+		${TAR} cjvf ${DISTNAME}.tar.bz2 ${DISTNAME}
 
 create-plist:	extract
 	@${FIND} -s ${WRKSRC} -not -type d |\

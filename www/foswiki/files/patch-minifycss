@@ -1,0 +1,11 @@
+--- tools/minifycss
++++ tools/minifycss
+@@ -2,7 +2,7 @@
+ BEGIN {
+   unshift @INC, $ENV{FOSWIKICPAN} if defined $ENV{FOSWIKICPAN};
+ }
+-use CSS::Minifier qw(minify);
++use CSS::Minifier::XS qw(minify);
+ 
+ foreach my $file (@ARGV) {
+   open(INFILE, $file) or die "failed opening $file";
