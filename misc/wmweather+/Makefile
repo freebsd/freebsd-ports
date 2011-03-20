@@ -40,6 +40,8 @@ PLIST_FILES=	bin/wmweather+
 
 .include <bsd.port.pre.mk>
 
+CFLAGS:=	${CFLAGS:C/-O[0-9]/-O0/}
+
 .if !defined(WITHOUT_WM)
 LIB_DEPENDS+=	wraster:${PORTSDIR}/x11-wm/windowmaker
 .else
@@ -66,7 +68,6 @@ PLIST_DIRS+=	${EXAMPLESDIR_REL}
 PM=		${WRKDIR}/pkg-message
 PKGMESSAGE=	${WRKDIR}/pkg-message
 .endif
-
 
 post-install:
 .if !defined(NOPORTEXAMPLES)
