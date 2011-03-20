@@ -1,13 +1,13 @@
 # ex:ts=8
-# Ports collection makefile for:	gcc46
-# Date created:				2010-04-25
+# Ports collection makefile for:	gcc47
+# Date created:				2011-03-20
 # Whom:					Gerald Pfeifer <gerald@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
 PORTNAME=	gcc
-PORTVERSION=	4.6.0.20110318
+PORTVERSION=	4.7.0.20110319
 CATEGORIES=	lang java
 MASTER_SITES=	${MASTER_SITE_GCC}
 MASTER_SITE_SUBDIR=	snapshots/${VERSIONSTRING}
@@ -16,7 +16,7 @@ DISTFILES=	gcc-core-${VERSIONSTRING}${EXTRACT_SUFX} \
 		gcc-g++-${VERSIONSTRING}${EXTRACT_SUFX}
 
 MAINTAINER=	gerald@FreeBSD.org
-COMMENT=	GNU Compiler Collection 4.6
+COMMENT=	GNU Compiler Collection 4.7
 
 LIB_DEPENDS=	gmp.10:${PORTSDIR}/math/gmp \
 		mpfr.4:${PORTSDIR}/math/mpfr \
