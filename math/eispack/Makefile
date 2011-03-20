@@ -23,6 +23,7 @@ MASTER_SITES_NETLIB=	ftp://ftp.netlib.org/%SUBDIR%/ \
 		http://www.mirrorservice.org/sites/netlib.bell-labs.com/netlib/%SUBDIR%/ \
 		ftp://ftp.netlib.no/netlib/%SUBDIR%/ \
 		http://www.netlib.no/netlib/%SUBDIR%/ \
+		ftp://ftp.irisa.fr/pub/netlib/%SUBDIR%/ \
 		http://artfiles.org/netlib.org/%SUBDIR%/ \
 		http://netlib.amss.ac.cn/%SUBDIR%/ \
 		http://netlib.caspur.it/%SUBDIR%/ \
