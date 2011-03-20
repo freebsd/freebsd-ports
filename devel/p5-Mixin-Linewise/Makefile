@@ -9,11 +9,14 @@ PORTNAME=	Mixin-Linewise
 PORTVERSION=	0.003
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
-MASTER_SITE_SUBDIR=	../../authors/id/R/RJ/RJBS/
+MASTER_SITE_SUBDIR=	CPAN:RJBS
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	bapt@FreeBSD.org
 COMMENT=	Write your linewise code for handles; this does the rest
+
+LICENSE_COMB=	dual
+LICENSE=	ART20 GPLv1
 
 BUILD_DEPENDS+=	p5-Sub-Exporter>=0.900:${PORTSDIR}/devel/p5-Sub-Exporter
 RUN_DEPENDS+=	p5-Sub-Exporter>=0.900:${PORTSDIR}/devel/p5-Sub-Exporter

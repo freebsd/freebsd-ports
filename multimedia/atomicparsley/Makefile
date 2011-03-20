@@ -15,6 +15,8 @@ DISTNAME=	${PORTNAME}-source-${PORTVERSION}
 MAINTAINER=	bapt@FreeBSD.org
 COMMENT=	Command line program for reading parsing and setting MP4/M4A metadata
 
+LICENSE=	GPLv2
+
 USE_ZIP=	yes
 
 PLIST_FILES=	bin/AtomicParsley

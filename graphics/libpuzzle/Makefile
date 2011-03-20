@@ -14,6 +14,8 @@ MASTER_SITES=	ftp://ftp.pureftpd.org/pub/pure-ftpd/misc/libpuzzle/releases/
 MAINTAINER=	bapt@FreeBSD.org
 COMMENT=	A library to find similar pictures
 
+LICENSE=	BSD
+
 LIB_DEPENDS=	gd.4:${PORTSDIR}/graphics/gd
 
 MAKE_JOBS_SAFE=	yes
