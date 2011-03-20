@@ -1,6 +1,4 @@
-MD5 (pg8000-1.08.tar.gz) = 2e8317a22d0e09a6f12e98ddf3bb75fd
 SHA256 (pg8000-1.08.tar.gz) = ed09c816746f7f9d8afffb78cf108842ecef6a475ed38f33dffd4bdb4882c927
 SIZE (pg8000-1.08.tar.gz) = 30220
-MD5 (ez_setup.py) = 0366febd0d33a6eabdf881879ed120c4
 SHA256 (ez_setup.py) = b8919560fae3b66aa0cf0d0994d33d36c1a3ec3b0e355ef21563f38ae1d43ed4
 SIZE (ez_setup.py) = 10285

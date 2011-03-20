@@ -1,6 +1,4 @@
-MD5 (pyPgSQL-2.5.1.tar.gz) = 82670f6f1652aa4766fdaec2cb43debd
 SHA256 (pyPgSQL-2.5.1.tar.gz) = 498486f066f11a68f5b02a54ba5a008d01d507038c873bfd901c14d3f5ca18af
 SIZE (pyPgSQL-2.5.1.tar.gz) = 152840
-MD5 (pyPgSQL-patch_byteaconn) = 97744f64d06efcba79aa13f4dee9c076
 SHA256 (pyPgSQL-patch_byteaconn) = 73a324808aef49382e736245023eb8c468e1ca0803052a2a45162465b0ad28d7
 SIZE (pyPgSQL-patch_byteaconn) = 4718
