@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	MooseX-Singleton
-PORTVERSION=	0.25
+PORTVERSION=	0.26
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,7 +14,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	skv@FreeBSD.org
 COMMENT=	Turn Moose class into a singleton
 
-BUILD_DEPENDS=	p5-Moose>=0.94:${PORTSDIR}/devel/p5-Moose
+BUILD_DEPENDS=	p5-Moose>=1.10:${PORTSDIR}/devel/p5-Moose \
+		p5-Test-Requires>=0:${PORTSDIR}/devel/p5-Test-Fatal \
+		p5-Test-Requires>=0:${PORTSDIR}/devel/p5-Test-Requires
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
