@@ -23,7 +23,6 @@ case $2 in
 		${FIND} locale -type f -exec ${CHMOD} 444 {} \;
 		${FIND} pub -type f -exec ${CHMOD} 644 {} \;
 		${FIND} bin -type f -exec ${CHMOD} 555 {} \;
-		${FIND} bin/logos -type f -exec ${CHMOD} 444 {} \;
 		${FIND} templates -type f -exec ${CHMOD} 444 {} \;
 		${FIND} tools -type f -exec ${CHMOD} 555 {} \;
 		${TOUCH} data/.htpasswd
@@ -40,7 +39,7 @@ case $2 in
 		${CHMOD} 444 AUTHORS COPYING COPYRIGHT index.html \
 			INSTALL.html LICENSE pub-htaccess.txt readme.txt \
 			robots.txt root-htaccess.txt subdir-htaccess.txt \
-			foswiki_httpd_conf.txt ReleaseNotes01x00.html
+			foswiki_httpd_conf.txt ReleaseNotes01x01.html
 		${CHOWN} -R ${WWWOWN}:${WWWGRP} .
 		;;
 	*)
