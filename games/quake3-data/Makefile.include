@@ -1,14 +1,14 @@
-# Makefile for defining variables used by other Doom related ports.
+# Makefile for defining variables used by other Quake3 related ports.
 
 # Set variables.
 
 Q3PKGNAMEPREFIX?=quake3-
-Q3DIR?=		${LOCALBASE}/share/quake3
+Q3DIR?=		${PREFIX}/share/quake3
 
 # Add them to the environment.
 
 MAKE_ENV+=	Q3DIR="${Q3DIR}"
-PLIST_SUB+=	Q3DIR="${Q3DIR:S/${LOCALBASE}\///}"
+PLIST_SUB+=	Q3DIR="${Q3DIR:S/${PREFIX}\///}"
 SUB_LIST+=	Q3DIR="${Q3DIR}"
 
 # Add the dependency.

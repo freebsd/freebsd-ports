@@ -1,4 +1,4 @@
-%%PORTDOCS%%%%DOCSDIR%%/readme41.txt
+%%PORTDOCS%%%%DOCSDIR%%/readme411.txt
 %%DATADIR%%/q3ut4/QIIIA Game Source (SDK) License.doc
 %%DATADIR%%/q3ut4/Urban Terror on the Web.url
 %%DATADIR%%/q3ut4/autoexec.cfg
@@ -8,8 +8,10 @@
 %%DATADIR%%/q3ut4/q3ut.ico
 %%DATADIR%%/q3ut4/screenshots/shot0000.jpg
 %%DATADIR%%/q3ut4/server.cfg
+%%DATADIR%%/q3ut4/ut4_commune.pk3
 %%DATADIR%%/q3ut4/zpak000.pk3
 %%DATADIR%%/q3ut4/zpak000_assets.pk3
+%%DATADIR%%/q3ut4/zpak001_assets.pk3
 @dirrm %%DATADIR%%/q3ut4/screenshots
 @dirrm %%DATADIR%%/q3ut4/demos
 @dirrm %%DATADIR%%/q3ut4

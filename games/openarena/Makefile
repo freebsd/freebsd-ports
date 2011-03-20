@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	openarena
-PORTVERSION=	0.8.5
-DISTVERSION=	1.36_SVN1788+${PORTVERSION}
-PORTREVISION=	1
+PORTVERSION=	${GAMEVERSION}.s${SVNREVISION}
+DISTVERSION=	1.36_SVN${SVNREVISION}+${GAMEVERSION}
+PORTEPOCH=	1
 MASTER_SITES=	http://files.poulsander.com/~poul19/public_files/oa/dev081/
-DISTNAME=	${PORTNAME}-engine-source-0.8.x-18
+DISTNAME=	${PORTNAME}-engine-source-0.8.x-20
 
 MAINTAINER=	kamikaze@bsdforen.de
 COMMENT=	Quake3 total conversion based on the ioquake3 engine
@@ -22,6 +22,8 @@ USE_ZIP=	no
 # OpenArena doc is too messy to bother
 NOPORTDOCS=	yes
 
+GAMEVERSION=	0.8.5
+SVNREVISION=	1910
 Q3TOTALCONV=	yes
 Q3CLIENT=	openarena
 Q3SERVER=	oa_ded
