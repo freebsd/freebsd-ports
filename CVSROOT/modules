@@ -1973,6 +1973,7 @@ crashme                         ports/sysutils/crashme
 crawl                           ports/www/crawl
 cre                             ports/games/cre
 cream                           ports/editors/cream
+create-cert                     ports/security/create-cert
 createtorrent                   ports/net-p2p/createtorrent
 credis                          ports/databases/credis
 creox                           ports/audio/creox
@@ -12842,6 +12843,7 @@ p5-IO-YAML                      ports/devel/p5-IO-YAML
 p5-IO-Zlib                      ports/archivers/p5-IO-Zlib
 p5-IO-stringy                   ports/devel/p5-IO-stringy
 p5-IOC                          ports/devel/p5-IOC
+p5-IP-Anonymous                 ports/net/p5-IP-Anonymous
 p5-IP-Country                   ports/net/p5-IP-Country
 p5-IPC-Cache                    ports/devel/p5-IPC-Cache
 p5-IPC-Cmd                      ports/devel/p5-IPC-Cmd
@@ -13493,7 +13495,6 @@ p5-Net-IMAP-Simple              ports/mail/p5-Net-IMAP-Simple
 p5-Net-IMAP-Simple-SSL          ports/mail/p5-Net-IMAP-Simple-SSL
 p5-Net-INET6Glue                ports/net/p5-Net-INET6Glue
 p5-Net-IP                       ports/net-mgmt/p5-Net-IP
-p5-Net-IP-Anonymous             ports/net/p5-Net-IP-Anonymous
 p5-Net-IP-Match-Regexp          ports/net-mgmt/p5-Net-IP-Match-Regexp
 p5-Net-IP-Match-XS              ports/net-mgmt/p5-Net-IP-Match-XS
 p5-Net-IP-RangeCompare          ports/net/p5-Net-IP-RangeCompare
@@ -17063,6 +17064,7 @@ p5-io-yaml                      ports/devel/p5-IO-YAML
 p5-io-zlib                      ports/archivers/p5-IO-Zlib
 p5-ioc                          ports/devel/p5-IOC
 p5-ioctl                        ports/devel/p5-Ioctl
+p5-ip-anonymous                 ports/net/p5-IP-Anonymous
 p5-ip-country                   ports/net/p5-IP-Country
 p5-ipc-cache                    ports/devel/p5-IPC-Cache
 p5-ipc-cmd                      ports/devel/p5-IPC-Cmd
@@ -17693,7 +17695,6 @@ p5-net-imap-simple-ssl          ports/mail/p5-Net-IMAP-Simple-SSL
 p5-net-inet6glue                ports/net/p5-Net-INET6Glue
 p5-net-interface                ports/net/p5-Net-Interface
 p5-net-ip                       ports/net-mgmt/p5-Net-IP
-p5-net-ip-anonymous             ports/net/p5-Net-IP-Anonymous
 p5-net-ip-match-regexp          ports/net-mgmt/p5-Net-IP-Match-Regexp
 p5-net-ip-match-xs              ports/net-mgmt/p5-Net-IP-Match-XS
 p5-net-ip-rangecompare          ports/net/p5-Net-IP-RangeCompare
@@ -21406,6 +21407,7 @@ py-cog                          ports/devel/py-cog
 py-coil                         ports/devel/py-coil
 py-configobj                    ports/devel/py-configobj
 py-construct                    ports/devel/py-construct
+py-couchdb                      ports/databases/py-couchdb
 py-coverage                     ports/devel/py-coverage
 py-crack                        ports/security/py-crack
 py-crcmod                       ports/devel/py-crcmod
@@ -21443,6 +21445,7 @@ py-django-evolution             ports/www/py-django-evolution
 py-django-extensions            ports/www/py-django-extensions
 py-django-keyedcache            ports/www/py-django-keyedcache
 py-django-livesettings          ports/www/py-django-livesettings
+py-django-mptt                  ports/www/py-django-mptt
 py-django-profiles              ports/www/py-django-profiles
 py-django-registration          ports/www/py-django-registration
 py-django-signals-ahoy          ports/www/py-django-signals-ahoy
@@ -23450,6 +23453,7 @@ rubygem-mixlib-authentication   ports/devel/rubygem-mixlib-authentication
 rubygem-mixlib-cli              ports/devel/rubygem-mixlib-cli
 rubygem-mixlib-config           ports/devel/rubygem-mixlib-config
 rubygem-mixlib-log              ports/devel/rubygem-mixlib-log
+rubygem-mkrf                    ports/devel/rubygem-mkrf
 rubygem-mocha                   ports/devel/rubygem-mocha
 rubygem-moneta                  ports/devel/rubygem-moneta
 rubygem-mongrel                 ports/www/rubygem-mongrel
@@ -23480,6 +23484,7 @@ rubygem-objectdetect            ports/graphics/rubygem-objectdetect
 rubygem-ohai                    ports/sysutils/rubygem-ohai
 rubygem-ohcount                 ports/misc/rubygem-ohcount
 rubygem-open4                   ports/devel/rubygem-open4
+rubygem-opengl                  ports/graphics/rubygem-opengl
 rubygem-openid                  ports/net/rubygem-openid
 rubygem-opml                    ports/textproc/rubygem-opml
 rubygem-parsetree               ports/devel/rubygem-parsetree
