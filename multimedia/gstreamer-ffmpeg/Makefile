@@ -30,7 +30,7 @@ CONFIGURE_ARGS=	"--with-ffmpeg-extra-configure=--cc=${CC}"
 CONFIGURE_ENV=	PKG_CONFIG=${PKG_CONFIG} \
 		CPPFLAGS="${CPPFLAGS}" \
 		CFLAGS="${CFLAGS} -fno-force-addr" \
-		LDFLAGS="${LDFLAGS}"
+		LDFLAGS="${LDFLAGS} -Wl,-Bsymbolic"
 PLIST_SUB=	\
 		VERSION="${GST_VERSION}"
 WITHOUT_CPU_CFLAGS=	yes
