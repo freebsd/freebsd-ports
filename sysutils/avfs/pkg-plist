@@ -34,6 +34,16 @@ lib/avfs/extfs/ulha
 lib/avfs/extfs/urar
 lib/avfs/extfs/uzip
 lib/avfs/extfs/uzoo
+lib/avfs/extfs/uace
+lib/avfs/extfs/uc1541
+lib/avfs/extfs/upp
+lib/avfs/extfs/uxdms
+lib/avfs/extfs/uxpk
+lib/avfs/extfs/uadf
+lib/avfs/extfs/uarc
+lib/avfs/extfs/ucab
+lib/avfs/extfs/udar
+lib/avfs/extfs/uimg
 %%LIBRARY%%lib/libavfs.a
 %%LIBRARY%%lib/libavfs.la
 %%LIBRARY%%lib/libavfs.so
