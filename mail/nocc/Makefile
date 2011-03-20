@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	nocc
-PORTVERSION=	1.8.3
+PORTVERSION=	1.9.0
 CATEGORIES=	mail www
 MASTER_SITES=	SF/${PORTNAME}/NOCC/${PORTVERSION}
 
@@ -24,7 +24,7 @@ PORTDOCS=	*
 
 do-install:
 	${MKDIR} ${PREFIX}/www/nocc
-	${CP} -Rp ${WRKSRC}/classes ${WRKSRC}/config ${WRKSRC}/fckeditor \
+	${CP} -Rp ${WRKSRC}/ckeditor ${WRKSRC}/classes ${WRKSRC}/config \
 		${WRKSRC}/html ${WRKSRC}/js ${WRKSRC}/lang ${WRKSRC}/themes \
 		${WRKSRC}/utils \
 		${PREFIX}/www/nocc
