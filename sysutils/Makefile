@@ -675,6 +675,7 @@
     SUBDIR += polkit-kde
     SUBDIR += polkit-qt
     SUBDIR += powerman
+    SUBDIR += pp
     SUBDIR += prips
     SUBDIR += procmap
     SUBDIR += progsreiserfs
