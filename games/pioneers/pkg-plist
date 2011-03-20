@@ -26,6 +26,7 @@ share/games/pioneers/henjes.game
 share/games/pioneers/iles.game
 share/games/pioneers/lobby.game
 share/games/pioneers/lorindol.game
+share/games/pioneers/north_america.game
 share/games/pioneers/pond.game
 share/games/pioneers/seafarers-gold.game
 share/games/pioneers/seafarers.game
@@ -33,6 +34,8 @@ share/games/pioneers/small.game
 share/games/pioneers/south_africa.game
 share/games/pioneers/square.game
 share/games/pioneers/star.game
+share/games/pioneers/ubuntuland.game
+share/games/pioneers/x.game
 share/games/pioneers/themes/Classic/board.png
 share/games/pioneers/themes/Classic/desert.png
 share/games/pioneers/themes/Classic/field.png
@@ -88,7 +91,23 @@ share/games/pioneers/themes/Wesnoth-like/mountain.png
 share/games/pioneers/themes/Wesnoth-like/pasture.png
 share/games/pioneers/themes/Wesnoth-like/sea.png
 share/games/pioneers/themes/Wesnoth-like/theme.cfg
-share/games/pioneers/x.game
+share/games/pioneers/themes/ccFlickr/ATTRIB
+share/games/pioneers/themes/ccFlickr/board.png
+share/games/pioneers/themes/ccFlickr/brick.png
+share/games/pioneers/themes/ccFlickr/desert.png
+share/games/pioneers/themes/ccFlickr/gold.png
+share/games/pioneers/themes/ccFlickr/grain.png
+share/games/pioneers/themes/ccFlickr/lumber.png
+share/games/pioneers/themes/ccFlickr/ore.png
+share/games/pioneers/themes/ccFlickr/port-brick.png
+share/games/pioneers/themes/ccFlickr/port-gold.png
+share/games/pioneers/themes/ccFlickr/port-grain.png
+share/games/pioneers/themes/ccFlickr/port-lumber.png
+share/games/pioneers/themes/ccFlickr/port-ore.png
+share/games/pioneers/themes/ccFlickr/port-wool.png
+share/games/pioneers/themes/ccFlickr/sea.png
+share/games/pioneers/themes/ccFlickr/theme.cfg
+share/games/pioneers/themes/ccFlickr/wool.png
 share/gnome/help/pioneers/C/images/actions.png
 share/gnome/help/pioneers/C/images/brick.png
 share/gnome/help/pioneers/C/images/chat.png
@@ -177,6 +196,7 @@ share/locale/sv/LC_MESSAGES/pioneers.mo
 @dirrm share/games/pioneers/themes/Iceland
 @dirrm share/games/pioneers/themes/Tiny
 @dirrm share/games/pioneers/themes/Wesnoth-like
+@dirrm share/games/pioneers/themes/ccFlickr
 @dirrm share/games/pioneers/themes
 @dirrm share/games/pioneers
 @dirrm share/gnome/help/pioneers/C/images
