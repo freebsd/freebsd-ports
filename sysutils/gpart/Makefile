@@ -15,6 +15,8 @@ MASTER_SITE_SUBDIR=	system/filesystems
 MAINTAINER=	mandree@FreeBSD.org
 COMMENT=	Tries to recover lost partition tables and file systems
 
+LICENSE=	GPLv2
+
 DEPRECATED=	Upstream disappeared
 EXPIRATION_DATE=	2011-09-15
 
