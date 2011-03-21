@@ -37,6 +37,9 @@ MAKE_JOBS_SAFE=		yes
 
 OPTIONS=	BUNDLED_LIBS "Use Qt-bundled jpeg, mng, png and tiff" off
 
+LICENSE=	GPLv3 LGPL3 LGPL21
+LICENSE_COMB=	multi
+
 CONFIGURE_ARGS=	-prefix ${WRKDIR}/wkqt \
 	-release -static -fast -exceptions -no-accessibility -no-stl \
 	-no-sql-ibase -no-sql-mysql -no-sql-odbc -no-sql-psql -no-sql-sqlite \
