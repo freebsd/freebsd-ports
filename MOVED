@@ -1586,3 +1586,4 @@ games/wormux-devel||2011-03-17|Project was renamed
 games/etuxracer|games/etracer|2011-03-18|Removed it is a duplicate of games/etracer
 net/p5-Net-IP-Anonymous|net/p5-IP-Anonymous|2011-03-19|Move to a correct directory
 databases/db50||2011-03-21|Removed, use databases/db51 instead
+games/wormux|games/warmux|2011-03-21|Project was renamed
