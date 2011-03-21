@@ -66,12 +66,18 @@ bin/bzr-notify
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/gtk/history.py
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/gtk/history.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/gtk/history.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/gtk/info.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/gtk/info.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/gtk/info.pyo
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/gtk/initialize.py
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/gtk/initialize.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/gtk/initialize.pyo
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/gtk/keyring.py
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/gtk/keyring.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/gtk/keyring.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/gtk/lock.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/gtk/lock.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/gtk/lock.pyo
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/gtk/loom.py
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/gtk/loom.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/gtk/loom.pyo
@@ -167,6 +173,7 @@ share/applications/bazaar-properties.desktop
 share/applications/bzr-handle-patch.desktop
 share/applications/bzr-notify.desktop
 share/pixmaps/bzr-icon-64.png
+%%DATADIR%%/credits.pickle
 %%DATADIR%%/icons/bug.png
 %%DATADIR%%/icons/bzr-icon-64.png
 %%DATADIR%%/icons/commit.png
@@ -185,6 +192,7 @@ share/pixmaps/bzr-icon-64.png
 %%DATADIR%%/icons/sign-unknown.png
 %%DATADIR%%/icons/sign.png
 %%DATADIR%%/icons/tag-16.png
+share/icons/hicolor/scalable/apps/bzr-panel.svg
 share/icons/hicolor/scalable/emblems/emblem-bzr-added.svg
 share/icons/hicolor/scalable/emblems/emblem-bzr-conflict.svg
 share/icons/hicolor/scalable/emblems/emblem-bzr-controlled.svg
@@ -192,6 +200,7 @@ share/icons/hicolor/scalable/emblems/emblem-bzr-ignored.svg
 share/icons/hicolor/scalable/emblems/emblem-bzr-modified.svg
 share/icons/hicolor/scalable/emblems/emblem-bzr-removed.svg
 @dirrmtry share/icons/hicolor/scalable/emblems
+@dirrmtry share/icons/hicolor/scalable/apps
 @dirrmtry share/icons/hicolor/scalable
 @dirrmtry share/icons/hicolor
 @dirrmtry share/icons
