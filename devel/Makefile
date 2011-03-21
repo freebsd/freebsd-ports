@@ -3024,6 +3024,7 @@
     SUBDIR += py-zclockfile
     SUBDIR += py-zconfig
     SUBDIR += py-zope.exceptions
+    SUBDIR += py-zope.schema
     SUBDIR += py-zopeInterface
     SUBDIR += py-zopeevent
     SUBDIR += py-zopetesting
