@@ -1,0 +1,68 @@
+Index: libraries/liblber/nt_err.c
+===================================================================
+RCS file: /repo/OpenLDAP/pkg/ldap/libraries/liblber/nt_err.c,v
+retrieving revision 1.20
+retrieving revision 1.21
+diff -u -r1.20 -r1.21
+--- libraries/liblber/nt_err.c	4 Jan 2011 23:43:01 -0000	1.20
++++ libraries/liblber/nt_err.c	16 Feb 2011 23:36:30 -0000	1.21
+@@ -17,7 +17,7 @@
+ 
+ #ifdef HAVE_WINSOCK2
+ #include <winsock2.h>
+-#elif HAVE_WINSOCK
++#elif defined(HAVE_WINSOCK)
+ #include <winsock.h>
+ #endif /* HAVE_WINSOCK(2) */
+
+Index: libraries/libldap/init.c
+===================================================================
+RCS file: /repo/OpenLDAP/pkg/ldap/libraries/libldap/init.c,v
+retrieving revision 1.128
+retrieving revision 1.129
+diff -u -r1.128 -r1.129
+--- libraries/libldap/init.c	11 Jan 2011 20:34:55 -0000	1.128
++++ libraries/libldap/init.c	16 Feb 2011 23:36:30 -0000	1.129
+@@ -626,7 +626,7 @@
+ 	    return; 
+ 	}
+ }	/* The WinSock DLL is acceptable. Proceed. */
+-#elif HAVE_WINSOCK
++#elif defined(HAVE_WINSOCK)
+ {	WSADATA wsaData;
+ 	if ( WSAStartup( 0x0101, &wsaData ) != 0 ) {
+ 	    return;
+Index: libraries/liblutil/detach.c
+===================================================================
+RCS file: /repo/OpenLDAP/pkg/ldap/libraries/liblutil/detach.c,v
+retrieving revision 1.24
+retrieving revision 1.25
+diff -u -r1.24 -r1.25
+--- libraries/liblutil/detach.c	4 Jan 2011 23:43:09 -0000	1.24
++++ libraries/liblutil/detach.c	16 Feb 2011 23:36:31 -0000	1.25
+@@ -128,7 +128,7 @@
+ 
+ #ifdef HAVE_SETSID
+ 		(void) setsid();
+-#elif TIOCNOTTY
++#elif defined(TIOCNOTTY)
+ 		if ( (sd = open( "/dev/tty", O_RDWR )) != -1 ) {
+ 			(void) ioctl( sd, TIOCNOTTY, NULL );
+ 			(void) close( sd );
+Index: libraries/liblutil/entropy.c
+===================================================================
+RCS file: /repo/OpenLDAP/pkg/ldap/libraries/liblutil/entropy.c,v
+retrieving revision 1.34
+retrieving revision 1.35
+diff -u -r1.34 -r1.35
+--- libraries/liblutil/entropy.c	4 Jan 2011 23:43:09 -0000	1.34
++++ libraries/liblutil/entropy.c	16 Feb 2011 23:36:31 -0000	1.35
+@@ -73,7 +73,7 @@
+ 		close(fd);
+ 		return nbytes > 0 ? -1 : 0;
+ 	}
+-#elif PROV_RSA_FULL
++#elif defined(PROV_RSA_FULL)
+ 	{
+ 		/* Not used since _WIN32_WINNT not set... */
+ 		HCRYPTPROV hProv = 0;
