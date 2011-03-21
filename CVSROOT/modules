@@ -21058,6 +21058,7 @@ powerpc-rtems-gcc               ports/devel/powerpc-rtems-gcc
 powerpc-rtems-gdb               ports/devel/powerpc-rtems-gdb
 powershell                      ports/x11/powershell
 powwow                          ports/games/powwow
+pp                              ports/sysutils/pp
 pp3                             ports/astro/pp3
 ppantsfonts                     ports/x11-fonts/ppantsfonts
 ppars                           ports/security/ppars
