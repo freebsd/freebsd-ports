@@ -7,9 +7,11 @@
 %%SITE_PERL%%/GnuPG/Options.pm
 %%SITE_PERL%%/GnuPG/PrimaryKey.pm
 %%SITE_PERL%%/GnuPG/PublicKey.pm
+%%SITE_PERL%%/GnuPG/Revoker.pm
 %%SITE_PERL%%/GnuPG/SecretKey.pm
 %%SITE_PERL%%/GnuPG/Signature.pm
 %%SITE_PERL%%/GnuPG/SubKey.pm
+%%SITE_PERL%%/GnuPG/UserAttribute.pm
 %%SITE_PERL%%/GnuPG/UserId.pm
 @dirrmtry %%SITE_PERL%%/GnuPG
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/GnuPG/Interface
