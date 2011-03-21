@@ -11,6 +11,7 @@ include/libiqxmlrpc/connector.h
 include/libiqxmlrpc/dispatcher_manager.h
 include/libiqxmlrpc/except.h
 include/libiqxmlrpc/executor.h
+include/libiqxmlrpc/firewall.h
 include/libiqxmlrpc/http.h
 include/libiqxmlrpc/http_client.h
 include/libiqxmlrpc/http_errors.h
