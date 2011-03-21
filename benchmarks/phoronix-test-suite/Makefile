@@ -13,6 +13,8 @@ MASTER_SITES=	http://www.phoronix-test-suite.com/releases/
 MAINTAINER=	mm@FreeBSD.org
 COMMENT=	Phoronix Benchmarking Suite
 
+LICENSE=	GPLv3
+
 OPTIONS=	BASH_COMPLETIONS "Install bash completions" off \
 		X11 "Install X11 icons and mimetypes" on
 
@@ -72,10 +74,10 @@ post-install:
 .for FILE in ${DOCFILES1}
 	@${INSTALL_DATA} ${WRKSRC}/${FILE} ${DOCSDIR}/${FILE}
 .endfor
-.for FILE in ${DOCFILES2} 
+.for FILE in ${DOCFILES2}
 	@${INSTALL_DATA} ${WRKSRC}/documentation/${FILE} ${DOCSDIR}/${FILE}
 .endfor
-.for DIR in html_sections includes 
+.for DIR in html_sections includes
 	@${CP} -rf ${WRKSRC}/documentation/${DIR} ${DOCSDIR}
 .endfor
 	@${ECHO_MSG} "===> Docs installed in ${DOCSDIR}."
