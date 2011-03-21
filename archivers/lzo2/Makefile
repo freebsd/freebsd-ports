@@ -24,7 +24,7 @@ USE_LDCONFIG=	yes
 post-build:
 	@${ECHO_MSG} "===>  Running self-tests for ${PKGNAME} (can take a few minutes)"
 	@#: override MALLOC_OPTIONS, else tests take excessively long
-	cd ${WRKSRC} && env MALLOC_OPTIONS=jz ${MAKE} check test SHELL="${SH} -x"
+	cd ${WRKSRC} && ${SETENV} MALLOC_OPTIONS=jz ${MAKE} check test SHELL="${SH} -x"
 
 post-install:
 .if !defined(NOPORTDOCS)
