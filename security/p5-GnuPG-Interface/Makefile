@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	GnuPG-Interface
-PORTVERSION=	0.42
-PORTREVISION=	2
+PORTVERSION=	0.43
 CATEGORIES=	security perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -29,9 +28,11 @@ MAN3=	GnuPG::Fingerprint.3 \
 	GnuPG::Options.3 \
 	GnuPG::PrimaryKey.3 \
 	GnuPG::PublicKey.3 \
+	GnuPG::Revoker.3 \
 	GnuPG::SecretKey.3 \
 	GnuPG::Signature.3 \
 	GnuPG::SubKey.3 \
+	GnuPG::UserAttribute.3 \
 	GnuPG::UserId.3
 
 .include <bsd.port.mk>
