@@ -1,0 +1,4 @@
+Simple statistics plugin for Bazaar. At the moment it can display
+statistics about the committers that have contributed to a project.
+
+WWW: https://launchpad.net/bzr-stats
