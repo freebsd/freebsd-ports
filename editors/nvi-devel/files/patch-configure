@@ -39,34 +39,10 @@
  
  int
  main ()
-@@ -28755,18 +28758,19 @@
- SAVELDFLAGS="$LDFLAGS"
- if test "x$with_db_prefix" != "x"; then
- 	LDFLAGS="-L$with_db_prefix/lib $LDFLAGS"
--	CPPFLAGS="-I$with_db_prefix/include $CPPFLAGS"
-+	CPPFLAGS="-I$with_db_prefix/include/db3 $CPPFLAGS"
- fi
- if test "$with_db_type" != db1; then
- 	SAVELIBS="$LIBS"
- 
--	LIBS="$LIBS -ldb"
-+	LIBS="$LIBS -ldb3"
- 	cat >conftest.$ac_ext <<_ACEOF
- /* confdefs.h.  */
- _ACEOF
- cat confdefs.h >>conftest.$ac_ext
+@@ -28755,5 +28758,6 @@
  cat >>conftest.$ac_ext <<_ACEOF
  /* end confdefs.h.  */
 +#include <sys/stddef.h>
  #include <db.h>
  int
  main ()
-@@ -28958,7 +28962,7 @@
- 	dl_src=../common/dldb.c
- 	LIBS="-ldl $LIBS"
- else
--	LIBS="-ldb $LIBS"
-+	LIBS="-ldb3 $LIBS"
- 	if test "X$with_db_prefix" != "X"; then
- 		LDFLAGS="`echo $with_db_prefix/lib | sed "$LRscript"` $LDFLAGS"
- 	fi
