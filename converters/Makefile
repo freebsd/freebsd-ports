@@ -147,6 +147,7 @@
     SUBDIR += uudx
     SUBDIR += uulib
     SUBDIR += vda2fbd
+    SUBDIR += wkhtmltopdf
     SUBDIR += xdeview
     SUBDIR += ytnef
     SUBDIR += zbase32
