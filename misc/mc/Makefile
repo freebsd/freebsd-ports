@@ -7,6 +7,7 @@
 
 PORTNAME=	mc
 PORTVERSION=	4.7.5
+PORTREVISION=	1
 CATEGORIES=	misc shells
 MASTER_SITES=	http://www.midnight-commander.org/downloads/ \
 		${MASTER_SITE_SUNSITE}
@@ -28,6 +29,7 @@ USE_PERL5=	yes
 USE_XZ=		yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	ZIP=${LOCALBASE}/bin/zip UNZIP=${LOCALBASE}/bin/unzip
+USE_AUTOTOOLS=	autoconf automake
 
 OPTIONS=	SLANG		"Build with SLang library" on \
 		ICONV		"Build with iconv recoding" on \
