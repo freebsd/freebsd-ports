@@ -1,0 +1,27 @@
+bin/pure
+include/pure/runtime.h
+lib/libpure.so
+lib/libpure.so.6
+lib/libpure.so.6.0
+lib/pure/array.pure
+lib/pure/avltrees.pure
+lib/pure/dict.pure
+lib/pure/faustui.pure
+lib/pure/getopt.pure
+lib/pure/heap.pure
+lib/pure/math.pure
+lib/pure/matrices.pure
+lib/pure/posix.pure
+lib/pure/prelude.pure
+lib/pure/primitives.pure
+lib/pure/pure_main.c
+lib/pure/pure_main.o
+lib/pure/quasiquote.pure
+lib/pure/quasiquote2.pure
+lib/pure/records.pure
+lib/pure/set.pure
+lib/pure/strings.pure
+lib/pure/system.pure
+%%DOCS%%lib/pure/docs
+@dirrm lib/pure
+@dirrm include/pure
