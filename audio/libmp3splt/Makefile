@@ -75,6 +75,8 @@ USE_GETTEXT=	yes
 LANGUAGES=	de_DE es fr_FR
 .for language in ${LANGUAGES}
 PLIST_FILES+=	share/locale/${language}/LC_MESSAGES/libmp3splt.mo
+PLIST_FILES+=	"@dirrmtry share/locale/${language}/LC_MESSAGES"
+PLIST_FILES+=	"@dirrmtry share/locale/${language}"
 .endfor
 .endif
 
