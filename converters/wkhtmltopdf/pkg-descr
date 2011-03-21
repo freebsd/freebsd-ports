@@ -1,0 +1,11 @@
+Simple shell utility to convert html to pdf using a custom static build
+of qt and the webkit rendering engine.
+
+Features of the static version:
+* Convert web pages into PDF documents using webkit
+* Adding headers and footers
+* TOC generation
+* Batch mode conversions
+* XServer is not required (however the X11 client libs must be installed) 
+
+WWW:	http://code.google.com/p/wkhtmltopdf/
