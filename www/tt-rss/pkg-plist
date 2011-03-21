@@ -977,6 +977,9 @@
 %%WWWDIR%%/lib/dijit/tree/_dndSelector.js
 %%WWWDIR%%/lib/dijit/tree/dndSource.js
 %%WWWDIR%%/lib/dijit/tree/model.js
+%%WWWDIR%%/lib/dojo-src/.gitignore
+%%WWWDIR%%/lib/dojo-src/profile.js
+%%WWWDIR%%/lib/dojo-src/rebuild-dojo.sh
 %%WWWDIR%%/lib/dojo/AdapterRegistry.js
 %%WWWDIR%%/lib/dojo/DeferredList.js
 %%WWWDIR%%/lib/dojo/NodeList-fx.js
@@ -1193,6 +1196,49 @@
 %%WWWDIR%%/lib/dojo/nls/sv/colors.js
 %%WWWDIR%%/lib/dojo/nls/th/colors.js
 %%WWWDIR%%/lib/dojo/nls/tr/colors.js
+%%WWWDIR%%/lib/dojo/nls/tt-rss-layer_ROOT.js
+%%WWWDIR%%/lib/dojo/nls/tt-rss-layer_ar.js
+%%WWWDIR%%/lib/dojo/nls/tt-rss-layer_ca.js
+%%WWWDIR%%/lib/dojo/nls/tt-rss-layer_cs.js
+%%WWWDIR%%/lib/dojo/nls/tt-rss-layer_da.js
+%%WWWDIR%%/lib/dojo/nls/tt-rss-layer_de-de.js
+%%WWWDIR%%/lib/dojo/nls/tt-rss-layer_de.js
+%%WWWDIR%%/lib/dojo/nls/tt-rss-layer_el.js
+%%WWWDIR%%/lib/dojo/nls/tt-rss-layer_en-gb.js
+%%WWWDIR%%/lib/dojo/nls/tt-rss-layer_en-us.js
+%%WWWDIR%%/lib/dojo/nls/tt-rss-layer_en.js
+%%WWWDIR%%/lib/dojo/nls/tt-rss-layer_es-es.js
+%%WWWDIR%%/lib/dojo/nls/tt-rss-layer_es.js
+%%WWWDIR%%/lib/dojo/nls/tt-rss-layer_fi-fi.js
+%%WWWDIR%%/lib/dojo/nls/tt-rss-layer_fi.js
+%%WWWDIR%%/lib/dojo/nls/tt-rss-layer_fr-fr.js
+%%WWWDIR%%/lib/dojo/nls/tt-rss-layer_fr.js
+%%WWWDIR%%/lib/dojo/nls/tt-rss-layer_he-il.js
+%%WWWDIR%%/lib/dojo/nls/tt-rss-layer_he.js
+%%WWWDIR%%/lib/dojo/nls/tt-rss-layer_hu.js
+%%WWWDIR%%/lib/dojo/nls/tt-rss-layer_it-it.js
+%%WWWDIR%%/lib/dojo/nls/tt-rss-layer_it.js
+%%WWWDIR%%/lib/dojo/nls/tt-rss-layer_ja-jp.js
+%%WWWDIR%%/lib/dojo/nls/tt-rss-layer_ja.js
+%%WWWDIR%%/lib/dojo/nls/tt-rss-layer_ko-kr.js
+%%WWWDIR%%/lib/dojo/nls/tt-rss-layer_ko.js
+%%WWWDIR%%/lib/dojo/nls/tt-rss-layer_nb.js
+%%WWWDIR%%/lib/dojo/nls/tt-rss-layer_nl-nl.js
+%%WWWDIR%%/lib/dojo/nls/tt-rss-layer_nl.js
+%%WWWDIR%%/lib/dojo/nls/tt-rss-layer_pl.js
+%%WWWDIR%%/lib/dojo/nls/tt-rss-layer_pt-br.js
+%%WWWDIR%%/lib/dojo/nls/tt-rss-layer_pt-pt.js
+%%WWWDIR%%/lib/dojo/nls/tt-rss-layer_pt.js
+%%WWWDIR%%/lib/dojo/nls/tt-rss-layer_ru.js
+%%WWWDIR%%/lib/dojo/nls/tt-rss-layer_sk.js
+%%WWWDIR%%/lib/dojo/nls/tt-rss-layer_sl.js
+%%WWWDIR%%/lib/dojo/nls/tt-rss-layer_sv.js
+%%WWWDIR%%/lib/dojo/nls/tt-rss-layer_th.js
+%%WWWDIR%%/lib/dojo/nls/tt-rss-layer_tr.js
+%%WWWDIR%%/lib/dojo/nls/tt-rss-layer_xx.js
+%%WWWDIR%%/lib/dojo/nls/tt-rss-layer_zh-cn.js
+%%WWWDIR%%/lib/dojo/nls/tt-rss-layer_zh-tw.js
+%%WWWDIR%%/lib/dojo/nls/tt-rss-layer_zh.js
 %%WWWDIR%%/lib/dojo/nls/zh-tw/colors.js
 %%WWWDIR%%/lib/dojo/nls/zh/colors.js
 %%WWWDIR%%/lib/dojo/number.js
@@ -1214,6 +1260,8 @@
 %%WWWDIR%%/lib/dojo/rpc/JsonpService.js
 %%WWWDIR%%/lib/dojo/rpc/RpcService.js
 %%WWWDIR%%/lib/dojo/string.js
+%%WWWDIR%%/lib/dojo/tt-rss-layer.js
+%%WWWDIR%%/lib/dojo/tt-rss-layer.js.uncompressed.js
 %%WWWDIR%%/lib/dojo/uacss.js
 %%WWWDIR%%/lib/dojo/window.js
 %%WWWDIR%%/lib/gettext/README
@@ -1429,6 +1477,8 @@
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/DefinitionCache/Null.php
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/DefinitionCache/Serializer.php
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/DefinitionCache/Serializer/README
+@exec chmod -R 777 %B
+@exec chmod 444 %D/%F
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/DefinitionCacheFactory.php
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/Doctype.php
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/DoctypeRegistry.php
@@ -1590,8 +1640,8 @@
 %%WWWDIR%%/lib/simplepie/simplepie.inc
 %%WWWDIR%%/lib/sphinxapi.php
 %%WWWDIR%%/lib/timezones.txt
-%%WWWDIR%%/lib/twitteroauth/OAuth.php
-%%WWWDIR%%/lib/twitteroauth/twitteroauth.php
+%%WWWDIR%%/lib/tmhoauth/README.md
+%%WWWDIR%%/lib/tmhoauth/tmhOAuth.php
 %%WWWDIR%%/lib/xsl_mop-up.js
 @comment php-gettext is not required (replacement included)
 %%WWWDIR%%/locale/ca_CA/LC_MESSAGES/messages.mo
@@ -1622,6 +1672,7 @@
 %%WWWDIR%%/lock/.htaccess
 %%WWWDIR%%/login_form.php
 %%WWWDIR%%/logout.php
+%%WWWDIR%%/messages.pot
 %%WWWDIR%%/mobile/article.php
 %%WWWDIR%%/mobile/backend.php
 %%WWWDIR%%/mobile/cat.php
@@ -1733,7 +1784,10 @@
 %%WWWDIR%%/schema/versions/mysql/76.sql
 %%WWWDIR%%/schema/versions/mysql/77.sql
 %%WWWDIR%%/schema/versions/mysql/78.sql
+%%WWWDIR%%/schema/versions/mysql/79.sql
 %%WWWDIR%%/schema/versions/mysql/8.sql
+%%WWWDIR%%/schema/versions/mysql/80.sql
+%%WWWDIR%%/schema/versions/mysql/81.sql
 %%WWWDIR%%/schema/versions/mysql/9.sql
 %%WWWDIR%%/schema/versions/pgsql/10.sql
 %%WWWDIR%%/schema/versions/pgsql/11.sql
@@ -1809,7 +1863,10 @@
 %%WWWDIR%%/schema/versions/pgsql/76.sql
 %%WWWDIR%%/schema/versions/pgsql/77.sql
 %%WWWDIR%%/schema/versions/pgsql/78.sql
+%%WWWDIR%%/schema/versions/pgsql/79.sql
 %%WWWDIR%%/schema/versions/pgsql/8.sql
+%%WWWDIR%%/schema/versions/pgsql/80.sql
+%%WWWDIR%%/schema/versions/pgsql/81.sql
 %%WWWDIR%%/schema/versions/pgsql/9.sql
 %%WWWDIR%%/sessions.php
 %%WWWDIR%%/templates/digest_template.txt
@@ -1936,13 +1993,13 @@
 %%WWWDIR%%/utils/notifier/style.css
 %%WWWDIR%%/utils/regen_config_checks.sh
 %%WWWDIR%%/utils/stats.php
-%%WWWDIR%%/utils/update-js-translations.sh
 %%WWWDIR%%/utils/update-schema-translations.sh
 %%WWWDIR%%/utils/update-translations.sh
 %%WWWDIR%%/utils/xml-export.php
 %%WWWDIR%%/utils/xml-import.php
 %%WWWDIR%%/version.php
 %%WWWDIR%%/viewfeed.js
+@exec chown -R %%WWWOWN%% %D/%%WWWDIR%%
 @dirrm %%WWWDIR%%/utils/notifier/lib/scriptaculous
 @dirrm %%WWWDIR%%/utils/notifier/lib
 @dirrm %%WWWDIR%%/utils/notifier/images
@@ -1993,7 +2050,7 @@
 @dirrm %%WWWDIR%%/locale/ca_CA/LC_MESSAGES
 @dirrm %%WWWDIR%%/locale/ca_CA
 @dirrm %%WWWDIR%%/locale
-@dirrm %%WWWDIR%%/lib/twitteroauth
+@dirrm %%WWWDIR%%/lib/tmhoauth
 @dirrm %%WWWDIR%%/lib/simplepie
 @dirrm %%WWWDIR%%/lib/scriptaculous
 @dirrm %%WWWDIR%%/lib/phpmailer/language
@@ -2017,6 +2074,8 @@
 @dirrm %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/HTMLModule
 @dirrm %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/Filter
 @dirrm %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/EntityLookup
+@dirrmtry %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/DefinitionCache/Serializer/URI
+@dirrmtry %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/DefinitionCache/Serializer/HTML
 @dirrmtry %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/DefinitionCache/Serializer
 @dirrm %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/DefinitionCache/Decorator
 @dirrmtry %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/DefinitionCache
@@ -2035,6 +2094,7 @@
 @dirrmtry %%WWWDIR%%/lib/htmlpurifier/library
 @dirrmtry %%WWWDIR%%/lib/htmlpurifier
 @dirrm %%WWWDIR%%/lib/gettext
+@dirrm %%WWWDIR%%/lib/dojo-src
 @dirrm %%WWWDIR%%/lib/dojo/rpc
 @dirrm %%WWWDIR%%/lib/dojo/resources/images
 @dirrm %%WWWDIR%%/lib/dojo/resources
