@@ -8,7 +8,8 @@
 PORTNAME=	lzop
 DISTVERSION=	1.03
 CATEGORIES=	archivers
-MASTER_SITES=	http://www.lzop.org/download/
+MASTER_SITES=	http://www.lzop.org/download/ \
+		http://ftp.uni-koeln.de/util/arc/
 
 MAINTAINER=	mandree@FreeBSD.org
 COMMENT=	Fast file compressor similar to gzip, using the LZO library
@@ -21,8 +22,7 @@ LIB_DEPENDS=	lzo.1:${PORTSDIR}/archivers/lzo
 .endif
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib"
 
 MAN1=		lzop.1
 PLIST_FILES=	bin/lzop
