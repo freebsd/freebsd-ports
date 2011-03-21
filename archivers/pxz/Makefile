@@ -15,6 +15,8 @@ DISTNAME=	pxz-git-${PORTVERSION:S/0.//}
 MAINTAINER=	mm@FreeBSD.org
 COMMENT=	Parallel LZMA compressor using liblzma
 
+LICENSE=	GPLv2
+
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 PLIST_FILES=	bin/pxz
