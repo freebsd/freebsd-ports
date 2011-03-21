@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	snobol4
-PORTVERSION=	1.2
+PORTVERSION=	1.3
 CATEGORIES=	lang
 MASTER_SITES=	ftp://ftp.ultimate.com/snobol/
 
