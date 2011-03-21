@@ -66,11 +66,9 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/chameleon/template.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/chameleon/template.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/chameleon/template.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/chameleon/tests
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/chameleon/tests/__init__.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/chameleon/tests/__init__.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/chameleon/tests/__init__.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/chameleon/tests/inputs
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/chameleon/tests/inputs/001-interpolation.txt
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/chameleon/tests/inputs/001-variable-scope.html
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/chameleon/tests/inputs/001-variable-scope.pt
