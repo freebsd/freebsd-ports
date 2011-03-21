@@ -11,7 +11,7 @@ PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.webta.org/apachetop/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	admin@mjbrune.org
 COMMENT=	Apache RealTime log stats
 
 MAKE_JOBS_SAFE=  yes
