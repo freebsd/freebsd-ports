@@ -7,8 +7,9 @@
 
 PORTNAME=	db51
 PORTVERSION=	5.1.25.0
+PORTREVISION=	1
 CATEGORIES=	databases java
-MASTER_SITES=	http://download.oracle.com/berkeley-db/ 
+MASTER_SITES=	http://download.oracle.com/berkeley-db/
 PKGNAMEPREFIX?=
 DISTNAME=	db-${PORTVERSION:R}
 DIST_SUBDIR=	bdb
@@ -53,7 +54,8 @@ libdb_sql=
 USE_JAVA=	yes
 JAVA_VERSION=	1.5+
 CONFIGURE_ARGS+=	--enable-java
-CONFIGURE_ENV=	CPPFLAGS="-I${JAVA_HOME}/include" JAVAC="${JAVAC}" JAR="${JAR}" JAVA="${JAVA}"
+CPPFLAGS+=	"-I${JAVA_HOME}/include"
+CONFIGURE_ENV=	JAVAC="${JAVAC}" JAR="${JAR}" JAVA="${JAVA}"
 PLIST_SUB+=	JAVA=""
 libdb_java=	libdb_java
 .else
