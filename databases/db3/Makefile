@@ -10,21 +10,22 @@ PORTVERSION=	3.3.11
 PORTREVISION=	3
 PORTEPOCH?=	1
 CATEGORIES=	databases
-MASTER_SITES=	http://download.oracle.com/berkeley-db/ 
+MASTER_SITES=	http://download.oracle.com/berkeley-db/
 DISTNAME=	db-${PORTVERSION}
 DIST_SUBDIR=	bdb
 
 PATCH_SITES=	http://download.oracle.com/berkeley-db/patches/db/${PORTVERSION}/
 PATCHFILES=	patch.${PORTVERSION}.1 patch.${PORTVERSION}.2
-PATCH_DIST_STRIP=	-d ${WRKDIR}/${DISTNAME}
 
 MAINTAINER=	mandree@FreeBSD.org
 COMMENT=	The Berkeley DB package, revision 3.3
 
+PATCH_WRKSRC=	${WRKDIR}/${DISTNAME}
 WRKSRC=		${WRKDIR}/${DISTNAME}/build_unix
 
 USE_LDCONFIG=		yes
-GNU_CONFIGURE=	yes
+GNU_CONFIGURE=		yes
+MAKE_JOBS_SAFE=		yes
 CONFIGURE_SCRIPT=	../dist/configure
 LIBTOOLFILES=		${CONFIGURE_SCRIPT}
 CONFIGURE_ARGS=		--enable-compat185 \
@@ -38,14 +39,19 @@ INSTALL_TARGET+=	install_docs docdir=${DOCSDIR}
 PORTDOCS=		*
 .endif
 
-.if defined(WITH_TCL_VER)
-.if ${WITH_TCL_VER} == 8.4 || ${WITH_TCL_VER} == 8.3
-CONFIGURE_ARGS+=	--enable-tcl --with-tcl=${LOCALBASE}/lib/tcl${WITH_TCL_VER}
-LIB_DEPENDS+=	tcl${WITH_TCL_VER:S/.//}.1:${PORTSDIR}/lang/tcl${WITH_TCL_VER:S/.//}
-PLIST_SUB+=	WITHTCL=""
-.else
-IGNORE=		WITH_TCL_VER must be 8.4 or 8.3
+.if defined(WITH_TCL_VER) && !defined(WITH_TCL)
+WITH_TCL:=	yes
 .endif
+
+.if defined(WITH_TCL)
+USE_TCL=	83+
+.endif
+
+.include <bsd.port.pre.mk>
+
+.if defined(WITH_TCL)
+CONFIGURE_ARGS+=	--enable-tcl --with-tcl=${TCL_LIBDIR}
+PLIST_SUB+=	WITHTCL=""
 .else
 PLIST_SUB+=	WITHTCL="@comment "
 .endif
@@ -58,8 +64,8 @@ post-patch:
 	@${REINPLACE_CMD} -e "s|%%LOCALBASE%%|${LOCALBASE}|g" ${WRKSRC}/../dist/configure
 
 post-configure:
-.if defined(WITH_TCL_VER)
-	@${REINPLACE_CMD} -e "s|TCFLAGS=.*|TCFLAGS=-I${LOCALBASE}/include/tcl${WITH_TCL_VER} -L${LOCALBASE}/lib/tcl${WITH_TCL_VER}|g" ${WRKSRC}/Makefile
+.if defined(WITH_TCL)
+	@${REINPLACE_CMD} -e "s|TCFLAGS=.*|TCFLAGS=-I${TCL_INCLUDEDIR} -L${TCL_LIBDIR}|g" ${WRKSRC}/Makefile
 .endif
 
 post-install:
@@ -67,4 +73,4 @@ post-install:
 	${RMDIR} ${DOCSDIR}/ref/splash
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
