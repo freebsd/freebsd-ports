@@ -10,7 +10,8 @@ PORTVERSION=	1.08
 PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	archivers devel
-MASTER_SITES=	http://www.oberhumer.com/opensource/lzo/download/LZO-v1/
+MASTER_SITES=	http://www.oberhumer.com/opensource/lzo/download/LZO-v1/ \
+		http://ftp.uni-koeln.de/util/arc/
 MASTER_SITE_SUBDIR=	libs/compression
 
 MAINTAINER=	mandree@FreeBSD.org
