@@ -6,6 +6,6 @@
  
 -  std::string GetDataDir() const { return data_dir; };
 +  std::string GetDataDir() const { return data_dir + "/"; };
+ #ifdef ENABLE_NLS
    std::string GetLocaleDir() const { return locale_dir; };
-   std::string GetPersonalDataDir() const { return personal_data_dir; };
-   std::string GetChatLogDir() const { return chat_log_dir; };
+ #endif

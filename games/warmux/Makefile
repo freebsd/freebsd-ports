@@ -5,18 +5,19 @@
 # $FreeBSD$
 #
 
-PORTNAME=	wormux
-DISTVERSION=	0.9.2.1
-PORTREVISION=	2
+PORTNAME=	warmux
+DISTVERSION=	11.01
 CATEGORIES=	games
-MASTER_SITES=	http://download.gna.org/wormux/ \
-		http://download.gna.org/wormux/archive/
+MASTER_SITES=	http://download.gna.org/${PORTNAME}/ \
+		http://download.gna.org/${PORTNAME}/archive/
 
 MAINTAINER=	makc@FreeBSD.org
 COMMENT=	Wormux game
 
 LIB_DEPENDS=	xml++-2.6.2:${PORTSDIR}/textproc/libxml++26 \
 		curl:${PORTSDIR}/ftp/curl
+
+CONFLICTS=	wormux-*
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
@@ -26,7 +27,7 @@ MAKE_JOBS_SAFE=	yes
 USE_DOS2UNIX=	fixed_class.h
 
 MANCOMPRESSED=	no
-MAN6=	wormux.6
+MAN6=		warmux.6
 
 OPTIONS+=	NLS "Native Language Support via gettext utilities" on \
 		FRIBIDI "Enable bi-directional unicode support" off \
