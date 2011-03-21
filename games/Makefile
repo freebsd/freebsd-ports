@@ -943,6 +943,7 @@
     SUBDIR += vultures-eye
     SUBDIR += wanderer
     SUBDIR += wargus
+    SUBDIR += warmux
     SUBDIR += warsow
     SUBDIR += warsow-data
     SUBDIR += warzone2100
@@ -965,7 +966,6 @@
     SUBDIR += wop
     SUBDIR += wordplay
     SUBDIR += worldofpadman
-    SUBDIR += wormux
     SUBDIR += wrogue
     SUBDIR += wtf
     SUBDIR += xabacus
