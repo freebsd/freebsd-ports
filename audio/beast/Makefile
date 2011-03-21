@@ -31,6 +31,15 @@ CONFIGURE_ARGS=	--disable-debug \
 		--enable-ossmidi=/dev/midi
 MAKE_JOBS_UNSAFE=	yes
 
+.include <bsd.port.pre.mk>
+
+# Assume i386 and amd64 support SSE
+.if ${ARCH} == "i386" || ${ARCH} == "amd64"
+PLIST_SUB+=	SSE=""
+.else
+PLIST_SUB+=	SSE="@comment "
+.endif
+
 PLIST_SUB+=	PORTVERSION=${PORTVERSION}
 
 MAN1=		beast.1 bsescm.1 bsewavetool.1 sfidl.1
@@ -45,4 +54,4 @@ post-patch:
 		${WRKSRC}/bse/Makefile.in \
 		${WRKSRC}/bse/zintern/Makefile.in
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
