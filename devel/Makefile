@@ -2954,6 +2954,7 @@
     SUBDIR += py-qt4-scripttools
     SUBDIR += py-qt4-test
     SUBDIR += py-repl
+    SUBDIR += py-repoze.lru
     SUBDIR += py-repoze.tm2
     SUBDIR += py-repoze.what
     SUBDIR += py-repoze.what-pylons
