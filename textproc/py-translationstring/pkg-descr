@@ -1,0 +1,10 @@
+translationstring is a library used for internationalization (i18n) duties.
+
+This package provides a translation string class, a translation string
+factory class, translation and pluralization primitives, and a utility
+that helps Chameleon templates use translation facilities of this package.
+It does not depend on Babel, but its translation and pluralization
+services are meant to work best when provided with an instance of
+the babel.support.Translations class.
+
+WWW:	http://pypi.python.org/pypi/translationstring
