@@ -1,0 +1,6 @@
+--- configure.in.orig	2003-02-01 13:43:30.000000000 -0600
++++ configure.in	2011-03-20 14:39:08.000000000 -0500
+@@ -38,2 +38,3 @@
+ AC_PROG_LIBTOOL
++AM_PROG_AS
+ dnl Checks for libraries.
