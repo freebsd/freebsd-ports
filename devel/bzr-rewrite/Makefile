@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	bzr-rewrite
-PORTVERSION=	0.6.1
+PORTVERSION=	0.6.2
 CATEGORIES=	devel
-MASTER_SITES=	http://launchpadlibrarian.net/53456671/ \
+MASTER_SITES=	http://launchpadlibrarian.net/65470418/ \
 		http://www.c-s.li/ports/
 
 MAINTAINER=	c-s@c-s.li
