@@ -15,6 +15,8 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	mm@FreeBSD.org
 COMMENT=	Benchmark SMTP/POP servers
 
+LICENSE=	GPLv3
+
 OPTIONS=	SSL "Build with OpenSSL support" on
 
 USE_OPENSSL=	yes
@@ -37,6 +39,6 @@ CONFIGURE_ARGS+=	--disable-openssl
 
 CFLAGS+=	${PTHREAD_CFLAGS}
 LDFLAGS+=	${PTHREAD_LIBS}
-CONFIGURE_ENV+=	CFLAGS="${CFLAGS}" CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
+CONFIGURE_ENV+=	LDFLAGS="${LDFLAGS}"
 
 .include <bsd.port.post.mk>
