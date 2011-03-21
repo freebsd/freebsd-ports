@@ -19,7 +19,9 @@ COMMENT=	Open-source J2EE application server (5.x family)
 LATEST_LINK=	jboss5
 USE_JAVA=	yes
 JAVA_VERSION=	1.5+
-USE_ANT=	yes
+JAVA_OS=	native
+ANT_HOME=	${WRKSRC}/tools
+ANT=		${WRKSRC}/tools/bin/ant
 DATADIR=	${PREFIX}/share/${UNIQUENAME}
 DOCSDIR=	${PREFIX}/share/doc/${UNIQUENAME}
 
@@ -40,7 +42,7 @@ LOG_DIR?=	${VAR_DIR}/log/${UNIQUENAME}
 DEPLOY_DIR?=	${VAR_DIR}/${UNIQUENAME}
 USER=		www
 GROUP=		www
-STOP_TIMEOUT?=	10
+STOP_TIMEOUT?=	30
 PID_FILE=	/var/run/${UNIQUENAME}.pid
 
 JBOSSOUTPUT=	${WRKSRC}/build/output/${PORTNAME}-${PORTVERSION}
@@ -63,6 +65,10 @@ SUB_LIST=	APP_HOME=${DATADIR} \
 
 .include <bsd.port.pre.mk>
 
+do-build:
+	@(cd ${BUILD_WRKSRC}; \
+		${SETENV} ${MAKE_ENV} ${ANT} ${MAKE_ARGS} ${ALL_TARGET})
+
 do-install:
 	${MKDIR} ${DATADIR}/bin && ${CHOWN} -R ${USER}:${GROUP} ${DATADIR}
 	${MKDIR} ${DEPLOY_DIR} && ${CHOWN} ${USER}:${GROUP} ${DEPLOY_DIR}
@@ -70,6 +76,10 @@ do-install:
 		${CPIO} -pdmu -R ${USER}:${GROUP} ${DATADIR})
 	(cd ${JBOSSOUTPUT}/server && ${FIND} . |\
 		${CPIO} -pdmu -R ${USER}:${GROUP} ${DEPLOY_DIR})
+	(cd ${WRKSRC}/jbossas/remoting/output/lib && ${FIND} . |\
+		${CPIO} -pdmu -R ${USER}:${GROUP} ${DATADIR}/common/lib)
+	(cd ${JBOSSOUTPUT}/client && ${FIND} jboss-remoting.jar jboss-serialization.jar |\
+		${CPIO} -pdmu -R ${USER}:${GROUP} ${DATADIR}/common/lib)
 	${INSTALL} -o ${USER} -g ${GROUP} -m 0640 /dev/null ${PID_FILE}
 .if !defined(NOPORTDOCS)
 	cd ${JBOSSOUTPUT}/docs \
