@@ -1,44 +1,46 @@
-bin/wormux
-%%SERVER%%bin/wormux-index-server
-bin/wormux-list-games
-%%SERVER%%bin/wormux-server
-share/applications/wormux.desktop
-%%NLS%%share/locale/bg/LC_MESSAGES/wormux.mo
-%%NLS%%share/locale/bs/LC_MESSAGES/wormux.mo
-%%NLS%%share/locale/ca/LC_MESSAGES/wormux.mo
-%%NLS%%share/locale/cpf/LC_MESSAGES/wormux.mo
-%%NLS%%share/locale/cs/LC_MESSAGES/wormux.mo
-%%NLS%%share/locale/da/LC_MESSAGES/wormux.mo
-%%NLS%%share/locale/de/LC_MESSAGES/wormux.mo
-%%NLS%%share/locale/el/LC_MESSAGES/wormux.mo
-%%NLS%%share/locale/eo/LC_MESSAGES/wormux.mo
-%%NLS%%share/locale/es/LC_MESSAGES/wormux.mo
-%%NLS%%share/locale/et/LC_MESSAGES/wormux.mo
-%%NLS%%share/locale/fa/LC_MESSAGES/wormux.mo
-%%NLS%%share/locale/fi/LC_MESSAGES/wormux.mo
-%%NLS%%share/locale/fr/LC_MESSAGES/wormux.mo
-%%NLS%%share/locale/gl/LC_MESSAGES/wormux.mo
-%%NLS%%share/locale/he/LC_MESSAGES/wormux.mo
-%%NLS%%share/locale/hu/LC_MESSAGES/wormux.mo
-%%NLS%%share/locale/it/LC_MESSAGES/wormux.mo
-%%NLS%%share/locale/ja_JP/LC_MESSAGES/wormux.mo
-%%NLS%%share/locale/kw/LC_MESSAGES/wormux.mo
-%%NLS%%share/locale/lv/LC_MESSAGES/wormux.mo
-%%NLS%%share/locale/nb/LC_MESSAGES/wormux.mo
-%%NLS%%share/locale/nl/LC_MESSAGES/wormux.mo
-%%NLS%%share/locale/nn/LC_MESSAGES/wormux.mo
-%%NLS%%share/locale/pl/LC_MESSAGES/wormux.mo
-%%NLS%%share/locale/pt/LC_MESSAGES/wormux.mo
-%%NLS%%share/locale/pt_BR/LC_MESSAGES/wormux.mo
-%%NLS%%share/locale/ro/LC_MESSAGES/wormux.mo
-%%NLS%%share/locale/ru/LC_MESSAGES/wormux.mo
-%%NLS%%share/locale/sk/LC_MESSAGES/wormux.mo
-%%NLS%%share/locale/sl/LC_MESSAGES/wormux.mo
-%%NLS%%share/locale/sv/LC_MESSAGES/wormux.mo
-%%NLS%%share/locale/tr/LC_MESSAGES/wormux.mo
-%%NLS%%share/locale/zh_CN/LC_MESSAGES/wormux.mo
-%%NLS%%share/locale/zh_TW/LC_MESSAGES/wormux.mo
-share/pixmaps/wormux_128x128.png
+bin/warmux
+%%SERVER%%bin/warmux-index-server
+bin/warmux-list-games
+%%SERVER%%bin/warmux-server
+share/applications/warmux.desktop
+%%NLS%%share/locale/bg/LC_MESSAGES/warmux.mo
+%%NLS%%share/locale/bs/LC_MESSAGES/warmux.mo
+%%NLS%%share/locale/ca/LC_MESSAGES/warmux.mo
+%%NLS%%share/locale/cpf/LC_MESSAGES/warmux.mo
+%%NLS%%share/locale/cs/LC_MESSAGES/warmux.mo
+%%NLS%%share/locale/da/LC_MESSAGES/warmux.mo
+%%NLS%%share/locale/de/LC_MESSAGES/warmux.mo
+%%NLS%%share/locale/el/LC_MESSAGES/warmux.mo
+%%NLS%%share/locale/eo/LC_MESSAGES/warmux.mo
+%%NLS%%share/locale/es/LC_MESSAGES/warmux.mo
+%%NLS%%share/locale/et/LC_MESSAGES/warmux.mo
+%%NLS%%share/locale/fa/LC_MESSAGES/warmux.mo
+%%NLS%%share/locale/fi/LC_MESSAGES/warmux.mo
+%%NLS%%share/locale/fr/LC_MESSAGES/warmux.mo
+%%NLS%%share/locale/gl/LC_MESSAGES/warmux.mo
+%%NLS%%share/locale/he/LC_MESSAGES/warmux.mo
+%%NLS%%share/locale/hu/LC_MESSAGES/warmux.mo
+%%NLS%%share/locale/it/LC_MESSAGES/warmux.mo
+%%NLS%%share/locale/ja_JP/LC_MESSAGES/warmux.mo
+%%NLS%%share/locale/kw/LC_MESSAGES/warmux.mo
+%%NLS%%share/locale/lv/LC_MESSAGES/warmux.mo
+%%NLS%%share/locale/nb/LC_MESSAGES/warmux.mo
+%%NLS%%share/locale/nl/LC_MESSAGES/warmux.mo
+%%NLS%%share/locale/nn/LC_MESSAGES/warmux.mo
+%%NLS%%share/locale/pl/LC_MESSAGES/warmux.mo
+%%NLS%%share/locale/pt/LC_MESSAGES/warmux.mo
+%%NLS%%share/locale/pt_BR/LC_MESSAGES/warmux.mo
+%%NLS%%share/locale/ro/LC_MESSAGES/warmux.mo
+%%NLS%%share/locale/ru/LC_MESSAGES/warmux.mo
+%%NLS%%share/locale/sk/LC_MESSAGES/warmux.mo
+%%NLS%%share/locale/sl/LC_MESSAGES/warmux.mo
+%%NLS%%share/locale/sv/LC_MESSAGES/warmux.mo
+%%NLS%%share/locale/tr/LC_MESSAGES/warmux.mo
+%%NLS%%share/locale/ua/LC_MESSAGES/warmux.mo
+%%NLS%%share/locale/zh_CN/LC_MESSAGES/warmux.mo
+%%NLS%%share/locale/zh_TW/LC_MESSAGES/warmux.mo
+share/pixmaps/warmux_128x128.png
+%%DATADIR%%/.nomedia
 %%DATADIR%%/authors.dtd
 %%DATADIR%%/authors.xml
 %%DATADIR%%/body/aliases.xml
@@ -47,9 +49,9 @@ share/pixmaps/wormux_128x128.png
 %%DATADIR%%/body/all_skins_objects/belt.png
 %%DATADIR%%/body/all_skins_objects/c1.png
 %%DATADIR%%/body/all_skins_objects/c2.png
+%%DATADIR%%/body/all_skins_objects/cowboy_hat.png
 %%DATADIR%%/body/all_skins_objects/foothelmet1.png
 %%DATADIR%%/body/all_skins_objects/foothelmet2.png
-%%DATADIR%%/body/all_skins_objects/hat.png
 %%DATADIR%%/body/all_skins_objects/helmet.png
 %%DATADIR%%/body/all_skins_objects/hoop.png
 %%DATADIR%%/body/all_skins_objects/hula.png
@@ -75,10 +77,12 @@ share/pixmaps/wormux_128x128.png
 %%DATADIR%%/body/beastie/black_eyes.png
 %%DATADIR%%/body/beastie/black_footleft.png
 %%DATADIR%%/body/beastie/black_footright.png
-%%DATADIR%%/body/beastie/black_hair.png
+%%DATADIR%%/body/beastie/black_hat.png
 %%DATADIR%%/body/beastie/black_head.png
-%%DATADIR%%/body/beastie/black_hornleft.png
-%%DATADIR%%/body/beastie/black_hornright.png
+%%DATADIR%%/body/beastie/black_hornoverleft.png
+%%DATADIR%%/body/beastie/black_hornoverright.png
+%%DATADIR%%/body/beastie/black_hornunderleft.png
+%%DATADIR%%/body/beastie/black_hornunderright.png
 %%DATADIR%%/body/beastie/black_noze.png
 %%DATADIR%%/body/beastie/black_pupil.png
 %%DATADIR%%/body/beastie/black_tail.png
@@ -89,10 +93,12 @@ share/pixmaps/wormux_128x128.png
 %%DATADIR%%/body/beastie/eyes.png
 %%DATADIR%%/body/beastie/footleft.png
 %%DATADIR%%/body/beastie/footright.png
-%%DATADIR%%/body/beastie/hair.png
+%%DATADIR%%/body/beastie/hat.png
 %%DATADIR%%/body/beastie/head.png
-%%DATADIR%%/body/beastie/hornleft.png
-%%DATADIR%%/body/beastie/hornright.png
+%%DATADIR%%/body/beastie/hornoverleft.png
+%%DATADIR%%/body/beastie/hornoverright.png
+%%DATADIR%%/body/beastie/hornunderleft.png
+%%DATADIR%%/body/beastie/hornunderright.png
 %%DATADIR%%/body/beastie/noze.png
 %%DATADIR%%/body/beastie/pupil.png
 %%DATADIR%%/body/beastie/sick_head.png
@@ -117,14 +123,15 @@ share/pixmaps/wormux_128x128.png
 %%DATADIR%%/body/bugzilla/black_eyes.png
 %%DATADIR%%/body/bugzilla/black_footleft.png
 %%DATADIR%%/body/bugzilla/black_footright.png
-%%DATADIR%%/body/bugzilla/black_hair.png
+%%DATADIR%%/body/bugzilla/black_hat.png
 %%DATADIR%%/body/bugzilla/black_head.png
-%%DATADIR%%/body/bugzilla/black_hornleft.png
-%%DATADIR%%/body/bugzilla/black_hornright.png
+%%DATADIR%%/body/bugzilla/black_hornoverleft.png
+%%DATADIR%%/body/bugzilla/black_hornoverright.png
+%%DATADIR%%/body/bugzilla/black_hornunderleft.png
+%%DATADIR%%/body/bugzilla/black_hornunderright.png
 %%DATADIR%%/body/bugzilla/black_noze.png
 %%DATADIR%%/body/bugzilla/black_pupil.png
 %%DATADIR%%/body/bugzilla/black_tail.png
-%%DATADIR%%/body/bugzilla/blackfootright.png
 %%DATADIR%%/body/bugzilla/body.png
 %%DATADIR%%/body/bugzilla/config.xml
 %%DATADIR%%/body/bugzilla/dead.png
@@ -132,10 +139,12 @@ share/pixmaps/wormux_128x128.png
 %%DATADIR%%/body/bugzilla/eyes.png
 %%DATADIR%%/body/bugzilla/footleft.png
 %%DATADIR%%/body/bugzilla/footright.png
-%%DATADIR%%/body/bugzilla/hair.png
+%%DATADIR%%/body/bugzilla/hat.png
 %%DATADIR%%/body/bugzilla/head.png
-%%DATADIR%%/body/bugzilla/hornleft.png
-%%DATADIR%%/body/bugzilla/hornright.png
+%%DATADIR%%/body/bugzilla/hornoverleft.png
+%%DATADIR%%/body/bugzilla/hornoverright.png
+%%DATADIR%%/body/bugzilla/hornunderleft.png
+%%DATADIR%%/body/bugzilla/hornunderright.png
 %%DATADIR%%/body/bugzilla/noze.png
 %%DATADIR%%/body/bugzilla/pupil.png
 %%DATADIR%%/body/bugzilla/sick_head.png
@@ -160,10 +169,12 @@ share/pixmaps/wormux_128x128.png
 %%DATADIR%%/body/firefox/black_eyes.png
 %%DATADIR%%/body/firefox/black_footleft.png
 %%DATADIR%%/body/firefox/black_footright.png
-%%DATADIR%%/body/firefox/black_hair.png
+%%DATADIR%%/body/firefox/black_hat.png
 %%DATADIR%%/body/firefox/black_head.png
-%%DATADIR%%/body/firefox/black_hornleft.png
-%%DATADIR%%/body/firefox/black_hornright.png
+%%DATADIR%%/body/firefox/black_hornoverleft.png
+%%DATADIR%%/body/firefox/black_hornoverright.png
+%%DATADIR%%/body/firefox/black_hornunderleft.png
+%%DATADIR%%/body/firefox/black_hornunderright.png
 %%DATADIR%%/body/firefox/black_noze.png
 %%DATADIR%%/body/firefox/black_pupil.png
 %%DATADIR%%/body/firefox/black_tail.png
@@ -174,10 +185,12 @@ share/pixmaps/wormux_128x128.png
 %%DATADIR%%/body/firefox/eyes.png
 %%DATADIR%%/body/firefox/footleft.png
 %%DATADIR%%/body/firefox/footright.png
-%%DATADIR%%/body/firefox/hair.png
+%%DATADIR%%/body/firefox/hat.png
 %%DATADIR%%/body/firefox/head.png
-%%DATADIR%%/body/firefox/hornleft.png
-%%DATADIR%%/body/firefox/hornright.png
+%%DATADIR%%/body/firefox/hornoverleft.png
+%%DATADIR%%/body/firefox/hornoverright.png
+%%DATADIR%%/body/firefox/hornunderleft.png
+%%DATADIR%%/body/firefox/hornunderright.png
 %%DATADIR%%/body/firefox/noze.png
 %%DATADIR%%/body/firefox/pupil.png
 %%DATADIR%%/body/firefox/sick_head.png
@@ -201,10 +214,12 @@ share/pixmaps/wormux_128x128.png
 %%DATADIR%%/body/gnu/black_eyes.png
 %%DATADIR%%/body/gnu/black_footleft.png
 %%DATADIR%%/body/gnu/black_footright.png
-%%DATADIR%%/body/gnu/black_hair.png
+%%DATADIR%%/body/gnu/black_hat.png
 %%DATADIR%%/body/gnu/black_head.png
-%%DATADIR%%/body/gnu/black_hornleft.png
-%%DATADIR%%/body/gnu/black_hornright.png
+%%DATADIR%%/body/gnu/black_hornoverleft.png
+%%DATADIR%%/body/gnu/black_hornoverright.png
+%%DATADIR%%/body/gnu/black_hornunderleft.png
+%%DATADIR%%/body/gnu/black_hornunderright.png
 %%DATADIR%%/body/gnu/black_noze.png
 %%DATADIR%%/body/gnu/black_pupil.png
 %%DATADIR%%/body/gnu/black_tail.png
@@ -215,10 +230,12 @@ share/pixmaps/wormux_128x128.png
 %%DATADIR%%/body/gnu/eyes.png
 %%DATADIR%%/body/gnu/footleft.png
 %%DATADIR%%/body/gnu/footright.png
-%%DATADIR%%/body/gnu/hair.png
+%%DATADIR%%/body/gnu/hat.png
 %%DATADIR%%/body/gnu/head.png
-%%DATADIR%%/body/gnu/hornleft.png
-%%DATADIR%%/body/gnu/hornright.png
+%%DATADIR%%/body/gnu/hornoverleft.png
+%%DATADIR%%/body/gnu/hornoverright.png
+%%DATADIR%%/body/gnu/hornunderleft.png
+%%DATADIR%%/body/gnu/hornunderright.png
 %%DATADIR%%/body/gnu/noze.png
 %%DATADIR%%/body/gnu/pupil.png
 %%DATADIR%%/body/gnu/sick_head.png
@@ -242,10 +259,14 @@ share/pixmaps/wormux_128x128.png
 %%DATADIR%%/body/hexley/black_eyes.png
 %%DATADIR%%/body/hexley/black_footleft.png
 %%DATADIR%%/body/hexley/black_footright.png
-%%DATADIR%%/body/hexley/black_hair.png
+%%DATADIR%%/body/hexley/black_hat.png
 %%DATADIR%%/body/hexley/black_head.png
 %%DATADIR%%/body/hexley/black_hornleft.png
+%%DATADIR%%/body/hexley/black_hornoverleft.png
+%%DATADIR%%/body/hexley/black_hornoverright.png
 %%DATADIR%%/body/hexley/black_hornright.png
+%%DATADIR%%/body/hexley/black_hornunderleft.png
+%%DATADIR%%/body/hexley/black_hornunderright.png
 %%DATADIR%%/body/hexley/black_noze.png
 %%DATADIR%%/body/hexley/black_pupil.png
 %%DATADIR%%/body/hexley/black_tail.png
@@ -256,10 +277,15 @@ share/pixmaps/wormux_128x128.png
 %%DATADIR%%/body/hexley/eyes.png
 %%DATADIR%%/body/hexley/footleft.png
 %%DATADIR%%/body/hexley/footright.png
-%%DATADIR%%/body/hexley/hair.png
+%%DATADIR%%/body/hexley/hat.png
 %%DATADIR%%/body/hexley/head.png
 %%DATADIR%%/body/hexley/hornleft.png
+%%DATADIR%%/body/hexley/hornoveleft.png
+%%DATADIR%%/body/hexley/hornoverleft.png
+%%DATADIR%%/body/hexley/hornoverright.png
 %%DATADIR%%/body/hexley/hornright.png
+%%DATADIR%%/body/hexley/hornunderleft.png
+%%DATADIR%%/body/hexley/hornunderright.png
 %%DATADIR%%/body/hexley/noze.png
 %%DATADIR%%/body/hexley/pupil.png
 %%DATADIR%%/body/hexley/sick_head.png
@@ -283,10 +309,12 @@ share/pixmaps/wormux_128x128.png
 %%DATADIR%%/body/konqi/black_eyes.png
 %%DATADIR%%/body/konqi/black_footleft.png
 %%DATADIR%%/body/konqi/black_footright.png
-%%DATADIR%%/body/konqi/black_hair.png
+%%DATADIR%%/body/konqi/black_hat.png
 %%DATADIR%%/body/konqi/black_head.png
-%%DATADIR%%/body/konqi/black_hornleft.png
-%%DATADIR%%/body/konqi/black_hornright.png
+%%DATADIR%%/body/konqi/black_hornoverleft.png
+%%DATADIR%%/body/konqi/black_hornoverright.png
+%%DATADIR%%/body/konqi/black_hornunderleft.png
+%%DATADIR%%/body/konqi/black_hornunderright.png
 %%DATADIR%%/body/konqi/black_noze.png
 %%DATADIR%%/body/konqi/black_pupil.png
 %%DATADIR%%/body/konqi/black_tail.png
@@ -297,97 +325,17 @@ share/pixmaps/wormux_128x128.png
 %%DATADIR%%/body/konqi/eyes.png
 %%DATADIR%%/body/konqi/footleft.png
 %%DATADIR%%/body/konqi/footright.png
-%%DATADIR%%/body/konqi/hair.png
+%%DATADIR%%/body/konqi/hat.png
 %%DATADIR%%/body/konqi/head.png
-%%DATADIR%%/body/konqi/hornleft.png
-%%DATADIR%%/body/konqi/hornright.png
+%%DATADIR%%/body/konqi/hornoverleft.png
+%%DATADIR%%/body/konqi/hornoverright.png
+%%DATADIR%%/body/konqi/hornunderleft.png
+%%DATADIR%%/body/konqi/hornunderright.png
 %%DATADIR%%/body/konqi/noze.png
 %%DATADIR%%/body/konqi/pupil.png
 %%DATADIR%%/body/konqi/sick_head.png
 %%DATADIR%%/body/konqi/tail.png
 %%DATADIR%%/body/movements.xml
-%%DATADIR%%/body/nupik/arm1left.png
-%%DATADIR%%/body/nupik/arm1right.png
-%%DATADIR%%/body/nupik/arm2left.png
-%%DATADIR%%/body/nupik/arm2right.png
-%%DATADIR%%/body/nupik/arm3left.png
-%%DATADIR%%/body/nupik/arm3right.png
-%%DATADIR%%/body/nupik/back.png
-%%DATADIR%%/body/nupik/black_arm1left.png
-%%DATADIR%%/body/nupik/black_arm1right.png
-%%DATADIR%%/body/nupik/black_arm2left.png
-%%DATADIR%%/body/nupik/black_arm2right.png
-%%DATADIR%%/body/nupik/black_arm3left.png
-%%DATADIR%%/body/nupik/black_arm3right.png
-%%DATADIR%%/body/nupik/black_back.png
-%%DATADIR%%/body/nupik/black_body.png
-%%DATADIR%%/body/nupik/black_eyelid.png
-%%DATADIR%%/body/nupik/black_eyes.png
-%%DATADIR%%/body/nupik/black_footleft.png
-%%DATADIR%%/body/nupik/black_footright.png
-%%DATADIR%%/body/nupik/black_hair.png
-%%DATADIR%%/body/nupik/black_head.png
-%%DATADIR%%/body/nupik/black_hornleft.png
-%%DATADIR%%/body/nupik/black_hornright.png
-%%DATADIR%%/body/nupik/black_noze.png
-%%DATADIR%%/body/nupik/black_pupil.png
-%%DATADIR%%/body/nupik/black_tail.png
-%%DATADIR%%/body/nupik/body.png
-%%DATADIR%%/body/nupik/config.xml
-%%DATADIR%%/body/nupik/dead.png
-%%DATADIR%%/body/nupik/eyelid.png
-%%DATADIR%%/body/nupik/eyes.png
-%%DATADIR%%/body/nupik/footleft.png
-%%DATADIR%%/body/nupik/footright.png
-%%DATADIR%%/body/nupik/hair.png
-%%DATADIR%%/body/nupik/head.png
-%%DATADIR%%/body/nupik/hornleft.png
-%%DATADIR%%/body/nupik/hornright.png
-%%DATADIR%%/body/nupik/noze.png
-%%DATADIR%%/body/nupik/pupil.png
-%%DATADIR%%/body/nupik/sick_head.png
-%%DATADIR%%/body/nupik/tail.png
-%%DATADIR%%/body/ooo/arm1left.png
-%%DATADIR%%/body/ooo/arm1right.png
-%%DATADIR%%/body/ooo/arm2left.png
-%%DATADIR%%/body/ooo/arm2right.png
-%%DATADIR%%/body/ooo/arm3left.png
-%%DATADIR%%/body/ooo/arm3right.png
-%%DATADIR%%/body/ooo/back.png
-%%DATADIR%%/body/ooo/black_arm1left.png
-%%DATADIR%%/body/ooo/black_arm1right.png
-%%DATADIR%%/body/ooo/black_arm2left.png
-%%DATADIR%%/body/ooo/black_arm2right.png
-%%DATADIR%%/body/ooo/black_arm3left.png
-%%DATADIR%%/body/ooo/black_arm3right.png
-%%DATADIR%%/body/ooo/black_back.png
-%%DATADIR%%/body/ooo/black_body.png
-%%DATADIR%%/body/ooo/black_eyelid.png
-%%DATADIR%%/body/ooo/black_eyes.png
-%%DATADIR%%/body/ooo/black_footleft.png
-%%DATADIR%%/body/ooo/black_footright.png
-%%DATADIR%%/body/ooo/black_hair.png
-%%DATADIR%%/body/ooo/black_head.png
-%%DATADIR%%/body/ooo/black_hornleft.png
-%%DATADIR%%/body/ooo/black_hornright.png
-%%DATADIR%%/body/ooo/black_noze.png
-%%DATADIR%%/body/ooo/black_pupil.png
-%%DATADIR%%/body/ooo/black_tail.png
-%%DATADIR%%/body/ooo/body.png
-%%DATADIR%%/body/ooo/config.xml
-%%DATADIR%%/body/ooo/dead.png
-%%DATADIR%%/body/ooo/eyelid.png
-%%DATADIR%%/body/ooo/eyes.png
-%%DATADIR%%/body/ooo/footleft.png
-%%DATADIR%%/body/ooo/footright.png
-%%DATADIR%%/body/ooo/hair.png
-%%DATADIR%%/body/ooo/head.png
-%%DATADIR%%/body/ooo/hornleft.png
-%%DATADIR%%/body/ooo/hornright.png
-%%DATADIR%%/body/ooo/noze.png
-%%DATADIR%%/body/ooo/pupil.png
-%%DATADIR%%/body/ooo/sick_head.png
-%%DATADIR%%/body/ooo/tail.png
 %%DATADIR%%/body/php/arm1left.png
 %%DATADIR%%/body/php/arm1right.png
 %%DATADIR%%/body/php/arm2left.png
@@ -407,10 +355,14 @@ share/pixmaps/wormux_128x128.png
 %%DATADIR%%/body/php/black_eyes.png
 %%DATADIR%%/body/php/black_footleft.png
 %%DATADIR%%/body/php/black_footright.png
-%%DATADIR%%/body/php/black_hair.png
+%%DATADIR%%/body/php/black_hat.png
 %%DATADIR%%/body/php/black_head.png
 %%DATADIR%%/body/php/black_hornleft.png
+%%DATADIR%%/body/php/black_hornoverleft.png
+%%DATADIR%%/body/php/black_hornoverright.png
 %%DATADIR%%/body/php/black_hornright.png
+%%DATADIR%%/body/php/black_hornunderleft.png
+%%DATADIR%%/body/php/black_hornunderright.png
 %%DATADIR%%/body/php/black_noze.png
 %%DATADIR%%/body/php/black_pupil.png
 %%DATADIR%%/body/php/black_tail.png
@@ -421,10 +373,13 @@ share/pixmaps/wormux_128x128.png
 %%DATADIR%%/body/php/eyes.png
 %%DATADIR%%/body/php/footleft.png
 %%DATADIR%%/body/php/footright.png
-%%DATADIR%%/body/php/hair.png
+%%DATADIR%%/body/php/hat.png
 %%DATADIR%%/body/php/head.png
-%%DATADIR%%/body/php/hornleft.png
-%%DATADIR%%/body/php/hornright.png
+%%DATADIR%%/body/php/hornoverleft.png
+%%DATADIR%%/body/php/hornoverright.png
+%%DATADIR%%/body/php/hornrightright.png
+%%DATADIR%%/body/php/hornunderleft.png
+%%DATADIR%%/body/php/hornunderright.png
 %%DATADIR%%/body/php/noze.png
 %%DATADIR%%/body/php/pupil.png
 %%DATADIR%%/body/php/sick_head.png
@@ -448,10 +403,12 @@ share/pixmaps/wormux_128x128.png
 %%DATADIR%%/body/pidgin/black_eyes.png
 %%DATADIR%%/body/pidgin/black_footleft.png
 %%DATADIR%%/body/pidgin/black_footright.png
-%%DATADIR%%/body/pidgin/black_hair.png
+%%DATADIR%%/body/pidgin/black_hat.png
 %%DATADIR%%/body/pidgin/black_head.png
-%%DATADIR%%/body/pidgin/black_hornleft.png
-%%DATADIR%%/body/pidgin/black_hornright.png
+%%DATADIR%%/body/pidgin/black_hornoverleft.png
+%%DATADIR%%/body/pidgin/black_hornoverright.png
+%%DATADIR%%/body/pidgin/black_hornunderleft.png
+%%DATADIR%%/body/pidgin/black_hornunderright.png
 %%DATADIR%%/body/pidgin/black_noze.png
 %%DATADIR%%/body/pidgin/black_pupil.png
 %%DATADIR%%/body/pidgin/black_tail.png
@@ -462,10 +419,12 @@ share/pixmaps/wormux_128x128.png
 %%DATADIR%%/body/pidgin/eyes.png
 %%DATADIR%%/body/pidgin/footleft.png
 %%DATADIR%%/body/pidgin/footright.png
-%%DATADIR%%/body/pidgin/hair.png
+%%DATADIR%%/body/pidgin/hat.png
 %%DATADIR%%/body/pidgin/head.png
-%%DATADIR%%/body/pidgin/hornleft.png
-%%DATADIR%%/body/pidgin/hornright.png
+%%DATADIR%%/body/pidgin/hornoverleft.png
+%%DATADIR%%/body/pidgin/hornoverright.png
+%%DATADIR%%/body/pidgin/hornunderleft.png
+%%DATADIR%%/body/pidgin/hornunderright.png
 %%DATADIR%%/body/pidgin/noze.png
 %%DATADIR%%/body/pidgin/pupil.png
 %%DATADIR%%/body/pidgin/sick_head.png
@@ -489,14 +448,17 @@ share/pixmaps/wormux_128x128.png
 %%DATADIR%%/body/postfix/black_eyes.png
 %%DATADIR%%/body/postfix/black_footleft.png
 %%DATADIR%%/body/postfix/black_footright.png
-%%DATADIR%%/body/postfix/black_hair.png
+%%DATADIR%%/body/postfix/black_hat.png
 %%DATADIR%%/body/postfix/black_head.png
 %%DATADIR%%/body/postfix/black_hornleft.png
+%%DATADIR%%/body/postfix/black_hornoverleft.png
+%%DATADIR%%/body/postfix/black_hornoverright.png
 %%DATADIR%%/body/postfix/black_hornright.png
+%%DATADIR%%/body/postfix/black_hornunderleft.png
+%%DATADIR%%/body/postfix/black_hornunderright.png
 %%DATADIR%%/body/postfix/black_noze.png
 %%DATADIR%%/body/postfix/black_pupil.png
 %%DATADIR%%/body/postfix/black_tail.png
-%%DATADIR%%/body/postfix/blackfootright.png
 %%DATADIR%%/body/postfix/body.png
 %%DATADIR%%/body/postfix/config.xml
 %%DATADIR%%/body/postfix/dead.png
@@ -504,10 +466,14 @@ share/pixmaps/wormux_128x128.png
 %%DATADIR%%/body/postfix/eyes.png
 %%DATADIR%%/body/postfix/footleft.png
 %%DATADIR%%/body/postfix/footright.png
-%%DATADIR%%/body/postfix/hair.png
+%%DATADIR%%/body/postfix/hat.png
 %%DATADIR%%/body/postfix/head.png
 %%DATADIR%%/body/postfix/hornleft.png
+%%DATADIR%%/body/postfix/hornoverleft.png
+%%DATADIR%%/body/postfix/hornoverright.png
 %%DATADIR%%/body/postfix/hornright.png
+%%DATADIR%%/body/postfix/hornunderleft.png
+%%DATADIR%%/body/postfix/hornunderright.png
 %%DATADIR%%/body/postfix/noze.png
 %%DATADIR%%/body/postfix/pupil.png
 %%DATADIR%%/body/postfix/sick_head.png
@@ -532,10 +498,12 @@ share/pixmaps/wormux_128x128.png
 %%DATADIR%%/body/snort/black_eyes.png
 %%DATADIR%%/body/snort/black_footleft.png
 %%DATADIR%%/body/snort/black_footright.png
-%%DATADIR%%/body/snort/black_hair.png
+%%DATADIR%%/body/snort/black_hat.png
 %%DATADIR%%/body/snort/black_head.png
-%%DATADIR%%/body/snort/black_hornleft.png
-%%DATADIR%%/body/snort/black_hornright.png
+%%DATADIR%%/body/snort/black_hornoverleft.png
+%%DATADIR%%/body/snort/black_hornoverright.png
+%%DATADIR%%/body/snort/black_hornunderleft.png
+%%DATADIR%%/body/snort/black_hornunderright.png
 %%DATADIR%%/body/snort/black_noze.png
 %%DATADIR%%/body/snort/black_pupil.png
 %%DATADIR%%/body/snort/black_tail.png
@@ -546,10 +514,12 @@ share/pixmaps/wormux_128x128.png
 %%DATADIR%%/body/snort/eyes.png
 %%DATADIR%%/body/snort/footleft.png
 %%DATADIR%%/body/snort/footright.png
-%%DATADIR%%/body/snort/hair.png
+%%DATADIR%%/body/snort/hat.png
 %%DATADIR%%/body/snort/head.png
-%%DATADIR%%/body/snort/hornleft.png
-%%DATADIR%%/body/snort/hornright.png
+%%DATADIR%%/body/snort/hornoverleft.png
+%%DATADIR%%/body/snort/hornoverright.png
+%%DATADIR%%/body/snort/hornunderleft.png
+%%DATADIR%%/body/snort/hornunderright.png
 %%DATADIR%%/body/snort/noze.png
 %%DATADIR%%/body/snort/pupil.png
 %%DATADIR%%/body/snort/sick_head.png
@@ -573,10 +543,12 @@ share/pixmaps/wormux_128x128.png
 %%DATADIR%%/body/spip/black_eyes.png
 %%DATADIR%%/body/spip/black_footleft.png
 %%DATADIR%%/body/spip/black_footright.png
-%%DATADIR%%/body/spip/black_hair.png
+%%DATADIR%%/body/spip/black_hat.png
 %%DATADIR%%/body/spip/black_head.png
-%%DATADIR%%/body/spip/black_hornleft.png
-%%DATADIR%%/body/spip/black_hornright.png
+%%DATADIR%%/body/spip/black_hornoverleft.png
+%%DATADIR%%/body/spip/black_hornoverright.png
+%%DATADIR%%/body/spip/black_hornunderleft.png
+%%DATADIR%%/body/spip/black_hornunderright.png
 %%DATADIR%%/body/spip/black_noze.png
 %%DATADIR%%/body/spip/black_pupil.png
 %%DATADIR%%/body/spip/black_tail.png
@@ -587,10 +559,12 @@ share/pixmaps/wormux_128x128.png
 %%DATADIR%%/body/spip/eyes.png
 %%DATADIR%%/body/spip/footleft.png
 %%DATADIR%%/body/spip/footright.png
-%%DATADIR%%/body/spip/hair.png
+%%DATADIR%%/body/spip/hat.png
 %%DATADIR%%/body/spip/head.png
-%%DATADIR%%/body/spip/hornleft.png
-%%DATADIR%%/body/spip/hornright.png
+%%DATADIR%%/body/spip/hornoverleft.png
+%%DATADIR%%/body/spip/hornoverright.png
+%%DATADIR%%/body/spip/hornunderleft.png
+%%DATADIR%%/body/spip/hornunderright.png
 %%DATADIR%%/body/spip/noze.png
 %%DATADIR%%/body/spip/pupil.png
 %%DATADIR%%/body/spip/sick_head.png
@@ -614,10 +588,12 @@ share/pixmaps/wormux_128x128.png
 %%DATADIR%%/body/suse/black_eyes.png
 %%DATADIR%%/body/suse/black_footleft.png
 %%DATADIR%%/body/suse/black_footright.png
-%%DATADIR%%/body/suse/black_hair.png
+%%DATADIR%%/body/suse/black_hat.png
 %%DATADIR%%/body/suse/black_head.png
-%%DATADIR%%/body/suse/black_hornleft.png
-%%DATADIR%%/body/suse/black_hornright.png
+%%DATADIR%%/body/suse/black_hornoverleft.png
+%%DATADIR%%/body/suse/black_hornoverright.png
+%%DATADIR%%/body/suse/black_hornunderleft.png
+%%DATADIR%%/body/suse/black_hornunderright.png
 %%DATADIR%%/body/suse/black_noze.png
 %%DATADIR%%/body/suse/black_pupil.png
 %%DATADIR%%/body/suse/black_tail.png
@@ -628,10 +604,12 @@ share/pixmaps/wormux_128x128.png
 %%DATADIR%%/body/suse/eyes.png
 %%DATADIR%%/body/suse/footleft.png
 %%DATADIR%%/body/suse/footright.png
-%%DATADIR%%/body/suse/hair.png
+%%DATADIR%%/body/suse/hat.png
 %%DATADIR%%/body/suse/head.png
-%%DATADIR%%/body/suse/hornleft.png
-%%DATADIR%%/body/suse/hornright.png
+%%DATADIR%%/body/suse/hornoverleft.png
+%%DATADIR%%/body/suse/hornoverright.png
+%%DATADIR%%/body/suse/hornunderleft.png
+%%DATADIR%%/body/suse/hornunderright.png
 %%DATADIR%%/body/suse/noze.png
 %%DATADIR%%/body/suse/pupil.png
 %%DATADIR%%/body/suse/sick_head.png
@@ -655,10 +633,14 @@ share/pixmaps/wormux_128x128.png
 %%DATADIR%%/body/thunderbird/black_eyes.png
 %%DATADIR%%/body/thunderbird/black_footleft.png
 %%DATADIR%%/body/thunderbird/black_footright.png
-%%DATADIR%%/body/thunderbird/black_hair.png
+%%DATADIR%%/body/thunderbird/black_hat.png
 %%DATADIR%%/body/thunderbird/black_head.png
 %%DATADIR%%/body/thunderbird/black_hornleft.png
+%%DATADIR%%/body/thunderbird/black_hornoverleft.png
+%%DATADIR%%/body/thunderbird/black_hornoverright.png
 %%DATADIR%%/body/thunderbird/black_hornright.png
+%%DATADIR%%/body/thunderbird/black_hornunderleft.png
+%%DATADIR%%/body/thunderbird/black_hornunderright.png
 %%DATADIR%%/body/thunderbird/black_noze.png
 %%DATADIR%%/body/thunderbird/black_pupil.png
 %%DATADIR%%/body/thunderbird/black_tail.png
@@ -669,10 +651,14 @@ share/pixmaps/wormux_128x128.png
 %%DATADIR%%/body/thunderbird/eyes.png
 %%DATADIR%%/body/thunderbird/footleft.png
 %%DATADIR%%/body/thunderbird/footright.png
-%%DATADIR%%/body/thunderbird/hair.png
+%%DATADIR%%/body/thunderbird/hat.png
 %%DATADIR%%/body/thunderbird/head.png
 %%DATADIR%%/body/thunderbird/hornleft.png
+%%DATADIR%%/body/thunderbird/hornoverleft.png
+%%DATADIR%%/body/thunderbird/hornoverright.png
 %%DATADIR%%/body/thunderbird/hornright.png
+%%DATADIR%%/body/thunderbird/hornunderleft.png
+%%DATADIR%%/body/thunderbird/hornunderright.png
 %%DATADIR%%/body/thunderbird/noze.png
 %%DATADIR%%/body/thunderbird/pupil.png
 %%DATADIR%%/body/thunderbird/sick_head.png
@@ -696,10 +682,12 @@ share/pixmaps/wormux_128x128.png
 %%DATADIR%%/body/tux/black_eyes.png
 %%DATADIR%%/body/tux/black_footleft.png
 %%DATADIR%%/body/tux/black_footright.png
-%%DATADIR%%/body/tux/black_hair.png
+%%DATADIR%%/body/tux/black_hat.png
 %%DATADIR%%/body/tux/black_head.png
-%%DATADIR%%/body/tux/black_hornleft.png
-%%DATADIR%%/body/tux/black_hornright.png
+%%DATADIR%%/body/tux/black_hornoverleft.png
+%%DATADIR%%/body/tux/black_hornoverright.png
+%%DATADIR%%/body/tux/black_hornunderleft.png
+%%DATADIR%%/body/tux/black_hornunderright.png
 %%DATADIR%%/body/tux/black_noze.png
 %%DATADIR%%/body/tux/black_pupil.png
 %%DATADIR%%/body/tux/black_tail.png
@@ -710,10 +698,12 @@ share/pixmaps/wormux_128x128.png
 %%DATADIR%%/body/tux/eyes.png
 %%DATADIR%%/body/tux/footleft.png
 %%DATADIR%%/body/tux/footright.png
-%%DATADIR%%/body/tux/hair.png
+%%DATADIR%%/body/tux/hat.png
 %%DATADIR%%/body/tux/head.png
-%%DATADIR%%/body/tux/hornleft.png
-%%DATADIR%%/body/tux/hornright.png
+%%DATADIR%%/body/tux/hornoverleft.png
+%%DATADIR%%/body/tux/hornoverright.png
+%%DATADIR%%/body/tux/hornunderleft.png
+%%DATADIR%%/body/tux/hornunderright.png
 %%DATADIR%%/body/tux/noze.png
 %%DATADIR%%/body/tux/pupil.png
 %%DATADIR%%/body/tux/sick_head.png
@@ -737,10 +727,12 @@ share/pixmaps/wormux_128x128.png
 %%DATADIR%%/body/wilber/black_eyes.png
 %%DATADIR%%/body/wilber/black_footleft.png
 %%DATADIR%%/body/wilber/black_footright.png
-%%DATADIR%%/body/wilber/black_hair.png
+%%DATADIR%%/body/wilber/black_hat.png
 %%DATADIR%%/body/wilber/black_head.png
-%%DATADIR%%/body/wilber/black_hornleft.png
-%%DATADIR%%/body/wilber/black_hornright.png
+%%DATADIR%%/body/wilber/black_hornoverleft.png
+%%DATADIR%%/body/wilber/black_hornoverright.png
+%%DATADIR%%/body/wilber/black_hornunderleft.png
+%%DATADIR%%/body/wilber/black_hornunderright.png
 %%DATADIR%%/body/wilber/black_noze.png
 %%DATADIR%%/body/wilber/black_pupil.png
 %%DATADIR%%/body/wilber/black_tail.png
@@ -751,10 +743,12 @@ share/pixmaps/wormux_128x128.png
 %%DATADIR%%/body/wilber/eyes.png
 %%DATADIR%%/body/wilber/footleft.png
 %%DATADIR%%/body/wilber/footright.png
-%%DATADIR%%/body/wilber/hair.png
+%%DATADIR%%/body/wilber/hat.png
 %%DATADIR%%/body/wilber/head.png
-%%DATADIR%%/body/wilber/hornleft.png
-%%DATADIR%%/body/wilber/hornright.png
+%%DATADIR%%/body/wilber/hornoverleft.png
+%%DATADIR%%/body/wilber/hornoverright.png
+%%DATADIR%%/body/wilber/hornunderleft.png
+%%DATADIR%%/body/wilber/hornunderright.png
 %%DATADIR%%/body/wilber/noze.png
 %%DATADIR%%/body/wilber/pupil.png
 %%DATADIR%%/body/wilber/sick_head.png
@@ -778,14 +772,17 @@ share/pixmaps/wormux_128x128.png
 %%DATADIR%%/body/workrave/black_eyes.png
 %%DATADIR%%/body/workrave/black_footleft.png
 %%DATADIR%%/body/workrave/black_footright.png
-%%DATADIR%%/body/workrave/black_hair.png
+%%DATADIR%%/body/workrave/black_hat.png
 %%DATADIR%%/body/workrave/black_head.png
 %%DATADIR%%/body/workrave/black_hornleft.png
+%%DATADIR%%/body/workrave/black_hornoverleft.png
+%%DATADIR%%/body/workrave/black_hornoverright.png
 %%DATADIR%%/body/workrave/black_hornright.png
+%%DATADIR%%/body/workrave/black_hornunderleft.png
+%%DATADIR%%/body/workrave/black_hornunderright.png
 %%DATADIR%%/body/workrave/black_noze.png
 %%DATADIR%%/body/workrave/black_pupil.png
 %%DATADIR%%/body/workrave/black_tail.png
-%%DATADIR%%/body/workrave/blackfootright.png
 %%DATADIR%%/body/workrave/body.png
 %%DATADIR%%/body/workrave/config.xml
 %%DATADIR%%/body/workrave/dead.png
@@ -793,19 +790,24 @@ share/pixmaps/wormux_128x128.png
 %%DATADIR%%/body/workrave/eyes.png
 %%DATADIR%%/body/workrave/footleft.png
 %%DATADIR%%/body/workrave/footright.png
-%%DATADIR%%/body/workrave/hair.png
+%%DATADIR%%/body/workrave/hat.png
 %%DATADIR%%/body/workrave/head.png
 %%DATADIR%%/body/workrave/hornleft.png
+%%DATADIR%%/body/workrave/hornoverleft.png
+%%DATADIR%%/body/workrave/hornoverright.png
 %%DATADIR%%/body/workrave/hornright.png
+%%DATADIR%%/body/workrave/hornunderleft.png
+%%DATADIR%%/body/workrave/hornunderright.png
 %%DATADIR%%/body/workrave/noze.png
 %%DATADIR%%/body/workrave/pupil.png
 %%DATADIR%%/body/workrave/sick_head.png
 %%DATADIR%%/body/workrave/tail.png
 %%DATADIR%%/cursors.dtd
 %%DATADIR%%/cursors.xml
-%%DATADIR%%/font/DejaVuSans.ttf
+%%DATADIR%%/font/Ubuntu-R.ttf
 %%DATADIR%%/font/VL-Gothic-Regular.ttf
 %%DATADIR%%/font/wqy-microhei-lite.ttc
+%%DATADIR%%/game_mode/benchmark.xml
 %%DATADIR%%/game_mode/blitz.xml
 %%DATADIR%%/game_mode/classic.xml
 %%DATADIR%%/game_mode/default_objects.xml
@@ -815,8 +817,32 @@ share/pixmaps/wormux_128x128.png
 %%DATADIR%%/game_mode/unlimited.xml
 %%DATADIR%%/graphism.dtd
 %%DATADIR%%/graphism.xml
+%%DATADIR%%/icon/install.ico
+%%DATADIR%%/icon/install.svg
+%%DATADIR%%/icon/install.xpm
+%%DATADIR%%/icon/install_128x128.png
+%%DATADIR%%/icon/install_32x32.png
+%%DATADIR%%/icon/install_64x64.png
+%%DATADIR%%/icon/uninstall.ico
+%%DATADIR%%/icon/uninstall.svg
+%%DATADIR%%/icon/uninstall.xpm
+%%DATADIR%%/icon/uninstall_128x128.png
+%%DATADIR%%/icon/uninstall_32x32.png
+%%DATADIR%%/icon/uninstall_64x64.png
+%%DATADIR%%/icon/warmux.icns
+%%DATADIR%%/icon/warmux.ico
+%%DATADIR%%/icon/warmux.mif
+%%DATADIR%%/icon/warmux.svg
+%%DATADIR%%/icon/warmux.xpm
+%%DATADIR%%/icon/warmux_128x128.png
+%%DATADIR%%/icon/warmux_128x128.xpm
+%%DATADIR%%/icon/warmux_256x256.png
+%%DATADIR%%/icon/warmux_32x32.png
+%%DATADIR%%/icon/warmux_512x512.png
+%%DATADIR%%/icon/warmux_64x64.png
+%%DATADIR%%/interface/not_skin/background_control_interface.png
+%%DATADIR%%/interface/not_skin/background_help.png
 %%DATADIR%%/interface/not_skin/background_interface.png
-%%DATADIR%%/interface/not_skin/clock_background.png
 %%DATADIR%%/interface/not_skin/readme.txt
 %%DATADIR%%/interface/not_skin/small_background_interface.png
 %%DATADIR%%/interface/whitetheme/arrow_jump.png
@@ -845,6 +871,11 @@ share/pixmaps/wormux_128x128.png
 %%DATADIR%%/interface/whitetheme/pointer.png
 %%DATADIR%%/interface/whitetheme/wind.png
 %%DATADIR%%/interface/whitetheme/wind_indicator.png
+%%DATADIR%%/map/abyss/background.jpg
+%%DATADIR%%/map/abyss/bubble.png
+%%DATADIR%%/map/abyss/config.xml
+%%DATADIR%%/map/abyss/foreground.png
+%%DATADIR%%/map/abyss/preview.jpg
 %%DATADIR%%/map/apocalypse/apocalypse.jpg
 %%DATADIR%%/map/apocalypse/apocalypse.png
 %%DATADIR%%/map/apocalypse/config.xml
@@ -878,6 +909,14 @@ share/pixmaps/wormux_128x128.png
 %%DATADIR%%/map/battlenight/battlenight-bg.jpg
 %%DATADIR%%/map/battlenight/battlenight-fg.png
 %%DATADIR%%/map/battlenight/config.xml
+%%DATADIR%%/map/birds/config.xml
+%%DATADIR%%/map/birds/map.png
+%%DATADIR%%/map/birds/one_layer_sky.jpg
+%%DATADIR%%/map/birds/particule.png
+%%DATADIR%%/map/birds/preview.jpg
+%%DATADIR%%/map/birds/sky_layer-0.jpg
+%%DATADIR%%/map/birds/sky_layer-1.png
+%%DATADIR%%/map/birds/sky_layer-2.png
 %%DATADIR%%/map/catacombes/background1.png
 %%DATADIR%%/map/catacombes/config.xml
 %%DATADIR%%/map/catacombes/preview.jpg
@@ -977,6 +1016,11 @@ share/pixmaps/wormux_128x128.png
 %%DATADIR%%/map/island/island.png
 %%DATADIR%%/map/island/preview.jpg
 %%DATADIR%%/map/island/sky.jpg
+%%DATADIR%%/map/junglemountain/config.xml
+%%DATADIR%%/map/junglemountain/drseuss.jpg
+%%DATADIR%%/map/junglemountain/dseuss_fg.png
+%%DATADIR%%/map/junglemountain/goo_drop.png
+%%DATADIR%%/map/junglemountain/preview.jpg
 %%DATADIR%%/map/leafs/back.jpg
 %%DATADIR%%/map/leafs/birds.png
 %%DATADIR%%/map/leafs/config.xml
@@ -1006,6 +1050,17 @@ share/pixmaps/wormux_128x128.png
 %%DATADIR%%/map/moon-4m/map.png
 %%DATADIR%%/map/moon-4m/preview.jpg
 %%DATADIR%%/map/moon-4m/sky.jpg
+%%DATADIR%%/map/ninja/config.xml
+%%DATADIR%%/map/ninja/map.png
+%%DATADIR%%/map/ninja/one_layer_sky.jpg
+%%DATADIR%%/map/ninja/particule.png
+%%DATADIR%%/map/ninja/preview.jpg
+%%DATADIR%%/map/ninja/sky_layer-0.jpg
+%%DATADIR%%/map/ninja/sky_layer-1.png
+%%DATADIR%%/map/ninja/sky_layer-2.png
+%%DATADIR%%/map/ninja/sky_layer-3.png
+%%DATADIR%%/map/ninja/sky_layer-4.png
+%%DATADIR%%/map/ninja/sky_layer-5.png
 %%DATADIR%%/map/oktopus/bulle.png
 %%DATADIR%%/map/oktopus/config.xml
 %%DATADIR%%/map/oktopus/map.png
@@ -1070,6 +1125,11 @@ share/pixmaps/wormux_128x128.png
 %%DATADIR%%/map/towers/map.png
 %%DATADIR%%/map/towers/preview.jpg
 %%DATADIR%%/map/towers/sky.jpg
+%%DATADIR%%/map/urbanheights/config.xml
+%%DATADIR%%/map/urbanheights/earthstrip.png
+%%DATADIR%%/map/urbanheights/radar_bg.jpg
+%%DATADIR%%/map/urbanheights/radar_fg.png
+%%DATADIR%%/map/urbanheights/radar_pr.jpg
 %%DATADIR%%/map/vulcano/background.png
 %%DATADIR%%/map/vulcano/config.xml
 %%DATADIR%%/map/vulcano/preview.jpg
@@ -1078,6 +1138,7 @@ share/pixmaps/wormux_128x128.png
 %%DATADIR%%/map/wildwestdv/map.png
 %%DATADIR%%/map/wildwestdv/preview.jpg
 %%DATADIR%%/map/wildwestdv/sky.jpg
+%%DATADIR%%/menu.xml
 %%DATADIR%%/menu/add_custom_team.png
 %%DATADIR%%/menu/annulus_background.png
 %%DATADIR%%/menu/annulus_foreground.png
@@ -1104,8 +1165,15 @@ share/pixmaps/wormux_128x128.png
 %%DATADIR%%/menu/fullscreen.png
 %%DATADIR%%/menu/game_mode.png
 %%DATADIR%%/menu/gravity.png
+%%DATADIR%%/menu/help_game_mode.jpg
+%%DATADIR%%/menu/help_ingame.jpg
+%%DATADIR%%/menu/help_interface.png
+%%DATADIR%%/menu/help_minimap.png
 %%DATADIR%%/menu/help_shortkeys.png
+%%DATADIR%%/menu/help_team_selection.jpg
+%%DATADIR%%/menu/help_touch_interface.png
 %%DATADIR%%/menu/i_backtobattle.png
+%%DATADIR%%/menu/i_benchmark.png
 %%DATADIR%%/menu/i_credits.png
 %%DATADIR%%/menu/i_help.png
 %%DATADIR%%/menu/i_network.png
@@ -1119,6 +1187,9 @@ share/pixmaps/wormux_128x128.png
 %%DATADIR%%/menu/ico_sounds.png
 %%DATADIR%%/menu/ico_weapons.png
 %%DATADIR%%/menu/init_energy.png
+%%DATADIR%%/menu/key_alt.png
+%%DATADIR%%/menu/key_ctrl.png
+%%DATADIR%%/menu/key_shift.png
 %%DATADIR%%/menu/left-right_mouse.png
 %%DATADIR%%/menu/left.png
 %%DATADIR%%/menu/max_energy.png
@@ -1214,19 +1285,29 @@ share/pixmaps/wormux_128x128.png
 %%DATADIR%%/sound/default/voices/backjump.ogg
 %%DATADIR%%/sound/default/voices/death1.ogg
 %%DATADIR%%/sound/default/voices/death2.ogg
+%%DATADIR%%/sound/default/voices/death3.ogg
+%%DATADIR%%/sound/default/voices/death4.ogg
+%%DATADIR%%/sound/default/voices/death5.ogg
 %%DATADIR%%/sound/default/voices/fire1.ogg
 %%DATADIR%%/sound/default/voices/fire2.ogg
 %%DATADIR%%/sound/default/voices/fire3.ogg
 %%DATADIR%%/sound/default/voices/fire4.ogg
+%%DATADIR%%/sound/default/voices/fire5.ogg
+%%DATADIR%%/sound/default/voices/fire6.ogg
 %%DATADIR%%/sound/default/voices/friendly_fire1.ogg
 %%DATADIR%%/sound/default/voices/friendly_fire2.ogg
+%%DATADIR%%/sound/default/voices/friendly_fire3.ogg
 %%DATADIR%%/sound/default/voices/happy1.ogg
 %%DATADIR%%/sound/default/voices/injured_high1.ogg
 %%DATADIR%%/sound/default/voices/injured_high2.ogg
 %%DATADIR%%/sound/default/voices/injured_high3.ogg
+%%DATADIR%%/sound/default/voices/injured_high4.ogg
+%%DATADIR%%/sound/default/voices/injured_high5.ogg
 %%DATADIR%%/sound/default/voices/injured_light1.ogg
 %%DATADIR%%/sound/default/voices/injured_light2.ogg
 %%DATADIR%%/sound/default/voices/injured_light3.ogg
+%%DATADIR%%/sound/default/voices/injured_light4.ogg
+%%DATADIR%%/sound/default/voices/injured_light5.ogg
 %%DATADIR%%/sound/default/voices/injured_medium1.ogg
 %%DATADIR%%/sound/default/voices/injured_medium2.ogg
 %%DATADIR%%/sound/default/voices/injured_medium3.ogg
@@ -1235,7 +1316,16 @@ share/pixmaps/wormux_128x128.png
 %%DATADIR%%/sound/default/voices/jump.ogg
 %%DATADIR%%/sound/default/voices/out.ogg
 %%DATADIR%%/sound/default/voices/suicide.ogg
-%%DATADIR%%/sound/default/voices/superjump-notused.ogg
+%%DATADIR%%/sound/default/voices/superjump.ogg
+%%DATADIR%%/sound/default/voices/theme1.ogg
+%%DATADIR%%/sound/default/voices/theme2.ogg
+%%DATADIR%%/sound/default/voices/theme3.ogg
+%%DATADIR%%/sound/default/voices/theme4.ogg
+%%DATADIR%%/sound/default/voices/theme5.ogg
+%%DATADIR%%/sound/default/voices/theme6.ogg
+%%DATADIR%%/sound/default/voices/theme7.ogg
+%%DATADIR%%/sound/default/voices/theme8.ogg
+%%DATADIR%%/sound/default/voices/theme9.ogg
 %%DATADIR%%/sound/default/weapons/aircraft_bomb_falling.ogg
 %%DATADIR%%/sound/default/weapons/aircraft_flying.ogg
 %%DATADIR%%/sound/default/weapons/airhammer_selected.ogg
@@ -1251,12 +1341,18 @@ share/pixmaps/wormux_128x128.png
 %%DATADIR%%/sound/default/weapons/disco_grenade_music.ogg
 %%DATADIR%%/sound/default/weapons/dynamite_exp.ogg
 %%DATADIR%%/sound/default/weapons/dynamite_fuze.ogg
-%%DATADIR%%/sound/default/weapons/embers.ogg
+%%DATADIR%%/sound/default/weapons/embers1.ogg
 %%DATADIR%%/sound/default/weapons/embers2.ogg
-%%DATADIR%%/sound/default/weapons/explosion.ogg
+%%DATADIR%%/sound/default/weapons/embers3.ogg
+%%DATADIR%%/sound/default/weapons/explosion1.ogg
 %%DATADIR%%/sound/default/weapons/explosion2.ogg
 %%DATADIR%%/sound/default/weapons/explosion3.ogg
 %%DATADIR%%/sound/default/weapons/explosion4.ogg
+%%DATADIR%%/sound/default/weapons/explosion5.ogg
+%%DATADIR%%/sound/default/weapons/explosion6.ogg
+%%DATADIR%%/sound/default/weapons/explosion7.ogg
+%%DATADIR%%/sound/default/weapons/explosion8.ogg
+%%DATADIR%%/sound/default/weapons/explosion9.ogg
 %%DATADIR%%/sound/default/weapons/flame.ogg
 %%DATADIR%%/sound/default/weapons/footbomb_bounce.ogg
 %%DATADIR%%/sound/default/weapons/gnu_bounce.ogg
@@ -1312,14 +1408,6 @@ share/pixmaps/wormux_128x128.png
 %%DATADIR%%/team/konqi/flag.png
 %%DATADIR%%/team/konqi/flag64.png
 %%DATADIR%%/team/konqi/team.xml
-%%DATADIR%%/team/nupik/dead.png
-%%DATADIR%%/team/nupik/flag.png
-%%DATADIR%%/team/nupik/flag64.png
-%%DATADIR%%/team/nupik/team.xml
-%%DATADIR%%/team/ooo/dead.png
-%%DATADIR%%/team/ooo/flag.png
-%%DATADIR%%/team/ooo/flag64.png
-%%DATADIR%%/team/ooo/team.xml
 %%DATADIR%%/team/php/dead.png
 %%DATADIR%%/team/php/flag.png
 %%DATADIR%%/team/php/flag64.png
@@ -1361,24 +1449,21 @@ share/pixmaps/wormux_128x128.png
 %%DATADIR%%/team/workrave/flag.png
 %%DATADIR%%/team/workrave/flag64.png
 %%DATADIR%%/team/workrave/team.xml
-%%DATADIR%%/uninstall.xpm
+%%DATADIR%%/warmux_default_android_config.xml
+%%DATADIR%%/warmux_default_config.xml
+%%DATADIR%%/warmux_default_maemo_config.xml
+%%DATADIR%%/warmux_default_symbian_config.xml
 %%DATADIR%%/water/chocolate/chocolate.png
-%%DATADIR%%/water/chocolate/chocolate_bottom.png
 %%DATADIR%%/water/chocolate/chocolate_drop.png
 %%DATADIR%%/water/dirtywater/dirtywater.png
-%%DATADIR%%/water/dirtywater/dirtywater_bottom.png
 %%DATADIR%%/water/dirtywater/dirtywater_drop.png
 %%DATADIR%%/water/lava/lava.png
-%%DATADIR%%/water/lava/lava_bottom.png
 %%DATADIR%%/water/lava/lava_drop.png
 %%DATADIR%%/water/radioactive/radioactive.png
-%%DATADIR%%/water/radioactive/radioactive_bottom.png
 %%DATADIR%%/water/radioactive/radioactive_drop.png
 %%DATADIR%%/water/water/water.png
-%%DATADIR%%/water/water/water_bottom.png
 %%DATADIR%%/water/water/water_drop.png
 %%DATADIR%%/water/wine/wine.png
-%%DATADIR%%/water/wine/wine_bottom.png
 %%DATADIR%%/water/wine/wine_drop.png
 %%DATADIR%%/weapon/air_attack/air_attack.png
 %%DATADIR%%/weapon/air_attack/air_attack_ico.png
@@ -1452,6 +1537,11 @@ share/pixmaps/wormux_128x128.png
 %%DATADIR%%/weapon/polecat/polecat_fart.png
 %%DATADIR%%/weapon/polecat/polecat_ico.png
 %%DATADIR%%/weapon/polecat/polecatlauncher.png
+%%DATADIR%%/weapon/rail_gun/gun_fire.png
+%%DATADIR%%/weapon/rail_gun/rail_bullet.png
+%%DATADIR%%/weapon/rail_gun/rail_gun.png
+%%DATADIR%%/weapon/rail_gun/rail_gun_ico.png
+%%DATADIR%%/weapon/rail_gun/rail_gun_laser.png
 %%DATADIR%%/weapon/riot_bomb/missile.png
 %%DATADIR%%/weapon/riot_bomb/riot_ico.png
 %%DATADIR%%/weapon/shotgun/buckshot.png
@@ -1476,14 +1566,6 @@ share/pixmaps/wormux_128x128.png
 %%DATADIR%%/weapon/teleportation/teleportation_ico.png
 %%DATADIR%%/weapons.dtd
 %%DATADIR%%/weapons.xml
-%%DATADIR%%/wormux.svg
-%%DATADIR%%/wormux_128x128.icns
-%%DATADIR%%/wormux_128x128.png
-%%DATADIR%%/wormux_128x128.xpm
-%%DATADIR%%/wormux_256x256.png
-%%DATADIR%%/wormux_32x32.png
-%%DATADIR%%/wormux_32x32.xpm
-%%DATADIR%%/wormux_default_config.xml
 @dirrm %%DATADIR%%/weapon/teleportation
 @dirrm %%DATADIR%%/weapon/syringe
 @dirrm %%DATADIR%%/weapon/supertux
@@ -1493,6 +1575,7 @@ share/pixmaps/wormux_128x128.png
 @dirrm %%DATADIR%%/weapon/skip_turn
 @dirrm %%DATADIR%%/weapon/shotgun
 @dirrm %%DATADIR%%/weapon/riot_bomb
+@dirrm %%DATADIR%%/weapon/rail_gun
 @dirrm %%DATADIR%%/weapon/polecat
 @dirrm %%DATADIR%%/weapon/parachute
 @dirrm %%DATADIR%%/weapon/mine
@@ -1535,8 +1618,6 @@ share/pixmaps/wormux_128x128.png
 @dirrm %%DATADIR%%/team/postfix
 @dirrm %%DATADIR%%/team/pidgin
 @dirrm %%DATADIR%%/team/php
-@dirrm %%DATADIR%%/team/ooo
-@dirrm %%DATADIR%%/team/nupik
 @dirrm %%DATADIR%%/team/konqi
 @dirrm %%DATADIR%%/team/hexley
 @dirrm %%DATADIR%%/team/gnu
@@ -1556,6 +1637,7 @@ share/pixmaps/wormux_128x128.png
 @dirrm %%DATADIR%%/menu
 @dirrm %%DATADIR%%/map/wildwestdv
 @dirrm %%DATADIR%%/map/vulcano
+@dirrm %%DATADIR%%/map/urbanheights
 @dirrm %%DATADIR%%/map/towers
 @dirrm %%DATADIR%%/map/tic-tac-toe
 @dirrm %%DATADIR%%/map/space2
@@ -1570,11 +1652,13 @@ share/pixmaps/wormux_128x128.png
 @dirrm %%DATADIR%%/map/paradis
 @dirrm %%DATADIR%%/map/paint
 @dirrm %%DATADIR%%/map/oktopus
+@dirrm %%DATADIR%%/map/ninja
 @dirrm %%DATADIR%%/map/moon-4m
 @dirrm %%DATADIR%%/map/montagnes
 @dirrm %%DATADIR%%/map/monkeybubble
 @dirrm %%DATADIR%%/map/lonely_island
 @dirrm %%DATADIR%%/map/leafs
+@dirrm %%DATADIR%%/map/junglemountain
 @dirrm %%DATADIR%%/map/island
 @dirrm %%DATADIR%%/map/icebergs
 @dirrm %%DATADIR%%/map/hive
@@ -1595,6 +1679,7 @@ share/pixmaps/wormux_128x128.png
 @dirrm %%DATADIR%%/map/cheese
 @dirrm %%DATADIR%%/map/champignon
 @dirrm %%DATADIR%%/map/catacombes
+@dirrm %%DATADIR%%/map/birds
 @dirrm %%DATADIR%%/map/battlenight
 @dirrm %%DATADIR%%/map/banquise
 @dirrm %%DATADIR%%/map/bankiz
@@ -1602,11 +1687,13 @@ share/pixmaps/wormux_128x128.png
 @dirrm %%DATADIR%%/map/arbre
 @dirrm %%DATADIR%%/map/aquarium
 @dirrm %%DATADIR%%/map/apocalypse
+@dirrm %%DATADIR%%/map/abyss
 @dirrm %%DATADIR%%/map
 @dirrm %%DATADIR%%/interface/whitetheme/cursors
 @dirrm %%DATADIR%%/interface/whitetheme
 @dirrm %%DATADIR%%/interface/not_skin
 @dirrm %%DATADIR%%/interface
+@dirrm %%DATADIR%%/icon
 @dirrm %%DATADIR%%/game_mode
 @dirrm %%DATADIR%%/font
 @dirrm %%DATADIR%%/body/workrave
@@ -1619,8 +1706,6 @@ share/pixmaps/wormux_128x128.png
 @dirrm %%DATADIR%%/body/postfix
 @dirrm %%DATADIR%%/body/pidgin
 @dirrm %%DATADIR%%/body/php
-@dirrm %%DATADIR%%/body/ooo
-@dirrm %%DATADIR%%/body/nupik
 @dirrm %%DATADIR%%/body/konqi
 @dirrm %%DATADIR%%/body/hexley
 @dirrm %%DATADIR%%/body/gnu
@@ -1630,6 +1715,8 @@ share/pixmaps/wormux_128x128.png
 @dirrm %%DATADIR%%/body/all_skins_objects
 @dirrm %%DATADIR%%/body
 @dirrm %%DATADIR%%
+%%NLS%%@dirrmtry share/locale/ua/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/ua
 %%NLS%%@dirrmtry share/locale/kw/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/kw
 %%NLS%%@dirrmtry share/locale/ja_JP/LC_MESSAGES
