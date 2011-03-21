@@ -1047,6 +1047,7 @@
     SUBDIR += py-stripogram
     SUBDIR += py-syck
     SUBDIR += py-texttable
+    SUBDIR += py-translationstring
     SUBDIR += py-tvgrab
     SUBDIR += py-twistedLore
     SUBDIR += py-wordnet
