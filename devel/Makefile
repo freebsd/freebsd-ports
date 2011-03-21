@@ -3023,6 +3023,7 @@
     SUBDIR += py-yum-metadata-parser
     SUBDIR += py-zclockfile
     SUBDIR += py-zconfig
+    SUBDIR += py-zope.configuration
     SUBDIR += py-zope.deprecation
     SUBDIR += py-zope.exceptions
     SUBDIR += py-zope.schema
