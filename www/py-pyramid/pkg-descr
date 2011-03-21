@@ -1,0 +1,22 @@
+Pyramid is a small, fast, down-to-earth Python web application
+development framework. It is developed as part of the Pylons Project.
+
+The major feature additions in Pyramid 1.0 are:
+
+* New name and branding association with the Pylons Project.
+* BFG conversion script
+* Paster template improvements
+* Terminology changes
+* Better platform compatibility and support
+* Direct built-in support for the Mako templating language.
+* Built-in support for sessions.
+* Updated URL dispatch features
+* Better imperative extensibility
+* ZCML externalized
+* Better support for global template variables during rendering
+* View mappers
+* Testing system improvements
+* Authentication support improvements
+* Documentation improvements
+
+WWW: http://docs.pylonsproject.org
