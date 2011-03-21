@@ -7,7 +7,7 @@
 
 PORTNAME=	nvi
 PORTVERSION=	1.81.6
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	editors
 MASTER_SITES=	http://www.kotnet.org/~skimo/nvi/devel/
 
@@ -23,10 +23,9 @@ WRKSRC=			${WRKDIR}/${DISTNAME}/build.unix
 USE_AUTOTOOLS=		libtool
 USE_LDCONFIG=		yes
 USE_ICONV=		yes
-USE_BDB=		3
+USE_BDB=		yes
 CONFIGURE_ARGS+=	--with-db-prefix=${LOCALBASE} \
 			--program-prefix=n
-CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include -L${LOCALBASE}/lib"
 CONFIGURE_SCRIPT=	../dist/configure
 MAN1=			nex.1 nvi.1 nview.1
 
@@ -36,10 +35,14 @@ MAN1=			nex.1 nvi.1 nview.1
 CONFIGURE_ARGS+=	--enable-widechar
 .endif
 
+CPPFLAGS+=		-I${BDB_INCLUDE_DIR} -I${LOCALBASE}/include
+CONFIGURE_ENV+=		LDFLAGS="-L${BDB_LIB_DIR} -L${LOCALBASE}/lib"
+
 # configure is 555, so you can't do a "make configure" as non-root.
 post-patch:
 	${REINPLACE_CMD} -e 's,%%LIBTOOL%%,${LIBTOOL},g ; \
-		s,%%LTMAIN%%,${LTMAIN},g' ${WRKSRC}/../dist/configure
+		s,%%LTMAIN%%,${LTMAIN},g ; \
+		s,-ldb,-l${BDB_LIB_NAME},g' ${WRKSRC}/../dist/configure
 	@${CHMOD} 755 ${WRKSRC}/../dist/configure
 
 post-install:
