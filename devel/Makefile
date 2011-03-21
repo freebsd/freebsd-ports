@@ -3007,6 +3007,7 @@
     SUBDIR += py-urwid
     SUBDIR += py-usb
     SUBDIR += py-utils
+    SUBDIR += py-venusian
     SUBDIR += py-virtualenv
     SUBDIR += py-virtualenvwrapper
     SUBDIR += py-vmaps

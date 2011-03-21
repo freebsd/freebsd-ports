@@ -1,0 +1,77 @@
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/PKG-INFO
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/SOURCES.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/dependency_links.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/entry_points.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/not-zip-safe
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/top_level.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/venusian/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/venusian/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/venusian/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/venusian/advice.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/venusian/advice.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/venusian/advice.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/venusian/compat/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/venusian/compat/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/venusian/compat/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/venusian/compat/pkgutil_26.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/venusian/compat/pkgutil_26.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/venusian/compat/pkgutil_26.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/venusian/tests/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/venusian/tests/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/venusian/tests/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/venusian/tests/fixtures/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/venusian/tests/fixtures/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/venusian/tests/fixtures/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/venusian/tests/fixtures/category.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/venusian/tests/fixtures/category.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/venusian/tests/fixtures/category.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/venusian/tests/fixtures/classdecorator.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/venusian/tests/fixtures/classdecorator.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/venusian/tests/fixtures/classdecorator.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/venusian/tests/fixtures/inheritance.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/venusian/tests/fixtures/inheritance.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/venusian/tests/fixtures/inheritance.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/venusian/tests/fixtures/one/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/venusian/tests/fixtures/one/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/venusian/tests/fixtures/one/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/venusian/tests/fixtures/one/module.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/venusian/tests/fixtures/one/module.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/venusian/tests/fixtures/one/module.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/venusian/tests/fixtures/one/module2.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/venusian/tests/fixtures/one/module2.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/venusian/tests/fixtures/one/module2.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/venusian/tests/fixtures/pyc/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/venusian/tests/fixtures/pyc/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/venusian/tests/fixtures/pyc/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/venusian/tests/fixtures/pyc/module.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/venusian/tests/fixtures/pyc/module.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/venusian/tests/fixtures/pyc/module.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/venusian/tests/fixtures/pyc/module2.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/venusian/tests/fixtures/pyc/subpackage/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/venusian/tests/fixtures/pyc/subpackage/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/venusian/tests/fixtures/pyc/subpackage/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/venusian/tests/fixtures/two/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/venusian/tests/fixtures/two/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/venusian/tests/fixtures/two/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/venusian/tests/fixtures/two/mod1.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/venusian/tests/fixtures/two/mod1.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/venusian/tests/fixtures/two/mod1.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/venusian/tests/fixtures/two/mod2.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/venusian/tests/fixtures/two/mod2.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/venusian/tests/fixtures/two/mod2.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/venusian/tests/test_advice.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/venusian/tests/test_advice.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/venusian/tests/test_advice.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/venusian/tests/test_venusian.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/venusian/tests/test_venusian.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/venusian/tests/test_venusian.pyo
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/venusian/tests/fixtures/two
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/venusian/tests/fixtures/pyc/subpackage
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/venusian/tests/fixtures/pyc
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/venusian/tests/fixtures/one
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/venusian/tests/fixtures
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/venusian/tests
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/venusian/compat
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/venusian
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%
