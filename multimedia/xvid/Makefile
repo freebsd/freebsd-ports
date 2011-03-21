@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	xvid
-PORTVERSION=	1.2.2
-PORTREVISION=	1
+PORTVERSION=	1.3.0
 PORTEPOCH=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	http://downloads.xvid.org/downloads/
@@ -19,6 +18,8 @@ COMMENT=	An opensource MPEG-4 codec, based on OpenDivx
 GNU_CONFIGURE=	yes
 MAKE_JOBS_SAFE=	yes
 USE_LDCONFIG=	yes
+
+CONFIGURE_ENV+=	ac_cv_prog_ac_yasm=no
 
 PLIST_FILES=	include/xvid.h \
 		lib/libxvidcore.a \
