@@ -13,11 +13,9 @@ MASTER_SITES=	${MASTER_SITE_SAVANNAH}
 MASTER_SITE_SUBDIR=	quilt
 
 MAINTAINER=	doj@cubic.org
-COMMENT=	A collection of bash3 scripts to ease working with patch files
-DEPRECATED=	Depends on expired shells/bash3
-EXPIRATION_DATE=2011-05-01
+COMMENT=	A collection of bash scripts to ease working with patch files
 
-BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash3 \
+BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash \
 		gcp:${PORTSDIR}/sysutils/coreutils \
 		gsed:${PORTSDIR}/textproc/gsed \
 		gpatch:${PORTSDIR}/devel/patch \
@@ -25,6 +23,8 @@ BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash3 \
 		gawk:${PORTSDIR}/lang/gawk \
 		formail:${PORTSDIR}/mail/procmail
 RUN_DEPENDS+=	${BUILD_DEPENDS}
+
+LICENSE=	GPLv2
 
 USE_GMAKE=	yes
 USE_PERL5=	yes
