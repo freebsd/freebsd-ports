@@ -1,9 +1,7 @@
-$FreeBSD$
-
---- src/display.c~	Tue Jul 29 06:56:49 2003
-+++ src/display.c	Tue Aug  5 11:59:03 2003
-@@ -673,6 +673,22 @@
-     wrefresh( win );
+--- ./src/display.c.orig	2003-12-07 22:20:41.000000000 +0100
++++ ./src/display.c	2011-03-21 17:21:19.000000000 +0100
+@@ -179,6 +179,22 @@
+     return (void *)NULL;
  }
  
 +char *mystrndup(const char *s, size_t sz)
@@ -23,9 +21,9 @@ $FreeBSD$
 +}
 +
  /*
-  * Draw the info window.
-  */
-@@ -744,7 +760,7 @@
+  * Draw the screen,  This takes into account rebuilding all the
+  * windows in case of screen resize, or if a window changes size.
+@@ -1567,7 +1583,7 @@
      }
  
      /* Clip filename */

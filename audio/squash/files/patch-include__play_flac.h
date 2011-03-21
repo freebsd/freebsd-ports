@@ -1,8 +1,5 @@
-
-$FreeBSD$
-
---- include/play_flac.h.orig
-+++ include/play_flac.h
+--- ./include/play_flac.h.orig	2003-10-12 21:14:33.000000000 +0200
++++ ./include/play_flac.h	2011-03-21 17:21:19.000000000 +0100
 @@ -32,7 +32,7 @@
   * Structures
   */
