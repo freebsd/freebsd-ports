@@ -1,6 +1,6 @@
---- ./qtiplot/qtiplot.pro.orig	2009-10-31 13:47:20.000000000 +0300
-+++ ./qtiplot/qtiplot.pro	2009-10-31 13:49:42.000000000 +0300
-@@ -47,14 +47,14 @@
+--- ./qtiplot/qtiplot.pro.orig	2011-02-14 14:21:47.000000000 +0300
++++ ./qtiplot/qtiplot.pro	2011-03-19 00:32:55.867883769 +0300
+@@ -45,14 +45,14 @@
  	INSTALLS        += documentation
  	unix:INSTALLS        += man
  
@@ -17,7 +17,7 @@
  
  	win32: target.path = $$INSTALLBASE
  	win32: translations.path = $$INSTALLBASE/translations
-@@ -97,16 +97,7 @@
+@@ -94,16 +94,7 @@
  				  translations/qtiplot_ja.ts \
  				  translations/qtiplot_sv.ts
  
@@ -26,7 +26,7 @@
 -					translations/qtiplot_de.qm \
 -					translations/qtiplot_es.qm \
 -					translations/qtiplot_fr.qm \
--					#translations/qtiplot_pt.qm \
+-					translations/qtiplot_pt.qm \
 -					translations/qtiplot_ro.qm \
 -					translations/qtiplot_ru.qm \
 -					translations/qtiplot_ja.qm \
@@ -35,7 +35,7 @@
  
  isEmpty(LUPDATE): LUPDATE = lupdate
  #system($$LUPDATE -verbose qtiplot.pro)
-@@ -115,11 +109,7 @@
+@@ -112,11 +103,7 @@
  
  ###################### DOCUMENTATION ########################################
  
@@ -47,7 +47,7 @@
  
  unix: man.files += ../qtiplot.1
  
-@@ -164,18 +154,19 @@
+@@ -151,18 +138,19 @@
    				    qtiUtil.py \
    				    qti_wordlist.txt \
  
@@ -71,3 +71,20 @@
    }
  
    win32 {
+@@ -228,16 +216,3 @@
+ 	RC_FILE	= qtiplot.rc
+ 	include(../3rdparty/QtSolutions/qtbrowserplugin/src/qtbrowserplugin.pri)
+ }
+-
+-QT          += sql
+-LIBS        += src/plugins/libQtiPlotdBasePlugin.a
+-LIBS        += src/plugins/libQtiPlotDatabasePlugin.a
+-LIBS        += src/plugins/libQtiPlotCsvPlugin.a
+-LIBS        += src/plugins/libQtiPlotTexPlugin.a
+-LIBS        += src/plugins/libQtiPlotOdsPlugin.a
+-LIBS        += src/plugins/libQtiPlotExcelPlugin.a
+-LIBS        += src/plugins/libQtiPlotOriginPlugin.a
+-LIBS        += src/plugins/libQtiPlotEmfExportPlugin.a
+-LIBS        += ../3rdparty/quazip/lib/libquazip.a
+-LIBS        += ../3rdparty/EmfEngine/libEmfEngine.a
+-LIBS        += -lgdiplus

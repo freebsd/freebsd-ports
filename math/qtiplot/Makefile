@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	qtiplot
-DISTVERSION=	0.9.8
+DISTVERSION=	0.9.8.5
 CATEGORIES=	math science
 MASTER_SITES=	BERLIOS http://soft.proindependent.com/src/
 
