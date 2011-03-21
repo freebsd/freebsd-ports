@@ -17,7 +17,7 @@
 # OpenBSD and NetBSD will be accepted.
 #
 # $FreeBSD$
-# $MCom: portlint/portlint.pl,v 1.212 2011/02/15 16:12:07 marcus Exp $
+# $MCom: portlint/portlint.pl,v 1.216 2011/03/21 00:58:39 marcus Exp $
 #
 
 use strict;
@@ -52,7 +52,7 @@ $portdir = '.';
 # version variables
 my $major = 2;
 my $minor = 13;
-my $micro = 4;
+my $micro = 5;
 
 sub l { '[{(]'; }
 sub r { '[)}]'; }
@@ -1750,6 +1750,7 @@ sub checkmakefile {
 			USE_RCORDER		=> 'USE_RC_SUBR',
 			INSTALLS_SHLIB  => 'USE_LDCONFIG',
 			APACHE_COMPAT   => 'USE_APACHE',
+			USE_XPM         => 'USE_X11=xpm',
 	);
 
 	@deplist = (\%deprecated);
@@ -2081,8 +2082,8 @@ ruby sed sh sort sysctl touch tr which xargs xmkmf
 			if ((defined($cflags) && $cflags =~ /-I/) ||
 				(defined($cxxflags) && $cxxflags =~ /-I/)) {
 				&perror("WARN", $file, -1, "Consider passing include paths ".
-					"to configure via CPPFLAGS environment variable ".
-					"i.e. CPPFLAGS=\"-I...\" in CONFIGURE_ENV)");
+					"to configure via the CPPFLAGS macro ".
+					"(i.e. CPPFLAGS=-I...)");
 			}
 		}
 
@@ -2100,6 +2101,7 @@ ruby sed sh sort sysctl touch tr which xargs xmkmf
 
 		if ($configure_env =~ /(FC)=/ ||
 			$configure_env =~ /(F77)=/ ||
+			$configure_env =~ /(CPPFLAGS)=/ ||
 			$configure_env =~ /(FFLAGS)=/) {
 				&perror("FATAL", $file, -1, "$1 is already ".
 					"passed in CONFIGURE_ENV via bsd.gcc.mk.  If you need to ".
@@ -2764,6 +2766,16 @@ MAINTAINER COMMENT
 	print "OK: checking fourth section of $file (*_DEPENDS).\n"
 		if ($verbose);
 	$tmp = $sections[$idx];
+
+	# Check for direct assignment of BUILD_DEPENDS to RUN_DEPENDS.
+	if ($tmp =~ /\nRUN_DEPENDS=[ \t]*\${BUILD_DEPENDS}/) {
+		&perror("FATAL", $file, -1, "RUN_DEPENDS should not be set to ".
+			"\${BUILD_DEPENDS} as \${BUILD_DEPENDS} includes other ".
+			"implicit dependencies.  Instead, copy the explicit dependencies ".
+			"from BUILD_DEPENDS to RUN_DEPENDS.  See ".
+			"http://www.freebsd.org/doc/en_US.ISO8859-1/books/porters-handbook/makefile-depend.html#AEN2154 ".
+			"for more details.");
+	}
 
 	# NOTE: EXEC_DEPENDS is obsolete, so it should not be listed.
 	@linestocheck = qw(
