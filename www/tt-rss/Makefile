@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tt-rss
-PORTVERSION=	1.5.1
+PORTVERSION=	1.5.2
 CATEGORIES=	www
 MASTER_SITES=	http://tt-rss.org/download/
 
@@ -78,6 +78,8 @@ do-install:
 	${CHOWN} -R ${WWWOWN}:${WWWGRP} ${WWWDIR}
 	${CHMOD} ug+x ${SCRIPTS:S|^|${WWWDIR}/|}
 	${CHMOD} ug+x ${WWWDIR}/utils/*.sh ${WWWDIR}/utils/*.pl
+	${CHMOD} -R 777 ${WWWDIR}/lib/htmlpurifier/library/HTMLPurifier/DefinitionCache/Serializer
+	${CHMOD} ${SHAREMODE} ${WWWDIR}/lib/htmlpurifier/library/HTMLPurifier/DefinitionCache/Serializer/README
 	${INSTALL_DATA} ${WRKDIR}/httpd-tt-rss.conf ${DATADIR}
 	if [ ! -f ${WWWDIR}/config.php ]; then \
 		${CP} -p ${WWWDIR}/config.php-dist ${WWWDIR}/config.php; \
