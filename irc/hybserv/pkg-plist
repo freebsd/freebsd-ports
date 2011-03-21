@@ -76,6 +76,7 @@ hybserv/help/nickserv/access/del
 hybserv/help/nickserv/access/index
 hybserv/help/nickserv/access/add
 hybserv/help/nickserv/access/list
+hybserv/help/nickserv/nolink
 hybserv/help/nickserv/set/neverop
 hybserv/help/nickserv/set/phrase
 hybserv/help/nickserv/set/automask
