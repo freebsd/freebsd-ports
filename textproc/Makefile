@@ -1005,6 +1005,7 @@
     SUBDIR += prosper
     SUBDIR += py-4suite
     SUBDIR += py-4suite-xml
+    SUBDIR += py-Chameleon
     SUBDIR += py-HyperText
     SUBDIR += py-MarkupSafe
     SUBDIR += py-Tempita
