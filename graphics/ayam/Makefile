@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ayam
-PORTVERSION=	1.18.2
+PORTVERSION=	1.19
 CATEGORIES=	graphics
 MASTER_SITES=	SF/${PORTNAME}/Ayam/${PORTVERSION}
 DISTNAME=	${PORTNAME}${PORTVERSION}.src
@@ -15,12 +15,12 @@ MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	3D modeling environment for the RenderMan interface
 
 LIB_DEPENDS=	aqsis_util.1:${PORTSDIR}/graphics/aqsis \
-		tk84.1:${PORTSDIR}/x11-toolkits/tk84 \
 		tiff.4:${PORTSDIR}/graphics/tiff
 
 USE_XORG=	xmu xext x11
 USE_GL=		yes
-USE_LDCONFIG=	lib/ayam
+USE_LDCONFIG=	${PREFIX}/lib/ayam
+USE_TK=		84
 WRKSRC=		${WRKDIR}/${PORTNAME}/src
 MAKEFILE=	Makefile.shared
 MAKE_ENV=	PTHREAD_LIBS="${PTHREAD_LIBS}"
@@ -39,6 +39,12 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|%%DATADIR%%|${DATADIR}|' ${WRKSRC}/tcl/ayam.tcl
 	@${REINPLACE_CMD} -e 's|^MF3DCFLAGS =|MF3DCFLAGS = -fPIC|g' \
 		${WRKSRC}/MF3D/Makefile.mf3d
+	@${REINPLACE_CMD} -e \
+	   's|%%TCL_INCLUDEDIR%%|${TCL_INCLUDEDIR}|g; \
+	    s|%%TCL_LIBDIR%%|${TCL_LIBDIR}|g; s|%%USE_TCL%%|${USE_TCL}|g; \
+	    s|%%TK_INCLUDEDIR%%|${TK_INCLUDEDIR}|g; \
+	    s|%%TK_LIBDIR%%|${TK_LIBDIR}|g; s|%%USE_TK%%|${USE_TK}|g' \
+	    ${WRKSRC}/Makefile.shared
 
 do-install:
 # binary and wrapper
