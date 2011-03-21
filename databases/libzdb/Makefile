@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	libzdb
-PORTVERSION=	2.8
-PORTREVISION=	1
+PORTVERSION=	2.8.1
 CATEGORIES=	databases
 MASTER_SITES=	http://www.tildeslash.com/libzdb/dist/ \
 		http://www.c-s.li/ports/
@@ -49,9 +48,9 @@ CONFIGURE_ARGS+=	--without-sqlite
 
 .if defined(WITH_PGSQL)
 USE_PGSQL=	yes
-CONFIGURE_ARGS+=	--with-pgsql=${LOCALBASE}/bin/pg_config
+CONFIGURE_ARGS+=	--with-postgresql=${LOCALBASE}/bin/pg_config
 .else
-CONFIGURE_ARGS+=	--without-pgsql
+CONFIGURE_ARGS+=	--without-postgresql
 .endif
 
 .include <bsd.port.post.mk>
