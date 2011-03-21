@@ -87,7 +87,7 @@
  # Tcl includes
 -TCLINC = -I$(TCLDIR)/generic
 +#TCLINC = -I$(TCLDIR)/generic
-+TCLINC = -I${LOCALBASE}/include/tcl8.4/generic 
++TCLINC = -I%%TCL_INCLUDEDIR%%
  # MacOSX (Aqua):
  #TCLINC =
  
@@ -96,7 +96,7 @@
 -TCLLIB = -L$(TCLDIR)/unix -ltcl8.2
 +#TCLLIB = -L$(TCLDIR)/unix -ltcl9.2
  #TCLLIB = -L$(TCLDIR)/unix -ltcl8.0
-+TCLLIB = -L${LOCALBASE}/lib -ltcl84
++TCLLIB = -L%%TCL_LIBDIR%% -ltcl%%USE_TCL%%
  # if you have an installed Tcl/Tk, you probably just want:
  #TCLLIB = -ltcl
  # MacOSX (Aqua):
@@ -105,7 +105,7 @@
  # Tk sources directory
  # Note: You really need the Tk _sources_ in order to compile Ayam!
 -TKDIR = ../../tk8.2.2
-+TKDIR = ${LOCALBASE}/include/tk8.4
++TKDIR = %%TK_INCLUDEDIR%%
  #TKDIR = ../../tk8.0
  
  # Tk includes
@@ -116,7 +116,7 @@
 -TKLIB = -L$(TKDIR)/unix -ltk8.2
 +#TKLIB = -L$(TKDIR)/unix -ltk8.2
  #TKLIB = -L$(TKDIR)/unix -ltk8.0
-+TKLIB = -L${LOCALBASE}/lib -ltk84
++TKLIB = -L%%TK_LIBDIR%% -ltk%%USE_TK%%
  # if you have an installed Tcl/Tk, you probably just want:
  #TKLIB = -ltk
  # MacOSX (Aqua):
