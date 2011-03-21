@@ -1,8 +1,5 @@
-
-$FreeBSD$
-
---- src/play_flac.c.orig
-+++ src/play_flac.c
+--- ./src/play_flac.c.orig	2003-12-18 18:08:57.000000000 +0100
++++ ./src/play_flac.c	2011-03-21 17:21:19.000000000 +0100
 @@ -24,7 +24,7 @@
  #include "database.h" /* for insert_meta_data */
  #include "play_flac.h"

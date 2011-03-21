@@ -1,9 +1,7 @@
-$FreeBSD$
-
---- include/global.h~ 	Mon Aug  4 16:43:16 2003
-+++ include/global.h	Tue Aug  5 11:54:11 2003
-@@ -40,7 +40,7 @@
- #include <ao/ao.h>
+--- ./include/global.h.orig	2003-12-18 22:51:43.000000000 +0100
++++ ./include/global.h	2011-03-21 17:21:19.000000000 +0100
+@@ -57,7 +57,7 @@
+ #endif
  #include <math.h>
  #include <stdarg.h>
 -#include <wait.h>
