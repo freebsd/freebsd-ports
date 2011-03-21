@@ -62,10 +62,4 @@ do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
 	@${INSTALL_MAN} ${WRKSRC}/../${PORTNAME}.1 ${PREFIX}/man/man1
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 700000
-BROKEN=	gcjh45 core dumps on 6.x
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
