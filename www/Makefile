@@ -1518,6 +1518,7 @@
     SUBDIR += py-py-restclient
     SUBDIR += py-pylons
     SUBDIR += py-pyquery
+    SUBDIR += py-pyramid
     SUBDIR += py-pysearch
     SUBDIR += py-pywebdav
     SUBDIR += py-qp
