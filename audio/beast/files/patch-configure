@@ -1,0 +1,11 @@
+--- configure.orig	2011-03-18 13:12:32.000000000 +0100
++++ configure	2011-03-18 13:11:32.000000000 +0100
+@@ -18739,7 +18739,7 @@
+ 
+ 
+     not_with_sse_value=`echo "$SSE_FLAGS" | grep 'mmx.*sse' -q ; echo $?` # sh truth value: 1 (without sse) or 0 (with sse)
+-     if test 0 == $not_with_sse_value; then
++     if test 0 -eq $not_with_sse_value; then
+   WITH_SSE_FLAGS_TRUE=
+   WITH_SSE_FLAGS_FALSE='#'
+ else
