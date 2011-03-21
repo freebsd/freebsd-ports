@@ -1,5 +1,5 @@
---- ../dist/Makefile.in.orig	Fri Jul  6 15:53:16 2001
-+++ ../dist/Makefile.in	Tue May 14 12:26:13 2002
+--- ./dist/Makefile.in.orig	2001-07-06 22:53:16.000000000 +0200
++++ ./dist/Makefile.in	2011-03-21 18:22:00.000000000 +0100
 @@ -61,12 +61,12 @@
  LIBSO_LIBS=	@LIBSO_LIBS@
  
