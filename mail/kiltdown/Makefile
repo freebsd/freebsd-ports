@@ -41,10 +41,8 @@ do-configure:
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/kiltdown/kiltdown ${PREFIX}/bin/
 
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == i386
 BROKEN=		does not build
-.endif
+DEPRECATED=	upstream seems dead since 2001
+EXPIRATION_DATE=2011-04-30
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
