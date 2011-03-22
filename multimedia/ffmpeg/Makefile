@@ -21,6 +21,8 @@ CONFLICTS=	ffmpeg-20*
 
 LICENSE=	GPLv2 LGPL21
 LICENSE_COMB=	multi
+LICENSE_FILE_GPLv2=	${WRKSRC}/COPYING.GPLv2
+LICENSE_FILE_LGPL21=	${WRKSRC}/COPYING.LGPLv2.1
 
 HAS_CONFIGURE=	yes
 CONFIGURE_LOG=	config.err
@@ -100,9 +102,7 @@ SHLIB_VER=	1
 PLIST_SUB=	SHLIB_VER=${SHLIB_VER}
 USE_LDCONFIG=	yes
 
-DOC_FILES=	Changelog COPYING.GPLv2 COPYING.GPLv3 COPYING.LGPLv2.1 \
-		COPYING.LGPLv3 CREDITS INSTALL LICENSE MAINTAINERS README \
-		RELEASE
+DOC_FILES=	Changelog CREDITS INSTALL LICENSE MAINTAINERS README RELEASE
 # under doc subdirectory
 DOC_DOCFILES=	APIchanges TODO avutil.txt developer.html faq.html \
 		ffmpeg_powerpc_performance_evaluation_howto.txt \
@@ -173,8 +173,10 @@ CONFIGURE_ARGS+=	--disable-indev=alsa \
 .endif
 
 # amr
-.if defined(WITH_AMR_NB) || defined (WITH_AMR_WB)
+.if defined(WITH_AMR_NB) || defined(WITH_AMR_WB)
 LICENSE=		GPLv3 LGPL3
+LICENSE_FILE_GPLv3=	${WRKSRC}/COPYING.GPLv3
+LICENSE_FILE_LGPL3=	${WRKSRC}/COPYING.LGPLv3
 CONFIGURE_ARGS+=	--enable-version3
 LIB_DEPENDS+=	opencore-amrnb.0:${PORTSDIR}/audio/opencore-amr
 .endif
