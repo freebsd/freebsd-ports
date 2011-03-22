@@ -4254,6 +4254,7 @@ gcc42                           ports/lang/gcc42
 gcc44                           ports/lang/gcc44
 gcc45                           ports/lang/gcc45
 gcc46                           ports/lang/gcc46
+gcc47                           ports/lang/gcc47
 gccmakedep                      ports/devel/gccmakedep
 gccxml                          ports/devel/gccxml
 gcdmaster                       ports/sysutils/gcdmaster
@@ -21248,6 +21249,7 @@ pumperweb                       ports/www/pumperweb
 punbb                           ports/www/punbb
 pup                             ports/print/pup
 puppet                          ports/sysutils/puppet
+pure                            ports/lang/pure
 pure-emacs21                    ports/irc/pure-emacs21
 pure-ftpd                       ports/ftp/pure-ftpd
 pure-sfv                        ports/security/pure-sfv
@@ -21290,6 +21292,7 @@ py-4suite-xml                   ports/textproc/py-4suite-xml
 py-AddOns                       ports/devel/py-AddOns
 py-Breve                        ports/devel/py-Breve
 py-BytecodeAssembler            ports/devel/py-BytecodeAssembler
+py-Chameleon                    ports/textproc/py-Chameleon
 py-DendroPy                     ports/science/py-DendroPy
 py-Elixir                       ports/databases/py-Elixir
 py-EnthoughtBase                ports/devel/py-EnthoughtBase
@@ -21389,6 +21392,7 @@ py-celementtree                 ports/devel/py-celementtree
 py-cerealizer                   ports/security/py-cerealizer
 py-cfgparse                     ports/devel/py-cfgparse
 py-cgkit                        ports/graphics/py-cgkit
+py-chameleon                    ports/textproc/py-Chameleon
 py-chardet                      ports/textproc/py-chardet
 py-chart                        ports/graphics/py-chart
 py-cheetah                      ports/devel/py-cheetah
@@ -21724,6 +21728,7 @@ py-obspy-core                   ports/science/py-obspy-core
 py-obspy.gse2                   ports/science/py-obspy.gse2
 py-obspy.mseed                  ports/science/py-obspy.mseed
 py-obspy.signal                 ports/science/py-obspy.signal
+py-obspy.wav                    ports/science/py-obspy.wav
 py-ocempgui                     ports/devel/py-ocempgui
 py-odbc                         ports/databases/py-odbc
 py-ode                          ports/devel/py-ode
@@ -21839,6 +21844,7 @@ py-pypgsql                      ports/databases/py-pyPgSQL
 py-pyproj                       ports/graphics/py-pyproj
 py-pyquery                      ports/www/py-pyquery
 py-pyqwt                        ports/x11-toolkits/py-pyqwt
+py-pyramid                      ports/www/py-pyramid
 py-pyro                         ports/devel/py-pyro
 py-pyscript                     ports/print/py-pyscript
 py-pysearch                     ports/www/py-pysearch
@@ -21894,6 +21900,7 @@ py-relatorio                    ports/print/py-relatorio
 py-repl                         ports/devel/py-repl
 py-reportlab                    ports/print/py-reportlab
 py-reportlab2                   ports/print/py-reportlab2
+py-repoze.lru                   ports/devel/py-repoze.lru
 py-repoze.tm2                   ports/devel/py-repoze.tm2
 py-repoze.what                  ports/devel/py-repoze.what
 py-repoze.what-pylons           ports/devel/py-repoze.what-pylons
@@ -22025,6 +22032,7 @@ py-traits                       ports/devel/py-traits
 py-traitsbackendwx              ports/x11-toolkits/py-traitsbackendwx
 py-traitsgui                    ports/x11-toolkits/py-traitsgui
 py-transaction                  ports/devel/py-transaction
+py-translationstring            ports/textproc/py-translationstring
 py-transmissionrpc              ports/net-p2p/py-transmissionrpc
 py-trml2pdf                     ports/print/py-trml2pdf
 py-trustedpickle                ports/security/py-trustedpickle
@@ -22076,6 +22084,7 @@ py-urwid                        ports/devel/py-urwid
 py-usb                          ports/devel/py-usb
 py-utidy                        ports/www/py-utidy
 py-utils                        ports/devel/py-utils
+py-venusian                     ports/devel/py-venusian
 py-vertex                       ports/net-p2p/py-vertex
 py-virtualenv                   ports/devel/py-virtualenv
 py-virtualenvwrapper            ports/devel/py-virtualenvwrapper
@@ -22149,7 +22158,12 @@ py-zclockfile                   ports/devel/py-zclockfile
 py-zconfig                      ports/devel/py-zconfig
 py-zdaemon                      ports/sysutils/py-zdaemon
 py-zfs                          ports/sysutils/py-zfs
+py-zope.component               ports/devel/py-zope.component
+py-zope.configuration           ports/devel/py-zope.configuration
+py-zope.deprecation             ports/devel/py-zope.deprecation
 py-zope.exceptions              ports/devel/py-zope.exceptions
+py-zope.i18nmessageid           ports/textproc/py-zope.i18nmessageid
+py-zope.schema                  ports/devel/py-zope.schema
 py-zopeInterface                ports/devel/py-zopeInterface
 py-zopeevent                    ports/devel/py-zopeevent
 py-zopeinterface                ports/devel/py-zopeInterface
@@ -23863,7 +23877,6 @@ sdl_sge                         ports/devel/sdl_sge
 sdl_sound                       ports/audio/sdl_sound
 sdl_ttf                         ports/graphics/sdl_ttf
 sdlcc                           ports/games/sdlCC
-sdlmame-devel                   ports/emulators/sdlmame-devel
 sdlmm                           ports/devel/sdlmm
 sdlquake2                       ports/games/sdlquake2
 sdlroids                        ports/games/sdlroids
