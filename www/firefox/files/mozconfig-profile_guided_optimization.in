@@ -1,0 +1,1 @@
+mk_add_options PROFILE_GEN_SCRIPT='@PYTHON@ $(OBJDIR)/_profile/pgo/profileserver.py'

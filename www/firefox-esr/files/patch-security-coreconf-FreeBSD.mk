@@ -1,5 +1,5 @@
---- security/coreconf/FreeBSD.mk.orig	2010-03-16 09:57:06.000000000 +0000
-+++ security/coreconf/FreeBSD.mk	2010-03-20 17:40:12.000000000 +0000
+--- security/coreconf/FreeBSD.mk.orig	2010-02-28 23:30:04.000000000 +0000
++++ security/coreconf/FreeBSD.mk	2010-03-03 02:05:22.000000000 +0000
 @@ -49,8 +49,20 @@
  ifeq ($(CPU_ARCH),pc98)
  CPU_ARCH		= x86

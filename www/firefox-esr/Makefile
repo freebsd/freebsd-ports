@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	firefox
-DISTVERSION=	3.6.15
+DISTVERSION=	4.0
 PORTEPOCH=	1
 CATEGORIES=	www ipv6
 MASTER_SITES=	${MASTER_SITE_MOZILLA}
@@ -16,15 +16,12 @@ DISTNAME=	${PORTNAME}-${DISTVERSION}.source
 MAINTAINER=	gecko@FreeBSD.org
 COMMENT=	Web browser based on the browser portion of Mozilla
 
-BUILD_DEPENDS=	nspr>=4.8.6:${PORTSDIR}/devel/nspr
+BUILD_DEPENDS=	nspr>=4.8.7:${PORTSDIR}/devel/nspr
 
 USE_AUTOTOOLS=	autoconf213
 USE_GECKO=	gecko
 MOZ_PKGCONFIG_FILES=	# empty
-USE_MOZILLA=	-png -nss -dbm -jpeg -xft -cairo
-MOZILLA_NAME=	Firefox${MOZILLA_SUFX}
-MOZILLA_SUFX=	3
-MOZILLA=	${PORTNAME}${MOZILLA_SUFX}
+USE_MOZILLA=	-png -nss -dbm -jpeg -xft
 MOZ_TOOLKIT=	cairo-gtk2
 GECKO_PLIST_PRE_DIRS=	lib/${MOZILLA}/bin lib/${MOZILLA}/idl \
 			lib/${MOZILLA}/include lib/${MOZILLA}/lib
@@ -37,9 +34,9 @@ EXTRA_CFLAGS=	-O2
 HAS_CONFIGURE=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
+USE_GL=		gl
 MAKE_JOBS_SAFE=	yes
 NO_MOZPKGINSTALL=yes
-CONFLICTS_INSTALL=	firefox-3.5.*
 
 FIREFOX_ICON=		${MOZILLA}.png
 FIREFOX_ICON_SRC=	${PREFIX}/lib/${MOZILLA}/chrome/icons/default/default48.png
@@ -52,27 +49,12 @@ MOZ_OPTIONS=	--program-transform-name='s/firefox/${MOZILLA}/' \
 		--disable-ipc
 
 OPTIONS=	DBUS "Enable D-BUS support" on \
+		PGO "Enable Profile-Guided Optimization" off \
 		SMB "Enable smb:// URI support using gnomevfs" off
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 700000
-LIB_DEPENDS+=	pulse.0:${PORTSDIR}/audio/pulseaudio
-EXTRA_PATCHES=	${FILESDIR}/releng6_pulseaudio
-.else
-EXTRA_PATCHES=	${FILESDIR}/libsydney_oss
-.endif
-
-.if ${ARCH} == powerpc64
-.if ${OSVERSION} < 900033
-BROKEN=		Needs binutils 2.17.50 to build
-.else
-CONFIGURE_ENV+=	UNAME_m="powerpc64"
-CFLAGS+=	-mminimal-toc
-.endif
-.endif
-
-WRKSRC:=	${WRKSRC}-1.9.2
+WRKSRC:=	${WRKSRC}-2.0
 
 GECKO_PTHREAD_LIBS!=${CC} -dumpspecs | ${GREP} -m 1 '%{\!pg: %{pthread:' | ${SED} -e 's|^.*%{\!pg: %{pthread:|| ; s|}.*$$||' || ${TRUE}
 
@@ -90,6 +72,34 @@ LIB_DEPENDS+=	dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib \
 		notify.1:${PORTSDIR}/devel/libnotify
 .endif
 
+.if defined(WITH_PGO)
+BUILD_DEPENDS+=	${PYTHON_SITELIBDIR}/_sqlite3.so:${PORTSDIR}/databases/py-sqlite3
+USE_PYTHON_BUILD=	yes
+USE_DISPLAY=		yes
+.include "${PORTSDIR}/Mk/bsd.python.mk"
+
+MAKEFILE=	client.mk
+ALL_TARGET=	profiledbuild
+.endif
+
+.if ${ARCH} == amd64 || ${ARCH} == i386
+BUILD_DEPENDS+=	yasm:${PORTSDIR}/devel/yasm
+.endif
+
+pre-extract:
+.if defined(WITH_PGO)
+	@${ECHO} "*****************************************************************"
+	@${ECHO} "**************************** attention **************************"
+	@${ECHO} "*****************************************************************"
+	@${ECHO} "To build Firefox with PGO support you need a running X server and"
+	@${ECHO} "   build this port with an user who could access the X server!   "
+	@${ECHO} ""
+	@${ECHO} "During the build a Firefox instance will start and run some test."
+	@${ECHO} "      Do not interrupt or close Firefox during this tests!       "
+	@${ECHO} "*****************************************************************"
+	@sleep 10
+.endif
+
 post-extract::
 	@${SED} -e 's|@FIREFOX_ICON@|${FIREFOX_ICON}|' -e 's|@MOZILLA@|${MOZILLA}|' \
 		-e 's|@MOZILLA_NAME@|${MOZILLA_NAME}|' \
@@ -98,6 +108,7 @@ post-extract::
 post-patch:
 	${REINPLACE_CMD} -e 's|%%PTHREAD_LIBS%%|${PTHREAD_LIBS:C/-pthread/${GECKO_PTHREAD_LIBS}/}|' \
 		${WRKSRC}/storage/build/Makefile.in \
+		${WRKSRC}/toolkit/library/Makefile.in \
 		${WRKSRC}/db/sqlite3/src/Makefile.in
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|' \
 		${WRKSRC}/security/manager/ssl/src/Makefile.in \
@@ -113,8 +124,15 @@ pre-configure:
 	(cd ${WRKSRC} && ${AUTOCONF})
 	(cd ${WRKSRC}/js/src/ && ${AUTOCONF})
 
+post-configure:
+.if defined(WITH_PGO)
+	@${SED} -e 's|@PYTHON@|${PYTHON_CMD}|' \
+		<${FILESDIR}/mozconfig-profile_guided_optimization.in \
+		>> ${BUILD_WRKSRC}/.mozconfig
+	(cd ${WRKSRC} && ${GMAKE} distclean)
+.endif
+
 port-pre-install:
-#	${SED} -e 's|1.9a7|0|' ${WRKSRC}/dist/bin/application.ini ${FAKEDIR}/lib
 	${ECHO_CMD} 'share/applications/${MOZILLA}.desktop' >> ${PLISTF}
 	${ECHO_CMD} "@dirrmtry share/applications" >> ${PLISTD}
 	${ECHO_CMD} 'share/pixmaps/${FIREFOX_ICON}' >> ${PLISTF}
