@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	twitter
-PORTVERSION=	1.1.2
+PORTVERSION=	1.2.0
 CATEGORIES=	net rubygems
 MASTER_SITES=   RG
 
