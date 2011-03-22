@@ -20,7 +20,7 @@ PLIST_FILES=	bin/${PORTNAME} \
 PLIST_DIRS=	%%DATADIR%%
 NO_BUILD=	yes
 MASTERDIR=	${.CURDIR}/../p5-Net-SinFP
-DBDATE=		20101224
+DBDATE=		20110125
 
 post-patch:
 	@${REINPLACE_CMD} -e 's!$$Bin/../db/!${DATADIR}/!' ${WRKSRC}/bin/${PORTNAME}.pl
