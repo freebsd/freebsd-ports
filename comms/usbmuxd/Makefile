@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	usbmuxd
-PORTVERSION=	1.0.6
+PORTVERSION=	1.0.7
 CATEGORIES=	comms
 MASTER_SITES=	http://marcansoft.com/uploads/${PORTNAME}/
 
@@ -24,7 +24,7 @@ PORTDOCS=	AUTHORS README README.devel
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} <= 800107 || ${OSVERSION} >= 900000 && ${OSVERSION} <= 900002
-BROKEN=		requires libusb 1.0.4
+BROKEN=		requires libusb 1.0.3
 .endif
 
 pre-configure:
