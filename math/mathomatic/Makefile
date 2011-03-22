@@ -7,6 +7,7 @@
 
 PORTNAME=	mathomatic
 PORTVERSION=	15.5.2
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	http://www.panix.com/~gesslein/ \
 		CRITICAL
@@ -52,7 +53,7 @@ do-install:
 		${PREFIX}/share/applications
 	${INSTALL_DATA} ${WRKSRC}/icons/mathomatic.png ${PREFIX}/share/pixmaps
 .if !defined(NOPORTDOCS)
-.for d in m4 tests factorial
+.for d in m4 tests
 	${MKDIR} ${DOCSDIR}/${d}
 	${INSTALL_DATA} ${WRKSRC}/${d}/* ${DOCSDIR}/${d}
 .endfor
