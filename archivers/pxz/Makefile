@@ -16,6 +16,7 @@ MAINTAINER=	mm@FreeBSD.org
 COMMENT=	Parallel LZMA compressor using liblzma
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
@@ -24,10 +25,6 @@ MAN1=	pxz.1
 
 MAKE_ENV+=	BINDIR=${PREFIX}/bin \
 		MANDIR=${MANPREFIX}/man
-
-.if !defined(NOPORTDOCS)
-PORTDOCS=	COPYING
-.endif
 
 .include <bsd.port.pre.mk>
 
@@ -40,13 +37,5 @@ MAKE_ENV+=	LDFLAGS="${LDFLAGS}"
 
 post-patch:
 	@${REINPLACE_CMD} -e 's/CC=.*/CC:=$${CC}/g' ${WRKSRC}/Makefile
-
-post-install:
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-. for FILE in ${PORTDOCS}
-	@${INSTALL_DATA} ${WRKSRC}/${FILE} ${DOCSDIR}/${FILE}
-. endfor
-.endif
 
 .include <bsd.port.post.mk>

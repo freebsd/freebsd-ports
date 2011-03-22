@@ -14,6 +14,7 @@ MAINTAINER=	mm@FreeBSD.org
 COMMENT=	Phoronix Benchmarking Suite
 
 LICENSE=	GPLv3
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 OPTIONS=	BASH_COMPLETIONS "Install bash completions" off \
 		X11 "Install X11 icons and mimetypes" on
@@ -28,7 +29,7 @@ MAN1=		phoronix-test-suite.1
 
 PORTDOCS=	*
 
-DOCFILES1=	CHANGE-LOG COPYING AUTHORS
+DOCFILES1=	CHANGE-LOG AUTHORS
 
 DOCFILES2=	phoronix-test-suite.pdf specifications_xml_test.html \
 		specifications_xml_download.html writing_your_first_module.html \
