@@ -39,6 +39,9 @@ OPTIONS=	BUNDLED_LIBS "Use Qt-bundled jpeg, mng, png and tiff" off
 
 LICENSE=	GPLv3 LGPL3 LGPL21
 LICENSE_COMB=	multi
+LICENSE_FILE_GPLv3=	${INSTALL_WRKSRC}/COPYING
+LICENSE_FILE_LGPL3=	${INSTALL_WRKSRC}/COPYING.LGPL
+LICENSE_FILE_LGPL21=	${WRKSRC}/LICENSE.LGPL
 
 CONFIGURE_ARGS=	-prefix ${WRKDIR}/wkqt \
 	-release -static -fast -exceptions -no-accessibility -no-stl \
