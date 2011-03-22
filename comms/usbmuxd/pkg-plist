@@ -3,6 +3,6 @@ include/usbmuxd-proto.h
 include/usbmuxd.h
 lib/libusbmuxd.so
 lib/libusbmuxd.so.1
-lib/libusbmuxd.so.1.0.6
+lib/libusbmuxd.so.1.0.7
 libdata/pkgconfig/libusbmuxd.pc
 sbin/usbmuxd
