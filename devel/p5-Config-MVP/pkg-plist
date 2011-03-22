@@ -1,6 +1,7 @@
 %%SITE_PERL%%/Config/MVP.pm
 %%SITE_PERL%%/Config/MVP/Assembler.pm
 %%SITE_PERL%%/Config/MVP/Assembler/WithBundles.pm
+%%SITE_PERL%%/Config/MVP/Error.pm
 %%SITE_PERL%%/Config/MVP/Reader/Findable/ByExtension.pm
 %%SITE_PERL%%/Config/MVP/Reader.pm
 %%SITE_PERL%%/Config/MVP/Reader/Findable.pm
