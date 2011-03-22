@@ -19,6 +19,9 @@ COMMENT?=	Library and tool for encoding H.264/AVC video streams
 
 BUILD_DEPENDS=	yasm>=0.6.0:${PORTSDIR}/devel/yasm
 
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 X264_BUILD=	110
 X264_REV=	1820
 X264_SNAPSHOT=	20101211
