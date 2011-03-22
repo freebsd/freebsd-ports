@@ -1,9 +1,5 @@
 bin/audiotool
-bin/ccaudio2-config
 bin/tonetool
 include/ccaudio2.h
-lib/libccaudio.a
-lib/libccaudio.la
 lib/libccaudio.so
 lib/libccaudio.so.2
-libdata/pkgconfig/ccaudio2.pc

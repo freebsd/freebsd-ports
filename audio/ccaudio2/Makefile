@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ccaudio2
-PORTVERSION=	2.0.1
+PORTVERSION=	2.0.2
 CATEGORIES=	audio
 MASTER_SITES=	http://www.gnutelephony.org/dist/tarballs/
 
@@ -14,16 +14,17 @@ MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	C++ class framework for manipulating audio files
 
 LIB_DEPENDS=	ccgnu2:${PORTSDIR}/devel/commoncpp \
-    		ucommon.4:${PORTSDIR}/devel/ucommon
+    		ucommon.4:${PORTSDIR}/devel/ucommon \
+		gsm.1:${PORTSDIR}/audio/gsm \
+		speex.1:${PORTSDIR}/audio/speex
 
 CONFLICTS=	ccaudio-[0-9]*
 
 USE_GNOME=	gnometarget gnomehack
-GNU_CONFIGURE=	yes
+USE_CMAKE=	yes
+CMAKE_OUTSOURCE=yes
 USE_LDCONFIG=	yes
 
-MAN1=	audiotool.1 tonetool.1 ccaudio2-config.1
-
-PLIST_SUB+=	CCVERSION=1.0
+CMAKE_ARGS+=	-DCMAKE_REQUIRED_INCLUDES:PATH=${LOCALBASE}/include
 
 .include <bsd.port.mk>
