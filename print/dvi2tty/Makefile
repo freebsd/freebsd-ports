@@ -6,21 +6,23 @@
 #
 
 PORTNAME=	dvi2tty
-PORTVERSION=	1.0
+PORTVERSION=	5.3.4
 CATEGORIES=	print
-MASTER_SITES=	${MASTER_SITE_TEX_CTAN}
-MASTER_SITE_SUBDIR=	nonfree/dviware
-DISTNAME=	${PORTNAME}
-EXTRACT_SUFX=	.tar
+MASTER_SITES=	http://www.mesa.nl/pub/dvi2tty/
+EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A dvi-file previewer for text only devices
 
-DEPRECATED=     Upstream disapear and distfile is no more available
-EXPIRATION_DATE=        2011-05-01
+MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}" LDFLAGS="${STRIP}"
 
-IGNOREFILES=	${DISTFILES}
-MAN1=		dvi2tty.1
-PLIST_FILES=	bin/dvi2tty
+MAN1=		disdvi.1 dvi2tty.1
+PLIST_FILES=	bin/disdvi bin/dvi2tty
+
+do-install:
+.for name in disdvi dvi2tty
+	${INSTALL_PROGRAM} ${WRKSRC}/${name} ${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/${name}.1 ${MANPREFIX}/man/man1
+.endfor
 
 .include <bsd.port.mk>
