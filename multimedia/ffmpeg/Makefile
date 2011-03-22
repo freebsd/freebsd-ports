@@ -19,6 +19,9 @@ BUILD_DEPENDS=	yasm:${PORTSDIR}/devel/yasm
 
 CONFLICTS=	ffmpeg-20*
 
+LICENSE=	GPLv2 LGPL21
+LICENSE_COMB=	multi
+
 HAS_CONFIGURE=	yes
 CONFIGURE_LOG=	config.err
 USE_BZIP2=	yes
@@ -41,8 +44,9 @@ OPTIONS=	ALSA	"Enable alsa input/output device" off \
 		SCHROEDINGER	"Dirac codec via libschroedinger" on \
 		SDL	"SDL support (build ffplay)" off \
 		SPEEX	"Speex audio decoder" off \
-		SSSE3	"Enable ssse3 support" on \
+		SSSE3	"Use binutils from ports (SSSE3 support)" on \
 		THEORA	"Theora encoder (implies OGG)" on \
+		VAAPI	"VAAPI decoder support" off \
 		VDPAU	"Nvidia vdpau support" off \
 		VORBIS	"Vorbis encoder via libvorbis (implies OGG)" on \
 		VP8	"VP8 codec via libvpx" on \
@@ -91,8 +95,7 @@ CONFIGURE_ARGS+=--prefix="${PREFIX}" \
 		--cc="${CC}" \
 		--extra-cflags="${FFMPEG_CFLAGS} -I${LOCALBASE}/include" \
 		--extra-ldflags="-L${LOCALBASE}/lib ${FFMPEG_LDFLAGS}" \
-		--extra-libs="${PTHREAD_LIBS}" \
-		--disable-debug
+		--extra-libs="${PTHREAD_LIBS}"
 SHLIB_VER=	1
 PLIST_SUB=	SHLIB_VER=${SHLIB_VER}
 USE_LDCONFIG=	yes
@@ -108,6 +111,12 @@ DOC_DOCFILES=	APIchanges TODO avutil.txt developer.html faq.html \
 		libavfilter.html optimization.txt rate_distortion.txt \
 		snow.txt soc.txt swscale.txt tablegen.txt viterbi.txt
 PORTDOCS=	*
+
+.if !defined(WITH_DEBUG)
+CONFIGURE_ARGS+=	--disable-debug
+.else
+CONFIGURE_ARGS+=	--disable-stripping
+.endif
 
 .if !defined(WITHOUT_CPUDETECT)
 CONFIGURE_ARGS+=	--enable-runtime-cpudetect
@@ -165,17 +174,19 @@ CONFIGURE_ARGS+=	--disable-indev=alsa \
 
 # amr
 .if defined(WITH_AMR_NB) || defined (WITH_AMR_WB)
+LICENSE=		GPLv3 LGPL3
+CONFIGURE_ARGS+=	--enable-version3
 LIB_DEPENDS+=	opencore-amrnb.0:${PORTSDIR}/audio/opencore-amr
 .endif
 
 .ifdef(WITH_AMR_NB)
-CONFIGURE_ARGS+=	--enable-libopencore-amrnb --enable-version3
+CONFIGURE_ARGS+=	--enable-libopencore-amrnb
 .else
 CONFIGURE_ARGS+=	--disable-libopencore-amrnb
 .endif
 
 .ifdef(WITH_AMR_WB)
-CONFIGURE_ARGS+=	--enable-libopencore-amrwb --enable-version3
+CONFIGURE_ARGS+=	--enable-libopencore-amrwb
 .else
 CONFIGURE_ARGS+=	--disable-libopencore-amrwb
 .endif
@@ -190,6 +201,7 @@ CONFIGURE_ARGS+=	--disable-libdirac
 
 # faac
 .ifdef(WITH_FAAC)
+RESTRICTED=	linking to libfaac restricts redistribution
 LIB_DEPENDS+=	faac.0:${PORTSDIR}/audio/faac
 CONFIGURE_ARGS+=	--enable-libfaac --enable-nonfree
 .else
@@ -272,9 +284,17 @@ CONFIGURE_ARGS+=	--enable-libtheora
 CONFIGURE_ARGS+=	--disable-libtheora
 .endif
 
+# vaapi
+.ifndef(WITHOUT_VAAPI)
+LIB_DEPENDS+=	va.1:${PORTSDIR}/multimedia/libva
+CONFIGURE_ARGS+=	--enable-vaapi
+.else
+CONFIGURE_ARGS+=	--disable-vaapi
+.endif
+
 # vdpau
 .ifndef(WITHOUT_VDPAU)
-LIB_DEPENDS+=	vdpau.1:${PORTSDIR}/multimedia/libvdpau
+BUILD_DEPENDS+=	${LOCALBASE}/include/vdpau/vdpau.h:${PORTSDIR}/multimedia/libvdpau
 CONFIGURE_ARGS+=	--enable-vdpau
 .else
 CONFIGURE_ARGS+=	--disable-vdpau
