@@ -7,7 +7,6 @@
 OPTIONS=        LANG_AF "Africaans"             off \
                 LANG_SQ "Albanian"              off \
                 LANG_AR "Arabic"                on \
-                LANG_AS "Assamese"              off \
                 LANG_EU "Basque"                off \
                 LANG_BN "Bengali"               on \
                 LANG_BB "Bengali (Bangladesh)"  off \
@@ -22,7 +21,6 @@ OPTIONS=        LANG_AF "Africaans"             off \
                 LANG_EO "Esperanto"             off \
                 LANG_ET "Estonian"              off \
                 LANG_GL "Galician"              off \
-                LANG_KA "Georgian"              off \
                 LANG_DE "German"                on \
                 LANG_EL "Greek"                 off \
                 LANG_GU "Gujarati"              off \
@@ -50,7 +48,6 @@ OPTIONS=        LANG_AF "Africaans"             off \
                 LANG_MN "Mongolian"             off \
                 LANG_NB "Norwegian"             off \
                 LANG_NN "Norwegian Nynorsk"     off \
-                LANG_OC "Occitan"               off \
                 LANG_OR "Oriya"                 off \
                 LANG_FA "Persian"               off \
                 LANG_PL "Polish"                off \
