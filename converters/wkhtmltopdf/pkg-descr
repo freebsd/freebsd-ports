@@ -1,8 +1,12 @@
-Simple shell utility to convert html to pdf using a custom static build
-of qt and the webkit rendering engine.
+wkhtmltopdf and wkhtmltoimage are powerful utilities to convert HTML to PDF
+or an image file using a patched static build of Qt and the webkit rendering
+engine.
+
+A webpage can be downloaded directly from the web and rendered into a PDF
+document or an image file (multiple formats are supported).
 
 Features of the static version:
-* Convert web pages into PDF documents using webkit
+* Convert web pages into PDF documents (or images) using webkit
 * Adding headers and footers
 * TOC generation
 * Batch mode conversions
