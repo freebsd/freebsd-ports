@@ -240,6 +240,8 @@
     SUBDIR += firefox-sync
     SUBDIR += firefox35
     SUBDIR += firefox35-i18n
+    SUBDIR += firefox36
+    SUBDIR += firefox36-i18n
     SUBDIR += flashplugin-mozilla
     SUBDIR += flat-frog
     SUBDIR += flickcurl
