@@ -6,16 +6,17 @@
 #
 
 PORTNAME=	openfire
-PORTVERSION=	3.6.4
+PORTVERSION=	3.7.0
 PORTEPOCH=	1
 CATEGORIES=	net-im java
-MASTER_SITES=	http://download.igniterealtime.org/openfire/
+MASTER_SITES=	http://www.igniterealtime.org/downloadServlet?filename=openfire/
 DISTNAME=	${PORTNAME}_src_${PORTVERSION:S/./_/g}
 
 MAINTAINER=	gahr@FreeBSD.org
-COMMENT=	Openfire (formerly Wildfire) is an enterprise instant messaging server
+COMMENT=	Enterprise instant messaging server
 
-RUN_DEPENDS=	classpath:${PORTSDIR}/java/javavmwrapper
+RUN_DEPENDS=	classpath:${PORTSDIR}/java/javavmwrapper \
+   		${JAVAJARDIR}/slf4j-api.jar:${PORTSDIR}/devel/slf4j
 
 USE_LDCONFIG=	yes
 USE_ANT=	yes
@@ -24,9 +25,8 @@ JAVA_VERSION=	1.5+
 
 CONFLICTS=	wildfire-[0-9]*
 
-ALL_TARGET=	openfire
+ALL_TARGET=	openfire plugins
 USE_RC_SUBR=	openfire
-SUB_FILES=	pkg-message
 
 WRKSRC=		${WRKDIR}/${PORTNAME}_src
 BUILD_WRKSRC=	${WRKSRC}/build
@@ -34,8 +34,8 @@ INSTALL_WRKSRC=	${WRKSRC}/target/openfire
 DATADIR=	${JAVASHAREDIR}/${PORTNAME}
 VARLOG=		/var/log/openfire
 VARDB=		/var/db/openfire
-PUSER=		openfire
-PGROUP=		${PUSER}
+USERS=		openfire
+GROUPS=		${USERS}
 
 do-install:
 
@@ -88,16 +88,12 @@ post-install:
 		${INSTALL} -m 600 ${INSTALL_WRKSRC}/resources/security/truststore \
 		${ETCDIR}/truststore; \
 	fi
-	${SETENV} ${SCRIPTS_ENV} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
-	${CHOWN} -Rh ${PUSER}:${PGROUP} ${ETCDIR}
-	${CHOWN} -Rh ${PUSER}:${PGROUP} ${VARDB}
-	${CHOWN} -Rh ${PUSER}:${PGROUP} ${VARLOG}
-	${CHOWN} -Rh ${PUSER}:${PGROUP} ${DATADIR}
+	${CHOWN} -Rh ${USERS}:${GROUPS} ${ETCDIR}
+	${CHOWN} -Rh ${USERS}:${GROUPS} ${VARDB}
+	${CHOWN} -Rh ${USERS}:${GROUPS} ${VARLOG}
+	${CHOWN} -Rh ${USERS}:${GROUPS} ${DATADIR}
 
-	@${ECHO_CMD} "===> post-installation information for ${PKGNAME}:"
-	@${ECHO_CMD} ""
 	@${CAT} ${PKGMESSAGE}
-	@${ECHO_CMD} ""
 
 .include <bsd.port.mk>
