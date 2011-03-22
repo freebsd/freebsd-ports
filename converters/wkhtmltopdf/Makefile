@@ -15,8 +15,7 @@ DISTFILES=	${DISTNAME}.tar.bz2:wkhtmltopdf \
 		wkhtml2pdf-wkhtmltopdf-qt-${WKQTVERSION}.tar.bz2
 
 MAINTAINER=	mm@FreeBSD.org
-COMMENT=	HTML to PDF converter
-
+COMMENT=	Convert HTML (or live webpages) to PDF or image files
 LIB_DEPENDS+=	fontconfig:${PORTSDIR}/x11-fonts/fontconfig \
 		freetype:${PORTSDIR}/print/freetype2 \
 		jpeg:${PORTSDIR}/graphics/jpeg \
