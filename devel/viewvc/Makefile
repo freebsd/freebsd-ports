@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	viewvc
-PORTVERSION=	1.1.9
+PORTVERSION=	1.1.10
 CATEGORIES=	devel python
 MASTER_SITES=	http://www.viewvc.org/ \
-		LOCAL/glarkin
+		LOCAL/ohauer
 
-MAINTAINER=	glarkin@FreeBSD.org
+MAINTAINER=	ohauer@FreeBSD.org
 COMMENT=	Web-based Version Control Repository Browsing
 
 OPTIONS=	SUBVERSION "use svn binding" on \
