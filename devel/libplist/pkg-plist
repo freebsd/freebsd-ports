@@ -1,5 +1,5 @@
 bin/plutil
-bin/plutil-1.3
+bin/plutil-1.4
 include/plist/Array.h
 include/plist/Boolean.h
 include/plist/Data.h
@@ -15,10 +15,10 @@ include/plist/plist.h
 %%PYTHON%%include/plist/swig/plist.i
 lib/libplist++.so
 lib/libplist++.so.1
-lib/libplist++.so.1.1.3
+lib/libplist++.so.1.1.4
 lib/libplist.so
 lib/libplist.so.1
-lib/libplist.so.1.1.3
+lib/libplist.so.1.1.4
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/plist/__init__.py
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/plist/_plist.so
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/plist/plist.py
