@@ -6,15 +6,12 @@
 #
 
 PORTNAME=	udns
-PORTVERSION=	0.0.9
+PORTVERSION=	0.1
 CATEGORIES=	dns
 MASTER_SITES=	http://www.corpit.ru/mjt/udns/
-DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	mm@FreeBSD.org
 COMMENT=	DNS resolver library with sync and async queries
-
-WRKSRC=		${WRKDIR}/${DISTNAME:S/_/-/}
 
 HAS_CONFIGURE=	yes
 MAKE_JOBS_SAFE=	yes
@@ -22,11 +19,12 @@ USE_LDCONFIG=	yes
 
 OPTIONS=	IPV6 "Enable IPv6 support" on
 
+LICENSE=	LGPL21
+LICENSE_FILE=	${WRKSRC}/COPYING.LGPL
+
 ALL_TARGET=	staticlib shared
 
 PORTDOCS=	*
-
-CONFIGURE_ENV=	CC="${CC}" CFLAGS="${CFLAGS}"
 
 SHLIB_MAJOR=	0
 
@@ -63,7 +61,7 @@ do-install:
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-.for FILE in COPYING.LGPL NEWS NOTES TODO
+.for FILE in NEWS NOTES TODO
 	${INSTALL_DATA} ${WRKSRC}/${FILE} ${DOCSDIR}/${FILE}
 .endfor
 .endif
