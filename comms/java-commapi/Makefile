@@ -24,8 +24,8 @@ RESTRICTED=	no commercial use
 NO_BUILD=	YES
 
 WRKSRC=		${WRKDIR}
-DISTDESCR=	"the Java Communications API ${PORTVERSION} for Solaris/SPARC"
-DOWNLOAD_URL=	"http://java.sun.com/products/javacomm/"
+DISTDESCR=	"the Java Communications API ${PORTVERSION} for Generic Platform"
+DOWNLOAD_URL=	"https://cds.sun.com/is-bin/INTERSHOP.enfinity/WFS/CDS-CDS_SMI-Site/en_US/-/USD/ViewProductDetail-Start?ProductRef=JAVACOMM-3.0.1-LX-SP-G-F@CDS-CDS_SMI"
 PORTDESTDIR=	${JAVA_HOME}/jre/lib/ext
 DISTFILE=	${DISTNAME}${EXTRACT_SUFX}
 DISTPATH=	${DISTDIR}/${DISTFILE}
@@ -33,13 +33,9 @@ DISTPATH=	${DISTDIR}/${DISTFILE}
 PLIST_SUB+=	JAVA_HOME=${JAVA_HOME:S/${PREFIX}\///}
 PLIST_FILES+=	%%JAVA_HOME%%/jre/lib/ext/comm.jar
 
-.if defined(BATCH) || defined(PACKAGE_BUILDING)
-IGNORE=		should be fetched manually
-.endif
-
 .include <bsd.port.pre.mk>
 
-.if !exists(${DISTPATH})
+.if !exists(${DISTPATH}) && !defined(PACKAGE_BUILDING)
 IGNORE=You must manually fetch ${DISTDESCR} (${DISTFILE}) from ${DOWNLOAD_URL}, place it in ${DISTDIR} and then run make again
 .endif
 
