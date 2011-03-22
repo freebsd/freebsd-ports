@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	errorzilla
-PORTVERSION=	0.39
+PORTVERSION=	0.40
 DISTVERSIONSUFFIX=	-fx
 CATEGORIES=	www
 
@@ -25,9 +25,7 @@ XPI_FILES=	chrome/content/about.xul \
 		chrome/content/netError.js \
 		chrome/content/netError.xhtml \
 		chrome/content/overlay.xul \
-		chrome/content/ping.txt \
 		chrome/content/prefs.js \
-		chrome/content/redirectToPing.xhtml \
 		chrome/locale/en-US/about.dtd \
 		chrome/locale/en-US/contents.rdf \
 		chrome/skin/classic/about.css \
