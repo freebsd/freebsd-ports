@@ -5,6 +5,26 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20110322:
+  AFFECTS: users of www/firefox
+  AUTHOR: gecko@FreeBSD.org
+
+  The www/firefox port has been updated to 4.0. If you want to stay with
+  Firefox 3.6 please run:
+
+  # portupgrade -o www/firefox36 www/firefox
+  # portupgrade -o www/firefox36-i18n www/firefox-i18n (if installed)
+  or
+  # portmaster -o www/firefox36 www/firefox
+  # portmaster -o www/firefox36-i18n www/firefox-i18n (if installed)
+
+  Do not select the OPTIMIZED_CFLAGS option on a system with less then
+  2 GB of RAM otherwise you will run out of memory during the build.
+
+  Please make sure all your addons are compatible with Firefox 4.0 and
+  backup your ~/.mozilla directory prior to the first launch of Firefox
+  4.0.
+
 20110319:
   AFFECTS: users of databases/mysql55-client
   AUTHOR: ale@FreeBSD.org
