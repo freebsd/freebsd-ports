@@ -4,15 +4,14 @@
 #
 # $FreeBSD$
 #
-# Currently, the following 74 languages are supported.
+# Currently, the following 71 languages are supported.
 #
-FIREFOX_I18N_ALL_=	af ar as be bg bn-BD bn-IN ca cs cy da de el \
-			en-GB eo es-AR es-CL es-ES es-MX et eu fa fi \
-			fr fy-NL ga-IE gl gu-IN he hi-IN hr hu id is \
-			it ja ka kk kn ko ku lt lv mk ml mr nb-NO nl \
-			nn-NO oc or pa-IN pl pt-BR pt-PT rm ro ru si \
-			sk sl sq sr sv-SE ta-LK ta te th tr uk vi  \
-			zh-CN zh-TW
+FIREFOX_I18N_ALL_=	af ar be bg bn-BD bn-IN ca cs cy da de el en-GB \
+			eo es-AR es-CL es-ES es-MX et eu fa fi fr fy-NL \
+			ga-IE gl gu-IN he hi-IN hr hu id is it ja kk kn \
+			ko ku lt lv mk ml mr nb-NO nl nn-NO or pa-IN pl \
+			pt-BR pt-PT rm ro ru si sk sl sq sr sv-SE ta-LK \
+			ta te th tr uk vi zh-CN zh-TW
 
 .if defined(FIREFOX_I18N_ALL) || defined(PACKAGE_BUILDING) || target(package)
 FIREFOX_I18N=   ${FIREFOX_I18N_ALL_}
@@ -22,9 +21,6 @@ FIREFOX_I18N+=  af
 .endif
 .ifndef WITHOUT_LANG_AR
 FIREFOX_I18N+=  ar
-.endif
-.ifndef WITHOUT_LANG_AS
-FIREFOX_I18N+=  as
 .endif
 .ifndef WITHOUT_LANG_BE
 FIREFOX_I18N+=  be
@@ -125,9 +121,6 @@ FIREFOX_I18N+=  it
 .ifndef WITHOUT_LANG_JA
 FIREFOX_I18N+=  ja
 .endif
-.ifndef WITHOUT_LANG_KA
-FIREFOX_I18N+=  ka
-.endif
 .ifndef WITHOUT_LANG_KK
 FIREFOX_I18N+=  kk
 .endif
@@ -163,9 +156,6 @@ FIREFOX_I18N+=  nl
 .endif
 .ifndef WITHOUT_LANG_NN
 FIREFOX_I18N+=  nn-NO
-.endif
-.ifndef WITHOUT_LANG_OC
-FIREFOX_I18N+=  oc
 .endif
 .ifndef WITHOUT_LANG_OR
 FIREFOX_I18N+=  or

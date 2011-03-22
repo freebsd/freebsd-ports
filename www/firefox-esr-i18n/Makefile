@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	firefox-i18n
-PORTVERSION=	3.6.15
+PORTVERSION=	4.0
 CATEGORIES=	www
 MASTER_SITE_SUBDIR=	firefox/releases/${PORTVERSION}/linux-i686/xpi
 PKGNAMEPREFIX=
@@ -14,14 +14,16 @@ DISTFILES=	${FIREFOX_I18N_:S/$/.xpi/}
 DIST_SUBDIR=	xpi/${DISTNAME}
 
 MAINTAINER=	gecko@FreeBSD.org
-COMMENT=	Localized interface for Firefox 3.6
+COMMENT=	Localized interface for Firefox 4.0
+
+EXTRACT_DEPENDS=	zip:${PORTSDIR}/archivers/zip
 
 USE_FIREFOX=	yes
-USE_XPI=	*firefox3
+USE_XPI=	*firefox
 
 USE_SUBMAKE=	yes
 
-WDIR=	langpack3-*@firefox.mozilla.org
+WDIR=	langpack-*@firefox.mozilla.org
 
 XPI_DISTNAMES=	${FIREFOX_I18N_}
 
@@ -37,7 +39,7 @@ RUN_DEPENDS+=	xpi-quick-locale-switcher>=0:${PORTSDIR}/www/xpi-quick-locale-swit
 FIREFOX_I18N_?=	${FIREFOX_I18N}
 
 .for dist in ${XPI_DISTNAMES}
-XPI_ID_${dist}=		langpack3-${dist}@firefox.mozilla.org
+XPI_ID_${dist}=		langpack-${dist}@firefox.mozilla.org
 XPI_FILES_${dist}=	chrome.manifest install.rdf chrome/${dist}.jar
 XPI_DIRS_${dist}=	chrome
 .endfor
@@ -50,10 +52,12 @@ pre-everything::
 
 do-extract:
 	@for lang in ${FIREFOX_I18N_}; do \
-		if ! (${EXTRACT_CMD} ${_DISTDIR}/$$lang.xpi -d ${WRKSRC}/langpack3-$$lang@firefox.mozilla.org);\
+		if ! (${EXTRACT_CMD} ${_DISTDIR}/$$lang.xpi -d ${WRKSRC}/langpack-$$lang@firefox.mozilla.org);\
 		then \
 			exit 1; \
-		fi \
+		fi; \
+		cd ${WRKSRC}/langpack-$$lang@firefox.mozilla.org/chrome; \
+		${LOCALBASE}/bin/zip -r $$lang.jar $$lang; \
 	done
 
 .if !exists(${OPTIONSFILE}) && !defined(PACKAGE_BUILDING)
@@ -75,8 +79,7 @@ do-install:
 
 post-patch:
 	${FIND} ${WRKSRC} -name install.rdf -print0 | \
-		${XARGS} -0L1 ${REINPLACE_CMD} -i '' -e '/<?xml/,$$!d' \
-			-e 's/\(langpack\)/\13/'
+		${XARGS} -0L1 ${REINPLACE_CMD} -i '' -e '/<?xml/,$$!d'
 
 List-Langs:
 	@fetch -o- "http://releases.mozilla.org/pub/mozilla.org/firefox/releases/${PORTVERSION}/linux-i686/xpi"|\
