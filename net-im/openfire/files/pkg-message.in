@@ -1,4 +1,0 @@
-You can find the documentation files for this package in
-%%DOCSDIR%%.
-To enable openfire startup script please add openfire_enable="YES" in 
-your rc.conf file.
