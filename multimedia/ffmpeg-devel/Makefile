@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ffmpeg
-DISTVERSION=	2011-02-07
+DISTVERSION=	2011-03-21
 CATEGORIES=	multimedia audio ipv6 net
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	mm
@@ -22,7 +22,10 @@ CONFLICTS=	ffmpeg-0.*
 
 LATEST_LINK=	ffmpeg-devel
 
-GIT_SNAPSHOT=	5bea615dc383cf3617c5057db4fbc6832fc64137
+LICENSE=	GPLv2 LGPL21
+LICENSE_COMB=	multi
+
+GIT_SNAPSHOT=	cf740790677b5101b59e33f4f40d375068c04ada
 GIT_SUFFIX=	${GIT_SNAPSHOT:C/^(.......).*$/\1/g}
 
 USE_XZ=		yes
@@ -48,9 +51,10 @@ OPTIONS=	ALSA	"Enable alsa input/output device" off \
 		SCHROEDINGER	"Dirac codec via libschroedinger" on \
 		SDL	"SDL support (build ffplay)" off \
 		SPEEX	"Speex audio decoder" off \
-		SSSE3	"SSSE3 support" on \
+		SSSE3	"Use binutils from ports (SSSE3 support)" on \
 		THEORA	"Theora encoder (implies OGG)" on \
-		VDPAU "NVidia vdpau support" off \
+		VAAPI	"VAAPI decoder support" off \
+		VDPAU 	"NVidia vdpau support" off \
 		VORBIS	"Vorbis encoder via libvorbis (implies OGG)" on \
 		VP8	"VP8 codec via libvpx" on \
 		X264	"H.264 encoder" on \
@@ -101,8 +105,7 @@ CONFIGURE_ARGS+=--prefix="${PREFIX}" \
 		--cc="${CC}" \
 		--extra-cflags="${FFMPEG_CFLAGS} -I${LOCALBASE}/include" \
 		--extra-ldflags="-L${LOCALBASE}/lib ${FFMPEG_LDFLAGS}" \
-		--extra-libs="${PTHREAD_LIBS}" \
-		--disable-debug
+		--extra-libs="${PTHREAD_LIBS}"
 SHLIB_VER=	1
 PLIST_SUB=	SHLIB_VER=${SHLIB_VER}
 USE_LDCONFIG=	yes
@@ -115,6 +118,12 @@ DOC_DOCFILES=	APIchanges TODO avutil.txt developer.html faq.html \
 		libavfilter.html optimization.txt rate_distortion.txt \
 		snow.txt soc.txt swscale.txt tablegen.txt viterbi.txt
 PORTDOCS=	*
+
+.if !defined(WITH_DEBUG)
+CONFIGURE_ARGS+=	--disable-debug
+.else
+CONFIGURE_ARGS+=	--disable-stripping
+.endif
 
 .if !defined(WITHOUT_CPUDETECT)
 CONFIGURE_ARGS+=	--enable-runtime-cpudetect
@@ -169,17 +178,19 @@ CONFIGURE_ARGS+=	--disable-indev=alsa \
 
 # amr
 .if defined(WITH_AMR_NB) || defined (WITH_AMR_WB)
+LICENSE=	GPLv3 LGPL3
+CONFIGURE_ARGS+=	--enable-version3
 LIB_DEPENDS+=	opencore-amrnb.0:${PORTSDIR}/audio/opencore-amr
 .endif
 
 .ifdef(WITH_AMR_NB)
-CONFIGURE_ARGS+=        --enable-libopencore-amrnb --enable-version3
+CONFIGURE_ARGS+=        --enable-libopencore-amrnb
 .else
 CONFIGURE_ARGS+=        --disable-libopencore-amrnb
 .endif
 
 .ifdef(WITH_AMR_WB)
-CONFIGURE_ARGS+=        --enable-libopencore-amrwb --enable-version3
+CONFIGURE_ARGS+=        --enable-libopencore-amrwb
 .else
 CONFIGURE_ARGS+=        --disable-libopencore-amrwb
 .endif
@@ -194,6 +205,7 @@ CONFIGURE_ARGS+=	--disable-libdirac
 
 # faac
 .ifdef(WITH_FAAC)
+RESTRICTED=	linking to libfaac restricts redistribution
 LIB_DEPENDS+=	faac.0:${PORTSDIR}/audio/faac
 CONFIGURE_ARGS+=	--enable-libfaac --enable-nonfree
 .else
@@ -288,6 +300,14 @@ CONFIGURE_ARGS+=	--enable-libtheora
 CONFIGURE_ARGS+=	--disable-libtheora
 .endif
 
+# vaapi
+.ifndef(WITHOUT_VAAPI)
+LIB_DEPENDS+=	va.1:${PORTSDIR}/multimedia/libva
+CONFIGURE_ARGS+=	--enable-vaapi
+.else
+CONFIGURE_ARGS+=	--disable-vaapi
+.endif
+
 # vdpau
 .ifndef(WITHOUT_VDPAU)
 LIB_DEPENDS+=   vdpau.1:${PORTSDIR}/multimedia/libvdpau
@@ -315,7 +335,11 @@ CONFIGURE_ARGS+=	--disable-libvpx
 
 # x264
 .ifdef(WITH_X264)
+. if exists(${LOCALBASE}/lib/libx264.so.114)
+LIB_DEPENDS+=	x264.114:${PORTSDIR}/multimedia/x264-devel
+. else
 LIB_DEPENDS+=	x264.110:${PORTSDIR}/multimedia/x264
+. endif
 CONFIGURE_ARGS+=	--enable-libx264
 .else
 CONFIGURE_ARGS+=	--disable-libx264
