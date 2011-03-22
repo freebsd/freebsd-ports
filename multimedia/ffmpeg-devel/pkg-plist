@@ -152,6 +152,5 @@ libdata/pkgconfig/libswscale.pc
 @dirrm include/libavformat
 @dirrm include/libavfilter
 @dirrm include/libavdevice
-@dirrm include/libavcore
 @dirrm include/libavcodec
 @dirrm include/ffmpeg
