@@ -16,7 +16,7 @@ DIST_SUBDIR=	xpi/${DISTNAME}
 MAINTAINER=	gecko@FreeBSD.org
 COMMENT=	Localized interface for Firefox 3.6
 
-USE_FIREFOX=	yes
+USE_FIREFOX=	36
 USE_XPI=	*firefox3
 
 USE_SUBMAKE=	yes
