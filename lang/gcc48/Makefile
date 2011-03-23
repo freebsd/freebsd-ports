@@ -31,7 +31,7 @@ BUILD_DEPENDS+=	runtest:${PORTSDIR}/misc/dejagnu
 VERSIONSTRING=	${PORTVERSION:C/([0-9]+\.[0-9]+).*\.([0-9]+)/\1-\2/}
 SUFFIX=		${PORTVERSION:C/([0-9]+).([0-9]+).*/\1\2/}
 LATEST_LINK=	gcc${SUFFIX}${PKGNAMESUFFIX}
-ONLY_FOR_ARCHS=	amd64 i386 ia64 sparc64
+ONLY_FOR_ARCHS=	amd64 i386 ia64 powerpc sparc64
 USE_BINUTILS=	yes
 USE_BISON=	build
 USE_BZIP2=	yes
@@ -91,7 +91,7 @@ INFO=		gcc${SUFFIX}/cpp \
 		gcc${SUFFIX}/gccint \
 		gcc${SUFFIX}/gfortran \
 		gcc${SUFFIX}/libgomp
-.if ${ARCH} != "ia64" && ${ARCH} != "sparc64"
+.if ${ARCH} != "ia64" && ${ARCH} != "powerpc" && ${ARCH} != "sparc64"
 INFO+=		gcc${SUFFIX}/libquadmath
 .endif
 
