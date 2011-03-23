@@ -7,6 +7,7 @@
 
 PORTNAME=	mozc-server
 PORTVERSION=	0.13.523.102
+PORTREVISION=	1
 CATEGORIES=	japanese
 MASTER_SITES=	http://people.freebsd.org/~daichi/distfiles/
 DISTNAME=	mozc-${PORTVERSION}
@@ -20,7 +21,7 @@ BUILD_DEPENDS=	gsed:${PORTSDIR}/textproc/gsed \
 		gyp:${PORTSDIR}/devel/py-gyp-devel
 LIB_DEPENDS=	curl.6:${PORTSDIR}/ftp/curl \
 		gtest.0:${PORTSDIR}/devel/googletest \
-		protobuf.6:${PORTSDIR}/devel/protobuf
+		protobuf.7:${PORTSDIR}/devel/protobuf
 RUN_DEPENDS=	xdg-open:${PORTSDIR}/devel/xdg-utils
 
 USE_GMAKE=	yes
