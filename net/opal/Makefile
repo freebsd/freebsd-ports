@@ -39,6 +39,10 @@ PLIST_SUB=	PORTVERSION=${PORTVERSION}
 # Be sure to compile position-independent objects for the shared libraries
 CFLAGS+=	-fPIC
 
+.if ${OSVERSION} >= 900000
+BROKEN=		does not compile on 9.X
+.endif
+
 .if defined(WITHOUT_FFMPEG)
 CONFIGURE_ARGS+=--disable-h263avcodec
 .else
