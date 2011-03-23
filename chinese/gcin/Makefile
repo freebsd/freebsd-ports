@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	gcin
-PORTVERSION=	1.5.9
+PORTVERSION=	1.6.0
 CATEGORIES=	chinese textproc gnome
 MASTER_SITES=	http://www.csie.nctu.edu.tw/~cp76/gcin/download/:main \
 		LOCAL/chinsan/gcin:main
 DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}:main
 EXTRACT_ONLY=	gcin-${PORTVERSION}.tar.bz2
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	chinsan@FreeBSD.org
 COMMENT=	A traditional chinese input utility in X
 
 LICENSE=	LGPL21
