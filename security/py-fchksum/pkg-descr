@@ -7,4 +7,4 @@ actual work is done by C code. Compared to the implementing a read loop in
 python with the standard python modules, fchksum is approximatly 2.0x faster
 in md5 and 1.1x faster in crc32.
 
-WWW: http://www.azstarnet.com/~donut/programs/fchksum.html
+WWW: http://users.dakotacom.net/~donut/programs/fchksum.html
