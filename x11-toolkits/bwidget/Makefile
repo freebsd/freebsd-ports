@@ -14,6 +14,9 @@ DISTNAME=	BWidget-${PORTVERSION}
 MAINTAINER=	mm@FreeBSD.org
 COMMENT=	A high-level widget set for Tcl/Tk
 
+LICENSE=	BSD
+LICENSE_FILE=	${WRKSRC}/LICENSE.txt
+
 USE_TK_RUN=	84+
 
 NO_BUILD=	yes
@@ -31,7 +34,7 @@ do-install:
 .if !defined(NOPORTDOCS)
 	@$(MKDIR) ${DOCSDIR}/BWman
 	${INSTALL_DATA} ${WRKSRC}/BWman/*.html ${DOCSDIR}/BWman
-. for FILE in CHANGES.txt ChangeLog LICENSE.txt README.txt 
+. for FILE in CHANGES.txt ChangeLog README.txt 
 	${INSTALL_DATA} ${WRKSRC}/${FILE} ${DOCSDIR}/${FILE}
 . endfor
 .endif

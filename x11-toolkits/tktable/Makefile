@@ -15,6 +15,9 @@ DISTNAME=	${PORTNAME:S/tk/Tk/}${PORTVERSION}
 MAINTAINER=	mm@FreeBSD.org
 COMMENT=	A table/matrix widget extension to Tk
 
+LICENSE=	BSD
+LICENSE_FILE=	${WRKSRC}/license.txt
+
 USE_XORG=	x11
 USE_TK=		84+
 

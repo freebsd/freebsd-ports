@@ -15,6 +15,9 @@ DISTNAME=	tcl${PORTVERSION}-src
 MAINTAINER=	mm@FreeBSD.org
 COMMENT?=	Tool Command Language
 
+LICENSE=	BSD
+LICENSE_FILE=	${WRKSRC}/../license.terms
+
 LATEST_LINK?=	tcl85
 PATCH_DIST_ARGS=	-d ${WRKDIR}/${DISTNAME} -E ${PATCH_DIST_STRIP}
 WRKSRC=		${WRKDIR}/${DISTNAME:S/-src//}/unix

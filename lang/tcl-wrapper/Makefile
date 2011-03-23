@@ -19,6 +19,8 @@ COMMENT=	Shell wrapper for ${TX_SHELL} (${TX_PORT_U})
 
 BUILD_DEPENDS=	shc:${PORTSDIR}/misc/shc
 
+LICENSE=	BSD
+
 SUB_FILES=	wrapper conf.sample pkg-message pkg-install pkg-deinstall
 
 PKGINSTALL=	${WRKDIR}/pkg-install

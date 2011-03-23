@@ -13,6 +13,9 @@ MASTER_SITES=	SF/tktable/${PORTNAME}/${PORTNAME}-0-8-4-0
 MAINTAINER=	mm@FreeBSD.org
 COMMENT=	Themed widget set for Tk
 
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/license.terms
+
 USE_TK=		84+
 
 USE_AUTOTOOLS=	autoconf

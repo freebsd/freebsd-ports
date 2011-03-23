@@ -16,6 +16,9 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	mm@FreeBSD.org
 COMMENT=	PNG support for Tcl/Tk
 
+LICENSE=	BSD
+LICENSE_FILE=	${WRKSRC}/license.terms
+
 USE_TK=		84+
 GNU_CONFIGURE=	yes
 
