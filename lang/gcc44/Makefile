@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	gcc
-PORTVERSION=	4.4.6.20110315
+PORTVERSION=	4.4.6.20110322
 CATEGORIES=	lang
 MASTER_SITES=	${MASTER_SITE_GCC}
 MASTER_SITE_SUBDIR=	snapshots/${VERSIONSTRING}
@@ -21,11 +21,6 @@ COMMENT=	GNU Compiler Collection 4.4
 LIB_DEPENDS=	gmp.10:${PORTSDIR}/math/gmp \
 		mpfr.4:${PORTSDIR}/math/mpfr
 RUN_DEPENDS+=	${LOCALBASE}/bin/as:${PORTSDIR}/devel/binutils
-
-.if defined(MAINTAINER_MODE)
-DISTFILES+=	gcc-testsuite-${VERSIONSTRING}${EXTRACT_SUFX}
-BUILD_DEPENDS+=	runtest:${PORTSDIR}/misc/dejagnu
-.endif
 
 VERSIONSTRING=	${PORTVERSION:C/([0-9]+\.[0-9]+).*\.([0-9]+)/\1-\2/}
 SUFFIX=		${PORTVERSION:C/([0-9]+).([0-9]+).*/\1\2/}
@@ -97,9 +92,6 @@ pre-configure:
 	cd ${SRCDIR} ; contrib/gcc_update --touch
 	@${RM} -f ${SRCDIR}/gcc/*/*.info*
 	@${MKDIR} ${CONFIGURE_WRKSRC}
-
-full-regression-test: build
-	cd ${WRKSRC}; ${GMAKE} -sk check
 
 post-install:
 	${RM} -f ${PREFIX}/man/man7/fsf-funding.7 \
