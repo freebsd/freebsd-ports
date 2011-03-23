@@ -7,7 +7,7 @@
 
 PORTNAME=	ushare
 PORTVERSION=	1.1a
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	net
 MASTER_SITES=	http://ushare.geexbox.org/releases/
 
