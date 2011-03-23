@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	openconnect
-PORTVERSION=	2.25
+PORTVERSION=	2.26
 CATEGORIES=	security
 MASTER_SITES=	ftp://ftp.infradead.org/pub/openconnect/ \
 		CRITICAL
@@ -27,8 +27,6 @@ PORTDOCS=	README.*
 .include <bsd.port.options.mk>
 
 OPTIONS=	GUI      "Enable the OpenConnect configuration GUI"   off
-
-.include <bsd.port.pre.mk>
 
 .if !defined(WITHOUT_GUI)
 LIB_DEPENDS+=	gtk-x11-2.0.0:${PORTSDIR}/x11-toolkits/gtk20
@@ -54,4 +52,4 @@ post-install:
 	${INSTALL_MAN} ${WRKSRC}/README.SecurID ${DOCSDIR}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
