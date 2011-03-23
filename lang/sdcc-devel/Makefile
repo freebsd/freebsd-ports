@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	sdcc
-PORTVERSION=	2.9.7.2010.09.25
+PORTVERSION=	3.0.2.2011.03.21
 CATEGORIES=	lang
 MASTER_SITES=	SF/sdcc/snapshot_builds/sdcc-src/ \
 		http://tijl.fastmail.fm/mirror/
-DISTNAME=	${PORTNAME}-src-20100925-5993
+DISTNAME=	${PORTNAME}-src-20110321-6331
 
 MAINTAINER=	tijl@coosemans.org
 COMMENT=	Small Device C Compiler
@@ -36,16 +36,13 @@ OPTIONS=	MCS51   "Intel 8051 port" on \
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
-CONFIGURE_ARGS=	--datarootdir=${DATADIR} \
-		--docdir=${DOCSDIR} \
-		include_dir_suffix=include \
-		lib_dir_suffix=lib
+CONFIGURE_ENV+=	LDFLAGS="${LDFLAGS}"
+CONFIGURE_ARGS=	--docdir=${DOCSDIR}
 
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "sparc64"
-USE_GCC=	4.4+
+BROKEN=		Does not compile on sparc64
 .endif
 
 .if defined(WITHOUT_MCS51) && defined(WITHOUT_DS390)
@@ -86,11 +83,11 @@ PLIST_SUB+=		DS390=""
 .endif
 
 .if defined(WITHOUT_PIC)
-CONFIGURE_ARGS+=	--disable-pic-port
-PLIST_SUB+=		PIC="@comment "
+CONFIGURE_ARGS+=	--disable-pic14-port
+PLIST_SUB+=		PIC14="@comment "
 .else
 BUILD_DEPENDS+=		gpasm:${PORTSDIR}/devel/gputils
-PLIST_SUB+=		PIC=""
+PLIST_SUB+=		PIC14=""
 .endif
 
 .if defined(WITHOUT_PIC16)
@@ -140,8 +137,8 @@ PLIST_SUB+=		PACKIHX=""
 
 post-patch:
 	@${REINPLACE_CMD} 's,ARCH,PICARCH,g' \
-		${WRKSRC}/device/lib/pic/Makefile.common.in \
-		${WRKSRC}/device/lib/pic/Makefile.rules \
+		${WRKSRC}/device/lib/pic14/Makefile.common.in \
+		${WRKSRC}/device/lib/pic14/Makefile.rules \
 		${WRKSRC}/device/lib/pic16/configure
 .if defined(NOPORTDOCS)
 	@${REINPLACE_CMD} 's, [a-z-]*doc,,' \
