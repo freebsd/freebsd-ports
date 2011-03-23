@@ -6,21 +6,22 @@
 #
 
 PORTNAME=	zziplib
-PORTVERSION=	0.13.59
+PORTVERSION=	0.13.60
 CATEGORIES=	devel
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}13/${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A library to provide transparent read access to zipped files
 
+BUILD_DEPENDS=	zip:${PORTSDIR}/archivers/zip
+
 USE_BZIP2=	yes
 USE_GNOME=	gnomehack pkgconfig
-GNU_CONFIGURE=	yes
 USE_PYTHON_BUILD=	yes
-USE_LDCONFIG=	yes
+USE_AUTOTOOLS=	libtool
 CONFIGURE_ENV=	ac_cv_path_XMLTO=":"
-
-PORTSCOUT=	limit:^0\.
+CONFIGURE_ARGS=	--disable-sdl
+USE_LDCONFIG=	yes
 
 MAN3=		__zzip_fetch_disk_trailer.3 __zzip_parse_root_directory.3 __zzip_try_open.3 \
 		zzip_close.3 zzip_closedir.3 zzip_compr_str.3 zzip_dir_alloc.3 \
@@ -47,5 +48,15 @@ MAN3=		__zzip_fetch_disk_trailer.3 __zzip_parse_root_directory.3 __zzip_try_open
 		zzip_realfd.3 zzip_rewind.3 zzip_rewinddir.3 zzip_seek.3 zzip_seek32.3 zzip_seekdir.3 \
 		zzip_seekdir32.3 zzip_seterror.3 zzip_strerror.3 zzip_strerror_of.3 zzip_tell.3 \
 		zzip_tell32.3 zzip_telldir.3 zzip_telldir32.3
+
+PORTSCOUT=	limit:^0\.
+
+test check:
+	@(cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} \
+		${MAKEFILE} ${MAKE_ARGS} check)
+
+.if !defined(WITHOUT_TESTS)
+post-build::	test
+.endif
 
 .include <bsd.port.mk>
