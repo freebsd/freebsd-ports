@@ -8,6 +8,7 @@ libdata/snortsnarf/SnortSnarf/Filter.pm
 libdata/snortsnarf/SnortSnarf/Filtering.pm
 libdata/snortsnarf/SnortSnarf/HTMLAnomMemStorage.pm
 libdata/snortsnarf/SnortSnarf/HTMLMemStorage.pm
+libdata/snortsnarf/SnortSnarf/HTMLOutput+other.pm
 libdata/snortsnarf/SnortSnarf/HTMLOutput.pm
 libdata/snortsnarf/SnortSnarf/IPObfuscater.pm
 libdata/snortsnarf/SnortSnarf/Input.pm
@@ -19,6 +20,8 @@ libdata/snortsnarf/SnortSnarf/MemTimeBase.pm
 libdata/snortsnarf/SnortSnarf/MultiStore.pm
 libdata/snortsnarf/SnortSnarf/PacketBase.pm
 libdata/snortsnarf/SnortSnarf/SnortDBInput.pm
+libdata/snortsnarf/SnortSnarf/SnortDBInput.pm.save
+libdata/snortsnarf/SnortSnarf/SnortDBInput.ps
 libdata/snortsnarf/SnortSnarf/SnortFileInput.pm
 libdata/snortsnarf/SnortSnarf/SnortRules.pm
 libdata/snortsnarf/SnortSnarf/Sort.pm
