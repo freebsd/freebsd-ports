@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	smalltalk
-PORTVERSION=	3.2.3
+PORTVERSION=	3.2.4
 CATEGORIES=	lang
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -31,7 +31,7 @@ USE_SQLITE=	yes
 USE_GMAKE=	yes
 USE_GL=		gl glut
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}" \
+CONFIGURE_ENV=	LDFLAGS="${LDFLAGS}" \
 		ac_cv_prog_EMACS=no
 CONFIGURE_ARGS=	--enable-generational-gc=no \
 		--enable-gtk=no \
@@ -57,10 +57,6 @@ LDFLAGS=	-L${LOCALBASE}/lib
 
 .if ${ARCH} == "sparc64"
 BROKEN=		Fails to install on sparc64
-.endif
-
-.if ${OSVERSION} < 700000
-BROKEN=		Bad pkg-plist (fails to detect sdl parts)
 .endif
 
 .if defined(WITHOUT_TCLTK)
