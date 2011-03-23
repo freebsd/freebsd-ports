@@ -4,7 +4,7 @@ share/applications/toppler.desktop
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
 %%PORTDOCS%%%%DOCSDIR%%/README
-share/locale/cz/LC_MESSAGES/toppler.mo
+share/locale/cs/LC_MESSAGES/toppler.mo
 share/locale/de/LC_MESSAGES/toppler.mo
 share/locale/eu/LC_MESSAGES/toppler.mo
 share/locale/fi/LC_MESSAGES/toppler.mo
