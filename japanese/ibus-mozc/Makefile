@@ -7,6 +7,7 @@
 
 PORTNAME=	ibus-mozc
 PORTVERSION=	0.13.523.102
+PORTREVISION=	1
 CATEGORIES=	japanese
 MASTER_SITES=	http://people.freebsd.org/~daichi/distfiles/
 DISTNAME=	mozc-${PORTVERSION}
@@ -21,7 +22,7 @@ BUILD_DEPENDS=	gsed:${PORTSDIR}/textproc/gsed \
 LIB_DEPENDS=	curl.6:${PORTSDIR}/ftp/curl \
 		gtest.0:${PORTSDIR}/devel/googletest \
 		ibus.2:${PORTSDIR}/textproc/ibus \
-		protobuf.6:${PORTSDIR}/devel/protobuf
+		protobuf.7:${PORTSDIR}/devel/protobuf
 RUN_DEPENDS=	mozc_server:${PORTSDIR}/japanese/mozc-server \
 		mozc_tool:${PORTSDIR}/japanese/mozc-tool \
 		mozc_server_start:${PORTSDIR}/japanese/mozc-additions \
