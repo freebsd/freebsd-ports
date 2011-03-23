@@ -6,20 +6,23 @@
 #
 
 PORTNAME=	dejagnu
-PORTVERSION=	1.4.4
-PORTREVISION=	2
+PORTVERSION=	1.5
 CATEGORIES=	misc tcl tk
-MASTER_SITES=	${MASTER_SITE_GNU}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	GNU
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Automated program/system tester
 
+BUILD_DEPENDS=	expect:${PORTSDIR}/lang/expect
 RUN_DEPENDS=	expect:${PORTSDIR}/lang/expect
+
+LICENSE=	GPLv3
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 
 MAN1=		runtest.1
+INFO=	${PORTNAME}
 
 .include <bsd.port.mk>

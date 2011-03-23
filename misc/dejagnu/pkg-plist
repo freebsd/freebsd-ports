@@ -1,7 +1,6 @@
 bin/runtest
 include/dejagnu.h
 %%DATADIR%%/baseboards/README
-%%DATADIR%%/baseboards/a29k-udi.exp
 %%DATADIR%%/baseboards/am33_2.0-libremote.exp
 %%DATADIR%%/baseboards/arc-sim.exp
 %%DATADIR%%/baseboards/arm-ice.exp
@@ -10,6 +9,7 @@ include/dejagnu.h
 %%DATADIR%%/baseboards/basic-sid.exp
 %%DATADIR%%/baseboards/basic-sim.exp
 %%DATADIR%%/baseboards/cf.exp
+%%DATADIR%%/baseboards/cris-sim.exp
 %%DATADIR%%/baseboards/cygmon.exp
 %%DATADIR%%/baseboards/cygwin.exp
 %%DATADIR%%/baseboards/d10v-sim.exp
@@ -31,10 +31,12 @@ include/dejagnu.h
 %%DATADIR%%/baseboards/i386-sid.exp
 %%DATADIR%%/baseboards/i960-cyclone.exp
 %%DATADIR%%/baseboards/i960-sim.exp
+%%DATADIR%%/baseboards/iq2000-sim.exp
 %%DATADIR%%/baseboards/jmr3904-sim.exp
 %%DATADIR%%/baseboards/linux-gdbserver.exp
 %%DATADIR%%/baseboards/linux-libremote.exp
 %%DATADIR%%/baseboards/m32r-elf.exp
+%%DATADIR%%/baseboards/m32r-linux-sim.exp
 %%DATADIR%%/baseboards/m32r-sid.exp
 %%DATADIR%%/baseboards/m32r-sim.exp
 %%DATADIR%%/baseboards/m68hc11-sim.exp
@@ -58,6 +60,7 @@ include/dejagnu.h
 %%DATADIR%%/baseboards/mn10300-cygmon.exp
 %%DATADIR%%/baseboards/mn10300-sim.exp
 %%DATADIR%%/baseboards/msparc-cygmon.exp
+%%DATADIR%%/baseboards/mt-sid.exp
 %%DATADIR%%/baseboards/op50n.exp
 %%DATADIR%%/baseboards/powerpc-bug.exp
 %%DATADIR%%/baseboards/powerpc-bug1.exp
@@ -73,24 +76,24 @@ include/dejagnu.h
 %%DATADIR%%/baseboards/sparclite-coff.exp
 %%DATADIR%%/baseboards/sparclite-cygmon.exp
 %%DATADIR%%/baseboards/sparclite-sim-le.exp
+%%DATADIR%%/baseboards/sparclite-sim.exp
+%%DATADIR%%/baseboards/strongarm-cygmon.exp
 %%DATADIR%%/baseboards/tic80-sim.exp
 %%DATADIR%%/baseboards/tx39-dve.exp
 %%DATADIR%%/baseboards/tx39-sim.exp
 %%DATADIR%%/baseboards/unix.exp
+%%DATADIR%%/baseboards/usparc-cygmon.exp
 %%DATADIR%%/baseboards/v850-sim.exp
 %%DATADIR%%/baseboards/vr4100-ddb.exp
-%%DATADIR%%/baseboards/sparclite-sim.exp
 %%DATADIR%%/baseboards/vr4100-sim.exp
 %%DATADIR%%/baseboards/vr4111-sim.exp
 %%DATADIR%%/baseboards/vr4300-ddb.exp
 %%DATADIR%%/baseboards/vr4300-sim.exp
 %%DATADIR%%/baseboards/vr4300.exp
 %%DATADIR%%/baseboards/vr5000-ddb.exp
-%%DATADIR%%/baseboards/strongarm-cygmon.exp
 %%DATADIR%%/baseboards/vx4300.exp
 %%DATADIR%%/baseboards/vx68k.exp
 %%DATADIR%%/baseboards/vx960.exp
-%%DATADIR%%/baseboards/usparc-cygmon.exp
 %%DATADIR%%/baseboards/vxsparc.exp
 %%DATADIR%%/baseboards/x86-cygmon.exp
 %%DATADIR%%/baseboards/xscale-cygmon.exp
@@ -131,12 +134,10 @@ include/dejagnu.h
 %%DATADIR%%/config/slite.exp
 %%DATADIR%%/config/sparclet.exp
 %%DATADIR%%/config/tic80.exp
-%%DATADIR%%/config/udi.exp
 %%DATADIR%%/config/unix.exp
 %%DATADIR%%/config/vr4100.exp
 %%DATADIR%%/config/vr4300.exp
 %%DATADIR%%/config/vr5000.exp
-%%DATADIR%%/config/vrtx.exp
 %%DATADIR%%/config/vxworks.exp
 %%DATADIR%%/debugger.exp
 %%DATADIR%%/dejagnu.exp
@@ -146,7 +147,6 @@ include/dejagnu.h
 %%DATADIR%%/kermit.exp
 %%DATADIR%%/libexec/config.guess
 %%DATADIR%%/libgloss.exp
-%%DATADIR%%/mondfe.exp
 %%DATADIR%%/remote.exp
 %%DATADIR%%/rlogin.exp
 %%DATADIR%%/rsh.exp
@@ -158,10 +158,8 @@ include/dejagnu.h
 %%DATADIR%%/telnet.exp
 %%DATADIR%%/testglue.c
 %%DATADIR%%/tip.exp
-%%DATADIR%%/util-defs.exp
 %%DATADIR%%/utils.exp
-%%DATADIR%%/xsh.exp
 @dirrm %%DATADIR%%/libexec
-@dirrm %%DATADIR%%/baseboards
 @dirrm %%DATADIR%%/config
+@dirrm %%DATADIR%%/baseboards
 @dirrm %%DATADIR%%
