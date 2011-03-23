@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	samhain
-PORTVERSION=	2.8.1
+PORTVERSION=	2.8.3a
 CATEGORIES=	security
 MASTER_SITES=	http://la-samhna.de/archive/ \
 		http://redundancy.redundancy.org/mirror/
@@ -83,21 +83,21 @@ CONFIGURE_ARGS+=	--enable-network=client \
 		--with-config-file=REQ_FROM_SERVER
 PLIST_SUB+=	SAMHAIN="" SETPWD="" YULE="@comment "
 EXTRA_PATCHES+=	${FILESDIR}/fixsamhainrc.patch
-MAN5=	samhainrc.5
-MAN8=	samhain.8
+MAN5+=	samhainrc.5
+MAN8+=	samhain.8
 .elif defined(WITH_SERVER)
 CONFIGURE_ARGS+=	--enable-network=server
 SUB_LIST+=	WITH_YULE="yes"
 PLIST_SUB+=	YULE="" SAMHAIN="@comment " SETPWD="@comment "
 EXTRA_PATCHES+=	${FILESDIR}/fixyulerc.patch
-MAN5=	yulerc.5
-MAN8=	yule.8
+MAN5+=	yulerc.5
+MAN8+=	yule.8
 .else
 SUB_LIST+=	WITH_YULE=""
 PLIST_SUB+=	SAMHAIN="" YULE="@comment " SETPWD="@comment "
 EXTRA_PATCHES+=	${FILESDIR}/fixsamhainrc.patch
-MAN5=	samhainrc.5
-MAN8=	samhain.8
+MAN5+=	samhainrc.5
+MAN8+=	samhain.8
 .endif
 .if defined(WITH_LOG_SERVER)
 CONFIGURE_ARGS+=	--with-logserver=${WITH_LOG_SERVER}
