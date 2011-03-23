@@ -1348,6 +1348,7 @@ bzr-gtk                         ports/devel/bzr-gtk
 bzr-loom                        ports/devel/bzr-loom
 bzr-pipeline                    ports/devel/bzr-pipeline
 bzr-rewrite                     ports/devel/bzr-rewrite
+bzr-stats                       ports/devel/bzr-stats
 bzr-svn                         ports/devel/bzr-svn
 bzr-upload                      ports/devel/bzr-upload
 bzrtools                        ports/devel/bzrtools
@@ -2229,7 +2230,6 @@ db46                            ports/databases/db46
 db47                            ports/databases/db47
 db48                            ports/databases/db48
 db4o-mono                       ports/databases/db4o-mono
-db50                            ports/databases/db50
 db51                            ports/databases/db51
 dbXML                           ports/databases/dbXML
 dbacl                           ports/textproc/dbacl
@@ -3565,6 +3565,8 @@ firefox-remote                  ports/www/firefox-remote
 firefox-sync                    ports/www/firefox-sync
 firefox35                       ports/www/firefox35
 firefox35-i18n                  ports/www/firefox35-i18n
+firefox36                       ports/www/firefox36
+firefox36-i18n                  ports/www/firefox36-i18n
 firemime                        ports/mail/firemime
 firepay                         ports/mail/firepay
 fireprofile                     ports/databases/fireprofile
@@ -26077,6 +26079,7 @@ wapiti                          ports/security/wapiti
 wapsh                           ports/shells/wapsh
 warden                          ports/sysutils/warden
 wargus                          ports/games/wargus
+warmux                          ports/games/warmux
 warppipe                        ports/net/warppipe
 warsow                          ports/games/warsow
 warsow-data                     ports/games/warsow-data
@@ -26210,6 +26213,7 @@ wise                            ports/biology/wise
 wistumbler2                     ports/net/wistumbler2
 wizardkit                       ports/devel/wizardkit
 wizd                            ports/net/wizd
+wkhtmltopdf                     ports/converters/wkhtmltopdf
 wm2                             ports/x11-wm/wm2
 wmScoreBoard                    ports/misc/wmScoreBoard
 wmakerconf                      ports/x11-wm/wmakerconf
@@ -26357,7 +26361,6 @@ workplace                       ports/x11-fm/workplace
 workrave                        ports/x11/workrave
 worldofpadman                   ports/games/worldofpadman
 worldtools                      ports/sysutils/worldtools
-wormux                          ports/games/wormux
 wots                            ports/sysutils/wots
 wotsap                          ports/misc/wotsap
 wowzamediaserverpro             ports/net/wowzamediaserverpro
