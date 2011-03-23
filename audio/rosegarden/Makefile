@@ -10,7 +10,7 @@ PORTVERSION=	11.02
 CATEGORIES=	audio
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}/
 
-MAINTAINER=	c0rn@o2.pl
+MAINTAINER=	pawel@FreeBSD.org
 COMMENT=	The Rosegarden Editor and Sequencer suite
 
 BUILD_DEPENDS=	dssi_osc_update:${PORTSDIR}/audio/dssi \

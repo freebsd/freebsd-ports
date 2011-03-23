@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	x11-themes gnome
 MASTER_SITES=	SF/lxde/LXAppearance
 
-MAINTAINER=	c0rn@o2.pl
+MAINTAINER=	pawel@FreeBSD.org
 COMMENT=	A desktop-independent theme switcher for GTK+
 
 LICENSE=	GPLv2

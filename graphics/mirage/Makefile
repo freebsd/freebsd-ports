@@ -10,7 +10,7 @@ PORTVERSION=	0.9.5.2
 CATEGORIES=	graphics
 MASTER_SITES=	BERLIOS/mirageiv
 
-MAINTAINER=	c0rn@o2.pl
+MAINTAINER=	pawel@FreeBSD.org
 COMMENT=	Fast and simple image viewer
 
 LICENSE=	GPLv3

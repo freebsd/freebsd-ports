@@ -10,7 +10,7 @@ PORTEPOCH=	1
 CATEGORIES=	polish net-im
 MASTER_SITES=	http://pl.ekg2.org/
 
-MAINTAINER=	c0rn@o2.pl
+MAINTAINER=	pawel@FreeBSD.org
 COMMENT=	Text-mode Gadu-Gadu, Jabber and IRC client
 
 LIB_DEPENDS=	gadu.3:${PORTSDIR}/polish/libgadu \

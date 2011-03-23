@@ -11,7 +11,7 @@ CATEGORIES=	multimedia
 MASTER_SITES=	SF/bombono/bombono-dvd/1.0
 DISTNAME=	bombono-dvd-${PORTVERSION}
 
-MAINTAINER=	c0rn@o2.pl
+MAINTAINER=	pawel@FreeBSD.org
 COMMENT=	DVD authoring program
 
 BUILD_DEPENDS=	GraphicsMagick>=1.1.7:${PORTSDIR}/graphics/GraphicsMagick \

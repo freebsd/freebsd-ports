@@ -10,7 +10,7 @@ PORTVERSION=	4.4
 CATEGORIES=	finance
 MASTER_SITES=	http://homebank.free.fr/public/
 
-MAINTAINER=	c0rn@o2.pl
+MAINTAINER=	pawel@FreeBSD.org
 COMMENT=	Manage your personal accounts at home
 
 LICENSE=	GPLv2

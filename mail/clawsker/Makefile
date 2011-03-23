@@ -10,7 +10,7 @@ PORTVERSION=	0.7.2
 CATEGORIES=	mail
 MASTER_SITES=	http://www.claws-mail.org/tools/
 
-MAINTAINER=	c0rn@o2.pl
+MAINTAINER=	pawel@FreeBSD.org
 COMMENT=	Applet to edit Claws Mail's hidden preferences
 
 RUN_DEPENDS=	claws-mail>=3.7.6:${PORTSDIR}/mail/claws-mail \

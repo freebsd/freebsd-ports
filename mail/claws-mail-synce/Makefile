@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.claws-mail.org/downloads/plugins/
 PKGNAMEPREFIX=	claws-mail-
 DISTNAME=	synce_plugin-${PORTVERSION}
 
-MAINTAINER=	c0rn@o2.pl
+MAINTAINER=	pawel@FreeBSD.org
 COMMENT=	Windows CE addressbook plugin for claws-mail
 
 LIB_DEPENDS=	rapi.2:${PORTSDIR}/palm/synce-librapi2

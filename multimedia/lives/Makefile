@@ -11,7 +11,7 @@ CATEGORIES=	multimedia
 MASTER_SITES=	http://www.xs4all.nl/~salsaman/lives/current/
 DISTNAME=	LiVES-${PORTVERSION}
 
-MAINTAINER=	c0rn@o2.pl
+MAINTAINER=	pawel@FreeBSD.org
 COMMENT=	Video editing system
 
 LIB_DEPENDS=	jack.0:${PORTSDIR}/audio/jack \
