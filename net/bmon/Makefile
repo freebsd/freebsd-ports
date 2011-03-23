@@ -29,10 +29,14 @@ PLIST_FILES=	sbin/bmon
 
 .if defined(WITH_RRDTOOL)
 BUILD_DEPENDS=	rrdtool:${PORTSDIR}/databases/rrdtool
+.else
+CONFIGURE_ARGS+=--disable-rrd
 .endif
 
 .if defined(WITH_DBI)
 LIB_DEPENDS=	dbi.1:${PORTSDIR}/databases/libdbi
+.else
+CONFIGURE_ARGS+=--disable-dbi
 .endif
 
 do-install:
