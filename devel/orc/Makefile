@@ -12,6 +12,9 @@ MASTER_SITES=	http://code.entropywave.com/download/orc/
 MAINTAINER=	mm@FreeBSD.org
 COMMENT=	Library and toolset to operate arrays of data
 
+LICENSE=	BSD
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 USE_GNOME=	pkgconfig
 USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes

@@ -15,6 +15,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	mm@FreeBSD.org
 COMMENT=	Low-Level Interface to zlib compression library
 
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
+
 PERL_CONFIGURE=	YES
 
 MAN3=		Compress::Raw::Zlib.3

@@ -15,6 +15,8 @@ DISTNAME=	${PORTNAME}-${DISTVERSION}-stable
 MAINTAINER=	mm@FreeBSD.org
 COMMENT=	Provides an API to execute callback functions on certain events
 
+LICENSE=	BSD
+
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 

@@ -16,6 +16,9 @@ DIST_SUBDIR=	aolserver
 MAINTAINER=	mm@FreeBSD.org
 COMMENT=	OpenSSL data encryption module for AOLserver
 
+LICENSE=	GPLv1 MPL
+LICENSE_COMB=	dual
+
 WRKSRC=		${WRKDIR}/nsencrypt-${PORTVERSION}
 
 AOLSERVERBASE?=	aolserver

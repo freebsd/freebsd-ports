@@ -18,6 +18,9 @@ COMMENT=	A library for reading and writing quicktime files
 LIB_DEPENDS=	vorbis.4:${PORTSDIR}/audio/libvorbis
 .endif
 
+LICENSE=	LGPL21
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 USE_LDCONFIG=	yes
 USE_GNOME=	gnometarget gnomehack pkgconfig
 USE_GMAKE=	yes

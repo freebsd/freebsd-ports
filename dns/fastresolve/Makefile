@@ -17,6 +17,9 @@ COMMENT=	Programs that process web logs to get DNS and domain ownership info
 LIB_DEPENDS=	adns.1:${PORTSDIR}/dns/adns
 RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/BerkeleyDB.pm:${PORTSDIR}/databases/p5-BerkeleyDB
 
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 USE_BZIP2=	yes
 USE_PERL5=	yes
 GNU_CONFIGURE=	yes

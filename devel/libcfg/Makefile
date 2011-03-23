@@ -15,6 +15,9 @@ DISTNAME=	${PORTNAME}+-${DISTVERSION}
 MAINTAINER=	mm@FreeBSD.org
 COMMENT=	Library for command line and configuration file parsing
 
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 USE_AUTOTOOLS=	autoconf
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
@@ -53,7 +56,7 @@ post-install:
 .endif
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-.for FILE in AUTHORS COPYING README TODO
+.for FILE in AUTHORS README TODO
 	@${INSTALL_DATA} ${WRKSRC}/${FILE} ${DOCSDIR}
 .endfor
 .if defined(WITH_HTMLDOCS)

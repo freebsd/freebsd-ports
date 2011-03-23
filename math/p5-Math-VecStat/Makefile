@@ -15,6 +15,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	mm@FreeBSD.org
 COMMENT=	Basic statistics on vectors
 
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
+
 PERL_CONFIGURE=	yes
 
 MAN3=		Math::VecStat.3

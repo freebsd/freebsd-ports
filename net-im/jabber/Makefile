@@ -25,6 +25,9 @@ LIB_DEPENDS=	pth.20:${PORTSDIR}/devel/pth-hard \
 		tasn1.4:${PORTSDIR}/security/libtasn1 \
 		gnutls.40:${PORTSDIR}/security/gnutls
 
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 OPTIONS=	IPV6 "Enable IPv6 support" off \
 		MYSQL "Build with MySQL support" off \
 		PGSQL "Build with PostgreSQL support" off
@@ -67,7 +70,7 @@ SUB_LIST+=	JABBER_USER=${JABBER_USER} JABBER_UID=${JABBER_UID} \
 		JABBER_SPOOLDIR="${JABBER_SPOOLDIR}" \
 		JABBER_RUNDIR="${JABBER_RUNDIR}"
 
-DOCS=		AUTHORS COPYING ChangeLog INSTALL NEWS README README.SQL README.config \
+DOCS=		AUTHORS ChangeLog INSTALL NEWS README README.SQL README.config \
 		README.filespool README.karma README.protocols TODO UPGRADE mysql.sql
 
 .include <bsd.port.pre.mk>

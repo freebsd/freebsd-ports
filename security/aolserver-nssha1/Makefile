@@ -18,6 +18,9 @@ COMMENT=	AOLserver module to perform SHA1 hashes
 
 WRKSRC=		${WRKDIR}/nssha1-${PORTVERSION}
 
+LICENSE=	GPLv1 MPL
+LICENSE_COMB=	dual
+
 AOLSERVERBASE?=	aolserver
 BUILD_DEPENDS+=	${LOCALBASE}/${AOLSERVERBASE}/bin/nsd:${PORTSDIR}/www/aolserver
 RUN_DEPENDS+=	${LOCALBASE}/${AOLSERVERBASE}/bin/nsd:${PORTSDIR}/www/aolserver

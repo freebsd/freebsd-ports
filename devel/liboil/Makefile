@@ -14,6 +14,9 @@ MASTER_SITES=	http://liboil.freedesktop.org/download/
 MAINTAINER=	mm@FreeBSD.org
 COMMENT=	Library of optimized inner loops
 
+LICENSE=	BSD
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 USE_GNOME=	pkgconfig gnomehack gnometarget ltverhack
 USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes

@@ -18,6 +18,9 @@ COMMENT=	OpenSSL socket encryption module for AOLserver
 
 WRKSRC=		${WRKDIR}/nsopenssl-3.0beta26
 
+LICENSE=	GPLv1 MPL
+LICENSE_COMB=	dual
+
 AOLSERVERBASE?=	aolserver
 BUILD_DEPENDS+=	${LOCALBASE}/${AOLSERVERBASE}/bin/nsd:${PORTSDIR}/www/aolserver
 RUN_DEPENDS+=	${LOCALBASE}/${AOLSERVERBASE}/bin/nsd:${PORTSDIR}/www/aolserver

@@ -18,6 +18,10 @@ CONFLICTS=	gnokii-[0-9]* smstools-2.* sendsms-[0-9]*
 OPTIONS=	STATS "Build status and statistics support" on
 
 WRKSRC=		${WRKDIR}/smstools3
+
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
 USE_GMAKE=	yes
 MAKE_JOBS_SAFE=	yes
 USE_RC_SUBR=	smsd

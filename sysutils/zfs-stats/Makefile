@@ -13,6 +13,8 @@ MASTER_SITES=	http://www.vx.sk/zfs-stats/
 MAINTAINER=	mm@FreeBSD.org
 COMMENT=	Display human-readable ZFS statistics
 
+LICENSE=	BSD
+
 USE_PERL5=	yes
 
 NO_BUILD=	yes

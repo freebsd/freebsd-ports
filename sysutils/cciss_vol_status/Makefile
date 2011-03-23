@@ -13,6 +13,9 @@ MASTER_SITES=	SF/cciss/${PORTNAME}
 MAINTAINER=	mm@FreeBSD.org
 COMMENT=	Reports status of logical drives on ciss(4) controllers
 
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 GNU_CONFIGURE=	yes
 
 MAN8=		cciss_vol_status.8

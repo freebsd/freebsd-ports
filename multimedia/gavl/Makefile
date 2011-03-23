@@ -16,6 +16,9 @@ COMMENT=	A library for handling uncompressed video and audio data
 LIB_DEPENDS=	png.6:${PORTSDIR}/graphics/png \
 		samplerate.1:${PORTSDIR}/audio/libsamplerate
 
+LICENSE=	GPLv3
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 USE_GNOME=	pkgconfig gnometarget gnomehack
 USE_LDCONFIG=	yes
 MAKE_JOBS_SAFE=	yes
