@@ -10,24 +10,22 @@ PORTNAME=	xcpustate
 PORTVERSION=	2.9
 PORTREVISION=	2
 CATEGORIES=	sysutils
-MASTER_SITES=	ftp://ftp.cs.toronto.edu/pub/jdd/xcpustate/  \
-		${MASTER_SITE_XCONTRIB}
-MASTER_SITE_SUBDIR=	utilities
+MASTER_SITES=	http://ftp.cs.toronto.edu/pub/jdd/xcpustate/
 EXTRACT_SUFX=	.shar
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	System monitoring utility graphicaly showing cpu load and status
 
-DEPRECATED=     Upstream disapear and distfile is no more available
-EXPIRATION_DATE=        2011-05-01
-
 EXTRACT_CMD=	${CAT}
-EXTRACT_BEFORE_ARGS=
-EXTRACT_AFTER_ARGS=	|sh
-USE_IMAKE=	yes
-USE_XORG=	ice sm x11 xaw xext xmu xt
+EXTRACT_BEFORE_ARGS=	# none
+EXTRACT_AFTER_ARGS=	| ${SH}
+
 NO_WRKSUBDIR=	yes
 
-MAN1=		xcpustate.1
+USE_XORG=	ice sm x11 xaw xext xmu xt
+USE_IMAKE=	yes
+
+MAN1=		${PORTNAME}.1
+PLIST_FILES=	bin/${PORTNAME}
 
 .include <bsd.port.mk>
