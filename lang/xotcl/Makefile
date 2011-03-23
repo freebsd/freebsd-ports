@@ -14,6 +14,9 @@ MASTER_SITES=	SF \
 MAINTAINER=	mm@FreeBSD.org
 COMMENT=	Object-oriented scripting language based on Tcl
 
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/COPYRIGHT
+
 USE_TCL=		84+
 USE_TCL_THREADS=	yes
 
@@ -102,7 +105,7 @@ post-install:
 .endif
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
-.for FILE in COPYRIGHT ChangeLog README README.aol
+.for FILE in ChangeLog README README.aol
 	${INSTALL_DATA} ${WRKSRC}/${FILE} ${DOCSDIR}
 .endfor
 .endif

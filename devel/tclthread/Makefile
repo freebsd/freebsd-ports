@@ -15,6 +15,9 @@ DISTNAME=	${PORTNAME}${PORTVERSION}
 MAINTAINER=	mm@FreeBSD.org
 COMMENT=	Thread extension for Tcl
 
+LICENSE=	BSD
+LICENSE_FILE=	${WRKSRC}/license.terms
+
 USE_TCL=		84+
 USE_TCL_THREADS=	yes
 

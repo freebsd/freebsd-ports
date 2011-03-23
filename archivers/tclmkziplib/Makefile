@@ -15,6 +15,8 @@ DISTNAME=	mkZiplib${PORTVERSION:S/.//}
 MAINTAINER=	mm@FreeBSD.org
 COMMENT=	GZIP and ZIP support for TCL; dynamicly loadable
 
+LICENSE=	BSD
+
 USE_TCL=	84+
 
 WRKSRC=		${WRKDIR}/mkZiplib${PORTVERSION}

@@ -15,6 +15,9 @@ DISTNAME=	${PORTNAME}${PORTVERSION}-src
 MAINTAINER=	mm@FreeBSD.org
 COMMENT?=	Graphical toolkit for Tcl
 
+LICENSE=	BSD
+LICENSE_TERMS=	${WRKSRC}/../license.terms
+
 LATEST_LINK?=	tk85
 USE_XORG=	x11
 USE_LDCONFIG=	yes
