@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	toppler
-PORTVERSION=	1.1.4
-PORTREVISION=	2
+PORTVERSION=	1.1.5
 CATEGORIES=	games
-MASTER_SITES=	SF
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A game where you have to climb the tower and avoid the monsters
@@ -18,7 +17,7 @@ USE_SDL=	mixer sdl
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
+CONFIGURE_ENV=	LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--localstatedir=${PREFIX}/share
 
 MAN6=		${PORTNAME}.6
