@@ -39,15 +39,15 @@ include/google/protobuf/wire_format_lite_inl.h
 lib/libprotobuf-lite.a
 lib/libprotobuf-lite.la
 lib/libprotobuf-lite.so
-lib/libprotobuf-lite.so.6
+lib/libprotobuf-lite.so.7
 lib/libprotobuf.a
 lib/libprotobuf.la
 lib/libprotobuf.so
-lib/libprotobuf.so.6
+lib/libprotobuf.so.7
 lib/libprotoc.a
 lib/libprotoc.la
 lib/libprotoc.so
-lib/libprotoc.so.6
+lib/libprotoc.so.7
 libdata/pkgconfig/protobuf-lite.pc
 libdata/pkgconfig/protobuf.pc
 @dirrm include/google/protobuf/stubs
