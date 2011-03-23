@@ -17,6 +17,9 @@ COMMENT=	Multi-User Conferencing component for Jabber
 LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2 \
 		idn.17:${PORTSDIR}/dns/libidn
 
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 USE_GNOME=	glib20 pkgconfig
 USE_RC_SUBR=	${PORTNAME}
 
@@ -28,7 +31,7 @@ OPTIONS=	MYSQL "Enable MySQL support" off \
 SUB_FILES+=	pkg-message README.FreeBSD.jabberd14 \
 		README.FreeBSD.jabberd2 README.FreeBSD.external
 
-DOCFILES=	AUTHORS COPYING ChangeLog FAQ LICENSE README TODO \
+DOCFILES=	AUTHORS ChangeLog FAQ LICENSE README TODO \
 		XEP0045_SUPPORT muc-default.xml style.css
 
 PORTDOCS=	*

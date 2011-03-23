@@ -16,6 +16,9 @@ COMMENT=	LAME plugin for libquicktime
 LIB_DEPENDS=	quicktime.0:${PORTSDIR}/multimedia/libquicktime \
 		mp3lame.0:${PORTSDIR}/audio/lame
 
+LICENSE=	LGPL21
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 MASTERDIR=	${.CURDIR}/../libquicktime
 PLIST=		${.CURDIR}/pkg-plist
 

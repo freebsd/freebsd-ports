@@ -18,6 +18,9 @@ COMMENT=	Syslinux for FreeBSD
 BUILD_DEPENDS=	nasm:${PORTSDIR}/devel/nasm
 RUN_DEPENDS=	mtools:${PORTSDIR}/emulators/mtools
 
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 MAN1=		syslinux.1
 
 USE_BZIP2=	yes

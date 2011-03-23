@@ -18,6 +18,8 @@ COMMENT=	Provides a wrapper to the ImageMagick/GraphicsMagick library
 
 LIB_DEPENDS=	MagickWand.4:${PORTSDIR}/graphics/ImageMagick
 
+LICENSE=	PHP301
+
 USE_PHP=	yes
 USE_PHPEXT=	yes
 

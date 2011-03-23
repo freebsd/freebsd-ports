@@ -15,6 +15,9 @@ DIST_SUBDIR=		ruby
 MAINTAINER=		mm@FreeBSD.org
 COMMENT=		Ruby tool for converting wiki-like markup
 
+LICENSE=		GPLv2
+LICENSE_FILE=		${WRKSRC}/LICENSE.TXT
+
 WRKSRC=			${WRKDIR}/${PORTNAME}
 
 USE_ZIP=		yes

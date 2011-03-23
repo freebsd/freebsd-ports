@@ -15,6 +15,9 @@ DISTNAME=	${PORTNAME:S/-//}-release-${PORTVERSION}-r
 MAINTAINER=	mm@FreeBSD.org
 COMMENT=	An irc daeemon based on Bahamut and hybrid-7
 
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 
@@ -73,7 +76,7 @@ CFLAGS+=	-fPIC
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e "s,-O2,${CFLAGS}," ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e "s|-O2|${CFLAGS}|" ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e "s, ircpasswd,tr-ircpasswd," \
 		-e "s,/home/ircd/lib,${TRIRCD_LIBDIR}," \
 		-e "s,/home/ircd/ircd5/lib/,${TRIRCD_LIBDIR}," \

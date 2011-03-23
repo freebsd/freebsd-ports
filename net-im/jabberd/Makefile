@@ -19,6 +19,9 @@ LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2 \
 		idn.17:${PORTSDIR}/dns/libidn \
 		udns.0:${PORTSDIR}/dns/udns
 
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 OPTIONS=	MYSQL "Support MySQL (storage/auth/reg)" on \
 		POSTGRESQL "Support PostgreSQL (storage/auth/reg)" off \
 		LDAP "Support OpenLDAP (storage/auth/reg)" off \

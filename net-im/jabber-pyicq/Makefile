@@ -20,6 +20,9 @@ COMMENT=	Python ICQ-Transport for Jabber
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/OpenSSL/__init__.py:${PORTSDIR}/security/py-openssl \
 		${PYTHON_SITELIBDIR}/PIL/__init__.py:${PORTSDIR}/graphics/py-imaging
 
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 PROJECTHOST=	pyicqt
 OPTIONS=	JABBER "Use with jabberd14 (net-im/jabber)" off \
 		JABBERD "Use with jabberd 2.x (net-im/jabberd)" off \
@@ -37,7 +40,7 @@ SUB_LIST=	PYTHON_CMD=${LOCAL_PYTHON}
 
 INST_DIR=	${PREFIX}/lib/jabber/${PORTNAME}
 
-PORTDOCS=	COPYING NEWS README README.jabberd14 README.jabberd2 README.external
+PORTDOCS=	NEWS README README.jabberd14 README.jabberd2 README.external
 
 .include <bsd.port.pre.mk>
 

@@ -38,7 +38,6 @@ share/locale/hu/LC_MESSAGES/jabberd14.mo
 share/locale/it/LC_MESSAGES/jabberd14.mo
 share/locale/nl/LC_MESSAGES/jabberd14.mo
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
-%%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
 %%PORTDOCS%%%%DOCSDIR%%/INSTALL
 %%PORTDOCS%%%%DOCSDIR%%/NEWS

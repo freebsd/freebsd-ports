@@ -23,6 +23,8 @@ LIB_DEPENDS=	mcrypt.8:${PORTSDIR}/security/libmcrypt
 IGNORE=		you cannot define WITHOUT_SERVER and WITHOUT_CLIENT
 .endif
 
+LICENSE=	GPLv2
+
 GNU_CONFIGURE=	yes
 USE_PERL5=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX} --localstatedir=/var/spool/nagios

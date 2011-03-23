@@ -16,6 +16,9 @@ DIST_SUBDIR=	aolserver
 MAINTAINER=	mm@FreeBSD.org
 COMMENT=	A multithreaded web server with embedded TCL interpreter
 
+LICENSE=	MPL
+LICENSE_FILE=	${WRKSRC}/license.terms
+
 WRKSRC=		${WRKDIR}/${DISTNAME:S/-src//}
 
 AOLSERVERBASE?=	${PORTNAME}

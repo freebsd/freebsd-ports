@@ -17,6 +17,8 @@ DIST_SUBDIR=	aolserver
 MAINTAINER=	mm@FreeBSD.org
 COMMENT=	Internal PostgreSQL driver for AOLserver
 
+LICENSE=	MPL
+
 WRKSRC=		${WRKDIR}/nspostgres-${PORTVERSION}
 
 AOLSERVERBASE?=	aolserver

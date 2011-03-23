@@ -18,6 +18,9 @@ DIST_SUBDIR=	aolserver
 MAINTAINER=	mm@FreeBSD.org
 COMMENT=	Zlib library interface for AOLserver
 
+LICENSE=	MPL GPLv1
+LICENSE_COMB=	dual
+
 AOLSERVERBASE?=	aolserver
 
 BUILD_DEPENDS+=	${LOCALBASE}/${AOLSERVERBASE}/bin/nsd:${PORTSDIR}/www/aolserver

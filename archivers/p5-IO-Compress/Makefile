@@ -21,6 +21,9 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 
 CONFLICTS=	p5-Compress-Zlib-2* p5-IO-Compress-Base-2* p5-IO-Compress-Zlib-2* p5-IO-Compress-Bzip2-2*
 
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
+
 PERL_CONFIGURE=	YES
 
 MAN3=		Compress::Zlib.3 \

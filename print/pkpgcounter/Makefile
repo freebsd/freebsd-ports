@@ -17,6 +17,9 @@ COMMENT=	Count pages and ink coverage precent
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/PIL.pth:${PORTSDIR}/graphics/py-imaging
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
+LICENSE=	GPLv3
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 

@@ -17,6 +17,8 @@ COMMENT=	Face detection extension for PHP using OpenCV library
 
 LIB_DEPENDS=	cv.2:${PORTSDIR}/graphics/opencv
 
+LICENSE=	PHP30
+
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 

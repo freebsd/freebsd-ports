@@ -14,6 +14,9 @@ PKGNAMESUFFIX=	-devel
 MAINTAINER=	mm@FreeBSD.org
 COMMENT=	A detachable irc proxy server with many features
 
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 GNU_CONFIGURE=	yes
 MAKE_JOBS_SAFE=	yes
 SUB_FILES+=	pkg-message

@@ -18,6 +18,8 @@ DIST_SUBDIR=	aolserver
 MAINTAINER=	mm@FreeBSD.org
 COMMENT=	Graphics module for AOLserver
 
+LICENSE=	GPLv2
+
 WRKSRC=		${WRKDIR}
 
 AOLSERVERBASE?=	aolserver
