@@ -5,4 +5,4 @@ somewhat simpler than the C API of poker-eval. It assumes that the
 caller is willing to have a higher level API and is not interested in
 a one to one mapping of the poker-eval API.
 
-WWW: http://www.pokersource.org/pypoker-eval.php
+WWW: http://www.pokersource.info/wiki/pypoker-eval
