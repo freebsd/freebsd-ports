@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	poker-eval
-PORTVERSION=	0.137
-PORTREVISION=	1
+PORTVERSION=	0.138
 CATEGORIES=	games python
 MASTER_SITES=	http://download.gna.org/pokersource/sources/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -19,19 +18,17 @@ COMMENT=	Python adaptor for the poker-eval toolkit
 
 LIB_DEPENDS=	poker-eval.1:${PORTSDIR}/games/poker-eval
 
+LICENSE=	GPLv3
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 USE_GNOME=	pkgconfig
-USE_PYTHON=	2.5-2.6
-GNU_CONFIGURE=	yes
+USE_PYTHON=	2.5-2.7
+USE_AUTOTOOLS=	aclocal autoconf automake libtool
+ACLOCAL_ARGS=	-I config
+CONFIGURE_ARGS=	PYTHON=""
+MAKE_JOBS_SAFE=	yes
 
 PLIST_SUB=	PYVER=${_PYTHON_VERSION:S/./_/}
-
-do-configure:
-	@cd ${CONFIGURE_WRKSRC} && ./${CONFIGURE_SCRIPT}
-
-post-patch:
-	@${REINPLACE_CMD} -e \
-		's|{libdir}/pkgconfig|(prefix)/libdata/pkgconfig|g' \
-		${WRKSRC}/Makefile.in
 
 test:
 	@cd ${WRKSRC} && ${MAKE} check

@@ -35,9 +35,10 @@ include/poker-eval/rules_astud.h
 include/poker-eval/rules_joker.h
 include/poker-eval/rules_std.h
 include/poker-eval/rules_undef.h
-@dirrm include/poker-eval/inlines
-@dirrm include/poker-eval
 lib/libpoker-eval.a
+lib/libpoker-eval.la
 lib/libpoker-eval.so
 lib/libpoker-eval.so.1
 libdata/pkgconfig/poker-eval.pc
+@dirrm include/poker-eval/inlines
+@dirrm include/poker-eval
