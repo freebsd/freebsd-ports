@@ -11,7 +11,7 @@ CATEGORIES=	audio
 MASTER_SITES=	SF
 
 MAINTAINER=	dhn@FreeBSD.org
-COMMENT=	Command line tool for making audio CDs from mp3s
+COMMENT=	Command line tool to burn audio CDs from MP3, Ogg, Vorbis, FLAC files
 
 RUN_DEPENDS=	mpg123:${PORTSDIR}/audio/mpg123 \
 		ogg123:${PORTSDIR}/audio/vorbis-tools \
@@ -31,7 +31,8 @@ PLIST_FILES=	bin/mp3burn
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/bin/perl|${PERL}|g' \
 		-e 's|/bin/uname|/usr/bin/uname|g' \
-		-e 's|x86_64|amd64|g' ${WRKSRC}/${PORTNAME}
+		-e 's|x86_64|amd64|g' \
+		-e 's|" -pad -audio"|" -tao -pad -audio"|' ${WRKSRC}/${PORTNAME}
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/mp3burn ${PREFIX}/bin
