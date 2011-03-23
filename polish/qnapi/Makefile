@@ -11,7 +11,7 @@ PORTREVISION=	3
 CATEGORIES=	polish multimedia
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	c0rn@o2.pl
+MAINTAINER=	pawel@FreeBSD.org
 COMMENT=	Unoffical napiprojekt.pl qt4 client
 
 RUN_DEPENDS=	7z:${PORTSDIR}/archivers/p7zip

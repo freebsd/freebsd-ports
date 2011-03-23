@@ -10,7 +10,7 @@ PORTVERSION=	3.09
 CATEGORIES=	x11
 MASTER_SITES=	GNU
 
-MAINTAINER=	c0rn@o2.pl
+MAINTAINER=	pawel@FreeBSD.org
 COMMENT=	X events recorder and player
 
 LICENSE=	GPLv3

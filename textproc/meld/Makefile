@@ -10,7 +10,7 @@ PORTVERSION=	1.4.0
 CATEGORIES=	textproc devel python
 MASTER_SITES=	GNOME
 
-MAINTAINER=	c0rn@o2.pl
+MAINTAINER=	pawel@FreeBSD.org
 COMMENT=	GNOME 2 visual diff and merge tool
 
 OPTIONS=	PYGNOMEDESKTOP "Code syntax hilighting (many dependencies)" off

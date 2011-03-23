@@ -14,7 +14,7 @@ MASTER_SITES=	http://www.claws-mail.org/downloads/plugins/ \
 MASTER_SITE_SUBDIR=	miwi
 PKGNAMEPREFIX=	claws-mail-
 
-MAINTAINER=	c0rn@o2.pl
+MAINTAINER=	pawel@FreeBSD.org
 COMMENT=	vCalendar plugin for claws-mail
 
 LIB_DEPENDS=	curl:${PORTSDIR}/ftp/curl

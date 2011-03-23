@@ -12,7 +12,7 @@ CATEGORIES=		sysutils
 MASTER_SITES=		${MASTER_SITE_BERLIOS}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	c0rn@o2.pl
+MAINTAINER=	pawel@FreeBSD.org
 COMMENT=	Graphical user interface for smartmontools
 
 LIB_DEPENDS=	gtkmm-2.4:${PORTSDIR}/x11-toolkits/gtkmm24 \

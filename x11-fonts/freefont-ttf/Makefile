@@ -11,7 +11,7 @@ CATEGORIES=		x11-fonts
 MASTER_SITES=		${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	freefont
 
-MAINTAINER=		c0rn@o2.pl
+MAINTAINER=		pawel@FreeBSD.org
 COMMENT=		Free UCS Outline Fonts
 
 BUILD_DEPENDS=		mkfontscale:${PORTSDIR}/x11-fonts/mkfontscale \

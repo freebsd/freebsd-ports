@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.claws-mail.org/downloads/plugins/
 PKGNAMEPREFIX=	claws-mail-
 DISTNAME=	notification_plugin-${PORTVERSION}
 
-MAINTAINER=	c0rn@o2.pl
+MAINTAINER=	pawel@FreeBSD.org
 COMMENT=	New/unread mail notification plugin for claws-mail
 
 LIB_DEPENDS=	notify:${PORTSDIR}/devel/libnotify

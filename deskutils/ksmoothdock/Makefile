@@ -12,7 +12,7 @@ CATEGORIES=	deskutils kde
 MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}-${PORTVERSION}_automake-1.9
 
-MAINTAINER=	c0rn@o2.pl
+MAINTAINER=	pawel@FreeBSD.org
 COMMENT=	A dock program for KDE with smooth zooming
 
 WRKSRC=		${WRKDIR}/${PORTNAME}

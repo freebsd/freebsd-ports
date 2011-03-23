@@ -12,7 +12,7 @@ PORTREVISION=	1
 CATEGORIES=	mail ipv6
 MASTER_SITES=	SF
 
-MAINTAINER=	c0rn@o2.pl
+MAINTAINER=	pawel@FreeBSD.org
 COMMENT=	A mail library
 
 LIB_DEPENDS=	curl:${PORTSDIR}/ftp/curl \
