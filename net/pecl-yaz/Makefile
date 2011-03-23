@@ -24,7 +24,11 @@ USE_PHPEXT=	yes
 
 CONFIGURE_ARGS=	--with-yaz=${LOCALBASE}
 
-pre-configure:
-	@${REINPLACE_CMD} -e 's|YAZVERSION|YAZ_VERSION|g' ${WRKSRC}/configure
+.include <bsd.port.pre.mk>
 
-.include <bsd.port.mk>
+pre-configure:
+	@if [ `${PKG_INFO} 'yaz>=4.1.4' > /dev/null 2>&1` ]; then \
+		${REINPLACE_CMD} -e 's|YAZVERSION|YAZ_VERSION|g' \
+				${WRKSRC}/configure; fi
+
+.include <bsd.port.post.mk>
