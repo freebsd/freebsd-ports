@@ -10,7 +10,7 @@
 #       - $LOCALBASE/sbin/setkey Vs /usr/sbin/setkey
 
 PORTNAME=	ipsec-tools
-PORTVERSION=	0.7.3
+PORTVERSION=	0.8.0
 CATEGORIES=	security
 MASTER_SITES=	SF
 
@@ -59,8 +59,8 @@ PORTDOCS=	*
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} > 900007
-BROKEN=		fails to build with new utmpx
+.if ${OSVERSION} < 900007
+EXTRA_PATCHES=files/patch8-utmp.diff
 .endif
 
 .ifdef(WITH_DEBUG)
@@ -161,15 +161,17 @@ CONFIGURE_ARGS+=	--enable-idea
 CONFIGURE_ARGS+=	--disable-idea
 .endif
 
+.if ${OSVERSION} < 800000
 .ifdef(WITH_NATT)
 pre-configure:
 	@${ECHO_MSG} "===> -------------------------------------------------------------------------"
 	@${ECHO_MSG} "===> ATTENTION: You need a kernel patch to enable NAT-Traversal functionality!"
-	@${ECHO_MSG} "===> You can download the patch here:"
-	@${ECHO_MSG} "===>     http://ipsec-tools.sf.net/freebsd6-natt.diff"
+	@${ECHO_MSG} "===> latest known patch for FreeBSD 7 is available here:"
+	@${ECHO_MSG} "===>     http://people.freebsd.org/~bz/20110123-01-stable7-natt.diff"
 	@${ECHO_MSG} "===> You might possibly have to do some steps manually if it fails to apply."
 	@${ECHO_MSG} "===> -------------------------------------------------------------------------"
 	@sleep 3
+.endif
 .endif
 
 post-install:
