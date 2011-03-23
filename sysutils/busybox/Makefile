@@ -17,12 +17,11 @@ COMMENT=	Busybox for FreeBSD
 
 BUILD_DEPENDS=	gsed:${PORTSDIR}/textproc/gsed
 
+MAKE_ARGS=	SKIP_STRIP=y
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 
 PLIST_FILES=	bin/busybox
-
-.include <bsd.port.pre.mk>
 
 post-patch:
 	@${REINPLACE_CMD} -e 's/sed/gsed/' ${WRKSRC}/scripts/gen_build_files.sh
@@ -37,4 +36,4 @@ do-configure:
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
