@@ -201,34 +201,34 @@ share/aclocal/yaz.m4
 %%PORTDOCS%%%%DOCSDIR%%/zoom.resultsets.html
 %%PORTDOCS%%%%DOCSDIR%%/zoom.scan.html
 %%PORTDOCS%%%%DOCSDIR%%/zoomsh.html
-share/yaz/etc/MARC21slim2DC.xsl
-share/yaz/etc/MARC21slim2MODS.xsl
-share/yaz/etc/MARC21slim2RDFDC.xsl
-share/yaz/etc/MARC21slimUtils.xsl
-share/yaz/etc/cqlpass.properties
-share/yaz/etc/maps.xml
-share/yaz/etc/marc21_to_endnote.xsl
-share/yaz/etc/opacxml.xsd
-share/yaz/etc/pqf.properties
-share/yaz/etc/yazgfs.xml
-share/yaz/ill/ill.tcl
-share/yaz/ill/ill9702.asn
-share/yaz/ill/item-req.asn
-share/yaz/ill/oclc-ill-req-ext.asn
-share/yaz/z39.50/charneg-3.asn
-share/yaz/z39.50/datetime.asn
-share/yaz/z39.50/esadmin.asn
-share/yaz/z39.50/esupdate.asn
-share/yaz/z39.50/facet.asn
-share/yaz/z39.50/mterm2.asn
-share/yaz/z39.50/oclcui.asn
-share/yaz/z39.50/univres.asn
-share/yaz/z39.50/z.tcl
-share/yaz/z39.50/z3950v3.asn
-@dirrm share/yaz/z39.50
-@dirrm share/yaz/ill
-@dirrm share/yaz/etc
-@dirrm share/yaz
+%%DATADIR%%/etc/MARC21slim2DC.xsl
+%%DATADIR%%/etc/MARC21slim2MODS.xsl
+%%DATADIR%%/etc/MARC21slim2RDFDC.xsl
+%%DATADIR%%/etc/MARC21slimUtils.xsl
+%%DATADIR%%/etc/cqlpass.properties
+%%DATADIR%%/etc/maps.xml
+%%DATADIR%%/etc/marc21_to_endnote.xsl
+%%DATADIR%%/etc/opacxml.xsd
+%%DATADIR%%/etc/pqf.properties
+%%DATADIR%%/etc/yazgfs.xml
+%%DATADIR%%/ill/ill.tcl
+%%DATADIR%%/ill/ill9702.asn
+%%DATADIR%%/ill/item-req.asn
+%%DATADIR%%/ill/oclc-ill-req-ext.asn
+%%DATADIR%%/z39.50/charneg-3.asn
+%%DATADIR%%/z39.50/datetime.asn
+%%DATADIR%%/z39.50/esadmin.asn
+%%DATADIR%%/z39.50/esupdate.asn
+%%DATADIR%%/z39.50/facet.asn
+%%DATADIR%%/z39.50/mterm2.asn
+%%DATADIR%%/z39.50/oclcui.asn
+%%DATADIR%%/z39.50/univres.asn
+%%DATADIR%%/z39.50/z.tcl
+%%DATADIR%%/z39.50/z3950v3.asn
+@dirrm %%DATADIR%%/z39.50
+@dirrm %%DATADIR%%/ill
+@dirrm %%DATADIR%%/etc
+@dirrm %%DATADIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/common
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm include/yaz

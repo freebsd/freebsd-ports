@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	yaz
-PORTVERSION=	4.1.3
+PORTVERSION=	4.1.7
 CATEGORIES=	net
 MASTER_SITES=	http://ftp.indexdata.dk/pub/yaz/
 
-MAINTAINER=	c0rn@o2.pl
+MAINTAINER=	pawel@FreeBSD.org
 COMMENT=	Z39.50/SR client and API library
 
 LIB_DEPENDS=	icuuc:${PORTSDIR}/devel/icu
