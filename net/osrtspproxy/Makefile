@@ -9,14 +9,11 @@ PORTNAME=	osrtspproxy
 PORTVERSION=	2.0
 PORTREVISION=	1
 CATEGORIES=	net
-MASTER_SITES=	http://docs.real.com/docs/proxykit/
+MASTER_SITES=	SF/rtsp/RTSP%20Proxy%20Kit/${PORTVERSION}
 DISTNAME=	${PORTNAME}_2_0
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	The RTSP Proxy Kit is a reference implementation of an RTSP proxy
-
-DEPRECATED=     Upstream disapear and distfile is no more available
-EXPIRATION_DATE=        2011-05-01
+COMMENT=	The RTSP Proxy Kit - A reference implementation of an RTSP proxy
 
 HAS_CONFIGURE=	YES
 
