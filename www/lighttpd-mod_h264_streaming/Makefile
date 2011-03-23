@@ -16,6 +16,13 @@ COMMENT=	H264 streaming module for lighttpd
 BUILD_DEPENDS=	${LOCALBASE}/sbin/lighttpd:${PORTSDIR}/www/lighttpd
 RUN_DEPENDS=	${LOCALBASE}/sbin/lighttpd:${PORTSDIR}/www/lighttpd
 
+LICENSE=	CCPL.BY-NC-SA.30
+LICENSE_NAME=	Creative Commons Attribution-NonCommercial-ShareAlike 3.0 \
+		Unported License
+LICENSE_FILE=	${FILESDIR}/COPYING.mod_h264_streaming
+LICENSE_DISTFILES=	${PATCHFILES}
+LICENSE_PERMS=	dist-mirror pkg-mirror
+
 MASTERDIR=	${.CURDIR}/../lighttpd
 PLIST=		${FILESDIR}/pkg-plist.${PORTNAME}
 DESCR=		${FILESDIR}/pkg-descr.${PORTNAME}
@@ -32,11 +39,6 @@ ALL_TARGET=	${PORTNAME}.la
 
 _BUILDING_LIGHTTPD_MODULE=	yes
 
-.if !defined(NOPORTDOCS)
-DOCSDIR=	${PREFIX}/share/doc/${LATEST_LINK}
-PORTDOCS=	COPYING_H264
-.endif
-
 do-install:
 	@${INSTALL_KLD} ${WRKSRC}/src/.libs/${PORTNAME}.so \
 		${LOCALBASE}/lib/lighttpd
@@ -51,11 +53,6 @@ post-install:
 .if !exists(${PREFIX}/etc/lighttpd/conf.d/h264_streaming.conf)
 	@${INSTALL_DATA} ${FILESDIR}/h264_streaming.conf \
 		${PREFIX}/etc/lighttpd/conf.d/h264_streaming.conf
-.endif
-
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/COPYING_H264 ${DOCSDIR}
 .endif
 
 .include "${MASTERDIR}/Makefile"
