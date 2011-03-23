@@ -22,6 +22,8 @@ GNU_CONFIGURE=	yes
 USE_GNOME=	lthack
 
 .if !defined(_BUILDING_LIGHTTPD_MODULE)
+LICENSE=	BSD
+LICENSE_FILE=	${WRKSRC}/COPYING
 USE_AUTOTOOLS=	libtool
 .else
 USE_AUTOTOOLS=	autoconf autoheader aclocal automake libtool
