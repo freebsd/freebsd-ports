@@ -52,6 +52,8 @@ share/texmaker/it_IT_README.txt
 share/texmaker/latexhelp.html
 share/texmaker/next.gif
 share/texmaker/next_d.gif
+share/texmaker/nl_NL.aff
+share/texmaker/nl_NL.dic
 share/texmaker/prev.gif
 share/texmaker/prev_d.gif
 share/texmaker/psheader.txt
@@ -72,6 +74,7 @@ share/texmaker/texmaker_fa.qm
 share/texmaker/texmaker_fr.qm
 share/texmaker/texmaker_gl.qm
 share/texmaker/texmaker_it.qm
+share/texmaker/texmaker_nl.qm
 share/texmaker/texmaker_pt_BR.qm
 share/texmaker/texmaker_ru.qm
 share/texmaker/texmaker_zh_CN.qm

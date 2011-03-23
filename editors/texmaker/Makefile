@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	texmaker
-PORTVERSION=	2.1
-PORTREVISION=	1
+PORTVERSION=	2.3
 PORTEPOCH=	1
 CATEGORIES=	editors
 MASTER_SITES=	http://www.xm1math.net/texmaker/
@@ -29,7 +28,7 @@ QT_COMPONENTS=	gui network xml webkit \
 		moc_build qmake_build rcc_build uic_build
 HAS_CONFIGURE=	yes
 QMAKE_ARGS=	PREFIX=${PREFIX} ICONDIR=${PREFIX}/share/pixmaps \
-		DESKTOPDIR=${DESKTOPDIR} -unix
+		DESKTOPDIR=${DESKTOPDIR}
 MAKE_JOBS_SAFE=	yes
 
 OPTIONS=	XDVI "view dvi with xdvi" Off \
