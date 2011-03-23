@@ -4,6 +4,7 @@ bin/clamtk
 %%SITE_PERL%%/ClamTk/GUI.pm
 %%SITE_PERL%%/ClamTk/Prefs.pm
 %%SITE_PERL%%/ClamTk/Schedule.pm
+%%SITE_PERL%%/ClamTk/Submit.pm
 %%SITE_PERL%%/ClamTk/Results.pm
 %%SITE_PERL%%/ClamTk/Update.pm
 share/applications/clamtk.desktop
@@ -12,7 +13,10 @@ share/applications/clamtk.desktop
 %%PORTDOCS%%%%DOCSDIR%%/LICENSE
 %%PORTDOCS%%%%DOCSDIR%%/README
 share/locale/ar/LC_MESSAGES/clamtk.mo
+share/locale/ast/LC_MESSAGES/clamtk.mo
 share/locale/bg/LC_MESSAGES/clamtk.mo
+share/locale/bs/LC_MESSAGES/clamtk.mo
+share/locale/ca/LC_MESSAGES/clamtk.mo
 share/locale/cs/LC_MESSAGES/clamtk.mo
 share/locale/da/LC_MESSAGES/clamtk.mo
 share/locale/de/LC_MESSAGES/clamtk.mo
@@ -20,6 +24,7 @@ share/locale/el_GR/LC_MESSAGES/clamtk.mo
 share/locale/en_GB/LC_MESSAGES/clamtk.mo
 share/locale/es/LC_MESSAGES/clamtk.mo
 share/locale/eu/LC_MESSAGES/clamtk.mo
+share/locale/fo/LC_MESSAGES/clamtk.mo
 share/locale/fr/LC_MESSAGES/clamtk.mo
 share/locale/gl/LC_MESSAGES/clamtk.mo
 share/locale/he/LC_MESSAGES/clamtk.mo
@@ -28,6 +33,7 @@ share/locale/hu/LC_MESSAGES/clamtk.mo
 share/locale/it/LC_MESSAGES/clamtk.mo
 share/locale/ja/LC_MESSAGES/clamtk.mo
 share/locale/ko/LC_MESSAGES/clamtk.mo
+share/locale/lt/LC_MESSAGES/clamtk.mo
 share/locale/ms/LC_MESSAGES/clamtk.mo
 share/locale/nb/LC_MESSAGES/clamtk.mo
 share/locale/nl/LC_MESSAGES/clamtk.mo
@@ -50,6 +56,8 @@ share/pixmaps/clamtk.png
 share/pixmaps/clamtk.xpm
 @dirrmtry share/locale/nl_BE/LC_MESSAGES
 @dirrmtry share/locale/nl_BE
+@dirrmtry share/locale/fo/LC_MESSAGES
+@dirrmtry share/locale/fo
 @dirrmtry share/locale/el_GR/LC_MESSAGES
 @dirrmtry share/locale/el_GR
 %%PORTDOCS%%@dirrm %%DOCSDIR%%

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	clamtk
-PORTVERSION=	4.29
+PORTVERSION=	4.31
 CATEGORIES=	security
 MASTER_SITES=	SF/${PORTNAME}/ClamTk/${PORTVERSION}
 
@@ -22,6 +22,9 @@ RUN_DEPENDS=	p5-Config-Tiny>=2.12:${PORTSDIR}/devel/p5-Config-Tiny \
 		p5-libwww>=5.822:${PORTSDIR}/www/p5-libwww \
 		zenity:${PORTSDIR}/x11/zenity \
 		p5-Gtk2>=1.144:${PORTSDIR}/x11-toolkits/p5-Gtk2
+
+LICENSE=	ART10 ART20 GPLv1 GPLv2 GPLv3
+LICENSE_COMB=	dual
 
 NO_BUILD=	yes
 USE_PERL5_RUN=	yes
@@ -47,7 +50,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.desktop ${PREFIX}/share/applications
 	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.png ${PREFIX}/share/pixmaps
 	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.xpm ${PREFIX}/share/pixmaps
-.for lang in ar bg cs da de el_GR en_GB es eu fr gl he hr hu it ja ko ms nb nl nl_BE nn pl pt pt_BR ro ru sk sl sv th tr uk zh_CN zh_TW
+.for lang in ar ast bg bs ca cs da de el_GR en_GB es eu fo fr gl he hr hu it ja ko lt ms nb nl nl_BE nn pl pt pt_BR ro ru sk sl sv th tr uk zh_CN zh_TW
 	@${MKDIR} ${PREFIX}/share/locale/${lang}/LC_MESSAGES
 	${INSTALL_DATA} ${WRKSRC}/po/${lang}.mo \
 		${PREFIX}/share/locale/${lang}/LC_MESSAGES/${PORTNAME}.mo
