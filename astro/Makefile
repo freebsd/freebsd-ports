@@ -19,7 +19,6 @@
     SUBDIR += ephem
     SUBDIR += fowsr
     SUBDIR += foxtrotgps
-    SUBDIR += gaia
     SUBDIR += gkrellmoon
     SUBDIR += gkrellmoon2
     SUBDIR += gkrellsun
