@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	cups
-PORTVERSION=	1.9.54
+PORTVERSION=	1.9.55
 CATEGORIES=	print python
 MASTER_SITES=	http://cyberelk.net/tim/data/pycups/ \
 		LOCAL/sunpoet
@@ -25,7 +25,7 @@ MAKE_ENV=	LDFLAGS="${LDFLAGS}"
 USE_BZIP2=	yes
 USE_ICONV=	yes
 USE_PYDISTUTILS=	yes
-USE_PYTHON=	yes
+USE_PYTHON=	-2.7
 
 PLIST_FILES=	%%PYTHON_SITELIBDIR%%/cups.so
 PYDISTUTILS_EGGINFO=py${PORTNAME}-${PORTVERSION}-py${PYTHON_VER}.egg-info
