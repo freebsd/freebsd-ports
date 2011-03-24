@@ -7,6 +7,7 @@
 
 PORTNAME=	firefox
 DISTVERSION=	4.0
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	www ipv6
 MASTER_SITES=	${MASTER_SITE_MOZILLA}
@@ -22,6 +23,7 @@ USE_AUTOTOOLS=	autoconf213
 USE_GECKO=	gecko
 MOZ_PKGCONFIG_FILES=	# empty
 USE_MOZILLA=	-png -nss -dbm -jpeg -xft
+MOZILLA_NAME=	Firefox
 MOZ_TOOLKIT=	cairo-gtk2
 GECKO_PLIST_PRE_DIRS=	lib/${MOZILLA}/bin lib/${MOZILLA}/idl \
 			lib/${MOZILLA}/include lib/${MOZILLA}/lib
