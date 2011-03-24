@@ -9,20 +9,21 @@ PORTNAME=	tclock
 PORTVERSION=	1.0.1
 PORTREVISION=	2
 CATEGORIES=	x11-clocks
-MASTER_SITES=	ftp://ftp.uni-potsdam.de/pub/X11/tools/clocks/		\
+MASTER_SITES=	http://www.linta.de/distfiles/ \
+		ftp://ftp.uni-potsdam.de/pub/X11/tools/clocks/	\
 		ftp://ftp.uni-bielefeld.de/pub/systems/FreeBSD/lkoeller/
 EXTRACT_SUFX=	.tar.Z
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	aehlig@linta.de
 COMMENT=	Transparent analog clock for x11
-
-DEPRECATED=     Upstream disapear and distfile is no more available
-EXPIRATION_DATE=        2011-05-01
 
 NO_WRKSUBDIR=	yes
 USE_IMAKE=	yes
 USE_XORG=	x11 xext
 MAN1=		tclock.1
 PLIST_FILES=	bin/tclock
+
+LICENSE=	GPLv1
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 .include <bsd.port.mk>
