@@ -6,15 +6,15 @@
 #
 
 PORTNAME=	opendnssec
-PORTVERSION=	1.2.0
+PORTVERSION=	1.2.1
 CATEGORIES=	dns
 MASTER_SITES=	http://www.opendnssec.org/files/source/
 
 MAINTAINER=	jaap@NLnetLabs.nl
 COMMENT=	Tool suite for maintaining DNSSEC
 
-BUILD_DEPENDS=	ldns>=1.6.7:${PORTSDIR}/dns/ldns \
-		rubygem-dnsruby>=1.51:${PORTSDIR}/dns/rubygem-dnsruby \
+BUILD_DEPENDS=	ldns>=1.6.9:${PORTSDIR}/dns/ldns \
+		rubygem-dnsruby>=1.52:${PORTSDIR}/dns/rubygem-dnsruby \
 		sqlite3>=3.4.2:${PORTSDIR}/databases/sqlite3
 LIB_DEPENDS=	ldns:${PORTSDIR}/dns/ldns \
 		sqlite3:${PORTSDIR}/databases/sqlite3

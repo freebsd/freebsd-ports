@@ -4,13 +4,9 @@ bin/ods-hsmutil
 bin/ods-ksmutil
 bin/ods-kaspcheck
 bin/ods-kasp2html
-%%ETCDIR%%/conf.xml
 %%ETCDIR%%/conf.xml.sample
-%%ETCDIR%%/kasp.xml
 %%ETCDIR%%/kasp.xml.sample
-%%ETCDIR%%/zonefetch.xml
 %%ETCDIR%%/zonefetch.xml.sample
-%%ETCDIR%%/zonelist.xml
 %%ETCDIR%%/zonelist.xml.sample
 lib/opendnssec/kasp_auditor/auditor.rb
 lib/opendnssec/kasp_auditor/changed_config.rb
