@@ -13,13 +13,16 @@ CATEGORIES=	net
 MASTER_SITES=	http://www.25thandclement.com/~william/projects/releases/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	pusateri@bangj.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Network Daemon Services for libevent
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libarena.a:${PORTSDIR}/devel/libarena
 LIB_DEPENDS=	event-1.4:${PORTSDIR}/devel/libevent \
 		cares.2:${PORTSDIR}/dns/c-ares
 RUN_DEPENDS=	${BUILD_DEPENDS}
+
+DEPRECATED=		no longer necessary now that libevent2 has been released
+EXPIRATION_DATE=	2011-06-24
 
 USE_OPENSSL=	yes
 USE_GMAKE=	yes
