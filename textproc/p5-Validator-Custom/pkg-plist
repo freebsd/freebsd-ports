@@ -1,12 +1,11 @@
 %%SITE_PERL%%/Validator/Custom.pm
-%%SITE_PERL%%/Validator/Custom/Basic/Constraints.pm
-%%SITE_PERL%%/Validator/Custom/Guides.pod
-%%SITE_PERL%%/Validator/Custom/Guides/Ja.pod
+%%SITE_PERL%%/Validator/Custom/Constraint.pm
+%%SITE_PERL%%/Validator/Custom/Guide.pod
+%%SITE_PERL%%/Validator/Custom/Guide/Ja.pod
 %%SITE_PERL%%/Validator/Custom/Result.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Validator/Custom/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Validator/Custom
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Validator
-@dirrm %%SITE_PERL%%/Validator/Custom/Guides
-@dirrm %%SITE_PERL%%/Validator/Custom/Basic
+@dirrm %%SITE_PERL%%/Validator/Custom/Guide
 @dirrm %%SITE_PERL%%/Validator/Custom
 @dirrmtry %%SITE_PERL%%/Validator

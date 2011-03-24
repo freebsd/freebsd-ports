@@ -6,23 +6,24 @@
 #
 
 PORTNAME=	Validator-Custom
-PORTVERSION=	0.1407
+PORTVERSION=	0.1421
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
+MASTER_SITE_SUBDIR=	CPAN:KIMOTO
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Validator::Custom for simple data validation
 
-BUILD_DEPENDS=	p5-Object-Simple>=3.0302:${PORTSDIR}/devel/p5-Object-Simple
-RUN_DEPENDS=	p5-Object-Simple>=3.0302:${PORTSDIR}/devel/p5-Object-Simple
+BUILD_DEPENDS=	p5-Object-Simple>=3.0616:${PORTSDIR}/devel/p5-Object-Simple
+RUN_DEPENDS=	p5-Object-Simple>=3.0616:${PORTSDIR}/devel/p5-Object-Simple
 
 PERL_CONFIGURE=	yes
 
 MAN3=		Validator::Custom.3 \
-		Validator::Custom::Basic::Constraints.3 \
-		Validator::Custom::Guides.3 \
-		Validator::Custom::Guides::Ja.3 \
+		Validator::Custom::Constraint.3 \
+		Validator::Custom::Guide.3 \
+		Validator::Custom::Guide::Ja.3 \
 		Validator::Custom::Result.3
 
 .include <bsd.port.mk>
