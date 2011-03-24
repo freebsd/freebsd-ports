@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	abi-compliance-checker
-PORTVERSION=	1.21.9
+PORTVERSION=	1.21.10
 CATEGORIES=	devel perl5
 MASTER_SITES=	http://linuxtesting.org/downloads/ \
 		LOCAL/bf
@@ -26,31 +26,29 @@ CPPFILT?=	c++filt
 READELF?=	readelf
 
 post-patch:
-	${REINPLACE_CMD} \
-		-e "\%my% { \
-			s%\"c++filt\"%\"${CPPFILT}\"%g; \
-			s%\"readelf\"%\"${READELF}\"%g; \
-			s%\"g++\"%\"${CXX}\"%g; \
-			s%\"gcc\"%\"${CC}\"%g; }" \
-		-e "\%search_for% { \
-			s%\"g++\"%\"${CXX}\"%g; \
-			s%\"gcc\"%\"${CC}\"%g; }" \
-		-e "s%-shared%& -fPIC%g" \
-		-e "s%detailes%details%g" \
+	@${REINPLACE_CMD} \
+		-e "\|ArCmd =|s|=.*|= \"${AR}\";|" \
+		-e "\|CPP_FILT =|s|=.*|= \"${CPPFILT}\";|" \
+		-e "\|GCC_PATH =|s|=.*|= \"${CC}\";|" \
+		-e "\|GPP_PATH =|s|=.*|= \"${CXX}\";|" \
+		-e "\|ObjdumpCmd =|s|=.*|= \"${OBJDUMP}\";|" \
+		-e "\|ReadelfCmd =|s|=.*|= \"${READELF}\";|" \
+		-e "s|-shared|& -fPIC|g" \
+		-e "s|detailes|details|g" \
 		${WRKSRC}/${PORTNAME}.pl
 
 do-install:
 	@${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME}.pl ${PREFIX}/bin
 
-test: build
+check regression-test test: build
 	@(cd ${WRKSRC} && ./${PORTNAME}.pl -test )
 
 .ifndef(NOPORTDOCS)
-PORTDOCS=	README.html
+PORTDOCS=	Changes.html Descriptor.html Options.html Readme.html
 
 post-install:
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_MAN} ${WRKSRC}/README.html ${DOCSDIR}
+	@${MKDIR} ${DOCSDIR}
+	@(cd ${WRKSRC}/doc; ${INSTALL_MAN} ${PORTDOCS} ${DOCSDIR})
 
 .endif
 .include <bsd.port.mk>
