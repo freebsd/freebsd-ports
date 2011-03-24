@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	tbb
-PORTVERSION=	3.0
-PORTREVISION=	1
+PORTVERSION=	3.0.5
 CATEGORIES=	devel
-MASTER_SITES=	http://www.threadingbuildingblocks.org/uploads/78/154/3.0/
-DISTNAME=	tbb30_018oss_src
+MASTER_SITES=	http://threadingbuildingblocks.org/uploads/77/164/3.0%20Update%205/ \
+		LOCAL/martymac
+DISTNAME=	tbb30_20101215oss_src
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	martymac@FreeBSD.org
@@ -25,13 +25,14 @@ USE_GMAKE=	yes
 ALL_TARGET=	default
 MAKE_ENV=	CPLUS=${CXX}
 
-WRKSRC=	${WRKDIR}/tbb30_018oss
+WRKSRC=	${WRKDIR}/tbb30_20101215oss
 
 post-extract:
 	@${CP} ${FILESDIR}/version_info_FreeBSD.sh ${WRKSRC}/build/
 
 post-patch:
-	@${REINPLACE_CMD} 's|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/build/FreeBSD.gcc.inc
+	@${REINPLACE_CMD} 's|-lpthread|${PTHREAD_LIBS}|g' \
+		${WRKSRC}/build/FreeBSD.gcc.inc
 
 do-install:
 	cd ${WRKSRC}; \
