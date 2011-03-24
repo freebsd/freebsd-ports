@@ -10,8 +10,7 @@ PORTVERSION=	3.0
 PORTREVISION=	10
 CATEGORIES=	math parallel
 MASTER_SITES=	ftp://ftp.mcs.anl.gov/pub/BlockSolve95/ \
-		http://ftp.mcs.anl.gov/pub/BlockSolve95/ \
-		ftp://ftp.irisa.fr/pub/mirrors/BlockSolve95/
+		http://ftp.mcs.anl.gov/pub/BlockSolve95/
 DISTNAME=	BlockSolve95
 EXTRACT_SUFX=	.tar.Z
 DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
