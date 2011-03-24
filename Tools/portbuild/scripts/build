@@ -6,6 +6,10 @@
 # configurable variables
 pb=/var/portbuild
 
+# subdirectories to process.  yes, this is a hack, but it saves code
+# duplication.
+quoted_subdirs="'/src' '/ports' ''"
+
 # XXX unused
 get_latest_snap() {
     snap=$1
@@ -172,6 +176,7 @@ do_portsupdate() {
 	return
     fi
 
+    echo
     do_portsupdate_inner ${arch} ${branch} ${buildid} ${builddir} $@
 }
 
@@ -211,6 +216,7 @@ do_srcupdate() {
 	return
     fi
 
+    echo
     do_srcupdate_inner ${arch} ${branch} ${buildid} ${builddir} $@
 }
 
@@ -340,6 +346,7 @@ destroy_fs() {
 	echo "Filesystem has parent ${parent}"
 	if [ -z "${child}" ]; then
 	    echo "Filesystem is a leaf"
+	    echo
 	else
 	    echo "Filesystem has latest child ${child}"
 	    # Check whether filesystem is root
@@ -348,8 +355,10 @@ destroy_fs() {
 		zfs promote ${child}
 		parent=$(get_parent ${fullfs})
 		echo "New parent is ${parent}"
+		echo
 	    else
 		echo "Filesystem has parent ${parent} and cannot be destroyed"
+		echo
 		return 1
 	    fi
 	fi
@@ -384,24 +393,33 @@ do_destroy() {
     builddir=$4
     shift 4
 
+    echo
     buildid=$(resolve ${pb} ${arch} ${branch} ${buildid})
     if [ -z "${buildid}" ]; then
 	echo "Invalid build ID ${buildid}"
 	exit 1
     fi
 
-    latestid=$(resolve ${pb} ${arch} ${branch} latest)
-    if [ "${buildid}" = "${latestid}" ]; then
-	echo "Cannot destroy latest build"
-	exit 1
-    fi
+    # perform sanity check to prevent e.g. "latest" being destroyed
+    # before "previous"
+    for quoted_subdir in $quoted_subdirs; do
+	fullfs=${ZFS_VOLUME}/portbuild/${arch}/${buildid}`echo $quoted_subdir | sed -e "s/'//g"`
+	if test_fs "${fullfs}"; then
+	    child=$(get_latest_child ${fullfs})
+	    parent=$(get_parent ${fullfs})
+	    if [ ! -z "${child}" -a ! -z "${parent}" ]; then
+		echo "Filesystem ${fullfs} has parent ${parent} and child ${child}"
+		echo "and thus cannot be destroyed.  Run 'build destroy' on the child, first."
+	    fi
+	fi
+    done
 
-    destroy_fs ${ZFS_VOLUME}/portbuild/${arch} ${buildid} /ports || exit 1
-    destroy_fs ${ZFS_VOLUME}/portbuild/${arch} ${buildid} /src || exit 1
-    destroy_fs ${ZFS_VOLUME}/portbuild/${arch} ${buildid} || exit 1
+    # now ok to do the actual destroy.
+    for quoted_subdir in $quoted_subdirs; do
+    	destroy_fs ${ZFS_VOLUME}/portbuild/${arch} ${buildid} `echo $quoted_subdir | sed -e "s/'//g"` || exit 1
+    done
 
     rmdir ${builddir}
-
 }
 
 # Run a command as root if running as user
