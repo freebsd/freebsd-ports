@@ -7834,6 +7834,7 @@ libarc                          ports/archivers/libarc
 libarena                        ports/devel/libarena
 libart                          ports/graphics/libart
 libart_lgpl                     ports/graphics/libart_lgpl
+libass                          ports/multimedia/libass
 libassa                         ports/devel/libassa
 libassetml                      ports/devel/libassetml
 libassuan                       ports/security/libassuan
