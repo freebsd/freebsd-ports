@@ -1,3 +1,5 @@
+include/tbb/concurrent_priority_queue.h
+include/tbb/graph.h
 include/tbb/task.h
 include/tbb/parallel_while.h
 include/tbb/task_scheduler_init.h
@@ -18,6 +20,8 @@ include/tbb/queuing_rw_mutex.h
 include/tbb/tick_count.h
 include/tbb/parallel_for.h
 include/tbb/recursive_mutex.h
+include/tbb/machine/windows_api.h
+include/tbb/machine/macos_common.h
 include/tbb/machine/sunos_sparc.h
 include/tbb/machine/xbox360_ppc.h
 include/tbb/machine/mac_ppc.h
@@ -45,6 +49,7 @@ include/tbb/_concurrent_queue_internal.h
 include/tbb/pipeline.h
 include/tbb/compat/ppl.h
 include/tbb/compat/thread
+include/tbb/compat/tuple
 include/tbb/compat/condition_variable
 include/tbb/spin_mutex.h
 include/tbb/tbbmalloc_proxy.h
