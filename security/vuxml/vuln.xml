@@ -34,6 +34,50 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="501ee07a-5640-11e0-985a-001b2134ef46">
+    <topic>linux-flashplugin -- remote code execution vulnerability</topic>
+    <affects>
+      <package>
+	<name>linux-flashplugin</name>
+	<range><le>9.0r289</le></range>
+      </package>
+      <package>
+	<name>linux-f8-flashplugin</name>
+	<name>linux-f10-flashplugin</name>
+	<range><lt>10.2r153</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Adobe Product Security Incident Response Team reports:</p>
+	<blockquote cite="http://www.adobe.com/support/security/advisories/apsa11-01.html">
+	  <p>A critical vulnerability exists in Adobe Flash Player
+	    10.2.152.33 and earlier versions (Adobe Flash Player
+	    10.2.154.18 and earlier for Chrome users) for Windows,
+	    Macintosh, Linux and Solaris operating systems, Adobe
+	    Flash Player 10.1.106.16 and earlier versions for Android,
+	    and the Authplay.dll component that ships with Adobe Reader
+	    and Acrobat X (10.0.1) and earlier 10.x and 9.x versions of
+	    Reader and Acrobat for Windows and Macintosh operating systems.</p>
+	  <p>This vulnerability (CVE-2011-0609) could cause a crash and
+	    potentially allow an attacker to take control of the affected
+	    system. There are reports that this vulnerability is being
+	    exploited in the wild in targeted attacks via a Flash (.swf)
+	    file embedded in a Microsoft Excel (.xls) file delivered as
+	    an email attachment.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2011-0609</cvename>
+      <url>http://www.adobe.com/support/security/advisories/apsa11-01.html</url>
+    </references>
+    <dates>
+      <discovery>2011-01-20</discovery>
+      <entry>2011-03-24</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="b2f09169-55af-11e0-9d6f-000f20797ede">
     <topic>mozilla -- update to HTTPS certificate blacklist</topic>
     <affects>
