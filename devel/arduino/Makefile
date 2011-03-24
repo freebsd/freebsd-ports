@@ -66,6 +66,9 @@ post-extract:
 	@${RM} ${WRKSRC}/hardware/arduino/boards.txt.bak
 
 post-patch:
+	@${RM} ${WRKSRC}/hardware/arduino/bootloaders/atmega8/*.orig
+	@${RM} ${WRKSRC}/hardware/arduino/cores/arduino/*.orig
+
 .if defined(WITHOUT_REFDOCS)
 	@${RM} -rf ${WRKSRC}/reference
 .endif
