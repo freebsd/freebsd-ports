@@ -17,11 +17,7 @@ DISTFILES=	${DISTNAME}.tar.bz2:wkhtmltopdf \
 MAINTAINER=	mm@FreeBSD.org
 COMMENT=	Convert HTML (or live webpages) to PDF or image files
 LIB_DEPENDS+=	fontconfig:${PORTSDIR}/x11-fonts/fontconfig \
-		freetype:${PORTSDIR}/print/freetype2 \
-		jpeg:${PORTSDIR}/graphics/jpeg \
-		png:${PORTSDIR}/graphics/png \
-		mng:${PORTSDIR}/graphics/libmng \
-		tiff:${PORTSDIR}/graphics/tiff
+		freetype:${PORTSDIR}/print/freetype2
 
 WRKSRC=		${WRKDIR}/qt-${PORTNAME}-qt
 INSTALL_WRKSRC=	${WRKDIR}/${PORTNAME}-${DISTVERSION}
