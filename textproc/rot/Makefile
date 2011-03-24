@@ -9,15 +9,12 @@
 PORTNAME=	rot
 PORTVERSION=	1.2
 CATEGORIES=	textproc
-MASTER_SITES=	http://ftp.unicamp.br/pub/unix-c/utils/
+MASTER_SITES=	http://www.xs4all.nl/~henkoers/
 DISTNAME=	${PORTNAME}
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Rotates a file so that lines become columns and vice versa
-
-DEPRECATED=     Upstream disapear and distfile is no more available
-EXPIRATION_DATE=        2011-05-01
 
 ALL_TARGET=	${PORTNAME}
 
