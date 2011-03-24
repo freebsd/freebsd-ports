@@ -7,11 +7,11 @@
 #
 
 PORTNAME=	pciids
-PORTVERSION=	20110206
+PORTVERSION=	20110312
 CATEGORIES=	misc
 MASTER_SITES=	LOCAL/sunpoet
 
-MAINTAINER=	gnome@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Database of all known ID's used in PCI devices
 
 LICENSE=	BSD GPLv2 GPLv3
