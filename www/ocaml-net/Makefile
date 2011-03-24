@@ -13,7 +13,7 @@ MASTER_SITES=	SF/ocaml${PORTNAME}/ocaml${PORTNAME}/${PORTVERSION}
 PKGNAMEPREFIX=	ocaml-
 DISTNAME=	ocaml${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	manfred.lotz@yahoo.de
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	OCaml modules for Internet applications
 
 BUILD_DEPENDS=	${SA_DIR}/pcre/pcre.a:${PORTSDIR}/devel/ocaml-pcre
