@@ -5,8 +5,9 @@
 # $FreeBSD$
 #
 
-PORTNAME=	firefox-i18n
+PORTNAME=	firefox36-i18n
 PORTVERSION=	3.6.15
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITE_SUBDIR=	firefox/releases/${PORTVERSION}/linux-i686/xpi
 PKGNAMEPREFIX=
