@@ -8,9 +8,9 @@
 PORTNAME=	wmname
 PORTVERSION=	0.1
 CATEGORIES=	x11-wm
-MASTER_SITES=	http://code.suckless.org/dl/tools/
+MASTER_SITES=	http://dl.suckless.org/tools/
 
-MAINTAINER=	vj562001@yahoo.de
+MAINTAINER=	nuncupatio@gmail.com
 COMMENT=	Prints/sets the window manager name property of the root window
 
 USE_XORG=	x11 xproto
