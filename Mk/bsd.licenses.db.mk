@@ -36,7 +36,9 @@ Licenses_db_Include_MAINTAINER=         portmgr@FreeBSD.org
 # _LICENSE_LIST_GROUPS	- List of defined license groups
 #
 
-_LICENSE_LIST=		ART10 ART20 ASL BSD BSL CDDL EPL GFDL GPLv1 GPLv2 GPLv3 ISCL LGPL20 LGPL21 LGPL3 MIT MPL OWL PHP202 PHP30 PHP301 PSFL
+_LICENSE_LIST= 	ART10 ART20 ASL BSD BSL CDDL EPL GFDL GPLv1 GPLv2 GPLv3 \
+		LGPL20 LGPL21 LGPL3 LPPL10 LPPL11 LPPL12 LPPL13 LPPL13a \
+		LPPL13b LPPL13c MIT MPL
 
 # List of groups (only names must be present)
 
@@ -105,6 +107,34 @@ _LICENSE_GROUPS_LGPL21=	FSF GPL OSI
 
 _LICENSE_NAME_LGPL3=	GNU Lesser General Public License version 3
 _LICENSE_GROUPS_LGPL3=	FSF GPL OSI
+
+_LICENSE_NAME_LPPL10=	LaTeX Project Public License version 1.0
+_LICENSE_GROUPS_LPPL10=	FSF OSI
+_LICENSE_PERMS_LPPL10=	dist-mirror dist-sell
+
+_LICENSE_NAME_LPPL11=	LaTeX Project Public License version 1.1
+_LICENSE_GROUPS_LPPL11=	FSF OSI
+_LICENSE_PERMS_LPPL11= dist-mirror dist-sell
+
+_LICENSE_NAME_LPPL12=	LaTeX Project Public License version 1.2
+_LICENSE_GROUPS_LPPL12=	FSF OSI
+_LICENSE_PERMS_LPPL12=	dist-mirror dist-sell
+
+_LICENSE_NAME_LPPL13=	LaTeX Project Public License version 1.3
+_LICENSE_GROUPS_LPPL13=	FSF OSI
+_LICENSE_PERMS_LPPL13=	dist-mirror dist-sell
+
+_LICENSE_NAME_LPPL13a=	LaTeX Project Public License version 1.3a
+_LICENSE_GROUPS_LPPL13a=	FSF OSI
+_LICENSE_PERMS_LPPL13a=	xdist-mirror dist-sell
+
+_LICENSE_NAME_LPPL13b=	LaTeX Project Public License version 1.3b
+_LICENSE_GROUPS_LPPL13b=	FSF OSI
+_LICENSE_PERMS_LPPL13b=	dist-mirror dist-sell
+
+_LICENSE_NAME_LPPL13c=	LaTeX Project Public License version 1.3c
+_LICENSE_GROUPS_LPPL13c=	FSF OSI
+_LICENSE_PERMS_LPPL13c=	dist-mirror dist-sell
 
 _LICENSE_NAME_MIT=	MIT license / X11 license
 _LICENSE_GROUPS_MIT=	FSF GPL OSI
