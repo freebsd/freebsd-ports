@@ -6,7 +6,6 @@
 
 PORTNAME=	kdevelop
 DISTVERSION=	${KDEVELOP_VERSION}
-PORTREVISION=	2
 CATEGORIES=	devel kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	${KDEVELOP_BRANCH}/kdevelop/${DISTVERSION}/src
@@ -15,7 +14,7 @@ DIST_SUBDIR=	KDE
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Opensource IDE based on KDevPlatform, KDE and Qt libraries
 
-LIB_DEPENDS+=	kdevplatforminterfaces.2:${PORTSDIR}/devel/kdevplatform
+LIB_DEPENDS+=	kdevplatforminterfaces.3:${PORTSDIR}/devel/kdevplatform
 
 USE_BZIP2=	yes
 USE_KDE4=	automoc4 kdehier kdelibs kdeprefix workspace
@@ -36,7 +35,7 @@ LATEST_LINK=	${PORTNAME}-kde4
 .include <bsd.port.options.mk>
 
 .ifndef(WITHOUT_OKTETA)
-LIB_DEPENDS+=	oktetacore.5:${PORTSDIR}/misc/kdeutils4
+LIB_DEPENDS+=	oktetacore.5:${PORTSDIR}/devel/kdesdk4
 PLIST_SUB+=	OKTETA=""
 .else
 CMAKE_ARGS+=	WITH_LibOkteta:BOOL=FALSE

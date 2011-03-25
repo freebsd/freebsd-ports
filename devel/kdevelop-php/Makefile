@@ -16,7 +16,7 @@ DIST_SUBDIR=	KDE
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	PHP support for KDevelop
 
-LIB_DEPENDS=	kdevplatforminterfaces.2:${PORTSDIR}/devel/kdevplatform
+LIB_DEPENDS=	kdevplatforminterfaces.3:${PORTSDIR}/devel/kdevplatform
 
 BUILD_DEPENDS=	${KDE4_PREFIX}/bin/kdev-pg-qt:${PORTSDIR}/devel/kdevelop-pg-qt
 

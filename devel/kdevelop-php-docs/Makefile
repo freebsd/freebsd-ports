@@ -16,7 +16,7 @@ DIST_SUBDIR=	KDE
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	PHP documentation for KDevelop
 
-LIB_DEPENDS=	kdevplatforminterfaces.2:${PORTSDIR}/devel/kdevplatform
+LIB_DEPENDS=	kdevplatforminterfaces.3:${PORTSDIR}/devel/kdevplatform
 
 USE_BZIP2=	yes
 USE_KDE4=	automoc4 kdehier kdelibs kdeprefix
