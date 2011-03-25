@@ -34,6 +34,63 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="fe853666-56ce-11e0-9668-001fd0d616cf">
+    <topic>php -- ZipArchive segfault with FL_UNCHANGED on empty archive</topic>
+    <affects>
+      <package>
+	<name>php5-zip</name>
+	<range><lt>5.3.6</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>US-CERT/NIST reports:</p>
+	<blockquote cite="http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2011-0421">
+	  <p>The _zip_name_locate function in zip_name_locate.c in the Zip extension
+	    in PHP before 5.3.6 does not properly handle a ZIPARCHIVE::FL_UNCHANGED
+	    argument, which might allow context-dependent attackers to cause a
+	    denial of service (application crash) via an empty ZIP archive that is
+	    processed with a (1) locateName or (2) statName operation.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2011-0421</cvename>
+    </references>
+    <dates>
+      <discovery>2011-03-20</discovery>
+      <entry>2011-03-25</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="cc3bfec6-56cd-11e0-9668-001fd0d616cf">
+    <topic>php -- crash on crafted tag in exif</topic>
+    <affects>
+      <package>
+	<name>php5-exif</name>
+	<range><lt>5.3.6</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>US-CERT/NIST reports:</p>
+	<blockquote cite="http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2011-0708">
+	  <p>exif.c in the Exif extension in PHP before 5.3.6 on 64-bit platforms
+	    performs an incorrect cast, which allows remote attackers to cause a
+	    denial of service (application crash) via an image with a crafted
+	    Image File Directory (IFD) that triggers a buffer over-read.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2011-0708</cvename>
+    </references>
+    <dates>
+      <discovery>2011-03-20</discovery>
+      <entry>2011-03-25</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="501ee07a-5640-11e0-985a-001b2134ef46">
     <topic>linux-flashplugin -- remote code execution vulnerability</topic>
     <affects>
