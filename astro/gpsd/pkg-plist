@@ -16,7 +16,7 @@ include/libgpsmm.h
 lib/libgps.a
 lib/libgps.la
 lib/libgps.so
-lib/libgps.so.19
+lib/libgps.so.20
 lib/libgpsd.a
 lib/libgpsd.la
 lib/libgpsd.so
