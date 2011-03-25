@@ -28,6 +28,8 @@ LIB_DEPENDS=	curl.6:${PORTSDIR}/ftp/curl \
 		xml\\+\\+-2.6:${PORTSDIR}/textproc/libxml++26 \
 		pulse.0:${PORTSDIR}/audio/pulseaudio
 
+BROKEN=		does not compile
+
 ONLY_FOR_ARCHS=	i386 amd64
 ONLY_FOR_ARCHS_REASON=	Uses assembly code
 
