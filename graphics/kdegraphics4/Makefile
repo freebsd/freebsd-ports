@@ -14,8 +14,7 @@ DIST_SUBDIR=	KDE
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Graphics utilities for the KDE4 integrated X11 desktop
 
-BUILD_DEPENDS=	kpsewhich:${PORTSDIR}/print/teTeX-base \
-		${LOCALBASE}/share/xml/docbook/4.2/docbookx.dtd:${PORTSDIR}/textproc/docbook-xml
+BUILD_DEPENDS=	kpsewhich:${PORTSDIR}/print/teTeX-base
 LIB_DEPENDS=	art_lgpl_2.5:${PORTSDIR}/graphics/libart_lgpl \
 		fontconfig.1:${PORTSDIR}/x11-fonts/fontconfig \
 		freetype.9:${PORTSDIR}/print/freetype2 \

@@ -6,7 +6,7 @@
 %%MTREE%%%%LDCONFIG_DIR%%
 %%MTREE%%%%LDCONFIG32_DIR%%
 %%MTREE%%libdata/pkgconfig
-%%MTREE%%share/PolicyKit/policy
+%%MTREE%%share/polkit-1/actions
 %%MTREE%%@exec mkdir -p %D/bin
 %%MTREE%%@exec mkdir -p %D/etc
 %%MTREE%%@exec mkdir -p %D/etc/pam.d
@@ -130,7 +130,6 @@
 %%MTREE%%@exec mkdir -p %D/man/ru.KOI8-R/mann
 %%MTREE%%@exec mkdir -p %D/sbin
 %%MTREE%%@exec mkdir -p %D/share
-%%MTREE%%@exec mkdir -p %D/share/PolicyKit
 %%MTREE%%@exec mkdir -p %D/share/aclocal
 %%MTREE%%@exec mkdir -p %D/share/dict
 %%MTREE%%@exec mkdir -p %D/share/doc
@@ -470,6 +469,7 @@
 %%MTREE%%@exec mkdir -p %D/share/nls/zh_TW.Big5
 %%MTREE%%@exec mkdir -p %D/share/nls/zh_TW.UTF-8
 %%MTREE%%@exec mkdir -p %D/share/pixmaps
+%%MTREE%%@exec mkdir -p %D/share/polkit-1
 %%MTREE%%@exec mkdir -p %D/share/sgml
 %%MTREE%%@exec mkdir -p %D/share/skel
 %%MTREE%%@exec mkdir -p %D/share/xml
@@ -1776,6 +1776,7 @@
 %%MTREE%%@dirrm share/xml
 %%MTREE%%@dirrm share/skel
 %%MTREE%%@dirrm share/sgml
+%%MTREE%%@dirrm share/polkit-1
 %%MTREE%%@dirrm share/pixmaps
 %%MTREE%%@dirrm share/nls/zh_TW.UTF-8
 %%MTREE%%@dirrm share/nls/zh_TW.Big5
@@ -2115,7 +2116,6 @@
 %%MTREE%%@dirrm share/doc
 %%MTREE%%@dirrm share/dict
 %%MTREE%%@dirrm share/aclocal
-%%MTREE%%@dirrm share/PolicyKit
 %%MTREE%%@dirrm share
 %%MTREE%%@dirrm sbin
 %%MTREE%%@dirrm man/ru.KOI8-R/mann

@@ -16,7 +16,6 @@ DIST_SUBDIR=	KDE
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Basic applications for the KDE system
 
-BUILD_DEPENDS=	${LOCALBASE}/share/xml/docbook/4.2/docbookx.dtd:${PORTSDIR}/textproc/docbook-xml
 LIB_DEPENDS=	searchclient:${PORTSDIR}/deskutils/strigi \
 		soprano.4:${PORTSDIR}/textproc/soprano \
 		qimageblitz.4:${PORTSDIR}/x11/qimageblitz \

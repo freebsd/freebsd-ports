@@ -1,14 +1,5 @@
 --- cmake/modules/FindKDE4Internal.cmake.orig	2010-06-02 02:55:14.000000000 -0400
 +++ cmake/modules/FindKDE4Internal.cmake	2010-06-02 02:57:53.000000000 -0400
-@@ -689,7 +689,7 @@
- # whether to install a CMake FooConfig.cmake into lib/foo/cmake/ or /lib/cmake/foo/
- # (with 2.6.3 and above also lib/cmake/foo/ is supported):
- if(${CMAKE_MAJOR_VERSION}.${CMAKE_MINOR_VERSION}.${CMAKE_PATCH_VERSION} VERSION_GREATER 2.6.2)
--   option(KDE4_USE_COMMON_CMAKE_PACKAGE_CONFIG_DIR "Prefer to install the <package>Config.cmake files to lib/cmake/<package> instead to lib/<package>/cmake" TRUE)
-+   option(KDE4_USE_COMMON_CMAKE_PACKAGE_CONFIG_DIR "Prefer to install the <package>Config.cmake files to lib/cmake/<package> instead to lib/<package>/cmake" FALSE)
- else(${CMAKE_MAJOR_VERSION}.${CMAKE_MINOR_VERSION}.${CMAKE_PATCH_VERSION} VERSION_GREATER 2.6.2)
-    set(KDE4_USE_COMMON_CMAKE_PACKAGE_CONFIG_DIR  FALSE)
- endif(${CMAKE_MAJOR_VERSION}.${CMAKE_MINOR_VERSION}.${CMAKE_PATCH_VERSION} VERSION_GREATER 2.6.2)
 @@ -855,8 +855,8 @@
     _set_fancy(XDG_MIME_INSTALL_DIR     "${SHARE_INSTALL_PREFIX}/mime/packages"  "The install dir for the xdg mimetypes")
  

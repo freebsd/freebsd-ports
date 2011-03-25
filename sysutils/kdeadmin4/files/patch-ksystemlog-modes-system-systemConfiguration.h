@@ -3,9 +3,9 @@
 @@ -39,7 +39,7 @@
  		SystemConfiguration() :
  			GenericLogModeConfiguration(
- 					SYSTEM_LOG_MODE_ID, 
--					QStringList() << "/var/log/syslog",
-+					QStringList() << "/var/log/messages",
+ 					QLatin1String( SYSTEM_LOG_MODE_ID ),
+-					QStringList() << QLatin1String( "/var/log/syslog" ),
++					QStringList() << QLatin1String( "/var/log/messages" ),
  					QList<int>() << INFORMATION_LOG_LEVEL_ID
  			) {
- 			
+ 

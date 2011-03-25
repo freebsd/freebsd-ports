@@ -6,7 +6,6 @@
 
 PORTNAME=	kdemultimedia
 PORTVERSION=	${KDE4_VERSION}
-PORTREVISION=	1
 CATEGORIES=	multimedia kde ipv6
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	${KDE4_BRANCH}/${PORTVERSION}/src
@@ -15,13 +14,12 @@ DIST_SUBDIR=	KDE
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KDE Multimedia applications
 
-BUILD_DEPENDS=	${LOCALBASE}/share/xml/docbook/4.2/docbookx.dtd:${PORTSDIR}/textproc/docbook-xml
 LIB_DEPENDS=	FLAC.10:${PORTSDIR}/audio/flac \
 		cdda_paranoia.0:${PORTSDIR}/audio/cdparanoia \
 		ogg.7:${PORTSDIR}/audio/libogg \
 		tag.1:${PORTSDIR}/audio/taglib \
 		vorbis.4:${PORTSDIR}/audio/libvorbis \
-		musicbrainz.4:${PORTSDIR}/audio/libmusicbrainz \
+		musicbrainz3.6:${PORTSDIR}/audio/libmusicbrainz3 \
 		tunepimp.5:${PORTSDIR}/audio/libtunepimp \
 		xine.1:${PORTSDIR}/multimedia/libxine \
 		swscale.1:${PORTSDIR}/multimedia/ffmpeg
@@ -30,7 +28,6 @@ RUN_DEPENDS=	oggenc:${PORTSDIR}/audio/vorbis-tools
 RUN_DEPENDS+=	lame:${PORTSDIR}/audio/lame
 .endif
 
-CONFLICTS=	dolphin-plugins-mplayerthumbs-1.*
 LATEST_LINK=	${PORTNAME}4
 
 USE_BZIP2=	yes
@@ -42,8 +39,8 @@ QT_COMPONENTS=	corelib opengl dbus qt3support designer network svg qtestlib \
 USE_OPENLDAP=	yes
 MAKE_JOBS_SAFE=	yes
 
-OPTIONS=	PULSEAUDIO "KMix control for PulseAudio" off \
-		ALSA "Build with ALSA compatibility library" off
+OPTIONS=	ALSA "Build with ALSA compatibility library" off \
+		PULSEAUDIO "KMix control for PulseAudio" off
 
 .include <bsd.port.options.mk>
 

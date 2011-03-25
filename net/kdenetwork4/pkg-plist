@@ -4,7 +4,6 @@ bin/kopete_latexconvert.sh
 %%KPPP%%bin/kppplogview
 %%KPPP%%bin/kppp
 bin/krdc
-bin/krdc_rfb_approver
 bin/krfb
 bin/winpopup-install
 bin/winpopup-send
@@ -213,6 +212,7 @@ share/applications/kde4/kopete.desktop
 %%KPPP%%share/applications/kde4/kppplogview.desktop
 share/applications/kde4/krdc.desktop
 share/applications/kde4/krfb.desktop
+share/apps/dolphinpart/kpartplugins/kget_plug_in.desktop
 share/apps/dolphinpart/kpartplugins/kget_plug_in.rc
 share/apps/kconf_update/kopete-account-0.10.pl
 share/apps/kconf_update/kopete-account-kconf_update.sh
@@ -255,6 +255,7 @@ share/apps/kget/www/preferences-system.png
 share/apps/kget/www/title-border-bottom-downloads.png
 share/apps/kget/www/title-border-bottom-settings.png
 share/apps/kget/www/view-refresh.png
+share/apps/khtml/kpartplugins/kget_plug_in.desktop
 share/apps/khtml/kpartplugins/kget_plug_in.rc
 share/apps/kopete/CompactContactListLayouts.xml
 share/apps/kopete/DefaultContactListLayouts.xml
@@ -1205,8 +1206,8 @@ share/apps/kopeterichtexteditpart/kopeterichtexteditpartfull.rc
 share/apps/krdc/krdcui.rc
 share/apps/krdc/pics/pointcursor.png
 share/apps/krdc/pics/pointcursormask.png
-share/apps/krdc_rfb_approver/krdc_rfb_approver.notifyrc
 share/apps/krfb/krfb.notifyrc
+share/apps/kwebkitpart/kpartplugins/kget_plug_in.desktop
 share/apps/kwebkitpart/kpartplugins/kget_plug_in.rc
 share/apps/remoteview/zeroconf.desktop
 share/config.kcfg/historyconfig.kcfg
@@ -1222,6 +1223,7 @@ share/config.kcfg/kopetestatussettings.kcfg
 share/config.kcfg/krdc.kcfg
 share/config.kcfg/latexconfig.kcfg
 share/config.kcfg/nowlisteningconfig.kcfg
+share/config.kcfg/translatorconfig.kcfg
 share/config.kcfg/urlpicpreview.kcfg
 share/config.kcfg/webpresenceconfig.kcfg
 share/config/kopeterc
@@ -1230,8 +1232,6 @@ share/dbus-1/interfaces/org.kde.kdnssd.xml
 share/dbus-1/interfaces/org.kde.kopete.Client.xml
 share/dbus-1/interfaces/org.kde.kopete.Statistics.xml
 %%KPPP%%share/dbus-1/interfaces/org.kde.kppp.xml
-share/dbus-1/services/org.freedesktop.Telepathy.Client.krdc_rfb_approver.service
-share/dbus-1/services/org.freedesktop.Telepathy.Client.krdc_rfb_handler.service
 share/dbus-1/services/org.kde.kget.service
 share/doc/HTML/en/kget/common
 share/doc/HTML/en/kget/file.png
@@ -1488,14 +1488,13 @@ share/kde4/servicetypes/kopeteprotocol.desktop
 share/kde4/servicetypes/kopeteui.desktop
 share/kde4/servicetypes/krdc_plugin.desktop
 share/kde4/servicetypes/krfb-framebuffer.desktop
+share/sounds/KDE-Im-Phone-Ring.wav
 share/sounds/Kopete_Event.ogg
 share/sounds/Kopete_Received.ogg
 share/sounds/Kopete_Sent.ogg
 share/sounds/Kopete_User_is_Online.ogg
-share/telepathy/clients/krdc_rfb_approver.client
-share/telepathy/clients/krdc_rfb_handler.client
-@dirrm share/telepathy/clients
-@dirrm share/telepathy
+@dirrmtry share/telepathy/clients
+@dirrmtry share/telepathy
 @dirrm share/kde4/services/kconfiguredialog
 @dirrm share/doc/HTML/en/krfb
 @dirrm share/doc/HTML/en/krdc
@@ -1505,7 +1504,6 @@ share/telepathy/clients/krdc_rfb_handler.client
 @dirrmtry share/apps/kwebkitpart/kpartplugins
 @dirrmtry share/apps/kwebkitpart
 @dirrm share/apps/krfb
-@dirrm share/apps/krdc_rfb_approver
 @dirrm share/apps/krdc/pics
 @dirrm share/apps/krdc
 %%KPPP%%@dirrm share/apps/kppp/pics

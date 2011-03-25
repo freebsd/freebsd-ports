@@ -26,9 +26,14 @@ share/apps/ktuberling/sounds/ru/egypt_well.ogg
 share/apps/ktuberling/sounds/ru/egypt_woman.ogg
 share/apps/ktuberling/sounds/ru/eye.ogg
 share/apps/ktuberling/sounds/ru/eyebrow.ogg
-share/apps/ktuberling/sounds/ru/flowers.ogg
+share/apps/ktuberling/sounds/ru/flower.ogg
+share/apps/ktuberling/sounds/ru/frier-tux.ogg
+share/apps/ktuberling/sounds/ru/guard-tux.ogg
 share/apps/ktuberling/sounds/ru/hair.ogg
 share/apps/ktuberling/sounds/ru/hat.ogg
+share/apps/ktuberling/sounds/ru/kid-tux.ogg
+share/apps/ktuberling/sounds/ru/little-tux.ogg
+share/apps/ktuberling/sounds/ru/maiden-tux.ogg
 share/apps/ktuberling/sounds/ru/moon_alien.ogg
 share/apps/ktuberling/sounds/ru/moon_astronaut.ogg
 share/apps/ktuberling/sounds/ru/moon_earth.ogg
@@ -48,7 +53,7 @@ share/apps/ktuberling/sounds/ru/mouth.ogg
 share/apps/ktuberling/sounds/ru/nose.ogg
 share/apps/ktuberling/sounds/ru/pizzeria_anchovy.ogg
 share/apps/ktuberling/sounds/ru/pizzeria_bacon.ogg
-share/apps/ktuberling/sounds/ru/pizzeria_broccolli.ogg
+share/apps/ktuberling/sounds/ru/pizzeria_brocolli.ogg
 share/apps/ktuberling/sounds/ru/pizzeria_cheese.ogg
 share/apps/ktuberling/sounds/ru/pizzeria_cucumber.ogg
 share/apps/ktuberling/sounds/ru/pizzeria_mushroom.ogg
@@ -60,6 +65,9 @@ share/apps/ktuberling/sounds/ru/pizzeria_pepperoni.ogg
 share/apps/ktuberling/sounds/ru/pizzeria_pineapple.ogg
 share/apps/ktuberling/sounds/ru/pizzeria_salami.ogg
 share/apps/ktuberling/sounds/ru/pizzeria_tomato.ogg
+share/apps/ktuberling/sounds/ru/prince-tux.ogg
+share/apps/ktuberling/sounds/ru/robin-tux.ogg
+share/apps/ktuberling/sounds/ru/sherif-tux.ogg
 share/apps/ktuberling/sounds/ru/shoe.ogg
 share/apps/ktuberling/sounds/ru/shorts.ogg
 share/apps/ktuberling/sounds/ru/skirt.ogg
@@ -67,12 +75,97 @@ share/apps/ktuberling/sounds/ru/spectacles.ogg
 share/apps/ktuberling/sounds/ru/stick.ogg
 share/apps/ktuberling/sounds/ru/sunglasses.ogg
 share/apps/ktuberling/sounds/ru/tie.ogg
+share/apps/ktuberling/sounds/ru/tux-angry.ogg
+share/apps/ktuberling/sounds/ru/tux-apple.ogg
+share/apps/ktuberling/sounds/ru/tux-arrow.ogg
+share/apps/ktuberling/sounds/ru/tux-arrows.ogg
+share/apps/ktuberling/sounds/ru/tux-bow.ogg
+share/apps/ktuberling/sounds/ru/tux-bullseye.ogg
+share/apps/ktuberling/sounds/ru/tux-dowe.ogg
+share/apps/ktuberling/sounds/ru/tux-fish.ogg
+share/apps/ktuberling/sounds/ru/tux-flask.ogg
+share/apps/ktuberling/sounds/ru/tux-fly.ogg
+share/apps/ktuberling/sounds/ru/tux-goblet.ogg
+share/apps/ktuberling/sounds/ru/tux-guitar.ogg
+share/apps/ktuberling/sounds/ru/tux-huh.ogg
+share/apps/ktuberling/sounds/ru/tux-idea.ogg
+share/apps/ktuberling/sounds/ru/tux-key.ogg
+share/apps/ktuberling/sounds/ru/tux-laugh.ogg
+share/apps/ktuberling/sounds/ru/tux-letter.ogg
+share/apps/ktuberling/sounds/ru/tux-love.ogg
+share/apps/ktuberling/sounds/ru/tux-note.ogg
+share/apps/ktuberling/sounds/ru/tux-notes.ogg
+share/apps/ktuberling/sounds/ru/tux-plate.ogg
+share/apps/ktuberling/sounds/ru/tux-poison.ogg
+share/apps/ktuberling/sounds/ru/tux-shoot.ogg
+share/apps/ktuberling/sounds/ru/tux-sick.ogg
+share/apps/ktuberling/sounds/ru/tux-stare.ogg
+share/apps/ktuberling/sounds/ru/tux-teacup.ogg
+share/apps/ktuberling/sounds/ru/tux-vase.ogg
+share/apps/ktuberling/sounds/ru/tux-what.ogg
+share/apps/ktuberling/sounds/ru/tux-wow.ogg
+share/apps/ktuberling/sounds/ru/tux-zzz.ogg
+share/apps/ktuberling/sounds/ru/tv_accident.ogg
+share/apps/ktuberling/sounds/ru/tv_ball.ogg
+share/apps/ktuberling/sounds/ru/tv_barrier.ogg
 share/apps/ktuberling/sounds/ru/tv_bicycle.ogg
+share/apps/ktuberling/sounds/ru/tv_breakdown_lorry.ogg
 share/apps/ktuberling/sounds/ru/tv_car.ogg
+share/apps/ktuberling/sounds/ru/tv_caravan.ogg
 share/apps/ktuberling/sounds/ru/tv_cyclist.ogg
+share/apps/ktuberling/sounds/ru/tv_elephant.ogg
+share/apps/ktuberling/sounds/ru/tv_excavator.ogg
+share/apps/ktuberling/sounds/ru/tv_fence.ogg
+share/apps/ktuberling/sounds/ru/tv_fire.ogg
+share/apps/ktuberling/sounds/ru/tv_fireengine.ogg
+share/apps/ktuberling/sounds/ru/tv_fireman.ogg
+share/apps/ktuberling/sounds/ru/tv_fisherman.ogg
+share/apps/ktuberling/sounds/ru/tv_giraffe.ogg
+share/apps/ktuberling/sounds/ru/tv_guitar.ogg
+share/apps/ktuberling/sounds/ru/tv_guitarist.ogg
+share/apps/ktuberling/sounds/ru/tv_house.ogg
+share/apps/ktuberling/sounds/ru/tv_ladder.ogg
+share/apps/ktuberling/sounds/ru/tv_lion.ogg
+share/apps/ktuberling/sounds/ru/tv_lorry.ogg
+share/apps/ktuberling/sounds/ru/tv_lorry_tractor.ogg
+share/apps/ktuberling/sounds/ru/tv_man.ogg
+share/apps/ktuberling/sounds/ru/tv_mechanic.ogg
+share/apps/ktuberling/sounds/ru/tv_monkey.ogg
+share/apps/ktuberling/sounds/ru/tv_path.ogg
+share/apps/ktuberling/sounds/ru/tv_rock.ogg
+share/apps/ktuberling/sounds/ru/tv_school.ogg
+share/apps/ktuberling/sounds/ru/tv_shop.ogg
+share/apps/ktuberling/sounds/ru/tv_smoke.ogg
+share/apps/ktuberling/sounds/ru/tv_tipper.ogg
+share/apps/ktuberling/sounds/ru/tv_trailer.ogg
 share/apps/ktuberling/sounds/ru/tv_train.ogg
 share/apps/ktuberling/sounds/ru/tv_tree.ogg
+share/apps/ktuberling/sounds/ru/tv_tunnel.ogg
+share/apps/ktuberling/sounds/ru/tv_volley_net.ogg
+share/apps/ktuberling/sounds/ru/tv_wagon.ogg
+share/apps/ktuberling/sounds/ru/tv_woman.ogg
 share/apps/ktuberling/sounds/ru/umbrella.ogg
+share/apps/ktuberling/sounds/ru/whitch-tux.ogg
+share/apps/ktuberling/sounds/ru/xmas_angel.ogg
+share/apps/ktuberling/sounds/ru/xmas_ball.ogg
+share/apps/ktuberling/sounds/ru/xmas_boot.ogg
+share/apps/ktuberling/sounds/ru/xmas_candle.ogg
+share/apps/ktuberling/sounds/ru/xmas_comet.ogg
+share/apps/ktuberling/sounds/ru/xmas_garland.ogg
+share/apps/ktuberling/sounds/ru/xmas_lights.ogg
+share/apps/ktuberling/sounds/ru/xmas_mistletoe.ogg
+share/apps/ktuberling/sounds/ru/xmas_moon.ogg
+share/apps/ktuberling/sounds/ru/xmas_owl.ogg
+share/apps/ktuberling/sounds/ru/xmas_present.ogg
+share/apps/ktuberling/sounds/ru/xmas_rabbit.ogg
+share/apps/ktuberling/sounds/ru/xmas_reindeer.ogg
+share/apps/ktuberling/sounds/ru/xmas_shoe.ogg
+share/apps/ktuberling/sounds/ru/xmas_snowflake.ogg
+share/apps/ktuberling/sounds/ru/xmas_snowman.ogg
+share/apps/ktuberling/sounds/ru/xmas_star.ogg
+share/apps/ktuberling/sounds/ru/xmas_tree.ogg
+share/apps/ktuberling/sounds/ru/xmas_turtle.ogg
+share/apps/ktuberling/sounds/ru/xmas_tux.ogg
 share/apps/kturtle/data/logokeywords.ru.xml
 share/apps/kturtle/examples/ru/arrow.logo
 share/apps/kturtle/examples/ru/curly.logo
@@ -123,9 +216,11 @@ share/doc/HTML/ru/gwenview/mouse.docbook
 share/doc/HTML/ru/juk/common
 share/doc/HTML/ru/juk/index.cache.bz2
 share/doc/HTML/ru/juk/index.docbook
+share/doc/HTML/ru/kalgebra/commands.docbook
 share/doc/HTML/ru/kalgebra/common
 share/doc/HTML/ru/kalgebra/index.cache.bz2
 share/doc/HTML/ru/kalgebra/index.docbook
+share/doc/HTML/ru/kalgebra/kalgebra-main-window.png
 share/doc/HTML/ru/kalzium/common
 share/doc/HTML/ru/kalzium/index.cache.bz2
 share/doc/HTML/ru/kalzium/index.docbook
@@ -300,9 +395,6 @@ share/doc/HTML/ru/kig/selecting_objects.png
 share/doc/HTML/ru/kig/simple_locus_construction.png
 share/doc/HTML/ru/kig/text_label_attaching.png
 share/doc/HTML/ru/kig/text_label_wizard.png
-share/doc/HTML/ru/kinfocenter/common
-share/doc/HTML/ru/kinfocenter/index.cache.bz2
-share/doc/HTML/ru/kinfocenter/index.docbook
 share/doc/HTML/ru/kioslave/audiocd/common
 share/doc/HTML/ru/kioslave/audiocd/index.cache.bz2
 share/doc/HTML/ru/kioslave/audiocd/index.docbook
@@ -493,9 +585,6 @@ share/doc/HTML/ru/krfb/index.docbook
 share/doc/HTML/ru/kruler/common
 share/doc/HTML/ru/kruler/index.cache.bz2
 share/doc/HTML/ru/kruler/index.docbook
-share/doc/HTML/ru/ksame/common
-share/doc/HTML/ru/ksame/index.cache.bz2
-share/doc/HTML/ru/ksame/index.docbook
 share/doc/HTML/ru/kshisen/common
 share/doc/HTML/ru/kshisen/index.cache.bz2
 share/doc/HTML/ru/kshisen/index.docbook
@@ -621,29 +710,39 @@ share/doc/HTML/ru/palapeli/index.docbook
 share/doc/HTML/ru/sonnet/common
 share/doc/HTML/ru/sonnet/index.cache.bz2
 share/doc/HTML/ru/sonnet/index.docbook
+share/locale/ru/LC_MESSAGES/adblock.mo
+share/locale/ru/LC_MESSAGES/akonadicontact.mo
+share/locale/ru/LC_MESSAGES/akregator_konqplugin.mo
 share/locale/ru/LC_MESSAGES/amor.mo
 share/locale/ru/LC_MESSAGES/ark.mo
 share/locale/ru/LC_MESSAGES/attica_kde.mo
 share/locale/ru/LC_MESSAGES/audiocd_encoder_lame.mo
 share/locale/ru/LC_MESSAGES/audiocd_encoder_vorbis.mo
 share/locale/ru/LC_MESSAGES/audiorename_plugin.mo
+share/locale/ru/LC_MESSAGES/autorefresh.mo
+share/locale/ru/LC_MESSAGES/babelfish.mo
 share/locale/ru/LC_MESSAGES/blinken.mo
 share/locale/ru/LC_MESSAGES/bomber.mo
 share/locale/ru/LC_MESSAGES/bovo.mo
 share/locale/ru/LC_MESSAGES/cantor.mo
 share/locale/ru/LC_MESSAGES/cervisia.mo
 share/locale/ru/LC_MESSAGES/cvsservice.mo
+share/locale/ru/LC_MESSAGES/dirfilterplugin.mo
 share/locale/ru/LC_MESSAGES/display.mo
 share/locale/ru/LC_MESSAGES/dolphin.mo
+share/locale/ru/LC_MESSAGES/domtreeviewer.mo
 share/locale/ru/LC_MESSAGES/dragonplayer.mo
 share/locale/ru/LC_MESSAGES/drkonqi.mo
+share/locale/ru/LC_MESSAGES/filelight.mo
 share/locale/ru/LC_MESSAGES/filetypes.mo
 share/locale/ru/LC_MESSAGES/fileviewsvnplugin.mo
 share/locale/ru/LC_MESSAGES/freespacenotifier.mo
+share/locale/ru/LC_MESSAGES/fsview.mo
 share/locale/ru/LC_MESSAGES/granatier.mo
 share/locale/ru/LC_MESSAGES/gwenview.mo
 share/locale/ru/LC_MESSAGES/htmlsearch.mo
 share/locale/ru/LC_MESSAGES/imagerename_plugin.mo
+share/locale/ru/LC_MESSAGES/imgalleryplugin.mo
 share/locale/ru/LC_MESSAGES/jovie.mo
 share/locale/ru/LC_MESSAGES/joystick.mo
 share/locale/ru/LC_MESSAGES/juk.mo
@@ -654,6 +753,8 @@ share/locale/ru/LC_MESSAGES/kabc_ldapkio.mo
 share/locale/ru/LC_MESSAGES/kabc_net.mo
 share/locale/ru/LC_MESSAGES/kabcformat_binary.mo
 share/locale/ru/LC_MESSAGES/kaccess.mo
+share/locale/ru/LC_MESSAGES/kaccessibleapp.mo
+share/locale/ru/LC_MESSAGES/kactivitymanagerd.mo
 share/locale/ru/LC_MESSAGES/kajongg.mo
 share/locale/ru/LC_MESSAGES/kalgebra.mo
 share/locale/ru/LC_MESSAGES/kalzium.mo
@@ -677,6 +778,7 @@ share/locale/ru/LC_MESSAGES/katemailfilesplugin.mo
 share/locale/ru/LC_MESSAGES/kateopenheader.mo
 share/locale/ru/LC_MESSAGES/katepart4.mo
 share/locale/ru/LC_MESSAGES/katequickdocumentswitcherplugin.mo
+share/locale/ru/LC_MESSAGES/katesql.mo
 share/locale/ru/LC_MESSAGES/katesymbolviewer.mo
 share/locale/ru/LC_MESSAGES/katetabbarextension.mo
 share/locale/ru/LC_MESSAGES/katetextfilter.mo
@@ -690,11 +792,11 @@ share/locale/ru/LC_MESSAGES/kblocks.mo
 share/locale/ru/LC_MESSAGES/kbounce.mo
 share/locale/ru/LC_MESSAGES/kbreakout.mo
 share/locale/ru/LC_MESSAGES/kbruch.mo
-share/locale/ru/LC_MESSAGES/kbugbuster.mo
 share/locale/ru/LC_MESSAGES/kcachegrind.mo
 share/locale/ru/LC_MESSAGES/kcalc.mo
 share/locale/ru/LC_MESSAGES/kcertpart.mo
 share/locale/ru/LC_MESSAGES/kcharselect.mo
+share/locale/ru/LC_MESSAGES/kcm_akonadicontact_actions.mo
 share/locale/ru/LC_MESSAGES/kcm_attica.mo
 share/locale/ru/LC_MESSAGES/kcm_autostart.mo
 share/locale/ru/LC_MESSAGES/kcm_desktoppaths.mo
@@ -707,6 +809,7 @@ share/locale/ru/LC_MESSAGES/kcm_krfb.mo
 share/locale/ru/LC_MESSAGES/kcm_kwindesktop.mo
 share/locale/ru/LC_MESSAGES/kcm_kwintabbox.mo
 share/locale/ru/LC_MESSAGES/kcm_memory.mo
+share/locale/ru/LC_MESSAGES/kcm_nepomuk.mo
 share/locale/ru/LC_MESSAGES/kcm_pci.mo
 share/locale/ru/LC_MESSAGES/kcm_phonon.mo
 share/locale/ru/LC_MESSAGES/kcm_phononxine.mo
@@ -781,6 +884,7 @@ share/locale/ru/LC_MESSAGES/kdialog.mo
 share/locale/ru/LC_MESSAGES/kdiamond.mo
 share/locale/ru/LC_MESSAGES/kdmconfig.mo
 share/locale/ru/LC_MESSAGES/kdmgreet.mo
+share/locale/ru/LC_MESSAGES/kdontchangethehostname.mo
 share/locale/ru/LC_MESSAGES/keditbookmarks.mo
 share/locale/ru/LC_MESSAGES/kfile.mo
 share/locale/ru/LC_MESSAGES/kfile_avi.mo
@@ -811,6 +915,7 @@ share/locale/ru/LC_MESSAGES/kfontinst.mo
 share/locale/ru/LC_MESSAGES/kfourinline.mo
 share/locale/ru/LC_MESSAGES/kgeography.mo
 share/locale/ru/LC_MESSAGES/kget.mo
+share/locale/ru/LC_MESSAGES/kgetplugin.mo
 share/locale/ru/LC_MESSAGES/kglobalaccel.mo
 share/locale/ru/LC_MESSAGES/kgoldrunner.mo
 share/locale/ru/LC_MESSAGES/kgpg.mo
@@ -822,6 +927,7 @@ share/locale/ru/LC_MESSAGES/khelpcenter.mo
 share/locale/ru/LC_MESSAGES/khotkeys.mo
 share/locale/ru/LC_MESSAGES/khotnewstuff.mo
 share/locale/ru/LC_MESSAGES/khtmlkttsd.mo
+share/locale/ru/LC_MESSAGES/khtmlsettingsplugin.mo
 share/locale/ru/LC_MESSAGES/kiconfinder.mo
 share/locale/ru/LC_MESSAGES/kig.mo
 share/locale/ru/LC_MESSAGES/kigo.mo
@@ -866,6 +972,7 @@ share/locale/ru/LC_MESSAGES/kiriki.mo
 share/locale/ru/LC_MESSAGES/kiten.mo
 share/locale/ru/LC_MESSAGES/kjumpingcube.mo
 share/locale/ru/LC_MESSAGES/klettres.mo
+share/locale/ru/LC_MESSAGES/klickety.mo
 share/locale/ru/LC_MESSAGES/klines.mo
 share/locale/ru/LC_MESSAGES/klinkstatus.mo
 share/locale/ru/LC_MESSAGES/klipper.mo
@@ -881,7 +988,6 @@ share/locale/ru/LC_MESSAGES/kmouth.mo
 share/locale/ru/LC_MESSAGES/kmplot.mo
 share/locale/ru/LC_MESSAGES/knetattach.mo
 share/locale/ru/LC_MESSAGES/knetwalk.mo
-share/locale/ru/LC_MESSAGES/knetworkconfmodule.mo
 share/locale/ru/LC_MESSAGES/knotify4.mo
 share/locale/ru/LC_MESSAGES/kolf.mo
 share/locale/ru/LC_MESSAGES/kollision.mo
@@ -905,12 +1011,10 @@ share/locale/ru/LC_MESSAGES/krdb.mo
 share/locale/ru/LC_MESSAGES/krdc.mo
 share/locale/ru/LC_MESSAGES/kreadconfig.mo
 share/locale/ru/LC_MESSAGES/kremotecontroldaemon.mo
-share/locale/ru/LC_MESSAGES/kres_bugzilla.mo
 share/locale/ru/LC_MESSAGES/kreversi.mo
 share/locale/ru/LC_MESSAGES/krfb.mo
 share/locale/ru/LC_MESSAGES/kruler.mo
 share/locale/ru/LC_MESSAGES/krunner.mo
-share/locale/ru/LC_MESSAGES/ksame.mo
 share/locale/ru/LC_MESSAGES/ksaneplugin.mo
 share/locale/ru/LC_MESSAGES/kscd.mo
 share/locale/ru/LC_MESSAGES/kscreensaver.mo
@@ -964,6 +1068,7 @@ share/locale/ru/LC_MESSAGES/kwriteconfig.mo
 share/locale/ru/LC_MESSAGES/kxkb.mo
 share/locale/ru/LC_MESSAGES/kxsconfig.mo
 share/locale/ru/LC_MESSAGES/lancelot.mo
+share/locale/ru/LC_MESSAGES/libakonadi-kmime.mo
 share/locale/ru/LC_MESSAGES/libakonadi.mo
 share/locale/ru/LC_MESSAGES/libkasten.mo
 share/locale/ru/LC_MESSAGES/libkblog.mo
@@ -976,11 +1081,13 @@ share/locale/ru/LC_MESSAGES/libkdeedu.mo
 share/locale/ru/LC_MESSAGES/libkdegames.mo
 share/locale/ru/LC_MESSAGES/libkexiv2.mo
 share/locale/ru/LC_MESSAGES/libkholidays.mo
+share/locale/ru/LC_MESSAGES/libkimap.mo
 share/locale/ru/LC_MESSAGES/libkldap.mo
 share/locale/ru/LC_MESSAGES/libkmahjongg.mo
 share/locale/ru/LC_MESSAGES/libkmime.mo
 share/locale/ru/LC_MESSAGES/libkonq.mo
 share/locale/ru/LC_MESSAGES/libkpimidentities.mo
+share/locale/ru/LC_MESSAGES/libkpimtextedit.mo
 share/locale/ru/LC_MESSAGES/libkpimutils.mo
 share/locale/ru/LC_MESSAGES/libkremotecontrol.mo
 share/locale/ru/LC_MESSAGES/libkresources.mo
@@ -990,11 +1097,14 @@ share/locale/ru/LC_MESSAGES/libktnef.mo
 share/locale/ru/LC_MESSAGES/libkunitconversion.mo
 share/locale/ru/LC_MESSAGES/libkworkspace.mo
 share/locale/ru/LC_MESSAGES/libkxmlrpcclient.mo
+share/locale/ru/LC_MESSAGES/liblancelot-datamodels.mo
 share/locale/ru/LC_MESSAGES/libmailtransport.mo
 share/locale/ru/LC_MESSAGES/liboktetacore.mo
+share/locale/ru/LC_MESSAGES/liboktetagui.mo
 share/locale/ru/LC_MESSAGES/liboktetakasten.mo
 share/locale/ru/LC_MESSAGES/libphonon.mo
 share/locale/ru/LC_MESSAGES/libplasma.mo
+share/locale/ru/LC_MESSAGES/libplasma_groupingcontainment.mo
 share/locale/ru/LC_MESSAGES/libplasmaclock.mo
 share/locale/ru/LC_MESSAGES/libplasmaweather.mo
 share/locale/ru/LC_MESSAGES/librtm.mo
@@ -1003,10 +1113,18 @@ share/locale/ru/LC_MESSAGES/lokalize.mo
 share/locale/ru/LC_MESSAGES/lskat.mo
 share/locale/ru/LC_MESSAGES/marble.mo
 share/locale/ru/LC_MESSAGES/marble_qt.mo
+share/locale/ru/LC_MESSAGES/mf_konqplugin.mo
+share/locale/ru/LC_MESSAGES/minitoolsplugin.mo
 share/locale/ru/LC_MESSAGES/mplayerthumbs.mo
 share/locale/ru/LC_MESSAGES/mplayerthumbsconfig.mo
-share/locale/ru/LC_MESSAGES/nepomuk.mo
+share/locale/ru/LC_MESSAGES/nepomukbackup.mo
+share/locale/ru/LC_MESSAGES/nepomukqueryservice.mo
+share/locale/ru/LC_MESSAGES/nepomukserver.mo
+share/locale/ru/LC_MESSAGES/nepomukservicestub.mo
+share/locale/ru/LC_MESSAGES/nepomukstorage.mo
+share/locale/ru/LC_MESSAGES/nepomukstrigiservice.mo
 share/locale/ru/LC_MESSAGES/nsplugin.mo
+share/locale/ru/LC_MESSAGES/okteta-mobile.mo
 share/locale/ru/LC_MESSAGES/okteta.mo
 share/locale/ru/LC_MESSAGES/oktetapart.mo
 share/locale/ru/LC_MESSAGES/okular.mo
@@ -1028,6 +1146,7 @@ share/locale/ru/LC_MESSAGES/okular_xps.mo
 share/locale/ru/LC_MESSAGES/palapeli.mo
 share/locale/ru/LC_MESSAGES/parley.mo
 share/locale/ru/LC_MESSAGES/phonon-xine.mo
+share/locale/ru/LC_MESSAGES/phonon_gstreamer.mo
 share/locale/ru/LC_MESSAGES/phonon_kde.mo
 share/locale/ru/LC_MESSAGES/phononserver.mo
 share/locale/ru/LC_MESSAGES/plasma-desktop.mo
@@ -1036,6 +1155,7 @@ share/locale/ru/LC_MESSAGES/plasma-overlay.mo
 share/locale/ru/LC_MESSAGES/plasma-windowed.mo
 share/locale/ru/LC_MESSAGES/plasma_applet_BbalL.mo
 share/locale/ru/LC_MESSAGES/plasma_applet_CharSelectApplet.mo
+share/locale/ru/LC_MESSAGES/plasma_applet_Molmasscalculator.mo
 share/locale/ru/LC_MESSAGES/plasma_applet_battery.mo
 share/locale/ru/LC_MESSAGES/plasma_applet_binaryclock.mo
 share/locale/ru/LC_MESSAGES/plasma_applet_bookmarks.mo
@@ -1053,6 +1173,7 @@ share/locale/ru/LC_MESSAGES/plasma_applet_folderview.mo
 share/locale/ru/LC_MESSAGES/plasma_applet_frame.mo
 share/locale/ru/LC_MESSAGES/plasma_applet_fuzzy_clock.mo
 share/locale/ru/LC_MESSAGES/plasma_applet_gasCalculator.mo
+share/locale/ru/LC_MESSAGES/plasma_applet_groupingpanel.mo
 share/locale/ru/LC_MESSAGES/plasma_applet_icon.mo
 share/locale/ru/LC_MESSAGES/plasma_applet_incomingmsg.mo
 share/locale/ru/LC_MESSAGES/plasma_applet_kalgebra.mo
@@ -1111,7 +1232,6 @@ share/locale/ru/LC_MESSAGES/plasma_applet_webbrowser.mo
 share/locale/ru/LC_MESSAGES/plasma_applet_webslice.mo
 share/locale/ru/LC_MESSAGES/plasma_applet_windowlist.mo
 share/locale/ru/LC_MESSAGES/plasma_appletscriptengine_dashboard.mo
-share/locale/ru/LC_MESSAGES/plasma_appletscriptengine_qedjescripts.mo
 share/locale/ru/LC_MESSAGES/plasma_containmentactions_contextmenu.mo
 share/locale/ru/LC_MESSAGES/plasma_containmentactions_switchactivity.mo
 share/locale/ru/LC_MESSAGES/plasma_containmentactions_switchdesktop.mo
@@ -1125,8 +1245,8 @@ share/locale/ru/LC_MESSAGES/plasma_engine_metadata.mo
 share/locale/ru/LC_MESSAGES/plasma_engine_network.mo
 share/locale/ru/LC_MESSAGES/plasma_engine_notifications.mo
 share/locale/ru/LC_MESSAGES/plasma_engine_nowplaying.mo
-share/locale/ru/LC_MESSAGES/plasma_engine_pastebin.mo
 share/locale/ru/LC_MESSAGES/plasma_engine_rss.mo
+share/locale/ru/LC_MESSAGES/plasma_engine_share.mo
 share/locale/ru/LC_MESSAGES/plasma_engine_soliddevice.mo
 share/locale/ru/LC_MESSAGES/plasma_engine_weather.mo
 share/locale/ru/LC_MESSAGES/plasma_packagestructure_comic.mo
@@ -1138,6 +1258,7 @@ share/locale/ru/LC_MESSAGES/plasma_runner_calculatorrunner.mo
 share/locale/ru/LC_MESSAGES/plasma_runner_contacts.mo
 share/locale/ru/LC_MESSAGES/plasma_runner_converterrunner.mo
 share/locale/ru/LC_MESSAGES/plasma_runner_datetime.mo
+share/locale/ru/LC_MESSAGES/plasma_runner_events.mo
 share/locale/ru/LC_MESSAGES/plasma_runner_katesessions.mo
 share/locale/ru/LC_MESSAGES/plasma_runner_kget.mo
 share/locale/ru/LC_MESSAGES/plasma_runner_kill.mo
@@ -1160,6 +1281,8 @@ share/locale/ru/LC_MESSAGES/plasma_runner_webshortcuts.mo
 share/locale/ru/LC_MESSAGES/plasma_runner_windowedwidgets.mo
 share/locale/ru/LC_MESSAGES/plasma_runner_windows.mo
 share/locale/ru/LC_MESSAGES/plasma_scriptengine_qscript.mo
+share/locale/ru/LC_MESSAGES/plasma_toolbox_desktoptoolbox.mo
+share/locale/ru/LC_MESSAGES/plasma_toolbox_paneltoolbox.mo
 share/locale/ru/LC_MESSAGES/plasma_wallpaper_color.mo
 share/locale/ru/LC_MESSAGES/plasma_wallpaper_image.mo
 share/locale/ru/LC_MESSAGES/plasma_wallpaper_mandelbrot.mo
@@ -1172,18 +1295,18 @@ share/locale/ru/LC_MESSAGES/plasmagenericshell.mo
 share/locale/ru/LC_MESSAGES/plasmapkg.mo
 share/locale/ru/LC_MESSAGES/plasmawallpaperviewer.mo
 share/locale/ru/LC_MESSAGES/plasmoidviewer.mo
-share/locale/ru/LC_MESSAGES/policykit-kde.mo
-share/locale/ru/LC_MESSAGES/polkit-kde-authorization.mo
 share/locale/ru/LC_MESSAGES/powerdevil.mo
+share/locale/ru/LC_MESSAGES/powerdevilglobalconfig.mo
+share/locale/ru/LC_MESSAGES/powerdevilprofilesconfig.mo
 share/locale/ru/LC_MESSAGES/printer-applet.mo
 share/locale/ru/LC_MESSAGES/processcore.mo
 share/locale/ru/LC_MESSAGES/processui.mo
 share/locale/ru/LC_MESSAGES/randrmonitor.mo
+share/locale/ru/LC_MESSAGES/rellinks.mo
 share/locale/ru/LC_MESSAGES/rocs.mo
-share/locale/ru/LC_MESSAGES/solid-bluetooth.mo
+share/locale/ru/LC_MESSAGES/searchbarplugin.mo
 share/locale/ru/LC_MESSAGES/solid-hardware.mo
 share/locale/ru/LC_MESSAGES/solid-network.mo
-share/locale/ru/LC_MESSAGES/solid-powermanagement.mo
 share/locale/ru/LC_MESSAGES/solid_qt.mo
 share/locale/ru/LC_MESSAGES/solidcontrol.mo
 share/locale/ru/LC_MESSAGES/soliduiserver.mo
@@ -1197,8 +1320,11 @@ share/locale/ru/LC_MESSAGES/sweeper.mo
 share/locale/ru/LC_MESSAGES/system-config-printer-kde.mo
 share/locale/ru/LC_MESSAGES/systemsettings.mo
 share/locale/ru/LC_MESSAGES/timezones4.mo
+share/locale/ru/LC_MESSAGES/uachangerplugin.mo
 share/locale/ru/LC_MESSAGES/umbrello.mo
 share/locale/ru/LC_MESSAGES/useraccount.mo
+share/locale/ru/LC_MESSAGES/validatorsplugin.mo
+share/locale/ru/LC_MESSAGES/webarchiver.mo
 share/locale/ru/LC_MESSAGES/xml_mimetypes.mo
 share/locale/ru/LC_SCRIPTS/kdelibs4/kdelibs4.js
 share/locale/ru/entry.desktop
@@ -1223,7 +1349,6 @@ share/locale/ru/entry.desktop
 @dirrm share/doc/HTML/ru/kspaceduel
 @dirrm share/doc/HTML/ru/ksnapshot
 @dirrm share/doc/HTML/ru/kshisen
-@dirrm share/doc/HTML/ru/ksame
 @dirrm share/doc/HTML/ru/kruler
 @dirrm share/doc/HTML/ru/krfb
 @dirrm share/doc/HTML/ru/kreversi
@@ -1269,7 +1394,6 @@ share/locale/ru/entry.desktop
 @dirrm share/doc/HTML/ru/kioslave/data
 @dirrm share/doc/HTML/ru/kioslave/audiocd
 @dirrm share/doc/HTML/ru/kioslave
-@dirrm share/doc/HTML/ru/kinfocenter
 @dirrm share/doc/HTML/ru/kig
 @dirrm share/doc/HTML/ru/khelpcenter/glossary
 @dirrm share/doc/HTML/ru/khelpcenter/documentationnotfound

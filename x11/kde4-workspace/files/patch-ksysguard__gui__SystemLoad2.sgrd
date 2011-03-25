@@ -1,0 +1,12 @@
+--- ksysguard~/gui/SystemLoad2.sgrd	2009-08-28 18:01:43.000000000 +0200
++++ ksysguard/gui/SystemLoad2.sgrd	2011-01-03 19:18:24.000000000 +0200
+@@ -10,7 +10,7 @@
+   <beam summationName="Swap" sensorName="mem/swap/used" sensorType="integer" hostName="localhost" color="0xff00c000" />
+  </display>
+  <display title="Network History" svgBackground="widgets/plot-background" autoRange="1" class="FancyPlotter" column="0" row="2" version="1" min="0" max="20" manualRange="1">
+-  <beam sensorType="float" hostName="localhost" summationName="Receiving" regexpSensorName="network/interfaces/(?!lo).*/receiver/data" color="0xB3A52D" />
+-  <beam sensorType="float" hostName="localhost" summationName="Sending" regexpSensorName="network/interfaces/(?!lo).*/transmitter/data" color="0x844798" />
++  <beam sensorType="float" hostName="localhost" summationName="Receiving" regexpSensorName="network/interfaces/(?!lo|bridge|usbus).*/receiver/data" color="0xB3A52D" />
++  <beam sensorType="float" hostName="localhost" summationName="Sending" regexpSensorName="network/interfaces/(?!lo|bridge|usbus).*/transmitter/data" color="0x844798" />
+  </display>
+ </WorkSheet>

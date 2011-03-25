@@ -1,0 +1,42 @@
+--- ./CMakeLists.txt.orig	2011-02-25 22:54:48.000000000 +0100
++++ ./CMakeLists.txt	2011-03-05 16:31:50.557158447 +0100
+@@ -9,12 +9,15 @@
+ 
+ add_definitions(-DOSTYPE_${CMAKE_SYSTEM_NAME})
+ 
+-macro_optional_find_package(Sensors)
+-macro_bool_to_01(SENSORS_FOUND HAVE_LMSENSORS)
+-
+-check_include_files(sys/inotify.h SYS_INOTIFY_H_FOUND)
+-macro_bool_to_01(SYS_INOTIFY_H_FOUND HAVE_SYS_INOTIFY_H)
++# Commenting this allows us not to depend on kdelibs (we don't have
++# lm-sensors in ports, nor inotify in base system).
++#macro_optional_find_package(Sensors)
++#macro_bool_to_01(SENSORS_FOUND HAVE_LMSENSORS)
++set(SENSORS_FOUND 0)
+ 
++#check_include_files(sys/inotify.h SYS_INOTIFY_H_FOUND)
++#macro_bool_to_01(SYS_INOTIFY_H_FOUND HAVE_SYS_INOTIFY_H)
++set(SYS_INOTIFY_H_FOUND 0)
+ 
+ configure_file(config-ksysguardd.h.cmake ${CMAKE_CURRENT_BINARY_DIR}/config-ksysguardd.h)
+ 
+@@ -51,9 +54,9 @@
+ 
+     target_link_libraries(ksysguardd libksysguardd)
+ 
+-   if( NOT ${CMAKE_SYSTEM_NAME} MATCHES "Linux" )
++   if( NOT ${CMAKE_SYSTEM_NAME} MATCHES "Linux" OR NOT ${CMAKE_SYSTEM_NAME} MATCHES "kFreeBSD" )
+       target_link_libraries(ksysguardd ${KDE4_KDEFAKES_LIBS})
+-   endif( NOT ${CMAKE_SYSTEM_NAME} MATCHES "Linux" )
++   endif( NOT ${CMAKE_SYSTEM_NAME} MATCHES "Linux" OR NOT ${CMAKE_SYSTEM_NAME} MATCHES "kFreeBSD" )
+ 
+ if( ${CMAKE_SYSTEM_NAME} MATCHES "NetBSD" )
+   message(STATUS "Adding kvm library on NetBSD")
+@@ -67,4 +70,5 @@
+   target_link_libraries(ksysguardd socket nsl)
+ endif( ${CMAKE_SYSTEM_NAME} MATCHES "SunOS" )
+ 
+-install(TARGETS ksysguardd ${INSTALL_TARGETS_DEFAULT_ARGS})
++install(TARGETS ksysguardd RUNTIME DESTINATION "${BIN_INSTALL_DIR}")
++install(FILES ../example/ksysguarddrc DESTINATION "${SYSCONF_INSTALL_DIR}")

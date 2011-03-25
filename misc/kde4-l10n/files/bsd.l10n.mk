@@ -5,8 +5,6 @@ PKGNAMEPREFIX=	${KDE4_L10N:S/@/_/}-
 DISTNAME=	${PORTNAME}-${KDE4_L10N}-${PORTVERSION}
 DIST_SUBDIR?=	KDE/kde-l10n
 
-BUILD_DEPENDS=	${LOCALBASE}/share/xml/docbook/4.2/docbookx.dtd:${PORTSDIR}/textproc/docbook-xml
-
 USE_BZIP2=	yes
 USE_QT_VER=	4
 QT_COMPONENTS=	uic_build moc_build qmake_build rcc_build xml

@@ -14,7 +14,7 @@ DIST_SUBDIR=	KDE
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Accessibility applications for KDE4
 
-BUILD_DEPENDS=	${LOCALBASE}/share/xml/docbook/4.2/docbookx.dtd:${PORTSDIR}/textproc/docbook-xml
+LIB_DEPENDS=	speechd.5:${PORTSDIR}/accessibility/speech-dispatcher
 
 LATEST_LINK=	${PORTNAME}4
 
@@ -23,6 +23,7 @@ USE_KDE4=	kdelibs kdeprefix kdehier automoc4
 KDE4_BUILDENV=	yes
 USE_QT_VER=	4
 QT_COMPONENTS=	opengl gui qmake_build moc_build rcc_build uic_build
+CMAKE_ARGS+=	-DCMAKE_EXE_LINKER_FLAGS:STRING="-L${LOCALBASE}/lib"
 MAKE_JOBS_SAFE=	yes
 
 MAN1=	kmag.1 \

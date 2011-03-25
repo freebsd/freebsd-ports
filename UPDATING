@@ -5,6 +5,18 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20110324:
+  AFFECTS: users of KDE SC 4
+  AUTHOR: kde@FreeBSD.org
+
+  KDE SC ports have been updated to 4.6.1. As usual a number of files were
+  moved between packages, manual intervention into update procedure is
+  required:
+
+  # pkg_delete -f kdehier4\* kdebase-runtime-4\* kdebase-workspace-4\*
+  # pkg_delete -f kdeedu-4\* kdeutils-4\*
+  # portmaster -a
+
 20110322:
   AFFECTS: users of www/firefox
   AUTHOR: gecko@FreeBSD.org

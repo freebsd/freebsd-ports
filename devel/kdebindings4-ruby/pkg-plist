@@ -17,6 +17,7 @@ lib/kde4/krubypluginfactory.so
 lib/libqtruby4shared.so
 lib/libqtruby4shared.so.2
 lib/libqtruby4shared.so.2.0.0
+%%RUBY_SITELIBDIR%%/KDE/kate.rb
 %%RUBY_SITELIBDIR%%/KDE/korundum4.rb
 %%RUBY_SITELIBDIR%%/KDE/plasma.rb
 %%RUBY_SITELIBDIR%%/Qt.rb
@@ -27,6 +28,7 @@ lib/libqtruby4shared.so.2.0.0
 %%RUBY_SITELIBDIR%%/Qt4.rb
 %%RUBY_SITELIBDIR%%/akonadi/akonadi.rb
 %%RUBY_SITEARCHLIBDIR%%/akonadi.so
+%%RUBY_SITEARCHLIBDIR%%/kate.so
 %%RUBY_SITEARCHLIBDIR%%/khtml.so
 %%RUBY_SITEARCHLIBDIR%%/kio.so
 %%RUBY_SITEARCHLIBDIR%%/korundum4.so
@@ -36,6 +38,7 @@ lib/libqtruby4shared.so.2.0.0
 %%RUBY_SITEARCHLIBDIR%%/phonon.so
 %%RUBY_SITEARCHLIBDIR%%/plasma_applet.so
 %%RUBY_SITEARCHLIBDIR%%/qscintilla.so
+%%RUBY_SITEARCHLIBDIR%%/qtdeclarative.so
 %%RUBY_SITEARCHLIBDIR%%/qtruby4.so
 %%RUBY_SITEARCHLIBDIR%%/qtscript.so
 %%RUBY_SITEARCHLIBDIR%%/qttest.so
@@ -51,6 +54,7 @@ lib/libqtruby4shared.so.2.0.0
 %%RUBY_SITELIBDIR%%/okular/okular.rb
 %%RUBY_SITELIBDIR%%/phonon/phonon.rb
 %%RUBY_SITELIBDIR%%/qscintilla/qscintilla.rb
+%%RUBY_SITELIBDIR%%/qtdeclarative/qtdeclarative.rb
 %%RUBY_SITELIBDIR%%/qtscript/qtscript.rb
 %%RUBY_SITELIBDIR%%/qttest/qttest.rb
 %%RUBY_SITELIBDIR%%/qtuitools/qtuitools.rb
@@ -65,6 +69,7 @@ lib/libqtruby4shared.so.2.0.0
 @dirrm %%RUBY_SITELIBDIR%%/qtuitools
 @dirrm %%RUBY_SITELIBDIR%%/qttest
 @dirrm %%RUBY_SITELIBDIR%%/qtscript
+@dirrm %%RUBY_SITELIBDIR%%/qtdeclarative
 @dirrm %%RUBY_SITELIBDIR%%/qscintilla
 @dirrm %%RUBY_SITELIBDIR%%/phonon
 @dirrm %%RUBY_SITELIBDIR%%/okular

@@ -24,10 +24,11 @@ BUILD_WRKSRC?=	${WRKSRC}/${BINDLANG}/${BINDMODULE}
 INSTALL_WRKSRC?=${BUILD_WRKSRC}
 
 # Available languages
-_BINDLANG_ALL=	csharp java php python ruby smoke
+_BINDLANG_ALL=	csharp java perl php python ruby smoke
 
 # csharp_COMMENT=	C\# bindings for Qt/KDE: ${BINDMODULE} module
 # java_COMMENT=	Java bindings for Qt/KDE: ${BINDMODULE} module
+# perl_COMMENT=	Perl bindings for Qt/KDE: ${BINDMODULE} module
 # php_COMMENT=	PHP bindings for Qt/KDE: ${BINDMODULE} module
 python_COMMENT=	Python bindings for Qt/KDE: ${BINDMODULE} module
 ruby_COMMENT=	Ruby bindings for Qt/KDE: ${BINDMODULE} module

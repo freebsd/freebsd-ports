@@ -14,8 +14,6 @@ include/KDE/Lancelot/FullBorderLayout
 include/KDE/Lancelot/Global
 include/KDE/Lancelot/HoverIcon
 include/KDE/Lancelot/Lancelot
-include/KDE/Lancelot/LancelotTestApplication
-include/KDE/Lancelot/LancelotTestWindow
 include/KDE/Lancelot/MergedActionListModel
 include/KDE/Lancelot/Models/Applications
 include/KDE/Lancelot/Models/AvailableModels
@@ -85,6 +83,7 @@ include/lancelot/models/StandardActionListModel.h
 include/lancelot/models/StandardActionTreeModel.h
 include/lancelot/widgets/ActionListView.h
 include/lancelot/widgets/BasicWidget.h
+include/lancelot/widgets/CustomListView.h
 include/lancelot/widgets/ExtenderButton.h
 include/lancelot/widgets/HoverIcon.h
 include/lancelot/widgets/Panel.h
@@ -92,11 +91,14 @@ include/lancelot/widgets/PassagewayView.h
 include/lancelot/widgets/PopupList.h
 include/lancelot/widgets/PopupMenu.h
 include/lancelot/widgets/ResizeBordersPanel.h
+include/lancelot/widgets/ScrollBar.h
+include/lancelot/widgets/ScrollPane.h
 include/lancelot/widgets/TabBar.h
 include/lancelot/widgets/Widget.h
 lib/kde4/kcm_krunner_audioplayercontrol.so
 lib/kde4/kcm_krunner_charrunner.so
 lib/kde4/kcm_krunner_spellcheck.so
+lib/kde4/kcm_plasma_runner_events.so
 lib/kde4/krunner_audioplayercontrol.so
 lib/kde4/krunner_browserhistory.so
 lib/kde4/krunner_charrunner.so
@@ -124,7 +126,7 @@ lib/kde4/plasma_applet_fileWatcher.so
 lib/kde4/plasma_applet_frame.so
 lib/kde4/plasma_applet_fuzzy_clock.so
 lib/kde4/plasma_applet_incomingmsg.so
-%%OBSERVATORY%%lib/kde4/plasma_applet_kdeobservatory.so
+lib/kde4/plasma_applet_kdeobservatory.so
 %%SCIM%%lib/kde4/plasma_applet_kimpanel.so
 lib/kde4/plasma_applet_knowledgebase.so
 lib/kde4/plasma_applet_kolourpicker.so
@@ -159,11 +161,13 @@ lib/kde4/plasma_applet_weather.so
 lib/kde4/plasma_applet_weatherstation.so
 lib/kde4/plasma_applet_webslice.so
 lib/kde4/plasma_comic_krossprovider.so
+lib/kde4/plasma_containment_griddesktop.so
+lib/kde4/plasma_containment_groupingdesktop.so
+lib/kde4/plasma_containment_groupingpanel.so
 lib/kde4/plasma_engine_comic.so
 lib/kde4/plasma_engine_kdeobservatory.so
 lib/kde4/plasma_engine_microblog.so
 lib/kde4/plasma_engine_ocs.so
-lib/kde4/plasma_engine_pastebin.so
 lib/kde4/plasma_engine_potd.so
 lib/kde4/plasma_engine_rtm.so
 lib/kde4/plasma_packagestructure_comic.so
@@ -173,19 +177,23 @@ lib/kde4/plasma_potd_flickrprovider.so
 lib/kde4/plasma_potd_oseiprovider.so
 lib/kde4/plasma_potd_wcpotdprovider.so
 lib/kde4/plasma_runner_datetime.so
+lib/kde4/plasma_runner_events.so
 lib/kde4/plasma_wallpaper_mandelbrot.so
-%%MARBLE%%lib/kde4/plasma_wallpaper_marble.so
+lib/kde4/plasma_wallpaper_marble.so
 lib/kde4/plasma_wallpaper_pattern.so
 lib/kde4/plasma_wallpaper_virus.so
 lib/kde4/plasma_wallpaper_weather.so
 %%SCIM%%lib/libkimpanelruntime.so
 %%SCIM%%lib/libkimpanelruntime.so.0
 lib/liblancelot-datamodels.so
-lib/liblancelot-datamodels.so.0
+lib/liblancelot-datamodels.so.1
 lib/liblancelot-datamodels.so.1.7.0
 lib/liblancelot.so
-lib/liblancelot.so.1
 lib/liblancelot.so.1.9.0
+lib/liblancelot.so.2
+lib/libplasma_groupingcontainment.so
+lib/libplasma_groupingcontainment.so.5
+lib/libplasma_groupingcontainment.so.5.0.1
 lib/libplasmacomicprovidercore.so
 lib/libplasmacomicprovidercore.so.1
 lib/libplasmacomicprovidercore.so.1.0.0
@@ -214,24 +222,6 @@ share/apps/desktoptheme/Aya/lancelot/section-buttons.svgz
 share/apps/desktoptheme/Aya/lancelot/system-buttons-extender.svgz
 share/apps/desktoptheme/Aya/lancelot/system-buttons.svgz
 share/apps/desktoptheme/Aya/lancelot/theme.config
-share/apps/desktoptheme/Elegance/lancelot/category-triangle.svgz
-share/apps/desktoptheme/Elegance/lancelot/inner-background.svgz
-share/apps/desktoptheme/Elegance/lancelot/system-buttons.svgz
-share/apps/desktoptheme/Elegance/lancelot/theme.config
-share/apps/desktoptheme/Silicon/lancelot/action-list-view-headers.svgz
-share/apps/desktoptheme/Silicon/lancelot/category-triangle.svgz
-share/apps/desktoptheme/Silicon/lancelot/extender-button-icon.svgz
-share/apps/desktoptheme/Silicon/lancelot/inner-background.svgz
-share/apps/desktoptheme/Silicon/lancelot/lancelot-context-extender.svgz
-share/apps/desktoptheme/Silicon/lancelot/lancelot-context.svgz
-share/apps/desktoptheme/Silicon/lancelot/passageway-view-buttons-extender.svgz
-share/apps/desktoptheme/Silicon/lancelot/passageway-view-buttons.svgz
-share/apps/desktoptheme/Silicon/lancelot/passageway-view-inactivebuttons.svgz
-share/apps/desktoptheme/Silicon/lancelot/passageway-view-spacer.svgz
-share/apps/desktoptheme/Silicon/lancelot/section-buttons.svgz
-share/apps/desktoptheme/Silicon/lancelot/system-buttons-extender.svgz
-share/apps/desktoptheme/Silicon/lancelot/system-buttons.svgz
-share/apps/desktoptheme/Silicon/lancelot/theme.config
 share/apps/desktoptheme/default/bubblemon/bubble.svg
 share/apps/desktoptheme/default/fifteenPuzzle/blanksquare.svg
 share/apps/desktoptheme/default/lancelot/action-list-view-drop-indicator.svgz
@@ -262,23 +252,8 @@ share/apps/desktoptheme/default/widgets/notes.svgz
 share/apps/desktoptheme/default/widgets/previewer-16.svgz
 share/apps/desktoptheme/default/widgets/previewer-22.svgz
 share/apps/desktoptheme/default/widgets/timer.svgz
-share/apps/desktoptheme/heron/lancelot/action-list-view-headers.svgz
-share/apps/desktoptheme/heron/lancelot/category-triangle.svgz
-share/apps/desktoptheme/heron/lancelot/extender-button-icon.svgz
-share/apps/desktoptheme/heron/lancelot/inner-background.svgz
-share/apps/desktoptheme/heron/lancelot/lancelot-context-extender.svgz
-share/apps/desktoptheme/heron/lancelot/lancelot-context.svgz
-share/apps/desktoptheme/heron/lancelot/passageway-view-buttons-extender.svgz
-share/apps/desktoptheme/heron/lancelot/passageway-view-buttons.svgz
-share/apps/desktoptheme/heron/lancelot/passageway-view-inactivebuttons.svgz
-share/apps/desktoptheme/heron/lancelot/passageway-view-spacer.svgz
-share/apps/desktoptheme/heron/lancelot/section-buttons.svgz
-share/apps/desktoptheme/heron/lancelot/system-buttons-extender.svgz
-share/apps/desktoptheme/heron/lancelot/system-buttons.svgz
-share/apps/desktoptheme/heron/lancelot/theme.config
 share/apps/desktoptheme/oxygen/lancelot/action-list-view-headers.svgz
 share/apps/desktoptheme/oxygen/lancelot/category-triangle.svgz
-share/apps/desktoptheme/oxygen/lancelot/extender-button-icon.svgz
 share/apps/desktoptheme/oxygen/lancelot/inner-background.svgz
 share/apps/desktoptheme/oxygen/lancelot/lancelot-context-extender.svgz
 share/apps/desktoptheme/oxygen/lancelot/lancelot-context.svgz
@@ -292,7 +267,6 @@ share/apps/desktoptheme/oxygen/lancelot/system-buttons.svgz
 share/apps/desktoptheme/oxygen/lancelot/theme.config
 share/apps/desktoptheme/slim-glow/lancelot/action-list-view-headers.svgz
 share/apps/desktoptheme/slim-glow/lancelot/category-triangle.svgz
-share/apps/desktoptheme/slim-glow/lancelot/extender-button-icon.svgz
 share/apps/desktoptheme/slim-glow/lancelot/inner-background.svgz
 share/apps/desktoptheme/slim-glow/lancelot/lancelot-context-extender.svgz
 share/apps/desktoptheme/slim-glow/lancelot/lancelot-context.svgz
@@ -310,7 +284,6 @@ share/apps/plasma-applet-opendesktop-activities/plasma-applet-opendesktop-activi
 share/apps/plasma-applet-opendesktop/user.css
 share/apps/plasma/services/kdeobservatory.operations
 share/apps/plasma/services/ocsPerson.operations
-share/apps/plasma/services/pastebin.operations
 share/apps/plasma/services/rtmauth.operations
 share/apps/plasma/services/rtmtask.operations
 share/apps/plasma/services/rtmtasks.operations
@@ -356,51 +329,71 @@ share/apps/plasmaboard/tablet.xml
 share/apps/rssnow/feeds
 %%SCIM%%share/config.kcfg/kimpanelconfig.kcfg
 share/config/comic.knsrc
+share/config/pastebin.knsrc
 share/config/plasmaweather.knsrc
 share/config/virus_wallpaper.knsrc
 %%SCIM%%share/dbus-1/interfaces/org.kde.impanel.xml
-share/dbus-1/services/org.kde.lancelot.service
 share/icons/hicolor/128x128/apps/bball.png
-%%OBSERVATORY%%share/icons/hicolor/128x128/apps/kdeobservatory.png
+share/icons/hicolor/128x128/apps/eyes.png
+share/icons/hicolor/128x128/apps/kdeobservatory.png
 share/icons/hicolor/128x128/apps/lancelot-start.png
 share/icons/hicolor/128x128/apps/lancelot.png
+share/icons/hicolor/128x128/apps/lifegame.png
+share/icons/hicolor/128x128/apps/luna.png
 share/icons/hicolor/128x128/apps/plasmaapplet-shelf.png
 share/icons/hicolor/128x128/apps/previewer.png
 share/icons/hicolor/128x128/apps/qalculate-applet.png
 share/icons/hicolor/16x16/apps/bball.png
-%%OBSERVATORY%%share/icons/hicolor/16x16/apps/kdeobservatory.png
+share/icons/hicolor/16x16/apps/eyes.png
+share/icons/hicolor/16x16/apps/kdeobservatory.png
 share/icons/hicolor/16x16/apps/lancelot-start.png
 share/icons/hicolor/16x16/apps/lancelot.png
+share/icons/hicolor/16x16/apps/lifegame.png
+share/icons/hicolor/16x16/apps/luna.png
 share/icons/hicolor/16x16/apps/plasmaapplet-shelf.png
 share/icons/hicolor/16x16/apps/previewer.png
-%%OBSERVATORY%%share/icons/hicolor/22x22/apps/kdeobservatory.png
+share/icons/hicolor/22x22/apps/eyes.png
+share/icons/hicolor/22x22/apps/kdeobservatory.png
 share/icons/hicolor/22x22/apps/lancelot-start.png
 share/icons/hicolor/22x22/apps/lancelot.png
+share/icons/hicolor/22x22/apps/lifegame.png
+share/icons/hicolor/22x22/apps/luna.png
 share/icons/hicolor/22x22/apps/plasmaapplet-shelf.png
 share/icons/hicolor/22x22/apps/previewer.png
+share/icons/hicolor/256x256/apps/eyes.png
+share/icons/hicolor/256x256/apps/lifegame.png
 share/icons/hicolor/32x32/apps/bball.png
-%%OBSERVATORY%%share/icons/hicolor/32x32/apps/kdeobservatory.png
+share/icons/hicolor/32x32/apps/eyes.png
+share/icons/hicolor/32x32/apps/kdeobservatory.png
 share/icons/hicolor/32x32/apps/lancelot-start.png
 share/icons/hicolor/32x32/apps/lancelot.png
+share/icons/hicolor/32x32/apps/lifegame.png
+share/icons/hicolor/32x32/apps/luna.png
 share/icons/hicolor/32x32/apps/plasmaapplet-shelf.png
 share/icons/hicolor/32x32/apps/previewer.png
 share/icons/hicolor/48x48/apps/bball.png
-%%OBSERVATORY%%share/icons/hicolor/48x48/apps/kdeobservatory.png
+share/icons/hicolor/48x48/apps/kdeobservatory.png
 share/icons/hicolor/48x48/apps/lancelot-start.png
 share/icons/hicolor/48x48/apps/lancelot.png
+share/icons/hicolor/48x48/apps/lifegame.png
+share/icons/hicolor/48x48/apps/luna.png
 share/icons/hicolor/48x48/apps/plasmaapplet-shelf.png
 share/icons/hicolor/48x48/apps/previewer.png
 share/icons/hicolor/48x48/apps/qalculate-applet.png
 share/icons/hicolor/64x64/apps/bball.png
-%%OBSERVATORY%%share/icons/hicolor/64x64/apps/kdeobservatory.png
+share/icons/hicolor/64x64/apps/kdeobservatory.png
 share/icons/hicolor/64x64/apps/lancelot-start.png
 share/icons/hicolor/64x64/apps/lancelot.png
+share/icons/hicolor/64x64/apps/lifegame.png
+share/icons/hicolor/64x64/apps/luna.png
 share/icons/hicolor/64x64/apps/plasmaapplet-shelf.png
 share/icons/hicolor/64x64/apps/previewer.png
 share/icons/hicolor/scalable/apps/accessories-dictionary.svgz
 share/icons/hicolor/scalable/apps/bball.svgz
+share/icons/hicolor/scalable/apps/eyes.svgz
 share/icons/hicolor/scalable/apps/fifteenpuzzle.svgz
-%%OBSERVATORY%%share/icons/hicolor/scalable/apps/kdeobservatory.svgz
+share/icons/hicolor/scalable/apps/kdeobservatory.svgz
+share/icons/hicolor/scalable/apps/lifegame.svgz
 share/kde4/services/CharRunner_config.desktop
 share/kde4/services/CharacterRunner.desktop
 share/kde4/services/ServiceMenus/preview.desktop
@@ -411,6 +404,7 @@ share/kde4/services/flickrprovider.desktop
 share/kde4/services/katesessions.desktop
 share/kde4/services/konquerorsessions.desktop
 share/kde4/services/konsolesessions.desktop
+share/kde4/services/lancelot.desktop
 share/kde4/services/oseiprovider.desktop
 share/kde4/services/plasma-applet-bball.desktop
 share/kde4/services/plasma-applet-binaryclock.desktop
@@ -422,7 +416,7 @@ share/kde4/services/plasma-applet-charselect.desktop
 share/kde4/services/plasma-applet-eyes.desktop
 share/kde4/services/plasma-applet-fifteenPuzzle.desktop
 share/kde4/services/plasma-applet-incomingmsg.desktop
-%%OBSERVATORY%%share/kde4/services/plasma-applet-kdeobservatory.desktop
+share/kde4/services/plasma-applet-kdeobservatory.desktop
 %%SCIM%%share/kde4/services/plasma-applet-kimpanel.desktop
 share/kde4/services/plasma-applet-knowledgebase.desktop
 share/kde4/services/plasma-applet-konqprofiles.desktop
@@ -456,13 +450,15 @@ share/kde4/services/plasma-applet-weatherstation.desktop
 share/kde4/services/plasma-applet-webslice.desktop
 share/kde4/services/plasma-clock-fuzzy.desktop
 share/kde4/services/plasma-comic-default.desktop
+share/kde4/services/plasma-containment-griddesktop.desktop
+share/kde4/services/plasma-containment-groupingdesktop.desktop
+share/kde4/services/plasma-containment-groupingpanel.desktop
 share/kde4/services/plasma-dataengine-comic.desktop
 share/kde4/services/plasma-dataengine-microblog.desktop
 share/kde4/services/plasma-dataengine-ocs.desktop
 share/kde4/services/plasma-dataengine-potd.desktop
 share/kde4/services/plasma-dict-default.desktop
 share/kde4/services/plasma-engine-kdeobservatory.desktop
-share/kde4/services/plasma-engine-pastebin.desktop
 share/kde4/services/plasma-engine-rtm.desktop
 share/kde4/services/plasma-fileWatcher-default.desktop
 share/kde4/services/plasma-frame-default.desktop
@@ -474,6 +470,8 @@ share/kde4/services/plasma-runner-audioplayercontrol_config.desktop
 share/kde4/services/plasma-runner-contacts.desktop
 share/kde4/services/plasma-runner-converter.desktop
 share/kde4/services/plasma-runner-datetime.desktop
+share/kde4/services/plasma-runner-events.desktop
+share/kde4/services/plasma-runner-events_config.desktop
 share/kde4/services/plasma-runner-kopete.desktop
 share/kde4/services/plasma-runner-spellchecker.desktop
 share/kde4/services/plasma-runner-spellchecker_config.desktop
@@ -481,7 +479,7 @@ share/kde4/services/plasma-runner-techbase.desktop
 share/kde4/services/plasma-runner-wikipedia.desktop
 share/kde4/services/plasma-runner-wikitravel.desktop
 share/kde4/services/plasma-wallpaper-mandelbrot.desktop
-%%MARBLE%%share/kde4/services/plasma-wallpaper-marble.desktop
+share/kde4/services/plasma-wallpaper-marble.desktop
 share/kde4/services/plasma-wallpaper-pattern.desktop
 share/kde4/services/plasma-wallpaper-virus.desktop
 share/kde4/services/plasma-wallpaper-weather.desktop
@@ -490,6 +488,8 @@ share/kde4/services/wcpotdprovider.desktop
 share/kde4/servicetypes/plasma_comicprovider.desktop
 share/kde4/servicetypes/plasma_potdprovider.desktop
 share/mime/packages/lancelotpart-mime.xml
+@dirrmtry share/icons/hicolor/256x256/apps
+@dirrmtry share/icons/hicolor/256x256
 @dirrm share/apps/rssnow
 @dirrm share/apps/plasmaboard
 @dirrm share/apps/plasma_wallpaper_pattern/patterns
@@ -503,8 +503,6 @@ share/mime/packages/lancelotpart-mime.xml
 @dirrmtry share/apps/desktoptheme/slim-glow
 @dirrm share/apps/desktoptheme/oxygen/lancelot
 @dirrmtry share/apps/desktoptheme/oxygen
-@dirrm share/apps/desktoptheme/heron/lancelot
-@dirrmtry share/apps/desktoptheme/heron
 @dirrm share/apps/desktoptheme/default/weatherstation
 @dirrm share/apps/desktoptheme/default/weather
 @dirrm share/apps/desktoptheme/default/stylesheets
@@ -512,10 +510,6 @@ share/mime/packages/lancelotpart-mime.xml
 @dirrm share/apps/desktoptheme/default/lancelot
 @dirrm share/apps/desktoptheme/default/fifteenPuzzle
 @dirrm share/apps/desktoptheme/default/bubblemon
-@dirrm share/apps/desktoptheme/Silicon/lancelot
-@dirrmtry share/apps/desktoptheme/Silicon
-@dirrm share/apps/desktoptheme/Elegance/lancelot
-@dirrmtry share/apps/desktoptheme/Elegance
 @dirrmtry share/apps/desktoptheme/Clean-Bend
 @dirrm share/apps/desktoptheme/Aya/lancelot
 @dirrmtry share/apps/desktoptheme/Aya

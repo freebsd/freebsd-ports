@@ -127,10 +127,10 @@ man/ru.KOI8-R/mann
 sbin
 share
 @comment ---------------------------------------------------------------------
-@comment -- PolicyKit does not support files in different prefixes,
-@comment -- share/PolicyKit/policy will be linked from LOCALBASE
-share/PolicyKit
-@comment share/PolicyKit/policy
+@comment -- polkit-1 does not support files in different prefixes,
+@comment -- share/polkit-1/actions will be linked from LOCALBASE
+share/polkit-1
+@comment share/polkit-1/actions
 @comment ---------------------------------------------------------------------
 share/aclocal
 share/dict

@@ -25,6 +25,7 @@ include/libkexiv2/kexiv2data.h
 include/libkexiv2/kexiv2previews.h
 include/libkexiv2/libkexiv2_export.h
 include/libkexiv2/msgtextedit.h
+include/libkexiv2/rotationmatrix.h
 include/libkexiv2/subjectwidget.h
 include/libkexiv2/version.h
 include/libkipi/exportinterface.h
@@ -65,6 +66,8 @@ include/okular/core/version.h
 include/okular/interfaces/configinterface.h
 include/okular/interfaces/guiinterface.h
 include/okular/interfaces/printinterface.h
+lib/cmake/Okular/OkularConfig.cmake
+lib/cmake/Okular/OkularConfigVersion.cmake
 lib/kde4/gsthumbnail.so
 lib/kde4/gvpart.so
 lib/kde4/kcm_kamera.so
@@ -95,14 +98,14 @@ lib/libgwenviewlib.so
 lib/libgwenviewlib.so.5
 lib/libgwenviewlib.so.5.0.1
 lib/libkdcraw.so
-lib/libkdcraw.so.8
-lib/libkdcraw.so.8.1.0
+lib/libkdcraw.so.9
+lib/libkdcraw.so.9.0.0
 lib/libkexiv2.so
-lib/libkexiv2.so.8
-lib/libkexiv2.so.8.1.0
+lib/libkexiv2.so.9
+lib/libkexiv2.so.9.0.0
 lib/libkipi.so
-lib/libkipi.so.7
-lib/libkipi.so.7.1.0
+lib/libkipi.so.8
+lib/libkipi.so.8.0.0
 lib/libkolourpaint_lgpl.so
 lib/libkolourpaint_lgpl.so.5
 lib/libkolourpaint_lgpl.so.5.0.1
@@ -111,7 +114,7 @@ lib/libksane.so.0
 lib/libksane.so.0.2.0
 lib/libokularcore.so
 lib/libokularcore.so.1
-lib/libokularcore.so.1.5.0
+lib/libokularcore.so.1.6.0
 lib/strigi/strigiea_dvi.so
 lib/strigi/strigiea_tiff.so
 lib/strigi/strigila_mobi.so
@@ -141,7 +144,6 @@ share/applications/kde4/okularApplication_plucker.desktop
 share/applications/kde4/okularApplication_tiff.desktop
 share/applications/kde4/okularApplication_xps.desktop
 share/apps/cmake/modules/FindKSane.cmake
-share/apps/cmake/modules/FindOkular.cmake
 share/apps/gvpart/gvpart.rc
 share/apps/gwenview/cursors/zoom.png
 share/apps/gwenview/fullscreenthemes/blackglass/checked.png
@@ -312,6 +314,7 @@ share/apps/okular/pics/upleftarrow.png
 share/apps/okular/shell.rc
 share/apps/okular/tools.xml
 share/apps/solid/actions/gwenview_importer.desktop
+share/apps/solid/actions/gwenview_importer_camera.desktop
 share/apps/solid/actions/solid_camera.desktop
 share/apps/svgpart/svgpart.rc
 share/config.kcfg/gssettings.kcfg
@@ -322,10 +325,6 @@ share/doc/HTML/en/gwenview/common
 share/doc/HTML/en/gwenview/fullscreen_mode.png
 share/doc/HTML/en/gwenview/index.cache.bz2
 share/doc/HTML/en/gwenview/index.docbook
-share/doc/HTML/en/gwenview/interface.docbook
-share/doc/HTML/en/gwenview/introduction.docbook
-share/doc/HTML/en/gwenview/keybindings.docbook
-share/doc/HTML/en/gwenview/mouse.docbook
 share/doc/HTML/en/gwenview/view_mode.png
 share/doc/HTML/en/kcontrol/kamera/common
 share/doc/HTML/en/kcontrol/kamera/index.cache.bz2
@@ -394,6 +393,7 @@ share/doc/HTML/en/ksnapshot/common
 share/doc/HTML/en/ksnapshot/index.cache.bz2
 share/doc/HTML/en/ksnapshot/index.docbook
 share/doc/HTML/en/ksnapshot/preview.png
+share/doc/HTML/en/ksnapshot/send-to-menu.png
 share/doc/HTML/en/ksnapshot/window.png
 share/doc/HTML/en/okular/annotation-properties.png
 share/doc/HTML/en/okular/annotations.png
@@ -405,6 +405,7 @@ share/doc/HTML/en/okular/index.cache.bz2
 share/doc/HTML/en/okular/index.docbook
 share/doc/HTML/en/okular/mainwindow.png
 share/doc/HTML/en/okular/presentation.png
+share/icons/hicolor/128x128/actions/document-share.png
 share/icons/hicolor/128x128/apps/gwenview.png
 share/icons/hicolor/128x128/apps/kdcraw.png
 share/icons/hicolor/128x128/apps/kipi.png
@@ -412,6 +413,7 @@ share/icons/hicolor/128x128/apps/kruler.png
 share/icons/hicolor/128x128/apps/okular.png
 share/icons/hicolor/16x16/actions/black-white.png
 share/icons/hicolor/16x16/actions/color.png
+share/icons/hicolor/16x16/actions/document-share.png
 share/icons/hicolor/16x16/actions/gray-scale.png
 share/icons/hicolor/16x16/apps/gwenview.png
 share/icons/hicolor/16x16/apps/kcolorchooser.png
@@ -420,6 +422,7 @@ share/icons/hicolor/16x16/apps/kolourpaint.png
 share/icons/hicolor/16x16/apps/kruler.png
 share/icons/hicolor/16x16/apps/ksnapshot.png
 share/icons/hicolor/16x16/apps/okular.png
+share/icons/hicolor/22x22/actions/document-share.png
 share/icons/hicolor/22x22/apps/gwenview.png
 share/icons/hicolor/22x22/apps/kcolorchooser.png
 share/icons/hicolor/22x22/apps/kipi.png
@@ -427,6 +430,7 @@ share/icons/hicolor/22x22/apps/kolourpaint.png
 share/icons/hicolor/22x22/apps/kruler.png
 share/icons/hicolor/22x22/apps/ksnapshot.png
 share/icons/hicolor/22x22/apps/okular.png
+share/icons/hicolor/32x32/actions/document-share.png
 share/icons/hicolor/32x32/apps/gwenview.png
 share/icons/hicolor/32x32/apps/kdcraw.png
 share/icons/hicolor/32x32/apps/kipi.png
@@ -434,6 +438,7 @@ share/icons/hicolor/32x32/apps/kolourpaint.png
 share/icons/hicolor/32x32/apps/kruler.png
 share/icons/hicolor/32x32/apps/ksnapshot.png
 share/icons/hicolor/32x32/apps/okular.png
+share/icons/hicolor/48x48/actions/document-share.png
 share/icons/hicolor/48x48/apps/gwenview.png
 share/icons/hicolor/48x48/apps/kdcraw.png
 share/icons/hicolor/48x48/apps/kipi.png
@@ -441,10 +446,12 @@ share/icons/hicolor/48x48/apps/kolourpaint.png
 share/icons/hicolor/48x48/apps/kruler.png
 share/icons/hicolor/48x48/apps/ksnapshot.png
 share/icons/hicolor/48x48/apps/okular.png
+share/icons/hicolor/64x64/actions/document-share.png
 share/icons/hicolor/64x64/apps/gwenview.png
 share/icons/hicolor/64x64/apps/kdcraw.png
 share/icons/hicolor/64x64/apps/kruler.png
 share/icons/hicolor/64x64/apps/okular.png
+share/icons/hicolor/scalable/actions/document-share.svgz
 share/icons/hicolor/scalable/apps/gwenview.svgz
 share/icons/hicolor/scalable/apps/kolourpaint.svgz
 share/icons/hicolor/scalable/apps/kruler.svgz
@@ -542,6 +549,8 @@ share/kde4/servicetypes/okularGenerator.desktop
 @dirrm share/apps/gvpart
 @dirrmtry share/apps/cmake/modules
 @dirrmtry share/apps/cmake
+@dirrm lib/cmake/Okular
+@dirrmtry lib/cmake
 @dirrm include/okular/interfaces
 @dirrm include/okular/core
 @dirrm include/okular

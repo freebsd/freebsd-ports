@@ -1,6 +1,8 @@
 bin/bomber
 bin/bovo
 bin/granatier
+bin/kajongg
+bin/kajonggserver
 bin/kapman
 bin/katomic
 bin/kbattleship
@@ -17,6 +19,7 @@ bin/kigo
 bin/killbots
 bin/kiriki
 bin/kjumpingcube
+bin/klickety
 bin/klines
 bin/kmahjongg
 bin/kmines
@@ -26,7 +29,6 @@ bin/kollision
 bin/konquest
 bin/kpat
 bin/kreversi
-bin/ksame
 bin/kshisen
 bin/ksirk
 bin/ksirkskineditor
@@ -72,6 +74,10 @@ include/KDE/KGameLCD
 include/KDE/KGameMisc
 include/KDE/KGamePopupItem
 include/KDE/KGameProgress
+include/KDE/KGameRenderedItem
+include/KDE/KGameRenderedObjectItem
+include/KDE/KGameRenderer
+include/KDE/KGameRendererClient
 include/KDE/KGameSvgDigits
 include/KDE/KGameSvgDocument
 include/KDE/KGameTheme
@@ -82,6 +88,7 @@ include/KDE/KScoreDialog
 include/KDE/KStandardGameAction
 include/Pala/Slicer
 include/Pala/SlicerJob
+include/Pala/SlicerMode
 include/Pala/SlicerProperty
 include/Pala/SlicerPropertySet
 include/cardcache.h
@@ -125,6 +132,10 @@ include/kgamelcd.h
 include/kgamemisc.h
 include/kgamepopupitem.h
 include/kgameprogress.h
+include/kgamerendereditem.h
+include/kgamerenderedobjectitem.h
+include/kgamerenderer.h
+include/kgamerendererclient.h
 include/kgamesvgdocument.h
 include/kgametheme.h
 include/kgamethemeselector.h
@@ -150,8 +161,10 @@ include/libkmahjongg_export.h
 include/libpala/libpalamacros.h
 include/libpala/slicer.h
 include/libpala/slicerjob.h
+include/libpala/slicermode.h
 include/libpala/slicerproperty.h
 include/libpala/slicerpropertyset.h
+lib/kde4/palapeli_goldbergslicer.so
 lib/kde4/palapeli_jigsawslicer.so
 lib/kde4/palapeli_rectslicer.so
 lib/kde4/palathumbcreator.so
@@ -161,7 +174,7 @@ lib/libiris_ksirk.so.2.0.0
 lib/libkcardgame.so
 lib/libkdegames.so
 lib/libkdegames.so.5
-lib/libkdegames.so.5.0.0
+lib/libkdegames.so.5.1.0
 lib/libkggzgames.so
 lib/libkggzgames.so.5
 lib/libkggzgames.so.5.0.1
@@ -179,7 +192,7 @@ lib/libkolfprivate.so.5
 lib/libkolfprivate.so.5.0.1
 lib/libpala.so
 lib/libpala.so.0
-lib/libpala.so.0.1.0
+lib/libpala.so.0.2.0
 lib/libpala/libpala-config.cmake
 lib/libpala/pala-targets-%%KDE4_BUILD_TYPE%%.cmake
 lib/libpala/pala-targets.cmake
@@ -187,6 +200,7 @@ share/applications/kde4/KGoldrunner.desktop
 share/applications/kde4/bomber.desktop
 share/applications/kde4/bovo.desktop
 share/applications/kde4/granatier.desktop
+share/applications/kde4/kajongg.desktop
 share/applications/kde4/kapman.desktop
 share/applications/kde4/katomic.desktop
 share/applications/kde4/kbattleship.desktop
@@ -201,6 +215,7 @@ share/applications/kde4/kigo.desktop
 share/applications/kde4/killbots.desktop
 share/applications/kde4/kiriki.desktop
 share/applications/kde4/kjumpingcube.desktop
+share/applications/kde4/klickety.desktop
 share/applications/kde4/klines.desktop
 share/applications/kde4/kmahjongg.desktop
 share/applications/kde4/kmines.desktop
@@ -415,6 +430,8 @@ share/apps/granatier/arenas/clanbomber_Tiny_Standard.desktop
 share/apps/granatier/arenas/clanbomber_Tiny_Standard.xml
 share/apps/granatier/arenas/clanbomber_Whole_Mess.desktop
 share/apps/granatier/arenas/clanbomber_Whole_Mess.xml
+share/apps/granatier/arenas/clover.desktop
+share/apps/granatier/arenas/clover.xml
 share/apps/granatier/arenas/crazy.desktop
 share/apps/granatier/arenas/crazy.xml
 share/apps/granatier/arenas/granatier.desktop
@@ -439,17 +456,17 @@ share/apps/granatier/players/player4_preview.svgz
 share/apps/granatier/players/player5.desktop
 share/apps/granatier/players/player5.svgz
 share/apps/granatier/players/player5_preview.svgz
-share/apps/granatier/sounds/break.ogg
-share/apps/granatier/sounds/clear.ogg
-share/apps/granatier/sounds/corpse_explode.ogg
-share/apps/granatier/sounds/crunch.ogg
-share/apps/granatier/sounds/deepfall.ogg
-share/apps/granatier/sounds/die.ogg
-share/apps/granatier/sounds/explode.ogg
-share/apps/granatier/sounds/joint.ogg
-share/apps/granatier/sounds/putbomb.ogg
-share/apps/granatier/sounds/winlevel.ogg
-share/apps/granatier/sounds/wow.ogg
+share/apps/granatier/sounds/break.wav
+share/apps/granatier/sounds/clear.wav
+share/apps/granatier/sounds/corpse_explode.wav
+share/apps/granatier/sounds/crunch.wav
+share/apps/granatier/sounds/deepfall.wav
+share/apps/granatier/sounds/die.wav
+share/apps/granatier/sounds/explode.wav
+share/apps/granatier/sounds/joint.wav
+share/apps/granatier/sounds/putbomb.wav
+share/apps/granatier/sounds/winlevel.wav
+share/apps/granatier/sounds/wow.wav
 share/apps/granatier/themes/clanbomber.desktop
 share/apps/granatier/themes/clanbomber.svgz
 share/apps/granatier/themes/clanbomber_preview.png
@@ -459,6 +476,87 @@ share/apps/granatier/themes/granatier_preview.png
 share/apps/granatier/themes/waterbomb.desktop
 share/apps/granatier/themes/waterbomb.svgz
 share/apps/granatier/themes/waterbomb_preview.png
+share/apps/kajongg/about.py
+share/apps/kajongg/about.pyc
+share/apps/kajongg/animation.py
+share/apps/kajongg/animation.pyc
+share/apps/kajongg/background.py
+share/apps/kajongg/background.pyc
+share/apps/kajongg/backgroundselector.py
+share/apps/kajongg/backgroundselector.pyc
+share/apps/kajongg/backgroundselector.ui
+share/apps/kajongg/board.py
+share/apps/kajongg/board.pyc
+share/apps/kajongg/client.py
+share/apps/kajongg/client.pyc
+share/apps/kajongg/common.py
+share/apps/kajongg/common.pyc
+share/apps/kajongg/config.py
+share/apps/kajongg/config.pyc
+share/apps/kajongg/deferredutil.py
+share/apps/kajongg/deferredutil.pyc
+share/apps/kajongg/differ.py
+share/apps/kajongg/differ.pyc
+share/apps/kajongg/game.py
+share/apps/kajongg/game.pyc
+share/apps/kajongg/games.py
+share/apps/kajongg/games.pyc
+share/apps/kajongg/genericdelegates.py
+share/apps/kajongg/genericdelegates.pyc
+share/apps/kajongg/guiutil.py
+share/apps/kajongg/guiutil.pyc
+share/apps/kajongg/handboard.py
+share/apps/kajongg/handboard.pyc
+share/apps/kajongg/humanclient.py
+share/apps/kajongg/humanclient.pyc
+share/apps/kajongg/kajongg.py
+share/apps/kajongg/kajonggserver.py
+share/apps/kajongg/kajonggui.rc
+share/apps/kajongg/meld.py
+share/apps/kajongg/meld.pyc
+share/apps/kajongg/message.py
+share/apps/kajongg/message.pyc
+share/apps/kajongg/modeltest.py
+share/apps/kajongg/modeltest.pyc
+share/apps/kajongg/move.py
+share/apps/kajongg/move.pyc
+share/apps/kajongg/playerlist.py
+share/apps/kajongg/playerlist.pyc
+share/apps/kajongg/playfield.py
+share/apps/kajongg/playfield.pyc
+share/apps/kajongg/predefined.py
+share/apps/kajongg/predefined.pyc
+share/apps/kajongg/qt4reactor.py
+share/apps/kajongg/qt4reactor.pyc
+share/apps/kajongg/query.py
+share/apps/kajongg/query.pyc
+share/apps/kajongg/rulesetselector.py
+share/apps/kajongg/rulesetselector.pyc
+share/apps/kajongg/scoring.py
+share/apps/kajongg/scoring.pyc
+share/apps/kajongg/scoringengine.py
+share/apps/kajongg/scoringengine.pyc
+share/apps/kajongg/server.py
+share/apps/kajongg/server.pyc
+share/apps/kajongg/sound.py
+share/apps/kajongg/sound.pyc
+share/apps/kajongg/statesaver.py
+share/apps/kajongg/statesaver.pyc
+share/apps/kajongg/tables.py
+share/apps/kajongg/tables.pyc
+share/apps/kajongg/tile.py
+share/apps/kajongg/tile.pyc
+share/apps/kajongg/tileset.py
+share/apps/kajongg/tileset.pyc
+share/apps/kajongg/tilesetselector.py
+share/apps/kajongg/tilesetselector.pyc
+share/apps/kajongg/tilesetselector.ui
+share/apps/kajongg/uiwall.py
+share/apps/kajongg/uiwall.pyc
+share/apps/kajongg/util.py
+share/apps/kajongg/util.pyc
+share/apps/kajongg/wall.py
+share/apps/kajongg/wall.pyc
 share/apps/kapman/defaultmaze.xml
 share/apps/kapman/kapmanui.rc
 share/apps/kapman/themes/invisible.desktop
@@ -479,6 +577,7 @@ share/apps/kapman/themes/retro.svgz
 share/apps/kapman/themes/retro_preview.png
 share/apps/katomic/katomicui.rc
 share/apps/katomic/levels/default_levels.dat
+share/apps/katomic/pics/default_theme.desktop
 share/apps/katomic/pics/default_theme.svgz
 share/apps/kbattleship/kbattleshipui.rc
 share/apps/kbattleship/pictures/default_theme.svgz
@@ -541,7 +640,8 @@ share/apps/kbreakout/themes/web20.svgz
 share/apps/kbreakout/themes/web20_preview.png
 share/apps/kconf_update/katomic-levelset-upd.pl
 share/apps/kconf_update/katomic-levelset.upd
-share/apps/kconf_update/kpat_update_cardwidth.upd
+share/apps/kconf_update/klickety-2.0-inherit-ksame-highscore.pl
+share/apps/kconf_update/klickety.upd
 share/apps/kdegames/pics/star.png
 share/apps/kdiamond/kdiamond.kcfg
 share/apps/kdiamond/kdiamond.notifyrc
@@ -650,6 +750,18 @@ share/apps/kiriki/kirikiui.rc
 share/apps/kjumpingcube/kjumpingcubeui.rc
 share/apps/kjumpingcube/pics/default.desktop
 share/apps/kjumpingcube/pics/default.svg
+share/apps/klickety/klickety.kcfg
+share/apps/klickety/klickety.notifyrc
+share/apps/klickety/klicketyui.rc
+share/apps/klickety/themes/classic.svg
+share/apps/klickety/themes/classic_preview.png
+share/apps/klickety/themes/default.desktop
+share/apps/klickety/themes/ksame.desktop
+share/apps/klickety/themes/ksame.svg
+share/apps/klickety/themes/ksame_old.desktop
+share/apps/klickety/themes/ksame_old.svg
+share/apps/klickety/themes/ksame_old_preview.png
+share/apps/klickety/themes/ksame_preview.png
 share/apps/klines/klinesui.rc
 share/apps/klines/themes/crystal.desktop
 share/apps/klines/themes/crystal.png
@@ -878,6 +990,7 @@ share/apps/kolf/courses/ReallyEasy
 share/apps/kolf/courses/USApro
 share/apps/kolf/intro
 share/apps/kolf/kolfui.rc
+share/apps/kolf/pics/default_theme.desktop
 share/apps/kolf/pics/default_theme.svgz
 share/apps/kolf/sounds/blackhole.wav
 share/apps/kolf/sounds/blackholeeject.wav
@@ -890,6 +1003,7 @@ share/apps/kolf/sounds/wall.wav
 share/apps/kolf/tutorial.kolf
 share/apps/kolf/tutorial.kolfgame
 share/apps/kollision/kollisionui.rc
+share/apps/kollision/pictures/theme.desktop
 share/apps/kollision/pictures/theme.svgz
 share/apps/kollision/sounds/ball_leaving.ogg
 share/apps/kollision/sounds/hit_wall.ogg
@@ -911,6 +1025,8 @@ share/apps/kpat/previews/5.png
 share/apps/kpat/previews/7.png
 share/apps/kpat/previews/8.png
 share/apps/kpat/previews/9.png
+share/apps/kpat/sounds/card-down.ogg
+share/apps/kpat/sounds/card-pickup.ogg
 share/apps/kpat/themes/ancientegypt.desktop
 share/apps/kpat/themes/ancientegypt.png
 share/apps/kpat/themes/ancientegypt.svgz
@@ -925,12 +1041,10 @@ share/apps/kpat/themes/oldertheme.png
 share/apps/kpat/themes/oldertheme.svgz
 share/apps/kreversi/kreversi.notifyrc
 share/apps/kreversi/kreversiui.rc
+share/apps/kreversi/pics/default_theme.desktop
 share/apps/kreversi/pics/default_theme.svgz
 share/apps/kreversi/sounds/reversi-click.wav
 share/apps/kreversi/sounds/reversi-won.wav
-share/apps/ksame/ksameui.rc
-share/apps/ksame/pics/default_theme.svgz
-share/apps/ksame/pics/old_theme.svgz
 share/apps/kshisen/kshisenui.rc
 share/apps/ksirk/jabber.png
 share/apps/ksirk/ksirkui.rc
@@ -1083,11 +1197,13 @@ share/apps/ksudoku/icons/oxygen/64x64/actions/ksudoku.png
 share/apps/ksudoku/ksudokuui.rc
 share/apps/ksudoku/themes/abstraction.desktop
 share/apps/ksudoku/themes/abstraction.svg
+share/apps/ksudoku/themes/abstraction_preview.png
 share/apps/ksudoku/themes/default.desktop
 share/apps/ksudoku/themes/egyptian_preview.png
 share/apps/ksudoku/themes/ksudoku_egyptian.svg
 share/apps/ksudoku/themes/ksudoku_scrible.desktop
 share/apps/ksudoku/themes/ksudoku_scrible.svg
+share/apps/ksudoku/themes/scribble_preview.png
 share/apps/ktron/ktronui.rc
 share/apps/ktron/themes/default.desktop
 share/apps/ktron/themes/default.png
@@ -1399,6 +1515,18 @@ share/doc/HTML/en/kiriki/index.docbook
 share/doc/HTML/en/kjumpingcube/common
 share/doc/HTML/en/kjumpingcube/index.cache.bz2
 share/doc/HTML/en/kjumpingcube/index.docbook
+share/doc/HTML/en/klickety/common
+share/doc/HTML/en/klickety/config-background.png
+share/doc/HTML/en/klickety/config-customgame.png
+share/doc/HTML/en/klickety/config-general.png
+share/doc/HTML/en/klickety/config-theme.png
+share/doc/HTML/en/klickety/gamescreen.png
+share/doc/HTML/en/klickety/highscore.png
+share/doc/HTML/en/klickety/index.cache.bz2
+share/doc/HTML/en/klickety/index.docbook
+share/doc/HTML/en/klickety/ksamemode.png
+share/doc/HTML/en/klickety/numbered.png
+share/doc/HTML/en/klickety/shortcuts.png
 share/doc/HTML/en/klines/common
 share/doc/HTML/en/klines/gamescreen.png
 share/doc/HTML/en/klines/index.cache.bz2
@@ -1442,9 +1570,6 @@ share/doc/HTML/en/kreversi/common
 share/doc/HTML/en/kreversi/index.cache.bz2
 share/doc/HTML/en/kreversi/index.docbook
 share/doc/HTML/en/kreversi/kreversi1.png
-share/doc/HTML/en/ksame/common
-share/doc/HTML/en/ksame/index.cache.bz2
-share/doc/HTML/en/ksame/index.docbook
 share/doc/HTML/en/kshisen/common
 share/doc/HTML/en/kshisen/index.cache.bz2
 share/doc/HTML/en/kshisen/index.docbook
@@ -1567,6 +1692,7 @@ share/icons/hicolor/128x128/apps/kigo.png
 share/icons/hicolor/128x128/apps/killbots.png
 share/icons/hicolor/128x128/apps/kiriki.png
 share/icons/hicolor/128x128/apps/kjumpingcube.png
+share/icons/hicolor/128x128/apps/klickety.png
 share/icons/hicolor/128x128/apps/klines.png
 share/icons/hicolor/128x128/apps/kmahjongg.png
 share/icons/hicolor/128x128/apps/kmines.png
@@ -1606,6 +1732,7 @@ share/icons/hicolor/16x16/apps/kigo.png
 share/icons/hicolor/16x16/apps/killbots.png
 share/icons/hicolor/16x16/apps/kiriki.png
 share/icons/hicolor/16x16/apps/kjumpingcube.png
+share/icons/hicolor/16x16/apps/klickety.png
 share/icons/hicolor/16x16/apps/klines.png
 share/icons/hicolor/16x16/apps/kmahjongg.png
 share/icons/hicolor/16x16/apps/kmines.png
@@ -1645,6 +1772,7 @@ share/icons/hicolor/22x22/apps/kigo.png
 share/icons/hicolor/22x22/apps/killbots.png
 share/icons/hicolor/22x22/apps/kiriki.png
 share/icons/hicolor/22x22/apps/kjumpingcube.png
+share/icons/hicolor/22x22/apps/klickety.png
 share/icons/hicolor/22x22/apps/klines.png
 share/icons/hicolor/22x22/apps/kmahjongg.png
 share/icons/hicolor/22x22/apps/kmines.png
@@ -1687,6 +1815,7 @@ share/icons/hicolor/32x32/apps/kigo.png
 share/icons/hicolor/32x32/apps/killbots.png
 share/icons/hicolor/32x32/apps/kiriki.png
 share/icons/hicolor/32x32/apps/kjumpingcube.png
+share/icons/hicolor/32x32/apps/klickety.png
 share/icons/hicolor/32x32/apps/klines.png
 share/icons/hicolor/32x32/apps/kmahjongg.png
 share/icons/hicolor/32x32/apps/kmines.png
@@ -1727,6 +1856,7 @@ share/icons/hicolor/48x48/apps/kigo.png
 share/icons/hicolor/48x48/apps/killbots.png
 share/icons/hicolor/48x48/apps/kiriki.png
 share/icons/hicolor/48x48/apps/kjumpingcube.png
+share/icons/hicolor/48x48/apps/klickety.png
 share/icons/hicolor/48x48/apps/klines.png
 share/icons/hicolor/48x48/apps/kmahjongg.png
 share/icons/hicolor/48x48/apps/kmines.png
@@ -1766,6 +1896,7 @@ share/icons/hicolor/64x64/apps/kigo.png
 share/icons/hicolor/64x64/apps/killbots.png
 share/icons/hicolor/64x64/apps/kiriki.png
 share/icons/hicolor/64x64/apps/kjumpingcube.png
+share/icons/hicolor/64x64/apps/klickety.png
 share/icons/hicolor/64x64/apps/klines.png
 share/icons/hicolor/64x64/apps/kmahjongg.png
 share/icons/hicolor/64x64/apps/kmines.png
@@ -1787,9 +1918,11 @@ share/icons/hicolor/64x64/apps/lskat.png
 share/icons/hicolor/64x64/apps/palapeli.png
 share/icons/hicolor/64x64/mimetypes/application-x-palapeli.png
 share/icons/hicolor/64x64/mimetypes/application-x-tuberling.png
+share/icons/hicolor/scalable/actions/games-kajongg-law.svgz
 share/icons/hicolor/scalable/apps/bomber.svgz
 share/icons/hicolor/scalable/apps/bovo.svgz
 share/icons/hicolor/scalable/apps/granatier.svgz
+share/icons/hicolor/scalable/apps/kajongg.svgz
 share/icons/hicolor/scalable/apps/kapman.svgz
 share/icons/hicolor/scalable/apps/kdiamond.svgz
 share/icons/hicolor/scalable/apps/killbots.svgz
@@ -1816,6 +1949,7 @@ share/icons/oxygen/scalable/actions/legalmoves.svgz
 share/icons/oxygen/scalable/apps/kollision.svgz
 share/kde4/services/ServiceMenus/palapeli_servicemenu.desktop
 share/kde4/services/kbattleship.protocol
+share/kde4/services/palapeli_goldbergslicer.desktop
 share/kde4/services/palapeli_jigsawslicer.desktop
 share/kde4/services/palapeli_rectslicer.desktop
 share/kde4/services/palathumbcreator.desktop
@@ -1836,13 +1970,13 @@ share/sounds/kshisen/tile-fall-tile.ogg
 share/sounds/kshisen/tile-touch.ogg
 @dirrm share/sounds/kshisen
 @dirrm share/sounds/kapman
-@dirrm share/icons/locolor/32x32/apps
-@dirrm share/icons/locolor/32x32
-@dirrm share/icons/locolor/16x16/apps
-@dirrm share/icons/locolor/16x16
-@dirrm share/icons/locolor
-@dirrm share/icons/hicolor/256x256/apps
-@dirrm share/icons/hicolor/256x256
+@dirrmtry share/icons/locolor/32x32/apps
+@dirrmtry share/icons/locolor/32x32
+@dirrmtry share/icons/locolor/16x16/apps
+@dirrmtry share/icons/locolor/16x16
+@dirrmtry share/icons/locolor
+@dirrmtry share/icons/hicolor/256x256/apps
+@dirrmtry share/icons/hicolor/256x256
 @dirrm share/doc/HTML/en/palapeli
 @dirrm share/doc/HTML/en/lskat
 @dirrm share/doc/HTML/en/kubrick
@@ -1854,7 +1988,6 @@ share/sounds/kshisen/tile-touch.ogg
 @dirrm share/doc/HTML/en/ksirkskineditor
 @dirrm share/doc/HTML/en/ksirk
 @dirrm share/doc/HTML/en/kshisen
-@dirrm share/doc/HTML/en/ksame
 @dirrm share/doc/HTML/en/kreversi
 @dirrm share/doc/HTML/en/kpat
 @dirrm share/doc/HTML/en/konquest
@@ -1864,6 +1997,7 @@ share/sounds/kshisen/tile-touch.ogg
 @dirrm share/doc/HTML/en/kmines
 @dirrm share/doc/HTML/en/kmahjongg
 @dirrm share/doc/HTML/en/klines
+@dirrm share/doc/HTML/en/klickety
 @dirrm share/doc/HTML/en/kjumpingcube
 @dirrm share/doc/HTML/en/kiriki
 @dirrm share/doc/HTML/en/killbots
@@ -1931,12 +2065,11 @@ share/sounds/kshisen/tile-touch.ogg
 @dirrm share/apps/ksirk/skins
 @dirrm share/apps/ksirk
 @dirrm share/apps/kshisen
-@dirrm share/apps/ksame/pics
-@dirrm share/apps/ksame
 @dirrm share/apps/kreversi/sounds
 @dirrm share/apps/kreversi/pics
 @dirrm share/apps/kreversi
 @dirrm share/apps/kpat/themes
+@dirrm share/apps/kpat/sounds
 @dirrm share/apps/kpat/previews
 @dirrm share/apps/kpat
 @dirrm share/apps/konquest/pics
@@ -1960,6 +2093,8 @@ share/sounds/kshisen/tile-touch.ogg
 @dirrm share/apps/kmahjongg
 @dirrm share/apps/klines/themes
 @dirrm share/apps/klines
+@dirrm share/apps/klickety/themes
+@dirrm share/apps/klickety
 @dirrm share/apps/kjumpingcube/pics
 @dirrm share/apps/kjumpingcube
 @dirrm share/apps/kiriki/images
@@ -2002,6 +2137,8 @@ share/sounds/kshisen/tile-touch.ogg
 @dirrm share/apps/katomic
 @dirrm share/apps/kapman/themes
 @dirrm share/apps/kapman
+@dirrm share/apps/kajongg
+@dirrm share/apps/kajong
 @dirrm share/apps/granatier/themes
 @dirrm share/apps/granatier/sounds
 @dirrm share/apps/granatier/players
@@ -2045,3 +2182,5 @@ share/sounds/kshisen/tile-touch.ogg
 @dirrm include/digits
 @dirrm include/Pala
 @dirrm include/KDE/KGame
+@exec %%LOCALBASE%%/bin/update-mime-database %D/share/mime > /dev/null || /usr/bin/true
+@unexec %%LOCALBASE%%/bin/update-mime-database %D/share/mime > /dev/null || /usr/bin/true

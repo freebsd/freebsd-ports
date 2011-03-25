@@ -2,19 +2,18 @@
 #
 # $FreeBSD$
 
-# some defs
+# Some definitions.
 GENKDMCONF=%%PREFIX%%/bin/genkdmconf
 KDMCONFDIR=%%PREFIX%%/share/config/kdm
 
-#Configure kdm if needed
+# Configure KDM if needed.
 if [ ! -r ${KDMCONFDIR}/kdmrc ]; then
-	echo "Generating KDM configuration";
+	echo "Generating KDM configuration.";
 	${GENKDMCONF} --no-old --in ${KDMCONFDIR};
 else
-	echo "Updating KDM configuration";
+	echo "Updating KDM configuration.";
 	${GENKDMCONF} --in ${KDMCONFDIR};
-
 fi
 
-#run kdm
+# Run KDM.
 exec "%%PREFIX%%/bin/kdm-bin" "$@"

@@ -6,7 +6,6 @@
 
 PORTNAME=	kdesdk
 PORTVERSION=	${KDE4_VERSION}
-PORTREVISION=	1
 CATEGORIES=	devel kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	${KDE4_BRANCH}/${PORTVERSION}/src
@@ -15,8 +14,7 @@ DIST_SUBDIR=	KDE
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KDE Software Development Kit
 
-BUILD_DEPENDS=	${LOCALBASE}/include/ltdl.h:${PORTSDIR}/devel/libltdl \
-		${LOCALBASE}/share/xml/docbook/4.2/docbookx.dtd:${PORTSDIR}/textproc/docbook-xml
+BUILD_DEPENDS=	${LOCALBASE}/include/ltdl.h:${PORTSDIR}/devel/libltdl
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
 LIB_DEPENDS=	svn_client-1.0:${PORTSDIR}/devel/subversion \
 		boost_thread.4:${PORTSDIR}/devel/boost-libs \
@@ -24,7 +22,7 @@ LIB_DEPENDS=	svn_client-1.0:${PORTSDIR}/devel/subversion \
 
 LATEST_LINK=	${PORTNAME}4
 
-CONFLICTS=	kdebase-4.4.[1-5]
+CONFLICTS=	kdeutils-4.5.[0-5]
 
 USE_BZIP2=	yes
 USE_KDE4=	kdelibs pimlibs kdeprefix kdehier \
