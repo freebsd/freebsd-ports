@@ -22,19 +22,23 @@ include/polkit-qt-1/polkitqt1-identity.h
 include/polkit-qt-1/polkitqt1-subject.h
 include/polkit-qt-1/polkitqt1-temporaryauthorization.h
 include/polkit-qt-1/polkitqt1-version.h
+lib/cmake/PolkitQt-1/PolkitQt-1Config.cmake
+lib/cmake/PolkitQt-1/PolkitQt-1ConfigVersion.cmake
 lib/libpolkit-qt-agent-1.so
-lib/libpolkit-qt-agent-1.so.0
-lib/libpolkit-qt-agent-1.so.0.96.1
+lib/libpolkit-qt-agent-1.so.1
+lib/libpolkit-qt-agent-1.so.1.99.0
 lib/libpolkit-qt-core-1.so
-lib/libpolkit-qt-core-1.so.0
-lib/libpolkit-qt-core-1.so.0.96.1
+lib/libpolkit-qt-core-1.so.1
+lib/libpolkit-qt-core-1.so.1.99.0
 lib/libpolkit-qt-gui-1.so
-lib/libpolkit-qt-gui-1.so.0
-lib/libpolkit-qt-gui-1.so.0.96.1
+lib/libpolkit-qt-gui-1.so.1
+lib/libpolkit-qt-gui-1.so.1.99.0
 libdata/pkgconfig/polkit-qt-1.pc
 libdata/pkgconfig/polkit-qt-agent-1.pc
 libdata/pkgconfig/polkit-qt-core-1.pc
 libdata/pkgconfig/polkit-qt-gui-1.pc
+@dirrm lib/cmake/PolkitQt-1
+@dirrmtry lib/cmake
 @dirrm include/polkit-qt-1/PolkitQt1/Gui
 @dirrm include/polkit-qt-1/PolkitQt1/Agent
 @dirrm include/polkit-qt-1/PolkitQt1

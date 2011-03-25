@@ -6,17 +6,19 @@
 #
 
 PORTNAME=	polkit-kde
-PORTVERSION=	0.95.1
-DISTVERSIONPREFIX=	1-
-PORTREVISION=	2
+PORTVERSION=	0.99.0
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/apps/KDE4.x/admin/
+DISTNAME=	${PORTNAME}-agent-1-${PORTVERSION}
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KDE4 frontend to PolKit-1
 
-LIB_DEPENDS=	polkit-qt-agent-1.0:${PORTSDIR}/sysutils/polkit-qt
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
+
+LIB_DEPENDS=	polkit-qt-agent-1.1:${PORTSDIR}/sysutils/polkit-qt
 
 USE_BZIP2=	yes
 USE_GETTEXT=	yes
@@ -26,7 +28,6 @@ USE_QT_VER=	4
 QT_COMPONENTS=	corelib dbus gui network svg xml  \
 		qmake_build moc_build rcc_build uic_build
 USE_CMAKE=	yes
-CMAKE_ENV+=	XDG_CONFIG_DIRS="${PREFIX}/etc/xdg/autostart"
 
 post-extract:
 	${REINPLACE_CMD} -e 's|$${LIB_INSTALL_DIR}/pkgconfig|libdata/pkgconfig|' \
