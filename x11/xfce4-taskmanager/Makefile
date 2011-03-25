@@ -24,6 +24,12 @@ USE_GETTEXT=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnometarget gtk20 desktopfileutils intltool intlhack pkgconfig
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 900000
+BROKEN=		does not compile on FreeBSD 9.X
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|prefix)/$$(DATADIRNAME)|datadir)|' \
 		${WRKSRC}/po/Makefile.in.in
@@ -31,4 +37,4 @@ post-patch:
 post-install:
 	@-update-desktop-database
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
