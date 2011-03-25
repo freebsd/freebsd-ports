@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	Imager
-PORTVERSION=	0.81
+PORTVERSION=	0.82
 CATEGORIES=	graphics perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	../by-authors/id/T/TO/TONYC
@@ -15,6 +15,9 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	A Perl module for manipulating gray, color and rgba format images
+
+LICENSE_COMB=	dual
+LICENSE=	ART20 GPLv1
 
 LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2 \
 		jpeg:${PORTSDIR}/graphics/jpeg \
