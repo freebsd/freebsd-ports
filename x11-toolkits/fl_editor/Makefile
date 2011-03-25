@@ -9,16 +9,13 @@ PORTNAME=	fl_editor
 PORTVERSION=	0.4.5
 PORTREVISION=	8
 CATEGORIES=	x11-toolkits
-MASTER_SITES=	http://robertk.com/source/fl_editor/
+MASTER_SITES=	http://source.robertk.com/fl_editor/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Text Editor Widgets for the Fast Light ToolKit
 
 LIB_DEPENDS=	fltk.1:${PORTSDIR}/x11-toolkits/fltk
-
-DEPRECATED=     Upstream disapear and distfile is no more available
-EXPIRATION_DATE=        2011-05-01
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CFLAGS="${CFLAGS} ${PTHREAD_CFLAGS}" \
