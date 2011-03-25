@@ -31,6 +31,12 @@ INSTALLS_ICONS=	yes
 
 LRELEASE=	${QT_PREFIX}/bin/lrelease-qt4
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 900000
+BROKEN=		does not compile on 9.X
+.endif
+
 post-patch:
 	cd ${WRKSRC}/src && ${REINPLACE_CMD} \
 		-e 's|/usr/share/luminance|${DOCSDIR}|g' \
@@ -51,4 +57,4 @@ do-configure:
 	@${LRELEASE} ${WRKSRC}/project.pro
 	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${QMAKE} ${QMAKE_ARGS} ${QMAKEFLAGS}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
