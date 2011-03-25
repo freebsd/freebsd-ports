@@ -28,7 +28,7 @@ do-install:
 				LICENSE.GPL2 LICENSE.GPL3\
 				OPENSOURCE-NOTICE.TXT README THANKS\
 			${DOCSDIR}
-	cd ${WRKSRC}/doc && ${COPYTREE_SHARE} \* ${DOCSDIR}
+	cd ${WRKSRC}/doc && ${COPYTREE_SHARE} html ${DOCSDIR}
 
 .include "../../devel/py-sip/files/bsd.pyqt.mk"
 .include <bsd.port.mk>

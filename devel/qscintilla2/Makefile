@@ -26,6 +26,9 @@ INSTALL_WRKSRC=		${BUILD_WRKSRC}
 
 QMAKE_ARGS=	-unix PREFIX=${PREFIX}
 
+PORTDOCS=	*
+PORTEXAMPLES=	*
+
 .include "../py-sip/files/bsd.pyqt.mk"
 .include <bsd.port.options.mk>
 
@@ -50,7 +53,7 @@ post-patch:
 
 do-configure:
 	cd ${BUILD_WRKSRC} && ${SETENV} ${CONFIGURE_ENV} \
-		${QMAKE} ${QMAKE_ARGS} qscintilla.pro
+		${QMAKE} ${QMAKEFLAGS} ${QMAKE_ARGS} qscintilla.pro
 
 post-configure:
 	${REINPLACE_CMD} -e \

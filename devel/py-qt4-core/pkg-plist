@@ -156,6 +156,7 @@ bin/pyuic4
 %%SIP%%share/py-sip/QtCore/qpoint.sip
 %%SIP%%share/py-sip/QtCore/qprocess.sip
 %%SIP%%share/py-sip/QtCore/qpropertyanimation.sip
+%%SIP%%share/py-sip/QtCore/qpynullvariant.sip
 %%SIP%%share/py-sip/QtCore/qreadwritelock.sip
 %%SIP%%share/py-sip/QtCore/qrect.sip
 %%SIP%%share/py-sip/QtCore/qregexp.sip
@@ -194,9 +195,9 @@ bin/pyuic4
 %%SIP%%share/py-sip/QtCore/qxmlstream.sip
 %%API%%share/qt4/qsci/api/python/QtCore.api
 %%SIP%%@dirrm share/py-sip/QtCore
-@dirrm %%PYTHON_SITELIBDIR%%/PyQt4/uic/widget-plugins
+@dirrmtry %%PYTHON_SITELIBDIR%%/PyQt4/uic/widget-plugins
 @dirrm %%PYTHON_SITELIBDIR%%/PyQt4/uic/port_v2
 @dirrm %%PYTHON_SITELIBDIR%%/PyQt4/uic/Loader
 @dirrm %%PYTHON_SITELIBDIR%%/PyQt4/uic/Compiler
-@dirrm %%PYTHON_SITELIBDIR%%/PyQt4/uic
+@dirrmtry %%PYTHON_SITELIBDIR%%/PyQt4/uic
 @dirrmtry %%PYTHON_SITELIBDIR%%/PyQt4
