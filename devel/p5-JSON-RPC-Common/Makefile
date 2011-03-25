@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	JSON-RPC-Common
-PORTVERSION=	0.08
+PORTVERSION=	0.10
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -22,11 +22,12 @@ RUN_DEPENDS=	p5-libwww>=5:${PORTSDIR}/www/p5-libwww \
 		p5-Test-use-ok>=0:${PORTSDIR}/devel/p5-Test-use-ok \
 		p5-Try-Tiny>0:${PORTSDIR}/lang/p5-Try-Tiny \
 		p5-URI>0:${PORTSDIR}/net/p5-URI \
-		p5-namespace-clean>=0.08:${PORTSDIR}/devel/p5-namespace-clean
+		p5-namespace-clean>=0.20:${PORTSDIR}/devel/p5-namespace-clean
 
 PERL_CONFIGURE=	YES
 
 MAN3=		JSON::RPC::Common::Marshal::Text.3 \
+		JSON::RPC::Common::Message.3 \
 		JSON::RPC::Common::Procedure::Call.3 \
 		JSON::RPC::Common::Procedure::Return::Version_1_1.3 \
 		JSON::RPC::Common::Procedure::Return::Error.3 \
