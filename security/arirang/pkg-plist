@@ -27,7 +27,9 @@ share/arirang/unix_bin.uxe
 share/arirang/unix_cgi.uxe
 share/arirang/unix_head.uxe
 share/arirang/allow.rb
+share/arirang/allow_relay.rb
 share/arirang/arirang.rb
+share/arirang/caching.rb
 share/arirang/chunk.rb
 share/arirang/csv.rb
 share/arirang/file.rb
@@ -37,11 +39,16 @@ share/arirang/iisver.rb
 share/arirang/link.rb
 share/arirang/multi.rb
 share/arirang/nginx.rb
+share/arirang/null.rb
 share/arirang/proxy.rb
 share/arirang/robots.rb
+share/arirang/robots_relay.rb
 share/arirang/rubysock.rb
 share/arirang/script.rb
 share/arirang/server.rb
+share/arirang/server_relay.rb
+share/arirang/server11.rb
+share/arirang/server11_relay.rb
 share/arirang/size.rb
 share/arirang/ssh.rb
 @dirrm share/arirang
