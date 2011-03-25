@@ -33,6 +33,12 @@ SUB_LIST=		CURVE_USER=${CURVE_USER} \
 			CURVE_UID=${CURVE_UID} \
 			CURVE_GID=${CURVE_GID}
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 900000
+BROKEN=		does not configure on 9.X
+.endif
+
 post-patch:
 	@cd ${WRKSRC} && ${PATCH} --quiet < ${FILESDIR}/freebsd.patch
 
@@ -55,4 +61,4 @@ post-install:
 	${SH} ${PKGINSTALL}
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
