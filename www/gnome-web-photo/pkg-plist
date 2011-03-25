@@ -1,9 +1,21 @@
 bin/gnome-web-photo
 bin/gnome-web-print
 bin/gnome-web-thumbnail
-%%DATADIR%%/prefs.js
 %%DATADIR%%/style.css
+share/locale/cs/LC_MESSAGES/gnome-web-photo.mo
+share/locale/da/LC_MESSAGES/gnome-web-photo.mo
+share/locale/de/LC_MESSAGES/gnome-web-photo.mo
+share/locale/es/LC_MESSAGES/gnome-web-photo.mo
+share/locale/fr/LC_MESSAGES/gnome-web-photo.mo
+share/locale/gl/LC_MESSAGES/gnome-web-photo.mo
+share/locale/he/LC_MESSAGES/gnome-web-photo.mo
 share/locale/ja/LC_MESSAGES/gnome-web-photo.mo
+share/locale/nb/LC_MESSAGES/gnome-web-photo.mo
 share/locale/oc/LC_MESSAGES/gnome-web-photo.mo
+share/locale/pa/LC_MESSAGES/gnome-web-photo.mo
+share/locale/pl/LC_MESSAGES/gnome-web-photo.mo
+share/locale/pt_BR/LC_MESSAGES/gnome-web-photo.mo
+share/locale/sl/LC_MESSAGES/gnome-web-photo.mo
 share/locale/sv/LC_MESSAGES/gnome-web-photo.mo
+share/locale/zh_CN/LC_MESSAGES/gnome-web-photo.mo
 @dirrm %%DATADIR%%
