@@ -6,7 +6,7 @@
 
 PORTNAME=	amarok
 PORTVERSION=	2.4.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	audio kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/${PORTNAME}/${PORTVERSION}/src
@@ -21,9 +21,9 @@ LIB_DEPENDS=	tag.1:${PORTSDIR}/audio/taglib \
 		avcodec.1:${PORTSDIR}/multimedia/ffmpeg \
 		qca.2:${PORTSDIR}/devel/qca
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/qt4/plugins/script/libqtscript_core.so.1.0.0:${PORTSDIR}/devel/qtscriptgenerator \
-		${LOCALBASE}/share/xml/docbook/4.2/docbookx.dtd:${PORTSDIR}/textproc/docbook-xml
-RUN_DEPENDS=	${LOCALBASE}/lib/qt4/plugins/script/libqtscript_core.so.1.0.0:${PORTSDIR}/devel/qtscriptgenerator
+BUILD_DEPENDS=	${LOCALBASE}/lib/qt4/plugins/script/libqtscript_core.so.1.0.0:${PORTSDIR}/devel/qtscriptgenerator
+RUN_DEPENDS=	${LOCALBASE}/lib/qt4/plugins/script/libqtscript_core.so.1.0.0:${PORTSDIR}/devel/qtscriptgenerator \
+		${KDE4_PREFIX}/lib/kde4/kio_upnp_ms.so:${PORTSDIR}/net/kio-upnp-ms
 
 LATEST_LINK=	${PORTNAME}-kde4
 
@@ -71,15 +71,10 @@ CMAKE_ARGS+=	-DWITH_Loudmouth:BOOL=Off
 PLIST_SUB+=	LOUDMOUTH="@comment "
 .endif
 
-.if ${OSVERSION} < 700000
-CMAKE_USE_PTHREAD=	yes
-.endif
-
 post-extract:
 	${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|' \
 		${WRKSRC}/cmake/modules/FindMySQLAmarok.cmake
 	${REINPLACE_CMD} -e 's|/usr/include|${LOCALBASE}/include|' \
-		${WRKSRC}/cmake/modules/FindIpod.cmake \
 		${WRKSRC}/cmake/modules/FindLoudmouth.cmake
 
 .include <bsd.port.mk>
