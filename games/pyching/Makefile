@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	pyching
-PORTVERSION=	1.2.1
-PORTREVISION=	2
+PORTVERSION=	1.2.2
 CATEGORIES=	games python
 MASTER_SITES=	SF/${PORTNAME}/pyChing/${PORTVERSION}
 
@@ -16,34 +15,38 @@ COMMENT=	Consult a I Ching, an ancient Chinese book of wisdom
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/_tkinter.so:${PORTSDIR}/x11-toolkits/py-tkinter
 
+LICENSE=	GPLv2 GPLv3
+LICENSE_COMB=	dual
+
 NO_WRKSUBDIR=	yes
 USE_PYTHON=	yes
-USE_XORG=	x11
 
-PLIST_SUB+=	LIB_TARGET=${LIB_TARGET:S,^${PREFIX}/,,g} \
-		DOC_TARGET=${DOC_TARGET:S,^${PREFIX}/,,g}
-
-EXEC_FILENAME=	${PORTNAME}
-LIB_FILES=	pyching_*.py* smg*.py* icon.xbm
-DOC_FILES=	[A-Z]*
-LIB_TARGET=	${PREFIX}/lib/${PORTNAME}
-DOC_TARGET=	${PREFIX}/share/doc/${PORTNAME}
+MAN1=		${PORTNAME}.1
 
 post-patch:
-	${SED} 's@^\(import sys\)$$@\1; sys.path.append("${LIB_TARGET}")@' \
-		${WRKSRC}/pyching.py >${WRKSRC}/${EXEC_FILENAME}
+	@cd ${WRKSRC}; ${SED} 's|/usr/share/|${PYTHON_SITELIBDIR}/|g' \
+		< ${PORTNAME}.sh > ${PORTNAME}
 
 do-build:
 	${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${WRKSRC}
 	${PYTHON_CMD} -O ${PYTHON_LIBDIR}/compileall.py ${WRKSRC}
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/${EXEC_FILENAME} ${PREFIX}/bin
-	${MKDIR} ${LIB_TARGET}
-	cd ${WRKSRC} && ${INSTALL_DATA} ${LIB_FILES} ${LIB_TARGET}
+	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${MANPREFIX}/man/man1
+	@${MKDIR} ${PYTHON_SITELIBDIR}/${PORTNAME}
+.for ext in py pyc pyo xbm
+	${INSTALL_DATA} ${WRKSRC}/*.${ext} ${PYTHON_SITELIBDIR}/${PORTNAME}
+.endfor
+.for file in COPYING CREDITS
+	${INSTALL_DATA} ${WRKSRC}/${file} ${PYTHON_SITELIBDIR}/${PORTNAME}
+.endfor
+	@${CHMOD} ${BINMODE} ${PYTHON_SITELIBDIR}/${PORTNAME}/${PORTNAME}.py
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${DOC_TARGET}
-	cd ${WRKSRC} && ${INSTALL_DATA} ${DOC_FILES} ${DOC_TARGET}
+	@${MKDIR} ${DOCSDIR}
+.for file in BUGS CHANGES NEWS README
+	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
+.endfor
 .endif
 
 .include <bsd.port.mk>
