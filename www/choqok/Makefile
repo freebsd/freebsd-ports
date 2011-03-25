@@ -6,17 +6,15 @@
 #
 
 PORTNAME=	choqok
-PORTVERSION=	0.9.90
-PORTREVISION=	2
+PORTVERSION=	1.0
 CATEGORIES=	www kde
-MASTER_SITES=	http://d10xg45o6p6dbl.cloudfront.net/projects/c/choqok/
+MASTER_SITES=	http://choqok.gnufolks.org/pkgs/
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KDE micro-blogging client
 
 LICENSE=	GPLv3
 
-BUILD_DEPENDS=	${LOCALBASE}/share/xml/docbook/4.2/docbookx.dtd:${PORTSDIR}/textproc/docbook-xml
 LIB_DEPENDS=	qjson.0:${PORTSDIR}/devel/qjson \
 		qoauth.1:${PORTSDIR}/net/qoauth \
 		kwebkit.1:${PORTSDIR}/www/kwebkitpart
