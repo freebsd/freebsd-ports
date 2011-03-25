@@ -1,4 +1,4 @@
-# New ports collection makefile for:	p5-Test-Harness
+# New ports collection makefile for:	p6-Test-Harness
 # Date Created:				13 Aug 2001
 # Whom:					Shell Hung <shell@shellhung.org>
 #
@@ -6,13 +6,16 @@
 #
 
 PORTNAME=	Test-Harness
-PORTVERSION=	3.22
+PORTVERSION=	3.23
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Run perl standard test scripts with statistics
+
+LICENSE_COMB=	dual
+LICENSE=	ART20 GPLv1
 
 PERL_CONFIGURE=	yes
 
