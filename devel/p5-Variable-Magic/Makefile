@@ -6,13 +6,16 @@
 #
 
 PORTNAME=	Variable-Magic
-PORTVERSION=	0.45
+PORTVERSION=	0.46
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Associate user-defined magic to variables from Perl
+
+LICENSE_COMB=	dual
+LICENSE=	ART20 GPLv1
 
 PERL_CONFIGURE=	5.8.0+
 
