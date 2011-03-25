@@ -8,11 +8,13 @@ share/kde4/services/kdevphpsupport.desktop
 share/locale/ca/LC_MESSAGES/kdevphp.mo
 share/locale/ca@valencia/LC_MESSAGES/kdevphp.mo
 share/locale/da/LC_MESSAGES/kdevphp.mo
+share/locale/de/LC_MESSAGES/kdevphp.mo
 share/locale/en_GB/LC_MESSAGES/kdevphp.mo
 share/locale/es/LC_MESSAGES/kdevphp.mo
 share/locale/et/LC_MESSAGES/kdevphp.mo
 share/locale/fr/LC_MESSAGES/kdevphp.mo
 share/locale/it/LC_MESSAGES/kdevphp.mo
+share/locale/nb/LC_MESSAGES/kdevphp.mo
 share/locale/nds/LC_MESSAGES/kdevphp.mo
 share/locale/nl/LC_MESSAGES/kdevphp.mo
 share/locale/pt/LC_MESSAGES/kdevphp.mo
