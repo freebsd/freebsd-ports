@@ -6,16 +6,14 @@
 #
 
 PORTNAME=	data_objects
-PORTVERSION=	0.10.2
-PORTREVISION=	1
+PORTVERSION=	0.10.3
 CATEGORIES=	databases rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	voldern@hoeggen.net
 COMMENT=	A unified Ruby API for popular databases
 
-RUN_DEPENDS=	rubygem-addressable>=2.1:${PORTSDIR}/www/rubygem-addressable \
-		rubygem-extlib>=0.9.9:${PORTSDIR}/devel/rubygem-extlib
+RUN_DEPENDS=	rubygem-addressable>=2.1:${PORTSDIR}/www/rubygem-addressable
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
