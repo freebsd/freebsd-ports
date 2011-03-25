@@ -1,5 +1,5 @@
 bin/barrage
-share/applnk/Applications/barrage.desktop
+share/applications/barrage.desktop
 %%DATADIR%%/gfx/ammo.bmp
 %%DATADIR%%/gfx/crater.bmp
 %%DATADIR%%/gfx/cursors.bmp
@@ -23,11 +23,8 @@ share/applnk/Applications/barrage.desktop
 %%DATADIR%%/sounds/expl3.wav
 %%DATADIR%%/sounds/gunfire.wav
 %%DATADIR%%/sounds/highlight.wav
-%%DATADIR%%/sounds/scream1.wav
-%%DATADIR%%/sounds/scream2.wav
-@dirrmtry share/applnk/Applications/
-@dirrmtry share/applnk
+share/pixmaps/barrage48.gif
 @dirrm %%DATADIR%%/sounds
 @dirrm %%DATADIR%%/gfx
 @dirrm %%DATADIR%%
-@cwd /var/games
+@dirrmtry share/applications

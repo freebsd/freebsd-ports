@@ -6,26 +6,24 @@
 #
 
 PORTNAME=	barrage
-PORTVERSION=	1.0.2
-PORTREVISION=	4
+PORTVERSION=	1.0.3
 CATEGORIES=	games
-MASTER_SITES=	SF/lgames/${PORTNAME}/1.0
+MASTER_SITES=	SF/lgames/${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Destroy as many targets as possible
 
-USE_GMAKE=	yes
 USE_SDL=	sdl mixer
+USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--with-profile-path=/var/games
 
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include"
+CPPFLAGS=	-I${LOCALBASE}/include
+LDFLAGS=	-L${LOCALBASE}/lib
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|applications|applnk/Applications|g' \
-		${WRKSRC}/Makefile.in
-
-post-install:
-	${CHMOD} 0755 ${PREFIX}/bin/${PORTNAME}
+	@${REINPLACE_CMD} -e 's|/games/|/|g' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|icons|pixmaps|g' ${WRKSRC}/Makefile.in
 
 .include <bsd.port.mk>
