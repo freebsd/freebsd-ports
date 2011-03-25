@@ -7,28 +7,36 @@
 #
 
 PORTNAME=	netspoc
-PORTVERSION=	3.0
+PORTVERSION=	3.2
 CATEGORIES=	net-mgmt
-MASTER_SITES=	http://download.berlios.de/netspoc/
+MASTER_SITES=	BERLIOS
+DISTNAME=	Netspoc-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Network Security Policy Compiler
 
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 USE_PERL5=	yes
-NO_BUILD=	yes
+PERL_CONFIGURE=	yes
 
-MAN1=		netspoc.1
-DOCS=		CSPM.html NEWS.html index.html language.html netspoc.html
+MAN1=		netspoc.1 print-group.1
+MAN3=		Netspoc.3
+PORTDOCS=	*
+PORTEXAMPLES=	*
 
-do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/netspoc ${PREFIX}/bin
-	${INSTALL_SCRIPT} ${WRKSRC}/Netspoc.pm ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/netspoc.man ${MANPREFIX}/man/man1/netspoc.1
+post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-.for f in ${DOCS}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
-.endfor
+	${INSTALL_DATA} ${WRKSRC}/ChangeLog ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/index.shtml ${DOCSDIR}
+	@${MKDIR} ${DOCSDIR}/doc
+	@(cd ${WRKSRC}/doc && ${COPYTREE_SHARE} . ${DOCSDIR}/doc)
+.endif
+.if !defined(NOPORTEXAMPLES)
+	@${MKDIR} ${EXAMPLESDIR}
+	@(cd ${WRKSRC}/examples && ${COPYTREE_SHARE} . ${EXAMPLESDIR})
 .endif
 
 .include <bsd.port.mk>

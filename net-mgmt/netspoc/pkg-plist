@@ -1,9 +1,6 @@
-@comment $FreeBSD$
+bin/cut-netspoc
 bin/netspoc
-bin/Netspoc.pm
-%%PORTDOCS%%%%DOCSDIR%%/CSPM.html
-%%PORTDOCS%%%%DOCSDIR%%/index.html
-%%PORTDOCS%%%%DOCSDIR%%/language.html
-%%PORTDOCS%%%%DOCSDIR%%/netspoc.html
-%%PORTDOCS%%%%DOCSDIR%%/NEWS.html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
+bin/print-group
+%%SITE_PERL%%/Netspoc.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Netspoc/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Netspoc
