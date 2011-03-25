@@ -1,18 +1,22 @@
 share/apps/koffice/autocorrect/nb.xml
 share/locale/nb/LC_MESSAGES/ArtisticTextShape.mo
 share/locale/nb/LC_MESSAGES/AutocorrectPlugin.mo
+share/locale/nb/LC_MESSAGES/BarcodePlugin.mo
 share/locale/nb/LC_MESSAGES/CalendarTool.mo
 share/locale/nb/LC_MESSAGES/ChangecasePlugin.mo
+share/locale/nb/LC_MESSAGES/ChartPlugin.mo
 share/locale/nb/LC_MESSAGES/ChartShape.mo
+share/locale/nb/LC_MESSAGES/CommentShape.mo
 share/locale/nb/LC_MESSAGES/DivineProportion.mo
 share/locale/nb/LC_MESSAGES/FormulaShape.mo
-share/locale/nb/LC_MESSAGES/FreOffice.mo
 share/locale/nb/LC_MESSAGES/KarbonTools.mo
 share/locale/nb/LC_MESSAGES/KexiRelationDesignShapePlugin.mo
 share/locale/nb/LC_MESSAGES/MusicShape.mo
 share/locale/nb/LC_MESSAGES/ParagraphTool.mo
 share/locale/nb/LC_MESSAGES/PathShapes.mo
 share/locale/nb/LC_MESSAGES/PictureShape.mo
+share/locale/nb/LC_MESSAGES/PluginShape.mo
+share/locale/nb/LC_MESSAGES/ShapePlugin.mo
 share/locale/nb/LC_MESSAGES/SpellCheckPlugin.mo
 share/locale/nb/LC_MESSAGES/TableShape.mo
 share/locale/nb/LC_MESSAGES/TextShape.mo
@@ -47,5 +51,5 @@ share/locale/nb/LC_MESSAGES/kspreadsolver.mo
 share/locale/nb/LC_MESSAGES/kthesaurus.mo
 share/locale/nb/LC_MESSAGES/kword.mo
 share/locale/nb/LC_MESSAGES/thesaurus_tool.mo
-@dirrmtry share/apps/koffice/autocorrect
-@dirrmtry share/apps/koffice
+@dirrm share/apps/koffice/autocorrect
+@dirrm share/apps/koffice

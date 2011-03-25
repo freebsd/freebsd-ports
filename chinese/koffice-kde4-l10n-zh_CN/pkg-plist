@@ -11,6 +11,8 @@ share/locale/zh_CN/LC_MESSAGES/MusicShape.mo
 share/locale/zh_CN/LC_MESSAGES/ParagraphTool.mo
 share/locale/zh_CN/LC_MESSAGES/PathShapes.mo
 share/locale/zh_CN/LC_MESSAGES/PictureShape.mo
+share/locale/zh_CN/LC_MESSAGES/PluginShape.mo
+share/locale/zh_CN/LC_MESSAGES/ShapePlugin.mo
 share/locale/zh_CN/LC_MESSAGES/SpellCheckPlugin.mo
 share/locale/zh_CN/LC_MESSAGES/TableShape.mo
 share/locale/zh_CN/LC_MESSAGES/TextShape.mo
@@ -32,6 +34,7 @@ share/locale/zh_CN/LC_MESSAGES/koproperty.mo
 share/locale/zh_CN/LC_MESSAGES/kounavail.mo
 share/locale/zh_CN/LC_MESSAGES/kplato.mo
 share/locale/zh_CN/LC_MESSAGES/kplatolibs.mo
+share/locale/zh_CN/LC_MESSAGES/kplatorcpsplugin.mo
 share/locale/zh_CN/LC_MESSAGES/kplatowork.mo
 share/locale/zh_CN/LC_MESSAGES/kpresenter.mo
 share/locale/zh_CN/LC_MESSAGES/krita.mo

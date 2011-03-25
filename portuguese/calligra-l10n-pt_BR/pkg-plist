@@ -29,6 +29,13 @@ share/doc/HTML/pt_BR/kexi/querydesigning.docbook
 share/doc/HTML/pt_BR/kformula/common
 share/doc/HTML/pt_BR/kformula/index.cache.bz2
 share/doc/HTML/pt_BR/kformula/index.docbook
+share/doc/HTML/pt_BR/kivio/common
+share/doc/HTML/pt_BR/kivio/credits.docbook
+share/doc/HTML/pt_BR/kivio/index.cache.bz2
+share/doc/HTML/pt_BR/kivio/index.docbook
+share/doc/HTML/pt_BR/kivio/introduction.docbook
+share/doc/HTML/pt_BR/kivio/usage.docbook
+share/doc/HTML/pt_BR/kivio/working.docbook
 share/doc/HTML/pt_BR/koffice/common
 share/doc/HTML/pt_BR/koffice/index.cache.bz2
 share/doc/HTML/pt_BR/koffice/index.docbook
@@ -66,18 +73,22 @@ share/doc/HTML/pt_BR/thesaurus/index.cache.bz2
 share/doc/HTML/pt_BR/thesaurus/index.docbook
 share/locale/pt_BR/LC_MESSAGES/ArtisticTextShape.mo
 share/locale/pt_BR/LC_MESSAGES/AutocorrectPlugin.mo
+share/locale/pt_BR/LC_MESSAGES/BarcodePlugin.mo
 share/locale/pt_BR/LC_MESSAGES/CalendarTool.mo
 share/locale/pt_BR/LC_MESSAGES/ChangecasePlugin.mo
+share/locale/pt_BR/LC_MESSAGES/ChartPlugin.mo
 share/locale/pt_BR/LC_MESSAGES/ChartShape.mo
+share/locale/pt_BR/LC_MESSAGES/CommentShape.mo
 share/locale/pt_BR/LC_MESSAGES/DivineProportion.mo
 share/locale/pt_BR/LC_MESSAGES/FormulaShape.mo
-share/locale/pt_BR/LC_MESSAGES/FreOffice.mo
 share/locale/pt_BR/LC_MESSAGES/KarbonTools.mo
 share/locale/pt_BR/LC_MESSAGES/KexiRelationDesignShapePlugin.mo
 share/locale/pt_BR/LC_MESSAGES/MusicShape.mo
 share/locale/pt_BR/LC_MESSAGES/ParagraphTool.mo
 share/locale/pt_BR/LC_MESSAGES/PathShapes.mo
 share/locale/pt_BR/LC_MESSAGES/PictureShape.mo
+share/locale/pt_BR/LC_MESSAGES/PluginShape.mo
+share/locale/pt_BR/LC_MESSAGES/ShapePlugin.mo
 share/locale/pt_BR/LC_MESSAGES/SpellCheckPlugin.mo
 share/locale/pt_BR/LC_MESSAGES/TableShape.mo
 share/locale/pt_BR/LC_MESSAGES/TextShape.mo
@@ -116,6 +127,7 @@ share/locale/pt_BR/LC_MESSAGES/thesaurus_tool.mo
 @dirrm share/doc/HTML/pt_BR/kspread
 @dirrm share/doc/HTML/pt_BR/kpresenter
 @dirrm share/doc/HTML/pt_BR/koffice
+@dirrm share/doc/HTML/pt_BR/kivio
 @dirrm share/doc/HTML/pt_BR/kformula
 @dirrm share/doc/HTML/pt_BR/kexi
 @dirrm share/doc/HTML/pt_BR/kchart

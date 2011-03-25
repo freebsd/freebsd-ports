@@ -19,12 +19,13 @@ NO_BUILD=	yes
 # NO_INSTALL=	yes
 USE_KDE4=	kdeprefix
 
-KOFFICE2_LANG_ALL=	ca ca@valencia da de el en_GB es et fr gl it ja kk \
+KOFFICE2_LANG_ALL=	ca ca@valencia da de el en_GB es et fr gl hu it ja kk \
 			nb nds nl pl pt pt_BR ru sv tr uk wa zh_CN zh_TW
 
 ca@valencia_PORT=	editors/koffice-kde4-l10n-ca_valencia
 de_PORT=	german/koffice-kde4-l10n
 fr_PORT=	french/koffice-kde4-l10n
+hu_PORT=	hungarian/koffice-kde4-l10n
 ja_PORT=	japanese/koffice-kde4-l10n
 pl_PORT=	polish/koffice-kde4-l10n
 pt_BR_PORT=	portuguese/koffice-kde4-l10n-pt_BR
