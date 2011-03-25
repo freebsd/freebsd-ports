@@ -15,7 +15,7 @@ echo "%%MTREE%%@cwd %%LOCALBASE%%
 echo "%%MTREE%%%%LDCONFIG_DIR%%
 %%MTREE%%%%LDCONFIG32_DIR%%
 %%MTREE%%libdata/pkgconfig
-%%MTREE%%share/PolicyKit/policy" >> ../pkg-plist
+%%MTREE%%share/polkit-1/actions" >> ../pkg-plist
 
 (
 grep -v "^@comment" dirlist | sed -e "s,^,@exec mkdir -p %D/," ;

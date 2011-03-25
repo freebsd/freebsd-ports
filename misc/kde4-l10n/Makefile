@@ -21,7 +21,7 @@ USE_KDE4=	kdeprefix
 
 KDE4_LANG_ALL=	ar bg ca ca@valencia cs da de el en_GB es et eu fi fr \
 		fy ga gl gu he hi hr hu ia id is it ja kk km kn ko lt lv \
-		ml nb nds nl nn pa pl pt pt_BR ro ru \
+		mai ml nb nds nl nn pa pl pt pt_BR ro ru \
 		sk sl sr sv th tr uk wa zh_CN zh_TW
 
 ar_PORT=	arabic/kde4-l10n

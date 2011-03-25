@@ -66,8 +66,6 @@ lib/kde4/kcm_kontactsummary.so
 lib/kde4/kcm_korganizer.so
 lib/kde4/kcm_ktimetracker.so
 lib/kde4/kcm_ldap.so
-lib/kde4/kcm_planner.so
-lib/kde4/kcm_sdsummary.so
 lib/kde4/kcm_todosummary.so
 lib/kde4/kio_groupwise.so
 lib/kde4/kjotspart.so
@@ -88,8 +86,6 @@ lib/kde4/kontact_knodeplugin.so
 lib/kde4/kontact_knotesplugin.so
 lib/kde4/kontact_korganizerplugin.so
 lib/kde4/kontact_ktimetrackerplugin.so
-lib/kde4/kontact_plannerplugin.so
-lib/kde4/kontact_specialdatesplugin.so
 lib/kde4/kontact_summaryplugin.so
 lib/kde4/kontact_todoplugin.so
 lib/kde4/korg_datenums.so
@@ -404,8 +400,6 @@ share/apps/kontact/ksettingsdialog/knode.setdlg
 share/apps/kontact/ksettingsdialog/knotes.setdlg
 share/apps/kontact/ksettingsdialog/korganizer.setdlg
 share/apps/kontact/ksettingsdialog/ktimetracker.setdlg
-share/apps/kontact/ksettingsdialog/planner.setdlg
-share/apps/kontact/ksettingsdialog/specialdates.setdlg
 share/apps/kontact/ksettingsdialog/summary.setdlg
 share/apps/kontactsummary/kontactsummary_part.rc
 share/apps/korgac/icons/hicolor/22x22/actions/korgac.png
@@ -859,8 +853,6 @@ share/kde4/services/kcmapptsummary.desktop
 share/kde4/services/kcmkmailsummary.desktop
 share/kde4/services/kcmkontactsummary.desktop
 share/kde4/services/kcmldap.desktop
-share/kde4/services/kcmplanner.desktop
-share/kde4/services/kcmsdsummary.desktop
 share/kde4/services/kcmtodosummary.desktop
 share/kde4/services/kjots_config_misc.desktop
 share/kde4/services/kjotspart.desktop
@@ -900,8 +892,6 @@ share/kde4/services/kontact/knodeplugin.desktop
 share/kde4/services/kontact/knotesplugin.desktop
 share/kde4/services/kontact/korganizerplugin.desktop
 share/kde4/services/kontact/ktimetracker_plugin.desktop
-share/kde4/services/kontact/plannerplugin.desktop
-share/kde4/services/kontact/specialdatesplugin.desktop
 share/kde4/services/kontact/summaryplugin.desktop
 share/kde4/services/kontact/todoplugin.desktop
 share/kde4/services/kontactconfig.desktop

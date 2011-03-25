@@ -375,6 +375,7 @@
     SUBDIR += mtx
     SUBDIR += nagios-base-logos
     SUBDIR += najitool
+    SUBDIR += nepomukcontroller
     SUBDIR += newer
     SUBDIR += nserver
     SUBDIR += nsf

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	kdehier4
-PORTVERSION=	1.0.6
+PORTVERSION=	1.0.7
 CATEGORIES=	misc kde
 MASTER_SITES=	# none
 DISTFILES=	# none
@@ -47,7 +47,7 @@ do-install:
 	${LN} -sf ${LOCALBASE}/${LDCONFIG_DIR} ${KDE4_PREFIX}/libdata/
 	${LN} -sf ${LOCALBASE}/${LDCONFIG32_DIR} ${KDE4_PREFIX}/libdata/
 	${LN} -sf ${LOCALBASE}/libdata/pkgconfig ${KDE4_PREFIX}/libdata/
-	${LN} -sf ${LOCALBASE}/share/PolicyKit/policy ${KDE4_PREFIX}/share/PolicyKit/
+	${LN} -sf ${LOCALBASE}/share/polkit-1/actions ${KDE4_PREFIX}/share/polkit-1/
 	${ECHO_CMD} ${KDE4_PREFIX}/lib > \
 		${LOCALBASE}/${LDCONFIG_DIR}/kdehier4
 	${MKDIR} ${LOCALBASE}/etc/dbus-1

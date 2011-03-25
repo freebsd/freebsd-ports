@@ -18,3 +18,21 @@
  
  macro_optional_find_package(FFmpeg)
  macro_log_feature(FFMPEG_FOUND "FFmpeg" "FFmpeg libraries" "FFmpeg" FALSE "http://www.ffmpeg.org" "FFmpeg required for FFMpegVideoPreview backend")
+--- ./kmix/CMakeLists.txt.orig  2011-02-13 14:28:03.000000000 -0200
++++ ./kmix/CMakeLists.txt       2011-02-13 14:28:01.000000000 -0200
+@@ -1,13 +1,12 @@
+ project(kmix)
+ 
+ # search packages used by KDE
+-find_package(Alsa)
+-
+ set(PULSEAUDIO_MINIMUM_VERSION "0.9.12")
+ macro_optional_find_package(PulseAudio)
+ macro_log_feature(PULSEAUDIO_FOUND "PulseAudio" "PulseAudio Audio Server" "http://www.pulseaudio.org/" FALSE "0.9.12" "libpulse is needed to let KMix control PulseAudio")
+-alsa_configure_file(${CMAKE_BINARY_DIR}/config-alsa.h)
+ 
++find_file(CONFIG_ALSA_H_CMAKE config-alsa.h.cmake ${CMAKE_MODULE_PATH})
++configure_file(${CONFIG_ALSA_H_CMAKE} ${CMAKE_BINARY_DIR}/config-alsa.h)
+ 
+ add_definitions (${QT_DEFINITIONS} ${QT_QTDBUS_DEFINITIONS} ${KDE4_DEFINITIONS} )
+ include_directories (${CMAKE_SOURCE_DIR} ${CMAKE_BINARY_DIR} ${KDE4_INCLUDES})

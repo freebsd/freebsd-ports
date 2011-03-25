@@ -18,6 +18,7 @@ lib/kde4/dragonpart.so
 lib/kde4/ffmpegthumbs.so
 lib/kde4/kcm_audiocd.so
 lib/kde4/kcm_cddb.so
+lib/kde4/kded_kmixd.so
 lib/kde4/kio_audiocd.so
 lib/kde4/libaudiocd_encoder_flac.so
 lib/kde4/libaudiocd_encoder_lame.so
@@ -69,7 +70,10 @@ share/apps/kmix/pics/mixer-pcm-default.png
 share/apps/kmix/pics/mixer-pcm.png
 share/apps/kmix/pics/mixer-surround.png
 share/apps/kmix/pics/mixer-video.png
+share/apps/kmix/profiles/ALSA.TerraTec_DMX6Fire.1.default.xml
+share/apps/kmix/profiles/ALSA.capture.xml
 share/apps/kmix/profiles/ALSA.default.xml
+share/apps/kmix/profiles/ALSA.playback.xml
 share/apps/kmix/profiles/OSS.default.xml
 share/apps/konqsidebartng/virtual_folders/services/audiocd.desktop
 share/apps/kscd/skin/Chrome.svg
@@ -163,6 +167,7 @@ share/kde4/services/audiocd.desktop
 share/kde4/services/audiocd.protocol
 share/kde4/services/dragonplayer_part.desktop
 share/kde4/services/ffmpegthumbs.desktop
+share/kde4/services/kded/kmixd.desktop
 share/kde4/services/kmixctrl_restore.desktop
 share/kde4/services/libkcddb.desktop
 share/kde4/services/videopreview.desktop

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	shared-mime-info
-PORTVERSION=	1.0
+PORTVERSION=	1.1
 CATEGORIES=	misc kde
 MASTER_SITES=	# none
 PKGNAMEPREFIX=	kde4-
@@ -14,11 +14,11 @@ DISTNAME=	# none
 EXTRACT_SUFX=	# none
 
 MAINTAINER=	kde@FreeBSD.org
-COMMENT=	Handles shared MIME database under $${KDE_PREFIX}
+COMMENT=	Handles shared MIME database under $${KDE4_PREFIX}
 
 RUN_DEPENDS=	update-mime-database:${PORTSDIR}/misc/shared-mime-info
 
-USE_KDE4=	kdeprefix
+USE_KDE4=	kdeprefix kdehier
 
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes

@@ -43,6 +43,7 @@ lib/kde4/kcm_useraccount.so
 lib/kde4/kded_favicons.so
 lib/kde4/kded_konqy_preloader.so
 lib/kde4/khtmlkttsdplugin.so
+lib/kde4/kio_filenamesearch.so
 lib/kde4/konq_aboutpage.so
 lib/kde4/konq_shellcmdplugin.so
 lib/kde4/konq_sidebar.so
@@ -92,7 +93,6 @@ share/applications/kde4/konqbrowser.desktop
 share/applications/kde4/konquerorsu.desktop
 share/applications/kde4/konsole.desktop
 share/applications/kde4/kwrite.desktop
-share/apps/dolphin/dolphinsearchcommands.desktop
 share/apps/dolphin/dolphinui.rc
 share/apps/dolphinpart/dolphinpart.rc
 share/apps/dolphinpart/kpartplugins/kshellcmdplugin.desktop
@@ -240,6 +240,8 @@ share/doc/HTML/en/konqueror/dirtree.png
 share/doc/HTML/en/konqueror/dragdrop.png
 share/doc/HTML/en/konqueror/faq.docbook
 share/doc/HTML/en/konqueror/filemanager.docbook
+share/doc/HTML/en/konqueror/format-font-size-less.png
+share/doc/HTML/en/konqueror/format-font-size-more.png
 share/doc/HTML/en/konqueror/index.cache.bz2
 share/doc/HTML/en/konqueror/index.docbook
 share/doc/HTML/en/konqueror/introduction.docbook
@@ -253,6 +255,7 @@ share/doc/HTML/en/konqueror/save-settings.docbook
 share/doc/HTML/en/konqueror/shortcut1.png
 share/doc/HTML/en/konqueror/shortcut2.png
 share/doc/HTML/en/konqueror/sidebar.docbook
+share/doc/HTML/en/konqueror/viewproperties-dialog.png
 share/doc/HTML/en/konsole/common
 share/doc/HTML/en/konsole/index.cache.bz2
 share/doc/HTML/en/konsole/index.docbook
@@ -278,6 +281,7 @@ share/kde4/services/cookies.desktop
 share/kde4/services/dolphinpart.desktop
 share/kde4/services/ebrowsing.desktop
 share/kde4/services/filebehavior.desktop
+share/kde4/services/filenamesearch.protocol
 share/kde4/services/kcm_useraccount.desktop
 share/kde4/services/kcmdolphingeneral.desktop
 share/kde4/services/kcmdolphinnavigation.desktop

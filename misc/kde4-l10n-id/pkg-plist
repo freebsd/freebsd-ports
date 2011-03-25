@@ -25,6 +25,7 @@ share/locale/id/LC_MESSAGES/kcm_krfb.mo
 share/locale/id/LC_MESSAGES/kcm_kwindesktop.mo
 share/locale/id/LC_MESSAGES/kcm_kwintabbox.mo
 share/locale/id/LC_MESSAGES/kcm_memory.mo
+share/locale/id/LC_MESSAGES/kcm_nepomuk.mo
 share/locale/id/LC_MESSAGES/kcm_pci.mo
 share/locale/id/LC_MESSAGES/kcm_phonon.mo
 share/locale/id/LC_MESSAGES/kcm_phononxine.mo
@@ -172,7 +173,11 @@ share/locale/id/LC_MESSAGES/liboktetacore.mo
 share/locale/id/LC_MESSAGES/libphonon.mo
 share/locale/id/LC_MESSAGES/libplasmaclock.mo
 share/locale/id/LC_MESSAGES/libtaskmanager.mo
-share/locale/id/LC_MESSAGES/nepomuk.mo
+share/locale/id/LC_MESSAGES/nepomukqueryservice.mo
+share/locale/id/LC_MESSAGES/nepomukserver.mo
+share/locale/id/LC_MESSAGES/nepomukservicestub.mo
+share/locale/id/LC_MESSAGES/nepomukstorage.mo
+share/locale/id/LC_MESSAGES/nepomukstrigiservice.mo
 share/locale/id/LC_MESSAGES/nsplugin.mo
 share/locale/id/LC_MESSAGES/okteta.mo
 share/locale/id/LC_MESSAGES/oktetapart.mo
@@ -211,7 +216,6 @@ share/locale/id/LC_MESSAGES/plasma_applet_trash.mo
 share/locale/id/LC_MESSAGES/plasma_applet_webbrowser.mo
 share/locale/id/LC_MESSAGES/plasma_applet_windowlist.mo
 share/locale/id/LC_MESSAGES/plasma_appletscriptengine_dashboard.mo
-share/locale/id/LC_MESSAGES/plasma_appletscriptengine_qedjescripts.mo
 share/locale/id/LC_MESSAGES/plasma_containmentactions_contextmenu.mo
 share/locale/id/LC_MESSAGES/plasma_containmentactions_switchactivity.mo
 share/locale/id/LC_MESSAGES/plasma_containmentactions_switchdesktop.mo
@@ -250,17 +254,13 @@ share/locale/id/LC_MESSAGES/plasmagenericshell.mo
 share/locale/id/LC_MESSAGES/plasmapkg.mo
 share/locale/id/LC_MESSAGES/plasmawallpaperviewer.mo
 share/locale/id/LC_MESSAGES/plasmoidviewer.mo
-share/locale/id/LC_MESSAGES/policykit-kde.mo
-share/locale/id/LC_MESSAGES/polkit-kde-authorization.mo
 share/locale/id/LC_MESSAGES/powerdevil.mo
 share/locale/id/LC_MESSAGES/printer-applet.mo
 share/locale/id/LC_MESSAGES/processcore.mo
 share/locale/id/LC_MESSAGES/processui.mo
 share/locale/id/LC_MESSAGES/randrmonitor.mo
-share/locale/id/LC_MESSAGES/solid-bluetooth.mo
 share/locale/id/LC_MESSAGES/solid-hardware.mo
 share/locale/id/LC_MESSAGES/solid-network.mo
-share/locale/id/LC_MESSAGES/solid-powermanagement.mo
 share/locale/id/LC_MESSAGES/solidcontrol.mo
 share/locale/id/LC_MESSAGES/soliduiserver.mo
 share/locale/id/LC_MESSAGES/superkaramba.mo

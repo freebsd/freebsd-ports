@@ -24,9 +24,10 @@ LIB_DEPENDS=	IlmImf.6:${PORTSDIR}/graphics/OpenEXR \
 		ssh.4:${PORTSDIR}/security/libssh \
 		attica.0:${PORTSDIR}/x11-toolkits/attica
 #explicitly depend on libssh to avoid interference with ssh.4 from compat7x
-BUILD_DEPENDS=	${LOCALBASE}/lib/libssh.so:${PORTSDIR}/security/libssh \
-		${LOCALBASE}/share/xml/docbook/4.2/docbookx.dtd:${PORTSDIR}/textproc/docbook-xml
+BUILD_DEPENDS=	${LOCALBASE}/lib/libssh.so:${PORTSDIR}/security/libssh
 RUN_DEPENDS=	cagibid:${PORTSDIR}/net/cagibi
+
+CONFLICTS=	kdebase-workspace-4.5.[0-5]
 
 USE_KDE4=	kdelibs kdeprefix kdehier automoc4
 KDE4_BUILDENV=	yes
@@ -42,7 +43,7 @@ MAN8=		nepomukserver.8 nepomukservicestub.8
 
 SUB_FILES=	nepomuk-env.sh
 
-OPTIONS=	PULSEAUDIO "Enable playback via PulseAudio sound server" off \
+OPTIONS=	SPEAKER "Speaker setup GUI" off \
 		VIRTUOSO "Install Virtuoso server (required for Nepomuk)" off
 
 # Explicitly disable alsa, see for details:
@@ -55,9 +56,10 @@ CMAKE_ARGS+=	-DWITH_ALSA:BOOL=OFF
 LIB_DEPENDS+=	lzma.5:${PORTSDIR}/archivers/xz
 .endif
 
-.if defined(WITH_PULSEAUDIO)
+.if defined(WITH_SPEAKER)
 CMAKE_ARGS+=	-DWITH_PulseAudio:BOOL=ON
-LIB_DEPENDS+=	pulse.0:${PORTSDIR}/audio/pulseaudio
+LIB_DEPENDS+=	pulse.0:${PORTSDIR}/audio/pulseaudio \
+		canberra.0:${PORTSDIR}/audio/libcanberra
 .else
 CMAKE_ARGS+=	-DWITH_PulseAudio:BOOL=OFF
 .endif

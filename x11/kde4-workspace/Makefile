@@ -8,28 +8,27 @@
 
 PORTNAME=	kdebase-workspace
 PORTVERSION=	${KDE4_VERSION}
-PORTREVISION=	1
 CATEGORIES=	x11 kde
-MASTER_SITES=	${MASTER_SITE_KDE} \
-		${MASTER_SITE_LOCAL:S/$/:stripes/} \
-		http://people.FreeBSD.org/~avilla/distfiles/:stripes
-MASTER_SITE_SUBDIR=	${KDE4_BRANCH}/${PORTVERSION}/src \
-			avilla:stripes
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
-		stripes-freebsd-1.0${EXTRACT_SUFX}:stripes
+MASTER_SITES=	${MASTER_SITE_KDE_kde} \
+		${MASTER_SITE_LOCAL} \
+		http://people.FreeBSD.org/~avilla/distfiles/
+MASTER_SITE_SUBDIR=	${KDE4_BRANCH}/${PORTVERSION}/src/:kde \
+			avilla/
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:kde \
+		stripes-freebsd-1.0${EXTRACT_SUFX}
 DIST_SUBDIR=	KDE
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Basic applications for the KDE system
 
-BUILD_DEPENDS=	${LOCALBASE}/share/xml/docbook/4.2/docbookx.dtd:${PORTSDIR}/textproc/docbook-xml
 LIB_DEPENDS=	qimageblitz.4:${PORTSDIR}/x11/qimageblitz\
 		dbus-1.3:${PORTSDIR}/devel/dbus \
+		pci.3:${PORTSDIR}/devel/libpci \
 		hal.1:${PORTSDIR}/sysutils/hal \
-		polkit-qt-core.0:${PORTSDIR}/sysutils/policykit-qt \
 		xklavier.12:${PORTSDIR}/x11/libxklavier \
 		gps.19:${PORTSDIR}/astro/gpsd \
-		qalculate.5:${PORTSDIR}/math/libqalculate
+		qalculate.5:${PORTSDIR}/math/libqalculate \
+		dmtx.0:${PORTSDIR}/graphics/libdmtx
 RUN_DEPENDS=	${KDE4_PREFIX}/env/xdg-env.sh:${PORTSDIR}/misc/kde4-xdg-env \
 		${LOCALBASE}/share/icons/hicolor/index.theme:${PORTSDIR}/misc/hicolor-icon-theme \
 		xprop:${PORTSDIR}/x11/xprop \
@@ -38,7 +37,10 @@ RUN_DEPENDS=	${KDE4_PREFIX}/env/xdg-env.sh:${PORTSDIR}/misc/kde4-xdg-env \
 		xrdb:${PORTSDIR}/x11/xrdb \
 		mkfontdir:${PORTSDIR}/x11-fonts/mkfontdir \
 		xset:${PORTSDIR}/x11/xset \
-		setxkbmap:${PORTSDIR}/x11/setxkbmap
+		setxkbmap:${PORTSDIR}/x11/setxkbmap \
+		${KDE4_PREFIX}/bin/ksysguardd:${PORTSDIR}/sysutils/ksysguardd \
+		${KDE4_PREFIX}/lib/kde4/libexec/polkit-kde-authentication-agent-1:${PORTSDIR}/sysutils/polkit-kde \
+		${KDE4_PREFIX}/bin/nepomukcontroller:${PORTSDIR}/misc/nepomukcontroller
 
 SUB_FILES=	kdm layout.js
 USE_RC_SUBR=	kdm4
@@ -54,11 +56,7 @@ USE_GETTEXT=	yes
 USE_ICONV=	yes
 MAKE_JOBS_SAFE=	yes
 
-MAN1=		plasmaengineexplorer.1 \
-		plasmapkg.1 \
-		plasmoidviewer.1
-
-CONFLICTS=	kde4-windeco-aurorae-* kdebase-runtime-4.4.*
+MAN1=		plasmaengineexplorer.1 plasmapkg.1 plasmoidviewer.1
 
 CMAKE_ARGS+=	-DCMAKE_REQUIRED_FLAGS:STRING="-L${LOCALBASE}/lib" \
 		-DWITH_BlueZ:BOOL=OFF \
@@ -104,21 +102,17 @@ post-patch:
 		${PATCH_WRKSRC}/kdm/backend/client.c \
 		${PATCH_WRKSRC}/kdm/kfrontend/genkdmconf.c \
 		${PATCH_WRKSRC}/CMakeLists.txt
-	${CP} ${FILESDIR}/uptime.* ${WRKSRC}/ksysguard/ksysguardd/FreeBSD/
+	@${REINPLACE_CMD} -e 's,resolv,c,g' \
+		${PATCH_WRKSRC}/cmake/modules/FindPCIUTILS.cmake
 
 pre-configure:
+	${REINPLACE_CMD} -e '/ksysguardd/ d' \
+		${PATCH_WRKSRC}/ksysguard/CMakeLists.txt \
+		${PATCH_WRKSRC}/ksysguard/example/CMakeLists.txt
 	${REINPLACE_CMD} -e 's|<qhash.h>|<QHash>|' \
 		${PATCH_WRKSRC}/kwin/effects/thumbnailaside/thumbnailaside.h
-.for item in b2/b2client.cpp kwmtheme/kwmthemeclient.cpp \
-		laptop/laptopclient.cpp modernsystem/modernsys.cpp \
-		redmond/redmond.cpp
-	${REINPLACE_CMD} -e 's|<qdrawutil.h>|<QtGui/qdrawutil.h>|' \
-		${PATCH_WRKSRC}/kwin/clients/${item}
-.endfor
 
 post-install:
-	${CHGRP} kmem ${PREFIX}/bin/ksysguardd && \
-		${CHMOD} g+s ${PREFIX}/bin/ksysguardd
 	${LN} -sf ${PREFIX}/bin/startkde ${PREFIX}/bin/startkde4
 	${MV} ${PREFIX}/bin/kdm ${PREFIX}/bin/kdm-bin
 	${MV} ${PREFIX}/lib/kde4/libexec/kdm_config ${PREFIX}/lib/kde4/libexec/kdm-bin_config

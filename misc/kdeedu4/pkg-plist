@@ -2,6 +2,7 @@ bin/blinken
 bin/calgebra
 bin/cantor
 bin/kalgebra
+bin/kalgebramobile
 bin/kalzium
 bin/kanagram
 bin/kbruch
@@ -47,6 +48,7 @@ include/libkdeedu/libkdeedu_ui_export.h
 include/libkdeedu/libkeduvocdocument_export.h
 include/libkdeedu/moleculeparser.h
 include/libkdeedu/parser.h
+include/libkdeedu/psetables.h
 include/libkdeedu/sharedkvtmlfiles.h
 include/libkdeedu/spectrum.h
 include/libkdeedu/spectrumparser.h
@@ -59,29 +61,39 @@ include/libkiten/EntryList.h
 include/libkiten/HistoryPtrList.h
 include/libkiten/kromajiedit.h
 include/libkiten/libkitenexport.h
+include/rocs/Data.h
+include/rocs/DataType.h
 include/rocs/DynamicPropertiesList.h
-include/rocs/edge.h
-include/rocs/graph.h
+include/rocs/FilePluginInterface.h
+include/rocs/NodeItem.h
+include/rocs/OrientedEdgeItem.h
+include/rocs/PluginManager.h
+include/rocs/Pointer.h
+include/rocs/ToolsPluginInterface.h
 include/rocs/graphDocument.h
-include/rocs/graphGroups.h
 include/rocs/krossBackend.h
-include/rocs/node.h
 include/rocs/qtScriptBackend.h
+include/rocs/rocs_typedefs.h
+include/rocs/rocslib_export.h
 include/rocs/threadDocument.h
+lib/kde4/cantor_advancedplotassistant.so
 lib/kde4/cantor_creatematrixassistant.so
 lib/kde4/cantor_differentiateassistant.so
 lib/kde4/cantor_eigenvaluesassistant.so
 lib/kde4/cantor_eigenvectorsassistant.so
+lib/kde4/cantor_helppanelplugin.so
 lib/kde4/cantor_integrateassistant.so
 lib/kde4/cantor_invertmatrixassistant.so
 lib/kde4/cantor_kalgebrabackend.so
 lib/kde4/cantor_maximabackend.so
 lib/kde4/cantor_nullbackend.so
+lib/kde4/cantor_octavebackend.so
 lib/kde4/cantor_plot2dassistant.so
 lib/kde4/cantor_plot3dassistant.so
 lib/kde4/cantor_runscriptassistant.so
 lib/kde4/cantor_sagebackend.so
 lib/kde4/cantor_solveassistant.so
+lib/kde4/cantor_variablemanagerplugin.so
 lib/kde4/concentrationCalculator.so
 lib/kde4/gasCalculator.so
 lib/kde4/kigpart.so
@@ -90,9 +102,13 @@ lib/kde4/libkmplotpart.so
 lib/kde4/nuclearCalculator.so
 lib/kde4/plasma_applet_didyouknow.so
 lib/kde4/plasma_applet_kalgebra.so
+lib/kde4/plasma_applet_molmassCalculator.so
 lib/kde4/plasma_applet_parley.so
 lib/kde4/plasma_engine_kalzium.so
 lib/kde4/plasma_engine_parley.so
+lib/kde4/rocs_GraphStructure.so
+lib/kde4/rocs_ListStructure.so
+lib/kde4/rocs_kmlParser.so
 lib/kde4/rocs_makecompleteplugin.so
 lib/kde4/rocs_plaintxt.so
 lib/libSatLib.so
@@ -127,6 +143,7 @@ lib/libscience.so.5.0.1
 share/applications/kde4/blinken.desktop
 share/applications/kde4/cantor.desktop
 share/applications/kde4/kalgebra.desktop
+share/applications/kde4/kalgebramobile.desktop
 share/applications/kde4/kalzium.desktop
 share/applications/kde4/kanagram.desktop
 share/applications/kde4/kbruch.desktop
@@ -151,6 +168,7 @@ share/apps/blinken/sounds/2.wav
 share/apps/blinken/sounds/3.wav
 share/apps/blinken/sounds/4.wav
 share/apps/blinken/sounds/lose.wav
+share/apps/cantor/cantor_advancedplot_assistant.rc
 share/apps/cantor/cantor_create_matrix_assistant.rc
 share/apps/cantor/cantor_differentiate_assistant.rc
 share/apps/cantor/cantor_eigenvalues_assistant.rc
@@ -163,11 +181,24 @@ share/apps/cantor/cantor_runscript_assistant.rc
 share/apps/cantor/cantor_scripteditor.rc
 share/apps/cantor/cantor_shell.rc
 share/apps/cantor/cantor_solve_assistant.rc
+share/apps/cantor/maximabackend/keywords.xml
+share/apps/cantor/octavebackend/cantor_eigenvectors.m
+share/apps/cantor/octavebackend/cantor_plot2d.m
+share/apps/cantor/octavebackend/cantor_plot3d.m
+share/apps/cantor/octavebackend/cantor_print.m
+share/apps/cantor/xslt/latex.xsl
 share/apps/cantorpart/cantor_part.rc
 share/apps/cmake/modules/FindKDEEdu.cmake
-share/apps/cmake/modules/FindMarbleWidget.cmake
 share/apps/desktoptheme/default/widgets/chalkboard.svg
 share/apps/desktoptheme/default/widgets/parley_plasma_card.svg
+share/apps/kalgebra/scripts/console/console.js
+share/apps/kalgebra/scripts/console/kalgebraconsole.desktop
+share/apps/kalgebra/scripts/plot2d/kalgebraplot2d.desktop
+share/apps/kalgebra/scripts/plot2d/plot2d.js
+share/apps/kalgebra/scripts/tables/kalgebratables.desktop
+share/apps/kalgebra/scripts/tables/tables.js
+share/apps/kalgebra/scripts/variables/kalgebravariables.desktop
+share/apps/kalgebra/scripts/variables/variables.js
 share/apps/kalzium/data/bg.jpg
 share/apps/kalzium/data/hazardsymbols/hazard_C.png
 share/apps/kalzium/data/hazardsymbols/hazard_E.png
@@ -524,6 +555,8 @@ share/apps/kgeography/albania_districts.kgm
 share/apps/kgeography/albania_districts.png
 share/apps/kgeography/albania_prefectures.kgm
 share/apps/kgeography/albania_prefectures.png
+share/apps/kgeography/andhrapradesh.kgm
+share/apps/kgeography/andhrapradesh.png
 share/apps/kgeography/andorra.kgm
 share/apps/kgeography/andorra.png
 share/apps/kgeography/angola_provinces.kgm
@@ -532,6 +565,8 @@ share/apps/kgeography/argentina.kgm
 share/apps/kgeography/argentina.png
 share/apps/kgeography/armenia.kgm
 share/apps/kgeography/armenia.png
+share/apps/kgeography/arunachalpradesh.kgm
+share/apps/kgeography/arunachalpradesh.png
 share/apps/kgeography/asia.kgm
 share/apps/kgeography/asia.png
 share/apps/kgeography/australia.kgm
@@ -568,6 +603,8 @@ share/apps/kgeography/caribbean.kgm
 share/apps/kgeography/caribbean.png
 share/apps/kgeography/catalonia_comarques.kgm
 share/apps/kgeography/catalonia_comarques.png
+share/apps/kgeography/chhattisgarh.kgm
+share/apps/kgeography/chhattisgarh.png
 share/apps/kgeography/chile.kgm
 share/apps/kgeography/chile.png
 share/apps/kgeography/china.kgm
@@ -632,6 +669,13 @@ share/apps/kgeography/flags/bahrain.png
 share/apps/kgeography/flags/bangladesh.png
 share/apps/kgeography/flags/barbados.png
 share/apps/kgeography/flags/belarus.png
+share/apps/kgeography/flags/belarus/Brest.png
+share/apps/kgeography/flags/belarus/Homyel.png
+share/apps/kgeography/flags/belarus/Hrodna.png
+share/apps/kgeography/flags/belarus/Mahilyow.png
+share/apps/kgeography/flags/belarus/Minsk.png
+share/apps/kgeography/flags/belarus/Minsk_vobl.png
+share/apps/kgeography/flags/belarus/Vitebsk.png
 share/apps/kgeography/flags/belgium.png
 share/apps/kgeography/flags/belgium/antwerp.png
 share/apps/kgeography/flags/belgium/brussels.png
@@ -1025,6 +1069,88 @@ share/apps/kgeography/flags/puerto_rico.png
 share/apps/kgeography/flags/qatar.png
 share/apps/kgeography/flags/romania.png
 share/apps/kgeography/flags/russia.png
+share/apps/kgeography/flags/russia/adygeya.png
+share/apps/kgeography/flags/russia/altai_krai.png
+share/apps/kgeography/flags/russia/altai_republic.png
+share/apps/kgeography/flags/russia/amur_oblast.png
+share/apps/kgeography/flags/russia/arkhangelsk_oblast.png
+share/apps/kgeography/flags/russia/astrakhan_oblast.png
+share/apps/kgeography/flags/russia/bashkortostan.png
+share/apps/kgeography/flags/russia/belgorod_oblast.png
+share/apps/kgeography/flags/russia/bryansk_oblast.png
+share/apps/kgeography/flags/russia/buryatia.png
+share/apps/kgeography/flags/russia/chechen_republic.png
+share/apps/kgeography/flags/russia/chelyabinsk_oblast.png
+share/apps/kgeography/flags/russia/chukotka.png
+share/apps/kgeography/flags/russia/chuvashia.png
+share/apps/kgeography/flags/russia/dagestan.png
+share/apps/kgeography/flags/russia/ingushetia.png
+share/apps/kgeography/flags/russia/irkutsk_oblast.png
+share/apps/kgeography/flags/russia/ivanovo_oblast.png
+share/apps/kgeography/flags/russia/jewish_autonomous_oblast.png
+share/apps/kgeography/flags/russia/kabardino-balkaria.png
+share/apps/kgeography/flags/russia/kaliningrad_oblast.png
+share/apps/kgeography/flags/russia/kalmykia.png
+share/apps/kgeography/flags/russia/kaluga_oblast.png
+share/apps/kgeography/flags/russia/kamchatka_krai.png
+share/apps/kgeography/flags/russia/karachay-cherkessia.png
+share/apps/kgeography/flags/russia/karelia.png
+share/apps/kgeography/flags/russia/kemerovo_oblast.png
+share/apps/kgeography/flags/russia/khabarovsk_krai.png
+share/apps/kgeography/flags/russia/khakassia.png
+share/apps/kgeography/flags/russia/khantia-mansia.png
+share/apps/kgeography/flags/russia/kirov_oblast.png
+share/apps/kgeography/flags/russia/komi.png
+share/apps/kgeography/flags/russia/kostroma_oblast.png
+share/apps/kgeography/flags/russia/krasnodar_krai.png
+share/apps/kgeography/flags/russia/krasnoyarsk_krai.png
+share/apps/kgeography/flags/russia/kurgan_oblast.png
+share/apps/kgeography/flags/russia/kursk_oblast.png
+share/apps/kgeography/flags/russia/leningrad_oblast.png
+share/apps/kgeography/flags/russia/lipetsk_oblast.png
+share/apps/kgeography/flags/russia/magadan_oblast.png
+share/apps/kgeography/flags/russia/mari_el.png
+share/apps/kgeography/flags/russia/mordovia.png
+share/apps/kgeography/flags/russia/moscow.png
+share/apps/kgeography/flags/russia/moscow_oblast.png
+share/apps/kgeography/flags/russia/murmansk_oblast.png
+share/apps/kgeography/flags/russia/nenets_autonomous_district.png
+share/apps/kgeography/flags/russia/nizhny_novgorod_oblast.png
+share/apps/kgeography/flags/russia/north_ossetia.png
+share/apps/kgeography/flags/russia/novgorod_oblast.png
+share/apps/kgeography/flags/russia/novosibirsk_oblast.png
+share/apps/kgeography/flags/russia/omsk_oblast.png
+share/apps/kgeography/flags/russia/orenburg_oblast.png
+share/apps/kgeography/flags/russia/oryol_oblast.png
+share/apps/kgeography/flags/russia/penza_oblast.png
+share/apps/kgeography/flags/russia/perm_krai.png
+share/apps/kgeography/flags/russia/primorsky_krai.png
+share/apps/kgeography/flags/russia/rostov_oblast.png
+share/apps/kgeography/flags/russia/ryazan_oblast.png
+share/apps/kgeography/flags/russia/saint_petersburg.png
+share/apps/kgeography/flags/russia/sakha.png
+share/apps/kgeography/flags/russia/sakhalin_oblast.png
+share/apps/kgeography/flags/russia/samara_oblast.png
+share/apps/kgeography/flags/russia/saratov_oblast.png
+share/apps/kgeography/flags/russia/smolensk_oblast.png
+share/apps/kgeography/flags/russia/stavropol_krai.png
+share/apps/kgeography/flags/russia/sverdlovsk_oblast.png
+share/apps/kgeography/flags/russia/tambov_oblast.png
+share/apps/kgeography/flags/russia/tatarstan.png
+share/apps/kgeography/flags/russia/tomsk_oblast.png
+share/apps/kgeography/flags/russia/tula_oblast.png
+share/apps/kgeography/flags/russia/tuva.png
+share/apps/kgeography/flags/russia/tver_oblast.png
+share/apps/kgeography/flags/russia/tyumen_oblast.png
+share/apps/kgeography/flags/russia/udmurtia.png
+share/apps/kgeography/flags/russia/ulyanovsk_oblast.png
+share/apps/kgeography/flags/russia/vladimir_oblast.png
+share/apps/kgeography/flags/russia/volgograd_oblast.png
+share/apps/kgeography/flags/russia/vologda_oblast.png
+share/apps/kgeography/flags/russia/voronezh_oblast.png
+share/apps/kgeography/flags/russia/yamal-nenets_autonomous_district.png
+share/apps/kgeography/flags/russia/yaroslavl_oblast.png
+share/apps/kgeography/flags/russia/zabaykalsky_krai.png
 share/apps/kgeography/flags/rwanda.png
 share/apps/kgeography/flags/saint_lucia.png
 share/apps/kgeography/flags/samoa.png
@@ -1202,10 +1328,14 @@ share/apps/kgeography/greece_prefectures.kgm
 share/apps/kgeography/greece_prefectures.png
 share/apps/kgeography/guatemala.kgm
 share/apps/kgeography/guatemala.png
+share/apps/kgeography/gujarat.kgm
+share/apps/kgeography/gujarat.png
 share/apps/kgeography/guyana.kgm
 share/apps/kgeography/guyana.png
 share/apps/kgeography/haiti.kgm
 share/apps/kgeography/haiti.png
+share/apps/kgeography/haryana.kgm
+share/apps/kgeography/haryana.png
 share/apps/kgeography/honduras.kgm
 share/apps/kgeography/honduras.png
 share/apps/kgeography/hungary.kgm
@@ -1376,6 +1506,7 @@ share/apps/khangman/fonts/Dustismo_Roman.ttf
 share/apps/khangman/khangmanui.rc
 share/apps/khangman/pics/desert/khangman_desert.svg
 share/apps/khangman/pics/sea/khangman_sea.svg
+share/apps/khangman/pics/standardthemes.xml
 share/apps/khangman/sounds/EW_Dialogue_Appear.ogg
 share/apps/khangman/sounds/new_game.ogg
 share/apps/kig/builtin-macros/circle_by_center_and_line.kigt
@@ -1805,67 +1936,6 @@ share/apps/klettres/pics/klettres_grownup.png
 share/apps/klettres/pics/klettres_kids.jpeg
 share/apps/klettres/pics/savannah/klettres_savannah.svg
 share/apps/klettres/sk.txt
-share/apps/kmplot/icons/hicolor/16x16/actions/editplots.png
-share/apps/kmplot/icons/hicolor/16x16/actions/functionhelp.png
-share/apps/kmplot/icons/hicolor/16x16/actions/maximum.png
-share/apps/kmplot/icons/hicolor/16x16/actions/minimum.png
-share/apps/kmplot/icons/hicolor/16x16/actions/newdifferential.png
-share/apps/kmplot/icons/hicolor/16x16/actions/newfunction.png
-share/apps/kmplot/icons/hicolor/16x16/actions/newimplicit.png
-share/apps/kmplot/icons/hicolor/16x16/actions/newparametric.png
-share/apps/kmplot/icons/hicolor/16x16/actions/newpolar.png
-share/apps/kmplot/icons/hicolor/16x16/actions/resetview.png
-share/apps/kmplot/icons/hicolor/22x22/actions/editplots.png
-share/apps/kmplot/icons/hicolor/22x22/actions/functionhelp.png
-share/apps/kmplot/icons/hicolor/22x22/actions/maximum.png
-share/apps/kmplot/icons/hicolor/22x22/actions/minimum.png
-share/apps/kmplot/icons/hicolor/22x22/actions/newdifferential.png
-share/apps/kmplot/icons/hicolor/22x22/actions/newfunction.png
-share/apps/kmplot/icons/hicolor/22x22/actions/newimplicit.png
-share/apps/kmplot/icons/hicolor/22x22/actions/newparametric.png
-share/apps/kmplot/icons/hicolor/22x22/actions/newpolar.png
-share/apps/kmplot/icons/hicolor/22x22/actions/resetview.png
-share/apps/kmplot/icons/hicolor/32x32/actions/coords.png
-share/apps/kmplot/icons/hicolor/32x32/actions/deriv_func.png
-share/apps/kmplot/icons/hicolor/32x32/actions/editconstants.png
-share/apps/kmplot/icons/hicolor/32x32/actions/editplots.png
-share/apps/kmplot/icons/hicolor/32x32/actions/func.png
-share/apps/kmplot/icons/hicolor/32x32/actions/functionhelp.png
-share/apps/kmplot/icons/hicolor/32x32/actions/integral_func.png
-share/apps/kmplot/icons/hicolor/32x32/actions/lessen.png
-share/apps/kmplot/icons/hicolor/32x32/actions/magnify.png
-share/apps/kmplot/icons/hicolor/32x32/actions/maximum.png
-share/apps/kmplot/icons/hicolor/32x32/actions/minimum.png
-share/apps/kmplot/icons/hicolor/32x32/actions/newdifferential.png
-share/apps/kmplot/icons/hicolor/32x32/actions/newfunction.png
-share/apps/kmplot/icons/hicolor/32x32/actions/newimplicit.png
-share/apps/kmplot/icons/hicolor/32x32/actions/newparametric.png
-share/apps/kmplot/icons/hicolor/32x32/actions/newpolar.png
-share/apps/kmplot/icons/hicolor/32x32/actions/resetview.png
-share/apps/kmplot/icons/hicolor/48x48/actions/editplots.png
-share/apps/kmplot/icons/hicolor/48x48/actions/functionhelp.png
-share/apps/kmplot/icons/hicolor/48x48/actions/integral_func.png
-share/apps/kmplot/icons/hicolor/48x48/actions/maximum.png
-share/apps/kmplot/icons/hicolor/48x48/actions/minimum.png
-share/apps/kmplot/icons/hicolor/48x48/actions/newdifferential.png
-share/apps/kmplot/icons/hicolor/48x48/actions/newfunction.png
-share/apps/kmplot/icons/hicolor/48x48/actions/newimplicit.png
-share/apps/kmplot/icons/hicolor/48x48/actions/newparametric.png
-share/apps/kmplot/icons/hicolor/48x48/actions/newpolar.png
-share/apps/kmplot/icons/hicolor/48x48/actions/resetview.png
-share/apps/kmplot/icons/hicolor/64x64/actions/maximum.png
-share/apps/kmplot/icons/hicolor/64x64/actions/minimum.png
-share/apps/kmplot/icons/hicolor/scalable/actions/deriv_func.svgz
-share/apps/kmplot/icons/hicolor/scalable/actions/editconstants.svgz
-share/apps/kmplot/icons/hicolor/scalable/actions/editplots.svgz
-share/apps/kmplot/icons/hicolor/scalable/actions/functionhelp.svgz
-share/apps/kmplot/icons/hicolor/scalable/actions/integral_func.svgz
-share/apps/kmplot/icons/hicolor/scalable/actions/maximum.svgz
-share/apps/kmplot/icons/hicolor/scalable/actions/minimum.svgz
-share/apps/kmplot/icons/hicolor/scalable/actions/newfunction.svgz
-share/apps/kmplot/icons/hicolor/scalable/actions/newparametric.svgz
-share/apps/kmplot/icons/hicolor/scalable/actions/newpolar.svgz
-share/apps/kmplot/icons/hicolor/scalable/actions/resetview.svgz
 share/apps/kmplot/kmplot_part.rc
 share/apps/kmplot/kmplot_part_readonly.rc
 share/apps/kmplot/kmplot_shell.rc
@@ -1980,7 +2050,6 @@ share/apps/kstars/jupiter.R3.vsop
 share/apps/kstars/jupiter.R4.vsop
 share/apps/kstars/jupiter.R5.vsop
 share/apps/kstars/jupiter.orbit
-share/apps/kstars/jupiter.png
 share/apps/kstars/kstars.png
 share/apps/kstars/kstarsui.rc
 share/apps/kstars/lmc.dat
@@ -2003,7 +2072,6 @@ share/apps/kstars/mars.R3.vsop
 share/apps/kstars/mars.R4.vsop
 share/apps/kstars/mars.R5.vsop
 share/apps/kstars/mars.orbit
-share/apps/kstars/mars.png
 share/apps/kstars/mercury.B0.vsop
 share/apps/kstars/mercury.B1.vsop
 share/apps/kstars/mercury.B2.vsop
@@ -2023,44 +2091,7 @@ share/apps/kstars/mercury.R3.vsop
 share/apps/kstars/mercury.R4.vsop
 share/apps/kstars/mercury.R5.vsop
 share/apps/kstars/mercury.orbit
-share/apps/kstars/mercury.png
 share/apps/kstars/milkyway.dat
-share/apps/kstars/moon00.png
-share/apps/kstars/moon01.png
-share/apps/kstars/moon02.png
-share/apps/kstars/moon03.png
-share/apps/kstars/moon04.png
-share/apps/kstars/moon05.png
-share/apps/kstars/moon06.png
-share/apps/kstars/moon07.png
-share/apps/kstars/moon08.png
-share/apps/kstars/moon09.png
-share/apps/kstars/moon10.png
-share/apps/kstars/moon11.png
-share/apps/kstars/moon12.png
-share/apps/kstars/moon13.png
-share/apps/kstars/moon14.png
-share/apps/kstars/moon15.png
-share/apps/kstars/moon16.png
-share/apps/kstars/moon17.png
-share/apps/kstars/moon18.png
-share/apps/kstars/moon19.png
-share/apps/kstars/moon20.png
-share/apps/kstars/moon21.png
-share/apps/kstars/moon22.png
-share/apps/kstars/moon23.png
-share/apps/kstars/moon24.png
-share/apps/kstars/moon25.png
-share/apps/kstars/moon26.png
-share/apps/kstars/moon27.png
-share/apps/kstars/moon28.png
-share/apps/kstars/moon29.png
-share/apps/kstars/moon30.png
-share/apps/kstars/moon31.png
-share/apps/kstars/moon32.png
-share/apps/kstars/moon33.png
-share/apps/kstars/moon34.png
-share/apps/kstars/moon35.png
 share/apps/kstars/moonB.dat
 share/apps/kstars/moonLR.dat
 share/apps/kstars/moonless-night.colors
@@ -2083,12 +2114,10 @@ share/apps/kstars/neptune.R2.vsop
 share/apps/kstars/neptune.R3.vsop
 share/apps/kstars/neptune.R4.vsop
 share/apps/kstars/neptune.orbit
-share/apps/kstars/neptune.png
 share/apps/kstars/ngcic.dat
 share/apps/kstars/night.colors
 share/apps/kstars/noimage.png
 share/apps/kstars/pluto.orbit
-share/apps/kstars/pluto.png
 share/apps/kstars/satellites.dat
 share/apps/kstars/saturn.B0.vsop
 share/apps/kstars/saturn.B1.vsop
@@ -2109,12 +2138,62 @@ share/apps/kstars/saturn.R3.vsop
 share/apps/kstars/saturn.R4.vsop
 share/apps/kstars/saturn.R5.vsop
 share/apps/kstars/saturn.orbit
-share/apps/kstars/saturn.png
 share/apps/kstars/smc.dat
 share/apps/kstars/starlnum.idx
 share/apps/kstars/starnames.dat
 share/apps/kstars/stars.dat
-share/apps/kstars/sun.png
+share/apps/kstars/textures/galaxy-cluster.png
+share/apps/kstars/textures/galaxy.png
+share/apps/kstars/textures/gaseous-nebula.png
+share/apps/kstars/textures/globular-cluster.png
+share/apps/kstars/textures/jupiter.png
+share/apps/kstars/textures/mars.png
+share/apps/kstars/textures/mercury.png
+share/apps/kstars/textures/moon00.png
+share/apps/kstars/textures/moon01.png
+share/apps/kstars/textures/moon02.png
+share/apps/kstars/textures/moon03.png
+share/apps/kstars/textures/moon04.png
+share/apps/kstars/textures/moon05.png
+share/apps/kstars/textures/moon06.png
+share/apps/kstars/textures/moon07.png
+share/apps/kstars/textures/moon08.png
+share/apps/kstars/textures/moon09.png
+share/apps/kstars/textures/moon10.png
+share/apps/kstars/textures/moon11.png
+share/apps/kstars/textures/moon12.png
+share/apps/kstars/textures/moon13.png
+share/apps/kstars/textures/moon14.png
+share/apps/kstars/textures/moon15.png
+share/apps/kstars/textures/moon16.png
+share/apps/kstars/textures/moon17.png
+share/apps/kstars/textures/moon18.png
+share/apps/kstars/textures/moon19.png
+share/apps/kstars/textures/moon20.png
+share/apps/kstars/textures/moon21.png
+share/apps/kstars/textures/moon22.png
+share/apps/kstars/textures/moon23.png
+share/apps/kstars/textures/moon24.png
+share/apps/kstars/textures/moon25.png
+share/apps/kstars/textures/moon26.png
+share/apps/kstars/textures/moon27.png
+share/apps/kstars/textures/moon28.png
+share/apps/kstars/textures/moon29.png
+share/apps/kstars/textures/moon30.png
+share/apps/kstars/textures/moon31.png
+share/apps/kstars/textures/moon32.png
+share/apps/kstars/textures/moon33.png
+share/apps/kstars/textures/moon34.png
+share/apps/kstars/textures/moon35.png
+share/apps/kstars/textures/neptune.png
+share/apps/kstars/textures/obslistsymbol.png
+share/apps/kstars/textures/open-cluster.png
+share/apps/kstars/textures/pluto.png
+share/apps/kstars/textures/saturn.png
+share/apps/kstars/textures/star.png
+share/apps/kstars/textures/sun.png
+share/apps/kstars/textures/uranus.png
+share/apps/kstars/textures/venus.png
 share/apps/kstars/tips
 share/apps/kstars/unnamedstars.dat
 share/apps/kstars/uranus.B0.vsop
@@ -2134,7 +2213,6 @@ share/apps/kstars/uranus.R2.vsop
 share/apps/kstars/uranus.R3.vsop
 share/apps/kstars/uranus.R4.vsop
 share/apps/kstars/uranus.orbit
-share/apps/kstars/uranus.png
 share/apps/kstars/valaav.txt
 share/apps/kstars/venus.B0.vsop
 share/apps/kstars/venus.B1.vsop
@@ -2155,7 +2233,6 @@ share/apps/kstars/venus.R3.vsop
 share/apps/kstars/venus.R4.vsop
 share/apps/kstars/venus.R5.vsop
 share/apps/kstars/venus.orbit
-share/apps/kstars/venus.png
 share/apps/kstars/wzdownload.png
 share/apps/kstars/wzgeo.png
 share/apps/kstars/wzscope.png
@@ -2538,7 +2615,56 @@ share/apps/parley/tips
 share/apps/parley/welcomescreenui.rc
 share/apps/parley/xslt/flashcards.xsl
 share/apps/parley/xslt/table.xsl
+share/apps/rocs/examples/AdjustProjection.js
+share/apps/rocs/examples/NameAndNodes.js
+share/apps/rocs/examples/NamesValues.js
+share/apps/rocs/examples/arrangeNodes.js
+share/apps/rocs/examples/broadWalk.js
+share/apps/rocs/examples/coloring.js
 share/apps/rocs/iconpacks/default.svg
+share/apps/rocs/icons/hicolor/16x16/actions/rocsaddedge.png
+share/apps/rocs/icons/hicolor/16x16/actions/rocsaddnode.png
+share/apps/rocs/icons/hicolor/16x16/actions/rocsallignbottom.png
+share/apps/rocs/icons/hicolor/16x16/actions/rocsallignhmiddle.png
+share/apps/rocs/icons/hicolor/16x16/actions/rocsallignleft.png
+share/apps/rocs/icons/hicolor/16x16/actions/rocsallignright.png
+share/apps/rocs/icons/hicolor/16x16/actions/rocsalligntop.png
+share/apps/rocs/icons/hicolor/16x16/actions/rocsallignvmiddle.png
+share/apps/rocs/icons/hicolor/16x16/actions/rocsdelete.png
+share/apps/rocs/icons/hicolor/16x16/actions/rocsselect.png
+share/apps/rocs/icons/hicolor/22x22/actions/rocsallignbottom.png
+share/apps/rocs/icons/hicolor/22x22/actions/rocsallignhmiddle.png
+share/apps/rocs/icons/hicolor/22x22/actions/rocsallignleft.png
+share/apps/rocs/icons/hicolor/22x22/actions/rocsallignright.png
+share/apps/rocs/icons/hicolor/22x22/actions/rocsalligntop.png
+share/apps/rocs/icons/hicolor/22x22/actions/rocsallignvmiddle.png
+share/apps/rocs/icons/hicolor/32x32/actions/rocsaddedge.png
+share/apps/rocs/icons/hicolor/32x32/actions/rocsaddnode.png
+share/apps/rocs/icons/hicolor/32x32/actions/rocsallignbottom.png
+share/apps/rocs/icons/hicolor/32x32/actions/rocsallignhmiddle.png
+share/apps/rocs/icons/hicolor/32x32/actions/rocsallignleft.png
+share/apps/rocs/icons/hicolor/32x32/actions/rocsallignright.png
+share/apps/rocs/icons/hicolor/32x32/actions/rocsalligntop.png
+share/apps/rocs/icons/hicolor/32x32/actions/rocsallignvmiddle.png
+share/apps/rocs/icons/hicolor/32x32/actions/rocsdelete.png
+share/apps/rocs/icons/hicolor/32x32/actions/rocsselect.png
+share/apps/rocs/icons/hicolor/48x48/actions/rocsaddnode.png
+share/apps/rocs/icons/hicolor/48x48/actions/rocsallignbottom.png
+share/apps/rocs/icons/hicolor/48x48/actions/rocsallignhmiddle.png
+share/apps/rocs/icons/hicolor/48x48/actions/rocsallignleft.png
+share/apps/rocs/icons/hicolor/48x48/actions/rocsallignright.png
+share/apps/rocs/icons/hicolor/48x48/actions/rocsalligntop.png
+share/apps/rocs/icons/hicolor/48x48/actions/rocsallignvmiddle.png
+share/apps/rocs/icons/hicolor/64x64/actions/rocsaddedge.png
+share/apps/rocs/icons/hicolor/64x64/actions/rocsaddnode.png
+share/apps/rocs/icons/hicolor/64x64/actions/rocsallignbottom.png
+share/apps/rocs/icons/hicolor/64x64/actions/rocsallignhmiddle.png
+share/apps/rocs/icons/hicolor/64x64/actions/rocsallignleft.png
+share/apps/rocs/icons/hicolor/64x64/actions/rocsallignright.png
+share/apps/rocs/icons/hicolor/64x64/actions/rocsalligntop.png
+share/apps/rocs/icons/hicolor/64x64/actions/rocsallignvmiddle.png
+share/apps/rocs/icons/hicolor/64x64/actions/rocsdelete.png
+share/apps/rocs/icons/hicolor/64x64/actions/rocsselect.png
 share/apps/rocs/rocsui.rc
 share/apps/step/examples/brownian.step
 share/apps/step/examples/doublependulum.step
@@ -2622,6 +2748,7 @@ share/config.kcfg/ktouch.kcfg
 share/config.kcfg/kwordquiz.kcfg
 share/config.kcfg/languagesettings.kcfg
 share/config.kcfg/maximabackend.kcfg
+share/config.kcfg/octavebackend.kcfg
 share/config.kcfg/parley.kcfg
 share/config.kcfg/rocs.kcfg
 share/config.kcfg/sagebackend.kcfg
@@ -2639,6 +2766,7 @@ share/config/kturtle.knsrc
 share/config/kwordquiz.knsrc
 share/config/parley-themes.knsrc
 share/config/parley.knsrc
+share/config/rocs.knsrc
 share/config/step.knsrc
 share/dbus-1/interfaces/org.kde.kmplot.KmPlot.xml
 share/dbus-1/interfaces/org.kde.kmplot.MainDlg.xml
@@ -3079,16 +3207,16 @@ share/icons/hicolor/128x128/apps/kwordquiz.png
 share/icons/hicolor/128x128/apps/parley.png
 share/icons/hicolor/128x128/apps/step.png
 share/icons/hicolor/128x128/mimetypes/application-x-kig.png
-share/icons/hicolor/16x16/actions/rocsaddedge.png
-share/icons/hicolor/16x16/actions/rocsaddnode.png
-share/icons/hicolor/16x16/actions/rocsallignbottom.png
-share/icons/hicolor/16x16/actions/rocsallignhmiddle.png
-share/icons/hicolor/16x16/actions/rocsallignleft.png
-share/icons/hicolor/16x16/actions/rocsallignright.png
-share/icons/hicolor/16x16/actions/rocsalligntop.png
-share/icons/hicolor/16x16/actions/rocsallignvmiddle.png
-share/icons/hicolor/16x16/actions/rocsdelete.png
-share/icons/hicolor/16x16/actions/rocsselect.png
+share/icons/hicolor/16x16/actions/editplots.png
+share/icons/hicolor/16x16/actions/functionhelp.png
+share/icons/hicolor/16x16/actions/maximum.png
+share/icons/hicolor/16x16/actions/minimum.png
+share/icons/hicolor/16x16/actions/newdifferential.png
+share/icons/hicolor/16x16/actions/newfunction.png
+share/icons/hicolor/16x16/actions/newimplicit.png
+share/icons/hicolor/16x16/actions/newparametric.png
+share/icons/hicolor/16x16/actions/newpolar.png
+share/icons/hicolor/16x16/actions/resetview.png
 share/icons/hicolor/16x16/apps/blinken.png
 share/icons/hicolor/16x16/apps/cantor.png
 share/icons/hicolor/16x16/apps/kalgebra.png
@@ -3108,12 +3236,16 @@ share/icons/hicolor/16x16/apps/kwordquiz.png
 share/icons/hicolor/16x16/apps/parley.png
 share/icons/hicolor/16x16/apps/step.png
 share/icons/hicolor/16x16/mimetypes/application-x-kig.png
-share/icons/hicolor/22x22/actions/rocsallignbottom.png
-share/icons/hicolor/22x22/actions/rocsallignhmiddle.png
-share/icons/hicolor/22x22/actions/rocsallignleft.png
-share/icons/hicolor/22x22/actions/rocsallignright.png
-share/icons/hicolor/22x22/actions/rocsalligntop.png
-share/icons/hicolor/22x22/actions/rocsallignvmiddle.png
+share/icons/hicolor/22x22/actions/editplots.png
+share/icons/hicolor/22x22/actions/functionhelp.png
+share/icons/hicolor/22x22/actions/maximum.png
+share/icons/hicolor/22x22/actions/minimum.png
+share/icons/hicolor/22x22/actions/newdifferential.png
+share/icons/hicolor/22x22/actions/newfunction.png
+share/icons/hicolor/22x22/actions/newimplicit.png
+share/icons/hicolor/22x22/actions/newparametric.png
+share/icons/hicolor/22x22/actions/newpolar.png
+share/icons/hicolor/22x22/actions/resetview.png
 share/icons/hicolor/22x22/apps/blinken.png
 share/icons/hicolor/22x22/apps/kalzium.png
 share/icons/hicolor/22x22/apps/kanagram.png
@@ -3129,16 +3261,23 @@ share/icons/hicolor/22x22/apps/kturtle.png
 share/icons/hicolor/22x22/apps/kwordquiz.png
 share/icons/hicolor/22x22/apps/step.png
 share/icons/hicolor/22x22/mimetypes/application-x-kig.png
-share/icons/hicolor/32x32/actions/rocsaddedge.png
-share/icons/hicolor/32x32/actions/rocsaddnode.png
-share/icons/hicolor/32x32/actions/rocsallignbottom.png
-share/icons/hicolor/32x32/actions/rocsallignhmiddle.png
-share/icons/hicolor/32x32/actions/rocsallignleft.png
-share/icons/hicolor/32x32/actions/rocsallignright.png
-share/icons/hicolor/32x32/actions/rocsalligntop.png
-share/icons/hicolor/32x32/actions/rocsallignvmiddle.png
-share/icons/hicolor/32x32/actions/rocsdelete.png
-share/icons/hicolor/32x32/actions/rocsselect.png
+share/icons/hicolor/32x32/actions/coords.png
+share/icons/hicolor/32x32/actions/deriv_func.png
+share/icons/hicolor/32x32/actions/editconstants.png
+share/icons/hicolor/32x32/actions/editplots.png
+share/icons/hicolor/32x32/actions/func.png
+share/icons/hicolor/32x32/actions/functionhelp.png
+share/icons/hicolor/32x32/actions/integral_func.png
+share/icons/hicolor/32x32/actions/lessen.png
+share/icons/hicolor/32x32/actions/magnify.png
+share/icons/hicolor/32x32/actions/maximum.png
+share/icons/hicolor/32x32/actions/minimum.png
+share/icons/hicolor/32x32/actions/newdifferential.png
+share/icons/hicolor/32x32/actions/newfunction.png
+share/icons/hicolor/32x32/actions/newimplicit.png
+share/icons/hicolor/32x32/actions/newparametric.png
+share/icons/hicolor/32x32/actions/newpolar.png
+share/icons/hicolor/32x32/actions/resetview.png
 share/icons/hicolor/32x32/apps/blinken.png
 share/icons/hicolor/32x32/apps/cantor.png
 share/icons/hicolor/32x32/apps/kalgebra.png
@@ -3158,13 +3297,17 @@ share/icons/hicolor/32x32/apps/kwordquiz.png
 share/icons/hicolor/32x32/apps/parley.png
 share/icons/hicolor/32x32/apps/step.png
 share/icons/hicolor/32x32/mimetypes/application-x-kig.png
-share/icons/hicolor/48x48/actions/rocsaddnode.png
-share/icons/hicolor/48x48/actions/rocsallignbottom.png
-share/icons/hicolor/48x48/actions/rocsallignhmiddle.png
-share/icons/hicolor/48x48/actions/rocsallignleft.png
-share/icons/hicolor/48x48/actions/rocsallignright.png
-share/icons/hicolor/48x48/actions/rocsalligntop.png
-share/icons/hicolor/48x48/actions/rocsallignvmiddle.png
+share/icons/hicolor/48x48/actions/editplots.png
+share/icons/hicolor/48x48/actions/functionhelp.png
+share/icons/hicolor/48x48/actions/integral_func.png
+share/icons/hicolor/48x48/actions/maximum.png
+share/icons/hicolor/48x48/actions/minimum.png
+share/icons/hicolor/48x48/actions/newdifferential.png
+share/icons/hicolor/48x48/actions/newfunction.png
+share/icons/hicolor/48x48/actions/newimplicit.png
+share/icons/hicolor/48x48/actions/newparametric.png
+share/icons/hicolor/48x48/actions/newpolar.png
+share/icons/hicolor/48x48/actions/resetview.png
 share/icons/hicolor/48x48/apps/blinken.png
 share/icons/hicolor/48x48/apps/cantor.png
 share/icons/hicolor/48x48/apps/kalgebra.png
@@ -3182,21 +3325,14 @@ share/icons/hicolor/48x48/apps/ktouch.png
 share/icons/hicolor/48x48/apps/kturtle.png
 share/icons/hicolor/48x48/apps/kwordquiz.png
 share/icons/hicolor/48x48/apps/maximabackend.png
+share/icons/hicolor/48x48/apps/octavebackend.png
 share/icons/hicolor/48x48/apps/parley.png
 share/icons/hicolor/48x48/apps/rbackend.png
 share/icons/hicolor/48x48/apps/sagebackend.png
 share/icons/hicolor/48x48/apps/step.png
 share/icons/hicolor/48x48/mimetypes/application-x-kig.png
-share/icons/hicolor/64x64/actions/rocsaddedge.png
-share/icons/hicolor/64x64/actions/rocsaddnode.png
-share/icons/hicolor/64x64/actions/rocsallignbottom.png
-share/icons/hicolor/64x64/actions/rocsallignhmiddle.png
-share/icons/hicolor/64x64/actions/rocsallignleft.png
-share/icons/hicolor/64x64/actions/rocsallignright.png
-share/icons/hicolor/64x64/actions/rocsalligntop.png
-share/icons/hicolor/64x64/actions/rocsallignvmiddle.png
-share/icons/hicolor/64x64/actions/rocsdelete.png
-share/icons/hicolor/64x64/actions/rocsselect.png
+share/icons/hicolor/64x64/actions/maximum.png
+share/icons/hicolor/64x64/actions/minimum.png
 share/icons/hicolor/64x64/apps/blinken.png
 share/icons/hicolor/64x64/apps/kalgebra.png
 share/icons/hicolor/64x64/apps/kalzium.png
@@ -3214,6 +3350,17 @@ share/icons/hicolor/64x64/apps/kwordquiz.png
 share/icons/hicolor/64x64/apps/parley.png
 share/icons/hicolor/64x64/apps/step.png
 share/icons/hicolor/64x64/mimetypes/application-x-kig.png
+share/icons/hicolor/scalable/actions/deriv_func.svgz
+share/icons/hicolor/scalable/actions/editconstants.svgz
+share/icons/hicolor/scalable/actions/editplots.svgz
+share/icons/hicolor/scalable/actions/functionhelp.svgz
+share/icons/hicolor/scalable/actions/integral_func.svgz
+share/icons/hicolor/scalable/actions/maximum.svgz
+share/icons/hicolor/scalable/actions/minimum.svgz
+share/icons/hicolor/scalable/actions/newfunction.svgz
+share/icons/hicolor/scalable/actions/newparametric.svgz
+share/icons/hicolor/scalable/actions/newpolar.svgz
+share/icons/hicolor/scalable/actions/resetview.svgz
 share/icons/hicolor/scalable/apps/blinken.svgz
 share/icons/hicolor/scalable/apps/kalzium.svgz
 share/icons/hicolor/scalable/apps/kanagram.svgz
@@ -3231,37 +3378,48 @@ share/icons/hicolor/scalable/apps/parley-parley.svgz
 share/icons/hicolor/scalable/apps/parley-simple.svgz
 share/icons/hicolor/scalable/apps/parley.svgz
 share/icons/hicolor/scalable/mimetypes/application-x-kig.svgz
+share/kde4/services/cantor/advancedplotassistant.desktop
 share/kde4/services/cantor/cantor_part.desktop
 share/kde4/services/cantor/creatematrixassistant.desktop
 share/kde4/services/cantor/differentiateassistant.desktop
 share/kde4/services/cantor/eigenvaluesassistant.desktop
 share/kde4/services/cantor/eigenvectorsassistant.desktop
+share/kde4/services/cantor/helppanelplugin.desktop
 share/kde4/services/cantor/integrateassistant.desktop
 share/kde4/services/cantor/invertmatrixassistant.desktop
 share/kde4/services/cantor/kalgebrabackend.desktop
 share/kde4/services/cantor/maximabackend.desktop
 share/kde4/services/cantor/nullbackend.desktop
+share/kde4/services/cantor/octavebackend.desktop
 share/kde4/services/cantor/plot2dassistant.desktop
 share/kde4/services/cantor/plot3dassistant.desktop
 share/kde4/services/cantor/runscriptassistant.desktop
 share/kde4/services/cantor/sagebackend.desktop
 share/kde4/services/cantor/solveassistant.desktop
+share/kde4/services/cantor/variablemanagerplugin.desktop
 share/kde4/services/concentrationCalculator.desktop
 share/kde4/services/gasCalculator.desktop
 share/kde4/services/kalgebraplasmoid.desktop
 share/kde4/services/kig_part.desktop
 share/kde4/services/kmplot_part.desktop
 share/kde4/services/nuclearCalculator.desktop
+share/kde4/services/plasma-applet-Molmasscalculator.desktop
 share/kde4/services/plasma-dataengine-kalzium.desktop
 share/kde4/services/plasma-dataengine-parley.desktop
 share/kde4/services/plasma_didyouknow.desktop
 share/kde4/services/plasma_parley.desktop
+share/kde4/services/rocs_GraphStructure.desktop
+share/kde4/services/rocs_ListStructure.desktop
+share/kde4/services/rocs_kmlParser.desktop
 share/kde4/services/rocs_makecompleteplugin.desktop
 share/kde4/services/rocs_plaintxtplugin.desktop
+share/kde4/servicetypes/RocsDSPlugin.desktop
 share/kde4/servicetypes/RocsFilePlugin.desktop
 share/kde4/servicetypes/RocsToolsPlugin.desktop
 share/kde4/servicetypes/cantor_assistant.desktop
 share/kde4/servicetypes/cantor_backend.desktop
+share/kde4/servicetypes/cantor_panelplugin.desktop
+share/kde4/servicetypes/kalgebrascript.desktop
 @dirrm share/kde4/services/cantor
 @dirrm share/doc/HTML/en/step
 @dirrm share/doc/HTML/en/rocs
@@ -3290,7 +3448,20 @@ share/kde4/servicetypes/cantor_backend.desktop
 @dirrm share/apps/step/icons
 @dirrm share/apps/step/examples
 @dirrm share/apps/step
+@dirrm share/apps/rocs/icons/hicolor/64x64/actions
+@dirrm share/apps/rocs/icons/hicolor/64x64
+@dirrm share/apps/rocs/icons/hicolor/48x48/actions
+@dirrm share/apps/rocs/icons/hicolor/48x48
+@dirrm share/apps/rocs/icons/hicolor/32x32/actions
+@dirrm share/apps/rocs/icons/hicolor/32x32
+@dirrm share/apps/rocs/icons/hicolor/22x22/actions
+@dirrm share/apps/rocs/icons/hicolor/22x22
+@dirrm share/apps/rocs/icons/hicolor/16x16/actions
+@dirrm share/apps/rocs/icons/hicolor/16x16
+@dirrm share/apps/rocs/icons/hicolor
+@dirrm share/apps/rocs/icons
 @dirrm share/apps/rocs/iconpacks
+@dirrm share/apps/rocs/examples
 @dirrm share/apps/rocs
 @dirrm share/apps/parley/xslt
 @dirrm share/apps/parley/themes
@@ -3348,6 +3519,7 @@ share/kde4/servicetypes/cantor_backend.desktop
 @dirrm share/apps/kvtml
 @dirrm share/apps/kturtle
 @dirrm share/apps/ktouch
+@dirrm share/apps/kstars/textures
 @dirrm share/apps/kstars/icons/hicolor/scalable/actions
 @dirrm share/apps/kstars/icons/hicolor/scalable
 @dirrm share/apps/kstars/icons/hicolor/64x64/actions
@@ -3361,20 +3533,6 @@ share/kde4/servicetypes/cantor_backend.desktop
 @dirrm share/apps/kstars/icons/hicolor
 @dirrm share/apps/kstars/icons
 @dirrm share/apps/kstars
-@dirrm share/apps/kmplot/icons/hicolor/scalable/actions
-@dirrm share/apps/kmplot/icons/hicolor/scalable
-@dirrm share/apps/kmplot/icons/hicolor/64x64/actions
-@dirrm share/apps/kmplot/icons/hicolor/64x64
-@dirrm share/apps/kmplot/icons/hicolor/48x48/actions
-@dirrm share/apps/kmplot/icons/hicolor/48x48
-@dirrm share/apps/kmplot/icons/hicolor/32x32/actions
-@dirrm share/apps/kmplot/icons/hicolor/32x32
-@dirrm share/apps/kmplot/icons/hicolor/22x22/actions
-@dirrm share/apps/kmplot/icons/hicolor/22x22
-@dirrm share/apps/kmplot/icons/hicolor/16x16/actions
-@dirrm share/apps/kmplot/icons/hicolor/16x16
-@dirrm share/apps/kmplot/icons/hicolor
-@dirrm share/apps/kmplot/icons
 @dirrm share/apps/kmplot
 @dirrm share/apps/klettres/pics/savannah
 @dirrm share/apps/klettres/pics/kids
@@ -3427,6 +3585,7 @@ share/kde4/servicetypes/cantor_backend.desktop
 @dirrm share/apps/kgeography/flags/ukraine
 @dirrm share/apps/kgeography/flags/spain
 @dirrm share/apps/kgeography/flags/slovakia
+@dirrm share/apps/kgeography/flags/russia
 @dirrm share/apps/kgeography/flags/portugal
 @dirrm share/apps/kgeography/flags/peru
 @dirrm share/apps/kgeography/flags/japan
@@ -3439,6 +3598,7 @@ share/kde4/servicetypes/cantor_backend.desktop
 @dirrm share/apps/kgeography/flags/canada
 @dirrm share/apps/kgeography/flags/brazil
 @dirrm share/apps/kgeography/flags/belgium
+@dirrm share/apps/kgeography/flags/belarus
 @dirrm share/apps/kgeography/flags/australia
 @dirrm share/apps/kgeography/flags
 @dirrm share/apps/kgeography
@@ -3473,7 +3633,16 @@ share/kde4/servicetypes/cantor_backend.desktop
 @dirrm share/apps/kalzium/data/hazardsymbols
 @dirrm share/apps/kalzium/data
 @dirrm share/apps/kalzium
+@dirrm share/apps/kalgebra/scripts/variables
+@dirrm share/apps/kalgebra/scripts/tables
+@dirrm share/apps/kalgebra/scripts/plot2d
+@dirrm share/apps/kalgebra/scripts/console
+@dirrm share/apps/kalgebra/scripts
+@dirrm share/apps/kalgebra
 @dirrm share/apps/cantorpart
+@dirrm share/apps/cantor/xslt
+@dirrm share/apps/cantor/octavebackend
+@dirrm share/apps/cantor/maximabackend
 @dirrm share/apps/cantor
 @dirrm share/apps/blinken/sounds
 @dirrm share/apps/blinken/images

@@ -1,7 +1,9 @@
 bin/smokeapi
+bin/smokegen
 include/smoke.h
 include/smoke/akonadi_smoke.h
-include/smoke/attica_smoke.h
+@comment include/smoke/attica_smoke.h
+include/smoke/kate_smoke.h
 include/smoke/kdecore_smoke.h
 include/smoke/kdeui_smoke.h
 include/smoke/kfile_smoke.h
@@ -22,6 +24,7 @@ include/smoke/qsci_smoke.h
 include/smoke/qt3support_smoke.h
 include/smoke/qtcore_smoke.h
 include/smoke/qtdbus_smoke.h
+include/smoke/qtdeclarative_smoke.h
 include/smoke/qtgui_smoke.h
 include/smoke/qthelp_smoke.h
 include/smoke/qtmultimedia_smoke.h
@@ -40,15 +43,27 @@ include/smoke/solid_smoke.h
 include/smoke/soprano_smoke.h
 include/smoke/sopranoclient_smoke.h
 include/smoke/sopranoserver_smoke.h
+include/smokegen/generator_export.h
+include/smokegen/generatorenvironment.h
+include/smokegen/generatorpreprocessor.h
+include/smokegen/generatorvisitor.h
+include/smokegen/name_compiler.h
+include/smokegen/options.h
+include/smokegen/type.h
+include/smokegen/type_compiler.h
+lib/libcppparser.so
 lib/libsmokeakonadi.so
 lib/libsmokeakonadi.so.3
 lib/libsmokeakonadi.so.3.0.0
-lib/libsmokeattica.so
-lib/libsmokeattica.so.3
-lib/libsmokeattica.so.3.0.0
+@comment lib/libsmokeattica.so
+@comment lib/libsmokeattica.so.3
+@comment lib/libsmokeattica.so.3.0.0
 lib/libsmokebase.so
 lib/libsmokebase.so.3
 lib/libsmokebase.so.3.0.0
+lib/libsmokekate.so
+lib/libsmokekate.so.3
+lib/libsmokekate.so.3.0.0
 lib/libsmokekdecore.so
 lib/libsmokekdecore.so.3
 lib/libsmokekdecore.so.3.0.0
@@ -109,6 +124,9 @@ lib/libsmokeqtcore.so.3.0.0
 lib/libsmokeqtdbus.so
 lib/libsmokeqtdbus.so.3
 lib/libsmokeqtdbus.so.3.0.0
+lib/libsmokeqtdeclarative.so
+lib/libsmokeqtdeclarative.so.3
+lib/libsmokeqtdeclarative.so.3.0.0
 lib/libsmokeqtgui.so
 lib/libsmokeqtgui.so.3
 lib/libsmokeqtgui.so.3.0.0
@@ -163,8 +181,12 @@ lib/libsmokesopranoclient.so.3.0.0
 lib/libsmokesopranoserver.so
 lib/libsmokesopranoserver.so.3
 lib/libsmokesopranoserver.so.3.0.0
+lib/smokegen/generator_dump.so
+lib/smokegen/generator_smoke.so
 share/smokegen/kde-config.xml
 share/smokegen/qt-config.xml
 share/smokegen/qtdefines
 @dirrm share/smokegen
+@dirrm lib/smokegen
+@dirrm include/smokegen
 @dirrm include/smoke

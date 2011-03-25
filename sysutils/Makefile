@@ -433,6 +433,7 @@
     SUBDIR += kshutdown
     SUBDIR += kshutdown-kde4
     SUBDIR += ksynaptics
+    SUBDIR += ksysguardd
     SUBDIR += lavaps
     SUBDIR += lbl-cf
     SUBDIR += lbl-hf

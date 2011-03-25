@@ -16,8 +16,9 @@ DIST_SUBDIR=	KDE
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Virtual globe and world atlas for KDE
 
-BUILD_DEPENDS=	${LOCALBASE}/share/xml/docbook/4.2/docbookx.dtd:${PORTSDIR}/textproc/docbook-xml
 LIB_DEPENDS=	gps.19:${PORTSDIR}/astro/gpsd
+
+CONFLICTS=	kdeedu-4.5.[0-5]
 
 USE_BZIP2=	yes
 USE_CMAKE=	yes
@@ -33,5 +34,10 @@ CMAKE_OUTSOURCE=	yes
 
 pre-configure:
 	${LN} -s ${WRKSRC}/doc/marble ${WRKSRC}/marble/marble
+
+post-install:
+	${MKDIR} ${PREFIX}/share/apps/cmake/modules
+	${INSTALL_DATA} ${WRKSRC}/cmake/modules/FindMarbleWidget.cmake \
+		${PREFIX}/share/apps/cmake/modules
 
 .include <bsd.port.mk>

@@ -7,7 +7,6 @@
 
 PORTNAME=	kdeplasma-addons
 PORTVERSION=	${KDE4_VERSION}
-PORTREVISION=	1
 CATEGORIES=	deskutils kde ipv6
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	${KDE4_BRANCH}/${PORTVERSION}/src
@@ -17,8 +16,10 @@ MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Extra plasmoids for KDE4
 
 BUILD_DEPENDS=	eigen>=2.0.b3:${PORTSDIR}/math/eigen2
-LIB_DEPENDS=	kipi.7:${PORTSDIR}/graphics/kdegraphics4 \
-		qalculate.5:${PORTSDIR}/math/libqalculate
+LIB_DEPENDS=	kipi.8:${PORTSDIR}/graphics/kdegraphics4 \
+		qalculate.5:${PORTSDIR}/math/libqalculate \
+		qwt.5:${PORTSDIR}/x11-toolkits/qwt5 \
+		marblewidget.11:${PORTSDIR}/astro/marble
 
 USE_KDE4=	kdelibs pimlibs workspace kdeprefix kdehier automoc4 sharedmime
 KDE4_BUILDENV=	yes
@@ -30,25 +31,9 @@ QT_COMPONENTS=	corelib opengl dbus qt3support webkit \
 
 MAKE_JOBS_SAFE=	yes
 
-OPTIONS=	MARBLE "Marble globe wallpaper for Plasma" on \
-		OBSERVATORY "KDE Observatory plasmoid" off \
-		SCIM "Enable SCIM method input dialog" off
+OPTIONS=	SCIM "Enable SCIM method input dialog" off
 
 .include <bsd.port.options.mk>
-
-.if defined(WITHOUT_MARBLE)
-PLIST_SUB+=	MARBLE="@comment "
-.else
-LIB_DEPENDS+=	marblewidget.10:${PORTSDIR}/astro/marble
-PLIST_SUB+=	MARBLE=""
-.endif
-
-.if defined(WITHOUT_OBSERVATORY)
-PLIST_SUB+=	OBSERVATORY="@comment "
-.else
-LIB_DEPENDS+=	qwt.5:${PORTSDIR}/x11-toolkits/qwt5
-PLIST_SUB+=	OBSERVATORY=""
-.endif
 
 .if defined(WITHOUT_SCIM)
 PLIST_SUB+=	SCIM="@comment "
@@ -61,14 +46,6 @@ post-patch:
 	${GREP} -H -r "#include <q" ${WRKSRC} | ${CUT} -d: -f1 | uniq | \
 		${XARGS} ${REINPLACE_CMD} -f ${FILESDIR}/qt3to4headers.txt
 
-.if defined(WITHOUT_MARBLE)
-	${REINPLACE_CMD} -e '/add_subdirectory(marble)/d' \
-		${WRKSRC}/wallpapers/CMakeLists.txt
-.endif
-.if defined(WITHOUT_OBSERVATORY)
-	${REINPLACE_CMD} -e '/add_subdirectory(kdeobservatory)/d' \
-		${WRKSRC}/applets/CMakeLists.txt
-.endif
 .if defined(WITHOUT_SCIM)
 	${REINPLACE_CMD} -e '/add_subdirectory(kimpanel)/d' \
 		${WRKSRC}/applets/CMakeLists.txt

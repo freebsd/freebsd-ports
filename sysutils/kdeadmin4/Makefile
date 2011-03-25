@@ -6,7 +6,6 @@
 
 PORTNAME=	kdeadmin
 PORTVERSION=	${KDE4_VERSION}
-PORTREVISION=	1
 CATEGORIES=	sysutils kde ipv6
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	${KDE4_BRANCH}/${PORTVERSION}/src
@@ -14,8 +13,6 @@ DIST_SUBDIR=	KDE
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KDE Admin applications
-
-BUILD_DEPENDS=	${LOCALBASE}/share/xml/docbook/4.2/docbookx.dtd:${PORTSDIR}/textproc/docbook-xml
 
 LATEST_LINK=	${PORTNAME}4
 
@@ -41,12 +38,6 @@ RUN_DEPENDS+=	${KDE4_PREFIX}/share/apps/system-config-printer-kde/system-config-
 .endif
 
 post-patch:
-	${REINPLACE_CMD} -e \
-	's,$${LIB_INSTALL_DIR}/pkgconfig,libdata/pkgconfig,' \
-	${PATCH_WRKSRC}/knetworkconf/backends/CMakeLists.txt
-#disable documentation for kpackage
-	${REINPLACE_CMD} -e '/add_subdirectory(kpackage)/d' \
-		${PATCH_WRKSRC}/doc/CMakeLists.txt
 #disable system-config-printer-kde, it comes with print/kdeadmin4-system-config-printer-kde
 	${REINPLACE_CMD} -e '/add_subdirectory.*system-config-printer-kde/d' \
 		${PATCH_WRKSRC}/CMakeLists.txt

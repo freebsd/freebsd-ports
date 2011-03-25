@@ -1,41 +1,8 @@
 bin/ksystemlog
 bin/kuser
 lib/kde4/kcm_cron.so
-lib/kde4/kcm_knetworkconfmodule.so
 share/applications/kde4/ksystemlog.desktop
 share/applications/kde4/kuser.desktop
-share/apps/knetworkconf/backends/debug.pl
-share/apps/knetworkconf/backends/file.pl
-share/apps/knetworkconf/backends/general.pl
-share/apps/knetworkconf/backends/network-conf
-share/apps/knetworkconf/backends/network.pl
-share/apps/knetworkconf/backends/parse.pl
-share/apps/knetworkconf/backends/platform.pl
-share/apps/knetworkconf/backends/process.pl
-share/apps/knetworkconf/backends/replace.pl
-share/apps/knetworkconf/backends/report.pl
-share/apps/knetworkconf/backends/service-list.pl
-share/apps/knetworkconf/backends/service.pl
-share/apps/knetworkconf/backends/util.pl
-share/apps/knetworkconf/backends/xml.pl
-share/apps/knetworkconf/pixmaps/ark.png
-share/apps/knetworkconf/pixmaps/blackpanther.png
-share/apps/knetworkconf/pixmaps/conectiva.png
-share/apps/knetworkconf/pixmaps/debian.png
-share/apps/knetworkconf/pixmaps/fedora.png
-share/apps/knetworkconf/pixmaps/freebsd.png
-share/apps/knetworkconf/pixmaps/gentoo.png
-share/apps/knetworkconf/pixmaps/kubuntu.png
-share/apps/knetworkconf/pixmaps/mandriva.png
-share/apps/knetworkconf/pixmaps/openna.png
-share/apps/knetworkconf/pixmaps/pld.png
-share/apps/knetworkconf/pixmaps/redhat.png
-share/apps/knetworkconf/pixmaps/slackware.png
-share/apps/knetworkconf/pixmaps/specifix.png
-share/apps/knetworkconf/pixmaps/suse.png
-share/apps/knetworkconf/pixmaps/turbolinux.png
-share/apps/knetworkconf/pixmaps/vine.png
-share/apps/knetworkconf/pixmaps/yoper.png
 share/apps/ksystemlog/ksystemlogui.rc
 share/apps/kuser/icons/hicolor/22x22/actions/user-group-delete.png
 share/apps/kuser/icons/hicolor/22x22/actions/user-group-properties.png
@@ -43,18 +10,6 @@ share/apps/kuser/kuserui.rc
 share/apps/kuser/pics/group.png
 share/apps/kuser/pics/user.png
 share/config.kcfg/kuser.kcfg
-share/doc/HTML/en/kcontrol/knetworkconf/01.png
-share/doc/HTML/en/kcontrol/knetworkconf/02.png
-share/doc/HTML/en/kcontrol/knetworkconf/03.png
-share/doc/HTML/en/kcontrol/knetworkconf/04.png
-share/doc/HTML/en/kcontrol/knetworkconf/05.png
-share/doc/HTML/en/kcontrol/knetworkconf/06.png
-share/doc/HTML/en/kcontrol/knetworkconf/07.png
-share/doc/HTML/en/kcontrol/knetworkconf/09.png
-share/doc/HTML/en/kcontrol/knetworkconf/11.png
-share/doc/HTML/en/kcontrol/knetworkconf/common
-share/doc/HTML/en/kcontrol/knetworkconf/index.cache.bz2
-share/doc/HTML/en/kcontrol/knetworkconf/index.docbook
 share/doc/HTML/en/kcron/common
 share/doc/HTML/en/kcron/index.cache.bz2
 share/doc/HTML/en/kcron/index.docbook
@@ -72,24 +27,15 @@ share/doc/HTML/en/kuser/index.cache.bz2
 share/doc/HTML/en/kuser/index.docbook
 share/doc/HTML/en/kuser/kuser.png
 share/icons/hicolor/128x128/apps/kuser.png
-share/icons/hicolor/16x16/apps/knetworkconf.png
 share/icons/hicolor/16x16/apps/kuser.png
-share/icons/hicolor/22x22/actions/network_connected_lan_knc.png
-share/icons/hicolor/22x22/actions/network_disconnected_lan.png
-share/icons/hicolor/22x22/actions/network_disconnected_wlan.png
-share/icons/hicolor/22x22/actions/network_traffic_wlan.png
-share/icons/hicolor/22x22/apps/knetworkconf.png
 share/icons/hicolor/22x22/apps/kuser.png
-share/icons/hicolor/32x32/apps/knetworkconf.png
 share/icons/hicolor/32x32/apps/kuser.png
 share/icons/hicolor/48x48/apps/kuser.png
 share/icons/hicolor/64x64/apps/kuser.png
 share/kde4/services/kcm_cron.desktop
-share/kde4/services/kcm_knetworkconfmodule.desktop
 @dirrm share/doc/HTML/en/kuser
 @dirrm share/doc/HTML/en/ksystemlog
 @dirrm share/doc/HTML/en/kcron
-@dirrm share/doc/HTML/en/kcontrol/knetworkconf
 @dirrm share/apps/kuser/pics
 @dirrm share/apps/kuser/icons/hicolor/22x22/actions
 @dirrm share/apps/kuser/icons/hicolor/22x22
@@ -97,6 +43,3 @@ share/kde4/services/kcm_knetworkconfmodule.desktop
 @dirrm share/apps/kuser/icons
 @dirrm share/apps/kuser
 @dirrm share/apps/ksystemlog
-@dirrm share/apps/knetworkconf/pixmaps
-@dirrm share/apps/knetworkconf/backends
-@dirrm share/apps/knetworkconf

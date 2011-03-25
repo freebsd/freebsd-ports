@@ -16,7 +16,6 @@ DIST_SUBDIR=	KDE
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KDE text-to-speech subsystem
 
-BUILD_DEPENDS=	${LOCALBASE}/share/xml/docbook/4.2/docbookx.dtd:${PORTSDIR}/textproc/docbook-xml
 LIB_DEPENDS=	speechd.5:${PORTSDIR}/accessibility/speech-dispatcher
 
 USE_BZIP2=	yes

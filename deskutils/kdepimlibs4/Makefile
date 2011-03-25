@@ -6,7 +6,6 @@
 
 PORTNAME=	kdepimlibs
 PORTVERSION=	${KDE4_VERSION}
-PORTREVISION=	2
 CATEGORIES=	deskutils kde ipv6
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	${KDE4_BRANCH}/${PORTVERSION}/src
@@ -15,14 +14,11 @@ DIST_SUBDIR=	KDE
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Libraries for KDE-PIM applications
 
-BUILD_DEPENDS=	${LOCALBASE}/share/xml/docbook/4.2/docbookx.dtd:${PORTSDIR}/textproc/docbook-xml
-
 LIB_DEPENDS=	gpgme:${PORTSDIR}/security/gpgme \
 		sasl2:${PORTSDIR}/security/cyrus-sasl2 \
 		boost_thread:${PORTSDIR}/devel/boost-libs \
-		ical.44:${PORTSDIR}/devel/libical
-
-CONFLICTS=	kdepim-runtime-4.3.[1-4]
+		ical.44:${PORTSDIR}/devel/libical \
+		uuid.1:${PORTSDIR}/misc/e2fsprogs-libuuid
 
 USE_KDE4=	kdelibs akonadi kdeprefix kdehier automoc4
 KDE4_BUILDENV=	yes

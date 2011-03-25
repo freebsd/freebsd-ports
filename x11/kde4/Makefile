@@ -7,7 +7,6 @@
 
 PORTNAME=	kde4
 PORTVERSION=	${KDE4_VERSION}
-PORTREVISION=	1
 CATEGORIES=	x11 kde
 MASTER_SITES=	# empty
 DISTFILES=	# none
@@ -36,8 +35,8 @@ OPTIONS=	KDEACCESSIBILITY "Accessibility applications" on \
 		PLASMA_RUBY "Support for plasmoids written in Ruby" on \
 		PRINTER_APPLET "Install printer system tray utility" on \
 		PRINTER_CONFIG "Install printer configuration utility" on \
-		XINE "Xine backend for Phonon" on \
-		VLC "VLC backend for Phonon" off
+		VLC "VLC backend for Phonon" off \
+		XINE "Xine backend for Phonon" off
 
 USE_KDE4=	kdelibs kdebase pimlibs workspace kdeprefix runtime oxygen
 NO_BUILD=	yes

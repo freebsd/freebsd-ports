@@ -6,7 +6,6 @@
 
 PORTNAME=	kdenetwork
 PORTVERSION=	${KDE4_VERSION}
-PORTREVISION=	3
 CATEGORIES=	net kde ipv6
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	${KDE4_BRANCH}/${PORTVERSION}/src
@@ -15,8 +14,7 @@ DIST_SUBDIR=	KDE
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KDE Network applications
 
-BUILD_DEPENDS=	${LOCALBASE}/include/linux/videodev.h:${PORTSDIR}/multimedia/v4l_compat \
-		${LOCALBASE}/share/xml/docbook/4.2/docbookx.dtd:${PORTSDIR}/textproc/docbook-xml
+BUILD_DEPENDS=	${LOCALBASE}/include/linux/videodev.h:${PORTSDIR}/multimedia/v4l_compat
 LIB_DEPENDS=	slp.1:${PORTSDIR}/net/openslp \
 		idn.17:${PORTSDIR}/dns/libidn \
 		qimageblitz.4:${PORTSDIR}/x11/qimageblitz \
@@ -27,12 +25,12 @@ LIB_DEPENDS=	slp.1:${PORTSDIR}/net/openslp \
 		gadu:${PORTSDIR}/polish/libgadu \
 		gmp.10:${PORTSDIR}/math/gmp \
 		ortp.5:${PORTSDIR}/net/ortp \
-		telepathy-qt4.0:${PORTSDIR}/net-im/telepathy-qt4 \
+		telepathy-qt4.1:${PORTSDIR}/net-im/telepathy-qt4 \
 		meanwhile.1:${PORTSDIR}/net-im/meanwhile \
 		speex.1:${PORTSDIR}/audio/speex \
 		v4l2.0:${PORTSDIR}/multimedia/libv4l \
 		kwebkit.1:${PORTSDIR}/www/kwebkitpart \
-		ktorrent.2:${PORTSDIR}/net-p2p/libktorrent
+		ktorrent.3:${PORTSDIR}/net-p2p/libktorrent
 RUN_DEPENDS=	qca-ossl>=2.0.0.b3:${PORTSDIR}/security/qca-ossl
 
 LATEST_LINK=	${PORTNAME}4
@@ -49,7 +47,7 @@ MAKE_JOBS_SAFE=	yes
 
 # Explicitly disable alsa, see for details:
 # http://mail.kde.org/pipermail/kde-freebsd/2010-March/008015.html
-CMAKE_ARGS+=	-DWITH_Alsa:BOOL=OFF
+#CMAKE_ARGS+=	-DWITH_Alsa:BOOL=OFF
 
 # Route mozilla plugin by standard path
 CMAKE_ARGS+=	-DMOZPLUGIN_INSTALL_DIR=${PREFIX}/lib/browser_plugins

@@ -32,13 +32,15 @@ Kde_Include_MAINTAINER=	kde@FreeBSD.org
 # kdebase	- Basic KDE applications (Konqueror, Dolphin)
 # kdeexp	- experimental libraries (with non-stable ABI/API)
 # kdehier	- Provides common KDE directories
-# kdelibs	- The base set of KDE4 libraries
+# kdelibs	- The base set of KDE libraries
 # kdeprefix	- If set, port will be installed into ${KDE4_PREFIX} instead of ${LOCALBASE}
 # oxygen	- icon themes
-# pimlibs	- KDE4 PIM libraries
-# pimruntime	- KDE4 PIM runtime services
+# pimlibs	- KDE PIM libraries
+# pimruntime	- KDE PIM runtime services
+# pykde4	- Python bindings for KDE
+# pykdeuic4	- User Interface Compiler for PyKDE
 # runtime	- More KDE applications
-# sharedmime	- share-mime-info wrapper for KDE4 ports
+# sharedmime	- share-mime-info wrapper for KDE ports
 # workspace	- More KDE applications (Plasma, kwin, etc.)
 #
 # These read-only variables can be used in port Makefile:
@@ -52,9 +54,9 @@ Kde_Include_MAINTAINER=	kde@FreeBSD.org
 #		but this could be changed in a future.
 #
 
-KDE4_VERSION=		4.5.5
+KDE4_VERSION=		4.6.1
 KDE4_BRANCH?=		stable
-KDEPIM4_VERSION=	4.4.9
+KDEPIM4_VERSION=	4.4.10
 KDEPIM4_BRANCH?=	stable
 KOFFICE2_VERSION=	2.2.2
 KOFFICE2_BRANCH?=	stable

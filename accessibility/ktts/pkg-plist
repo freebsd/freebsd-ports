@@ -6,6 +6,7 @@ lib/kde4/kcm_kttsd.so
 lib/libkttsd.so
 lib/libkttsd.so.5
 lib/libkttsd.so.5.0.1
+share/applications/kde4/jovieapp.desktop
 share/apps/jovie/kcmkttsd_testmessage.desktop
 share/apps/jovie/stringreplacer/abbreviations.xml
 share/apps/jovie/stringreplacer/chat-de.xml
