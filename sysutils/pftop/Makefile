@@ -28,6 +28,10 @@ MAKE_ARGS=	LOCALBASE="${PREFIX}" OSLEVEL=41
 CFLAGS+=	-DHAVE_ALTQ=1
 .endif
 
+.if ${OSVERSION} >= 900000
+BROKEN=		does not compile on 9.X
+.endif
+
 MAKE_ENV+=	__MAKE_CONF=/dev/null
 
 PLIST_FILES=	sbin/pftop
