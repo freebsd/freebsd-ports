@@ -6,15 +6,14 @@
 #
 
 PORTNAME=	gpxloggerd
-PORTVERSION=	0.1
-PORTREVISION=	2
+PORTVERSION=	0.2
 CATEGORIES=	astro
 MASTER_SITES=	LOCAL/glebius
 
 MAINTAINER=	glebius@FreeBSD.org
 COMMENT=	A daemon that connects to the GPSD daemon and logs GPS traces
 
-LIB_DEPENDS=	gps.19:${PORTSDIR}/astro/gpsd
+LIB_DEPENDS=	gps.20:${PORTSDIR}/astro/gpsd
 
 USE_RC_SUBR=	${PORTNAME}
 PLIST_FILES=	sbin/${PORTNAME}
