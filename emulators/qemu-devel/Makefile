@@ -97,6 +97,10 @@ MAKE_ARGS+=	ARCH=x86_64
 MAKE_ARGS+=	ARCH=ppc
 .endif
 
+.if ${OSVERSION} >= 900000 && ${ARCH} == "amd64"
+BROKEN=		does not link on FreeBSD 9.X
+.endif
+
 pre-patch:
 	@for A in ${ONLY_FOR_ARCHS}; do \
 		${MKDIR} ${WRKSRC}/bsd/$$A; \
