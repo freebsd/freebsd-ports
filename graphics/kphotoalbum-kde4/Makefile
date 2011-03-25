@@ -6,7 +6,7 @@
 
 PORTNAME=	kphotoalbum
 PORTVERSION=	${APP_VER}.${EXTRA_VER}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/${EXTRA_VER}/src/extragear
@@ -16,7 +16,7 @@ DIST_SUBDIR=	KDE/extragear
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Image viewer and organizer for KDE
 
-LIB_DEPENDS=	kipi.7:${PORTSDIR}/graphics/kdegraphics4
+LIB_DEPENDS=	kipi.8:${PORTSDIR}/graphics/kdegraphics4
 
 USE_BZIP2=	yes
 USE_KDE4=	kdelibs kdeprefix kdehier automoc4
@@ -35,7 +35,7 @@ OPTIONS=	MARBLE "Geolocation support (requires astro/marble)" off
 .include <bsd.port.options.mk>
 
 .if defined(WITH_MARBLE)
-LIB_DEPENDS+=	marblewidget.10:${PORTSDIR}/astro/marble
+LIB_DEPENDS+=	marblewidget.11:${PORTSDIR}/astro/marble
 .endif
 
 pre-configure:
