@@ -2,6 +2,7 @@ bin/akonadi_gcal_resource
 bin/akonadi_googledata_resource
 share/akonadi/agents/gcalresource.desktop
 share/akonadi/agents/googledataresource.desktop
+share/locale/bg/LC_MESSAGES/akonadi_gcal_resource.mo
 share/locale/ca/LC_MESSAGES/akonadi_gcal_resource.mo
 share/locale/ca@valencia/LC_MESSAGES/akonadi_gcal_resource.mo
 share/locale/cs/LC_MESSAGES/akonadi_gcal_resource.mo
@@ -18,6 +19,7 @@ share/locale/gl/LC_MESSAGES/akonadi_gcal_resource.mo
 share/locale/hr/LC_MESSAGES/akonadi_gcal_resource.mo
 share/locale/hu/LC_MESSAGES/akonadi_gcal_resource.mo
 share/locale/is/LC_MESSAGES/akonadi_gcal_resource.mo
+share/locale/ja/LC_MESSAGES/akonadi_gcal_resource.mo
 share/locale/km/LC_MESSAGES/akonadi_gcal_resource.mo
 share/locale/lt/LC_MESSAGES/akonadi_gcal_resource.mo
 share/locale/lv/LC_MESSAGES/akonadi_gcal_resource.mo
@@ -40,4 +42,3 @@ share/locale/zh_CN/LC_MESSAGES/akonadi_gcal_resource.mo
 share/locale/zh_TW/LC_MESSAGES/akonadi_gcal_resource.mo
 @dirrmtry share/akonadi/agents
 @dirrmtry share/akonadi
-@dirrmtry include/KDE
