@@ -210,4 +210,10 @@ PLIST_SUB+=	NOTIFY=""
 LIB_DEPENDS+=	dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ( ${OSVERSION} >= 802502 && ${OSVERSION} < 900000 ) || ${OSVERSION} >= 900027
+BROKEN=		does not build after log2 addition
+.endif
+
+.include <bsd.port.post.mk>
