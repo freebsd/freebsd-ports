@@ -1,6 +1,7 @@
 bin/ktmagnetdownloader
 bin/ktorrent
 bin/ktupnptest
+lib/kde4/kio_magnet.so
 lib/kde4/ktbwschedulerplugin.so
 lib/kde4/ktdownloadorderplugin.so
 lib/kde4/ktinfowidgetplugin.so
@@ -11,29 +12,29 @@ lib/kde4/ktmediaplayerplugin.so
 lib/kde4/ktscanfolderplugin.so
 lib/kde4/ktscriptingplugin.so
 lib/kde4/ktsearchplugin.so
-%%PLASMA%%lib/kde4/ktshutdownplugin.so
+lib/kde4/ktshutdownplugin.so
 lib/kde4/ktstatsplugin.so
-%%SYNDICATION%%lib/kde4/ktsyndicationplugin.so
+lib/kde4/ktsyndicationplugin.so
 lib/kde4/ktupnpplugin.so
 lib/kde4/ktwebinterfaceplugin.so
 lib/kde4/ktzeroconfplugin.so
-%%PLASMA%%lib/kde4/plasma_applet_ktorrent.so
+lib/kde4/plasma_applet_ktorrent.so
 lib/kde4/plasma_engine_ktorrent.so
 lib/libktcore.so
-lib/libktcore.so.11
-lib/libktcore.so.11.0.4
-lib/libktupnp.so
-lib/libktupnp.so.4
-lib/libktupnp.so.4.0.2
+lib/libktcore.so.12
+lib/libktcore.so.12.0.0
 share/applications/kde4/ktorrent.desktop
+share/apps/ktorrent/ktbwschedulerpluginui.rc
 share/apps/ktorrent/ktdownloadorderpluginui.rc
 share/apps/ktorrent/ktmagnetgeneratorpluginui.rc
 share/apps/ktorrent/ktmediaplayerpluginui.rc
 share/apps/ktorrent/ktorrent.notifyrc
 share/apps/ktorrent/ktorrentui.rc
+share/apps/ktorrent/ktscriptingpluginui.rc
 share/apps/ktorrent/ktsearchpluginui.rc
-%%PLASMA%%share/apps/ktorrent/ktshutdownpluginui.rc
-%%SYNDICATION%%share/apps/ktorrent/ktsyndicationpluginui.rc
+share/apps/ktorrent/ktshutdownpluginui.rc
+share/apps/ktorrent/ktsyndicationpluginui.rc
+share/apps/ktorrent/kttorrentactivityui.rc
 share/apps/ktorrent/opensearch/bitenova/opensearch.xml
 share/apps/ktorrent/opensearch/bittorrent/opensearch.xml
 share/apps/ktorrent/opensearch/btjunkie/opensearch.xml
@@ -103,9 +104,13 @@ share/apps/ktorrent/www/mobile/interface.html
 share/apps/ktorrent/www/mobile/login.html
 share/apps/ktorrent/www/mobile/mobile.css
 share/apps/ktorrent/www/mobile/mobile.js
+share/config.kcfg/magnetsettings.kcfg
+share/doc/HTML/en/ktorrent/common
+share/doc/HTML/en/ktorrent/index.cache.bz2
+share/doc/HTML/en/ktorrent/index.docbook
 share/icons/hicolor/128x128/apps/ktorrent.png
-%%SYNDICATION%%share/icons/hicolor/16x16/actions/kt-add-feeds.png
-%%SYNDICATION%%share/icons/hicolor/16x16/actions/kt-add-filters.png
+share/icons/hicolor/16x16/actions/kt-add-feeds.png
+share/icons/hicolor/16x16/actions/kt-add-filters.png
 share/icons/hicolor/16x16/actions/kt-change-tracker.png
 share/icons/hicolor/16x16/actions/kt-check-data.png
 share/icons/hicolor/16x16/actions/kt-chunks.png
@@ -113,8 +118,8 @@ share/icons/hicolor/16x16/actions/kt-info-widget.png
 share/icons/hicolor/16x16/actions/kt-magnet.png
 share/icons/hicolor/16x16/actions/kt-pause.png
 share/icons/hicolor/16x16/actions/kt-queue-manager.png
-%%SYNDICATION%%share/icons/hicolor/16x16/actions/kt-remove-feeds.png
-%%SYNDICATION%%share/icons/hicolor/16x16/actions/kt-remove-filters.png
+share/icons/hicolor/16x16/actions/kt-remove-feeds.png
+share/icons/hicolor/16x16/actions/kt-remove-filters.png
 share/icons/hicolor/16x16/actions/kt-remove.png
 share/icons/hicolor/16x16/actions/kt-restore-defaults.png
 share/icons/hicolor/16x16/actions/kt-set-max-download-speed.png
@@ -128,13 +133,13 @@ share/icons/hicolor/16x16/actions/kt-stop-all.png
 share/icons/hicolor/16x16/actions/kt-stop.png
 share/icons/hicolor/16x16/actions/kt-upnp.png
 share/icons/hicolor/16x16/apps/ktorrent.png
-%%SYNDICATION%%share/icons/hicolor/22x22/actions/kt-add-feeds.png
-%%SYNDICATION%%share/icons/hicolor/22x22/actions/kt-add-filters.png
+share/icons/hicolor/22x22/actions/kt-add-feeds.png
+share/icons/hicolor/22x22/actions/kt-add-filters.png
 share/icons/hicolor/22x22/actions/kt-encrypted.png
 share/icons/hicolor/22x22/actions/kt-magnet.png
 share/icons/hicolor/22x22/actions/kt-pause.png
-%%SYNDICATION%%share/icons/hicolor/22x22/actions/kt-remove-feeds.png
-%%SYNDICATION%%share/icons/hicolor/22x22/actions/kt-remove-filters.png
+share/icons/hicolor/22x22/actions/kt-remove-feeds.png
+share/icons/hicolor/22x22/actions/kt-remove-filters.png
 share/icons/hicolor/22x22/actions/kt-remove.png
 share/icons/hicolor/22x22/actions/kt-set-max-download-speed.png
 share/icons/hicolor/22x22/actions/kt-set-max-upload-speed.png
@@ -144,14 +149,14 @@ share/icons/hicolor/22x22/actions/kt-start.png
 share/icons/hicolor/22x22/actions/kt-stop-all.png
 share/icons/hicolor/22x22/actions/kt-stop.png
 share/icons/hicolor/22x22/apps/ktorrent.png
-%%SYNDICATION%%share/icons/hicolor/32x32/actions/kt-add-feeds.png
-%%SYNDICATION%%share/icons/hicolor/32x32/actions/kt-add-filters.png
+share/icons/hicolor/32x32/actions/kt-add-feeds.png
+share/icons/hicolor/32x32/actions/kt-add-filters.png
 share/icons/hicolor/32x32/actions/kt-info-widget.png
 share/icons/hicolor/32x32/actions/kt-magnet.png
 share/icons/hicolor/32x32/actions/kt-pause.png
 share/icons/hicolor/32x32/actions/kt-queue-manager.png
-%%SYNDICATION%%share/icons/hicolor/32x32/actions/kt-remove-feeds.png
-%%SYNDICATION%%share/icons/hicolor/32x32/actions/kt-remove-filters.png
+share/icons/hicolor/32x32/actions/kt-remove-feeds.png
+share/icons/hicolor/32x32/actions/kt-remove-filters.png
 share/icons/hicolor/32x32/actions/kt-remove.png
 share/icons/hicolor/32x32/actions/kt-set-max-download-speed.png
 share/icons/hicolor/32x32/actions/kt-set-max-upload-speed.png
@@ -186,11 +191,11 @@ share/icons/hicolor/48x48/actions/kt-upnp.png
 share/icons/hicolor/48x48/apps/ktorrent.png
 share/icons/hicolor/64x64/actions/kt-magnet.png
 share/icons/hicolor/64x64/apps/ktorrent.png
-%%SYNDICATION%%share/icons/hicolor/scalable/actions/kt-add-feeds.svgz
-%%SYNDICATION%%share/icons/hicolor/scalable/actions/kt-add-filters.svgz
+share/icons/hicolor/scalable/actions/kt-add-feeds.svgz
+share/icons/hicolor/scalable/actions/kt-add-filters.svgz
 share/icons/hicolor/scalable/actions/kt-magnet.svgz
-%%SYNDICATION%%share/icons/hicolor/scalable/actions/kt-remove-feeds.svgz
-%%SYNDICATION%%share/icons/hicolor/scalable/actions/kt-remove-filters.svgz
+share/icons/hicolor/scalable/actions/kt-remove-feeds.svgz
+share/icons/hicolor/scalable/actions/kt-remove-filters.svgz
 share/icons/hicolor/scalable/actions/kt-set-max-download-speed.svgz
 share/icons/hicolor/scalable/actions/kt-set-max-upload-speed.svgz
 share/icons/hicolor/scalable/actions/kt-speed-limits.svgz
@@ -204,14 +209,14 @@ share/kde4/services/ktmediaplayerplugin.desktop
 share/kde4/services/ktscanfolderplugin.desktop
 share/kde4/services/ktscriptingplugin.desktop
 share/kde4/services/ktsearchplugin.desktop
-%%PLASMA%%share/kde4/services/ktshutdownplugin.desktop
+share/kde4/services/ktshutdownplugin.desktop
 share/kde4/services/ktstatsplugin.desktop
-%%SYNDICATION%%share/kde4/services/ktsyndicationplugin.desktop
+share/kde4/services/ktsyndicationplugin.desktop
 share/kde4/services/ktupnpplugin.desktop
 share/kde4/services/ktwebinterfaceplugin.desktop
 share/kde4/services/ktzeroconfplugin.desktop
 share/kde4/services/magnet.protocol
-%%PLASMA%%share/kde4/services/plasma-applet-ktorrent.desktop
+share/kde4/services/plasma-applet-ktorrent.desktop
 share/kde4/services/plasma-dataengine-ktorrent.desktop
 share/kde4/servicetypes/ktorrentplugin.desktop
 share/locale/ar/LC_MESSAGES/ktorrent.mo
@@ -270,6 +275,7 @@ share/locale/zh_CN/LC_MESSAGES/ktorrent.mo
 share/locale/zh_TW/LC_MESSAGES/ktorrent.mo
 @dirrmtry share/locale/si/LC_MESSAGES
 @dirrmtry share/locale/si
+@dirrm share/doc/HTML/en/ktorrent
 @dirrm share/apps/ktorrent/www/mobile
 @dirrm share/apps/ktorrent/www/default
 @dirrm share/apps/ktorrent/www/common
