@@ -7,6 +7,7 @@
 
 PORTNAME=	marble
 PORTVERSION=	${KDE4_VERSION}
+PORTREVISION=	1
 CATEGORIES=	astro kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	${KDE4_BRANCH}/${PORTVERSION}/src
@@ -16,7 +17,7 @@ DIST_SUBDIR=	KDE
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Virtual globe and world atlas for KDE
 
-LIB_DEPENDS=	gps.19:${PORTSDIR}/astro/gpsd
+LIB_DEPENDS=	gps.20:${PORTSDIR}/astro/gpsd
 
 CONFLICTS=	kdeedu-4.5.[0-5]
 
