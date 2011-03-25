@@ -9,22 +9,17 @@ PORTNAME=	xpx
 PORTVERSION=	1.41
 PORTREVISION=	2
 CATEGORIES=	graphics
-MASTER_SITES=	http://www.oersted.co.jp/~yav/soft/xpx/
+MASTER_SITES=	http://www2s.biglobe.ne.jp/~yav/soft/xpx/
 DISTNAME=	${PORTNAME}${PORTVERSION:S/.//}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A simple pixel editing tool to make datas for KISS
 
-DEPRECATED=     Upstream disapear and distfile is no more available
-EXPIRATION_DATE=        2011-05-01
-
-BROKEN=		does not build
-
 WRKSRC=		${WRKDIR}/${PORTNAME}
-USE_IMAKE=	yes
+
 USE_XORG=	x11 xext
+USE_IMAKE=	yes
 XMKMF=		xmkmf
-CPP=		#
 
 DOCSDIR=	${PREFIX}/share/doc/ja/${PORTNAME}
 PORTDOCS=	xpx.doc xpxrc.eg
@@ -33,6 +28,9 @@ PLIST_FILES=	bin/xpx
 post-patch:
 	@${REINPLACE_CMD} -e 's|myname|my_name|g' ${WRKSRC}/magtoppm.c
 	@${REINPLACE_CMD} -e '/edit_mode/d' ${WRKSRC}/work.h
+
+pre-configure:
+	@(cd ${CONFIGURE_WRKSRC}; ${SH} configure)
 
 post-install:
 .if !defined(NOPORTDOCS)
