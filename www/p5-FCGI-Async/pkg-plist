@@ -1,9 +1,6 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/FCGI/Async/.packlist
 %%SITE_PERL%%/FCGI/Async.pm
 %%SITE_PERL%%/FCGI/Async/PSGI.pm
-%%SITE_PERL%%/FCGI/Async/Request.pm
-%%SITE_PERL%%/FCGI/Async/Stream.pm
-%%SITE_PERL%%/FCGI/Async/ClientConnection.pm
 %%SITE_PERL%%/Plack/Handler/FCGI/Async.pm
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/FCGI/Async
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/FCGI
