@@ -49,6 +49,21 @@
 %%WWWDIR%%/adminer/lang/zh-tw.inc.php
 %%WWWDIR%%/adminer/lang/zh.inc.php
 %%WWWDIR%%/adminer/plugin.php
+%%WWWDIR%%/plugins/dump-xml.php
+%%WWWDIR%%/plugins/dump-zip.php
+%%WWWDIR%%/plugins/edit-calendar.php
+%%WWWDIR%%/plugins/edit-textarea.php
+%%WWWDIR%%/plugins/file-upload.php
+%%WWWDIR%%/plugins/foreign-system.php
+%%WWWDIR%%/plugins/frames.php
+%%WWWDIR%%/plugins/login-servers.php
+%%WWWDIR%%/plugins/login-table.php
+%%WWWDIR%%/plugins/plugin.php
+%%WWWDIR%%/plugins/readme.txt
+%%WWWDIR%%/plugins/slugify.php
+%%WWWDIR%%/plugins/tinymce.php
+%%WWWDIR%%/plugins/translation.php
+%%WWWDIR%%/plugins/version-noverify.php
 %%WWWDIR%%/adminer/privileges.inc.php
 %%WWWDIR%%/adminer/procedure.inc.php
 %%WWWDIR%%/adminer/processlist.inc.php
@@ -89,6 +104,22 @@
 %%WWWDIR%%/externals/jush/jush.js
 %%WWWDIR%%/lang.php
 %%WWWDIR%%/readme.txt
+%%WWWDIR%%/plugins/dump-xml.php
+%%WWWDIR%%/plugins/dump-zip.php
+%%WWWDIR%%/plugins/edit-calendar.php
+%%WWWDIR%%/plugins/edit-textarea.php
+%%WWWDIR%%/plugins/enum-option.php
+%%WWWDIR%%/plugins/file-upload.php
+%%WWWDIR%%/plugins/foreign-system.php
+%%WWWDIR%%/plugins/frames.php
+%%WWWDIR%%/plugins/login-servers.php
+%%WWWDIR%%/plugins/login-table.php
+%%WWWDIR%%/plugins/plugin.php
+%%WWWDIR%%/plugins/readme.txt
+%%WWWDIR%%/plugins/slugify.php
+%%WWWDIR%%/plugins/tinymce.php
+%%WWWDIR%%/plugins/translation.php
+%%WWWDIR%%/plugins/version-noverify.php
 %%WWWDIR%%/tests/0-login.html
 %%WWWDIR%%/tests/1-create-database.html
 %%WWWDIR%%/tests/10-clone.html
@@ -129,5 +160,6 @@
 @dirrm %%WWWDIR%%/externals/jsmin-php
 @dirrm %%WWWDIR%%/externals/jush
 @dirrm %%WWWDIR%%/externals
+@dirrm %%WWWDIR%%/plugins
 @dirrm %%WWWDIR%%/tests
 @dirrm %%WWWDIR%%
