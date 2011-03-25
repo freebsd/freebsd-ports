@@ -1,6 +1,6 @@
 # New ports collection makefile for:	kstreamripper
 # Date created:		26 Apr 2010
-# Whom:			Mina R Waheeb <sycner@gmail.com>
+# Whom:			Mina R Waheeb <syncer@gmail.com>
 #
 # $FreeBSD$
 #
@@ -10,7 +10,7 @@ PORTVERSION=	0.7.1
 CATEGORIES=	audio kde
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	sycner@gmail.com
+MAINTAINER=	syncer@gmail.com
 COMMENT=	A program for recording streams for KDE4
 
 RUN_DEPENDS=	${LOCALBASE}/bin/streamripper:${PORTSDIR}/audio/streamripper

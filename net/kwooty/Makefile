@@ -1,6 +1,6 @@
 # New ports collection makefile for:	kwooty
 # Date created:		5 Apr 2010
-# Whom:			Mina R Waheeb <sycner@gmail.com>
+# Whom:			Mina R Waheeb <syncer@gmail.com>
 #
 # $FreeBSD$
 #
@@ -10,7 +10,7 @@ PORTVERSION=	0.6.3
 CATEGORIES=	net kde
 MASTER_SITES=	SF/${PORTNAME}
 
-MAINTAINER=	sycner@gmail.com
+MAINTAINER=	syncer@gmail.com
 COMMENT=	Usenet binary downloader for KDE4
 
 RUN_DEPENDS=	${LOCALBASE}/bin/unrar:${PORTSDIR}/archivers/unrar \
