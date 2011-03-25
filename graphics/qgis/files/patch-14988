@@ -1,0 +1,42 @@
+--- python/CMakeLists.txt.orig	2011-03-24 10:28:51.458166130 +0100
++++ python/CMakeLists.txt	2011-03-24 10:31:21.197994402 +0100
+@@ -43,6 +43,10 @@
+   SET(SIP_DISABLE_FEATURES ${SIP_DISABLE_FEATURES} QSETINT_CONVERSION)
+ ENDIF(NOT PYQT4_VERSION_NUM LESS 263941)
+ 
++IF(NOT PYQT4_VERSION_NUM LESS 264194)	# 0x040802
++  SET(SIP_DISABLE_FEATURES ${SIP_DISABLE_FEATURES} QSETTYPE_CONVERSION)
++ENDIF(NOT PYQT4_VERSION_NUM LESS 264194)
++
+ # core module
+ FILE(GLOB sip_files_core core/*.sip)
+ set(SIP_EXTRA_FILES_DEPEND ${sip_files_core})
+--- python/core/conversions.sip.orig	2011-03-24 10:31:29.038019634 +0100
++++ python/core/conversions.sip	2011-03-24 10:33:01.328032250 +0100
+@@ -15,6 +15,7 @@
+ */
+ 
+ %Feature QSETINT_CONVERSION
++%Feature QSETTYPE_CONVERSION
+ 
+ %ModuleHeaderCode
+ // From Python 2.5, some functions use Py_ssize_t instead of int
+@@ -320,7 +321,7 @@
+ };
+ %End
+ 
+-
++%If (QSETTYPE_CONVERSION)
+ template <TYPE>
+ %MappedType QSet<TYPE>
+ {
+@@ -394,8 +395,7 @@
+ %End
+ 
+ };
+-
+-
++%End
+ 
+ template<TYPE>
+ %MappedType QMap<int, QMap<int, TYPE> >
