@@ -14,10 +14,10 @@ lib/qt4/plugins/script/libqtscript_opengl.so
 lib/qt4/plugins/script/libqtscript_opengl.so.1
 lib/qt4/plugins/script/libqtscript_opengl.so.1.0
 lib/qt4/plugins/script/libqtscript_opengl.so.1.0.0
-lib/qt4/plugins/script/libqtscript_phonon.so
-lib/qt4/plugins/script/libqtscript_phonon.so.1
-lib/qt4/plugins/script/libqtscript_phonon.so.1.0
-lib/qt4/plugins/script/libqtscript_phonon.so.1.0.0
+%%PHONON%%lib/qt4/plugins/script/libqtscript_phonon.so
+%%PHONON%%lib/qt4/plugins/script/libqtscript_phonon.so.1
+%%PHONON%%lib/qt4/plugins/script/libqtscript_phonon.so.1.0
+%%PHONON%%lib/qt4/plugins/script/libqtscript_phonon.so.1.0.0
 lib/qt4/plugins/script/libqtscript_sql.so
 lib/qt4/plugins/script/libqtscript_sql.so.1
 lib/qt4/plugins/script/libqtscript_sql.so.1.0
