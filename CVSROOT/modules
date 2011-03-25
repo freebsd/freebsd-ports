@@ -4150,7 +4150,6 @@ gaeutilities                    ports/www/gaeutilities
 gaffitter                       ports/sysutils/gaffitter
 gai                             ports/x11-toolkits/gai
 gai-leds                        ports/sysutils/gai-leds
-gaia                            ports/astro/gaia
 gajim                           ports/net-im/gajim
 gajim-devel                     ports/net-im/gajim-devel
 gal                             ports/x11-toolkits/gal
@@ -13616,6 +13615,7 @@ p5-Net-Traceroute6              ports/net/p5-Net-Traceroute6
 p5-Net-Trackback                ports/net/p5-Net-Trackback
 p5-Net-Twitter                  ports/net/p5-Net-Twitter
 p5-Net-Twitter-Lite             ports/net/p5-Net-Twitter-Lite
+p5-Net-UPnP                     ports/multimedia/p5-Net-UPnP
 p5-Net-VNC                      ports/net/p5-Net-VNC
 p5-Net-Wake                     ports/net/p5-Net-Wake
 p5-Net-WhitePages               ports/net/p5-Net-WhitePages
@@ -17815,6 +17815,7 @@ p5-net-trackback                ports/net/p5-Net-Trackback
 p5-net-twitter                  ports/net/p5-Net-Twitter
 p5-net-twitter-lite             ports/net/p5-Net-Twitter-Lite
 p5-net-uftp                     ports/net/p5-Net-uFTP
+p5-net-upnp                     ports/multimedia/p5-Net-UPnP
 p5-net-vcard                    ports/misc/p5-Net-vCard
 p5-net-vnc                      ports/net/p5-Net-VNC
 p5-net-wake                     ports/net/p5-Net-Wake
