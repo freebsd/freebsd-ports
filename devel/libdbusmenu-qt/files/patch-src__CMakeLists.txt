@@ -1,6 +1,6 @@
---- ./src/CMakeLists.txt.orig	2010-12-08 10:29:39.000000000 +0100
-+++ ./src/CMakeLists.txt	2010-12-20 12:18:44.673410726 +0100
-@@ -74,7 +74,10 @@
+--- ./src/CMakeLists.txt.orig	2011-02-25 03:13:16.133359336 +0000
++++ ./src/CMakeLists.txt	2011-02-25 03:13:53.113370403 +0000
+@@ -73,7 +73,10 @@
      )
  
  install(TARGETS dbusmenu-qt
