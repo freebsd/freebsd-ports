@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	django-keyedcache
-PORTVERSION=	1.4.3
+PORTVERSION=	1.4.4
 CATEGORIES=	www python
 MASTER_SITES=	http://www.caomhin.org/ports/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -16,7 +16,9 @@ COMMENT=	Simplified, speedy way to manage caching in Django apps
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/django/bin/django-admin.py:${PORTSDIR}/www/py-django
 
-WRKSRC=		${WRKDIR}/${PORTNAME}
+LICENSE=	BSD
+
+WRKSRC=		${WRKDIR}/bkroeze-django-keyedcache-4be18235b372
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	easy_install
 PYDISTUTILS_NOEGGINFO=	yes
