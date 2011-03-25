@@ -37,6 +37,10 @@ CONFIGURE_ARGS+=	--enable-hamlib
 CONFIGURE_ENV+=	PKG_CONFIG_PATH=${LOCALBASE}/lib/pkgconfig
 .endif
 
+.if ( ${OSVERSION} >= 802502 && ${OSVERSION} < 900000 ) || ${OSVERSION} >= 900027
+BROKEN=		does not build after log2 addition
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|[$$][(]localstatedir[)]/lib/scrollkeeper|${SCROLLKEEPER_DIR}|g' \
 		${WRKSRC}/omf.make ${WRKSRC}/help/gmfsk/C/Makefile.in
