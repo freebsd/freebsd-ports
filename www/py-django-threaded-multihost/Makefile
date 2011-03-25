@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	django-threaded-multihost
-PORTVERSION=	1.4.0
+PORTVERSION=	1.4.1
 CATEGORIES=	www python
 MASTER_SITES=	http://www.caomhin.org/geek/ports/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -15,6 +15,8 @@ MAINTAINER=	ports@caomhin.org
 COMMENT=	Multi-host utilities to Django
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/django/bin/django-admin.py:${PORTSDIR}/www/py-django
+
+LICENSE=	BSD
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 USE_PYTHON=	yes
