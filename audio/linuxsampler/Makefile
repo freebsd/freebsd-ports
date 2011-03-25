@@ -15,28 +15,34 @@ COMMENT=	Modular MIDI sampler
 
 LIB_DEPENDS=	jack.0:${PORTSDIR}/audio/jack \
 		gig.10:${PORTSDIR}/audio/libgig \
-		sqlite3.8:${PORTSDIR}/databases/sqlite3
 
-ONLY_FOR_ARCHS=	"i386 amd64"
+RESTRICTED=	no commercial use
+
+ONLY_FOR_ARCHS=	i386 amd64
 ONLY_FOR_ARCHS_REASON=	"not yet ported"
-BROKEN=		does not fetch
-DEPRECATED=		"${BROKEN}"
-EXPIRATION_DATE=	2011-03-26
 
 USE_BZIP2=	yes
-GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	"HAVE_UNIX98=1"
-CFLAGS+=	"-I${LOCALBASE}/include"
+USE_GNOME=	gnomehack
+USE_SQLITE=	3
 USE_GMAKE=	yes
-USE_GNOME=	gnomehack gnomeprefix gnometarget
+USE_AUTOTOOLS=	libtool
+CONFIGURE_ENV=	HAVE_UNIX98=1
+CONFIGURE_ARGS=	LDFLAGS="${LDFLAGS}"
 USE_LDCONFIG=	yes
-RESTRICTED=	no commercial use
+
 MAN1=		linuxsampler.1
+
+CPPFLAGS=	-I${LOCALBASE}/include
+LDFLAGS=	-L${LOCALBASE}/lib
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 700000 || ${OSVERSION} >= 900000
-BROKEN=		Does not compile
-.endif
+#.if ${OSVERSION} >= 900000
+#BROKEN=		Does not compile
+#.endif
+
+post-patch:
+	@${REINPLACE_CMD} -e \
+		's|CXX_CPU_SWITCH=.*|CXX_CPU_SWITCH=|g' ${WRKSRC}/configure
 
 .include <bsd.port.post.mk>
