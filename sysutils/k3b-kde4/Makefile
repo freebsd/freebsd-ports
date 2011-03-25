@@ -14,7 +14,6 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	A CD/DVD recording GUI for KDE4
 
-BUILD_DEPENDS=	${LOCALBASE}/share/xml/docbook/4.2/docbookx.dtd:${PORTSDIR}/textproc/docbook-xml
 LIB_DEPENDS=	cdda_paranoia:${PORTSDIR}/audio/cdparanoia \
 		samplerate:${PORTSDIR}/audio/libsamplerate \
 		kcddb:${PORTSDIR}/multimedia/kdemultimedia4
