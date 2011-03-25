@@ -2,26 +2,36 @@ bin/roxterm
 bin/roxterm-config
 share/applications/roxterm.desktop
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
-%%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/Changes
-%%PORTDOCS%%%%DOCSDIR%%/NEWS
 %%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/TODO
-%%PORTDOCS%%%%DOCSDIR%%/imgs/project-support.jpg
-%%PORTDOCS%%%%DOCSDIR%%/imgs/roxterm_logo.png
-%%PORTDOCS%%%%DOCSDIR%%/imgs/sflogo.png
-%%PORTDOCS%%%%DOCSDIR%%/index.html
-share/locale/en/LC_MESSAGES/roxterm.mo
-share/locale/en_GB/LC_MESSAGES/roxterm.mo
+%%PORTDOCS%%%%DOCSDIR%%/en/guide.html
+%%PORTDOCS%%%%DOCSDIR%%/en/index.html
+%%PORTDOCS%%%%DOCSDIR%%/en/installation.html
+%%PORTDOCS%%%%DOCSDIR%%/en/news.html
+%%PORTDOCS%%%%DOCSDIR%%/es/guide.html
+%%PORTDOCS%%%%DOCSDIR%%/es/index.html
+%%PORTDOCS%%%%DOCSDIR%%/es/installation.html
+%%PORTDOCS%%%%DOCSDIR%%/es/news.html
+%%PORTDOCS%%%%DOCSDIR%%/lib/favicon.ico
+%%PORTDOCS%%%%DOCSDIR%%/lib/header.png
+%%PORTDOCS%%%%DOCSDIR%%/lib/logo_text.png
+%%PORTDOCS%%%%DOCSDIR%%/lib/logo_text_only.png
+%%PORTDOCS%%%%DOCSDIR%%/lib/roxterm.css
+%%PORTDOCS%%%%DOCSDIR%%/lib/roxterm_ie.css
+%%PORTDOCS%%%%DOCSDIR%%/lib/roxterm_logo.png
+%%PORTDOCS%%%%DOCSDIR%%/lib/sprites.png
 share/icons/hicolor/scalable/apps/roxterm.svg
+share/locale/es/LC_MESSAGES/roxterm.mo
 %%DATADIR%%/Config/Colours/GTK
 %%DATADIR%%/Config/Colours/Tango
 %%DATADIR%%/Config/Shortcuts/Default
 %%DATADIR%%/roxterm-config.glade
-@dirrmtry share/applications
 @dirrm %%DATADIR%%/Config/Shortcuts
 @dirrm %%DATADIR%%/Config/Colours
 @dirrm %%DATADIR%%/Config
 @dirrm %%DATADIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/imgs
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/lib
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/es
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/en
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrmtry share/applications
