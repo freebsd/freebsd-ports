@@ -8,6 +8,7 @@
 
 PORTNAME=	kdebase-workspace
 PORTVERSION=	${KDE4_VERSION}
+PORTREVISION=	1
 CATEGORIES=	x11 kde
 MASTER_SITES=	${MASTER_SITE_KDE_kde} \
 		${MASTER_SITE_LOCAL} \
@@ -26,7 +27,7 @@ LIB_DEPENDS=	qimageblitz.4:${PORTSDIR}/x11/qimageblitz\
 		pci.3:${PORTSDIR}/devel/libpci \
 		hal.1:${PORTSDIR}/sysutils/hal \
 		xklavier.12:${PORTSDIR}/x11/libxklavier \
-		gps.19:${PORTSDIR}/astro/gpsd \
+		gps.20:${PORTSDIR}/astro/gpsd \
 		qalculate.5:${PORTSDIR}/math/libqalculate \
 		dmtx.0:${PORTSDIR}/graphics/libdmtx
 RUN_DEPENDS=	${KDE4_PREFIX}/env/xdg-env.sh:${PORTSDIR}/misc/kde4-xdg-env \

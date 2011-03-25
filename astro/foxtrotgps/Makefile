@@ -7,7 +7,7 @@
 
 PORTNAME=	foxtrotgps
 PORTVERSION=	1.0.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	astro geography
 MASTER_SITES=	http://www.foxtrotgps.org/releases/
 
@@ -17,7 +17,7 @@ COMMENT=	A lightweight opensource gps moving map application
 LIB_DEPENDS=	curl.6:${PORTSDIR}/ftp/curl \
 		exif.12:${PORTSDIR}/graphics/libexif \
 		soup-2.4.1:${PORTSDIR}/devel/libsoup \
-		gps.19:${PORTSDIR}/astro/gpsd
+		gps.20:${PORTSDIR}/astro/gpsd
 
 USE_AUTOTOOLS=	automake aclocal libtool autoconf
 ACLOCAL_ARGS=	--force
