@@ -1,5 +1,5 @@
---- ./configure.py.orig	2010-10-29 18:43:52.000000000 +0400
-+++ ./configure.py	2010-11-05 13:07:29.388903079 +0300
+--- ./configure.py.orig	2011-01-23 13:08:20.000000000 +0300
++++ ./configure.py	2011-01-30 01:10:04.772362127 +0300
 @@ -36,6 +36,10 @@
  
  import sipconfig
@@ -10,7 +10,7 @@
 +if freebsd: freebsd_port = os.environ['PYQT4_COMPONENT']
  
  # Initialise the globals.
- pyqt_version = 0x040801
+ pyqt_version = 0x040803
 @@ -70,7 +74,6 @@
  dbuslibdirs = []
  dbuslibs = []
@@ -19,7 +19,7 @@
  # Under Windows qmake and the Qt DLLs must be into the system PATH otherwise
  # the dynamic linker won't be able to resolve the symbols.  On other systems we
  # assume we can just run qmake by using its full pathname.
-@@ -382,14 +385,23 @@
+@@ -392,14 +395,23 @@
          elif sipcfg.universal:
              sipconfig.inform("QtDesigner module disabled with universal binaries.")
          else:
@@ -46,7 +46,7 @@
  
      def code(self):
          cons_xtra_incdirs = []
-@@ -415,6 +427,10 @@
+@@ -425,6 +437,10 @@
              cons_xtra_libs.extend(sp_libs)
  
              generate_code("QtCore")
@@ -57,7 +57,7 @@
          else:
              generate_code("QtCore", extra_include_dirs=sp_incdirs,
                          extra_lib_dirs=sp_libdirs, extra_libs=sp_libs)
-@@ -616,19 +632,28 @@
+@@ -626,19 +642,28 @@
              sipconfig.inform("Unable to find the following static plugins: %s" % ", ".join(opts.staticplugins))
  
          # Generate the QScintilla API file.
@@ -95,7 +95,7 @@
  
      def _qpy_directories(self, mname, lib_name):
          """Return a 3-tuple of the directories containing the header files, the
-@@ -720,22 +745,28 @@
+@@ -730,22 +755,28 @@
          return libs, libdirs
  
      def module_installs(self):
@@ -129,7 +129,7 @@
              qpylibs["QtDesigner"] = "qpydesigner.pro"
  
          # Run qmake to generate the Makefiles.
-@@ -845,30 +876,58 @@
+@@ -859,37 +890,58 @@
          # Create the pyuic4 wrapper.  Use the GUI version on MacOS (so that
          # previews work properly and normal console use will work anyway), but
          # not on Windows (so that normal console use will work).
@@ -169,8 +169,12 @@
 -            use_arch = ''
 +            sipconfig.inform("Creating pyuic4 wrapper...")
  
--        uicdir=os.path.join(pyqt_modroot, "uic")
--        wrapper = sipconfig.create_wrapper(os.path.join(uicdir, "pyuic.py"), os.path.join("pyuic", "pyuic4"), gui, use_arch)
+-        # The pyuic directory may not exist if we are building away from the
+-        # source directory.
+-        try:
+-            os.mkdir("pyuic")
+-        except OSError:
+-            pass
 +            if sys.platform == 'darwin':
 +                gui = True
 +                use_arch = opts.use_arch
@@ -178,9 +182,13 @@
 +                gui = False
 +                use_arch = ''
  
--        sipconfig.inform("Creating pyuic4 Makefile...")
+-        uicdir=os.path.join(pyqt_modroot, "uic")
+-        wrapper = sipconfig.create_wrapper(os.path.join(uicdir, "pyuic.py"), os.path.join("pyuic", "pyuic4"), gui, use_arch)
 +            uicdir=os.path.join(pyqt_modroot, "uic")
 +            wrapper = sipconfig.create_wrapper(os.path.join(uicdir, "pyuic.py"), os.path.join("pyuic", "pyuic4"), gui, use_arch)
+ 
+-        sipconfig.inform("Creating pyuic4 Makefile...")
++            sipconfig.inform("Creating pyuic4 Makefile...")
  
 -        makefile = sipconfig.PythonModuleMakefile(
 -            configuration=sipcfg,
@@ -189,10 +197,6 @@
 -            dir="pyuic",
 -            installs=[[os.path.basename(wrapper), opts.pyqtbindir]]
 -        )
-+            sipconfig.inform("Creating pyuic4 Makefile...")
- 
--        makefile.generate()
--        tool.append("pyuic")
 +            makefile = sipconfig.PythonModuleMakefile(
 +                configuration=sipcfg,
 +                dstdir=uicdir,
@@ -200,13 +204,15 @@
 +                dir="pyuic",
 +                installs=[[os.path.basename(wrapper), opts.pyqtbindir]]
 +            )
-+
+ 
+-        makefile.generate()
+-        tool.append("pyuic")
 +            makefile.generate()
 +            tool.append("pyuic")
  
          if "QtXml" in pyqt_modules:
              sipconfig.inform("Creating pylupdate4 Makefile...")
-@@ -896,7 +955,10 @@
+@@ -918,7 +970,10 @@
              makefile.generate()
              tool.append("pyrcc")
          else:
@@ -218,26 +224,26 @@
  
          if opts.designer_plugin and "QtDesigner" in pyqt_modules:
              py_major = sipcfg.py_version >> 16
-@@ -919,11 +981,17 @@
+@@ -944,11 +999,17 @@
                        glob.glob("%s/lib/libpython%d.%d*" % (ducfg["exec_prefix"], py_major, py_minor))):
                      lib_dir_flag = quote("-L%s/lib" % ducfg["exec_prefix"])
-                     link = "%s -lpython%d.%d" % (lib_dir_flag, py_major, py_minor)
+                     link = "%s -lpython%d.%d%s" % (lib_dir_flag, py_major, py_minor, abi)
 +                elif freebsd:
 +                    lib_dir_flag = quote("-L%s/lib" % ducfg["prefix"])
-+                    link = "%s -lpython%d.%d" % (lib_dir_flag, py_major, py_minor)
++                    link = "%s -lpython%d.%d%s" % (lib_dir_flag, py_major, py_minor, abi)
                  else:
                      sipconfig.inform("Qt Designer plugin disabled because Python library is static")
                      opts.designer_plugin = False
  
 -                pysh_lib = ducfg["LDLIBRARY"]
 +                if freebsd:
-+                    pysh_lib = "libpython%d.%d" % (py_major, py_minor)
++                    pysh_lib = "libpython%d.%d%s" % (py_major, py_minor, abi)
 +                else:
 +                    pysh_lib = ducfg["LDLIBRARY"]
  
              if opts.designer_plugin:
                  sipconfig.inform("Creating Qt Designer plugin Makefile...")
-@@ -1017,8 +1085,13 @@
+@@ -1045,8 +1106,13 @@
      sipconfig.inform("The %s Qt libraries are in %s." % (lib_type, qt_libdir))
      sipconfig.inform("The Qt binaries are in %s." % qt_bindir)
      sipconfig.inform("The Qt mkspecs directory is in %s." % qt_datadir)
@@ -253,7 +259,7 @@
  
      if opts.no_docstrings:
          sipconfig.inform("PyQt is being built without generated docstrings.")
-@@ -1028,18 +1101,36 @@
+@@ -1056,18 +1122,36 @@
      if opts.prot_is_public:
          sipconfig.inform("PyQt is being built with 'protected' redefined as 'public'.")
  
@@ -295,7 +301,7 @@
  
      if opts.vendorcheck:
          sipconfig.inform("PyQt will only be usable with signed interpreters.")
-@@ -1520,7 +1611,11 @@
+@@ -1560,7 +1644,11 @@
      of libraries.
      extra_sip_flags is an optional list of additional flags to pass to SIP.
      """
@@ -308,7 +314,7 @@
  
      mk_clean_dir(mname)
  
-@@ -1606,7 +1701,11 @@
+@@ -1650,7 +1738,11 @@
          sipconfig.error("Unable to create the C++ code.")
  
      # Generate the Makefile.
@@ -321,7 +327,7 @@
  
      installs = []
  
-@@ -2110,6 +2209,10 @@
+@@ -2194,6 +2286,10 @@
          p.print_help()
          sys.exit(2)
  
@@ -332,7 +338,7 @@
      sipcfg.set_build_macros(macros)
  
      # Check Qt is what we need.
-@@ -2117,7 +2220,7 @@
+@@ -2201,7 +2297,7 @@
  
      # Check the licenses are compatible.
      check_license()
@@ -341,7 +347,7 @@
      # Check which modules to build.
      pyqt.check_modules()
  
-@@ -2139,9 +2242,18 @@
+@@ -2223,9 +2319,18 @@
      installs=[(pyqt.module_installs(), pyqt_modroot)]
  
      if opts.api:
@@ -362,7 +368,7 @@
  
      if opts.bigqt:
          xtra_modules.append("_qt")
-@@ -2152,15 +2264,33 @@
+@@ -2236,15 +2341,33 @@
          if opts.mwg_qwt_dir:
              xtra_modules.append("Qwt5")
  

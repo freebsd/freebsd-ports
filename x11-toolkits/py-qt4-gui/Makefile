@@ -66,12 +66,8 @@ PLIST_SUB+=	SIP=""
 ARGS+=		--trace
 .endif
 
-.if ${ARCH} == "sparc64" && ${OSVERSION} >= 700000
+.if ${ARCH} == "sparc64"
 BROKEN=		Does not compile on sparc64
-.endif
-
-.if ${OSVERSION} < 700000
-BROKEN=		does not configure on 6.X
 .endif
 
 do-configure:

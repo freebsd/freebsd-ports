@@ -6,8 +6,51 @@
 %%DOCSDIR%%/OPENSOURCE-NOTICE.TXT
 %%DOCSDIR%%/README
 %%DOCSDIR%%/THANKS
+%%DOCSDIR%%/html/_sources/buffer_interface.txt
+%%DOCSDIR%%/html/_sources/build_system.txt
+%%DOCSDIR%%/html/_sources/dbus.txt
+%%DOCSDIR%%/html/_sources/deploy_commercial.txt
+%%DOCSDIR%%/html/_sources/designer.txt
+%%DOCSDIR%%/html/_sources/gotchas.txt
+%%DOCSDIR%%/html/_sources/i18n.txt
+%%DOCSDIR%%/html/_sources/incompatibilities.txt
+%%DOCSDIR%%/html/_sources/incompatible_apis.txt
+%%DOCSDIR%%/html/_sources/index.txt
+%%DOCSDIR%%/html/_sources/installation.txt
+%%DOCSDIR%%/html/_sources/introduction.txt
+%%DOCSDIR%%/html/_sources/keyword_arguments.txt
+%%DOCSDIR%%/html/_sources/new_style_signals_slots.txt
+%%DOCSDIR%%/html/_sources/old_style_signals_slots.txt
+%%DOCSDIR%%/html/_sources/pickle.txt
+%%DOCSDIR%%/html/_sources/python_shell.txt
+%%DOCSDIR%%/html/_sources/python_v3.txt
+%%DOCSDIR%%/html/_sources/qml.txt
+%%DOCSDIR%%/html/_sources/qsettings.txt
+%%DOCSDIR%%/html/_sources/qt_properties.txt
+%%DOCSDIR%%/html/_sources/qvariant.txt
+%%DOCSDIR%%/html/_sources/resources.txt
+%%DOCSDIR%%/html/_sources/webkit.txt
+%%DOCSDIR%%/html/_static/basic.css
+%%DOCSDIR%%/html/_static/default.css
+%%DOCSDIR%%/html/_static/doctools.js
+%%DOCSDIR%%/html/_static/file.png
+%%DOCSDIR%%/html/_static/jquery.js
+%%DOCSDIR%%/html/_static/logo.png
+%%DOCSDIR%%/html/_static/logo_tn.ico
+%%DOCSDIR%%/html/_static/minus.png
+%%DOCSDIR%%/html/_static/plus.png
+%%DOCSDIR%%/html/_static/pygments.css
+%%DOCSDIR%%/html/_static/searchtools.js
 %%DOCSDIR%%/html/assistant-manual.html
+%%DOCSDIR%%/html/buffer_interface.html
+%%DOCSDIR%%/html/build_system.html
 %%DOCSDIR%%/html/classes.html
+%%DOCSDIR%%/html/dbus.html
+%%DOCSDIR%%/html/deploy_commercial.html
+%%DOCSDIR%%/html/designer.html
+%%DOCSDIR%%/html/genindex.html
+%%DOCSDIR%%/html/gotchas.html
+%%DOCSDIR%%/html/i18n.html
 %%DOCSDIR%%/html/images/alphafill.png
 %%DOCSDIR%%/html/images/assistant-toolbar.png
 %%DOCSDIR%%/html/images/bearings.png
@@ -385,7 +428,17 @@
 %%DOCSDIR%%/html/images/windowsxp-tabwidget.png
 %%DOCSDIR%%/html/images/windowsxp-timeedit.png
 %%DOCSDIR%%/html/images/windowsxp-treeview.png
+%%DOCSDIR%%/html/incompatibilities.html
+%%DOCSDIR%%/html/incompatible_apis.html
+%%DOCSDIR%%/html/index.html
+%%DOCSDIR%%/html/installation.html
+%%DOCSDIR%%/html/introduction.html
+%%DOCSDIR%%/html/keyword_arguments.html
+%%DOCSDIR%%/html/modindex.html
 %%DOCSDIR%%/html/modules.html
+%%DOCSDIR%%/html/new_style_signals_slots.html
+%%DOCSDIR%%/html/objects.inv
+%%DOCSDIR%%/html/old_style_signals_slots.html
 %%DOCSDIR%%/html/phonon-abstractaudiooutput.html
 %%DOCSDIR%%/html/phonon-abstractvideooutput.html
 %%DOCSDIR%%/html/phonon-audiocapturedevice.html
@@ -414,6 +467,9 @@
 %%DOCSDIR%%/html/phonon-videowidget.html
 %%DOCSDIR%%/html/phonon-volumeslider.html
 %%DOCSDIR%%/html/phonon.html
+%%DOCSDIR%%/html/pickle.html
+%%DOCSDIR%%/html/python_shell.html
+%%DOCSDIR%%/html/python_v3.html
 %%DOCSDIR%%/html/qabstractanimation.html
 %%DOCSDIR%%/html/qabstractbutton.html
 %%DOCSDIR%%/html/qabstracteventdispatcher.html
@@ -775,6 +831,7 @@
 %%DOCSDIR%%/html/qmetatype.html
 %%DOCSDIR%%/html/qmimedata.html
 %%DOCSDIR%%/html/qmimesource.html
+%%DOCSDIR%%/html/qml.html
 %%DOCSDIR%%/html/qmodelindex.html
 %%DOCSDIR%%/html/qmouseevent.html
 %%DOCSDIR%%/html/qmouseeventtransition.html
@@ -858,6 +915,7 @@
 %%DOCSDIR%%/html/qpydesignermembersheetextension.html
 %%DOCSDIR%%/html/qpydesignerpropertysheetextension.html
 %%DOCSDIR%%/html/qpydesignertaskmenuextension.html
+%%DOCSDIR%%/html/qpynullvariant.html
 %%DOCSDIR%%/html/qpytextobject.html
 %%DOCSDIR%%/html/qquaternion.html
 %%DOCSDIR%%/html/qradialgradient.html
@@ -1033,6 +1091,7 @@
 %%DOCSDIR%%/html/qt-windowflags.html
 %%DOCSDIR%%/html/qt-windowstates.html
 %%DOCSDIR%%/html/qt.html
+%%DOCSDIR%%/html/qt_properties.html
 %%DOCSDIR%%/html/qtabbar.html
 %%DOCSDIR%%/html/qtabletevent.html
 %%DOCSDIR%%/html/qtableview.html
@@ -1226,9 +1285,13 @@
 %%DOCSDIR%%/html/qxmlstreamnotationdeclaration.html
 %%DOCSDIR%%/html/qxmlstreamreader.html
 %%DOCSDIR%%/html/qxmlstreamwriter.html
+%%DOCSDIR%%/html/resources.html
+%%DOCSDIR%%/html/search.html
+%%DOCSDIR%%/html/searchindex.js
 %%DOCSDIR%%/html/threads.html
-%%DOCSDIR%%/pyqt4ref.html
-%%DOCSDIR%%/pyqt4ref.txt
+%%DOCSDIR%%/html/webkit.html
 @dirrm %%DOCSDIR%%/html/images
+@dirrm %%DOCSDIR%%/html/_static
+@dirrm %%DOCSDIR%%/html/_sources
 @dirrm %%DOCSDIR%%/html
 @dirrm %%DOCSDIR%%

@@ -226,6 +226,50 @@
 %%EXAMPLESDIR%%/demos/qtdemo/textbutton.py
 %%EXAMPLESDIR%%/demos/qtdemo/textbutton.pyc
 %%EXAMPLESDIR%%/demos/qtdemo/xml/examples.xml
+%%EXAMPLESDIR%%/demos/textedit/example.html
+%%EXAMPLESDIR%%/demos/textedit/images/logo.png
+%%EXAMPLESDIR%%/demos/textedit/images/logo32.png
+%%EXAMPLESDIR%%/demos/textedit/images/mac/editcopy.png
+%%EXAMPLESDIR%%/demos/textedit/images/mac/editcut.png
+%%EXAMPLESDIR%%/demos/textedit/images/mac/editpaste.png
+%%EXAMPLESDIR%%/demos/textedit/images/mac/editredo.png
+%%EXAMPLESDIR%%/demos/textedit/images/mac/editundo.png
+%%EXAMPLESDIR%%/demos/textedit/images/mac/exportpdf.png
+%%EXAMPLESDIR%%/demos/textedit/images/mac/filenew.png
+%%EXAMPLESDIR%%/demos/textedit/images/mac/fileopen.png
+%%EXAMPLESDIR%%/demos/textedit/images/mac/fileprint.png
+%%EXAMPLESDIR%%/demos/textedit/images/mac/filesave.png
+%%EXAMPLESDIR%%/demos/textedit/images/mac/textbold.png
+%%EXAMPLESDIR%%/demos/textedit/images/mac/textcenter.png
+%%EXAMPLESDIR%%/demos/textedit/images/mac/textitalic.png
+%%EXAMPLESDIR%%/demos/textedit/images/mac/textjustify.png
+%%EXAMPLESDIR%%/demos/textedit/images/mac/textleft.png
+%%EXAMPLESDIR%%/demos/textedit/images/mac/textright.png
+%%EXAMPLESDIR%%/demos/textedit/images/mac/textunder.png
+%%EXAMPLESDIR%%/demos/textedit/images/mac/zoomin.png
+%%EXAMPLESDIR%%/demos/textedit/images/mac/zoomout.png
+%%EXAMPLESDIR%%/demos/textedit/images/win/editcopy.png
+%%EXAMPLESDIR%%/demos/textedit/images/win/editcut.png
+%%EXAMPLESDIR%%/demos/textedit/images/win/editpaste.png
+%%EXAMPLESDIR%%/demos/textedit/images/win/editredo.png
+%%EXAMPLESDIR%%/demos/textedit/images/win/editundo.png
+%%EXAMPLESDIR%%/demos/textedit/images/win/exportpdf.png
+%%EXAMPLESDIR%%/demos/textedit/images/win/filenew.png
+%%EXAMPLESDIR%%/demos/textedit/images/win/fileopen.png
+%%EXAMPLESDIR%%/demos/textedit/images/win/fileprint.png
+%%EXAMPLESDIR%%/demos/textedit/images/win/filesave.png
+%%EXAMPLESDIR%%/demos/textedit/images/win/textbold.png
+%%EXAMPLESDIR%%/demos/textedit/images/win/textcenter.png
+%%EXAMPLESDIR%%/demos/textedit/images/win/textitalic.png
+%%EXAMPLESDIR%%/demos/textedit/images/win/textjustify.png
+%%EXAMPLESDIR%%/demos/textedit/images/win/textleft.png
+%%EXAMPLESDIR%%/demos/textedit/images/win/textright.png
+%%EXAMPLESDIR%%/demos/textedit/images/win/textunder.png
+%%EXAMPLESDIR%%/demos/textedit/images/win/zoomin.png
+%%EXAMPLESDIR%%/demos/textedit/images/win/zoomout.png
+%%EXAMPLESDIR%%/demos/textedit/textedit.py
+%%EXAMPLESDIR%%/demos/textedit/textedit.pyc
+%%EXAMPLESDIR%%/demos/textedit/textedit.qrc
 %%EXAMPLESDIR%%/designer/README
 %%EXAMPLESDIR%%/designer/calculatorform/calculatorform.py
 %%EXAMPLESDIR%%/designer/calculatorform/calculatorform.pyc
@@ -385,6 +429,18 @@
 %%EXAMPLESDIR%%/graphicsview/padnavigator/padnavigator.qrc
 %%EXAMPLESDIR%%/graphicsview/padnavigator/ui_backside.py
 %%EXAMPLESDIR%%/graphicsview/padnavigator/ui_backside.pyc
+%%EXAMPLESDIR%%/ipc/README
+%%EXAMPLESDIR%%/ipc/localfortuneclient.py
+%%EXAMPLESDIR%%/ipc/localfortuneclient.pyc
+%%EXAMPLESDIR%%/ipc/localfortuneserver.py
+%%EXAMPLESDIR%%/ipc/localfortuneserver.pyc
+%%EXAMPLESDIR%%/ipc/sharedmemory/dialog.py
+%%EXAMPLESDIR%%/ipc/sharedmemory/dialog.pyc
+%%EXAMPLESDIR%%/ipc/sharedmemory/dialog.ui
+%%EXAMPLESDIR%%/ipc/sharedmemory/image.png
+%%EXAMPLESDIR%%/ipc/sharedmemory/qt.png
+%%EXAMPLESDIR%%/ipc/sharedmemory/sharedmemory.py
+%%EXAMPLESDIR%%/ipc/sharedmemory/sharedmemory.pyc
 %%EXAMPLESDIR%%/itemviews/README
 %%EXAMPLESDIR%%/itemviews/basicsortfiltermodel.py
 %%EXAMPLESDIR%%/itemviews/basicsortfiltermodel.pyc
@@ -393,6 +449,12 @@
 %%EXAMPLESDIR%%/itemviews/chart/chart.qrc
 %%EXAMPLESDIR%%/itemviews/chart/mydata.cht
 %%EXAMPLESDIR%%/itemviews/chart/qtdata.cht
+%%EXAMPLESDIR%%/itemviews/coloreditorfactory.py
+%%EXAMPLESDIR%%/itemviews/coloreditorfactory.pyc
+%%EXAMPLESDIR%%/itemviews/combowidgetmapper.py
+%%EXAMPLESDIR%%/itemviews/combowidgetmapper.pyc
+%%EXAMPLESDIR%%/itemviews/customsortfiltermodel.py
+%%EXAMPLESDIR%%/itemviews/customsortfiltermodel.pyc
 %%EXAMPLESDIR%%/itemviews/dirview.py
 %%EXAMPLESDIR%%/itemviews/dirview.pyc
 %%EXAMPLESDIR%%/itemviews/editabletreemodel/default.txt
@@ -418,6 +480,8 @@
 %%EXAMPLESDIR%%/itemviews/simpletreemodel/simpletreemodel.py
 %%EXAMPLESDIR%%/itemviews/simpletreemodel/simpletreemodel.pyc
 %%EXAMPLESDIR%%/itemviews/simpletreemodel/simpletreemodel.qrc
+%%EXAMPLESDIR%%/itemviews/simplewidgetmapper.py
+%%EXAMPLESDIR%%/itemviews/simplewidgetmapper.pyc
 %%EXAMPLESDIR%%/itemviews/spinboxdelegate.py
 %%EXAMPLESDIR%%/itemviews/spinboxdelegate.pyc
 %%EXAMPLESDIR%%/itemviews/stardelegate.py
@@ -638,11 +702,46 @@
 %%EXAMPLESDIR%%/tutorials/addressbook/part6.pyc
 %%EXAMPLESDIR%%/tutorials/addressbook/part7.py
 %%EXAMPLESDIR%%/tutorials/addressbook/part7.pyc
+%%EXAMPLESDIR%%/webkit/domtraversal/domtraversal.py
+%%EXAMPLESDIR%%/webkit/domtraversal/domtraversal.pyc
+%%EXAMPLESDIR%%/webkit/domtraversal/ui_window.py
+%%EXAMPLESDIR%%/webkit/domtraversal/ui_window.pyc
+%%EXAMPLESDIR%%/webkit/domtraversal/window.ui
+%%EXAMPLESDIR%%/webkit/fancybrowser/fancybrowser.py
+%%EXAMPLESDIR%%/webkit/fancybrowser/fancybrowser.pyc
+%%EXAMPLESDIR%%/webkit/fancybrowser/jquery.min.js
+%%EXAMPLESDIR%%/webkit/fancybrowser/jquery.qrc
+%%EXAMPLESDIR%%/webkit/formextractor/form.html
+%%EXAMPLESDIR%%/webkit/formextractor/formextractor.py
+%%EXAMPLESDIR%%/webkit/formextractor/formextractor.pyc
+%%EXAMPLESDIR%%/webkit/formextractor/formextractor.qrc
+%%EXAMPLESDIR%%/webkit/formextractor/formextractor.ui
+%%EXAMPLESDIR%%/webkit/formextractor/ui_formextractor.py
+%%EXAMPLESDIR%%/webkit/formextractor/ui_formextractor.pyc
+%%EXAMPLESDIR%%/webkit/framecapture.py
+%%EXAMPLESDIR%%/webkit/framecapture.pyc
+%%EXAMPLESDIR%%/webkit/googlechat/form.ui
+%%EXAMPLESDIR%%/webkit/googlechat/googlechat.py
+%%EXAMPLESDIR%%/webkit/googlechat/googlechat.pyc
+%%EXAMPLESDIR%%/webkit/googlechat/ui_form.py
+%%EXAMPLESDIR%%/webkit/googlechat/ui_form.pyc
+%%EXAMPLESDIR%%/webkit/previewer/previewer.py
+%%EXAMPLESDIR%%/webkit/previewer/previewer.pyc
+%%EXAMPLESDIR%%/webkit/previewer/previewer.ui
+%%EXAMPLESDIR%%/webkit/previewer/ui_previewer.py
+%%EXAMPLESDIR%%/webkit/previewer/ui_previewer.pyc
+%%EXAMPLESDIR%%/webkit/simpleselector/simpleselector.py
+%%EXAMPLESDIR%%/webkit/simpleselector/simpleselector.pyc
+%%EXAMPLESDIR%%/webkit/simpleselector/ui_window.py
+%%EXAMPLESDIR%%/webkit/simpleselector/ui_window.pyc
+%%EXAMPLESDIR%%/webkit/simpleselector/window.ui
 %%EXAMPLESDIR%%/widgets/README
 %%EXAMPLESDIR%%/widgets/analogclock.py
 %%EXAMPLESDIR%%/widgets/analogclock.pyc
 %%EXAMPLESDIR%%/widgets/calculator.py
 %%EXAMPLESDIR%%/widgets/calculator.pyc
+%%EXAMPLESDIR%%/widgets/calendarwidget.py
+%%EXAMPLESDIR%%/widgets/calendarwidget.pyc
 %%EXAMPLESDIR%%/widgets/charactermap.py
 %%EXAMPLESDIR%%/widgets/charactermap.pyc
 %%EXAMPLESDIR%%/widgets/digitalclock.py
@@ -682,6 +781,50 @@
 %%EXAMPLESDIR%%/widgets/spinboxes.pyc
 %%EXAMPLESDIR%%/widgets/styles.py
 %%EXAMPLESDIR%%/widgets/styles.pyc
+%%EXAMPLESDIR%%/widgets/stylesheet/images/checkbox_checked.png
+%%EXAMPLESDIR%%/widgets/stylesheet/images/checkbox_checked_hover.png
+%%EXAMPLESDIR%%/widgets/stylesheet/images/checkbox_checked_pressed.png
+%%EXAMPLESDIR%%/widgets/stylesheet/images/checkbox_unchecked.png
+%%EXAMPLESDIR%%/widgets/stylesheet/images/checkbox_unchecked_hover.png
+%%EXAMPLESDIR%%/widgets/stylesheet/images/checkbox_unchecked_pressed.png
+%%EXAMPLESDIR%%/widgets/stylesheet/images/down_arrow.png
+%%EXAMPLESDIR%%/widgets/stylesheet/images/down_arrow_disabled.png
+%%EXAMPLESDIR%%/widgets/stylesheet/images/frame.png
+%%EXAMPLESDIR%%/widgets/stylesheet/images/pagefold.png
+%%EXAMPLESDIR%%/widgets/stylesheet/images/pushbutton.png
+%%EXAMPLESDIR%%/widgets/stylesheet/images/pushbutton_hover.png
+%%EXAMPLESDIR%%/widgets/stylesheet/images/pushbutton_pressed.png
+%%EXAMPLESDIR%%/widgets/stylesheet/images/radiobutton_checked.png
+%%EXAMPLESDIR%%/widgets/stylesheet/images/radiobutton_checked_hover.png
+%%EXAMPLESDIR%%/widgets/stylesheet/images/radiobutton_checked_pressed.png
+%%EXAMPLESDIR%%/widgets/stylesheet/images/radiobutton_unchecked.png
+%%EXAMPLESDIR%%/widgets/stylesheet/images/radiobutton_unchecked_hover.png
+%%EXAMPLESDIR%%/widgets/stylesheet/images/radiobutton_unchecked_pressed.png
+%%EXAMPLESDIR%%/widgets/stylesheet/images/sizegrip.png
+%%EXAMPLESDIR%%/widgets/stylesheet/images/spindown.png
+%%EXAMPLESDIR%%/widgets/stylesheet/images/spindown_hover.png
+%%EXAMPLESDIR%%/widgets/stylesheet/images/spindown_off.png
+%%EXAMPLESDIR%%/widgets/stylesheet/images/spindown_pressed.png
+%%EXAMPLESDIR%%/widgets/stylesheet/images/spinup.png
+%%EXAMPLESDIR%%/widgets/stylesheet/images/spinup_hover.png
+%%EXAMPLESDIR%%/widgets/stylesheet/images/spinup_off.png
+%%EXAMPLESDIR%%/widgets/stylesheet/images/spinup_pressed.png
+%%EXAMPLESDIR%%/widgets/stylesheet/images/up_arrow.png
+%%EXAMPLESDIR%%/widgets/stylesheet/images/up_arrow_disabled.png
+%%EXAMPLESDIR%%/widgets/stylesheet/mainwindow.ui
+%%EXAMPLESDIR%%/widgets/stylesheet/qss/coffee.qss
+%%EXAMPLESDIR%%/widgets/stylesheet/qss/default.qss
+%%EXAMPLESDIR%%/widgets/stylesheet/qss/pagefold.qss
+%%EXAMPLESDIR%%/widgets/stylesheet/stylesheet.py
+%%EXAMPLESDIR%%/widgets/stylesheet/stylesheet.pyc
+%%EXAMPLESDIR%%/widgets/stylesheet/stylesheet.qrc
+%%EXAMPLESDIR%%/widgets/stylesheet/stylesheeteditor.py
+%%EXAMPLESDIR%%/widgets/stylesheet/stylesheeteditor.pyc
+%%EXAMPLESDIR%%/widgets/stylesheet/stylesheeteditor.ui
+%%EXAMPLESDIR%%/widgets/stylesheet/ui_mainwindow.py
+%%EXAMPLESDIR%%/widgets/stylesheet/ui_mainwindow.pyc
+%%EXAMPLESDIR%%/widgets/stylesheet/ui_stylesheeteditor.py
+%%EXAMPLESDIR%%/widgets/stylesheet/ui_stylesheeteditor.pyc
 %%EXAMPLESDIR%%/widgets/tetrix.py
 %%EXAMPLESDIR%%/widgets/tetrix.pyc
 %%EXAMPLESDIR%%/widgets/tooltips/images/circle.png
@@ -727,10 +870,20 @@
 @dirrm %%EXAMPLESDIR%%/xml
 @dirrm %%EXAMPLESDIR%%/widgets/tooltips/images
 @dirrm %%EXAMPLESDIR%%/widgets/tooltips
+@dirrm %%EXAMPLESDIR%%/widgets/stylesheet/qss
+@dirrm %%EXAMPLESDIR%%/widgets/stylesheet/images
+@dirrm %%EXAMPLESDIR%%/widgets/stylesheet
 @dirrm %%EXAMPLESDIR%%/widgets/movie
 @dirrm %%EXAMPLESDIR%%/widgets/icons/images
 @dirrm %%EXAMPLESDIR%%/widgets/icons
 @dirrm %%EXAMPLESDIR%%/widgets
+@dirrm %%EXAMPLESDIR%%/webkit/simpleselector
+@dirrm %%EXAMPLESDIR%%/webkit/previewer
+@dirrm %%EXAMPLESDIR%%/webkit/googlechat
+@dirrm %%EXAMPLESDIR%%/webkit/formextractor
+@dirrm %%EXAMPLESDIR%%/webkit/fancybrowser
+@dirrm %%EXAMPLESDIR%%/webkit/domtraversal
+@dirrm %%EXAMPLESDIR%%/webkit
 @dirrm %%EXAMPLESDIR%%/tutorials/addressbook
 @dirrm %%EXAMPLESDIR%%/tutorials
 @dirrm %%EXAMPLESDIR%%/tools/settingseditor/inifiles
@@ -777,6 +930,8 @@
 @dirrm %%EXAMPLESDIR%%/itemviews/editabletreemodel
 @dirrm %%EXAMPLESDIR%%/itemviews/chart
 @dirrm %%EXAMPLESDIR%%/itemviews
+@dirrm %%EXAMPLESDIR%%/ipc/sharedmemory
+@dirrm %%EXAMPLESDIR%%/ipc
 @dirrm %%EXAMPLESDIR%%/graphicsview/padnavigator/images
 @dirrm %%EXAMPLESDIR%%/graphicsview/padnavigator
 @dirrm %%EXAMPLESDIR%%/graphicsview/dragdroprobot/images
@@ -808,6 +963,10 @@
 @dirrm %%EXAMPLESDIR%%/designer/plugins
 @dirrm %%EXAMPLESDIR%%/designer/calculatorform
 @dirrm %%EXAMPLESDIR%%/designer
+@dirrm %%EXAMPLESDIR%%/demos/textedit/images/win
+@dirrm %%EXAMPLESDIR%%/demos/textedit/images/mac
+@dirrm %%EXAMPLESDIR%%/demos/textedit/images
+@dirrm %%EXAMPLESDIR%%/demos/textedit
 @dirrm %%EXAMPLESDIR%%/demos/qtdemo/xml
 @dirrm %%EXAMPLESDIR%%/demos/qtdemo/images
 @dirrm %%EXAMPLESDIR%%/demos/qtdemo
