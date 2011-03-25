@@ -1,6 +1,6 @@
---- configure.orig	2010-05-10 13:47:34.842989306 +0200
-+++ configure	2010-05-10 13:51:54.767296452 +0200
-@@ -6291,7 +6291,6 @@
+--- ./configure.orig	2011-03-09 01:18:35.443096016 +0100
++++ ./configure	2011-03-09 01:17:30.423222843 +0100
+@@ -6617,7 +6617,6 @@
          QT_CONFIG="$QT_CONFIG phonon-backend"
      fi
  else
@@ -8,7 +8,7 @@
  fi
  
  # disable accessibility
-@@ -6343,7 +6342,6 @@
+@@ -6671,7 +6670,6 @@
  
  # enable opengl
  if [ "$CFG_OPENGL" = "no" ]; then
@@ -16,7 +16,7 @@
  else
      QT_CONFIG="$QT_CONFIG opengl"
  fi
-@@ -6812,7 +6810,6 @@
+@@ -7172,7 +7170,6 @@
  if [ "$CFG_XMLPATTERNS" = "yes" ]; then
      QT_CONFIG="$QT_CONFIG xmlpatterns"
  else
@@ -24,7 +24,7 @@
  fi
  
  if [ "$CFG_MULTIMEDIA" = "no" ]; then
-@@ -7364,10 +7361,8 @@
+@@ -7772,10 +7769,8 @@
  [ "$CFG_MNG" != "yes" ]      && QCONFIG_FLAGS="$QCONFIG_FLAGS QT_NO_IMAGEFORMAT_MNG"
  [ "$CFG_ZLIB" != "yes" ]     && QCONFIG_FLAGS="$QCONFIG_FLAGS QT_NO_ZLIB"
  [ "$CFG_S60" != "yes" ]      && QCONFIG_FLAGS="$QCONFIG_FLAGS QT_NO_S60"
@@ -35,7 +35,7 @@
  
  if [ "$PLATFORM_QWS" != "yes" ]; then
      [ "$CFG_GRAPHICS_SYSTEM" = "raster" ] && QCONFIG_FLAGS="$QCONFIG_FLAGS QT_GRAPHICSSYSTEM_RASTER"
-@@ -7376,35 +7371,21 @@
+@@ -7785,35 +7780,21 @@
  fi
  
  # X11/Unix/Mac only configs
