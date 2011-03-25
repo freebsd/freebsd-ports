@@ -7,9 +7,9 @@
 
 PORTNAME=	ana
 PORTVERSION=	0.11
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	x11-themes gnome
-MASTER_SITES=	http://ana.netart.eu.org/
+MASTER_SITES=	http://themes.netart.eu.org/
 PKGNAMEPREFIX=	${TYPE}-
 PKGNAMESUFFIX=	-theme
 DISTNAME=	Ana
@@ -19,9 +19,6 @@ COMMENT=	Clean and white GTK engine
 
 LIB_DEPENDS=	rsvg-2:${PORTSDIR}/graphics/librsvg2
 RUN_DEPENDS=	${LOCALBASE}/share/icons/Foxtrot/index.theme:${PORTSDIR}/x11-themes/gnome-themes-extras
-
-DEPRECATED=     Upstream disapear and distfile is no more available
-EXPIRATION_DATE=        2011-05-01
 
 TYPE?=		gtk
 THEME_NAME=	Ana
