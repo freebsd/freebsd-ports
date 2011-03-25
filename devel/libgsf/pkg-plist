@@ -93,6 +93,7 @@ share/doc/gsf/right.png
 share/doc/gsf/sources.html
 share/doc/gsf/style.css
 share/doc/gsf/up.png
+share/locale/ca/LC_MESSAGES/libgsf.mo
 share/locale/cs/LC_MESSAGES/libgsf.mo
 share/locale/da/LC_MESSAGES/libgsf.mo
 share/locale/de/LC_MESSAGES/libgsf.mo
