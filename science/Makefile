@@ -170,6 +170,7 @@
     SUBDIR += qtresistors
     SUBDIR += ruby-dcl
     SUBDIR += ruby-gphys
+    SUBDIR += rubygem-ai4r
     SUBDIR += silo
     SUBDIR += simlib
     SUBDIR += svmlight
