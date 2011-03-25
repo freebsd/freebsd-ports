@@ -1,3 +1,3 @@
-KDE44 frontend to PolicyKit.
+Daemon providing a polkit authentication UI for KDE.
 
-WWW:	http://www.kde.org/
+WWW:	http://projects.kde.org/projects/extragear/base/polkit-kde-agent-1
