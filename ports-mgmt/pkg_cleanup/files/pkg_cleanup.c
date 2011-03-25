@@ -15,8 +15,27 @@
 #include <sysexits.h>
 #include <unistd.h>
 
+#if __FreeBSD_version < 900030
+#define OLD_DIALOG
+#endif
+
 static glob_t	gl;	/* A cached list of all files in /var/db/pkg */
-dialogMenuItem	*menu=NULL;
+#ifdef OLD_DIALOG
+typedef dialogMenuItem ListItem;
+#else
+typedef DIALOG_LISTITEM ListItem;
+#endif
+ListItem	*menu;
+#ifdef OLD_DIALOG
+#define ITEM_DATA		data
+#define ITEM_PROMPT		prompt
+#define ITEM_CHECKED	aux
+#else
+#define ITEM_DATA		help
+#define ITEM_PROMPT		name
+#define ITEM_CHECKED	state
+#endif
+
 int				menulen=0;
 
 void free_menu(void)
@@ -25,13 +44,13 @@ void free_menu(void)
 
 	if(menu) {
 		for(i=0; i<menulen; i++) {
-			if(menu[i].data) {
-				free(menu[i].data);
-				menu[i].data=NULL;
+			if(menu[i].ITEM_DATA) {
+				free(menu[i].ITEM_DATA);
+				menu[i].ITEM_DATA=NULL;
 			}
-			if(menu[i].prompt) {
-				free(menu[i].prompt);
-				menu[i].prompt=NULL;
+			if(menu[i].ITEM_PROMPT) {
+				free(menu[i].ITEM_PROMPT);
+				menu[i].ITEM_PROMPT=NULL;
 			}
 		}
 		free(menu);
@@ -49,6 +68,7 @@ int blacklist(char *path, int operation)
 	return(hsearch(item, operation)!=NULL);
 }
 
+#ifdef OLD_DIALOG
 int fire(struct _dmenu_item *item)
 {
 	if(item->aux)
@@ -80,22 +100,23 @@ int checked(struct _dmenu_item *item)
 		return(TRUE);
 	return(FALSE);
 }
+#endif
 
 /* Read +COMMENT, add to menu and blacklist */
 int add_item(char *path)
 {
-	char				*p;
-	char				comment[80];
-	FILE				*comment_file;
-	char				comment_path[MAXPATHLEN+1];
-	dialogMenuItem		*newmenu;
+	char		*p;
+	char		comment[80];
+	FILE		*file;
+	char		newpath[MAXPATHLEN+1];
+	ListItem	*newmenu;
 
 	if(blacklist(path,FIND))
 		return(0);
 	blacklist(path,ENTER);
 	comment[0]=0;
 
-	newmenu=(dialogMenuItem*)realloc(menu, sizeof(dialogMenuItem)*(menulen+1));
+	newmenu=(ListItem *)realloc(menu, sizeof(ListItem)*(menulen+1));
 	if(newmenu==NULL)
 		return(-1);
 	menu=newmenu;
@@ -104,7 +125,9 @@ int add_item(char *path)
 	if(p==NULL)				/* Not possible */
 		return(-1);
 
-	menu[menulen].prompt=strdup(p+1);
+	menu[menulen].ITEM_PROMPT=strdup(p+1);
+	menu[menulen].ITEM_CHECKED=0;
+#ifdef OLD_DIALOG
 	menu[menulen].title="";
 	menu[menulen].checked=checked;
 	menu[menulen].fire=fire;
@@ -112,14 +135,16 @@ int add_item(char *path)
 	menu[menulen].lbra='[';
 	menu[menulen].mark='X';
 	menu[menulen].rbra=']';
-	menu[menulen].aux=0;
+#else
+	menu[menulen].text="";
+#endif
 
 	/* Read +COMMENT */
-	sprintf(comment_path,"%s/+COMMENT",path);
-	comment_file=fopen(comment_path,"r");
-	if(comment_file) {
-		fgets(comment, sizeof(comment), comment_file);
-		fclose(comment_file);
+	sprintf(newpath,"%s/+COMMENT",path);
+	file=fopen(newpath,"r");
+	if(file) {
+		fgets(comment, sizeof(comment), file);
+		fclose(file);
 		/* Remove trailing whitespace */
 		for(p=strchr(comment,0)-1; p>=comment; p--) {
 			if(isspace(*p))
@@ -128,22 +153,75 @@ int add_item(char *path)
 				break;
 		}
 	}
-	menu[menulen].data=strdup(comment);
+	menu[menulen].ITEM_DATA=strdup(comment);
 	menulen++;
 
 	return(0);
 }
 
+void do_init_dialog(void)
+{
+#ifdef OLD_DIALOG
+	init_dialog();
+	use_shadow=FALSE;
+#else
+	init_dialog(stdin, stdout);
+	dialog_state.use_shadow=FALSE;
+#endif
+}
+
 int display_menu(void)
 {
 	int	ret=0;
-	int		maxx,maxy;
+	int	maxx,maxy;
+	int	curr;
 
-	init_dialog();
-	use_shadow=FALSE;
+	do_init_dialog();
 	getmaxyx(stdscr, maxy, maxx);
+#ifdef OLD_DIALOG
 	if(dialog_checklist("Welcome to pkg_cleanup.", "These are the leaf packages installed on your system\nChose the packages to deinstall. F1 will display the package description.\n\n\n", maxy, maxx, maxy-11, 0-menulen, menu, NULL))
 		ret=-1;
+#else
+	dialog_vars.help_button=1;
+	dialog_vars.item_help=1;
+loop:
+	switch(ret=dlg_checklist("Welcome to pkg_cleanup.", "These are the leaf packages installed on your system\nChose the packages to deinstall. Help will display the package description.", maxy-1, maxx, maxy-9, menulen, menu, " X", FLAG_CHECK, &curr)) {
+		case DLG_EXIT_HELP: {
+			char *p;
+			char newpath[MAXPATHLEN+1];
+			FILE *file;
+			struct stat	sb;
+
+			/* READ +DESC */
+			sprintf(newpath,"/var/db/pkg/%s/+DESC",menu[curr].ITEM_PROMPT);
+			file=fopen(newpath, "r");
+			if(file) {
+				if(fstat(fileno(file), &sb)==0) {
+					p=(char *)malloc(sb.st_size+1);
+					if(p) {
+						if(fread(p, sb.st_size, 1, file)==1) {
+							p[sb.st_size]=0;
+							dialog_vars.help_button=0;
+							dialog_msgbox(menu[curr].ITEM_DATA, p, maxy-4, maxx-4, TRUE);
+							dialog_vars.help_button=1;
+						}
+						free(p);
+					}
+				}
+				fclose(file);
+			}
+			goto loop;
+		}
+		case 0:
+			ret=0;
+			break;
+		default:
+			ret=-1;
+			break;
+	}
+	dialog_vars.help_button=0;
+	dialog_vars.item_help=0;
+#endif
 	end_dialog();
 	return(ret);
 }
@@ -157,13 +235,38 @@ int read_pkglist(int loops)
 	int		maxx,maxy;
 	int		lastgauge=-1;
 	int		gauge;
+#ifndef OLD_DIALOG
+	int		pipepair[2];
+	FILE	*read_pipe;
+	FILE	*write_pipe;
+#endif
 
-	init_dialog();
+	do_init_dialog();
 	getmaxyx(stdscr, maxy, maxx);
 	for(p=0;p<gl.gl_pathc;p++) {
 		gauge=p*100/gl.gl_pathc;
 		if(gauge != lastgauge) {
+#ifdef OLD_DIALOG
 			dialog_gauge(NULL, "Searching for leaves", maxy/2-1, maxx/2-12, 7, 24, gauge);
+#else
+			if(pipe(pipepair)!=0) {
+				fputs("Cannot create pipe pair.\n", stderr);
+				return(-1);
+			}
+			if((read_pipe=fdopen(pipepair[0], "r"))==NULL) {
+				fputs("Cannot open read end of pipe pair.\n", stderr);
+				return(-1);
+			}
+			dialog_state.pipe_input=read_pipe;
+			if((write_pipe=fdopen(pipepair[1], "r"))==NULL) {
+				fputs("Cannot open read end of pipe pair.\n", stderr);
+				return(-1);
+			}
+			fprintf(write_pipe, "%d\n%c", gauge, 4);
+			fclose(write_pipe);
+			dialog_gauge(NULL, "Searching for leaves", maxy/2-1, maxx/2-12, gauge);
+			fclose(read_pipe);
+#endif
 			lastgauge=gauge;
 		}
 		sprintf(path,"%s/+REQUIRED_BY",gl.gl_pathv[p]);
@@ -184,8 +287,29 @@ int read_pkglist(int loops)
 				add_item(gl.gl_pathv[p]);
 		}
 	}
+#ifdef OLD_DIALOG
 	dialog_gauge(NULL, "Searching for leaves", maxy/2-1, maxx/2-12, 7, 24, 100);
 	dialog_clear_norefresh();
+#else
+	if(pipe(pipepair)!=0) {
+		fputs("Cannot create pipe pair.\n", stderr);
+		return(-1);
+	}
+	if((read_pipe=fdopen(pipepair[0], "r"))==NULL) {
+		fputs("Cannot open read end of pipe pair.\n", stderr);
+		return(-1);
+	}
+	dialog_state.pipe_input=read_pipe;
+	if((write_pipe=fdopen(pipepair[1], "r"))==NULL) {
+		fputs("Cannot open read end of pipe pair.\n", stderr);
+		return(-1);
+	}
+	fprintf(write_pipe, "%d\n%c", 100, 4);
+	fclose(write_pipe);
+	dialog_gauge(NULL, "Searching for leaves", maxy/2-1, maxx/2-12, 100);
+	fclose(read_pipe);
+	dlg_clear();
+#endif
 	if(menulen==0) {
 		if(loops)
 			dialog_msgbox(NULL, "No new leaves found", 5, 23, TRUE);
@@ -210,7 +334,7 @@ int remove_ports(void)
 
 	args=(char **)malloc((menulen+2) * sizeof(char *));
 	if(!args) {
-		init_dialog();
+		do_init_dialog();
 		dialog_msgbox("ERROR", "Can not allocate memory for package list!", 5, 45, TRUE);
 		end_dialog();
 		return(-1);
@@ -218,14 +342,14 @@ int remove_ports(void)
 	p=args;
 	*(p++)="-G";
 	for(i=0;i<menulen;i++) {
-		if(menu[i].aux) {
-			*(p++)=menu[i].prompt;
+		if(menu[i].ITEM_CHECKED) {
+			*(p++)=menu[i].ITEM_PROMPT;
 			delete_count++;
 		}
 	}
 	*(p)=NULL;
 	if(!delete_count) {
-		init_dialog();
+		do_init_dialog();
 		dialog_msgbox(NULL, "No packages selected", 5, 24, TRUE);
 		end_dialog();
 		free(args);
@@ -242,7 +366,7 @@ int remove_ports(void)
 	}
 	free(args);
 	if(child==-1) {
-		init_dialog();
+		do_init_dialog();
 		dialog_msgbox(NULL, "Can not fork()", 5, 18, TRUE);
 		end_dialog();
 		return(-1);
@@ -261,7 +385,7 @@ int keep_going(void)
 {
 	int ret;
 
-	init_dialog();
+	do_init_dialog();
 	ret = !dialog_yesno(NULL,"Do you want to process the new leaves packages?",-1,-1);
 	end_dialog();
 	return(ret);
@@ -312,6 +436,6 @@ int main(int argc, char **argv)
 		free_menu();
 	} while(keep_going());
 
-	fputs("Program Terminated Successfully\n",stderr);
+	fputs("\nProgram Terminated Successfully\n",stderr);
 	return(0);
 }
