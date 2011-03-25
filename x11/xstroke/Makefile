@@ -9,24 +9,26 @@ PORTNAME=	xstroke
 PORTVERSION=	0.5.12
 PORTREVISION=	8
 CATEGORIES=	x11
-MASTER_SITES=	ftp://ftp.handhelds.org/projects/xstroke/release-0.5/ \
-		http://www.handhelds.org/download/projects/xstroke/release-0.5/
+MASTER_SITES=	http://ftp.gwdg.de/pub/linux/handhelds/projects/xstroke/release-0.5/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fullscreen gesture recognition
 
-DEPRECATED=	Upstream disapear and distfile is no more available
-EXPIRATION_DATE=	2011-05-01
+LICENSE=	GPLv2 GPLv3
+LICENSE_COMB=	dual
 
 USE_BISON=	build
 USE_XORG=	xft x11 xext xi xtst
 USE_IMAKE=	yes
-CFLAGS+=	${PTHREAD_CFLAGS}
-CPPFLAGS=	-I${LOCALBASE}/include -I.
-LDFLAGS=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
-MAKE_ENV+=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
+MAKE_ENV=	LDFLAGS="${LDFLAGS}"
 
-MAN1=	xstroke.1
+MAN1=		xstroke.1
+PLIST_FILES=	bin/xstroke %%ETCDIR%%/alphabet
+PLIST_DIRS=	%%ETCDIR%%
+
+CFLAGS+=	-I.
+CPPFLAGS=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
+LDFLAGS=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 
 post-patch:
 	@${REINPLACE_CMD} -e "s,%%PREFIX%%,${PREFIX},g" ${WRKSRC}/etc/Imakefile
