@@ -6,23 +6,21 @@
 #
 
 PORTNAME=	vyqchat
-PORTVERSION=	0.2.8
-PORTREVISION=	8
+PORTVERSION=	0.2.9
 CATEGORIES=	net
-MASTER_SITES=	http://linux.bydg.org/~yogin/
+MASTER_SITES=	http://www.linux-projects.net/d/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Qt LAN chat, compatible with Vypress Chat
 
-DEPRECATED=     Upstream disapear and distfile is no more available
-EXPIRATION_DATE=        2011-05-01
-
 USE_QT_VER=	3
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--with-Qt-dir=${QT_PREFIX}
+
 QTCFGLIBS=	${PTHREAD_LIBS}
 
-CONFIGURE_ARGS=	--with-Qt-dir=${QT_PREFIX}
+.include <bsd.port.pre.mk>
 
 .if !defined(WITHOUT_ARTS)
 LIB_DEPENDS+=	artsc:${PORTSDIR}/audio/arts
@@ -39,15 +37,5 @@ CONFIGURE_ARGS+=--without-libao
 .if !defined(WITHOUT_ARTS) || defined(WITH_LIBAO)
 LIB_DEPENDS+=	sndfile:${PORTSDIR}/audio/libsndfile
 .endif
-
-.include <bsd.port.pre.mk>
-
-post-patch:
-	@${REINPLACE_CMD} -e 's,Settings::getUUID,getUUID,' \
-		${WRKSRC}/src/settings.h
-	@${REINPLACE_CMD} -e 's,Sound::error,error,' \
-		${WRKSRC}/src/sound.h
-	@${REINPLACE_CMD} -e 's,User::setStatus,setStatus,' \
-		${WRKSRC}/src/user.h
 
 .include <bsd.port.post.mk>
