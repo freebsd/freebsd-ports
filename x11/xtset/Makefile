@@ -16,8 +16,6 @@ COMMENT=	Utility to set title on an xterm
 NO_WRKSUBDIR=   YES
 
 PLIST_FILES=	bin/xtset
-
 MAN1=		xtset.1
-MANCOMPRESSED=	yes
 
 .include <bsd.port.mk>
