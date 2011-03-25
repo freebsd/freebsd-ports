@@ -1,8 +1,8 @@
 #!/bin/sh
 #
-# mta.sh - start multiple MTA instances, e.g. for MailScanner
+# mta - start multiple MTA instances, e.g. for MailScanner
 
-# PROVIDE: mta
+# PROVIDE: mta mail
 # REQUIRE: LOGIN cleanvar
 # BEFORE:
 # KEYWORD: shutdown
