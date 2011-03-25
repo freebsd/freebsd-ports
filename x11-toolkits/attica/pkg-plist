@@ -3,6 +3,9 @@ include/attica/activity.h
 include/attica/atticabasejob.h
 include/attica/atticaclient_export.h
 include/attica/atticautils.h
+include/attica/buildservice.h
+include/attica/buildservicejob.h
+include/attica/buildservicejoboutput.h
 include/attica/category.h
 include/attica/comment.h
 include/attica/commentparser.h
@@ -28,11 +31,15 @@ include/attica/person.h
 include/attica/platformdependent.h
 include/attica/postjob.h
 include/attica/privatedata.h
+include/attica/project.h
 include/attica/provider.h
 include/attica/providermanager.h
+include/attica/publisher.h
+include/attica/publisherfield.h
+include/attica/remoteaccount.h
 include/attica/version.h
 lib/libattica.so
 lib/libattica.so.0
-lib/libattica.so.0.2.0
+lib/libattica.so.0.2.2
 libdata/pkgconfig/libattica.pc
 @dirrmtry include/attica
