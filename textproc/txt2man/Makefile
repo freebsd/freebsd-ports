@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	txt2man
-PORTVERSION=	1.5.5
-PORTREVISION=	1
+PORTVERSION=	1.5.6
 CATEGORIES=	textproc
 MASTER_SITES=	http://mvertes.free.fr/download/
 
@@ -16,7 +15,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Converts flat ASCII text to man page format
 
 BUILD_DEPENDS=	gawk:${PORTSDIR}/lang/gawk
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USE_GMAKE=	yes
 INSTALL_TARGET=	install prefix=${PREFIX}
