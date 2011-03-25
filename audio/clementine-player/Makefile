@@ -34,7 +34,7 @@ QT_COMPONENTS=	gui xml qmake_build uic_build moc_build rcc_build \
 USE_GCC=	4.2+
 INSTALLS_ICONS=	yes
 USE_GSTREAMER=	gio ogg mp3 flac soup
-MAKE_JOBS_SAFE=	yes
+MAKE_JOBS_UNSAFE=	yes
 
 OPTIONS=	VISUALISATION "Visualisations from projectM" off
 
