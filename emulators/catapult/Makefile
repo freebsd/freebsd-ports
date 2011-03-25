@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	catapult
-PORTVERSION=	0.8.0
+PORTVERSION=	0.8.1
 CATEGORIES=	emulators
 MASTER_SITES=	SF/openmsx/openmsx/${PORTVERSION}
 DISTNAME=	openmsx-${PORTNAME}-${PORTVERSION}
@@ -17,6 +17,8 @@ COMMENT=	GUI for openMSX
 
 BUILD_DEPENDS=	openmsx:${PORTSDIR}/emulators/openmsx
 RUN_DEPENDS=	openmsx:${PORTSDIR}/emulators/openmsx
+
+LICENSE=	GPLv2
 
 USE_GNOME=	libxml2
 USE_WX=		2.6+
