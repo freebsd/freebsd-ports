@@ -1094,6 +1094,7 @@
 %%WWWDIR%%/administrator/manifests/libraries/index.html
 %%WWWDIR%%/administrator/manifests/libraries/joomla.xml
 %%WWWDIR%%/administrator/manifests/libraries/phpmailer.xml
+%%WWWDIR%%/administrator/manifests/libraries/phputf8.xml
 %%WWWDIR%%/administrator/manifests/libraries/simplepie.xml
 %%WWWDIR%%/administrator/manifests/packages/index.html
 %%WWWDIR%%/administrator/manifests/packages/joomla.xml
@@ -1470,7 +1471,6 @@
 %%WWWDIR%%/administrator/templates/bluestork/images/toolbar/icon-32-apply.png
 %%WWWDIR%%/administrator/templates/bluestork/images/toolbar/icon-32-archive.png
 %%WWWDIR%%/administrator/templates/bluestork/images/toolbar/icon-32-article-add.png
-%%WWWDIR%%/administrator/templates/bluestork/images/toolbar/icon-32-article-featured.png
 %%WWWDIR%%/administrator/templates/bluestork/images/toolbar/icon-32-article.png
 %%WWWDIR%%/administrator/templates/bluestork/images/toolbar/icon-32-back.png
 %%WWWDIR%%/administrator/templates/bluestork/images/toolbar/icon-32-banner-categories.png
@@ -1494,6 +1494,7 @@
 %%WWWDIR%%/administrator/templates/bluestork/images/toolbar/icon-32-edit.png
 %%WWWDIR%%/administrator/templates/bluestork/images/toolbar/icon-32-error.png
 %%WWWDIR%%/administrator/templates/bluestork/images/toolbar/icon-32-export.png
+%%WWWDIR%%/administrator/templates/bluestork/images/toolbar/icon-32-featured.png
 %%WWWDIR%%/administrator/templates/bluestork/images/toolbar/icon-32-forward.png
 %%WWWDIR%%/administrator/templates/bluestork/images/toolbar/icon-32-help.png
 %%WWWDIR%%/administrator/templates/bluestork/images/toolbar/icon-32-html.png
@@ -1915,6 +1916,7 @@
 %%WWWDIR%%/administrator/templates/hathor/images/menu/icon-16-writemess.png
 %%WWWDIR%%/administrator/templates/hathor/images/menu/index.html
 %%WWWDIR%%/administrator/templates/hathor/images/mini_icon.png
+%%WWWDIR%%/administrator/templates/hathor/images/required.png
 %%WWWDIR%%/administrator/templates/hathor/images/selector-arrow-hc.png
 %%WWWDIR%%/administrator/templates/hathor/images/selector-arrow-rtl.png
 %%WWWDIR%%/administrator/templates/hathor/images/selector-arrow-std.png
@@ -1927,7 +1929,6 @@
 %%WWWDIR%%/administrator/templates/hathor/images/toolbar/icon-32-apply.png
 %%WWWDIR%%/administrator/templates/hathor/images/toolbar/icon-32-archive.png
 %%WWWDIR%%/administrator/templates/hathor/images/toolbar/icon-32-article-add.png
-%%WWWDIR%%/administrator/templates/hathor/images/toolbar/icon-32-article-featured.png
 %%WWWDIR%%/administrator/templates/hathor/images/toolbar/icon-32-article.png
 %%WWWDIR%%/administrator/templates/hathor/images/toolbar/icon-32-back.png
 %%WWWDIR%%/administrator/templates/hathor/images/toolbar/icon-32-banner-categories.png
@@ -1951,6 +1952,7 @@
 %%WWWDIR%%/administrator/templates/hathor/images/toolbar/icon-32-edit.png
 %%WWWDIR%%/administrator/templates/hathor/images/toolbar/icon-32-error.png
 %%WWWDIR%%/administrator/templates/hathor/images/toolbar/icon-32-export.png
+%%WWWDIR%%/administrator/templates/hathor/images/toolbar/icon-32-featured.png
 %%WWWDIR%%/administrator/templates/hathor/images/toolbar/icon-32-forward.png
 %%WWWDIR%%/administrator/templates/hathor/images/toolbar/icon-32-help.png
 %%WWWDIR%%/administrator/templates/hathor/images/toolbar/icon-32-html.png
@@ -1959,6 +1961,7 @@
 %%WWWDIR%%/administrator/templates/hathor/images/toolbar/icon-32-links.png
 %%WWWDIR%%/administrator/templates/hathor/images/toolbar/icon-32-lock.png
 %%WWWDIR%%/administrator/templates/hathor/images/toolbar/icon-32-menu.png
+%%WWWDIR%%/administrator/templates/hathor/images/toolbar/icon-32-messanging.png
 %%WWWDIR%%/administrator/templates/hathor/images/toolbar/icon-32-messaging.png
 %%WWWDIR%%/administrator/templates/hathor/images/toolbar/icon-32-module.png
 %%WWWDIR%%/administrator/templates/hathor/images/toolbar/icon-32-move.png
@@ -2149,6 +2152,7 @@
 %%WWWDIR%%/components/com_content/views/form/view.html.php
 %%WWWDIR%%/components/com_content/views/index.html
 %%WWWDIR%%/components/com_mailto/controller.php
+%%WWWDIR%%/components/com_mailto/helpers/mailto.php
 %%WWWDIR%%/components/com_mailto/index.html
 %%WWWDIR%%/components/com_mailto/mailto.php
 %%WWWDIR%%/components/com_mailto/mailto.xml
@@ -2425,9 +2429,15 @@
 %%WWWDIR%%/installation/language/bg-BG/bg-BG.ini
 %%WWWDIR%%/installation/language/bg-BG/bg-BG.xml
 %%WWWDIR%%/installation/language/bg-BG/index.html
+%%WWWDIR%%/installation/language/bn-BD/bn-BD.ini
+%%WWWDIR%%/installation/language/bn-BD/bn-BD.xml
+%%WWWDIR%%/installation/language/bn-BD/index.html
 %%WWWDIR%%/installation/language/ca-ES/ca-ES.ini
 %%WWWDIR%%/installation/language/ca-ES/ca-ES.xml
 %%WWWDIR%%/installation/language/ca-ES/index.html
+%%WWWDIR%%/installation/language/ckb-IQ/ckb-IQ.ini
+%%WWWDIR%%/installation/language/ckb-IQ/ckb-IQ.xml
+%%WWWDIR%%/installation/language/ckb-IQ/index.html
 %%WWWDIR%%/installation/language/cs-CZ/cs-CZ.ini
 %%WWWDIR%%/installation/language/cs-CZ/cs-CZ.xml
 %%WWWDIR%%/installation/language/cs-CZ/index.html
@@ -2437,6 +2447,12 @@
 %%WWWDIR%%/installation/language/de-DE/de-DE.ini
 %%WWWDIR%%/installation/language/de-DE/de-DE.xml
 %%WWWDIR%%/installation/language/de-DE/index.html
+%%WWWDIR%%/installation/language/el-GR/el-GR.ini
+%%WWWDIR%%/installation/language/el-GR/el-GR.xml
+%%WWWDIR%%/installation/language/el-GR/index.html
+%%WWWDIR%%/installation/language/eo-XX/eo-XX.ini
+%%WWWDIR%%/installation/language/eo-XX/eo-XX.xml
+%%WWWDIR%%/installation/language/eo-XX/index.html
 %%WWWDIR%%/installation/language/en-AU/en-AU.ini
 %%WWWDIR%%/installation/language/en-AU/en-AU.xml
 %%WWWDIR%%/installation/language/en-AU/index.html
@@ -2455,6 +2471,9 @@
 %%WWWDIR%%/installation/language/fa-IR/fa-IR.ini
 %%WWWDIR%%/installation/language/fa-IR/fa-IR.xml
 %%WWWDIR%%/installation/language/fa-IR/index.html
+%%WWWDIR%%/installation/language/fi-FI/fi-FI.ini
+%%WWWDIR%%/installation/language/fi-FI/fi-FI.xml
+%%WWWDIR%%/installation/language/fi-FI/index.html
 %%WWWDIR%%/installation/language/fr-FR/fr-FR.ini
 %%WWWDIR%%/installation/language/fr-FR/fr-FR.xml
 %%WWWDIR%%/installation/language/fr-FR/index.html
@@ -2480,6 +2499,9 @@
 %%WWWDIR%%/installation/language/ja-JP/index.html
 %%WWWDIR%%/installation/language/ja-JP/ja-JP.ini
 %%WWWDIR%%/installation/language/ja-JP/ja-JP.xml
+%%WWWDIR%%/installation/language/ka-GE/index.html
+%%WWWDIR%%/installation/language/ka-GE/ka-GE.ini
+%%WWWDIR%%/installation/language/ka-GE/ka-GE.xml
 %%WWWDIR%%/installation/language/km-KH/index.html
 %%WWWDIR%%/installation/language/km-KH/km-KH.ini
 %%WWWDIR%%/installation/language/km-KH/km-KH.xml
@@ -2495,12 +2517,21 @@
 %%WWWDIR%%/installation/language/mk-MK/index.html
 %%WWWDIR%%/installation/language/mk-MK/mk-MK.ini
 %%WWWDIR%%/installation/language/mk-MK/mk-MK.xml
+%%WWWDIR%%/installation/language/ml-IN/index.html
+%%WWWDIR%%/installation/language/ml-IN/ml-IN.ini
+%%WWWDIR%%/installation/language/ml-IN/ml-IN.xml
+%%WWWDIR%%/installation/language/mn-MN/index.html
+%%WWWDIR%%/installation/language/mn-MN/mn-MN.ini
+%%WWWDIR%%/installation/language/mn-MN/mn-MN.xml
 %%WWWDIR%%/installation/language/nb-NO/index.html
 %%WWWDIR%%/installation/language/nb-NO/nb-NO.ini
 %%WWWDIR%%/installation/language/nb-NO/nb-NO.xml
 %%WWWDIR%%/installation/language/nl-NL/index.html
 %%WWWDIR%%/installation/language/nl-NL/nl-NL.ini
 %%WWWDIR%%/installation/language/nl-NL/nl-NL.xml
+%%WWWDIR%%/installation/language/nn-NO/index.html
+%%WWWDIR%%/installation/language/nn-NO/nn-NO.ini
+%%WWWDIR%%/installation/language/nn-NO/nn-NO.xml
 %%WWWDIR%%/installation/language/pl-PL/index.html
 %%WWWDIR%%/installation/language/pl-PL/pl-PL.ini
 %%WWWDIR%%/installation/language/pl-PL/pl-PL.xml
@@ -2534,6 +2565,9 @@
 %%WWWDIR%%/installation/language/sy-IQ/index.html
 %%WWWDIR%%/installation/language/sy-IQ/sy-IQ.ini
 %%WWWDIR%%/installation/language/sy-IQ/sy-IQ.xml
+%%WWWDIR%%/installation/language/ta-IN/index.html
+%%WWWDIR%%/installation/language/ta-IN/ta-IN.ini
+%%WWWDIR%%/installation/language/ta-IN/ta-IN.xml
 %%WWWDIR%%/installation/language/th-TH/index.html
 %%WWWDIR%%/installation/language/th-TH/th-TH.ini
 %%WWWDIR%%/installation/language/th-TH/th-TH.xml
@@ -2573,6 +2607,7 @@
 %%WWWDIR%%/installation/sql/mysql/diff_15_to_16.sql
 %%WWWDIR%%/installation/sql/mysql/index.html
 %%WWWDIR%%/installation/sql/mysql/joomla.sql
+%%WWWDIR%%/installation/sql/mysql/joomla_update_160to161.sql
 %%WWWDIR%%/installation/sql/mysql/joomla_update_16beta13.sql
 %%WWWDIR%%/installation/sql/mysql/joomla_update_16beta14.sql
 %%WWWDIR%%/installation/sql/mysql/joomla_update_16beta15.sql
@@ -3113,10 +3148,13 @@
 %%WWWDIR%%/media/editors/codemirror/js/basefiles-uncompressed.js
 %%WWWDIR%%/media/editors/codemirror/js/basefiles.js
 %%WWWDIR%%/media/editors/codemirror/js/codemirror.js
+%%WWWDIR%%/media/editors/codemirror/js/codemirror-uncompressed.js
 %%WWWDIR%%/media/editors/codemirror/js/editor.js
+%%WWWDIR%%/media/editors/codemirror/js/highlight.js
 %%WWWDIR%%/media/editors/codemirror/js/index.html
 %%WWWDIR%%/media/editors/codemirror/js/mirrorframe.js
 %%WWWDIR%%/media/editors/codemirror/js/parsecss.js
+%%WWWDIR%%/media/editors/codemirror/js/parsedummy.js
 %%WWWDIR%%/media/editors/codemirror/js/parsehtmlmixed.js
 %%WWWDIR%%/media/editors/codemirror/js/parsejavascript.js
 %%WWWDIR%%/media/editors/codemirror/js/parsesparql.js
@@ -3583,6 +3621,7 @@
 %%WWWDIR%%/media/mod_languages/images/fa.gif
 %%WWWDIR%%/media/mod_languages/images/fi.gif
 %%WWWDIR%%/media/mod_languages/images/fr.gif
+%%WWWDIR%%/media/mod_languages/images/he.gif
 %%WWWDIR%%/media/mod_languages/images/hi.gif
 %%WWWDIR%%/media/mod_languages/images/hr.gif
 %%WWWDIR%%/media/mod_languages/images/hu.gif
@@ -3602,6 +3641,7 @@
 %%WWWDIR%%/media/mod_languages/images/pl.gif
 %%WWWDIR%%/media/mod_languages/images/ps.gif
 %%WWWDIR%%/media/mod_languages/images/pt.gif
+%%WWWDIR%%/media/mod_languages/images/pt_br.gif
 %%WWWDIR%%/media/mod_languages/images/ro.gif
 %%WWWDIR%%/media/mod_languages/images/ru.gif
 %%WWWDIR%%/media/mod_languages/images/sk.gif
@@ -4169,6 +4209,7 @@
 %%WWWDIR%%/templates/beez5/images/slider_plus.png
 %%WWWDIR%%/templates/beez5/images/slider_plus_rtl.png
 %%WWWDIR%%/templates/beez5/images/system/arrow.png
+%%WWWDIR%%/templates/beez5/images/system/arrow_rtl.png
 %%WWWDIR%%/templates/beez5/images/system/index.html
 %%WWWDIR%%/templates/beez5/images/system/notice-alert.png
 %%WWWDIR%%/templates/beez5/images/system/notice-info.png
@@ -4199,6 +4240,7 @@
 %%WWWDIR%%/templates/beez_20/css/index.html
 %%WWWDIR%%/templates/beez_20/css/layout.css
 %%WWWDIR%%/templates/beez_20/css/nature.css
+%%WWWDIR%%/templates/beez_20/css/nature_rtl.css
 %%WWWDIR%%/templates/beez_20/css/personal.css
 %%WWWDIR%%/templates/beez_20/css/position.css
 %%WWWDIR%%/templates/beez_20/css/print.css
@@ -4228,6 +4270,7 @@
 %%WWWDIR%%/templates/beez_20/images/nature/arrow1.gif
 %%WWWDIR%%/templates/beez_20/images/nature/arrow1_rtl.gif
 %%WWWDIR%%/templates/beez_20/images/nature/arrow2.gif
+%%WWWDIR%%/templates/beez_20/images/nature/arrow2_rtl.gif
 %%WWWDIR%%/templates/beez_20/images/nature/arrow2_grey.png
 %%WWWDIR%%/templates/beez_20/images/nature/arrow_nav.gif
 %%WWWDIR%%/templates/beez_20/images/nature/arrow_small.png
@@ -4276,6 +4319,7 @@
 %%WWWDIR%%/templates/beez_20/images/slider_plus.png
 %%WWWDIR%%/templates/beez_20/images/slider_plus_rtl.png
 %%WWWDIR%%/templates/beez_20/images/system/arrow.png
+%%WWWDIR%%/templates/beez_20/images/system/arrow_rtl.png
 %%WWWDIR%%/templates/beez_20/images/system/calendar.png
 %%WWWDIR%%/templates/beez_20/images/system/index.html
 %%WWWDIR%%/templates/beez_20/images/system/j_button2_blank.png
@@ -4319,6 +4363,7 @@
 %%WWWDIR%%/templates/system/images/j_button2_blank.png
 %%WWWDIR%%/templates/system/images/j_button2_image.png
 %%WWWDIR%%/templates/system/images/j_button2_left.png
+%%WWWDIR%%/templates/system/images/j_button2_right.png
 %%WWWDIR%%/templates/system/images/j_button2_pagebreak.png
 %%WWWDIR%%/templates/system/images/j_button2_readmore.png
 %%WWWDIR%%/templates/system/images/selector-arrow.png
@@ -4810,6 +4855,7 @@
 @dirrm %%WWWDIR%%/components/com_content/views/form
 @dirrm %%WWWDIR%%/components/com_content/views
 @dirrm %%WWWDIR%%/components/com_content
+@dirrm %%WWWDIR%%/components/com_mailto/helpers
 @dirrm %%WWWDIR%%/components/com_mailto/views/mailto/tmpl
 @dirrm %%WWWDIR%%/components/com_mailto/views/mailto
 @dirrm %%WWWDIR%%/components/com_mailto/views/sent/tmpl
@@ -4885,16 +4931,21 @@
 @dirrm %%WWWDIR%%/installation/language/ar-AA
 @dirrm %%WWWDIR%%/installation/language/be-BY
 @dirrm %%WWWDIR%%/installation/language/bg-BG
+@dirrm %%WWWDIR%%/installation/language/bn-BD
 @dirrm %%WWWDIR%%/installation/language/ca-ES
+@dirrm %%WWWDIR%%/installation/language/ckb-IQ
 @dirrm %%WWWDIR%%/installation/language/cs-CZ
 @dirrm %%WWWDIR%%/installation/language/da-DK
 @dirrm %%WWWDIR%%/installation/language/de-DE
+@dirrm %%WWWDIR%%/installation/language/el-GR
+@dirrm %%WWWDIR%%/installation/language/eo-XX
 @dirrm %%WWWDIR%%/installation/language/en-AU
 @dirrm %%WWWDIR%%/installation/language/en-GB
 @dirrm %%WWWDIR%%/installation/language/en-US
 @dirrm %%WWWDIR%%/installation/language/es-ES
 @dirrm %%WWWDIR%%/installation/language/et-EE
 @dirrm %%WWWDIR%%/installation/language/fa-IR
+@dirrm %%WWWDIR%%/installation/language/fi-FI
 @dirrm %%WWWDIR%%/installation/language/fr-FR
 @dirrm %%WWWDIR%%/installation/language/gl-ES
 @dirrm %%WWWDIR%%/installation/language/gu-IN
@@ -4903,13 +4954,17 @@
 @dirrm %%WWWDIR%%/installation/language/id-ID
 @dirrm %%WWWDIR%%/installation/language/it-IT
 @dirrm %%WWWDIR%%/installation/language/ja-JP
+@dirrm %%WWWDIR%%/installation/language/ka-GE
 @dirrm %%WWWDIR%%/installation/language/km-KH
 @dirrm %%WWWDIR%%/installation/language/lo-LA
 @dirrm %%WWWDIR%%/installation/language/lt-LT
 @dirrm %%WWWDIR%%/installation/language/lv-LV
+@dirrm %%WWWDIR%%/installation/language/ml-IN
+@dirrm %%WWWDIR%%/installation/language/mn-MN
 @dirrm %%WWWDIR%%/installation/language/mk-MK
 @dirrm %%WWWDIR%%/installation/language/nb-NO
 @dirrm %%WWWDIR%%/installation/language/nl-NL
+@dirrm %%WWWDIR%%/installation/language/nn-NO
 @dirrm %%WWWDIR%%/installation/language/pl-PL
 @dirrm %%WWWDIR%%/installation/language/pt-BR
 @dirrm %%WWWDIR%%/installation/language/pt-PT
@@ -4921,6 +4976,7 @@
 @dirrm %%WWWDIR%%/installation/language/sr-YU
 @dirrm %%WWWDIR%%/installation/language/sv-SE
 @dirrm %%WWWDIR%%/installation/language/sy-IQ
+@dirrm %%WWWDIR%%/installation/language/ta-IN
 @dirrm %%WWWDIR%%/installation/language/th-TH
 @dirrm %%WWWDIR%%/installation/language/tr-TR
 @dirrm %%WWWDIR%%/installation/language/uk-UA
