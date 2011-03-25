@@ -1,8 +1,21 @@
 bin/kwooty
+lib/kde4/kwooty_watchfolderplugin.so
+lib/kde4/kwooty_watchfoldersettings.so
+lib/libkwootycore.so
+lib/libkwootycore.so.0
+lib/libkwootycore.so.0.6.3
 share/applications/kde4/kwooty.desktop
+share/apps/kwooty/kwooty.notifyrc
 share/apps/kwooty/kwootyui.rc
-share/config.kcfg/settings.kcfg
+share/config.kcfg/kwooty_watchfoldersettings.kcfg
+share/config.kcfg/kwootysettings.kcfg
 share/icons/hicolor/16x16/apps/kwooty.png
+share/icons/hicolor/22x22/apps/kwooty.png
 share/icons/hicolor/32x32/apps/kwooty.png
 share/icons/hicolor/64x64/apps/kwooty.png
+share/kde4/services/kwooty_watchfolderplugin.desktop
+share/kde4/services/kwooty_watchfoldersettings.desktop
+share/kde4/servicetypes/kwootyplugin.desktop
+share/locale/cs/LC_MESSAGES/kwooty.mo
+share/locale/de/LC_MESSAGES/kwooty.mo
 @dirrm share/apps/kwooty
