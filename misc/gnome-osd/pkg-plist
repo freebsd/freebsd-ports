@@ -2,7 +2,6 @@ bin/gnome-osd-client
 bin/gnome-osd-event-bridge
 bin/gnome-osd-properties
 etc/xdg/autostart/gnome-osd-event-bridge.desktop
-libdata/bonobo/servers/GNOME_OSD.server
 %%PYTHON_SITELIBDIR%%/gnomeosd/__init__.py
 %%PYTHON_SITELIBDIR%%/gnomeosd/__init__.pyc
 %%PYTHON_SITELIBDIR%%/gnomeosd/__init__.pyo
@@ -36,19 +35,35 @@ libdata/bonobo/servers/GNOME_OSD.server
 %%PYTHON_SITELIBDIR%%/gnomeosd/xscreensaver.py
 %%PYTHON_SITELIBDIR%%/gnomeosd/xscreensaver.pyc
 %%PYTHON_SITELIBDIR%%/gnomeosd/xscreensaver.pyo
+libdata/bonobo/servers/GNOME_OSD.server
 libexec/gnome-osd-server
+share/applications/gnome-osd-properties.desktop
 share/dbus-1/services/pt.inescporto.telecom.GnomeOSD.EventBridge.service
 share/dbus-1/services/pt.inescporto.telecom.GnomeOSD.service
-share/applications/gnome-osd-properties.desktop
-share/gnome-osd/xchatosd.py
-share/pixmaps/gnome-osd.png
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%DATADIR%%/xchatosd.py
+share/locale/ca/LC_MESSAGES/gnome-osd.mo
 share/locale/cs/LC_MESSAGES/gnome-osd.mo
+share/locale/de/LC_MESSAGES/gnome-osd.mo
+share/locale/en_GB/LC_MESSAGES/gnome-osd.mo
+share/locale/es/LC_MESSAGES/gnome-osd.mo
+share/locale/fr/LC_MESSAGES/gnome-osd.mo
+share/locale/hu/LC_MESSAGES/gnome-osd.mo
+share/locale/it/LC_MESSAGES/gnome-osd.mo
 share/locale/ja/LC_MESSAGES/gnome-osd.mo
+share/locale/ms/LC_MESSAGES/gnome-osd.mo
+share/locale/pl/LC_MESSAGES/gnome-osd.mo
 share/locale/pt/LC_MESSAGES/gnome-osd.mo
-@dirrm share/gnome-osd
-@dirrm %%PYTHON_SITELIBDIR%%/gnomeosd
-@dirrmtry %%PYTHON_SITELIBDIR%%
-@dirrmtry %%PYTHON_LIBDIR%%
-@comment only remove the dbus directories if dbus is not installed
-@unexec if ! [ -e %%LOCALBASE%%/bin/dbus-daemon ]; then rmdir %D/share/dbus-1/services 2>/dev/null; rmdir %D/share/dbus-1 2>/dev/null; fi
+share/locale/ru/LC_MESSAGES/gnome-osd.mo
+share/locale/sv/LC_MESSAGES/gnome-osd.mo
+share/locale/tr/LC_MESSAGES/gnome-osd.mo
+share/locale/zh_CN/LC_MESSAGES/gnome-osd.mo
+share/pixmaps/gnome-osd.png
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm %%DATADIR%%
+@dirrmtry share/dbus-1/services
+@dirrmtry share/dbus-1
 @dirrmtry share/applications
+@dirrm %%PYTHON_SITELIBDIR%%/gnomeosd
