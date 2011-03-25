@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	File-Stream
-PORTVERSION=	2.20
+PORTVERSION=	2.30
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,7 +14,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Regular expression delimited records from streams
 
-RUN_DEPENDS=	p5-YAPE-Regex>=3.02:${PORTSDIR}/textproc/p5-YAPE-Regex
+RUN_DEPENDS=	p5-YAPE-Regex>=4.00:${PORTSDIR}/textproc/p5-YAPE-Regex
 
 MAN3=		File::Stream.3
 PERL_MODBUILD=	Yes
