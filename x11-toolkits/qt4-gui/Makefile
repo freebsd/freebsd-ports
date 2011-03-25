@@ -65,18 +65,18 @@ BUILD_DEPENDS+=	${LOCALBASE}/lib/libcups.a:${PORTSDIR}/print/cups-client
 CONFIGURE_ARGS+=-cups -L${LOCALBASE}/lib -I. -I${LOCALBASE}/include
 .endif
 
-.if ${QT4_OPTIONS:MQGTKSTYLE}
-USE_GNOME=	gtk20
-CONFIGURE_ARGS+=-gtkstyle
-.else
-CONFIGURE_ARGS+=-no-gtkstyle
-.endif
-
 .if ${QT4_OPTIONS:MNAS}
 LIB_DEPENDS+=	audio:${PORTSDIR}/audio/nas
 CONFIGURE_ARGS+=-system-nas-sound
 .else
 CONFIGURE_ARGS+=-no-nas-sound
+.endif
+
+.if ${QT4_OPTIONS:MQGTKSTYLE}
+USE_GNOME=	gtk20
+CONFIGURE_ARGS+=-gtkstyle
+.else
+CONFIGURE_ARGS+=-no-gtkstyle
 .endif
 
 .if defined(PACKAGE_BUILDING)
@@ -101,8 +101,8 @@ post-configure:
 	${REINPLACE_CMD} -e 's|${PREFIX}/lib/qt4/pkgconfig|${PREFIX}/libdata/pkgconfig|g' \
 		-e 's|.*$$(QMAKE).*||g' ${BUILD_WRKSRC}/Makefile
 	${REINPLACE_CMD} -E -e 's|-L.[^[:space:]]*qt-x11-opensource.[^[:space:]]*lib||g' \
-			-E -e 's|(.*location=).*moc|\1${PREFIX}/bin/moc-qt4|g' \
-			-E -e 's|(.*location=).*uic|\1${PREFIX}/bin/uic-qt4|g' \
+		-E -e 's|(.*location=).*moc|\1${PREFIX}/bin/moc-qt4|g' \
+		-E -e 's|(.*location=).*uic|\1${PREFIX}/bin/uic-qt4|g' \
 		${WRKSRC}/lib/pkgconfig/QtGui.pc
 
 .include <bsd.port.post.mk>

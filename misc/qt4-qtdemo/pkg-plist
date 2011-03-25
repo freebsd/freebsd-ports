@@ -300,6 +300,7 @@ share/examples/qt4/demos/declarative/snake/content/pics/cookie.png
 share/examples/qt4/demos/declarative/snake/content/pics/eyes.svg
 share/examples/qt4/demos/declarative/snake/content/pics/head.png
 share/examples/qt4/demos/declarative/snake/content/pics/head.svg
+share/examples/qt4/demos/declarative/snake/content/pics/pause.png
 share/examples/qt4/demos/declarative/snake/content/pics/redStar.png
 share/examples/qt4/demos/declarative/snake/content/pics/redStone.png
 share/examples/qt4/demos/declarative/snake/content/pics/skull.png
@@ -879,6 +880,7 @@ share/examples/qt4/examples/declarative/animation/basics/property-animation.qml
 share/examples/qt4/examples/declarative/animation/behaviors/SideRect.qml
 share/examples/qt4/examples/declarative/animation/behaviors/behavior-example.qml
 share/examples/qt4/examples/declarative/animation/behaviors/behaviors.qmlproject
+share/examples/qt4/examples/declarative/animation/behaviors/wigglytext.qml
 share/examples/qt4/examples/declarative/animation/easing/content/QuitButton.qml
 share/examples/qt4/examples/declarative/animation/easing/content/quit.png
 share/examples/qt4/examples/declarative/animation/easing/easing.qml
@@ -1247,7 +1249,6 @@ share/examples/qt4/examples/declarative/positioners/add.png
 share/examples/qt4/examples/declarative/positioners/del.png
 share/examples/qt4/examples/declarative/positioners/positioners.qml
 share/examples/qt4/examples/declarative/positioners/positioners.qmlproject
-share/examples/qt4/examples/declarative/positioners/positioners.qmlproject.user
 share/examples/qt4/examples/declarative/sqllocalstorage/hello.qml
 share/examples/qt4/examples/declarative/sqllocalstorage/sqllocalstorage.qmlproject
 share/examples/qt4/examples/declarative/text/fonts/availableFonts.qml

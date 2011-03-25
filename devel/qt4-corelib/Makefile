@@ -63,10 +63,11 @@ pre-configure:
 
 post-configure:
 	${REINPLACE_CMD} -e 's|${PREFIX}/lib/qt4/pkgconfig|${PREFIX}/libdata/pkgconfig|g' \
-		-e 's|.*$$(QMAKE).*||g' ${BUILD_WRKSRC}/Makefile
+		-e 's|.*$$(QMAKE).*||g' \
+		${BUILD_WRKSRC}/Makefile
 	${REINPLACE_CMD} -E -e 's|-L.[^[:space:]]*qt-x11-opensource.[^[:space:]]*lib||g' \
-			-E -e 's|(.*location=).*moc|\1${PREFIX}/bin/moc-qt4|g' \
-			-E -e 's|(.*location=).*uic|\1${PREFIX}/bin/uic-qt4|g' \
+		-E -e 's|(.*location=).*moc|\1${PREFIX}/bin/moc-qt4|g' \
+		-E -e 's|(.*location=).*uic|\1${PREFIX}/bin/uic-qt4|g' \
 		${WRKSRC}/lib/pkgconfig/QtCore.pc
 
 post-install:

@@ -1,6 +1,15 @@
---- configure.old	2010-09-10 05:04:46.000000000 -0400
-+++ configure	2010-09-28 00:52:09.000000000 -0400
-@@ -2351,11 +2351,6 @@
+--- ./configure.orig	2011-03-05 18:49:09.908552467 +0100
++++ ./configure	2011-03-05 18:51:40.918572488 +0100
+@@ -796,7 +796,7 @@
+ CFG_SILENT=no
+ CFG_GRAPHICS_SYSTEM=default
+ CFG_RUNTIME_SYSTEM=
+-CFG_ALSA=auto
++CFG_ALSA=no
+ CFG_PULSEAUDIO=auto
+ CFG_COREWLAN=auto
+ CFG_ICD=auto
+@@ -2445,11 +2445,6 @@
          fi
      done
  
@@ -10,9 +19,9 @@
 -    ln -s "$relpath"/mkspecs/* "$outpath/mkspecs"
 -    rm -f "$outpath/mkspecs/default"
  
-     # Special case for mkspecs/features directory.
-     # To be able to place .prf files into a shadow build directory,
-@@ -2394,7 +2389,7 @@
+     ShadowMkspecs()
+     {
+@@ -2495,7 +2490,7 @@
  # find a make command
  if [ -z "$MAKE" ]; then
      MAKE=
@@ -21,7 +30,7 @@
          if "$WHICH" $mk >/dev/null 2>&1; then
              MAKE=`"$WHICH" $mk`
              break
-@@ -4466,7 +4461,7 @@
+@@ -4596,7 +4591,7 @@
  }
  
  # build qmake
@@ -30,7 +39,7 @@
      echo "Creating qmake. Please wait..."
  
      OLD_QCONFIG_H=
-@@ -5391,14 +5386,6 @@
+@@ -5564,14 +5559,6 @@
          X11TESTS_FLAGS="$X11TESTS_FLAGS -fpermissive"
      fi
  

@@ -19,6 +19,7 @@ share/qt4/mkspecs/common/mac-llvm.conf
 share/qt4/mkspecs/common/mac.conf
 share/qt4/mkspecs/common/posix/qplatformdefs.h
 share/qt4/mkspecs/common/qws.conf
+share/qt4/mkspecs/common/symbian/appCaptionForTranslation.cpp
 share/qt4/mkspecs/common/symbian/header-wrappers/AknBitmapAnimation.h
 share/qt4/mkspecs/common/symbian/header-wrappers/AknDoc.h
 share/qt4/mkspecs/common/symbian/header-wrappers/AknFontAccess.h
@@ -38,6 +39,7 @@ share/qt4/mkspecs/common/symbian/header-wrappers/ApDataHandler.h
 share/qt4/mkspecs/common/symbian/header-wrappers/ApUtils.h
 share/qt4/mkspecs/common/symbian/header-wrappers/CDirectoryLocalizer.h
 share/qt4/mkspecs/common/symbian/header-wrappers/DocumentHandler.h
+share/qt4/mkspecs/common/symbian/packageNameForTranslation.cpp
 share/qt4/mkspecs/common/symbian/qplatformdefs.h
 share/qt4/mkspecs/common/symbian/stl-off/new
 share/qt4/mkspecs/common/symbian/symbian-makefile.conf
@@ -87,6 +89,7 @@ share/qt4/mkspecs/features/qtestlib.prf
 share/qt4/mkspecs/features/qtopia.prf
 share/qt4/mkspecs/features/qtopiainc.prf
 share/qt4/mkspecs/features/qtopialib.prf
+share/qt4/mkspecs/features/qttest_p4.prf
 share/qt4/mkspecs/features/release.prf
 share/qt4/mkspecs/features/resources.prf
 share/qt4/mkspecs/features/shared.prf
@@ -105,6 +108,7 @@ share/qt4/mkspecs/features/symbian/default_post.prf
 share/qt4/mkspecs/features/symbian/default_pre.prf
 share/qt4/mkspecs/features/symbian/do_not_build_as_thumb.prf
 share/qt4/mkspecs/features/symbian/epocallowdlldata.prf
+share/qt4/mkspecs/features/symbian/localize_deployment.prf
 share/qt4/mkspecs/features/symbian/moc.prf
 share/qt4/mkspecs/features/symbian/nested_exceptions.prf
 share/qt4/mkspecs/features/symbian/opengl.prf
