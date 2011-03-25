@@ -2,3 +2,6 @@ lib/kde4/plugins/phonon_backend/phonon_vlc.so
 share/kde4/services/phononbackends/vlc.desktop
 @dirrmtry share/kde4/services/phononbackends
 @dirrmtry lib/kde4/plugins/phonon_backend
+@cwd %%QT_PREFIX%%
+%%QT_PLUGINDIR_REL%%/phonon_backend/libphonon_vlc.so
+@dirrmtry %%QT_PLUGINDIR_REL%%/phonon_backend

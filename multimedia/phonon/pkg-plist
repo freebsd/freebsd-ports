@@ -81,6 +81,8 @@ include/phonon/SeekSlider
 include/phonon/StreamInterface
 include/phonon/SubtitleDescription
 include/phonon/SubtitleDescriptionModel
+include/phonon/VideoCaptureDevice
+include/phonon/VideoCaptureDeviceModel
 include/phonon/VideoPlayer
 include/phonon/VideoWidget
 include/phonon/VideoWidgetInterface
@@ -109,6 +111,7 @@ include/phonon/experimental/audiodataoutput.h
 include/phonon/experimental/audiodataoutputinterface.h
 include/phonon/experimental/audioformat.h
 include/phonon/experimental/avcapture.h
+include/phonon/experimental/avcaptureinterface.h
 include/phonon/experimental/backendcapabilities.h
 include/phonon/experimental/backendinterface.h
 include/phonon/experimental/export.h
@@ -156,6 +159,18 @@ lib/libphononexperimental.so.4
 lib/libphononexperimental.so.4.4.0
 libdata/pkgconfig/phonon.pc
 share/dbus-1/interfaces/org.kde.Phonon.AudioOutput.xml
+share/phonon-buildsystem/FindAutomoc4.cmake
+share/phonon-buildsystem/FindPackageHandleStandardArgs.cmake
+share/phonon-buildsystem/FindPhonon.cmake
+share/phonon-buildsystem/FindPhononInternal.cmake
+share/phonon-buildsystem/FindQt4.cmake
+share/phonon-buildsystem/MacroEnsureVersion.cmake
+share/phonon-buildsystem/MacroLogFeature.cmake
+share/phonon-buildsystem/MacroOptionalFindPackage.cmake
+share/phonon-buildsystem/MacroPushRequiredVars.cmake
+share/phonon-buildsystem/PhononMacros.cmake
+share/phonon-buildsystem/cmake_uninstall.cmake.in
+@dirrm share/phonon-buildsystem
 @dirrm include/phonon/experimental
 @dirrm include/phonon
 @dirrm include/KDE/Phonon/Experimental
@@ -167,3 +182,5 @@ share/dbus-1/interfaces/org.kde.Phonon.AudioOutput.xml
 %%QT_LIBDIR_REL%%/libphonon.so.4
 %%QT_LIBDIR_REL%%/libphononexperimental.so
 %%QT_LIBDIR_REL%%/libphononexperimental.so.4
+share/qt4/mkspecs/modules/qt_phonon.pri
+@dirrmtry share/qt4/mkspecs/modules

@@ -5,11 +5,12 @@
 # $FreeBSD$
 
 PORTNAME=	phonon
-PORTVERSION=	4.4.2
+PORTVERSION=	4.4.4
 CATEGORIES=	multimedia kde ipv6
 MASTER_SITES=	${MASTER_SITE_KDE}
-MASTER_SITE_SUBDIR=	${PHONON_BRANCH}/${PORTNAME}/${PORTVERSION}/
+MASTER_SITE_SUBDIR=	${PHONON_BRANCH}/${PORTNAME}/${PORTNAME}-backend${PKGNAMESUFFIX}/${PORTVERSION}/src
 PKGNAMESUFFIX=	-xine
+DISTNAME=	${PORTNAME}-backend${PKGNAMESUFFIX}-${PORTVERSION}
 DIST_SUBDIR=	KDE
 
 MAINTAINER=	kde@FreeBSD.org
@@ -29,12 +30,7 @@ QT_COMPONENTS=	gui dbus xml phonon \
 
 PLIST_SUB+=	QT_PREFIX=${QT_PREFIX}
 
-post-patch:
-#fix finding automoc when PREFIX is not matched KDE4_PREFIX
-	${REINPLACE_CMD} -e 's|NO_DEFAULT_PATH|${KDE4_PREFIX} NO_DEFAULT_PATH|' \
-		${WRKSRC}/cmake/FindAutomoc4.cmake
-
-pre-install:
+pre-su-install:
 	${MKDIR} ${QT_PLUGINDIR}/phonon_backend
 
 post-install:
