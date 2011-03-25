@@ -34,6 +34,10 @@ DATADIR=	${PREFIX}/share/desktopbsd
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} >= 900000
+BROKEN=		does not compile on 9.X
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e \
 		"/Installation/d; /Documentation/d; /InitialConf/d" \
