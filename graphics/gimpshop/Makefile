@@ -22,6 +22,8 @@ LIB_DEPENDS=	wmf:${PORTSDIR}/graphics/libwmf \
 		jpeg:${PORTSDIR}/graphics/jpeg \
 		tiff:${PORTSDIR}/graphics/tiff
 
+BROKEN=		fails to patch
+
 CONFLICTS=	gimp-1.* gimp-2.* gimp-gnome-2.*
 
 SHLIBVER?=	200
