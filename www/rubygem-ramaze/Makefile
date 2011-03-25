@@ -7,7 +7,7 @@
 # note, innate version is typically an exact requirement
 
 PORTNAME=	ramaze
-PORTVERSION=	2010.06.18
+PORTVERSION=	2011.01.30
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
