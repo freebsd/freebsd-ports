@@ -9,14 +9,11 @@ PORTNAME=	klone
 PORTVERSION=	2.1.359
 PORTREVISION=	1
 CATEGORIES=	lang
-MASTER_SITES=	http://koala.ilog.fr/ftp/pub/Klone/
+MASTER_SITES=	http://old.koalateam.com/ftp/pub/Klone/
 DISTNAME=	Klone${PORTVERSION:E}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Small, Lisp-like interpreted language
-
-DEPRECATED=     Upstream disapear and distfile is no more available
-EXPIRATION_DATE=        2011-05-01
 
 WRKSRC=		${WRKDIR}/Klone
 
