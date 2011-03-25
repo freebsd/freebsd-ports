@@ -7,7 +7,7 @@
 
 PORTNAME=	xine
 PORTVERSION=	1.1.19
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	multimedia ipv6
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-lib/${PORTVERSION}
 PKGNAMEPREFIX=	lib
@@ -16,7 +16,7 @@ DISTNAME=	${PORTNAME}-lib-${PORTVERSION}
 PATCH_SITES=	${MASTER_SITE_LOCAL}
 PATCH_SITE_SUBDIR=	makc
 
-MAINTAINER=	makc@FreeBSD.org
+MAINTAINER=	nox@FreeBSD.org
 COMMENT=	Libraries for xine multimedia player
 
 LIB_DEPENDS=	FLAC.10:${PORTSDIR}/audio/flac \
@@ -80,6 +80,7 @@ OPTIONS=	ARTS "Enable aRts support" off \
 		IMAGEMAGICK "Enable ImageMagick support" off \
 		GTK2 "Enable gdkpixbuf support" off \
 		WAVPACK "Enable WavPack support" off \
+		VAAPI "Enable VAAPI support" off \
 		VDPAU "Enable VDPAU support" on
 
 MAN1=	xine-config.1 xine-list-1.1.1
@@ -208,6 +209,10 @@ PLIST_SUB+=	WITH_WAVPACK="@comment "
 CONFIGURE_ARGS+=	--without-wavpack
 .endif
 
+.if defined(WITH_VAAPI)
+LIB_DEPENDS+=	va.1:${PORTSDIR}/multimedia/libva
+.endif
+
 .if defined(WITH_VDPAU)
 PATCHFILES+=	xine-vdpau.bz2
 USE_AUTOTOOLS=	autoconf
@@ -231,6 +236,9 @@ CONFIGURE_ARGS+=	--disable-vidix
 .endif
 
 post-patch:
+.if defined(WITH_VAAPI)
+	${PATCH} ${PATCH_DIST_ARGS} <${FILESDIR}/ffmpeg-vaapi_xine-lib-1.1.19-initerrorhack.diff
+.endif
 .if defined(WITH_VDPAU)
 	for i in `${LS} ${FILESDIR}/extrapatch-vdpau*`; do \
 		${PATCH} ${PATCH_DIST_ARGS} <$$i ;\
