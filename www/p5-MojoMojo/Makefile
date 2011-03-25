@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	MojoMojo
-PORTVERSION=	1.03
+PORTVERSION=	1.04
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
-MASTER_SITE_SUBDIR=	../by-authors/id/M/MR/MRAMBERG
+MASTER_SITE_SUBDIR=	CPAN:MRAMBERG
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
@@ -127,6 +127,7 @@ MAN3=	MojoMojo.3 \
 	MojoMojo::Formatter::File::Image.3 \
 	MojoMojo::Formatter::File::Pod.3 \
 	MojoMojo::Formatter::File::Text.3 \
+	MojoMojo::Formatter::Gist.3 \
 	MojoMojo::Formatter::GoogleSearch.3 \
 	MojoMojo::Formatter::GoogleCalendar.3 \
 	MojoMojo::Formatter::IDLink.3 \

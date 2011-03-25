@@ -38,6 +38,7 @@ bin/mojomojo_update_db.pl
 %%SITE_PERL%%/MojoMojo/Formatter/File/Image.pm
 %%SITE_PERL%%/MojoMojo/Formatter/File/Pod.pm
 %%SITE_PERL%%/MojoMojo/Formatter/File/Text.pm
+%%SITE_PERL%%/MojoMojo/Formatter/Gist.pm
 %%SITE_PERL%%/MojoMojo/Formatter/GoogleSearch.pm
 %%SITE_PERL%%/MojoMojo/Formatter/GoogleCalendar.pm
 %%SITE_PERL%%/MojoMojo/Formatter/IDLink.pm
