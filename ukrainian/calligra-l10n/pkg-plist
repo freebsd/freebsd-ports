@@ -22,6 +22,13 @@ share/doc/HTML/uk/kexi/querydesigning.docbook
 share/doc/HTML/uk/kformula/common
 share/doc/HTML/uk/kformula/index.cache.bz2
 share/doc/HTML/uk/kformula/index.docbook
+share/doc/HTML/uk/kivio/common
+share/doc/HTML/uk/kivio/credits.docbook
+share/doc/HTML/uk/kivio/index.cache.bz2
+share/doc/HTML/uk/kivio/index.docbook
+share/doc/HTML/uk/kivio/introduction.docbook
+share/doc/HTML/uk/kivio/usage.docbook
+share/doc/HTML/uk/kivio/working.docbook
 share/doc/HTML/uk/koffice/common
 share/doc/HTML/uk/koffice/index.cache.bz2
 share/doc/HTML/uk/koffice/index.docbook
@@ -53,18 +60,22 @@ share/doc/HTML/uk/thesaurus/index.cache.bz2
 share/doc/HTML/uk/thesaurus/index.docbook
 share/locale/uk/LC_MESSAGES/ArtisticTextShape.mo
 share/locale/uk/LC_MESSAGES/AutocorrectPlugin.mo
+share/locale/uk/LC_MESSAGES/BarcodePlugin.mo
 share/locale/uk/LC_MESSAGES/CalendarTool.mo
 share/locale/uk/LC_MESSAGES/ChangecasePlugin.mo
+share/locale/uk/LC_MESSAGES/ChartPlugin.mo
 share/locale/uk/LC_MESSAGES/ChartShape.mo
+share/locale/uk/LC_MESSAGES/CommentShape.mo
 share/locale/uk/LC_MESSAGES/DivineProportion.mo
 share/locale/uk/LC_MESSAGES/FormulaShape.mo
-share/locale/uk/LC_MESSAGES/FreOffice.mo
 share/locale/uk/LC_MESSAGES/KarbonTools.mo
 share/locale/uk/LC_MESSAGES/KexiRelationDesignShapePlugin.mo
 share/locale/uk/LC_MESSAGES/MusicShape.mo
 share/locale/uk/LC_MESSAGES/ParagraphTool.mo
 share/locale/uk/LC_MESSAGES/PathShapes.mo
 share/locale/uk/LC_MESSAGES/PictureShape.mo
+share/locale/uk/LC_MESSAGES/PluginShape.mo
+share/locale/uk/LC_MESSAGES/ShapePlugin.mo
 share/locale/uk/LC_MESSAGES/SpellCheckPlugin.mo
 share/locale/uk/LC_MESSAGES/TableShape.mo
 share/locale/uk/LC_MESSAGES/TextShape.mo
@@ -103,6 +114,7 @@ share/locale/uk/LC_MESSAGES/thesaurus_tool.mo
 @dirrm share/doc/HTML/uk/kspread
 @dirrm share/doc/HTML/uk/kpresenter
 @dirrm share/doc/HTML/uk/koffice
+@dirrm share/doc/HTML/uk/kivio
 @dirrm share/doc/HTML/uk/kformula
 @dirrm share/doc/HTML/uk/kexi
 @dirrm share/doc/HTML/uk/kchart

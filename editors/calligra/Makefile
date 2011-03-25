@@ -7,10 +7,9 @@
 
 PORTNAME=	koffice
 PORTVERSION=	${KOFFICE2_VERSION}
-PORTREVISION=	6
 CATEGORIES=	editors kde
 MASTER_SITES=	${MASTER_SITE_KDE}
-MASTER_SITE_SUBDIR=	stable/${PORTNAME}-${PORTVERSION}/
+MASTER_SITE_SUBDIR=	${KOFFICE2_BRANCH}/${PORTNAME}-${PORTVERSION}/
 PKGNAMESUFFIX=	-kde4
 DIST_SUBDIR=	KDE
 
@@ -19,17 +18,16 @@ COMMENT=	Office suite for KDE
 
 BUILD_DEPENDS=	eigen>=2.0.b3:${PORTSDIR}/math/eigen2 \
 		gmm++>=3.0.4:${PORTSDIR}/math/gmm++ \
-		${LOCALBASE}/lib/libpqxx.a:${PORTSDIR}/databases/postgresql-libpqxx30 \
-		${LOCALBASE}/share/xml/docbook/4.2/docbookx.dtd:${PORTSDIR}/textproc/docbook-xml
+		${LOCALBASE}/lib/libpqxx.a:${PORTSDIR}/databases/postgresql-libpqxx30
 LIB_DEPENDS=	boost_thread.4:${PORTSDIR}/devel/boost-libs \
 		qca.2:${PORTSDIR}/devel/qca \
 		GraphicsMagick++.1:${PORTSDIR}/graphics/GraphicsMagick \
 		IlmImf.6:${PORTSDIR}/graphics/OpenEXR \
 		exiv2.9:${PORTSDIR}/graphics/exiv2 \
 		jpeg.11:${PORTSDIR}/graphics/jpeg \
-		kipi.7:${PORTSDIR}/graphics/kdegraphics4 \
-		lcms.1:${PORTSDIR}/graphics/lcms \
-		wpg-0.1:${PORTSDIR}/graphics/libwpg01 \
+		kdcraw.9:${PORTSDIR}/graphics/kdegraphics4 \
+		lcms2.2:${PORTSDIR}/graphics/lcms2 \
+		wpg-0.2:${PORTSDIR}/graphics/libwpg \
 		png.6:${PORTSDIR}/graphics/png \
 		poppler-qt4.3:${PORTSDIR}/graphics/poppler-qt4 \
 		tiff.4:${PORTSDIR}/graphics/tiff \
@@ -38,7 +36,8 @@ LIB_DEPENDS=	boost_thread.4:${PORTSDIR}/devel/boost-libs \
 		freetype.9:${PORTSDIR}/print/freetype2 \
 		qimageblitz.4:${PORTSDIR}/x11/qimageblitz \
 		fontconfig.1:${PORTSDIR}/x11-fonts/fontconfig \
-		fftw3.5:${PORTSDIR}/math/fftw3
+		fftw3.5:${PORTSDIR}/math/fftw3 \
+		dcmdata.3:${PORTSDIR}/devel/dcmtk
 RUN_DEPENDS=	${LOCALBASE}/lib/libpqxx.a:${PORTSDIR}/databases/postgresql-libpqxx30
 
 USE_BZIP2=	yes
@@ -66,7 +65,7 @@ OPTIONS+=	XBASE	"XBase support in Kexi" off
 .include <bsd.port.options.mk>
 
 .if exists(${LOCALBASE}/include/qconfig.h)
-IGNORE=	does not build with x11-toolkits/qt33 installed. Please, deinstall qt-3.x first
+IGNORE=	does not build with x11-toolkits/qt33 installed. Please deinstall qt-3.x first
 .endif
 
 .if !defined(WITHOUT_GTL) || exists (${LOCALBASE}/lib/libQtShiva.so)
@@ -78,6 +77,7 @@ PLIST_SUB+=	GTL="@comment "
 .endif
 
 .if exists(${LOCALBASE}/lib/pstoedit/libp2edrvlplot.so)
+QT_COMPONENTS+=	qt3support
 BUILD_DEPENDS+=	${LOCALBASE}/lib/pstoedit/libp2edrvlplot.so:${PORTSDIR}/graphics/pstoedit
 RUN_DEPENDS+=	${LOCALBASE}/lib/pstoedit/libp2edrvlplot.so:${PORTSDIR}/graphics/pstoedit
 PLIST_SUB+=	EPS=""

@@ -25,17 +25,6 @@ share/doc/HTML/da/kformula/index.docbook
 share/doc/HTML/da/koffice/common
 share/doc/HTML/da/koffice/index.cache.bz2
 share/doc/HTML/da/koffice/index.docbook
-share/doc/HTML/da/kpresenter/a11y.docbook
-share/doc/HTML/da/kpresenter/common
-share/doc/HTML/da/kpresenter/faq.docbook
-share/doc/HTML/da/kpresenter/great-presentations.docbook
-share/doc/HTML/da/kpresenter/guides.docbook
-share/doc/HTML/da/kpresenter/index.cache.bz2
-share/doc/HTML/da/kpresenter/index.docbook
-share/doc/HTML/da/kpresenter/menus.docbook
-share/doc/HTML/da/kpresenter/options.docbook
-share/doc/HTML/da/kpresenter/screen.docbook
-share/doc/HTML/da/kpresenter/tutorial.docbook
 share/doc/HTML/da/kspread/a11y.docbook
 share/doc/HTML/da/kspread/advanced.docbook
 share/doc/HTML/da/kspread/basics.docbook
@@ -53,18 +42,22 @@ share/doc/HTML/da/thesaurus/index.cache.bz2
 share/doc/HTML/da/thesaurus/index.docbook
 share/locale/da/LC_MESSAGES/ArtisticTextShape.mo
 share/locale/da/LC_MESSAGES/AutocorrectPlugin.mo
+share/locale/da/LC_MESSAGES/BarcodePlugin.mo
 share/locale/da/LC_MESSAGES/CalendarTool.mo
 share/locale/da/LC_MESSAGES/ChangecasePlugin.mo
+share/locale/da/LC_MESSAGES/ChartPlugin.mo
 share/locale/da/LC_MESSAGES/ChartShape.mo
+share/locale/da/LC_MESSAGES/CommentShape.mo
 share/locale/da/LC_MESSAGES/DivineProportion.mo
 share/locale/da/LC_MESSAGES/FormulaShape.mo
-share/locale/da/LC_MESSAGES/FreOffice.mo
 share/locale/da/LC_MESSAGES/KarbonTools.mo
 share/locale/da/LC_MESSAGES/KexiRelationDesignShapePlugin.mo
 share/locale/da/LC_MESSAGES/MusicShape.mo
 share/locale/da/LC_MESSAGES/ParagraphTool.mo
 share/locale/da/LC_MESSAGES/PathShapes.mo
 share/locale/da/LC_MESSAGES/PictureShape.mo
+share/locale/da/LC_MESSAGES/PluginShape.mo
+share/locale/da/LC_MESSAGES/ShapePlugin.mo
 share/locale/da/LC_MESSAGES/SpellCheckPlugin.mo
 share/locale/da/LC_MESSAGES/TableShape.mo
 share/locale/da/LC_MESSAGES/TextShape.mo
@@ -101,7 +94,6 @@ share/locale/da/LC_MESSAGES/kword.mo
 share/locale/da/LC_MESSAGES/thesaurus_tool.mo
 @dirrm share/doc/HTML/da/thesaurus
 @dirrm share/doc/HTML/da/kspread
-@dirrm share/doc/HTML/da/kpresenter
 @dirrm share/doc/HTML/da/koffice
 @dirrm share/doc/HTML/da/kformula
 @dirrm share/doc/HTML/da/kexi
