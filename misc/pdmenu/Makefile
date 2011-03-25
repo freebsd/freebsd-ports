@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	pdmenu
-PORTVERSION=	1.2.98
-PORTREVISION=	2
+PORTVERSION=	1.2.99
 CATEGORIES=	misc
 MASTER_SITES=	DEBIAN
 DISTNAME=	${PORTNAME}_${PORTVERSION}
@@ -14,13 +13,13 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A simple console menu program
 
-LIB_DEPENDS=   slang.2:${PORTSDIR}/devel/libslang2
+LIB_DEPENDS=	slang.2:${PORTSDIR}/devel/libslang2
 
-MAKE_JOBS_SAFE=  yes
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/doc/COPYING
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-USE_GNOME=	gnometarget
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
@@ -28,11 +27,13 @@ CONFIGURE_ENV=	SLANG_H_LOC="${LOCALBASE}/include/slang.h" \
 		SLANG_LIB_LOC="${LOCALBASE}/lib" \
 		LIBS="-lcurses -lintl"
 CFLAGS+=	-I${LOCALBASE}/include -L${LOCALBASE}/lib
+MAKE_JOBS_SAFE=	yes
 
 MAN1=		pdmenu.1
 MAN5=		pdmenurc.5
 PLIST_FILES=	bin/pdmenu \
 		etc/pdmenurc \
+		share/locale/es/LC_MESSAGES/pdmenu.mo \
 		share/locale/fr/LC_MESSAGES/pdmenu.mo \
 		%%DATADIR%%/editdir.pl \
 		%%DATADIR%%/showdir.pl
@@ -45,7 +46,7 @@ do-install:
 	${INSTALL_MAN} ${WRKSRC}/doc/pdmenurc.man ${MAN5PREFIX}/man/man5/pdmenurc.5
 	@${MKDIR} ${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/examples/*.pl ${DATADIR}
-.for lang in fr
+.for lang in es fr
 	@${MKDIR} ${PREFIX}/share/locale/${lang}/LC_MESSAGES
 	${INSTALL_DATA} ${WRKSRC}/po/${lang}.mo \
 		${PREFIX}/share/locale/${lang}/LC_MESSAGES/pdmenu.mo
