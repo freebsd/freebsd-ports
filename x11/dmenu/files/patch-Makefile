@@ -1,0 +1,48 @@
+--- Makefile.orig	2010-11-20 10:24:33.000000000 +0100
++++ Makefile	2011-03-24 17:16:32.000000000 +0100
+@@ -12,16 +12,17 @@
+ 	@echo "CC       = ${CC}"
+ 
+ dmenu: dmenu.o draw.o
++	@echo CC -o $@
++	@${CC} -o $@ dmenu.o draw.o ${LDFLAGS}
++
+ dmenu_path: dmenu_path.o
++	@echo CC -o $@
++	@${CC} -o $@ dmenu_path.o ${LDFLAGS}
+ 
+ .c.o: config.mk
+ 	@echo CC -c $<
+ 	@${CC} -c $< ${CFLAGS}
+ 
+-dmenu dmenu_path:
+-	@echo CC -o $@
+-	@${CC} -o $@ $+ ${LDFLAGS}
+-
+ clean:
+ 	@echo cleaning
+ 	@rm -f dmenu dmenu.o draw.o dmenu_path dmenu_path.o dmenu-${VERSION}.tar.gz
+@@ -41,17 +42,17 @@
+ 	@chmod 755 ${DESTDIR}${PREFIX}/bin/dmenu
+ 	@chmod 755 ${DESTDIR}${PREFIX}/bin/dmenu_path
+ 	@chmod 755 ${DESTDIR}${PREFIX}/bin/dmenu_run
+-	@echo installing manual page to ${DESTDIR}${MANPREFIX}/man1
+-	@mkdir -p ${DESTDIR}${MANPREFIX}/man1
+-	@sed "s/VERSION/${VERSION}/g" < dmenu.1 > ${DESTDIR}${MANPREFIX}/man1/dmenu.1
+-	@chmod 644 ${DESTDIR}${MANPREFIX}/man1/dmenu.1
++	@echo installing manual page to ${DESTDIR}${MANPREFIX}/man/man1
++	@mkdir -p ${DESTDIR}${MANPREFIX}/man/man1
++	@sed "s/VERSION/${VERSION}/g" < dmenu.1 > ${DESTDIR}${MANPREFIX}/man/man1/dmenu.1
++	@chmod 644 ${DESTDIR}${MANPREFIX}/man/man1/dmenu.1
+ 
+ uninstall:
+ 	@echo removing executables from ${DESTDIR}${PREFIX}/bin
+ 	@rm -f ${DESTDIR}${PREFIX}/bin/dmenu
+ 	@rm -f ${DESTDIR}${PREFIX}/bin/dmenu_path
+ 	@rm -f ${DESTDIR}${PREFIX}/bin/dmenu_run
+-	@echo removing manual page from ${DESTDIR}${MANPREFIX}/man1
+-	@rm -f ${DESTDIR}${MANPREFIX}/man1/dmenu.1
++	@echo removing manual page from ${DESTDIR}${MANPREFIX}/man/man1
++	@rm -f ${DESTDIR}${MANPREFIX}/man/man1/dmenu.1
+ 
+ .PHONY: all options clean dist install uninstall

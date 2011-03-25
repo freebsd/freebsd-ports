@@ -1,5 +1,5 @@
---- ./config.mk.orig	2009-04-18 15:50:04.000000000 +0400
-+++ ./config.mk	2010-05-16 21:32:00.163080828 +0400
+--- config.mk.orig	2010-11-20 10:24:33.000000000 +0100
++++ config.mk	2011-03-24 17:19:41.000000000 +0100
 @@ -4,11 +4,11 @@
  # Customize below to fit your system
  
@@ -15,4 +15,18 @@
 +X11LIB = %%LOCALBASE%%/lib
  
  # Xinerama, comment if you don't want it
- XINERAMALIBS = -L${X11LIB} -lXinerama
+ XINERAMALIBS  = -lXinerama
+@@ -19,9 +19,9 @@
+ LIBS = -L${X11LIB} -lX11 ${XINERAMALIBS}
+ 
+ # flags
+-CPPFLAGS = -D_BSD_SOURCE -DVERSION=\"${VERSION}\" ${XINERAMAFLAGS}
+-CFLAGS   = -std=c99 -pedantic -Wall -Os ${INCS} ${CPPFLAGS}
+-LDFLAGS  = -s ${LIBS}
++CPPFLAGS+= -D_BSD_SOURCE -DVERSION=\"${VERSION}\" ${XINERAMAFLAGS}
++CFLAGS  += -std=c99 ${INCS} ${CPPFLAGS}
++LDFLAGS += ${LIBS}
+ 
+ # compiler and linker
+-CC = cc
++CC?= cc
