@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	miniupnpd
-PORTVERSION=	1.4.20100921
+PORTVERSION=	1.5
 CATEGORIES=	net
 MASTER_SITES=	http://miniupnp.tuxfamily.org/files/ \
 		http://miniupnp.free.fr/files/
@@ -29,7 +29,7 @@ OPTIONS=	PF_ENABLE_FILTER_RULES		"Enable pf generation of filter rules" off \
 
 .include <bsd.port.options.mk>
 .if defined(WITH_PF_ENABLE_FILTER_RULES)
-EXTRA_PATCHES=  ${PATCHDIR}/pf_enable_filter_rules.patch
+EXTRA_PATCHES=	${PATCHDIR}/pf_enable_filter_rules.patch
 .endif
 
 do-install:
