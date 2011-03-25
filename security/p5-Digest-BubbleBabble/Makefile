@@ -6,14 +6,16 @@
 #
 
 PORTNAME=	Digest-BubbleBabble
-PORTVERSION=	0.01
-PORTREVISION=	1
+PORTVERSION=	0.02
 CATEGORIES=	security perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl5 interface to a fingerprint in "bubble babble" format
+
+LICENSE_COMB=	dual
+LICENSE=	ART20 GPLv1
 
 PERL_CONFIGURE=	yes
 
