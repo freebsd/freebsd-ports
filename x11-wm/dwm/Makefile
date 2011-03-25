@@ -7,6 +7,7 @@
 
 PORTNAME=	dwm
 PORTVERSION=	5.8.2
+PORTREVISION=	1
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://dl.suckless.org/${PORTNAME}/ \
 		http://schot.a-eskwadraat.nl/files/
@@ -14,13 +15,19 @@ MASTER_SITES=	http://dl.suckless.org/${PORTNAME}/ \
 MAINTAINER=	schot@a-eskwadraat.nl
 COMMENT=	A dynamic, small, fast and simple window manager
 
-RUN_DEPENDS=	dmenu:${PORTSDIR}/x11/dmenu
+OPTIONS=	XINERAMA	"Enable Xinerama support" On
 
-USE_XORG=	x11 xinerama
+USE_XORG=	x11
 
 MAN1=		dwm.1
 PLIST_FILES=	bin/dwm
 PORTDOCS=	LICENSE README
+
+.include <bsd.port.options.mk>
+
+.if defined(WITH_XINERAMA)
+USE_XORG+=	xinerama
+.endif
 
 pre-everything::
 	@${ECHO_MSG} "You can build dwm with your own config.h using the DWM_CONF knob:"
@@ -33,6 +40,16 @@ post-extract:
 	@${CP} ${DWM_CONF} ${WRKSRC}/config.h
 .endif
 
+post-patch:
+	@${GREP} -Rl '%%[[:alpha:]]\+%%' ${WRKSRC}|${XARGS} ${REINPLACE_CMD} \
+	         -e "s,%%PREFIX%%,${PREFIX},g" \
+	         -e "s,%%LOCALBASE%%,${LOCALBASE},g" \
+	         -e "s,%%MANPREFIX%%,${MANPREFIX},g"
+.if defined(WITHOUT_XINERAMA)
+	@${REINPLACE_CMD} -e 's,$${XINERAMALIBS},,g' \
+	         -e 's,$${XINERAMAFLAGS},,g' ${WRKSRC}/config.mk
+.endif
+
 post-install:
 .if !defined(NOPORTDOCS)
 	@${ECHO_MSG} "installing additional documentation to ${DOCSDIR}"
@@ -40,5 +57,6 @@ post-install:
 	@${INSTALL_MAN} ${WRKSRC}/LICENSE ${DOCSDIR}
 	@${INSTALL_MAN} ${WRKSRC}/README ${DOCSDIR}
 .endif
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
