@@ -5,11 +5,12 @@
 # $FreeBSD$
 
 PORTNAME=	phonon
-PORTVERSION=	4.4.2
+PORTVERSION=	4.4.4
 CATEGORIES=	multimedia kde ipv6
 MASTER_SITES=	${MASTER_SITE_KDE}
-MASTER_SITE_SUBDIR=	${PHONON_BRANCH}/${PORTNAME}/${PORTVERSION}/
+MASTER_SITE_SUBDIR=	${PHONON_BRANCH}/${PORTNAME}/${PORTNAME}-backend${PKGNAMESUFFIX}/${PORTVERSION}/src
 PKGNAMESUFFIX=	-gstreamer
+DISTNAME=	${PORTNAME}-backend${PKGNAMESUFFIX}-${PORTVERSION}
 DIST_SUBDIR=	KDE
 
 MAINTAINER=	kde@FreeBSD.org
@@ -36,17 +37,11 @@ CMAKE_ARGS+=	-DWITH_Alsa:BOOL=OFF
 IGNORE=		conflicts with Qt4 phonon. Please, deinstall qt4-phonon-gst and set WITH_KDE_PHONON to continue
 .endif
 
-post-patch:
-#fix finding automoc when PREFIX is not matched KDE4_PREFIX
-	${REINPLACE_CMD} -e 's|NO_DEFAULT_PATH|${KDE4_PREFIX} NO_DEFAULT_PATH|' \
-		${PATCH_WRKSRC}/cmake/FindAutomoc4.cmake
-
 pre-configure:
-	${REINPLACE_CMD} -e '/phonon.pc/s|pkgconfig|../libdata/pkgconfig|' \
-			-e 's|{QT_INCLUDES}|{QT_INCLUDES} ${LOCALBASE}/include|'\
+	${REINPLACE_CMD} -e 's|{QT_INCLUDES}|{QT_INCLUDES} ${LOCALBASE}/include|'\
 		${PATCH_WRKSRC}/CMakeLists.txt
 
-pre-install:
+pre-su-install:
 	${MKDIR} ${QT_PLUGINDIR}/phonon_backend
 
 post-install:
