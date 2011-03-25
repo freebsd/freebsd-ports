@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Locale-SubCountry
-PORTVERSION=	1.41
+PORTVERSION=	1.44
 CATEGORIES=	misc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,8 +14,12 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Convert state, province, county etc. names to/from code
 
+LICENSE_COMB=	dual
+LICENSE=	ART20 GPLv1
+
 PERL_CONFIGURE=	5.8.4+
 
-MAN3=	Locale::SubCountry.3
+MAN3=	Locale::SubCountry.3 \
+	Locale::SubCountry::Data.3
 
 .include <bsd.port.mk>
