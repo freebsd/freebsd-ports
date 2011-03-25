@@ -3,7 +3,7 @@
 @@ -1,4 +1,4 @@
  # install the cmake files
  
--set(cmakeFiles FindChoqok.cmake FindQJson.cmake FindQtOAuth.cmake)
+-set(cmakeFiles FindChoqok.cmake FindQJson.cmake FindQtOAuth.cmake FindQtIndicate.cmake)
 +set(cmakeFiles FindChoqok.cmake FindQtOAuth.cmake)
  install( FILES ${cmakeFiles} DESTINATION ${DATA_INSTALL_DIR}/cmake/modules )
 \ No newline at end of file
