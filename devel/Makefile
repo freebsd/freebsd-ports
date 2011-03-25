@@ -2724,6 +2724,7 @@
     SUBDIR += pinstall
     SUBDIR += pipestatus
     SUBDIR += pire
+    SUBDIR += pit
     SUBDIR += pkg-config
     SUBDIR += plan9port
     SUBDIR += pmd
