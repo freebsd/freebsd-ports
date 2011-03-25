@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gpsd
-PORTVERSION=	2.95
+PORTVERSION=	2.96
 CATEGORIES=	astro geography
 MASTER_SITES=	${MASTER_SITE_BERLIOS}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -33,7 +33,7 @@ MAN1=	cgps.1 gps.1 gpscat.1 gpsctl.1 gpsfake.1 \
 	gpspipe.1 gpsprof.1 xgps.1 xgpsspeed.1 gpsmon.1 \
 	lcdgps.1
 MAN3=	libgps.3 libgpsd.3 libgpsmm.3
-MAN5=	rtcm-104.5 srec.5
+MAN5=	srec.5
 MAN8=	gpsd.8
 MANCOMPRESSED=	no
 
