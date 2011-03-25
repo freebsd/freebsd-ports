@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Finance-Currency-Convert-XE
-PORTVERSION=	0.16
+PORTVERSION=	0.17
 CATEGORIES=	finance perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,8 +14,10 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Finance::Currency::Convert::XE - Currency conversion module
 
-RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/HTML/TokeParser.pm:${PORTSDIR}/www/p5-HTML-Parser \
-		${SITE_PERL}/WWW/Mechanize.pm:${PORTSDIR}/www/p5-WWW-Mechanize
+LICENSE=	ART20
+
+RUN_DEPENDS=	p5-HTML-Parser>=0:${PORTSDIR}/www/p5-HTML-Parser \
+		p5-WWW-Mechanize>=1.60:${PORTSDIR}/www/p5-WWW-Mechanize
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
