@@ -26,6 +26,8 @@ LIB_DEPENDS=	sqlite3:${PORTSDIR}/databases/sqlite3 \
 		unique-1.0.2:${PORTSDIR}/x11-toolkits/unique \
 		raw.2:${PORTSDIR}/graphics/libraw
 
+BROKEN=		does not build
+
 USE_BZIP2=	yes
 USE_GETTEXT=	yes
 USE_GNOME=	gnomehier gconf2 gtk20 desktopfileutils librsvg2
