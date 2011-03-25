@@ -4,7 +4,6 @@ include/libktorrent/bcodec/bnode.h
 include/libktorrent/bcodec/value.h
 include/libktorrent/datachecker/datachecker.h
 include/libktorrent/datachecker/datacheckerjob.h
-include/libktorrent/datachecker/datacheckerlistener.h
 include/libktorrent/datachecker/datacheckerthread.h
 include/libktorrent/datachecker/multidatachecker.h
 include/libktorrent/datachecker/singledatachecker.h
@@ -80,6 +79,7 @@ include/libktorrent/net/networkthread.h
 include/libktorrent/net/poll.h
 include/libktorrent/net/portlist.h
 include/libktorrent/net/reverseresolver.h
+include/libktorrent/net/serversocket.h
 include/libktorrent/net/socket.h
 include/libktorrent/net/socketdevice.h
 include/libktorrent/net/socketgroup.h
@@ -103,6 +103,7 @@ include/libktorrent/peer/peermanager.h
 include/libktorrent/peer/peerprotocolextension.h
 include/libktorrent/peer/peeruploader.h
 include/libktorrent/peer/serverauthenticate.h
+include/libktorrent/peer/superseeder.h
 include/libktorrent/peer/utmetadata.h
 include/libktorrent/peer/utpex.h
 include/libktorrent/torrent/advancedchokealgorithm.h
@@ -118,6 +119,7 @@ include/libktorrent/torrent/torrent.h
 include/libktorrent/torrent/torrentcontrol.h
 include/libktorrent/torrent/torrentcreator.h
 include/libktorrent/torrent/torrentfile.h
+include/libktorrent/torrent/torrentfilestream.h
 include/libktorrent/torrent/torrentstats.h
 include/libktorrent/torrent/uploader.h
 include/libktorrent/tracker/httpannouncejob.h
@@ -127,6 +129,8 @@ include/libktorrent/tracker/tracker.h
 include/libktorrent/tracker/trackermanager.h
 include/libktorrent/tracker/udptracker.h
 include/libktorrent/tracker/udptrackersocket.h
+include/libktorrent/upnp/upnpmcastsocket.h
+include/libktorrent/upnp/upnprouter.h
 include/libktorrent/util/array.h
 include/libktorrent/util/autorotatelogjob.h
 include/libktorrent/util/bitset.h
@@ -143,8 +147,10 @@ include/libktorrent/util/log.h
 include/libktorrent/util/logsystemmanager.h
 include/libktorrent/util/pipe.h
 include/libktorrent/util/ptrmap.h
+include/libktorrent/util/resourcemanager.h
 include/libktorrent/util/sha1hash.h
 include/libktorrent/util/sha1hashgen.h
+include/libktorrent/util/signalcatcher.h
 include/libktorrent/util/timer.h
 include/libktorrent/util/urlencoder.h
 include/libktorrent/util/waitjob.h
@@ -161,8 +167,8 @@ include/libktorrent/utp/utpserverthread.h
 include/libktorrent/utp/utpsocket.h
 include/libktorrent/version.h
 lib/libktorrent.so
-lib/libktorrent.so.2
-lib/libktorrent.so.2.0.4
+lib/libktorrent.so.3
+lib/libktorrent.so.3.0.0
 share/apps/cmake/modules/FindKTorrent.cmake
 share/locale/ar/LC_MESSAGES/libktorrent.mo
 share/locale/ast/LC_MESSAGES/libktorrent.mo
@@ -222,6 +228,7 @@ share/locale/zh_TW/LC_MESSAGES/libktorrent.mo
 @dirrmtry share/locale/si
 @dirrm include/libktorrent/utp
 @dirrm include/libktorrent/util
+@dirrm include/libktorrent/upnp
 @dirrm include/libktorrent/tracker
 @dirrm include/libktorrent/torrent
 @dirrm include/libktorrent/peer

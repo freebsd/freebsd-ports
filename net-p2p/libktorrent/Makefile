@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	libktorrent
-PORTVERSION=	1.0.5
-DISTVERSIONSUFFIX=	-3
+DISTVERSION=	1.1.0
 CATEGORIES=	net-p2p kde
-MASTER_SITES=	http://ktorrent.org/downloads/${PORTVERSION:S,^1,4,}/
+MASTER_SITES=	http://ktorrent.org/downloads/${DISTVERSION:S,^1,4,}/
 
 MAINTAINER=	makc@FreeBSD.org
 COMMENT=	Torrent library split from KTorrent
