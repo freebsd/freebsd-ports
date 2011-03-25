@@ -1147,6 +1147,7 @@
     SUBDIR += rubygem-htmltools
     SUBDIR += rubygem-ini
     SUBDIR += rubygem-kwalify
+    SUBDIR += rubygem-linguistics
     SUBDIR += rubygem-liquid
     SUBDIR += rubygem-loofah
     SUBDIR += rubygem-markaby
