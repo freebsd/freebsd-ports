@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	angband
-DISTVERSION=	3.1.2v2
+PORTVERSION=	3.2.0
 CATEGORIES=	games
-MASTER_SITES=	http://rephial.org/downloads/3.1/
-DISTNAME=	${PORTNAME}-${DISTVERSION}-src
+MASTER_SITES=	http://rephial.org/downloads/3.2/
 
 MAINTAINER=	pav@FreeBSD.org
 COMMENT=	Rogue-like game with color, X11 support
