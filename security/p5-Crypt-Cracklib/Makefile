@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Crypt-Cracklib
-PORTVERSION=	1.5
+PORTVERSION=	1.7
 CATEGORIES=	security perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,7 +14,12 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl interface to Alec Muffet's cracklib library
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/libcrack.a:${PORTSDIR}/security/cracklib
+LICENSE_COMB=	dual
+LICENSE=	ART20 GPLv1
+
+BUILD_DEPENDS=	${LOCALBASE}/lib/libcrack.a:${PORTSDIR}/security/cracklib \
+		p5-Pod-Coverage>=0.19:${PORTSDIR}/devel/p5-Pod-Coverage \
+		p5-Test-Pod-Coverage>=1.08:${PORTSDIR}/devel/p5-Test-Pod-Coverage
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
