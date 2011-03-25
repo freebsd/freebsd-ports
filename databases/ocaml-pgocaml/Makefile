@@ -20,6 +20,8 @@ BUILD_DEPENDS=	${LOCALBASE}/${OCAML_SITELIBDIR}/extlib:${PORTSDIR}/devel/ocaml-e
 		${LOCALBASE}/${OCAML_SITELIBDIR}/calendar:${PORTSDIR}/devel/ocaml-calendar \
 		${LOCALBASE}/${OCAML_SITELIBDIR}/csv:${PORTSDIR}/textproc/ocaml-csv
 
+BROKEN=		does not build
+
 USE_GMAKE=	yes
 USE_OCAML=	yes
 USE_OCAML_FINDLIB=	yes
