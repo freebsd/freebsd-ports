@@ -10,17 +10,17 @@ PORTNAME=	rubber
 PORTVERSION=	1.1
 PORTREVISION=	3
 CATEGORIES=	textproc
-MASTER_SITES=	http://ebeffara.free.fr/pub/
+MASTER_SITES=	http://launchpadlibrarian.net/53558954/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A wrapper for LaTeX and friends
 
-DEPRECATED=     Upstream disapear and distfile is no more available
-EXPIRATION_DATE=        2011-05-01
-
 RUN_DEPENDS=	latex:${PORTSDIR}/print/teTeX-base
 
-USE_PYTHON=	2.2+
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
+
+USE_PYTHON=	2.5+
 USE_GMAKE=	yes
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX} --infodir=${PREFIX}/${INFO_PATH} \
