@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	Object-Signature
-PORTVERSION=	1.05
-PORTREVISION=	1
+PORTVERSION=	1.07
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -17,6 +16,7 @@ COMMENT=	Generate cryptographic signatures for objects
 
 PERL_CONFIGURE=	yes
 
-MAN3=		Object::Signature.3
+MAN3=		Object::Signature.3 \
+		Object::Signature::File.3
 
 .include <bsd.port.mk>
