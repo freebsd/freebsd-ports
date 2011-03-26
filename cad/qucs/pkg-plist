@@ -4,6 +4,7 @@ bin/qucsator
 bin/qucsattenuator
 bin/qucsconv
 bin/qucsdigi
+bin/qucsdigilib
 bin/qucsedit
 bin/qucsfilter
 bin/qucshelp
@@ -55,6 +56,7 @@ bin/qucsveri
 %%DATADIR%%/bitmaps/cpwopen.png
 %%DATADIR%%/bitmaps/cpwshort.png
 %%DATADIR%%/bitmaps/cpwstep.png
+%%DATADIR%%/bitmaps/ctline.png
 %%DATADIR%%/bitmaps/curve.png
 %%DATADIR%%/bitmaps/dc.png
 %%DATADIR%%/bitmaps/dc_current.png
@@ -102,6 +104,7 @@ bin/qucsveri
 %%DATADIR%%/bitmaps/hb.png
 %%DATADIR%%/bitmaps/home.png
 %%DATADIR%%/bitmaps/hpribin4bit.png
+%%DATADIR%%/bitmaps/hybrid.png
 %%DATADIR%%/bitmaps/iexp.png
 %%DATADIR%%/bitmaps/ifile.png
 %%DATADIR%%/bitmaps/inductor.png
@@ -140,6 +143,7 @@ bin/qucsveri
 %%DATADIR%%/bitmaps/nand.png
 %%DATADIR%%/bitmaps/next.png
 %%DATADIR%%/bitmaps/nfet.png
+%%DATADIR%%/bitmaps/nigbt.png
 %%DATADIR%%/bitmaps/nmosfet.png
 %%DATADIR%%/bitmaps/nmosfet_sub.png
 %%DATADIR%%/bitmaps/nodename.png
@@ -220,6 +224,7 @@ bin/qucsveri
 %%DATADIR%%/bitmaps/transformer.png
 %%DATADIR%%/bitmaps/triac.png
 %%DATADIR%%/bitmaps/truth.png
+%%DATADIR%%/bitmaps/tunneldiode.png
 %%DATADIR%%/bitmaps/twistedpair.png
 %%DATADIR%%/bitmaps/undo.png
 %%DATADIR%%/bitmaps/vccs.png
@@ -296,6 +301,7 @@ bin/qucsveri
 %%DATADIR%%/docs/en/internal.html
 %%DATADIR%%/docs/en/matching.html
 %%DATADIR%%/docs/en/mathfunc.html
+%%DATADIR%%/docs/en/octave.html
 %%DATADIR%%/docs/en/optimization1.png
 %%DATADIR%%/docs/en/optimization2.png
 %%DATADIR%%/docs/en/optimization3.png
@@ -427,6 +433,7 @@ bin/qucsveri
 %%DATADIR%%/lang/qucs_hu.qm
 %%DATADIR%%/lang/qucs_it.qm
 %%DATADIR%%/lang/qucs_jp.qm
+%%DATADIR%%/lang/qucs_kk.qm
 %%DATADIR%%/lang/qucs_pl.qm
 %%DATADIR%%/lang/qucs_pt.qm
 %%DATADIR%%/lang/qucs_ro.qm
@@ -448,12 +455,17 @@ bin/qucsveri
 %%DATADIR%%/library/Transistors.lib
 %%DATADIR%%/library/Varistors.lib
 %%DATADIR%%/library/Z-Diodes.lib
+%%DATADIR%%/octave/getQucsVariable.m
+%%DATADIR%%/octave/loadQucsDataSet.m
+%%DATADIR%%/octave/loadQucsVariable.m
+%%DATADIR%%/octave/showQucsDataSet.m
 %%DATADIR%%/tline/cstrip_kj_1.trc
 %%DATADIR%%/tline/cstrip_kj_2.trc
 %%DATADIR%%/tline/hp.trc
 %%DATADIR%%/tline/ustrip50fr4.trc
 %%DATADIR%%/tline/ustrip_jansen.trc
 @dirrm %%DATADIR%%/tline
+@dirrm %%DATADIR%%/octave
 @dirrm %%DATADIR%%/library
 @dirrm %%DATADIR%%/lang
 @dirrm %%DATADIR%%/docs/uk
