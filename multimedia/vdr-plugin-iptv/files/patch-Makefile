@@ -1,0 +1,31 @@
+--- a/Makefile
++++ b/Makefile
+@@ -50,7 +50,8 @@ PACKAGE = vdr-$(ARCHIVE)
+ 
+ ### Includes and Defines (add further entries here):
+ 
+-INCLUDES += -I$(VDRDIR)/include
++#INCLUDES += -I$(VDRDIR)/include
++INCLUDES += -I$(VDRDIR)
+ 
+ DEFINES += -D_GNU_SOURCE -DPLUGIN_NAME_I18N='"$(PLUGIN)"'
+ 
+@@ -117,7 +118,11 @@ libvdr-$(PLUGIN).so: $(OBJS)
+ ifndef IPTV_DEBUG
+ 	@$(STRIP) $@
+ endif
++ifdef FREEBSD
++	@cp -f $@ $(LIBDIR)/$@.$(APIVERSION)
++else
+ 	@cp --remove-destination $@ $(LIBDIR)/$@.$(APIVERSION)
++endif
+ 
+ dist: clean
+ 	@-rm -rf $(TMPDIR)/$(ARCHIVE)
+@@ -129,3 +134,6 @@ dist: clean
+ 
+ clean:
+ 	@-rm -f $(OBJS) $(DEPFILE) *.so *.tgz core* *~ $(PODIR)/*.mo $(PODIR)/*.pot
++
++install:
++	${INSTALL_PROGRAM} $(LIBDIR)/libvdr-$(PLUGIN).so.$(APIVERSION) $(PREFIX)/lib/vdr/libvdr-$(PLUGIN).so.$(APIVERSION)
