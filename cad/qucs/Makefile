@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	qucs
-PORTVERSION=	0.0.15
-PORTREVISION=	3
+PORTVERSION=	0.0.16
 CATEGORIES=	cad science
 MASTER_SITES=	SF
 
@@ -21,6 +20,6 @@ MAKE_JOBS_SAFE=	yes
 
 MAN1=		ps2sp.1 qucs.1 qucsator.1 qucsattenuator.1 qucsconv.1 \
 		qucsdigi.1 qucsedit.1 qucsfilter.1 qucshelp.1 qucslib.1 \
-		qucstrans.1 qucsveri.1
+		qucstrans.1 qucsveri.1 qucsdigilib.1
 
 .include <bsd.port.mk>
