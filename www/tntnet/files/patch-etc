@@ -1,0 +1,126 @@
+--- a/etc/Makefile.am
++++ b/etc/Makefile.am
+@@ -1,30 +1,35 @@
+ nobase_dist_noinst_DATA = \
+     tntnet/tntnet.conf.in \
+-    init.d/tntnet.in
++    init.d/tntnet.in \
++    tntnet/mime.conf
+ 
+ nobase_sysconf_DATA = \
+-    tntnet/tntnet.conf \
+-    init.d/tntnet
++    tntnet/tntnet.conf.sample \
++    tntnet/tntnet
+ 
+ nobase_dist_sysconf_DATA = \
+-    tntnet/mime.conf
++    tntnet/mime.conf.sample
+ 
+ nobase_nodist_sysconf_DATA = \
+-    tntnet/tntnet.properties
++    tntnet/tntnet.properties.sample
++
++tntnet/mime.conf.sample: tntnet/mime.conf
++	cp tntnet/mime.conf $@
+ 
+-tntnet/tntnet.conf: tntnet/tntnet.conf.in Makefile
++tntnet/tntnet.conf.sample: tntnet/tntnet.conf.in Makefile
+ 	sed -e 's,@libdir\@,@libdir@,g;' \
+ 	    -e 's,@pkglibdir\@,@pkglibdir@,g;' \
+ 	    -e 's,@sysconfdir\@,@sysconfdir@,g;' \
+ 	    -e 's,@localstatedir\@,@localstatedir@,g;' \
+-		-e 's,@datadir\@,@datadir@,g;' <tntnet/tntnet.conf.in >tntnet/tntnet.conf
++		-e 's,@datadir\@,@datadir@,g;' <tntnet/tntnet.conf.in >tntnet/tntnet.conf.sample
+ 
+-init.d/tntnet: init.d/tntnet.in Makefile
++tntnet/tntnet: init.d/tntnet.in Makefile
+ 	sed -e 's,@libdir\@,@libdir@,g;' \
+ 	    -e 's,@pkglibdir\@,@pkglibdir@,g;' \
+ 	    -e 's,@sysconfdir\@,@sysconfdir@,g;' \
+ 	    -e 's,@localstatedir\@,@localstatedir@,g;' \
+-		-e 's,@datadir\@,@datadir@,g;' <init.d/tntnet.in >init.d/tntnet
++	    -e 's/^function //;' \
++		-e 's,@datadir\@,@datadir@,g;' <init.d/tntnet.in >tntnet/tntnet
+ 
+-tntnet/tntnet.properties: Makefile
++tntnet/tntnet.properties.sample: Makefile
+ 	cxxtools-config --logfile @localstatedir@/log/tntnet/tntnet.log --properties tntnet >$@
+--- a/etc/Makefile.in
++++ b/etc/Makefile.in
+@@ -194,17 +194,18 @@ target_os = @target_os@
+ target_vendor = @target_vendor@
+ nobase_dist_noinst_DATA = \
+     tntnet/tntnet.conf.in \
+-    init.d/tntnet.in
++    init.d/tntnet.in \
++    tntnet/mime.conf
+ 
+ nobase_sysconf_DATA = \
+-    tntnet/tntnet.conf \
+-    init.d/tntnet
++    tntnet/tntnet.conf.sample \
++    tntnet/tntnet
+ 
+ nobase_dist_sysconf_DATA = \
+-    tntnet/mime.conf
++    tntnet/mime.conf.sample
+ 
+ nobase_nodist_sysconf_DATA = \
+-    tntnet/tntnet.properties
++    tntnet/tntnet.properties.sample
+ 
+ all: all-am
+ 
+@@ -436,21 +437,25 @@ uninstall-am: uninstall-info-am uninstal
+ 	uninstall-nobase_sysconfDATA
+ 
+ 
+-tntnet/tntnet.conf: tntnet/tntnet.conf.in Makefile
++tntnet/mime.conf.sample: tntnet/mime.conf
++	cp tntnet/mime.conf $@
++
++tntnet/tntnet.conf.sample: tntnet/tntnet.conf.in Makefile
+ 	sed -e 's,@libdir\@,@libdir@,g;' \
+ 	    -e 's,@pkglibdir\@,@pkglibdir@,g;' \
+ 	    -e 's,@sysconfdir\@,@sysconfdir@,g;' \
+ 	    -e 's,@localstatedir\@,@localstatedir@,g;' \
+-		-e 's,@datadir\@,@datadir@,g;' <tntnet/tntnet.conf.in >tntnet/tntnet.conf
++		-e 's,@datadir\@,@datadir@,g;' <tntnet/tntnet.conf.in >tntnet/tntnet.conf.sample
+ 
+-init.d/tntnet: init.d/tntnet.in Makefile
++tntnet/tntnet: init.d/tntnet.in Makefile
+ 	sed -e 's,@libdir\@,@libdir@,g;' \
+ 	    -e 's,@pkglibdir\@,@pkglibdir@,g;' \
+ 	    -e 's,@sysconfdir\@,@sysconfdir@,g;' \
+ 	    -e 's,@localstatedir\@,@localstatedir@,g;' \
+-		-e 's,@datadir\@,@datadir@,g;' <init.d/tntnet.in >init.d/tntnet
++	    -e 's/^function //;' \
++		-e 's,@datadir\@,@datadir@,g;' <init.d/tntnet.in >tntnet/tntnet
+ 
+-tntnet/tntnet.properties: Makefile
++tntnet/tntnet.properties.sample: Makefile
+ 	cxxtools-config --logfile @localstatedir@/log/tntnet/tntnet.log --properties tntnet >$@
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.
+--- a/etc/tntnet/tntnet.conf.in
++++ b/etc/tntnet/tntnet.conf.in
+@@ -2,12 +2,15 @@
+ #
+ 
+ PropertyFile	@sysconfdir@/tntnet/tntnet.properties
+-Listen	    0.0.0.0 80
++#Listen	    0.0.0.0 80
++Listen	    127.1 80
+ #SslListen  0.0.0.0 443 @sysconfdir@/tntnet/tntnet.pem
+ 
+ Daemon	    1
+-User	    www-data
+-Group	    www-data
++#User	    www-data
++#Group	    www-data
++User	    www
++Group	    www
+ CompPath    @libdir@/tntnet
+ 
+ # set some limit to prevent DoS-attacks

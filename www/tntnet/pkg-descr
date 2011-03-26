@@ -1,0 +1,8 @@
+Tntnet is a modular, multithreaded, high performance webapplicationserver
+for C++. To create webapplications Tntnet has a template-language called
+ecpp similar to php, jsp or mason, where you can embed c++-code inside a
+html-page to generate active content. The ecpp-files are precompiled to
+c++-classes called components and compiled and linked into a shared
+library. This process is done at compiletime.
+
+WWW: http://www.tntnet.org/index.html
