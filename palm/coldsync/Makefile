@@ -21,6 +21,8 @@ PLIST_SUB+=	NLS="@comment "
 CONFIGURE_ARGS+=	--with-i18n
 USE_GETTEXT=	yes
 PLIST_SUB+=	NLS=""
+
+BROKEN=		does not compile
 .endif
 
 REINPLACE_ARGS=	-i "" -E

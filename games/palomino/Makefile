@@ -20,6 +20,8 @@ COMMENT=	Action flight simulator with its own 3D engine
 
 LIB_DEPENDS=	osg.55:${PORTSDIR}/graphics/osg
 
+BROKEN=		does not compile
+
 USE_BZIP2=	yes
 USE_GL=		gl
 USE_CMAKE=	yes
