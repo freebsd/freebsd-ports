@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xxxterm
-PORTVERSION=	1.303
+PORTVERSION=	1.339
 CATEGORIES=	www
 MASTER_SITES=	http://opensource.conformal.com/snapshots/xxxterm/
 EXTRACT_SUFX=	.tgz
