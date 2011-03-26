@@ -2470,13 +2470,27 @@ Note:  Please add new entries to the beginning of this file.
     <affects>
       <package>
 	<name>chromium</name>
-	<range><lt>10.0.648.133</lt></range>
+	<range><lt>10.0.648.204</lt></range>
       </package>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
 	<p>Google Chrome Releases reports:</p>
 	<blockquote cite="http://googlechromereleases.blogspot.com/search/label/Stable%20updates">
+	  <p>Fixed in 10.0.648.204:<br/>
+	    [72517] High CVE-2011-1291: Buffer error in base string handling.
+	      Credit to Alex Turpin.<br/>
+	    [73216] High CVE-2011-1292: Use-after-free in the frame loader.
+	      Credit to Slawomir Blazek.<br/>
+	    [73595] High CVE-2011-1293: Use-after-free in HTMLCollection.
+	      Credit to Sergey Glazunov.<br/>
+	    [74562] High CVE-2011-1294: Stale pointer in CSS handling.
+	      Credit to Sergey Glazunov.<br/>
+	    [74991] High CVE-2011-1295: DOM tree corruption with broken node
+	      parentage. Credit to Sergey Glazunov.<br/>
+	    [75170] High CVE-2011-1296: Stale pointer in SVG text handling.
+	      Credit to Sergey Glazunov.</p>
+
 	  <p>Fixed in 10.0.648.133:<br/>
 	    [75712] High Memory corruption in style handling.
 	      Credit to Vincenzo Iozzo, Ralf Philipp Weinmann and Willem
@@ -2731,11 +2745,17 @@ Note:  Please add new entries to the beginning of this file.
     <references>
       <url>http://googlechromereleases.blogspot.com/search/label/Stable%20updates</url>
       <cvename>CVE-2011-1290</cvename>
+      <cvename>CVE-2011-1291</cvename>
+      <cvename>CVE-2011-1292</cvename>
+      <cvename>CVE-2011-1293</cvename>
+      <cvename>CVE-2011-1294</cvename>
+      <cvename>CVE-2011-1295</cvename>
+      <cvename>CVE-2011-1296</cvename>
     </references>
     <dates>
       <discovery>2010-10-19</discovery>
       <entry>2010-12-07</entry>
-      <modified>2011-03-13</modified>
+      <modified>2011-03-26</modified>
     </dates>
   </vuln>
 
