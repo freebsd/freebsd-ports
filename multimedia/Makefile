@@ -349,6 +349,7 @@
     SUBDIR += vdr-plugin-upnp
     SUBDIR += vdr-plugin-vnsiserver
     SUBDIR += vdr-plugin-xineliboutput
+    SUBDIR += vdr-plugins
     SUBDIR += vic
     SUBDIR += vlc
     SUBDIR += vodcatcher

@@ -1,0 +1,16 @@
+Preliminary port of the vdr development branch, use at your own risk! :)
+
+This is just a metaport that lets you select the plugins you want to
+install.
+
+See vdr/webcamd dvb thread(s) on the freebsd-multimedia list for FreeBSD
+notes, some links are here:
+
+	http://people.freebsd.org/~nox/dvb/
+
+and see these links for general vdr info:
+
+	http://www.linuxtv.org/vdrwiki/index.php/Main_Page
+	http://www.vdr-portal.de/
+
+WWW: http://www.tvdr.de/
