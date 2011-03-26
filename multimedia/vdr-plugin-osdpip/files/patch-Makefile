@@ -1,0 +1,9 @@
+--- osdpip-0.1.0/Makefile.orig
++++ osdpip-0.1.0/Makefile
+@@ -171,3 +173,6 @@ dist: clean
+ 
+ clean:
+ 	@-rm -f $(OBJS) $(DEPFILE) *.so *.tgz core* *~ $(PODIR)/*.mo $(PODIR)/*.pot
++
++install:
++	${INSTALL_PROGRAM} $(LIBDIR)/libvdr-$(PLUGIN).so.$(APIVERSION) $(PREFIX)/lib/vdr/libvdr-$(PLUGIN).so.$(APIVERSION)
