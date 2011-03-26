@@ -187,6 +187,7 @@ include/fxt/comb/comp2comb.h
 include/fxt/comb/composition-colex.h
 include/fxt/comb/composition-colex2.h
 include/fxt/comb/composition-ex-colex.h
+include/fxt/comb/composition-nz.h
 include/fxt/comb/composition-rank.h
 include/fxt/comb/cyclic-perm.h
 include/fxt/comb/debruijn.h
@@ -705,6 +706,8 @@ lib/libfxt.a
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/composition-ex-colex-out.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/composition-gray-rec-demo.cc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/composition-gray-rec-out.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/composition-nz-demo.cc
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/composition-nz-out.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/composition-rank-demo.cc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/composition-rank-out.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/conference-quadres-demo.cc
