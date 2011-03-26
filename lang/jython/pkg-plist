@@ -2,25 +2,25 @@ bin/jython
 etc/jython.reg
 %%JYTHON_DIR%%/ACKNOWLEDGMENTS
 %%JYTHON_DIR%%/CoreExposed.includes
-%%JYTHON_DIR%%/Demo/applet/ButtonDemo.py
-%%JYTHON_DIR%%/Demo/applet/ButtonFontDemo.py
-%%JYTHON_DIR%%/Demo/applet/CheckboxDemo.py
-%%JYTHON_DIR%%/Demo/applet/ChoiceDemo.py
-%%JYTHON_DIR%%/Demo/applet/Converter.py
-%%JYTHON_DIR%%/Demo/applet/CoordinatesDemo.py
-%%JYTHON_DIR%%/Demo/applet/HelloApplet.py
-%%JYTHON_DIR%%/Demo/applet/HelloWorld.py
-%%JYTHON_DIR%%/Demo/applet/LabelDemo.py
-%%JYTHON_DIR%%/Demo/applet/ListDemo.py
-%%JYTHON_DIR%%/Demo/applet/PythonApplet.html
+%%JYTHON_DIR%%/Demo/applet/README.txt
+%%JYTHON_DIR%%/Demo/applet/deprecated/ButtonDemo.py
+%%JYTHON_DIR%%/Demo/applet/deprecated/ButtonFontDemo.py
+%%JYTHON_DIR%%/Demo/applet/deprecated/CheckboxDemo.py
+%%JYTHON_DIR%%/Demo/applet/deprecated/ChoiceDemo.py
+%%JYTHON_DIR%%/Demo/applet/deprecated/Converter.py
+%%JYTHON_DIR%%/Demo/applet/deprecated/CoordinatesDemo.py
+%%JYTHON_DIR%%/Demo/applet/deprecated/HelloApplet.py
+%%JYTHON_DIR%%/Demo/applet/deprecated/HelloWorld.py
+%%JYTHON_DIR%%/Demo/applet/deprecated/LabelDemo.py
+%%JYTHON_DIR%%/Demo/applet/deprecated/ListDemo.py
+%%JYTHON_DIR%%/Demo/applet/deprecated/PythonApplet.html
 %%JYTHON_DIR%%/Demo/awt/Colors.py
 %%JYTHON_DIR%%/Demo/awt/Graph.py
 %%JYTHON_DIR%%/Demo/awt/simple.py
 %%JYTHON_DIR%%/Demo/bean/TempConverter.py
 %%JYTHON_DIR%%/Demo/embed/SimpleEmbedded.java
-%%JYTHON_DIR%%/Demo/javaclasses/Graph.py
-%%JYTHON_DIR%%/Demo/javaclasses/pygraph/PythonGraph.java
-%%JYTHON_DIR%%/Demo/javaclasses/readme.txt
+%%JYTHON_DIR%%/Demo/javaclasses/README.txt
+%%JYTHON_DIR%%/Demo/javaclasses/deprecated/Graph.py
 %%JYTHON_DIR%%/Demo/jreload/_xample/Version.class
 %%JYTHON_DIR%%/Demo/jreload/example.jar
 %%JYTHON_DIR%%/Demo/jreload/src/example/PrintVer.java
@@ -31,12 +31,13 @@ etc/jython.reg
 %%JYTHON_DIR%%/Demo/modjy_webapp/WEB-INF/web.xml
 %%JYTHON_DIR%%/Demo/modjy_webapp/demo_app.py
 %%JYTHON_DIR%%/Demo/modjy_webapp/readme.txt
-%%JYTHON_DIR%%/Demo/swing/Action.py
-%%JYTHON_DIR%%/Demo/swing/Console.py
-%%JYTHON_DIR%%/Demo/swing/Keymap.py
+%%JYTHON_DIR%%/Demo/swing/JythonConsole/Action.py
+%%JYTHON_DIR%%/Demo/swing/JythonConsole/Console.py
+%%JYTHON_DIR%%/Demo/swing/JythonConsole/Keymap.py
+%%JYTHON_DIR%%/Demo/swing/JythonConsole/README.txt
+%%JYTHON_DIR%%/Demo/swing/JythonConsole/Styles.py
 %%JYTHON_DIR%%/Demo/swing/ListDemo.py
 %%JYTHON_DIR%%/Demo/swing/ObjectTree.py
-%%JYTHON_DIR%%/Demo/swing/Styles.py
 %%JYTHON_DIR%%/Demo/swing/TreeDemo.py
 %%JYTHON_DIR%%/Demo/swing/simple.py
 %%JYTHON_DIR%%/Doc/javadoc/allclasses-frame.html
@@ -89,6 +90,7 @@ etc/jython.reg
 %%JYTHON_DIR%%/Doc/javadoc/org/python/core/CompilerFlags.html
 %%JYTHON_DIR%%/Doc/javadoc/org/python/core/ContextGuard.html
 %%JYTHON_DIR%%/Doc/javadoc/org/python/core/ContextManager.html
+%%JYTHON_DIR%%/Doc/javadoc/org/python/core/Deriveds.html
 %%JYTHON_DIR%%/Doc/javadoc/org/python/core/FilelikeInputStream.html
 %%JYTHON_DIR%%/Doc/javadoc/org/python/core/FunctionThread.html
 %%JYTHON_DIR%%/Doc/javadoc/org/python/core/FutureFeature.html
@@ -117,7 +119,6 @@ etc/jython.reg
 %%JYTHON_DIR%%/Doc/javadoc/org/python/core/PyBeanEventProperty.html
 %%JYTHON_DIR%%/Doc/javadoc/org/python/core/PyBeanProperty.html
 %%JYTHON_DIR%%/Doc/javadoc/org/python/core/PyBoolean.html
-%%JYTHON_DIR%%/Doc/javadoc/org/python/core/PyBooleanDerived.html
 %%JYTHON_DIR%%/Doc/javadoc/org/python/core/PyBuiltinCallable.DefaultInfo.html
 %%JYTHON_DIR%%/Doc/javadoc/org/python/core/PyBuiltinCallable.Info.html
 %%JYTHON_DIR%%/Doc/javadoc/org/python/core/PyBuiltinCallable.html
@@ -202,7 +203,6 @@ etc/jython.reg
 %%JYTHON_DIR%%/Doc/javadoc/org/python/core/PySetDerived.html
 %%JYTHON_DIR%%/Doc/javadoc/org/python/core/PySingleton.html
 %%JYTHON_DIR%%/Doc/javadoc/org/python/core/PySlice.html
-%%JYTHON_DIR%%/Doc/javadoc/org/python/core/PySliceDerived.html
 %%JYTHON_DIR%%/Doc/javadoc/org/python/core/PySlot.html
 %%JYTHON_DIR%%/Doc/javadoc/org/python/core/PyStaticMethod.html
 %%JYTHON_DIR%%/Doc/javadoc/org/python/core/PyString.html
@@ -234,13 +234,210 @@ etc/jython.reg
 %%JYTHON_DIR%%/Doc/javadoc/org/python/core/TraceFunction.html
 %%JYTHON_DIR%%/Doc/javadoc/org/python/core/WrappedIterIterator.html
 %%JYTHON_DIR%%/Doc/javadoc/org/python/core/__builtin__.html
+%%JYTHON_DIR%%/Doc/javadoc/org/python/core/adapter/ClassAdapter.html
+%%JYTHON_DIR%%/Doc/javadoc/org/python/core/adapter/ClassicPyObjectAdapter.html
+%%JYTHON_DIR%%/Doc/javadoc/org/python/core/adapter/ExtensiblePyObjectAdapter.html
+%%JYTHON_DIR%%/Doc/javadoc/org/python/core/adapter/PyObjectAdapter.html
+%%JYTHON_DIR%%/Doc/javadoc/org/python/core/adapter/package-frame.html
+%%JYTHON_DIR%%/Doc/javadoc/org/python/core/adapter/package-summary.html
+%%JYTHON_DIR%%/Doc/javadoc/org/python/core/adapter/package-tree.html
 %%JYTHON_DIR%%/Doc/javadoc/org/python/core/codecs.html
 %%JYTHON_DIR%%/Doc/javadoc/org/python/core/exceptions.html
 %%JYTHON_DIR%%/Doc/javadoc/org/python/core/imp.html
+%%JYTHON_DIR%%/Doc/javadoc/org/python/core/io/BinaryIOWrapper.html
+%%JYTHON_DIR%%/Doc/javadoc/org/python/core/io/BufferedIOBase.html
+%%JYTHON_DIR%%/Doc/javadoc/org/python/core/io/BufferedIOMixin.html
+%%JYTHON_DIR%%/Doc/javadoc/org/python/core/io/BufferedRandom.html
+%%JYTHON_DIR%%/Doc/javadoc/org/python/core/io/BufferedReader.html
+%%JYTHON_DIR%%/Doc/javadoc/org/python/core/io/BufferedWriter.html
+%%JYTHON_DIR%%/Doc/javadoc/org/python/core/io/DatagramSocketIO.html
+%%JYTHON_DIR%%/Doc/javadoc/org/python/core/io/FileDescriptors.html
+%%JYTHON_DIR%%/Doc/javadoc/org/python/core/io/FileIO.html
+%%JYTHON_DIR%%/Doc/javadoc/org/python/core/io/IOBase.html
+%%JYTHON_DIR%%/Doc/javadoc/org/python/core/io/LineBufferedRandom.html
+%%JYTHON_DIR%%/Doc/javadoc/org/python/core/io/LineBufferedWriter.html
+%%JYTHON_DIR%%/Doc/javadoc/org/python/core/io/RawIOBase.html
+%%JYTHON_DIR%%/Doc/javadoc/org/python/core/io/ServerSocketIO.html
+%%JYTHON_DIR%%/Doc/javadoc/org/python/core/io/SocketIO.html
+%%JYTHON_DIR%%/Doc/javadoc/org/python/core/io/SocketIOBase.html
+%%JYTHON_DIR%%/Doc/javadoc/org/python/core/io/StreamIO.html
+%%JYTHON_DIR%%/Doc/javadoc/org/python/core/io/TextIOBase.html
+%%JYTHON_DIR%%/Doc/javadoc/org/python/core/io/TextIOInputStream.html
+%%JYTHON_DIR%%/Doc/javadoc/org/python/core/io/TextIOWrapper.html
+%%JYTHON_DIR%%/Doc/javadoc/org/python/core/io/UniversalIOWrapper.html
+%%JYTHON_DIR%%/Doc/javadoc/org/python/core/io/package-frame.html
+%%JYTHON_DIR%%/Doc/javadoc/org/python/core/io/package-summary.html
+%%JYTHON_DIR%%/Doc/javadoc/org/python/core/io/package-tree.html
 %%JYTHON_DIR%%/Doc/javadoc/org/python/core/package-frame.html
 %%JYTHON_DIR%%/Doc/javadoc/org/python/core/package-summary.html
 %%JYTHON_DIR%%/Doc/javadoc/org/python/core/package-tree.html
+%%JYTHON_DIR%%/Doc/javadoc/org/python/core/packagecache/CachedJarsPackageManager.JarXEntry.html
+%%JYTHON_DIR%%/Doc/javadoc/org/python/core/packagecache/CachedJarsPackageManager.html
+%%JYTHON_DIR%%/Doc/javadoc/org/python/core/packagecache/PackageManager.html
+%%JYTHON_DIR%%/Doc/javadoc/org/python/core/packagecache/PathPackageManager.html
+%%JYTHON_DIR%%/Doc/javadoc/org/python/core/packagecache/SysPackageManager.html
+%%JYTHON_DIR%%/Doc/javadoc/org/python/core/packagecache/package-frame.html
+%%JYTHON_DIR%%/Doc/javadoc/org/python/core/packagecache/package-summary.html
+%%JYTHON_DIR%%/Doc/javadoc/org/python/core/packagecache/package-tree.html
 %%JYTHON_DIR%%/Doc/javadoc/org/python/core/ucnhashAPI.html
+%%JYTHON_DIR%%/Doc/javadoc/org/python/core/util/ByteSwapper.html
+%%JYTHON_DIR%%/Doc/javadoc/org/python/core/util/ExtraMath.html
+%%JYTHON_DIR%%/Doc/javadoc/org/python/core/util/FileUtil.html
+%%JYTHON_DIR%%/Doc/javadoc/org/python/core/util/PlatformUtil.html
+%%JYTHON_DIR%%/Doc/javadoc/org/python/core/util/RelativeFile.html
+%%JYTHON_DIR%%/Doc/javadoc/org/python/core/util/StringUtil.html
+%%JYTHON_DIR%%/Doc/javadoc/org/python/core/util/importer.html
+%%JYTHON_DIR%%/Doc/javadoc/org/python/core/util/package-frame.html
+%%JYTHON_DIR%%/Doc/javadoc/org/python/core/util/package-summary.html
+%%JYTHON_DIR%%/Doc/javadoc/org/python/core/util/package-tree.html
+%%JYTHON_DIR%%/Doc/javadoc/org/python/modules/ArrayModule.html
+%%JYTHON_DIR%%/Doc/javadoc/org/python/modules/PyIOFile.html
+%%JYTHON_DIR%%/Doc/javadoc/org/python/modules/PyIOFileFactory.html
+%%JYTHON_DIR%%/Doc/javadoc/org/python/modules/PyStruct.html
+%%JYTHON_DIR%%/Doc/javadoc/org/python/modules/PyTeeIterator.html
+%%JYTHON_DIR%%/Doc/javadoc/org/python/modules/Setup.html
+%%JYTHON_DIR%%/Doc/javadoc/org/python/modules/_codecs.EncodingMap.html
+%%JYTHON_DIR%%/Doc/javadoc/org/python/modules/_codecs.html
+%%JYTHON_DIR%%/Doc/javadoc/org/python/modules/_collections/Collections.html
+%%JYTHON_DIR%%/Doc/javadoc/org/python/modules/_collections/PyDefaultDict.html
+%%JYTHON_DIR%%/Doc/javadoc/org/python/modules/_collections/PyDefaultDictDerived.html
+%%JYTHON_DIR%%/Doc/javadoc/org/python/modules/_collections/PyDeque.html
+%%JYTHON_DIR%%/Doc/javadoc/org/python/modules/_collections/PyDequeDerived.html
+%%JYTHON_DIR%%/Doc/javadoc/org/python/modules/_collections/package-frame.html
+%%JYTHON_DIR%%/Doc/javadoc/org/python/modules/_collections/package-summary.html
+%%JYTHON_DIR%%/Doc/javadoc/org/python/modules/_collections/package-tree.html
+%%JYTHON_DIR%%/Doc/javadoc/org/python/modules/_csv/PyDialect.html
+%%JYTHON_DIR%%/Doc/javadoc/org/python/modules/_csv/PyDialectDerived.html
+%%JYTHON_DIR%%/Doc/javadoc/org/python/modules/_csv/PyReader.html
+%%JYTHON_DIR%%/Doc/javadoc/org/python/modules/_csv/PyWriter.html
+%%JYTHON_DIR%%/Doc/javadoc/org/python/modules/_csv/QuoteStyle.html
+%%JYTHON_DIR%%/Doc/javadoc/org/python/modules/_csv/_csv.html
+%%JYTHON_DIR%%/Doc/javadoc/org/python/modules/_csv/package-frame.html
+%%JYTHON_DIR%%/Doc/javadoc/org/python/modules/_csv/package-summary.html
+%%JYTHON_DIR%%/Doc/javadoc/org/python/modules/_csv/package-tree.html
+%%JYTHON_DIR%%/Doc/javadoc/org/python/modules/_functools/PyPartial.html
+%%JYTHON_DIR%%/Doc/javadoc/org/python/modules/_functools/PyPartialDerived.html
+%%JYTHON_DIR%%/Doc/javadoc/org/python/modules/_functools/_functools.html
+%%JYTHON_DIR%%/Doc/javadoc/org/python/modules/_functools/package-frame.html
+%%JYTHON_DIR%%/Doc/javadoc/org/python/modules/_functools/package-summary.html
+%%JYTHON_DIR%%/Doc/javadoc/org/python/modules/_functools/package-tree.html
+%%JYTHON_DIR%%/Doc/javadoc/org/python/modules/_hashlib.Hash.html
+%%JYTHON_DIR%%/Doc/javadoc/org/python/modules/_hashlib.html
+%%JYTHON_DIR%%/Doc/javadoc/org/python/modules/_marshal.Marshaller.html
+%%JYTHON_DIR%%/Doc/javadoc/org/python/modules/_marshal.Unmarshaller.html
+%%JYTHON_DIR%%/Doc/javadoc/org/python/modules/_marshal.html
+%%JYTHON_DIR%%/Doc/javadoc/org/python/modules/_py_compile.html
+%%JYTHON_DIR%%/Doc/javadoc/org/python/modules/_sre.html
+%%JYTHON_DIR%%/Doc/javadoc/org/python/modules/_systemrestart.html
+%%JYTHON_DIR%%/Doc/javadoc/org/python/modules/_threading/Condition.html
+%%JYTHON_DIR%%/Doc/javadoc/org/python/modules/_threading/Lock.html
+%%JYTHON_DIR%%/Doc/javadoc/org/python/modules/_threading/_threading.html
+%%JYTHON_DIR%%/Doc/javadoc/org/python/modules/_threading/package-frame.html
+%%JYTHON_DIR%%/Doc/javadoc/org/python/modules/_threading/package-summary.html
+%%JYTHON_DIR%%/Doc/javadoc/org/python/modules/_threading/package-tree.html
+%%JYTHON_DIR%%/Doc/javadoc/org/python/modules/_weakref/AbstractReference.html
+%%JYTHON_DIR%%/Doc/javadoc/org/python/modules/_weakref/CallableProxyType.html
+%%JYTHON_DIR%%/Doc/javadoc/org/python/modules/_weakref/GlobalRef.html
+%%JYTHON_DIR%%/Doc/javadoc/org/python/modules/_weakref/ProxyType.html
+%%JYTHON_DIR%%/Doc/javadoc/org/python/modules/_weakref/ReferenceType.html
+%%JYTHON_DIR%%/Doc/javadoc/org/python/modules/_weakref/ReferenceTypeDerived.html
+%%JYTHON_DIR%%/Doc/javadoc/org/python/modules/_weakref/WeakrefModule.html
+%%JYTHON_DIR%%/Doc/javadoc/org/python/modules/_weakref/package-frame.html
+%%JYTHON_DIR%%/Doc/javadoc/org/python/modules/_weakref/package-summary.html
+%%JYTHON_DIR%%/Doc/javadoc/org/python/modules/_weakref/package-tree.html
+%%JYTHON_DIR%%/Doc/javadoc/org/python/modules/binascii.html
+%%JYTHON_DIR%%/Doc/javadoc/org/python/modules/cPickle.Pickler.html
+%%JYTHON_DIR%%/Doc/javadoc/org/python/modules/cPickle.Unpickler.html
+%%JYTHON_DIR%%/Doc/javadoc/org/python/modules/cPickle.html
+%%JYTHON_DIR%%/Doc/javadoc/org/python/modules/cStringIO.StringIO.html
+%%JYTHON_DIR%%/Doc/javadoc/org/python/modules/cStringIO.html
+%%JYTHON_DIR%%/Doc/javadoc/org/python/modules/cmath.html
+%%JYTHON_DIR%%/Doc/javadoc/org/python/modules/errno.html
+%%JYTHON_DIR%%/Doc/javadoc/org/python/modules/gc.html
+%%JYTHON_DIR%%/Doc/javadoc/org/python/modules/imp.html
+%%JYTHON_DIR%%/Doc/javadoc/org/python/modules/itertools.html
+%%JYTHON_DIR%%/Doc/javadoc/org/python/modules/jarray.html
+%%JYTHON_DIR%%/Doc/javadoc/org/python/modules/jffi/AbstractMemoryCData.html
+%%JYTHON_DIR%%/Doc/javadoc/org/python/modules/jffi/AllocatedDirectMemory.html
+%%JYTHON_DIR%%/Doc/javadoc/org/python/modules/jffi/ArrayCData.ArrayIter.html
+%%JYTHON_DIR%%/Doc/javadoc/org/python/modules/jffi/ArrayCData.html
+%%JYTHON_DIR%%/Doc/javadoc/org/python/modules/jffi/BasePointer.html
+%%JYTHON_DIR%%/Doc/javadoc/org/python/modules/jffi/ByReference.html
+%%JYTHON_DIR%%/Doc/javadoc/org/python/modules/jffi/CData.html
+%%JYTHON_DIR%%/Doc/javadoc/org/python/modules/jffi/CType.html
+%%JYTHON_DIR%%/Doc/javadoc/org/python/modules/jffi/DirectMemory.html
+%%JYTHON_DIR%%/Doc/javadoc/org/python/modules/jffi/DynamicLibrary.DataSymbol.html
+%%JYTHON_DIR%%/Doc/javadoc/org/python/modules/jffi/DynamicLibrary.Symbol.html
+%%JYTHON_DIR%%/Doc/javadoc/org/python/modules/jffi/DynamicLibrary.TextSymbol.html
+%%JYTHON_DIR%%/Doc/javadoc/org/python/modules/jffi/DynamicLibrary.html
+%%JYTHON_DIR%%/Doc/javadoc/org/python/modules/jffi/FastIntInvokerFactory.html
+%%JYTHON_DIR%%/Doc/javadoc/org/python/modules/jffi/Function.html
+%%JYTHON_DIR%%/Doc/javadoc/org/python/modules/jffi/HeapMemory.html
+%%JYTHON_DIR%%/Doc/javadoc/org/python/modules/jffi/InvalidMemory.html
+%%JYTHON_DIR%%/Doc/javadoc/org/python/modules/jffi/Invoker.html
+%%JYTHON_DIR%%/Doc/javadoc/org/python/modules/jffi/Memory.html
+%%JYTHON_DIR%%/Doc/javadoc/org/python/modules/jffi/NativeType.html
+%%JYTHON_DIR%%/Doc/javadoc/org/python/modules/jffi/NullMemory.html
+%%JYTHON_DIR%%/Doc/javadoc/org/python/modules/jffi/Pointer.html
+%%JYTHON_DIR%%/Doc/javadoc/org/python/modules/jffi/PointerCData.html
+%%JYTHON_DIR%%/Doc/javadoc/org/python/modules/jffi/ScalarCData.html
+%%JYTHON_DIR%%/Doc/javadoc/org/python/modules/jffi/StringCData.html
+%%JYTHON_DIR%%/Doc/javadoc/org/python/modules/jffi/StructLayout.Field.html
+%%JYTHON_DIR%%/Doc/javadoc/org/python/modules/jffi/StructLayout.ScalarField.html
+%%JYTHON_DIR%%/Doc/javadoc/org/python/modules/jffi/StructLayout.html
+%%JYTHON_DIR%%/Doc/javadoc/org/python/modules/jffi/Structure.html
+%%JYTHON_DIR%%/Doc/javadoc/org/python/modules/jffi/jffi.html
+%%JYTHON_DIR%%/Doc/javadoc/org/python/modules/jffi/package-frame.html
+%%JYTHON_DIR%%/Doc/javadoc/org/python/modules/jffi/package-summary.html
+%%JYTHON_DIR%%/Doc/javadoc/org/python/modules/jffi/package-tree.html
+%%JYTHON_DIR%%/Doc/javadoc/org/python/modules/math.html
+%%JYTHON_DIR%%/Doc/javadoc/org/python/modules/operator.html
+%%JYTHON_DIR%%/Doc/javadoc/org/python/modules/package-frame.html
+%%JYTHON_DIR%%/Doc/javadoc/org/python/modules/package-summary.html
+%%JYTHON_DIR%%/Doc/javadoc/org/python/modules/package-tree.html
+%%JYTHON_DIR%%/Doc/javadoc/org/python/modules/posix/PosixModule.html
+%%JYTHON_DIR%%/Doc/javadoc/org/python/modules/posix/PyStatResult.html
+%%JYTHON_DIR%%/Doc/javadoc/org/python/modules/posix/PythonPOSIXHandler.html
+%%JYTHON_DIR%%/Doc/javadoc/org/python/modules/posix/package-frame.html
+%%JYTHON_DIR%%/Doc/javadoc/org/python/modules/posix/package-summary.html
+%%JYTHON_DIR%%/Doc/javadoc/org/python/modules/posix/package-tree.html
+%%JYTHON_DIR%%/Doc/javadoc/org/python/modules/random/PyRandom.html
+%%JYTHON_DIR%%/Doc/javadoc/org/python/modules/random/PyRandomDerived.html
+%%JYTHON_DIR%%/Doc/javadoc/org/python/modules/random/RandomModule.html
+%%JYTHON_DIR%%/Doc/javadoc/org/python/modules/random/package-frame.html
+%%JYTHON_DIR%%/Doc/javadoc/org/python/modules/random/package-summary.html
+%%JYTHON_DIR%%/Doc/javadoc/org/python/modules/random/package-tree.html
+%%JYTHON_DIR%%/Doc/javadoc/org/python/modules/sre/MatchObject.html
+%%JYTHON_DIR%%/Doc/javadoc/org/python/modules/sre/PatternObject.html
+%%JYTHON_DIR%%/Doc/javadoc/org/python/modules/sre/SRE_REPEAT.html
+%%JYTHON_DIR%%/Doc/javadoc/org/python/modules/sre/SRE_STATE.html
+%%JYTHON_DIR%%/Doc/javadoc/org/python/modules/sre/ScannerObject.html
+%%JYTHON_DIR%%/Doc/javadoc/org/python/modules/sre/package-frame.html
+%%JYTHON_DIR%%/Doc/javadoc/org/python/modules/sre/package-summary.html
+%%JYTHON_DIR%%/Doc/javadoc/org/python/modules/sre/package-tree.html
+%%JYTHON_DIR%%/Doc/javadoc/org/python/modules/struct.html
+%%JYTHON_DIR%%/Doc/javadoc/org/python/modules/synchronize.SynchronizedCallable.html
+%%JYTHON_DIR%%/Doc/javadoc/org/python/modules/synchronize.html
+%%JYTHON_DIR%%/Doc/javadoc/org/python/modules/thread/PyLocal.html
+%%JYTHON_DIR%%/Doc/javadoc/org/python/modules/thread/PyLocalDerived.html
+%%JYTHON_DIR%%/Doc/javadoc/org/python/modules/thread/PyLock.html
+%%JYTHON_DIR%%/Doc/javadoc/org/python/modules/thread/package-frame.html
+%%JYTHON_DIR%%/Doc/javadoc/org/python/modules/thread/package-summary.html
+%%JYTHON_DIR%%/Doc/javadoc/org/python/modules/thread/package-tree.html
+%%JYTHON_DIR%%/Doc/javadoc/org/python/modules/thread/thread.html
+%%JYTHON_DIR%%/Doc/javadoc/org/python/modules/time/PyTimeTuple.html
+%%JYTHON_DIR%%/Doc/javadoc/org/python/modules/time/Time.html
+%%JYTHON_DIR%%/Doc/javadoc/org/python/modules/time/package-frame.html
+%%JYTHON_DIR%%/Doc/javadoc/org/python/modules/time/package-summary.html
+%%JYTHON_DIR%%/Doc/javadoc/org/python/modules/time/package-tree.html
+%%JYTHON_DIR%%/Doc/javadoc/org/python/modules/ucnhash.html
+%%JYTHON_DIR%%/Doc/javadoc/org/python/modules/zipimport/package-frame.html
+%%JYTHON_DIR%%/Doc/javadoc/org/python/modules/zipimport/package-summary.html
+%%JYTHON_DIR%%/Doc/javadoc/org/python/modules/zipimport/package-tree.html
+%%JYTHON_DIR%%/Doc/javadoc/org/python/modules/zipimport/zipimport.html
+%%JYTHON_DIR%%/Doc/javadoc/org/python/modules/zipimport/zipimporter.html
+%%JYTHON_DIR%%/Doc/javadoc/org/python/modules/zipimport/zipimporterDerived.html
+%%JYTHON_DIR%%/Doc/javadoc/org/python/util/CodegenUtils.html
 %%JYTHON_DIR%%/Doc/javadoc/org/python/util/Generic.html
 %%JYTHON_DIR%%/Doc/javadoc/org/python/util/GlobMatchingTask.html
 %%JYTHON_DIR%%/Doc/javadoc/org/python/util/InteractiveConsole.html
@@ -332,6 +529,7 @@ etc/jython.reg
 %%JYTHON_DIR%%/Lib/copy.py
 %%JYTHON_DIR%%/Lib/copy_reg.py
 %%JYTHON_DIR%%/Lib/csv.py
+%%JYTHON_DIR%%/Lib/ctypes/__init__.py
 %%JYTHON_DIR%%/Lib/datetime.py
 %%JYTHON_DIR%%/Lib/dbexts.py
 %%JYTHON_DIR%%/Lib/decimal.py
@@ -672,7 +870,6 @@ etc/jython.reg
 %%JYTHON_DIR%%/Lib/platform.py
 %%JYTHON_DIR%%/Lib/popen2.py
 %%JYTHON_DIR%%/Lib/poplib.py
-%%JYTHON_DIR%%/Lib/posix.py
 %%JYTHON_DIR%%/Lib/posixfile.py
 %%JYTHON_DIR%%/Lib/posixpath$py.class
 %%JYTHON_DIR%%/Lib/posixpath.py
@@ -746,6 +943,7 @@ etc/jython.reg
 %%JYTHON_DIR%%/Lib/test/blob.jar
 %%JYTHON_DIR%%/Lib/test/bug1126/bug1126.jar
 %%JYTHON_DIR%%/Lib/test/bug1239.jar
+%%JYTHON_DIR%%/Lib/test/bug1373.jar
 %%JYTHON_DIR%%/Lib/test/bugs/bugs100.py
 %%JYTHON_DIR%%/Lib/test/bugs/bugs101.py
 %%JYTHON_DIR%%/Lib/test/bugs/jdkbugs.py
@@ -1045,6 +1243,7 @@ etc/jython.reg
 %%JYTHON_DIR%%/Lib/test/sample_doctest.py
 %%JYTHON_DIR%%/Lib/test/seq_tests.py
 %%JYTHON_DIR%%/Lib/test/sgml_input.html
+%%JYTHON_DIR%%/Lib/test/socketserver_test.py
 %%JYTHON_DIR%%/Lib/test/sortperf.py
 %%JYTHON_DIR%%/Lib/test/string_tests.py
 %%JYTHON_DIR%%/Lib/test/sys_jy_test_module.py
@@ -1073,6 +1272,7 @@ etc/jython.reg
 %%JYTHON_DIR%%/Lib/test/test_augassign.py
 %%JYTHON_DIR%%/Lib/test/test_base64.py
 %%JYTHON_DIR%%/Lib/test/test_bastion.py
+%%JYTHON_DIR%%/Lib/test/test_bat_jy.py
 %%JYTHON_DIR%%/Lib/test/test_bigaddrspace.py
 %%JYTHON_DIR%%/Lib/test/test_bigmem.py
 %%JYTHON_DIR%%/Lib/test/test_binascii.py
@@ -1153,6 +1353,7 @@ etc/jython.reg
 %%JYTHON_DIR%%/Lib/test/test_decorators.py
 %%JYTHON_DIR%%/Lib/test/test_decorators_jy.py
 %%JYTHON_DIR%%/Lib/test/test_defaultdict.py
+%%JYTHON_DIR%%/Lib/test/test_defaultdict_jy.py
 %%JYTHON_DIR%%/Lib/test/test_deque.py
 %%JYTHON_DIR%%/Lib/test/test_descr.py
 %%JYTHON_DIR%%/Lib/test/test_descr_jy.py
@@ -1214,6 +1415,7 @@ etc/jython.reg
 %%JYTHON_DIR%%/Lib/test/test_gc.py
 %%JYTHON_DIR%%/Lib/test/test_gdbm.py
 %%JYTHON_DIR%%/Lib/test/test_generators.py
+%%JYTHON_DIR%%/Lib/test/test_generators_jy.py
 %%JYTHON_DIR%%/Lib/test/test_genexps.py
 %%JYTHON_DIR%%/Lib/test/test_genexps_jy.py
 %%JYTHON_DIR%%/Lib/test/test_getargs.py
@@ -1243,9 +1445,11 @@ etc/jython.reg
 %%JYTHON_DIR%%/Lib/test/test_imp.py
 %%JYTHON_DIR%%/Lib/test/test_import.py
 %%JYTHON_DIR%%/Lib/test/test_import_jy.py
+%%JYTHON_DIR%%/Lib/test/test_import_pep328.py
 %%JYTHON_DIR%%/Lib/test/test_importhooks.py
 %%JYTHON_DIR%%/Lib/test/test_index.py
 %%JYTHON_DIR%%/Lib/test/test_inspect.py
+%%JYTHON_DIR%%/Lib/test/test_inspect_jy.py
 %%JYTHON_DIR%%/Lib/test/test_int_jy.py
 %%JYTHON_DIR%%/Lib/test/test_ioctl.py
 %%JYTHON_DIR%%/Lib/test/test_isatty.py
@@ -1265,7 +1469,7 @@ etc/jython.reg
 %%JYTHON_DIR%%/Lib/test/test_joverload.py
 %%JYTHON_DIR%%/Lib/test/test_jser.py
 %%JYTHON_DIR%%/Lib/test/test_jser2.py
-%%JYTHON_DIR%%/Lib/test/test_jy_generators.py
+%%JYTHON_DIR%%/Lib/test/test_jsr223.py
 %%JYTHON_DIR%%/Lib/test/test_jy_internals.py
 %%JYTHON_DIR%%/Lib/test/test_jython_initializer.py
 %%JYTHON_DIR%%/Lib/test/test_largefile.py
@@ -1313,6 +1517,7 @@ etc/jython.reg
 %%JYTHON_DIR%%/Lib/test/test_openpty.py
 %%JYTHON_DIR%%/Lib/test/test_operations.py
 %%JYTHON_DIR%%/Lib/test/test_operator.py
+%%JYTHON_DIR%%/Lib/test/test_operator_jy.py
 %%JYTHON_DIR%%/Lib/test/test_optparse.py
 %%JYTHON_DIR%%/Lib/test/test_os.py
 %%JYTHON_DIR%%/Lib/test/test_ossaudiodev.py
@@ -1341,6 +1546,7 @@ etc/jython.reg
 %%JYTHON_DIR%%/Lib/test/test_profile.py
 %%JYTHON_DIR%%/Lib/test/test_profilehooks.py
 %%JYTHON_DIR%%/Lib/test/test_pty.py
+%%JYTHON_DIR%%/Lib/test/test_pulldom.py
 %%JYTHON_DIR%%/Lib/test/test_pwd.py
 %%JYTHON_DIR%%/Lib/test/test_pyclbr.py
 %%JYTHON_DIR%%/Lib/test/test_pyexpat.py
@@ -1377,8 +1583,10 @@ etc/jython.reg
 %%JYTHON_DIR%%/Lib/test/test_slice.py
 %%JYTHON_DIR%%/Lib/test/test_slots_jy.py
 %%JYTHON_DIR%%/Lib/test/test_socket.py
+%%JYTHON_DIR%%/Lib/test/test_socket_jy.py
 %%JYTHON_DIR%%/Lib/test/test_socket_ssl.py
 %%JYTHON_DIR%%/Lib/test/test_socketserver.py
+%%JYTHON_DIR%%/Lib/test/test_socketserver_jython.py
 %%JYTHON_DIR%%/Lib/test/test_softspace.py
 %%JYTHON_DIR%%/Lib/test/test_sort.py
 %%JYTHON_DIR%%/Lib/test/test_sort_jy.py
@@ -1393,6 +1601,7 @@ etc/jython.reg
 %%JYTHON_DIR%%/Lib/test/test_stringprep.py
 %%JYTHON_DIR%%/Lib/test/test_strop.py
 %%JYTHON_DIR%%/Lib/test/test_strptime.py
+%%JYTHON_DIR%%/Lib/test/test_strptime_jy.py
 %%JYTHON_DIR%%/Lib/test/test_struct.py
 %%JYTHON_DIR%%/Lib/test/test_structmembers.py
 %%JYTHON_DIR%%/Lib/test/test_structseq.py
@@ -1419,6 +1628,7 @@ etc/jython.reg
 %%JYTHON_DIR%%/Lib/test/test_threading.py
 %%JYTHON_DIR%%/Lib/test/test_threading_jy.py
 %%JYTHON_DIR%%/Lib/test/test_threading_local.py
+%%JYTHON_DIR%%/Lib/test/test_threading_local_jy.py
 %%JYTHON_DIR%%/Lib/test/test_threadsignals.py
 %%JYTHON_DIR%%/Lib/test/test_time.py
 %%JYTHON_DIR%%/Lib/test/test_timeit.py
@@ -1564,13 +1774,16 @@ etc/jython.reg
 @exec %B/jython -Dpython.cachedir=%B/cachedir -c None
 @exec rm -rf %B/cachedir
 @unexec find -H %B/Lib -name '*$py.class' -type f -delete
+%%JYTHON_DIR%%/tests/java/com/ziclix/python/sql/DataHandlerTest.java
 %%JYTHON_DIR%%/tests/java/javatests/AnonInner.java
 %%JYTHON_DIR%%/tests/java/javatests/BigDecimalTest.java
 %%JYTHON_DIR%%/tests/java/javatests/Dict2JavaTest.java
 %%JYTHON_DIR%%/tests/java/javatests/Foo.java
 %%JYTHON_DIR%%/tests/java/javatests/JOverload.java
 %%JYTHON_DIR%%/tests/java/javatests/ListTest.java
+%%JYTHON_DIR%%/tests/java/javatests/ProxyTests.java
 %%JYTHON_DIR%%/tests/java/javatests/PySetInJavaTest.java
+%%JYTHON_DIR%%/tests/java/javatests/Reflection.java
 %%JYTHON_DIR%%/tests/java/javatests/SubFoo.java
 %%JYTHON_DIR%%/tests/java/javatests/TestSupport.java
 %%JYTHON_DIR%%/tests/java/org/python/antlr/GrammarTester.java
@@ -1578,8 +1791,14 @@ etc/jython.reg
 %%JYTHON_DIR%%/tests/java/org/python/antlr/PythonTreeTester.java
 %%JYTHON_DIR%%/tests/java/org/python/antlr/WalkerTester.java
 %%JYTHON_DIR%%/tests/java/org/python/core/PyListTest.java
+%%JYTHON_DIR%%/tests/java/org/python/core/PySystemStateTest.java
 %%JYTHON_DIR%%/tests/java/org/python/core/PySystemState_registry_Test.java
 %%JYTHON_DIR%%/tests/java/org/python/core/PyTupleTest.java
+%%JYTHON_DIR%%/tests/java/org/python/core/WrappedBooleanTest.java
+%%JYTHON_DIR%%/tests/java/org/python/core/WrappedFloatTest.java
+%%JYTHON_DIR%%/tests/java/org/python/core/WrappedIntegerTest.java
+%%JYTHON_DIR%%/tests/java/org/python/core/WrappedLongTest.java
+%%JYTHON_DIR%%/tests/java/org/python/core/packagecache/CachedJarsOver64kTest.java
 %%JYTHON_DIR%%/tests/java/org/python/expose/generate/DescriptorExposerTest.java
 %%JYTHON_DIR%%/tests/java/org/python/expose/generate/ExposeMethodFinderTest.java
 %%JYTHON_DIR%%/tests/java/org/python/expose/generate/ExposedTypeProcessorTest.java
@@ -1590,6 +1809,9 @@ etc/jython.reg
 %%JYTHON_DIR%%/tests/java/org/python/expose/generate/OverridableNewExposerTest.java
 %%JYTHON_DIR%%/tests/java/org/python/expose/generate/SimpleExposed.java
 %%JYTHON_DIR%%/tests/java/org/python/expose/generate/TypeExposerTest.java
+%%JYTHON_DIR%%/tests/java/org/python/indexer/IndexerTest.java
+%%JYTHON_DIR%%/tests/java/org/python/indexer/TestBase.java
+%%JYTHON_DIR%%/tests/java/org/python/jsr223/PythonCallable.java
 %%JYTHON_DIR%%/tests/java/org/python/jsr223/ScriptEngineIOTest.java
 %%JYTHON_DIR%%/tests/java/org/python/jsr223/ScriptEngineTest.java
 %%JYTHON_DIR%%/tests/java/org/python/tests/BadStaticInitializer.java
@@ -1615,9 +1837,12 @@ etc/jython.reg
 %%JYTHON_DIR%%/tests/java/org/python/tests/SerializationTest.java
 %%JYTHON_DIR%%/tests/java/org/python/tests/SomePyMethods.java
 %%JYTHON_DIR%%/tests/java/org/python/tests/SubVisible.java
+%%JYTHON_DIR%%/tests/java/org/python/tests/ToUnicode.java
 %%JYTHON_DIR%%/tests/java/org/python/tests/VisibilityResults.java
 %%JYTHON_DIR%%/tests/java/org/python/tests/Visible.java
 %%JYTHON_DIR%%/tests/java/org/python/tests/VisibleOverride.java
+%%JYTHON_DIR%%/tests/java/org/python/tests/constructor_kwargs/ConstructorKWArgsTest.java
+%%JYTHON_DIR%%/tests/java/org/python/tests/constructor_kwargs/KWArgsObject.java
 %%JYTHON_DIR%%/tests/java/org/python/tests/identity/IdentityObject.java
 %%JYTHON_DIR%%/tests/java/org/python/tests/identity/IdentityTest.java
 %%JYTHON_DIR%%/tests/java/org/python/tests/inbred/Metis.java
@@ -1645,15 +1870,22 @@ etc/jython.reg
 @dirrm %%JYTHON_DIR%%/tests/java/org/python/tests/mro
 @dirrm %%JYTHON_DIR%%/tests/java/org/python/tests/inbred
 @dirrm %%JYTHON_DIR%%/tests/java/org/python/tests/identity
+@dirrm %%JYTHON_DIR%%/tests/java/org/python/tests/constructor_kwargs
 @dirrm %%JYTHON_DIR%%/tests/java/org/python/tests
 @dirrm %%JYTHON_DIR%%/tests/java/org/python/jsr223
+@dirrm %%JYTHON_DIR%%/tests/java/org/python/indexer
 @dirrm %%JYTHON_DIR%%/tests/java/org/python/expose/generate
 @dirrm %%JYTHON_DIR%%/tests/java/org/python/expose
+@dirrm %%JYTHON_DIR%%/tests/java/org/python/core/packagecache
 @dirrm %%JYTHON_DIR%%/tests/java/org/python/core
 @dirrm %%JYTHON_DIR%%/tests/java/org/python/antlr
 @dirrm %%JYTHON_DIR%%/tests/java/org/python
 @dirrm %%JYTHON_DIR%%/tests/java/org
 @dirrm %%JYTHON_DIR%%/tests/java/javatests
+@dirrm %%JYTHON_DIR%%/tests/java/com/ziclix/python/sql
+@dirrm %%JYTHON_DIR%%/tests/java/com/ziclix/python
+@dirrm %%JYTHON_DIR%%/tests/java/com/ziclix
+@dirrm %%JYTHON_DIR%%/tests/java/com
 @dirrm %%JYTHON_DIR%%/tests/java
 @dirrm %%JYTHON_DIR%%/tests
 @dirrm %%JYTHON_DIR%%/bin
@@ -1689,11 +1921,29 @@ etc/jython.reg
 @dirrm %%JYTHON_DIR%%/Lib/distutils/tests
 @dirrm %%JYTHON_DIR%%/Lib/distutils/command
 @dirrm %%JYTHON_DIR%%/Lib/distutils
+@dirrm %%JYTHON_DIR%%/Lib/ctypes
 @dirrm %%JYTHON_DIR%%/Lib/compiler
 @dirrm %%JYTHON_DIR%%/Lib/collections
 @dirrm %%JYTHON_DIR%%/Lib
 @dirrm %%JYTHON_DIR%%/Doc/javadoc/resources
 @dirrm %%JYTHON_DIR%%/Doc/javadoc/org/python/util
+@dirrm %%JYTHON_DIR%%/Doc/javadoc/org/python/modules/zipimport
+@dirrm %%JYTHON_DIR%%/Doc/javadoc/org/python/modules/time
+@dirrm %%JYTHON_DIR%%/Doc/javadoc/org/python/modules/thread
+@dirrm %%JYTHON_DIR%%/Doc/javadoc/org/python/modules/sre
+@dirrm %%JYTHON_DIR%%/Doc/javadoc/org/python/modules/random
+@dirrm %%JYTHON_DIR%%/Doc/javadoc/org/python/modules/posix
+@dirrm %%JYTHON_DIR%%/Doc/javadoc/org/python/modules/jffi
+@dirrm %%JYTHON_DIR%%/Doc/javadoc/org/python/modules/_weakref
+@dirrm %%JYTHON_DIR%%/Doc/javadoc/org/python/modules/_threading
+@dirrm %%JYTHON_DIR%%/Doc/javadoc/org/python/modules/_functools
+@dirrm %%JYTHON_DIR%%/Doc/javadoc/org/python/modules/_csv
+@dirrm %%JYTHON_DIR%%/Doc/javadoc/org/python/modules/_collections
+@dirrm %%JYTHON_DIR%%/Doc/javadoc/org/python/modules
+@dirrm %%JYTHON_DIR%%/Doc/javadoc/org/python/core/util
+@dirrm %%JYTHON_DIR%%/Doc/javadoc/org/python/core/packagecache
+@dirrm %%JYTHON_DIR%%/Doc/javadoc/org/python/core/io
+@dirrm %%JYTHON_DIR%%/Doc/javadoc/org/python/core/adapter
 @dirrm %%JYTHON_DIR%%/Doc/javadoc/org/python/core
 @dirrm %%JYTHON_DIR%%/Doc/javadoc/org/python
 @dirrm %%JYTHON_DIR%%/Doc/javadoc/org
@@ -1705,6 +1955,7 @@ etc/jython.reg
 @dirrm %%JYTHON_DIR%%/Doc/javadoc/com
 @dirrm %%JYTHON_DIR%%/Doc/javadoc
 @dirrm %%JYTHON_DIR%%/Doc
+@dirrm %%JYTHON_DIR%%/Demo/swing/JythonConsole
 @dirrm %%JYTHON_DIR%%/Demo/swing
 @dirrm %%JYTHON_DIR%%/Demo/modjy_webapp/WEB-INF/lib-python
 @dirrm %%JYTHON_DIR%%/Demo/modjy_webapp/WEB-INF/lib
@@ -1714,11 +1965,12 @@ etc/jython.reg
 @dirrm %%JYTHON_DIR%%/Demo/jreload/src
 @dirrm %%JYTHON_DIR%%/Demo/jreload/_xample
 @dirrm %%JYTHON_DIR%%/Demo/jreload
-@dirrm %%JYTHON_DIR%%/Demo/javaclasses/pygraph
+@dirrm %%JYTHON_DIR%%/Demo/javaclasses/deprecated
 @dirrm %%JYTHON_DIR%%/Demo/javaclasses
 @dirrm %%JYTHON_DIR%%/Demo/embed
 @dirrm %%JYTHON_DIR%%/Demo/bean
 @dirrm %%JYTHON_DIR%%/Demo/awt
+@dirrm %%JYTHON_DIR%%/Demo/applet/deprecated
 @dirrm %%JYTHON_DIR%%/Demo/applet
 @dirrm %%JYTHON_DIR%%/Demo
 @dirrm %%JYTHON_DIR%%
