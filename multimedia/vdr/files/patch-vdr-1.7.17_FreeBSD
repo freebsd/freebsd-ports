@@ -1,0 +1,1308 @@
+Index: Make.config.template
+===================================================================
+RCS file: /progs/network/ccvs/vdr/Make.config.template,v
+retrieving revision 1.1.1.3
+retrieving revision 1.5
+diff -u -r1.1.1.3 -r1.5
+--- Make.config.template	2010/03/01 09:42:48	1.1.1.3
++++ Make.config.template	2010/03/01 09:58:06	1.5
+@@ -8,6 +8,11 @@
+ #
+ # $Id: Make.config.template 2.2 2010/02/06 14:50:03 kls Exp $
+ 
++OSTYPE   ?= $(shell uname -s)
++ifeq ($(OSTYPE),FreeBSD)
++FREEBSD=1
++endif
++
+ ### The C compiler and options:
+ 
+ CC       = gcc
+@@ -23,20 +28,35 @@
+ 
+ ### The directory environment:
+ 
+-#DVBDIR   = /usr/src/v4l-dvb/linux
+-MANDIR   = /usr/local/man
+-BINDIR   = /usr/local/bin
++PREFIX   = /usr/local
++MANDIR   = $(PREFIX)/man
++BINDIR   = $(PREFIX)/bin
+ 
+-LOCDIR   = ./locale
+ PLUGINDIR= ./PLUGINS
+-PLUGINLIBDIR= $(PLUGINDIR)/lib
+ VIDEODIR = /video
++
++ifdef FREEBSD
++# you have to set DVBDIR to a valid path!!!
++# you will need extra patches for DVBDIR!!!
++DVBDIR   = /usr/src/v4l-dvb/linux
++LOCDIR   = $(PREFIX)/share/locale
++CONFDIR  = $(PREFIX)/etc/vdr
++PLUGINLIBDIR= $(PREFIX)/lib/vdr
++else
++#DVBDIR   = /usr/src/v4l-dvb/linux
++LOCDIR   = ./locale
+ CONFDIR  = $(VIDEODIR)
++PLUGINLIBDIR= $(PLUGINDIR)/lib
++endif
+ 
+ ### The remote control:
+ 
+ LIRC_DEVICE = /dev/lircd
++ifdef FREEBSD
++RCU_DEVICE  = /dev/cuau0
++else
+ RCU_DEVICE  = /dev/ttyS1
++endif
+ 
+ ## Define if you want vdr to not run as root
+ #VDR_USER = vdr
+@@ -45,4 +65,8 @@
+ 
+ ifdef DVBDIR
+ INCLUDES += -I$(DVBDIR)/include
++endif
++
++ifdef FREEBSD
++INCLUDES += -I/usr/local/include
+ endif
+Index: Makefile
+@@ -8,6 +8,11 @@
+ 
+ .DELETE_ON_ERROR:
+ 
++OSTYPE   ?= $(shell uname -s)
++ifeq ($(OSTYPE),FreeBSD)
++FREEBSD=1
++endif
++
+ CC       ?= gcc
+ CFLAGS   ?= -g -O3 -Wall
+ 
+@@ -20,7 +25,12 @@ PREFIX  ?= /usr/local
+ MANDIR   = $(PREFIX)/share/man
+ BINDIR   = $(PREFIX)/bin
+ LOCDIR   = ./locale
++ifdef FREEBSD
++LIBDIRS  = -L${LOCALBASE}/lib
++LIBS     = -ljpeg -lpthread -lrt -lfreetype -lfontconfig -liconv -lintl
++else
+ LIBS     = -ljpeg -lpthread -ldl -lcap -lrt -lfreetype -lfontconfig
++endif
+ INCLUDES ?= $(shell pkg-config --cflags freetype2)
+ 
+ PLUGINDIR= ./PLUGINS
+@@ -129,7 +139,11 @@ i18n: $(I18Nmsgs)
+ 
+ install-i18n:
+ 	@mkdir -p $(DESTDIR)$(LOCDIR)
++ifdef FREEBSD
++	@(cd $(LOCALEDIR); cp -R * $(DESTDIR)$(LOCDIR))
++else
+ 	@(cd $(LOCALEDIR); cp -r --parents * $(DESTDIR)$(LOCDIR))
++endif
+ 
+ # The 'include' directory (for plugins):
+ 
+@@ -168,7 +182,11 @@ install: install-bin install-conf instal
+ 
+ install-bin: vdr
+ 	@mkdir -p $(DESTDIR)$(BINDIR)
++ifdef FREEBSD
++	@cp -f vdr svdrpsend.pl $(DESTDIR)$(BINDIR)
++else
+ 	@cp --remove-destination vdr svdrpsend.pl $(DESTDIR)$(BINDIR)
++endif
+ 
+ # Configuration files:
+ 
+@@ -191,7 +209,11 @@ install-doc:
+ 
+ install-plugins: plugins
+ 	@mkdir -p $(DESTDIR)$(PLUGINLIBDIR)
++ifdef FREEBSD
++	@cp -f $(PLUGINDIR)/lib/lib*-*.so.$(APIVERSION) $(DESTDIR)$(PLUGINLIBDIR)
++else
+ 	@cp --remove-destination $(PLUGINDIR)/lib/lib*-*.so.$(APIVERSION) $(DESTDIR)$(PLUGINLIBDIR)
++endif
+ 
+ # Source documentation:
+ 
+Index: channels.c
+===================================================================
+RCS file: /progs/network/ccvs/vdr/channels.c,v
+retrieving revision 1.1.1.5
+retrieving revision 1.6
+diff -u -r1.1.1.5 -r1.6
+--- channels.c	2010/06/07 09:07:28	1.1.1.5
++++ channels.c	2010/06/07 09:12:57	1.6
+@@ -29,7 +29,12 @@
+   int tid;
+   int sid;
+   int rid = 0;
++#ifdef __FreeBSD__
++  sourcebuf = MALLOC(char, 10);
++  int fields = sscanf(s, "%9[^-]-%d-%d-%d-%d", sourcebuf, &nid, &tid, &sid, &rid);
++#else
+   int fields = sscanf(s, "%a[^-]-%d-%d-%d-%d", &sourcebuf, &nid, &tid, &sid, &rid);
++#endif
+   if (fields == 4 || fields == 5) {
+      int source = cSource::FromString(sourcebuf);
+      free(sourcebuf);
+@@ -543,7 +548,17 @@
+      char *vpidbuf = NULL;
+      char *apidbuf = NULL;
+      char *caidbuf = NULL;
++#ifdef __FreeBSD__
++     namebuf = MALLOC(char, 256);
++     sourcebuf = MALLOC(char, 10);
++     parambuf = MALLOC(char, 256);
++     vpidbuf = MALLOC(char, 256);
++     apidbuf = MALLOC(char, 256);
++     caidbuf = MALLOC(char, 256);
++     int fields = sscanf(s, "%255[^:]:%d :%255[^:]:%9[^:] :%d :%255[^:]:%255[^:]:%d :%255[^:]:%d :%d :%d :%d ", namebuf, &frequency, parambuf, sourcebuf, &srate, vpidbuf, apidbuf, &tpid, caidbuf, &sid, &nid, &tid, &rid);
++#else
+      int fields = sscanf(s, "%a[^:]:%d :%a[^:]:%a[^:] :%d :%a[^:]:%a[^:]:%d :%a[^:]:%d :%d :%d :%d ", &namebuf, &frequency, &parambuf, &sourcebuf, &srate, &vpidbuf, &apidbuf, &tpid, &caidbuf, &sid, &nid, &tid, &rid);
++#endif
+      if (fields >= 9) {
+         if (fields == 9) {
+            // allow reading of old format
+Index: ci.c
+===================================================================
+RCS file: /progs/network/ccvs/vdr/ci.c,v
+retrieving revision 1.1.1.2
+retrieving revision 1.3
+diff -u -r1.1.1.2 -r1.3
+--- ci.c	2010/02/17 10:14:44	1.1.1.2
++++ ci.c	2010/02/17 10:46:55	1.3
+@@ -10,7 +10,11 @@
+ #include "ci.h"
+ #include <ctype.h>
+ #include <linux/dvb/ca.h>
++#ifdef __FreeBSD__
++#include <stdlib.h>
++#else
+ #include <malloc.h>
++#endif
+ #include <netinet/in.h>
+ #include <poll.h>
+ #include <string.h>
+Index: config.c
+===================================================================
+RCS file: /progs/network/ccvs/vdr/config.c,v
+retrieving revision 1.1.1.4
+retrieving revision 1.4
+diff -u -r1.1.1.4 -r1.4
+--- config.c	2010/06/07 09:07:28	1.1.1.4
++++ config.c	2010/06/07 09:12:57	1.4
+@@ -10,6 +10,9 @@
+ #include "config.h"
+ #include <ctype.h>
+ #include <stdlib.h>
++#ifdef __FreeBSD__
++#include <netinet/in.h>
++#endif
+ #include "device.h"
+ #include "i18n.h"
+ #include "interface.h"
+Index: diseqc.c
+===================================================================
+RCS file: /progs/network/ccvs/vdr/diseqc.c,v
+retrieving revision 1.1.1.3
+retrieving revision 1.4
+diff -u -r1.1.1.3 -r1.4
+--- diseqc.c	2010/03/01 09:42:49	1.1.1.3
++++ diseqc.c	2010/03/01 09:58:06	1.4
+@@ -50,7 +50,14 @@
+            }
+      return true;
+      }
++#ifdef __FreeBSD__
++  sourcebuf = MALLOC(char, 10);
++  if (commands == NULL)
++	commands = MALLOC(char, 256);
++  int fields = sscanf(s, "%9[^ ] %d %c %d %255[^\n]", sourcebuf, &slof, &polarization, &lof, commands);
++#else
+   int fields = sscanf(s, "%a[^ ] %d %c %d %a[^\n]", &sourcebuf, &slof, &polarization, &lof, &commands);
++#endif
+   if (fields == 4)
+      commands = NULL; //XXX Apparently sscanf() doesn't work correctly if the last %a argument results in an empty string
+   if (4 <= fields && fields <= 5) {
+Index: dvbsubtitle.c
+===================================================================
+RCS file: /progs/network/ccvs/vdr/dvbsubtitle.c,v
+retrieving revision 1.1.1.5
+retrieving revision 1.5
+diff -u -r1.1.1.5 -r1.5
+--- dvbsubtitle.c	2010/10/19 20:28:49	1.1.1.5
++++ dvbsubtitle.c	2010/10/19 20:32:58	1.5
+@@ -718,7 +718,11 @@
+      if (Length > PayloadOffset + SubstreamHeaderLength) {
+         int64_t pts = PesHasPts(Data) ? PesGetPts(Data) : 0;
+         if (pts)
++#ifdef __FreeBSD__
++           dbgconverter("Converter PTS: %lld\n", (long long int)pts);
++#else
+            dbgconverter("Converter PTS: %lld\n", pts);
++#endif
+         const uchar *data = Data + PayloadOffset + SubstreamHeaderLength; // skip substream header
+         int length = Length - PayloadOffset - SubstreamHeaderLength; // skip substream header
+         if (ResetSubtitleAssembler)
+@@ -754,7 +758,11 @@
+      if (Length > PayloadOffset) {
+         int64_t pts = PesGetPts(Data);
+         if (pts)
++#ifdef __FreeBSD__
++           dbgconverter("Converter PTS: %lld\n", (long long int)pts);
++#else
+            dbgconverter("Converter PTS: %lld\n", pts);
++#endif
+         const uchar *data = Data + PayloadOffset;
+         int length = Length - PayloadOffset;
+         if (length > 3) {
+@@ -819,7 +827,11 @@
+                     if (AssertOsd()) {
+                        sb->Draw(osd);
+                        Timeout.Set(sb->Timeout() * 1000);
++#ifdef __FreeBSD__
++                       dbgconverter("PTS: %lld  STC: %lld (%lld) timeout: %d\n", (long long int)sb->Pts(), (long long int)cDevice::PrimaryDevice()->GetSTC(), (long long int)Delta, sb->Timeout());
++#else
+                        dbgconverter("PTS: %lld  STC: %lld (%lld) timeout: %d\n", sb->Pts(), cDevice::PrimaryDevice()->GetSTC(), Delta, sb->Timeout());
++#endif
+                        }
+                     bitmaps->Del(sb);
+                     }
+@@ -889,7 +901,11 @@
+             page->SetTimeout(Data[6]);
+             page->SetState((Data[6 + 1] & 0x0C) >> 2);
+             page->regions.Clear();
++#ifdef __FreeBSD__
++            dbgpages("Update page id %d version %d pts %lld timeout %d state %d\n", pageId, page->Version(), (long long int)page->Pts(), page->Timeout(), page->State());
++#else
+             dbgpages("Update page id %d version %d pts %lld timeout %d state %d\n", pageId, page->Version(), page->Pts(), page->Timeout(), page->State());
++#endif
+             for (int i = 6 + 2; i < segmentLength; i += 6) {
+                 cSubtitleRegion *region = page->GetRegionById(Data[i], true);
+                 region->SetHorizontalAddress((Data[i + 2] << 8) + Data[i + 3]);
+Index: eit.c
+===================================================================
+RCS file: /progs/network/ccvs/vdr/eit.c,v
+retrieving revision 1.1.1.3
+retrieving revision 1.5
+diff -u -r1.1.1.3 -r1.5
+--- eit.c	2010/06/07 09:07:27	1.1.1.3
++++ eit.c	2010/06/07 09:12:57	1.5
+@@ -339,10 +339,15 @@
+   if (diff > 2) {
+      mutex.Lock();
+      if (abs(diff - lastDiff) < 3) {
++#ifdef __FreeBSD__
++        isyslog("system time would have changed from %s (%ld) to %s (%ld)", *TimeToString(loctim), loctim, *TimeToString(sattim), sattim);
++        esyslog("stime() not available on FreeBSD, maybe use adjtime()?");
++#else
+         if (stime(&sattim) == 0)
+            isyslog("system time changed from %s (%ld) to %s (%ld)", *TimeToString(loctim), loctim, *TimeToString(sattim), sattim);
+         else
+            esyslog("ERROR while setting system time: %m");
++#endif
+         }
+      lastDiff = diff;
+      mutex.Unlock();
+Index: epg.c
+===================================================================
+RCS file: /progs/network/ccvs/vdr/epg.c,v
+retrieving revision 1.1.1.3
+retrieving revision 1.5
+diff -u -r1.1.1.3 -r1.5
+--- epg.c	2010/03/01 09:42:48	1.1.1.3
++++ epg.c	2010/03/01 09:58:06	1.5
+@@ -31,7 +31,13 @@
+ bool tComponent::FromString(const char *s)
+ {
+   unsigned int Stream, Type;
++#ifdef __FreeBSD__
++  if (description == NULL)
++	description = MALLOC(char, 256);
++  int n = sscanf(s, "%X %02X %7s %255[^\n]", &Stream, &Type, language, description); // 7 = MAXLANGCODE2 - 1
++#else
+   int n = sscanf(s, "%X %02X %7s %a[^\n]", &Stream, &Type, language, &description); // 7 = MAXLANGCODE2 - 1
++#endif
+   if (n != 4 || isempty(description)) {
+      free(description);
+      description = NULL;
+Index: font.c
+===================================================================
+RCS file: /progs/network/ccvs/vdr/font.c,v
+retrieving revision 1.1.1.3
+retrieving revision 1.5
+diff -u -r1.1.1.3 -r1.5
+--- font.c	2010/10/19 20:28:48	1.1.1.3
++++ font.c	2010/10/19 20:32:58	1.5
+@@ -383,7 +383,11 @@
+ {
+   if (!FontNames->Size()) {
+      FcInit();
++#ifdef __FreeBSD__
++     FcObjectSet *os = FcObjectSetBuild(FC_FAMILY, FC_STYLE, (char *)NULL);
++#else
+      FcObjectSet *os = FcObjectSetBuild(FC_FAMILY, FC_STYLE, NULL);
++#endif
+      FcPattern *pat = FcPatternCreate();
+      FcPatternAddBool(pat, FC_SCALABLE, FcTrue);
+      if (Monospaced)
+Index: i18n.h
+===================================================================
+RCS file: /progs/network/ccvs/vdr/i18n.h,v
+retrieving revision 1.1.1.2
+retrieving revision 1.3
+diff -u -r1.1.1.2 -r1.3
+--- i18n.h	2010/02/17 10:14:45	1.1.1.2
++++ i18n.h	2010/02/17 10:46:55	1.3
+@@ -48,7 +48,11 @@
+    ///< have an actual locale installed. The rest are just dummy entries
+    ///< to allow having three letter language codes for other languages
+    ///< that have no actual locale on this system.
++#ifdef __FreeBSD__
++const char *I18nTranslate(const char *s, const char *Plugin = NULL) __format_arg(1);
++#else
+ const char *I18nTranslate(const char *s, const char *Plugin = NULL) __attribute_format_arg__(1);
++#endif
+    ///< Translates the given string (with optional Plugin context) into
+    ///< the current language. If no translation is available, the original
+    ///< string will be returned.
+Index: menu.c
+===================================================================
+RCS file: /progs/network/ccvs/vdr/menu.c,v
+retrieving revision 1.1.1.6
+retrieving revision 1.7
+diff -u -r1.1.1.6 -r1.7
+Index: menuitems.c
+===================================================================
+RCS file: /progs/network/ccvs/vdr/menuitems.c,v
+retrieving revision 1.1.1.4
+retrieving revision 1.5
+diff -u -r1.1.1.4 -r1.5
+--- menuitems.c	2010/06/07 09:07:27	1.1.1.4
++++ menuitems.c	2010/06/07 09:12:57	1.5
+@@ -838,7 +838,11 @@
+      struct tm tm_r;
+      localtime_r(value, &tm_r);
+      strftime(buf, DATEBUFFERSIZE, "%Y-%m-%d ", &tm_r);
++#ifdef __FreeBSD__
++     strcat(buf, WeekDayNameReal(tm_r.tm_wday));
++#else
+      strcat(buf, WeekDayName(tm_r.tm_wday));
++#endif
+      }
+   else
+      *buf = 0;
+Index: pat.c
+===================================================================
+RCS file: /progs/network/ccvs/vdr/pat.c,v
+retrieving revision 1.1.1.5
+retrieving revision 1.6
+diff -u -r1.1.1.5 -r1.6
+--- pat.c	2010/10/19 20:28:48	1.1.1.5
++++ pat.c	2010/10/19 20:32:58	1.6
+@@ -8,7 +8,11 @@
+  */
+ 
+ #include "pat.h"
++#ifdef __FreeBSD__
++#include <stdlib.h>
++#else
+ #include <malloc.h>
++#endif
+ #include "channels.h"
+ #include "libsi/section.h"
+ #include "libsi/descriptor.h"
+Index: recording.c
+===================================================================
+RCS file: /progs/network/ccvs/vdr/recording.c,v
+retrieving revision 1.1.1.3
+retrieving revision 1.5
+diff -u -r1.1.1.3 -r1.5
+--- recording.c	2010/03/16 15:18:58	1.1.1.3
++++ recording.c	2010/03/16 15:21:05	1.5
+@@ -1505,7 +1505,11 @@
+               delta = int(buf.st_size % sizeof(tIndexTs));
+               if (delta) {
+                  delta = sizeof(tIndexTs) - delta;
++#ifdef __FreeBSD__
++                 esyslog("ERROR: invalid file size (%lld) in '%s'", (long long int)buf.st_size, fileName);
++#else
+                  esyslog("ERROR: invalid file size (%lld) in '%s'", buf.st_size, fileName);
++#endif
+                  }
+               last = int((buf.st_size + delta) / sizeof(tIndexTs) - 1);
+               if (!Record && last >= 0) {
+@@ -1825,7 +1829,11 @@
+          // Search for a PAT packet from the end of the file:
+          cPatPmtParser PatPmtParser;
+          sprintf(pFileNumber, RECORDFILESUFFIXTS, Number);
++#ifdef __FreeBSD__
++         int fd = open(fileName, O_RDONLY, DEFFILEMODE);
++#else
+          int fd = open(fileName, O_RDONLY | O_LARGEFILE, DEFFILEMODE);
++#endif
+          if (fd >= 0) {
+             off_t pos = lseek(fd, -TS_SIZE, SEEK_END);
+             while (pos >= 0) {
+@@ -1866,14 +1874,22 @@
+      int BlockingFlag = blocking ? 0 : O_NONBLOCK;
+      if (record) {
+         dsyslog("recording to '%s'", fileName);
++#ifdef __FreeBSD__
++        file = OpenVideoFile(fileName, O_RDWR | O_CREAT | BlockingFlag);
++#else
+         file = OpenVideoFile(fileName, O_RDWR | O_CREAT | O_LARGEFILE | BlockingFlag);
++#endif
+         if (!file)
+            LOG_ERROR_STR(fileName);
+         }
+      else {
+         if (access(fileName, R_OK) == 0) {
+            dsyslog("playing '%s'", fileName);
++#ifdef __FreeBSD__
++           file = cUnbufferedFile::Create(fileName, O_RDONLY | BlockingFlag);
++#else
+            file = cUnbufferedFile::Create(fileName, O_RDONLY | O_LARGEFILE | BlockingFlag);
++#endif
+            if (!file)
+               LOG_ERROR_STR(fileName);
+            }
+Index: remote.c
+===================================================================
+RCS file: /progs/network/ccvs/vdr/remote.c,v
+retrieving revision 1.1.1.2
+retrieving revision 1.2
+diff -u -r1.1.1.2 -r1.2
+--- remote.c	2010/02/17 10:14:45	1.1.1.2
++++ remote.c	2010/02/17 12:36:01	1.2
+@@ -121,7 +121,11 @@
+ bool cRemote::Put(uint64_t Code, bool Repeat, bool Release)
+ {
+   char buffer[32];
++#ifdef __FreeBSD__
++  snprintf(buffer, sizeof(buffer), "%016llX", (long long unsigned int)Code);
++#else
+   snprintf(buffer, sizeof(buffer), "%016llX", Code);
++#endif
+   return Put(buffer, Repeat, Release);
+ }
+ 
+Index: shutdown.c
+===================================================================
+RCS file: /progs/network/ccvs/vdr/shutdown.c,v
+retrieving revision 1.1.1.2
+retrieving revision 1.4
+diff -u -r1.1.1.2 -r1.4
+Index: skins.c
+===================================================================
+RCS file: /progs/network/ccvs/vdr/skins.c,v
+retrieving revision 1.1.1.2
+retrieving revision 1.3
+diff -u -r1.1.1.2 -r1.3
+--- skins.c	2010/02/17 10:14:45	1.1.1.2
++++ skins.c	2010/02/17 10:46:55	1.3
+@@ -11,6 +11,20 @@
+ #include "interface.h"
+ #include "status.h"
+ 
++#ifdef __FreeBSD__
++/* XXX Implement strchrnul for FreeBSD. */
++static char *
++strchrnul (const char *s, int c_in)
++{
++  char c = c_in;
++  while (*s && (*s != c))
++    s++;
++
++  return (char *) s;
++}
++#endif
++
++
+ // --- cSkinQueuedMessage ----------------------------------------------------
+ 
+ class cSkinQueuedMessage : public cListObject {
+Index: sources.c
+===================================================================
+RCS file: /progs/network/ccvs/vdr/sources.c,v
+retrieving revision 1.1.1.4
+retrieving revision 1.5
+diff -u -r1.1.1.4 -r1.5
+--- sources.c	2010/03/16 15:18:58	1.1.1.4
++++ sources.c	2010/03/16 15:21:05	1.5
+@@ -31,7 +31,14 @@
+ bool cSource::Parse(const char *s)
+ {
+   char *codeBuf = NULL;
++#ifdef __FreeBSD__
++  codeBuf = MALLOC(char, 10);
++  if (description == NULL)
++	description = MALLOC(char, 256);
++  if (2 == sscanf(s, "%9[^ ] %255[^\n]", codeBuf, description))
++#else
+   if (2 == sscanf(s, "%a[^ ] %a[^\n]", &codeBuf, &description))
++#endif
+      code = FromString(codeBuf);
+   free(codeBuf);
+   return code != stNone && description && *description;
+Index: svdrp.c
+===================================================================
+RCS file: /progs/network/ccvs/vdr/svdrp.c,v
+retrieving revision 1.1.1.2
+retrieving revision 1.4
+diff -u -r1.1.1.2 -r1.4
+--- svdrp.c	2010/02/17 10:14:45	1.1.1.2
++++ svdrp.c	2010/02/17 12:34:54	1.4
+@@ -40,6 +40,12 @@
+ #include "tools.h"
+ #include "videodir.h"
+ 
++/* FreeBSD has it's own version of isnumber(),
++   but VDR's version is incompatible */
++#ifdef __FreeBSD__
++#undef isnumber
++#endif
++
+ // --- cSocket ---------------------------------------------------------------
+ 
+ cSocket::cSocket(int Port, int Queue)
+Index: themes.c
+===================================================================
+RCS file: /progs/network/ccvs/vdr/themes.c,v
+retrieving revision 1.1.1.2
+retrieving revision 1.3
+diff -u -r1.1.1.2 -r1.3
+--- themes.c	2010/02/17 10:14:44	1.1.1.2
++++ themes.c	2010/02/17 10:46:55	1.3
+@@ -47,7 +47,11 @@
+                     // FileName is ok
+                     if (SetName) {
+                        free(name);
++#ifdef __FreeBSD__
++                       name = (char *)strndup(n, e - n);
++#else
+                        name = strndup(n, e - n);
++#endif
+                        }
+                     }
+                  else
+Index: thread.c
+===================================================================
+RCS file: /progs/network/ccvs/vdr/thread.c,v
+retrieving revision 1.1.1.2
+retrieving revision 1.6
+diff -u -r1.1.1.2 -r1.6
+--- thread.c	2010/02/17 10:14:45	1.1.1.2
++++ thread.c	2010/02/24 08:41:13	1.6
+@@ -9,15 +9,22 @@
+ 
+ #include "thread.h"
+ #include <errno.h>
++#ifdef __FreeBSD__
++#include <pthread_np.h>
++#include <stdlib.h>
++#else
+ #include <linux/unistd.h>
+ #include <malloc.h>
++#endif
+ #include <stdarg.h>
+ #include <stdlib.h>
+ #include <sys/resource.h>
+ #include <sys/syscall.h>
+ #include <sys/time.h>
+ #include <sys/wait.h>
++#ifndef __FreeBSD__
+ #include <sys/prctl.h>
++#endif
+ #include <unistd.h>
+ #include "tools.h"
+ 
+@@ -143,7 +150,9 @@
+ {
+   pthread_rwlockattr_t attr;
+   pthread_rwlockattr_init(&attr);
++#ifndef __FreeBSD__
+   pthread_rwlockattr_setkind_np(&attr, PreferWriter ? PTHREAD_RWLOCK_PREFER_WRITER_NP : PTHREAD_RWLOCK_PREFER_READER_NP);
++#endif
+   pthread_rwlock_init(&rwlock, &attr);
+ }
+ 
+@@ -179,7 +188,11 @@
+   locked = 0;
+   pthread_mutexattr_t attr;
+   pthread_mutexattr_init(&attr);
++#ifdef __FreeBSD__
++  pthread_mutexattr_settype(&attr, PTHREAD_MUTEX_ERRORCHECK);
++#else
+   pthread_mutexattr_settype(&attr, PTHREAD_MUTEX_ERRORCHECK_NP);
++#endif
+   pthread_mutex_init(&mutex, &attr);
+ }
+ 
+@@ -228,8 +241,12 @@
+ 
+ void cThread::SetIOPriority(int Priority)
+ {
++#ifdef __FreeBSD__
++  esyslog("ERROR: syscall(SYS_ioprio_set ...) unsupported on FreeBSD");
++#else
+   if (syscall(SYS_ioprio_set, 1, 0, (Priority & 0xff) | (2 << 13)) < 0) // best effort class
+      LOG_ERROR;
++#endif
+ }
+ 
+ void cThread::SetDescription(const char *Description, ...)
+@@ -335,7 +352,11 @@
+ 
+ tThreadId cThread::ThreadId(void)
+ {
++#ifdef __FreeBSD__
++  return reinterpret_cast<long>(::pthread_self());
++#else
+   return syscall(__NR_gettid);
++#endif
+ }
+ 
+ void cThread::SetMainThreadId(void)
+@@ -461,7 +482,11 @@
+         int MaxPossibleFileDescriptors = getdtablesize();
+         for (int i = STDERR_FILENO + 1; i < MaxPossibleFileDescriptors; i++)
+             close(i); //close all dup'ed filedescriptors
++#ifdef __FreeBSD__
++        if (execl("/bin/sh", "sh", "-c", Command, (char *)NULL) == -1) {
++#else
+         if (execl("/bin/sh", "sh", "-c", Command, NULL) == -1) {
++#endif
+            LOG_ERROR_STR(Command);
+            close(fd[1 - iopipe]);
+            _exit(-1);
+@@ -544,7 +569,11 @@
+      int MaxPossibleFileDescriptors = getdtablesize();
+      for (int i = STDERR_FILENO + 1; i < MaxPossibleFileDescriptors; i++)
+          close(i); //close all dup'ed filedescriptors
++#ifdef __FreeBSD__
++     if (execl("/bin/sh", "sh", "-c", Command, (char *)NULL) == -1) {
++#else
+      if (execl("/bin/sh", "sh", "-c", Command, NULL) == -1) {
++#endif
+         LOG_ERROR_STR(Command);
+         _exit(-1);
+         }
+Index: thread.h
+===================================================================
+RCS file: /progs/network/ccvs/vdr/thread.h,v
+retrieving revision 1.1.1.2
+retrieving revision 1.3
+diff -u -r1.1.1.2 -r1.3
+--- thread.h	2010/02/17 10:14:44	1.1.1.2
++++ thread.h	2010/02/17 10:46:55	1.3
+@@ -13,6 +13,9 @@
+ #include <pthread.h>
+ #include <stdio.h>
+ #include <sys/types.h>
++#ifdef __FreeBSD__
++#include <signal.h>
++#endif
+ 
+ class cCondWait {
+ private:
+Index: timers.c
+===================================================================
+RCS file: /progs/network/ccvs/vdr/timers.c,v
+retrieving revision 1.1.1.2
+retrieving revision 1.3
+diff -u -r1.1.1.2 -r1.3
+--- timers.c	2010/02/17 10:14:45	1.1.1.2
++++ timers.c	2010/02/17 10:46:55	1.3
+@@ -23,6 +23,12 @@
+ // format characters in order to allow any number of blanks after a numeric
+ // value!
+ 
++/* FreeBSD has it's own version of isnumber(),
++   but VDR's version is incompatible */
++#ifdef __FreeBSD__
++#undef isnumber
++#endif
++
+ // --- cTimer ----------------------------------------------------------------
+ 
+ cTimer::cTimer(bool Instant, bool Pause, cChannel *Channel)
+@@ -292,7 +298,15 @@
+      s = s2;
+      }
+   bool result = false;
++#ifdef __FreeBSD__
++  channelbuffer = MALLOC(char, 256);
++  daybuffer = MALLOC(char, 256);
++  filebuffer = MALLOC(char, 256);
++  aux = MALLOC(char, 256);
++  if (8 <= sscanf(s, "%u :%255[^:]:%255[^:]:%d :%d :%d :%d :%255[^:\n]:%255[^\n]", &flags, channelbuffer, daybuffer, &start, &stop, &priority, &lifetime, filebuffer, aux)) {
++#else
+   if (8 <= sscanf(s, "%u :%a[^:]:%a[^:]:%d :%d :%d :%d :%a[^:\n]:%a[^\n]", &flags, &channelbuffer, &daybuffer, &start, &stop, &priority, &lifetime, &filebuffer, &aux)) {
++#endif
+      ClrFlags(tfRecording);
+      if (aux && !*skipspace(aux)) {
+         free(aux);
+Index: tools.c
+===================================================================
+RCS file: /progs/network/ccvs/vdr/tools.c,v
+retrieving revision 1.1.1.5
+retrieving revision 1.8
+diff -u -r1.1.1.5 -r1.8
+--- tools.c	2010/10/19 20:28:48	1.1.1.5
++++ tools.c	2010/10/19 20:32:58	1.8
+@@ -21,13 +21,24 @@
+ #include <stdarg.h>
+ #include <stdlib.h>
+ #include <sys/time.h>
++#ifdef __FreeBSD__
++#include <sys/param.h>
++#include <sys/mount.h>
++#else
+ #include <sys/vfs.h>
++#endif
+ #include <time.h>
+ #include <unistd.h>
+ #include <utime.h>
+ #include "i18n.h"
+ #include "thread.h"
+ 
++/* FreeBSD has it's own version of isnumber(),
++   but VDR's version is incompatible */
++#ifdef __FreeBSD__
++#undef isnumber
++#endif
++
+ int SysLogLevel = 3;
+ 
+ #define MAXSYSLOGBUF 256
+@@ -493,6 +504,18 @@
+ {
+   if (!FileName)
+      return NULL;
++#ifdef __FreeBSD__
++  char *resolved_path = NULL;
++  resolved_path = MALLOC(char, PATH_MAX+1);
++  if (realpath(FileName, resolved_path) == NULL)
++  {
++        if (errno != ENOENT) // some other error occurred
++           LOG_ERROR_STR(FileName);
++        else // file doesn't exist
++           resolved_path = strdup(FileName);
++  }
++  return resolved_path;
++#else
+   char *TargetName = canonicalize_file_name(FileName);
+   if (!TargetName) {
+      if (errno == ENOENT) // file doesn't exist
+@@ -501,6 +524,7 @@
+         LOG_ERROR_STR(FileName);
+      }
+   return TargetName;
++#endif
+ }
+ 
+ bool SpinUpDisk(const char *FileName)
+@@ -517,7 +541,11 @@
+          int f = open(buf, O_WRONLY | O_CREAT, DEFFILEMODE);
+          // O_SYNC doesn't work on all file systems
+          if (f >= 0) {
++#ifdef __FreeBSD__
++            if (fsync(f) < 0)
++#else
+             if (fdatasync(f) < 0)
++#endif
+                LOG_ERROR_STR(*buf);
+             close(f);
+             remove(buf);
+@@ -818,7 +846,11 @@
+ const char *cCharSetConv::Convert(const char *From, char *To, size_t ToLength)
+ {
+   if (cd != (iconv_t)-1 && From && *From) {
++#ifdef __FreeBSD__
++     const char *FromPtr = (char *)From;
++#else
+      char *FromPtr = (char *)From;
++#endif
+      size_t FromLength = strlen(From);
+      char *ToPtr = To;
+      if (!ToPtr) {
+@@ -920,7 +952,11 @@
+   return cString(buffer, true);
+ }
+ 
++#ifdef __FreeBSD__
++cString WeekDayNameReal(int WeekDay)
++#else
+ cString WeekDayName(int WeekDay)
++#endif
+ {
+   char buffer[16];
+   WeekDay = WeekDay == 0 ? 6 : WeekDay - 1; // we start with Monday==0!
+@@ -938,10 +974,18 @@
+ cString WeekDayName(time_t t)
+ {
+   struct tm tm_r;
++#ifdef __FreeBSD__
++  return WeekDayNameReal(localtime_r(&t, &tm_r)->tm_wday);
++#else
+   return WeekDayName(localtime_r(&t, &tm_r)->tm_wday);
++#endif
+ }
+ 
++#ifdef __FreeBSD__
++cString WeekDayNameFullReal(int WeekDay)
++#else
+ cString WeekDayNameFull(int WeekDay)
++#endif
+ {
+   WeekDay = WeekDay == 0 ? 6 : WeekDay - 1; // we start with Monday==0!
+   switch (WeekDay) {
+@@ -959,7 +1003,11 @@
+ cString WeekDayNameFull(time_t t)
+ {
+   struct tm tm_r;
++#ifdef __FreeBSD__
++  return WeekDayNameFullReal(localtime_r(&t, &tm_r)->tm_wday);
++#else
+   return WeekDayNameFull(localtime_r(&t, &tm_r)->tm_wday);
++#endif
+ }
+ 
+ cString DayDateTime(time_t t)
+@@ -969,7 +1017,11 @@
+      time(&t);
+   struct tm tm_r;
+   tm *tm = localtime_r(&t, &tm_r);
++#ifdef __FreeBSD__
++  snprintf(buffer, sizeof(buffer), "%s %02d.%02d. %02d:%02d", *WeekDayNameReal(tm->tm_wday), tm->tm_mday, tm->tm_mon + 1, tm->tm_hour, tm->tm_min);
++#else
+   snprintf(buffer, sizeof(buffer), "%s %02d.%02d. %02d:%02d", *WeekDayName(tm->tm_wday), tm->tm_mday, tm->tm_mon + 1, tm->tm_hour, tm->tm_min);
++#endif
+   return buffer;
+ }
+ 
+@@ -988,7 +1040,11 @@
+   char buf[32];
+   struct tm tm_r;
+   tm *tm = localtime_r(&t, &tm_r);
++#ifdef __FreeBSD__
++  char *p = stpcpy(buf, WeekDayNameReal(tm->tm_wday));
++#else
+   char *p = stpcpy(buf, WeekDayName(tm->tm_wday));
++#endif
+   *p++ = ' ';
+   strftime(p, sizeof(buf) - (p - buf), "%d.%m.%Y", tm);
+   return buf;
+@@ -1315,7 +1371,11 @@
+      if (!IsOpen()) {
+         f = FileDes;
+         if (f >= 0) {
++#ifdef __FreeBSD__
++           if ((uint)f < FD_SETSIZE) {
++#else
+            if (f < FD_SETSIZE) {
++#endif
+               if (f >= maxFiles)
+                  maxFiles = f + 1;
+               if (!files[f])
+@@ -1356,7 +1416,11 @@
+       if (files[i])
+          FD_SET(i, &set);
+       }
++#ifdef __FreeBSD__
++  if (0 <= FileDes && (uint)FileDes < FD_SETSIZE && !files[FileDes])
++#else
+   if (0 <= FileDes && FileDes < FD_SETSIZE && !files[FileDes])
++#endif
+      FD_SET(FileDes, &set); // in case we come in with an arbitrary descriptor
+   if (TimeoutMs == 0)
+      TimeoutMs = 10; // load gets too heavy with 0
+@@ -1451,7 +1515,9 @@
+ 
+ // --- cUnbufferedFile -------------------------------------------------------
+ 
++#ifndef __FreeBSD__
+ #define USE_FADVISE
++#endif
+ 
+ #define WRITE_BUFFER KILOBYTE(800)
+ 
+@@ -1512,11 +1578,13 @@
+   readahead = ra;
+ }
+ 
++#ifdef USE_FADVISE
+ int cUnbufferedFile::FadviseDrop(off_t Offset, off_t Len)
+ {
+   // rounding up the window to make sure that not PAGE_SIZE-aligned data gets freed.
+   return posix_fadvise(fd, Offset - (FADVGRAN - 1), Len + (FADVGRAN - 1) * 2, POSIX_FADV_DONTNEED);
+ }
++#endif
+ 
+ off_t cUnbufferedFile::Seek(off_t Offset, int Whence)
+ {
+Index: tools.h
+===================================================================
+RCS file: /progs/network/ccvs/vdr/tools.h,v
+retrieving revision 1.1.1.2
+retrieving revision 1.3
+diff -u -r1.1.1.2 -r1.3
+--- tools.h	2010/02/17 10:14:44	1.1.1.2
++++ tools.h	2010/02/17 10:46:55	1.3
+@@ -26,6 +26,12 @@
+ #include <sys/stat.h>
+ #include <sys/types.h>
+ 
++#ifdef __FreeBSD__
++#include <sys/param.h>
++typedef int (*__compar_fn_t) (__const void *, __const void *);
++#undef isnumber
++#endif
++
+ typedef unsigned char uchar;
+ 
+ extern int SysLogLevel;
+@@ -216,9 +222,17 @@
+ bool SpinUpDisk(const char *FileName);
+ void TouchFile(const char *FileName);
+ time_t LastModifiedTime(const char *FileName);
++#ifdef __FreeBSD__
++cString WeekDayNameReal(int WeekDay);
++#else
+ cString WeekDayName(int WeekDay);
++#endif
+ cString WeekDayName(time_t t);
++#ifdef __FreeBSD__
++cString WeekDayNameFullReal(int WeekDay);
++#else
+ cString WeekDayNameFull(int WeekDay);
++#endif
+ cString WeekDayNameFull(time_t t);
+ cString DayDateTime(time_t t = 0);
+ cString TimeToString(time_t t);
+Index: vdr.c
+===================================================================
+RCS file: /progs/network/ccvs/vdr/vdr.c,v
+retrieving revision 1.1.1.5
+retrieving revision 1.7
+diff -u -r1.1.1.5 -r1.7
+--- vdr.c	2010/06/07 09:07:28	1.1.1.5
++++ vdr.c	2010/06/07 09:12:57	1.7
+@@ -32,8 +32,10 @@
+ #include <pwd.h>
+ #include <signal.h>
+ #include <stdlib.h>
++#ifndef __FreeBSD__
+ #include <sys/capability.h>
+ #include <sys/prctl.h>
++#endif
+ #include <termios.h>
+ #include <unistd.h>
+ #include "audio.h"
+@@ -107,12 +109,15 @@
+         fprintf(stderr, "vdr: cannot set user id %u: %s\n", (unsigned int)user->pw_uid, strerror(errno));
+         return false;
+         }
++#ifndef __FreeBSD__
+      if (UserDump && prctl(PR_SET_DUMPABLE, 1, 0, 0, 0) < 0)
+         fprintf(stderr, "vdr: warning - cannot set dumpable: %s\n", strerror(errno));
++#endif
+      }
+   return true;
+ }
+ 
++#ifndef __FreeBSD__
+ static bool DropCaps(void)
+ {
+   // drop all capabilities except selected ones
+@@ -139,6 +144,7 @@
+      }
+   return true;
+ }
++#endif
+ 
+ static void SignalHandler(int signum)
+ {
+@@ -388,14 +394,18 @@
+   if (VdrUser && geteuid() == 0) {
+      StartedAsRoot = true;
+      if (strcmp(VdrUser, "root")) {
++#ifndef __FreeBSD__
+         if (!SetKeepCaps(true))
+            return 2;
++#endif
+         if (!SetUser(VdrUser, UserDump))
+            return 2;
++#ifndef __FreeBSD__
+         if (!SetKeepCaps(false))
+            return 2;
+         if (!DropCaps())
+            return 2;
++#endif
+         }
+      }
+ 
+Index: PLUGINS/src/svdrpdemo/svdrpdemo.c
+===================================================================
+RCS file: /progs/network/ccvs/vdr/PLUGINS/src/svdrpdemo/svdrpdemo.c,v
+retrieving revision 1.1.1.2
+retrieving revision 1.4
+diff -u -r1.1.1.2 -r1.4
+Index: libsi/headers.h
+===================================================================
+RCS file: /progs/network/ccvs/vdr/libsi/headers.h,v
+retrieving revision 1.1.1.2
+retrieving revision 1.3
+diff -u -r1.1.1.2 -r1.3
+--- libsi/headers.h	2010/02/17 10:14:45	1.1.1.2
++++ libsi/headers.h	2010/02/17 10:46:56	1.3
+@@ -17,7 +17,11 @@
+ #ifndef LIBSI_HEADERS_H
+ #define LIBSI_HEADERS_H
+ 
++#ifdef __FreeBSD__
++#include <sys/endian.h>
++#else
+ #include <endian.h>
++#endif
+ 
+ namespace SI {
+ 
+Index: libsi/si.c
+===================================================================
+RCS file: /progs/network/ccvs/vdr/libsi/si.c,v
+retrieving revision 1.1.1.4
+retrieving revision 1.7
+diff -u -r1.1.1.4 -r1.7
+--- libsi/si.c	2010/03/01 09:42:49	1.1.1.4
++++ libsi/si.c	2010/03/01 09:58:08	1.7
+@@ -13,7 +13,9 @@
+ #include "si.h"
+ #include <errno.h>
+ #include <iconv.h>
++#ifndef __FreeBSD__
+ #include <malloc.h>
++#endif
+ #include <stdlib.h> // for broadcaster stupidity workaround
+ #include <string.h>
+ #include "descriptor.h"
+@@ -381,7 +383,11 @@
+   if (SystemCharacterTable) {
+      iconv_t cd = iconv_open(SystemCharacterTable, fromCode);
+      if (cd != (iconv_t)-1) {
++#ifdef __FreeBSD__
++        const char *fromPtr = from;
++#else
+         char *fromPtr = (char *)from;
++#endif
+         while (fromLength > 0 && toLength > 1) {
+            if (iconv(cd, &fromPtr, &fromLength, &to, &toLength) == size_t(-1)) {
+               if (errno == EILSEQ) {
+--- PLUGINS/src/dvbsddevice/Makefile.orig
++++ PLUGINS/src/dvbsddevice/Makefile
+@@ -45,7 +45,7 @@ PACKAGE = vdr-$(ARCHIVE)
+ 
+ ### Includes and Defines (add further entries here):
+ 
+-INCLUDES += -I$(VDRDIR)/include
++INCLUDES = -I$(VDRDIR)/include -I${LOCALBASE}/include
+ 
+ DEFINES += -D_GNU_SOURCE -DPLUGIN_NAME_I18N='"$(PLUGIN)"'
+ 
+@@ -100,7 +100,11 @@ i18n: $(I18Nmsgs) $(I18Npot)
+ 
+ libvdr-$(PLUGIN).so: $(OBJS)
+ 	$(CXX) $(CXXFLAGS) $(LDFLAGS) -shared $(OBJS) -o $@
+-	@cp --remove-destination $@ $(LIBDIR)/$@.$(APIVERSION)
++ifdef FREEBSD
++	@cp -f $@ $(LIBDIR)/$@.$(APIVERSION)
++else
++ 	@cp --remove-destination $@ $(LIBDIR)/$@.$(APIVERSION)
++endif
+ 
+ dist: $(I18Npo) clean
+ 	@-rm -rf $(TMPDIR)/$(ARCHIVE)
+--- PLUGINS/src/hello/Makefile.orig
++++ PLUGINS/src/hello/Makefile
+@@ -45,7 +45,7 @@ PACKAGE = vdr-$(ARCHIVE)
+ 
+ ### Includes and Defines (add further entries here):
+ 
+-INCLUDES += -I$(VDRDIR)/include
++INCLUDES = -I$(VDRDIR)/include -I${LOCALBASE}/include
+ 
+ DEFINES += -D_GNU_SOURCE -DPLUGIN_NAME_I18N='"$(PLUGIN)"'
+ 
+@@ -100,7 +100,11 @@ i18n: $(I18Nmsgs)
+ 
+ libvdr-$(PLUGIN).so: $(OBJS)
+ 	$(CXX) $(CXXFLAGS) $(LDFLAGS) -shared $(OBJS) -o $@
+-	@cp --remove-destination $@ $(LIBDIR)/$@.$(APIVERSION)
++ifdef FREEBSD
++	@cp -f $@ $(LIBDIR)/$@.$(APIVERSION)
++else
++ 	@cp --remove-destination $@ $(LIBDIR)/$@.$(APIVERSION)
++endif
+ 
+ dist: $(I18Npo) clean
+ 	@-rm -rf $(TMPDIR)/$(ARCHIVE)
+--- PLUGINS/src/osddemo/Makefile.orig
++++ PLUGINS/src/osddemo/Makefile
+@@ -43,7 +43,7 @@ PACKAGE = vdr-$(ARCHIVE)
+ 
+ ### Includes and Defines (add further entries here):
+ 
+-INCLUDES += -I$(VDRDIR)/include
++INCLUDES = -I$(VDRDIR)/include -I${LOCALBASE}/include
+ 
+ DEFINES += -D_GNU_SOURCE -DPLUGIN_NAME_I18N='"$(PLUGIN)"'
+ 
+@@ -73,7 +73,11 @@ $(DEPFILE): Makefile
+ 
+ libvdr-$(PLUGIN).so: $(OBJS)
+ 	$(CXX) $(CXXFLAGS) $(LDFLAGS) -shared $(OBJS) -o $@
+-	@cp --remove-destination $@ $(LIBDIR)/$@.$(APIVERSION)
++ifdef FREEBSD
++	@cp -f $@ $(LIBDIR)/$@.$(APIVERSION)
++else
++ 	@cp --remove-destination $@ $(LIBDIR)/$@.$(APIVERSION)
++endif
+ 
+ dist: clean
+ 	@-rm -rf $(TMPDIR)/$(ARCHIVE)
+--- PLUGINS/src/pictures/Makefile.orig
++++ PLUGINS/src/pictures/Makefile
+@@ -45,7 +45,7 @@ PACKAGE = vdr-$(ARCHIVE)
+ 
+ ### Includes and Defines (add further entries here):
+ 
+-INCLUDES += -I$(VDRDIR)/include
++INCLUDES = -I$(VDRDIR)/include -I${LOCALBASE}/include
+ 
+ DEFINES += -D_GNU_SOURCE -DPLUGIN_NAME_I18N='"$(PLUGIN)"'
+ 
+@@ -100,7 +100,11 @@ i18n: $(I18Nmsgs) $(I18Npot)
+ 
+ libvdr-$(PLUGIN).so: $(OBJS)
+ 	$(CXX) $(CXXFLAGS) $(LDFLAGS) -shared $(OBJS) -o $@
+-	@cp --remove-destination $@ $(LIBDIR)/$@.$(APIVERSION)
++ifdef FREEBSD
++	@cp -f $@ $(LIBDIR)/$@.$(APIVERSION)
++else
++ 	@cp --remove-destination $@ $(LIBDIR)/$@.$(APIVERSION)
++endif
+ 
+ dist: $(I18Npo) clean
+ 	@-rm -rf $(TMPDIR)/$(ARCHIVE)
+--- PLUGINS/src/servicedemo/Makefile.orig
++++ PLUGINS/src/servicedemo/Makefile
+@@ -45,7 +45,7 @@ PACKAGE = vdr-$(ARCHIVE)
+ 
+ ### Includes and Defines (add further entries here):
+ 
+-INCLUDES += -I$(VDRDIR)/include
++INCLUDES = -I$(VDRDIR)/include -I${LOCALBASE}/include
+ 
+ DEFINES += -D_GNU_SOURCE -DPLUGIN_NAME_I18N='"$(PLUGIN)"'
+ 
+@@ -75,11 +75,19 @@ $(DEPFILE): Makefile
+ 
+ libvdr-$(PLUGIN1).so: $(PLUGIN1).o
+ 	$(CXX) $(CXXFLAGS) $(LDFLAGS) -shared $(PLUGIN1).o -o $@
+-	@cp --remove-destination $@ $(LIBDIR)/$@.$(APIVERSION)
++ifdef FREEBSD
++	@cp -f $@ $(LIBDIR)/$@.$(APIVERSION)
++else
++ 	@cp --remove-destination $@ $(LIBDIR)/$@.$(APIVERSION)
++endif
+ 
+ libvdr-$(PLUGIN2).so: $(PLUGIN2).o
+ 	$(CXX) $(CXXFLAGS) $(LDFLAGS) -shared $(PLUGIN2).o -o $@
+-	@cp --remove-destination $@ $(LIBDIR)/$@.$(APIVERSION)
++ifdef FREEBSD
++	@cp -f $@ $(LIBDIR)/$@.$(APIVERSION)
++else
++ 	@cp --remove-destination $@ $(LIBDIR)/$@.$(APIVERSION)
++endif
+ 
+ dist: clean
+ 	@-rm -rf $(TMPDIR)/$(ARCHIVE)
+--- PLUGINS/src/skincurses/Makefile.orig
++++ PLUGINS/src/skincurses/Makefile
+@@ -45,7 +45,7 @@ PACKAGE = vdr-$(ARCHIVE)
+ 
+ ### Includes and Defines (add further entries here):
+ 
+-INCLUDES += -I$(VDRDIR)/include
++INCLUDES = -I$(VDRDIR)/include -I${LOCALBASE}/include
+ 
+ DEFINES += -D_GNU_SOURCE -DPLUGIN_NAME_I18N='"$(PLUGIN)"'
+ 
+@@ -100,7 +100,11 @@ i18n: $(I18Nmsgs) $(I18Npot)
+ 
+ libvdr-$(PLUGIN).so: $(OBJS)
+ 	$(CXX) $(CXXFLAGS) $(LDFLAGS) -shared $(OBJS) -lncursesw -o $@
+-	@cp --remove-destination $@ $(LIBDIR)/$@.$(APIVERSION)
++ifdef FREEBSD
++	@cp -f $@ $(LIBDIR)/$@.$(APIVERSION)
++else
++ 	@cp --remove-destination $@ $(LIBDIR)/$@.$(APIVERSION)
++endif
+ 
+ dist: $(I18Npo) clean
+ 	@-rm -rf $(TMPDIR)/$(ARCHIVE)
+--- PLUGINS/src/status/Makefile.orig
++++ PLUGINS/src/status/Makefile
+@@ -43,7 +43,7 @@ PACKAGE = vdr-$(ARCHIVE)
+ 
+ ### Includes and Defines (add further entries here):
+ 
+-INCLUDES += -I$(VDRDIR)/include
++INCLUDES = -I$(VDRDIR)/include -I${LOCALBASE}/include
+ 
+ DEFINES += -D_GNU_SOURCE -DPLUGIN_NAME_I18N='"$(PLUGIN)"'
+ 
+@@ -73,7 +73,11 @@ $(DEPFILE): Makefile
+ 
+ libvdr-$(PLUGIN).so: $(OBJS)
+ 	$(CXX) $(CXXFLAGS) $(LDFLAGS) -shared $(OBJS) -o $@
+-	@cp --remove-destination $@ $(LIBDIR)/$@.$(APIVERSION)
++ifdef FREEBSD
++	@cp -f $@ $(LIBDIR)/$@.$(APIVERSION)
++else
++ 	@cp --remove-destination $@ $(LIBDIR)/$@.$(APIVERSION)
++endif
+ 
+ dist: clean
+ 	@-rm -rf $(TMPDIR)/$(ARCHIVE)
+--- PLUGINS/src/svdrpdemo/Makefile.orig
++++ PLUGINS/src/svdrpdemo/Makefile
+@@ -43,7 +43,7 @@ PACKAGE = vdr-$(ARCHIVE)
+ 
+ ### Includes and Defines (add further entries here):
+ 
+-INCLUDES += -I$(VDRDIR)/include
++INCLUDES = -I$(VDRDIR)/include -I${LOCALBASE}/include
+ 
+ DEFINES += -D_GNU_SOURCE -DPLUGIN_NAME_I18N='"$(PLUGIN)"'
+ 
+@@ -73,7 +73,11 @@ $(DEPFILE): Makefile
+ 
+ libvdr-$(PLUGIN).so: $(OBJS)
+ 	$(CXX) $(CXXFLAGS) $(LDFLAGS) -shared $(OBJS) -o $@
+-	@cp --remove-destination $@ $(LIBDIR)/$@.$(APIVERSION)
++ifdef FREEBSD
++	@cp -f $@ $(LIBDIR)/$@.$(APIVERSION)
++else
++ 	@cp --remove-destination $@ $(LIBDIR)/$@.$(APIVERSION)
++endif
+ 
+ dist: clean
+ 	@-rm -rf $(TMPDIR)/$(ARCHIVE)
