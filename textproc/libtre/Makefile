@@ -23,7 +23,6 @@ USE_BZIP2=	yes
 USE_GNOME=	gnomehack gnometarget pkgconfig
 USE_AUTOTOOLS=	libtool
 CONFIGURE_ARGS+=	--enable-static
-CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS}"
 USE_LDCONFIG=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include
@@ -55,8 +54,7 @@ CFLAGS+=	-Wuninitialized -ffast-math -finline-functions \
 CONFIGURE_ENV+=	CFLAGS="${CFLAGS} -fprofile-generate" \
 		LDFLAGS="${LDFLAGS} -fprofile-generate"
 .else
-CONFIGURE_ENV+=	CFLAGS="${CFLAGS}" \
-		LDFLAGS="${LDFLAGS}"
+CONFIGURE_ENV+= LDFLAGS="${LDFLAGS}"
 .endif
 
 post-patch:

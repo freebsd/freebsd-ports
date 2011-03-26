@@ -15,7 +15,7 @@ COMMENT=	A converter from RTF to several formats, including HTML and LaTeX
 USE_ICONV=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
+CONFIGURE_ENV=	LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--libdir=${PREFIX}/share
 
 MAN1=		unrtf.1
