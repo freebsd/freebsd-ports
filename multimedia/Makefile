@@ -344,6 +344,7 @@
     SUBDIR += vdr-plugin-osdteletext
     SUBDIR += vdr-plugin-remote
     SUBDIR += vdr-plugin-skinenigmang
+    SUBDIR += vdr-plugin-softdevice
     SUBDIR += vic
     SUBDIR += vlc
     SUBDIR += vodcatcher
