@@ -1,0 +1,33 @@
+--- a/Makefile
++++ b/Makefile
+@@ -45,7 +45,11 @@ PACKAGE = vdr-$(ARCHIVE)
+ 
+ ### Includes and Defines (add further entries here):
+ 
++ifdef FREEBSD
++INCLUDES += -I$(VDRDIR)
++else
+ INCLUDES += -I$(VDRDIR)/include
++endif
+ 
+ DEFINES += -D_GNU_SOURCE -DPLUGIN_NAME_I18N='"$(PLUGIN)"'
+ 
+@@ -109,7 +113,11 @@ i18n: $(I18Nmsgs) $(I18Npot)
+ 
+ libvdr-$(PLUGIN).so: $(OBJS)
+ 	$(CXX) $(CXXFLAGS) -shared $(LIBS) $(OBJS) -o $@
++ifdef FREEBSD
++	@cp -f $@ $(LIBDIR)/$@.$(APIVERSION)
++else
+ 	@cp --remove-destination $@ $(LIBDIR)/$@.$(APIVERSION)
++endif
+ 
+ dist: clean
+ 	@-rm -rf $(TMPDIR)/$(ARCHIVE)
+@@ -121,3 +129,6 @@ dist: clean
+ 
+ clean:
+ 	@-rm -f $(OBJS) $(DEPFILE) *.so *.tgz core* *~ $(PODIR)/*.mo $(PODIR)/*.pot
++
++install:
++	${INSTALL_PROGRAM} $(LIBDIR)/libvdr-$(PLUGIN).so.$(APIVERSION) $(PREFIX)/lib/vdr/libvdr-$(PLUGIN).so.$(APIVERSION)
