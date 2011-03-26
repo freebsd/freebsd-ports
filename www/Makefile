@@ -1861,6 +1861,7 @@
     SUBDIR += uzbl
     SUBDIR += validator
     SUBDIR += varnish
+    SUBDIR += vdr-plugin-live
     SUBDIR += vee
     SUBDIR += videocache
     SUBDIR += visitors
