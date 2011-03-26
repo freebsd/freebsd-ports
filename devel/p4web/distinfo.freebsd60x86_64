@@ -1,3 +1,2 @@
-MD5 (perforce/2010.1.251161/bin.freebsd60x86_64/p4web) = 4684dfdd9d586e153d1898afff7866dd
-SHA256 (perforce/2010.1.251161/bin.freebsd60x86_64/p4web) = 57b689b0beb20e64dfa85e428e717098bee1d8ae868e4b69b5c306645cbcd22c
-SIZE (perforce/2010.1.251161/bin.freebsd60x86_64/p4web) = 2566768
+SHA256 (perforce/2010.2.293336/bin.freebsd60x86_64/p4web) = f85fe88de6f381d04c74f5ad213c85470497ac95e13865850d499ad3cbccd27e
+SIZE (perforce/2010.2.293336/bin.freebsd60x86_64/p4web) = 2599488
