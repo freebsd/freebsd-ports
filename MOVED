@@ -1522,6 +1522,7 @@ math/octave-forge-spanish|math/octave-forge-es|2011-01-13|Replaced by math/octav
 devel/cvsnt||2011-01-15|Removed: abandoned upstream
 net-p2p/qbittorrent-23||2011-01-24|Old, no longer updated. Try net-p2p/qbittorrent-26
 dns/staticcharge||2011-01-29|Has expired: abandoned by author
+shells/bash3|shells/bash|2011-01-29|Has expired: Use shells/bash or shells/bash-static instead
 shells/bash3-static|shells/bash-static|2011-01-29|Has expired: Use shells/bash or shells/bash-static instead
 audio/ecawave||2011-02-01|Has expired: has been broken for over one year
 mail/spamass-rules_du_jour||2011-02-01|Has expired: Use sa-update instead
