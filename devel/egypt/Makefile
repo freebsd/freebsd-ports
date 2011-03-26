@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	egypt
-PORTVERSION=	1.7
+PORTVERSION=	1.8
 CATEGORIES=	devel perl5
 MASTER_SITES=	http://www.gson.org/egypt/download/ CENKES
 
