@@ -283,6 +283,7 @@
     SUBDIR += cxmon
     SUBDIR += cxref
     SUBDIR += cxxtest
+    SUBDIR += cxxtools
     SUBDIR += d-feet
     SUBDIR += darts
     SUBDIR += datadesigner
