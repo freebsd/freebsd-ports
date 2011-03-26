@@ -1,0 +1,47 @@
+--- a/Makefile
++++ b/Makefile
+@@ -84,13 +84,8 @@ VDRINCDIR = /usr/local/include
+ ### check for VDR
+ ###
+ 
+-ifeq ($(ARCH_APPLE_DARWIN), yes)
+     VDRVERSION = $(shell sed -ne '/define VDRVERSION/s/^.*"\(.*\)".*$$/\1/p' $(VDRDIR)/config.h)
+     APIVERSION = $(shell sed -ne '/define APIVERSION/s/^.*"\(.*\)".*$$/\1/p' $(VDRDIR)/config.h)
+-else
+-    VDRVERSION = $(shell sed -ne '/define VDRVERSION/ { s/^.*"\(.*\)".*$$/\1/; p }' $(VDRDIR)/config.h)
+-    APIVERSION = $(shell sed -ne '/define APIVERSION/ { s/^.*"\(.*\)".*$$/\1/; p }' $(VDRDIR)/config.h)
+-endif
+ 
+ VDR_TREE = no
+ ifeq ($(strip $(VDRVERSION)),)
+@@ -199,6 +194,9 @@ endif
+ ifdef STARTUP_IMAGE_FILE
+   DEFINES += -DSTARTUP_IMAGE_FILE='"$(STARTUP_IMAGE_FILE)"'
+ endif
++ifdef LOCALBASE
++  DEFINES += -DLOCALBASE='"$(LOCALBASE)"'
++endif
+ 
+ 
+ ###
+@@ -410,7 +408,7 @@ ifeq ($(XINELIBOUTPUT_VDRPLUGIN), yes)
+ 	@echo Installing $(DESTDIR)$(LIBDIR)/$(VDRPLUGIN)
+ 	@mkdir -p $(DESTDIR)$(LIBDIR)
+ 	@-rm -rf $(DESTDIR)$(LIBDIR)/$(VDRPLUGIN)
+-	@$(INSTALL) -D -m 0755 $(VDRPLUGIN) $(DESTDIR)$(LIBDIR)/$(VDRPLUGIN)
++	@$(INSTALL) -m 0755 $(VDRPLUGIN) $(DESTDIR)$(LIBDIR)/$(VDRPLUGIN)
+   endif
+ endif
+ ifeq ($(XINELIBOUTPUT_FB), yes)
+@@ -441,6 +439,11 @@ ifeq ($(XINELIBOUTPUT_X11), yes)
+     endif
+   endif
+ endif
++ifeq ($(XINELIBOUTPUT_VDRPLUGIN), yes)
++	@$(INSTALL) -m 0755 $(LIBDIR)/$(VDRPLUGIN) $(DESTDIR)/${PREFIX}/lib/vdr
++	@$(INSTALL) -m 0755 $(LIBDIR)/$(VDRPLUGIN_SXFE) $(DESTDIR)/${PREFIX}/lib/vdr
++
++endif
+ 
+ dist: clean
+ 	@-rm -rf $(TMPDIR)/$(ARCHIVE)
