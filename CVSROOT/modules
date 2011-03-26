@@ -5810,6 +5810,7 @@ hu-jdictionary-eng-hun-expr     ports/hungarian/jdictionary-eng-hun-expr
 hu-kde3-i18n                    ports/hungarian/kde3-i18n
 hu-kde4-l10n                    ports/hungarian/kde4-l10n
 hu-koffice-i18n                 ports/hungarian/koffice-i18n
+hu-koffice-kde4-l10n            ports/hungarian/koffice-kde4-l10n
 huc                             ports/lang/huc
 hudson                          ports/www/hudson
 hugelatex                       ports/print/hugelatex
@@ -7578,6 +7579,7 @@ kstreamripper                   ports/audio/kstreamripper
 ksubeditor                      ports/multimedia/ksubeditor
 ksudoku                         ports/games/ksudoku
 ksynaptics                      ports/sysutils/ksynaptics
+ksysguardd                      ports/sysutils/ksysguardd
 ktagebuch                       ports/deskutils/ktagebuch
 ktextdecode                     ports/converters/ktextdecode
 ktoblzcheck                     ports/finance/ktoblzcheck
@@ -10160,6 +10162,7 @@ neon29                          ports/www/neon29
 neowebscript                    ports/www/neowebscript
 nepenthes                       ports/net/nepenthes
 nepim                           ports/net/nepim
+nepomukcontroller               ports/misc/nepomukcontroller
 nesasm                          ports/lang/nesasm
 nessus                          ports/security/nessus
 nessus-libnasl                  ports/security/nessus-libnasl
@@ -20685,6 +20688,7 @@ pipsv700-cups                   ports/print/pipsv700-cups
 pircbot                         ports/irc/pircbot
 pire                            ports/devel/pire
 pisg                            ports/irc/pisg
+pit                             ports/devel/pit
 pitivi                          ports/multimedia/pitivi
 pivot-weblog                    ports/www/pivot-weblog
 pivotx                          ports/www/pivotx
@@ -23320,6 +23324,7 @@ rubygem-activerecord-jdbcmysql-adapter  ports/databases/rubygem-activerecord-jdb
 rubygem-activeresource          ports/www/rubygem-activeresource
 rubygem-activesupport           ports/devel/rubygem-activesupport
 rubygem-addressable             ports/www/rubygem-addressable
+rubygem-ai4r                    ports/science/rubygem-ai4r
 rubygem-amazon-ecs              ports/www/rubygem-amazon-ecs
 rubygem-amqp                    ports/net/rubygem-amqp
 rubygem-analogger               ports/devel/rubygem-analogger
@@ -23450,6 +23455,7 @@ rubygem-less                    ports/www/rubygem-less
 rubygem-librmpd                 ports/audio/rubygem-librmpd
 rubygem-lighthouse-api          ports/www/rubygem-lighthouse-api
 rubygem-linecache               ports/devel/rubygem-linecache
+rubygem-linguistics             ports/textproc/rubygem-linguistics
 rubygem-liquid                  ports/textproc/rubygem-liquid
 rubygem-little_plugger          ports/devel/rubygem-little_plugger
 rubygem-locale                  ports/devel/rubygem-locale
