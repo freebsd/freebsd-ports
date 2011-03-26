@@ -6,16 +6,19 @@
 #
 
 PORTNAME=	Text-Sass
-PORTVERSION=	0.9
+PORTVERSION=	0.9.2
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
+MASTER_SITE_SUBDIR=	../../authors/id/R/RP/RPETTETT
 PKGNAMEPREFIX=	p5-
+DISTNAME=	${PORTNAME}-v${PORTVERSION}
 
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Perl implementation of http://sass-lang.com/
 
 RUN_DEPENDS=	\
-	p5-Readonly>=1.03:${PORTSDIR}/devel/p5-Readonly
+	p5-Readonly>=1.03:${PORTSDIR}/devel/p5-Readonly \
+	p5-Convert-Color>0:${PORTSDIR}/graphics/p5-Convert-Color
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 PERL_MODBUILD=	yes
