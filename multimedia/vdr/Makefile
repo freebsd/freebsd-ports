@@ -1,0 +1,93 @@
+# New ports collection makefile for:	vdr
+# Date created:		Wed Apr 14 18:11:42 CEST 2010
+# Whom:			Juergen Lock <nox@freebsd.org>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	vdr
+PORTVERSION=	1.7.17
+PORTREVISION=	1
+CATEGORIES=	multimedia
+MASTER_SITES=	ftp://ftp.tvdr.de/vdr/Developer/
+
+MAINTAINER=	nox@FreeBSD.org
+COMMENT=	Video Disk Recorder - development version
+
+BUILD_DEPENDS=  ${LOCALBASE}/include/linux/dvb/frontend.h:${PORTSDIR}/multimedia/v4l_compat
+LIB_DEPENDS=    jpeg.11:${PORTSDIR}/graphics/jpeg
+BUILD_DEPENDS+=	${LOCALBASE}/libdata/pkgconfig/fontconfig.pc:${PORTSDIR}/x11-fonts/fontconfig
+RUN_DEPENDS+=	${LOCALBASE}/libdata/pkgconfig/fontconfig.pc:${PORTSDIR}/x11-fonts/fontconfig
+
+OPTIONS=	IPTVPATCH "Stops EIT scans on IPTV channels" On
+
+DIST_SUBDIR=	vdr
+USE_BZIP2=	yes
+USE_GMAKE=	yes
+USE_GNOME+=	pkgconfig
+USE_GETTEXT=	yes
+PORTDOCS=	COPYING INSTALL MANUAL README
+MAKE_JOBS_SAFE=	yes
+MAN1=		vdr.1
+MAN5=		vdr.5
+MANCOMPRESSED=	yes
+MAKE_JOBS_SAFE=	yes
+CONFDIR=	$(ETCDIR)
+MAKE_ARGS+=	DVBDIR=${LOCALBASE}/include
+MAKE_ARGS+=	VDR_USER=${VDR_USER}
+MAKE_ARGS+=	CONFDIR=$(CONFDIR)
+MAKE_ARGS+=	OSTYPE=FreeBSD
+MAKE_ARGS+=	LIRC_DEVICE=/var/run/lirc/lircd
+ALL_TARGET=	all plugins
+
+VIDEODIR=	/video
+SUB_LIST+=	VIDEODIR=${VIDEODIR}
+USE_RC_SUBR=	vdr
+VDR_USER=	vdr
+VDR_GROUP=	vdr
+USERS=		${VDR_USER}
+GROUPS=		${VDR_GROUP}
+PLIST_SUB=	VDR_USER=${VDR_USER}
+PLIST_SUB+=	VDR_GROUP=${VDR_GROUP}
+
+.include <bsd.port.options.mk>
+
+.if defined(WITH_IPTVPATCH)
+EXTRA_PATCHES=	${FILESDIR}/vdr-1.7.15-disable_ca_updates.patch \
+	${FILESDIR}/vdr-1.7.15-disable_eitscan.patch
+.endif
+
+.if !defined(WITHOUT_NLS)
+PLIST_SUB+=	NLS=""
+.else
+PLIST_SUB+=	NLS="@comment "
+ALL_TARGET=	vdr
+.endif
+
+post-patch:
+	@${SED} 's|^\(VIDEODIR[[:space:]]*\)[?]*\(=[[:space:]]*\).*|\1\2${VIDEODIR}|' \
+		${WRKSRC}/Make.config.template >${WRKSRC}/Make.config
+	@${REINPLACE_CMD} -e 's|%%CONFDIR%%|${CONFDIR}|' ${WRKSRC}/vdr.1
+
+post-install:
+.if !defined(WITHOUT_NLS)
+	@(cd ${WRKSRC} && ${COPYTREE_SHARE} locale ${PREFIX}/share/)
+.endif
+	${MKDIR} ${CONFDIR}/plugins
+	${CHOWN} ${VDR_USER}:${VDR_GROUP} ${CONFDIR} ${CONFDIR}/plugins
+	${INSTALL_DATA} ${FILESDIR}/remote.conf ${CONFDIR}/remote.conf.sample
+	@if [ ! -f ${CONFDIR}/remote.conf ]; then \
+	    ${INSTALL_DATA} -o ${VDR_USER} -g ${VDR_GROUP} ${FILESDIR}/remote.conf ${CONFDIR}; \
+	fi
+	for i in $$(cd ${WRKSRC} && ls *.conf); do \
+		${INSTALL_DATA} ${WRKSRC}/$$i ${CONFDIR}/$$i.sample; \
+		if [ ! -f ${CONFDIR}/$$i ]; then \
+			${INSTALL_DATA} -o ${VDR_USER} -g ${VDR_GROUP} ${WRKSRC}/$$i ${CONFDIR}/$$i; \
+		fi; \
+	done
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${DOCSDIR}
+	(cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR})
+.endif
+
+.include <bsd.port.mk>
