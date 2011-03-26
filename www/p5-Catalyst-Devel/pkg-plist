@@ -43,6 +43,8 @@
 @dirrmtry %%SITE_PERL%%/auto/share/dist/Catalyst-Devel/lib/Helper
 @dirrmtry %%SITE_PERL%%/auto/share/dist/Catalyst-Devel/lib
 @dirrmtry %%SITE_PERL%%/auto/share/dist/Catalyst-Devel
+@dirrmtry %%SITE_PERL%%/auto/share/dist/
+@dirrmtry %%SITE_PERL%%/auto/share/
 @dirrmtry %%SITE_PERL%%/Module/Install
 @dirrmtry %%SITE_PERL%%/Module
 @dirrmtry %%SITE_PERL%%/Catalyst/Restarter
