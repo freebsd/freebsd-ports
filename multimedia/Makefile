@@ -336,6 +336,7 @@
     SUBDIR += vdpauinfo
     SUBDIR += vdr
     SUBDIR += vdr-plugin-control
+    SUBDIR += vdr-plugin-epgsearch
     SUBDIR += vic
     SUBDIR += vlc
     SUBDIR += vodcatcher
