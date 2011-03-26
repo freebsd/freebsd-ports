@@ -1,0 +1,24 @@
+--- a/Makefile
++++ b/Makefile
+@@ -151,7 +151,11 @@ $(VERSIONSUFFIX): FORCE
+ 
+ libvdr-$(PLUGIN).so: $(VERSIONSUFFIX) $(SUBDIRS) $(PLUGINOBJS)
+ 	$(CXX) $(LDFLAGS) -shared -o $@	 $(PLUGINOBJS) -Wl,--whole-archive $(WEBLIBS) -Wl,--no-whole-archive $(LIBS)
++ifdef FREEBSD
++	@cp -f $@ $(LIBDIR)/$@.$(APIVERSION)
++else
+ 	@cp --remove-destination $@ $(LIBDIR)/$@.$(APIVERSION)
++endif
+ 
+ ifneq ($(TNTVERS7),yes)
+ 	@echo ""
+@@ -189,6 +193,9 @@ clean: $(SUBDIRS)
+ 	@-rm -f $(PLUGINOBJS) $(DEPFILE) *.so *.tgz core* *~
+ 	@-rm -f $(VERSIONSUFFIX)
+ 
++install:
++	${INSTALL_PROGRAM} $(LIBDIR)/libvdr-$(PLUGIN).so.$(APIVERSION) $(PREFIX)/lib/vdr/libvdr-$(PLUGIN).so.$(APIVERSION)
++
+ .PRECIOUS: $(I18Npo)
+ 
+ FORCE:
