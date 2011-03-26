@@ -1862,6 +1862,7 @@
     SUBDIR += validator
     SUBDIR += varnish
     SUBDIR += vdr-plugin-live
+    SUBDIR += vdradmin-am
     SUBDIR += vee
     SUBDIR += videocache
     SUBDIR += visitors

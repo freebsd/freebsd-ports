@@ -1,0 +1,179 @@
+bin/vdradmind
+@exec /usr/bin/install -o %%VDR_USER%% -g %%VDR_GROUP%% -d %%ETCDIR%%
+@unexec if cmp -s %D/etc/vdradmin-am/vdradmind.conf.sample %D/etc/vdradmin-am/vdradmind.conf; then rm -f %D/etc/vdradmin-am/vdradmind.conf; fi
+%%ETCDIR%%/vdradmind.conf.sample
+@exec if [ ! -f %D/etc/vdradmin-am/vdradmind.conf ] ; then cp -p %D/%F %B/vdradmind.conf; chown %%VDR_USER%%:%%VDR_GROUP%% %B/vdradmind.conf; fi
+share/vdradmin-am/lib/MIME/Base64.pm
+share/vdradmin-am/lib/Template/Plugin/Date.pm
+share/vdradmin-am/lib/Template/Plugin/HTML.pm
+share/vdradmin-am/lib/Template/Plugin/JavaScript.pm
+share/vdradmin-am/lib/Template/Namespace/Constants.pm
+share/vdradmin-am/lib/Template/Stash/XS.pm
+share/vdradmin-am/lib/Template/Stash/Context.pm
+share/vdradmin-am/lib/Template/Directive.pm
+share/vdradmin-am/lib/Template/View.pm
+share/vdradmin-am/lib/Template/Stash.pm
+share/vdradmin-am/lib/Template/Plugin.pm
+share/vdradmin-am/lib/Template/Iterator.pm
+share/vdradmin-am/lib/Template/Provider.pm
+share/vdradmin-am/lib/Template/Constants.pm
+share/vdradmin-am/lib/Template/Config.pm
+share/vdradmin-am/lib/Template/Context.pm
+share/vdradmin-am/lib/Template/Grammar.pm
+share/vdradmin-am/lib/Template/Service.pm
+share/vdradmin-am/lib/Template/Base.pm
+share/vdradmin-am/lib/Template/Parser.pm
+share/vdradmin-am/lib/Template/Exception.pm
+share/vdradmin-am/lib/Template/Document.pm
+share/vdradmin-am/lib/Template/Plugins.pm
+share/vdradmin-am/lib/Template/Filters.pm
+share/vdradmin-am/lib/Template/Test.pm
+share/vdradmin-am/lib/File/Temp.pm
+share/vdradmin-am/lib/URI/Escape.pm
+share/vdradmin-am/lib/Template.pm
+share/vdradmin-am/template/default/default/fern_33.jpg
+share/vdradmin-am/template/default/default/fern_36.jpg
+share/vdradmin-am/template/default/default/fern_32.jpg
+share/vdradmin-am/template/default/default/delete.png
+share/vdradmin-am/template/default/default/edit.png
+share/vdradmin-am/template/default/default/pfeile_nachlinks_soft.png
+share/vdradmin-am/template/default/default/fern_13.jpg
+share/vdradmin-am/template/default/default/cut.png
+share/vdradmin-am/template/default/default/play.png
+share/vdradmin-am/template/default/default/imdb.png
+share/vdradmin-am/template/default/default/fern_mute.jpg
+share/vdradmin-am/template/default/default/configure.png
+share/vdradmin-am/template/default/default/rec_button.png
+share/vdradmin-am/template/default/default/fern_05.jpg
+share/vdradmin-am/template/default/default/folder_video.png
+share/vdradmin-am/template/default/default/fern_12.jpg
+share/vdradmin-am/template/default/default/fern_48.jpg
+share/vdradmin-am/template/default/default/fern_10.jpg
+share/vdradmin-am/template/default/default/fern_31.jpg
+share/vdradmin-am/template/default/default/fern_09.jpg
+share/vdradmin-am/template/default/default/fern_23.jpg
+share/vdradmin-am/template/default/default/noise.gif
+share/vdradmin-am/template/default/default/rec.gif
+share/vdradmin-am/template/default/default/fern_40.jpg
+share/vdradmin-am/template/default/default/fern_46.jpg
+share/vdradmin-am/template/default/default/close.png
+share/vdradmin-am/template/default/default/fern_47.jpg
+share/vdradmin-am/template/default/default/view.png
+share/vdradmin-am/template/default/default/fern_24.jpg
+share/vdradmin-am/template/default/default/fern_back.jpg
+share/vdradmin-am/template/default/default/pfeile_nachrechts.png
+share/vdradmin-am/template/default/default/fern_06.jpg
+share/vdradmin-am/template/default/default/pfeile_nachrechts_soft.png
+share/vdradmin-am/template/default/default/fern_25.jpg
+share/vdradmin-am/template/default/default/fern_43.jpg
+share/vdradmin-am/template/default/default/fern_28.jpg
+share/vdradmin-am/template/default/default/sortiert_desc.gif
+share/vdradmin-am/template/default/default/sum_find.png
+share/vdradmin-am/template/default/default/fern_11.jpg
+share/vdradmin-am/template/default/default/info_button_disabled.png
+share/vdradmin-am/template/default/default/fern_41.jpg
+share/vdradmin-am/template/default/default/poempl_gelb.png
+share/vdradmin-am/template/default/default/pfeile_nachlinks.png
+share/vdradmin-am/template/default/default/sortiert_asc.gif
+share/vdradmin-am/template/default/default/fern_42.jpg
+share/vdradmin-am/template/default/default/help.png
+share/vdradmin-am/template/default/default/fern_22.jpg
+share/vdradmin-am/template/default/default/fern_03.jpg
+share/vdradmin-am/template/default/default/tv_bottom.gif
+share/vdradmin-am/template/default/default/fern_18.jpg
+share/vdradmin-am/template/default/default/poempl_rot.png
+share/vdradmin-am/template/default/default/udef_search.png
+share/vdradmin-am/template/default/default/logo.png
+share/vdradmin-am/template/default/default/aktion.png
+share/vdradmin-am/template/default/default/fern_15.jpg
+share/vdradmin-am/template/default/default/fern_08.jpg
+share/vdradmin-am/template/default/default/fern_19.jpg
+share/vdradmin-am/template/default/default/fern_39.jpg
+share/vdradmin-am/template/default/default/poempl_grau.png
+share/vdradmin-am/template/default/default/fern_07.jpg
+share/vdradmin-am/template/default/default/poempl_gruen.png
+share/vdradmin-am/template/default/default/info_button.png
+share/vdradmin-am/template/default/default/fern_44.jpg
+share/vdradmin-am/template/default/default/fern_45.jpg
+share/vdradmin-am/template/default/default/stream.png
+share/vdradmin-am/template/default/default/find.png
+share/vdradmin-am/template/default/default/spacer.gif
+share/vdradmin-am/template/default/error.html
+share/vdradmin-am/template/default/timer_list.html
+share/vdradmin-am/template/default/help_rec_list.html
+share/vdradmin-am/template/default/prog_list2.html
+share/vdradmin-am/template/default/at_timer_new.html
+share/vdradmin-am/template/default/navigation.html
+share/vdradmin-am/template/default/favicon.ico
+share/vdradmin-am/template/default/prog_timeline.html
+share/vdradmin-am/template/default/at_timer_list.html
+share/vdradmin-am/template/default/help_at_timer_list.html
+share/vdradmin-am/template/default/help_edit_epg.html
+share/vdradmin-am/template/default/timeline.js
+share/vdradmin-am/template/default/help_at_timer_new.html
+share/vdradmin-am/template/default/prog_detail_form.html
+share/vdradmin-am/template/default/vdr_cmds.html
+share/vdradmin-am/template/default/config.html
+share/vdradmin-am/template/default/epgsearch_new.html
+share/vdradmin-am/template/default/prog_list.html
+share/vdradmin-am/template/default/index.html
+share/vdradmin-am/template/default/rc.html
+share/vdradmin-am/template/default/timer_new.html
+share/vdradmin-am/template/default/noauth.html
+share/vdradmin-am/template/default/infobox.js
+share/vdradmin-am/template/default/rec_list.html
+share/vdradmin-am/template/default/tv.html
+share/vdradmin-am/template/default/prog_summary.html
+share/vdradmin-am/template/default/about.html
+share/vdradmin-am/template/default/rec_edit.html
+share/vdradmin-am/template/default/noperm.html
+share/vdradmin-am/template/default/epgsearch_config.html
+share/vdradmin-am/template/default/prog_detail.html
+share/vdradmin-am/template/default/help_timer_list.html
+share/vdradmin-am/template/default/library.js
+share/vdradmin-am/template/default/help_timer_new.html
+share/vdradmin-am/template/default/help_no.html
+share/vdradmin-am/template/default/help_config.html
+share/vdradmin-am/template/default/style.css
+share/vdradmin-am/template/default/epgsearch_list.html
+share/vdradmin-am/template/default/prog_summary2.html
+%%PORTDOCS%%%%DOCSDIR%%/contrib/README.Streaming
+%%PORTDOCS%%%%DOCSDIR%%/contrib/user.css.example
+%%PORTDOCS%%%%DOCSDIR%%/contrib/HISTORY.macfly
+%%PORTDOCS%%%%DOCSDIR%%/contrib/HISTORY
+%%PORTDOCS%%%%DOCSDIR%%/contrib/HISTORY.bigpatch
+%%PORTDOCS%%%%DOCSDIR%%/contrib/HISTORY.ct
+%%PORTDOCS%%%%DOCSDIR%%/contrib/vdradmind.bl_example
+%%PORTDOCS%%%%DOCSDIR%%/REQUIREMENTS
+%%PORTDOCS%%%%DOCSDIR%%/README.translators
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/LGPL.txt
+%%PORTDOCS%%%%DOCSDIR%%/FAQ
+%%PORTDOCS%%%%DOCSDIR%%/HISTORY
+%%PORTDOCS%%%%DOCSDIR%%/CREDITS
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL
+share/locale/cs/LC_MESSAGES/vdradmin.mo
+share/locale/de/LC_MESSAGES/vdradmin.mo
+share/locale/es/LC_MESSAGES/vdradmin.mo
+share/locale/fi/LC_MESSAGES/vdradmin.mo
+share/locale/fr/LC_MESSAGES/vdradmin.mo
+share/locale/it/LC_MESSAGES/vdradmin.mo
+share/locale/nl/LC_MESSAGES/vdradmin.mo
+share/locale/ru/LC_MESSAGES/vdradmin.mo
+@exec /usr/bin/install -o %%VDR_USER%% -g %%VDR_GROUP%% -d /var/cache/vdradmin-am /var/log/vdradmin-am /var/run/vdradmin-am
+@dirrmtry %%ETCDIR%%
+@dirrm share/vdradmin-am/lib/MIME
+@dirrm share/vdradmin-am/lib/File
+@dirrm share/vdradmin-am/lib/URI
+@dirrm share/vdradmin-am/lib/Template/Plugin
+@dirrm share/vdradmin-am/lib/Template/Namespace
+@dirrm share/vdradmin-am/lib/Template/Stash
+@dirrm share/vdradmin-am/lib/Template
+@dirrm share/vdradmin-am/lib
+@dirrm share/vdradmin-am/template/default/default
+@dirrm share/vdradmin-am/template/default
+@dirrm share/vdradmin-am/template
+@dirrm share/vdradmin-am
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/contrib
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
