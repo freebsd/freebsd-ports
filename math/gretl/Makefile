@@ -27,8 +27,7 @@ ALL_TARGET=	# empty
 CONFIGURE_ARGS =	--enable-static --enable-shared --with-gmake --without-gnome
 CPPFLAGS+=		-I${LOCALBASE}/include
 LDFLAGS+=		-L${LOCALBASE}/lib
-CONFIGURE_ENV=		CPPFLAGS="${CPPFLAGS}" \
-			LAPACK_LIBS="${LAPACK} ${BLAS}" \
+CONFIGURE_ENV=	LAPACK_LIBS="${LAPACK} ${BLAS}" \
 			LDFLAGS="${LDFLAGS}"
 
 MAN1=		gretl.1
