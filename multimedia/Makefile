@@ -347,6 +347,7 @@
     SUBDIR += vdr-plugin-softdevice
     SUBDIR += vdr-plugin-streamdev
     SUBDIR += vdr-plugin-upnp
+    SUBDIR += vdr-plugin-vnsiserver
     SUBDIR += vic
     SUBDIR += vlc
     SUBDIR += vodcatcher
