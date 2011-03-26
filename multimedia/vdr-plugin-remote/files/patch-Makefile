@@ -1,0 +1,22 @@
+--- a/Makefile
++++ b/Makefile
+@@ -54,6 +54,12 @@ DEFINES += -D_GNU_SOURCE -DPLUGIN_NAME_I
+ DEFINES += -DREMOTE_FEATURE_LIRC
+ DEFINES += -DREMOTE_FEATURE_TCPIP
+ 
++ifeq ($(OSTYPE),FreeBSD)
++DEFINES += -DREMOTE_FEATURE_UHID
++else
++DEFINES += -DREMOTE_FEATURE_DEVINPUT
++endif
++
+ ### The object files (add further files here):
+ 
+ OBJS = $(PLUGIN).o ttystatus.o
+@@ -126,3 +132,6 @@ dist: clean
+ clean:
+ 	@-rm -f $(PODIR)/*.mo $(PODIR)/*.pot
+ 	@-rm -f *.o $(DEPFILE) *.so *.tgz core* *~
++
++install:
++	${INSTALL_PROGRAM} $(LIBDIR)/libvdr-$(PLUGIN).so.$(APIVERSION) $(PREFIX)/lib/vdr/libvdr-$(PLUGIN).so.$(APIVERSION)
