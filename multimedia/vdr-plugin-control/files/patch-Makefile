@@ -1,0 +1,14 @@
+--- a/Makefile
++++ b/Makefile
+@@ -67,6 +67,11 @@ dist: clean
+ clean:
+ 	@-rm -f $(OBJS) $(DEPFILE) *.so *.tgz core* *~
+ 
++APIVERSION = $(shell sed -ne '/define APIVERSION/s/^.*"\(.*\)".*$$/\1/p' $(VDRDIR)/config.h)
++
++install:
++	${INSTALL_PROGRAM} $(LIBDIR)/libvdr-$(PLUGIN).so.$(APIVERSION) $(PREFIX)/lib/vdr/libvdr-$(PLUGIN).so.$(APIVERSION)
++
+ ### Implicit rules:
+ 
+ %.o: %.c
