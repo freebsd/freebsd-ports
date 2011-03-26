@@ -346,6 +346,7 @@
     SUBDIR += vdr-plugin-skinenigmang
     SUBDIR += vdr-plugin-softdevice
     SUBDIR += vdr-plugin-streamdev
+    SUBDIR += vdr-plugin-upnp
     SUBDIR += vic
     SUBDIR += vlc
     SUBDIR += vodcatcher
