@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	jython
-PORTVERSION=	2.5.1
+PORTVERSION=	2.5.2
 CATEGORIES=	lang python java
 MASTER_SITES=	SF
 DISTNAME=	jython_installer-${PORTVERSION}
@@ -41,6 +41,9 @@ do-install:
 		--silent -d ${JYTHON_PREFIX} -t standard
 	${REINPLACE_CMD} \
 		's/-cl/"-Dpython.cachedir=$${HOME}\/.jython-cachedir" -cl/g' \
+		${JYTHON_PREFIX}/jython
+	${REINPLACE_CMD} \
+		's,if expr "$$link" : '\''/'\'' > /dev/null; then,if expr "$$link" : '\''^/'\'' > /dev/null; then,' \
 		${JYTHON_PREFIX}/jython
 	${REINPLACE_CMD} 's/^python\.cachedir/#&/g' ${JYTHON_PREFIX}/registry
 	${JYTHON_PREFIX}/jython ${CACHEDIR_SPEC} -c None
