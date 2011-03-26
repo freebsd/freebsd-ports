@@ -1,0 +1,25 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+# PROVIDE: vdradmind
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+# Add the following line to /etc/rc.conf[.local] to enable vdradmin_am:
+#
+# vdradmind_enable="YES"
+
+. /etc/rc.subr
+
+name=vdradmind
+rcvar=`set_rcvar`
+
+command="%%PREFIX%%/bin/vdradmind"
+pidfile="/var/run/vdradmin_am/${name}.pid"
+
+load_rc_config ${name}
+: ${vdradmind_enable="NO"}
+: ${vdradmind_user="vdr"}
+
+run_rc_command "$1"
