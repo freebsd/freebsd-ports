@@ -1,0 +1,62 @@
+--- a/configure
++++ a/configure
+@@ -348,10 +348,13 @@ test_pkgconfig
+ [ $debug = yes ] && \
+   test_library   X11  do_error     "none.h"         "-lnolib"
+ 
+-test_library     VDR   libextractor "extractor.h"      "-lextractor" "EXTRACTOR_getKeywords(0,0)"
+-test_library     VDR   libcap       "sys/capability.h" "-lcap"       "cap_get_proc()"
+-test_library     XINE  libxine      "xine.h"           "-lxine"      "xine_init(0)"
+-test_library     DLFCN dlfcn        "dlfcn.h"          "-ldl"        "dlopen(0,0)"
++#test_library     VDR   libextractor "extractor.h"      "-lextractor" "EXTRACTOR_getKeywords(0,0)"
++test_library     VDR   libextractor "extractor.h"      "-lextractor" "EXTRACTOR_getKeywords(0,0)" "-I${LOCALBASE}/include -L${LOCALBASE}/lib"
++#test_library     VDR   libcap       "sys/capability.h" "-lcap"       "cap_get_proc()"
++#test_library     XINE  libxine      "xine.h"           "-lxine"      "xine_init(0)"
++test_library     XINE  libxine      "xine.h"           "-lxine"      "xine_init(0)" "-I${LOCALBASE}/include -L${LOCALBASE}/lib"
++#test_library     DLFCN dlfcn        "dlfcn.h"          "-ldl"        "dlopen(0,0)"
++test_library     DLFCN dlfcn        "dlfcn.h"          ""        "dlopen(0,0)"
+ 
+ if enabled libxine; then
+ 
+@@ -363,19 +366,30 @@ if enabled libxine; then
+   fi
+   log " $XINEPLUGINDIR"
+ 
+-  test_library   AVUTIL  libavutil    "libavutil/mem.h"        "-lavutil"    "av_mallocz(1)"
+-  test_library   JPEG    libjpeg      "jpeglib.h"              "-ljpeg"      "jpeg_create_compress(0)"
+-  test_library   X11     x11          "X11/X.h"                "-lX11"       "XInitThreads()"
++#  test_library   AVUTIL  libavutil    "libavutil/mem.h"        "-lavutil"    "av_mallocz(1)"
++  test_library   AVUTIL  libavutil    "libavutil/mem.h"        "-lavutil"    "av_mallocz(1)" "-I${LOCALBASE}/include -L${LOCALBASE}/lib"
++#  test_library   JPEG    libjpeg      "jpeglib.h"              "-ljpeg"      "jpeg_create_compress(0)"
++  test_library   JPEG    libjpeg      "jpeglib.h"              "-ljpeg"      "jpeg_create_compress(0)" "-I${LOCALBASE}/include -L${LOCALBASE}/lib"
++#  test_library   X11     x11          "X11/X.h"                "-lX11"       "XInitThreads()"
++  test_library   X11     x11          "X11/X.h"                "-lX11"       "XInitThreads()" "-I${LOCALBASE}/include -L${LOCALBASE}/lib"
+   test_library   PTHREAD pthread      "pthread.h"              "-lpthread"   "pthread_create(0,0,0,0)"
+   if enabled x11; then
+-    test_library X11  xext         "X11/extensions/Xext.h"     "-lXext"      ""
+-    test_library X11  xshm         "X11/extensions/XShm.h"     "-lXext"      "XShmQueryExtension(0)"
+-    test_library X11  xrender      "X11/extensions/Xrender.h"  "-lXrender"   "XRenderQueryFormats(0)"
+-    test_library X11  xshape       "X11/extensions/shape.h"    "-lXext"      "XShapeQueryExtension(0,0,0)"
+-    test_library X11  xdpms        "X11/extensions/dpms.h"     "-lXext"      "DPMSDisable(0)"
+-    test_library X11  xinerama     "X11/extensions/Xinerama.h" "-lXinerama"  "XineramaQueryScreens(0,0)"
+-    test_library X11  opengl       "GL/glx.h"                  "-lGL -lGLU -lglut"  "glXQueryVersion(0,0,0)"
+-    test_library none vdpau        "vdpau/vdpau_x11.h"         "-lvdpau"     "vdp_device_create_x11(0,0,0,0)"
++#    test_library X11  xext         "X11/extensions/Xext.h"     "-lXext"      ""
++    test_library X11  xext         "X11/extensions/Xext.h"     "-lXext"      "" "-I${LOCALBASE}/include -L${LOCALBASE}/lib"
++#    test_library X11  xshm         "X11/extensions/XShm.h"     "-lXext"      "XShmQueryExtension(0)"
++    test_library X11  xshm         "X11/extensions/XShm.h"     "-lXext"      "XShmQueryExtension(0)" "-I${LOCALBASE}/include -L${LOCALBASE}/lib"
++#    test_library X11  xrender      "X11/extensions/Xrender.h"  "-lXrender"   "XRenderQueryFormats(0)"
++    test_library X11  xrender      "X11/extensions/Xrender.h"  "-lXrender"   "XRenderQueryFormats(0)" "-I${LOCALBASE}/include -L${LOCALBASE}/lib"
++#    test_library X11  xshape       "X11/extensions/shape.h"    "-lXext"      "XShapeQueryExtension(0,0,0)"
++    test_library X11  xshape       "X11/extensions/shape.h"    "-lXext"      "XShapeQueryExtension(0,0,0)" "-I${LOCALBASE}/include -L${LOCALBASE}/lib"
++#    test_library X11  xdpms        "X11/extensions/dpms.h"     "-lXext"      "DPMSDisable(0)"
++    test_library X11  xdpms        "X11/extensions/dpms.h"     "-lXext"      "DPMSDisable(0)" "-I${LOCALBASE}/include -L${LOCALBASE}/lib"
++#    test_library X11  xinerama     "X11/extensions/Xinerama.h" "-lXinerama"  "XineramaQueryScreens(0,0)"
++    test_library X11  xinerama     "X11/extensions/Xinerama.h" "-lXinerama"  "XineramaQueryScreens(0,0)" "-I${LOCALBASE}/include -L${LOCALBASE}/lib"
++#    test_library X11  opengl       "GL/glx.h"                  "-lGL -lGLU -lglut"  "glXQueryVersion(0,0,0)"
++    test_library X11  opengl       "GL/glx.h"                  "-lGL -lGLU -lglut"  "glXQueryVersion(0,0,0)" "-I${LOCALBASE}/include -L${LOCALBASE}/lib"
++#    test_library none vdpau        "vdpau/vdpau_x11.h"         "-lvdpau"     "vdp_device_create_x11(0,0,0,0)"
++    test_library none vdpau        "vdpau/vdpau_x11.h"         "-lvdpau"     "vdp_device_create_x11(0,0,0,0)" "-I${LOCALBASE}/include -L${LOCALBASE}/lib"
+     test_library X11  dbus-glib-1  \
+       "dbus/dbus-glib.h" \
+       "-ldbus-glib-1 -lgobject-2.0 -lglib-2.0" \
