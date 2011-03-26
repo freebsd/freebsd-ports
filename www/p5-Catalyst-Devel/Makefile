@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	Catalyst-Devel
-PORTVERSION=	1.31
+PORTVERSION=	1.33
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
-MASTER_SITE_SUBDIR=	../../authors/id/B/BO/BOBTFISH
+MASTER_SITE_SUBDIR=	CPAN:FLORA
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
@@ -31,7 +31,8 @@ RUN_DEPENDS=	p5-Catalyst-Action-RenderView>=0.10:${PORTSDIR}/www/p5-Catalyst-Act
 		p5-namespace-autoclean>=0:${PORTSDIR}/devel/p5-namespace-autoclean \
 		p5-namespace-clean>=0:${PORTSDIR}/devel/p5-namespace-clean
 BUILD_DEPENDS=	${RUN_DEPENDS}
-TEST_DEPENDS=	p5-Test-Simple>=0.94:${PORTSDIR}/devel/p5-Test-Simple
+TEST_DEPENDS=	p5-Test-Simple>=0.94:${PORTSDIR}/devel/p5-Test-Simple \
+		p5-Test-Fatal>=0.003:${PORTSDIR}/devel/p5-Test-Fatal
 
 PERL_CONFIGURE=	5.8.1+
 
