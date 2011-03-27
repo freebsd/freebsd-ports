@@ -7,9 +7,6 @@
 %%XPI_XPIDIR%%/components/IWeaveCrypto.xpt
 %%XPI_XPIDIR%%/components/Weave.js
 %%XPI_XPIDIR%%/crypto-modules/WeaveCrypto.js
-%%XPI_XPIDIR%%/modules/base_records/collection.js
-%%XPI_XPIDIR%%/modules/base_records/crypto.js
-%%XPI_XPIDIR%%/modules/base_records/wbo.js
 %%XPI_XPIDIR%%/modules/engines/clients.js
 %%XPI_XPIDIR%%/modules/engines/forms.js
 %%XPI_XPIDIR%%/modules/engines/history.js
@@ -17,24 +14,14 @@
 %%XPI_XPIDIR%%/modules/engines/prefs.js
 %%XPI_XPIDIR%%/modules/engines/tabs.js
 %%XPI_XPIDIR%%/modules/engines/bookmarks.js
-%%XPI_XPIDIR%%/modules/type_records/bookmark.js
-%%XPI_XPIDIR%%/modules/type_records/clients.js
-%%XPI_XPIDIR%%/modules/type_records/forms.js
-%%XPI_XPIDIR%%/modules/type_records/history.js
-%%XPI_XPIDIR%%/modules/type_records/passwords.js
-%%XPI_XPIDIR%%/modules/type_records/prefs.js
-%%XPI_XPIDIR%%/modules/type_records/tabs.js
 %%XPI_XPIDIR%%/modules/ext/Observers.js
 %%XPI_XPIDIR%%/modules/ext/Preferences.js
 %%XPI_XPIDIR%%/modules/ext/StringBundle.js
-%%XPI_XPIDIR%%/modules/ext/Sync.js
-%%XPI_XPIDIR%%/modules/auth.js
 %%XPI_XPIDIR%%/modules/notifications.js
 %%XPI_XPIDIR%%/modules/resource.js
+%%XPI_XPIDIR%%/modules/record.js
 %%XPI_XPIDIR%%/modules/service.js
 %%XPI_XPIDIR%%/modules/status.js
-%%XPI_XPIDIR%%/modules/stores.js
-%%XPI_XPIDIR%%/modules/trackers.js
 %%XPI_XPIDIR%%/modules/util.js
 %%XPI_XPIDIR%%/modules/main.js
 %%XPI_XPIDIR%%/modules/log4moz.js
@@ -50,9 +37,7 @@ lib/firefox3/extensions/%%XPI_XPIID%%
 @dirrm %%XPI_XPIDIR%%/platform/%%PLATFORM%%
 @dirrm %%XPI_XPIDIR%%/platform
 @dirrm %%XPI_XPIDIR%%/modules/ext
-@dirrm %%XPI_XPIDIR%%/modules/type_records
 @dirrm %%XPI_XPIDIR%%/modules/engines
-@dirrm %%XPI_XPIDIR%%/modules/base_records
 @dirrm %%XPI_XPIDIR%%/modules
 @dirrm %%XPI_XPIDIR%%/crypto-modules
 @dirrm %%XPI_XPIDIR%%/components
