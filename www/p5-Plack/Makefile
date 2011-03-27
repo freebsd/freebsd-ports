@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	Plack
-PORTVERSION=	0.9972
+PORTVERSION=	0.9974
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
-MASTER_SITE_SUBDIR=	../../authors/id/M/MI/MIYAGAWA
+MASTER_SITE_SUBDIR=	CPAN:MIYAGAWA
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	kuriyama@FreeBSD.org
@@ -74,6 +74,7 @@ MAN3=	HTTP::Message::PSGI.3 \
 	Plack::Middleware::ErrorDocument.3 \
 	Plack::Middleware::HTTPExceptions.3 \
 	Plack::Middleware::Head.3 \
+	Plack::Middleware::IIS6ScriptNameFix.3 \
 	Plack::Middleware::JSONP.3 \
 	Plack::Middleware::LighttpdScriptNameFix.3 \
 	Plack::Middleware::Lint.3 \
