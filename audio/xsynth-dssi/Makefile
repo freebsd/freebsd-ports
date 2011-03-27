@@ -6,23 +6,28 @@
 #
 
 PORTNAME=	xsynth-dssi
-PORTVERSION=	0.9.2
-PORTREVISION=	2
+PORTVERSION=	0.9.4
 CATEGORIES=	audio
 MASTER_SITES=	SF/dssi/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Classic analog style software synthesizer
 
+BUILD_DEPENDS=	${LOCALBASE}/include/dssi.h:${PORTSDIR}/audio/dssi \
+		${LOCALBASE}/include/ladspa.h:${PORTSDIR}/audio/ladspa
 LIB_DEPENDS=	dssialsacompat.0:${PORTSDIR}/audio/libdssialsacompat \
 		lo.7:${PORTSDIR}/audio/liblo \
 		jack.0:${PORTSDIR}/audio/jack
-BUILD_DEPENDS=	${LOCALBASE}/include/dssi.h:${PORTSDIR}/audio/dssi
 
-GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
+LICENSE=	GPLv2 LGPL21
+LICENSE_COMB=	multi
+
 USE_GNOME=	gtk20
-CFLAGS+=	-I${LOCALBASE}/include/dssi
+USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool
+CONFIGURE_ENV=	LDFLAGS="${LDFLAGS}"
+
+CPPFLAGS=	-I${LOCALBASE}/include
+LDFLAGS=	-L${LOCALBASE}/lib
 
 .include <bsd.port.mk>
