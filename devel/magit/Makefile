@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	magit
-PORTVERSION=	0.8.2
+PORTVERSION=	1.0.0
 CATEGORIES=	devel elisp
 MASTER_SITES=	${MASTER_SITE_LOCAL} \
 		http://cloud.github.com/downloads/philjackson/magit/
@@ -16,7 +16,6 @@ MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Interface to Git for Emacs
 
 USE_EMACS=	YES
-GNU_CONFIGURE=	YES
 USE_GMAKE=	YES
 INFO=		magit
 
