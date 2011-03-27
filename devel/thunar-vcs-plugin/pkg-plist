@@ -1,24 +1,36 @@
-lib/thunarx-1/thunar-svn-plugin.la
-lib/thunarx-1/thunar-svn-plugin.so
-libexec/tsp-svn-helper
+lib/thunarx-2/thunar-vcs-plugin.a
+lib/thunarx-2/thunar-vcs-plugin.la
+lib/thunarx-2/thunar-vcs-plugin.so
+%%GIT%%libexec/tvp-git-helper
+%%SVN%%libexec/tvp-svn-helper
+share/icons/hicolor/24x24/apps/git.png
 share/icons/hicolor/24x24/apps/subversion.png
+share/icons/hicolor/48x48/apps/git.png
 share/icons/hicolor/48x48/apps/subversion.png
-share/locale/ar/LC_MESSAGES/thunar-svn-plugin.mo
-share/locale/cs/LC_MESSAGES/thunar-svn-plugin.mo
-share/locale/da/LC_MESSAGES/thunar-svn-plugin.mo
-share/locale/en_GB/LC_MESSAGES/thunar-svn-plugin.mo
-share/locale/es/LC_MESSAGES/thunar-svn-plugin.mo
-share/locale/fr/LC_MESSAGES/thunar-svn-plugin.mo
-share/locale/gl/LC_MESSAGES/thunar-svn-plugin.mo
-share/locale/hu/LC_MESSAGES/thunar-svn-plugin.mo
-share/locale/id/LC_MESSAGES/thunar-svn-plugin.mo
-share/locale/lv/LC_MESSAGES/thunar-svn-plugin.mo
-share/locale/nl/LC_MESSAGES/thunar-svn-plugin.mo
-share/locale/pl/LC_MESSAGES/thunar-svn-plugin.mo
-share/locale/pt/LC_MESSAGES/thunar-svn-plugin.mo
-share/locale/pt_BR/LC_MESSAGES/thunar-svn-plugin.mo
-share/locale/sv/LC_MESSAGES/thunar-svn-plugin.mo
-share/locale/ur/LC_MESSAGES/thunar-svn-plugin.mo
-@dirrmtry share/locale/ur/LC_MESSAGES
-@dirrmtry share/locale/ur
-@dirrmtry lib/thunarx-1
+%%NLS%%share/locale/ar/LC_MESSAGES/thunar-vcs-plugin.mo
+%%NLS%%share/locale/ca/LC_MESSAGES/thunar-vcs-plugin.mo
+%%NLS%%share/locale/cs/LC_MESSAGES/thunar-vcs-plugin.mo
+%%NLS%%share/locale/da/LC_MESSAGES/thunar-vcs-plugin.mo
+%%NLS%%share/locale/de/LC_MESSAGES/thunar-vcs-plugin.mo
+%%NLS%%share/locale/en_GB/LC_MESSAGES/thunar-vcs-plugin.mo
+%%NLS%%share/locale/es/LC_MESSAGES/thunar-vcs-plugin.mo
+%%NLS%%share/locale/fr/LC_MESSAGES/thunar-vcs-plugin.mo
+%%NLS%%share/locale/gl/LC_MESSAGES/thunar-vcs-plugin.mo
+%%NLS%%share/locale/hu/LC_MESSAGES/thunar-vcs-plugin.mo
+%%NLS%%share/locale/id/LC_MESSAGES/thunar-vcs-plugin.mo
+%%NLS%%share/locale/lv/LC_MESSAGES/thunar-vcs-plugin.mo
+%%NLS%%share/locale/nl/LC_MESSAGES/thunar-vcs-plugin.mo
+%%NLS%%share/locale/pl/LC_MESSAGES/thunar-vcs-plugin.mo
+%%NLS%%share/locale/pt/LC_MESSAGES/thunar-vcs-plugin.mo
+%%NLS%%share/locale/pt_BR/LC_MESSAGES/thunar-vcs-plugin.mo
+%%NLS%%share/locale/sv/LC_MESSAGES/thunar-vcs-plugin.mo
+%%NLS%%share/locale/ur/LC_MESSAGES/thunar-vcs-plugin.mo
+%%NLS%%share/locale/ur_PK/LC_MESSAGES/thunar-vcs-plugin.mo
+%%NLS%%share/locale/zh_CN/LC_MESSAGES/thunar-vcs-plugin.mo
+%%NLS%%@dirrmtry share/locale/ur_PK/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/ur_PK
+%%NLS%%@dirrmtry share/locale/ur/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/ur
+@dirrmtry lib/thunarx-2
+@exec %%LOCALBASE%%/bin/update-desktop-database >/dev/null || /usr/bin/true
+@unexec %%LOCALBASE%%/bin/update-desktop-database >/dev/null || /usr/bin/true
