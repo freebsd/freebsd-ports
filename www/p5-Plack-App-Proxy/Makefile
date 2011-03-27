@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	Plack-App-Proxy
-PORTVERSION=	0.18
+PORTVERSION=	0.19
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
-MASTER_SITE_SUBDIR=	../../authors/id/L/LE/LEEDO
+MASTER_SITE_SUBDIR=	CPAN:LEEDO
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	kuriyama@FreeBSD.org
@@ -24,6 +24,9 @@ BUILD_DEPENDS=	${RUN_DEPENDS}
 PERL_CONFIGURE=	yes
 
 MAN3=	Plack::App::Proxy.3 \
+	Plack::App::Proxy::Backend.3 \
+	Plack::App::Proxy::Backend::AnyEvent::HTTP.3 \
+	Plack::App::Proxy::Backend::LWP.3 \
 	Plack::App::Proxy::Test.3 \
 	Plack::Middleware::Proxy::AddVia.3 \
 	Plack::Middleware::Proxy::Connect.3 \
