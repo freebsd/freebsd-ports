@@ -38,7 +38,7 @@ kdm_start()
     fi
 
     ( iter=0
-    while ! pgrep -fq "^/usr/libexec/getty " > /dev/null 2>&1; do
+    while ! pgrep -f "^/usr/libexec/getty " > /dev/null 2>&1; do
         if [ ${iter} -ge 600 ]; then
             return 1
         fi
