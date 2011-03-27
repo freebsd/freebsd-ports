@@ -10,7 +10,7 @@
 -
 -.cc.o:
 -	$(CC) $(CFLAGS) -c $<
-+CC = $(CXX)
++CCLINK = $(CXXLINK)
  
  LOCAL_LIBRARIES = XawClientLibs
  SYS_LIBRARIES = -lm
