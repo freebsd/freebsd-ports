@@ -24,7 +24,16 @@ writes it out to the specified file. Unlike a shell
 redirect, sponge soaks up all its input before
 opening the output file. This allows constricting
 pipelines that read from and write to
-the same file. 
+the same file.
+.PP
+It also creates the output file
+atomically by renaming a temp file into place,
+and preserves the permissions of the output file
+if it already exists.
+If the output file is a special file or symlink,
+the data will be written to it.
 .PP
 If no output file is specified, sponge outputs to
 stdout.
+.SH AUTHOR
+Colin Watson and Tollef Fog Heen

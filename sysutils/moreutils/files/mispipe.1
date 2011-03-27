@@ -22,7 +22,9 @@ mispipe \- pipe two commands, returning the exit status of the first
 .SH DESCRIPTION
 \fBmispipe\fR pipes two commands
 together like the shell does, but unlike piping in the
-shell, the exit status of the first command is returned.
+shell, which returns the exit status of the last command;
+when using mispipe, the exit status of the first command
+is returned.
 .PP
 Note that some shells, notably \fBbash\fR,
 do offer a pipefail option, however, that option does not
@@ -33,3 +35,5 @@ first.
 The exit status of the first command. If the process
 terminated abnormally (due to a signal), 128 will be added
 to its exit status.
+.SH AUTHOR
+Nathanael Nerode
