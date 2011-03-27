@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cuse4bsd-kmod
-PORTVERSION=	0.1.13
+PORTVERSION=	0.1.14
 CATEGORIES=	multimedia kld
 MASTER_SITES=	http://www.selasky.org/hans_petter/cuse4bsd/releases/
 
@@ -29,10 +29,16 @@ PLIST_SUB=	KMODNAME="${KMODNAME}" \
 		INCLUDEDIR="${INCLUDEDIR}" \
 		MANDIR="${MANDIR}"
 
+OPTIONS=	DEBUG "Build with debugging support" Off
+
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 800000
 IGNORE=		requires FreeBSD 8.0-RELEASE or later
+.endif
+
+.if defined(WITH_DEBUG)
+MAKE_ARGS+=" HAVE_DEBUG=YES"
 .endif
 
 do-install:
