@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	crossfire
-PORTVERSION=	1.50.0
+PORTVERSION=	1.60.0
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-server/${PORTVERSION} \
 		SF/${PORTNAME}/${PORTNAME}-maps/${PORTVERSION}:maps
@@ -21,13 +21,16 @@ BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash
 LIB_DEPENDS=	curl.6:${PORTSDIR}/ftp/curl \
 		png.6:${PORTSDIR}/graphics/png
 
+LICENSE=	GPLv2 GPLv3
+LICENSE_COMB=	dual
+
 USE_XORG=	ice sm x11 xaw xext xmu xpm xt
 USE_SQLITE=	3
 USE_PERL5=	yes
 USE_PYTHON=	yes
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool
-CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
+CONFIGURE_ENV=	LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--with-check=no
 
 MAN6=		crossfire-config.6 crossfire-server.6 crossloop.6 \
