@@ -6,15 +6,14 @@
 #
 
 PORTNAME=	erlyvideo
-PORTVERSION=	2.6.5
+PORTVERSION=	2.7.4
 CATEGORIES=	net
 MASTER_SITES=	http://host5.webstroy.ru/
 
 MAINTAINER=	cvs-src@yandex.ru
 COMMENT=	RTMP flash streaming server written in erlang
 
-BUILD_DEPENDS=	erlc:${PORTSDIR}/lang/erlang \
-		ruby:${PORTSDIR}/lang/ruby18
+BUILD_DEPENDS=	erlc:${PORTSDIR}/lang/erlang
 RUN_DEPENDS=	erl:${PORTSDIR}/lang/erlang
 
 LICENSE=	GPLv3
