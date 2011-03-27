@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	Dancer
-PORTVERSION=	1.3011
+PORTVERSION=	1.3020
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
-MASTER_SITE_SUBDIR=	../../authors/id/S/SU/SUKRIA
+MASTER_SITE_SUBDIR=	CPAN:XSAWYERX
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	kuriyama@FreeBSD.org
@@ -43,6 +43,7 @@ MAN3=	Dancer.3 \
 	Dancer::Cookie.3 \
 	Dancer::Cookies.3 \
 	Dancer::Deployment.3 \
+	Dancer::Deprecation.3 \
 	Dancer::Development.3 \
 	Dancer::Development::Integration.3 \
 	Dancer::Engine.3 \
@@ -53,8 +54,13 @@ MAN3=	Dancer.3 \
 	Dancer::Introduction.3 \
 	Dancer::Logger.3 \
 	Dancer::Logger::Abstract.3 \
+	Dancer::Logger::Capture.3 \
+	Dancer::Logger::Capture::Trap.3 \
 	Dancer::Logger::Console.3 \
+	Dancer::Logger::Diag.3 \
 	Dancer::Logger::File.3 \
+	Dancer::Logger::Note.3 \
+	Dancer::Logger::Null.3 \
 	Dancer::MIME.3 \
 	Dancer::ModuleLoader.3 \
 	Dancer::Object.3 \
