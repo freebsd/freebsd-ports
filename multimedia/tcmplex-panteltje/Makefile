@@ -7,29 +7,30 @@
 
 PORTNAME=	tcmplex-panteltje
 PORTVERSION=	0.4.7
+PORTREVISION=	1
 CATEGORIES=	multimedia
-MASTER_SITES=	http://ip51cf87c4.direct-adsl.nl/panteltje/dvd/
+MASTER_SITES=	http://panteltje.com/panteltje/dvd/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Re-write of the A/V multiplexer from the transcode distribution
 
-DEPRECATED=     Upstream has disapear and distfile is no more available
-EXPIRATION_DATE=        2011-05-01
+LICENSE=	GPLv2 GPLv3
+LICENSE_COMB=	dual
 
+MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}"
 ALL_TARGET=	a.out
 
-PLIST_FILES=	bin/tcmplex-panteltje
-
-.if !defined(NOPORTDOCS)
-PORTDOCS=	CHANGES COPYRIGHT LICENSE README
-.endif
+PORTDOCS=	CHANGES COPYRIGHT README
+PLIST_FILES=	bin/${PORTNAME}
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin/${PORTNAME}
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}/
+	@${MKDIR} ${DOCSDIR}
+.for file in ${PORTDOCS}
+	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
+.endfor
 .endif
 
 .include <bsd.port.mk>
