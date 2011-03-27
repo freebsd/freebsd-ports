@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	Facebook-Graph
-PORTVERSION=	1.0100
+PORTVERSION=	1.0200
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
-MASTER_SITE_SUBDIR=	../../authors/id/R/RI/RIZEN
+MASTER_SITE_SUBDIR=	CPAN:RIZEN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	kuriyama@FreeBSD.org
@@ -40,6 +40,7 @@ MAN3=	Facebook::Graph.3 \
 	Facebook::Graph::Exception.3 \
 	Facebook::Graph::Picture.3 \
 	Facebook::Graph::Publish.3 \
+	Facebook::Graph::Publish::Checkin.3 \
 	Facebook::Graph::Publish::Comment.3 \
 	Facebook::Graph::Publish::Event.3 \
 	Facebook::Graph::Publish::Like.3 \

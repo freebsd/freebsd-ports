@@ -9,6 +9,7 @@
 %%SITE_PERL%%/Facebook/Graph/Exception.pm
 %%SITE_PERL%%/Facebook/Graph/Picture.pm
 %%SITE_PERL%%/Facebook/Graph/Publish.pm
+%%SITE_PERL%%/Facebook/Graph/Publish/Checkin.pm
 %%SITE_PERL%%/Facebook/Graph/Publish/Comment.pm
 %%SITE_PERL%%/Facebook/Graph/Publish/Event.pm
 %%SITE_PERL%%/Facebook/Graph/Publish/Like.pm
