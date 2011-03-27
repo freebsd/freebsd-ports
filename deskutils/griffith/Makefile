@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	griffith
-PORTVERSION=	0.11
-PORTREVISION=	3
+PORTVERSION=	0.12.1
 CATEGORIES=	deskutils
-MASTER_SITES=	http://launchpadlibrarian.net/37682783/
+MASTER_SITES=	http://launchpadlibrarian.net/58153655/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Lightweight film collection manager
@@ -21,6 +20,10 @@ RUN_DEPENDS=	py*-pysqlite>=2.0:${PORTSDIR}/databases/py-pysqlite23 \
 		py*-chardet>=0:${PORTSDIR}/textproc/py-chardet \
 		${PYXML}
 
+LICENSE=	GPLv2 GPLv3
+LICENSE_COMB=	dual
+
+USE_XZ=		yes
 USE_GNOME=	pygtk2
 WANT_GNOME=	yes
 USE_PYTHON=	yes
