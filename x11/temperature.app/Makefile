@@ -9,14 +9,14 @@ PORTNAME=	temperature.app
 PORTVERSION=	1.4
 PORTREVISION=	4
 CATEGORIES=	x11 windowmaker
-MASTER_SITES=	http://www.fukt.bth.se/~per/temperature/
+MASTER_SITES=	http://www.fukt.bsnet.se/~per/temperature/
 DISTNAME=	Temperature.app-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A dockable WindowMaker applet which displays the local temperature
 
-DEPRECATED=	Upstream disapear and distfile is no more available
-EXPIRATION_DATE=	2011-05-01
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 RUN_DEPENDS=	wget:${PORTSDIR}/ftp/wget
 
