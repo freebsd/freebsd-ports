@@ -16,6 +16,11 @@ COMMENT=	A small window manager inspired by CTWM, evilwm, and tinywm
 BUILD_DEPENDS=	xcb-util>=0.3.6:${PORTSDIR}/x11/xcb-util
 RUN_DEPENDS=	xcb-util>=0.3.6:${PORTSDIR}/x11/xcb-util
 
+MAKE_JOBS_SAFE=	yes
+
+LICENSE=	ISCL
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
 USE_XORG=	x11
 USE_BZIP2=	yes
 
@@ -25,7 +30,7 @@ PORTDOCS=	LICENSE README
 
 pre-everything::
 		@${ECHO_MSG} "You can build mcwm with your own config.h using the MCWM_CONF knob:"
-		@${ECHO_MSG} "make MCWM_CONF=/path/to/dwm/config.h install clean"
+		@${ECHO_MSG} "make MCWM_CONF=/path/to/mcwm/config.h install clean"
 
 post-extract:
 .if defined(MCWM_CONF)
@@ -40,5 +45,6 @@ post-install:
 	@${INSTALL_MAN} ${WRKSRC}/LICENSE ${DOCSDIR}
 	@${INSTALL_MAN} ${WRKSRC}/README ${DOCSDIR}
 .endif
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
