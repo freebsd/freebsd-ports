@@ -16,7 +16,7 @@ MAINTAINER=	makc@FreeBSD.org
 COMMENT?=	A collection of simple PIN or passphrase entry dialogs
 
 LIB_DEPENDS=	gcrypt.17:${PORTSDIR}/security/libgcrypt \
-		ksba.18:${PORTSDIR}/security/libksba
+		ksba.19:${PORTSDIR}/security/libksba
 
 CONFLICTS?=	pinentry-[a-z]*-[0.9]*
 

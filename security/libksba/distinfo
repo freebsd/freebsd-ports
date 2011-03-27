@@ -1,2 +1,4 @@
-SHA256 (libksba-1.1.0.tar.bz2) = d8eb845d7272d23a00d4da6dc65f108ded6a977f32abf4488a075335433769f7
-SIZE (libksba-1.1.0.tar.bz2) = 584996
+SHA256 (libksba-1.2.0.tar.bz2) = 09afce65b03d027cbec10d21464f4f651cdfd269e38b404f83e48d3e2a3c934b
+SIZE (libksba-1.2.0.tar.bz2) = 588323
+SHA256 (libksba-1.2.0.tar.bz2.sig) = 4c65e408aadaf0a8f0cce2f6c6e3381cdf0a0e569c3aca0dd1380bc7c6d61bdd
+SIZE (libksba-1.2.0.tar.bz2.sig) = 287

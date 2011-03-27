@@ -7,7 +7,7 @@
 
 PORTNAME=	dirmngr
 PORTVERSION=	1.1.0
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_GNUPG}
 MASTER_SITE_SUBDIR=	dirmngr
@@ -20,7 +20,7 @@ COMMENT=	A client for managing and downloading certificate revocation lists
 LIB_DEPENDS=	assuan.0:${PORTSDIR}/security/libassuan \
 		gcrypt.17:${PORTSDIR}/security/libgcrypt \
 		gpg-error.0:${PORTSDIR}/security/libgpg-error \
-		ksba.18:${PORTSDIR}/security/libksba \
+		ksba.19:${PORTSDIR}/security/libksba \
 		pth:${PORTSDIR}/devel/pth
 
 USE_BZIP2=	yes

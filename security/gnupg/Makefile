@@ -7,6 +7,7 @@
 
 PORTNAME=	gnupg
 PORTVERSION=	2.0.17
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_GNUPG}
 MASTER_SITE_SUBDIR=	gnupg
@@ -16,11 +17,11 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	The GNU Privacy Guard
 
-BUILD_DEPENDS=	libksba>=1.0.7:${PORTSDIR}/security/libksba
+BUILD_DEPENDS=	libksba>=1.2.0:${PORTSDIR}/security/libksba
 LIB_DEPENDS=	assuan.0:${PORTSDIR}/security/libassuan \
 		gcrypt.17:${PORTSDIR}/security/libgcrypt \
 		gpg-error:${PORTSDIR}/security/libgpg-error \
-		ksba.18:${PORTSDIR}/security/libksba \
+		ksba.19:${PORTSDIR}/security/libksba \
 		pth.20:${PORTSDIR}/devel/pth
 
 LICENSE=	GPLv3 LGPL3
