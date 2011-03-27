@@ -41,7 +41,6 @@
     SUBDIR += irc2dc
     SUBDIR += ircII
     SUBDIR += ircd-hybrid
-    SUBDIR += ircd-hybrid-ru
     SUBDIR += ircd-ratbox
     SUBDIR += ircd-ratbox-devel
     SUBDIR += ircd-ru
