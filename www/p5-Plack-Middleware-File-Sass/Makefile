@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Plack-Middleware-File-Sass
-PORTVERSION=	0.01
+PORTVERSION=	0.03
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -18,6 +18,7 @@ RUN_DEPENDS=	\
 	p5-Plack>0:${PORTSDIR}/www/p5-Plack \
 	p5-Text-Sass>0:${PORTSDIR}/textproc/p5-Text-Sass
 BUILD_DEPENDS=	${RUN_DEPENDS}
+# Now, sass gem can be used instead of p5-Text-Sass.
 
 PERL_CONFIGURE=	yes
 
