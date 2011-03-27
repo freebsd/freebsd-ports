@@ -8,39 +8,35 @@
 PORTNAME=	ratbox-respond
 PORTVERSION=	1.0
 CATEGORIES=	irc sysutils
-MASTER_SITES=	ftp://ftp.ircd-ratbox.org/pub/ircd-ratbox/${PORTNAME}/		\
-		ftp://ftp.demon.co.uk/pub/mirrors/ircd-ratbox/${PORTNAME}/	\
-		http://respond.ircd-ratbox.org/download/			\
+MASTER_SITES=	http://respond.ratbox.org/download/ \
 		ftp://ftp.parodius.com/pub/ircd-ratbox/${PORTNAME}/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Client-side implementation of the challenge oper system in ircd-ratbox
 
-DEPRECATED=     Upstream disapear and distfile is no more available
-EXPIRATION_DATE=        2011-05-01
+CONFIGURE_WRKSRC=${WRKSRC}/${PORTNAME}
+BUILD_WRKSRC=	${WRKSRC}/${PORTNAME}
 
-GNU_CONFIGURE=	yes
 USE_OPENSSL=	yes
-
-EXTDIR=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
-WRKSRC=		${EXTDIR}/${PORTNAME}
+GNU_CONFIGURE=	yes
 
 SUB_FILES=	pkg-message
 
-PORTDOCS=	challenge.txt
+PORTDOCS=	*
+PORTEXAMPLES=	*
+PLIST_FILES=	bin/ratbox-respond bin/makekeypair
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
-	${INSTALL_SCRIPT} ${EXTDIR}/makekeypair ${PREFIX}/bin
-
-	@${MKDIR} ${EXAMPLESDIR}/client-scripts
-	${INSTALL_DATA} ${EXTDIR}/client-scripts/* ${EXAMPLESDIR}/client-scripts
-
-post-install:
+	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/${PORTNAME} ${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/makekeypair ${PREFIX}/bin
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-	cd ${EXTDIR} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
+	cd ${WRKSRC} && ${INSTALL_DATA} challenge.txt ${DOCSDIR}
+.endif
+.if !defined(NOPORTEXAMPLES)
+	@${MKDIR} ${EXAMPLESDIR}/client-scripts
+	${INSTALL_DATA} ${WRKSRC}/client-scripts/* ${EXAMPLESDIR}/client-scripts
 .endif
 	@${CAT} ${PKGMESSAGE}
 
