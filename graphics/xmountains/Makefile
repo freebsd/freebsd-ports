@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xmountains
-PORTVERSION=	2.8
+PORTVERSION=	2.9
 CATEGORIES=	graphics
 MASTER_SITES=	http://www2.epcc.ed.ac.uk/~spb/xmountains/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
@@ -17,16 +17,16 @@ COMMENT=	X11 based fractal landscape generator
 NO_WRKSUBDIR=	yes
 
 USE_XORG=	xbitmaps x11
-MAKEFILE=	Makefile.alt
-ALL_TARGET=	${PORTNAME}
-MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
 
 MAN6=		${PORTNAME}.6
 PLIST_FILES=	bin/${PORTNAME}
 
 post-extract:
 	@${LN} -sf ${PORTNAME}.man ${WRKSRC}/${PORTNAME}.6
+
+do-build:
+	cd ${BUILD_WRKSRC} && ${CC} ${CFLAGS} -I${LOCALBASE}/include *.c \
+		-o ${PORTNAME} -L${LOCALBASE}/lib -lX11 -lm
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
