@@ -1590,3 +1590,4 @@ databases/db50||2011-03-21|Removed, use databases/db51 instead
 games/wormux|games/warmux|2011-03-21|Project was renamed
 irc/ircd-hybrid-ru||2011-03-27|Renamed russian/ircd-hybrid-ru
 devel/thunar-svn-plugin|devel/thunar-vcs-plugin|2011-03-27|Removed, use devel/thunar-vcs-plugin instead
+devel/id-utils|devel/idutils|20110328|Project renamed
