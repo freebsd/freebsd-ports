@@ -3246,6 +3246,7 @@
     SUBDIR += rubygem-multi_json
     SUBDIR += rubygem-mutter
     SUBDIR += rubygem-ncurses
+    SUBDIR += rubygem-ncursesw
     SUBDIR += rubygem-needle
     SUBDIR += rubygem-newgem
     SUBDIR += rubygem-nice-ffi
