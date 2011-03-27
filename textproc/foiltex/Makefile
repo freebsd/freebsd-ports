@@ -7,17 +7,14 @@
 
 PORTNAME=	foiltex
 PORTVERSION=	2.1.4b
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_TEX_CTAN}
-MASTER_SITE_SUBDIR=	nonfree/macros/latex/contrib/${PORTNAME}
+MASTER_SITE_SUBDIR=	macros/latex/contrib/${PORTNAME}
 DISTFILES=	foiltex.dtx foiltex.ins
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A collection of LaTeX files for making foils
-
-DEPRECATED=     Upstream disapear and distfile is no more available
-EXPIRATION_DATE=        2011-05-01
 
 BUILD_DEPENDS=	latex:${PORTSDIR}/print/teTeX-base
 RUN_DEPENDS=	latex:${PORTSDIR}/print/teTeX-base
@@ -28,14 +25,14 @@ NO_WRKSUBDIR=	yes
 
 LATEX_CMD=	${LOCALBASE}/bin/latex
 
-FOIL_DIR=	${PREFIX}/share/texmf/tex/latex/${PORTNAME}
-DOC_FILES=	${WRKDIR}/foiltex.dtx ${WRKDIR}/foiltex.dvi
-EXAMPLE_FILES=	${WRKDIR}/sampfoil.tex
-FOIL_FILES=	${WRKDIR}/foil17.clo ${WRKDIR}/foil20.clo \
-		${WRKDIR}/foil25.clo ${WRKDIR}/foil30.clo \
-		${WRKDIR}/foils.cls ${WRKDIR}/foils.sty \
-		${WRKDIR}/foilshrt.clo ${WRKDIR}/fltfonts.def
-PLIST_SUB=	FOIL_DIR="${FOIL_DIR:S,^${PREFIX}/,,}"
+FOIL_DIR=	share/texmf/tex/latex/${PORTNAME}
+FOIL_FILES=	foil17.clo foil20.clo foil25.clo foil30.clo foils.cls \
+		foils.sty foilshrt.clo fltfonts.def
+
+PORTDOCS=	foiltex.dtx foiltex.dvi
+PORTEXAMPLES=	sampfoil.tex
+PLIST_FILES=	${FOIL_FILES:S,^,${FOIL_DIR}/,}
+PLIST_DIRS=	${FOIL_DIR}
 
 do-extract:
 	${MKDIR} ${WRKDIR}
@@ -49,18 +46,26 @@ do-build:
 		${LATEX_CMD} foiltex.dtx
 
 do-install:
+# install data files
+	@${MKDIR} ${PREFIX}/${FOIL_DIR}
+.for file in ${FOIL_FILES}
+	${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/${FOIL_DIR}
+.endfor
 # install docs and example file?
 .if !defined(NOPORTDOCS)
 # install docs...
 	@${MKDIR} ${DOCSDIR}
-	@${INSTALL_DATA} ${DOC_FILES} ${DOCSDIR}
+.for file in ${PORTDOCS}
+	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
+.endfor
+.endif
+.if !defined(NOPORTEXAMPLES)
 # ...and examples
 	@${MKDIR} ${EXAMPLESDIR}
-	@${INSTALL_DATA} ${EXAMPLE_FILES} ${EXAMPLESDIR}
+.for file in ${PORTEXAMPLES}
+	${INSTALL_DATA} ${WRKSRC}/${file} ${EXAMPLESDIR}
+.endfor
 .endif
-# install data files
-	@${MKDIR} ${FOIL_DIR}
-	@${INSTALL_DATA} ${FOIL_FILES} ${FOIL_DIR}
 
 post-install:
 	${SETENV} LOCALBASE=${LOCALBASE} PKG_PREFIX=${PREFIX} \
