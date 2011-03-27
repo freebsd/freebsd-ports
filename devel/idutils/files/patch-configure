@@ -1,0 +1,20 @@
+--- configure.old	2011-03-28 08:15:17.000000000 +1100
++++ configure	2011-03-28 08:15:47.000000000 +1100
+@@ -8239,7 +8239,7 @@
+                   || close (fd) != 0
+                   || stat (file, &st1) != 0
+                   || st0.st_atime != st1.st_atime)
+-                status |= 64;
++                status |= 0;
+             }
+             return status;
+   ;
+@@ -14722,8 +14722,6 @@
+            linux*) # On linux between 2008-07-27 and 2009-05-11, dup2 of a
+                    # closed fd may yield -EBADF instead of -1 / errno=EBADF.
+              gl_cv_func_dup2_works=no;;
+-           freebsd*) # on FreeBSD 6.1, dup2(1,1000000) gives EMFILE, not EBADF.
+-             gl_cv_func_dup2_works=no;;
+            *) gl_cv_func_dup2_works=yes;;
+          esac
+ else
