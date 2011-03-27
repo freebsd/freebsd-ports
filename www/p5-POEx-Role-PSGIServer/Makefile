@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	POEx-Role-PSGIServer
-PORTVERSION=	1.103341
+PORTVERSION=	1.110670
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
-MASTER_SITE_SUBDIR=	../../authors/id/F/FR/FRODWITH
+MASTER_SITE_SUBDIR=	CPAN:FRODWITH
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	kuriyama@FreeBSD.org
@@ -22,7 +22,7 @@ RUN_DEPENDS=	\
 	p5-MooseX-Declare>0:${PORTSDIR}/devel/p5-MooseX-Declare \
 	p5-MooseX-Types>0:${PORTSDIR}/devel/p5-MooseX-Types \
 	p5-MooseX-Types-Structured>0:${PORTSDIR}/devel/p5-MooseX-Types-Structured \
-	p5-POE-Filter-HTTP-Parser>0:${PORTSDIR}/www/p5-POE-Filter-HTTP-Parser \
+	p5-POE-Filter-HTTP-Parser>=1.06:${PORTSDIR}/www/p5-POE-Filter-HTTP-Parser \
 	p5-POE>0:${PORTSDIR}/devel/p5-POE \
 	p5-POEx-Role-Streaming>0:${PORTSDIR}/devel/p5-POEx-Role-Streaming \
 	p5-POEx-Role-TCPServer>=1.102740:${PORTSDIR}/net/p5-POEx-Role-TCPServer \
