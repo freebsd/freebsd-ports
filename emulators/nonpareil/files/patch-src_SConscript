@@ -1,5 +1,5 @@
---- src/SConscript.orig	Tue Oct 31 07:26:16 2006
-+++ src/SConscript	Mon Mar 26 23:12:06 2007
+--- src/SConscript.orig	2008-08-24 09:37:18.000000000 +0900
++++ src/SConscript	2011-03-20 05:12:10.000000000 +0900
 @@ -41,16 +41,11 @@
  
  build_env.Append (CPPPATH = ['.'])
@@ -19,21 +19,12 @@
      build_env.Append (CCFLAGS = ['-mms-bitfields'])
      build_env.Append (CPPPATH = ['/usr/local/gtkwin/include'])  # libpng
      build_env.Append (CPPPATH = ['/usr/local/gtkwin/SDL-1.2.8/include'])
-@@ -91,7 +86,7 @@
- if build_env ['build_target_only'] == 0:
-     str2png_env = build_env.Copy ()
- 
--    str2png_env.Append (CPPDEFINES = {'DEFAULT_PATH': 'image'})
-+    str2png_env.Append (CPPDEFINES = ['DEFAULT_PATH=image'])
- 
-     str2png_srcs = Split ("""str2png.c""")
- 
-@@ -287,7 +282,7 @@
+@@ -286,7 +281,7 @@
  
  csim_env = nonpareil_env.Copy ()
  if not ming:
--    csim_env.Append (CPPDEFINES = {'DEFAULT_PATH': build_env ['libdir']})
-+    csim_env.Append (CPPDEFINES = ['DEFAULT_PATH=' + build_env ['libdir']])
+-    csim_env.Append (CPPDEFINES = [('DEFAULT_PATH', build_env ['libdir'])])
++    csim_env.Append (CPPDEFINES = [('DEFAULT_PATH' + build_env ['libdir'])])
  
  if build_env ['target'] == 'win32':
-     csim_env.Append (CPPDEFINES = {'SHAPE_DEFAULT': "false"})
+     csim_env.Append (CPPDEFINES = [('SHAPE_DEFAULT', "false")])
