@@ -6,22 +6,19 @@
 #
 
 PORTNAME=	wmCalClock
-PORTVERSION=	1.25
-PORTREVISION=	3
+PORTVERSION=	1.26
 CATEGORIES=	x11-clocks windowmaker
-MASTER_SITES=	${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=kris
+MASTER_SITES=	http://jmpacquet.free.fr/wmcalclock/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Another Window Maker calendar/clock dockapp
 
-DEPRECATED=     Upstream disapear and distfile is no more available
-EXPIRATION_DATE=        2011-05-01
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/../COPYING
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/Src
 
 USE_XORG=	xpm
-ALL_TARGET=	clean all
 
 MAN1=		wmCalClock.1
 PLIST_FILES=	bin/wmCalClock
