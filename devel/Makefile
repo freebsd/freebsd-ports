@@ -654,7 +654,7 @@
     SUBDIR += ice
     SUBDIR += icmake
     SUBDIR += icu
-    SUBDIR += id-utils
+    SUBDIR += idutils
     SUBDIR += ifd-test
     SUBDIR += imake
     SUBDIR += inilib
