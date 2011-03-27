@@ -19,7 +19,8 @@ LIB_DEPENDS=    jpeg.11:${PORTSDIR}/graphics/jpeg
 BUILD_DEPENDS+=	${LOCALBASE}/libdata/pkgconfig/fontconfig.pc:${PORTSDIR}/x11-fonts/fontconfig
 RUN_DEPENDS+=	${LOCALBASE}/libdata/pkgconfig/fontconfig.pc:${PORTSDIR}/x11-fonts/fontconfig
 
-OPTIONS=	IPTVPATCH "Stops EIT scans on IPTV channels" On
+OPTIONS=	IPTVPATCH "Stops EIT scans on IPTV channels" On \
+		AC3PATCH "North America DVB-S AC3 audio workaround" Off
 
 DIST_SUBDIR=	vdr
 USE_BZIP2=	yes
@@ -53,8 +54,11 @@ PLIST_SUB+=	VDR_GROUP=${VDR_GROUP}
 .include <bsd.port.options.mk>
 
 .if defined(WITH_IPTVPATCH)
-EXTRA_PATCHES=	${FILESDIR}/vdr-1.7.15-disable_ca_updates.patch \
+EXTRA_PATCHES+=	${FILESDIR}/vdr-1.7.15-disable_ca_updates.patch \
 	${FILESDIR}/vdr-1.7.15-disable_eitscan.patch
+.endif
+.if defined(WITH_AC3PATCH)
+EXTRA_PATCHES+=	${FILESDIR}/vdr-1.7.17-fix_na_dvbs_ac3.diff
 .endif
 
 .if !defined(WITHOUT_NLS)
