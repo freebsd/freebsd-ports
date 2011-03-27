@@ -13,27 +13,20 @@ PORTNAME=	rclock
 PORTVERSION=	2.7.10
 PORTREVISION=	2
 CATEGORIES=	x11-clocks
-MASTER_SITES=	ftp://ftp.rxvt.org/pub/rxvt/%SUBDIR%/ \
-		ftp://mason.primenet.com.au/pub/rxvt/%SUBDIR%/ \
-		ftp://ftp.ics.es.osaka-u.ac.jp/pub/mirrors/rxvt/%SUBDIR%/ \
-		ftp://ftp.fu-berlin.de/unix/X11/terms/rxvt/%SUBDIR%/
-# MASTER_SITE_SUBDIR=	. old devel
+MASTER_SITES=	SF/rxvt/rxvt-dev/${PORTVERSION}
 DISTNAME=	rxvt-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Analog clock for X w/appointment reminder and mail notification
 
-DEPRECATED=     Upstream disapear and distfile is no more available
-EXPIRATION_DATE=        2011-05-01
-
-USE_BZIP2=	yes
 USE_XORG=	x11 xau xdmcp ice xpm xv
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-DMAIL_SPOOL='\"/var/mail/\"'"
 ALL_TARGET=	clock
 MAN1=		rclock.1
 
 PLIST_FILES=	bin/rclock
+
+CPPFLAGS=	-DMAIL_SPOOL='\"/var/mail/\"'
 
 post-patch:
 	@${REINPLACE_CMD} \
