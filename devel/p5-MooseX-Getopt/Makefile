@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	MooseX-Getopt
-PORTVERSION=	0.33
+PORTVERSION=	0.35
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,11 +14,14 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	A Moose role for processing command line options
 
+LICENSE_COMB=	dual
+LICENSE=	ART20 GPLv1
+
 BUILD_DEPENDS=	p5-Getopt-Long-Descriptive>=0.081:${PORTSDIR}/devel/p5-Getopt-Long-Descriptive \
 		p5-Moose>=0.56:${PORTSDIR}/devel/p5-Moose
 RUN_DEPENDS=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Test-Simple>=0.88:${PORTSDIR}/devel/p5-Test-Simple \
-		p5-Test-Exception>=0.21:${PORTSDIR}/devel/p5-Test-Exception
+		p5-Test-Fatal>=0.003:${PORTSDIR}/devel/p5-Test-Fatal
 
 PERL_CONFIGURE=	5.8.0+
 
@@ -31,6 +34,7 @@ MAN3=	MooseX::Getopt.3 \
 	MooseX::Getopt::Meta::Attribute::Trait.3 \
 	MooseX::Getopt::Meta::Attribute::Trait::NoGetopt.3 \
 	MooseX::Getopt::OptionTypeMap.3 \
+	MooseX::Getopt::ProcessedArgv.3 \
 	MooseX::Getopt::Strict.3
 
 post-extract:
