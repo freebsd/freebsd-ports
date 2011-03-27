@@ -8,7 +8,7 @@
 #
 
 PORTNAME=	fio
-PORTVERSION=	1.50.2
+PORTVERSION=	1.51
 CATEGORIES=	sysutils benchmarks
 MASTER_SITES=	http://brick.kernel.dk/snaps/
 
@@ -17,7 +17,6 @@ COMMENT=	FIO - flexible IO tester
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-MAKEFILE=	Makefile.FreeBSD
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
