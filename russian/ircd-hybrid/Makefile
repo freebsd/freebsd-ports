@@ -6,16 +6,19 @@
 #
 
 PORTNAME=	ircd
-PORTVERSION=	7.2.2
-CATEGORIES=	irc russian
+PORTVERSION=	7.2.4
+CATEGORIES=	russian irc
 MASTER_SITES=	SF/${PORTNAME}-hybrid-ru/${PORTNAME}-hybrid-ru/${PORTNAME}-hybrid-ru-${PORTVERSION} \
 		ftp://rusunix.org/pub/FreeBSD/distfiles/
 
 PKGNAMESUFFIX=	-hybrid-ru
 DISTNAME=	ircd-hybrid-ru-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	rodrigo@bebik.net
 COMMENT=	Russian version of well known hybrid IRC server
+
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 CONFLICTS=	ircd-[0-9]*
 
@@ -24,6 +27,9 @@ USE_OPENSSL=	yes
 USE_BISON=	build
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc/ircd-hybrid-ru
+
+USERS=		ircdru
+GROUPS=		ircdru
 
 MAN8=		ircd.8
 
@@ -65,14 +71,13 @@ post-patch:
 	@${REINPLACE_CMD} -e 's,ac_cv_prog_cc_g=yes,ac_cv_prog_cc_g=no,' ${WRKSRC}/configure
 
 pre-install:
-	@${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 	@${REINPLACE_CMD} -e 's,ircd/etc/codepage,etc/ircd-hybrid-ru/codepage,' ${WRKSRC}/etc/example.conf
 	@${REINPLACE_CMD} -e 's,/ircd/modules,/lib/ircd-hybrid-ru-modules,' ${WRKSRC}/etc/example.conf
 
 post-install:
 	@${INSTALL_SCRIPT} -m 555 ${FILESDIR}/ircd-hybrid-ru.sh.sample ${PREFIX}/etc/rc.d
-	@${CHOWN} -R ircdru:ircdru ${PREFIX}/etc/ircd-hybrid-ru
-	@${CHOWN} -R ircdru:ircdru /var/log/ircd-hybrid-ru
+	@${CHOWN} -R ${USERS}:${GROUPS} ${PREFIX}/etc/ircd-hybrid-ru
+	@${CHOWN} -R ${USERS}:${GROUPS} /var/log/ircd-hybrid-ru
 	@${MKDIR} ${DOCSDIR}
 	@${INSTALL_DATA} ${WRKSRC}/RELNOTE* ${DOCSDIR}
 	@${INSTALL_DATA} ${WRKSRC}/doc/*.txt ${DOCSDIR}

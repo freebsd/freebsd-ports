@@ -147,6 +147,162 @@ help/users/version
 help/users/who
 help/users/whois
 help/users/whowas
+help/opers/classlist.ru
+help/opers/user.ru
+help/opers/help.ru
+help/opers/llnick.ru
+help/opers/drop.ru
+help/opers/challenge.ru
+help/opers/uncapture
+help/opers/omotd.ru
+help/opers/ltrace
+help/opers/modunload.ru
+help/opers/userhost.ru
+help/opers/admin.ru
+help/opers/sjoin.ru
+help/opers/nick.ru
+help/opers/wallops.ru
+help/opers/rxline.ru
+help/opers/gline.ru
+help/opers/restart.ru
+help/opers/ltrace.ru
+help/opers/away.ru
+help/opers/testgecos.ru
+help/opers/svinfo.ru
+help/opers/knock.ru
+help/opers/cryptlink.ru
+help/opers/ojoin
+help/opers/version.ru
+help/opers/list.ru
+help/opers/ungline.ru
+help/opers/lusers.ru
+help/opers/testmask.ru
+help/opers/mkpasswd.ru
+help/opers/topic.ru
+help/opers/modload.ru
+help/opers/etrace.ru
+help/opers/clearchan.ru
+help/opers/knockll.ru
+help/opers/squit.ru
+help/opers/error.ru
+help/opers/forcejoin
+help/opers/hash.ru
+help/opers/server.ru
+help/opers/pong.ru
+help/opers/capab.ru
+help/opers/invite.ru
+help/opers/trace.ru
+help/opers/client.ru
+help/opers/mkpasswd
+help/opers/ojoin.ru
+help/opers/capture
+help/opers/cmode.ru
+help/opers/operwall.ru
+help/opers/modrestart.ru
+help/opers/rkline.ru
+help/opers/whowas.ru
+help/opers/post.ru
+help/opers/users.ru
+help/opers/opme
+help/opers/privmsg.ru
+help/opers/ping.ru
+help/opers/uhelp.ru
+help/opers/motd.ru
+help/opers/kick.ru
+help/opers/kill.ru
+help/opers/unresv.ru
+help/opers/forcepart
+help/opers/ctrace
+help/opers/ctrace.ru
+help/opers/clearchan
+help/opers/codepage.ru
+help/opers/quit.ru
+help/opers/eob.ru
+help/opers/classlist
+help/opers/xline.ru
+help/opers/cburst.ru
+help/opers/ison.ru
+help/opers/info.ru
+help/opers/index.ru
+help/opers/stats.ru
+help/opers/opme.ru
+help/opers/who.ru
+help/opers/umode.ru
+help/opers/unxline.ru
+help/opers/undline.ru
+help/opers/notice.ru
+help/opers/nburst.ru
+help/opers/forcejoin.ru
+help/opers/uncapture.ru
+help/opers/modlist.ru
+help/opers/capture.ru
+help/opers/die.ru
+help/opers/set.ru
+help/opers/whois.ru
+help/opers/lljoin.ru
+help/opers/time.ru
+help/opers/testline.ru
+help/opers/pass.ru
+help/opers/dline.ru
+help/opers/part.ru
+help/opers/rehash.ru
+help/opers/links.ru
+help/opers/locops.ru
+help/opers/unkline.ru
+help/opers/names.ru
+help/opers/resv.ru
+help/opers/accept.ru
+help/opers/forcepart.ru
+help/opers/connect.ru
+help/opers/kline.ru
+help/opers/map.ru
+help/opers/close.ru
+help/opers/join.ru
+help/opers/oper.ru
+help/users/users.ru
+help/users/part.ru
+help/users/cmode.ru
+help/users/time.ru
+help/users/pass.ru
+help/users/map.ru
+help/users/error.ru
+help/users/topic.ru
+help/users/join.ru
+help/users/oper.ru
+help/users/pattern.ru
+help/users/notice.ru
+help/users/kick.ru
+help/users/knock.ru
+help/users/ping.ru
+help/users/motd.ru
+help/users/ison.ru
+help/users/who.ru
+help/users/quit.ru
+help/users/accept.ru
+help/users/codepage.ru
+help/users/info.ru
+help/users/admin.ru
+help/users/names.ru
+help/users/privmsg.ru
+help/users/links.ru
+help/users/challenge.ru
+help/users/pong.ru
+help/users/whois.ru
+help/users/lusers.ru
+help/users/codepage
+help/users/version.ru
+help/users/user.ru
+help/users/help.ru
+help/users/invite.ru
+help/users/stats.ru
+help/users/index.ru
+help/users/umode.ru
+help/users/away.ru
+help/users/nick.ru
+help/users/list.ru
+help/users/whowas.ru
+help/users/userhost.ru
+help/users/mode.ru
 lib/ircd-hybrid-ru-modules/autoload/m_accept.so
 lib/ircd-hybrid-ru-modules/autoload/m_admin.so
 lib/ircd-hybrid-ru-modules/autoload/m_alias.so
@@ -244,13 +400,14 @@ lib/ircd-hybrid-ru-modules/m_squit.so
 @dirrm share/doc/ircd
 @dirrm etc/ircd-hybrid-ru/codepages
 @dirrm etc/ircd-hybrid-ru
-@dirrm lib/ircd-hybrid-ru-modules/autoload                                                                                                   
-@dirrm lib/ircd-hybrid-ru-modules                                                                                                            
-@dirrm help/users                                                                                                                            
-@dirrm help/opers                                                                                                                            
-@dirrm help                                                                                                                                  
-@exec mkdir -m 755 /var/log/ircd-hybrid-ru                                                                                                   
-@exec chown ircdru:ircdru /var/log/ircd-hybrid-ru                                                                                            
-@unexec rmdir /var/log/ircd-hybrid-ru 2>/dev/null || true                                                                                    
-@unexec rmdir %D/etc/ircd-hybrid-ru/codepages 2>/dev/null || true                                                                            
+@dirrm lib/ircd-hybrid-ru-modules/autoload
+@dirrm lib/ircd-hybrid-ru-modules
+@dirrm help/users
+@dirrm help/opers
+@dirrm help
+@exec mkdir -m 755 /var/log/ircd-hybrid-ru
+@exec chown ircdru:ircdru /var/log/ircd-hybrid-ru
+@unexec rmdir /var/log/ircd-hybrid-ru 2>/dev/null || true
+@unexec rmdir %D/etc/ircd-hybrid-ru/codepages 2>/dev/null || true
 @unexec rmdir %D/etc/ircd-hybrid-ru 2>/dev/null || true
+
