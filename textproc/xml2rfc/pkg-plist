@@ -28,6 +28,8 @@ bin/xml2txt
 %%PORTDOCS%%%%DOCSDIR%%/rfc2629.xml
 %%PORTDOCS%%%%DOCSDIR%%/rfc2629.xsd
 %%PORTDOCS%%%%DOCSDIR%%/samples/Makefile
+%%PORTDOCS%%%%DOCSDIR%%/samples/iab.txt
+%%PORTDOCS%%%%DOCSDIR%%/samples/iab.xml
 %%PORTDOCS%%%%DOCSDIR%%/samples/rfc2616.nr
 %%PORTDOCS%%%%DOCSDIR%%/samples/rfc2616.nr.mp
 %%PORTDOCS%%%%DOCSDIR%%/samples/rfc2616.txt
@@ -76,6 +78,10 @@ bin/xml2txt
 %%PORTDOCS%%%%DOCSDIR%%/samples/sample.ipr.id.pre5378Trust200902.200912.txt
 %%PORTDOCS%%%%DOCSDIR%%/samples/sample.ipr.id.pre5378Trust200902.200912.xml
 %%PORTDOCS%%%%DOCSDIR%%/samples/sample.ipr.id.pre5378Trust200902.200912.xml2rfc.html
+%%PORTDOCS%%%%DOCSDIR%%/samples/sample.ipr.id.pre5378Trust200902.201011.nr
+%%PORTDOCS%%%%DOCSDIR%%/samples/sample.ipr.id.pre5378Trust200902.201011.txt
+%%PORTDOCS%%%%DOCSDIR%%/samples/sample.ipr.id.pre5378Trust200902.201011.xml
+%%PORTDOCS%%%%DOCSDIR%%/samples/sample.ipr.id.pre5378Trust200902.201011.xml2rfc.html
 %%PORTDOCS%%%%DOCSDIR%%/samples/sample.ipr.id.trust200902.200909.nr
 %%PORTDOCS%%%%DOCSDIR%%/samples/sample.ipr.id.trust200902.200909.txt
 %%PORTDOCS%%%%DOCSDIR%%/samples/sample.ipr.id.trust200902.200909.xml
@@ -142,6 +148,10 @@ bin/xml2txt
 %%PORTDOCS%%%%DOCSDIR%%/samples/sample.ipr.rfc.200912.txt
 %%PORTDOCS%%%%DOCSDIR%%/samples/sample.ipr.rfc.200912.xml
 %%PORTDOCS%%%%DOCSDIR%%/samples/sample.ipr.rfc.200912.xml2rfc.html
+%%PORTDOCS%%%%DOCSDIR%%/samples/sample.ipr.rfc.201001.iab.exp.nr
+%%PORTDOCS%%%%DOCSDIR%%/samples/sample.ipr.rfc.201001.iab.exp.txt
+%%PORTDOCS%%%%DOCSDIR%%/samples/sample.ipr.rfc.201001.iab.exp.xml
+%%PORTDOCS%%%%DOCSDIR%%/samples/sample.ipr.rfc.201001.iab.exp.xml2rfc.html
 %%PORTDOCS%%%%DOCSDIR%%/samples/sample.ipr.rfc.201001.iab.hist.nr
 %%PORTDOCS%%%%DOCSDIR%%/samples/sample.ipr.rfc.201001.iab.hist.txt
 %%PORTDOCS%%%%DOCSDIR%%/samples/sample.ipr.rfc.201001.iab.hist.xml
@@ -235,6 +245,10 @@ bin/xml2txt
 %%PORTDOCS%%%%DOCSDIR%%/samples/sample.ipr.rfc.pre5378Trust200902.200912.txt
 %%PORTDOCS%%%%DOCSDIR%%/samples/sample.ipr.rfc.pre5378Trust200902.200912.xml
 %%PORTDOCS%%%%DOCSDIR%%/samples/sample.ipr.rfc.pre5378Trust200902.200912.xml2rfc.html
+%%PORTDOCS%%%%DOCSDIR%%/samples/sample.nested.txt
+%%PORTDOCS%%%%DOCSDIR%%/samples/sample.nested.nr
+%%PORTDOCS%%%%DOCSDIR%%/samples/sample.nested.xml
+%%PORTDOCS%%%%DOCSDIR%%/samples/sample.nested.xml2rfc.html
 %%PORTDOCS%%%%DOCSDIR%%/samples/sample.ref.annotation.nr
 %%PORTDOCS%%%%DOCSDIR%%/samples/sample.ref.annotation.txt
 %%PORTDOCS%%%%DOCSDIR%%/samples/sample.ref.annotation.xml
