@@ -23,7 +23,6 @@ USE_KDE4=	kdelibs kdeprefix kdehier automoc4
 KDE4_BUILDENV=	yes
 USE_QT_VER=	4
 QT_COMPONENTS=	opengl gui qmake_build moc_build rcc_build uic_build
-CMAKE_ARGS+=	-DCMAKE_EXE_LINKER_FLAGS:STRING="-L${LOCALBASE}/lib"
 MAKE_JOBS_SAFE=	yes
 
 MAN1=	kmag.1 \
@@ -43,5 +42,7 @@ post-patch:
 		${PATCH_WRKSRC}/CMakeLists.txt
 	${REINPLACE_CMD} -e '/add_subdirectory.*jovie/d' \
 		${PATCH_WRKSRC}/doc/CMakeLists.txt
+	${REINPLACE_CMD} -e 's/speechd/$$$\{SPEECHD_LIBRARY}/g' \
+		${PATCH_WRKSRC}/kaccessible/CMakeLists.txt
 
 .include <bsd.port.mk>
