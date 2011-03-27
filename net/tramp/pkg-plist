@@ -20,8 +20,6 @@
 %%TRAMP_LISPDIR%%/tramp-gvfs.elc
 %%TRAMP_LISPDIR%%/tramp-gw.el
 %%TRAMP_LISPDIR%%/tramp-gw.elc
-%%TRAMP_LISPDIR%%/tramp-imap.el
-%%TRAMP_LISPDIR%%/tramp-imap.elc
 %%TRAMP_LISPDIR%%/tramp-loaddefs.el
 %%TRAMP_LISPDIR%%/tramp-sh.el
 %%TRAMP_LISPDIR%%/tramp-sh.elc
