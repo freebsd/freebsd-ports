@@ -1,6 +1,6 @@
---- configure.orig	2008-12-14 01:50:58.000000000 +0100
-+++ configure	2009-01-11 15:27:38.000000000 +0100
-@@ -11766,15 +11766,9 @@
+--- configure.orig	2010-09-24 02:36:53.000000000 +0900
++++ configure	2011-03-14 08:06:46.000000000 +0900
+@@ -10932,10 +10932,10 @@
  
  
  case "${host_os}" in
@@ -8,12 +8,8 @@
 +darwin* | freebsd*)
    darwin=yes
  
--cat >>confdefs.h <<\_ACEOF
--#define MIDI_COREMIDI 1
--_ACEOF
--
--
--
- if test "x$ac_cv_env_PKG_CONFIG_set" != "xset"; then
- 	if test -n "$ac_tool_prefix"; then
-   # Extract the first word of "${ac_tool_prefix}pkg-config", so it can be a program name with args.
+-$as_echo "#define MIDI_COREMIDI 1" >>confdefs.h
++
+ 
+ 
+ 
