@@ -3421,7 +3421,7 @@
     SUBDIR += tevent
     SUBDIR += thistest
     SUBDIR += thrift
-    SUBDIR += thunar-svn-plugin
+    SUBDIR += thunar-vcs-plugin
     SUBDIR += tide
     SUBDIR += tig
     SUBDIR += tigcc
