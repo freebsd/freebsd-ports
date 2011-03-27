@@ -19,22 +19,21 @@ DIST_SUBDIR=	python
 MAINTAINER=	lwhsu@FreeBSD.org
 COMMENT=	High-level Python Web framework
 
-REVISION=	15533
+REVISION=	15922
 
-USE_BZIP2=	yes
+USE_XZ=	yes
 USE_GETTEXT=	yes
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 
 PYDISTUTILS_PKGNAME=	Django
-PYDISTUTILS_PKGVERSION=	1.3_beta_1
+PYDISTUTILS_PKGVERSION=	1.3
 
 CONFLICTS=	py2[0-9]-django-[0-9]*
 
 DOCSDIR=	${PREFIX}/share/doc/py-django
 
-OPTIONS=	MOD_PYTHON3	"Install Apache2 with mod_python3"	off \
-		POSTGRESQL	"PostgreSQL support"	off \
+OPTIONS=	POSTGRESQL	"PostgreSQL support"	off \
 		MYSQL	"MySQL support"	off \
 		SQLITE	"SQLite support"	off \
 		FASTCGI	"FastCGI support"	off \
@@ -46,10 +45,6 @@ MAN1=		daily_cleanup.1 django-admin.1 gather_profile_stats.1
 OPTIONSFILE=	${PORT_DBDIR}/py-${PORTNAME}-devel/options
 
 .include <bsd.port.pre.mk>
-
-.if defined(WITH_MOD_PYTHON3)
-RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/mod_python/_psp.so:${PORTSDIR}/www/mod_python3
-.endif
 
 .if defined(WITH_POSTGRESQL)
 RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/psycopg2/_psycopg.so:${PORTSDIR}/databases/py-psycopg2
