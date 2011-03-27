@@ -9,19 +9,19 @@ PORTNAME=	amaterus
 PORTVERSION=	0.34.1
 PORTREVISION=	5
 CATEGORIES=	x11-wm
-MASTER_SITES=	http://www.taiyaki.org/amaterus/src/
+MASTER_SITES=	http://taiyaki.org/amaterus/src/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A GTK+ window manager
 
-DEPRECATED=     Distfile is no more available
-EXPIRATION_DATE=        2011-05-01
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	xml.5:${PORTSDIR}/textproc/libxml
-
-USE_GNOME=	gtk12
+USE_GNOME=	gtk12 libxml
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LIBS="-L${LOCALBASE}/lib"
+CONFIGURE_ENV=	LDFLAGS="${LDFLAGS}"
+
+CPPFLAGS=	-I${LOCALBASE}/include
+LDFLAGS=	-L${LOCALBASE}/lib
 
 .include <bsd.port.mk>
