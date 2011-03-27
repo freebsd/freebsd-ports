@@ -17,6 +17,10 @@ DISTNAME=	libnet-${PORTVERSION}
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl5 modules to access and use network protocols
 
+.if !defined(BATCH) && !defined(PACKAGE_BUILDING)
+IS_INTERACTIVE=	yes
+.endif
+
 RUN_DEPENDS=	p5-Authen-SASL>=0:${PORTSDIR}/security/p5-Authen-SASL
 
 PORTSCOUT=	skipv:1.0901
