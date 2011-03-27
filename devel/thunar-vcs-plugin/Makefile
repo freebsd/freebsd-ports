@@ -1,12 +1,13 @@
 # New ports collection makefile for:	thunar-vcs-plugin
 # Date created: 	2008-10-15
 # Whom:			Sergey V. Dyatko <sergey.dyatko@gmail.com>
-#	
+#
 # $FreeBSD$
 #
 
 PORTNAME=	thunar-vcs-plugin
 PORTVERSION=	0.1.4
+PORTREVISION=	1
 CATEGORIES=	devel xfce
 MASTER_SITES=	${MASTER_SITE_XFCE}
 MASTER_SITE_SUBDIR=	src/thunar-plugins/${PORTNAME}/${PORTVERSION:R}
