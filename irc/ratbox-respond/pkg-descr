@@ -3,4 +3,4 @@ the challenge opering system in ircd-ratbox. The challenge system
 provides the ability to oper using private key authentication instead of
 passwords to improve security.
 
-WWW: http://respond.ircd-ratbox.org/
+WWW: http://respond.ratbox.org/
