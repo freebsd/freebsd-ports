@@ -5,6 +5,28 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20110328:
+  AFFECTS: users of net/openldap24-client
+  AUTHOR: delphij@FreeBSD.org
+
+  OpenLDAP has been upgraded to 2.4.25.  In this version, certain library
+  rountines were moved from liblutil to libldap.  If you previously built
+  the library with "FETCH" support, this would cause libldap to depend on
+  FreeBSD's libfetch.so library.
+
+  This dependency is not expected by many applications that uses OpenLDAP
+  client library, which could broke if they won't link against libfetch.
+  For this reason, the libfetch(3) support in openldap24-client have been
+  turned off by default.
+
+  If you are having problems saying fetchGetURL is not found, please either
+  rebuild your openldap24-client without the support, or tweak your
+  application's Makefile to have them link against libfetch(3) library.
+
+  Most users can use 'make config' in ports/net/openldap24-client to change
+  the saved settings and have FETCH turned off safely, if they don't use
+  the functionality of downloading the ldif files.
+
 20110324:
   AFFECTS: users of KDE SC 4
   AUTHOR: kde@FreeBSD.org
