@@ -354,11 +354,13 @@ share/locale/ko/LC_MESSAGES/uim.mo
 %%DATADIR%%/tcode.scm
 %%DATADIR%%/trec.scm
 %%DATADIR%%/trycode.scm
+%%DATADIR%%/tutcode-bushu.scm
 %%DATADIR%%/tutcode-bushudic.scm
 %%DATADIR%%/tutcode-custom.scm
 %%DATADIR%%/tutcode-dialog.scm
 %%DATADIR%%/tutcode-editor.scm
 %%DATADIR%%/tutcode-key-custom.scm
+%%DATADIR%%/tutcode-kigou-rule.scm
 %%DATADIR%%/tutcode-kigoudic.scm
 %%DATADIR%%/tutcode-rule.scm
 %%DATADIR%%/tutcode.scm
