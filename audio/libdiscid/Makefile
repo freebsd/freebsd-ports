@@ -7,6 +7,7 @@
 
 PORTNAME=	libdiscid
 PORTVERSION=	0.2.2
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://users.musicbrainz.org/~matt/ \
 		${MASTER_SITE_GENTOO}
@@ -16,13 +17,12 @@ MAINTAINER=	bsdkaffee@gmail.com
 COMMENT=	A library for creating MusicBrainz DiscIDs
 
 GNU_CONFIGURE=	yes
-USE_GNOME=	pkgconfig
+USE_AUTOTOOLS=	libtool
+USE_GNOME=	ltverhack gnomehack pkgconfig
+MAKE_JOBS_SAFE=	yes
 USE_LDCONFIG=	yes
 
-.include <bsd.port.pre.mk>
+LICENSE=	LGPL21
+LICENSE_FILE=	${WRKSRC}/COPYING
 
-pre-configure:
-	@${REINPLACE_CMD} -e 's|\$$(libdir)/pkgconfig|\$$(prefix)/libdata/pkgconfig|' \
-		${WRKSRC}/Makefile.in
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
