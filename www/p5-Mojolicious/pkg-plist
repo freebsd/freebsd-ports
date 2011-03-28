@@ -42,6 +42,7 @@
 %%SITE_PERL%%/Mojo/Transaction/WebSocket.pm
 %%SITE_PERL%%/Mojo/URL.pm
 %%SITE_PERL%%/Mojo/Upload.pm
+%%SITE_PERL%%/Mojo/UserAgent.pm
 %%SITE_PERL%%/Mojo/Util.pm
 %%SITE_PERL%%/Mojolicious.pm
 %%SITE_PERL%%/Mojolicious/Command/Cgi.pm
@@ -73,6 +74,7 @@
 %%SITE_PERL%%/Mojolicious/Plugin.pm
 %%SITE_PERL%%/Mojolicious/Plugin/AgentCondition.pm
 %%SITE_PERL%%/Mojolicious/Plugin/Charset.pm
+%%SITE_PERL%%/Mojolicious/Plugin/Config.pm
 %%SITE_PERL%%/Mojolicious/Plugin/DefaultHelpers.pm
 %%SITE_PERL%%/Mojolicious/Plugin/EpRenderer.pm
 %%SITE_PERL%%/Mojolicious/Plugin/EplRenderer.pm

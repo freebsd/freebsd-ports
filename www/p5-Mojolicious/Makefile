@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Mojolicious
-PORTVERSION=	1.1
+PORTVERSION=	1.15
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	Mojolicious/KRAIH
@@ -65,6 +65,7 @@ MAN3=		Mojo.3 \
 		Mojo::Transaction::WebSocket.3 \
 		Mojo::URL.3 \
 		Mojo::Upload.3 \
+		Mojo::UserAgent.3 \
 		Mojo::Util.3 \
 		Mojolicious.3 \
 		Mojolicious::Command::Cgi.3 \
@@ -96,6 +97,7 @@ MAN3=		Mojo.3 \
 		Mojolicious::Plugin.3 \
 		Mojolicious::Plugin::AgentCondition.3 \
 		Mojolicious::Plugin::Charset.3 \
+		Mojolicious::Plugin::Config.3 \
 		Mojolicious::Plugin::DefaultHelpers.3 \
 		Mojolicious::Plugin::EpRenderer.3 \
 		Mojolicious::Plugin::EplRenderer.3 \
