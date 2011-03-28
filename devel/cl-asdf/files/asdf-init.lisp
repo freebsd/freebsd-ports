@@ -206,6 +206,8 @@ LISP-SPECIFIC-FASL-SUBDIR as well."
 (or (ignore-errors (load *asdf-binary-pathname* :verbose t :print nil))
     (load *asdf-pathname* :verbose t :print nil))
 
+#+openmcl (push "ccl:tools;asdf-install;" asdf:*central-registry*)
+
 (pushnew *system-registry* asdf:*central-registry*)
 
 ;; The bundled ASDFs in SBCL and Clozure CL need asdf-binary-locations
