@@ -25,7 +25,8 @@ MAKE_JOBS_SAFE=	yes
 OPTIONS=	ADDAUTH_PATCH "Bypass checks for SMTP AUTH connections" off \
 		REJECTTEXT_PATCH "Customize SMTP reject message" off \
 		LDAP "LDAP support" off \
-		SENDMAIL_PORT "Build against sendmail port" off
+		SENDMAIL_PORT "Build against sendmail port" off \
+		IPV6 "Apply IPv6 whitelist patch" off
 
 .include <bsd.port.pre.mk>
 
@@ -40,6 +41,10 @@ NEW_ARGS:=	${NEW_ARGS}a
 .if defined(WITH_REJECTTEXT_PATCH)
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-rejecttext1
 NEW_ARGS:=	${NEW_ARGS}R:
+.endif
+
+.if defined(WITH_IPV6)
+EXTRA_PATCHES+= ${FILESDIR}/extra-patch-ipv6
 .endif
 
 # extra-patch-options is modified in pre-patch
