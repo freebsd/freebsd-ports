@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	HTTP-MobileAgent
-PORTVERSION=	0.29
+PORTVERSION=	0.32
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,7 +14,10 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	An HTTP mobile user agent string parser for Perl
 
-RUN_DEPENDS=	${SITE_PERL}/HTTP/Headers.pm:${PORTSDIR}/www/p5-libwww
+LICENSE_COMB=	dual
+LICENSE=	ART20 GPLv1
+
+RUN_DEPENDS=	p5-libwww>=1.43:${PORTSDIR}/www/p5-libwww
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
