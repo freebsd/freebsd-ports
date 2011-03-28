@@ -7,7 +7,7 @@
 
 PORTNAME=	bloodfrontier
 DISTVERSION=	B2
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/Blood%20Frontier%20Beta%202
 DISTNAME=	${PORTNAME}-${DISTVERSION}-linux
@@ -25,10 +25,11 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 ALL_TARGET=	libenet ${BINARIES}
 MAKE_JOBS_SAFE=	yes
 
-SUB_FILES=	bfclient bfserver pkg-message
+SUB_FILES=	bfclient bfserver
 
 OPTIONS=	CLIENT "Build client" on \
-		DEDICATED "Build dedicated server" on
+		DEDICATED "Build dedicated server" on \
+		OPTIMIZED_CFLAGS "Enabled additional optimizations" on
 
 .include <bsd.port.options.mk>
 
@@ -52,6 +53,11 @@ PLIST_FILES+=	bin/bfserver libexec/bfserver
 BINARIES+=	server
 .endif
 
+.if defined(WITH_OPTIMIZED_CFLAGS)
+CFLAGS+=	-O3 -fomit-frame-pointer
+CXXFLAGS+=	-O3 -fomit-frame-pointer
+.endif
+
 do-install:
 .for f in ${BINARIES}
 	${INSTALL_SCRIPT} ${WRKDIR}/bf${f} ${PREFIX}/bin
@@ -65,9 +71,5 @@ post-install:
 		${SED} -e 's|^${PREFIX}/||' >> ${TMPPLIST}
 	@${FIND} ${DATADIR} -type d | ${SORT} -r | \
 		${SED} -e 's|^${PREFIX}/|@dirrm |' >> ${TMPPLIST}
-
-	@${ECHO_CMD}
-	@${CAT} ${PKGMESSAGE}
-	@${ECHO_CMD}
 
 .include <bsd.port.mk>
