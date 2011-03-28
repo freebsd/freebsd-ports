@@ -6,14 +6,20 @@
 #
 
 PORTNAME=	Test-File-Contents
-PORTVERSION=	0.05
-PORTREVISION=	1
+PORTVERSION=	0.20
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Test routines for examining the contents of files
+
+LICENSE_COMB=	dual
+LICENSE=	ART20 GPLv1
+
+BUILD_DEPENDS=	p5-Text-Diff>=0.35:${PORTSDIR}/textproc/p5-Text-Diff
+
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_MODBUILD=	yes
 
