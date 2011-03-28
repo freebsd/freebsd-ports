@@ -7,6 +7,7 @@
 
 PORTNAME?=	xmms2
 PORTVERSION=	0.7
+PORTREVISION=	1
 DISTVERSIONSUFFIX=DrNo
 CATEGORIES?=	audio
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}%20${DISTVERSIONSUFFIX}
@@ -123,7 +124,7 @@ PLIST_SUB+=	AVCODEC="@comment "
 
 .if !defined(WITHOUT_CDDA)
 LIB_DEPENDS+=	cdio.12:${PORTSDIR}/sysutils/libcdio \
-		discid.2:${PORTSDIR}/audio/libdiscid
+		discid.0:${PORTSDIR}/audio/libdiscid
 PLIST_SUB+=	CDDA=""
 .else
 EXCLUDE+=	--without-plugins="cdda"

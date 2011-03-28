@@ -7,6 +7,7 @@
 
 PORTNAME=	picard
 PORTVERSION=	0.13
+PORTREVISION=	1
 CATEGORIES=	audio python
 MASTER_SITES=	http://ftp.musicbrainz.org/pub/musicbrainz/picard/ \
 		ftp://ftp.musicbrainz.org/pub/musicbrainz/picard/ \
@@ -18,7 +19,7 @@ COMMENT=	Next generation MusicBrainz Tagger
 
 LIB_DEPENDS=	ofa.0:${PORTSDIR}/audio/libofa \
 		avcodec.1:${PORTSDIR}/multimedia/ffmpeg \
-		discid.2:${PORTSDIR}/audio/libdiscid
+		discid.0:${PORTSDIR}/audio/libdiscid
 RUN_DEPENDS=	py*-mutagen>=0:${PORTSDIR}/audio/py-mutagen \
 		py*-qt4-core>=0:${PORTSDIR}/devel/py-qt4-core \
 		py*-qt4-gui>=0:${PORTSDIR}/x11-toolkits/py-qt4-gui \
@@ -34,8 +35,6 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING.txt
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|libdiscid.so.0|libdiscid.so.2|g' \
-		${WRKSRC}/picard/disc.py
 	@${REINPLACE_CMD} -e "s|'picard.plugins',|'picard.plugins', 'picard.plugins.lastfm', 'picard.plugins.replaygain',|" \
 		${WRKSRC}/setup.py
 	@${CP} -R ${WRKSRC}/contrib/plugins/ ${WRKSRC}/picard/plugins

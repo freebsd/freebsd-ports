@@ -6,6 +6,7 @@
 
 PORTNAME=	musicbrainz2
 PORTVERSION=	0.7.2
+PORTREVISION=	1
 CATEGORIES=	audio python
 MASTER_SITES=	ftp://ftp.musicbrainz.org/pub/musicbrainz/python-musicbrainz2/ \
 		http://uk.musicbrainz.org/pub/musicbrainz/python-musicbrainz2/ \
@@ -17,7 +18,10 @@ DISTNAME=	python-musicbrainz2-${DISTVERSION}
 MAINTAINER=	bsdkaffee@gmail.com
 COMMENT=	Next Generation Python bindings for MusicBrainz
 
-LIB_DEPENDS=	discid.2:${PORTSDIR}/audio/libdiscid
+LICENSE=	BSD
+LICENSE_FILE=	COPYING.txt
+
+LIB_DEPENDS=	discid.0:${PORTSDIR}/audio/libdiscid
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
