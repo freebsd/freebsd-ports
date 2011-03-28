@@ -250,6 +250,7 @@ lib/fricas/target/%%GNU_HOST%%/algebra/FDIV.fasl
 lib/fricas/target/%%GNU_HOST%%/algebra/FDIV2.fasl
 lib/fricas/target/%%GNU_HOST%%/algebra/FDIVCAT-.fasl
 lib/fricas/target/%%GNU_HOST%%/algebra/FDIVCAT.fasl
+lib/fricas/target/%%GNU_HOST%%/algebra/FELFUN.fasl
 lib/fricas/target/%%GNU_HOST%%/algebra/FEVALAB-.fasl
 lib/fricas/target/%%GNU_HOST%%/algebra/FEVALAB.fasl
 lib/fricas/target/%%GNU_HOST%%/algebra/FEXPR.fasl
@@ -896,6 +897,8 @@ lib/fricas/target/%%GNU_HOST%%/algebra/REPSQ.fasl
 lib/fricas/target/%%GNU_HOST%%/algebra/RESLATC.fasl
 lib/fricas/target/%%GNU_HOST%%/algebra/RESRING.fasl
 lib/fricas/target/%%GNU_HOST%%/algebra/RESULT.fasl
+lib/fricas/target/%%GNU_HOST%%/algebra/RETFROM.fasl
+lib/fricas/target/%%GNU_HOST%%/algebra/RETFROM-.fasl
 lib/fricas/target/%%GNU_HOST%%/algebra/RETRACT-.fasl
 lib/fricas/target/%%GNU_HOST%%/algebra/RETRACT.fasl
 lib/fricas/target/%%GNU_HOST%%/algebra/RETSOL.fasl
@@ -1057,6 +1060,7 @@ lib/fricas/target/%%GNU_HOST%%/algebra/TESTUNIT.fasl
 lib/fricas/target/%%GNU_HOST%%/algebra/TEX.fasl
 lib/fricas/target/%%GNU_HOST%%/algebra/TEX1.fasl
 lib/fricas/target/%%GNU_HOST%%/algebra/TEXTFILE.fasl
+lib/fricas/target/%%GNU_HOST%%/algebra/TMFORM.fasl
 lib/fricas/target/%%GNU_HOST%%/algebra/TOOLSIGN.fasl
 lib/fricas/target/%%GNU_HOST%%/algebra/TOPSP.fasl
 lib/fricas/target/%%GNU_HOST%%/algebra/TRANFUN-.fasl
@@ -1068,6 +1072,11 @@ lib/fricas/target/%%GNU_HOST%%/algebra/TRIGMNIP.fasl
 lib/fricas/target/%%GNU_HOST%%/algebra/TRIMAT.fasl
 lib/fricas/target/%%GNU_HOST%%/algebra/TRMANIP.fasl
 lib/fricas/target/%%GNU_HOST%%/algebra/TS.fasl
+lib/fricas/target/%%GNU_HOST%%/algebra/TSEREXP.fasl
+lib/fricas/target/%%GNU_HOST%%/algebra/TSEREXPL.fasl
+lib/fricas/target/%%GNU_HOST%%/algebra/TSEREXPP.fasl
+lib/fricas/target/%%GNU_HOST%%/algebra/TSEREXPT.fasl
+lib/fricas/target/%%GNU_HOST%%/algebra/TSEREXP-.fasl
 lib/fricas/target/%%GNU_HOST%%/algebra/TSETCAT-.fasl
 lib/fricas/target/%%GNU_HOST%%/algebra/TSETCAT.fasl
 lib/fricas/target/%%GNU_HOST%%/algebra/TUBE.fasl
@@ -1183,7 +1192,6 @@ lib/fricas/target/%%GNU_HOST%%/autoload/c-doc.fasl
 lib/fricas/target/%%GNU_HOST%%/autoload/c-util.fasl
 lib/fricas/target/%%GNU_HOST%%/autoload/category.fasl
 lib/fricas/target/%%GNU_HOST%%/autoload/compiler.fasl
-lib/fricas/target/%%GNU_HOST%%/autoload/def.fasl
 lib/fricas/target/%%GNU_HOST%%/autoload/define.fasl
 lib/fricas/target/%%GNU_HOST%%/autoload/functor.fasl
 lib/fricas/target/%%GNU_HOST%%/autoload/ht-root.fasl
@@ -1192,22 +1200,17 @@ lib/fricas/target/%%GNU_HOST%%/autoload/htcheck.fasl
 lib/fricas/target/%%GNU_HOST%%/autoload/htsetvar.fasl
 lib/fricas/target/%%GNU_HOST%%/autoload/info.fasl
 lib/fricas/target/%%GNU_HOST%%/autoload/iterator.fasl
-lib/fricas/target/%%GNU_HOST%%/autoload/mark.fasl
 lib/fricas/target/%%GNU_HOST%%/autoload/modemap.fasl
 lib/fricas/target/%%GNU_HOST%%/autoload/nruncomp.fasl
-lib/fricas/target/%%GNU_HOST%%/autoload/nspadaux.fasl
 lib/fricas/target/%%GNU_HOST%%/autoload/package.fasl
 lib/fricas/target/%%GNU_HOST%%/autoload/profile.fasl
-lib/fricas/target/%%GNU_HOST%%/autoload/pspad1.fasl
-lib/fricas/target/%%GNU_HOST%%/autoload/pspad2.fasl
 lib/fricas/target/%%GNU_HOST%%/autoload/showimp.fasl
 lib/fricas/target/%%GNU_HOST%%/autoload/topics.fasl
-lib/fricas/target/%%GNU_HOST%%/autoload/wi1.fasl
-lib/fricas/target/%%GNU_HOST%%/autoload/wi2.fasl
 lib/fricas/target/%%GNU_HOST%%/bin/AXIOMsys
 lib/fricas/target/%%GNU_HOST%%/bin/asq
 lib/fricas/target/%%GNU_HOST%%/bin/axiom
 lib/fricas/target/%%GNU_HOST%%/bin/clef
+lib/fricas/target/%%GNU_HOST%%/bin/fricas
 lib/fricas/target/%%GNU_HOST%%/bin/htadd
 lib/fricas/target/%%GNU_HOST%%/bin/hypertex
 lib/fricas/target/%%GNU_HOST%%/bin/sman
@@ -2731,6 +2734,7 @@ lib/fricas/target/%%GNU_HOST%%/src/algebra/rinterp.spad.pamphlet
 lib/fricas/target/%%GNU_HOST%%/src/algebra/rule.spad.pamphlet
 lib/fricas/target/%%GNU_HOST%%/src/algebra/scene.spad.pamphlet
 lib/fricas/target/%%GNU_HOST%%/src/algebra/seg.spad.pamphlet
+lib/fricas/target/%%GNU_HOST%%/src/algebra/serexp.spad.pamphlet
 lib/fricas/target/%%GNU_HOST%%/src/algebra/setorder.spad.pamphlet
 lib/fricas/target/%%GNU_HOST%%/src/algebra/sets.spad.pamphlet
 lib/fricas/target/%%GNU_HOST%%/src/algebra/sex.spad.pamphlet
@@ -2768,6 +2772,7 @@ lib/fricas/target/%%GNU_HOST%%/src/algebra/tableau.spad.pamphlet
 lib/fricas/target/%%GNU_HOST%%/src/algebra/taylor.spad.pamphlet
 lib/fricas/target/%%GNU_HOST%%/src/algebra/tensor.spad.pamphlet
 lib/fricas/target/%%GNU_HOST%%/src/algebra/tex.spad.pamphlet
+lib/fricas/target/%%GNU_HOST%%/src/algebra/texmacs.spad.pamphlet
 lib/fricas/target/%%GNU_HOST%%/src/algebra/transsolve.spad.pamphlet
 lib/fricas/target/%%GNU_HOST%%/src/algebra/tree.spad.pamphlet
 lib/fricas/target/%%GNU_HOST%%/src/algebra/trigcat.spad.pamphlet
