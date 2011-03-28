@@ -6,7 +6,6 @@
 #
 
 PKGNAMESUFFIX=	-qt4
-PORTREVISION=	1
 
 COMMENT=	Qt4 modules of uim input method
 
