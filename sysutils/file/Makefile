@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	file
-PORTVERSION=	5.04
+PORTVERSION=	5.05
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://ftp.astron.com/pub/file/ \
 		ftp://ftp.gw.com/mirrors/unix/file/ \
