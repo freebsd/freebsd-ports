@@ -7,6 +7,7 @@
 
 PORTNAME=	MusicBrainz-DiscID
 PORTVERSION=	0.03
+PORTREVISION=	1
 CATEGORIES=	audio perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -15,7 +16,7 @@ MAINTAINER=	tobias.rehbein@web.de
 COMMENT=	Perl interface for the MusicBrainz libdiscid library
 
 BUILD_DEPENDS=	p5-Test-Pod>=0:${PORTSDIR}/devel/p5-Test-Pod
-LIB_DEPENDS=	discid.2:${PORTSDIR}/audio/libdiscid
+LIB_DEPENDS=	discid.0:${PORTSDIR}/audio/libdiscid
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 USE_GNOME=	pkgconfig
