@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	serviio
-PORTVERSION=	0.5
+PORTVERSION=	0.5.2
 CATEGORIES=	net multimedia java www
 MASTER_SITES=	http://download.serviio.org/releases/
 EXTRACT_SUFX=	-linux.tar.gz

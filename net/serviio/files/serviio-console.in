@@ -13,5 +13,15 @@ SERVIIO_CONSOLE_CLASS_PATH="$SERVIIO_CONSOLE_HOME/serviio-client.jar:$SERVIIO_CO
 # Setup Serviio specific properties
 JAVA_OPTS="-Dserviio.home=$SERVIIO_CONSOLE_HOME -Djava.net.preferIPv4Stack=true -Dffmpeg.location=%%LOCALBASE%%/bin/ffmpeg -Dlog4j.configuration=file:%%ETCDIR%%/console-log4j.properties"
 
+# A kludge to get the -D... flags to Java, rather than to Serviio itself:
+for o in "$@"
+do
+	case $o in
+	-D*)
+		JAVA_OPTS="$JAVA_OPTS $o"
+		;;
+	esac
+done
+
 # Execute the JVM in the foreground
-exec java $JAVA_OPTS "$@" -classpath "$SERVIIO_CONSOLE_CLASS_PATH" org.serviio.console.ServiioConsole
+exec java $JAVA_OPTS -classpath "$SERVIIO_CONSOLE_CLASS_PATH" org.serviio.console.ServiioConsole "$@"

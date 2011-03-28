@@ -12,5 +12,16 @@ SERVIIO_CLASS_PATH="$SERVIIO_HOME/serviio.jar:$SERVIIO_HOME/derby.jar:$SERVIIO_H
 # Setup Serviio specific properties
 JAVA_OPTS="-Djava.net.preferIPv4Stack=true -Djava.awt.headless=true -Dderby.system.home=/var/db/serviio -Dserviio.home=$SERVIIO_HOME -Dffmpeg.location=%%LOCALBASE%%/bin/ffmpeg"
 
+
+# A kludge to get the -D... flags to Java, rather than to Serviio itself:
+for o in "$@"
+do
+	case $o in
+	-D*)
+		JAVA_OPTS="$JAVA_OPTS $o"
+		;;
+	esac
+done
+
 # Execute the JVM in the foreground
-exec java -Xmx384M $JAVA_OPTS "$@" -classpath "$SERVIIO_CLASS_PATH" org.serviio.MediaServer
+exec java -Xmx384M $JAVA_OPTS -classpath "$SERVIIO_CLASS_PATH" org.serviio.MediaServer "$@"
