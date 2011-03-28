@@ -6122,7 +6122,6 @@ irc2dc                          ports/irc/irc2dc
 ircII                           ports/irc/ircII
 irc_ninja                       ports/irc/ninja
 ircd-hybrid                     ports/irc/ircd-hybrid
-ircd-hybrid-ru                  ports/irc/ircd-hybrid-ru
 ircd-ratbox                     ports/irc/ircd-ratbox
 ircd-ratbox-devel               ports/irc/ircd-ratbox-devel
 ircd-ru                         ports/irc/ircd-ru
@@ -21466,6 +21465,7 @@ py-django-storages              ports/www/py-django-storages
 py-django-tagging               ports/www/py-django-tagging
 py-django-threaded-multihost    ports/www/py-django-threaded-multihost
 py-django11                     ports/www/py-django11
+py-django12                     ports/www/py-django12
 py-djblets                      ports/www/py-djblets
 py-dns                          ports/dns/py-dns
 py-dnspython                    ports/dns/py-dnspython
@@ -23001,6 +23001,7 @@ ru-fortune-bashorgru            ports/russian/fortune-bashorgru
 ru-fortuneru                    ports/russian/fortuneru
 ru-gd                           ports/russian/gd
 ru-gimp-help                    ports/russian/gimp-help
+ru-ircd-hybrid-ru               ports/russian/ircd-hybrid-ru
 ru-kde3-i18n                    ports/russian/kde3-i18n
 ru-kde4-l10n                    ports/russian/kde4-l10n
 ru-koffice-i18n                 ports/russian/koffice-i18n
@@ -23490,6 +23491,7 @@ rubygem-multipart-post          ports/www/rubygem-multipart-post
 rubygem-murder                  ports/sysutils/rubygem-murder
 rubygem-mutter                  ports/devel/rubygem-mutter
 rubygem-ncurses                 ports/devel/rubygem-ncurses
+rubygem-ncursesw                ports/devel/rubygem-ncursesw
 rubygem-needle                  ports/devel/rubygem-needle
 rubygem-net-irc                 ports/irc/rubygem-net-irc
 rubygem-net-ldap                ports/net/rubygem-net-ldap
@@ -24734,6 +24736,7 @@ swaks                           ports/mail/swaks
 swami                           ports/audio/swami
 swank-clojure                   ports/devel/swank-clojure
 swapd                           ports/sysutils/swapd
+swapexd                         ports/sysutils/swapexd
 swapmon                         ports/sysutils/swapmon
 swarp                           ports/x11/swarp
 swatch                          ports/security/swatch
@@ -25077,7 +25080,7 @@ thumbnail_index                 ports/www/thumbnail_index
 thunar                          ports/x11-fm/thunar
 thunar-archive-plugin           ports/archivers/thunar-archive-plugin
 thunar-media-tags-plugin        ports/audio/thunar-media-tags-plugin
-thunar-svn-plugin               ports/devel/thunar-svn-plugin
+thunar-vcs-plugin               ports/devel/thunar-vcs-plugin
 thunar-vfs                      ports/x11-fm/thunar-vfs
 thunar-volman-plugin            ports/sysutils/thunar-volman-plugin
 thunderbird                     ports/mail/thunderbird
