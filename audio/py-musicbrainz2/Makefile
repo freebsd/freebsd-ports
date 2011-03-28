@@ -19,7 +19,7 @@ MAINTAINER=	bsdkaffee@gmail.com
 COMMENT=	Next Generation Python bindings for MusicBrainz
 
 LICENSE=	BSD
-LICENSE_FILE=	COPYING.txt
+LICENSE_FILE=	${WRKSRC}/COPYING.txt
 
 LIB_DEPENDS=	discid.0:${PORTSDIR}/audio/libdiscid
 
