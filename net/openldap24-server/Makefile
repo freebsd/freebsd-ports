@@ -39,12 +39,12 @@ WANT_OPENLDAP_VER?=	24
 BROKEN=			incompatible OpenLDAP version: ${WANT_OPENLDAP_VER}
 .endif
 
-PORTREVISION_CLIENT=	0
+PORTREVISION_CLIENT=	1
 PORTREVISION_SERVER=	0
 OPENLDAP_SHLIB_MAJOR=	8
 
 OPTIONS=	SASL "With (Cyrus) SASL2 support" off \
-		FETCH "Enable fetch(3) support" on
+		FETCH "Enable fetch(3) support" off
 
 .if !defined(CLIENT_ONLY)
 OPTIONS+=	DYNACL "Run-time loadable ACL (experimental)" off \
