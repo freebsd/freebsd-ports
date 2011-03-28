@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Package-Stash
-PORTVERSION=	0.26
+PORTVERSION=	0.27
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:DOY
@@ -15,9 +15,13 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Routines for manipulating stashes
 
+LICENSE_COMB=	dual
+LICENSE=	ART20 GPLv1
+
 BUILD_DEPENDS=	\
 	p5-Package-Stash-XS>=0.22:${PORTSDIR}/devel/p5-Package-Stash-XS \
 	p5-Package-DeprecationManager>=0:${PORTSDIR}/devel/p5-Package-DeprecationManager
+
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 TEST_DEPENDS=	p5-Test-Simple>=0.88:${PORTSDIR}/devel/p5-Test-Simple \
