@@ -51,11 +51,11 @@
 ;;   ~/.cmucl-init.lisp
 ;;
 ;; SBCL:
-;;  %%PREFIX%%/etc/sbclrc
-;;  ~/.sbclrc
+;;   %%PREFIX%%/etc/sbclrc
+;;   ~/.sbclrc
 ;;
 ;; CLOZURE CL / OPENMCL:
-;;  ~/.ccl-init.lisp
+;;   ~/.ccl-init.lisp
 ;;
 ;; After that, you can load your installed ports like this (using
 ;; textproc/cl-ppcre as an example):
