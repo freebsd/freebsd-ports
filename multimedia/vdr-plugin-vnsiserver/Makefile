@@ -9,7 +9,8 @@ PORTNAME=	vdr-plugin-vnsiserver
 PORTVERSION=	0.0.2s20100808.0952
 PORTREVISION=	6
 CATEGORIES=	multimedia
-MASTER_SITES=	http://ppa.launchpad.net/yavdr/testing-vdr/ubuntu/pool/main/v/vdr-plugin-vnsiserver/
+MASTER_SITES=	http://ppa.launchpad.net/yavdr/testing-vdr/ubuntu/pool/main/v/vdr-plugin-vnsiserver/ \
+		LOCAL/nox/
 DISTNAME=	${PORTNAME}_${DISTVERSIONPREFIX}${DISTVERSION:S/s20/+svn20/}${DISTVERSIONSUFFIX}.orig
 
 MAINTAINER=	nox@FreeBSD.org
