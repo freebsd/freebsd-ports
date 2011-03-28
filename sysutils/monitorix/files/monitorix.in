@@ -1,11 +1,6 @@
 #!/bin/sh
 #
-# @(#) Fibranet NSP, SL
-# Copyright (C) 2005-2010 by Jordi Sanfeliu <jordi@fibranet.cat>
-#
-#	/usr/local/etc/rc.d/monitorix
-#
-# Starts Monitorix on FreeBSD systems
+# $FreeBSD$
 #
 # PROVIDE: monitorix
 # REQUIRE: DAEMON
@@ -18,20 +13,24 @@ monitorix_enable=${monitorix_enable:-"NO"}
 
 name="monitorix"
 rcvar=`set_rcvar`
-command_interpreter=%%PERL%%
-start_cmd=monitorix_start
-stop_cmd=monitorix_stop
-
-monitorix_start()
-{   # Creates RRDs files (if needed)
-	%%PREFIX%%/sbin/monitorix.pl create
-	%%PREFIX%%/sbin/monitorix.pl init
-}
-
-monitorix_stop()
-{
-		%%PREFIX%%/sbin/monitorix.pl stop
-}
 
 load_rc_config $name
+
+start_cmd="${name}_start"
+
+pidfile="/var/run/${name}.pid"
+command_interpreter="."
+procname="/usr/local/sbin/${name}"
+
+monitorix_start()
+{
+	if [ -z "$rc_fast" -a -n "$rc_pid" ]; then
+		echo 1>&2 "${name} already running? (pid=$rc_pid)."
+		return 1
+	fi
+	echo "Starting ${name}."
+	rc_flags="-c %%PREFIX%%/etc/${name}.conf -p ${pidfile} ${rc_flags}"
+	%%PERL%% %%PREFIX%%/sbin/${name} ${rc_flags} ${command_args}
+}
+
 run_rc_command "$1"

@@ -6,15 +6,19 @@
 #
 
 PORTNAME=	monitorix
-PORTVERSION=	1.5.1
+PORTVERSION=	2.1.0
 CATEGORIES=	sysutils
-MASTER_SITES=	http://www.monitorix.org/
+MASTER_SITES=	http://www.monitorix.org/ \
+		http://www.bayofrum.net/dist/${PORTNAME}/
 
-MAINTAINER=	admin@mjbrune.org
+MAINTAINER=	utisoft@gmail.com
 COMMENT=	A web based monitoring system
 
 LIB_DEPENDS=	rrd:${PORTSDIR}/databases/rrdtool
-BUILD_DEPENDS=	${SITE_PERL}/LWP/Parallel.pm:${PORTSDIR}/www/p5-ParallelUA
+RUN_DEPENDS=	${SITE_PERL}/LWP/Parallel.pm:${PORTSDIR}/www/p5-ParallelUA \
+		${SITE_PERL}/CGI.pm:${PORTSDIR}/www/p5-CGI.pm \
+		${SITE_PERL}/LWP.pm:${PORTSDIR}/www/p5-libwww \
+		${SITE_PERL}/MIME/Lite.pm:${PORTSDIR}/mail/p5-MIME-Lite
 
 LICENSE=	GPLv2
 
@@ -22,30 +26,34 @@ OPTIONS=	REPORTS "Mail HTML reports to a given address" off
 
 .include <bsd.port.options.mk>
 
+USE_PERL=	5.8+
 MAN5=		monitorix.conf.5
 MANCOMPRESSED=	no
 NO_BUILD=	yes
+USE_RC_SUBR=	${PORTNAME}
 
 CGIDIR?=	${PREFIX}/www/cgi-bin
-#REPORTS?=	true
-# owner of $WWWROOT/imgs
+CGIPATH?=	${CGIDIR:C,^.*/,/,}
 WWW_OWNER?=	${WWWOWN}
 WWW_GROUP?=	${WWWGRP}
-DATADIR=	${INSTDIR}
 REPORT_LANG=	ca de en it
-INSTDIR=	${PREFIX}/${PORTNAME}
-# WWWROOT: (WWWDIR - portname), we need the resulting path for a variable in monitorix.conf
-WWWROOT=	${WWWDIR:S,${PORTNAME},,}
+WWWROOT=	${WWWDIR:S,/${PORTNAME}$,,}
 
 SUB_FILES=	pkg-message
-SUB_LIST=	PERL=${PERL} INSTDIR=${INSTDIR}
-PLIST_SUB+=	CGIDIR=${CGIDIR:S,${PREFIX}/,,} WWW_OWNER=${WWW_OWNER} WWW_GROUP=${WWW_GROUP}
+SUB_LIST=	PERL=${PERL}
 
-WWW_FILES=	logo_top.png logo_bot.png monitorixico.png
-DOCS=		COPYING Changes README README.FreeBSD README.nginx TODO \
-		monitorix-alert.sh monitorix-apache.conf
-REPORT_FILES=	imgs_email/blank.png imgs_email/logo.jpg imgs_email/signature.png \
-		imgs_email/title.jpg traffic_report.html traffic_report.sh
+PLIST_SUB+=	CGIDIR=${CGIDIR:C,^${PREFIX}/,,}
+
+WWW_FILES=	logo_top.png \
+		logo_bot.png \
+		monitorixico.png
+
+PORTDOCS=	COPYING \
+		Changes \
+		README \
+		README.FreeBSD \
+		monitorix-alert.sh \
+		monitorix-apache.conf
 
 .if defined(WITH_REPORTS)
 RUN_DEPENDS+=	metamail>=2.7:${PORTSDIR}/mail/metamail
@@ -60,33 +68,26 @@ pre-everything::
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "DATADIR=${DATADIR}	Where do you put RRD databases?"
 	@${ECHO_MSG} "CGIDIR=${CGIDIR}	Where do you put cgi?"
+	@${ECHO_MSG} "CGIPATH=${CGIPATH}	What is the relative URL for cgi files?"
 	@${ECHO_MSG} "WWWDIR=${WWWDIR}	Where do you put httpd's document root?"
 	@${ECHO_MSG} ""
 
 post-patch:
-.for f in cgi conf pl
-	@${REINPLACE_CMD} -e "s|/usr/bin/perl|${PERL}|" ${WRKSRC}/monitorix.${f}
+# Set FreeBSD path for perl in shebang
+.for f in monitorix.cgi monitorix.conf monitorix reports/send_reports
+	@${REINPLACE_CMD} -e "1s|^\(#!\).*|\1${PERL}|" ${WRKSRC}/${f}
 .endfor
-# Notes about the adjustments for default configuration:
-# - set FreeBSD as OSTYPE
-# - set a generic WWWROOT, since we can include it in the webserver config
-# - milter-greylist use a new database path on FreeBSD
-# - FreeBSD's interface name came from the NIC, the lo0 interface is almost everytime present
-# - file/directory handling outside ${PREFIX} with ports is silly. We don't want to rewrite
-#   monitorix.pl therefore we use ${PREFIX} instead /var/db/!
-	@${REINPLACE_CMD} -e 's|our \$$OSTYPE = \"Linux-RHFC\"|our \$$OSTYPE = \"FreeBSD\"|' \
-		-e "s|/usr/local/www/apache22/data|${WWWROOT}|" \
-		-e "s|/var/lib/milter-greylist/db/greylist.db|/var/milter-greylist/greylist.db|" \
-		-e "s|eth0|lo0|g" -e "s|/var/db/monitorix/|${INSTDIR}/|" \
-		-e "s|%%INSTDIR%%|${INSTDIR}|g" ${WRKSRC}/monitorix.conf
-.for d in ${REPORT_LANG}
-	@${REINPLACE_CMD} -e "s|^rm|${RM}|g" -e "s|/bin/sed|${SED}|g" \
-		-e "s|/usr/bin/metasend|${PREFIX}/bin/metasend|g" \
-		-e "s|\"tmp|\"/tmp/${PORTNAME}_report|g" ${WRKSRC}/reports/${d}/traffic_report.sh
-.endfor
+# eth0 doesn't exist in FreeBSD! Also let's set our own paths.
+	@${REINPLACE_CMD} \
+		-e 's|\($$BASE_DIR = "\)[^"]*|\1${WWWDIR}|' \
+		-e 's|\($$BASE_LIB = "\)[^"]*|\1${DATADIR}|' \
+		-e 's|\($$BASE_CGI = "\)[^"]*|\1${CGIPATH}|' \
+		-e "s|/var/lib/milter-greylist/db/|/var/milter-greylist/|" \
+		-e "s|eth0|lo0|g" \
+			${WRKSRC}/monitorix.conf
 
 do-install:
-	@${INSTALL_SCRIPT} ${WRKSRC}/monitorix.pl ${PREFIX}/sbin/
+	@${INSTALL_SCRIPT} ${WRKSRC}/monitorix ${PREFIX}/sbin/
 	@${MKDIR} ${WWWDIR}/imgs
 	@${CHOWN} ${WWW_OWNER}:${WWW_GROUP} ${WWWDIR}/imgs
 	@for f in ${WWW_FILES}; do \
@@ -95,19 +96,18 @@ do-install:
 	@${MKDIR} ${CGIDIR}
 	@${INSTALL_SCRIPT} ${WRKSRC}/monitorix.cgi ${CGIDIR}/
 .for m in ${MAN5}
-	@${INSTALL_MAN} ${WRKSRC}/man/man5/$m ${PREFIX}/man/man5/
+	@${INSTALL_MAN} ${WRKSRC}/man/man5/$m ${MAN5PREFIX}/man/man5/
 .endfor
 .if defined(WITH_REPORTS)
+	@${MKDIR} ${WWWDIR}/reports
 . for l in ${REPORT_LANG}
-	@${MKDIR} ${PREFIX}/${PORTNAME}/reports/${l}/imgs_email
-.	for f in ${REPORT_FILES}
-		@${INSTALL_DATA} ${WRKSRC}/reports/${l}/${f} ${PREFIX}/${PORTNAME}/reports/${l}/${f}
-.	endfor
+	@${INSTALL_DATA} ${WRKSRC}/reports/${l}.html \
+		${WWWDIR}/reports/
 . endfor
 .endif
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-	@for doc in ${DOCS}; do \
+	@for doc in ${PORTDOCS}; do \
 		${INSTALL_DATA} ${WRKSRC}/$${doc} ${DOCSDIR}; \
 	done
 .endif
@@ -115,9 +115,9 @@ do-install:
 post-install:
 	@${INSTALL_DATA} ${WRKSRC}/monitorix.conf ${PREFIX}/etc/monitorix.conf.sample
 	@if [ ! -f ${PREFIX}/etc/monitorix.conf ]; then \
-		${CP} -p ${PREFIX}/etc/monitorix.conf.sample ${PREFIX}/etc/monitorix.conf ; \
+		${CP} -p ${PREFIX}/etc/monitorix.conf.sample \
+			${PREFIX}/etc/monitorix.conf ; \
 	fi
-	@${MKDIR} ${DATADIR}/usage
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
