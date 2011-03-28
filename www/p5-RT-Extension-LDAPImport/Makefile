@@ -6,14 +6,16 @@
 #
 
 PORTNAME=	RT-Extension-LDAPImport
-PORTVERSION=	0.07
-PORTREVISION=	1
+PORTVERSION=	0.31
 CATEGORIES=	www net perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	m.seaman@infracaninophile.co.uk
 COMMENT=	RT extension to import users from an LDAP store
+
+LICENSE_COMB=	dual
+LICENSE=	ART10 GPLv1
 
 BUILD_DEPENDS=	${SITE_PERL}/Net/LDAP.pm:${PORTSDIR}/net/p5-perl-ldap \
 		${SITE_PERL}/Class/Accessor.pm:${PORTSDIR}/devel/p5-Class-Accessor
@@ -45,11 +47,6 @@ MAN3PREFIX=	${PREFIX}
 
 MAN3=		RT::Extension::LDAPImport.3
 PLIST_SUB+=	RTHOME=${RTHOME}
-
-post-patch:
-	@${REINPLACE_CMD} -e 's,/opt/rt3/lib,${RT_PM_DIR},' \
-	    ${WRKSRC}/bin/rtldapimport && \
-	    ${RM} ${WRKSRC}/bin/rtldapimport.bak
 
 # Note: You can install using an arbitrary $PREFIX but only if it
 # matches the $PREFIX used to install www/rt3{6,8}.  Hence ignore
