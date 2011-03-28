@@ -208,8 +208,9 @@ LISP-SPECIFIC-FASL-SUBDIR as well."
 
 (pushnew *system-registry* asdf:*central-registry*)
 
-;; The bundled ASDF in SBCL needs asdf-binary-locations
+;; The bundled ASDFs in SBCL and Clozure CL need asdf-binary-locations
 #+sbcl (asdf:operate 'asdf:load-op :asdf-binary-locations)
+#+openmcl (asdf:operate 'asdf:load-op :asdf-binary-locations)
 
 (defun asdf:implementation-specific-directory-name ()
   "Return a name that can be used as a directory name that is unique to
