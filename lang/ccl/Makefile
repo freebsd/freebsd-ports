@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ccl
-PORTVERSION=	1.5
+PORTVERSION=	1.6
 CATEGORIES=	lang lisp
 MASTER_SITES=	ftp://ftp.clozure.com/pub/release/${PORTVERSION}/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-freebsdx86
@@ -24,6 +24,10 @@ CCL_DIRECTORY=	${PREFIX}/lib/ccl
 CCL_PLIST=	${WRKDIR}/pkg-plist
 # the following files will not be installed
 EXCLUDE=	cocoa-ide lisp-kernel scripts
+
+USE_ASDF=	yes
+
+.include "${.CURDIR}/../../devel/cl-asdf/bsd.cl-asdf.mk"
 
 .include <bsd.port.pre.mk>
 
@@ -54,8 +58,6 @@ do-build:
 	fi
 	@cd ${WRKSRC} && ${ECHO_CMD} | ./${FX86CL} --no-init --batch --quiet \
 		--eval "(ccl:rebuild-ccl :full t)" \
-		--eval "(require 'asdf)" \
-		--eval "(asdf:operate 'asdf:load-op 'asdf-install)" \
 		--eval "(quit)"
 
 do-install:
@@ -67,6 +69,11 @@ do-install:
 	@${INSTALL_SCRIPT} ${WRKDIR}/ccl.sh ${PREFIX}/bin/ccl
 
 post-install:
+	@cd ${WRKSRC} && ${ECHO_CMD} | ./${FX86CL} --no-init --batch --quiet \
+		--eval "(require 'asdf)" \
+		--eval '(load "/usr/local/etc/asdf-init.lisp")' \
+		--eval "(asdf:operate 'asdf:load-op 'asdf-install)" \
+		--eval "(quit)"
 	@cd ${PREFIX}; ${FIND} lib/ccl/* -type d -empty \
 		| ${SORT} \
 		| ${SED} -e 's#^#@exec ${MKDIR} %D/#g' \
