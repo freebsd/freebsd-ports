@@ -25,6 +25,18 @@ WANT_GNOME=	yes
 WANT_PERL=	yes
 MAKE_JOBS_UNSAFE=	yes
 
+# One can tune the following "hidden" knobs:
+# - EXIM_USER: user exim is running as;
+# - EXIM_GROUP: ditto for the group;
+# - LOGDIR: where Exim logs will be put;
+# - LOG_FILE_PATH: path where '%s' will be substituted with
+#                  the target name (main, reject, etc);
+# - CONFIG_FILE_PATH: path to the default configuration file;
+# - ALT_CONFIG_PREFIX: path to the default prefix for all
+#                      configuration files, excluding the main one;
+#                      will be effective only when WITH_ALT_CONFIG_PREFIX
+#                      will be set via OPTIONS.
+
 .if make(makesum) && !defined(FETCH_ALL)
 .error "You forgot to define FETCH_ALL to create the sane distinfo"
 .endif
@@ -65,7 +77,7 @@ PLIST_SUB+=	SO_1024=""
 PLIST_SUB+=	SO_1024="@comment "
 .endif
 
-EXIM_VERSION=	4.74
+EXIM_VERSION=	4.75
 SA_EXIM_VERSION=4.2
 SO_1024_VERSION=3.2
 
@@ -123,8 +135,10 @@ MAKE_ENV+=	INSTALL_ARG="-no_chown"
 EXIM_USER?=	mailnull
 EXIM_GROUP?=	mail
 
-LOGDIR?=	/var/log/exim
-LOG_FILE_PATH?=	${LOGDIR}/%slog
+LOGDIR?=		/var/log/exim
+LOG_FILE_PATH?=		${LOGDIR}/%slog
+CONFIG_FILE_PATH?=	${PREFIX}/etc/exim/configure
+ALT_CONFIG_PREFIX?=	${PREFIX}/etc/exim/
 
 SED_SCRIPT=	-e 's,%%PREFIX%%,${PREFIX},g' \
 		-e 's,%%DOCSDIR%%,${DOCSDIR},g' \
@@ -173,6 +187,8 @@ SEDLIST+=	-e 's,XX_CFLAGS_XX,${CFLAGS},' \
 		-e 's,XX_PREFIX_XX,${PREFIX},' \
 		-e 's,XX_LOCALBASE_XX,${LOCALBASE},' \
 		-e 's,XX_LOG_FILE_PATH_XX,${LOG_FILE_PATH},' \
+		-e 's,XX_CONFIG_FILE_PATH_XX,${CONFIG_FILE_PATH},' \
+		-e 's,XX_ALT_CONFIG_PREFIX_XX,${ALT_CONFIG_PREFIX},' \
 		-e 's,XX_EXIM_USER_XX,${EXIM_USER},' \
 		-e 's,XX_EXIM_GROUP_XX,${EXIM_GROUP},' \
 		-e 's,XX_DEFAULT_CHARSET_XX,${WITH_DEFAULT_CHARSET},'

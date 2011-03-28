@@ -14,7 +14,7 @@
  # file does not exist.
  
 -CONFIGURE_FILE=/usr/exim/configure
-+CONFIGURE_FILE=XX_PREFIX_XX/etc/exim/configure
++CONFIGURE_FILE=XX_CONFIG_FILE_PATH_XX
  
  # It is possible to specify a colon-separated list of files for CONFIGURE_FILE.
  # In this case, Exim will use the first of them that exists when it is run.
@@ -78,7 +78,7 @@
  
  # ALT_CONFIG_PREFIX=/some/directory/
  # ALT_CONFIG_PREFIX=/some/directory/exim.conf-
-+ALT_CONFIG_PREFIX=XX_PREFIX_XX/etc/exim/
++ALT_CONFIG_PREFIX=XX_ALT_CONFIG_PREFIX_XX
  
  
  #------------------------------------------------------------------------------
