@@ -30,7 +30,7 @@ CONFIGURE_ARGS=	--with-html-dir=${DOCSDIR} \
 		--disable-directfb \
 		--enable-tee \
 		--enable-gobject
-USE_GNOME=	glib20 gnomehack ltverhack referencehack
+USE_GNOME=	gnomehack ltverhack referencehack
 USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
 
@@ -46,7 +46,8 @@ PLIST_SUB+=	X11=""
 .endif
 
 OPTIONS+=	GL "Enable OpenGL Support" Off \
-		XCB "Enable XCB (X C-language Binding) Support" On
+		XCB "Enable XCB (X C-language Binding) Support" On \
+		GLIB "Enable GObject Functions Feature" On
 
 .include <bsd.port.pre.mk>
 
@@ -68,6 +69,13 @@ PLIST_SUB+=		XCB=""
 .else
 CONFIGURE_ARGS+=	--disable-xcb
 PLIST_SUB+=		XCB="@comment "
+.endif
+
+.if defined(WITH_GLIB)
+USE_GNOME+=	glib20
+.else
+CONFIGURE_ARGS+=	--enable-gobject=no
+PLIST_SUB+=	GLIB="@comment "
 .endif
 
 post-patch:

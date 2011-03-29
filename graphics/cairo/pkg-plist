@@ -3,7 +3,7 @@ include/cairo/cairo-deprecated.h
 include/cairo/cairo-features.h
 include/cairo/cairo-ft.h
 %%GL%%include/cairo/cairo-gl.h
-include/cairo/cairo-gobject.h
+%%GLIB%%include/cairo/cairo-gobject.h
 include/cairo/cairo-pdf.h
 include/cairo/cairo-ps.h
 include/cairo/cairo-script-interpreter.h
@@ -18,10 +18,10 @@ lib/cairo/libcairo-trace.a
 lib/cairo/libcairo-trace.la
 lib/cairo/libcairo-trace.so
 lib/cairo/libcairo-trace.so.0
-lib/libcairo-gobject.a
-lib/libcairo-gobject.la
-lib/libcairo-gobject.so
-lib/libcairo-gobject.so.2
+%%GLIB%%lib/libcairo-gobject.a
+%%GLIB%%lib/libcairo-gobject.la
+%%GLIB%%lib/libcairo-gobject.so
+%%GLIB%%lib/libcairo-gobject.so.2
 lib/libcairo-script-interpreter.a
 lib/libcairo-script-interpreter.la
 lib/libcairo-script-interpreter.so
@@ -35,7 +35,7 @@ libdata/pkgconfig/cairo-fc.pc
 libdata/pkgconfig/cairo-ft.pc
 %%GL%%libdata/pkgconfig/cairo-gl.pc
 %%GL%%libdata/pkgconfig/cairo-glx.pc
-libdata/pkgconfig/cairo-gobject.pc
+%%GLIB%%libdata/pkgconfig/cairo-gobject.pc
 libdata/pkgconfig/cairo-pdf.pc
 libdata/pkgconfig/cairo-png.pc
 libdata/pkgconfig/cairo-ps.pc
