@@ -1,0 +1,11 @@
+bin/dwebp
+bin/cwebp
+include/webp/decode.h
+include/webp/decode_vp8.h
+include/webp/types.h
+include/webp/encode.h
+lib/libwebp.so
+lib/libwebp.so.0
+lib/libwebp.la
+lib/libwebp.a
+@dirrm include/webp
