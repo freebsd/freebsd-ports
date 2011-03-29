@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	monit
-PORTVERSION=	5.2.4
+PORTVERSION=	5.2.5
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.mmonit.com/monit/dist/
 
