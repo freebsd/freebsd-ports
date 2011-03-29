@@ -18,8 +18,6 @@ WRKSRC=		${WRKDIR}/ccl
 
 ONLY_FOR_ARCHS=	i386 amd64
 
-MANUAL_PACKAGE_BUILD=yes
-
 CCL_DIRECTORY=	${PREFIX}/lib/ccl
 CCL_PLIST=	${WRKDIR}/pkg-plist
 # the following files will not be installed
