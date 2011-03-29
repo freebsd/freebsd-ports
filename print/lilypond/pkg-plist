@@ -292,28 +292,6 @@ lib/lilypond/%%PORTVERSION%%/python/midi.so
 %%DATADIR%%/%%PORTVERSION%%/vim/syntax/lilypond-words.vim
 %%DATADIR%%/%%PORTVERSION%%/vim/syntax/lilypond.vim
 %%DATADIR%%/current
-%%DOCS%%share/omf/lilypond/%%PORTVERSION%%/internals.html.omf
-%%DOCS%%share/omf/lilypond/%%PORTVERSION%%/internals.pdf.omf
-%%DOCS%%share/omf/lilypond/%%PORTVERSION%%/contributor.html.omf
-%%DOCS%%share/omf/lilypond/%%PORTVERSION%%/web.html.omf
-%%DOCS%%share/omf/lilypond/%%PORTVERSION%%/contributor.pdf.omf
-%%DOCS%%share/omf/lilypond/%%PORTVERSION%%/web.pdf.omf
-%%DOCS%%share/omf/lilypond/%%PORTVERSION%%/changes.html.omf
-%%DOCS%%share/omf/lilypond/%%PORTVERSION%%/essay.html.omf
-%%DOCS%%share/omf/lilypond/%%PORTVERSION%%/extending.html.omf
-%%DOCS%%share/omf/lilypond/%%PORTVERSION%%/learning.html.omf
-%%DOCS%%share/omf/lilypond/%%PORTVERSION%%/music-glossary.html.omf
-%%DOCS%%share/omf/lilypond/%%PORTVERSION%%/notation.html.omf
-%%DOCS%%share/omf/lilypond/%%PORTVERSION%%/snippets.html.omf
-%%DOCS%%share/omf/lilypond/%%PORTVERSION%%/usage.html.omf
-%%DOCS%%share/omf/lilypond/%%PORTVERSION%%/changes.pdf.omf
-%%DOCS%%share/omf/lilypond/%%PORTVERSION%%/essay.pdf.omf
-%%DOCS%%share/omf/lilypond/%%PORTVERSION%%/extending.pdf.omf
-%%DOCS%%share/omf/lilypond/%%PORTVERSION%%/learning.pdf.omf
-%%DOCS%%share/omf/lilypond/%%PORTVERSION%%/music-glossary.pdf.omf
-%%DOCS%%share/omf/lilypond/%%PORTVERSION%%/notation.pdf.omf
-%%DOCS%%share/omf/lilypond/%%PORTVERSION%%/snippets.pdf.omf
-%%DOCS%%share/omf/lilypond/%%PORTVERSION%%/usage.pdf.omf
 share/emacs/site-lisp/lilypond-font-lock.el
 share/emacs/site-lisp/lilypond-indent.el
 share/emacs/site-lisp/lilypond-init.el
@@ -357,6 +335,3 @@ share/locale/zh_TW/LC_MESSAGES/lilypond.mo
 @dirrm %%DATADIR%%/%%PORTVERSION%%/fonts
 @dirrm %%DATADIR%%/%%PORTVERSION%%
 @dirrm %%DATADIR%%
-%%DOCS%%@dirrm share/omf/lilypond/%%PORTVERSION%%
-%%DOCS%%@dirrm share/omf/lilypond
-%%DOCS%%@dirrm share/omf
