@@ -31,7 +31,7 @@ MAN1=		sndfile-concat.1 sndfile-cmp.1 sndfile-convert.1 \
 		sndfile-info.1 sndfile-metadata-get.1 sndfile-metadata-set.1 \
 		sndfile-play.1 sndfile-deinterleave.1 sndfile-interleave.1
 
-PORTDOCS=	libsndfile.css new_file_type.HOWTO libsndfile.jpg .html
+PORTDOCS=	libsndfile.css new_file_type.HOWTO libsndfile.jpg *.html
 
 OPTIONS=	EXTERNAL "Enable FLAC and Ogg Vorbis support" on
 
