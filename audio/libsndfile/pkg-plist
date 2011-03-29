@@ -16,24 +16,3 @@ lib/libsndfile.la
 lib/libsndfile.so
 lib/libsndfile.so.1
 libdata/pkgconfig/sndfile.pc
-%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
-%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
-%%PORTDOCS%%%%DOCSDIR%%/FAQ.html
-%%PORTDOCS%%%%DOCSDIR%%/NEWS
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/api.html
-%%PORTDOCS%%%%DOCSDIR%%/bugs.html
-%%PORTDOCS%%%%DOCSDIR%%/command.html
-%%PORTDOCS%%%%DOCSDIR%%/dither.html
-%%PORTDOCS%%%%DOCSDIR%%/embedded_files.html
-%%PORTDOCS%%%%DOCSDIR%%/index.html
-%%PORTDOCS%%%%DOCSDIR%%/libsndfile.css
-%%PORTDOCS%%%%DOCSDIR%%/libsndfile.jpg
-%%PORTDOCS%%%%DOCSDIR%%/lists.html
-%%PORTDOCS%%%%DOCSDIR%%/new_file_type.HOWTO
-%%PORTDOCS%%%%DOCSDIR%%/octave.html
-%%PORTDOCS%%%%DOCSDIR%%/pkgconfig.html
-%%PORTDOCS%%%%DOCSDIR%%/sndfile_info.html
-%%PORTDOCS%%%%DOCSDIR%%/tutorial.html
-%%PORTDOCS%%%%DOCSDIR%%/win32.html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

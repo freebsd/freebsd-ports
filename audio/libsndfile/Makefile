@@ -6,12 +6,15 @@
 #
 
 PORTNAME=	libsndfile
-PORTVERSION=	1.0.23
+PORTVERSION=	1.0.24
 CATEGORIES=	audio
 MASTER_SITES=	http://www.mega-nerd.com/libsndfile/files/
 
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Reading and writing files containing sampled sound (like WAV or AIFF)
+
+LICENSE=	LGPL21
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 USE_GNOME=	gnomehack gnometarget pkgconfig
 GNU_CONFIGURE=	yes
@@ -27,6 +30,8 @@ USE_LDCONFIG=	yes
 MAN1=		sndfile-concat.1 sndfile-cmp.1 sndfile-convert.1 \
 		sndfile-info.1 sndfile-metadata-get.1 sndfile-metadata-set.1 \
 		sndfile-play.1 sndfile-deinterleave.1 sndfile-interleave.1
+
+PORTDOCS=	libsndfile.css new_file_type.HOWTO libsndfile.jpg .html
 
 OPTIONS=	EXTERNAL "Enable FLAC and Ogg Vorbis support" on
 
@@ -45,7 +50,7 @@ post-patch:
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-	${TAR} -C ${WRKSRC}/doc --exclude "*Makefile*" --exclude "*.in" \
+	@${TAR} -C ${WRKSRC}/doc --exclude "*Makefile*" --exclude "*.in" \
 		-cf - . | ${TAR} -C ${DOCSDIR} --unlink -xf -
 	@${CHOWN} ${SHAREOWN}:${SHAREGRP} ${DOCSDIR}
 .endif
