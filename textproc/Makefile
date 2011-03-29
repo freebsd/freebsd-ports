@@ -1108,6 +1108,7 @@
     SUBDIR += ruby-deplate
     SUBDIR += ruby-diff
     SUBDIR += ruby-erbscan
+    SUBDIR += ruby-escape
     SUBDIR += ruby-format
     SUBDIR += ruby-formvalidator
     SUBDIR += ruby-gdome
