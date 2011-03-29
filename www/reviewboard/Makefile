@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	reviewboard
-PORTVERSION=	1.5.4
+PORTVERSION=	1.5.5
 CATEGORIES=	www devel
 MASTER_SITES=	http://downloads.reviewboard.org/releases/ReviewBoard/${PORTVERSION:R}/
 DISTNAME=	ReviewBoard-${PORTVERSION}
