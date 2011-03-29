@@ -8,6 +8,7 @@
 
 PORTNAME=	lsof
 PORTVERSION=	4.85C
+PORTREVISION=	1
 PORTEPOCH=	5
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.SpringDaemons.com/stas/ \
@@ -44,8 +45,7 @@ USE_BZIP2=	yes
 HAS_CONFIGURE=	yes
 CONFIGURE_SCRIPT=	Configure
 CONFIGURE_ARGS=	-n freebsd
-CONFIGURE_ENV=	LSOF_CC="${CC}"
-FREEBSD_SYS?=	${SRC_BASE}/sys
+CONFIGURE_ENV=	LSOF_CC="${CC}" FREEBSD_SYS="${SRC_BASE}/sys"
 PLIST_FILES=	sbin/lsof
 MAN8=		lsof.8
 
