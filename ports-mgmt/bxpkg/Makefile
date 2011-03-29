@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bxpkg
-DISTVERSION=	0.0.3_0
+DISTVERSION=	0.0.4_0
 CATEGORIES=	ports-mgmt
 MASTER_SITES=	http://hg.bsdroot.lv/expl/bxpkg/archive/
 DISTNAME=	${DISTVERSION}
