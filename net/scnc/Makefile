@@ -6,15 +6,16 @@
 #
 
 PORTNAME=	scnc
-PORTVERSION=	1.04
+PORTVERSION=	1.05
 CATEGORIES=	net security
 MASTER_SITES=	http://gomor.org/files/
 
 MAINTAINER=	sbz@FreeBSD.org
 COMMENT=	SSL Capable Netcat
 
+LICENSE=	BSD
+
 RUN_DEPENDS=	${SITE_PERL}/IO/Socket/SSL.pm:${PORTSDIR}/security/p5-IO-Socket-SSL \
-		${SITE_PERL}/Net/Telnet.pm:${PORTSDIR}/net/p5-Net-Telnet \
 		${SITE_PERL}/IO/Socket/INET6.pm:${PORTSDIR}/net/p5-IO-Socket-INET6
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
