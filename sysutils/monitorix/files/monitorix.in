@@ -20,7 +20,7 @@ start_cmd="${name}_start"
 
 pidfile="/var/run/${name}.pid"
 command_interpreter="."
-procname="/usr/local/sbin/${name}"
+procname="%%PREFIX%%/sbin/${name}"
 
 monitorix_start()
 {
