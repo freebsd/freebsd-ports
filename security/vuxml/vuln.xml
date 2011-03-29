@@ -51,7 +51,7 @@ Note:  Please add new entries to the beginning of this file.
 	  root user.  A race condition exists in gdm where a local user could take
 	  advantage of this by writing to the cache directory between ending the session
 	  and the signal to clean up the session, which could lead to the execution of
-	  arbitrary code as the root user.
+	  arbitrary code as the root user.</p>
 	</blockquote>
       </body>
     </description>
