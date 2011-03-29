@@ -7,6 +7,7 @@
 
 PORTNAME=	monitorix
 PORTVERSION=	2.1.0
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.monitorix.org/ \
 		http://www.bayofrum.net/dist/${PORTNAME}/
@@ -42,7 +43,9 @@ WWWROOT=	${WWWDIR:S,/${PORTNAME}$,,}
 SUB_FILES=	pkg-message
 SUB_LIST=	PERL=${PERL}
 
-PLIST_SUB+=	CGIDIR=${CGIDIR:C,^${PREFIX}/,,}
+PLIST_SUB+=	CGIDIR=${CGIDIR:C,^${PREFIX}/,,} \
+		WWW_OWNER=${WWW_OWNER} \
+		WWW_GROUP=${WWW_GROUP}
 
 WWW_FILES=	logo_top.png \
 		logo_bot.png \
@@ -79,9 +82,9 @@ post-patch:
 .endfor
 # eth0 doesn't exist in FreeBSD! Also let's set our own paths.
 	@${REINPLACE_CMD} \
-		-e 's|\($$BASE_DIR = "\)[^"]*|\1${WWWDIR}|' \
-		-e 's|\($$BASE_LIB = "\)[^"]*|\1${DATADIR}|' \
-		-e 's|\($$BASE_CGI = "\)[^"]*|\1${CGIPATH}|' \
+		-e 's|\($$BASE_DIR = "\)[^"]*|\1${WWWDIR}/|' \
+		-e 's|\($$BASE_LIB = "\)[^"]*|\1${DATADIR}/|' \
+		-e 's|\($$BASE_CGI = "\)[^"]*|\1${CGIPATH}/|' \
 		-e "s|/var/lib/milter-greylist/db/|/var/milter-greylist/|" \
 		-e "s|eth0|lo0|g" \
 			${WRKSRC}/monitorix.conf
