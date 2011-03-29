@@ -6,6 +6,7 @@
 
 PORTNAME=	kdeutils
 PORTVERSION=	${KDE4_VERSION}
+PORTREVISION=	1
 CATEGORIES=	misc kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	${KDE4_BRANCH}/${PORTVERSION}/src
@@ -56,7 +57,7 @@ RUN_DEPENDS+=	unzip>0:${PORTSDIR}/archivers/unzip \
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 800505 || (${OSVERSION} >= 900000 && ${OSVERSION} < 900012)
-LIB_DEPENDS+=	lzma.5:${PORTSDIR}/archivers/xz
+LIB_DEPENDS+=	archive.10:${PORTSDIR}/archivers/libarchive
 .endif
 
 .ifdef(WITH_RAR)
