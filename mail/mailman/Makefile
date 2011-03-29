@@ -188,7 +188,7 @@ post-install:
 	@if [ "x`${LOCALBASE}/sbin/postconf -h myhostname`" != "xlocalhost" ]; then \
 		${ECHO_CMD} ""; \
 		${ECHO_CMD} "Your Postfix hostname is non-default."; \
-		${ECHO_CMD} -n "You must add \"\$$SMTPHOST = "; \
+		${ECHO_CMD} -n "You must add \"SMTPHOST = "; \
 		${ECHO_CMD} -n `${LOCALBASE}/sbin/postconf -h myhostname`; \
 		${ECHO_CMD} "\" to the bottom of mm_cfg.py."; \
 		${ECHO_CMD} ""; \
