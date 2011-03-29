@@ -34,6 +34,38 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="c6fbd447-59ed-11e0-8d04-0015f2db7bde">
+    <topic>gdm -- privilege escalation vulnerability</topic>
+    <affects>
+      <package>
+	<name>gdm</name>
+	<range><lt>2.30.5_2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Sebastian Krahmer reports:</p>
+	<blockquote cite="http://mail.gnome.org/archives/distributor-list/2011-March/msg00008.html">
+	  <p>It was discovered that the GNOME Display Manager (gdm) cleared the cache
+	  directory, which is owned by an unprivileged user, with the privileges of the
+	  root user.  A race condition exists in gdm where a local user could take
+	  advantage of this by writing to the cache directory between ending the session
+	  and the signal to clean up the session, which could lead to the execution of
+	  arbitrary code as the root user.
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2011-0727</cvename>
+      <url>http://mail.gnome.org/archives/distributor-list/2011-March/msg00008.html</url>
+      <url>https://bugzilla.redhat.com/show_bug.cgi?id=688323</url>
+    </references>
+    <dates>
+      <discovery>2011-03-28</discovery>
+      <entry>2011-03-29</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="fe853666-56ce-11e0-9668-001fd0d616cf">
     <topic>php -- ZipArchive segfault with FL_UNCHANGED on empty archive</topic>
     <affects>
