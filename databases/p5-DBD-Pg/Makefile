@@ -6,13 +6,16 @@
 #
 
 PORTNAME=	DBD-Pg
-PORTVERSION=	2.17.2
+PORTVERSION=	2.18.0
 CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Provides access to PostgreSQL databases through the DBI
+
+LICENSE_COMB=	dual
+LICENSE=	ART20 GPLv1
 
 BUILD_DEPENDS=	p5-DBI>=1.52:${PORTSDIR}/databases/p5-DBI \
     		p5-version>=0:${PORTSDIR}/devel/p5-version
