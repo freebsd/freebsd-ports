@@ -9,3 +9,12 @@
  
  
  #define ACCFILE   "useracc.dat"	/* default user accounts file */
+@@ -299,7 +299,7 @@
+ {
+   int                sockfd;
+ #ifndef OSF1
+-  unsigned long      inadd;
++  in_addr_t          inadd;
+ #else
+   in_addr_t          inadd;
+ #endif  
