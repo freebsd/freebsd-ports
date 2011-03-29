@@ -5,14 +5,15 @@
 # $FreeBSD$
 
 PORTNAME=	vcdimager
-PORTVERSION=	0.7.23
-PORTREVISION=	6
+PORTVERSION=	0.7.24
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	vcdimager
 
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	GNU VCDImager/VCDRip -- The GNU VideoCD Image Maker/Ripping Tool
+
+LICENSE=	GPLv2
 
 LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt \
 		xml2:${PORTSDIR}/textproc/libxml2 \
