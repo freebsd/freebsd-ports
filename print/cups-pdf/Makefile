@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	cups-pdf
-PORTVERSION=	2.5.0
-PORTREVISION=	3
+PORTVERSION=	2.5.1
 CATEGORIES=	print
 MASTER_SITES=	http://www.cups-pdf.de/src/ \
 		http://www.physik.uni-wuerzburg.de/~vrbehr/cups-pdf/src/
@@ -17,6 +16,9 @@ MAINTAINER=	simon@olofsson.de
 COMMENT=	A virtual printer for CUPS to produce PDF files
 
 RUN_DEPENDS=	${LOCALBASE}/sbin/cupsd:${PORTSDIR}/print/cups-base
+
+LICENSE=GPLv2
+LICENSE_FILE=${WRKSRC}/COPYING
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
