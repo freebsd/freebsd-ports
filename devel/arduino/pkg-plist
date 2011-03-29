@@ -68,7 +68,6 @@ arduino/hardware/arduino/bootloaders/atmega/ATmegaBOOT_168_ng.hex
 arduino/hardware/arduino/bootloaders/atmega/ATmegaBOOT_168_pro_8MHz.hex
 arduino/hardware/arduino/bootloaders/atmega/Makefile
 arduino/hardware/arduino/bootloaders/atmega8/ATmegaBOOT.c
-arduino/hardware/arduino/bootloaders/atmega8/ATmegaBOOT.c.orig
 arduino/hardware/arduino/bootloaders/atmega8/ATmegaBOOT.hex
 arduino/hardware/arduino/bootloaders/atmega8/Makefile
 arduino/hardware/arduino/bootloaders/bt/ATmegaBOOT_168.c
@@ -130,7 +129,6 @@ arduino/hardware/arduino/cores/arduino/wiring.h
 arduino/hardware/arduino/cores/arduino/wiring_analog.c
 arduino/hardware/arduino/cores/arduino/wiring_digital.c
 arduino/hardware/arduino/cores/arduino/wiring_private.h
-arduino/hardware/arduino/cores/arduino/wiring_private.h.orig
 arduino/hardware/arduino/cores/arduino/wiring_pulse.c
 arduino/hardware/arduino/cores/arduino/wiring_shift.c
 arduino/hardware/arduino/firmwares/MEGA-dfu_and_usbserial_combined.hex
