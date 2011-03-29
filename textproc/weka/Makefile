@@ -6,12 +6,15 @@
 #
 
 PORTNAME=	weka
-DISTVERSION=	3-6-3
+DISTVERSION=	3-6-4
 CATEGORIES=	textproc java
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-3-6/${PORTVERSION}
 
 MAINTAINER=	simon@olofsson.de
 COMMENT=	Data Mining Software in Java
+
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 PORTSCOUT=	limitw:1,even	# Second component is even for stable versions.
 
