@@ -5,55 +5,68 @@
 # $FreeBSD$
 
 PORTNAME=	kst
-PORTVERSION=	2.0.2
-PORTREVISION=	2
+DISTVERSION=	2.0.3
 CATEGORIES=	science kde
-MASTER_SITES=	SF/${PORTNAME}/Kst%20${PORTVERSION}/
+MASTER_SITES=	SF/${PORTNAME}/Kst%20${DISTVERSION:C/-r.*//}/
 
 MAINTAINER=	makc@FreeBSD.org
 COMMENT=	Data viewing and plotting tool
 
-LIB_DEPENDS=	cfitsio.0:${PORTSDIR}/astro/cfitsio \
-		gsl.15:${PORTSDIR}/math/gsl
+LIB_DEPENDS=	gsl.15:${PORTSDIR}/math/gsl
+RUN_DEPENDS=	update-mime-database:${PORTSDIR}/misc/shared-mime-info
 
 LATEST_LINK=	kst2
 
+USE_CMAKE=	yes
 USE_QT_VER=	4
 QT_COMPONENTS=	gui xml designer svg opengl \
 		qmake_build moc_build rcc_build uic_build
 USE_LDCONFIG=	yes
 MAKE_JOBS_SAFE=	yes
 
-QMAKE_ARGS+=	-unix -recursive
-CONFIGURE_ENV+=	INSTALL_PREFIX=${PREFIX}
+CMAKE_SOURCE_PATH=	${WRKSRC}/cmake
+CMAKE_ARGS+=	-Dkst_install_prefix=${PREFIX}
 
-STRIP_FILES=	bin/kst2 lib/libkst2*.so.1.0.0 lib/kst/libkst2*.so
+MAN1=		kst2.1
 
-DESKTOP_ENTRIES=	"Kst 2" \
-			"Data viewing and plotting tool" \
-			"${PREFIX}/share/pixmaps/kst.png" \
-			"kst2" \
-			"" \
-			false
+OPTIONS=	FITS "Support for data in FITS format" off \
+		NETCDF "Support for data in NetCDF format" off
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if ${OSVERSION} <= 700042
-IGNORE=	does not compile on 6.x
+.if defined(WITH_FITS)
+LIB_DEPENDS+=	cfitsio.0:${PORTSDIR}/astro/cfitsio
+PLIST_SUB+=	FITS=""
+.else
+PLIST_SUB+=	FITS="@comment "
 .endif
 
-do-configure:
-	cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} ${QMAKE} ${QMAKE_ARGS} ${QMAKEFLAGS}
+.if defined(WITH_NETCDF)
+LIB_DEPENDS+=	netcdf.4:${PORTSDIR}/science/netcdf
+PLIST_SUB+=	NETCDF=""
+.else
+PLIST_SUB+=	NETCDF="@comment "
+.endif
 
-post-configure:
-#fix build when Qt-3.x is installed
-	${FIND} -d ${WRKSRC} -name Makefile | ${XARGS} ${REINPLACE_CMD} \
-		 -e '/^CFLAGS.*=/s|-I/usr/local/include||' \
-		 -e '/^CXXFLAGS.*=/s|-I/usr/local/include||'
+post-patch:
+	${REINPLACE_CMD} -e '/^Icon=/s,kst,${PREFIX}/share/pixmaps/kst2.png,' \
+		${WRKSRC}/src/kst/*kst.desktop
+	${REINPLACE_CMD} -e '/^Exec=kst2/s,-caption "%c" %i %m,%f,' \
+		${WRKSRC}/src/kst/kst.desktop
+
+pre-configure:
+.if !defined(WITH_FITS)
+	${REINPLACE_CMD} -e '/find_package(CFITSIO)/d' \
+		${CMAKE_SOURCE_PATH}/CMakeLists.txt
+.endif
+.if !defined(WITH_NETCDF)
+	${REINPLACE_CMD} -e '/find_package(Netcdf)/d' \
+		${CMAKE_SOURCE_PATH}/CMakeLists.txt
+.endif
 
 post-install:
-	${STRIP_CMD} ${STRIP_FILES:S,^,${PREFIX}/,}
 	${MKDIR} ${PREFIX}/share/pixmaps
-	${INSTALL_DATA} ${WRKSRC}/src/images/kst.png ${PREFIX}/share/pixmaps
+	${INSTALL_DATA} ${WRKSRC}/src/images/kst.png ${PREFIX}/share/pixmaps/kst2.png
+	@-update-mime-database ${PREFIX}/share/mime
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
