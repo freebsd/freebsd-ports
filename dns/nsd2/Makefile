@@ -12,7 +12,7 @@ CATEGORIES=	dns ipv6
 MASTER_SITES=	http://www.nlnetlabs.nl/downloads/nsd/	\
 		ftp://ftp.rhnet.is/pub/nsd/
 
-MAINTAINER=	jaap@bartok.nlnetlabs.nl
+MAINTAINER=	jaap@NLnetLabs.nl
 COMMENT=	An authoritative only non-recursive name server
 
 CONFLICTS=	nsd-[3-9]*
