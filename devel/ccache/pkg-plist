@@ -1,6 +1,8 @@
 bin/ccache
 bin/ccache-update-links
+%%DATADIR%%/ccache.tar
 %%CCLINKDIR%%/world/ccache
+@dirrm %%DATADIR%%
 @exec echo "Create compiler links..."
 @exec %D/bin/ccache-update-links -v
 @unexec find %D/%%CCLINKDIR%% -type l -exec rm -f {} \;
