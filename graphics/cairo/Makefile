@@ -8,7 +8,7 @@
 
 PORTNAME=	cairo
 PORTVERSION=	1.10.2
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH?=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://cairographics.org/releases/
@@ -73,6 +73,7 @@ PLIST_SUB+=		XCB="@comment "
 
 .if defined(WITH_GLIB)
 USE_GNOME+=	glib20
+PLIST_SUB+=	GLIB=""
 .else
 CONFIGURE_ARGS+=	--enable-gobject=no
 PLIST_SUB+=	GLIB="@comment "
