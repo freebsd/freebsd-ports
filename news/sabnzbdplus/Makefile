@@ -12,7 +12,7 @@ CATEGORIES=	news
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/sabnzbd-${PORTVERSION}
 DISTNAME=	SABnzbd-${PORTVERSION}-src
 
-MAINTAINER=	daniel@netwalk.org
+MAINTAINER=	dab@rj45.org
 COMMENT=	A web-interface based binary newsgrabber in python, with nzb support
 
 RUN_DEPENDS=	cheetah:${PORTSDIR}/devel/py-cheetah \
