@@ -43,6 +43,7 @@ include/libgtop-2.0/glibtop_private.h
 include/libgtop-2.0/glibtop_server.h
 include/libgtop-2.0/glibtop_suid.h
 include/libgtop-2.0/libgtopconfig.h
+lib/girepository-1.0/GTop-2.0.typelib
 lib/libgtop-2.0.a
 lib/libgtop-2.0.la
 lib/libgtop-2.0.so
@@ -95,6 +96,7 @@ libdata/pkgconfig/libgtop-2.0.pc
 %%DOCSDIR%%/right.png
 %%DOCSDIR%%/style.css
 %%DOCSDIR%%/up.png
+share/gir-1.0/GTop-2.0.gir
 share/locale/am/LC_MESSAGES/libgtop-2.0.mo
 share/locale/ar/LC_MESSAGES/libgtop-2.0.mo
 share/locale/as/LC_MESSAGES/libgtop-2.0.mo
@@ -172,6 +174,7 @@ share/locale/ta/LC_MESSAGES/libgtop-2.0.mo
 share/locale/te/LC_MESSAGES/libgtop-2.0.mo
 share/locale/th/LC_MESSAGES/libgtop-2.0.mo
 share/locale/tr/LC_MESSAGES/libgtop-2.0.mo
+share/locale/ug/LC_MESSAGES/libgtop-2.0.mo
 share/locale/uk/LC_MESSAGES/libgtop-2.0.mo
 share/locale/vi/LC_MESSAGES/libgtop-2.0.mo
 share/locale/xh/LC_MESSAGES/libgtop-2.0.mo
@@ -185,6 +188,8 @@ share/locale/zh_TW/LC_MESSAGES/libgtop-2.0.mo
 @dirrmtry share/locale/zh_HK
 @dirrmtry share/locale/xh/LC_MESSAGES
 @dirrmtry share/locale/xh
+@dirrmtry share/locale/ug/LC_MESSAGES
+@dirrmtry share/locale/ug
 @dirrmtry share/locale/te/LC_MESSAGES
 @dirrmtry share/locale/te
 @dirrmtry share/locale/sr@latin/LC_MESSAGES

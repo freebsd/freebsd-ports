@@ -7,13 +7,15 @@
 #
 
 PORTNAME=	libgtop
-PORTVERSION=	2.28.2
+PORTVERSION=	2.28.3
 CATEGORIES=	devel gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	GNOME 2 top library
+
+BUILD_DEPENDS=	g-ir-scanner:${PORTSDIR}/devel/gobject-introspection
 
 USE_BZIP2=	yes
 USE_PERL5_BUILD=yes
