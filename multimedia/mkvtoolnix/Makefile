@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mkvtoolnix
-PORTVERSION=	4.5.0
+PORTVERSION=	4.6.0
 CATEGORIES=	multimedia audio
 MASTER_SITES=	http://www.bunkus.org/videotools/mkvtoolnix/sources/ \
 		CRITICAL
@@ -21,7 +21,8 @@ LIB_DEPENDS=	FLAC.10:${PORTSDIR}/audio/flac \
 		matroska.3:${PORTSDIR}/multimedia/libmatroska \
 		vorbis.4:${PORTSDIR}/audio/libvorbis \
 		ogg.7:${PORTSDIR}/audio/libogg \
-		boost_regex.4:${PORTSDIR}/devel/boost-libs
+		boost_regex.4:${PORTSDIR}/devel/boost-libs \
+		curl.6:${PORTSDIR}/ftp/curl
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
