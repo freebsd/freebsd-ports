@@ -15,6 +15,7 @@ share/locale/fr/LC_MESSAGES/mkvtoolnix.mo
 share/locale/ja/LC_MESSAGES/mkvtoolnix.mo
 share/locale/nl/LC_MESSAGES/mkvtoolnix.mo
 share/locale/ru/LC_MESSAGES/mkvtoolnix.mo
+share/locale/tr/LC_MESSAGES/mkvtoolnix.mo
 share/locale/uk/LC_MESSAGES/mkvtoolnix.mo
 share/locale/zh_CN/LC_MESSAGES/mkvtoolnix.mo
 share/locale/zh_TW/LC_MESSAGES/mkvtoolnix.mo
@@ -37,8 +38,6 @@ share/locale/zh_TW/LC_MESSAGES/mkvtoolnix.mo
 %%DOCSDIR%%/guide/en/mkvmerge-gui.hhp
 %%DOCSDIR%%/guide/en/mkvmerge-gui.html
 %%DOCSDIR%%/guide/en/mkvmerge-gui.hhk
-%%DOCSDIR%%/guide/zh_CN
-%%DOCSDIR%%/guide/zh_CN/images
 %%DOCSDIR%%/guide/zh_CN/images/addingremovingattachments.gif
 %%DOCSDIR%%/guide/zh_CN/images/addremovefiles.gif
 %%DOCSDIR%%/guide/zh_CN/images/attachmentoptions.gif
