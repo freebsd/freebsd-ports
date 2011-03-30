@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	commons-codec
-PORTVERSION=	1.4
+PORTVERSION=	1.5
 CATEGORIES=	java converters
 MASTER_SITES=	${MASTER_SITE_APACHE_COMMONS_SOURCE}
 MASTER_SITE_SUBDIR=	${PORTNAME:S,commons-,,}
@@ -16,6 +16,9 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 MAINTAINER=	ale@FreeBSD.org
 COMMENT=	An implementations of common encoders and decoders
 
+LICENSE=	ASL
+LICENSE_FILE=	${WRKSRC}/LICENSE.txt
+
 USE_JAVA=	yes
 JAVA_VERSION=	1.4+
 USE_ANT=	yes
@@ -24,13 +27,11 @@ ALL_TARGET=	dist
 
 PLIST_FILES=	%%JAVAJARDIR%%/${PORTNAME}.jar
 
-.if !defined(NOPORTDOCS)
-PORTDOCS=	RELEASE-NOTES.txt api
-.endif
+PORTDOCS=	*
 
 do-install:
 	@${ECHO_MSG} -n ">> Installing JAR file as ${JAVAJARDIR}/${PORTNAME}.jar..."
-	@${INSTALL_DATA} ${WRKSRC}/dist/${PORTNAME}-${PORTVERSION}.jar \
+	@${INSTALL_DATA} ${WRKSRC}/dist/${PORTNAME}-${PORTVERSION}-SNAPSHOT.jar \
 		${JAVAJARDIR}/${PORTNAME}.jar
 	@${ECHO_MSG} " [DONE]"
 .if !defined(NOPORTDOCS)
