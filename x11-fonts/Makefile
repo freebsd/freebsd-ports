@@ -53,6 +53,7 @@
     SUBDIR += font-ibm-type1
     SUBDIR += font-isas-misc
     SUBDIR += font-jis-misc
+    SUBDIR += font-manager
     SUBDIR += font-micro-misc
     SUBDIR += font-misc-cyrillic
     SUBDIR += font-misc-ethiopic
