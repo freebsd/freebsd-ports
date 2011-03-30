@@ -11,7 +11,7 @@ PORTREVISION=	2
 CATEGORIES=	dns
 MASTER_SITES=	http://www.nlnetlabs.nl/downloads/autotrust/
 
-MAINTAINER=	jaap@bartok.nlnetlabs.nl
+MAINTAINER=	jaap@NLnetLabs.nl
 COMMENT=	A tool to automatically update DNSSEC trust anchors
 
 LIB_DEPENDS+=	ldns.1:${PORTSDIR}/dns/ldns \
