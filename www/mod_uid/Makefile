@@ -19,14 +19,17 @@ USE_APACHE=	1.3+
 
 PORTDOCS=	README.html
 
-.if !defined(APACHE_PORT) || ${APACHE_PORT} == "www/apache13"
-MODULENAME=	mod_uid
-.else
-MODULENAME=	mod_uid2
-.endif
-
 AP_FAST_BUILD=	yes
 AP_GENPLIST=	yes
+
+.include <bsd.port.pre.mk>
+
+.if !defined(APACHE_PORT) || ${APACHE_PORT} == "www/apache13" || ${APACHE_VERSION} == "13"
+MODULENAME=	mod_uid
+.else
+IGNORE=		does not build with latest apache20/22
+MODULENAME=	mod_uid2
+.endif
 
 post-install:
 .if !defined(NOPORTDOCS)
@@ -36,4 +39,4 @@ post-install:
 .endfor
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
