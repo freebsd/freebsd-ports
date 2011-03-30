@@ -17,8 +17,4 @@ The new versioning mechanism will require a four digit version in the
 file name. To get the new download naming schema visit snort.org,
 and look at 'My Account' -> 'Subscriptions and Oinkcodes'
 
-BE SURE to read through the master pulledpork.conf file thoroughly,
-as there are many changes as of snort 2.8.6.0 that WILL affect you,
-even if you are NOT yet running 2.8.6.0!
-
 =====================================================================
