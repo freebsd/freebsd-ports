@@ -7,7 +7,7 @@
 
 PORTNAME=	ccache
 PORTVERSION=	3.1.4
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel
 MASTER_SITES=	http://samba.org/ftp/ccache/ CRITICAL
 
@@ -41,6 +41,16 @@ SUB_LIST+=	CCACHE_COMPILERS="${CCACHE_COMPILERS}" \
 		ICCPREFIX="${LOCALBASE}/intel_cc_80/bin" \
 		HOWTO="${HOWTO}"
 
+post-build:
+.if !defined(TINDERBOX)
+	@${MKDIR} ${WRKDIR}/tb/opt
+	@${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${WRKDIR}/tb/opt
+.for l in gcc cc g++ c++
+	@${LN} -sf ${PORTNAME} ${WRKDIR}/tb/opt/${l}
+.endfor
+	@${TAR} -C ${WRKDIR}/tb -cpf ${WRKSRC}/${PORTNAME}.tar opt
+.endif
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/ccache ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/${MAN1} ${PREFIX}/man/man1
@@ -49,6 +59,8 @@ do-install:
 		${PREFIX}/${CCLINKDIR}/world/ccache
 	${INSTALL_SCRIPT} ${WRKDIR}/ccache-update-links.sh \
 		${PREFIX}/bin/ccache-update-links
+	${MKDIR} ${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.tar ${DATADIR}
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/MANUAL.html ${DOCSDIR}
