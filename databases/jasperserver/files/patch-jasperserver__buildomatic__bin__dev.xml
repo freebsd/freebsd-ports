@@ -1,0 +1,156 @@
+--- jasperserver/buildomatic/bin/dev.xml.orig	2011-03-14 02:07:47.000000000 -0700
++++ jasperserver/buildomatic/bin/dev.xml	2011-03-14 02:15:47.000000000 -0700
+@@ -44,6 +44,7 @@
+             <exec executable="${maven}" dir="@{dir}" failonerror="true">
+                 <env key="MAVEN_OPTS" value="-Xms128m -Xmx512m -XX:PermSize=32m -XX:MaxPermSize=128m"/>
+                 <arg value="-s"/>
++                <arg value="-o"/>
+                 <arg value="${currentConf}/maven_settings.xml"/>
+                 <!-- <arg value="-e"/> --> <!-- ERROR INFO MODE -->
+                 <!-- <arg value="-X"/> --> <!-- DETAILED DEBUG MODE -->
+@@ -111,16 +112,6 @@
+         </sequential>
+     </macrodef>
+   
+-    <macrodef name="runsvn">
+-        <attribute name="dir" default="${buildBase}"/>
+-        <element name="args" implicit="yes"/>
+-        <sequential>
+-            <exec executable="${svn}" dir="@{dir}" failonerror="true">
+-                <args/>
+-            </exec>
+-        </sequential>
+-    </macrodef>
+-
+     <macrodef name="run-export-test">
+       <attribute name="edition" />
+       <sequential>
+@@ -161,6 +152,7 @@
+             <arg value="-Dversion=${maven.jdbc.version}"/>
+             <arg value="-Dpackaging=jar"/>
+             <arg value="-Dfile=${currentDbDir}/jdbc/${jdbcJar}"/>
++	    <arg value="-o"/>
+             <!-- <arg value="-o"/> --> <!-- OFFLINE MODE -->
+         </runmaven>
+     </target>
+@@ -242,102 +234,6 @@
+       <echo> </echo>
+     </target>
+ 
+-    <target name="test-svn"
+-            depends="init-source-paths"
+-            description="test svn">
+-        <echo>Testing svn...</echo>
+-        <runsvn>
+-            <arg value="list"/>
+-            <arg value="${js-url}"/>
+-        </runsvn>
+-        <!-- echo>open source working directory: ${js-path}</echo>
+-        <echo>pro working directory: ${js-path}</echo>
+-        -->
+-    </target>
+-
+-    <target name="checkout-ce"
+-            depends="init-source-paths"
+-            description="svn checkout os">
+-        <runsvn>
+-            <arg value="co"/>
+-            <arg value="${js-url}"/>
+-            <arg value="${js-path}"/>
+-        </runsvn>
+-    </target>
+-
+-    <target name="checkout-ce-anon"
+-            depends="init-source-paths"
+-            description="svn checkout os">
+-        <runsvn>
+-            <arg value="co"/>
+-            <arg line="--username anonsvn --password anonsvn"/>
+-            <arg value="${js-url}"/>
+-            <arg value="${js-path}"/>
+-        </runsvn>
+-    </target>
+-
+-    <target name="checkout-pro"
+-            depends="init-source-paths"
+-            description="svn checkout pro">
+-        <runsvn>
+-            <arg value="co"/>
+-            <arg value="${js-pro-url}"/>
+-            <arg value="${js-pro-path}"/>
+-        </runsvn>
+-    </target>
+-
+-    <target name="checkout-repo"
+-            depends="init-source-paths"
+-            description="svn checkout repo">
+-        <runsvn>
+-            <arg value="co"/>
+-            <arg value="${repo-url}"/>
+-            <arg value="${repo-path}"/>
+-        </runsvn>
+-    </target>
+-
+-    <target name="update-all"
+-            depends="update-ce,update-pro,update-repo"
+-            description="svn update of ce src, pro src, and js-repo">
+-    </target>
+-
+-    <target name="update-ce"
+-            depends="init-source-paths"
+-            description="svn update os">
+-        <runsvn dir="${js-path}">
+-            <arg value="update"/>
+-        </runsvn>
+-    </target>
+-
+-    <target name="update-pro"
+-            depends="init-source-paths"
+-            description="svn update pro">
+-        <runsvn dir="${js-pro-path}">
+-            <arg value="update"/>
+-        </runsvn>
+-    </target>
+-
+-    <target name="update-repo"
+-            depends="init-source-paths"
+-            description="svn update repo">
+-        <if>
+-            <!-- if we have repo-rev set, then that means we do not want to automatically           -->
+-            <!-- update our jasperserver-repo local source. If we update we will get HEAD revision. -->
+-            <!-- in this case, if you want to update jasperserver-repo, do it manually              -->
+-            
+-            <isset property="repo-rev"/>
+-            <then>
+-                <echo>INFO: Using repo revision, skipping update: </echo>
+-                <echo>INFO: repo-url = ${repo-url}</echo>
+-            </then>
+-        <else>
+-            <runsvn dir="${repo-path}">
+-                <arg value="update"/>
+-            </runsvn>
+-        </else>
+-        </if>
+-    </target>
+-
+     <target name="build-src-all"
+             depends="build-ce, build-pro"
+             description="Builds JasperServer CE/Pro and copies WAR files to install resources">
+@@ -549,7 +445,7 @@
+     </target>
+ 
+     <target name="build-all"
+-            depends="update-all,build-all-no-svn"
++            depends="build-all-no-svn"
+             description="update all src, clean build all src, drop-recreate db, build ddl pro, init db pro, run unit test pro">
+     </target>
+ 
+@@ -569,7 +465,7 @@
+     </target>
+ 
+     <target name="update-build-all"
+-            depends="update-repo, update-ce, update-pro, build-ce, build-pro"
++            depends="build-ce, build-pro"
+             description="update and build os and pro"/>
+ 
+     <target name="clean-pro-unit-test"
