@@ -11,7 +11,7 @@ CATEGORIES=	russian irc
 MASTER_SITES=	SF/${PORTNAME}-hybrid-ru/${PORTNAME}-hybrid-ru/${PORTNAME}-hybrid-ru-${PORTVERSION} \
 		ftp://rusunix.org/pub/FreeBSD/distfiles/
 
-PKGNAMESUFFIX=	-hybrid-ru
+PKGNAMESUFFIX=	-hybrid
 DISTNAME=	ircd-hybrid-ru-${PORTVERSION}
 
 MAINTAINER=	rodrigo@bebik.net
