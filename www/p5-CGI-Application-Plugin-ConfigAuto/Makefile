@@ -6,17 +6,17 @@
 #
 
 PORTNAME=	CGI-Application-Plugin-ConfigAuto
-PORTVERSION=	1.32
+PORTVERSION=	1.33
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	culot@FreeBSD.org
 COMMENT=	Plugin that adds Config::Auto support to CGI::Application
 
 RUN_DEPENDS=	p5-CGI-Application>=0:${PORTSDIR}/www/p5-CGI-Application \
 		p5-Config-Auto>=0:${PORTSDIR}/devel/p5-Config-Auto
-BUILD_DEPENDS=  ${RUN_DEPENDS}
+BUILD_DEPENDS=	${RUN_DEPENDS}
 
 PERL_MODBUILD=	5.8.0+
 
