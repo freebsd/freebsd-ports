@@ -8,12 +8,12 @@
 PORTNAME=	laspack
 PORTVERSION=	1.12.2
 CATEGORIES=	math
-MASTER_SITES=	http://netlib.sandia.gov/linalg/ \
-		http://www.netlib.org/linalg/
+MASTER_SITES=	NL
+MASTER_SITE_SUBDIR=	linalg
 DISTNAME=	${PORTNAME}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	bf@FreeBSD.org
 COMMENT=	Package for solving large sparse systems of linear equations
 
 WRKSRC=	${WRKDIR}/${PORTNAME}
