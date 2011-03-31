@@ -9,28 +9,12 @@ PORTNAME=	eispack
 PORTVERSION=	1.0
 PORTREVISION=	3
 CATEGORIES=	math
-MASTER_SITES=	${MASTER_SITES_NETLIB}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	NL
 DISTFILES=	${SRCS}
 EXTRACT_ONLY=	#empty
 
 MAINTAINER=	bf@FreeBSD.org
 COMMENT=	Eigenvalue system package
-
-MASTER_SITES_NETLIB=	ftp://ftp.netlib.org/%SUBDIR%/ \
-		http://www.netlib.org/%SUBDIR%/ \
-		ftp://ftp.mirrorservice.org/sites/netlib.bell-labs.com/netlib/%SUBDIR%/ \
-		http://www.mirrorservice.org/sites/netlib.bell-labs.com/netlib/%SUBDIR%/ \
-		ftp://ftp.netlib.no/netlib/%SUBDIR%/ \
-		http://www.netlib.no/netlib/%SUBDIR%/ \
-		ftp://ftp.irisa.fr/pub/netlib/%SUBDIR%/ \
-		http://artfiles.org/netlib.org/%SUBDIR%/ \
-		http://netlib.amss.ac.cn/%SUBDIR%/ \
-		http://netlib.caspur.it/%SUBDIR%/ \
-		http://netlib.ccp14.ac.uk/%SUBDIR%/ \
-		http://netlib.enseeiht.fr/%SUBDIR%/ \
-		http://netlib.linux-mirror.org/%SUBDIR%/ \
-		http://phase.hpcc.jp/mirrors/netlib/%SUBDIR%/
 
 DIST_SUBDIR=	${PORTNAME}
 NO_WRKSUBDIR=	yes
