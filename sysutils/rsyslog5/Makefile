@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	rsyslog
-PORTVERSION=	5.6.2
-PORTREVISION=	2
+PORTVERSION=	5.6.5
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.rsyslog.com/files/download/rsyslog/
 .ifdef MNAME
