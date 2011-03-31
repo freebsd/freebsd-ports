@@ -1,22 +1,24 @@
-For those who *must* cram their data into the smallest possible archives, 
-paq is an archiver with the best lossless compression ratios now available
-across a wide variety of test data, according to several benchmarks.  
-It uses adaptive weighting of context models to obtain archives that are
-typically about 65%-85% of the size of the corresponding best-performance 
-gzip archives. This comes at the expense of increased memory usage
-(30MB - 1650MB, depending upon the user-specified level of compression),
-and lower speeds(compression and decompression are often tens of times 
-slower than bzip2 or gzip, and can be as much as several hundreds of times
-slower). 
+paq is a family of archivers with the best lossless compression ratios now
+available across a wide variety of test data, according to several benchmarks.
+A comparison of paq to other compression methods, on a 2GHz T3200, when
+compressing a large text file:
 
-The command-line interface permits compression, decompression, and viewing
-of the contents of archives.  Compression preserves directory structure
-but not file attributes.  There are no commands to update an existing 
-archive or to extract part of an archive.  Files and archives larger than
-2GB are not supported (but might work on 64-bit machines, not tested).
-File names with nonprintable characters are not supported (spaces
-are OK). Note that different versions of paq are usually incompatible, so
-steps must be taken to ensure that the contents of archives made with older 
-versions of paq will still be accessible after updating paq.
+Format		Size		Time (sec)	Memory
+				comp	decomp
+-----------	---------	--------------  -------
+Uncompressed	3,152,896
+compress	1,319,521	1.6	0.2	 .1 MB
+gzip -9         1,022,810	0.7	0.1	 .1 MB
+bzip2 -9	860,097		0.6	0.4	  5 MB
+p7zip (7z)	824,573		1.5	0.1	195 MB
+xz -6		822,016		?	?	  ?
+zpaq c1 (fast)	806,959		2	2	 38 MB
+zpaq c2 (mid)	699,191		8	8	112 MB
+zpaq c3 (max)	644,190		20	20	246 MB
 
-WWW: http://www.cs.fit.edu/~mmahoney/compression/
+The port uses the open ZPAQ specification, and contains: a public-domain C++
+API for reading and writing ZPAQ compressed data to or from files or objects
+in memory; serial and multi-threaded archivers;  extra preprocessors for
+compression; and stubs for creating self-extracting archives.
+
+WWW:	http://mattmahoney.net/dc/zpaq.html

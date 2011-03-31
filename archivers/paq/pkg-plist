@@ -1,12 +1,14 @@
-bin/%%CPPFILE%%
-%%THIRTYTWO%%bin/%%LPAQ%%
-%%THIRTYTWO%%bin/%%LPAQ%%e
-%%THIRTYTWO%%bin/%%LPQ%%
-%%THIRTYTWO%%bin/%%PAQ9%%
-%%PORTDOCS%%%%DOCSDIR%%/%%CPPFILE%%.cpp
-%%PORTDOCS%%%%DOCSDIR%%/%%CPPFILE%%_readme.txt
-%%THIRTYTWO%%%%PORTDOCS%%%%DOCSDIR%%/%%LPAQ%%.cpp
-%%THIRTYTWO%%%%PORTDOCS%%%%DOCSDIR%%/%%LPQ%%.cpp
-%%THIRTYTWO%%%%PORTDOCS%%%%DOCSDIR%%/%%PAQ9%%.cpp
-%%THIRTYTWO%%%%PORTDOCS%%%%DOCSDIR%%/%%LPAQ%%_readme.txt
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%PORTDATA%%bin/bwt_
+%%PORTDATA%%bin/bwtpre
+%%PORTDATA%%bin/bwtrle
+%%PORTDATA%%bin/exe_jo
+%%PORTDATA%%bin/jpeg_jo
+%%PORTDATA%%bin/lzppre
+bin/pzpaq
+bin/zpaq
+bin/zpipe
+include/libzpaq.h
+lib/zpaq/libzpaq.o
+lib/zpaq/pzpaq.o
+lib/zpaq/zpaq.o
+@dirrm lib/zpaq
