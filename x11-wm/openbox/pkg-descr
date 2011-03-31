@@ -1,11 +1,22 @@
-Openbox works with your applications, and makes your desktop easier to manage.
-This is because the approach to its development was the opposite of what seems
-to be the general case for window managers. Openbox was written first to comply
-with standards and to work properly. Only when that was in place did the team
-turn to the visual interface.
+Openbox is a highly configurable, next generation window manager with
+extensive standards support.
 
-Openbox is fully functional as a stand-alone working environment, or can be used
-as a drop-in replacement for the default window manager in the GNOME or KDE
-desktop environments. 
+Openbox lets you bring the latest applications outside of a full desktop
+environment.  Most modern applications have been written with GNOME and KDE
+in mind.  With support for the latest freedesktop.org standards, as well as
+careful adherence to previous standards, Openbox provides an environment
+where applications work the way they were designed to.
 
-WWW: http://icculus.org/openbox/
+Openbox is a highly configurable window manager.  It allows you to change
+almost every aspect of how you interact with your desktop and invent
+completely new ways to use and control it.  It can be like a video game for
+controlling windows.  But Openbox can also be kept extremely simple, as it is
+in the default setup, meaning that it can suit just about anybody.  Openbox
+gives you control without making you do everything.
+
+Openbox makes desktop environments better.  By running Openbox inside the
+GNOME or K desktop environments, you can combine their ease and
+functionality with the power of Openbox.  Your desktop becomes cleaner and
+faster, and is in your control, when you use Openbox.
+
+WWW: http://openbox.org/
