@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	djvulibre
-PORTVERSION=	3.5.23
+PORTVERSION=	3.5.24
 CATEGORIES=	graphics www
 MASTER_SITES=	SF/djvu/DjVuLibre/${PORTVERSION}
 
@@ -17,7 +17,7 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS+=	jpeg.11:${PORTSDIR}/graphics/jpeg \
 		tiff.4:${PORTSDIR}/graphics/tiff \
-		djvulibre.23:${PORTSDIR}/graphics/djvulibre-nox11
+		djvulibre.24:${PORTSDIR}/graphics/djvulibre-nox11
 
 USE_ICONV=	yes
 USE_GNOME=	gnomehack gnometarget

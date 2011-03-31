@@ -1,6 +1,6 @@
---- desktopfiles/Makefile.in.orig	2009-02-19 19:51:51.000000000 +0300
-+++ desktopfiles/Makefile.in	2009-08-11 15:16:25.000000000 +0400
-@@ -52,7 +52,7 @@
+--- desktopfiles/Makefile.in.orig	2011-03-31 01:20:37.000000000 -0700
++++ desktopfiles/Makefile.in	2011-03-31 01:21:48.000000000 -0700
+@@ -54,7 +54,7 @@
  	  || cp ${srcdir}/prebuilt-$@ $@
  
  hi-djview4.svgz: djview.svg
@@ -9,7 +9,7 @@
  
  register-djview-menu: register-djview-menu.in
  	sed < ${srcdir}/register-djview-menu.in > register-djview-menu \
-@@ -69,10 +69,10 @@
+@@ -71,10 +71,10 @@
  
  install-djview-files: FORCE
  	${INSTALL} -d ${DESTDIR}${datadir_djview}
