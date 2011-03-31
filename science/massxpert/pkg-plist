@@ -198,6 +198,8 @@ share/applications/massxpert.desktop
 %%DATADIR%%/pol-seqs/protein-3-letters.mxp
 %%DATADIR%%/pol-seqs/tev-protease-his-tag.mxp
 %%DATADIR%%/pol-seqs/yellow-fluorescent-protein.mxp
+%%DATADIR%%/pol-seqs/insulin-a-ox.mxp
+%%DATADIR%%/pol-seqs/insulin-b-ox.mxp
 %%DATADIR%%/dictionaries/codon-to-protein-1.dic
 %%DATADIR%%/dictionaries/codon-to-protein-3.dic
 %%DATADIR%%/dictionaries/pdb-protein-to-mxp.dic
