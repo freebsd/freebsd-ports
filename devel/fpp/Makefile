@@ -9,8 +9,8 @@ PORTNAME=	fpp
 PORTVERSION=	1.1
 PORTREVISION=	1
 CATEGORIES=	devel
-MASTER_SITES=	http://scicomp.ewha.ac.kr/netlib/fortran/ \
-		ftp://ftp.netlib.org/fortran/
+MASTER_SITES=	NL
+MASTER_SITE_SUBDIR=	fortran
 DISTNAME=	fdfpp
 EXTRACT_SUFX=	.tgz
 
