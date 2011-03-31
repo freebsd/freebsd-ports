@@ -41,6 +41,10 @@ MAN1=		mumble.1
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} < 800000
+BROKEN=		does not compile on FreeBSD 7.x
+.endif
+
 .if ${ARCH} == "amd64" && ${OSVERSION} >= 900000
 BROKEN=		Does not compile on FreeBSD 9.X
 .endif
