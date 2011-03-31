@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tmpwatch
-PORTVERSION=	2.10.1
+PORTVERSION=	2.10.2
 CATEGORIES=	sysutils
 MASTER_SITES=	https://fedorahosted.org/releases/t/m/tmpwatch/
 
