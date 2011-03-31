@@ -254,7 +254,7 @@ do-install:
 	@${TOUCH} ${SBCL_HOME}/site-systems/.keep_me
 
 test:	build
-	(cd ${WRKSRC}/tests && ${SETENV} CC="${CC}" ${SH} run-tests.sh)
+	(cd ${WRKSRC}/tests && ${SETENV} CC="${CC}" LISP_EXTRA_ARG="${LISP_EXTRA_ARG}" ${SH} run-tests.sh)
 
 bootstrap:
 	${CP} -r ${WRKSRC} ${WRKDIR}/${NEWBOOTNAME}
