@@ -6,24 +6,25 @@
 #
 
 PORTNAME=	clipgrab
-PORTVERSION=	3.0.5
-PORTREVISION=	1
+PORTVERSION=	3.1.0.1
 CATEGORIES=	multimedia
 MASTER_SITES=	http://clipgrab.de/download/
 
 MAINTAINER=	g.veniamin@googlemail.com
 COMMENT=	Program to download videos from YouTube and etc
 
+LICENSE=	GPLv3
+
 USE_BZIP2=	yes
 USE_QT_VER=	4
 QT_COMPONENTS=	gui xml qmake_build uic_build moc_build \
-		rcc_build network
-
-WRKSRC=		${WRKDIR}/${PORTNAME}
+		rcc_build network dbus webkit
 
 PLIST_FILES=	bin/${PORTNAME} \
 		%%DATADIR%%/icon.png \
 		%%DATADIR%%/logo.png \
+		%%DATADIR%%/logo-gpl.png \
+		%%DATADIR%%/logo-qt.png \
 		%%DATADIR%%/splash.png
 PLIST_DIRS=	%%DATADIR%%
 
@@ -43,10 +44,4 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin/${PORTNAME}
 	${INSTALL_DATA} ${WRKSRC}/*.png ${DATADIR}
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 900000
-BROKEN=		does not build
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
