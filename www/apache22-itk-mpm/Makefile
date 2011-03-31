@@ -4,7 +4,11 @@
 #
 # $FreeBSD$
 #
-
+# To build this port with the additional mpm-itk-perdir-regex
+# patch use -DWITH_ITK_PERDIR_REGEX
+#
+# For a quick description take a look into the mpm-itk* patches
+# in the apache22/files directory
 
 MASTERDIR=		${.CURDIR}/../apache22
 
