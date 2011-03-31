@@ -1,6 +1,6 @@
---- src/fasthenry/parse_command_line.c.orig	Sat Feb 25 22:17:54 2006
-+++ src/fasthenry/parse_command_line.c	Sat Feb 25 22:19:14 2006
-@@ -38,6 +38,7 @@
+--- src/fasthenry/parse_command_line.c.orig	2009-01-11 14:21:26.000000000 -0500
++++ src/fasthenry/parse_command_line.c	2011-03-31 10:56:27.000000000 -0400
+@@ -4,6 +4,7 @@
  
  #include "induct.h"
  #include <string.h>
@@ -8,12 +8,3 @@
  #ifdef SOLARIS
  #include <sys/systeminfo.h>
  #endif
-@@ -558,7 +559,7 @@
- fix_and_print_opts(opts)
- ind_opts *opts;
- {
--  long clock;
-+  time_t clock;
-   char hostname[BUFSIZ];
- 
-   fprintf(stdout, "Running FastHenry %s (%s)\n", FHVERSION, FHDATE);
