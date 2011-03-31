@@ -16,6 +16,8 @@ DISTNAME=	cake_${PORTVERSION}
 MAINTAINER=	glarkin@FreeBSD.org
 COMMENT=	A framework for developing PHP web applications
 
+BROKEN=		unfetchable
+
 USE_BZIP2=	yes
 DISTFILE_SUFFIX=/donation=complete
 FETCH_BEFORE_ARGS=	-o -

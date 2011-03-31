@@ -15,6 +15,8 @@ DISTNAME=	cake_${PORTVERSION}
 MAINTAINER=	glarkin@FreeBSD.org
 COMMENT=	A framework for developing PHP web applications
 
+BROKEN=		unfetchable
+
 LATEST_LINK=	cakephp11
 
 USE_BZIP2=	yes
