@@ -3708,6 +3708,7 @@ font-gost                       ports/x11-fonts/font-gost
 font-ibm-type1                  ports/x11-fonts/font-ibm-type1
 font-isas-misc                  ports/x11-fonts/font-isas-misc
 font-jis-misc                   ports/x11-fonts/font-jis-misc
+font-manager                    ports/x11-fonts/font-manager
 font-micro-misc                 ports/x11-fonts/font-micro-misc
 font-misc-cyrillic              ports/x11-fonts/font-misc-cyrillic
 font-misc-ethiopic              ports/x11-fonts/font-misc-ethiopic
@@ -23001,7 +23002,7 @@ ru-fortune-bashorgru            ports/russian/fortune-bashorgru
 ru-fortuneru                    ports/russian/fortuneru
 ru-gd                           ports/russian/gd
 ru-gimp-help                    ports/russian/gimp-help
-ru-ircd-hybrid-ru               ports/russian/ircd-hybrid-ru
+ru-ircd-hybrid                  ports/russian/ircd-hybrid
 ru-kde3-i18n                    ports/russian/kde3-i18n
 ru-kde4-l10n                    ports/russian/kde4-l10n
 ru-koffice-i18n                 ports/russian/koffice-i18n
@@ -23103,6 +23104,7 @@ ruby-doc-stdlib                 ports/lang/ruby-doc-stdlib
 ruby-dump.rb                    ports/converters/ruby-dump.rb
 ruby-eet                        ports/devel/ruby-eet
 ruby-erbscan                    ports/textproc/ruby-erbscan
+ruby-escape                     ports/textproc/ruby-escape
 ruby-esound                     ports/audio/ruby-esound
 ruby-event-loop                 ports/devel/ruby-event-loop
 ruby-exmars                     ports/games/ruby-exmars
