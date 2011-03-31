@@ -23,9 +23,6 @@
 @unexec if cmp -s %D/%%WWWDIR%%/%%CI_CONF_DIR%%/hooks.php.sample %D/%%WWWDIR%%/%%CI_CONF_DIR%%/hooks.php; then rm -f %D/%%WWWDIR%%/%%CI_CONF_DIR%%/hooks.php; else %%ECHO_MSG%% "===> Customized %D/%%WWWDIR%%/%%CI_CONF_DIR%%/hooks.php has not been removed"; fi
 %%WWWDIR%%/%%CI_CONF_DIR%%/hooks.php.sample
 @exec if [ ! -f %D/%%WWWDIR%%/%%CI_CONF_DIR%%/hooks.php ]; then cp -p %D/%F %B/hooks.php; else %%ECHO_MSG%% "===> Customized %D/%%WWWDIR%%/%%CI_CONF_DIR%%/hooks.php has not been overwritten"; fi
-@unexec if cmp -s %D/%%WWWDIR%%/%%CI_CONF_DIR%%/migration.php.sample %D/%%WWWDIR%%/%%CI_CONF_DIR%%/migration.php; then rm -f %D/%%WWWDIR%%/%%CI_CONF_DIR%%/migration.php; else %%ECHO_MSG%% "===> Customized %D/%%WWWDIR%%/%%CI_CONF_DIR%%/migration.php has not been removed"; fi
-%%WWWDIR%%/%%CI_CONF_DIR%%/migration.php.sample
-@exec if [ ! -f %D/%%WWWDIR%%/%%CI_CONF_DIR%%/migration.php ]; then cp -p %D/%F %B/migration.php; else %%ECHO_MSG%% "===> Customized %D/%%WWWDIR%%/%%CI_CONF_DIR%%/migration.php has not been overwritten"; fi
 @unexec if cmp -s %D/%%WWWDIR%%/%%CI_CONF_DIR%%/mimes.php.sample %D/%%WWWDIR%%/%%CI_CONF_DIR%%/mimes.php; then rm -f %D/%%WWWDIR%%/%%CI_CONF_DIR%%/mimes.php; else %%ECHO_MSG%% "===> Customized %D/%%WWWDIR%%/%%CI_CONF_DIR%%/mimes.php has not been removed"; fi
 %%WWWDIR%%/%%CI_CONF_DIR%%/mimes.php.sample
 @exec if [ ! -f %D/%%WWWDIR%%/%%CI_CONF_DIR%%/mimes.php ]; then cp -p %D/%F %B/mimes.php; else %%ECHO_MSG%% "===> Customized %D/%%WWWDIR%%/%%CI_CONF_DIR%%/mimes.php has not been overwritten"; fi
@@ -42,7 +39,6 @@
 %%WWWDIR%%/%%CI_CONF_DIR%%/user_agents.php.sample
 @exec if [ ! -f %D/%%WWWDIR%%/%%CI_CONF_DIR%%/user_agents.php ]; then cp -p %D/%F %B/user_agents.php; else %%ECHO_MSG%% "===> Customized %D/%%WWWDIR%%/%%CI_CONF_DIR%%/user_agents.php has not been overwritten"; fi
 %%WWWDIR%%/application/controllers/index.html
-%%WWWDIR%%/application/controllers/migrate.php
 %%WWWDIR%%/application/controllers/welcome.php
 %%WWWDIR%%/application/core/index.html
 %%WWWDIR%%/application/errors/error_404.php
@@ -56,7 +52,6 @@
 %%WWWDIR%%/application/language/english/index.html
 %%WWWDIR%%/application/libraries/index.html
 %%WWWDIR%%/application/logs/index.html
-%%WWWDIR%%/application/migrations/001_Create_accounts.php
 %%WWWDIR%%/application/models/index.html
 %%WWWDIR%%/application/third_party/index.html
 %%WWWDIR%%/application/views/index.html
@@ -175,7 +170,6 @@
 %%WWWDIR%%/system/libraries/Image_lib.php
 %%WWWDIR%%/system/libraries/Javascript.php
 %%WWWDIR%%/system/libraries/Log.php
-%%WWWDIR%%/system/libraries/Migration.php
 %%WWWDIR%%/system/libraries/Pagination.php
 %%WWWDIR%%/system/libraries/Parser.php
 %%WWWDIR%%/system/libraries/Profiler.php
@@ -215,7 +209,6 @@
 @dirrm %%WWWDIR%%/application/views
 @dirrm %%WWWDIR%%/application/third_party
 @dirrm %%WWWDIR%%/application/models
-@dirrm %%WWWDIR%%/application/migrations
 @dirrm %%WWWDIR%%/application/logs
 @dirrm %%WWWDIR%%/application/libraries
 @dirrm %%WWWDIR%%/application/language/english

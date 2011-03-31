@@ -6,12 +6,11 @@
 #
 
 PORTNAME=	codeigniter
-PORTVERSION=	2.0.1
+PORTVERSION=	2.0.2
 CATEGORIES=	www
-MASTER_SITES=	https://bitbucket.org/ellislab/codeigniter-reactor/get/ \
-	http://www.codeigniter.org.tw/download_files/2.0.1/
+MASTER_SITES=	https://bitbucket.org/ellislab/codeigniter-reactor/get/
 PKGNAMESUFFIX=	-devel
-DISTNAME=	a560339f28f1
+DISTNAME=	f3284f26710e
 
 MAINTAINER=	appleboy.tw@gmail.com
 COMMENT=	A framework for developing PHP web applications
@@ -24,7 +23,7 @@ WANT_PHP_WEB=	yes
 
 CI_SYS_DIR=	system
 CI_CONF_DIR=	application/config
-WRKSRC=	${WRKDIR}/codeigniter-reactor
+WRKSRC=	${WRKDIR}/ellislab-codeigniter-reactor-${DISTNAME}
 WWWDIR=	${PREFIX}/www/codeigniter
 PORTDOCS=	*
 
@@ -36,10 +35,9 @@ CI_CONF_FILES=	index.php ${CI_CONF_DIR}/autoload.php \
 		${CI_CONF_DIR}/database.php \
 		${CI_CONF_DIR}/doctypes.php \
 		${CI_CONF_DIR}/foreign_chars.php \
-		${CI_CONF_DIR}/profiler.php \
 		${CI_CONF_DIR}/hooks.php \
-		${CI_CONF_DIR}/migration.php \
 		${CI_CONF_DIR}/mimes.php \
+		${CI_CONF_DIR}/profiler.php \
 		${CI_CONF_DIR}/routes.php ${CI_CONF_DIR}/smileys.php \
 		${CI_CONF_DIR}/user_agents.php
 
@@ -55,7 +53,6 @@ STD_BITS=	${CI_CONF_DIR}/index.html \
 		application/language \
 		application/libraries \
 		application/logs \
-		application/migrations \
 		application/models \
 		application/third_party \
 		application/views \
