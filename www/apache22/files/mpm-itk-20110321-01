@@ -1,6 +1,34 @@
+vim: syntax=diff
+
+Monolithic mpm-itk patch version 2.2.17-01 updated 2011-03-21
+
+The Apache 2 ITK MPM
+
+apache2-mpm-itk (just mpm-itk for short) is an MPM (Multi-Processing Module)
+for the Apache web server. mpm-itk allows you to run each of your vhost
+under a separate uid and gid . in short, the scripts and configuration files
+for one vhost no longer have to be readable for all the other vhosts.
+
+mpm-itk is based on the traditional prefork MPM, which means it's
+non-threaded; in short, this means you can run non-thread-aware code (like
+many PHP extensions) without problems. On the other hand, you lose out to
+any performance benefit you'd get with threads, of course; you'd have to
+decide for yourself if that's worth it or not. You will also take an
+additional performance hit over prefork, since there's an extra fork per
+request.
+
+Licensing:
+ mpm-itk is licensed under the Apache License, version 2.0,
+ like the rest of Apache.
+
+For more Informations and Instructions please visit the official webpage.
+
+WWW: http://mpm-itk.sesse.net/
+
+===========================================================================
 unchanged:
---- server/mpm/experimental/itk/Makefile.in	2009-03-17 21:38:54.000000000 +0100
-+++ server/mpm/experimental/itk/Makefile.in	2009-03-17 21:39:03.000000000 +0100
+--- server/mpm/experimental/itk/Makefile.in
++++ server/mpm/experimental/itk/Makefile.in
 @@ -0,0 +1,5 @@
 +
 +LTLIBRARY_NAME    = libitk.la
@@ -8,16 +36,16 @@ unchanged:
 +
 +include $(top_srcdir)/build/ltlib.mk
 unchanged:
---- server/mpm/experimental/itk/config.m4	2009-03-17 21:38:53.000000000 +0100
-+++ server/mpm/experimental/itk/config.m4	2009-03-17 21:39:03.000000000 +0100
+--- server/mpm/experimental/itk/config.m4
++++ server/mpm/experimental/itk/config.m4
 @@ -0,0 +1,3 @@
 +if test "$MPM_NAME" = "itk" ; then
-+    APACHE_FAST_OUTPUT(server/mpm/$MPM_NAME/Makefile)
++    APACHE_FAST_OUTPUT(server/mpm/$MPM_SUBDIR_NAME/Makefile)
 +fi
-diff -u httpd-2.2.11/server/mpm/experimental/itk/itk.c httpd-2.2.11/server/mpm/experimental/itk/itk.c
---- server/mpm/experimental/itk/itk.c	2009-04-14 23:29:16.000000000 +0200
-+++ server/mpm/experimental/itk/itk.c	2009-04-14 23:31:05.000000000 +0200
-@@ -0,0 +1,1740 @@
+unchanged:
+--- server/mpm/experimental/itk/itk.c
++++ server/mpm/experimental/itk/itk.c
+@@ -0,0 +1,1757 @@
 +/* Licensed to the Apache Software Foundation (ASF) under one or more
 + * contributor license agreements.  See the NOTICE file distributed with
 + * this work for additional information regarding copyright ownership.
@@ -576,8 +604,12 @@ diff -u httpd-2.2.11/server/mpm/experimental/itk/itk.c httpd-2.2.11/server/mpm/e
 +    (void) ap_update_child_status(sbh, SERVER_READY, (request_rec *) NULL);
 +
 +    /* Set up the pollfd array */
-+    /* ### check the status */
-+    (void) apr_pollset_create(&pollset, num_listensocks, pchild, 0);
++    status = apr_pollset_create(&pollset, num_listensocks, pchild, 0);
++    if (status != APR_SUCCESS) {
++        ap_log_error(APLOG_MARK, APLOG_EMERG, status, ap_server_conf,
++                     "Couldn't create pollset in child; check system or user limits");
++        clean_child_exit(APEXIT_CHILDSICK); /* assume temporary resource issue */
++    }
 +
 +    for (lr = ap_listeners, i = num_listensocks; i--; lr = lr->next) {
 +        apr_pollfd_t pfd = { 0 };
@@ -648,19 +680,27 @@ diff -u httpd-2.2.11/server/mpm/experimental/itk/itk.c httpd-2.2.11/server/mpm/e
 +                apr_int32_t numdesc;
 +                const apr_pollfd_t *pdesc;
 +
-+                /* timeout == -1 == wait forever */
-+                status = apr_pollset_poll(pollset, -1, &numdesc, &pdesc);
++                /* check for termination first so we don't sleep for a while in
++                 * poll if already signalled
++                 */
++                if (one_process && shutdown_pending) {
++                    SAFE_ACCEPT(accept_mutex_off());
++                    return;
++                }
++                else if (die_now) {
++                    /* In graceful stop/restart; drop the mutex
++                     * and terminate the child. */
++                    SAFE_ACCEPT(accept_mutex_off());
++                    clean_child_exit(0);
++                }
++                /* timeout == 10 seconds to avoid a hang at graceful restart/stop
++                 * caused by the closing of sockets by the signal handler
++                 */
++                status = apr_pollset_poll(pollset, apr_time_from_sec(10), 
++                                          &numdesc, &pdesc);
 +                if (status != APR_SUCCESS) {
-+                    if (APR_STATUS_IS_EINTR(status)) {
-+                        if (one_process && shutdown_pending) {
-+                            return;
-+                        }
-+                        else if (die_now) {
-+                            /* In graceful stop/restart; drop the mutex
-+                             * and terminate the child. */
-+                            SAFE_ACCEPT(accept_mutex_off());
-+                            clean_child_exit(0);
-+                        }
++                    if (APR_STATUS_IS_TIMEUP(status) ||
++                        APR_STATUS_IS_EINTR(status)) {
 +                        continue;
 +                    }
 +                    /* Single Unix documents select as returning errnos
@@ -774,6 +814,11 @@ diff -u httpd-2.2.11/server/mpm/experimental/itk/itk.c httpd-2.2.11/server/mpm/e
 +        if (getuid())
 +            die_now = 1;
 +    }
++    /* This apr_pool_clear call is redundant, should be redundant, but compensates
++     * a flaw in the apr reslist code.  This should be removed once that flaw has
++     * been addressed.
++     */
++    apr_pool_clear(ptrans);
 +    clean_child_exit(0);
 +}
 +
@@ -1718,16 +1763,16 @@ diff -u httpd-2.2.11/server/mpm/experimental/itk/itk.c httpd-2.2.11/server/mpm/e
 +static void *itk_merge_dir_config(apr_pool_t *p, void *parent_ptr, void *child_ptr)
 +{
 +    itk_per_dir_conf *c = (itk_per_dir_conf *)
-+        apr_pcalloc(p, sizeof(itk_per_dir_conf));
++        itk_create_dir_config(p, NULL);
 +    itk_per_dir_conf *parent = (itk_per_dir_conf *) parent_ptr;
 +    itk_per_dir_conf *child = (itk_per_dir_conf *) child_ptr;
 +
 +    if (child->username != NULL) {
-+      c->username = apr_pstrdup(p, child->username);
++      c->username = child->username;
 +      c->uid = child->uid;
 +      c->gid = child->gid;
-+    } else if (parent->username != NULL) {
-+      c->username = apr_pstrdup(p, parent->username);
++    } else {
++      c->username = parent->username;
 +      c->uid = parent->uid;
 +      c->gid = parent->gid;
 +    }
@@ -1759,8 +1804,8 @@ diff -u httpd-2.2.11/server/mpm/experimental/itk/itk.c httpd-2.2.11/server/mpm/e
 +    itk_hooks,                  /* register hooks */
 +};
 unchanged:
---- server/mpm/experimental/itk/mpm.h	2009-03-17 21:39:03.000000000 +0100
-+++ server/mpm/experimental/itk/mpm.h	2009-03-21 13:02:33.000000000 +0100
+--- server/mpm/experimental/itk/mpm.h
++++ server/mpm/experimental/itk/mpm.h
 @@ -0,0 +1,68 @@
 +/* Licensed to the Apache Software Foundation (ASF) under one or more
 + * contributor license agreements.  See the NOTICE file distributed with
@@ -1831,8 +1876,8 @@ unchanged:
 +#endif /* APACHE_MPM_ITK_H */
 +/** @} */
 unchanged:
---- server/mpm/experimental/itk/mpm_default.h	2009-03-17 21:39:03.000000000 +0100
-+++ server/mpm/experimental/itk/mpm_default.h	2009-03-21 13:02:33.000000000 +0100
+--- server/mpm/experimental/itk/mpm_default.h
++++ server/mpm/experimental/itk/mpm_default.h
 @@ -0,0 +1,80 @@
 +/* Licensed to the Apache Software Foundation (ASF) under one or more
 + * contributor license agreements.  See the NOTICE file distributed with
@@ -1915,8 +1960,8 @@ unchanged:
 +#endif /* AP_MPM_DEFAULT_H */
 +/** @} */
 unchanged:
---- orig/server/mpm/config.m4	2007-01-29 21:30:26.000000000 +0100
-+++ server/mpm/config.m4	2007-01-29 21:30:35.000000000 +0100
+--- server/mpm/config.m4
++++ server/mpm/config.m4
 @@ -1,7 +1,7 @@
  AC_MSG_CHECKING(which MPM to use)
  AC_ARG_WITH(mpm,
@@ -1935,17 +1980,21 @@ unchanged:
          return 0
      else
          return 1
-unchanged:
---- server/mpm/experimental/itk/config.m4	2007-01-29 21:03:51.000000000 +0100
-+++ server/mpm/experimental/itk/config.m4	2007-01-29 21:03:57.000000000 +0100
-@@ -1,3 +1,3 @@
- if test "$MPM_NAME" = "itk" ; then
--    APACHE_FAST_OUTPUT(server/mpm/$MPM_NAME/Makefile)
-+    APACHE_FAST_OUTPUT(server/mpm/$MPM_SUBDIR_NAME/Makefile)
+@@ -66,6 +66,11 @@
+ else
+   MPM_SUBDIR_NAME=$MPM_NAME
  fi
++
++if test "$apache_cv_mpm" = "itk" ; then
++  AC_CHECK_LIB(cap, cap_init)
++fi
++
+ MPM_DIR=server/mpm/$MPM_SUBDIR_NAME
+ MPM_LIB=$MPM_DIR/lib${MPM_NAME}.la
+ 
 unchanged:
---- include/http_request.h	2009-03-21 13:03:31.000000000 +0100
-+++ include/http_request.h	2009-03-21 13:03:41.000000000 +0100
+--- include/http_request.h
++++ include/http_request.h
 @@ -12,6 +12,12 @@
   * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
   * See the License for the specific language governing permissions and
@@ -1976,8 +2025,8 @@ unchanged:
  AP_DECLARE(int) ap_directory_walk(request_rec *r);
  AP_DECLARE(int) ap_file_walk(request_rec *r);
 unchanged:
---- server/request.c	2009-03-21 13:03:13.000000000 +0100
-+++ server/request.c	2009-03-21 13:03:41.000000000 +0100
+--- server/request.c
++++ server/request.c
 @@ -12,6 +12,12 @@
   * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
   * See the License for the specific language governing permissions and
@@ -2022,18 +2071,42 @@ unchanged:
      /* Only on the main request! */
      if (r->main == NULL) {
          if ((access_status = ap_run_header_parser(r))) {
+only in patch2:
 unchanged:
---- server/mpm/config.m4	2009-04-14 23:26:41.000000000 +0200
-+++ server/mpm/config.m4	2009-04-14 23:28:03.000000000 +0200
-@@ -66,6 +66,11 @@
- else
-   MPM_SUBDIR_NAME=$MPM_NAME
- fi
-+
-+if test "$apache_cv_mpm" = "itk" ; then
-+  AC_CHECK_LIB(cap, cap_init)
-+fi
-+
- MPM_DIR=server/mpm/$MPM_SUBDIR_NAME
- MPM_LIB=$MPM_DIR/lib${MPM_NAME}.la
- 
+--- server/config.c
++++ server/config.c
+@@ -1840,6 +1840,34 @@ AP_CORE_DECLARE(int) ap_parse_htaccess(a
+         else {
+             if (!APR_STATUS_IS_ENOENT(status)
+                 && !APR_STATUS_IS_ENOTDIR(status)) {
++#ifdef ITK_MPM
++                /*
++                 * If we are in a persistent connection, we might end up in a state
++                 * where we can no longer read .htaccess files because we have already
++                 * setuid(). This can either be because the previous request was for
++                 * another vhost (basically the same problem as when setuid() fails in
++                 * itk.c), or it can be because a .htaccess file is readable only by
++                 * root.
++                 *
++                 * In any case, we don't want to give out a 403, since the request has
++                 * a very real chance of succeeding on a fresh connection (where
++                 * presumably uid=0). Thus, we give up serving the request on this
++                 * TCP connection, and do a hard close of the socket. As long as we're
++                 * in a persistent connection (and there _should_ not be a way this
++                 * would happen on the first request in a connection, save for subrequests,
++                 * which we special-case), this is allowed, as it is what happens on
++                 * a timeout. The browser will simply open a new connection and try
++                 * again (there's of course a performance hit, though, both due to
++                 * the new connection setup and the fork() of a new server child).
++                 */
++                if (r->main == NULL && getuid() != 0) {
++                    ap_log_rerror(APLOG_MARK, APLOG_WARNING, status, r,
++                                  "Couldn't read %s, closing connection.",
++                                  filename);
++                    ap_lingering_close(r->connection);
++                    exit(0);
++                }
++#endif          
+                 ap_log_rerror(APLOG_MARK, APLOG_CRIT, status, r,
+                               "%s pcfg_openfile: unable to check htaccess file, "
+                               "ensure it is readable",

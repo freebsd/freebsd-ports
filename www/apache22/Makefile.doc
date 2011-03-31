@@ -74,9 +74,11 @@
 ##                                defines WITH_EXCEPTION_HOOK too)
 ##      WITH_EXCEPTION_HOOK:      Enable fatal exception hook
 ##
-##  Optionnal patches:  
+##  Optional patches:  
 ##      WITH_EXPERIMENTAL_PATCHES Add performance patches (generally backported
 ##                                from apr/httpd SVN repositories)
+##	WITH_ITK_PERDIR_REGEX     Add the per-directory setting AssignUserFromPath for mpm-itk
+##                                as described on http://www.pvv.ntnu.no/~knuta/mpm-itk/
 ##
 ## Available make targets:
 ##      show-options:             prints this message
