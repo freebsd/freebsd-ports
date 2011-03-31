@@ -8,7 +8,7 @@
 
 PORTNAME=	evince
 PORTVERSION=	2.32.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics print gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -98,7 +98,7 @@ PLIST_SUB+=		IMPRESS="@comment "
 .endif
 
 .if defined(WITH_DJVU)
-LIB_DEPENDS+=		djvulibre.23:${PORTSDIR}/graphics/djvulibre-nox11
+LIB_DEPENDS+=		djvulibre.24:${PORTSDIR}/graphics/djvulibre-nox11
 CONFIGURE_ARGS+=	--enable-djvu
 GCONF_SCHEMAS+=		evince-thumbnailer-djvu.schemas
 PLIST_SUB+=		DJVU=""
