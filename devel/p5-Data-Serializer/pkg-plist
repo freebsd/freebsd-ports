@@ -1,5 +1,8 @@
 %%SITE_PERL%%/Data/Serializer.pm
+%%SITE_PERL%%/Data/Serializer/Bencode.pm
 %%SITE_PERL%%/Data/Serializer/Config/General.pm
+%%SITE_PERL%%/Data/Serializer/Convert/Bencode.pm
+%%SITE_PERL%%/Data/Serializer/Convert/Bencode_XS.pm
 %%SITE_PERL%%/Data/Serializer/Cookbook.pm
 %%SITE_PERL%%/Data/Serializer/Data/Denter.pm
 %%SITE_PERL%%/Data/Serializer/Data/Dumper.pm
@@ -7,7 +10,9 @@
 %%SITE_PERL%%/Data/Serializer/FreezeThaw.pm
 %%SITE_PERL%%/Data/Serializer/JSON.pm
 %%SITE_PERL%%/Data/Serializer/JSON/Syck.pm
+%%SITE_PERL%%/Data/Serializer/Persistent.pm
 %%SITE_PERL%%/Data/Serializer/PHP/Serialization.pm
+%%SITE_PERL%%/Data/Serializer/Raw.pm
 %%SITE_PERL%%/Data/Serializer/Storable.pm
 %%SITE_PERL%%/Data/Serializer/XML/Dumper.pm
 %%SITE_PERL%%/Data/Serializer/XML/Simple.pm
@@ -18,6 +23,7 @@
 @dirrm %%SITE_PERL%%/Data/Serializer/PHP
 @dirrm %%SITE_PERL%%/Data/Serializer/JSON
 @dirrm %%SITE_PERL%%/Data/Serializer/Data
+@dirrm %%SITE_PERL%%/Data/Serializer/Convert
 @dirrm %%SITE_PERL%%/Data/Serializer/Config
 @dirrm %%SITE_PERL%%/Data/Serializer
 @dirrmtry %%SITE_PERL%%/auto/Data

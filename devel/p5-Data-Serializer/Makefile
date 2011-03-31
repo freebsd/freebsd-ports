@@ -6,13 +6,12 @@
 #
 
 PORTNAME=	Data-Serializer
-PORTVERSION=	0.49
-PORTREVISION=	2
+PORTVERSION=	0.57
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	culot@FreeBSD.org
 COMMENT=	Modules that serialize data structures
 
 RUN_DEPENDS=	${SITE_PERL}/Crypt/CBC.pm:${PORTSDIR}/security/p5-Crypt-CBC \
@@ -21,20 +20,19 @@ BUILD_DEPENDS=	${RUN_DEPENDS}
 
 PERL_MODBUILD=	yes
 
-MAN3=		Data::Serializer.3 Data::Serializer::Config::General.3 \
+MAN3=		Data::Serializer.3 Data::Serializer::Bencode.3 \
+		Data::Serializer::Config::General.3 \
+		Data::Serializer::Convert::Bencode.3 \
+		Data::Serializer::Convert::Bencode_XS.3 \
 		Data::Serializer::Cookbook.3 Data::Serializer::Data::Denter.3 \
 		Data::Serializer::Data::Dumper.3 Data::Serializer::Data::Taxi.3 \
 		Data::Serializer::FreezeThaw.3 Data::Serializer::JSON.3 \
 		Data::Serializer::JSON::Syck.3 \
+		Data::Serializer::Persistent.3 \
 		Data::Serializer::PHP::Serialization.3 \
+		Data::Serializer::Raw.3 \
 		Data::Serializer::Storable.3 Data::Serializer::XML::Dumper.3 \
 		Data::Serializer::XML::Simple.3 Data::Serializer::YAML.3 \
 		Data::Serializer::YAML::Syck.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500903
-RUN_DEPENDS+=	p5-IO-Compress>=2.017:${PORTSDIR}/archivers/p5-IO-Compress
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
