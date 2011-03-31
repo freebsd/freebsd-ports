@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	picocom
-PORTVERSION=	1.4
+PORTVERSION=	1.6
 CATEGORIES=	comms
-MASTER_SITES=	http://efault.net/npat/hacks/picocom/dist/
+MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	dhn@FreeBSD.org
 COMMENT=	Dumb Terminal Emulator
 
 ALL_TARGET=	picocom
