@@ -6,13 +6,14 @@
 #
 
 PORTNAME=	massxpert
-PORTVERSION=	2.3.6
-PORTREVISION=	1
+PORTVERSION=	2.4.3
 CATEGORIES=	science
 MASTER_SITES=	http://download.tuxfamily.org/massxpert/source/
 
 MAINTAINER=	g.veniamin@googlemail.com
 COMMENT=	The massXpert software for (bio)chemists
+
+LICENSE=	GPLv3
 
 USE_QT_VER=	4
 USE_CMAKE=	yes
