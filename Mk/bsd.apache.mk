@@ -21,7 +21,9 @@ Apache_Pre_Include=		bsd.apache.mk
 
 # Print warnings
 _ERROR_MSG=	: Error from bsd.apache.mk.
+
 APACHE_SUPPORTED_VERSION=	13 20 22
+
 .if ${USE_APACHE:Mcommon*} != ""
 AP_PORT_IS_SERVER=	YES
 .elif ${USE_APACHE:C/\.//:C/\+//:M[12][320]} != ""
@@ -30,6 +32,7 @@ AP_PORT_IS_MODULE=	YES
 IGNORE=		${_ERROR_MSG} Illegal use of USE_APACHE
 .endif
 
+# ===============================================================
 .if defined(AP_PORT_IS_SERVER)
 # For slave ports:
 .if defined(SLAVE_DESIGNED_FOR) && ${PORTVERSION} != ${SLAVE_DESIGNED_FOR}
@@ -78,7 +81,7 @@ CONFIGURE_ARGS+=	--disable-authn-file --disable-authn-default \
 			--disable-autoindex --disable-asis --disable-cgid \
 			--disable-cgi --disable-negotiation --disable-dir \
 			--disable-imagemap --disable-actions --disable-userdir \
-			--disable-alias --disable-filter \
+			--disable-alias --disable-filter --disable-substitute \
 			--disable-proxy --disable-proxy-connect \
 			--disable-proxy-ftp --disable-proxy-http \
 			--disable-proxy-ajp --disable-proxy-balancer \
@@ -225,8 +228,9 @@ ${module}_PLIST_SUB=	""
 .for module in ${AVAILABLE_MODULES}
 PLIST_SUB+=	MOD_${module:U}=${${module}_PLIST_SUB}
 .endfor
-####End of PORT_IS_SERVER ####
+#### End of AP_PORT_IS_SERVER ####
 
+# ===============================================================
 .elif defined(AP_PORT_IS_MODULE)
 AP_VERSION=	${USE_APACHE:C/\.//}
 
@@ -325,9 +329,10 @@ AP_EXTRAS+=	-I ${AP_INC}
 AP_EXTRAS+=	-L ${AP_LIB}
 .endif
 
-.endif
+.endif # End of AP_PORT_IS_SERVER   / AP_PORT_IS_MOULE
+.endif # End of !Apache_Pre_Include / PORT_IS_MODULE
 
-.endif #!defined(Apache_Pre_Include)
+# ===============================================================
 .if defined(_POSTMKINCLUDED) && !defined(Apache_Post_Include)
 Apache_Post_Include=                    bsd.apache.mk
 
@@ -383,7 +388,7 @@ make-options-list:
 		${ECHO_CMD}; \
 	fi;\
 	done; \
-	${ECHO_CMD}; 
+	${ECHO_CMD};
 .endif
 
 .elif defined(AP_PORT_IS_MODULE)
