@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	ekg2
-PORTVERSION=	0.3.0
+PORTVERSION=	0.3.1
 PORTEPOCH=	1
 CATEGORIES=	polish net-im
 MASTER_SITES=	http://pl.ekg2.org/
@@ -44,7 +44,7 @@ CONFIGURE_ARGS+=	--enable-shared \
 			--without-gif \
 			--without-libjpeg
 
-CONFIGURE_ENV=		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib -lintl"
+CONFIGURE_ENV=		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib -lintl ${PTHREAD_LIBS}"
 CFLAGS+=		-I${LOCALBASE}/include
 
 .include <bsd.port.pre.mk>
