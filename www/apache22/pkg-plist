@@ -165,6 +165,7 @@ libexec/apache22/httpd.exp
 %%MOD_SSL%%libexec/apache22/mod_ssl.so
 %%MOD_STATUS%%libexec/apache22/mod_status.so
 %%MOD_SUEXEC%%libexec/apache22/mod_suexec.so
+%%MOD_SUBSTITUTE%%libexec/apache22/mod_substitute.so
 %%MOD_UNIQUE_ID%%libexec/apache22/mod_unique_id.so
 %%MOD_USERDIR%%libexec/apache22/mod_userdir.so
 %%MOD_USERTRACK%%libexec/apache22/mod_usertrack.so

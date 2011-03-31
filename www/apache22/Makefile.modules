@@ -29,7 +29,7 @@ LDAP_MODULES=		ldap authnz_ldap
 MISC_MODULES+=		actions alias asis autoindex cern_meta \
 			cgi charset_lite dbd deflate dir dumpio env expires \
 			headers imagemap include info log_config logio mime \
-			mime_magic negotiation rewrite setenvif speling status \
+			mime_magic negotiation rewrite setenvif speling status substitute \
 			unique_id userdir usertrack vhost_alias filter version reqtimeout
 PROXY_MODULES=		proxy proxy_connect proxy_ftp proxy_http proxy_ajp proxy_balancer proxy_scgi
 SSL_MODULES=		ssl
@@ -65,6 +65,9 @@ PLIST_SUB+=	PREFORK="@comment " WORKER="@comment " EVENT=""
 .      elif  ${WITH_MPM:L} == "itk"
 PLIST_SUB+=	PREFORK="@comment " WORKER="@comment " EVENT="@comment "
 EXTRA_PATCHES+=	${PATCHDIR}/mpm-itk-${MPM_ITK_VERSION}
+.   if defined (WITH_ITK_PERDIR_REGEX)
+EXTRA_PATCHES+= ${PATCHDIR}/mpm-itk-perdir-regex
+.   endif
 .      else
 IGNORE=		"Unknown MPM: ${WITH_MPM}"
 .      endif

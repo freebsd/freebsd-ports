@@ -61,6 +61,7 @@ OPTIONS+= \
 	 USERTRACK "Enable mod_usertrack" ON \
 	 VHOST_ALIAS "Enable mod_vhost_alias" ON \
 	 FILTER "Enable mod_filter" ON \
+	 SUBSTITUTE "Enable mod_substitute" OFF \
 	 VERSION "Enable mod_version" ON \
 	 PROXY "Enable mod_proxy" OFF \
 	 PROXY_CONNECT "Enable mod_proxy_connect" OFF \
