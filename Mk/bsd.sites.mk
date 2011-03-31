@@ -828,6 +828,24 @@ MASTER_SITE_NETBSD+=	\
 	ftp://ftp.funet.fi/pub/NetBSD/packages/distfiles/%SUBDIR%/
 .endif
 
+.if !defined(IGNORE_MASTER_SITE_NETLIB)
+MASTER_SITE_NETLIB+=	\
+	ftp://ftp.netlib.org/%SUBDIR%/ \
+	http://www.netlib.org/%SUBDIR%/ \
+	ftp://ftp.mirrorservice.org/sites/netlib.bell-labs.com/netlib/%SUBDIR%/ \
+	http://www.mirrorservice.org/sites/netlib.bell-labs.com/netlib/%SUBDIR%/ \
+	ftp://ftp.netlib.no/netlib/%SUBDIR%/ \
+	http://www.netlib.no/netlib/%SUBDIR%/ \
+	ftp://ftp.irisa.fr/pub/netlib/%SUBDIR%/ \
+	http://artfiles.org/netlib.org/%SUBDIR%/ \
+	http://netlib.amss.ac.cn/%SUBDIR%/ \
+	http://netlib.caspur.it/%SUBDIR%/ \
+	http://netlib.ccp14.ac.uk/%SUBDIR%/ \
+	http://netlib.enseeiht.fr/%SUBDIR%/ \
+	http://netlib.linux-mirror.org/%SUBDIR%/ \
+	http://phase.hpcc.jp/mirrors/netlib/%SUBDIR%/
+.endif
+
 .if !defined(IGNORE_MASTER_SITE_NVIDIA)
 MASTER_SITE_NVIDIA+=	\
 	http://jp.download.nvidia.com/%SUBDIR%/ \
@@ -1452,6 +1470,7 @@ MASTER_SITE_KERNEL_ORG+= \
 # Macro magic
 
 MASTER_SITES_ABBREVS=	CPAN:PERL_CPAN \
+			NL:NETLIB \
 			SF:SOURCEFORGE \
 			SFJP:SOURCEFORGE_JP \
 			RG:RUBYGEMS \
@@ -1469,6 +1488,7 @@ MASTER_SITES_SUBDIRS=	\
 			HORDE:${PORTNAME} \
 			LOGILAB:${PORTNAME} \
 			MOZDEV:${PORTNAME:L} \
+			NETLIB:${PORTNAME} \
 			PERL_CPAN:${PORTNAME:C/-.*//} \
 			PNET:${PNET_MASTER_SITE_SUBDIR} \
 			PYTHON:${PYTHON_MASTER_SITE_SUBDIR} \
