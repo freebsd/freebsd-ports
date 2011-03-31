@@ -1,5 +1,5 @@
---- ./camlp4/man/Makefile.orig	2008-10-27 23:03:31.000000000 +0900
-+++ ./camlp4/man/Makefile	2009-01-21 01:35:26.000000000 +0900
+--- camlp4/man/Makefile.orig	2010-11-04 21:04:51.000000000 +0800
++++ camlp4/man/Makefile	2010-11-04 21:05:14.000000000 +0800
 @@ -3,7 +3,6 @@
  include ../config/Makefile.cnf
  
@@ -13,9 +13,9 @@
  	  $(MKDIR) $(MANDIR)/man1 ; \
  	  cp $(TARGET) $(MANDIR)/man1/. ; \
 -	  for i in $(ALIASES); do \
--            rm -f $(MANDIR)/man1/$$i; \
--            echo '.so man1/$(TARGET)' > $(MANDIR)/man1/$$i; \
--          done; \
+-	    rm -f $(MANDIR)/man1/$$i; \
+-	    echo '.so man1/$(TARGET)' > $(MANDIR)/man1/$$i; \
+-	  done; \
  	fi
  
  camlp4.1: camlp4.1.tpl

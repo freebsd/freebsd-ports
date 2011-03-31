@@ -1,3 +1,4 @@
+bin/ocamlobjinfo
 bin/camlp4
 bin/camlp4boot
 bin/camlp4o
@@ -38,7 +39,6 @@ bin/ocamlprof
 bin/ocamlrun
 bin/ocamlyacc
 lib/ocaml/Makefile.config
-lib/ocaml/addlabels
 lib/ocaml/arg.cmi
 lib/ocaml/arg.cmx
 lib/ocaml/arg.ml
@@ -66,7 +66,6 @@ lib/ocaml/bigarray.cma
 lib/ocaml/bigarray.cmi
 lib/ocaml/bigarray.cmx
 lib/ocaml/bigarray.cmxa
-lib/ocaml/bigarray.cmxs
 lib/ocaml/bigarray.mli
 lib/ocaml/buffer.cmi
 lib/ocaml/buffer.cmx
@@ -91,6 +90,8 @@ lib/ocaml/caml/misc.h
 lib/ocaml/caml/mlvalues.h
 lib/ocaml/caml/printexc.h
 lib/ocaml/caml/signals.h
+lib/ocaml/caml/socketaddr.h
+lib/ocaml/caml/threads.h
 lib/ocaml/caml/unixsupport.h
 lib/ocaml/camlheader
 lib/ocaml/camlheader_ur
@@ -270,18 +271,14 @@ lib/ocaml/dbm.cma
 lib/ocaml/dbm.cmi
 lib/ocaml/dbm.cmx
 lib/ocaml/dbm.cmxa
-lib/ocaml/dbm.cmxs
 lib/ocaml/dbm.mli
 lib/ocaml/digest.cmi
 lib/ocaml/digest.cmx
 lib/ocaml/digest.ml
 lib/ocaml/digest.mli
 %%PROF%%lib/ocaml/digest.p.cmx
-lib/ocaml/dynlink.a
 lib/ocaml/dynlink.cma
 lib/ocaml/dynlink.cmi
-lib/ocaml/dynlink.cmx
-lib/ocaml/dynlink.cmxa
 lib/ocaml/dynlink.mli
 lib/ocaml/event.mli
 lib/ocaml/expunge
@@ -311,7 +308,6 @@ lib/ocaml/genlex.mli
 %%X11%%lib/ocaml/graphics.cmi
 %%X11%%lib/ocaml/graphics.cmx
 %%X11%%lib/ocaml/graphics.cmxa
-%%X11%%lib/ocaml/graphics.cmxs
 %%X11%%lib/ocaml/graphics.mli
 %%X11%%lib/ocaml/graphicsX11.cmi
 %%X11%%lib/ocaml/graphicsX11.cmx
@@ -564,7 +560,6 @@ lib/ocaml/int_misc.cmx
 %%TK%%lib/ocaml/labltk/labltk.cmxa
 %%TK%%lib/ocaml/labltk/labltktop
 %%TK%%lib/ocaml/labltk/liblabltk.a
-%%TK%%lib/ocaml/labltk/libtkanim.a
 %%TK%%lib/ocaml/labltk/listbox.cmi
 %%TK%%lib/ocaml/labltk/listbox.cmx
 %%TK%%lib/ocaml/labltk/listbox.mli
@@ -628,11 +623,6 @@ lib/ocaml/int_misc.cmx
 %%TK%%lib/ocaml/labltk/timer.mli
 %%TK%%lib/ocaml/labltk/tk.cmi
 %%TK%%lib/ocaml/labltk/tk.cmx
-%%TK%%lib/ocaml/labltk/tkanim.a
-%%TK%%lib/ocaml/labltk/tkanim.cma
-%%TK%%lib/ocaml/labltk/tkanim.cmi
-%%TK%%lib/ocaml/labltk/tkanim.cmxa
-%%TK%%lib/ocaml/labltk/tkanim.mli
 %%TK%%lib/ocaml/labltk/tkcompiler
 %%TK%%lib/ocaml/labltk/tkthread.cmi
 %%TK%%lib/ocaml/labltk/tkthread.cmo
@@ -673,10 +663,10 @@ lib/ocaml/libasmrunp.a
 lib/ocaml/libbigarray.a
 lib/ocaml/libcamlrun.a
 lib/ocaml/libcamlrun_shared.so
+lib/ocaml/libcamlstr.a
 %%X11%%lib/ocaml/libgraphics.a
 lib/ocaml/libmldbm.a
 lib/ocaml/libnums.a
-lib/ocaml/libstr.a
 lib/ocaml/libthreads.a
 lib/ocaml/libthreadsnat.a
 lib/ocaml/libunix.a
@@ -720,11 +710,11 @@ lib/ocaml/num.mli
 lib/ocaml/nums.a
 lib/ocaml/nums.cma
 lib/ocaml/nums.cmxa
-lib/ocaml/nums.cmxs
 lib/ocaml/obj.cmi
 lib/ocaml/obj.cmx
 lib/ocaml/obj.ml
 lib/ocaml/obj.mli
+lib/ocaml/objinfo_helper
 %%PROF%%lib/ocaml/obj.p.cmx
 lib/ocaml/ocamlbuild/ocamlbuild.cmo
 lib/ocaml/ocamlbuild/ocamlbuild.cmx
@@ -841,7 +831,6 @@ lib/ocaml/scanf.cmx
 lib/ocaml/scanf.ml
 lib/ocaml/scanf.mli
 %%PROF%%lib/ocaml/scanf.p.cmx
-lib/ocaml/scrapelabels
 lib/ocaml/set.cmi
 lib/ocaml/set.cmx
 lib/ocaml/set.ml
@@ -879,7 +868,6 @@ lib/ocaml/str.cma
 lib/ocaml/str.cmi
 lib/ocaml/str.cmx
 lib/ocaml/str.cmxa
-lib/ocaml/str.cmxs
 lib/ocaml/str.mli
 lib/ocaml/stream.cmi
 lib/ocaml/stream.cmx
@@ -899,11 +887,10 @@ lib/ocaml/stringLabels.mli
 lib/ocaml/stublibs/dllbigarray.so
 %%X11%%lib/ocaml/stublibs/dllgraphics.so
 %%TK%%lib/ocaml/stublibs/dlllabltk.so
+lib/ocaml/stublibs/dllcamlstr.so
 lib/ocaml/stublibs/dllmldbm.so
 lib/ocaml/stublibs/dllnums.so
-lib/ocaml/stublibs/dllstr.so
 lib/ocaml/stublibs/dllthreads.so
-%%TK%%lib/ocaml/stublibs/dlltkanim.so
 lib/ocaml/stublibs/dllunix.so
 lib/ocaml/stublibs/dllvmthreads.so
 lib/ocaml/sys.cmi
@@ -936,7 +923,6 @@ lib/ocaml/unix.cma
 lib/ocaml/unix.cmi
 lib/ocaml/unix.cmx
 lib/ocaml/unix.cmxa
-lib/ocaml/unix.cmxs
 lib/ocaml/unix.mli
 lib/ocaml/unixLabels.cmi
 lib/ocaml/unixLabels.cmx

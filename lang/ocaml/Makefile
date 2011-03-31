@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ocaml
-PORTVERSION=	3.11.2
+PORTVERSION=	3.12.0
 PORTREVISION=	0
 CATEGORIES=	lang
 MASTER_SITES=	http://caml.inria.fr/distrib/${DISTNAME:R}/ \
