@@ -6,21 +6,16 @@
 #
 
 PORTNAME=	fastcap
-DISTVERSION=	${P_VERSION}wr
+DISTVERSION=	2.0wr-011109
 CATEGORIES=	science cad
-MASTER_SITES=	ftp://ftp.srware.com/pub/	\
-		http://www.wrcad.com/ftp/pub/
+MASTER_SITES=	http://www.wrcad.com/ftp/pub/ LOCAL/bf
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	bf@FreeBSD.org
 COMMENT=	A three-dimensional capacitance extraction program
-
-DEPRECATED=     Upstream disapear and distfile is no more available
-EXPIRATION_DATE=        2011-05-01
-
-P_VERSION=	2.0
 
 HAS_CONFIGURE=	yes
 CONFIGURE_SCRIPT=	config
+WRKSRC =	${WRKDIR}/fastcap-2.0wr
 
 BINFILES=	busgen capgen cubegen fastcap pipedgen pyragen
 
@@ -34,8 +29,10 @@ do-install:
 .for b in ${BINFILES}
 	@${INSTALL_PROGRAM} ${WRKSRC}/bin/${b} ${PREFIX}/bin/
 .endfor
+.if !defined(NOPORTEXAMPLES)
 	${MKDIR} ${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/examples/* ${EXAMPLESDIR}
+.endif
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 	${CAT} ${WRKSRC}/README ${WRKSRC}/README.mit > ${DOCSDIR}/readme
