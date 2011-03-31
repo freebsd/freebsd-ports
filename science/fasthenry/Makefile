@@ -6,21 +6,16 @@
 #
 
 PORTNAME=	fasthenry
-DISTVERSION=	${P_VERSION}wr
+DISTVERSION=	3.0wr-011109
 CATEGORIES=	science cad
-MASTER_SITES=	ftp://ftp.srware.com/pub/	\
-		http://www.wrcad.com/ftp/pub/
+MASTER_SITES=	http://www.wrcad.com/ftp/pub/ LOCAL/bf
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	bf@FreeBSD.org
 COMMENT=	A multipole-accelerated inductance analysis program
-
-DEPRECATED=     Upstream disapear and distfile is no more available
-EXPIRATION_DATE=        2011-05-01
-
-P_VERSION=	3.0
 
 HAS_CONFIGURE=	yes
 CONFIGURE_SCRIPT=	config
+WRKSRC =	${WRKDIR}/fasthenry-3.0wr
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,CFLAGS =, CFLAGS +=,' \
@@ -37,6 +32,8 @@ do-install:
 	${CAT} ${WRKSRC}/doc/nonuniform_manual_*.ps > ${DOCSDIR}/nonuniform_manual.ps
 	${INSTALL_DATA} ${WRKSRC}/doc/ms_thesis.ps ${DOCSDIR}
 	${GZIP_CMD} ${DOCSDIR}/*
+.endif
+.if !defined(NOPORTEXAMPLES)
 	${MKDIR} ${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/examples/* ${EXAMPLESDIR}
 .endif

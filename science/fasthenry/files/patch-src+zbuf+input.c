@@ -1,19 +1,10 @@
---- src/zbuf/input.c.orig	Sat Feb 25 22:33:42 2006
-+++ src/zbuf/input.c	Sat Feb 25 22:34:26 2006
-@@ -34,6 +34,7 @@
-  
+--- src/zbuf/input.c.orig	2009-01-11 14:29:55.000000000 -0500
++++ src/zbuf/input.c	2011-03-31 11:40:20.000000000 -0400
+@@ -32,6 +32,7 @@
+ of this software.
  */
  
 +#include <string.h>
  #include "mulGlobal.h"
  #include "zbufGlobal.h"
  
-@@ -1462,7 +1463,7 @@
-   surface *surf_list, *input_surfaces();
-   char infile[BUFSIZ], *ctime(), hostname[BUFSIZ];
-   charge *read_panels(), *chglist;
--  long clock;
-+  time_t clock;
-   extern ITER *kill_num_list, *qpic_num_list, *kinp_num_list, *kq_num_list;
-   extern char *kill_name_list, *qpic_name_list, *kinp_name_list;
-   extern char *kq_name_list;
