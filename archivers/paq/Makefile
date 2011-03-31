@@ -6,113 +6,130 @@
 #
 
 PORTNAME=	paq
-DISTVERSION=	8o9
-PORTREVISION=	4
+PORTVERSION=	20110316
 CATEGORIES=	archivers
-MASTER_SITES=	http://www.cs.fit.edu/~mmahoney/compression/
-DISTNAME=	${PORTNAME}${DISTVERSION}
+MASTER_SITES=	http://mattmahoney.net/dc/ LOCAL/bf/paq/
+DISTFILES=	libzpaq.202a.zip  pzpaq.005.zip zpaq.205.zip zpipe.201.zip
+.if !defined(NOPORTDATA) || make(makesum)
+DISTFILES+=	bmp_j4.zip bwt.1.zip bwt_j3.zip bwt_slowmode1.zip exe_j1.zip \
+		fast.cfg jpg_test2.zip max.cfg mid.cfg min.zip zpsfx.100.zip
+.endif
+.if !defined(NOPORTDOCS) || make(makesum)
+DISTFILES+=	zpaq1.pdf
+.endif
+DIST_SUBDIR=	${PORTNAME}
+EXTRACT_ONLY=	${DISTFILES:M*.zip}
 
 MAINTAINER=	bf@FreeBSD.org
 COMMENT=	A family of archivers with extremely high compression ratios
 
-LPAQ=		lpaq8
-LPQ=		lpq1
-PAQ9=		paq9a
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${LPAQ}${EXTRACT_SUFX} ${LPQ}v2${EXTRACT_SUFX} \
-		${PAQ9}${EXTRACT_SUFX}
+EXTRACT_AFTER_ARGS=	-x *.bat *.exe readme.txt -d ${WRKDIR}
 NO_WRKSUBDIR=	yes
 USE_ZIP=	yes
+
+USE_DOS2UNIX=	yes
+USE_PERL5_BUILD=	yes
+
 SUB_FILES=	pkg-message
-CPPFILE=	${PORTNAME}${DISTVERSION:C/v.([^\.]*)$/\1/}
-PLIST_SUB+=	CPPFILE=${CPPFILE} LPAQ=${LPAQ}	LPQ=${LPQ} PAQ9=${PAQ9}
 
-.include <bsd.port.pre.mk>
+MAN1=	pzpaq.1 zpaq.1
+MAN3=	libzpaq.3
 
-.if !defined(WITHOUT_ASM) && ${ARCH} == "i386" && !defined(PACKAGE_BUILDING)
-BUILD_DEPENDS+=	nasm:${PORTSDIR}/devel/nasm
-PAQFLAGS+=	-DUNIX
-ASM1?=	nasm -f elf -o
-ASM2?=	-Ox
-.if !defined(WITH_SSE2)
-ASMFILE=	paq7asm
-.else
-ASMFILE=	paq7asmsse
-.endif
-STRIP=
-.elif !defined(WITHOUT_ASM) && ${ARCH} == "amd64" && !defined(PACKAGE_BUILDING)
-BUILD_DEPENDS+=	yasm:${PORTSDIR}/devel/yasm
-PAQFLAGS+=	-DUNIX
-ASM1?=	yasm -f elf64 -o
-ASM2?=	-a x86 -m amd64
-ASMFILE=	paq7asm-x86_64
-STRIP=
-.else
-WITHOUT_ASM=	yes
-PAQFLAGS+=	-DUNIX -DNOASM
+LICENSE=	GPLv3 MIT
+LICENSE_COMB=	multi
+
+.if !defined(WITH_DEBUG)
+CFLAGS+=	-DNDEBUG
 .endif
 
-pre-everything::
-	@${ECHO_MSG}
-	@${ECHO_MSG} "If you have an older (pre-1997) x86 CPU without MMX instruction"
-	@${ECHO_MSG} "support, or if you wish to use the (usually slower) C++ code"
-	@${ECHO_MSG} "instead of the equivalent assembly language routines that are"
-	@${ECHO_MSG} "enabled by default on x86 and amd64 architectures, hit Ctrl-C"
-	@${ECHO_MSG} "now and use \"make WITHOUT_ASM=yes\"."
-	@${ECHO_MSG}
-	@${ECHO_MSG} "If you wish to use the version of the assembly code that is"
-	@${ECHO_MSG} "optimized for x86 or amd64 processors with SSE2 instruction"
-	@${ECHO_MSG} "support that are running in 32-bit mode, hit Ctrl-C now and use"
-	@${ECHO_MSG} "\"make WITH_SSE2=yes\"."
-	@${ECHO_MSG}
-	@${ECHO_MSG} "This software is computationally demanding, and users are"
-	@${ECHO_MSG} "advised to employ compiler optimizations when building it."
-	@${ECHO_MSG} "In particular, authors of this software have used such flags"
-	@${ECHO_MSG} "as \"-O2\" to advantage."
-	@${ECHO_MSG}
+ZPAQFLAGS=	-DOPT="\"${CXX} ${CXXFLAGS} -I${PREFIX}/include zpaqopt.cpp \
+		${PREFIX}/lib/zpaq/zpaq.o ${PREFIX}/lib/zpaq/libzpaq.o \
+		-o zpaqopt.exe\""
+PZPAQFLAGS=	-DOPT="\"${CXX} ${CXXFLAGS} ${PTHREAD_CFLAGS} \
+		-I${PREFIX}/include \$$1.cpp ${PREFIX}/lib/zpaq/pzpaq.o \
+		${PREFIX}/lib/zpaq/libzpaq.o ${PTHREAD_LIBS} -o \$$1.exe\""
+
+.if !defined(NOPORTDOCS)
+PORTDOCS=	libzpaq.cpp libzpaqo.cpp pzpaq.cpp readme_pzpaq.txt zpaq.cpp \
+		zpaq1.pdf zpipe.cpp
+READMES=	pzpaq.005
+.endif
+
+.if !defined(NOPORTDATA)
+.if !defined(NOPORTDOCS)
+PORTDOCS+=	bwt_.cpp bwtpre.cpp bwtrle.cpp divsufsort.c divsufsort.h \
+		exe_jo.cpp jpeg_jo.cpp lzppre.cpp readme_bwt.txt \
+		readme_bwt_j3.txt readme_exe_j1.txt zpsfx.cpp
+READMES+=	bwt_j3 exe_j1
+EXTRA_PATCHES +=	${FILESDIR}/patch_zpsfx.cpp
+.endif
+WDATA=	bmp_j4.cfg bwt_j3.cfg bwt_slowmode1_1GB_block.cfg \
+	bwt_slowmode1_256MB_block.cfg bwt_slowmode1_4MB_block.cfg \
+	bwt1.cfg bwt2.cfg bwtrle1.cfg bwtrle2.cfg colorpre.cfg \
+	exe_j1.cfg jpg_test2.cfg min.cfg zpsfx.tag
+DDATA=	fast.cfg max.cfg mid.cfg
+PORTDATA=	${WDATA} ${DDATA} zpsfx
+.endif
+
+.if !defined(NOPORTDOCS)
+post-extract:
+.for r in ${READMES}
+	@${UNZIP_CMD} -pq  ${_DISTDIR}/${r}.zip readme.txt > ${WRKSRC}/readme_${r:R}.txt
+.endfor
+
+.endif
+
+.if !defined(NOPORTDATA)
+post-patch:
+	@${REINPLACE_CMD} -e 's|c:\\res\\zpaq\\||' ${WRKSRC}/bwt[12].cfg \
+		${WRKSRC}/bwtrle[12].cfg
+
+.endif
 
 do-build:
-.if !defined(WITHOUT_ASM)
-	${ASM1} ${WRKSRC}/${ASMFILE}.o ${ASM2} ${WRKSRC}/${ASMFILE}.asm
-	${CXX} ${WRKSRC}/${CPPFILE}.cpp ${CXXFLAGS} ${PAQFLAGS} -o ${WRKSRC}/${CPPFILE} \
-	${WRKSRC}/${ASMFILE}.o
-.else
-	${CXX} ${WRKSRC}/${CPPFILE}.cpp ${CXXFLAGS} ${PAQFLAGS} -o ${WRKSRC}/${CPPFILE}
+.if !defined(NOPORTDATA)
+	@(cd ${WRKSRC}; for prog in bwt_ bwtpre exe_jo jpeg_jo lzppre; do \
+	${CXX} ${CXXFLAGS} $${prog}.cpp -o $${prog}; done; \
+	${CXX} ${CXXFLAGS} bwtrle.cpp divsufsort.c -o bwtrle; \
+	${CXX} ${CXXFLAGS} zpsfx.cpp libzpaq.cpp libzpaqo.cpp -o zpsfx)
 .endif
-.if ${ARCH} == "alpha" || ${ARCH} == "amd64" || ${ARCH} == "ia64" || ${ARCH} == "sparc64"
-PLIST_SUB+=	THIRTYTWO="@comment "
-.else
-	${CXX} ${WRKSRC}/${LPAQ}.cpp ${CXXFLAGS} -o ${WRKSRC}/${LPAQ}
-	${CXX} ${WRKSRC}/${LPAQ}.cpp ${CXXFLAGS} -DWIKI -o ${WRKSRC}/${LPAQ}e
-	${CXX} ${WRKSRC}/${LPQ}.cpp ${CXXFLAGS} -o ${WRKSRC}/${LPQ}
-	${CXX} ${WRKSRC}/${PAQ9}.cpp ${CXXFLAGS} -o ${WRKSRC}/${PAQ9}
-PLIST_SUB+=	THIRTYTWO=""
-.endif
+	@(cd ${WRKSRC};  ${CXX} ${CXXFLAGS} ${PTHREAD_CFLAGS} ${PZPAQFLAGS} \
+	pzpaq.cpp libzpaq.cpp libzpaqo.cpp ${PTHREAD_LIBS} -o pzpaq; \
+	${CXX} ${CXXFLAGS} ${ZPAQFLAGS} zpaq.cpp libzpaq.cpp libzpaqo.cpp \
+	-o zpaq; \
+	${CXX} ${CXXFLAGS} zpipe.cpp libzpaq.cpp libzpaqo.cpp -o zpipe; \
+	${CXX} ${CXXFLAGS} ${PTHREAD_CFLAGS} -c libzpaq.cpp pzpaq.cpp; \
+	${CXX} ${CXXFLAGS} -c zpaq.cpp; \
+	for page in ${MAN1} ${MAN3}; \
+	do pod2man $${page}.pod > $${page}; done)
 
 do-install:
-.if !exists(${PREFIX}/bin)
-	${MKDIR} ${PREFIX}/bin
-.endif
-	${INSTALL_PROGRAM} ${WRKSRC}/${CPPFILE} ${PREFIX}/bin
-.if ${ARCH} != "alpha" && ${ARCH} != "amd64" && ${ARCH} != "ia64" && ${ARCH} != "sparc64"
-	${INSTALL_PROGRAM} ${WRKSRC}/${LPAQ} ${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/${LPAQ}e ${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/${LPQ} ${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/${PAQ9} ${PREFIX}/bin
+	@${MKDIR} ${PREFIX}/bin ${PREFIX}/include ${PREFIX}/lib/zpaq \
+	${MANPREFIX}/man/man1 ${MANPREFIX}/man/man3
+.for prog in pzpaq zpaq zpipe
+	@${INSTALL_PROGRAM} ${WRKSRC}/${prog} ${PREFIX}/bin
+.endfor
+	@${INSTALL_DATA} ${WRKSRC}/libzpaq.h ${PREFIX}/include
+.for obj in  libzpaq.o pzpaq.o zpaq.o
+	@${INSTALL_DATA} ${WRKSRC}/${obj} ${PREFIX}/lib/zpaq
+.endfor
+.for page in ${MAN1} ${MAN3}
+	@${INSTALL_MAN} ${WRKSRC}/${page} ${MANPREFIX}/man/man${page:E}
+.endfor
+.if !defined(NOPORTDATA)
+.for prog in bwt_ bwtpre bwtrle exe_jo jpeg_jo lzppre
+	@${INSTALL_PROGRAM} ${WRKSRC}/${prog} ${PREFIX}/bin
+.endfor
+	@${MKDIR} ${DATADIR}
+	@(cd ${WRKSRC}; ${INSTALL_DATA} ${WDATA} ${DATADIR}; \
+	${INSTALL_LIB} zpsfx ${DATADIR})
+	@(cd ${_DISTDIR}; ${INSTALL_DATA} ${DDATA} ${DATADIR})
 .endif
 .if !defined(NOPORTDOCS)
-.if !exists(${DOCSDIR})
-	${MKDIR} ${DOCSDIR}
-.endif
-	${INSTALL_MAN} ${WRKSRC}/${CPPFILE}.cpp ${DOCSDIR}
-	${INSTALL_MAN} ${WRKSRC}/Readme.txt ${DOCSDIR}/${CPPFILE}_readme.txt
-.if ${ARCH} != "alpha" && ${ARCH} != "amd64" && ${ARCH} != "ia64" && ${ARCH} != "sparc64"
-	${INSTALL_MAN} ${WRKSRC}/${LPAQ}.cpp ${DOCSDIR}
-	${INSTALL_MAN} ${WRKSRC}/${LPQ}.cpp ${DOCSDIR}
-	${INSTALL_MAN} ${WRKSRC}/${PAQ9}.cpp ${DOCSDIR}
-	${INSTALL_MAN} ${WRKSRC}/Readme.txt ${DOCSDIR}/${CPPFILE}_readme.txt
-	${INSTALL_MAN} ${WRKSRC}/readme.txt ${DOCSDIR}/${LPAQ}_readme.txt
-.endif
+	@${MKDIR} ${DOCSDIR}
+	@(cd ${WRKSRC}; ${INSTALL_DATA} ${PORTDOCS:Nzpaq1.pdf} ${DOCSDIR})
+	@${INSTALL_DATA} ${_DISTDIR}/zpaq1.pdf ${DOCSDIR}
 .endif
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
