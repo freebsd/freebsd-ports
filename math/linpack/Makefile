@@ -9,11 +9,10 @@ PORTNAME=	linpack
 PORTVERSION=	1.0
 PORTREVISION=	3
 CATEGORIES=	math
-MASTER_SITES=	http://www.netlib.org/linpack/ \
-		http://netlib.amss.ac.cn/linpack/
+MASTER_SITES=	NL
 DISTFILES=	${SRCS}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	bf@FreeBSD.org
 COMMENT=	Linear Algebra package
 
 LIB_DEPENDS=	blas.2:${PORTSDIR}/math/blas
