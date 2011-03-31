@@ -2512,7 +2512,9 @@ ALL_TARGET?=		all
 INSTALL_TARGET?=	install
 
 # Integrate with the license auditing framework
+.if !defined (DISABLE_LICENSES)
 .include "${PORTSDIR}/Mk/bsd.licenses.mk"
+.endif
 
 # Popular master sites
 .include "${PORTSDIR}/Mk/bsd.sites.mk"

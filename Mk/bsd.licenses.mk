@@ -123,7 +123,7 @@ Licenses_Include_MAINTAINER=         portmgr@FreeBSD.org
 
 .if defined(_POSTMKINCLUDED) && !defined(BEFOREPORTMK)
 
-.if defined(LICENSE) && !defined(DISABLE_LICENSES)
+.if defined(LICENSE)
 
 # Include known licenses from database
 
@@ -493,7 +493,7 @@ _LICENSE_GROUPS:=	${_LICENSE_GROUPS:N${comp}}
 # Prepare information for asking license to the user
 
 .if ${_LICENSE_STATUS} == "ask" && ${_LICENSE_COMB} != "single"
-_LICENSE_ASK_DATA!=	mktemp -t portslicense
+_LICENSE_ASK_DATA!=	mktemp -ut portslicense
 .endif
 
 # Calculate restrictions and set RESTRICTED_FILES when
@@ -596,8 +596,9 @@ ${_LICENSE_COOKIE}:
 .	if !defined(NO_LICENSES_DIALOGS)
 # Dialog interface
 .		if ${_LICENSE_COMB} == "single"
-	@while true; do \
-		tmpfile=$$(mktemp -t portlicenses); \
+	trap '${RM} -f $$tmpfile' EXIT INT TERM; \
+	tmpfile=$$(mktemp -t portlicenses); \
+	while true; do \
 		${DIALOG} --menu "License for ${PKGNAME} (${_LICENSE})" 21 70 15 accept "Accept license" reject "Reject license" view "View license" 2>"$${tmpfile}"; \
 		result=`${CAT} $${tmpfile}`; \
 		case $${result} in \
@@ -613,6 +614,7 @@ ${_LICENSE_COOKIE}:
 	@${ECHO_CMD} "${lic}:${_LICENSE_FILE_${lic}}" >> ${_LICENSE_ASK_DATA}
 .			endfor
 	@menu_cmd="${DIALOG} --title \"This port requires you to accept at least one license\" --menu \"License for ${PKGNAME} (dual)\" 21 70 15"; \
+	trap '${RM} -f $$tmpfile' EXIT INT TERM; \
 	tmpfile=$$(mktemp -t portlicenses); \
 	for lic in ${_LICENSE_TO_ASK}; do \
 		menu_cmd="$${menu_cmd} VIEW_$${lic} \"View the license $${lic}\" USE_$${lic} \"Accept the license $${lic}\""; \
@@ -638,6 +640,7 @@ ${_LICENSE_COOKIE}:
 	@${ECHO_CMD} "${lic}:${_LICENSE_FILE_${lic}}" >> ${_LICENSE_ASK_DATA}
 .			endfor
 	@menu_cmd="${DIALOG} --title \"This port requires you to accept all mentioned licenses\" --menu \"License for ${PKGNAME} (multi)\" 21 70 15"; \
+	trap '${RM} -f $$tmpfile' EXIT INT TERM; \
 	tmpfile=$$(mktemp -t portlicenses); \
 	for lic in ${_LICENSE_TO_ASK}; do \
 		menu_cmd="$${menu_cmd} VIEW_$${lic} \"View the license $${lic}\""; \
@@ -679,6 +682,7 @@ ${_LICENSE_COOKIE}:
 	@${ECHO_MSG}
 	@exit 1
 .	endif
+	@${RM} -f ${_LICENSE_ASK_DATA}
 .endif
 
 # Create report and catalog
@@ -757,7 +761,7 @@ install-license:
 
 .endif
 
-.elif !defined(DISABLE_LICENSES)	# !LICENSE
+.else	# !LICENSE
 
 check-license:
 	@${ECHO_MSG} "===>  License check disabled, port has not defined LICENSE"
