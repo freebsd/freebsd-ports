@@ -7,7 +7,7 @@
 
 PORTNAME=	mgetty
 PORTVERSION=	1.1.35
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	comms
 MASTER_SITES=	ftp://mgetty.greenie.net/pub/mgetty/source/1.1/
 DISTNAME=	${PORTNAME}${PORTVERSION}-Feb22
@@ -16,8 +16,6 @@ MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Handle external logins, send and receive faxes
 
 USE_PERL5=	yes
-
-CONFLICTS=	netpbm-[0-9]*
 
 SUB_FILES=	pkg-message mgettycfg
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}

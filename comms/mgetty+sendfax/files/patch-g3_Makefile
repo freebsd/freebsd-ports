@@ -1,0 +1,16 @@
+
+$FreeBSD$
+
+--- g3/Makefile.orig
++++ g3/Makefile
+@@ -45,8 +45,8 @@
+ #
+ # make symlink for "g3topbm" (so third-party fax viewers won't fail)
+ #
+-	-cd $(BINDIR) ; \
+-	test -x g3topbm || ln -s g32pbm g3topbm
++#	-cd $(BINDIR) ; \
++#	test -x g3topbm || ln -s g32pbm g3topbm
+ 
+ 
+ # test suite
