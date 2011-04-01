@@ -14,7 +14,7 @@ MASTER_SITES=	http://slaout.linux62.org/kirocker/downloads/ \
 		http://darkstar.ist.utl.pt/slackware/addon/slacky/slackware-12.0/multimedia/kirocker/4.0/src/ \
 		http://repository.slacky.eu/slackware-12.0/multimedia/kirocker/4.0/src/
 
-MAINTAINER=	bsdkaffee@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Kicker applet for displaying Amarok info
 
 RUN_DEPENDS=	amarok:${PORTSDIR}/audio/amarok
