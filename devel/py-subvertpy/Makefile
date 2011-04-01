@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	subvertpy
-PORTVERSION=	0.7.5
-PORTREVISION=	1
+PORTVERSION=	0.8.0
 CATEGORIES=	devel
-MASTER_SITES=	https://launchpadlibrarian.net/58252850/ \
+MASTER_SITES=	https://launchpadlibrarian.net/65469707/ \
 		http://www.c-s.li/ports/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -25,7 +24,7 @@ USE_PYTHON=	2.5+
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_PKGNAME=	subvertpy
 
-post-patch:
-		@${REINPLACE_CMD} -e 's#/usr/local#${LOCALBASE}#g' ${WRKSRC}/setup.py
+#post-patch:
+#		@${REINPLACE_CMD} -e 's#/usr/local#${LOCALBASE}#g' ${WRKSRC}/setup.py
 
 .include <bsd.port.mk>
