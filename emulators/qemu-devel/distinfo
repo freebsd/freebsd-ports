@@ -1,3 +1,2 @@
-MD5 (qemu/qemu-0.13.0.tar.gz) = 397a0d665da8ba9d3b9583629f3d6421
-SHA256 (qemu/qemu-0.13.0.tar.gz) = 1e6f5851b05cea6e377c835f4668408d4124cfb845f9948d922808743c5fd877
-SIZE (qemu/qemu-0.13.0.tar.gz) = 5184531
+SHA256 (qemu/qemu-0.14.0.tar.gz) = ba21e84d7853217830e167dae9999cdbff481189c6a0bb600ac7fb7201453108
+SIZE (qemu/qemu-0.14.0.tar.gz) = 5439695

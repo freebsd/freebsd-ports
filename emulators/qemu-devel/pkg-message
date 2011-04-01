@@ -21,29 +21,32 @@ FreeBSD host notes
   kernel'...)  Enabling /dev/rtc doesn't seem to help either (not included
   since it needs a patch to emulators/rtc.)
 
-- update: the above problem has gotten worse with FreeBSD guests somewhere
-  before 8.0, mainly since the kernel now usually wants double or even
-  quadruple number of timer irqs compared to HZ if it detects an apic (and at
-  least early versions of FreeBSD 8 had a bug that essentially halved qemu's
-  clock rate too); the only reason you usually don't see symptoms of this with
-  FreeBSD 8 guests is they automatically reduce their HZ to 100 when running
+- Update: the above problem has gotten worse with FreeBSD guests
+  somewhere before 8.0, mainly since the kernel now usually wants
+  double or even quadruple number of timer irqs compared to HZ if
+  it detects an apic (and at least early versions of FreeBSD 8 had
+  a bug that essentially halved qemu's clock rate too); the only
+  reason you usually don't see symptoms of this with FreeBSD 8
+  guests is they automatically reduce their HZ to 100 when running
   in a VM while the default for the host kernel is still HZ=1000.
-  workarounds:  for i386 guests you can disable the apic in the guest by
-  setting
+  Workaround: you can disable the apic clock in the guest by setting
 
-	hint.apic.0.disabled=1
+	hint.apic.0.clock="0"
 
-  in loader.conf(5) (or manually at the loader prompt), otherwise the only thing
-  you can do is either reduce the guest's HZ to, say, 100 by setting e.g.
+  in loader.conf(5) (or manually at the loader prompt), if that
+  doesn't work the only things you can do is either reduce the
+  guest's HZ to, say, 100 by setting e.g.
 
 	kern.hz="100"
 
-  from the loader as above (which usually is a good idea in a VM anyway and
-  FreeBSD 8 now does by itself as mentioned), or if that's not possible
-  increase the host's HZ to 2000 or even 4000 from the loader in the same way.
+  from the loader as above (which usually is a good idea in a VM
+  anyway and FreeBSD 8 now does by itself as mentioned), or otherwise
+  increase the host's HZ to 2000 or even 4000 from the loader in
+  the same way.
 
-- The -smb option (smb-export local dir to guest) needs the net/samba3
-  port/package installed in addition to qemu.
+- The -smb option (smb-export local dir to guest using the default
+  slirp networking) needs the net/samba34 port/package installed
+  in addition to qemu.
 
 - If you want to use usb devices connected to the host in the guest
   (usb_add host:... monitor command; this doesn't work on FreeBSD 8 and
@@ -73,16 +76,11 @@ FreeBSD host notes
   guests or other weird cdrom problems then thats probably because the guest
   has atapicam loaded, which for reasons still to be determined has problems
   with qemu's now by default enabled cdrom dma.  You can build the port with
-  CDROM_DMA disabled to disable it.
+  CDROM_DMA disabled to disable it.  [Looks like this is fixed in recent
+  FreeBSD guest versions.]
 
 - If you build qemu wihout SDL and then get crashes running it try passing it
   -nographic.  This should probably be default in that case...
-
-- Perhaps it should be noted that if you want to use qemu with -m 512 or
-  larger on 6.x/i386 hosts you need to increase the kern.maxdsiz tunable in
-  loader.conf(5) since the default is 512 MB, and qemu needs memory for itself
-  also.  (7.0 and up now use jemalloc which uses mmap(2) and isn't affected by
-  kern.maxdsiz anymore.)
 
 - qemu's network boot roms (-boot n) have a bug when bootfiles sizes are a
   multiple of blksize, if this affects you (like with FreeBSD's /boot/pxeboot)
@@ -90,10 +88,10 @@ FreeBSD host notes
 
 	cp /boot/pxeboot pxeboot-qemu && chmod +w pxeboot-qemu && echo >>pxeboot-qemu
 
-  and then use pxeboot-qemu.  Actually you need latest -stable or -current btx
-  code (from after 7.0 was released) because of the real mode boot problem, so
-  use at least pxeboot from there.  And I just did that for the pxeboot
-  extracted out of
+  and then use pxeboot-qemu.  Actually you need recent btx code
+  (from after 7.0 was released) because of the real mode boot
+  problem, so use at least pxeboot from there.  And I just did that
+  for the pxeboot extracted out of
 
 	ftp://ftp.freebsd.org/pub/FreeBSD/snapshots/200805/7.0-STABLE-200805-i386-bootonly.iso
 
@@ -104,9 +102,6 @@ FreeBSD host notes
 - If you use slirp (usernet, the default) and want to mount nfs into the guest
   and you are not running qemu as root, then mountd(8) on the exporting box
   needs to be run with -n in order to accept requests from ports >= 1024.
-
-- The new (optional) pcap code cannot talk to the host on 6.x because the
-  necessary bpf feature (BIOCFEEDBACK) hasn't (yet?) been merged there.
 
 - (not FreeBSD-specific:) There have been reports of qcow2 corruption with (at
   least) win2k guests on recent kvm (which uses similar qcow2 code than qemu

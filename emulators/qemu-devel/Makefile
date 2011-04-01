@@ -6,18 +6,17 @@
 #
 
 PORTNAME=	qemu
-PORTVERSION=	0.13.0
+PORTVERSION=	0.14.0
 CATEGORIES=	emulators
 MASTER_SITES=	SAVANNAH:release \
-		LOCAL:snapshot \
-		http://people.freebsd.org/~nox/qemu/:snapshot
+		LOCAL:snapshot
 MASTER_SITE_SUBDIR=	qemu/:release nox/:snapshot
 PKGNAMESUFFIX=	-devel
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:release
 DIST_SUBDIR=	qemu
 
 MAINTAINER=	nox@FreeBSD.org
-COMMENT=	QEMU CPU Emulator - development snapshot
+COMMENT=	QEMU CPU Emulator - development version
 
 HAS_CONFIGURE=	yes
 USE_GMAKE=	yes
@@ -51,7 +50,7 @@ PLIST_SUB+=	ALLTARGETS=""
 WITHOUT_CPU_CFLAGS=yes	#to avoid problems with register allocation
 CFLAGS:=	${CFLAGS:C/-fno-tree-vrp//}
 CONFIGURE_ARGS+=	--prefix=${PREFIX} --cc=${CC} --enable-docs \
-	--extra-cflags=-DSMBD_COMMAND=\\\"${LOCALBASE}/sbin/smbd\\\"\ -I${LOCALBASE}/include\ -DPREFIX=\\\"${PREFIX}\\\"
+	--extra-cflags=-DSMBD_COMMAND=\\\"${LOCALBASE}/sbin/smbd\\\"\ -I${WRKSRC}\ -I${LOCALBASE}/include\ -DPREFIX=\\\"${PREFIX}\\\"
 
 .if defined(WITHOUT_SDL)
 CONFIGURE_ARGS+=	--disable-sdl
@@ -97,8 +96,10 @@ MAKE_ARGS+=	ARCH=x86_64
 MAKE_ARGS+=	ARCH=ppc
 .endif
 
-.if ${OSVERSION} >= 900000 && ${ARCH} == "amd64"
-BROKEN=		does not link on FreeBSD 9.X
+.if ${OSVERSION} < 900033 && ${ARCH} == "amd64"
+BUILD_DEPENDS+=	${LOCALBASE}/bin/as:${PORTSDIR}/devel/binutils
+CONFIGURE_ENV+=	COMPILER_PATH=${LOCALBASE}/bin
+MAKE_ENV+=	COMPILER_PATH=${LOCALBASE}/bin
 .endif
 
 pre-patch:
@@ -136,7 +137,7 @@ post-patch:
 		${WRKSRC}/Makefile
 	@${REINPLACE_CMD} -E \
 		-e "1s|^(#! )/usr/bin/perl|\1${PERL}|" \
-		${WRKSRC}/texi2pod.pl
+		${WRKSRC}/scripts/texi2pod.pl
 
 .if ${OSVERSION} >= 800091
 # XXX need to disable usb host code on head while it's not ported to the

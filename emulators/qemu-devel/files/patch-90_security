@@ -36,19 +36,6 @@ Index: qemu/hw/fdc.c
                  return;
              }
 Index: qemu-0.8.2/hw/pc.c
-===================================================================
---- qemu-0.8.2.orig/hw/pc.c	2007-04-20 06:05:58.000000000 +0300
-+++ qemu-0.8.2/hw/pc.c	2007-04-20 06:05:59.000000000 +0300
-@@ -312,7 +312,8 @@ void bochs_bios_write(void *opaque, uint
-     case 0x400:
-     case 0x401:
-         fprintf(stderr, "BIOS panic at rombios.c, line %d\n", val);
--        exit(1);
-+        /* according to documentation, these can be safely ignored */
-+        break;
-     case 0x402:
-     case 0x403:
- #ifdef DEBUG_BIOS
 @@ -335,8 +336,9 @@ void bochs_bios_write(void *opaque, uint
          /* LGPL'ed VGA BIOS messages */
      case 0x501:
