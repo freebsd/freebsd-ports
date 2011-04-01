@@ -14,7 +14,7 @@ MASTER_SITES=	http://www.kde-apps.org/CONTENT/content-files/ \
 MASTER_SITE_SUBDIR=	distfiles
 DISTNAME=	52641-amarokFS-${PORTVERSION}
 
-MAINTAINER=	bsdkaffee@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A full screen application for Amarok
 
 PATCH_DEPENDS=	qmake:${PORTSDIR}/devel/qmake

@@ -13,7 +13,7 @@ MASTER_SITES=		http://www.message.co.nz/~matt-sarah/ \
 PKGNAMEPREFIX=		superkaramba-
 EXTRACT_SUFX=		.skz
 
-MAINTAINER=		bsdkaffee@gmail.com
+MAINTAINER=		ports@FreeBSD.org
 COMMENT=		Liquid Weather ++ a Superkaramba weather applet
 
 EXTRACT_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
