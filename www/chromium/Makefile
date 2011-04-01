@@ -176,7 +176,7 @@ do-install:
 
 post-install:
 .if ${OSVERSION} < 900000
-@${CAT} ${PKGMESSAGE}
+	@${CAT} ${PKGMESSAGE}
 .endif
 
 .include <bsd.port.mk>
