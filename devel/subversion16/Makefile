@@ -29,6 +29,7 @@ OPTIONS=	MOD_DAV_SVN	"mod_dav_svn module for Apache 2.X" off \
 		SVNAUTHZ_VALIDATE	"install svnauthz-validate" off \
 		STATIC		"Build static version (no shared libs)" off \
 		GNOME_KEYRING	"Build with GNOME Keyring auth support" off \
+		KDE_KWALLET	"Build with KDE KWallet auth support" off \
 		BOOK		"Install the Subversion Book" off
 
 .include "${.CURDIR}/../../devel/subversion/Makefile.common"

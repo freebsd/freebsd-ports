@@ -6,7 +6,7 @@
 
 PORTNAME=	subversion
 PORTVERSION=	1.6.16
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES+=	devel
 MASTER_SITES=	http://subversion.tigris.org/downloads/:main \
 		http://svnbook.red-bean.com/en/1.5/:book
@@ -24,6 +24,7 @@ PATCHFILES+=		svn_hacks_1.4.diff
 MAKE_JOBS_SAFE=	yes
 USE_BZIP2=	yes
 USE_AUTOTOOLS=	libtool
+USE_KDE4=	# Used below if KWallet support is enabled
 
 CONFIGURE_ARGS=	--with-ssl
 
@@ -161,8 +162,19 @@ PLIST_SUB+=	DYNAMIC_ENABLED=""
 .if defined(WITH_GNOME_KEYRING)
 LIB_DEPENDS+=	gnome-keyring.0:${PORTSDIR}/security/gnome-keyring
 CONFIGURE_ARGS+=--with-gnome-keyring
+PLIST_SUB+=	GNOME_KEYRING=""
 .else
 CONFIGURE_ARGS+=--without-gnome-keyring
+PLIST_SUB+=	GNOME_KEYRING="@comment "
+.endif
+
+.if defined(WITH_KDE_KWALLET)
+USE_KDE4=	kdelibs
+CONFIGURE_ARGS+=--with-kwallet=${KDE4_PREFIX}
+PLIST_SUB+=	KDE_KWALLET=""
+.else
+CONFIGURE_ARGS+=--without-kwallet
+PLIST_SUB+=	KDE_KWALLET="@comment "
 .endif
 
 post-extract:

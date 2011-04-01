@@ -53,6 +53,14 @@ include/subversion-1/svn_version.h
 include/subversion-1/svn_wc.h
 include/subversion-1/svn_xml.h
 @dirrm include/subversion-1
+%%GNOME_KEYRING%%lib/libsvn_auth_gnome_keyring-1.a
+%%GNOME_KEYRING%%lib/libsvn_auth_gnome_keyring-1.la
+%%DYNAMIC_ENABLED%%%%GNOME_KEYRING%%lib/libsvn_auth_gnome_keyring-1.so
+%%DYNAMIC_ENABLED%%%%GNOME_KEYRING%%lib/libsvn_auth_gnome_keyring-1.so.0
+%%KDE_KWALLET%%lib/libsvn_auth_kwallet-1.a
+%%KDE_KWALLET%%lib/libsvn_auth_kwallet-1.la
+%%DYNAMIC_ENABLED%%%%KDE_KWALLET%%lib/libsvn_auth_kwallet-1.so
+%%DYNAMIC_ENABLED%%%%KDE_KWALLET%%lib/libsvn_auth_kwallet-1.so.0
 lib/libsvn_client-1.a
 lib/libsvn_client-1.la
 %%DYNAMIC_ENABLED%%lib/libsvn_client-1.so
