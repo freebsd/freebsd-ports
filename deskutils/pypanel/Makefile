@@ -1,6 +1,6 @@
-# New ports collection makefile for:	pypanel
+# New ports collection makefile for:	PyPanel
 # Date created:				24 October 2005
-# Whom:					Florian Unglaub
+# Whom:					Florian Unglaub <flo@btw23.de>
 #
 # $FreeBSD$
 #
@@ -15,14 +15,14 @@ DISTNAME=	PyPanel-${PORTVERSION}
 MAINTAINER=	u0@rootofallevil.net
 COMMENT=	Desktop panel written in Python
 
-LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2 \
-		Xft.2:${PORTSDIR}/x11-fonts/libXft
+LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/Xlib/X.py:${PORTSDIR}/x11-toolkits/py-xlib
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/Xlib/X.py:${PORTSDIR}/x11-toolkits/py-xlib
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 USE_EFL=	imlib2
+USE_XORG=	xft
 PYDISTUTILS_PKGNAME=	PyPanel
 
 PORTDOCS=	*
@@ -44,7 +44,7 @@ post-patch:
 
 post-install:
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
 .endif
 
