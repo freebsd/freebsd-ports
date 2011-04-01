@@ -8,6 +8,7 @@
 
 PORTNAME=	libgtop
 PORTVERSION=	2.28.3
+PORTREVISION=	1
 CATEGORIES=	devel gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -19,6 +20,7 @@ BUILD_DEPENDS=	g-ir-scanner:${PORTSDIR}/devel/gobject-introspection
 
 USE_BZIP2=	yes
 USE_PERL5_BUILD=yes
+USE_XORG=	xau
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomehack glib20 ltverhack intlhack
