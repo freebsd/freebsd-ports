@@ -6,16 +6,16 @@
 #
 
 PORTNAME=	pp
-PORTVERSION=	1.0
+PORTVERSION=	1.02
 CATEGORIES=	sysutils
-MASTER_SITES=	http://pipe-progress.googlecode.com/files/
+MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE} \
+		http://de.nologin.ru/distfiles/sysutils/pp/
+PROJECTHOST=	pipe-progress
 
 MAINTAINER=	a.arepo@gmail.com
 COMMENT=	Small and fast progressbar for pipe
 
 USE_BZIP2=	yes
-HAS_CONFIGURE=	yes
-CONFIGURE_ARGS+=	--prefix=${PREFIX}
 
 PLIST_FILES=	bin/pp
 
