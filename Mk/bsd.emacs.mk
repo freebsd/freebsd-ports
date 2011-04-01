@@ -1,5 +1,5 @@
 #
-#	$FreeBSD: /tmp/pcvs/ports/Mk/bsd.emacs.mk,v 1.84 2010-09-14 15:26:19 ashish Exp $
+#	$FreeBSD: /tmp/pcvs/ports/Mk/bsd.emacs.mk,v 1.85 2011-04-01 01:30:52 wen Exp $
 #
 #	bsd.emacs.mk - 19990829 Shigeyuki Fukushima.
 #
@@ -220,7 +220,7 @@ check-makevars::
 #
 
 # find where emacsen is installed
-# look for it in PREEFIX first and fall back to LOCALBASE then
+# look for it in PREFIX first and fall back to LOCALBASE then
 .if exists(/bin/${EMACS_NAME}-${EMACS_VER})
 EMACS_BASE?=			${PREFIX}
 .else
