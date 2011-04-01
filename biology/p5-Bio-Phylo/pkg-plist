@@ -12,6 +12,8 @@
 %%SITE_PERL%%/Bio/Phylo/Listable.pm
 %%SITE_PERL%%/Bio/Phylo/Manual.pod
 %%SITE_PERL%%/Bio/Phylo/Matrices.pm
+%%SITE_PERL%%/Bio/Phylo/Matrices/Characters.pm
+%%SITE_PERL%%/Bio/Phylo/Matrices/Character.pm
 %%SITE_PERL%%/Bio/Phylo/Matrices/Datatype.pm
 %%SITE_PERL%%/Bio/Phylo/Matrices/Datum.pm
 %%SITE_PERL%%/Bio/Phylo/Matrices/Matrix.pm
@@ -37,10 +39,12 @@
 %%SITE_PERL%%/Bio/Phylo/NeXML/Writable.pm
 %%SITE_PERL%%/Bio/Phylo/Parsers/Abstract.pm
 %%SITE_PERL%%/Bio/Phylo/Parsers/Fasta.pm
+%%SITE_PERL%%/Bio/Phylo/Parsers/Json.pm
 %%SITE_PERL%%/Bio/Phylo/Parsers/Newick.pm
 %%SITE_PERL%%/Bio/Phylo/Parsers/Nexml.pm
 %%SITE_PERL%%/Bio/Phylo/Parsers/Nexus.pm
 %%SITE_PERL%%/Bio/Phylo/Parsers/Phylip.pm
+%%SITE_PERL%%/Bio/Phylo/Parsers/Phyloxml.pm
 %%SITE_PERL%%/Bio/Phylo/Parsers/Table.pm
 %%SITE_PERL%%/Bio/Phylo/Parsers/Taxlist.pm
 %%SITE_PERL%%/Bio/Phylo/Parsers/Tolweb.pm
@@ -66,6 +70,7 @@
 %%SITE_PERL%%/Bio/Phylo/Unparsers/Nexus.pm
 %%SITE_PERL%%/Bio/Phylo/Unparsers/Pagel.pm
 %%SITE_PERL%%/Bio/Phylo/Unparsers/Phylip.pm
+%%SITE_PERL%%/Bio/Phylo/Unparsers/Phyloxml.pm
 %%SITE_PERL%%/Bio/Phylo/Util/Logger.pm
 %%SITE_PERL%%/Bio/Phylo/Util/CONSTANT.pm
 %%SITE_PERL%%/Bio/Phylo/Util/Exceptions.pm
