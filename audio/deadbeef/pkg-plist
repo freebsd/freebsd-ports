@@ -24,14 +24,18 @@ include/deadbeef/deadbeef.h
 %%GUI%%lib/deadbeef/gtkui.la
 %%GUI%%lib/deadbeef/gtkui.so
 %%GUI%%lib/deadbeef/gtkui.so.0
-%%HOTKEYS%%lib/deadbeef/hotkeys.a
-%%HOTKEYS%%lib/deadbeef/hotkeys.la
 %%HOTKEYS%%lib/deadbeef/hotkeys.so
+%%HOTKEYS%%lib/deadbeef/hotkeys.la
+%%HOTKEYS%%lib/deadbeef/hotkeys.a
 %%HOTKEYS%%lib/deadbeef/hotkeys.so.0
 lib/deadbeef/mpgmad.a
 lib/deadbeef/mpgmad.la
 lib/deadbeef/mpgmad.so
 lib/deadbeef/mpgmad.so.0
+%%MUSEPACK%%lib/deadbeef/musepack.so.0
+%%MUSEPACK%%lib/deadbeef/musepack.so
+%%MUSEPACK%%lib/deadbeef/musepack.la
+%%MUSEPACK%%lib/deadbeef/musepack.a
 lib/deadbeef/oss.a
 lib/deadbeef/oss.la
 lib/deadbeef/oss.so
@@ -60,6 +64,38 @@ lib/deadbeef/oss.so.0
 %%WAV%%lib/deadbeef/wavpack.la
 %%WAV%%lib/deadbeef/wavpack.so
 %%WAV%%lib/deadbeef/wavpack.so.0
+%%WILD%%lib/deadbeef/wildmidi.so.0
+%%WILD%%lib/deadbeef/wildmidi.so
+%%WILD%%lib/deadbeef/wildmidi.la
+%%WILD%%lib/deadbeef/wildmidi.a
+%%TTA%%lib/deadbeef/tta.so.0
+%%TTA%%lib/deadbeef/tta.so
+%%TTA%%lib/deadbeef/tta.la
+%%TTA%%lib/deadbeef/tta.a
+%%DCA%%lib/deadbeef/dca.so.0
+%%DCA%%lib/deadbeef/dca.so
+%%DCA%%lib/deadbeef/dca.la
+%%DCA%%lib/deadbeef/dca.a
+%%AAC%%lib/deadbeef/aac.so.0
+%%AAC%%lib/deadbeef/aac.so
+%%AAC%%lib/deadbeef/aac.la
+%%AAC%%lib/deadbeef/aac.a
+%%MMS%%lib/deadbeef/mms.so.0
+%%MMS%%lib/deadbeef/mms.so
+%%MMS%%lib/deadbeef/mms.la
+%%MMS%%lib/deadbeef/mms.a
+%%SHN%%lib/deadbeef/shn.so.0
+%%SHN%%lib/deadbeef/shn.so
+%%SHN%%lib/deadbeef/shn.la
+%%SHN%%lib/deadbeef/shn.a
+%%AO%%lib/deadbeef/ao.so.0
+%%AO%%lib/deadbeef/ao.so
+%%AO%%lib/deadbeef/ao.la
+%%AO%%lib/deadbeef/ao.a
+%%SHELLEXEC%%lib/deadbeef/shellexec.so.0
+%%SHELLEXEC%%lib/deadbeef/shellexec.so
+%%SHELLEXEC%%lib/deadbeef/shellexec.la
+%%SHELLEXEC%%lib/deadbeef/shellexec.a
 %%LASTFM%%lib/deadbeef/lastfm.so.0
 %%LASTFM%%lib/deadbeef/lastfm.so
 %%LASTFM%%lib/deadbeef/lastfm.la
@@ -90,31 +126,93 @@ lib/deadbeef/oss.so.0
 %%NOTIFY%%lib/deadbeef/notify.a
 share/applications/deadbeef.desktop
 %%DATADIR%%/pixmaps/buffering_16.png
-%%DATADIR%%/pixmaps/next_24.png
 %%DATADIR%%/pixmaps/pause_16.png
-%%DATADIR%%/pixmaps/pause_24.png
 %%DATADIR%%/pixmaps/play_16.png
-%%DATADIR%%/pixmaps/play_24.png
-%%DATADIR%%/pixmaps/prev_24.png
-%%DATADIR%%/pixmaps/random_24.png
-%%DATADIR%%/pixmaps/stop_24.png
 %%DOCSDIR%%/COPYING.GPLv2
 %%DOCSDIR%%/COPYING.LGPLv2.1
 %%DOCSDIR%%/ChangeLog
 %%DOCSDIR%%/README
 %%DOCSDIR%%/about.txt
 %%DOCSDIR%%/help.txt
+%%DOCSDIR%%/translators.txt
+%%DOCSDIR%%/help.ru.txt
+%%DOCSDIR%%/help.pt_BR.txt
+%%NLS%%share/locale/bg/LC_MESSAGES/deadbeef.mo
+%%NLS%%share/locale/bn/LC_MESSAGES/deadbeef.mo
+%%NLS%%share/locale/ca/LC_MESSAGES/deadbeef.mo
+%%NLS%%share/locale/da/LC_MESSAGES/deadbeef.mo
+%%NLS%%share/locale/de/LC_MESSAGES/deadbeef.mo
+%%NLS%%share/locale/el/LC_MESSAGES/deadbeef.mo
+%%NLS%%share/locale/en_GB/LC_MESSAGES/deadbeef.mo
+%%NLS%%share/locale/es/LC_MESSAGES/deadbeef.mo
+%%NLS%%share/locale/fa/LC_MESSAGES/deadbeef.mo
+%%NLS%%share/locale/fr/LC_MESSAGES/deadbeef.mo
+%%NLS%%share/locale/gl/LC_MESSAGES/deadbeef.mo
+%%NLS%%share/locale/he/LC_MESSAGES/deadbeef.mo
+%%NLS%%share/locale/hr/LC_MESSAGES/deadbeef.mo
+%%NLS%%share/locale/hu/LC_MESSAGES/deadbeef.mo
+%%NLS%%share/locale/id/LC_MESSAGES/deadbeef.mo
+%%NLS%%share/locale/it/LC_MESSAGES/deadbeef.mo
+%%NLS%%share/locale/ja/LC_MESSAGES/deadbeef.mo
+%%NLS%%share/locale/nl/LC_MESSAGES/deadbeef.mo
+%%NLS%%share/locale/pl/LC_MESSAGES/deadbeef.mo
+%%NLS%%share/locale/pt/LC_MESSAGES/deadbeef.mo
+%%NLS%%share/locale/pt_BR/LC_MESSAGES/deadbeef.mo
+%%NLS%%share/locale/ru/LC_MESSAGES/deadbeef.mo
+%%NLS%%share/locale/sk/LC_MESSAGES/deadbeef.mo
+%%NLS%%share/locale/sr/LC_MESSAGES/deadbeef.mo
+%%NLS%%share/locale/sv/LC_MESSAGES/deadbeef.mo
+%%NLS%%share/locale/uk/LC_MESSAGES/deadbeef.mo
+%%NLS%%share/locale/vi/LC_MESSAGES/deadbeef.mo
+%%NLS%%share/locale/zh_CN/LC_MESSAGES/deadbeef.mo
+%%NLS%%share/locale/zh_TW/LC_MESSAGES/deadbeef.mo
+%%NLS%%share/locale/kk/LC_MESSAGES/deadbeef.mo
+%%NLS%%share/locale/km/LC_MESSAGES/deadbeef.mo
+%%NLS%%share/locale/lg/LC_MESSAGES/deadbeef.mo
+%%NLS%%share/locale/sr@latin/LC_MESSAGES/deadbeef.mo
 share/icons/hicolor/16x16/apps/deadbeef.png
 share/icons/hicolor/32x32/apps/deadbeef.png
 share/icons/hicolor/48x48/apps/deadbeef.png
+share/icons/hicolor/128x128/apps/deadbeef.png
+share/icons/hicolor/192x192/apps/deadbeef.png
+share/icons/hicolor/22x22/apps/deadbeef.png
+share/icons/hicolor/24x24/apps/deadbeef.png
+share/icons/hicolor/256x256/apps/deadbeef.png
+share/icons/hicolor/36x36/apps/deadbeef.png
+share/icons/hicolor/64x64/apps/deadbeef.png
+share/icons/hicolor/72x72/apps/deadbeef.png
+share/icons/hicolor/96x96/apps/deadbeef.png
+share/icons/hicolor/scalable/apps/deadbeef.svg
 @dirrmtry share/icons/hicolor/48x48/apps
 @dirrmtry share/icons/hicolor/48x48
+@dirrmtry share/icons/hicolor/128x128/apps
+@dirrmtry share/icons/hicolor/128x128
+@dirrmtry share/icons/hicolor/192x192/apps
+@dirrmtry share/icons/hicolor/192x192
+@dirrmtry share/icons/hicolor/22x22/apps
+@dirrmtry share/icons/hicolor/22x22
+@dirrmtry share/icons/hicolor/24x24/apps
+@dirrmtry share/icons/hicolor/24x24
+@dirrmtry share/icons/hicolor/256x256/apps
+@dirrmtry share/icons/hicolor/256x256
 @dirrmtry share/icons/hicolor/32x32/apps
 @dirrmtry share/icons/hicolor/32x32
+@dirrmtry share/icons/hicolor/36x36/apps
+@dirrmtry share/icons/hicolor/36x36
+@dirrmtry share/icons/hicolor/64x64/apps
+@dirrmtry share/icons/hicolor/64x64
+@dirrmtry share/icons/hicolor/72x72/apps
+@dirrmtry share/icons/hicolor/72x72
+@dirrmtry share/icons/hicolor/96x96/apps
+@dirrmtry share/icons/hicolor/96x96
 @dirrmtry share/icons/hicolor/16x16/apps
 @dirrmtry share/icons/hicolor/16x16
+@dirrmtry share/icons/hicolor/scalable/apps
+@dirrmtry share/icons/hicolor/scalable
 @dirrmtry share/icons/hicolor
 @dirrmtry share/icons
+@dirrmtry %%NLS%%share/locale/km/LC_MESSAGES
+@dirrmtry %%NLS%%share/locale/km
 %%DATADIR%%/pixmaps/noartwork.jpg
 @dirrm %%DOCSDIR%%
 @dirrm %%DATADIR%%/pixmaps
