@@ -6,9 +6,9 @@
 #
 
 PORTNAME=		efax-gtk
-PORTVERSION=		3.2.7.1
+PORTVERSION=		3.2.8
 CATEGORIES=		comms
-MASTER_SITES=		SF/${PORTNAME}/${PORTNAME}/3.2.7/
+MASTER_SITES=		SF
 EXTRACT_SUFX=		.src.tgz
 
 MAINTAINER=		pawel@FreeBSD.org
@@ -32,8 +32,8 @@ MAN1=			efax.1 efix.1 efax-gtk.1
 CPPFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
 LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 
-CONFIGURE_ARGS+=--with-gtk-version=gtk2
-CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
+CONFIGURE_ARGS+=	--with-gtk-version=gtk2
+CONFIGURE_ENV+=		LDFLAGS="${LDFLAGS}"
 
 .if defined(WITHOUT_NLS)
 CONFIGURE_ARGS+=--disable-nls
