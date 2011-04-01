@@ -1,4 +1,4 @@
-%%WWWDIR%%/.htaccess
+%%WWWDIR%%/.bzrignore
 %%WWWDIR%%/AccountGroups.php
 %%WWWDIR%%/AccountSections.php
 %%WWWDIR%%/AddCustomerContacts.php
@@ -21,6 +21,12 @@
 %%WWWDIR%%/CompanyPreferences.php
 %%WWWDIR%%/ConfirmDispatchControlled_Invoice.php
 %%WWWDIR%%/ConfirmDispatch_Invoice.php
+%%WWWDIR%%/ConfirmDispatch_Invoice.php.orig
+%%WWWDIR%%/ContractBOM.php
+%%WWWDIR%%/ContractCosting.php
+%%WWWDIR%%/ContractOtherReqts.php
+%%WWWDIR%%/Contracts.php
+%%WWWDIR%%/CounterSales.php
 %%WWWDIR%%/CreditItemsControlled.php
 %%WWWDIR%%/CreditStatus.php
 %%WWWDIR%%/Credit_Invoice.php
@@ -32,27 +38,35 @@
 %%WWWDIR%%/CustomerBranches.php
 %%WWWDIR%%/CustomerInquiry.php
 %%WWWDIR%%/CustomerReceipt.php
+%%WWWDIR%%/CustomerReceipt.php.orig
 %%WWWDIR%%/CustomerTransInquiry.php
 %%WWWDIR%%/CustomerTypes.php
 %%WWWDIR%%/Customers.php
+%%WWWDIR%%/DailyBankTransactions.php
+%%WWWDIR%%/DailySalesInquiry.php
 %%WWWDIR%%/DebtorsAtPeriodEnd.php
 %%WWWDIR%%/DeliveryDetails.php
-%%WWWDIR%%/DemandWorkOrders.php
 %%WWWDIR%%/DiscountCategories.php
 %%WWWDIR%%/DiscountMatrix.php
 %%WWWDIR%%/EDIMessageFormat.php
 %%WWWDIR%%/EDIProcessOrders.php
 %%WWWDIR%%/EDISendInvoices.php
-%%WWWDIR%%/EDI_Incoming_Orders/Order1.edi
-%%WWWDIR%%/EDI_Sent/EDI_INV_67
-%%WWWDIR%%/EDI_Sent/EDI_INV_68
 %%WWWDIR%%/EmailConfirmation.php
 %%WWWDIR%%/EmailCustTrans.php
 %%WWWDIR%%/ExchangeRateTrend.php
 %%WWWDIR%%/FTP_RadioBeacon.php
 %%WWWDIR%%/Factors.php
+%%WWWDIR%%/FixedAssetCategories.php
+%%WWWDIR%%/FixedAssetDepreciation.php
+%%WWWDIR%%/FixedAssetItems.php
+%%WWWDIR%%/FixedAssetLocations.php
+%%WWWDIR%%/FixedAssetRegister.php
+%%WWWDIR%%/FixedAssetTransfer.php
+%%WWWDIR%%/FormDesigner.php
 %%WWWDIR%%/FreightCosts.php
+%%WWWDIR%%/GLAccountCSV.php
 %%WWWDIR%%/GLAccountInquiry.php
+%%WWWDIR%%/GLAccountReport.php
 %%WWWDIR%%/GLAccounts.php
 %%WWWDIR%%/GLBalanceSheet.php
 %%WWWDIR%%/GLBudgets.php
@@ -63,6 +77,7 @@
 %%WWWDIR%%/GLTags.php
 %%WWWDIR%%/GLTransInquiry.php
 %%WWWDIR%%/GLTrialBalance.php
+%%WWWDIR%%/GLTrialBalance_csv.php
 %%WWWDIR%%/GeocodeSetup.php
 %%WWWDIR%%/GetStockImage.php
 %%WWWDIR%%/GoodsReceived.php
@@ -71,6 +86,7 @@
 %%WWWDIR%%/InventoryPlanningPrefSupplier.php
 %%WWWDIR%%/InventoryQuantities.php
 %%WWWDIR%%/InventoryValuation.php
+%%WWWDIR%%/Labels.php
 %%WWWDIR%%/Locations.php
 %%WWWDIR%%/Logout.php
 %%WWWDIR%%/MRP.php
@@ -111,10 +127,12 @@
 %%WWWDIR%%/Numbers/Words/lang.ru.php
 %%WWWDIR%%/Numbers/Words/lang.sv.php
 %%WWWDIR%%/Numbers/Words.php
+%%WWWDIR%%/OffersReceived.php
 %%WWWDIR%%/OrderDetails.php
 %%WWWDIR%%/OutstandingGRNs.php
 %%WWWDIR%%/PDFBankingSummary.php
 %%WWWDIR%%/PDFChequeListing.php
+%%WWWDIR%%/PDFCustTransListing.php
 %%WWWDIR%%/PDFCustomerList.php
 %%WWWDIR%%/PDFDIFOT.php
 %%WWWDIR%%/PDFDeliveryDifferences.php
@@ -122,14 +140,23 @@
 %%WWWDIR%%/PDFLowGP.php
 %%WWWDIR%%/PDFOrderStatus.php
 %%WWWDIR%%/PDFOrdersInvoiced.php
+%%WWWDIR%%/PDFPickingList.php
 %%WWWDIR%%/PDFPriceList.php
+%%WWWDIR%%/PDFPrintLabel.php
 %%WWWDIR%%/PDFQuotation.php
+%%WWWDIR%%/PDFQuotationPortrait.php
+%%WWWDIR%%/PDFReceipt.php
+%%WWWDIR%%/PDFRemittanceAdvice.php
 %%WWWDIR%%/PDFStockCheckComparison.php
 %%WWWDIR%%/PDFStockLocTransfer.php
 %%WWWDIR%%/PDFStockNegatives.php
+%%WWWDIR%%/PDFStockTransListing.php
 %%WWWDIR%%/PDFStockTransfer.php
+%%WWWDIR%%/PDFSuppTransListing.php
+%%WWWDIR%%/PDFTopItems.php
 %%WWWDIR%%/POReport.php
 %%WWWDIR%%/PO_AuthorisationLevels.php
+%%WWWDIR%%/PO_AuthoriseMyOrders.php
 %%WWWDIR%%/PO_Chk_ShiptRef_JobRef.php
 %%WWWDIR%%/PO_Header.php
 %%WWWDIR%%/PO_Items.php
@@ -137,13 +164,23 @@
 %%WWWDIR%%/PO_PDFPurchOrder.php
 %%WWWDIR%%/PO_SelectOSPurchOrder.php
 %%WWWDIR%%/PO_SelectPurchOrder.php
+%%WWWDIR%%/PageSecurity.php
 %%WWWDIR%%/PaymentAllocations.php
 %%WWWDIR%%/PaymentMethods.php
 %%WWWDIR%%/PaymentTerms.php
 %%WWWDIR%%/Payments.php
+%%WWWDIR%%/PcAssignCashToTab.php
+%%WWWDIR%%/PcAuthorizeExpenses.php
+%%WWWDIR%%/PcClaimExpensesFromTab.php
+%%WWWDIR%%/PcExpenses.php
+%%WWWDIR%%/PcExpensesTypeTab.php
+%%WWWDIR%%/PcReportTab.php
+%%WWWDIR%%/PcTabs.php
+%%WWWDIR%%/PcTypeTabs.php
 %%WWWDIR%%/PeriodsInquiry.php
 %%WWWDIR%%/Prices.php
 %%WWWDIR%%/PricesBasedOnMarkUp.php
+%%WWWDIR%%/PricesByCost.php
 %%WWWDIR%%/Prices_Customer.php
 %%WWWDIR%%/PrintCheque.php
 %%WWWDIR%%/PrintCustOrder.php
@@ -151,12 +188,14 @@
 %%WWWDIR%%/PrintCustStatements.php
 %%WWWDIR%%/PrintCustTrans.php
 %%WWWDIR%%/PrintCustTransPortrait.php
-%%WWWDIR%%/PrintSalesOrder_generic.php
 %%WWWDIR%%/PurchData.php
 %%WWWDIR%%/RecurringSalesOrders.php
 %%WWWDIR%%/RecurringSalesOrdersProcess.php
 %%WWWDIR%%/ReorderLevel.php
+%%WWWDIR%%/ReorderLevelLocation.php
+%%WWWDIR%%/ReportBug.php
 %%WWWDIR%%/ReverseGRN.php
+%%WWWDIR%%/SMTPServer.php
 %%WWWDIR%%/SalesAnalReptCols.php
 %%WWWDIR%%/SalesAnalRepts.php
 %%WWWDIR%%/SalesAnalysis_UserDefined.php
@@ -166,7 +205,9 @@
 %%WWWDIR%%/SalesInquiry.php
 %%WWWDIR%%/SalesPeople.php
 %%WWWDIR%%/SalesTypes.php
+%%WWWDIR%%/SelectAsset.php
 %%WWWDIR%%/SelectCompletedOrder.php
+%%WWWDIR%%/SelectContract.php
 %%WWWDIR%%/SelectCreditItems.php
 %%WWWDIR%%/SelectCustomer.php
 %%WWWDIR%%/SelectGLAccount.php
@@ -188,6 +229,7 @@
 %%WWWDIR%%/StockCheck.php
 %%WWWDIR%%/StockCostUpdate.php
 %%WWWDIR%%/StockCounts.php
+%%WWWDIR%%/StockDispatch.php
 %%WWWDIR%%/StockLocMovements.php
 %%WWWDIR%%/StockLocStatus.php
 %%WWWDIR%%/StockLocTransfer.php
@@ -204,19 +246,25 @@
 %%WWWDIR%%/StockUsage.php
 %%WWWDIR%%/StockUsageGraph.php
 %%WWWDIR%%/Stocks.php
+%%WWWDIR%%/SuppContractChgs.php
 %%WWWDIR%%/SuppCreditGRNs.php
-%%WWWDIR%%/SuppInvGLAnalysis.php
+%%WWWDIR%%/SuppFixedAssetChgs.php
 %%WWWDIR%%/SuppInvGRNs.php
+%%WWWDIR%%/SuppLoginSetup.php
 %%WWWDIR%%/SuppPaymentRun.php
+%%WWWDIR%%/SuppPriceList.php
 %%WWWDIR%%/SuppShiptChgs.php
 %%WWWDIR%%/SuppTransGLAnalysis.php
 %%WWWDIR%%/SupplierAllocations.php
 %%WWWDIR%%/SupplierBalsAtPeriodEnd.php
 %%WWWDIR%%/SupplierContacts.php
 %%WWWDIR%%/SupplierCredit.php
+%%WWWDIR%%/SupplierCredit.php.orig
 %%WWWDIR%%/SupplierInquiry.php
 %%WWWDIR%%/SupplierInvoice.php
+%%WWWDIR%%/SupplierTenders.php
 %%WWWDIR%%/SupplierTransInquiry.php
+%%WWWDIR%%/SupplierTypes.php
 %%WWWDIR%%/Suppliers.php
 %%WWWDIR%%/SystemCheck.php
 %%WWWDIR%%/SystemParameters.php
@@ -226,7 +274,9 @@
 %%WWWDIR%%/TaxCategories.php
 %%WWWDIR%%/TaxGroups.php
 %%WWWDIR%%/TaxProvinces.php
+%%WWWDIR%%/TopItems.php
 %%WWWDIR%%/UnitsOfMeasure.php
+%%WWWDIR%%/UpgradeDatabase.php
 %%WWWDIR%%/UserSettings.php
 %%WWWDIR%%/WOSerialNos.php
 %%WWWDIR%%/WWW_Access.php
@@ -238,8 +288,10 @@
 %%WWWDIR%%/WorkOrderIssue.php
 %%WWWDIR%%/WorkOrderReceive.php
 %%WWWDIR%%/WorkOrderStatus.php
+%%WWWDIR%%/Z_BottomUpCosts.php
 %%WWWDIR%%/Z_ChangeBranchCode.php
 %%WWWDIR%%/Z_ChangeCustomerCode.php
+%%WWWDIR%%/Z_ChangeStockCategory.php
 %%WWWDIR%%/Z_ChangeStockCode.php
 %%WWWDIR%%/Z_CheckAllocationsFrom.php
 %%WWWDIR%%/Z_CheckAllocs.php
@@ -248,6 +300,7 @@
 %%WWWDIR%%/Z_CopyBOM.php
 %%WWWDIR%%/Z_CreateChartDetails.php
 %%WWWDIR%%/Z_CreateCompany.php
+%%WWWDIR%%/Z_CreateCompanyTemplateFile.php
 %%WWWDIR%%/Z_CurrencyDebtorsBalances.php
 %%WWWDIR%%/Z_CurrencySuppliersBalances.php
 %%WWWDIR%%/Z_DataExport.php
@@ -256,6 +309,7 @@
 %%WWWDIR%%/Z_DeleteSalesTransActions.php
 %%WWWDIR%%/Z_DescribeTable.php
 %%WWWDIR%%/Z_ImportChartOfAccounts.php
+%%WWWDIR%%/Z_ImportFixedAssets.php
 %%WWWDIR%%/Z_ImportGLAccountGroups.php
 %%WWWDIR%%/Z_ImportGLAccountSections.php
 %%WWWDIR%%/Z_ImportPartCodes.php
@@ -276,6 +330,7 @@
 %%WWWDIR%%/Z_Upgrade_3.08-3.09.php
 %%WWWDIR%%/Z_Upgrade_3.09-3.10.php
 %%WWWDIR%%/Z_Upgrade_3.10-3.11.php
+%%WWWDIR%%/Z_Upgrade_3.11-4.00.php
 %%WWWDIR%%/Z_UploadForm.php
 %%WWWDIR%%/Z_UploadResult.php
 %%WWWDIR%%/Z_index.php
@@ -296,6 +351,7 @@
 %%WWWDIR%%/api/api_glsections.php
 %%WWWDIR%%/api/api_holdreasons.php
 %%WWWDIR%%/api/api_locations.php
+%%WWWDIR%%/api/api_login.php
 %%WWWDIR%%/api/api_paymentterms.php
 %%WWWDIR%%/api/api_php.php
 %%WWWDIR%%/api/api_purchdata.php
@@ -303,6 +359,7 @@
 %%WWWDIR%%/api/api_salesman.php
 %%WWWDIR%%/api/api_salesorders.php
 %%WWWDIR%%/api/api_salestypes.php
+%%WWWDIR%%/api/api_session.inc
 %%WWWDIR%%/api/api_shippers.php
 %%WWWDIR%%/api/api_stock.php
 %%WWWDIR%%/api/api_stockcategories.php
@@ -311,29 +368,27 @@
 %%WWWDIR%%/api/api_webERPsettings.php
 %%WWWDIR%%/api/api_workorders.php
 %%WWWDIR%%/api/api_xml-rpc.php
-%%WWWDIR%%/companies/weberp-stable/logo.jpg
-%%WWWDIR%%/companies/weberp-stable/logo1.jpg
-%%WWWDIR%%/companies/weberp-stable/logo2.jpg
-%%WWWDIR%%/companies/weberp-stable/logo4.jpg
-%%WWWDIR%%/companies/weberp-stable/logo5.jpg
-%%WWWDIR%%/companies/weberp-stable/logo6.jpg
-%%WWWDIR%%/companies/weberp-stable/logo7.jpg
-%%WWWDIR%%/companies/weberp-stable/part_pics/HON90021.jpg
-%%WWWDIR%%/companies/weberp-stable/part_pics/HON90022.jpg
-%%WWWDIR%%/companies/weberp-stable/part_pics/PHIS01.jpg
-%%WWWDIR%%/companies/weberp-stable/part_pics/webERPsmall.png
-%%WWWDIR%%/companies/weberp-stable/pdf_append/blankfile
-%%WWWDIR%%/companies/weberp-stable/reportwriter/CustomerList.rpt.txt
-%%WWWDIR%%/companies/weberp-stable/reportwriter/Invoice.pdf
-%%WWWDIR%%/companies/weberp-stable/reportwriter/InvoiceReport.rpt.txt
+%%WWWDIR%%/build/make_release.sh
+%%WWWDIR%%/companies/weberpdemo/EDI_Incoming_Orders/Order1.edi
+%%WWWDIR%%/companies/weberpdemo/EDI_Sent/EDI_INV_67.edi
+%%WWWDIR%%/companies/weberpdemo/EDI_Sent/EDI_INV_68.edi
+%%WWWDIR%%/companies/weberpdemo/FormDesigns/GoodsReceived.xml
+%%WWWDIR%%/companies/weberpdemo/FormDesigns/PickingList.xml
+%%WWWDIR%%/companies/weberpdemo/FormDesigns/PurchaseOrder.xml
+%%WWWDIR%%/companies/weberpdemo/FormDesigns/SalesInvoice.xml
 %%WWWDIR%%/companies/weberpdemo/logo.jpg
-%%WWWDIR%%/companies/weberpdemo/logo1.jpg
-%%WWWDIR%%/companies/weberpdemo/logo2.jpg
-%%WWWDIR%%/companies/weberpdemo/logo4.jpg
-%%WWWDIR%%/companies/weberpdemo/logo5.jpg
-%%WWWDIR%%/companies/weberpdemo/logo6.jpg
-%%WWWDIR%%/companies/weberpdemo/logo7.jpg
+%%WWWDIR%%/companies/weberpdemo/part_pics/ASSET_2.jpg
+%%WWWDIR%%/companies/weberpdemo/part_pics/ASSET_6.jpg
+%%WWWDIR%%/companies/weberpdemo/part_pics/HON90021.jpg
+%%WWWDIR%%/companies/weberpdemo/part_pics/HON90022.jpg
+%%WWWDIR%%/companies/weberpdemo/part_pics/PHIS01.jpg
+%%WWWDIR%%/companies/weberpdemo/part_pics/webERPsmall.png
+%%WWWDIR%%/companies/weberpdemo/reports/salesgraph.png
+%%WWWDIR%%/companies/weberpdemo/reportwriter/FixedAssetRegister_2011-01-16.csv
 %%WWWDIR%%/companies/weberpdemo/reportwriter/Invoice.pdf
+%%WWWDIR%%/companies/weberpdemo/reportwriter/SalesAnalysis.csv
+%%WWWDIR%%/companies/weberpdemo/reportwriter/labels.xml
+%%WWWDIR%%/companies/weberpdemo/reportwriter/labels.xml.bak
 %%WWWDIR%%/config.distrib.php
 %%WWWDIR%%/css/bg.gif
 %%WWWDIR%%/css/default/default.css
@@ -348,6 +403,7 @@
 %%WWWDIR%%/css/default/images/button_bg.png
 %%WWWDIR%%/css/default/images/company.gif
 %%WWWDIR%%/css/default/images/company.png
+%%WWWDIR%%/css/default/images/contract.png
 %%WWWDIR%%/css/default/images/credit.gif
 %%WWWDIR%%/css/default/images/currency.gif
 %%WWWDIR%%/css/default/images/customer.png
@@ -379,6 +435,8 @@
 %%WWWDIR%%/css/default/images/menu_bg_indigo.png
 %%WWWDIR%%/css/default/images/menu_bg_white.png
 %%WWWDIR%%/css/default/images/menucurve.gif
+%%WWWDIR%%/css/default/images/money_add.png
+%%WWWDIR%%/css/default/images/money_delete.png
 %%WWWDIR%%/css/default/images/note_add.png
 %%WWWDIR%%/css/default/images/pdf.png
 %%WWWDIR%%/css/default/images/preview.gif
@@ -405,6 +463,7 @@
 %%WWWDIR%%/css/fresh/images/button_bg.png
 %%WWWDIR%%/css/fresh/images/company.gif
 %%WWWDIR%%/css/fresh/images/company.png
+%%WWWDIR%%/css/fresh/images/contract.png
 %%WWWDIR%%/css/fresh/images/credit.gif
 %%WWWDIR%%/css/fresh/images/currency.gif
 %%WWWDIR%%/css/fresh/images/customer.png
@@ -436,6 +495,8 @@
 %%WWWDIR%%/css/fresh/images/menu_bg_indigo.png
 %%WWWDIR%%/css/fresh/images/menu_bg_white.png
 %%WWWDIR%%/css/fresh/images/menucurve.gif
+%%WWWDIR%%/css/fresh/images/money_add.png
+%%WWWDIR%%/css/fresh/images/money_delete.png
 %%WWWDIR%%/css/fresh/images/note_add.png
 %%WWWDIR%%/css/fresh/images/pdf.png
 %%WWWDIR%%/css/fresh/images/preview.gif
@@ -456,12 +517,16 @@
 %%WWWDIR%%/css/gel/images/back.png
 %%WWWDIR%%/css/gel/images/bar.png
 %%WWWDIR%%/css/gel/images/button_bg.png
+%%WWWDIR%%/css/gel/images/company.gif
 %%WWWDIR%%/css/gel/images/company.png
+%%WWWDIR%%/css/gel/images/contract.png
 %%WWWDIR%%/css/gel/images/credit.gif
+%%WWWDIR%%/css/gel/images/currency.gif
 %%WWWDIR%%/css/gel/images/customer.png
 %%WWWDIR%%/css/gel/images/email.gif
 %%WWWDIR%%/css/gel/images/error.png
 %%WWWDIR%%/css/gel/images/folder_add.png
+%%WWWDIR%%/css/gel/images/folders.gif
 %%WWWDIR%%/css/gel/images/gelblue.png
 %%WWWDIR%%/css/gel/images/gelbluebutton.png
 %%WWWDIR%%/css/gel/images/gelblueh.png
@@ -473,36 +538,55 @@
 %%WWWDIR%%/css/gel/images/inputh.png
 %%WWWDIR%%/css/gel/images/inputhtxt.png
 %%WWWDIR%%/css/gel/images/inputtxt.png
+%%WWWDIR%%/css/gel/images/inquiries.png
+%%WWWDIR%%/css/gel/images/inventory.gif
 %%WWWDIR%%/css/gel/images/inventory.png
 %%WWWDIR%%/css/gel/images/magnifier.png
+%%WWWDIR%%/css/gel/images/maintenance.gif
 %%WWWDIR%%/css/gel/images/maintenance.png
+%%WWWDIR%%/css/gel/images/menu_bg.png
+%%WWWDIR%%/css/gel/images/menu_bg_blue.png
+%%WWWDIR%%/css/gel/images/menu_bg_dblue.png
 %%WWWDIR%%/css/gel/images/menu_bg_grey.png
+%%WWWDIR%%/css/gel/images/menu_bg_indigo.png
 %%WWWDIR%%/css/gel/images/menu_bg_white.png
+%%WWWDIR%%/css/gel/images/menucurve.gif
+%%WWWDIR%%/css/gel/images/money_add.png
+%%WWWDIR%%/css/gel/images/money_delete.png
 %%WWWDIR%%/css/gel/images/note_add.png
 %%WWWDIR%%/css/gel/images/pdf.png
 %%WWWDIR%%/css/gel/images/preview.gif
 %%WWWDIR%%/css/gel/images/printer.png
+%%WWWDIR%%/css/gel/images/reports.gif
 %%WWWDIR%%/css/gel/images/reports.png
 %%WWWDIR%%/css/gel/images/sales.png
+%%WWWDIR%%/css/gel/images/stripe.png
 %%WWWDIR%%/css/gel/images/supplier.png
+%%WWWDIR%%/css/gel/images/transactions.gif
 %%WWWDIR%%/css/gel/images/transactions.png
 %%WWWDIR%%/css/gel/images/user.png
 %%WWWDIR%%/css/gel/login.css
-%%WWWDIR%%/css/green/images/transactions.png
 %%WWWDIR%%/css/jelly/default.css
 %%WWWDIR%%/css/jelly/images/Graphique-32.png
 %%WWWDIR%%/css/jelly/images/accept.png
+%%WWWDIR%%/css/jelly/images/allocation.gif
 %%WWWDIR%%/css/jelly/images/allocation.png
+%%WWWDIR%%/css/jelly/images/ar.gif
 %%WWWDIR%%/css/jelly/images/ar.png
 %%WWWDIR%%/css/jelly/images/back.png
+%%WWWDIR%%/css/jelly/images/bank.gif
 %%WWWDIR%%/css/jelly/images/bar.png
 %%WWWDIR%%/css/jelly/images/button_bg.png
+%%WWWDIR%%/css/jelly/images/company.gif
 %%WWWDIR%%/css/jelly/images/company.png
+%%WWWDIR%%/css/jelly/images/contract.png
 %%WWWDIR%%/css/jelly/images/credit.gif
+%%WWWDIR%%/css/jelly/images/currency.gif
 %%WWWDIR%%/css/jelly/images/customer.png
 %%WWWDIR%%/css/jelly/images/email.gif
 %%WWWDIR%%/css/jelly/images/error.png
 %%WWWDIR%%/css/jelly/images/folder_add.png
+%%WWWDIR%%/css/jelly/images/folders.gif
 %%WWWDIR%%/css/jelly/images/gelblue.png
 %%WWWDIR%%/css/jelly/images/gelbluebutton.png
 %%WWWDIR%%/css/jelly/images/gelblueh.png
@@ -514,24 +598,40 @@
 %%WWWDIR%%/css/jelly/images/inputh.png
 %%WWWDIR%%/css/jelly/images/inputhtxt.png
 %%WWWDIR%%/css/jelly/images/inputtxt.png
+%%WWWDIR%%/css/jelly/images/inquiries.png
+%%WWWDIR%%/css/jelly/images/inventory.gif
 %%WWWDIR%%/css/jelly/images/inventory.png
 %%WWWDIR%%/css/jelly/images/magnifier.png
+%%WWWDIR%%/css/jelly/images/maintenance.gif
 %%WWWDIR%%/css/jelly/images/maintenance.png
+%%WWWDIR%%/css/jelly/images/menu_bg.png
+%%WWWDIR%%/css/jelly/images/menu_bg_blue.png
+%%WWWDIR%%/css/jelly/images/menu_bg_dblue.png
 %%WWWDIR%%/css/jelly/images/menu_bg_grey.png
+%%WWWDIR%%/css/jelly/images/menu_bg_indigo.png
 %%WWWDIR%%/css/jelly/images/menu_bg_white.png
+%%WWWDIR%%/css/jelly/images/menucurve.gif
+%%WWWDIR%%/css/jelly/images/money_add.png
+%%WWWDIR%%/css/jelly/images/money_delete.png
 %%WWWDIR%%/css/jelly/images/note_add.png
 %%WWWDIR%%/css/jelly/images/pdf.png
 %%WWWDIR%%/css/jelly/images/preview.gif
 %%WWWDIR%%/css/jelly/images/printer.png
+%%WWWDIR%%/css/jelly/images/reports.gif
 %%WWWDIR%%/css/jelly/images/reports.png
 %%WWWDIR%%/css/jelly/images/sales.png
+%%WWWDIR%%/css/jelly/images/stripe.png
 %%WWWDIR%%/css/jelly/images/supplier.png
+%%WWWDIR%%/css/jelly/images/transactions.gif
 %%WWWDIR%%/css/jelly/images/transactions.png
 %%WWWDIR%%/css/jelly/images/user.png
 %%WWWDIR%%/css/jelly/login.css
 %%WWWDIR%%/css/jelly/readme.txt
+%%WWWDIR%%/css/labelsDim.png
+%%WWWDIR%%/css/paramsLabel.png
 %%WWWDIR%%/css/professional/default.css
 %%WWWDIR%%/css/professional/images/Graphique-32.png
+%%WWWDIR%%/css/professional/images/accept.png
 %%WWWDIR%%/css/professional/images/allocation.gif
 %%WWWDIR%%/css/professional/images/allocation.png
 %%WWWDIR%%/css/professional/images/ar.gif
@@ -542,6 +642,7 @@
 %%WWWDIR%%/css/professional/images/button_bg.png
 %%WWWDIR%%/css/professional/images/company.gif
 %%WWWDIR%%/css/professional/images/company.png
+%%WWWDIR%%/css/professional/images/contract.png
 %%WWWDIR%%/css/professional/images/credit.gif
 %%WWWDIR%%/css/professional/images/currency.gif
 %%WWWDIR%%/css/professional/images/customer.png
@@ -573,6 +674,8 @@
 %%WWWDIR%%/css/professional/images/menu_bg_indigo.png
 %%WWWDIR%%/css/professional/images/menu_bg_white.png
 %%WWWDIR%%/css/professional/images/menucurve.gif
+%%WWWDIR%%/css/professional/images/money_add.png
+%%WWWDIR%%/css/professional/images/money_delete.png
 %%WWWDIR%%/css/professional/images/note_add.png
 %%WWWDIR%%/css/professional/images/pdf.png
 %%WWWDIR%%/css/professional/images/preview.gif
@@ -586,70 +689,78 @@
 %%WWWDIR%%/css/professional/images/transactions.png
 %%WWWDIR%%/css/professional/images/user.png
 %%WWWDIR%%/css/professional/login.css
-%%WWWDIR%%/css/professional- rtl/default.css
-%%WWWDIR%%/css/professional- rtl/images/Graphique-32.png
-%%WWWDIR%%/css/professional- rtl/images/allocation.gif
-%%WWWDIR%%/css/professional- rtl/images/allocation.png
-%%WWWDIR%%/css/professional- rtl/images/ar.gif
-%%WWWDIR%%/css/professional- rtl/images/ar.png
-%%WWWDIR%%/css/professional- rtl/images/back.png
-%%WWWDIR%%/css/professional- rtl/images/bank.gif
-%%WWWDIR%%/css/professional- rtl/images/bar.png
-%%WWWDIR%%/css/professional- rtl/images/button_bg.png
-%%WWWDIR%%/css/professional- rtl/images/company.gif
-%%WWWDIR%%/css/professional- rtl/images/company.png
-%%WWWDIR%%/css/professional- rtl/images/credit.gif
-%%WWWDIR%%/css/professional- rtl/images/currency.gif
-%%WWWDIR%%/css/professional- rtl/images/customer.png
-%%WWWDIR%%/css/professional- rtl/images/email.gif
-%%WWWDIR%%/css/professional- rtl/images/error.png
-%%WWWDIR%%/css/professional- rtl/images/folder_add.png
-%%WWWDIR%%/css/professional- rtl/images/folders.gif
-%%WWWDIR%%/css/professional- rtl/images/gelblue.png
-%%WWWDIR%%/css/professional- rtl/images/gelbluebutton.png
-%%WWWDIR%%/css/professional- rtl/images/gelblueh.png
-%%WWWDIR%%/css/professional- rtl/images/gl.png
-%%WWWDIR%%/css/professional- rtl/images/group_add.png
-%%WWWDIR%%/css/professional- rtl/images/hoverbuttonblue.png
-%%WWWDIR%%/css/professional- rtl/images/input.png
-%%WWWDIR%%/css/professional- rtl/images/input_bg.png
-%%WWWDIR%%/css/professional- rtl/images/inputh.png
-%%WWWDIR%%/css/professional- rtl/images/inputhtxt.png
-%%WWWDIR%%/css/professional- rtl/images/inputtxt.png
-%%WWWDIR%%/css/professional- rtl/images/inquiries.png
-%%WWWDIR%%/css/professional- rtl/images/inventory.gif
-%%WWWDIR%%/css/professional- rtl/images/inventory.png
-%%WWWDIR%%/css/professional- rtl/images/magnifier.png
-%%WWWDIR%%/css/professional- rtl/images/maintenance.gif
-%%WWWDIR%%/css/professional- rtl/images/maintenance.png
-%%WWWDIR%%/css/professional- rtl/images/menu_bg.png
-%%WWWDIR%%/css/professional- rtl/images/menu_bg_blue.png
-%%WWWDIR%%/css/professional- rtl/images/menu_bg_dblue.png
-%%WWWDIR%%/css/professional- rtl/images/menu_bg_grey.png
-%%WWWDIR%%/css/professional- rtl/images/menu_bg_indigo.png
-%%WWWDIR%%/css/professional- rtl/images/menu_bg_white.png
-%%WWWDIR%%/css/professional- rtl/images/menucurve.gif
-%%WWWDIR%%/css/professional- rtl/images/note_add.png
-%%WWWDIR%%/css/professional- rtl/images/pdf.png
-%%WWWDIR%%/css/professional- rtl/images/preview.gif
-%%WWWDIR%%/css/professional- rtl/images/printer.png
-%%WWWDIR%%/css/professional- rtl/images/reports.gif
-%%WWWDIR%%/css/professional- rtl/images/reports.png
-%%WWWDIR%%/css/professional- rtl/images/sales.png
-%%WWWDIR%%/css/professional- rtl/images/stripe.png
-%%WWWDIR%%/css/professional- rtl/images/supplier.png
-%%WWWDIR%%/css/professional- rtl/images/transactions.gif
-%%WWWDIR%%/css/professional- rtl/images/transactions.png
-%%WWWDIR%%/css/professional- rtl/images/user.png
-%%WWWDIR%%/css/professional- rtl/login.css
+%%WWWDIR%%/css/professional-rtl/default.css
+%%WWWDIR%%/css/professional-rtl/images/Graphique-32.png
+%%WWWDIR%%/css/professional-rtl/images/accept.png
+%%WWWDIR%%/css/professional-rtl/images/allocation.gif
+%%WWWDIR%%/css/professional-rtl/images/allocation.png
+%%WWWDIR%%/css/professional-rtl/images/ar.gif
+%%WWWDIR%%/css/professional-rtl/images/ar.png
+%%WWWDIR%%/css/professional-rtl/images/back.png
+%%WWWDIR%%/css/professional-rtl/images/bank.gif
+%%WWWDIR%%/css/professional-rtl/images/bar.png
+%%WWWDIR%%/css/professional-rtl/images/button_bg.png
+%%WWWDIR%%/css/professional-rtl/images/company.gif
+%%WWWDIR%%/css/professional-rtl/images/company.png
+%%WWWDIR%%/css/professional-rtl/images/credit.gif
+%%WWWDIR%%/css/professional-rtl/images/currency.gif
+%%WWWDIR%%/css/professional-rtl/images/customer.png
+%%WWWDIR%%/css/professional-rtl/images/email.gif
+%%WWWDIR%%/css/professional-rtl/images/error.png
+%%WWWDIR%%/css/professional-rtl/images/folder_add.png
+%%WWWDIR%%/css/professional-rtl/images/folders.gif
+%%WWWDIR%%/css/professional-rtl/images/gelblue.png
+%%WWWDIR%%/css/professional-rtl/images/gelbluebutton.png
+%%WWWDIR%%/css/professional-rtl/images/gelblueh.png
+%%WWWDIR%%/css/professional-rtl/images/gl.png
+%%WWWDIR%%/css/professional-rtl/images/group_add.png
+%%WWWDIR%%/css/professional-rtl/images/hoverbuttonblue.png
+%%WWWDIR%%/css/professional-rtl/images/input.png
+%%WWWDIR%%/css/professional-rtl/images/input_bg.png
+%%WWWDIR%%/css/professional-rtl/images/inputh.png
+%%WWWDIR%%/css/professional-rtl/images/inputhtxt.png
+%%WWWDIR%%/css/professional-rtl/images/inputtxt.png
+%%WWWDIR%%/css/professional-rtl/images/inquiries.png
+%%WWWDIR%%/css/professional-rtl/images/inventory.gif
+%%WWWDIR%%/css/professional-rtl/images/inventory.png
+%%WWWDIR%%/css/professional-rtl/images/magnifier.png
+%%WWWDIR%%/css/professional-rtl/images/maintenance.gif
+%%WWWDIR%%/css/professional-rtl/images/maintenance.png
+%%WWWDIR%%/css/professional-rtl/images/menu_bg.png
+%%WWWDIR%%/css/professional-rtl/images/menu_bg_blue.png
+%%WWWDIR%%/css/professional-rtl/images/menu_bg_dblue.png
+%%WWWDIR%%/css/professional-rtl/images/menu_bg_grey.png
+%%WWWDIR%%/css/professional-rtl/images/menu_bg_indigo.png
+%%WWWDIR%%/css/professional-rtl/images/menu_bg_white.png
+%%WWWDIR%%/css/professional-rtl/images/menucurve.gif
+%%WWWDIR%%/css/professional-rtl/images/money_add.png
+%%WWWDIR%%/css/professional-rtl/images/money_delete.png
+%%WWWDIR%%/css/professional-rtl/images/note_add.png
+%%WWWDIR%%/css/professional-rtl/images/pdf.png
+%%WWWDIR%%/css/professional-rtl/images/preview.gif
+%%WWWDIR%%/css/professional-rtl/images/printer.png
+%%WWWDIR%%/css/professional-rtl/images/reports.gif
+%%WWWDIR%%/css/professional-rtl/images/reports.png
+%%WWWDIR%%/css/professional-rtl/images/sales.png
+%%WWWDIR%%/css/professional-rtl/images/stripe.png
+%%WWWDIR%%/css/professional-rtl/images/supplier.png
+%%WWWDIR%%/css/professional-rtl/images/transactions.gif
+%%WWWDIR%%/css/professional-rtl/images/transactions.png
+%%WWWDIR%%/css/professional-rtl/images/user.png
+%%WWWDIR%%/css/professional-rtl/login.css
 %%WWWDIR%%/css/silverwolf/default.css
 %%WWWDIR%%/css/silverwolf/images/Graphique-32.png
 %%WWWDIR%%/css/silverwolf/images/allocation.png
+%%WWWDIR%%/css/silverwolf/images/ar-original.png
 %%WWWDIR%%/css/silverwolf/images/ar.png
+%%WWWDIR%%/css/silverwolf/images/back-original.png
 %%WWWDIR%%/css/silverwolf/images/back.png
 %%WWWDIR%%/css/silverwolf/images/bar.png
+%%WWWDIR%%/css/silverwolf/images/button_bg-original.png
 %%WWWDIR%%/css/silverwolf/images/button_bg.png
+%%WWWDIR%%/css/silverwolf/images/company-original.png
 %%WWWDIR%%/css/silverwolf/images/company.png
+%%WWWDIR%%/css/silverwolf/images/contract.png
 %%WWWDIR%%/css/silverwolf/images/credit.gif
 %%WWWDIR%%/css/silverwolf/images/customer.png
 %%WWWDIR%%/css/silverwolf/images/email.gif
@@ -661,28 +772,36 @@
 %%WWWDIR%%/css/silverwolf/images/gl.png
 %%WWWDIR%%/css/silverwolf/images/group_add.png
 %%WWWDIR%%/css/silverwolf/images/hoverbuttonblue.png
+%%WWWDIR%%/css/silverwolf/images/input-original.png
 %%WWWDIR%%/css/silverwolf/images/input.png
 %%WWWDIR%%/css/silverwolf/images/input_bg.png
 %%WWWDIR%%/css/silverwolf/images/inputh.png
 %%WWWDIR%%/css/silverwolf/images/inputhtxt.png
 %%WWWDIR%%/css/silverwolf/images/inputtxt.png
+%%WWWDIR%%/css/silverwolf/images/inventory-original.png
 %%WWWDIR%%/css/silverwolf/images/inventory.png
 %%WWWDIR%%/css/silverwolf/images/magnifier.png
+%%WWWDIR%%/css/silverwolf/images/maintenance-original.png
 %%WWWDIR%%/css/silverwolf/images/maintenance.png
 %%WWWDIR%%/css/silverwolf/images/menu_bg.png
 %%WWWDIR%%/css/silverwolf/images/menu_bg_blue.png
 %%WWWDIR%%/css/silverwolf/images/menu_bg_dblue.png
+%%WWWDIR%%/css/silverwolf/images/menu_bg_grey-original.png
 %%WWWDIR%%/css/silverwolf/images/menu_bg_grey.png
 %%WWWDIR%%/css/silverwolf/images/menu_bg_indigo.png
 %%WWWDIR%%/css/silverwolf/images/menu_bg_white.png
+%%WWWDIR%%/css/silverwolf/images/money_add.png
+%%WWWDIR%%/css/silverwolf/images/money_delete.png
 %%WWWDIR%%/css/silverwolf/images/note_add.png
 %%WWWDIR%%/css/silverwolf/images/pdf.png
 %%WWWDIR%%/css/silverwolf/images/preview.gif
 %%WWWDIR%%/css/silverwolf/images/printer.png
 %%WWWDIR%%/css/silverwolf/images/reports.png
 %%WWWDIR%%/css/silverwolf/images/sales.png
+%%WWWDIR%%/css/silverwolf/images/stripe-original.png
 %%WWWDIR%%/css/silverwolf/images/stripe.png
 %%WWWDIR%%/css/silverwolf/images/supplier.png
+%%WWWDIR%%/css/silverwolf/images/transactions-original.png
 %%WWWDIR%%/css/silverwolf/images/transactions.png
 %%WWWDIR%%/css/silverwolf/images/user.png
 %%WWWDIR%%/css/silverwolf/login.css
@@ -699,11 +818,13 @@
 %%WWWDIR%%/doc/Manual/ManualAccountsPayable.html
 %%WWWDIR%%/doc/Manual/ManualAccountsReceivable.html
 %%WWWDIR%%/doc/Manual/ManualContents.php
+%%WWWDIR%%/doc/Manual/ManualContracts.html
 %%WWWDIR%%/doc/Manual/ManualContributors.html
 %%WWWDIR%%/doc/Manual/ManualCreatingNewSystem.html
 %%WWWDIR%%/doc/Manual/ManualCreditStatus.html
 %%WWWDIR%%/doc/Manual/ManualCurrencies.html
 %%WWWDIR%%/doc/Manual/ManualDevelopmentStructure.html
+%%WWWDIR%%/doc/Manual/ManualFixedAssets.html
 %%WWWDIR%%/doc/Manual/ManualFooter.html
 %%WWWDIR%%/doc/Manual/ManualGeneralLedger.html
 %%WWWDIR%%/doc/Manual/ManualGettingStarted.html
@@ -715,7 +836,9 @@
 %%WWWDIR%%/doc/Manual/ManualMultilanguage.html
 %%WWWDIR%%/doc/Manual/ManualNewScripts.html
 %%WWWDIR%%/doc/Manual/ManualPaymentTerms.html
+%%WWWDIR%%/doc/Manual/ManualPettyCash.html
 %%WWWDIR%%/doc/Manual/ManualPrices.html
+%%WWWDIR%%/doc/Manual/ManualPurchaseOrdering.html
 %%WWWDIR%%/doc/Manual/ManualReportBuilder.html
 %%WWWDIR%%/doc/Manual/ManualRequirements.html
 %%WWWDIR%%/doc/Manual/ManualSalesAnalysis.html
@@ -727,11 +850,15 @@
 %%WWWDIR%%/doc/Manual/ManualSpecialUtilities.html
 %%WWWDIR%%/doc/Manual/ManualSystemConventions.html
 %%WWWDIR%%/doc/Manual/ManualTax.html
+%%WWWDIR%%/doc/Manual/images/Installer_1.jpg
+%%WWWDIR%%/doc/Manual/images/Installer_2.jpg
 %%WWWDIR%%/doc/Manual/images/MRP.jpg
 %%WWWDIR%%/doc/Manual/images/MRPCalendar.jpg
 %%WWWDIR%%/doc/Manual/images/MRPCreateDemands.jpg
 %%WWWDIR%%/doc/Manual/images/MRPDemands.jpg
 %%WWWDIR%%/doc/Manual/images/MRP_Report.jpg
+%%WWWDIR%%/doc/Manual/images/MaintainDiscountMatrix.jpg
+%%WWWDIR%%/doc/Manual/images/NewDiscountCategory.jpg
 %%WWWDIR%%/doc/Manual/images/RBCritSetup.gif
 %%WWWDIR%%/doc/Manual/images/RBDbSetup.gif
 %%WWWDIR%%/doc/Manual/images/RBFldSetup.gif
@@ -756,6 +883,7 @@
 %%WWWDIR%%/doc/Manual/images/RBHome.gif
 %%WWWDIR%%/doc/Manual/images/RBPageSetup.gif
 %%WWWDIR%%/doc/Manual/images/RBRptName.gif
+%%WWWDIR%%/doc/Manual/images/UserSettings.jpg
 %%WWWDIR%%/doc/README.txt
 %%WWWDIR%%/doc/UPGRADING.txt
 %%WWWDIR%%/favicon.ico
@@ -911,48 +1039,6 @@
 %%WWWDIR%%/flags/ZMK.gif
 %%WWWDIR%%/flags/ZWD.gif
 %%WWWDIR%%/flags/blank.gif
-%%WWWDIR%%/fonts/courier.php
-%%WWWDIR%%/fonts/helvetica.php
-%%WWWDIR%%/fonts/helvetica.z
-%%WWWDIR%%/fonts/helveticab.php
-%%WWWDIR%%/fonts/helveticab.z
-%%WWWDIR%%/fonts/helveticabi.php
-%%WWWDIR%%/fonts/helveticai.php
-%%WWWDIR%%/fonts/helveticai.z
-%%WWWDIR%%/fonts/makefont/cp1250.map
-%%WWWDIR%%/fonts/makefont/cp1251.map
-%%WWWDIR%%/fonts/makefont/cp1252.map
-%%WWWDIR%%/fonts/makefont/cp1253.map
-%%WWWDIR%%/fonts/makefont/cp1254.map
-%%WWWDIR%%/fonts/makefont/cp1255.map
-%%WWWDIR%%/fonts/makefont/cp1257.map
-%%WWWDIR%%/fonts/makefont/cp1258.map
-%%WWWDIR%%/fonts/makefont/cp874.map
-%%WWWDIR%%/fonts/makefont/iso-8859-1.map
-%%WWWDIR%%/fonts/makefont/iso-8859-11.map
-%%WWWDIR%%/fonts/makefont/iso-8859-15.map
-%%WWWDIR%%/fonts/makefont/iso-8859-16.map
-%%WWWDIR%%/fonts/makefont/iso-8859-2.map
-%%WWWDIR%%/fonts/makefont/iso-8859-4.map
-%%WWWDIR%%/fonts/makefont/iso-8859-5.map
-%%WWWDIR%%/fonts/makefont/iso-8859-7.map
-%%WWWDIR%%/fonts/makefont/iso-8859-9.map
-%%WWWDIR%%/fonts/makefont/koi8-r.map
-%%WWWDIR%%/fonts/makefont/koi8-u.map
-%%WWWDIR%%/fonts/makefont/makefont.php
-%%WWWDIR%%/fonts/symbol.php
-%%WWWDIR%%/fonts/times.php
-%%WWWDIR%%/fonts/timesb.php
-%%WWWDIR%%/fonts/timesbi.php
-%%WWWDIR%%/fonts/timesi.php
-%%WWWDIR%%/fpdi/decoders/ASCII85Decode.php
-%%WWWDIR%%/fpdi/decoders/LZWDecode.php
-%%WWWDIR%%/fpdi/fpdf_tpl.php
-%%WWWDIR%%/fpdi/fpdi.php
-%%WWWDIR%%/fpdi/fpdi_pdf_parser.php
-%%WWWDIR%%/fpdi/pdf_context.php
-%%WWWDIR%%/fpdi/pdf_parser.php
-%%WWWDIR%%/fpdi/wrapper_functions.php
 %%WWWDIR%%/geo_displaymap_customers.php
 %%WWWDIR%%/geo_displaymap_suppliers.php
 %%WWWDIR%%/geocode.php
@@ -967,10 +1053,14 @@
 %%WWWDIR%%/includes/ConnectDB_mysqli.inc
 %%WWWDIR%%/includes/ConnectDB_postgres.inc
 %%WWWDIR%%/includes/ConstructSQLForUserDefinedSalesReport.inc
+%%WWWDIR%%/includes/Contract_Readin.php
 %%WWWDIR%%/includes/DateFunctions.inc
 %%WWWDIR%%/includes/DefineCartClass.php
+%%WWWDIR%%/includes/DefineContractClass.php
 %%WWWDIR%%/includes/DefineCustAllocsClass.php
 %%WWWDIR%%/includes/DefineJournalClass.php
+%%WWWDIR%%/includes/DefineLabelClass.php
+%%WWWDIR%%/includes/DefineOfferClass.php
 %%WWWDIR%%/includes/DefinePOClass.php
 %%WWWDIR%%/includes/DefinePaymentClass.php
 %%WWWDIR%%/includes/DefineReceiptClass.php
@@ -978,15 +1068,11 @@
 %%WWWDIR%%/includes/DefineShiptClass.php
 %%WWWDIR%%/includes/DefineSpecialOrderClass.php
 %%WWWDIR%%/includes/DefineStockAdjustment.php
-%%WWWDIR%%/includes/DefineStockTransfer.php
 %%WWWDIR%%/includes/DefineStockTransfers.php
 %%WWWDIR%%/includes/DefineSuppAllocsClass.php
 %%WWWDIR%%/includes/DefineSuppTransClass.php
 %%WWWDIR%%/includes/EDIVariableSubstitution.inc
 %%WWWDIR%%/includes/EDIconfig.inc
-%%WWWDIR%%/includes/FPDF_Chinese.php
-%%WWWDIR%%/includes/FPDF_Japanese.php
-%%WWWDIR%%/includes/FPDF_Korean.php
 %%WWWDIR%%/includes/FailedLogin.php
 %%WWWDIR%%/includes/FreightCalculation.inc
 %%WWWDIR%%/includes/GLPostings.inc
@@ -995,6 +1081,7 @@
 %%WWWDIR%%/includes/GetPrice.inc
 %%WWWDIR%%/includes/GetSalesTransGLCodes.inc
 %%WWWDIR%%/includes/InputSerialItems.php
+%%WWWDIR%%/includes/InputSerialItems.php.orig
 %%WWWDIR%%/includes/InputSerialItemsExisting.php
 %%WWWDIR%%/includes/InputSerialItemsFile.php
 %%WWWDIR%%/includes/InputSerialItemsKeyed.php
@@ -1002,12 +1089,14 @@
 %%WWWDIR%%/includes/LanguageSetup.php
 %%WWWDIR%%/includes/Login.php
 %%WWWDIR%%/includes/MiscFunctions.php
+%%WWWDIR%%/includes/OutputSerialItems.php
 %%WWWDIR%%/includes/PDFAgedDebtorsPageHeader.inc
 %%WWWDIR%%/includes/PDFAgedSuppliersPageHeader.inc
 %%WWWDIR%%/includes/PDFBOMListingPageHeader.inc
 %%WWWDIR%%/includes/PDFBalanceSheetPageHeader.inc
 %%WWWDIR%%/includes/PDFBankingSummaryPageHeader.inc
 %%WWWDIR%%/includes/PDFChequeListingPageHeader.inc
+%%WWWDIR%%/includes/PDFCustTransListingPageHeader.inc
 %%WWWDIR%%/includes/PDFCustomerListPageHeader.inc
 %%WWWDIR%%/includes/PDFDIFOTPageHeader.inc
 %%WWWDIR%%/includes/PDFDebtorBalsPageHeader.inc
@@ -1023,9 +1112,10 @@
 %%WWWDIR%%/includes/PDFOstdgGRNsPageHeader.inc
 %%WWWDIR%%/includes/PDFPaymentRunPageHeader.inc
 %%WWWDIR%%/includes/PDFPaymentRun_PymtFooter.php
-%%WWWDIR%%/includes/PDFPriceListPageHeader.inc
+%%WWWDIR%%/includes/PDFPickingListHeader.inc
 %%WWWDIR%%/includes/PDFProfitAndLossPageHeader.inc
 %%WWWDIR%%/includes/PDFQuotationPageHeader.inc
+%%WWWDIR%%/includes/PDFQuotationPortraitPageHeader.inc
 %%WWWDIR%%/includes/PDFSalesAnalPageHeader.inc
 %%WWWDIR%%/includes/PDFSalesAnalysis.inc
 %%WWWDIR%%/includes/PDFSalesOrder_generic.inc
@@ -1035,9 +1125,14 @@
 %%WWWDIR%%/includes/PDFStockComparisonPageHeader.inc
 %%WWWDIR%%/includes/PDFStockLocTransferHeader.inc
 %%WWWDIR%%/includes/PDFStockNegativesHeader.inc
+%%WWWDIR%%/includes/PDFStockTransListingPageHeader.inc
 %%WWWDIR%%/includes/PDFStockTransferHeader.inc
+%%WWWDIR%%/includes/PDFSuppTransListingPageHeader.inc
 %%WWWDIR%%/includes/PDFSupplierBalsPageHeader.inc
+%%WWWDIR%%/includes/PDFTabReportHeader.inc
+%%WWWDIR%%/includes/PDFTagProfitAndLossPageHeader.inc
 %%WWWDIR%%/includes/PDFTaxPageHeader.inc
+%%WWWDIR%%/includes/PDFTopItemsHeader.inc
 %%WWWDIR%%/includes/PDFTransPageHeader.inc
 %%WWWDIR%%/includes/PDFTransPageHeaderPortrait.inc
 %%WWWDIR%%/includes/PDFTrialBalancePageHeader.inc
@@ -1047,9 +1142,9 @@
 %%WWWDIR%%/includes/RFC822.php
 %%WWWDIR%%/includes/SQL_CommonFunctions.inc
 %%WWWDIR%%/includes/SelectOrderItems_IntoCart.inc
+%%WWWDIR%%/includes/UserLogin.php
 %%WWWDIR%%/includes/class.pdf.php
 %%WWWDIR%%/includes/footer.inc
-%%WWWDIR%%/includes/fpdf.php
 %%WWWDIR%%/includes/header.inc
 %%WWWDIR%%/includes/htmlMimeMail.php
 %%WWWDIR%%/includes/mimePart.php
@@ -1060,27 +1155,215 @@
 %%WWWDIR%%/includes/php-gettext/gettext.inc
 %%WWWDIR%%/includes/php-gettext/gettext.php
 %%WWWDIR%%/includes/php-gettext/streams.php
+%%WWWDIR%%/includes/phplot/COPYING
+%%WWWDIR%%/includes/phplot/ChangeLog
+%%WWWDIR%%/includes/phplot/HorizontalBars.txt
+%%WWWDIR%%/includes/phplot/NEWS.txt
+%%WWWDIR%%/includes/phplot/README.txt
+%%WWWDIR%%/includes/phplot/contrib/README.txt
+%%WWWDIR%%/includes/phplot/contrib/color_range.example.php
+%%WWWDIR%%/includes/phplot/contrib/color_range.php
+%%WWWDIR%%/includes/phplot/contrib/color_range.test1.php
+%%WWWDIR%%/includes/phplot/contrib/color_range.test2.php
+%%WWWDIR%%/includes/phplot/contrib/prune_labels.example.php
+%%WWWDIR%%/includes/phplot/contrib/prune_labels.php
+%%WWWDIR%%/includes/phplot/contrib/prune_labels.test.php
 %%WWWDIR%%/includes/phplot/phplot.php
 %%WWWDIR%%/includes/phplot/phplot_data.php
 %%WWWDIR%%/includes/phplot/rgb.inc.php
 %%WWWDIR%%/includes/session.inc
 %%WWWDIR%%/includes/smtp.php
+%%WWWDIR%%/includes/tcpdf/2dbarcodes.php
+%%WWWDIR%%/includes/tcpdf/CHANGELOG.TXT
+%%WWWDIR%%/includes/tcpdf/LICENSE.TXT
+%%WWWDIR%%/includes/tcpdf/README.TXT
+%%WWWDIR%%/includes/tcpdf/barcodes.php
+%%WWWDIR%%/includes/tcpdf/config/lang/eng.php
+%%WWWDIR%%/includes/tcpdf/config/lang/ita.php
+%%WWWDIR%%/includes/tcpdf/config/tcpdf_config.php
+%%WWWDIR%%/includes/tcpdf/config/tcpdf_config_alt.php
+%%WWWDIR%%/includes/tcpdf/fonts/helvetica.php
+%%WWWDIR%%/includes/tcpdf/fonts/helveticab.php
+%%WWWDIR%%/includes/tcpdf/fonts/helveticabi.php
+%%WWWDIR%%/includes/tcpdf/fonts/helveticai.php
+%%WWWDIR%%/includes/tcpdf/fonts/javiergb.php
+%%WWWDIR%%/includes/tcpdf/fonts/javierjp.php
+%%WWWDIR%%/includes/tcpdf/fonts/times.php
+%%WWWDIR%%/includes/tcpdf/fonts/timesb.php
+%%WWWDIR%%/includes/tcpdf/fonts/timesbi.php
+%%WWWDIR%%/includes/tcpdf/fonts/timesi.php
+%%WWWDIR%%/includes/tcpdf/htmlcolors.php
+%%WWWDIR%%/includes/tcpdf/tcpdf.pem
+%%WWWDIR%%/includes/tcpdf/tcpdf.php
+%%WWWDIR%%/includes/tcpdf/unicode_data.php
 %%WWWDIR%%/index.php
 %%WWWDIR%%/install/index.php
 %%WWWDIR%%/install/save.php
 %%WWWDIR%%/install/timezone.csv
 %%WWWDIR%%/install/timezone.php
 %%WWWDIR%%/javascripts/MiscFunctions.js
-%%WWWDIR%%/locale/en_GB/LC_MESSAGES/messages.po
-%%WWWDIR%%/locale/en_US/LC_MESSAGES/messages.mo
-%%WWWDIR%%/locale/en_US/LC_MESSAGES/messages.po
+%%WWWDIR%%/locale/cs_CZ.utf8/LC_MESSAGES/messages.mo
+%%WWWDIR%%/locale/cs_CZ.utf8/LC_MESSAGES/messages.po
+%%WWWDIR%%/locale/de_DE.utf8/LC_MESSAGES/messages.mo
+%%WWWDIR%%/locale/de_DE.utf8/LC_MESSAGES/messages.po
+%%WWWDIR%%/locale/de_DE.utf8/Manual/ManualARInquiries.html
+%%WWWDIR%%/locale/de_DE.utf8/Manual/ManualARReports.html
+%%WWWDIR%%/locale/de_DE.utf8/Manual/ManualARTransactions.html
+%%WWWDIR%%/locale/de_DE.utf8/Manual/ManualAccountsPayable.html
+%%WWWDIR%%/locale/de_DE.utf8/Manual/ManualAccountsReceivable.html
+%%WWWDIR%%/locale/de_DE.utf8/Manual/ManualContents.php
+%%WWWDIR%%/locale/de_DE.utf8/Manual/ManualContributors.html
+%%WWWDIR%%/locale/de_DE.utf8/Manual/ManualCreatingNewSystem.html
+%%WWWDIR%%/locale/de_DE.utf8/Manual/ManualCreditStatus.html
+%%WWWDIR%%/locale/de_DE.utf8/Manual/ManualDevelopmentStructure.html
+%%WWWDIR%%/locale/de_DE.utf8/Manual/ManualFooter.html
+%%WWWDIR%%/locale/de_DE.utf8/Manual/ManualGeneralLedger.html
+%%WWWDIR%%/locale/de_DE.utf8/Manual/ManualGettingStarted.html
+%%WWWDIR%%/locale/de_DE.utf8/Manual/ManualHeader.html
+%%WWWDIR%%/locale/de_DE.utf8/Manual/ManualIntroduction.html
+%%WWWDIR%%/locale/de_DE.utf8/Manual/ManualInventory.html
+%%WWWDIR%%/locale/de_DE.utf8/Manual/ManualManufacturing.html
+%%WWWDIR%%/locale/de_DE.utf8/Manual/ManualMultilanguage.html
+%%WWWDIR%%/locale/de_DE.utf8/Manual/ManualNewScripts.html
+%%WWWDIR%%/locale/de_DE.utf8/Manual/ManualPaymentTerms.html
+%%WWWDIR%%/locale/de_DE.utf8/Manual/ManualPrices.html
+%%WWWDIR%%/locale/de_DE.utf8/Manual/ManualReportBuilder.html
+%%WWWDIR%%/locale/de_DE.utf8/Manual/ManualRequirements.html
+%%WWWDIR%%/locale/de_DE.utf8/Manual/ManualSalesAnalysis.html
+%%WWWDIR%%/locale/de_DE.utf8/Manual/ManualSalesOrders.html
+%%WWWDIR%%/locale/de_DE.utf8/Manual/ManualSalesPeople.html
+%%WWWDIR%%/locale/de_DE.utf8/Manual/ManualSalesTypes.html
+%%WWWDIR%%/locale/de_DE.utf8/Manual/ManualSecuritySchema.html
+%%WWWDIR%%/locale/de_DE.utf8/Manual/ManualSecuritySchemaorig.html
+%%WWWDIR%%/locale/de_DE.utf8/Manual/ManualShipments.html
+%%WWWDIR%%/locale/de_DE.utf8/Manual/ManualSpecialUtilities.html
+%%WWWDIR%%/locale/de_DE.utf8/Manual/ManualSystemConventions.html
+%%WWWDIR%%/locale/de_DE.utf8/Manual/ManualTax.html
+%%WWWDIR%%/locale/de_DE.utf8/Manual/images/RBCritSetup.gif
+%%WWWDIR%%/locale/de_DE.utf8/Manual/images/RBDbSetup.gif
+%%WWWDIR%%/locale/de_DE.utf8/Manual/images/RBFldSetup.gif
+%%WWWDIR%%/locale/de_DE.utf8/Manual/images/RBFrmCritSetup.gif
+%%WWWDIR%%/locale/de_DE.utf8/Manual/images/RBFrmDbSetup.gif
+%%WWWDIR%%/locale/de_DE.utf8/Manual/images/RBFrmDtaBlk.gif
+%%WWWDIR%%/locale/de_DE.utf8/Manual/images/RBFrmDtaCoBlk.gif
+%%WWWDIR%%/locale/de_DE.utf8/Manual/images/RBFrmDtaCoLine.gif
+%%WWWDIR%%/locale/de_DE.utf8/Manual/images/RBFrmDtaFxdLine.gif
+%%WWWDIR%%/locale/de_DE.utf8/Manual/images/RBFrmDtaImg.gif
+%%WWWDIR%%/locale/de_DE.utf8/Manual/images/RBFrmDtaLine.gif
+%%WWWDIR%%/locale/de_DE.utf8/Manual/images/RBFrmDtaPgNum.gif
+%%WWWDIR%%/locale/de_DE.utf8/Manual/images/RBFrmDtaRect.gif
+%%WWWDIR%%/locale/de_DE.utf8/Manual/images/RBFrmDtaTbl.gif
+%%WWWDIR%%/locale/de_DE.utf8/Manual/images/RBFrmDtaText.gif
+%%WWWDIR%%/locale/de_DE.utf8/Manual/images/RBFrmDtaTtl.gif
+%%WWWDIR%%/locale/de_DE.utf8/Manual/images/RBFrmFldSetup.gif
+%%WWWDIR%%/locale/de_DE.utf8/Manual/images/RBFrmName.gif
+%%WWWDIR%%/locale/de_DE.utf8/Manual/images/RBFrmPageSetup.gif
+%%WWWDIR%%/locale/de_DE.utf8/Manual/images/RBFrmShow.gif
+%%WWWDIR%%/locale/de_DE.utf8/Manual/images/RBFrmShowCrit.gif
+%%WWWDIR%%/locale/de_DE.utf8/Manual/images/RBHome.gif
+%%WWWDIR%%/locale/de_DE.utf8/Manual/images/RBPageSetup.gif
+%%WWWDIR%%/locale/de_DE.utf8/Manual/images/RBRptName.gif
+%%WWWDIR%%/locale/el_GR.utf8/LC_MESSAGES/messages.mo
+%%WWWDIR%%/locale/el_GR.utf8/LC_MESSAGES/messages.po
+%%WWWDIR%%/locale/en_GB.utf8/LC_MESSAGES/messages.pot
+%%WWWDIR%%/locale/en_US.utf8/LC_MESSAGES/messages.mo
+%%WWWDIR%%/locale/en_US.utf8/LC_MESSAGES/messages.po
+%%WWWDIR%%/locale/es_ES.utf8/LC_MESSAGES/messages.mo
+%%WWWDIR%%/locale/es_ES.utf8/LC_MESSAGES/messages.po
+%%WWWDIR%%/locale/et_EE.utf8/LC_MESSAGES/messages.mo
+%%WWWDIR%%/locale/et_EE.utf8/LC_MESSAGES/messages.po
+%%WWWDIR%%/locale/fa_IR.utf8/LC_MESSAGES/messages.mo
+%%WWWDIR%%/locale/fa_IR.utf8/LC_MESSAGES/messages.po
+%%WWWDIR%%/locale/fr_FR.utf8/LC_MESSAGES/messages.mo
+%%WWWDIR%%/locale/fr_FR.utf8/LC_MESSAGES/messages.po
+%%WWWDIR%%/locale/hi_IN.utf8/LC_MESSAGES/messages.mo
+%%WWWDIR%%/locale/hi_IN.utf8/LC_MESSAGES/messages.po
+%%WWWDIR%%/locale/hr_HR.utf8/LC_MESSAGES/messages.mo
+%%WWWDIR%%/locale/hr_HR.utf8/LC_MESSAGES/messages.po
+%%WWWDIR%%/locale/hu_HU.utf8/LC_MESSAGES/messages.mo
+%%WWWDIR%%/locale/hu_HU.utf8/LC_MESSAGES/messages.po
+%%WWWDIR%%/locale/id_ID.utf8/GL/AccountGroups.csv
+%%WWWDIR%%/locale/id_ID.utf8/GL/AccountSections.csv
+%%WWWDIR%%/locale/id_ID.utf8/GL/GLAccounts.csv
+%%WWWDIR%%/locale/id_ID.utf8/LC_MESSAGES/messages.mo
+%%WWWDIR%%/locale/id_ID.utf8/LC_MESSAGES/messages.po
+%%WWWDIR%%/locale/it_IT.utf8/LC_MESSAGES/messages.mo
+%%WWWDIR%%/locale/it_IT.utf8/LC_MESSAGES/messages.po
+%%WWWDIR%%/locale/ja_JP.utf8/LC_MESSAGES/messages.mo
+%%WWWDIR%%/locale/ja_JP.utf8/LC_MESSAGES/messages.po
+%%WWWDIR%%/locale/lv_LV.utf8/LC_MESSAGES/messages.mo
+%%WWWDIR%%/locale/lv_LV.utf8/LC_MESSAGES/messages.po
+%%WWWDIR%%/locale/nl_NL.utf8/LC_MESSAGES/messages.mo
+%%WWWDIR%%/locale/nl_NL.utf8/LC_MESSAGES/messages.po
+%%WWWDIR%%/locale/pl_PL.utf8/LC_MESSAGES/messages.mo
+%%WWWDIR%%/locale/pl_PL.utf8/LC_MESSAGES/messages.po
+%%WWWDIR%%/locale/pt_BR.utf8/LC_MESSAGES/messages.mo
+%%WWWDIR%%/locale/pt_BR.utf8/LC_MESSAGES/messages.po
+%%WWWDIR%%/locale/pt_PT.utf8/LC_MESSAGES/messages.mo
+%%WWWDIR%%/locale/pt_PT.utf8/LC_MESSAGES/messages.po
+%%WWWDIR%%/locale/ro_RO.utf8/LC_MESSAGES/messages.mo
+%%WWWDIR%%/locale/ro_RO.utf8/LC_MESSAGES/messages.po
+%%WWWDIR%%/locale/ru_RU.utf8/LC_MESSAGES/messages.mo
+%%WWWDIR%%/locale/ru_RU.utf8/LC_MESSAGES/messages.po
+%%WWWDIR%%/locale/sq_AL.utf8/LC_MESSAGES/messages.mo
+%%WWWDIR%%/locale/sq_AL.utf8/LC_MESSAGES/messages.po
+%%WWWDIR%%/locale/sv_SE.utf8/LC_MESSAGES/messages.mo
+%%WWWDIR%%/locale/sv_SE.utf8/LC_MESSAGES/messages.po
+%%WWWDIR%%/locale/sw_KE.utf8/LC_MESSAGES/messages.mo
+%%WWWDIR%%/locale/sw_KE.utf8/LC_MESSAGES/messages.po
+%%WWWDIR%%/locale/tr_TR.utf8/LC_MESSAGES/messages-P-Y.po
+%%WWWDIR%%/locale/tr_TR.utf8/LC_MESSAGES/messages.mo
+%%WWWDIR%%/locale/tr_TR.utf8/LC_MESSAGES/messages.po
+%%WWWDIR%%/locale/zh_CN.utf8/LC_MESSAGES/messages.mo
+%%WWWDIR%%/locale/zh_CN.utf8/LC_MESSAGES/messages.po
+%%WWWDIR%%/locale/zh_CN.utf8/Manual/ManualAPIFunctions.php
+%%WWWDIR%%/locale/zh_CN.utf8/Manual/ManualARInquiries.html
+%%WWWDIR%%/locale/zh_CN.utf8/Manual/ManualARReports.html
+%%WWWDIR%%/locale/zh_CN.utf8/Manual/ManualARTransactions.html
+%%WWWDIR%%/locale/zh_CN.utf8/Manual/ManualAccountsPayable.html
+%%WWWDIR%%/locale/zh_CN.utf8/Manual/ManualAccountsReceivable.html
+%%WWWDIR%%/locale/zh_CN.utf8/Manual/ManualContents.php
+%%WWWDIR%%/locale/zh_CN.utf8/Manual/ManualContracts.html
+%%WWWDIR%%/locale/zh_CN.utf8/Manual/ManualContributors.html
+%%WWWDIR%%/locale/zh_CN.utf8/Manual/ManualCreatingNewSystem.html
+%%WWWDIR%%/locale/zh_CN.utf8/Manual/ManualCreditStatus.html
+%%WWWDIR%%/locale/zh_CN.utf8/Manual/ManualCurrencies.html
+%%WWWDIR%%/locale/zh_CN.utf8/Manual/ManualDevelopmentStructure.html
+%%WWWDIR%%/locale/zh_CN.utf8/Manual/ManualFixedAssets.html
+%%WWWDIR%%/locale/zh_CN.utf8/Manual/ManualFooter.html
+%%WWWDIR%%/locale/zh_CN.utf8/Manual/ManualGeneralLedger.html
+%%WWWDIR%%/locale/zh_CN.utf8/Manual/ManualGettingStarted.html
+%%WWWDIR%%/locale/zh_CN.utf8/Manual/ManualHeader.html
+%%WWWDIR%%/locale/zh_CN.utf8/Manual/ManualIntroduction.html
+%%WWWDIR%%/locale/zh_CN.utf8/Manual/ManualInventory.html
+%%WWWDIR%%/locale/zh_CN.utf8/Manual/ManualMRP.html
+%%WWWDIR%%/locale/zh_CN.utf8/Manual/ManualManufacturing.html
+%%WWWDIR%%/locale/zh_CN.utf8/Manual/ManualMultilanguage.html
+%%WWWDIR%%/locale/zh_CN.utf8/Manual/ManualNewScripts.html
+%%WWWDIR%%/locale/zh_CN.utf8/Manual/ManualPaymentTerms.html
+%%WWWDIR%%/locale/zh_CN.utf8/Manual/ManualPettyCash.html
+%%WWWDIR%%/locale/zh_CN.utf8/Manual/ManualPrices.html
+%%WWWDIR%%/locale/zh_CN.utf8/Manual/ManualPurchaseOrdering.html
+%%WWWDIR%%/locale/zh_CN.utf8/Manual/ManualReportBuilder.html
+%%WWWDIR%%/locale/zh_CN.utf8/Manual/ManualRequirements.html
+%%WWWDIR%%/locale/zh_CN.utf8/Manual/ManualSalesAnalysis.html
+%%WWWDIR%%/locale/zh_CN.utf8/Manual/ManualSalesOrders.html
+%%WWWDIR%%/locale/zh_CN.utf8/Manual/ManualSalesPeople.html
+%%WWWDIR%%/locale/zh_CN.utf8/Manual/ManualSalesTypes.html
+%%WWWDIR%%/locale/zh_CN.utf8/Manual/ManualSecuritySchema.html
+%%WWWDIR%%/locale/zh_CN.utf8/Manual/ManualShipments.html
+%%WWWDIR%%/locale/zh_CN.utf8/Manual/ManualSpecialUtilities.html
+%%WWWDIR%%/locale/zh_CN.utf8/Manual/ManualSystemConventions.html
+%%WWWDIR%%/locale/zh_CN.utf8/Manual/ManualTax.html
+%%WWWDIR%%/locale/zh_HK.utf8/LC_MESSAGES/messages.mo
+%%WWWDIR%%/locale/zh_HK.utf8/LC_MESSAGES/messages.po
+%%WWWDIR%%/locale/zh_HK.utf8/Manual/ManualGettingStarted.html
+%%WWWDIR%%/locale/zh_HK.utf8/Manual/ManualIntroduction.html
+%%WWWDIR%%/locale/zh_HK.utf8/Manual/ManualRequirements.html
+%%WWWDIR%%/locale/zh_HK.utf8/Manual/ManualSecuritySchema.html
 %%WWWDIR%%/logo_server.jpg
-%%WWWDIR%%/part_pics/HON90021.jpg
-%%WWWDIR%%/part_pics/HON90022.jpg
-%%WWWDIR%%/part_pics/webERPsmall.png
 %%WWWDIR%%/phpinfo.php
 %%WWWDIR%%/report_runner.php
-%%WWWDIR%%/reports/PurchOrder.pdf
 %%WWWDIR%%/reportwriter/FormMaker.php
 %%WWWDIR%%/reportwriter/ReportMaker.php
 %%WWWDIR%%/reportwriter/WriteForm.inc
@@ -1128,7 +1411,6 @@
 %%WWWDIR%%/sql/mysql/upgrade2.8-2.9.sql
 %%WWWDIR%%/sql/mysql/upgrade2.9-2.9a.sql
 %%WWWDIR%%/sql/mysql/upgrade2.9a-2.9b.sql
-%%WWWDIR%%/sql/mysql/upgrade2.9b-3.0.sql
 %%WWWDIR%%/sql/mysql/upgrade3.00-3.01.sql
 %%WWWDIR%%/sql/mysql/upgrade3.01-3.02.sql
 %%WWWDIR%%/sql/mysql/upgrade3.02-3.03.sql
@@ -1137,39 +1419,98 @@
 %%WWWDIR%%/sql/mysql/upgrade3.05-3.06.sql
 %%WWWDIR%%/sql/mysql/upgrade3.06-3.07.sql
 %%WWWDIR%%/sql/mysql/upgrade3.07-3.08.sql
-%%WWWDIR%%/sql/mysql/upgrade3.08-3.09.sql
 %%WWWDIR%%/sql/mysql/upgrade3.09-3.10.sql
 %%WWWDIR%%/sql/mysql/upgrade3.10-3.11.sql
 %%WWWDIR%%/sql/mysql/upgrade3.11-3.11.1.sql
+%%WWWDIR%%/sql/mysql/upgrade3.11.1-4.00.sql
+%%WWWDIR%%/sql/mysql/upgrade3.11.1-4.00.sql_previous
 %%WWWDIR%%/sql/mysql/weberp-demo.sql
 %%WWWDIR%%/sql/mysql/weberp-new.sql
-%%WWWDIR%%/xmlrpc/Changelog
+%%WWWDIR%%/xmlrpc/ChangeLog
+%%WWWDIR%%/xmlrpc/INSTALL
 %%WWWDIR%%/xmlrpc/Makefile
 %%WWWDIR%%/xmlrpc/NEWS
 %%WWWDIR%%/xmlrpc/README
 %%WWWDIR%%/xmlrpc/debugger/action.php
 %%WWWDIR%%/xmlrpc/debugger/common.php
 %%WWWDIR%%/xmlrpc/debugger/controller.php
+%%WWWDIR%%/xmlrpc/debugger/index.html
 %%WWWDIR%%/xmlrpc/debugger/index.php
-%%WWWDIR%%/xmlrpc/lib/compat/array_key_exists.php
-%%WWWDIR%%/xmlrpc/lib/compat/is_a.php
-%%WWWDIR%%/xmlrpc/lib/compat/is_callable.php
-%%WWWDIR%%/xmlrpc/lib/compat/is_scalar.php
-%%WWWDIR%%/xmlrpc/lib/compat/var_export.php
-%%WWWDIR%%/xmlrpc/lib/compat/version_compare.php
+%%WWWDIR%%/xmlrpc/demo/client/agesort.php
+%%WWWDIR%%/xmlrpc/demo/client/client.php
+%%WWWDIR%%/xmlrpc/demo/client/comment.php
+%%WWWDIR%%/xmlrpc/demo/client/introspect.php
+%%WWWDIR%%/xmlrpc/demo/client/mail.php
+%%WWWDIR%%/xmlrpc/demo/client/simple_call.php
+%%WWWDIR%%/xmlrpc/demo/client/which.php
+%%WWWDIR%%/xmlrpc/demo/client/wrap.php
+%%WWWDIR%%/xmlrpc/demo/client/zopetest.php
+%%WWWDIR%%/xmlrpc/demo/demo1.txt
+%%WWWDIR%%/xmlrpc/demo/demo2.txt
+%%WWWDIR%%/xmlrpc/demo/demo3.txt
+%%WWWDIR%%/xmlrpc/demo/server/discuss.php
+%%WWWDIR%%/xmlrpc/demo/server/proxy.php
+%%WWWDIR%%/xmlrpc/demo/server/server.php
+%%WWWDIR%%/xmlrpc/demo/vardemo.php
+%%WWWDIR%%/xmlrpc/doc/Makefile
+%%WWWDIR%%/xmlrpc/doc/announce1_0.txt
+%%WWWDIR%%/xmlrpc/doc/announce1_1.txt
+%%WWWDIR%%/xmlrpc/doc/announce1b6.txt
+%%WWWDIR%%/xmlrpc/doc/announce1b7.txt
+%%WWWDIR%%/xmlrpc/doc/announce1b8.txt
+%%WWWDIR%%/xmlrpc/doc/announce1b9.txt
+%%WWWDIR%%/xmlrpc/doc/convert.php
+%%WWWDIR%%/xmlrpc/doc/custom.dsl
+%%WWWDIR%%/xmlrpc/doc/custom.fo.xsl
+%%WWWDIR%%/xmlrpc/doc/custom.xsl
+%%WWWDIR%%/xmlrpc/doc/docbook-css/COPYING
+%%WWWDIR%%/xmlrpc/doc/docbook-css/CREDITS
+%%WWWDIR%%/xmlrpc/doc/docbook-css/core.css
+%%WWWDIR%%/xmlrpc/doc/docbook-css/db-bindings.xml
+%%WWWDIR%%/xmlrpc/doc/docbook-css/driver.css
+%%WWWDIR%%/xmlrpc/doc/docbook-css/l10n/de.css
+%%WWWDIR%%/xmlrpc/doc/docbook-css/l10n/en.css
+%%WWWDIR%%/xmlrpc/doc/docbook-css/l10n/es.css
+%%WWWDIR%%/xmlrpc/doc/docbook-css/l10n/pl.css
+%%WWWDIR%%/xmlrpc/doc/docbook-css/l10n.css
+%%WWWDIR%%/xmlrpc/doc/docbook-css/mozilla.css
+%%WWWDIR%%/xmlrpc/doc/docbook-css/opera.css
+%%WWWDIR%%/xmlrpc/doc/docbook-css/styles.css
+%%WWWDIR%%/xmlrpc/doc/docbook-css/tables.css
+%%WWWDIR%%/xmlrpc/doc/docbook-css/xmlrpc.css
+%%WWWDIR%%/xmlrpc/doc/highlight.php
+%%WWWDIR%%/xmlrpc/doc/xmlrpc_php.xml
+%%WWWDIR%%/xmlrpc/extras/rsakey.pem
+%%WWWDIR%%/xmlrpc/extras/test.pl
+%%WWWDIR%%/xmlrpc/extras/test.py
+%%WWWDIR%%/xmlrpc/extras/workspace.testPhpServer.fttb
 %%WWWDIR%%/xmlrpc/lib/xmlrpc.inc
 %%WWWDIR%%/xmlrpc/lib/xmlrpc_wrappers.inc
 %%WWWDIR%%/xmlrpc/lib/xmlrpcs.inc
-@dirrm %%WWWDIR%%/EDI_Incoming_Orders
-@dirrm %%WWWDIR%%/EDI_Sent
+%%WWWDIR%%/xmlrpc/test/PHPUnit/Assert.php
+%%WWWDIR%%/xmlrpc/test/PHPUnit/TestCase.php
+%%WWWDIR%%/xmlrpc/test/PHPUnit/TestDecorator.php
+%%WWWDIR%%/xmlrpc/test/PHPUnit/TestFailure.php
+%%WWWDIR%%/xmlrpc/test/PHPUnit/TestListener.php
+%%WWWDIR%%/xmlrpc/test/PHPUnit/TestResult.php
+%%WWWDIR%%/xmlrpc/test/PHPUnit/TestSuite.php
+%%WWWDIR%%/xmlrpc/test/PHPUnit/license.txt
+%%WWWDIR%%/xmlrpc/test/benchmark.php
+%%WWWDIR%%/xmlrpc/test/parse_args.php
+%%WWWDIR%%/xmlrpc/test/phpunit.php
+%%WWWDIR%%/xmlrpc/test/testsuite.php
+%%WWWDIR%%/xmlrpc/test/verify_compat.php
 @dirrm %%WWWDIR%%/Numbers/Words
 @dirrm %%WWWDIR%%/Numbers
 @dirrm %%WWWDIR%%/api
-@dirrm %%WWWDIR%%/companies/weberp_wasso
-@dirrm %%WWWDIR%%/companies/weberp-stable/part_pics
-@dirrm %%WWWDIR%%/companies/weberp-stable/pdf_append
-@dirrm %%WWWDIR%%/companies/weberp-stable/reportwriter
-@dirrm %%WWWDIR%%/companies/weberp-stable
+@dirrm %%WWWDIR%%/build
+@dirrm %%WWWDIR%%/companies/weberpdemo/EDI_Incoming_Orders
+@dirrm %%WWWDIR%%/companies/weberpdemo/EDI_MsgPending
+@dirrm %%WWWDIR%%/companies/weberpdemo/EDI_Sent
+@dirrm %%WWWDIR%%/companies/weberpdemo/FormDesigns
+@dirrm %%WWWDIR%%/companies/weberpdemo/part_pics
+@dirrm %%WWWDIR%%/companies/weberpdemo/pdf_append
+@dirrm %%WWWDIR%%/companies/weberpdemo/reports
 @dirrm %%WWWDIR%%/companies/weberpdemo/reportwriter
 @dirrm %%WWWDIR%%/companies/weberpdemo
 @dirrm %%WWWDIR%%/companies
@@ -1179,14 +1520,12 @@
 @dirrm %%WWWDIR%%/css/fresh
 @dirrm %%WWWDIR%%/css/gel/images
 @dirrm %%WWWDIR%%/css/gel
-@dirrm %%WWWDIR%%/css/green/images
-@dirrm %%WWWDIR%%/css/green
 @dirrm %%WWWDIR%%/css/jelly/images
 @dirrm %%WWWDIR%%/css/jelly
 @dirrm %%WWWDIR%%/css/professional/images
 @dirrm %%WWWDIR%%/css/professional
-@dirrm %%WWWDIR%%/css/professional- rtl/images
-@dirrm %%WWWDIR%%/css/professional- rtl
+@dirrm %%WWWDIR%%/css/professional-rtl/images
+@dirrm %%WWWDIR%%/css/professional-rtl
 @dirrm %%WWWDIR%%/css/silverwolf/images
 @dirrm %%WWWDIR%%/css/silverwolf
 @dirrm %%WWWDIR%%/css
@@ -1194,22 +1533,79 @@
 @dirrm %%WWWDIR%%/doc/Manual
 @dirrm %%WWWDIR%%/doc
 @dirrm %%WWWDIR%%/flags
-@dirrm %%WWWDIR%%/fonts/makefont
-@dirrm %%WWWDIR%%/fonts
-@dirrm %%WWWDIR%%/fpdi/decoders
 @dirrm %%WWWDIR%%/fpdi
 @dirrm %%WWWDIR%%/includes/php-gettext
+@dirrm %%WWWDIR%%/includes/phplot/contrib
 @dirrm %%WWWDIR%%/includes/phplot
+@dirrm %%WWWDIR%%/includes/tcpdf/config/lang
+@dirrm %%WWWDIR%%/includes/tcpdf/config
+@dirrm %%WWWDIR%%/includes/tcpdf/fonts
+@dirrm %%WWWDIR%%/includes/tcpdf
 @dirrm %%WWWDIR%%/includes
 @dirrm %%WWWDIR%%/install
 @dirrm %%WWWDIR%%/javascripts
-@dirrm %%WWWDIR%%/locale/en_GB/LC_MESSAGES
-@dirrm %%WWWDIR%%/locale/en_GB
-@dirrm %%WWWDIR%%/locale/en_US/LC_MESSAGES
-@dirrm %%WWWDIR%%/locale/en_US
+@dirrm %%WWWDIR%%/locale/cs_CZ.utf8/LC_MESSAGES
+@dirrm %%WWWDIR%%/locale/cs_CZ.utf8
+@dirrm %%WWWDIR%%/locale/de_DE.utf8/LC_MESSAGES
+@dirrm %%WWWDIR%%/locale/de_DE.utf8/Manual/images
+@dirrm %%WWWDIR%%/locale/de_DE.utf8/Manual
+@dirrm %%WWWDIR%%/locale/de_DE.utf8
+@dirrm %%WWWDIR%%/locale/el_GR.utf8/LC_MESSAGES
+@dirrm %%WWWDIR%%/locale/el_GR.utf8
+@dirrm %%WWWDIR%%/locale/en_GB.utf8/LC_MESSAGES
+@dirrm %%WWWDIR%%/locale/en_GB.utf8
+@dirrm %%WWWDIR%%/locale/en_US.utf8/LC_MESSAGES
+@dirrm %%WWWDIR%%/locale/en_US.utf8
+@dirrm %%WWWDIR%%/locale/es_ES.utf8/LC_MESSAGES
+@dirrm %%WWWDIR%%/locale/es_ES.utf8
+@dirrm %%WWWDIR%%/locale/et_EE.utf8/LC_MESSAGES
+@dirrm %%WWWDIR%%/locale/et_EE.utf8
+@dirrm %%WWWDIR%%/locale/fa_IR.utf8/LC_MESSAGES
+@dirrm %%WWWDIR%%/locale/fa_IR.utf8
+@dirrm %%WWWDIR%%/locale/fr_FR.utf8/LC_MESSAGES
+@dirrm %%WWWDIR%%/locale/fr_FR.utf8
+@dirrm %%WWWDIR%%/locale/hi_IN.utf8/LC_MESSAGES
+@dirrm %%WWWDIR%%/locale/hi_IN.utf8
+@dirrm %%WWWDIR%%/locale/hr_HR.utf8/LC_MESSAGES
+@dirrm %%WWWDIR%%/locale/hr_HR.utf8
+@dirrm %%WWWDIR%%/locale/hu_HU.utf8/LC_MESSAGES
+@dirrm %%WWWDIR%%/locale/hu_HU.utf8
+@dirrm %%WWWDIR%%/locale/id_ID.utf8/GL
+@dirrm %%WWWDIR%%/locale/id_ID.utf8/LC_MESSAGES
+@dirrm %%WWWDIR%%/locale/id_ID.utf8
+@dirrm %%WWWDIR%%/locale/it_IT.utf8/LC_MESSAGES
+@dirrm %%WWWDIR%%/locale/it_IT.utf8
+@dirrm %%WWWDIR%%/locale/ja_JP.utf8/LC_MESSAGES
+@dirrm %%WWWDIR%%/locale/ja_JP.utf8
+@dirrm %%WWWDIR%%/locale/lv_LV.utf8/LC_MESSAGES
+@dirrm %%WWWDIR%%/locale/lv_LV.utf8
+@dirrm %%WWWDIR%%/locale/nl_NL.utf8/LC_MESSAGES
+@dirrm %%WWWDIR%%/locale/nl_NL.utf8
+@dirrm %%WWWDIR%%/locale/pl_PL.utf8/LC_MESSAGES
+@dirrm %%WWWDIR%%/locale/pl_PL.utf8
+@dirrm %%WWWDIR%%/locale/pt_BR.utf8/LC_MESSAGES
+@dirrm %%WWWDIR%%/locale/pt_BR.utf8
+@dirrm %%WWWDIR%%/locale/pt_PT.utf8/LC_MESSAGES
+@dirrm %%WWWDIR%%/locale/pt_PT.utf8
+@dirrm %%WWWDIR%%/locale/ro_RO.utf8/LC_MESSAGES
+@dirrm %%WWWDIR%%/locale/ro_RO.utf8
+@dirrm %%WWWDIR%%/locale/ru_RU.utf8/LC_MESSAGES
+@dirrm %%WWWDIR%%/locale/ru_RU.utf8
+@dirrm %%WWWDIR%%/locale/sq_AL.utf8/LC_MESSAGES
+@dirrm %%WWWDIR%%/locale/sq_AL.utf8
+@dirrm %%WWWDIR%%/locale/sv_SE.utf8/LC_MESSAGES
+@dirrm %%WWWDIR%%/locale/sv_SE.utf8
+@dirrm %%WWWDIR%%/locale/sw_KE.utf8/LC_MESSAGES
+@dirrm %%WWWDIR%%/locale/sw_KE.utf8
+@dirrm %%WWWDIR%%/locale/tr_TR.utf8/LC_MESSAGES
+@dirrm %%WWWDIR%%/locale/tr_TR.utf8
+@dirrm %%WWWDIR%%/locale/zh_CN.utf8/LC_MESSAGES
+@dirrm %%WWWDIR%%/locale/zh_CN.utf8/Manual
+@dirrm %%WWWDIR%%/locale/zh_CN.utf8
+@dirrm %%WWWDIR%%/locale/zh_HK.utf8/LC_MESSAGES
+@dirrm %%WWWDIR%%/locale/zh_HK.utf8/Manual
+@dirrm %%WWWDIR%%/locale/zh_HK.utf8
 @dirrm %%WWWDIR%%/locale
-@dirrm %%WWWDIR%%/part_pics
-@dirrm %%WWWDIR%%/reports
 @dirrm %%WWWDIR%%/reportwriter/admin/forms
 @dirrm %%WWWDIR%%/reportwriter/admin
 @dirrm %%WWWDIR%%/reportwriter/forms
@@ -1221,7 +1617,15 @@
 @dirrm %%WWWDIR%%/sql/mysql
 @dirrm %%WWWDIR%%/sql
 @dirrm %%WWWDIR%%/xmlrpc/debugger
-@dirrm %%WWWDIR%%/xmlrpc/lib/compat
+@dirrm %%WWWDIR%%/xmlrpc/demo/client
+@dirrm %%WWWDIR%%/xmlrpc/demo/server
+@dirrm %%WWWDIR%%/xmlrpc/demo
+@dirrm %%WWWDIR%%/xmlrpc/doc/docbook-css/l10n
+@dirrm %%WWWDIR%%/xmlrpc/doc/docbook-css
+@dirrm %%WWWDIR%%/xmlrpc/doc
+@dirrm %%WWWDIR%%/xmlrpc/extras
 @dirrm %%WWWDIR%%/xmlrpc/lib
+@dirrm %%WWWDIR%%/xmlrpc/test/PHPUnit
+@dirrm %%WWWDIR%%/xmlrpc/test
 @dirrm %%WWWDIR%%/xmlrpc
 @dirrm %%WWWDIR%%
