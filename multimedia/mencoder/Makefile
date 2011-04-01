@@ -6,7 +6,7 @@
 
 PORTNAME=	mencoder
 PORTVERSION=	${MPLAYER_PORT_VERSION}
-PORTREVISION=	1
+PORTREVISION=	0
 COMMENT=	Convenient video file and movie encoder
 RESTRICTED=	Port has restricted dependencies
 
@@ -27,7 +27,9 @@ OPTIONS+=	OPENJPEG "Enable JPEG2000 support" off
 OPTIONS+=	MNG "Enable MNG input support" off
 OPTIONS+=	LIBDV "Enable libdv support" off
 OPTIONS+=	MAD "Enable mad MPEG audio engine support" off
-OPTIONS+=	AMR "Enable opencore AMR audio codec support" off
+OPTIONS+=	AMR_NB "AMR Narrow Band encoder (opencore)" off
+OPTIONS+=	AMR_WB "AMR Wide Band encoder (opencore)" off
+OPTIONS+=	GSM "GSM audio codec" off
 OPTIONS+=	TWOLAME "Enable twolame MPEG audio codec support" off
 OPTIONS+=	FAAC "Enable FAAC audio codec support" off
 OPTIONS+=	LADSPA "Enable LADSPA plugin support" off

@@ -7,7 +7,7 @@
 
 PORTNAME=	mplayer
 PORTVERSION=	${MPLAYER_PORT_VERSION}
-PORTREVISION=	1
+PORTREVISION=	0
 COMMENT=	High performance media player supporting many formats
 
 .include "${.CURDIR}/Makefile.shared"
@@ -43,7 +43,9 @@ OPTIONS+=	LIBCACA "Enable libcaca support" off
 OPTIONS+=	SVGALIB "Enable svgalib support" off
 OPTIONS+=	LIBDV "Enable libdv support" off
 OPTIONS+=	MAD "Enable mad MPEG audio engine support" off
-OPTIONS+=	AMR "Enable opencore AMR audio codec support" off
+OPTIONS+=	AMR_NB "AMR Narrow Band encoder (opencore)" off
+OPTIONS+=	AMR_WB "AMR Wide Band encoder (opencore)" off
+OPTIONS+=	GSM "GSM audio codec" off
 OPTIONS+=	LADSPA "Enable LADSPA plugin support" off
 OPTIONS+=	SPEEX "Enable speex audio codec support" on
 OPTIONS+=	THEORA "Enable ogg theora video support" off

@@ -207,11 +207,27 @@ BUILD_DEPENDS+=		realplay:${PORTSDIR}/multimedia/linux-realplayer
 CONFIGURE_ARGS+=	--disable-real
 .endif
 
-.if defined(WITH_AMR)
-LIB_DEPENDS+=		opencore-amrwb.0:${PORTSDIR}/audio/opencore-amr
+.if defined(WITH_AMR_NB) || defined (WITH_AMR_WB)
+LIB_DEPENDS+=	opencore-amrnb.0:${PORTSDIR}/audio/opencore-amr
+.endif
+
+.ifdef(WITH_AMR_NB)
+CONFIGURE_ARGS+=	--enable-libopencore_amrnb --enable-version3
 .else
-CONFIGURE_ARGS+=	--disable-libopencore_amrnb \
-			--disable-libopencore_amrwb
+CONFIGURE_ARGS+=	--disable-libopencore_amrnb
+.endif
+
+.ifdef(WITH_AMR_WB)
+CONFIGURE_ARGS+=	--enable-libopencore_amrwb --enable-version3
+.else
+CONFIGURE_ARGS+=	--disable-libopencore_amrwb
+.endif
+
+.ifdef(WITH_GSM)
+LIB_DEPENDS+=	gsm.1:${PORTSDIR}/audio/gsm
+CONFIGURE_ARGS+=	--enable-libgsm
+.else
+CONFIGURE_ARGS+=	--disable-libgsm
 .endif
 
 .if defined(WITH_V4L)

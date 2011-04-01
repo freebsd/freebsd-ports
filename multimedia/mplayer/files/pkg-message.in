@@ -5,7 +5,7 @@ output devices, video encoding, repairing broken files etc.
 It is auto-generated daily and can be found on the project
 homepage in the documentation section:
 
-http://www.mplayerhq.hu/design7/info.html#docs
+http://www.mplayerhq.hu/design7/documentation.html
 ===================================================================
 MPlayer's system-wide configuration dir is
 
@@ -22,5 +22,9 @@ the previous setting (on 8.x or newer system with VPC enabled),
 you and you dislike this behaviour, you have two options:
 - Use mplayer's -softvol command line option
 - Set the sysctl hw.snd.vpc_autoreset to 0
+===================================================================
+ffmpeg's ogg demuxer is currently broken for ogg streams.
+A possible workaround is the command line option'-demuxer ogg' when
+playing these streams.
 ===================================================================
 

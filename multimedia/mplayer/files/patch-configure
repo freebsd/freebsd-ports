@@ -1,6 +1,6 @@
---- configure.orig	2010-11-03 17:12:22.000000000 +0900
-+++ configure	2011-01-05 23:58:07.000000000 +0900
-@@ -565,7 +565,7 @@
+--- configure.orig	2011-03-13 01:32:55.000000000 +0100
++++ configure	2011-03-18 17:05:13.932557908 +0100
+@@ -614,7 +614,7 @@
  _iwmmxt=auto
  _mtrr=auto
  _altivec=auto
@@ -9,7 +9,7 @@
  _ranlib=ranlib
  _windres=windres
  _cc=cc
-@@ -1371,7 +1371,6 @@
+@@ -1416,7 +1416,6 @@
  
    *)
      echo "Unknown parameter: $ac_option"
@@ -17,7 +17,7 @@
      ;;
  
    esac
-@@ -1480,8 +1479,8 @@
+@@ -1525,8 +1524,8 @@
  _timer=timer-linux.c
  _getch=getch2.c
  if freebsd ; then
@@ -28,7 +28,7 @@
  fi
  
  if netbsd || dragonfly ; then
-@@ -3535,22 +3534,10 @@
+@@ -3577,22 +3576,10 @@
  if linux ; then
    THREAD_CFLAGS=-D_REENTRANT
  elif freebsd || netbsd || openbsd || bsdos ; then
@@ -54,16 +54,16 @@
  if test "$_pthreads" = yes ; then
    test $_ld_pthread && res_comment="using $_ld_pthread"
    def_pthreads='#define HAVE_PTHREADS 1'
-@@ -3828,7 +3815,7 @@
- #define _ISOC99_SOURCE
- #include <stdarg.h>
- #include <stdio.h>
--int main(void) { va_list ap = NULL; vsscanf("foo", "bar", ap); return 0; }
-+int main(void) { va_list ap; vsscanf("foo", "bar", ap); return 0; }
- EOF
- _vsscanf=no
- cc_check && _vsscanf=yes
-@@ -6912,6 +6899,16 @@
+@@ -6354,7 +6341,7 @@
+ echocheck "libgsm"
+ if test "$_libgsm" = auto ; then
+   _libgsm=no
+-  statement_check gsm/gsm.h 'gsm_create()' -lgsm && _libgsm=yes
++  statement_check gsm.h 'gsm_create()' -lgsm && _libgsm=yes
+ fi
+ if test "$_libgsm" = yes ; then
+   def_libgsm='#define CONFIG_LIBGSM 1'
+@@ -6852,6 +6839,16 @@
    nolibrtmp=no
    def_librtmp='#define CONFIG_LIBRTMP 1'
    inputmodules="librtmp $inputmodules"
@@ -80,7 +80,7 @@
  else
    nolibrtmp=yes
    _librtmp=no
-@@ -7283,7 +7280,7 @@
+@@ -7214,7 +7211,7 @@
    def_muxers='#define CONFIG_MUXERS 1'
  else
    # mpeg1video for vf_lavc, snow for vf_uspp / vf_mcdeint,
@@ -89,7 +89,7 @@
    libavmuxers=""
    def_muxers='#define CONFIG_MUXERS 0'
  fi
-@@ -7645,8 +7642,11 @@
+@@ -7559,8 +7556,11 @@
  if test "$_gui" = yes ; then
  
    # Required libraries
@@ -102,8 +102,8 @@
 +  if ! echo $libavdecoders | grep -q PNG_DECODER ; then
      die "The GUI requires libavcodec with PNG support (needs zlib)."
    fi
-   test "$_freetype" = no && test "$_bitmap_font" = no && \
-@@ -8034,7 +8034,7 @@
+   test "$_freetype" = no && test "$_bitmap_font" = no &&
+@@ -7947,7 +7947,7 @@
  EXESUF      = $_exesuf
  EXESUFS_ALL = .exe
  
