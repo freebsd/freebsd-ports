@@ -1,0 +1,38 @@
+--- chrome/app/generated_resources.grd.orig	2011-03-20 22:02:04.245737794 +0200
++++ chrome/app/generated_resources.grd	2011-03-20 22:02:04.423741982 +0200
+@@ -935,7 +935,7 @@
+           Preferences...
+         </message>
+       </if>
+-      <if expr="os == 'linux2'">
++      <if expr="os == 'linux2' or os.find('bsd') != -1">
+         <message name="IDS_PREFERENCES" desc="The text label of the Preferences menu item.">
+           Preferences
+         </message>
+@@ -6527,7 +6527,7 @@
+       <message name="IDS_OPTIONS_DIALOG_TITLE" desc="The title of the Options dialog box">
+         <ph name="PRODUCT_NAME">$1<ex>Google Chrome</ex></ph> Options
+       </message>
+-      <if expr="os == 'linux2'">
++      <if expr="os == 'linux2' or os.find('bsd') != -1">
+         <message name="IDS_PREFERENCES_DIALOG_TITLE" desc="The title of the Preferences dialog box">
+           <ph name="PRODUCT_NAME">$1<ex>Google Chrome</ex></ph> Preferences
+         </message>
+@@ -6913,7 +6913,7 @@
+         </message>
+       </if>
+ 
+-      <if expr="os == 'darwin' or (os =='linux2' and not pp_ifdef('chromeos'))">
++      <if expr="os == 'darwin' or os.find('bsd') != -1 or (os =='linux2' and not pp_ifdef('chromeos'))">
+         <message name="IDS_AUTOFILL_OPTIONS_TITLE" desc="The title of the Autofill dialog.">
+           Autofill Preferences
+         </message>
+@@ -11110,7 +11110,7 @@
+       Import bookmarks now...
+     </message>
+ 
+-    <if expr="os == 'linux2' or os == 'openbsd4' or os=='freebsd6'">
++    <if expr="os == 'linux2' or os.find('bsd') != -1">
+       <!-- Linux proxy configuration fallback help -->
+       <message name="IDS_ABOUT_LINUX_PROXY_CONFIG_TITLE" desc="Title of HTML page shown on systems where system proxy configuration is unsupported.">
+         Proxy Configuration Help

@@ -18,6 +18,7 @@ bin/chrome
 %%DATADIR%%/locales/es-419.pak
 %%DATADIR%%/locales/es.pak
 %%DATADIR%%/locales/et.pak
+%%DATADIR%%/locales/fa.pak
 %%DATADIR%%/locales/fi.pak
 %%DATADIR%%/locales/fil.pak
 %%DATADIR%%/locales/fr.pak
@@ -59,21 +60,6 @@ bin/chrome
 %%DATADIR%%/product_logo_48.png
 %%DATADIR%%/protoc
 %%DATADIR%%/resources.pak
-%%DATADIR%%/resources/calendar_app/128.png
-%%DATADIR%%/resources/calendar_app/24.png
-%%DATADIR%%/resources/calendar_app/32.png
-%%DATADIR%%/resources/calendar_app/48.png
-%%DATADIR%%/resources/calendar_app/manifest.json
-%%DATADIR%%/resources/docs_app/128.png
-%%DATADIR%%/resources/docs_app/24.png
-%%DATADIR%%/resources/docs_app/32.png
-%%DATADIR%%/resources/docs_app/48.png
-%%DATADIR%%/resources/docs_app/manifest.json
-%%DATADIR%%/resources/gmail_app/128.png
-%%DATADIR%%/resources/gmail_app/24.png
-%%DATADIR%%/resources/gmail_app/32.png
-%%DATADIR%%/resources/gmail_app/48.png
-%%DATADIR%%/resources/gmail_app/manifest.json
 %%DATADIR%%/resources/inspector/DevTools.js
 %%DATADIR%%/resources/inspector/Images/applicationCache.png
 %%DATADIR%%/resources/inspector/Images/auditsIcon.png
@@ -116,6 +102,7 @@ bin/chrome
 %%DATADIR%%/resources/inspector/Images/excludeButtonGlyph.png
 %%DATADIR%%/resources/inspector/Images/focusButtonGlyph.png
 %%DATADIR%%/resources/inspector/Images/forward.png
+%%DATADIR%%/resources/inspector/Images/frame.png
 %%DATADIR%%/resources/inspector/Images/gearButtonGlyph.png
 %%DATADIR%%/resources/inspector/Images/glossyHeader.png
 %%DATADIR%%/resources/inspector/Images/glossyHeaderPressed.png
@@ -124,10 +111,11 @@ bin/chrome
 %%DATADIR%%/resources/inspector/Images/goArrow.png
 %%DATADIR%%/resources/inspector/Images/graphLabelCalloutLeft.png
 %%DATADIR%%/resources/inspector/Images/graphLabelCalloutRight.png
-%%DATADIR%%/resources/inspector/Images/grayConnectorPoint.png
 %%DATADIR%%/resources/inspector/Images/largerResourcesButtonGlyph.png
 %%DATADIR%%/resources/inspector/Images/localStorage.png
+%%DATADIR%%/resources/inspector/Images/networkIcon.png
 %%DATADIR%%/resources/inspector/Images/nodeSearchButtonGlyph.png
+%%DATADIR%%/resources/inspector/Images/paneAddButtons.png
 %%DATADIR%%/resources/inspector/Images/paneBottomGrow.png
 %%DATADIR%%/resources/inspector/Images/paneBottomGrowActive.png
 %%DATADIR%%/resources/inspector/Images/paneGrowHandleLine.png
@@ -153,7 +141,6 @@ bin/chrome
 %%DATADIR%%/resources/inspector/Images/resourcePlainIcon.png
 %%DATADIR%%/resources/inspector/Images/resourcePlainIconSmall.png
 %%DATADIR%%/resources/inspector/Images/resourcesIcon.png
-%%DATADIR%%/resources/inspector/Images/resourcesSilhouette.png
 %%DATADIR%%/resources/inspector/Images/resourcesSizeGraphIcon.png
 %%DATADIR%%/resources/inspector/Images/resourcesTimeGraphIcon.png
 %%DATADIR%%/resources/inspector/Images/scriptsIcon.png
@@ -189,7 +176,6 @@ bin/chrome
 %%DATADIR%%/resources/inspector/Images/statusbarMenuButtonSelectedChromium.png
 %%DATADIR%%/resources/inspector/Images/statusbarResizerHorizontal.png
 %%DATADIR%%/resources/inspector/Images/statusbarResizerVertical.png
-%%DATADIR%%/resources/inspector/Images/storageIcon.png
 %%DATADIR%%/resources/inspector/Images/successGreenDot.png
 %%DATADIR%%/resources/inspector/Images/thumbActiveHoriz.png
 %%DATADIR%%/resources/inspector/Images/thumbActiveVert.png
@@ -238,21 +224,10 @@ bin/chrome
 %%DATADIR%%/resources/inspector/Images/warningMediumIcon.png
 %%DATADIR%%/resources/inspector/Images/warningOrangeDot.png
 %%DATADIR%%/resources/inspector/Images/warningsErrors.png
-%%DATADIR%%/resources/inspector/Images/whiteConnectorPoint.png
-%%DATADIR%%/resources/inspector/audits.css
 %%DATADIR%%/resources/inspector/devTools.css
 %%DATADIR%%/resources/inspector/devtools.html
-%%DATADIR%%/resources/inspector/helpScreen.css
-%%DATADIR%%/resources/inspector/inspector.css
-%%DATADIR%%/resources/inspector/inspector.html
-%%DATADIR%%/resources/inspector/inspectorSyntaxHighlight.css
-%%DATADIR%%/resources/inspector/popover.css
-%%DATADIR%%/resources/inspector/textViewer.css
 %%DATADIR%%/xdg-settings
 @dirrm %%DATADIR%%/locales
-@dirrm %%DATADIR%%/resources/calendar_app
-@dirrm %%DATADIR%%/resources/docs_app
-@dirrm %%DATADIR%%/resources/gmail_app
 @dirrm %%DATADIR%%/resources/inspector/Images
 @dirrm %%DATADIR%%/resources/inspector
 @dirrm %%DATADIR%%/resources
