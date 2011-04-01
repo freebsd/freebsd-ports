@@ -34,6 +34,39 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="b2a40507-5c88-11e0-9e85-00215af774f0">
+    <topic>quagga -- two DoS vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>quagga</name>
+	<range><lt>0.99.17_6</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Quagga developers report:</p>
+	<blockquote cite="http://www.quagga.net/news2.php?y=2011&amp;m=3&amp;d=21#id1300723200">
+	  <p>Quagga 0.99.18 has been released.
+	    This release fixes 2 denial of services in bgpd, which can be
+	    remotely triggered by malformed AS-Pathlimit or Extended-Community
+	    attributes. These issues have been assigned CVE-2010-1674 and
+	    CVE-2010-1675. Support for AS-Pathlimit has been removed with this
+	    release. 
+	  </p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2010-1674</cvename>
+      <cvename>CVE-2010-1675</cvename>
+      <url>http://www.quagga.net/news2.php?y=2011&amp;m=3&amp;d=21#id1300723200</url>
+    </references>
+    <dates>
+      <discovery>2010-04-30</discovery>
+      <entry>2011-04-01</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="c6fbd447-59ed-11e0-8d04-0015f2db7bde">
     <topic>gdm -- privilege escalation vulnerability</topic>
     <affects>
