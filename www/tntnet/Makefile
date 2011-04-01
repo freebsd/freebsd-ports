@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tntnet
-PORTVERSION=	1.6.3
+PORTVERSION=	2.0
 CATEGORIES=	www devel
 MASTER_SITES=	http://www.tntnet.org/download/
 

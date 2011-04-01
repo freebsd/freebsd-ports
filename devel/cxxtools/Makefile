@@ -6,13 +6,14 @@
 #
 
 PORTNAME=	cxxtools
-PORTVERSION=	1.4.8
+PORTVERSION=	2.0
 CATEGORIES=	devel
 MASTER_SITES=	http://www.tntnet.org/download/
 
 MAINTAINER=	nox@FreeBSD.org
 COMMENT=	Collection of general-purpose C++ classes
 
+PATCH_STRIP=	-p1
 USE_ICONV=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}"

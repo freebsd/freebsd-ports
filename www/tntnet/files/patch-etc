@@ -1,6 +1,6 @@
 --- a/etc/Makefile.am
 +++ b/etc/Makefile.am
-@@ -1,30 +1,35 @@
+@@ -1,31 +1,36 @@
  nobase_dist_noinst_DATA = \
      tntnet/tntnet.conf.in \
 -    init.d/tntnet.in
@@ -24,8 +24,8 @@
 +tntnet/mime.conf.sample: tntnet/mime.conf
 +	cp tntnet/mime.conf $@
  
--tntnet/tntnet.conf: tntnet/tntnet.conf.in Makefile
-+tntnet/tntnet.conf.sample: tntnet/tntnet.conf.in Makefile
+-tntnet/tntnet.conf: tntnet/tntnet.conf.in
++tntnet/tntnet.conf.sample: tntnet/tntnet.conf.in
  	sed -e 's,@libdir\@,@libdir@,g;' \
  	    -e 's,@pkglibdir\@,@pkglibdir@,g;' \
  	    -e 's,@sysconfdir\@,@sysconfdir@,g;' \
@@ -33,8 +33,8 @@
 -		-e 's,@datadir\@,@datadir@,g;' <tntnet/tntnet.conf.in >tntnet/tntnet.conf
 +		-e 's,@datadir\@,@datadir@,g;' <tntnet/tntnet.conf.in >tntnet/tntnet.conf.sample
  
--init.d/tntnet: init.d/tntnet.in Makefile
-+tntnet/tntnet: init.d/tntnet.in Makefile
+-init.d/tntnet: init.d/tntnet.in
++tntnet/tntnet: init.d/tntnet.in
  	sed -e 's,@libdir\@,@libdir@,g;' \
  	    -e 's,@pkglibdir\@,@pkglibdir@,g;' \
  	    -e 's,@sysconfdir\@,@sysconfdir@,g;' \
@@ -43,13 +43,14 @@
 +	    -e 's/^function //;' \
 +		-e 's,@datadir\@,@datadir@,g;' <init.d/tntnet.in >tntnet/tntnet
  
--tntnet/tntnet.properties: Makefile
-+tntnet/tntnet.properties.sample: Makefile
- 	cxxtools-config --logfile @localstatedir@/log/tntnet/tntnet.log --properties tntnet >$@
+-tntnet/tntnet.properties:
++tntnet/tntnet.properties.sample:
+ 	../tntnet-config --properties tntnet | \
+ 		sed -e 's,^#file=tntnet.log,file=@localstatedir@/log/tntnet/tntnet.log,' >$@
 --- a/etc/Makefile.in
 +++ b/etc/Makefile.in
-@@ -194,17 +194,18 @@ target_os = @target_os@
- target_vendor = @target_vendor@
+@@ -206,17 +206,18 @@ top_builddir = @top_builddir@
+ top_srcdir = @top_srcdir@
  nobase_dist_noinst_DATA = \
      tntnet/tntnet.conf.in \
 -    init.d/tntnet.in
@@ -72,15 +73,15 @@
  
  all: all-am
  
-@@ -436,21 +437,25 @@ uninstall-am: uninstall-info-am uninstal
+@@ -483,21 +484,25 @@ uninstall-am: uninstall-nobase_dist_sysc
  	uninstall-nobase_sysconfDATA
  
  
--tntnet/tntnet.conf: tntnet/tntnet.conf.in Makefile
+-tntnet/tntnet.conf: tntnet/tntnet.conf.in
 +tntnet/mime.conf.sample: tntnet/mime.conf
 +	cp tntnet/mime.conf $@
 +
-+tntnet/tntnet.conf.sample: tntnet/tntnet.conf.in Makefile
++tntnet/tntnet.conf.sample: tntnet/tntnet.conf.in
  	sed -e 's,@libdir\@,@libdir@,g;' \
  	    -e 's,@pkglibdir\@,@pkglibdir@,g;' \
  	    -e 's,@sysconfdir\@,@sysconfdir@,g;' \
@@ -88,8 +89,8 @@
 -		-e 's,@datadir\@,@datadir@,g;' <tntnet/tntnet.conf.in >tntnet/tntnet.conf
 +		-e 's,@datadir\@,@datadir@,g;' <tntnet/tntnet.conf.in >tntnet/tntnet.conf.sample
  
--init.d/tntnet: init.d/tntnet.in Makefile
-+tntnet/tntnet: init.d/tntnet.in Makefile
+-init.d/tntnet: init.d/tntnet.in
++tntnet/tntnet: init.d/tntnet.in
  	sed -e 's,@libdir\@,@libdir@,g;' \
  	    -e 's,@pkglibdir\@,@pkglibdir@,g;' \
  	    -e 's,@sysconfdir\@,@sysconfdir@,g;' \
@@ -98,11 +99,11 @@
 +	    -e 's/^function //;' \
 +		-e 's,@datadir\@,@datadir@,g;' <init.d/tntnet.in >tntnet/tntnet
  
--tntnet/tntnet.properties: Makefile
-+tntnet/tntnet.properties.sample: Makefile
- 	cxxtools-config --logfile @localstatedir@/log/tntnet/tntnet.log --properties tntnet >$@
- # Tell versions [3.59,3.63) of GNU make to not export all variables.
- # Otherwise a system limit (for SysV at least) may be exceeded.
+-tntnet/tntnet.properties:
++tntnet/tntnet.properties.sample:
+ 	../tntnet-config --properties tntnet | \
+ 		sed -e 's,^#file=tntnet.log,file=@localstatedir@/log/tntnet/tntnet.log,' >$@
+ 
 --- a/etc/tntnet/tntnet.conf.in
 +++ b/etc/tntnet/tntnet.conf.in
 @@ -2,12 +2,15 @@
