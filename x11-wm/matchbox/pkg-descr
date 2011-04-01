@@ -1,6 +1,15 @@
-The matchbox window manager is suitable for use on low-resolution
-screens, such as those on mobile computers.  It sizes most windows
-so they take up the whole screen.  All decorations are contained
-in the title bar.
+Matchbox is an Open Source base environment for the X Window System running
+on non-desktop embedded platforms such as handhelds, set-top boxes, kiosks,
+and anything else for which screen space, input mechanisms or system
+resources are limited.
 
-WWW:  http://matchbox-project.org/
+Matchbox consists of a number of interchangeable and optional applications
+that can be tailored to a specific non desktop platform to enhance usability
+in a 'constrained' environment.
+
+The core and most developed application is a window manager with a classic
+stack based PDA like management policy.  It supports modern window management
+standards, cutting edge X capabilities, advanced themeing, and various window
+types.
+
+WWW: http://matchbox-project.org/
