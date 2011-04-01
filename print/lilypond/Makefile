@@ -8,7 +8,7 @@
 #
 
 PORTNAME=	lilypond
-PORTVERSION=	2.13.55
+PORTVERSION=	2.13.56
 CATEGORIES=	print audio
 MASTER_SITES=	http://download.linuxaudio.org/lilypond/sources/v2.13/
 
@@ -37,6 +37,7 @@ INFO=		lilypond-changes lilypond-contributor lilypond-essay \
 		lilypond-notation lilypond-usage lilypond-web \
 		music-glossary
 
+USE_AUTOTOOLS=	autoconf
 USE_BISON=	build
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
