@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	Bio-Phylo
-PORTVERSION=	0.35
+PORTVERSION=	0.36
 CATEGORIES=	biology perl5
 MASTER_SITES=	CPAN
-MASTER_SITE_SUBDIR=	../../authors/id/R/RV/RVOSA
+MASTER_SITE_SUBDIR=	CPAN:RVOSA
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
@@ -64,10 +64,14 @@ MAN3=		Bio::Phylo.3 \
 		Bio::Phylo::NeXML::Meta::XMLLiteral.3 \
 		Bio::Phylo::Parsers::Abstract.3 \
 		Bio::Phylo::Parsers::Fasta.3 \
+		Bio::Phylo::Parsers::Json.3 \
+		Bio::Phylo::Matrices::Character.3 \
+		Bio::Phylo::Matrices::Characters.3 \
 		Bio::Phylo::Parsers::Newick.3 \
 		Bio::Phylo::Parsers::Nexml.3 \
 		Bio::Phylo::Parsers::Nexus.3 \
 		Bio::Phylo::Parsers::Phylip.3 \
+		Bio::Phylo::Parsers::Phyloxml.3 \
 		Bio::Phylo::Parsers::Table.3 \
 		Bio::Phylo::Parsers::Taxlist.3 \
 		Bio::Phylo::Parsers::Tolweb.3 \
@@ -93,6 +97,7 @@ MAN3=		Bio::Phylo.3 \
 		Bio::Phylo::Unparsers::Nexus.3 \
 		Bio::Phylo::Unparsers::Pagel.3 \
 		Bio::Phylo::Unparsers::Phylip.3 \
+		Bio::Phylo::Unparsers::Phyloxml.3 \
 		Bio::Phylo::Util::CONSTANT.3 \
 		Bio::Phylo::Util::Logger.3 \
 		Bio::Phylo::Util::IDPool.3 \
