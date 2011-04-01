@@ -1,6 +1,6 @@
 # New ports collection makefile for:	matchbox
 # Date created:				2002-07-14
-# Whom:					trevor
+# Whom:					Trevor Johnson <trevor@FreeBSD.org>
 #
 # $FreeBSD$
 #
@@ -13,6 +13,8 @@ MASTER_SITES=	http://matchbox-project.org/sources/matchbox-window-manager/${PORT
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Window manager suitable for low-resolution screens
+
+LICENSE=	GPLv2
 
 USE_BZIP2=	yes
 USE_GNOME=	gnometarget
@@ -31,7 +33,7 @@ PORTDOCS=	AUTHORS ChangeLog NEWS README
 .if defined(WITHOUT_XFT)
 CONFIGURE_ARGS+=	--enable-standalone
 .else
-LIB_DEPENDS+=	Xft.2:${PORTSDIR}/x11-fonts/libXft
+USE_XORG+=	xft
 CONFIGURE_ARGS+=	--enable-standalone-xft
 .endif
 
@@ -45,8 +47,8 @@ do-install:
 	@${MKDIR} ${PREFIX}/etc/matchbox
 	${INSTALL_DATA} ${WRKSRC}/data/kbdconfig ${PREFIX}/etc/matchbox
 .if !defined(NOPORTDOCS)
-	@${INSTALL} -d ${DOCSDIR}/
-	@cd ${WRKSRC}/&&${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}/
+	@${MKDIR} ${DOCSDIR}
+	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
 .endif
 
 .include <bsd.port.post.mk>
