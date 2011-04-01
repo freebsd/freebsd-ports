@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	WebTest
-PORTVERSION=	1.2.2
+PORTVERSION=	1.2.3
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP \
 		http://www.c-s.li/ports/
