@@ -1,0 +1,30 @@
+--- base/shared_memory.h.orig	2011-04-01 21:54:26.066717848 +0300
++++ base/shared_memory.h	2011-04-01 21:55:14.292717813 +0300
+@@ -10,6 +10,7 @@
+ 
+ #if defined(OS_POSIX)
+ #include <sys/types.h>
++#include <stdio.h>
+ #include <semaphore.h>
+ #include "base/file_descriptor_posix.h"
+ #endif
+--- third_party/libjingle/source/talk/base/stream.h.orig	2011-04-01 22:16:30.129717654 +0300
++++ third_party/libjingle/source/talk/base/stream.h	2011-04-01 22:16:48.245715495 +0300
+@@ -28,6 +28,7 @@
+ #ifndef TALK_BASE_STREAM_H__
+ #define TALK_BASE_STREAM_H__
+ 
++#include <stdio.h>
+ #include "talk/base/basictypes.h"
+ #include "talk/base/criticalsection.h"
+ #include "talk/base/logging.h"
+--- base/debug/trace_event.h.orig	2011-04-01 22:22:50.326752296 +0300
++++ base/debug/trace_event.h	2011-04-01 22:23:12.004715315 +0300
+@@ -29,6 +29,7 @@
+ #include "base/debug/trace_event_win.h"
+ #else  // defined(OS_WIN)
+ 
++#include <stdio.h>
+ #include <string>
+ 
+ #include "base/scoped_ptr.h"
