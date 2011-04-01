@@ -1,0 +1,481 @@
+diff -ru v8.orig/src/x64/code-stubs-x64.cc v8/src/x64/code-stubs-x64.cc
+--- v8.orig/src/x64/code-stubs-x64.cc	2011-03-12 11:22:17.000000000 +0200
++++ v8/src/x64/code-stubs-x64.cc	2011-03-23 01:39:18.065180854 +0200
+@@ -1699,11 +1699,14 @@
+   Label slow;
+   __ JumpIfNotSmi(rdx, &slow);
+ 
+-  // Check if the calling frame is an arguments adaptor frame.
++  // Check if the calling frame is an arguments adaptor frame.  We look at the
++  // context offset, and if the frame is not a regular one, then we find a
++  // Smi instead of the context.  We can't use SmiCompare here, because that
++  // only works for comparing two smis.
+   Label adaptor;
+   __ movq(rbx, Operand(rbp, StandardFrameConstants::kCallerFPOffset));
+-  __ SmiCompare(Operand(rbx, StandardFrameConstants::kContextOffset),
+-                Smi::FromInt(StackFrame::ARGUMENTS_ADAPTOR));
++  __ Cmp(Operand(rbx, StandardFrameConstants::kContextOffset),
++         Smi::FromInt(StackFrame::ARGUMENTS_ADAPTOR));
+   __ j(equal, &adaptor);
+ 
+   // Check index against formal parameters count limit passed in
+@@ -1758,8 +1761,8 @@
+   // Check if the calling frame is an arguments adaptor frame.
+   Label adaptor_frame, try_allocate, runtime;
+   __ movq(rdx, Operand(rbp, StandardFrameConstants::kCallerFPOffset));
+-  __ SmiCompare(Operand(rdx, StandardFrameConstants::kContextOffset),
+-                Smi::FromInt(StackFrame::ARGUMENTS_ADAPTOR));
++  __ Cmp(Operand(rdx, StandardFrameConstants::kContextOffset),
++         Smi::FromInt(StackFrame::ARGUMENTS_ADAPTOR));
+   __ j(equal, &adaptor_frame);
+ 
+   // Get the length from the frame.
+@@ -3518,8 +3521,8 @@
+   // Look at the length of the result of adding the two strings.
+   STATIC_ASSERT(String::kMaxLength <= Smi::kMaxValue / 2);
+   __ SmiAdd(rbx, rbx, rcx);
+-  // Use the runtime system when adding two one character strings, as it
+-  // contains optimizations for this specific case using the symbol table.
++  // Use the symbol table when adding two one character strings, as it
++  // helps later optimizations to return a symbol here.
+   __ SmiCompare(rbx, Smi::FromInt(2));
+   __ j(not_equal, &longer_than_two);
+ 
+@@ -3823,15 +3826,14 @@
+                     FieldOperand(symbol_table, SymbolTable::kCapacityOffset));
+   __ decl(mask);
+ 
+-  Register undefined = scratch4;
+-  __ LoadRoot(undefined, Heap::kUndefinedValueRootIndex);
++  Register map = scratch4;
+ 
+   // Registers
+   // chars:        two character string, char 1 in byte 0 and char 2 in byte 1.
+   // hash:         hash of two character string (32-bit int)
+   // symbol_table: symbol table
+   // mask:         capacity mask (32-bit int)
+-  // undefined:    undefined value
++  // map:          -
+   // scratch:      -
+ 
+   // Perform a number of probes in the symbol table.
+@@ -3846,7 +3848,7 @@
+     }
+     __ andl(scratch, mask);
+ 
+-    // Load the entry from the symble table.
++    // Load the entry from the symbol table.
+     Register candidate = scratch;  // Scratch register contains candidate.
+     STATIC_ASSERT(SymbolTable::kEntrySize == 1);
+     __ movq(candidate,
+@@ -3856,8 +3858,16 @@
+                          SymbolTable::kElementsStartOffset));
+ 
+     // If entry is undefined no string with this hash can be found.
+-    __ cmpq(candidate, undefined);
++    NearLabel is_string;
++    __ CmpObjectType(candidate, ODDBALL_TYPE, map);
++    __ j(not_equal, &is_string);
++
++    __ CompareRoot(candidate, Heap::kUndefinedValueRootIndex);
+     __ j(equal, not_found);
++    // Must be null (deleted entry).
++    __ jmp(&next_probe[i]);
++
++    __ bind(&is_string);
+ 
+     // If length is not 2 the string is not a candidate.
+     __ SmiCompare(FieldOperand(candidate, String::kLengthOffset),
+@@ -3869,8 +3879,7 @@
+     Register temp = kScratchRegister;
+ 
+     // Check that the candidate is a non-external ascii string.
+-    __ movq(temp, FieldOperand(candidate, HeapObject::kMapOffset));
+-    __ movzxbl(temp, FieldOperand(temp, Map::kInstanceTypeOffset));
++    __ movzxbl(temp, FieldOperand(map, Map::kInstanceTypeOffset));
+     __ JumpIfInstanceTypeIsNotSequentialAscii(
+         temp, temp, &next_probe[i]);
+ 
+Only in v8/src/x64: code-stubs-x64.cc.orig
+diff -ru v8.orig/src/x64/codegen-x64.cc v8/src/x64/codegen-x64.cc
+--- v8.orig/src/x64/codegen-x64.cc	2011-03-12 11:22:17.000000000 +0200
++++ v8/src/x64/codegen-x64.cc	2011-03-23 01:39:18.093150889 +0200
+@@ -760,7 +760,7 @@
+       __ AbortIfNotNumber(value.reg());
+     }
+     // Smi => false iff zero.
+-    __ SmiCompare(value.reg(), Smi::FromInt(0));
++    __ Cmp(value.reg(), Smi::FromInt(0));
+     if (value.is_smi()) {
+       value.Unuse();
+       dest->Split(not_zero);
+@@ -788,7 +788,7 @@
+     dest->false_target()->Branch(equal);
+ 
+     // Smi => false iff zero.
+-    __ SmiCompare(value.reg(), Smi::FromInt(0));
++    __ Cmp(value.reg(), Smi::FromInt(0));
+     dest->false_target()->Branch(equal);
+     Condition is_smi = masm_->CheckSmi(value.reg());
+     dest->true_target()->Branch(is_smi);
+@@ -1030,7 +1030,7 @@
+                                         true, overwrite_mode);
+   } else {
+     // Set the flags based on the operation, type and loop nesting level.
+-    // Bit operations always assume they likely operate on Smis. Still only
++    // Bit operations always assume they likely operate on smis. Still only
+     // generate the inline Smi check code if this operation is part of a loop.
+     // For all other operations only inline the Smi check code for likely smis
+     // if the operation is part of a loop.
+@@ -2102,7 +2102,7 @@
+       if (cc == equal) {
+         Label comparison_done;
+         __ SmiCompare(FieldOperand(left_side.reg(), String::kLengthOffset),
+-                Smi::FromInt(1));
++                      Smi::FromInt(1));
+         __ j(not_equal, &comparison_done);
+         uint8_t char_value =
+             static_cast<uint8_t>(String::cast(*right_val)->Get(0));
+@@ -2288,7 +2288,7 @@
+       // CompareStub and the inline code both support all values of cc.
+     }
+     // Implement comparison against a constant Smi, inlining the case
+-    // where both sides are Smis.
++    // where both sides are smis.
+     left_side->ToRegister();
+     Register left_reg = left_side->reg();
+     Smi* constant_smi = Smi::cast(*right_side->handle());
+@@ -2298,7 +2298,6 @@
+         __ AbortIfNotSmi(left_reg);
+       }
+       // Test smi equality and comparison by signed int comparison.
+-      // Both sides are smis, so we can use an Immediate.
+       __ SmiCompare(left_reg, constant_smi);
+       left_side->Unuse();
+       right_side->Unuse();
+@@ -2308,7 +2307,7 @@
+       JumpTarget is_smi;
+       if (cc == equal) {
+         // We can do the equality comparison before the smi check.
+-        __ SmiCompare(left_reg, constant_smi);
++        __ Cmp(left_reg, constant_smi);
+         dest->true_target()->Branch(equal);
+         Condition left_is_smi = masm_->CheckSmi(left_reg);
+         dest->false_target()->Branch(left_is_smi);
+@@ -2569,8 +2568,8 @@
+       // adaptor frame below it.
+       Label invoke, adapted;
+       __ movq(rdx, Operand(rbp, StandardFrameConstants::kCallerFPOffset));
+-      __ SmiCompare(Operand(rdx, StandardFrameConstants::kContextOffset),
+-                    Smi::FromInt(StackFrame::ARGUMENTS_ADAPTOR));
++      __ Cmp(Operand(rdx, StandardFrameConstants::kContextOffset),
++             Smi::FromInt(StackFrame::ARGUMENTS_ADAPTOR));
+       __ j(equal, &adapted);
+ 
+       // No arguments adaptor frame. Copy fixed number of arguments.
+@@ -3850,7 +3849,7 @@
+   __ movq(rbx, rax);
+ 
+   // If the property has been removed while iterating, we just skip it.
+-  __ SmiCompare(rbx, Smi::FromInt(0));
++  __ Cmp(rbx, Smi::FromInt(0));
+   node->continue_target()->Branch(equal);
+ 
+   end_del_check.Bind();
+@@ -6182,15 +6181,15 @@
+ 
+   // Skip the arguments adaptor frame if it exists.
+   Label check_frame_marker;
+-  __ SmiCompare(Operand(fp.reg(), StandardFrameConstants::kContextOffset),
+-                Smi::FromInt(StackFrame::ARGUMENTS_ADAPTOR));
++  __ Cmp(Operand(fp.reg(), StandardFrameConstants::kContextOffset),
++         Smi::FromInt(StackFrame::ARGUMENTS_ADAPTOR));
+   __ j(not_equal, &check_frame_marker);
+   __ movq(fp.reg(), Operand(fp.reg(), StandardFrameConstants::kCallerFPOffset));
+ 
+   // Check the marker in the calling frame.
+   __ bind(&check_frame_marker);
+-  __ SmiCompare(Operand(fp.reg(), StandardFrameConstants::kMarkerOffset),
+-                Smi::FromInt(StackFrame::CONSTRUCT));
++  __ Cmp(Operand(fp.reg(), StandardFrameConstants::kMarkerOffset),
++         Smi::FromInt(StackFrame::CONSTRUCT));
+   fp.Unuse();
+   destination()->Split(equal);
+ }
+@@ -6210,8 +6209,8 @@
+ 
+   // Check if the calling frame is an arguments adaptor frame.
+   __ movq(fp.reg(), Operand(rbp, StandardFrameConstants::kCallerFPOffset));
+-  __ SmiCompare(Operand(fp.reg(), StandardFrameConstants::kContextOffset),
+-                Smi::FromInt(StackFrame::ARGUMENTS_ADAPTOR));
++  __ Cmp(Operand(fp.reg(), StandardFrameConstants::kContextOffset),
++         Smi::FromInt(StackFrame::ARGUMENTS_ADAPTOR));
+   __ j(not_equal, &exit);
+ 
+   // Arguments adaptor case: Read the arguments length from the
+@@ -6767,8 +6766,8 @@
+   // Fetch the map and check if array is in fast case.
+   // Check that object doesn't require security checks and
+   // has no indexed interceptor.
+-  __ CmpObjectType(object.reg(), FIRST_JS_OBJECT_TYPE, tmp1.reg());
+-  deferred->Branch(below);
++  __ CmpObjectType(object.reg(), JS_ARRAY_TYPE, tmp1.reg());
++  deferred->Branch(not_equal);
+   __ testb(FieldOperand(tmp1.reg(), Map::kBitFieldOffset),
+            Immediate(KeyedLoadIC::kSlowCaseBitFieldMask));
+   deferred->Branch(not_zero);
+@@ -6810,7 +6809,7 @@
+ 
+   Label done;
+   __ InNewSpace(tmp1.reg(), tmp2.reg(), equal, &done);
+-  // Possible optimization: do a check that both values are Smis
++  // Possible optimization: do a check that both values are smis
+   // (or them and test against Smi mask.)
+ 
+   __ movq(tmp2.reg(), tmp1.reg());
+@@ -8485,12 +8484,6 @@
+     __ CmpObjectType(receiver.reg(), JS_ARRAY_TYPE, kScratchRegister);
+     deferred->Branch(not_equal);
+ 
+-    // Check that the key is within bounds.  Both the key and the length of
+-    // the JSArray are smis. Use unsigned comparison to handle negative keys.
+-    __ SmiCompare(FieldOperand(receiver.reg(), JSArray::kLengthOffset),
+-                  key.reg());
+-    deferred->Branch(below_equal);
+-
+     // Get the elements array from the receiver and check that it is not a
+     // dictionary.
+     __ movq(tmp.reg(),
+@@ -8519,6 +8512,14 @@
+             kScratchRegister);
+     deferred->Branch(not_equal);
+ 
++    // Check that the key is within bounds.  Both the key and the length of
++    // the JSArray are smis (because the fixed array check above ensures the
++    // elements are in fast case). Use unsigned comparison to handle negative
++    // keys.
++    __ SmiCompare(FieldOperand(receiver.reg(), JSArray::kLengthOffset),
++                  key.reg());
++    deferred->Branch(below_equal);
++
+     // Store the value.
+     SmiIndex index =
+         masm()->SmiToIndex(kScratchRegister, key.reg(), kPointerSizeLog2);
+Only in v8/src/x64: codegen-x64.cc.orig
+diff -ru v8.orig/src/x64/full-codegen-x64.cc v8/src/x64/full-codegen-x64.cc
+--- v8.orig/src/x64/full-codegen-x64.cc	2011-03-12 11:22:17.000000000 +0200
++++ v8/src/x64/full-codegen-x64.cc	2011-03-23 01:39:18.110779666 +0200
+@@ -865,7 +865,7 @@
+   __ push(rcx);  // Enumerable.
+   __ push(rbx);  // Current entry.
+   __ InvokeBuiltin(Builtins::FILTER_KEY, CALL_FUNCTION);
+-  __ SmiCompare(rax, Smi::FromInt(0));
++  __ Cmp(rax, Smi::FromInt(0));
+   __ j(equal, loop_statement.continue_target());
+   __ movq(rbx, rax);
+ 
+@@ -2300,15 +2300,15 @@
+ 
+   // Skip the arguments adaptor frame if it exists.
+   Label check_frame_marker;
+-  __ SmiCompare(Operand(rax, StandardFrameConstants::kContextOffset),
+-                Smi::FromInt(StackFrame::ARGUMENTS_ADAPTOR));
++  __ Cmp(Operand(rax, StandardFrameConstants::kContextOffset),
++         Smi::FromInt(StackFrame::ARGUMENTS_ADAPTOR));
+   __ j(not_equal, &check_frame_marker);
+   __ movq(rax, Operand(rax, StandardFrameConstants::kCallerFPOffset));
+ 
+   // Check the marker in the calling frame.
+   __ bind(&check_frame_marker);
+-  __ SmiCompare(Operand(rax, StandardFrameConstants::kMarkerOffset),
+-                Smi::FromInt(StackFrame::CONSTRUCT));
++  __ Cmp(Operand(rax, StandardFrameConstants::kMarkerOffset),
++         Smi::FromInt(StackFrame::CONSTRUCT));
+   PrepareForBailoutBeforeSplit(TOS_REG, true, if_true, if_false);
+   Split(equal, if_true, if_false, fall_through);
+ 
+@@ -2362,8 +2362,8 @@
+ 
+   // Check if the calling frame is an arguments adaptor frame.
+   __ movq(rbx, Operand(rbp, StandardFrameConstants::kCallerFPOffset));
+-  __ SmiCompare(Operand(rbx, StandardFrameConstants::kContextOffset),
+-                Smi::FromInt(StackFrame::ARGUMENTS_ADAPTOR));
++  __ Cmp(Operand(rbx, StandardFrameConstants::kContextOffset),
++         Smi::FromInt(StackFrame::ARGUMENTS_ADAPTOR));
+   __ j(not_equal, &exit);
+ 
+   // Arguments adaptor case: Read the arguments length from the
+Only in v8/src/x64: full-codegen-x64.cc.orig
+Only in v8/src/x64: full-codegen-x64.cc.rej
+diff -ru v8.orig/src/x64/lithium-codegen-x64.cc v8/src/x64/lithium-codegen-x64.cc
+--- v8.orig/src/x64/lithium-codegen-x64.cc	2011-03-12 11:22:17.000000000 +0200
++++ v8/src/x64/lithium-codegen-x64.cc	2011-03-23 01:39:18.127345179 +0200
+@@ -786,7 +786,7 @@
+       __ j(equal, true_label);
+       __ CompareRoot(reg, Heap::kFalseValueRootIndex);
+       __ j(equal, false_label);
+-      __ SmiCompare(reg, Smi::FromInt(0));
++      __ Cmp(reg, Smi::FromInt(0));
+       __ j(equal, false_label);
+       __ JumpIfSmi(reg, true_label);
+ 
+Only in v8/src/x64: lithium-codegen-x64.cc.orig
+Only in v8/src/x64: lithium-codegen-x64.cc.rej
+diff -ru v8.orig/src/x64/macro-assembler-x64.cc v8/src/x64/macro-assembler-x64.cc
+--- v8.orig/src/x64/macro-assembler-x64.cc	2011-03-12 11:22:17.000000000 +0200
++++ v8/src/x64/macro-assembler-x64.cc	2011-03-23 01:39:18.144950769 +0200
+@@ -109,7 +109,7 @@
+   ASSERT(!object.is(rsi) && !value.is(rsi) && !index.is(rsi));
+ 
+   // First, check if a write barrier is even needed. The tests below
+-  // catch stores of Smis and stores into young gen.
++  // catch stores of smis and stores into young gen.
+   Label done;
+   JumpIfSmi(value, &done);
+ 
+@@ -138,7 +138,7 @@
+   ASSERT(!object.is(rsi) && !value.is(rsi) && !address.is(rsi));
+ 
+   // First, check if a write barrier is even needed. The tests below
+-  // catch stores of Smis and stores into young gen.
++  // catch stores of smis and stores into young gen.
+   Label done;
+   JumpIfSmi(value, &done);
+ 
+@@ -820,12 +820,26 @@
+ }
+ 
+ 
+-void MacroAssembler::SmiCompare(Register dst, Register src) {
+-  cmpq(dst, src);
++void MacroAssembler::SmiCompare(Register smi1, Register smi2) {
++  if (FLAG_debug_code) {
++    AbortIfNotSmi(smi1);
++    AbortIfNotSmi(smi2);
++  }
++  cmpq(smi1, smi2);
+ }
+ 
+ 
+ void MacroAssembler::SmiCompare(Register dst, Smi* src) {
++  if (FLAG_debug_code) {
++    AbortIfNotSmi(dst);
++  }
++  // Actually, knowing the register is a smi doesn't enable any optimizations
++  // with the current tagging scheme.
++  Cmp(dst, src);
++}
++
++
++void MacroAssembler::Cmp(Register dst, Smi* src) {
+   ASSERT(!dst.is(kScratchRegister));
+   if (src->value() == 0) {
+     testq(dst, dst);
+@@ -837,20 +851,41 @@
+ 
+ 
+ void MacroAssembler::SmiCompare(Register dst, const Operand& src) {
++  if (FLAG_debug_code) {
++    AbortIfNotSmi(dst);
++    AbortIfNotSmi(src);
++  }
+   cmpq(dst, src);
+ }
+ 
+ 
+ void MacroAssembler::SmiCompare(const Operand& dst, Register src) {
++  if (FLAG_debug_code) {
++    AbortIfNotSmi(dst);
++    AbortIfNotSmi(src);
++  }
+   cmpq(dst, src);
+ }
+ 
+ 
+ void MacroAssembler::SmiCompare(const Operand& dst, Smi* src) {
++  if (FLAG_debug_code) {
++    AbortIfNotSmi(dst);
++  }
+   cmpl(Operand(dst, kSmiShift / kBitsPerByte), Immediate(src->value()));
+ }
+ 
+ 
++void MacroAssembler::Cmp(const Operand& dst, Smi* src) {
++  // The Operand cannot use the smi register, since we may use the scratch
++  // register to get around the lack of 64 bit immediates in the instruction
++  // set.
++  Register smi_reg = GetSmiConstant(src);
++  ASSERT(!dst.AddressUsesRegister(smi_reg));
++  cmpq(dst, smi_reg);
++}
++
++
+ void MacroAssembler::SmiCompareInteger32(const Operand& dst, Register src) {
+   cmpl(Operand(dst, kSmiShift / kBitsPerByte), src);
+ }
+@@ -1335,7 +1370,7 @@
+ 
+ void MacroAssembler::Cmp(Register dst, Handle<Object> source) {
+   if (source->IsSmi()) {
+-    SmiCompare(dst, Smi::cast(*source));
++    Cmp(dst, Smi::cast(*source));
+   } else {
+     Move(kScratchRegister, source);
+     cmpq(dst, kScratchRegister);
+@@ -1345,7 +1380,7 @@
+ 
+ void MacroAssembler::Cmp(const Operand& dst, Handle<Object> source) {
+   if (source->IsSmi()) {
+-    SmiCompare(dst, Smi::cast(*source));
++    Cmp(dst, Smi::cast(*source));
+   } else {
+     ASSERT(source->IsHeapObject());
+     movq(kScratchRegister, source, RelocInfo::EMBEDDED_OBJECT);
+@@ -1692,7 +1727,12 @@
+ 
+ 
+ void MacroAssembler::AbortIfNotSmi(Register object) {
+-  NearLabel ok;
++  Condition is_smi = CheckSmi(object);
++  Assert(is_smi, "Operand is not a smi");
++}
++
++
++void MacroAssembler::AbortIfNotSmi(const Operand& object) {
+   Condition is_smi = CheckSmi(object);
+   Assert(is_smi, "Operand is not a smi");
+ }
+Only in v8/src/x64: macro-assembler-x64.cc.orig
+diff -ru v8.orig/src/x64/macro-assembler-x64.h v8/src/x64/macro-assembler-x64.h
+--- v8.orig/src/x64/macro-assembler-x64.h	2011-03-12 11:22:17.000000000 +0200
++++ v8/src/x64/macro-assembler-x64.h	2011-03-23 01:39:18.158396891 +0200
+@@ -256,8 +256,9 @@
+                                            int power);
+ 
+ 
+-  // Simple comparison of smis.
+-  void SmiCompare(Register dst, Register src);
++  // Simple comparison of smis.  Both sides must be known smis to use these,
++  // otherwise use Cmp.
++  void SmiCompare(Register smi1, Register smi2);
+   void SmiCompare(Register dst, Smi* src);
+   void SmiCompare(Register dst, const Operand& src);
+   void SmiCompare(const Operand& dst, Register src);
+@@ -579,6 +580,8 @@
+   void Move(const Operand& dst, Handle<Object> source);
+   void Cmp(Register dst, Handle<Object> source);
+   void Cmp(const Operand& dst, Handle<Object> source);
++  void Cmp(Register dst, Smi* src);
++  void Cmp(const Operand& dst, Smi* src);
+   void Push(Handle<Object> source);
+ 
+   // Emit code to discard a non-negative number of pointer-sized elements
+@@ -646,6 +649,7 @@
+ 
+   // Abort execution if argument is not a smi. Used in debug code.
+   void AbortIfNotSmi(Register object);
++  void AbortIfNotSmi(const Operand& object);
+ 
+   // Abort execution if argument is a string. Used in debug code.
+   void AbortIfNotString(Register object);
+Only in v8/src/x64: macro-assembler-x64.h.orig

@@ -7,11 +7,12 @@
 
 PORTNAME=	chromium
 DISTVERSIONPREFIX=	courgette-redacted-
-DISTVERSION=	6.0.472.63
+DISTVERSION=	10.0.648.204
 CATEGORIES=	www
 MASTER_SITES=	http://download.goodking.org/downloads/ \
 		ftp://rene-ladan.nl/pub/distfiles/ \
-		CRITICAL
+		http://files.etoilebsd.net/goodking/
+DISTNAME=	chromium-${DISTVERSIONPREFIX}${DISTVERSION}
 
 MAINTAINER=	chromium@FreeBSD.org
 COMMENT=	A mostly BSD-licensed web browser based on WebKit and Gtk+
@@ -25,7 +26,6 @@ BUILD_DEPENDS=	${LOCALBASE}/bin/flex:${PORTSDIR}/textproc/flex		\
 # minimal version of nss, LIB_DEPENDS does not enforce this
 
 LIB_DEPENDS=	execinfo.1:${PORTSDIR}/devel/libexecinfo	\
-		avformat:${PORTSDIR}/multimedia/ffmpeg		\
 		cairo.2:${PORTSDIR}/graphics/cairo		\
 		dbus-1.3:${PORTSDIR}/devel/dbus			\
 		dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib	\
@@ -34,8 +34,6 @@ LIB_DEPENDS=	execinfo.1:${PORTSDIR}/devel/libexecinfo	\
 		freetype.9:${PORTSDIR}/print/freetype2		\
 		nss3.1:${PORTSDIR}/security/nss			\
 		gnome-keyring.0:${PORTSDIR}/security/libgnome-keyring
-
-FORBIDDEN=		several security vulnerabilities
 
 RUN_DEPENDS=	${LOCALBASE}/lib/alsa-lib/libasound_module_pcm_oss.so:${PORTSDIR}/audio/alsa-plugins \
 		${LOCALBASE}/lib/X11/fonts/Droid/fonts.dir:${PORTSDIR}/x11-fonts/droid-fonts-ttf
@@ -47,7 +45,7 @@ USE_PYTHON=	2.6+			# only needed at build time
 USE_PERL5_BUILD=yes
 USE_GMAKE=	yes
 MAN1=		chrome.1
-USE_XORG=	scrnsaverproto xtst
+USE_XORG=	scrnsaverproto x11 xproto xtst
 USE_GNOME=	glib20 gtk20 dconf libxslt
 LICENSE_COMB=	multi
 LICENSE=	BSD LGPL21 MPL
@@ -64,22 +62,31 @@ ALL_TARGET=	chrome
 #GYP_DEFINES+=	use_system_libjpeg=1
 #GYP_DEFINES+=	use_system_libpng=1
 GYP_DEFINES+=	use_system_libxml=1
+GYP_DEFINES+=	use_system_ffmpeg=0
 #GYP_DEFINES+=	use_system_sqlite=0
+GYP_DEFINES+=	use_system_yasm=1
 #GYP_DEFINES+=	use_system_zlib=1
-
-.include <bsd.port.options.mk>
+GYP_DEFINES+=	python_ver=${PYTHON_VER}
 
 OPTIONS=	CODECS		"Compile and enable patented codecs like H.264" off \
 		GCONF		"Use gconf2 for preferences"		on \
 		SSE2		"Use SSE2, disable this for PIII or older" on \
 		VPX		"Use system libvpx for VP8 codec"	on
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
+
+.if ${OSVERSION} < 900033
+BUILD_DEPENDS+=	${LOCALBASE}/bin/as:${PORTSDIR}/devel/binutils
+CONFIGURE_ENV+=	COMPILER_PATH=${LOCALBASE}/bin
+MAKE_ENV+=	COMPILER_PATH=${LOCALBASE}/bin
+.endif
 
 .if defined(WITH_CODECS)
 GYP_DEFINES+=	ffmpeg_branding=Chrome
+GYP_DEFINES+=	use_proprietary_codecs=1
 .else
 GYP_DEFINES+=	ffmpeg_branding=Chromium
+GYP_DEFINES+=	use_proprietary_codecs=0
 .endif
 
 .if defined(WITH_GCONF)
@@ -101,11 +108,11 @@ GYP_DEFINES+=	use_system_vpx=1
 BUILDTYPE=	Release
 .else
 BUILDTYPE=	Debug
+STRIP=
 .endif
 
 MAKE_ENV+=	BUILDTYPE=${BUILDTYPE}
 MAKE_JOBS_SAFE=	yes
-STRIP=
 
 pre-everything::
 	@${ECHO_MSG}
@@ -121,21 +128,33 @@ post-patch:
 	@${REINPLACE_CMD} -e "s|/usr/local|${LOCALBASE}|"	\
 		${WRKSRC}/base/base.gypi			\
 		${WRKSRC}/build/common.gypi			\
-		${WRKSRC}/third_party/ffmpeg/ffmpeg.gyp		\
-		${WRKSRC}/third_party/icu/public/common/unicode/pfreebsd.h   \
-		${WRKSRC}/third_party/tcmalloc/chromium/src/config_freebsd.h \
-		${WRKSRC}/third_party/WebKit/WebCore/plugins/PluginDatabase.cpp \
+		${WRKSRC}/third_party/libvpx/libvpx.gyp \
+		${WRKSRC}/third_party/WebKit/Source/WebCore/plugins/PluginDatabase.cpp \
 		${WRKSRC}/v8/tools/gyp/v8.gyp
+	@${REINPLACE_CMD} -e "s|/usr/include/vpx|${LOCALBASE}/include|" \
+		${WRKSRC}/third_party/ffmpeg/ffmpeg.gyp
+	@${REINPLACE_CMD} -e "s|linux|freebsd|" \
+		${WRKSRC}/tools/gyp/pylib/gyp/generator/make.py
 	@${REINPLACE_CMD} -e 's|/usr/bin/gcc|${CC}|' \
-		${WRKSRC}/third_party/WebKit/WebCore/bindings/scripts/IDLParser.pm \
-		${WRKSRC}/third_party/WebKit/WebCore/dom/make_names.pl
+		${WRKSRC}/third_party/WebKit/Source/WebCore/bindings/scripts/IDLParser.pm \
+		${WRKSRC}/third_party/WebKit/Source/WebCore/dom/make_names.pl
 	@${REINPLACE_CMD} -e "s|'flex'|'${LOCALBASE}/bin/flex'|" \
 		${WRKSRC}/third_party/angle/src/build_angle.gyp  \
-		${WRKSRC}/third_party/WebKit/WebCore/WebCore.gyp/scripts/action_maketokenizer.py
+		${WRKSRC}/third_party/WebKit/Source/WebCore/WebCore.gyp/scripts/action_maketokenizer.py
 	@${REINPLACE_CMD} -e 's|gperf --key-positions|${LOCALBASE}/bin/gperf --key-positions|' \
-		${WRKSRC}/third_party/WebKit/WebCore/css/makeprop.pl	\
-		${WRKSRC}/third_party/WebKit/WebCore/css/makevalues.pl	\
-		${WRKSRC}/third_party/WebKit/WebCore/make-hash-tools.pl
+		${WRKSRC}/third_party/WebKit/Source/WebCore/css/makeprop.pl	\
+		${WRKSRC}/third_party/WebKit/Source/WebCore/css/makevalues.pl	\
+		${WRKSRC}/third_party/WebKit/Source/WebCore/make-hash-tools.pl
+	# kludges just to make it progress for now
+	@${REINPLACE_CMD} -e "s|/usr/lib|${LOCALBASE}/lib|"		\
+			-e "s|'python_ver%': '2.5'|'python_ver%': '2.6'|" \
+			-e "s|.so.1.0|.so.1|"				\
+		${WRKSRC}/build/common.gypi
+	@${REINPLACE_CMD} -e "s|'-ldl',|'-lc',|" \
+		${WRKSRC}/app/app_base.gypi \
+		${WRKSRC}/build/linux/system.gyp \
+		${WRKSRC}/chrome/chrome_browser.gypi \
+		${WRKSRC}/media/media.gyp
 
 do-configure:
 	cd ${WRKSRC} && \
@@ -155,4 +174,9 @@ do-install:
 	cd ${WRKSRC}/out/${BUILDTYPE} && ${COPYTREE_SHARE} "locales resources" ${DATADIR}
 	${LN} -sf ${DATADIR}/chrome ${PREFIX}/bin/
 
-.include <bsd.port.post.mk>
+post-install:
+.if ${OSVERSION} < 900000
+@${CAT} ${PKGMESSAGE}
+.endif
+
+.include <bsd.port.mk>
