@@ -7,6 +7,7 @@
 
 PORTNAME=	cvs2html
 PORTVERSION=	1.98
+PORTREVISION=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	http://www.bayofrum.net/dist/${PORTNAME}/${PORTVERSION}/ \
 		http://cvs.sslug.dk/cvs2html/utils/
@@ -22,9 +23,15 @@ LICENSE=	GPLv2
 PLIST_FILES=	bin/cvs2html
 USE_PERL5=	yes
 NO_BUILD=	yes
-NO_WRKSUBDIR=	yes
+
+do-extract:
+	@${MKDIR} ${WRKDIR}
+	@${CP} ${DISTDIR}/${PORTNAME} ${WRKDIR}
+
+post-patch:
+	${REINPLACE_CMD} -e '1s|\(#!\).*$$|\1${PERL}|' ${WRKDIR}/${PORTNAME}
 
 do-install:
-		${INSTALL_SCRIPT} ${DISTDIR}/${PORTNAME} ${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME} ${PREFIX}/bin
 
 .include <bsd.port.mk>
