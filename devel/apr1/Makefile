@@ -225,6 +225,9 @@ run-autotools::
 	cd ${APU_WRKDIR} ; \
 		${SETENV} ${CONFIGURE_ENV} ${SH} ./buildconf \
 		--with-apr=${APR_WRKDIR}
+	${REINPLACE_CMD} -e 's/ gsed//g' \
+		${APR_WRKDIR}/build/libtool.m4 \
+		${APR_WRKDIR}/configure
 	cd ${APR_WRKDIR}; \
 		${SETENV} ${CONFIGURE_ENV} ${SH} \
 		./configure ${CONFIGURE_ARGS} ${APR_CONF_ARGS}
