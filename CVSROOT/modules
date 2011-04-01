@@ -1954,6 +1954,7 @@ cpu                             ports/sysutils/cpu
 cpuburn                         ports/sysutils/cpuburn
 cpuflags                        ports/devel/cpuflags
 cpuid                           ports/misc/cpuid
+cpulimit                        ports/sysutils/cpulimit
 cpupowerd                       ports/sysutils/cpupowerd
 cqcam                           ports/graphics/cqcam
 crack                           ports/security/crack
@@ -10181,9 +10182,6 @@ netams-front                    ports/net-mgmt/netams-front
 netatalk                        ports/net/netatalk
 netbeans                        ports/java/netbeans
 netbeans-devel                  ports/java/netbeans-devel
-netbeans3                       ports/java/netbeans3
-netbeans4                       ports/java/netbeans4
-netbeans5                       ports/java/netbeans5
 netbeans55                      ports/java/netbeans55
 netbeans61                      ports/java/netbeans61
 netboot                         ports/net/netboot
