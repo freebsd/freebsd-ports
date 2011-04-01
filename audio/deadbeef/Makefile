@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	deadbeef
-PORTVERSION=	0.4.1
-PORTREVISION=	1
+PORTVERSION=	0.4.4
 CATEGORIES=	audio
 MASTER_SITES=	SF/${PORTNAME}/
 
@@ -18,12 +17,16 @@ LIB_DEPENDS=	samplerate.1:${PORTSDIR}/audio/libsamplerate \
 		mad.2:${PORTSDIR}/audio/libmad \
 		execinfo.1:${PORTSDIR}/devel/libexecinfo
 
+LICENSE=	GPLv2
+
 GNU_CONFIGURE=	yes
+USE_GETTEXT=	yes
+USE_GMAKE=	yes
 USE_BZIP2=	yes
 USE_ICONV=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I../dumb/dumb-kode54/include -I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib" LIBS="-lexecinfo"
-CONFIGURE_ARGS=	--disable-alsa --disable-nullout
+CONFIGURE_ARGS=	--disable-alsa --disable-nullout \
+		CPPFLAGS="-I../dumb/dumb-kode54/include -I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib" LIBS="-lexecinfo -lintl"
 WANT_GNOME=	yes
 INSTALLS_ICONS=	yes
 MAKE_JOBS_SAFE=	yes
@@ -47,7 +50,17 @@ OPTIONS=	PULSE "PulseAudio output plugin (unsupported)" off\
 		CDDA "CD-Audio plugin" on\
 		GME "Game Music Emu plugin for NSF, AY, etc" on\
 		DUMB "D.U.M.B. plugin for MOD, S3M and other" on\
-		NOTIFY "support for OSD notifications into GTKUI plugin" on
+		NOTIFY "support for OSD notifications into GTKUI plugin" on\
+		MUSEPACK "musepack plugin" on\
+		WILD "wildmidi plugin" on\
+		TTA "tta plugin" on\
+		DCA "dca (DTS audio) plugin" on\
+		AAC "AAC decoder based on FAAD2" on\
+		MMS "MMS streaming vfs plugin" on\
+		SHN "shorten plugin" on\
+		AO "audio overload plugin" on\
+		SHELLEXEC "shell commands plugin" on\
+		NLS "Native Language Support" on
 
 .include <bsd.port.options.mk>
 
@@ -210,10 +223,75 @@ PLIST_SUB+=	NOTIFY=""
 LIB_DEPENDS+=	dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib
 .endif
 
-.include <bsd.port.pre.mk>
-
-.if ( ${OSVERSION} >= 802502 && ${OSVERSION} < 900000 ) || ${OSVERSION} >= 900027
-BROKEN=		does not build after log2 addition
+.if defined(WITHOUT_MUSEPACK)
+CONFIGURE_ARGS+=	--disable-musepack
+PLIST_SUB+=	MUSEPACK="@comment "
+.else
+PLIST_SUB+=	MUSEPACK=""
 .endif
 
-.include <bsd.port.post.mk>
+.if defined(WITHOUT_WILD)
+CONFIGURE_ARGS+=	--disable-wildmidi
+PLIST_SUB+=	WILD="@comment "
+.else
+PLIST_SUB+=	WILD=""
+.endif
+
+.if defined(WITHOUT_TTA)
+CONFIGURE_ARGS+=	--disable-tta
+PLIST_SUB+=	TTA="@comment "
+.else
+PLIST_SUB+=	TTA=""
+.endif
+
+.if defined(WITHOUT_DCA)
+CONFIGURE_ARGS+=	--disable-dca
+PLIST_SUB+=	DCA="@comment "
+.else
+PLIST_SUB+=	DCA=""
+.endif
+
+.if defined(WITHOUT_AAC)
+CONFIGURE_ARGS+=	--disable-aac
+PLIST_SUB+=	AAC="@comment "
+.else
+PLIST_SUB+=	AAC=""
+LIB_DEPENDS+=	faad.2:${PORTSDIR}/audio/faad
+.endif
+
+.if defined(WITHOUT_MMS)
+CONFIGURE_ARGS+=	--disable-mms
+PLIST_SUB+=	MMS="@comment "
+.else
+PLIST_SUB+=	MMS=""
+.endif
+
+.if defined(WITHOUT_SHN)
+CONFIGURE_ARGS+=	--disable-shn
+PLIST_SUB+=	SHN="@comment "
+.else
+PLIST_SUB+=	SHN=""
+.endif
+
+.if defined(WITHOUT_AO)
+CONFIGURE_ARGS+=	--disable-ao
+PLIST_SUB+=	AO="@comment "
+.else
+PLIST_SUB+=	AO=""
+.endif
+
+.if defined(WITHOUT_SHELLEXEC)
+CONFIGURE_ARGS+=	--disable-shellexec
+PLIST_SUB+=	SHELLEXEC="@comment "
+.else
+PLIST_SUB+=	SHELLEXEC=""
+.endif
+
+.if defined(WITHOUT_NLS)
+CONFIGURE_ARGS+=	--disable-nls
+PLIST_SUB+=	NLS="@comment "
+.else
+PLIST_SUB+=	NLS=""
+.endif
+
+.include <bsd.port.mk>
