@@ -5,6 +5,30 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20110402:
+  AFFECTS: user of net-mgmt/xymon-client and net-mgmt/xymon-server
+  AUTHOR: dinoex@FreeBSD.org
+
+  Loginname, path, scripts and config files have been renamed in 4.3.0
+  Steps to update:
+  1. Stop and deinstall the old version.
+  2. Copy the remaining config files to the new location.
+  3. Read the instructions
+  4. merge your old config with the upgrade430.sh script
+  5. fix the hobbit_*_enable lines in /etc/rc.conf
+ 
+  # /usr/local/etc/rc.d/hobbit-server stop
+  # /usr/local/etc/rc.d/hobbit-client stop
+  # pkg_delete /var/db/pkg/xymon-*
+  # pkg_add xymon-client-4.3.0.tbz
+  # pkg_add xymon-server-4.3.0.tbz
+  # cp /usr/local/www/hobbit/server/etc/* /usr/local/www/xymon/server/etc/
+  # less /usr/local/www/xymon/server/www/help/upgrade-to-430.txt
+  # /usr/local/www/xymon/server/bin/bbcmd /usr/local/www/xymon/server/bin/upgrade430.sh
+  # sed -i '' -e 's|hobbit|xymon' /etc/rc.conf
+  # /usr/local/etc/rc.d/xymon-client start
+  # /usr/local/etc/rc.d/xymon-server start
+
 20110328:
   AFFECTS: users of net/openldap24-client
   AUTHOR: delphij@FreeBSD.org
