@@ -38,18 +38,12 @@ you update your ports collection, before attempting any port upgrades.
   the library with "FETCH" support, this would cause libldap to depend on
   FreeBSD's libfetch.so library.
 
-  This dependency is not expected by many applications that uses OpenLDAP
-  client library, which could broke if they won't link against libfetch.
-  For this reason, the libfetch(3) support in openldap24-client have been
-  turned off by default.
 
-  If you are having problems saying fetchGetURL is not found, please either
-  rebuild your openldap24-client without the support, or tweak your
-  application's Makefile to have them link against libfetch(3) library.
+  As of 20110402, a local change have been introduced so OpenLDAP libraries
+  link against libfetch.so when FETCH is enabled.  Normally, no further user
+  interaction would be required.
 
-  Most users can use 'make config' in ports/net/openldap24-client to change
-  the saved settings and have FETCH turned off safely, if they don't use
-  the functionality of downloading the ldif files.
+  For new installations, the FETCH option have been turned off by default.
 
 20110324:
   AFFECTS: users of KDE SC 4
