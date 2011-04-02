@@ -102,6 +102,10 @@ PLIST_FILES=		lib/syslog-ng/libafsql.la lib/syslog-ng/libafsql.so
 CONFIGURE_ARGS+=	--disable-sql
 .endif
 
+.if ${OSVERSION} >= 900034
+CONFIGURE_ARGS+=        --disable-linux-caps
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's:libnet-config:libnet115-config:g' ${WRKSRC}/configure
 	@${MV} ${WRKSRC}/scl/syslog-ng.conf ${WRKSRC}/scl/syslog-ng.conf.dist
