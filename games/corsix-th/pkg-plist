@@ -57,6 +57,7 @@ bin/CorsixTH
 %%DATADIR%%/Levels/demo.level
 %%DATADIR%%/Levels/example.level
 %%DATADIR%%/Levels/original05.level
+%%DATADIR%%/Levels/original07.level
 %%DATADIR%%/Lua/api_version.lua
 %%DATADIR%%/Lua/app.lua
 %%DATADIR%%/Lua/audio.lua
@@ -191,6 +192,7 @@ bin/CorsixTH
 %%DATADIR%%/Lua/languages/norwegian.lua
 %%DATADIR%%/Lua/languages/original_strings.lua
 %%DATADIR%%/Lua/languages/portuguese.lua
+%%DATADIR%%/Lua/languages/russian.lua
 %%DATADIR%%/Lua/languages/simplified_chinese.lua
 %%DATADIR%%/Lua/languages/spanish.lua
 %%DATADIR%%/Lua/languages/swedish.lua
@@ -255,6 +257,7 @@ bin/CorsixTH
 %%DATADIR%%/Lua/objects/x_ray_viewer.lua
 %%DATADIR%%/Lua/persistance.lua
 %%DATADIR%%/Lua/queue.lua
+%%DATADIR%%/Lua/research_department.lua
 %%DATADIR%%/Lua/room.lua
 %%DATADIR%%/Lua/rooms/blood_machine_room.lua
 %%DATADIR%%/Lua/rooms/cardiogram.lua
@@ -281,6 +284,7 @@ bin/CorsixTH
 %%DATADIR%%/Lua/sprite_viewer.lua
 %%DATADIR%%/Lua/staff_profile.lua
 %%DATADIR%%/Lua/strict.lua
+%%DATADIR%%/Lua/string_extensions.lua
 %%DATADIR%%/Lua/strings.lua
 %%DATADIR%%/Lua/ui.lua
 %%DATADIR%%/Lua/utility.lua
