@@ -54,9 +54,10 @@ lib/meta1/libevthr.a
 lib/meta1/libmtar.a
 lib/meta1/libpmilter.a
 lib/meta1/libpmutil.a
-lib/meta1/librcb.a
-lib/meta1/librcbcomm.a
+lib/meta1/librcbcommr.a
+lib/meta1/librcbr.a
 lib/meta1/libreplr.a
+lib/meta1/librsctr.a
 lib/meta1/libthr.a
 libexec/qmgr
 libexec/smar
