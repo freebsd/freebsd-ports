@@ -12,3 +12,5 @@ Perl script to find fastest CVSup server:
 * can re-write itself to update the CVSup server list, obtained
   from the online FreeBSD Handbook
 * can easily add other CVSup servers (NetBSD/OpenBSD...etc)
+
+WWW: http://fastest-cvsup.sourceforge.net/
