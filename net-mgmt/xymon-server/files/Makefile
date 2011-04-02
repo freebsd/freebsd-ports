@@ -1,41 +1,41 @@
-# Toplevel Makefile for Hobbit
+# Toplevel Makefile for Xymon
 # $FreeBSD$
 BUILDTOPDIR=`pwd`
 
-# configure settings for Hobbit
+# configure settings for Xymon
 #
 # Toplevel dir
-BBTOPDIR = ${PREFIX}/www/xymon
+XYMONTOPDIR = ${PREFIX}/www/xymon
 # Server home dir for etc/, bin/
-BBHOME = ${PREFIX}/www/xymon/server
+XYMONHOME = ${PREFIX}/www/xymon/server
 # Server data dir for hist/ etc.
-BBVAR = ${PREFIX}/www/xymon/data
+XYMONVAR = ${PREFIX}/www/xymon/data
 # CGI scripts go in CGIDIR
 CGIDIR = ${PREFIX}/www/xymon/cgi-bin
 # Admin CGI scripts go in SECURECGIDIR
 SECURECGIDIR = ${PREFIX}/www/xymon/cgi-secure
 # Where to put logfiles
-BBLOGDIR = /var/log/hobbit
+XYMONLOGDIR = /var/log/xymon
 # Where to install manpages
 MANROOT = ${PREFIX}/man
-# How to run fping or hobbitping
-FPING = hobbitping
+# How to run fping or xymonping
+FPING = xymonping
 
-# Username running hobbit
-#BBUSER = nobody
-# Hobbit server hostname
-#BBHOSTNAME = hobbit.example.com
-# Hobbit server IP-address
-#BBHOSTIP = 127.0.0.1
-# Hobbit server OS
-BBHOSTOS = freebsd
+# Username running xymon
+#XYMONUSER = nobody
+# Xymon server hostname
+#XYMONHOSTNAME = xymon.example.com
+# Xymon server IP-address
+#XYMONHOSTIP = 127.0.0.1
+# Xymon server OS
+XYMONHOSTOS = freebsd
 
-# URL for Hobbit webpages
-BBHOSTURL = /hobbit
-# URL for Hobbit CGIs
-BBCGIURL = /hobbit-cgi
-# URL for Hobbit Admin CGIs
-SECUREBBCGIURL = /hobbit-seccgi
+# URL for Xymon webpages
+XYMONHOSTURL = /xymon
+# URL for Xymon CGIs
+XYMONCGIURL = /xymon-cgi
+# URL for Xymon Admin CGIs
+SECUREXYMONCGIURL = /xymon-seccgi
 # Webserver group-ID
 HTTPDGID=80
 
@@ -51,19 +51,28 @@ PCRELIBS = -L${LOCALBASE}/lib -lpcre
 RPATHVAL += ${LOCALBASE}/lib
 #
 # OpenSSL settings
-SSLFLAGS = -DBBGEN_SSL
+SSLFLAGS = -DHAVE_OPENSSL=1
 SSLINCDIR = -I${OPENSSLINC}
 SSLLIBS = -L${OPENSSLLIB} -lssl -lcrypto
 RPATHVAL += ${OPENSSLLIB}
 #
 ifdef WITH_LDAP
 # OpenLDAP settings
-LDAPFLAGS = -DBBGEN_LDAP -DBBGEN_LDAP_USESTARTTLS
+LDAPFLAGS = -DXYMON_LDAP -DXYMON_LDAP_USESTARTTLS
 LDAPINCDIR = -I${PREFIX}/include
 LDAPLIBS = -L${PREFIX}/lib -lldap -llber
 RPATHVAL += ${PREFIX}/lib
 endif
-#
+# clock_gettime() settings
+LIBRTDEF = 
+
+ifdef WITH_NETSNMP
+# Net-SNMP settings
+DOSNMP = yes
+else
+DOSNMP = no
+endif
+
 # Large File Support settings
 LFSDEF = -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64
 

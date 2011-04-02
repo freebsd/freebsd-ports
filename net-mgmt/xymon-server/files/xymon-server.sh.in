@@ -1,0 +1,26 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+
+# PROVIDE: xymon_server
+# REQUIRE: DAEMON
+
+. /etc/rc.subr
+
+name="xymon_server"
+rcvar=`set_rcvar`
+
+load_rc_config "$name"
+: ${xymon_server_enable:="NO"}
+
+command="su -m %%XYMONUSER%% -c '%%PREFIX%%/www/xymon/server/xymon.sh'"
+start_cmd="su -m %%XYMONUSER%% -c '%%PREFIX%%/www/xymon/server/xymon.sh start'"
+stop_cmd="su -m %%XYMONUSER%% -c '%%PREFIX%%/www/xymon/server/xymon.sh stop'"
+status_cmd="su -m %%XYMONUSER%% -c '%%PREFIX%%/www/xymon/server/xymon.sh status'"
+reload_cmd="su -m %%XYMONUSER%% -c '%%PREFIX%%/www/xymon/server/xymon.sh reload'"
+restart_cmd="su -m %%XYMONUSER%% -c '%%PREFIX%%/www/xymon/server/xymon.sh restart'"
+pidfile="/var/log/xymon/xymond.pid"
+
+run_rc_command "$1"
+# eof
