@@ -38,6 +38,9 @@ lib/mkf/libmkf_zh.so
 lib/mlterm/libathena.a
 lib/mlterm/libathena.la
 lib/mlterm/libathena.so
+%%IBUS%%lib/mlterm/libim-ibus.a
+%%IBUS%%lib/mlterm/libim-ibus.la
+%%IBUS%%lib/mlterm/libim-ibus.so
 %%IIIMF%%lib/mlterm/libim-iiimf.a
 %%IIIMF%%lib/mlterm/libim-iiimf.la
 %%IIIMF%%lib/mlterm/libim-iiimf.so
@@ -69,6 +72,7 @@ lib/mlterm/libsample2.a
 lib/mlterm/libsample2.la
 lib/mlterm/libsample2.so
 libexec/mlconfig
+libexec/mlimgloader
 libexec/mlterm-menu
 libexec/w3mmlconfig/mlconfig-data.pl
 libexec/w3mmlconfig/mlconfig.cgi

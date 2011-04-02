@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mlterm
-PORTVERSION=	3.0.2
+PORTVERSION=	3.0.3
 CATEGORIES=	x11
 MASTER_SITES=	SF/${PORTNAME}/01release/${PORTNAME}-${PORTVERSION}
 
@@ -31,7 +31,8 @@ OPTIONS=	FRIBIDI	"Use Fribidi for BiDi rendering" off \
 		UIM "uim support (experimental)" off \
 		M17NLIB "m17n library support (experimental)" off \
 		IIIMF "IIIMF support (experimental)" off \
-		SCIM "SCIM support (experimental)" off
+		SCIM "SCIM support (experimental)" off \
+		IBUS "IBUS support (experimental)" off
 
 .include <bsd.port.pre.mk>
 
@@ -79,6 +80,16 @@ PLIST_SUB+=	SCIM=""
 .else
 CONFIGURE_ARGS+=	--disable-scim
 PLIST_SUB+=	SCIM="@comment "
+.endif
+
+.if defined(WITH_IBUS)
+CONFIGURE_ARGS+=	--enable-ibus
+MAKE_ENV=	LIBS_LOCAL=-L${LOCALBASE}/lib
+LIB_DEPENDS+=	ibus.2:${PORTSDIR}/textproc/ibus
+PLIST_SUB+=	IBUS=""
+.else
+CONFIGURE_ARGS+=	--disable-ibus
+PLIST_SUB+=	IBUS="@comment "
 .endif
 
 .if ${OSVERSION} >= 900004
