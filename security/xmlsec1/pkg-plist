@@ -23,6 +23,7 @@ lib/libxmlsec1.so.3
 %%NSS%%lib/libxmlsec1-nss.so
 %%NSS%%lib/libxmlsec1-nss.so.3
 include/xmlsec1/xmlsec/private/xkms.h
+include/xmlsec1/xmlsec/private/xslt.h
 include/xmlsec1/xmlsec/openssl/app.h
 include/xmlsec1/xmlsec/openssl/bn.h
 include/xmlsec1/xmlsec/openssl/crypto.h
