@@ -1,6 +1,6 @@
-# New ports collection makefile for:	Fvwm2
-# Date created:		20 Jan 1996
-# Whom:			peter
+# New ports collection makefile for:	Fvwm2 (unstable release)
+# Date created:				20 Jan 1996
+# Whom:					Peter Wemm <peter@FreeBSD.org>
 #
 # $FreeBSD$
 #
@@ -16,17 +16,17 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	Popular virtual window manager for X
 
-LIB_DEPENDS=	Xft.2:${PORTSDIR}/x11-fonts/libXft
 RUN_DEPENDS=	gm4:${PORTSDIR}/devel/m4
 
 # Other ports this port cannot coexist with
 CONFLICTS?=	fvwm-1.* fvwm-2.4.*
 NO_LATEST_LINK=	yes
+
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	X_CFLAGS=-I${LOCALBASE}/include
 CONFIGURE_ARGS=	--with-png-library=${LOCALBASE}/lib
 USE_GMAKE=	yes
-USE_XORG=	xpm
+USE_XORG=	xpm xft
 USE_BZIP2=	yes
 WANT_GNOME=	yes
 
