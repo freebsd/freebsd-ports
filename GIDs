@@ -108,7 +108,7 @@ meta1:*:264:
 haclient:*:275:
 frontbase:*:276:
 mrtg:*:279:
-hobbit:*:280:
+xymon:*:280:
 prelude:*:281:
 backuppc:*:300:
 _sphinx:*:312:
