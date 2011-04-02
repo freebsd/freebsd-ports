@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	meta1
-PORTVERSION=	1.0.PreAlpha42.0
+PORTVERSION=	1.0.0a.0.0
+DISTVERSION=	1.0.Alpha0.0
 CATEGORIES=	mail ipv6
-MASTER_SITES=	http://www.MeTA1.org/download/.prealpha/answer/
+MASTER_SITES=	http://www.MeTA1.org/download/.alpha/go/
 PKGNAMESUFFIX?=	${TLS_SUFFIX}${SASL_SUFFIX}${LDAP_SUFFIX}${BERKELEYDB_SUFFIX}${PMILTER_SUFFIX}${PKGNAMESUFFIX2}
 
 MAINTAINER=	dinoex@FreeBSD.org
@@ -26,12 +27,13 @@ IGNORE=		your system does not support sysvipc
 
 MANUAL_PACKAGE_BUILD=	needs hostname
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--disable-dependency-tracking
 MAKE_ENV+=	META1CONFDIR="${META1CONFDIR}"
-MAN8=		createmap.8 mailq.8 mcp.8 milter-spamd.8 milter-regex.8 qmgr.8 \
-		qmgrctl.8 runas.8 meta1.8 smar.8 smtpc.8 smtps.8
+MAN8=		createmap.8 fsperf1.8 mailq.8 mcp.8 milter-spamd.8 \
+		milter-regex.8 qmgr.8 qmgrctl.8 runas.8 meta1.8 smar.8 \
+		smtpc.8 smtps.8
 MLINKS=		sendmailx.conf.5 meta1.conf.5 \
 		sendmailx.8 sendmailX.8
 PORTDOCS=	README.dvi README.html README.pdf README.ps README.txt \
