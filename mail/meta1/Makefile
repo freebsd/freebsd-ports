@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	meta1
-PORTVERSION=	1.0.PreAlpha36.0
+PORTVERSION=	1.0.PreAlpha42.0
 CATEGORIES=	mail ipv6
-MASTER_SITES=	http://www.MeTA1.org/download/.prealpha/cond/
+MASTER_SITES=	http://www.MeTA1.org/download/.prealpha/answer/
 PKGNAMESUFFIX?=	${TLS_SUFFIX}${SASL_SUFFIX}${LDAP_SUFFIX}${BERKELEYDB_SUFFIX}${PMILTER_SUFFIX}${PKGNAMESUFFIX2}
 
 MAINTAINER=	dinoex@FreeBSD.org
@@ -44,7 +44,6 @@ EXTRA_SBIN=	libcheck/noroot libconf/tree libmta/statit \
 # GROUPS/USERS does not work from package
 #GROUPS=	meta1s meta1q meta1c meta1m meta1
 #USERS=		meta1s meta1q meta1c meta1m meta1
-
 
 # Options to define Features:
 # META1_WITHOUT_TLS=yes
