@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	vice
-PORTVERSION=	2.2
-PORTREVISION=	4
+PORTVERSION=	2.3
 CATEGORIES=	emulators
 MASTER_SITES=	http://www.viceteam.org/online/ \
 		http://www.zimmers.net/anonftp/pub/cbm/crossplatform/emulators/VICE/ \
@@ -68,6 +67,19 @@ MLINKS=		vice.1 x64.1 \
 		vice.1 xplus4.1 \
 		vice.1 xcbm2.1
 
+FIX_XAW=	src/arch/unix/x11/xaw/about.c \
+		src/arch/unix/x11/xaw/uicartridge.c \
+		src/arch/unix/x11/xaw/uiedisk.c \
+		src/arch/unix/x11/xaw/uimenu.c \
+		src/arch/unix/x11/xaw/uiscreenshot.c \
+		src/arch/unix/x11/xaw/uisnapshot.c \
+		src/arch/unix/x11/xaw/x11ui.c \
+		src/arch/unix/x11/xaw/widgets/FileSel.c \
+		src/arch/unix/x11/xaw/widgets/FileSelP.h \
+		src/arch/unix/x11/xaw/widgets/MultiList.h \
+		src/arch/unix/x11/xaw/widgets/MultiListP.h \
+		src/arch/unix/x11/xaw/widgets/ScrList.c \
+
 .if !defined(NOPORTDOCS)
 INFO=		vice
 .endif
@@ -90,10 +102,6 @@ PLIST_SUB+=		FCCACHE="@comment "
 PLIST_SUB+=		NOFCCACHE=""
 .endif
 
-.if exists(${LOCALBASE}/include/esd.h) && !defined(WITHOUT_ESOUND)
-WITH_ESOUND?=yes
-.endif
-
 # will be picked up by configure
 .if exists(${LOCALBASE}/include/ffmpeg/avformat.h)
 LIB_DEPENDS+=		avcodec.1:${PORTSDIR}/multimedia/ffmpeg
@@ -113,15 +121,8 @@ PLIST_SUB+=		NLS="@comment "
 
 .if !defined(WITHOUT_SDL)
 USE_SDL=		sdl
-CONFIGURE_ARGS+=	--with-sdl --with-sdlsound
+CONFIGURE_ARGS+=	--with-sdlsound
 CPPFLAGS+=		-I${LOCALBASE}/include/SDL
-.endif
-
-.if defined(WITH_ESOUND)
-LIB_DEPENDS+=		esd.2:${PORTSDIR}/audio/esound
-CONFIGURE_ARGS+=	--with-esd
-.else
-CONFIGURE_ARGS+=	--without-esd
 .endif
 
 .if defined(VICE_WITH_ASOUND)
@@ -145,6 +146,13 @@ post-patch:
 .endfor
 .if defined(NOPORTDOCS)
 	${REINPLACE_CMD} -e 's| doc||' ${WRKSRC}/Makefile.in
+.endif
+.if defined(NOPORTDOCS)
+.if defined(VICE_WITH_XAW3D)
+.for i in ${FIX_XAW}
+	${REINPLACE_CMD} -e 's|X11/Xaw/|X11/Xaw3d/|' ${WRKSRC}/${i}
+.endfor
+.endif
 .endif
 
 pre-install:
