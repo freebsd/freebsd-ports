@@ -27,7 +27,6 @@ LIB_DEPENDS=	tiff.4:${PORTSDIR}/graphics/tiff \
 		jasper.4:${PORTSDIR}/graphics/jasper
 
 MAKE_JOBS_UNSAFE=	yes
-CONFLICTS=	mgetty-1.*
 
 USE_PERL5=	yes
 USE_GMAKE=	yes
