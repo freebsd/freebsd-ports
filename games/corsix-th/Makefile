@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	corsixth
-DISTVERSION=	0.Beta5
+DISTVERSION=	0.Beta6
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 PROJECTHOST=	corsix-th
 DISTNAME=	CorsixTH-${DISTVERSION:S/0.//}-Source
 
-MAINTAINER=	danfe@FreeBSD.org
+MAINTAINER=	mad@madpilot.net
 COMMENT=	Open source clone of Theme Hospital
 
 LICENSE=	MIT
