@@ -8,4 +8,5 @@ lib/libwebp.so
 lib/libwebp.so.0
 lib/libwebp.la
 lib/libwebp.a
+libdata/pkgconfig/libwebp.pc
 @dirrm include/webp
