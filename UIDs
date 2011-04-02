@@ -117,7 +117,7 @@ meta1:*:264:264::0:0:MeTA1 other:/nonexistent:/usr/sbin/nologin
 hacluster:*:275:275::0:0:Heartbeat cluster user:/nonexistent:/usr/sbin/nologin
 frontbase:*:276:276::0:0:FrontBase Daemon:/usr/local/FrontBase/Databases:/bin/sh
 mrtg:*:279:279::0:0:MRTG daemon:/nonexistent:/usr/sbin/nologin
-hobbit:*:280:280::0:0:Hobbit Monitor:/nonexistent:/usr/sbin/nologin
+xymon:*:280:280::0:0:Xymon Monitor:/nonexistent:/usr/sbin/nologin
 prelude:*:281:281::0:0:Prelude user:/nonexistent:/usr/sbin/nologin
 backuppc:*:300:300::0:0:BackupPC pseudo-user:/nonexistent:/usr/sbin/nologin
 _sphinx:*:312:312::0:0:Sphinxsearch Owner:/nonexistent:/usr/sbin/nologin
