@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	feh
-PORTVERSION=	1.11.2
+PORTVERSION=	1.12
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.chaosdorf.de/~derf/feh/ \
 		${MASTER_SITE_LOCAL}
@@ -15,7 +15,8 @@ MASTER_SITE_SUBDIR=	uqs
 MAINTAINER=	uqs@FreeBSD.org
 COMMENT=	An image viewer that utilizes Imlib2
 
-LIB_DEPENDS=	giblib.1:${PORTSDIR}/graphics/giblib
+LIB_DEPENDS=	curl.6:${PORTSDIR}/ftp/curl \
+		giblib.1:${PORTSDIR}/graphics/giblib
 
 USE_XORG=	x11 xt xinerama
 USE_PERL5_RUN=	yes
