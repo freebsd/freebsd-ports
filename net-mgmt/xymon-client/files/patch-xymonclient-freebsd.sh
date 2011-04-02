@@ -1,6 +1,6 @@
---- client/hobbitclient-freebsd.sh.orig	2006-07-05 07:52:22.000000000 +0200
-+++ client/hobbitclient-freebsd.sh	2010-07-09 09:37:22.000000000 +0200
-@@ -41,7 +41,7 @@
+--- client/xymonclient-freebsd.sh.orig	2010-11-14 18:21:19.000000000 +0100
++++ client/xymonclient-freebsd.sh	2011-03-31 06:52:18.000000000 +0200
+@@ -43,7 +43,7 @@
  echo "[netstat]"
  netstat -s
  echo "[ports]"

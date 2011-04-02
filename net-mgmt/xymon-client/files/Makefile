@@ -1,22 +1,22 @@
-# Toplevel Makefile for Hobbit
+# Toplevel Makefile for Xymon
 # $FreeBSD$
 BUILDTOPDIR=`pwd`
 CLIENTONLY = yes
 LOCALCLIENT = no
 
-# configure settings for Hobbit
+# configure settings for Xymon
 #
 # Toplevel dir
-BBTOPDIR = ${PREFIX}/www/xymon
+XYMONTOPDIR = ${PREFIX}/www/xymon
 # Server home dir for etc/, www/
-BBHOME = ${PREFIX}/www/xymon/client
+XYMONHOME = ${PREFIX}/www/xymon/client
 
 # hobbit settings follows
 #
 # Username running hobbit
-#BBUSER = nobody
-# Hobbit server IP-address
-#BBHOSTIP = 127.0.0.1
+#XYMONUSER = nobody
+# Xymon server IP-address
+#XYMONHOSTIP = 127.0.0.1
 # Large File Support settings
 LFSDEF = -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64
 
