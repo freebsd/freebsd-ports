@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	DateTime-Set
-DISTVERSION=	0.28
+DISTVERSION=	0.30
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,8 +14,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Datetime sets and set math
 
-BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/DateTime.pm:${PORTSDIR}/devel/p5-DateTime \
-		${SITE_PERL}/Set/Infinite.pm:${PORTSDIR}/devel/p5-Set-Infinite
+BUILD_DEPENDS=	p5-DateTime>=0.12:${PORTSDIR}/devel/p5-DateTime \
+		p5-Set-Infinite>=0.59:${PORTSDIR}/devel/p5-Set-Infinite
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_MODBUILD=	yes
