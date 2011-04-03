@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	HTML-FormFu
-PORTVERSION=	0.08002
+PORTVERSION=	0.09002
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -16,6 +16,7 @@ COMMENT=	HTML Form Creation, Rendering and Validation Framework
 
 RUN_DEPENDS=	p5-Captcha-reCAPTCHA>=0.93:${PORTSDIR}/graphics/p5-Captcha-reCAPTCHA \
 		p5-Class-Accessor-Chained>=0:${PORTSDIR}/devel/p5-Class-Accessor-Chained \
+		p5-Class-MOP>=0:${PORTSDIR}/devel/p5-Class-MOP \
 		p5-Clone>=0.31:${PORTSDIR}/devel/p5-Clone \
 		p5-Config-Any>=0.18:${PORTSDIR}/devel/p5-Config-Any \
 		p5-Crypt-CBC>=0:${PORTSDIR}/security/p5-Crypt-CBC \
@@ -33,7 +34,10 @@ RUN_DEPENDS=	p5-Captcha-reCAPTCHA>=0.93:${PORTSDIR}/graphics/p5-Captcha-reCAPTCH
 		p5-HTML-TokeParser-Simple>=3.14:${PORTSDIR}/www/p5-HTML-TokeParser-Simple \
 		p5-Hash-Flatten>=0:${PORTSDIR}/devel/p5-Hash-Flatten \
 		p5-List-MoreUtils>=0:${PORTSDIR}/lang/p5-List-MoreUtils \
-		p5-MRO-Compat>=0:${PORTSDIR}/devel/p5-MRO-Compat \
+		p5-Moose>=1.00:${PORTSDIR}/devel/p5-Moose \
+		p5-MooseX-Aliases>=0:${PORTSDIR}/devel/p5-MooseX-Aliases \
+		p5-MooseX-ChainedAccessors>=0.02:${PORTSDIR}/devel/p5-MooseX-ChainedAccessors \
+		p5-MooseX-SetOnce>=0:${PORTSDIR}/devel/p5-MooseX-SetOnce \
 		p5-Number-Format>=0:${PORTSDIR}/textproc/p5-Number-Format \
 		p5-Path-Class>=0:${PORTSDIR}/devel/p5-Path-Class \
 		p5-Readonly>=0:${PORTSDIR}/devel/p5-Readonly \
@@ -67,7 +71,6 @@ MAN3=	HTML::FormFu::Inflator.3 \
 	HTML::FormFu::Element::Button.3 \
 	HTML::FormFu.3 \
 	HTML::FormFu::Validator::Callback.3 \
-	HTML::FormFu::Element::_Input.3 \
 	HTML::FormFu::Filter::HTMLEscape.3 \
 	HTML::FormFu::Element.3 \
 	HTML::FormFu::Element::Multi.3 \
@@ -101,14 +104,11 @@ MAN3=	HTML::FormFu::Inflator.3 \
 	HTML::FormFu::Filter::Callback.3 \
 	HTML::FormFu::Element::Password.3 \
 	HTML::FormFu::Constraint::MaxLength.3 \
-	HTML::FormFu::Element::_NonBlock.3 \
 	HTML::FormFu::Element::Blank.3 \
-	HTML::FormFu::Element::_Field.3 \
 	HTML::FormFu::Transformer::Callback.3 \
 	HTML::FormFu::Constraint::Regex.3 \
 	HTML::FormFu::Constraint::DependOn.3 \
 	HTML::FormFu::Element::Reset.3 \
-	HTML::FormFu::Element::_Group.3 \
 	HTML::FormFu::Constraint::Bool.3 \
 	HTML::FormFu::Element::Textarea.3 \
 	HTML::FormFu::Constraint::MinLength.3 \
@@ -131,7 +131,6 @@ MAN3=	HTML::FormFu::Inflator.3 \
 	HTML::FormFu::Constraint::Equal.3 \
 	HTML::FormFu::Element::Hr.3 \
 	HTML::FormFu::Constraint::Callback.3 \
-	HTML::FormFu::Constraint::_others.3 \
 	HTML::FormFu::Element::ContentButton.3 \
 	HTML::FormFu::Filter::Regex.3 \
 	HTML::FormFu::Filter::HTMLScrubber.3 \
@@ -147,12 +146,8 @@ MAN3=	HTML::FormFu::Inflator.3 \
 	HTML::FormFu::Model.3 \
 	HTML::FormFu::Constraint::DateTime.3 \
 	HTML::FormFu::Filter::CompoundSprintf.3 \
-	HTML::FormFu::Filter::_Compound.3 \
 	HTML::FormFu::Element::reCAPTCHA.3 \
 	HTML::FormFu::Constraint::reCAPTCHA.3 \
-	HTML::FormFu::Element::_MultiElement.3 \
-	HTML::FormFu::Element::_MultiText.3 \
-	HTML::FormFu::Element::_MultiSelect.3 \
 	HTML::FormFu::Element::ComboBox.3 \
 	HTML::FormFu::Constraint::MinRange.3 \
 	HTML::FormFu::MultiForm.3 \
@@ -167,12 +162,12 @@ MAN3=	HTML::FormFu::Inflator.3 \
 	HTML::FormFu::Inflator::Callback.3 \
 	HTML::FormFu::Deflator::PathClassFile.3 \
 	HTML::FormFu::Filter::FormatNumber.3 \
-	HTML::FormFu::Element::Label.3
+	HTML::FormFu::Element::Label.3 \
+	HTML::FormFu::Role::Constraint::Others.3 \
+	HTML::FormFu::Role::Element::Field.3 \
+	HTML::FormFu::Role::Element::Group.3 \
+	HTML::FormFu::Role::Element::Input.3 \
+	HTML::FormFu::Role::Element::NonBlock.3 \
+	HTML::FormFu::Role::Filter::Compound.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500809
-RUN_DEPENDS+=	p5-Module-Pluggable>=0:${PORTSDIR}/devel/p5-Module-Pluggable
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
