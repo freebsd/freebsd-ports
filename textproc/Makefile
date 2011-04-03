@@ -1164,6 +1164,7 @@
     SUBDIR += rubygem-termcolor
     SUBDIR += rubygem-tidy
     SUBDIR += rubygem-xml-simple
+    SUBDIR += rubygem-xslt
     SUBDIR += rw-aspell
     SUBDIR += rxp
     SUBDIR += s5
