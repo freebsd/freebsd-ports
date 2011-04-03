@@ -1,3 +1,4 @@
-MD5 (binutils-2.20.tar.bz2) = ee2d3e996e9a2d669808713360fa96f8
-SHA256 (binutils-2.20.tar.bz2) = e1df09f0aa3b50154ef93bfefe86d65d01c22cfb44d73299ad95e772133a75b0
-SIZE (binutils-2.20.tar.bz2) = 17506655
+SHA256 (binutils-2.21.tar.bz2) = 60abec5bf448eb930a5a15acb8712612377dc8bcfb13dfd5131228f70561d0c7
+SIZE (binutils-2.21.tar.bz2) = 18742991
+SHA256 (binutils-2.21-rtems4.11-20110107.diff) = a57150ba5ff28aaac08624d00ff88ba3f12d54efab16094c8ec6c3ae71d6fe39
+SIZE (binutils-2.21-rtems4.11-20110107.diff) = 2276
