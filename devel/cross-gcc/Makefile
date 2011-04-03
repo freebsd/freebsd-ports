@@ -6,8 +6,8 @@
 #
 
 PORTNAME?=	gcc
-PORTVERSION=	4.4.2
-PORTREVISION=	2
+PORTVERSION=	4.5.2
+PORTREVISION=	0
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GCC:S,$,:gcc,} \
 		${MASTER_SITE_SOURCEWARE:S,$,:newlib,}
@@ -17,16 +17,15 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:gcc \
 		newlib-${NEWLIB_VERSION}${NEWLIB_EXTRACT_SUFX}:newlib
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
-PATCH_SITES=	ftp://ftp.rtems.com/pub/rtems/SOURCES/4.10/
+PATCH_SITES=	ftp://ftp.rtems.com/pub/rtems/SOURCES/4.11/
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	stas@FreeBSD.org
 COMMENT=	GNU gcc for cross-target development
 
 LIB_DEPENDS=	gmp.10:${PORTSDIR}/math/gmp \
-		mpfr.4:${PORTSDIR}/math/mpfr
-
-BROKEN=		does not build
+		mpfr.4:${PORTSDIR}/math/mpfr \
+		mpc.2:${PORTSDIR}/math/mpc
 
 #
 # Temporary hack to deal with dependencies during package builds for
@@ -57,7 +56,7 @@ CONFIGURE_SCRIPT=	../${WRKSRC:C,^${WRKDIR}/?,,}/configure
 #
 # Newlib version to use
 #
-NEWLIB_VERSION=	1.17.0
+NEWLIB_VERSION=	1.19.0
 NEWLIB_EXTRACT_SUFX=.tar.gz
 
 OURTARGET=	${TGTARCH}-${TGTABI}
@@ -70,6 +69,7 @@ MAKE_ENV=	NO_CPU_CFLAGS=true
 
 CONFIGURE_ARGS=	--target=${OURTARGET} \
 		--enable-languages="${TGTLANGS}" \
+		--datadir="${TGT_DATADIR}" \
 		--with-system-zlib \
 		--disable-nls \
 		--with-libiconv-prefix=${LOCALBASE} \
@@ -80,6 +80,7 @@ CONFIGURE_ARGS=	--target=${OURTARGET} \
 		--disable-shared \
 		--with-gmp="${LOCALBASE}" \
 		--with-mpfr="${LOCALBASE}" \
+		--with-mpc="${LOCALBASE}"
 
 MAN1=		${MANPAGES:S,^,${OURTARGET}-,}
 
@@ -90,6 +91,7 @@ INFO=		${OURTARGET}-cpp \
 
 GCC_AUTODIRS=	${OURTARGET}/include \
 		${OURTARGET}/lib \
+		${OURTARGET}/share \
 		libexec/gcc/${OURTARGET} \
 		lib/gcc/${OURTARGET}
 
@@ -106,6 +108,7 @@ PLIST_FILES=	bin/${OURTARGET}-cpp \
 TGTLANGS=	c
 
 TGT_LIBDIR=	${PREFIX}/${OURTARGET}/lib/gcc/
+TGT_DATADIR=	${PREFIX}/${OURTARGET}/share
 
 LN_BINARIES=	addr2line ar as c++filt ld \
 		nm objcopy objdump ranlib \
@@ -123,8 +126,12 @@ CONFIGURE_ARGS+=--with-float=${WITH_FLOAT_TYPE}
 .endif
 
 .if defined(WITH_RTEMS_PATCHES)
-PATCHFILES+=	gcc-core-4.4.2-rtems4.10-20091015.diff \
-		newlib-${NEWLIB_VERSION}-rtems4.10-20091009.diff
+PATCHFILES+=	gcc-core-4.5.2-rtems4.11-20110220.diff \
+		newlib-${NEWLIB_VERSION}-rtems4.11-20110109.diff
+.endif
+
+.if defined(WITH_OPTARGS)
+CONFIGURE_ARGS+=	${WITH_OPTARGS}
 .endif
 
 #

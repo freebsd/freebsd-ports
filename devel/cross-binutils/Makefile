@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	binutils
-PORTVERSION=	2.20
+PORTVERSION=	2.21
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEWARE}
 MASTER_SITE_SUBDIR=	binutils/releases
 PKGNAMEPREFIX=	${TGTARCH}-${TGTABI}-
 
-PATCH_SITES=	ftp://ftp.rtems.com/pub/rtems/SOURCES/4.8/
+PATCH_SITES=	ftp://ftp.rtems.com/pub/rtems/SOURCES/4.11/
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	stas@FreeBSD.org
@@ -35,6 +35,7 @@ MAN1=		${OURTARGET}-addr2line.1 \
 		${OURTARGET}-ar.1 \
 		${OURTARGET}-as.1 \
 		${OURTARGET}-c++filt.1 \
+		${OURTARGET}-elfedit.1 \
 		${OURTARGET}-gprof.1 \
 		${OURTARGET}-dlltool.1 \
 		${OURTARGET}-ld.1 \
@@ -60,8 +61,10 @@ PLIST_FILES=	bin/${OURTARGET}-addr2line \
 		bin/${OURTARGET}-ar \
 		bin/${OURTARGET}-as \
 		bin/${OURTARGET}-c++filt \
+		bin/${OURTARGET}-elfedit \
 		bin/${OURTARGET}-gprof \
 		bin/${OURTARGET}-ld \
+		bin/${OURTARGET}-ld.bfd \
 		bin/${OURTARGET}-nm \
 		bin/${OURTARGET}-objcopy \
 		bin/${OURTARGET}-objdump \
@@ -78,9 +81,9 @@ PLIST_FILES+=	bin/${OURTARGET}-dlltool \
 		bin/${OURTARGET}-windres
 .endif
 
-#.if defined(WITH_RTEMS_PATCHES)
-#PATCHFILES+=	${PORTNAME}-${PORTVERSION}-rtems4.8-20071104.diff
-#.endif
+.if defined(WITH_RTEMS_PATCHES)
+PATCHFILES+=	${PORTNAME}-${PORTVERSION}-rtems4.11-20110107.diff
+.endif
 
 .if !defined(TGTARCH) || !defined(TGTABI)
 PKGNAMEPREFIX=	cross-
