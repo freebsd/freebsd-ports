@@ -6,11 +6,9 @@
 #
 
 PORTNAME=	xpra
-PORTVERSION=	0.0.7.17p1
-PORTREVISION=	1
+PORTVERSION=	0.0.7.18
 CATEGORIES=	x11
 MASTER_SITES=	http://winswitch.org/src/
-DISTNAME=	${PORTNAME}-${PORTVERSION:S!p!-!}
 
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	Xpra gives you persistent remote applications for X
