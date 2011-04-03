@@ -22,7 +22,7 @@ USE_QT_VER=	4
 QT_COMPONENTS=	gui xml designer svg opengl \
 		qmake_build moc_build rcc_build uic_build
 USE_LDCONFIG=	yes
-MAKE_JOBS_SAFE=	yes
+#MAKE_JOBS_SAFE=	yes
 
 CMAKE_SOURCE_PATH=	${WRKSRC}/cmake
 CMAKE_ARGS+=	-Dkst_install_prefix=${PREFIX}
