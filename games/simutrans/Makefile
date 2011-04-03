@@ -6,25 +6,27 @@
 #
 
 PORTNAME=	simutrans
-PORTVERSION=	102.2.2
+PORTVERSION=	110.0.1
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${SIMUTRANS_VERSION} \
-		SF/${PORTNAME}/pak64/102-2-1:food \
 		SF/${PORTNAME}/pak64/${SIMUTRANS_VERSION}:pak64
 DISTFILES=	simutrans-src-${SIMUTRANS_VERSION}.zip \
 		simulinux-${SIMUTRANS_VERSION}.zip \
 		simupak64-${SIMUTRANS_VERSION}.zip:pak64 \
-		simupak64-addon-food-102-2-1.zip:food
+		simupak64-addon-food-${SIMUTRANS_VERSION}.zip:pak64
 
 MAINTAINER=	tijl@coosemans.org
 COMMENT=	Transportation simulation game
 
 SIMUTRANS_VERSION=	${PORTVERSION:S,.,-,g}
+SIMUTRANS_REVISION=	4359
 
+LICENSE=	ART10
+LICENSE_FILE=	${WRKSRC}/simutrans/licence.txt
 MAKE_ARGS=	BACKEND=mixer_sdl \
 		COLOUR_DEPTH=16 \
 		OSTYPE=freebsd \
-		FLAGS=-DUSE_C \
+		FLAGS="-DUSE_C -DREVISION=${SIMUTRANS_REVISION}" \
 		VERBOSE=1
 NO_WRKSUBDIR=	yes
 USE_GMAKE=	yes
