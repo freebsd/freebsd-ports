@@ -26,7 +26,6 @@ man/man1/html_formfu_deploy.pl.1
 %%SITE_PERL%%/HTML/FormFu/Constraint/ASCII.pm
 %%SITE_PERL%%/HTML/FormFu/Constraint/Equal.pm
 %%SITE_PERL%%/HTML/FormFu/Constraint/Callback.pm
-%%SITE_PERL%%/HTML/FormFu/Constraint/_others.pm
 %%SITE_PERL%%/HTML/FormFu/Constraint/Set.pm
 %%SITE_PERL%%/HTML/FormFu/Constraint/MinRange.pm
 %%SITE_PERL%%/HTML/FormFu/Constraint/MaxRange.pm
@@ -45,12 +44,8 @@ man/man1/html_formfu_deploy.pl.1
 %%SITE_PERL%%/HTML/FormFu/Element/Radio.pm
 %%SITE_PERL%%/HTML/FormFu/Element/SimpleTable.pm
 %%SITE_PERL%%/HTML/FormFu/Element/Block.pm
-%%SITE_PERL%%/HTML/FormFu/Element/_MultiElement.pm
-%%SITE_PERL%%/HTML/FormFu/Element/_MultiText.pm
-%%SITE_PERL%%/HTML/FormFu/Element/_MultiSelect.pm
 %%SITE_PERL%%/HTML/FormFu/Element/ComboBox.pm
 %%SITE_PERL%%/HTML/FormFu/Element/Button.pm
-%%SITE_PERL%%/HTML/FormFu/Element/_Input.pm
 %%SITE_PERL%%/HTML/FormFu/Element/Multi.pm
 %%SITE_PERL%%/HTML/FormFu/Element/reCAPTCHA.pm
 %%SITE_PERL%%/HTML/FormFu/Element/Submit.pm
@@ -62,11 +57,8 @@ man/man1/html_formfu_deploy.pl.1
 %%SITE_PERL%%/HTML/FormFu/Element/Select.pm
 %%SITE_PERL%%/HTML/FormFu/Element/Password.pm
 %%SITE_PERL%%/HTML/FormFu/Element/Number.pm
-%%SITE_PERL%%/HTML/FormFu/Element/_NonBlock.pm
 %%SITE_PERL%%/HTML/FormFu/Element/Blank.pm
-%%SITE_PERL%%/HTML/FormFu/Element/_Field.pm
 %%SITE_PERL%%/HTML/FormFu/Element/Reset.pm
-%%SITE_PERL%%/HTML/FormFu/Element/_Group.pm
 %%SITE_PERL%%/HTML/FormFu/Element/Textarea.pm
 %%SITE_PERL%%/HTML/FormFu/Element/Checkboxgroup.pm
 %%SITE_PERL%%/HTML/FormFu/Element/Src.pm
@@ -86,7 +78,6 @@ man/man1/html_formfu_deploy.pl.1
 %%SITE_PERL%%/HTML/FormFu/Filter/UpperCase.pm
 %%SITE_PERL%%/HTML/FormFu/Filter/HTMLEscape.pm
 %%SITE_PERL%%/HTML/FormFu/Filter/CopyValue.pm
-%%SITE_PERL%%/HTML/FormFu/Filter/_Compound.pm
 %%SITE_PERL%%/HTML/FormFu/Filter/CompoundSprintf.pm
 %%SITE_PERL%%/HTML/FormFu/Filter/Encode.pm
 %%SITE_PERL%%/HTML/FormFu/Filter/Whitespace.pm
@@ -105,6 +96,7 @@ man/man1/html_formfu_deploy.pl.1
 %%SITE_PERL%%/HTML/FormFu/I18N/de.pm
 %%SITE_PERL%%/HTML/FormFu/I18N/en.pm
 %%SITE_PERL%%/HTML/FormFu/I18N/es.pm
+%%SITE_PERL%%/HTML/FormFu/I18N/hu.pm
 %%SITE_PERL%%/HTML/FormFu/I18N/ja.pm
 %%SITE_PERL%%/HTML/FormFu/I18N/da.pm
 %%SITE_PERL%%/HTML/FormFu/I18N/fr.pm
@@ -123,6 +115,27 @@ man/man1/html_formfu_deploy.pl.1
 %%SITE_PERL%%/HTML/FormFu/QueryType/CGI/Simple.pm
 %%SITE_PERL%%/HTML/FormFu/QueryType/CGI.pm
 %%SITE_PERL%%/HTML/FormFu/QueryType/Catalyst.pm
+%%SITE_PERL%%/HTML/FormFu/Role/Constraint/Others.pm
+%%SITE_PERL%%/HTML/FormFu/Role/ContainsElements.pm
+%%SITE_PERL%%/HTML/FormFu/Role/ContainsElementsSharedWithField.pm
+%%SITE_PERL%%/HTML/FormFu/Role/CreateChildren.pm
+%%SITE_PERL%%/HTML/FormFu/Role/Element/Coercible.pm
+%%SITE_PERL%%/HTML/FormFu/Role/Element/Field.pm
+%%SITE_PERL%%/HTML/FormFu/Role/Element/FieldMethods.pm
+%%SITE_PERL%%/HTML/FormFu/Role/Element/Group.pm
+%%SITE_PERL%%/HTML/FormFu/Role/Element/Input.pm
+%%SITE_PERL%%/HTML/FormFu/Role/Element/MultiElement.pm
+%%SITE_PERL%%/HTML/FormFu/Role/Element/NonBlock.pm
+%%SITE_PERL%%/HTML/FormFu/Role/Element/ProcessOptionsFromModel.pm
+%%SITE_PERL%%/HTML/FormFu/Role/Element/SingleValueField.pm
+%%SITE_PERL%%/HTML/FormFu/Role/Filter/Compound.pm
+%%SITE_PERL%%/HTML/FormFu/Role/FormAndBlockMethods.pm
+%%SITE_PERL%%/HTML/FormFu/Role/FormAndElementMethods.pm
+%%SITE_PERL%%/HTML/FormFu/Role/GetProcessors.pm
+%%SITE_PERL%%/HTML/FormFu/Role/HasParent.pm
+%%SITE_PERL%%/HTML/FormFu/Role/NestedHashUtils.pm
+%%SITE_PERL%%/HTML/FormFu/Role/Populate.pm
+%%SITE_PERL%%/HTML/FormFu/Role/Render.pm
 %%SITE_PERL%%/HTML/FormFu/Transformer/Callback.pm
 %%SITE_PERL%%/HTML/FormFu/Validator/Callback.pm
 %%SITE_PERL%%/HTML/FormFu/Inflator.pm
@@ -149,7 +162,6 @@ man/man1/html_formfu_deploy.pl.1
 %%SITE_PERL%%/HTML/FormFu/FakeQuery.pm
 %%SITE_PERL%%/HTML/FormFu/Util.pm
 %%SITE_PERL%%/HTML/FormFu/Literal.pm
-%%SITE_PERL%%/HTML/FormFu/base.pm
 %%SITE_PERL%%/HTML/FormFu/Constraint.pm
 %%SITE_PERL%%/HTML/FormFu/Constants.pm
 %%SITE_PERL%%/HTML/FormFu.pm
@@ -184,6 +196,10 @@ man/man1/html_formfu_deploy.pl.1
 @dirrmtry %%SITE_PERL%%/auto/share
 @dirrmtry %%SITE_PERL%%/HTML/FormFu/Validator
 @dirrmtry %%SITE_PERL%%/HTML/FormFu/Transformer
+@dirrmtry %%SITE_PERL%%/HTML/FormFu/Role/Filter
+@dirrmtry %%SITE_PERL%%/HTML/FormFu/Role/Element
+@dirrmtry %%SITE_PERL%%/HTML/FormFu/Role/Constraint
+@dirrmtry %%SITE_PERL%%/HTML/FormFu/Role
 @dirrmtry %%SITE_PERL%%/HTML/FormFu/QueryType/CGI
 @dirrmtry %%SITE_PERL%%/HTML/FormFu/QueryType
 @dirrmtry %%SITE_PERL%%/HTML/FormFu/OutputProcessor
