@@ -10,7 +10,7 @@ PORTVERSION=	1.4
 CATEGORIES=	security
 MASTER_SITES=	http://www.semprixd.com/shares/ports/
 
-MAINTAINER=	semprix@bsdmail.org
+MAINTAINER=	semprix@gmx.com
 COMMENT=	Fast way to delete entries from OpenSSH known_hosts file
 
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
