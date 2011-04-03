@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	portupgrade
-PORTVERSION=	20101123
-PORTREVISION=	1
+PORTVERSION=	20110403
+PORTREVISION=	0
 PORTEPOCH=	1
 CATEGORIES=	ports-mgmt
 MASTER_SITES=	ftp://ftp.SpringDaemons.com/soft/
@@ -20,7 +20,7 @@ COMMENT=	FreeBSD ports/packages management tool (devel version)
 OPTIONS=	BDB4 "Use Berkeley DB >=2 as backend" on \
 		BDB1 "Use Berkeley DB 1.85 as backend" off
 
-CONFLICTS=	portupgrade-[0-9]*
+CONFLICTS_INSTALL=	portupgrade-[0-9]*
 
 USE_BZIP2=	yes
 USE_RUBY=	yes
