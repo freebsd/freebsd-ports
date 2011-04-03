@@ -10,7 +10,7 @@ PORTVERSION=	1.2
 CATEGORIES=	security
 MASTER_SITES=	http://www.semprixd.com/shares/ports/
 
-MAINTAINER=	semprix@bsdmail.org
+MAINTAINER=	semprix@gmx.com
 COMMENT=	Hash cracker that precomputes plaintext - ciphertext pairs in advance
 
 USE_DOS2UNIX=	yes
