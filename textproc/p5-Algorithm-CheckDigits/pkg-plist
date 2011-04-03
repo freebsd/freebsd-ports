@@ -1,0 +1,50 @@
+bin/checkdigits.pl
+%%SITE_PERL%%/Algorithm/CheckDigits/M07_001.pm
+%%SITE_PERL%%/Algorithm/CheckDigits/M09_001.pm
+%%SITE_PERL%%/Algorithm/CheckDigits/M10_001.pm
+%%SITE_PERL%%/Algorithm/CheckDigits/M10_002.pm
+%%SITE_PERL%%/Algorithm/CheckDigits/M10_003.pm
+%%SITE_PERL%%/Algorithm/CheckDigits/M10_004.pm
+%%SITE_PERL%%/Algorithm/CheckDigits/M10_005.pm
+%%SITE_PERL%%/Algorithm/CheckDigits/M10_006.pm
+%%SITE_PERL%%/Algorithm/CheckDigits/M10_008.pm
+%%SITE_PERL%%/Algorithm/CheckDigits/M10_009.pm
+%%SITE_PERL%%/Algorithm/CheckDigits/M10_010.pm
+%%SITE_PERL%%/Algorithm/CheckDigits/M10_011.pm
+%%SITE_PERL%%/Algorithm/CheckDigits/M11_001.pm
+%%SITE_PERL%%/Algorithm/CheckDigits/M11_002.pm
+%%SITE_PERL%%/Algorithm/CheckDigits/M11_003.pm
+%%SITE_PERL%%/Algorithm/CheckDigits/M11_004.pm
+%%SITE_PERL%%/Algorithm/CheckDigits/M11_006.pm
+%%SITE_PERL%%/Algorithm/CheckDigits/M11_007.pm
+%%SITE_PERL%%/Algorithm/CheckDigits/M11_008.pm
+%%SITE_PERL%%/Algorithm/CheckDigits/M11_009.pm
+%%SITE_PERL%%/Algorithm/CheckDigits/M11_010.pm
+%%SITE_PERL%%/Algorithm/CheckDigits/M11_011.pm
+%%SITE_PERL%%/Algorithm/CheckDigits/M11_012.pm
+%%SITE_PERL%%/Algorithm/CheckDigits/M11_013.pm
+%%SITE_PERL%%/Algorithm/CheckDigits/M11_015.pm
+%%SITE_PERL%%/Algorithm/CheckDigits/M11_016.pm
+%%SITE_PERL%%/Algorithm/CheckDigits/M11_017.pm
+%%SITE_PERL%%/Algorithm/CheckDigits/M16_001.pm
+%%SITE_PERL%%/Algorithm/CheckDigits/M23_001.pm
+%%SITE_PERL%%/Algorithm/CheckDigits/M23_002.pm
+%%SITE_PERL%%/Algorithm/CheckDigits/M43_001.pm
+%%SITE_PERL%%/Algorithm/CheckDigits/M89_001.pm
+%%SITE_PERL%%/Algorithm/CheckDigits/M97_001.pm
+%%SITE_PERL%%/Algorithm/CheckDigits/M97_002.pm
+%%SITE_PERL%%/Algorithm/CheckDigits/MBase_001.pm
+%%SITE_PERL%%/Algorithm/CheckDigits/MBase_002.pm
+%%SITE_PERL%%/Algorithm/CheckDigits/MBase_003.pm
+%%SITE_PERL%%/Algorithm/CheckDigits/MXX_001.pm
+%%SITE_PERL%%/Algorithm/CheckDigits/MXX_002.pm
+%%SITE_PERL%%/Algorithm/CheckDigits/MXX_003.pm
+%%SITE_PERL%%/Algorithm/CheckDigits/MXX_004.pm
+%%SITE_PERL%%/Algorithm/CheckDigits/MXX_005.pm
+%%SITE_PERL%%/Algorithm/CheckDigits/MXX_006.pm
+%%SITE_PERL%%/Algorithm/CheckDigits.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Algorithm/CheckDigits/.packlist
+@dirrm %%SITE_PERL%%/Algorithm/CheckDigits
+@dirrm %%SITE_PERL%%/Algorithm
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Algorithm/CheckDigits
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Algorithm
