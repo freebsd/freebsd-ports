@@ -187,6 +187,7 @@ bin/googleearth
 %%DATADIR%%/resources/br.country/startinglocation.kml
 %%DATADIR%%/resources/bs.country/startinglocation.kml
 %%DATADIR%%/resources/bt.country/startinglocation.kml
+%%DATADIR%%/resources/builtin_webdata.rcc
 %%DATADIR%%/resources/bv.country/startinglocation.kml
 %%DATADIR%%/resources/bw.country/startinglocation.kml
 %%DATADIR%%/resources/by.country/startinglocation.kml
