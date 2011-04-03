@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	pslib
-PORTVERSION=	0.4.1
-PORTREVISION=	6
+PORTVERSION=	0.4.5
 CATEGORIES=	print
 MASTER_SITES=	SF
 
@@ -34,7 +33,7 @@ OPTIONS=	EXAMPLES	"Install additional examples" On \
 .include <bsd.port.pre.mk>
 
 .if !defined(WITHOUT_EXAMPLES)
-EX_NAME=	pslib-examples-0.0.9
+EX_NAME=	pslib-examples-0.0.10
 EX_WRKSRC=	${WRKDIR}/${EX_NAME}
 DISTFILES+=	${DISTNAME}${EXTRACT_SUFX} ${EX_NAME}${EXTRACT_SUFX}
 PLIST_SUB+=	EXAMPLES=""
