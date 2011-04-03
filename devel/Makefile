@@ -1970,6 +1970,7 @@
     SUBDIR += p5-MooseX-Async
     SUBDIR += p5-MooseX-Attribute-ENV
     SUBDIR += p5-MooseX-AttributeHelpers
+    SUBDIR += p5-MooseX-ChainedAccessors
     SUBDIR += p5-MooseX-ClassAttribute
     SUBDIR += p5-MooseX-Clone
     SUBDIR += p5-MooseX-CompileTime-Traits
