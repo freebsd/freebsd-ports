@@ -85,4 +85,10 @@ pre-configure:
 	@${REINPLACE_CMD} -e "s:@MAKE_PNG_TRUE@:#:g" \
 		${WRKSRC}/pixmaps/Makefile.in
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if (${OSVERSION}<800000) && defined(WITH_MOZILLA_PLUGIN)
+BROKEN=	does not compile with MOZILLA_PLUGIN
+.endif
+
+.include <bsd.port.post.mk>
