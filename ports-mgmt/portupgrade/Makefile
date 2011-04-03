@@ -19,7 +19,7 @@ COMMENT=	FreeBSD ports/packages administration and management tool suite
 OPTIONS=	BDB4 "Use Berkeley DB >=2 as backend" on \
 		BDB1 "Use Berkeley DB 1.85 as backend" off
 
-CONFLICTS=	portupgrade-devel-*
+CONFLICTS_INSTALL=	portupgrade-devel-*
 
 USE_BZIP2=	yes
 USE_RUBY=	yes
