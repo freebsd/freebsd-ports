@@ -1089,6 +1089,7 @@
     SUBDIR += tcpillust
     SUBDIR += tcping
     SUBDIR += tcpmssd
+    SUBDIR += tcpproxy
     SUBDIR += tcpreen
     SUBDIR += tcpsg
     SUBDIR += tcpshow
