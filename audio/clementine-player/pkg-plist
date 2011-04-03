@@ -1,11 +1,7 @@
 bin/clementine-player
-share/applications/clementine.desktop
 share/icons/hicolor/64x64/apps/application-x-clementine.png
 share/icons/hicolor/scalable/apps/application-x-clementine.svg
-share/icons/ubuntu-mono-dark/apps/24/clementine-panel.png
-share/icons/ubuntu-mono-dark/apps/24/clementine-panel-grey.png
-share/icons/ubuntu-mono-light/apps/24/clementine-panel.png
-share/icons/ubuntu-mono-light/apps/24/clementine-panel-grey.png
+share/applications/clementine.desktop
 %%VSL%%%%DATADIR%%/projectm-presets/Aderrasi - Agitator.milk
 %%VSL%%%%DATADIR%%/projectm-presets/Aderrasi - Aimless (Gravity Directive Mix).milk
 %%VSL%%%%DATADIR%%/projectm-presets/Aderrasi - Aimless (Spirogravity Mix).milk
@@ -580,9 +576,3 @@ share/icons/ubuntu-mono-light/apps/24/clementine-panel-grey.png
 %%VSL%%@dirrm %%DATADIR%%/projectm-presets
 %%VSL%%@dirrm %%DATADIR%%
 @dirrmtry share/applications
-@dirrmtry share/icons/ubuntu-mono-light/apps/24
-@dirrmtry share/icons/ubuntu-mono-light/apps
-@dirrmtry share/icons/ubuntu-mono-light
-@dirrmtry share/icons/ubuntu-mono-dark/apps/24
-@dirrmtry share/icons/ubuntu-mono-dark/apps
-@dirrmtry share/icons/ubuntu-mono-dark
