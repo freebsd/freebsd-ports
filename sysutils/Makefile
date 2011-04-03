@@ -793,6 +793,7 @@
     SUBDIR += rubygem-capistrano
     SUBDIR += rubygem-chef
     SUBDIR += rubygem-god
+    SUBDIR += rubygem-log4r
     SUBDIR += rubygem-murder
     SUBDIR += rubygem-ohai
     SUBDIR += rubygem-sys-admin
