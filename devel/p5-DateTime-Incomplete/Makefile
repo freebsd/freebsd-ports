@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	DateTime-Incomplete
-PORTVERSION=	0.04.00
-PORTREVISION=	1
+PORTVERSION=	0.06.00
 DISTVERSION=	${PORTVERSION:C/\.(..)$//}
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
@@ -16,9 +15,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	An incomplete DateTime, like January 5
 
-BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/DateTime.pm:${PORTSDIR}/devel/p5-DateTime \
-		${SITE_PERL}/DateTime/Set.pm:${PORTSDIR}/devel/p5-DateTime-Set \
-		${SITE_PERL}/DateTime/Event/Recurrence.pm:${PORTSDIR}/devel/p5-DateTime-Event-Recurrence
+BUILD_DEPENDS=	p5-Datetime>=0:${PORTSDIR}/devel/p5-DateTime \
+		p5-DateTime-Set>=0.14:${PORTSDIR}/devel/p5-DateTime-Set \
+		p5-DateTime-Event-Recurrence>=0:${PORTSDIR}/devel/p5-DateTime-Event-Recurrence
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
