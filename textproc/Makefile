@@ -1140,7 +1140,6 @@
     SUBDIR += ruby-xslt
     SUBDIR += ruby-xtemplate
     SUBDIR += rubygem-augeas
-    SUBDIR += rubygem-bzip2
     SUBDIR += rubygem-diff-lcs
     SUBDIR += rubygem-ezamar
     SUBDIR += rubygem-ferret
