@@ -1595,3 +1595,4 @@ russian/ircd-hybrid-ru|russian/ircd-hybrid|2011-03-30|Renamed
 java/netbeans3|java/netbeans|2011-03-31|Has expired: old, unmaintained, use java/netbeans instead
 java/netbeans4|java/netbeans|2011-03-31|Has expired: old, unmaintained, use java/netbeans instead
 java/netbeans5|java/netbeans|2011-03-31|Has expired: old, unmaintained, use java/netbeans instead
+textproc/rubygem-bzip2||2011-04-03|Removed
