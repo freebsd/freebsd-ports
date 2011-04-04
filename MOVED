@@ -1669,3 +1669,9 @@ x11-toolkits/linux-f8-qt33||2011-04-04|Has expired: End of Life since Jan 7, 200
 x11-toolkits/linux-f8-tk84||2011-04-04|Has expired: End of Life since Jan 7, 2009
 x11/linux-f8-xorg-libs||2011-04-04|Has expired: End of Life since Jan 7, 2009
 databases/erserver||2011-04-04|Has expired: does not compile on FreeBSD 7.x or newer
+databases/postgresql73-client||2011-04-04|Removed
+databases/postgresql74-client||2011-04-04|Removed
+databases/postgresql74-contrib||2011-04-04|Removed
+databases/postgresql80-client||2011-04-04|Removed
+databases/postgresql80-contrib||2011-04-04|Removed
+databases/postgresql81-client||2011-04-04|Removed

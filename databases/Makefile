@@ -609,12 +609,6 @@
     SUBDIR += postgresql-relay
     SUBDIR += postgresql-repmgr
     SUBDIR += postgresql-tcltk
-    SUBDIR += postgresql73-client
-    SUBDIR += postgresql74-client
-    SUBDIR += postgresql74-contrib
-    SUBDIR += postgresql80-client
-    SUBDIR += postgresql80-contrib
-    SUBDIR += postgresql81-client
     SUBDIR += postgresql81-contrib
     SUBDIR += postgresql82-client
     SUBDIR += postgresql82-server
