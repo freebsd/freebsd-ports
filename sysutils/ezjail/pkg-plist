@@ -6,7 +6,6 @@ bin/ezjail-admin
 %%EXAMPLESDIR%%/example/etc/rc.conf
 %%EXAMPLESDIR%%/example/ezjail.flavour
 %%EXAMPLESDIR%%/example/usr/local/etc/sudoers
-%%EXAMPLESDIR%%/example/etc/make.conf
 %%EXAMPLESDIR%%/nullmailer-example/ezjail.flavour
 %%EXAMPLESDIR%%/nullmailer-example/etc/rc.conf
 %%EXAMPLESDIR%%/nullmailer-example/etc/mail/mailer.conf
