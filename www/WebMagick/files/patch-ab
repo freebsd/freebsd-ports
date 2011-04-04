@@ -2,10 +2,10 @@ Index: webmagickrc.in
 ===================================================================
 RCS file: /cvsroot/webmagick/WebMagick/webmagickrc.in,v
 retrieving revision 1.16
-retrieving revision 1.21
-diff -u -r1.16 -r1.21
+retrieving revision 1.22
+diff -u -r1.16 -r1.22
 --- webmagickrc.in	4 Dec 2001 19:36:57 -0000	1.16
-+++ webmagickrc.in	26 May 2004 22:56:13 -0000	1.21
++++ webmagickrc.in	4 Apr 2011 00:06:12 -0000	1.22
 @@ -83,6 +83,7 @@
  # $opt_ignore		= 0;	# Do not webmagick this directory
  				#    but still recurse into sub-directories
@@ -14,7 +14,7 @@ diff -u -r1.16 -r1.21
  # $opt_srcdir		= '.';	# Source directory path (current directory)
  # $opt_verbose		= 0;	# Verbose flag (default off)
  # $opt_forcecache		= 0;	# Force update of cached thumbnails
-@@ -90,6 +91,9 @@
+@@ -90,30 +91,48 @@
  # $opt_forcemontage	= 0;	# Force montage (default off)
  # $opt_forcegif		= 0;	# Force GIF imagemaps (default off)
  # $opt_forcejpeg          = 0;    # Force JPEG imagemaps (default off)
@@ -24,7 +24,13 @@ diff -u -r1.16 -r1.21
  # $opt_jpegquality      = 70;   # Quality of JPEG imagemaps
  # $opt_help		= 0;	# Display usage message
  # $opt_version		= 0;	# Display version info
-@@ -101,19 +105,32 @@
+ # $opt_htmlext            = '.html'; # Use .shtml for SSI
++# $opt_bodytagins       = '';   # Insert something into <BODY> tag
+ # $opt_header           = '<CENTER>';   # Imagemap extra page header (HTML)
+ # $opt_footer           = '</CENTER>';   # Imagemap extra page footer (HTML)
++# $opt_headins          = '';   # Insert something into <HEAD> section
+ # $opt_javascript		= 1;	# Enable JavaScript output
+ # $opt_readmevisible	= 0;	# Make README.html be first page.
  # $opt_title		= '';	# Page title (blank provides default title)
  # $opt_address		= '';	# Additonal address info for bottom of
                                  #    imagemap page
@@ -57,7 +63,7 @@ diff -u -r1.16 -r1.21
  # $opt_allowconfig	 = 0; # allow user to configure table and framestyle
  
  #				
-@@ -199,8 +216,7 @@
+@@ -199,8 +218,7 @@
  # $opt_frames           = 1;            # Use frames
  # $opt_framemarginwidth	= 1;		# Pixels allocated to frame margin in horizontal direction
  # $opt_framemarginheight	= 1;		# Pixels allocated to frame margin in vertical direction
@@ -67,7 +73,7 @@ diff -u -r1.16 -r1.21
  # $opt_framestyle		= 1;		# Frame style to use (out of those available)
  
  #
-@@ -245,6 +261,7 @@
+@@ -245,6 +263,7 @@
  # $opt_icons{'next_gray'}		= 'gray_next.gif';	# Next (grayed out)
  # $opt_icons{'up'}		= 'blue_up.gif';  	# Up
  # $opt_icons{'help'}		= 'blue_readme.gif';	# Help Readme File
