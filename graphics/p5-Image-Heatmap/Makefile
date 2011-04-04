@@ -8,14 +8,16 @@
 PORTNAME=	Image-Heatmap
 PORTVERSION=	0.565
 CATEGORIES=	graphics perl5
-MASTER_SITES=	CPAN/../../authors/id/W/WA/WAZZUTEKE
+MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	skreuzer@FreeBSD.org
-COMMENT=	Build heatmap images
+COMMENT=	Convert geographic coordinates into a graphical heatmap
 
-BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Image/Magick.pm:${PORTSDIR}/graphics/ImageMagick
-RUN_DEPENDS=	${BUILD_DEPENDS}
+LICENSE_COMB=	dual
+LICENSE=	ART20 GPLv1
+
+RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Image/Magick.pm:${PORTSDIR}/graphics/ImageMagick
 
 WRKSRC=	${WRKDIR}/${PORTNAME}
 PERL_CONFIGURE=	yes
