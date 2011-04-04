@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	secretmaryochronicles-music
-PORTVERSION=	4.1
+PORTVERSION=	5.0
 CATEGORIES=	games
 MASTER_SITES=	SF/smclone/Addon%20-%20Music/${PORTVERSION}
 DISTNAME=	SMC_Music_${PORTVERSION}_high
@@ -33,7 +33,7 @@ do-install:
 		${FIND} music | ${CPIO} -pdmvu ${DATADIR}
 
 .if !defined(NOPORTDOCS)
-PORTDOCS=	Addon_-_Music_Readme.txt license.txt
+PORTDOCS=	Addon_-_Music_Readme.txt
 
 post-install:
 	${MKDIR} ${DOCSDIR}
