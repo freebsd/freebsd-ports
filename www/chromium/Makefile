@@ -12,27 +12,27 @@ CATEGORIES=	www
 MASTER_SITES=	http://download.goodking.org/downloads/ \
 		ftp://rene-ladan.nl/pub/distfiles/ \
 		http://files.etoilebsd.net/goodking/
-DISTNAME=	chromium-${DISTVERSIONPREFIX}${DISTVERSION}
+DISTNAME=	${PORTNAME}-${DISTVERSIONPREFIX}${DISTVERSION}
 
 MAINTAINER=	chromium@FreeBSD.org
 COMMENT=	A mostly BSD-licensed web browser based on WebKit and Gtk+
 
-BUILD_DEPENDS=	${LOCALBASE}/bin/flex:${PORTSDIR}/textproc/flex		\
-		${LOCALBASE}/bin/gperf:${PORTSDIR}/devel/gperf		\
-		bash:${PORTSDIR}/shells/bash		\
-		pkg-config:${PORTSDIR}/devel/pkg-config	\
-		yasm:${PORTSDIR}/devel/yasm		\
+BUILD_DEPENDS=	${LOCALBASE}/bin/flex:${PORTSDIR}/textproc/flex \
+		${LOCALBASE}/bin/gperf:${PORTSDIR}/devel/gperf \
+		bash:${PORTSDIR}/shells/bash \
+		pkg-config:${PORTSDIR}/devel/pkg-config \
+		yasm:${PORTSDIR}/devel/yasm \
 		nss>=3.12:${PORTSDIR}/security/nss
 # minimal version of nss, LIB_DEPENDS does not enforce this
 
-LIB_DEPENDS=	execinfo.1:${PORTSDIR}/devel/libexecinfo	\
-		cairo.2:${PORTSDIR}/graphics/cairo		\
-		dbus-1.3:${PORTSDIR}/devel/dbus			\
-		dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib	\
-		Xss.1:${PORTSDIR}/x11/libXScrnSaver		\
-		asound.2:${PORTSDIR}/audio/alsa-lib		\
-		freetype.9:${PORTSDIR}/print/freetype2		\
-		nss3.1:${PORTSDIR}/security/nss			\
+LIB_DEPENDS=	execinfo.1:${PORTSDIR}/devel/libexecinfo \
+		cairo.2:${PORTSDIR}/graphics/cairo \
+		dbus-1.3:${PORTSDIR}/devel/dbus \
+		dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib \
+		Xss.1:${PORTSDIR}/x11/libXScrnSaver \
+		asound.2:${PORTSDIR}/audio/alsa-lib \
+		freetype.9:${PORTSDIR}/print/freetype2 \
+		nss3.1:${PORTSDIR}/security/nss \
 		gnome-keyring.0:${PORTSDIR}/security/libgnome-keyring
 
 RUN_DEPENDS=	${LOCALBASE}/lib/alsa-lib/libasound_module_pcm_oss.so:${PORTSDIR}/audio/alsa-plugins \
@@ -68,10 +68,10 @@ GYP_DEFINES+=	use_system_yasm=1
 #GYP_DEFINES+=	use_system_zlib=1
 GYP_DEFINES+=	python_ver=${PYTHON_VER}
 
-OPTIONS=	CODECS		"Compile and enable patented codecs like H.264" off \
-		GCONF		"Use gconf2 for preferences"		on \
-		SSE2		"Use SSE2, disable this for PIII or older" on \
-		VPX		"Use system libvpx for VP8 codec"	on
+OPTIONS=	CODECS	"Compile and enable patented codecs like H.264"	off \
+		GCONF	"Use GConf2 for preferences"			on \
+		SSE2	"Use SSE2, disable this for PIII or older"	on \
+		VPX	"Use system libvpx for VP8 codec"		on
 
 .include <bsd.port.options.mk>
 
@@ -125,9 +125,9 @@ pre-everything::
 	@${ECHO_MSG}
 
 post-patch:
-	@${REINPLACE_CMD} -e "s|/usr/local|${LOCALBASE}|"	\
-		${WRKSRC}/base/base.gypi			\
-		${WRKSRC}/build/common.gypi			\
+	@${REINPLACE_CMD} -e "s|/usr/local|${LOCALBASE}|" \
+		${WRKSRC}/base/base.gypi \
+		${WRKSRC}/build/common.gypi \
 		${WRKSRC}/third_party/libvpx/libvpx.gyp \
 		${WRKSRC}/third_party/WebKit/Source/WebCore/plugins/PluginDatabase.cpp \
 		${WRKSRC}/v8/tools/gyp/v8.gyp
@@ -139,17 +139,17 @@ post-patch:
 		${WRKSRC}/third_party/WebKit/Source/WebCore/bindings/scripts/IDLParser.pm \
 		${WRKSRC}/third_party/WebKit/Source/WebCore/dom/make_names.pl
 	@${REINPLACE_CMD} -e "s|'flex'|'${LOCALBASE}/bin/flex'|" \
-		${WRKSRC}/third_party/angle/src/build_angle.gyp  \
+		${WRKSRC}/third_party/angle/src/build_angle.gyp \
 		${WRKSRC}/third_party/WebKit/Source/WebCore/WebCore.gyp/scripts/action_maketokenizer.py
 	@${REINPLACE_CMD} -e 's|gperf --key-positions|${LOCALBASE}/bin/gperf --key-positions|' \
-		${WRKSRC}/third_party/WebKit/Source/WebCore/css/makeprop.pl	\
-		${WRKSRC}/third_party/WebKit/Source/WebCore/css/makevalues.pl	\
+		${WRKSRC}/third_party/WebKit/Source/WebCore/css/makeprop.pl \
+		${WRKSRC}/third_party/WebKit/Source/WebCore/css/makevalues.pl \
 		${WRKSRC}/third_party/WebKit/Source/WebCore/make-hash-tools.pl
-	# kludges just to make it progress for now
-	@${REINPLACE_CMD} -e "s|/usr/lib|${LOCALBASE}/lib|"		\
+# kludges just to make it progress for now
+	@${REINPLACE_CMD} -e "s|/usr/lib|${LOCALBASE}/lib|" \
 			-e "s|'python_ver%': '2.5'|'python_ver%': '2.6'|" \
-			-e "s|.so.1.0|.so.1|"				\
-		${WRKSRC}/build/common.gypi
+			-e "s|.so.1.0|.so.1|" \
+				${WRKSRC}/build/common.gypi
 	@${REINPLACE_CMD} -e "s|'-ldl',|'-lc',|" \
 		${WRKSRC}/app/app_base.gypi \
 		${WRKSRC}/build/linux/system.gyp \
@@ -158,25 +158,29 @@ post-patch:
 
 do-configure:
 	cd ${WRKSRC} && \
-		GYP_DEFINES="${GYP_DEFINES}" ${PYTHON_CMD} ./build/gyp_chromium chrome/chrome.gyp --depth ./
+		GYP_DEFINES="${GYP_DEFINES}" ${PYTHON_CMD} \
+			./build/gyp_chromium chrome/chrome.gyp --depth .
 
 do-install:
-	${MKDIR} ${DATADIR}
+	@${MKDIR} ${DATADIR}
 	${INSTALL_MAN} ${WRKSRC}/out/${BUILDTYPE}/chrome.1 ${MANPREFIX}/man/man1
-	${INSTALL_DATA} ${WRKSRC}/out/${BUILDTYPE}/chrome.pak ${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/out/${BUILDTYPE}/product_logo_48.png ${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/out/${BUILDTYPE}/resources.pak ${DATADIR}
-	${INSTALL_SCRIPT} ${WRKSRC}/out/${BUILDTYPE}/chrome-wrapper ${DATADIR}
-	${INSTALL_SCRIPT} ${WRKSRC}/out/${BUILDTYPE}/xdg-settings ${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/out/${BUILDTYPE}/chrome.pak \
+		${WRKSRC}/out/${BUILDTYPE}/product_logo_48.png \
+		${WRKSRC}/out/${BUILDTYPE}/resources.pak ${DATADIR}
+	${INSTALL_SCRIPT} ${WRKSRC}/out/${BUILDTYPE}/chrome-wrapper \
+		${WRKSRC}/out/${BUILDTYPE}/xdg-settings ${DATADIR}
 .for f in chrome ffmpegsumo_nolink libffmpegsumo.so mksnapshot protoc
 	${INSTALL_PROGRAM} ${WRKSRC}/out/${BUILDTYPE}/${f} ${DATADIR}
 .endfor
-	cd ${WRKSRC}/out/${BUILDTYPE} && ${COPYTREE_SHARE} "locales resources" ${DATADIR}
-	${LN} -sf ${DATADIR}/chrome ${PREFIX}/bin/
+	cd ${WRKSRC}/out/${BUILDTYPE} && \
+		${COPYTREE_SHARE} "locales resources" ${DATADIR}
+	${LN} -sf ${DATADIR}/chrome ${PREFIX}/bin
 
 post-install:
 .if ${OSVERSION} < 900000
+	@${ECHO_CMD}
 	@${CAT} ${PKGMESSAGE}
+	@${ECHO_CMD}
 .endif
 
 .include <bsd.port.mk>
