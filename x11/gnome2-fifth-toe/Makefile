@@ -29,7 +29,6 @@ RUN_DEPENDS=	pan:${PORTSDIR}/news/pan \
 		nautilus-sendto:${PORTSDIR}/deskutils/nautilus-sendto \
 		inkscape:${PORTSDIR}/graphics/inkscape \
 		atomix:${PORTSDIR}/games/atomix \
-		straw:${PORTSDIR}/net/straw \
 		${LOCALBASE}/share/gnome/help/gdp-handbook/C/builddocs.xml:${PORTSDIR}/misc/gnome-devel-docs
 
 MASTERDIR=	${.CURDIR}/../gnome2
