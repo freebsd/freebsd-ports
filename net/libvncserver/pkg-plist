@@ -15,4 +15,6 @@ lib/libvncserver.la
 lib/libvncclient.so.0
 lib/libvncclient.so
 lib/libvncclient.la
+libdata/pkgconfig/libvncserver.pc
+libdata/pkgconfig/libvncclient.pc
 @dirrm include/rfb
