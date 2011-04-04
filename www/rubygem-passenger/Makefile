@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	passenger
-PORTVERSION=	3.0.5
+PORTVERSION=	3.0.6
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 PKGNAMEPREFIX=	rubygem-
@@ -34,7 +34,12 @@ USE_APACHE=	2.2+
 .endif
 
 .if defined(WITH_NGINXPORT)
-BUILD_DEPENDS+=	nginx>=0.8.54:${PORTSDIR}/www/nginx
+NGINXVERSION!=	${PKG_INFO} -qO www/nginx-devel 2>/dev/null || true
+.if empty(NGINXVERSION)
+BUILD_DEPENDS+=	nginx:${PORTSDIR}/www/nginx
+.else
+BUILD_DEPENDS+=	nginx:${PORTSDIR}/www/nginx-devel
+.endif
 .endif
 
 LIB_DEPENDS+=	ev.3:${PORTSDIR}/devel/libev \
