@@ -1,0 +1,11 @@
+--- etc/Makefile.in.orig	2011-03-17 06:55:24.700517870 +0100
++++ etc/Makefile.in	2011-03-17 06:57:38.716913390 +0100
+@@ -230,7 +230,7 @@
+ top_srcdir = @top_srcdir@
+ xneurrcdir = $(sysconfdir)/xneur
+ xneurrc_DATA = \
+-	xneurrc	
++	xneurrc.sample
+ 
+ EXTRA_DIST = $(xneurrc_DATA)
+ all: all-am

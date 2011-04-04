@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xneur
-PORTVERSION=	0.10.0
+PORTVERSION=	0.12.0
 CATEGORIES=	deskutils
 MASTER_SITES=	http://dists.xneur.ru/release-${DISTVERSION}/tgz/ \
 		http://mirror.amdmi3.ru/distfiles/
@@ -14,15 +14,17 @@ MASTER_SITES=	http://dists.xneur.ru/release-${DISTVERSION}/tgz/ \
 MAINTAINER=	admin@lissyara.su
 COMMENT=	Auto keyboard switcher
 
-LIB_DEPENDS=	notify.1:${PORTSDIR}/devel/libnotify
+LIB_DEPENDS=	notify.1:${PORTSDIR}/devel/libnotify \
+		pcre.0:${PORTSDIR}/devel/pcre
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_GNOME=	pkgconfig gnomehack
 USE_ICONV=	yes
 LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
+CPPFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
 CONFIGURE_ARGS=	--disable-static --libdir=${PREFIX}/lib/xneur
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
+CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" \
 		LDFLAGS="${LDFLAGS}"
 
 USE_LDCONFIG=	yes
@@ -32,7 +34,6 @@ MAN5=		xneurrc.5
 
 OPTIONS=	GSTREAMER	"Build with GStreamer sound support"	on \
 		OPENAL		"Build with OpenAL sound support"	off \
-		PCRE		"Build with libpcre support"		on \
 		ASPELL		"Build with aspell support"		on \
 		XOSD		"Build with xosd support"		off
 
@@ -40,7 +41,7 @@ OPTIONS=	GSTREAMER	"Build with GStreamer sound support"	on \
 
 .if !defined(WITHOUT_NLS)
 USE_GETTEXT=	yes
-LDFLAGS+=	-lintl
+CONFIGURE_ARGS+=	--enable-nls
 PLIST_SUB+=	NLS=""
 .else
 CONFIGURE_ARGS+=	--disable-nls
@@ -48,21 +49,21 @@ PLIST_SUB+=	NLS="@comment "
 .endif
 
 .if defined(WITHOUT_X11)
-CONFIGURE_ARGS+=	--with-x=no
+CONFIGURE_ARGS+=	--without-x
 .else
 USE_XORG+=	x11
 CONFIGURE_ARGS+=	--with-x
 .endif
 
 .if !defined(WITHOUT_GSTREAMER) && defined(WITH_OPENAL)
-IGNORE=	please select support one of the sound library
+IGNORE=	please select only one sound library
 .else
 .if !defined(WITHOUT_GSTREAMER)
 USE_GSTREAMER=	yes
 CONFIGURE_ARGS+=	--with-sound=gstreamer
 .endif
 .if defined(WITH_OPENAL)
-USE_OPENAL=		al
+USE_OPENAL=		al alut
 CONFIGURE_ARGS+=	--with-sound=openal
 .endif
 .if defined(WITHOUT_GSTREAMER) && !defined(WITH_OPENAL)
@@ -70,31 +71,26 @@ CONFIGURE_ARGS+=	--with-sound=no
 .endif
 .endif
 
-.if defined(WITHOUT_PCRE)
-CONFIGURE_ARGS+=	--without-pcre
-.else
-LIB_DEPENDS+=	pcre.0:${PORTSDIR}/devel/pcre
-.endif
-
 .if defined(WITHOUT_ASPELL)
-CONFIGURE_ARGS+=	--without-aspell
+CONFIGURE_ARGS+=	--with-spell=no --without-aspell
 .else
 LIB_DEPENDS+=	aspell:${PORTSDIR}/textproc/aspell
+CONFIGURE_ARGS+=	--with-spell=aspell
 .endif
 
 .if !defined(WITH_XOSD)
 CONFIGURE_ARGS+=	--without-xosd
 .else
 LIB_DEPENDS+=	xosd.4:${PORTSDIR}/misc/xosd
+CONFIGURE_ARGS+=	--with-xosd
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e '/^CFLAGS=/s|="|="$$CFLAGS |' ${WRKSRC}/configure
-	@${REINPLACE_CMD} -e 's|	xneurrc	|xneurrc.dist|g' ${WRKSRC}/etc/Makefile.in
-	${CP} -np ${WRKSRC}/etc/xneurrc ${WRKSRC}/etc/xneurrc.dist
+	@${MV} ${WRKSRC}/etc/xneurrc ${WRKSRC}/etc/xneurrc.sample
 
 post-install:
-	@for i in ${PREFIX}/etc/xneur/*.dist ;\
-		do ${CP} -np $$i $${i%.dist}; done
+.if !exists(${PREFIX}/etc/xneur/xneurrc)
+	${CP} -p ${PREFIX}/etc/xneur/xneurrc.sample ${PREFIX}/etc/xneur/xneurrc
+.endif
 
 .include <bsd.port.post.mk>
