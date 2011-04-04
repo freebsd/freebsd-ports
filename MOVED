@@ -1668,3 +1668,4 @@ x11-toolkits/linux-f8-pango||2011-04-04|Has expired: End of Life since Jan 7, 20
 x11-toolkits/linux-f8-qt33||2011-04-04|Has expired: End of Life since Jan 7, 2009
 x11-toolkits/linux-f8-tk84||2011-04-04|Has expired: End of Life since Jan 7, 2009
 x11/linux-f8-xorg-libs||2011-04-04|Has expired: End of Life since Jan 7, 2009
+databases/erserver||2011-04-04|Has expired: does not compile on FreeBSD 7.x or newer
