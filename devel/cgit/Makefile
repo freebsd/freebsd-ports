@@ -36,6 +36,7 @@ MAKE_ENV+=	LDFLAGS="-L${LOCALBASE}/lib" \
 		NEEDS_LIBICONV=yes
 
 SUB_FILES=	pkg-message
+SUB_LIST+=	PORTNAME=${PORTNAME}
 
 post-extract:
 	@${RMDIR} ${WRKSRC}/git
