@@ -355,12 +355,6 @@
     SUBDIR += linux-f10-libxml2
     SUBDIR += linux-f10-scim-gtk
     SUBDIR += linux-f10-scim-libs
-    SUBDIR += linux-f8-aspell
-    SUBDIR += linux-f8-expat
-    SUBDIR += linux-f8-libxml
-    SUBDIR += linux-f8-libxml2
-    SUBDIR += linux-f8-scim-gtk
-    SUBDIR += linux-f8-scim-libs
     SUBDIR += linux-libxml
     SUBDIR += linux-libxml2
     SUBDIR += linux-scim-gtk

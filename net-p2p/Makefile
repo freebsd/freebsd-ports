@@ -17,7 +17,6 @@
     SUBDIR += createtorrent
     SUBDIR += ctcs
     SUBDIR += ctorrent
-    SUBDIR += dcd
     SUBDIR += dclib
     SUBDIR += dctc
     SUBDIR += dctc-gui

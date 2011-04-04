@@ -103,7 +103,6 @@
     SUBDIR += liberation-fonts-ttf
     SUBDIR += libfontenc
     SUBDIR += linux-f10-fontconfig
-    SUBDIR += linux-f8-fontconfig
     SUBDIR += linux-fontconfig
     SUBDIR += linuxlibertine
     SUBDIR += manu-gothica
