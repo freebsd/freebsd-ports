@@ -609,6 +609,7 @@
     SUBDIR += portaudio2
     SUBDIR += praat
     SUBDIR += prokyon3
+    SUBDIR += puddletag
     SUBDIR += pulseaudio
     SUBDIR += py-ao
     SUBDIR += py-apetag
