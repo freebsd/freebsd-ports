@@ -1,6 +1,6 @@
 bin/tepsonic
 lib/libtepsonic_lastfmscrobbler.so
-lib/libtepsonic_lastfmscrobbler.so.0.1.0
+lib/libtepsonic_lastfmscrobbler.so.0.2.0
 lib/libtepsonic_lastfmscrobbler.so.1
 share/applications/tepsonic.desktop
 share/icons/hicolor/128x128/apps/tepsonic.png
@@ -9,8 +9,6 @@ share/icons/hicolor/256x256/apps/tepsonic.png
 share/icons/hicolor/32x32/apps/tepsonic.png
 share/icons/hicolor/48x48/apps/tepsonic.png
 share/icons/hicolor/64x64/apps/tepsonic.png
-%%DATADIR%%/locale/tepsonic/cs.qm
-%%DATADIR%%/locale/lastfmscrobbler/cs.qm
 @dirrm %%DATADIR%%/locale/tepsonic
 @dirrm %%DATADIR%%/locale/lastfmscrobbler
 @dirrm %%DATADIR%%/locale

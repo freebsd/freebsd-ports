@@ -1,0 +1,10 @@
+--- 3rdparty/qxt/CMakeLists.txt.orig	2011-03-09 05:08:14.000000000 +0700
++++ 3rdparty/qxt/CMakeLists.txt	2011-04-02 22:57:57.000000000 +0800
+@@ -1,6 +1,7 @@
+ cmake_minimum_required(VERSION 2.6)
+ 
+ find_package(Qt4 REQUIRED)
++include_directories(%%LOCALBASE%%/include/)
+ 
+ include_directories(
+         ${QT_INCLUDE_DIR}
