@@ -7,7 +7,7 @@
 
 PORTNAME=	openjdk6
 PORTVERSION=	b22
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	java devel
 MASTER_SITES=	http://download.java.net/openjdk/jdk6/promoted/${PORTVERSION}/ \
 		http://download.java.net/jaxp/openjdk/jdk6/:jaxp \
@@ -65,7 +65,7 @@ JAXWS_BUILD=	b20
 JAXWSFILE=	jdk6-jaxws-${JAXWS_BUILD}.zip
 JAF_BUILD=	b20
 JAFFILE=	jdk6-jaf-${JAF_BUILD}.zip
-ITWEBVERSION=	1.0.1
+ITWEBVERSION=	1.0.2
 ITWEBFILE=	icedtea-web-${ITWEBVERSION}${EXTRACT_SUFX}
 JTREGVERSION=	b02
 JTREGFILE=	jtreg-4.1-bin-${JTREGVERSION}_21_may_2010.zip
