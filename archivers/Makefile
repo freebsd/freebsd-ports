@@ -162,6 +162,7 @@
     SUBDIR += rzip
     SUBDIR += sectar
     SUBDIR += sharutils
+    SUBDIR += snappy
     SUBDIR += squeeze
     SUBDIR += squsq
     SUBDIR += star

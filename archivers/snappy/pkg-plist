@@ -1,0 +1,7 @@
+include/snappy.h
+include/snappy-sinksource.h
+include/snappy-stubs-public.h
+lib/libsnappy.a
+lib/libsnappy.la
+lib/libsnappy.so
+lib/libsnappy.so.1
