@@ -66,6 +66,7 @@ lib/ocaml/bigarray.cma
 lib/ocaml/bigarray.cmi
 lib/ocaml/bigarray.cmx
 lib/ocaml/bigarray.cmxa
+lib/ocaml/bigarray.cmxs
 lib/ocaml/bigarray.mli
 lib/ocaml/buffer.cmi
 lib/ocaml/buffer.cmx
@@ -271,12 +272,16 @@ lib/ocaml/dbm.cma
 lib/ocaml/dbm.cmi
 lib/ocaml/dbm.cmx
 lib/ocaml/dbm.cmxa
+lib/ocaml/dbm.cmxs
 lib/ocaml/dbm.mli
 lib/ocaml/digest.cmi
 lib/ocaml/digest.cmx
 lib/ocaml/digest.ml
 lib/ocaml/digest.mli
 %%PROF%%lib/ocaml/digest.p.cmx
+lib/ocaml/dynlink.a
+lib/ocaml/dynlink.cmx
+lib/ocaml/dynlink.cmxa
 lib/ocaml/dynlink.cma
 lib/ocaml/dynlink.cmi
 lib/ocaml/dynlink.mli
@@ -308,6 +313,7 @@ lib/ocaml/genlex.mli
 %%X11%%lib/ocaml/graphics.cmi
 %%X11%%lib/ocaml/graphics.cmx
 %%X11%%lib/ocaml/graphics.cmxa
+%%X11%%lib/ocaml/graphics.cmxs
 %%X11%%lib/ocaml/graphics.mli
 %%X11%%lib/ocaml/graphicsX11.cmi
 %%X11%%lib/ocaml/graphicsX11.cmx
@@ -710,6 +716,7 @@ lib/ocaml/num.mli
 lib/ocaml/nums.a
 lib/ocaml/nums.cma
 lib/ocaml/nums.cmxa
+lib/ocaml/nums.cmxs
 lib/ocaml/obj.cmi
 lib/ocaml/obj.cmx
 lib/ocaml/obj.ml
@@ -868,6 +875,7 @@ lib/ocaml/str.cma
 lib/ocaml/str.cmi
 lib/ocaml/str.cmx
 lib/ocaml/str.cmxa
+lib/ocaml/str.cmxs
 lib/ocaml/str.mli
 lib/ocaml/stream.cmi
 lib/ocaml/stream.cmx
@@ -923,6 +931,7 @@ lib/ocaml/unix.cma
 lib/ocaml/unix.cmi
 lib/ocaml/unix.cmx
 lib/ocaml/unix.cmxa
+lib/ocaml/unix.cmxs
 lib/ocaml/unix.mli
 lib/ocaml/unixLabels.cmi
 lib/ocaml/unixLabels.cmx
