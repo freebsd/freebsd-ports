@@ -1069,7 +1069,6 @@
     SUBDIR += ssmping
     SUBDIR += ssvnc
     SUBDIR += stone
-    SUBDIR += straw
     SUBDIR += stund
     SUBDIR += subnetcalc
     SUBDIR += suckblow

@@ -422,17 +422,6 @@
     SUBDIR += linux-f10-openal
     SUBDIR += linux-f10-openal-soft
     SUBDIR += linux-f10-sdl_mixer
-    SUBDIR += linux-f8-alsa-lib
-    SUBDIR += linux-f8-arts
-    SUBDIR += linux-f8-esound
-    SUBDIR += linux-f8-freealut
-    SUBDIR += linux-f8-libaudiofile
-    SUBDIR += linux-f8-libogg
-    SUBDIR += linux-f8-libvorbis
-    SUBDIR += linux-f8-mikmod
-    SUBDIR += linux-f8-nas-libs
-    SUBDIR += linux-f8-openal
-    SUBDIR += linux-f8-sdl_mixer
     SUBDIR += linux-fmodapi
     SUBDIR += linux-freealut
     SUBDIR += linux-genpuid

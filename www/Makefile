@@ -391,7 +391,6 @@
     SUBDIR += links
     SUBDIR += links1
     SUBDIR += linux-f10-flashplugin10
-    SUBDIR += linux-f8-flashplugin10
     SUBDIR += linux-firefox
     SUBDIR += linux-firefox-devel
     SUBDIR += linux-flashplugin7
@@ -418,11 +417,7 @@
     SUBDIR += mathopd
     SUBDIR += mawstats
     SUBDIR += mediawiki
-    SUBDIR += mediawiki112
-    SUBDIR += mediawiki113
-    SUBDIR += mediawiki114
     SUBDIR += mediawiki115
-    SUBDIR += mediawiki16
     SUBDIR += mergelog
     SUBDIR += metacafe_dl
     SUBDIR += mgstat

@@ -50,7 +50,6 @@
     SUBDIR += gnome-bluecurve-theme
     SUBDIR += gnome-icons
     SUBDIR += gnome-icons-aqua-fusion
-    SUBDIR += gnome-icons-cool-gorilla
     SUBDIR += gnome-icons-crystal
     SUBDIR += gnome-icons-dropline-neu
     SUBDIR += gnome-icons-dropline-nou
@@ -170,7 +169,6 @@
     SUBDIR += lila-xfwm4
     SUBDIR += linux-f10-hicolor-icon-theme
     SUBDIR += linux-f10-qtcurve-gtk2
-    SUBDIR += linux-f8-hicolor-icon-theme
     SUBDIR += linux-gtk-bluecurve-theme
     SUBDIR += linux-hicolor-icon-theme
     SUBDIR += lxappearance

@@ -1596,3 +1596,75 @@ java/netbeans3|java/netbeans|2011-03-31|Has expired: old, unmaintained, use java
 java/netbeans4|java/netbeans|2011-03-31|Has expired: old, unmaintained, use java/netbeans instead
 java/netbeans5|java/netbeans|2011-03-31|Has expired: old, unmaintained, use java/netbeans instead
 textproc/rubygem-bzip2||2011-04-03|Removed
+accessibility/linux-f8-atk||2011-04-04|Has expired: End of Life since Jan 7, 2009
+archivers/linux-f8-ucl||2011-04-04|Has expired: End of Life since Jan 7, 2009
+archivers/linux-f8-upx||2011-04-04|Has expired: End of Life since Jan 7, 2009
+audio/linux-f8-alsa-lib||2011-04-04|Has expired: End of Life since Jan 7, 2009
+audio/linux-f8-arts||2011-04-04|Has expired: End of Life since Jan 7, 2009
+audio/linux-f8-esound||2011-04-04|Has expired: End of Life since Jan 7, 2009
+audio/linux-f8-freealut||2011-04-04|Has expired: End of Life since Jan 7, 2009
+audio/linux-f8-libaudiofile||2011-04-04|Has expired: End of Life since Jan 7, 2009
+audio/linux-f8-libogg||2011-04-04|Has expired: End of Life since Jan 7, 2009
+audio/linux-f8-libvorbis||2011-04-04|Has expired: End of Life since Jan 7, 2009
+audio/linux-f8-mikmod||2011-04-04|Has expired: End of Life since Jan 7, 2009
+audio/linux-f8-nas-libs||2011-04-04|Has expired: End of Life since Jan 7, 2009
+audio/linux-f8-openal||2011-04-04|Has expired: End of Life since Jan 7, 2009
+audio/linux-f8-sdl_mixer||2011-04-04|Has expired: End of Life since Jan 7, 2009
+databases/linux-f8-sqlite3||2011-04-04|Has expired: End of Life since Jan 7, 2009
+databases/postgresql81-server||2011-04-04|Has expired: EOL see http://wiki.postgresql.org/wiki/PostgreSQL_Release_Support_Policy
+databases/postgresql73-server||2011-04-04|Has expired: EOL see http://wiki.postgresql.org/wiki/PostgreSQL_Release_Support_Policy
+databases/postgresql74-server||2011-04-04|Has expired: EOL see http://wiki.postgresql.org/wiki/PostgreSQL_Release_Support_Policy
+databases/postgresql80-server||2011-04-04|Has expired: EOL see http://wiki.postgresql.org/wiki/PostgreSQL_Release_Support_Policy
+devel/linux-f8-libglade||2011-04-04|Has expired: End of Life since Jan 7, 2009
+devel/linux-f8-sdl12||2011-04-04|Has expired: End of Life since Jan 7, 2009
+devel/linux-f8-allegro||2011-04-04|Has expired: End of Life since Jan 7, 2009
+devel/linux-f8-libsigc++20||2011-04-04|Has expired: End of Life since Jan 7, 2009
+devel/linux-f8-libglade2||2011-04-04|Has expired: End of Life since Jan 7, 2009
+devel/linux-f8-nspr||2011-04-04|Has expired: End of Life since Jan 7, 2009
+dns/linux-f8-libidn||2011-04-04|Has expired: End of Life since Jan 7, 2009
+emulators/linux_base-f8||2011-04-04|Has expired: End of Life since Jan 7, 2009
+emulators/linux_base-f9||2011-04-04|Has expired: End of Life since Jul 10, 2009
+emulators/linux_base-fc6||2011-04-04|Has expired: End of Life since December 7, 2007
+emulators/linux_base-f7||2011-04-04|Has expired: End of Life since June 13, 2008
+ftp/linux-f8-curl||2011-04-04|Has expired: End of Life since Jan 7, 2009
+graphics/linux-f8-sdl_image||2011-04-04|Has expired: End of Life since Jan 7, 2009
+graphics/linux-f8-ungif||2011-04-04|Has expired: End of Life since Jan 7, 2009
+graphics/linux-f8-imlib||2011-04-04|Has expired: End of Life since Jan 7, 2009
+graphics/linux-f8-cairo||2011-04-04|Has expired: End of Life since Jan 7, 2009
+graphics/linux-f8-dri||2011-04-04|Has expired: End of Life since Jan 7, 2009
+graphics/linux-f8-gdk-pixbuf||2011-04-04|Has expired: End of Life since Jan 7, 2009
+graphics/linux-f8-jpeg||2011-04-04|Has expired: End of Life since Jan 7, 2009
+graphics/linux-f8-png||2011-04-04|Has expired: End of Life since Jan 7, 2009
+graphics/linux-f8-libGLU||2011-04-04|Has expired: End of Life since Jan 7, 2009
+graphics/linux-f8-libmng||2011-04-04|Has expired: End of Life since Jan 7, 2009
+graphics/linux-f8-png10||2011-04-04|Has expired: End of Life since Jan 7, 2009
+graphics/linux-f8-tiff||2011-04-04|Has expired: End of Life since Jan 7, 2009
+lang/linux-f8-libg2c||2011-04-04|Has expired: End of Life since Jan 7, 2009
+lang/linux-f8-tcl84||2011-04-04|Has expired: End of Life since Jan 7, 2009
+multimedia/linux-f8-libtheora||2011-04-04|Has expired: End of Life since Jan 7, 2009
+net-p2p/dcd||2011-04-04|Has expired: No fetch sources and looks like project abandoned
+net/straw||2011-04-04|Has expired: abandoned upstream and does not work with python 2.6+
+security/linux-f8-libssh2||2011-04-04|Has expired: End of Life since Jan 7, 2009
+security/linux-f8-nss||2011-04-04|Has expired: End of Life since Jan 7, 2009
+security/linux-f8-openssl||2011-04-04|Has expired: End of Life since Jan 7, 2009
+textproc/linux-f8-libxml2||2011-04-04|Has expired: End of Life since Jan 7, 2009
+textproc/linux-f8-scim-gtk||2011-04-04|Has expired: End of Life since Jan 7, 2009
+textproc/linux-f8-scim-libs||2011-04-04|Has expired: End of Life since Jan 7, 2009
+textproc/linux-f8-expat||2011-04-04|Has expired: End of Life since Jan 7, 2009
+textproc/linux-f8-libxml||2011-04-04|Has expired: End of Life since Jan 7, 2009
+textproc/linux-f8-aspell||2011-04-04|Has expired: End of Life since Jan 7, 2009
+www/linux-f8-flashplugin10||2011-04-04|Has expired: End of Life since Jan 7, 2009
+www/mediawiki112||2011-04-04|Has expired: abandoned upstream
+www/mediawiki113||2011-04-04|Has expired: abandoned upstream
+www/mediawiki114||2011-04-04|Has expired: abandoned upstream
+www/mediawiki16||2011-04-04|Has expired: abandoned upstream
+x11-fonts/linux-f8-fontconfig||2011-04-04|Has expired: End of Life since Jan 7, 2009
+x11-themes/gnome-icons-cool-gorilla||2011-04-04|Has expired: "no mastersite"
+x11-themes/linux-f8-hicolor-icon-theme||2011-04-04|Has expired: End of Life since Jan 7, 2009
+x11-toolkits/linux-f8-gtk||2011-04-04|Has expired: End of Life since Jan 7, 2009
+x11-toolkits/linux-f8-gtk2||2011-04-04|Has expired: End of Life since Jan 7, 2009
+x11-toolkits/linux-f8-openmotif||2011-04-04|Has expired: End of Life since Jan 7, 2009
+x11-toolkits/linux-f8-pango||2011-04-04|Has expired: End of Life since Jan 7, 2009
+x11-toolkits/linux-f8-qt33||2011-04-04|Has expired: End of Life since Jan 7, 2009
+x11-toolkits/linux-f8-tk84||2011-04-04|Has expired: End of Life since Jan 7, 2009
+x11/linux-f8-xorg-libs||2011-04-04|Has expired: End of Life since Jan 7, 2009

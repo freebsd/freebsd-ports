@@ -178,7 +178,6 @@
     SUBDIR += libudbc
     SUBDIR += libzdb
     SUBDIR += linux-f10-sqlite3
-    SUBDIR += linux-f8-sqlite3
     SUBDIR += linux-oracle-instantclient-basic
     SUBDIR += linux-oracle-instantclient-sdk
     SUBDIR += linux-oracle-instantclient-sqlplus
@@ -612,15 +611,11 @@
     SUBDIR += postgresql-repmgr
     SUBDIR += postgresql-tcltk
     SUBDIR += postgresql73-client
-    SUBDIR += postgresql73-server
     SUBDIR += postgresql74-client
-    SUBDIR += postgresql74-server
     SUBDIR += postgresql74-contrib
     SUBDIR += postgresql80-client
-    SUBDIR += postgresql80-server
     SUBDIR += postgresql80-contrib
     SUBDIR += postgresql81-client
-    SUBDIR += postgresql81-server
     SUBDIR += postgresql81-contrib
     SUBDIR += postgresql82-client
     SUBDIR += postgresql82-server

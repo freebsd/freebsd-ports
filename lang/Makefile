@@ -154,8 +154,6 @@
     SUBDIR += libutils
     SUBDIR += linux-f10-libg2c
     SUBDIR += linux-f10-tcl85
-    SUBDIR += linux-f8-libg2c
-    SUBDIR += linux-f8-tcl84
     SUBDIR += linux-j
     SUBDIR += linux-libg2c
     SUBDIR += linux-libperl5.8
