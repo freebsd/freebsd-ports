@@ -396,7 +396,7 @@ CONFIGURE_ARGS+=--with-pcre
 .endif
 
 .if defined(WITH_PASSENGER_MODULE)
-PASSENGER_VERSION=	3.0.5
+PASSENGER_VERSION=	3.0.6
 MASTER_SITES+=	RF/passenger/:passenger
 DISTFILES+=	passenger-${PASSENGER_VERSION}.tar.gz:passenger
 CONFIGURE_ARGS+=--add-module=${WRKDIR}/passenger-${PASSENGER_VERSION}/ext/nginx
@@ -495,8 +495,8 @@ post-patch:
 		42s!true!false!' \
 		${WRKDIR}/passenger-${PASSENGER_VERSION}/build/config.rb
 	@${REINPLACE_CMD} \
-		'259s!-I/usr/include/libev!!; \
-		260s!-lev!!' \
+		's!-I/usr/include/libev!!; \
+		s!-lev!!' \
 		${WRKDIR}/passenger-${PASSENGER_VERSION}/build/common_library.rb
 	@${REINPLACE_CMD} 's!-lpthread!${PTHREAD_LIBS}!g' \
 		${WRKDIR}/passenger-${PASSENGER_VERSION}/lib/phusion_passenger/platform_info/compiler.rb
