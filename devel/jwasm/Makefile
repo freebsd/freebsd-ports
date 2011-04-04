@@ -1,17 +1,17 @@
 # New ports collection makefile for:	jwasm
 # Date created:        7 April 2009
-# Whom:                Pedro F. Giffuni <giffunip@tutopia.com>
+# Whom:                Pedro F. Giffuni
 #
 # $FreeBSD$
 #
 
 PORTNAME=	jwasm
-PORTVERSION=	204
+PORTVERSION=	205
 CATEGORIES=	devel
 MASTER_SITES=	http://www.japheth.de/Download/JWasm/
-DISTNAME=	JWasm${PORTVERSION}cs
+DISTNAME=	JWasm${PORTVERSION}s
 
-MAINTAINER=	giffunip@tutopia.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fork of OpenWatcom's x86 assembler with AMD64 support
 
 ONLY_FOR_ARCHS=	amd64 i386
