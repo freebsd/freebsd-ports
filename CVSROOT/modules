@@ -10950,6 +10950,7 @@ p5-Algorithm-Accounting         ports/devel/p5-Algorithm-Accounting
 p5-Algorithm-Annotate           ports/devel/p5-Algorithm-Annotate
 p5-Algorithm-Bucketizer         ports/devel/p5-Algorithm-Bucketizer
 p5-Algorithm-C3                 ports/devel/p5-Algorithm-C3
+p5-Algorithm-CheckDigits        ports/textproc/p5-Algorithm-CheckDigits
 p5-Algorithm-ChooseSubsets      ports/devel/p5-Algorithm-ChooseSubsets
 p5-Algorithm-Cluster            ports/devel/p5-Algorithm-Cluster
 p5-Algorithm-Combinatorics      ports/math/p5-Algorithm-Combinatorics
@@ -12445,6 +12446,7 @@ p5-Filter-Crypto                ports/security/p5-Filter-Crypto
 p5-Filter-Simple                ports/textproc/p5-Filter-Simple
 p5-Filter-Template              ports/devel/p5-Filter-Template
 p5-Finance-Amortization         ports/finance/p5-Finance-Amortization
+p5-Finance-Bitcoin              ports/finance/p5-Finance-Bitcoin
 p5-Finance-Currency-Convert     ports/finance/p5-Finance-Currency-Convert
 p5-Finance-Currency-Convert-WebserviceX  ports/finance/p5-Finance-Currency-Convert-WebserviceX
 p5-Finance-Currency-Convert-XE  ports/finance/p5-Finance-Currency-Convert-XE
@@ -13323,6 +13325,7 @@ p5-MooseX-App-Cmd               ports/devel/p5-MooseX-App-Cmd
 p5-MooseX-Async                 ports/devel/p5-MooseX-Async
 p5-MooseX-Attribute-ENV         ports/devel/p5-MooseX-Attribute-ENV
 p5-MooseX-AttributeHelpers      ports/devel/p5-MooseX-AttributeHelpers
+p5-MooseX-ChainedAccessors      ports/devel/p5-MooseX-ChainedAccessors
 p5-MooseX-ClassAttribute        ports/devel/p5-MooseX-ClassAttribute
 p5-MooseX-Clone                 ports/devel/p5-MooseX-Clone
 p5-MooseX-CompileTime-Traits    ports/devel/p5-MooseX-CompileTime-Traits
@@ -13351,6 +13354,7 @@ p5-MooseX-RelatedClassRoles     ports/devel/p5-MooseX-RelatedClassRoles
 p5-MooseX-Role-Parameterized    ports/devel/p5-MooseX-Role-Parameterized
 p5-MooseX-Role-WithOverloading  ports/devel/p5-MooseX-Role-WithOverloading
 p5-MooseX-SemiAffordanceAccessor  ports/devel/p5-MooseX-SemiAffordanceAccessor
+p5-MooseX-SetOnce               ports/devel/p5-MooseX-SetOnce
 p5-MooseX-SimpleConfig          ports/devel/p5-MooseX-SimpleConfig
 p5-MooseX-Singleton             ports/devel/p5-MooseX-Singleton
 p5-MooseX-Storage               ports/devel/p5-MooseX-Storage
@@ -15097,6 +15101,7 @@ p5-algorithm-accounting         ports/devel/p5-Algorithm-Accounting
 p5-algorithm-annotate           ports/devel/p5-Algorithm-Annotate
 p5-algorithm-bucketizer         ports/devel/p5-Algorithm-Bucketizer
 p5-algorithm-c3                 ports/devel/p5-Algorithm-C3
+p5-algorithm-checkdigits        ports/textproc/p5-Algorithm-CheckDigits
 p5-algorithm-choosesubsets      ports/devel/p5-Algorithm-ChooseSubsets
 p5-algorithm-cluster            ports/devel/p5-Algorithm-Cluster
 p5-algorithm-combinatorics      ports/math/p5-Algorithm-Combinatorics
@@ -16620,6 +16625,7 @@ p5-filter-crypto                ports/security/p5-Filter-Crypto
 p5-filter-simple                ports/textproc/p5-Filter-Simple
 p5-filter-template              ports/devel/p5-Filter-Template
 p5-finance-amortization         ports/finance/p5-Finance-Amortization
+p5-finance-bitcoin              ports/finance/p5-Finance-Bitcoin
 p5-finance-currency-convert     ports/finance/p5-Finance-Currency-Convert
 p5-finance-currency-convert-webservicex  ports/finance/p5-Finance-Currency-Convert-WebserviceX
 p5-finance-currency-convert-xe  ports/finance/p5-Finance-Currency-Convert-XE
@@ -17513,6 +17519,7 @@ p5-moosex-app-cmd               ports/devel/p5-MooseX-App-Cmd
 p5-moosex-async                 ports/devel/p5-MooseX-Async
 p5-moosex-attribute-env         ports/devel/p5-MooseX-Attribute-ENV
 p5-moosex-attributehelpers      ports/devel/p5-MooseX-AttributeHelpers
+p5-moosex-chainedaccessors      ports/devel/p5-MooseX-ChainedAccessors
 p5-moosex-classattribute        ports/devel/p5-MooseX-ClassAttribute
 p5-moosex-clone                 ports/devel/p5-MooseX-Clone
 p5-moosex-compiletime-traits    ports/devel/p5-MooseX-CompileTime-Traits
@@ -17541,6 +17548,7 @@ p5-moosex-relatedclassroles     ports/devel/p5-MooseX-RelatedClassRoles
 p5-moosex-role-parameterized    ports/devel/p5-MooseX-Role-Parameterized
 p5-moosex-role-withoverloading  ports/devel/p5-MooseX-Role-WithOverloading
 p5-moosex-semiaffordanceaccessor  ports/devel/p5-MooseX-SemiAffordanceAccessor
+p5-moosex-setonce               ports/devel/p5-MooseX-SetOnce
 p5-moosex-simpleconfig          ports/devel/p5-MooseX-SimpleConfig
 p5-moosex-singleton             ports/devel/p5-MooseX-Singleton
 p5-moosex-storage               ports/devel/p5-MooseX-Storage
@@ -23342,6 +23350,7 @@ rubygem-bluecloth               ports/www/rubygem-bluecloth
 rubygem-builder                 ports/devel/rubygem-builder
 rubygem-bundler                 ports/sysutils/rubygem-bundler
 rubygem-bunny                   ports/net/rubygem-bunny
+rubygem-bzip2                   ports/archivers/rubygem-bzip2
 rubygem-callsign                ports/comms/rubygem-callsign
 rubygem-capistrano              ports/sysutils/rubygem-capistrano
 rubygem-captcha                 ports/graphics/rubygem-captcha
@@ -23461,6 +23470,7 @@ rubygem-liquid                  ports/textproc/rubygem-liquid
 rubygem-little_plugger          ports/devel/rubygem-little_plugger
 rubygem-locale                  ports/devel/rubygem-locale
 rubygem-lockfile                ports/devel/rubygem-lockfile
+rubygem-log4r                   ports/sysutils/rubygem-log4r
 rubygem-logging                 ports/devel/rubygem-logging
 rubygem-loofah                  ports/textproc/rubygem-loofah
 rubygem-loquacious              ports/devel/rubygem-loquacious
@@ -23649,6 +23659,7 @@ rubygem-webmock                 ports/www/rubygem-webmock
 rubygem-whois                   ports/net/rubygem-whois
 rubygem-xml-simple              ports/textproc/rubygem-xml-simple
 rubygem-xmpp4r                  ports/net-im/rubygem-xmpp4r
+rubygem-xslt                    ports/textproc/rubygem-xslt
 rubygem-yadis                   ports/net/rubygem-yadis
 rubygem-yajl-ruby               ports/devel/rubygem-yajl-ruby
 rubygem-yapra                   ports/www/rubygem-yapra
@@ -24922,6 +24933,7 @@ tcpillust                       ports/net/tcpillust
 tcping                          ports/net/tcping
 tcplist                         ports/sysutils/tcplist
 tcpmssd                         ports/net/tcpmssd
+tcpproxy                        ports/net/tcpproxy
 tcpreen                         ports/net/tcpreen
 tcpreplay                       ports/net-mgmt/tcpreplay
 tcpser                          ports/comms/tcpser
