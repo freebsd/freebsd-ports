@@ -7,17 +7,17 @@
 
 PORTNAME=	barnyard2
 PORTVERSION=	1.9
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security
 MASTER_SITES=	http://www.securixlive.com/download/barnyard2/
 
 MAINTAINER=	pauls@utdallas.edu
-COMMENT=	An output system for Snort that parses unified2 files
-
-RUN_DEPENDS+=	${LOCALBASE}/bin/snort:${PORTSDIR}/security/snort
+COMMENT=	An output system for Snort or Suricata that parses unified2 files
 
 OPTIONS=	MYSQL "Enable MySQL support" on \
-		POSTGRESQL "Enable PostgreSQL support" off
+		POSTGRESQL "Enable PostgreSQL support" off \
+		SNORT "Depend on security/snort" off \
+		SURICATA "Depend on security/suricata" off
 
 USE_RC_SUBR=	barnyard2.sh
 GNU_CONFIGURE=	yes
@@ -40,6 +40,14 @@ CONFIGURE_ARGS+=	--with-mysql \
 .if defined(WITH_POSTGRESQL)
 USE_PGSQL=		yes
 CONFIGURE_ARGS+=	--with-postgresql
+.endif
+
+.if defined(WITH_SNORT)
+RUN_DEPENDS+=	${LOCALBASE}/bin/snort:${PORTSDIR}/security/snort
+.endif
+
+.if defined(WITH_SURICATA)
+RUN_DEPENDS+=	${LOCALBASE}/bin/suricata:${PORTSDIR}/security/suricata
 .endif
 
 pre-install:
