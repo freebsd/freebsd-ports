@@ -6,6 +6,7 @@
 %%SITE_PERL%%/Software/License/Artistic_2_0.pm
 %%SITE_PERL%%/Software/License/BSD.pm
 %%SITE_PERL%%/Software/License/CC0_1_0.pm
+%%SITE_PERL%%/Software/License/Custom.pm
 %%SITE_PERL%%/Software/License/FreeBSD.pm
 %%SITE_PERL%%/Software/License/GFDL_1_2.pm
 %%SITE_PERL%%/Software/License/GPL_1.pm
