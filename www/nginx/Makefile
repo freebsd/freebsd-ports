@@ -63,6 +63,7 @@ OPTIONS=	DEBUG			"Enable nginx debugging" off \
 		HTTP_PUSH_MODULE	"3rd party push module" off \
 		HTTP_REDIS_MODULE	"3rd party http_redis module" off \
 		HTTP_RESPONSE_MODULE	"3rd party http_response module" off \
+		HTTP_SUBS_FILTER_MODULE	"3rd party subs filter module" off \
 		HTTP_UPLOAD_MODULE	"3rd party upload module" off \
 		HTTP_UPLOAD_PROGRESS	"3rd party uploadprogress module" off \
 		HTTP_UPSTREAM_FAIR	"3rd party upstream fair module" off \
@@ -310,6 +311,14 @@ NGINX_RESPONSE_MODULE_VERSION=	0.3
 MASTER_SITES+=	http://catap.ru/downloads/nginx/:response
 DISTFILES+=	ngx_http_response-${NGINX_RESPONSE_MODULE_VERSION}.tar.gz:response
 CONFIGURE_ARGS+=--add-module=${WRKDIR}/ngx_http_response-${NGINX_RESPONSE_MODULE_VERSION}
+.endif
+
+.if defined(WITH_HTTP_SUBS_FILTER_MODULE)
+NGINX_HTTP_SUBS_FILTER_MODULE_VERSION=	0.5.2.r44
+MASTER_SITES+=  ${MASTER_SITE_LOCAL:S/$/:subs_filter/}
+MASTER_SITE_SUBDIR+=    osa/:subs_filter
+DISTFILES+=	ngx_http_subs_filter_module-${NGINX_HTTP_SUBS_FILTER_MODULE_VERSION}.tar.gz:subs_filter
+CONFIGURE_ARGS+=--add-module=${WRKDIR}/ngx_http_subs_filter_module-${NGINX_HTTP_SUBS_FILTER_MODULE_VERSION}
 .endif
 
 .if defined(WITH_HTTP_SECURE_LINK_MODULE)
