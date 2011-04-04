@@ -1,0 +1,17 @@
+--- compiler/Makefile.orig	2011-04-04 02:08:25.000000000 -0700
++++ compiler/Makefile	2011-04-04 02:08:42.000000000 -0700
+@@ -37,12 +37,12 @@
+ 
+ $(PROG).bin: $(BINOBJS)
+ 	$(CAMLBIN) -o $(PROG).bin str.cmxa unix.cmxa $(BINOBJS) \
+-		-cclib -lunix -cclib -lstr && \
++		&& \
+ 	$(RM) $(PROG) && ln -s $(PROG).bin $(PROG)
+ 
+ $(PROG).byt: $(BYTOBJS)
+ 	$(CAMLBYT) -g -custom -o $(PROG).byt str.cma unix.cma $(BYTOBJS) \
+-		-cclib -lunix -cclib -lstr && \
++		&& \
+ 	$(RM) $(PROG) && ln -s $(PROG).byt $(PROG)
+ 
+ installbyt:
