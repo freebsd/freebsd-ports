@@ -62,7 +62,6 @@
     SUBDIR += embedded_innodb
     SUBDIR += emma
     SUBDIR += erlang-mysql
-    SUBDIR += erserver
     SUBDIR += evolution-data-server
     SUBDIR += exist
     SUBDIR += fastdb
