@@ -1,6 +1,6 @@
 # New ports collection makefile for:	aewm
 # Date created:				2000-12-16
-# Whom:					trevor
+# Whom:					Trevor Johnson <trevor@FreeBSD.org>
 #
 # $FreeBSD$
 #
@@ -14,39 +14,40 @@ MASTER_SITES=	http://www.red-bean.com/decklin/aewm/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	ICCCM-compliant window manager based on 9wm
 
-USE_XORG=	x11 xext xt xaw
-WANT_GNOME=	yes
 USE_GMAKE=	yes
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}" XROOT="${LOCALBASE}"
+USE_XORG=	x11 xext xt xaw
+WANT_GNOME=	yes
 
 MAN1=		aeclients.1 aewm.1
+# XXX should use LICENSE instead of installing it as part of documentation,
+# but our license framework does not support XFree86 license at this moment
+PORTDOCS=	DESIGN LICENSE NEWS README TODO
 
 GTKCLIENTS=	aemenu-gtk aepanel-gtk
 XAWCLIENTS=	aemenu-xaw aepanel-xaw aesession set-gnome-pda
 
 .include <bsd.port.pre.mk>
 
-.if ${HAVE_GNOME:Mgtk20}!=""
-USE_GNOME+=	gtk20
-PKGNAMESUFFIX=	-gtk
-.else
+.if ${HAVE_GNOME:Mgtk20} != ""
+USE_GNOME=	gtk20
+PLIST_FILES=	bin/aemenu-gtk bin/aepanel-gtk
 .endif
 
 .if defined(WITH_XFT)
-LIB_DEPENDS+=	Xft.2:${PORTSDIR}/x11-fonts/libXft
+XORG+=		xft
 MAKE_ENV+=	DEFINES="-DXFT" \
 		EXTRA_INC="`pkg-config --cflags xft`" \
 		EXTRA_LIBS="`pkg-config --libs xft`"
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e '/^SUBDIR/s|clients||g' ${WRKSRC}/Makefile
-.for i in clients/lib/aeclients.h src/aewm.h
-	@${REINPLACE_CMD} -e 's|/etc/X11/|${PREFIX}/etc/|g' ${WRKSRC}/${i}
-.endfor
+	@${REINPLACE_CMD} -e '/^SUBDIR/s| clients||' ${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -e 's|/etc/X11|${PREFIX}/etc|' \
+		${WRKSRC}/clients/lib/aeclients.h ${WRKSRC}/src/aewm.h
 
 post-build:
-.if ${HAVE_GNOME:Mgtk20}!=""
+.if ${HAVE_GNOME:Mgtk20} != ""
 	cd ${WRKSRC}/clients && ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_ARGS} \
 		${GTKCLIENTS} ${XAWCLIENTS}
 .else
@@ -59,7 +60,7 @@ do-install:
 .for i in ${XAWCLIENTS}
 	${INSTALL_PROGRAM} ${WRKSRC}/clients/${i} ${PREFIX}/bin
 .endfor
-.if ${HAVE_GNOME:Mgtk20}!=""
+.if ${HAVE_GNOME:Mgtk20} != ""
 .for i in ${GTKCLIENTS}
 	${INSTALL_PROGRAM} ${WRKSRC}/clients/${i} ${PREFIX}/bin
 .endfor
@@ -83,9 +84,7 @@ do-install:
 .endif
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-.for i in DESIGN LICENSE NEWS README TODO
-	${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
-.endfor
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
 .endif
 
 .include <bsd.port.post.mk>
