@@ -18,9 +18,9 @@ TKPORTDIR?=	${PORTSDIR}/x11-toolkits/tk
 LIB_DEPENDS=	tcl${TCLVERSION:S/.//}:${TCLPORTDIR}${TCLVERSION:C/[^0-9]//g}
 
 USE_PGSQL=	yes
-MASTERDIR=	${.CURDIR}/../../databases/postgresql74-server
+MASTERDIR=	${.CURDIR}/../../databases/postgresql84-server
 
-CONFLICTS=	${PORTNAME}${PKGNAMESUFFIX}-7.[0-3]*
+BROKEN=		Does not work with PostgreSQL 8.X
 
 LATEST_LINK=	${PKGNAMEPREFIX}${PORTNAME}${PKGNAMESUFFIX}
 
