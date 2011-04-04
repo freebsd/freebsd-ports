@@ -17,7 +17,7 @@ RUN_DEPENDS=	postgres:${PORTSDIR}/${POSTGRESQL_PORT}
 
 MASTERDIR=	${.CURDIR}/../postgresql${PGSQL_VER}-server
 
-DEFAULT_PGSQL_VER?=74
+DEFAULT_PGSQL_VER?=84
 
 # can't include <bsd.port.pre.mk> in a slave port
 # so set these instead:
