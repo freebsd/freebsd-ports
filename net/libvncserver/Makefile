@@ -7,18 +7,19 @@
 #
 
 PORTNAME=	libvncserver
-PORTVERSION=	0.9.7
-PORTREVISION=	2
+PORTVERSION=	0.9.8
 CATEGORIES=	net devel
 MASTER_SITES=	SF
 DISTNAME=	LibVNCServer-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	bapt@FreeBSD.org
 COMMENT=	Provide an easy API to write one's own vnc server
+
+LICENSE=	GPLv2
 
 LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg
 
-USE_GNOME=	gnometarget
+USE_GNOME=	gnometarget gnomehack
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
