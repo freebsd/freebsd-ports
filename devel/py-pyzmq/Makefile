@@ -6,16 +6,15 @@
 #
 
 PORTNAME=	pyzmq
-PORTVERSION=	2.0.10
+PORTVERSION=	2.1.1
 CATEGORIES=	devel net
-MASTER_SITES=	http://code.enthought.com/src/ \
-		http://distfiles.macports.org/python/
+MASTER_SITES=	http://cloud.github.com/downloads/zeromq/pyzmq/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	novel@FreeBSD.org
 COMMENT=	Python bindings for ZeroMQ
 
-LIB_DEPENDS=	zmq.0:${PORTSDIR}/devel/zmq
+LIB_DEPENDS=	zmq.1:${PORTSDIR}/devel/zmq
 
 LICENSE=	LGPL3
 USE_PYTHON=	yes
