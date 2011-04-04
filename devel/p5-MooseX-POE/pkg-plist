@@ -5,7 +5,6 @@
 %%SITE_PERL%%/MooseX/POE/Meta/Role.pm
 %%SITE_PERL%%/MooseX/POE/Meta/Trait.pm
 %%SITE_PERL%%/MooseX/POE/Meta/Trait/Class.pm
-%%SITE_PERL%%/MooseX/POE/Meta/Trait/Constructor.pm
 %%SITE_PERL%%/MooseX/POE/Meta/Trait/Instance.pm
 %%SITE_PERL%%/MooseX/POE/Meta/Trait/Object.pm
 %%SITE_PERL%%/MooseX/POE/Meta/Trait/SweetArgs.pm

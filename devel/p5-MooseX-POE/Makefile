@@ -6,13 +6,16 @@
 #
 
 PORTNAME=	MooseX-POE
-PORTVERSION=	0.211
+PORTVERSION=	0.212
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	The Illicit Love Child of Moose and POE
+
+LICENSE_COMB=	dual
+LICENSE=	ART20 GPLv1
 
 BUILD_DEPENDS=	p5-Moose>=0.90:${PORTSDIR}/devel/p5-Moose \
 		p5-MooseX-Async>=0.01:${PORTSDIR}/devel/p5-MooseX-Async \
@@ -28,7 +31,6 @@ MAN3=	MooseX::POE.3 \
 	MooseX::POE::Aliased.3 \
 	MooseX::POE::Meta::Trait::Instance.3 \
 	MooseX::POE::Meta::Trait::Class.3 \
-	MooseX::POE::Meta::Trait::Constructor.3 \
 	MooseX::POE::Meta::Method::State.3 \
 	MooseX::POE::Meta::Trait::Object.3 \
 	MooseX::POE::Meta::Role.3 \
