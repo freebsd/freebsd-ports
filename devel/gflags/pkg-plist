@@ -6,10 +6,13 @@ include/google/gflags_completions.h
 lib/libgflags.a
 lib/libgflags.la
 lib/libgflags.so
-lib/libgflags.so.0
+lib/libgflags.so.1
 lib/libgflags_nothreads.a
 lib/libgflags_nothreads.la
 lib/libgflags_nothreads.so
-lib/libgflags_nothreads.so.0
+lib/libgflags_nothreads.so.1
+libdata/pkgconfig/libgflags.pc
+libdata/pkgconfig/libgflags_nothreads.pc
+@dirrmtry libdata/pkgconfig
 @dirrmtry include/google
 @dirrmtry include/gflags
