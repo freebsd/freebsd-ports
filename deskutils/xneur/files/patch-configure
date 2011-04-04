@@ -1,0 +1,11 @@
+--- configure.orig	2011-03-13 20:00:53.000000000 +0300
++++ configure	2011-03-13 20:01:47.000000000 +0300
+@@ -13690,7 +13690,7 @@
+ 
+ fi
+ 
+-ADDITIONAL_LIBS="-pthread -ldl"
++ADDITIONAL_LIBS="-pthread"
+ 
+ 
+ 
