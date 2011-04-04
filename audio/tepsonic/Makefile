@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tepsonic
-PORTVERSION=	0.97.0
+PORTVERSION=	0.98.2
 CATEGORIES=	audio
 MASTER_SITES=	http://www.tepsonic.org/files/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
@@ -27,5 +27,9 @@ QT_COMPONENTS=	gui xml sql phonon network linguist_build \
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 LICENSE=	GPLv3
+
+post-patch:
+	${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
+		${WRKSRC}/3rdparty/qxt/CMakeLists.txt
 
 .include <bsd.port.mk>
