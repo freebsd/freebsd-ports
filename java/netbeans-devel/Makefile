@@ -5,11 +5,11 @@
 # $FreeBSD$
 
 PORTNAME=	netbeans
-DISTVERSION=	7.0beta2
+DISTVERSION=	7.0rc1
 CATEGORIES=	java devel
-MASTER_SITES=	http://dlc.sun.com.edgesuite.net/netbeans/7.0/beta2/zip/
+MASTER_SITES=	http://dlc.sun.com.edgesuite.net/netbeans/7.0/rc1/zip/
 PKGNAMESUFFIX=	-devel
-DISTNAME=	netbeans-${DISTVERSION}-201102140001-ml
+DISTNAME=	netbeans-${DISTVERSION}-201103280000-ml
 
 MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	A full-featured integrated environment for Java
@@ -22,6 +22,8 @@ NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/netbeans
 PREFIXDIR=	${PREFIX}/netbeans70
 
+PLIST_SUB+=	PORTVERSION=${PORTVERSION}
+
 #IGNORE=		No development version available right now. Please use java/netbeans instead.
 
 do-patch:
@@ -32,6 +34,6 @@ do-install:
 	@${MKDIR} ${PREFIXDIR}
 	@(cd ${WRKSRC} && ${COPYTREE_SHARE} \* ${PREFIXDIR})
 	@${CHMOD} ${BINMODE} ${PREFIXDIR}/bin/netbeans
-	@${LN} -sf ${PREFIXDIR}/bin/netbeans ${PREFIX}/bin/netbeans70
+	@${LN} -sf ${PREFIXDIR}/bin/netbeans ${PREFIX}/bin/netbeans-${PORTVERSION}
 
 .include <bsd.port.mk>
