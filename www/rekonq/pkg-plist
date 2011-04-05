@@ -4,7 +4,22 @@ share/applications/kde4/rekonq.desktop
 share/apps/rekonq/defaultbookmarks.xbel
 share/apps/rekonq/htmls/home.html
 share/apps/rekonq/htmls/rekonqinfo.html
+share/apps/rekonq/opensearch/beolingus.xml
+share/apps/rekonq/opensearch/bing.xml
+share/apps/rekonq/opensearch/db_opensearch.json
+share/apps/rekonq/opensearch/de2en.xml
+share/apps/rekonq/opensearch/dictfr.xml
+share/apps/rekonq/opensearch/facebook.xml
 share/apps/rekonq/opensearch/google.xml
+share/apps/rekonq/opensearch/kde_techbase.xml
+share/apps/rekonq/opensearch/kde_userbase.xml
+share/apps/rekonq/opensearch/voila.xml
+share/apps/rekonq/opensearch/wikia.xml
+share/apps/rekonq/opensearch/wikipedia.xml
+share/apps/rekonq/opensearch/wiktionary.xml
+share/apps/rekonq/opensearch/wr_english.xml
+share/apps/rekonq/opensearch/yahoo.xml
+share/apps/rekonq/opensearch/youtube.xml
 share/apps/rekonq/pics/bg.png
 share/apps/rekonq/pics/bg2.png
 share/apps/rekonq/pics/busywidget.gif
@@ -15,6 +30,30 @@ share/apps/rekonq/pics/tile.gif
 share/apps/rekonq/pics/webkit-icon.png
 share/apps/rekonq/rekonqui.rc
 share/config.kcfg/rekonq.kcfg
+share/doc/HTML/en/rekonq/Bookmarkseditor.png
+share/doc/HTML/en/rekonq/Defaultwebbrowser.png
+share/doc/HTML/en/rekonq/Face-smile.png
+share/doc/HTML/en/rekonq/Rekonq-adblock.png
+share/doc/HTML/en/rekonq/Rekonq-adblockconfiguration-manual.png
+share/doc/HTML/en/rekonq/Rekonq-adblockconfiguration.png
+share/doc/HTML/en/rekonq/Rekonq-akregator.png
+share/doc/HTML/en/rekonq/Rekonq-ftp.png
+share/doc/HTML/en/rekonq/Rekonq-kget.png
+share/doc/HTML/en/rekonq/Rekonq-manualplugins-youtube.png
+share/doc/HTML/en/rekonq/Rekonq-manualplugins.png
+share/doc/HTML/en/rekonq/Rekonq-newtab.png
+share/doc/HTML/en/rekonq/Rekonq-notabs.png
+share/doc/HTML/en/rekonq/Rekonq-okularkpart.png
+share/doc/HTML/en/rekonq/Rekonq-panels.png
+share/doc/HTML/en/rekonq/Rekonq-privatebrowsing.png
+share/doc/HTML/en/rekonq/Rekonq-sslinfo.png
+share/doc/HTML/en/rekonq/Rekonq-tabpreview.png
+share/doc/HTML/en/rekonq/Rekonq-toolbar.png
+share/doc/HTML/en/rekonq/Rekonq-urlbar.png
+share/doc/HTML/en/rekonq/Rekonq-windowtabbing.png
+share/doc/HTML/en/rekonq/Rekonq-zoom.png
+share/doc/HTML/en/rekonq/Systemsettings-enablewindowtabbing.png
+share/doc/HTML/en/rekonq/appearance.png
 share/doc/HTML/en/rekonq/automatic_filters.png
 share/doc/HTML/en/rekonq/cache.png
 share/doc/HTML/en/rekonq/common
@@ -37,6 +76,7 @@ share/icons/hicolor/16x16/apps/rekonq.png
 share/icons/hicolor/32x32/apps/rekonq.png
 share/icons/hicolor/64x64/apps/rekonq.png
 share/locale/ca/LC_MESSAGES/rekonq.mo
+share/locale/ca@valencia/LC_MESSAGES/rekonq.mo
 share/locale/cs/LC_MESSAGES/rekonq.mo
 share/locale/da/LC_MESSAGES/rekonq.mo
 share/locale/de/LC_MESSAGES/rekonq.mo
@@ -44,10 +84,10 @@ share/locale/el/LC_MESSAGES/rekonq.mo
 share/locale/en_GB/LC_MESSAGES/rekonq.mo
 share/locale/es/LC_MESSAGES/rekonq.mo
 share/locale/et/LC_MESSAGES/rekonq.mo
+share/locale/fi/LC_MESSAGES/rekonq.mo
 share/locale/fr/LC_MESSAGES/rekonq.mo
 share/locale/hu/LC_MESSAGES/rekonq.mo
 share/locale/it/LC_MESSAGES/rekonq.mo
-share/locale/ja/LC_MESSAGES/rekonq.mo
 share/locale/ko/LC_MESSAGES/rekonq.mo
 share/locale/lt/LC_MESSAGES/rekonq.mo
 share/locale/nb/LC_MESSAGES/rekonq.mo
@@ -62,8 +102,10 @@ share/locale/sr@ijekavian/LC_MESSAGES/rekonq.mo
 share/locale/sr@ijekavianlatin/LC_MESSAGES/rekonq.mo
 share/locale/sr@latin/LC_MESSAGES/rekonq.mo
 share/locale/sv/LC_MESSAGES/rekonq.mo
+share/locale/th/LC_MESSAGES/rekonq.mo
 share/locale/uk/LC_MESSAGES/rekonq.mo
 share/locale/zh_CN/LC_MESSAGES/rekonq.mo
+share/locale/zh_TW/LC_MESSAGES/rekonq.mo
 @dirrm share/doc/HTML/en/rekonq
 @dirrm share/apps/rekonq/pics
 @dirrm share/apps/rekonq/opensearch
