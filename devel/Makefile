@@ -2105,6 +2105,7 @@
     SUBDIR += p5-ParseTemplate
     SUBDIR += p5-PatchReader
     SUBDIR += p5-Path-Class
+    SUBDIR += p5-Path-Dispatcher
     SUBDIR += p5-PathTools
     SUBDIR += p5-Penguin
     SUBDIR += p5-Penguin-Easy
