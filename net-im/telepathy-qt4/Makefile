@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	telepathy-qt4
-PORTVERSION=	0.5.8
+PORTVERSION=	0.5.14
 CATEGORIES=	net-im
 MASTER_SITES=	http://telepathy.freedesktop.org/releases/${PORTNAME}/
 
@@ -32,12 +32,6 @@ PORTDOCS=	AUTHORS ChangeLog HACKING NEWS README TODO html
 
 PORTEXAMPLES=	Makefile accounts extensions \
 		file-transfer protocols roster
-
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 700042
-BROKEN=		does not build on 6.X
-.endif
 
 pre-configure:
 	${REINPLACE_CMD} -e '/add_subdirectory(tests)/ d' \
@@ -71,4 +65,4 @@ post-install:
 .endfor
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
