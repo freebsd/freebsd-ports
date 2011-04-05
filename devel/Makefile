@@ -1182,6 +1182,7 @@
     SUBDIR += p5-App-GitHub
     SUBDIR += p5-App-Info
     SUBDIR += p5-App-Options
+    SUBDIR += p5-App-SD
     SUBDIR += p5-App-SVN-Bisect
     SUBDIR += p5-App-Trace
     SUBDIR += p5-App-cpanminus
