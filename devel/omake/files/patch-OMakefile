@@ -1,10 +1,33 @@
---- OMakefile.orig	Wed Sep  6 00:43:31 2006
-+++ OMakefile	Wed Sep  6 00:43:41 2006
-@@ -31,7 +31,6 @@
+--- OMakefile.orig	2007-06-22 12:03:37.000000000 -0700
++++ OMakefile	2011-04-04 20:32:58.000000000 -0700
+@@ -33,7 +33,6 @@
      #
      # Extra options for the C compiler
      #
 -    CFLAGS += -g -O2 -Wall -Werror -Wno-unused
  
      #
-     # Try to build man pages on Unix
+     # We never need threads on Unix
+@@ -57,7 +56,7 @@
+ #
+ # OCaml options
+ #
+-OCAMLFLAGS[] += -w Ae$(if $(OCAML_ACCEPTS_Z_WARNING), z)
++OCAMLFLAGS[] += -w Aer-29$(if $(OCAML_ACCEPTS_Z_WARNING), z)
+ if $(THREADS_ENABLED)
+     OCAMLFLAGS += -thread
+     export
+@@ -229,11 +228,11 @@
+ 
+ install: $(DEFAULTFILES)  $(INSTALLFILES)
+     mkdir -p $(INSTALL_LIBDIR)/omake
+-    cp -f -m 444 $(DEFAULTFILES) $(INSTALL_LIBDIR)/omake/
++    $(BSD_INSTALL_DATA) $(DEFAULTFILES) $(INSTALL_LIBDIR)/omake/
+     foreach(name, $(STDLIBNAMES))
+         node = $(file $(INSTALL_LIBDIR)/omake/$(name).om)
+         mkdir -p $(dirof $(node))
+-	cp -f -m 444 lib/$(name).install $(node)
++	$(BSD_INSTALL_DATA) lib/$(name).install $(node)
+ 
+ ########################################################################
+ # Testing
