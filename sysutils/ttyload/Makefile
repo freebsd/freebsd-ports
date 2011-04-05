@@ -7,6 +7,7 @@
 
 PORTNAME=	ttyload
 PORTVERSION=	0.5.2
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.daveltd.com/src/util/ttyload/ \
 		http://mirror.mcx2.org/
@@ -19,6 +20,7 @@ ALL_TARGET=	default
 USE_BZIP2=	yes
 PLIST_FILES=	bin/ttyload
 PORTDOCS=	*
+SUB_FILES=	pkg-message
 
 post-install:
 .if !defined(NOPORTDOCS)
