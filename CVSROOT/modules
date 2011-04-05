@@ -24277,6 +24277,7 @@ smv                             ports/devel/smv
 sn                              ports/news/sn
 snack                           ports/audio/snack
 snap                            ports/sysutils/snap
+snappy                          ports/archivers/snappy
 snarf                           ports/www/snarf
 snd                             ports/audio/snd
 snes9express                    ports/emulators/snes9express
@@ -27827,6 +27828,7 @@ ztcl                            ports/devel/ztcl
 zthread                         ports/devel/zthread
 ztrack                          ports/games/ztrack
 zu-aspell                       ports/textproc/zu-aspell
+zxfer                           ports/sysutils/zxfer
 zxid                            ports/security/zxid
 zynaddsubfx                     ports/audio/zynaddsubfx
 zziplib                         ports/devel/zziplib
