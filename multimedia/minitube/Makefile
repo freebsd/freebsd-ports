@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	minitube
-PORTVERSION=	1.4
-PORTREVISION=	1
+PORTVERSION=	1.4.1
 CATEGORIES=	multimedia www
 MASTER_SITES=	http://flavio.tordini.org/files/minitube/
 
@@ -19,6 +18,7 @@ QT_COMPONENTS=	gui network xml dbus phonon phonon-gst \
 		qmake_build moc_build rcc_build imageformats_run
 USE_GSTREAMER=	ffmpeg
 HAS_CONFIGURE=	yes
+INSTALLS_ICONS=	yes
 MAKE_JOBS_SAFE=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
