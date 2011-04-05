@@ -13,6 +13,8 @@ PKGNAMESUFFIX=	-plpython
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A module for using Python to write SQL functions
 
+BROKEN=		Does not configure without threaded Python
+
 RUN_DEPENDS=	postgres:${PORTSDIR}/${POSTGRESQL_PORT}
 
 MASTERDIR=	${.CURDIR}/../postgresql${PGSQL_VER}-server
