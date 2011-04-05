@@ -1,0 +1,28 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Path/Dispatcher/.packlist
+%%SITE_PERL%%/Path/Dispatcher/Dispatch.pm
+%%SITE_PERL%%/Path/Dispatcher/Rule.pm
+%%SITE_PERL%%/Path/Dispatcher/Path.pm
+%%SITE_PERL%%/Path/Dispatcher/Role/Rules.pm
+%%SITE_PERL%%/Path/Dispatcher/Rule/Eq.pm
+%%SITE_PERL%%/Path/Dispatcher/Rule/Intersection.pm
+%%SITE_PERL%%/Path/Dispatcher/Rule/Dispatch.pm
+%%SITE_PERL%%/Path/Dispatcher/Rule/Empty.pm
+%%SITE_PERL%%/Path/Dispatcher/Rule/Tokens.pm
+%%SITE_PERL%%/Path/Dispatcher/Rule/Alternation.pm
+%%SITE_PERL%%/Path/Dispatcher/Rule/Under.pm
+%%SITE_PERL%%/Path/Dispatcher/Rule/Sequence.pm
+%%SITE_PERL%%/Path/Dispatcher/Rule/Metadata.pm
+%%SITE_PERL%%/Path/Dispatcher/Rule/Chain.pm
+%%SITE_PERL%%/Path/Dispatcher/Rule/Regex.pm
+%%SITE_PERL%%/Path/Dispatcher/Rule/Enum.pm
+%%SITE_PERL%%/Path/Dispatcher/Rule/CodeRef.pm
+%%SITE_PERL%%/Path/Dispatcher/Rule/Always.pm
+%%SITE_PERL%%/Path/Dispatcher/Cookbook.pod
+%%SITE_PERL%%/Path/Dispatcher/Match.pm
+%%SITE_PERL%%/Path/Dispatcher.pm
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Path/Dispatcher
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Path
+@dirrm %%SITE_PERL%%/Path/Dispatcher/Rule
+@dirrm %%SITE_PERL%%/Path/Dispatcher/Role
+@dirrm %%SITE_PERL%%/Path/Dispatcher
+@dirrm %%SITE_PERL%%/Path
