@@ -6,14 +6,12 @@
 #
 
 PORTNAME=	rekonq
-PORTVERSION=	0.6.1
+PORTVERSION=	0.7.0
 CATEGORIES=	www kde
 MASTER_SITES=	SF/${PORTNAME}/${PORTVERSION}/${PORTVERSION}
 
 MAINTAINER=	makc@FreeBSD.org
 COMMENT=	A lightweight KDE browser based on WebKit
-
-BUILD_DEPENDS=	${LOCALBASE}/share/xml/docbook/4.2/docbookx.dtd:${PORTSDIR}/textproc/docbook-xml
 
 USE_BZIP2=	yes
 USE_CMAKE=	yes
