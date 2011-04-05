@@ -195,6 +195,7 @@
     SUBDIR += openoffice.org-3-devel
     SUBDIR += openoffice.org-vcltesttool
     SUBDIR += p5-Padre
+    SUBDIR += p5-Proc-InvokeEditor
     SUBDIR += p5-Vimana
     SUBDIR += paredit-mode.el
     SUBDIR += pdfedit
