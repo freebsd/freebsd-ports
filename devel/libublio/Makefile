@@ -11,11 +11,8 @@ CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	alepulver
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	mandree@FreeBSD.org
 COMMENT=	User space caching library
-
-DEPRECATED=     Abandonned and no distfiles provided
-EXPIRATION_DATE=        2011-05-01
 
 USE_LDCONFIG=	yes
 
