@@ -8,6 +8,7 @@
 
 PORTNAME=	camlp5
 PORTVERSION=	6.02.0
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://cristal.inria.fr/~ddr/camlp5/distrib/src/ \
 		http://pauillac.inria.fr/~ddr/camlp5/distrib/src/

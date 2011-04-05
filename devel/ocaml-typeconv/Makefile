@@ -7,6 +7,7 @@
 
 PORTNAME=	type-conv
 PORTVERSION=	1.0.0
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://janestcapital.com/ocaml/
 PKGNAMEPREFIX=	ocaml-

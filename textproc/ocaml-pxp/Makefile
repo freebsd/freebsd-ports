@@ -7,6 +7,7 @@
 
 PORTNAME=	pxp
 PORTVERSION=	1.2.1
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	http://download.camlcity.org/download/
 PKGNAMEPREFIX=	ocaml-

@@ -7,7 +7,7 @@
 
 PORTNAME=	event
 PORTVERSION=	0.6.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	http://www.xs4all.nl/~mmzeeman/ocaml/
 PKGNAMEPREFIX=	ocaml-

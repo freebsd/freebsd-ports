@@ -8,7 +8,7 @@
 
 PORTNAME=	xstrp4
 PORTVERSION=	1.7
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://download.camlcity.org/download/
 PKGNAMEPREFIX=	ocaml-

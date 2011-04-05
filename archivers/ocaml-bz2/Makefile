@@ -7,6 +7,7 @@
 
 PORTNAME=	bz2
 PORTVERSION=	0.6.0
+PORTREVISION=	1
 CATEGORIES=	archivers
 MASTER_SITES=	http://forge.ocamlcore.org/frs/download.php/72/
 PKGNAMEPREFIX=	ocaml-

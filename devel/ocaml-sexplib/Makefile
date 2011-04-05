@@ -8,7 +8,7 @@
 
 PORTNAME=	sexplib
 PORTVERSION=	3.0.0
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.janestcapital.com/ocaml/
 PKGNAMEPREFIX=	ocaml-

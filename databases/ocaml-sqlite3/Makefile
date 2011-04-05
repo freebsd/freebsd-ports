@@ -7,6 +7,7 @@
 
 PORTNAME=	sqlite3
 PORTVERSION=	1.0.3
+PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	http://www.ocaml.info/ocaml_sources/
 PKGNAMEPREFIX=	ocaml-

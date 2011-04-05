@@ -7,7 +7,7 @@
 
 PORTNAME=	classes
 PORTVERSION=	3.05
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel
 MASTER_SITES=	http://wwwfun.kurims.kyoto-u.ac.jp/soft/olabl/dist/\
 		ftp://ftp.kurims.kyoto-u.ac.jp/pub/lang/olabl/\

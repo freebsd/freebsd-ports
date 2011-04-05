@@ -8,7 +8,7 @@
 
 PORTNAME=	lacaml
 PORTVERSION=	5.4.7
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://hg.ocaml.info/release/lacaml/archive/
 DISTNAME=	release-${PORTVERSION}
