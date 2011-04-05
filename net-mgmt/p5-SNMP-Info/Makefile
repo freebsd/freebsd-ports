@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	SNMP-Info
-PORTVERSION=	2.01
-PORTREVISION=	1
+PORTVERSION=	2.04
 CATEGORIES=	net-mgmt perl5
 MASTER_SITES=	SF
 PKGNAMEPREFIX=	p5-
@@ -18,8 +17,10 @@ LIB_DEPENDS=	netsnmp.20:${PORTSDIR}/net-mgmt/net-snmp
 
 PERL_CONFIGURE=	yes
 
-MAN3=	SNMP::Info.3 SNMP::Info::Airespace.3 SNMP::Info::Layer3::Altiga.3 \
+MAN3=	SNMP::Info.3 SNMP::Info::Airespace.3 SNMP::Info::IPv6.3 \
+	SNMP::Info::Layer3::Altiga.3 \
 	SNMP::Info::Layer3::Arista.3 SNMP::Info::Bridge.3 \
+	SNMP::Info::Layer3::CiscoFWSM.3 SNMP::Info::Layer3::Pf.3 \
 	SNMP::Info::CDP.3 SNMP::Info::CiscoImage.3 SNMP::Info::CiscoQOS.3 \
 	SNMP::Info::CiscoRTT.3 SNMP::Info::CiscoStack.3 \
 	SNMP::Info::CiscoStats.3 SNMP::Info::CiscoStpExtensions.3 \
@@ -33,7 +34,8 @@ MAN3=	SNMP::Info.3 SNMP::Info::Airespace.3 SNMP::Info::Layer3::Altiga.3 \
 	SNMP::Info::Layer2::C1900.3 SNMP::Info::Layer2::C2900.3 \
 	SNMP::Info::Layer2::Catalyst.3 SNMP::Info::Layer2::Centillion.3 \
 	SNMP::Info::Layer2::Cisco.3 SNMP::Info::Layer2::Foundry.3 \
-	SNMP::Info::Layer2::HP.3 SNMP::Info::Layer2::N2270.3 \
+	SNMP::Info::Layer2::HP.3 SNMP::Info::Layer2::HP4000.3 \
+	SNMP::Info::Layer2::N2270.3 \
 	SNMP::Info::Layer2::NAP222x.3 SNMP::Info::Layer2::Orinoco.3 \
 	SNMP::Info::Layer2::ZyXEL_DSLAM.3 SNMP::Info::Layer3.3 \
 	SNMP::Info::Layer3::Aironet.3 SNMP::Info::Layer3::AlteonAD.3 \
