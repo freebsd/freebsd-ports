@@ -3387,6 +3387,7 @@
     SUBDIR += subversive
     SUBDIR += sunterlib
     SUBDIR += svk
+    SUBDIR += svn2git
     SUBDIR += svn_load_dirs
     SUBDIR += svndelta
     SUBDIR += svnkit
