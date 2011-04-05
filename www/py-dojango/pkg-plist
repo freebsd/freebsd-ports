@@ -47,6 +47,12 @@
 %%PYTHON_SITELIBDIR%%/dojango/data/modelstore/utils.py
 %%PYTHON_SITELIBDIR%%/dojango/data/modelstore/utils.pyc
 %%PYTHON_SITELIBDIR%%/dojango/data/modelstore/utils.pyo
+%%PYTHON_SITELIBDIR%%/dojango/data/piston/__init__.py
+%%PYTHON_SITELIBDIR%%/dojango/data/piston/__init__.pyc
+%%PYTHON_SITELIBDIR%%/dojango/data/piston/__init__.pyo
+%%PYTHON_SITELIBDIR%%/dojango/data/piston/emitters.py
+%%PYTHON_SITELIBDIR%%/dojango/data/piston/emitters.pyc
+%%PYTHON_SITELIBDIR%%/dojango/data/piston/emitters.pyo
 %%PYTHON_SITELIBDIR%%/dojango/dojo-media/dojango.profile.js
 %%PYTHON_SITELIBDIR%%/dojango/dojo-media/dojango_optimized.profile.js
 %%PYTHON_SITELIBDIR%%/dojango/dojo-media/dojango/_base.js
@@ -158,6 +164,7 @@
 @dirrm %%PYTHON_SITELIBDIR%%/dojango/dojo-media/dojango/form
 @dirrm %%PYTHON_SITELIBDIR%%/dojango/dojo-media/dojango
 @dirrm %%PYTHON_SITELIBDIR%%/dojango/dojo-media
+@dirrm %%PYTHON_SITELIBDIR%%/dojango/data/piston
 @dirrm %%PYTHON_SITELIBDIR%%/dojango/data/modelstore
 @dirrm %%PYTHON_SITELIBDIR%%/dojango/data
 @dirrm %%PYTHON_SITELIBDIR%%/dojango/conf
