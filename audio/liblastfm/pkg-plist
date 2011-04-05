@@ -9,10 +9,12 @@ include/lastfm/InternetConnectionMonitor
 include/lastfm/Mbid
 include/lastfm/MutableTrack
 include/lastfm/NetworkAccessManager
+include/lastfm/ParseError
 include/lastfm/Playlist
 include/lastfm/RadioStation
 include/lastfm/RadioTuner
 include/lastfm/Scrobble
+include/lastfm/ScrobbleCache
 include/lastfm/ScrobblePoint
 include/lastfm/Tag
 include/lastfm/Track
@@ -27,9 +29,9 @@ include/lastfm.h
 lib/liblastfm.so
 lib/liblastfm.so.0
 lib/liblastfm.so.0.3
-lib/liblastfm.so.0.3.0
+lib/liblastfm.so.0.3.3
 lib/liblastfm_fingerprint.so
 lib/liblastfm_fingerprint.so.0
-lib/liblastfm_fingerprint.so.0.1
-lib/liblastfm_fingerprint.so.0.1.0
+lib/liblastfm_fingerprint.so.0.3
+lib/liblastfm_fingerprint.so.0.3.3
 @dirrm include/lastfm

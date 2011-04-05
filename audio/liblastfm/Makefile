@@ -6,10 +6,12 @@
 #
 
 PORTNAME=	liblastfm
-PORTVERSION=	0.3.0
-PORTREVISION=	1
+PORTVERSION=	0.3.3
+PORTREVISION=	0
 CATEGORIES=	audio
-MASTER_SITES=	http://cdn.last.fm/src/
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	swills
+DISTNAME=	mxcl-${PORTNAME}-${PORTVERSION}-0-gf0b3239
 
 MAINTAINER=	datahead4@gmail.com
 COMMENT=	Collection of libraries to help integrate Last.fm services
@@ -17,7 +19,6 @@ COMMENT=	Collection of libraries to help integrate Last.fm services
 LIB_DEPENDS=	samplerate.1:${PORTSDIR}/audio/libsamplerate \
 		fftw3f.5:${PORTSDIR}/math/fftw3-float
 
-USE_BZIP2=	yes
 USE_RUBY=	yes
 USE_GMAKE=	yes
 USE_QT_VER=	4
@@ -29,16 +30,21 @@ MAKE_JOBS_UNSAFE=	yes
 
 USE_LDCONFIG=	yes
 
+WRKSRC=		${WRKDIR}/mxcl-liblastfm-1c739eb
+
 .include <bsd.port.pre.mk>
 post-extract:
-	${REINPLACE_CMD} -e 's|#!/usr/bin/ruby|#!${LOCALBASE}/bin/ruby|' ${WRKSRC}/configure
+	${REINPLACE_CMD} -e 's|#!/usr/bin/ruby|#!${RUBY_WITH_SUFFIX}|' ${WRKSRC}/configure
+	${REINPLACE_CMD} -e 's|\`ruby |`${RUBY_WITH_SUFFIX} |' ${WRKSRC}/configure
 	${REINPLACE_CMD} -e 's|__demos __tests||' ${WRKSRC}/admin/Makefile.rb
 	${REINPLACE_CMD} -e '/QMAKE_CXXFLAGS_RELEASE.*/d' \
 		-e 's|linux:|unix:|'  ${WRKSRC}/.qmake.cache
 	${FIND} ${WRKSRC}/admin -type f | ${XARGS} \
 		 ${REINPLACE_CMD} -e 's|#!/usr/bin/ruby|#!${RUBY_WITH_SUFFIX}|'
-.if ${RUBY_VERSION_CODE} >= 190000
+.if ${RUBY_VER} == 1.9
 	${REINPLACE_CMD} -e "s|'ftools'|'fileutils'|" ${WRKSRC}/admin/qpp ${WRKSRC}/admin/Makefile.rb
+	${REINPLACE_CMD} -e "s|require \"#{cwd}/platform.rb\"|require_relative \"platform.rb\"|" ${WRKSRC}/admin/Makefile.rb
+	${REINPLACE_CMD} -e "s|ruby admin/lastfm.h.rb|${RUBY_WITH_SUFFIX} admin/lastfm.h.rb|" ${WRKSRC}/admin/Makefile.rb
 .endif
 
 .include <bsd.port.post.mk>
