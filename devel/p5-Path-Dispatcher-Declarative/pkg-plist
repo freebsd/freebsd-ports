@@ -1,0 +1,5 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Path/Dispatcher/Declarative/.packlist
+%%SITE_PERL%%/Path/Dispatcher/Declarative/Builder.pm
+%%SITE_PERL%%/Path/Dispatcher/Declarative.pm
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Path/Dispatcher/Declarative
+@dirrm %%SITE_PERL%%/Path/Dispatcher/Declarative
