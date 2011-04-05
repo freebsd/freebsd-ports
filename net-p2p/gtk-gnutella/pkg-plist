@@ -10,6 +10,8 @@ share/applications/gtk-gnutella.desktop
 %%DATADIR%%/en/FAQ
 %%DATADIR%%/el/FAQ
 %%DATADIR%%/ja/FAQ
+%%I386%%%%DATADIR%%/i386-freebsd/gtk-gnutella.nm
+%%AMD64%%%%DATADIR%%/amd64-freebsd/gtk-gnutella.nm
 %%DATADIR%%/pixmaps/arrow_down.xpm
 %%DATADIR%%/pixmaps/arrow_up.xpm
 %%DATADIR%%/pixmaps/booklib.xpm
@@ -29,9 +31,9 @@ share/applications/gtk-gnutella.desktop
 %%DATADIR%%/pixmaps/firewall_udp.xpm
 %%DATADIR%%/pixmaps/firewall_udp_punchable.xpm
 %%DATADIR%%/pixmaps/freeze.xpm
-%%DATADIR%%/pixmaps/icon.xpm
 %%DATADIR%%/pixmaps/icon.16x16.xpm
 %%DATADIR%%/pixmaps/icon.32x32.xpm
+%%DATADIR%%/pixmaps/icon.xpm
 %%DATADIR%%/pixmaps/leaf.xpm
 %%DATADIR%%/pixmaps/legacy.xpm
 %%DATADIR%%/pixmaps/magnet.16x16.png
@@ -42,15 +44,27 @@ share/applications/gtk-gnutella.desktop
 %%DATADIR%%/pixmaps/online.xpm
 %%DATADIR%%/pixmaps/save.xpm
 %%DATADIR%%/pixmaps/smallserver.xpm
+%%DATADIR%%/pixmaps/star-black.xpm
+%%DATADIR%%/pixmaps/star-blue.xpm
+%%DATADIR%%/pixmaps/star-green.xpm
+%%DATADIR%%/pixmaps/star-red.xpm
+%%DATADIR%%/pixmaps/star-violet.xpm
+%%DATADIR%%/pixmaps/star-yellow.xpm
 %%DATADIR%%/pixmaps/stock_form-time-field-16.xpm
 %%DATADIR%%/pixmaps/thaw.xpm
 %%DATADIR%%/pixmaps/ultra.xpm
+%%DATADIR%%/pixmaps/upload-red.xpm
+%%DATADIR%%/pixmaps/upload-yellow.xpm
 %%DATADIR%%/pixmaps/upload.xpm
+%%DATADIR%%/pixmaps/upnp-unusable.xpm
+%%DATADIR%%/pixmaps/upnp.xpm
 %%DATADIR%%/pixmaps/warning.xpm
 share/pixmaps/gtk-gnutella.png
 share/pixmaps/gtk-gnutella.svg
 @dirrmtry bin
 @dirrmtry share/applications
+%%I386%%@dirrm %%DATADIR%%/i386-freebsd
+%%AMD64%%@dirrm %%DATADIR%%/amd64-freebsd
 @dirrm %%DATADIR%%/pixmaps
 @dirrm %%DATADIR%%/el
 @dirrm %%DATADIR%%/en

@@ -43,7 +43,7 @@
 #
 
 PORTNAME=	gtk-gnutella
-PORTVERSION=	0.96.8
+PORTVERSION=	0.96.9
 CATEGORIES=	net-p2p ipv6
 MASTER_SITES=	SF
 
@@ -63,6 +63,7 @@ CONFIGURE_ARGS=	-O -Dyacc='bison -y' -Dprefix=${PREFIX} \
 		-Dsysman=${PREFIX}/man/man1 -Dlocale=${PREFIX}/share/locale \
 		-Dcc='${CC}' -Dccflags='${CFLAGS} -I${LOCALBASE}/include' \
 		-Doptimize='undef'
+ONLY_FOR_ARCHS=	i386 amd64
 
 MAN1=		gtk-gnutella.1
 
@@ -144,6 +145,18 @@ CONFIGURE_ARGS+=	-D dbus=false
 USE_SQLITE=		yes
 .else
 CONFIGURE_ARGS+=	-U d_sqlite
+.endif
+
+.if ${ARCH} == "i386"
+PLIST_SUB+=	I386=""
+.else
+PLIST_SUB+=	I386="@comment "
+.endif
+
+.if ${ARCH} == "amd64"
+PLIST_SUB+=	AMD64=""
+.else
+PLIST_SUB+=	AMD64="@comment "
 .endif
 
 .include <bsd.port.post.mk>
