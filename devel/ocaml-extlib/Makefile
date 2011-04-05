@@ -7,7 +7,7 @@
 
 PORTNAME=	extlib
 PORTVERSION=	1.5.1
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://ocaml-extlib.googlecode.com/files/
 MASTER_SITE_SUBDIR=	ocaml-lib

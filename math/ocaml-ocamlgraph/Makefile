@@ -7,6 +7,7 @@
 
 PORTNAME=	ocamlgraph
 PORTVERSION=	1.7
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	http://ocamlgraph.lri.fr/download/
 PKGNAMEPREFIX=	ocaml-

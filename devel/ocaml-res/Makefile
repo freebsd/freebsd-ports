@@ -8,7 +8,7 @@
 
 PORTNAME=	res
 PORTVERSION=	3.2.0
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://hg.ocaml.info/release/res/archive/
 PKGNAMEPREFIX=	ocaml-
