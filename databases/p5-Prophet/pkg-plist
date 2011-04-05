@@ -1,0 +1,114 @@
+%%SITE_PERL%%/auto/share/dist/Prophet/web/static/jquery/css/tablesorter/desc.gif
+%%SITE_PERL%%/auto/share/dist/Prophet/web/static/jquery/css/tablesorter/asc.gif
+%%SITE_PERL%%/auto/share/dist/Prophet/web/static/jquery/css/tablesorter/bg.gif
+%%SITE_PERL%%/auto/share/dist/Prophet/web/static/jquery/css/indicator.gif
+%%SITE_PERL%%/auto/share/dist/Prophet/web/static/jquery/images/arrows-ffffff.png
+%%SITE_PERL%%/auto/share/dist/Prophet/web/static/jquery/images/shadow.png
+%%SITE_PERL%%/auto/share/dist/Prophet/web/static/jquery/images/arrows-cccccc.png
+%%SITE_PERL%%/Prophet.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Prophet/.packlist
+%%SITE_PERL%%/Prophet/Test.pm
+%%SITE_PERL%%/Prophet/Resolver.pm
+%%SITE_PERL%%/Prophet/Resolver/FromResolutionDB.pm
+%%SITE_PERL%%/Prophet/Resolver/AlwaysSource.pm
+%%SITE_PERL%%/Prophet/Resolver/IdenticalChanges.pm
+%%SITE_PERL%%/Prophet/Resolver/Prompt.pm
+%%SITE_PERL%%/Prophet/Resolver/Failed.pm
+%%SITE_PERL%%/Prophet/Resolver/AlwaysTarget.pm
+%%SITE_PERL%%/Prophet/Replica/prophet_cache.pm
+%%SITE_PERL%%/Prophet/Replica/file.pm
+%%SITE_PERL%%/Prophet/Replica/sqlite.pm
+%%SITE_PERL%%/Prophet/Replica/FS/Backend/SSH.pm
+%%SITE_PERL%%/Prophet/Replica/FS/Backend/File.pm
+%%SITE_PERL%%/Prophet/Replica/FS/Backend/LWP.pm
+%%SITE_PERL%%/Prophet/Replica/http.pm
+%%SITE_PERL%%/Prophet/Replica/prophet.pm
+%%SITE_PERL%%/Prophet/Replica.pm
+%%SITE_PERL%%/Prophet/PropChange.pm
+%%SITE_PERL%%/Prophet/ForeignReplica.pm
+%%SITE_PERL%%/Prophet/CLIContext.pm
+%%SITE_PERL%%/Prophet/Web/Result.pm
+%%SITE_PERL%%/Prophet/Web/Menu.pm
+%%SITE_PERL%%/Prophet/Web/FunctionResult.pm
+%%SITE_PERL%%/Prophet/Web/Field.pm
+%%SITE_PERL%%/Prophet/Config.pm
+%%SITE_PERL%%/Prophet/Collection.pm
+%%SITE_PERL%%/Prophet/UUIDGenerator.pm
+%%SITE_PERL%%/Prophet/Manual.pod
+%%SITE_PERL%%/Prophet/CLI/MirrorCommand.pm
+%%SITE_PERL%%/Prophet/CLI/ProgressBar.pm
+%%SITE_PERL%%/Prophet/CLI/Parameters.pm
+%%SITE_PERL%%/Prophet/CLI/PublishCommand.pm
+%%SITE_PERL%%/Prophet/CLI/Dispatcher.pm
+%%SITE_PERL%%/Prophet/CLI/CollectionCommand.pm
+%%SITE_PERL%%/Prophet/CLI/Command.pm
+%%SITE_PERL%%/Prophet/CLI/TextEditorCommand.pm
+%%SITE_PERL%%/Prophet/CLI/RecordCommand.pm
+%%SITE_PERL%%/Prophet/CLI/Command/Push.pm
+%%SITE_PERL%%/Prophet/CLI/Command/Shell.pm
+%%SITE_PERL%%/Prophet/CLI/Command/Update.pm
+%%SITE_PERL%%/Prophet/CLI/Command/Aliases.pm
+%%SITE_PERL%%/Prophet/CLI/Command/Settings.pm
+%%SITE_PERL%%/Prophet/CLI/Command/Export.pm
+%%SITE_PERL%%/Prophet/CLI/Command/History.pm
+%%SITE_PERL%%/Prophet/CLI/Command/Config.pm
+%%SITE_PERL%%/Prophet/CLI/Command/Mirror.pm
+%%SITE_PERL%%/Prophet/CLI/Command/Init.pm
+%%SITE_PERL%%/Prophet/CLI/Command/Pull.pm
+%%SITE_PERL%%/Prophet/CLI/Command/Server.pm
+%%SITE_PERL%%/Prophet/CLI/Command/Show.pm
+%%SITE_PERL%%/Prophet/CLI/Command/Log.pm
+%%SITE_PERL%%/Prophet/CLI/Command/Clone.pm
+%%SITE_PERL%%/Prophet/CLI/Command/Publish.pm
+%%SITE_PERL%%/Prophet/CLI/Command/Info.pm
+%%SITE_PERL%%/Prophet/CLI/Command/Search.pm
+%%SITE_PERL%%/Prophet/CLI/Command/Merge.pm
+%%SITE_PERL%%/Prophet/CLI/Command/Delete.pm
+%%SITE_PERL%%/Prophet/CLI/Command/Create.pm
+%%SITE_PERL%%/Prophet/ConflictingPropChange.pm
+%%SITE_PERL%%/Prophet/CLI.pm
+%%SITE_PERL%%/Prophet/Record.pm
+%%SITE_PERL%%/Prophet/ChangeSet.pm
+%%SITE_PERL%%/Prophet/App.pm
+%%SITE_PERL%%/Prophet/ReplicaFeedExporter.pm
+%%SITE_PERL%%/Prophet/ContentAddressedStore.pm
+%%SITE_PERL%%/Prophet/Server/Controller.pm
+%%SITE_PERL%%/Prophet/Server/Dispatcher.pm
+%%SITE_PERL%%/Prophet/Server/View.pm
+%%SITE_PERL%%/Prophet/Server/ViewHelpers.pm
+%%SITE_PERL%%/Prophet/Server/ViewHelpers/HiddenParam.pm
+%%SITE_PERL%%/Prophet/Server/ViewHelpers/Function.pm
+%%SITE_PERL%%/Prophet/Server/ViewHelpers/ParamFromFunction.pm
+%%SITE_PERL%%/Prophet/Server/ViewHelpers/Widget.pm
+%%SITE_PERL%%/Prophet/Test/Editor.pm
+%%SITE_PERL%%/Prophet/Test/Participant.pm
+%%SITE_PERL%%/Prophet/Test/Arena.pm
+%%SITE_PERL%%/Prophet/DatabaseSetting.pm
+%%SITE_PERL%%/Prophet/ConflictingChange.pm
+%%SITE_PERL%%/Prophet/Server.pm
+%%SITE_PERL%%/Prophet/ReplicaExporter.pm
+%%SITE_PERL%%/Prophet/Meta/Types.pm
+%%SITE_PERL%%/Prophet/Change.pm
+%%SITE_PERL%%/Prophet/Util.pm
+%%SITE_PERL%%/Prophet/Conflict.pm
+%%SITE_PERL%%/Prophet/FilesystemReplica.pm
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Prophet
+@dirrmtry %%SITE_PERL%%/auto/share/dist/Prophet/web/static/jquery/images
+@dirrmtry %%SITE_PERL%%/auto/share/dist/Prophet/web/static/jquery/css/tablesorter
+@dirrmtry %%SITE_PERL%%/auto/share/dist/Prophet/web/static/jquery/css
+@dirrmtry %%SITE_PERL%%/auto/share/dist/Prophet/web/static/jquery
+@dirrmtry %%SITE_PERL%%/auto/share/dist/Prophet/web/static
+@dirrmtry %%SITE_PERL%%/auto/share/dist/Prophet/web
+@dirrmtry %%SITE_PERL%%/auto/share/dist/Prophet
+@dirrmtry %%SITE_PERL%%/Prophet/Web
+@dirrmtry %%SITE_PERL%%/Prophet/Test
+@dirrmtry %%SITE_PERL%%/Prophet/Server/ViewHelpers
+@dirrmtry %%SITE_PERL%%/Prophet/Server
+@dirrmtry %%SITE_PERL%%/Prophet/Resolver
+@dirrmtry %%SITE_PERL%%/Prophet/Replica/FS/Backend
+@dirrmtry %%SITE_PERL%%/Prophet/Replica/FS
+@dirrmtry %%SITE_PERL%%/Prophet/Replica
+@dirrmtry %%SITE_PERL%%/Prophet/Meta
+@dirrmtry %%SITE_PERL%%/Prophet/CLI/Command
+@dirrmtry %%SITE_PERL%%/Prophet/CLI
+@dirrmtry %%SITE_PERL%%/Prophet
