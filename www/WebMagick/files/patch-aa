@@ -2,15 +2,15 @@ Index: webmagick.in
 ===================================================================
 RCS file: /cvsroot/webmagick/WebMagick/webmagick.in,v
 retrieving revision 1.117
-retrieving revision 1.162
-diff -u -r1.117 -r1.162
+retrieving revision 1.163
+diff -u -r1.117 -r1.163
 --- webmagick.in	23 Oct 2002 16:14:47 -0000	1.117
-+++ webmagick.in	4 Apr 2011 00:06:12 -0000	1.162
++++ webmagick.in	5 Apr 2011 13:53:47 -0000	1.163
 @@ -1,6 +1,6 @@
  #! @PERL@ 
  #
 -# $Id: webmagick.in,v 1.117 2002/10/23 16:14:47 clindell Exp $
-+# $Id: webmagick.in,v 1.162 2011/04/04 00:06:12 ache Exp $
++# $Id: webmagick.in,v 1.163 2011/04/05 13:53:47 ache Exp $
  #
  # You are looking at the main PERL script for WebMagick, a package to
  # intelligently create HTML and JavaScript index files and imagemaps
@@ -783,8 +783,14 @@ diff -u -r1.117 -r1.162
      print( INDEX "  <META NAME=\"Author\" CONTENT=\"${opt_metaauthor}\">\n" )
  	if( "$opt_metaauthor" ne '' );
      print( INDEX "  <META NAME=\"Description\" CONTENT=\"${opt_metadescription}\">\n" )
-@@ -2242,17 +2350,14 @@
-     
+@@ -2239,20 +2347,21 @@
+ 	if( "$opt_metaexpires" ne '' );
+     print( INDEX "  <LINK REL=\"stylesheet\" type=\"text/css\" HREF=\"${opt_stylesheet}\">\n")
+ 	if ("$opt_stylesheet" ne '');
+-    
++    print( INDEX "  $opt_headins\n")
++	if ("$opt_headins" ne '');
++
      print( INDEX "</HEAD>\n" );
      print( INDEX "<BODY\n" );
 -    unless ("$opt_stylesheet" ne '')
@@ -798,6 +804,8 @@ diff -u -r1.117 -r1.162
 -	    print( INDEX "  VLINK=\"${opt_dircolorvlink}\"\n" );
 -	    print( INDEX "  ALINK=\"${opt_dircoloralink}\"" );
 -	}
++    print( INDEX "  $opt_bodytagins\n" )
++	if ("$opt_bodytagins" ne '');
 +    print( INDEX "  TEXT=\"${opt_dircolorfore}\"\n" );
 +    print( INDEX "  BGCOLOR=\"${opt_dircolorback}\"\n" )
 +	if $opt_dircolorback ne 'false';
@@ -809,7 +817,7 @@ diff -u -r1.117 -r1.162
      print( INDEX ">\n");
      print( INDEX $pagedirhtml );
      print( INDEX "</BODY></HTML>\n" );
-@@ -2279,7 +2384,7 @@
+@@ -2279,7 +2388,7 @@
      # Calculate page index bar
      # No link for current page
      # Nothing at all when there is only one page.
@@ -818,7 +826,7 @@ diff -u -r1.117 -r1.162
  
      # Must be visible at each page, if no frames
      if (!$opt_frames) {
-@@ -2287,7 +2392,7 @@
+@@ -2287,7 +2396,7 @@
  	# --- readme link ---
  	if ( $haveReadme ) {
  	    $indexbar .= "<A HREF=\"${opt_readme}\"><IMG\n" .
@@ -827,7 +835,7 @@ diff -u -r1.117 -r1.162
  	}
  
  	# --- up link ---
-@@ -2295,7 +2400,7 @@
+@@ -2295,7 +2404,7 @@
  
  	if ( "$upindexname" ne 'NOLINK' ) {
  	    $indexbar .= "<A HREF=\"../${upindexname}\"><IMG\n" .
@@ -836,7 +844,7 @@ diff -u -r1.117 -r1.162
  	}
  
      }
-@@ -2312,7 +2417,7 @@
+@@ -2312,7 +2421,7 @@
  	$indexbar .= " TARGET=\"$frameTargets{'thumbview'}\""
  	    if ($opt_frames);
  	$indexbar .= "><IMG\n" .
@@ -845,7 +853,7 @@ diff -u -r1.117 -r1.162
      }
  
      # --- next link ---
-@@ -2322,15 +2427,13 @@
+@@ -2322,15 +2431,13 @@
  	    $indexbar .= " TARGET=\"$frameTargets{'thumbview'}\""
  		if ($opt_frames);
  	    $indexbar .= "><IMG\n" .
@@ -862,7 +870,7 @@ diff -u -r1.117 -r1.162
      # --- page links ---
      if( $numPages > 1 ) {
  	my $page;
-@@ -2352,7 +2455,7 @@
+@@ -2352,7 +2459,7 @@
      
      open( INDEX, ">$fileNames{'htmlCurrentIndex'}")
          || die("$0: Failed to open file $fileNames{'htmlCurrentIndex'} for output\n$@\n");
@@ -871,7 +879,7 @@ diff -u -r1.117 -r1.162
      # Charset is better before title
      print( INDEX "  <META HTTP-EQUIV=\"Content-Type\" CONTENT=\"text/html; charset=${opt_metacharset}\">\n" )
  	if( "$opt_metacharset" ne '' );
-@@ -2361,7 +2464,8 @@
+@@ -2361,7 +2468,8 @@
  	if ($opt_frames);
  
      # Meta tags
@@ -881,7 +889,7 @@ diff -u -r1.117 -r1.162
      print( INDEX "  <META NAME=\"Author\" CONTENT=\"${opt_metaauthor}\">\n" )
  	if( "$opt_metaauthor" ne '' );
      print( INDEX "  <META NAME=\"Description\" CONTENT=\"${opt_metadescription}\">\n" )
-@@ -2376,35 +2480,70 @@
+@@ -2376,35 +2484,70 @@
  	if( "$opt_metaexpires" ne '' );
      print( INDEX "  <LINK REL=\"stylesheet\" type=\"text/css\" HREF=\"${opt_stylesheet}\">\n")
  	if ("$opt_stylesheet" ne '');
@@ -923,7 +931,8 @@ diff -u -r1.117 -r1.162
 +	if( $imageCaptions{'pageTitle'} ne '') {
 +	    print( INDEX "<p><FONT SIZE=\"+3\">$imageCaptions{'pageTitle'}</FONT></p>\n");
 +	    print( STDERR "Using custom PageDescription\n") if $opt_debug;
-+	}
+ 	}
+-	print( INDEX "$indexbar<BR>\n" );
 +
 +	if( $imageCaptions{'pageTitle'} eq '' &&
 +	    $opt_indexinfo && (!$opt_frames || $opt_framestyle == 1) ) {
@@ -946,8 +955,7 @@ diff -u -r1.117 -r1.162
 +	    print( INDEX "<DIV class='wm_msgindex'>${opt_msg_index_of_files}\"",
 +		   $desc1, "\" ${opt_msg_index_through}", " \"", $desc2,
 +		   "\"</DIV>\n" );
- 	}
--	print( INDEX "$indexbar<BR>\n" );
++	}
 +	print( INDEX "<DIV class='wm_indexbar'>$indexbar</DIV>\n" );
  
  	if ($opt_tables)
@@ -968,7 +976,7 @@ diff -u -r1.117 -r1.162
  	}
  	else
  	{
-@@ -2423,35 +2562,47 @@
+@@ -2423,35 +2566,47 @@
  		}
  		print( INDEX
  		      "<IMG SRC=\"$montageImages[$pageNumber - 1]\" $montageImageSizes[$pageNumber - 1]",
@@ -1022,7 +1030,7 @@ diff -u -r1.117 -r1.162
  			print( PICHTML "  <META NAME=\"Author\" CONTENT=\"${opt_metaauthor}\">\n" )
  			    if( "$opt_metaauthor" ne '' );
  			print( PICHTML "  <META NAME=\"Description\" CONTENT=\"${opt_metadescription}\">\n" )
-@@ -2466,35 +2617,26 @@
+@@ -2466,35 +2621,26 @@
  			    if( "$opt_metaexpires" ne '' );
  			print( PICHTML "  <LINK REL=\"stylesheet\" type=\"text/css\" HREF=\"${opt_stylesheet}\">\n")
  			    if ("$opt_stylesheet" ne '');
@@ -1070,7 +1078,7 @@ diff -u -r1.117 -r1.162
  					
  				# Must be visible at each page, if no frames
  				if (!$opt_frames) {
-@@ -2502,12 +2644,12 @@
+@@ -2502,12 +2648,12 @@
  				    # --- readme link ---
  				    if ( $haveReadme ) {
  					print (PICHTML "<A HREF=\"${opt_readme}\"><IMG\n",
@@ -1085,7 +1093,7 @@ diff -u -r1.117 -r1.162
  					if ($opt_frames) {
  					    print ( PICHTML "<A HREF=\"${opt_pageindexname}${pageNumber}${opt_htmlext}\"");
  					    print ( PICHTML " TARGET=\"$frameTargets{'thumbview'}\"")
-@@ -2515,51 +2657,100 @@
+@@ -2515,51 +2661,100 @@
  					    print ( PICHTML "<A HREF=\"${pNumber}${opt_indexname}\"");
  					}
  					print ( PICHTML "><IMG SRC=\"$iconImageUrls{'up'}\"",
@@ -1203,7 +1211,7 @@ diff -u -r1.117 -r1.162
  			}
  
  			print( PICHTML "$opt_pichtmlbottom\n") if ("$opt_pichtmlbottom" ne '');
-@@ -2570,15 +2761,15 @@
+@@ -2570,15 +2765,15 @@
  
  			unless ($opt_tables)
  			{				
@@ -1223,7 +1231,7 @@ diff -u -r1.117 -r1.162
  		    } 
  	    }
  	    
-@@ -2590,7 +2781,7 @@
+@@ -2590,7 +2785,7 @@
  				print INDEX "<TR ALIGN=CENTER VALIGN=TOP>";
  			}
  				
@@ -1232,7 +1240,7 @@ diff -u -r1.117 -r1.162
  			
  			if ($opt_pichtml) {
  				print (INDEX "<A${target} HREF=\"", escapeurl($pichtml), "\">");
-@@ -2601,17 +2792,34 @@
+@@ -2601,17 +2796,34 @@
  			# TODO: make sure the thumbnails are created, and get some image sizes
  			# TODO: save the labels in a new array, maybe same with sizes
  			if ( $thumbImageSizes{$pic}) {
@@ -1272,7 +1280,7 @@ diff -u -r1.117 -r1.162
  		} # if ($opt_tables)
  	
  	} # for each picture
-@@ -2622,6 +2830,13 @@
+@@ -2622,6 +2834,13 @@
  		{
  			print INDEX "</TR>";
  		}
@@ -1286,7 +1294,7 @@ diff -u -r1.117 -r1.162
  		print (INDEX "</TABLE>\n")
  	} else {print( INDEX "</MAP>\n" );}
      }
-@@ -2630,6 +2845,9 @@
+@@ -2630,6 +2849,9 @@
  
      # Print Copyright info on non-blank pages.
      if( $numimages > 0 ) {
@@ -1296,7 +1304,7 @@ diff -u -r1.117 -r1.162
         if( "${opt_address}" ne '' ) {
  	   print( INDEX "<BR><ADDRESS>${opt_address}</ADDRESS>\n" );
         }
-@@ -2642,13 +2860,17 @@
+@@ -2642,13 +2864,17 @@
         # If anonymous, don't show copyright and address info
         if( ! $opt_anonymous ) {
  	   print( INDEX "<HR>\n${opt_msg_produced_by} " );
@@ -1316,7 +1324,7 @@ diff -u -r1.117 -r1.162
      }
  
      print( INDEX "</BODY>\n" );
-@@ -2674,13 +2896,12 @@
+@@ -2674,13 +2900,12 @@
      open( JSINDEX, ">$fileNames{'jsPageIndex'}")
          || die("$0: Failed to open file $fileNames{'jsPageIndex'} for output\n$@\n");
  
@@ -1334,7 +1342,7 @@ diff -u -r1.117 -r1.162
      print( JSINDEX "  top.drawWindows();\n");
      print( JSINDEX "</SCRIPT>\n");
      print( JSINDEX "</BODY>\n");
-@@ -2714,6 +2935,8 @@
+@@ -2714,6 +2939,8 @@
  
      # Image labels
      print( JSVARS "\n// image titles\n", jsHash( 'imageLabels', \%imageLabels ) );
@@ -1343,7 +1351,7 @@ diff -u -r1.117 -r1.162
  
  	# Image labels
      #print( JSVARS "\n// table image titles\n", jsHash( 'tableImageLabels', \%tableImageLabels ) );
-@@ -2803,6 +3026,8 @@
+@@ -2803,6 +3030,8 @@
  
      # Image labels
      print( PERLVARS "\n# image titles\n", plHash( 'imageLabels', \%imageLabels ) );
@@ -1352,7 +1360,7 @@ diff -u -r1.117 -r1.162
  
  	# Table image labels
      print( PERLVARS "\n# table image titles\n", plHash( 'tableImageLabels', \%tableImageLabels ) );
-@@ -3062,7 +3287,7 @@
+@@ -3062,7 +3291,7 @@
  		# Copy image so we can play with it without effecting original
  		print( STDERR "Copying montage to scratch ...\n" )
  		    if $opt_debug;
@@ -1361,7 +1369,7 @@ diff -u -r1.117 -r1.162
  		handleMagickError( __FILE__, __LINE__, "", $image) unless ref($image);
  		last MONTAGE unless ref($image);
  	
-@@ -3465,6 +3690,10 @@
+@@ -3465,6 +3694,10 @@
  sub sortDir {
      if(defined($dirOrder{$a}) && defined($dirOrder{$b})) {
  	$dirOrder{$a} <=> $dirOrder{$b}
@@ -1372,7 +1380,7 @@ diff -u -r1.117 -r1.162
      } else {
  	lc($a) cmp lc($b);
      }
-@@ -3476,7 +3705,11 @@
+@@ -3476,7 +3709,11 @@
  sub sortImages {
      if(defined($imageOrder{$a}) && defined($imageOrder{$b})) {
  	$imageOrder{$a} <=> $imageOrder{$b}
@@ -1385,7 +1393,7 @@ diff -u -r1.117 -r1.162
  	lc($a) cmp lc($b);
      }
  }
-@@ -3533,6 +3766,9 @@
+@@ -3533,6 +3770,9 @@
  sub compareHash {
      my( $hash1, $hash2) = @_;
  
@@ -1395,7 +1403,7 @@ diff -u -r1.117 -r1.162
      if(scalar(keys(%$hash1)) != scalar(keys(%$hash2))) {
  	return( 1 ); # different length
      }
-@@ -3868,7 +4104,7 @@
+@@ -3868,7 +4108,7 @@
  	# Set image label
  	#
  	my $label = '';
@@ -1404,7 +1412,7 @@ diff -u -r1.117 -r1.162
  	    if( defined( $imageLabels{$imagename} ) ) {
  		# Set image specific label
  		$label = $imageLabels{$imagename};
-@@ -3922,7 +4158,7 @@
+@@ -3922,7 +4162,7 @@
  
  	    # put our label into the table image hash
  
@@ -1413,7 +1421,7 @@ diff -u -r1.117 -r1.162
  	    $tableImageLabels{$imagename} =~ s/\n/<BR>/g;
  
  	    print( STDERR "Applying image label: \"${label}\"\n" )
-@@ -4073,6 +4309,7 @@
+@@ -4073,6 +4313,7 @@
    --[no]forcehtml    Force HTML files to be generated (default off)
    --[no]forcemontage Force montage (default off)
    --[no]ignorefp     Ignore directories with names like _vti (FrontPage directories) (default on)
@@ -1421,7 +1429,7 @@ diff -u -r1.117 -r1.162
    --[no]help         Display usage message (default off)
    --[no]recurse      Recurse directory tree (default off)
    --srcdir	     Image directory to process
-@@ -4093,6 +4330,8 @@
+@@ -4093,6 +4334,8 @@
  Filenames:
    --dirindexname     Directory-name to title cross-reference file name
    --imgindexname     Image-name to thumbnail label cross-reference file name
@@ -1430,7 +1438,7 @@ diff -u -r1.117 -r1.162
    --indexname	     Name of master index files (default server index)
    --pageindexname    Base name of page-related index files
    --readme	     Name of directory info file
-@@ -4138,7 +4377,9 @@
+@@ -4138,7 +4381,9 @@
  
  HTML Colors & Appearance:
    --address          Optional user address info
@@ -1440,7 +1448,7 @@ diff -u -r1.117 -r1.162
    --coloralink	     Link (active) color
    --colorback	     Background color (also applied to JPEG montage background)
    --colorfore	     Foreground text color
-@@ -4150,31 +4391,46 @@
+@@ -4150,31 +4395,46 @@
    --dircolorlink     Link (unvisited) color (directory frame)
    --dircolorvlink    Link (visited) color (directory frame)
    --dirhtmlext       Extension for directory frame
@@ -1495,7 +1503,7 @@ diff -u -r1.117 -r1.162
    --framestyle       Frame style to use (out of those available)
    --[no]allowconfig  Allow user to configure framestyle, columns and rows (requires javascript and tables) (default off)
  
-@@ -4296,6 +4552,7 @@
+@@ -4296,6 +4556,7 @@
      s/&/&amp;/g;
      s/>/&gt;/g;
      s/</&lt;/g;
@@ -1503,7 +1511,7 @@ diff -u -r1.117 -r1.162
      return( $_ );
  }
  
-@@ -4324,23 +4581,11 @@
+@@ -4324,23 +4585,11 @@
  # Escape unsafe characters in URLs
  #		
  sub escapeurl {
@@ -1531,7 +1539,7 @@ diff -u -r1.117 -r1.162
      return( $_ );
  }
  
-@@ -4387,7 +4632,6 @@
+@@ -4387,7 +4636,6 @@
      my $rc;
      foreach $rc (@_) {
          next if ( ! -r $rc || ! -f $rc );
@@ -1539,7 +1547,7 @@ diff -u -r1.117 -r1.162
  	eval ( get_rc($rc) );
  	if( $@ ) {
  	    print( STDERR "Bad Eval for file \"${rc}\"...\n$@\n" );
-@@ -4468,7 +4712,7 @@
+@@ -4468,7 +4716,7 @@
      my $path=$top;
      $direlem='';
      do {
