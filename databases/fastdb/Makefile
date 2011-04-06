@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	fastdb
-PORTVERSION=	3.65
+PORTVERSION=	3.66
 CATEGORIES=	databases
 MASTER_SITES=	SF
 
@@ -15,8 +15,6 @@ MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	Main Memory Relational Database Management System
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
-
-BROKEN=		fails to patch
 
 USE_GMAKE=	yes
 MAKE_ENV=	OSTYPE="${OPSYS}" \
