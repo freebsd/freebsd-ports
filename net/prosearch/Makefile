@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	prosearch
-PORTVERSION=	0.19.0
+PORTVERSION=	0.19.1
 CATEGORIES=	net www
 MASTER_SITES=	http://pro.setun.net/search/download/ SF/pro-search/pro-search/${PORTVERSION}
 
