@@ -7,21 +7,21 @@
 #
 
 PORTNAME=	pcc
-PORTVERSION=	0.9.9.20110216
-PORTREVISION?=	0
+PORTVERSION=	1.0.0
+PORTREVISION=	0
 CATEGORIES=	lang
-MASTER_SITES=	ftp://pcc.ludd.ltu.se/pub/pcc/ \
-		http://pcc.ludd.ltu.se/ftp/pub/pcc/ \
-		ftp://226.net120.skekraft.net/pcc/
-DISTNAME=	pcc-${PORTVERSION:E}
+MASTER_SITES=	ftp://pcc.ludd.ltu.se/pub/pcc-releases/ \
+		http://pcc.ludd.ltu.se/ftp/pub/pcc-releases/ \
+		ftp://226.net120.skekraft.net/pcc-releases/
+DISTNAME=	pcc-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	joel@FreeBSD.org
-COMMENT=	S.C.Johnson's Portable C Compiler brought into the C99 world
+COMMENT=	The Portable C Compiler
 
 ONLY_FOR_ARCHS=	i386 amd64
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:E}
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	YACC=${YACC}
 USE_GMAKE=	yes
