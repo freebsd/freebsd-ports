@@ -9,16 +9,16 @@
 PORTNAME=	ucpp
 PORTVERSION=	1.3
 CATEGORIES=	devel
-MASTER_SITES=	http://pornin.nerim.net/ucpp/
+MASTER_SITES=	GOOGLE_CODE
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A C preprocessor and lexer
 
-DEPRECATED=     Upstream disapear and distfile is no more available
-EXPIRATION_DATE=        2011-05-01
+LICENSE=	BSD
 
 MAN1=		ucpp.1
 PLIST_FILES=	bin/ucpp
+USE_GMAKE=	yes
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin

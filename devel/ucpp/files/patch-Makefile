@@ -1,22 +1,31 @@
---- Makefile.orig	Wed Jan 15 02:07:44 2003
-+++ Makefile	Sun Jul 27 14:51:51 2003
+--- Makefile.orig	2008-10-01 21:15:41.000000000 +0400
++++ Makefile	2011-03-17 21:05:49.000000000 +0300
 @@ -56,8 +56,8 @@
  #FLAGS = -O -m -DMEM_CHECK
  
  # for gcc
 -CC = gcc
--FLAGS = -g -W -Wall -ansi -DAUDIT -DMEM_DEBUG
+-FLAGS = -O3 -W -Wall -ansi
 +CC ?= gcc
 +FLAGS = -ansi -DAUDIT -DMEM_DEBUG
+ #FLAGS = -g -W -Wall -ansi -DAUDIT -DMEM_DEBUG
  #FLAGS = -O3 -mcpu=pentiumpro -fomit-frame-pointer -W -Wall -ansi -DMEM_CHECK
  #FLAGS = -O -pg -W -Wall -ansi -DMEM_CHECK
- #LDFLAGS = -pg
-@@ -80,7 +80,7 @@
+@@ -78,7 +78,7 @@
+ #LIBS = libefence.a
+ #LIBS = -lgc_dbg
+ 
+-#STAND_ALONE = -DSTAND_ALONE
++STAND_ALONE = -DSTAND_ALONE
+ 
+ ifdef STAND_ALONE
+ 	FINAL_STEP = $(CC) $(LDFLAGS) -o ucpp $(COBJ) $(LIBS)
+@@ -87,7 +87,7 @@
  # ----- nothing should be changed below this line -----
  
  COBJ = mem.o nhash.o cpp.o lexer.o assert.o macro.o eval.o
--CFLAGS = $(FLAGS) -DSTAND_ALONE
-+CFLAGS += $(FLAGS) -DSTAND_ALONE
+-CFLAGS = $(FLAGS) $(STAND_ALONE)
++CFLAGS += $(FLAGS) $(STAND_ALONE)
  
  all: ucpp
- 
+ 	@ar cq libucpp.a *.o
