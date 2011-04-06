@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gnudatalanguage
-DISTVERSION=	0.9
-PORTREVISION=	1
+DISTVERSION=	0.9.1
 CATEGORIES=	science lang
 MASTER_SITES=	SF/${PORTNAME}/gdl/${DISTVERSION}
 .if defined(BUILD_PYTHON_MODULE)
@@ -39,8 +38,8 @@ USE_WX=		2.8
 GNU_CONFIGURE=	yes
 # Disable ncurses and readline from ports
 CONFIGURE_FLAGS=--with_ncursesdir=/usr --with_readlinedir=/usr
-CONFIGURE_ENV=	CPPFLAGS="${CFLAGS} ${PTHREAD_CFLAGS} -I${LOCALBASE}/include -I${LOCALBASE}/include/ImageMagick"	\
-		LDFLAGS="${LDFLAGS} ${PTHREAD_LIBS} -L${LOCALBASE}/lib"	\
+CPPFLAGS=	${CFLAGS} ${PTHREAD_CFLAGS} -I${LOCALBASE}/include -I${LOCALBASE}/include/ImageMagick
+CONFIGURE_ENV=	LDFLAGS="${LDFLAGS} ${PTHREAD_LIBS} -L${LOCALBASE}/lib"	\
 		wxConfig=${WX_CONFIG}
 
 SLAVEDIRS=	science/py-gnudatalanguage
@@ -63,7 +62,7 @@ CONFIGURE_ARGS+=--with-Magick=no
 .endif
 
 .if !defined(WITHOUT_HDF5)
-LIB_DEPENDS+=	hdf5.0:${PORTSDIR}/science/hdf5
+LIB_DEPENDS+=	hdf5.6:${PORTSDIR}/science/hdf5-18
 CONFIGURE_ARGS+=--with-hdf5=${LOCALBASE}
 .else
 CONFIGURE_ARGS+=--with-hdf5=no
@@ -122,6 +121,7 @@ post-install:
 . if !defined(NOPORTEXAMPLES)
 	${MKDIR} ${EXAMPLESDIR}/testsuite
 	(cd ${WRKSRC}/testsuite && ${COPYTREE_SHARE} \* ${EXAMPLESDIR}/testsuite/)
+	${RM} ${EXAMPLESDIR}/testsuite/Makefile.in.orig
 	@${ECHO_MSG} "===> Examples installed in ${EXAMPLESDIR}."
 . endif
 .endif
