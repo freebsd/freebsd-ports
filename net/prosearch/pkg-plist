@@ -4,6 +4,7 @@
 %%SEARCHDIR%%/tools/prosearch/Makefile
 %%SEARCHDIR%%/tools/tidy.pl
 %%SEARCHDIR%%/tools/test
+%%SEARCHDIR%%/tools/onebyte
 %%SEARCHDIR%%/tools/test.zip
 %%SEARCHDIR%%/tools/size.sh
 %%SEARCHDIR%%/tools/grant.sql
@@ -48,7 +49,7 @@
 %%SEARCHDIR%%/web/img/dir.png
 %%SEARCHDIR%%/web/img/file.png
 %%SEARCHDIR%%/web/img/archive.png
-%%SEARCHDIR%%/web/img/css.png
+%%SEARCHDIR%%/web/img/css_valid.png
 %%SEARCHDIR%%/web/img/swf.png
 %%SEARCHDIR%%/web/img/exec.png
 %%SEARCHDIR%%/web/img/cd.png
@@ -61,7 +62,7 @@
 %%SEARCHDIR%%/web/img/mov.png
 %%SEARCHDIR%%/web/img/perl.png
 %%SEARCHDIR%%/web/img/mysql.png
-%%SEARCHDIR%%/web/img/rss.png
+%%SEARCHDIR%%/web/img/rss_valid.png
 %%SEARCHDIR%%/web/img/chm.png
 %%SEARCHDIR%%/web/img/pdf.png
 %%SEARCHDIR%%/web/img/wmv.png
@@ -72,6 +73,7 @@
 %%SEARCHDIR%%/web/img/dcuser.png
 %%SEARCHDIR%%/web/img/nrg.png
 %%SEARCHDIR%%/web/img/ftp.png
+%%SEARCHDIR%%/web/img/sphinx.png
 %%SEARCHDIR%%/web/lib/lib.js
 %%SEARCHDIR%%/web/lib/search1.js
 %%SEARCHDIR%%/web/lib/player.js
