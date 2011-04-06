@@ -1,5 +1,6 @@
 bin/idevice_id
 bin/idevicebackup
+bin/ideviceenterrecovery
 bin/ideviceimagemounter
 bin/ideviceinfo
 bin/idevicepair
