@@ -1872,6 +1872,7 @@
     SUBDIR += p5-Log-Any-Adapter-Dispatch
     SUBDIR += p5-Log-Any-Adapter-Log4perl
     SUBDIR += p5-Log-Any-Adapter-Syslog
+    SUBDIR += p5-Log-Any-App
     SUBDIR += p5-Log-Dispatch
     SUBDIR += p5-Log-Dispatch-Colorful
     SUBDIR += p5-Log-Dispatch-Config
