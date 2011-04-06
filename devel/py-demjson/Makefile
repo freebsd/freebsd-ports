@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	demjson
-PORTVERSION=	1.5
+PORTVERSION=	1.6
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP \
 		http://deron.meranda.us/python/demjson/dist/
