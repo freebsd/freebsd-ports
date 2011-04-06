@@ -8,7 +8,7 @@ PORTNAME=	gentoo-stage3
 PORTVERSION=	20110315
 CATEGORIES=	emulators linux
 MASTER_SITES=	${MASTER_SITE_GENTOO}
-MASTER_SITE_SUBDIR=	releases/x86/autobuilds/${PORTVERSION}
+MASTER_SITE_SUBDIR=	releases/x86/autobuilds/current-stage3$-{GENTOO_OPTIMIZED}
 
 MAINTAINER=	gabor@FreeBSD.org
 COMMENT=	Files from Gentoo distribution, for Linux compatibility
@@ -123,7 +123,7 @@ plist:
 update-port:
 	${MAKE} distclean
 	${MAKE} distclean GENTOO_OPTIMIZED=i686
-	${RM} ${DISTINFO_FILE}
+	-${RM} ${DISTINFO_FILE}
 	${MAKE} makesum
 	${MV} ${DISTINFO_FILE} ${DISTINFO_FILE}.new
 	${MAKE} makesum GENTOO_OPTIMIZED=i686
