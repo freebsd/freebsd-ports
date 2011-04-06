@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	imapsync
-PORTVERSION=	1.366
+PORTVERSION=	1.404
 CATEGORIES=	mail perl5
-MASTER_SITES=	ftp://www.linux-france.org/pub/prj/${PORTNAME}/ \
-		http://christianserving.org/ports/mail/${PORTNAME}/
+MASTER_SITES=	https://fedorahosted.org/released/${PORTNAME}/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@christianserving.org
