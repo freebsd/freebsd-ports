@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	libimobiledevice
-PORTVERSION=	1.0.4
+PORTVERSION=	1.0.6
 CATEGORIES=	comms
 MASTER_SITES=	http://www.${PORTNAME}.org/downloads/
 
@@ -31,8 +31,8 @@ USE_LDCONFIG=	yes
 
 PORTDOCS=	AUTHORS NEWS README
 
-MAN1=		idevice_id.1 idevicebackup.1 \
-		ideviceimagemounter.1 ideviceinfo.1 \
+MAN1=		idevice_id.1 idevicebackup.1 ideviceenterrecovery.1 \
+		ideviceimagemounter.1 ideviceinfo.1 idevicepair.1 \
 		idevicescreenshot.1 idevicesyslog.1
 
 #OPTIONS=	PYTHON	"Enable Python bindings (needs Swig)" off
