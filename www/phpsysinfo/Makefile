@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	phpsysinfo
-PORTVERSION=	3.0.7
+PORTVERSION=	3.0.10
 CATEGORIES=	www
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}/
 
@@ -17,6 +17,8 @@ LATEST_LINK=	phpsysinfo-dev
 
 USE_PHP=	pcre xml simplexml mbstring
 WANT_PHP_WEB=	yes
+
+LICENSE=	GPLv2
 
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
