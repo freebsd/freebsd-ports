@@ -139,6 +139,9 @@
 %%PYTHON_SITELIBDIR%%/kombu/utils/compat.py
 %%PYTHON_SITELIBDIR%%/kombu/utils/compat.pyc
 %%PYTHON_SITELIBDIR%%/kombu/utils/compat.pyo
+%%PYTHON_SITELIBDIR%%/kombu/utils/debug.py
+%%PYTHON_SITELIBDIR%%/kombu/utils/debug.pyc
+%%PYTHON_SITELIBDIR%%/kombu/utils/debug.pyo
 %%PYTHON_SITELIBDIR%%/kombu/utils/eventio.py
 %%PYTHON_SITELIBDIR%%/kombu/utils/eventio.pyc
 %%PYTHON_SITELIBDIR%%/kombu/utils/eventio.pyo
@@ -148,6 +151,9 @@
 %%PYTHON_SITELIBDIR%%/kombu/utils/functional.py
 %%PYTHON_SITELIBDIR%%/kombu/utils/functional.pyc
 %%PYTHON_SITELIBDIR%%/kombu/utils/functional.pyo
+%%PYTHON_SITELIBDIR%%/kombu/utils/log.py
+%%PYTHON_SITELIBDIR%%/kombu/utils/log.pyc
+%%PYTHON_SITELIBDIR%%/kombu/utils/log.pyo
 @dirrm %%PYTHON_SITELIBDIR%%/kombu/utils
 @dirrm %%PYTHON_SITELIBDIR%%/kombu/transport/virtual
 @dirrm %%PYTHON_SITELIBDIR%%/kombu/transport
