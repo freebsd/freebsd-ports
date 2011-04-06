@@ -1,0 +1,6 @@
+pkcs11-dump is a small utility to dump PKCS#11 token contents.
+
+WWW:	http://sites.google.com/site/alonbarlev/pkcs11-utilities
+
+- Alex Dupre
+ale@FreeBSD.org
