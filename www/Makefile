@@ -1373,6 +1373,7 @@
     SUBDIR += pear-Services_Google
     SUBDIR += pear-Services_OpenSearch
     SUBDIR += pear-Services_SharedBook
+    SUBDIR += pear-Services_ShortURL
     SUBDIR += pear-Services_TinyURL
     SUBDIR += pear-Services_TwitPic
     SUBDIR += pear-Services_W3C_CSSValidator
