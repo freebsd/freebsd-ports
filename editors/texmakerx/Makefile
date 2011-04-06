@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	texmakerx
-PORTVERSION=	2.0.0
+PORTVERSION=	2.1
 CATEGORIES=	editors
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/TexMakerX%20${PORTVERSION}
 DISTNAME=	${PORTNAME}-${PORTVERSION:S:.0::}
@@ -19,6 +19,8 @@ LIB_DEPENDS=	poppler.6:${PORTSDIR}/graphics/poppler \
 RUN_DEPENDS=	latex:${PORTSDIR}/print/teTeX-base \
 		dvips:${PORTSDIR}/print/dvipsk-tetex \
 		${LOCALBASE}/share/icons/hicolor/index.theme:${PORTSDIR}/misc/hicolor-icon-theme
+
+WRKSRC=	${WRKDIR}/${PORTNAME}${PORTVERSION}
 
 USE_GHOSTSCRIPT=yes
 USE_QT_VER=	4
