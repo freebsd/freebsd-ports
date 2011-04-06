@@ -104,6 +104,11 @@ CONFIGURE_ENV=		CPPFLAGS="${CPPFLAGS}" \
 
 post-patch:
 	@${REINPLACE_CMD} -e "s|%%PREFIX%%|${PREFIX}|g" ${WRKSRC}/doc/bash.1
+.if defined(WITH_SYSLOG)
+	@${REINPLACE_CMD} \
+	    -e "s|/\*.*#define SYSLOG_HISTORY .*\*/|#define SYSLOG_HISTORY|g" \
+	    ${WRKSRC}/config-top.h
+.endif
 .if defined(WITHOUT_NLS)
 	@${REINPLACE_CMD} -e "s|@LIBICONV@||g" ${WRKSRC}/Makefile.in
 .endif
