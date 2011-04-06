@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	distel
-PORTVERSION=	2009.08.02
-PORTREVISION=	3
+PORTVERSION=	2011.03.13
 CATEGORIES=	devel elisp
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	olgeni
@@ -31,6 +30,7 @@ DISTEL_DOCS=	AUTHORS ChangeLog INSTALL INSTALL.WIN32 NEWS README README.ie-sessi
 DISTEL_ROOT=	${PREFIX}/lib/erlang/lib/${PORTNAME}-${PORTVERSION}
 
 do-build:
+	@${MKDIR} ${WRKSRC}/ebin
 	@cd ${WRKSRC} && erlc -W0 -o ebin/ +debug_info src/*.erl
 
 do-install:
