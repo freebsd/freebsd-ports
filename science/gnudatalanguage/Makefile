@@ -46,7 +46,7 @@ SLAVEDIRS=	science/py-gnudatalanguage
 
 .if defined(BUILD_PYTHON_MODULE)
 CATEGORIES+=	python
-CONFIGURE_ARGS+=--enable-python_module
+CONFIGURE_ARGS+=--enable-python_module --with-openmp=no
 PLIST_FILES=	%%PYTHON_SITELIBDIR%%/GDL.so
 PLIST_SUB+=	MASTER="@comment "
 .else
