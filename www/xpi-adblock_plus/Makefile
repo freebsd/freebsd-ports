@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	adblock_plus
-PORTVERSION=	1.3.3
-DISTVERSIONSUFFIX=	-fn+fx+sm+tb
+PORTVERSION=	1.3.6
+DISTVERSIONSUFFIX=	-fn+tb+fx+sm
 CATEGORIES=	www
 
 MAINTAINER=	ale@FreeBSD.org
@@ -17,10 +17,11 @@ XPI_NUM=	1865
 XPI_ID=		{d10d0bf8-f5b5-c8b4-a8b2-2b9879e08c5d}
 XPI_FILES=	chrome/adblockplus.jar chrome.manifest components/Initializer.js \
 		defaults/patterns.ini defaults/preferences/adblockplus.js \
-		icon.png install.rdf \
+		icon.png icon64.png install.rdf \
 		modules/AppIntegration.jsm modules/AppIntegrationFennec.jsm \
 		modules/Bootstrap.jsm modules/ContentPolicy.jsm \
-		modules/ElemHide.jsm modules/FilterClasses.jsm \
+		modules/ContentPolicyRemote.jsm modules/ElemHide.jsm \
+		modules/ElemHideRemote.jsm modules/FilterClasses.jsm \
 		modules/FilterListener.jsm modules/FilterStorage.jsm \
 		modules/Matcher.jsm modules/ObjectTabs.jsm \
 		modules/Prefs.jsm modules/Public.jsm \
