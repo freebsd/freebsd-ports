@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	supervisor
-PORTVERSION=	3.0a9
+PORTVERSION=	3.0a10
 CATEGORIES=	sysutils python
 MASTER_SITES=	http://dist.supervisord.org/ \
 		CHEESESHOP
