@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Net-Trac
-PORTVERSION=	0.15
+PORTVERSION=	0.16
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	Net
@@ -14,6 +14,9 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Interact with a remote Trac instance
+
+LICENSE_COMB=	dual
+LICENSE=	ART20 GPLv1
 
 RUN_DEPENDS=	p5-Any-Moose>0:${PORTSDIR}/devel/p5-Any-Moose \
 		p5-DateTime>0:${PORTSDIR}/devel/p5-DateTime \
