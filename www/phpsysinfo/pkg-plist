@@ -69,6 +69,7 @@
 %%WWWDIR%%/includes/interface/class.PSI_Interface_Plugin.inc.php
 %%WWWDIR%%/includes/interface/class.PSI_Interface_Sensor.inc.php
 %%WWWDIR%%/includes/interface/class.PSI_Interface_UPS.inc.php
+%%WWWDIR%%/includes/js/class.JSMin.inc.php
 %%WWWDIR%%/includes/js/class.JavaScriptPacker.inc.php
 %%WWWDIR%%/includes/mb/class.Coretemp.inc.php
 %%WWWDIR%%/includes/mb/class.HDDTemp.inc.php
@@ -92,6 +93,7 @@
 %%WWWDIR%%/includes/os/class.SunOS.inc.php
 %%WWWDIR%%/includes/os/class.WINNT.inc.php
 %%WWWDIR%%/includes/output/class.Output.inc.php
+%%WWWDIR%%/includes/output/class.Template.inc.php
 %%WWWDIR%%/includes/output/class.Webpage.inc.php
 %%WWWDIR%%/includes/output/class.WebpageXML.inc.php
 %%WWWDIR%%/includes/output/class.WebpageXSLT.inc.php
@@ -208,6 +210,7 @@
 %%WWWDIR%%/plugins/UpdateNotifier/js/UpdateNotifier.js
 %%WWWDIR%%/plugins/UpdateNotifier/lang/en.xml
 %%WWWDIR%%/plugins/UpdateNotifier/lang/fr.xml
+%%WWWDIR%%/plugins/UpdateNotifier/lang/pl.xml
 %%WWWDIR%%/plugins/ipmi/class.ipmi.inc.php
 %%WWWDIR%%/plugins/ipmi/ipmi.config.php
 %%WWWDIR%%/plugins/ipmi/js/ipmi.js
@@ -220,6 +223,9 @@
 %%WWWDIR%%/templates/clean.css
 %%WWWDIR%%/templates/cream.css
 %%WWWDIR%%/templates/cream/bg.gif
+%%WWWDIR%%/templates/html/error_config.html
+%%WWWDIR%%/templates/html/index_all.html
+%%WWWDIR%%/templates/html/index_dynamic.html
 %%WWWDIR%%/templates/jstyle_blue.css
 %%WWWDIR%%/templates/jstyle_green.css
 %%WWWDIR%%/templates/nextgen.css
@@ -235,6 +241,7 @@
 @dirrm %%WWWDIR%%/templates/two
 @dirrm %%WWWDIR%%/templates/plugin
 @dirrm %%WWWDIR%%/templates/nextgen
+@dirrm %%WWWDIR%%/templates/html
 @dirrm %%WWWDIR%%/templates/cream
 @dirrm %%WWWDIR%%/templates/aqua
 @dirrm %%WWWDIR%%/templates
