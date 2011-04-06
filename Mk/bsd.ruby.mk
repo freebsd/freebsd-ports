@@ -547,11 +547,11 @@ RUN_DEPENDS+=		${DEPEND_RUBY_ICONV}
 .endif
 
 .if defined(USE_RAKE)
-BUILD_DEPENDS+=		${LOCALBASE}/bin/rake:${PORTSDIR}/devel/rubygem-rake
 .if ${RUBY_VER} == 1.8
+BUILD_DEPENDS+=		${LOCALBASE}/bin/rake:${PORTSDIR}/devel/rubygem-rake
 RAKE_BIN=	${LOCALBASE}/bin/rake
 .else
-RAKE_BIN=	${GEM_LIB_DIR}/bin/rake${RUBY_VER:S/.//}
+RAKE_BIN=	${LOCALBASE}/bin/rake${RUBY_VER:S/.//}
 .endif
 .endif
 
