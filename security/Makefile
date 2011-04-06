@@ -661,6 +661,7 @@
     SUBDIR += pinentry-qt4
     SUBDIR += pkcrack
     SUBDIR += pkcs11-dump
+    SUBDIR += pkcs11-gateway
     SUBDIR += pkcs11-helper
     SUBDIR += pks
     SUBDIR += pktsuckers
