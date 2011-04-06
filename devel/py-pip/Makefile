@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pip
-PORTVERSION=	0.8.3
+PORTVERSION=	1.0
 PORTREVISION=	0
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP \
@@ -22,16 +22,17 @@ REINPLACE_ARGS=	-i.bak -e "s/env python$$/&${PYTHON_VER}/"
 
 PLIST_SUB=	PYTHON_VER=${PYTHON_VER}
 
+# Python3 ready
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	easy_install
 
 post-patch:
-	${FIND} ${WRKSRC} -type f -name "pip*" -print0 | ${XARGS} -0 ${REINPLACE_CMD}
+	${REINPLACE_CMD} ${WRKSRC}/pip/__init__.py
 
 .if !defined(NOPORTDOCS)
 post-install:
 	@${MKDIR} ${DOCSDIR}
-	@cd ${WRKSRC}/docs/_build && ${COPYTREE_SHARE} . ${DOCSDIR}
+	@cd ${WRKSRC}/docs && ${COPYTREE_SHARE} . ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
