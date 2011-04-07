@@ -662,6 +662,7 @@
     SUBDIR += phpua-ut
     SUBDIR += phpua-ut2003
     SUBDIR += pinball
+    SUBDIR += pinedit
     SUBDIR += pingus
     SUBDIR += pink-pony
     SUBDIR += pioneers
