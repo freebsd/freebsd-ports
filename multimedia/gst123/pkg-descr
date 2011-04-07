@@ -1,0 +1,7 @@
+This program is designed to be flexible command line player in the spirit of
+ogg123 and mpg123, based on GStreamer.  It plays all file formats GStreamer
+understands, so if you have a music collection which contains different file
+formats, like FLAC, Ogg, and MP3, you can use gst123 to play all your music
+files.
+
+WWW: http://space.twc.de/~stefan/gst123.php
