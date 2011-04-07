@@ -6,16 +6,20 @@
 #
 
 PORTNAME=	WWW-Wikipedia
-PORTVERSION=	1.99
+PORTVERSION=	2.00
 CATEGORIES=	www perl5
-MASTER_SITES=	CPAN/../../authors/id/B/BR/BRICAS
+MASTER_SITES=	CPAN
+MASTER_SITE_SUBDIR=	CPAN:BRICAS
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl module of Automated interface to the Wikipedia
 
-BUILD_DEPENDS=	${SITE_PERL}/LWP/UserAgent.pm:${PORTSDIR}/www/p5-libwww \
-		${SITE_PERL}/Text/Autoformat.pm:${PORTSDIR}/textproc/p5-Text-Autoformat
+LICENSE_COMB=	dual
+LICENSE=	ART20 GPLv1
+
+BUILD_DEPENDS=	p5-libwww>=0:${PORTSDIR}/www/p5-libwww \
+		p5-Text-Autoformat>=0:${PORTSDIR}/textproc/p5-Text-Autoformat
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	5.8.0+
