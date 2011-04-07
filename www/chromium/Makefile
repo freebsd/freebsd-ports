@@ -20,7 +20,6 @@ COMMENT=	A mostly BSD-licensed web browser based on WebKit and Gtk+
 BUILD_DEPENDS=	${LOCALBASE}/bin/flex:${PORTSDIR}/textproc/flex \
 		${LOCALBASE}/bin/gperf:${PORTSDIR}/devel/gperf \
 		bash:${PORTSDIR}/shells/bash \
-		pkg-config:${PORTSDIR}/devel/pkg-config \
 		yasm:${PORTSDIR}/devel/yasm \
 		nss>=3.12:${PORTSDIR}/security/nss
 # minimal version of nss, LIB_DEPENDS does not enforce this
@@ -29,7 +28,6 @@ LIB_DEPENDS=	execinfo.1:${PORTSDIR}/devel/libexecinfo \
 		cairo.2:${PORTSDIR}/graphics/cairo \
 		dbus-1.3:${PORTSDIR}/devel/dbus \
 		dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib \
-		Xss.1:${PORTSDIR}/x11/libXScrnSaver \
 		asound.2:${PORTSDIR}/audio/alsa-lib \
 		freetype.9:${PORTSDIR}/print/freetype2 \
 		nss3.1:${PORTSDIR}/security/nss \
@@ -41,12 +39,12 @@ RUN_DEPENDS=	${LOCALBASE}/lib/alsa-lib/libasound_module_pcm_oss.so:${PORTSDIR}/a
 ONLY_FOR_ARCHS=	i386 amd64
 USE_XZ=		yes
 USE_BISON=	build
-USE_PYTHON=	2.6+			# only needed at build time
-USE_PERL5_BUILD=yes
 USE_GMAKE=	yes
+USE_PERL5_BUILD=	yes
+USE_PYTHON_BUILD=	2.6+
+USE_XORG=	scrnsaverproto x11 xproto xscrnsaver xtst
+USE_GNOME=	glib20 gtk20 dconf libxslt pkgconfig
 MAN1=		chrome.1
-USE_XORG=	scrnsaverproto x11 xproto xtst
-USE_GNOME=	glib20 gtk20 dconf libxslt
 LICENSE_COMB=	multi
 LICENSE=	BSD LGPL21 MPL
 
@@ -70,7 +68,6 @@ GYP_DEFINES+=	python_ver=${PYTHON_VER}
 
 OPTIONS=	CODECS	"Compile and enable patented codecs like H.264"	off \
 		GCONF	"Use GConf2 for preferences"			on \
-		SSE2	"Use SSE2, disable this for PIII or older"	on \
 		VPX	"Use system libvpx for VP8 codec"		on
 
 .include <bsd.port.options.mk>
@@ -95,7 +92,7 @@ USE_GNOME+=	gconf2
 GYP_DEFINES+=	use_gconf=0
 .endif
 
-.if defined(WITHOUT_SSE2)
+.if ! ${MACHINE_CPU:Msse2}
 GYP_DEFINES+=	disable_sse2=1
 .endif
 
