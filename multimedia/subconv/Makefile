@@ -15,6 +15,8 @@ MASTER_SITES=	http://www.linux-projects.net/d/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Converts DivX subtitles from one format to another
 
+BROKEN=		unfetchable
+
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 NO_BUILD=	yes

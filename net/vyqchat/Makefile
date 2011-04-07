@@ -13,6 +13,8 @@ MASTER_SITES=	http://www.linux-projects.net/d/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Qt LAN chat, compatible with Vypress Chat
 
+BROKEN=		unfetchable
+
 USE_QT_VER=	3
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
