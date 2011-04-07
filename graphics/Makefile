@@ -528,7 +528,6 @@
     SUBDIR += linux-tiff
     SUBDIR += linux-ungif
     SUBDIR += linux_dri
-    SUBDIR += linux_dri-devel
     SUBDIR += linux_glide
     SUBDIR += lodju
     SUBDIR += long-exposure-tools
