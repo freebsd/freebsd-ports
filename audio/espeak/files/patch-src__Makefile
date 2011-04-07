@@ -1,5 +1,5 @@
---- ./src/Makefile.orig	2011-03-14 20:43:23.000000000 +0100
-+++ ./src/Makefile	2011-03-18 10:11:08.000000000 +0100
+--- ./src/Makefile.orig	2011-04-07 15:05:41.000000000 +0200
++++ ./src/Makefile	2011-04-07 15:08:06.000000000 +0200
 @@ -1,8 +1,8 @@
  # remove -fno-exceptions  if it causes problems with stdio library on some platforms (ARM)
  
@@ -20,7 +20,7 @@
  USE_AUDIO=-DUSE_PORTAUDIO
  else
  ifeq ($(AUDIO),sada)
-@@ -61,24 +61,24 @@
+@@ -61,23 +61,23 @@
  
  SRCS1=$(speak_SOURCES)
  OBJS1=$(patsubst %.cpp,%.o,$(SRCS1))
@@ -42,7 +42,6 @@
  
  
  all: $(BIN_NAME) $(LIB_NAME) $(STATIC_LIB_NAME) $(BIN2_NAME)
- 	mv $(LIB_NAME) $(LIB_NAME).$(LIBTAG)
  
  .cpp.o:
 -	$(CXX) $(CXXFLAGS) $(USE_AUDIO) -D PATH_ESPEAK_DATA=\"$(DATADIR)\" -Wall -pedantic -I. -c -fno-exceptions  $<
@@ -50,16 +49,7 @@
  
  $(BIN_NAME): $(OBJS1)
  	$(CXX) $(LDFLAGS) -o $@ $(OBJS1) $(LIBS1)
-@@ -89,7 +89,7 @@
- 
- 
- x_%.o: %.cpp
--	$(CXX) $(CXXFLAGS) $(USE_AUDIO) -D PATH_ESPEAK_DATA=\"$(DATADIR)\" -Wall -fpic -fvisibility=hidden -pedantic \
-+	$(CXX) $(CXXFLAGS) $(PTHREAD_CFLAGS) $(USE_AUDIO) -D PATH_ESPEAK_DATA=\"$(DATADIR)\" -Wall -fpic -fvisibility=hidden -pedantic \
- 	-I. -D LIBRARY -c -fno-exceptions  $<  -o x_$*.o
- 
- $(LIB_NAME): $(OBJS2)
-@@ -109,7 +109,7 @@
+@@ -111,7 +111,7 @@
  
  install: all
  	# Create directories
@@ -68,7 +58,7 @@
  	$(MKDIR) $(DESTDIR)$(BINDIR)
  	$(MKDIR) $(DESTDIR)$(LIBDIR)
  	$(MKDIR) $(DESTDIR)$(INCDIR)
-@@ -125,5 +125,5 @@
+@@ -127,5 +127,5 @@
  	# Install development headers
  	$(INSTALL) -pm 644 speak_lib.h $(DESTDIR)$(INCDIR)
  	# Install data files
