@@ -1676,3 +1676,4 @@ databases/postgresql80-client||2011-04-04|Removed
 databases/postgresql80-contrib||2011-04-04|Removed
 databases/postgresql81-client||2011-04-04|Removed
 graphics/linux_dri-devel|graphics/linux_dri|2011-04-07|Retire: is older than non-devel port
+math/linux-SHA-1_collision_search_graz||2011-04-07|Has expired: Project discontinued
