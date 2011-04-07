@@ -16,6 +16,11 @@ DISTNAME=	NVIDIA-FreeBSD-x86${ARCH_SUFX}-${DISTVERSION}
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	NVidia graphics card binary drivers for hardware OpenGL rendering
 
+LICENSE=	NVIDIA
+LICENSE_NAME=	License For Customer Use of NVIDIA Software
+LICENSE_FILE=	${WRKSRC}/doc/license.txt
+LICENSE_PERMS=	dist-mirror no-dist-sell pkg-mirror no-pkg-sell auto-accept
+
 ARCH_SUFX=	${ARCH:S/i386//:S/amd/_/}
 NO_PACKAGE=	should be recompiled for a particular FreeBSD kernel
 USE_GL=		gl
