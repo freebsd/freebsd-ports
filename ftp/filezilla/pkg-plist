@@ -15,7 +15,6 @@ bin/fzputtygen
 %%NLS%%share/locale/fa_IR/LC_MESSAGES/filezilla.mo
 %%NLS%%share/locale/fi_FI/LC_MESSAGES/filezilla.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/filezilla.mo
-%%NLS%%share/locale/fr_CA/LC_MESSAGES/filezilla.mo
 %%NLS%%share/locale/gl_ES/LC_MESSAGES/filezilla.mo
 %%NLS%%share/locale/he_IL/LC_MESSAGES/filezilla.mo
 %%NLS%%share/locale/hr/LC_MESSAGES/filezilla.mo
@@ -534,8 +533,6 @@ share/applications/filezilla.desktop
 @dirrmtry share/locale/he_IL
 @dirrmtry share/locale/gl_ES/LC_MESSAGES
 @dirrmtry share/locale/gl_ES
-@dirrmtry share/locale/fr_CA/LC_MESSAGES
-@dirrmtry share/locale/fr_CA
 @dirrmtry share/locale/fi_FI/LC_MESSAGES
 @dirrmtry share/locale/fi_FI
 @dirrmtry share/locale/eu_ES/LC_MESSAGES
