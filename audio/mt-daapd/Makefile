@@ -14,39 +14,43 @@ MASTER_SITES=	SF
 MAINTAINER=	mark@foster.cc
 COMMENT=	Multithread daapd yet another Server for Apple iTunes
 
-#BUILD_DEPENDS=	${LOCALBASE}/lib/libgdbm.a:${PORTSDIR}/databases/gdbm
-LIB_DEPENDS=	gdbm.3:${PORTSDIR}/databases/gdbm
-LIB_DEPENDS+=	id3tag.0:${PORTSDIR}/audio/libid3tag
+LIB_DEPENDS=	gdbm.3:${PORTSDIR}/databases/gdbm \
+		id3tag.0:${PORTSDIR}/audio/libid3tag
+
+CONFLICTS=	firefly-[0-9]*
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CFLAGS="${CFLAGS} ${PTHREAD_CFLAGS}" \
+CONFIGURE_ENV=	CFLAGS+="${PTHREAD_CFLAGS}" \
 		CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" \
 		LIBS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
-CONFIGURE_ARGS=		--with-id3tag=${PREFIX} --with-gdbm-includes=${LOCALBASE}/include
-
-USE_AUTOTOOLS=	autoheader autoconf:env
+CONFIGURE_ARGS=	--with-id3tag=${PREFIX} \
+		--with-gdbm-includes=${LOCALBASE}/include
 
 USE_ICONV=	yes
-PATCH_SITES+=	http://www.apionet.or.jp/~tomi/
-PATCH_SITES+=	${MASTER_SITE_LOCAL}
+PATCH_SITES+=	http://shishimaru.the-ninja.jp/\
+		${MASTER_SITE_LOCAL}
 PATCHFILES+=	mt-daapd-0.2.4.1-cp932.patch
 PATCH_DIST_STRIP+=	-p1
 
 DAAPD_USER?=	daapd
 DAAPD_GROUP?=	daapd
-DAAPD_DBDIR?=	/var/db/${PORTNAME}
-USE_RC_SUBR=	mt-daapd.sh
+DAAPD_DBDIR?=	${DAAPD_MASTERDIR}/var/db/${PORTNAME}
+USE_RC_SUBR=	mt-daapd
 
 PLIST_SUB+=	DAAPD_DBDIR=${DAAPD_DBDIR}
-SUB_LIST+=	USER=${DAAPD_USER} GROUP=${DAAPD_GROUP} DAAPD_DBDIR=${DAAPD_DBDIR}
+SUB_LIST+=	USER=${DAAPD_USER} GROUP=${DAAPD_GROUP}\
+		DAAPD_DBDIR=${DAAPD_DBDIR}\
+		DAAPD_MASTERDIR=${DAAPD_MASTERDIR}
 SUB_FILES+=	pkg-install pkg-deinstall mt-daapd.conf
+
+.include <bsd.port.pre.mk>
 
 pre-everything::
 	@${ECHO_CMD} "Define vars below if you need:"
 	@${ECHO_CMD} "DAAPD_USER=${DAAPD_USER} (default: daapd)"
 	@${ECHO_CMD} "DAAPD_GROUP=${DAAPD_GROUP} (default: daapd)"
-	@${ECHO_CMD} "DAAPD_DBDIR=${DAAPD_DBDIR} (default: /var/db/${PORTNAME})"
+	@${ECHO_CMD} "DAAPD_DBDIR=${DAAPD_DBDIR} (default: ${DAAPD_MASTERDIR}/var/db/${PORTNAME})"
 
 pre-install:
 	@${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
@@ -69,5 +73,11 @@ post-install:
 	@${CHMOD} 0755 ${DATADIR}
 	@${CHOWN} ${DAAPD_USER}:${DAAPD_GROUP} ${DAAPD_DBDIR}
 	@${CHOWN} ${DAAPD_USER}:${DAAPD_GROUP} ${DATADIR}
+	@${ECHO_MSG}
+	@${ECHO_MSG} "This port installs a sample configuration file in"
+	@${ECHO_MSG} "${LOCALBASE}/etc/mt-daapd.conf.sample"
+	@${ECHO_MSG} "You probably should move/copy this file to mt-daapd.conf"
+	@${ECHO_MSG} "and customize to fit your needs."
+	@${ECHO_MSG}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
