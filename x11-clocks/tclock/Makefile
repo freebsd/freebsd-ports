@@ -10,8 +10,7 @@ PORTVERSION=	1.0.1
 PORTREVISION=	2
 CATEGORIES=	x11-clocks
 MASTER_SITES=	http://www.linta.de/distfiles/ \
-		ftp://ftp.uni-potsdam.de/pub/X11/tools/clocks/	\
-		ftp://ftp.uni-bielefeld.de/pub/systems/FreeBSD/lkoeller/
+		ftp://ftp.uni-potsdam.de/pub/X11/tools/clocks/
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	aehlig@linta.de
