@@ -1,0 +1,9 @@
+%%EDITOR%%bin/glest_editor
+bin/megaglest
+%%DATADIR%%/glest.bin
+%%DATADIR%%/glest.ini
+%%DATADIR%%/glestkeys.ini
+%%DATADIR%%/servers.ini
+%%PORTDOCS%%%%DOCSDIR%%/code_license.txt
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%
+@dirrmtry %%DATADIR%%

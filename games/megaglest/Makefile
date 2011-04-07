@@ -1,0 +1,66 @@
+# New ports collection makefile for:	megaglest
+# Date created:				2011-02-10
+# Whom:					Sven Moeller <smoeller@nichthelfer.de>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	megaglest
+PORTVERSION=	3.4.0
+CATEGORIES=	games
+MASTER_SITES=	SF/${PORTNAME}/current_release/
+DISTNAME=	${PORTNAME}-source-${PORTVERSION}
+
+MAINTAINER=	smoeller@nichthelfer.de
+COMMENT=	Open source 3D real-time strategy game
+
+LIB_DEPENDS=	curl.6:${PORTSDIR}/ftp/curl \
+		jpeg.11:${PORTSDIR}/graphics/jpeg \
+		png.6:${PORTSDIR}/graphics/png \
+		xerces-c.27:${PORTSDIR}/textproc/xerces-c2 \
+		vorbis.4:${PORTSDIR}/audio/libvorbis
+RUN_DEPENDS=	${DATADIR}/tutorials/basic_tutorial/basic_tutorial.xml:${PORTSDIR}/games/megaglest-data
+
+SUB_FILES=	glest-wrapper pkg-message
+
+USE_BZIP2=	yes
+USE_CMAKE=	yes
+USE_DOS2UNIX=	yes
+USE_GL=		yes
+USE_LUA=	5.1
+USE_OPENAL=	al alut
+USE_SDL=	yes
+USE_WX=		2.8+
+
+OPTIONS=	EDITOR "Install MegaGlest Editor" off
+
+.include <bsd.port.options.mk>
+
+.if defined(WITH_EDITOR)
+PLIST_SUB+=	EDITOR=""
+.else
+PLIST_SUB+=	EDITOR="@comment "
+.endif
+
+do-install:
+	${STRIP_CMD} ${WRKSRC}/mk/linux/glest.bin
+	@${MKDIR} ${DATADIR}
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+.endif
+	${INSTALL_PROGRAM} ${WRKSRC}/mk/linux/glest.bin ${DATADIR}
+.for f in glest.ini glestkeys.ini servers.ini
+	${INSTALL_DATA} ${WRKSRC}/${f} ${DATADIR}
+.endfor
+	${INSTALL_SCRIPT} ${WRKDIR}/glest-wrapper ${PREFIX}/bin/${PORTNAME}
+.if !defined(NOPORTDOCS)
+	${INSTALL_DATA} ${WRKSRC}/code_license.txt ${DOCSDIR}
+.endif
+.if defined(WITH_EDITOR)
+	${INSTALL_PROGRAM} ${WRKSRC}/mk/linux/glest_editor ${PREFIX}/bin/
+.endif
+
+post-install:
+	@${CAT} ${PKGMESSAGE}
+
+.include <bsd.port.mk>
