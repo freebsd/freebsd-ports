@@ -6,31 +6,27 @@
 #
 
 PORTNAME=	mrouted
-PORTVERSION=	3.9
-PORTREVISION=	1
+PORTVERSION=	3.9.5
 CATEGORIES=	net
-MASTER_SITES=	ftp://ftp.research.att.com/pub/fenner/mrouted/ \
-		http://www.mirrorservice.org/sites/www.ibiblio.org/gentoo/distfiles/
-DISTNAME=	${PORTNAME}-${PORTVERSION}beta3+IOS12
+MASTER_SITES=	ftp://ftp.vmlinux.org/pub/People/jocke/mrouted/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	johans@FreeBSD.org
 COMMENT=	Multicast routing daemon providing DVMRP for IPv4
 
 USE_RC_SUBR=	mrouted
-BUILD_ENV+=	CFLAGS="-O2 -fno-strict-aliasing -DRSRR -Dlog=logit"
+USE_BZIP2=	yes
+USE_GMAKE=	yes
+MAKE_ARGS=	sysconfdir=${PREFIX}/etc \
+		mandir=${MAN8PREFIX}/man/man8
 
-MAN8=		map-mbone.8 mrouted.8 mrinfo.8
+MAN8=		map-mbone.8 mrouted.8 mrinfo.8 mtrace.8
+PORTDOCS=	*
 
-MROUTED_BINARIES=	map-mbone mrouted mrinfo
+PLIST_FILES=	sbin/map-mbone sbin/mrouted sbin/mrinfo sbin/mtrace \
+		etc/mrouted.conf
 
-PLIST_FILES=	sbin/map-mbone sbin/mrouted sbin/mrinfo
-
-do-install:
-.for i in ${MROUTED_BINARIES}
-	${INSTALL_PROGRAM} ${WRKSRC}/${i} ${PREFIX}/sbin/${i}
-.endfor
-.for i in ${MAN8}
-	${INSTALL_MAN} ${WRKSRC}/${i} ${PREFIX}/man/man8
-.endfor
+.ifdef	NOPORTDOCS
+MAKE_ARGS+=	datadir=${WRKDIR}/doc
+.endif
 
 .include <bsd.port.mk>
