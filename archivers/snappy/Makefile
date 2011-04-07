@@ -8,6 +8,7 @@
 
 PORTNAME=	snappy
 PORTVERSION=	1.0.1
+PORTREVISION= 	1
 CATEGORIES=	archivers
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 
@@ -16,5 +17,12 @@ COMMENT=	A fast compressor/decompressor library
 
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
+
+post-patch:
+.if defined(NOPORTDOCS)
+	${REINPLACE_CMD} -e \
+		'/^install-data-am:/ s|install-dist_docDATA||' \
+		${WRKSRC}/Makefile.in
+.endif
 
 .include <bsd.port.mk>
