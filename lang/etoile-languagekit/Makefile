@@ -18,10 +18,6 @@ COMMENT=	Etoile Project LanguageKit framework
 
 BUILD_DEPENDS=	llc:${PORTSDIR}/${LANGUAGEKIT_LLVM_PORT}
 
-BROKEN=		needs llvm <= 2.6.r71086
-DEPRECATED=	has been broken for over a half year
-EXPIRATION_DATE=2011-04-17
-
 LICENSE=	BSD
 
 USE_BZIP2=	yes
@@ -41,7 +37,7 @@ PLIST_SUB+=	LIBVERSION2=${DEFAULT_LIBVERSION2}
 PLIST_SUB+=	MAJORLIBVERSION2=${DEFAULT_LIBVERSION2:C/([0-9]).*/\1/1}
 
 FOUNDATION_PORT?=	devel/etoile-foundation
-LANGUAGEKIT_LLVM_PORT?=	devel/llvm
+LANGUAGEKIT_LLVM_PORT?=	devel/llvm-etoile
 
 post-configure:
 	${REINPLACE_CMD} -e 's|-Werror||' ${WRKSRC}/etoile.make
