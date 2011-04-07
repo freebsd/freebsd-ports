@@ -1,5 +1,99 @@
 share/apps/katepart/syntax/logohighlightstyle.ru.xml
+share/apps/klettres/ru/alpha/a.ogg
+share/apps/klettres/ru/alpha/ae.ogg
+share/apps/klettres/ru/alpha/be.ogg
+share/apps/klettres/ru/alpha/che.ogg
+share/apps/klettres/ru/alpha/de.ogg
+share/apps/klettres/ru/alpha/e.ogg
+share/apps/klettres/ru/alpha/em.ogg
+share/apps/klettres/ru/alpha/en.ogg
+share/apps/klettres/ru/alpha/er.ogg
+share/apps/klettres/ru/alpha/es.ogg
+share/apps/klettres/ru/alpha/f.ogg
+share/apps/klettres/ru/alpha/ge.ogg
+share/apps/klettres/ru/alpha/ha.ogg
+share/apps/klettres/ru/alpha/hard.ogg
+share/apps/klettres/ru/alpha/i.ogg
+share/apps/klettres/ru/alpha/iu.ogg
+share/apps/klettres/ru/alpha/k.ogg
+share/apps/klettres/ru/alpha/l.ogg
+share/apps/klettres/ru/alpha/o.ogg
+share/apps/klettres/ru/alpha/pe.ogg
+share/apps/klettres/ru/alpha/scha.ogg
+share/apps/klettres/ru/alpha/sha.ogg
+share/apps/klettres/ru/alpha/soft.ogg
+share/apps/klettres/ru/alpha/te.ogg
+share/apps/klettres/ru/alpha/tse.ogg
+share/apps/klettres/ru/alpha/u.ogg
+share/apps/klettres/ru/alpha/ve.ogg
+share/apps/klettres/ru/alpha/y.ogg
+share/apps/klettres/ru/alpha/ya.ogg
+share/apps/klettres/ru/alpha/yo.ogg
+share/apps/klettres/ru/alpha/yu.ogg
+share/apps/klettres/ru/alpha/ze.ogg
+share/apps/klettres/ru/alpha/zh.ogg
 share/apps/klettres/ru/sounds.xml
+share/apps/klettres/ru/syllab/ba.ogg
+share/apps/klettres/ru/syllab/be.ogg
+share/apps/klettres/ru/syllab/bro.ogg
+share/apps/klettres/ru/syllab/bu.ogg
+share/apps/klettres/ru/syllab/chey.ogg
+share/apps/klettres/ru/syllab/chka.ogg
+share/apps/klettres/ru/syllab/chok.ogg
+share/apps/klettres/ru/syllab/chto.ogg
+share/apps/klettres/ru/syllab/chu.ogg
+share/apps/klettres/ru/syllab/chut.ogg
+share/apps/klettres/ru/syllab/chyk.ogg
+share/apps/klettres/ru/syllab/da.ogg
+share/apps/klettres/ru/syllab/do.ogg
+share/apps/klettres/ru/syllab/du.ogg
+share/apps/klettres/ru/syllab/ha.ogg
+share/apps/klettres/ru/syllab/ka.ogg
+share/apps/klettres/ru/syllab/ko.ogg
+share/apps/klettres/ru/syllab/ku.ogg
+share/apps/klettres/ru/syllab/lo.ogg
+share/apps/klettres/ru/syllab/ly.ogg
+share/apps/klettres/ru/syllab/lya.ogg
+share/apps/klettres/ru/syllab/lyu.ogg
+share/apps/klettres/ru/syllab/ma.ogg
+share/apps/klettres/ru/syllab/may.ogg
+share/apps/klettres/ru/syllab/miu.ogg
+share/apps/klettres/ru/syllab/na.ogg
+share/apps/klettres/ru/syllab/ne.ogg
+share/apps/klettres/ru/syllab/net.ogg
+share/apps/klettres/ru/syllab/niuy.ogg
+share/apps/klettres/ru/syllab/no.ogg
+share/apps/klettres/ru/syllab/noy.ogg
+share/apps/klettres/ru/syllab/ny.ogg
+share/apps/klettres/ru/syllab/nya.ogg
+share/apps/klettres/ru/syllab/pa.ogg
+share/apps/klettres/ru/syllab/pi.ogg
+share/apps/klettres/ru/syllab/ro.ogg
+share/apps/klettres/ru/syllab/russ.ogg
+share/apps/klettres/ru/syllab/rys.ogg
+share/apps/klettres/ru/syllab/schy.ogg
+share/apps/klettres/ru/syllab/sha.ogg
+share/apps/klettres/ru/syllab/she.ogg
+share/apps/klettres/ru/syllab/ska.ogg
+share/apps/klettres/ru/syllab/so.ogg
+share/apps/klettres/ru/syllab/sy.ogg
+share/apps/klettres/ru/syllab/syt.ogg
+share/apps/klettres/ru/syllab/ta.ogg
+share/apps/klettres/ru/syllab/te.ogg
+share/apps/klettres/ru/syllab/tiu.ogg
+share/apps/klettres/ru/syllab/to.ogg
+share/apps/klettres/ru/syllab/tsya.ogg
+share/apps/klettres/ru/syllab/tvoy.ogg
+share/apps/klettres/ru/syllab/ty.ogg
+share/apps/klettres/ru/syllab/viu.ogg
+share/apps/klettres/ru/syllab/vo.ogg
+share/apps/klettres/ru/syllab/vse.ogg
+share/apps/klettres/ru/syllab/yizh.ogg
+share/apps/klettres/ru/syllab/zhe.ogg
+share/apps/klettres/ru/syllab/zhi.ogg
+share/apps/klettres/ru/syllab/zhyt.ogg
+share/apps/klettres/ru/syllab/zlo.ogg
+share/apps/klettres/ru/syllab/zyk.ogg
 share/apps/ktuberling/sounds/ru.soundtheme
 share/apps/ktuberling/sounds/ru/ball.ogg
 share/apps/ktuberling/sounds/ru/bow.ogg
@@ -419,6 +513,9 @@ share/doc/HTML/ru/kioslave/gzip/index.docbook
 share/doc/HTML/ru/kioslave/help/common
 share/doc/HTML/ru/kioslave/help/index.cache.bz2
 share/doc/HTML/ru/kioslave/help/index.docbook
+share/doc/HTML/ru/kioslave/imap/common
+share/doc/HTML/ru/kioslave/imap/index.cache.bz2
+share/doc/HTML/ru/kioslave/imap/index.docbook
 share/doc/HTML/ru/kioslave/info/common
 share/doc/HTML/ru/kioslave/info/index.cache.bz2
 share/doc/HTML/ru/kioslave/info/index.docbook
@@ -428,18 +525,27 @@ share/doc/HTML/ru/kioslave/ldap/index.docbook
 share/doc/HTML/ru/kioslave/mailto/common
 share/doc/HTML/ru/kioslave/mailto/index.cache.bz2
 share/doc/HTML/ru/kioslave/mailto/index.docbook
+share/doc/HTML/ru/kioslave/mbox/common
+share/doc/HTML/ru/kioslave/mbox/index.cache.bz2
+share/doc/HTML/ru/kioslave/mbox/index.docbook
 share/doc/HTML/ru/kioslave/nfs/common
 share/doc/HTML/ru/kioslave/nfs/index.cache.bz2
 share/doc/HTML/ru/kioslave/nfs/index.docbook
 share/doc/HTML/ru/kioslave/nntp/common
 share/doc/HTML/ru/kioslave/nntp/index.cache.bz2
 share/doc/HTML/ru/kioslave/nntp/index.docbook
+share/doc/HTML/ru/kioslave/pop3/common
+share/doc/HTML/ru/kioslave/pop3/index.cache.bz2
+share/doc/HTML/ru/kioslave/pop3/index.docbook
 share/doc/HTML/ru/kioslave/rlogin/common
 share/doc/HTML/ru/kioslave/rlogin/index.cache.bz2
 share/doc/HTML/ru/kioslave/rlogin/index.docbook
 share/doc/HTML/ru/kioslave/sftp/common
 share/doc/HTML/ru/kioslave/sftp/index.cache.bz2
 share/doc/HTML/ru/kioslave/sftp/index.docbook
+share/doc/HTML/ru/kioslave/sieve/common
+share/doc/HTML/ru/kioslave/sieve/index.cache.bz2
+share/doc/HTML/ru/kioslave/sieve/index.docbook
 share/doc/HTML/ru/kioslave/smtp/common
 share/doc/HTML/ru/kioslave/smtp/index.cache.bz2
 share/doc/HTML/ru/kioslave/smtp/index.docbook
@@ -464,6 +570,9 @@ share/doc/HTML/ru/klettres/index.docbook
 share/doc/HTML/ru/klines/common
 share/doc/HTML/ru/klines/index.cache.bz2
 share/doc/HTML/ru/klines/index.docbook
+share/doc/HTML/ru/klinkstatus/common
+share/doc/HTML/ru/klinkstatus/index.cache.bz2
+share/doc/HTML/ru/klinkstatus/index.docbook
 share/doc/HTML/ru/klipper/common
 share/doc/HTML/ru/klipper/index.cache.bz2
 share/doc/HTML/ru/klipper/index.docbook
@@ -735,6 +844,7 @@ share/locale/ru/LC_MESSAGES/dragonplayer.mo
 share/locale/ru/LC_MESSAGES/drkonqi.mo
 share/locale/ru/LC_MESSAGES/filelight.mo
 share/locale/ru/LC_MESSAGES/filetypes.mo
+share/locale/ru/LC_MESSAGES/fileviewgitplugin.mo
 share/locale/ru/LC_MESSAGES/fileviewsvnplugin.mo
 share/locale/ru/LC_MESSAGES/freespacenotifier.mo
 share/locale/ru/LC_MESSAGES/fsview.mo
@@ -778,9 +888,11 @@ share/locale/ru/LC_MESSAGES/katemailfilesplugin.mo
 share/locale/ru/LC_MESSAGES/kateopenheader.mo
 share/locale/ru/LC_MESSAGES/katepart4.mo
 share/locale/ru/LC_MESSAGES/katequickdocumentswitcherplugin.mo
+share/locale/ru/LC_MESSAGES/katesnippets_tng.mo
 share/locale/ru/LC_MESSAGES/katesql.mo
 share/locale/ru/LC_MESSAGES/katesymbolviewer.mo
 share/locale/ru/LC_MESSAGES/katetabbarextension.mo
+share/locale/ru/LC_MESSAGES/katetabifyplugin.mo
 share/locale/ru/LC_MESSAGES/katetextfilter.mo
 share/locale/ru/LC_MESSAGES/katexmlcheck.mo
 share/locale/ru/LC_MESSAGES/katexmltools.mo
@@ -1039,6 +1151,7 @@ share/locale/ru/LC_MESSAGES/ksysguardlsofwidgets.mo
 share/locale/ru/LC_MESSAGES/ksystemlog.mo
 share/locale/ru/LC_MESSAGES/ksystraycmd.mo
 share/locale/ru/LC_MESSAGES/kteatime.mo
+share/locale/ru/LC_MESSAGES/ktesnippets_editor.mo
 share/locale/ru/LC_MESSAGES/ktexteditor_codesnippets_core.mo
 share/locale/ru/LC_MESSAGES/ktexteditor_plugins.mo
 share/locale/ru/LC_MESSAGES/kthememanager.mo
@@ -1061,6 +1174,7 @@ share/locale/ru/LC_MESSAGES/kwin_art_clients.mo
 share/locale/ru/LC_MESSAGES/kwin_clients.mo
 share/locale/ru/LC_MESSAGES/kwin_effects.mo
 share/locale/ru/LC_MESSAGES/kwin_lib.mo
+share/locale/ru/LC_MESSAGES/kwinshutdown.mo
 share/locale/ru/LC_MESSAGES/kwinstartmenu.mo
 share/locale/ru/LC_MESSAGES/kwordquiz.mo
 share/locale/ru/LC_MESSAGES/kwrite.mo
@@ -1068,6 +1182,7 @@ share/locale/ru/LC_MESSAGES/kwriteconfig.mo
 share/locale/ru/LC_MESSAGES/kxkb.mo
 share/locale/ru/LC_MESSAGES/kxsconfig.mo
 share/locale/ru/LC_MESSAGES/lancelot.mo
+share/locale/ru/LC_MESSAGES/libakonadi-calendar.mo
 share/locale/ru/LC_MESSAGES/libakonadi-kmime.mo
 share/locale/ru/LC_MESSAGES/libakonadi.mo
 share/locale/ru/LC_MESSAGES/libkasten.mo
@@ -1370,6 +1485,7 @@ share/locale/ru/entry.desktop
 @dirrm share/doc/HTML/ru/kmenuedit
 @dirrm share/doc/HTML/ru/kmahjongg
 @dirrm share/doc/HTML/ru/klipper
+@dirrm share/doc/HTML/ru/klinkstatus
 @dirrm share/doc/HTML/ru/klines
 @dirrm share/doc/HTML/ru/klettres
 @dirrm share/doc/HTML/ru/kjumpingcube
@@ -1378,13 +1494,17 @@ share/locale/ru/entry.desktop
 @dirrm share/doc/HTML/ru/kioslave/telnet
 @dirrm share/doc/HTML/ru/kioslave/tar
 @dirrm share/doc/HTML/ru/kioslave/smtp
+@dirrm share/doc/HTML/ru/kioslave/sieve
 @dirrm share/doc/HTML/ru/kioslave/sftp
 @dirrm share/doc/HTML/ru/kioslave/rlogin
+@dirrm share/doc/HTML/ru/kioslave/pop3
 @dirrm share/doc/HTML/ru/kioslave/nntp
 @dirrm share/doc/HTML/ru/kioslave/nfs
+@dirrm share/doc/HTML/ru/kioslave/mbox
 @dirrm share/doc/HTML/ru/kioslave/mailto
 @dirrm share/doc/HTML/ru/kioslave/ldap
 @dirrm share/doc/HTML/ru/kioslave/info
+@dirrm share/doc/HTML/ru/kioslave/imap
 @dirrm share/doc/HTML/ru/kioslave/help
 @dirrm share/doc/HTML/ru/kioslave/gzip
 @dirrm share/doc/HTML/ru/kioslave/ftp
@@ -1462,8 +1582,11 @@ share/locale/ru/entry.desktop
 @dirrm share/apps/ktuberling/sounds/ru
 @dirrm share/apps/ktuberling/sounds
 @dirrm share/apps/ktuberling
+@dirrm share/apps/klettres/ru/syllab
+@dirrm share/apps/klettres/ru/alpha
 @dirrm share/apps/klettres/ru
 @dirrm share/apps/klettres
+@dirrmtry man/ru/man7
 @dirrmtry man/ru/man6
 @dirrmtry man/ru/man1
 @dirrmtry man/ru

@@ -1095,6 +1095,7 @@ share/apps/libkholidays/plan2/holiday_de-by_de
 share/apps/libkholidays/plan2/holiday_de_de
 share/apps/libkholidays/plan2/holiday_dk_da
 share/apps/libkholidays/plan2/holiday_ee_et
+share/apps/libkholidays/plan2/holiday_eg_ar
 share/apps/libkholidays/plan2/holiday_es-ct_ca
 share/apps/libkholidays/plan2/holiday_es_es
 share/apps/libkholidays/plan2/holiday_fi_fi
@@ -1106,6 +1107,8 @@ share/apps/libkholidays/plan2/holiday_gf_fr
 share/apps/libkholidays/plan2/holiday_gp_fr
 share/apps/libkholidays/plan2/holiday_gr_el
 share/apps/libkholidays/plan2/holiday_gt_es
+share/apps/libkholidays/plan2/holiday_hk_en-gb
+share/apps/libkholidays/plan2/holiday_hk_zh-cn
 share/apps/libkholidays/plan2/holiday_hr_hr
 share/apps/libkholidays/plan2/holiday_hu_hu
 share/apps/libkholidays/plan2/holiday_ie_en-gb
@@ -1121,9 +1124,11 @@ share/apps/libkholidays/plan2/holiday_it_it
 share/apps/libkholidays/plan2/holiday_jm_en-gb
 share/apps/libkholidays/plan2/holiday_jp_en-us
 share/apps/libkholidays/plan2/holiday_jp_ja
+share/apps/libkholidays/plan2/holiday_kr_ko
 share/apps/libkholidays/plan2/holiday_lt_lt
 share/apps/libkholidays/plan2/holiday_lu_fr
 share/apps/libkholidays/plan2/holiday_lu_lb
+share/apps/libkholidays/plan2/holiday_lv_lv
 share/apps/libkholidays/plan2/holiday_mq_fr
 share/apps/libkholidays/plan2/holiday_mx_es
 share/apps/libkholidays/plan2/holiday_na_en-gb

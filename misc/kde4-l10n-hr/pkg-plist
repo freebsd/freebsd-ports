@@ -22,6 +22,7 @@ share/locale/hr/LC_MESSAGES/domtreeviewer.mo
 share/locale/hr/LC_MESSAGES/dragonplayer.mo
 share/locale/hr/LC_MESSAGES/drkonqi.mo
 share/locale/hr/LC_MESSAGES/filetypes.mo
+share/locale/hr/LC_MESSAGES/freespacenotifier.mo
 share/locale/hr/LC_MESSAGES/fsview.mo
 share/locale/hr/LC_MESSAGES/granatier.mo
 share/locale/hr/LC_MESSAGES/gwenview.mo
@@ -37,6 +38,7 @@ share/locale/hr/LC_MESSAGES/kabc_ldapkio.mo
 share/locale/hr/LC_MESSAGES/kabc_net.mo
 share/locale/hr/LC_MESSAGES/kabcformat_binary.mo
 share/locale/hr/LC_MESSAGES/kaccess.mo
+share/locale/hr/LC_MESSAGES/kactivitymanagerd.mo
 share/locale/hr/LC_MESSAGES/kalgebra.mo
 share/locale/hr/LC_MESSAGES/kalzium.mo
 share/locale/hr/LC_MESSAGES/kanagram.mo
@@ -72,6 +74,7 @@ share/locale/hr/LC_MESSAGES/kcm_desktoppaths.mo
 share/locale/hr/LC_MESSAGES/kcm_desktopthemedetails.mo
 share/locale/hr/LC_MESSAGES/kcm_device_automounter.mo
 share/locale/hr/LC_MESSAGES/kcm_emoticons.mo
+share/locale/hr/LC_MESSAGES/kcm_infobase.mo
 share/locale/hr/LC_MESSAGES/kcm_infosummary.mo
 share/locale/hr/LC_MESSAGES/kcm_krfb.mo
 share/locale/hr/LC_MESSAGES/kcm_kwindesktop.mo
@@ -151,6 +154,7 @@ share/locale/hr/LC_MESSAGES/kdialog.mo
 share/locale/hr/LC_MESSAGES/kdiamond.mo
 share/locale/hr/LC_MESSAGES/kdmconfig.mo
 share/locale/hr/LC_MESSAGES/kdmgreet.mo
+share/locale/hr/LC_MESSAGES/kdontchangethehostname.mo
 share/locale/hr/LC_MESSAGES/keditbookmarks.mo
 share/locale/hr/LC_MESSAGES/kfile.mo
 share/locale/hr/LC_MESSAGES/kfile_avi.mo
@@ -343,6 +347,7 @@ share/locale/hr/LC_MESSAGES/liboktetacore.mo
 share/locale/hr/LC_MESSAGES/liboktetakasten.mo
 share/locale/hr/LC_MESSAGES/libphonon.mo
 share/locale/hr/LC_MESSAGES/libplasma.mo
+share/locale/hr/LC_MESSAGES/libplasma_groupingcontainment.mo
 share/locale/hr/LC_MESSAGES/libplasmaclock.mo
 share/locale/hr/LC_MESSAGES/libplasmaweather.mo
 share/locale/hr/LC_MESSAGES/librtm.mo
@@ -355,6 +360,7 @@ share/locale/hr/LC_MESSAGES/mf_konqplugin.mo
 share/locale/hr/LC_MESSAGES/minitoolsplugin.mo
 share/locale/hr/LC_MESSAGES/mplayerthumbs.mo
 share/locale/hr/LC_MESSAGES/mplayerthumbsconfig.mo
+share/locale/hr/LC_MESSAGES/nepomukbackup.mo
 share/locale/hr/LC_MESSAGES/nepomukqueryservice.mo
 share/locale/hr/LC_MESSAGES/nepomukserver.mo
 share/locale/hr/LC_MESSAGES/nepomukservicestub.mo
@@ -388,6 +394,7 @@ share/locale/hr/LC_MESSAGES/phononserver.mo
 share/locale/hr/LC_MESSAGES/plasma-desktop.mo
 share/locale/hr/LC_MESSAGES/plasma-netbook.mo
 share/locale/hr/LC_MESSAGES/plasma-overlay.mo
+share/locale/hr/LC_MESSAGES/plasma-windowed.mo
 share/locale/hr/LC_MESSAGES/plasma_applet_BbalL.mo
 share/locale/hr/LC_MESSAGES/plasma_applet_CharSelectApplet.mo
 share/locale/hr/LC_MESSAGES/plasma_applet_battery.mo
@@ -426,6 +433,7 @@ share/locale/hr/LC_MESSAGES/plasma_applet_netpanel.mo
 share/locale/hr/LC_MESSAGES/plasma_applet_news.mo
 share/locale/hr/LC_MESSAGES/plasma_applet_newspaper.mo
 share/locale/hr/LC_MESSAGES/plasma_applet_notes.mo
+share/locale/hr/LC_MESSAGES/plasma_applet_notifications.mo
 share/locale/hr/LC_MESSAGES/plasma_applet_nowplaying.mo
 share/locale/hr/LC_MESSAGES/plasma_applet_nuclearCalculator.mo
 share/locale/hr/LC_MESSAGES/plasma_applet_opendesktop.mo
@@ -466,6 +474,7 @@ share/locale/hr/LC_MESSAGES/plasma_containmentactions_contextmenu.mo
 share/locale/hr/LC_MESSAGES/plasma_containmentactions_switchactivity.mo
 share/locale/hr/LC_MESSAGES/plasma_containmentactions_switchdesktop.mo
 share/locale/hr/LC_MESSAGES/plasma_containmentactions_switchwindow.mo
+share/locale/hr/LC_MESSAGES/plasma_engine_calendar.mo
 share/locale/hr/LC_MESSAGES/plasma_engine_kalzium.mo
 share/locale/hr/LC_MESSAGES/plasma_engine_kdeobservatory.mo
 share/locale/hr/LC_MESSAGES/plasma_engine_keystate.mo
@@ -475,6 +484,7 @@ share/locale/hr/LC_MESSAGES/plasma_engine_network.mo
 share/locale/hr/LC_MESSAGES/plasma_engine_notifications.mo
 share/locale/hr/LC_MESSAGES/plasma_engine_nowplaying.mo
 share/locale/hr/LC_MESSAGES/plasma_engine_rss.mo
+share/locale/hr/LC_MESSAGES/plasma_engine_share.mo
 share/locale/hr/LC_MESSAGES/plasma_engine_soliddevice.mo
 share/locale/hr/LC_MESSAGES/plasma_engine_weather.mo
 share/locale/hr/LC_MESSAGES/plasma_packagestructure_comic.mo
@@ -505,8 +515,11 @@ share/locale/hr/LC_MESSAGES/plasma_runner_shell.mo
 share/locale/hr/LC_MESSAGES/plasma_runner_solid.mo
 share/locale/hr/LC_MESSAGES/plasma_runner_spellcheckrunner.mo
 share/locale/hr/LC_MESSAGES/plasma_runner_webshortcuts.mo
+share/locale/hr/LC_MESSAGES/plasma_runner_windowedwidgets.mo
 share/locale/hr/LC_MESSAGES/plasma_runner_windows.mo
 share/locale/hr/LC_MESSAGES/plasma_scriptengine_qscript.mo
+share/locale/hr/LC_MESSAGES/plasma_toolbox_desktoptoolbox.mo
+share/locale/hr/LC_MESSAGES/plasma_toolbox_paneltoolbox.mo
 share/locale/hr/LC_MESSAGES/plasma_wallpaper_color.mo
 share/locale/hr/LC_MESSAGES/plasma_wallpaper_image.mo
 share/locale/hr/LC_MESSAGES/plasma_wallpaper_mandelbrot.mo

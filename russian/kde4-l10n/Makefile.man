@@ -1,2 +1,3 @@
 MAN1=	checkXML.1 kalzium.1 kbookmarkmerger.1 kbruch.1 kdesu.1 kfind.1 kig.1 kmag.1 kmplot.1 po2xml.1 split2po.1 swappo.1 xml2pot.1
 MAN6=	khangman.6 kpat.6
+MAN7=	qtoptions.7

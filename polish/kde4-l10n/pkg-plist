@@ -1260,6 +1260,7 @@ share/locale/pl/LC_MESSAGES/plasma_applet_BbalL.mo
 share/locale/pl/LC_MESSAGES/plasma_applet_CharSelectApplet.mo
 share/locale/pl/LC_MESSAGES/plasma_applet_battery.mo
 share/locale/pl/LC_MESSAGES/plasma_applet_binaryclock.mo
+share/locale/pl/LC_MESSAGES/plasma_applet_bookmarks.mo
 share/locale/pl/LC_MESSAGES/plasma_applet_bubblemon.mo
 share/locale/pl/LC_MESSAGES/plasma_applet_calculator.mo
 share/locale/pl/LC_MESSAGES/plasma_applet_clock.mo
@@ -1274,6 +1275,7 @@ share/locale/pl/LC_MESSAGES/plasma_applet_folderview.mo
 share/locale/pl/LC_MESSAGES/plasma_applet_frame.mo
 share/locale/pl/LC_MESSAGES/plasma_applet_fuzzy_clock.mo
 share/locale/pl/LC_MESSAGES/plasma_applet_gasCalculator.mo
+share/locale/pl/LC_MESSAGES/plasma_applet_groupingpanel.mo
 share/locale/pl/LC_MESSAGES/plasma_applet_icon.mo
 share/locale/pl/LC_MESSAGES/plasma_applet_incomingmsg.mo
 share/locale/pl/LC_MESSAGES/plasma_applet_kalzium.mo

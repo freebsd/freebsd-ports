@@ -12,6 +12,7 @@ share/locale/ko/LC_MESSAGES/audiorename_plugin.mo
 share/locale/ko/LC_MESSAGES/autorefresh.mo
 share/locale/ko/LC_MESSAGES/babelfish.mo
 share/locale/ko/LC_MESSAGES/blinken.mo
+share/locale/ko/LC_MESSAGES/bomber.mo
 share/locale/ko/LC_MESSAGES/bovo.mo
 share/locale/ko/LC_MESSAGES/cantor.mo
 share/locale/ko/LC_MESSAGES/cervisia.mo
@@ -68,6 +69,7 @@ share/locale/ko/LC_MESSAGES/katomic.mo
 share/locale/ko/LC_MESSAGES/kbattleship.mo
 share/locale/ko/LC_MESSAGES/kblackbox.mo
 share/locale/ko/LC_MESSAGES/kblankscrn.mo
+share/locale/ko/LC_MESSAGES/kblocks.mo
 share/locale/ko/LC_MESSAGES/kbounce.mo
 share/locale/ko/LC_MESSAGES/kbreakout.mo
 share/locale/ko/LC_MESSAGES/kcalc.mo
@@ -308,6 +310,7 @@ share/locale/ko/LC_MESSAGES/kwin_art_clients.mo
 share/locale/ko/LC_MESSAGES/kwin_clients.mo
 share/locale/ko/LC_MESSAGES/kwin_effects.mo
 share/locale/ko/LC_MESSAGES/kwin_lib.mo
+share/locale/ko/LC_MESSAGES/kwinshutdown.mo
 share/locale/ko/LC_MESSAGES/kwinstartmenu.mo
 share/locale/ko/LC_MESSAGES/kwordquiz.mo
 share/locale/ko/LC_MESSAGES/kwrite.mo

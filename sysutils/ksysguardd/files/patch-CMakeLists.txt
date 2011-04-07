@@ -21,18 +21,6 @@
  
  configure_file(config-ksysguardd.h.cmake ${CMAKE_CURRENT_BINARY_DIR}/config-ksysguardd.h)
  
-@@ -51,9 +54,9 @@
- 
-     target_link_libraries(ksysguardd libksysguardd)
- 
--   if( NOT ${CMAKE_SYSTEM_NAME} MATCHES "Linux" )
-+   if( NOT ${CMAKE_SYSTEM_NAME} MATCHES "Linux" OR NOT ${CMAKE_SYSTEM_NAME} MATCHES "kFreeBSD" )
-       target_link_libraries(ksysguardd ${KDE4_KDEFAKES_LIBS})
--   endif( NOT ${CMAKE_SYSTEM_NAME} MATCHES "Linux" )
-+   endif( NOT ${CMAKE_SYSTEM_NAME} MATCHES "Linux" OR NOT ${CMAKE_SYSTEM_NAME} MATCHES "kFreeBSD" )
- 
- if( ${CMAKE_SYSTEM_NAME} MATCHES "NetBSD" )
-   message(STATUS "Adding kvm library on NetBSD")
 @@ -67,4 +70,5 @@
    target_link_libraries(ksysguardd socket nsl)
  endif( ${CMAKE_SYSTEM_NAME} MATCHES "SunOS" )

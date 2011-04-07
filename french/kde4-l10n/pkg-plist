@@ -254,6 +254,9 @@ share/doc/HTML/fr/kcontrol/componentchooser/index.docbook
 share/doc/HTML/fr/kcontrol/cookies/common
 share/doc/HTML/fr/kcontrol/cookies/index.cache.bz2
 share/doc/HTML/fr/kcontrol/cookies/index.docbook
+share/doc/HTML/fr/kcontrol/cursortheme/common
+share/doc/HTML/fr/kcontrol/cursortheme/index.cache.bz2
+share/doc/HTML/fr/kcontrol/cursortheme/index.docbook
 share/doc/HTML/fr/kcontrol/desktop/common
 share/doc/HTML/fr/kcontrol/desktop/index.cache.bz2
 share/doc/HTML/fr/kcontrol/desktop/index.docbook
@@ -352,6 +355,9 @@ share/doc/HTML/fr/kcontrol/kwindecoration/index.docbook
 share/doc/HTML/fr/kcontrol/kwinscreenedges/common
 share/doc/HTML/fr/kcontrol/kwinscreenedges/index.cache.bz2
 share/doc/HTML/fr/kcontrol/kwinscreenedges/index.docbook
+share/doc/HTML/fr/kcontrol/kwintabbox/common
+share/doc/HTML/fr/kcontrol/kwintabbox/index.cache.bz2
+share/doc/HTML/fr/kcontrol/kwintabbox/index.docbook
 share/doc/HTML/fr/kcontrol/language/common
 share/doc/HTML/fr/kcontrol/language/index.cache.bz2
 share/doc/HTML/fr/kcontrol/language/index.docbook
@@ -1468,6 +1474,7 @@ share/locale/fr/LC_MESSAGES/kwin_art_clients.mo
 share/locale/fr/LC_MESSAGES/kwin_clients.mo
 share/locale/fr/LC_MESSAGES/kwin_effects.mo
 share/locale/fr/LC_MESSAGES/kwin_lib.mo
+share/locale/fr/LC_MESSAGES/kwinshutdown.mo
 share/locale/fr/LC_MESSAGES/kwinstartmenu.mo
 share/locale/fr/LC_MESSAGES/kwordquiz.mo
 share/locale/fr/LC_MESSAGES/kwrite.mo
@@ -1870,6 +1877,7 @@ share/locale/fr/entry.desktop
 @dirrm share/doc/HTML/fr/kcontrol/nepomuk
 @dirrm share/doc/HTML/fr/kcontrol/mouse
 @dirrm share/doc/HTML/fr/kcontrol/language
+@dirrm share/doc/HTML/fr/kcontrol/kwintabbox
 @dirrm share/doc/HTML/fr/kcontrol/kwinscreenedges
 @dirrm share/doc/HTML/fr/kcontrol/kwindecoration
 @dirrm share/doc/HTML/fr/kcontrol/kwincompositing
@@ -1902,6 +1910,7 @@ share/locale/fr/entry.desktop
 @dirrm share/doc/HTML/fr/kcontrol/ebrowsing
 @dirrm share/doc/HTML/fr/kcontrol/desktopthemedetails
 @dirrm share/doc/HTML/fr/kcontrol/desktop
+@dirrm share/doc/HTML/fr/kcontrol/cursortheme
 @dirrm share/doc/HTML/fr/kcontrol/cookies
 @dirrm share/doc/HTML/fr/kcontrol/componentchooser
 @dirrm share/doc/HTML/fr/kcontrol/colors
