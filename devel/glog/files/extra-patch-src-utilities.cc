@@ -1,6 +1,6 @@
---- src/utilities.cc.orig	2009-01-23 09:37:14.000000000 +0800
-+++ src/utilities.cc	2009-02-04 11:25:50.000000000 +0800
-@@ -187,8 +187,6 @@
+--- src/utilities.cc.orig	2010-06-15 14:28:09.000000000 +0800
++++ src/utilities.cc	2011-04-07 17:00:18.000000000 +0800
+@@ -227,8 +227,6 @@
  #ifndef __NR_gettid
  #ifdef OS_MACOSX
  #define __NR_gettid SYS_gettid
@@ -9,12 +9,3 @@
  #else
  #define __NR_gettid 224
  #endif
-@@ -214,7 +212,7 @@
-   return GetCurrentThreadId();
- #else
-   // If none of the techniques above worked, we use pthread_self().
--  return (pid_t)pthread_self();
-+  return reinterpret_cast<unsigned long>(pthread_self());
- #endif
- }
- 

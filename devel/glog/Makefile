@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	glog
-DISTVERSION=	0.2.1
-PORTREVISION=	1
+DISTVERSION=	0.3.1
 CATEGORIES=	devel
-MASTER_SITES=	http://google-glog.googlecode.com/files/
+MASTER_SITES=	GOOGLE_CODE
 
 MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	A library of C++ classes for flexible logging
@@ -20,14 +19,14 @@ GNU_CONFIGURE=	yes
 USE_GNOME=	gnomehack
 USE_LDCONFIG=	yes
 USE_GCC=	4.2+
+PROJECTHOST=	google-glog
 
 CONFIGURE_ENV+=	LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib -lexecinfo"
 
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "amd64" || ${ARCH} =="ia64" || ${ARCH} =="powerpc" || ${ARCH} =="sparc64"
-EXTRA_PATCHES=	${FILESDIR}/extra-patch-src-logging.cc \
-		${FILESDIR}/extra-patch-src-utilities.cc
+EXTRA_PATCHES=	${FILESDIR}/extra-patch-src-utilities.cc
 .endif
 
 .if ${ARCH} == "amd64"
