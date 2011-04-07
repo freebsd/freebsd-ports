@@ -1,4 +1,2 @@
-SHA256 (virtualenv-1.5.2.tar.gz) = 54b2e9c4fcb5d30e6d0a35b938f0d962412b38433921de33a476b203e72834d7
-SIZE (virtualenv-1.5.2.tar.gz) = 1431524
-SHA256 (setuptools-0.6c11-py2.7.egg) = 0d58908ff49d88391082f701c4baa43f1246abde920a5f91ce78edcc1aa67262
-SIZE (setuptools-0.6c11-py2.7.egg) = 332005
+SHA256 (virtualenv-1.6.tar.gz) = b60e5ffb37c65c71c6fba550400d721d9f2c4e257a5a87c3dc759442f480dcda
+SIZE (virtualenv-1.6.tar.gz) = 1766631
