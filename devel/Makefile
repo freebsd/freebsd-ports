@@ -943,6 +943,7 @@
     SUBDIR += lion
     SUBDIR += llvm
     SUBDIR += llvm-devel
+    SUBDIR += llvm-etoile
     SUBDIR += lmdbg
     SUBDIR += lndir
     SUBDIR += log4c
