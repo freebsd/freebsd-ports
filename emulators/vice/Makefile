@@ -86,12 +86,8 @@ INFO=		vice
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_LIBUSB)
 .if ${OSVERSION}<800063
 LIB_DEPENDS+=		usb:${PORTSDIR}/devel/libusb
-.endif
-.else
-CONFIGURE_ARGS+=	--disable-libusb
 .endif
 
 .if exists(${LOCALBASE}/bin/fc-cache)
