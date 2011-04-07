@@ -530,6 +530,7 @@
     SUBDIR += marsnomercy
     SUBDIR += masterserver
     SUBDIR += maxr
+    SUBDIR += megaglest
     SUBDIR += megaglest-data
     SUBDIR += memonix
     SUBDIR += meqcc
