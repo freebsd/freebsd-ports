@@ -1,7 +1,6 @@
 #!/bin/sh
 #
-# $FreeBSD$
-# formerly $ FreeBSD: ports/audio/mt-daapd/files/mt-daapd.sh,v 1.1 2004/07/19 09:18:51 edwin Exp $
+# $FreeBSD: /tmp/pcvs/ports/audio/mt-daapd/files/Attic/mt-daapd.in,v 1.1 2011-04-07 17:29:56 culot Exp $
 
 # PROVIDE: mt-daapd
 # REQUIRE: LOGIN
@@ -15,7 +14,7 @@ command="%%PREFIX%%/sbin/mt-daapd"
 command_args="-c %%PREFIX%%/etc/mt-daapd.conf"
 pidfile="/var/run/mt-daapd.pid"
 required_dirs="%%DAAPD_DBDIR%%"
-required_files="%%PREFIX%%/etc/mt-daapd.conf.sample"
+required_files="%%PREFIX%%/etc/mt-daapd.conf"
 
 load_rc_config "$name"
 run_rc_command "$1"
