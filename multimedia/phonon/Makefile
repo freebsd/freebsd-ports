@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	phonon
-PORTVERSION=	4.4.4
+PORTVERSION=	4.5.0
 CATEGORIES=	multimedia kde ipv6
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	${PHONON_BRANCH}/${PORTNAME}/${PORTVERSION}/src/
@@ -21,46 +21,61 @@ USE_BZIP2=	yes
 USE_CMAKE=	yes
 USE_KDE4=	kdehier automoc4 kdeprefix
 USE_QT_VER=	4
-QT_COMPONENTS=	gui dbus xml qtestlib \
+QT_COMPONENTS=	dbus gui qtestlib \
 		qmake_build moc_build rcc_build uic_build
 USE_LDCONFIG=	yes
 
-OPTIONS=	PULSEAUDIO "Phonon support for PulseAudio" off
+OPTIONS=	PULSEAUDIO	"Support playback via PulseAudio" off
+#		DESIGNER	"Install Qt Designer plugin" off \
+#		ZEITGEIST	"Log playback activity via Zeitgeist" off
 
 .include <bsd.port.options.mk>
 
-.if defined(WITH_PULSEAUDIO)
-CMAKE_ARGS+=	-DWITH_PulseAudio:BOOL=ON
+# qt4-designer depends on qt4-webkit, hence on phonon. Disable this
+# option to avoid a circular dependency.
+.undef WITH_DESIGNER
+.ifdef(WITH_DESIGNER)
+QT_COMPONENTS+=	designer
+CMAKE_ARGS+=	-DPHONON_BUILD_DESIGNER_PLUGIN:BOOL=ON
+PLIST_SUB+=	DESIGNER=""
+.else
+CMAKE_ARGS+=	-DPHONON_BUILD_DESIGNER_PLUGIN:BOOL=OFF
+PLIST_SUB+=	DESIGNER="@comment "
+.endif
+
+.ifdef(WITH_PULSEAUDIO)
 LIB_DEPENDS+=	pulse.0:${PORTSDIR}/audio/pulseaudio
 USE_GNOME+=	glib20
+CMAKE_ARGS+=	-DWITH_PulseAudio:BOOL=ON
 .else
 CMAKE_ARGS+=	-DWITH_PulseAudio:BOOL=OFF
 .endif
 
-PLIST_SUB+=	QT_PREFIX=${QT_PREFIX}
-
-.if defined(WITH_QT_PHONON)
-IGNORE=		conflicts with Qt4 phonon. Please, deinstall qt4-phonon and set WITH_KDE_PHONON to continue
+.ifdef(WITH_ZEITGEIST)
+CMAKE_ARGS+=	-DWITH_QtZeitgeist:BOOL=ON
+.else
+CMAKE_ARGS+=	-DWITH_QtZeitgeist:BOOL=OFF
 .endif
 
-post-patch:
-#fix finding automoc when PREFIX is not matched KDE4_PREFIX
-	${REINPLACE_CMD} -e 's|NO_DEFAULT_PATH|${KDE4_PREFIX} NO_DEFAULT_PATH|' \
-		${PATCH_WRKSRC}/cmake/FindAutomoc4.cmake
+PLIST_SUB+=	QT_PREFIX=${QT_PREFIX}
+
+.ifdef(WITH_QT_PHONON)
+IGNORE=		conflicts with Qt 4 phonon. Please, deinstall qt4-phonon and unset WITH_QT_PHONON to continue
+.endif
 
 pre-configure:
 	${REINPLACE_CMD} -e '/phonon.pc/s|pkgconfig|../libdata/pkgconfig|' \
-			-e 's|{QT_INCLUDES}|{QT_INCLUDES} ${LOCALBASE}/include|'\
+		-e 's|{QT_INCLUDES}|{QT_INCLUDES} ${LOCALBASE}/include|'\
 		${PATCH_WRKSRC}/CMakeLists.txt
 
 post-install:
 	${LN} -sf ${PREFIX}/include/phonon ${QT_INCDIR}/phonon
 	${LN} -sf ${PREFIX}/include/phonon ${QT_INCDIR}/Phonon
 	${LN} -sf ${PREFIX}/include/KDE/Phonon ${PREFIX}/include/phonon/Phonon
-	${LN} -sf ${PREFIX}/lib/libphonon.so.4.4.0 ${QT_LIBDIR}/libphonon.so
-	${LN} -sf ${PREFIX}/lib/libphonon.so.4.4.0 ${QT_LIBDIR}/libphonon.so.4
-	${LN} -sf ${PREFIX}/lib/libphononexperimental.so.4.4.0 ${QT_LIBDIR}/libphononexperimental.so
-	${LN} -sf ${PREFIX}/lib/libphononexperimental.so.4.4.0 ${QT_LIBDIR}/libphononexperimental.so.4
+.for lib in phonon phononexperimental
+	${LN} -sf ${PREFIX}/lib/lib${lib}.so.4.5.0 ${QT_LIBDIR}/lib${lib}.so
+	${LN} -sf ${PREFIX}/lib/lib${lib}.so.4.5.0 ${QT_LIBDIR}/lib${lib}.so.4
+.endfor
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
