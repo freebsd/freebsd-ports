@@ -169,6 +169,7 @@ share/locale/kk/LC_MESSAGES/kfile_tiff.mo
 share/locale/kk/LC_MESSAGES/kfile_wav.mo
 share/locale/kk/LC_MESSAGES/kfile_xps.mo
 share/locale/kk/LC_MESSAGES/kfileaudiopreview4.mo
+share/locale/kk/LC_MESSAGES/kfilereplace.mo
 share/locale/kk/LC_MESSAGES/kfileshare.mo
 share/locale/kk/LC_MESSAGES/kfindpart.mo
 share/locale/kk/LC_MESSAGES/kfloppy.mo
@@ -188,6 +189,7 @@ share/locale/kk/LC_MESSAGES/khotnewstuff.mo
 share/locale/kk/LC_MESSAGES/khtmlkttsd.mo
 share/locale/kk/LC_MESSAGES/khtmlsettingsplugin.mo
 share/locale/kk/LC_MESSAGES/kiconfinder.mo
+share/locale/kk/LC_MESSAGES/kimagemapeditor.mo
 share/locale/kk/LC_MESSAGES/kinetd.mo
 share/locale/kk/LC_MESSAGES/kinfocenter.mo
 share/locale/kk/LC_MESSAGES/kio4.mo
@@ -223,6 +225,7 @@ share/locale/kk/LC_MESSAGES/kio_trash.mo
 share/locale/kk/LC_MESSAGES/kio_zeroconf.mo
 share/locale/kk/LC_MESSAGES/kioclient.mo
 share/locale/kk/LC_MESSAGES/kioexec.mo
+share/locale/kk/LC_MESSAGES/klinkstatus.mo
 share/locale/kk/LC_MESSAGES/klipper.mo
 share/locale/kk/LC_MESSAGES/kmag.mo
 share/locale/kk/LC_MESSAGES/kmenuedit.mo
@@ -234,6 +237,7 @@ share/locale/kk/LC_MESSAGES/kmouth.mo
 share/locale/kk/LC_MESSAGES/knetattach.mo
 share/locale/kk/LC_MESSAGES/knotify4.mo
 share/locale/kk/LC_MESSAGES/kolourpaint.mo
+share/locale/kk/LC_MESSAGES/kommander.mo
 share/locale/kk/LC_MESSAGES/kompare.mo
 share/locale/kk/LC_MESSAGES/konqueror.mo
 share/locale/kk/LC_MESSAGES/konsole.mo
@@ -518,6 +522,7 @@ share/locale/kk/LC_MESSAGES/system-config-printer-kde.mo
 share/locale/kk/LC_MESSAGES/systemsettings.mo
 share/locale/kk/LC_MESSAGES/timezones4.mo
 share/locale/kk/LC_MESSAGES/uachangerplugin.mo
+share/locale/kk/LC_MESSAGES/umbrello.mo
 share/locale/kk/LC_MESSAGES/useraccount.mo
 share/locale/kk/LC_MESSAGES/validatorsplugin.mo
 share/locale/kk/LC_MESSAGES/webarchiver.mo

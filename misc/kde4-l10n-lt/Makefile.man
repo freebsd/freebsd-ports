@@ -1,1 +1,2 @@
 MAN1=	checkXML.1 kfind.1
+MAN8=	kbuildsycoca4.8

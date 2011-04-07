@@ -523,8 +523,6 @@ share/apps/kconf_update/ksmserver_shortcuts.upd
 share/apps/kconf_update/kwin.upd
 share/apps/kconf_update/kwin3_plugin.pl
 share/apps/kconf_update/kwin3_plugin.upd
-share/apps/kconf_update/kwin_blacklist.sh
-share/apps/kconf_update/kwin_blacklist.upd
 share/apps/kconf_update/kwin_focus1.sh
 share/apps/kconf_update/kwin_focus1.upd
 share/apps/kconf_update/kwin_focus2.sh
@@ -646,20 +644,6 @@ share/apps/kdm/themes/circles/flower.png
 share/apps/kdm/themes/circles/help.png
 share/apps/kdm/themes/circles/options.png
 share/apps/kdm/themes/circles/screenshot.png
-share/apps/kdm/themes/ethais/KdmGreeterTheme.desktop
-share/apps/kdm/themes/ethais/ethais.xml
-share/apps/kdm/themes/ethais/lineedit_active.png
-share/apps/kdm/themes/ethais/lineedit_normal.png
-share/apps/kdm/themes/ethais/lock.png
-share/apps/kdm/themes/ethais/login_active.png
-share/apps/kdm/themes/ethais/login_normal.png
-share/apps/kdm/themes/ethais/pw_icon.png
-share/apps/kdm/themes/ethais/rectangle.png
-share/apps/kdm/themes/ethais/rectangle_overlay.png
-share/apps/kdm/themes/ethais/screenshot.png
-share/apps/kdm/themes/ethais/session_normal.png
-share/apps/kdm/themes/ethais/system_normal.png
-share/apps/kdm/themes/ethais/user_icon.png
 share/apps/kdm/themes/horos/KdmGreeterTheme.desktop
 share/apps/kdm/themes/horos/horos.xml
 share/apps/kdm/themes/horos/lineedit_active.png
@@ -2538,7 +2522,6 @@ share/wallpapers/stripes.png.desktop
 @dirrm share/apps/kdm/themes/oxygen-air
 @dirrm share/apps/kdm/themes/oxygen
 @dirrm share/apps/kdm/themes/horos
-@dirrm share/apps/kdm/themes/ethais
 @dirrm share/apps/kdm/themes/circles
 @dirrmtry share/apps/kdm/themes
 @dirrm share/apps/kdm/sessions

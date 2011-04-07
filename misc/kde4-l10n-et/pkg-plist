@@ -869,21 +869,27 @@ share/doc/HTML/et/umbrello/introduction.docbook
 share/doc/HTML/et/umbrello/other_features.docbook
 share/doc/HTML/et/umbrello/uml_basics.docbook
 share/doc/HTML/et/umbrello/working_with_umbrello.docbook
+share/locale/et/LC_MESSAGES/adblock.mo
 share/locale/et/LC_MESSAGES/akonadicontact.mo
+share/locale/et/LC_MESSAGES/akregator_konqplugin.mo
 share/locale/et/LC_MESSAGES/amor.mo
 share/locale/et/LC_MESSAGES/ark.mo
 share/locale/et/LC_MESSAGES/attica_kde.mo
 share/locale/et/LC_MESSAGES/audiocd_encoder_lame.mo
 share/locale/et/LC_MESSAGES/audiocd_encoder_vorbis.mo
 share/locale/et/LC_MESSAGES/audiorename_plugin.mo
+share/locale/et/LC_MESSAGES/autorefresh.mo
+share/locale/et/LC_MESSAGES/babelfish.mo
 share/locale/et/LC_MESSAGES/blinken.mo
 share/locale/et/LC_MESSAGES/bomber.mo
 share/locale/et/LC_MESSAGES/bovo.mo
 share/locale/et/LC_MESSAGES/cantor.mo
 share/locale/et/LC_MESSAGES/cervisia.mo
 share/locale/et/LC_MESSAGES/cvsservice.mo
+share/locale/et/LC_MESSAGES/dirfilterplugin.mo
 share/locale/et/LC_MESSAGES/display.mo
 share/locale/et/LC_MESSAGES/dolphin.mo
+share/locale/et/LC_MESSAGES/domtreeviewer.mo
 share/locale/et/LC_MESSAGES/dragonplayer.mo
 share/locale/et/LC_MESSAGES/drkonqi.mo
 share/locale/et/LC_MESSAGES/filelight.mo
@@ -891,10 +897,12 @@ share/locale/et/LC_MESSAGES/filetypes.mo
 share/locale/et/LC_MESSAGES/fileviewgitplugin.mo
 share/locale/et/LC_MESSAGES/fileviewsvnplugin.mo
 share/locale/et/LC_MESSAGES/freespacenotifier.mo
+share/locale/et/LC_MESSAGES/fsview.mo
 share/locale/et/LC_MESSAGES/granatier.mo
 share/locale/et/LC_MESSAGES/gwenview.mo
 share/locale/et/LC_MESSAGES/htmlsearch.mo
 share/locale/et/LC_MESSAGES/imagerename_plugin.mo
+share/locale/et/LC_MESSAGES/imgalleryplugin.mo
 share/locale/et/LC_MESSAGES/jovie.mo
 share/locale/et/LC_MESSAGES/joystick.mo
 share/locale/et/LC_MESSAGES/juk.mo
@@ -1071,6 +1079,7 @@ share/locale/et/LC_MESSAGES/kfontinst.mo
 share/locale/et/LC_MESSAGES/kfourinline.mo
 share/locale/et/LC_MESSAGES/kgeography.mo
 share/locale/et/LC_MESSAGES/kget.mo
+share/locale/et/LC_MESSAGES/kgetplugin.mo
 share/locale/et/LC_MESSAGES/kglobalaccel.mo
 share/locale/et/LC_MESSAGES/kgoldrunner.mo
 share/locale/et/LC_MESSAGES/kgpg.mo
@@ -1082,6 +1091,7 @@ share/locale/et/LC_MESSAGES/khelpcenter.mo
 share/locale/et/LC_MESSAGES/khotkeys.mo
 share/locale/et/LC_MESSAGES/khotnewstuff.mo
 share/locale/et/LC_MESSAGES/khtmlkttsd.mo
+share/locale/et/LC_MESSAGES/khtmlsettingsplugin.mo
 share/locale/et/LC_MESSAGES/kiconfinder.mo
 share/locale/et/LC_MESSAGES/kig.mo
 share/locale/et/LC_MESSAGES/kigo.mo
@@ -1217,6 +1227,7 @@ share/locale/et/LC_MESSAGES/kwin_art_clients.mo
 share/locale/et/LC_MESSAGES/kwin_clients.mo
 share/locale/et/LC_MESSAGES/kwin_effects.mo
 share/locale/et/LC_MESSAGES/kwin_lib.mo
+share/locale/et/LC_MESSAGES/kwinshutdown.mo
 share/locale/et/LC_MESSAGES/kwinstartmenu.mo
 share/locale/et/LC_MESSAGES/kwordquiz.mo
 share/locale/et/LC_MESSAGES/kwrite.mo
@@ -1270,6 +1281,8 @@ share/locale/et/LC_MESSAGES/lokalize.mo
 share/locale/et/LC_MESSAGES/lskat.mo
 share/locale/et/LC_MESSAGES/marble.mo
 share/locale/et/LC_MESSAGES/marble_qt.mo
+share/locale/et/LC_MESSAGES/mf_konqplugin.mo
+share/locale/et/LC_MESSAGES/minitoolsplugin.mo
 share/locale/et/LC_MESSAGES/mplayerthumbs.mo
 share/locale/et/LC_MESSAGES/mplayerthumbsconfig.mo
 share/locale/et/LC_MESSAGES/nepomukbackup.mo
@@ -1457,7 +1470,9 @@ share/locale/et/LC_MESSAGES/printer-applet.mo
 share/locale/et/LC_MESSAGES/processcore.mo
 share/locale/et/LC_MESSAGES/processui.mo
 share/locale/et/LC_MESSAGES/randrmonitor.mo
+share/locale/et/LC_MESSAGES/rellinks.mo
 share/locale/et/LC_MESSAGES/rocs.mo
+share/locale/et/LC_MESSAGES/searchbarplugin.mo
 share/locale/et/LC_MESSAGES/solid-hardware.mo
 share/locale/et/LC_MESSAGES/solid-network.mo
 share/locale/et/LC_MESSAGES/solid_qt.mo
@@ -1473,8 +1488,11 @@ share/locale/et/LC_MESSAGES/sweeper.mo
 share/locale/et/LC_MESSAGES/system-config-printer-kde.mo
 share/locale/et/LC_MESSAGES/systemsettings.mo
 share/locale/et/LC_MESSAGES/timezones4.mo
+share/locale/et/LC_MESSAGES/uachangerplugin.mo
 share/locale/et/LC_MESSAGES/umbrello.mo
 share/locale/et/LC_MESSAGES/useraccount.mo
+share/locale/et/LC_MESSAGES/validatorsplugin.mo
+share/locale/et/LC_MESSAGES/webarchiver.mo
 share/locale/et/LC_MESSAGES/xml_mimetypes.mo
 share/locale/et/entry.desktop
 @dirrm share/doc/HTML/et/umbrello

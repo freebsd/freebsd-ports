@@ -229,6 +229,9 @@ share/doc/HTML/de/dragonplayer/common
 share/doc/HTML/de/dragonplayer/index.cache.bz2
 share/doc/HTML/de/dragonplayer/index.docbook
 share/doc/HTML/de/dragonplayer/main.png
+share/doc/HTML/de/filelight/common
+share/doc/HTML/de/filelight/index.cache.bz2
+share/doc/HTML/de/filelight/index.docbook
 share/doc/HTML/de/granatier/common
 share/doc/HTML/de/granatier/index.cache.bz2
 share/doc/HTML/de/granatier/index.docbook
@@ -718,6 +721,7 @@ share/doc/HTML/de/kgpg/keygen.png
 share/doc/HTML/de/kgpg/keymanage.png
 share/doc/HTML/de/kgpg/keyprop.png
 share/doc/HTML/de/kgpg/keys.png
+share/doc/HTML/de/kgpg/keyserver-search.png
 share/doc/HTML/de/kgpg/keyserver.png
 share/doc/HTML/de/kgpg/options.png
 share/doc/HTML/de/kgpg/select-secret-key.png
@@ -2277,6 +2281,7 @@ share/locale/de/entry.desktop
 @dirrm share/doc/HTML/de/jovie
 @dirrm share/doc/HTML/de/gwenview
 @dirrm share/doc/HTML/de/granatier
+@dirrm share/doc/HTML/de/filelight
 @dirrm share/doc/HTML/de/dragonplayer
 @dirrm share/doc/HTML/de/dolphin
 @dirrm share/doc/HTML/de/common

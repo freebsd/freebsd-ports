@@ -288,6 +288,7 @@ share/locale/lt/LC_MESSAGES/kfontinst.mo
 share/locale/lt/LC_MESSAGES/kfourinline.mo
 share/locale/lt/LC_MESSAGES/kgeography.mo
 share/locale/lt/LC_MESSAGES/kget.mo
+share/locale/lt/LC_MESSAGES/kgetplugin.mo
 share/locale/lt/LC_MESSAGES/kglobalaccel.mo
 share/locale/lt/LC_MESSAGES/kgoldrunner.mo
 share/locale/lt/LC_MESSAGES/kgpg.mo
@@ -724,5 +725,6 @@ share/locale/lt/entry.desktop
 @dirrm share/doc/HTML/lt/kcalc
 @dirrm share/doc/HTML/lt/dolphin
 @dirrm share/doc/HTML/lt/common
+@dirrmtry man/lt/man8
 @dirrmtry man/lt/man1
 @dirrmtry man/lt

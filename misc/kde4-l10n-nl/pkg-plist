@@ -113,6 +113,9 @@ share/doc/HTML/nl/bomber/index.docbook
 share/doc/HTML/nl/cantor/common
 share/doc/HTML/nl/cantor/index.cache.bz2
 share/doc/HTML/nl/cantor/index.docbook
+share/doc/HTML/nl/cervisia/common
+share/doc/HTML/nl/cervisia/index.cache.bz2
+share/doc/HTML/nl/cervisia/index.docbook
 share/doc/HTML/nl/common/fdl-translated.html
 share/doc/HTML/nl/common/gpl-translated.html
 share/doc/HTML/nl/common/kde-localised.css
@@ -1837,6 +1840,7 @@ share/locale/nl/entry.desktop
 @dirrm share/doc/HTML/nl/dragonplayer
 @dirrm share/doc/HTML/nl/dolphin
 @dirrm share/doc/HTML/nl/common
+@dirrm share/doc/HTML/nl/cervisia
 @dirrm share/doc/HTML/nl/cantor
 @dirrm share/doc/HTML/nl/bomber
 @dirrm share/doc/HTML/nl/blinken

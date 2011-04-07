@@ -381,6 +381,7 @@ share/locale/ja/LC_MESSAGES/kwin_art_clients.mo
 share/locale/ja/LC_MESSAGES/kwin_clients.mo
 share/locale/ja/LC_MESSAGES/kwin_effects.mo
 share/locale/ja/LC_MESSAGES/kwin_lib.mo
+share/locale/ja/LC_MESSAGES/kwinshutdown.mo
 share/locale/ja/LC_MESSAGES/kwinstartmenu.mo
 share/locale/ja/LC_MESSAGES/kwordquiz.mo
 share/locale/ja/LC_MESSAGES/kwrite.mo

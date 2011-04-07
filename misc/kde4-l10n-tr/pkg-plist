@@ -7,21 +7,27 @@ share/doc/HTML/tr/common/fdl-translated.html
 share/doc/HTML/tr/common/gpl-translated.html
 share/doc/HTML/tr/common/kde-localised.css
 share/doc/HTML/tr/common/lgpl-translated.html
+share/locale/tr/LC_MESSAGES/adblock.mo
 share/locale/tr/LC_MESSAGES/akonadicontact.mo
+share/locale/tr/LC_MESSAGES/akregator_konqplugin.mo
 share/locale/tr/LC_MESSAGES/amor.mo
 share/locale/tr/LC_MESSAGES/ark.mo
 share/locale/tr/LC_MESSAGES/attica_kde.mo
 share/locale/tr/LC_MESSAGES/audiocd_encoder_lame.mo
 share/locale/tr/LC_MESSAGES/audiocd_encoder_vorbis.mo
 share/locale/tr/LC_MESSAGES/audiorename_plugin.mo
+share/locale/tr/LC_MESSAGES/autorefresh.mo
+share/locale/tr/LC_MESSAGES/babelfish.mo
 share/locale/tr/LC_MESSAGES/blinken.mo
 share/locale/tr/LC_MESSAGES/bomber.mo
 share/locale/tr/LC_MESSAGES/bovo.mo
 share/locale/tr/LC_MESSAGES/cantor.mo
 share/locale/tr/LC_MESSAGES/cervisia.mo
 share/locale/tr/LC_MESSAGES/cvsservice.mo
+share/locale/tr/LC_MESSAGES/dirfilterplugin.mo
 share/locale/tr/LC_MESSAGES/display.mo
 share/locale/tr/LC_MESSAGES/dolphin.mo
+share/locale/tr/LC_MESSAGES/domtreeviewer.mo
 share/locale/tr/LC_MESSAGES/dragonplayer.mo
 share/locale/tr/LC_MESSAGES/drkonqi.mo
 share/locale/tr/LC_MESSAGES/filelight.mo
@@ -29,10 +35,12 @@ share/locale/tr/LC_MESSAGES/filetypes.mo
 share/locale/tr/LC_MESSAGES/fileviewgitplugin.mo
 share/locale/tr/LC_MESSAGES/fileviewsvnplugin.mo
 share/locale/tr/LC_MESSAGES/freespacenotifier.mo
+share/locale/tr/LC_MESSAGES/fsview.mo
 share/locale/tr/LC_MESSAGES/granatier.mo
 share/locale/tr/LC_MESSAGES/gwenview.mo
 share/locale/tr/LC_MESSAGES/htmlsearch.mo
 share/locale/tr/LC_MESSAGES/imagerename_plugin.mo
+share/locale/tr/LC_MESSAGES/imgalleryplugin.mo
 share/locale/tr/LC_MESSAGES/jovie.mo
 share/locale/tr/LC_MESSAGES/joystick.mo
 share/locale/tr/LC_MESSAGES/juk.mo
@@ -209,6 +217,7 @@ share/locale/tr/LC_MESSAGES/kfontinst.mo
 share/locale/tr/LC_MESSAGES/kfourinline.mo
 share/locale/tr/LC_MESSAGES/kgeography.mo
 share/locale/tr/LC_MESSAGES/kget.mo
+share/locale/tr/LC_MESSAGES/kgetplugin.mo
 share/locale/tr/LC_MESSAGES/kglobalaccel.mo
 share/locale/tr/LC_MESSAGES/kgoldrunner.mo
 share/locale/tr/LC_MESSAGES/kgpg.mo
@@ -220,6 +229,7 @@ share/locale/tr/LC_MESSAGES/khelpcenter.mo
 share/locale/tr/LC_MESSAGES/khotkeys.mo
 share/locale/tr/LC_MESSAGES/khotnewstuff.mo
 share/locale/tr/LC_MESSAGES/khtmlkttsd.mo
+share/locale/tr/LC_MESSAGES/khtmlsettingsplugin.mo
 share/locale/tr/LC_MESSAGES/kiconfinder.mo
 share/locale/tr/LC_MESSAGES/kig.mo
 share/locale/tr/LC_MESSAGES/kigo.mo
@@ -408,6 +418,8 @@ share/locale/tr/LC_MESSAGES/lokalize.mo
 share/locale/tr/LC_MESSAGES/lskat.mo
 share/locale/tr/LC_MESSAGES/marble.mo
 share/locale/tr/LC_MESSAGES/marble_qt.mo
+share/locale/tr/LC_MESSAGES/mf_konqplugin.mo
+share/locale/tr/LC_MESSAGES/minitoolsplugin.mo
 share/locale/tr/LC_MESSAGES/mplayerthumbs.mo
 share/locale/tr/LC_MESSAGES/mplayerthumbsconfig.mo
 share/locale/tr/LC_MESSAGES/nepomukbackup.mo
@@ -595,7 +607,9 @@ share/locale/tr/LC_MESSAGES/printer-applet.mo
 share/locale/tr/LC_MESSAGES/processcore.mo
 share/locale/tr/LC_MESSAGES/processui.mo
 share/locale/tr/LC_MESSAGES/randrmonitor.mo
+share/locale/tr/LC_MESSAGES/rellinks.mo
 share/locale/tr/LC_MESSAGES/rocs.mo
+share/locale/tr/LC_MESSAGES/searchbarplugin.mo
 share/locale/tr/LC_MESSAGES/solid-hardware.mo
 share/locale/tr/LC_MESSAGES/solid-network.mo
 share/locale/tr/LC_MESSAGES/solid_qt.mo
@@ -611,8 +625,11 @@ share/locale/tr/LC_MESSAGES/sweeper.mo
 share/locale/tr/LC_MESSAGES/system-config-printer-kde.mo
 share/locale/tr/LC_MESSAGES/systemsettings.mo
 share/locale/tr/LC_MESSAGES/timezones4.mo
+share/locale/tr/LC_MESSAGES/uachangerplugin.mo
 share/locale/tr/LC_MESSAGES/umbrello.mo
 share/locale/tr/LC_MESSAGES/useraccount.mo
+share/locale/tr/LC_MESSAGES/validatorsplugin.mo
+share/locale/tr/LC_MESSAGES/webarchiver.mo
 share/locale/tr/LC_MESSAGES/xml_mimetypes.mo
 share/locale/tr/entry.desktop
 @dirrm share/doc/HTML/tr/common

@@ -66,6 +66,7 @@ include/okular/core/version.h
 include/okular/interfaces/configinterface.h
 include/okular/interfaces/guiinterface.h
 include/okular/interfaces/printinterface.h
+lib/cmake/KSane/KSaneConfig.cmake
 lib/cmake/Okular/OkularConfig.cmake
 lib/cmake/Okular/OkularConfigVersion.cmake
 lib/kde4/gsthumbnail.so
@@ -143,7 +144,6 @@ share/applications/kde4/okularApplication_pdf.desktop
 share/applications/kde4/okularApplication_plucker.desktop
 share/applications/kde4/okularApplication_tiff.desktop
 share/applications/kde4/okularApplication_xps.desktop
-share/apps/cmake/modules/FindKSane.cmake
 share/apps/gvpart/gvpart.rc
 share/apps/gwenview/cursors/zoom.png
 share/apps/gwenview/fullscreenthemes/blackglass/checked.png
@@ -547,9 +547,8 @@ share/kde4/servicetypes/okularGenerator.desktop
 @dirrm share/apps/gwenview/cursors
 @dirrm share/apps/gwenview
 @dirrm share/apps/gvpart
-@dirrmtry share/apps/cmake/modules
-@dirrmtry share/apps/cmake
 @dirrm lib/cmake/Okular
+@dirrm lib/cmake/KSane
 @dirrmtry lib/cmake
 @dirrm include/okular/interfaces
 @dirrm include/okular/core

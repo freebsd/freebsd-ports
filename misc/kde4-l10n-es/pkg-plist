@@ -1023,8 +1023,6 @@ share/doc/HTML/es/ksirkskineditor/index.docbook
 share/doc/HTML/es/ksnapshot/common
 share/doc/HTML/es/ksnapshot/index.cache.bz2
 share/doc/HTML/es/ksnapshot/index.docbook
-share/doc/HTML/es/ksnapshot/preview.png
-share/doc/HTML/es/ksnapshot/window.png
 share/doc/HTML/es/kspaceduel/common
 share/doc/HTML/es/kspaceduel/index.cache.bz2
 share/doc/HTML/es/kspaceduel/index.docbook
@@ -1277,21 +1275,27 @@ share/doc/HTML/es/umbrello/introduction.docbook
 share/doc/HTML/es/umbrello/other_features.docbook
 share/doc/HTML/es/umbrello/uml_basics.docbook
 share/doc/HTML/es/umbrello/working_with_umbrello.docbook
+share/locale/es/LC_MESSAGES/adblock.mo
 share/locale/es/LC_MESSAGES/akonadicontact.mo
+share/locale/es/LC_MESSAGES/akregator_konqplugin.mo
 share/locale/es/LC_MESSAGES/amor.mo
 share/locale/es/LC_MESSAGES/ark.mo
 share/locale/es/LC_MESSAGES/attica_kde.mo
 share/locale/es/LC_MESSAGES/audiocd_encoder_lame.mo
 share/locale/es/LC_MESSAGES/audiocd_encoder_vorbis.mo
 share/locale/es/LC_MESSAGES/audiorename_plugin.mo
+share/locale/es/LC_MESSAGES/autorefresh.mo
+share/locale/es/LC_MESSAGES/babelfish.mo
 share/locale/es/LC_MESSAGES/blinken.mo
 share/locale/es/LC_MESSAGES/bomber.mo
 share/locale/es/LC_MESSAGES/bovo.mo
 share/locale/es/LC_MESSAGES/cantor.mo
 share/locale/es/LC_MESSAGES/cervisia.mo
 share/locale/es/LC_MESSAGES/cvsservice.mo
+share/locale/es/LC_MESSAGES/dirfilterplugin.mo
 share/locale/es/LC_MESSAGES/display.mo
 share/locale/es/LC_MESSAGES/dolphin.mo
+share/locale/es/LC_MESSAGES/domtreeviewer.mo
 share/locale/es/LC_MESSAGES/dragonplayer.mo
 share/locale/es/LC_MESSAGES/drkonqi.mo
 share/locale/es/LC_MESSAGES/filelight.mo
@@ -1299,10 +1303,12 @@ share/locale/es/LC_MESSAGES/filetypes.mo
 share/locale/es/LC_MESSAGES/fileviewgitplugin.mo
 share/locale/es/LC_MESSAGES/fileviewsvnplugin.mo
 share/locale/es/LC_MESSAGES/freespacenotifier.mo
+share/locale/es/LC_MESSAGES/fsview.mo
 share/locale/es/LC_MESSAGES/granatier.mo
 share/locale/es/LC_MESSAGES/gwenview.mo
 share/locale/es/LC_MESSAGES/htmlsearch.mo
 share/locale/es/LC_MESSAGES/imagerename_plugin.mo
+share/locale/es/LC_MESSAGES/imgalleryplugin.mo
 share/locale/es/LC_MESSAGES/jovie.mo
 share/locale/es/LC_MESSAGES/joystick.mo
 share/locale/es/LC_MESSAGES/juk.mo
@@ -1479,6 +1485,7 @@ share/locale/es/LC_MESSAGES/kfontinst.mo
 share/locale/es/LC_MESSAGES/kfourinline.mo
 share/locale/es/LC_MESSAGES/kgeography.mo
 share/locale/es/LC_MESSAGES/kget.mo
+share/locale/es/LC_MESSAGES/kgetplugin.mo
 share/locale/es/LC_MESSAGES/kglobalaccel.mo
 share/locale/es/LC_MESSAGES/kgoldrunner.mo
 share/locale/es/LC_MESSAGES/kgpg.mo
@@ -1490,6 +1497,7 @@ share/locale/es/LC_MESSAGES/khelpcenter.mo
 share/locale/es/LC_MESSAGES/khotkeys.mo
 share/locale/es/LC_MESSAGES/khotnewstuff.mo
 share/locale/es/LC_MESSAGES/khtmlkttsd.mo
+share/locale/es/LC_MESSAGES/khtmlsettingsplugin.mo
 share/locale/es/LC_MESSAGES/kiconfinder.mo
 share/locale/es/LC_MESSAGES/kig.mo
 share/locale/es/LC_MESSAGES/kigo.mo
@@ -1625,6 +1633,7 @@ share/locale/es/LC_MESSAGES/kwin_art_clients.mo
 share/locale/es/LC_MESSAGES/kwin_clients.mo
 share/locale/es/LC_MESSAGES/kwin_effects.mo
 share/locale/es/LC_MESSAGES/kwin_lib.mo
+share/locale/es/LC_MESSAGES/kwinshutdown.mo
 share/locale/es/LC_MESSAGES/kwinstartmenu.mo
 share/locale/es/LC_MESSAGES/kwordquiz.mo
 share/locale/es/LC_MESSAGES/kwrite.mo
@@ -1678,6 +1687,8 @@ share/locale/es/LC_MESSAGES/lokalize.mo
 share/locale/es/LC_MESSAGES/lskat.mo
 share/locale/es/LC_MESSAGES/marble.mo
 share/locale/es/LC_MESSAGES/marble_qt.mo
+share/locale/es/LC_MESSAGES/mf_konqplugin.mo
+share/locale/es/LC_MESSAGES/minitoolsplugin.mo
 share/locale/es/LC_MESSAGES/mplayerthumbs.mo
 share/locale/es/LC_MESSAGES/mplayerthumbsconfig.mo
 share/locale/es/LC_MESSAGES/nepomukbackup.mo
@@ -1865,7 +1876,9 @@ share/locale/es/LC_MESSAGES/printer-applet.mo
 share/locale/es/LC_MESSAGES/processcore.mo
 share/locale/es/LC_MESSAGES/processui.mo
 share/locale/es/LC_MESSAGES/randrmonitor.mo
+share/locale/es/LC_MESSAGES/rellinks.mo
 share/locale/es/LC_MESSAGES/rocs.mo
+share/locale/es/LC_MESSAGES/searchbarplugin.mo
 share/locale/es/LC_MESSAGES/solid-hardware.mo
 share/locale/es/LC_MESSAGES/solid-network.mo
 share/locale/es/LC_MESSAGES/solid_qt.mo
@@ -1881,8 +1894,11 @@ share/locale/es/LC_MESSAGES/sweeper.mo
 share/locale/es/LC_MESSAGES/system-config-printer-kde.mo
 share/locale/es/LC_MESSAGES/systemsettings.mo
 share/locale/es/LC_MESSAGES/timezones4.mo
+share/locale/es/LC_MESSAGES/uachangerplugin.mo
 share/locale/es/LC_MESSAGES/umbrello.mo
 share/locale/es/LC_MESSAGES/useraccount.mo
+share/locale/es/LC_MESSAGES/validatorsplugin.mo
+share/locale/es/LC_MESSAGES/webarchiver.mo
 share/locale/es/LC_MESSAGES/xml_mimetypes.mo
 share/locale/es/entry.desktop
 @dirrm share/doc/HTML/es/umbrello

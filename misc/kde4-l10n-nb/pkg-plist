@@ -427,6 +427,7 @@ share/locale/nb/LC_MESSAGES/kwin_art_clients.mo
 share/locale/nb/LC_MESSAGES/kwin_clients.mo
 share/locale/nb/LC_MESSAGES/kwin_effects.mo
 share/locale/nb/LC_MESSAGES/kwin_lib.mo
+share/locale/nb/LC_MESSAGES/kwinshutdown.mo
 share/locale/nb/LC_MESSAGES/kwinstartmenu.mo
 share/locale/nb/LC_MESSAGES/kwordquiz.mo
 share/locale/nb/LC_MESSAGES/kwrite.mo
