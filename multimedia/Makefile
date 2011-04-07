@@ -87,6 +87,7 @@
     SUBDIR += gpodder
     SUBDIR += grake
     SUBDIR += grpplaylist
+    SUBDIR += gst123
     SUBDIR += gstreamer
     SUBDIR += gstreamer-ffmpeg
     SUBDIR += gstreamer-plugins
