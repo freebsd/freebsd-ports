@@ -11,7 +11,7 @@ PORTVERSION=	1.3
 CATEGORIES=	devel
 MASTER_SITES=	GOOGLE_CODE
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	utisoft@gmail.com
 COMMENT=	A C preprocessor and lexer
 
 LICENSE=	BSD
