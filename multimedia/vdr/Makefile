@@ -65,7 +65,7 @@ EXTRA_PATCHES+=	${FILESDIR}/vdr-1.7.17-fix_na_dvbs_ac3.diff
 PLIST_SUB+=	NLS=""
 .else
 PLIST_SUB+=	NLS="@comment "
-ALL_TARGET=	vdr
+ALL_TARGET=	vdr plugins
 .endif
 
 post-patch:
