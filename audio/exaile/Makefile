@@ -7,6 +7,7 @@
 
 PORTNAME=	exaile
 PORTVERSION=	${PORTVERSION_MAJOR}.${PORTVERSION_MINOR} # See below
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://launchpad.net/${LP_DIR}/ \
 		http://wickedmachine.net/mirror/
@@ -21,7 +22,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 FETCH_ARGS=	-pRr
 USE_GNOME=	pygtk2 librsvg2
-USE_GSTREAMER=	python good
+USE_GSTREAMER=	python good faad
 USE_PYTHON=	2.5+
 
 CONFLICTS=	exaile-devel-[0-9]*
