@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ode
-PORTVERSION=	0.11
+PORTVERSION=	0.11.1
 PORTEPOCH=	1
 CATEGORIES=	devel
 MASTER_SITES=	SF/opende/ODE/${PORTVERSION}
@@ -21,8 +21,7 @@ USE_GL=		yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LIBS="-L${LOCALBASE}/lib"
+CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib"
 
 OPTIONS=	GIMPACT	"Enable gimpact instead of opcode support" off \
 		GYROSCOPIC "Configure ODE to work with gyroscopic term" on \
@@ -64,6 +63,7 @@ CONFIGURE_ARGS+=	--disable-ou
 post-patch:
 	@${REINPLACE_CMD} -e '/if test/ s|==|=|' -e 's|^\( *CFLAGS=\)|#\1|;' \
 		-e 's|^\( *CPPFLAGS=\)|#\1|' -e 's|^\( *CXXFLAGS=\)|#\1|' \
+		-e 's|CPPFLAGS+=" |CPPFLAGS="$$CPPFLAGS |' \
 		${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|__isnanf||g; s|__isnan||g' -e 's|-lpthread|${PTHREAD_LIBS}|g' \
 		${WRKSRC}/configure
