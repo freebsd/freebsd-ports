@@ -1,6 +1,4 @@
-This is a port of Harbour, an open source Clipper-compatible compiler.
+Harbour is a compiler for the xBase superset language often referred to as
+Clipper (the language that is implemented by the CA-Clipper compiler).
 
 WWW: http://www.harbour-project.org/
-
-- David G. Holm
-harbour@netfang.net
