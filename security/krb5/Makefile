@@ -40,6 +40,12 @@ OPTIONS=		KRB5_DOC "Build and install krb5 documentation" on \
 			WANT_HTML "Want HTML documentation too" on \
 			DNS_FOR_REALM "enable DNS lookups of Kerberos realm names" off
 
+.if defined(KRB5_HOME)
+PREFIX=			${KRB5_HOME}
+CFLAGS+=		-rpath=${KRB5_HOME}/lib
+LDFLAGS+=		-rpath=${KRB5_HOME}/lib
+.endif
+
 .include <bsd.port.pre.mk>
 .if defined(WITH_DNS_FOR_REALM)
 CONFIGURE_ARGS+=	--enable-dns-for-realm
@@ -49,10 +55,6 @@ CONFIGURE_ARGS+=	--enable-dns-for-realm
 BUILD_DEPENDS+=		texi2dvi:${PORTSDIR}/print/texinfo \
 			dvips:${PORTSDIR}/print/dvipsk-tetex
 INFO=			krb5-admin krb5-install krb5-user
-.endif
-
-.if defined(KRB5_HOME)
-PREFIX=			${KRB5_HOME}
 .endif
 
 MAN1=			k5srvutil.1 kadmin.1 krb5-send-pr.1 krb5-config.1 \
