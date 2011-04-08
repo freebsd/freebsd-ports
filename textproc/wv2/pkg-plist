@@ -30,6 +30,6 @@ lib/libwv2.so
 lib/libwv2.so.4
 lib/libwv2.so.4.0.1
 lib/wvWare/wv2.cmake
-lib/wvWare/wv2-noconfig.cmake
+lib/wvWare/wv2-%%CMAKE_BUILD_TYPE%%.cmake
 @dirrm lib/wvWare
 @dirrm include/wv2
