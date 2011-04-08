@@ -465,6 +465,7 @@ bin/hg
 %%PYTHON_SITELIBDIR%%/mercurial/templates/monoblue/shortlog.tmpl
 %%PYTHON_SITELIBDIR%%/mercurial/templates/monoblue/summary.tmpl
 %%PYTHON_SITELIBDIR%%/mercurial/templates/monoblue/tags.tmpl
+%%PYTHON_SITELIBDIR%%/mercurial/templates/paper/bookmarks.tmpl
 %%PYTHON_SITELIBDIR%%/mercurial/templates/paper/branches.tmpl
 %%PYTHON_SITELIBDIR%%/mercurial/templates/paper/changeset.tmpl
 %%PYTHON_SITELIBDIR%%/mercurial/templates/paper/error.tmpl
