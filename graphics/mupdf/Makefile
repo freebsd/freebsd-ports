@@ -13,7 +13,7 @@ MASTER_SITES=	GOOGLE_CODE \
 
 DISTFILES=	${PORTNAME}-${DISTVERSION}-source.tar.gz
 
-MAINTAINER=	martin.dieringer@gmx.de
+MAINTAINER=	lichray@gmail.com
 COMMENT=	Lightweight PDF viewer and toolkit
 
 LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2 \
