@@ -15,7 +15,7 @@ COMMENT=	A configuration management framework written in Ruby
 
 RUN_DEPENDS=	${RUBY_SITELIBDIR}/facter.rb:${PORTSDIR}/sysutils/facter \
 		rubygem-ruby-augeas>=0:${PORTSDIR}/textproc/rubygem-augeas \
-		ruby18-iconv>=0:${PORTSDIR}/converters/ruby-iconv
+		${RUBY_ARCHLIBDIR}/iconv.so:${PORTSDIR}/converters/ruby-iconv
 
 CONFLICTS=	puppet-devel-[0-9]*
 
