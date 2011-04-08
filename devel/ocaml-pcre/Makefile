@@ -19,6 +19,7 @@ COMMENT=	Perl compatible regular expressions for Objective Caml
 LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre
 WRKSRC=		${WRKDIR}/pcre-ocaml-${DISTNAME}
 
+USE_BZIP2=	yes
 USE_OCAML=	yes
 USE_OCAML_FINDLIB=	yes
 USE_OCAML_LDCONFIG=	yes
