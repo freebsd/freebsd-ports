@@ -6,14 +6,13 @@
 #
 
 PORTNAME=	net
-PORTVERSION=	2.2.9
-PORTREVISION=	2
+PORTVERSION=	3.2.1
 CATEGORIES=	www
-MASTER_SITES=	SF/ocaml${PORTNAME}/ocaml${PORTNAME}/${PORTVERSION}
+MASTER_SITES=	http://download.camlcity.org/download/
 PKGNAMEPREFIX=	ocaml-
 DISTNAME=	ocaml${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	johans@FreeBSD.org
 COMMENT=	OCaml modules for Internet applications
 
 BUILD_DEPENDS=	${SA_DIR}/pcre/pcre.a:${PORTSDIR}/devel/ocaml-pcre
@@ -43,7 +42,7 @@ PORTEXAMPLES=	*
 
 OCAML_PKGDIRS=	netsys netshm equeue shell netstring rpc-generator \
 		rpc pop smtp netclient netcgi1 netcgi2 cgi netplex \
-		netcgi2-plex
+		netcgi2-plex netcamlbox netmulticore
 
 post-install:
 
