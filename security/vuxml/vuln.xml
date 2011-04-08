@@ -34,6 +34,29 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="b9281fb9-61b2-11e0-b1ce-0019d1a7ece2">
+    <topic>tinyproxy -- ACL lists ineffective when range is configured</topic>
+    <affects>
+      <package>
+	<name>tinyproxy</name>
+	<range><lt>1.8.2_2,1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	  <p>When including a line to allow a network of IP addresses, the access to tinyproxy
+	    56 is actually allowed for all IP addresses.</p>
+      </body>
+    </description>
+    <references>
+      <url>https://banu.com/bugzilla/show_bug.cgi?id=90</url>
+    </references>
+    <dates>
+      <discovery>2010-05-18</discovery>
+      <entry>2011-04-08</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="b2a40507-5c88-11e0-9e85-00215af774f0">
     <topic>quagga -- two DoS vulnerabilities</topic>
     <affects>
