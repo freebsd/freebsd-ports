@@ -40,6 +40,7 @@ share/applications/gxneur.desktop
 %%DATADIR%%/glade/choose_file.glade
 %%DATADIR%%/glade/config.glade
 %%DATADIR%%/glade/list.glade
+%%DATADIR%%/glade/rule_add.glade
 share/icons/hicolor/16x16/apps/gxneur.png
 share/icons/hicolor/22x22/apps/gxneur.png
 share/icons/hicolor/24x24/apps/gxneur.png
@@ -48,6 +49,7 @@ share/icons/hicolor/48x48/apps/gxneur.png
 share/icons/hicolor/scalable/apps/gxneur.svg
 %%NLS%%share/locale/be/LC_MESSAGES/gxneur.mo
 %%NLS%%share/locale/de/LC_MESSAGES/gxneur.mo
+%%NLS%%share/locale/es/LC_MESSAGES/gxneur.mo
 %%NLS%%share/locale/he/LC_MESSAGES/gxneur.mo
 %%NLS%%share/locale/ro/LC_MESSAGES/gxneur.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/gxneur.mo
