@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	windowlab
-PORTVERSION=	1.33
-PORTREVISION=	2
+PORTVERSION=	1.40
 CATEGORIES=	x11-wm
-MASTER_SITES=	http://www.nickgravgaard.com/windowlab/
+MASTER_SITES=	http://nickgravgaard.com/windowlab/
 EXTRACT_SUFX=	.tar
 
 MAINTAINER=	ppl@nbnet.nb.ca
