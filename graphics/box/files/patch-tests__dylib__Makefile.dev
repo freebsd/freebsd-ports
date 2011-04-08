@@ -1,0 +1,11 @@
+--- ./tests/dylib/Makefile.dev.orig	2011-04-06 13:42:46.000000000 -0700
++++ ./tests/dylib/Makefile.dev	2011-04-06 13:42:59.000000000 -0700
+@@ -6,7 +6,7 @@
+ $(DESTDIR)/libmylib.la: mylib.c
+ 	$(LIBTOOL) --mode=compile gcc -c -I../.. mylib.c
+ 	$(LIBTOOL) --mode=link gcc -module -o libmylib.la mylib.lo -rpath $(DESTDIR)
+-        $(LIBTOOL) --mode=install cp libmylib.la $(DESTDIR)/libmylib.la
++	$(LIBTOOL) --mode=install cp libmylib.la $(DESTDIR)/libmylib.la
+ 	#gcc -I../.. -fPIC -shared -o libmylib.so mylib.c
+ 
+ clean:

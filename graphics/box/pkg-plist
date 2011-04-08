@@ -13,7 +13,7 @@ include/box0.2/box/msgbase.h
 include/box0.2/box/occupation.h
 include/box0.2/box/print.h
 include/box0.2/box/srcpos.h
-include/box0.2/box/str.h
+include/box0.2/box/strutils.h
 include/box0.2/box/types.h
 include/box0.2/box/version.h
 include/box0.2/box/virtmach.h
@@ -41,6 +41,7 @@ lib/box0.2/pkg/_text.bxh
 lib/box0.2/pkg/_window.bxh
 lib/box0.2/pkg/arrows.bxh
 lib/box0.2/pkg/bounce.bxh
+lib/box0.2/pkg/caps.bxh
 lib/box0.2/pkg/electric.bxh
 lib/box0.2/pkg/g.bxh
 lib/box0.2/pkg/label.bxh
