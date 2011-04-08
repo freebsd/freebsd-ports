@@ -7,7 +7,7 @@
 
 PORTNAME=	twinkle
 PORTVERSION=	1.4.2
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	net
 MASTER_SITES=	http://www.xs4all.nl/~mfnboer/twinkle/download/
 
@@ -32,7 +32,9 @@ USE_GNOME=	libxml2
 USE_PERL5=	yes
 USE_QT_VER=	3
 
-CONFIGURE_ARGS=	--with-qt-dir=${QT_PREFIX} QTDIR=${LOCALBASE}
+OPTIONS=	KDE	"Compile with kde features"	off
+
+CONFIGURE_ARGS=	--with-qt-dir=${QT_PREFIX} QTDIR=${LOCALBASE} \
 CONFIGURE_ENV=	QMAKESPEC="${QMAKESPEC}" \
 		CFLAGS="${CFLAGS}"
 MAKE_ENV=	QTDIR=${QT_PREFIX}
@@ -41,6 +43,13 @@ SUB_FILES=	pkg-message
 QMAKESPEC?=	${LOCALBASE}/share/qt/mkspecs/freebsd-g++
 
 .include <bsd.port.pre.mk>
+
+.if defined(WITH_KDE)
+USE_KDELIBS_VER=3
+.include <${PORTSDIR}/Mk/bsd.kde.mk>
+.else
+CONFIGURE_ARGS+=--without-kde
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-lresolv||g' -e 's|-lbind||g' ${WRKSRC}/${CONFIGURE_SCRIPT}
