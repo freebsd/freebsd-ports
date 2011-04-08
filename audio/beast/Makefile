@@ -24,8 +24,8 @@ USE_BZIP2=	yes
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 USE_GETTEXT=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -DENODATA=255" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include -DENODATA=255
+CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	--disable-debug \
 		--enable-osspcm=/dev/dsp \
 		--enable-ossmidi=/dev/midi
@@ -33,8 +33,7 @@ MAKE_JOBS_UNSAFE=	yes
 
 .include <bsd.port.pre.mk>
 
-# Assume i386 and amd64 support SSE
-.if ${ARCH} == "i386" || ${ARCH} == "amd64"
+.if ${MACHINE_CPU:Msse}
 PLIST_SUB+=	SSE=""
 .else
 PLIST_SUB+=	SSE="@comment "
