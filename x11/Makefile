@@ -271,6 +271,7 @@
     SUBDIR += sselp
     SUBDIR += stalonetray
     SUBDIR += startup-notification
+    SUBDIR += sterm
     SUBDIR += swarp
     SUBDIR += sxpc
     SUBDIR += tabbed
