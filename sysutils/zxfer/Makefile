@@ -1,19 +1,19 @@
 # New ports collection makefile for:	zxfer
-# Date created:				02 April 2011
+# Date created:				07 April 2011
 # Whom:					Ivan Dreckman <ivannashdreckman@fastmail.fm>
 #
 # $FreeBSD$
 #
 
 PORTNAME=	zxfer
-PORTVERSION=	0.9.6
+PORTVERSION=	0.9.7
 CATEGORIES=	sysutils
 MASTER_SITES=	GOOGLE_CODE
 
 MAINTAINER=	ivannashdreckman@fastmail.fm
 COMMENT=	Easily and reliably transfer ZFS filesystems
 
-RUN_DEPENDS=	${LOCALBASE}/bin/rsync:${PORTSDIR}/net/rsync
+RUN_DEPENDS=	rsync:${PORTSDIR}/net/rsync
 
 USE_BZIP2=	yes
 NO_BUILD=	yes

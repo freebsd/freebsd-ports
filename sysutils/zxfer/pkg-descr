@@ -1,7 +1,7 @@
 Zxfer is a fork of zfs-replicate. It allows the easy and reliable backup,
-restore or transfer of zfs filesystems, either locally or remotely.
+restore or transfer of ZFS filesystems, either locally or remotely.
 
-Zxfer has the following features:
+Some of the features zxfer has:
   * Written in sh with only one dependency, rsync. Rsync mode is not used
       in a typical restore, hence in that situation all you need is the 
       zxfer script, your backup and an install CD/DVD.
@@ -14,11 +14,11 @@ Zxfer has the following features:
   * Override properties in the transfer, e.g. for archival purposes
       it is useful to override "copies" and "compression".
   * Create all filesystems on the destination as necessary.
-  * Write backup files to aid in automatically restoring the original
-      properties that have been overridden.
   * A comprehensive man page with examples.
   * Can be set to beep on error or when done, useful for long transfers.
   * Features an rsync mode for when two different snapshotting regimes are on
       source and destination, and zfs send/receive won't work.
+
+LICENSE: BSD
 
 WWW: http://www.zxfer.org
