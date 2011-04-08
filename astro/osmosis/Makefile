@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	osmosis
-PORTVERSION=	0.38
+PORTVERSION=	0.39
 CATEGORIES=	astro java
 MASTER_SITES=	http://bretth.dev.openstreetmap.org/osmosis-build/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	glebius@FreeBSD.org
+MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	A command line java app for processing OpenStreetMap data
 
 NO_BUILD=	yes
@@ -31,19 +31,20 @@ JARFILES=	aopalliance-1.0.jar \
 		commons-pool-1.5.4.jar \
 		jpf-1.5.jar \
 		mysql-connector-java-5.1.10.jar \
-		osmbin-1.0-6d760534.jar \
 		osmosis-apidb-${PORTVERSION}.jar \
 		osmosis-areafilter-${PORTVERSION}.jar \
-		osmosis-binary-${PORTVERSION}.jar \
 		osmosis-core-${PORTVERSION}.jar \
 		osmosis-dataset-${PORTVERSION}.jar \
 		osmosis-extract-${PORTVERSION}.jar \
-		osmosis-hstore-0.2.jar \
+		osmosis-hstore-${PORTVERSION}.jar \
+		osmosis-pbf-${PORTVERSION}.jar \
+		osmosis-pgsimple-${PORTVERSION}.jar \
 		osmosis-pgsnapshot-${PORTVERSION}.jar \
 		osmosis-replication-${PORTVERSION}.jar \
 		osmosis-set-${PORTVERSION}.jar \
 		osmosis-tagfilter-${PORTVERSION}.jar \
 		osmosis-xml-${PORTVERSION}.jar \
+		osmpbf-1.1.1-754a33af.jar \
 		plexus-classworlds-2.2.2.jar \
 		postgis-jdbc-1.3.3.jar \
 		postgresql-8.4-701.jdbc4.jar \
