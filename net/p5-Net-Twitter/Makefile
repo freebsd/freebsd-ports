@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Net-Twitter
-PORTVERSION=	3.16000
+PORTVERSION=	3.17001
 CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -36,6 +36,7 @@ MAN3=		Net::Twitter.3 Net::Twitter::Search.3 Net::Identica.3 \
 		Net::Twitter::Role::API::REST.3 \
 		Net::Twitter::Role::API::Search::Trends.3 \
 		Net::Twitter::Role::API::TwitterVision.3 \
+		Net::Twitter::Role::AutoCursor.3 \
 		Net::Twitter::Role::InflateObjects.3 \
 		Net::Twitter::Role::Legacy.3 \
 		Net::Twitter::Role::RateLimit.3 \
