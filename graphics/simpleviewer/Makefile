@@ -29,14 +29,18 @@ MAKE_ARGS=	CC=${CXX}
 
 PLIST_FILES=	bin/sviewgl
 
+.include <bsd.port.pre.mk>
+
 post-patch:
 # Respect CFLAGS, prefer more widely used libungif instead of giflib
 	@${REINPLACE_CMD} -e 's,-O2,${CFLAGS}, ; s,/usr,${LOCALBASE},g ; \
 		s,=-s,=-L${LOCALBASE}/lib, ; s,lgif,lungif,' ${WRKSRC}/Makefile
+.if ${OSVERSION} < 800501
 	@${REINPLACE_CMD} -e 's,const struct dirent,struct dirent,' \
 		${WRKSRC}/src/fileslist.*
+.endif
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/sviewgl ${PREFIX}/bin
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
