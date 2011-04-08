@@ -34,7 +34,8 @@ USE_LDCONFIG=	yes
 pre-configure:
 	${REINPLACE_CMD} -e 's/kde-config/kde4-config/g' \
 		-e '/conf.env.CXXFLAGS =/ s|= '"'"'[^'"'"']*|= '"'"'${CXXFLAGS}|' \
-		-e '/obj.langs/d' \
+		-e 's/-lstr/-lcamlstr/g' \
+		-e '/obj.langs/ d' \
 		${WRKSRC}/wscript
 
 do-configure:
