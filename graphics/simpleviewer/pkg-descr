@@ -1,0 +1,10 @@
+Simple Viewer GL is simple and tiny OpenGL based image viewer.  Its features:
+
+  - Lightweight and fast: utilize hardware-accelerated video card
+  - Very simple interface
+  - Suitable for default image viewer of desktop
+  - Minimal lib dependency: look library requirements below
+  - Desktop independent: does not require any specific desktop environment
+  - Open source, licensed under GNU GPL
+
+WWW: http://simpleviewer.sourceforge.net/
