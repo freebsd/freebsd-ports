@@ -679,6 +679,7 @@ share/locale/nb/LC_MESSAGES/kdevplatform.mo
 share/locale/nb/LC_MESSAGES/kdevproblemreporter.mo
 share/locale/nb/LC_MESSAGES/kdevprojectmanagerview.mo
 share/locale/nb/LC_MESSAGES/kdevquickopen.mo
+share/locale/nb/LC_MESSAGES/kdevreviewboard.mo
 share/locale/nb/LC_MESSAGES/kdevsnippet.mo
 share/locale/nb/LC_MESSAGES/kdevstandardoutputview.mo
 share/locale/nb/LC_MESSAGES/kdevsubversion.mo
