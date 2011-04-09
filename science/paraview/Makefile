@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	paraview
-PORTVERSION=	3.8.1
+PORTVERSION=	3.10.0
 CATEGORIES=	science graphics
-MASTER_SITES=	http://www.paraview.org/files/v3.8/
+MASTER_SITES=	http://www.paraview.org/files/v${VERMAJORMINOR}/
 DISTNAME=	ParaView-${PORTVERSION}
 
 MAINTAINER=	devel@stasyan.com
@@ -57,6 +57,16 @@ OPTIONS=	OSMESA	"Use Mesa for off-screen rendering" Off \
 		GL2PS		"Install support conversion OpenGL to PostScript" On
 #		VTKMPEG2	"Install patented MPEG2 encoder module" Off \
 
+VERMAJORMINOR=	${PORTVERSION:R}
+
+# Temporary workaround until a fix will be committed to bsd.cmake.mk (ports/150363)
+.if defined(WITH_DEBUG)
+CMAKE_BUILD_TYPE?=	Debug
+.else
+CMAKE_BUILD_TYPE?=	Release
+.endif
+PLIST_SUB+=	CMAKE_BUILD_TYPE="${CMAKE_BUILD_TYPE:L}"
+
 .include <bsd.port.options.mk>
 
 .if defined(WITH_OSMESA)
@@ -77,16 +87,10 @@ PLIST_SUB+=	GL2PS="@comment "
 MAKE_JOBS_SAFE=	yes
 CMAKE_OUTSOURCE=	yes
 
-PLIST_SUB+=	VERMAJORMINOR=3.8
+PLIST_SUB+=	VERMAJORMINOR=${VERMAJORMINOR}
 CMAKE2INST=	ParaViewConfig.cmake \
-		ParaViewLibraryDepends.cmake cmake_install.cmake
-LIB_INSTDIR=	${PREFIX}/lib/${PORTNAME}-${PORTVERSION:R}
-
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 700042
-BROKEN=		does not build on 6.x
-.endif
+		cmake_install.cmake
+LIB_INSTDIR=	${PREFIX}/lib/${PORTNAME}-${VERMAJORMINOR}
 
 post-patch:
 	${REINPLACE_CMD} -e 's|png_set_gray_1_2_4_to_8|png_set_expand_gray_1_2_4_to_8|' \
@@ -99,6 +103,6 @@ post-install:
 		${BUILD_WRKSRC}/${c2f} > ${LIB_INSTDIR}/`${BASENAME} ${c2f}`
 .endfor
 	${INSTALL_DATA} ${PATCH_WRKSRC}/ParaViewUse.cmake \
-		${PREFIX}/lib/${PORTNAME}-${PORTVERSION:R}
+		${PREFIX}/lib/${PORTNAME}-${VERMAJORMINOR}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
