@@ -9,18 +9,15 @@ PORTNAME=	libimg
 PORTVERSION=	1.2.4
 PORTREVISION=	7
 CATEGORIES?=	graphics tk
-MASTER_SITES=	SF/tkimg/tkimg/${PORTVERSION}
+MASTER_SITES=	SF/tkimg/tkimg/${PORTVERSION:R}
 DISTNAME=	img${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	utisoft@gmail.com
 COMMENT=	A library of image format handlers for Tk4.1 and later
 
 LIB_DEPENDS=	png:${PORTSDIR}/graphics/png \
 		jpeg:${PORTSDIR}/graphics/jpeg \
 		tiff:${PORTSDIR}/graphics/tiff
-
-DEPRECATED=     Upstream disapear and distfile is no more available
-EXPIRATION_DATE=        2011-05-01
 
 .if defined(USE_TK) && ${USE_TK} == 83
 PKGNAMESUFFIX=	-tk83
