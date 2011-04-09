@@ -49,6 +49,7 @@ Note:  Please add new entries to the beginning of this file.
       </body>
     </description>
     <references>
+      <cvename>CVE-2011-1499</cvename>
       <url>https://banu.com/bugzilla/show_bug.cgi?id=90</url>
     </references>
     <dates>
