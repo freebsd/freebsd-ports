@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/xrus
 bin/xrusmodmap
 lib/X11/app-defaults/Xrus
