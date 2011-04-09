@@ -12,7 +12,7 @@ CATEGORIES=	deskutils
 MASTER_SITES=	SF
 DISTNAME=	PyPanel-${PORTVERSION}
 
-MAINTAINER=	u0@rootofallevil.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Desktop panel written in Python
 
 LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2
