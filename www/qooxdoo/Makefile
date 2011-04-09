@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	qooxdoo
-PORTVERSION=	1.3
-#PORTREVISION=	0
+PORTVERSION=	1.4
+PORTREVISION=	0
 CATEGORIES=	www devel
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-current/${PORTVERSION}/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-sdk
@@ -27,6 +27,8 @@ REINPLACE_ARGS=	-i.bak -e 's,/usr/bin/env python,&${PYTHON_VER},'
 USE_PYTHON=	-2.7
 USE_ZIP=	yes
 
+SHAREMODE=	644
+
 XARGS_ARGS=	-0
 
 post-patch:
@@ -44,6 +46,7 @@ do-install:
 .if !defined(NOPORTEXAMPLES)
 	cd ${WRKSRC}/application && ${COPYTREE_SHARE} . ${EXAMPLESDIR}
 .endif
-	${LN} -s ${DATADIR}/tool/bin/create-application.py ${PREFIX}/bin/create-application.py
+	${INSTALL_DATA} ${WRKSRC}/version.txt ${DATADIR}
+	${CHMOD} ${BINMODE} ${DATADIR}/tool/bin/*.py
 
 .include <bsd.port.mk>
