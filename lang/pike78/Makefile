@@ -7,7 +7,7 @@
 
 PORTNAME=	pike78
 PORTVERSION=	7.8.352
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	lang
 MASTER_SITES=	ftp://pike.ida.liu.se/pub/pike/all/${PORTVERSION}/ \
 		http://pike.ida.liu.se/pub/pike/all/${PORTVERSION}/ \
@@ -23,7 +23,6 @@ LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg \
 		tiff.4:${PORTSDIR}/graphics/tiff \
 		gdbm.3:${PORTSDIR}/databases/gdbm \
 		pcre.0:${PORTSDIR}/devel/pcre \
-		nettle.3:${PORTSDIR}/security/nettle \
 		mird.1:${PORTSDIR}/databases/mird \
 		gmp.10:${PORTSDIR}/math/gmp
 
@@ -78,6 +77,7 @@ CONFIGURE_ARGS+=	--without-debug \
 		 --prefix=${PREFIX}
 
 MAKE_ARGS=	"CONFIGUREARGS=${CONFIGURE_ARGS}"
+MAKE_ENV=	"ac_cv_lib_nettle_nettle_md5_init=no"
 
 USE_GETTEXT=	yes
 USE_BISON=	build
