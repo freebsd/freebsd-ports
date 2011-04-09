@@ -15,13 +15,14 @@ PKGNAMESUFFIX=	-sounds
 DISTNAME=	${PORTNAME}${PKGNAMESUFFIX:S|s$||}-jp_${PORTVERSION:S|.||}_beta
 
 MAINTAINER=	jfkimura@yahoo.co.jp
-COMMENT=	Japanese sound files for Asterisk
+COMMENT=	Japanese sound files for Asterisk 1.4
 
 RUN_DEPENDS=	asterisk:${PORTSDIR}/net/asterisk14
 
 NO_BUILD=	yes
 ASTERISKDIR=	${DATADIR}/${PKGNAMESUFFIX:S|-||}
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}${PKGNAMESUFFIX}
+LATEST_LINK=	${PKGNAMEPREFIX}${PORTNAME}14${PKGNAMESUFFIX}
 SUB_FILES=	pkg-message
 SUB_LIST=	PORTSDIR=${PORTSDIR}
 
