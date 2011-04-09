@@ -60,6 +60,7 @@
     SUBDIR += aumix
     SUBDIR += aureal-kmod
     SUBDIR += autocd
+    SUBDIR += autotalent
     SUBDIR += autozen
     SUBDIR += aylet
     SUBDIR += baudline
