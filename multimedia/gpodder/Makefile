@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gpodder
-PORTVERSION=	2.13
-PORTREVISION=	1
+PORTVERSION=	2.14
 CATEGORIES=	multimedia
 MASTER_SITES=	BERLIOS \
 		http://thp.io/2010/mygpoclient/:mygpoclient \
@@ -29,6 +28,9 @@ RUN_DEPENDS=	py*-pysqlite>=2.3:${PORTSDIR}/databases/py-pysqlite23 \
 		gnome-icon-theme>=0:${PORTSDIR}/misc/gnome-icon-theme \
 		py*-feedparser>=0:${PORTSDIR}/textproc/py-feedparser \
 		py*-simplejson>=0:${PORTSDIR}/devel/py-simplejson
+
+LICENSE=	GPLv3
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 OPTIONS=	COVERART "Cover Art syncing support" off \
 		IPOD "iPod synchronization support" off \
