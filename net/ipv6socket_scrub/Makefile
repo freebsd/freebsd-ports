@@ -12,8 +12,11 @@ MASTER_SITES=	#http://www.sun.com/download/index.jsp?cat=Operating%20Systems&tab
 DISTNAME=	IPv6socket_scrub
 EXTRACT_SUFX=	.tar
 
-MAINTAINER=	janos.mohacsi@bsd.hu
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Checks IPv6 portability of C source code
+
+DEPRECATED=	Upstream disapear and distfile is no more available
+EXPIRATION_DATE=	2011-05-09
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
 RESTRICTED=	not redistributable, license agreement required
