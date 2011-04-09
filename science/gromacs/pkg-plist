@@ -49,6 +49,7 @@ bin/g_msd
 bin/g_nmeig
 bin/g_nmens
 bin/g_nmtraj
+bin/g_options
 bin/g_order
 bin/g_pme_error
 bin/g_polystat
