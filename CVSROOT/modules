@@ -8565,7 +8565,6 @@ linpsk                          ports/comms/linpsk
 linrad                          ports/comms/linrad
 linrename                       ports/sysutils/linrename
 linsmith                        ports/science/linsmith
-linux-SHA-1_collision_search_graz  ports/math/linux-SHA-1_collision_search_graz
 linux-XnViewMP                  ports/graphics/linux-XnViewMP
 linux-ac3d                      ports/graphics/linux-ac3d
 linux-adobesvg                  ports/graphics/linux-adobesvg
@@ -8767,7 +8766,6 @@ linux-sdl_image                 ports/graphics/linux-sdl_image
 linux-sdl_mixer                 ports/audio/linux-sdl_mixer
 linux-sdl_ttf                   ports/graphics/linux-sdl_ttf
 linux-seamonkey                 ports/www/linux-seamonkey
-linux-sha-1_collision_search_graz  ports/math/linux-SHA-1_collision_search_graz
 linux-shoutcast                 ports/audio/linux-shoutcast
 linux-skulltag                  ports/games/linux-skulltag
 linux-sof                       ports/games/linux-sof
@@ -24059,6 +24057,7 @@ simplemod                       ports/audio/simplemod
 simpleproxy                     ports/net/simpleproxy
 simpletest                      ports/devel/simpletest
 simplevaders                    ports/games/simplevaders
+simpleviewer                    ports/graphics/simpleviewer
 simplexml                       ports/textproc/simplexml
 simplog                         ports/www/simplog
 simscan                         ports/mail/simscan
@@ -24567,6 +24566,7 @@ stepbill                        ports/games/stepbill
 stepmania-devel                 ports/games/stepmania-devel
 steptalk                        ports/lang/steptalk
 stepulator                      ports/math/stepulator
+sterm                           ports/x11/sterm
 stfl                            ports/devel/stfl
 stix-fonts                      ports/x11-fonts/stix-fonts
 stk                             ports/lang/STk
