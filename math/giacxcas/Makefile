@@ -6,19 +6,18 @@
 #
 
 PORTNAME=	giacxcas
-PORTVERSION=	0.9.0
-PORTREVISION=	1
+PORTVERSION=	0.9.1
+#PORTREVISION=	0
 CATEGORIES=	math
 MASTER_SITES=	ftp://ftp-fourier.ujf-grenoble.fr/xcas/freebsd/ \
-		http://people.math.jussieu.fr/~han/xcas/sources/rev1/
+		http://people.math.jussieu.fr/~han/xcas/sources/
 DISTFILES=	fltkdev.tgz CoCoALib.tgz giac-${PORTVERSION}.tar.gz
 DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	han@math.jussieu.fr
 COMMENT=	Computer algebra system by Bernard Parisse
 
-BUILD_DEPENDS=	hevea:${PORTSDIR}/textproc/hevea \
-		latex:${PORTSDIR}/print/teTeX-base \
+BUILD_DEPENDS=	latex:${PORTSDIR}/print/teTeX-base \
 		dvips:${PORTSDIR}/print/dvipsk-tetex \
 		${LOCALBASE}/bin/bash:${PORTSDIR}/shells/bash \
 		gettext:${PORTSDIR}/devel/gettext \
