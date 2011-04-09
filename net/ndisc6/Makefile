@@ -11,7 +11,7 @@ CATEGORIES=	net ipv6
 MASTER_SITES=	http://www.remlab.net/files/ndisc6/archive/ \
 		http://people.via.ecp.fr/~rem/www.remlab.net/files/ndisc6/archive/
 
-MAINTAINER=	rdenis@simphalempin.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	IPv6 network diagnostic tools
 
 USE_BZIP2=	yes
