@@ -1,5 +1,5 @@
---- Sconstruct.orig	2009-09-08 04:31:13.000000000 +0700
-+++ Sconstruct	2010-07-05 13:55:33.000000000 +0700
+--- Sconstruct.orig	2011-03-15 18:22:35.000000000 +0600
++++ Sconstruct	2011-03-22 16:06:25.000000000 +0600
 @@ -47,7 +47,7 @@
  
  	env = Environment( options = opts )
@@ -9,14 +9,16 @@
  		if str(env['debug']) == "1":
  			cppflags += ['-Wall',  '-g2', '-ggdb', '-O0'] 
  			for flag in env["optflags"].split(" "):
-@@ -84,9 +84,11 @@
- 	if sys.platform == "darwin":
- 		ldflags.append( '-L/opt/local/lib' )
+@@ -91,11 +91,12 @@
+ 		includes.append( '/opt/local/include' )
+ 		includes.append( '/usr/local/include/jack' )
  
--	if sys.platform == 'linux2':
-+	if str(env['alsa']) == "1" and sys.platform > 'freebsd' :
+-	elif sys.platform == 'linux2':
++	elif str(env['alsa']) == "1" and sys.platform > 'freebsd' :
+ 		ldflags.append('-lpthread')
  		ldflags.append('-lasound')
- 
+ 	#	ldflags.append('-lrubberband')
+-
 +	elif sys.platform > 'freebsd' :
 +		print "Alsa disabled; nothing to do"
  	elif sys.platform == "win32":
