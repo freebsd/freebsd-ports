@@ -6,9 +6,10 @@
 #    $MCom: ports/graphics/wxsvg/Makefile,v 1.1 2006/09/22 01:48:33 ahze Exp $
 
 PORTNAME=	wxsvg
-DISTVERSION=	1.0.7
+DISTVERSION=	1.0.8
 CATEGORIES=	graphics
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${DISTVERSION}
+DISTNAME=	${PORTNAME}-${PORTVERSION}-1
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C++ library to create, manipulate, and render SVG files
