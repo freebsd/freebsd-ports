@@ -1,50 +1,46 @@
-# New ports collection makefile for:	asterisk-sounds-jp
-# Date created:				27 June 2007
-# Whom:		Fumihiko Kimura <jfkimura@yahoo.co.jp>
+# New ports collection makefile for:	ja-asterisk-sounds
+# Date created:		2010-06-12
+# Whom:			TAKAHASHI Kaoru <kaoru@kaisei.org>
 #
 # $FreeBSD$
 #
 
 PORTNAME=	asterisk
-PORTVERSION=	1.4
-PORTREVISION=	8
+PORTVERSION=	1.8
 CATEGORIES=	japanese net
-MASTER_SITES=	ftp://ftp.voip-info.jp/asterisk/sounds/${PORTVERSION:S|.|_|}/ \
-		http://ftp.voip-info.jp/asterisk/sounds/${PORTVERSION:S|.|_|}/
+MASTER_SITES=	http://ftp.voip-info.jp/asterisk/sounds/${VENDORVERSION:S|.|_|}/ \
+		ftp://ftp.voip-info.jp/asterisk/sounds/${VENDORVERSION:S|.|_|}/
 PKGNAMESUFFIX=	-sounds
-DISTNAME=	${PORTNAME}${PKGNAMESUFFIX:S|s$||}-jp_${PORTVERSION:S|.||}_beta
+DISTNAME=	asterisk-sound-jp_${VENDORVERSION:S|.||}_pre
 
-MAINTAINER=	jfkimura@yahoo.co.jp
+MAINTAINER=	kaoru@kaisei.org
 COMMENT=	Japanese sound files for Asterisk
 
-RUN_DEPENDS=	asterisk:${PORTSDIR}/net/asterisk14
+RUN_DEPENDS=	asterisk:${PORTSDIR}/net/asterisk
+
+VENDORVERSION=	1.6
 
 NO_BUILD=	yes
-ASTERISKDIR=	${DATADIR}/${PKGNAMESUFFIX:S|-||}
+ASTERISKDIR=	${PREFIX}/share/asterisk/sounds
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}${PKGNAMESUFFIX}
 SUB_FILES=	pkg-message
 SUB_LIST=	PORTSDIR=${PORTSDIR}
 
-post-extract:
-	${MV} ${WRKDIR}/jp/README.txt ${WRKDIR}
-
 do-install:
-	@-${MKDIR} ${ASTERISKDIR}
-	@${CP} -pR ${WRKDIR}/jp ${ASTERISKDIR}
+	@-${MKDIR} ${ASTERISKDIR}/ja
+	for gsm in ${WRKDIR}/ja/*.gsm; do \
+		${INSTALL_DATA} "$$gsm" ${ASTERISKDIR}/ja ; \
+	done
+	@${MKDIR} ${ASTERISKDIR}/ja/digits
+	for digitgsm in ${WRKDIR}/ja/digits/*.gsm; do \
+		${INSTALL_DATA} "$$digitgsm" ${ASTERISKDIR}/ja/digits ; \
+	done
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}/ja
-	@cd ${WRKDIR} && ${INSTALL_DATA} README.txt ${DOCSDIR}/ja
+	@cd ${WRKDIR}/ja && ${INSTALL_DATA} README.txt ${DOCSDIR}/ja
 .endif
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
-
-# This target is only meant to be used by the port maintainer.
-x-generate-plist:
-	@${FIND} ${ASTERISKDIR}/jp -type f -o -type l | ${SORT} | ${SED} -e 's,^${PREFIX}/,,' > pkg-plist.new
-	@${FIND} ${ASTERISKDIR}/jp -type d -depth | ${SORT} -r | ${SED} -e 's,^${PREFIX}/,@dirrm ,' >> pkg-plist.new
-	@${ECHO} %%PORTDOCS%%%%DOCSDIR%%/ja/README.txt >> pkg-plist.new
-	@${ECHO} %%PORTDOCS%%@dirrm %%DOCSDIR%%/ja >> pkg-plist.new
-	@${ECHO} %%PORTDOCS%%@dirrm %%DOCSDIR%% >> pkg-plist.new
 
 .include <bsd.port.mk>

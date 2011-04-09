@@ -6,8 +6,8 @@
 
  For example,
  1. Download app_voicemail.c.yymmdd-01.patch and say.c.yymmdd-01.patch from
-    ftp://ftp.voip-info.jp/asterisk/patch/1.4.X/
-    where 1.4.X is corresponding to PORTVERSION in
+    ftp://ftp.voip-info.jp/asterisk/patch/1.8.X.Y/
+    where 1.8.X.Y is corresponding to PORTVERSION in
     %%PORTSDIR%%/net/asterisk/Makefile.
  2. Put them to %%PORTSDIR%%/net/asterisk/files as
     patch-apps::app_voicemail.c and patch-main::say.c, respectively.
