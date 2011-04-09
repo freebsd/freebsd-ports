@@ -5,6 +5,18 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20110409:
+  AFFECTS: users of japanese/asterisk-sounds
+  AUTHOR: tota@FreeBSD.org
+
+  The japanese/asterisk-sounds has been updated to 1.8.
+  If you want to stay with ja-asterisk14-sounds, please run:
+  # portmaster -o japanese/asterisk14-sounds japanese/asterisk-sounds
+  or
+  # portupgrade -o japanese/asterisk14-sounds japanese/asterisk-sounds
+
+  See also 20101128 net/asterisk entry.
+
 20110406:
   AFFECTS: users of lang/ocaml and related libraries/applications
   AUTHOR: stas@FreeBSD.org
