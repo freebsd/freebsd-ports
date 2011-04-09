@@ -19,20 +19,19 @@ USE_BZIP2=	YES
 GNU_CONFIGURE=	YES
 CONFIGURE_ARGS=	--datadir=${PREFIX}/share
 
-.if defined(WITH_MOTIF)
-CONFIGURE_ARGS+=	--with-toolkit=motif
-LIB_DEPENDS=		Xm.3:${PORTSDIR}/x11-toolkits/open-motif
-.else
-CONFIGURE_ARGS+=	--with-toolkit=none
-
-pre-configure:
-	@${ECHO_MSG} "*"
-	@${ECHO_MSG} "* Use WITH_MOTIF=yes to enable using pixmaps in indicator icon"
-	@${ECHO_MSG} "*"
-.endif
-
 MAN1=		xrus.1
 DOCS=		FAQ NEWS README* TODO xrus.doc-*
+
+OPTIONS=	MOTIF "Support for pixmaps in indicator icon" off
+
+.include <bsd.port.options.mk>
+
+.if defined(WITH_MOTIF)
+USE_MOTIF=	yes
+CONFIGURE_ARGS+=	--with-toolkit=motif
+.else
+CONFIGURE_ARGS+=	--with-toolkit=none
+.endif
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/Xrus.ad ${PREFIX}/lib/X11/app-defaults/Xrus
