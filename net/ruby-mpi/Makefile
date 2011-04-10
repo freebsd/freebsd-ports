@@ -45,4 +45,8 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/docs/rd/*.rd ${RUBY_MODDOCDIR}/rd/
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+.if ${RUBY_VER} == 1.9
+BROKEN=	does not build with ruby 1.9
+.endif
+.include <bsd.port.post.mk>
