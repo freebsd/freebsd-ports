@@ -34,6 +34,40 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="7e69f00d-632a-11e0-9f3a-001d092480a4">
+    <topic>isc-dhcp-client -- dhclient does not strip or escape shell meta-characters</topic>
+    <affects>
+      <package>
+	<name>isc-dhcp31-client</name>
+	<range><lt>3.1.ESV_1,1</lt></range>
+      </package>
+      <package>
+	<name>isc-dhpc41-client</name>
+	<range><lt>4.1.e,2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>ISC reports:</p>
+	<blockquote cite="http://www.isc.org/software/dhcp/advisories/cve-2011-0997">
+	  <p>ISC dhclient did not strip or escape certain shell meta-characters
+	    in responses from the dhcp server (like hostname) before passing the
+	    responses on to dhclient-script. Depending on the script and OS,
+	    this can result in execution of exploit code on the client.
+	  </p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2011-0997</cvename>
+      <certvu>107886</certvu>
+    </references>
+    <dates>
+      <discovery>2011-04-05</discovery>
+      <entry>2011-04-10</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="b9281fb9-61b2-11e0-b1ce-0019d1a7ece2">
     <topic>tinyproxy -- ACL lists ineffective when range is configured</topic>
     <affects>
