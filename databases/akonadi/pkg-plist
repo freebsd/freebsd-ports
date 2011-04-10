@@ -13,7 +13,7 @@ include/akonadi/private/protocol_p.h
 include/akonadi/private/xdgbasedirs_p.h
 lib/cmake/Akonadi/AkonadiConfig.cmake
 lib/cmake/Akonadi/AkonadiConfigVersion.cmake
-lib/cmake/Akonadi/AkonadiTargetsWithPrefix-%%KDE4_BUILD_TYPE%%.cmake
+lib/cmake/Akonadi/AkonadiTargetsWithPrefix-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/Akonadi/AkonadiTargetsWithPrefix.cmake
 lib/libakonadiprotocolinternals.so
 lib/libakonadiprotocolinternals.so.1

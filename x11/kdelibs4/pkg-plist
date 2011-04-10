@@ -2196,9 +2196,9 @@ share/apps/cmake/modules/FindXmms.cmake
 share/apps/cmake/modules/HandleImportedTargetsInCMakeRequiredLibraries.cmake
 share/apps/cmake/modules/KDE4Defaults.cmake
 share/apps/cmake/modules/KDE4Macros.cmake
-share/apps/cmake/modules/KDELibs4LibraryTargets-%%KDE4_BUILD_TYPE%%.cmake
+share/apps/cmake/modules/KDELibs4LibraryTargets-%%CMAKE_BUILD_TYPE%%.cmake
 share/apps/cmake/modules/KDELibs4LibraryTargets.cmake
-share/apps/cmake/modules/KDELibs4ToolsTargets-%%KDE4_BUILD_TYPE%%.cmake
+share/apps/cmake/modules/KDELibs4ToolsTargets-%%CMAKE_BUILD_TYPE%%.cmake
 share/apps/cmake/modules/KDELibs4ToolsTargets.cmake
 share/apps/cmake/modules/KDELibsDependencies.cmake
 share/apps/cmake/modules/KDEPlatformProfile.cmake

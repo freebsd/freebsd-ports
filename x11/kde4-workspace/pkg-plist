@@ -154,7 +154,7 @@ include/taskmanager/taskmanager.h
 include/taskmanager/taskmanager_export.h
 lib/cmake/KDE4Workspace/KDE4WorkspaceConfig.cmake
 lib/cmake/KDE4Workspace/KDE4WorkspaceConfigVersion.cmake
-lib/cmake/KDE4Workspace/KDE4WorkspaceLibraryTargets-%%KDE4_BUILD_TYPE%%.cmake
+lib/cmake/KDE4Workspace/KDE4WorkspaceLibraryTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/KDE4Workspace/KDE4WorkspaceLibraryTargets.cmake
 lib/kconf_update_bin/krdb_clearlibrarypath
 lib/kconf_update_bin/kwin_update_default_rules

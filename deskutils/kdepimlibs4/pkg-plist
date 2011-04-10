@@ -926,7 +926,7 @@ include/syndication/specificitem.h
 include/syndication/specificitemvisitor.h
 include/syndication/syndication.h
 include/syndication/tools.h
-lib/cmake/KdepimLibs/KDEPimLibsLibraryTargetsWithPrefix-%%KDE4_BUILD_TYPE%%.cmake
+lib/cmake/KdepimLibs/KDEPimLibsLibraryTargetsWithPrefix-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/KdepimLibs/KDEPimLibsLibraryTargetsWithPrefix.cmake
 lib/cmake/KdepimLibs/KdepimLibsConfig.cmake
 lib/cmake/KdepimLibs/KdepimLibsConfigVersion.cmake
