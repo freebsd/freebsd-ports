@@ -17,7 +17,7 @@ LICENSE=	GPLv2
 
 RUN_DEPENDS=	${LOCALBASE}/lib/libsword-1.6.2.so:${PORTSDIR}/misc/sword
 BUILD_DEPENDS=	${RUN_DEPENDS}
-LIB_DEPENDS=	 clucene.0:${PORTSDIR}/textproc/clucene
+LIB_DEPENDS=	clucene.0:${PORTSDIR}/textproc/clucene
 
 USE_BZIP2=	yes
 USE_OPENSSL=	yes
@@ -27,12 +27,4 @@ QT_COMPONENTS=	corelib dbus gui iconengines network phonon qtestlib script \
 		svg webkit xml linguist_build moc_build qmake_build \
 		rcc_build uic_build
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 700042
-CMAKE_USE_PTHREAD=	yes
-.endif
-
-CMAKE_BUILD_TYPE=	Release
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
