@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	scantailor
-PORTVERSION=	0.9.8
-PORTREVISION=	1
+PORTVERSION=	0.9.9.2
 CATEGORIES=	graphics
 MASTER_SITES=	SF
 
@@ -19,6 +18,8 @@ LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg \
 		jbig.1:${PORTSDIR}/graphics/jbigkit \
 		png.6:${PORTSDIR}/graphics/png
 BUILD_DEPENDS=	${LOCALBASE}/include/boost/shared_ptr.hpp:${PORTSDIR}/devel/boost-libs
+
+LICENSE=	GPLv3
 
 USE_CMAKE=	yes
 USE_ICONV=	yes
