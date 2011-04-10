@@ -4,6 +4,12 @@ GNUstep/Local/Library/Bundles/SQLClient/ECPG.bundle/stamp.make
 GNUstep/Local/Library/Bundles/SQLClient/ECPG_libs.bundle/ECPG_libs
 GNUstep/Local/Library/Bundles/SQLClient/ECPG_libs.bundle/Resources/Info-gnustep.plist
 GNUstep/Local/Library/Bundles/SQLClient/ECPG_libs.bundle/stamp.make
+GNUstep/Local/Library/Bundles/SQLClient/MySQL.bundle/MySQL
+GNUstep/Local/Library/Bundles/SQLClient/MySQL.bundle/Resources/Info-gnustep.plist
+GNUstep/Local/Library/Bundles/SQLClient/MySQL.bundle/stamp.make
+GNUstep/Local/Library/Bundles/SQLClient/MySQL_libs.bundle/MySQL_libs
+GNUstep/Local/Library/Bundles/SQLClient/MySQL_libs.bundle/Resources/Info-gnustep.plist
+GNUstep/Local/Library/Bundles/SQLClient/MySQL_libs.bundle/stamp.make
 GNUstep/Local/Library/Bundles/SQLClient/Postgres.bundle/Postgres
 GNUstep/Local/Library/Bundles/SQLClient/Postgres.bundle/Resources/Info-gnustep.plist
 GNUstep/Local/Library/Bundles/SQLClient/Postgres.bundle/stamp.make
@@ -23,7 +29,7 @@ GNUstep/Local/Library/Documentation/SQLClient/dependencies
 GNUstep/Local/Library/Headers/SQLClient/SQLClient.h
 GNUstep/Local/Library/Libraries/libSQLClient.so
 GNUstep/Local/Library/Libraries/libSQLClient.so.%%LIBVERSION%%
-GNUstep/Local/Library/Libraries/libSQLClient.so.%%VERSION%%
+GNUstep/Local/Library/Libraries/libSQLClient.so.%%LIBVERSION2%%
 @dirrm GNUstep/Local/Library/Headers/SQLClient
 @dirrm GNUstep/Local/Library/Documentation/SQLClient
 @dirrm GNUstep/Local/Library/Bundles/SQLClient/SQLite_libs.bundle/Resources
@@ -34,6 +40,10 @@ GNUstep/Local/Library/Libraries/libSQLClient.so.%%VERSION%%
 @dirrm GNUstep/Local/Library/Bundles/SQLClient/Postgres_libs.bundle
 @dirrm GNUstep/Local/Library/Bundles/SQLClient/Postgres.bundle/Resources
 @dirrm GNUstep/Local/Library/Bundles/SQLClient/Postgres.bundle
+@dirrm GNUstep/Local/Library/Bundles/SQLClient/MySQL_libs.bundle/Resources
+@dirrm GNUstep/Local/Library/Bundles/SQLClient/MySQL_libs.bundle
+@dirrm GNUstep/Local/Library/Bundles/SQLClient/MySQL.bundle/Resources
+@dirrm GNUstep/Local/Library/Bundles/SQLClient/MySQL.bundle
 @dirrm GNUstep/Local/Library/Bundles/SQLClient/ECPG_libs.bundle/Resources
 @dirrm GNUstep/Local/Library/Bundles/SQLClient/ECPG_libs.bundle
 @dirrm GNUstep/Local/Library/Bundles/SQLClient/ECPG.bundle/Resources
