@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	puppet
-PORTVERSION=	2.6.6
+PORTVERSION=	2.6.7
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.puppetlabs.com/downloads/puppet/
 
@@ -50,6 +50,7 @@ RUN_DEPENDS+=	rubygem-mongrel>=0:${PORTSDIR}/www/rubygem-mongrel
 
 .if defined(WITH_PACKAGE_ORIGIN)
 EXTRA_PATCHES+=	${FILESDIR}/optpatch-package_origin
+RUN_DEPENDS+=	${RUBY_SITEARCHLIBDIR}/bz2.so:${PORTSDIR}/archivers/ruby-bz2
 .endif
 
 .include <bsd.port.pre.mk>
