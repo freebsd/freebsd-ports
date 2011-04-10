@@ -45,4 +45,8 @@ do-install:
 		>> ${TMPPLIST}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+.if ${RUBY_VER} == 1.9
+BROKEN=	does not build with ruby 1.9
+.endif
+.include <bsd.port.post.mk>
