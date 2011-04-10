@@ -807,6 +807,7 @@ autoq3d                         ports/graphics/autoq3d
 autorespond                     ports/mail/autorespond
 autosig                         ports/mail/autosig
 autossh                         ports/security/autossh
+autotalent                      ports/audio/autotalent
 autotools                       ports/devel/autotools
 autotrace                       ports/graphics/autotrace
 autotrust                       ports/dns/autotrust
@@ -1840,7 +1841,6 @@ commonclipse                    ports/java/commonclipse
 commoncpp                       ports/devel/commoncpp
 commonist                       ports/www/commonist
 commons-utilities               ports/graphics/commons-utilities
-compaq-cc                       ports/lang/compaq-cc
 compat4x                        ports/misc/compat4x
 compat5x                        ports/misc/compat5x
 compat6x                        ports/misc/compat6x
@@ -6240,6 +6240,7 @@ ja-another-htmllint             ports/japanese/another-htmllint
 ja-anthy                        ports/japanese/anthy
 ja-asciidates98-fpw             ports/japanese/ASCIIdates98-fpw
 ja-asterisk-sounds              ports/japanese/asterisk-sounds
+ja-asterisk14-sounds            ports/japanese/asterisk14-sounds
 ja-asterisk16-sounds            ports/japanese/asterisk16-sounds
 ja-aterm                        ports/japanese/aterm
 ja-awffull                      ports/japanese/awffull
