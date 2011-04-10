@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	sudo
-PORTVERSION=	1.7.4.6
+PORTVERSION=	1.8.1
 CATEGORIES=	security
 MASTER_SITES=	http://www.sudo.ws/sudo/dist/ \
 		http://www.signal42.com/mirrors/sudo_ftp/ \
@@ -42,7 +42,7 @@ MASTER_SITES=	http://www.sudo.ws/sudo/dist/ \
 		ftp://sunsite.icm.edu.pl/packages/sudo/ \
 		ftp://mirror.cdmon.com/pub/sudo/ \
 		ftp://ftp.twaren.net/Unix/Security/Sudo/
-DISTNAME=	${PORTNAME}-1.7.4p6
+DISTNAME=	${PORTNAME}-1.8.1
 
 MAINTAINER=	wxs@FreeBSD.org
 COMMENT=	Allow others to run commands as root
@@ -65,26 +65,26 @@ OPTIONS=	LDAP "With LDAP support" off \
 		NOARGS_SHELL "Enable no arguments shell" off
 
 LOGFAC?=	local2
-CONFIGURE_ARGS+=--with-logfac=${LOGFAC}
+CONFIGURE_ARGS+=	--with-logfac=${LOGFAC}
 
 .include <bsd.port.pre.mk>
 
 # SUDO_SECURE_PATH is a PATH string that will override the user's PATH.
 # ex: make SUDO_SECURE_PATH="/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/sbin:/usr/local/bin"
 .if defined(SUDO_SECURE_PATH)
-CONFIGURE_ARGS+=--with-secure-path="${SUDO_SECURE_PATH}"
+CONFIGURE_ARGS+=	--with-secure-path="${SUDO_SECURE_PATH}"
 .endif
 
 .if defined(WITH_INSULTS)
-CONFIGURE_ARGS+=--with-insults
-CONFIGURE_ARGS+=--with-all-insults
+CONFIGURE_ARGS+=	--with-insults
+CONFIGURE_ARGS+=	--with-all-insults
 .endif
 
 .if defined(WITH_LDAP)
-USE_OPENLDAP=yes
-CONFIGURE_ARGS+=--with-ldap=${PREFIX}
-SUDO_LDAP_CONF?=ldap.conf
-CONFIGURE_ARGS+=--with-ldap-conf-file=${PREFIX}/etc/${SUDO_LDAP_CONF}
+USE_OPENLDAP=	yes
+CONFIGURE_ARGS+=	--with-ldap=${PREFIX}
+SUDO_LDAP_CONF?=	ldap.conf
+CONFIGURE_ARGS+=	--with-ldap-conf-file=${PREFIX}/etc/${SUDO_LDAP_CONF}
 PLIST_SUB+=	LDAP=""
 MAN5+=	sudoers.ldap.5
 .else
@@ -104,17 +104,18 @@ CONFIGURE_ARGS+=--enable-noargs-shell
 .endif
 
 MAN5+=		sudoers.5
-MAN8=		sudo.8 visudo.8 sudoreplay.8
+MAN8=		sudo.8 visudo.8 sudoreplay.8 sudo_plugin.8
 MLINKS=		sudo.8 sudoedit.8
 
 post-patch:
 	@${REINPLACE_CMD} -E '/install-(binaries|noexec):/,/^$$/ \
 		s/\$$\(INSTALL\)/& ${STRIP}/;s/-b\~/-b ~/' \
-		${WRKSRC}/Makefile.in
+		${WRKSRC}/src/Makefile.in
 .if defined(NOPORTDOCS)
-	@${REINPLACE_CMD} -e 's/$$(DESTDIR)$$(sudoersdir) $$(DESTDIR)$$(docdir)/$$(DESTDIR)$$(sudoersdir)/' \
-		${WRKSRC}/Makefile.in
-	@${REINPLACE_CMD} -e '/for f in ChangeLog/d' ${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e 's/mkinstalldirs $$(DESTDIR)$$(docdir)/mkinstalldirs/' \
+		${WRKSRC}/doc/Makefile.in
+	@${REINPLACE_CMD} -e '/for f in $$(OTHER_DOCS); do/d;/@LDAP@for f in $$(OTHER_DOCS_LDAP); do/d' ${WRKSRC}/doc/Makefile.in
+	@${REINPLACE_CMD} -e 's/$$(DESTDIR)$$(sudoersdir) $$(DESTDIR)$$(docdir)/$$(DESTDIR)$$(sudoersdir)/' ${WRKSRC}/plugins/sudoers/Makefile.in
 .endif
 
 post-install:
@@ -126,6 +127,5 @@ post-install:
 	if [ ! -f ${PREFIX}/etc/sudoers ]; then \
 		${CP} -p ${PREFIX}/etc/sudoers.sample ${PREFIX}/etc/sudoers; \
 	fi
-	${TOUCH} ${PREFIX}/etc/sudoers.d/.keep-me
 
 .include <bsd.port.post.mk>
