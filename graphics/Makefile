@@ -811,6 +811,7 @@
     SUBDIR += qgis
     SUBDIR += qglviewer
     SUBDIR += qiv
+    SUBDIR += qiviewer
     SUBDIR += qslim
     SUBDIR += qt4-iconengines
     SUBDIR += qt4-imageformats
