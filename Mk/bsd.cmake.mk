@@ -1,26 +1,31 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4
 #
-# USE_CMAKE			- If set, this port uses cmake.
+# USE_CMAKE		- If set, this port uses cmake.
 #
-# CMAKE_ENV			- Environment passed to cmake.
-#					Default: ${CONFIGURE_ENV}
+# CMAKE_ENV		- Environment passed to cmake.
+#				Default: ${CONFIGURE_ENV}
 # CMAKE_ARGS		- Arguments passed to cmake
-#					Default: see below
-# CMAKE_USE_PTHREAD	- Instruct cmake to use pthreads when
-#					compiling/linking
-#					Default: not set
-# CMAKE_BUILD_TYPE	- Type of build (cmake predefined build types),
-#					affects on CFLAGS and thus should not be set.
-#					Default: none (which respects CFLAGS)
+#				Default: see below
+# CMAKE_USE_PTHREAD	- Instruct cmake to use pthreads when compiling/linking
+#				Default: not set
+# CMAKE_BUILD_TYPE	- Type of build (cmake predefined build types).
+#				Projects may have their own build profiles.
+#				CMake supports the following types: Debug,
+#				Release, RelWithDebInfo and MinSizeRel.
+#				Debug and Release profiles respect system
+#				CFLAGS, RelWithDebInfo and MinSizeRel will set
+#				CFLAGS to "-O2 -g" and "-Os -DNDEBUG".
+#				Default: Release, if WITH_DEBUG is not set,
+#				Debug otherwise
 # CMAKE_VERBOSE		- Verbose build
-#					Default: not set
+#				Default: not set
 # CMAKE_OUTSOURCE	- Instruct to perform an out-of-source build
-# 					Default: not set
+# 				Default: not set
 # CMAKE_SOURCE_PATH	- Path to sourcedir for cmake
-#					Default: ${WRKSRC}
+#				Default: ${WRKSRC}
 # CMAKE_INSTALL_PREFIX	- prefix for cmake to use for installation.
-#					Default: ${PREFIX}
+#				Default: ${PREFIX}
 #
 #
 # $FreeBSD$
@@ -63,7 +68,15 @@ BUILD_WRKSRC=		${CONFIGURE_WRKSRC}
 INSTALL_WRKSRC=		${CONFIGURE_WRKSRC}
 .endif
 CMAKE_INSTALL_PREFIX?=	${PREFIX}
-CMAKE_BUILD_TYPE?=	#none
+
+.if defined(WITH_DEBUG)
+CMAKE_BUILD_TYPE?=	Debug
+.else
+CMAKE_BUILD_TYPE?=	Release
+INSTALL_TARGET?=	install/strip
+.endif
+
+PLIST_SUB+=	CMAKE_BUILD_TYPE="${CMAKE_BUILD_TYPE:L}"
 
 #
 # Instruct cmake to compile/link with pthreads
@@ -75,13 +88,6 @@ CXXFLAGS+=		${PTHREAD_CFLAGS}
 CMAKE_ARGS+=	-DCMAKE_THREAD_LIBS:STRING="${PTHREAD_LIBS}" \
 				-DCMAKE_USE_PTHREADS:BOOL=ON \
 				-DCMAKE_EXE_LINKER_FLAGS:STRING="${PTHREAD_LIBS}"
-.endif
-
-#
-# Strip binaries
-#
-.if !defined(WITH_DEBUG)
-INSTALL_TARGET?=	install/strip
 .endif
 
 #
