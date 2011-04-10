@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cueplayer
-PORTVERSION=	0.27
+PORTVERSION=	0.28
 CATEGORIES=	audio
 MASTER_SITES=	GOOGLE_CODE
 
@@ -37,10 +37,4 @@ do-configure:
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/images/${PORTNAME}.png ${DATADIR}
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 900000
-BROKEN=		does not build
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
