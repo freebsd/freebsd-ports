@@ -289,11 +289,11 @@ include/gdcm-2.0/gdcmopenjpeg/tgt.h
 include/gdcm-2.0/zipstreamimpl.h
 lib/gdcm-2.0/GDCMConfig.cmake
 lib/gdcm-2.0/GDCMConfigVersion.cmake
-lib/gdcm-2.0/GDCMTargets-noconfig.cmake
+lib/gdcm-2.0/GDCMTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/gdcm-2.0/GDCMTargets.cmake
 lib/gdcm-2.0/UseGDCM.cmake
 lib/gdcmopenjpeg-2.0/GDCMTargets.cmake
-lib/gdcmopenjpeg-2.0/GDCMTargets-noconfig.cmake
+lib/gdcmopenjpeg-2.0/GDCMTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/gdcmopenjpeg-2.0/OpenJPEGConfig.cmake
 lib/libgdcmCommon.so
 lib/libgdcmCommon.so.%%GDCM_MAJ%%
