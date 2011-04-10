@@ -47,10 +47,6 @@ BUILD_DEPENDS+=	${LOCALBASE}/share/xml/docbook/4.2/docbookx.dtd:${PORTSDIR}/text
 
 PHP2FIX=	rkward/settings/rksettingsmodulephp.cpp
 
-.if defined(WITH_DEBUG)
-CMAKE_ARGS+=	-DCMAKE_BUILD_TYPE=Debug
-.endif
-
 pre-configure:
 	${REINPLACE_CMD} -e 's|/usr/bin/php|${LOCALBASE}/bin/php|'	\
 		${PHP2FIX:S|^|${WRKSRC}/|}

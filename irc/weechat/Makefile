@@ -35,10 +35,6 @@ OPTIONS=	RUBY		"Ruby scripting support."	Off	\
 
 .include <bsd.port.options.mk>
 
-.if defined(WITH_DEBUG)
-CMAKE_BUILD_TYPE=	Debug
-.endif
-
 .if defined(WITHOUT_CHARSET)
 CMAKE_ARGS+=	-DENABLE_CHARSET=no
 PLIST_SUB+=	CHARSET="@comment "

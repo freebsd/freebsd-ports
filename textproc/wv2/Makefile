@@ -21,12 +21,4 @@ USE_CMAKE=	yes
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 
-.if defined(WITH_DEBUG)
-CMAKE_BUILD_TYPE?= Debug
-.else
-CMAKE_BUILD_TYPE?= Release
-.endif
-
-PLIST_SUB=	CMAKE_BUILD_TYPE="${CMAKE_BUILD_TYPE:L}"
-
 .include <bsd.port.mk>
