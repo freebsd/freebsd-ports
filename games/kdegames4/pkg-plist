@@ -194,7 +194,7 @@ lib/libpala.so
 lib/libpala.so.0
 lib/libpala.so.0.2.0
 lib/libpala/libpala-config.cmake
-lib/libpala/pala-targets-%%KDE4_BUILD_TYPE%%.cmake
+lib/libpala/pala-targets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/libpala/pala-targets.cmake
 share/applications/kde4/KGoldrunner.desktop
 share/applications/kde4/bomber.desktop

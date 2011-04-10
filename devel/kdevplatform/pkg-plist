@@ -298,7 +298,7 @@ include/kdevplatform/vcs/widgets/vcslocationwidget.h
 lib/cmake/kdevplatform/KDevPlatformConfig.cmake
 lib/cmake/kdevplatform/KDevPlatformConfigVersion.cmake
 lib/cmake/kdevplatform/KDevPlatformMacros.cmake
-lib/cmake/kdevplatform/KDevPlatformTargets-%%KDE4_BUILD_TYPE%%.cmake
+lib/cmake/kdevplatform/KDevPlatformTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/kdevplatform/KDevPlatformTargets.cmake
 lib/kde4/kcm_kdev_bgsettings.so
 lib/kde4/kcm_kdev_ccsettings.so
