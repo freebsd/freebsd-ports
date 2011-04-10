@@ -186,7 +186,7 @@ libdata/pkgconfig/plplotd.pc
 %%FORTRAN%%%%DATADIR%%/examples/cmake/modules/Platform/Windows-GNU-Fortran.cmake
 %%FORTRAN%%%%DATADIR%%/examples/cmake/modules/Platform/Windows-df.cmake
 %%FORTRAN%%%%DATADIR%%/examples/cmake/modules/Platform/Windows-f90.cmake
-%%DATADIR%%/examples/cmake/modules/export_plplot-noconfig.cmake
+%%DATADIR%%/examples/cmake/modules/export_plplot-%%CMAKE_BUILD_TYPE%%.cmake
 %%DATADIR%%/examples/cmake/modules/export_plplot.cmake
 %%DATADIR%%/examples/cmake/modules/pkg-config.cmake
 %%DATADIR%%/examples/cmake/modules/plplot_configure.cmake
