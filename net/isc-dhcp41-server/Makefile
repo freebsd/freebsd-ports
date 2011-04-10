@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	dhcp
-DISTVERSION=	4.1.2
+DISTVERSION=	4.1-ESV
 PORTREVISION=	${DHCP_PORTREVISION}
-PORTEPOCH=	1
+PORTEPOCH=	2
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_ISC}
 MASTER_SITE_SUBDIR=	dhcp
@@ -19,8 +19,10 @@ DISTFILES=	${PORTNAME}-${DISTVERSION}-${PATCHLEVEL}${EXTRACT_SUFX}
 MAINTAINER=	douglas@douglasthrift.net
 COMMENT?=	The ISC Dynamic Host Configuration Protocol server
 
-PATCHLEVEL=	P1
-PORTREVISION_SERVER=	2
+LICENSE=	ISCL
+
+PATCHLEVEL=	R2
+PORTREVISION_SERVER=	0
 PORTREVISION_CLIENT=	0
 PORTREVISION_RELAY=	0
 
@@ -60,19 +62,19 @@ CONFIGURE_ENV=	CPPFLAGS="-D_PATH_DHCLIENT_SCRIPT='\"${PREFIX}/sbin/dhclient-scri
 SCRIPTS_ENV+=	PKG_PREFIX=${PREFIX}
 
 .if ${SUBSYS} == client
-MAN5=		dhclient.conf.5 dhclient.leases.5
-MAN8=		dhclient.8 dhclient-script.8
+MAN5+=		dhclient.conf.5 dhclient.leases.5
+MAN8+=		dhclient.8 dhclient-script.8
 CONF_FILE=	dhclient.conf
 .elif ${SUBSYS} == server
 CONFIGURE_ARGS+=	--localstatedir=/var
-MAN5=		dhcpd.conf.5 dhcpd.leases.5 dhcp-eval.5 dhcp-options.5
-MAN8=		dhcpd.8
+MAN5+=		dhcpd.conf.5 dhcpd.leases.5 dhcp-eval.5 dhcp-options.5
+MAN8+=		dhcpd.8
 MAN1=		omshell.1
 MAN3=		dhcpctl.3 omapi.3
 CFLAGS+=	-fPIC
 CONF_FILE=	dhcpd.conf dhcpd6.conf
 .else
-MAN8=		dhcrelay.8
+MAN8+=		dhcrelay.8
 .endif
 
 DESCR=		${.CURDIR}/pkg-descr
@@ -121,6 +123,7 @@ PLIST_SUB+=	LDAP="@comment "
 .if defined(WITH_DHCP_LDAP_SSL) && defined (WITH_DHCP_LDAP)
 USE_OPENSSL=	yes
 CONFIGURE_ARGS+=	--with-ldapcrypto
+CONFIGURE_ENV+=	LIBS="-lssl"
 # hack to get bsd.openssl.mk included at this late state
 .include "${PORTSDIR}/Mk/bsd.openssl.mk"
 .endif
