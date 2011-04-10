@@ -106,10 +106,6 @@ PLIST_SUB+=	QT="@comment "
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 700000
-BROKEN=		does not compile on 6.X
-.endif
-
 pre-everything::
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "PLplot has the following tunable options:"

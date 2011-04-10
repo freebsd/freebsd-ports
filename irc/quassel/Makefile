@@ -74,12 +74,6 @@ QUASSEL_CLIENT=	OFF
 PLIST_SUB+=	CLIENT="@comment "
 .endif
 
-.if defined(WITH_DEBUG)
-CMAKE_BUILD_TYPE=	RelWithDebugInfo
-.else
-CMAKE_BUILD_TYPE=	Release
-.endif
-
 pre-configure:
 .if defined(WITHOUT_NLS)
 	${REINPLACE_CMD} -e '/add_subdirectory(i18n)/d' \

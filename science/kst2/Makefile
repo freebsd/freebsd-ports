@@ -26,8 +26,6 @@ MAKE_JOBS_SAFE=	yes
 
 CMAKE_SOURCE_PATH=	${WRKSRC}/cmake
 CMAKE_ARGS+=	-Dkst_install_prefix=${PREFIX}
-#Kst does not support empty CMAKE_BUILD_TYPE
-CMAKE_BUILD_TYPE=	Release
 
 MAN1=		kst2.1
 

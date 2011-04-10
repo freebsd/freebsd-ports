@@ -59,14 +59,6 @@ OPTIONS=	OSMESA	"Use Mesa for off-screen rendering" Off \
 
 VERMAJORMINOR=	${PORTVERSION:R}
 
-# Temporary workaround until a fix will be committed to bsd.cmake.mk (ports/150363)
-.if defined(WITH_DEBUG)
-CMAKE_BUILD_TYPE?=	Debug
-.else
-CMAKE_BUILD_TYPE?=	Release
-.endif
-PLIST_SUB+=	CMAKE_BUILD_TYPE="${CMAKE_BUILD_TYPE:L}"
-
 .include <bsd.port.options.mk>
 
 .if defined(WITH_OSMESA)

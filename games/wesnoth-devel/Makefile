@@ -50,10 +50,6 @@ OPTIONS=	ANA	 "Enable Asynchronous Network API (WIP)" On \
 
 .include <bsd.port.options.mk>
 
-.if defined(WITH_DEBUG)
-CMAKE_BUILD_TYPE=	debug
-.endif
-
 # XXX: breaks compilation because of -Werror
 .if !defined(WITH_STRICT)
 CMAKE_ARGS+=	-DENABLE_STRICT_COMPILATION=off

@@ -40,10 +40,6 @@ KMODDIR?=	/boot/modules
 PORTDOCS=	*
 PORTEXAMPLES=	*
 
-.if defined(WITH_DEBUG)
-CMAKE_BUILD_TYPE=Debug
-.endif
-
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 700000

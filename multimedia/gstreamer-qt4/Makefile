@@ -30,8 +30,7 @@ USE_QT_VER=	4
 QT_COMPONENTS=	corelib gui \
 		qmake_build moc_build rcc_build uic_build
 
-PLIST_SUB=	VERSION="${GST_VERSION}" \
-		CMAKE_BUILD_TYPE="${CMAKE_BUILD_TYPE}"
+PLIST_SUB=	VERSION="${GST_VERSION}"
 
 GST_VERSION=${PORTVERSION:C/..$//}
 
@@ -40,12 +39,6 @@ CMAKE_ARGS+=	\
 		-DCMAKE_EXE_LINKER_FLAGS:STRING="-L${LOCALBASE}/lib" \
 		-DCMAKE_MODULE_LINKER_FLAGS:STRING="-L${LOCALBASE}/lib" \
 		-DCMAKE_SHARED_LINKER_FLAGS:STRING="-L${LOCALBASE}/lib"
-
-.if !defined(WITH_DEBUG)
-CMAKE_BUILD_TYPE=	release
-.else
-CMAKE_BUILD_TYPE=	debug
-.endif
 
 post-extract:
 	${REINPLACE_CMD} -e 's|$${LIB_INSTALL_DIR}/pkgconfig|libdata/pkgconfig|' \
