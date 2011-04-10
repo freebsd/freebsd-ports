@@ -6,23 +6,20 @@
 #
 
 PORTNAME=	zint
-PORTVERSION=	2.3.1
-PORTREVISION=	1
+PORTVERSION=	2.4.1
 CATEGORIES=	graphics
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}/
-DISTNAME=	${PORTNAME}-${PORTVERSION}.src
 
 MAINTAINER=	g.veniamin@googlemail.com
 COMMENT=	Zint Barcode Generator
 
 LIB_DEPENDS=	png.6:${PORTSDIR}/graphics/png
 
+LICENSE=	GPLv3
+
 USE_CMAKE=	yes
-CMAKE_USE_PTHREAD=	yes
 USE_LDCONFIG=	yes
 USE_QT_VER=	4
 QT_COMPONENTS=	gui xml qmake_build uic_build moc_build rcc_build designer
-
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 .include <bsd.port.mk>
