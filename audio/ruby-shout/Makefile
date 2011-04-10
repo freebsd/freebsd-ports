@@ -32,6 +32,10 @@ DOCS=		README	doc
 BROKEN=		does not build
 .endif
 
+.if ${RUBY_VER} == 1.9
+BROKEN=	does not compile with ruby 1.9
+.endif
+
 post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${RUBY_MODEXAMPLESDIR}
