@@ -3283,6 +3283,7 @@
     SUBDIR += rubygem-rubyinlineaccel
     SUBDIR += rubygem-runt
     SUBDIR += rubygem-ruport
+    SUBDIR += rubygem-sdl
     SUBDIR += rubygem-sequel
     SUBDIR += rubygem-sexp_processor
     SUBDIR += rubygem-shoulda
