@@ -7,6 +7,7 @@
 
 PORTNAME=	OpenLP
 PORTVERSION=	1.9.5
+PORTREVISION=	1
 CATEGORIES=	multimedia python
 MASTER_SITES=	SF/openlp/openlp/${PORTVERSION}
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
@@ -24,7 +25,12 @@ BUILD_DEPENDS=	py*-sip>=0:${PORTSDIR}/devel/py-sip \
 RUN_DEPENDS=	py*-beautifulsoup<3.1:${PORTSDIR}/www/py-beautifulsoup30 \
 		py*-lxml>=0:${PORTSDIR}/devel/py-lxml \
 		py*-phonon>=${PYQT4_VERSION}:${PORTSDIR}/multimedia/py-qt4-phonon \
-		py*-chardet>=0:${PORTSDIR}/textproc/py-chardet
+		py*-sqlalchemy>=0.5:${PORTSDIR}/databases/py-sqlalchemy \
+		py*-qt4-gui>=0:${PORTSDIR}/x11-toolkits/py-qt4-gui \
+		py*-qt4-webkit>=0:${PORTSDIR}/www/py-qt4-webkit \
+		py*-qt4-network>=0:${PORTSDIR}/net/py-qt4-network \
+		py*-chardet>=0:${PORTSDIR}/textproc/py-chardet \
+		${PYTHON_SITELIBDIR}/pysqlite2/__init__.py:${PORTSDIR}/databases/py-pysqlite21
 
 PLIST_SUB+=	VERSION="${PORTVERSION}" PYTHON_VER="${PYTHON_VER}"
 
