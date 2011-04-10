@@ -1,4 +1,4 @@
-%%EDITOR%%bin/glest_editor
+%%EDITOR%%bin/megaglest_editor
 bin/megaglest
 %%DATADIR%%/glest.bin
 %%DATADIR%%/glest.ini

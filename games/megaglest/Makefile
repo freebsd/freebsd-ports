@@ -57,7 +57,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/code_license.txt ${DOCSDIR}
 .endif
 .if defined(WITH_EDITOR)
-	${INSTALL_PROGRAM} ${WRKSRC}/mk/linux/glest_editor ${PREFIX}/bin/
+	${INSTALL_PROGRAM} ${WRKSRC}/mk/linux/glest_editor ${PREFIX}/bin/megaglest_editor
 .endif
 
 post-install:

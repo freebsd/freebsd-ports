@@ -6,7 +6,7 @@ The megaglest game has been installed:
 
 2) If you instlled the megaglest map editor you could lounch it like this:
 
-   # glest_editor
+   # megaglest_editor
 
 3) If you have problems running megaglest, you should remove your ~/.megaglest 
    directory and try again
