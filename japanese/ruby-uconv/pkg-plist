@@ -1,5 +1,10 @@
+%%RUBY_SITELIBDIR%%/uconv/euc-jis-2004.rb
+%%RUBY_SITELIBDIR%%/uconv/eucjp-open.rb
+%%RUBY_SITELIBDIR%%/uconv/eucjp-unicode.rb
+%%RUBY_SITELIBDIR%%/uconv/shift_jis-2004.rb
 %%RUBY_SITEARCHLIBDIR%%/uconv.so
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/README
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/ja/README.ja
 %%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/ja
 %%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%
+@dirrmtry %%RUBY_SITELIBDIR%%/uconv
