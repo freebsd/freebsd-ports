@@ -51,6 +51,12 @@ MAN3=		__zzip_fetch_disk_trailer.3 __zzip_parse_root_directory.3 __zzip_try_open
 
 PORTSCOUT=	limit:^0\.
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 800000 && ${ARCH} == "amd64"
+BROKEN=		segfaults during build
+.endif
+
 test check:
 	@(cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} \
 		${MAKEFILE} ${MAKE_ARGS} check)
@@ -59,4 +65,4 @@ test check:
 post-build::	test
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
