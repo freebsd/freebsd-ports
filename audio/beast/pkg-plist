@@ -193,6 +193,10 @@ include/sfi/sfiwrapper.h
 %%SSE%%lib/bse/v%%PORTVERSION%%/plugins/davsyndrum.SSE.la
 %%SSE%%lib/bse/v%%PORTVERSION%%/plugins/davcanyondelay.SSE.so
 %%SSE%%lib/bse/v%%PORTVERSION%%/plugins/davcanyondelay.SSE.la
+lib/bse/v%%PORTVERSION%%/drivers/bsepcmdevice-alsa.so
+lib/bse/v%%PORTVERSION%%/drivers/bsepcmdevice-alsa.la
+lib/bse/v%%PORTVERSION%%/drivers/bsemididevice-alsa.so
+lib/bse/v%%PORTVERSION%%/drivers/bsemididevice-alsa.la
 lib/bse/v%%PORTVERSION%%/plugins/artsplugins.FPU.la
 lib/bse/v%%PORTVERSION%%/plugins/artsplugins.FPU.so
 lib/bse/v%%PORTVERSION%%/plugins/bseadder.FPU.la
@@ -225,8 +229,8 @@ lib/bse/v%%PORTVERSION%%/plugins/davxtalstrings.FPU.la
 lib/bse/v%%PORTVERSION%%/plugins/davxtalstrings.FPU.so
 lib/bse/v%%PORTVERSION%%/plugins/freeverb.la
 lib/bse/v%%PORTVERSION%%/plugins/freeverb.so
+lib/libbse-0.7.so.4
 lib/libbse-0.7.so
-lib/libbse-0.7.so.2
 lib/libbse.la
 lib/libbse.so
 libdata/pkgconfig/bse.pc
@@ -255,6 +259,8 @@ share/applications/beast.desktop
 %%DATADIR%%/v%%PORTVERSION%%/docs/html/style/beast-style.css
 %%DATADIR%%/v%%PORTVERSION%%/docs/html/style/doxer-style.css
 %%DATADIR%%/v%%PORTVERSION%%/docs/html/style/home-arrow-24x64.png
+%%DATADIR%%/v%%PORTVERSION%%/docs/html/style/triangle-down-blue.png
+%%DATADIR%%/v%%PORTVERSION%%/docs/html/style/triangle-right-blue.png
 %%DATADIR%%/v%%PORTVERSION%%/docs/html/style/plain.css
 %%DATADIR%%/v%%PORTVERSION%%/docs/html/style/title-arrow-24x64.png
 %%DATADIR%%/v%%PORTVERSION%%/images/beast-components.png
@@ -371,6 +377,7 @@ share/pixmaps/beast.png
 @dirrmtry share/application-registry
 @dirrmtry share/mime-info
 @dirrm lib/bse/v%%PORTVERSION%%/plugins
+@dirrm lib/bse/v%%PORTVERSION%%/drivers
 @dirrm lib/bse/v%%PORTVERSION%%
 @dirrm lib/bse
 @dirrm include/sfi
