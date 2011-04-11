@@ -5,8 +5,8 @@
 # $FreeBSD$
 
 PORTNAME=	phonon
-PORTVERSION=	4.4.4
-CATEGORIES=	multimedia kde ipv6
+PORTVERSION=	4.5.0
+CATEGORIES=	multimedia kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	${PHONON_BRANCH}/${PORTNAME}/${PORTNAME}-backend${PKGNAMESUFFIX}/${PORTVERSION}/src
 PKGNAMESUFFIX=	-gstreamer
@@ -36,10 +36,6 @@ CMAKE_ARGS+=	-DWITH_Alsa:BOOL=OFF
 .if defined(WITH_QT_PHONON)
 IGNORE=		conflicts with Qt4 phonon. Please, deinstall qt4-phonon-gst and set WITH_KDE_PHONON to continue
 .endif
-
-pre-configure:
-	${REINPLACE_CMD} -e 's|{QT_INCLUDES}|{QT_INCLUDES} ${LOCALBASE}/include|'\
-		${PATCH_WRKSRC}/CMakeLists.txt
 
 pre-su-install:
 	${MKDIR} ${QT_PLUGINDIR}/phonon_backend
