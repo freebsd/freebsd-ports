@@ -80,6 +80,10 @@ post-configure:
 IGNORE=	is not supported on this OS version
 .endif
 
+.if ${OSVERSION} >= 900000 && ${ARCH} == "amd64"
+BROKEN=		does not link on 9.X
+.endif
+
 .if !defined(WITHOUT_CLANG)
 BUILD_DEPENDS+=	clang:${PORTSDIR}/devel/llvm-devel \
 		${LOCALBASE}/lib/libBlocksRuntime.so:${PORTSDIR}/devel/compiler-rt
