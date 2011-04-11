@@ -15,6 +15,8 @@ DISTNAME=	io-${PORTVERSION:S/0.0.//}
 MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	Small prototype-based programming language
 
+BROKEN=		Fails in interesting ways with GNU make 3.82
+
 USE_GMAKE=	yes
 CFLAGS+=	-fPIC
 USE_LDCONFIG=	yes
