@@ -28,3 +28,5 @@ sbin/visudo
 %%LDAP%%%%PORTDOCS%%%%DOCSDIR%%/schema.ActiveDirectory
 %%LDAP%%%%PORTDOCS%%%%DOCSDIR%%/sudoers2ldif
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
+etc/sudoers.d/.keep-me
+@dirrmtry etc/sudoers.d
