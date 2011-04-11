@@ -188,6 +188,8 @@ lib/ocaml/camlp5/q_phony.cmx
 lib/ocaml/camlp5/q_phony.o
 lib/ocaml/camlp5/quotation.cmi
 lib/ocaml/camlp5/quotation.mli
+lib/ocaml/camlp5/reloc.cmi
+lib/ocaml/camlp5/reloc.mli
 lib/ocaml/camlp5/stdpp.cmi
 lib/ocaml/camlp5/stdpp.cmx
 lib/ocaml/camlp5/stdpp.mli
