@@ -6,19 +6,22 @@
 #
 
 PORTNAME=	nabi
-PORTVERSION=	0.99.7
+PORTVERSION=	0.99.8
 CATEGORIES=	korean gnome
-MASTER_SITES=	http://kldp.net/frs/download.php/5633/
+MASTER_SITES=	http://kldp.net/frs/download.php/5865/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Hangul X Input Method for Everywhere
+
+LICENSE=	GPLv2
 
 LIB_DEPENDS=	hangul.1:${PORTSDIR}/korean/libhangul
 
 USE_GMAKE=	yes
 USE_GNOME=	gnomeprefix gnomehack gtk20
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LIBS="-L${LOCALBASE}/lib"
+CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib"
+CPPFLAGS=	"-I${LOCALBASE}/include"
 
 .if defined(WITH_LAYOUT_390)
 CONFIGURE_ARGS=	--with-default-keyboard=39
