@@ -15,6 +15,14 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	skv@FreeBSD.org
 COMMENT=	Generic Apache Request Library
 
+USE_APACHE=	13
+
+.include <bsd.port.pre.mk>
+
+.if ${APACHE_VERSION} > 13 || ${APACHE_PORT} != "www/apache13"
+IGNORE=	build only with apache13
+.endif
+
 .if defined(WITH_MODPERL2)
 IGNORE=		this port does not support mod_perl2
 .else
@@ -37,4 +45,4 @@ post-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/eg/perl/* ${EXAMPLESDIR}/perl
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
