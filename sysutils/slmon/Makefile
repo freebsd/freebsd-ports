@@ -32,6 +32,10 @@ LDFLAGS=	-L${LOCALBASE}/lib -lncurses -lm
 
 .include <bsd.port.pre.mk>
 
+# For gmake>=3.82
+post-patch:
+	@${REINPLACE_CMD} -e 's/^   */	/' ${WRKSRC}/Makefile.in
+
 .if ${OSVERSION} > 900007
 BROKEN=		fails to build with new utmpx
 .endif

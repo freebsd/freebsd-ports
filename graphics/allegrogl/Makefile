@@ -11,7 +11,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	SF/${PORTNAME}/AllegroGL%20source/${PORTVERSION}
 DISTNAME=	alleggl-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	utisoft@gmail.com
 COMMENT=	OpenGL inteface for Allegro library
 
 LIB_DEPENDS=	alleg.42:${PORTSDIR}/devel/allegro
@@ -31,10 +31,6 @@ post-extract:
 post-patch:
 	@${REINPLACE_CMD} -e 's|^[[:blank:]]make |${GMAKE} |' \
 		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
-	@${REINPLACE_CMD} -Ee \
-		's|@INSTALL@ (@INSTALL_(DATA\|PROGRAM)@) -D|\1|; \
-		 s|(CFLAGS) =|\1 +=|' \
-		 ${WRKSRC}/make/makefile.unx
 
 post-install:
 	@${MKDIR} ${EXAMPLESDIR}

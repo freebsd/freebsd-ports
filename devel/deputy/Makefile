@@ -36,6 +36,7 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|^use OutputFile;|use CIL::OutputFile;|' ${WRKSRC}/cil/lib/TempFile.pm
 	@${REINPLACE_CMD} -e 's|^use Cilly;|use CIL::Cilly;|' ${WRKSRC}/lib/Deputy.pm
 	@${REINPLACE_CMD} -e 's|$$::deputyhome|${PREFIX}|g; s|obj/$$::archos|libexec/deputy|g' ${WRKSRC}/lib/Deputy.pm
+#	@${REINPLACE_CMD} -e '/ NATIVECAML=1/s/^/#gmake-3.82 BUG/' ${WRKSRC}/Makefile.in
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/bin/deputy ${PREFIX}/bin/

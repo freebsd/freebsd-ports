@@ -1,70 +1,40 @@
---- configure.orig	2010-11-08 18:40:43.000000000 +0100
-+++ configure	2010-11-11 19:23:31.000000000 +0100
-@@ -691,21 +691,21 @@
-     log check_cc "$@"
-     cat > $TMPC
+--- configure.orig	2010-11-08 11:40:43.000000000 -0600
++++ configure	2011-03-25 17:16:03.000000000 -0500
+@@ -693,3 +693,3 @@
      log_file $TMPC
 -    check_cmd $cc $CPPFLAGS $CFLAGS "$@" -c -o $TMPO $TMPC
 +    check_cmd $cc $CPPFLAGS $CFLAGS -I${prefix}/include "$@" -c -o $TMPO $TMPC
  }
- 
- check_cpp(){
-     log check_cpp "$@"
-     cat > $TMPC
+@@ -700,3 +700,3 @@
      log_file $TMPC
 -    check_cmd $cc $CPPFLAGS $CFLAGS "$@" -E -o $TMPO $TMPC
 +    check_cmd $cc $CPPFLAGS $CFLAGS -I${prefix}/include "$@" -E -o $TMPO $TMPC
  }
- 
- check_cxx(){
-     log check_cxx "$@"
-     cat > $TMPCXX
+@@ -707,3 +707,3 @@
      log_file $TMPCXX
 -    check_cmd $cxx $CXXPPFLAGS $ECXXFLAGS "$@" -c -o $TMPO $TMPCXX
 +    check_cmd $cxx $CXXPPFLAGS $ECXXFLAGS -I${prefix}/include "$@" -c -o $TMPO $TMPCXX
  }
- 
- check_as(){
-@@ -1865,7 +1865,7 @@
- 
- # machine
+@@ -1867,3 +1867,3 @@
  arch_default=$(uname -m)
 -cpu="generic"
 +cpu="i686"
  processor=`uname -p 2>/dev/null`
- processor_flags=""
- tune="generic"
-@@ -2826,7 +2826,7 @@
-         i686|pentiumpro|pentium[23]|pentium-m|athlon|athlon-tbird|athlon-4|athlon-[mx]p|athlon64|k8|opteron|athlon-fx|k8-sse3|opteron-sse3|athlon64-sse3|core2|amdfam10|barcelona|atom)
-             cpuflags="-march=$cpu"
+@@ -2828,3 +2828,3 @@
              enable cmov
 -            enable fast_cmov
 +            disable fast_cmov
          ;;
-         # targets that do support conditional mov but on which it's slow
-         pentium4|pentium4m|prescott|nocona)
-@@ -3026,7 +3026,6 @@
-         enable malloc_aligned
-         # Workaround compile errors from missing u_int/uint def
+@@ -3028,3 +3028,2 @@
          CPPFLAGS=`echo $CPPFLAGS | sed 's/-D_POSIX_C_SOURCE=200112//'`
 -        disable ivtv
          enable backend
-         ;;
-     bsd/os)
-@@ -4742,6 +4741,8 @@
- #       directories, it cannot be modified.
- QMAKE_LIBDIR_QT-=${sysroot}${libdir}
+@@ -4744,2 +4743,4 @@
  LATE_LIBS+=-L${sysroot}${libdir}
 +CONFIG_INCLUDEPATH=
-+FREETYPE_CFLAGS -= -I/usr/local/include
++FREETYPE_CFLAGS-= -I/usr/local/include
  EOF
- 
- #echo "endif # FFMPEG_CONFIG_MAK" >> config.mak
-@@ -4778,6 +4779,7 @@
- BINDIR=\$(INSTALL_ROOT)$bindir
- DATADIR=\$(INSTALL_ROOT)$datadir
+@@ -4780,2 +4781,3 @@
  MANDIR=\$(INSTALL_ROOT)$mandir
 +CFLAGS+=-I/usr/local/include
  endif # FFMPEG_CONFIG_MAK
- EOF
- 

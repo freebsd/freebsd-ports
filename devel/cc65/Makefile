@@ -45,6 +45,10 @@ post-patch:
 		-e "s,^(CC65_DOC[[:space:]]*=).*,\1," ${WRKSRC}/make/gcc.mak
 .endif
 
+# XXX: gmake>=3.82 hack:  beats the hell out of me.  Quick fix.
+pre-install:
+	@${MKDIR} -p ${PREFIX}/lib/cc65/tgi
+
 post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${EXAMPLESDIR}

@@ -19,7 +19,7 @@ COMMENT=	A C++ GUI development framework for X11 and Microsoft Windows
 WRKSRC=		${WRKDIR}/home/vgui
 
 USE_XORG=	x11 xt xmu xaw
-USE_GMAKE=	YES
+USE_GMAKE=	yes
 MAKE_ENV=	INSTALLDIR=${PREFIX} HOMEV=${WRKSRC}
 USE_DOS2UNIX=	yes
 
@@ -28,6 +28,10 @@ USE_DOS2UNIX=	yes
 .if ${ARCH} == "alpha"
 BROKEN=		compiler error in function fixup_memory_subreg
 .endif
+
+# For gmake>=3.82
+post-patch:
+	@${REINPLACE_CMD} -e 's/^	cd/#	cd/' ${WRKSRC}/srcx/Makefile
 
 do-configure:
 	${CP} ${WRKSRC}/configs/ConfigX.mk ${WRKSRC}/Config.mk
