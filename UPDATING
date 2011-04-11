@@ -5,14 +5,6 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
-20110411:
-  AFFECTS: users of security/sudo
-  AUTHOR: wxs@FreeBSD.org
-
-  The security/sudo port no longer installs an empty sudoers.d directory.
-  If you have an old sudoers file laying around you will have to
-  either comment out, or remove the includedir line for that directory.
-
 20110409:
   AFFECTS: users of japanese/asterisk-sounds
   AUTHOR: tota@FreeBSD.org

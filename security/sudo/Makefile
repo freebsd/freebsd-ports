@@ -7,7 +7,7 @@
 
 PORTNAME=	sudo
 PORTVERSION=	1.8.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security
 MASTER_SITES=	http://www.sudo.ws/sudo/dist/ \
 		http://www.signal42.com/mirrors/sudo_ftp/ \
@@ -128,5 +128,6 @@ post-install:
 	if [ ! -f ${PREFIX}/etc/sudoers ]; then \
 		${CP} -p ${PREFIX}/etc/sudoers.sample ${PREFIX}/etc/sudoers; \
 	fi
+	${TOUCH} ${PREFIX}/etc/sudoers.d/.keep-me
 
 .include <bsd.port.post.mk>
