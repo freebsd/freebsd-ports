@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	ised
-PORTVERSION=	2.2.2
+PORTVERSION=	2.2.3
 CATEGORIES=	math
 MASTER_SITES=	SF/${PORTNAME}
 
@@ -16,6 +16,9 @@ COMMENT=	A tool for generating number sequences and arithmetic evaluation
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
+USE_GCC=	4.5+
+
+LICENSE=	GPLv3
 
 .if !defined(NO_INSTALL_MANPAGES)
 MAN1=		${PORTNAME}.1
