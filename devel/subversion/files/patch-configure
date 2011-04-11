@@ -1,5 +1,5 @@
---- configure.orig	2010-11-23 17:33:28.000000000 +0300
-+++ configure	2010-11-25 01:47:25.000000000 +0300
+--- configure.orig	2011-02-22 23:46:15.000000000 +0100
++++ configure	2011-04-11 01:48:37.781008487 +0200
 @@ -21458,8 +21458,8 @@
        fi
  
@@ -29,6 +29,19 @@
        status=skip
      else
        status=try-link
+@@ -22490,10 +22490,10 @@
+                   SVN_KWALLET_INCLUDES="$DBUS_CPPFLAGS $qt_include_dirs -I$kde_dir/include"
+                   qt_libs_other_options="`$PKG_CONFIG --libs-only-other QtCore QtDBus QtGui`"
+                   SVN_KWALLET_LIBS="$DBUS_LIBS -lQtCore -lQtDBus -lQtGui -lkdecore -lkdeui $qt_libs_other_options"
+-                  CXXFLAGS="$CXXFLAGS $SVN_KWALLET_INCLUDES"
++                  CXXFLAGS="$SVN_KWALLET_INCLUDES $CXXFLAGS"
+                   LIBS="$LIBS $SVN_KWALLET_LIBS"
+                   qt_lib_dirs="`$PKG_CONFIG --libs-only-L QtCore QtDBus QtGui`"
+-                  LDFLAGS="$old_LDFLAGS $qt_lib_dirs -L$kde_dir/lib`$kde4_config --libsuffix`"
++                  LDFLAGS="$qt_lib_dirs -L$kde_dir/lib`$kde4_config --libsuffix` $old_LDFLAGS"
+                   ac_ext=cpp
+ ac_cpp='$CXXCPP $CPPFLAGS'
+ ac_compile='$CXX -c $CXXFLAGS $CPPFLAGS conftest.$ac_ext >&5'
 @@ -23801,7 +23801,10 @@
  
  
