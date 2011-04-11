@@ -6,7 +6,7 @@
 
 PORTNAME=	cduce
 PORTVERSION=	0.5.3
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	http://www.cduce.org/download/ \
 		ftp://ftp.stack.nl/pub/users/johans/cduce/
@@ -31,12 +31,12 @@ USE_GMAKE=	yes
 ALL_TARGET=	all
 INSTALL_TARGET=	install_bin install_lib
 HAS_CONFIGURE=	yes
-CONFIGURE_ARGS=	--prefix=${PREFIX} --with-ocamlopt --with-cgi --without-netclient --without-pxp_wlex --docdir=${DOCSDIR}
+CONFIGURE_ARGS=	--prefix=${PREFIX} --with-ocamlopt --without-cgi --without-netclient --without-pxp_wlex --docdir=${DOCSDIR}
 SITELIBDIR=	${LOCALBASE}/${OCAML_SITELIBDIR}
 
 MAN1=		cduce.1 cduce_mktop.1 dtd2cduce.1
 
-PLIST_FILES=	bin/cduce bin/dtd2cduce
+PLIST_FILES=	bin/cduce
 
 .include <bsd.port.pre.mk>
 
@@ -72,6 +72,10 @@ ALL_TARGET+=		doc
 INSTALL_TARGET+=	install_doc
 PORTDOCS=		*
 .endif
+
+post-patch:
+	${REINPLACE_CMD} 's/-linkpkg/& -thread/' \
+		${WRKSRC}/Makefile ${WRKSRC}/configure.ml
 
 post-install:
 .if defined(WITH_OCAML_EXPAT)
