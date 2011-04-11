@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	beast
-PORTVERSION=	0.7.2
+PORTVERSION=	0.7.4
 CATEGORIES=	audio
 MASTER_SITES=	http://beast.testbit.eu/_dist/beast/v${PORTVERSION:R}/
 
@@ -15,7 +15,8 @@ COMMENT=	A powerful music composition and modular synthesis application
 
 LIB_DEPENDS=	vorbisfile:${PORTSDIR}/audio/libvorbis \
 		mad:${PORTSDIR}/audio/libmad \
-		guile:${PORTSDIR}/lang/guile
+		guile:${PORTSDIR}/lang/guile \
+		asound.2:${PORTSDIR}/audio/alsa-lib
 
 USE_XORG=	x11
 USE_GMAKE=	yes
@@ -24,8 +25,7 @@ USE_BZIP2=	yes
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 USE_GETTEXT=	yes
-CPPFLAGS+=	-I${LOCALBASE}/include -DENODATA=255
-CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include -L${LOCALBASE}/lib -DENODATA=255
 CONFIGURE_ARGS=	--disable-debug \
 		--enable-osspcm=/dev/dsp \
 		--enable-ossmidi=/dev/midi
