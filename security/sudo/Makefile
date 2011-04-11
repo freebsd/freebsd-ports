@@ -7,7 +7,7 @@
 
 PORTNAME=	sudo
 PORTVERSION=	1.8.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	security
 MASTER_SITES=	http://www.sudo.ws/sudo/dist/ \
 		http://www.signal42.com/mirrors/sudo_ftp/ \
@@ -118,6 +118,11 @@ post-patch:
 	@${REINPLACE_CMD} -e '/for f in $$(OTHER_DOCS); do/d;/@LDAP@for f in $$(OTHER_DOCS_LDAP); do/d' ${WRKSRC}/doc/Makefile.in
 	@${REINPLACE_CMD} -e 's/$$(DESTDIR)$$(sudoersdir) $$(DESTDIR)$$(docdir)/$$(DESTDIR)$$(sudoersdir)/' ${WRKSRC}/plugins/sudoers/Makefile.in
 .endif
+
+# XXX: Because I botched the upgrade to 1.8.1, this is necessary.
+# Eventually, once 1.8.1 is ancient enough, this can be removed.
+pre-install:
+	@PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 
 post-install:
 	${INSTALL_DATA} ${FILESDIR}/pam.conf ${PREFIX}/etc/pam.d/sudo.default
