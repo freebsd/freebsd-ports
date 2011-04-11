@@ -5,10 +5,10 @@
 # $FreeBSD$
 
 PORTNAME=	kaffeine
-PORTVERSION=	1.1
+PORTVERSION=	1.2.1
 CATEGORIES=	multimedia kde
 MASTER_SITES=	SF
-MASTER_SITE_SUBDIR=	kaffeine/kaffeine/${DISTNAME}
+MASTER_SITE_SUBDIR=	kaffeine/current
 
 MAINTAINER=	arved@FreeBSD.org
 COMMENT=	A xine-base multimedia player
@@ -31,5 +31,6 @@ USE_LDCONFIG=		yes
 
 post-patch:
 	${REINPLACE_CMD} -e 's,add_subdirectory(x-test),,' ${WRKSRC}/po/CMakeLists.txt
+
 
 .include <bsd.port.mk>
