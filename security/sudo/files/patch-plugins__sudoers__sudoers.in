@@ -1,5 +1,5 @@
---- ./plugins/sudoers/sudoers.in.orig	2010-08-18 07:45:38.000000000 -0400
-+++ ./plugins/sudoers/sudoers.in	2011-04-09 21:23:16.616272145 -0400
+--- plugins/sudoers/sudoers.in.orig	2010-08-18 07:45:38.000000000 -0400
++++ plugins/sudoers/sudoers.in	2011-04-11 08:41:26.550267535 -0400
 @@ -31,6 +31,14 @@
  ##
  ## Defaults specification
@@ -15,3 +15,11 @@
  ## You may wish to keep some of the following environment variables
  ## when running commands via sudo.
  ##
+@@ -84,7 +92,3 @@
+ ## of the user they are running the command as (root by default).
+ # Defaults targetpw  # Ask for the password of the target user
+ # ALL ALL=(ALL) ALL  # WARNING: only use this together with 'Defaults targetpw'
+-
+-## Read drop-in files from @sysconfdir@/sudoers.d
+-## (the '#' here does not indicate a comment)
+-#includedir @sysconfdir@/sudoers.d
