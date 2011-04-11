@@ -20,6 +20,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 USE_LDCONFIG=	yes
 USE_GMAKE=	yes
 USE_ICONV=	yes
+USE_NCURSES=	yes
 MAKE_JOBS_SAFE=	yes
 ALL_TARGET=	libstfl.so
 PLIST_FILES=	lib/libstfl.so.1 lib/libstfl.so include/stfl.h \
@@ -30,18 +31,13 @@ MAKE_ENV=	LDLIBS="${LDLIBS}"
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 602107 || (${OSVERSION} > 700000 && ${OSVERSION} < 700033)
-LIB_DEPENDS+=	ncursesw.5:${PORTSDIR}/devel/ncurses
-NCURSES_INC=	ncurses/
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|\.a|.so|g;/ranlib/d;\
 	s|ar qc|$${CC} $${CFLAGS} ${PTHREAD_LIBS} $${LDLIBS} -shared -fPIC -o|;\
 	s|sed -r|sed -E|;s|-Os||;/gcc/d;/-MM/s|-I.|$${CFLAGS}|'\
 		${WRKSRC}/Makefile
 	@${REINPLACE_CMD} -e 's|alloca.h|stdlib.h|' ${WRKSRC}/widgets/*.c
-	@${REINPLACE_CMD} -e 's|ncursesw/|${NCURSES_INC}|'\
+	@${REINPLACE_CMD} -e 's|ncursesw/|${NCURSESINC}/|'\
 		${WRKSRC}/stfl_internals.h
 	@${ECHO_CMD} 'prefix = ${PREFIX}' > ${WRKSRC}/Makefile.cfg
 

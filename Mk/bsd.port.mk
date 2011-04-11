@@ -542,6 +542,8 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #
 # USE_CDRTOOLS	- If set, this port depends on sysutils/cdrtools.
 #
+# USE_NCURSES	- If set, this port relies on the ncurses package.
+#
 # Conflict checking.  Use if your port cannot be installed at the same time as
 # another package.
 #
@@ -1580,6 +1582,10 @@ PERL=		${LOCALBASE}/bin/perl
 
 .if defined(USE_KDE4) || defined(KDE4_BUILDENV)
 .include "${PORTSDIR}/Mk/bsd.kde4.mk"
+.endif
+
+.if defined(USE_NCURSES)
+.include "${PORTSDIR}/Mk/bsd.ncurses.mk"
 .endif
 
 # You can force skipping these test by defining IGNORE_PATH_CHECKS

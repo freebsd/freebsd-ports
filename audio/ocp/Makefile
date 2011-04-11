@@ -25,6 +25,7 @@ ONLY_FOR_ARCHS=	i386 amd64
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
+USE_NCURSES=	yes
 USE_LDCONFIG=	yes
 INSTALLS_ICONS=	yes
 MAKE_JOBS_UNSAFE=	yes
@@ -42,7 +43,7 @@ CONFIGURE_ENV=	CFLAGS="${CFLAGS} ${CPPFLAGS}" \
 
 CONFIGURE_ARGS=	--with-dir-suffix="" \
 		--without-alsa \
-		--libdir=${LOCALBASE}/lib
+		--libdir=${PREFIX}/lib
 
 LICENSE=	GPLv2
 INFO=		ocp
@@ -119,10 +120,6 @@ CONFIGURE_ARGS+=	--without-flac
 MAKE_ENV+=	DOCS="\#"
 .endif
 
-.if ${OSVERSION} < 602107 || (${OSVERSION} > 700000 && ${OSVERSION} < 700033)
-LIB_DEPENDS+=	ncursesw.5:${PORTSDIR}/devel/ncurses
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|/etc/.*\.cfg|${TIMIDITY_CFG}|' \
 		${WRKSRC}/playgmi/gmitimidity.c
@@ -130,15 +127,5 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|<\(fnmatch.h\)>|"/usr/include/\1"|' \
 		${WRKSRC}/filesel/adb.c \
 		${WRKSRC}/filesel/pfilesel.c
-
-.if ${OSVERSION} < 602107 || (${OSVERSION} > 700000 && ${OSVERSION} < 700033)
-# use ncursesw from ports
-	@${REINPLACE_CMD} -e 's|-l\(curses\)|-ln\1w|' ${WRKSRC}/stuff/Makefile
-.for f in ${PFILES}
-	@${REINPLACE_CMD} -e \
-		's|#include.*<curses\.h.*|#include <ncurses/ncurses.h>|' \
-			${WRKSRC}/${f}
-.endfor
-.endif
 
 .include <bsd.port.post.mk>

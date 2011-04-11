@@ -17,6 +17,7 @@ ALL_TARGET=	mangclient mangband
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
+USE_NCURSES=	yes
 
 MAKE_ARGS=	"DATADIR=${DATADIR}"
 
@@ -27,7 +28,6 @@ OPTIONS=	GCU "Display module GCU" On \
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_GCU)
-#LIB_DEPENDS+=	ncurses:${PORTSDIR}/devel/ncurses
 CONFIGURE_ARGS+=	--with-gcu
 .else
 CONFIGURE_ARGS+=	--without-gcu

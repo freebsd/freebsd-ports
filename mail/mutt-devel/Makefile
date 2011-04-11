@@ -171,6 +171,8 @@ CONFIGURE_ARGS+=	${MUTT_CONFIGURE_ARGS}
 
 USE_AUTOTOOLS=	automake autoconf
 USE_OPENSSL=	yes
+USE_NCURSES=	yes
+USE_NCURSES_RPATH=	yes
 
 .if !defined (MUTT_LITE)
 OPTIONS=	MUTT_ASPELL			"Enable aspell support"		off \
@@ -307,14 +309,14 @@ USE_ICONV=	yes
 .if defined(NOPORTDOCS)
 XML_USED=	no
 .endif
-.if defined(WITH_MUTT_NCURSES_PORT) || exists(${LOCALBASE}/lib/libncurses.a)
+.if defined(WITH_MUTT_NCURSES_PORT)
 .if !defined(MUTT_USES_SLANG)
 MUTT_USES_NCURSES_PORT=	yes
 .endif
 .endif
 .if defined(MUTT_USES_NCURSES_PORT)
-LIB_DEPENDS+=	ncurses.5:${PORTSDIR}/devel/ncurses
-CFLAGS+=	-I${LOCALBASE}/include/ncurses -I${LOCALBASE}/include
+WITH_NCURSES_PORT=	yes
+CFLAGS+=	-I${NCURSESINC}
 .elif defined(MUTT_USES_SLANG)
 LIB_DEPENDS+=	slang.2:${PORTSDIR}/devel/libslang2
 .endif
@@ -373,9 +375,11 @@ CONFIGURE_ARGS+=	--enable-flock
 CONFIGURE_ARGS+=	--enable-locales-fix
 .endif
 .if defined(MUTT_USES_NCURSES_PORT)
-CONFIGURE_ARGS+=	--with-curses=${LOCALBASE}
+CONFIGURE_ARGS+=	--with-curses=${NCURSESBASE}
 .elif defined(MUTT_USES_SLANG)
 CONFIGURE_ARGS+=	--with-slang=${LOCALBASE}
+.else
+CONFIGURE_ARGS+=	--with-curses=${NCURSESBASE}
 .endif
 .if defined(WITH_MUTT_CYRUS_SASL2)
 CONFIGURE_ARGS+=	--with-sasl=${LOCALBASE}

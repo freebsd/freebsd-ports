@@ -22,28 +22,18 @@ OPTIONS=	UTF8 "Enable UTF-8 support" off
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
+USE_NCURSES=	yes
 
 MAN1=	wyrd.1
 MAN5=	wyrdrc.5
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 602107 || (${OSVERSION} > 700000 && ${OSVERSION} < 700033)
-WITH_NCURSES_PORT=yes
-.endif
-
 .if defined(WITH_UTF8)
 CONFIGURE_ARGS+=--enable-utf8
-.if defined(WITH_NCURSES_PORT)
-LIB_DEPENDS+=	ncursesw.5:${PORTSDIR}/devel/ncurses
-NCURSES_INC=	ncurses/
-.endif
 .else
 CONFIGURE_ARGS+=--disable-utf8
 .endif
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|ncursesw/|${NCURSES_INC}|' ${WRKSRC}/configure
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/wyrd.opt ${PREFIX}/bin/wyrd

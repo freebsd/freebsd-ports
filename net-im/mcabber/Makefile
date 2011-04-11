@@ -25,6 +25,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
 USE_ICONV=	yes
 USE_GETTEXT=	yes
 USE_LDCONFIG=	yes
+USE_NCURSES=	yes
 USE_GNOME=	glib20
 
 MAN1=		mcabber.1
@@ -35,10 +36,6 @@ OPTIONS=	GPGME "Use security/gpgme for PGP support" off \
 		ENCHANT "Use texproc/enchant for spell checking" off
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 602107 || (${OSVERSION} > 700000 && ${OSVERSION} < 700033)
-LIB_DEPENDS+=	ncursesw.5:${PORTSDIR}/devel/ncurses
-.endif
 
 .if defined(WITH_GPGME)
 LIB_DEPENDS+=	gpgme.18:${PORTSDIR}/security/gpgme

@@ -52,6 +52,8 @@ BUILD_DEPENDS=	ispell:${PORTSDIR}/textproc/ispell
 RUN_DEPENDS+=	ispell:${PORTSDIR}/textproc/ispell \
 		urlview:${PORTSDIR}/textproc/urlview
 USE_GMAKE=	yes
+USE_NCURSES=	yes
+
 .endif
 .if defined (MUTT_LITE)
 PKGNAMESUFFIX=	-lite
@@ -75,7 +77,7 @@ USE_ICONV=	yes
 .if defined(WITH_SLANG)
 LIB_DEPENDS+=	slang.2:${PORTSDIR}/devel/libslang2
 .elif defined(WITH_NCURSES)
-LIB_DEPENDS+=	ncurses.5:${PORTSDIR}/devel/ncurses
+WITH_NCURSES_PORT=	yes
 .endif
 .if !defined (MUTT_LITE)
 .if defined(WITH_MUTT_CYRUS_SASL)
@@ -126,8 +128,8 @@ CONFIGURE_ARGS+=	--with-libiconv-prefix=${PREFIX}
 .if defined(WITH_SLANG)
 CONFIGURE_ARGS+=	--with-slang=${PREFIX}
 .elif defined(WITH_NCURSES)
-CONFIGURE_ARGS+=	--with-curses=${PREFIX}
-CFLAGS+=	-I${PREFIX}/include/ncurses -I${PREFIX}/include
+CONFIGURE_ARGS+=	--with-curses=${NCURSESBASE}
+CFLAGS+=	-I${NCURSESINC}
 .endif
 .if !defined(WITHOUT_GSSAPI)
 .if exists(${LOCALBASE}/bin/gss-client)

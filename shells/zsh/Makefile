@@ -25,6 +25,7 @@ USE_BZIP2=	yes
 USE_ICONV=	yes
 USE_AUTOTOOLS=	autoconf autoheader
 GNU_CONFIGURE=	yes
+USE_NCURSES=	yes
 .if !defined(WITH_ZSH_STATIC)
 USE_LDCONFIG=	${PREFIX}/lib/${PORTNAME}
 .endif

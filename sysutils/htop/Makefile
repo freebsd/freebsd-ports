@@ -21,6 +21,7 @@ NOT_FOR_ARCHS=	sparc64
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-proc=/compat/linux/proc --enable-unicode
 USE_AUTOTOOLS=	autoconf aclocal automake libtool
+USE_NCURSES=	yes
 ACLOCAL_ARGS=	-I ${ACLOCAL_DIR}
 
 USE_PYTHON_BUILD=	yes
@@ -28,10 +29,6 @@ USE_PYTHON_BUILD=	yes
 MAN1=	htop.1
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 602107 || (${OSVERSION} > 700000 && ${OSVERSION} < 700033)
-LIB_DEPENDS+=	ncursesw.5:${PORTSDIR}/devel/ncurses
-.endif
 
 .if !defined(WITHOUT_LSOF)
 RUN_DEPENDS+=	lsof:${PORTSDIR}/sysutils/lsof

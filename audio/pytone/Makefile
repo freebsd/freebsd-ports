@@ -21,6 +21,7 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/pysqlite2/_sqlite.so:${PORTSDIR}/databases/py-
 		${PYTHON_SITELIBDIR}/mutagen/__init__.py:${PORTSDIR}/audio/py-mutagen
 
 USE_PYTHON=	yes
+USE_NCURSES=	yes
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_PKGNAME=	PyTone
 
@@ -34,10 +35,6 @@ OPTIONS=	MAD "MPEG Audio Decoder (libmad) support" On \
 .include <bsd.port.pre.mk>
 
 CFLAGS+=	-I${LOCALBASE}/include -L${LOCALBASE}/lib
-
-.if ${OSVERSION} < 602107 || (${OSVERSION} > 700000 && ${OSVERSION} < 700033)
-LIB_DEPENDS+=	ncursesw.5:${PORTSDIR}/devel/ncurses
-.endif
 
 .if !defined(WITHOUT_MAD)
 RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/madmodule.so:${PORTSDIR}/audio/py-mad

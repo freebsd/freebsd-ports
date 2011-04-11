@@ -30,37 +30,24 @@ USE_GNOME=	libxml2
 USE_BZIP2=	yes
 USE_PERL5=	yes
 USE_GMAKE=	yes
-CPPFLAGS=	-I${LOCALBASE}/include
+USE_NCURSES=	yes
+CPPFLAGS+=	-I${LOCALBASE}/include
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	-C --without-db --with-certdb=${PREFIX}/share/cone/rootcerts --prefix=${PREFIX} --exec-prefix=${PREFIX}
 
-CONFIGURE_ENV=	REHASH="${PERL} ${SCRIPTDIR}/c_rehash" LDFLAGS=-L${LOCALBASE}/lib \
-		CPPFLAGS="${CPPFLAGS}"
+LDFLAGS+=	-L${LOCALBASE}/lib
+CONFIGURE_ENV=	REHASH="${PERL} ${SCRIPTDIR}/c_rehash"
 MAN1=		cone.1 leaf.1 mailtool.1
 INSTALL_TARGET=	install-strip
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} > 700032 || (${OSVERSION} < 700000 && ${OSVERSION} > 602106)
 CPPFLAGS+=	-D_XOPEN_SOURCE_EXTENDED
-.elif exists(${LOCALBASE}/include/ncurses/ncurses.h) || defined(WITH_NCURSESW)
 CPPFLAGS+=	-I${WRKDIR} -D_XOPEN_SOURCE_EXTENDED
-LIB_DEPENDS+=	ncursesw.5:${PORTSDIR}/devel/ncurses
 
 post-extract:
 		${MKDIR} ${WRKDIR}/ncursesw
 		${LN} -s ${LOCALBASE}/include/ncurses/ncurses.h ${WRKDIR}/ncursesw/curses.h
-.else
-
-CONFIGURE_ARGS+=	--disable-unicode
-
-pre-everything::
-	 @${ECHO_CMD} ""
-	 @${ECHO_CMD} "to use multilanguage ( unicode ) MUA, please set WITH_NCURSESW"
-	 @${ECHO_CMD} "or install devel/ncurses first"
-	 @${ECHO_CMD} ""
-
-.endif
 
 post-install:
 		${INSTALL_SCRIPT} ${WRKSRC}/sysconftool ${PREFIX}/sbin/cone-sysconftool
