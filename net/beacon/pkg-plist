@@ -12,3 +12,4 @@ bin/beacon
 etc/beacon.conf.sample
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
+etc/rc.d/beacon
