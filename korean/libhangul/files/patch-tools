@@ -1,0 +1,11 @@
+--- tools/Makefile.in.orig	2011-03-29 02:52:55.000000000 +0900
++++ tools/Makefile.in	2011-03-29 02:48:13.000000000 +0900
+@@ -215,7 +215,7 @@
+ top_srcdir = @top_srcdir@
+ hangul_SOURCES = hangul.c
+ hangul_CFLAGS = -DLOCALEDIR=\"$(localedir)\"
+-hangul_LDADD = ../hangul/libhangul.la
++hangul_LDADD = ../hangul/libhangul.la -lintl
+ all: all-am
+ 
+ .SUFFIXES:
