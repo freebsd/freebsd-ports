@@ -58,6 +58,10 @@ BROKEN=		does not compile
 BROKEN=		Does not compile on sparc64
 .endif
 
+.if ${OSVERSION} >= 900007
+BROKEN=		relocation R_X86_64_PC32 happens with -fPIC
+.endif
+
 .if defined(BOOTSTRAP)
 FETCH_DEPENDS+=	svn:${PORTSDIR}/devel/subversion
 
