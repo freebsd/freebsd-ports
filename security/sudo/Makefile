@@ -7,6 +7,7 @@
 
 PORTNAME=	sudo
 PORTVERSION=	1.8.1
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://www.sudo.ws/sudo/dist/ \
 		http://www.signal42.com/mirrors/sudo_ftp/ \
