@@ -7,7 +7,7 @@
 
 PORTNAME=	ocaml-csv
 PORTVERSION=	1.2.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc
 MASTER_SITES=	https://forge.ocamlcore.org/frs/download.php/420/
 
@@ -18,6 +18,7 @@ BUILD_DEPENDS=	${LOCALBASE}/${OCAML_SITELIBDIR}/extlib:${PORTSDIR}/devel/ocaml-e
 
 WRKSRC=		${WRKDIR}/csv-${PORTVERSION}
 USE_GMAKE=	yes
+MAKE_ARGS=	byte native
 USE_OCAML=	yes
 USE_OCAML_FINDLIB=	yes
 OCAML_PKGDIRS=	csv
