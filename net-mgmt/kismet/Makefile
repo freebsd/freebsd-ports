@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	kismet
-DISTVERSION=	2011-01-R1
-PORTEPOCH=	1
+DISTVERSION=	2011-03-R2
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://www.kismetwireless.net/code/:1 \
 		http://anonsvn.wireshark.org/wireshark/trunk/:2
