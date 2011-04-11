@@ -31,5 +31,8 @@ post-patch:
 	@${REINPLACE_CMD} -e \
 		's,$$(LIB_KDEUI),$$(LIB_KDEUI) $$(LIBPTHREAD) -lcam,g' \
 		${WRKSRC}/src/Makefile.in
+	@${REINPLACE_CMD} -e \
+		's,^kde includedir,# kde includedir,' \
+		${WRKSRC}/libk9copy/Makefile.in
 
 .include <bsd.port.mk>

@@ -1,23 +1,17 @@
---- makefile.in.orig	Fri Jun 15 22:52:28 2007
-+++ makefile.in	Fri Jul 13 14:52:12 2007
-@@ -29,11 +29,12 @@
- INFO_DIR = $(infodir)/dir
- DESTDIR =
+--- makefile.in.orig	2007-07-22 00:55:54.000000000 -0500
++++ makefile.in	2011-03-25 17:23:23.000000000 -0500
+@@ -31,4 +31,4 @@
  
 -ACLOCAL = aclocal
 -AUTOCONF = autoconf
 +ACLOCAL = true
 +AUTOCONF = true
  
- INSTALL = @INSTALL@
+@@ -36,2 +36,3 @@
  INSTALL_PROGRAM = @INSTALL_PROGRAM@
 +INSTALL_SCRIPT = @INSTALL_SCRIPT@
  INSTALL_DATA = @INSTALL_DATA@
- INSTALL_INFO = @INSTALL_INFO@
- 
-@@ -352,6 +353,11 @@
- endif
- 
+@@ -355,2 +356,7 @@
  lib: $(ALLEGRO_LIB_TARGETS)
 +	@for l in alleg alld allp; do \
 +	  if test -f $(LIBDIR)/lib$${l}.so.$(shared_version); then \
@@ -25,11 +19,92 @@
 +	  fi; \
 +	done
  
- modules: $(ALLEGRO_MODULE_TARGETS)
- 
-@@ -463,9 +469,9 @@
- 	  fi; \
- 	done
+@@ -399,43 +405,43 @@
+ # -------- rules for deleting the generated files --------
+-
+-clean:
+-
+-   define RM_OBJ_CLEAN_FILES
+-      $(foreach file, $(OBJ_CLEAN_FILES), rm -f $(file)
+-      )
+-   endef
+-
+-   define RM_OTHER_CLEAN_FILES
+-      $(foreach file, $(OTHER_CLEAN_FILES), rm -f $(file)
+-      )
+-   endef
+-
+-	$(RM_OBJ_CLEAN_FILES)
+-	$(RM_OTHER_CLEAN_FILES)
+-
+-distclean: clean
+-
+-   define RM_DISTCLEAN_FILES
+-      $(foreach file, $(DISTCLEAN_FILES) $(ALLEGRO_LIB_X_EXES), rm -f $(file)
+-      )
+-   endef
+-
+-	$(RM_DISTCLEAN_FILES)
+-
+-veryclean: distclean
+-
+-   define RM_VERYCLEAN_FILES
+-      $(foreach file, $(VERYCLEAN_FILES), rm -f $(file)
+-      )
+-   endef
+-
+-	$(RM_VERYCLEAN_FILES)
+-	rm -f makefile
+-
+-maintainer-clean: veryclean
+-	rm -f configure include/allegro/platform/alunixac.hin
+-	rm -rf autom4te*
+-
+-
+-
++# XXX: whacked out with gmake 3.82
++# clean:
++# 
++#    define RM_OBJ_CLEAN_FILES
++#       $(foreach file, $(OBJ_CLEAN_FILES), rm -f $(file)
++#       )
++#    endef
++# 
++#    define RM_OTHER_CLEAN_FILES
++#       $(foreach file, $(OTHER_CLEAN_FILES), rm -f $(file)
++#       )
++#    endef
++# 
++# 	$(RM_OBJ_CLEAN_FILES)
++# 	$(RM_OTHER_CLEAN_FILES)
++# 
++# distclean: clean
++# 
++#    define RM_DISTCLEAN_FILES
++#       $(foreach file, $(DISTCLEAN_FILES) $(ALLEGRO_LIB_X_EXES), rm -f $(file)
++#       )
++#    endef
++# 
++# 	$(RM_DISTCLEAN_FILES)
++# 
++# veryclean: distclean
++# 
++#    define RM_VERYCLEAN_FILES
++#       $(foreach file, $(VERYCLEAN_FILES), rm -f $(file)
++#       )
++#    endef
++# 
++# 	$(RM_VERYCLEAN_FILES)
++# 	rm -f makefile
++# 
++# maintainer-clean: veryclean
++# 	rm -f configure include/allegro/platform/alunixac.hin
++# 	rm -rf autom4te*
++# 
++# 
++# 
+ # -------- rules for installing the files --------
+@@ -466,5 +472,5 @@
  	@for l in alleg alld allp; do \
 -	  if test -f $(LIBDIR)/lib$${l}-$(shared_version).so; then \
 -	    echo Installing $(LIBDIR)/lib$${l}-$(shared_version).so to $(DESTDIR)$(libdir); \
@@ -38,11 +113,7 @@
 +	    echo Installing $(LIBDIR)/lib$${l}.so.$(shared_version) to $(libdir); \
 +	    $(INSTALL_PROGRAM) $(LIBDIR)/lib$${l}.so.$(shared_version) $(libdir)/; \
  	    $(INSTALL_DATA) $(LIBDIR)/lib$${l}_unsharable.a $(DESTDIR)$(libdir)/; \
- 	  fi; \
- 	done
-@@ -479,20 +485,10 @@
- 	fi
- 	$(mkinstalldirs) $(DESTDIR)$(bindir)
+@@ -482,16 +488,6 @@
  	@echo Installing allegro-config to $(DESTDIR)$(bindir)
 -	@$(INSTALL_PROGRAM) allegro-config $(DESTDIR)$(bindir)
 -	@if test -n "$(LIBDIR)/liball*-$(shared_version).so"; then \
@@ -62,5 +133,3 @@
 +	  if test -f $(DESTDIR)$(libdir)/lib$${l}.so.$(shared_version) -a \! -h $(DESTDIR)$(libdir)/lib$${l}.so; then \
 +	    (cd $(DESTDIR)$(libdir); ln -s lib$${l}.so.$(shared_version) lib$${l}.so); \
  	  fi; \
- 	done
- 	$(mkinstalldirs) $(DESTDIR)$(prefix)/share/aclocal

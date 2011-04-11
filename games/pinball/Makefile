@@ -42,6 +42,11 @@ DOCS=		README
 
 .include <bsd.port.pre.mk>
 
+# For gmake>=3.82
+post-patch:
+	@${FIND} ${WRKSRC} -name Makefile.in -print | ${XARGS} \
+		${REINPLACE_CMD} -e 's,^dnl,# dnl,'
+
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}

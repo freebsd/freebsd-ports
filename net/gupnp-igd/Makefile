@@ -23,4 +23,9 @@ USE_GNOME=	gnomehack intlhack libglade2 glib20
 USE_LDCONFIG=	yes
 USE_PYTHON=	yes
 
+# For gmake >= 3.82 -- no idea where this line comes from, patching
+# the Makefile.in seems to have no effect
+post-configure:
+	@${REINPLACE_CMD} -e 's|^\[|# \[|' ${WRKSRC}/python/Makefile
+
 .include <bsd.port.mk>

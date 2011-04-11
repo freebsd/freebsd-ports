@@ -34,6 +34,11 @@ CONFIGURE_ARGS=	--with-tclconfig=${TCL_LIBDIR} \
 		--with-tkconfig=${TK_LIBDIR} \
 		--enable-alternate-scoresdir=${SCOREDIR}
 
+# Fix for gmake >= 3.82
+post-patch:
+	@${FIND} ${WRKSRC} -name Makefile.in -print | ${XARGS} \
+		${REINPLACE_CMD} -e 's/^   */	/'
+
 post-install:
 .for file in xconq imf2x x2imf ximfapp
 	${STRIP_CMD} ${PREFIX}/bin/${file}

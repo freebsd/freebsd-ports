@@ -18,13 +18,14 @@ COMMENT=	Virtual 3D Rubiks cube for GNUstep
 
 LICENSE=	GPLv2
 
+USE_GMAKE=	yes
 USE_GNUSTEP=	yes
 USE_GNUSTEP_BACK=	yes
 USE_GNUSTEP_BUILD=	yes
 USE_GNUSTEP_INSTALL=	yes
 
 post-patch:
-	${RMDIR} ${WRKSRC}/GRubik.app/ix86/linux-gnu
-	${RMDIR} ${WRKSRC}/GRubik.app/ix86
+	@${RM} -rf ${WRKSRC}/GRubik.app/ix86
+	@${REINPLACE_CMD} -e 's|^//|# //|' ${WRKSRC}/GNUmakefile
 
 .include <bsd.port.mk>

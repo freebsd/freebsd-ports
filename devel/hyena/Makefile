@@ -22,5 +22,7 @@ USE_GNOME=	gtksharp20
 post-patch:
 	@${REINPLACE_CMD} -e 's|(libdir)/pkgconfig|(libdir)/../libdata/pkgconfig|g' \
 		${WRKSRC}/build/pkg-config/Makefile.in
+	@${FIND} ${WRKSRC} -name Makefile.in -print | ${XARGS} \
+		${REINPLACE_CMD} -e 's/^dnl/# dnl/'
 
 .include <bsd.port.mk>
