@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	maxima
-PORTVERSION=	5.23.2
+PORTVERSION=	5.24.0
 CATEGORIES=	math lisp tk
 MASTER_SITES=	SF/maxima/Maxima-source/${PORTVERSION}-source
 
@@ -23,7 +23,8 @@ LICENSE=		GPLv2
 USE_TK =		84+
 USE_GMAKE=		yes
 USE_PERL5_BUILD=	yes
-USE_AUTOTOOLS=		aclocal autoconf
+USE_PYTHON_BUILD=	yes
+GNU_CONFIGURE=		yes
 CONFIGURE_ARGS+=	--prefix=${PREFIX} \
 			--with-posix-shell=${LOCALBASE}/bin/bash \
 			--with-wish=${WISH} \
@@ -67,7 +68,17 @@ BINDIRECTORY=	binary-gcl
 PLIST_SUB+=	LISPBINARY="@comment "
 MAXIMABINARY=	maxima
 .elif defined(WITHOUT_CLISP) && defined(WITHOUT_CMUCL) && defined(WITHOUT_GCL) && defined(WITH_SBCL)
+.  if ${ARCH} == "i386"
+DYNAMIC_SPACE_SIZE?=	512
+.  endif
+.  if defined(DYNAMIC_SPACE_SIZE)
+MAXIMA_LISP_OPTIONS+=	--dynamic-space-size ${DYNAMIC_SPACE_SIZE}
+.  endif
+.  if defined(MAXIMA_LISP_OPTIONS) && !empty(MAXIMA_LISP_OPTIONS)
+LISPSELECT=	--with-sbcl="sbcl ${MAXIMA_LISP_OPTIONS}"
+.  else
 LISPSELECT=	--enable-sbcl
+.  endif
 LISPPORT=	sbcl:${PORTSDIR}/lang/sbcl
 BINDIRECTORY=	binary-sbcl
 #LISPBINARY is null so fudge this so deinstall works cleanly
@@ -79,12 +90,17 @@ IGNORE=		define only one lisp
 
 post-patch:
 	${FIND} -X ${WRKSRC}/archive ${WRKSRC}/interfaces/xmaxima \
-	-name "Makefile*" | ${XARGS} ${REINPLACE_CMD} -e "s;tclsh;${TCLSH};g"
-	${REINPLACE_CMD} -e "s;/usr/;${LOCALBASE}/;g" ${WRKSRC}/src/intl.lisp
-	( cd ${WRKSRC}/doc/info ; ${LOCALBASE}/bin/bash ./fix_crlf ; \
-	${LOCALBASE}/bin/bash ./fix_tab )
+	-name 'Makefile.in' | ${XARGS} ${REINPLACE_CMD} -e "s;tclsh;${TCLSH};g"
+	${REINPLACE_CMD} -e "s;/usr;${LOCALBASE};g" ${WRKSRC}/src/intl.lisp
+	(cd ${WRKSRC}/doc/info ; ${LOCALBASE}/bin/bash ./fix_crlf ; \
+	${LOCALBASE}/bin/bash ./fix_tab)
+.if defined(MAXIMA_LISP_OPTIONS) && !empty(MAXIMA_LISP_OPTIONS)
+	${REINPLACE_CMD} -e 's;"@SBCL_NAME@";@SBCL_NAME@;' \
+	${WRKSRC}/src/maxima.in
+.endif
 
-test: build
-	${LOCALBASE}/bin/bash ${WRKSRC}/maxima-local --batch-string='run_testsuite();'
+test check: build
+	(cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${GMAKE} ${_MAKE_JOBS} \
+	${MAKE_ARGS} check)
 
 .include <bsd.port.post.mk>
