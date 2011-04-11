@@ -95,6 +95,10 @@ PLIST_FILES=	bin/pike bin/pike76 bin/hilfe
 
 ONLY_FOR_ARCHS=	i386 amd64
 
+.if ${OSVERSION} < 800000 && ${ARCH} == "amd64"
+BROKEN=		segfaults during build
+.endif
+
 .if defined(WITHOUT_RELOCATABLE_DUMPED_MODULES)
 CONFIGURE_ARGS+=	--without-relocatable-dumped-modules
 .else
