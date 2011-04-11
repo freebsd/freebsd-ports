@@ -68,6 +68,10 @@ WITH_OPTIMIZED_CFLAGS=	yes
 USE_GCC=	3.4
 .endif
 
+.if ${OSVERSION} >= 900000
+BROKEN=		does not configure on 9.X
+.endif
+
 .if (${ARCH} != "i386") && (${ARCH} != "amd64")
 WITHOUT_A52=yes
 BROKEN=		Does not compile on !i386
