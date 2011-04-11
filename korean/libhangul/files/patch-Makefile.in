@@ -1,11 +1,11 @@
---- Makefile.in.orig	2010-07-19 10:36:58.000000000 +0900
-+++ Makefile.in	2010-07-19 10:43:08.000000000 +0900
-@@ -245,7 +245,7 @@
- top_builddir = @top_builddir@
+--- Makefile.in.orig	2011-03-29 02:50:33.000000000 +0900
++++ Makefile.in	2011-03-29 02:47:59.000000000 +0900
+@@ -270,7 +270,7 @@
  top_srcdir = @top_srcdir@
- SUBDIRS = hangul data test
+ SUBDIRS = hangul data tools po
+ DIST_SUBDIRS = hangul data tools po test
 -pkgconfigdir = $(libdir)/pkgconfig
 +pkgconfigdir = $(prefix)/libdata/pkgconfig
  pkgconfig_DATA = libhangul.pc
  EXTRA_DIST = \
-     doc/Makefile \
+     config.rpath \
