@@ -42,4 +42,10 @@ LANGUAGEKIT_LLVM_PORT?=	devel/llvm-etoile
 post-configure:
 	${REINPLACE_CMD} -e 's|-Werror||' ${WRKSRC}/etoile.make
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 900007
+BROKEN=		relocation R_X86_64_PC32 happens with -fPIC
+.endif
+
+.include <bsd.port.post.mk>
