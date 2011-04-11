@@ -18,22 +18,14 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	"CFLAGS=-I${LOCALBASE}/include -I${WRKDIR} -D_XOPEN_SOURCE_EXTENDED" LDFLAGS=-L${LOCALBASE}/lib
 USE_GMAKE=	yes
 USE_GETTEXT=	yes
+USE_NCURSES=	yes
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
 MAN1=		latrine.1
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 602107 || (${OSVERSION} > 700000 && ${OSVERSION} < 700033)
-LIB_DEPENDS+=	ncursesw.5:${PORTSDIR}/devel/ncurses
-.endif
-
 post-patch:
-.if ${OSVERSION} < 602107 || (${OSVERSION} > 700000 && ${OSVERSION} < 700033)
-	${MKDIR} ${WRKDIR}/ncursesw
-	${LN} -s ${LOCALBASE}/include/ncurses/ncurses.h ${WRKDIR}/ncursesw/ncurses.h
-.else
 	@${REINPLACE_CMD} -e 's,ncursesw/ncurses.h,ncurses.h,' \
 		${WRKSRC}/charset.h ${WRKSRC}/screen.c
-.endif
 
 .include <bsd.port.post.mk>

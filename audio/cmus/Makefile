@@ -18,6 +18,7 @@ COMMENT=	Console-based music player with really cool features
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_ICONV=	yes
+USE_NCURSES=	yes
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS+=prefix=${PREFIX} mandir=${MANPREFIX}/man \
 		exampledir=${EXAMPLESDIR} \
@@ -39,10 +40,6 @@ OPTIONS=	FLAC "FLAC (Free Lossless Audio Codec) support" Off \
 		ARTS "ARTS support" Off
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 602107 || (${OSVERSION} > 700000 && ${OSVERSION} < 700033)
-LIB_DEPENDS+=	ncursesw.5:${PORTSDIR}/devel/ncurses
-.endif
 
 .if defined(WITH_FLAC)
 LIB_DEPENDS+=	FLAC:${PORTSDIR}/audio/flac

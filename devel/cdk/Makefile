@@ -20,23 +20,12 @@ COMMENT=	Curses Development Kit for speedy development of full screen programs
 LICENSE=	BSD
 LICENSE_FILE=	${WRKSRC}/COPYING
 USE_GMAKE=	yes
+USE_NCURSES=	yes
 GNU_CONFIGURE=	yes
 PORTDOCS=	COPYING EXPANDING INSTALL NOTES README TODO
 MAKE_JOBS_UNSAFE=	yes
 
 .include <bsd.port.pre.mk>
-
-.if exists(${LOCALBASE}/include/ncurses/ncurses.h)
-TERMINFO=	${LOCALBASE}/share/misc/terminfo
-CPPFLAGS=	-I${LOCALBASE}/include -I${LOCALBASE}/include/ncurses
-LIBS+=		-L${LOCALBASE}/lib -lncurses
-LDFLAGS+=	-Wl,-rpath,${LOCALBASE}/lib
-CONFIGURE_ENV+=	TERMINFO="${TERMINFO}"\
-		CPPFLAGS="${CPPFLAGS}"\
-		LIBS="${LIBS}"\
-		LDFLAGS="${LDFLAGS}"
-LIB_DEPENDS+=	ncurses.5:${PORTSDIR}/devel/ncurses
-.endif # exists(${LOCALBASE}/include/ncurses/ncurses.h)
 
 CONFIGURE_ARGS+=--with-ncurses
 ALL_TARGET=	default examples demos cli cdkshlib

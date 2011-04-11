@@ -15,8 +15,7 @@ DISTNAME=	framework-${DISTVERSION}
 MAINTAINER=	onatan@gmail.com
 COMMENT=	Exploit-Framework for Penetration-Testing
 
-RUN_DEPENDS=	infocmp:${PORTSDIR}/devel/ncurses			\
-		nasm:${PORTSDIR}/devel/nasm				\
+RUN_DEPENDS=	nasm:${PORTSDIR}/devel/nasm				\
 		nmap:${PORTSDIR}/security/nmap
 
 WRKSRC=		${WRKDIR}/msf3
@@ -26,6 +25,8 @@ SCRIPTS=	msfcli msfconsole msfd msfelfscan msfencode msfmachscan \
 NO_BUILD=	yes
 USE_RUBY=	yes
 USE_BZIP2=	yes
+USE_NCURSES=	yes
+WITH_NCURSES_PORT=	yes
 
 .include <bsd.port.pre.mk>
 

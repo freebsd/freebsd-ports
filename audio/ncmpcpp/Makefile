@@ -21,6 +21,7 @@ LIB_DEPENDS=	mpdclient:${PORTSDIR}/audio/libmpdclient \
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_ICONV=	yes
+USE_NCURSES=	yes
 USE_GNOME=	glib20
 USE_AUTOTOOLS=	automake aclocal libtool
 ACLOCAL_ARGS=	--acdir=${ACLOCAL_DIR} -I ${LOCALBASE}/share/aclocal
@@ -43,9 +44,7 @@ OPTIONS=	CURL "Enable fetching lyrics from the Internet" on \
 BROKEN=>>Does not compile on FreeBSD 6.X
 .endif
 
-.if ${OSVERSION} < 602107 || (${OSVERSION} > 700000 && ${OSVERSION} < 700033)
-LIB_DEPENDS+=	ncursesw.5:${PORTSDIR}/devel/ncurses
-.else
+.if defined(WITH_NCURSES_BASE)
 # no need to use ncurses-config if we use ncurses from the base system
 CONFIGURE_ARGS+=	NCURSES_CONFIG=/usr/bin/true
 .endif
