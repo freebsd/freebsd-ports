@@ -1,5 +1,5 @@
---- Makefile.orig	2010-06-12 17:23:01.000000000 -0700
-+++ Makefile	2010-11-24 11:29:05.873218722 -0800
+--- ./Makefile.orig	2011-04-05 15:47:05.000000000 +0200
++++ ./Makefile	2011-04-10 18:09:24.000000000 +0200
 @@ -6,7 +6,7 @@
  MODULES = $(DESTDIR)$(PREFIX)/lib/prosody/modules
  SOURCE = $(DESTDIR)$(PREFIX)/lib/prosody
@@ -9,14 +9,15 @@
  
  INSTALLEDSOURCE = $(PREFIX)/lib/prosody
  INSTALLEDCONFIG = $(SYSCONFDIR)
-@@ -33,10 +33,11 @@
+@@ -33,11 +33,12 @@
  	install -m644 plugins/*.lua $(MODULES)
  	install -d $(MODULES)/muc
  	install -m644 plugins/muc/* $(MODULES)/muc
 -	install -m644 certs/* $(CONFIG)/certs
 +	install -m644 certs/localhost.cert $(CONFIG)/certs/localhost.cert.sample
 +	install -m644 certs/localhost.key $(CONFIG)/certs/localhost.key.sample
- 	install -m644 plugins/*.lua $(MODULES)
+ 	install -d $(MODULES)/adhoc
+ 	install -m644 plugins/adhoc/*.lua $(MODULES)/adhoc
  	install -m644 man/prosodyctl.man $(MAN)/man1/prosodyctl.1
 -	test -e $(CONFIG)/prosody.cfg.lua || install -m644 prosody.cfg.lua.install $(CONFIG)/prosody.cfg.lua
 +	install -m644 prosody.cfg.lua.install $(CONFIG)/prosody.cfg.lua.sample

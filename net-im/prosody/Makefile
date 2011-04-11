@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	prosody
-PORTVERSION=	0.7.0
-PORTREVISION=	1
+PORTVERSION=	0.8.0
 CATEGORIES=	net-im
 MASTER_SITES=	http://prosody.im/downloads/source/ \
 				http://redundancy.redundancy.org/mirror/
@@ -37,7 +36,7 @@ SUB_FILES=	pkg-install pkg-deinstall
 
 pre-install:
 	${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
-	${REINPLACE_CMD} -e 's|/usr/bin/env lua|${LUA_CMD}|' ${WRKSRC}/prosody.install ${WRKSRC}/prosodyctl.install
+	${REINPLACE_CMD} -e 's|/usr/bin/env lua|${LUA_CMD}|' ${WRKSRC}/prosody ${WRKSRC}/prosodyctl
 
 post-install:
 	${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL

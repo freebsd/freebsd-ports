@@ -1,89 +1,10 @@
---- configure.orig	2010-06-12 17:23:01.000000000 -0700
-+++ configure	2010-11-24 11:15:06.435111085 -0800
-@@ -2,20 +2,19 @@
+--- ./configure.orig	2011-04-05 15:47:05.000000000 +0200
++++ ./configure	2011-04-10 18:09:24.000000000 +0200
+@@ -2,7 +2,6 @@
  
  # Defaults
  
 -PREFIX=/usr/local
-+#PREFIX=/usr/local
  SYSCONFDIR="$PREFIX/etc/prosody"
  DATADIR="$PREFIX/var/lib/prosody"
--LUA_SUFFIX=""
--LUA_DIR="/usr"
--LUA_BINDIR="/usr/bin"
--LUA_INCDIR="/usr/include"
--LUA_LIBDIR="/usr/lib"
-+LUA_DIR="$PREFIX"
-+LUA_BINDIR="$PREFIX/bin"
-+#LUA_INCDIR="/usr/include"
-+#LUA_LIBDIR="/usr/lib"
- IDN_LIB=idn
- OPENSSL_LIB=crypto
--CC=gcc
-+#CC=gcc
- LD=gcc
- 
--CFLAGS="-fPIC -Wall"
-+#CFLAGS="-fPIC -Wall"
- LDFLAGS="-shared"
- 
- # Help
-@@ -26,7 +25,7 @@
- 
- --help                      This help.
- --ostype=OS                 Use one of the OS presets.
--                            May be one of: debian, macosx, linux
-+                            May be one of: debian, macosx, linux, freebsd
- --prefix=DIR                Prefix where Prosody should be installed.
-                             Default is $PREFIX
- --sysconfdir=DIR            Location where the config file should be installed.
-@@ -142,22 +141,24 @@
- 	LUA_INCDIR=/usr/include/lua5.1;
- 	LUA_INCDIR_SET=yes
- 	fi
--	if [ "$OSTYPE" = "macosx" ]
--	then LUA_INCDIR=/usr/local/include;
-+    if [ "$OSTYPE" = "linux" ]
-+    then LUA_INCDIR=/usr/local/include;
-+    LUA_INCDIR_SET=yes
-+    LUA_LIBDIR=/usr/local/lib
-+    LUA_LIBDIR_SET=yes
-+    CFLAGS="-Wall -fPIC"
-+    LDFLAGS="-shared"
-+    fi
-+
-+	if [ "$OSTYPE" = "freebsd" ]
-+	then 
- 	LUA_INCDIR_SET=yes
--	LUA_LIBDIR=/usr/local/lib
- 	LUA_LIBDIR_SET=yes
--	CFLAGS="-Wall"
--	LDFLAGS="-bundle -undefined dynamic_lookup"
-+	CFLAGS="-fPIC -D_POSIX_SOURCE -I${LOCALBASE}/include"
-+	LFLAGS="-lm -shared -L${LOCALBASE}/lib"
-+	LUA_SUFFIX_SET=yes
-+	LUA_LIB=lua
- 	fi
--        if [ "$OSTYPE" = "linux" ]
--        then LUA_INCDIR=/usr/local/include;
--        LUA_INCDIR_SET=yes
--        LUA_LIBDIR=/usr/local/lib
--        LUA_LIBDIR_SET=yes
--        CFLAGS="-Wall -fPIC"
--        LDFLAGS="-shared"
--        fi
- fi
- 
- if [ "$PREFIX_SET" = "yes" -a ! "$SYSCONFDIR_SET" = "yes" ]
-@@ -306,9 +307,9 @@
- REQUIRE_CONFIG=$REQUIRE_CONFIG
- IDN_LIB=$IDN_LIB
- OPENSSL_LIB=$OPENSSL_LIB
--CFLAGS=$CFLAGS
-+CFLAGS+=$CFLAGS
- LDFLAGS=$LDFLAGS
--CC=$CC
-+CC?=$CC
- LD=$LD
- 
- EOF
+ LUA_SUFFIX=""
