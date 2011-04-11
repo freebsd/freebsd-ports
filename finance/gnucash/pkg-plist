@@ -28,6 +28,7 @@ include/gnucash/TransLog.h
 include/gnucash/Transaction.h
 include/gnucash/account-quickfill.h
 include/gnucash/basiccell.h
+include/gnucash/business-options.h
 include/gnucash/cap-gains.h
 include/gnucash/cashobjects.h
 include/gnucash/cell-factory.h
@@ -694,6 +695,7 @@ share/gnucash/doc/ChangeLog.2006
 share/gnucash/doc/ChangeLog.2007
 share/gnucash/doc/ChangeLog.2008
 share/gnucash/doc/ChangeLog.2009
+share/gnucash/doc/ChangeLog.2010
 share/gnucash/doc/DOCUMENTERS
 share/gnucash/doc/HACKING
 share/gnucash/doc/INSTALL
@@ -706,6 +708,7 @@ share/gnucash/doc/README-it.win32-bin.txt
 share/gnucash/doc/README-lv.win32-bin.txt
 share/gnucash/doc/README-nl.win32-bin.txt
 share/gnucash/doc/README-zh_CN.win32-bin.txt
+share/gnucash/doc/README-zh_TW.win32-bin.txt
 share/gnucash/doc/README.dependencies
 share/gnucash/doc/README.francais
 share/gnucash/doc/README.german

@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	gnucash
-PORTVERSION=	2.4.3
-PORTREVISION=	2
+PORTVERSION=	2.4.5
 CATEGORIES=	finance gnome
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}%20%28stable%29/${PORTVERSION}
 
@@ -114,6 +113,7 @@ PLIST_SUB+=	PYTHON=""
 PLIST_SUB+=	PYTHON="@comment "
 .endif
 
+pre-configure:
 .if !defined(PACKAGE_BUILDING) && defined(WITH_AQBANKING) && !exists(${LOCALBASE}/lib/libgwengui-gtk2.so.0)
 BROKEN=	Please rebuild devel/gwenhywfar with the WITH_GTK2 option set
 .endif
