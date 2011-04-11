@@ -113,6 +113,9 @@ libexec/maxima/%%PORTVERSION%%/mgnuplot
 %%DATADIR%%/%%PORTVERSION%%/doc/html/maxima.html
 %%DATADIR%%/%%PORTVERSION%%/doc/html/maxima_1.html
 %%DATADIR%%/%%PORTVERSION%%/doc/html/maxima_10.html
+%%DATADIR%%/%%PORTVERSION%%/doc/html/maxima_100.html
+%%DATADIR%%/%%PORTVERSION%%/doc/html/maxima_101.html
+%%DATADIR%%/%%PORTVERSION%%/doc/html/maxima_102.html
 %%DATADIR%%/%%PORTVERSION%%/doc/html/maxima_11.html
 %%DATADIR%%/%%PORTVERSION%%/doc/html/maxima_12.html
 %%DATADIR%%/%%PORTVERSION%%/doc/html/maxima_13.html
@@ -497,9 +500,7 @@ libexec/maxima/%%PORTVERSION%%/mgnuplot
 %%DATADIR%%/%%PORTVERSION%%/share/contrib/ezunits/physical_constants.mac
 %%DATADIR%%/%%PORTVERSION%%/share/contrib/ezunits/rtestezunits.mac
 %%DATADIR%%/%%PORTVERSION%%/share/contrib/f90.lisp
-%%DATADIR%%/%%PORTVERSION%%/share/contrib/finance/finance.es.texi
 %%DATADIR%%/%%PORTVERSION%%/share/contrib/finance/finance.mac
-%%DATADIR%%/%%PORTVERSION%%/share/contrib/finance/finance.texi
 %%DATADIR%%/%%PORTVERSION%%/share/contrib/floatproperties.lisp
 %%DATADIR%%/%%PORTVERSION%%/share/contrib/format/README
 %%DATADIR%%/%%PORTVERSION%%/share/contrib/format/autoload-m.macsyma
@@ -517,7 +518,6 @@ libexec/maxima/%%PORTVERSION%%/mgnuplot
 %%DATADIR%%/%%PORTVERSION%%/share/contrib/fourier_elim/fourier_elim.lisp
 %%DATADIR%%/%%PORTVERSION%%/share/contrib/fourier_elim/rtest_fourier_elim.mac
 %%DATADIR%%/%%PORTVERSION%%/share/contrib/fractals/fractals.mac
-%%DATADIR%%/%%PORTVERSION%%/share/contrib/fractals/fractals.texi
 %%DATADIR%%/%%PORTVERSION%%/share/contrib/fractals/rtest_fractals.mac
 %%DATADIR%%/%%PORTVERSION%%/share/contrib/fresnel/d78.mac
 %%DATADIR%%/%%PORTVERSION%%/share/contrib/fresnel/fg.mac
@@ -664,6 +664,7 @@ libexec/maxima/%%PORTVERSION%%/mgnuplot
 %%DATADIR%%/%%PORTVERSION%%/share/contrib/noninteractive/asksign1.lisp
 %%DATADIR%%/%%PORTVERSION%%/share/contrib/noninteractive/noninteractive.lisp
 %%DATADIR%%/%%PORTVERSION%%/share/contrib/noninteractive/noninteractive.mac
+%%DATADIR%%/%%PORTVERSION%%/share/contrib/noninteractive/rtest_noninteractive.mac
 %%DATADIR%%/%%PORTVERSION%%/share/contrib/nset/README
 %%DATADIR%%/%%PORTVERSION%%/share/contrib/nset/announce-1.2.txt
 %%DATADIR%%/%%PORTVERSION%%/share/contrib/nset/changes_1.0_to_1.2.txt
@@ -874,16 +875,20 @@ libexec/maxima/%%PORTVERSION%%/mgnuplot
 %%DATADIR%%/%%PORTVERSION%%/share/diffequations/pivtr.mac
 %%DATADIR%%/%%PORTVERSION%%/share/diffequations/pmain.mac
 %%DATADIR%%/%%PORTVERSION%%/share/draw/draw.lisp
+%%DATADIR%%/%%PORTVERSION%%/share/draw/drawutils.mac
+%%DATADIR%%/%%PORTVERSION%%/share/draw/drawutils.texi
 %%DATADIR%%/%%PORTVERSION%%/share/draw/grcommon.lisp
 %%DATADIR%%/%%PORTVERSION%%/share/draw/implicit3d.lisp
 %%DATADIR%%/%%PORTVERSION%%/share/draw/picture.lisp
 %%DATADIR%%/%%PORTVERSION%%/share/draw/rtest_draw.mac
+%%DATADIR%%/%%PORTVERSION%%/share/draw/vtk.lisp
 %%DATADIR%%/%%PORTVERSION%%/share/draw/wbd.lisp
 %%DATADIR%%/%%PORTVERSION%%/share/draw/worldmap.mac
 %%DATADIR%%/%%PORTVERSION%%/share/dynamics/complex_dynamics.lisp
 %%DATADIR%%/%%PORTVERSION%%/share/dynamics/dynamics.mac
 %%DATADIR%%/%%PORTVERSION%%/share/dynamics/plotdf.lisp
 %%DATADIR%%/%%PORTVERSION%%/share/dynamics/rtest_dynamics.mac
+%%DATADIR%%/%%PORTVERSION%%/share/dynamics/visualization.lisp
 %%DATADIR%%/%%PORTVERSION%%/share/hypergeometric/abramowitz_id.mac
 %%DATADIR%%/%%PORTVERSION%%/share/hypergeometric/hypergeometric.lisp
 %%DATADIR%%/%%PORTVERSION%%/share/hypergeometric/hypergeometric_mac.mac
@@ -976,6 +981,7 @@ libexec/maxima/%%PORTVERSION%%/mgnuplot
 %%DATADIR%%/%%PORTVERSION%%/share/lapack/blas/ztrmv.lisp
 %%DATADIR%%/%%PORTVERSION%%/share/lapack/blas/ztrsm.lisp
 %%DATADIR%%/%%PORTVERSION%%/share/lapack/blas/ztrsv.lisp
+%%DATADIR%%/%%PORTVERSION%%/share/lapack/dgemm.lisp
 %%DATADIR%%/%%PORTVERSION%%/share/lapack/dgesv.lisp
 %%DATADIR%%/%%PORTVERSION%%/share/lapack/eigensys.lisp
 %%DATADIR%%/%%PORTVERSION%%/share/lapack/lapack-lisp.system
