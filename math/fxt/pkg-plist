@@ -2,6 +2,7 @@ include/fxt/aux0-all.h
 include/fxt/aux0/aux0double.h
 include/fxt/aux0/binomial.h
 include/fxt/aux0/cayley-dickson-mult.h
+include/fxt/aux0/cayley-dickson-zd.h
 include/fxt/aux0/cmult.h
 include/fxt/aux0/constants.h
 include/fxt/aux0/csincos.h
@@ -375,6 +376,7 @@ include/fxt/perm/grayrevpermute.h
 include/fxt/perm/haarpermute.h
 include/fxt/perm/mrotate.h
 include/fxt/perm/perm2ccf.h
+include/fxt/perm/perm-genus.h
 include/fxt/perm/permapply.h
 include/fxt/perm/permapplyfunc.h
 include/fxt/perm/permcomplement.h
@@ -511,6 +513,8 @@ lib/libfxt.a
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/arith/shiftadd-log-out.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/arith/zero-divisors-demo.cc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/arith/zero-divisors-out.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/arith/zero-divisors-func-demo.cc
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/arith/zero-divisors-func-out.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/bits/all-dbs-demo.cc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/bits/all-dbs-out.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/bits/bin2sbin-demo.cc
