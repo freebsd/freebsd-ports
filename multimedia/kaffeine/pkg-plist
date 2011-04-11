@@ -6,6 +6,13 @@ share/apps/profiles/kaffeine.profile.xml
 share/apps/solid/actions/kaffeine_play_audiocd.desktop
 share/apps/solid/actions/kaffeine_play_dvd.desktop
 share/apps/solid/actions/kaffeine_play_videocd.desktop
+share/icons/hicolor/48x48/apps/kaffeine.png
+share/icons/hicolor/16x16/apps/kaffeine.png
+share/icons/hicolor/128x128/apps/kaffeine.png
+share/icons/hicolor/32x32/apps/kaffeine.png
+share/icons/hicolor/22x22/apps/kaffeine.png
+share/icons/hicolor/64x64/apps/kaffeine.png
+share/icons/hicolor/scalable/apps/kaffeine.svgz
 share/icons/oxygen/16x16/actions/audio-radio-encrypted.png
 share/icons/oxygen/16x16/actions/video-television-encrypted.png
 share/icons/oxygen/22x22/actions/audio-radio-encrypted.png
