@@ -13,10 +13,8 @@ MASTER_SITES=	http://www.gajim.org/downloads/0.14/
 MAINTAINER=	dsh@bamus.cz
 COMMENT=	Gajim is a Jabber client based on a plugin system
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dbus>=0.82.2:${PORTSDIR}/devel/py-dbus
 LIB_DEPENDS=	gtkspell.0:${PORTSDIR}/textproc/gtkspell
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/OpenSSL/SSL.so:${PORTSDIR}/security/py-openssl \
-		${PYTHON_PKGNAMEPREFIX}dbus>=0.82.2:${PORTSDIR}/devel/py-dbus \
 		${PYTHON_PKGNAMEPREFIX}sqlite3>=${PYTHON_PORTVERSION}:${PORTSDIR}/databases/py-sqlite3
 
 GNU_CONFIGURE=	yes
@@ -30,12 +28,22 @@ USE_XORG=	x11 xext xscrnsaver
 CONFIGURE_ENV+=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" PYTHON=${PYTHON_CMD}
 
+OPTIONS=	DBUS "Adds support for D-Bus (Desktop Bus)" On \
+		NLS "Native Language Support via gettext utilities" On
+
+.include <bsd.port.options.mk>
+
 .if !defined(WITHOUT_NLS)
 USE_GETTEXT=	yes
 PLIST_SUB+=	NLS=""
 .else
 CONFIGURE_ARGS+=	--disable-nls
 PLIST_SUB+=	NLS="@comment "
+.endif
+
+.if !defined(WITHOUT_DBUS)
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dbus>=0.82.2:${PORTSDIR}/devel/py-dbus
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}dbus>=0.82.2:${PORTSDIR}/devel/py-dbus
 .endif
 
 MAN1=		gajim.1 gajim-remote.1 gajim-history-manager.1
