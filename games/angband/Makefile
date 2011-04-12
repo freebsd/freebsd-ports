@@ -37,7 +37,7 @@ pre-fetch:
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|-Wno-missing-field-initializers ||' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|-Wno-missing-field-initializers ||; s|/games$$|/bin|' ${WRKSRC}/configure
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
