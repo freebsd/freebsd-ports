@@ -7,7 +7,7 @@
 
 PORTNAME=	opal3
 PORTVERSION=	3.6.6
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	net
 MASTER_SITES=	SF/opalvoip/v3.6%20Lalande/Stable%205
 DISTNAME=	opal-${PORTVERSION}
@@ -98,7 +98,7 @@ CONFIGURE_ARGS+=	--disable-java
 .endif
 
 .if defined(WITH_CELT)
-LIB_DEPENDS+=	celt.0:${PORTSDIR}/audio/celt
+LIB_DEPENDS+=	celt0.2:${PORTSDIR}/audio/celt
 CONFIGURE_ARGS+=	--enable-celt
 PLIST_SUB+=	CELT=""
 .else

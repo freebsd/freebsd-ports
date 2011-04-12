@@ -61,7 +61,7 @@ PLIST_SUB+=	BUNDLECELT=""
 .else
 CONFIG+=	no-bundled-celt
 PLIST_SUB+=	BUNDLECELT="@comment "
-LIB_DEPENDS+=	celt.0:${PORTSDIR}/audio/celt
+LIB_DEPENDS+=	celt0.2:${PORTSDIR}/audio/celt
 .endif
 
 .if defined(WITHOUT_BONJOUR)
@@ -79,6 +79,10 @@ PLIST_SUB+=	MUMBLE11X=""
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-ldl||' ${WRKSRC}/overlay_gl/overlay_gl.pro
+	# Fix with celt 0.11
+.if !defined(WITHOUT_SYSCELT)
+	@${REINPLACE_CMD} -e 's/CELT_SET_VBR_RATE/CELT_SET_BITRATE/g' ${WRKSRC}/src/mumble/AudioInput.cpp
+.endif
 
 do-configure:
 .if defined(WITHOUT_SYSCELT)
