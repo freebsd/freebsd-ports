@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	Sys-Mmap
-PORTVERSION=	0.14
+PORTVERSION=	0.15
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	skv@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Map in a file as a Perl variable using mmap(2)
 
 PERL_CONFIGURE=	yes
