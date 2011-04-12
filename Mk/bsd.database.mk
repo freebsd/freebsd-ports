@@ -230,9 +230,8 @@ CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 
 .if defined(USE_BDB)
 
-_DB_PORTS=	2 3 40 41 42 43 44 45 46 47 48 51 3+ 40+ 41+ 42+ 43+ 44+ 45+ 46+ 47+ 48+ 51+
+_DB_PORTS=	3 40 41 42 43 44 45 46 47 48 51 3+ 40+ 41+ 42+ 43+ 44+ 45+ 46+ 47+ 48+ 51+
 # Dependence lines for different db versions
-db2_DEPENDS=	db2.0:${PORTSDIR}/databases/db2
 db3_DEPENDS=	db3.3:${PORTSDIR}/databases/db3
 db40_DEPENDS=	db4.0:${PORTSDIR}/databases/db4
 db41_DEPENDS=	db41.1:${PORTSDIR}/databases/db41
@@ -245,7 +244,6 @@ db47_DEPENDS=	db-4.7.0:${PORTSDIR}/databases/db47
 db48_DEPENDS=	db-4.8.0:${PORTSDIR}/databases/db48
 db51_DEPENDS=	db-5.1.0:${PORTSDIR}/databases/db51
 # Detect db versions by finding some files
-db3_FIND=	${LOCALBASE}/include/db3/db.h
 db40_FIND=	${LOCALBASE}/include/db4/db.h
 db41_FIND=	${LOCALBASE}/include/db41/db.h
 db42_FIND=	${LOCALBASE}/include/db42/db.h
@@ -257,8 +255,8 @@ db47_FIND=	${LOCALBASE}/include/db47/db.h
 db48_FIND=	${LOCALBASE}/include/db48/db.h
 db51_FIND=	${LOCALBASE}/include/db51/db.h
 
-# For specifying [3, 40, 41, ..]+
-_DB_3P=		3 ${_DB_40P}
+# For specifying [40, 41, ..]+
+_DB_3P=		${_DB_40P}
 _DB_40P=	40 ${_DB_41P}
 _DB_41P=	41 ${_DB_42P}
 _DB_42P=	42 ${_DB_43P}
