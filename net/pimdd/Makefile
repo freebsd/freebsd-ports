@@ -8,15 +8,12 @@
 PORTNAME=	pimdd
 PORTVERSION=	0.2.1.0
 CATEGORIES=	net
-MASTER_SITES=	http://www.antc.uoregon.edu/PIMDM/
+MASTER_SITES=	http://antc.uoregon.edu/PIMDM/
 DISTNAME=	pimd-dense
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	\
 	UO Dense Protocol-Independent Multicast (PIM-DM) daemon for IPv4
-
-DEPRECATED=     Upstream disapear and distfile is no more available
-EXPIRATION_DATE=        2011-05-01
 
 NO_MAN=		defined
 PIMDD_DOCS=	pimd-dense.html README CHANGES RELEASE.NOTES
