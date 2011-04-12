@@ -6,10 +6,11 @@
 #
 
 PORTNAME=	wmfs
-DISTVERSION=	201011
+DISTVERSION=	201104
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://wmfs.info/attachments/download/15/ \
-		http://cloud.github.com/downloads/philpep/wmfs/
+		http://cloud.github.com/downloads/xorg62/wmfs/ \
+		http://cloud.github.com/downloddads/philpep/wmfs/
 
 MAINTAINER=	dhn@FreeBSD.org
 COMMENT=	A floating and tiling Window Manager From Scratch
@@ -25,11 +26,7 @@ HAS_CONFIGURE=	yes
 MAN1=	${PORTNAME}.1
 MANCOMPRESSED=	yes
 
-PLIST_FILES=	bin/wmfs \
-		etc/xdg/wmfs/wmfsrc \
-		share/xsessions/wmfs.desktop
-
-PLIST_DIRS=	etc/xdg/wmfs etc/xdg share/xsessions
+SUB_FILES=	pkg-message
 
 OPTIONS=	XRANDR "Enable xrandr support" on \
 		XINERAMA "Enable xinerama support" on \
@@ -60,7 +57,7 @@ CONFIGURE_ARGS+=	--without-imlib2
 .endif
 
 post-install:
-	@${CAT} ${PKGMESSAGE} | ${SED} "s|PREFIX|${PREFIX}|g" \
-	${PKGDIR}/pkg-message
+	${CAT} ${PKGMESSAGE} | ${SED} "s|%%PREFIX%%|${PREFIX}|g" \
+	${FILESDIR}/pkg-message.in
 
 .include <bsd.port.post.mk>

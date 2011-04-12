@@ -1,0 +1,6 @@
+bin/wmfs
+etc/xdg/wmfs/wmfsrc
+share/xsessions/wmfs.desktop
+@dirrm share/xsessions
+@dirrm etc/xdg/wmfs
+@dirrmtry etc/xdg
