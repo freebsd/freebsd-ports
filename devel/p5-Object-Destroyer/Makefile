@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	Object-Destroyer
-PORTVERSION=	2.00
+PORTVERSION=	2.01
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	gslin@gslin.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Make objects with circular references DESTROY normally
 
 PERL_CONFIGURE=	yes
