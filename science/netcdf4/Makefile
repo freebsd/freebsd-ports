@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	netcdf
-PORTVERSION=	4.1.1
+PORTVERSION=	4.1.2
 CATEGORIES=	science
 MASTER_SITES=	http://www.unidata.ucar.edu/downloads/netcdf/ftp/ \
 		ftp://ftp.unidata.ucar.edu/pub/netcdf/ \
@@ -21,10 +21,11 @@ PORTSCOUT=	limit:^4\.
 
 CONFIGURE_ARGS=	--enable-cxx --enable-cxx-4 --enable-netcdf-4 --enable-shared \
 		--with-hdf5=${LOCALBASE} --with-zlib=/usr
-CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include -fPIC -DPIC"
+CPPFLAGS+=	-I${LOCALBASE}/include -fPIC -DPIC
 GNU_CONFIGURE=	yes
-LIB_DEPENDS+=	hdf5.6:${PORTSDIR}/science/hdf5-18
-MAKE_ENV+=	MAKEINFOFLAGS="--no-split" INFODIR="${PREFIX}/${INFO_PATH}"
+LIB_DEPENDS=	hdf5.6:${PORTSDIR}/science/hdf5-18
+MAKE_ENV=	MAKEINFOFLAGS="--no-split" INFODIR="${PREFIX}/${INFO_PATH}"
+USE_GNOME=	gnomehack
 USE_LDCONFIG=	yes
 
 INFO=		netcdf netcdf-c netcdf-cxx netcdf-f77 netcdf-f90 \
@@ -32,19 +33,22 @@ INFO=		netcdf netcdf-c netcdf-cxx netcdf-f77 netcdf-f90 \
 MAN1=		nccopy.1 ncdump.1 ncgen.1 ncgen3.1
 MAN3=		netcdf.3
 
-OPTIONS=	FORTRAN	"Build library for Fortran" off \
+OPTIONS=	DAP	"Build DAP client and remote testing" off \
+		FORTRAN	"Build library for Fortran" off \
 		SZIP	"SZIP support (required if HDF5 was built with SZIP)" off
 
-.if !defined(NOPORTDOCS)
-CONFIGURE_ARGS+=--enable-docs-install
+.include <bsd.port.options.mk>
+
+.if defined(WITH_DAP)
+CONFIGURE_ARGS+=--enable-dap --with-curl=${LOCALBASE} \
+		--with-curl-config=${LOCALBASE}/bin/curl-config
+LIB_DEPENDS+=	curl.6:${PORTSDIR}/ftp/curl
 .else
-CONFIGURE_ARGS+=--disable-docs-install
+CONFIGURE_ARGS+=--disable-dap
 .endif
 
-.include <bsd.port.pre.mk>
-
 .if defined(WITH_FORTRAN)
-CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS} -DpgiFortran"
+CPPFLAGS+=	-DpgiFortran
 CONFLICTS+=	netcdf-4.*
 MAN3+=		netcdf_f77.3 netcdf_f90.3
 PKGNAMESUFFIX+=	-ftn
@@ -61,24 +65,24 @@ CONFIGURE_ARGS+=--with-szlib=${LOCALBASE}
 LIB_DEPENDS+=	sz.2:${PORTSDIR}/science/szip
 .endif
 
-post-patch:
-	@${REINPLACE_CMD} -e \
-		's|$$(libdir)/pkgconfig|$$(prefix)/libdata/pkgconfig|' \
-		${WRKSRC}/Makefile.in
-	@${REINPLACE_CMD} -e '297 s/\(info_docs\).*/html_docs\)/' \
-		${WRKSRC}/man4/Makefile.in
-.if defined(NOPORTDOCS)
-	@${REINPLACE_CMD} -e '839 s/install-docDATA //' \
-		${WRKSRC}/man4/Makefile.in
-.endif
+#post-patch:
+#	@${REINPLACE_CMD} -e \
+#		's|$$(libdir)/pkgconfig|$$(prefix)/libdata/pkgconfig|' \
+#		${WRKSRC}/Makefile.in
 
 post-configure:
-	@cd ${WRKSRC}/man4 && make maintainer-clean-aminfo
+	@cd ${WRKSRC}/man4 && ${SETENV} ${MAKE_ENV} ${MAKE} maintainer-clean-aminfo
 .for i in ${INFO}
 	@cd ${WRKSRC}/man4 && makeinfo --no-split ${i}.texi
 .endfor
 
+post-install:
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}/
+	@cd ${WRKSRC}/man4 && ${INSTALL_DATA} *.html *.info *.pdf *.ps *.txt ${DOCSDIR}/
+.endif
+
 regression-test: build
 	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} check
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
