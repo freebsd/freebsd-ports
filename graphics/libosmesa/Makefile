@@ -39,6 +39,12 @@ GLINC=		gl.h glext.h osmesa.h
 GLLIB=		OSMesa32
 SHLIB_VERS=	${PORTVERSION:R:R}
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 900000
+BROKEN=		does not install on 9.X
+.endif
+
 do-install:
 	${MKDIR} ${PREFIX}/include/Mesa/GL
 	${MKDIR} ${PREFIX}/lib
@@ -56,4 +62,4 @@ do-install:
 	cd ${WRKSRC}/src/mesa && ${GMAKE} osmesa.pc
 	${INSTALL_DATA} ${WRKSRC}/src/mesa/osmesa.pc ${PREFIX}/libdata/pkgconfig
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
