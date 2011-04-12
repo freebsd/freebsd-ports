@@ -1,0 +1,50 @@
+--- library/tulip-ogl/src/CMakeLists.txt.orig	2011-04-11 15:38:08.000000000 +0200
++++ library/tulip-ogl/src/CMakeLists.txt	2011-04-11 15:38:28.000000000 +0200
+@@ -1,6 +1,6 @@
+ FILE(GLOB tulip-ogl_LIB_SRCS "*.cpp")
+ 
+-INCLUDE_DIRECTORIES(${TulipInclude} ${TulipBuildInclude} ../include/ ${PROJECT_SOURCE_DIR} ${FTGLInclude} ${LIBXML2_INCLUDE_DIR} ${FREETYPE_INCLUDE_DIRS})
++INCLUDE_DIRECTORIES(${TulipInclude} ${TulipBuildInclude} ../include/ ${PROJECT_SOURCE_DIR} ${FTGLInclude} ${LIBXML2_INCLUDE_DIR} ${FREETYPE_INCLUDE_DIRS} ${OPENGL_INCLUDE_DIR})
+ INCLUDE_DIRECTORIES(${OPENGL_INCLUDE_DIR} ${GLEW_INCLUDE_DIR} ${JPEG_INCLUDE_DIR})
+ 
+ IF(ENABLE_RENDERING_TIME_DISPLAY)
+--- library/tulip-python/tulip-ogl/CMakeLists.txt.orig	2011-04-11 16:04:13.000000000 +0200
++++ library/tulip-python/tulip-ogl/CMakeLists.txt	2011-04-11 16:04:33.000000000 +0200
+@@ -34,7 +34,7 @@
+ # instead of those installed in the system
+ INCLUDE_DIRECTORIES(BEFORE ${SIP_INCLUDE_DIR})
+ 
+-INCLUDE_DIRECTORIES(${PYTHON_INCLUDE_DIR} ${PYTHON_INCLUDE_PATH} ${TulipInclude} ${TulipBuildInclude} ${TulipOGLInclude})
++INCLUDE_DIRECTORIES(${PYTHON_INCLUDE_DIR} ${PYTHON_INCLUDE_PATH} ${TulipInclude} ${TulipBuildInclude} ${TulipOGLInclude} ${OPENGL_INCLUDE_DIR})
+ 
+ ADD_LIBRARY(${LibTulipOglPythonName} STATIC ${TULIPOGL_PYTHON_BINDINGS_SRC})
+ 
+--- library/tulip-qt/src/CMakeLists.txt.orig	2011-04-11 14:48:18.000000000 +0200
++++ library/tulip-qt/src/CMakeLists.txt	2011-04-11 14:48:57.000000000 +0200
+@@ -173,7 +173,7 @@
+ ADD_DEFINITIONS(-DQT_DLL)
+ ADD_DEFINITIONS(-DQT_THREAD_SUPPORT)
+ 
+-INCLUDE_DIRECTORIES(../include/ ../include/tulip ${TulipInclude} ${TulipBuildInclude} ${TulipOGLInclude} ${TulipQtBuildInclude} ${PROJECT_BINARY_DIR}/library/tulip-qt/include/tulip/)
++INCLUDE_DIRECTORIES(../include/ ../include/tulip ${TulipInclude} ${TulipBuildInclude} ${TulipOGLInclude} ${TulipQtBuildInclude} ${PROJECT_BINARY_DIR}/library/tulip-qt/include/tulip/ ${OPENGL_INCLUDE_DIR})
+ ADD_LIBRARY(${LibTulipQtName} SHARED ${tulip-qt_UI_SRCS} ${tulip-qt_MOC_SRCS} ${tulip-qt_RCC_SRCS} ${tulip-qt_LIB_SRCS})
+ TARGET_LINK_LIBRARIES(${LibTulipQtName} ${QT_QTCORE_LIBRARY})
+ TARGET_LINK_LIBRARIES(${LibTulipQtName} ${QT_QTGUI_LIBRARY})
+--- software/tulip/src/CMakeLists.txt.orig	2011-04-11 16:09:11.000000000 +0200
++++ software/tulip/src/CMakeLists.txt	2011-04-11 16:09:29.000000000 +0200
+@@ -34,7 +34,7 @@
+ TULIP_QT4_WRAP_CPP(tulip_MOC_SRCS ${tulip_MOC} OPTIONS "-DQT_MINOR_REL=${QT_VERSION_MINOR}")
+ QT4_ADD_RESOURCES(tulip_RCC_SRCS ${tulip_RCC})
+ 
+-INCLUDE_DIRECTORIES(../include/ ${TulipBuildInclude} ${TulipQtBuildInclude} ${PROJECT_BINARY_DIR}/library/tulip-qt/include/tulip ${PROJECT_BINARY_DIR}/software/tulip/include ${TulipInclude} ${TulipQtInclude} ${TulipOGLInclude} ${TulipPluginsManagerInclude})
++INCLUDE_DIRECTORIES(../include/ ${TulipBuildInclude} ${TulipQtBuildInclude} ${PROJECT_BINARY_DIR}/library/tulip-qt/include/tulip ${PROJECT_BINARY_DIR}/software/tulip/include ${TulipInclude} ${TulipQtInclude} ${TulipOGLInclude} ${TulipPluginsManagerInclude} ${OPENGL_INCLUDE_DIR})
+ 
+ SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -DQT_MINOR_REL=${QT_VERSION_MINOR}")
+ 
+--- plugins/CMakeLists.txt.orig	2011-04-11 16:43:41.000000000 +0200
++++ plugins/CMakeLists.txt	2011-04-11 16:20:26.000000000 +0200
+@@ -1,3 +1,4 @@
++INCLUDE_DIRECTORIES(${OPENGL_INCLUDE_DIR})
+ ADD_SUBDIRECTORY(clustering)
+ ADD_SUBDIRECTORY(colors)
+ ADD_SUBDIRECTORY(import)
