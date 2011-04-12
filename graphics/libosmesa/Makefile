@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libosmesa
-PORTVERSION=	7.10.1
+PORTVERSION=	7.10.2
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.freedesktop.org/pub/mesa/${PORTVERSION}/
 DISTNAME=	MesaLib-${PORTVERSION}
@@ -18,7 +18,8 @@ LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2 \
     		talloc.2:${PORTSDIR}/devel/talloc
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/libxml2mod.so:${PORTSDIR}/textproc/py-libxml2 \
     		makedepend:${PORTSDIR}/devel/makedepend
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS=	${PYTHON_SITELIBDIR}/libxml2mod.so:${PORTSDIR}/textproc/py-libxml2 \
+    		makedepend:${PORTSDIR}/devel/makedepend
 
 CONFLICTS=	mesagl-mangled-*
 
@@ -31,7 +32,7 @@ USE_PYTHON_BUILD=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--with-driver=osmesa --with-osmesa-bits=32 \
 		--includedir=${PREFIX}/include/Mesa
-CFLAGS+=	-I${LOCALBASE}/include
+CPPFLAGS+=	-I${LOCALBASE}/include -fPIC
 
 WRKSRC=		${WRKDIR}/Mesa-${PORTVERSION}
 
@@ -41,8 +42,8 @@ SHLIB_VERS=	${PORTVERSION:R:R}
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 900000
-BROKEN=		does not install on 9.X
+.if ${ARCH} == "amd64"
+BROKEN=	Fails to build
 .endif
 
 do-install:
