@@ -38,4 +38,8 @@ EXTRA_PATCHES+=	${FILESDIR}/freebsd7_patch-src-netstat.c
 EXTRA_PATCHES+=	${FILESDIR}/freebsd8_patch-src-jail.c
 .endif
 
+.if ${OSVERSION} >= 900000
+BROKEN=		does not compile on 9.X
+.endif
+
 .include <bsd.port.post.mk>
