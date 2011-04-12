@@ -56,15 +56,6 @@
  		$(LN_S) -f $(LIB_SHARED).$(LIBVERMAJOR) $(LIBDIR)/$(LIB_SHARED); \
  		if test `uname` = "Linux"; then \
  		   if test $(LIBDIR) = "/lib" || test $(LIBDIR) = "/usr/lib"; then \
-@@ -232,7 +231,7 @@
- 		)
- 
- install.apps: install.lib
--		@(if test -d apps; then cd apps; make install || exit 1; fi)
-+		@(if test -d apps; then cd apps; $(MAKE) install || exit 1; fi)
- 
- # uninstallation targets : 
- #
 @@ -391,11 +390,8 @@
  $(LIB_SHARED): $(LIB_SHARED).$(LIBVERMAJOR)
  	$(LN_S) -f $(LIB_SHARED).$(LIBVERMAJOR) $(LIB_SHARED)
