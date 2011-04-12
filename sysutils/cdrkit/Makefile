@@ -29,6 +29,10 @@ CONFLICTS=	cdrtools-[0-9]* cjk-cdrtools-[0-9]* cdrtools-devel-[0-9]*
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} >= 900000
+BROKEN=		does not link on 9.X
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|share/man|man|' ${WRKSRC}/include/AddSchilyBits.cmake \
 	    ${WRKSRC}/3rd-party/dirsplit/CMakeLists.txt
