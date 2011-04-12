@@ -7,6 +7,7 @@
 
 PORTNAME=	openconnect
 PORTVERSION=	2.26
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	ftp://ftp.infradead.org/pub/openconnect/ \
 		CRITICAL
@@ -28,7 +29,7 @@ PORTDOCS=	README.*
 
 OPTIONS=	GUI      "Enable the OpenConnect configuration GUI"   off
 
-.if !defined(WITHOUT_GUI)
+.if defined(WITH_GUI)
 LIB_DEPENDS+=	gtk-x11-2.0.0:${PORTSDIR}/x11-toolkits/gtk20
 LIB_DEPENDS+=	gconf-2.4:${PORTSDIR}/devel/gconf2
 PLIST_SUB+=	WITH_GUI=""
@@ -39,7 +40,7 @@ PLIST_SUB+=	WITH_GUI="@comment "
 do-install:
 	${INSTALL_PROGRAM} -m 751 ${WRKSRC}/openconnect \
 	${PREFIX}/bin/openconnect
-.if !defined(WITHOUT_GUI)
+.if defined(WITH_GUI)
 	${INSTALL_PROGRAM} ${WRKSRC}/nm-openconnect-auth-dialog \
 	${PREFIX}/libexec
 .endif
