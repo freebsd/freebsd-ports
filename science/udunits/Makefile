@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	udunits
-PORTVERSION=	2.1.21
+PORTVERSION=	2.1.22
 CATEGORIES=	science math
 MASTER_SITES=	ftp://ftp.unidata.ucar.edu/pub/udunits/ \
 		LOCAL/sunpoet
@@ -16,14 +16,17 @@ COMMENT=	A library for manipulating units of physical quantities
 
 LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2
 
-CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
-		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib" \
+CONFIGURE_ENV=	LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib" \
 		ac_cv_header_CUnit_CUnit_h=no
+CPPFLAGS+=	-I${LOCALBASE}/include
 MAKE_JOBS_SAFE=	yes
 USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
 USE_PERL5=	yes
 
 INFO=		udunits2 udunits2lib udunits2prog
+
+post-patch:
+	@${REINPLACE_CMD} -e '/install-data-hook$$/d' ${WRKSRC}/lib/Makefile.in
 
 .include <bsd.port.mk>
