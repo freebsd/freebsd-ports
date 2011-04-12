@@ -7,6 +7,7 @@
 
 PORTNAME=	yanopaste
 PORTVERSION=	1.3.0
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
@@ -14,7 +15,7 @@ MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	Yet Another Nopaste
 
 NO_BUILD=	yes
-USE_PHP=	xsl
+USE_PHP=	xsl session xmlwriter xmlreader
 SUB_FILES=	pkg-message
 WWWDIR?=	${PREFIX}/www/${PORTNAME}
 
