@@ -1,5 +1,5 @@
-SHA256 (nginx-0.8.54.tar.gz) = 12e28efb9a54452fa6e579e08ce7c864e49d6ea6104cc2b3de5a4416ead90593
-SIZE (nginx-0.8.54.tar.gz) = 650001
+SHA256 (nginx-1.0.0.tar.gz) = 3de3d6caeed56751c24ebc5cfb03475620b9eb0fa999c766a01d44dca674c001
+SIZE (nginx-1.0.0.tar.gz) = 654760
 SHA256 (nginx_accept_language_module.tar.gz) = 7a4c2d42a83c5b6efd2b7b13ad232850b6ab0ca4261df6b46fb7d2d2738b1c0a
 SIZE (nginx_accept_language_module.tar.gz) = 3299
 SHA256 (nginx-accesskey-2.0.3.tar.gz) = d9e94321e78a02de16c57f3e048fd31059fd8116ed03d6de7180f435c52502b1

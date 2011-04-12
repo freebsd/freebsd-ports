@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	nginx
-PORTVERSION=	0.8.54
-PORTREVISION=	2
+PORTVERSION=	1.0.0
 CATEGORIES=	www
 MASTER_SITES=	http://sysoev.ru/nginx/
 MASTER_SITES+=	${MASTER_SITE_LOCAL}
@@ -102,8 +101,6 @@ USE_RC_SUBR=	nginx.sh
 SUB_LIST+=	WWWOWN=${WWWOWN}
 .if !defined(NO_INSTALL_MANPAGES)
 MAN8=		nginx.8
-SUB_FILES+=	nginx.8
-SUB_LIST+=	NGINX_ERRORLOG=${NGINX_ERRORLOG} NGINX_RUNDIR=${NGINX_RUNDIR}
 .endif
 
 HAS_CONFIGURE=	yes
@@ -412,6 +409,10 @@ MASTER_SITES+=	RF/passenger/:passenger
 DISTFILES+=	passenger-${PASSENGER_VERSION}.tar.gz:passenger
 CONFIGURE_ARGS+=--add-module=${WRKDIR}/passenger-${PASSENGER_VERSION}/ext/nginx
 EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-passenger::build::nginx.rb
+.if !defined(WITH_DEBUG)
+CONFIGURE_ENV+=	OPTIMIZE="yes"
+CFLAGS+=	-DNDEBUG
+.endif
 .endif
 
 .if defined(WITH_SLOWFS_CACHE_MODULE)
@@ -564,7 +565,7 @@ post-install:
 	${ECHO_CMD} @dirrm ${SITE_PERL_REL}/${PERL_ARCH}/auto/nginx >> ${TMPPLIST}
 .endif
 .if !defined(NO_INSTALL_MANPAGES)
-	@${INSTALL_MAN} ${WRKDIR}/nginx.8 ${MAN8PREFIX}/man/man8
+	@${INSTALL_MAN} ${WRKSRC}/objs/nginx.8 ${MAN8PREFIX}/man/man8
 .endif
 
 .include <bsd.port.post.mk>

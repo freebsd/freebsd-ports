@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	nginx
-PORTVERSION=	0.9.7
+PORTVERSION=	1.0.0
 CATEGORIES=	www
 MASTER_SITES=	http://sysoev.ru/nginx/
 MASTER_SITES+=	${MASTER_SITE_LOCAL}
@@ -410,6 +410,10 @@ MASTER_SITES+=	RF/passenger/:passenger
 DISTFILES+=	passenger-${PASSENGER_VERSION}.tar.gz:passenger
 CONFIGURE_ARGS+=--add-module=${WRKDIR}/passenger-${PASSENGER_VERSION}/ext/nginx
 EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-passenger::build::nginx.rb
+.if !defined(WITH_DEBUG)
+CONFIGURE_ENV+=	OPTIMIZE="yes"
+CFLAGS+=	-DNDEBUG
+.endif
 .endif
 
 .if defined(WITH_SLOWFS_CACHE_MODULE)
