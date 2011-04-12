@@ -302,7 +302,6 @@
     SUBDIR += monkeysphere
     SUBDIR += mosref
     SUBDIR += mussh
-    SUBDIR += mypasswordsafe
     SUBDIR += nbaudit
     SUBDIR += ncrack
     SUBDIR += ncrypt
