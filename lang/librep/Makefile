@@ -6,37 +6,48 @@
 #    $MCom: ports/lang/librep/Makefile,v 1.2 2006/09/10 00:51:12 mezz Exp $
 
 PORTNAME=	librep
-PORTVERSION=	0.90.2
-PORTREVISION=	2
+PORTVERSION=	0.91.1
 CATEGORIES=	lang elisp gnome
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}
+MASTER_SITES=	http://download.tuxfamily.org/librep/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An Emacs Lisp like runtime library
 
 LIB_DEPENDS=	gdbm.3:${PORTSDIR}/databases/gdbm \
-    		gmp.10:${PORTSDIR}/math/gmp \
-		ffi.5:${PORTSDIR}/devel/libffi
+		ffi.5:${PORTSDIR}/devel/libffi \
+    		gmp.10:${PORTSDIR}/math/gmp
 RUN_DEPENDS=	gtar:${PORTSDIR}/archivers/gtar
 
-PLIST_SUB=	GNUHOST=${ARCH}-pc-freebsd${OSREL:C/\..*//} VERSION=${PORTVERSION}
-
+USE_XZ=		yes
+USE_GNOME=	gnomehack
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
-USE_LDCONFIG=	yes
-USE_BZIP2=	yes
-GNU_CONFIGURE=	yes
-CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LIBS="-L${LOCALBASE}/lib -lintl ${PTHREAD_LIBS}"
+USE_AUTOTOOLS=	libtool
+CONFIGURE_ENV=	LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--with-aclocaldir=${PREFIX}/share/aclocal
-CONFIGURE_TARGET=	${ARCH}-pc-freebsd${OSREL:C/\..*//}
+CONFIGURE_TARGET=	${GNUHOST}
+USE_LDCONFIG=	yes
 
+PLIST_SUB=	GNUHOST="${GNUHOST}" VERSION="${PORTVERSION}"
+
+MANCOMPRESSED=	yes
+MAN1=		rep.1 rep-remote.1 rep-xgettext.1 repdoc.1
 INFO=		librep
+
+CPPFLAGS=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
+LDFLAGS=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
+GNUHOST=	${ARCH}-pc-freebsd${OSREL:C/\..*//}
 
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == ia64
 BROKEN=		Does not build on ia64
 .endif
+
+post-patch:
+	@${REINPLACE_CMD} -e \
+		'/GDBM_LIBS/s|"-lgdbm"|"$$LIBS -lgdbm"|g' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e \
+		's|/share/man/|/man/|g' ${WRKSRC}/man/Makefile.in
 
 .include <bsd.port.post.mk>

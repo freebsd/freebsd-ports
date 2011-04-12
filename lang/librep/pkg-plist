@@ -1,59 +1,76 @@
 bin/rep
-bin/rep-config
 bin/rep-remote
 bin/rep-xgettext
 bin/repdoc
-include/rep.h
-include/rep_gh.h
-include/rep_lisp.h
-include/rep_regexp.h
-include/rep_subrs.h
+include/rep/rep.h
+include/rep/rep_config.h
+include/rep/rep_gh.h
+include/rep/rep_lisp.h
+include/rep/rep_regexp.h
+include/rep/rep_subrs.h
 lib/librep.a
 lib/librep.la
 lib/librep.so
-lib/librep.so.13
-libexec/rep/%%VERSION%%/%%GNUHOST%%/doc-strings
-libexec/rep/%%VERSION%%/%%GNUHOST%%/emulate-gnu-tar
-libexec/rep/%%VERSION%%/%%GNUHOST%%/gdbm.la
-libexec/rep/%%VERSION%%/%%GNUHOST%%/gdbm.so
-libexec/rep/%%VERSION%%/%%GNUHOST%%/gettext.la
-libexec/rep/%%VERSION%%/%%GNUHOST%%/gettext.so
-libexec/rep/%%VERSION%%/%%GNUHOST%%/readline.la
-libexec/rep/%%VERSION%%/%%GNUHOST%%/readline.so
-libexec/rep/%%VERSION%%/%%GNUHOST%%/rep/data/tables.la
-libexec/rep/%%VERSION%%/%%GNUHOST%%/rep/data/tables.so
-libexec/rep/%%VERSION%%/%%GNUHOST%%/rep/ffi.la
-libexec/rep/%%VERSION%%/%%GNUHOST%%/rep/ffi.so
-libexec/rep/%%VERSION%%/%%GNUHOST%%/rep/i18n/gettext.la
-libexec/rep/%%VERSION%%/%%GNUHOST%%/rep/i18n/gettext.so
-libexec/rep/%%VERSION%%/%%GNUHOST%%/rep/io/db/gdbm.la
-libexec/rep/%%VERSION%%/%%GNUHOST%%/rep/io/db/gdbm.so
-libexec/rep/%%VERSION%%/%%GNUHOST%%/rep/io/db/sdbm.la
-libexec/rep/%%VERSION%%/%%GNUHOST%%/rep/io/db/sdbm.so
-libexec/rep/%%VERSION%%/%%GNUHOST%%/rep/io/readline.la
-libexec/rep/%%VERSION%%/%%GNUHOST%%/rep/io/readline.so
-libexec/rep/%%VERSION%%/%%GNUHOST%%/rep/io/sockets.la
-libexec/rep/%%VERSION%%/%%GNUHOST%%/rep/io/sockets.so
-libexec/rep/%%VERSION%%/%%GNUHOST%%/rep/io/timers.la
-libexec/rep/%%VERSION%%/%%GNUHOST%%/rep/io/timers.so
-libexec/rep/%%VERSION%%/%%GNUHOST%%/rep/lang/record-profile.la
-libexec/rep/%%VERSION%%/%%GNUHOST%%/rep/lang/record-profile.so
-libexec/rep/%%VERSION%%/%%GNUHOST%%/rep/util/md5.la
-libexec/rep/%%VERSION%%/%%GNUHOST%%/rep/util/md5.so
-libexec/rep/%%VERSION%%/%%GNUHOST%%/rep/util/utf8.la
-libexec/rep/%%VERSION%%/%%GNUHOST%%/rep/util/utf8.so
-libexec/rep/%%VERSION%%/%%GNUHOST%%/rep/vm/safe-interpreter.la
-libexec/rep/%%VERSION%%/%%GNUHOST%%/rep/vm/safe-interpreter.so
-libexec/rep/%%VERSION%%/%%GNUHOST%%/sdbm.la
-libexec/rep/%%VERSION%%/%%GNUHOST%%/sdbm.so
-libexec/rep/%%VERSION%%/%%GNUHOST%%/tables.la
-libexec/rep/%%VERSION%%/%%GNUHOST%%/tables.so
-libexec/rep/%%VERSION%%/%%GNUHOST%%/timers.la
-libexec/rep/%%VERSION%%/%%GNUHOST%%/timers.so
-libexec/rep/%%GNUHOST%%/install-aliases
-libexec/rep/%%GNUHOST%%/libtool
-libexec/rep/%%GNUHOST%%/rep_config.h
-libexec/rep/%%GNUHOST%%/rules.mk
+lib/librep.so.15
+lib/rep/%%VERSION%%/%%GNUHOST%%/doc-strings
+lib/rep/%%VERSION%%/%%GNUHOST%%/emulate-gnu-tar
+lib/rep/%%VERSION%%/%%GNUHOST%%/gdbm.a
+lib/rep/%%VERSION%%/%%GNUHOST%%/gdbm.la
+lib/rep/%%VERSION%%/%%GNUHOST%%/gdbm.so
+lib/rep/%%VERSION%%/%%GNUHOST%%/gettext.a
+lib/rep/%%VERSION%%/%%GNUHOST%%/gettext.la
+lib/rep/%%VERSION%%/%%GNUHOST%%/gettext.so
+lib/rep/%%VERSION%%/%%GNUHOST%%/readline.a
+lib/rep/%%VERSION%%/%%GNUHOST%%/readline.la
+lib/rep/%%VERSION%%/%%GNUHOST%%/readline.so
+lib/rep/%%VERSION%%/%%GNUHOST%%/rep/data/tables.a
+lib/rep/%%VERSION%%/%%GNUHOST%%/rep/data/tables.la
+lib/rep/%%VERSION%%/%%GNUHOST%%/rep/data/tables.so
+lib/rep/%%VERSION%%/%%GNUHOST%%/rep/ffi.a
+lib/rep/%%VERSION%%/%%GNUHOST%%/rep/ffi.la
+lib/rep/%%VERSION%%/%%GNUHOST%%/rep/ffi.so
+lib/rep/%%VERSION%%/%%GNUHOST%%/rep/i18n/gettext.a
+lib/rep/%%VERSION%%/%%GNUHOST%%/rep/i18n/gettext.la
+lib/rep/%%VERSION%%/%%GNUHOST%%/rep/i18n/gettext.so
+lib/rep/%%VERSION%%/%%GNUHOST%%/rep/io/db/gdbm.a
+lib/rep/%%VERSION%%/%%GNUHOST%%/rep/io/db/gdbm.la
+lib/rep/%%VERSION%%/%%GNUHOST%%/rep/io/db/gdbm.so
+lib/rep/%%VERSION%%/%%GNUHOST%%/rep/io/db/sdbm.a
+lib/rep/%%VERSION%%/%%GNUHOST%%/rep/io/db/sdbm.la
+lib/rep/%%VERSION%%/%%GNUHOST%%/rep/io/db/sdbm.so
+lib/rep/%%VERSION%%/%%GNUHOST%%/rep/io/readline.a
+lib/rep/%%VERSION%%/%%GNUHOST%%/rep/io/readline.la
+lib/rep/%%VERSION%%/%%GNUHOST%%/rep/io/readline.so
+lib/rep/%%VERSION%%/%%GNUHOST%%/rep/io/sockets.a
+lib/rep/%%VERSION%%/%%GNUHOST%%/rep/io/sockets.la
+lib/rep/%%VERSION%%/%%GNUHOST%%/rep/io/sockets.so
+lib/rep/%%VERSION%%/%%GNUHOST%%/rep/io/timers.a
+lib/rep/%%VERSION%%/%%GNUHOST%%/rep/io/timers.la
+lib/rep/%%VERSION%%/%%GNUHOST%%/rep/io/timers.so
+lib/rep/%%VERSION%%/%%GNUHOST%%/rep/lang/record-profile.a
+lib/rep/%%VERSION%%/%%GNUHOST%%/rep/lang/record-profile.la
+lib/rep/%%VERSION%%/%%GNUHOST%%/rep/lang/record-profile.so
+lib/rep/%%VERSION%%/%%GNUHOST%%/rep/util/md5.a
+lib/rep/%%VERSION%%/%%GNUHOST%%/rep/util/md5.la
+lib/rep/%%VERSION%%/%%GNUHOST%%/rep/util/md5.so
+lib/rep/%%VERSION%%/%%GNUHOST%%/rep/util/utf8.a
+lib/rep/%%VERSION%%/%%GNUHOST%%/rep/util/utf8.la
+lib/rep/%%VERSION%%/%%GNUHOST%%/rep/util/utf8.so
+lib/rep/%%VERSION%%/%%GNUHOST%%/rep/vm/safe-interpreter.a
+lib/rep/%%VERSION%%/%%GNUHOST%%/rep/vm/safe-interpreter.la
+lib/rep/%%VERSION%%/%%GNUHOST%%/rep/vm/safe-interpreter.so
+lib/rep/%%VERSION%%/%%GNUHOST%%/sdbm.a
+lib/rep/%%VERSION%%/%%GNUHOST%%/sdbm.la
+lib/rep/%%VERSION%%/%%GNUHOST%%/sdbm.so
+lib/rep/%%VERSION%%/%%GNUHOST%%/tables.a
+lib/rep/%%VERSION%%/%%GNUHOST%%/tables.la
+lib/rep/%%VERSION%%/%%GNUHOST%%/tables.so
+lib/rep/%%VERSION%%/%%GNUHOST%%/timers.a
+lib/rep/%%VERSION%%/%%GNUHOST%%/timers.la
+lib/rep/%%VERSION%%/%%GNUHOST%%/timers.so
+lib/rep/%%GNUHOST%%/install-aliases
+lib/rep/%%GNUHOST%%/libtool
+lib/rep/%%GNUHOST%%/rules.mk
 libdata/pkgconfig/librep.pc
 share/emacs/site-lisp/rep-debugger.el
 share/rep/%%VERSION%%/lisp/cgi-get.jl
@@ -82,10 +99,6 @@ share/rep/%%VERSION%%/lisp/remote-ftp.jl
 share/rep/%%VERSION%%/lisp/remote-ftp.jlc
 share/rep/%%VERSION%%/lisp/remote-rep.jl
 share/rep/%%VERSION%%/lisp/remote-rep.jlc
-share/rep/%%VERSION%%/lisp/rep.jl
-share/rep/%%VERSION%%/lisp/rep.jlc
-share/rep/%%VERSION%%/lisp/rep/data.jl
-share/rep/%%VERSION%%/lisp/rep/data.jlc
 share/rep/%%VERSION%%/lisp/rep/data/objects.jl
 share/rep/%%VERSION%%/lisp/rep/data/objects.jlc
 share/rep/%%VERSION%%/lisp/rep/data/queues.jl
@@ -102,12 +115,12 @@ share/rep/%%VERSION%%/lisp/rep/data/symbol-table.jl
 share/rep/%%VERSION%%/lisp/rep/data/symbol-table.jlc
 share/rep/%%VERSION%%/lisp/rep/data/trie.jl
 share/rep/%%VERSION%%/lisp/rep/data/trie.jlc
+share/rep/%%VERSION%%/lisp/rep/data.jl
+share/rep/%%VERSION%%/lisp/rep/data.jlc
+share/rep/%%VERSION%%/lisp/rep/ffi/util.jl
+share/rep/%%VERSION%%/lisp/rep/ffi/util.jlc
 share/rep/%%VERSION%%/lisp/rep/i18n/xgettext.jl
 share/rep/%%VERSION%%/lisp/rep/i18n/xgettext.jlc
-share/rep/%%VERSION%%/lisp/rep/io/file-handlers.jl
-share/rep/%%VERSION%%/lisp/rep/io/file-handlers.jlc
-share/rep/%%VERSION%%/lisp/rep/io/file-handlers/remote.jl
-share/rep/%%VERSION%%/lisp/rep/io/file-handlers/remote.jlc
 share/rep/%%VERSION%%/lisp/rep/io/file-handlers/remote/ftp.jl
 share/rep/%%VERSION%%/lisp/rep/io/file-handlers/remote/ftp.jlc
 share/rep/%%VERSION%%/lisp/rep/io/file-handlers/remote/rcp.jl
@@ -116,10 +129,14 @@ share/rep/%%VERSION%%/lisp/rep/io/file-handlers/remote/rep.jl
 share/rep/%%VERSION%%/lisp/rep/io/file-handlers/remote/rep.jlc
 share/rep/%%VERSION%%/lisp/rep/io/file-handlers/remote/utils.jl
 share/rep/%%VERSION%%/lisp/rep/io/file-handlers/remote/utils.jlc
+share/rep/%%VERSION%%/lisp/rep/io/file-handlers/remote.jl
+share/rep/%%VERSION%%/lisp/rep/io/file-handlers/remote.jlc
 share/rep/%%VERSION%%/lisp/rep/io/file-handlers/tar.jl
 share/rep/%%VERSION%%/lisp/rep/io/file-handlers/tar.jlc
 share/rep/%%VERSION%%/lisp/rep/io/file-handlers/tilde.jl
 share/rep/%%VERSION%%/lisp/rep/io/file-handlers/tilde.jlc
+share/rep/%%VERSION%%/lisp/rep/io/file-handlers.jl
+share/rep/%%VERSION%%/lisp/rep/io/file-handlers.jlc
 share/rep/%%VERSION%%/lisp/rep/io/files.jl
 share/rep/%%VERSION%%/lisp/rep/io/files.jlc
 share/rep/%%VERSION%%/lisp/rep/io/streams.jl
@@ -154,12 +171,12 @@ share/rep/%%VERSION%%/lisp/rep/regexp.jl
 share/rep/%%VERSION%%/lisp/rep/regexp.jlc
 share/rep/%%VERSION%%/lisp/rep/structures.jl
 share/rep/%%VERSION%%/lisp/rep/structures.jlc
-share/rep/%%VERSION%%/lisp/rep/system.jl
-share/rep/%%VERSION%%/lisp/rep/system.jlc
 share/rep/%%VERSION%%/lisp/rep/system/environ.jl
 share/rep/%%VERSION%%/lisp/rep/system/environ.jlc
 share/rep/%%VERSION%%/lisp/rep/system/pwd-prompt.jl
 share/rep/%%VERSION%%/lisp/rep/system/pwd-prompt.jlc
+share/rep/%%VERSION%%/lisp/rep/system.jl
+share/rep/%%VERSION%%/lisp/rep/system.jlc
 share/rep/%%VERSION%%/lisp/rep/test/autoload.jl
 share/rep/%%VERSION%%/lisp/rep/test/data.jl
 share/rep/%%VERSION%%/lisp/rep/test/data.jlc
@@ -199,8 +216,6 @@ share/rep/%%VERSION%%/lisp/rep/vm/bytecode-defs.jl
 share/rep/%%VERSION%%/lisp/rep/vm/bytecode-defs.jlc
 share/rep/%%VERSION%%/lisp/rep/vm/bytecodes.jl
 share/rep/%%VERSION%%/lisp/rep/vm/bytecodes.jlc
-share/rep/%%VERSION%%/lisp/rep/vm/compiler.jl
-share/rep/%%VERSION%%/lisp/rep/vm/compiler.jlc
 share/rep/%%VERSION%%/lisp/rep/vm/compiler/basic.jl
 share/rep/%%VERSION%%/lisp/rep/vm/compiler/basic.jlc
 share/rep/%%VERSION%%/lisp/rep/vm/compiler/bindings.jl
@@ -219,6 +234,8 @@ share/rep/%%VERSION%%/lisp/rep/vm/compiler/src.jl
 share/rep/%%VERSION%%/lisp/rep/vm/compiler/src.jlc
 share/rep/%%VERSION%%/lisp/rep/vm/compiler/utils.jl
 share/rep/%%VERSION%%/lisp/rep/vm/compiler/utils.jlc
+share/rep/%%VERSION%%/lisp/rep/vm/compiler.jl
+share/rep/%%VERSION%%/lisp/rep/vm/compiler.jlc
 share/rep/%%VERSION%%/lisp/rep/vm/disassembler.jl
 share/rep/%%VERSION%%/lisp/rep/vm/disassembler.jlc
 share/rep/%%VERSION%%/lisp/rep/vm/peephole.jl
@@ -233,6 +250,8 @@ share/rep/%%VERSION%%/lisp/rep/xml/printer.jl
 share/rep/%%VERSION%%/lisp/rep/xml/printer.jlc
 share/rep/%%VERSION%%/lisp/rep/xml/reader.jl
 share/rep/%%VERSION%%/lisp/rep/xml/reader.jlc
+share/rep/%%VERSION%%/lisp/rep.jl
+share/rep/%%VERSION%%/lisp/rep.jlc
 share/rep/%%VERSION%%/lisp/ring.jl
 share/rep/%%VERSION%%/lisp/ring.jlc
 share/rep/%%VERSION%%/lisp/symbol-table.jl
@@ -252,6 +271,7 @@ share/rep/%%VERSION%%/lisp/symbol-table.jlc
 @dirrm share/rep/%%VERSION%%/lisp/rep/io/file-handlers
 @dirrm share/rep/%%VERSION%%/lisp/rep/io
 @dirrm share/rep/%%VERSION%%/lisp/rep/i18n
+@dirrm share/rep/%%VERSION%%/lisp/rep/ffi
 @dirrm share/rep/%%VERSION%%/lisp/rep/data
 @dirrm share/rep/%%VERSION%%/lisp/rep
 @dirrm share/rep/%%VERSION%%/lisp
@@ -259,15 +279,16 @@ share/rep/%%VERSION%%/lisp/symbol-table.jlc
 @dirrm share/rep
 @dirrmtry share/emacs/site-lisp
 @dirrmtry share/emacs
-@dirrmtry libexec/rep/%%GNUHOST%%
-@dirrm libexec/rep/%%VERSION%%/%%GNUHOST%%/rep/vm
-@dirrm libexec/rep/%%VERSION%%/%%GNUHOST%%/rep/util
-@dirrm libexec/rep/%%VERSION%%/%%GNUHOST%%/rep/lang
-@dirrm libexec/rep/%%VERSION%%/%%GNUHOST%%/rep/io/db
-@dirrm libexec/rep/%%VERSION%%/%%GNUHOST%%/rep/io
-@dirrm libexec/rep/%%VERSION%%/%%GNUHOST%%/rep/i18n
-@dirrm libexec/rep/%%VERSION%%/%%GNUHOST%%/rep/data
-@dirrm libexec/rep/%%VERSION%%/%%GNUHOST%%/rep
-@dirrm libexec/rep/%%VERSION%%/%%GNUHOST%%
-@dirrm libexec/rep/%%VERSION%%
-@dirrmtry libexec/rep
+@dirrmtry lib/rep/%%GNUHOST%%
+@dirrm lib/rep/%%VERSION%%/%%GNUHOST%%/rep/vm
+@dirrm lib/rep/%%VERSION%%/%%GNUHOST%%/rep/util
+@dirrm lib/rep/%%VERSION%%/%%GNUHOST%%/rep/lang
+@dirrm lib/rep/%%VERSION%%/%%GNUHOST%%/rep/io/db
+@dirrm lib/rep/%%VERSION%%/%%GNUHOST%%/rep/io
+@dirrm lib/rep/%%VERSION%%/%%GNUHOST%%/rep/i18n
+@dirrm lib/rep/%%VERSION%%/%%GNUHOST%%/rep/data
+@dirrm lib/rep/%%VERSION%%/%%GNUHOST%%/rep
+@dirrm lib/rep/%%VERSION%%/%%GNUHOST%%
+@dirrm lib/rep/%%VERSION%%
+@dirrmtry lib/rep
+@dirrm include/rep
