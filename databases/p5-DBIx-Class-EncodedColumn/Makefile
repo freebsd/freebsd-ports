@@ -6,14 +6,16 @@
 #
 
 PORTNAME=	DBIx-Class-EncodedColumn
-PORTVERSION=	0.00010
-PORTREVISION=	1
+PORTVERSION=	0.00011
 CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Automatically encode columns
+
+LICENSE_COMB=	dual
+LICENSE=	ART20 GPLv1
 
 RUN_DEPENDS=	p5-DBIx-Class>=0.06002:${PORTSDIR}/databases/p5-DBIx-Class \
 		p5-Sub-Name>=0.04:${PORTSDIR}/devel/p5-Sub-Name \
