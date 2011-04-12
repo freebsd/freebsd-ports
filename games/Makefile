@@ -26,7 +26,6 @@
     SUBDIR += affenspiel
     SUBDIR += afternoonstalker
     SUBDIR += agame
-    SUBDIR += airrox
     SUBDIR += alephone
     SUBDIR += alephone-data
     SUBDIR += alephone-scenarios
@@ -73,7 +72,6 @@
     SUBDIR += battleball
     SUBDIR += battletanks
     SUBDIR += belooted
-    SUBDIR += bfm
     SUBDIR += biloba
     SUBDIR += biniax2
     SUBDIR += biorythm
@@ -1062,7 +1060,6 @@
     SUBDIR += xpyraminx
     SUBDIR += xqf
     SUBDIR += xquarto
-    SUBDIR += xracer
     SUBDIR += xrally
     SUBDIR += xrick
     SUBDIR += xripple

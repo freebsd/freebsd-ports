@@ -1,6 +1,0 @@
-lib/giFT/libAres.la
-lib/giFT/libAres.so
-share/giFT/Ares/Ares.conf.template
-share/giFT/Ares/nodes
-@dirrm share/giFT/Ares
-@dirrm lib/giFT

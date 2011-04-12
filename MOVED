@@ -1678,3 +1678,12 @@ databases/postgresql81-client||2011-04-04|Removed
 graphics/linux_dri-devel|graphics/linux_dri|2011-04-07|Retire: is older than non-devel port
 math/linux-SHA-1_collision_search_graz||2011-04-07|Has expired: Project discontinued
 lang/compaq-cc||2011-04-09|Does not work on a supported platform
+devel/thistest||2011-04-12|Has expired: development has ceased; website disappeared
+emulators/xmamegui||2011-04-12|Has expired: development has ceased; try emulators/qmc2 instead
+games/airrox||2011-04-12|Has expired: development has ceased
+games/bfm||2011-04-12|Has expired: development has ceased; website disappeared
+games/xracer||2011-04-12|Has expired: has not been developed for 10 years
+net-p2p/gift-ares||2011-04-12|Has expired: development has ceased; does not work
+net-p2p/torrent_swapper||2011-04-12|Has expired: development has ceased (last release is of 2006)
+net-p2p/torrentvolve||2011-04-12|Has expired: development has ceased, and last release is beta
+sysutils/gag||2011-04-12|Has expired: no point in having it as a port, can be downloaded from the website and burned

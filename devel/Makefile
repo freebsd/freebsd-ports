@@ -3424,7 +3424,6 @@
     SUBDIR += templ
     SUBDIR += terminality
     SUBDIR += tevent
-    SUBDIR += thistest
     SUBDIR += thrift
     SUBDIR += thunar-vcs-plugin
     SUBDIR += tide
