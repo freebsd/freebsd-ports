@@ -21,6 +21,8 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 MAKE_JOBS_SAFE=	yes
 
 BROKEN=		db2 is deprecated and no longer provided
+DEPRECATED=	db2 was deprecated and port has been broken since 2011-04-12
+EXPIRATION_DATE=	2011-05-21
 
 # Not yet -- openldap used db3, neo used db2 :(
 #		ldap.2:${PORTSDIR}/net/openldap20-client
