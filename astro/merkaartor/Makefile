@@ -7,6 +7,7 @@
 
 PORTNAME=	merkaartor
 PORTVERSION=	0.17.2
+PORTREVISION=	1
 CATEGORIES=	astro
 MASTER_SITES=	http://www.merkaartor.be/attachments/download/253/
 
@@ -38,7 +39,7 @@ OPTIONS=	GEOIMAGE "Enable geotagged images (needs exiv2)" on\
 
 .if !defined(WITHOUT_GEOIMAGE)
 QMAKEFLAGS+=	GEOIMAGE=1
-LIB_DEPENDS+=	exiv2:${PORTSDIR}/graphics/exiv2
+LIB_DEPENDS+=	exiv2.10:${PORTSDIR}/graphics/exiv2
 .endif
 
 .if defined(WITH_GDAL)
