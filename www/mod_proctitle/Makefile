@@ -29,6 +29,10 @@ CFLAGS+=	-I${LOCALBASE}/include/apr-0
 CFLAGS+=	-I${LOCALBASE}/include/apr-1
 .endif
 
+.if ${OSVERSION} >= 900000
+BROKEN=		does not configure on 9.X
+.endif
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/.libs/mod_proctitle.so \
 		${PREFIX}/${APACHEMODDIR}/
