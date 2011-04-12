@@ -1,0 +1,3 @@
+bin/pure-gen
+lib/pure-gen/dump-ast
+@dirrm lib/pure-gen

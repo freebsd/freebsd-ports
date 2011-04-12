@@ -2769,6 +2769,7 @@
     SUBDIR += pty
     SUBDIR += ptypes
     SUBDIR += publib
+    SUBDIR += pure-gen
     SUBDIR += pushmi
     SUBDIR += pwlib
     SUBDIR += py-AddOns
