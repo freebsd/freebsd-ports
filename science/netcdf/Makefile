@@ -20,7 +20,7 @@ CONFLICTS=	hdf-4.* netcdf-4.*
 PORTSCOUT=	limit:^3\.
 
 CONFIGURE_ARGS=	--enable-shared
-CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include -fPIC -DPIC"
+CPPFLAGS+=	-I${LOCALBASE}/include -fPIC -DPIC
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
@@ -37,10 +37,10 @@ CONFIGURE_ARGS+=--enable-docs-install
 CONFIGURE_ARGS+=--disable-docs-install
 .endif
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if defined(WITH_FORTRAN)
-CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS} -DpgiFortran"
+CPPFLAGS+=	-DpgiFortran
 CONFLICTS+=	netcdf-3.*
 MAN3+=		netcdf_f77.3 netcdf_f90.3
 PKGNAMESUFFIX+=	-ftn
@@ -67,4 +67,4 @@ post-patch:
 regression-test: build
 	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} check
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
