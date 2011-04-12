@@ -9,14 +9,11 @@ PORTNAME=	xmagv
 PORTVERSION=	1.11
 PORTREVISION=	2
 CATEGORIES=	graphics
-MASTER_SITES=	ftp://ftp.vector.co.jp/pack/unix/art/graphics/loader/mag/
+MASTER_SITES=	http://ftp.vector.co.jp/pack/unix/art/graphics/loader/mag/
 DISTFILES=	xmagv111.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Viewer for X Window System
-
-DEPRECATED=     Upstream disapear and distfile is no more available
-EXPIRATION_DATE=        2011-05-01
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 GNU_CONFIGURE=	yes
