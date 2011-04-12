@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	rcov
-PORTVERSION=	0.8.1.2.0
+PORTVERSION=	0.9.9
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -18,9 +18,4 @@ USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
 PLIST_FILES=	bin/rcov
 
-.include <bsd.port.pre.mk>
-.if ${RUBY_VER} == 1.9
-BROKEN= does not compile with ruby 1.9
-.endif
-.include <bsd.port.post.mk>
-
+.include <bsd.port.mk>
