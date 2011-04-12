@@ -1,7 +1,11 @@
-***************************************************
+****************************************************
 
-With default config.h mcwm uses urxvt as terminal,
-recompile with MCWM_CONF=/path/to/mcwm/config.h for
-custom configuration.
+With default config.h mcwm uses urxvt as terminal.
 
-***************************************************
+Since 20110412 you can define your own custom config 
+with MCWM_CONF=/path/to/mcwm/config.h or you can use 
+flags for basic configuration. 
+
+See man mcwm(1) for details.
+
+****************************************************
