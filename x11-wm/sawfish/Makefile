@@ -7,43 +7,50 @@
 #
 
 PORTNAME=	sawfish
-PORTVERSION=	1.5.2
-PORTREVISION=	4
+PORTVERSION=	1.8.0
 PORTEPOCH=	2
 CATEGORIES=	x11-wm
-MASTER_SITES=	SF/sawmill/${PORTNAME}/${PORTVERSION}
+MASTER_SITES=	http://download.tuxfamily.org/sawfish/
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Lisp configurable window manager
 
-LIB_DEPENDS=	rep.13:${PORTSDIR}/lang/librep \
-		audiofile.0:${PORTSDIR}/audio/libaudiofile \
-		cairo.2:${PORTSDIR}/graphics/cairo
-BUILD_DEPENDS=	${LOCALBASE}/libexec/rep/${GNUHOST}/gui/gtk-2/gtk.so:${PORTSDIR}/x11-toolkits/rep-gtk2
-RUN_DEPENDS=	${LOCALBASE}/libexec/rep/${GNUHOST}/gui/gtk-2/gtk.so:${PORTSDIR}/x11-toolkits/rep-gtk2
+BUILD_DEPENDS=	rep-gtk2>=0.90:${PORTSDIR}/x11-toolkits/rep-gtk2
+LIB_DEPENDS=	cairo.2:${PORTSDIR}/graphics/cairo \
+		rep.15:${PORTSDIR}/lang/librep
+RUN_DEPENDS=	rep-gtk2>=0.90:${PORTSDIR}/x11-toolkits/rep-gtk2
 
-GNUHOST=	${ARCH}-pc-freebsd${OSREL:C/\..*//}
-PLIST_SUB=	GNUHOST=${GNUHOST} VERSION=${PORTVERSION}
-
+USE_XZ=		yes
 USE_XORG=	ice sm x11 xft xinerama xrandr
-USE_GMAKE=	yes
-USE_GNOME=	pango gtk20 glib20 esound
-USE_BZIP2=	yes
+USE_GNOME=	gnomehack gtk20
 USE_GETTEXT=	yes
+USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-
+CONFIGURE_ENV=	LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--localstatedir=${PREFIX}/share \
 		--datadir=${PREFIX}/share
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
-CONFIGURE_TARGET=	${ARCH}-pc-freebsd${OSREL:C/\..*//}
+CONFIGURE_TARGET=	${GNUHOST}
+INSTALLS_ICONS=	yes
 
+PLIST_SUB=	GNUHOST="${GNUHOST}" VERSION="${PORTVERSION}"
+
+MANCOMPRESSED=	yes
+MAN1=		sawfish.1 sawfish-client.1 sawfish-config.1
 INFO=		sawfish
 
+CPPFLAGS=	-I${LOCALBASE}/include
+LDFLAGS=	-L${LOCALBASE}/lib
+GNUHOST=	${ARCH}-pc-freebsd${OSREL:C/\..*//}
+
 post-patch:
-	@${REINPLACE_CMD} -e 's|prog_name|program_name|g' \
-	${WRKSRC}/src/main.c
-	@${MKDIR} ${WRKSRC}/m4
+	@${REINPLACE_CMD} -e \
+		'/dnsdomainname/d' ${WRKSRC}/build-info
+	@${REINPLACE_CMD} -e \
+		'/KDEDIR/s|^|#|g' ${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e \
+		's|/share/man/|/man/|g' ${WRKSRC}/man/Makefile.in
+	@${REINPLACE_CMD} -e \
+		's|prog_name|program_name|g' ${WRKSRC}/src/main.c
 
 .include <bsd.port.mk>
