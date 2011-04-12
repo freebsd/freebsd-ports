@@ -9,7 +9,8 @@
 PORTNAME=	bcrypt
 PORTVERSION=	0.2
 CATEGORIES=	security python
-MASTER_SITES=	http://www.mindrot.org/files/py-bcrypt/
+MASTER_SITES=	GOOGLE_CODE \
+		http://www.mindrot.org/files/py-bcrypt/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	py-${PORTNAME}-${PORTVERSION}
 
@@ -25,5 +26,7 @@ PLIST_FILES=	%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%
 
 CFLAGS+=	-I${LOCALBASE}/include
 MAKE_ENV=	"LDFLAGS=-L${LOCALBASE}/lib"
+
+PROJECTHOST=	py-bcrypt
 
 .include <bsd.port.mk>
