@@ -6,18 +6,16 @@
 #
 
 PORTNAME=	Chart-Math-Axis
-PORTVERSION=	1.05
-PORTREVISION=	1
+PORTVERSION=	1.06
 CATEGORIES=	math graphics perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	skv@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Implements an algorithm to find good values for chart axis
 
-BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Params/Util.pm:${PORTSDIR}/devel/p5-Params-Util \
-		${SITE_PERL}/${PERL_ARCH}/Clone.pm:${PORTSDIR}/devel/p5-Clone
-RUN_DEPENDS=	${BUILD_DEPENDS}
+BUILD_DEPENDS=	p5-Params-Util>=0.15:${PORTSDIR}/devel/p5-Params-Util
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
