@@ -21,7 +21,6 @@ OPTIONS=	NSFW "Enable adult website support" off
 LICENSE=	GPLv3
 
 CONFIGURE_ARGS=	--enable-broken --enable-examples
-CONFIGURE_ENV=	CPPFLAGS='${CPPFLAGS}'
 CPPFLAGS+=	-I${WRKSRC}/include -I${LOCALBASE}/include
 GNU_CONFIGURE=	yes
 USE_GNOME=	gnomehack pkgconfig
