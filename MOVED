@@ -1687,3 +1687,5 @@ net-p2p/gift-ares||2011-04-12|Has expired: development has ceased; does not work
 net-p2p/torrent_swapper||2011-04-12|Has expired: development has ceased (last release is of 2006)
 net-p2p/torrentvolve||2011-04-12|Has expired: development has ceased, and last release is beta
 sysutils/gag||2011-04-12|Has expired: no point in having it as a port, can be downloaded from the website and burned
+lang/gpc|lang/fpc|2011-04-12|Has expired: development has ceased; use lang/fpc instead
+security/mypasswordsafe|security/gorilla|2011-04-12|Has expired: development has ceased; try security/gorilla instead
