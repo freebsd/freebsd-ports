@@ -10,14 +10,10 @@ PORTNAME=	net-http
 PORTVERSION=	0.3.1
 PORTREVISION=	2
 CATEGORIES=	net scheme
-# mastersite disappeared around September 2002
-MASTER_SITES=	# http://evan.prodromou.san-francisco.ca.us/software/net-http/
+MASTER_SITES=	http://evan.prodromou.name/software/net-http/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A library for doing HTTP client-side programming in Guile
-
-DEPRECATED=     Upstream disapear and distfile is no more available
-EXPIRATION_DATE=        2011-05-01
 
 BUILD_DEPENDS=	guile:${PORTSDIR}/lang/guile
 RUN_DEPENDS=	${BUILD_DEPENDS}
