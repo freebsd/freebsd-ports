@@ -7,7 +7,7 @@
 
 PORTNAME=	rawstudio
 PORTVERSION=	1.2
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	graphics
 MASTER_SITES=	http://rawstudio.org/files/release/
 
@@ -16,7 +16,7 @@ COMMENT=	Rawstudio is an open-source program to read and manipulate RAW images
 
 LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg \
 		lcms.1:${PORTSDIR}/graphics/lcms \
-		exiv2.9:${PORTSDIR}/graphics/exiv2 \
+		exiv2.10:${PORTSDIR}/graphics/exiv2 \
 		dbus-1.3:${PORTSDIR}/devel/dbus
 
 GNU_CONFIGURE=	yes
@@ -24,6 +24,6 @@ USE_GMAKE=	yes
 CONFIGURE_ENV=	CFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 USE_GETTEXT=	yes
-USE_GNOME=	gtk20 libxml2 gconf2
+USE_GNOME=	gtk20 libxml2 gconf2 desktopfileutils
 
 .include <bsd.port.mk>

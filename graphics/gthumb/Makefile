@@ -7,6 +7,7 @@
 
 PORTNAME=	gthumb
 PORTVERSION=	2.12.1
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -45,7 +46,7 @@ OPTIONS=	EXIV2 "Exif support (image metadata)" On \
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_EXIV2)
-LIB_DEPENDS+=	exiv2.9:${PORTSDIR}/graphics/exiv2
+LIB_DEPENDS+=	exiv2.10:${PORTSDIR}/graphics/exiv2
 CONFIGURE_ARGS+=--enable-exiv2
 PLIST_SUB+=	EXIV2=""
 .else

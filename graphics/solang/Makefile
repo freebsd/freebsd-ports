@@ -19,7 +19,7 @@ MAINTAINER=	ashish@FreeBSD.org
 COMMENT=	A photo manager for GNOME
 
 LIB_DEPENDS=	gegl-0.1.105:${PORTSDIR}/graphics/gegl \
-		exiv2.9:${PORTSDIR}/graphics/exiv2 \
+		exiv2.10:${PORTSDIR}/graphics/exiv2 \
 		flickcurl.0:${PORTSDIR}/www/flickcurl \
 		gtkimageview.0:${PORTSDIR}/x11-toolkits/gtkimageview \
 		webkit-1.0.13:${PORTSDIR}/www/webkit-gtk2 \
@@ -29,7 +29,7 @@ LIB_DEPENDS=	gegl-0.1.105:${PORTSDIR}/graphics/gegl \
 		gdamm-4.0.12:${PORTSDIR}/databases/libgdamm \
 		gphoto2.2:${PORTSDIR}/graphics/libgphoto2
 
-BROKEN=		bad plist
+BROKEN=		bad plist + do not build with latest exiv2
 
 USE_AUTOTOOLS=	autoconf
 USE_GMAKE=	yes

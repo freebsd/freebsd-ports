@@ -7,7 +7,7 @@
 
 PORTNAME=	ufraw
 PORTVERSION=	0.17
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics gnome
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
@@ -40,7 +40,7 @@ OPTIONS=	CONTRAST "Enable contrast setting"		on	\
 .include <bsd.port.pre.mk>
 
 .if !defined(WITHOUT_EXIV2)
-LIB_DEPENDS+=	exiv2:${PORTSDIR}/graphics/exiv2
+LIB_DEPENDS+=	exiv2.10:${PORTSDIR}/graphics/exiv2
 .else
 PC_FALSE+=	exiv2
 .endif
