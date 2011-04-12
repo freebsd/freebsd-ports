@@ -99,6 +99,7 @@
     SUBDIR += p5-SMS-Send-DeviceGsm
     SUBDIR += p5-SMS-Send-TW-HiAir
     SUBDIR += p5-SMS-Send-TW-PChome
+    SUBDIR += p5-SMS-Send-TW-Qma
     SUBDIR += p5-SMS-Send-TW-ShareSMS
     SUBDIR += p5-SMS-Send-TW-Socket2Air
     SUBDIR += p5-SMS-Send-TW-chtsns
