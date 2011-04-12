@@ -6,12 +6,15 @@
 #
 
 PORTNAME=	vimperator
-PORTVERSION=	2.3.1
+PORTVERSION=	3.0
 DISTVERSIONSUFFIX=	-fx
 CATEGORIES=	www
 
 MAINTAINER=	simon@olofsson.de
 COMMENT=	Vim look and feel for Firefox
+
+LICENSE=MIT
+LICENSE_FILE=${WRKSRC}/License.txt
 
 XPI_ID=		vimperator@mozdev.org
 XPI_NUM=	4891
