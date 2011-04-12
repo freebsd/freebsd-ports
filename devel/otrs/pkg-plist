@@ -876,6 +876,7 @@ otrs/Kernel/Language/et.pm
 otrs/Kernel/Language/fa.pm
 otrs/Kernel/Language/fi.pm
 otrs/Kernel/Language/fr.pm
+otrs/Kernel/Language/hi.pm
 otrs/Kernel/Language/hu.pm
 otrs/Kernel/Language/it.pm
 otrs/Kernel/Language/ja.pm
