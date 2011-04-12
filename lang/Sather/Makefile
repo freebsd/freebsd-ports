@@ -45,6 +45,10 @@ PORTDOCS=	*
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} >= 900000
+BROKEN=		segfaults during build on 9.X
+.endif
+
 post-extract:
 #
 #	Precompiled binaries are for Linux only
