@@ -20,6 +20,8 @@ BUILD_DEPENDS=	${LOCALBASE}/include/tclExtend.h:${PORTSDIR}/lang/tclX
 RUN_DEPENDS=	${BUILD_DEPENDS}
 MAKE_JOBS_SAFE=	yes
 
+BROKEN=		db2 is deprecated and no longer provided
+
 # Not yet -- openldap used db3, neo used db2 :(
 #		ldap.2:${PORTSDIR}/net/openldap20-client
 
