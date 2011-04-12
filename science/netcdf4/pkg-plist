@@ -40,11 +40,11 @@ include/netcdfcpp.h
 lib/libnetcdf.a
 lib/libnetcdf.la
 lib/libnetcdf.so
-lib/libnetcdf.so.6
+lib/libnetcdf.so.7
 lib/libnetcdf_c++.a
 lib/libnetcdf_c++.la
 lib/libnetcdf_c++.so
-lib/libnetcdf_c++.so.5
+lib/libnetcdf_c++.so.4
 lib/libnetcdf_c++4.a
 lib/libnetcdf_c++4.la
 lib/libnetcdf_c++4.so
