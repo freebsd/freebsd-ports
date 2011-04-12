@@ -1,0 +1,12 @@
+--- Process.xs.orig	2011-04-11 22:08:32.577420432 -0400
++++ Process.xs	2011-04-11 22:10:26.129419839 -0400
+@@ -287,7 +287,9 @@
+     hv_store(h, "advlock",      7, newSViv(NO_FREEBSD_4x(P_FLAG(P_ADVLOCK))), 0);
+     hv_store(h, "controlt",     8, newSViv(NO_FREEBSD_4x(P_FLAG(P_CONTROLT))), 0);
+     hv_store(h, "kthread",      7, newSViv(NO_FREEBSD_4x(P_FLAG(P_KTHREAD))), 0);
++#if __FreeBSD_version < 802501
+     hv_store(h, "noload",       6, newSViv(NO_FREEBSD_4x(P_FLAG(P_NOLOAD))), 0);
++#endif
+     hv_store(h, "ppwait",       6, newSViv(NO_FREEBSD_4x(P_FLAG(P_PPWAIT))), 0);
+     hv_store(h, "profil",       6, newSViv(NO_FREEBSD_4x(P_FLAG(P_PROFIL))), 0);
+     hv_store(h, "stopprof",     8, newSViv(NO_FREEBSD_4x(P_FLAG(P_STOPPROF))), 0);
