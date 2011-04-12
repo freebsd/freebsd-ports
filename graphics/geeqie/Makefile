@@ -7,7 +7,7 @@
 
 PORTNAME=	geeqie
 PORTVERSION=	1.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	graphics
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
@@ -16,7 +16,7 @@ COMMENT=	Lightweight image viewer forked from GQview
 
 LIB_DEPENDS=	png.6:${PORTSDIR}/graphics/png
 
-USE_GNOME=	gtk20
+USE_GNOME=	gtk20 desktopfileutils
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 CONFIGURE_ARGS=	--docdir="${DOCSDIR}" \
@@ -40,7 +40,7 @@ OPTIONS=	EXIV2 "Metadata editing" on \
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_EXIV2)
-LIB_DEPENDS+=	exiv2.9:${PORTSDIR}/graphics/exiv2
+LIB_DEPENDS+=	exiv2.10:${PORTSDIR}/graphics/exiv2
 CONFIGURE_ARGS+=--enable-exiv2
 .else
 CONFIGURE_ARGS+=--disable-exiv2

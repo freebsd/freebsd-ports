@@ -7,6 +7,7 @@
 
 PORTNAME=	gexiv2
 PORTVERSION=	0.2.1
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://yorba.org/download/gexiv2/${PORTVERSION:R}/
 DISTNAME=	libgexiv2-${PORTVERSION}
@@ -17,7 +18,7 @@ COMMENT=	GObject-based wrapper around the Exiv2 library
 BUILD_DEPENDS=	libtool:${PORTSDIR}/devel/libtool \
 		gm4:${PORTSDIR}/devel/m4 \
 		pkg-config:${PORTSDIR}/devel/pkg-config
-LIB_DEPENDS=	exiv2:${PORTSDIR}/graphics/exiv2
+LIB_DEPENDS=	exiv2.10:${PORTSDIR}/graphics/exiv2
 
 USE_BZIP2=	yes
 USE_GNOME=	glib20

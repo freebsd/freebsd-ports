@@ -7,6 +7,7 @@
 
 PORTNAME=	darktable
 PORTVERSION=	0.7.1
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/0.7
 
@@ -15,7 +16,7 @@ COMMENT=	A virtual lighttable and darkroom for photographers
 
 LICENSE=	GPLv3
 
-LIB_DEPENDS=	exiv2.9:${PORTSDIR}/graphics/exiv2 \
+LIB_DEPENDS=	exiv2.10:${PORTSDIR}/graphics/exiv2 \
 		IlmImf.6:${PORTSDIR}/graphics/OpenEXR \
 		gphoto2.2:${PORTSDIR}/graphics/libgphoto2 \
 		lensfun.2:${PORTSDIR}/graphics/lensfun \
