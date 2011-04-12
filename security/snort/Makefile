@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	snort
-PORTVERSION=	2.9.0.4
-PORTREVISION=	2
+PORTVERSION=	2.9.0.5
 CATEGORIES=	security
 MASTER_SITES=	SF/snort/snort
 
@@ -22,7 +21,7 @@ BUILD_DEPENDS=	daq>=0.5_1:${PORTSDIR}/net/daq \
 RUN_DEPENDS=	daq>=0.5_1:${PORTSDIR}/net/daq \
 		${LOCALBASE}/lib/libnet11/libnet.a:${PORTSDIR}/net/libnet
 
-OPTIONS=	IPV6 "Enable IPv6 support" off \
+OPTIONS=	IPV6 "Enable IPv6 support" on \
 		MPLS "Enable MPLS support" on \
 		GRE "Enable GRE support" on \
 		TARGETBASED "Enable Targetbased support" off \
