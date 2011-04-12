@@ -6,6 +6,6 @@
 	  web interface please edit the
 	  configuration file at:
 
-	   %%PREFIX%%/etc/pks/pksd.conf
+	   %%PREFIX%%/etc/pksd.conf
 
 	##################################

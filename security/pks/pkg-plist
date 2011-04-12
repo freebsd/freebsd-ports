@@ -6,6 +6,8 @@ sbin/pksd
 bin/pksdctl
 etc/pksd.conf.sample
 %%DATADIR%%/mail_intro
+%%DATADIR%%/pks-commands.html
+%%DATADIR%%/pks-commands.php
 %%PORTDOCS%%%%DOCSDIR%%/mail_intro
 %%PORTDOCS%%%%DOCSDIR%%/pks_help.en
 %%PORTDOCS%%%%DOCSDIR%%/pks_help.es
