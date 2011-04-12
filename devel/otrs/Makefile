@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	otrs
-PORTVERSION=	3.0.6
-PORTREVISION=	1
+PORTVERSION=	3.0.7
 CATEGORIES=	devel
 MASTER_SITES=	http://ftp.otrs.org/pub/otrs/ \
 		ftp://ftp.samurai.com/pub/otrs/ \
@@ -38,7 +37,7 @@ BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Date/Pcalc.pm:${PORTSDIR}/devel/p5-Date
 		p5-Apache-Reload>=0:${PORTSDIR}/www/p5-Apache-Reload \
 		${SITE_PERL}/Text/Diff.pm:${PORTSDIR}/textproc/p5-Text-Diff \
 		${SITE_PERL}/XML/FeedPP.pm:${PORTSDIR}/textproc/p5-XML-FeedPP
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 OPTIONS=	MYSQL "MySQL database support" on \
 		PGSQL "PostgreSQL database support" off \
