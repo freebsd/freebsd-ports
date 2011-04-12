@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	dvdstyler
-DISTVERSION=	1.8.2.1
-PORTREVISION=	1
+DISTVERSION=	1.8.3
 PORTEPOCH=	2
 CATEGORIES=	multimedia
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${DISTVERSION}
@@ -15,6 +14,8 @@ DISTNAME=	DVDStyler-${DISTVERSION}
 
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	WXGTK2 front end to dvd recoding and authoring programs
+
+LICENSE=	GPLv2
 
 BUILD_DEPENDS=	dvdauthor:${PORTSDIR}/multimedia/dvdauthor \
 		mplex:${PORTSDIR}/multimedia/mjpegtools \

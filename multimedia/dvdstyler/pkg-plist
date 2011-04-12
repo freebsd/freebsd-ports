@@ -57,6 +57,7 @@ share/applications/dvdstyler.desktop
 %%DATADIR%%/data/subtitles.rgb
 %%DATADIR%%/docs/help_de.zip
 %%DATADIR%%/docs/help_en.zip
+%%DATADIR%%/docs/help_fr.zip
 %%DATADIR%%/docs/help_ja.zip
 %%DATADIR%%/docs/help_nb.zip
 %%DATADIR%%/docs/help_pl.zip
