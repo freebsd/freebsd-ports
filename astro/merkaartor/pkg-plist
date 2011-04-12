@@ -32,7 +32,7 @@ share/icons/hicolor/48x48/apps/merkaartor.png
 %%NLS%%%%DATADIR%%/translations/merkaartor_hr.qm
 %%NLS%%%%DATADIR%%/translations/merkaartor_hu.qm
 %%DATADIR%%/world_background.osb
-@dirrm %%DATADIR%%/translations
+%%NLS%%@dirrm %%DATADIR%%/translations
 @dirrm %%DATADIR%%
 @dirrmtry share/icons/hicolor/48x48/apps
 @dirrmtry share/icons/hicolor/48x48

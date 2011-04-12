@@ -7,6 +7,7 @@
 
 PORTNAME=	luminance
 DISTVERSION=	2.0.1-1
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	SF/qtpfsgui/luminance/${DISTVERSION:S/-1//}/
 DISTNAME=	${PORTNAME}-v${DISTVERSION}
@@ -15,7 +16,7 @@ MAINTAINER=	goffredo@gmail.com
 COMMENT=	A graphical user interface that provides a workflow for HDR imaging
 
 BUILD_DEPENDS=	${LOCALBASE}/include/fftw3.h:${PORTSDIR}/math/fftw3
-LIB_DEPENDS=	exiv2.9:${PORTSDIR}/graphics/exiv2 \
+LIB_DEPENDS=	exiv2.10:${PORTSDIR}/graphics/exiv2 \
 		jpeg.11:${PORTSDIR}/graphics/jpeg \
 		IlmImf.6:${PORTSDIR}/graphics/OpenEXR \
 		tiff.4:${PORTSDIR}/graphics/tiff \

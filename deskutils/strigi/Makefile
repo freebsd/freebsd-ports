@@ -6,7 +6,7 @@
 
 PORTNAME=	strigi
 PORTVERSION=	0.7.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	deskutils
 MASTER_SITES=	http://www.vandenoever.info/software/strigi/ \
 		SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
@@ -16,7 +16,7 @@ COMMENT=	Desktop searching program
 
 LIB_DEPENDS=	clucene.0:${PORTSDIR}/textproc/clucene \
 		dbus-1:${PORTSDIR}/devel/dbus \
-		exiv2:${PORTSDIR}/graphics/exiv2
+		exiv2.10:${PORTSDIR}/graphics/exiv2
 
 USE_QT_VER=	4
 QT_COMPONENTS=	corelib gui dbus moc_build uic_build qmake_build rcc_build
