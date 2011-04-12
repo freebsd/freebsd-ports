@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	twitter-stream
-PORTVERSION=	0.1.12
+PORTVERSION=	0.1.13
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 
@@ -14,7 +14,7 @@ MAINTAINER=	tota@FreeBSD.org
 COMMENT=	Twitter realtime API client
 
 RUN_DEPENDS=	rubygem-eventmachine>=0.12.8:${PORTSDIR}/devel/rubygem-eventmachine \
-		rubygem-roauth>=0.0.2:${PORTSDIR}/security/rubygem-roauth
+		rubygem-simple_oauth>=0.1.4:${PORTSDIR}/net/rubygem-simple_oauth
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
