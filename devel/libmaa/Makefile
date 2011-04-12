@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libmaa
-PORTVERSION=	1.2.0
+PORTVERSION=	1.3.0
 PORTEPOCH=	1
 CATEGORIES=	devel
 MASTER_SITES=	SF/dict/${PORTNAME}/${PORTNAME}-${PORTVERSION}
@@ -14,24 +14,28 @@ MASTER_SITES=	SF/dict/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Provides a few data structures and helpful functions
 
-GNU_CONFIGURE=	yes
+ALL_TARGET=	lib
 CONFIGURE_ARGS=	--without-local-zlib --with-cflags="${CFLAGS}" \
 		--with-etcdir=${PREFIX}/etc
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
-USE_GMAKE=	yes
+CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
+GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	libtool
+USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 
-ALL_TARGET=	lib
+DOCS=		COPYING.LIB README doc/libmaa.600dpi.ps
+PLIST_FILES=	include/maa.h \
+		lib/libmaa.la \
+		lib/libmaa.so.3 \
+		lib/libmaa.so \
+		lib/libmaa.a
+PORTDOCS=	${DOCS:T}
 
 post-install:
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-.for file in COPYING.LIB README
-	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
-.endfor
-	${INSTALL_DATA} ${WRKSRC}/doc/libmaa.600dpi.ps ${DOCSDIR}
+	@${MKDIR} ${DOCSDIR}/
+	@cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${DOCSDIR}/
 .endif
 
 .include <bsd.port.mk>
