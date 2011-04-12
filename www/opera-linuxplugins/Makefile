@@ -28,10 +28,10 @@ DISTNAME=	${PORTNAME}-${OPERA_VER}-${OPERA_BUILD}.i386.linux
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Linux plugin support for the native Opera browser
 
-RUN_DEPENDS=	${PREFIX}/lib/opera/operapluginwrapper:${PORTSDIR}/www/opera
+RUN_DEPENDS=	${PREFIX}/lib/opera/operapluginwrapper:${PORTSDIR}/${PKGCATEGORY}/opera
 
-OPERA_VER=	11.01
-OPERA_BUILD=	1190
+OPERA_VER=	11.10
+OPERA_BUILD=	2092
 MASTER_SITES_VER_PATH=	linux/${OPERA_VER:S/.//}/
 
 USE_XZ=		yes
