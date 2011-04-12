@@ -6,17 +6,19 @@
 #
 
 PORTNAME=	vdk
-PORTVERSION=	2.4.3
-PORTREVISION=	2
+PORTVERSION=	2.5.1
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	SF/${PORTNAME}lib/VDK%20for%20both%20Linux%20and%20Windows%20%28this%20is%20the%20new%20version%29/VDKLIB%20%28C%2B%2B%20wrapper%20for%20GTK%2B%29
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C++ wrapper for GTK+ toolkit
 
+LICENSE=	LGPL20
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 USE_GNOME=	gnomehack gtk20
 USE_AUTOTOOLS=	libtool
-CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
+CONFIGURE_ENV=	LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--enable-opt=no --enable-doc-html=no --enable-testvdk=no
 USE_LDCONFIG=	yes
 
@@ -35,11 +37,7 @@ post-patch:
 .endfor
 .for file in FileDialog.h gtksourcebuffer.h gtksourcetag.h
 	@${REINPLACE_CMD} -e \
-		's|<regex\.h>|<gnu/regex.h>|g' ${WRKSRC}/include/vdk/${file}
+		's|<.*regex\.h>|<gnu/regex.h>|g' ${WRKSRC}/include/vdk/${file}
 .endfor
-	@${REINPLACE_CMD} -e \
-		's|VDKComboEntry::||g' ${WRKSRC}/include/vdk/vdkcomboentry.h
-	@${REINPLACE_CMD} -e \
-		's|VDKFileChooser::||g' ${WRKSRC}/include/vdk/vdkfilechooser.h
 
 .include <bsd.port.post.mk>

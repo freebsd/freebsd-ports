@@ -93,12 +93,13 @@ include/vdk-2/vdk/vdktextview.h
 include/vdk-2/vdk/vdkthread.h
 include/vdk-2/vdk/vdktreeview.h
 include/vdk-2/vdk/vdktypes.h
+include/vdk-2/vdk/vdkustring.h
 include/vdk-2/vdk/vdkutils.h
 include/vdk-2/vdk/widcontain.h
 lib/libvdk-2.a
 lib/libvdk-2.la
 lib/libvdk-2.so
-lib/libvdk-2.so.6
+lib/libvdk-2.so.7
 libdata/pkgconfig/vdk-2.x.pc
 share/aclocal/vdk-2.m4
 @dirrm include/vdk-2/vdk
