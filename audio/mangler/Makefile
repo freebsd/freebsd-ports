@@ -7,14 +7,14 @@
 
 PORTNAME=	mangler
 PORTVERSION=	1.2.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	http://www.mangler.org/downloads/
 
 MAINTAINER=	janik@hikarihq.com
 COMMENT=	A Ventrilo VOIP combatible client
 
-LIB_DEPENDS=	celt.0:${PORTSDIR}/audio/celt \
+LIB_DEPENDS=	celt0.2:${PORTSDIR}/audio/celt \
 		speex.1:${PORTSDIR}/audio/speex \
 		dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib \
 		gtkmm-2.4.1:${PORTSDIR}/x11-toolkits/gtkmm24 \
