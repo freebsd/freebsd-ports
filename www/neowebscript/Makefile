@@ -16,6 +16,9 @@ COMMENT=	Embeds a TCL8 interpreter in the Apache server
 
 LIB_DEPENDS=	neo82:${PORTSDIR}/devel/tcl-neo
 
+DEPRECATED=	depends on deprecated devel/tcl-neo
+EXPIRATION_DATE=	2011-05-21
+
 USE_APACHE=	1.3
 USE_TCL=	84+
 MAKEFILE=	${FILESDIR}/Makefile.bsd
