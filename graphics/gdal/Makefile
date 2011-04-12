@@ -7,6 +7,7 @@
 
 PORTNAME=	gdal
 PORTVERSION=	1.8.0
+PORTREVISION=	1
 CATEGORIES=	graphics geography
 MASTER_SITES=	http://download.osgeo.org/gdal/ \
 		ftp://ftp.remotesensing.org/pub/gdal/ \
@@ -145,7 +146,7 @@ CONFIGURE_ARGS+=	--with-mysql=no
 
 .if defined(WITH_NETCDF)
 .if (${NETCDF_VER} == "4")
-LIB_DEPENDS+=		netcdf.6:${PORTSDIR}/science/netcdf4
+LIB_DEPENDS+=		netcdf.7:${PORTSDIR}/science/netcdf4
 .else
 LIB_DEPENDS+=		netcdf.4:${PORTSDIR}/science/netcdf
 .endif
