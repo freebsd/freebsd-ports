@@ -6,18 +6,16 @@
 #
 
 PORTNAME=	davmail
-PORTVERSION=	3.9.0
+PORTVERSION=	3.9.1
 CATEGORIES=	mail java
 MASTER_SITES=	SF/davmail/davmail/${PORTVERSION}
-DISTNAME=	${PORTNAME}-src-${PORTVERSION}-1630
+DISTNAME=	${PORTNAME}-src-${PORTVERSION}-1646
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	john.c.prather@gmail.com
 COMMENT=	POP/IMAP/SMTP/Caldav/Carddav/LDAP Exchange Gateway
 
 RUN_DEPENDS=	swt>=3.5:${PORTSDIR}/x11-toolkits/swt
-
-BROKEN=		fails to package
 
 USE_ANT=	yes
 USE_JAVA=	yes
@@ -28,8 +26,7 @@ DATADIR=	${JAVASHAREDIR}/${PORTNAME}
 USE_RC_SUBR=	davmail
 SUB_FILES=	davmail.sh
 SUB_LIST=	JAVASHAREDIR=${JAVASHAREDIR} \
-		JAVAJARDIR=${JAVAJARDIR} \
-		PORTNAME=${PORTNAME}
+		JAVAJARDIR=${JAVAJARDIR}
 
 do-install:
 	@cd ${WRKSRC}/dist && ${FIND} . -type d \
@@ -43,8 +40,8 @@ do-install:
 		-not -name "*.war" \
 		-not -name "*.rpm" \
 		-exec ${INSTALL_DATA} \{} ${DATADIR}/\{} \;
-	@@${INSTALL_SCRIPT} ${WRKDIR}/davmail.sh ${PREFIX}/bin/davmail
-	@@${INSTALL_DATA} ${FILESDIR}/davmail.properties.sample \
+	@${INSTALL_SCRIPT} ${WRKDIR}/davmail.sh ${PREFIX}/bin/davmail
+	@${INSTALL_DATA} ${FILESDIR}/davmail.properties.sample \
 		${PREFIX}/etc
 
 post-install:
