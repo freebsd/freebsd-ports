@@ -564,6 +564,7 @@
     SUBDIR += openipmi
     SUBDIR += openupsd
     SUBDIR += p5-BSD-Jail-Object
+    SUBDIR += p5-BSD-Process
     SUBDIR += p5-BSD-Sysctl
     SUBDIR += p5-Brackup
     SUBDIR += p5-Dir-Purge
