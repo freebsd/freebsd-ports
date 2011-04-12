@@ -6,34 +6,33 @@
 #
 
 PORTNAME=	cherokee
-PORTVERSION=	1.0.19
-PORTREVISION=	1
+PORTVERSION=	1.2.2
 CATEGORIES=	www
-MASTER_SITES=	http://www.cherokee-project.com/download/1.0/${PORTVERSION}/ \
+MASTER_SITES=	http://www.cherokee-project.com/download/1.2/${PORTVERSION}/ \
 		http://cherokee.osuosl.org/1.0/${PORTVERSION}/ \
-		http://mirror.its.uidaho.edu/pub/cherokee/1.0/\${PORTVERSION}/ \
-		http://www.gtlib.gatech.edu/pub/cherokee/1.0/\${PORTVERSION}/ \
-		ftp://mirrors.secution.com/cherokee/1.0/${PORTVERSION}/ \
-		ftp://ftp.easynet.be/cherokee/1.0/${PORTVERSION}/ \
-		http://ftp.heanet.ie/mirrors/cherokee/1.0/${PORTVERSION}/ \
-		http://www.ftp.ne.jp/infosystems/cherokee/1.0/${PORTVERSION}/ \
-		http://www.ring.gr.jp/archives/net/cherokee/1.0/${PORTVERSION}/ \
-		http://ftp.nluug.nl/pub/internet/cherokee/1.0/${PORTVERSION}/ \
-		http://ftp.surfnet.nl/pub/internet/cherokee/1.0/${PORTVERSION}/ \
-		http://mirror.is.co.za/mirrors/cherokee/1.0/${PORTVERSION}/ \
-		http://mirror.aarnet.edu.au/pub/cherokee/1.0/\${PORTVERSION}/ \
-		http://ftp.ntua.gr/pub/www/cherokee/1.0/\${PORTVERSION}/ \
-		http://ftp.cc.uoc.gr/mirrors/cherokee/1.0/\${PORTVERSION}/ \
-		http://cherokee.mirror.garr.it/mirrors/cherokee/1.0/\${PORTVERSION}/ \
-		http://ftp.yz.yamagata-u.ac.jp/pub/network/cherokee/1.0/\${PORTVERSION}/ \
-		http://ftp.icm.edu.pl/packages/cherokee/1.0/\${PORTVERSION}/ \
-		ftp://download.srv.ro/pub/cherokee/1.0/\${PORTVERSION}/ \
-		http://mirror.yandex.ru/mirrors/cherokee-project.com/1.0/\${PORTVERSION}/ \
-		http://cherokee.hyperial.com/1.0/\${PORTVERSION}/ \
-		http://cherokee.labs.itb.ac.id/1.0/\${PORTVERSION}/ \
-		http://mirror.cpsc.ucalgary.ca/mirror/cherokee/1.0/\${PORTVERSION}/ \
-		http://www.feel3.de/mirrors/cherokee/1.0/\${PORTVERSION}/ \
-		http://cherokee.pubcrawler.com/1.0/\${PORTVERSION}/
+		http://mirror.its.uidaho.edu/pub/cherokee/1.2/\${PORTVERSION}/ \
+		http://www.gtlib.gatech.edu/pub/cherokee/1.2/\${PORTVERSION}/ \
+		ftp://mirrors.secution.com/cherokee/1.2/${PORTVERSION}/ \
+		ftp://ftp.easynet.be/cherokee/1.2/${PORTVERSION}/ \
+		http://ftp.heanet.ie/mirrors/cherokee/1.2/${PORTVERSION}/ \
+		http://www.ftp.ne.jp/infosystems/cherokee/1.2/${PORTVERSION}/ \
+		http://www.ring.gr.jp/archives/net/cherokee/1.2/${PORTVERSION}/ \
+		http://ftp.nluug.nl/pub/internet/cherokee/1.2/${PORTVERSION}/ \
+		http://ftp.surfnet.nl/pub/internet/cherokee/1.2/${PORTVERSION}/ \
+		http://mirror.is.co.za/mirrors/cherokee/1.2/${PORTVERSION}/ \
+		http://mirror.aarnet.edu.au/pub/cherokee/1.2/\${PORTVERSION}/ \
+		http://ftp.ntua.gr/pub/www/cherokee/1.2/\${PORTVERSION}/ \
+		http://ftp.cc.uoc.gr/mirrors/cherokee/1.2/\${PORTVERSION}/ \
+		http://cherokee.mirror.garr.it/mirrors/cherokee/1.2/\${PORTVERSION}/ \
+		http://ftp.yz.yamagata-u.ac.jp/pub/network/cherokee/1.2/\${PORTVERSION}/ \
+		http://ftp.icm.edu.pl/packages/cherokee/1.2/\${PORTVERSION}/ \
+		ftp://download.srv.ro/pub/cherokee/1.2/\${PORTVERSION}/ \
+		http://mirror.yandex.ru/mirrors/cherokee-project.com/1.2/\${PORTVERSION}/ \
+		http://cherokee.hyperial.com/1.2/\${PORTVERSION}/ \
+		http://cherokee.labs.itb.ac.id/1.2/\${PORTVERSION}/ \
+		http://mirror.cpsc.ucalgary.ca/mirror/cherokee/1.2/\${PORTVERSION}/ \
+		http://www.feel3.de/mirrors/cherokee/1.2/\${PORTVERSION}/ \
+		http://cherokee.pubcrawler.com/1.2/\${PORTVERSION}/
 
 # Disabled mirrors
 # due to 404
