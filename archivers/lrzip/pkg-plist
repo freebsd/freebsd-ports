@@ -1,0 +1,27 @@
+@comment $FreeBSD$
+%%DOCSDIR%%/AUTHORS
+%%DOCSDIR%%/BUGS
+%%DOCSDIR%%/COPYING
+%%DOCSDIR%%/ChangeLog
+%%DOCSDIR%%/README
+%%DOCSDIR%%/README-NOT-BACKWARD-COMPATIBLE
+%%DOCSDIR%%/README.Assembler
+%%DOCSDIR%%/README.benchmarks
+%%DOCSDIR%%/README.lzo_compresses.test.txt
+%%DOCSDIR%%/TODO
+%%DOCSDIR%%/WHATS-NEW
+%%DOCSDIR%%/lrzip.conf.example
+%%DOCSDIR%%/lzma/7zC.txt
+%%DOCSDIR%%/lzma/7zFormat.txt
+%%DOCSDIR%%/lzma/Methods.txt
+%%DOCSDIR%%/lzma/README
+%%DOCSDIR%%/lzma/README-Alloc
+%%DOCSDIR%%/lzma/history.txt
+%%DOCSDIR%%/lzma/lzma.txt
+%%DOCSDIR%%/magic.header.txt
+bin/lrunzip
+bin/lrzip
+bin/lrztar
+bin/lrzuntar
+@dirrm %%DOCSDIR%%/lzma
+@dirrm %%DOCSDIR%%
