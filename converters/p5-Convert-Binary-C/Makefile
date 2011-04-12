@@ -6,13 +6,16 @@
 #
 
 PORTNAME=	Convert-Binary-C
-PORTVERSION=	0.74
+PORTVERSION=	0.76
 CATEGORIES=	converters perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Binary Data Conversion using C Types
+
+LICENSE_COMB=	dual
+LICENSE=	ART20 GPLv1
 
 MAKE_JOBS_UNSAFE=	yes
 
