@@ -6,32 +6,28 @@
 #    $MCom: ports/x11-toolkits/rep-gtk2/Makefile,v 1.8 2006/07/18 16:50:28 ahze Exp $
 
 PORTNAME=	rep-gtk2
-PORTVERSION=	0.90.0
-PORTREVISION=	3
+PORTVERSION=	0.90.5
 PORTEPOCH=	1
 CATEGORIES=	x11-toolkits
-MASTER_SITES=	SF/rep-gtk/rep-gtk/${PORTVERSION}
+MASTER_SITES=	http://download.tuxfamily.org/librep/rep-gtk/
 DISTNAME=	rep-gtk-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GTK+-2 binding for rep Lisp interpreter
 
-LIB_DEPENDS=	rep.13:${PORTSDIR}/lang/librep
+LIB_DEPENDS=	rep.15:${PORTSDIR}/lang/librep
 
-PLIST_SUB=	GNUHOST=${ARCH}-pc-freebsd${OSREL:C/\..*//}
-
+USE_XZ=		yes
+USE_GNOME=	gnomehack gtk20
 USE_GMAKE=	yes
-USE_BZIP2=	yes
-USE_GNOME=	gtk20
-GNU_CONFIGURE=	yes
-USE_AUTOTOOLS=	autoconf:env automake:env libtool:env
-CONFIGURE_SCRIPT=	autogen.sh
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib" \
+USE_AUTOTOOLS=	libtool
+CONFIGURE_ENV=	LDFLAGS="${LDFLAGS}"
+CONFIGURE_TARGET=	${GNUHOST}
 
-CONFIGURE_TARGET=	${ARCH}-pc-freebsd${OSREL:C/\..*//}
+PLIST_SUB=	GNUHOST="${GNUHOST}"
 
-pre-configure:
-	@${MKDIR} ${WRKSRC}/m4
+CPPFLAGS=	-I${LOCALBASE}/include
+LDFLAGS=	-L${LOCALBASE}/lib
+GNUHOST=	${ARCH}-pc-freebsd${OSREL:C/\..*//}
 
 .include <bsd.port.mk>
