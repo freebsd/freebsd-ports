@@ -15,14 +15,6 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	skv@FreeBSD.org
 COMMENT=	Generic Apache Request Library
 
-USE_APACHE=	13
-
-.include <bsd.port.pre.mk>
-
-.if ${APACHE_VERSION} > 13 || ${APACHE_PORT} != "www/apache13"
-IGNORE=	build only with apache13
-.endif
-
 .if defined(WITH_MODPERL2)
 IGNORE=		this port does not support mod_perl2
 .else
@@ -32,6 +24,13 @@ BUILD_DEPENDS=	${RUN_DEPENDS} \
 .endif
 
 PERL_CONFIGURE=	yes
+USE_APACHE=	13
+
+.include <bsd.port.pre.mk>
+
+.if ${APACHE_VERSION} > 13 || ${APACHE_PORT} != "www/apache13"
+IGNORE=	build only with apache13
+.endif
 
 MAN3=		Apache::Cookie.3 Apache::Request.3 Apache::libapreq.3 \
 		libapreq.3
