@@ -60,7 +60,6 @@ share/icons/hicolor/scalable/mimetypes/linux-opera-widget.svg
 %%DATADIR%%/defaults/bookmarks.adr
 %%DATADIR%%/defaults/feedreaders.ini
 %%DATADIR%%/defaults/filehandler.ini
-%%DATADIR%%/defaults/font.ini
 %%DATADIR%%/defaults/license.txt
 %%DATADIR%%/defaults/mailproviders.xml
 %%DATADIR%%/defaults/plugin-ignore.ini
@@ -69,6 +68,7 @@ share/icons/hicolor/scalable/mimetypes/linux-opera-widget.svg
 %%DATADIR%%/defaults/search.ini
 %%DATADIR%%/defaults/standard_speeddial.ini
 %%DATADIR%%/defaults/standard_trusted_repositories.ini
+%%DATADIR%%/defaults/tips_metadata.ini
 %%DATADIR%%/defaults/webmailproviders.ini
 %%DATADIR%%/defaults/xmlentities.ini
 %%DATADIR%%/encoding.bin
@@ -80,8 +80,12 @@ share/icons/hicolor/scalable/mimetypes/linux-opera-widget.svg
 %%DATADIR%%/extra/svg-sabd.dat
 %%DATADIR%%/extra/svg-se.dat
 %%DATADIR%%/extra/svg-sebd.dat
+%%DATADIR%%/files.sig
+%%DATADIR%%/files_old.sig
 %%DATADIR%%/html40_entities.dtd
 %%DATADIR%%/lngcode.txt
+%%DATADIR%%/locale/af/af.lng
+%%DATADIR%%/locale/az/az.lng
 %%DATADIR%%/locale/be/be.lng
 %%DATADIR%%/locale/be/bookmarks.adr
 %%DATADIR%%/locale/be/search.ini
@@ -123,13 +127,17 @@ share/icons/hicolor/scalable/mimetypes/linux-opera-widget.svg
 %%DATADIR%%/locale/fr/search.ini
 %%DATADIR%%/locale/fr/standard_speeddial.ini
 %%DATADIR%%/locale/fy/fy.lng
+%%DATADIR%%/locale/gd/gd.lng
 %%DATADIR%%/locale/hi/hi.lng
 %%DATADIR%%/locale/hr/hr.lng
 %%DATADIR%%/locale/hu/bookmarks.adr
 %%DATADIR%%/locale/hu/hu.lng
 %%DATADIR%%/locale/hu/search.ini
 %%DATADIR%%/locale/hu/standard_speeddial.ini
+%%DATADIR%%/locale/id/bookmarks.adr
 %%DATADIR%%/locale/id/id.lng
+%%DATADIR%%/locale/id/search.ini
+%%DATADIR%%/locale/id/standard_speeddial.ini
 %%DATADIR%%/locale/it/bookmarks.adr
 %%DATADIR%%/locale/it/it.lng
 %%DATADIR%%/locale/it/search.ini
@@ -142,7 +150,9 @@ share/icons/hicolor/scalable/mimetypes/linux-opera-widget.svg
 %%DATADIR%%/locale/ka/ka.lng
 %%DATADIR%%/locale/ko/ko.lng
 %%DATADIR%%/locale/lt/lt.lng
+%%DATADIR%%/locale/me/me.lng
 %%DATADIR%%/locale/mk/mk.lng
+%%DATADIR%%/locale/ms/ms.lng
 %%DATADIR%%/locale/nb/bookmarks.adr
 %%DATADIR%%/locale/nb/nb.lng
 %%DATADIR%%/locale/nb/search.ini
@@ -153,7 +163,10 @@ share/icons/hicolor/scalable/mimetypes/linux-opera-widget.svg
 %%DATADIR%%/locale/pl/pl.lng
 %%DATADIR%%/locale/pl/search.ini
 %%DATADIR%%/locale/pl/standard_speeddial.ini
+%%DATADIR%%/locale/pt-BR/bookmarks.adr
 %%DATADIR%%/locale/pt-BR/pt-BR.lng
+%%DATADIR%%/locale/pt-BR/search.ini
+%%DATADIR%%/locale/pt-BR/standard_speeddial.ini
 %%DATADIR%%/locale/pt/pt.lng
 %%DATADIR%%/locale/ro/bookmarks.adr
 %%DATADIR%%/locale/ro/ro.lng
@@ -174,11 +187,14 @@ share/icons/hicolor/scalable/mimetypes/linux-opera-widget.svg
 %%DATADIR%%/locale/sv/sv.lng
 %%DATADIR%%/locale/ta/ta.lng
 %%DATADIR%%/locale/te/te.lng
+%%DATADIR%%/locale/th/th.lng
+%%DATADIR%%/locale/tl/tl.lng
 %%DATADIR%%/locale/tr/tr.lng
 %%DATADIR%%/locale/uk/bookmarks.adr
 %%DATADIR%%/locale/uk/search.ini
 %%DATADIR%%/locale/uk/standard_speeddial.ini
 %%DATADIR%%/locale/uk/uk.lng
+%%DATADIR%%/locale/uz/uz.lng
 %%DATADIR%%/locale/vi/vi.lng
 %%DATADIR%%/locale/zh-cn/bookmarks.adr
 %%DATADIR%%/locale/zh-cn/browser.js
@@ -186,8 +202,6 @@ share/icons/hicolor/scalable/mimetypes/linux-opera-widget.svg
 %%DATADIR%%/locale/zh-cn/standard_speeddial.ini
 %%DATADIR%%/locale/zh-cn/turbosettings.xml
 %%DATADIR%%/locale/zh-cn/zh-cn.lng
-%%DATADIR%%/locale/zh-hk/browser.js
-%%DATADIR%%/locale/zh-hk/turbosettings.xml
 %%DATADIR%%/locale/zh-tw/browser.js
 %%DATADIR%%/locale/zh-tw/turbosettings.xml
 %%DATADIR%%/locale/zh-tw/zh-tw.lng
@@ -223,6 +237,7 @@ share/icons/hicolor/scalable/mimetypes/linux-opera-widget.svg
 %%DATADIR%%/styles/images/bkgd.png
 %%DATADIR%%/styles/images/bullet.png
 %%DATADIR%%/styles/images/center.png
+%%DATADIR%%/styles/images/container.png
 %%DATADIR%%/styles/images/corner.png
 %%DATADIR%%/styles/images/customize.gif
 %%DATADIR%%/styles/images/darkBox.png
@@ -235,7 +250,6 @@ share/icons/hicolor/scalable/mimetypes/linux-opera-widget.svg
 %%DATADIR%%/styles/images/header-expanded.png
 %%DATADIR%%/styles/images/header.png
 %%DATADIR%%/styles/images/opera-icon-red.png
-%%DATADIR%%/styles/images/opera-icon-white.png
 %%DATADIR%%/styles/images/opera.png
 %%DATADIR%%/styles/images/page-bot.png
 %%DATADIR%%/styles/images/red_center.png
@@ -281,6 +295,7 @@ share/icons/hicolor/scalable/mimetypes/linux-opera-widget.svg
 %%DATADIR%%/styles/webstorage.css
 %%DATADIR%%/styles/wml.css
 %%DATADIR%%/ui/dialog.ini
+%%DATADIR%%/ui/dialogs.yaml
 %%DATADIR%%/ui/fastforward.ini
 %%DATADIR%%/ui/standard_keyboard.ini
 %%DATADIR%%/ui/standard_keyboard_compat.ini
@@ -307,11 +322,13 @@ share/mime/packages/linux-opera-widget.xml
 @dirrm %%DATADIR%%/package/lib
 @dirrm %%DATADIR%%/package
 @dirrm %%DATADIR%%/locale/zh-tw
-@dirrm %%DATADIR%%/locale/zh-hk
 @dirrm %%DATADIR%%/locale/zh-cn
 @dirrm %%DATADIR%%/locale/vi
+@dirrm %%DATADIR%%/locale/uz
 @dirrm %%DATADIR%%/locale/uk
 @dirrm %%DATADIR%%/locale/tr
+@dirrm %%DATADIR%%/locale/tl
+@dirrm %%DATADIR%%/locale/th
 @dirrm %%DATADIR%%/locale/te
 @dirrm %%DATADIR%%/locale/ta
 @dirrm %%DATADIR%%/locale/sv
@@ -325,7 +342,9 @@ share/mime/packages/linux-opera-widget.xml
 @dirrm %%DATADIR%%/locale/nn
 @dirrm %%DATADIR%%/locale/nl
 @dirrm %%DATADIR%%/locale/nb
+@dirrm %%DATADIR%%/locale/ms
 @dirrm %%DATADIR%%/locale/mk
+@dirrm %%DATADIR%%/locale/me
 @dirrm %%DATADIR%%/locale/lt
 @dirrm %%DATADIR%%/locale/ko
 @dirrm %%DATADIR%%/locale/ka
@@ -335,6 +354,7 @@ share/mime/packages/linux-opera-widget.xml
 @dirrm %%DATADIR%%/locale/hu
 @dirrm %%DATADIR%%/locale/hr
 @dirrm %%DATADIR%%/locale/hi
+@dirrm %%DATADIR%%/locale/gd
 @dirrm %%DATADIR%%/locale/fy
 @dirrm %%DATADIR%%/locale/fr-CA
 @dirrm %%DATADIR%%/locale/fr
@@ -350,6 +370,8 @@ share/mime/packages/linux-opera-widget.xml
 @dirrm %%DATADIR%%/locale/cs
 @dirrm %%DATADIR%%/locale/bg
 @dirrm %%DATADIR%%/locale/be
+@dirrm %%DATADIR%%/locale/az
+@dirrm %%DATADIR%%/locale/af
 @dirrm %%DATADIR%%/locale
 @dirrm %%DATADIR%%/extra
 @dirrm %%DATADIR%%/defaults
