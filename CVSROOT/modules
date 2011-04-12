@@ -12887,6 +12887,7 @@ p5-LJ-TextMessage               ports/sysutils/p5-LJ-TextMessage
 p5-LMAP-CID2SPF                 ports/mail/p5-LMAP-CID2SPF
 p5-LWP-Authen-Wsse              ports/www/p5-LWP-Authen-Wsse
 p5-LWP-ConnCache-MaxKeepAliveRequests  ports/www/p5-LWP-ConnCache-MaxKeepAliveRequests
+p5-LWP-Online                   ports/www/p5-LWP-Online
 p5-LWP-UserAgent-Determined     ports/www/p5-LWP-UserAgent-Determined
 p5-LWP-UserAgent-POE            ports/www/p5-LWP-UserAgent-POE
 p5-LWP-UserAgent-WithCache      ports/www/p5-LWP-UserAgent-WithCache
@@ -17202,6 +17203,7 @@ p5-lucene                       ports/textproc/p5-Lucene
 p5-luka                         ports/devel/p5-Luka
 p5-lwp-authen-wsse              ports/www/p5-LWP-Authen-Wsse
 p5-lwp-conncache-maxkeepaliverequests  ports/www/p5-LWP-ConnCache-MaxKeepAliveRequests
+p5-lwp-online                   ports/www/p5-LWP-Online
 p5-lwp-useragent-determined     ports/www/p5-LWP-UserAgent-Determined
 p5-lwp-useragent-poe            ports/www/p5-LWP-UserAgent-POE
 p5-lwp-useragent-withcache      ports/www/p5-LWP-UserAgent-WithCache
@@ -22272,6 +22274,7 @@ qident                          ports/security/qident
 qimageblitz                     ports/x11/qimageblitz
 qinx                            ports/x11-themes/qinx
 qiv                             ports/graphics/qiv
+qiviewer                        ports/graphics/qiviewer
 qix                             ports/games/qix
 qjackctl                        ports/audio/qjackctl
 qjson                           ports/devel/qjson
@@ -23359,6 +23362,7 @@ rubygem-feedzirra               ports/www/rubygem-feedzirra
 rubygem-ferret                  ports/textproc/rubygem-ferret
 rubygem-ffi                     ports/devel/rubygem-ffi
 rubygem-file-tail               ports/devel/rubygem-file-tail
+rubygem-filemagic               ports/devel/rubygem-filemagic
 rubygem-formosa                 ports/textproc/rubygem-formosa
 rubygem-gd2                     ports/graphics/rubygem-gd2
 rubygem-gdata                   ports/devel/rubygem-gdata
@@ -23544,6 +23548,7 @@ rubygem-sax-machine             ports/textproc/rubygem-sax-machine
 rubygem-scrapi                  ports/www/rubygem-scrapi
 rubygem-scrubyt                 ports/www/rubygem-scrubyt
 rubygem-scruffy                 ports/graphics/rubygem-scruffy
+rubygem-sdl                     ports/devel/rubygem-sdl
 rubygem-sequel                  ports/devel/rubygem-sequel
 rubygem-sexp_processor          ports/devel/rubygem-sexp_processor
 rubygem-shoulda                 ports/devel/rubygem-shoulda
