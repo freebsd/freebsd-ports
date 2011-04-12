@@ -8,7 +8,7 @@
 PORTNAME=	syncterm
 PORTVERSION=	0.9.${PORTVER}
 CATEGORIES=	comms
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-0.9
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-0.9.4
 DISTNAME=	syncterm-src-${PORTVER}
 EXTRACT_SUFX=	.tgz
 
@@ -18,7 +18,7 @@ COMMENT=	An ANSI-BBS terminal which supports telnet, rlogin, and SSH
 WRKSRC=		${WRKDIR}/syncterm-${PORTVER}
 USE_GMAKE=	yes
 MAKEFILE=	GNUmakefile
-PORTVER=	20080406
+PORTVER=	20110320
 MAN1=		syncterm.1
 MANCOMPRESSED=	yes
 
@@ -28,7 +28,7 @@ OPTIONS=	X11	"Build with X11 support"	on \
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "i386"
+.if ${ARCH} == "i386" || ${ARCH} == "amd64"
  LIB_DEPENDS+=	cl:${PORTSDIR}/security/cryptlib
 .else
  MAKE_ARGS+=	WITHOUT_CRYPTLIB=yes
