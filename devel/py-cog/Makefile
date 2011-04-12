@@ -6,15 +6,19 @@
 #
 
 PORTNAME=	cog
-PORTVERSION=	2.1
+PORTVERSION=	2.2
 CATEGORIES=	devel python
-MASTER_SITES=	http://nedbatchelder.com/code/cog/
+MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+DISTNAME=	${PORTNAME}app-${PORTVERSION}
 
 MAINTAINER=	apesternikov@page2rss.com
 COMMENT=	Code Generator for any language
 
+LICENSE=	MIT
+
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
+PYDISTUTILS_EGGINFO=	${PORTNAME}app-${PORTVERSION}-py${PYTHON_VER}.egg-info
 
 .include <bsd.port.mk>
