@@ -1,6 +1,6 @@
-# New ports collection makefile for:    nulib
-# Date created:         Thu May  8 00:14:31 PDT 1997
-# Whom:                 Steven Wallace <swallace@freebsd.org>
+# New ports collection makefile for:	nulib
+# Date created:				Thu May  8 00:14:31 PDT 1997
+# Whom:					Steven Wallace <swallace@FreeBSD.org>
 #
 # $FreeBSD$
 #
@@ -19,11 +19,11 @@ COMMENT=	NuFX archive utility
 WRKSRC=		${WRKDIR}/nulib
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}"
 
-MAN1=		nulib.1
-PLIST_FILES=	bin/nulib
+MAN1=		${PORTNAME}.1
+PLIST_FILES=	bin/${PORTNAME}
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/nulib ${PREFIX}/bin/nulib
-	${INSTALL_MAN} ${WRKSRC}/nulib.1 ${PREFIX}/man/man1/nulib.1
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/${MAN1} ${MANPREFIX}/man/man1
 
 .include <bsd.port.mk>
