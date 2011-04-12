@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	freeipmi
-PORTVERSION=	1.0.2
+PORTVERSION=	1.0.3
 CATEGORIES=	sysutils
 MASTER_SITES=	GNU/${PORTNAME}/ \
 		http://ftp.gluster.com/pub/${PORTNAME}/${PORTVERSION}/ \
@@ -29,7 +29,7 @@ CONFIGURE_ARGS=	--disable-init-scripts \
 		--localstatedir=/var \
 		--sysconfdir=${CONF_DIR} \
 		--with-ipmi-monitoring-sdr-cache-dir=${CACHE_DIR}/ipmimonitoringsdrcache
-CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}" PTHREAD_LIBS=${PTHREAD_LIBS}
+CONFIGURE_ENV=	LDFLAGS="${LDFLAGS}" PTHREAD_LIBS=${PTHREAD_LIBS}
 CPPFLAGS+=	-I${LOCALBASE}/include
 GNU_CONFIGURE=	yes
 LDFLAGS+=	-L${LOCALBASE}/lib
