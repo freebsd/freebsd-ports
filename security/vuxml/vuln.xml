@@ -34,6 +34,38 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="a4372a68-652c-11e0-a25a-00151735203a">
+    <topic>OTRS -- Several XSS attacks possible</topic>
+    <affects>
+      <package>
+	<name>otrs</name>
+	<range><gt>2.3.*</gt><lt>3.0.7</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>OTRS Security Advisory reports:</p>
+	<blockquote cite="http://otrs.org/advisory/OSA-2011-01-en/">
+          <ul>
+	    <li>Several XSS attacks possible:
+              An attacker could trick a logged in user to following a prepared
+              URL inside of the OTRS system which causes a page to be shown that
+              possibly includes malicious !JavaScript code because of incorrect
+              escaping during the generation of the HTML page.</li>
+          </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2011-1518</cvename>
+      <url>http://otrs.org/advisory/OSA-2011-01-en/</url>
+    </references>
+    <dates>
+      <discovery>2011-03-12</discovery>
+      <entry>2011-04-12</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="7e69f00d-632a-11e0-9f3a-001d092480a4">
     <topic>isc-dhcp-client -- dhclient does not strip or escape shell meta-characters</topic>
     <affects>
