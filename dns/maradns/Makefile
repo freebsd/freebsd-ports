@@ -7,6 +7,7 @@
 
 PORTNAME=	maradns
 PORTVERSION=	1.4.06
+PORTREVISION=	1
 CATEGORIES=	dns
 MASTER_SITES=	http://www.maradns.org/download/1.4/${PORTVERSION}/ \
 		SF/${PORTNAME}/MaraDNS/${PORTVERSION}/
@@ -18,6 +19,8 @@ REINPLACE_ARGS=	-i ""
 MAKE_ENV=	FLAGS="${CFLAGS} ${PTHREAD_CFLAGS}"
 
 USE_RC_SUBR=	${PORTNAME} zoneserver
+USERS=		bind
+GROUPS=		bind
 
 MAN1=		askmara.1 getzone.1 fetchzone.1
 MAN5=		mararc.5 csv1.5 csv2.5 csv2_txt.5

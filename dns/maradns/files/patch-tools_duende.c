@@ -1,5 +1,5 @@
---- tools/duende.c.orig	2008-08-03 20:10:49.000000000 +0200
-+++ tools/duende.c	2009-09-23 01:57:16.000000000 +0200
+--- tools/duende.c.orig 2008-08-03 20:10:49.000000000 +0200
++++ tools/duende.c      2010-09-30 01:46:03.000000000 +0200
 @@ -35,10 +35,13 @@
  #include <signal.h>
  #include <stdio.h>
@@ -14,7 +14,33 @@
  #include <unistd.h>
  #include "../MaraDns.h"
  
-@@ -139,6 +142,10 @@
+@@ -61,13 +64,24 @@
+ 
+ void log_helper(char *name,int stdout_fd) {
+     char out_buf[1024];
++    
++    /* Prefix MaraDNS syslog messages with ident of "maradns:" 
++       instead of "/usr/local/sbin/maradns:" */
++    char *needle, *ident;
++    needle = strrchr(name,'/');
++    /* needle found and not at the end of string */
++    if (needle && *(needle + 1) != '\0') {
++        ident = needle + 1;
++    } else {
++        ident = name;
++    }       
+ 
+     /* We can't use our signal handlers because fgets is blocking */
+     signal(SIGTERM,SIG_DFL);
+     signal(SIGHUP,SIG_DFL);
+ 
+     /* Open up the sys log */
+-    openlog(name,0,LOG_DAEMON);
++    openlog(ident,0,LOG_DAEMON);
+ 
+     /* Drop all privileges */
+     if(chdir(DUENDE_CHROOT_DIR) != 0) {
+@@ -146,6 +160,10 @@
      int exit_status;
      pid_t pid, log_pid;
      int stream1[2]; /* Used for piping */
@@ -25,7 +51,7 @@
      if(argv[0] == NULL || argv[1] == NULL) {
          printf("Usage: duende [program] [arguments]\n");
          exit(1);
-@@ -203,6 +210,23 @@
+@@ -210,6 +228,23 @@
              syslog(LOG_ALERT,"log_helper finished, terminating\n");
              exit(1);
              }
