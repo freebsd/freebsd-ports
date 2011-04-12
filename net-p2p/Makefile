@@ -35,7 +35,6 @@
     SUBDIR += frost
     SUBDIR += frostwire
     SUBDIR += gift
-    SUBDIR += gift-ares
     SUBDIR += giftcurs
     SUBDIR += giftoxic
     SUBDIR += giftui
@@ -113,10 +112,8 @@
     SUBDIR += sharktorrent
     SUBDIR += squall
     SUBDIR += teknap
-    SUBDIR += torrent_swapper
     SUBDIR += torrentflux
     SUBDIR += torrentsniff
-    SUBDIR += torrentvolve
     SUBDIR += trackerbt
     SUBDIR += transmission
     SUBDIR += transmission-cli

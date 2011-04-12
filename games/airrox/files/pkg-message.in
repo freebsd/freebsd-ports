@@ -1,8 +1,0 @@
-==============================================================================
-
-To play airrox you have to copy the file "%%DATADIR%%/config.txt"
-to "~/.airrox" (file, not directory). For example:
-
-% cp %%DATADIR%%/config.txt ~/.airrox
-
-==============================================================================
