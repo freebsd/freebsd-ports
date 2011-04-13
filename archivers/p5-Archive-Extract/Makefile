@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Archive-Extract
-PORTVERSION=	0.48
+PORTVERSION=	0.50
 CATEGORIES=	archivers perl5
 MASTER_SITES=	CPAN/../../authors/id/B/BI/BINGOS
 PKGNAMEPREFIX=	p5-
