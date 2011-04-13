@@ -887,7 +887,7 @@ Note:  Please add new entries to the beginning of this file.
     <affects>
       <package>
 	<name>mupdf</name>
-	<range><gt>0</gt></range>
+	<range><lt>0.8</lt></range>
       </package>
     </affects>
     <description>
