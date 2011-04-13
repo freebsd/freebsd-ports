@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	svn2git
-DISTVERSION=	1.0.3
+DISTVERSION=	1.0.4
 CATEGORIES=	devel kde
 MASTER_SITES=	http://cloud.github.com/downloads/DragonSA/svn2git/
 
