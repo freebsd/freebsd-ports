@@ -6,13 +6,16 @@
 #
 
 PORTNAME=	libssh2
-PORTVERSION=	1.2.7
+PORTVERSION=	1.2.8
 PORTEPOCH=	2
 CATEGORIES=	security devel
 MASTER_SITES=	http://www.libssh2.org/download/
 
 MAINTAINER=	sbz@FreeBSD.org
 COMMENT=	A library implementing the SSH2 protocol
+
+LICENSE=	BSD
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes
@@ -65,6 +68,7 @@ MAN3=	libssh2_agent_connect.3 \
 	libssh2_channel_forward_listen.3 \
 	libssh2_channel_forward_listen_ex.3 \
 	libssh2_channel_free.3 \
+	libssh2_channel_get_exit_signal.3 \
 	libssh2_channel_get_exit_status.3 \
 	libssh2_channel_handle_extended_data.3 \
 	libssh2_channel_handle_extended_data2.3 \
@@ -99,6 +103,7 @@ MAN3=	libssh2_agent_connect.3 \
 	libssh2_channel_x11_req.3 \
 	libssh2_channel_x11_req_ex.3 \
 	libssh2_exit.3 \
+	libssh2_free.3 \
 	libssh2_free_host_entry.3 \
 	libssh2_host_entry_match.3 \
 	libssh2_hostkey_hash.3 \
@@ -173,6 +178,7 @@ MAN3=	libssh2_agent_connect.3 \
 	libssh2_sftp_rmdir.3 \
 	libssh2_sftp_rmdir_ex.3 \
 	libssh2_sftp_seek.3 \
+	libssh2_sftp_seek64.3 \
 	libssh2_sftp_setstat.3 \
 	libssh2_sftp_shutdown.3 \
 	libssh2_sftp_stat.3 \
@@ -195,6 +201,7 @@ MAN3=	libssh2_agent_connect.3 \
 	libssh2_userauth_list.3 \
 	libssh2_userauth_password.3 \
 	libssh2_userauth_password_ex.3 \
+	libssh2_userauth_publickey.3 \
 	libssh2_userauth_publickey_fromfile.3 \
 	libssh2_userauth_publickey_fromfile_ex.3 \
 	libssh2_version.3
