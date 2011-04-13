@@ -17,6 +17,9 @@ COMMENT?=	An image management tool for the X Window System
 RUN_DEPENDS=	convert:${PORTSDIR}/graphics/ImageMagick
 LIB_DEPENDS=	glade-gnome:${PORTSDIR}/x11-toolkits/rep-gtk
 
+DEPRECATED=	depends on rep-gtk, which doesn't build anymore.
+EXPIRATION_DATE=2011-05-13
+	
 MAN1=		lodju-create.1 lodju-gallery.1 lodju.1
 MANCOMPRESSED=	yes
 

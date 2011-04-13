@@ -15,7 +15,11 @@ MASTER_SITES=	GNOME
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	GTK+ binding for rep Lisp interpreter
 
-LIB_DEPENDS=	rep.13:${PORTSDIR}/lang/librep
+LIB_DEPENDS=	rep.15:${PORTSDIR}/lang/librep
+
+IGNORE=		missing rep-config from librep port broke the build.
+DEPRECATED=	missing rep-config from librep port broke the build.
+EXPIRATION_DATE=2011-05-13
 
 PLIST_SUB=	GNUHOST=${ARCH}-pc-freebsd${OSREL:C/\..*//}
 
