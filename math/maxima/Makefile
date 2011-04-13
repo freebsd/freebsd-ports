@@ -99,6 +99,11 @@ post-patch:
 	${WRKSRC}/src/maxima.in
 .endif
 
+post-install:
+	@${ECHO_MSG} ""
+	@${CAT} ${PKGMESSAGE}
+	@${ECHO_MSG} ""
+
 test check: build
 	(cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${GMAKE} ${_MAKE_JOBS} \
 	${MAKE_ARGS} check)
