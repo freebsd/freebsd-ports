@@ -385,7 +385,6 @@ aimsniff                        ports/security/aimsniff
 aircrack-ng                     ports/net-mgmt/aircrack-ng
 airoflash                       ports/misc/airoflash
 airport                         ports/net-mgmt/airport
-airrox                          ports/games/airrox
 aish                            ports/converters/aish
 akamaru                         ports/deskutils/akamaru
 akode                           ports/audio/akode
@@ -994,7 +993,6 @@ bfbtester                       ports/security/bfbtester
 bfe                             ports/emulators/bfe
 bfhist                          ports/comms/bfhist
 bfilter                         ports/net/bfilter
-bfm                             ports/games/bfm
 bforce                          ports/comms/bforce
 bforce-kst                      ports/comms/bforce-kst
 bft                             ports/science/bft
@@ -1334,6 +1332,7 @@ bwping                          ports/net/bwping
 bxpkg                           ports/ports-mgmt/bxpkg
 byaccj                          ports/devel/byaccj
 bygfoot                         ports/games/bygfoot
+byobu                           ports/sysutils/byobu
 bzflag                          ports/games/bzflag
 bzip                            ports/archivers/bzip
 bzr-builder                     ports/devel/bzr-builder
@@ -4148,6 +4147,7 @@ gadfly                          ports/databases/gadfly
 gaeo                            ports/www/gaeo
 gaeutilities                    ports/www/gaeutilities
 gaffitter                       ports/sysutils/gaffitter
+gag                             ports/security/gag
 gai                             ports/x11-toolkits/gai
 gai-leds                        ports/sysutils/gai-leds
 gajim                           ports/net-im/gajim
@@ -4447,7 +4447,6 @@ giflib                          ports/graphics/giflib
 gifmerge                        ports/graphics/gifmerge
 gifsicle                        ports/graphics/gifsicle
 gift                            ports/net-p2p/gift
-gift-ares                       ports/net-p2p/gift-ares
 giftcurs                        ports/net-p2p/giftcurs
 giftool                         ports/graphics/giftool
 giftoxic                        ports/net-p2p/giftoxic
@@ -4965,7 +4964,6 @@ gpaint                          ports/graphics/gpaint
 gpart                           ports/sysutils/gpart
 gpasman                         ports/security/gpasman
 gpass                           ports/security/gpass
-gpc                             ports/lang/gpc
 gpctool                         ports/x11/gpctool
 gperiodic                       ports/biology/gperiodic
 gpgme                           ports/security/gpgme
@@ -8921,6 +8919,7 @@ lprps-a4                        ports/print/lprps-a4
 lprps-letter                    ports/print/lprps-letter
 lr                              ports/misc/lr
 lrmi                            ports/devel/lrmi
+lrzip                           ports/archivers/lrzip
 lrzsz                           ports/comms/lrzsz
 lsdb                            ports/databases/lsdb
 lsdvd                           ports/multimedia/lsdvd
@@ -9910,7 +9909,6 @@ myitcrm                         ports/deskutils/myitcrm
 mylibrary                       ports/databases/mylibrary
 mymoon                          ports/astro/mymoon
 mypaint                         ports/graphics/mypaint
-mypasswordsafe                  ports/security/mypasswordsafe
 myphpmoney                      ports/finance/myphpmoney
 mysar                           ports/www/mysar
 mysql++                         ports/databases/mysql++
@@ -11138,6 +11136,7 @@ p5-BIND-Conf_Parser             ports/dns/p5-BIND-Conf_Parser
 p5-BIND-Config-Parser           ports/dns/p5-BIND-Config-Parser
 p5-BS-Event                     ports/devel/p5-BS-Event
 p5-BSD-Jail-Object              ports/sysutils/p5-BSD-Jail-Object
+p5-BSD-Process                  ports/sysutils/p5-BSD-Process
 p5-BSD-Resource                 ports/devel/p5-BSD-Resource
 p5-BSD-Sysctl                   ports/sysutils/p5-BSD-Sysctl
 p5-BSD-devstat                  ports/devel/p5-BSD-devstat
@@ -14015,6 +14014,7 @@ p5-SMS-Send                     ports/comms/p5-SMS-Send
 p5-SMS-Send-DeviceGsm           ports/comms/p5-SMS-Send-DeviceGsm
 p5-SMS-Send-TW-HiAir            ports/comms/p5-SMS-Send-TW-HiAir
 p5-SMS-Send-TW-PChome           ports/comms/p5-SMS-Send-TW-PChome
+p5-SMS-Send-TW-Qma              ports/comms/p5-SMS-Send-TW-Qma
 p5-SMS-Send-TW-ShareSMS         ports/comms/p5-SMS-Send-TW-ShareSMS
 p5-SMS-Send-TW-Socket2Air       ports/comms/p5-SMS-Send-TW-Socket2Air
 p5-SMS-Send-TW-chtsns           ports/comms/p5-SMS-Send-TW-chtsns
@@ -15338,6 +15338,7 @@ p5-brackup                      ports/sysutils/p5-Brackup
 p5-bs-event                     ports/devel/p5-BS-Event
 p5-bsd-devstat                  ports/devel/p5-BSD-devstat
 p5-bsd-jail-object              ports/sysutils/p5-BSD-Jail-Object
+p5-bsd-process                  ports/sysutils/p5-BSD-Process
 p5-bsd-resource                 ports/devel/p5-BSD-Resource
 p5-bsd-stat                     ports/devel/p5-BSD-stat
 p5-bsd-sysctl                   ports/sysutils/p5-BSD-Sysctl
@@ -18321,6 +18322,7 @@ p5-sms-send-tw-chtsns           ports/comms/p5-SMS-Send-TW-chtsns
 p5-sms-send-tw-emome            ports/comms/p5-SMS-Send-TW-emome
 p5-sms-send-tw-hiair            ports/comms/p5-SMS-Send-TW-HiAir
 p5-sms-send-tw-pchome           ports/comms/p5-SMS-Send-TW-PChome
+p5-sms-send-tw-qma              ports/comms/p5-SMS-Send-TW-Qma
 p5-sms-send-tw-sharesms         ports/comms/p5-SMS-Send-TW-ShareSMS
 p5-sms-send-tw-socket2air       ports/comms/p5-SMS-Send-TW-Socket2Air
 p5-sms-sms77                    ports/comms/p5-SMS-SMS77
@@ -21211,6 +21213,7 @@ puppet                          ports/sysutils/puppet
 pure                            ports/lang/pure
 pure-emacs21                    ports/irc/pure-emacs21
 pure-ftpd                       ports/ftp/pure-ftpd
+pure-gen                        ports/devel/pure-gen
 pure-sfv                        ports/security/pure-sfv
 pure-xemacs21-mule              ports/irc/pure-xemacs21-mule
 pureadmin                       ports/ftp/pureadmin
@@ -23882,7 +23885,6 @@ secretmaryochronicles-music     ports/games/secretmaryochronicles-music
 sectar                          ports/archivers/sectar
 sectok                          ports/security/sectok
 secure_delete                   ports/security/secure_delete
-security_gag                    ports/security/gag
 security_hydra                  ports/security/hydra
 seda                            ports/net/seda
 sedsed                          ports/devel/sedsed
@@ -24772,7 +24774,6 @@ systemc                         ports/cad/systemc
 systempreferences               ports/deskutils/systempreferences
 sysupdate                       ports/sysutils/sysupdate
 sysutils_cdf                    ports/sysutils/cdf
-sysutils_gag                    ports/sysutils/gag
 sysutils_ipa                    ports/sysutils/ipa
 sysutils_muse                   ports/sysutils/muse
 sysutils_nut                    ports/sysutils/nut
@@ -25031,7 +25032,6 @@ thinglaunch                     ports/x11/thinglaunch
 thingylaunch                    ports/x11/thingylaunch
 thinice                         ports/x11-themes/thinice
 thinkingrock                    ports/deskutils/thinkingrock
-thistest                        ports/devel/thistest
 thoteditor                      ports/editors/thoteditor
 thrift                          ports/devel/thrift
 throttle                        ports/sysutils/throttle
@@ -25243,10 +25243,8 @@ tork                            ports/net-mgmt/tork
 tornado                         ports/games/tornado
 torque                          ports/sysutils/torque
 torrent                         ports/games/torrent
-torrent_swapper                 ports/net-p2p/torrent_swapper
 torrentflux                     ports/net-p2p/torrentflux
 torrentsniff                    ports/net-p2p/torrentsniff
-torrentvolve                    ports/net-p2p/torrentvolve
 torrentzip                      ports/archivers/torrentzip
 torrus                          ports/net-mgmt/torrus
 torsmo                          ports/sysutils/torsmo
@@ -26864,7 +26862,6 @@ xmailwatcher                    ports/mail/xmailwatcher
 xmake                           ports/devel/xmake
 xmakemol                        ports/science/xmakemol
 xmame                           ports/emulators/xmame
-xmamegui                        ports/emulators/xmamegui
 xman                            ports/x11/xman
 xmandel                         ports/graphics/xmandel
 xmangekyou                      ports/x11/xmangekyou
@@ -27233,7 +27230,6 @@ xqf                             ports/games/xqf
 xqilla                          ports/textproc/xqilla
 xquarto                         ports/games/xquarto
 xquote                          ports/finance/xquote
-xracer                          ports/games/xracer
 xrally                          ports/games/xrally
 xrandr                          ports/x11/xrandr
 xrdb                            ports/x11/xrdb
