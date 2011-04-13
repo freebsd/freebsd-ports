@@ -6,10 +6,11 @@
 #
 
 PORTNAME=	cyrus-imapd
-PORTVERSION=	2.4.7
+PORTVERSION=	2.4.8
 #PORTREVISION=	0
 CATEGORIES=	mail ipv6
 MASTER_SITES=	ftp://ftp.cyrusimap.org/cyrus-imapd/
+#MASTER_SITES=	http://www.cyrusimap.org/releases/snapshots/
 
 MAINTAINER=	ume@FreeBSD.org
 COMMENT=	The cyrus mail server, supporting POP3 and IMAP4 protocols
