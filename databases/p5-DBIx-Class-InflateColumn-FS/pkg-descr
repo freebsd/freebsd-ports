@@ -1,0 +1,16 @@
+Provides inflation to a Path::Class::File object allowing file system
+storage of BLOBS.
+
+The storage path is specified with fs_column_path. Each file receives
+a unique name, so the storage for all FS columns can share the same
+path.
+
+Within the path specified by fs_column_path, files are stored in
+sub-directories based on the first 2 characters of the unique file
+names.  Up to 256 sub-directories will be created, as needed. Override
+_fs_column_dirs in a derived class to change this behavior.
+
+fs_new_on_update will create a new file name if the file has been
+updated.
+
+WWW: http://search.cpan.org/dist/DBIx-Class-InflateColumn-FS/
