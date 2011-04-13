@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cppcheck
-PORTVERSION=	1.47
+PORTVERSION=	1.48
 CATEGORIES=	devel
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}/
 
@@ -14,6 +14,8 @@ MAINTAINER=	bf@FreeBSD.org
 COMMENT=	Static analysis of C/C++ code
 
 LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre
+
+LICENSE=	GPLv3
 
 USE_GMAKE=	yes
 USE_BZIP2=	yes
@@ -44,7 +46,7 @@ post-patch:
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/cppcheck ${PREFIX}/bin
 
-regression-test: build
+check regression-test test: build
 	@(cd ${BUILD_WRKSRC}; \
 		${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${_MAKE_JOBS} ${MAKE_ARGS} test)
 
