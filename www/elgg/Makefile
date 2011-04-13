@@ -6,12 +6,14 @@
 #
 
 PORTNAME=	elgg
-PORTVERSION=	1.7.7
+PORTVERSION=	1.7.8
 CATEGORIES=	www
 MASTER_SITES=	http://elgg.org/download/
 
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Blogging and social networking platform
+
+LICENSE=	GPLv2
 
 USE_PHP=	mysql gd json soap dom xml
 USE_GETTEXT=	yes
