@@ -7,6 +7,7 @@
 
 PORTNAME=	beacon
 PORTVERSION=	1.4
+PORTREVISION=	1
 CATEGORIES=	net perl5 mbone ipv6
 MASTER_SITES=	SF/multicastbeacon/multicastbeacon/beacon%20v${PORTVERSION}
 
