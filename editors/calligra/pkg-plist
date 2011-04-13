@@ -1,6 +1,5 @@
 bin/karbon
 bin/kexi
-bin/kformula
 bin/koconverter
 bin/kplato
 bin/kplatowork
@@ -430,7 +429,6 @@ lib/kde4/kexirelationdesignshape.so
 lib/kde4/kformdesigner_containers.so
 lib/kde4/kformdesigner_kexidbwidgets.so
 lib/kde4/kformdesigner_stdwidgets.so
-lib/kde4/kformulapart.so
 lib/kde4/kodocinfopropspage.so
 lib/kde4/kofficedockers.so
 lib/kde4/kofficescan.so
@@ -624,7 +622,6 @@ lib/libkdeinit4_krita.so
 lib/libkdeinit4_kspread.so
 lib/libkdeinit4_kthesaurus.so
 lib/libkdeinit4_kword.so
-lib/libkdeinit_kformula.so
 lib/libkexicore.so
 lib/libkexicore.so.8
 lib/libkexicore.so.8.0.0
@@ -754,7 +751,6 @@ lib/libpigmentcms.so.8.0.0
 share/applications/kde4/KThesaurus.desktop
 share/applications/kde4/karbon.desktop
 share/applications/kde4/kexi.desktop
-share/applications/kde4/kformula.desktop
 share/applications/kde4/koffice.desktop
 share/applications/kde4/kplato.desktop
 share/applications/kde4/kplatowork.desktop
@@ -1027,9 +1023,6 @@ share/apps/kexi/icons/oxygen/scalable/mimetypes/small/16x16/application-x-kexipr
 share/apps/kexi/icons/oxygen/scalable/mimetypes/small/22x22/application-x-kexiproject-sqlite.svgz
 share/apps/kexi/icons/oxygen/scalable/mimetypes/small/22x22/application-x-kexiproject-sqlite2.svgz
 share/apps/kexi/icons/oxygen/scalable/mimetypes/small/22x22/application-x-kexiproject-sqlite3.svgz
-share/apps/kformula/kformula.rc
-share/apps/kformula/kformula_readonly.rc
-share/apps/kformula/tips
 share/apps/koffice/autocorrect/autocorrect.xml
 share/apps/koffice/autocorrect/en_US.xml
 share/apps/koffice/icons/hicolor/16x16/actions/abs.png
@@ -2630,7 +2623,6 @@ share/kde4/services/kexirelationdesignshape.desktop
 share/kde4/services/kformdesigner/kformdesigner_containers.desktop
 share/kde4/services/kformdesigner/kformdesigner_kexidbfactory.desktop
 share/kde4/services/kformdesigner/kformdesigner_stdwidgets.desktop
-share/kde4/services/kformulapart.desktop
 share/kde4/services/kodocinfopropspage.desktop
 share/kde4/services/kofficedockers.desktop
 share/kde4/services/kofficethumbnail.desktop
@@ -3061,7 +3053,6 @@ share/templates/TextDocument.desktop
 @dirrm share/apps/koffice/icons
 @dirrmtry share/apps/koffice/autocorrect
 @dirrmtry share/apps/koffice
-@dirrm share/apps/kformula
 @dirrm share/apps/kexi/icons/oxygen/scalable/mimetypes/small/22x22
 @dirrm share/apps/kexi/icons/oxygen/scalable/mimetypes/small/16x16
 @dirrm share/apps/kexi/icons/oxygen/scalable/mimetypes/small

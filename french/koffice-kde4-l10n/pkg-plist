@@ -34,6 +34,27 @@ share/doc/HTML/fr/kchart/kchart-wizard3.png
 share/doc/HTML/fr/kchart/kchart-wizard4.png
 share/doc/HTML/fr/kchart/shortcut.png
 share/doc/HTML/fr/kchart/toolbars.png
+share/doc/HTML/fr/kformula/ambiguous-string.png
+share/doc/HTML/fr/kformula/common
+share/doc/HTML/fr/kformula/file-toolbar.png
+share/doc/HTML/fr/kformula/file-toolbar2.png
+share/doc/HTML/fr/kformula/green1.png
+share/doc/HTML/fr/kformula/green2.png
+share/doc/HTML/fr/kformula/index.cache.bz2
+share/doc/HTML/fr/kformula/index.docbook
+share/doc/HTML/fr/kformula/kfontinst1.png
+share/doc/HTML/fr/kformula/kfontinst2.png
+share/doc/HTML/fr/kformula/kfontinst3.png
+share/doc/HTML/fr/kformula/kfontinst4.png
+share/doc/HTML/fr/kformula/kfontinst5.png
+share/doc/HTML/fr/kformula/rk-edit0.png
+share/doc/HTML/fr/kformula/rk-edit1.png
+share/doc/HTML/fr/kformula/rk-edit2.png
+share/doc/HTML/fr/kformula/scilab-edit.png
+share/doc/HTML/fr/kformula/scilab.png
+share/doc/HTML/fr/kformula/shortcut0.png
+share/doc/HTML/fr/kformula/shortcut1.png
+share/doc/HTML/fr/kformula/toolbars.png
 share/doc/HTML/fr/kivio/common
 share/doc/HTML/fr/kivio/credits.docbook
 share/doc/HTML/fr/kivio/index.cache.bz2
@@ -41,6 +62,31 @@ share/doc/HTML/fr/kivio/index.docbook
 share/doc/HTML/fr/kivio/introduction.docbook
 share/doc/HTML/fr/kivio/usage.docbook
 share/doc/HTML/fr/kivio/working.docbook
+share/doc/HTML/fr/kspread/a11y.docbook
+share/doc/HTML/fr/kspread/advanced.docbook
+share/doc/HTML/fr/kspread/basics.docbook
+share/doc/HTML/fr/kspread/cellformat0.png
+share/doc/HTML/fr/kspread/cellformat1.png
+share/doc/HTML/fr/kspread/cellformat2.png
+share/doc/HTML/fr/kspread/cellformat3.png
+share/doc/HTML/fr/kspread/cellformat4.png
+share/doc/HTML/fr/kspread/cellformat5.png
+share/doc/HTML/fr/kspread/chart1.png
+share/doc/HTML/fr/kspread/commands.docbook
+share/doc/HTML/fr/kspread/common
+share/doc/HTML/fr/kspread/config.docbook
+share/doc/HTML/fr/kspread/configdialog.docbook
+share/doc/HTML/fr/kspread/copy1.png
+share/doc/HTML/fr/kspread/faq.docbook
+share/doc/HTML/fr/kspread/format.docbook
+share/doc/HTML/fr/kspread/importexport.docbook
+share/doc/HTML/fr/kspread/index.cache.bz2
+share/doc/HTML/fr/kspread/index.docbook
+share/doc/HTML/fr/kspread/shortcut1.png
+share/doc/HTML/fr/kspread/shortcut2.png
+share/doc/HTML/fr/kspread/shortcut3.png
+share/doc/HTML/fr/kspread/sort1.png
+share/doc/HTML/fr/kspread/starting1.png
 share/doc/HTML/fr/thesaurus/common
 share/doc/HTML/fr/thesaurus/index.cache.bz2
 share/doc/HTML/fr/thesaurus/index.docbook
@@ -97,6 +143,8 @@ share/locale/fr/LC_MESSAGES/kthesaurus.mo
 share/locale/fr/LC_MESSAGES/kword.mo
 share/locale/fr/LC_MESSAGES/thesaurus_tool.mo
 @dirrm share/doc/HTML/fr/thesaurus
+@dirrm share/doc/HTML/fr/kspread
 @dirrm share/doc/HTML/fr/kivio
+@dirrm share/doc/HTML/fr/kformula
 @dirrm share/doc/HTML/fr/kchart
 @dirrm share/doc/HTML/fr/karbon
