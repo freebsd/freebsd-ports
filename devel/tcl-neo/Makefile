@@ -15,12 +15,13 @@ DISTNAME=	neowebscript-3.3
 MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	The NeoTCL part of NeoWebScript -- an Apache TCL mod
 
-LIB_DEPENDS=	db2:${PORTSDIR}/databases/db2
+#LIB_DEPENDS=	db2:${PORTSDIR}/databases/db2
 BUILD_DEPENDS=	${LOCALBASE}/include/tclExtend.h:${PORTSDIR}/lang/tclX
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 MAKE_JOBS_SAFE=	yes
 
-BROKEN=		db2 is deprecated and no longer provided
+IGNORE=		db2 is deprecated and no longer provided
+BROKEN:=	${IGNORE}
 DEPRECATED=	db2 was deprecated and port has been broken since 2011-04-12
 EXPIRATION_DATE=	2011-05-21
 
