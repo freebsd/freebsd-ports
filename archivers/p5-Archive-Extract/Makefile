@@ -14,6 +14,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	A generic archive extracting mechanism
 
+RUN_DEPENDS+=	p5-IPC-Cmd>=0.42:${PORTSDIR}/devel/p5-IPC-Cmd
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 MAKE_JOBS_SAFE=	yes
@@ -23,10 +24,6 @@ MAN3=	Archive::Extract.3
 PERL_CONFIGURE=	yes
 
 .include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 501001
-RUN_DEPENDS+=	p5-IPC-Cmd>=0.42:${PORTSDIR}/devel/p5-IPC-Cmd
-.endif
 
 .if ${PERL_LEVEL} < 500905
 RUN_DEPENDS+=	p5-Locale-Maketext-Simple>=0:${PORTSDIR}/devel/p5-Locale-Maketext-Simple \
