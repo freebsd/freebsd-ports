@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	klavaro
-PORTVERSION=	1.7.5
+PORTVERSION=	1.9.0
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/
 
@@ -18,6 +18,7 @@ LIB_DEPENDS=	curl.6:${PORTSDIR}/ftp/curl \
 
 LICENSE=	GPLv3
 
+USE_GMAKE=	yes
 USE_BZIP2=	yes
 USE_GNOME=	gtk20
 USE_LDCONFIG=	yes
@@ -25,11 +26,15 @@ USE_GETTEXT=	yes
 INSTALLS_ICONS=	yes
 
 CPPFLAGS=	-I${LOCALBASE}/include -I${LOCALBASE}/include/gtkdatabox
-LDFLAGS=	-L${LOCALBASE}/lib
+LDFLAGS=	-L${LOCALBASE}/lib -export-dynamic
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 
 MAN1=		${PORTNAME}.1
+
+post-extract:
+	@${REINPLACE_CMD} -e 's|/usr|${PREFIX}|' \
+		${WRKSRC}/data/klavaro.desktop.in
 
 .include <bsd.port.mk>
