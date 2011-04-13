@@ -83,6 +83,7 @@
     SUBDIR += p5-AnyEvent-IRC
     SUBDIR += p5-Bot-BasicBot
     SUBDIR += p5-IRC-Bot-Hangman
+    SUBDIR += p5-IRC-Utils
     SUBDIR += p5-POE-Component-IRC
     SUBDIR += p5-POE-Component-IRC-Object
     SUBDIR += p5-POE-Component-IRC-Plugin-Blowfish
