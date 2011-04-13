@@ -42,7 +42,7 @@ SHLIB_VERS=	${PORTVERSION:R:R}
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "amd64"
+.if ${OSVERSION} >= 900000 && ${ARCH} == "amd64"
 BROKEN=	Fails to build
 .endif
 
