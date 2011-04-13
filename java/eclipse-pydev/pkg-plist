@@ -123,6 +123,8 @@ lib/eclipse/plugins/org.python.pydev.debug_%%PORTVERSION%%/icons/jython_unit.png
 lib/eclipse/plugins/org.python.pydev.debug_%%PORTVERSION%%/icons/ovr16/error_ovr.gif
 lib/eclipse/plugins/org.python.pydev.debug_%%PORTVERSION%%/icons/ovr16/failed_ovr.gif
 lib/eclipse/plugins/org.python.pydev.debug_%%PORTVERSION%%/icons/ovr16/success_ovr.gif
+lib/eclipse/plugins/org.python.pydev.debug_%%PORTVERSION%%/icons/pin.png
+lib/eclipse/plugins/org.python.pydev.debug_%%PORTVERSION%%/icons/pin_arrow.png
 lib/eclipse/plugins/org.python.pydev.debug_%%PORTVERSION%%/icons/python_16x16.png
 lib/eclipse/plugins/org.python.pydev.debug_%%PORTVERSION%%/icons/python_coverage.png
 lib/eclipse/plugins/org.python.pydev.debug_%%PORTVERSION%%/icons/python_refactor.png
@@ -131,18 +133,23 @@ lib/eclipse/plugins/org.python.pydev.debug_%%PORTVERSION%%/icons/python_unit.png
 lib/eclipse/plugins/org.python.pydev.debug_%%PORTVERSION%%/icons/pyunit.png
 lib/eclipse/plugins/org.python.pydev.debug_%%PORTVERSION%%/icons/pyunit_old.png
 lib/eclipse/plugins/org.python.pydev.debug_%%PORTVERSION%%/icons/reddot.GIF
+lib/eclipse/plugins/org.python.pydev.debug_%%PORTVERSION%%/icons/refresh.png
+lib/eclipse/plugins/org.python.pydev.debug_%%PORTVERSION%%/icons/setnext_co.gif
+lib/eclipse/plugins/org.python.pydev.debug_%%PORTVERSION%%/icons/setnext_co_dis.gif
 lib/eclipse/plugins/org.python.pydev.debug_%%PORTVERSION%%/icons/testerrors_ovr.gif
 lib/eclipse/plugins/org.python.pydev.debug_%%PORTVERSION%%/icons/testfailures_ovr.gif
 lib/eclipse/plugins/org.python.pydev.debug_%%PORTVERSION%%/icons/watch_exp.gif
 lib/eclipse/plugins/org.python.pydev.debug_%%PORTVERSION%%/plugin.xml
 lib/eclipse/plugins/org.python.pydev.debug_%%PORTVERSION%%/pydev-debug.jar
 lib/eclipse/plugins/org.python.pydev.debug_%%PORTVERSION%%/pysrc/_pydev_SimpleXMLRPCServer.py
+lib/eclipse/plugins/org.python.pydev.debug_%%PORTVERSION%%/pysrc/_pydev_execfile.py
 lib/eclipse/plugins/org.python.pydev.debug_%%PORTVERSION%%/pysrc/_pydev_getopt.py
 lib/eclipse/plugins/org.python.pydev.debug_%%PORTVERSION%%/pysrc/_pydev_xmlrpclib.py
-lib/eclipse/plugins/org.python.pydev.debug_%%PORTVERSION%%/pysrc/coverage.py
+lib/eclipse/plugins/org.python.pydev.debug_%%PORTVERSION%%/pysrc/pydev_coverage.py
 lib/eclipse/plugins/org.python.pydev.debug_%%PORTVERSION%%/pysrc/pydev_imports.py
 lib/eclipse/plugins/org.python.pydev.debug_%%PORTVERSION%%/pysrc/pydev_localhost.py
 lib/eclipse/plugins/org.python.pydev.debug_%%PORTVERSION%%/pysrc/pydev_runfiles.py
+lib/eclipse/plugins/org.python.pydev.debug_%%PORTVERSION%%/pysrc/pydev_runfiles_coverage.py
 lib/eclipse/plugins/org.python.pydev.debug_%%PORTVERSION%%/pysrc/pydev_runfiles_nose.py
 lib/eclipse/plugins/org.python.pydev.debug_%%PORTVERSION%%/pysrc/pydev_runfiles_parallel.py
 lib/eclipse/plugins/org.python.pydev.debug_%%PORTVERSION%%/pysrc/pydev_runfiles_parallel_client.py
@@ -557,6 +564,8 @@ lib/eclipse/plugins/org.python.pydev.jython_%%PORTVERSION%%/Lib/zlib.py
 lib/eclipse/plugins/org.python.pydev.jython_%%PORTVERSION%%/META-INF/APTANA.DSA
 lib/eclipse/plugins/org.python.pydev.jython_%%PORTVERSION%%/META-INF/APTANA.SF
 lib/eclipse/plugins/org.python.pydev.jython_%%PORTVERSION%%/META-INF/MANIFEST.MF
+lib/eclipse/plugins/org.python.pydev.jython_%%PORTVERSION%%/icons/python_file.gif
+lib/eclipse/plugins/org.python.pydev.jython_%%PORTVERSION%%/icons/python_scripting.png
 lib/eclipse/plugins/org.python.pydev.jython_%%PORTVERSION%%/jysrc/__pyedit_list_bindings.py
 lib/eclipse/plugins/org.python.pydev.jython_%%PORTVERSION%%/jysrc/about.html
 lib/eclipse/plugins/org.python.pydev.jython_%%PORTVERSION%%/jysrc/assign_params_to_attributes_action.py
@@ -629,6 +638,7 @@ lib/eclipse/plugins/org.python.pydev_%%PORTVERSION%%/PySrc/ThirdParty/wrapped_fo
 lib/eclipse/plugins/org.python.pydev_%%PORTVERSION%%/PySrc/ThirdParty/wrapped_for_pydev/not_in_default_pythonpath.txt
 lib/eclipse/plugins/org.python.pydev_%%PORTVERSION%%/PySrc/_completer.py
 lib/eclipse/plugins/org.python.pydev_%%PORTVERSION%%/PySrc/_pydev_SimpleXMLRPCServer.py
+lib/eclipse/plugins/org.python.pydev_%%PORTVERSION%%/PySrc/_pydev_execfile.py
 lib/eclipse/plugins/org.python.pydev_%%PORTVERSION%%/PySrc/_pydev_inspect.py
 lib/eclipse/plugins/org.python.pydev_%%PORTVERSION%%/PySrc/_pydev_log.py
 lib/eclipse/plugins/org.python.pydev_%%PORTVERSION%%/PySrc/_pydev_xmlrpclib.py
@@ -644,6 +654,7 @@ lib/eclipse/plugins/org.python.pydev_%%PORTVERSION%%/PySrc/pydev_localhost.py
 lib/eclipse/plugins/org.python.pydev_%%PORTVERSION%%/PySrc/pydev_sitecustomize/sitecustomize.py
 lib/eclipse/plugins/org.python.pydev_%%PORTVERSION%%/PySrc/pydevconsole.py
 lib/eclipse/plugins/org.python.pydev_%%PORTVERSION%%/PySrc/pydevconsole_code_for_ironpython.py
+lib/eclipse/plugins/org.python.pydev_%%PORTVERSION%%/PySrc/tests/check_pydevconsole.py
 lib/eclipse/plugins/org.python.pydev_%%PORTVERSION%%/PySrc/tests/test_jyserver.py
 lib/eclipse/plugins/org.python.pydev_%%PORTVERSION%%/PySrc/tests/test_jysimpleTipper.py
 lib/eclipse/plugins/org.python.pydev_%%PORTVERSION%%/PySrc/tests/test_pydevconsole.py
@@ -695,6 +706,10 @@ lib/eclipse/plugins/org.python.pydev_%%PORTVERSION%%/icons/mainfunction.gif
 lib/eclipse/plugins/org.python.pydev_%%PORTVERSION%%/icons/new/__imp_obj.gif
 lib/eclipse/plugins/org.python.pydev_%%PORTVERSION%%/icons/new/attrpub_obj.gif
 lib/eclipse/plugins/org.python.pydev_%%PORTVERSION%%/icons/new/class_obj.gif
+lib/eclipse/plugins/org.python.pydev_%%PORTVERSION%%/icons/new/create_attrpub_obj.png
+lib/eclipse/plugins/org.python.pydev_%%PORTVERSION%%/icons/new/create_class_obj.png
+lib/eclipse/plugins/org.python.pydev_%%PORTVERSION%%/icons/new/create_method_obj.png
+lib/eclipse/plugins/org.python.pydev_%%PORTVERSION%%/icons/new/create_python_module.png
 lib/eclipse/plugins/org.python.pydev_%%PORTVERSION%%/icons/new/imp_dec.gif
 lib/eclipse/plugins/org.python.pydev_%%PORTVERSION%%/icons/new/imp_obj.gif
 lib/eclipse/plugins/org.python.pydev_%%PORTVERSION%%/icons/new/imp_obj.png
@@ -749,6 +764,7 @@ lib/eclipse/plugins/org.python.pydev_%%PORTVERSION%%/icons/template.gif
 lib/eclipse/plugins/org.python.pydev_%%PORTVERSION%%/icons/terminate.gif
 lib/eclipse/plugins/org.python.pydev_%%PORTVERSION%%/icons/terminate_all.gif
 lib/eclipse/plugins/org.python.pydev_%%PORTVERSION%%/icons/toggle_tabs.png
+lib/eclipse/plugins/org.python.pydev_%%PORTVERSION%%/icons/warning.png
 lib/eclipse/plugins/org.python.pydev_%%PORTVERSION%%/plugin.properties
 lib/eclipse/plugins/org.python.pydev_%%PORTVERSION%%/plugin.xml
 lib/eclipse/plugins/org.python.pydev_%%PORTVERSION%%/pydev.jar
@@ -774,6 +790,7 @@ lib/eclipse/plugins/org.python.pydev_%%PORTVERSION%%/retroweaver-rt.jar
 @dirrm lib/eclipse/plugins/org.python.pydev.parser_%%PORTVERSION%%
 @dirrm lib/eclipse/plugins/org.python.pydev.jython_%%PORTVERSION%%/jysrc/tests
 @dirrm lib/eclipse/plugins/org.python.pydev.jython_%%PORTVERSION%%/jysrc
+@dirrm lib/eclipse/plugins/org.python.pydev.jython_%%PORTVERSION%%/icons
 @dirrm lib/eclipse/plugins/org.python.pydev.jython_%%PORTVERSION%%/META-INF
 @dirrm lib/eclipse/plugins/org.python.pydev.jython_%%PORTVERSION%%/Lib/xml/utils
 @dirrm lib/eclipse/plugins/org.python.pydev.jython_%%PORTVERSION%%/Lib/xml/sax/drivers2
