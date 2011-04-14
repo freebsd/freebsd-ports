@@ -26,7 +26,7 @@ LIB_DEPENDS=	enchant.1:${PORTSDIR}/textproc/enchant \
 
 USE_GETTEXT=	yes
 WANT_GSTREAMER=	yes
-MAKE_JOBS_SAFE=	yes
+MAKE_JOBS_UNSAFE=	yes
 USE_XORG=	xt
 USE_BISON=	build
 USE_GMAKE=	yes
