@@ -569,6 +569,7 @@
     SUBDIR += p5-Brackup
     SUBDIR += p5-Dir-Purge
     SUBDIR += p5-File-DirCompare
+    SUBDIR += p5-File-Listing
     SUBDIR += p5-File-Log
     SUBDIR += p5-File-Next
     SUBDIR += p5-File-Signature
