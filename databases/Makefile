@@ -107,6 +107,7 @@
     SUBDIR += gnatsweb4
     SUBDIR += gnome-db
     SUBDIR += gomysql
+    SUBDIR += gosqlite3
     SUBDIR += gqlplus
     SUBDIR += grass
     SUBDIR += gtksql
