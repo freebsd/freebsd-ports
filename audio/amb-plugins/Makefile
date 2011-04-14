@@ -23,6 +23,7 @@ USE_GMAKE=	yes
 PLIST_FILES=	lib/ladspa/ambisonic1.so lib/ladspa/ambisonic2.so
 
 do-install:
+		@${MKDIR} ${PREFIX}/lib/ladspa
 		${INSTALL_DATA} ${WRKSRC}/ambisonic1.so ${PREFIX}/lib/ladspa
 		${INSTALL_DATA} ${WRKSRC}/ambisonic2.so ${PREFIX}/lib/ladspa
 

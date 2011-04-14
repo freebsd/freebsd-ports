@@ -22,6 +22,7 @@ MAKE_ARGS=	CPP="${CXX}" CXXFLAGS="${CXXFLAGS} -I${LOCALBASE}/include -fPIC"
 PLIST_FILES=	lib/ladspa/aw.so
 
 do-install:
-	${INSTALL_DATA} ${WRKSRC}/aw.so ${LOCALBASE}/lib/ladspa
+	@${MKDIR} ${PREFIX}/lib/ladspa
+	${INSTALL_DATA} ${WRKSRC}/aw.so ${PREFIX}/lib/ladspa
 
 .include <bsd.port.mk>
