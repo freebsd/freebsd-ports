@@ -32,6 +32,7 @@ post-patch:
 		's|-D.*_DISABLE_DEPRECATED||g'
 
 do-install:
+	@${MKDIR} ${PREFIX}/${PLUGDIR}
 	${INSTALL_PROGRAM} ${WRKSRC}/src/.libs/${PLUGFILE} ${PREFIX}/${PLUGDIR}/
 
 .include <bsd.port.mk>

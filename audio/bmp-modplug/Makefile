@@ -30,6 +30,7 @@ PLUGDIR?=	lib/bmp/Input
 PLIST_FILES=	${PLUGDIR}/libmodplugbmp.so
 
 do-install:
+	@${MKDIR} ${PREFIX}/${PLUGDIR}/
 	${INSTALL_PROGRAM} ${WRKSRC}/modplugbmp/.libs/libmodplugbmp.so ${PREFIX}/${PLUGDIR}/
 
 .include <bsd.port.mk>

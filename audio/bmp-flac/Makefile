@@ -40,6 +40,7 @@ post-configure:
 
 # This is to avoid libtool running ldconfig -m ${LOCALBASE}/lib/bmp/Input
 do-install:
+	@${MKDIR} ${PREFIX}/lib/bmp/Input
 	${INSTALL_DATA} ${WRKSRC}/src/plugin_bmp/.libs/libbmp-flac.so ${PREFIX}/lib/bmp/Input
 
 .include <bsd.port.pre.mk>
