@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	passenger
-PORTVERSION=	3.0.6
+PORTVERSION=	3.0.7
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 PKGNAMEPREFIX=	rubygem-
@@ -15,6 +15,7 @@ COMMENT=	Modules for running Ruby on Rails and Rack applications
 
 OPTIONS=	APACHEPORT	"Use apache22"			on  \
 		NGINXPORT	"Use nginx"			off \
+		DEBUG		"Build with debugging info"	off \
 		SYMLINK 	"Create 'passenger' symlink"	off
 
 USE_RUBY=	yes
@@ -88,6 +89,14 @@ post-install:
 		s!-O2!!g; \
 		42s!true!false!' \
 		${PREFIX}/${GEM_LIB_DIR}/build/config.rb
+.if !defined(WITH_DEBUG)
+	@${REINPLACE_CMD} \
+		's!-DPASSENGER_DEBUG!-DNDEBUG!g' \
+		${PREFIX}/${GEM_LIB_DIR}/build/config.rb
+	@${REINPLACE_CMD} \
+		'31s!^!#include <sys/errno.h>!g' \
+		${PREFIX}/${GEM_LIB_DIR}/ext/common/Logging.h
+.endif
 	@${REINPLACE_CMD} \
 		's!-lpthread!${PTHREAD_LIBS}!g' \
 		${PREFIX}/${GEM_LIB_DIR}/lib/phusion_passenger/platform_info/compiler.rb
