@@ -33,8 +33,9 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 Note:  Please add new entries to the beginning of this file.
 
 -->
+<vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
   <vuln vid="6a3c3e5c-66cb-11e0-a116-c535f3aa24f0">
-    <topic>krb5 -- MITKRB5-SA-2011-004, kadmind invalid pointer free() [CVE-2011-0285]
+    <topic>krb5 -- MITKRB5-SA-2011-004, kadmind invalid pointer free() [CVE-2011-0285]</topic>
     <affects>
       <package>
 	<name>krb5</name>
@@ -69,7 +70,7 @@ Note:  Please add new entries to the beginning of this file.
   </vuln>
 
   <vuln vid="7edac52a-66cd-11e0-9398-5d45f3aa24f0">
-    <topic>krb5 -- MITKRB5-SA-2011-003, KDC vulnerable to double-free when PKINIT enabled
+    <topic>krb5 -- MITKRB5-SA-2011-003, KDC vulnerable to double-free when PKINIT enabled</topic>
     <affects>
       <package>
 	<name>krb5</name>
@@ -103,7 +104,7 @@ Note:  Please add new entries to the beginning of this file.
   </vuln>
 
   <vuln vid="4ab413ea-66ce-11e0-bf05-d445f3aa24f0">
-    <topic>krb5 -- MITKRB5-SA-2011-002, KDC vulnerable to hang when using LDAP back end
+    <topic>krb5 -- MITKRB5-SA-2011-002, KDC vulnerable to hang when using LDAP back end</topic>
     <affects>
       <package>
 	<name>krb5</name>
@@ -151,7 +152,7 @@ Note:  Please add new entries to the beginning of this file.
   </vuln>
 
   <vuln vid="64f24a1e-66cf-11e0-9deb-f345f3aa24f0">
-    <topic>krb5 -- MITKRB5-SA-2011-001, kpropd denial of service
+    <topic>krb5 -- MITKRB5-SA-2011-001, kpropd denial of service</topic>
     <affects>
       <package>
 	<name>krb5</name>
@@ -190,7 +191,6 @@ Note:  Please add new entries to the beginning of this file.
     </dates>
   </vuln>
 
-<vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
   <vuln vid="2eccb24f-61c0-11e0-b199-0015f2db7bde">
     <topic>xrdb -- root hole via rogue hostname</topic>
     <affects>
