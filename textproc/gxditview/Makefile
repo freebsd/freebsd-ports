@@ -11,7 +11,7 @@ PORTREVISION=	3
 CATEGORIES=	textproc
 DISTFILES=	# none
 
-MAINTAINER=	ru@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An X11 based previewer for groff output
 
 MAN1=		gxditview.1

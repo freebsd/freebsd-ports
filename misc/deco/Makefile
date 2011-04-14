@@ -13,7 +13,7 @@ MASTER_SITES=	SF/${PORTNAME}/Deco%20Sources/${PORTVERSION}
 DISTNAME=	deco39
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	ru@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Demos Commander, a free Norton Commander clone
 
 GNU_CONFIGURE=	yes

@@ -11,7 +11,7 @@ CATEGORIES=	net
 MASTER_SITES=	# none
 DISTFILES=	# none
 
-MAINTAINER=	ru@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A utility to correct requested TCP receive segment size
 
 WRKSRC=		${WRKDIR}/src
