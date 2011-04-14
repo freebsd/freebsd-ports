@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Terminal
-PORTVERSION=	0.4.6
+PORTVERSION=	0.4.7
 CATEGORIES=	x11 xfce
 MASTER_SITES=	${MASTER_SITE_XFCE}
 MASTER_SITE_SUBDIR=	src/apps/${PORTNAME:L}/${PORTVERSION:R}
@@ -20,15 +20,18 @@ GNU_CONFIGURE=	yes
 INSTALLS_ICONS= yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gnometarget gtk20 glib20 intltool intlhack pkgconfig vte
+USE_GNOME=	gnomehack gtk20 glib20 intltool intlhack pkgconfig vte \
+		desktopfileutils
 USE_XFCE=	configenv libexo
 USE_XORG=	x11
+
+CONFIGURE_ARGS=	--without-gnome-default-appsdir
 
 OPTIONS=	DBUS	"Enable D-BUS support"			on \
 		NLS	"Enable Native Language Support"	on
 
 MAN1=		Terminal.1
-MANLANG=	"" ca da es fr gl id it ja pt ru ug zh_CN
+MANLANG=	"" ca da el es fr gl id it ja pt ru sv ug zh_CN
 
 .include  <bsd.port.pre.mk>
 
