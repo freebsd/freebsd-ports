@@ -763,15 +763,6 @@
     SUBDIR += rsyslog4-snmp
     SUBDIR += rsyslog5
     SUBDIR += rsyslog5-dbi
-    SUBDIR += rsyslog5-devel
-    SUBDIR += rsyslog5-devel-dbi
-    SUBDIR += rsyslog5-devel-gnutls
-    SUBDIR += rsyslog5-devel-gssapi
-    SUBDIR += rsyslog5-devel-mysql
-    SUBDIR += rsyslog5-devel-pgsql
-    SUBDIR += rsyslog5-devel-relp
-    SUBDIR += rsyslog5-devel-rfc3195
-    SUBDIR += rsyslog5-devel-snmp
     SUBDIR += rsyslog5-gnutls
     SUBDIR += rsyslog5-gssapi
     SUBDIR += rsyslog5-mysql
