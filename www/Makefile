@@ -1489,6 +1489,7 @@
     SUBDIR += py-fcgi
     SUBDIR += py-feedfinder
     SUBDIR += py-flask
+    SUBDIR += py-flask-cache
     SUBDIR += py-flask-uploads
     SUBDIR += py-flexget
     SUBDIR += py-flup
