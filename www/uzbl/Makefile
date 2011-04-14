@@ -22,8 +22,8 @@ USE_LDCONFIG=	yes
 USE_GMAKE=	yes
 USE_PYTHON=	yes
 
-GITDATE=	2011.03.17
-GITVERSION=	7803561
+GITDATE=	2011.04.12
+GITVERSION=	ed8f45d
 
 WRKSRC=		${WRKDIR}/Dieterbe-uzbl-${GITVERSION}
 
@@ -44,23 +44,22 @@ PORTDATA=	examples
 post-patch:
 	@${REINPLACE_CMD} -e "s|/usr/local|${PREFIX}|" \
 		${WRKSRC}/examples/config/config \
-		${WRKSRC}/src/uzbl-browser \
-		${WRKSRC}/examples/data/scripts/uzbl-event-manager
+		${WRKSRC}/bin/uzbl-browser \
+		${WRKSRC}/bin/uzbl-event-manager
 	@${REINPLACE_CMD} -e "s|share/uzbl|${DATADIR_REL}|" \
 		${WRKSRC}/examples/config/config \
-		${WRKSRC}/src/uzbl-browser \
-		${WRKSRC}/examples/data/scripts/uzbl-event-manager
+		${WRKSRC}/bin/uzbl-browser \
+		${WRKSRC}/bin/uzbl-event-manager
 	@${REINPLACE_CMD} -e "s|/usr/share/uzbl|${DATADIR}|" \
-		${WRKSRC}/examples/data/scripts/uzbl-tabbed
+		${WRKSRC}/bin/uzbl-tabbed
 
 post-build:
 	@${FIND} ${WRKSRC} \( -name "*.orig" -or -name "*.bak" \) -exec ${RM} -f {} \;
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/uzbl-core ${PREFIX}/bin
-	${INSTALL_SCRIPT} ${WRKSRC}/src/uzbl-browser ${PREFIX}/bin
-.for f in uzbl-event-manager uzbl-tabbed
-	${INSTALL_SCRIPT} ${WRKSRC}/examples/data/scripts/${f} ${PREFIX}/bin
+.for f in uzbl-event-manager uzbl-browser uzbl-tabbed
+	${INSTALL_SCRIPT} ${WRKSRC}/bin/${f} ${PREFIX}/bin
 .endfor
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
@@ -78,7 +77,7 @@ do-install:
 	${MKDIR} ${DATADIR}/examples/data/dforms ${DATADIR}/examples/config
 .for f in data/bookmarks \
 	data/dforms/bbs.archlinux.org \
-	data/style.css data/uzbl.png
+	config/style.css data/uzbl.png
 		${INSTALL_DATA} ${WRKSRC}/examples/${f} ${DATADIR}/examples/${f}
 .endfor
 	${INSTALL_DATA} ${WRKSRC}/examples/config/config ${DATADIR}/examples/config/config
