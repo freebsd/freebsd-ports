@@ -70,7 +70,7 @@ _LINUX_APPS_ALL=	allegro alsalib arts aspell atk cairo curl dri esound expat fon
 _LINUX_APPS_ALL+=
 
 # 2.6.16 components
-_LINUX_26_APPS=		blt cyrus-sasl2 dbusglib dbuslibs libidn libssh2 nspr nss openal-soft \
+_LINUX_26_APPS=		blt cyrus-sasl2 dbusglib dbuslibs libidn libssh2 libv4l nspr nss openal-soft \
 			openldap sqlite3 tcl84 tk84
 
 _LINUX_APPS_ALL+=	${_LINUX_26_APPS}
@@ -303,6 +303,11 @@ libssh2_f10_FILE=	${LINUXBASE}/usr/lib/libssh2.so.1
 libssh2_DETECT=		${libssh2${LINUX_DIST_SUFFIX:S/-/_/}_FILE}
 libssh2_PORT=		${PORTSDIR}/security/linux${LINUX_DIST_SUFFIX}-libssh2
 libssh2_DEPENDS=	openssl
+
+# no_libv4l_FILE
+libv4l_f10_FILE=	${LINUXBASE}/usr/lib/libv4l1.so.0
+libv4l_DETECT=		${libv4l${LINUX_DIST_SUFFIX:S/-/_/}_FILE}
+libv4l_PORT=		${PORTSDIR}/multimedia/linux${LINUX_DIST_SUFFIX}-libv4l
 
 libtheora_FILE=		${LINUXBASE}/usr/lib/libtheora.so.0.1.0
 libtheora_f8_FILE=	${LINUXBASE}/usr/lib/libtheora.so.0.3.2
