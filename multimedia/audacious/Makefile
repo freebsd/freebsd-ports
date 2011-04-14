@@ -36,7 +36,8 @@ OPTIONS=	CHARSET	"Build with automatic charset detection"	off \
 		DBUS	"Build with dbus support"			on  \
 		GNOME	"Build with gconf support"			off \
 		NLS	"Native Language Support"			on  \
-		EXECINFO "Build with libexecinfo support"		on
+		EXECINFO "Build with libexecinfo support"		on  \
+		SSE2	"Build with SSE2 instruction set"		on
 
 .include <bsd.port.pre.mk>
 
@@ -69,6 +70,10 @@ PLIST_SUB+=	NLS=""
 .else
 CONFIGURE_ARGS+=--disable-nls
 PLIST_SUB+=	NLS="@comment "
+.endif
+
+.if defined(WITHOUT_SSE2)
+CONFIGURE_ARGS+=--disable-sse2
 .endif
 
 post-patch:
