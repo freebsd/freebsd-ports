@@ -18,6 +18,8 @@ COMMENT=	AMR encoder/decoder for Mbuni MMS Gateway (www.mbuni.org)
 
 MAN1=		amrdecoder.1 amrencoder.1
 
+MANCOMPRESSED=	yes
+
 post-extract:
 	@${RM} ${WRKSRC}/*.o
 
