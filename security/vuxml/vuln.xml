@@ -33,6 +33,163 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 Note:  Please add new entries to the beginning of this file.
 
 -->
+  <vuln vid="6a3c3e5c-66cb-11e0-a116-c535f3aa24f0">
+    <topic>krb5 -- MITKRB5-SA-2011-004, kadmind invalid pointer free() [CVE-2011-0285]
+    <affects>
+      <package>
+	<name>krb5</name>
+	<range><ge>1.7</ge><le>1.9</le></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>An advisory published by the MIT Kerberos team says:</p>
+	<blockquote cite="http://web.mit.edu/kerberos/advisories/MITKRB5-SA-2011-004.txt">
+	  <p>The password-changing capability of the MIT krb5 administration
+             daemon (kadmind) has a bug that can cause it to attempt to free()
+             an invalid pointer under certain error conditions.  This can cause
+             the daemon to crash or induce the execution of arbitrary code
+             (which is believed to be difficult).  No exploit that executes
+             arbitrary code is known to exist, but it is easy to trigger a
+             denial of service manually.</p>
+	  <p>Some platforms detect attempted freeing of invalid pointers and
+             protectively terminate the process, preventing arbitrary code
+             execution on those platforms.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2011-0285</cvename>
+      <url>http://web.mit.edu/kerberos/advisories/MITKRB5-SA-2011-004.txt</url>
+    </references>
+    <dates>
+      <discovery>2011-04-12</discovery>
+      <entry>2011-04-14</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="7edac52a-66cd-11e0-9398-5d45f3aa24f0">
+    <topic>krb5 -- MITKRB5-SA-2011-003, KDC vulnerable to double-free when PKINIT enabled
+    <affects>
+      <package>
+	<name>krb5</name>
+	<range><ge>1.7</ge><le>1.9</le></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>An advisory published by the MIT Kerberos team says:</p>
+	<blockquote cite="http://web.mit.edu/kerberos/advisories/MITKRB5-SA-2011-003.txt">
+	  <p>The MIT Kerberos 5 Key Distribution Center (KDC) daemon is
+             vulnerable to a double-free condition if the Public Key
+             Cryptography for Initial Authentication (PKINIT) capability is
+             enabled, resulting in daemon crash or arbitrary code execution
+             (which is believed to be difficult).</p>
+	  <p>An unauthenticated remote attacker can induce a double-free
+             event, causing the KDC daemon to crash (denial of service),
+             or to execute arbitrary code.  Exploiting a double-free event
+             to execute arbitrary code is believed to be difficult.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2011-0284</cvename>
+      <url>http://web.mit.edu/kerberos/advisories/MITKRB5-SA-2011-003.txt</url>
+    </references>
+    <dates>
+      <discovery>2011-03-15</discovery>
+      <entry>2011-04-14</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="4ab413ea-66ce-11e0-bf05-d445f3aa24f0">
+    <topic>krb5 -- MITKRB5-SA-2011-002, KDC vulnerable to hang when using LDAP back end
+    <affects>
+      <package>
+	<name>krb5</name>
+	<range><ge>1.6</ge><le>1.9</le></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>An advisory published by the MIT Kerberos team says:</p>
+	<blockquote cite="http://web.mit.edu/kerberos/advisories/MITKRB5-SA-2011-002.txt">
+	  <p>The MIT krb5 Key Distribution Center (KDC) daemon is vulnerable
+             to denial of service attacks from unauthenticated remote
+             attackers.  CVE-2011-0281 and CVE-2011-0282 occur only in KDCs
+             using LDAP back ends, but CVE-2011-0283 occurs in all krb5-1.9
+             KDCs.</p>
+	  <p>Exploit code is not known to exist, but the vulnerabilities are
+             easy to trigger manually.  The trigger for CVE-2011-0281 has
+             already been disclosed publicly, but that fact might not be
+             obvious to casual readers of the message in which it was
+             disclosed.  The triggers for CVE-2011-0282 and CVE-2011-0283
+             have not yet been disclosed publicly, but they are also
+             trivial.</p>
+          <p>CVE-2011-0281: An unauthenticated remote attacker can cause a KDC
+             configured with an LDAP back end to become completely unresponsive
+             until restarted.</p>
+          <p>CVE-2011-0282: An unauthenticated remote attacker can cause a KDC
+             configured with an LDAP back end to crash with a null pointer
+             dereference.</p>
+          <p>CVE-2011-0283: An unauthenticated remote attacker can cause a
+             krb5-1.9 KDC with any back end to crash with a null pointer
+             dereference.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2011-0281</cvename>
+      <cvename>CVE-2011-0282</cvename>
+      <cvename>CVE-2011-0283</cvename>
+      <url>http://web.mit.edu/kerberos/advisories/MITKRB5-SA-2011-002.txt</url>
+    </references>
+    <dates>
+      <discovery>2011-02-08</discovery>
+      <entry>2011-04-14</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="64f24a1e-66cf-11e0-9deb-f345f3aa24f0">
+    <topic>krb5 -- MITKRB5-SA-2011-001, kpropd denial of service
+    <affects>
+      <package>
+	<name>krb5</name>
+	<range><ge>1.7</ge><le>1.9</le></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>An advisory published by the MIT Kerberos team says:</p>
+	<blockquote cite="http://web.mit.edu/kerberos/advisories/MITKRB5-SA-2011-001.txt">
+	  <p>The MIT krb5 KDC database propagation daemon (kpropd) is
+             vulnerable to a denial-of-service attack triggered by invalid
+             network input.  If a kpropd worker process receives invalid
+             input that causes it to exit with an abnormal status, it can
+             cause the termination of the listening process that spawned it,
+             preventing the slave KDC it was running on from receiving
+             database updates from the master KDC.</p>
+	  <p>Exploit code is not known to exist, but the vulnerabilities are
+             easy to trigger manually.</p>
+          <p>An unauthenticated remote attacker can cause kpropd running in
+             standalone mode (the "-S" option) to terminate its listening
+             process, preventing database propagations to the KDC host on
+             which it was running.  Configurations where kpropd runs in
+             incremental propagation mode ("iprop") or as an inetd server
+             are not affected.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2010-4022</cvename>
+      <url>http://web.mit.edu/kerberos/advisories/MITKRB5-SA-2011-001.txt</url>
+    </references>
+    <dates>
+      <discovery>2011-02-08</discovery>
+      <entry>2011-04-14</entry>
+    </dates>
+  </vuln>
+
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
   <vuln vid="2eccb24f-61c0-11e0-b199-0015f2db7bde">
     <topic>xrdb -- root hole via rogue hostname</topic>
