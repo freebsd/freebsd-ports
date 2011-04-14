@@ -43,6 +43,7 @@ post-patch:
 		s|dummy audacious|&2|g' ${WRKSRC}/configure
 
 do-install:
+	@${MKDIR} ${PREFIX}/${PLUGDIR}/
 	${INSTALL_PROGRAM} ${WRKSRC}/.libs/libcrossfade.so ${PREFIX}/${PLUGDIR}/
 .ifndef NOPORTDOCS
 	@${INSTALL} -d ${DOCSDIR}/

@@ -43,6 +43,7 @@ do-build:
 		${EXTRA_LDFLAGS}
 
 do-install:
+	@${MKDIR} ${PLUGINS_DIR}
 	cd ${WRKSRC}; ${INSTALL_DATA} libmp4.so ${PLUGINS_DIR}
 
 .include <bsd.port.post.mk>
