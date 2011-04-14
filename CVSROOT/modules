@@ -2213,7 +2213,6 @@ davical                         ports/www/davical
 davmail                         ports/mail/davmail
 dazuko                          ports/security/dazuko
 db                              ports/databases/db
-db2                             ports/databases/db2
 db2latex                        ports/textproc/db2latex
 db3                             ports/databases/db3
 db4                             ports/databases/db4
@@ -11828,6 +11827,7 @@ p5-DBIx-Class-EncodedColumn     ports/databases/p5-DBIx-Class-EncodedColumn
 p5-DBIx-Class-Fixtures          ports/databases/p5-DBIx-Class-Fixtures
 p5-DBIx-Class-FrozenColumns     ports/databases/p5-DBIx-Class-FrozenColumns
 p5-DBIx-Class-HTMLWidget        ports/www/p5-DBIx-Class-HTMLWidget
+p5-DBIx-Class-InflateColumn-FS  ports/databases/p5-DBIx-Class-InflateColumn-FS
 p5-DBIx-Class-InflateColumn-IP  ports/databases/p5-DBIx-Class-InflateColumn-IP
 p5-DBIx-Class-IntrospectableM2M  ports/databases/p5-DBIx-Class-IntrospectableM2M
 p5-DBIx-Class-Loader            ports/databases/p5-DBIx-Class-Loader
@@ -12802,6 +12802,7 @@ p5-IPC-SharedCache              ports/devel/p5-IPC-SharedCache
 p5-IPC-Signal                   ports/devel/p5-IPC-Signal
 p5-IPC-System-Simple            ports/devel/p5-IPC-System-Simple
 p5-IRC-Bot-Hangman              ports/irc/p5-IRC-Bot-Hangman
+p5-IRC-Utils                    ports/irc/p5-IRC-Utils
 p5-Ima-DBI                      ports/databases/p5-Ima-DBI
 p5-Ima-DBI-Contextual           ports/databases/p5-Ima-DBI-Contextual
 p5-Image-Caa                    ports/graphics/p5-Image-Caa
@@ -16187,6 +16188,7 @@ p5-dbix-class-encodedcolumn     ports/databases/p5-DBIx-Class-EncodedColumn
 p5-dbix-class-fixtures          ports/databases/p5-DBIx-Class-Fixtures
 p5-dbix-class-frozencolumns     ports/databases/p5-DBIx-Class-FrozenColumns
 p5-dbix-class-htmlwidget        ports/www/p5-DBIx-Class-HTMLWidget
+p5-dbix-class-inflatecolumn-fs  ports/databases/p5-DBIx-Class-InflateColumn-FS
 p5-dbix-class-inflatecolumn-ip  ports/databases/p5-DBIx-Class-InflateColumn-IP
 p5-dbix-class-introspectablem2m  ports/databases/p5-DBIx-Class-IntrospectableM2M
 p5-dbix-class-loader            ports/databases/p5-DBIx-Class-Loader
@@ -17039,6 +17041,7 @@ p5-ipc-sharelite                ports/devel/p5-IPC-ShareLite
 p5-ipc-signal                   ports/devel/p5-IPC-Signal
 p5-ipc-system-simple            ports/devel/p5-IPC-System-Simple
 p5-irc-bot-hangman              ports/irc/p5-IRC-Bot-Hangman
+p5-irc-utils                    ports/irc/p5-IRC-Utils
 p5-iterator                     ports/devel/p5-Iterator
 p5-iterator-dbi                 ports/databases/p5-Iterator-DBI
 p5-iterator-file                ports/sysutils/p5-Iterator-File
