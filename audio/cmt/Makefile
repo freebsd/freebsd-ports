@@ -33,6 +33,7 @@ post-patch:
 		${REINPLACE_CMD} -e "s|<malloc.h>|<stdlib.h>|g"
 
 do-install:
+	@${MKDIR} ${PREFIX}/lib/ladspa
 	${INSTALL_DATA} ${WRKSRC}/plugins/cmt.so ${PREFIX}/lib/ladspa/
 
 .include <bsd.port.mk>
