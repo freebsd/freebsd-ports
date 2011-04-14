@@ -31,8 +31,8 @@ post-patch:
 	    ${WRKSRC}/etc/netbeans.conf
 	@${REINPLACE_CMD} -i "" -e 's|%%GCONFTOOL2%%|${LOCALBASE}/bin/gconftool-2|g; \
 	    s|%%GREP%%|${GREP}|g;s|%%SED%%|${SED}|g;s|%%FGREP%%|`which fgrep`|g;s|%%AWK%%|${AWK}|g' \
-	    ${WRKSRC}/platform/lib/nbexec && \
-	    ${RM} ${WRKSRC}/platform/lib/nbexec.orig
+	    ${WRKSRC}/platform/lib/nbexec
+	@${FIND} ${WRKSRC} -name "*.orig" -delete
 
 do-install:
 	@(cd ${WRKSRC} && ${COPYTREE_SHARE} \* ${DATADIR})
