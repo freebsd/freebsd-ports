@@ -31,6 +31,7 @@ post-patch:
 	${REINPLACE_CMD} -e "s,-O3 -Wall -fomit-frame-pointer -fstrength-reduce -funroll-loops -ffast-math,${CFLAGS}," ${WRKSRC}/Makefile
 
 do-install:
+	@${MKDIR}  ${PREFIX}/lib/ladspa/
 	${INSTALL_DATA} ${WRKSRC}/autotalent.so ${PREFIX}/lib/ladspa/
 
 .include <bsd.port.mk>
