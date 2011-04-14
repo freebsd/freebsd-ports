@@ -1286,6 +1286,7 @@
     SUBDIR += p5-WWW-Pastebin-PastebinCom-Create
     SUBDIR += p5-WWW-Plurk
     SUBDIR += p5-WWW-Robot
+    SUBDIR += p5-WWW-RobotRules
     SUBDIR += p5-WWW-RobotRules-Parser
     SUBDIR += p5-WWW-Scraper-ISBN
     SUBDIR += p5-WWW-Scraper-ISBN-Amazon_Driver
