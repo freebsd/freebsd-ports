@@ -2814,13 +2814,19 @@ Note:  Please add new entries to the beginning of this file.
     <affects>
       <package>
 	<name>chromium</name>
-	<range><lt>10.0.648.204</lt></range>
+	<range><lt>10.0.648.205</lt></range>
       </package>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
 	<p>Google Chrome Releases reports:</p>
 	<blockquote cite="http://googlechromereleases.blogspot.com/search/label/Stable%20updates">
+	  <p>Fixed in 10.0.648.205:<br/>
+	    [75629] Critical CVE-2011-1301: Use-after-free in the GPU process.
+	      Credit to Google Chrome Security Team (Inferno).<br/>
+	    [78524] Critical CVE-2011-1302: Heap overflow in the GPU process.
+	      Credit to Christoph Diehl.</p>
+
 	  <p>Fixed in 10.0.648.204:<br/>
 	    [72517] High CVE-2011-1291: Buffer error in base string handling.
 	      Credit to Alex Turpin.<br/>
@@ -3095,11 +3101,13 @@ Note:  Please add new entries to the beginning of this file.
       <cvename>CVE-2011-1294</cvename>
       <cvename>CVE-2011-1295</cvename>
       <cvename>CVE-2011-1296</cvename>
+      <cvename>CVE-2011-1301</cvename>
+      <cvename>CVE-2011-1302</cvename>
     </references>
     <dates>
       <discovery>2010-10-19</discovery>
       <entry>2010-12-07</entry>
-      <modified>2011-03-26</modified>
+      <modified>2011-04-14</modified>
     </dates>
   </vuln>
 
