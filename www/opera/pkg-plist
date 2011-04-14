@@ -323,7 +323,6 @@ share/mime/packages/opera-widget.xml
 @dirrm %%DATADIR%%/package/lib
 @dirrm %%DATADIR%%/package
 @dirrm %%DATADIR%%/locale/zh-tw
-@dirrm %%DATADIR%%/locale/zh-hk
 @dirrm %%DATADIR%%/locale/zh-cn
 @dirrm %%DATADIR%%/locale/vi
 @dirrm %%DATADIR%%/locale/uz
