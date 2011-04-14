@@ -343,6 +343,7 @@ share/locale/sq/LC_MESSAGES/beast-v%%PORTVERSION%%.mo
 share/locale/sr/LC_MESSAGES/beast-v%%PORTVERSION%%.mo
 share/locale/sr@Latn/LC_MESSAGES/beast-v%%PORTVERSION%%.mo
 share/locale/sv/LC_MESSAGES/beast-v%%PORTVERSION%%.mo
+share/locale/te/LC_MESSAGES/beast-v%%PORTVERSION%%.mo
 share/locale/uk/LC_MESSAGES/beast-v%%PORTVERSION%%.mo
 share/locale/zh_CN/LC_MESSAGES/beast-v%%PORTVERSION%%.mo
 share/mime-info/bse.keys
