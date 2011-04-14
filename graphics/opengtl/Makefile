@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	opengtl
-PORTVERSION=	0.9.15
-PORTREVISION=	1
+PORTVERSION=	0.9.15.1
 CATEGORIES=	graphics devel
 MASTER_SITES=	http://download.${PORTNAME}.org/
 DISTNAME=	OpenGTL-${PORTVERSION}
@@ -18,7 +17,7 @@ LICENSE=	LGPL20
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	png.6:${PORTSDIR}/graphics/png
-BUILD_DEPENDS=	llvm>=2.8<2.9.*:${PORTSDIR}/devel/llvm
+BUILD_DEPENDS=	llvm>=2.7<2.10.*:${PORTSDIR}/devel/llvm
 
 USE_BZIP2=	yes
 USE_GCC=	4.2+
