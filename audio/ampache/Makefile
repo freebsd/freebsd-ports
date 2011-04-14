@@ -22,7 +22,9 @@ PKGDEINSTALL=	${WRKDIR}/pkg-deinstall
 PKGMESSAGE=	${WRKDIR}/pkg-message
 SUB_FILES=	pkg-message pkg-deinstall
 SUB_LIST=	PORTNAME=${PORTNAME} \
-		WWWDIR=${WWWDIR}
+		WWWDIR=${WWWDIR} \
+		WWWOWN=${WWWOWN} \
+		WWWGROUP=${WWWGROUP}
 
 MAN1=		ampache.1
 MANCOMPRESSED=	no
