@@ -176,6 +176,7 @@
     SUBDIR += linux-divx4linux
     SUBDIR += linux-divx4linux4
     SUBDIR += linux-f10-libtheora
+    SUBDIR += linux-f10-libv4l
     SUBDIR += linux-gspca-kmod
     SUBDIR += linux-huludesktop
     SUBDIR += linux-libtheora
