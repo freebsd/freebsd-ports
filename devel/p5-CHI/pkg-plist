@@ -1,5 +1,6 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/CHI/.packlist
 %%SITE_PERL%%/CHI.pm
+%%SITE_PERL%%/CHI/Benchmarks.pod
 %%SITE_PERL%%/CHI/CacheObject.pm
 %%SITE_PERL%%/CHI/Constants.pm
 %%SITE_PERL%%/CHI/Driver.pm
@@ -11,6 +12,7 @@
 %%SITE_PERL%%/CHI/Driver/Memory.pm
 %%SITE_PERL%%/CHI/Driver/Metacache.pm
 %%SITE_PERL%%/CHI/Driver/Null.pm
+%%SITE_PERL%%/CHI/Driver/RawMemory.pm
 %%SITE_PERL%%/CHI/Driver/Role/HasSubcaches.pm
 %%SITE_PERL%%/CHI/Driver/Role/IsSizeAware.pm
 %%SITE_PERL%%/CHI/Driver/Role/IsSubcache.pm
@@ -36,6 +38,7 @@
 %%SITE_PERL%%/CHI/t/Driver/File/DepthZero.pm
 %%SITE_PERL%%/CHI/t/Driver/Memory.pm
 %%SITE_PERL%%/CHI/t/Driver/NonMoose.pm
+%%SITE_PERL%%/CHI/t/Driver/RawMemory.pm
 %%SITE_PERL%%/CHI/t/Driver/Subcache.pm
 %%SITE_PERL%%/CHI/t/Driver/Subcache/l1_cache.pm
 %%SITE_PERL%%/CHI/t/Driver/Subcache/mirror_cache.pm

@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	CHI
-PORTVERSION=	0.390
+PORTVERSION=	0.440
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	../../authors/id/J/JS/JSWARTZ
 PKGNAMEPREFIX=	p5-
-DISTNAME=	${PORTNAME}-0.39
+DISTNAME=	${PORTNAME}-0.44
 
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Perl extension for unified cache interface
@@ -24,7 +24,7 @@ RUN_DEPENDS=	\
 	p5-Hash-MoreUtils>0:${PORTSDIR}/devel/p5-Hash-MoreUtils \
 	p5-JSON>0:${PORTSDIR}/converters/p5-JSON \
 	p5-List-MoreUtils>=0.13:${PORTSDIR}/lang/p5-List-MoreUtils \
-	p5-Log-Any>=0.06:${PORTSDIR}/devel/p5-Log-Any \
+	p5-Log-Any>=0.08:${PORTSDIR}/devel/p5-Log-Any \
 	p5-Moose>=0.66:${PORTSDIR}/devel/p5-Moose \
 	p5-Task-Weaken>0:${PORTSDIR}/devel/p5-Task-Weaken \
 	p5-Time-Duration>=1.06:${PORTSDIR}/devel/p5-Time-Duration \
@@ -34,6 +34,7 @@ RUN_DEPENDS=	\
 PERL_CONFIGURE=	yes
 
 MAN3=	CHI.3 \
+	CHI::Benchmarks.3 \
 	CHI::CacheObject.3 \
 	CHI::Constants.3 \
 	CHI::Driver.3 \
@@ -45,8 +46,8 @@ MAN3=	CHI.3 \
 	CHI::Driver::Memory.3 \
 	CHI::Driver::Metacache.3 \
 	CHI::Driver::Null.3 \
+	CHI::Driver::RawMemory.3 \
 	CHI::Driver::Role::Universal.3 \
-	CHI::Stats.3 \
-	CHI::Util.3
+	CHI::Stats.3
 
 .include <bsd.port.mk>
