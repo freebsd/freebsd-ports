@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	groovy
-DISTVERSION=	1.7.6
+DISTVERSION=	1.7.10
 CATEGORIES=	lang java
 MASTER_SITES=	http://dist.groovy.codehaus.org/distributions/
 DISTNAME=	groovy-${PORTVERSION}
@@ -15,6 +15,7 @@ DISTFILES=	groovy-binary-${PORTVERSION}${EXTRACT_SUFX}
 MAINTAINER=	mjs@Bur.st
 COMMENT=	Agile dynamic language for the JVM
 
+LICENSE=	ASL
 WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION:U}
 
 USE_ZIP=yes
