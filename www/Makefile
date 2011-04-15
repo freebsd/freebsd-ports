@@ -1042,6 +1042,7 @@
     SUBDIR += p5-HTTP-Cookies-iCab
     SUBDIR += p5-HTTP-Cookies-w3m
     SUBDIR += p5-HTTP-DAV
+    SUBDIR += p5-HTTP-Daemon
     SUBDIR += p5-HTTP-Daemon-SSL
     SUBDIR += p5-HTTP-Date
     SUBDIR += p5-HTTP-Engine
