@@ -19,8 +19,6 @@ GIT_VERSION=	1.7.4
 MAINTAINER=	bapt@FreeBSD.org
 COMMENT=	A fast webinterface for git
 
-BUILD_DEPENDS=	${LOCALBASE}/bin/curl-config:${PORTSDIR}/ftp/curl
-
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
