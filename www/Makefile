@@ -574,6 +574,7 @@
     SUBDIR += mod_xml2enc
     SUBDIR += mod_xmlns
     SUBDIR += mod_xsendfile
+    SUBDIR += mohawk
     SUBDIR += moinmoin
     SUBDIR += momspider
     SUBDIR += monast
