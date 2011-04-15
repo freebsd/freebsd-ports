@@ -1040,6 +1040,7 @@ lib/wine/fakedlls/mssign32.dll
 lib/wine/fakedlls/mssip32.dll
 lib/wine/fakedlls/mstask.dll
 lib/wine/fakedlls/msvcirt.dll
+lib/wine/fakedlls/msvcp100.dll
 lib/wine/fakedlls/msvcp80.dll
 lib/wine/fakedlls/msvcp90.dll
 lib/wine/fakedlls/msvcr100.dll
@@ -1132,6 +1133,7 @@ lib/wine/fakedlls/rundll32.exe
 lib/wine/fakedlls/samlib.dll
 lib/wine/fakedlls/sane.ds
 lib/wine/fakedlls/sc.exe
+lib/wine/fakedlls/scarddlg.dll
 lib/wine/fakedlls/sccbase.dll
 lib/wine/fakedlls/schannel.dll
 lib/wine/fakedlls/secedit.exe
@@ -1190,6 +1192,7 @@ lib/wine/fakedlls/user32.dll
 lib/wine/fakedlls/userenv.dll
 lib/wine/fakedlls/usp10.dll
 lib/wine/fakedlls/uxtheme.dll
+lib/wine/fakedlls/vcomp.dll
 lib/wine/fakedlls/vdhcp.vxd
 lib/wine/fakedlls/vdmdbg.dll
 lib/wine/fakedlls/ver.dll16
@@ -1522,6 +1525,7 @@ lib/wine/mssign32.dll.so
 lib/wine/mssip32.dll.so
 lib/wine/mstask.dll.so
 lib/wine/msvcirt.dll.so
+lib/wine/msvcp100.dll.so
 lib/wine/msvcp80.dll.so
 lib/wine/msvcp90.dll.so
 lib/wine/msvcr100.dll.so
@@ -1614,6 +1618,7 @@ lib/wine/rundll32.exe.so
 lib/wine/samlib.dll.so
 lib/wine/sane.ds.so
 lib/wine/sc.exe.so
+lib/wine/scarddlg.dll.so
 lib/wine/sccbase.dll.so
 lib/wine/schannel.dll.so
 lib/wine/secedit.exe.so
@@ -1672,6 +1677,7 @@ lib/wine/user32.dll.so
 lib/wine/userenv.dll.so
 lib/wine/usp10.dll.so
 lib/wine/uxtheme.dll.so
+lib/wine/vcomp.dll.so
 lib/wine/vdhcp.vxd.so
 lib/wine/vdmdbg.dll.so
 lib/wine/ver.dll16.so
