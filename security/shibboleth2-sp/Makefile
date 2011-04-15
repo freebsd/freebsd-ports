@@ -7,7 +7,7 @@
 
 PORTNAME=	shibboleth-sp
 PORTVERSION=	2.3.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security www
 MASTER_SITES=	http://shibboleth.internet2.edu/downloads/shibboleth/cppsp/${PORTVERSION}/
 
