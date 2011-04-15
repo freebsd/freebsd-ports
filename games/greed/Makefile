@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	greed
-PORTVERSION=	3.6
+PORTVERSION=	3.7
 CATEGORIES=	games
 MASTER_SITES=	http://catb.org/~esr/greed/ CENKES
 PKGNAMESUFFIX=	-game
