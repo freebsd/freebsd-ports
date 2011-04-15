@@ -12,6 +12,7 @@
 %%SITE_PERL%%/Plack/Middleware/Debug/Response.pm
 %%SITE_PERL%%/Plack/Middleware/Debug/Session.pm
 %%SITE_PERL%%/Plack/Middleware/Debug/Timer.pm
+%%SITE_PERL%%/Plack/Middleware/Debug/TrackObjects.pm
 %%SITE_PERL%%/auto/share/dist/Plack-Middleware-Debug/debug_toolbar/back.png
 %%SITE_PERL%%/auto/share/dist/Plack-Middleware-Debug/debug_toolbar/back_hover.png
 %%SITE_PERL%%/auto/share/dist/Plack-Middleware-Debug/debug_toolbar/close.png
