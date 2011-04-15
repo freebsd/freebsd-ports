@@ -4949,6 +4949,7 @@ gopod                           ports/misc/gopod
 gorilla                         ports/security/gorilla
 gorm                            ports/devel/gorm
 gosa                            ports/sysutils/gosa
+gosqlite3                       ports/databases/gosqlite3
 gossip                          ports/net-im/gossip
 gotmail                         ports/mail/gotmail
 gotoblas                        ports/math/gotoblas
@@ -8640,6 +8641,7 @@ linux-f10-libogg                ports/audio/linux-f10-libogg
 linux-f10-libsigc++20           ports/devel/linux-f10-libsigc++20
 linux-f10-libssh2               ports/security/linux-f10-libssh2
 linux-f10-libtheora             ports/multimedia/linux-f10-libtheora
+linux-f10-libv4l                ports/multimedia/linux-f10-libv4l
 linux-f10-libvorbis             ports/audio/linux-f10-libvorbis
 linux-f10-libxml                ports/textproc/linux-f10-libxml
 linux-f10-libxml2               ports/textproc/linux-f10-libxml2
@@ -12308,6 +12310,7 @@ p5-File-HStore                  ports/devel/p5-File-HStore
 p5-File-HomeDir                 ports/devel/p5-File-HomeDir
 p5-File-Inplace                 ports/textproc/p5-File-Inplace
 p5-File-Iterator                ports/devel/p5-File-Iterator
+p5-File-Listing                 ports/sysutils/p5-File-Listing
 p5-File-Lock                    ports/devel/p5-File-Lock
 p5-File-Log                     ports/sysutils/p5-File-Log
 p5-File-MMagic                  ports/devel/p5-File-MMagic
@@ -12680,6 +12683,7 @@ p5-HTTP-Cookies-iCab            ports/www/p5-HTTP-Cookies-iCab
 p5-HTTP-Cookies-w3m             ports/www/p5-HTTP-Cookies-w3m
 p5-HTTP-DAV                     ports/www/p5-HTTP-DAV
 p5-HTTP-Daemon-SSL              ports/www/p5-HTTP-Daemon-SSL
+p5-HTTP-Date                    ports/www/p5-HTTP-Date
 p5-HTTP-Engine                  ports/www/p5-HTTP-Engine
 p5-HTTP-Engine-Middleware       ports/www/p5-HTTP-Engine-Middleware
 p5-HTTP-Exception               ports/www/p5-HTTP-Exception
@@ -13960,6 +13964,7 @@ p5-RTx-Calendar                 ports/www/p5-RTx-Calendar
 p5-RTx-RightsMatrix             ports/www/p5-RTx-RightsMatrix
 p5-RTx-Shredder                 ports/www/p5-RTx-Shredder
 p5-RTx-Statistics               ports/www/p5-RTx-Statistics
+p5-Range-String                 ports/devel/p5-Range-String
 p5-Rcs                          ports/devel/p5-Rcs
 p5-Rcs-Agent                    ports/devel/p5-Rcs-Agent
 p5-Reaction                     ports/www/p5-Reaction
@@ -14791,6 +14796,7 @@ p5-WWW-OpenSearch               ports/www/p5-WWW-OpenSearch
 p5-WWW-Pastebin-PastebinCom-Create  ports/www/p5-WWW-Pastebin-PastebinCom-Create
 p5-WWW-Plurk                    ports/www/p5-WWW-Plurk
 p5-WWW-Robot                    ports/www/p5-WWW-Robot
+p5-WWW-RobotRules               ports/www/p5-WWW-RobotRules
 p5-WWW-RobotRules-Parser        ports/www/p5-WWW-RobotRules-Parser
 p5-WWW-Scraper-ISBN             ports/www/p5-WWW-Scraper-ISBN
 p5-WWW-Scraper-ISBN-Amazon_Driver  ports/www/p5-WWW-Scraper-ISBN-Amazon_Driver
@@ -16502,6 +16508,7 @@ p5-file-homedir                 ports/devel/p5-File-HomeDir
 p5-file-hstore                  ports/devel/p5-File-HStore
 p5-file-inplace                 ports/textproc/p5-File-Inplace
 p5-file-iterator                ports/devel/p5-File-Iterator
+p5-file-listing                 ports/sysutils/p5-File-Listing
 p5-file-lock                    ports/devel/p5-File-Lock
 p5-file-log                     ports/sysutils/p5-File-Log
 p5-file-map                     ports/devel/p5-File-Map
@@ -16895,6 +16902,7 @@ p5-http-cookies-icab            ports/www/p5-HTTP-Cookies-iCab
 p5-http-cookies-mozilla         ports/www/p5-HTTP-Cookies-Mozilla
 p5-http-cookies-w3m             ports/www/p5-HTTP-Cookies-w3m
 p5-http-daemon-ssl              ports/www/p5-HTTP-Daemon-SSL
+p5-http-date                    ports/www/p5-HTTP-Date
 p5-http-dav                     ports/www/p5-HTTP-DAV
 p5-http-engine                  ports/www/p5-HTTP-Engine
 p5-http-engine-middleware       ports/www/p5-HTTP-Engine-Middleware
@@ -18176,6 +18184,7 @@ p5-quantum-superpositions       ports/lang/p5-Quantum-Superpositions
 p5-queue-beanstalk              ports/net/p5-Queue-Beanstalk
 p5-quota                        ports/sysutils/p5-Quota
 p5-radius-userfile              ports/textproc/p5-RADIUS-UserFile
+p5-range-string                 ports/devel/p5-Range-String
 p5-rcs                          ports/devel/p5-Rcs
 p5-rcs-agent                    ports/devel/p5-Rcs-Agent
 p5-rdf-core                     ports/textproc/p5-RDF-Core
@@ -19078,6 +19087,7 @@ p5-www-opensvn                  ports/www/p5-WWW-OpenSVN
 p5-www-pastebin-pastebincom-create  ports/www/p5-WWW-Pastebin-PastebinCom-Create
 p5-www-plurk                    ports/www/p5-WWW-Plurk
 p5-www-robot                    ports/www/p5-WWW-Robot
+p5-www-robotrules               ports/www/p5-WWW-RobotRules
 p5-www-robotrules-parser        ports/www/p5-WWW-RobotRules-Parser
 p5-www-scraper-isbn             ports/www/p5-WWW-Scraper-ISBN
 p5-www-scraper-isbn-amazon_driver  ports/www/p5-WWW-Scraper-ISBN-Amazon_Driver
@@ -21469,6 +21479,7 @@ py-fileutils                    ports/devel/py-fileutils
 py-flakes                       ports/devel/py-flakes
 py-flask                        ports/www/py-flask
 py-flask-babel                  ports/devel/py-flask-babel
+py-flask-cache                  ports/www/py-flask-cache
 py-flask-sqlalchemy             ports/databases/py-flask-sqlalchemy
 py-flask-uploads                ports/www/py-flask-uploads
 py-flexget                      ports/www/py-flexget
@@ -22900,15 +22911,6 @@ rsyslog4-rfc3195                ports/sysutils/rsyslog4-rfc3195
 rsyslog4-snmp                   ports/sysutils/rsyslog4-snmp
 rsyslog5                        ports/sysutils/rsyslog5
 rsyslog5-dbi                    ports/sysutils/rsyslog5-dbi
-rsyslog5-devel                  ports/sysutils/rsyslog5-devel
-rsyslog5-devel-dbi              ports/sysutils/rsyslog5-devel-dbi
-rsyslog5-devel-gnutls           ports/sysutils/rsyslog5-devel-gnutls
-rsyslog5-devel-gssapi           ports/sysutils/rsyslog5-devel-gssapi
-rsyslog5-devel-mysql            ports/sysutils/rsyslog5-devel-mysql
-rsyslog5-devel-pgsql            ports/sysutils/rsyslog5-devel-pgsql
-rsyslog5-devel-relp             ports/sysutils/rsyslog5-devel-relp
-rsyslog5-devel-rfc3195          ports/sysutils/rsyslog5-devel-rfc3195
-rsyslog5-devel-snmp             ports/sysutils/rsyslog5-devel-snmp
 rsyslog5-gnutls                 ports/sysutils/rsyslog5-gnutls
 rsyslog5-gssapi                 ports/sysutils/rsyslog5-gssapi
 rsyslog5-mysql                  ports/sysutils/rsyslog5-mysql
