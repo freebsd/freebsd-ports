@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	Starman
-PORTVERSION=	0.2008
+PORTVERSION=	0.2010
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
-MASTER_SITE_SUBDIR=	../../authors/id/M/MI/MIYAGAWA
+MASTER_SITE_SUBDIR=	CPAN:MIYAGAWA
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	kuriyama@FreeBSD.org
@@ -20,7 +20,7 @@ RUN_DEPENDS=	\
 	p5-HTTP-Parser-XS>0:${PORTSDIR}/www/p5-HTTP-Parser-XS \
 	p5-libwww>0:${PORTSDIR}/www/p5-libwww \
 	p5-Net-Server>=0.91:${PORTSDIR}/net/p5-Net-Server \
-	p5-Plack>=0.9931:${PORTSDIR}/www/p5-Plack
+	p5-Plack>=0.9971:${PORTSDIR}/www/p5-Plack
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
