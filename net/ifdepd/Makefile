@@ -4,8 +4,7 @@
 # $FreeBSD$
 
 PORTNAME=	ifdepd
-PORTVERSION=	20050420
-PORTREVISION=	3
+PORTVERSION=	20110412
 CATEGORIES=	net
 MASTER_SITES=	http://alex.bmg.gv.at/programs/
 
