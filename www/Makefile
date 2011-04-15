@@ -1056,6 +1056,7 @@
     SUBDIR += p5-HTTP-MobileAgent
     SUBDIR += p5-HTTP-MobileAgent-Plugin-Charset
     SUBDIR += p5-HTTP-MobileAttribute
+    SUBDIR += p5-HTTP-Negotiate
     SUBDIR += p5-HTTP-Parser
     SUBDIR += p5-HTTP-Parser-XS
     SUBDIR += p5-HTTP-Proxy
