@@ -1,0 +1,16 @@
+%%SITE_PERL%%/HTTP/Config.pm
+%%SITE_PERL%%/HTTP/Headers.pm
+%%SITE_PERL%%/HTTP/Headers/Auth.pm
+%%SITE_PERL%%/HTTP/Headers/ETag.pm
+%%SITE_PERL%%/HTTP/Headers/Util.pm
+%%SITE_PERL%%/HTTP/Message.pm
+%%SITE_PERL%%/HTTP/Request.pm
+%%SITE_PERL%%/HTTP/Request/Common.pm
+%%SITE_PERL%%/HTTP/Response.pm
+%%SITE_PERL%%/HTTP/Status.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/HTTP/Message/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTTP/Message
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTTP
+@dirrm %%SITE_PERL%%/HTTP/Headers
+@dirrm %%SITE_PERL%%/HTTP/Request
+@dirrmtry %%SITE_PERL%%/HTTP
