@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	Plack-Middleware-Debug
-PORTVERSION=	0.11
+PORTVERSION=	0.12
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
-MASTER_SITE_SUBDIR=	../../authors/id/M/MI/MIYAGAWA
+MASTER_SITE_SUBDIR=	CPAN:MIYAGAWA
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	kuriyama@FreeBSD.org
@@ -37,6 +37,7 @@ MAN3=	Plack::Middleware::Debug.3 \
 	Plack::Middleware::Debug::PerlConfig.3 \
 	Plack::Middleware::Debug::Response.3 \
 	Plack::Middleware::Debug::Session.3 \
-	Plack::Middleware::Debug::Timer.3
+	Plack::Middleware::Debug::Timer.3 \
+	Plack::Middleware::Debug::TrackObjects.3
 
 .include <bsd.port.mk>
