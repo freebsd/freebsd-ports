@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	php5
-PORTVERSION=	1.4
+PORTVERSION=	1.5
 CATEGORIES=	lang
 MASTER_SITES=	# none
 PKGNAMESUFFIX=	-extensions
@@ -34,6 +34,7 @@ WITH_POSIX=	yes
 WITH_SESSION=	yes
 WITH_SIMPLEXML=	yes
 WITH_SQLITE=	yes
+WITH_SQLITE3=	yes
 WITH_TOKENIZER=	yes
 WITH_XML=	yes
 WITH_XMLREADER=	yes
@@ -83,6 +84,7 @@ OPTIONS=	BCMATH          "bc style precision math functions" off \
 		SOAP            "SOAP support" off \
 		SOCKETS         "sockets support" off \
 		SQLITE          "sqlite support" on \
+		SQLITE3         "sqlite3 support" on \
 		SYBASE_CT       "Sybase database support" off \
 		SYSVMSG         "System V message support" off \
 		SYSVSEM         "System V semaphore support" off \
@@ -113,7 +115,7 @@ ALL_OPTIONS=	BCMATH BZ2 CALENDAR CTYPE CURL DBA \
 		MSSQL MYSQL MYSQLI \
 		ODBC OPENSSL PCNTL PDF PDO PDO_SQLITE PGSQL POSIX \
 		PSPELL READLINE RECODE SESSION SHMOP SIMPLEXML SNMP SOAP \
-		SOCKETS SQLITE SYBASE_CT SYSVMSG SYSVSEM SYSVSHM \
+		SOCKETS SQLITE SQLITE3 SYBASE_CT SYSVMSG SYSVSEM SYSVSHM \
 		TIDY TOKENIZER WDDX XML XMLREADER XMLRPC XMLWRITER XSL \
 		YAZ ZIP ZLIB
 

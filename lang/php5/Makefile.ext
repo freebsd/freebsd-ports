@@ -344,6 +344,11 @@ PHP_HEADER_DIRS=libsqlite/src
 OPTIONS=	UTF8 "Enable UTF-8 support" off
 .endif
 
+.if ${PHP_MODNAME} == "sqlite3"
+USE_SQLITE=	yes
+CONFIGURE_ARGS+=--with-sqlite3=${LOCALBASE}
+.endif
+
 .if ${PHP_MODNAME} == "sybase_ct"
 LIB_DEPENDS+=	ct.4:${PORTSDIR}/databases/freetds
 
@@ -513,7 +518,7 @@ BROKEN_WITH_MYSQL=	323 40
 .	endif
 .endif
 
-.if ${PHP_MODNAME} == "openssl"
+.if ${PHP_MODNAME} == "openssl" || ${PHP_MODNAME} == "sqlite3"
 post-extract:
 	@${MV} ${WRKSRC}/config0.m4 ${WRKSRC}/config.m4
 .endif
