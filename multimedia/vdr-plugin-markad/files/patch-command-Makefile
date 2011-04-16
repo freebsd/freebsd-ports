@@ -1,0 +1,33 @@
+--- a/command/Makefile
++++ b/command/Makefile
+@@ -16,6 +16,10 @@ CXXFLAGS ?= -g -rdynamic -O3 -funroll-lo
+ PKG-CONFIG ?= pkg-config
+ STRIP ?= strip
+ 
++ifdef FREEBSD
++LIBS+=-lintl -lexecinfo
++endif
++
+ ### Includes and Defines (add further entries here):
+ 
+ PKG-LIBS += libavcodec libavutil
+@@ -88,11 +100,19 @@ markad: $(OBJS)
+ 	$(CXX) $(CXXFLAGS) $(OBJS) $(LIBS) -o $@
+ 
+ install: markad $(I18Nmsgs) 
++ifdef FREEBSD
++	@mkdir -p $(PREFIX)/bin
++	@cp -f markad $(PREFIX)/bin/markad
++	@$(STRIP) $(PREFIX)/bin/markad
++	@mkdir -p $(DATADIR)/logos
++	@cp logos/* $(DATADIR)/logos
++else
+ 	@mkdir -p $(DESTDIR)/usr/bin
+ 	@cp --remove-destination markad $(DESTDIR)/usr/bin/markad
+ 	@$(STRIP) $(DESTDIR)/usr/bin/markad
+ 	@mkdir -p $(DESTDIR)/var/lib/markad
+ 	@cp logos/* $(DESTDIR)/var/lib/markad
++endif
+ 	@echo markad installed
+ 
+ clean:

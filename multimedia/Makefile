@@ -341,6 +341,7 @@
     SUBDIR += vdr-plugin-femon
     SUBDIR += vdr-plugin-infosatepg
     SUBDIR += vdr-plugin-iptv
+    SUBDIR += vdr-plugin-markad
     SUBDIR += vdr-plugin-osdpip
     SUBDIR += vdr-plugin-osdteletext
     SUBDIR += vdr-plugin-remote
