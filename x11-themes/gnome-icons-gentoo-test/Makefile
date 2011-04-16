@@ -17,7 +17,7 @@ MASTER_SITES=	GNOME
 MASTER_SITE_SUBDIR=	teams/art.gnome.org/archive/themes/icon
 DISTNAME=	ICON-Gentoo-Test
 
-MAINTAINER=	tmclaugh@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Gentoo-Test Icons for Gnome
 
 RESTRICTED=	${REASON}

@@ -17,7 +17,7 @@ MASTER_SITES=	GNOME
 MASTER_SITE_SUBDIR=	teams/art.gnome.org/themes/icon
 DISTNAME=	ICON-Iris
 
-MAINTAINER=	tmclaugh@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Iris SVG Icons for Gnome
 
 RESTRICTED=	${REASON}

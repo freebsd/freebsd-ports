@@ -11,7 +11,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	http://xsi.kolabore.ath.cx/download/
 DISTNAME=	${PORTNAME}-1.0-beta2
 
-MAINTAINER=	tmclaugh@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	System monitor that provides XML encoded stats
 
 LIB_DEPENDS=	xml2.5:${PORTSDIR}/textproc/libxml2

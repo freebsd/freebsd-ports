@@ -17,7 +17,7 @@ MASTER_SITES=	GNOME
 MASTER_SITE_SUBDIR=	teams/art.gnome.org/archive/themes/icon
 DISTNAME=	ICON-AquaFusion
 
-MAINTAINER=	tmclaugh@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	AquaFusion Icons for Gnome
 
 RESTRICTED=	${REASON}
