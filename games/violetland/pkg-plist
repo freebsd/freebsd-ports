@@ -1,6 +1,7 @@
 bin/violetland
 %%DATADIR%%/README_EN.TXT
 %%DATADIR%%/README_RU.TXT
+%%DATADIR%%/fonts/archangelsk.ttf
 %%DATADIR%%/fonts/harabara.ttf
 %%DATADIR%%/icon-light.png
 %%DATADIR%%/images/anima/grenade/0.png
@@ -338,6 +339,12 @@ bin/violetland
 %%DATADIR%%/weapon/AK-47/reload.ogg
 %%DATADIR%%/weapon/AK-47/shot.ogg
 %%DATADIR%%/weapon/AK-47/stats
+%%DATADIR%%/weapon/Flamethrower/bullet.png
+%%DATADIR%%/weapon/Flamethrower/image.png
+%%DATADIR%%/weapon/Flamethrower/player.png
+%%DATADIR%%/weapon/Flamethrower/reload.ogg
+%%DATADIR%%/weapon/Flamethrower/shot.ogg
+%%DATADIR%%/weapon/Flamethrower/stats
 %%DATADIR%%/weapon/Laser/image.png
 %%DATADIR%%/weapon/Laser/player.png
 %%DATADIR%%/weapon/Laser/reload.ogg
@@ -374,6 +381,7 @@ bin/violetland
 @dirrm %%DATADIR%%/weapon/PM
 @dirrm %%DATADIR%%/weapon/M-32
 @dirrm %%DATADIR%%/weapon/Laser
+@dirrm %%DATADIR%%/weapon/Flamethrower
 @dirrm %%DATADIR%%/weapon/AK-47
 @dirrm %%DATADIR%%/weapon
 @dirrm %%DATADIR%%/sounds
