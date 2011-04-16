@@ -20,9 +20,6 @@
 # WITH_GNUSTEP_CAIRO=yes
 #	use cairo as backend while build instead of xlib.
 #
-# GNUSTEP_WITH_BASE_GCC=yes
-#	use system compiler (does not work on all architectures).
-#
 # GNUSTEP_WITH_GCC34=yes
 #	use gcc 3.4.x with objective C shared libraries.
 #
@@ -107,16 +104,6 @@
 
 GNUstep_Include_MAINTAINER=	dinoex@FreeBSD.org
 
-.if !defined(GNUSTEP_WITHOUT_LIBOBJC)
-.if !defined(GNUSTEP_WITH_BASE_GCC)
-BUILD_DEPENDS+=	${TARGLIB}/libobjc.so:${PORTSDIR}/${GNUSTEP_GCC_PORT}
-RUN_DEPENDS+=	${TARGLIB}/libobjc.so:${PORTSDIR}/${GNUSTEP_GCC_PORT}
-.else
-BUILD_DEPENDS+=	${GNUSTEP_SYSTEM_LIBRARIES}/libobjc.so:${PORTSDIR}/${GNUSTEP_OBJC_PORT}
-RUN_DEPENDS+=	${GNUSTEP_SYSTEM_LIBRARIES}/libobjc.so:${PORTSDIR}/${GNUSTEP_OBJC_PORT}
-.endif
-.endif
-
 .if defined(USE_GNUSTEP_BUILD) || defined(USE_GNUSTEP_MAKE)
 BUILD_DEPENDS+=	${GNUSTEP_MAKEFILES}/GNUstep.sh:${PORTSDIR}/${GNUSTEP_MAKE_PORT}
 .endif
@@ -125,7 +112,6 @@ RUN_DEPENDS+=	${GNUSTEP_MAKEFILES}/GNUstep.sh:${PORTSDIR}/${GNUSTEP_MAKE_PORT}
 .endif
 
 GNUSTEP_MAKE_PORT?=	devel/gnustep-make
-GNUSTEP_OBJC_PORT?=	lang/gnustep-objc
 GNUSTEP_BASE_PORT?=	lang/gnustep-base
 GNUSTEP_GUI_PORT?=	x11-toolkits/gnustep-gui
 GNUSTEP_BACK_PORT?=	x11-toolkits/gnustep-back
@@ -203,18 +189,7 @@ PLIST_SUB+=	MAJORVERSION=${PORTVERSION:C/([0-9]).*/\1/1}
 PLIST_SUB+=	LIBVERSION=${DEFAULT_LIBVERSION}
 PLIST_SUB+=	MAJORLIBVERSION=${DEFAULT_LIBVERSION:C/([0-9]).*/\1/1}
 
-.if !defined(GNUSTEP_WITH_BASE_GCC)
-.if !defined(GNUSTEP_WITH_GCC34)
-.if !defined(GNUSTEP_WITH_GCC42)
-.if ${ARCH} == i386 || ${ARCH} == amd64
-GNUSTEP_WITH_GCC42=	yes
-.else
-# alpha ia64 powerpc arm sparc64 sun4v
-GNUSTEP_WITH_GCC34=	yes
-.endif # ARCH
-.endif # GNUSTEP_WITH_GCC42
-.endif # GNUSTEP_WITH_GCC34
-
+.if defined(GNUSTEP_WITH_GCC34) || defined(GNUSTEP_WITH_GCC42)
 .if defined(GNUSTEP_WITH_GCC34)
 GCCSUFFIX=34
 .if ${ARCH} == sparc64
@@ -227,8 +202,11 @@ GCCSUFFIX=42
 CC=		gcc${GCCSUFFIX}
 CXX=		g++${GCCSUFFIX}
 GNUSTEP_GCC_PORT?=	lang/gcc${GCCSUFFIX}
-
-.endif # GNUSTEP_WITH_BASE_GCC
+BUILD_DEPENDS+=	${TARGLIB}/libobjc.so:${PORTSDIR}/${GNUSTEP_GCC_PORT}
+RUN_DEPENDS+=	${TARGLIB}/libobjc.so:${PORTSDIR}/${GNUSTEP_GCC_PORT}
+.else
+GNUSTEP_WITH_BASE_GCC=	yes
+.endif
 
 # ---------------------------------------------------------------------------
 # using base
@@ -251,7 +229,7 @@ RUN_DEPENDS+=	${GNUSTEP_SYSTEM_LIBRARIES}/libgnustep-gui.so:${PORTSDIR}/${GNUSTE
 #
 .if defined(USE_GNUSTEP_BACK)
 .if defined(WITH_GNUSTEP_DEVEL)
-BACKSUFFIX?=	-019
+BACKSUFFIX?=	-020
 .else
 BACKSUFFIX?=	-017
 .endif
