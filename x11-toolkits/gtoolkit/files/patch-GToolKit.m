@@ -1,5 +1,5 @@
---- GToolKit.m.orig	Thu Feb 21 16:43:52 2002
-+++ GToolKit.m	Wed Dec 25 11:12:44 2002
+--- GToolKit.m.orig	2002-02-21 16:43:52.000000000 +0100
++++ GToolKit.m	2011-04-15 20:17:16.000000000 +0200
 @@ -2550,6 +2550,17 @@
  #include <GToolKit/GTKWidget.h>
  #include <GToolKit/GTKAccelGroup.h>
@@ -35,6 +35,20 @@
  
  
  static void item_forward_signal (gpointer data, guint action, GtkWidget *widget)
+@@ -3134,11 +3135,11 @@
+ {
+     return gtk_main_iteration_do( blocking);
+ }
+-- (gint) true
++- (gint) val_true
+ {
+     return gtk_true();
+ }
+-- (gint) false
++- (gint) val_false
+ {
+     return gtk_false();
+ }
 @@ -6376,6 +6377,10 @@
  #include <GToolKit/GTKWidget.h>
  #include <GToolKit/GTKAccelGroup.h>

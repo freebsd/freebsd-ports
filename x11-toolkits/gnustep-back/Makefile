@@ -7,7 +7,7 @@
 
 PORTNAME=	gnustep-back
 .if defined(WITH_GNUSTEP_DEVEL)
-PORTVERSION=	0.19.0
+PORTVERSION=	0.20.0
 .else
 PORTVERSION=	0.17.1
 PORTREVISION=	3
@@ -86,9 +86,6 @@ CONFLICTS?=		gunstep-back-xdps-0.* gunstep-back-art-0.* gunstep-back-cairo-0.*
 
 .include <bsd.port.pre.mk>
 
-TARGLIB!=	(cd ${PORTSDIR}/${GNUSTEP_OBJC_PORT} && make -V TARGLIB)
-
-ADDITIONAL_LDFLAGS+=	-L${TARGLIB}
 MAKE_FLAGS+=		messages=yes
 PLIST_SUB+=		BACKVERSION=${PORTVERSION:C/([0-9])*[.]([0-9]*).*/\1\2/1}
 

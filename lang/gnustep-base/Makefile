@@ -7,8 +7,7 @@
 
 PORTNAME=	gnustep-base
 .if defined(WITH_GNUSTEP_DEVEL)
-PORTVERSION=	1.21.1
-PORTREVISION=	2
+PORTVERSION=	1.22.0
 .else
 PORTVERSION=	1.19.3
 PORTREVISION=	4
@@ -56,9 +55,7 @@ ETCDIR=		${LOCALBASE}/etc
 .if !defined(WITHOUT_GNUSTEP_FAKEMAIN)
 CONFIGURE_ARGS+=	--enable-fake-main
 .endif
-.if defined(WITH_GNUSTEP_DEVEL)
-EXTRA_PATCHES+=	${FILESDIR}/objc-common.g.patch
-.else
+.if !defined(WITH_GNUSTEP_DEVEL)
 EXTRA_PATCHES+=	${FILESDIR}/config.objc.m.patch
 .endif
 

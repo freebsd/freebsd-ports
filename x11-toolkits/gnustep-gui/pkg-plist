@@ -41,8 +41,8 @@ GNUstep/System/Library/ColorPickers/WheelPicker.bundle/WheelPicker
 GNUstep/System/Library/ColorPickers/WheelPicker.bundle/stamp.make
 %%PORTDOCS%%GNUstep/System/Library/Documentation/Developer/Gui/Additions/ClassesTOC.gsdoc
 %%PORTDOCS%%GNUstep/System/Library/Documentation/Developer/Gui/Additions/ClassesTOC.html
-%%PORTDOCS%%GNUstep/System/Library/Documentation/Developer/Gui/Additions/ConstantsTOC.gsdoc
-%%PORTDOCS%%GNUstep/System/Library/Documentation/Developer/Gui/Additions/ConstantsTOC.html
+%%GNUSTEP_STABLE%%%%PORTDOCS%%GNUstep/System/Library/Documentation/Developer/Gui/Additions/ConstantsTOC.gsdoc
+%%GNUSTEP_STABLE%%%%PORTDOCS%%GNUstep/System/Library/Documentation/Developer/Gui/Additions/ConstantsTOC.html
 %%PORTDOCS%%GNUstep/System/Library/Documentation/Developer/Gui/Additions/Functions.gsdoc
 %%PORTDOCS%%GNUstep/System/Library/Documentation/Developer/Gui/Additions/Functions.html
 %%PORTDOCS%%GNUstep/System/Library/Documentation/Developer/Gui/Additions/FunctionsTOC.gsdoc
@@ -60,6 +60,7 @@ GNUstep/System/Library/ColorPickers/WheelPicker.bundle/stamp.make
 %%PORTDOCS%%GNUstep/System/Library/Documentation/Developer/Gui/Additions/GuiAdditions.html
 %%PORTDOCS%%GNUstep/System/Library/Documentation/Developer/Gui/Additions/GuiAdditions.igsdoc
 %%PORTDOCS%%GNUstep/System/Library/Documentation/Developer/Gui/Additions/MainIndex.html
+%%GNUSTEP_DEVEL%%%%PORTDOCS%%GNUstep/System/Library/Documentation/Developer/Gui/Additions/OrderedSymbolDeclarations.plist
 %%PORTDOCS%%GNUstep/System/Library/Documentation/Developer/Gui/Additions/TypesAndConstants.gsdoc
 %%PORTDOCS%%GNUstep/System/Library/Documentation/Developer/Gui/Additions/TypesAndConstants.html
 %%PORTDOCS%%GNUstep/System/Library/Documentation/Developer/Gui/Additions/TypesTOC.gsdoc
@@ -291,6 +292,7 @@ GNUstep/System/Library/ColorPickers/WheelPicker.bundle/stamp.make
 %%PORTDOCS%%GNUstep/System/Library/Documentation/Developer/Gui/Reference/NSWindowController.html
 %%PORTDOCS%%GNUstep/System/Library/Documentation/Developer/Gui/Reference/NSWorkspace.gsdoc
 %%PORTDOCS%%GNUstep/System/Library/Documentation/Developer/Gui/Reference/NSWorkspace.html
+%%GNUSTEP_DEVEL%%%%PORTDOCS%%GNUstep/System/Library/Documentation/Developer/Gui/Reference/OrderedSymbolDeclarations.plist
 %%PORTDOCS%%GNUstep/System/Library/Documentation/Developer/Gui/Reference/ProtocolsTOC.gsdoc
 %%PORTDOCS%%GNUstep/System/Library/Documentation/Developer/Gui/Reference/ProtocolsTOC.html
 %%PORTDOCS%%GNUstep/System/Library/Documentation/Developer/Gui/Reference/TypesAndConstants.gsdoc
@@ -330,9 +332,10 @@ GNUstep/System/Library/Headers/AppKit/GSDisplayServer.h
 GNUstep/System/Library/Headers/AppKit/GSDragView.h
 GNUstep/System/Library/Headers/AppKit/GSEPSPrintOperation.h
 GNUstep/System/Library/Headers/AppKit/GSFontInfo.h
-GNUstep/System/Library/Headers/AppKit/GSFusedSilica.h
+%%GNUSTEP_STABLE%%GNUstep/System/Library/Headers/AppKit/GSFusedSilica.h
 GNUstep/System/Library/Headers/AppKit/GSGormLoading.h
 GNUstep/System/Library/Headers/AppKit/GSHbox.h
+%%GNUSTEP_DEVEL%%GNUstep/System/Library/Headers/AppKit/GSHelpAttachment.h
 GNUstep/System/Library/Headers/AppKit/GSHelpManagerPanel.h
 GNUstep/System/Library/Headers/AppKit/GSHorizontalTypesetter.h
 GNUstep/System/Library/Headers/AppKit/GSInfoPanel.h
@@ -361,6 +364,7 @@ GNUstep/System/Library/Headers/AppKit/GSTypesetter.h
 GNUstep/System/Library/Headers/AppKit/GSVbox.h
 GNUstep/System/Library/Headers/AppKit/GSVersion.h
 %%GNUSTEP_DEVEL%%GNUstep/System/Library/Headers/AppKit/GSWindowDecorationView.h
+%%GNUSTEP_DEVEL%%GNUstep/System/Library/Headers/AppKit/GSXibLoading.h
 GNUstep/System/Library/Headers/AppKit/IMConnectors.h
 GNUstep/System/Library/Headers/AppKit/IMCustomObject.h
 GNUstep/System/Library/Headers/AppKit/IMLoading.h
@@ -502,6 +506,7 @@ GNUstep/System/Library/Headers/AppKit/NSToolbarItemGroup.h
 GNUstep/System/Library/Headers/AppKit/NSUserDefaultsController.h
 GNUstep/System/Library/Headers/AppKit/NSUserInterfaceValidation.h
 GNUstep/System/Library/Headers/AppKit/NSView.h
+%%GNUSTEP_DEVEL%%GNUstep/System/Library/Headers/AppKit/NSViewController.h
 GNUstep/System/Library/Headers/AppKit/NSWindow.h
 GNUstep/System/Library/Headers/AppKit/NSWindowController.h
 GNUstep/System/Library/Headers/AppKit/NSWorkspace.h
@@ -514,9 +519,10 @@ GNUstep/System/Library/Headers/GNUstepGUI/GSDisplayServer.h
 GNUstep/System/Library/Headers/GNUstepGUI/GSDragView.h
 GNUstep/System/Library/Headers/GNUstepGUI/GSEPSPrintOperation.h
 GNUstep/System/Library/Headers/GNUstepGUI/GSFontInfo.h
-GNUstep/System/Library/Headers/GNUstepGUI/GSFusedSilica.h
+%%GNUSTEP_STABLE%%GNUstep/System/Library/Headers/GNUstepGUI/GSFusedSilica.h
 GNUstep/System/Library/Headers/GNUstepGUI/GSGormLoading.h
 GNUstep/System/Library/Headers/GNUstepGUI/GSHbox.h
+%%GNUSTEP_DEVEL%%GNUstep/System/Library/Headers/GNUstepGUI/GSHelpAttachment.h
 GNUstep/System/Library/Headers/GNUstepGUI/GSHelpManagerPanel.h
 GNUstep/System/Library/Headers/GNUstepGUI/GSHorizontalTypesetter.h
 GNUstep/System/Library/Headers/GNUstepGUI/GSInfoPanel.h
@@ -545,6 +551,7 @@ GNUstep/System/Library/Headers/GNUstepGUI/GSTypesetter.h
 GNUstep/System/Library/Headers/GNUstepGUI/GSVbox.h
 GNUstep/System/Library/Headers/GNUstepGUI/GSVersion.h
 %%GNUSTEP_DEVEL%%GNUstep/System/Library/Headers/GNUstepGUI/GSWindowDecorationView.h
+%%GNUSTEP_DEVEL%%GNUstep/System/Library/Headers/GNUstepGUI/GSXibLoading.h
 GNUstep/System/Library/Headers/GNUstepGUI/IMConnectors.h
 GNUstep/System/Library/Headers/GNUstepGUI/IMCustomObject.h
 GNUstep/System/Library/Headers/GNUstepGUI/IMLoading.h
@@ -555,9 +562,10 @@ GNUstep/System/Library/Headers/gnustep/gui/GSDisplayServer.h
 GNUstep/System/Library/Headers/gnustep/gui/GSDragView.h
 GNUstep/System/Library/Headers/gnustep/gui/GSEPSPrintOperation.h
 GNUstep/System/Library/Headers/gnustep/gui/GSFontInfo.h
-GNUstep/System/Library/Headers/gnustep/gui/GSFusedSilica.h
+%%GNUSTEP_STABLE%%GNUstep/System/Library/Headers/gnustep/gui/GSFusedSilica.h
 GNUstep/System/Library/Headers/gnustep/gui/GSGormLoading.h
 GNUstep/System/Library/Headers/gnustep/gui/GSHbox.h
+%%GNUSTEP_DEVEL%%GNUstep/System/Library/Headers/gnustep/gui/GSHelpAttachment.h
 GNUstep/System/Library/Headers/gnustep/gui/GSHelpManagerPanel.h
 GNUstep/System/Library/Headers/gnustep/gui/GSHorizontalTypesetter.h
 GNUstep/System/Library/Headers/gnustep/gui/GSInfoPanel.h
@@ -586,6 +594,7 @@ GNUstep/System/Library/Headers/gnustep/gui/GSTypesetter.h
 GNUstep/System/Library/Headers/gnustep/gui/GSVbox.h
 GNUstep/System/Library/Headers/gnustep/gui/GSVersion.h
 %%GNUSTEP_DEVEL%%GNUstep/System/Library/Headers/gnustep/gui/GSWindowDecorationView.h
+%%GNUSTEP_DEVEL%%GNUstep/System/Library/Headers/gnustep/gui/GSXibLoading.h
 GNUstep/System/Library/Headers/gnustep/gui/IMConnectors.h
 GNUstep/System/Library/Headers/gnustep/gui/IMCustomObject.h
 GNUstep/System/Library/Headers/gnustep/gui/IMLoading.h
@@ -621,19 +630,27 @@ GNUstep/System/Library/Images/common_ClosedHandCursor.tiff
 GNUstep/System/Library/Images/common_ColorSwatch.tiff
 GNUstep/System/Library/Images/common_ComboBoxEllipsis.tiff
 GNUstep/System/Library/Images/common_DecimalTabStop.tiff
+%%GNUSTEP_DEVEL%%GNUstep/System/Library/Images/common_Desktop.tiff
 GNUstep/System/Library/Images/common_Diamond.tiff
 GNUstep/System/Library/Images/common_Dimple.tiff
 %%GNUSTEP_DEVEL%%GNUstep/System/Library/Images/common_DimpleHoriz.tiff
+%%GNUSTEP_DEVEL%%GNUstep/System/Library/Images/common_DocsFolder.tiff
 GNUstep/System/Library/Images/common_DownArrowSmall.tiff
+%%GNUSTEP_DEVEL%%GNUstep/System/Library/Images/common_DownloadFolder.tiff
 GNUstep/System/Library/Images/common_Folder.tiff
+%%GNUSTEP_DEVEL%%GNUstep/System/Library/Images/common_GSFolder.tiff
 GNUstep/System/Library/Images/common_HelpCursor.tiff
+%%GNUSTEP_DEVEL%%GNUstep/System/Library/Images/common_HelpLink.tiff
 GNUstep/System/Library/Images/common_Home.tiff
 GNUstep/System/Library/Images/common_HomeDirectory.tiff
+%%GNUSTEP_DEVEL%%GNUstep/System/Library/Images/common_ImageFolder.tiff
 GNUstep/System/Library/Images/common_LeftTabStop.tiff
+%%GNUSTEP_DEVEL%%GNUstep/System/Library/Images/common_LibraryFolder.tiff
 GNUstep/System/Library/Images/common_MiniWindowTile.tiff
 GNUstep/System/Library/Images/common_Miniaturize.tiff
 GNUstep/System/Library/Images/common_MiniaturizeH.tiff
 GNUstep/System/Library/Images/common_Mount.tiff
+%%GNUSTEP_DEVEL%%GNUstep/System/Library/Images/common_MusicFolder.tiff
 GNUstep/System/Library/Images/common_Nibble.tiff
 GNUstep/System/Library/Images/common_OpenHandCursor.tiff
 GNUstep/System/Library/Images/common_Printer.tiff
@@ -706,6 +723,9 @@ GNUstep/System/Library/KeyBindings/DefaultKeyBindings.dict
 GNUstep/System/Library/Libraries/gnustep-gui/Versions/%%BASEVERSION%%/Resources/English.lproj/GSDataLinkPanel.gorm/data.classes
 GNUstep/System/Library/Libraries/gnustep-gui/Versions/%%BASEVERSION%%/Resources/English.lproj/GSDataLinkPanel.gorm/data.info
 GNUstep/System/Library/Libraries/gnustep-gui/Versions/%%BASEVERSION%%/Resources/English.lproj/GSDataLinkPanel.gorm/objects.gorm
+%%GNUSTEP_DEVEL%%GNUstep/System/Library/Libraries/gnustep-gui/Versions/%%BASEVERSION%%/Resources/English.lproj/GSFindPanel.gorm/data.classes
+%%GNUSTEP_DEVEL%%GNUstep/System/Library/Libraries/gnustep-gui/Versions/%%BASEVERSION%%/Resources/English.lproj/GSFindPanel.gorm/data.info
+%%GNUSTEP_DEVEL%%GNUstep/System/Library/Libraries/gnustep-gui/Versions/%%BASEVERSION%%/Resources/English.lproj/GSFindPanel.gorm/objects.gorm
 GNUstep/System/Library/Libraries/gnustep-gui/Versions/%%BASEVERSION%%/Resources/English.lproj/GSPageLayout.gorm/data.classes
 GNUstep/System/Library/Libraries/gnustep-gui/Versions/%%BASEVERSION%%/Resources/English.lproj/GSPageLayout.gorm/data.info
 GNUstep/System/Library/Libraries/gnustep-gui/Versions/%%BASEVERSION%%/Resources/English.lproj/GSPageLayout.gorm/objects.gorm
@@ -727,6 +747,9 @@ GNUstep/System/Library/Libraries/gnustep-gui/Versions/%%BASEVERSION%%/Resources/
 %%GNUSTEP_DEVEL%%GNUstep/System/Library/Libraries/gnustep-gui/Versions/%%BASEVERSION%%/Resources/Spanish.lproj/GSDataLinkPanel.gorm/data.classes
 %%GNUSTEP_DEVEL%%GNUstep/System/Library/Libraries/gnustep-gui/Versions/%%BASEVERSION%%/Resources/Spanish.lproj/GSDataLinkPanel.gorm/data.info
 %%GNUSTEP_DEVEL%%GNUstep/System/Library/Libraries/gnustep-gui/Versions/%%BASEVERSION%%/Resources/Spanish.lproj/GSDataLinkPanel.gorm/objects.gorm
+%%GNUSTEP_DEVEL%%GNUstep/System/Library/Libraries/gnustep-gui/Versions/%%BASEVERSION%%/Resources/Spanish.lproj/GSFindPanel.gorm/data.classes
+%%GNUSTEP_DEVEL%%GNUstep/System/Library/Libraries/gnustep-gui/Versions/%%BASEVERSION%%/Resources/Spanish.lproj/GSFindPanel.gorm/data.info
+%%GNUSTEP_DEVEL%%GNUstep/System/Library/Libraries/gnustep-gui/Versions/%%BASEVERSION%%/Resources/Spanish.lproj/GSFindPanel.gorm/objects.gorm
 %%GNUSTEP_DEVEL%%GNUstep/System/Library/Libraries/gnustep-gui/Versions/%%BASEVERSION%%/Resources/Spanish.lproj/GSPageLayout.gorm/data.classes
 %%GNUSTEP_DEVEL%%GNUstep/System/Library/Libraries/gnustep-gui/Versions/%%BASEVERSION%%/Resources/Spanish.lproj/GSPageLayout.gorm/data.info
 %%GNUSTEP_DEVEL%%GNUstep/System/Library/Libraries/gnustep-gui/Versions/%%BASEVERSION%%/Resources/Spanish.lproj/GSPageLayout.gorm/objects.gorm
@@ -778,6 +801,7 @@ GNUstep/System/Tools/set_show_service
 %%GNUSTEP_DEVEL%%@dirrm GNUstep/System/Library/Libraries/gnustep-gui/Versions/%%BASEVERSION%%/Resources/Spanish.lproj/GSSpellPanel.gorm
 %%GNUSTEP_DEVEL%%@dirrm GNUstep/System/Library/Libraries/gnustep-gui/Versions/%%BASEVERSION%%/Resources/Spanish.lproj/GSPrintPanel.gorm
 %%GNUSTEP_DEVEL%%@dirrm GNUstep/System/Library/Libraries/gnustep-gui/Versions/%%BASEVERSION%%/Resources/Spanish.lproj/GSPageLayout.gorm
+%%GNUSTEP_DEVEL%%@dirrm GNUstep/System/Library/Libraries/gnustep-gui/Versions/%%BASEVERSION%%/Resources/Spanish.lproj/GSFindPanel.gorm
 %%GNUSTEP_DEVEL%%@dirrm GNUstep/System/Library/Libraries/gnustep-gui/Versions/%%BASEVERSION%%/Resources/Spanish.lproj/GSDataLinkPanel.gorm
 %%GNUSTEP_DEVEL%%@dirrm GNUstep/System/Library/Libraries/gnustep-gui/Versions/%%BASEVERSION%%/Resources/Spanish.lproj
 @dirrm GNUstep/System/Library/Libraries/gnustep-gui/Versions/%%BASEVERSION%%/Resources/Lojban.lproj
@@ -789,6 +813,7 @@ GNUstep/System/Tools/set_show_service
 @dirrm GNUstep/System/Library/Libraries/gnustep-gui/Versions/%%BASEVERSION%%/Resources/English.lproj/GSSpellPanel.gorm
 @dirrm GNUstep/System/Library/Libraries/gnustep-gui/Versions/%%BASEVERSION%%/Resources/English.lproj/GSPrintPanel.gorm
 @dirrm GNUstep/System/Library/Libraries/gnustep-gui/Versions/%%BASEVERSION%%/Resources/English.lproj/GSPageLayout.gorm
+@dirrm GNUstep/System/Library/Libraries/gnustep-gui/Versions/%%BASEVERSION%%/Resources/English.lproj/GSFindPanel.gorm
 @dirrm GNUstep/System/Library/Libraries/gnustep-gui/Versions/%%BASEVERSION%%/Resources/English.lproj/GSDataLinkPanel.gorm
 @dirrm GNUstep/System/Library/Libraries/gnustep-gui/Versions/%%BASEVERSION%%/Resources/English.lproj
 @dirrm GNUstep/System/Library/Libraries/gnustep-gui/Versions/%%BASEVERSION%%/Resources
