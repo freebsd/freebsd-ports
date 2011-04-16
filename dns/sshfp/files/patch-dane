@@ -1,0 +1,14 @@
+--- dane.orig	2011-04-15 15:47:31.000000000 +0200
++++ dane	2011-04-15 15:49:44.000000000 +0200
+@@ -27,9 +27,8 @@
+ try:
+ 	import ldns
+ except ImportError:
+-	print "dane requires the ldns-python sub-package from http://www.nlnetlabs.nl/projects/ldns/"
+-	print "Fedora/CentOS: yum install ldns-python"
+-	print "Debian/Ubuntu: apt-get install python-ldns"
++	print "dane requires the ldns python bindings. Please reinstall dns/ldns with the"
++	print "python binding option enabled."
+ 	sys.exit()
+ 
+ 
