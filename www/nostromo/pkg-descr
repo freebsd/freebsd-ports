@@ -1,0 +1,9 @@
+Nostromo aka nhttpd is a simple, fast and secure HTTP server. It
+runs as a single process, handling connections with select(2). For
+CGIs and directory listing it does fork(2). The minimum of HTTP/1.1
+and CGI/1.1 are implemented. Also supported are: chroot, setuid,
+basic authentication, SSL, IPv6, custom responses, aliases, and
+virtual hosts. The access log is written in standard CLF format.
+
+AUTHOR: Glocker Marcus <marcus@nazgul.ch>
+WWW: http://www.nazgul.ch/dev_nostromo.html

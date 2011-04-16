@@ -607,6 +607,7 @@
     SUBDIR += nibbleblog
     SUBDIR += node
     SUBDIR += node-devel
+    SUBDIR += nostromo
     SUBDIR += notftp
     SUBDIR += npapi-xine
     SUBDIR += npc

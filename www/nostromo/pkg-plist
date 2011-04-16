@@ -1,0 +1,15 @@
+sbin/crypt
+sbin/nhttpd
+nostromo/conf/mimes
+nostromo/conf/nhttpd.conf-dist
+nostromo/htdocs/index.html
+nostromo/htdocs/nostromo.gif
+nostromo/htdocs/cgi-bin/printenv
+nostromo/icons/dir.gif
+nostromo/icons/file.gif
+@dirrmtry nostromo/conf
+@dirrmtry nostromo/htdocs/cgi-bin
+@dirrmtry nostromo/htdocs
+@dirrmtry nostromo/icons
+@dirrmtry nostromo/logs
+@dirrmtry nostromo
