@@ -9614,6 +9614,7 @@ mode-info                       ports/editors/mode-info
 modlogan                        ports/textproc/modlogan
 modplugplay                     ports/audio/modplugplay
 moftpd                          ports/ftp/moftpd
+mohawk                          ports/www/mohawk
 moinmoin                        ports/www/moinmoin
 mol2ps                          ports/science/mol2ps
 molden                          ports/biology/molden
@@ -12682,6 +12683,7 @@ p5-HTTP-Cookies-Mozilla         ports/www/p5-HTTP-Cookies-Mozilla
 p5-HTTP-Cookies-iCab            ports/www/p5-HTTP-Cookies-iCab
 p5-HTTP-Cookies-w3m             ports/www/p5-HTTP-Cookies-w3m
 p5-HTTP-DAV                     ports/www/p5-HTTP-DAV
+p5-HTTP-Daemon                  ports/www/p5-HTTP-Daemon
 p5-HTTP-Daemon-SSL              ports/www/p5-HTTP-Daemon-SSL
 p5-HTTP-Date                    ports/www/p5-HTTP-Date
 p5-HTTP-Engine                  ports/www/p5-HTTP-Engine
@@ -12692,9 +12694,11 @@ p5-HTTP-HeaderParser-XS         ports/www/p5-HTTP-HeaderParser-XS
 p5-HTTP-Headers-Fast            ports/www/p5-HTTP-Headers-Fast
 p5-HTTP-Lite                    ports/www/p5-HTTP-Lite
 p5-HTTP-MHTTP                   ports/www/p5-HTTP-MHTTP
+p5-HTTP-Message                 ports/www/p5-HTTP-Message
 p5-HTTP-MobileAgent             ports/www/p5-HTTP-MobileAgent
 p5-HTTP-MobileAgent-Plugin-Charset  ports/www/p5-HTTP-MobileAgent-Plugin-Charset
 p5-HTTP-MobileAttribute         ports/www/p5-HTTP-MobileAttribute
+p5-HTTP-Negotiate               ports/www/p5-HTTP-Negotiate
 p5-HTTP-Parser                  ports/www/p5-HTTP-Parser
 p5-HTTP-Parser-XS               ports/www/p5-HTTP-Parser-XS
 p5-HTTP-Proxy                   ports/www/p5-HTTP-Proxy
@@ -12891,6 +12895,7 @@ p5-LJ-TextMessage               ports/sysutils/p5-LJ-TextMessage
 p5-LMAP-CID2SPF                 ports/mail/p5-LMAP-CID2SPF
 p5-LWP-Authen-Wsse              ports/www/p5-LWP-Authen-Wsse
 p5-LWP-ConnCache-MaxKeepAliveRequests  ports/www/p5-LWP-ConnCache-MaxKeepAliveRequests
+p5-LWP-MediaTypes               ports/www/p5-LWP-MediaTypes
 p5-LWP-Online                   ports/www/p5-LWP-Online
 p5-LWP-UserAgent-Determined     ports/www/p5-LWP-UserAgent-Determined
 p5-LWP-UserAgent-POE            ports/www/p5-LWP-UserAgent-POE
@@ -13433,6 +13438,7 @@ p5-Net-Gopher                   ports/net/p5-Net-Gopher
 p5-Net-Growl                    ports/net/p5-Net-Growl
 p5-Net-GrowlClient              ports/net/p5-Net-GrowlClient
 p5-Net-HL7                      ports/net/p5-Net-HL7
+p5-Net-HTTP                     ports/net/p5-Net-HTTP
 p5-Net-Hiveminder               ports/net/p5-Net-Hiveminder
 p5-Net-ICQ2000                  ports/net-im/p5-Net-ICQ2000
 p5-Net-IDN-Encode               ports/textproc/p5-Net-IDN-Encode
@@ -16901,6 +16907,7 @@ p5-http-cache-transparent       ports/www/p5-HTTP-Cache-Transparent
 p5-http-cookies-icab            ports/www/p5-HTTP-Cookies-iCab
 p5-http-cookies-mozilla         ports/www/p5-HTTP-Cookies-Mozilla
 p5-http-cookies-w3m             ports/www/p5-HTTP-Cookies-w3m
+p5-http-daemon                  ports/www/p5-HTTP-Daemon
 p5-http-daemon-ssl              ports/www/p5-HTTP-Daemon-SSL
 p5-http-date                    ports/www/p5-HTTP-Date
 p5-http-dav                     ports/www/p5-HTTP-DAV
@@ -16911,10 +16918,12 @@ p5-http-ghttp                   ports/www/p5-HTTP-GHTTP
 p5-http-headerparser-xs         ports/www/p5-HTTP-HeaderParser-XS
 p5-http-headers-fast            ports/www/p5-HTTP-Headers-Fast
 p5-http-lite                    ports/www/p5-HTTP-Lite
+p5-http-message                 ports/www/p5-HTTP-Message
 p5-http-mhttp                   ports/www/p5-HTTP-MHTTP
 p5-http-mobileagent             ports/www/p5-HTTP-MobileAgent
 p5-http-mobileagent-plugin-charset  ports/www/p5-HTTP-MobileAgent-Plugin-Charset
 p5-http-mobileattribute         ports/www/p5-HTTP-MobileAttribute
+p5-http-negotiate               ports/www/p5-HTTP-Negotiate
 p5-http-parser                  ports/www/p5-HTTP-Parser
 p5-http-parser-xs               ports/www/p5-HTTP-Parser-XS
 p5-http-proxy                   ports/www/p5-HTTP-Proxy
@@ -17215,6 +17224,7 @@ p5-lucene                       ports/textproc/p5-Lucene
 p5-luka                         ports/devel/p5-Luka
 p5-lwp-authen-wsse              ports/www/p5-LWP-Authen-Wsse
 p5-lwp-conncache-maxkeepaliverequests  ports/www/p5-LWP-ConnCache-MaxKeepAliveRequests
+p5-lwp-mediatypes               ports/www/p5-LWP-MediaTypes
 p5-lwp-online                   ports/www/p5-LWP-Online
 p5-lwp-useragent-determined     ports/www/p5-LWP-UserAgent-Determined
 p5-lwp-useragent-poe            ports/www/p5-LWP-UserAgent-POE
@@ -17654,6 +17664,7 @@ p5-net-growl                    ports/net/p5-Net-Growl
 p5-net-growlclient              ports/net/p5-Net-GrowlClient
 p5-net-hiveminder               ports/net/p5-Net-Hiveminder
 p5-net-hl7                      ports/net/p5-Net-HL7
+p5-net-http                     ports/net/p5-Net-HTTP
 p5-net-icq2000                  ports/net-im/p5-Net-ICQ2000
 p5-net-ident                    ports/net/p5-Net-Ident
 p5-net-idn-encode               ports/textproc/p5-Net-IDN-Encode
@@ -20401,6 +20412,7 @@ php5-snmp                       ports/net-mgmt/php5-snmp
 php5-soap                       ports/net/php5-soap
 php5-sockets                    ports/net/php5-sockets
 php5-sqlite                     ports/databases/php5-sqlite
+php5-sqlite3                    ports/databases/php5-sqlite3
 php5-swfed                      ports/graphics/php5-swfed
 php5-sybase_ct                  ports/databases/php5-sybase_ct
 php5-sysvmsg                    ports/devel/php5-sysvmsg
