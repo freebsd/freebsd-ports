@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pty
-PORTVERSION=	1.1
+PORTVERSION=	1.2
 CATEGORIES=	devel
 MASTER_SITES=	http://www.mammothcheese.ca/
 
