@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	violetland
-PORTVERSION=	0.3.1
+PORTVERSION=	0.3.2
 CATEGORIES=	games
 MASTER_SITES=	GOOGLE_CODE \
 		http://mirror.amdmi3.ru/distfiles/
@@ -20,6 +20,7 @@ USE_SDL=	sdl mixer image ttf
 USE_GL=		gl glu
 MAKE_JOBS_SAFE=	yes
 USE_CMAKE=	yes
+USE_GETTEXT=	yes
 CMAKE_USE_PTHREAD=yes
 CMAKE_ARGS=	-DDATA_INSTALL_DIR="${DATADIR}"
 
@@ -31,5 +32,9 @@ DESKTOP_ENTRIES="Violetland" \
 		"violetland" \
 		"Game;ArcadeGame;" \
 		false
+
+post-patch:
+	@${REINPLACE_CMD} -e '/set.libList/ s|)| ${LOCALBASE}/lib/libintl.so&|' \
+		${WRKSRC}/CMakeLists.txt
 
 .include <bsd.port.mk>
