@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mohawk
-PORTVERSION=	0.8
+PORTVERSION=	0.9
 CATEGORIES=	www ipv6
 MASTER_SITES=	http://files.etoilebsd.net/mohawk/
 
