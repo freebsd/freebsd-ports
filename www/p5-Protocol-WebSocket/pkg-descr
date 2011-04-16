@@ -1,0 +1,5 @@
+Client/server WebSocket message and frame parser/constructor. This
+module does not provide a WebSocket server or client, but is made for
+using in http servers or clients to provide WebSocket support
+
+WWW: http://search.cpan.org/dist/Protocol-WebSocket
