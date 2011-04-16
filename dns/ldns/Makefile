@@ -8,7 +8,8 @@
 PORTNAME=	ldns
 PORTVERSION=	1.6.9
 CATEGORIES=	dns
-MASTER_SITES=	http://www.nlnetlabs.nl/downloads/ldns/
+MASTER_SITES=	http://www.nlnetlabs.nl/downloads/ldns/ \
+		CRITICAL
 
 MAINTAINER=	jaap@NLnetLabs.nl
 COMMENT=	A library for programs conforming to DNS RFCs and drafts
@@ -24,7 +25,8 @@ OPTIONS=	DOCS "With documentation" Off \
 		EXAMPLES "With example programs" Off \
 		DRILL "With drill program" Off \
 		GOST "GOST signatures enabled (requires openssl >= 1.0.0)" Off \
-		ECDSA "With highly experimental ECDSA support" Off
+		ECDSA "With highly experimental ECDSA support" Off \
+		PYLDNS "Build python bindings" Off
 
 .include <bsd.port.pre.mk>
 
@@ -253,6 +255,17 @@ PLIST_SUB+=		EXAMPLES="@comment "
 
 .if defined(WITH_ECDSA) && ${OSVERSION} > 700000
 CONFIGURE_ARGS+=	--enable-ecdsa
+.endif
+
+.if defined(WITH_PYLDNS)
+USE_PYTHON=		yes
+.include "${PORTSDIR}/Mk/bsd.python.mk"
+CONFIGURE_ARGS+=	--with-pyldns
+BUILD_DEPENDS+=		${LOCALBASE}/bin/swig:${PORTSDIR}/devel/swig13
+INSTALL_TARGET+=	install-pyldns
+PLIST_SUB+=		PYLDNS=""
+.else
+PLIST_SUB+=		PYLDNS="@comment "
 .endif
 
 .if ${OSVERSION} < 700000
