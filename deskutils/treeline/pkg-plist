@@ -47,6 +47,8 @@ lib/treeline/setup.py
 lib/treeline/setup.pyc
 lib/treeline/spellcheck.py
 lib/treeline/spellcheck.pyc
+lib/treeline/treecontrol.py
+lib/treeline/treecontrol.pyc
 lib/treeline/treedialogs.py
 lib/treeline/treedialogs.pyc
 lib/treeline/treedoc.py
@@ -103,11 +105,13 @@ lib/treeline/undo.pyc
 %%DATADIR%%/icons/toolbar/32x32/filequit.png
 %%DATADIR%%/icons/toolbar/32x32/filesave.png
 %%DATADIR%%/icons/toolbar/32x32/filesaveas.png
+%%DATADIR%%/icons/toolbar/32x32/helpnext.png
 %%DATADIR%%/icons/toolbar/32x32/helpabout.png
 %%DATADIR%%/icons/toolbar/32x32/helpback.png
 %%DATADIR%%/icons/toolbar/32x32/helpcontents.png
 %%DATADIR%%/icons/toolbar/32x32/helpforward.png
 %%DATADIR%%/icons/toolbar/32x32/helphome.png
+%%DATADIR%%/icons/toolbar/32x32/helpprevious.png
 %%DATADIR%%/icons/toolbar/32x32/textaddboldtag.png
 %%DATADIR%%/icons/toolbar/32x32/textaddcolortag.png
 %%DATADIR%%/icons/toolbar/32x32/textadditalicstag.png
@@ -128,6 +132,8 @@ lib/treeline/undo.pyc
 %%DATADIR%%/icons/toolbar/32x32/viewshowchild.png
 %%DATADIR%%/icons/toolbar/32x32/viewshowdescend.png
 %%DATADIR%%/icons/toolbar/32x32/viewtree.png
+%%DATADIR%%/icons/toolbar/32x32/winclosewindow.png
+%%DATADIR%%/icons/toolbar/32x32/winnewwindow.png
 %%DATADIR%%/icons/tree/anchor.png
 %%DATADIR%%/icons/tree/arrow_1.png
 %%DATADIR%%/icons/tree/arrow_2.png
@@ -226,11 +232,12 @@ lib/treeline/undo.pyc
 %%PORTDOCS%%%%DOCSDIR%%/sample_other_fields.trl
 %%PORTDOCS%%%%DOCSDIR%%/sample_table_booklist.trl
 @dirrm %%DATADIR%%/icons/toolbar/32x32
+@dirrm %%DATADIR%%/icons/toolbar/16x16
 @dirrm %%DATADIR%%/icons/toolbar
 @dirrm %%DATADIR%%/icons/tree
 @dirrm %%DATADIR%%/icons
 @dirrm %%DATADIR%%/templates
 @dirrm %%DATADIR%%
-%%HTTPLOAD%%@dirrm lib/treeline/plugins
+@dirrm lib/treeline/plugins
 @dirrm lib/treeline
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
