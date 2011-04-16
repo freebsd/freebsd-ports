@@ -1,0 +1,20 @@
+%%SITE_PERL%%/Protocol/WebSocket.pm
+%%SITE_PERL%%/Protocol/WebSocket/Cookie.pm
+%%SITE_PERL%%/Protocol/WebSocket/Cookie/Request.pm
+%%SITE_PERL%%/Protocol/WebSocket/Cookie/Response.pm
+%%SITE_PERL%%/Protocol/WebSocket/Frame.pm
+%%SITE_PERL%%/Protocol/WebSocket/Handshake.pm
+%%SITE_PERL%%/Protocol/WebSocket/Handshake/Client.pm
+%%SITE_PERL%%/Protocol/WebSocket/Handshake/Server.pm
+%%SITE_PERL%%/Protocol/WebSocket/Message.pm
+%%SITE_PERL%%/Protocol/WebSocket/Request.pm
+%%SITE_PERL%%/Protocol/WebSocket/Response.pm
+%%SITE_PERL%%/Protocol/WebSocket/Stateful.pm
+%%SITE_PERL%%/Protocol/WebSocket/URL.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Protocol/WebSocket/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Protocol/WebSocket
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Protocol
+@dirrm %%SITE_PERL%%/Protocol/WebSocket/Handshake
+@dirrm %%SITE_PERL%%/Protocol/WebSocket/Cookie
+@dirrm %%SITE_PERL%%/Protocol/WebSocket
+@dirrmtry %%SITE_PERL%%/Protocol
