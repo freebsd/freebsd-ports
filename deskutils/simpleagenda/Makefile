@@ -19,9 +19,14 @@ LIB_DEPENDS+=	ical:${PORTSDIR}/devel/libical
 LICENSE=	GPLv2
 
 USE_GNUSTEP=	yes
+USE_GNUSTEP_CONFIGURE=	yes
 USE_GNUSTEP_BACK=	yes
 USE_GNUSTEP_BUILD=	yes
 USE_GNUSTEP_INSTALL=	yes
+
+CPPFLAGS+=	-I${LOCALBASE}/include
+CFLAGS+=	-I${LOCALBASE}/include
+CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS}"
 
 pre-configure:
 	${REINPLACE_CMD} -e 's|SimpleAgenda|SimpleAgenda.m|' ${WRKSRC}/configure
