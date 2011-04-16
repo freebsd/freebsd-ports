@@ -17,7 +17,7 @@ MASTER_SITES=	# empty
 DISTFILES=	# empty
 EXTRACT_ONLY=	# empty
 
-MAINTAINER=	tmclaugh@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Meta-port for Gnome iconsets
 
 RUN_DEPENDS=	${LOCALBASE}/share/icons/AquaFusion/index.theme:${PORTSDIR}/x11-themes/gnome-icons-aqua-fusion \

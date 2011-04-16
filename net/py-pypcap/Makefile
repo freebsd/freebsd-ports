@@ -12,7 +12,7 @@ CATEGORIES=	net python
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	tmclaugh@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simplified object-oriented Python extension module for libpcap
 
 BUILD_DEPENDS=	pyrexc:${PORTSDIR}/devel/pyrex

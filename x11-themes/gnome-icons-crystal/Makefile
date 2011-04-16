@@ -17,7 +17,7 @@ MASTER_SITES=	SF/${PORTNAME}forgnome/Crystal%20SVG%20Icons/v${PORTVERSION}
 DISTNAME=	CrystalSVG-${PORTVERSION}
 EXTRACT_SUFX=	.bz2
 
-MAINTAINER=	tmclaugh@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Crystal SVG Icons for Gnome
 
 RESTRICTED=	${REASON}

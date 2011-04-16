@@ -11,7 +11,7 @@ CATEGORIES=	ftp ipv6
 MASTER_SITES=	ftp://ftp.netbsd.org/pub/NetBSD/misc/tnftp/ \
 		ftp://ftp.netbsd.org/pub/NetBSD/misc/tnftp/old/
 
-MAINTAINER=	tmclaugh@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Enhanced ftp client from NetBSD
 
 GNU_CONFIGURE=	yes
