@@ -8,9 +8,8 @@
 PORTNAME=	wmfs
 DISTVERSION=	201104
 CATEGORIES=	x11-wm
-MASTER_SITES=	http://wmfs.info/attachments/download/15/ \
-		http://cloud.github.com/downloads/xorg62/wmfs/ \
-		http://cloud.github.com/downloddads/philpep/wmfs/
+MASTER_SITES=	http://wmfs.info/attachments/download/45/ \
+		http://cloud.github.com/downloads/xorg62/wmfs/
 
 MAINTAINER=	dhn@FreeBSD.org
 COMMENT=	A floating and tiling Window Manager From Scratch
@@ -57,7 +56,6 @@ CONFIGURE_ARGS+=	--without-imlib2
 .endif
 
 post-install:
-	${CAT} ${PKGMESSAGE} | ${SED} "s|%%PREFIX%%|${PREFIX}|g" \
-	${FILESDIR}/pkg-message.in
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
