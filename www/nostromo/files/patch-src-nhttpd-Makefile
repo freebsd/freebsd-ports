@@ -1,0 +1,25 @@
+--- src/nhttpd/Makefile.orig	2011-03-20 22:39:18.000000000 +0100
++++ src/nhttpd/Makefile	2011-03-20 22:39:54.000000000 +0100
+@@ -10,18 +10,21 @@
+ 
+ BINOWN=	root
+ BINMOD=	0555
+-BINDIR=	/usr/local/sbin
++BINDIR=	${PREFIX}/sbin
+ 
+ OS!= uname -s
+ 
+ LDADD+= -lssl -lcrypto
++
+ .if ${OS} == "FreeBSD"
+ LDADD+= -lcrypt
+ MANBUILDCAT= yes
+ .endif
++
+ .if ${OS} == "NetBSD"
+ LDADD+= -lcrypt
+ .endif
++
+ .if ${OS} == "Darwin"
+ MAN8= nhttpd.8
+ .endif
