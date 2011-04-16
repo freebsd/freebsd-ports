@@ -1,0 +1,12 @@
+bin/markad
+lib/vdr/libvdr-markad.so.1.7.17
+%%NLS%%share/locale/de_DE/LC_MESSAGES/vdr-markad.mo
+%%NLS%%share/locale/es_ES/LC_MESSAGES/vdr-markad.mo
+%%NLS%%share/locale/fi_FI/LC_MESSAGES/vdr-markad.mo
+%%NLS%%share/locale/it_IT/LC_MESSAGES/vdr-markad.mo
+%%NLS%%share/locale/sk_SK/LC_MESSAGES/vdr-markad.mo
+%%NLS%%share/locale/cs_CZ/LC_MESSAGES/markad.mo
+%%NLS%%share/locale/de_DE/LC_MESSAGES/markad.mo
+%%NLS%%share/locale/fi_FI/LC_MESSAGES/markad.mo
+%%NLS%%share/locale/it_IT/LC_MESSAGES/markad.mo
+%%NLS%%share/locale/sk_SK/LC_MESSAGES/markad.mo
