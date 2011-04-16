@@ -1,0 +1,7 @@
+%%SITE_PERL%%/Mojolicious/Plugin/Mongodb.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Mojolicious/Plugin/Mongodb/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Mojolicious/Plugin/Mongodb
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Mojolicious/Plugin
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Mojolicious
+@dirrmtry %%SITE_PERL%%/Mojolicious/Plugin
+@dirrmtry %%SITE_PERL%%/Mojolicious
