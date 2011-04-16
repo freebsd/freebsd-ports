@@ -1109,6 +1109,7 @@
     SUBDIR += p5-MediaWiki-API
     SUBDIR += p5-Mojolicious
     SUBDIR += p5-Mojolicious-Plugin-Database
+    SUBDIR += p5-Mojolicious-Plugin-Mongodb
     SUBDIR += p5-MojoMojo
     SUBDIR += p5-Net-Akismet
     SUBDIR += p5-Net-Amazon-AWIS
