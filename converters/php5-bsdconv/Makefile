@@ -17,7 +17,7 @@ MASTERDIR=	${.CURDIR}/../bsdconv
 WRKSRC=		${WRKDIR}/${DISTNAME}/wrapper/php
 PATCH_WRKSRC=	${WRKDIR}/${DISTNAME}
 DESCR=		${.CURDIR}/pkg-descr
-PLIST=		# empty
+PLIST=		${NONEXISTENT}
 
 USE_PHP=	yes
 USE_PHPIZE=	yes
