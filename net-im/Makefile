@@ -12,6 +12,7 @@
     SUBDIR += centericq
     SUBDIR += centerim
     SUBDIR += centerim-devel
+    SUBDIR += chattahoochie
     SUBDIR += cicquin
     SUBDIR += cjc
     SUBDIR += cli-msn
@@ -116,7 +117,6 @@
     SUBDIR += papyon
     SUBDIR += pebrot
     SUBDIR += pecl-stomp
-    SUBDIR += pickwick
     SUBDIR += pidgin
     SUBDIR += pidgin-birthday-reminder
     SUBDIR += pidgin-bs
