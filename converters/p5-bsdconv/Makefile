@@ -5,10 +5,7 @@
 # $FreeBSD$
 #
 
-PORTNAME=	bsdconv
-PORTVERSION=	4.3
-CATEGORIES=	converters perl5
-MASTER_SITES=	http://cloud.github.com/downloads/buganini/bsdconv/
+CATEGORIES+=	perl5
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	buganini@gmail.com
@@ -16,14 +13,18 @@ COMMENT=	Perl wrapper for bsdconv
 
 LIB_DEPENDS=	bsdconv.4:${PORTSDIR}/converters/bsdconv
 
+MASTERDIR=	${.CURDIR}/../bsdconv
+WRKSRC=		${WRKDIR}/${DISTNAME}/wrapper/perl
+PATCH_WRKSRC=	${WRKDIR}/${DISTNAME}
+DESCR=		${.CURDIR}/pkg-descr
+PLIST=		${.CURDIR}/pkg-plist
+
 PERL_CONFIGURE=	yes
 
 MAN3=		bsdconv.3
-
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/wrapper/perl
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g' \
 		${WRKSRC}/Makefile.PL
 
-.include <bsd.port.mk>
+.include "${MASTERDIR}/Makefile"
