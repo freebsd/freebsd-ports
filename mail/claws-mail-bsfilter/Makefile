@@ -7,7 +7,7 @@
 
 PORTNAME=	bsfilter
 PORTVERSION=	1.0.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail
 MASTER_SITES=	http://www.claws-mail.org/downloads/plugins/
 PKGNAMEPREFIX=	claws-mail-
@@ -16,8 +16,8 @@ DISTNAME=	bsfilter_plugin-${PORTVERSION}
 MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	bsfilter plugin for claws-mail
 
-BUILD_DEPENDS=	claws-mail>=3.7.8:${PORTSDIR}/mail/claws-mail
-RUN_DEPENDS=	claws-mail>=3.7.8:${PORTSDIR}/mail/claws-mail
+BUILD_DEPENDS=	claws-mail>=3.7.9:${PORTSDIR}/mail/claws-mail
+RUN_DEPENDS=	claws-mail>=3.7.9:${PORTSDIR}/mail/claws-mail
 
 LICENSE=	GPLv3
 
@@ -25,8 +25,9 @@ USE_GMAKE=	yes
 USE_XORG=	x11
 USE_AUTOTOOLS=	autoconf
 MAKE_JOBS_SAFE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+
+CPPFLAGS+=	-I${LOCALBASE}/include
+CONFIGURE_ENV+=	LDFLAGS="-L${LOCALBASE}/lib"
 
 .if defined(WITHOUT_NLS)
 CONFIGURE_ARGS+=--disable-nls

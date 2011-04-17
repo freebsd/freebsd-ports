@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	vcalendar
-PORTVERSION=	2.0.9
-PORTREVISION=	1
+PORTVERSION=	2.0.10
 CATEGORIES=	mail
 MASTER_SITES=	http://www.claws-mail.org/downloads/plugins/ \
 		${MASTER_SITE_LOCAL}
@@ -18,8 +17,8 @@ MAINTAINER=	pawel@FreeBSD.org
 COMMENT=	vCalendar plugin for claws-mail
 
 LIB_DEPENDS=	curl:${PORTSDIR}/ftp/curl
-BUILD_DEPENDS=	claws-mail>=3.7.8:${PORTSDIR}/mail/claws-mail
-RUN_DEPENDS=	claws-mail>=3.7.8:${PORTSDIR}/mail/claws-mail
+BUILD_DEPENDS=	claws-mail>=3.7.9:${PORTSDIR}/mail/claws-mail
+RUN_DEPENDS=	claws-mail>=3.7.9:${PORTSDIR}/mail/claws-mail
 
 LICENSE=	GPLv3
 
@@ -27,11 +26,12 @@ USE_GMAKE=	yes
 USE_ICONV=	yes
 USE_AUTOTOOLS=	autoconf
 MAKE_JOBS_SAFE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+
+CPPFLAGS+=	-I${LOCALBASE}/include
+CONFIGURE_ENV+=	LDFLAGS="-L${LOCALBASE}/lib"
 
 CONFIGURE_ARGS=	--with-libiconv-prefix=${LOCALBASE} \
-	--with-libintl-prefix=${LOCALBASE}
+		--with-libintl-prefix=${LOCALBASE}
 
 .if defined(WITHOUT_NLS)
 CONFIGURE_ARGS+=--disable-nls

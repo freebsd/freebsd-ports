@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	claws-mail
-PORTVERSION=	3.7.8
-PORTREVISION=	1
+PORTVERSION=	3.7.9
 CATEGORIES=	mail news ipv6
 MASTER_SITES=	SF/sylpheed-claws/Claws%20Mail/${PORTVERSION}
 
@@ -42,11 +41,12 @@ MAKE_JOBS_SAFE=	yes
 
 MAN1=		claws-mail.1
 
+CFLAGS+=	${PTHREAD_CFLAGS}
+CPPFLAGS+=	-I${LOCALBASE}/include
+
 CONFIGURE_ARGS=	--with-libiconv-prefix=${LOCALBASE}
 
-CONFIGURE_ENV=	CFLAGS="${CFLAGS} ${PTHREAD_CFLAGS}" \
-		CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib" \
+CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib" \
 		LIBS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
 
 OPTIONS=	ALL		"Enable all options."			off \

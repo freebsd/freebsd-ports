@@ -48,7 +48,6 @@ include/claws-mail/common/template.h
 include/claws-mail/common/timing.h
 include/claws-mail/common/utils.h
 include/claws-mail/common/uuencode.h
-include/claws-mail/common/valgrind.h
 include/claws-mail/common/version.h
 include/claws-mail/common/xml.h
 include/claws-mail/common/xmlprops.h
@@ -312,6 +311,7 @@ share/locale/hu/LC_MESSAGES/claws-mail.mo
 share/locale/id/LC_MESSAGES/claws-mail.mo
 share/locale/it/LC_MESSAGES/claws-mail.mo
 share/locale/ja/LC_MESSAGES/claws-mail.mo
+share/locale/lt/LC_MESSAGES/claws-mail.mo
 share/locale/nl/LC_MESSAGES/claws-mail.mo
 share/locale/pl/LC_MESSAGES/claws-mail.mo
 share/locale/pt_BR/LC_MESSAGES/claws-mail.mo
