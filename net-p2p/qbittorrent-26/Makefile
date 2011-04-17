@@ -17,6 +17,8 @@ COMMENT?=	Bittorrent client using Qt4 and libtorrent-rasterbar
 LIB_DEPENDS=	execinfo.1:${PORTSDIR}/devel/libexecinfo \
 		torrent-rasterbar.6:${PORTSDIR}/net-p2p/libtorrent-rasterbar-15
 
+NO_LATEST_LINK=	yes
+
 MAKE_JOBS_SAFE=	yes
 
 CONFLICTS=	qbittorrent-2.[2345789].*
