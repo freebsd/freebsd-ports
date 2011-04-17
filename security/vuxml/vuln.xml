@@ -34,6 +34,44 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="bf171509-68dd-11e0-afe6-0003ba02bf30">
+    <topic>rt -- multiple vulnerabilities </topic>
+    <affects>
+      <package>
+	<name>rt36</name>
+	<range><lt>3.6.11</lt></range>
+      </package>
+      <package>
+	<name>rt38</name>
+	<range><lt>3.8.10</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Best Practical reports:</p>
+	<blockquote cite="http://blog.bestpractical.com/2011/04/security-vulnerabilities-in-rt.html">
+	  <p>In the process of preparing the release of RT 4.0.0, we performed
+             an extensive security audit of RT's source code.  During this
+             audit, several vulnerabilities were found which affect earlier
+             releases of RT.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2011-1685</cvename>
+      <cvename>CVE-2011-1686</cvename>
+      <cvename>CVE-2011-1687</cvename>
+      <cvename>CVE-2011-1688</cvename>
+      <cvename>CVE-2011-1689</cvename>
+      <cvename>CVE-2011-1690</cvename>
+      <url>http://secunia.com/advisories/44189</url>
+    </references>
+    <dates>
+      <discovery>2011-04-14</discovery>
+      <entry>2011-04-17</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="6a3c3e5c-66cb-11e0-a116-c535f3aa24f0">
     <topic>krb5 -- MITKRB5-SA-2011-004, kadmind invalid pointer free() [CVE-2011-0285]</topic>
     <affects>
