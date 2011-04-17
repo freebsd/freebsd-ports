@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pkg-orphan
-PORTVERSION=	0.1.1
+PORTVERSION=	1.0.1
 CATEGORIES=	ports-mgmt
 MASTER_SITES=	SF
 
