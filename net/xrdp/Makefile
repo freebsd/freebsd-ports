@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://www.club.kyutech.ac.jp/~meta/distfiles/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	meta@club.kyutech.ac.jp
 COMMENT=	An open source Remote Desktop Protocol (RDP) server
 
 USE_XORG=	x11 xfixes
