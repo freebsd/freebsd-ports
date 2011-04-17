@@ -18,7 +18,7 @@ MASTER_SITES=	ftp://ftp.kvirc.de/pub/kvirc/%SUBDIR%/ \
 		http://kvirc.bcoos.net/%SUBDIR%/
 MASTER_SITE_SUBDIR=	${PORTVERSION}/source
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	makc@FreeBSD.org
 COMMENT?=	IRC client for KDE4
 
 .if !defined(PKGNAMESUFFIX)
@@ -108,12 +108,6 @@ CMAKE_ARGS+=	-DWITHOUT_PERL=yes
 PLIST_SUB+=	PERL="@comment "
 .endif
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION}<700042
-CMAKE_USE_PTHREAD=	yes
-.endif
-
 .if defined(WITH_PERL)
 pre-everything::
 	@${ECHO_CMD} "====================================================="
@@ -122,4 +116,4 @@ pre-everything::
 	@${ECHO_CMD} "====================================================="
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
