@@ -34,6 +34,54 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="32b05547-6913-11e0-bdc4-001b2134ef46">
+    <topic>linux-flashplugin -- remote code execution vulnerability</topic>
+    <affects>
+      <package>
+	<name>linux-flashplugin</name>
+	<range><le>9.0r289</le></range>
+      </package>
+      <package>
+	<name>linux-f10-flashplugin</name>
+	<range><lt>10.2r159.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Adobe Product Security Incident Response Team reports:</p>
+	<blockquote cite="http://www.adobe.com/support/security/advisories/apsa11-02.html">
+	  <p>A critical vulnerability exists in Flash Player 10.2.153.1
+	    and earlier versions (Adobe Flash Player 10.2.154.25 and
+	    earlier for Chrome users) for Windows, Macintosh, Linux
+	    and Solaris, Adobe Flash Player 10.2.156.12 and earlier
+	    versions for Android, and the Authplay.dll component that
+	    ships with Adobe Reader and Acrobat X (10.0.2) and earlier
+	    10.x and 9.x versions for Windows and Macintosh operating
+	    systems.</p>
+	  <p>This vulnerability (CVE-2011-0611) could cause a crash
+	    and potentially allow an attacker to take control of the
+	    affected system. There are reports that this vulnerability
+	    is being exploited in the wild in targeted attacks via a
+	    malicious Web page or a Flash (.swf) file embedded in a
+	    Microsoft Word (.doc) or Microsoft Excel (.xls) file
+	    delivered as an email attachment, targeting the Windows
+	    platform. At this time, Adobe is not aware of any attacks
+	    via PDF targeting Adobe Reader and Acrobat. Adobe Reader
+	    X Protected Mode mitigations would prevent an exploit of
+	    this kind from executing.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2011-0611</cvename>
+      <url>http://www.adobe.com/support/security/advisories/apsa11-02.html</url>
+    </references>
+    <dates>
+      <discovery>2011-01-20</discovery>
+      <entry>2011-04-17</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="bf171509-68dd-11e0-afe6-0003ba02bf30">
     <topic>rt -- multiple vulnerabilities </topic>
     <affects>
