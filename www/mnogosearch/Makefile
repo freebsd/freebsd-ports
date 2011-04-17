@@ -24,16 +24,17 @@ OPTIONS=	THREADS "Enable pthreads"		on  \
 		PGSQL   "Use PGSQL"				off \
 		MSQL    "Use MSQL"				off \
 		MYSQL   "Use MySQL"				off \
-		SQLITE  "Use SQLite 2.x"		on
+		SQLITE  "Use SQLite 2.x"		off \
+		SQLITE3 "Use SQLite 3.x"		on
 
 USE_LDCONFIG=	yes
 USE_GNOME=	lthack
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool
 CONFIGURE_ARGS+=--enable-shared \
-		--sysconfdir=${PREFIX}/etc/mnogosearch \
+		--sysconfdir=${ETCDIR} \
 		--localstatedir=/var/mnogosearch \
-		--datadir=${PREFIX}/share/mnogosearch
+		--datadir=${DATADIR}
 CONFIGURE_ENV+=	LOCALBASE="${LOCALBASE}"
 MAKE_ENV+=	MKDIRPROG="${MKDIR}"
 
@@ -84,13 +85,18 @@ USE_MYSQL=	yes
 CONFIGURE_ARGS+=	--with-mysql=${LOCALBASE}
 .endif
 
-.ifndef WITHOUT_SQLITE
+.ifdef WITH_SQLITE
 USE_SQLITE=	2
 CONFIGURE_ARGS+=	--with-sqlite=${LOCALBASE}
 .endif
 
+.ifndef WITHOUT_SQLITE3
+USE_SQLITE=	3
+CONFIGURE_ARGS+=	--with-sqlite3=${LOCALBASE}
+.endif
+
 .if defined(WITHOUT_SQLITE) && !defined(WITH_MYSQL) && \
-    !defined(WITH_MSQL) && !defined(WITH_PGSQL)
+    !defined(WITH_MSQL) && !defined(WITH_PGSQL) && !defined(WITH_SQLITE3)
 IGNORE=	needs at least one database driver
 .endif
 
