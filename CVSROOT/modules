@@ -1551,6 +1551,7 @@ charis                          ports/x11-fonts/charis
 charmap                         ports/deskutils/charmap
 charva                          ports/devel/charva
 charybdis                       ports/irc/charybdis
+chattahoochie                   ports/net-im/chattahoochie
 chbg                            ports/graphics/chbg
 check_multi                     ports/net-mgmt/check_multi
 check_mysql_health              ports/net-mgmt/check_mysql_health
@@ -10296,6 +10297,7 @@ normalize                       ports/audio/normalize
 normalizemime                   ports/mail/normalizemime
 nos-ttb                         ports/net/nos-ttb
 nosefart                        ports/audio/nosefart
+nostromo                        ports/www/nostromo
 notecase                        ports/deskutils/notecase
 notftp                          ports/www/notftp
 notif2                          ports/x11-themes/notif2
@@ -13258,6 +13260,8 @@ p5-MogileFS-Client              ports/sysutils/p5-MogileFS-Client
 p5-MogileFS-Utils               ports/sysutils/p5-MogileFS-Utils
 p5-MojoMojo                     ports/www/p5-MojoMojo
 p5-Mojolicious                  ports/www/p5-Mojolicious
+p5-Mojolicious-Plugin-Database  ports/www/p5-Mojolicious-Plugin-Database
+p5-Mojolicious-Plugin-Mongodb   ports/www/p5-Mojolicious-Plugin-Mongodb
 p5-Mon                          ports/net-mgmt/p5-Mon
 p5-MongoDB                      ports/databases/p5-MongoDB
 p5-Moo                          ports/devel/p5-Moo
@@ -13940,6 +13944,7 @@ p5-Proc-Wait3                   ports/devel/p5-Proc-Wait3
 p5-Proc-WaitStat                ports/devel/p5-Proc-WaitStat
 p5-Project-Gantt                ports/devel/p5-Project-Gantt
 p5-Prophet                      ports/databases/p5-Prophet
+p5-Protocol-WebSocket           ports/www/p5-Protocol-WebSocket
 p5-Protocol-XMPP                ports/net-im/p5-Protocol-XMPP
 p5-Pugs-Compiler-Rule           ports/lang/p5-Pugs-Compiler-Rule
 p5-Qmail-Envelope               ports/mail/p5-Qmail-Envelope
@@ -17473,6 +17478,8 @@ p5-mogilefs-client              ports/sysutils/p5-MogileFS-Client
 p5-mogilefs-server              ports/sysutils/p5-mogilefs-server
 p5-mogilefs-utils               ports/sysutils/p5-MogileFS-Utils
 p5-mojolicious                  ports/www/p5-Mojolicious
+p5-mojolicious-plugin-database  ports/www/p5-Mojolicious-Plugin-Database
+p5-mojolicious-plugin-mongodb   ports/www/p5-Mojolicious-Plugin-Mongodb
 p5-mojomojo                     ports/www/p5-MojoMojo
 p5-mon                          ports/net-mgmt/p5-Mon
 p5-mongodb                      ports/databases/p5-MongoDB
@@ -18184,6 +18191,7 @@ p5-proc-wait3                   ports/devel/p5-Proc-Wait3
 p5-proc-waitstat                ports/devel/p5-Proc-WaitStat
 p5-project-gantt                ports/devel/p5-Project-Gantt
 p5-prophet                      ports/databases/p5-Prophet
+p5-protocol-websocket           ports/www/p5-Protocol-WebSocket
 p5-protocol-xmpp                ports/net-im/p5-Protocol-XMPP
 p5-psgi                         ports/www/p5-PSGI
 p5-pugs-compiler-rule           ports/lang/p5-Pugs-Compiler-Rule
@@ -20559,7 +20567,6 @@ pib                             ports/ports-mgmt/pib
 pic2fig                         ports/print/pic2fig
 picard                          ports/audio/picard
 picasm                          ports/devel/picasm
-pickwick                        ports/net-im/pickwick
 picmonger                       ports/news/PicMonger
 pico-alpine                     ports/editors/pico-alpine
 picoc                           ports/lang/picoc
@@ -21546,6 +21553,7 @@ py-gnutls                       ports/security/py-gnutls
 py-gobject                      ports/devel/py-gobject
 py-goocanvas                    ports/graphics/py-goocanvas
 py-google                       ports/net/py-google
+py-google-api-python-client     ports/www/py-google-api-python-client
 py-gozerbot                     ports/irc/py-gozerbot
 py-graph                        ports/graphics/py-graph
 py-graph-core                   ports/graphics/py-graph-core
@@ -25852,6 +25860,7 @@ vdr-plugin-femon                ports/multimedia/vdr-plugin-femon
 vdr-plugin-infosatepg           ports/multimedia/vdr-plugin-infosatepg
 vdr-plugin-iptv                 ports/multimedia/vdr-plugin-iptv
 vdr-plugin-live                 ports/www/vdr-plugin-live
+vdr-plugin-markad               ports/multimedia/vdr-plugin-markad
 vdr-plugin-osdpip               ports/multimedia/vdr-plugin-osdpip
 vdr-plugin-osdteletext          ports/multimedia/vdr-plugin-osdteletext
 vdr-plugin-remote               ports/multimedia/vdr-plugin-remote
