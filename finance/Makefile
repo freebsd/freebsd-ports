@@ -87,6 +87,7 @@
     SUBDIR += qtstalker
     SUBDIR += quantlib
     SUBDIR += sabernetdcs-client
+    SUBDIR += skrooge
     SUBDIR += sql-ledger
     SUBDIR += tinyerp-server
     SUBDIR += trytond
