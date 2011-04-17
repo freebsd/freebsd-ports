@@ -7,7 +7,6 @@
 
 PORTNAME=	mailman
 DISTVERSION=	2.1.14
-PORTREVISION=	1
 CATEGORIES?=	mail
 MASTER_SITES=	${MASTER_SITE_GNU} \
 		SF/${PORTNAME}/Mailman%202.1%20%28stable%29/${PORTVERSION}
@@ -24,7 +23,8 @@ OPTIONS=	SENDMAIL "for use with sendmail" off \
 		POSTFIX "for use with postfix" off \
 		COURIER "for use with courier" off \
 		CHINESE "support for Chinese mailing lists" off \
-		HTDIG "htdig integration patches" off
+		HTDIG "htdig integration patches" off \
+		NAMAZU2 "make private archives searchable with namazu2" off
 
 HAS_CONFIGURE=	yes
 USE_PYTHON=	yes
@@ -122,6 +122,15 @@ RUN_DEPENDS+=	htdig:${PORTSDIR}/textproc/htdig
 PLIST_SUB+=	SUB_HTDIG=""
 .else
 PLIST_SUB+=	SUB_HTDIG="@comment "
+.endif
+
+.if defined(WITH_NAMAZU2)
+.if defined(PKGNAMEPREFIX) && ${PKGNAMEPREFIX} == "ja-"
+RUN_DEPENDS+=	mknmz:${PORTSDIR}/japanese/namazu2
+.else
+RUN_DEPENDS+=	mknmz:${PORTSDIR}/databases/namazu2
+.endif
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-Mailman-Cgi-private.py
 .endif
 
 pre-fetch:

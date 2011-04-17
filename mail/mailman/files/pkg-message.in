@@ -18,4 +18,12 @@ installed in %%MAILMANDIR%%/bin
 
 Note (3):  As of version 2.1, Mailman's queue runner runs as a daemon and
 is started by a script in %%LOCALBASE%%/etc/rc.d
+
+In order to make private archives searchable with namazu2, you need copy
+or link %%LOCALBASE%%/libexec/namazu.cgi to
+MAILMANDIR%%/archives/private/<ML name>/ and configure .namazurc
+to refer to %%LOCALBASE%%/etc/namazu/namazu-sample.
+See also
+http://www.python.jp/pipermail/mailman-users-jp/2004-August/001008.html
+written in Japanese.
 ----------------------------------------------------------------------------
