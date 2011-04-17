@@ -18,6 +18,8 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	Popular virtual window manager for X
 
+DEPRECATED=	No longer supported by fvwm.org.
+
 RUN_DEPENDS=	gm4:${PORTSDIR}/devel/m4
 
 .if defined(WITH_STROKE)
