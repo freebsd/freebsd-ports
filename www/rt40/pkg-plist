@@ -113,8 +113,11 @@ etc/rt38/schema.mysql-4.1
 %%SITE_PERL%%/RT/I18N/cs.po
 %%SITE_PERL%%/RT/I18N/da.po
 %%SITE_PERL%%/RT/I18N/de.po
+%%SITE_PERL%%/RT/I18N/el.po
 %%SITE_PERL%%/RT/I18N/en.po
+%%SITE_PERL%%/RT/I18N/en_GB.po
 %%SITE_PERL%%/RT/I18N/es.po
+%%SITE_PERL%%/RT/I18N/et.po
 %%SITE_PERL%%/RT/I18N/fi.po
 %%SITE_PERL%%/RT/I18N/fr.po
 %%SITE_PERL%%/RT/I18N/he.po
@@ -125,6 +128,9 @@ etc/rt38/schema.mysql-4.1
 %%SITE_PERL%%/RT/I18N/is.po
 %%SITE_PERL%%/RT/I18N/it.po
 %%SITE_PERL%%/RT/I18N/ja.po
+%%SITE_PERL%%/RT/I18N/lt.po
+%%SITE_PERL%%/RT/I18N/lv.po
+%%SITE_PERL%%/RT/I18N/mk.po
 %%SITE_PERL%%/RT/I18N/nb.po
 %%SITE_PERL%%/RT/I18N/nl.po
 %%SITE_PERL%%/RT/I18N/nn.po
@@ -135,6 +141,7 @@ etc/rt38/schema.mysql-4.1
 %%SITE_PERL%%/RT/I18N/rt.pot
 %%SITE_PERL%%/RT/I18N/ru.pm
 %%SITE_PERL%%/RT/I18N/ru.po
+%%SITE_PERL%%/RT/I18N/sl.po
 %%SITE_PERL%%/RT/I18N/sv.po
 %%SITE_PERL%%/RT/I18N/tr.po
 %%SITE_PERL%%/RT/I18N/zh_CN.po
@@ -889,6 +896,7 @@ share/rt38/html/NoAuth/RichText/FCKeditor/fckpackager.xml
 share/rt38/html/NoAuth/RichText/FCKeditor/fckstyles.xml
 share/rt38/html/NoAuth/RichText/FCKeditor/fcktemplates.xml
 share/rt38/html/NoAuth/RichText/FCKeditor/license.txt
+share/rt38/html/NoAuth/RichText/autohandler
 share/rt38/html/NoAuth/RichText/dhandler
 share/rt38/html/NoAuth/css/3.4-compat/body.css
 share/rt38/html/NoAuth/css/3.4-compat/footer.css
