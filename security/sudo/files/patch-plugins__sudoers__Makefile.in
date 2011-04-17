@@ -1,14 +1,6 @@
---- ./plugins/sudoers/Makefile.in.orig	2011-04-06 10:59:31.000000000 -0400
-+++ ./plugins/sudoers/Makefile.in	2011-04-11 12:47:45.435271822 -0400
-@@ -350,6 +350,7 @@
- install-includes:
- 
- install-doc:
-+	@LDAP@$(SHELL) $(top_srcdir)/mkinstalldirs $(DESTDIR)$(docdir)
- 	@LDAP@$(INSTALL) -O $(install_uid) -G $(install_gid) -M 0555 $(srcdir)/sudoers2ldif $(DESTDIR)$(docdir)
- 
- install-plugin: sudoers.la install-dirs
-@@ -358,9 +359,8 @@
+--- ./plugins/sudoers/Makefile.in.orig	2011-04-11 08:28:33.000000000 -0400
++++ ./plugins/sudoers/Makefile.in	2011-04-17 09:38:29.349385961 -0400
+@@ -358,9 +358,8 @@
  install-sudoers: install-dirs
  	$(INSTALL) -d -O $(sudoers_uid) -G $(sudoers_gid) -M 0750 \
  	    $(DESTDIR)$(sudoersdir)/sudoers.d
