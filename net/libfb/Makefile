@@ -7,7 +7,7 @@
 
 PORTNAME=	libfb
 PORTVERSION=	2.0.0
-CATEGORIES=	net-mgmt
+CATEGORIES=	net net-mgmt
 MASTER_SITES=	http://support.red-fone.com/downloads/fonulator/
 
 MAINTAINER=	fjoe@FreeBSD.org

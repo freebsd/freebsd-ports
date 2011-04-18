@@ -7,7 +7,7 @@
 
 PORTNAME=	fonulator
 PORTVERSION=	2.0.1
-CATEGORIES=	net-mgmt
+CATEGORIES=	net net-mgmt
 MASTER_SITES=	http://support.red-fone.com/fonulator/
 
 MAINTAINER=	fjoe@FreeBSD.org
