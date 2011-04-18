@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	unison
-PORTVERSION=	2.40.61
+PORTVERSION=	2.40.63
 CATEGORIES=	net
 MASTER_SITES=	http://www.cis.upenn.edu/~bcpierce/unison/download/releases/${DISTNAME}/
 DISTFILES=	${EXTRACT_ONLY} ${EXTRA_DOCS}
@@ -25,7 +25,7 @@ CONFLICTS=	unison-devel-[0-9]* unison-nox11-[0-9]*
 MAKE_JOBS_UNSAFE=	yes
 ALL_TARGET=	unison all
 
-LICENCE=	GPLv3
+LICENSE=	GPLv3
 
 .include <bsd.port.pre.mk>
 
