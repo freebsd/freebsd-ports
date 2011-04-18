@@ -1,8 +1,3 @@
-etc/dahdi/system.conf.sample
-include/dahdi/compat/types.h
-include/dahdi/tonezone.h
-include/dahdi/user.h
-include/dahdi/wctdm_user.h
 lib/dahdi/dahdi-fw-hx8.bin.ko
 lib/dahdi/dahdi-fw-oct6114-064.bin.ko
 lib/dahdi/dahdi-fw-oct6114-128.bin.ko
@@ -14,8 +9,8 @@ lib/dahdi/dahdi_dynamic_ethmf.ko
 lib/dahdi/dahdi_dynamic_loc.ko
 lib/dahdi/dahdi_echocan_jpah.ko
 lib/dahdi/dahdi_echocan_kb1.ko
-lib/dahdi/dahdi_echocan_oslec.ko
 lib/dahdi/dahdi_echocan_mg2.ko
+lib/dahdi/dahdi_echocan_oslec.ko
 lib/dahdi/dahdi_echocan_sec.ko
 lib/dahdi/dahdi_echocan_sec2.ko
 lib/dahdi/dahdi_transcode.ko
@@ -32,21 +27,4 @@ lib/dahdi/wctdm.ko
 lib/dahdi/wctdm24xxp.ko
 lib/dahdi/wcte11xp.ko
 lib/dahdi/wcte12xp.ko
-lib/libtonezone.a
-lib/libtonezone.so
-lib/libtonezone.so.1
-lib/libtonezone.so.1.0
-lib/libtonezone.so.2
-lib/libtonezone.so.2.0
-sbin/dahdi_cfg
-sbin/dahdi_maint
-sbin/dahdi_monitor
-sbin/dahdi_scan
-sbin/dahdi_speed
-sbin/dahdi_test
-sbin/dahdi_tool
-sbin/fxotune
 @dirrm lib/dahdi
-@dirrm include/dahdi/compat
-@dirrm include/dahdi
-@dirrmtry etc/dahdi
