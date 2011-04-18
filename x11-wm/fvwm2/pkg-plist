@@ -431,21 +431,21 @@ libexec/fvwm/%%FVWM_VERSION%%/FvwmWindowMenu
 %%DATADIR%%/perllib/FVWM/Tracker/WindowList.pm
 %%DATADIR%%/perllib/General/FileSystem.pm
 %%DATADIR%%/perllib/General/Parse.pm
-share/locale/ar/LC_MESSAGES/FvwmScript.mo
-share/locale/ar/LC_MESSAGES/FvwmTaskBar.mo
-share/locale/ar/LC_MESSAGES/fvwm.mo
-share/locale/de/LC_MESSAGES/FvwmScript.mo
-share/locale/de/LC_MESSAGES/FvwmTaskBar.mo
-share/locale/de/LC_MESSAGES/fvwm.mo
-share/locale/fr/LC_MESSAGES/FvwmScript.mo
-share/locale/fr/LC_MESSAGES/FvwmTaskBar.mo
-share/locale/fr/LC_MESSAGES/fvwm.mo
-share/locale/sv_SE/LC_MESSAGES/FvwmScript.mo
-share/locale/sv_SE/LC_MESSAGES/FvwmTaskBar.mo
-share/locale/sv_SE/LC_MESSAGES/fvwm.mo
-share/locale/zh_CN/LC_MESSAGES/FvwmScript.mo
-share/locale/zh_CN/LC_MESSAGES/FvwmTaskBar.mo
-share/locale/zh_CN/LC_MESSAGES/fvwm.mo
+%%NLS%%share/locale/ar/LC_MESSAGES/FvwmScript.mo
+%%NLS%%share/locale/ar/LC_MESSAGES/FvwmTaskBar.mo
+%%NLS%%share/locale/ar/LC_MESSAGES/fvwm.mo
+%%NLS%%share/locale/de/LC_MESSAGES/FvwmScript.mo
+%%NLS%%share/locale/de/LC_MESSAGES/FvwmTaskBar.mo
+%%NLS%%share/locale/de/LC_MESSAGES/fvwm.mo
+%%NLS%%share/locale/fr/LC_MESSAGES/FvwmScript.mo
+%%NLS%%share/locale/fr/LC_MESSAGES/FvwmTaskBar.mo
+%%NLS%%share/locale/fr/LC_MESSAGES/fvwm.mo
+%%NLS%%share/locale/sv_SE/LC_MESSAGES/FvwmScript.mo
+%%NLS%%share/locale/sv_SE/LC_MESSAGES/FvwmTaskBar.mo
+%%NLS%%share/locale/sv_SE/LC_MESSAGES/fvwm.mo
+%%NLS%%share/locale/zh_CN/LC_MESSAGES/FvwmScript.mo
+%%NLS%%share/locale/zh_CN/LC_MESSAGES/FvwmTaskBar.mo
+%%NLS%%share/locale/zh_CN/LC_MESSAGES/fvwm.mo
 @dirrm %%DATADIR%%/perllib/General
 @dirrm %%DATADIR%%/perllib/FVWM/Tracker
 @dirrm %%DATADIR%%/perllib/FVWM/Module
