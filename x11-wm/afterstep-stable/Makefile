@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	afterstep
-PORTVERSION=	2.2.9
-PORTREVISION=	2
+PORTVERSION=	2.2.11
 CATEGORIES=	x11-wm afterstep
 MASTER_SITES=	ftp://ftp.afterstep.org/stable/ \
 		SF/${PORTNAME}/AfterStep/${PORTVERSION}
