@@ -125,7 +125,6 @@
     SUBDIR += execwrap
     SUBDIR += expiretable
     SUBDIR += f-prot
-    SUBDIR += f-protd
     SUBDIR += fakebo
     SUBDIR += fakeident
     SUBDIR += fakeroot
@@ -312,8 +311,6 @@
     SUBDIR += netpgp
     SUBDIR += nettle
     SUBDIR += newpki-client
-    SUBDIR += newpki-lib
-    SUBDIR += newpki-server
     SUBDIR += nikto
     SUBDIR += nmap
     SUBDIR += nmapsi4
@@ -896,7 +893,6 @@
     SUBDIR += xca
     SUBDIR += xinetd
     SUBDIR += xml-security
-    SUBDIR += xmlsec
     SUBDIR += xmlsec1
     SUBDIR += xorsearch
     SUBDIR += xspy

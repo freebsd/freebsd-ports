@@ -35,8 +35,6 @@
     SUBDIR += gal2
     SUBDIR += gal2-reference
     SUBDIR += gambas2-gb-gtk
-    SUBDIR += gambas2-gb-qt
-    SUBDIR += gauche-gtk
     SUBDIR += gdl
     SUBDIR += gigi
     SUBDIR += gir-repository-vte
@@ -159,7 +157,6 @@
     SUBDIR += p5-Gtk2-TrayIcon
     SUBDIR += p5-Pango
     SUBDIR += p5-Prima
-    SUBDIR += p5-Tcl-Tk
     SUBDIR += p5-Tk
     SUBDIR += p5-Tk-Autoscroll
     SUBDIR += p5-Tk-ColourChooser
@@ -187,7 +184,6 @@
     SUBDIR += paragui-devel
     SUBDIR += phat
     SUBDIR += php-gtk
-    SUBDIR += php-gtk2
     SUBDIR += plib
     SUBDIR += py-Pmw
     SUBDIR += py-SciParam

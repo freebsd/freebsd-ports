@@ -1,6 +1,0 @@
-bin/ftree
-%%PORTDOCS%%%%DOCSDIR%%/Copyright
-%%PORTDOCS%%%%DOCSDIR%%/ReleaseNotes-2.0.txt
-%%PORTDOCS%%%%DOCSDIR%%/examples/royal.ged
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/examples
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

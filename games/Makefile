@@ -46,7 +46,6 @@
     SUBDIR += aop
     SUBDIR += apoolGL
     SUBDIR += apricots
-    SUBDIR += aqbubble
     SUBDIR += armagetron
     SUBDIR += asc
     SUBDIR += asciiquarium

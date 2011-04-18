@@ -175,7 +175,6 @@
     SUBDIR += mono-basic
     SUBDIR += moscow_ml
     SUBDIR += mosh
-    SUBDIR += mozart
     SUBDIR += mpd
     SUBDIR += mtasc
     SUBDIR += munger
@@ -263,7 +262,6 @@
     SUBDIR += pnetlib
     SUBDIR += polyml
     SUBDIR += ptoc
-    SUBDIR += pugs
     SUBDIR += pure
     SUBDIR += py-mx-base
     SUBDIR += py-prolog
@@ -370,7 +368,6 @@
     SUBDIR += treecc
     SUBDIR += tuareg-mode.el
     SUBDIR += twelf
-    SUBDIR += u++
     SUBDIR += ucc
     SUBDIR += vala
     SUBDIR += vala-vapigen

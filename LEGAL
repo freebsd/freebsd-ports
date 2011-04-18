@@ -79,7 +79,6 @@ bzip-*			archivers/bzip		Some algorithms used may
 						Opinions differ.  Commercial
 						use could render you liable
 						to unfriendly legal action
-cap60/*			net/cap			Do not sell for profit
 ccc-*.alpha.rpm		lang/compaq-cc		Distribution not allowed
 citrix_ica-*		net/citrix_ica		License prohibits redistribution
 cli_freebsd*		sysutils/arcconf	May not be redistributed
@@ -166,8 +165,6 @@ ezmlm-*			mail/ezmlm		No license -- see
 						http://cr.yp.to/softwarelaw.html
 ezmlm-*			mail/ezmlm-idx		No license -- see
 						http://cr.yp.to/softwarelaw.html
-f-protd			security/f-protd	60 days free of trial for
-						everybody
 f6kuzzzz.taz		databases/libudbc	Downloading and redistribution
 						terms are unclear
 faac*			audio/faac		Restrictive copyright (do not
@@ -210,7 +207,6 @@ fretsonfire/FretsOnFire-*-linux* games/fretsonfire-data	Only Unreal Voodoo
 						the music
 fsharp/*		lang/fsharp		Microsoft Research Shared Source
 						License Agreement
-ftree-*			misc/ftree		Cannot distribute commercially
 fwtk/*			security/fwtk		No redistribution allowed
 XFrisk-*		games/xfrisk		Copyright/trademark violation?
 gap/*			math/gap		Do not sell for profit
@@ -238,7 +234,6 @@ groupoffice-com-*	www/groupoffice		Free for personal use only
 gsview*			print/gsview		Can only be distributed for free
 GTL-*			misc/gtl		Non-commercial use only,
 						license forbids redistribution
-hcfmdm/*		comms/hcfmdm		No redistribution allowed
 himeno/*		benchmarks/himenobench	Uncertain to distribute sources
 						and binaries
 HyperSpec-*		devel/clisp-hyperspec	Commercial redistribution

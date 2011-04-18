@@ -116,7 +116,6 @@
     SUBDIR += teknap
     SUBDIR += torrentflux
     SUBDIR += torrentsniff
-    SUBDIR += trackerbt
     SUBDIR += transmission
     SUBDIR += transmission-cli
     SUBDIR += transmission-daemon

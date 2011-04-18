@@ -1,4 +1,0 @@
-**********************************************************************
-     Now, edit %%PREFIX%%/etc/cap/start-cap-servers.sample.
-     Then install it as %%PREFIX%%/etc/rc.d/start-cap-servers.sh.
-**********************************************************************

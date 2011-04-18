@@ -240,7 +240,6 @@
     SUBDIR += mysql_last_value
     SUBDIR += mysqlard
     SUBDIR += mysqlbackup
-    SUBDIR += mysqlcc
     SUBDIR += mysqlcppapi
     SUBDIR += mysqldumper
     SUBDIR += mysqlidxchk

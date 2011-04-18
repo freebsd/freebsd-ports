@@ -46,7 +46,6 @@
     SUBDIR += avahi-qt3
     SUBDIR += avahi-qt4
     SUBDIR += avahi-sharp
-    SUBDIR += b2bua
     SUBDIR += babeld
     SUBDIR += balance
     SUBDIR += bbsnet
@@ -77,7 +76,6 @@
     SUBDIR += cagibi
     SUBDIR += callgen323
     SUBDIR += callweaver
-    SUBDIR += cap
     SUBDIR += ccxstream
     SUBDIR += citrix_ica
     SUBDIR += citrix_xenapp
@@ -179,7 +177,6 @@
     SUBDIR += gateway6
     SUBDIR += generic-nqs
     SUBDIR += get_iplayer
-    SUBDIR += ggsd
     SUBDIR += gini
     SUBDIR += gkrellmmultiping2
     SUBDIR += gkrellmqst
@@ -814,7 +811,6 @@
     SUBDIR += pecl-radius
     SUBDIR += pecl-yaz
     SUBDIR += pen
-    SUBDIR += penguintv
     SUBDIR += perldap
     SUBDIR += pfflowd
     SUBDIR += pfinger

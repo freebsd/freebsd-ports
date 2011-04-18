@@ -128,7 +128,6 @@
     SUBDIR += freeswitch-scripts
     SUBDIR += freshmeat-submit
     SUBDIR += ftdi-eeprom
-    SUBDIR += ftree
     SUBDIR += fxload
     SUBDIR += gcstar
     SUBDIR += gctpc

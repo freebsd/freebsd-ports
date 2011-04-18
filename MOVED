@@ -1700,3 +1700,48 @@ sysutils/rsyslog5-devel-relp|sysutils/rsyslog5-relp|2011-04-14|5.8.0 is the -sta
 sysutils/rsyslog5-devel-rfc3195|sysutils/rsyslog5-rfc3195|2011-04-14|5.8.0 is the -stable for 5.7.x, and 5.6.x is now deprecated
 sysutils/rsyslog5-devel-snmp|sysutils/rsyslog5-snmp|2011-04-14|5.8.0 is the -stable for 5.7.x, and 5.6.x is now deprecated
 net-im/pickwick|net-im/chattahoochie|2011-04-15|Project renamed
+cad/tclspice||2011-04-18|Has expired: has been broken for more than a year
+comms/hcfmdm||2011-04-18|Has expired: does not compile on 7.X or higher
+databases/mysqlcc||2011-04-18|Has expired: has been broken for almost a year
+devel/ruby-rjudy||2011-04-18|Has expired: does not compile on FreeBSD 7.x or newer
+devel/xfc||2011-04-18|Has expired: does not compile on FreeBSD 7.x or newer
+devel/lamson||2011-04-18|Has expired: has been broken for a half year
+devel/cocktail||2011-04-18|Has expired: does not build on FreeBSD 7.x or newer
+devel/djgpp-gcc||2011-04-18|Has expired: has been broken for half a year
+devel/gauche-sdl||2011-04-18|Has expired: has been broken for a year
+devel/gdb53-act||2011-04-18|Has expired: does not compile on FreeBSD 7.x and up
+editors/zed||2011-04-18|Has expired: does not compile on FreeBSD 7.x or newer
+games/aqbubble||2011-04-18|Has expired: does not compile on FreeBSD 7.x or newer
+graphics/libvisual-plugins||2011-04-18|Has expired: has been broken for 3 years
+japanese/roundcube||2011-04-18|Has expired: has been broken for almost a year
+japanese/tkstep80||2011-04-18|Has expired: does not compile on FreeBSD 7.x or newer
+lang/u++||2011-04-18|Has expired: has been broken for over a half year
+lang/pugs||2011-04-18|Has expired: has been broken for over a year
+lang/mozart||2011-04-18|Has expired: does not compile on FreeBSD 7.x or newer
+math/linalg||2011-04-18|Has expired: does not build on FreeBSD 7.x or newer
+math/R-cran-igraph||2011-04-18|Has expired: has been broken for over a half year
+misc/ftree||2011-04-18|Has expired: has been broken for over a half year
+multimedia/katchtv||2011-04-18|Has expired: has been broken for a half year
+multimedia/libomxil-bellagio||2011-04-18|Has expired: has been broken for almost a year
+multimedia/banshee-mirage||2011-04-18|Has expired: has been broken for over a half year
+net-p2p/trackerbt||2011-04-18|Has expired: has been broken for a half year
+net/cap||2011-04-18|Has expired: does not compile on FreeBSD 7.x or newer
+net/ggsd||2011-04-18|Has expired: does not compile on FreeBSD 7.x or newer
+net/b2bua||2011-04-18|Has expired: does not compile on FreeBSD 7.x or newer
+net/penguintv||2011-04-18|Has expired: has been broken for a half year
+news/openftd||2011-04-18|Has expired: has been broken for almost a year
+palm/romeo||2011-04-18|Has expired: does not compile on FreeBSD 7.x or newer
+science/pcp||2011-04-18|Has expired: does not compile on FreeBSD 7.x or newer
+science/elmer-fem||2011-04-18|Has expired: has been broken for over a year
+security/newpki-lib||2011-04-18|Has expired: does not compile on FreeBSD 7.x or newer
+security/newpki-server||2011-04-18|Has expired: does not compile on FreeBSD 7.x or newer
+security/xmlsec||2011-04-18|Has expired: does not compile on FreeBSD 7.x or newer
+security/f-protd||2011-04-18|Has expired: has been broken for over a year
+sysutils/xwlans||2011-04-18|Has expired: does not compile on FreeBSD 7.x or newer
+www/bk_edit||2011-04-18|Has expired: does not compile on FreeBSD 7.x and newer
+www/bricolage||2011-04-18|Has expired: has been broken for a half year
+x11-toolkits/gauche-gtk||2011-04-18|Has expired: has been broken for a year
+x11-toolkits/gambas2-gb-qt||2011-04-18|Has expired: has been broken for over a year
+x11-toolkits/php-gtk2||2011-04-18|Has expired: has been broken for over a half year
+x11-toolkits/p5-Tcl-Tk||2011-04-18|Has expired: has been broken for 2 year
+x11/metisse||2011-04-18|Has expired: has been broken for over a half year

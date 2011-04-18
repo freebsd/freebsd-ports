@@ -292,7 +292,6 @@
     SUBDIR += recjis
     SUBDIR += roget-fpw
     SUBDIR += rogue_s
-    SUBDIR += roundcube
     SUBDIR += rskkserv
     SUBDIR += ruby-chasen
     SUBDIR += ruby-eb
@@ -358,7 +357,6 @@
     SUBDIR += timidity++-tcltk
     SUBDIR += tk80
     SUBDIR += tkhonyaku
-    SUBDIR += tkstep80
     SUBDIR += today
     SUBDIR += tomoe
     SUBDIR += trac
