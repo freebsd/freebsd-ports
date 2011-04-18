@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	foswiki
-PORTVERSION=	1.1.2
+PORTVERSION=	1.1.3
 CATEGORIES=	www
 MASTER_SITES=	SF
 DISTNAME=	Foswiki-${PORTVERSION}
@@ -45,6 +45,7 @@ RUN_DEPENDS+=	p5-Apache-Htpasswd>=0:${PORTSDIR}/security/p5-Apache-Htpasswd \
 		p5-Digest-SHA1>=0:${PORTSDIR}/security/p5-Digest-SHA1 \
 		p5-Lingua-EN-Sentence>=0:${PORTSDIR}/textproc/p5-Lingua-EN-Sentence \
 		p5-libwww>=0:${PORTSDIR}/www/p5-libwww \
+		p5-HTML-Tree>=3.23:${PORTSDIR}/www/p5-HTML-Tree \
 		p5-Net>=1.19:${PORTSDIR}/net/p5-Net
 .endif
 
