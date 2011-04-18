@@ -310,7 +310,6 @@
     SUBDIR += nessus-plugins
     SUBDIR += netpgp
     SUBDIR += nettle
-    SUBDIR += newpki-client
     SUBDIR += nikto
     SUBDIR += nmap
     SUBDIR += nmapsi4
