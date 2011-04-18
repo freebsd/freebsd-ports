@@ -1,8 +1,11 @@
 #! /bin/sh
 
-# $FreeBSD$
+# $FreeBSD: /tmp/pcvs/ports/databases/postgresql91-server/files/Attic/pkg-install-server.in,v 1.1 2011-04-18 23:34:27 girgen Exp $
 
 PATH=/bin:/usr/bin:/usr/sbin
+PG_USER=%%PG_USER%%
+PG_GROUP=%%PG_GROUP%%
+PG_UID=%%PG_UID%%
 
 backupwarning() { echo "
 
@@ -22,11 +25,11 @@ backupwarning() { echo "
 case $2 in
 PRE-INSTALL)
 	backupwarning
-	PGUSER=${PGUSER:-pgsql}
-	PGGROUP=${PGGROUP:-pgsql}
+	PGUSER=${PGUSER:-${PG_USER}}
+	PGGROUP=${PGGROUP:-${PG_GROUP}}
 	DB_DIR=${PKG_PREFIX}/${PGUSER}
-	UID=70
-	GID=70
+	UID=${PG_UID}
+	GID=${PG_UID}
 
 	if pw group show "${PGGROUP}" 2>/dev/null; then
 		echo "You already have a group \"${PGGROUP}\", so I will use it."

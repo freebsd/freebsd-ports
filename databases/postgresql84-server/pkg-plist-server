@@ -273,6 +273,7 @@ share/postgresql/snowball_create.sql
 %%TZDATA%%share/postgresql/timezone/America/Mendoza
 %%TZDATA%%share/postgresql/timezone/America/Menominee
 %%TZDATA%%share/postgresql/timezone/America/Merida
+%%TZDATA%%share/postgresql/timezone/America/Metlakatla
 %%TZDATA%%share/postgresql/timezone/America/Mexico_City
 %%TZDATA%%share/postgresql/timezone/America/Miquelon
 %%TZDATA%%share/postgresql/timezone/America/Moncton
@@ -285,6 +286,7 @@ share/postgresql/snowball_create.sql
 %%TZDATA%%share/postgresql/timezone/America/Nipigon
 %%TZDATA%%share/postgresql/timezone/America/Nome
 %%TZDATA%%share/postgresql/timezone/America/Noronha
+%%TZDATA%%share/postgresql/timezone/America/North_Dakota/Beulah
 %%TZDATA%%share/postgresql/timezone/America/North_Dakota/Center
 %%TZDATA%%share/postgresql/timezone/America/North_Dakota/New_Salem
 %%TZDATA%%share/postgresql/timezone/America/Ojinaga
@@ -311,6 +313,7 @@ share/postgresql/snowball_create.sql
 %%TZDATA%%share/postgresql/timezone/America/Sao_Paulo
 %%TZDATA%%share/postgresql/timezone/America/Scoresbysund
 %%TZDATA%%share/postgresql/timezone/America/Shiprock
+%%TZDATA%%share/postgresql/timezone/America/Sitka
 %%TZDATA%%share/postgresql/timezone/America/St_Barthelemy
 %%TZDATA%%share/postgresql/timezone/America/St_Johns
 %%TZDATA%%share/postgresql/timezone/America/St_Kitts
@@ -755,4 +758,4 @@ share/postgresql/tsearch_data/thesaurus_sample.ths
 @dirrmtry etc/periodic/daily
 @dirrmtry etc/periodic
 @dirrmtry lib/postgresql
-@dirrmtry pgsql
+@dirrmtry %%PG_USER%%

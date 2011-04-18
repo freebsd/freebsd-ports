@@ -6,7 +6,7 @@
 #
 
 PORTNAME?=	postgresql
-DISTVERSION?=	8.4.7
+DISTVERSION?=	8.4.8
 CATEGORIES?=	databases
 MASTER_SITES=	${MASTER_SITE_PGSQL}
 MASTER_SITE_SUBDIR=	source/v${DISTVERSION}
@@ -15,8 +15,8 @@ PKGNAMESUFFIX?=	-server
 MAINTAINER?=	girgen@FreeBSD.org
 COMMENT?=	The most advanced open-source database available anywhere
 
-CONFLICTS?=	${PORTNAME}-client-7.* \
-		${PORTNAME}${PKGNAMESUFFIX}-7.* \
+CONFLICTS?=	${PORTNAME}-client-[79].* \
+		${PORTNAME}${PKGNAMESUFFIX}-[79].* \
 		${PORTNAME}-client-8.[0-35-9]* \
 		${PORTNAME}${PKGNAMESUFFIX}-8.[0-35-9]*
 
@@ -26,7 +26,6 @@ DIST_SUBDIR=	postgresql
 UNIQUENAME?=	${PORTNAME}84
 LATEST_LINK?=	${PKGNAMEPREFIX}${UNIQUENAME}${PKGNAMESUFFIX}
 
-PKGINSTALL?=	${PKGDIR}/pkg-install${PKGNAMESUFFIX}
 USE_BZIP2=	YES
 USE_GMAKE=	YES
 GNU_CONFIGURE=	YES
@@ -35,8 +34,9 @@ GNU_CONFIGURE=	YES
 .undef GNU_CONFIGURE
 .endif
 
-PGUSER=		pgsql
-PGGROUP=	pgsql
+PG_USER?=	pgsql
+PG_GROUP?=	pgsql
+PG_UID?=	70
 
 LDFLAGS+=	-L${LOCALBASE}/lib
 INCLUDES+=	-I${LOCALBASE}/include
@@ -61,6 +61,7 @@ SERVER_ONLY=	yes
 USE_RC_SUBR=	postgresql
 USE_PGSQL=	yes
 WANT_PGSQL_VER=	${PORTVERSION:C/([0-9][0-9]*)\.([0-9][0-9]*).*/\1\2/g}
+SUB_FILES+=	502.pgsql
 .endif
 
 .if !defined(SLAVE_ONLY)
@@ -93,7 +94,7 @@ OPTIONS+=	OPTIMIZED_CFLAGS "Builds with compiler optimizations (-O3)" off
 OPTIONS+=	XML "Build with XML data type (server)" on
 OPTIONS+=	TZDATA "Use internal timezone database (server)" on
 OPTIONS+=	DEBUG "Builds with debugging symbols" off
-OPTIONS+=	GSSAPI "BUild with GSSAPI support" on
+OPTIONS+=	GSSAPI "BUild with GSSAPI support" off
 
 # See http://people.freebsd.org/~girgen/postgresql-icu/README.html for more info
 OPTIONS+=	ICU	"Use ICU for unicode collation (server)" off
@@ -252,7 +253,7 @@ MAN7=		abort.7 alter_aggregate.7 alter_conversion.7 alter_database.7 \
 
 .if defined(SERVER_ONLY)
 pre-everything::
-	@${SH} ${PKGINSTALL} ${PORTNAME} BACKUPWARNING
+	@${SH} ${FILESDIR}/pkg-install${PKGNAMESUFFIX}.in ${PORTNAME} BACKUPWARNING
 .endif
 
 .if !defined(NO_BUILD)
@@ -274,11 +275,21 @@ do-build:
 SUB_FILES+=	pkg-message${PKGNAMESUFFIX}
 PKGMESSAGE=	${WRKSRC}/pkg-message${PKGNAMESUFFIX}
 .  endif
+
+.  if exists(${FILESDIR}/pkg-install${PKGNAMESUFFIX}.in)
+SUB_FILES+=	pkg-install${PKGNAMESUFFIX}
+SUB_LIST=	PG_GROUP=$(PG_GROUP) \
+		PG_USER=$(PG_USER) \
+		PG_UID=$(PG_UID)
+PLIST_SUB+=	PG_USER=$(PG_USER)
+PKGINSTALL=	${WRKDIR}/pkg-install${PKGNAMESUFFIX}
+.  endif
+
 .endif
 
 .if defined(SERVER_ONLY)
 pre-su-install:
-	@ ${SETENV} PKG_PREFIX=${PREFIX} PGUSER=${PGUSER} PGGROUP=${PGGROUP} \
+	@ ${SETENV} PKG_PREFIX=${PREFIX} PG_USER=$(PG_USER) PG_GROUP=$(PG_GROUP) \
 		${SH} ${PKGINSTALL} ${PORTNAME} PRE-INSTALL
 .endif
 
@@ -299,7 +310,7 @@ do-install:
 .  if defined(SERVER_ONLY)
 	@ ${MKDIR} ${PREFIX}/share/postgresql ;\
 	${MKDIR} ${PREFIX}/etc/periodic/daily ;\
-	${INSTALL_SCRIPT} ${FILESDIR}/502.pgsql \
+	${INSTALL_SCRIPT} ${WRKDIR}/502.pgsql \
 			${PREFIX}/etc/periodic/daily
 .  endif # SERVER_ONLY
 .  if defined(CLIENT_ONLY)

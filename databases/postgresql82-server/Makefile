@@ -6,7 +6,7 @@
 #
 
 PORTNAME?=	postgresql
-PORTVERSION?=	8.2.20
+PORTVERSION?=	8.2.21
 CATEGORIES?=	databases
 MASTER_SITES=	${MASTER_SITE_PGSQL}
 MASTER_SITE_SUBDIR=	source/v${PORTVERSION}
@@ -16,8 +16,8 @@ DISTFILES?=	postgresql-${PORTVERSION}${EXTRACT_SUFX}
 MAINTAINER?=	girgen@FreeBSD.org
 COMMENT?=	The most advanced open-source database available anywhere
 
-CONFLICTS?=	${PORTNAME}-client-7.* \
-		${PORTNAME}${PKGNAMESUFFIX}-7.* \
+CONFLICTS?=	${PORTNAME}-client-[79].* \
+		${PORTNAME}${PKGNAMESUFFIX}-[79].* \
 		${PORTNAME}-client-8.[0-13-9]* \
 		${PORTNAME}${PKGNAMESUFFIX}-8.[0-13-9]*
 
