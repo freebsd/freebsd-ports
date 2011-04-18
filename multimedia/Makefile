@@ -19,7 +19,6 @@
     SUBDIR += avinfo
     SUBDIR += bangarang
     SUBDIR += banshee
-    SUBDIR += banshee-mirage
     SUBDIR += beep-media-player
     SUBDIR += bmp-extra-plugins
     SUBDIR += bmpx
@@ -131,7 +130,6 @@
     SUBDIR += k9copy-kde4
     SUBDIR += kaffeine
     SUBDIR += kaffeine-mozilla
-    SUBDIR += katchtv
     SUBDIR += kdemultimedia3
     SUBDIR += kdemultimedia4
     SUBDIR += kdenlive
@@ -162,7 +160,6 @@
     SUBDIR += libmovtar
     SUBDIR += libmpeg2
     SUBDIR += libmpeg3
-    SUBDIR += libomxil-bellagio
     SUBDIR += libquicktime
     SUBDIR += libquicktime-lame
     SUBDIR += libtheora

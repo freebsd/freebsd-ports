@@ -1,6 +1,0 @@
-@comment $FreeBSD$
-bin/zed
-etc/zedrc.sample
-%%PORTDOCS%%%%DOCSDIR%%/CHANGES
-%%PORTDOCS%%%%DOCSDIR%%/zed.doc
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

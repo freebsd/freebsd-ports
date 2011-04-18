@@ -1024,7 +1024,6 @@
     SUBDIR += xsu
     SUBDIR += xsysstats
     SUBDIR += xvidcap
-    SUBDIR += xwlans
     SUBDIR += yawho
     SUBDIR += zeroer
     SUBDIR += zetaback

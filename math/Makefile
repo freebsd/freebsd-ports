@@ -11,7 +11,6 @@
     SUBDIR += R-cran-car
     SUBDIR += R-cran-coda
     SUBDIR += R-cran-gpclib
-    SUBDIR += R-cran-igraph
     SUBDIR += R-cran-inline
     SUBDIR += R-cran-mvtnorm
     SUBDIR += R-cran-psych
@@ -174,7 +173,6 @@
     SUBDIR += libranlip
     SUBDIR += libtommath
     SUBDIR += libtsnnls
-    SUBDIR += linalg
     SUBDIR += linpack
     SUBDIR += linux-relview
     SUBDIR += lll_spect

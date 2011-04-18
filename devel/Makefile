@@ -213,7 +213,6 @@
     SUBDIR += cmunge
     SUBDIR += cobf
     SUBDIR += coccinelle
-    SUBDIR += cocktail
     SUBDIR += codeblocks
     SUBDIR += codeworker
     SUBDIR += colorer
@@ -315,7 +314,6 @@
     SUBDIR += dits
     SUBDIR += djgpp-binutils
     SUBDIR += djgpp-crx
-    SUBDIR += djgpp-gcc
     SUBDIR += dklibs
     SUBDIR += dmake
     SUBDIR += dmalloc
@@ -452,7 +450,6 @@
     SUBDIR += gaphor
     SUBDIR += gauche-gaunit
     SUBDIR += gauche-readline
-    SUBDIR += gauche-sdl
     SUBDIR += gaul
     SUBDIR += gazpacho
     SUBDIR += gccmakedep
@@ -464,7 +461,6 @@
     SUBDIR += gconfmm26
     SUBDIR += gcvs
     SUBDIR += gdb
-    SUBDIR += gdb53-act
     SUBDIR += gdb66
     SUBDIR += gdbmods
     SUBDIR += gdcm
@@ -725,7 +721,6 @@
     SUBDIR += kscope
     SUBDIR += kxl
     SUBDIR += kyra
-    SUBDIR += lamson
     SUBDIR += lasi
     SUBDIR += lbpp
     SUBDIR += lcov
@@ -3161,7 +3156,6 @@
     SUBDIR += ruby-rbprof
     SUBDIR += ruby-rbtree
     SUBDIR += ruby-rcov
-    SUBDIR += ruby-rjudy
     SUBDIR += ruby-robjectteam
     SUBDIR += ruby-rrb
     SUBDIR += ruby-rreadline
@@ -3484,7 +3478,6 @@
     SUBDIR += xc3sprog
     SUBDIR += xdg-user-dirs
     SUBDIR += xdg-utils
-    SUBDIR += xfc
     SUBDIR += xfce4-dev-tools
     SUBDIR += xlslib
     SUBDIR += xmake

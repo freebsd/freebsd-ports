@@ -34,7 +34,6 @@
     SUBDIR += dtiquery
     SUBDIR += ecs
     SUBDIR += elmer-eio
-    SUBDIR += elmer-fem
     SUBDIR += elmer-hutiter
     SUBDIR += elmer-matc
     SUBDIR += elmer-meshgen2d
@@ -141,7 +140,6 @@
     SUBDIR += p5-Physics-Unit
     SUBDIR += paje
     SUBDIR += paraview
-    SUBDIR += pcp
     SUBDIR += peekabot
     SUBDIR += pnetcdf
     SUBDIR += psi3

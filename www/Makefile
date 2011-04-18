@@ -60,7 +60,6 @@
     SUBDIR += bigbluebutton
     SUBDIR += bins
     SUBDIR += bk2site
-    SUBDIR += bk_edit
     SUBDIR += bkmrkconv
     SUBDIR += blogsum
     SUBDIR += bluefish
@@ -68,7 +67,6 @@
     SUBDIR += boa
     SUBDIR += bookmarkbridge
     SUBDIR += bozohttpd
-    SUBDIR += bricolage
     SUBDIR += bugmenot
     SUBDIR += bugmenot-firefox
     SUBDIR += c-icap
