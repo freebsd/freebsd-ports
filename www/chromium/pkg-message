@@ -1,4 +1,0 @@
-To run Chromium on your version of FreeBSD, you will need to pass the
---single-process parameter at startup.  This is a work-around for a bug under
-investigation ( http://trillian.chruetertee.ch/chromium/ticket/13 ).  Some
-functionality might not be available in this mode.
