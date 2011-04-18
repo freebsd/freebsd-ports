@@ -35,6 +35,7 @@
     SUBDIR += gal2
     SUBDIR += gal2-reference
     SUBDIR += gambas2-gb-gtk
+    SUBDIR += gambas2-gb-qt
     SUBDIR += gdl
     SUBDIR += gigi
     SUBDIR += gir-repository-vte
