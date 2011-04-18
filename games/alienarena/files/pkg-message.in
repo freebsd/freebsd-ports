@@ -2,7 +2,7 @@
 
 Alien Arena (native version) has been installed.
 
-1) The OSS (native FreeBSD sound) version of Alien Arena 2009 (named
+1) The OSS (native FreeBSD sound) version of Alien Arena 2011 (named
 "alienarena") uses by default a slow sound speed, which causes a notable
 delay. To solve this you have to run it once like this:
 

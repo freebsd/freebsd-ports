@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	alienarena
-PORTVERSION=	2010.745
+PORTVERSION=	2011.751
 CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.linux.kiev.ua/pub/Linux/Gentoo/distfiles/ \
 		http://ftp.jeuxlinux.fr/files/ \
@@ -16,20 +16,17 @@ MASTER_SITES=	ftp://ftp.linux.kiev.ua/pub/Linux/Gentoo/distfiles/ \
 		http://offload1.icculus.org:9090/alienarena/Files/ \
 		${MASTER_SITE_GENTOO:S|$|distfiles/|}
 PKGNAMESUFFIX=	-data
-DISTNAME=	${PORTNAME}7_45-Linux20100726
+DISTNAME=	${PORTNAME}-7_51-linux20110311
+
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Alien Arena (data)
 
-USE_ZIP=	yes
 NO_BUILD=	yes
 NO_PACKAGE=	Package will be 270MB, set FORCE_PACKAGE if you want it
 PLIST=		${WRKDIR}/pkg-plist
-WRKSRC=		${WRKDIR}/${PORTNAME}7_45
+WRKSRC=		${WRKDIR}/${PORTNAME}-7.51
 
 .include <bsd.port.pre.mk>
-
-post-extract:
-	@cd ${WRKSRC} && ${RM} data1/*.so
 
 pre-install:
 	@${RM} -f ${PLIST}
@@ -55,7 +52,7 @@ do-install:
 	cd ${WRKSRC} && ${CP} -R arena botinfo data1 ${DATADIR}
 	@${FIND} ${DATADIR} -type d -print0 | ${XARGS} -0 ${CHMOD} ${BINMODE}
 	@${FIND} ${DATADIR} -type f -print0 | ${XARGS} -0 ${CHMOD} ${SHAREMODE}
-	${INSTALL_DATA} ${WRKSRC}/aa.png \
+	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.png \
 		${PREFIX}/share/pixmaps/${PORTNAME}.png
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}

@@ -1,13 +1,11 @@
 %%CLIENT%%bin/alienarena
 %%DEDICATED%%bin/alienarena-ded
-%%LIBDIR%%/arena/game.so
 %%LIBDIR%%/arena/motd.txt
 %%LIBDIR%%/arena/server.cfg
 %%LIBDIR%%/botinfo
 %%LIBDIR%%/data1/default.cfg
 %%LIBDIR%%/data1/env
 %%LIBDIR%%/data1/fonts
-%%LIBDIR%%/data1/game.so
 %%LIBDIR%%/data1/gfx
 %%LIBDIR%%/data1/levelshots
 %%LIBDIR%%/data1/maps
