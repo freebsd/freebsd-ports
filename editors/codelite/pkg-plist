@@ -37,6 +37,7 @@ bin/codelite_xterm
 %%DATADIR%%/plugins/abbreviation.so
 %%DATADIR%%/plugins/cscope.so
 %%DATADIR%%/plugins/debuggers/Debugger.so
+%%DATADIR%%/plugins/git.so
 %%DATADIR%%/plugins/libcodeliteu.so
 %%DATADIR%%/plugins/libpluginu.so
 %%DATADIR%%/plugins/libwxscintillau.so
