@@ -6,14 +6,17 @@
 #
 
 PORTNAME=	Jifty-DBI
-PORTVERSION=	0.66
+PORTVERSION=	0.68
 CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
-MASTER_SITE_SUBDIR=	../by-authors/id/S/SA/SARTAK
+MASTER_SITE_SUBDIR=	CPAN:SARTAK
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Jifty::DBI - An object-relational persistence framework
+
+LICENSE_COMB=	dual
+LICENSE=	ART20 GPLv1
 
 BUILD_DEPENDS=	\
 		p5-DBI>0:${PORTSDIR}/databases/p5-DBI \
