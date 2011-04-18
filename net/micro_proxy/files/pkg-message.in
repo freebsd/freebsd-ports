@@ -11,7 +11,7 @@ to services(5),
 
 to inetd.conf(5),
 
-  enable_inetd="YES"
+  inetd_enable="YES"
 
 to rc.conf(5) and restart inetd(8). See micro_proxy(8) for more information. 
 
