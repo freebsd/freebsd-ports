@@ -1,7 +1,7 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4
 #
-# $FreeBSD: /tmp/pcvs/ports/Mk/bsd.linux-rpm.mk,v 1.25 2011-02-25 11:00:59 pav Exp $
+# $FreeBSD: /tmp/pcvs/ports/Mk/bsd.linux-rpm.mk,v 1.26 2011-04-18 13:07:21 netchild Exp $
 #
 
 # Variables:
@@ -27,10 +27,6 @@
 #					  contain libraries.
 # BRANDELF_FILES	- A list of files to brand as a linux executable in
 #					  case BRANDELF_DIRS can't be used.
-# _F8_COMPATIBLE_LINUX_BASE_PORTS
-#			- A list of linux base ports compatible (may be used) with -f8-
-#					  linux infrastructure ports. This variable is ment
-#					  to be used at *.mk files
 
 .if !defined(_POSTMKINCLUDED) && !defined(Linux_RPM_Pre_Include)
 
@@ -73,9 +69,9 @@ IGNORE=		bsd.linux-rpm.mk test failed: default package building at OSVERSION>=80
 .   endif
 . endif
 
-# linux Fedora 8 infrastructure ports should be used with compat.linux.osrelease=2.6.16,
-# linux_base-f8 (or greater) port
-.  if ${LINUX_DIST_VER} == 8 || ${LINUX_DIST_VER} == 10
+# linux Fedora 10 infrastructure ports should be used with compat.linux.osrelease=2.6.16,
+# linux_base-f10 (or greater) port
+.  if ${LINUX_DIST_VER} == 10
 # let's check for apropriate compat.linux.osrelease
 .    if (${LINUX_OSRELEASE} != "2.6.16")
 IGNORE=		bsd.linux-rpm.mk test failed: the port should be used with compat.linux.osrelease=2.6.16, which is supported at 8-CURRENT and has a limited support at 7-STABLE
@@ -83,8 +79,8 @@ IGNORE=		bsd.linux-rpm.mk test failed: the port should be used with compat.linux
 # the default for OSVERSION < 800076
 .    if ${OSVERSION} < 800076
 # let's check if an apropriate linux base port is used
-.      if ${USE_LINUX} != f8 && ${USE_LINUX} != f9 && ${USE_LINUX} != f10
-IGNORE=		bsd.linux-rpm.mk test failed: the port should be used with at least linux_base-f8, please read /usr/ports/UPDATING
+.      if ${USE_LINUX} != f10
+IGNORE=		bsd.linux-rpm.mk test failed: the port should be used with at least linux_base-f10, please read /usr/ports/UPDATING
 .      endif
 # let's check if OVERRIDE_LINUX_NONBASE_PORTS is defined
 .      ifndef(OVERRIDE_LINUX_NONBASE_PORTS)
@@ -103,12 +99,7 @@ DIST_SUBDIR?=	rpm/${LINUX_RPM_ARCH}/${LINUX_DIST}/${LINUX_DIST_VER}
 # ex.: MASTER_SITES=file:///...
 .      ifndef MASTER_SITES
 MASTER_SITES=			${MASTER_SITE_FEDORA_LINUX}
-.        if ${LINUX_DIST_VER} == 8
-MASTER_SITE_SUBDIR?=	../releases/${LINUX_DIST_VER}/Everything/${LINUX_RPM_ARCH}/os/Packages \
-			../updates/${LINUX_DIST_VER}/${LINUX_RPM_ARCH}.newkey
-MASTER_SITE_SRC_SUBDIR?=	../releases/${LINUX_DIST_VER}/Everything/source/SRPMS \
-				../updates/${LINUX_DIST_VER}/SRPMS.newkey
-.        elif ${LINUX_DIST_VER} == 10
+.        if ${LINUX_DIST_VER} == 10
 MASTER_SITE_SUBDIR?=	../releases/${LINUX_DIST_VER}/Everything/${LINUX_RPM_ARCH}/os/Packages \
 			../updates/${LINUX_DIST_VER}/${LINUX_RPM_ARCH}
 MASTER_SITE_SRC_SUBDIR?=	../releases/${LINUX_DIST_VER}/Everything/source/SRPMS \
@@ -171,19 +162,11 @@ linux-rpm-clean-portdocs:
 
 .    if ${USE_LINUX} == "fc4" || ${USE_LINUX:L} == "yes"
 _LINUX_BASE_SUFFIX=		fc4
-.    elif ${USE_LINUX} == "fc6"
-_LINUX_BASE_SUFFIX=		fc6
-.    elif ${USE_LINUX} == "f7"
-_LINUX_BASE_SUFFIX=		f7
-.    elif ${USE_LINUX} == "f8"
-_LINUX_BASE_SUFFIX=		f8
-.    elif ${USE_LINUX} == "f9"
-_LINUX_BASE_SUFFIX=		f9
 .    elif ${USE_LINUX} == "f10"
 _LINUX_BASE_SUFFIX=		f10
 .    else
 # other linux_base ports do not provide a pkg-plist file
-IGNORE=					uses AUTOMATIC_PLIST with an unsupported USE_LINUX, \"${USE_LINUX}\". Supported values are \"yes\", \"fc4\", \"fc6\", \"f7\", \"f8\", \"f9\" and \"f10\"
+IGNORE=					uses AUTOMATIC_PLIST with an unsupported USE_LINUX, \"${USE_LINUX}\". Supported values are \"yes\", \"fc4\" and \"f10\"
 .    endif
 
 PLIST?=					${WRKDIR}/.PLIST.linux-rpm
