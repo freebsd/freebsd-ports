@@ -5,7 +5,8 @@
 
 PORTNAME=	yali
 PORTVERSION=	1.1
-CATEGORIES=	lang
+CATEGORIES=	textproc
+PORTREVISION=	1
 MASTER_SITES=	http://mirror.appliedops.net/distfiles/ \
 		http://1.618034.com/blog_data/files/
 DISTNAME=	yali.v1.1.pl.txt
