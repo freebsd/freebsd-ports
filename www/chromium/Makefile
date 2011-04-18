@@ -8,6 +8,7 @@
 PORTNAME=	chromium
 DISTVERSIONPREFIX=	courgette-redacted-
 DISTVERSION=	10.0.648.205
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://download.goodking.org/downloads/ \
 		ftp://rene-ladan.nl/pub/distfiles/ \
@@ -147,11 +148,6 @@ post-patch:
 			-e "s|'python_ver%': '2.5'|'python_ver%': '2.6'|" \
 			-e "s|.so.1.0|.so.1|" \
 				${WRKSRC}/build/common.gypi
-	@${REINPLACE_CMD} -e "s|'-ldl',|'-lc',|" \
-		${WRKSRC}/app/app_base.gypi \
-		${WRKSRC}/build/linux/system.gyp \
-		${WRKSRC}/chrome/chrome_browser.gypi \
-		${WRKSRC}/media/media.gyp
 
 do-configure:
 	cd ${WRKSRC} && \
@@ -172,12 +168,5 @@ do-install:
 	cd ${WRKSRC}/out/${BUILDTYPE} && \
 		${COPYTREE_SHARE} "locales resources" ${DATADIR}
 	${LN} -sf ${DATADIR}/chrome ${PREFIX}/bin
-
-post-install:
-.if ${OSVERSION} < 900000
-	@${ECHO_CMD}
-	@${CAT} ${PKGMESSAGE}
-	@${ECHO_CMD}
-.endif
 
 .include <bsd.port.mk>

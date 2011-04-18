@@ -1,5 +1,5 @@
---- app/app_base.gypi.orig	2011-03-20 22:02:04.362467155 +0200
-+++ app/app_base.gypi	2011-03-20 22:02:04.479736529 +0200
+--- app/app_base.gypi.orig	2011-04-13 10:01:07.000000000 +0200
++++ app/app_base.gypi	2011-04-17 22:15:49.000000000 +0200
 @@ -232,7 +232,7 @@
          'surface/io_surface_support_mac.cc',
          'surface/io_surface_support_mac.h',
@@ -18,3 +18,11 @@
            'sources': [
              'gfx/gl/gl_context_egl.cc',
              'gfx/gl/gl_context_egl.h',
+@@ -363,7 +363,6 @@
+             'link_settings': {
+               'libraries': [
+                 '-lX11',
+-                '-ldl',
+               ],
+             },
+           },

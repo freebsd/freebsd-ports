@@ -1,5 +1,5 @@
---- chrome/chrome_browser.gypi.orig	2011-03-20 22:02:04.255736830 +0200
-+++ chrome/chrome_browser.gypi	2011-03-20 22:02:04.431736294 +0200
+--- chrome/chrome_browser.gypi.orig	2011-04-13 10:01:59.000000000 +0200
++++ chrome/chrome_browser.gypi	2011-04-17 22:24:15.000000000 +0200
 @@ -1237,7 +1237,7 @@
          'browser/favicon_service.h',
          'browser/file_path_watcher/file_path_watcher.cc',
@@ -38,7 +38,20 @@
            'dependencies': [
              '../build/linux/system.gyp:dbus-glib',
              '../build/linux/system.gyp:gconf',
-@@ -4294,7 +4294,7 @@
+@@ -3631,12 +3631,6 @@
+             '../build/linux/system.gyp:x11',
+             '../third_party/undoview/undoview.gyp:undoview',
+           ],
+-          'link_settings': {
+-            'libraries': [
+-              # For dlsym() in 'browser/zygote_main_linux.cc'
+-              '-ldl',
+-            ],
+-          },
+           'sources!': [
+             'browser/ui/views/extensions/extension_view.cc',
+             'browser/ui/views/extensions/extension_view.h',
+@@ -4294,7 +4288,7 @@
                ],
              }],
              # GTK build only
