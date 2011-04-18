@@ -6,11 +6,12 @@
 #
 
 PORTNAME=	coq
-DISTVERSION=	8.3pl1
+PORTVERSION=	8.3.1
 PORTEPOCH=	1
 CATEGORIES=	math
 MASTER_SITES=	http://coq.inria.fr/distrib/V${DISTVERSION}/files/ \
 		ftp://ftp.stack.nl/pub/users/johans/coq/
+DISTNAME=	${PORTNAME}-${PORTVERSION:R}pl${PORTVERSION:E}
 
 MAINTAINER=	johans@FreeBSD.org
 COMMENT=	Theorem prover based on lambda-C
