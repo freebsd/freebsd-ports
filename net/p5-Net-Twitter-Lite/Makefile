@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Net-Twitter-Lite
-PORTVERSION=	0.10003
+PORTVERSION=	0.10004
 CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -17,7 +17,8 @@ COMMENT=	A perl interface to the Twitter API
 BUILD_DEPENDS=	p5-JSON-Any>=1.21:${PORTSDIR}/converters/p5-JSON-Any \
 		${SITE_PERL}/LWP/UserAgent.pm:${PORTSDIR}/www/p5-libwww \
 		p5-URI>=1.4:${PORTSDIR}/net/p5-URI \
-		p5-Net-OAuth>=0.25:${PORTSDIR}/net/p5-Net-OAuth
+		p5-Net-OAuth>=0.25:${PORTSDIR}/net/p5-Net-OAuth \
+		p5-Crypt-SSLeay>=0.5:${PORTSDIR}/security/p5-Crypt-SSLeay
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
