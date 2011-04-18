@@ -40,6 +40,7 @@ include/postgresql/server/access/slru.h
 include/postgresql/server/access/subtrans.h
 include/postgresql/server/access/sysattr.h
 include/postgresql/server/access/transam.h
+include/postgresql/server/access/tupconvert.h
 include/postgresql/server/access/tupdesc.h
 include/postgresql/server/access/tupmacs.h
 include/postgresql/server/access/tuptoaster.h
