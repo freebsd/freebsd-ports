@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	poster
-PORTVERSION=	0.7.0
+PORTVERSION=	0.8.1
 #PORTREVISION=	0
 CATEGORIES=	www python
 MASTER_SITES=	http://atlee.ca/software/poster/dist/${PORTVERSION}/ \
