@@ -1,0 +1,13 @@
+Index: lib/Mail/SpamAssassin/Plugin/MIMEEval.pm
+===================================================================
+--- lib/Mail/SpamAssassin/Plugin/MIMEEval.pm	(revision 929342)
++++ lib/Mail/SpamAssassin/Plugin/MIMEEval.pm	(revision 929343)
+@@ -498,7 +498,7 @@
+     # perhaps just limit to test, and image?
+     next if ($ctype eq 'application/ics');
+ 
+-    my $cte = lc $p->get_header('content-transfer-encoding') || '';
++    my $cte = lc($p->get_header('content-transfer-encoding') || '');
+     next if ($cte !~ /^base64$/);
+     foreach my $l ( @{$p->raw()} ) {
+       my $len = length $l;
