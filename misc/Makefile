@@ -61,6 +61,7 @@
     SUBDIR += cuecat
     SUBDIR += cwish
     SUBDIR += dahdi
+    SUBDIR += dahdi-kmod
     SUBDIR += datedif
     SUBDIR += ddate
     SUBDIR += deco
