@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	monitorix
-PORTVERSION=	2.1.0
-PORTREVISION=	1
+PORTVERSION=	2.1.1
+PORTREVISION?=	0
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.monitorix.org/ \
 		http://www.bayofrum.net/dist/${PORTNAME}/
@@ -76,17 +76,23 @@ pre-everything::
 	@${ECHO_MSG} ""
 
 post-patch:
-# Set FreeBSD path for perl in shebang
+# Set FreeBSD path for perl in shebang and absolute sysctl so as not to break
+# in cgi-bin
 .for f in monitorix.cgi monitorix.conf monitorix reports/send_reports
-	@${REINPLACE_CMD} -e "1s|^\(#!\).*|\1${PERL}|" ${WRKSRC}/${f}
+	@${REINPLACE_CMD} -e "1s|^\(#!\).*|\1${PERL}|" \
+		-e 's|"\(sysctl\)|"/sbin/\1|' \
+		${WRKSRC}/${f}
 .endfor
 # eth0 doesn't exist in FreeBSD! Also let's set our own paths.
+# No iptables, so we'll disable PORT_GRAPH
 	@${REINPLACE_CMD} \
 		-e 's|\($$BASE_DIR = "\)[^"]*|\1${WWWDIR}/|' \
 		-e 's|\($$BASE_LIB = "\)[^"]*|\1${DATADIR}/|' \
 		-e 's|\($$BASE_CGI = "\)[^"]*|\1${CGIPATH}/|' \
+		-e 's|\($$SECURE_LOG= "\)[^"]*|\1/var/log/auth.log|' \
 		-e "s|/var/lib/milter-greylist/db/|/var/milter-greylist/|" \
 		-e "s|eth0|lo0|g" \
+		-e 's|\("port"[^Y]*\)Y|\1N|' \
 			${WRKSRC}/monitorix.conf
 
 do-install:
