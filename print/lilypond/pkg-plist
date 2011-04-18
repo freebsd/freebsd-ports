@@ -125,6 +125,7 @@ lib/lilypond/%%PORTVERSION%%/python/midi.so
 %%DATADIR%%/%%PORTVERSION%%/ly/Welcome-to-LilyPond-MacOS.ly
 %%DATADIR%%/%%PORTVERSION%%/ly/Welcome_to_LilyPond.ly
 %%DATADIR%%/%%PORTVERSION%%/ly/arabic.ly
+%%DATADIR%%/%%PORTVERSION%%/ly/articulate.ly
 %%DATADIR%%/%%PORTVERSION%%/ly/bagpipe.ly
 %%DATADIR%%/%%PORTVERSION%%/ly/catalan.ly
 %%DATADIR%%/%%PORTVERSION%%/ly/chord-modifiers-init.ly
