@@ -4115,6 +4115,7 @@ fvwm-themes                     ports/x11-themes/fvwm-themes
 fvwm2                           ports/x11-wm/fvwm2
 fvwm2-devel                     ports/x11-wm/fvwm2-devel
 fvwm2-i18n                      ports/x11-wm/fvwm2-i18n
+fvwm24                          ports/x11-wm/fvwm24
 fvwm95                          ports/x11-wm/fvwm95
 fvwm95-i18n                     ports/x11-wm/fvwm95-i18n
 fwanalog                        ports/security/fwanalog
@@ -22266,6 +22267,8 @@ qalculate                       ports/math/qalculate
 qar-bufo                        ports/mail/qar-bufo
 qbittorrent-26                  ports/net-p2p/qbittorrent-26
 qbittorrent-26-nox11            ports/net-p2p/qbittorrent-26-nox11
+qbittorrent-27                  ports/net-p2p/qbittorrent-27
+qbittorrent-27-nox11            ports/net-p2p/qbittorrent-27-nox11
 qbrew                           ports/misc/qbrew
 qbzr                            ports/devel/qbzr
 qca                             ports/devel/qca
@@ -24136,6 +24139,7 @@ skipfish                        ports/security/skipfish
 skippy                          ports/x11-wm/skippy
 skippy-xd                       ports/x11-wm/skippy-xd
 skribe                          ports/textproc/skribe
+skrooge                         ports/finance/skrooge
 sks                             ports/security/sks
 skstream                        ports/net/skstream
 sky2000                         ports/astro/sky2000
