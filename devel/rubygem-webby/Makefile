@@ -7,7 +7,7 @@
 PORTNAME=	webby
 PORTVERSION=	0.9.4
 PORTREVISION=	1
-CATEGORIES=	www rubygems
+CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	rpsfa@rit.edu
