@@ -1,0 +1,5 @@
+%%SITE_PERL%%/Multiplex/CMD.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Multiplex/CMD/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Multiplex/CMD
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Multiplex
+@dirrmtry %%SITE_PERL%%/Multiplex
