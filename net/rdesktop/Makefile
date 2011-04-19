@@ -14,6 +14,7 @@ MASTER_SITES=	SF
 MAINTAINER=	obrien@FreeBSD.org
 COMMENT=	RDP client for Windows NT/2000/2003 Terminal Server
 
+LICENSE=	GPLv3
 USE_XORG=	x11
 USE_GMAKE=	yes
 USE_OPENSSL=	yes
