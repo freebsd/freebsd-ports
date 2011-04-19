@@ -16,6 +16,8 @@ COMMENT=	Automatic panorama control point generation tool
 
 RESTRICTED=	May be covered by patents
 
+BROKEN=		unfetchable
+
 LIB_DEPENDS=	gdiplus:${PORTSDIR}/x11-toolkits/libgdiplus
 
 CONFLICTS=	autopano-sift-C-[0-9]*
