@@ -23,6 +23,7 @@ bin/poe-gen-tests
 %%SITE_PERL%%/POE/Test/Loops/wheel_readline.pm
 %%SITE_PERL%%/POE/Test/Loops/wheel_readwrite.pm
 %%SITE_PERL%%/POE/Test/Loops/wheel_run.pm
+%%SITE_PERL%%/POE/Test/Loops/wheel_run_size.pm
 %%SITE_PERL%%/POE/Test/Loops/wheel_sf_ipv6.pm
 %%SITE_PERL%%/POE/Test/Loops/wheel_sf_tcp.pm
 %%SITE_PERL%%/POE/Test/Loops/wheel_sf_udp.pm
@@ -36,9 +37,9 @@ bin/poe-gen-tests
 %%SITE_PERL%%/POE/Test/Loops/z_rt53302_fh_watchers.pm
 %%SITE_PERL%%/POE/Test/Loops/z_rt54319_bazerka_followtail.pm
 %%SITE_PERL%%/POE/Test/Loops/z_steinert_signal_integrity.pm
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Test/Loops
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Test/Loops
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Test
-@dirrmtry %%SITE_PERL%%/POE/Test/Loops
+@dirrm %%SITE_PERL%%/POE/Test/Loops
 @dirrmtry %%SITE_PERL%%/POE/Test
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE
 @dirrmtry %%SITE_PERL%%/POE
