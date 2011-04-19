@@ -7,7 +7,7 @@
 
 PORTNAME=	koffice-l10n
 PORTVERSION=	${KOFFICE2_VERSION}
-CATEGORIES?=	editors kde
+CATEGORIES=	hungarian editors kde
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Hungarian messages and documentation for KOffice2
