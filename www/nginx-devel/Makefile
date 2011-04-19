@@ -368,7 +368,7 @@ EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-ngx_http_upstream.h
 .endif
 
 .if defined(WITH_HTTP_UPSTREAM_KEEPALIVE)
-NGINX_UPSTREAM_KEEPALIVE_VERSION=	0.3
+NGINX_UPSTREAM_KEEPALIVE_VERSION=	0.4
 MASTER_SITES+=	http://mdounin.ru/files/:upstream
 DISTFILES+=	ngx_http_upstream_keepalive-${NGINX_UPSTREAM_KEEPALIVE_VERSION}.tar.gz:upstream
 CONFIGURE_ARGS+=--add-module=${WRKDIR}/ngx_http_upstream_keepalive-${NGINX_UPSTREAM_KEEPALIVE_VERSION}
