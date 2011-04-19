@@ -7,6 +7,7 @@
 
 PORTNAME=	vlc
 DISTVERSION=	1.1.9
+PORTREVISION=	1
 PORTEPOCH=	3
 CATEGORIES=	multimedia audio ipv6 net www
 MASTER_SITES=	http://download.videolan.org/pub/videolan/${PORTNAME}/${DISTVERSION}/ \
@@ -23,22 +24,24 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 OPTIONS=	A52 "A52 DVD audio decoder" On \
 		AALIB "Aalib Console Graphics Support" Off \
+		ASS "Enable ASS/SSA subtitle rendering" Off \
 		AVAHI "Enable Avahi mDNS networking" On \
 		CACA "Libcaca Console Graphics Support (requires AALIB)" Off \
 		DBUS "Enable D-Bus control support" On \
 		DIRAC "Enable Dirac support" Off \
 		DTS "DTS DVD audio decoder" On \
+		DVB "Digital Video Broadcasting support (requires V4L)" On \
 		DVDREAD "DVD Playback support" On \
 		DVDNAV "DVD menu navigation" On \
 		FAAD "Faad audio decoder (mp4/aac) support" On \
 		FLAC "Flac audio codec support" On \
 		FLUID "Enable Fluidsynth MIDI support" Off \
 		FRIBIDI "FriBidi bidirectional unicode support" Off \
-		GCRYPT "libgcrypt support" On \
 		GGI "General Graphic Interface support" Off \
 		GLX "X11 OpenGL rendering (requires XCB)" On \
 		GNOMEVFS "Gnome VFS support" Off \
-		GNUTLS "Enable viewing/transmission of encrypted streams" On \
+		GNUTLS "Enable stream encryption" On \
+		GOOM "Enable the Goom visual effect library" Off \
 		HTTPD "Streaming media control via http" On \
 		JACK "Jack audio support" Off \
 		LIVEMEDIA "Support for rstp/rtp/sdp protocols" On \
@@ -47,6 +50,7 @@ OPTIONS=	A52 "A52 DVD audio decoder" On \
 		MATROSKA "Matroska Container Format support" On \
 		MODPLUG "Mod audio suport" Off \
 		MPEG2 "Mpeg-2 audio/video decoder Support" On \
+		MTP "Enable support for the Music Transport Protocol" Off \
 		MUSEPACK "Musepack audio support" Off \
 		NCURSES "Enable ncurses (console) interface" Off \
 		NLS "Native Language Support" On \
@@ -57,6 +61,7 @@ OPTIONS=	A52 "A52 DVD audio decoder" On \
 		PLUGIN "VLC Mozilla Plugin" Off \
 		PNG "PNG graphics format support" On \
 		PORTAUDIO "Portaudio library support" Off \
+		PROJM "Enable ProjectM visualizations" Off \
 		PULSE "Pulse Audio support" Off \
 		QT4 "Qt4 Interface" On \
 		REALAUDIO "Real Audio(R) support" On \
@@ -77,7 +82,8 @@ OPTIONS=	A52 "A52 DVD audio decoder" On \
 		TREMOR "Tremor voice audio (redundant with Vorbis)" Off \
 		TWOLAME "Twolame mpeg2 audio encoder support" On \
 		UPNP "Enable UPnP network device control" Off \
-		V4L "Enable Video for Linux & DVB support" On \
+		V4L "Video4Linux video capture compatibility" On \
+		VAAPI "Support hardware decoding via VAAPI" Off \
 		VCD "Video CD support" On \
 		VORBIS "Vorbis audio decoder support" On \
 		X264 "Enable H.264/AVC codec support" On \
@@ -111,11 +117,16 @@ CONFIGURE_ARGS+=	--enable-vlc \
 			--enable-postproc \
 			--enable-sftp \
 			--disable-alsa \
+			--disable-dc1394 \
 			--disable-directfb \
+			--disable-dv \
+			--disable-hd1000a \
+			--disable-hd1000v \
 			--disable-loader \
+			--disable-osso_screensaver \
 			--disable-telx \
-			--disable-update-check \
-			--disable-v4l2
+			--disable-udev \
+			--disable-update-check
 
 MAN1=		vlc.1 \
 		vlc-config.1 \
@@ -139,7 +150,6 @@ WITHOUT_DVDNAV=yes
 WITHOUT_LUA=yes
 WITHOUT_QT4=yes
 WITH_RUNROOT=yes
-WITHOUT_V4L=yes
 WITHOUT_XCB=yes
 .endif
 
@@ -227,6 +237,13 @@ CONFIGURE_ARGS+=--enable-aa
 CONFIGURE_ARGS+=--disable-aa
 .endif
 
+.if defined(WITH_ASS)
+LIB_DEPENDS+=	ass.5:${PORTSDIR}/multimedia/libass
+CONFIGURE_ARGS+=--enable-libass
+.else
+CONFIGURE_ARGS+=--disable-libass
+.endif
+
 .if defined(WITH_AVAHI)
 LIB_DEPENDS+=	avahi-common.3:${PORTSDIR}/net/avahi-app
 CONFIGURE_ARGS+=--enable-bonjour
@@ -261,6 +278,14 @@ CONFIGURE_ARGS+=--disable-dca
 .else
 LIB_DEPENDS+=	dca.0:${PORTSDIR}/multimedia/libdca
 CONFIGURE_ARGS+=--enable-dca
+.endif
+
+.if defined(WITHOUT_DVB)
+CONFIGURE_ARGS+=--disable-dvb --disable-dvbpsi
+.else
+LIB_DEPENDS+=	dvbpsi.6:${PORTSDIR}/multimedia/libdvbpsi
+CONFIGURE_ARGS+=--enable-dvb --enable-dvbpsi \
+		--with-dvbpsi=${LOCALBASE}
 .endif
 
 .if defined(WITHOUT_DVDREAD)
@@ -305,13 +330,6 @@ LIB_DEPENDS+=	fribidi.3:${PORTSDIR}/converters/fribidi
 CONFIGURE_ARGS+=--enable-fribidi
 .endif
 
-.if defined(WITHOUT_GCRYPT)
-CONFIGURE_ARGS+=--disable-libgcrypt
-.else
-LIB_DEPENDS+=	gcrypt.17:${PORTSDIR}/security/libgcrypt
-CONFIGURE_ARGS+=--enable-libgcrypt
-.endif
-
 .if defined(WITH_GGI)
 LIB_DEPENDS+=	ggi.2:${PORTSDIR}/graphics/libggi
 CONFIGURE_ARGS+=--enable-ggi
@@ -333,10 +351,17 @@ COFIGURE_ARGS+=--disable-gnomevfs
 .endif
 
 .if defined(WITHOUT_GNUTLS)
-CONFIGURE_ARGS+=--disable-gnutls
+CONFIGURE_ARGS+=--disable-gnutls --enable-libgcrypt
 .else
 LIB_DEPENDS+=	gnutls.40:${PORTSDIR}/security/gnutls
-CONFIGURE_ARGS+=--enable-gnutls
+CONFIGURE_ARGS+=--enable-gnutls --enable-libgcrypt
+.endif
+
+.if defined(WITH_GOOM)
+LIB_DEPENDS+=	goom.0:${PORTSDIR}/graphics/goom
+CONFIGURE_ARGS+=--enable-goom
+.else
+CONFIGURE_ARGS+=--disable-goom
 .endif
 
 .if defined(WITHOUT_HTTPD)
@@ -397,6 +422,13 @@ CONFIGURE_ARGS+=--disable-libmpeg2
 .else
 LIB_DEPENDS+=	mpeg2.0:${PORTSDIR}/multimedia/libmpeg2
 CONFIGURE_ARGS+=--enable-libmpeg2
+.endif
+
+.if defined(WITH_MTP)
+LIB_DEPENDS+=	mtp.11:${PORTSDIR}/audio/libmtp
+CONFIGURE_ARGS+=--enable-mtp
+.else
+CONFIGURE_ARGS+=--disable-mtp
 .endif
 
 .if defined(WITH_MUSEPACK)
@@ -468,6 +500,13 @@ LIB_DEPENDS+=	portaudio.2:${PORTSDIR}/audio/portaudio2
 CONFIGURE_ARGS+=--enable-portaudio
 .else
 CONFIGURE_ARGS+=--disable-portaudio
+.endif
+
+.if defined(WITH_PROJM)
+LIB_DEPENDS+=	projectM.2.00:${PORTSDIR}/graphics/libprojectm
+CONFIGURE_ARGS+=--enable-projectm
+.else
+CONFIGURE_ARGS+=--disable-projectm
 .endif
 
 .if defined(WITH_PULSE)
@@ -603,14 +642,18 @@ EXTRA_PATCHES+=	${FILESDIR}/extra-patch-modules__services_discovery__upnp_intel.
 CONFIGURE_ARGS+=--disable-upnp
 .endif
 
-# Video for Linux and DVB (Digital Video Broadcast) support
-.if defined(WITHOUT_V4L)
-CONFIGURE_ARGS+=--disable-v4l --disable-dvb --disable-dvbpsi
+.if defined(WITHOUT_V4L) && defined(WITHOUT_DVB)
+CONFIGURE_ARGS+=--disable-v4l --disable-v4l2
 .else
-BUILD_DEPENDS+=	v4l_compat>=1.0.20100321:${PORTSDIR}/multimedia/v4l_compat
-LIB_DEPENDS+=	dvbpsi.6:${PORTSDIR}/multimedia/libdvbpsi
-CONFIGURE_ARGS+=--enable-v4l --enable-dvb --enable-dvbpsi \
-		--with-dvbpsi=${LOCALBASE}
+LIB_DEPENDS+=	v4l1.0:${PORTSDIR}/multimedia/libv4l
+CONFIGURE_ARGS+=--enable-v4l --enable-v4l2
+.endif
+
+.if defined(WITH_VAAPI)
+LIB_DEPENDS+=	va.1:${PORTSDIR}/multimedia/libva
+CONFIGURE_ARGS+=--enable-vaapi
+.else
+CONFIGURE_ARGS+=--disable-vaapi
 .endif
 
 .if defined(WITHOUT_VCD)
@@ -745,7 +788,7 @@ pre-install:
 	cd ${FAKEDIR}/share/locale && ${FIND} -s * -type f -o -type l | \
 		${SED} -e 's|^|share/locale/|' >> ${PLIST}
 .endif
-.for locale in ckb co fur kk km my oc ps tet tl
+.for locale in ckb co fur kk km lg my oc ps tet tl
 	${ECHO_CMD} "@dirrmtry share/locale/${locale}/LC_MESSAGES" >> ${PLIST}
 	${ECHO_CMD} "@dirrmtry share/locale/${locale}" >> ${PLIST}
 .endfor
