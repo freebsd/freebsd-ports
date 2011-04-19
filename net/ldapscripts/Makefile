@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	ldapscripts
-PORTVERSION=	1.10.0
-PORTREVISION=	1
+PORTVERSION=	2.0.1
 CATEGORIES=	net
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION} \
 		http://contribs.martymac.org/ldapscripts/
@@ -31,7 +30,6 @@ LIBDIR=	${PREFIX}/lib/${PORTNAME}
 MAKE_ENV+=	MANDIR=${MANPREFIX}/man \
 		ETCDIR=${ETCDIR}
 
-MANLANG=	""
 MANCOMPRESSED=	yes
 MAN1=	ldapaddgroup.1 ldapaddmachine.1 ldapadduser.1 ldapaddusertogroup.1 \
 	ldapdeletegroup.1 ldapdeleteuser.1 ldapdeleteuserfromgroup.1 \
