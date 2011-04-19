@@ -2177,6 +2177,7 @@ daemontools                     ports/sysutils/daemontools
 daemontools53                   ports/sysutils/daemontools53
 dagrab                          ports/audio/dagrab
 dahdi                           ports/misc/dahdi
+dahdi-kmod                      ports/misc/dahdi-kmod
 dailystrips                     ports/deskutils/dailystrips
 daimonin                        ports/games/daimonin
 daimonin-music                  ports/games/daimonin-music
@@ -12581,6 +12582,7 @@ p5-HTML-ExtractContent          ports/www/p5-HTML-ExtractContent
 p5-HTML-Field                   ports/www/p5-HTML-Field
 p5-HTML-FillInForm              ports/www/p5-HTML-FillInForm
 p5-HTML-FillInForm-ForceUTF8    ports/www/p5-HTML-FillInForm-ForceUTF8
+p5-HTML-Form                    ports/www/p5-HTML-Form
 p5-HTML-FormFu                  ports/www/p5-HTML-FormFu
 p5-HTML-FormFu-Imager           ports/www/p5-HTML-FormFu-Imager
 p5-HTML-FormFu-Model-DBIC       ports/www/p5-HTML-FormFu-Model-DBIC
@@ -12682,6 +12684,7 @@ p5-HTTP-Async                   ports/www/p5-HTTP-Async
 p5-HTTP-Body                    ports/www/p5-HTTP-Body
 p5-HTTP-BrowserDetect           ports/www/p5-HTTP-BrowserDetect
 p5-HTTP-Cache-Transparent       ports/www/p5-HTTP-Cache-Transparent
+p5-HTTP-Cookies                 ports/www/p5-HTTP-Cookies
 p5-HTTP-Cookies-Mozilla         ports/www/p5-HTTP-Cookies-Mozilla
 p5-HTTP-Cookies-iCab            ports/www/p5-HTTP-Cookies-iCab
 p5-HTTP-Cookies-w3m             ports/www/p5-HTTP-Cookies-w3m
@@ -13326,6 +13329,7 @@ p5-MouseX-ConfigFromFile        ports/devel/p5-MouseX-ConfigFromFile
 p5-MouseX-Getopt                ports/devel/p5-MouseX-Getopt
 p5-MouseX-Types                 ports/devel/p5-MouseX-Types
 p5-MouseX-Types-Path-Class      ports/devel/p5-MouseX-Types-Path-Class
+p5-Multiplex-CMD                ports/devel/p5-Multiplex-CMD
 p5-Music-Audioscrobbler-MPD     ports/audio/p5-Music-Audioscrobbler-MPD
 p5-Music-Audioscrobbler-Submit  ports/audio/p5-Music-Audioscrobbler-Submit
 p5-MusicBrainz-Client           ports/audio/p5-MusicBrainz-Client
@@ -16809,6 +16813,7 @@ p5-html-extractcontent          ports/www/p5-HTML-ExtractContent
 p5-html-field                   ports/www/p5-HTML-Field
 p5-html-fillinform              ports/www/p5-HTML-FillInForm
 p5-html-fillinform-forceutf8    ports/www/p5-HTML-FillInForm-ForceUTF8
+p5-html-form                    ports/www/p5-HTML-Form
 p5-html-format                  ports/textproc/p5-HTML-Format
 p5-html-formattext-withlinks    ports/textproc/p5-HTML-FormatText-WithLinks
 p5-html-formfu                  ports/www/p5-HTML-FormFu
@@ -16910,6 +16915,7 @@ p5-http-async                   ports/www/p5-HTTP-Async
 p5-http-body                    ports/www/p5-HTTP-Body
 p5-http-browserdetect           ports/www/p5-HTTP-BrowserDetect
 p5-http-cache-transparent       ports/www/p5-HTTP-Cache-Transparent
+p5-http-cookies                 ports/www/p5-HTTP-Cookies
 p5-http-cookies-icab            ports/www/p5-HTTP-Cookies-iCab
 p5-http-cookies-mozilla         ports/www/p5-HTTP-Cookies-Mozilla
 p5-http-cookies-w3m             ports/www/p5-HTTP-Cookies-w3m
@@ -17553,6 +17559,7 @@ p5-mp4-info                     ports/multimedia/p5-MP4-Info
 p5-mpeg-id3v2tag                ports/audio/p5-MPEG-ID3v2Tag
 p5-mro-compat                   ports/devel/p5-MRO-Compat
 p5-mrtg-parse                   ports/net-mgmt/p5-MRTG-Parse
+p5-multiplex-cmd                ports/devel/p5-Multiplex-CMD
 p5-music-audioscrobbler-mpd     ports/audio/p5-Music-Audioscrobbler-MPD
 p5-music-audioscrobbler-submit  ports/audio/p5-Music-Audioscrobbler-Submit
 p5-musicbrainz-client           ports/audio/p5-MusicBrainz-Client
