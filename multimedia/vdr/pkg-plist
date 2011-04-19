@@ -1,14 +1,14 @@
 bin/svdrpsend.pl
 bin/vdr
-lib/vdr/libvdr-dvbsddevice.so.1.7.17
-lib/vdr/libvdr-svcsvr.so.1.7.17
-lib/vdr/libvdr-svccli.so.1.7.17
-lib/vdr/libvdr-status.so.1.7.17
-lib/vdr/libvdr-skincurses.so.1.7.17
-lib/vdr/libvdr-pictures.so.1.7.17
-lib/vdr/libvdr-osddemo.so.1.7.17
-lib/vdr/libvdr-hello.so.1.7.17
-lib/vdr/libvdr-svdrpdemo.so.1.7.17
+lib/vdr/libvdr-dvbsddevice.so.1.7.18
+lib/vdr/libvdr-svcsvr.so.1.7.18
+lib/vdr/libvdr-svccli.so.1.7.18
+lib/vdr/libvdr-status.so.1.7.18
+lib/vdr/libvdr-skincurses.so.1.7.18
+lib/vdr/libvdr-pictures.so.1.7.18
+lib/vdr/libvdr-osddemo.so.1.7.18
+lib/vdr/libvdr-hello.so.1.7.18
+lib/vdr/libvdr-svdrpdemo.so.1.7.18
 %%NLS%%share/locale/ar/LC_MESSAGES/vdr.mo
 %%NLS%%share/locale/es_ES/LC_MESSAGES/vdr.mo
 %%NLS%%share/locale/es_ES/LC_MESSAGES/vdr-hello.mo
@@ -74,11 +74,11 @@ lib/vdr/libvdr-svdrpdemo.so.1.7.17
 %%NLS%%share/locale/cs_CZ/LC_MESSAGES/vdr-hello.mo
 %%NLS%%share/locale/ca_ES/LC_MESSAGES/vdr.mo
 %%NLS%%share/locale/ca_ES/LC_MESSAGES/vdr-hello.mo
-include/vdr/libsi/util.h
-include/vdr/libsi/si.h
-include/vdr/libsi/section.h
-include/vdr/libsi/headers.h
-include/vdr/libsi/descriptor.h
+include/libsi/util.h
+include/libsi/si.h
+include/libsi/section.h
+include/libsi/headers.h
+include/libsi/descriptor.h
 include/vdr/audio.h
 include/vdr/Make.config
 include/vdr/videodir.h
@@ -203,6 +203,6 @@ etc/vdr/svdrphosts.conf.sample
 @dirrmtry etc/vdr/plugins
 @dirrmtry etc/vdr
 @dirrmtry lib/vdr
-@dirrm include/vdr/libsi
+@dirrm include/libsi
 @dirrm include/vdr
 @unexec echo "Warning: If you will *NOT* use this package anymore, please remove the vdr user and group manually."

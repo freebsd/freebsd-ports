@@ -1,22 +1,14 @@
 Index: Makefile
-@@ -25,6 +25,7 @@ PREFIX  ?= /usr/local
- MANDIR   = $(PREFIX)/share/man
- BINDIR   = $(PREFIX)/bin
- LOCDIR   = ./locale
-+INCDIR   = $(PREFIX)/include
- ifdef FREEBSD
- INCLUDES = -I/usr/local/include/freetype2
- LIBDIRS  = -L/usr/local/lib
-@@ -177,7 +178,7 @@ clean-plugins:
+@@ -176,7 +176,7 @@ clean-plugins:
  
  # Install the files:
  
--install: install-bin install-conf install-doc install-plugins install-i18n
-+install: install-bin install-doc install-plugins install-header
+-install: install-bin install-conf install-doc install-plugins install-i18n install-includes
++install: install-bin install-doc install-plugins install-includes
  
  # VDR binary:
  
-@@ -192,7 +193,6 @@ endif
+@@ -191,7 +191,6 @@ endif
  # Configuration files:
  
  install-conf:
@@ -24,7 +16,7 @@ Index: Makefile
  	@if [ ! -d $(DESTDIR)$(CONFDIR) ]; then\
  	    mkdir -p $(DESTDIR)$(CONFDIR);\
  	    cp *.conf $(DESTDIR)$(CONFDIR);\
-@@ -208,7 +208,7 @@ install-doc:
+@@ -207,7 +206,7 @@ install-doc:
  
  # Plugins:
  
@@ -33,17 +25,3 @@ Index: Makefile
  	@mkdir -p $(DESTDIR)$(PLUGINLIBDIR)
  ifdef FREEBSD
  	@cp -f $(PLUGINDIR)/lib/lib*-*.so.$(APIVERSION) $(DESTDIR)$(PLUGINLIBDIR)
-@@ -216,6 +216,13 @@ else
- 	@cp --remove-destination $(PLUGINDIR)/lib/lib*-*.so.$(APIVERSION) $(DESTDIR)$(PLUGINLIBDIR)
- endif
- 
-+# Header files:
-+
-+install-header:
-+	@mkdir -p $(DESTDIR)$(INCDIR)/vdr $(DESTDIR)$(INCDIR)/vdr/libsi
-+	@cp *.h Make.config Make.global $(DESTDIR)$(INCDIR)/vdr
-+	@cp libsi/*.h $(DESTDIR)$(INCDIR)/vdr/libsi
-+
- # Source documentation:
- 
- srcdoc:

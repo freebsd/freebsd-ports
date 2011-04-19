@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	vdr-plugins
-PORTVERSION=	1.7.17
-PORTREVISION=	1
+PORTVERSION=	1.7.18
 CATEGORIES=	multimedia
 MASTER_SITES=	# none
 DISTFILES=	# none
@@ -32,7 +31,8 @@ OPTIONS=	CONTROL "telnet control" On \
 		LIVE "live web plugin" On \
 		UPNP "UPnP/DLNA plugin (alpha!)" On \
 		VNSISERVER "VNSI server (for xbmc pvr branch - untested)" Off \
-		SOFTDEVICE "softdevice (broken?)" Off
+		SOFTDEVICE "softdevice (broken?)" Off \
+		MARKAD "MarkAd plugin" Off
 
 .include <bsd.port.options.mk>
 
@@ -80,6 +80,9 @@ RUN_DEPENDS+=	${LOCALBASE}/lib/vdr/libvdr-softdevice.so.${PORTVERSION}:${PORTSDI
 .endif
 .if defined(WITH_VNSISERVER)
 RUN_DEPENDS+=	${LOCALBASE}/lib/vdr/libvdr-vnsiserver.so.${PORTVERSION}:${PORTSDIR}/multimedia/vdr-plugin-vnsiserver
+.endif
+.if defined(WITH_MARKAD)
+RUN_DEPENDS+=	${LOCALBASE}/lib/vdr/libvdr-markad.so.${PORTVERSION}:${PORTSDIR}/multimedia/vdr-plugin-markad
 .endif
 
 do-install:	# empty

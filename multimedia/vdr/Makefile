@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	vdr
-PORTVERSION=	1.7.17
-PORTREVISION=	1
+PORTVERSION=	1.7.18
 CATEGORIES=	multimedia
 MASTER_SITES=	ftp://ftp.tvdr.de/vdr/Developer/
 
@@ -19,8 +18,7 @@ LIB_DEPENDS=    jpeg.11:${PORTSDIR}/graphics/jpeg
 BUILD_DEPENDS+=	${LOCALBASE}/libdata/pkgconfig/fontconfig.pc:${PORTSDIR}/x11-fonts/fontconfig
 RUN_DEPENDS+=	${LOCALBASE}/libdata/pkgconfig/fontconfig.pc:${PORTSDIR}/x11-fonts/fontconfig
 
-OPTIONS=	IPTVPATCH "Stops EIT scans on IPTV channels" On \
-		AC3PATCH "North America DVB-S AC3 audio workaround" Off
+OPTIONS=	IPTVPATCH "Stops EIT scans on IPTV channels" On
 
 DIST_SUBDIR=	vdr
 USE_BZIP2=	yes
@@ -57,9 +55,6 @@ PLIST_SUB+=	VDR_GROUP=${VDR_GROUP}
 EXTRA_PATCHES+=	${FILESDIR}/vdr-1.7.15-disable_ca_updates.patch \
 	${FILESDIR}/vdr-1.7.15-disable_eitscan.patch
 .endif
-.if defined(WITH_AC3PATCH)
-EXTRA_PATCHES+=	${FILESDIR}/vdr-1.7.17-fix_na_dvbs_ac3.diff
-.endif
 
 .if !defined(WITHOUT_NLS)
 PLIST_SUB+=	NLS=""
@@ -72,6 +67,8 @@ post-patch:
 	@${SED} 's|^\(VIDEODIR[[:space:]]*\)[?]*\(=[[:space:]]*\).*|\1\2${VIDEODIR}|' \
 		${WRKSRC}/Make.config.template >${WRKSRC}/Make.config
 	@${REINPLACE_CMD} -e 's|%%CONFDIR%%|${CONFDIR}|' ${WRKSRC}/vdr.1
+# We don't support this yet:
+	@${RM} -r ${WRKSRC}/PLUGINS/src/dvbhddevice
 
 post-install:
 .if !defined(WITHOUT_NLS)
