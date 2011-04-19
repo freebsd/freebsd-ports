@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	codeigniter
-PORTVERSION=	2.0.2
+PORTVERSION=	2.0.3
 CATEGORIES=	www
 MASTER_SITES=	https://bitbucket.org/ellislab/codeigniter-reactor/get/
 PKGNAMESUFFIX=	-devel
-DISTNAME=	f3284f26710e
+DISTNAME=	13e8f9b4feba
 
 MAINTAINER=	appleboy.tw@gmail.com
 COMMENT=	A framework for developing PHP web applications

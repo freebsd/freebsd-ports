@@ -71,6 +71,7 @@
 %%WWWDIR%%/system/core/Model.php
 %%WWWDIR%%/system/core/Output.php
 %%WWWDIR%%/system/core/Router.php
+%%WWWDIR%%/system/core/Security.php
 %%WWWDIR%%/system/core/URI.php
 %%WWWDIR%%/system/core/Utf8.php
 %%WWWDIR%%/system/core/index.html
@@ -173,7 +174,6 @@
 %%WWWDIR%%/system/libraries/Pagination.php
 %%WWWDIR%%/system/libraries/Parser.php
 %%WWWDIR%%/system/libraries/Profiler.php
-%%WWWDIR%%/system/libraries/Security.php
 %%WWWDIR%%/system/libraries/Session.php
 %%WWWDIR%%/system/libraries/Sha1.php
 %%WWWDIR%%/system/libraries/Table.php
