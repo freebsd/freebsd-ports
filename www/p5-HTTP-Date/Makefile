@@ -14,6 +14,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Conversion routines for the HTTP protocol date formats
 
+CONFLICTS=	p5-libwww-5*
+
 PERL_CONFIGURE=	yes
 
 MAN3=		HTTP::Date.3

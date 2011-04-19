@@ -19,6 +19,8 @@ RUN_DEPENDS=	p5-HTML-Parser>=0:${PORTSDIR}/www/p5-HTML-Parser \
 		p5-URI>=1.10:${PORTSDIR}/net/p5-URI
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
+CONFLICTS=	p5-libwww-5*
+
 PERL_CONFIGURE=	yes
 
 MAN3=		HTML::Form.3

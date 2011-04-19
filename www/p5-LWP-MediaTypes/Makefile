@@ -14,6 +14,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Guess media type for a file or a URL
 
+CONFLICTS=	p5-libwww-5*
+
 PERL_CONFIGURE=	yes
 
 MAN3=		LWP::MediaTypes.3
