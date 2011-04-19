@@ -23,6 +23,8 @@ RUN_DEPENDS=	p5-Compress-Raw-Zlib>=0:${PORTSDIR}/archivers/p5-Compress-Raw-Zlib 
 		p5-URI>=1.10:${PORTSDIR}/net/p5-URI
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
+CONFLICTS=	p5-libwww-5*
+
 PERL_CONFIGURE=	yes
 
 MAN3=		HTTP::Config.3 \
