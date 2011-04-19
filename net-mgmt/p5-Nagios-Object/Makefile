@@ -7,7 +7,7 @@
 
 PORTNAME=	Nagios-Object
 PORTVERSION=	0.21.15
-CATEGORIES=	perl5 net-mgmt
+CATEGORIES=	net-mgmt perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
