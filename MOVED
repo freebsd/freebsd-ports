@@ -1745,4 +1745,4 @@ x11-toolkits/php-gtk2||2011-04-18|Has expired: has been broken for over a half y
 x11-toolkits/p5-Tcl-Tk||2011-04-18|Has expired: has been broken for 2 year
 x11/metisse||2011-04-18|Has expired: has been broken for over a half year
 security/newpki-client||2011-04-18|Removed
-lang/gnustep-objc|lang/gnustep-libobjc2|2011-04-19|Replaced with libobjc2
+lang/gnustep-objc|lang/gnustep-libobjc|2011-04-19|Replaced with libobjc
