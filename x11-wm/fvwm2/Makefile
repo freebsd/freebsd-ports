@@ -19,7 +19,7 @@ COMMENT=	Popular virtual window manager for X
 RUN_DEPENDS=	gm4:${PORTSDIR}/devel/m4
 
 # Other ports this port cannot coexist with
-CONFLICTS?=	fvwm-1.* fvwm-2.4.*
+CONFLICTS?=	fvwm-1.* fvwm-2.[457].*
 NO_LATEST_LINK=	yes
 
 GNU_CONFIGURE=	yes
