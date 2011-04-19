@@ -81,20 +81,19 @@ Index: Makefile
  CC       ?= gcc
  CFLAGS   ?= -g -O3 -Wall
  
-@@ -20,7 +25,12 @@ PREFIX  ?= /usr/local
- MANDIR   = $(PREFIX)/share/man
+@@ -21,7 +26,11 @@ MANDIR   = $(PREFIX)/share/man
  BINDIR   = $(PREFIX)/bin
+ INCDIR   = $(PREFIX)/include
  LOCDIR   = ./locale
 +ifdef FREEBSD
-+LIBDIRS  = -L${LOCALBASE}/lib
-+LIBS     = -ljpeg -lpthread -lrt -lfreetype -lfontconfig -liconv -lintl
++LIBS     = -ljpeg -lpthread -lrt $(shell pkg-config --libs freetype2 fontconfig) -liconv -lintl
 +else
- LIBS     = -ljpeg -lpthread -ldl -lcap -lrt -lfreetype -lfontconfig
+ LIBS     = -ljpeg -lpthread -ldl -lcap -lrt $(shell pkg-config --libs freetype2 fontconfig)
 +endif
- INCLUDES ?= $(shell pkg-config --cflags freetype2)
+ INCLUDES ?= $(shell pkg-config --cflags freetype2 fontconfig)
  
  PLUGINDIR= ./PLUGINS
-@@ -129,7 +139,11 @@ i18n: $(I18Nmsgs)
+@@ -130,7 +139,11 @@ i18n: $(I18Nmsgs)
  
  install-i18n:
  	@mkdir -p $(DESTDIR)$(LOCDIR)
@@ -106,7 +105,7 @@ Index: Makefile
  
  # The 'include' directory (for plugins):
  
-@@ -168,7 +182,11 @@ install: install-bin install-conf instal
+@@ -169,7 +182,11 @@ install: install-bin install-conf instal
  
  install-bin: vdr
  	@mkdir -p $(DESTDIR)$(BINDIR)
@@ -118,7 +117,7 @@ Index: Makefile
  
  # Configuration files:
  
-@@ -191,7 +209,11 @@ install-doc:
+@@ -192,13 +209,18 @@ install-doc:
  
  install-plugins: plugins
  	@mkdir -p $(DESTDIR)$(PLUGINLIBDIR)
@@ -127,6 +126,13 @@ Index: Makefile
 +else
  	@cp --remove-destination $(PLUGINDIR)/lib/lib*-*.so.$(APIVERSION) $(DESTDIR)$(PLUGINLIBDIR)
 +endif
+ 
+ # Includes:
+ 
+ install-includes: include-dir
+ 	@mkdir -p $(DESTDIR)$(INCDIR)
+ 	@cp -pLR include/vdr include/libsi $(DESTDIR)$(INCDIR)
++	@cp Make.config Make.global $(DESTDIR)$(INCDIR)/vdr
  
  # Source documentation:
  
@@ -230,62 +236,6 @@ diff -u -r1.1.1.3 -r1.4
    if (fields == 4)
       commands = NULL; //XXX Apparently sscanf() doesn't work correctly if the last %a argument results in an empty string
    if (4 <= fields && fields <= 5) {
-Index: dvbsubtitle.c
-===================================================================
-RCS file: /progs/network/ccvs/vdr/dvbsubtitle.c,v
-retrieving revision 1.1.1.5
-retrieving revision 1.5
-diff -u -r1.1.1.5 -r1.5
---- dvbsubtitle.c	2010/10/19 20:28:49	1.1.1.5
-+++ dvbsubtitle.c	2010/10/19 20:32:58	1.5
-@@ -718,7 +718,11 @@
-      if (Length > PayloadOffset + SubstreamHeaderLength) {
-         int64_t pts = PesHasPts(Data) ? PesGetPts(Data) : 0;
-         if (pts)
-+#ifdef __FreeBSD__
-+           dbgconverter("Converter PTS: %lld\n", (long long int)pts);
-+#else
-            dbgconverter("Converter PTS: %lld\n", pts);
-+#endif
-         const uchar *data = Data + PayloadOffset + SubstreamHeaderLength; // skip substream header
-         int length = Length - PayloadOffset - SubstreamHeaderLength; // skip substream header
-         if (ResetSubtitleAssembler)
-@@ -754,7 +758,11 @@
-      if (Length > PayloadOffset) {
-         int64_t pts = PesGetPts(Data);
-         if (pts)
-+#ifdef __FreeBSD__
-+           dbgconverter("Converter PTS: %lld\n", (long long int)pts);
-+#else
-            dbgconverter("Converter PTS: %lld\n", pts);
-+#endif
-         const uchar *data = Data + PayloadOffset;
-         int length = Length - PayloadOffset;
-         if (length > 3) {
-@@ -819,7 +827,11 @@
-                     if (AssertOsd()) {
-                        sb->Draw(osd);
-                        Timeout.Set(sb->Timeout() * 1000);
-+#ifdef __FreeBSD__
-+                       dbgconverter("PTS: %lld  STC: %lld (%lld) timeout: %d\n", (long long int)sb->Pts(), (long long int)cDevice::PrimaryDevice()->GetSTC(), (long long int)Delta, sb->Timeout());
-+#else
-                        dbgconverter("PTS: %lld  STC: %lld (%lld) timeout: %d\n", sb->Pts(), cDevice::PrimaryDevice()->GetSTC(), Delta, sb->Timeout());
-+#endif
-                        }
-                     bitmaps->Del(sb);
-                     }
-@@ -889,7 +901,11 @@
-             page->SetTimeout(Data[6]);
-             page->SetState((Data[6 + 1] & 0x0C) >> 2);
-             page->regions.Clear();
-+#ifdef __FreeBSD__
-+            dbgpages("Update page id %d version %d pts %lld timeout %d state %d\n", pageId, page->Version(), (long long int)page->Pts(), page->Timeout(), page->State());
-+#else
-             dbgpages("Update page id %d version %d pts %lld timeout %d state %d\n", pageId, page->Version(), page->Pts(), page->Timeout(), page->State());
-+#endif
-             for (int i = 6 + 2; i < segmentLength; i += 6) {
-                 cSubtitleRegion *region = page->GetRegionById(Data[i], true);
-                 region->SetHorizontalAddress((Data[i + 2] << 8) + Data[i + 3]);
 Index: eit.c
 ===================================================================
 RCS file: /progs/network/ccvs/vdr/eit.c,v
@@ -426,18 +376,6 @@ retrieving revision 1.5
 diff -u -r1.1.1.3 -r1.5
 --- recording.c	2010/03/16 15:18:58	1.1.1.3
 +++ recording.c	2010/03/16 15:21:05	1.5
-@@ -1505,7 +1505,11 @@
-               delta = int(buf.st_size % sizeof(tIndexTs));
-               if (delta) {
-                  delta = sizeof(tIndexTs) - delta;
-+#ifdef __FreeBSD__
-+                 esyslog("ERROR: invalid file size (%lld) in '%s'", (long long int)buf.st_size, fileName);
-+#else
-                  esyslog("ERROR: invalid file size (%lld) in '%s'", buf.st_size, fileName);
-+#endif
-                  }
-               last = int((buf.st_size + delta) / sizeof(tIndexTs) - 1);
-               if (!Record && last >= 0) {
 @@ -1825,7 +1829,11 @@
           // Search for a PAT packet from the end of the file:
           cPatPmtParser PatPmtParser;
@@ -473,32 +411,6 @@ diff -u -r1.1.1.3 -r1.5
             if (!file)
                LOG_ERROR_STR(fileName);
             }
-Index: remote.c
-===================================================================
-RCS file: /progs/network/ccvs/vdr/remote.c,v
-retrieving revision 1.1.1.2
-retrieving revision 1.2
-diff -u -r1.1.1.2 -r1.2
---- remote.c	2010/02/17 10:14:45	1.1.1.2
-+++ remote.c	2010/02/17 12:36:01	1.2
-@@ -121,7 +121,11 @@
- bool cRemote::Put(uint64_t Code, bool Repeat, bool Release)
- {
-   char buffer[32];
-+#ifdef __FreeBSD__
-+  snprintf(buffer, sizeof(buffer), "%016llX", (long long unsigned int)Code);
-+#else
-   snprintf(buffer, sizeof(buffer), "%016llX", Code);
-+#endif
-   return Put(buffer, Repeat, Release);
- }
- 
-Index: shutdown.c
-===================================================================
-RCS file: /progs/network/ccvs/vdr/shutdown.c,v
-retrieving revision 1.1.1.2
-retrieving revision 1.4
-diff -u -r1.1.1.2 -r1.4
 Index: skins.c
 ===================================================================
 RCS file: /progs/network/ccvs/vdr/skins.c,v
