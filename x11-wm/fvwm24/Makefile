@@ -27,7 +27,7 @@ LIB_DEPENDS+=	stroke.0:${PORTSDIR}/devel/libstroke
 .endif
 
 # Other ports this port cannot coexist with
-CONFLICTS?=	fvwm-1.* fvwm-2.5.*
+CONFLICTS?=	fvwm-1.* fvwm-2.[567].*
 # Other ports reference this port's Makefile
 .if defined(PKGNAMESUFFIX)
 LATEST_LINK=	${PORTNAME}${PKGNAMESUFFIX}
