@@ -25,8 +25,8 @@ PLIST_FILES+=	bin/mhtpasswd \
 USE_RC_SUBR=	mohawk
 
 .include <bsd.port.pre.mk>
-.if ${OSVERSION} < 800000
-BROKEN=		does not build on RELENG_7
+.if ${OSVERSION} < 800502
+BROKEN=		does not build
 .endif
 
 post-patch:
