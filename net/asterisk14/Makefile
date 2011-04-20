@@ -88,7 +88,6 @@ CONFIGURE_ARGS+=	--with-dahdi
 BUILD_DEPENDS+=	libpri>=1.4.10:${PORTSDIR}/misc/libpri \
 		${LOCALBASE}/include/dahdi/user.h:${PORTSDIR}/misc/dahdi
 LIB_DEPENDS+=	pri.1:${PORTSDIR}/misc/libpri
-RUN_DEPENDS+=	${LOCALBASE}/lib/dahdi/dahdi.ko:${PORTSDIR}/misc/dahdi
 .endif
 
 #
