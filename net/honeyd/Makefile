@@ -9,8 +9,8 @@ PORTNAME=	honeyd
 PORTVERSION=	1.5c
 PORTREVISION=	4
 CATEGORIES=	net
-MASTER_SITES=	http://www.citi.umich.edu/u/provos/honeyd/ \
-		http://niels.xtdnet.nl/honeyd/
+MASTER_SITES=	http://www.honeyd.org/uploads/ \
+		http://www.citi.umich.edu/u/provos/honeyd/
 
 MAINTAINER=	skreuzer@FreeBSD.org
 COMMENT=	Simulate virtual network hosts (honeypots)
@@ -31,6 +31,8 @@ CONFIGURE_ARGS+=	--with-python
 .else
 CONFIGURE_ARGS+=	--without-python
 .endif
+
+LICENSE=	GPLv2
 
 MAN1=		honeydctl.1
 MAN8=		honeyd.8
