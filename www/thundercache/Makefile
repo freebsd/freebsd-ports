@@ -36,8 +36,6 @@ LICENSE_PERMS=	dist-mirror pkg-mirror auto-accept
 LICENSE_TEXT=	Commercial software with shareware license to 50 threads
 RESTRICTED=	Commercial software with shareware license to 50 threads
 
-MANUAL_PACKAGE_BUILD=	This port wants PGSQL 8.4, but 8.2 is default and used to build php5-pgsql dependency.
-
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 800000

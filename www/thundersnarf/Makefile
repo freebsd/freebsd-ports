@@ -24,8 +24,6 @@ USE_BZIP2=	yes
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME:R}
 
-MANUAL_PACKAGE_BUILD=	This port wants PGSQL 8.4, but 8.2 is default and used to build php5-pgsql dependency.
-
 .include <bsd.port.pre.mk>
 
 .if defined (WITH_APACHE)
