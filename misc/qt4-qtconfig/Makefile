@@ -7,19 +7,20 @@
 
 PORTNAME=	qtconfig
 DISTVERSION=	${QT4_VERSION}
+PORTREVISION=	1
 CATEGORIES?=	misc
 PKGNAMEPREFIX=	qt4-
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Qt graphical configuration utility
 
+OPTIONS=	PHONON "Add support for Phonon (implies GStreamer)" on
+
 USE_QT_VER=	4
 QT_COMPONENTS=	qmake_build moc_build rcc_build uic_build qt3support corelib \
-		gui sql xml phonon phonon-gst
+		gui sql xml
 QT_NONSTANDARD=	yes
 QT_DIST=	yes
-
-USE_GSTREAMER=	yes
 
 HAS_CONFIGURE=	yes
 
@@ -39,6 +40,15 @@ EXTRACT_AFTER_ARGS=	| ${TAR} -xf -
 .for dne in ${DO_NOT_EXTRACT}
 EXTRACT_AFTER_ARGS+=	--exclude '${DISTNAME}/${dne}'
 .endfor
+
+.include <bsd.port.options.mk>
+
+.if !defined(WITHOUT_PHONON)
+QT_COMPONENTS+=	phonon phonon-gst
+USE_GSTREAMER=	yes
+.else
+CONFIGURE_ARGS+=	-no-phonon -no-gstreamer
+.endif
 
 BUILD_WRKSRC=	${WRKSRC}/tools/${PORTNAME}
 INSTALL_WRKSRC=	${BUILD_WRKSRC}
