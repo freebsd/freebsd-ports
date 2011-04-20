@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	sqlite3
-PORTVERSION=	3.7.5
+PORTVERSION=	3.7.6.1
 CATEGORIES=	databases
 MASTER_SITES=	http://www.sqlite.org/ http://www2.sqlite.org/
-DISTNAME=	sqlite-src-3070500
+DISTNAME=	sqlite-src-3070601
 
 MAINTAINER=	pavelivolkov@googlemail.com
 COMMENT=	An SQL database engine in a C library
@@ -174,6 +174,7 @@ CFLAGS+=		-DSQLITE_ENABLE_COLUMN_METADATA=1
 
 .if !defined(WITHOUT_THREADSAFE)
 CONFIGURE_ARGS+=	--enable-threadsafe
+LDFLAGS+=		${PTHREAD_LIBS}
 .else
 CONFIGURE_ARGS+=	--disable-threadsafe
 .endif
@@ -209,7 +210,7 @@ IGNORE=	for the purpose of test you want to include TCL wrapper
 .endif
 
 test: build
-	@(cd ${WRKSRC} && ${CHOWN} -R ${TESTUSER} ${WRKSRC} && su ${TESTUSER} -c "${MAKE} test"; ${CHOWN} ${USER} ${WRKSRC})
+	@(cd ${WRKSRC} && ${CHOWN} -R ${TESTUSER} ${WRKSRC} && su ${TESTUSER} -c "limits -n 1999 ${MAKE} test"; ${CHOWN} -R ${USER} ${WRKSRC})
 
 post-build:
 	@${ECHO_CMD}
