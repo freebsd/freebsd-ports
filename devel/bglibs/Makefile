@@ -7,6 +7,7 @@
 
 PORTNAME=	bglibs
 PORTVERSION=	1.106
+PORTEPOCH=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://untroubled.org/${PORTNAME}/archive/ \
 		http://untroubled.org/${PORTNAME}/
