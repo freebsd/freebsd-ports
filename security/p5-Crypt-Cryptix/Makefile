@@ -8,8 +8,8 @@
 PORTNAME=	Cryptix
 PORTVERSION=	1.16
 CATEGORIES=	security perl5
-MASTER_SITES=	http://www.ntua.gr/cryptix/dist/ \
-		ftp://opensource.thebunker.net/pub/mirrors/cryptix/ \
+MASTER_SITES=	http://www.cryptix.org/ \
+		http://www.ntua.gr/cryptix/dist/ \
 		http://www.cypherpunks.to/~cryptix/dist/
 PKGNAMEPREFIX=	p5-
 
