@@ -6,40 +6,30 @@
 #
 
 PORTNAME=	pngnq
-PORTVERSION=	0.5
-PORTREVISION=	2
+PORTVERSION=	1.0
 CATEGORIES=	graphics
 MASTER_SITES=	SF
-DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
 MAINTAINER=	stb@lassitu.de
 COMMENT=	A tool for quantizing PNG images in RGBA format
 
 LIB_DEPENDS=	png.6:${PORTSDIR}/graphics/png
 
-WRKSRC=		${WRKDIR}/${PORTVERSION}
+GNU_CONFIGURE=	yes
 
-USE_GMAKE=	yes
-MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS} -I${LOCALBASE}/include -DVERSION='\"${PORTVERSION}\"'" \
-		LDFLAGS="-lpng -lz -lm -L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
+CONFIGURE_ENV+=	LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib" LIBS=-lpng
 
-PORTDOCS=	README LICENSE README.pngcomp
+PORTDOCS=	README COPYING
 PLIST_FILES=	bin/pngcomp bin/pngnq
-.if !defined(NO_INSTALL_MANPAGES)
 MAN1=		pngnq.1
-.endif
 
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/pngcomp ${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/pngnq ${PREFIX}/bin
+post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 .for i in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
 .endfor
-.endif
-.if !defined(NO_INSTALL_MANPAGES)
-	${INSTALL_MAN} ${WRKSRC}/pngnq.1 ${MAN1PREFIX}/man/man1
 .endif
 
 .include <bsd.port.mk>
