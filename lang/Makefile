@@ -243,6 +243,7 @@
     SUBDIR += perl5.8
     SUBDIR += petite-chez
     SUBDIR += pfe
+    SUBDIR += phantomjs
     SUBDIR += phc
     SUBDIR += php-mode.el
     SUBDIR += php4
