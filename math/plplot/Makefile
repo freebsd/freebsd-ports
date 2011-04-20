@@ -24,7 +24,6 @@ RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash	\
 
 USE_AUTOTOOLS=	libltdl
 USE_CMAKE=	yes
-USE_GMAKE=	yes
 USE_PERL5_BUILD=yes
 USE_GNOME=	pango
 USE_GHOSTSCRIPT=yes
