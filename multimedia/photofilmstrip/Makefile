@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	photofilmstrip
-PORTVERSION=	1.4.0
-PORTREVISION=	1
+PORTVERSION=	1.4.1
 CATEGORIES=	multimedia python
 MASTER_SITES=	SF/photostoryx/${PORTNAME}/${PORTVERSION}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -26,6 +25,7 @@ WX_UNICODE=	yes
 USE_GETTEXT=	yes
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 pre-everything::
 	@${ECHO_MSG} "To run ${PORTNAME}, you must have sqlite3 installed with extensions enabled."

@@ -191,6 +191,7 @@ share/locale/de/LC_MESSAGES/PhotoFilmStrip.mo
 share/locale/en/LC_MESSAGES/PhotoFilmStrip.mo
 share/locale/fr/LC_MESSAGES/PhotoFilmStrip.mo
 share/locale/it/LC_MESSAGES/PhotoFilmStrip.mo
+share/locale/ko/LC_MESSAGES/PhotoFilmStrip.mo
 share/locale/pt/LC_MESSAGES/PhotoFilmStrip.mo
 share/pixmaps/photofilmstrip.xpm
 @dirrm %%PYTHON_SITELIBDIR%%/photofilmstrip/res
