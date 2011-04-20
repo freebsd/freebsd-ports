@@ -24,4 +24,7 @@ USE_GNUSTEP_INSTALL=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
+post-patch:
+	${REINPLACE_CMD} -e 's|^CC=|# CC=|' ${WRKSRC}/GNUmakefile
+
 .include <bsd.port.mk>
