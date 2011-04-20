@@ -7,6 +7,7 @@
 
 PORTNAME=	miniupnpd
 PORTVERSION=	1.5
+PORTEPOCH=	1
 CATEGORIES=	net
 MASTER_SITES=	http://miniupnp.tuxfamily.org/files/ \
 		http://miniupnp.free.fr/files/
