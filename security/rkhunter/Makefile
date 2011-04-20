@@ -7,11 +7,15 @@
 
 PORTNAME=	rkhunter
 PORTVERSION=	1.3.8
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	SF
 
 MAINTAINER=	sbz@FreeBSD.org
 COMMENT=	Rootkit detection tool
+
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/files/LICENSE
 
 OPTIONS=	LSOF "Use LSOF" on \
 		NMAP "Use NMAP" off
@@ -54,6 +58,10 @@ do-install:
 .endif
 
 post-install:
+	${INSTALL_DATA} ${WRKSRC}/files/${PORTNAME}.conf ${PREFIX}/etc/${PORTNAME}.conf.sample
+	@if [ ! -f ${PREFIX}/etc/${PORTNAME}.conf ]; then \
+		${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.conf ${PREFIX}/etc; \
+	fi
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
