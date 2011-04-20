@@ -7,7 +7,7 @@
 
 PORTNAME=	valgrind
 PORTVERSION=	3.6.1
-PORTREVISION=	0
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.SpringDaemons.com/soft/
