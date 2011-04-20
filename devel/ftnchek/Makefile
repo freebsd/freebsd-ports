@@ -14,6 +14,8 @@ MASTER_SITE_SUBDIR=	devel/lang/fortran
 MAINTAINER=	bf@FreeBSD.org
 COMMENT=	Fortran 77 semantic checking utility
 
+LICENSE=	MIT
+
 MAN1=		dcl2inc.1 ftnchek.1
 
 GNU_CONFIGURE=	yes
