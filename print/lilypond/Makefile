@@ -46,7 +46,9 @@ USE_GNOME=	pango
 MAKEFILE=	GNUmakefile
 GNU_MAKEFILE=	yes
 CONFIGURE_ARGS+=--with-ncsb-dir=${LOCALBASE}/share/ghostscript/fonts
-CONFIGURE_ENV+=	MAKEINFO="${LOCALBASE}/bin/makeinfo"
+CONFIGURE_ENV+=	MAKEINFO="${LOCALBASE}/bin/makeinfo" \
+		FLEX=${FLEX} \
+		YACC=${YACC}
 
 ALL_TARGET=	all
 
