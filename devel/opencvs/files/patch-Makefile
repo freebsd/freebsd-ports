@@ -1,8 +1,17 @@
---- Makefile.orig	2008-06-21 17:39:15.000000000 +0200
-+++ Makefile	2010-06-08 20:18:08.000000000 +0200
-@@ -12,14 +12,8 @@
- 	server.c status.c tag.c trigger.c worklist.c util.c update.c version.c \
- 	watch.c xmalloc.c
+--- Makefile.orig	2011-04-20 20:46:33.000000000 +0200
++++ Makefile	2011-04-20 21:22:34.000000000 +0200
+@@ -1,7 +1,7 @@
+ #	$OpenBSD: Makefile,v 1.48 2010/10/15 08:44:12 tobias Exp $
+ 
+ PROG=	opencvs
+-MAN=	cvsintro.7 # cvs.1 cvs.5
++MAN=	cvsintro.7 opencvs.1 opencvs.5
+ CPPFLAGS+=-I${.CURDIR}
+ 
+ SRCS=	cvs.c add.c admin.c annotate.c atomicio.c commit.c config.c \
+@@ -12,14 +12,14 @@
+ 	root.c server.c status.c tag.c trigger.c worklist.c util.c update.c \
+ 	version.c watch.c xmalloc.c
  
 -CFLAGS+=-Wall
 -CFLAGS+=-Wstrict-prototypes -Wmissing-prototypes
@@ -11,10 +20,15 @@
 -CFLAGS+=-Wsign-compare
 -DEBUG=	-g -ggdb
 -YFLAGS=
--
--INSTALL_STRIP=
 +CFLAGS+=-DSIZE_MAX=ULONG_MAX
 +DPADD+= ${LIBZ}
 +LDADD+= -lz -lmd
+ 
+-INSTALL_STRIP=
++opencvs.1:
++	mv cvs.1 opencvs.1
++
++opencvs.5:
++	mv cvs.5 opencvs.5
  
  .include <bsd.prog.mk>
