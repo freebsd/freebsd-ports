@@ -25,7 +25,7 @@ USE_GNUSTEP_BUILD=	yes
 USE_GNUSTEP_INSTALL=	yes
 
 post-patch:
-	@${RM} -rf ${WRKSRC}/GRubik.app/ix86
-	@${REINPLACE_CMD} -e 's|^//|# //|' ${WRKSRC}/GNUmakefile
+	${RM} -rf ${WRKSRC}/GRubik.app/ix86
+	${REINPLACE_CMD} -e 's|^//|# //|' ${WRKSRC}/GNUmakefile
 
 .include <bsd.port.mk>
