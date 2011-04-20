@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	thundersnarf
-PORTVERSION=	1.1
+PORTVERSION=	1.3
 PORTEPOCH=	1
 CATEGORIES=	www
 MASTER_SITES=	http://www.tracanelli.com.br/l/dev/thunder/ \
