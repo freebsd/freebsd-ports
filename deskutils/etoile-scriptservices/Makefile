@@ -39,4 +39,10 @@ post-install:
 	cd ${MORE_SRC} && ${INSTALL_DATA} today.plist ${MORE_DEST}
 	cd ${MORE_SRC} && ${INSTALL_SCRIPT} ${EXAMPLE} ${MORE_DEST}
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "i386"
+ADDITIONAL_LDFLAGS+=	-lgcc_s -lgcc
+.endif
+
+.include <bsd.port.post.mk>

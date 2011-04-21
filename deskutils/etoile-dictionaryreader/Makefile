@@ -29,4 +29,10 @@ USE_GNUSTEP_MAKE_DIRS+=	Services/User/DictionaryReader
 
 ETOILE_UI_PORT?=	deskutils/etoile-ui
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "i386"
+ADDITIONAL_LDFLAGS+=	-lgcc_s -lgcc
+.endif
+
+.include <bsd.port.post.mk>

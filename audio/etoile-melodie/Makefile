@@ -53,4 +53,10 @@ post-configure:
 	${REINPLACE_CMD} -e 's|-Werror||' ${WRKSRC}/etoile.make \
 		${WRKSRC}/Services/User/Melodie/GNUmakefile
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "i386"
+ADDITIONAL_LDFLAGS+=	-lgcc_s -lgcc
+.endif
+
+.include <bsd.port.post.mk>
