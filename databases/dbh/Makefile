@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	dbh
-PORTVERSION=	4.6.1
+PORTVERSION=	4.6.2
 CATEGORIES=	databases
 MASTER_SITES=	http://svn.foo-projects.org/svn/xffm/RELEASES/tarballs/ \
 		SF
