@@ -22,10 +22,9 @@ LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2 \
 		jpeg.11:${PORTSDIR}/graphics/jpeg
 
 USE_QT_VER=	4
-QT_COMPONENTS=	corelib moc_build uic_build rcc_build gui opengl xml network \
+QT_COMPONENTS=	corelib moc_build uic_build rcc_build gui opengl xml network qmake \
 		designer assistant assistantclient
 USE_GL=		glew glut
-USE_GMAKE=	yes
 USE_GNOME=	libxml2
 USE_PYTHON=	yes
 USE_CMAKE=	yes
