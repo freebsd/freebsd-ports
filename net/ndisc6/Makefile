@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ndisc6
-PORTVERSION=	0.7.2
+PORTVERSION=	1.0.1
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://www.remlab.net/files/ndisc6/archive/ \
 		http://people.via.ecp.fr/~rem/www.remlab.net/files/ndisc6/archive/
@@ -14,15 +14,22 @@ MASTER_SITES=	http://www.remlab.net/files/ndisc6/archive/ \
 MAINTAINER=	m.tsatsenko@gmail.com
 COMMENT=	IPv6 network diagnostic tools
 
+LICENSE=	GPLv2
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-suid-install
 
-MAN1=		tcpspray6.1 addrinfo.1 dnssort.1
-MAN8=		ndisc6.8 rdisc6.8 rltraceroute6.8
+.if !defined(WITHOUT_NLS)
+USE_GETTEXT=	yes
+.else
+CONFIGURE_ARGS+=--disable-nls
+.endif
+
+MAN1=		addr2name.1 dnssort.1 tcpspray.1
+MAN8=		ndisc6.8 rdisc6.8 rdnssd.8 rltraceroute6.8
 MLINKS=		rltraceroute6.8 tcptraceroute6.8 \
 		rltraceroute6.8 tracert6.8 \
-		addrinfo.1 nameinfo.1
+		addr2name.1 name2addr.1
 
 PORTDOCS=	AUTHORS NEWS README
 
