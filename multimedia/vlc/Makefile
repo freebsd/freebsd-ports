@@ -503,7 +503,7 @@ CONFIGURE_ARGS+=--disable-portaudio
 .endif
 
 .if defined(WITH_PROJM)
-LIB_DEPENDS+=	projectM.2.00:${PORTSDIR}/graphics/libprojectm
+LIB_DEPENDS+=	projectM.2:${PORTSDIR}/graphics/libprojectm
 CONFIGURE_ARGS+=--enable-projectm
 .else
 CONFIGURE_ARGS+=--disable-projectm
