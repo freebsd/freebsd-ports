@@ -2,6 +2,7 @@ bin/cover
 bin/cpancover
 bin/gcov2perl
 %%SITE_PERL%%/%%PERL_ARCH%%/Devel/Cover.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Devel/Cover/Annotation/Git.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Devel/Cover/Annotation/Random.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Devel/Cover/Annotation/Svk.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Devel/Cover/Branch.pm
@@ -14,6 +15,7 @@ bin/gcov2perl
 %%SITE_PERL%%/%%PERL_ARCH%%/Devel/Cover/Criterion.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Devel/Cover/DB.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Devel/Cover/DB/File.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Devel/Cover/DB/IO.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Devel/Cover/DB/Structure.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Devel/Cover/Inc.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Devel/Cover/Op.pm

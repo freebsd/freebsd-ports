@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Devel-Cover
-PORTVERSION=	0.73
+PORTVERSION=	0.76
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -16,11 +16,13 @@ COMMENT=	Code coverage metrics for Perl
 
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Template.pm:${PORTSDIR}/www/p5-Template-Toolkit \
 		${SITE_PERL}/Pod/Coverage.pm:${PORTSDIR}/devel/p5-Pod-Coverage \
-		${SITE_PERL}/PPI/HTML.pm:${PORTSDIR}/textproc/p5-PPI-HTML
+		${SITE_PERL}/PPI/HTML.pm:${PORTSDIR}/textproc/p5-PPI-HTML \
+		${SITE_PERL}/JSON/PP.pm:${PORTSDIR}/converters/p5-JSON-PP
 RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Template.pm:${PORTSDIR}/www/p5-Template-Toolkit \
 		${SITE_PERL}/Parallel/Iterator.pm:${PORTSDIR}/devel/p5-Parallel-Iterator \
 		${SITE_PERL}/Pod/Coverage.pm:${PORTSDIR}/devel/p5-Pod-Coverage \
-		${SITE_PERL}/PPI/HTML.pm:${PORTSDIR}/textproc/p5-PPI-HTML
+		${SITE_PERL}/PPI/HTML.pm:${PORTSDIR}/textproc/p5-PPI-HTML \
+		${SITE_PERL}/JSON/PP.pm:${PORTSDIR}/converters/p5-JSON-PP
 TEST_DEPENDS=	${SITE_PERL}/Test/Differences.pm:${PORTSDIR}/devel/p5-Test-Differences \
 		${SITE_PERL}/Test/Warn.pm:${PORTSDIR}/devel/p5-Test-Warn
 
@@ -28,6 +30,7 @@ PERL_CONFIGURE=	5.8.0+
 
 MAN1=		cover.1 cpancover.1 gcov2perl.1
 MAN3=		Devel::Cover.3 \
+		Devel::Cover::Annotation::Git.3 \
 		Devel::Cover::Annotation::Random.3 \
 		Devel::Cover::Annotation::Svk.3 \
 		Devel::Cover::Branch.3 \
@@ -40,6 +43,7 @@ MAN3=		Devel::Cover.3 \
 		Devel::Cover::Criterion.3 \
 		Devel::Cover::DB.3 \
 		Devel::Cover::DB::File.3 \
+		Devel::Cover::DB::IO.3 \
 		Devel::Cover::DB::Structure.3 \
 		Devel::Cover::Op.3 \
 		Devel::Cover::Pod.3 \
