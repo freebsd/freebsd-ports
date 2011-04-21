@@ -49,6 +49,7 @@ else
 	for _client in ${vtunclient_list}; do
 		eval vtunclient_flags=\$vtunclient_${_client}_flags
 		eval pidfile=\$vtunclient_${_client}_pidfile
+		vtunclient_flags="-z $pidfile $vtunclient_flags"
 		run_rc_command "$cmd"
 	done
 fi
