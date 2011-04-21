@@ -62,7 +62,7 @@ EXTRA_PATCHES+=	${FILESDIR}/NSFileManager.m.patch
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 900036
-GNUSTEP_WITH_LIBOBJC2=	yes
+IGNORE=		needs an objective C compiler
 .endif
 
 .if defined(GNUSTEP_WITH_LIBOBJC2)
