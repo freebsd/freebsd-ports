@@ -7,6 +7,7 @@
 
 PORTNAME=	qwebirc
 PORTVERSION=	0.1
+PORTREVISION=	1
 CATEGORIES=	irc www
 MASTER_SITES=	https://bitbucket.org/slug/qwebirc/get/
 DISTNAME=	stable
