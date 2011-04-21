@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	gcc
-PORTVERSION=	4.4.6.20110412
+PORTVERSION=	4.4.7.20110419
 CATEGORIES=	lang
 MASTER_SITES=	${MASTER_SITE_GCC}
 MASTER_SITE_SUBDIR=	snapshots/${VERSIONSTRING}
@@ -61,6 +61,7 @@ CONFIGURE_ARGS+=--disable-nls \
 		--with-gxx-include-dir=${TARGLIB}/include/c++/ \
 		--with-ld=${LOCALBASE}/bin/ld \
 		--with-libiconv-prefix=${LOCALBASE} \
+		--with-pkgversion="FreeBSD Ports Collection" \
 		--with-system-zlib
 MAKE_ARGS+=	MAKEINFOFLAGS="--no-split"
 ALL_TARGET=	bootstrap-lean
@@ -83,10 +84,6 @@ INFO=		gcc${SUFFIX}/cpp \
 
 pre-everything::
 	@${ECHO_MSG} "Making GCC ${PORTVERSION} for ${OPSYS} ${OSREL}  target=${CONFIGURE_TARGET}"
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|\(const char version_string.*\)";|\1 [FreeBSD]";|' \
-	    ${SRCDIR}/gcc/version.c
 
 pre-configure:
 	cd ${SRCDIR} ; contrib/gcc_update --touch
