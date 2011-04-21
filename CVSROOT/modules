@@ -20230,6 +20230,7 @@ pgworksheet                     ports/databases/pgworksheet
 phalanx                         ports/games/phalanx
 phamm                           ports/net/phamm
 phantom                         ports/sysutils/phantom
+phantomjs                       ports/lang/phantomjs
 pharmacy                        ports/devel/pharmacy
 phase                           ports/x11-themes/phase
 phat                            ports/x11-toolkits/phat
