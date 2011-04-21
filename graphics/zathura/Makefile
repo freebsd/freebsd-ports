@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	zathura
-PORTVERSION=	0.0.8.2
+PORTVERSION=	0.0.8.3
 CATEGORIES=	graphics print
-MASTER_SITES=	http://pwmt.org/attachments/download/31/
+MASTER_SITES=	http://pwmt.org/download/
 
 MAINTAINER=	acieroid@awesom.eu
 COMMENT=	Customizable lightweight pdf viewer
@@ -17,6 +17,7 @@ LIB_DEPENDS=	poppler-glib.5:${PORTSDIR}/graphics/poppler-gtk	\
 		cairo.2:${PORTSDIR}/graphics/cairo
 
 USE_GNOME=	glib20 gtk20
+FETCH_ARGS=	-Fpr
 
 MAN1=		zathura.1
 MANCOMPRESSED=	no
