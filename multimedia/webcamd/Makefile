@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	webcamd
-PORTVERSION=	0.1.23
+PORTVERSION=	0.1.24
 CATEGORIES=	multimedia
 MASTER_SITES=	http://www.selasky.org/hans_petter/video4bsd/releases/
 
@@ -42,6 +42,9 @@ LIBDIR=		${PREFIX}/lib
 
 OPTIONS=	HAL "Build with HAL and DBUS support" On \
 		DEBUG "Build with debugging support" Off
+
+USERS=		webcamd
+GROUPS=		webcamd
 
 .include <bsd.port.pre.mk>
 

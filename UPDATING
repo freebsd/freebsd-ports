@@ -5,6 +5,14 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20110421:
+  AFFECTS: users of multimedia/webcamd
+  AUTHOR: kwm@FreeBSD.org
+
+  Webcamd now creates device nodes with 0660 permission and webcamd:webcamd
+  ownership. To get access to the webcamd devices just add yourself to the
+  webcamd group.
+
 20110409:
   AFFECTS: users of japanese/asterisk-sounds
   AUTHOR: tota@FreeBSD.org
