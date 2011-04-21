@@ -31,4 +31,8 @@ PLIST_FILES=	GNUstep/Local/Tools/ioobjc
 
 DISTRIBUTEDVIEW_PORT?=	deskutils/etoile-distributedview
 
+post-patch:
+	${REINPLACE_CMD} -e 's|^inline|static inline|' \
+		${WRKSRC}/Languages/Io/iovm/IoState_inline.h
+
 .include <bsd.port.mk>
