@@ -17,7 +17,7 @@ hald_enable=${hald_enable-"NO"}
 name=webcamd
 rcvar=`set_rcvar`
 command=%%PREFIX%%/sbin/webcamd
-command_args="-B"
+command_args="-B -U webcamd -G webcamd"
 
 start_precmd="${name}_prestart"
 
