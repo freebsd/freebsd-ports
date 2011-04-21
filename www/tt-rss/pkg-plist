@@ -5,8 +5,10 @@
 %%WWWDIR%%/PrefLabelTree.js
 %%WWWDIR%%/README
 %%WWWDIR%%/api/index.php
+%%WWWDIR%%/atom-to-html.xsl
 %%WWWDIR%%/backend.php
 %%WWWDIR%%/cache/.htaccess
+%%WWWDIR%%/cache/htmlpurifier/.empty
 %%WWWDIR%%/cache/magpie/.empty
 %%WWWDIR%%/cache/simplepie/.empty
 %%WWWDIR%%/cdm.css
@@ -21,9 +23,6 @@
 %%WWWDIR%%/digest.js
 %%WWWDIR%%/digest.php
 %%WWWDIR%%/errors.php
-%%WWWDIR%%/extras/button/license.txt
-%%WWWDIR%%/extras/button/musicplayer.swf
-%%WWWDIR%%/extras/button/musicplayer_f6.swf
 %%WWWDIR%%/feedlist.js
 %%WWWDIR%%/functions.js
 %%WWWDIR%%/functions.php
@@ -39,14 +38,10 @@
 %%WWWDIR%%/images/art-tweet.png
 %%WWWDIR%%/images/art-zoom.png
 %%WWWDIR%%/images/blank_icon.gif
-%%WWWDIR%%/images/button.png
-%%WWWDIR%%/images/button_pressed.png
 %%WWWDIR%%/images/c1.png
 %%WWWDIR%%/images/c2.png
 %%WWWDIR%%/images/c3.png
 %%WWWDIR%%/images/c4.png
-%%WWWDIR%%/images/cat-collapse.png
-%%WWWDIR%%/images/cat-uncollapse.png
 %%WWWDIR%%/images/digest_checkbox.png
 %%WWWDIR%%/images/down_arrow.png
 %%WWWDIR%%/images/favicon.png
@@ -68,20 +63,14 @@
 %%WWWDIR%%/images/mark_unset.png
 %%WWWDIR%%/images/mark_unset.svg
 %%WWWDIR%%/images/new_version.png
-%%WWWDIR%%/images/offline-sync.gif
-%%WWWDIR%%/images/offline.png
 %%WWWDIR%%/images/online.png
 %%WWWDIR%%/images/overlay.png
 %%WWWDIR%%/images/piggie.png
 %%WWWDIR%%/images/piggie_icon.png
-%%WWWDIR%%/images/prefs-content.png
 %%WWWDIR%%/images/pub_set.gif
 %%WWWDIR%%/images/pub_set.png
 %%WWWDIR%%/images/pub_unset.gif
 %%WWWDIR%%/images/pub_unset.png
-%%WWWDIR%%/images/resize_handle_horiz.png
-%%WWWDIR%%/images/resize_horiz.png
-%%WWWDIR%%/images/resizer.png
 %%WWWDIR%%/images/score_half_high.png
 %%WWWDIR%%/images/score_half_low.png
 %%WWWDIR%%/images/score_high.png
@@ -103,6 +92,9 @@
 %%WWWDIR%%/lib/CheckBoxTree.js
 %%WWWDIR%%/lib/MiniTemplator.class.php
 %%WWWDIR%%/lib/accept-to-gettext.php
+%%WWWDIR%%/lib/button/license.txt
+%%WWWDIR%%/lib/button/musicplayer.swf
+%%WWWDIR%%/lib/button/musicplayer_f6.swf
 %%WWWDIR%%/lib/dijit/Calendar.js
 %%WWWDIR%%/lib/dijit/CheckedMenuItem.js
 %%WWWDIR%%/lib/dijit/ColorPalette.js
@@ -1300,6 +1292,7 @@
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/AttrDef/CSS/URI.php
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/AttrDef/Enum.php
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/AttrDef/HTML/Bool.php
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/AttrDef/HTML/Class.php
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/AttrDef/HTML/Color.php
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/AttrDef/HTML/FrameTarget.php
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/AttrDef/HTML/ID.php
@@ -1331,6 +1324,8 @@
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/AttrTransform/Lang.php
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/AttrTransform/Length.php
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/AttrTransform/Name.php
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/AttrTransform/NameSync.php
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/AttrTransform/Nofollow.php
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/AttrTransform/SafeEmbed.php
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/AttrTransform/SafeObject.php
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/AttrTransform/SafeParam.php
@@ -1361,14 +1356,17 @@
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/Validator.php
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/ValidatorAtom.php
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema.ser
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Attr.AllowedClasses.txt
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Attr.AllowedFrameTargets.txt
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Attr.AllowedRel.txt
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Attr.AllowedRev.txt
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Attr.ClassUseCDATA.txt
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Attr.DefaultImageAlt.txt
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Attr.DefaultInvalidImage.txt
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Attr.DefaultInvalidImageAlt.txt
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Attr.DefaultTextDir.txt
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Attr.EnableID.txt
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Attr.ForbiddenClasses.txt
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Attr.IDBlacklist.txt
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Attr.IDBlacklistRegexp.txt
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Attr.IDPrefix.txt
@@ -1378,20 +1376,28 @@
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/AutoFormat.Custom.txt
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/AutoFormat.DisplayLinkURI.txt
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/AutoFormat.Linkify.txt
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/AutoFormat.PurifierLinkify.DocURL.txt
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/AutoFormat.PurifierLinkify.txt
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/AutoFormat.RemoveEmpty.RemoveNbsp.Exceptions.txt
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/AutoFormat.RemoveEmpty.RemoveNbsp.txt
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/AutoFormat.RemoveEmpty.txt
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/AutoFormat.RemoveSpansWithoutAttributes.txt
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/AutoFormat.txt
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/AutoFormatParam.PurifierLinkifyDocURL.txt
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/AutoFormatParam.txt
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/CSS.AllowImportant.txt
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/CSS.AllowTricky.txt
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/CSS.AllowedFonts.txt
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/CSS.AllowedProperties.txt
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/CSS.DefinitionRev.txt
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/CSS.ForbiddenProperties.txt
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/CSS.MaxImgLength.txt
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/CSS.Proprietary.txt
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/CSS.Trusted.txt
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/CSS.txt
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Cache.DefinitionImpl.txt
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Cache.SerializerPath.txt
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Cache.SerializerPermissions.txt
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Cache.txt
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Core.AggressivelyFixLt.txt
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Core.CollectErrors.txt
@@ -1406,10 +1412,15 @@
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Core.Language.txt
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Core.LexerImpl.txt
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Core.MaintainLineNumbers.txt
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Core.NormalizeNewlines.txt
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Core.RemoveInvalidImg.txt
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Core.RemoveProcessingInstructions.txt
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Core.RemoveScriptContents.txt
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Core.txt
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Filter.Custom.txt
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Filter.ExtractStyleBlocks.Escaping.txt
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Filter.ExtractStyleBlocks.Scope.txt
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Filter.ExtractStyleBlocks.TidyImpl.txt
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Filter.ExtractStyleBlocks.txt
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Filter.YouTube.txt
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Filter.txt
@@ -1421,15 +1432,18 @@
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/HTML.AllowedAttributes.txt
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/HTML.AllowedElements.txt
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/HTML.AllowedModules.txt
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/HTML.Attr.Name.UseCDATA.txt
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/HTML.BlockWrapper.txt
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/HTML.CoreModules.txt
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/HTML.CustomDoctype.txt
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/HTML.DefinitionID.txt
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/HTML.DefinitionRev.txt
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/HTML.Doctype.txt
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/HTML.FlashAllowFullScreen.txt
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/HTML.ForbiddenAttributes.txt
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/HTML.ForbiddenElements.txt
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/HTML.MaxImgLength.txt
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/HTML.Nofollow.txt
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/HTML.Parent.txt
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/HTML.Proprietary.txt
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/HTML.SafeEmbed.txt
@@ -1442,6 +1456,8 @@
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/HTML.XHTML.txt
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/HTML.txt
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Output.CommentScriptContents.txt
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Output.FixInnerHTML.txt
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Output.FlashCompat.txt
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Output.Newline.txt
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Output.SortAttr.txt
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Output.TidyFormat.txt
@@ -1505,6 +1521,7 @@
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/HTMLModule/Legacy.php
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/HTMLModule/List.php
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/HTMLModule/Name.php
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/HTMLModule/Nofollow.php
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/HTMLModule/NonXMLCommonAttributes.php
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/HTMLModule/Object.php
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/HTMLModule/Presentation.php
@@ -1533,6 +1550,7 @@
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/Injector/Linkify.php
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/Injector/PurifierLinkify.php
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/Injector/RemoveEmpty.php
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/Injector/RemoveSpansWithoutAttributes.php
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/Injector/SafeObject.php
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/Language.php
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/Language/classes/en-x-test.php
@@ -1580,11 +1598,14 @@
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/URIFilter.php
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/URIFilter/DisableExternal.php
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/URIFilter/DisableExternalResources.php
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/URIFilter/DisableResources.php
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/URIFilter/HostBlacklist.php
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/URIFilter/MakeAbsolute.php
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/URIFilter/Munge.php
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/URIParser.php
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/URIScheme.php
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/URIScheme/data.php
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/URIScheme/file.php
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/URIScheme/ftp.php
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/URIScheme/http.php
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/URIScheme/https.php
@@ -1633,6 +1654,9 @@
 %%WWWDIR%%/lib/phpmailer/language/phpmailer.lang-en.php
 %%WWWDIR%%/lib/position.js
 %%WWWDIR%%/lib/prototype.js
+%%WWWDIR%%/lib/pubsubhubbub/README.txt
+%%WWWDIR%%/lib/pubsubhubbub/publisher.php
+%%WWWDIR%%/lib/pubsubhubbub/subscriber.php
 %%WWWDIR%%/lib/scriptaculous/controls.js
 %%WWWDIR%%/lib/scriptaculous/dragdrop.js
 %%WWWDIR%%/lib/scriptaculous/effects.js
@@ -1671,7 +1695,6 @@
 %%WWWDIR%%/lock/.empty
 %%WWWDIR%%/lock/.htaccess
 %%WWWDIR%%/login_form.php
-%%WWWDIR%%/logout.php
 %%WWWDIR%%/messages.pot
 %%WWWDIR%%/mobile/article.php
 %%WWWDIR%%/mobile/backend.php
@@ -1694,10 +1717,10 @@
 %%WWWDIR%%/modules/backend-rpc.php
 %%WWWDIR%%/modules/help.php
 %%WWWDIR%%/modules/opml_domdoc.php
-%%WWWDIR%%/modules/opml_domxml.php
 %%WWWDIR%%/modules/popup-dialog.php
 %%WWWDIR%%/modules/pref-feeds.php
 %%WWWDIR%%/modules/pref-filters.php
+%%WWWDIR%%/modules/pref-instances.php
 %%WWWDIR%%/modules/pref-labels.php
 %%WWWDIR%%/modules/pref-prefs.php
 %%WWWDIR%%/modules/pref-users.php
@@ -1705,7 +1728,6 @@
 %%WWWDIR%%/prefs.js
 %%WWWDIR%%/prefs.php
 %%WWWDIR%%/register.php
-%%WWWDIR%%/rss.xsl
 %%WWWDIR%%/sanity_check.php
 %%WWWDIR%%/sanity_config.php
 %%WWWDIR%%/schema/ttrss_schema_mysql.sql
@@ -1788,6 +1810,10 @@
 %%WWWDIR%%/schema/versions/mysql/8.sql
 %%WWWDIR%%/schema/versions/mysql/80.sql
 %%WWWDIR%%/schema/versions/mysql/81.sql
+%%WWWDIR%%/schema/versions/mysql/82.sql
+%%WWWDIR%%/schema/versions/mysql/83.sql
+%%WWWDIR%%/schema/versions/mysql/84.sql
+%%WWWDIR%%/schema/versions/mysql/85.sql
 %%WWWDIR%%/schema/versions/mysql/9.sql
 %%WWWDIR%%/schema/versions/pgsql/10.sql
 %%WWWDIR%%/schema/versions/pgsql/11.sql
@@ -1867,101 +1893,18 @@
 %%WWWDIR%%/schema/versions/pgsql/8.sql
 %%WWWDIR%%/schema/versions/pgsql/80.sql
 %%WWWDIR%%/schema/versions/pgsql/81.sql
+%%WWWDIR%%/schema/versions/pgsql/82.sql
+%%WWWDIR%%/schema/versions/pgsql/83.sql
+%%WWWDIR%%/schema/versions/pgsql/84.sql
+%%WWWDIR%%/schema/versions/pgsql/85.sql
 %%WWWDIR%%/schema/versions/pgsql/9.sql
 %%WWWDIR%%/sessions.php
 %%WWWDIR%%/templates/digest_template.txt
 %%WWWDIR%%/templates/digest_template_html.txt
 %%WWWDIR%%/templates/email_article_template.txt
+%%WWWDIR%%/templates/generated_feed.txt
 %%WWWDIR%%/templates/resetpass_template.txt
 %%WWWDIR%%/tests/FunctionsTest.php
-%%WWWDIR%%/themes/compact/theme.css
-%%WWWDIR%%/themes/compact/theme.ini
-%%WWWDIR%%/themes/graycube/images/grad_1.png
-%%WWWDIR%%/themes/graycube/images/resize_handle_horiz.png
-%%WWWDIR%%/themes/graycube/images/resize_horiz.png
-%%WWWDIR%%/themes/graycube/images/ttrss_logo.png
-%%WWWDIR%%/themes/graycube/images/ttrss_logo.svg
-%%WWWDIR%%/themes/graycube/theme.css
-%%WWWDIR%%/themes/graycube/theme.ini
-%%WWWDIR%%/themes/greentiny/images/blank_icon.gif
-%%WWWDIR%%/themes/greentiny/images/down_arrow.png
-%%WWWDIR%%/themes/greentiny/images/favicon.png
-%%WWWDIR%%/themes/greentiny/images/feed-icon-12x12.png
-%%WWWDIR%%/themes/greentiny/images/footer.png
-%%WWWDIR%%/themes/greentiny/images/fresh.png
-%%WWWDIR%%/themes/greentiny/images/fresh_new.png
-%%WWWDIR%%/themes/greentiny/images/indicator_white.gif
-%%WWWDIR%%/themes/greentiny/images/label.png
-%%WWWDIR%%/themes/greentiny/images/mark_set.gif
-%%WWWDIR%%/themes/greentiny/images/mark_set.png
-%%WWWDIR%%/themes/greentiny/images/mark_unset.gif
-%%WWWDIR%%/themes/greentiny/images/mark_unset.png
-%%WWWDIR%%/themes/greentiny/images/new_version.png
-%%WWWDIR%%/themes/greentiny/images/overlay.png
-%%WWWDIR%%/themes/greentiny/images/prefs-content.png
-%%WWWDIR%%/themes/greentiny/images/pub_set.gif
-%%WWWDIR%%/themes/greentiny/images/pub_set.png
-%%WWWDIR%%/themes/greentiny/images/pub_unset.gif
-%%WWWDIR%%/themes/greentiny/images/pub_unset.png
-%%WWWDIR%%/themes/greentiny/images/resize_handle_horiz.png
-%%WWWDIR%%/themes/greentiny/images/resize_horiz.png
-%%WWWDIR%%/themes/greentiny/images/resizer.png
-%%WWWDIR%%/themes/greentiny/images/score_half_high.png
-%%WWWDIR%%/themes/greentiny/images/score_half_low.png
-%%WWWDIR%%/themes/greentiny/images/score_high.png
-%%WWWDIR%%/themes/greentiny/images/score_low.png
-%%WWWDIR%%/themes/greentiny/images/score_neutral.png
-%%WWWDIR%%/themes/greentiny/images/sign_excl.png
-%%WWWDIR%%/themes/greentiny/images/sign_info.png
-%%WWWDIR%%/themes/greentiny/images/sign_quest.png
-%%WWWDIR%%/themes/greentiny/images/small_question.png
-%%WWWDIR%%/themes/greentiny/images/tag.png
-%%WWWDIR%%/themes/greentiny/images/toolbar.png
-%%WWWDIR%%/themes/greentiny/images/ttrss_logo.png
-%%WWWDIR%%/themes/greentiny/images/ttrss_logo_big.png
-%%WWWDIR%%/themes/greentiny/images/updated.png
-%%WWWDIR%%/themes/greentiny/theme.css
-%%WWWDIR%%/themes/greentiny/theme.ini
-%%WWWDIR%%/themes/neon/images/archive.png
-%%WWWDIR%%/themes/neon/images/art-pub-note.png
-%%WWWDIR%%/themes/neon/images/art-zoom.png
-%%WWWDIR%%/themes/neon/images/button.png
-%%WWWDIR%%/themes/neon/images/button_pressed.png
-%%WWWDIR%%/themes/neon/images/fresh.png
-%%WWWDIR%%/themes/neon/images/fresh_sign.png
-%%WWWDIR%%/themes/neon/images/indicator_white.gif
-%%WWWDIR%%/themes/neon/images/label.png
-%%WWWDIR%%/themes/neon/images/mark_set.png
-%%WWWDIR%%/themes/neon/images/mark_unset.png
-%%WWWDIR%%/themes/neon/images/pub_set.png
-%%WWWDIR%%/themes/neon/images/pub_unset.png
-%%WWWDIR%%/themes/neon/images/resize_handle_horiz.png
-%%WWWDIR%%/themes/neon/images/shadow_dark.png
-%%WWWDIR%%/themes/neon/images/sign_excl.png
-%%WWWDIR%%/themes/neon/images/sign_info.png
-%%WWWDIR%%/themes/neon/images/sign_quest.png
-%%WWWDIR%%/themes/neon/images/sign_quest.svg
-%%WWWDIR%%/themes/neon/images/small_question.png
-%%WWWDIR%%/themes/neon/images/tag.png
-%%WWWDIR%%/themes/neon/images/ttrss_logo.png
-%%WWWDIR%%/themes/neon/images/ttrss_logo.svg
-%%WWWDIR%%/themes/neon/theme.css
-%%WWWDIR%%/themes/neon/theme.ini
-%%WWWDIR%%/themes/neutral/images/button.png
-%%WWWDIR%%/themes/neutral/images/button_pressed.png
-%%WWWDIR%%/themes/neutral/images/fresh_sign.png
-%%WWWDIR%%/themes/neutral/images/prefs_tab.png
-%%WWWDIR%%/themes/neutral/images/resize_handle_horiz.png
-%%WWWDIR%%/themes/neutral/images/score_half_high.png
-%%WWWDIR%%/themes/neutral/images/score_high.png
-%%WWWDIR%%/themes/neutral/images/subtoolbar.png
-%%WWWDIR%%/themes/neutral/images/ttrss_logo.png
-%%WWWDIR%%/themes/neutral/images/ttrss_logo.svg
-%%WWWDIR%%/themes/neutral/theme.css
-%%WWWDIR%%/themes/neutral/theme.ini
-%%WWWDIR%%/themes/triple-pane/images/resize_handle_horiz.png
-%%WWWDIR%%/themes/triple-pane/images/resize_handle_vert.png
-%%WWWDIR%%/themes/triple-pane/images/resize_vert.png
 %%WWWDIR%%/themes/triple-pane/theme.css
 %%WWWDIR%%/themes/triple-pane/theme.ini
 %%WWWDIR%%/themes/triple-pane/theme.js
@@ -2005,17 +1948,7 @@
 @dirrm %%WWWDIR%%/utils/notifier/images
 @dirrm %%WWWDIR%%/utils/notifier
 @dirrm %%WWWDIR%%/utils
-@dirrm %%WWWDIR%%/themes/triple-pane/images
 @dirrm %%WWWDIR%%/themes/triple-pane
-@dirrm %%WWWDIR%%/themes/neutral/images
-@dirrm %%WWWDIR%%/themes/neutral
-@dirrm %%WWWDIR%%/themes/neon/images
-@dirrm %%WWWDIR%%/themes/neon
-@dirrm %%WWWDIR%%/themes/greentiny/images
-@dirrm %%WWWDIR%%/themes/greentiny
-@dirrm %%WWWDIR%%/themes/graycube/images
-@dirrm %%WWWDIR%%/themes/graycube
-@dirrm %%WWWDIR%%/themes/compact
 @dirrm %%WWWDIR%%/themes
 @dirrm %%WWWDIR%%/tests
 @dirrm %%WWWDIR%%/templates
@@ -2053,6 +1986,7 @@
 @dirrm %%WWWDIR%%/lib/tmhoauth
 @dirrm %%WWWDIR%%/lib/simplepie
 @dirrm %%WWWDIR%%/lib/scriptaculous
+@dirrm %%WWWDIR%%/lib/pubsubhubbub
 @dirrm %%WWWDIR%%/lib/phpmailer/language
 @dirrm %%WWWDIR%%/lib/phpmailer
 @dirrm %%WWWDIR%%/lib/magpierss/extlib
@@ -2094,7 +2028,6 @@
 @dirrmtry %%WWWDIR%%/lib/htmlpurifier/library
 @dirrmtry %%WWWDIR%%/lib/htmlpurifier
 @dirrm %%WWWDIR%%/lib/gettext
-@dirrm %%WWWDIR%%/lib/dojo-src
 @dirrm %%WWWDIR%%/lib/dojo/rpc
 @dirrm %%WWWDIR%%/lib/dojo/resources/images
 @dirrm %%WWWDIR%%/lib/dojo/resources
@@ -2170,6 +2103,7 @@
 @dirrm %%WWWDIR%%/lib/dojo/_firebug
 @dirrm %%WWWDIR%%/lib/dojo/_base/_loader
 @dirrm %%WWWDIR%%/lib/dojo/_base
+@dirrm %%WWWDIR%%/lib/dojo-src
 @dirrm %%WWWDIR%%/lib/dojo
 @dirrm %%WWWDIR%%/lib/dijit/tree
 @dirrm %%WWWDIR%%/lib/dijit/themes/tundra/layout
@@ -2289,14 +2223,14 @@
 @dirrm %%WWWDIR%%/lib/dijit/_editor
 @dirrm %%WWWDIR%%/lib/dijit/_base
 @dirrm %%WWWDIR%%/lib/dijit
+@dirrm %%WWWDIR%%/lib/button
 @dirrmtry %%WWWDIR%%/lib
 @dirrm %%WWWDIR%%/images
 @dirrmtry %%WWWDIR%%/icons
 @dirrm %%WWWDIR%%/help
-@dirrm %%WWWDIR%%/extras/button
-@dirrm %%WWWDIR%%/extras
 @dirrmtry %%WWWDIR%%/cache/simplepie
 @dirrmtry %%WWWDIR%%/cache/magpie
+@dirrmtry %%WWWDIR%%/cache/htmlpurifier
 @dirrmtry %%WWWDIR%%/cache
 @dirrm %%WWWDIR%%/api
 @dirrmtry %%WWWDIR%%
