@@ -1,10 +1,8 @@
 @comment $FreeBSD$
 include/dbh/dbh.h
-lib/libdbh-2.so
-lib/libdbh-2.so.1
-lib/libdbh.a
-lib/libdbh.so
-libdata/pkgconfig/dbh.pc
+lib/libdbh2.so
+lib/libdbh2.so.0
+libdata/pkgconfig/dbh2.pc
 %%GTKDOC%%share/gtk-doc/html/dbh/DBH.html
 %%GTKDOC%%share/gtk-doc/html/dbh/Makefile.am
 %%GTKDOC%%share/gtk-doc/html/dbh/calc.png
