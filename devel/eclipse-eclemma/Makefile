@@ -7,7 +7,7 @@
 
 PORTNAME=	eclemma
 PORTVERSION=	1.5.1
-CATEGORIES=	java editors devel
+CATEGORIES=	devel java editors
 MASTER_SITES=	SF/${PORTNAME}/01_EclEmma_Releases/${PORTVERSION}
 
 MAINTAINER=	kamikaze@bsdforen.de
