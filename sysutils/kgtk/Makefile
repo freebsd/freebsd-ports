@@ -21,11 +21,10 @@ SUB_FILES=	pkg-message
 OPTIONS=	UNICODE "System locale is utf-8" off
 
 USE_BZIP2=	yes
-USE_GMAKE=	yes
 USE_GNOME=	gtk20
 USE_KDEBASE_VER=3
 USE_CMAKE=	yes
-CMAKE_USE_PTHREAD= yes
+CMAKE_USE_PTHREAD=	yes
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/build
 CMAKE_SOURCE_PATH=	..
@@ -63,5 +62,5 @@ post-configure:
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
-	
+
 .include <bsd.port.post.mk>
