@@ -34,6 +34,54 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="3c7d565a-6c64-11e0-813a-6c626dd55a41">
+    <topic>asterisk -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>asterisk14</name>
+	<range><gt>1.4.*</gt><lt>1.4.40.1</lt></range>
+      </package>
+      <package>
+	<name>asterisk16</name>
+	<range><gt>1.6.*</gt><lt>1.6.2.17.3</lt></range>
+      </package>
+      <package>
+	<name>asterisk18</name>
+	<range><gt>1.8.*</gt><lt>1.8.3.3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Asterisk Development Team reports:</p>
+	<blockquote cite="http://lists.digium.com/pipermail/asterisk-announce/2011-April/000316.html">
+	  <p>It is possible for a user of the Asterisk Manager Interface to
+	    bypass a security check and execute shell commands when they should
+	    not have that ability. Sending the "Async" header with the
+	    "Application" header during an Originate action, allows
+	    authenticated manager users to execute shell commands. Only users
+	    with the "system" privilege should be able to do this.
+	  </p>
+	  <p>On systems that have the Asterisk Manager Interface, Skinny, SIP
+	    over TCP, or the built in HTTP server enabled, it is possible for an
+	    attacker to open as many connections to asterisk as he wishes. This
+	    will cause Asterisk to run out of available file descriptors and
+	    stop processing any new calls. Additionally, disk space can be
+	    exhausted as Asterisk logs failures to open new file descriptors.
+	  </p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2011-1507</cvename>
+      <url>http://downloads.asterisk.org/pub/security/AST-2011-005.pdf</url>
+      <url>http://downloads.asterisk.org/pub/security/AST-2011-006.pdf</url>
+    </references>
+    <dates>
+      <discovery>2011-04-21</discovery>
+      <entry>2011-04-21</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="6a4bfe75-692a-11e0-bce7-001eecdd401a">
     <topic>vlc -- Heap corruption in MP4 demultiplexer</topic>
     <affects>
@@ -109,7 +157,7 @@ Note:  Please add new entries to the beginning of this file.
   </vuln>
 
   <vuln vid="bf171509-68dd-11e0-afe6-0003ba02bf30">
-    <topic>rt -- multiple vulnerabilities </topic>
+    <topic>rt -- multiple vulnerabilities</topic>
     <affects>
       <package>
 	<name>rt36</name>
