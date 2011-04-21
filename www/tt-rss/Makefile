@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tt-rss
-PORTVERSION=	1.5.2
+PORTVERSION=	1.5.3
 CATEGORIES=	www
 MASTER_SITES=	http://tt-rss.org/download/
 
@@ -14,6 +14,7 @@ MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	Tiny Tiny RSS: web-based news feed (RSS/Atom) aggregator
 
 NO_BUILD=	yes
+WRKSRC=		${WRKDIR}/${DISTNAME}-proper
 
 USE_PHP=	json mbstring pcntl posix session xmlrpc
 WANT_PHP_WEB=	yes
@@ -61,6 +62,8 @@ pre-configure:
 .endfor
 	${REINPLACE_CMD} -e 's|/usr/bin/curl|${LOCALBASE}/bin/curl|' \
 		${WRKSRC}/lib/magpierss/extlib/Snoopy.class.inc
+	${REINPLACE_CMD} -e 's|TYPE=InnoDB|ENGINE=InnoDB|'	\
+			${WRKSRC}/schema/versions/mysql/*.sql
 
 do-configure:
 .if !defined(WITH_PGSQL)
@@ -85,6 +88,7 @@ do-install:
 		${CP} -p ${WWWDIR}/config.php-dist ${WWWDIR}/config.php; \
 		${CHMOD} go-r ${WWWDIR}/config.php; \
 	fi
+	${RM} ${WWWDIR}/functions.php.orig
 
 post-install:
 	@${ECHO_MSG}
