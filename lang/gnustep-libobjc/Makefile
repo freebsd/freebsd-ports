@@ -30,4 +30,10 @@ post-patch:
 	${REINPLACE_CMD} -e 's|libobjc_VERSION = 4|libobjc_VERSION = ${DEFAULT_LIBVERSION}|' \
 		${WRKSRC}/GNUmakefile
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 900036
+IGNORE=		needs an objective C compiler
+.endif
+
+.include <bsd.port.post.mk>
