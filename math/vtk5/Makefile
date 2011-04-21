@@ -30,7 +30,6 @@ CONFLICTS=	vtk-4*
 SUB_FILES=	vtk.3
 
 USE_CMAKE=	yes
-USE_GMAKE=	yes
 USE_GL=		yes
 USE_XORG=	xt
 USE_LDCONFIG=	${PREFIX}/lib/vtk-${PORTVERSION:R}
