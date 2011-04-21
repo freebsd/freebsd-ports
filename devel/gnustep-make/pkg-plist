@@ -66,6 +66,20 @@ GNUstep/System/Library/Makefiles/Master/test-application.make
 GNUstep/System/Library/Makefiles/Master/test-library.make
 GNUstep/System/Library/Makefiles/Master/test-tool.make
 GNUstep/System/Library/Makefiles/Master/tool.make
+GNUstep/System/Library/Makefiles/TestFramework/GNUmakefile.in
+GNUstep/System/Library/Makefiles/TestFramework/ObjectTesting.h
+GNUstep/System/Library/Makefiles/TestFramework/README
+GNUstep/System/Library/Makefiles/TestFramework/Summary.sh
+GNUstep/System/Library/Makefiles/TestFramework/Testing.h
+GNUstep/System/Library/Makefiles/TestFramework/example1.m
+GNUstep/System/Library/Makefiles/TestFramework/example%%MAJORVERSION%%.m
+GNUstep/System/Library/Makefiles/TestFramework/example3.m
+GNUstep/System/Library/Makefiles/TestFramework/example4.m
+GNUstep/System/Library/Makefiles/TestFramework/example5.m
+GNUstep/System/Library/Makefiles/TestFramework/example6.m
+GNUstep/System/Library/Makefiles/TestFramework/example7.m
+GNUstep/System/Library/Makefiles/TestFramework/example8.m
+GNUstep/System/Library/Makefiles/TestFramework/example9.m
 GNUstep/System/Library/Makefiles/aggregate.make
 GNUstep/System/Library/Makefiles/app-wrapper.template
 GNUstep/System/Library/Makefiles/application.make
@@ -126,6 +140,7 @@ GNUstep/System/Library/Makefiles/tool.make
 GNUstep/System/Library/Makefiles/vendor.sh
 GNUstep/System/Tools/debugapp
 GNUstep/System/Tools/gnustep-config
+GNUstep/System/Tools/gnustep-tests
 GNUstep/System/Tools/openapp
 GNUstep/System/Tools/opentool
 @rmtry GNUstep/System/Makefiles
@@ -136,6 +151,7 @@ GNUstep/System/Tools/opentool
 @dirrm GNUstep/System/Library/Services
 @dirrm GNUstep/System/Library/PostScript
 @dirrm GNUstep/System/Library/Makefiles/%%GNU_ARCH%%
+@dirrm GNUstep/System/Library/Makefiles/TestFramework
 @dirrm GNUstep/System/Library/Makefiles/Master
 @dirrm GNUstep/System/Library/Makefiles/Instance/Shared
 @dirrm GNUstep/System/Library/Makefiles/Instance/Documentation
