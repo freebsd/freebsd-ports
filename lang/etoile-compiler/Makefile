@@ -36,4 +36,10 @@ FOUNDATION_PORT?=	devel/etoile-foundation
 LANGUAGEKIT_PORT?=	lang/etoile-languagekit
 SMALLTALKKIT_PORT?=	lang/etoile-smalltalkkit
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "i386"
+ADDITIONAL_LDFLAGS+=	-lgcc_s -lgcc
+.endif
+
+.include <bsd.port.post.mk>
