@@ -6,28 +6,21 @@
 #
 
 PORTNAME=	cakephp
-PORTVERSION=	1.2.5
-PORTREVISION=	2
+PORTVERSION=	1.2.10
 CATEGORIES=	www
-MASTER_SITES=	http://cakeforge.org/frs/download.php/733/ \
+MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/tarball/${PORTVERSION}/ \
 		LOCAL/glarkin
-DISTNAME=	cake_${PORTVERSION}
+DISTNAME=	${PORTNAME}-${PORTNAME}-${PORTVERSION}-${GITVERSION}
 
 MAINTAINER=	glarkin@FreeBSD.org
 COMMENT=	A framework for developing PHP web applications
 
-BROKEN=		unfetchable
-
-USE_BZIP2=	yes
-DISTFILE_SUFFIX=/donation=complete
-FETCH_BEFORE_ARGS=	-o -
-TARGET_DISTFILE=${DISTNAME}${EXTRACT_SUFX}
-
-WRKSRC=		${WRKDIR}/cake_${PORTVERSION}
+GITVERSION=	0-ge6e50e8
+FETCH_ARGS=	-pRr
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTNAME}-da67eb8
 
 PORTDOCS=	README
 
-USE_APACHE=	2.0+
 SLAVE_PORT_MODULES=	rewrite
 
 CONFLICTS=	cakephp-1.[13].*
@@ -48,9 +41,8 @@ CAKE_CONF_FILES=	\
 		app/config/routes.php
 CAKE_CONSOLE=	cake/console/cake
 
-SUB_FILES=	pkg-message
-
 OPTIONS=	PROD "Install for production server (make confighelp)" Off \
+		AP "Add Apache 2.2+ dependency" Off \
 		MYSQL "Check for/install MySQL support in PHP" Off \
 		PGSQL "Check for/install PostgreSQL support in PHP" Off \
 		SQLITE "Check for/install SQLite support in PHP" Off \
@@ -72,6 +64,17 @@ CGI_EXT=
 
 SUB_LIST+=	PHPCGI=${WITH_PHP_CGI}
 
+.if defined(WITH_AP)
+SUB_FILES=	pkg-message
+USE_APACHE=	2.2+
+PKGMESSAGE=	pkg-message
+APDEP=
+.else
+SUB_FILES=	pkg-message-no-apache
+PKGMESSAGE=	pkg-message-no-apache
+APDEP=		"@comment "
+.endif
+
 .if defined(WITH_PROD)
 PROD=		production
 HTACCESS=	""
@@ -85,7 +88,7 @@ CONF=		cakephp-${PROD}${CGI_EXT}.conf
 SUB_FILES+=	${CONF}
 
 PLIST_SUB+=	CONFDIR=${CONFDIR_REL} ECHO_MSG=${ECHO_MSG} \
-		HTACCESS=${HTACCESS}
+		HTACCESS=${HTACCESS} APDEP=${APDEP}
 
 DB_DEFINED=	no
 
@@ -115,18 +118,6 @@ USE_PHP+=	apc
 
 .if defined(WITH_MEMCACHE)
 USE_PHP+=	memcache
-.endif
-
-do-fetch:
-	@${INSTALL} -d ${DISTDIR}
-.if !exists(${DISTDIR}/${TARGET_DISTFILE})
-# Ok, this is a bit strange.  Since the cakeforge.org download URL has a
-# PATH_INFO element at the end of it, the -o argument to fetch(1) is
-# treated as a directory instead of a filename.  Instead of using
-# "-o ${DISTDIR}/${TARGET_DISTFILE}", I have to use "-o -" and redirect
-# stdout to the actual filename.
-	@${FETCH_CMD} ${FETCH_BEFORE_ARGS} -1 ${MASTER_SITES:S|$|${TARGET_DISTFILE}${DISTFILE_SUFFIX}|g} | ${CAT} > ${DISTDIR}/${TARGET_DISTFILE}
-	@${ECHO_MSG} ${TARGET_DISTFILE} has been downloaded.
 .endif
 
 confighelp:
@@ -188,6 +179,7 @@ do-install:
 	@${ECHO_CMD} '@exec ${CHMOD} 755 ${WWWDIR}/${CAKE_CONSOLE}' >> ${TMPPLIST}
 
 post-install:
+.if defined(WITH_AP)
 	@if [ -d "${CONFDIR}" ]; then \
 	  ${CP} ${WRKDIR}/${CONF} ${CONFDIR}/cakephp.conf; \
 	else \
@@ -198,6 +190,7 @@ post-install:
 	  ${ECHO_MSG} "" ; \
 	  ${FALSE} ; \
 	fi
+.endif
 .if !defined(NOPORTDOCS)
 	@${INSTALL} -d ${DOCSDIR}
 	@cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
