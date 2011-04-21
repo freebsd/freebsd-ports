@@ -17,10 +17,6 @@
 %%WWWDIR%%/core/ArchiveProcessing.php
 %%WWWDIR%%/core/ArchiveProcessing/Day.php
 %%WWWDIR%%/core/ArchiveProcessing/Period.php
-%%WWWDIR%%/core/ArchiveProcessing/Record.php
-%%WWWDIR%%/core/ArchiveProcessing/Record/Blob.php
-%%WWWDIR%%/core/ArchiveProcessing/Record/Numeric.php
-%%WWWDIR%%/core/ArchiveProcessing/RecordArray.php
 %%WWWDIR%%/core/AssetManager.php
 %%WWWDIR%%/core/Auth.php
 %%WWWDIR%%/core/CacheFile.php
@@ -157,9 +153,11 @@
 %%WWWDIR%%/core/Tracker/javascriptCode.tpl
 %%WWWDIR%%/core/Tracker/Visit.php
 %%WWWDIR%%/core/Translate.php
+%%WWWDIR%%/core/TranslationWriter.php
 %%WWWDIR%%/core/Segment.php
 %%WWWDIR%%/core/SegmentExpression.php
 %%WWWDIR%%/core/Unzip.php
+%%WWWDIR%%/core/Unzip/Interface.php
 %%WWWDIR%%/core/Unzip/PclZip.php
 %%WWWDIR%%/core/Unzip/ZipArchive.php
 %%WWWDIR%%/core/UpdateCheck.php
@@ -190,6 +188,9 @@
 %%WWWDIR%%/core/Updates/1.1.php
 %%WWWDIR%%/core/Updates/1.2-rc1.php
 %%WWWDIR%%/core/Updates/1.2-rc2.php
+%%WWWDIR%%/core/Updates/1.2.3.php
+%%WWWDIR%%/core/Updates/1.2.5-rc1.php
+%%WWWDIR%%/core/Updates/1.2.5-rc7.php
 %%WWWDIR%%/core/Url.php
 %%WWWDIR%%/core/Version.php
 %%WWWDIR%%/core/View.php
@@ -213,7 +214,6 @@
 %%WWWDIR%%/core/Visualization/Chart/VerticalBar.php
 %%WWWDIR%%/core/Visualization/Cloud.php
 %%WWWDIR%%/core/Visualization/Sparkline.php
-%%WWWDIR%%/core/iUnzip.php
 %%WWWDIR%%/core/iView.php
 %%WWWDIR%%/core/testMinimumPhpVersion.php
 %%WWWDIR%%/index.php
@@ -255,6 +255,7 @@
 %%WWWDIR%%/lang/ro.php
 %%WWWDIR%%/lang/ru.php
 %%WWWDIR%%/lang/sk.php
+%%WWWDIR%%/lang/sl.php
 %%WWWDIR%%/lang/sq.php
 %%WWWDIR%%/lang/sr.php
 %%WWWDIR%%/lang/sv.php
@@ -452,6 +453,7 @@
 %%WWWDIR%%/libs/Zend/Cache/Backend/Static.php
 %%WWWDIR%%/libs/Zend/Cache/Backend/Test.php
 %%WWWDIR%%/libs/Zend/Cache/Backend/TwoLevels.php
+%%WWWDIR%%/libs/Zend/Cache/Backend/WinCache.php
 %%WWWDIR%%/libs/Zend/Cache/Backend/Xcache.php
 %%WWWDIR%%/libs/Zend/Cache/Backend/ZendPlatform.php
 %%WWWDIR%%/libs/Zend/Cache/Backend/ZendServer.php
@@ -1158,7 +1160,6 @@
 %%WWWDIR%%/plugins/Live/Controller.php
 %%WWWDIR%%/plugins/Live/Live.php
 %%WWWDIR%%/plugins/Live/Visitor.php
-%%WWWDIR%%/plugins/Live/templates/images/download.png
 %%WWWDIR%%/plugins/Live/templates/images/file0.png
 %%WWWDIR%%/plugins/Live/templates/images/file1.png
 %%WWWDIR%%/plugins/Live/templates/images/file2.png
@@ -1169,8 +1170,6 @@
 %%WWWDIR%%/plugins/Live/templates/images/file7.png
 %%WWWDIR%%/plugins/Live/templates/images/file8.png
 %%WWWDIR%%/plugins/Live/templates/images/file9.png
-%%WWWDIR%%/plugins/Live/templates/images/goal.png
-%%WWWDIR%%/plugins/Live/templates/images/outboundlink.png
 %%WWWDIR%%/plugins/Live/templates/images/pause.gif
 %%WWWDIR%%/plugins/Live/templates/images/pause_disabled.gif
 %%WWWDIR%%/plugins/Live/templates/images/play.gif
@@ -1215,6 +1214,7 @@
 %%WWWDIR%%/plugins/PDFReports/Controller.php
 %%WWWDIR%%/plugins/PDFReports/PDFRenderer.php
 %%WWWDIR%%/plugins/PDFReports/PDFReports.php
+%%WWWDIR%%/plugins/PDFReports/config/tcpdf_config.php
 %%WWWDIR%%/plugins/PDFReports/templates/add.tpl
 %%WWWDIR%%/plugins/PDFReports/templates/index.tpl
 %%WWWDIR%%/plugins/PDFReports/templates/list.tpl
@@ -1246,10 +1246,8 @@
 %%WWWDIR%%/plugins/Referers/images/searchEngines/blogsearch.google.com.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/busca.orange.es.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/buscador.terra.es.png
-%%WWWDIR%%/plugins/Referers/images/searchEngines/cf.dir.yahoo.com.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/cgi.search.biglobe.ne.jp.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/daemon-search.com.png
-%%WWWDIR%%/plugins/Referers/images/searchEngines/de.dir.yahoo.com.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/digg.com.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/dir.gigablast.com.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/dmoz.org.png
@@ -1296,7 +1294,6 @@
 %%WWWDIR%%/plugins/Referers/images/searchEngines/rpmfind.net.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/s1.metacrawler.de.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/search.1und1.de.png
-%%WWWDIR%%/plugins/Referers/images/searchEngines/search.about.com.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/search.aol.com.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/search.babylon.com.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/search.bluewin.ch.png
@@ -1322,6 +1319,7 @@
 %%WWWDIR%%/plugins/Referers/images/searchEngines/search.winamp.com.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/search.www.ee.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/search.yahoo.com.png
+%%WWWDIR%%/plugins/Referers/images/searchEngines/search.yam.com.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/search.yippy.com.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/searchalot.com.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/searchatlas.centrum.cz.png
@@ -1336,6 +1334,7 @@
 %%WWWDIR%%/plugins/Referers/images/searchEngines/suche.t-online.de.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/suche.web.de.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/szukaj.onet.pl.png
+%%WWWDIR%%/plugins/Referers/images/searchEngines/szukaj.wp.pl.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/technorati.com.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/translate.google.com.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/web.canoe.ca.png
@@ -1357,7 +1356,6 @@
 %%WWWDIR%%/plugins/Referers/images/searchEngines/www.cuil.com.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/www.dasoertliche.de.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/www.eniro.se.png
-%%WWWDIR%%/plugins/Referers/images/searchEngines/www.eudip.com.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/www.eurip.com.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/www.euroseek.com.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/www.everyclick.com.png
@@ -1397,12 +1395,10 @@
 %%WWWDIR%%/plugins/Referers/images/searchEngines/www.picsearch.com.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/www.plazoo.com.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/www.qualigo.at.png
-%%WWWDIR%%/plugins/Referers/images/searchEngines/www.scroogle.org.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/www.search.ch.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/www.search.com.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/www.searchcanvas.com.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/www.searchy.co.uk.png
-%%WWWDIR%%/plugins/Referers/images/searchEngines/www.seek.fr.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/www.sharelook.fr.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/www.skynet.be.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/www.sogou.com.png
@@ -1783,6 +1779,7 @@
 %%WWWDIR%%/plugins/UserSettings/images/browsers/CH.gif
 %%WWWDIR%%/plugins/UserSettings/images/browsers/CO.gif
 %%WWWDIR%%/plugins/UserSettings/images/browsers/CS.gif
+%%WWWDIR%%/plugins/UserSettings/images/browsers/DF.gif
 %%WWWDIR%%/plugins/UserSettings/images/browsers/DI.gif
 %%WWWDIR%%/plugins/UserSettings/images/browsers/EL.gif
 %%WWWDIR%%/plugins/UserSettings/images/browsers/EP.gif
@@ -1840,6 +1837,7 @@
 %%WWWDIR%%/plugins/UserSettings/images/os/POS.gif
 %%WWWDIR%%/plugins/UserSettings/images/os/PS3.gif
 %%WWWDIR%%/plugins/UserSettings/images/os/PSP.gif
+%%WWWDIR%%/plugins/UserSettings/images/os/SBA.gif
 %%WWWDIR%%/plugins/UserSettings/images/os/SOS.gif
 %%WWWDIR%%/plugins/UserSettings/images/os/SYL.gif
 %%WWWDIR%%/plugins/UserSettings/images/os/SYM.gif
@@ -1927,6 +1925,7 @@
 %%WWWDIR%%/themes/default/common.js
 %%WWWDIR%%/themes/default/genericForm.tpl
 %%WWWDIR%%/themes/default/ieonly.css
+%%WWWDIR%%/themes/default/ie6.tpl
 %%WWWDIR%%/themes/default/images/arr_r.png
 %%WWWDIR%%/themes/default/images/background-submit.png
 %%WWWDIR%%/themes/default/images/chart_bar.png
@@ -1939,6 +1938,7 @@
 %%WWWDIR%%/themes/default/images/datepicker_arr_l.png
 %%WWWDIR%%/themes/default/images/datepicker_arr_r.png
 %%WWWDIR%%/themes/default/images/delete.png
+%%WWWDIR%%/themes/default/images/download.png
 %%WWWDIR%%/themes/default/images/email.png
 %%WWWDIR%%/themes/default/images/error.png
 %%WWWDIR%%/themes/default/images/error_medium.png
@@ -1977,6 +1977,7 @@
 %%WWWDIR%%/themes/default/images/warning.png
 %%WWWDIR%%/themes/default/images/warning_medium.png
 %%WWWDIR%%/themes/default/images/warning_small.png
+%%WWWDIR%%/themes/default/rtl.css
 %%WWWDIR%%/themes/default/simple_structure.css
 %%WWWDIR%%/themes/default/simple_structure_footer.tpl
 %%WWWDIR%%/themes/default/simple_structure_header.tpl
@@ -2037,6 +2038,7 @@
 @dirrm %%WWWDIR%%/plugins/Proxy
 @dirrm %%WWWDIR%%/plugins/Provider
 @dirrm %%WWWDIR%%/plugins/PDFReports/templates
+@dirrm %%WWWDIR%%/plugins/PDFReports/config
 @dirrm %%WWWDIR%%/plugins/PDFReports
 @dirrm %%WWWDIR%%/plugins/MultiSites/templates
 @dirrm %%WWWDIR%%/plugins/MultiSites/images
@@ -2272,7 +2274,6 @@
 @dirrm %%WWWDIR%%/core/DataTable/Filter
 @dirrm %%WWWDIR%%/core/DataTable
 @dirrm %%WWWDIR%%/core/DataFiles
-@dirrm %%WWWDIR%%/core/ArchiveProcessing/Record
 @dirrm %%WWWDIR%%/core/ArchiveProcessing
 @dirrm %%WWWDIR%%/core/Archive/Array
 @dirrm %%WWWDIR%%/core/Archive
