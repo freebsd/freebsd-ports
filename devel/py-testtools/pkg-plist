@@ -16,6 +16,9 @@
 %%PYTHON_SITELIBDIR%%/testtools/deferredruntest.py
 %%PYTHON_SITELIBDIR%%/testtools/deferredruntest.pyc
 %%PYTHON_SITELIBDIR%%/testtools/deferredruntest.pyo
+%%PYTHON_SITELIBDIR%%/testtools/distutilscmd.py
+%%PYTHON_SITELIBDIR%%/testtools/distutilscmd.pyc
+%%PYTHON_SITELIBDIR%%/testtools/distutilscmd.pyo
 %%PYTHON_SITELIBDIR%%/testtools/helpers.py
 %%PYTHON_SITELIBDIR%%/testtools/helpers.pyc
 %%PYTHON_SITELIBDIR%%/testtools/helpers.pyo
@@ -61,6 +64,9 @@
 %%PYTHON_SITELIBDIR%%/testtools/tests/test_deferredruntest.py
 %%PYTHON_SITELIBDIR%%/testtools/tests/test_deferredruntest.pyc
 %%PYTHON_SITELIBDIR%%/testtools/tests/test_deferredruntest.pyo
+%%PYTHON_SITELIBDIR%%/testtools/tests/test_distutilscmd.py
+%%PYTHON_SITELIBDIR%%/testtools/tests/test_distutilscmd.pyc
+%%PYTHON_SITELIBDIR%%/testtools/tests/test_distutilscmd.pyo
 %%PYTHON_SITELIBDIR%%/testtools/tests/test_fixturesupport.py
 %%PYTHON_SITELIBDIR%%/testtools/tests/test_fixturesupport.pyc
 %%PYTHON_SITELIBDIR%%/testtools/tests/test_fixturesupport.pyo
@@ -91,6 +97,9 @@
 %%PYTHON_SITELIBDIR%%/testtools/tests/test_testtools.py
 %%PYTHON_SITELIBDIR%%/testtools/tests/test_testtools.pyc
 %%PYTHON_SITELIBDIR%%/testtools/tests/test_testtools.pyo
+%%PYTHON_SITELIBDIR%%/testtools/tests/test_with_with.py
+%%PYTHON_SITELIBDIR%%/testtools/tests/test_with_with.pyc
+%%PYTHON_SITELIBDIR%%/testtools/tests/test_with_with.pyo
 %%PYTHON_SITELIBDIR%%/testtools/testsuite.py
 %%PYTHON_SITELIBDIR%%/testtools/testsuite.pyc
 %%PYTHON_SITELIBDIR%%/testtools/testsuite.pyo
