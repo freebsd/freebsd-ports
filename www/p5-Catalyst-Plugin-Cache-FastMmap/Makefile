@@ -6,14 +6,16 @@
 #
 
 PORTNAME=	Catalyst-Plugin-Cache-FastMmap
-PORTVERSION=	0.8
-PORTREVISION=	1
+PORTVERSION=	0.9
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Mmap cache for Catalyst
+
+LICENSE_COMB=	dual
+LICENSE=	ART20 GPLv1
 
 BUILD_DEPENDS=	p5-Catalyst-Runtime>=5.7000:${PORTSDIR}/www/p5-Catalyst-Runtime \
 		p5-Cache-FastMmap>=0:${PORTSDIR}/devel/p5-Cache-FastMmap
