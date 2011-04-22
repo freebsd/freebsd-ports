@@ -7,13 +7,14 @@
 
 PORTNAME=	engine_pkcs11
 PORTVERSION=	0.1.8
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://www.opensc-project.org/files/${PORTNAME}/
 
 MAINTAINER=	ale@FreeBSD.org
 COMMENT=	An implementation of a PKCS\#11 engine for OpenSSL
 
-LIB_DEPENDS=	p11.3:${PORTSDIR}/security/libp11
+LIB_DEPENDS=	p11.2:${PORTSDIR}/security/libp11
 
 USE_AUTOTOOLS=	libtool
 USE_OPENSSL=	yes

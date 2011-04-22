@@ -7,14 +7,14 @@
 
 PORTNAME=	pam_p11
 PORTVERSION=	0.1.5
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	security
 MASTER_SITES=	http://www.opensc-project.org/files/${PORTNAME}/
 
 MAINTAINER=	ale@FreeBSD.org
 COMMENT=	A PAM module using crypto tokens for auth
 
-LIB_DEPENDS=	p11.3:${PORTSDIR}/security/libp11
+LIB_DEPENDS=	p11.2:${PORTSDIR}/security/libp11
 
 USE_AUTOTOOLS=	libtool
 USE_OPENSSL=	yes
