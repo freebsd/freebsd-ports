@@ -34,7 +34,6 @@
 %%SITE_PERL%%/POE/Resource/SIDs.pm
 %%SITE_PERL%%/POE/Resource/Sessions.pm
 %%SITE_PERL%%/POE/Resource/Signals.pm
-%%SITE_PERL%%/POE/Resource/Statistics.pm
 %%SITE_PERL%%/POE/Resources.pm
 %%SITE_PERL%%/POE/Session.pm
 %%SITE_PERL%%/POE/Wheel.pm
