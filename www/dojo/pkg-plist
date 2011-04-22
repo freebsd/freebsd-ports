@@ -1,3 +1,4 @@
+%%NOAPACHE%%%%CONFDIR%%/dojo.conf
 %%WWWDIR%%/dijit/Calendar.js
 %%WWWDIR%%/dijit/CheckedMenuItem.js
 %%WWWDIR%%/dijit/ColorPalette.js
