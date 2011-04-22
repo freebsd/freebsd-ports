@@ -1,3 +1,4 @@
+%%NOAPACHE%%%%CONFDIR%%/yui.conf
 %%PORTDOCS%%%%DOCSDIR%%/Anim.js.html
 %%PORTDOCS%%%%DOCSDIR%%/AnimMgr.js.html
 %%PORTDOCS%%%%DOCSDIR%%/ArrayAssert.js.html
