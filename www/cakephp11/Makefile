@@ -9,22 +9,18 @@ PORTNAME=	cakephp
 PORTVERSION=	1.1.19.6305
 PORTREVISION=	4
 CATEGORIES=	www
-MASTER_SITES=	http://cakeforge.org/frs/download.php/591/
+MASTER_SITES=	http://www.sourcehosting.net/freebsd/distfiles/ \
+		LOCAL/glarkin
 DISTNAME=	cake_${PORTVERSION}
 
 MAINTAINER=	glarkin@FreeBSD.org
 COMMENT=	A framework for developing PHP web applications
 
-BROKEN=		unfetchable
-
 LATEST_LINK=	cakephp11
 
 USE_BZIP2=	yes
-DISTFILE_SUFFIX=/donation=complete
-FETCH_BEFORE_ARGS=	-o ${DISTDIR}/${TARGET_DISTFILE}
-TARGET_DISTFILE=${DISTNAME}${EXTRACT_SUFX}
 
-USE_APACHE=	2.0+
+USE_APACHE=	2.2+
 SLAVE_PORT_MODULES=	rewrite
 
 CONFLICTS=	cakephp-1.[23].*
@@ -93,11 +89,6 @@ RUN_DEPENDS+=	${LOCALBASE}/lib/php/${PHP_EXT_DIR}/pdo.so:${PORTSDIR}/databases/p
 		${DB_DEPENDS}
 .endif
 
-do-fetch:
-.if !exists(${DISTDIR}/${TARGET_DISTFILE})
-	${FETCH_CMD} ${FETCH_BEFORE_ARGS} -1 ${MASTER_SITES:S|$|${TARGET_DISTFILE}${DISTFILE_SUFFIX}|g}
-.endif
-
 confighelp:
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "On a production server, the Apache DocumentRoot is"
@@ -115,14 +106,14 @@ confighelp:
 
 do-install:
 	@${MKDIR} ${WWWDIR}
-	${CP} -R ${WRKSRC}/.htaccess \
+	@${CP} -R ${WRKSRC}/.htaccess \
 			${WRKSRC}/app \
 			${WRKSRC}/cake \
 			${WRKSRC}/index.php \
 			${WRKSRC}/vendors ${WWWDIR}
-	${CHOWN} -R ${WWWOWN}:${WWWGRP} ${WWWDIR}
-	${FIND} ${WWWDIR} -type f -print0 | ${XARGS} -0 ${CHMOD} 644
-	${FIND} ${WWWDIR} -type d -print0 | ${XARGS} -0 ${CHMOD} 755
+	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${WWWDIR}
+	@${FIND} ${WWWDIR} -type f -print0 | ${XARGS} -0 ${CHMOD} 644
+	@${FIND} ${WWWDIR} -type d -print0 | ${XARGS} -0 ${CHMOD} 755
 
 post-install:
 	@if [ -d "${CONFDIR}" ]; then \
