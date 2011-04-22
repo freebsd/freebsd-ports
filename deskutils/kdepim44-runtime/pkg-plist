@@ -29,6 +29,7 @@ lib/kde4/akonadi_serializer_addressee.so
 lib/kde4/akonadi_serializer_bookmark.so
 lib/kde4/akonadi_serializer_contactgroup.so
 lib/kde4/akonadi_serializer_kcal.so
+lib/kde4/akonadi_serializer_kcalcore.so
 lib/kde4/akonadi_serializer_mail.so
 lib/kde4/akonadi_serializer_microblog.so
 lib/kde4/kabc_akonadi.so
@@ -79,6 +80,7 @@ share/apps/akonadi/plugins/serializer/akonadi_serializer_addressee.desktop
 share/apps/akonadi/plugins/serializer/akonadi_serializer_bookmark.desktop
 share/apps/akonadi/plugins/serializer/akonadi_serializer_contactgroup.desktop
 share/apps/akonadi/plugins/serializer/akonadi_serializer_kcal.desktop
+share/apps/akonadi/plugins/serializer/akonadi_serializer_kcalcore.desktop
 share/apps/akonadi/plugins/serializer/akonadi_serializer_mail.desktop
 share/apps/akonadi/plugins/serializer/akonadi_serializer_microblog.desktop
 share/apps/akonadi_knut_resource/knut-template.xml
