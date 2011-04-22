@@ -154,9 +154,6 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/eventlet/hubs/twistedr.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/eventlet/hubs/twistedr.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/eventlet/hubs/twistedr.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/eventlet/hubs/zeromq.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/eventlet/hubs/zeromq.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/eventlet/hubs/zeromq.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/eventlet/patcher.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/eventlet/patcher.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/eventlet/patcher.pyo
