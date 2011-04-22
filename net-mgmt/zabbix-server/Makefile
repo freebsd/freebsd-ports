@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	zabbix
-PORTVERSION=	1.8.3
-PORTREVISION=	2
+PORTVERSION=	1.8.5
 PORTEPOCH=	2
 CATEGORIES=	net-mgmt
 MASTER_SITES=	SF/zabbix/ZABBIX%20Latest%20Stable/${PORTVERSION}
@@ -15,6 +14,8 @@ PKGNAMESUFFIX?=	-server
 
 MAINTAINER=	ports@christianserving.org
 COMMENT=	Enterprise-class open source distributed monitoring (${PKGNAMESUFFIX:S/^-//})
+
+LICENSE=	GPLv2
 
 CONFLICTS=	${PKGBASE}-1.[0-6]*
 
@@ -27,12 +28,12 @@ ZABBIX_BUILD=	${PKGNAMESUFFIX:S/^-//}
 .if ${ZABBIX_BUILD} != "frontend" # frontend only needs the version/distribution settings
 .if ${ZABBIX_BUILD} != "agent"
 USE_ICONV=	yes
-MAN8=		${PORTNAME}_${ZABBIX_BUILD}.8
+MAN8+=		${PORTNAME}_${ZABBIX_BUILD}.8
 USE_RC_SUBR=	${PORTNAME}_${ZABBIX_BUILD}
 .else
 USE_ICONV=	yes
-MAN1=		${PORTNAME}_get.1 ${PORTNAME}_sender.1
-MAN8=		${PORTNAME}_${ZABBIX_BUILD}d.8
+MAN1+=		${PORTNAME}_get.1 ${PORTNAME}_sender.1
+MAN8+=		${PORTNAME}_${ZABBIX_BUILD}d.8
 USE_RC_SUBR=	${PORTNAME}_${ZABBIX_BUILD}d
 .endif
 
@@ -45,11 +46,11 @@ SUB_LIST=	ZABBIX_BUILD=${ZABBIX_BUILD} ZABBIX_REQUIRE=${ZABBIX_REQUIRE}
 MAKE_ARGS+=	ARCH=freebsd
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--enable-${ZABBIX_BUILD}
-CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include"
+CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
 
 .if ${ZABBIX_BUILD} != "agent"
 LIB_DEPENDS=	netsnmp:${PORTSDIR}/net-mgmt/net-snmp \
-		curl:${PORTSDIR}/ftp/curl
+		execinfo:${PORTSDIR}/devel/libexecinfo
 
 SUB_FILES=	pkg-message
 
@@ -87,8 +88,9 @@ CONFIGURE_ARGS+=	--with-sqlite3
 IGNORE=		zabbix requires a database backend
 .endif
 
-.ifdef WITHOUT_CURL
-CONFIGURE_ARGS+=	--without-libcurl
+.ifdef WITH_CURL
+LIB_DEPENDS+=	curl:${PORTSDIR}/ftp/curl
+CONFIGURE_ARGS+=	--with-libcurl
 .endif
 
 .ifndef WITHOUT_LDAP
