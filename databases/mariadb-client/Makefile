@@ -17,7 +17,7 @@ MASTER_SITES=	http://www.percona.com/downloads/MariaDB/${PORTNAME}-${PORTVERSION
 		http://gd.tuwien.ac.at/db/mariadb/${PORTNAME}-${PORTVERSION}/kvm-tarbake-jaunty-x86/ \
 		http://mirrors.fe.up.pt/pub/mariadb/${PORTNAME}-${PORTVERSION}/kvm-tarbake-jaunty-x86/
 
-MAINTAINER=	siasiamail@gmail.com
+MAINTAINER=	dgeo@centrale-marseille.fr
 COMMENT=	A database server that offers drop-in replacement functionality for MySQL
 
 LICENSE=	GPLv2
