@@ -1,6 +1,6 @@
---- src/soundcard/sound.cxx.orig	2010-11-27 08:29:59.000000000 -0500
-+++ src/soundcard/sound.cxx	2010-11-27 08:36:45.000000000 -0500
-@@ -364,7 +364,7 @@
+--- src/soundcard/sound.cxx.orig	2011-04-05 10:48:40.000000000 -0400
++++ src/soundcard/sound.cxx	2011-04-16 14:40:29.000000000 -0400
+@@ -380,7 +380,7 @@
  {
  	int sndparam;
  // Try to get ~100ms worth of samples per fragment
