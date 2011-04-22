@@ -1,0 +1,13 @@
+%%PYTHON_SITELIBDIR%%/firebirdsql/__init__.py
+%%PYTHON_SITELIBDIR%%/firebirdsql/__init__.pyc
+%%PYTHON_SITELIBDIR%%/firebirdsql/__init__.pyo
+%%PYTHON_SITELIBDIR%%/firebirdsql/fbcore.py
+%%PYTHON_SITELIBDIR%%/firebirdsql/fbcore.pyc
+%%PYTHON_SITELIBDIR%%/firebirdsql/fbcore.pyo
+%%PYTHON_SITELIBDIR%%/firebirdsql/fberrmsgs.py
+%%PYTHON_SITELIBDIR%%/firebirdsql/fberrmsgs.pyc
+%%PYTHON_SITELIBDIR%%/firebirdsql/fberrmsgs.pyo
+%%PYTHON_SITELIBDIR%%/firebirdsql/tests.py
+%%PYTHON_SITELIBDIR%%/firebirdsql/tests.pyc
+%%PYTHON_SITELIBDIR%%/firebirdsql/tests.pyo
+@dirrm %%PYTHON_SITELIBDIR%%/firebirdsql
