@@ -6,17 +6,20 @@
 #
 
 PORTNAME=	libp11
-PORTVERSION=	0.2.7
+PORTVERSION=	0.2.8
 CATEGORIES=	security devel
 MASTER_SITES=	http://www.opensc-project.org/files/${PORTNAME}/
 
 MAINTAINER=	ale@FreeBSD.org
 COMMENT=	A small layer on top of PKCS\#11 API
 
-USE_AUTOTOOLS=	libltdl
+LICENSE=	LGPL21
+LICENSE_FILE=	${WRKSRC}/COPYING
+
+USE_AUTOTOOLS=	libltdl libtool
 USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes
-USE_GNOME=	pkgconfig
+USE_GNOME=	pkgconfig ltverhack
 USE_LDCONFIG=	yes
 
 CONFIGURE_ENV=	LTLIB_CFLAGS="-I${LOCALBASE}/include" \
