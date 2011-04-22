@@ -27,6 +27,7 @@
 %%WWWDIR%%/api/classes/class.cscript.php
 %%WWWDIR%%/api/classes/class.ctemplate.php
 %%WWWDIR%%/api/classes/class.ctrigger.php
+%%WWWDIR%%/api/classes/class.ctriggerexpression.php
 %%WWWDIR%%/api/classes/class.cuser.php
 %%WWWDIR%%/api/classes/class.cusergroup.php
 %%WWWDIR%%/api/classes/class.cusermacro.php
@@ -232,6 +233,7 @@
 %%WWWDIR%%/include/classes/class.ccolorcell.php
 %%WWWDIR%%/include/classes/class.ccombobox.php
 %%WWWDIR%%/include/classes/class.ccomboitem.php
+%%WWWDIR%%/include/classes/class.cconfigfile.php
 %%WWWDIR%%/include/classes/class.cdiv.php
 %%WWWDIR%%/include/classes/class.ceditablecombobox.php
 %%WWWDIR%%/include/classes/class.cfile.php
@@ -249,9 +251,9 @@
 %%WWWDIR%%/include/classes/class.ciframe.php
 %%WWWDIR%%/include/classes/class.cimagetexttable.php
 %%WWWDIR%%/include/classes/class.cimg.php
-%%WWWDIR%%/include/classes/class.cipbox.php
 %%WWWDIR%%/include/classes/class.cjson.php
 %%WWWDIR%%/include/classes/class.cjsscript.php
+%%WWWDIR%%/include/classes/class.clabel.php
 %%WWWDIR%%/include/classes/class.cldap.php
 %%WWWDIR%%/include/classes/class.clink.php
 %%WWWDIR%%/include/classes/class.clist.php
@@ -314,6 +316,7 @@
 %%WWWDIR%%/include/locales/pl_pl.inc.php
 %%WWWDIR%%/include/locales/pt_br.inc.php
 %%WWWDIR%%/include/locales/ru_ru.inc.php
+%%WWWDIR%%/include/locales/sk_sk.inc.php
 %%WWWDIR%%/include/locales/sp_sp.inc.php
 %%WWWDIR%%/include/locales/sv_se.inc.php
 %%WWWDIR%%/include/locales/ua_ua.inc.php
@@ -339,6 +342,7 @@
 %%WWWDIR%%/include/users.inc.php
 %%WWWDIR%%/include/validate.inc.php
 %%WWWDIR%%/include/valuemap.inc.php
+%%WWWDIR%%/include/xmlschemas/screens.rng
 %%WWWDIR%%/index.php
 %%WWWDIR%%/instal.php
 %%WWWDIR%%/items.php
@@ -422,6 +426,8 @@
 %%WWWDIR%%/styles/div.css
 %%WWWDIR%%/styles/form.css
 %%WWWDIR%%/styles/ie.css
+%%WWWDIR%%/styles/ie_css_bb.css
+%%WWWDIR%%/styles/ie_css_ob.css
 %%WWWDIR%%/styles/ie_css_od.css
 %%WWWDIR%%/styles/link.css
 %%WWWDIR%%/styles/p.css
@@ -444,6 +450,7 @@
 @dirrm %%WWWDIR%%/styles
 @dirrm %%WWWDIR%%/js/scriptaculous
 @dirrm %%WWWDIR%%/js
+@dirrm %%WWWDIR%%/include/xmlschemas
 @dirrm %%WWWDIR%%/include/locales
 @dirrm %%WWWDIR%%/include/classes
 @dirrm %%WWWDIR%%/include
