@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	squeezeboxserver
-PORTVERSION=	7.5.3
-PORTREVISION=	1
+PORTVERSION=	7.5.4
+#PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://downloads.slimdevices.com/SqueezeboxServer_v${PORTVERSION}/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-noCPAN
@@ -29,7 +29,7 @@ OPTIONS=	APE "Support Monkey's Audio Codec input" on \
 
 RESTRICTED=	Contains non-redistributable firmware, documentation, and images
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}-31792-noCPAN
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}-32171-noCPAN
 
 RUN_DEPENDS+=	${SITE_PERL}/DBIx/Class.pm:${PORTSDIR}/databases/p5-DBIx-Class \
 		${SITE_PERL}/File/Which.pm:${PORTSDIR}/sysutils/p5-File-Which \
@@ -44,8 +44,11 @@ RUN_DEPENDS+=	${SITE_PERL}/DBIx/Class.pm:${PORTSDIR}/databases/p5-DBIx-Class \
 		${SITE_PERL}/${PERL_ARCH}/XML/Parser.pm:${PORTSDIR}/textproc/p5-XML-Parser \
 		${SITE_PERL}/${PERL_ARCH}/YAML/Syck.pm:${PORTSDIR}/textproc/p5-YAML-Syck \
 		${SITE_PERL}/${PERL_ARCH}/EV.pm:${PORTSDIR}/devel/p5-EV \
-		${SITE_PERL}/${PERL_ARCH}/Audio/Scan.pm:${PORTSDIR}/audio/p5-Audio-Scan \
+		p5-Audio-Scan>=0.87:${PORTSDIR}/audio/p5-Audio-Scan \
 		${SITE_PERL}/${PERL_ARCH}/Class/XSAccessor.pm:${PORTSDIR}/devel/p5-Class-XSAccessor
+
+# Work around a bug in p5-Package-Stash port
+RUN_DEPENDS+=	p5-Package-DeprecationManager>=0.10:${PORTSDIR}/devel/p5-Package-DeprecationManager
 
 PKGINSTALL=	${WRKDIR}/pkg-install
 
