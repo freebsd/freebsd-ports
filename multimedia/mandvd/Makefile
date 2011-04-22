@@ -25,7 +25,7 @@ RUN_DEPENDS=	dvd-slideshow>=0.7.5:${PORTSDIR}/multimedia/dvd-slideshow \
 		lame>=3.97:${PORTSDIR}/audio/lame \
 		dvdauthor>=0.6.11:${PORTSDIR}/multimedia/dvdauthor \
 		mjpegtools>=1.9.0:${PORTSDIR}/multimedia/mjpegtools \
-		netpbm-devel>10.29:${PORTSDIR}/graphics/netpbm-devel \
+		netpbm>10.29:${PORTSDIR}/graphics/netpbm \
 		ImageMagick>=6.2.4:${PORTSDIR}/graphics/ImageMagick \
 		transcode>=1.0.2:${PORTSDIR}/multimedia/transcode \
 		dvd+rw-tools>=5.21.4:${PORTSDIR}/sysutils/dvd+rw-tools

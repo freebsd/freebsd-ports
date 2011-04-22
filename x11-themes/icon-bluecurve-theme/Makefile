@@ -10,7 +10,7 @@ PORTNAME=	icon-bluecurve-theme
 COMMENT=	The Bluecurve icon set
 
 BUILD_DEPENDS=	icon-slicer:${PORTSDIR}/graphics/icon-slicer \
-		pamrgbatopng:${PORTSDIR}/graphics/netpbm-devel
+		pamrgbatopng:${PORTSDIR}/graphics/netpbm
 
 MASTERDIR=	${.CURDIR}/../bluecurve-themes
 
