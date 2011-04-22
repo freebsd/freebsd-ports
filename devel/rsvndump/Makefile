@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	rsvndump
-PORTVERSION=	0.5.3
-PORTREVISION=	2
+PORTVERSION=	0.5.5
 CATEGORIES=	devel
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
@@ -25,7 +24,9 @@ CONFIGURE_ARGS+=	--disable-nls
 CONFIGURE_ARGS+=	--enable-man \
 			--with-svn=${LOCALBASE}
 
+.if !defined(NOPORTDOCS)
 MAN1=		rsvndump.1
+.endif
 PLIST_FILES+=	bin/rsvndump
 
 .include <bsd.port.pre.mk>
@@ -34,8 +35,13 @@ PLIST_FILES+=	bin/rsvndump
 CONFIGURE_ENV+=	LDFLAGS=${PTHREAD_LIBS}
 .endif
 
+.if !defined(NOPORTDOCS)
 BUILD_DEPENDS+=	asciidoc:${PORTSDIR}/textproc/asciidoc \
 		xmlto:${PORTSDIR}/textproc/xmlto
+CONFIGURE_ARGS+=--enable-man
+.else
+CONFIGURE_ARGS+=--disable-man
+.endif
 
 BUILD_DEPENDS+=	subversion>=0:${PORTSDIR}/devel/subversion
 .include <bsd.port.post.mk>
