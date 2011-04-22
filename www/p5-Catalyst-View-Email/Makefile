@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Catalyst-View-Email
-PORTVERSION=	0.30
+PORTVERSION=	0.31
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,13 +14,16 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Catalyst View for Email
 
+LICENSE_COMB=	dual
+LICENSE=	ART20 GPLv1
+
 RUN_DEPENDS=	p5-Catalyst-Runtime>=5.7:${PORTSDIR}/www/p5-Catalyst-Runtime \
 		p5-Catalyst-Devel>=1.00:${PORTSDIR}/www/p5-Catalyst-Devel \
 		p5-Catalyst-View-TT>0:${PORTSDIR}/www/p5-Catalyst-View-TT \
 		p5-Catalyst-View-Mason>0:${PORTSDIR}/www/p5-Catalyst-View-Mason \
 		p5-Class-C3>=0:${PORTSDIR}/devel/p5-Class-C3 \
 		p5-Email-MIME>=1.859:${PORTSDIR}/mail/p5-Email-MIME \
-		p5-Email-Send>=2.185:${PORTSDIR}/mail/p5-Email-Send \
+		p5-Email-Sender>=2.185:${PORTSDIR}/mail/p5-Email-Sender \
 		p5-parent>0:${PORTSDIR}/devel/p5-parent \
 		p5-Test-Requires>=0:${PORTSDIR}/devel/p5-Test-Requires \
 		p5-Authen-SASL>=0:${PORTSDIR}/security/p5-Authen-SASL
