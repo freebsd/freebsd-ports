@@ -6,13 +6,16 @@
 #
 
 PORTNAME=	HTTP-Cookies-iCab
-PORTVERSION=	1.120
+PORTVERSION=	1.131
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Cookie storage and management for iCab
+
+LICENSE_COMB=	dual
+LICENSE=	ART20 GPLv1
 
 BUILD_DEPENDS=	p5-Text-Diff>=0:${PORTSDIR}/textproc/p5-Text-Diff
 RUN_DEPENDS=	p5-libwww>=1.25:${PORTSDIR}/www/p5-libwww
