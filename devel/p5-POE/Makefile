@@ -6,13 +6,16 @@
 #
 
 PORTNAME=	POE
-PORTVERSION=	1.299
+PORTVERSION=	1.310
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN/${PORTNAME}/RCAPUTO
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Multitasking and networking framework for perl
+
+LICENSE_COMB=	dual
+LICENSE=	ART20 GPLv1
 
 BUILD_DEPENDS=	p5-IO-Tty>=1.08:${PORTSDIR}/devel/p5-IO-Tty \
 		p5-POE-Test-Loops>=1.040:${PORTSDIR}/devel/p5-POE-Test-Loops
@@ -36,7 +39,7 @@ MAN3=		POE.3 POE::Component.3 POE::Component::Client::TCP.3 \
 		POE::Resource::Aliases.3 POE::Resource::Events.3 \
 		POE::Resource::Extrefs.3 POE::Resource::FileHandles.3 \
 		POE::Resource::SIDs.3 POE::Resource::Sessions.3 \
-		POE::Resource::Signals.3 POE::Resource::Statistics.3 \
+		POE::Resource::Signals.3 \
 		POE::Resources.3 POE::Session.3 POE::Wheel.3 \
 		POE::Wheel::Curses.3 POE::Wheel::FollowTail.3 \
 		POE::Wheel::ListenAccept.3 POE::Wheel::ReadLine.3 \
