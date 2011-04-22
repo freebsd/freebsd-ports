@@ -208,6 +208,46 @@
 %%WWWDIR%%/help/en-GB/help.html
 %%WWWDIR%%/help/en-GB/portal_help.html
 %%WWWDIR%%/help/en-GB/tips.txt
+%%WWWDIR%%/help/en-US/AddressDataProtection.txt                                                                                                                                                                                             
+%%WWWDIR%%/help/en-US/AutoAssignIncidents.txt                                                                                                                                                                                               
+%%WWWDIR%%/help/en-US/CTRLAddRemove.txt                                                                                                                                                                                                     
+%%WWWDIR%%/help/en-US/CustomerImpactEngineer.txt                                                                                                                                                                                            
+%%WWWDIR%%/help/en-US/Dashboard.txt                                                                                                                                                                                                         
+%%WWWDIR%%/help/en-US/EmailDataProtection.txt                                                                                                                                                                                               
+%%WWWDIR%%/help/en-US/EmailSignatureTip.txt                                                                                                                                                                                                 
+%%WWWDIR%%/help/en-US/InventoryID.txt                                                                                                                                                                                                       
+%%WWWDIR%%/help/en-US/InventoryPrivacy.txt
+%%WWWDIR%%/help/en-US/KBDistribution.txt
+%%WWWDIR%%/help/en-US/KBPrivate.txt
+%%WWWDIR%%/help/en-US/KBRestricted.txt
+%%WWWDIR%%/help/en-US/LDAPAttributeMap.txt
+%%WWWDIR%%/help/en-US/MessageTip.txt
+%%WWWDIR%%/help/en-US/NewSupportedContact.txt
+%%WWWDIR%%/help/en-US/OtherIncidents.txt
+%%WWWDIR%%/help/en-US/ProblemDescriptionEngineer.txt
+%%WWWDIR%%/help/en-US/ProblemReproductionEngineer.txt
+%%WWWDIR%%/help/en-US/QualificationsTip.txt
+%%WWWDIR%%/help/en-US/RevokeNotice.txt
+%%WWWDIR%%/help/en-US/Scheduler.txt
+%%WWWDIR%%/help/en-US/SchedulerParameters.txt
+%%WWWDIR%%/help/en-US/SchedulerStatus.txt
+%%WWWDIR%%/help/en-US/SeparatedBySpaces.txt
+%%WWWDIR%%/help/en-US/ServiceLevelCustomerPeriod.txt
+%%WWWDIR%%/help/en-US/ServiceLevelEngineerPeriod.txt
+%%WWWDIR%%/help/en-US/ServiceLevelLimit.txt
+%%WWWDIR%%/help/en-US/ServiceLevelTimed.txt
+%%WWWDIR%%/help/en-US/SetYourStatus.txt
+%%WWWDIR%%/help/en-US/SiteIncidentVisibility.txt
+%%WWWDIR%%/help/en-US/TaskPrivacy.txt
+%%WWWDIR%%/help/en-US/TaskUser.txt
+%%WWWDIR%%/help/en-US/TelephoneDataProtection.txt
+%%WWWDIR%%/help/en-US/UserSource.txt
+%%WWWDIR%%/help/en-US/UserStartdate.txt
+%%WWWDIR%%/help/en-US/VisibleToCustomer.txt
+%%WWWDIR%%/help/en-US/WorkAroundsAttemptedEngineer.txt
+%%WWWDIR%%/help/en-US/help.html
+%%WWWDIR%%/help/en-US/portal_help.html
+%%WWWDIR%%/help/en-US/tips.txt
 %%WWWDIR%%/help/es-MX/AddressDataProtection.txt
 %%WWWDIR%%/help/es-MX/AutoAssignIncidents.txt
 %%WWWDIR%%/help/es-MX/CTRLAddRemove.txt
@@ -282,6 +322,7 @@
 %%WWWDIR%%/help/ru-RU/AutoAssignIncidents.txt
 %%WWWDIR%%/help/ru-RU/CTRLAddRemove.txt
 %%WWWDIR%%/help/ru-RU/CustomerImpactEngineer.txt
+%%WWWDIR%%/help/ru-RU/Dashboard.txt
 %%WWWDIR%%/help/ru-RU/EmailDataProtection.txt
 %%WWWDIR%%/help/ru-RU/EmailSignatureTip.txt
 %%WWWDIR%%/help/ru-RU/InventoryID.txt
@@ -291,24 +332,37 @@
 %%WWWDIR%%/help/ru-RU/KBRestricted.txt
 %%WWWDIR%%/help/ru-RU/LDAPAttributeMap.txt
 %%WWWDIR%%/help/ru-RU/MessageTip.txt
+%%WWWDIR%%/help/ru-RU/NewSupportedContact.txt
 %%WWWDIR%%/help/ru-RU/OtherIncidents.txt
 %%WWWDIR%%/help/ru-RU/ProblemDescriptionEngineer.txt
 %%WWWDIR%%/help/ru-RU/ProblemReproductionEngineer.txt
 %%WWWDIR%%/help/ru-RU/QualificationsTip.txt
 %%WWWDIR%%/help/ru-RU/RevokeNotice.txt
 %%WWWDIR%%/help/ru-RU/Scheduler.txt
+%%WWWDIR%%/help/ru-RU/SchedulerParameters.txt
 %%WWWDIR%%/help/ru-RU/SchedulerStatus.txt
 %%WWWDIR%%/help/ru-RU/SeparatedBySpaces.txt
+%%WWWDIR%%/help/ru-RU/ServiceLevelCustomerPeriod.txt
+%%WWWDIR%%/help/ru-RU/ServiceLevelEngineerPeriod.txt
+%%WWWDIR%%/help/ru-RU/ServiceLevelLimit.txt
+%%WWWDIR%%/help/ru-RU/ServiceLevelTimed.txt
 %%WWWDIR%%/help/ru-RU/SetYourStatus.txt
+%%WWWDIR%%/help/ru-RU/SiteIncidentVisibility.txt
+%%WWWDIR%%/help/ru-RU/TaskPrivacy.txt
 %%WWWDIR%%/help/ru-RU/TaskUser.txt
 %%WWWDIR%%/help/ru-RU/TelephoneDataProtection.txt
+%%WWWDIR%%/help/ru-RU/UserSource.txt
+%%WWWDIR%%/help/ru-RU/UserStartdate.txt
 %%WWWDIR%%/help/ru-RU/VisibleToCustomer.txt
 %%WWWDIR%%/help/ru-RU/WorkAroundsAttemptedEngineer.txt
+%%WWWDIR%%/help/ru-RU/help.html
+%%WWWDIR%%/help/ru-RU/tips.txt
 %%WWWDIR%%/holding_queue.php
 %%WWWDIR%%/holiday_add.php
 %%WWWDIR%%/holiday_approve.php
 %%WWWDIR%%/holiday_request.php
 %%WWWDIR%%/holidays.php
+%%WWWDIR%%/i18n/ar.inc.php
 %%WWWDIR%%/i18n/bg-BG.inc.php
 %%WWWDIR%%/i18n/ca-ES.inc.php
 %%WWWDIR%%/i18n/cy-GB.inc.php
@@ -319,17 +373,21 @@
 %%WWWDIR%%/i18n/es-CO.inc.php
 %%WWWDIR%%/i18n/es-ES.inc.php
 %%WWWDIR%%/i18n/es-MX.inc.php
+%%WWWDIR%%/i18n/fa-IR.inc.php
 %%WWWDIR%%/i18n/fr-FR.inc.php
+%%WWWDIR%%/i18n/gr-GR.inc.php
 %%WWWDIR%%/i18n/it-IT.inc.php
 %%WWWDIR%%/i18n/ja-JP.inc.php
 %%WWWDIR%%/i18n/lt-LT.inc.php
 %%WWWDIR%%/i18n/nb-NO.inc.php
 %%WWWDIR%%/i18n/nl-NL.inc.php
+%%WWWDIR%%/i18n/pl-PL.inc.php
 %%WWWDIR%%/i18n/pt-BR.inc.php
 %%WWWDIR%%/i18n/pt-PT.inc.php
 %%WWWDIR%%/i18n/ro-RO.inc.php
 %%WWWDIR%%/i18n/ru-RU.inc.php
 %%WWWDIR%%/i18n/sl-SL.inc.php
+%%WWWDIR%%/i18n/sv-SE.inc.php
 %%WWWDIR%%/i18n/zh-CN.inc.php
 %%WWWDIR%%/i18n/zh-TW.inc.php
 %%WWWDIR%%/i18n/zz.inc.php
@@ -988,13 +1046,6 @@
 %%WWWDIR%%/lib/magpierss/rss_fetch.inc
 %%WWWDIR%%/lib/magpierss/rss_parse.inc
 %%WWWDIR%%/lib/magpierss/rss_utils.inc
-%%WWWDIR%%/lib/magpierss/scripts/README
-%%WWWDIR%%/lib/magpierss/scripts/magpie_debug.php
-%%WWWDIR%%/lib/magpierss/scripts/magpie_simple.php
-%%WWWDIR%%/lib/magpierss/scripts/magpie_slashbox.php
-%%WWWDIR%%/lib/magpierss/scripts/simple_smarty.php
-%%WWWDIR%%/lib/magpierss/scripts/smarty_plugin/modifier.rss_date_parse.php
-%%WWWDIR%%/lib/magpierss/scripts/templates/simple.smarty
 %%WWWDIR%%/lib/mime.inc.php
 %%WWWDIR%%/lib/mime_parser.inc.php
 %%WWWDIR%%/lib/nusoap/changelog
@@ -2013,9 +2064,6 @@
 @dirrm %%WWWDIR%%/portal
 @dirrm %%WWWDIR%%/plugins
 @dirrm %%WWWDIR%%/lib/nusoap
-@dirrm %%WWWDIR%%/lib/magpierss/scripts/templates
-@dirrm %%WWWDIR%%/lib/magpierss/scripts/smarty_plugin
-@dirrm %%WWWDIR%%/lib/magpierss/scripts
 @dirrm %%WWWDIR%%/lib/magpierss/htdocs
 @dirrm %%WWWDIR%%/lib/magpierss/extlib
 @dirrm %%WWWDIR%%/lib/magpierss
@@ -2045,6 +2093,7 @@
 @dirrm %%WWWDIR%%/help/ru-RU
 @dirrm %%WWWDIR%%/help/it-IT
 @dirrm %%WWWDIR%%/help/es-MX
+@dirrm %%WWWDIR%%/help/en-US
 @dirrm %%WWWDIR%%/help/en-GB
 @dirrm %%WWWDIR%%/help/da-DK
 @dirrm %%WWWDIR%%/help/cy-GB
