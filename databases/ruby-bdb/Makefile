@@ -6,10 +6,12 @@
 #
 
 PORTNAME=	bdb
-PORTVERSION=	0.6.5
-PORTREVISION=	1
+PORTVERSION=	0.6.6
 CATEGORIES=	databases ruby
-MASTER_SITES=	RF
+MASTER_SITES=	ftp://ftp.idaemons.org/pub/distfiles/ruby/ \
+		http://idaemons.org/distfiles/ruby/ \
+		${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	knu
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 PKGNAMESUFFIX=	${WITH_BDB_VER}
 DIST_SUBDIR=	ruby
@@ -17,7 +19,8 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	knu@FreeBSD.org
 COMMENT=	Ruby interface to Sleepycat's Berkeley DB revision 2 or later
 
-USE_BDB=	YES
+USE_BDB=	yes
+USE_BZIP2=	yes
 
 CONFLICTS=	${PKGNAMEPREFIX}${PORTNAME}[2-4]*
 
@@ -26,15 +29,12 @@ USE_RUBY_EXTCONF=	yes
 USE_RUBY_RDOC=		yes
 
 CONFIGURE_ARGS=	--with-db-include=${BDB_INCLUDE_DIR} \
-		--with-db-lib=${BDB_LIB_DIR} \
-		--with-db-version=${BDB_LIB_NAME:S/^db//}
+		--with-db-lib=${BDB_LIB_DIR}
 INSTALL_TARGET=	site-install
 
 DOCS=	Changes \
 	README.en \
-	bdb.html \
 	bdb.rd \
-	docs/*.html \
 	docs/*.rd
 
 .include <bsd.port.pre.mk>
