@@ -6,13 +6,16 @@
 #
 
 PORTNAME=	Catalyst-Action-REST
-PORTVERSION=	0.87
+PORTVERSION=	0.90
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Automated REST Method Dispatching for Catalyst
+
+LICENSE_COMB=	dual
+LICENSE=	ART20 GPLv1
 
 BUILD_DEPENDS=	p5-Catalyst-Runtime>=5.80:${PORTSDIR}/www/p5-Catalyst-Runtime \
 		p5-Params-Validate>=0.76:${PORTSDIR}/devel/p5-Params-Validate \
@@ -28,6 +31,7 @@ PERL_CONFIGURE=	yes
 CONFIGURE_ARGS=	--default
 
 MAN3=		Catalyst::Action::Deserialize.3 Catalyst::Action::REST.3 \
+		Catalyst::Action::REST::ForBrowsers.3 \
 		Catalyst::Action::Serialize.3 Catalyst::Action::SerializeBase.3 \
 		Catalyst::Controller::REST.3 Catalyst::Request::REST.3 \
 		Catalyst::TraitFor::Request::REST.3 \

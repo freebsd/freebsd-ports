@@ -5,6 +5,7 @@
 %%SITE_PERL%%/Catalyst/Action/Deserialize/XML/Simple.pm
 %%SITE_PERL%%/Catalyst/Action/Deserialize/YAML.pm
 %%SITE_PERL%%/Catalyst/Action/REST.pm
+%%SITE_PERL%%/Catalyst/Action/REST/ForBrowsers.pm
 %%SITE_PERL%%/Catalyst/Action/Serialize.pm
 %%SITE_PERL%%/Catalyst/Action/Serialize/Data/Serializer.pm
 %%SITE_PERL%%/Catalyst/Action/Serialize/JSON.pm
@@ -32,6 +33,7 @@
 @dirrmtry %%SITE_PERL%%/Catalyst/Action/Serialize/JSON
 @dirrmtry %%SITE_PERL%%/Catalyst/Action/Serialize/Data
 @dirrmtry %%SITE_PERL%%/Catalyst/Action/Serialize
+@dirrmtry %%SITE_PERL%%/Catalyst/Action/REST
 @dirrmtry %%SITE_PERL%%/Catalyst/Action/Deserialize/XML
 @dirrmtry %%SITE_PERL%%/Catalyst/Action/Deserialize/Data
 @dirrmtry %%SITE_PERL%%/Catalyst/Action/Deserialize
