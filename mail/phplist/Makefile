@@ -10,7 +10,7 @@ CATEGORIES=	mail www
 MASTER_SITES=	SF
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	nick@foobar.org
+MAINTAINER=	ports@bsdserwis.com
 COMMENT=	A full-featured open-source newsletter manager
 
 IGNORE_WITH_MYSQL=	323
