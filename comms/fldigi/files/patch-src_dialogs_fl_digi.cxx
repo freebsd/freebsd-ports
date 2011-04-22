@@ -1,6 +1,6 @@
---- src/dialogs/fl_digi.cxx.orig	2009-11-08 15:02:38.000000000 -0500
-+++ src/dialogs/fl_digi.cxx	2010-05-27 08:02:45.000000000 -0400
-@@ -25,6 +25,7 @@
+--- src/dialogs/fl_digi.cxx.orig	2011-04-05 10:48:40.000000000 -0400
++++ src/dialogs/fl_digi.cxx	2011-04-16 14:41:04.000000000 -0400
+@@ -26,6 +26,7 @@
  #include <config.h>
  
  #include <sys/types.h>
@@ -8,7 +8,7 @@
  
  #ifdef __WOE32__
  #  ifdef __CYGWIN__
-@@ -1349,7 +1350,7 @@
+@@ -1846,7 +1847,7 @@
  	Fl::repeat_timeout(st, ztimer);
  
  	struct tm tm;

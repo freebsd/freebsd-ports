@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	fldigi
-PORTVERSION=	3.12.5
+PORTVERSION=	3.21.8
 CATEGORIES=	comms hamradio
-MASTER_SITES=	http://www.w1hkj.com/fldigi-distro/ \
+MASTER_SITES=	http://www.w1hkj.com/downloads/fldigi/ \
 		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	db
 
@@ -22,10 +22,11 @@ LIB_DEPENDS=	hamlib:${PORTSDIR}/comms/hamlib \
 		pulse:${PORTSDIR}/audio/pulseaudio \
 		fltk.1:${PORTSDIR}/x11-toolkits/fltk
 
+GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	CPPFLAGS=-I${LOCALBASE}/portaudio2/include
 USE_DOS2UNIX=	yes
 USE_GMAKE=	yes
 USE_GETTEXT=	yes
-GNU_CONFIGURE=	yes
 
 MAN1=		fldigi.1 flarq.1
 
@@ -45,6 +46,9 @@ post-configure:
 	@${REINPLACE_CMD} -e 's|-pthread|${PTHREAD_LIBS}|' \
 		-e 's|^CPPFLAGS|#CPPFLAGS|' \
 		${WRKSRC}/src/Makefile
+
+do-build:
+	(cd ${WRKSRC}/src;gmake)
 
 post-install:
 .if	!defined(NOPORTDOCS)
