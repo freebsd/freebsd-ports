@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	lftp
-PORTVERSION=	4.2.0
+PORTVERSION=	4.2.2
 CATEGORIES=	ftp ipv6
 MASTER_SITES=	http://ftp.yars.free.net/pub/source/lftp/ \
 		http://ftp.yars.free.net/pub/source/lftp/old/ \
