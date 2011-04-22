@@ -1,5 +1,5 @@
---- pm_config.in.h.orig	Sat Jul 24 04:40:06 2004
-+++ pm_config.in.h	Tue Aug 17 16:53:30 2004
+--- pm_config.in.h.orig	2006-10-18 20:29:13.000000000 +0200
++++ pm_config.in.h	2010-05-21 10:37:50.000000000 +0200
 @@ -15,6 +15,10 @@
  
  **************************************************************************/
@@ -11,12 +11,12 @@
  #if defined(USG) || defined(SVR4) || defined(VMS) || defined(__SVR4)
  #define SYSV
  #endif
-@@ -99,9 +103,9 @@
+@@ -67,9 +71,9 @@
  #define RGB_DB2 "PBMplus_Dir:RGB.TXT"
  #define RGB_DB3 "PBMplus_Dir:RGB.TXT"
  #else
 -#define RGB_DB1 "/usr/lib/X11/rgb.txt"
--#define RGB_DB2 "/usr/openwin/lib/rgb.txt"
+-#define RGB_DB2 "/usr/share/X11/rgb.txt"
 -#define RGB_DB3 "/usr/X11R6/lib/X11/rgb.txt"
 +#define RGB_DB1 "%%PREFIX%%/share/netpbm/rgb.txt"
 +#define RGB_DB2 "%%LOCALBASE%%/share/netpbm/rgb.txt"

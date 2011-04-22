@@ -6,16 +6,12 @@
 #
 
 PORTNAME=	netpbm
-PORTVERSION=	${NETPBM_PORTVERSION}
-PORTREVISION=	4
+PORTVERSION=	10.35.80
+PORTREVISION=	2
 CATEGORIES=	graphics
-MASTER_SITES=	# defined later
+MASTER_SITES=	SF/netpbm/super_stable/${PORTVERSION}
 PKGNAMESUFFIX=	${NETPBM_SUFFIX}${PKGNAMESUFFIX2}
 EXTRACT_SUFX=	.tgz
-.if make(makesum) || defined(FETCH_ALL)
-DISTFILES=	${PORTNAME}-${STABLE_PORTVERSION}${EXTRACT_SUFX} \
-		${PORTNAME}-${DEVEL_PORTVERSION}${EXTRACT_SUFX}
-.endif
 
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	A toolkit for conversion of images between different formats
@@ -24,40 +20,21 @@ LIB_DEPENDS=	tiff.4:${PORTSDIR}/graphics/tiff \
 		jpeg.11:${PORTSDIR}/graphics/jpeg \
 		png.6:${PORTSDIR}/graphics/png \
 		jbig.1:${PORTSDIR}/graphics/jbigkit \
-		jasper.4:${PORTSDIR}/graphics/jasper
+		jasper.4:${PORTSDIR}/graphics/jasper \
+		xml2.5:${PORTSDIR}/textproc/libxml2
 
 MAKE_JOBS_UNSAFE=	yes
 
 USE_PERL5=	yes
 USE_GMAKE=	yes
-CFLAGS+=	-DPNG_DEPSTRUCT=
+USE_XORG=	x11
+CFLAGS+=	-DPNG_DEPSTRUCT= -Iutil
 MAKE_ENV=	LN="${LN}" RANLIB="${RANLIB}"
 MAKEFILE=	GNUmakefile
 INSTALL_TARGET=	install.bin install.lib install.data install-dev
 USE_LDCONFIG=	yes
 
 MAN1=		netpbm.1
-
-STABLE_PORTVERSION=	10.26.64
-DEVEL_PORTVERSION=	10.35.80
-.if defined(WITH_NETPBM_DEVEL)
-MASTER_SITES=	SF/netpbm/super_stable/${DEVEL_PORTVERSION}
-NETPBM_PORTVERSION=	${DEVEL_PORTVERSION}
-PORTREVISION=	1
-NETPBM_SUFFIX=	-devel
-#CONFLICTS+=	netpbm-10.26.*
-LIB_DEPENDS+=	xml2.5:${PORTSDIR}/textproc/libxml2
-PATCHDIR?=	${MASTERDIR}/../netpbm-devel/files
-USE_XORG=	x11
-CFLAGS+=	-Iutil
-PLIST_SUB+=	DEVEL=""
-.else
-MASTER_SITES=	SF/netpbm/super_stable/${PORTVERSION}
-NETPBM_PORTVERSION=	${STABLE_PORTVERSION}
-CONFLICTS+=	netpbm-devel-10.35.*
-PORTSCOUT=	limit:^10\.26\.
-PLIST_SUB+=	DEVEL="@comment "
-.endif
 
 pre-configure:
 	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' \
@@ -69,9 +46,7 @@ pre-configure:
 	@${CP} ${PATCHDIR}/Makefile.config.FreeBSD ${WRKSRC}/Makefile.config
 	@${LN} -sf ${WRKSRC}/lib/util/shhopt.h ${WRKSRC}/lib/util/pm_shhopt.h
 	@${LN} -sf ${WRKSRC}/lib/util/nstring.h ${WRKSRC}/lib/util/pm_nstring.h
-.if defined(WITH_NETPBM_DEVEL)
 	cd ${WRKSRC} && buildtools/stamp-date > ${WRKSRC}/lib/compile.h
-.endif
 
 post-install:
 	@${ECHO_MSG} "===>  Installing man pages..."

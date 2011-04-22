@@ -1,6 +1,6 @@
---- lib/libpm.c~	Sun Nov 21 03:55:27 2004
-+++ lib/libpm.c	Sat Mar 19 12:39:00 2005
-@@ -617,7 +617,7 @@
+--- lib/libpm.c.orig	2006-08-19 05:12:28.000000000 +0200
++++ lib/libpm.c	2010-05-21 10:37:10.000000000 +0200
+@@ -669,7 +669,7 @@
  pm_openr(const char * const name) {
      FILE* f;
  
@@ -9,7 +9,7 @@
          f = stdin;
      else {
  #ifndef VMS
-@@ -639,7 +639,7 @@
+@@ -691,7 +691,7 @@
  pm_openw(const char * const name) {
      FILE* f;
  
