@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gaupol
-PORTVERSION=	0.17.1
+PORTVERSION=	0.17.2
 CATEGORIES=	multimedia python
 MASTER_SITES=	http://download.gna.org/gaupol/0.17/ \
 		http://www.c-s.li/ports/
@@ -20,7 +20,6 @@ RUN_DEPENDS=	iso-codes>=0:${PORTSDIR}/misc/iso-codes \
 
 LICENSE=	GPLv3
 
-USE_BZIP2=	yes
 USE_GNOME=	pygtk2 desktopfileutils
 USE_PYTHON=	2.6+
 USE_PYDISTUTILS=yes
