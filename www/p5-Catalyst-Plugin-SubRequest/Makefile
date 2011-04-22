@@ -7,13 +7,16 @@
 #
 
 PORTNAME=	Catalyst-Plugin-SubRequest
-PORTVERSION=	0.16
+PORTVERSION=	0.17
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Make subrequests to actions in Catalyst
+
+LICENSE_COMB=	dual
+LICENSE=	ART20 GPLv1
 
 RUN_DEPENDS=	p5-Catalyst-Runtime>=5.80003:${PORTSDIR}/www/p5-Catalyst-Runtime
 BUILD_DEPENDS=	${RUN_DEPENDS}
