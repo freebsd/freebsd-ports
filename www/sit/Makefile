@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	sit
-PORTVERSION=	3.62
+PORTVERSION=	3.63p1
 CATEGORIES=	www
-MASTER_SITES=	SF/sitracker/stable/${PORTVERSION}/
+MASTER_SITES=	SF/sitracker/stable/3.63/
 DISTNAME=	sit_${PORTVERSION}
 
 MAINTAINER=	carsten@sitracker.org
@@ -20,7 +20,7 @@ USE_PHP=	pcre mysql session zlib mbstring
 WANT_PHP_WEB=	yes
 
 NO_BUILD=	yes
-WRKSRC=		${WRKDIR}/sit-${PORTVERSION}
+WRKSRC=		${WRKDIR}/sit-3.63
 
 SUB_FILES=	pkg-message
 
