@@ -547,6 +547,7 @@ share/icons/hicolor/scalable/apps/gaupol.svg
 %%NLS%%share/locale/pl/LC_MESSAGES/gaupol.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/gaupol.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/gaupol.mo
+%%NLS%%share/locale/tr/LC_MESSAGES/gaupol.mo
 @dirrmtry share/icons/hicolor/scalable/apps
 @dirrmtry share/icons/hicolor/scalable
 @dirrmtry share/icons/hicolor/32x32/apps
