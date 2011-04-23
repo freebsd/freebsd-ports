@@ -37,6 +37,11 @@ USE_LDCONFIG=	yes
 MAN1=		netpbm.1
 
 pre-configure:
+	@if [ -e ${DESTDIR}/${LOCALBASE}/include/pm.h ]; then \
+		(${ECHO_MSG} "===> Cannot build with netpbm installed, please deinstall first"; exit 1) \
+	fi
+	if test -d "${DESTDIR}/${LOCALBASE}/include/pm.h
+	end
 	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' \
 		 -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
 		 ${WRKSRC}/pm_config.in.h
