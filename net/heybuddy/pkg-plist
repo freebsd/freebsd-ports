@@ -1,0 +1,54 @@
+@comment $FreeBSD$
+bin/heybuddy
+%%DATADIR%%/assets/icon1.png
+%%DATADIR%%/assets/icon.png
+%%DATADIR%%/assets/throbber.gif
+%%DATADIR%%/assets/icon64.png
+%%DATADIR%%/assets/direct_icon.png
+%%DATADIR%%/assets/icon.svg
+%%DATADIR%%/assets/icon14.png
+%%DATADIR%%/ImageCache.pyc
+%%DATADIR%%/Configuration.py
+%%DATADIR%%/ImageCache.py
+%%DATADIR%%/DentScroller.py
+%%DATADIR%%/heybuddy.py
+%%DATADIR%%/heybuddy.pyc
+%%DATADIR%%/DentScroller.pyc
+%%DATADIR%%/Communicator.pyc
+%%DATADIR%%/PlatformSpecific.py
+%%DATADIR%%/Configuration.pyc
+%%DATADIR%%/ContextPage.py
+%%DATADIR%%/MainWindow.py
+%%DATADIR%%/XMLProcessor.pyc
+%%DATADIR%%/Notify.pyc
+%%DATADIR%%/Communicator.py
+%%DATADIR%%/ContextPage.pyc
+%%DATADIR%%/Dent.py
+%%DATADIR%%/StatusIcon.pyc
+%%DATADIR%%/About.pyc
+%%DATADIR%%/PlatformSpecific.pyc
+%%DATADIR%%/_dev/get_text
+%%DATADIR%%/_dev/heybuddy.pot
+%%DATADIR%%/UserPage.py
+%%DATADIR%%/ScrollPage.py
+%%DATADIR%%/SettingsPage.py
+%%DATADIR%%/GroupPage.pyc
+%%DATADIR%%/DentButton.py
+%%DATADIR%%/Notify.py
+%%DATADIR%%/FilterFrame.pyc
+%%DATADIR%%/ScrollPage.pyc
+%%DATADIR%%/GroupPage.py
+%%DATADIR%%/MainWindow.pyc
+%%DATADIR%%/SettingsPage.pyc
+%%DATADIR%%/DentButton.pyc
+%%DATADIR%%/StatusIcon.py
+%%DATADIR%%/FilterFrame.py
+%%DATADIR%%/UserPage.pyc
+%%DATADIR%%/Dent.pyc
+%%DATADIR%%/XMLProcessor.py
+%%DATADIR%%/About.py
+@dirrm %%DATADIR%%/_dev
+@dirrm %%DATADIR%%/assets
+@dirrm %%DATADIR%%/locales
+@dirrm %%DATADIR%%
+@exec mkdir -p %D%/%%DATADIR%%/locales
