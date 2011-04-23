@@ -93,6 +93,34 @@
 %%SITE_PERL%%/Mojolicious/Sessions.pm
 %%SITE_PERL%%/Mojolicious/Static.pm
 %%SITE_PERL%%/Mojolicious/Types.pm
+%%SITE_PERL%%/Mojolicious/public/css/prettify-mojo.css
+%%SITE_PERL%%/Mojolicious/public/css/prettify.css
+%%SITE_PERL%%/Mojolicious/public/js/jquery.js
+%%SITE_PERL%%/Mojolicious/public/js/lang-wiki.js
+%%SITE_PERL%%/Mojolicious/public/js/lang-css.js
+%%SITE_PERL%%/Mojolicious/public/js/lang-lisp.js
+%%SITE_PERL%%/Mojolicious/public/js/lang-sql.js
+%%SITE_PERL%%/Mojolicious/public/js/lang-scala.js
+%%SITE_PERL%%/Mojolicious/public/js/lang-yaml.js
+%%SITE_PERL%%/Mojolicious/public/js/lang-vhdl.js
+%%SITE_PERL%%/Mojolicious/public/js/lang-apollo.js
+%%SITE_PERL%%/Mojolicious/public/js/lang-vb.js
+%%SITE_PERL%%/Mojolicious/public/js/lang-hs.js
+%%SITE_PERL%%/Mojolicious/public/js/lang-proto.js
+%%SITE_PERL%%/Mojolicious/public/js/lang-ml.js
+%%SITE_PERL%%/Mojolicious/public/js/prettify.js
+%%SITE_PERL%%/Mojolicious/public/js/lang-lua.js
+%%SITE_PERL%%/Mojolicious/public/failraptor.png
+%%SITE_PERL%%/Mojolicious/public/mojolicious-box.png
+%%SITE_PERL%%/Mojolicious/public/mojolicious-noraptor.png
+%%SITE_PERL%%/Mojolicious/public/mojolicious-white.png
+%%SITE_PERL%%/Mojolicious/public/mojolicious-clouds.png
+%%SITE_PERL%%/Mojolicious/public/mojolicious-black.png
+%%SITE_PERL%%/Mojolicious/public/mojolicious-arrow.png
+%%SITE_PERL%%/Mojolicious/public/amelia.png
+%%SITE_PERL%%/Mojolicious/public/favicon.ico
+%%SITE_PERL%%/Mojolicious/public/mojolicious-pinstripe.gif
+%%SITE_PERL%%/Mojolicious/public/mojolicious-notfound.png
 %%SITE_PERL%%/README.pod
 %%SITE_PERL%%/Test/Mojo.pm
 %%SITE_PERL%%/ojo.pm
@@ -104,6 +132,9 @@ bin/mojo
 @dirrmtry %%SITE_PERL%%/Mojolicious/Guides
 @dirrmtry %%SITE_PERL%%/Mojolicious/Command/Generate
 @dirrmtry %%SITE_PERL%%/Mojolicious/Command
+@dirrmtry %%SITE_PERL%%/Mojolicious/public/js
+@dirrmtry %%SITE_PERL%%/Mojolicious/public/css
+@dirrmtry %%SITE_PERL%%/Mojolicious/public
 @dirrmtry %%SITE_PERL%%/Mojolicious
 @dirrmtry %%SITE_PERL%%/MojoX/Session/Cookie
 @dirrmtry %%SITE_PERL%%/MojoX/Session
