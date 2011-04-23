@@ -7,6 +7,7 @@
 
 PORTNAME=	ksysguardd
 PORTVERSION=	${KDE4_VERSION}
+PORTREVISION=	1
 CATEGORIES=	sysutils kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	${KDE4_BRANCH}/${PORTVERSION}/src/
@@ -36,9 +37,5 @@ PLIST_FILES=	bin/${PORTNAME} \
 pre-build:
 	${REINPLACE_CMD} -e 's/<config-workspace.h>/"config-${PORTNAME}.h"/' \
 		${WRKSRC}/${PORTNAME}.c
-
-post-install:
-	${CHGRP} kmem ${PREFIX}/bin/${PORTNAME} && \
-		${CHMOD} g+s ${PREFIX}/bin/${PORTNAME}
 
 .include <bsd.port.mk>
