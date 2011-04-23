@@ -4,7 +4,9 @@ bin/memcp
 bin/memdump
 bin/memerror
 bin/memflush
+bin/memparse
 bin/memrm
+bin/memslap
 bin/memstat
 include/libhashkit/algorithm.h
 include/libhashkit/behavior.h
@@ -13,10 +15,12 @@ include/libhashkit/digest.h
 include/libhashkit/function.h
 include/libhashkit/hashkit.h
 include/libhashkit/strerror.h
+include/libhashkit/str_algorithm.h
 include/libhashkit/types.h
 include/libhashkit/visibility.h
 include/libmemcached/allocators.h
 include/libmemcached/analyze.h
+include/libmemcached/array.h
 include/libmemcached/auto.h
 include/libmemcached/behavior.h
 include/libmemcached/callback.h
@@ -24,6 +28,7 @@ include/libmemcached/configure.h
 include/libmemcached/constants.h
 include/libmemcached/delete.h
 include/libmemcached/dump.h
+include/libmemcached/error.h
 include/libmemcached/exception.hpp
 include/libmemcached/fetch.h
 include/libmemcached/flush.h
@@ -34,7 +39,10 @@ include/libmemcached/memcached.h
 include/libmemcached/memcached.hpp
 include/libmemcached/memcached_util.h
 include/libmemcached/memcached/protocol_binary.h
+include/libmemcached/memcached/vbucket.h
+include/libmemcached/options.h
 include/libmemcached/parse.h
+include/libmemcached/prefix_key.h
 include/libmemcached/platform.h
 include/libmemcached/protocol_handler.h
 include/libmemcached/protocol/cache.h
@@ -59,16 +67,16 @@ include/libmemcached/visibility.h
 include/libmemcached/watchpoint.h
 lib/libhashkit.la
 lib/libhashkit.so
-lib/libhashkit.so.0
+lib/libhashkit.so.1
 lib/libmemcached.la
 lib/libmemcached.so
-lib/libmemcached.so.6
+lib/libmemcached.so.7
 lib/libmemcachedprotocol.la
 lib/libmemcachedprotocol.so
 lib/libmemcachedprotocol.so.0
 lib/libmemcachedutil.la
 lib/libmemcachedutil.so
-lib/libmemcachedutil.so.1
+lib/libmemcachedutil.so.2
 libdata/pkgconfig/libmemcached.pc
 @dirrm include/libmemcached/util
 @dirrm include/libmemcached/protocol

@@ -6,14 +6,15 @@
 #
 
 PORTNAME=	libmemcached
-PORTVERSION=	0.48
+PORTVERSION=	0.49
 PORTREVISION=	0
 CATEGORIES=	databases
-MASTER_SITES=	http://download.tangent.org/
+MASTER_SITES=	http://launchpad.net/${PORTNAME}/1.0/${PORTVERSION}/+download/
 
 MAINTAINER=	vanilla@FreeBSD.org
 COMMENT=	A C and C++ client library to the memcached server
 
+FETCH_ARGS?= 	-pRr
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
@@ -34,7 +35,8 @@ post-patch:
 
 .if !defined(NO_INSTALL_MANPAGES)
 USE_PERL5_BUILD=yes # pod2man
-MAN1=		memcapable.1 \
+MAN1=		memaslap.1 \
+		memcapable.1 \
 		memcat.1 \
 		memcp.1 \
 		memdump.1 \
@@ -58,9 +60,13 @@ MAN3=		hashkit_clone.3 \
 		hashkit_md5.3 \
 		hashkit_murmur.3 \
 		hashkit_value.3 \
+		libhashkit.3 \
 		libmemcached.3 \
 		libmemcachedutil.3 \
+		libmemcached_check_configuration.3 \
+		libmemcached_configuration.3 \
 		libmemcached_examples.3 \
+		memcached.3 \
 		memcached_add.3 \
 		memcached_add_by_key.3 \
 		memcached_analyze.3 \
@@ -78,14 +84,17 @@ MAN3=		hashkit_clone.3 \
 		memcached_decrement_with_initial.3 \
 		memcached_delete.3 \
 		memcached_delete_by_key.3 \
+		memcached_destroy_sasl_auth_data.3 \
 		memcached_dump.3 \
 		memcached_fetch.3 \
 		memcached_flush_buffers.3 \
 		memcached_fetch_execute.3 \
 		memcached_fetch_result.3 \
 		memcached_free.3 \
+		memcached_generate_hash.3 \
 		memcached_generate_hash_value.3 \
 		memcached_get.3 \
+		memcached_get_sasl_callbacks.3 \
 		memcached_get_by_key.3 \
 		memcached_get_memory_allocators.3 \
 		memcached_get_user_data.3 \
@@ -102,11 +111,13 @@ MAN3=		hashkit_clone.3 \
 		memcached_pool_destroy.3 \
 		memcached_pool_pop.3 \
 		memcached_pool_push.3 \
+		memcached_pool_st.3 \
 		memcached_prepend.3 \
 		memcached_prepend_by_key.3 \
 		memcached_quit.3 \
 		memcached_replace.3 \
 		memcached_replace_by_key.3 \
+		memcached_sasl_set_auth_data.3 \
 		memcached_server_add.3 \
 		memcached_server_count.3 \
 		memcached_server_cursor.3 \
@@ -117,6 +128,7 @@ MAN3=		hashkit_clone.3 \
 		memcached_server_push.3 \
 		memcached_servers_parse.3 \
 		memcached_set.3 \
+		memcached_set_sasl_callbacks.3 \
 		memcached_set_by_key.3 \
 		memcached_set_memory_allocators.3 \
 		memcached_set_user_data.3 \
