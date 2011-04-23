@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mkvtoolnix
-PORTVERSION=	4.6.0
+PORTVERSION=	4.7.0
 CATEGORIES=	multimedia audio
 MASTER_SITES=	http://www.bunkus.org/videotools/mkvtoolnix/sources/ \
 		CRITICAL
