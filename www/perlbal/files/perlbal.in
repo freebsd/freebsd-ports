@@ -5,6 +5,7 @@
 
 # PROVIDE: perlbal
 # REQUIRE: DAEMON
+# KEYWORK: shutdown
 
 . /etc/rc.subr
 
@@ -13,7 +14,8 @@ command="%%PREFIX%%/bin/perlbal"
 
 load_rc_config "$name"
 : ${perlbal_enable="NO"}
-: ${perlbal_flags="-f /usr/local/etc/perlbal.conf &"}
+: ${perlbal_configuration="%%PREFIX%%/etc/perlbal/perlbal.conf"}
+: ${perlbal_flags="--config $perlbal_configuration --daemon"}
 
 run_rc_command "$1"
 
