@@ -7,18 +7,20 @@
 
 PORTNAME=	Perlbal
 PORTVERSION=	1.78
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	CPAN
-MASTER_SITE_SUBDIR=../../authors/id/D/DO/DORMANDO
+MASTER_SITE_SUBDIR=	CPAN:DORMANDO
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Reverse-proxy load balancer and webserver
 
-RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/BSD/Resource.pm:${PORTSDIR}/devel/p5-BSD-Resource \
-		${SITE_PERL}/Danga/Socket.pm:${PORTSDIR}/devel/p5-Danga-Socket \
-		${SITE_PERL}/LWP.pm:${PORTSDIR}/www/p5-libwww \
-		${SITE_PERL}/Net/Netmask.pm:${PORTSDIR}/net-mgmt/p5-Net-Netmask
+RUN_DEPENDS=	p5-BSD-Resource>=0:${PORTSDIR}/devel/p5-BSD-Resource \
+		p5-Danga-Socket>=1.44:${PORTSDIR}/devel/p5-Danga-Socket \
+		p5-libwww>=0:${PORTSDIR}/www/p5-libwww \
+		p5-Net-Netmask>=0:${PORTSDIR}/net-mgmt/p5-Net-Netmask \
+		p5-IO-AIO>=0:${PORTSDIR}/devel/p5-IO-AIO
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
@@ -52,6 +54,15 @@ MAN3=		Perlbal.3 \
 		Perlbal::Manual::Roles.3 \
 		Perlbal::Manual::Selector.3 \
 		Perlbal::Manual::WebServer.3
+
+post-patch:
+	@${REINPLACE_CMD} 's,/etc/perlbal,${PREFIX}/etc/perlbal,g' \
+		${WRKSRC}/lib/Perlbal/Manual/Configuration.pod \
+		${WRKSRC}/lib/Perlbal/Plugin/Include.pm \
+		${WRKSRC}/perlbal
+
+	@${RM} ${WRKSRC}/lib/Perlbal/Manual/Configuration.pod.bak \
+		${WRKSRC}/lib/Perlbal/Plugin/Include.pm.bak \
 
 .ifndef NOPORTDOCS
 post-install:
