@@ -10125,7 +10125,6 @@ netoffice                       ports/www/netoffice
 netpanzer                       ports/games/netpanzer
 netpanzer-data                  ports/games/netpanzer-data
 netpbm                          ports/graphics/netpbm
-netpbm-devel                    ports/graphics/netpbm-devel
 netperf                         ports/benchmarks/netperf
 netperfmeter                    ports/benchmarks/netperfmeter
 netpgp                          ports/security/netpgp
@@ -11128,6 +11127,7 @@ p5-Bigtop                       ports/www/p5-Bigtop
 p5-Bio-ASN1-EntrezGene          ports/biology/p5-Bio-ASN1-EntrezGene
 p5-Bio-Das                      ports/biology/p5-Bio-Das
 p5-Bio-Das-Lite                 ports/biology/p5-Bio-Das-Lite
+p5-Bio-GFF3                     ports/biology/p5-Bio-GFF3
 p5-Bio-Glite                    ports/biology/p5-Bio-Glite
 p5-Bio-Graphics                 ports/biology/p5-Bio-Graphics
 p5-Bio-MAGETAB                  ports/biology/p5-Bio-MAGETAB
@@ -15308,6 +15308,7 @@ p5-bind-config-parser           ports/dns/p5-BIND-Config-Parser
 p5-bio-asn1-entrezgene          ports/biology/p5-Bio-ASN1-EntrezGene
 p5-bio-das                      ports/biology/p5-Bio-Das
 p5-bio-das-lite                 ports/biology/p5-Bio-Das-Lite
+p5-bio-gff3                     ports/biology/p5-Bio-GFF3
 p5-bio-glite                    ports/biology/p5-Bio-Glite
 p5-bio-graphics                 ports/biology/p5-Bio-Graphics
 p5-bio-magetab                  ports/biology/p5-Bio-MAGETAB
@@ -21466,6 +21467,7 @@ py-feedfinder                   ports/www/py-feedfinder
 py-feedparser                   ports/textproc/py-feedparser
 py-filelike                     ports/sysutils/py-filelike
 py-fileutils                    ports/devel/py-fileutils
+py-firebirdsql                  ports/databases/py-firebirdsql
 py-flakes                       ports/devel/py-flakes
 py-flask                        ports/www/py-flask
 py-flask-babel                  ports/devel/py-flask-babel
