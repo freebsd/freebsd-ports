@@ -14,7 +14,12 @@ MASTER_SITE_SUBDIR=	xboard
 MAINTAINER=	johans@FreeBSD.org
 COMMENT=	X frontend for Crafty, GNUChess, Chess Servers, or e-mail chess
 
-OPTIONS=	XAW3D	"Use Xaw3d widgets (instead of Xaw)"	On
+OPTIONS=	XAW3D		"Use Xaw3d widgets (instead of Xaw)"	On \
+		CRAFTY		"Install crafty engine"			Off \
+		FAIRYMAX	"Install fairymax engine"		Off \
+		GNUCHESS	"Install GnuChess engine"		Off \
+		KNIGHTCAP	"Install KnightCap engine"		Off \
+		PHALANX		"Install phalanx engine"		Off
 
 USE_XORG=	xt xpm xaw
 GNU_CONFIGURE=	yes
@@ -30,6 +35,26 @@ INSTALLS_ICONS=	yes
 .ifdef	WITH_XAW3D
 CONFIGURE_ARGS+=	"--with-Xaw3d"
 LIB_DEPENDS+=	Xaw3d.${XAWVER}:${PORTSDIR}/x11-toolkits/Xaw3d
+.endif
+
+.ifdef WITH_CRAFTY
+RUN_DEPENDS+=	crafty:${PORTSDIR}/games/crafty
+.endif
+
+.ifdef WITH_FAIRYMAX
+RUN_DEPENDS+=	fairymax:${PORTSDIR}/games/fairymax
+.endif
+
+.ifdef WITH_GNUCHESS
+RUN_DEPENDS+=	gnuchess:${PORTSDIR}/games/gnuchess
+.endif
+
+.ifdef WITH_KNIGHTCAP
+RUN_DEPENDS+=	KnightCap:${PORTSDIR}/games/KnightCap
+.endif
+
+.ifdef WITH_PHALANX
+RUN_DEPENDS+=	phalanx:${PORTSDIR}/games/phalanx
 .endif
 
 .include <bsd.port.pre.mk>
