@@ -112,8 +112,7 @@ EXTRA_PATCHES=	${FILESDIR}/cons25-alpine_keymenu.c
 .endif
 
 .if defined(WITH_QUOTA) || defined(WITH_MAILDIR)
-PATCH_SITES=	http://staff.washington.edu/chappa/alpine/patches/alpine-${PORTVERSION}/ \
-		http://dougbarton.us/Downloads/alpine-${PORTVERSION}/ \
+PATCH_SITES=	http://dougbarton.us/Downloads/alpine-${PORTVERSION}/ \
 		${MASTER_SITE_LOCAL}
 PATCH_SITE_SUBDIR=	dougb/alpine-${PORTVERSION}/
 PATCH_DIST_ARGS+=	-E --quiet -d ${PATCH_WRKSRC} -p1
