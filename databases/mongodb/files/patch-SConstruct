@@ -1,0 +1,14 @@
+--- SConstruct.orig	2011-04-06 06:40:13.000000000 +0200
++++ SConstruct	2011-04-09 10:59:56.000000000 +0200
+@@ -679,7 +679,10 @@
+ 
+     #make scons colorgcc friendly
+     env['ENV']['HOME'] = os.environ['HOME']
+-    env['ENV']['TERM'] = os.environ['TERM']
++    try:
++        env['ENV']['TERM'] = os.environ['TERM']
++    except KeyError:
++        env['ENV']['TERM'] = 'dumb'
+ 
+     if linux and has_option( "sharedclient" ):
+         env.Append( LINKFLAGS=" -Wl,--as-needed -Wl,-zdefs " )

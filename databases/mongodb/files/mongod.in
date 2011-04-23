@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # PROVIDE: mongod
-# REQUIRE: NETWORK
+# REQUIRE: NETWORK ldconfig
 # KEYWORD: shutdown
 #
 # Add the following lines to /etc/rc.conf.local or /etc/rc.conf
