@@ -6,43 +6,42 @@
 #
 
 PORTNAME=	castor
-PORTVERSION=	1.3.1
+PORTVERSION=	1.3.2
 CATEGORIES=	java devel
 MASTER_SITES=	http://dist.codehaus.org/castor/${PORTVERSION}/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	utisoft@gmail.com
 COMMENT=	Data binding for XML (JAXB) and SQL database (JDO)
+
 LICENSE=	ASL
 
 USE_JAVA=	yes
 JAVA_VERSION=	1.4+
 NO_BUILD=	yes
 
-JARSUFXS=	-anttasks.jar \
-			-codegen.jar \
-			-core.jar \
-			-ddlgen.jar \
-			-jdo.jar \
-			-xml-schema.jar \
-			-xml.jar \
-			.jar
-
 PLIST_FILES=	%%JAVAJARDIR%%/${PORTNAME}-anttasks.jar \
-				%%JAVAJARDIR%%/${PORTNAME}-codegen.jar \
-				%%JAVAJARDIR%%/${PORTNAME}-core.jar \
-				%%JAVAJARDIR%%/${PORTNAME}-ddlgen.jar \
-				%%JAVAJARDIR%%/${PORTNAME}-jdo.jar \
-				%%JAVAJARDIR%%/${PORTNAME}-xml-schema.jar \
-				%%JAVAJARDIR%%/${PORTNAME}-xml.jar \
-				%%JAVAJARDIR%%/${PORTNAME}.jar
+		%%JAVAJARDIR%%/${PORTNAME}-codegen.jar \
+		%%JAVAJARDIR%%/${PORTNAME}-core.jar \
+		%%JAVAJARDIR%%/${PORTNAME}-ddlgen.jar \
+		%%JAVAJARDIR%%/${PORTNAME}-xml-schema.jar \
+		%%JAVAJARDIR%%/${PORTNAME}-xml.jar \
+		%%JAVAJARDIR%%/${PORTNAME}.jar
+
+PORTDOCS=	*.html *.txt *.css *.dtd *.xsd *.pdf \
+		ora-mar-2k images rss
 
 do-install:
-.for f in ${JARSUFXS}
-	@${ECHO_MSG} -n ">> Installing JAR as ${JAVAJARDIR}/${PORTNAME}${f}..."
-	@${INSTALL_DATA} ${WRKSRC}/${PORTNAME}-${PORTVERSION}${f} \
-		${JAVAJARDIR}/${PORTNAME}${f}
+.for f in ${PLIST_FILES:T:R}
+	@${ECHO_MSG} -n ">> Installing JAR as ${JAVAJARDIR}/${f}.jar..."
+	@${INSTALL_DATA} \
+		${WRKSRC}/${f:S/tor/tor-${PORTVERSION}/}.jar \
+		${JAVAJARDIR}/${f}.jar
 	@${ECHO_MSG} " [ DONE ]"
 .endfor
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+	@(cd ${WRKSRC}/doc/ && ${COPYTREE_SHARE} \* ${DOCSDIR})
+.endif
 
 .include <bsd.port.mk>
