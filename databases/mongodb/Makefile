@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	mongodb
-PORTVERSION=	1.6.5
-PORTREVISION=	1
+PORTVERSION=	1.8.1
 CATEGORIES=	databases net
 MASTER_SITES=	http://downloads.mongodb.org/src/ \
-		http://derzinn.de/files/
+		http://files.derzinn.de/
 DISTNAME=	${PORTNAME}-src-r${PORTVERSION}
 
 MAINTAINER=	mail@derzinn.de
@@ -31,13 +30,12 @@ USE_SCONS=	yes
 SCONS_TARGET=	all
 SCONS_ARGS=	--prefix=${PREFIX}
 
+USERS=	mongodb
+GROUPS=	mongodb
+
 USE_RC_SUBR=	mongod
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 700042
-BROKEN=		Does not build
-.endif
 
 .if defined(WITH_DEVEL)
 SCONS_ARGS+=	--full
@@ -55,7 +53,5 @@ post-install:
 	@if [ ! -f ${PREFIX}/etc/mongodb.conf ]; then \
 		${TOUCH} ${PREFIX}/etc/mongodb.conf ; \
 	fi
-
-	PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 
 .include <bsd.port.post.mk>
