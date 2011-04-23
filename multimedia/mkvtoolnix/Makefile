@@ -7,6 +7,7 @@
 
 PORTNAME=	mkvtoolnix
 PORTVERSION=	4.7.0
+PORTREVISION=	1
 CATEGORIES=	multimedia audio
 MASTER_SITES=	http://www.bunkus.org/videotools/mkvtoolnix/sources/ \
 		CRITICAL
@@ -15,10 +16,8 @@ MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Tools to extract from/get info about/create Matroska media streams
 
 LIB_DEPENDS=	FLAC.10:${PORTSDIR}/audio/flac \
-		ebml.3:${PORTSDIR}/textproc/libebml \
 		expat.6:${PORTSDIR}/textproc/expat2 \
 		lzo2.2:${PORTSDIR}/archivers/lzo2 \
-		matroska.3:${PORTSDIR}/multimedia/libmatroska \
 		vorbis.4:${PORTSDIR}/audio/libvorbis \
 		ogg.7:${PORTSDIR}/audio/libogg \
 		boost_regex.4:${PORTSDIR}/devel/boost-libs \
@@ -35,7 +34,8 @@ USE_RAKE=	yes
 USE_RUBY=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}" \
+CONFIGURE_ENV+=	CFLAGS="${CFLAGS}" CXXFLAGS="${CXXFLAGS}" \
+		CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}" \
 		ac_cv_path_PO4A=no
 CONFIGURE_ARGS=	--enable-lzo --enable-bz2 --disable-qt \
 		--with-boost=${LOCALBASE} \
@@ -44,7 +44,7 @@ CONFIGURE_ARGS=	--enable-lzo --enable-bz2 --disable-qt \
 		--with-boost-regex=boost_regex
 MAKE_JOBS_SAFE=	yes
 
-MANLANG=	"" ja zh_CN
+MANLANG=	"" ja zh_CN nl
 MAN1=		mkvextract.1 mkvinfo.1 mkvmerge.1 mkvpropedit.1
 
 OPTIONS=	WXGTK "build wxGTK2 based GUI" on
@@ -70,13 +70,10 @@ CONFIGURE_ARGS+=--disable-gui
 PLIST_SUB+=	GUI="@comment "
 .endif
 
-post-patch:
-	@${REINPLACE_CMD} -e 's|"-O3"|""|g' ${WRKSRC}/configure
-
 do-build:
-	@(cd ${WRKSRC}/; ${SETENV} ${MAKE_ENV} ${RAKE_BIN})
+	@(cd ${WRKSRC}/; unset PREFIX; ${RAKE_BIN})
 
 do-install:
-	@(cd ${WRKSRC}/; ${SETENV} ${MAKE_ENV} ${RAKE_BIN} install)
+	@(cd ${WRKSRC}/; unset PREFIX;  ${RAKE_BIN} install)
 
 .include <bsd.port.post.mk>
