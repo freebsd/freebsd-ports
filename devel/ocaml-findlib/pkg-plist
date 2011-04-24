@@ -18,6 +18,8 @@ lib/ocaml/site-lib/findlib/fl_metascanner.mli
 lib/ocaml/site-lib/findlib/fl_metatoken.cmi
 lib/ocaml/site-lib/findlib/fl_package_base.cmi
 lib/ocaml/site-lib/findlib/fl_package_base.mli
+%%TK%%lib/ocaml/site-lib/findlib/make_wizard
+%%TK%%lib/ocaml/site-lib/findlib/make_wizard.pattern
 lib/ocaml/site-lib/findlib/topfind.cmi
 lib/ocaml/site-lib/findlib/topfind.mli
 lib/ocaml/site-lib/graphics/META

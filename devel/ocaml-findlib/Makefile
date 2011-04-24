@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	findlib
-PORTVERSION=	1.2.6
-PORTREVISION=	2
+PORTVERSION=	1.2.7
 CATEGORIES=	devel
 MASTER_SITES=	http://download.camlcity.org/download/
 PKGNAMEPREFIX=	ocaml-
@@ -47,14 +46,17 @@ post-patch:
 		-e 's,path="@SITELIB@,&:${PREFIX}/lib/ocaml,' \
 		${WRKSRC}/findlib.conf.in
 
+.include <bsd.port.pre.mk>
+
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	@(cd ${WRKSRC}/doc && ${COPYTREE_SHARE} \* ${DOCSDIR} \
 	"! -regex .*ref-man.*")
 .endif
-
-.include <bsd.port.pre.mk>
+.if !defined(WITHOUT_TK)
+	@${CHMOD} +x ${PREFIX}/lib/ocaml/site-lib/findlib/make_wizard
+.endif
 
 .if !exists(${LOCALBASE}/lib/ocaml/labltk)
 WITHOUT_TK=	yes
@@ -63,6 +65,7 @@ WITHOUT_TK=	yes
 .if defined(WITHOUT_TK)
 PLIST_SUB+=	TK="@comment "
 .else
+CONFIGURE_ARGS+=-with-toolbox
 PLIST_SUB+=	TK=""
 .endif
 
