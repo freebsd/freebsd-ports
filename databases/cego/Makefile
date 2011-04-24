@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	cego
-PORTVERSION=	2.6.18
+PORTVERSION=	2.8.3
 CATEGORIES=	databases
 MASTER_SITES=	http://www.lemke-it.com/
 
@@ -21,5 +21,16 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	autoconf:env
+USE_RC_SUBR=	cego
+
+USE_NCURSES=	yes
+
+USERS=	cego
+GROUPS=	cego
+
+PLIST_SUB+=	USER=${USERS}
+
+post-patch:
+	@${REINPLACE_CMD} -e 's,-O3,,g' ${WRKSRC}/src/Makefile.in
 
 .include <bsd.port.mk>

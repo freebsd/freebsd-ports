@@ -3,6 +3,7 @@ bin/cgadm
 bin/cgblow
 bin/cgclt
 bin/cglog
+include/cego/CegoAdmNet.h
 include/cego/CegoBlob.h
 include/cego/CegoCheckObject.h
 include/cego/CegoContentObject.h

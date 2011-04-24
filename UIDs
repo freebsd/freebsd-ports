@@ -201,3 +201,4 @@ get_iplayer:*:937:937::0:0:get_iplayer user:/nonexistent:/sbin/nologin
 vdr:*:938:938::0:0:vdr user:/nonexistent:/usr/sbin/nologin
 noip:*:939:939::0:0:noip user:/nonexistent:/usr/sbin/nologin
 _tcpproxy:*:940:940::0:0:tcpproxy user:/nonexistent:/usr/sbin/nologin
+cego:*:941:941::0:0:cego user:/usr/local/cego:/usr/sbin/nologin
