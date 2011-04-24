@@ -181,6 +181,7 @@
     SUBDIR += linux-realplayer
     SUBDIR += linux-tsmuxer
     SUBDIR += linux-xmovie
+    SUBDIR += linux_dvbwrapper-kmod
     SUBDIR += lives
     SUBDIR += lsdvd
     SUBDIR += lxdvdrip
