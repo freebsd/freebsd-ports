@@ -32,7 +32,9 @@ OPTIONS=	EMBEDDED	"Enable Embedded Resources"	on
 
 .ifdef WITHOUT_EMBEDDED
 CONFIGURE_ARGS+=	--enable-embedded-resources
-LIB_DEPENDS+=	libzip.0:${PORTSDIR}/archivers/libzip
+BUILD_DEPENDS+=		zip:${PORTSDIR}/archivers/zip
+LIB_DEPENDS+=		zip.3:${PORTSDIR}/archivers/libzip
+RUN_DEPENDS+=		zip:${PORTSDIR}/archivers/zip
 .else
 CONFIGURE_ARGS+=	--disable-embedded-resources
 .endif
