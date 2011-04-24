@@ -1536,7 +1536,7 @@ PERL=		${LOCALBASE}/bin/perl
 .include "${PORTSDIR}/Mk/bsd.tcl.mk"
 .endif
 
-.if defined(USE_APACHE)
+.if defined(USE_APACHE) || defined(USE_APACHE_BUILD) || defined(USE_APACHE_RUN)
 .include "${PORTSDIR}/Mk/bsd.apache.mk"
 .endif
 
@@ -2135,7 +2135,7 @@ PLIST_SUB+=		PERL_VERSION=${PERL_VERSION} \
 .include "${PORTSDIR}/Mk/bsd.wx.mk"
 .endif
 
-.if defined(USE_APACHE) || defined(APACHE_COMPAT)
+.if defined(USE_APACHE) || defined(USE_APACHE_BUILD) || defined(USE_APACHE_RUN)
 .include "${PORTSDIR}/Mk/bsd.apache.mk"
 .endif
 
