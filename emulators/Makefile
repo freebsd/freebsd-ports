@@ -32,6 +32,7 @@
     SUBDIR += dynagen
     SUBDIR += dynagui
     SUBDIR += dynamips
+    SUBDIR += dynamips-community
     SUBDIR += dynamips-devel
     SUBDIR += e-uae
     SUBDIR += extract-xiso
