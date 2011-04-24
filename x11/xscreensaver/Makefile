@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	xscreensaver
-PORTVERSION=	5.12
-PORTREVISION=	1
+PORTVERSION=	5.13
 CATEGORIES?=	x11
 MASTER_SITES=	http://www.jwz.org/xscreensaver/ \
 		http://dougbarton.us/Downloads/
@@ -88,8 +87,6 @@ RUN_DEPENDS+=	xsnow:${PORTSDIR}/x11/xsnow
 
 .undef HAVE_GNOME
 
-CONFIGURE_ENV=	X_CFLAGS=-I${LOCALBASE}/include/gnome-xml
-
 MAN1=	xscreensaver-command.1 xscreensaver-demo.1 \
 	xscreensaver-getimage-file.1 xscreensaver-getimage-video.1 \
 	xscreensaver-getimage.1 xscreensaver-text.1 xscreensaver.1
@@ -141,9 +138,6 @@ post-patch:
 		-e 's#malloc.h#stdlib.h#g' \
 		-e 's#/usr/X11R6#${LOCALBASE}#g' \
 		${WRKSRC}/configure.Patched > ${WRKSRC}/configure
-	@ ${CP} ${WRKSRC}/hacks/glx/tube.c ${WRKSRC}/hacks/glx/tube.c.Patched
-	@ ${SED} -e '183s#.*#  free(array);#' \
-		${WRKSRC}/hacks/glx/tube.c.Patched > ${WRKSRC}/hacks/glx/tube.c
 .if defined(WITH_PAM)
 .for f in driver/passwd-pam.c driver/xscreensaver.man
 	@ ${CP} ${WRKSRC}/${f} ${WRKSRC}/${f}.presed
