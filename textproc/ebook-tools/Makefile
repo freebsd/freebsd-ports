@@ -7,13 +7,14 @@
 
 PORTNAME=	ebook-tools
 PORTVERSION=	0.2.1
+PORTREVISION=	1
 CATEGORIES=	textproc kde
 MASTER_SITES=	SF
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Accessing and converting various ebook file formats
 
-LIB_DEPENDS=	zip.1:${PORTSDIR}/archivers/libzip
+LIB_DEPENDS=	zip.3:${PORTSDIR}/archivers/libzip
 
 USE_CMAKE=	yes
 USE_LDCONFIG=	yes
