@@ -3,7 +3,9 @@
 %%PHPMP%%/INSTALL
 %%PHPMP%%/README
 %%PHPMP%%/TODO
-%%PHPMP%%/config.php
+@unexec if cmp -s %D/%%PHPMP%%/config.php.sample %D/%%PHPMP%%/config.php; then rm -f %D/%%PHPMP%%/config.php; fi
+%%PHPMP%%/config.php.sample
+@exec if [ ! -f %D/%%PHPMP%%/config.php ] ; then cp -p %D/%F %B/config.php; fi
 %%PHPMP%%/find.php
 %%PHPMP%%/find_body.php
 %%PHPMP%%/index.php
