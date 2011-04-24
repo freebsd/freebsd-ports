@@ -222,6 +222,16 @@ share/games/atanks/text/ingame_ru.txt
 share/games/atanks/text/revenge_sk.txt
 share/games/atanks/text/gloat_de.txt
 share/games/atanks/text/revenge_ru.txt
+share/games/atanks/text/gloat_it.txt
+share/games/atanks/text/Help_it.txt
+share/games/atanks/text/ingame_it.txt
+share/games/atanks/text/instr_it.txt
+share/games/atanks/text/kamikaze_it.txt
+share/games/atanks/text/retaliation_it.txt
+share/games/atanks/text/revenge_it.txt
+share/games/atanks/text/suicide_it.txt
+share/games/atanks/text/war_quotes_it.txt
+share/games/atanks/text/weapons_it.txt
 share/games/atanks/missile/27.bmp
 share/games/atanks/missile/12.bmp
 share/games/atanks/missile/9.bmp
