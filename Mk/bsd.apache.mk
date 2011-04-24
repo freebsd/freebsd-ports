@@ -5,32 +5,102 @@
 #
 # bsd.apache.mk - Apache related macros.
 # Author: Clement Laforet <clement@FreeBSD.org>
+# Author: Olli Hauer <ohauer@FreeBSD.org>
 #
 # Please view me with 4 column tabs!
 
-##########################################################################
+# =========================================================================
 #
-# Variables definition
-# USE_APACHE:	Call this script. Values can be:
-#		<version>: 1.3/13/2.0/20/2.2/1.3+/2.0+/2.2+
-#		common*: common13, common20, and common22
+# This script will be included if one of the following parameter
+# is defined in the Makefile of the port
+#
+# USE_APACHE         - Set apache and apxs as build and run dependency
+# USE_APACHE_BUILD   - Set apache and apxs as build dependency
+# USE_APACHE_RUN     - Set apache and apxs as run dependency
+#
+# The following example is representative of all three possible
+# parameters to use.
+#
+# Examples:
+#  USE_APACHE= 22       # specify exact version
+#  USE_APACHE= 1.3+     # specify [min] version, no [max] version
+#  USE_APACHE= 13-22    # specify [min]-[max] range
+#  USE_APACHE= -2.2     # specify [max] version, no [min] version
+#
+# Note:
+#  - Values can be specified with and without "." (dot) between major
+#    and minor version numbers. For example 22 is equal to 2.2
+#
+#  - If "+" is specified and no apache is installed, then
+#    ${DEFAULT_APACHE_VERSION} will be used.
+#
+#  - Valid version numbers are specified in the variable
+#    APACHE_SUPPORTED_VERSION below
+#
+#  - The following values for USE_APACHE are reserverd and only valid
+#    in apache-server ports!
+#      USE_APACHE= common13, common20, and common22
+#
+#
+# The following variables can be used (ro) in ports Makefile
+# =========================================================================
+#  - APACHE_VERSION
+#  - APACHEETCDIR
+#  - APACHEINCLUDEDIR
+#  - APACHEMODDIR
+#  - DEFAULT_APACHE_VERSION
+#
+#
+# Parameters for building third party apache modules:
+# =========================================================================
+#  - AP_FAST_BUILD      # automatic module build
+#
+#  - AP_GENPLIST        # automatic PLIST generation plus add
+#                       # the module disabled into httpd.conf
+#                       # (only if no pkg-plist exist)
+#
+#  - MODULENAME         # default: ${PORTNAME}
+#  - SHORTMODNAME       # default: ${MODULENAME:S/mod_//}
+#  - SRC_FILE           # default: ${MODULENAME}.c
+#
+#
 
-.if !defined(Apache_Pre_Include) || defined(PORT_IS_MODULE)
+.if !defined(Apache_Pre_Include)
 
 Apache_Pre_Include=		bsd.apache.mk
+
+DEFAULT_APACHE_VERSION=		13
+APACHE_SUPPORTED_VERSION=	13 20 22 # preferred version first
 
 # Print warnings
 _ERROR_MSG=	: Error from bsd.apache.mk.
 
-APACHE_SUPPORTED_VERSION=	13 20 22
-
-.if ${USE_APACHE:Mcommon*} != ""
+# Important Note:
+#  Keep apache version in ascending order!
+#  The "+" sign is only valid as last sign, not between
+#  two versions or in combination with range!
+.if defined(USE_APACHE) && !empty(USE_APACHE)
+.	if ${USE_APACHE:Mcommon*} != ""
 AP_PORT_IS_SERVER=	YES
-.elif ${USE_APACHE:C/\.//:C/\+//:M[12][320]} != ""
+.	elif ${USE_APACHE:C/\.//g:C/\-//:S/^13//:S/^20//:S/^22//:C/\+$//} == ""
 AP_PORT_IS_MODULE=	YES
-.else
-IGNORE=		${_ERROR_MSG} Illegal use of USE_APACHE
-.endif
+.		if ${USE_APACHE:C/\.//g:C/\-//:S/^13//:S/^20//:S/^22//} == "+"
+AP_PLUS=	yes
+.		endif
+.	else
+IGNORE=	${_ERROR_MSG} Illegal use of USE_APACHE ( ${USE_APACHE} )
+.	endif
+# Catch unknown apache versions and silly USE_APACHE constructs
+.	if empty(AP_PORT_IS_SERVER) && empty(AP_PORT_IS_MODULE)
+IGNORE=	${_ERROR_MSG} Illegal use of USE_APACHE ( ${USE_APACHE} )
+.	endif
+# Catch USE_APACHE [min]-[max]+
+.	if defined(AP_PLUS) && ${USE_APACHE:C/[.+0-9]//g} == "-"
+IGNORE=	${_ERROR_MSG} Illegal use of USE_APACHE ( ${USE_APACHE} )
+.	endif
+.elif defined(USE_APACHE)
+IGNORE=	${_ERROR_MSG} Illegal use of USE_APACHE ( no version specified )
+.endif # defined(USE_APACHE)
 
 # ===============================================================
 .if defined(AP_PORT_IS_SERVER)
@@ -90,54 +160,54 @@ CONFIGURE_ARGS+=	--disable-authn-file --disable-authn-default \
 
 .if defined(OPTIONS) && !(make(make-options-list))
 .for module in ${AVAILABLE_MODULES}
-.if defined(WITH_${module:U})
+.	if defined(WITH_${module:U})
 _APACHE_MODULES+=	${module}
-.endif
-.if defined(WITHOUT_${module:U})
+.	endif
+.	if defined(WITHOUT_${module:U})
 WITHOUT_MODULES+=	 ${module}
-.endif
+.	endif
 .endfor
 .elif defined(WITH_MODULES)
 _APACHE_MODULES+=	${WITH_MODULES}
 .else
 .for category in ${ALL_MODULES_CATEGORIES}
-.if defined (WITHOUT_${category}_MODULES) || defined (WITH_CUSTOM_${category})
-.        if defined(WITH_${category}_MODULES})
-.        undef WITH_${category}_MODULES
-.        endif
-.    if defined (WITH_CUSTOM_${category})
+.	if defined (WITHOUT_${category}_MODULES) || defined (WITH_CUSTOM_${category})
+.		if defined(WITH_${category}_MODULES})
+.			undef WITH_${category}_MODULES
+.		endif
+.		if defined (WITH_CUSTOM_${category})
 _APACHE_MODULES+=	${WITH_CUSTOM_${category}}
-.    endif
-.elif defined(WITH_${category}_MODULES)
+.		endif
+.	elif defined(WITH_${category}_MODULES)
 _APACHE_MODULES+=	${${category}_MODULES}
-.endif
+.	endif
 .endfor
-.    if defined(WITH_EXTRA_MODULES)
+.if defined(WITH_EXTRA_MODULES)
 _APACHE_MODULES+=	${WITH_EXTRA_MODULES}
-.    endif
+.endif
 .endif
 
 .if !defined(WITH_STATIC_APACHE)
-.    if ${USE_APACHE:Mcommon2*} != ""
+.	if ${USE_APACHE:Mcommon2*} != ""
 # FYI
 #DYNAMIC_MODULES=	so
 CONFIGURE_ARGS+=	--enable-so
-.    endif
+.	endif
 .else
-.    if ${USE_APACHE:Mcommon2*} != ""
+.	if ${USE_APACHE:Mcommon2*} != ""
 CONFIGURE_ARGS+=	--disable-so
-.    endif
+.	endif
 WITH_ALL_STATIC_MODULES=	YES
 .endif
 
 .if defined(WITH_SUEXEC) || defined(WITH_SUEXEC_MODULES)
-.if ${USE_APACHE} == common13
+.	if ${USE_APACHE} == common13
 SUEXEC_CONFARGS=	suexec
 CONFIGURE_ARGS+=	--enable-suexec
-.elif ${USE_APACHE:Mcommon2*} != ""
+.	elif ${USE_APACHE:Mcommon2*} != ""
 _APACHE_MODULES+=		${SUEXEC_MODULES}
 SUEXEC_CONFARGS=	with-suexec
-.endif
+.	endif
 
 # From now we're defaulting to apache 2.*
 SUEXEC_DOCROOT?=		${PREFIX}/www/data
@@ -154,13 +224,13 @@ CONFIGURE_ARGS+=		--${SUEXEC_CONFARGS}-caller=${SUEXEC_CALLER} \
 				--${SUEXEC_CONFARGS}-docroot="${SUEXEC_DOCROOT}" \
 				--${SUEXEC_CONFARGS}-safepath="${SUEXEC_SAFEPATH}" \
 				--${SUEXEC_CONFARGS}-logfile="${SUEXEC_LOGFILE}"
-.if ${USE_APACHE:Mcommon2*} != ""
+.	if ${USE_APACHE:Mcommon2*} != ""
 CONFIGURE_ARGS+=	--${SUEXEC_CONFARGS}-bin="${PREFIX}/sbin/suexec"
-.endif
+.	endif
 
-.   if defined(WITH_SUEXEC_UMASK)
+.	if defined(WITH_SUEXEC_UMASK)
 CONFIGURE_ARGS+=		--${SUEXEC_CONFARGS}-umask=${SUEXEC_UMASK}
-.   endif
+.	endif
 .endif
 
 .if !defined(WITHOUT_MODULES)
@@ -174,13 +244,13 @@ APACHE_MODULES!=	\
 .endif
 
 .if defined(WITH_STATIC_MODULES)
-.   if ${USE_APACHE} ==	common13
+.	if ${USE_APACHE} ==	common13
 STATIC_MODULE_CONFARG=	--enable-module=$${module}
 DSO_MODULE_CONFARG=		--enable-module=$${module} --enable-shared=$${module}
-.   else
+.	else
 STATIC_MODULE_CONFARG=	--enable-$${module}
 DSO_MODULE_CONFARG=		--enable-$${module}=shared
-.endif
+.	endif
 _CONFIGURE_ARGS!=	\
 			for module in ${APACHE_MODULES} ; do \
 				${ECHO_CMD} ${WITH_STATIC_MODULES} | \
@@ -193,21 +263,21 @@ _CONFIGURE_ARGS!=	\
 CONFIGURE_ARGS+=	${_CONFIGURE_ARGS}
 .elif defined(WITH_STATIC_APACHE) || defined(WITH_ALL_STATIC_MODULES)
 WITH_STATIC_MODULES=	${APACHE_MODULES}
-.    if ${USE_APACHE} == common13
-.      for module in ${APACHE_MODULES}
+.	if ${USE_APACHE} == common13
+.		for module in ${APACHE_MODULES}
 CONFIGURE_ARGS+=	--enable-module=${module}
-.      endfor
-.    else
+.		endfor
+.	else
 CONFIGURE_ARGS+=	--enable-modules="${APACHE_MODULES}"
-.    endif
+.	endif
 .else
-.    if ${USE_APACHE} == common13
-.      for module in ${APACHE_MODULES}
+.	if ${USE_APACHE} == common13
+.		for module in ${APACHE_MODULES}
 CONFIGURE_ARGS+=	--enable-module=${module} --enable-shared=${module}
-.      endfor
-.    else
+.		endfor
+.	else
 CONFIGURE_ARGS+=	--enable-mods-shared="${APACHE_MODULES}"
-.    endif
+.	endif
 .endif
 
 .if defined(WITH_STATIC_MODULES)
@@ -221,9 +291,9 @@ SHARED_MODULES=		${_SHARED_MODULES}
 SHARED_MODULES=		${APACHE_MODULES}
 .endif
 
-.  for module in ${SHARED_MODULES}
+.for module in ${SHARED_MODULES}
 ${module}_PLIST_SUB=	""
-.  endfor
+.endfor
 
 .for module in ${AVAILABLE_MODULES}
 PLIST_SUB+=	MOD_${module:U}=${${module}_PLIST_SUB}
@@ -231,51 +301,69 @@ PLIST_SUB+=	MOD_${module:U}=${${module}_PLIST_SUB}
 #### End of AP_PORT_IS_SERVER ####
 
 # ===============================================================
-.elif defined(AP_PORT_IS_MODULE)
-AP_VERSION=	${USE_APACHE:C/\.//}
-
+.elif defined(AP_PORT_IS_MODULE) || defined(USE_APACHE_RUN) || defined(USE_APACHE_BUILD)
 APXS?=		${LOCALBASE}/sbin/apxs
 HTTPD?=		${LOCALBASE}/sbin/httpd
 
 MODULENAME?=	${PORTNAME}
 SHORTMODNAME?=	${MODULENAME:S/mod_//}
 SRC_FILE?=	${MODULENAME}.c
-OVERRIDABLE_VARS=	SRC_FILE MODULENAME SHORTMODNAME WRKSRC \
-					PKGNAMESUFFIX
 
 .if exists(${HTTPD})
-AP_CUR_VERSION!=	${HTTPD} -V | ${SED} -ne 's/^Server version: Apache\/\([0-9]\)\.\([0-9]*\).*/\1\2/p'
-.   if ${AP_CUR_VERSION} > 13
+_APACHE_VERSION!=	${HTTPD} -V | ${SED} -ne 's/^Server version: Apache\/\([0-9]\)\.\([0-9]*\).*/\1\2/p'
+.	if ${_APACHE_VERSION} > 13
 APACHE_MPM!=		${APXS} -q MPM_NAME
-.   endif 	
+.	endif
 .elif defined(APACHE_PORT)
-AP_CUR_VERSION!=	${ECHO_CMD} ${APACHE_PORT} | ${SED} -ne 's,.*/apache\([0-9]*\).*,\1,p'
+_APACHE_VERSION!=	${ECHO_CMD} ${APACHE_PORT} | ${SED} -ne 's,.*/apache\([0-9]*\).*,\1,p'
 .endif
 
-.if defined(AP_CUR_VERSION)
-VERSION_CHECK!=		eval `${ECHO_CMD} "[ ${AP_VERSION} -eq ${AP_CUR_VERSION} ]" | ${SED} -e 's/- -eq/ -ge/ ; s/+ -eq/ -le/' ` ; ${ECHO_CMD} $${?}
-.   if ${VERSION_CHECK} == 1
-.if !defined(AP_IGNORE_VERSION_CHECK)
-IGNORE=		${_ERROR_MSG} apache${AP_CUR_VERSION} is installed (or APACHE_PORT is defined) and port requires ${USE_APACHE}
+.if defined(USE_APACHE)
+_USE_APACHE:=	${USE_APACHE}
+.elif defined(USE_APACHE_BUILD)
+_USE_APACHE:=	${USE_APACHE_BUILD}
+.elif defined(USE_APACHE_RUN)
+_USE_APACHE:=	${USE_APACHE_RUN}
 .endif
-.   endif
-APACHE_VERSION=	${AP_CUR_VERSION}
-.else
-AP_CUR_VERSION=	none
-.   if !defined(APACHE_PORT)
-#Fallback to smallest version...
-APACHE_VERSION=	${AP_VERSION:C/\+//}
-.   endif
-.endif
+
+_APACHE_VERSION_CHECK:=			${_USE_APACHE:C/\.//g:C/^([1-9][0-9])$/\1-\1/}
+_APACHE_VERSION_MINIMUM_TMP:=	${_APACHE_VERSION_CHECK:C/([1-9][0-9])[-+].*/\1/}
+_APACHE_VERSION_MINIMUM:=		${_APACHE_VERSION_MINIMUM_TMP:M[1-9][0-9]}
+_APACHE_VERSION_MAXIMUM_TMP:=	${_APACHE_VERSION_CHECK:C/.*-([1-9][0-9])/\1/}
+_APACHE_VERSION_MAXIMUM:=		${_APACHE_VERSION_MAXIMUM_TMP:M[1-9][0-9]}
+
+.if defined(_APACHE_VERSION)
+# Validate Apache version whether it meets USE_APACHE version restriction.
+.	if !empty(_APACHE_VERSION_MINIMUM) && (${_APACHE_VERSION} < ${_APACHE_VERSION_MINIMUM})
+_APACHE_VERSION_NONSUPPORTED=	${_APACHE_VERSION_MINIMUM} at least
+.	elif !empty(_APACHE_VERSION_MAXIMUM) && (${_APACHE_VERSION} > ${_APACHE_VERSION_MAXIMUM})
+_APACHE_VERSION_NONSUPPORTED=	${_APACHE_VERSION_MAXIMUM} at most
+.	endif
+
+.	if defined(_APACHE_VERSION_NONSUPPORTED) && !defined(AP_IGNORE_VERSION_CHECK)
+IGNORE=	${_ERROR_MSG} apache${_APACHE_VERSION} is installed (or APACHE_PORT is defined) and port requires apache${_APACHE_VERSION_NONSUPPORTED}
+.	 endif
+.else 		# defined(_APACHE_VERSION)
+.	for ver in ${APACHE_SUPPORTED_VERSION}
+__VER=	${ver}
+.		if !defined(_APACHE_VERSION) && \
+			!(!empty(_APACHE_VERSION_MINIMUM) && ( ${__VER} < ${_APACHE_VERSION_MINIMUM} )) && \
+			!(!empty(_APACHE_VERSION_MAXIMUM) && ( ${__VER} > ${_APACHE_VERSION_MAXIMUM} ))
+_APACHE_VERSION=	${ver}
+.		endif
+.	endfor
+.endif 		# defined(_APACHE_VERSION)
+
+APACHE_VERSION:=	${_APACHE_VERSION}
 
 .if exists(${APXS})
 APXS_PREFIX!=	${APXS} -q prefix 2> /dev/null || echo NULL
-.   if ${APXS_PREFIX} == NULL
+.	if ${APXS_PREFIX} == NULL
 IGNORE=	: Your apache does not support DSO modules
-.   endif
-.   if defined(AP_GENPLIST) && ${APXS_PREFIX} != ${PREFIX}
+.	endif
+.	if defined(AP_GENPLIST) && ${APXS_PREFIX} != ${PREFIX}
 IGNORE?=	PREFIX must be equal to APXS_PREFIX.
-.   endif
+.	endif
 .endif
 
 .if ${APACHE_VERSION} == 20
@@ -302,19 +390,19 @@ PLIST_SUB+=	APACHEMODDIR="${APACHEMODDIR}" \
 		APACHEINCLUDEDIR="${APACHEINCLUDEDIR}" \
 		APACHEETCDIR="${APACHEETCDIR}"
 
-.for VAR in ${OVERRIDABLE_VARS}
-.  if defined(AP${APACHE_VERSION}_${VAR})
-${VAR} =${AP${APACHE_VERSION}_${VAR}}
-.  endif
-.endfor
-
 APACHE_PKGNAMEPREFIX=	ap${APACHE_VERSION}-
 .if defined(AP_FAST_BUILD)
 PKGNAMEPREFIX?=	${APACHE_PKGNAMEPREFIX}
 .endif
 
+.if defined(USE_APACHE) || defined(USE_APACHE_BUILD)
 BUILD_DEPENDS+=	${APXS}:${PORTSDIR}/${APACHE_PORT}
+.endif
+
+.if defined(USE_APACHE) || defined(USE_APACHE_RUN)
 RUN_DEPENDS+=	${APXS}:${PORTSDIR}/${APACHE_PORT}
+.endif
+
 PLIST_SUB+=	AP_NAME="${SHORTMODNAME}"
 PLIST_SUB+=	AP_MODULE="${MODULENAME}.so"
 
@@ -330,11 +418,34 @@ AP_EXTRAS+=	-L ${AP_LIB}
 .endif
 
 .endif # End of AP_PORT_IS_SERVER   / AP_PORT_IS_MOULE
-.endif # End of !Apache_Pre_Include / PORT_IS_MODULE
+.endif # End of !Apache_Pre_Include
 
 # ===============================================================
 .if defined(_POSTMKINCLUDED) && !defined(Apache_Post_Include)
-Apache_Post_Include=                    bsd.apache.mk
+Apache_Post_Include=	bsd.apache.mk
+
+.if defined(USE_APACHE_RUN) && !empty(USE_APACHE_RUN)
+.	if ${USE_APACHE_RUN:C/\.//g:C/\-//:S/^13//:S/^20//:S/^22//:C/\+$//} != ""
+IGNORE=	${_ERROR_MSG} Illegal use of USE_APACHE_RUN ( ${USE_APACHE_RUN} )
+.	endif
+.elif defined(USE_APACHE_RUN)
+IGNORE=	${_ERROR_MSG} Illegal use of USE_APACHE_RUN ( no valid version specified )
+.endif
+
+.if defined(USE_APACHE_BUILD) && !empty(USE_APACHE_BUILD)
+.	if ${USE_APACHE_BUILD:C/\.//g:C/\-//:S/^13//:S/^20//:S/^22//:C/\+$//} != ""
+IGNORE=	${_ERROR_MSG} Illegal use of USE_APACHE_BUILD ( ${USE_APACHE_BUILD} )
+.	endif
+.elif defined(USE_APACHE_BUILD)
+IGNORE=	${_ERROR_MSG} Illegal use of USE_APACHE_BUILD ( no valid version specified )
+.endif
+
+# Check if USE_APACHE(_BUILD|_RUN) are mixed together
+.if defined(USE_APACHE) && ( defined(USE_APACHE_BUILD) || defined(USE_APACHE_RUN) )
+IGNORE=	${_ERROR_MSG} specify only one of: USE_APACHE USE_APACHE_BUILD USE_APACHE_RUN
+.elif defined(USE_APACHE_BUILD) && defined(USE_APACHE_RUN)
+IGNORE= ${_ERROR_MSG} use USE_APACHE instead of USE_APACHE_BUILD and USE_APACHE_RUN together
+.endif
 
 .if defined(AP_PORT_IS_SERVER)
 .if !target(print-closest-mirrors)
@@ -397,13 +508,17 @@ make-options-list:
 .if !target(ap-gen-plist)
 ap-gen-plist:
 .if defined(AP_GENPLIST)
-.   if !exists(${PLIST})
+.	if !exists(${PLIST})
 	@${ECHO} "===>  Generating apache plist"
-	@${ECHO} "@unexec ${SED} -i '' '/LoadModule %%AP_NAME%%_module/d' %D/%%APACHEETCDIR%%/httpd.conf" >> ${PLIST}
+# apache13/20/22
+	@${ECHO} "@unexec ${SED} -i '' '/LoadModule.*%%AP_NAME%%_module/d' %D/%%APACHEETCDIR%%/httpd.conf" >> ${PLIST}
+# apache13
+	@${ECHO} "@unexec ${SED} -i '' '/AddModule.*mod_%%AP_NAME%%.c/d' %D/%%APACHEETCDIR%%/httpd.conf" >> ${PLIST}
+
 	@${ECHO} "%%APACHEMODDIR%%/%%AP_MODULE%%" >> ${PLIST}
 	@${ECHO} "@exec %D/sbin/apxs -e -A -n %%AP_NAME%% %D/%F" >> ${PLIST}
 	@${ECHO} "@unexec echo \"Don't forget to remove all ${MODULENAME}-related directives in your httpd.conf\"">> ${PLIST}
-.   endif
+.	endif
 .else
 	@${DO_NADA}
 .endif
