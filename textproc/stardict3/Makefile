@@ -6,59 +6,58 @@
 #
 
 PORTNAME=	stardict
-PORTVERSION=	3.0.1
-PORTREVISION=	5
+PORTVERSION=	3.0.2
 CATEGORIES=	textproc
 MASTER_SITES=	SF
 DIST_SUBDIR=	stardict
 
-MAINTAINER=	d9364104@mail.nchu.edu.tw
+MAINTAINER=	makc@FreeBSD.org
 COMMENT=	A cross-platform and international dictionary written in Gtk2
 
 LIB_DEPENDS=	sigc-2.0.0:${PORTSDIR}/devel/libsigc++20 \
 		enchant.1:${PORTSDIR}/textproc/enchant
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LIBS="-L${LOCALBASE}/lib"
+CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	--disable-festival \
 		--disable-gucharmap \
 		--disable-espeak \
-		--disable-advertisement \
 		--disable-updateinfo
 USE_GMAKE=	yes
 USE_BZIP2=	yes
-USE_GNOME=	gnomehack gnomeprefix
+USE_GNOME=	gnomehack
 USE_GETTEXT=	yes
 
-OPTIONS=	GNOMEUI "GNOME support" On
+OPTIONS=	GNOME "GNOME support" Off
 
-CONFLICTS=	stardict-2.[0-9]*
+CONFLICTS_RUN=	stardict-2.[0-9]*
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if !defined(WITHOUT_GNOMEUI)
-USE_GNOME+=	libgnomeui
+.if !defined(WITHOUT_GNOME)
+USE_GNOME+=	gnomeprefix gnomedocutils libgnomeui
 GCONF_SCHEMAS=	stardict.schemas
 INSTALLS_OMF=	yes
 PLIST_SUB=	GNOME=""
 .else
+USE_AUTOTOOLS=	autoconf
 USE_GNOME+=	gtk20
 CONFIGURE_ARGS+=--disable-gnome-support --disable-schemas-install
-PLIST_SUB=	GNOME="@comment not installed: "
+PLIST_SUB=	GNOME="@comment "
 .endif
 
 MAN1=		stardict.1
 
-.if (${OSVERSION} < 700109)
-EXTRA_PATCHES+=	${FILESDIR}/src_conf.h
-.endif
-
 post-patch:
-	${REINPLACE_CMD} -e 's,/usr/local,${PREFIX},' \
+.if defined(WITHOUT_GNOME)
+	${REINPLACE_CMD} -e '/DATADIRNAME=lib/s,lib,share,' ${WRKSRC}/m4/intltool.m4
+	${REINPLACE_CMD} -e '/^SUBDIRS/s,help,,' ${WRKSRC}/Makefile.in
+	${REINPLACE_CMD} -e '/^GNOME_DOC_INIT/d' ${WRKSRC}/configure.ac
+.endif
+	${REINPLACE_CMD} -e 's,/usr/share,${PREFIX}/share,g' \
 		${WRKSRC}/src/conf.cpp
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

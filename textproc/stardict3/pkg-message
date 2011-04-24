@@ -1,9 +1,10 @@
-* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+=====================================================================
+A set of dictionary ports is available for StarDict:
+ chinese/stardict-*
+ japanese/stardict-dict-ja
+ textproc/stardict-*
+ russian/stardict-*
 
-Now it's time to install some dictionary files:
-
-  chinese/stardict2-dict-zh_CN  Simplified Chinese - English
-  chinese/stardict2-dict-zh_TW  Traditional Chinese - English
-  japanese/stardict2-dict-ja    Japanese - English
-
-* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+More dictionaries can be downloaded from StarDict website:
+http://stardict.sourceforge.net/Dictionaries.php
+=====================================================================
