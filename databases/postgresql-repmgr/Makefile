@@ -4,7 +4,7 @@
 # $FreeBSD$
 
 PORTNAME=		postgresql-repmgr
-PORTVERSION=		1.0.0
+PORTVERSION=		1.1.0
 CATEGORIES=		databases
 MASTER_SITES=		http://projects.2ndquadrant.it/sites/default/files/
 DISTNAME=		repmgr-${PORTVERSION}
@@ -13,7 +13,7 @@ MAINTAINER=		alp@sfedu.ru
 COMMENT=		PostgreSQL replication manager
 
 BUILD_DEPENDS+=		postgresql-server>=9.0:${PORTSDIR}/databases/postgresql90-server
-RUN_DEPENDS=		${BUILD_DEPNDS} \
+RUN_DEPENDS=		${BUILD_DEPENDS} \
 			rsync:${PORTSDIR}/net/rsync
 
 USE_GMAKE=		yes
