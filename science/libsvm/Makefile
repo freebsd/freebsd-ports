@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	libsvm
-PORTVERSION=	3.00
-PORTREVISION=	1
+PORTVERSION=	3.10
 PORTEPOCH=	1
 CATEGORIES=	science math
 MASTER_SITES=	http://www.csie.ntu.edu.tw/~cjlin/libsvm/ \
@@ -16,6 +15,9 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:C/0$//}
 
 MAINTAINER=	rafan@FreeBSD.org
 COMMENT=	A library for Support Vector Machines
+
+LICENSE=	BSD
+LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 
 OPTIONS=	OCFLAGS "Use optimized CFLAGS" On
 
@@ -75,7 +77,7 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/svm-scale ${PREFIX}/bin/
 	${INSTALL_DATA} ${WRKSRC}/svm.h ${PREFIX}/include/
 	${INSTALL_LIB} ${WRKSRC}/libsvm.so.2 ${PREFIX}/lib/
-	${LN} -sf ${PREFIX}/lib/libsvm.so.2 ${PREFIX}/lib/libsvm.so 
+	${LN} -sf libsvm.so.2 ${PREFIX}/lib/libsvm.so
 	${MKDIR} ${DATADIR}
 	for f in ${TOOLS}; do \
 	  ${INSTALL_DATA} ${WRKSRC}/$$f ${DATADIR}; \
