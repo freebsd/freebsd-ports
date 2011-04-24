@@ -11,7 +11,9 @@ bin/sndplay
 %%PORTDOCS%%%%DOCSDIR%%/libxm.html
 %%PORTDOCS%%%%DOCSDIR%%/s7.html
 %%PORTDOCS%%%%DOCSDIR%%/pix/8.png
+%%PORTDOCS%%%%DOCSDIR%%/pix/8way.png
 %%PORTDOCS%%%%DOCSDIR%%/pix/88.png
+%%PORTDOCS%%%%DOCSDIR%%/pix/100twice.png
 %%PORTDOCS%%%%DOCSDIR%%/pix/all57.png
 %%PORTDOCS%%%%DOCSDIR%%/pix/all99.png
 %%PORTDOCS%%%%DOCSDIR%%/pix/odd57.png
@@ -370,6 +372,7 @@ bin/sndplay
 %%SCHEME%%%%DATADIR%%/env.scm
 %%SCHEME%%%%DATADIR%%/enved.scm
 %%SCHEME%%%%DATADIR%%/examp.scm
+%%SCHEME%%%%DATADIR%%/expr.scm
 %%SCHEME%%%%DATADIR%%/expandn.scm
 %%SCHEME%%%%DATADIR%%/extensions.scm
 %%SCHEME%%%%DATADIR%%/fade.scm
@@ -387,6 +390,7 @@ bin/sndplay
 %%SCHEME%%%%DATADIR%%/jcrev.scm
 %%SCHEME%%%%DATADIR%%/jcvoi.scm
 %%SCHEME%%%%DATADIR%%/kmenu.scm
+%%SCHEME%%%%DATADIR%%/lint.scm
 %%SCHEME%%%%DATADIR%%/maraca.scm
 %%SCHEME%%%%DATADIR%%/marks-menu.scm
 %%SCHEME%%%%DATADIR%%/marks.scm
@@ -425,6 +429,7 @@ bin/sndplay
 %%SCHEME%%%%DATADIR%%/snd9.scm
 %%SCHEME%%%%DATADIR%%/snd10.scm
 %%SCHEME%%%%DATADIR%%/snd11.scm
+%%SCHEME%%%%DATADIR%%/snd12.scm
 %%SCHEME%%%%DATADIR%%/snddiff.scm
 %%SCHEME%%%%DATADIR%%/sndlib-ws.scm
 %%SCHEME%%%%DATADIR%%/sndins/samples/agn.scm
