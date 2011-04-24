@@ -1,0 +1,17 @@
+--- ./libzip.pc.in.orig	2010-03-08 15:27:48.000000000 +0300
++++ ./libzip.pc.in	2011-04-24 23:19:07.996595003 +0400
+@@ -2,7 +2,6 @@
+ exec_prefix=@exec_prefix@
+ libdir=@libdir@
+ includedir=@includedir@
+-libincludedir=@libdir@/libzip/include
+ 
+ zipcmp=@prefix@/bin/zipcmp
+ 
+@@ -10,5 +9,4 @@
+ Description: library for handling zip archives
+ Version: @VERSION@
+ Libs: -L${libdir} -lzip @LIBS@
+-Cflags: -I${includedir} -I${libincludedir}
+-
++Cflags: -I${includedir}
