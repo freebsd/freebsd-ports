@@ -1945,6 +1945,7 @@ diablo-jdk%%JDK_VERSION%%/jre/lib/zi/America/Martinique
 diablo-jdk%%JDK_VERSION%%/jre/lib/zi/America/Mazatlan
 diablo-jdk%%JDK_VERSION%%/jre/lib/zi/America/Menominee
 diablo-jdk%%JDK_VERSION%%/jre/lib/zi/America/Merida
+%%TZUPDATE%%diablo-jdk%%JDK_VERSION%%/jre/lib/zi/America/Metlakatla
 diablo-jdk%%JDK_VERSION%%/jre/lib/zi/America/Mexico_City
 diablo-jdk%%JDK_VERSION%%/jre/lib/zi/America/Miquelon
 diablo-jdk%%JDK_VERSION%%/jre/lib/zi/America/Moncton
@@ -1981,6 +1982,7 @@ diablo-jdk%%JDK_VERSION%%/jre/lib/zi/America/Santiago
 diablo-jdk%%JDK_VERSION%%/jre/lib/zi/America/Santo_Domingo
 diablo-jdk%%JDK_VERSION%%/jre/lib/zi/America/Sao_Paulo
 diablo-jdk%%JDK_VERSION%%/jre/lib/zi/America/Scoresbysund
+%%TZUPDATE%%diablo-jdk%%JDK_VERSION%%/jre/lib/zi/America/Sitka
 diablo-jdk%%JDK_VERSION%%/jre/lib/zi/America/St_Johns
 diablo-jdk%%JDK_VERSION%%/jre/lib/zi/America/St_Kitts
 diablo-jdk%%JDK_VERSION%%/jre/lib/zi/America/St_Lucia
