@@ -16,14 +16,13 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	coumarin@gmail.com
 COMMENT=	Excelsior Oberon-2/Modula-2 to C compiler, set up to produce native FreeBSD binaries
 
-LIB_DEPENDS=	Xm:${PORTSDIR}/x11-toolkits/open-motif
-
 RESTRICTED=	Excelsior forbids any redistribution
 
 ONLY_FOR_ARCHS=	i386
 ONLY_FOR_ARCHS_REASON=	uses assembly code
 USE_LINUX=	yes
 USE_GMAKE=	yes
+USE_MOTIF=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
 BUILD_WRKSRC=	${WRKSRC}/lib/C
 
