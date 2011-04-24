@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mk-livestatus
-PORTVERSION=	1.1.8
+PORTVERSION=	1.1.10
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://mathias-kettner.de/download/
 
@@ -33,22 +33,25 @@ EXAMPLE_FILES=	api/python/example_multisite.py \
 # parameter "command_file" from nagios.cfg
 COMMAND_FILE?=	/var/spool/nagios/rw/live
 
+# perl api is really outdated, do not install!
+# Actual version can be found on CPAN
+# http://search.cpan.org/~nierlein/Monitoring-Livestatus/
+post-extract:
+	@${RM} -rf ${WRKSRC}/api/perl
+
 post-patch:
 .for i in ${EXAMPLE_FILES}
-	@${REINPLACE_CMD} -i '' -e 's|/usr/bin/python|${LOCALBASE}/bin/python|g' \
+	@${SED} -i '' -e 's|/usr/bin/python|${LOCALBASE}/bin/python|g' \
 		-e 's|/var/lib/nagios/rw/live|${COMMAND_FILE}|g' \
 		-e 's|/var/run/nagios/rw/live|${COMMAND_FILE}|g' ${WRKSRC}/$i
 .endfor
-	@${REINPLACE_CMD} -i '' -e 's|/usr/local/nagios/var/rw/live|${COMMAND_FILE}|' \
+	@${SED} -i '' -e 's|/usr/local/nagios/var/rw/live|${COMMAND_FILE}|' \
 		${WRKSRC}/src/livestatus.h
 
 post-install:
 .if !defined(NOPORTEXAMPLES)
-# do not install the outdated perl api!
-	${MKDIR} ${EXAMPLESDIR}/api/python
-. for i in ${EXAMPLE_FILES}
-	${INSTALL_DATA} ${WRKSRC}/$i  ${EXAMPLESDIR}/$i
-. endfor
+	@${MKDIR} ${EXAMPLESDIR}
+	( cd ${WRKSRC} && ${COPYTREE_SHARE} api\* ${EXAMPLESDIR}/ )
 .endif
 	@${CAT} ${PKGMESSAGE}
 
