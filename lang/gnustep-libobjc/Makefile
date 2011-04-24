@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libobjc2
-PORTVERSION=	1.2
+PORTVERSION=	1.3
 CATEGORIES=	lang devel gnustep
 MASTER_SITES=	http://download.gna.org/gnustep/
 PKGNAMEPREFIX=	gnustep-
