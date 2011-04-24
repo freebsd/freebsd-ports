@@ -2,8 +2,9 @@ bin/zipcmp
 bin/zipmerge
 bin/ziptorrent
 include/zip.h
+include/zipconf.h
 lib/libzip.a
 lib/libzip.la
 lib/libzip.so
-lib/libzip.so.1
+lib/libzip.so.3
 libdata/pkgconfig/libzip.pc
