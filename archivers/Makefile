@@ -201,5 +201,6 @@
     SUBDIR += zipmix
     SUBDIR += zipper
     SUBDIR += zoo
+    SUBDIR += zutils
 
 .include <bsd.port.subdir.mk>
