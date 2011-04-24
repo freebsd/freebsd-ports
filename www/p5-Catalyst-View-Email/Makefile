@@ -23,7 +23,7 @@ RUN_DEPENDS=	p5-Catalyst-Runtime>=5.7:${PORTSDIR}/www/p5-Catalyst-Runtime \
 		p5-Catalyst-View-Mason>0:${PORTSDIR}/www/p5-Catalyst-View-Mason \
 		p5-Class-C3>=0:${PORTSDIR}/devel/p5-Class-C3 \
 		p5-Email-MIME>=1.859:${PORTSDIR}/mail/p5-Email-MIME \
-		p5-Email-Sender>=2.185:${PORTSDIR}/mail/p5-Email-Sender \
+		p5-Email-Sender>=0.100110:${PORTSDIR}/mail/p5-Email-Sender \
 		p5-parent>0:${PORTSDIR}/devel/p5-parent \
 		p5-Test-Requires>=0:${PORTSDIR}/devel/p5-Test-Requires \
 		p5-Authen-SASL>=0:${PORTSDIR}/security/p5-Authen-SASL
