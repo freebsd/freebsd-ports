@@ -8,15 +8,12 @@ GNUstep/System/Library/Headers/objc/hooks.h
 GNUstep/System/Library/Headers/objc/objc-api.h
 GNUstep/System/Library/Headers/objc/objc.h
 GNUstep/System/Library/Headers/objc/runtime.h
+GNUstep/System/Library/Headers/objc/runtime-deprecated.h
 GNUstep/System/Library/Headers/objc/slot.h
 GNUstep/System/Library/Headers/objc/toydispatch.h
 GNUstep/System/Library/Libraries/libobjc.so
 GNUstep/System/Library/Libraries/libobjc.so.%%MAJORLIBVERSION%%
-@dirrm GNUstep/System/Library/Headers/toydispatch
+GNUstep/System/Library/Libraries/libobjcxx.so
+GNUstep/System/Library/Libraries/libobjcxx.so.%%MAJORVERSION%%
+GNUstep/System/Library/Libraries/libobjcxx.so.%%VERSION%%.0
 @dirrm GNUstep/System/Library/Headers/objc
-@exec mv -i /usr/include/objc /usr/include/objc1
-@exec mkdir /usr/lib/compat/libobjc
-@exec mv -i /usr/lib/libobjc.* /usr/lib/compat/libobjc/
-@unexec mv -i /usr/include/objc1 /usr/include/objc
-@unexec mv -i /usr/lib/compat/libobjc/libobjc.* /usr/lib/
-@unexec rmdir /usr/lib/compat/libobjc
