@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	nemiver
-PORTVERSION=	0.7.3
-PORTREVISION=	2
+PORTVERSION=	0.8.1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
@@ -21,6 +20,8 @@ LIB_DEPENDS=	boost_unit_test_framework:${PORTSDIR}/devel/boost-libs \
 		sqlite3:${PORTSDIR}/databases/sqlite3 \
 		glademm-2.4:${PORTSDIR}/devel/libglademm24 \
 		gtksourceviewmm-2:${PORTSDIR}/x11-toolkits/libgtksourceviewmm
+BUILD_DEPENDS=	gdb72:${PORTSDIR}/devel/gdb
+RUN_DEPENDS=	${BUILD_DEPENDS}
 
 OPTIONS=	GHEX "Enable memory view" off
 
@@ -34,9 +35,6 @@ USE_GETTEXT=	yes
 INSTALLS_OMF=	yes
 INSTALLS_ICONS=	yes
 MAN1=		nemiver.1
-
-CONFIGURE_ENV=	CPPFLAGS="${CXXFLAGS} -I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
 
 .include <bsd.port.pre.mk>
 

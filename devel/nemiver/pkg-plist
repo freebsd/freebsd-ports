@@ -1,7 +1,10 @@
 @comment $FreeBSD$
 bin/nemiver
 include/nemiver/common/config.h
+include/nemiver/common/nmv-address.h
 include/nemiver/common/nmv-api-macros.h
+include/nemiver/common/nmv-asm-instr.h
+include/nemiver/common/nmv-asm-utils.h
 include/nemiver/common/nmv-buffer.h
 include/nemiver/common/nmv-conf-manager.h
 include/nemiver/common/nmv-connection-manager.h
@@ -26,6 +29,7 @@ include/nemiver/common/nmv-parsing-utils.h
 include/nemiver/common/nmv-plugin.h
 include/nemiver/common/nmv-proc-mgr.h
 include/nemiver/common/nmv-proc-utils.h
+include/nemiver/common/nmv-range.h
 include/nemiver/common/nmv-safe-ptr-utils.h
 include/nemiver/common/nmv-safe-ptr.h
 include/nemiver/common/nmv-scope-logger.h
@@ -85,24 +89,9 @@ lib/nemiver/modules/libworkbenchmod.a
 lib/nemiver/modules/libworkbenchmod.la
 lib/nemiver/modules/libworkbenchmod.so
 lib/nemiver/plugins/dbgperspective/dbgperspective.conf
-lib/nemiver/plugins/dbgperspective/glade/bodycontainer.glade
-lib/nemiver/plugins/dbgperspective/glade/callfunctiondialog.glade
-lib/nemiver/plugins/dbgperspective/glade/chooseoverloadsdialog.glade
-lib/nemiver/plugins/dbgperspective/glade/findtextdialog.glade
-lib/nemiver/plugins/dbgperspective/glade/globalvarsinspector.glade
-lib/nemiver/plugins/dbgperspective/glade/loadcoredialog.glade
-lib/nemiver/plugins/dbgperspective/glade/locatefiledialog.glade
-lib/nemiver/plugins/dbgperspective/glade/openfiledialog.glade
-lib/nemiver/plugins/dbgperspective/glade/preferencesdialog.glade
-lib/nemiver/plugins/dbgperspective/glade/proclistdialog.glade
-lib/nemiver/plugins/dbgperspective/glade/remotetargetdialog.glade
-lib/nemiver/plugins/dbgperspective/glade/runprogramdialog.glade
-lib/nemiver/plugins/dbgperspective/glade/savedsessionsdialog.glade
-lib/nemiver/plugins/dbgperspective/glade/setbreakpointdialog.glade
-lib/nemiver/plugins/dbgperspective/glade/varinspectordialog.glade
-lib/nemiver/plugins/dbgperspective/glade/watchpointdialog.glade
 lib/nemiver/plugins/dbgperspective/icons/breakpoint-disabled-marker.png
 lib/nemiver/plugins/dbgperspective/icons/breakpoint-marker.png
+lib/nemiver/plugins/dbgperspective/icons/countpoint-marker.png
 lib/nemiver/plugins/dbgperspective/icons/line-pointer.png
 lib/nemiver/plugins/dbgperspective/icons/run-to-cursor.xpm
 lib/nemiver/plugins/dbgperspective/icons/set-breakpoint.xpm
@@ -125,6 +114,21 @@ lib/nemiver/plugins/dbgperspective/menus/varinspectorpopup.xml
 lib/nemiver/plugins/dbgperspective/plugin-descriptor.xml
 lib/nemiver/plugins/dbgperspective/sqlscripts/create-tables.sql
 lib/nemiver/plugins/dbgperspective/sqlscripts/drop-tables.sql
+lib/nemiver/plugins/dbgperspective/ui/bodycontainer.ui
+lib/nemiver/plugins/dbgperspective/ui/callfunctiondialog.ui
+lib/nemiver/plugins/dbgperspective/ui/chooseoverloadsdialog.ui
+lib/nemiver/plugins/dbgperspective/ui/findtextdialog.ui
+lib/nemiver/plugins/dbgperspective/ui/globalvarsinspector.ui
+lib/nemiver/plugins/dbgperspective/ui/loadcoredialog.ui
+lib/nemiver/plugins/dbgperspective/ui/openfiledialog.ui
+lib/nemiver/plugins/dbgperspective/ui/preferencesdialog.ui
+lib/nemiver/plugins/dbgperspective/ui/proclistdialog.ui
+lib/nemiver/plugins/dbgperspective/ui/remotetargetdialog.ui
+lib/nemiver/plugins/dbgperspective/ui/runprogramdialog.ui
+lib/nemiver/plugins/dbgperspective/ui/savedsessionsdialog.ui
+lib/nemiver/plugins/dbgperspective/ui/setbreakpointdialog.ui
+lib/nemiver/plugins/dbgperspective/ui/varinspectordialog.ui
+lib/nemiver/plugins/dbgperspective/ui/watchpointdialog.ui
 share/applications/nemiver.desktop
 share/gnome/help/nemiver/C/figures/attach-dialog.png
 share/gnome/help/nemiver/C/figures/connect-remote-dialog.png
@@ -142,6 +146,22 @@ share/gnome/help/nemiver/C/figures/set-breakpoint-dialog.png
 share/gnome/help/nemiver/C/figures/variable-inspector.png
 share/gnome/help/nemiver/C/legal.xml
 share/gnome/help/nemiver/C/nemiver.xml
+share/gnome/help/nemiver/cs/figures/attach-dialog.png
+share/gnome/help/nemiver/cs/figures/connect-remote-dialog.png
+share/gnome/help/nemiver/cs/figures/disabled-breakpoint.png
+share/gnome/help/nemiver/cs/figures/enabled-breakpoint.png
+share/gnome/help/nemiver/cs/figures/execute-dialog.png
+share/gnome/help/nemiver/cs/figures/global-variables-dialog.png
+share/gnome/help/nemiver/cs/figures/load-core-dialog.png
+share/gnome/help/nemiver/cs/figures/main-window.png
+share/gnome/help/nemiver/cs/figures/memory-view.png
+share/gnome/help/nemiver/cs/figures/open-files-target.png
+share/gnome/help/nemiver/cs/figures/registers-view.png
+share/gnome/help/nemiver/cs/figures/sessions-dialog.png
+share/gnome/help/nemiver/cs/figures/set-breakpoint-dialog.png
+share/gnome/help/nemiver/cs/figures/variable-inspector.png
+share/gnome/help/nemiver/cs/legal.xml
+share/gnome/help/nemiver/cs/nemiver.xml
 share/gnome/help/nemiver/de/figures/attach-dialog.png
 share/gnome/help/nemiver/de/figures/connect-remote-dialog.png
 share/gnome/help/nemiver/de/figures/disabled-breakpoint.png
@@ -174,6 +194,22 @@ share/gnome/help/nemiver/es/figures/set-breakpoint-dialog.png
 share/gnome/help/nemiver/es/figures/variable-inspector.png
 share/gnome/help/nemiver/es/legal.xml
 share/gnome/help/nemiver/es/nemiver.xml
+share/gnome/help/nemiver/fr/figures/attach-dialog.png
+share/gnome/help/nemiver/fr/figures/connect-remote-dialog.png
+share/gnome/help/nemiver/fr/figures/disabled-breakpoint.png
+share/gnome/help/nemiver/fr/figures/enabled-breakpoint.png
+share/gnome/help/nemiver/fr/figures/execute-dialog.png
+share/gnome/help/nemiver/fr/figures/global-variables-dialog.png
+share/gnome/help/nemiver/fr/figures/load-core-dialog.png
+share/gnome/help/nemiver/fr/figures/main-window.png
+share/gnome/help/nemiver/fr/figures/memory-view.png
+share/gnome/help/nemiver/fr/figures/open-files-target.png
+share/gnome/help/nemiver/fr/figures/registers-view.png
+share/gnome/help/nemiver/fr/figures/sessions-dialog.png
+share/gnome/help/nemiver/fr/figures/set-breakpoint-dialog.png
+share/gnome/help/nemiver/fr/figures/variable-inspector.png
+share/gnome/help/nemiver/fr/legal.xml
+share/gnome/help/nemiver/fr/nemiver.xml
 share/gnome/help/nemiver/oc/figures/attach-dialog.png
 share/gnome/help/nemiver/oc/figures/connect-remote-dialog.png
 share/gnome/help/nemiver/oc/figures/disabled-breakpoint.png
@@ -190,6 +226,22 @@ share/gnome/help/nemiver/oc/figures/set-breakpoint-dialog.png
 share/gnome/help/nemiver/oc/figures/variable-inspector.png
 share/gnome/help/nemiver/oc/legal.xml
 share/gnome/help/nemiver/oc/nemiver.xml
+share/gnome/help/nemiver/sl/figures/attach-dialog.png
+share/gnome/help/nemiver/sl/figures/connect-remote-dialog.png
+share/gnome/help/nemiver/sl/figures/disabled-breakpoint.png
+share/gnome/help/nemiver/sl/figures/enabled-breakpoint.png
+share/gnome/help/nemiver/sl/figures/execute-dialog.png
+share/gnome/help/nemiver/sl/figures/global-variables-dialog.png
+share/gnome/help/nemiver/sl/figures/load-core-dialog.png
+share/gnome/help/nemiver/sl/figures/main-window.png
+share/gnome/help/nemiver/sl/figures/memory-view.png
+share/gnome/help/nemiver/sl/figures/open-files-target.png
+share/gnome/help/nemiver/sl/figures/registers-view.png
+share/gnome/help/nemiver/sl/figures/sessions-dialog.png
+share/gnome/help/nemiver/sl/figures/set-breakpoint-dialog.png
+share/gnome/help/nemiver/sl/figures/variable-inspector.png
+share/gnome/help/nemiver/sl/legal.xml
+share/gnome/help/nemiver/sl/nemiver.xml
 share/gnome/help/nemiver/sv/figures/attach-dialog.png
 share/gnome/help/nemiver/sv/figures/connect-remote-dialog.png
 share/gnome/help/nemiver/sv/figures/disabled-breakpoint.png
@@ -206,6 +258,22 @@ share/gnome/help/nemiver/sv/figures/set-breakpoint-dialog.png
 share/gnome/help/nemiver/sv/figures/variable-inspector.png
 share/gnome/help/nemiver/sv/legal.xml
 share/gnome/help/nemiver/sv/nemiver.xml
+share/gnome/help/nemiver/zh_CN/figures/attach-dialog.png
+share/gnome/help/nemiver/zh_CN/figures/connect-remote-dialog.png
+share/gnome/help/nemiver/zh_CN/figures/disabled-breakpoint.png
+share/gnome/help/nemiver/zh_CN/figures/enabled-breakpoint.png
+share/gnome/help/nemiver/zh_CN/figures/execute-dialog.png
+share/gnome/help/nemiver/zh_CN/figures/global-variables-dialog.png
+share/gnome/help/nemiver/zh_CN/figures/load-core-dialog.png
+share/gnome/help/nemiver/zh_CN/figures/main-window.png
+share/gnome/help/nemiver/zh_CN/figures/memory-view.png
+share/gnome/help/nemiver/zh_CN/figures/open-files-target.png
+share/gnome/help/nemiver/zh_CN/figures/registers-view.png
+share/gnome/help/nemiver/zh_CN/figures/sessions-dialog.png
+share/gnome/help/nemiver/zh_CN/figures/set-breakpoint-dialog.png
+share/gnome/help/nemiver/zh_CN/figures/variable-inspector.png
+share/gnome/help/nemiver/zh_CN/legal.xml
+share/gnome/help/nemiver/zh_CN/nemiver.xml
 share/icons/hicolor/16x16/apps/nemiver.png
 share/icons/hicolor/22x22/apps/nemiver.png
 share/icons/hicolor/24x24/apps/nemiver.png
@@ -214,6 +282,8 @@ share/icons/hicolor/48x48/apps/nemiver.png
 share/icons/hicolor/scalable/apps/nemiver.svg
 share/locale/ar/LC_MESSAGES/nemiver.mo
 share/locale/ca/LC_MESSAGES/nemiver.mo
+share/locale/cs/LC_MESSAGES/nemiver.mo
+share/locale/da/LC_MESSAGES/nemiver.mo
 share/locale/de/LC_MESSAGES/nemiver.mo
 share/locale/dz/LC_MESSAGES/nemiver.mo
 share/locale/en_GB/LC_MESSAGES/nemiver.mo
@@ -225,40 +295,56 @@ share/locale/nb/LC_MESSAGES/nemiver.mo
 share/locale/nl/LC_MESSAGES/nemiver.mo
 share/locale/oc/LC_MESSAGES/nemiver.mo
 share/locale/pt_BR/LC_MESSAGES/nemiver.mo
+share/locale/ru/LC_MESSAGES/nemiver.mo
+share/locale/sl/LC_MESSAGES/nemiver.mo
 share/locale/sv/LC_MESSAGES/nemiver.mo
 share/locale/th/LC_MESSAGES/nemiver.mo
-share/omf/nemiver/nemiver-de.omf
-%%DATADIR%%/glade/workbench.glade
+share/locale/zh_CN/LC_MESSAGES/nemiver.mo
 %%DATADIR%%/menus/menubar.xml
+%%DATADIR%%/ui/locatefiledialog.ui
+%%DATADIR%%/ui/workbench.ui
 share/omf/nemiver/nemiver-C.omf
+share/omf/nemiver/nemiver-cs.omf
+share/omf/nemiver/nemiver-de.omf
 share/omf/nemiver/nemiver-es.omf
+share/omf/nemiver/nemiver-fr.omf
 share/omf/nemiver/nemiver-oc.omf
+share/omf/nemiver/nemiver-sl.omf
 share/omf/nemiver/nemiver-sv.omf
-@dirrmtry share/omf/nemiver
-@dirrmtry share/nemiver/menus
-@dirrmtry share/nemiver/glade
-@dirrmtry share/nemiver
-@dirrmtry share/gnome/help/nemiver/sv/figures
-@dirrmtry share/gnome/help/nemiver/sv
-@dirrmtry share/gnome/help/nemiver/oc/figures
-@dirrmtry share/gnome/help/nemiver/oc
-@dirrmtry share/gnome/help/nemiver/es/figures
-@dirrmtry share/gnome/help/nemiver/es
-@dirrmtry share/gnome/help/nemiver/de/figures
-@dirrmtry share/gnome/help/nemiver/de
-@dirrmtry share/gnome/help/nemiver/C/figures
-@dirrmtry share/gnome/help/nemiver/C
-@dirrmtry share/gnome/help/nemiver
+share/omf/nemiver/nemiver-zh_CN.omf
+@dirrm share/omf/nemiver
+@dirrm %%DATADIR%%/ui
+@dirrm %%DATADIR%%/menus
+@dirrm %%DATADIR%%
+@dirrm share/gnome/help/nemiver/zh_CN/figures
+@dirrm share/gnome/help/nemiver/zh_CN
+@dirrm share/gnome/help/nemiver/sv/figures
+@dirrm share/gnome/help/nemiver/sv
+@dirrm share/gnome/help/nemiver/sl/figures
+@dirrm share/gnome/help/nemiver/sl
+@dirrm share/gnome/help/nemiver/oc/figures
+@dirrm share/gnome/help/nemiver/oc
+@dirrm share/gnome/help/nemiver/fr/figures
+@dirrm share/gnome/help/nemiver/fr
+@dirrm share/gnome/help/nemiver/es/figures
+@dirrm share/gnome/help/nemiver/es
+@dirrm share/gnome/help/nemiver/de/figures
+@dirrm share/gnome/help/nemiver/de
+@dirrm share/gnome/help/nemiver/cs/figures
+@dirrm share/gnome/help/nemiver/cs
+@dirrm share/gnome/help/nemiver/C/figures
+@dirrm share/gnome/help/nemiver/C
+@dirrm share/gnome/help/nemiver
 @dirrmtry share/applications
-@dirrmtry lib/nemiver/plugins/dbgperspective/sqlscripts
-@dirrmtry lib/nemiver/plugins/dbgperspective/menus
-@dirrmtry lib/nemiver/plugins/dbgperspective/icons
-@dirrmtry lib/nemiver/plugins/dbgperspective/glade
-@dirrmtry lib/nemiver/plugins/dbgperspective
-@dirrmtry lib/nemiver/plugins
-@dirrmtry lib/nemiver/modules
-@dirrmtry lib/nemiver/config
-@dirrmtry lib/nemiver
-@dirrmtry include/nemiver/dynmods
-@dirrmtry include/nemiver/common
-@dirrmtry include/nemiver
+@dirrm lib/nemiver/plugins/dbgperspective/ui
+@dirrm lib/nemiver/plugins/dbgperspective/sqlscripts
+@dirrm lib/nemiver/plugins/dbgperspective/menus
+@dirrm lib/nemiver/plugins/dbgperspective/icons
+@dirrm lib/nemiver/plugins/dbgperspective
+@dirrm lib/nemiver/plugins
+@dirrm lib/nemiver/modules
+@dirrm lib/nemiver/config
+@dirrm lib/nemiver
+@dirrm include/nemiver/dynmods
+@dirrm include/nemiver/common
+@dirrm include/nemiver
