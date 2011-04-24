@@ -355,6 +355,7 @@ diablo-jre%%JRE_VERSION%%/lib/zi/America/Martinique
 diablo-jre%%JRE_VERSION%%/lib/zi/America/Mazatlan
 diablo-jre%%JRE_VERSION%%/lib/zi/America/Menominee
 diablo-jre%%JRE_VERSION%%/lib/zi/America/Merida
+%%TZUPDATE%%diablo-jre%%JRE_VERSION%%/lib/zi/America/Metlakatla
 diablo-jre%%JRE_VERSION%%/lib/zi/America/Mexico_City
 diablo-jre%%JRE_VERSION%%/lib/zi/America/Miquelon
 diablo-jre%%JRE_VERSION%%/lib/zi/America/Moncton
@@ -391,6 +392,7 @@ diablo-jre%%JRE_VERSION%%/lib/zi/America/Santiago
 diablo-jre%%JRE_VERSION%%/lib/zi/America/Santo_Domingo
 diablo-jre%%JRE_VERSION%%/lib/zi/America/Sao_Paulo
 diablo-jre%%JRE_VERSION%%/lib/zi/America/Scoresbysund
+%%TZUPDATE%%diablo-jre%%JRE_VERSION%%/lib/zi/America/Sitka
 diablo-jre%%JRE_VERSION%%/lib/zi/America/St_Johns
 diablo-jre%%JRE_VERSION%%/lib/zi/America/St_Kitts
 diablo-jre%%JRE_VERSION%%/lib/zi/America/St_Lucia
