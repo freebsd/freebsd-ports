@@ -19,6 +19,8 @@ COMMENT=	A pager for sawfish without GNOME
 BUILD_DEPENDS=	sawfish:${PORTSDIR}/x11-wm/sawfish
 RUN_DEPENDS=	sawfish:${PORTSDIR}/x11-wm/sawfish
 
+BROKEN=		does not build
+
 USE_GMAKE=	yes
 MAKEFILE=	GNUmakefile
 USE_XORG=	x11
