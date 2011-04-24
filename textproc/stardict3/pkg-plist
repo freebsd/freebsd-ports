@@ -1,69 +1,97 @@
 bin/stardict
+lib/stardict/plugins/stardict_dictdotcn.la
+lib/stardict/plugins/stardict_dictdotcn.so
+lib/stardict/plugins/stardict_html_parsedata.la
+lib/stardict/plugins/stardict_html_parsedata.so
+lib/stardict/plugins/stardict_man.la
+lib/stardict/plugins/stardict_man.so
+lib/stardict/plugins/stardict_powerword_parsedata.la
+lib/stardict/plugins/stardict_powerword_parsedata.so
+lib/stardict/plugins/stardict_qqwry.la
+lib/stardict/plugins/stardict_qqwry.so
+lib/stardict/plugins/stardict_spell.la
+lib/stardict/plugins/stardict_spell.so
+lib/stardict/plugins/stardict_wiki_parsedata.la
+lib/stardict/plugins/stardict_wiki_parsedata.so
+lib/stardict/plugins/stardict_wordnet.la
+lib/stardict/plugins/stardict_wordnet.so
+lib/stardict/plugins/stardict_wordnet_parsedata.la
+lib/stardict/plugins/stardict_wordnet_parsedata.so
+lib/stardict/plugins/stardict_xdxf_parsedata.la
+lib/stardict/plugins/stardict_xdxf_parsedata.so
 %%GNOME%%libdata/bonobo/servers/GNOME_Stardict.server
 share/applications/stardict.desktop
-%%GNOME%%share/gnome/help/stardict/C/legal.xml
-%%GNOME%%share/gnome/help/stardict/C/stardict.xml
+%%GNOME%%share/gnome/help/stardict/C/figures/acrobat_toolbar.png
+%%GNOME%%share/gnome/help/stardict/C/figures/portable_apps_menu.png
 %%GNOME%%share/gnome/help/stardict/C/figures/stardict_float_window.png
+%%GNOME%%share/gnome/help/stardict/C/figures/stardict_full_text_translation.png
 %%GNOME%%share/gnome/help/stardict/C/figures/stardict_main_window.png
 %%GNOME%%share/gnome/help/stardict/C/figures/stardict_notification_area.png
-%%GNOME%%share/gnome/help/stardict/zh_CN/legal.xml
-%%GNOME%%share/gnome/help/stardict/zh_CN/stardict.xml
-%%GNOME%%share/gnome/help/stardict/zh_CN/figures/stardict_float_window.png
-%%GNOME%%share/gnome/help/stardict/zh_CN/figures/stardict_main_window.png
-%%GNOME%%share/gnome/help/stardict/zh_CN/figures/stardict_notification_area.png
-%%GNOME%%share/gnome/help/stardict/zh_TW/legal.xml
-%%GNOME%%share/gnome/help/stardict/zh_TW/stardict.xml
-%%GNOME%%share/gnome/help/stardict/zh_TW/figures/stardict_float_window.png
-%%GNOME%%share/gnome/help/stardict/zh_TW/figures/stardict_main_window.png
-%%GNOME%%share/gnome/help/stardict/zh_TW/figures/stardict_notification_area.png
-%%GNOME%%share/gnome/help/stardict/uk/legal.xml
-%%GNOME%%share/gnome/help/stardict/uk/stardict.xml
-%%GNOME%%share/gnome/help/stardict/uk/figures/stardict_float_window.png
-%%GNOME%%share/gnome/help/stardict/uk/figures/stardict_main_window.png
-%%GNOME%%share/gnome/help/stardict/uk/figures/stardict_notification_area.png
-%%GNOME%%share/gnome/help/stardict/ru/legal.xml
-%%GNOME%%share/gnome/help/stardict/ru/stardict.xml
-%%GNOME%%share/gnome/help/stardict/ru/figures/stardict_float_window.png
-%%GNOME%%share/gnome/help/stardict/ru/figures/stardict_main_window.png
-%%GNOME%%share/gnome/help/stardict/ru/figures/stardict_notification_area.png
-%%GNOME%%share/gnome/help/stardict/mk/legal.xml
-%%GNOME%%share/gnome/help/stardict/mk/stardict.xml
+%%GNOME%%share/gnome/help/stardict/C/figures/stardict_windows_console.png
+%%GNOME%%share/gnome/help/stardict/C/legal.xml
+%%GNOME%%share/gnome/help/stardict/C/stardict.xml
+%%GNOME%%share/gnome/help/stardict/mk/figures/acrobat_toolbar.png
+%%GNOME%%share/gnome/help/stardict/mk/figures/portable_apps_menu.png
 %%GNOME%%share/gnome/help/stardict/mk/figures/stardict_float_window.png
+%%GNOME%%share/gnome/help/stardict/mk/figures/stardict_full_text_translation.png
 %%GNOME%%share/gnome/help/stardict/mk/figures/stardict_main_window.png
 %%GNOME%%share/gnome/help/stardict/mk/figures/stardict_notification_area.png
-%%GNOME%%share/gnome/help/stardict/nl/legal.xml
-%%GNOME%%share/gnome/help/stardict/nl/stardict.xml
+%%GNOME%%share/gnome/help/stardict/mk/figures/stardict_windows_console.png
+%%GNOME%%share/gnome/help/stardict/mk/stardict.xml
+%%GNOME%%share/gnome/help/stardict/nl/figures/acrobat_toolbar.png
+%%GNOME%%share/gnome/help/stardict/nl/figures/portable_apps_menu.png
 %%GNOME%%share/gnome/help/stardict/nl/figures/stardict_float_window.png
+%%GNOME%%share/gnome/help/stardict/nl/figures/stardict_full_text_translation.png
 %%GNOME%%share/gnome/help/stardict/nl/figures/stardict_main_window.png
 %%GNOME%%share/gnome/help/stardict/nl/figures/stardict_notification_area.png
+%%GNOME%%share/gnome/help/stardict/nl/figures/stardict_windows_console.png
+%%GNOME%%share/gnome/help/stardict/nl/stardict.xml
+%%GNOME%%share/gnome/help/stardict/ru/figures/acrobat_toolbar.png
+%%GNOME%%share/gnome/help/stardict/ru/figures/portable_apps_menu.png
+%%GNOME%%share/gnome/help/stardict/ru/figures/stardict_float_window.png
+%%GNOME%%share/gnome/help/stardict/ru/figures/stardict_full_text_translation.png
+%%GNOME%%share/gnome/help/stardict/ru/figures/stardict_main_window.png
+%%GNOME%%share/gnome/help/stardict/ru/figures/stardict_notification_area.png
+%%GNOME%%share/gnome/help/stardict/ru/figures/stardict_windows_console.png
+%%GNOME%%share/gnome/help/stardict/ru/stardict.xml
+%%GNOME%%share/gnome/help/stardict/uk/figures/acrobat_toolbar.png
+%%GNOME%%share/gnome/help/stardict/uk/figures/portable_apps_menu.png
+%%GNOME%%share/gnome/help/stardict/uk/figures/stardict_float_window.png
+%%GNOME%%share/gnome/help/stardict/uk/figures/stardict_full_text_translation.png
+%%GNOME%%share/gnome/help/stardict/uk/figures/stardict_main_window.png
+%%GNOME%%share/gnome/help/stardict/uk/figures/stardict_notification_area.png
+%%GNOME%%share/gnome/help/stardict/uk/figures/stardict_windows_console.png
+%%GNOME%%share/gnome/help/stardict/uk/stardict.xml
+%%GNOME%%share/gnome/help/stardict/zh_CN/figures/acrobat_toolbar.png
+%%GNOME%%share/gnome/help/stardict/zh_CN/figures/portable_apps_menu.png
+%%GNOME%%share/gnome/help/stardict/zh_CN/figures/stardict_float_window.png
+%%GNOME%%share/gnome/help/stardict/zh_CN/figures/stardict_full_text_translation.png
+%%GNOME%%share/gnome/help/stardict/zh_CN/figures/stardict_main_window.png
+%%GNOME%%share/gnome/help/stardict/zh_CN/figures/stardict_notification_area.png
+%%GNOME%%share/gnome/help/stardict/zh_CN/figures/stardict_windows_console.png
+%%GNOME%%share/gnome/help/stardict/zh_CN/stardict.xml
+%%GNOME%%share/gnome/help/stardict/zh_TW/figures/acrobat_toolbar.png
+%%GNOME%%share/gnome/help/stardict/zh_TW/figures/portable_apps_menu.png
+%%GNOME%%share/gnome/help/stardict/zh_TW/figures/stardict_float_window.png
+%%GNOME%%share/gnome/help/stardict/zh_TW/figures/stardict_full_text_translation.png
+%%GNOME%%share/gnome/help/stardict/zh_TW/figures/stardict_main_window.png
+%%GNOME%%share/gnome/help/stardict/zh_TW/figures/stardict_notification_area.png
+%%GNOME%%share/gnome/help/stardict/zh_TW/figures/stardict_windows_console.png
+%%GNOME%%share/gnome/help/stardict/zh_TW/stardict.xml
 %%GNOME%%share/idl/GNOME_Stardict.idl
-%%GNOME%%share/omf/stardict/stardict-C.omf
-%%GNOME%%share/omf/stardict/stardict-zh_CN.omf
-%%GNOME%%share/omf/stardict/stardict-zh_TW.omf
-%%GNOME%%share/omf/stardict/stardict-uk.omf
-%%GNOME%%share/omf/stardict/stardict-ru.omf
-%%GNOME%%share/omf/stardict/stardict-mk.omf
-%%GNOME%%share/omf/stardict/stardict-nl.omf
-share/pixmaps/stardict.png
-share/stardict/pixmaps/docklet_normal.png
-share/stardict/pixmaps/docklet_scan.png
-share/stardict/pixmaps/docklet_stop.png
-share/stardict/pixmaps/index_appendix.png
-share/stardict/pixmaps/index_wazard.png
-share/stardict/pixmaps/index_dictlist.png
-share/stardict/pixmaps/index_translate.png
-share/stardict/pixmaps/splash.png
-share/stardict/sounds/menushow.wav
-share/stardict/sounds/buttonactive.wav
 share/locale/ar/LC_MESSAGES/stardict.mo
+share/locale/be/LC_MESSAGES/stardict.mo
 share/locale/cs/LC_MESSAGES/stardict.mo
 share/locale/de/LC_MESSAGES/stardict.mo
 share/locale/el/LC_MESSAGES/stardict.mo
+share/locale/es/LC_MESSAGES/stardict.mo
 share/locale/fr/LC_MESSAGES/stardict.mo
 share/locale/ga/LC_MESSAGES/stardict.mo
 share/locale/hr/LC_MESSAGES/stardict.mo
 share/locale/hu/LC_MESSAGES/stardict.mo
+share/locale/kk/LC_MESSAGES/stardict.mo
 share/locale/ku/LC_MESSAGES/stardict.mo
+share/locale/lt/LC_MESSAGES/stardict.mo
 share/locale/mk/LC_MESSAGES/stardict.mo
 share/locale/nl/LC_MESSAGES/stardict.mo
 share/locale/pt_BR/LC_MESSAGES/stardict.mo
@@ -77,93 +105,74 @@ share/locale/uk/LC_MESSAGES/stardict.mo
 share/locale/vi/LC_MESSAGES/stardict.mo
 share/locale/zh_CN/LC_MESSAGES/stardict.mo
 share/locale/zh_TW/LC_MESSAGES/stardict.mo
-lib/stardict/plugins/stardict_dictdotcn.so
-lib/stardict/plugins/stardict_dictdotcn.la
-lib/stardict/plugins/stardict_man.so
-lib/stardict/plugins/stardict_man.la
-lib/stardict/plugins/stardict_html_parsedata.so
-lib/stardict/plugins/stardict_html_parsedata.la
-lib/stardict/plugins/stardict_xdxf_parsedata.so
-lib/stardict/plugins/stardict_xdxf_parsedata.la
-lib/stardict/plugins/stardict_wordnet.so
-lib/stardict/plugins/stardict_wordnet.la
-lib/stardict/plugins/stardict_wordnet_parsedata.so
-lib/stardict/plugins/stardict_wordnet_parsedata.la
-lib/stardict/plugins/stardict_powerword_parsedata.so
-lib/stardict/plugins/stardict_powerword_parsedata.la
-lib/stardict/plugins/stardict_wiki_parsedata.so
-lib/stardict/plugins/stardict_wiki_parsedata.la
-lib/stardict/plugins/stardict_spell.so
-lib/stardict/plugins/stardict_spell.la
-lib/stardict/plugins/stardict_qqwry.so
-lib/stardict/plugins/stardict_qqwry.la
-@dirrmtry share/locale/ar/LC_MESSAGES
-@dirrmtry share/locale/ar
-@dirrmtry share/locale/cs/LC_MESSAGES
-@dirrmtry share/locale/cs
-@dirrmtry share/locale/de/LC_MESSAGES
-@dirrmtry share/locale/de
-@dirrmtry share/locale/el/LC_MESSAGES
-@dirrmtry share/locale/el
-@dirrmtry share/locale/fr/LC_MESSAGES
-@dirrmtry share/locale/fr
-@dirrmtry share/locale/ga/LC_MESSAGES
-@dirrmtry share/locale/ga
-@dirrmtry share/locale/hr/LC_MESSAGES
-@dirrmtry share/locale/hr
-@dirrmtry share/locale/hu/LC_MESSAGES
-@dirrmtry share/locale/hu
-@dirrmtry share/locale/ku/LC_MESSAGES
-@dirrmtry share/locale/ku
-@dirrmtry share/locale/mk/LC_MESSAGES
-@dirrmtry share/locale/mk
-@dirrmtry share/locale/nl/LC_MESSAGES
-@dirrmtry share/locale/nl
-@dirrmtry share/locale/pt_BR/LC_MESSAGES
-@dirrmtry share/locale/pt_BR
-@dirrmtry share/locale/ru/LC_MESSAGES
-@dirrmtry share/locale/ru
-@dirrmtry share/locale/rw/LC_MESSAGES
-@dirrmtry share/locale/rw
-@dirrmtry share/locale/sk/LC_MESSAGES
-@dirrmtry share/locale/sk
-@dirrmtry share/locale/sv/LC_MESSAGES
-@dirrmtry share/locale/sv
-@dirrmtry share/locale/tr/LC_MESSAGES
-@dirrmtry share/locale/tr
-@dirrmtry share/locale/tt/LC_MESSAGES
-@dirrmtry share/locale/tt
-@dirrmtry share/locale/uk/LC_MESSAGES
-@dirrmtry share/locale/uk
-@dirrmtry share/locale/vi/LC_MESSAGES
-@dirrmtry share/locale/vi
-@dirrmtry share/locale/zh_CN/LC_MESSAGES
-@dirrmtry share/locale/zh_CN
-@dirrmtry share/locale/zh_TW/LC_MESSAGES
-@dirrmtry share/locale/zh_TW
-@dirrm lib/stardict/plugins
-@dirrm lib/stardict
+%%GNOME%%share/omf/stardict/stardict-C.omf
+%%GNOME%%share/omf/stardict/stardict-mk.omf
+%%GNOME%%share/omf/stardict/stardict-nl.omf
+%%GNOME%%share/omf/stardict/stardict-ru.omf
+%%GNOME%%share/omf/stardict/stardict-uk.omf
+%%GNOME%%share/omf/stardict/stardict-zh_CN.omf
+%%GNOME%%share/omf/stardict/stardict-zh_TW.omf
+share/pixmaps/stardict.png
+share/stardict/dic/stardict-dict/res/huzheng.png
+share/stardict/dic/stardict-dict/res/huzheng_redhat.png
+share/stardict/dic/stardict-dict/res/linux_logo.jpg
+share/stardict/dic/stardict-dict/res/redhat_linux_logo.gif
+share/stardict/dic/stardict-dict/res/redhat_logo.jpg
+share/stardict/dic/stardict-dict/res/splash.png
+share/stardict/dic/stardict-dict/res/wenjing.jpg
+share/stardict/dic/stardict-dict/res/wenjing2.jpg
+share/stardict/dic/stardict-dict/stardict-dict.dict.dz
+share/stardict/dic/stardict-dict/stardict-dict.idx
+share/stardict/dic/stardict-dict/stardict-dict.ifo
+share/stardict/dic/stardict-dict/stardict-dict.syn
+share/stardict/pixmaps/attachment.png
+share/stardict/pixmaps/docklet_normal.png
+share/stardict/pixmaps/docklet_scan.png
+share/stardict/pixmaps/docklet_stop.png
+share/stardict/pixmaps/index_appendix.png
+share/stardict/pixmaps/index_dictlist.png
+share/stardict/pixmaps/index_translate.png
+share/stardict/pixmaps/index_wazard.png
+share/stardict/pixmaps/pronounce.png
+share/stardict/pixmaps/splash.png
+share/stardict/pixmaps/video.png
+share/stardict/sounds/buttonactive.wav
+share/stardict/sounds/menushow.wav
+@dirrmtry share/stardict/treedict
 @dirrm share/stardict/sounds
+@dirrm share/stardict/skins
 @dirrm share/stardict/pixmaps
-@dirrm share/stardict/treedict
+@dirrm share/stardict/dic/stardict-dict/res
+@dirrm share/stardict/dic/stardict-dict
 @dirrmtry share/stardict/dic
 @dirrmtry share/stardict
 %%GNOME%%@dirrm share/omf/stardict
-%%GNOME%%@dirrm share/gnome/help/stardict/C/figures
-%%GNOME%%@dirrm share/gnome/help/stardict/C
-%%GNOME%%@dirrm share/gnome/help/stardict/zh_CN/figures
-%%GNOME%%@dirrm share/gnome/help/stardict/zh_CN
+@dirrmtry share/locale/tt/LC_MESSAGES
+@dirrmtry share/locale/tt
+@dirrmtry share/locale/rw/LC_MESSAGES
+@dirrmtry share/locale/rw
+@dirrmtry share/locale/ku/LC_MESSAGES
+@dirrmtry share/locale/ku
+@dirrmtry share/locale/kk/LC_MESSAGES
+@dirrmtry share/locale/kk
+%%GNOME%%@dirrmtry share/idl
 %%GNOME%%@dirrm share/gnome/help/stardict/zh_TW/figures
 %%GNOME%%@dirrm share/gnome/help/stardict/zh_TW
+%%GNOME%%@dirrm share/gnome/help/stardict/zh_CN/figures
+%%GNOME%%@dirrm share/gnome/help/stardict/zh_CN
 %%GNOME%%@dirrm share/gnome/help/stardict/uk/figures
 %%GNOME%%@dirrm share/gnome/help/stardict/uk
 %%GNOME%%@dirrm share/gnome/help/stardict/ru/figures
 %%GNOME%%@dirrm share/gnome/help/stardict/ru
-%%GNOME%%@dirrm share/gnome/help/stardict/mk/figures
-%%GNOME%%@dirrm share/gnome/help/stardict/mk
 %%GNOME%%@dirrm share/gnome/help/stardict/nl/figures
 %%GNOME%%@dirrm share/gnome/help/stardict/nl
+%%GNOME%%@dirrm share/gnome/help/stardict/mk/figures
+%%GNOME%%@dirrm share/gnome/help/stardict/mk
+%%GNOME%%@dirrm share/gnome/help/stardict/C/figures
+%%GNOME%%@dirrm share/gnome/help/stardict/C
 %%GNOME%%@dirrm share/gnome/help/stardict
 @dirrmtry share/applications
+@dirrm lib/stardict/plugins
+@dirrm lib/stardict
+@exec mkdir -p %D/share/stardict/skins
 @exec mkdir -p %D/share/stardict/treedict
-@exec mkdir -p %D/share/stardict/dic
