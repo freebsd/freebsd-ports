@@ -18,6 +18,8 @@ COMMENT=	Simulate the effects of long exposures
 
 LIB_DEPENDS=	netpbm.1:${PORTSDIR}/graphics/netpbm
 
+BROKEN=		does not build with new netpbm
+
 PLIST_FILES=	bin/pamblend bin/pamalign
 MAN1=		pamblend.1 pamalign.1
 
