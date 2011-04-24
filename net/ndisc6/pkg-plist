@@ -3,9 +3,11 @@ bin/dnssort
 bin/name2addr
 bin/tcpspray
 bin/tcpspray6
+etc/rdnssd/merge-hook
 sbin/ndisc6
 sbin/rdisc6
 sbin/rdnssd
 sbin/tcptraceroute6
 sbin/rltraceroute6
 sbin/tracert6
+@dirrm etc/rdnssd
