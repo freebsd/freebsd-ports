@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	DBIx-Class-MooseColumns
-PORTVERSION=	0.18
+PORTVERSION=	0.20
 CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:MENDEL
@@ -15,8 +15,11 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	az@FreeBSD.org
 COMMENT=	Allow write DBIC add_column definitions as attribute options
 
-RUN_DEPENDS=	p5-Moose>=1.19:${PORTSDIR}/devel/p5-Moose \
+RUN_DEPENDS=	p5-Moose>=1.24:${PORTSDIR}/devel/p5-Moose \
 		p5-namespace-autoclean>=0.09:${PORTSDIR}/devel/p5-namespace-autoclean
+
+LICENSE_COMB=	dual
+LICENSE=	ART20 GPLv1
 
 PERL_CONFIGURE=	5.8.9+
 
