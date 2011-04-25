@@ -7,7 +7,7 @@
 
 PORTNAME=	jdk
 PORTVERSION=	${JDK_VERSION}.${JDK_UPDATE_VERSION}p${JDK_PATCHSET_VERSION}
-PORTREVISION=	22
+PORTREVISION=	23
 CATEGORIES=	java devel
 MASTER_SITES=	# http://download.java.net/jdk6/
 #		 http://www.eyesbeyond.com/freebsddom/java/jdk16.html
@@ -62,8 +62,8 @@ JDK_BUILD_NUMBER=	05
 JDK_BUILD_DATE=		24_sep_2007
 LATEST_LINK=	jdk16
 
-TZUPDATE_VERSION=	1_3_35
-TZUPDATE_TZVERSION=	2011b
+TZUPDATE_VERSION=	1_3_38
+TZUPDATE_TZVERSION=	2011e
 
 .include <bsd.port.pre.mk>
 
@@ -203,14 +203,15 @@ DISTFILE_INSTRUCTIONS += Mozilla Headers from\n\
 DISTFILE_INSTRUCTIONS += .\n\n
 .endif#}
 .if defined(WITH_POLICY) && !exists(${DISTDIR}/${POLICYFILE})#{
-DISTFILE_INSTRUCTIONS += Please open http://java.sun.com/javase/downloads/index.jsp\n\
+DISTFILE_INSTRUCTIONS += Please open http://www.oracle.com/technetwork/java/javase/downloads/index.html\n\
 in a web browser and follow the \"Download\" link for\n\
-\"Other Downloads\" to obtain the JCE policy file, ${POLICYFILE}.\n\n
+\"Java Cryptography Extension (JCE) Unlimited Strength\n\
+Jurisdiction Policy Files 6\" to obtain the JCE policy file, ${POLICYFILE}.\n\n
 .endif#}
 .if defined(WITH_TZUPDATE) && !exists(${DISTDIR}/${TZUPDATEFILE})#{
-DISTFILE_INSTRUCTIONS += Please open http://java.sun.com/javase/downloads/index.jsp\n\
+DISTFILE_INSTRUCTIONS += Please open http://www.oracle.com/technetwork/java/javase/downloads/index.html\n\
 in a web browser and follow the \"Download\" link for\n\
-\"JDK US DST Timezone Update Tool - ${TZUPDATE_VERSION}\" to obtain the\n\
+\"JDK DST Timezone Update Tool - ${TZUPDATE_VERSION}\" to obtain the\n\
 time zone update file, ${TZUPDATEFILE}.\n\n
 .endif#}
 .if !exists(${DISTDIR}/${PATCHSETFILE})#{
