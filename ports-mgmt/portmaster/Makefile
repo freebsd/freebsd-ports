@@ -35,6 +35,7 @@ PLIST_DIRS+=	share/portmaster
 
 .if defined(WITH_ZSH)
 PLIST_FILES+=	share/zsh/site-functions/_portmaster
+PLIST_DIRSTRY+=	share/zsh/site-functions share/zsh
 .endif
 
 verify: checksum
