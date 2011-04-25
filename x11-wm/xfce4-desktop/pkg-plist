@@ -1,113 +1,121 @@
 bin/xfdesktop
 bin/xfdesktop-settings
 share/applications/xfce-backdrop-settings.desktop
-share/doc/xfdesktop/html/C/images/root_menu.png
-share/doc/xfdesktop/html/C/images/root_menu2.png
-share/doc/xfdesktop/html/C/images/select_bg_color.png
-share/doc/xfdesktop/html/C/images/xfdesktop-background-tab.png
-share/doc/xfdesktop/html/C/images/xfdesktop-icons-tab.png
-share/doc/xfdesktop/html/C/images/xfdesktop-menus-tab.png
-share/doc/xfdesktop/html/C/index.html
-share/doc/xfdesktop/html/bn/images
-share/doc/xfdesktop/html/bn/index.html
-share/doc/xfdesktop/html/ca/images
-share/doc/xfdesktop/html/ca/index.html
-share/doc/xfdesktop/html/da/images
-share/doc/xfdesktop/html/da/index.html
-share/doc/xfdesktop/html/fr/images/root_menu.png
-share/doc/xfdesktop/html/fr/images/root_menu2.png
-share/doc/xfdesktop/html/fr/images/select_bg_color.png
-share/doc/xfdesktop/html/fr/images/xfdesktop-background-tab.png
-share/doc/xfdesktop/html/fr/images/xfdesktop-icons-tab.png
-share/doc/xfdesktop/html/fr/images/xfdesktop-menus-tab.png
-share/doc/xfdesktop/html/fr/index.html
-share/doc/xfdesktop/html/gl/images
-share/doc/xfdesktop/html/gl/index.html
-share/doc/xfdesktop/html/it/images
-share/doc/xfdesktop/html/it/index.html
-share/doc/xfdesktop/html/ja/images/root_menu.png
-share/doc/xfdesktop/html/ja/images/root_menu2.png
-share/doc/xfdesktop/html/ja/images/select_bg_color.png
-share/doc/xfdesktop/html/ja/images/xfdesktop-background-tab.png
-share/doc/xfdesktop/html/ja/images/xfdesktop-icons-tab.png
-share/doc/xfdesktop/html/ja/images/xfdesktop-menus-tab.png
-share/doc/xfdesktop/html/ja/index.html
-share/doc/xfdesktop/html/ru/images
-share/doc/xfdesktop/html/ru/index.html
-share/doc/xfdesktop/html/ug/images
-share/doc/xfdesktop/html/ug/index.html
-share/doc/xfdesktop/html/xfdesktop.css
-share/doc/xfdesktop/html/zh_CN/images
-share/doc/xfdesktop/html/zh_CN/index.html
+%%DOCSDIR%%/html/C/images/root_menu.png
+%%DOCSDIR%%/html/C/images/root_menu2.png
+%%DOCSDIR%%/html/C/images/select_bg_color.png
+%%DOCSDIR%%/html/C/images/xfdesktop-background-tab.png
+%%DOCSDIR%%/html/C/images/xfdesktop-icons-tab.png
+%%DOCSDIR%%/html/C/images/xfdesktop-menus-tab.png
+%%DOCSDIR%%/html/C/index.html
+%%DOCSDIR%%/html/bn/images
+%%DOCSDIR%%/html/bn/index.html
+%%DOCSDIR%%/html/ca/images
+%%DOCSDIR%%/html/ca/index.html
+%%DOCSDIR%%/html/da/images
+%%DOCSDIR%%/html/da/index.html
+%%DOCSDIR%%/html/el/images
+%%DOCSDIR%%/html/el/index.html
+%%DOCSDIR%%/html/fr/images/root_menu.png
+%%DOCSDIR%%/html/fr/images/root_menu2.png
+%%DOCSDIR%%/html/fr/images/select_bg_color.png
+%%DOCSDIR%%/html/fr/images/xfdesktop-background-tab.png
+%%DOCSDIR%%/html/fr/images/xfdesktop-icons-tab.png
+%%DOCSDIR%%/html/fr/images/xfdesktop-menus-tab.png
+%%DOCSDIR%%/html/fr/index.html
+%%DOCSDIR%%/html/gl/images
+%%DOCSDIR%%/html/gl/index.html
+%%DOCSDIR%%/html/id/images
+%%DOCSDIR%%/html/id/index.html
+%%DOCSDIR%%/html/it/images
+%%DOCSDIR%%/html/it/index.html
+%%DOCSDIR%%/html/ja/images/root_menu.png
+%%DOCSDIR%%/html/ja/images/root_menu2.png
+%%DOCSDIR%%/html/ja/images/select_bg_color.png
+%%DOCSDIR%%/html/ja/images/xfdesktop-background-tab.png
+%%DOCSDIR%%/html/ja/images/xfdesktop-icons-tab.png
+%%DOCSDIR%%/html/ja/images/xfdesktop-menus-tab.png
+%%DOCSDIR%%/html/ja/index.html
+%%DOCSDIR%%/html/ru/images
+%%DOCSDIR%%/html/ru/index.html
+%%DOCSDIR%%/html/sv/images
+%%DOCSDIR%%/html/sv/index.html
+%%DOCSDIR%%/html/tr/images
+%%DOCSDIR%%/html/tr/index.html
+%%DOCSDIR%%/html/ug/images
+%%DOCSDIR%%/html/ug/index.html
+%%DOCSDIR%%/html/xfdesktop.css
+%%DOCSDIR%%/html/zh_CN/images
+%%DOCSDIR%%/html/zh_CN/index.html
 share/icons/hicolor/32x32/apps/xfce4-backdrop.png
 share/icons/hicolor/32x32/apps/xfce4-menueditor.png
 share/icons/hicolor/48x48/apps/xfce4-backdrop.png
 share/icons/hicolor/48x48/apps/xfce4-menueditor.png
 share/icons/hicolor/scalable/apps/xfce4-backdrop.svg
 share/icons/hicolor/scalable/apps/xfce4-menueditor.svg
-share/locale/am/LC_MESSAGES/xfdesktop.mo
-share/locale/ar/LC_MESSAGES/xfdesktop.mo
-share/locale/ast/LC_MESSAGES/xfdesktop.mo
-share/locale/az/LC_MESSAGES/xfdesktop.mo
-share/locale/be/LC_MESSAGES/xfdesktop.mo
-share/locale/bg/LC_MESSAGES/xfdesktop.mo
-share/locale/bn/LC_MESSAGES/xfdesktop.mo
-share/locale/bn_IN/LC_MESSAGES/xfdesktop.mo
-share/locale/ca/LC_MESSAGES/xfdesktop.mo
-share/locale/cs/LC_MESSAGES/xfdesktop.mo
-share/locale/da/LC_MESSAGES/xfdesktop.mo
-share/locale/de/LC_MESSAGES/xfdesktop.mo
-share/locale/dz/LC_MESSAGES/xfdesktop.mo
-share/locale/el/LC_MESSAGES/xfdesktop.mo
-share/locale/en_GB/LC_MESSAGES/xfdesktop.mo
-share/locale/eo/LC_MESSAGES/xfdesktop.mo
-share/locale/es/LC_MESSAGES/xfdesktop.mo
-share/locale/es_MX/LC_MESSAGES/xfdesktop.mo
-share/locale/et/LC_MESSAGES/xfdesktop.mo
-share/locale/eu/LC_MESSAGES/xfdesktop.mo
-share/locale/fa/LC_MESSAGES/xfdesktop.mo
-share/locale/fi/LC_MESSAGES/xfdesktop.mo
-share/locale/fr/LC_MESSAGES/xfdesktop.mo
-share/locale/gl/LC_MESSAGES/xfdesktop.mo
-share/locale/gu/LC_MESSAGES/xfdesktop.mo
-share/locale/he/LC_MESSAGES/xfdesktop.mo
-share/locale/hi/LC_MESSAGES/xfdesktop.mo
-share/locale/hr/LC_MESSAGES/xfdesktop.mo
-share/locale/hu/LC_MESSAGES/xfdesktop.mo
-share/locale/hy/LC_MESSAGES/xfdesktop.mo
-share/locale/id/LC_MESSAGES/xfdesktop.mo
-share/locale/is/LC_MESSAGES/xfdesktop.mo
-share/locale/it/LC_MESSAGES/xfdesktop.mo
-share/locale/ja/LC_MESSAGES/xfdesktop.mo
-share/locale/ka/LC_MESSAGES/xfdesktop.mo
-share/locale/kk/LC_MESSAGES/xfdesktop.mo
-share/locale/ko/LC_MESSAGES/xfdesktop.mo
-share/locale/lt/LC_MESSAGES/xfdesktop.mo
-share/locale/lv/LC_MESSAGES/xfdesktop.mo
-share/locale/mk/LC_MESSAGES/xfdesktop.mo
-share/locale/mr/LC_MESSAGES/xfdesktop.mo
-share/locale/ms/LC_MESSAGES/xfdesktop.mo
-share/locale/nb/LC_MESSAGES/xfdesktop.mo
-share/locale/nl/LC_MESSAGES/xfdesktop.mo
-share/locale/pa/LC_MESSAGES/xfdesktop.mo
-share/locale/pl/LC_MESSAGES/xfdesktop.mo
-share/locale/pt/LC_MESSAGES/xfdesktop.mo
-share/locale/pt_BR/LC_MESSAGES/xfdesktop.mo
-share/locale/ro/LC_MESSAGES/xfdesktop.mo
-share/locale/ru/LC_MESSAGES/xfdesktop.mo
-share/locale/si/LC_MESSAGES/xfdesktop.mo
-share/locale/sk/LC_MESSAGES/xfdesktop.mo
-share/locale/sq/LC_MESSAGES/xfdesktop.mo
-share/locale/sv/LC_MESSAGES/xfdesktop.mo
-share/locale/ta/LC_MESSAGES/xfdesktop.mo
-share/locale/tr/LC_MESSAGES/xfdesktop.mo
-share/locale/ug/LC_MESSAGES/xfdesktop.mo
-share/locale/uk/LC_MESSAGES/xfdesktop.mo
-share/locale/ur/LC_MESSAGES/xfdesktop.mo
-share/locale/ur_PK/LC_MESSAGES/xfdesktop.mo
-share/locale/vi/LC_MESSAGES/xfdesktop.mo
-share/locale/zh_CN/LC_MESSAGES/xfdesktop.mo
-share/locale/zh_TW/LC_MESSAGES/xfdesktop.mo
+%%NLS%%share/locale/am/LC_MESSAGES/xfdesktop.mo
+%%NLS%%share/locale/ar/LC_MESSAGES/xfdesktop.mo
+%%NLS%%share/locale/ast/LC_MESSAGES/xfdesktop.mo
+%%NLS%%share/locale/az/LC_MESSAGES/xfdesktop.mo
+%%NLS%%share/locale/be/LC_MESSAGES/xfdesktop.mo
+%%NLS%%share/locale/bg/LC_MESSAGES/xfdesktop.mo
+%%NLS%%share/locale/bn/LC_MESSAGES/xfdesktop.mo
+%%NLS%%share/locale/bn_IN/LC_MESSAGES/xfdesktop.mo
+%%NLS%%share/locale/ca/LC_MESSAGES/xfdesktop.mo
+%%NLS%%share/locale/cs/LC_MESSAGES/xfdesktop.mo
+%%NLS%%share/locale/da/LC_MESSAGES/xfdesktop.mo
+%%NLS%%share/locale/de/LC_MESSAGES/xfdesktop.mo
+%%NLS%%share/locale/dz/LC_MESSAGES/xfdesktop.mo
+%%NLS%%share/locale/el/LC_MESSAGES/xfdesktop.mo
+%%NLS%%share/locale/en_GB/LC_MESSAGES/xfdesktop.mo
+%%NLS%%share/locale/eo/LC_MESSAGES/xfdesktop.mo
+%%NLS%%share/locale/es/LC_MESSAGES/xfdesktop.mo
+%%NLS%%share/locale/es_MX/LC_MESSAGES/xfdesktop.mo
+%%NLS%%share/locale/et/LC_MESSAGES/xfdesktop.mo
+%%NLS%%share/locale/eu/LC_MESSAGES/xfdesktop.mo
+%%NLS%%share/locale/fa/LC_MESSAGES/xfdesktop.mo
+%%NLS%%share/locale/fi/LC_MESSAGES/xfdesktop.mo
+%%NLS%%share/locale/fr/LC_MESSAGES/xfdesktop.mo
+%%NLS%%share/locale/gl/LC_MESSAGES/xfdesktop.mo
+%%NLS%%share/locale/gu/LC_MESSAGES/xfdesktop.mo
+%%NLS%%share/locale/he/LC_MESSAGES/xfdesktop.mo
+%%NLS%%share/locale/hi/LC_MESSAGES/xfdesktop.mo
+%%NLS%%share/locale/hr/LC_MESSAGES/xfdesktop.mo
+%%NLS%%share/locale/hu/LC_MESSAGES/xfdesktop.mo
+%%NLS%%share/locale/hy/LC_MESSAGES/xfdesktop.mo
+%%NLS%%share/locale/id/LC_MESSAGES/xfdesktop.mo
+%%NLS%%share/locale/is/LC_MESSAGES/xfdesktop.mo
+%%NLS%%share/locale/it/LC_MESSAGES/xfdesktop.mo
+%%NLS%%share/locale/ja/LC_MESSAGES/xfdesktop.mo
+%%NLS%%share/locale/ka/LC_MESSAGES/xfdesktop.mo
+%%NLS%%share/locale/kk/LC_MESSAGES/xfdesktop.mo
+%%NLS%%share/locale/ko/LC_MESSAGES/xfdesktop.mo
+%%NLS%%share/locale/lt/LC_MESSAGES/xfdesktop.mo
+%%NLS%%share/locale/lv/LC_MESSAGES/xfdesktop.mo
+%%NLS%%share/locale/mk/LC_MESSAGES/xfdesktop.mo
+%%NLS%%share/locale/mr/LC_MESSAGES/xfdesktop.mo
+%%NLS%%share/locale/ms/LC_MESSAGES/xfdesktop.mo
+%%NLS%%share/locale/nb/LC_MESSAGES/xfdesktop.mo
+%%NLS%%share/locale/nl/LC_MESSAGES/xfdesktop.mo
+%%NLS%%share/locale/pa/LC_MESSAGES/xfdesktop.mo
+%%NLS%%share/locale/pl/LC_MESSAGES/xfdesktop.mo
+%%NLS%%share/locale/pt/LC_MESSAGES/xfdesktop.mo
+%%NLS%%share/locale/pt_BR/LC_MESSAGES/xfdesktop.mo
+%%NLS%%share/locale/ro/LC_MESSAGES/xfdesktop.mo
+%%NLS%%share/locale/ru/LC_MESSAGES/xfdesktop.mo
+%%NLS%%share/locale/si/LC_MESSAGES/xfdesktop.mo
+%%NLS%%share/locale/sk/LC_MESSAGES/xfdesktop.mo
+%%NLS%%share/locale/sq/LC_MESSAGES/xfdesktop.mo
+%%NLS%%share/locale/sv/LC_MESSAGES/xfdesktop.mo
+%%NLS%%share/locale/ta/LC_MESSAGES/xfdesktop.mo
+%%NLS%%share/locale/tr/LC_MESSAGES/xfdesktop.mo
+%%NLS%%share/locale/ug/LC_MESSAGES/xfdesktop.mo
+%%NLS%%share/locale/uk/LC_MESSAGES/xfdesktop.mo
+%%NLS%%share/locale/ur/LC_MESSAGES/xfdesktop.mo
+%%NLS%%share/locale/ur_PK/LC_MESSAGES/xfdesktop.mo
+%%NLS%%share/locale/vi/LC_MESSAGES/xfdesktop.mo
+%%NLS%%share/locale/zh_CN/LC_MESSAGES/xfdesktop.mo
+%%NLS%%share/locale/zh_TW/LC_MESSAGES/xfdesktop.mo
 share/pixmaps/xfce4_xicon.png
 share/pixmaps/xfce4_xicon1.png
 share/pixmaps/xfce4_xicon2.png
@@ -122,43 +130,48 @@ share/xfce4/backdrops/xfce-stripes.png
 share/xfce4/backdrops/xfce-turbulence.png
 share/xfce4/backdrops/xfce4gradientcurve.png
 share/xfce4/backdrops/xfce4logo.png
+@exec %%LOCALBASE%%/bin/update-desktop-database >/dev/null || /usr/bin/true
+@unexec %%LOCALBASE%%/bin/update-desktop-database >/dev/null || /usr/bin/true
 @dirrm share/xfce4/backdrops
 @dirrmtry share/xfce4
 @dirrm share/pixmaps/xfdesktop
-@dirrmtry share/locale/ur_PK/LC_MESSAGES
-@dirrmtry share/locale/ur_PK
-@dirrmtry share/locale/ur/LC_MESSAGES
-@dirrmtry share/locale/ur
-@dirrmtry share/locale/ug/LC_MESSAGES
-@dirrmtry share/locale/ug
-@dirrmtry share/locale/si/LC_MESSAGES
-@dirrmtry share/locale/si
-@dirrmtry share/locale/mr/LC_MESSAGES
-@dirrmtry share/locale/mr
-@dirrmtry share/locale/kk/LC_MESSAGES
-@dirrmtry share/locale/kk
-@dirrmtry share/locale/hy/LC_MESSAGES
-@dirrmtry share/locale/hy
-@dirrmtry share/locale/dz/LC_MESSAGES
-@dirrmtry share/locale/dz
-@dirrmtry share/locale/bn_IN/LC_MESSAGES
-@dirrmtry share/locale/bn_IN
-@dirrmtry share/locale/ast/LC_MESSAGES
-@dirrmtry share/locale/ast
-@dirrm share/doc/xfdesktop/html/zh_CN
-@dirrm share/doc/xfdesktop/html/ug
-@dirrm share/doc/xfdesktop/html/ru
-@dirrm share/doc/xfdesktop/html/ja/images
-@dirrm share/doc/xfdesktop/html/ja
-@dirrm share/doc/xfdesktop/html/it
-@dirrm share/doc/xfdesktop/html/gl
-@dirrm share/doc/xfdesktop/html/fr/images
-@dirrm share/doc/xfdesktop/html/fr
-@dirrm share/doc/xfdesktop/html/da
-@dirrm share/doc/xfdesktop/html/ca
-@dirrm share/doc/xfdesktop/html/bn
-@dirrm share/doc/xfdesktop/html/C/images
-@dirrm share/doc/xfdesktop/html/C
-@dirrm share/doc/xfdesktop/html
-@dirrm share/doc/xfdesktop
-@dirrmtry share/applications
+%%NLS%%@dirrmtry share/locale/ur_PK/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/ur_PK
+%%NLS%%@dirrmtry share/locale/ur/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/ur
+%%NLS%%@dirrmtry share/locale/ug/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/ug
+%%NLS%%@dirrmtry share/locale/si/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/si
+%%NLS%%@dirrmtry share/locale/mr/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/mr
+%%NLS%%@dirrmtry share/locale/kk/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/kk
+%%NLS%%@dirrmtry share/locale/hy/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/hy
+%%NLS%%@dirrmtry share/locale/dz/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/dz
+%%NLS%%@dirrmtry share/locale/bn_IN/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/bn_IN
+%%NLS%%@dirrmtry share/locale/ast/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/ast
+@dirrm %%DOCSDIR%%/html/zh_CN
+@dirrm %%DOCSDIR%%/html/ug
+@dirrm %%DOCSDIR%%/html/tr
+@dirrm %%DOCSDIR%%/html/sv
+@dirrm %%DOCSDIR%%/html/ru
+@dirrm %%DOCSDIR%%/html/ja/images
+@dirrm %%DOCSDIR%%/html/ja
+@dirrm %%DOCSDIR%%/html/it
+@dirrm %%DOCSDIR%%/html/id
+@dirrm %%DOCSDIR%%/html/gl
+@dirrm %%DOCSDIR%%/html/fr/images
+@dirrm %%DOCSDIR%%/html/fr
+@dirrm %%DOCSDIR%%/html/el
+@dirrm %%DOCSDIR%%/html/da
+@dirrm %%DOCSDIR%%/html/ca
+@dirrm %%DOCSDIR%%/html/bn
+@dirrm %%DOCSDIR%%/html/C/images
+@dirrm %%DOCSDIR%%/html/C
+@dirrm %%DOCSDIR%%/html
+@dirrm %%DOCSDIR%%
