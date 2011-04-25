@@ -2810,6 +2810,7 @@ dynagui                         ports/emulators/dynagui
 dynamag                         ports/x11/dynamag
 dynamechs                       ports/graphics/dynamechs
 dynamips                        ports/emulators/dynamips
+dynamips-community              ports/emulators/dynamips-community
 dynamips-devel                  ports/emulators/dynamips-devel
 dyncall                         ports/devel/dyncall
 dzen2                           ports/x11/dzen2
@@ -8788,6 +8789,7 @@ linux_base-fc4                  ports/emulators/linux_base-fc4
 linux_base-gentoo-stage3        ports/emulators/linux_base-gentoo-stage3
 linux_dist-gentoo-stage3        ports/emulators/linux_dist-gentoo-stage3
 linux_dri                       ports/graphics/linux_dri
+linux_dvbwrapper-kmod           ports/multimedia/linux_dvbwrapper-kmod
 linux_glide                     ports/graphics/linux_glide
 linux_kdump                     ports/devel/linux_kdump
 linuxdcpp                       ports/net-p2p/linuxdcpp
