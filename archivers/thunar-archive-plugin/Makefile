@@ -15,6 +15,8 @@ DIST_SUBDIR=	xfce4
 MAINTAINER=	ports@c0decafe.net
 COMMENT=	Archive plugin for the Thunar File Manager
 
+BROKEN=		does not configure
+
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_XFCE=	configenv libexo thunar
