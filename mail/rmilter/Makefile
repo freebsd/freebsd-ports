@@ -6,13 +6,12 @@
 #
 
 PORTNAME=		rmilter
-PORTVERSION=		1.5.24
-PORTREVISION=		1
+PORTVERSION=		1.5.33
 CATEGORIES=		mail
-MASTER_SITES=		http://cebka.pp.ru/distfiles/
+MASTER_SITES=		http://highsecure.ru/
 
 MAINTAINER=		vsevolod@FreeBSD.org
-COMMENT=		Milter plugin for rambler mail
+COMMENT=		Milter that performs spamd, clamav and spf checks
 
 PLIST_FILES=	sbin/rmilter etc/rc.d/rmilter.sh etc/rmilter.conf.sample
 
