@@ -19,35 +19,35 @@ MASTER_SITE_SUBDIR?=		xfce/4.8/src
 
 configenv_CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include -L${LOCALBASE}/lib"
 
-garcon_BUILD_DEPENDS=		garcon>=0.1.4:${PORTSDIR}/sysutils/garcon
-garcon_RUN_DEPENDS=		garcon>=0.1.4:${PORTSDIR}/sysutils/garcon
+garcon_BUILD_DEPENDS=		garcon>=0.1.7:${PORTSDIR}/sysutils/garcon
+garcon_RUN_DEPENDS=		garcon>=0.1.7:${PORTSDIR}/sysutils/garcon
 
-libexo_BUILD_DEPENDS=		libexo>=0.5.6:${PORTSDIR}/x11/libexo
-libexo_RUN_DEPENDS=		libexo>=0.5.6:${PORTSDIR}/x11/libexo
+libexo_BUILD_DEPENDS=		libexo>=0.6.0:${PORTSDIR}/x11/libexo
+libexo_RUN_DEPENDS=		libexo>=0.6.0:${PORTSDIR}/x11/libexo
 
-libgui_BUILD_DEPENDS=		libxfce4gui>=4.7.0:${PORTSDIR}/x11-toolkits/libxfce4gui
-libgui_RUN_DEPENDS=		libxfce4gui>=4.7.0:${PORTSDIR}/x11-toolkits/libxfce4gui
+libgui_BUILD_DEPENDS=		libxfce4gui>=4.8.1:${PORTSDIR}/x11-toolkits/libxfce4gui
+libgui_RUN_DEPENDS=		libxfce4gui>=4.8.1:${PORTSDIR}/x11-toolkits/libxfce4gui
 
-libmenu_BUILD_DEPENDS=		libxfce4menu>=4.7.6:${PORTSDIR}/x11/libxfce4menu
-libmenu_RUN_DEPENDS=		libxfce4menu>=4.7.6:${PORTSDIR}/x11/libxfce4menu
+libmenu_BUILD_DEPENDS=		libxfce4menu>=4.8.0:${PORTSDIR}/x11/libxfce4menu
+libmenu_RUN_DEPENDS=		libxfce4menu>=4.8.0:${PORTSDIR}/x11/libxfce4menu
 
-libutil_BUILD_DEPENDS=		libxfce4util>=4.7.5:${PORTSDIR}/x11/libxfce4util
-libutil_RUN_DEPENDS=		libxfce4util>=4.7.5:${PORTSDIR}/x11/libxfce4util
+libutil_BUILD_DEPENDS=		libxfce4util>=4.8.1:${PORTSDIR}/x11/libxfce4util
+libutil_RUN_DEPENDS=		libxfce4util>=4.8.1:${PORTSDIR}/x11/libxfce4util
 
-panel_BUILD_DEPENDS=		xfce4-panel>=4.7.7:${PORTSDIR}/x11-wm/xfce4-panel
-panel_RUN_DEPENDS=		xfce4-panel>=4.7.7:${PORTSDIR}/x11-wm/xfce4-panel
+panel_BUILD_DEPENDS=		xfce4-panel>=4.8.3:${PORTSDIR}/x11-wm/xfce4-panel
+panel_RUN_DEPENDS=		xfce4-panel>=4.8.3:${PORTSDIR}/x11-wm/xfce4-panel
 
-thunar_BUILD_DEPENDS=		Thunar>=1.1.6:${PORTSDIR}/x11-fm/thunar
-thunar_RUN_DEPENDS=		Thunar>=1.1.6:${PORTSDIR}/x11-fm/thunar
+thunar_BUILD_DEPENDS=		Thunar>=1.2.1:${PORTSDIR}/x11-fm/thunar
+thunar_RUN_DEPENDS=		Thunar>=1.2.1:${PORTSDIR}/x11-fm/thunar
 
 thunarvfs_BUILD_DEPENDS=	thunar-vfs>=1.2.0:${PORTSDIR}/x11-fm/thunar-vfs
 thunarvfs_RUN_DEPENDS=		thunar-vfs>=1.2.0:${PORTSDIR}/x11-fm/thunar-vfs
 
-wm_BUILD_DEPENDS=		xfce4-wm>=4.7.4:${PORTSDIR}/x11-wm/xfce4-wm
-wm_RUN_DEPENDS=			xfce4-wm>=4.7.4:${PORTSDIR}/x11-wm/xfce4-wm
+wm_BUILD_DEPENDS=		xfce4-wm>=4.8.1:${PORTSDIR}/x11-wm/xfce4-wm
+wm_RUN_DEPENDS=			xfce4-wm>=4.8.1:${PORTSDIR}/x11-wm/xfce4-wm
 
-xfconf_BUILD_DEPENDS=		xfce4-conf>=4.7.5:${PORTSDIR}/x11/xfce4-conf
-xfconf_RUN_DEPENDS=		xfce4-conf>=4.7.5:${PORTSDIR}/x11/xfce4-conf
+xfconf_BUILD_DEPENDS=		xfce4-conf>=4.8.0:${PORTSDIR}/x11/xfce4-conf
+xfconf_RUN_DEPENDS=		xfce4-conf>=4.8.0:${PORTSDIR}/x11/xfce4-conf
 
 xfdev_RUN_DEPENDS=		xfce4-dev-tools:${PORTSDIR}/devel/xfce4-dev-tools
 
