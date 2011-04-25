@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	libxfce4gui
-PORTVERSION=	4.8.0
+PORTVERSION=	4.8.1
 CATEGORIES=	x11-toolkits xfce
 MASTER_SITES=	${MASTER_SITE_XFCE}
+MASTER_SITE_SUBDIR=	src/xfce/libxfcegui4/${PORTVERSION:R}
 DISTNAME=	libxfcegui4-${PORTVERSION}
 DIST_SUBDIR=	xfce4
 
@@ -19,26 +20,26 @@ USE_AUTOTOOLS=	libtool
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
 USE_BZIP2=	yes
-USE_GETTEXT=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gnomehack gnometarget gtk20 intltool intlhack libglade2 pkgconfig
+USE_GNOME=	gnomehack gtk20 intltool intlhack libglade2 pkgconfig
 USE_LDCONFIG=	yes
-USE_XFCE=	libutil xfconf
-USE_XORG=	sm
+USE_XFCE=	configenv libutil
+USE_XORG=	sm x11
 
-OPTIONS=	GTKDOC	"install the library documentation"	off \
-		STARTUP	"use libstartup-notification"		on  \
-		GLADEUI	"glade interface designer"		off
+OPTIONS=	NLS	"Enable Native Language Support"	on  \
+		STARTUP	"Use libstartup-notification"		on  \
+		GLADEUI	"Glade interface designer"		off \
+		APIDOCS	"Install api documentation"		off
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_GTKDOC)
-BUILD_DEPENDS+=	gtkdocize:${PORTSDIR}/textproc/gtk-doc
-CONFIGURE_ARGS+=--enable-gtk-doc
-PLIST_SUB+=	GTK_DOC=""
+.if !defined(WITHOUT_NLS)
+USE_GETTEXT=	yes
+CONFIGURE_ARGS+=--enable-nls
+PLIST_SUB+=	NLS=""
 .else
-CONFIGURE_ARGS+=--disable-gtk-doc
-PLIST_SUB+=	GTK_DOC="@comment "
+CONFIGURE_ARGS+=--disable-nls
+PLIST_SUB+=	NLS="@comment "
 .endif
 
 .if !defined(WITHOUT_LIBSTARTUP)
@@ -49,11 +50,21 @@ CONFIGURE_ARGS+=--disable-startup-notification
 .endif
 
 .if defined(WITH_GLADEUI)
+LIB_DEPENDS+=	gladeui-1.10:${PORTSDIR}/devel/glade3
 CONFIGURE_ARGS+=--enable-gladeui
+PLIST_SUB+=	GLADE3=""
 .else
 CONFIGURE_ARGS+=--disable-gladeui
+PLIST_SUB+=	GLADE3="@comment "
 .endif
 
+.if defined(WITHOUT_APIDOCS)
+CONFIGURE_ARGS+=--without-html-dir
+PLIST_SUB+=	APIDOCS="@comment "
+.else
+CONFIGURE_ARGS+=--with-html-dir=${PREFIX}/share/gtk-doc/html
+PLIST_SUB+=	APIDOCS=""
+.endif
 post-patch:
 	@${REINPLACE_CMD} -e 's|$$(GMSGFMT)|$$(MSGFMT)|g' \
 		${WRKSRC}/po/Makefile.in.in
