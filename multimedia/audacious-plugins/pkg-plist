@@ -1,4 +1,5 @@
 %%CUEPLUGIN%%lib/audacious/Container/cue.so
+lib/audacious/Container/asx.so
 lib/audacious/Container/m3u.so
 lib/audacious/Container/pls.so
 lib/audacious/Container/xspf.so
@@ -8,10 +9,12 @@ lib/audacious/Effect/crystalizer.so
 lib/audacious/Effect/ladspa.so
 lib/audacious/Effect/echo.so
 %%RESAMPLEPLUGIN%%lib/audacious/Effect/resample.so
+lib/audacious/Effect/mixdown.so
 lib/audacious/Effect/sndstretch.so
 lib/audacious/Effect/stereo.so
 lib/audacious/Effect/voice_removal.so
 lib/audacious/General/alarm.so
+lib/audacious/General/albumart.so
 %%AOSDPLUGIN%%lib/audacious/General/aosd.so
 %%CDAUDIOPLUGIN%%lib/audacious/General/cd-menu-items.so
 %%DBUS%%lib/audacious/General/gnomeshortcuts.so
@@ -19,6 +22,7 @@ lib/audacious/General/gtkui.so
 lib/audacious/General/hotkey.so
 %%LIRCPLUGIN%%lib/audacious/General/lirc.so
 lib/audacious/General/lyricwiki.so
+%%NOTIFY%%lib/audacious/General/notify.so
 lib/audacious/General/skins.so
 lib/audacious/General/song_change.so
 %%STATUSICONPLUGIN%%lib/audacious/General/statusicon.so
@@ -49,11 +53,14 @@ lib/audacious/Input/xsf.so
 lib/audacious/Output/filewriter.so
 %%JACKPLUGIN%%lib/audacious/Output/jackout.so
 lib/audacious/Output/null.so
+%%SDL%%lib/audacious/Output/sdlout.so
 lib/audacious/Transport/gio.so
 %%MMSPLUGIN%%lib/audacious/Transport/mms.so
 %%NEONPLUGIN%%lib/audacious/Transport/neon.so
 lib/audacious/Transport/unix-io.so
 lib/audacious/Visualization/blur_scope.so
+lib/audacious/Visualization/cairo-spectrum.so
+lib/audacious/Visualization/moodbar.so
 %%PARANORMALPLUGIN%%lib/audacious/Visualization/paranormal.so
 %%ROCKLIGHTPLUGIN%%lib/audacious/Visualization/rocklight.so
 lib/audacious/Visualization/spectrum.so

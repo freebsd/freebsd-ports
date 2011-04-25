@@ -1,6 +1,6 @@
---- src/audacious/Makefile.orig	2010-08-26 01:04:25.000000000 +0200
-+++ src/audacious/Makefile	2010-09-09 11:07:04.000000000 +0200
-@@ -91,15 +91,16 @@
+--- src/audacious/Makefile.orig	2011-04-16 18:09:10.000000000 +0200
++++ src/audacious/Makefile	2011-04-25 11:44:28.000000000 +0200
+@@ -93,15 +93,16 @@
  include ../../buildsys.mk
  
  ifeq ($(USE_DBUS),yes)
@@ -19,19 +19,19 @@
  		${MOWGLI_CFLAGS}		\
  		${GLIB_CFLAGS}			\
  		${GTHREAD_CFLAGS}		\
-@@ -116,7 +117,7 @@
- 		-I.. -I../..			\
- 		-I./intl
+@@ -118,7 +119,7 @@
+ 		${LIBGUESS_CFLAGS}		\
+ 		-I.. -I../..
  
 -LIBS += ${LDADD}						\
 +LIBS += 					\
          -lm \
  		-L../libaudcore -laudcore	\
  		-L../libaudgui -laudgui \
-@@ -130,7 +131,8 @@
- 		${MOWGLI_LIBS}					\
+@@ -133,7 +134,8 @@
  		${LIBMCS_LIBS}					\
  		${REGEX_LIBS}					\
+ 		${PTHREAD_LIBS}					\
 -		${LIBGUESS_LIBS}
 +		${LIBGUESS_LIBS}				\
 +		${LDADD}
