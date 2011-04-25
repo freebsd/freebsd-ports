@@ -6,18 +6,19 @@
 #
 
 PORTNAME=	coq
-PORTVERSION=	8.3.1
+PORTVERSION=	8.3.2
 PORTEPOCH=	1
 CATEGORIES=	math
-MASTER_SITES=	http://coq.inria.fr/distrib/V${DISTVERSION}/files/ \
+MASTER_SITES=	http://coq.inria.fr/distrib/V${COQVERSION}/files/ \
 		ftp://ftp.stack.nl/pub/users/johans/coq/
-DISTNAME=	${PORTNAME}-${PORTVERSION:R}pl${PORTVERSION:E}
+DISTNAME=	${PORTNAME}-${COQVERSION}
 
 MAINTAINER=	johans@FreeBSD.org
 COMMENT=	Theorem prover based on lambda-C
 
 BUILD_DEPENDS=	camlp5:${PORTSDIR}/devel/ocaml-camlp5
 
+COQVERSION=	${PORTVERSION:R}pl${PORTVERSION:E}
 USE_OCAML=	yes
 USE_GMAKE=	yes
 ALL_TARGET=	world
