@@ -7,7 +7,7 @@
 
 PORTNAME=	jdk
 PORTVERSION=	${JDK_VERSION}.${JDK_UPDATE_VERSION}p${JDK_PATCHSET_VERSION}
-PORTREVISION=	11
+PORTREVISION=	12
 PORTEPOCH=	1
 CATEGORIES=	java devel
 MASTER_SITES=	# http://download.java.net/tiger/
@@ -58,8 +58,8 @@ JDK_BUILD_NUMBER=	02
 JDK_BUILD_DATE=		28_may_2008
 LATEST_LINK=	jdk15
 
-TZUPDATE_VERSION=	1_3_35
-TZUPDATE_TZVERSION=	2011b
+TZUPDATE_VERSION=	1_3_38
+TZUPDATE_TZVERSION=	2011e
 
 .include <bsd.port.pre.mk>
 
@@ -204,15 +204,15 @@ DISTFILE_INSTRUCTIONS += Source Binaries, ${JRL_BINFILE}
 DISTFILE_INSTRUCTIONS += .\n\n
 .endif#}
 .if defined(WITH_POLICY) && !exists(${DISTDIR}/${POLICYFILE})#{
-DISTFILE_INSTRUCTIONS += Please open http://java.sun.com/javase/downloads/index_jdk5.jsp\n\
+DISTFILE_INSTRUCTIONS += Please open http://www.oracle.com/technetwork/java/javase/downloads/index-jdk5-jsp-142662.html\n\
 in a web browser and follow the \"Download\" link for\n\
 \"Java Cryptography Extension (JCE) Unlimited Strength Jurisdiction Policy\n\
 Files 5.0\" to obtain the JCE policy file, ${POLICYFILE}.\n\n
 .endif#}
 .if defined(WITH_TZUPDATE) && !exists(${DISTDIR}/${TZUPDATEFILE})#{
-DISTFILE_INSTRUCTIONS += Please open http://java.sun.com/javase/downloads/index.jsp\n\
+DISTFILE_INSTRUCTIONS += Please open http://www.oracle.com/technetwork/java/javase/downloads/index.html\n\
 in a web browser and follow the \"Download\" link for\n\
-\"JDK US DST Timezone Update Tool - ${TZUPDATE_VERSION}\" to obtain the\n\
+\"JDK DST Timezone Update Tool - ${TZUPDATE_VERSION}\" to obtain the\n\
 time zone update file, ${TZUPDATEFILE}.\n\n
 .endif#}
 .if !exists(${DISTDIR}/${PATCHSETFILE})#{
