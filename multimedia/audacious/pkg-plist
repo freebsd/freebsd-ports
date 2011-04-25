@@ -1,9 +1,5 @@
-man/man1/audacious.1
-man/man1/audtool.1
 bin/audacious
-bin/audacious2
 %%WITH_DBUS%%bin/audtool
-%%WITH_DBUS%%bin/audtool2
 %%WITH_DBUS%%include/audacious/audctrl.h
 include/audacious/audconfig.h
 include/audacious/configdb.h
@@ -23,6 +19,8 @@ include/audacious/configdb-api.h
 include/audacious/debug.h
 include/audacious/drct.h
 include/audacious/drct-api.h
+include/audacious/glib-compat.h
+include/audacious/gtk-compat.h
 include/audacious/misc.h
 include/audacious/misc-api.h
 include/audacious/playlist.h
@@ -37,7 +35,6 @@ include/libaudcore/stringpool.h
 include/libaudcore/tuple.h
 include/libaudcore/tuple_compiler.h
 include/libaudcore/tuple_formatter.h
-include/libaudcore/log.h
 include/libaudcore/md5.h
 include/libaudcore/vfs.h
 include/libaudcore/vfs_buffer.h
@@ -47,6 +44,7 @@ include/libaudcore/hook.h
 include/libaudcore/vfs_async.h
 include/libaudgui/libaudgui.h
 include/libaudgui/libaudgui-gtk.h
+include/libaudgui/list.h
 %%WITH_DBUS%%lib/libaudclient.so
 %%WITH_DBUS%%lib/libaudclient.so.2
 %%WITH_DBUS%%lib/libaudclient.so.2.0.0
@@ -61,8 +59,9 @@ lib/libaudtag.so.1
 lib/libaudtag.so.1.0.0
 libdata/pkgconfig/audacious.pc
 libdata/pkgconfig/audclient.pc
-share/applications/audacious2.desktop
+share/applications/audacious.desktop
 %%DATADIR%%/images/about-logo.png
+%%DATADIR%%/images/album.png
 %%DATADIR%%/images/audacious_eq.xpm
 %%DATADIR%%/images/audacious_playlist.xpm
 %%DATADIR%%/images/appearance.png
@@ -73,7 +72,6 @@ share/applications/audacious2.desktop
 %%DATADIR%%/images/menu_playlist.png
 %%DATADIR%%/images/menu_plugin.png
 %%DATADIR%%/images/menu_queue_toggle.png
-%%DATADIR%%/images/playback.png
 %%DATADIR%%/images/playlist.png
 %%DATADIR%%/images/plugins.png
 %%DATADIR%%/images/replay_gain.png

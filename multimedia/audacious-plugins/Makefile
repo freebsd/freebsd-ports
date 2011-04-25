@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	audacious-plugins
-PORTVERSION=	2.4.4
+PORTVERSION=	2.5.0
 CATEGORIES=	multimedia audio
 MASTER_SITES=	http://distfiles.atheme.org/
 EXTRACT_SUFX=	.tgz
@@ -14,7 +14,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	Plugins needed for audacious
 
-BUILD_DEPENDS=	audacious2:${PORTSDIR}/multimedia/audacious
+BUILD_DEPENDS=	audacious:${PORTSDIR}/multimedia/audacious
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
@@ -65,9 +65,28 @@ OPTIONS=	DBUS		"Enable dbus support"			on  \
 		NLS		"Native Language Support"		on  \
 		SSE2		"Enable SSE2 support"			on  \
 		RESAMPLE	"Enable resample support"		off \
-		AMIDI		"Enable amidi support"			off
+		AMIDI		"Enable amidi support"			off \
+		NOTIFY		"Enable libnotify support"		off \
+		SDLOUT		"Enable sdlout support"			off
 
 .include <bsd.port.pre.mk>
+
+.if defined(WITH_SDLOUT)
+PLIST_SUB+=	SDL=""
+USE_SDL=	sdl
+CONFIGURE_ARGS+=--enable-sdlout
+.else
+PLIST_SUB+=	SDL="@comment "
+CONFIGURE_ARGS+=--disable-sdlout
+.endif
+
+.if defined(WITH_NOTIFY)
+PLIST_SUB+=	NOTIFY=""
+CONFIGURE_ARGS+=--enable-notify
+.else
+PLIST_SUB+=	NOTIFY="@comment "
+CONFIGURE_ARGS+=--disable-notify
+.endif
 
 .if !defined(WITHOUT_DBUS)
 LIB_DEPENDS+=	dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib

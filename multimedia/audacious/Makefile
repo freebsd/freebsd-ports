@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	audacious
-PORTVERSION=	2.4.4
+PORTVERSION=	2.5.0
 CATEGORIES=	multimedia audio
 MASTER_SITES=	http://distfiles.atheme.org/
 MASTER_SITE_SUBDIR=oliver
@@ -20,11 +20,10 @@ USE_GMAKE=	yes
 USE_XORG=	x11 sm
 USE_GNOME=	gtk20 libglade2
 USE_LDCONFIG=	yes
-CONFIGURE_ARGS=	--with-libintl-prefix=${LOCALBASE}
-#CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-#		LDFLAGS="-L${LOCALBASE}/lib"
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
 
-MAN1=		audacious2.1 audtool2.1
+MAN1=		audacious.1 audtool.1
 
 LIB_DEPENDS=	mcs.1:${PORTSDIR}/devel/libmcs \
 		mowgli.2:${PORTSDIR}/devel/libmowgli \
@@ -35,6 +34,7 @@ PORTDOCS=	README AUTHORS NEWS
 OPTIONS=	CHARSET	"Build with automatic charset detection"	off \
 		DBUS	"Build with dbus support"			on  \
 		GNOME	"Build with gconf support"			off \
+		ICONV	"Build with iconv support"			on \
 		NLS	"Native Language Support"			on  \
 		EXECINFO "Build with libexecinfo support"		on  \
 		SSE2	"Build with SSE2 instruction set"		on
@@ -50,8 +50,8 @@ CONFIGURE_ARGS+=--disable-dbus
 PLIST_SUB+=	WITH_DBUS="@comment "
 .endif
 
-.if defined(WITH_CHARSET)
-CONFIGURE_ARGS+=--enable-chardet
+.if !defined(WITH_CHARSET)
+CONFIGURE_ARGS+=--disable-chardet
 .endif
 
 .if defined(WITH_EXECINFO) || exists(${LOCALBASE}/lib/libexecinfo.so)
@@ -61,6 +61,10 @@ LIB_DEPENDS+=	execinfo.1:${PORTSDIR}/devel/libexecinfo
 .if defined(WITH_GNOME)
 USE_GNOME+=	gconf2
 CONFIGURE_ARGS+=--enable-gconf
+.endif
+
+.if defined(WITH_ICONV) || exists(${LOCALBASE}/lib/libiconv.so)
+USE_ICONV=	yes
 .endif
 
 .if !defined(WITHOUT_NLS)
@@ -114,6 +118,5 @@ post-install:
 	@${ECHO_MSG} "ALL PRESETS will be stored in the gconf database."
 	@${ECHO_MSG} ""
 .endif
-	
 
 .include <bsd.port.post.mk>
