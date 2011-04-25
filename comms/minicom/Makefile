@@ -7,9 +7,9 @@
 #
 
 PORTNAME=	minicom
-PORTVERSION=	2.4
+PORTVERSION=	2.5
 CATEGORIES=	comms
-MASTER_SITES=	http://alioth.debian.org/frs/download.php/3195/
+MASTER_SITES=	http://alioth.debian.org/frs/download.php/3487/
 
 MAINTAINER=	johans@FreeBSD.org
 COMMENT=	An MS-DOS Telix serial communication program "workalike"
