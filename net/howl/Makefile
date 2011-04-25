@@ -10,11 +10,8 @@ PORTREVISION=	1
 CATEGORIES?=	net devel
 MASTER_SITES=	http://www.porchdogsoft.com/download/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	freebsd@donovansbrain.co.uk
 COMMENT=	Zeroconf/Bonjour(tm) implementation
-
-DEPRECATED=     Upstream disapear and distfile is no more available
-EXPIRATION_DATE=        2011-05-01
 
 CONFLICTS=	avahi-[0-9]*
 
