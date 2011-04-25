@@ -1,0 +1,17 @@
+To be able to shutdown or reboot your system, you'll have to add a .pkla file
+in %%LOCALBASE%%/etc/polkit-1/localauthority/50-local.d directory. Which looks
+like this (replace PUTYOURGROUPHERE by your group):
+
+[Restart]
+Identity=unix-group:PUTYOURGROUPHERE
+Action=org.freedesktop.consolekit.system.restart
+ResultAny=yes
+ResultInactive=yes
+ResultActive=yes
+
+[Shutdown]
+Identity=unix-group:PUTYOURGROUPHERE
+Action=org.freedesktop.consolekit.system.stop
+ResultAny=yes
+ResultInactive=yes
+ResultActive=yes
