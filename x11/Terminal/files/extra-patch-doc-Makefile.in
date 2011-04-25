@@ -1,5 +1,5 @@
---- doc/Makefile.in.orig	2010-05-21 22:10:01.000000000 +0200
-+++ doc/Makefile.in	2010-05-24 18:36:50.000000000 +0200
+--- doc/Makefile.in.orig	2011-03-07 13:18:35.000000000 +0100
++++ doc/Makefile.in	2011-03-07 13:28:48.000000000 +0100
 @@ -53,9 +53,9 @@
  SOURCES =
  DIST_SOURCES =
@@ -12,7 +12,7 @@
  	install-pdf-recursive install-ps-recursive install-recursive \
  	installcheck-recursive installdirs-recursive pdf-recursive \
  	ps-recursive uninstall-recursive
-@@ -291,7 +291,6 @@
+@@ -293,7 +293,6 @@
  top_builddir = @top_builddir@
  top_srcdir = @top_srcdir@
  SUBDIRS = \
@@ -20,7 +20,7 @@
  	po
  
  HTML_STYLESHEET = $(PACKAGE)-html.xsl
-@@ -359,18 +358,6 @@
+@@ -361,18 +360,6 @@
  
  clean-libtool:
  	-rm -rf .libs _libs
@@ -39,7 +39,7 @@
  
  uninstall-cssDATA:
  	@$(NORMAL_UNINSTALL)
-@@ -581,9 +568,6 @@
+@@ -583,9 +570,6 @@
  all-am: Makefile $(DATA)
  installdirs: installdirs-recursive
  installdirs-am:
@@ -49,7 +49,7 @@
  install: install-recursive
  install-exec: install-exec-recursive
  install-data: install-data-recursive
-@@ -622,15 +606,11 @@
+@@ -624,15 +608,11 @@
  
  dvi-am:
  
@@ -66,7 +66,7 @@
  
  install-dvi: install-dvi-recursive
  
-@@ -638,10 +618,6 @@
+@@ -640,10 +620,6 @@
  
  install-exec-am:
  
@@ -77,13 +77,13 @@
  install-info: install-info-recursive
  
  install-info-am:
-@@ -683,10 +659,10 @@
+@@ -685,10 +661,10 @@
  	all all-am check check-am clean clean-generic clean-libtool \
  	clean-local ctags ctags-recursive dist-hook distclean \
  	distclean-generic distclean-libtool distclean-tags distdir dvi \
 -	dvi-am html html-am info info-am install install-am \
 -	install-cssDATA install-data install-data-am \
-+	dvi-am  info info-am install install-am \
++	dvi-am info info-am install install-am \
 +	install-data install-data-am \
  	install-data-local install-dvi install-dvi-am install-exec \
 -	install-exec-am install-html install-html-am install-info \
@@ -91,7 +91,7 @@
  	install-info-am install-man install-pdf install-pdf-am \
  	install-ps install-ps-am install-strip installcheck \
  	installcheck-am installdirs installdirs-am maintainer-clean \
-@@ -698,19 +674,6 @@
+@@ -700,19 +676,6 @@
  # install the html files to the destdir
  install-data-local:
  	for lang in $(ALL_LINGUAS); do \
@@ -111,7 +111,7 @@
  		file=$(srcdir)/man/$$lang/$(PACKAGE_NAME).1; \
  		if test -f $$file ; then \
  			if test x"$$lang" = x"C"; then \
-@@ -728,13 +691,6 @@
+@@ -730,13 +693,6 @@
  uninstall-local:
  	for lang in $(ALL_LINGUAS); do \
  		dest=$(DESTDIR)$(docdir)/$$lang; \
@@ -125,7 +125,7 @@
  		if test x"$$lang" = x"C"; then \
  			dest=$(DESTDIR)$(mandir)/man1/$(PACKAGE).1; \
  		else \
-@@ -748,7 +704,7 @@
+@@ -750,7 +706,7 @@
  
  # remove generate html from the srcdir
  clean-local:
@@ -134,7 +134,7 @@
  
  # regenerate po(t) files
  @GENERATE_DOCUMENTATION_TRUE@update-po:
-@@ -760,9 +716,9 @@
+@@ -762,9 +718,9 @@
  @GENERATE_DOCUMENTATION_TRUE@	done
  
  # build the translated help files
@@ -146,10 +146,10 @@
  @GENERATE_DOCUMENTATION_TRUE@	echo; \
  @GENERATE_DOCUMENTATION_TRUE@	echo "*** Generating full XML file ***"; \
  @GENERATE_DOCUMENTATION_TRUE@	echo "Creating Terminal-options.xml"; \
-@@ -788,11 +744,9 @@
+@@ -790,11 +746,9 @@
  @GENERATE_DOCUMENTATION_TRUE@			-i xgen-doc xgen-man; \
  @GENERATE_DOCUMENTATION_TRUE@		echo "Validating DocBook XML files"; \
- @GENERATE_DOCUMENTATION_TRUE@		$(XMLLINT) --noout --valid xgen-doc xgen-man; \
+ @GENERATE_DOCUMENTATION_TRUE@		$(XMLLINT) --noout --valid xgen-doc xgen-man || exit 1; \
 -@GENERATE_DOCUMENTATION_TRUE@		echo "Creating the HTML pages"; \
 -@GENERATE_DOCUMENTATION_TRUE@		$(XSLTPROC) --nonet -o $(srcdir)/html/$$lang/ $(srcdir)/$(HTML_STYLESHEET) xgen-doc; \
  @GENERATE_DOCUMENTATION_TRUE@		echo "Creating the MAN page"; \
@@ -159,7 +159,7 @@
  @GENERATE_DOCUMENTATION_TRUE@		rm -f xgen-doc xgen-man; \
  @GENERATE_DOCUMENTATION_TRUE@		echo; \
  @GENERATE_DOCUMENTATION_TRUE@	done; \
-@@ -806,7 +760,7 @@
+@@ -808,7 +762,7 @@
  @GENERATE_DOCUMENTATION_FALSE@	@false
  
  @GENERATE_DOCUMENTATION_FALSE@doc-build.stamp:
@@ -168,7 +168,7 @@
  @GENERATE_DOCUMENTATION_FALSE@		echo; \
  @GENERATE_DOCUMENTATION_FALSE@		echo "*** No generated documentation found. If you want to"; \
  @GENERATE_DOCUMENTATION_FALSE@		echo "*** generate the (translated) documentation, run configure"; \
-@@ -825,10 +779,6 @@
+@@ -827,10 +781,6 @@
  # include the html and man files in the dist
  dist-hook: dist-check-doc doc-build.stamp
  	for lang in $(ALL_LINGUAS); do \
@@ -179,3 +179,5 @@
  		if test -d $(srcdir)/man/$$lang; then \
  			mkdir -p $(distdir)/man/$$lang; \
  			cp $(srcdir)/man/$$lang/* $(distdir)/man/$$lang/; \
+
+
