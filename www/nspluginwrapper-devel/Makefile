@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	nspluginwrapper
-PORTVERSION=	1.3.0
-PORTREVISION=	9
+PORTVERSION=	1.3.2
 CATEGORIES=	www linux emulators
-MASTER_SITES=	LOCAL/jkim
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${BINFILE}${EXTRACT_SUFX}
+MASTER_SITES=	http://web.mit.edu/davidben/Public/nspluginwrapper/ \
+		LOCAL/jkim:binfile
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${BINFILE}:binfile
 
 MAINTAINER=	jkim@FreeBSD.org
 COMMENT=	A compatibility plugin for Mozilla NPAPI (development version)
@@ -21,11 +21,11 @@ LATEST_LINK=	${PORTNAME}-devel
 
 CONFLICTS=	nspluginwrapper-1.2.*
 
-BINFILE=	${PORTNAME}-i386-${PORTVERSION}-5
+BINBUILD=	1
+BINFILE=	${PORTNAME}-i386-${PORTVERSION}-${BINBUILD}${EXTRACT_SUFX}
 
 ONLY_FOR_ARCHS=	i386 amd64
 
-USE_BZIP2=	yes
 USE_LINUX=	yes
 USE_LINUX_APPS=	gtk2
 USE_XORG=	x11 xext xt
@@ -39,8 +39,7 @@ HAS_CONFIGURE=	yes
 
 CONFIGURE_ARGS=	--enable-generic --enable-strip --prefix=${PREFIX} \
 		--target-os=linux --target-cpu=i386 \
-		--with-cc=${CC} --with-cxx=${CXX} \
-		--with-x11-prefix=${LOCALBASE}
+		--with-cc=${CC} --with-cxx=${CXX}
 
 LIBDIR=		${PREFIX}/lib/${PORTNAME}
 
@@ -58,7 +57,7 @@ HOST_ARCH=	${ARCH}
 .endif
 
 post-patch:
-	${REINPLACE_CMD} -e 's,/usr/X11R6,${LOCALBASE},g' \
+	${REINPLACE_CMD} -e 's,%%LOCALBASE%%,${LOCALBASE},g' \
 	    ${WRKSRC}/src/npw-config.c
 
 post-install:

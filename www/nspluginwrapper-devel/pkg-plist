@@ -4,7 +4,6 @@ bin/nspluginwrapper
 %%LIBDIR%%/%%HOST_ARCH%%/freebsd/npplayer
 %%LIBDIR%%/%%HOST_ARCH%%/freebsd/npwrapper.so
 %%LIBDIR%%/i386/linux/libnoxshm.so
-%%LIBDIR%%/i386/linux/libxpcom.so
 %%LIBDIR%%/i386/linux/npviewer
 %%LIBDIR%%/i386/linux/npviewer.bin
 %%LIBDIR%%/noarch/npviewer.sh
