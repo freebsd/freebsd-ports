@@ -19,6 +19,7 @@
     SUBDIR += big5con
     SUBDIR += big5width
     SUBDIR += bitchx
+    SUBDIR += bug5
     SUBDIR += c2t
     SUBDIR += cce
     SUBDIR += celvis
