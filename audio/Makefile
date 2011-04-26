@@ -422,6 +422,7 @@
     SUBDIR += linux-f10-nas-libs
     SUBDIR += linux-f10-openal
     SUBDIR += linux-f10-openal-soft
+    SUBDIR += linux-f10-pulseaudio-libs
     SUBDIR += linux-f10-sdl_mixer
     SUBDIR += linux-fmodapi
     SUBDIR += linux-freealut

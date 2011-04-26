@@ -1,0 +1,16 @@
+--- etc/pulse/client.conf-dist.orig	2011-04-01 15:42:58.548733177 +0300
++++ etc/pulse/client.conf-dist	2011-04-01 15:53:03.306719164 +0300
+@@ -23,11 +23,11 @@
+ ; default-source =
+ ; default-server =
+ 
+-; autospawn = yes
++autospawn = no
+ ; daemon-binary = /usr/bin/pulseaudio
+ ; extra-arguments = --log-target=syslog
+ 
+ ; cookie-file =
+ 
+-; disable-shm = no
++disable-shm = yes
+ ; shm-size-bytes = 0 # setting this 0 will use the system-default, usually 64 MiB
