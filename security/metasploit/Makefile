@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	metasploit
-DISTVERSION=	3.5.1
+DISTVERSION=	3.6.0
 CATEGORIES=	security
-MASTER_SITES=	http://www.metasploit.com/releases/ \
-		http://updates.metasploit.com/data/releases/
+MASTER_SITES=	http://updates.metasploit.com/data/releases/
 DISTNAME=	framework-${DISTVERSION}
 
 MAINTAINER=	onatan@gmail.com
@@ -21,6 +20,10 @@ RUN_DEPENDS=	nasm:${PORTSDIR}/devel/nasm				\
 WRKSRC=		${WRKDIR}/msf3
 SCRIPTS=	msfcli msfconsole msfd msfelfscan msfencode msfmachscan \
 		msfopcode msfpayload msfpescan msfweb
+
+OPTIONS=	MSFGUI "Build GUI scripts" off \
+		SVN "Use subversion" off \
+		SVN_FBSD "Use subversion-freebsd" off
 
 NO_BUILD=	yes
 USE_RUBY=	yes
@@ -46,8 +49,12 @@ RUN_DEPENDS+=	${RUBY_SITEARCHLIBDIR}/gtk2.so:${PORTSDIR}/x11-toolkits/ruby-gtk2 
 SCRIPTS+=	msfgui
 .endif
 
-.if defined(WITH_SVN)
+.if defined(WITH_SVN) || defined(WITH_SVN_FBSD)
+.if defined(WITH_SVN_FBSD)
+RUN_DEPENDS+=	svn:${PORTSDIR}/devel/subversion-freebsd
+.else
 RUN_DEPENDS+=	svn:${PORTSDIR}/devel/subversion
+.endif
 .endif
 
 do-install:
