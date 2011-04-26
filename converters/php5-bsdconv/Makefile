@@ -5,25 +5,29 @@
 # $FreeBSD$
 #
 
-CATEGORIES+=	converters
+PORTNAME=	bsdconv
+PORTVERSION=	4.6
+CATEGORIES=	converters
+MASTER_SITES=	https://github.com/buganini/php-${PORTNAME}/tarball/${PORTVERSION}/
 PKGNAMEPREFIX=	php5-
+DISTNAME=	buganini-${PORTNAME}-${PORTVERSION}-0-g${GITVERSION}
 
 MAINTAINER=	buganini@gmail.com
 COMMENT=	PHP wrapper for bsdconv
 
 LIB_DEPENDS=	bsdconv.4:${PORTSDIR}/converters/bsdconv
 
-MASTERDIR=	${.CURDIR}/../bsdconv
-WRKSRC=		${WRKDIR}/${DISTNAME}/wrapper/php
-PATCH_WRKSRC=	${WRKDIR}/${DISTNAME}
-DESCR=		${.CURDIR}/pkg-descr
-PLIST=		${NONEXISTENT}
+LICENSE=	BSD
+
+GITVERSION=	4297d53
+FETCH_ARGS=	-pRr
+WRKSRC=		${WRKDIR}/buganini-php-${PORTNAME}-${GITVERSION}
 
 USE_PHP=	yes
+USE_PHPEXT=	yes
 USE_PHPIZE=	yes
 USE_PHP_BUILD=	yes
-USE_PHPEXT=	yes
-PHP_MODNAME=	bsdconv
-CONFIGURE_ARGS+=--with-bsdconv=${LOCALBASE}
+PHP_MODNAME=	${PORTNAME}
+CONFIGURE_ARGS=	--with-bsdconv=${LOCALBASE}
 
-.include "${MASTERDIR}/Makefile"
+.include <bsd.port.mk>
