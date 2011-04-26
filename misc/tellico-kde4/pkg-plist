@@ -25,6 +25,7 @@ share/apps/tellico/data-sources/ministerio_de_cultura.py
 share/apps/tellico/data-sources/ministerio_de_cultura.py.spec
 share/apps/tellico/delicious2tellico.xsl
 share/apps/tellico/discogs2tellico.xsl
+share/apps/tellico/douban2tellico.xsl
 share/apps/tellico/dvd-logo.png
 share/apps/tellico/dvdfr2tellico.xsl
 share/apps/tellico/entry-templates/Album.xsl
