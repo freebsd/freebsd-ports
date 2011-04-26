@@ -14,9 +14,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}.0
 MAINTAINER=	novel@FreeBSD.org
 COMMENT=	PowerPC architecture emulator
 
-BROKEN=		does not build
-DEPRECATED=	has been broken for over a half year
-EXPIRATION_DATE=2011-04-17
+LICENSE=	GPLv2
 
 GNU_CONFIGURE=	yes
 USE_XORG=	x11
@@ -28,8 +26,7 @@ PLIST_DIRS=	%%DATADIR%%
 
 OPTIONS=	SDL		 "Use SDL for user interface"	  off \
 		OPTIMIZED_CFLAGS "Make an optimized build"	  off \
-		DEBUG		 "Make debug+profiled build"	  off \
-		JITC		 "Enable JITC support (x86 only)" off
+		DEBUG		 "Make debug+profiled build"	  off
 
 .include <bsd.port.pre.mk>
 
@@ -65,7 +62,7 @@ CONFIGURE_ARGS+=	--disable-fpo
 CONFIGURE_ARGS+=	--enable-profiling	# implies --enable-debug
 .endif
 
-.if defined(WITH_JITC) && ${ARCH} == "i386"
+.if ${ARCH} == "i386"
 BUILD_DEPENDS=	nasm:${PORTSDIR}/devel/nasm
 CONFIGURE_ARGS+=	--enable-cpu=jitc_x86
 .else
