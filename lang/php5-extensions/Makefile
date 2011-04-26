@@ -66,7 +66,7 @@ OPTIONS=	BCMATH          "bc style precision math functions" off \
 		MSSQL           "MS-SQL database support" off \
 		MYSQL           "MySQL database support" off \
 		MYSQLI          "MySQLi database support" off \
-		ODBC            "unixODBC support" off \
+		ODBC            "ODBC support" off \
 		OPENSSL         "OpenSSL support" off \
 		PCNTL           "pcntl support (CLI only)" off \
 		PDF             "PDFlib support (implies GD)" off \
