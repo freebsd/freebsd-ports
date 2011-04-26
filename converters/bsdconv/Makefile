@@ -6,21 +6,37 @@
 #
 
 PORTNAME=	bsdconv
-PORTVERSION=	4.3
+PORTVERSION=	4.8
 CATEGORIES=	converters
-MASTER_SITES=	http://cloud.github.com/downloads/buganini/bsdconv/
+MASTER_SITES=	https://github.com/buganini/${PORTNAME}/tarball/${PORTVERSION}/
+DISTNAME=	buganini-${PORTNAME}-${PORTVERSION}-0-g${GITVERSION}
 
 MAINTAINER=	buganini@gmail.com
 COMMENT=	BSD licensed charset/encoding converter library
+
+LICENSE=	BSD
+
+GITVERSION=	75b8c7d
+FETCH_ARGS=	-pRr
+WRKSRC=		${WRKDIR}/buganini-${PORTNAME}-${GITVERSION}
+
+OPTIONS=	EXTRA "Extra codecs (Chinese specifics)" off
 
 USE_LDCONFIG=	yes
 
 MAKE_ARGS=	PREFIX=${PREFIX}
 
-.include <bsd.port.pre.mk>
+ALL_TARGET=	libbsdconv bsdconv_mktable meta bsdconv codecs_basic
+INSTALL_TARGET=	install_main install_basic
 
-#.if ${OSVERSION} < 701101
-EXTRA_PATCHES=	${FILESDIR}/extra-patch-strndup
-#.endif
+.include <bsd.port.options.mk>
 
-.include <bsd.port.post.mk>
+.if defined(WITH_EXTRA)
+ALL_TARGET+=	codecs_extra
+INSTALL_TARGET+=install_extra
+PLIST_SUB=	EXTRA=""
+.else
+PLIST_SUB=	EXTRA="@comment "
+.endif
+
+.include <bsd.port.mk>
