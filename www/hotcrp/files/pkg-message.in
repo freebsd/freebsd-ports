@@ -1,0 +1,22 @@
+
+***********************************************************************
+*                         POST INSTALL CONFIGURATION                  *
+***********************************************************************
+
+Please note that everything has been installed in %%WWWDIR%%.
+
+Read %%WWWDIR%%/README.
+
+You will probably want to add an alias to your httpd.conf file, something
+like this:
+
+    	Alias /hotcrp %%WWWDIR%%/
+	AcceptPathInfo On
+	<Directory %%WWWDIR%%>
+	    Options Indexes Includes FollowSymLinks MultiViews
+	    AllowOverride All
+	    Order Allow,Deny
+	    Allow from all
+	</Directory>
+
+And restart Apache.
