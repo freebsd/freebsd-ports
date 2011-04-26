@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	texmacs
-PORTVERSION=	1.0.7.9
+PORTVERSION=	1.0.7.10
 CATEGORIES=	editors print
-MASTER_SITES=	ftp://ftp.texmacs.org/pub/TeXmacs/%SUBDIR%/ \
+MASTER_SITES=	ftp://ftp.texmacs.org/pub/TeXmacs/targz/ \
 		http://www.predatorlabs.net/dl/
-MASTER_SITE_SUBDIR=	targz old-targz
 DISTNAME=	TeXmacs-${PORTVERSION}-src
 
 MAINTAINER=	rfarmer@predatorlabs.net
