@@ -70,6 +70,7 @@ share/icons/hicolor/32x32/apps/luminance.png
 @dirrmtry share/icons/hicolor
 @dirrmtry share/icons
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/help/js
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/help/img
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/help/en/images
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/help/en
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/help
