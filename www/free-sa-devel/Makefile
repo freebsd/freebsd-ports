@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	free-sa
-PORTVERSION=	2.0.0b3
+PORTVERSION=	2.0.0b4
 CATEGORIES=	www
 MASTER_SITES=	SF
-MASTER_SITE_SUBDIR=	free-sa/free-sa-dev/2.0.0b3/
+MASTER_SITE_SUBDIR=	free-sa/free-sa-dev/2.0.0b4/
 PKGNAMESUFFIX=	-devel
 
 MAINTAINER=	moiseev@mezonplus.ru
@@ -38,8 +38,9 @@ MAKE_ARGS+=	PREFIX="${PREFIX}" \
 		INSTALL=/usr/bin/install \
 		LARGEFILE=yes \
 		SATSEP="'" \
-		HAVE_STRL="1"\
-		ADDLDFLAGS="${LDFLAGS} --relax -mrelax"
+		HAVE_STRL="1" \
+		ADDLDFLAGS="${LDFLAGS} --relax -mrelax" \
+		MANDIR="${MANPREFIX}/man"
 
 OPTIONS=	OPTIMIZED_CFLAGS "Build with distribution-recommended CFLAGS"	off \
 		SA_DEBUG "Enable Free-SA debugging (level 1)"	off

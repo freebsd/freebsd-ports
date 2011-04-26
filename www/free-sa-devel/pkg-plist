@@ -28,6 +28,8 @@ bin/free-sa
 %%DATADIR%%/fr.iso88591
 %%DATADIR%%/hu.iso88592
 %%DATADIR%%/it.iso88591
+%%DATADIR%%/lt.iso885913
+%%DATADIR%%/pt.iso88591
 %%DATADIR%%/ru.koi8r
 %%DATADIR%%/sk.iso88592
 %%WWWDIR%%/c.png
