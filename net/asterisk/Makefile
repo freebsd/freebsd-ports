@@ -161,6 +161,7 @@ PLIST_SUB+=	WITH_MYSQL="@comment "
 PLIST_SUB+=	WITH_MYSQL=""
 USE_MYSQL=	yes
 EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-menuselect-tree-mysql.diff
+EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-addons__.moduleinfo.diff
 .endif
 
 .if !defined(WITH_OGGVORBIS)
