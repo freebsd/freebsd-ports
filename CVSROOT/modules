@@ -27769,6 +27769,7 @@ ztcl                            ports/devel/ztcl
 zthread                         ports/devel/zthread
 ztrack                          ports/games/ztrack
 zu-aspell                       ports/textproc/zu-aspell
+zutils                          ports/archivers/zutils
 zxfer                           ports/sysutils/zxfer
 zxid                            ports/security/zxid
 zynaddsubfx                     ports/audio/zynaddsubfx
