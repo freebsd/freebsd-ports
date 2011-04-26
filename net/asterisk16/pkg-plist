@@ -568,6 +568,7 @@ share/asterisk/phoneprov/000000000000-phone.cfg
 share/asterisk/phoneprov/000000000000.cfg
 share/asterisk/phoneprov/polycom.xml
 share/asterisk/phoneprov/polycom_line.xml
+share/asterisk/phoneprov/snom-mac.xml
 share/asterisk/sounds/.asterisk-core-sounds-en-gsm-1.4.20
 share/asterisk/sounds/en/LICENSE-asterisk-core-en-1.4.20
 share/asterisk/sounds/en/ascending-2tone.gsm
