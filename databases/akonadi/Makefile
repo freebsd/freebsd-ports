@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	akonadi
-PORTVERSION=	1.5.1
+PORTVERSION=	1.5.2
 CATEGORIES=	databases kde ipv6
 MASTER_SITES=	http://download.${PORTNAME}-project.org/ \
 		http://ktown.kde.org/~dirk/
