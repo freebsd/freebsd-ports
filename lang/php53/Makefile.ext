@@ -194,9 +194,9 @@ OPTIONS=	MYSQLND "Use MySQL Native Driver" on
 .endif
 
 .if ${PHP_MODNAME} == "odbc"
-LIB_DEPENDS+=	odbc.1:${PORTSDIR}/databases/unixODBC
+CONFIGURE_ARGS+=--enable-odbc
 
-CONFIGURE_ARGS+=--with-unixODBC=${LOCALBASE}
+OPTIONS=	IODBC "Use the iODBC driver instead of unixODBC" off
 .endif
 
 .if ${PHP_MODNAME} == "openssl"
@@ -240,9 +240,7 @@ USE_PHP_BUILD=	yes
 .endif
 
 .if ${PHP_MODNAME} == "pdo_odbc"
-LIB_DEPENDS+=	odbc.1:${PORTSDIR}/databases/unixODBC
-
-CONFIGURE_ARGS+=--with-pdo-odbc=unixODBC,${LOCALBASE}
+OPTIONS=	IODBC "Use the iODBC driver instead of unixODBC" off
 
 USE_PHP=	pdo
 USE_PHP_BUILD=	yes
@@ -523,11 +521,35 @@ post-extract:
 	@${MV} ${WRKSRC}/config0.m4 ${WRKSRC}/config.m4
 .endif
 
+.if ${PHP_MODNAME} == "odbc"
+.if defined(WITH_IODBC)
+LIB_DEPENDS+=	iodbc.3:${PORTSDIR}/databases/libiodbc
+
+CONFIGURE_ARGS+=--with-iodbc=${LOCALBASE}
+.else
+LIB_DEPENDS+=	odbc.1:${PORTSDIR}/databases/unixODBC
+
+CONFIGURE_ARGS+=--with-unixODBC=${LOCALBASE}
+.endif
+.endif
+
 .if ${PHP_MODNAME} == "pdo_dblib"
 .if defined(WITH_MSSQL)
 LIB_DEPENDS+=	sybdb.5:${PORTSDIR}/databases/freetds-msdblib
 .else
 LIB_DEPENDS+=	ct.4:${PORTSDIR}/databases/freetds
+.endif
+.endif
+
+.if ${PHP_MODNAME} == "pdo_odbc"
+.if defined(WITH_IODBC)
+LIB_DEPENDS+=	iodbc.3:${PORTSDIR}/databases/libiodbc
+
+CONFIGURE_ARGS+=--with-pdo-odbc=iODBC,${LOCALBASE}
+.else
+LIB_DEPENDS+=	odbc.1:${PORTSDIR}/databases/unixODBC
+
+CONFIGURE_ARGS+=--with-pdo-odbc=unixODBC,${LOCALBASE}
 .endif
 .endif
 
