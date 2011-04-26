@@ -163,7 +163,7 @@ lib/libfreeipmi.so.11
 lib/libipmiconsole.a
 lib/libipmiconsole.la
 lib/libipmiconsole.so
-lib/libipmiconsole.so.3
+lib/libipmiconsole.so.4
 lib/libipmidetect.a
 lib/libipmidetect.la
 lib/libipmidetect.so
