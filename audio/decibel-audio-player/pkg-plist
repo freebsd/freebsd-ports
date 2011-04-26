@@ -20,6 +20,7 @@ share/applications/decibel-audio-player.desktop
 %%DATADIR%%/pix/star-16.png
 %%DATADIR%%/res/AudioCD.glade
 %%DATADIR%%/res/Authentication.glade
+%%DATADIR%%/res/AutoShuffle.glade
 %%DATADIR%%/res/Covers.glade
 %%DATADIR%%/res/DesktopNotification.glade
 %%DATADIR%%/res/Equalizer.glade
@@ -42,6 +43,7 @@ share/applications/decibel-audio-player.desktop
 %%DATADIR%%/src/gui/extTreeview.py
 %%DATADIR%%/src/gui/fileChooser.py
 %%DATADIR%%/src/gui/help.py
+%%DATADIR%%/src/gui/mainWindow.py
 %%DATADIR%%/src/gui/preferences.py
 %%DATADIR%%/src/gui/progressDlg.py
 %%DATADIR%%/src/gui/selectPath.py
@@ -56,6 +58,7 @@ share/applications/decibel-audio-player.desktop
 %%DATADIR%%/src/media/format/mp4.py
 %%DATADIR%%/src/media/format/mpc.py
 %%DATADIR%%/src/media/format/ogg.py
+%%DATADIR%%/src/media/format/wav.py
 %%DATADIR%%/src/media/format/wavpack.py
 %%DATADIR%%/src/media/playlist.py
 %%DATADIR%%/src/media/track/__init__.py
@@ -63,6 +66,8 @@ share/applications/decibel-audio-player.desktop
 %%DATADIR%%/src/media/track/fileTrack.py
 %%DATADIR%%/src/modules/AudioCD.py
 %%DATADIR%%/src/modules/AudioScrobbler.py
+%%DATADIR%%/src/modules/AutoResume.py
+%%DATADIR%%/src/modules/AutoShuffle.py
 %%DATADIR%%/src/modules/CommandLine.py
 %%DATADIR%%/src/modules/Covers.py
 %%DATADIR%%/src/modules/CtrlPanel.py
