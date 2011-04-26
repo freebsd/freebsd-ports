@@ -513,6 +513,7 @@
     SUBDIR += pecl-memcache
     SUBDIR += pecl-memcached
     SUBDIR += pecl-mongo
+    SUBDIR += pecl-rrd
     SUBDIR += pecl-sqlite
     SUBDIR += pecl-tokyo_tyrant
     SUBDIR += pg_filedump
