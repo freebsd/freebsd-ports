@@ -113,6 +113,8 @@ share/TeXmacs/doc/about/changes/changes-16.en.ptm
 share/TeXmacs/doc/about/changes/changes-16.en.tm
 share/TeXmacs/doc/about/changes/changes-17.en.ptm
 share/TeXmacs/doc/about/changes/changes-17.en.tm
+share/TeXmacs/doc/about/changes/changes-18.en.ptm
+share/TeXmacs/doc/about/changes/changes-18.en.tm
 share/TeXmacs/doc/about/changes/changes-2.de.tm
 share/TeXmacs/doc/about/changes/changes-2.en.ptm
 share/TeXmacs/doc/about/changes/changes-2.en.tm
@@ -882,6 +884,7 @@ share/TeXmacs/doc/main/math/keyboard/man-big.fr.tm
 share/TeXmacs/doc/main/math/keyboard/man-big.it.tm
 share/TeXmacs/doc/main/math/keyboard/man-big.pl.tm
 share/TeXmacs/doc/main/math/keyboard/man-big.pt.tm
+share/TeXmacs/doc/main/math/keyboard/man-enter-math.en.tm
 share/TeXmacs/doc/main/math/keyboard/man-large.de.tm
 share/TeXmacs/doc/main/math/keyboard/man-large.en.tm
 share/TeXmacs/doc/main/math/keyboard/man-large.es.tm
@@ -917,10 +920,10 @@ share/TeXmacs/doc/main/math/man-math.fr.tm
 share/TeXmacs/doc/main/math/man-math.it.tm
 share/TeXmacs/doc/main/math/man-math.pl.tm
 share/TeXmacs/doc/main/math/man-math.pt.tm
-share/TeXmacs/doc/main/math/semantics/man-semantics-brackets.en.tm
-share/TeXmacs/doc/main/math/semantics/man-semantics-formulas.en.tm
+share/TeXmacs/doc/main/math/semantics/man-customized-semantics.en.tm
 share/TeXmacs/doc/main/math/semantics/man-semantics-symbols.en.tm
 share/TeXmacs/doc/main/math/semantics/man-semantics.en.tm
+share/TeXmacs/doc/main/math/semantics/man-syntax-correction.en.tm
 share/TeXmacs/doc/main/scheme/man-files.de.tm
 share/TeXmacs/doc/main/scheme/man-files.en.tm
 share/TeXmacs/doc/main/scheme/man-files.es.tm
@@ -1727,6 +1730,7 @@ share/TeXmacs/misc/pixmaps/traditional/--x17/tm_assign.xpm
 share/TeXmacs/misc/pixmaps/traditional/--x17/tm_back.xpm
 share/TeXmacs/misc/pixmaps/traditional/--x17/tm_bar.xpm
 share/TeXmacs/misc/pixmaps/traditional/--x17/tm_bbb.xpm
+share/TeXmacs/misc/pixmaps/traditional/--x17/tm_bigaround.xpm
 share/TeXmacs/misc/pixmaps/traditional/--x17/tm_bigleft.xpm
 share/TeXmacs/misc/pixmaps/traditional/--x17/tm_bigop.xpm
 share/TeXmacs/misc/pixmaps/traditional/--x17/tm_bigright.xpm
@@ -1864,15 +1868,20 @@ share/TeXmacs/misc/pixmaps/traditional/--x17/tm_line_pattern.xpm
 share/TeXmacs/misc/pixmaps/traditional/--x17/tm_line_style.xpm
 share/TeXmacs/misc/pixmaps/traditional/--x17/tm_line_width.xpm
 share/TeXmacs/misc/pixmaps/traditional/--x17/tm_link.xpm
+share/TeXmacs/misc/pixmaps/traditional/--x17/tm_list.xpm
 share/TeXmacs/misc/pixmaps/traditional/--x17/tm_margin.xpm
 share/TeXmacs/misc/pixmaps/traditional/--x17/tm_mask_none.xpm
 share/TeXmacs/misc/pixmaps/traditional/--x17/tm_math.xpm
+share/TeXmacs/misc/pixmaps/traditional/--x17/tm_math_preferences.xpm
+share/TeXmacs/misc/pixmaps/traditional/--x17/tm_math_style.xpm
+share/TeXmacs/misc/pixmaps/traditional/--x17/tm_math_syntax.xpm
 share/TeXmacs/misc/pixmaps/traditional/--x17/tm_mathbold.xpm
 share/TeXmacs/misc/pixmaps/traditional/--x17/tm_miscsymb.xpm
 share/TeXmacs/misc/pixmaps/traditional/--x17/tm_multicol.xpm
 share/TeXmacs/misc/pixmaps/traditional/--x17/tm_name.xpm
 share/TeXmacs/misc/pixmaps/traditional/--x17/tm_new.xpm
 share/TeXmacs/misc/pixmaps/traditional/--x17/tm_numbered.xpm
+share/TeXmacs/misc/pixmaps/traditional/--x17/tm_op.xpm
 share/TeXmacs/misc/pixmaps/traditional/--x17/tm_open.xpm
 share/TeXmacs/misc/pixmaps/traditional/--x17/tm_pageins.xpm
 share/TeXmacs/misc/pixmaps/traditional/--x17/tm_parindent.xpm
@@ -1885,6 +1894,8 @@ share/TeXmacs/misc/pixmaps/traditional/--x17/tm_point_mode.xpm
 share/TeXmacs/misc/pixmaps/traditional/--x17/tm_point_style.xpm
 share/TeXmacs/misc/pixmaps/traditional/--x17/tm_prime.xpm
 share/TeXmacs/misc/pixmaps/traditional/--x17/tm_print.xpm
+share/TeXmacs/misc/pixmaps/traditional/--x17/tm_program.xpm
+share/TeXmacs/misc/pixmaps/traditional/--x17/tm_prominent.xpm
 share/TeXmacs/misc/pixmaps/traditional/--x17/tm_redo.xpm
 share/TeXmacs/misc/pixmaps/traditional/--x17/tm_reload.xpm
 share/TeXmacs/misc/pixmaps/traditional/--x17/tm_replace.xpm
@@ -1905,7 +1916,9 @@ share/TeXmacs/misc/pixmaps/traditional/--x17/tm_similar_first.xpm
 share/TeXmacs/misc/pixmaps/traditional/--x17/tm_similar_last.xpm
 share/TeXmacs/misc/pixmaps/traditional/--x17/tm_similar_next.xpm
 share/TeXmacs/misc/pixmaps/traditional/--x17/tm_similar_previous.xpm
+share/TeXmacs/misc/pixmaps/traditional/--x17/tm_small_textual.xpm
 share/TeXmacs/misc/pixmaps/traditional/--x17/tm_smallcaps.xpm
+share/TeXmacs/misc/pixmaps/traditional/--x17/tm_specified.xpm
 share/TeXmacs/misc/pixmaps/traditional/--x17/tm_spell.xpm
 share/TeXmacs/misc/pixmaps/traditional/--x17/tm_spline_mode.xpm
 share/TeXmacs/misc/pixmaps/traditional/--x17/tm_sqrt.xpm
@@ -1914,6 +1927,7 @@ share/TeXmacs/misc/pixmaps/traditional/--x17/tm_stretch.xpm
 share/TeXmacs/misc/pixmaps/traditional/--x17/tm_strong.xpm
 share/TeXmacs/misc/pixmaps/traditional/--x17/tm_style.xpm
 share/TeXmacs/misc/pixmaps/traditional/--x17/tm_sub.xpm
+share/TeXmacs/misc/pixmaps/traditional/--x17/tm_subsup.xpm
 share/TeXmacs/misc/pixmaps/traditional/--x17/tm_sup.xpm
 share/TeXmacs/misc/pixmaps/traditional/--x17/tm_switch.xpm
 share/TeXmacs/misc/pixmaps/traditional/--x17/tm_table.xpm
@@ -1970,8 +1984,10 @@ share/TeXmacs/packages/beamer/ornaments.ts
 share/TeXmacs/packages/beamer/presentation.ts
 share/TeXmacs/packages/beamer/ridged-paper.ts
 share/TeXmacs/packages/beamer/slides.ts
+share/TeXmacs/packages/customize/centered-program.ts
 share/TeXmacs/packages/customize/cite-author-year.ts
 share/TeXmacs/packages/customize/compact-list.ts
+share/TeXmacs/packages/customize/framed-program.ts
 share/TeXmacs/packages/customize/number-europe.ts
 share/TeXmacs/packages/customize/number-long-article.ts
 share/TeXmacs/packages/customize/number-us.ts
@@ -1986,6 +2002,7 @@ share/TeXmacs/packages/environment/env-base.ts
 share/TeXmacs/packages/environment/env-float.ts
 share/TeXmacs/packages/environment/env-flush-math.ts
 share/TeXmacs/packages/environment/env-math.ts
+share/TeXmacs/packages/environment/env-program.ts
 share/TeXmacs/packages/environment/env-theorem.ts
 share/TeXmacs/packages/environment/env.ts
 share/TeXmacs/packages/example/allouche.ts
@@ -2009,7 +2026,6 @@ share/TeXmacs/packages/header/title-book.ts
 share/TeXmacs/packages/header/title-generic.ts
 share/TeXmacs/packages/header/title-seminar.ts
 share/TeXmacs/packages/obsolete/presentation-ridged-paper.ts
-share/TeXmacs/packages/program/program.ts
 share/TeXmacs/packages/program/scripts.ts
 share/TeXmacs/packages/program/session.ts
 share/TeXmacs/packages/program/varsession.ts
@@ -2253,7 +2269,6 @@ share/TeXmacs/progs/convert/tools/xmltm.scm
 share/TeXmacs/progs/doc/docgrep.scm
 share/TeXmacs/progs/doc/help-funcs.scm
 share/TeXmacs/progs/doc/help-menu.scm
-share/TeXmacs/progs/doc/tmdoc-drd.scm
 share/TeXmacs/progs/doc/tmdoc-kbd.scm
 share/TeXmacs/progs/doc/tmdoc-markup.scm
 share/TeXmacs/progs/doc/tmdoc.scm
