@@ -6,27 +6,16 @@
 @unexec if cmp -s %D/%%PHPMP%%/config.php.sample %D/%%PHPMP%%/config.php; then rm -f %D/%%PHPMP%%/config.php; fi
 %%PHPMP%%/config.php.sample
 @exec if [ ! -f %D/%%PHPMP%%/config.php ] ; then cp -p %D/%F %B/config.php; fi
-%%PHPMP%%/find.php
-%%PHPMP%%/find_body.php
+%%PHPMP%%/features.php
 %%PHPMP%%/index.php
 %%PHPMP%%/info.php
 %%PHPMP%%/info2html.php
-%%PHPMP%%/login.php
-%%PHPMP%%/login_body.php
 %%PHPMP%%/main.php
-%%PHPMP%%/main_body.php
+%%PHPMP%%/mpd-favicon.ico
 %%PHPMP%%/playlist.php
-%%PHPMP%%/playlist_body.php
-%%PHPMP%%/search.php
-%%PHPMP%%/search_body.php
 %%PHPMP%%/sort.php
-%%PHPMP%%/stats.php
-%%PHPMP%%/stats_body.php
-%%PHPMP%%/stream.php
-%%PHPMP%%/stream_body.php
 %%PHPMP%%/theme.php
 %%PHPMP%%/transparent.gif
-%%PHPMP%%/update.php
-%%PHPMP%%/update_body.php
 %%PHPMP%%/utils.php
+%%PHPMP%%/xml-parse.php
 @dirrmtry %%PHPMP%%
