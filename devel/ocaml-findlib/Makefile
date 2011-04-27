@@ -48,6 +48,17 @@ post-patch:
 
 .include <bsd.port.pre.mk>
 
+.if !exists(${LOCALBASE}/lib/ocaml/labltk)
+WITHOUT_TK=     yes
+.endif
+
+.if defined(WITHOUT_TK)
+PLIST_SUB+=     TK="@comment "
+.else
+CONFIGURE_ARGS+=-with-toolbox
+PLIST_SUB+=     TK=""
+.endif
+
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
@@ -56,17 +67,6 @@ post-install:
 .endif
 .if !defined(WITHOUT_TK)
 	@${CHMOD} +x ${PREFIX}/lib/ocaml/site-lib/findlib/make_wizard
-.endif
-
-.if !exists(${LOCALBASE}/lib/ocaml/labltk)
-WITHOUT_TK=	yes
-.endif
-
-.if defined(WITHOUT_TK)
-PLIST_SUB+=	TK="@comment "
-.else
-CONFIGURE_ARGS+=-with-toolbox
-PLIST_SUB+=	TK=""
 .endif
 
 .include <bsd.port.post.mk>
