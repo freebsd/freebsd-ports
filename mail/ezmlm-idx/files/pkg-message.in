@@ -9,6 +9,7 @@ respectively.
 Usually, you do not need to edit these files, but be sure to check
 carefully.
 
-If you have enabled the MySQL extensions, you need to create an
-ezmlm database. See INSTALL.idx in %%PREFIX%%/share/doc/ezmlm-idx.
+If you have enabled the database extensions, you need to create an
+ezmlm database. See section 5 in %%PREFIX%%/share/doc/ezmlm-idx/FAQ
+for further instructions.
 -----------------------------------------------------------------
