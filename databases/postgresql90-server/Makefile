@@ -169,6 +169,8 @@ INSTALL_TARGET=	install-strip
 
 .if (${OSVERSION} >= 700000) && !defined(WITHOUT_GSSAPI)
 CONFIGURE_ARGS+=--with-gssapi
+.else
+CONFIGURE_ARGS+=--without-gssapi
 .endif
 
 .  if defined(WITH_MIT_KRB5)
@@ -285,7 +287,7 @@ MAN7=		ABORT.7 ALTER_AGGREGATE.7 ALTER_CONVERSION.7 ALTER_DATABASE.7 \
 
 .if defined(SERVER_ONLY)
 pre-everything::
-	@${SH} ${FILESDIR}/pkg-install${PKGNAMESUFFIX}.in ${PORTNAME} BACKUPWARNING
+	@${SH} ${FILESDIR}/pkg-install${PKGNAMESUFFIX} ${PORTNAME} BACKUPWARNING
 .endif
 
 .if !defined(NO_BUILD)
@@ -307,19 +309,19 @@ do-build:
 SUB_FILES+=	pkg-message${PKGNAMESUFFIX}
 PKGMESSAGE=	${WRKSRC}/pkg-message${PKGNAMESUFFIX}
 .  endif
-.  if exists(${FILESDIR}/pkg-install${PKGNAMESUFFIX}.in)
-SUB_FILES+=     pkg-install${PKGNAMESUFFIX}
+.  if exists(${FILESDIR}/pkg-install${PKGNAMESUFFIX})
 SUB_LIST=       PG_GROUP=$(PG_GROUP) \
                 PG_USER=$(PG_USER) \
                 PG_UID=$(PG_UID)
 PLIST_SUB+=     PG_USER=$(PG_USER)
-PKGINSTALL=     ${WRKDIR}/pkg-install${PKGNAMESUFFIX}
+PKGINSTALL=     ${FILESDIR}/pkg-install${PKGNAMESUFFIX}
 .  endif
 .endif
 
 .if defined(SERVER_ONLY)
 pre-su-install:
 	@ ${SETENV} PKG_PREFIX=${PREFIX} PG_USER=$(PG_USER) PG_GROUP=$(PG_GROUP) \
+		PG_UID=$(PG_UID) \
 		${SH} ${PKGINSTALL} ${PORTNAME} PRE-INSTALL
 .endif
 
