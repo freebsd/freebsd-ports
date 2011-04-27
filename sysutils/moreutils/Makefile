@@ -1,4 +1,3 @@
-# ex:ts=8
 # Ports collection makefile for:	moreutils
 # Date created:	16 June 2009
 # Whom:		Charlie Kester <corky1951@comcast.net>
@@ -12,7 +11,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_DEBIAN_POOL}
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Additional Unix utilities
 
 RUN_DEPENDS=	${SITE_PERL}/IPC/Run.pm:${PORTSDIR}/devel/p5-IPC-Run
