@@ -1,0 +1,6 @@
+sbin/arpCounterattack
+@unexec if cmp -s %D/etc/arpCounterattack/arpCounterattack.conf.sample %D/etc/arpCounterattack/arpCounterattack.conf; then rm -f %D/etc/arpCounterattack/arpCounterattack.conf; fi
+etc/arpCounterattack/arpCounterattack.conf.sample
+@exec if [ ! -f %D/etc/arpCounterattack/arpCounterattack.conf ] ; then cp -p %D/%F %B/arpCounterattack.conf; fi
+etc/arpCounterattack/oui.txt
+@dirrmtry etc/arpCounterattack
