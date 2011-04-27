@@ -1,6 +1,10 @@
---- Makefile.PL.orig	2010-09-17 10:14:49.000000000 +0200
-+++ Makefile.PL	2010-09-17 21:51:58.000000000 +0200
-@@ -29,12 +29,6 @@
+--- Makefile.PL	2010-09-17 10:14:49.000000000 +0200
++++ /tmp/bla/Makefile.PL	2011-04-24 22:00:03.000000000 +0200
+@@ -25,30 +25,21 @@
+ Getopt::Long::GetOptions(
+     $opt,
+     "help",
+-    "prefix=s",
      "verbose",
      ) || die Usage();
  
@@ -10,10 +14,13 @@
 -  die Usage();
 -}
 -
- use vars qw($loadlibs);
- $loadlibs= "-L" . $opt->{'prefix'} . " -llfc";
+-use vars qw($loadlibs);
+-$loadlibs= "-L" . $opt->{'prefix'} . " -llfc";
++# use vars qw($loadlibs);
++# $loadlibs= "-L/usr/local/lib";
  
-@@ -43,10 +37,8 @@
+ WriteMakefile(
+     'NAME'          => 'DBD::Cego',
      'VERSION_FROM'  => 'Cego.pm',
      'PREREQ_PM'     => {DBI => 1.03},
      'OBJECT'        => '$(O_FILES)',
@@ -21,23 +28,24 @@
 -    'MYEXTLIB'    => $opt->{'prefix'} . "/lib/libcego.a " 
 -	      . $opt->{'prefix'} . "/lib/liblfcxml.a " 
 -	      . $opt->{'prefix'} . "/lib/liblfc.a",
-+    'INC'           => '-I$(DBI_INSTARCH_DIR) -I/usr/local/include -I' . $opt->{'prefix'} . '/include',
-+    'MYEXTLIB'      => ' -llfc -llfcxml -lcego ',
++    'INC'           => '-I$(DBI_INSTARCH_DIR) -I/usr/local/include',
++    'MYEXTLIB'      => '-lcego -llfcxml -llfc',
      "CC" => "g++",
-     "LD" => "g++",
+-    "LD" => "g++",
++    "LD" => "g++ -L/usr/local/lib",
      "XSPROTOARG" => "-noprototypes",
-@@ -58,13 +50,7 @@
- 
+     'OPTIMIZE'      => '-O6 -DNDEBUG=1',
+     'XSOPT'             => '-C++',
+@@ -59,12 +50,6 @@
  sub Usage {
    print STDERR <<"USAGE";
--Usage: perl $0 [options]
+ Usage: perl $0 [options]
 -
 -Possible options are:
 -
 -  --prefix=<prefix path>       Use <prefix> for setting up the appropriate prefix path
 -                               to find cego libs and includes
 -
-+Usage: perl $0
  USAGE
    exit 1;
  }
