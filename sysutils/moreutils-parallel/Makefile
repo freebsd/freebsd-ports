@@ -1,4 +1,3 @@
-# ex:ts=8
 # New ports collection makefile for:	moreutils-parallel
 # Date created:		2010-12-09
 # Whom:			Charlie Kester <corky1951@comcast.net>
@@ -7,7 +6,7 @@
 #
 
 PORTNAME=	moreutils-parallel
-PORTVERSION=	0.43
+PORTVERSION=	0.44
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_DEBIAN_POOL}
 DISTNAME=	moreutils_${PORTVERSION}
