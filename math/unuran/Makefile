@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	unuran
-PORTVERSION=	1.8.0
+PORTVERSION=	1.8.1
 CATEGORIES=	math
 MASTER_SITES=	http://statmath.wu-wien.ac.at/unuran/ \
 		LOCAL/bf
@@ -45,7 +45,7 @@ post-install:
 .ifdef(MAINTAINER_MODE)
 CONFIGURE_ARGS+=	--enable-check-struct --enable-logging
 
-regression-test: build
+check regression-test test: build
 	@(cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_ARGS} check)
 
 fullcheck: build
