@@ -5,6 +5,20 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20110427
+  AFFECTS: users of mail/ezmlm-idx
+  AUTHOR: glarkin@FreeBSD.org
+
+  1) Please consult the instructions for upgrading to version 7.1.1 from
+     the earlier 0.444 version in the ports tree:
+
+     Online: https://github.com/bruceg/ezmlm-idx/blob/master/UPGRADE
+     Local:  /usr/local/share/doc/ezmlm-idx/UPGRADE
+
+  2) SQLite3 has been added as a supported database plugin. Note that the
+     MySQL, PgSQL and SQLite options are mutually exclusive, and the first
+     selected option takes precedence if multiple options are selected.
+
 20110421:
   AFFECTS: users of multimedia/webcamd
   AUTHOR: kwm@FreeBSD.org

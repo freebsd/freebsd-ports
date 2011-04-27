@@ -13,7 +13,6 @@ bin/ezmlm-limit
 bin/ezmlm-list
 bin/ezmlm-make
 bin/ezmlm-manage
-bin/ezmlm-mktab
 bin/ezmlm-moderate
 bin/ezmlm-reject
 bin/ezmlm-request
@@ -22,7 +21,6 @@ bin/ezmlm-send
 bin/ezmlm-split
 bin/ezmlm-store
 bin/ezmlm-sub
-bin/ezmlm-test
 bin/ezmlm-tstdig
 bin/ezmlm-unsub
 bin/ezmlm-warn
@@ -31,10 +29,17 @@ etc/ezmlm/ezmlmglrc.sample
 etc/ezmlm/ezmlmrc.sample
 etc/ezmlm/ezmlmsubrc.sample
 @dirrmtry etc/ezmlm
-%%PORTDOCS%%%%DOCSDIR%%/CHANGES.idx
-%%PORTDOCS%%%%DOCSDIR%%/DOWNGRADE.idx
-%%PORTDOCS%%%%DOCSDIR%%/FAQ.idx
-%%PORTDOCS%%%%DOCSDIR%%/INSTALL.idx
-%%PORTDOCS%%%%DOCSDIR%%/README.idx
-%%PORTDOCS%%%%DOCSDIR%%/UPGRADE.idx
+%%PORTDOCS%%%%DOCSDIR%%/BLURB
+%%PORTDOCS%%%%DOCSDIR%%/CHANGES
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/DOWNGRADE
+%%PORTDOCS%%%%DOCSDIR%%/FAQ
+%%PORTDOCS%%%%DOCSDIR%%/HISTORY
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/README.mysql
+%%PORTDOCS%%%%DOCSDIR%%/README.pgsql
+%%PORTDOCS%%%%DOCSDIR%%/README.std
+%%PORTDOCS%%%%DOCSDIR%%/TODO
+%%PORTDOCS%%%%DOCSDIR%%/UPGRADE
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
