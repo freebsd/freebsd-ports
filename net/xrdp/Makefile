@@ -32,7 +32,7 @@ RUN_DEPENDS+=	Xvnc:${PORTSDIR}/net/vnc
 LICENSE=		GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USE_LDCONFIG=	%%PREFIX%%/lib/xrdp
+USE_LDCONFIG=	${PREFIX}/lib/xrdp
 
 OPTIONS=        DEBUG "Build with debugging symbols" off \
 		JP106 "Install Japanese JP106 Keymap" on
