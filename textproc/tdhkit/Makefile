@@ -12,7 +12,7 @@ CATEGORIES=	textproc
 MASTER_SITES=	http://quisp.sourceforge.net/${PORTNAME}/
 DISTNAME=	${PORTNAME}${PORTVERSION:C/\.//1}
 
-MAINTAINER=	corky1951@comcast.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A set of programs for working with tabular ascii data
 
 OPTIONS=	LIBCHRON "Install libchron" Off

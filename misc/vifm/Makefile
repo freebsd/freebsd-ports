@@ -10,7 +10,7 @@ PORTVERSION=	0.5
 CATEGORIES=	misc
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/
 
-MAINTAINER=	corky1951@comcast.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Ncurses based file manager with vi like keybindings
 
 .if defined(WITH_VIFM_SCREEN)

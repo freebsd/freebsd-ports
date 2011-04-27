@@ -10,7 +10,7 @@ PORTVERSION=	1.3.11
 CATEGORIES=	sysutils
 MASTER_SITES=	SF/${PORTNAME:L}/${PORTNAME}/${PORTNAME:S/C/c/}-${PORTVERSION}/
 
-MAINTAINER=	corky1951@comcast.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Compare two directories
 
 .ifndef WITHOUT_X11

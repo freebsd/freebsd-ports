@@ -10,7 +10,7 @@ DISTVERSION=	0.3i
 CATEGORIES=	audio
 MASTER_SITES=	http://www.yahuxo.de/${PORTNAME}/
 
-MAINTAINER=	corky1951@comcast.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A curses based front-end to various audioplayers
 
 LIB_DEPENDS=	glib-12:${PORTSDIR}/devel/glib12

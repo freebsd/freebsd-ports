@@ -11,7 +11,7 @@ PORTVERSION=	0.6.0
 CATEGORIES=	sysutils
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}/
 
-MAINTAINER=	corky1951@comcast.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A bin packing utility that uses a genetic algorithm
 
 USE_BZIP2=	yes

@@ -11,7 +11,7 @@ PORTREVISION=	2
 CATEGORIES=	finance deskutils
 MASTER_SITES=	SF/${PORTNAME}
 
-MAINTAINER=	corky1951@comcast.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A personal finance tracking and performance tool
 
 USE_MOTIF=	yes

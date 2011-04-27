@@ -11,7 +11,7 @@ PORTVERSION=	4.2.1
 CATEGORIES=	security
 MASTER_SITES=	SF
 
-MAINTAINER=	corky1951@comcast.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	BeeCrypt is an open source cryptography library
 
 USE_AUTOTOOLS=	libtool

@@ -12,7 +12,7 @@ PORTREVISION=		1
 CATEGORIES=		multimedia
 MASTER_SITES=		http://launchpad.net/openshot/${PORTMAJORVERSION}/${PORTVERSION}/+download/
 
-MAINTAINER=		corky1951@comcast.net
+MAINTAINER=		ports@FreeBSD.org
 COMMENT=		A non-linear video editor
 
 RUN_DEPENDS=		ffmpeg:${PORTSDIR}/multimedia/ffmpeg \
