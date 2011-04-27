@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	MooseX-StrictConstructor
-PORTVERSION=	0.15
+PORTVERSION=	0.16
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -22,7 +22,6 @@ BUILD_DEPENDS=	p5-Test-Simple>=0.88:${PORTSDIR}/devel/p5-Test-Simple \
 PERL_CONFIGURE=	yes
 
 MAN3=		MooseX::StrictConstructor.3 \
-		MooseX::StrictConstructor::Role::Object.3 \
 		MooseX::StrictConstructor::Trait::Class.3 \
 		MooseX::StrictConstructor::Trait::Method::Constructor.3
 
