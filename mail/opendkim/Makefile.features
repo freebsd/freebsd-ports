@@ -15,12 +15,12 @@ CONFIGURE_ARGS+=	--enable-adsp_lists
 CONFIGURE_ARGS+=	--enable-allsymbols
 .endif
 
-.if defined(WITH_BODYLENGTH_DB) && !defined(WITHOUT_BODYLENGTH_DB)
-CONFIGURE_ARGS+=	--enable-bodylength_db
+.if defined(WITH_ATPS) && !defined(WITHOUT_ATPS)
+CONFIGURE_ARGS+=	--enable-atps
 .endif
 
-.if defined(WITH_CAPTURE_UNKNOWN_ERRORS) && !defined(WITHOUT_CAPTURE_UNKNOWN_ERRORS)
-CONFIGURE_ARGS+=	--enable-capture_unknown_errors
+.if defined(WITH_BODYLENGTH_DB) && !defined(WITHOUT_BODYLENGTH_DB)
+CONFIGURE_ARGS+=	--enable-bodylength_db
 .endif
 
 .if defined(WITH_CODECOVERAGE) && !defined(WITHOUT_CODECOVERAGE)
@@ -49,9 +49,25 @@ WITH_OPENLDAP=		yes
 CONFIGURE_ARGS+=	--enable-ldap_caching
 .endif
 
+.if defined(WITH_MAXVERIFY) && !defined(WITHOUT_MAXVERIFY)
+CONFIGURE_ARGS+=	--enable-maxverify
+.endif
+
+.if defined(WITH_OVERSIGN) && !defined(WITHOUT_OVERSIGN)
+CONFIGURE_ARGS+=	--enable-oversign
+.endif
+
 .if defined(WITH_PARSE_TIME) && !defined(WITHOUT_PARSE_TIME)
 BROKEN=		The feature ``_FFR_PARSE_TIME'' is incomplete, does not work
 CONFIGURE_ARGS+=	--enable-parsetime
+.endif
+
+.if defined(WITH_POSTGRES_RECONNECT_HACK) && !defined(WITHOUT_POSTGRES_RECONNECT_HACK)
+CONFIGURE_ARGS+=	--enable-postgres_reconnect_hack
+.endif
+
+.if defined(WITH_RBL) && !defined(WITHOUT_RBL)
+CONFIGURE_ARGS+=	--enable-rbl
 .endif
 
 .if defined(WITH_REDIRECT) && !defined(WITHOUT_REDIRECT)
@@ -88,10 +104,6 @@ MAN8+=			opendkim-stats.8
 PLIST_SUB+=		STATS=""
 .else
 PLIST_SUB+=		STATS="@comment "
-.endif
-
-.if defined(WITH_STATS_I) && !defined(WITHOUT_STATS_I)
-CONFIGURE_ARGS+=	--enable-stats_i
 .endif
 
 .if defined(WITH_STATSEXT) && !defined(WITHOUT_STATSEXT)
