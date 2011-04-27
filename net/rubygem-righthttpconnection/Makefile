@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	righthttpconnection
-PORTVERSION=	1.2.4
+PORTVERSION=	1.3.0
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 DISTNAME=	right_http_connection-${PORTVERSION}
