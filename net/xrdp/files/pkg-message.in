@@ -9,6 +9,6 @@ xrdp_enable="YES"
 xrdpsesman_enable="YES"
 
 Do not forget to edit the configuration files in "%%PREFIX%%/etc/xrdp"
-and the "%%PREFIX%%/lib/startwm.sh" script.
+and the "%%PREFIX%%/etc/xrdp/startwm.sh" script.
 
 ==============================================================================

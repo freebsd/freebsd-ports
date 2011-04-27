@@ -6,10 +6,15 @@
 #
 
 PORTNAME=	xrdp
-PORTVERSION=	0.6.0.20101009cvs
-PORTREVISION=	1
+PORTVERSION=    0.6.0.20110117
 CATEGORIES=	net
-MASTER_SITES=	http://www.club.kyutech.ac.jp/~meta/distfiles/
+MASTER_SITES=	http://www.club.kyutech.ac.jp/~meta/distfiles/ \
+		http://key2.jp/~meta/distfiles/
+DISTNAME=	${PORTNAME}-${PORTVERSION}cvs
+DIST_SUBDIR?=	${PORTNAME}
+
+PATCH_SITES=	http://www.club.kyutech.ac.jp/~meta/patches/xrdp/0.6.0/ \
+		http://key2.jp/~meta/patches/xrdp/0.6.0/
 
 MAINTAINER=	meta@club.kyutech.ac.jp
 COMMENT=	An open source Remote Desktop Protocol (RDP) server
@@ -20,14 +25,33 @@ GNU_CONFIGURE=	yes
 USE_RC_SUBR=	xrdp
 
 CONFIGURE_ARGS=	--localstatedir=/var
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib"
+CPPFLAGS=	-I${LOCALBASE}/include
+LDFLAGS=		-L${LOCALBASE}/lib
+RUN_DEPENDS+=	Xvnc:${PORTSDIR}/net/vnc
+LICENSE=		GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
-INSTALL_SHLIB=	yes
-LDCONFIG_DIRS=	%%PREFIX%%/lib/xrdp
+USE_LDCONFIG=	%%PREFIX%%/lib/xrdp
+
+OPTIONS=        DEBUG "Build with debugging symbols" off \
+		JP106 "Install Japanese JP106 Keymap" on
+
+.include <bsd.port.options.mk>
 
 .if defined(WITH_DEBUG)
 CFLAGS+=	-DXRDP_DEBUG
+.endif
+
+.if defined(WITH_JP106)
+PATCHFILES+=	patch-instfiles__Makefile.am \
+	patch-instfiles__km-0411.ini \
+	patch-instfiles__km-e0010411.ini \
+	patch-instfiles__km-e0200411.ini \
+	patch-instfiles__km-e0210411.ini
+PLIST_SUB+=	JP106=""
+.else
+PLIST_SUB+=	JP106="@comment "
 .endif
 
 MAN5=		sesman.ini.5 xrdp.ini.5

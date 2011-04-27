@@ -10,13 +10,13 @@ etc/xrdp/km-040c.ini
 etc/xrdp/km-0410.ini
 etc/xrdp/km-0419.ini
 etc/xrdp/km-041d.ini
-etc/xrdp/rsakeys.ini
+%%JP106%%etc/xrdp/km-0411.ini
+%%JP106%%etc/xrdp/km-e0200411.ini
+%%JP106%%etc/xrdp/km-e0010411.ini
+%%JP106%%etc/xrdp/km-e0210411.ini
 etc/xrdp/rsakeys.ini.sample
-etc/xrdp/sesman.ini
 etc/xrdp/sesman.ini.sample
-etc/xrdp/startwm.sh
 etc/xrdp/startwm.sh.sample
-etc/xrdp/xrdp.ini
 etc/xrdp/xrdp.ini.sample
 etc/xrdp/xrdp.sh
 lib/xrdp/libcommon.a
@@ -60,4 +60,4 @@ share/xrdp/xrdp24b.bmp
 share/xrdp/xrdp256.bmp
 @dirrm share/xrdp
 @dirrm lib/xrdp
-@dirrm etc/xrdp
+@dirrmtry etc/xrdp
