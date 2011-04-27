@@ -7,6 +7,7 @@
 
 PORTNAME=	tortoisehg
 PORTVERSION=	1.1.9.1
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://cdn.bitbucket.org/tortoisehg/targz/downloads/
 
@@ -56,5 +57,10 @@ do-build:
 
 do-install:
 	cd ${WRKSRC} && ${PYTHON_CMD} ${PYSETUP} install --prefix=${PREFIX}
+	${MKDIR} ${PREFIX}/share/tortoisehg
+	${INSTALL_DATA} ${WRKSRC}/contrib/mergetools.rc ${PREFIX}/share/tortoisehg/
+
+post-install:
+	@${CAT} pkg-message
 
 .include <bsd.port.mk>
