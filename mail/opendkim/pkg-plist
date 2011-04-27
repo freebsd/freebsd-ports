@@ -7,7 +7,6 @@ bin/opendkim-testadsp
 bin/opendkim-testkey
 etc/mail/opendkim.conf.sample
 %%ARLIB%%include/ar/ar.h
-%%ARLIB%%include/ar/manual.h
 include/opendkim/dkim.h
 %%ARLIB%%lib/libar.a
 %%ARLIB%%lib/libar.la

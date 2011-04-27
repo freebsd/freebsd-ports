@@ -6,12 +6,13 @@
 #
 
 PORTNAME=	opendkim
-PORTVERSION=	2.2.2
+PORTVERSION=	2.3.2
 CATEGORIES=	mail security
-MASTER_SITES=	SF/opendkim
+MASTER_SITES=	SF
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	umq@ueo.co.jp
-COMMENT=	DKIM library and milter implimentation
+COMMENT=	DKIM library and milter implementation
 
 LICENSE=	BSD SENDMAIL
 LICENSE_COMB=	multi
@@ -37,7 +38,6 @@ OPTIONS= \
 	LUA		"Describe filter policy with lua"	Off \
 	OPENDBX		"Store filter policies via OpenDBX"	Off \
 	OPENLDAP	"Store filter policies in LDAP"		Off \
-	OPENSSL_PORT	"Use OpenSSL in ports"			Off \
 	POPAUTH		"Use POP authentication DB"		Off \
 	QUERY_CACHE	"Cache DNS query results locally"	Off \
 	UNBOUND		"Use unbound DNS library"		Off
@@ -51,11 +51,13 @@ WITHOUT_MILTER_LDFLAGS=	yes
 .include "${PORTSDIR}/mail/sendmail/bsd.milter.mk"
 CONFIGURE_ARGS+=	--with-milter=${MILTERBASE}
 
-.if ${OSVERSION} < 700000
-WITH_OPENSSL_PORT=	yes
-.endif
-.include "${PORTSDIR}/Mk/bsd.openssl.mk"
+.if defined(WITH_GNUTLS)
+BROKEN=		WITH_GNUTLS option requires security/gnutls 2.12.0 or later
+LIB_DEPENDS+=	gnutls.44:${PORTSDIR}/security/gnutls
+CONFIGURE_ARGS+=	--with-gnutls=${LOCALBASE}
+.else
 CONFIGURE_ARGS+=	--with-openssl=${OPENSSLBASE}
+.endif
 
 .include "${.CURDIR}/Makefile.features"
 
@@ -112,7 +114,7 @@ LIB_DEPENDS+=		opendbx:${PORTSDIR}/databases/opendbx
 CONFIGURE_ARGS+=	--with-openldap
 USE_OPENLDAP=		yes
 .endif
-.if defined(WITH_LUA) || defined(WITH_STATSEXT)
+.if defined(WITH_LUA) || defined(WITH_RBL) || defined(WITH_STATSEXT)
 CONFIGURE_ARGS+=	--with-lua
 MAN3+=			opendkim-lua.3
 MAN8+=			miltertest.8
