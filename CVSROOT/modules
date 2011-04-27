@@ -5555,6 +5555,7 @@ horde-whups                     ports/devel/horde-whups
 horde-wicked                    ports/www/horde-wicked
 hostapd                         ports/net/hostapd
 hot-babe                        ports/deskutils/hot-babe
+hotcrp                          ports/www/hotcrp
 hotkeys                         ports/misc/hotkeys
 hotssh                          ports/security/hotssh
 hotwayd                         ports/mail/hotwayd
@@ -8637,6 +8638,7 @@ linux-f10-openssl               ports/security/linux-f10-openssl
 linux-f10-pango                 ports/x11-toolkits/linux-f10-pango
 linux-f10-png                   ports/graphics/linux-f10-png
 linux-f10-png10                 ports/graphics/linux-f10-png10
+linux-f10-pulseaudio-libs       ports/audio/linux-f10-pulseaudio-libs
 linux-f10-qt33                  ports/x11-toolkits/linux-f10-qt33
 linux-f10-qtcurve-gtk2          ports/x11-themes/linux-f10-qtcurve-gtk2
 linux-f10-scim-gtk              ports/textproc/linux-f10-scim-gtk
@@ -9451,6 +9453,7 @@ mod_access_identd               ports/www/mod_access_identd
 mod_access_referer              ports/www/mod_access_referer
 mod_accounting                  ports/www/mod_accounting
 mod_antiloris                   ports/www/mod_antiloris
+mod_asn                         ports/www/mod_asn
 mod_auth_cas                    ports/www/mod_auth_cas
 mod_auth_cookie_mysql           ports/www/mod_auth_cookie_mysql
 mod_auth_cookie_mysql2          ports/www/mod_auth_cookie_mysql2
@@ -13331,6 +13334,7 @@ p5-Net-Amazon-AWIS              ports/www/p5-Net-Amazon-AWIS
 p5-Net-Amazon-AWSSign           ports/net/p5-Net-Amazon-AWSSign
 p5-Net-Amazon-EC2               ports/net/p5-Net-Amazon-EC2
 p5-Net-Amazon-MechanicalTurk    ports/net/p5-Net-Amazon-MechanicalTurk
+p5-Net-Amazon-Route53           ports/dns/p5-Net-Amazon-Route53
 p5-Net-Amazon-S3                ports/net/p5-Net-Amazon-S3
 p5-Net-Amazon-Signature         ports/net/p5-Net-Amazon-Signature
 p5-Net-Amazon-Thumbnail         ports/net/p5-Net-Amazon-Thumbnail
@@ -17558,6 +17562,7 @@ p5-net-amazon-awis              ports/www/p5-Net-Amazon-AWIS
 p5-net-amazon-awssign           ports/net/p5-Net-Amazon-AWSSign
 p5-net-amazon-ec2               ports/net/p5-Net-Amazon-EC2
 p5-net-amazon-mechanicalturk    ports/net/p5-Net-Amazon-MechanicalTurk
+p5-net-amazon-route53           ports/dns/p5-Net-Amazon-Route53
 p5-net-amazon-s3                ports/net/p5-Net-Amazon-S3
 p5-net-amazon-signature         ports/net/p5-Net-Amazon-Signature
 p5-net-amazon-thumbnail         ports/net/p5-Net-Amazon-Thumbnail
@@ -20116,6 +20121,7 @@ pecl-ps                         ports/print/pecl-ps
 pecl-qrencode                   ports/graphics/pecl-qrencode
 pecl-radius                     ports/net/pecl-radius
 pecl-rar                        ports/archivers/pecl-rar
+pecl-rrd                        ports/databases/pecl-rrd
 pecl-runkit                     ports/devel/pecl-runkit
 pecl-shape                      ports/devel/pecl-shape
 pecl-spl_types                  ports/devel/pecl-spl_types
@@ -27519,6 +27525,7 @@ zh-bg5ps                        ports/chinese/bg5ps
 zh-big5con                      ports/chinese/big5con
 zh-big5width                    ports/chinese/big5width
 zh-bitchx                       ports/chinese/bitchx
+zh-bug5                         ports/chinese/bug5
 zh-c2t                          ports/chinese/c2t
 zh-cce                          ports/chinese/cce
 zh-celvis                       ports/chinese/celvis
