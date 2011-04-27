@@ -328,6 +328,7 @@
     SUBDIR += httpclient
     SUBDIR += httpcore
     SUBDIR += httpgrabber
+    SUBDIR += httpsqs
     SUBDIR += httptunnel
     SUBDIR += httrack
     SUBDIR += hudson
