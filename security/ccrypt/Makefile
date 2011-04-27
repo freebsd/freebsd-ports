@@ -14,7 +14,7 @@ CATEGORIES=	security
 MASTER_SITES=	SF \
 		http://www.mathstat.dal.ca/~selinger/ccrypt/download/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	dev2@heesakkers.info
 COMMENT=	A command-line utility for encrypting and decrypting files and streams
 
 .if !defined(WITHOUT_NLS)
