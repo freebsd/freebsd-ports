@@ -6,31 +6,20 @@
 #
 
 PORTNAME=	phpmp
-PORTVERSION=	0.11.0
-PORTREVISION=	2
+PORTVERSION=	0.12.0
 CATEGORIES=	www
-MASTER_SITES=	SF/musicpd/phpMp/${PORTVERSION}
-DISTNAME=	phpMp-${PORTVERSION}
+MASTER_SITES=	http://www.bayofrum.net/dist/${PORTNAME}/
 
 MAINTAINER=	kevlo@FreeBSD.org
 COMMENT=	A web interface for music player daemon
 
+LICENSE=	GPLv2
+
 NO_BUILD=	YES
 USE_PHP=	pcre sockets
 
-PHPMP?=		www/phpmp
+PHPMP?=		${WWWDIR_REL}
 PLIST_SUB+=	PHPMP=${PHPMP}
-
-post-patch:
-# Replace deprecated HTTP_(GET|POST)_VARS with _(GET|POST)
-	@${REINPLACE_CMD} -e 's#HTTP\(_[^_]*\)_VARS#\1#' \
-		${WRKSRC}/playlist.php ${WRKSRC}/main_body.php
-# Stop clobbering config.php & disable volume control by default;
-# incremental volume changes no longer supported by musicpd
-	@${MV} ${WRKSRC}/config.php ${WRKSRC}/config.php.sample
-	@${REINPLACE_CMD} -e 's/^\(.display_volume[^"]*"\)yes/\1no/' \
-		${WRKSRC}/config.php.sample
-	@${RM} ${WRKSRC}/*.bak
 
 do-install:
 	@${MKDIR} ${PREFIX}/${PHPMP}
@@ -39,6 +28,7 @@ do-install:
 	@${CHMOD} -R 755 ${PREFIX}/${PHPMP}
 
 post-install:
+	@${CAT} ${PKGMESSAGE}
 	@if [ ! -f ${PREFIX}/${PHPMP}/config.php ]; then \
 		${CP} -p ${PREFIX}/${PHPMP}/config.php.sample \
 			${PREFIX}/${PHPMP}/config.php ; \
