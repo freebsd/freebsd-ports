@@ -11,7 +11,7 @@ CATEGORIES=	deskutils xfce
 MASTER_SITES=	CRITICAL/.
 DIST_SUBDIR=	xfce4
 
-MAINTAINER=	des@FreeBSD.org
+MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	Keyboard layout switching plugin for XFce4
 
 LIB_DEPENDS=	xklavier.12:${PORTSDIR}/x11/libxklavier
