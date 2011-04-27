@@ -1,10 +1,11 @@
-@comment $FreeBSD
 bin/gnat
 bin/gnatbind
 bin/gnatchop
 bin/gnatclean
+%%CXX%%bin/gnatc++
 bin/gnatcpp
 bin/gnatfind
+%%CXX%%bin/gnatg++
 bin/gnatgcc
 bin/gnatgcov
 bin/gnatkr
@@ -15,24 +16,19 @@ bin/gnatname
 bin/gnatprep
 bin/gnatxref
 bin/%%GNU_HOST%%-gcc-%%GCC_VER%%
+%%CXX%%bin/%%GNU_HOST%%-gnatc++
+%%CXX%%bin/%%GNU_HOST%%-gnatg++
 bin/%%GNU_HOST%%-gnatgcc
-share/info/cpp.info
-share/info/cppinternals.info
-share/info/dir
-share/info/gcc.info
-share/info/gccinstall.info
-share/info/gccint.info
-share/info/gnat-style.info
-share/info/gnat_rm.info
-share/info/gnat_ugn.info
-share/info/libquadmath.info
 lib/libgcc_s.so
 lib/libgcc_s.so.1
 lib/libiberty.a
-lib/libquadmath.la
-lib/libquadmath.a
-lib/libquadmath.so
-lib/libquadmath.so.0
+%%CXX%%lib/libstdc++.a
+%%CXX%%lib/libstdc++.la
+%%CXX%%lib/libstdc++.so
+%%CXX%%lib/libstdc++.so.6
+%%CXX%%lib/libstdc++.so.6-gdb.py
+%%CXX%%lib/libsupc++.a
+%%CXX%%lib/libsupc++.la
 @dirrmtry share/info
 @dirrmtry share/man/man1
 @dirrmtry share/man/man7

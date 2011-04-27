@@ -17,7 +17,6 @@ COMMENT=	GNAT Ada compiler based on GCC ${GCC_BRANCH}
 LIB_DEPENDS=	gmp.10:${PORTSDIR}/math/gmp
 LIB_DEPENDS+=	mpfr.4:${PORTSDIR}/math/mpfr
 LIB_DEPENDS+=	mpc.2:${PORTSDIR}/math/mpc
-BUILD_DEPENDS=	dejagnu>=1.4:${PORTSDIR}/misc/dejagnu
 
 ONLY_FOR_ARCHES=	i386 amd64
 
@@ -30,9 +29,10 @@ USE_PERL5_BUILD=	yes
 USE_LDCONFIG=		yes
 ALL_TARGET=		default
 
-SNAPSHOT=		20110107
+SNAPSHOT=		20110325
 GCC_BRANCH=		4.6
 GCC_POINT=		0
+LANGS=			c
 
 THREAD_MODEL=		posix
 INTENDED_COMPILER=	NATIVE
@@ -40,7 +40,14 @@ BOOTSTRAP_COMPILER=	NOT_REQUIRED
 BOOTSTRAP_TRIPLET=	NOT_SET
 FULL_GNATGCC=		NOT_SET
 
+OPTIONS=	ADA    "Build Ada language" on
+OPTIONS+=	CXX    "Build C++ language" on
+OPTIONS+=	TS_ADA "Enable Ada testsuite" off
+OPTIONS+=	TS_CXX "Enable C++ testsuite" off
+OPTIONS+=	TS_GCC "Enable GCC testsuite" off
+
 .include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if ${ARCH} == "amd64"
 BLD_TARGET=		x86_64-aux-freebsd${OSREL}
@@ -64,7 +71,6 @@ CONFIGURE_SCRIPT=	${GCC_WRKSRC}/configure
 REVFILE=		${GCC_WRKSRC}/gcc/REVISION
 LPATH=			lib/gcc/${BLD_TARGET}/${GCC_BRANCH}.${GCC_POINT}
 LEPATH=			libexec/gcc/${BLD_TARGET}/${GCC_BRANCH}.${GCC_POINT}
-LELIST=			cc1 collect2 gnat1 lto1
 MAN1=			gnatcpp.1 gnatgcc.1 gnatgcov.1
 MAN7=			fsf-funding.7 gfdl.7 gpl.7
 MAN1PREFIX=		${PREFIX}/share
@@ -92,17 +98,53 @@ FULL_PATH=${BOOTSTRAP_PREFIX}/bin:/sbin:/bin:/usr/sbin:/usr/bin:${PREFIX}/bin
 DISTFILES=${PORTNAME}-${SNAPSHOT}.tar.bz2 ${BOOTSTRAP_COMPILER}
 .endif
 
+###########
+##  Ada  ##
+###########
+
+.if defined(WITH_ADA)
+LANGS+=		ada
+.endif
+
+###########
+##  C++  ##
+###########
+
+.if defined(WITH_CXX)
+LANGS+=		c++
+MAN1+=		gnatg++.1
+LCXXPATH=	include/c++/${GCC_BRANCH}.${GCC_POINT}
+LSHRPATH=	share/gcc-${GCC_BRANCH}.${GCC_POINT}
+PLIST_SUB+=	CXX=""
+.else
+PLIST_SUB+=	CXX="@comment "
+.endif
+
+##################
+##  Testsuites  ##
+##################
+
+.if defined(WITH_TS_ADA) \
+ || defined(WITH_TS_CXX) \
+ || defined(WITH_TS_GCC)
+BUILD_DEPENDS=	dejagnu>=1.4:${PORTSDIR}/misc/dejagnu
+.endif
+
 # for port maintenance, uncomment to invoke "make makesum"
 # DISTFILES=${PORTNAME}-${SNAPSHOT}.tar.bz2 \
 #   gnat-aux-460.i386.freebsd.tar.bz2 \
 #   gnat-aux-460.x86_64.freebsd.tar.bz2
 
 # Establish Ada-aware compiler for use
-ADA_CONFIGURE_ENV=	CC=${FULL_GNATGCC} PATH=${FULL_PATH} CONFIG_SHELL=${SH}
+ADA_CONFIGURE_ENV=	CC=${FULL_GNATGCC}
+ADA_CONFIGURE_ENV+=	PATH=${FULL_PATH}
+ADA_CONFIGURE_ENV+=	CONFIG_SHELL=${SH}
+ADA_CONFIGURE_ENV+=	MAKEINFO=/usr/bin/false
 ADA_MAKE_ENV=		PATH=${FULL_PATH}
+ADA_MAKE_ENV+=		LD_LIBRARY_PATH=${WRKSRC}/gcc
 
 # The standard configuration options
-CONFIGURE_ARGS=		--enable-languages=c,ada
+CONFIGURE_ARGS=		--enable-languages=${LANGS:Q}
 CONFIGURE_ARGS+=	--build=${BLD_TARGET}
 CONFIGURE_ARGS+=	--program-prefix=gnat
 CONFIGURE_ARGS+=	--prefix=${PREFIX}
@@ -114,12 +156,11 @@ CONFIGURE_ARGS+=	--with-libiconv-prefix=${PKG_PREFIX}
 CONFIGURE_ARGS+=	--enable-shared
 CONFIGURE_ARGS+=	--enable-threads=${THREAD_MODEL}
 CONFIGURE_ARGS+=	--disable-bootstrap
+CONFIGURE_ARGS+=	--disable-libquadmath
 CONFIGURE_ARGS+=	--disable-libmudflap
 CONFIGURE_ARGS+=	--disable-libgomp
 CONFIGURE_ARGS+=	--disable-libssp
 CONFIGURE_ARGS+=	--disable-nls
-
-MAKE_ARGS+=		MAKEINFOFLAGS="--no-split"
 
 post-extract:
 	# Personalize GNAT for each different machine
@@ -151,14 +192,24 @@ do-build:
 	cd ${WRKSRC} && ${SETENV} ${ADA_MAKE_ENV} ${GMAKE} all
 
 test: build
+.if defined(WITH_TS_ADA)
 	cd ${WRKSRC} && ${SETENV} ${ADA_MAKE_ENV} ${GMAKE} -sk check-ada
+.endif
+.if defined(WITH_TS_CXX)
+	cd ${WRKSRC} && ${SETENV} ${ADA_MAKE_ENV} ${GMAKE} -sk check-c++
+	cd ${WRKSRC} && ${SETENV} ${ADA_MAKE_ENV} \
+	   ${GMAKE} -sk check-target-libstdc++-v3
+.endif
+.if defined(WITH_TS_GCC)
+	cd ${WRKSRC} && ${SETENV} ${ADA_MAKE_ENV} ${GMAKE} -sk check-c
+.endif
 
 do-install:
-	cd ${WRKSRC} && ${SETENV} ${ADA_MAKE_ENV} ${GMAKE} install
+	cd ${WRKSRC} && ${SETENV} ${ADA_MAKE_ENV} ${GMAKE} install-strip
 
-post-install: strip-exec
+post-install:
 	${RM} -f ${WRKDIR}/PLIST.lib
-.for d in ${LPATH} ${LEPATH}
+.for d in ${LPATH} ${LEPATH} ${LCXXPATH} ${LSHRPATH}
 	cd ${PREFIX} ; ${FIND} $d \( -type f -or -type l \) | ${SORT} >> ${WRKDIR}/PLIST.lib
 	cd ${PREFIX} ; ${FIND} $d  -type d | ${SORT} -r | \
 	   ${SED} -e 's/^/@dirrm /g' >> ${WRKDIR}/PLIST.lib
@@ -167,13 +218,8 @@ post-install: strip-exec
 	${ECHO_CMD} "@unexec ${RMDIR} %D/lib/gcc                   2>/dev/null || true" >> ${WRKDIR}/PLIST.lib
 	${ECHO_CMD} "@unexec ${RMDIR} %D/libexec/gcc/${BLD_TARGET} 2>/dev/null || true" >> ${WRKDIR}/PLIST.lib
 	${ECHO_CMD} "@unexec ${RMDIR} %D/libexec/gcc               2>/dev/null || true" >> ${WRKDIR}/PLIST.lib
+	${ECHO_CMD} "@unexec ${RMDIR} %D/include/c++               2>/dev/null || true" >> ${WRKDIR}/PLIST.lib
 
 	cd ${WRKDIR}; ${SED} -i -e "/PLIST.lib/ r PLIST.lib" ${TMPPLIST}
-
-strip-exec:
-	${STRIP_CMD} ${PREFIX}/bin/gnat*
-.for k in ${LELIST}
-	${STRIP_CMD} ${PREFIX}/${LEPATH}/${k}
-.endfor
 
 .include <bsd.port.post.mk>
