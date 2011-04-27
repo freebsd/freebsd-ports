@@ -10,6 +10,7 @@ include/nettle/base64.h
 include/nettle/bignum.h
 include/nettle/blowfish.h
 include/nettle/buffer.h
+include/nettle/camellia.h
 include/nettle/cast128.h
 include/nettle/cbc.h
 include/nettle/ctr.h
@@ -39,12 +40,12 @@ include/nettle/twofish.h
 include/nettle/yarrow.h
 lib/libhogweed.a
 lib/libhogweed.so
-lib/libhogweed.so.1
-lib/libhogweed.so.1.0
+lib/libhogweed.so.2
+lib/libhogweed.so.2.0
 lib/libnettle.a
 lib/libnettle.so
-lib/libnettle.so.3
-lib/libnettle.so.3.0
+lib/libnettle.so.4
+lib/libnettle.so.4.0
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/TODO
@@ -59,6 +60,7 @@ lib/libnettle.so.3.0
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/nettle-benchmark.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/nettle-openssl.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/next-prime.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/random-prime.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/read_rsa_key.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/rsa-decrypt.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/rsa-encrypt.c
