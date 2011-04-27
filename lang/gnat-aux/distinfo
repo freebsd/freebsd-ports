@@ -1,5 +1,5 @@
-SHA256 (gnat-aux-20110107.tar.bz2) = b686a639117a283e4659240439b95b446aada76825e352b12c5925918d3a8cab
-SIZE (gnat-aux-20110107.tar.bz2) = 23176092
+SHA256 (gnat-aux-20110325.tar.bz2) = 9d4e2e071cd88179d3553d105735afe0e5a67e9832d50c53c1d3dfe1af46daa5
+SIZE (gnat-aux-20110325.tar.bz2) = 26700051
 SHA256 (gnat-bootstrap.i386.freebsd.tar.bz2) = c38e1c960f651c3f248c1ef540b1df724058fa71c1d046af93ce975483abb645
 SIZE (gnat-bootstrap.i386.freebsd.tar.bz2) = 27973176
 SHA256 (gnat-bootstrap.x86_64.freebsd.tar.bz2) = c4abd6af1281785d47d99352e28e41b2a1455e25ff347eca0de5791cdede9ed8
