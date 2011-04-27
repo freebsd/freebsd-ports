@@ -7,7 +7,7 @@
 
 PORTNAME=	nullmailer
 PORTVERSION=	1.05
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://untroubled.org/nullmailer/ \
@@ -25,6 +25,10 @@ GID_FILES+=	../../GIDs
 .endif
 USERS=		nullmail
 GROUPS=		nullmail
+NULLMAIL_UID=	522
+NULLMAIL_GID=	522
+
+LICENSE=	GPLv2
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--localstatedir=${LOCALSTATEDIR}
@@ -43,15 +47,22 @@ MAN1=	nullmailer-inject.1 sendmail.1
 MAN7=	nullmailer.7
 MAN8=	nullmailer-queue.8 nullmailer-send.8
 
-# Pass BATCH to pkg-install for Evil Things(tm)
-# Pass LOCALSTATEDIR to pkg-install for creating home directory correctly
-pre-install:
-	@BATCH="${BATCH}" LOCALSTATEDIR="${LOCALSTATEDIR}" ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
-
 post-install:
 	@cd ${WRKSRC} && make install-root
 	@${INSTALL_DATA} -c ${FILESDIR}/remotes.sample ${PREFIX}/etc/nullmailer/
-	@BATCH="${BATCH}" NMH_PREFIX="${NMH_PREFIX}" ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
+
+# Append commands that reference the nullmailer user to the plist, because
+# we need to ensure that the account has been created by bsd.port.mk by
+# the time these are executed.
+	@${ECHO_CMD} '@exec ${PW} usermod ${USERS} -d ${LOCALSTATEDIR}/nullmailer' >> ${TMPPLIST}
+	@${ECHO_CMD} '@exec ${CHOWN} ${USERS}:${USERS} ${LOCALSTATEDIR}/nullmailer/queue' >> ${TMPPLIST}
+	@${ECHO_CMD} '@exec ${CHOWN} ${USERS}:${USERS} ${LOCALSTATEDIR}/nullmailer/tmp' >> ${TMPPLIST}
+	@${ECHO_CMD} '@exec ${CHOWN} ${USERS}:${USERS} ${LOCALSTATEDIR}/nullmailer/trigger' >> ${TMPPLIST}
+	@${ECHO_CMD} '@exec ${CHOWN} ${USERS} ${PREFIX}/sbin/nullmailer-queue' >> ${TMPPLIST}
+	@${ECHO_CMD} '@exec ${CHOWN} ${USERS} ${PREFIX}/libexec/nullmailer/mailq' >> ${TMPPLIST}
+	@${ECHO_CMD} '@exec ${CHOWN} -R ${USERS} ${LOCALSTATEDIR}/nullmailer' >> ${TMPPLIST}
+
+	@${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>

@@ -1,28 +1,25 @@
 libexec/nullmailer/smtp
 libexec/nullmailer/qmqp
 libexec/nullmailer/mailq
+@exec chmod u+s %D/libexec/nullmailer/mailq
 libexec/nullmailer/sendmail
 bin/nullmailer-inject
 sbin/nullmailer-queue
+@exec chmod u+s %D/sbin/nullmailer-queue
 sbin/nullmailer-send
-etc/nullmailer/me.sample
+@ignore etc/nullmailer/me.sample
 etc/nullmailer/remotes.sample
+@dirrm libexec/nullmailer
+@dirrmtry etc/nullmailer
+@cwd /
 @exec mkdir -p %%LOCALSTATEDIR%%/nullmailer/queue
 @exec chmod 700 %%LOCALSTATEDIR%%/nullmailer/queue
+@dirrmtry %%LOCALSTATEDIR%%/nullmailer/queue
 @exec mkdir -p %%LOCALSTATEDIR%%/nullmailer/tmp
 @exec chmod 700 %%LOCALSTATEDIR%%/nullmailer/tmp
-@exec rm -f %%LOCALSTATEDIR%%/nullmailer/trigger
+@dirrmtry %%LOCALSTATEDIR%%/nullmailer/tmp
 @exec mkfifo %%LOCALSTATEDIR%%/nullmailer/trigger
 @exec chmod 600 %%LOCALSTATEDIR%%/nullmailer/trigger
-@exec chown -R nullmail %%LOCALSTATEDIR%%/nullmailer/*
-@exec chown nullmail %D/sbin/nullmailer-queue
-@exec chmod u+s %D/sbin/nullmailer-queue
-@exec chown nullmail %D/libexec/nullmailer/mailq
-@exec chmod u+s %D/libexec/nullmailer/mailq
-@unexec if [ -d %%LOCALSTATEDIR%%/nullmailer/queue ]; then rmdir %%LOCALSTATEDIR%%/nullmailer/queue; fi;
-@unexec if [ -d %%LOCALSTATEDIR%%/nullmailer/tmp ]; then rmdir %%LOCALSTATEDIR%%/nullmailer/tmp; fi;
-@unexec if [ -p %%LOCALSTATEDIR%%/nullmailer/trigger ]; then rm -f %%LOCALSTATEDIR%%/nullmailer/trigger; fi;
-@dirrm libexec/nullmailer
-@unexec t=`/bin/ls %D/etc/nullmailer`; if [ -z "$t" ]; then echo "Configuration directory is empty, remove it."; rmdir %D/etc/nullmailer; fi;
-@unexec if [ -d %%LOCALSTATEDIR%%/nullmailer ]; then rmdir %%LOCALSTATEDIR%%/nullmailer; fi
-@unexec if [ -n "$BATCH" ]; then echo "Warning: In batch mode, I will do 'rmuser -y nullmail'"; rmuser -y nullmail; fi;
+@unexec rm -f %%LOCALSTATEDIR%%/nullmailer/trigger
+@ignore %%LOCALSTATEDIR%%/nullmailer/trigger
+@dirrmtry %%LOCALSTATEDIR%%/nullmailer

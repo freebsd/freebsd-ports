@@ -2,7 +2,7 @@
 # $FreeBSD$
 #
 # PROVIDE: nullmailer
-# REQUIRE: DAEMON
+# REQUIRE: LOGIN
 #
 # Add the following line to /etc/rc.conf to enable nullmailer:
 #
