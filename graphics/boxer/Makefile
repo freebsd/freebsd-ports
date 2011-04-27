@@ -11,7 +11,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	SF/boxc/${PORTNAME:C/^b/B/}%20-%20the%20Box%20GUI/${DISTNAME}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	corky1951@comcast.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GUI for Box the figure description language
 
 RUN_DEPENDS=	box:${PORTSDIR}/graphics/box

@@ -12,7 +12,7 @@ CATEGORIES=	devel
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 DISTNAME=	${PORTNAME}${PORTVERSION:S/./-/}
 
-MAINTAINER=	corky1951@comcast.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An ANSI C library for parsing GNU style command line arguments
 
 USE_GNOME=	gnometarget

@@ -12,7 +12,7 @@ CATEGORIES=	multimedia python
 MASTER_SITES=	SF/photostoryx/${PORTNAME}/${PORTVERSION}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	corky1951@comcast.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PhotoFilmStrip creates movies out of your pictures
 
 RUN_DEPENDS=	mplayer:${PORTSDIR}/multimedia/mplayer \

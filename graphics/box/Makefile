@@ -10,7 +10,7 @@ PORTVERSION=	0.2.2
 CATEGORIES=	graphics
 MASTER_SITES=	SF/${PORTNAME}c/Box%20-%20the%20compiler/${DISTNAME}/
 
-MAINTAINER=	corky1951@comcast.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Compiler for box, the figure description language
 
 BUILD_DEPENDS=	docbook-to-man:${PORTSDIR}/textproc/docbook-to-man

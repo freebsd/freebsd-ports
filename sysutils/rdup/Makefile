@@ -11,7 +11,7 @@ PORTVERSION=	1.1.11
 CATEGORIES=	sysutils
 MASTER_SITES=	http://miek.nl/projects/rdup/
 
-MAINTAINER=	corky1951@comcast.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A tool to generate an (incremental) backup file list
 
 LIB_DEPENDS=	glib-2.0:${PORTSDIR}/devel/glib20 \

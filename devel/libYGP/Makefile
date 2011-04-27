@@ -11,7 +11,7 @@ CATEGORIES=	devel
 MASTER_SITES=	SF/libymp/libymp/libYGP-${PORTVERSION}
 DISTNAME=	libYGP-${PORTVERSION}
 
-MAINTAINER=	corky1951@comcast.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Yet another General Purpose library
 
 LIB_DEPENDS=	gmp.10:${PORTSDIR}/math/gmp \

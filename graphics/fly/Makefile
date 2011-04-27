@@ -14,7 +14,7 @@ MASTER_SITES=	http://martin.gleeson.com/%SUBDIR%/ \
 		http://www.w3perl.com/%SUBDIR%/
 MASTER_SITE_SUBDIR=	${PORTNAME}/dist
 
-MAINTAINER=	corky1951@comcast.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple drawing language to generate GIFs on the fly
 
 LIB_DEPENDS=	gd.4:${PORTSDIR}/graphics/gd

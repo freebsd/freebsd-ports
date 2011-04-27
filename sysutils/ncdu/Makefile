@@ -10,7 +10,7 @@ PORTVERSION=	1.7
 CATEGORIES=	sysutils
 MASTER_SITES=	http://dev.yorhel.nl/download/ 
 
-MAINTAINER=	corky1951@comcast.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Ncurses du(1)
 
 GNU_CONFIGURE=	yes

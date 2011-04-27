@@ -11,7 +11,7 @@ CATEGORIES=	x11
 MASTER_SITES=	SF
 EXTRACT_SUFX=	.tbz2
 
-MAINTAINER=	corky1951@comcast.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Desktop panel that includes a taskbar, pager, launchbar and more
 
 BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash

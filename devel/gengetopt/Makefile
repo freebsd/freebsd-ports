@@ -11,7 +11,7 @@ PORTVERSION=	2.22.4
 CATEGORIES=	devel
 MASTER_SITES=	GNU
 
-MAINTAINER=	corky1951@comcast.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A tool for generating a C function which parses command line arguments
 
 INSTALL_WRKSRC=	${WRKSRC}/src
