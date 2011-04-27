@@ -122,6 +122,7 @@
     SUBDIR += cssed
     SUBDIR += csstidy
     SUBDIR += ctemplate
+    SUBDIR += cutycapt
     SUBDIR += dalbum
     SUBDIR += dansguardian
     SUBDIR += davical
