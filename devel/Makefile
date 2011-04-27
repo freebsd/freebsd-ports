@@ -759,6 +759,7 @@
     SUBDIR += libchipcard-kde
     SUBDIR += libcii
     SUBDIR += libclaw
+    SUBDIR += libcli
     SUBDIR += libconfig
     SUBDIR += libconfuse
     SUBDIR += libcoro
