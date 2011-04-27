@@ -14,6 +14,9 @@ MASTER_SITES=	SF/${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A personal finance tracking and performance tool
 
+DEPRECATED=	Outdated, abandoned
+EXPIRATION_DATE=	2011-05-01
+
 USE_MOTIF=	yes
 USE_IMAKE=	yes
 USE_XORG=	ice sm x11 xext xp xpm xt
