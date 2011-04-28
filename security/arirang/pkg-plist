@@ -28,6 +28,7 @@ share/arirang/unix_cgi.uxe
 share/arirang/unix_head.uxe
 share/arirang/allow.rb
 share/arirang/allow_relay.rb
+share/arirang/auth.rb
 share/arirang/arirang.rb
 share/arirang/caching.rb
 share/arirang/chunk.rb
@@ -38,6 +39,7 @@ share/arirang/iframe.rb
 share/arirang/iisver.rb
 share/arirang/link.rb
 share/arirang/multi.rb
+share/arirang/multiport.rb
 share/arirang/nginx.rb
 share/arirang/null.rb
 share/arirang/proxy.rb
