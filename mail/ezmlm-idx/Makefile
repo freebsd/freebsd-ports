@@ -7,6 +7,7 @@
 
 PORTNAME=	ezmlm-idx
 PORTVERSION=	7.1.1
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://www.ezmlm.org/archive/${PORTVERSION}/ \
 		http://ezmlm.sericyb.com.au/archive/${PORTVERSION}/
@@ -38,33 +39,32 @@ USE_MYSQL=	yes
 EXTRACT_INCLUDE+=	-I${LOCALBASE}/include/mysql
 EXTRACT_LIB+=	-L${LOCALBASE}/lib/mysql -lmysqlclient -lm
 ALL_TARGET+=	mysql
+PLIST_SUB+=	MYSQL="" PGSQL="@comment " SQLITE="@comment "
 .elif defined(WITH_PGSQL)
 USE_PGSQL=	yes
 EXTRACT_INCLUDE+=	-I${LOCALBASE}/include
 EXTRACT_LIB+=	-L${LOCALBASE}/lib -lpq -lcrypt
 ALL_TARGET+=	pgsql
+PLIST_SUB+=	MYSQL="@comment " PGSQL="" SQLITE="@comment "
 .elif defined(WITH_SQLITE)
 USE_SQLITE=	yes
 EXTRACT_INCLUDE+=	-I${LOCALBASE}/include
 EXTRACT_LIB+=	-L${LOCALBASE}/lib -lsqlite3
 ALL_TARGET+=	sqlite3
+PLIST_SUB+=	MYSQL="@comment " PGSQL="@comment " SQLITE=""
+.else
+PLIST_SUB+=	MYSQL="@comment " PGSQL="@comment " SQLITE="@comment "
 .endif
 
-PROGRAMS=	ezmlm-archive ezmlm-cgi ezmlm-clean ezmlm-cron ezmlm-gate \
-		ezmlm-get ezmlm-idx ezmlm-issubn ezmlm-limit ezmlm-list \
-		ezmlm-make ezmlm-manage ezmlm-moderate ezmlm-request \
-		ezmlm-reject ezmlm-return ezmlm-send ezmlm-split ezmlm-store \
-		ezmlm-sub ezmlm-tstdig ezmlm-unsub ezmlm-warn ezmlm-weed
-SCRIPTS=	ezmlm-accept ezmlm-check ezmlm-glconf
 CONFIG=		ezmlmglrc ezmlmrc ezmlmsubrc
 
-MAN1=	ezmlm-accept.1 ezmlm-archive.1 ezmlm-cgi.1 ezmlm-check.1 \
+MAN1=	ezmlm-accept.1 ezmlm-archive.1 ezmlm-check.1 ezmlm-dispatch.1 \
 	ezmlm-clean.1 ezmlm-cron.1 ezmlm-gate.1 ezmlm-get.1 \
 	ezmlm-glconf.1 ezmlm-idx.1 ezmlm-issubn.1 ezmlm-limit.1 \
-	ezmlm-list.1 ezmlm-make.1 ezmlm-manage.1 \
+	ezmlm-list.1 ezmlm-make.1 ezmlm-manage.1 ezmlm-confirm.1 \
 	ezmlm-moderate.1 ezmlm-reject.1 ezmlm-request.1 \
 	ezmlm-return.1 ezmlm-send.1 ezmlm-split.1 ezmlm-store.1 \
-	ezmlm-sub.1 ezmlm-tstdig.1 ezmlm-unsub.1 \
+	ezmlm-sub.1 ezmlm-tstdig.1 ezmlm-unsub.1 ezmlm-checksub.1 \
 	ezmlm-warn.1 ezmlm-weed.1
 MAN5=	ezmlm.5 ezmlmglrc.5 ezmlmrc.5 ezmlmsubrc.5
 DOCS=	BLURB CHANGES ChangeLog DOWNGRADE FAQ HISTORY INSTALL README \
@@ -73,6 +73,8 @@ DOCS=	BLURB CHANGES ChangeLog DOWNGRADE FAQ HISTORY INSTALL README \
 post-patch:
 	@${ECHO_CMD} /usr/sbin > ${WRKSRC}/conf-cron
 	@${ECHO_CMD} ${PREFIX}/bin > ${WRKSRC}/conf-bin
+	@${ECHO_CMD} ${PREFIX}/etc/ezmlm > ${WRKSRC}/conf-etc
+	@${ECHO_CMD} ${PREFIX}/lib/ezmlm > ${WRKSRC}/conf-lib
 	@${ECHO_CMD} ${CC} ${CFLAGS} > ${WRKSRC}/conf-cc
 	@${ECHO_CMD} ${CC} -s > ${WRKSRC}/conf-ld
 .if defined(WITH_MYSQL)
@@ -90,18 +92,14 @@ post-patch:
 	@${REINPLACE_CMD} -e 's,/etc/ezmlm/,${PREFIX}/etc/ezmlm/,' \
 		${WRKSRC}/idx.h
 
-do-install:
-	@cd ${WRKSRC} && \
-		${INSTALL_PROGRAM} ${PROGRAMS} ${PREFIX}/bin && \
-		${INSTALL_SCRIPT} ${SCRIPTS} ${PREFIX}/bin && \
-		${INSTALL_MAN} ${MAN1} ${MANPREFIX}/man/man1 && \
-		${INSTALL_MAN} ${MAN5} ${MANPREFIX}/man/man5
+pre-install:
+	@${REINPLACE_CMD} -e '/\/cat/d' ${WRKSRC}/MAN
+
+post-install:
 	@${MKDIR} ${PREFIX}/etc/ezmlm
 .for file in ${CONFIG}
 	@${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/etc/ezmlm/${file}.sample
 .endfor
-
-post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	@cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${DOCSDIR}
