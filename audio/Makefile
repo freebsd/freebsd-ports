@@ -412,6 +412,7 @@
     SUBDIR += linux-arts
     SUBDIR += linux-esound
     SUBDIR += linux-f10-alsa-lib
+    SUBDIR += linux-f10-alsa-plugins-oss
     SUBDIR += linux-f10-arts
     SUBDIR += linux-f10-esound
     SUBDIR += linux-f10-freealut
