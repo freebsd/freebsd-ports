@@ -23,6 +23,8 @@ include/ctpp2/CTPP2Logger.hpp
 include/ctpp2/CTPP2OutputCollector.hpp
 include/ctpp2/CTPP2Parser.hpp
 include/ctpp2/CTPP2ParserException.hpp
+include/ctpp2/CTPP2SimpleCompiler.hpp
+include/ctpp2/CTPP2SimpleVM.hpp
 include/ctpp2/CTPP2SourceLoader.hpp
 include/ctpp2/CTPP2Sprintf.hpp
 include/ctpp2/CTPP2StaticData.hpp
