@@ -7,7 +7,8 @@
 
 PORTNAME=	image_science
 PORTVERSION=	1.2.1
-CATEGORIES=	devel rubygems
+PORTREVISION=	1
+CATEGORIES=	graphics rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	freebsdports@chillibear.com
