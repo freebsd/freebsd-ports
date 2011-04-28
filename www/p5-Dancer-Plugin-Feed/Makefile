@@ -6,18 +6,18 @@
 #
 
 PORTNAME=	Dancer-Plugin-Feed
-PORTVERSION=	0.1
+PORTVERSION=	0.2
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
-MASTER_SITE_SUBDIR=	../../authors/id/H/HO/HOBBESTIG/
+MASTER_SITE_SUBDIR=	CPAN:HOBBESTIG
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	magik@roorback.net
 COMMENT=	Dancer plugin for generating RSS or Atom feeds
 
-RUN_DEPENDS=    p5-Dancer>=1.175:${PORTSDIR}/www/p5-Dancer \
+RUN_DEPENDS=	p5-Dancer>=1.2001:${PORTSDIR}/www/p5-Dancer \
 		p5-XML-Feed>0:${PORTSDIR}/textproc/p5-XML-Feed
-BUILD_DEPENDS=  ${RUN_DEPENDS}
+BUILD_DEPENDS=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
