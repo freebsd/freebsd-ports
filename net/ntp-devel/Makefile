@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ntp
-PORTVERSION=	4.2.7p78
+PORTVERSION=	4.2.7p159
 CATEGORIES=	net ipv6
 MASTER_SITES=	ftp://ftp.udel.edu/pub/ntp/ntp4/ntp-dev/ \
 		http://www.eecis.udel.edu/~ntp/ntp_spool/ntp4/ntp-dev/ \
@@ -60,9 +60,6 @@ PLIST_SUB+=	NETSNMP=""
 .else
 PLIST_SUB+=	NETSNMP="@comment "
 .endif
-
-pre-configure:
-	@cd ${WRKSRC} && ./bootstrap
 
 post-install:
 	@${MKDIR} ${EXAMPLESDIR}

@@ -164,6 +164,8 @@ bin/tickadj
 %%PORTDOCS%%%%DOCSDIR%%/pic/flt5.gif
 %%PORTDOCS%%%%DOCSDIR%%/pic/flt6.gif
 %%PORTDOCS%%%%DOCSDIR%%/pic/flt7.gif
+%%PORTDOCS%%%%DOCSDIR%%/pic/flt8.gif
+%%PORTDOCS%%%%DOCSDIR%%/pic/flt9.gif
 %%PORTDOCS%%%%DOCSDIR%%/pic/freq1211.gif
 %%PORTDOCS%%%%DOCSDIR%%/pic/gadget.jpg
 %%PORTDOCS%%%%DOCSDIR%%/pic/gps167.jpg
@@ -194,6 +196,7 @@ bin/tickadj
 %%PORTDOCS%%%%DOCSDIR%%/pic/radio2.jpg
 %%PORTDOCS%%%%DOCSDIR%%/pic/sheepb.jpg
 %%PORTDOCS%%%%DOCSDIR%%/pic/stack1a.jpg
+%%PORTDOCS%%%%DOCSDIR%%/pic/sx5.gif
 %%PORTDOCS%%%%DOCSDIR%%/pic/thunderbolt.jpg
 %%PORTDOCS%%%%DOCSDIR%%/pic/tonea.gif
 %%PORTDOCS%%%%DOCSDIR%%/pic/tribeb.gif
@@ -246,3 +249,4 @@ bin/tickadj
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/drivers
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm %%EXAMPLESDIR%%
+@dirrmtry lib/pkgconfig
