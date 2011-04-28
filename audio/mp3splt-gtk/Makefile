@@ -13,7 +13,7 @@ MASTER_SITES=	SF/mp3splt/${PORTNAME}/${PORTVERSION}
 MAINTAINER=	beyert@cs.ucr.edu
 COMMENT=	Utility to split mp3 and ogg files (via GTK Interface)
 
-BUILD_DEPENDS=	audacious2:${PORTSDIR}/multimedia/audacious
+BUILD_DEPENDS=	audacious:${PORTSDIR}/multimedia/audacious
 LIB_DEPENDS=	mp3splt:${PORTSDIR}/audio/libmp3splt \
 		mad.2:${PORTSDIR}/audio/libmad \
 		ogg.7:${PORTSDIR}/audio/libogg \
