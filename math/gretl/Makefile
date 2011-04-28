@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	gretl
-PORTVERSION=	1.9.4
+PORTVERSION=	1.9.5
 CATEGORIES=	math finance
 MASTER_SITES=	SF
 
@@ -28,15 +28,14 @@ CONFIGURE_ARGS =	--enable-static --enable-shared --with-gmake --without-gnome
 CPPFLAGS+=		-I${LOCALBASE}/include
 LDFLAGS+=		-L${LOCALBASE}/lib
 CONFIGURE_ENV=	LAPACK_LIBS="${LAPACK} ${BLAS}" \
-			LDFLAGS="${LDFLAGS}"
+		LDFLAGS="${LDFLAGS}"
 
 MAN1=		gretl.1
 OPTIONS=	ATLAS "Use Atlas for BLAS and LAPACK" off \
 		GUI "Build the graphical user interface and plugins" on \
 		NLS "Build with Natural Language Support" on \
 		ODBC "Build with unixODBC database support" off \
-		R "Build with libR support" off \
-		SSE2 "Enable build-time auto-detection of SSE2 on i386 for RNG" off
+		R "Build with libR support" off
 
 .include <bsd.port.pre.mk>
 
@@ -87,7 +86,7 @@ LIB_DEPENDS+=		R.0:${PORTSDIR}/math/R
 CONFIGURE_ARGS+=	--without-libR
 .endif
 
-.if ${ARCH} == "amd64" || (${ARCH} == "i386" && defined(WITH_SSE2))
+.if ${MACHINE_CPU:Msse2}
 CONFIGURE_ARGS+=	--enable-sse2=yes
 .else
 CONFIGURE_ARGS+=	--enable-sse2=no
