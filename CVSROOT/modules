@@ -634,9 +634,11 @@ arora                           ports/www/arora
 aros-sdk                        ports/devel/aros-sdk
 arp-scan                        ports/net/arp-scan
 arp-sk                          ports/net/arp-sk
+arpCounterattack                ports/security/arpCounterattack
 arpack                          ports/math/arpack
 arpack++                        ports/math/arpack++
 arpalert                        ports/net-mgmt/arpalert
+arpcounterattack                ports/security/arpCounterattack
 arpdig                          ports/net/arpdig
 arping                          ports/net/arping
 arprelease                      ports/net/arprelease
@@ -2084,6 +2086,7 @@ cutils                          ports/devel/cutils
 cutmp3                          ports/audio/cutmp3
 cutter                          ports/devel/cutter
 cuttlefish                      ports/graphics/cuttlefish
+cutycapt                        ports/www/cutycapt
 cuyo                            ports/games/cuyo
 cvc3                            ports/math/cvc3
 cvm                             ports/security/cvm
@@ -5783,6 +5786,7 @@ httping                         ports/net/httping
 httplog                         ports/sysutils/httplog
 httprint                        ports/security/httprint
 httpry                          ports/net/httpry
+httpsqs                         ports/www/httpsqs
 httptunnel                      ports/www/httptunnel
 httrack                         ports/www/httrack
 htx                             ports/converters/htx
@@ -7862,6 +7866,7 @@ libchipcard-kde                 ports/devel/libchipcard-kde
 libchk                          ports/sysutils/libchk
 libcii                          ports/devel/libcii
 libclaw                         ports/devel/libclaw
+libcli                          ports/devel/libcli
 libcompizconfig                 ports/x11-wm/libcompizconfig
 libcomprex                      ports/archivers/libcomprex
 libconfig                       ports/devel/libconfig
