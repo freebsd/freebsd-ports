@@ -7,15 +7,14 @@
 
 PORTNAME=	driconf
 PORTVERSION=	0.9.1
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	graphics
-MASTER_SITES=	http://people.freedesktop.org/~fxkuehl/driconf/
+MASTER_SITES=	${MASTER_SITE_DEBIAN}
+MASTER_SITE_SUBDIR=	pool/main/d/${PORTNAME}
+DISTFILES=	${PORTNAME}_${PORTVERSION}.orig.tar.gz
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	lichray@gmail.com
 COMMENT=	Configuration program for DRI drivers
-
-DEPRECATED=     Upstream disapear and distfile is no more available
-EXPIRATION_DATE=        2011-05-01
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/gtk-2.0/gtk/__init__.py:${PORTSDIR}/x11-toolkits/py-gtk2
 
