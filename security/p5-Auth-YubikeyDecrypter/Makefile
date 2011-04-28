@@ -12,7 +12,7 @@ MASTER_SITE_SUBDIR=	../../authors/id/M/MA/MASSYN
 PKGNAMEPREFIX=	p5-
 DISTNAME=	Auth-Yubikey_Decrypter-${PORTVERSION}
 
-MAINTAINER=	fbsd-ports@opsec.eu
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Decrypting the output from the yubikey token
 
 RUN_DEPENDS=	p5-Crypt-Rijndael>=1:${PORTSDIR}/security/p5-Crypt-Rijndael

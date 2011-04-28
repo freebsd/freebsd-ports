@@ -9,7 +9,7 @@ PORTVERSION=	2.8.3
 CATEGORIES=	databases
 MASTER_SITES=	http://www.lemke-it.com/
 
-MAINTAINER=	fbsd-ports@opsec.eu
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A relational and transactional database system
 
 LIB_DEPENDS=	lfc.1:${PORTSDIR}/devel/lfc \

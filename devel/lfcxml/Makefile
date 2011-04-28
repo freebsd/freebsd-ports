@@ -9,7 +9,7 @@ PORTVERSION=	1.0.24
 CATEGORIES=	devel
 MASTER_SITES=	http://www.lemke-it.com/
 
-MAINTAINER=	fbsd-ports@opsec.eu
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C++ XML library, used for databases/cego
 
 LIB_DEPENDS=	lfc.1:${PORTSDIR}/devel/lfc
