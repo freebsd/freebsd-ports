@@ -26,7 +26,7 @@ CONFLICTS=	emacs-19.* emacs-21.* emacs-22.* emacs-23.* \
 INSTALLS_ICONS=	yes
 
 EMACS_VER=	24.0.50
-EMACS_REV=	102364
+EMACS_REV=	104000
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_XZ=		yes
@@ -35,6 +35,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--localstatedir=/var
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+USE_AUTOTOOLS=	autoconf:env automake:env aclocal:env
 
 EMACS_DIRS=	${DATADIR}/${EMACS_VER}/leim ${DATADIR}/${EMACS_VER}/lisp ${DATADIR}/${EMACS_VER}/src \
 		${PREFIX}/libexec/${PORTNAME}
@@ -51,7 +52,7 @@ MAKE_ENV=	LC_ALL=C
 
 INFO=		ada-mode auth autotype calc ccmode cl dbus dired-x \
 		ebrowse ede ediff edt efaq eieio eintr elisp emacs-mime emacs epa \
-		erc eshell eudc flymake forms gnus idlwave info \
+		erc ert eshell eudc flymake forms gnus idlwave info \
 		mairix-el message mh-e newsticker nxml-mode \
 		org pcl-cvs pgg rcirc reftex remember sasl sc semantic ses sieve \
 		smtpmail speedbar tramp url vip viper widget woman
@@ -254,6 +255,9 @@ add-plist-data:
 	@${FIND} ${i} -type d -depth |${SED} -E -e 's,^${PREFIX}/,@dirrm ,g' >>${TMPPLIST}
 .endfor
 	@${ECHO} "@unexec rmdir %D/${DATADIR_REL}/${EMACS_VER} 2>/dev/null || true" >>${TMPPLIST}
+
+pre-configure:
+	@cd ${WRKSRC} && ./autogen.sh
 
 .if defined(WITH_SOURCES)
 PLIST_SUB+=	SOURCES=""
