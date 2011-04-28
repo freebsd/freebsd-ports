@@ -41,6 +41,7 @@
     SUBDIR += cdpr
     SUBDIR += cfgstoragemk
     SUBDIR += cflowd
+    SUBDIR += check_logfiles
     SUBDIR += check_multi
     SUBDIR += check_mysql_health
     SUBDIR += check_snmp_pkgvuln
