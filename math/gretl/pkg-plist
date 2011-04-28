@@ -179,9 +179,6 @@ lib/gretl-gtk2/stats_tables.so
 lib/gretl-gtk2/sysest.a
 lib/gretl-gtk2/sysest.la
 lib/gretl-gtk2/sysest.so
-lib/gretl-gtk2/tobit.a
-lib/gretl-gtk2/tobit.la
-lib/gretl-gtk2/tobit.so
 %%GUI%%lib/gretl-gtk2/tramo-x12a.a
 %%GUI%%lib/gretl-gtk2/tramo-x12a.la
 %%GUI%%lib/gretl-gtk2/tramo-x12a.so
@@ -354,6 +351,7 @@ libdata/pkgconfig/gretl.pc
 %%DATADIR%%/data/misc/sw_ch12.gdt
 %%DATADIR%%/data/misc/sw_ch14.gdt
 %%DATADIR%%/data/misc/theil.gdt
+%%DATADIR%%/data/misc/ukppp.gdt
 %%DATADIR%%/data/misc/wtp.gdt
 %%DATADIR%%/data/nist/Filip.dat
 %%DATADIR%%/data/nist/Longley.dat
@@ -557,6 +555,7 @@ libdata/pkgconfig/gretl.pc
 %%GUI%%share/gtksourceview-2.0/language-specs/gretl.lang
 %%NLS%%share/locale/cs/LC_MESSAGES/gretl.mo
 %%NLS%%share/locale/de/LC_MESSAGES/gretl.mo
+%%NLS%%share/locale/el/LC_MESSAGES/gretl.mo
 %%NLS%%share/locale/es/LC_MESSAGES/gretl.mo
 %%NLS%%share/locale/eu/LC_MESSAGES/gretl.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/gretl.mo
