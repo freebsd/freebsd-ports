@@ -67,7 +67,8 @@ _LINUX_APPS_ALL=	allegro alsalib arts aspell atk cairo curl dri esound expat fon
 _LINUX_APPS_ALL+=
 
 # 2.6.16 components
-_LINUX_26_APPS=		blt cyrus-sasl2 dbusglib dbuslibs libidn libssh2 libv4l nspr nss openal-soft \
+_LINUX_26_APPS=		alsa-plugins-oss blt cyrus-sasl2 dbusglib dbuslibs \
+			libidn libssh2 libv4l nspr nss openal-soft \
 			openldap pulseaudio-libs sqlite3 tcl84 tk84
 
 _LINUX_APPS_ALL+=	${_LINUX_26_APPS}
@@ -96,6 +97,12 @@ allegro_f10_FILE=	${LINUXBASE}/usr/lib/liballeg-4.2.2.so
 allegro_DETECT=		${allegro${LINUX_DIST_SUFFIX:S/-/_/}_FILE}
 allegro_PORT=		${PORTSDIR}/devel/linux${LINUX_DIST_SUFFIX}-allegro
 allegro_DEPENDS=	xorglibs
+
+# no_alsa-plugins-oss_FILE
+alsa-plugins-oss_f10_FILE=	${LINUXBASE}/usr/lib/alsa-lib/libasound_module_pcm_oss.so
+alsa-plugins-oss_DETECT=	${alsa-plugins-oss${LINUX_DIST_SUFFIX:S/-/_/}_FILE}
+alsa-plugins-oss_PORT=		${PORTSDIR}/audio/linux${LINUX_DIST_SUFFIX}-alsa-plugins-oss
+alsa-plugins-oss_DEPENDS=	alsalib
 
 alsalib_FILE=		${LINUXBASE}/lib/libasound.so.2.0.0
 alsalib_f10_FILE=	${LINUXBASE}/lib/libasound.so.2.0.0
