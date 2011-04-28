@@ -1,6 +1,6 @@
 # New ports collection makefile for:	multimedia/linux-f10-libv4l
 # Date created:				2011-04-14
-# Whom:					emulation@FreeBSD.org
+# Whom:					bsam
 #
 # $FreeBSD$
 #
