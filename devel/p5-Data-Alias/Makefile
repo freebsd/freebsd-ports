@@ -6,13 +6,16 @@
 #
 
 PORTNAME=	Data-Alias
-PORTVERSION=	1.12
+PORTVERSION=	1.14
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Comprehensive set of aliasing operations
+
+LICENSE_COMB=	dual
+LICENSE=	ART20 GPLv1
 
 PERL_CONFIGURE=	yes
 
