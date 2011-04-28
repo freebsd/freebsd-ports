@@ -1,0 +1,46 @@
+
+$FreeBSD$
+
+--- configure.in.orig
++++ configure.in
+@@ -1129,39 +1129,10 @@
+   AC_CHECK_LIB(ossaudio, _oss_ioctl, LIBSOUND=-lossaudio, LIBSOUND=)
+   AC_SUBST(LIBSOUND)
+ 
+-  ALSA_REQUIRED=1.0.0
+-  ALSA_MODULES="alsa >= $ALSA_REQUIRED"
+-  PKG_CHECK_MODULES(ALSA, $ALSA_MODULES, HAVE_ALSA=yes, HAVE_ALSA=no)
+-  if test $HAVE_ALSA = yes; then
+-    SAVE_CFLAGS="$CFLAGS"
+-    SAVE_LDFLAGS="$LDFLAGS"
+-    CFLAGS="$ALSA_CFLAGS $CFLAGS"
+-    LDFLAGS="$ALSA_LIBS $LDFLAGS"
+-    AC_COMPILE_IFELSE([AC_LANG_PROGRAM([[#include <asoundlib.h>]], [[snd_lib_error_set_handler (0);]])],
+-                    emacs_alsa_normal=yes,
+-	            emacs_alsa_normal=no)
+-    if test "$emacs_alsa_normal" != yes; then
+-      AC_COMPILE_IFELSE([AC_LANG_PROGRAM([[#include <alsa/asoundlib.h>]],
+-                     [[snd_lib_error_set_handler (0);]])],
+-                     emacs_alsa_subdir=yes,
+-	             emacs_alsa_subdir=no)
+-      if test "$emacs_alsa_subdir" != yes; then
+-        AC_MSG_ERROR([pkg-config found alsa, but it does not compile.  See config.log for error messages.])
+-      fi
+-      ALSA_CFLAGS="$ALSA_CFLAGS -DALSA_SUBDIR_INCLUDE"
+-    fi
+-
+-    CFLAGS="$SAVE_CFLAGS"
+-    LDFLAGS="$SAVE_LDFLAGS"
+-    LIBSOUND="$LIBSOUND $ALSA_LIBS"
+-    CFLAGS_SOUND="$CFLAGS_SOUND $ALSA_CFLAGS"
+-    AC_DEFINE(HAVE_ALSA, 1, [Define to 1 if ALSA is available.])
+-  fi
+-
+   dnl Define HAVE_SOUND if we have sound support.  We know it works and
+   dnl compiles only on the specified platforms.  For others, it
+   dnl probably doesn't make sense to try.
+-  if test x$have_sound_header = xyes || test $HAVE_ALSA = yes; then
++  if test x$have_sound_header = xyes; then
+      case "$opsys" in
+        dnl defined __FreeBSD__ || defined __NetBSD__ || defined __linux__
+        gnu-linux|freebsd|netbsd)
