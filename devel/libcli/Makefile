@@ -7,6 +7,7 @@
 
 PORTNAME=	libcli
 PORTVERSION=	1.9.4
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	GOOGLE_CODE
 
@@ -21,13 +22,7 @@ USE_LDCONFIG=	yes
 PLIST_FILES=	lib/libcli.so \
 		lib/libcli.so.1.9.4 \
 		lib/libcli.so.1.9 \
+		lib/libcli.so.19 \
 		include/libcli.h
-
-post-patch:
-	@${REINPLACE_CMD} -e "/^OPTIM/d" \
-		-e "/^DEBUG/d" \
-		-e "s/gcc/${CC}/g" \
-		-e "s/REVISION = 3/REVISION = 4/g" \
-		${WRKSRC}/Makefile
 
 .include <bsd.port.mk>
