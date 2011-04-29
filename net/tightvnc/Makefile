@@ -50,15 +50,19 @@ PLIST_SUB+=	JVNC_VIEWER=""
 PLIST_SUB+=	JVNC_VIEWER="@comment "
 .endif
 
+.ifdef(TIGHTVNC_BASE)
+PREFIX=${TIGHTVNC_BASE}
+.endif
+
 .include <bsd.port.pre.mk>
 
-.if exists(${LOCALBASE}/share/vnc/classes/index.vnc)
+.if exists(${PREFIX}/share/vnc/classes/index.vnc)
 IGNORE=		vnc has already been installed, please uninstall it first
 .endif
 
 post-patch:
 .for file in vncviewer/Imakefile Xvnc/config/cf/vnclibs.def
-	@${PERL} -pi -e "s,%%LOCALBASE%%,${LOCALBASE},g" ${WRKSRC}/${file}
+	@${PERL} -pi -e "s,%%LOCALBASE%%,${PREFIX},g" ${WRKSRC}/${file}
 .endfor
 	@${PERL} -pi -e "s,/usr/local/vnc/classes,${DATADIR}/classes,g ; \
 		s,^#!/usr/bin/perl,#!${PERL},g" ${WRKSRC}/vncserver
