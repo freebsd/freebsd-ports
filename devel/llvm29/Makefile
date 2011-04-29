@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	llvm
-PORTVERSION=	2.8
-PORTREVISION=	3
+PORTVERSION=	2.9
 CATEGORIES=	devel lang
 MASTER_SITES=	http://llvm.org/releases/${PORTVERSION}/
 EXTRACT_SUFX=	.tgz
@@ -43,9 +42,7 @@ CONFIGURE_ARGS+=	--enable-bindings=none
 OPTIONS=	ASSERTS	"Enable assertions (thread unsafe)" off
 
 .if defined(NOPORTDOCS)
-DOCSRCDIR=
-.else
-DOCSRCDIR=	docs
+CONFIGURE_ARGS+=	--disable-docs
 .endif
 
 MAN1=		bugpoint.1 lit.1 llc.1 lli.1 llvm-ar.1 \
@@ -79,8 +76,6 @@ post-patch:
 	    ${WRKSRC}/Makefile.config.in
 	${REINPLACE_CMD} -e 's|\(PROJ_mandir.*:=\).*$$|\1${MANPREFIX}/man|g' \
 	    ${WRKSRC}/Makefile.config.in
-	${REINPLACE_CMD} -e 's|%%DOCSRCDIR%%|${DOCSRCDIR}|' \
-	    ${WRKSRC}/Makefile
 
 .if defined(NOPORTDOCS)
 post-build:
@@ -106,16 +101,17 @@ PLIST_FILE_LIST=	bin/bugpoint \
 			bin/llc \
 			bin/lli \
 			bin/llvm* \
+			bin/macho-dump \
 			bin/opt \
 			bin/tblgen \
-			lib/libBugpointPasses.so \
+			lib/BugpointPasses.so \
 			lib/libCompilerDriver.a \
 			lib/libEnhancedDisassembly.so \
 			lib/libEnhancedDisassembly.a \
+			lib/LLVMHello.so \
 			lib/libLTO.* \
 			lib/libLLVM* \
-			lib/libUnitTestMain.a \
-			lib/libprofile_rt.so
+			lib/profile_rt.so
 PLIST_DIR_LIST=		include/llvm-c \
 			include/llvm
 build-plist:
