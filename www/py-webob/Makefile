@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	webob
-PORTVERSION=	1.0.6
+PORTVERSION=	1.0.7
 PORTREVISION=	0
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP \
@@ -18,7 +18,7 @@ MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	WSGI request and response Python object
 
 PYDISTUTILS_PKGNAME=	WebOb
-USE_PYTHON=	yes
+USE_PYTHON=	-2.7
 USE_PYDISTUTILS=	easy_install
 
 USE_ZIP=	yes
