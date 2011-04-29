@@ -1,0 +1,166 @@
+--- db/zm_create.sql.in.orig	2009-05-25 22:08:50.000000000 +0400
++++ db/zm_create.sql.in	2011-04-08 17:48:07.352807423 +0400
+@@ -41,7 +41,7 @@ CREATE TABLE `Config` (
+   `Readonly` tinyint(3) unsigned NOT NULL default '0',
+   `Requires` text,
+   PRIMARY KEY  (`Name`)
+-) ENGINE=@ZM_MYSQL_ENGINE@;
++);
+ 
+ --
+ -- Table structure for table `ControlPresets`
+@@ -53,7 +53,7 @@ CREATE TABLE `ControlPresets` (
+   `Preset` int(10) unsigned NOT NULL default '0',
+   `Label` varchar(64) NOT NULL default '',
+   PRIMARY KEY  (`MonitorId`,`Preset`)
+-) ENGINE=@ZM_MYSQL_ENGINE@;
++);
+ 
+ --
+ -- Table structure for table `Controls`
+@@ -161,7 +161,7 @@ CREATE TABLE `Controls` (
+   `CanAutoScan` tinyint(3) unsigned NOT NULL default '0',
+   `NumScanPaths` tinyint(3) unsigned NOT NULL default '0',
+   PRIMARY KEY  (`Id`)
+-) ENGINE=@ZM_MYSQL_ENGINE@;
++);
+ 
+ --
+ -- Table structure for table `Devices`
+@@ -174,7 +174,7 @@ CREATE TABLE `Devices` (
+   `Type` enum('X10') NOT NULL default 'X10',
+   `KeyString` varchar(32) NOT NULL default '',
+   PRIMARY KEY  (`Id`)
+-) ENGINE=@ZM_MYSQL_ENGINE@;
++);
+ 
+ --
+ -- Table structure for table `Events`
+@@ -208,7 +208,7 @@ CREATE TABLE `Events` (
+   KEY `StartTime` (`StartTime`),
+   KEY `Frames` (`Frames`),
+   KEY `Archived` (`Archived`)
+-) ENGINE=@ZM_MYSQL_ENGINE@;
++);
+ 
+ --
+ -- Table structure for table `Filters`
+@@ -228,7 +228,7 @@ CREATE TABLE `Filters` (
+   `AutoDelete` tinyint(3) unsigned NOT NULL default '0',
+   `Background` tinyint(1) unsigned NOT NULL default '0',
+   PRIMARY KEY  (`Name`)
+-) ENGINE=@ZM_MYSQL_ENGINE@;
++);
+ 
+ --
+ -- Table structure for table `Frames`
+@@ -245,7 +245,7 @@ CREATE TABLE `Frames` (
+   PRIMARY KEY (`EventId`,`FrameId`),
+   KEY `Type` (`Type`),
+   KEY `TimeStamp` (`TimeStamp`)
+-) ENGINE=@ZM_MYSQL_ENGINE@;
++);
+ 
+ --
+ -- Table structure for table `Groups`
+@@ -257,7 +257,7 @@ CREATE TABLE `Groups` (
+   `Name` varchar(64) NOT NULL default '',
+   `MonitorIds` tinytext NOT NULL,
+   PRIMARY KEY  (`Id`)
+-) ENGINE=@ZM_MYSQL_ENGINE@;
++);
+ 
+ --
+ -- Table structure for table `MonitorPresets`
+@@ -288,7 +288,7 @@ CREATE TABLE `MonitorPresets` (
+   `DefaultRate` smallint(5) unsigned NOT NULL default '100',
+   `DefaultScale` smallint(5) unsigned NOT NULL default '100',
+   PRIMARY KEY  (`Id`)
+-) ENGINE=@ZM_MYSQL_ENGINE@;
++);
+ 
+ --
+ -- Table structure for table `Monitors`
+@@ -352,7 +352,7 @@ CREATE TABLE `Monitors` (
+   `WebColour` varchar(32) NOT NULL default 'red',
+   `Sequence` smallint(5) unsigned default NULL,
+   PRIMARY KEY  (`Id`)
+-) ENGINE=@ZM_MYSQL_ENGINE@;
++);
+ 
+ --
+ -- Table structure for table `States`
+@@ -363,7 +363,7 @@ CREATE TABLE `States` (
+   `Name` varchar(64) NOT NULL default '',
+   `Definition` text NOT NULL,
+   PRIMARY KEY  (`Name`)
+-) ENGINE=@ZM_MYSQL_ENGINE@;
++);
+ 
+ --
+ -- Table structure for table `Stats`
+@@ -390,7 +390,7 @@ CREATE TABLE `Stats` (
+   KEY `EventId` (`EventId`),
+   KEY `MonitorId` (`MonitorId`),
+   KEY `ZoneId` (`ZoneId`)
+-) ENGINE=@ZM_MYSQL_ENGINE@;
++);
+ 
+ --
+ -- Table structure for table `TriggersX10`
+@@ -403,7 +403,7 @@ CREATE TABLE `TriggersX10` (
+   `AlarmInput` varchar(32) default NULL,
+   `AlarmOutput` varchar(32) default NULL,
+   PRIMARY KEY  (`MonitorId`)
+-) ENGINE=@ZM_MYSQL_ENGINE@;
++);
+ 
+ --
+ -- Table structure for table `Users`
+@@ -426,7 +426,7 @@ CREATE TABLE `Users` (
+   `MonitorIds` tinytext NOT NULL,
+   PRIMARY KEY  (`Id`),
+   UNIQUE KEY `UC_Username` (`Username`)
+-) ENGINE=@ZM_MYSQL_ENGINE@;
++);
+ 
+ --
+ -- Table structure for table `ZonePresets`
+@@ -453,7 +453,7 @@ CREATE TABLE `ZonePresets` (
+   `MaxBlobs` smallint(5) unsigned default NULL,
+   `OverloadFrames` smallint(5) unsigned NOT NULL default '0',
+   PRIMARY KEY  (`Id`)
+-) ENGINE=@ZM_MYSQL_ENGINE@;
++);
+ 
+ --
+ -- Table structure for table `Zones`
+@@ -486,7 +486,7 @@ CREATE TABLE `Zones` (
+   `OverloadFrames` smallint(5) unsigned NOT NULL default '0',
+   PRIMARY KEY  (`Id`),
+   KEY `MonitorId` (`MonitorId`)
+-) ENGINE=@ZM_MYSQL_ENGINE@;
++);
+ 
+ /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+ /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+@@ -611,7 +611,7 @@ insert into Config set Id = 7, Name = 'Z
+ insert into Config set Id = 8, Name = 'ZM_USE_DEEP_STORAGE', Value = '0', Type = 'boolean', DefaultValue = 'no', Hint = 'yes|no', Pattern = '(?i-xsm:^([yn]))', Format = ' ($1 =~ /^y/) ? \"yes\" : \"no\" ', Prompt = 'Use a deep filesystem hierarchy for events', Help = 'Traditionally ZoneMinder stores all event sfor a monitor in one directory for that monitor. This is simple and efficient except when you have very large amounts of events. Some filesystems are unable to store more than 32k files in one directory and even without this limitation, large numbers of files in a directory can slow creation and deletion of files. This option allows you to select a new method of storing events by year/month/day/hour/min/second which has the effect of separating events out into more directories, resulting in less per directory, and also making it easier to manually navigate to any events that may have happened at a particular time or date. Be warned: deep storage should be considered in beta for now, if you value your data do not select it.', Category = 'paths', Readonly = '0', Requires = '';
+ insert into Config set Id = 9, Name = 'ZM_DIR_IMAGES', Value = 'images', Type = 'string', DefaultValue = 'images', Hint = 'directory', Pattern = '(?-xism:^([a-zA-Z0-9-_.]+)$)', Format = ' $1 ', Prompt = 'Directory where the images that the ZoneMinder client generates are stored', Help = 'ZoneMinder generates a myriad of images, mosty of which are associated with events. For those that aren\'t this is where they go.', Category = 'paths', Readonly = '0', Requires = '';
+ insert into Config set Id = 10, Name = 'ZM_DIR_SOUNDS', Value = 'sounds', Type = 'string', DefaultValue = 'sounds', Hint = 'directory', Pattern = '(?-xism:^([a-zA-Z0-9-_.]+)$)', Format = ' $1 ', Prompt = 'Directory to the sounds that the ZoneMinder client can use', Help = 'ZoneMinder can optionally play a sound file when an alarm is detected. This indicates where (relative to the web root) to look for this file.', Category = 'paths', Readonly = '0', Requires = '';
+-insert into Config set Id = 11, Name = 'ZM_PATH_ZMS', Value = '/cgi-bin/nph-zms', Type = 'string', DefaultValue = '/cgi-bin/nph-zms', Hint = 'relative/path/to/somewhere', Pattern = '(?-xism:^((?:[^/].*)?)/?$)', Format = ' $1 ', Prompt = 'Web path to zms streaming server', Help = 'The ZoneMinder streaming server is required to send streamed images to your browser. It will be installed into the cgi-bin path given at configuration time. This option determines what the web path to the server is rather than the local path on your machine. Ordinarily the streaming server runs in parser-header mode however if you experience problems with streaming you can change this to non-parsed-header (nph) mode by changing \'zms\' to \'nph-zms\'.', Category = 'paths', Readonly = '0', Requires = '';
++insert into Config set Id = 11, Name = 'ZM_PATH_ZMS', Value = '/cgi-bin/zms', Type = 'string', DefaultValue = '/cgi-bin/nph-zms', Hint = 'relative/path/to/somewhere', Pattern = '(?-xism:^((?:[^/].*)?)/?$)', Format = ' $1 ', Prompt = 'Web path to zms streaming server', Help = 'The ZoneMinder streaming server is required to send streamed images to your browser. It will be installed into the cgi-bin path given at configuration time. This option determines what the web path to the server is rather than the local path on your machine. Ordinarily the streaming server runs in parser-header mode however if you experience problems with streaming you can change this to non-parsed-header (nph) mode by changing \'zms\' to \'nph-zms\'.', Category = 'paths', Readonly = '0', Requires = '';
+ insert into Config set Id = 12, Name = 'ZM_CAN_STREAM', Value = 'auto', Type = 'string', DefaultValue = 'auto', Hint = 'auto|yes|no', Pattern = '(?i-xsm:^([ayn]))', Format = ' ($1 =~ /^y/) ? \"yes\" : ($1 =~ /^n/ ? \"no\" : \"auto\" ) ', Prompt = 'Override the automatic detection of browser streaming capability', Help = 'If you know that your browser can handle image streams of the type \'multipart/x-mixed-replace\' but ZoneMinder does not detect this correctly you can set this option to ensure that the stream is delivered with or without the use of the Cambozola plugin. Selecting \'yes\' will tell ZoneMinder that your browser can handle the streams natively, \'no\' means that it can\'t and so the plugin will be used while \'auto\' lets ZoneMinder decide.', Category = 'images', Readonly = '0', Requires = '';
+ insert into Config set Id = 13, Name = 'ZM_STREAM_METHOD', Value = 'jpeg', Type = 'string', DefaultValue = 'jpeg', Hint = 'mpeg|jpeg', Pattern = '(?i-xsm:^([mj]))', Format = ' $1 =~ /^m/ ? \"mpeg\" : \"jpeg\" ', Prompt = 'Which method should be used to send video streams to your browser.', Help = 'ZoneMinder can be configured to use either mpeg encoded video or a series or still jpeg images when sending video streams. This option defines which is used. If you choose mpeg you should ensure that you have the appropriate plugins available on your browser whereas choosing jpeg will work natively on Mozilla and related browsers and with a Java applet on Internet Explorer', Category = 'images', Readonly = '0', Requires = '';
+ insert into Config set Id = 14, Name = 'ZM_COLOUR_JPEG_FILES', Value = '1', Type = 'boolean', DefaultValue = 'yes', Hint = 'yes|no', Pattern = '(?i-xsm:^([yn]))', Format = ' ($1 =~ /^y/) ? \"yes\" : \"no\" ', Prompt = 'Colourise greyscale JPEG files', Help = 'Cameras that capture in greyscale can write their captured images to jpeg files with a corresponding greyscale colour space. This saves a small amount of disk space over colour ones. However some tools such as ffmpeg either fail to work with this colour space or have to convert it beforehand. Setting this option to yes uses up a little more space but makes creation of MPEG files much faster.', Category = 'images', Readonly = '0', Requires = '';
+@@ -621,8 +621,8 @@ insert into Config set Id = 17, Name = '
+ insert into Config set Id = 18, Name = 'ZM_JPEG_IMAGE_QUALITY', Value = '70', Type = 'integer', DefaultValue = '70', Hint = 'integer', Pattern = '(?-xism:^(\d+)$)', Format = ' $1 ', Prompt = 'Set the JPEG quality setting for the streamed \'live\' images (1-100)', Help = 'When viewing a \'live\' stream for a monitor ZoneMinder will grab an image from the buffer and encode it into JPEG format before sending it. This option specifies what image quality should be used to encode these images. A higher number means better quality but less compression so will take longer to view over a slow connection. By contrast a low number means quicker to view images but at the price of lower quality images. This option does not apply when viewing events or still images as these are usually just read from disk and so will be encoded at the quality specified by the previous options.', Category = 'hidden', Readonly = '0', Requires = '';
+ insert into Config set Id = 19, Name = 'ZM_JPEG_STREAM_QUALITY', Value = '70', Type = 'integer', DefaultValue = '70', Hint = 'integer', Pattern = '(?-xism:^(\d+)$)', Format = ' $1 ', Prompt = 'Set the JPEG quality setting for the streamed \'live\' images (1-100)', Help = 'When viewing a \'live\' stream for a monitor ZoneMinder will grab an image from the buffer and encode it into JPEG format before sending it. This option specifies what image quality should be used to encode these images. A higher number means better quality but less compression so will take longer to view over a slow connection. By contrast a low number means quicker to view images but at the price of lower quality images. This option does not apply when viewing events or still images as these are usually just read from disk and so will be encoded at the quality specified by the previous options.', Category = 'images', Readonly = '0', Requires = '';
+ insert into Config set Id = 20, Name = 'ZM_MPEG_TIMED_FRAMES', Value = '1', Type = 'boolean', DefaultValue = 'yes', Hint = 'yes|no', Pattern = '(?i-xsm:^([yn]))', Format = ' ($1 =~ /^y/) ? \"yes\" : \"no\" ', Prompt = 'Tag video frames with a timestamp for more realistic streaming', Help = 'When using streamed MPEG based video, either for live monitor streams or events, ZoneMinder can send the streams in two ways. If this option is selected then the timestamp for each frame, taken from it\'s capture time, is included in the stream. This means that where the frame rate varies, for instance around an alarm, the stream will still maintain it\'s \'real\' timing. If this option is not selected then an approximate frame rate is calculated and that is used to schedule frames instead. This option should be selected unless you encounter problems with your preferred streaming method.', Category = 'images', Readonly = '0', Requires = 'ZM_STREAM_METHOD=mpeg';
+-insert into Config set Id = 21, Name = 'ZM_MPEG_LIVE_FORMAT', Value = 'swf', Type = 'string', DefaultValue = 'swf', Hint = 'string', Pattern = '(?-xism:^(.+)$)', Format = ' $1 ', Prompt = 'What format \'live\' video streams are played in', Help = 'When using MPEG mode ZoneMinder can output live video. However what formats are handled by the browser varies greatly between machines. This option allows you to specify a video format using a file extension format, so you would just enter the extension of the file type you would like and the rest is determined from that. The default of \'asf\' works well under Windows with Windows Media Player but I\'m currently not sure what, if anything, works on a Linux platform. If you find out please let me know! If this option is left blank then live streams will revert to being in motion jpeg format', Category = 'images', Readonly = '0', Requires = 'ZM_STREAM_METHOD=mpeg';
+-insert into Config set Id = 22, Name = 'ZM_MPEG_REPLAY_FORMAT', Value = 'swf', Type = 'string', DefaultValue = 'swf', Hint = 'string', Pattern = '(?-xism:^(.+)$)', Format = ' $1 ', Prompt = 'What format \'replay\' video streams are played in', Help = 'When using MPEG mode ZoneMinder can replay events in encoded video format. However what formats are handled by the browser varies greatly between machines. This option allows you to specify a video format using a file extension format, so you would just enter the extension of the file type you would like and the rest is determined from that. The default of \'asf\' works well under Windows with Windows Media Player and \'mpg\', or \'avi\' etc should work under Linux. If you knwo any more then please let me know! If this option is left blank then live streams will revert to being in motion jpeg format', Category = 'images', Readonly = '0', Requires = 'ZM_STREAM_METHOD=mpeg';
++insert into Config set Id = 21, Name = 'ZM_MPEG_LIVE_FORMAT', Value = 'libx264', Type = 'string', DefaultValue = 'swf', Hint = 'string', Pattern = '(?-xism:^(.+)$)', Format = ' $1 ', Prompt = 'What format \'live\' video streams are played in', Help = 'When using MPEG mode ZoneMinder can output live video. However what formats are handled by the browser varies greatly between machines. This option allows you to specify a video format using a file extension format, so you would just enter the extension of the file type you would like and the rest is determined from that. The default of \'asf\' works well under Windows with Windows Media Player but I\'m currently not sure what, if anything, works on a Linux platform. If you find out please let me know! If this option is left blank then live streams will revert to being in motion jpeg format', Category = 'images', Readonly = '0', Requires = 'ZM_STREAM_METHOD=mpeg';
++insert into Config set Id = 22, Name = 'ZM_MPEG_REPLAY_FORMAT', Value = 'libx264', Type = 'string', DefaultValue = 'swf', Hint = 'string', Pattern = '(?-xism:^(.+)$)', Format = ' $1 ', Prompt = 'What format \'replay\' video streams are played in', Help = 'When using MPEG mode ZoneMinder can replay events in encoded video format. However what formats are handled by the browser varies greatly between machines. This option allows you to specify a video format using a file extension format, so you would just enter the extension of the file type you would like and the rest is determined from that. The default of \'asf\' works well under Windows with Windows Media Player and \'mpg\', or \'avi\' etc should work under Linux. If you knwo any more then please let me know! If this option is left blank then live streams will revert to being in motion jpeg format', Category = 'images', Readonly = '0', Requires = 'ZM_STREAM_METHOD=mpeg';
+ insert into Config set Id = 23, Name = 'ZM_RAND_STREAM', Value = '1', Type = 'boolean', DefaultValue = 'yes', Hint = 'yes|no', Pattern = '(?i-xsm:^([yn]))', Format = ' ($1 =~ /^y/) ? \"yes\" : \"no\" ', Prompt = 'Add a random string to prevent caching of streams', Help = 'Some browsers can cache the streams used by ZoneMinder. In order to prevent his a harmless random string can be appended to the url to make each invocation of the stream appear unique.', Category = 'images', Readonly = '0', Requires = '';
+ insert into Config set Id = 24, Name = 'ZM_OPT_CAMBOZOLA', Value = '0', Type = 'boolean', DefaultValue = 'no', Hint = 'yes|no', Pattern = '(?i-xsm:^([yn]))', Format = ' ($1 =~ /^y/) ? \"yes\" : \"no\" ', Prompt = 'Is the (optional) cambozola java streaming client installed', Help = 'Cambozola is a handy low fat cheese flavoured Java applet that ZoneMinder uses to view image streams on browsers such as Internet Explorer that don\'t natively support this format. If you use this browser it is highly recommended to install this from http://www.charliemouse.com/code/cambozola/  however if it is not installed still images at a lower refresh rate can still be viewed.', Category = 'images', Readonly = '0', Requires = '';
+ insert into Config set Id = 25, Name = 'ZM_PATH_CAMBOZOLA', Value = 'cambozola.jar', Type = 'string', DefaultValue = 'cambozola.jar', Hint = 'relative/path/to/somewhere', Pattern = '(?-xism:^((?:[^/].*)?)/?$)', Format = ' $1 ', Prompt = 'Web path to (optional) cambozola java streaming client', Help = 'Cambozola is a handy low fat cheese flavoured Java applet that ZoneMinder uses to view image streams on browsers such as Internet Explorer that don\'t natively support this format. If you use this browser it is highly recommended to install this from http://www.charliemouse.com/code/cambozola/  however if it is not installed still images at a lower refresh rate can still be viewed. Leave this as \'cambozola.jar\' if cambozola is installed in the same directory as the ZoneMinder web client files.', Category = 'images', Readonly = '0', Requires = 'ZM_OPT_CAMBOZOLA=1';
