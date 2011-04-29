@@ -56,7 +56,7 @@ load_rc_config "${name}"
 : ${jenkins_group="%%JENKINS_GROUP%%"}
 : ${jenkins_log_file="%%JENKINS_LOG_FILE%%"}
 
-pidfile="/var/run/jenkins.pid"
+pidfile="/var/run/jenkins/jenkins.pid"
 command="/usr/sbin/daemon"
 java_cmd="${jenkins_java_home}/bin/java"
 procname="${java_cmd}"
@@ -73,6 +73,9 @@ jenkins_prestart() {
 	fi
 	if [ ! -d "${jenkins_home}" ]; then
 		install -d -o "${jenkins_user}" -g "${jenkins_group}" -m 750 "${jenkins_home}"
+	fi
+	if [ ! -d "/var/run/jenkins" ]; then
+		install -d -o "${jenkins_user}" -g "${jenkins_group}" -m 750 "/var/run/jenkins"
 	fi
 }
 
