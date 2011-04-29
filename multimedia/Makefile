@@ -123,6 +123,7 @@
     SUBDIR += gxmms
     SUBDIR += handbrake
     SUBDIR += hayes
+    SUBDIR += imagination
     SUBDIR += iriverter
     SUBDIR += iso2mkv
     SUBDIR += jmref
