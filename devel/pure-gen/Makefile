@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pure-gen
-PORTVERSION=	0.10
+PORTVERSION=	0.11
 CATEGORIES=	devel
 MASTER_SITES=	http://pure-lang.googlecode.com/files/
 
