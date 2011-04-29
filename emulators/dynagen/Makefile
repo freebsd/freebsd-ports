@@ -7,13 +7,14 @@
 
 PORTNAME=	dynagen
 PORTVERSION=	0.11.0
+PORTREVISION=	1
 CATEGORIES=	emulators
 MASTER_SITES=	SF/dyna-gen/${PORTNAME}%20source%20_%20Linux/${PORTNAME}%20${PORTVERSION}
 
 MAINTAINER=	pavelivolkov@googlemail.com
 COMMENT=	Text-based front end for Dynamips development version
 
-RUN_DEPENDS=	dynamips:${PORTSDIR}/emulators/dynamips-devel
+RUN_DEPENDS=	dynamips:${PORTSDIR}/emulators/dynamips-community
 # Note that it *should* be dynamips-devel but that port installs it as dynamips
 
 USE_PYTHON=	yes
