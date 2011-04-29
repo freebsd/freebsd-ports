@@ -23,8 +23,6 @@ RUN_DEPENDS=	xorg-fonts>=7.2:${PORTSDIR}/x11-fonts/xorg-fonts \
 LICENSE=	GPLv2
 
 GNU_CONFIGURE=	yes
-# The vnc supplied zlib seg. faults if compiled with -O
-CONFIGURE_ARGS=	--with-installed-zlib
 USE_XORG=	x11 xext xpm xext xtst sm ice inputproto
 WANT_PERL=	yes
 
@@ -39,11 +37,16 @@ MAN1=		vncviewer.1 \
 		vncconfig.1 \
 		x0vncserver.1
 
+.ifdef(REALVNC_BASE)
+PREFIX=${REALVNC_BASE}
+.endif
+
 .include <bsd.port.pre.mk>
 
 .if !defined(WITHOUT_SERVER)
-.if ${OSVERSION} >= 900000
-BROKEN=		VNC server part does not build on 9.x
+.if ${OSVERSION} < 900000
+# The vnc supplied zlib seg. faults if compiled with -O
+CONFIGURE_ARGS=	--with-installed-zlib
 .endif
 
 # This is a placeholder MASTER_SITES entry -- see the pre-fetch target.
@@ -54,7 +57,7 @@ DISTFILES+=	X430src-1.tgz:x \
 		X430src-3.tgz:x
 
 RUN_DEPENDS+=	xauth:${PORTSDIR}/x11/xauth \
-		${LOCALBASE}/lib/X11/fonts/misc/6x13-ISO8859-1.pcf.gz:${X_FONTS_MISC_PORT} \
+		${PREFIX}/lib/X11/fonts/misc/6x13-ISO8859-1.pcf.gz:${X_FONTS_MISC_PORT} \
 		${X11BASE}/lib/X11/fonts/misc/fonts.alias:${X_FONTS_ALIAS_PORT}
 
 USE_PERL5=	yes
@@ -87,7 +90,7 @@ post-extract:
 
 post-patch:
 .if !defined(WITHOUT_SERVER)
-	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
+	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${PREFIX}|g' \
 		${WRKSRC}/xc/config/cf/vnc.def
 	@${REINPLACE_CMD} -e 's|%%CC%%|${CC}|g' -e 's|%%CXX%%|${CXX}|g' \
 		-e 's|%%CFLAGS%%|${CFLAGS}|g' \
@@ -124,10 +127,10 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/xc/programs/Xserver/Xvnc ${PREFIX}/bin
 	${INSTALL_SCRIPT} ${WRKSRC}/vncserver ${PREFIX}/bin
 	@if [ -f ${WRKSRC}/xc/programs/Xserver/vnc/module/vnc.so ]; then \
-		${MKDIR} ${LOCALBASE}/lib/modules/extensions ; \
+		${MKDIR} ${PREFIX}/lib/modules/extensions ; \
 		${INSTALL_PROGRAM} \
 			${WRKSRC}/xc/programs/Xserver/vnc/module/vnc.so \
-			${LOCALBASE}/lib/modules/extensions ; \
+			${PREFIX}/lib/modules/extensions ; \
 	fi
 	${INSTALL_MAN} ${WRKSRC}/xc/programs/Xserver/Xvnc.man \
 		${PREFIX}/man/man1/Xvnc.1
