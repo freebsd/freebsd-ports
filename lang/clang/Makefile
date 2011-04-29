@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	clang
-PORTVERSION=	2.8
-PORTREVISION=	2
+PORTVERSION=	2.9
 CATEGORIES=	lang devel
 MASTER_SITES=	http://llvm.org/releases/${PORTVERSION}/
 EXTRACT_SUFX=	.tgz
@@ -57,9 +56,7 @@ CONFIGURE_ARGS+=	--enable-optimized
 .endif
 
 .if defined(NOPORTDOCS)
-DOCSRCDIR=
-.else
-DOCSRCDIR=	docs
+CONFIGURE_ARGS+=	--disable-docs
 .endif
 
 MAN1=		clang.1
@@ -80,8 +77,6 @@ post-patch:
 	    ${WRKSRC}/Makefile.config.in
 	${REINPLACE_CMD} -e 's|\(PROJ_mandir.*:=\).*$$|\1${MANPREFIX}/man|g' \
 	    ${WRKSRC}/Makefile.config.in
-	${REINPLACE_CMD} -e 's|%%DOCSRCDIR%%|${DOCSRCDIR}|' \
-	    ${WRKSRC}/Makefile ${WRKSRC}/tools/clang/Makefile
 	${REINPLACE_CMD} -e 's|/usr/bin/env perl|${PERL}|' \
 	    -e 's|%%DATADIR%%|${DATADIR}|' \
 	    ${WRKSRC}/tools/clang/tools/scan-build/ccc-analyzer \
@@ -91,7 +86,8 @@ post-patch:
 	    ${WRKSRC}/tools/clang/tools/scan-view/scan-view
 
 pre-build:
-	${LN} -s ${LOCALBASE}/include/llvm/Intrinsics.gen ${WRKSRC}/include/llvm/
+	${LN} -sf ${LOCALBASE}/include/llvm/Intrinsics.gen ${WRKSRC}/include/llvm/
+	cd ${WRKSRC}/utils/unittest && ${GMAKE}
 
 .if defined(NOPORTDOCS)
 post-build:
@@ -131,7 +127,6 @@ regression-test: ${BUILD_COOKIE}
 
 PLIST_FILE_LIST=	bin/ccc-analyzer \
 			bin/c++-analyzer \
-			bin/c-index-test \
 			bin/clang \
 			bin/clang++ \
 			bin/scan-build \
