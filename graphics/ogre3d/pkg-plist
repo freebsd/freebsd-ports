@@ -66,6 +66,7 @@ include/OGRE/OgreFileSystem.h
 include/OGRE/OgreFont.h
 include/OGRE/OgreFontManager.h
 include/OGRE/OgreFrameListener.h
+include/OGRE/OgreFreeImageCodec.h
 include/OGRE/OgreFrustum.h
 include/OGRE/OgreGpuProgram.h
 include/OGRE/OgreGpuProgramManager.h
