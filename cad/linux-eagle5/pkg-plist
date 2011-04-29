@@ -1,4 +1,5 @@
 bin/eagle
+share/eagle5/bin/designlink22.png
 share/eagle5/bin/eagle
 share/eagle5/bin/eagle.def
 share/eagle5/bin/eagle_de.htm
@@ -9,6 +10,7 @@ share/eagle5/bin/eagle_zh.qm
 share/eagle5/bin/eagleicon16.png
 share/eagle5/bin/eagleicon50.png
 share/eagle5/bin/freeware.key
+share/eagle5/bin/pcb-service.png
 share/eagle5/bin/platforms-lin.png
 share/eagle5/bin/platforms-mac.png
 share/eagle5/bin/platforms-win.png
@@ -115,6 +117,7 @@ share/eagle5/lbr/con-jack.lbr
 share/eagle5/lbr/con-jae.lbr
 share/eagle5/lbr/con-jst.lbr
 share/eagle5/lbr/con-kycon.lbr
+share/eagle5/lbr/con-kyocera-elco.lbr
 share/eagle5/lbr/con-lemo.lbr
 share/eagle5/lbr/con-leotronics.lbr
 share/eagle5/lbr/con-lsta.lbr
@@ -191,6 +194,7 @@ share/eagle5/lbr/elektro/e-steckverbinder.lbr
 share/eagle5/lbr/elektro/e-stromversorgungselemente.lbr
 share/eagle5/lbr/elektro/e-symbole.lbr
 share/eagle5/lbr/elektro/eib-busch-jaeger.lbr
+share/eagle5/lbr/em-microelectronic.lbr
 share/eagle5/lbr/etx-board.lbr
 share/eagle5/lbr/exar.lbr
 share/eagle5/lbr/fairchild-semic.lbr
@@ -206,6 +210,7 @@ share/eagle5/lbr/ftdichip.lbr
 share/eagle5/lbr/fujitsu.lbr
 share/eagle5/lbr/fuse.lbr
 share/eagle5/lbr/gennum.lbr
+share/eagle5/lbr/halo-electronics.lbr
 share/eagle5/lbr/heatsink.lbr
 share/eagle5/lbr/holes.lbr
 share/eagle5/lbr/holtek.lbr
@@ -234,6 +239,7 @@ share/eagle5/lbr/linear.lbr
 share/eagle5/lbr/linx.lbr
 share/eagle5/lbr/logo.lbr
 share/eagle5/lbr/lprs.lbr
+share/eagle5/lbr/lsi-computer-systems.lbr
 share/eagle5/lbr/lumiled.lbr
 share/eagle5/lbr/marks.lbr
 share/eagle5/lbr/maxim.lbr
@@ -268,6 +274,7 @@ share/eagle5/lbr/microphon.lbr
 share/eagle5/lbr/microwave.lbr
 share/eagle5/lbr/midori-sensor.lbr
 share/eagle5/lbr/minicircuits.lbr
+share/eagle5/lbr/mitsubishi-semiconductor.lbr
 share/eagle5/lbr/motorola-sensor-driver.lbr
 share/eagle5/lbr/murata-filter.lbr
 share/eagle5/lbr/murata-sensor.lbr
@@ -324,6 +331,7 @@ share/eagle5/lbr/sensor-heraeus.lbr
 share/eagle5/lbr/sensor-infratec.lbr
 share/eagle5/lbr/sharp.lbr
 share/eagle5/lbr/silabs.lbr
+share/eagle5/lbr/sim-technology.lbr
 share/eagle5/lbr/sipex.lbr
 share/eagle5/lbr/smd-ipc.lbr
 share/eagle5/lbr/smd-special.lbr
@@ -336,9 +344,11 @@ share/eagle5/lbr/supertex.lbr
 share/eagle5/lbr/supply1.lbr
 share/eagle5/lbr/supply2.lbr
 share/eagle5/lbr/switch-alps.lbr
+share/eagle5/lbr/switch-coto.lbr
 share/eagle5/lbr/switch-dil.lbr
 share/eagle5/lbr/switch-misc.lbr
 share/eagle5/lbr/switch-omron.lbr
+share/eagle5/lbr/switch-raychem.lbr
 share/eagle5/lbr/switch.lbr
 share/eagle5/lbr/telcom.lbr
 share/eagle5/lbr/telecontrolli.lbr
@@ -420,6 +430,8 @@ share/eagle5/ulp/cam2print.ulp
 share/eagle5/ulp/change-pad-in-lbr-1.bmp
 share/eagle5/ulp/change-pad-in-lbr-x.bmp
 share/eagle5/ulp/change-pad-in-lbr.ulp
+share/eagle5/ulp/change-prefix-sch.ulp
+share/eagle5/ulp/change-via-by-stack.ulp
 share/eagle5/ulp/clear-layer-in-lbr.ulp
 share/eagle5/ulp/cmd-change-brd-width.ulp
 share/eagle5/ulp/cmd-change-class.ulp
@@ -509,7 +521,9 @@ share/eagle5/ulp/count.ulp
 share/eagle5/ulp/del-devices.ulp
 share/eagle5/ulp/del-empty-devices.ulp
 share/eagle5/ulp/del-pack-sym.ulp
-share/eagle5/ulp/designlink.ulp
+share/eagle5/ulp/designlink-inc.ulp
+share/eagle5/ulp/designlink-lbr.ulp
+share/eagle5/ulp/designlink-order.ulp
 share/eagle5/ulp/dif40.ulp
 share/eagle5/ulp/dose-pro.ulp
 share/eagle5/ulp/drill-aid.ulp
@@ -543,6 +557,7 @@ share/eagle5/ulp/exp-descr-script.ulp
 share/eagle5/ulp/exp-project-lbr.ulp
 share/eagle5/ulp/exp2image.ulp
 share/eagle5/ulp/export-class.ulp
+share/eagle5/ulp/export-ict-netlist-pad-coordinates.ulp
 share/eagle5/ulp/fabmaster.ulp
 share/eagle5/ulp/fill-via4vacuum.ulp
 share/eagle5/ulp/find-single-ended-wire.ulp
@@ -604,18 +619,24 @@ share/eagle5/ulp/mill-outlines-top.bmp
 share/eagle5/ulp/mill-outlines-via.bmp
 share/eagle5/ulp/mill-outlines.ulp
 share/eagle5/ulp/mirror-board.ulp
+share/eagle5/ulp/mount-marks-smd.ulp
+share/eagle5/ulp/mount-marks.ulp
 share/eagle5/ulp/mount-trace.ulp
 share/eagle5/ulp/mount.ulp
 share/eagle5/ulp/mountsmd.ulp
+share/eagle5/ulp/netlist-converter.ulp
 share/eagle5/ulp/nextdevdescript.ulp
 share/eagle5/ulp/nextpacdescript.ulp
 share/eagle5/ulp/normalize-text.ulp
 share/eagle5/ulp/outlines.ulp
 share/eagle5/ulp/panelize.ulp
 share/eagle5/ulp/part2html.ulp
+share/eagle5/ulp/pcb-service.ulp
 share/eagle5/ulp/prevdevdescript.ulp
 share/eagle5/ulp/prevpacdescript.ulp
+share/eagle5/ulp/print-inductor-ulp.bmp
 share/eagle5/ulp/print-inductor.ulp
+share/eagle5/ulp/print-spiral.bmp
 share/eagle5/ulp/remove-dev-sym-pac.ulp
 share/eagle5/ulp/rename-signal.ulp
 share/eagle5/ulp/renamnet-suffix.ulp
@@ -654,15 +675,12 @@ share/eagle5/ulp/warning.bmp
 @dirrm share/eagle5/dru
 @dirrm share/eagle5/lbr/elektro
 @dirrm share/eagle5/lbr
+@dirrm share/eagle5/projects/examples/elektro
 @dirrm share/eagle5/projects/examples/hexapod
 @dirrm share/eagle5/projects/examples/singlesided
 @dirrm share/eagle5/projects/examples/tutorial
-@dirrm share/eagle5/projects/examples/elektro
 @dirrm share/eagle5/projects/examples
 @dirrm share/eagle5/projects
 @dirrm share/eagle5/scr
 @dirrm share/eagle5/ulp
 @dirrmtry share/eagle5
-@cwd %%LINUXBASE%%
-lib/libcrypto.so.0.9.8
-lib/libssl.so.0.9.8

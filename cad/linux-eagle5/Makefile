@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	linux-eagle5
-EAGLEBASEVERSION?=	5.10
+EAGLEBASEVERSION?=	5.11
 EAGLEBUGFIX?=	0
 EAGLEVERSION=	${EAGLEBASEVERSION}.${EAGLEBUGFIX}
 PORTVERSION=	${EAGLEVERSION:S/r/./}
@@ -41,6 +41,10 @@ MAN1=		eagle.1
 
 CPIO?=		/usr/bin/cpio --quiet -pdum -R
 
+DESKTOP_ENTRIES=	"Eagle5" "Tool for designing printed circuit boards" \
+			${DATADIR}/ulp/eagle.bmp \
+			"eagle" "Development;Electronics;Engineering;" "false"
+
 .include <bsd.port.pre.mk>
 
 PLIST_SUB+=	LINUXBASE=${LINUXBASE}
@@ -60,9 +64,6 @@ do-install:
 	@${INSTALL_MAN} ${DATADIR}/doc/eagle.1 ${PREFIX}/man/man1/eagle.1
 	@${SED} -e "s:%%DATADIR%%:${DATADIR}:g" ${FILESDIR}/eagle.sh > ${PREFIX}/bin/eagle
 	@${CHMOD} 0555 ${PREFIX}/bin/eagle
-	@#Need to bend the ssl locations for this port :-(
-	@${LN} -s ${LINUXBASE}/lib/libssl.so.0.9.8g ${LINUXBASE}/lib/libssl.so.0.9.8
-	@${LN} -s ${LINUXBASE}/lib/libcrypto.so.0.9.8g ${LINUXBASE}/lib/libcrypto.so.0.9.8
 
 post-install:
 	@${SED} -e "s:%%PREFIX%%:${PREFIX}:g" ${PKGDIR}/pkg-message > \
