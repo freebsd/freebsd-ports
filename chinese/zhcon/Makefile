@@ -7,7 +7,7 @@
 
 PORTNAME=	zhcon
 PORTVERSION=	0.2.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	chinese
 MASTER_SITES=	LOCAL/chinsan/chinese
 
@@ -36,7 +36,6 @@ post-patch:
 		${WRKSRC}/src/display/fblinear8.cpp ${WRKSRC}/src/display/fblinear16.cpp \
 		${WRKSRC}/src/display/fblinear24.cpp
 	@${REINPLACE_CMD} -e '5 s,#,,; s,/usr/lib,${PREFIX}/lib,' ${WRKSRC}/src/zhcon.conf
-	@${REINPLACE_CMD} -e 's,"/etc,"${PREFIX}/etc,'  ${WRKSRC}/src/zhcon.cpp
 	@${REINPLACE_CMD} -Ee 's,(\s*=\s*)("?)/usr/local([^"]*)("?),\1\2${PREFIX}\3\4,g' \
 		-e '/_nl_expand_alias/s,\(0\),\(\),g' ${WRKSRC}/${CONFIGURE_SCRIPT}
 .if defined(WITH_BIG5)
