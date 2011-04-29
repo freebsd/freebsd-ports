@@ -6,15 +6,19 @@
 #
 
 PORTNAME=	AuthCAS
-PORTVERSION=	1.4
+PORTVERSION=	1.5
 CATEGORIES=	security perl5
-MASTER_SITES=	http://cpan.uwinnipeg.ca/cpan/authors/id/O/OS/OSALAUN/ \
-		ftp://cpan.mirror.iphh.net/pub/CPAN/authors/id/O/OS/OSALAUN/ \
-		http://cpan.mirror.iphh.net/authors/id/O/OS/OSALAUN/
+MASTER_SITES=	CPAN
+MASTER_SITE_SUBDIR=	CPAN:OSALAUN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	fw@moov.de
 COMMENT=	A Perl API to Yale's Central Authentication System (CAS)
+
+BUILD_DEPENDS=	p5-libwww>=0:${PORTSDIR}/www/p5-libwww \
+		p5-IO-Socket-SSL>=0:${PORTSDIR}/security/p5-IO-Socket-SSL
+
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	YES
 
