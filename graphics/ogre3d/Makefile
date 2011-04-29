@@ -7,6 +7,7 @@
 
 PORTNAME=	ogre3d
 PORTVERSION=	1.7.2
+PORTREVISION=	1
 CATEGORIES=	graphics devel
 MASTER_SITES=	SF/ogre/ogre/${PORTVERSION:C/.[0-9]$//g}
 DISTNAME=	ogre_src_v${PORTVERSION:S/./-/g}
@@ -15,7 +16,8 @@ MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	A scene-oriented, flexible 3D engine written in C++
 
 LIB_DEPENDS=	zzip.13:${PORTSDIR}/devel/zziplib \
-		freetype.9:${PORTSDIR}/print/freetype2
+		freetype.9:${PORTSDIR}/print/freetype2 \
+		freeimage.3:${PORTSDIR}/graphics/freeimage
 
 USE_LDCONFIG=	YES
 USE_BZIP2=	YES
