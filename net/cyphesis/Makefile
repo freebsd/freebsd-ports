@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	cyphesis
-PORTVERSION=	0.5.21
-PORTREVISION=	6
+PORTVERSION=	0.5.26
 CATEGORIES=	net
 MASTER_SITES=	SF/worldforge/${PORTNAME}%20%28server%29/${PORTVERSION}
 
@@ -17,9 +16,9 @@ COMMENT=	A server for WorldForge games
 
 LIB_DEPENDS=	Atlas-0.6.1:${PORTSDIR}/devel/atlas-devel \
 		varconf-1.0.6:${PORTSDIR}/devel/varconf \
-		wfmath-0.3.4:${PORTSDIR}/math/wfmath \
-		mercator-0.2.8:${PORTSDIR}/devel/mercator \
-		skstream-0.3.5:${PORTSDIR}/net/skstream \
+		wfmath-0.3.5:${PORTSDIR}/math/wfmath \
+		mercator-0.3.1:${PORTSDIR}/devel/mercator \
+		skstream-0.3.6:${PORTSDIR}/net/skstream \
 		gcrypt.17:${PORTSDIR}/security/libgcrypt
 
 CONFIGURE_ARGS=	--with-python=${LOCALBASE}
@@ -48,6 +47,11 @@ post-patch:
 		${REINPLACE_CMD} -e 's|$$(datadir)/cyphesis|${DATADIR}|g'
 	@${REINPLACE_CMD} -e 's|/bash|/sh|' ${WRKSRC}/scripts/extract_revision.sh
 	@${REINPLACE_CMD} -e '1s|python|${LOCALBASE}/bin/${PYTHON_VERSION}|' ${WRKSRC}/scripts/gen_buildid.py
+	@${REINPLACE_CMD} -e 's/#ifdef __APPLE__/#if defined(__APPLE__) || defined(__FreeBSD__)/g; \
+		s/#ifndef __APPLE__/#if !defined(__APPLE__) \&\& !defined(__FreeBSD__)/g' \
+		${WRKSRC}/common/system.cpp \
+		${WRKSRC}/common/AtlasStreamClient.cpp \
+		${WRKSRC}/server/CommUnixListener.cpp
 
 post-install:
 .if !defined(NOPORTDOCS)

@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	mercator
-PORTVERSION=	0.2.9
+PORTVERSION=	0.3.0
 CATEGORIES=	devel
 MASTER_SITES=	SF/worldforge/Mercator%20%28terrain%20lib%29/${PORTVERSION}
 
 MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	A procedural terrain library
 
-LIB_DEPENDS=	wfmath-0.3.4:${PORTSDIR}/math/wfmath
+LIB_DEPENDS=	wfmath-0.3.5:${PORTSDIR}/math/wfmath
 
 USE_GNOME=	pkgconfig gnomehack
 GNU_CONFIGURE=	yes

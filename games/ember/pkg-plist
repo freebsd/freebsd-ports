@@ -292,6 +292,7 @@ share/ember/media/shared/common/3d_objects/environment/textures/slimy_moss/N.png
 share/ember/media/shared/common/3d_objects/environment/textures/slimy_moss/S.png
 share/ember/media/shared/common/3d_objects/environment/textures/slimy_moss/ogre.material
 share/ember/media/shared/common/3d_objects/environment/textures/smoke/D.png
+share/ember/media/shared/common/3d_objects/environment/textures/smoke/colors/D.png
 share/ember/media/shared/common/3d_objects/environment/textures/smoke/ogre.material
 share/ember/media/shared/common/3d_objects/environment/textures/snow/D.png
 share/ember/media/shared/common/3d_objects/environment/textures/snow/ogre.material
@@ -1807,7 +1808,6 @@ share/ember/media/shared/scripting/lua/QuickHelp.lua
 share/ember/media/shared/scripting/lua/Inspect.lua
 share/ember/media/shared/scripting/lua/ActionBarDefaultAction.lua
 share/ember/media/shared/scripting/lua/Console.lua
-share/ember/media/shared/common/3d_objects/environment/textures/smoke/smokecolors.png
 share/ember/media/shared/common/3d_objects/creatures/spider/spider.mesh
 @dirrm share/ember/media/shared/core
 @dirrm share/ember/media/shared/common/soundfx/items/saw
@@ -1849,6 +1849,7 @@ share/ember/media/shared/common/3d_objects/creatures/spider/spider.mesh
 @dirrm share/ember/media/shared/common/3d_objects/environment/textures/ground_sand
 @dirrm share/ember/media/shared/common/3d_objects/environment/textures/moraf
 @dirrm share/ember/media/shared/common/3d_objects/environment/textures/ground_twisty_grass
+@dirrm share/ember/media/shared/common/3d_objects/environment/textures/smoke/colors
 @dirrm share/ember/media/shared/common/3d_objects/environment/textures/smoke
 @dirrm share/ember/media/shared/common/3d_objects/environment/textures/stone_granite_rock
 @dirrm share/ember/media/shared/common/3d_objects/environment/textures/ground_dirt_demonic
