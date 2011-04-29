@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ephemera
-PORTVERSION=	2.7
+PORTVERSION=	2.8
 CATEGORIES=	www
 MASTER_SITES=	http://www.mammothcheese.ca/
 
