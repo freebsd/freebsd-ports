@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_APACHE_JAKARTA}
 MASTER_SITE_SUBDIR=	${PORTNAME}/binaries
 PKGNAMEPREFIX=	jakarta-
 
-MAINTAINER=	des@FreeBSD.org
+MAINTAINER=	java@FreeBSD.org
 COMMENT=	A library for generating Java bytecode
 
 NO_BUILD=	yes

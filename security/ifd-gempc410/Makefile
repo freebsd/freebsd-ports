@@ -11,7 +11,7 @@ CATEGORIES=	security
 MASTER_SITES=	http://ludovic.rousseau.free.fr/softwares/ifd-GemPC/
 DISTNAME=	ifd-gempc-${PORTVERSION}
 
-MAINTAINER=	des@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PC/SC Lite driver for the GemPC 410 serial smart card reader
 
 BUILD_DEPENDS=	${LOCALBASE}/include/ifdhandler.h:${PORTSDIR}/security/ifd-devkit
