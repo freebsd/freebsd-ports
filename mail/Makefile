@@ -220,7 +220,6 @@
     SUBDIR += kavmilter
     SUBDIR += kbiff
     SUBDIR += kcheckgmail
-    SUBDIR += kiltdown
     SUBDIR += kshowmail
     SUBDIR += lbdb
     SUBDIR += lens

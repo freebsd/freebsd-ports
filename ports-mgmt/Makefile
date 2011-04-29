@@ -55,13 +55,11 @@
     SUBDIR += portlint
     SUBDIR += portmanager
     SUBDIR += portmaster
-    SUBDIR += portmk
     SUBDIR += portrac
     SUBDIR += portscout
     SUBDIR += portsearch
     SUBDIR += portshaker
     SUBDIR += portshaker-config
-    SUBDIR += portsman
     SUBDIR += portsopt
     SUBDIR += porttools
     SUBDIR += portupdate-scan
