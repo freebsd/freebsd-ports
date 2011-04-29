@@ -61,6 +61,7 @@ etc/cyphesis/mason.d/weapons.xml
 %%DATADIR%%/rulesets/mason/define_world_aglanor.py
 %%DATADIR%%/rulesets/mason/regression.py
 %%DATADIR%%/rulesets/mason/tests.py
+%%DATADIR%%/rulesets/mason/terrain.py
 %%DATADIR%%/rulesets/mason/world/__init__.py
 %%DATADIR%%/rulesets/mason/world/objects/Pile.py
 %%DATADIR%%/rulesets/mason/world/objects/Weather.py
@@ -109,6 +110,7 @@ etc/cyphesis/mason.d/weapons.xml
 %%DATADIR%%/rulesets/mason/world/tasks/Delve.py
 %%DATADIR%%/rulesets/mason/world/tasks/Dig.py
 %%DATADIR%%/rulesets/mason/world/tasks/Fishing.py
+%%DATADIR%%/rulesets/mason/world/tasks/Heaping.py
 %%DATADIR%%/rulesets/mason/world/tasks/Logging.py
 %%DATADIR%%/rulesets/mason/world/tasks/Raise.py
 %%DATADIR%%/rulesets/mason/world/tasks/Ram.py
