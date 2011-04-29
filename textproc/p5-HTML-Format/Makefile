@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	HTML-Format
-PORTVERSION=	2.05
+PORTVERSION=	2.07
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -19,7 +19,7 @@ BUILD_DEPENDS=	${SITE_PERL}/HTML/Element.pm:${PORTSDIR}/www/p5-HTML-Tree \
 		${SITE_PERL}/File/Slurp.pm:${PORTSDIR}/devel/p5-File-Slurp
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+PERL_MODBUILD=	yes
 INSTALL_TARGET=	pure_install
 MAN3=		HTML::Formatter.3 HTML::FormatPS.3 HTML::FormatRTF.3 HTML::FormatText.3
 
