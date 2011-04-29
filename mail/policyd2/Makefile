@@ -30,6 +30,7 @@ PORTDOCS=	AUTHORS CHANGELOG INSTALL TODO WISHLIST
 PORTDATA=	*
 
 OPTIONS=	MYSQL "Use MySQL support" On \
+		PostgreSQL "Use PostgreSQL support" Off \
 		SQLite "Use SQLite support" Off
 
 .include <bsd.port.pre.mk>
@@ -39,6 +40,9 @@ RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBD/mysql.pm:${PORTSDIR}/databases/p5-DB
 .endif
 .if defined(WITH_SQLite)
 RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBD/SQLite.pm:${PORTSDIR}/databases/p5-DBD-SQLite
+.endif
+.if defined(WITH_PostgreSQL)
+RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBD/Pg.pm:${PORTSDIR}/databases/p5-DBD-Pg
 .endif
 
 post-patch:
