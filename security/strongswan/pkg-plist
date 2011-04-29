@@ -25,6 +25,9 @@ libexec/ipsec/plugins/libstrongswan-attr.so
 libexec/ipsec/plugins/libstrongswan-des.a
 libexec/ipsec/plugins/libstrongswan-des.la
 libexec/ipsec/plugins/libstrongswan-des.so
+libexec/ipsec/plugins/libstrongswan-constraints.a
+libexec/ipsec/plugins/libstrongswan-constraints.la
+libexec/ipsec/plugins/libstrongswan-constraints.so
 libexec/ipsec/plugins/libstrongswan-dnskey.a
 libexec/ipsec/plugins/libstrongswan-dnskey.la
 libexec/ipsec/plugins/libstrongswan-dnskey.so
@@ -70,6 +73,9 @@ libexec/ipsec/plugins/libstrongswan-sha1.so
 libexec/ipsec/plugins/libstrongswan-sha2.a
 libexec/ipsec/plugins/libstrongswan-sha2.la
 libexec/ipsec/plugins/libstrongswan-sha2.so
+libexec/ipsec/plugins/libstrongswan-revocation.a
+libexec/ipsec/plugins/libstrongswan-revocation.la
+libexec/ipsec/plugins/libstrongswan-revocation.so
 libexec/ipsec/plugins/libstrongswan-socket-default.a
 libexec/ipsec/plugins/libstrongswan-socket-default.la
 libexec/ipsec/plugins/libstrongswan-socket-default.so
