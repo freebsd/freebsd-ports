@@ -8593,6 +8593,7 @@ linux-etqw-server               ports/games/linux-etqw-server
 linux-expat                     ports/textproc/linux-expat
 linux-f10-allegro               ports/devel/linux-f10-allegro
 linux-f10-alsa-lib              ports/audio/linux-f10-alsa-lib
+linux-f10-alsa-plugins-oss      ports/audio/linux-f10-alsa-plugins-oss
 linux-f10-arts                  ports/audio/linux-f10-arts
 linux-f10-aspell                ports/textproc/linux-f10-aspell
 linux-f10-atk                   ports/accessibility/linux-f10-atk
