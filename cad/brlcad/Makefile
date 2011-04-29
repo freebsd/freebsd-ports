@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	brlcad
-PORTVERSION=	7.18.0
+PORTVERSION=	7.18.4
 CATEGORIES=	cad
 MASTER_SITES=	SF/${PORTNAME}/BRL-CAD%20Source/${PORTVERSION}
 
@@ -44,7 +44,7 @@ CONFIGURE_ARGS+=--with-libs="-lpng ${EXTRA_LIBS}" --program-transform-name=""	\
 PLIST_SUB+=	PORTVERSION=${PORTVERSION}
 
 MAN1=	anim_script.1 anim_sort.1 anim_time.1 anim_track.1 anim_turn.1		\
-	ap-pix.1 asc-nmg.1 asc-pl.1 awf.1 azel.1 bary.1 benchmark.1		\
+	ap-pix.1 asc-nmg.1 asc-pl.1 azel.1 bary.1 benchmark.1			\
 	bot_dump.1 bot_shell-vtk.1 brlcad-config.1 brlcad.1 brlman.1		\
 	buffer.1 bw-fb.1 bw-imp.1 bw-pix.1 bw-png.1 bw-ps.1 bw-rle.1		\
 	bw3-pix.1 bwcrop.1 bwdiff.1 bwfilter.1 bwhist.1 bwhisteq.1 bwmod.1	\
@@ -58,7 +58,7 @@ MAN1=	anim_script.1 anim_sort.1 anim_time.1 anim_track.1 anim_turn.1		\
 	fbfade.1 fbframe.1 fbfree.1 fbgamma.1 fbgrid.1 fbhelp.1 fblabel.1	\
 	fbline.1 fbpoint.1 fbscanplot.1 fbserv.1 fbstretch.1 fbzoom.1		\
 	fedex.1 fedex_plus.1 firpass.1 g-acad.1 g-dxf.1 g-egg.1 g-euclid.1	\
-	g-iges.1 g-nff.1 g-nmg.1 g-obj.1 g-shell.rect.1 g-stl.1 g-tankill.1	\
+	g-iges.1 g-nff.1 g-nmg.1 g-obj.1 g-shell-rect.1 g-stl.1 g-tankill.1	\
 	g-var.1 g-vrml.1 g-x3d.1 g2asc.1 g_diff.1 g_lint.1 gencolor.1		\
 	gif-fb.1 gif2fb.1 gqa.1 halftone.1 hex.1 iges-g.1 imgdims.1 ir-X.1	\
 	ir-sgi.1 irdisp.1 lgt.1 loop.1 mac-pix.1 mged.1 mkProbe.1		\
@@ -82,7 +82,7 @@ MAN1=	anim_script.1 anim_sort.1 anim_time.1 anim_track.1 anim_turn.1		\
 	vdeck.1 viewpoint-g.1 wavelet.1
 
 MAN3=	RegisterC.3 Stack.3 htond.3 libbu.3 libcursor.3 libfb.3 liborle.3	\
-	libplot3.3 librt.3 libwdb.3 redblack.3
+	libplot3.3 librt.3 libwdb.3 redblack.3 Preserve.3 Class.3 Object.3 List.3
 
 MAN5=	bw.5 cmap.5 gattributes.5 pix.5 plot3.5
 
