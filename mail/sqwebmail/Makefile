@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	sqwebmail
-PORTVERSION=	5.4.3
+PORTVERSION=	5.5.1
 CATEGORIES=	mail www
 MASTER_SITES=	SF/courier/webmail/${PORTVERSION}
 
@@ -186,7 +186,7 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|@echo|echo|g'  ${WRKSRC}/maildir/configure
 
 	@${REINPLACE_CMD} -e 's|-lpcre|-L${LOCALBASE}/lib &|g' \
-		 ${WRKSRC}/sqwebmail/Makefile.in
+		${WRKSRC}/sqwebmail/Makefile.in
 
 	@${REINPLACE_CMD} -e 's|\$$(testmaildirfilter_LDADD)|& \$$(LIBPCRE)|g; \
 		s|$$(LINK) $$(maildirkw_LDFLAGS)|$$(CXXLINK) $$(maildirkw_LDFLAGS)|' \
