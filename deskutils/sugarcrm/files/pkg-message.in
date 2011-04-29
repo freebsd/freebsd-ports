@@ -27,7 +27,7 @@ session.save_path = "/tmp"
 
 Alias /sugarcrm %%WWWDIR%%
 <Directory %%WWWDIR%%>
-	AllowOverride RedirectMatch
+	AllowOverride None
 	Order allow,deny
 	Allow from all
 </Directory>
