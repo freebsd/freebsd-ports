@@ -7,6 +7,7 @@
 
 PORTNAME=	arirang
 PORTVERSION=	2.02
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	security www
 MASTER_SITES=	http://monkey.org/~pilot/arirang/
