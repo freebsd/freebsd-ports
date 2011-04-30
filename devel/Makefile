@@ -3144,6 +3144,7 @@
     SUBDIR += ruby-libglade2
     SUBDIR += ruby-locale
     SUBDIR += ruby-locale2
+    SUBDIR += ruby-memoize
     SUBDIR += ruby-metaruby
     SUBDIR += ruby-mmap
     SUBDIR += ruby-multi
