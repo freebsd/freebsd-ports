@@ -2721,7 +2721,6 @@
     SUBDIR += pikdev
     SUBDIR += piklab
     SUBDIR += pinba_engine
-    SUBDIR += pinstall
     SUBDIR += pipestatus
     SUBDIR += pire
     SUBDIR += pit
