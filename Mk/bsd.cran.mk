@@ -42,8 +42,8 @@ do-install:
 .if defined(USE_R_MOD) && defined(R_MOD_AUTOPLIST)
 .if !target(post-install-script)
 post-install-script:
-	@${FIND} -ds ${PREFIX}/${R_MOD_DIR} -type f -print | ${SED} -E -e \
-		's,^${PREFIX}/?,,' > ${TMPPLIST}
+	@${FIND} -ds ${PREFIX}/${R_MOD_DIR} \( -type f -or -type l \) -print | \
+		${SED} -E -e 's,^${PREFIX}/?,,' >> ${TMPPLIST}
 	@${FIND} -ds ${PREFIX}/${R_MOD_DIR} -type d -print | ${SED} -E -e \
 		's,^${PREFIX}/?,@dirrm ,' >> ${TMPPLIST}
 .endif
