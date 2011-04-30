@@ -17,7 +17,7 @@ COMMENT=	A scientific data plotting package
 
 LIB_DEPENDS=	f2c.2:${PORTSDIR}/lang/f2c
 
-BROKEN=		unfetchable
+BROKEN=		size mismatch
 
 RESTRICTED=	free for non-commercial use.
 USE_XORG=	x11
