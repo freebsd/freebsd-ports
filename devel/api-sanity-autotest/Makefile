@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	api-sanity-autotest
-PORTVERSION=	1.12.3
+PORTVERSION=	1.12.4
 CATEGORIES=	devel perl5
 MASTER_SITES=	http://linuxtesting.org/downloads/ \
 		LOCAL/bf
@@ -25,6 +25,14 @@ PLIST_FILES=	bin/${PORTNAME}.pl
 CPPFILT?=	c++filt
 READELF?=	readelf
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "sparc64"
+PICFLAG?=	-fPIC
+.else
+PICFLAG?=	-fpic
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} \
 		-e "\|ArCmd =|s|=.*|= \"${AR}\";|" \
@@ -33,7 +41,7 @@ post-patch:
 		-e "\|GPP_PATH =|s|=.*|= \"${CXX}\";|" \
 		-e "\|ObjdumpCmd =|s|=.*|= \"${OBJDUMP}\";|" \
 		-e "\|ReadelfCmd =|s|=.*|= \"${READELF}\";|" \
-		-e "s|-shared|& -fPIC|g" \
+		-e "s|-shared|& ${PICFLAG}|g" \
 		${WRKSRC}/${PORTNAME}.pl
 
 do-install:
@@ -50,4 +58,4 @@ post-install:
 	@(cd ${WRKSRC}/doc; ${INSTALL_MAN} ${PORTDOCS} ${DOCSDIR})
 
 .endif
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
