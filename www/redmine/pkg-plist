@@ -675,7 +675,6 @@
 %%WWWDIR%%/doc/README_FOR_APP
 %%WWWDIR%%/doc/RUNNING_TESTS
 %%WWWDIR%%/doc/UPGRADING
-%%WWWDIR%%/doc/git.rdoc
 %%WWWDIR%%/extra/mail_handler/rdm-mailhandler.rb
 %%WWWDIR%%/extra/sample_plugin/README
 %%WWWDIR%%/extra/sample_plugin/app/controllers/example_controller.rb
