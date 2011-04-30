@@ -111,6 +111,7 @@ bin/chrome
 %%DATADIR%%/resources/inspector/Images/goArrow.png
 %%DATADIR%%/resources/inspector/Images/graphLabelCalloutLeft.png
 %%DATADIR%%/resources/inspector/Images/graphLabelCalloutRight.png
+%%DATADIR%%/resources/inspector/Images/helpButtonGlyph.png
 %%DATADIR%%/resources/inspector/Images/largerResourcesButtonGlyph.png
 %%DATADIR%%/resources/inspector/Images/localStorage.png
 %%DATADIR%%/resources/inspector/Images/networkIcon.png

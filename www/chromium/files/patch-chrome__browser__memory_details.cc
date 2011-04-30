@@ -1,15 +1,15 @@
---- ./chrome/browser/memory_details.cc.orig	2010-12-16 02:11:58.000000000 +0100
-+++ ./chrome/browser/memory_details.cc	2010-12-20 20:15:08.000000000 +0100
-@@ -19,7 +19,7 @@
- #include "chrome/common/url_constants.h"
- #include "grit/chromium_strings.h"
+--- chrome/browser/memory_details.cc.orig	2011-04-15 11:01:47.000000000 +0300
++++ chrome/browser/memory_details.cc	2011-04-15 22:31:00.350640234 +0300
+@@ -25,7 +25,7 @@
+ #include "grit/generated_resources.h"
+ #include "ui/base/l10n/l10n_util.h"
  
 -#if defined(OS_LINUX)
 +#if defined(OS_LINUX) || defined(OS_FREEBSD)
- #include "chrome/browser/zygote_host_linux.h"
- #include "chrome/browser/renderer_host/render_sandbox_host_linux.h"
+ #include "content/browser/zygote_host_linux.h"
+ #include "content/browser/renderer_host/render_sandbox_host_linux.h"
  #endif
-@@ -101,7 +101,7 @@
+@@ -109,7 +109,7 @@
  void MemoryDetails::CollectChildInfoOnUIThread() {
    DCHECK(BrowserThread::CurrentlyOn(BrowserThread::UI));
  
@@ -18,7 +18,7 @@
    const pid_t zygote_pid = ZygoteHost::GetInstance()->pid();
    const pid_t sandbox_helper_pid = RenderSandboxHostLinux::GetInstance()->pid();
  #endif
-@@ -179,7 +179,7 @@
+@@ -236,7 +236,7 @@
        }
      }
  

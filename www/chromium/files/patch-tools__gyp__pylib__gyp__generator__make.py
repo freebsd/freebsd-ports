@@ -1,18 +1,18 @@
---- ./tools/gyp/pylib/gyp/generator/make.py.orig	2010-12-16 02:33:33.000000000 +0100
-+++ ./tools/gyp/pylib/gyp/generator/make.py	2010-12-20 20:15:08.000000000 +0100
-@@ -106,7 +106,7 @@
+--- tools/gyp/pylib/gyp/generator/make.py.orig	2011-03-01 10:47:14.000000000 +0100
++++ tools/gyp/pylib/gyp/generator/make.py	2011-03-01 21:25:10.000000000 +0100
+@@ -114,7 +114,7 @@
  #   export LINK="$(CXX)"
  #
  # This will allow make to invoke N linker processes as specified in -jN.
--LINK ?= flock $(builddir)/linker.lock $(CXX)
-+LINK ?= $(CXX)
+-LINK ?= flock $(builddir)/linker.lock $(CXX) %(LINK_flags)s
++LINK ?= $(CXX) %(LINK_flags)s
  
- # We want to use GNU ar's T option if available because it's much faster.
- # We try to archive and link a file to see ar and ld support this feature.
-@@ -147,13 +147,13 @@
-   ARFLAGS.target := $(call detect_arflags,target)
- endif
- 
+ CC.target ?= $(CC)
+ CFLAGS.target ?= $(CFLAGS)
+@@ -129,13 +129,13 @@
+ # in gyp's make.py where ARFLAGS.host etc. is computed.
+ # TODO(evan): move all cross-compilation logic to gyp-time so we don't need
+ # to replicate this environment fallback in make as well.
 -CC.host ?= gcc
 -CFLAGS.host ?=
 -CXX.host ?= g++
@@ -22,11 +22,11 @@
 -AR.host ?= ar
 +CC.host ?= $(CC)
 +CFLAGS.host ?= $(CFLAGS)
-+CXX.host ?= $(CXX)
++CXX.host ?= $(CXX) 
 +CXXFLAGS.host ?= $(CXXFLAGS)
 +LINK.host ?= $(LINK)
 +LDFLAGS.host ?= $(LDFLAGS)
 +AR.host ?= $(AR)
- # See the description for ARFLAGS.target.
- -include $(obj).host/arflags/arflags.mk
- # Temporarily disabled -- see ARFLAGS.target.
+ ARFLAGS.host := %(ARFLAGS.host)s
+ 
+ # Flags to make gcc output dependency info.  Note that you need to be

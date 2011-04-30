@@ -1,5 +1,5 @@
---- ./net/proxy/proxy_config_service_linux.cc.orig	2010-12-13 12:03:17.000000000 +0100
-+++ ./net/proxy/proxy_config_service_linux.cc	2011-01-07 14:17:11.000000000 +0100
+--- net/proxy/proxy_config_service_linux.cc.orig	2011-04-04 10:01:16.000000000 +0200
++++ net/proxy/proxy_config_service_linux.cc	2011-04-11 00:23:55.000000000 +0200
 @@ -12,7 +12,13 @@
  #include <limits.h>
  #include <stdio.h>
@@ -14,7 +14,7 @@
  #include <unistd.h>
  
  #include <map>
-@@ -432,7 +438,7 @@
+@@ -433,7 +439,7 @@
        public base::MessagePumpLibevent::Watcher {
   public:
    explicit GConfSettingGetterImplKDE(base::Environment* env_var_getter)
@@ -22,8 +22,8 @@
 +      : notify_fd_(-1), notify_delegate_(NULL), indirect_manual_(false),
          auto_no_pac_(false), reversed_bypass_list_(false),
          env_var_getter_(env_var_getter), file_loop_(NULL) {
-     // Derive the location of the kde config dir from the environment.
-@@ -488,31 +494,35 @@
+     // This has to be called on the UI thread (http://crbug.com/69057).
+@@ -492,33 +498,37 @@
    }
  
    virtual ~GConfSettingGetterImplKDE() {
@@ -44,6 +44,8 @@
  
    virtual bool Init(MessageLoop* glib_default_loop,
                      MessageLoopForIO* file_loop) {
+     // This has to be called on the UI thread (http://crbug.com/69057).
+     base::ThreadRestrictions::ScopedAllowIO allow_io;
 -    DCHECK(inotify_fd_ < 0);
 -    inotify_fd_ = inotify_init();
 -    if (inotify_fd_ < 0) {
@@ -69,7 +71,7 @@
        return false;
      }
      file_loop_ = file_loop;
-@@ -523,28 +533,41 @@
+@@ -529,28 +539,41 @@
    }
  
    void Shutdown() {
@@ -119,7 +121,7 @@
    }
  
    virtual MessageLoop* GetNotificationLoop() {
-@@ -553,7 +576,7 @@
+@@ -559,7 +582,7 @@
  
    // Implement base::MessagePumpLibevent::Delegate.
    void OnFileCanReadWithoutBlocking(int fd) {
@@ -128,7 +130,7 @@
      DCHECK(MessageLoop::current() == file_loop_);
      OnChangeNotification();
    }
-@@ -824,12 +847,25 @@
+@@ -830,12 +853,24 @@
    // from the inotify file descriptor and starts up a debounce timer if
    // an event for kioslaverc is seen.
    void OnChangeNotification() {
@@ -139,14 +141,13 @@
 +    bool kioslaverc_touched = true;
 +    struct kevent ke;
 +    if (kevent(notify_fd_, NULL, 0, &ke, 1, NULL) == -1) {
-+      LOG(ERROR) << "kevent() failure: no loner watching kioslaverc";
++      LOG(ERROR) << "kevent() failure: no longer watching kioslaverc";
 +      notify_watcher_.StopWatchingFileDescriptor();
 +      close(notify_fd_);
 +      notify_fd_ = -1;
 +      kioslaverc_touched = false;
 +    }
 +    close(ke.ident);
-+    
 +#else
      char event_buf[(sizeof(inotify_event) + NAME_MAX + 1) * 4];
      bool kioslaverc_touched = false;
@@ -156,12 +157,8 @@
        // inotify returns variable-length structures, which is why we have
        // this strange-looking loop instead of iterating through an array.
        char* event_ptr = event_buf;
-@@ -856,14 +892,15 @@
-       if (errno == EINVAL) {
-         // Our buffer is not large enough to read the next event. This should
-         // not happen (because its size is calculated to always be sufficiently
--        // large), but if it does we'd warn continuously since |inotify_fd_|
-+        // large), but if it does we'd warn continuously since |notify_fd_|
+@@ -865,9 +900,9 @@
+         // large), but if it does we'd warn continuously since |inotify_fd_|
          // would be forever ready to read. Close it and stop watching instead.
          LOG(ERROR) << "inotify failure; no longer watching kioslaverc!";
 -        inotify_watcher_.StopWatchingFileDescriptor();
@@ -172,11 +169,8 @@
 +        notify_fd_ = -1;
        }
      }
-+#endif
      if (kioslaverc_touched) {
-       // We don't use Reset() because the timer may not yet be running.
-       // (In that case Stop() is a no-op.)
-@@ -877,8 +914,8 @@
+@@ -883,8 +918,8 @@
    typedef std::map<std::string, std::string> string_map_type;
    typedef std::map<std::string, std::vector<std::string> > strings_map_type;
  

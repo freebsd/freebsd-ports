@@ -1,20 +1,20 @@
---- ./chrome/browser/ui/views/download_item_view.cc.orig	2010-12-16 02:11:56.000000000 +0100
-+++ ./chrome/browser/ui/views/download_item_view.cc	2010-12-20 20:15:08.000000000 +0100
-@@ -259,7 +259,7 @@
+--- chrome/browser/ui/views/download_item_view.cc.orig	2011-04-15 11:01:46.000000000 +0300
++++ chrome/browser/ui/views/download_item_view.cc	2011-04-15 22:56:06.858645022 +0300
+@@ -261,7 +261,7 @@
  
      // Extract the file extension (if any).
      FilePath filename(download->target_name());
 -#if defined(OS_LINUX)
 +#if defined(OS_LINUX) || defined(OS_FREEBSD)
-     std::wstring extension = base::SysNativeMBToWide(filename.Extension());
+     string16 extension = WideToUTF16(base::SysNativeMBToWide(
+         filename.Extension()));
  #else
-     std::wstring extension = filename.Extension();
-@@ -268,7 +268,7 @@
+@@ -271,7 +271,7 @@
      // Remove leading '.'
      if (extension.length() > 0)
        extension = extension.substr(1);
 -#if defined(OS_LINUX)
 +#if defined(OS_LINUX) || defined(OS_FREEBSD)
-     std::wstring rootname =
-         base::SysNativeMBToWide(filename.RemoveExtension().value());
+     string16 rootname = WideToUTF16(base::SysNativeMBToWide(
+         filename.RemoveExtension().value()));
  #else

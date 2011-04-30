@@ -1,5 +1,5 @@
---- gfx/native_widget_types.h.orig	2011-03-20 22:02:04.270736223 +0200
-+++ gfx/native_widget_types.h	2011-03-20 22:02:04.441738962 +0200
+--- ui/gfx/native_widget_types.h.orig	2011-04-16 22:00:39.271073137 +0300
++++ ui/gfx/native_widget_types.h	2011-04-16 22:02:38.712069130 +0300
 @@ -97,7 +97,7 @@
  
  #if defined(OS_MACOSX)

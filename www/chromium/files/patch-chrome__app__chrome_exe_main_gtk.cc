@@ -1,5 +1,5 @@
---- ./chrome/app/chrome_exe_main_gtk.cc.orig	2010-12-16 02:11:51.000000000 +0100
-+++ ./chrome/app/chrome_exe_main_gtk.cc	2010-12-20 20:15:08.000000000 +0100
+--- chrome/app/chrome_exe_main_gtk.cc.orig	2011-04-16 11:01:37.000000000 +0300
++++ chrome/app/chrome_exe_main_gtk.cc	2011-04-25 20:11:07.659145645 +0300
 @@ -3,7 +3,7 @@
  // found in the LICENSE file.
  
@@ -9,7 +9,7 @@
  #include "chrome/browser/first_run/first_run.h"
  #endif
  
-@@ -19,11 +19,11 @@
+@@ -19,16 +19,18 @@
  extern "C" {
  int ChromeMain(int argc, const char** argv);
  
@@ -23,7 +23,14 @@
  }
  
  int main(int argc, const char** argv) {
-@@ -36,7 +36,7 @@
+   base::EnableTerminationOnHeapCorruption();
++#if !defined(OS_FREEBSD)
+   base::EnableTerminationOnOutOfMemory();
++#endif
+ 
+   // NOTE(willchan): One might ask why this call is done here rather than in
+   // process_util_linux.cc with the definition of
+@@ -36,7 +38,7 @@
    // dependency on TCMalloc.  Really, we ought to have our allocator shim code
    // implement this EnableTerminationOnOutOfMemory() function.  Whateverz.  This
    // works for now.

@@ -1,36 +1,7 @@
---- chrome/chrome_browser.gypi.orig	2011-04-13 10:01:59.000000000 +0200
-+++ chrome/chrome_browser.gypi	2011-04-17 22:24:15.000000000 +0200
-@@ -1237,7 +1237,7 @@
-         'browser/favicon_service.h',
-         'browser/file_path_watcher/file_path_watcher.cc',
-         'browser/file_path_watcher/file_path_watcher.h',
--        'browser/file_path_watcher/file_path_watcher_inotify.cc',
-+        #'browser/file_path_watcher/file_path_watcher_inotify.cc',
-         'browser/file_path_watcher/file_path_watcher_mac.cc',
-         'browser/file_path_watcher/file_path_watcher_win.cc',
-         'browser/file_select_helper.cc',
-@@ -1266,8 +1266,8 @@
-         'browser/geolocation/empty_device_data_provider.h',
-         'browser/geolocation/gateway_data_provider_common.cc',
-         'browser/geolocation/gateway_data_provider_common.h',
--        'browser/geolocation/gateway_data_provider_linux.cc',
--        'browser/geolocation/gateway_data_provider_linux.h',
-+        #'browser/geolocation/gateway_data_provider_linux.cc',
-+        #'browser/geolocation/gateway_data_provider_linux.h',
-         'browser/geolocation/gateway_data_provider_win.cc',
-         'browser/geolocation/gateway_data_provider_win.h',
-         'browser/geolocation/geolocation_content_settings_map.cc',
-@@ -1307,7 +1307,7 @@
-         'browser/geolocation/wifi_data_provider_corewlan_mac.mm',
-         'browser/geolocation/wifi_data_provider_common_win.cc',
-         'browser/geolocation/wifi_data_provider_common_win.h',
--        'browser/geolocation/wifi_data_provider_linux.cc',
-+        #'browser/geolocation/wifi_data_provider_linux.cc',
-         'browser/geolocation/wifi_data_provider_linux.h',
-         'browser/geolocation/wifi_data_provider_mac.cc',
-         'browser/geolocation/wifi_data_provider_mac.h',
-@@ -3621,7 +3621,7 @@
-             ['include', '^browser/chromeos/dom_ui/login/'],
+--- chrome/chrome_browser.gypi.orig	2011-04-16 11:02:00.000000000 +0300
++++ chrome/chrome_browser.gypi	2011-04-21 21:49:54.625558694 +0300
+@@ -3455,7 +3455,7 @@
+             ['exclude', '^browser/views/tab_contents/tab_contents_view_gtk.h'],
            ],
          }],
 -        ['OS=="linux"', {
@@ -38,7 +9,7 @@
            'dependencies': [
              '../build/linux/system.gyp:dbus-glib',
              '../build/linux/system.gyp:gconf',
-@@ -3631,12 +3631,6 @@
+@@ -3465,12 +3465,6 @@
              '../build/linux/system.gyp:x11',
              '../third_party/undoview/undoview.gyp:undoview',
            ],
@@ -51,7 +22,7 @@
            'sources!': [
              'browser/ui/views/extensions/extension_view.cc',
              'browser/ui/views/extensions/extension_view.h',
-@@ -4294,7 +4288,7 @@
+@@ -4118,7 +4112,7 @@
                ],
              }],
              # GTK build only
@@ -60,3 +31,12 @@
                'sources/': [
                  ['include', '^browser/printing/print_dialog_gtk.cc'],
                  ['include', '^browser/printing/print_dialog_gtk.h'],
+@@ -4196,7 +4190,7 @@
+                 },
+               ],
+             }],
+-            ['OS=="linux" and gcc_version==45', {
++            ['(OS=="linux" or OS=="freebsd") and gcc_version==45', {
+               # Avoid gcc 4.5 miscompilation of template_url.cc
+               # as per http://crbug.com/41887
+               'cflags': [

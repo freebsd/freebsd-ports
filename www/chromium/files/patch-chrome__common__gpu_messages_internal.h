@@ -1,11 +1,11 @@
---- ./chrome/common/gpu_messages_internal.h.orig	2010-12-16 02:12:13.000000000 +0100
-+++ ./chrome/common/gpu_messages_internal.h	2010-12-20 20:15:08.000000000 +0100
-@@ -82,7 +82,7 @@
- IPC_MESSAGE_CONTROL1(GpuHostMsg_GraphicsInfoCollected,
-                      GPUInfo /* GPU logging stats */)
+--- chrome/common/gpu_messages_internal.h.orig	2011-04-15 11:02:02.000000000 +0300
++++ chrome/common/gpu_messages_internal.h	2011-04-16 19:43:55.218070312 +0300
+@@ -142,7 +142,7 @@
+ // Response from GPU to a GpuMsg_Synchronize message.
+ IPC_MESSAGE_CONTROL0(GpuHostMsg_SynchronizeReply)
  
--#if defined(OS_LINUX)
-+#if defined(OS_LINUX) || defined(OS_FREEBSD)
- // Get the XID for a view ID.
- IPC_SYNC_MESSAGE_CONTROL1_1(GpuHostMsg_GetViewXID,
-                             gfx::NativeViewId, /* view */
+-#if defined(OS_LINUX) && !defined(TOUCH_UI)
++#if (defined(OS_LINUX) || defined (OS_FREEBSD)) && !defined(TOUCH_UI)
+ // Resize the window that is being drawn into. It's important that this
+ // resize be synchronized with the swapping of the front and back buffers.
+ IPC_SYNC_MESSAGE_CONTROL2_1(GpuHostMsg_ResizeXID,
