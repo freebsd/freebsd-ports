@@ -1750,3 +1750,4 @@ graphics/netpbm-devel|graphics/netpbm|2011-04-22|updated to default
 ports-mgmt/portmk||2011-04-29|Has expired: has not been kept up to date for > 6 months
 ports-mgmt/portsman||2011-04-29|Has expired: hardwires an ancient version of INDEX
 mail/kiltdown||2011-04-29|Has expired: upstream seems dead since 2001
+devel/pinstall||2011-04-30|Removed
