@@ -343,6 +343,7 @@
     SUBDIR += vdr-plugin-markad
     SUBDIR += vdr-plugin-osdpip
     SUBDIR += vdr-plugin-osdteletext
+    SUBDIR += vdr-plugin-reelchannelscan
     SUBDIR += vdr-plugin-remote
     SUBDIR += vdr-plugin-skinenigmang
     SUBDIR += vdr-plugin-softdevice
