@@ -1,3 +1,17 @@
+%%SITE_PERL%%/auto/share/dist/Prophet/web/static/jquery/css/superfish.css
+%%SITE_PERL%%/auto/share/dist/Prophet/web/static/jquery/css/tablesorter/style.css
+%%SITE_PERL%%/auto/share/dist/Prophet/web/static/jquery/css/superfish-vertical.css
+%%SITE_PERL%%/auto/share/dist/Prophet/web/static/jquery/css/superfish-navbar.css
+%%SITE_PERL%%/auto/share/dist/Prophet/web/static/jquery/css/jquery.autocomplete.css
+%%SITE_PERL%%/auto/share/dist/Prophet/web/static/jquery/js/jquery.tablesorter.min.js
+%%SITE_PERL%%/auto/share/dist/Prophet/web/static/jquery/js/pretty.js
+%%SITE_PERL%%/auto/share/dist/Prophet/web/static/jquery/js/supersubs.js
+%%SITE_PERL%%/auto/share/dist/Prophet/web/static/jquery/js/hoverIntent.js
+%%SITE_PERL%%/auto/share/dist/Prophet/web/static/jquery/js/jquery-autocomplete.js
+%%SITE_PERL%%/auto/share/dist/Prophet/web/static/jquery/js/superfish.js
+%%SITE_PERL%%/auto/share/dist/Prophet/web/static/jquery/js/jquery-1.2.6.min.js
+%%SITE_PERL%%/auto/share/dist/Prophet/web/static/jquery/js/jquery.bgiframe.min.js
+%%SITE_PERL%%/auto/share/dist/Prophet/web/static/yui/css/reset.css
 %%SITE_PERL%%/auto/share/dist/Prophet/web/static/jquery/css/tablesorter/desc.gif
 %%SITE_PERL%%/auto/share/dist/Prophet/web/static/jquery/css/tablesorter/asc.gif
 %%SITE_PERL%%/auto/share/dist/Prophet/web/static/jquery/css/tablesorter/bg.gif
@@ -65,6 +79,7 @@
 %%SITE_PERL%%/Prophet/CLI/Command/Merge.pm
 %%SITE_PERL%%/Prophet/CLI/Command/Delete.pm
 %%SITE_PERL%%/Prophet/CLI/Command/Create.pm
+%%SITE_PERL%%/Prophet/CLI/Dispatcher/Rule.pm
 %%SITE_PERL%%/Prophet/ConflictingPropChange.pm
 %%SITE_PERL%%/Prophet/CLI.pm
 %%SITE_PERL%%/Prophet/Record.pm
@@ -96,7 +111,11 @@
 @dirrmtry %%SITE_PERL%%/auto/share/dist/Prophet/web/static/jquery/images
 @dirrmtry %%SITE_PERL%%/auto/share/dist/Prophet/web/static/jquery/css/tablesorter
 @dirrmtry %%SITE_PERL%%/auto/share/dist/Prophet/web/static/jquery/css
+@dirrmtry %%SITE_PERL%%/auto/share/dist/Prophet/web/static/jquery/js
 @dirrmtry %%SITE_PERL%%/auto/share/dist/Prophet/web/static/jquery
+@dirrmtry %%SITE_PERL%%/auto/share/dist/Prophet/web/static/yui/css
+@dirrmtry %%SITE_PERL%%/auto/share/dist/Prophet/web/static/yui
+
 @dirrmtry %%SITE_PERL%%/auto/share/dist/Prophet/web/static
 @dirrmtry %%SITE_PERL%%/auto/share/dist/Prophet/web
 @dirrmtry %%SITE_PERL%%/auto/share/dist/Prophet
@@ -109,6 +128,7 @@
 @dirrmtry %%SITE_PERL%%/Prophet/Replica/FS
 @dirrmtry %%SITE_PERL%%/Prophet/Replica
 @dirrmtry %%SITE_PERL%%/Prophet/Meta
+@dirrmtry %%SITE_PERL%%/Prophet/CLI/Dispatcher
 @dirrmtry %%SITE_PERL%%/Prophet/CLI/Command
 @dirrmtry %%SITE_PERL%%/Prophet/CLI
 @dirrmtry %%SITE_PERL%%/Prophet
