@@ -9,6 +9,9 @@ bin/pbc_disassemble
 bin/pbc_dump
 bin/pbc_merge
 bin/pbc_to_exe
+include/parrot/%%PARROT_VER%%/imcc/api.h
+include/parrot/%%PARROT_VER%%/imcc/embed.h
+include/parrot/%%PARROT_VER%%/imcc/yyscanner.h
 include/parrot/%%PARROT_VER%%/parrot/api.h
 include/parrot/%%PARROT_VER%%/parrot/atomic.h
 include/parrot/%%PARROT_VER%%/parrot/atomic/fallback.h
@@ -117,6 +120,7 @@ include/parrot/%%PARROT_VER%%/pmc/pmc_imageiofreeze.h
 include/parrot/%%PARROT_VER%%/pmc/pmc_imageiosize.h
 include/parrot/%%PARROT_VER%%/pmc/pmc_imageiostrings.h
 include/parrot/%%PARROT_VER%%/pmc/pmc_imageiothaw.h
+include/parrot/%%PARROT_VER%%/pmc/pmc_imccompiler.h
 include/parrot/%%PARROT_VER%%/pmc/pmc_integer.h
 include/parrot/%%PARROT_VER%%/pmc/pmc_iterator.h
 include/parrot/%%PARROT_VER%%/pmc/pmc_key.h
@@ -447,6 +451,7 @@ lib/parrot/%%PARROT_VER%%/tools/build/pmc2c.pl
 lib/parrot/%%PARROT_VER%%/tools/dev/create_language.pl
 lib/parrot/%%PARROT_VER%%/tools/dev/gen_makefile.pl
 lib/parrot/%%PARROT_VER%%/tools/dev/mk_language_shell.pl
+lib/parrot/%%PARROT_VER%%/tools/dev/ncidef2pir.pl
 lib/parrot/%%PARROT_VER%%/tools/dev/pbc_to_exe.pir
 lib/parrot/%%PARROT_VER%%/tools/dev/pprof2cg.pl
 lib/parrot/%%PARROT_VER%%/tools/dev/reconfigure.pl
@@ -543,7 +548,6 @@ lib/parrot/%%PARROT_VER%%/tools/lib/Parrot/Test/Pod/Utils.pm
 lib/parrot/%%PARROT_VER%%/tools/lib/Parrot/Test/Util.pm
 lib/parrot/%%PARROT_VER%%/tools/lib/Parrot/Test/Util/Runloop.pm
 lib/parrot/%%PARROT_VER%%/tools/lib/Parrot/Vtable.pm
-lib/pkgconfig/parrot/%%PARROT_VER%%/parrot.pc
 %%PARROT_DOCS%%/CREDITS
 %%PARROT_DOCS%%/DONORS.pod
 %%PARROT_DOCS%%/LICENSE
@@ -589,6 +593,7 @@ src/parrot/%%PARROT_VER%%/pmc/imageiofreeze.dump
 src/parrot/%%PARROT_VER%%/pmc/imageiosize.dump
 src/parrot/%%PARROT_VER%%/pmc/imageiostrings.dump
 src/parrot/%%PARROT_VER%%/pmc/imageiothaw.dump
+src/parrot/%%PARROT_VER%%/pmc/imccompiler.dump
 src/parrot/%%PARROT_VER%%/pmc/integer.dump
 src/parrot/%%PARROT_VER%%/pmc/iterator.dump
 src/parrot/%%PARROT_VER%%/pmc/key.dump
@@ -654,9 +659,6 @@ src/parrot/%%PARROT_VER%%/vtable.tbl
 @dirrm src
 @dirrm %%PARROT_DOCS%%
 @dirrm share/doc/parrot
-@dirrm lib/pkgconfig/parrot/%%PARROT_VER%%
-@dirrm lib/pkgconfig/parrot
-@dirrm lib/pkgconfig
 @dirrm lib/parrot/%%PARROT_VER%%/tools/lib/Parrot/Test/Util
 @dirrm lib/parrot/%%PARROT_VER%%/tools/lib/Parrot/Test/Pod
 @dirrm lib/parrot/%%PARROT_VER%%/tools/lib/Parrot/Test
@@ -732,5 +734,6 @@ src/parrot/%%PARROT_VER%%/vtable.tbl
 @dirrm include/parrot/%%PARROT_VER%%/parrot/oplib
 @dirrm include/parrot/%%PARROT_VER%%/parrot/atomic
 @dirrm include/parrot/%%PARROT_VER%%/parrot
+@dirrm include/parrot/%%PARROT_VER%%/imcc
 @dirrm include/parrot/%%PARROT_VER%%
 @dirrm include/parrot
