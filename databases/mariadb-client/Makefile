@@ -19,11 +19,11 @@ MASTER_SITES=	http://www.percona.com/downloads/MariaDB/${PORTNAME}-${PORTVERSION
 
 MAINTAINER=	dgeo@centrale-marseille.fr
 COMMENT=	A database server - drop-in replacement functionality for MySQL
-  
+
 LICENSE=	GPLv2
-  
+
 CONFLICTS=	mysql-server-[0-9]* mysql-client-[0-9]* mysql-scripts-[0-9]*
-  
+
 CONFIGURE_ARGS=	--with-embedded-server
 
 CPPFLAGS+=	-I${LOCALBASE}/include
@@ -125,7 +125,7 @@ LIB_DEPENDS+=	event-1.4:${PORTSDIR}/devel/libevent
 CONFIGURE_ARGS+=	--with-libevent=bundled
 .endif
 .if defined(WITH_ARIADB)
-PLIST_SUB+=   ARIADB=""
+PLIST_SUB+=	ARIADB=""
 CONFIGURE_ARGS+=	--with-plugin-aria --with-aria-tmp-tables
 .else
 CONFIGURE_ARGS+=	--without-plugin-aria
@@ -176,8 +176,8 @@ PLIST_SUB+=	INNODB="@comment "
 .if defined(WITH_XTRADB)
 PLIST_SUB+=	XTRADB=""
 .else
-CONFIGURE_ARGS+=      --without-plugin-xtradb
-PLIST_SUB+=   XTRADB="@comment "
+CONFIGURE_ARGS+=	--without-plugin-xtradb
+PLIST_SUB+=	XTRADB="@comment "
 .endif
 .if defined(WITH_OQGRAPH)
 CONFIGURE_ARGS+=	--with-plugin-oqgraph
@@ -208,7 +208,7 @@ WITH_PARTITION=yes
 #     ndb_print_backup_file.1 ndb_print_schema_file.1 \
 #     ndb_print_sys_file.1 ndb_restore.1 ndb_select_all.1 \
 #     ndb_select_count.1 ndb_show_tables.1 ndb_size.pl.1 ndb_waiter.1
-PLIST_SUB+=   NDB=""
+PLIST_SUB+=	NDB=""
 .else
 CONFIGURE_ARGS+=	--without-plugin-ndbcluster
 PLIST_SUB+=	NDB="@comment "
@@ -235,12 +235,12 @@ pre-fetch:
 	@${ECHO} "      WITH_XCHARSET=list      Define other built-in charsets (selected: ${WITH_XCHARSET})."
 	@${ECHO} "      WITH_COLLATION=collate  Define default collation (def: latin1_swedish_ci selected: ${WITH_COLLATION})."
 	@${ECHO} ""
-  
+
 post-patch:
 	@${REINPLACE_CMD} -e '/^install:/ s|^\(install:\).*$$|\1|' \
 		${WRKSRC}/mysql-test/Makefile.in ${WRKSRC}/sql-bench/Makefile.in
-  
+
 port-install:
 	@${CAT} pkg-message
- 
+
 .include <bsd.port.mk>
