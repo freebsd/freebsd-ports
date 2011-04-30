@@ -15,6 +15,10 @@ COMMENT=	Utility to create and configure svscan service directories
 
 RUN_DEPENDS=	supervise:${PORTSDIR}/sysutils/daemontools
 
+BROKEN=		mastersite disappeared
+DEPRECATED=	"${BROKEN}"
+EXPIRATION_DATE=	2011-06-29
+
 ALL_TARGET=	it
 INSTALL_TARGET=	setup check
 USE_PERL5_BUILD=yes
