@@ -7,6 +7,7 @@
 
 PORTNAME=	zoneminder
 PORTVERSION=	1.24.2
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	http://www2.zoneminder.com/downloads/
 DISTNAME=	ZoneMinder-${PORTVERSION}
@@ -16,7 +17,7 @@ COMMENT=	Complete security camera solution, fully web based with image analysis
 
 LICENSE=	GPLv2
 
-RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Apache.pm:${PORTSDIR}/www/mod_perl \
+RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/mod_perl2.pm:${PORTSDIR}/www/mod_perl2 \
 		${LOCALBASE}/bin/sudo:${PORTSDIR}/security/sudo
 LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg \
 		netpbm.1:${PORTSDIR}/graphics/netpbm \
