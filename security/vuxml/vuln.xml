@@ -3033,13 +3033,70 @@ Note:  Please add new entries to the beginning of this file.
     <affects>
       <package>
 	<name>chromium</name>
-	<range><lt>10.0.648.205</lt></range>
+	<range><lt>11.0.696.57</lt></range>
       </package>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
 	<p>Google Chrome Releases reports:</p>
 	<blockquote cite="http://googlechromereleases.blogspot.com/search/label/Stable%20updates">
+	  <p>Fixed in 11.0.696.57:<br/>
+	    [61502] High CVE-2011-1303: Stale pointer in floating object
+	      handling. Credit to Scott Hess of the Chromium development
+	      community and Martin Barbella.<br/>
+	    [70538] Low CVE-2011-1304: Pop-up block bypass via plug-ins. Credit
+	       to Chamal De Silva.<br/>
+	    [Linux / Mac only] [70589] Medium CVE-2011-1305: Linked-list race
+	       in database handling. Credit to Kostya Serebryany of the
+	       Chromium development community.<br/>
+	    [71586] Medium CVE-2011-1434: Lack of thread safety in MIME
+	       handling. Credit to Aki Helin.<br/>
+	    [72523] Medium CVE-2011-1435: Bad extension with "tabs" permission
+	       can capture local files. Credit to Cole Snodgrass.<br/>
+	    [Linux only] [72910] Low CVE-2011-1436: Possible browser crash due
+	       to bad interaction with X. Credit to miaubiz.<br/>
+	    [73526] High CVE-2011-1437: Integer overflows in float rendering.
+	       Credit to miaubiz.<br/>
+	    [74653] High CVE-2011-1438: Same origin policy violation with
+	       blobs. Credit to kuzzcc.<br/>
+	    [Linux only] [74763] High CVE-2011-1439: Prevent interference
+	       between renderer processes. Credit to Julien Tinnes of the
+	       Google Security Team.<br/>
+	    [75186] High CVE-2011-1440: Use-after-free with &lt;ruby&gt; tag
+	       and CSS. Credit to Jose A. Vazquez.<br/>
+	    [75347] High CVE-2011-1441: Bad cast with floating select lists.
+	       Credit to Michael Griffiths.<br/>
+	    [75801] High CVE-2011-1442: Corrupt node trees with mutation events.
+	       Credit to Sergey Glazunov and wushi of team 509.<br/>
+	    [76001] High CVE-2011-1443: Stale pointers in layering code. Credit
+	       to Martin Barbella.<br/>
+	    [Linux only] [76542] High CVE-2011-1444: Race condition in sandbox
+	       launcher. Credit to Dan Rosenberg.<br/>
+	    Medium CVE-2011-1445: Out-of-bounds read in SVG. Credit to wushi of
+	       team509.<br/>
+	    [76666] [77507] [78031] High CVE-2011-1446: Possible URL bar spoofs
+	       with navigation errors and interrupted loads. Credit to
+	       kuzzcc.<br/>
+	    [76966] High CVE-2011-1447: Stale pointer in drop-down list
+	       handling. Credit to miaubiz.<br/>
+	    [77130] High CVE-2011-1448: Stale pointer in height calculations.
+	       Credit to wushi of team509.<br/>
+	    [77346] High CVE-2011-1449: Use-after-free in WebSockets. Credit to
+	       Marek Majkowski.<br/>
+	    Low CVE-2011-1450: Dangling pointers in file dialogs. Credit to
+	       kuzzcc.<br/>
+	    [77463] High CVE-2011-1451: Dangling pointers in DOM id map. Credit
+	       to Sergey Glazunov.<br/>
+	    [77786] Medium CVE-2011-1452: URL bar spoof with redirect and manual
+	       reload. Credit to Jordi Chancel.<br/>
+	    [79199] High CVE-2011-1454: Use-after-free in DOM id handling.
+	       Credit to Sergey Glazunov.<br/>
+	    [79361] Medium CVE-2011-1455: Out-of-bounds read with
+	       multipart-encoded PDF. Credit to Eric Roman of the Chromium
+	       development community.<br/>
+	    [79364] High CVE-2011-1456: Stale pointers with PDF forms. Credit to
+	       Eric Roman of the Chromium development community.</p>
+
 	  <p>Fixed in 10.0.648.205:<br/>
 	    [75629] Critical CVE-2011-1301: Use-after-free in the GPU process.
 	      Credit to Google Chrome Security Team (Inferno).<br/>
@@ -3322,11 +3379,36 @@ Note:  Please add new entries to the beginning of this file.
       <cvename>CVE-2011-1296</cvename>
       <cvename>CVE-2011-1301</cvename>
       <cvename>CVE-2011-1302</cvename>
+      <cvename>CVE-2011-1303</cvename>
+      <cvename>CVE-2011-1304</cvename>
+      <cvename>CVE-2011-1305</cvename>
+      <cvename>CVE-2011-1434</cvename>
+      <cvename>CVE-2011-1435</cvename>
+      <cvename>CVE-2011-1436</cvename>
+      <cvename>CVE-2011-1437</cvename>
+      <cvename>CVE-2011-1438</cvename>
+      <cvename>CVE-2011-1439</cvename>
+      <cvename>CVE-2011-1440</cvename>
+      <cvename>CVE-2011-1441</cvename>
+      <cvename>CVE-2011-1442</cvename>
+      <cvename>CVE-2011-1443</cvename>
+      <cvename>CVE-2011-1444</cvename>
+      <cvename>CVE-2011-1445</cvename>
+      <cvename>CVE-2011-1446</cvename>
+      <cvename>CVE-2011-1447</cvename>
+      <cvename>CVE-2011-1448</cvename>
+      <cvename>CVE-2011-1449</cvename>
+      <cvename>CVE-2011-1450</cvename>
+      <cvename>CVE-2011-1451</cvename>
+      <cvename>CVE-2011-1452</cvename>
+      <cvename>CVE-2011-1454</cvename>
+      <cvename>CVE-2011-1455</cvename>
+      <cvename>CVE-2011-1456</cvename>
     </references>
     <dates>
       <discovery>2010-10-19</discovery>
       <entry>2010-12-07</entry>
-      <modified>2011-04-14</modified>
+      <modified>2011-04-30</modified>
     </dates>
   </vuln>
 
