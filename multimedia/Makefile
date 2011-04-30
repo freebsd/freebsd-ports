@@ -350,6 +350,7 @@
     SUBDIR += vdr-plugin-streamdev
     SUBDIR += vdr-plugin-upnp
     SUBDIR += vdr-plugin-vnsiserver
+    SUBDIR += vdr-plugin-wirbelscan
     SUBDIR += vdr-plugin-xineliboutput
     SUBDIR += vdr-plugins
     SUBDIR += vic
