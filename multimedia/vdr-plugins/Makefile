@@ -7,6 +7,7 @@
 
 PORTNAME=	vdr-plugins
 PORTVERSION=	1.7.18
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	# none
 DISTFILES=	# none
@@ -24,9 +25,11 @@ OPTIONS=	CONTROL "telnet control" On \
 		IPTV "IP television" On \
 		OSDPIP "picture-in-picture" On \
 		OSDTELETEXT "OSD teletext" On \
+		REELSCAN "Reel channelscan" On \
 		REMOTE "non-lirc remote control (experimental)" On \
 		SKINENIGMANG "Enigma-NG skin" On \
 		STREAMDEV "stream device (server and client)" On \
+		WIRBELSCAN "Wirbelscan" On \
 		XINELIBOUTPUT "xineliboutput plugin/viewer" On \
 		LIVE "live web plugin" On \
 		UPNP "UPnP/DLNA plugin (alpha!)" On \
@@ -57,6 +60,9 @@ RUN_DEPENDS+=	${LOCALBASE}/lib/vdr/libvdr-osdpip.so.${PORTVERSION}:${PORTSDIR}/m
 .if defined(WITH_OSDTELETEXT)
 RUN_DEPENDS+=	${LOCALBASE}/lib/vdr/libvdr-osdteletext.so.${PORTVERSION}:${PORTSDIR}/multimedia/vdr-plugin-osdteletext
 .endif
+.if defined(WITH_REELSCAN)
+RUN_DEPENDS+=	${LOCALBASE}/lib/vdr/libvdr-reelchannelscan.so.${PORTVERSION}:${PORTSDIR}/multimedia/vdr-plugin-reelchannelscan
+.endif
 .if defined(WITH_REMOTE)
 RUN_DEPENDS+=	${LOCALBASE}/lib/vdr/libvdr-remote.so.${PORTVERSION}:${PORTSDIR}/multimedia/vdr-plugin-remote
 .endif
@@ -65,6 +71,9 @@ RUN_DEPENDS+=	${LOCALBASE}/lib/vdr/libvdr-skinenigmang.so.${PORTVERSION}:${PORTS
 .endif
 .if defined(WITH_STREAMDEV)
 RUN_DEPENDS+=	${LOCALBASE}/lib/vdr/libvdr-streamdev-server.so.${PORTVERSION}:${PORTSDIR}/multimedia/vdr-plugin-streamdev
+.endif
+.if defined(WITH_WIRBELSCAN)
+RUN_DEPENDS+=	${LOCALBASE}/lib/vdr/libvdr-wirbelscan.so.${PORTVERSION}:${PORTSDIR}/multimedia/vdr-plugin-wirbelscan
 .endif
 .if defined(WITH_XINELIBOUTPUT)
 RUN_DEPENDS+=	${LOCALBASE}/lib/vdr/libvdr-xineliboutput.so.${PORTVERSION}:${PORTSDIR}/multimedia/vdr-plugin-xineliboutput
