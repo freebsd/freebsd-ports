@@ -7,7 +7,7 @@
 
 PORTNAME=	openjade
 PORTVERSION=	1.3.3p1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/1.3.3
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/p/-pre/}
@@ -21,6 +21,7 @@ RUN_DEPENDS=	${XMLCATMGR}:${PORTSDIR}/textproc/xmlcatmgr
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 USE_PERL5=	yes
+USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-default-catalog=${PREFIX}/share/sgml/catalog \
 		--datadir=${DATADIR}
