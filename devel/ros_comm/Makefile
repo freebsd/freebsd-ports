@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	ros
-PORTVERSION=	1.2.5
+PORTVERSION=	1.2.6
 CATEGORIES=	devel
 MASTER_SITES=	ftp://rene-ladan.nl/pub/distfiles/ros/
 DISTFILES=	ros-${PORTVERSION}.tar.bz2 SWIG-1.3.29-wx.tar.gz \
