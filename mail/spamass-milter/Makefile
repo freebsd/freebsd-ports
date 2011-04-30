@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	spamass-milter
-PORTVERSION=	0.3.1
-PORTREVISION=	11
+PORTVERSION=	0.3.2
 CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_SAVANNAH}
 MASTER_SITE_SUBDIR=	spamass-milt
@@ -44,7 +43,7 @@ NEW_ARGS:=	${NEW_ARGS}R:
 .endif
 
 .if defined(WITH_IPV6)
-EXTRA_PATCHES+= ${FILESDIR}/extra-patch-ipv6
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-ipv6
 .endif
 
 # extra-patch-options is modified in pre-patch
