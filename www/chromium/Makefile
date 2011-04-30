@@ -7,8 +7,7 @@
 
 PORTNAME=	chromium
 DISTVERSIONPREFIX=	courgette-redacted-
-DISTVERSION=	10.0.648.205
-PORTREVISION=	1
+DISTVERSION=	11.0.696.57
 CATEGORIES=	www
 MASTER_SITES=	http://download.goodking.org/downloads/ \
 		ftp://rene-ladan.nl/pub/distfiles/ \
@@ -32,7 +31,8 @@ LIB_DEPENDS=	execinfo.1:${PORTSDIR}/devel/libexecinfo \
 		asound.2:${PORTSDIR}/audio/alsa-lib \
 		freetype.9:${PORTSDIR}/print/freetype2 \
 		nss3.1:${PORTSDIR}/security/nss \
-		gnome-keyring.0:${PORTSDIR}/security/libgnome-keyring
+		gnome-keyring.0:${PORTSDIR}/security/libgnome-keyring \
+		ibus.2:${PORTSDIR}/textproc/ibus
 
 RUN_DEPENDS=	${LOCALBASE}/lib/alsa-lib/libasound_module_pcm_oss.so:${PORTSDIR}/audio/alsa-plugins \
 		${LOCALBASE}/lib/X11/fonts/Droid/fonts.dir:${PORTSDIR}/x11-fonts/droid-fonts-ttf

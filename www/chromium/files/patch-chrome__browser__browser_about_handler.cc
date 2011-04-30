@@ -1,24 +1,24 @@
---- chrome/browser/browser_about_handler.cc.orig	2011-01-06 10:01:46.000000000 +0100
-+++ chrome/browser/browser_about_handler.cc	2011-01-09 20:16:04.000000000 +0100
-@@ -74,7 +74,7 @@
- #include "chrome/browser/zygote_host_linux.h"
- #elif defined(OS_MACOSX)
- #include "chrome/browser/ui/cocoa/about_ipc_dialog.h"
+--- chrome/browser/browser_about_handler.cc.orig	2011-04-15 11:01:47.000000000 +0300
++++ chrome/browser/browser_about_handler.cc	2011-04-15 21:51:24.189641560 +0300
+@@ -71,7 +71,7 @@
+ #include "chrome/browser/chromeos/login/wizard_controller.h"
+ #include "chrome/browser/chromeos/version_loader.h"
+ #include "content/browser/zygote_host_linux.h"
 -#elif defined(OS_LINUX)
 +#elif defined(OS_LINUX) || defined(OS_FREEBSD)
- #include "chrome/browser/zygote_host_linux.h"
+ #include "content/browser/zygote_host_linux.h"
  #endif
  
-@@ -127,7 +127,7 @@
- const char kNetInternalsPath[] = "net-internals";
+@@ -126,7 +126,7 @@
  const char kPluginsPath[] = "plugins";
+ const char kSyncInternalsPath[] = "sync-internals";
  
 -#if defined(OS_LINUX)
 +#if defined(OS_LINUX) || defined(OS_FREEBSD)
  const char kLinuxProxyConfigPath[] = "linux-proxy-config";
  const char kSandboxPath[] = "sandbox";
  #endif
-@@ -159,7 +159,7 @@
+@@ -160,7 +160,7 @@
    kTcmallocPath,
    kTermsPath,
    kVersionPath,
@@ -27,7 +27,7 @@
    kSandboxPath,
  #endif
  #if defined(OS_CHROMEOS)
-@@ -549,7 +549,7 @@
+@@ -648,7 +648,7 @@
    return data;
  }
  
@@ -36,10 +36,10 @@
  std::string AboutLinuxProxyConfig() {
    std::string data;
    data.append("<!DOCTYPE HTML>\n");
-@@ -796,7 +796,7 @@
-   } else if (path == kTermsPath) {
+@@ -863,7 +863,7 @@
      response = ResourceBundle::GetSharedInstance().GetRawDataResource(
          IDR_TERMS_HTML).as_string();
+ #endif
 -#if defined(OS_LINUX)
 +#if defined(OS_LINUX) || defined(OS_FREEBSD)
    } else if (path == kLinuxProxyConfigPath) {

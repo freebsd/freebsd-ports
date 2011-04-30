@@ -1,5 +1,5 @@
---- ./chrome/browser/zygote_host_linux.h.orig	2010-12-16 02:11:58.000000000 +0100
-+++ ./chrome/browser/zygote_host_linux.h	2010-12-20 20:15:08.000000000 +0100
+--- content/browser/zygote_host_linux.h.orig	2010-12-16 02:11:58.000000000 +0100
++++ content/browser/zygote_host_linux.h	2010-12-20 20:15:08.000000000 +0100
 @@ -51,6 +51,9 @@
      kCmdReap = 1,                  // Reap a renderer child.
      kCmdGetTerminationStatus = 2,  // Check what happend to a child process.

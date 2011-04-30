@@ -1,7 +1,7 @@
---- chrome/chrome_tests.gypi.orig	2011-01-06 10:02:02.000000000 +0100
-+++ chrome/chrome_tests.gypi	2011-01-09 21:00:16.000000000 +0100
-@@ -141,7 +141,7 @@
-         'test/unit/chrome_test_suite.h',
+--- chrome/chrome_tests.gypi.orig	2011-04-16 19:33:32.144068169 +0300
++++ chrome/chrome_tests.gypi	2011-04-16 19:33:47.813071073 +0300
+@@ -185,7 +185,7 @@
+         '../content/common/notification_observer_mock.h',
        ],
        'conditions': [
 -        ['OS=="linux"', {
@@ -9,16 +9,16 @@
            'dependencies': [
              '../build/linux/system.gyp:gtk',
              '../build/linux/system.gyp:nss',
-@@ -191,7 +191,7 @@
-         'test/ui/ui_test_suite.h',
-       ],
-       'conditions': [
+@@ -239,7 +239,7 @@
+             'chrome.gyp:crash_service',  # run time dependency
+           ],
+         }],
 -        ['OS=="linux"', {
 +        ['OS=="linux" or OS=="freebsd"', {
            'dependencies': [
              '../build/linux/system.gyp:gtk',
            ],
-@@ -215,7 +215,7 @@
+@@ -279,7 +279,7 @@
          'test/unit/run_all_unittests.cc',
        ],
        'conditions': [
@@ -27,7 +27,7 @@
            'dependencies': [
              # Needed for the following #include chain:
              #   test/unit/run_all_unittests.cc
-@@ -261,7 +261,7 @@
+@@ -325,7 +325,7 @@
              },
            },
          },],
@@ -36,7 +36,7 @@
            'dependencies': [
              '../tools/xdisplaycheck/xdisplaycheck.gyp:xdisplaycheck',
            ],
-@@ -341,7 +341,7 @@
+@@ -398,14 +398,14 @@
          'test/unit/chrome_test_suite.h',
        ],
        'conditions': [
@@ -45,7 +45,15 @@
            'dependencies': [
              '../build/linux/system.gyp:gtk',
              '../build/linux/system.gyp:nss',
-@@ -555,12 +555,12 @@
+             '../tools/xdisplaycheck/xdisplaycheck.gyp:xdisplaycheck',
+           ],
+         }],
+-        ['OS=="linux" and toolkit_views==0', {
++        ['(OS=="linux" or OS=="freebsd") and toolkit_views==0', {
+           'sources!': [
+             # TODO(port)
+             'browser/ui/views/bookmarks/bookmark_bar_view_test.cc',
+@@ -606,12 +606,12 @@
              '../webkit/webkit.gyp:copy_npapi_test_plugin',
            ],
          }],
@@ -60,8 +68,8 @@
            'sources!': [
              'browser/process_singleton_linux_uitest.cc',
            ],
-@@ -720,7 +720,7 @@
-         'test/webdriver/commands/webdriver_command.cc',
+@@ -782,7 +782,7 @@
+         'test/webdriver/commands/webelement_commands.cc',
        ],
        'conditions': [
 -        ['OS=="linux"', {
@@ -69,7 +77,7 @@
            'dependencies': [
              '../build/linux/system.gyp:gtk',
              '../tools/xdisplaycheck/xdisplaycheck.gyp:xdisplaycheck',
-@@ -1749,7 +1749,7 @@
+@@ -1893,7 +1893,7 @@
              ['exclude', '^browser/chromeos/'],
            ],
          }],
@@ -78,17 +86,17 @@
            'conditions': [
              ['gcc_version==44', {
                # Avoid gcc 4.4 strict aliasing issues in stl_tree.h when
-@@ -1786,7 +1786,7 @@
+@@ -1930,7 +1930,7 @@
            'sources!': [
              'browser/printing/print_job_unittest.cc',
            ],
 -        }, { # else: OS != "linux"
 +        }, { # else: OS != "linux" and OS != "freebsd"
            'sources!': [
-             'browser/gtk/tabs/tab_renderer_gtk_unittest.cc',
+             'browser/ui/gtk/tabs/tab_renderer_gtk_unittest.cc',
              'browser/renderer_host/gtk_key_bindings_handler_unittest.cc',
-@@ -2265,7 +2265,7 @@
-             'browser/renderer_host/test/render_view_host_manager_browsertest.cc',
+@@ -2420,7 +2420,7 @@
+             '../content/browser/renderer_host/render_view_host_manager_browsertest.cc',
            ],
          }],
 -        ['OS=="linux"', {
@@ -96,7 +104,7 @@
            'dependencies': [
              '../build/linux/system.gyp:gtk',
              '../build/linux/system.gyp:nss',
-@@ -2428,7 +2428,7 @@
+@@ -2589,7 +2589,7 @@
              },
            },
          },],
@@ -105,7 +113,7 @@
            'dependencies': [
              '../build/linux/system.gyp:gtk',
              '../tools/xdisplaycheck/xdisplaycheck.gyp:xdisplaycheck',
-@@ -2529,7 +2529,7 @@
+@@ -2690,7 +2690,7 @@
              },
            },
          },],
@@ -114,7 +122,7 @@
            'dependencies': [
              '../build/linux/system.gyp:gtk',
            ],
-@@ -2566,7 +2566,7 @@
+@@ -2727,7 +2727,7 @@
              },
            },
          },],
@@ -123,7 +131,7 @@
            'dependencies': [
              '../build/linux/system.gyp:gtk',
              '../tools/xdisplaycheck/xdisplaycheck.gyp:xdisplaycheck',
-@@ -2603,7 +2603,7 @@
+@@ -2764,7 +2764,7 @@
          'test/tab_switching/tab_switching_test.cc',
        ],
        'conditions': [
@@ -132,7 +140,7 @@
            'dependencies': [
              '../build/linux/system.gyp:gtk',
              '../tools/xdisplaycheck/xdisplaycheck.gyp:xdisplaycheck',
-@@ -2637,7 +2637,7 @@
+@@ -2798,7 +2798,7 @@
          'test/memory_test/memory_test.cc',
        ],
        'conditions': [
@@ -141,7 +149,7 @@
            'dependencies': [
              '../build/linux/system.gyp:gtk',
              '../tools/xdisplaycheck/xdisplaycheck.gyp:xdisplaycheck',
-@@ -2790,7 +2790,7 @@
+@@ -2961,7 +2961,7 @@
              'browser/sync/util/data_encryption_unittest.cc',
            ],
          }],
@@ -150,7 +158,7 @@
            'dependencies': [
              '../build/linux/system.gyp:gtk',
              '../build/linux/system.gyp:nss',
-@@ -2908,7 +2908,7 @@
+@@ -3075,7 +3075,7 @@
        ],
        'conditions': [
          # Plugin code.
@@ -159,7 +167,7 @@
            'dependencies': [
              'plugin',
             ],
-@@ -2916,7 +2916,7 @@
+@@ -3083,7 +3083,7 @@
              'plugin',
            ],
          }],
@@ -168,7 +176,16 @@
             'dependencies': [
               '../build/linux/system.gyp:gtk',
               '../build/linux/system.gyp:nss',
-@@ -3143,7 +3143,7 @@
+@@ -3228,7 +3228,7 @@
+           # See comments about "xcode_settings" elsewhere in this file.
+           'xcode_settings': {'OTHER_LDFLAGS': ['-Wl,-ObjC']},
+         }],
+-        ['OS=="linux"', {
++        ['OS=="linux" or OS=="freebsd"', {
+            'dependencies': [
+              '../build/linux/system.gyp:gtk',
+              '../build/linux/system.gyp:nss',
+@@ -3311,7 +3311,7 @@
              'test/perf/url_parse_perftest.cc',
            ],
            'conditions': [

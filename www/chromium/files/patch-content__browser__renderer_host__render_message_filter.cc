@@ -1,15 +1,15 @@
---- chrome/browser/renderer_host/render_message_filter.cc.orig	2011-03-23 00:59:35.959798938 +0200
-+++ chrome/browser/renderer_host/render_message_filter.cc	2011-03-23 00:59:46.644644079 +0200
-@@ -375,7 +375,7 @@
-     IPC_MESSAGE_HANDLER_DELAY_REPLY(ViewHostMsg_GetDefaultPrintSettings,
-                                     OnGetDefaultPrintSettings)
-     IPC_MESSAGE_HANDLER_DELAY_REPLY(ViewHostMsg_ScriptedPrint, OnScriptedPrint)
+--- content/browser/renderer_host/render_message_filter.cc.orig	2011-04-15 11:01:10.000000000 +0300
++++ content/browser/renderer_host/render_message_filter.cc	2011-04-16 21:12:33.904069230 +0300
+@@ -416,7 +416,7 @@
+     IPC_MESSAGE_HANDLER(ViewHostMsg_V8HeapStats, OnV8HeapStats)
+     IPC_MESSAGE_HANDLER(ViewHostMsg_DidZoomURL, OnDidZoomURL)
+     IPC_MESSAGE_HANDLER_DELAY_REPLY(ViewHostMsg_ResolveProxy, OnResolveProxy)
 -#if defined(OS_MACOSX)
 +#if defined(OS_MACOSX) || defined(OS_FREEBSD)
      IPC_MESSAGE_HANDLER(ViewHostMsg_AllocTransportDIB, OnAllocTransportDIB)
      IPC_MESSAGE_HANDLER(ViewHostMsg_FreeTransportDIB, OnFreeTransportDIB)
  #endif
-@@ -1196,7 +1196,7 @@
+@@ -1111,7 +1111,7 @@
    HistogramSynchronizer::DeserializeHistogramList(sequence_number, histograms);
  }
  

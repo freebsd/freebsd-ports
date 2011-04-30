@@ -1,5 +1,5 @@
---- ./chrome/browser/renderer_host/render_widget_helper.h.orig	2010-12-16 02:11:57.000000000 +0100
-+++ ./chrome/browser/renderer_host/render_widget_helper.h	2010-12-20 20:15:08.000000000 +0100
+--- content/browser/renderer_host/render_widget_helper.h.orig	2010-12-16 02:11:57.000000000 +0100
++++ content/browser/renderer_host/render_widget_helper.h	2010-12-20 20:15:08.000000000 +0100
 @@ -110,7 +110,7 @@
                          const base::TimeDelta& max_delay,
                          IPC::Message* msg);

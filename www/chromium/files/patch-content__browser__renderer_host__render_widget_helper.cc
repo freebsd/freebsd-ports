@@ -1,5 +1,5 @@
---- ./chrome/browser/renderer_host/render_widget_helper.cc.orig	2010-12-16 02:11:57.000000000 +0100
-+++ ./chrome/browser/renderer_host/render_widget_helper.cc	2010-12-20 20:15:08.000000000 +0100
+--- content/browser/renderer_host/render_widget_helper.cc.orig	2010-12-16 02:11:57.000000000 +0100
++++ content/browser/renderer_host/render_widget_helper.cc	2010-12-20 20:15:08.000000000 +0100
 @@ -58,7 +58,7 @@
    // object, so we should not be destroyed unless pending_paints_ is empty!
    DCHECK(pending_paints_.empty());
