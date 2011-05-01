@@ -385,6 +385,7 @@ libexec/fvwm/%%FVWM_VERSION%%/FvwmWindowMenu
 %%DATADIR%%/ConfigFvwmTaskBar
 %%DATADIR%%/ConfigFvwmWinList
 %%DATADIR%%/FvwmForm-Capture
+%%DATADIR%%/FvwmForm-Desktop
 %%DATADIR%%/FvwmForm-Form
 %%DATADIR%%/FvwmForm-QuitVerify
 %%DATADIR%%/FvwmForm-Rlogin
@@ -447,14 +448,12 @@ libexec/fvwm/%%FVWM_VERSION%%/FvwmWindowMenu
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/fvwm.mo
 %%NLS%%@dirrmtry share/locale/zh_CN/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/zh_CN
-%%NLS%%@dirrmtry share/locale/zv_SE/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/zv_SE
+%%NLS%%@dirrmtry share/locale/sv_SE/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/sv_SE
 %%NLS%%@dirrmtry share/locale/fr/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/fr
 %%NLS%%@dirrmtry share/locale/de/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/de
-%%NLS%%@dirrmtry share/locale/ar/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/ar
 @dirrm %%DATADIR%%/perllib/General
 @dirrm %%DATADIR%%/perllib/FVWM/Tracker
 @dirrm %%DATADIR%%/perllib/FVWM/Module
