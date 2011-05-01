@@ -26,10 +26,8 @@
     SUBDIR += blast
     SUBDIR += bricons
     SUBDIR += brightside
-    SUBDIR += buttonbox
     SUBDIR += cl-clx
     SUBDIR += cl-clx-sbcl
-    SUBDIR += cnslock
     SUBDIR += compositeproto
     SUBDIR += damageproto
     SUBDIR += decurs
@@ -73,7 +71,6 @@
     SUBDIR += gambas2-gb-desktop
     SUBDIR += gambas2-gb-qt-kde
     SUBDIR += gcb
-    SUBDIR += gcursor
     SUBDIR += gdesklets-tasklist
     SUBDIR += gdkxft
     SUBDIR += gdm
@@ -85,7 +82,6 @@
     SUBDIR += gnome-clipboard-daemon
     SUBDIR += gnome-desktop
     SUBDIR += gnome-desktop-reference
-    SUBDIR += gnome-launch-box
     SUBDIR += gnome-libs
     SUBDIR += gnome-menus
     SUBDIR += gnome-panel
@@ -108,11 +104,9 @@
     SUBDIR += gtk-launch
     SUBDIR += gtk-theme-switch
     SUBDIR += gtk-theme-switch2
-    SUBDIR += gtk-themepreview
     SUBDIR += gtkchtheme
     SUBDIR += gtkterm2
     SUBDIR += gtstarter
-    SUBDIR += gxset
     SUBDIR += hotwire-shell
     SUBDIR += hs-X11
     SUBDIR += hs-X11-xft
@@ -226,11 +220,9 @@
     SUBDIR += pixman
     SUBDIR += plasma-scriptengine-python
     SUBDIR += plasma-scriptengine-ruby
-    SUBDIR += portoseguro
     SUBDIR += powershell
     SUBDIR += printproto
     SUBDIR += printscreen
-    SUBDIR += props
     SUBDIR += py-qt4-opengl
     SUBDIR += qimageblitz
     SUBDIR += qt4-graphicssystems-opengl
@@ -298,10 +290,8 @@
     SUBDIR += wmcliphist
     SUBDIR += wmctrl
     SUBDIR += wmdrawer
-    SUBDIR += wmfstatus
     SUBDIR += wmmatrix
     SUBDIR += wmmsg
-    SUBDIR += wmoldmenu2new
     SUBDIR += wmxss
     SUBDIR += workrave
     SUBDIR += wrapper
@@ -319,7 +309,6 @@
     SUBDIR += xbelld
     SUBDIR += xbiff
     SUBDIR += xbindkeys
-    SUBDIR += xbindkeys_config
     SUBDIR += xbitmaps
     SUBDIR += xbrightness
     SUBDIR += xcalc
@@ -405,7 +394,6 @@
     SUBDIR += xmessage
     SUBDIR += xmh
     SUBDIR += xmodmap
-    SUBDIR += xmold
     SUBDIR += xmon
     SUBDIR += xmore
     SUBDIR += xmotd
@@ -456,7 +444,6 @@
     SUBDIR += xstdcmap
     SUBDIR += xstroke
     SUBDIR += xtacy
-    SUBDIR += xtattr
     SUBDIR += xterm
     SUBDIR += xtermcontrol
     SUBDIR += xtermset
