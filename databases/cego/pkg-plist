@@ -29,4 +29,4 @@ lib/libcego.so.1
 lib/libcgwrap.a
 lib/libcgwrap.so.1
 @dirrm include/cego
-@dirtmtry %%USER%%
+@dirrmtry %%USER%%
