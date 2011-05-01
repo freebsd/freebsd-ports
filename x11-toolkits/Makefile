@@ -60,7 +60,6 @@
     SUBDIR += gtkextra
     SUBDIR += gtkextra2
     SUBDIR += gtkglarea
-    SUBDIR += gtkglarea--
     SUBDIR += gtkglarea2
     SUBDIR += gtkglext
     SUBDIR += gtkglextmm
@@ -184,7 +183,6 @@
     SUBDIR += paragui
     SUBDIR += paragui-devel
     SUBDIR += phat
-    SUBDIR += php-gtk
     SUBDIR += plib
     SUBDIR += py-Pmw
     SUBDIR += py-SciParam
@@ -194,7 +192,6 @@
     SUBDIR += py-gnome2
     SUBDIR += py-gtk
     SUBDIR += py-gtk2
-    SUBDIR += py-gtkextra
     SUBDIR += py-gtkglext
     SUBDIR += py-gtksourceview
     SUBDIR += py-gui
@@ -253,7 +250,6 @@
     SUBDIR += skinlf
     SUBDIR += slgtk
     SUBDIR += slgtkdatabox
-    SUBDIR += slingshot
     SUBDIR += soqt
     SUBDIR += swt
     SUBDIR += swt-devel
@@ -278,7 +274,6 @@
     SUBDIR += v
     SUBDIR += vdk
     SUBDIR += vdkbuilder
-    SUBDIR += viewkit
     SUBDIR += viewklass
     SUBDIR += vte
     SUBDIR += vte-reference
