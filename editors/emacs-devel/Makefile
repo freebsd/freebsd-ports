@@ -35,7 +35,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--localstatedir=/var
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
-USE_AUTOTOOLS=	autoconf:env automake:env aclocal:env
+USE_AUTOTOOLS=	autoconf:env automake:env aclocal:env autoheader:env
 
 EMACS_DIRS=	${DATADIR}/${EMACS_VER}/leim ${DATADIR}/${EMACS_VER}/lisp ${DATADIR}/${EMACS_VER}/src \
 		${PREFIX}/libexec/${PORTNAME}
@@ -176,6 +176,12 @@ USE_XORG+=	xft
 LIB_DEPENDS+=	freetype.9:${PORTSDIR}/print/freetype2
 .endif
 
+.if defined(WITHOUT_IMAGEMAGICK)
+CONFIGURE_ARGS+=	--without-imagemagick
+.else
+LIB_DEPENDS+=		MagickCore.4:${PORTSDIR}/graphics/ImageMagick
+.endif
+
 .if defined(WITHOUT_M17N)
 CONFIGURE_ARGS+=	--without-m17n-flt
 .else
@@ -212,12 +218,6 @@ CONFIGURE_ARGS+=	--without-sound
 CONFIGURE_ARGS+=	--without-dbus
 .else
 LIB_DEPENDS+=	dbus-1.3:${PORTSDIR}/devel/dbus
-.endif
-
-.if defined(WITHOUT_IMAGEMAGICK)
-CONFIGURE_ARGS+=	--without-imagemagick
-.else
-LIB_DEPENDS+=		MagickCore.4:${PORTSDIR}/graphics/ImageMagick
 .endif
 
 .if defined(WITHOUT_XML)
