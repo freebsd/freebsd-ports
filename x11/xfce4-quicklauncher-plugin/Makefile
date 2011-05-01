@@ -16,6 +16,8 @@ DIST_SUBDIR=	xfce4
 MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	Quicklauncher plugin for xfce
 
+BROKEN=		does not configure
+
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
 USE_GETTEXT=	yes
