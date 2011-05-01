@@ -17,7 +17,6 @@ DISTNAME=	qutim_${PORTVERSION}_svn529
 MAINTAINER=	webmaster@kibab.com
 COMMENT=	A Qt4-based multiprotocol IM client with advanced features
 
-USE_GMAKE=	yes
 USE_QT_VER=	4
 QT_COMPONENTS=	designer_build	\
 		gui		\
