@@ -24,13 +24,13 @@ USE_GETTEXT=	yes
 CONFIGURE_ARGS=	--with-imagelib=gdk-pixbuf2 --enable-utmp \
 		--mandir="${LOCALBASE}/man" --enable-optimize-redrawing \
 		--with-tools="mlclient,mlconfig,mlterm-menu,mlcc,w3mmlconfig" \
-		--with-type-engines="xcore,xft"
-CONFIGURE_ENV=	LIBS="${LIBS} -L${LOCALBASE}/lib ${PTHREAD_LIBS} -lintl" CFLAGS="${CFLAGS} -I${LOCALBASE}/include -I${LOCALBASE}/include/iiim"
+		--with-type-engines="xcore,xft" \
+		--disable-iiimf
+CONFIGURE_ENV=	LIBS="${LIBS} -L${LOCALBASE}/lib ${PTHREAD_LIBS} -lintl" CFLAGS="${CFLAGS} -I${LOCALBASE}/include"
 MAKE_JOBS_UNSAFE=	yes
 OPTIONS=	FRIBIDI	"Use Fribidi for BiDi rendering" off \
 		UIM "uim support (experimental)" off \
 		M17NLIB "m17n library support (experimental)" off \
-		IIIMF "IIIMF support (experimental)" off \
 		SCIM "SCIM support (experimental)" off \
 		IBUS "IBUS support (experimental)" off
 
@@ -63,14 +63,6 @@ CONFIGURE_ARGS+=	--disable-m17nlib
 PLIST_SUB+=	M17NLIB="@comment "
 .endif
 
-.if defined(WITH_IIIMF)
-CONFIGURE_ARGS+=	--enable-iiimf
-LIB_DEPENDS+=	iiimcf.3:${PORTSDIR}/textproc/iiimf-client-lib
-PLIST_SUB+=	IIIMF=""
-.else
-CONFIGURE_ARGS+=	--disable-iiimf
-PLIST_SUB+=	IIIMF="@comment "
-.endif
 
 .if defined(WITH_SCIM)
 CONFIGURE_ARGS+=	--enable-scim

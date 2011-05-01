@@ -41,9 +41,6 @@ lib/mlterm/libathena.so
 %%IBUS%%lib/mlterm/libim-ibus.a
 %%IBUS%%lib/mlterm/libim-ibus.la
 %%IBUS%%lib/mlterm/libim-ibus.so
-%%IIIMF%%lib/mlterm/libim-iiimf.a
-%%IIIMF%%lib/mlterm/libim-iiimf.la
-%%IIIMF%%lib/mlterm/libim-iiimf.so
 lib/mlterm/libim-kbd.a
 lib/mlterm/libim-kbd.la
 lib/mlterm/libim-kbd.so
