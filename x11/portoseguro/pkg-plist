@@ -1,4 +1,0 @@
-bin/portoseguro
-bin/portoseguro.conf
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
