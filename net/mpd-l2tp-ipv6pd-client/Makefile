@@ -15,6 +15,7 @@ DISTFILES=	# none
 MAINTAINER=	ume@FreeBSD.org
 COMMENT=	A sample implementaiton set of "L2TP-IPv6PD" client using mpd
 
+IS_INTERACTIVE=	yes
 MANUAL_PACKAGE_BUILD=yes
 NO_PACKAGE=	yes
 USE_RC_SUBR=	yes
