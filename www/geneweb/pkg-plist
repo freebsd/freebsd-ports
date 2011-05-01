@@ -3,6 +3,7 @@ bin/consang
 bin/ged2gwb
 bin/gwb2ged
 bin/gwc
+bin/gwc1
 bin/gwc2
 bin/gwd
 bin/gwu
