@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	rkward
-PORTVERSION=	0.5.4
-PORTREVISION=	2
+PORTVERSION=	0.5.5
 CATEGORIES=	math
 MASTER_SITES=	SF/${PORTNAME}/Current_Stable_Releases
 PKGNAMESUFFIX=	-kde4
@@ -45,11 +44,11 @@ PLIST_SUB+=	NLS=${NLS}
 BUILD_DEPENDS+=	${LOCALBASE}/share/xml/docbook/4.2/docbookx.dtd:${PORTSDIR}/textproc/docbook-xml
 .endif
 
-PHP2FIX=	rkward/settings/rksettingsmodulephp.cpp
+.if defined(WITH_DEBUG)
+CMAKE_ARGS+=	-DCMAKE_BUILD_TYPE=Debug
+.endif
 
 pre-configure:
-	${REINPLACE_CMD} -e 's|/usr/bin/php|${LOCALBASE}/bin/php|'	\
-		${PHP2FIX:S|^|${WRKSRC}/|}
 	${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|'	\
 		${WRKSRC}/rkward/rkward.sh.template
 .if defined(NOPORTDOCS)
