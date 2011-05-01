@@ -9,14 +9,11 @@ PORTNAME=	swm
 PORTVERSION=	1.3.4
 PORTREVISION=	4
 CATEGORIES=	x11-wm
-MASTER_SITES=	http://www2.informatik.hu-berlin.de/~sperling/prog/
+MASTER_SITES=	http://www.small-window-manager.de/
 EXTRACT_SUFX=	c-src.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Window manager for low-memory systems, with title bars and shading
-
-DEPRECATED=     Upstream disapear and distfile is no more available
-EXPIRATION_DATE=        2011-05-01
 
 BINS=		swm swmbg swmswitch
 DOCDIR=		share/doc/${PORTNAME}
