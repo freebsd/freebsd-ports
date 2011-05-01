@@ -27,16 +27,6 @@
     SUBDIR += bibcursed
     SUBDIR += biblio-py
     SUBDIR += bibview
-    SUBDIR += bjfilter360
-    SUBDIR += bjfilter850
-    SUBDIR += bjfilter850ug
-    SUBDIR += bjfilter860
-    SUBDIR += bjfilter870
-    SUBDIR += bjfiltercom
-    SUBDIR += bjfilters600
-    SUBDIR += bjfilters630
-    SUBDIR += bjfilters6300
-    SUBDIR += bsd_lpr
     SUBDIR += c2ps-a4
     SUBDIR += c2ps-letter
     SUBDIR += catdvi
@@ -60,7 +50,6 @@
     SUBDIR += dk-acroread8
     SUBDIR += dot2tex
     SUBDIR += dvi2tty
-    SUBDIR += dvi2xx
     SUBDIR += dvipdfmx
     SUBDIR += dvips
     SUBDIR += dvips2ascii
@@ -72,7 +61,6 @@
     SUBDIR += enscript-letter
     SUBDIR += enscript-letterdj
     SUBDIR += enscriptfonts
-    SUBDIR += envelope
     SUBDIR += epsmerge
     SUBDIR += epsonepl
     SUBDIR += es-acroread8
@@ -216,7 +204,6 @@
     SUBDIR += paps
     SUBDIR += passivetex
     SUBDIR += pcal
-    SUBDIR += pclprint
     SUBDIR += pdf-renderer
     SUBDIR += pdfcube
     SUBDIR += pdfjam
@@ -290,7 +277,6 @@
     SUBDIR += pscal
     SUBDIR += psdim
     SUBDIR += pslib
-    SUBDIR += psmark
     SUBDIR += pstotext
     SUBDIR += psutils-a4
     SUBDIR += psutils-letter
@@ -341,8 +327,6 @@
     SUBDIR += texpower
     SUBDIR += texvc
     SUBDIR += tgif2tex
-    SUBDIR += tipograf
-    SUBDIR += tr2latex
     SUBDIR += transfig
     SUBDIR += trueprint
     SUBDIR += ttf2pt1
@@ -351,7 +335,6 @@
     SUBDIR += txtbdf2ps
     SUBDIR += typetools
     SUBDIR += utopia
-    SUBDIR += wmlpq
     SUBDIR += wprint
     SUBDIR += xdvi
     SUBDIR += xdvik
