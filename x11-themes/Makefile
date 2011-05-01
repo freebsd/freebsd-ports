@@ -7,14 +7,11 @@
     SUBDIR += baghira
     SUBDIR += beastie
     SUBDIR += bluecurve-themes
-    SUBDIR += buffy
     SUBDIR += claws-mail-themes
-    SUBDIR += clean-theme-gtk
     SUBDIR += clearlooks
     SUBDIR += clearlooks-metacity
     SUBDIR += clearlooks-themes
     SUBDIR += clearlooks-themes-extras
-    SUBDIR += colorstep
     SUBDIR += cursor-bluecurve-theme
     SUBDIR += cursor-chameleon-anthracite
     SUBDIR += cursor-chameleon-darkskyblue
@@ -34,13 +31,11 @@
     SUBDIR += e17-theme-cthulhain
     SUBDIR += e17-theme-darkness
     SUBDIR += emerald-themes
-    SUBDIR += engradient
     SUBDIR += etoile-azbackground
     SUBDIR += etoile-camaelon
     SUBDIR += etoile-etoilemenus
     SUBDIR += etoile-iconkit
     SUBDIR += etoile-wildmenus
-    SUBDIR += flux-art
     SUBDIR += fluxbox-sid-pack
     SUBDIR += fluxbox-tenr-styles-pack
     SUBDIR += fvwm-themes
@@ -70,7 +65,6 @@
     SUBDIR += gnome-splashscreen-manager
     SUBDIR += gnome-themes
     SUBDIR += gnome-themes-extras
-    SUBDIR += gtk-Mac2-theme
     SUBDIR += gtk-aluminumalloy-cryogenic-theme
     SUBDIR += gtk-aluminumalloy-smog-theme
     SUBDIR += gtk-aluminumalloy-toxic-theme
@@ -88,7 +82,6 @@
     SUBDIR += gtk-engines2
     SUBDIR += gtk-envy-theme
     SUBDIR += gtk-equinox-engine
-    SUBDIR += gtk-flat-theme
     SUBDIR += gtk-flat-theme2
     SUBDIR += gtk-gray-theme
     SUBDIR += gtk-lila-theme
@@ -108,10 +101,6 @@
     SUBDIR += gtk-qt4-engine
     SUBDIR += gtk-xfce-engine
     SUBDIR += gtk-zenith-theme
-    SUBDIR += gtkbe
-    SUBDIR += gtkstep
-    SUBDIR += gtkstep-pastel
-    SUBDIR += icegradient
     SUBDIR += icon-bluecurve-theme
     SUBDIR += icon-naming-utils
     SUBDIR += icons-buuf
@@ -188,7 +177,6 @@
     SUBDIR += metacity-themes
     SUBDIR += moodin
     SUBDIR += murrine-configurator
-    SUBDIR += notif2
     SUBDIR += openbox-themes
     SUBDIR += phase
     SUBDIR += polymer
@@ -209,10 +197,7 @@
     SUBDIR += thewidgetfactory
     SUBDIR += thinice
     SUBDIR += ubuntulooks
-    SUBDIR += whistlerk
     SUBDIR += xcursor-themes
-    SUBDIR += xenophilia
-    SUBDIR += xenostep
     SUBDIR += xmms-bluecurve-theme
     SUBDIR += xmms-eq-skins
     SUBDIR += xmms-vumeter-skins
