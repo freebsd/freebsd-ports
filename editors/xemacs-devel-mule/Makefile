@@ -131,6 +131,10 @@ PLIST_SUB=	XEMACS_VER=${XEMACS_VER} XEMACS_ARCH=${XEMACS_ARCH}
 
 .include <bsd.port.pre.mk>
 
+.if defined(WITH_XFT) && ${OSVERSION} >= 900000
+BROKEN=		does not build on FreeBSD 9.X
+.endif
+
 pre-fetch:
 .if defined(WITHOUT_X11)
 	@${ECHO_MSG} ""
