@@ -1,6 +1,0 @@
-%%SITE_PERL%%/LJ/TextMessage.pm
-%%SITE_PERL%%/LJ/send-test.pl
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/LJ/TextMessage/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/LJ/TextMessage
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/LJ
-@dirrmtry %%SITE_PERL%%/LJ

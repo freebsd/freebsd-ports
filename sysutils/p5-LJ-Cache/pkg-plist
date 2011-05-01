@@ -1,8 +1,0 @@
-%%SITE_PERL%%/auto/LJ/Cache/autosplit.ix
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/LJ/Cache/.packlist
-%%SITE_PERL%%/LJ/Cache.pm
-@dirrm %%SITE_PERL%%/auto/LJ/Cache
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/LJ/Cache
-@dirrmtry %%SITE_PERL%%/auto/LJ
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/LJ
-@dirrmtry %%SITE_PERL%%/LJ

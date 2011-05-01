@@ -265,8 +265,6 @@ ICON-Stylish.*		x11-themes/gnome-icons-stylish Author rights unclear
 ICON-Ximian-South-*	x11-themes/gnome-icons-ximian-south Author rights unclear
 idea.V*.tar.Z		security/idea		A patented algorithm that
 						requires proper licensing
-idled-*.tar.gz		sysutils/idled		Non-profit use and distribution
-						only
 invitationtoruby.tgz	devel/invitation_to_ruby No commercial use
 install40.jar		games/sfbol		Commercial software.  License
 						does not allow redistribution
@@ -535,8 +533,6 @@ uDrawGraph-*		graphics/uDrawGraph	Binary under GNU LGPL without
 						accompanying source
 uppaal-*.zip		devel/uppaal		Downloading requires completion
 						of a license agreement
-upsmon*			sysutils/upsmon		Redistribute only with
-						original source code
 ut_linux_mgr_*		sysutils/linux-megamgr	Redistribution prohibited
 linux-unrealgold*	games/linux-unrealgold	Redistribution limited
 linux-ut/*		games/linux-ut		Redistribution limited
