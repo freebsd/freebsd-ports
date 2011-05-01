@@ -404,8 +404,6 @@ share/apps/rkward/pages/rkward_welcome.rkh
 share/apps/rkward/pages/rkward_workspace_browser.rkh
 share/apps/rkward/php2js.js
 share/apps/rkward/phpfiles/common.js
-share/apps/rkward/phpfiles/common.php
-share/apps/rkward/phpfiles/php.ini
 share/apps/rkward/phpfiles/rkcomponentscripting.js
 share/apps/rkward/plots.pluginmap
 share/apps/rkward/plots/barplot.js
