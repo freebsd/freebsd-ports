@@ -17,6 +17,8 @@ PKGNAMESUFFIX=	-plugin
 MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	Xfce Plugin for searching for the translation or explanation of a word
 
+BROKEN=		does not configure
+
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
