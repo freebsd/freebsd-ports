@@ -1,7 +1,0 @@
-bin/tr2latex
-share/texmf/tex/latex/misc/troffman.sty
-share/texmf/tex/latex/misc/troffms.sty
-@dirrmtry share/texmf/tex/latex/misc
-@dirrmtry share/texmf/tex/latex
-@dirrmtry share/texmf/tex
-@dirrmtry share/texmf
