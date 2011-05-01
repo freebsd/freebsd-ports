@@ -114,8 +114,6 @@
     SUBDIR += ibus-skk
     SUBDIR += ical
     SUBDIR += icanna
-    SUBDIR += iiimf-le-canna
-    SUBDIR += iiimf-le-freewnn
     SUBDIR += im-ja
     SUBDIR += ipadic
     SUBDIR += ircII

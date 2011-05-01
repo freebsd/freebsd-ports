@@ -53,8 +53,6 @@
     SUBDIR += hztty
     SUBDIR += ibus-chewing
     SUBDIR += ibus-pinyin
-    SUBDIR += iiimf-le-newpy
-    SUBDIR += iiimf-le-ude
     SUBDIR += irssi
     SUBDIR += jis2gb
     SUBDIR += joe

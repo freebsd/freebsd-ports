@@ -1806,3 +1806,8 @@ www/sidplug||2011-05-01|Has expired: Upstream disapear and distfile is no more a
 www/twhttpd||2011-05-01|Has expired: Upstream disapear and distfile is no more available
 www/wnews||2011-05-01|Has expired: Upstream disapear and distfile is no more available
 www/xpath2rss||2011-05-01|Has expired: Upstream disapear and distfile is no more available
+japanese/iiimf-le-freewnn||2011-05-01|Removed, depends on expired library
+japanese/iiimf-le-canna||2011-05-01|Removed, depends on expired library
+chinese/iiimf-le-newpy||2011-05-01|Removed, depends on expired library
+korean/iiimf-le-hangul||2011-05-01|Removed, depends on expired library
+chinese/iiimf-le-ude||2011-05-01|Removed, depends on expired library
