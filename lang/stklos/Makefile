@@ -31,6 +31,12 @@ CONFIGURE_ARGS=	--enable-threads=posix
 MAN1=		stklos-compile.1 stklos-config.1 stklos-genlex.1 \
 		stklos-pkg.1 stklos.1
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 900000
+BROKEN=		does not build on FreeBSD 9.x - runaway process
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|-lgc|-lgc-threaded|' \
 		-e 's|bdw-gc|bdw-gc-threaded|' \
@@ -47,4 +53,4 @@ post-patch:
 		${WRKSRC}/doc/Makefile.in
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
