@@ -128,7 +128,8 @@ post-patch:
 		${WRKSRC}/build/common.gypi \
 		${WRKSRC}/third_party/libvpx/libvpx.gyp \
 		${WRKSRC}/third_party/WebKit/Source/WebCore/plugins/PluginDatabase.cpp \
-		${WRKSRC}/v8/tools/gyp/v8.gyp
+		${WRKSRC}/v8/tools/gyp/v8.gyp \
+		${WRKSRC}/third_party/ffmpeg/ffmpeg.gyp
 	@${REINPLACE_CMD} -e "s|/usr/include/vpx|${LOCALBASE}/include|" \
 		${WRKSRC}/third_party/ffmpeg/ffmpeg.gyp
 	@${REINPLACE_CMD} -e "s|linux|freebsd|" \
