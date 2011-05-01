@@ -1811,3 +1811,22 @@ japanese/iiimf-le-canna||2011-05-01|Removed, depends on expired library
 chinese/iiimf-le-newpy||2011-05-01|Removed, depends on expired library
 korean/iiimf-le-hangul||2011-05-01|Removed, depends on expired library
 chinese/iiimf-le-ude||2011-05-01|Removed, depends on expired library
+textproc/ctpp|textproc/ctpp2|2011-05-01|Has expired: Deprecated please use ctpp2 textproc/ctpp2
+textproc/dsssl-docbook-cygnus||2011-05-01|Has expired: Distfile is no more available
+textproc/fdp-tools||2011-05-01|Has expired: Distfile is no more available
+textproc/gtkdiff||2011-05-01|Has expired: Upstream disapear and distfile is no more available
+textproc/iiimf-client-lib||2011-05-01|Has expired: Upstream disapear and distfile is no more available
+textproc/iiimf-csconv||2011-05-01|Has expired: Upstream disapear and distfile is no more available
+textproc/iiimf-headers||2011-05-01|Has expired: Upstream disapear and distfile is no more available
+textproc/iiimf-le-unit||2011-05-01|Has expired: Upstream disapear and distfile is no more available
+textproc/iiimf-protocol-lib||2011-05-01|Has expired: Upstream disapear and distfile is no more available
+textproc/iiimf-server||2011-05-01|Has expired: Upstream disapear and distfile is no more available
+textproc/iiimf-x||2011-05-01|Has expired: Upstream disapear and distfile is no more available
+textproc/iiimf-x-lib||2011-05-01|Has expired: Upstream disapear and distfile is no more available
+textproc/maketeidtd||2011-05-01|Has expired: Upstream disapear and distfile is no more available
+textproc/minidom||2011-05-01|Has expired: Upstream disapear and distfile is no more available
+textproc/ocaml-yaxpo||2011-05-01|Has expired: Upstream disapear and distfile is no more available
+textproc/p5-LJ-SpellCheck||2011-05-01|Has expired: Upstream disapear and distfile is no more available
+textproc/py-HyperText||2011-05-01|Has expired: Upstream disapear and distfile is no more available
+textproc/smartdoc||2011-05-01|Has expired: Upstream disapear and distfile is no more available
+textproc/xmlpp||2011-05-01|Has expired: Upstream disapear and distfile is no more available

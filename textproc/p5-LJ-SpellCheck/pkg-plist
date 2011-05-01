@@ -1,5 +1,0 @@
-%%SITE_PERL%%/LJ/SpellCheck.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/LJ/SpellCheck/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/LJ/SpellCheck
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/LJ
-@dirrmtry %%SITE_PERL%%/LJ

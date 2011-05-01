@@ -1,6 +1,0 @@
-lib/iiim/csconv/csconv.a
-lib/iiim/csconv/csconv.la
-lib/iiim/csconv/csconv.so
-lib/iiim/csconv/encoding.norm
-@dirrm lib/iiim/csconv
-@dirrmtry lib/iiim

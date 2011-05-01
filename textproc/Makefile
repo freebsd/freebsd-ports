@@ -77,7 +77,6 @@
     SUBDIR += csv2latex
     SUBDIR += csv2xml
     SUBDIR += csvdiff
-    SUBDIR += ctpp
     SUBDIR += ctpp2
     SUBDIR += cwtext
     SUBDIR += cy-aspell
@@ -131,7 +130,6 @@
     SUBDIR += docproj-nojadetex
     SUBDIR += dom4j
     SUBDIR += domc
-    SUBDIR += dsssl-docbook-cygnus
     SUBDIR += dsssl-docbook-modular
     SUBDIR += dtd-catalogs
     SUBDIR += dtd2relax
@@ -164,7 +162,6 @@
     SUBDIR += exslt
     SUBDIR += ezxml
     SUBDIR += fa-aspell
-    SUBDIR += fdp-tools
     SUBDIR += ffe
     SUBDIR += fi-aspell
     SUBDIR += filepp
@@ -208,7 +205,6 @@
     SUBDIR += groonga
     SUBDIR += gsed
     SUBDIR += gtk-doc
-    SUBDIR += gtkdiff
     SUBDIR += gtkspell
     SUBDIR += gtkspell-reference
     SUBDIR += gu-aspell
@@ -264,14 +260,6 @@
     SUBDIR += ibus-table
     SUBDIR += id-aspell
     SUBDIR += idnits
-    SUBDIR += iiimf-client-lib
-    SUBDIR += iiimf-csconv
-    SUBDIR += iiimf-headers
-    SUBDIR += iiimf-le-unit
-    SUBDIR += iiimf-protocol-lib
-    SUBDIR += iiimf-server
-    SUBDIR += iiimf-x
-    SUBDIR += iiimf-x-lib
     SUBDIR += iksemel
     SUBDIR += info2html
     SUBDIR += info2man
@@ -372,7 +360,6 @@
     SUBDIR += m17n-im-config
     SUBDIR += makefaq
     SUBDIR += makepatch
-    SUBDIR += maketeidtd
     SUBDIR += man2html
     SUBDIR += manued.el
     SUBDIR += markdown
@@ -385,7 +372,6 @@
     SUBDIR += mguesser
     SUBDIR += mi-aspell
     SUBDIR += mifluz
-    SUBDIR += minidom
     SUBDIR += minised
     SUBDIR += mk-aspell
     SUBDIR += mkcatalog
@@ -411,7 +397,6 @@
     SUBDIR += ocaml-csv
     SUBDIR += ocaml-expat
     SUBDIR += ocaml-pxp
-    SUBDIR += ocaml-yaxpo
     SUBDIR += odt2txt
     SUBDIR += openfts
     SUBDIR += openjade
@@ -483,7 +468,6 @@
     SUBDIR += p5-JavaScript-Minifier-XS
     SUBDIR += p5-KinoSearch
     SUBDIR += p5-Kwalify
-    SUBDIR += p5-LJ-SpellCheck
     SUBDIR += p5-LaTeX-Driver
     SUBDIR += p5-LaTeX-Encode
     SUBDIR += p5-LaTeX-Pod
@@ -1001,7 +985,6 @@
     SUBDIR += py-4suite
     SUBDIR += py-4suite-xml
     SUBDIR += py-Chameleon
-    SUBDIR += py-HyperText
     SUBDIR += py-MarkupSafe
     SUBDIR += py-Tempita
     SUBDIR += py-asv
@@ -1210,7 +1193,6 @@
     SUBDIR += skribe
     SUBDIR += sl-aspell
     SUBDIR += slides
-    SUBDIR += smartdoc
     SUBDIR += sml-fxp
     SUBDIR += smu
     SUBDIR += soothsayer
@@ -1335,7 +1317,6 @@
     SUBDIR += xmlenc
     SUBDIR += xmlformat
     SUBDIR += xmlindent
-    SUBDIR += xmlpp
     SUBDIR += xmlppm
     SUBDIR += xmlprpr
     SUBDIR += xmlpull
