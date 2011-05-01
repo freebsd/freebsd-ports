@@ -5980,6 +5980,7 @@ imageindex                      ports/graphics/imageindex
 imagemagick                     ports/graphics/ImageMagick
 imagesort                       ports/graphics/imagesort
 imageviewer                     ports/graphics/imageviewer
+imagination                     ports/multimedia/imagination
 imake                           ports/devel/imake
 imap-uw                         ports/mail/imap-uw
 imapfilter                      ports/mail/imapfilter
@@ -7274,7 +7275,6 @@ kid3-kde4                       ports/audio/kid3-kde4
 kiki                            ports/games/kiki
 kile                            ports/editors/kile
 kile-kde4                       ports/editors/kile-kde4
-kiltdown                        ports/mail/kiltdown
 kimboot                         ports/games/kimboot
 kimwitu                         ports/devel/kimwitu
 kimwitu++                       ports/devel/kimwitu++
@@ -20616,7 +20616,6 @@ pingwi                          ports/x11-fonts/pingwi
 pink-pony                       ports/games/pink-pony
 pino                            ports/net-im/pino
 pinot                           ports/deskutils/pinot
-pinstall                        ports/devel/pinstall
 pioneers                        ports/games/pioneers
 pipe                            ports/misc/pipe
 pipebench                       ports/benchmarks/pipebench
@@ -20886,6 +20885,7 @@ portaudio                       ports/audio/portaudio
 portaudio2                      ports/audio/portaudio2
 portaudit                       ports/ports-mgmt/portaudit
 portaudit-db                    ports/ports-mgmt/portaudit-db
+portbuilder                     ports/ports-mgmt/portbuilder
 portcheck                       ports/ports-mgmt/portcheck
 portcheckout                    ports/ports-mgmt/portcheckout
 portconf                        ports/ports-mgmt/portconf
@@ -20898,7 +20898,6 @@ portlet-api                     ports/devel/portlet-api
 portlint                        ports/ports-mgmt/portlint
 portmanager                     ports/ports-mgmt/portmanager
 portmaster                      ports/ports-mgmt/portmaster
-portmk                          ports/ports-mgmt/portmk
 portmon                         ports/net-mgmt/portmon
 portoseguro                     ports/x11/portoseguro
 portrac                         ports/ports-mgmt/portrac
@@ -20958,7 +20957,6 @@ portsearch                      ports/ports-mgmt/portsearch
 portsentry                      ports/security/portsentry
 portshaker                      ports/ports-mgmt/portshaker
 portshaker-config               ports/ports-mgmt/portshaker-config
-portsman                        ports/ports-mgmt/portsman
 portsopt                        ports/ports-mgmt/portsopt
 porttools                       ports/ports-mgmt/porttools
 portupdate-scan                 ports/ports-mgmt/portupdate-scan
@@ -23160,6 +23158,7 @@ ruby-lv                         ports/converters/ruby-lv
 ruby-man                        ports/lang/ruby-man
 ruby-mcrypt                     ports/security/ruby-mcrypt
 ruby-memcache                   ports/databases/ruby-memcache
+ruby-memoize                    ports/devel/ruby-memoize
 ruby-metaruby                   ports/devel/ruby-metaruby
 ruby-ming                       ports/graphics/ruby-ming
 ruby-mmap                       ports/devel/ruby-mmap
@@ -25849,12 +25848,14 @@ vdr-plugin-live                 ports/www/vdr-plugin-live
 vdr-plugin-markad               ports/multimedia/vdr-plugin-markad
 vdr-plugin-osdpip               ports/multimedia/vdr-plugin-osdpip
 vdr-plugin-osdteletext          ports/multimedia/vdr-plugin-osdteletext
+vdr-plugin-reelchannelscan      ports/multimedia/vdr-plugin-reelchannelscan
 vdr-plugin-remote               ports/multimedia/vdr-plugin-remote
 vdr-plugin-skinenigmang         ports/multimedia/vdr-plugin-skinenigmang
 vdr-plugin-softdevice           ports/multimedia/vdr-plugin-softdevice
 vdr-plugin-streamdev            ports/multimedia/vdr-plugin-streamdev
 vdr-plugin-upnp                 ports/multimedia/vdr-plugin-upnp
 vdr-plugin-vnsiserver           ports/multimedia/vdr-plugin-vnsiserver
+vdr-plugin-wirbelscan           ports/multimedia/vdr-plugin-wirbelscan
 vdr-plugin-xineliboutput        ports/multimedia/vdr-plugin-xineliboutput
 vdr-plugins                     ports/multimedia/vdr-plugins
 vdradmin-am                     ports/www/vdradmin-am
