@@ -14,7 +14,6 @@
     SUBDIR += astzclock
     SUBDIR += bbdate
     SUBDIR += bclock
-    SUBDIR += bdesktopclock
     SUBDIR += bmp-alarm
     SUBDIR += buici-clock
     SUBDIR += cairo-clock
@@ -44,7 +43,6 @@
     SUBDIR += t3d
     SUBDIR += tclock
     SUBDIR += tktz
-    SUBDIR += washerdryer
     SUBDIR += wmbday
     SUBDIR += wmbinclock
     SUBDIR += wmblueclock
@@ -57,14 +55,12 @@
     SUBDIR += wmitime
     SUBDIR += wmtime
     SUBDIR += wmtimer
-    SUBDIR += wmtz
     SUBDIR += xalarm
     SUBDIR += xclock
     SUBDIR += xdaliclock
     SUBDIR += xfce4-datetime-plugin
     SUBDIR += xfce4-timer-out-plugin
     SUBDIR += xfce4-timer-plugin
-    SUBDIR += xmms-alarm
     SUBDIR += xtimer
 
 .include <bsd.port.subdir.mk>
