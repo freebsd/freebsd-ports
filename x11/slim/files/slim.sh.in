@@ -30,11 +30,22 @@ load_rc_config $name
 
 command=%%PREFIX%%/bin/slim
 command_args="-d"
-pidfile=/var/run/slim.pid
+
+find_pidfile()
+{
+	if type get_pidfile_from_conf >/dev/null 2>&1 &&
+	    get_pidfile_from_conf lockfile %%PREFIX%%/etc/${name}.conf; then
+		pidfile="$_pidfile_from_conf"
+	else
+		pidfile="/var/run/${name}.pid"
+	fi
+}
 
 slim_rmfile ()
 {
 	local file
+
+	[ -z "$pidfile" ] && find_pidfile
 
 	for file in $pidfile /var/run/slim.auth; do
 		[ -e "$file" ] && unlink $file
@@ -46,6 +57,8 @@ slim_rmfile ()
 slim_prestop ()
 {
 	local xpid
+
+	find_pidfile
 
 	xpid=`ps -axww | grep '/bin/[X] .* -auth /var/run/slim.auth'`
 	xpid="${xpid## }"
