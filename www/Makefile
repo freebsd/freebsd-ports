@@ -341,7 +341,6 @@
     SUBDIR += ilias3
     SUBDIR += imgsizer
     SUBDIR += impresscms
-    SUBDIR += indexme
     SUBDIR += instiki
     SUBDIR += interchange
     SUBDIR += ismail
@@ -632,9 +631,6 @@
     SUBDIR += opera-devel
     SUBDIR += opera-linuxplugins
     SUBDIR += orangehrm
-    SUBDIR += osb-browser
-    SUBDIR += osb-nrcit
-    SUBDIR += osb-nrcore
     SUBDIR += oscommerce
     SUBDIR += p5-AMF-Perl
     SUBDIR += p5-Acme-Monta
@@ -1458,7 +1454,6 @@
     SUBDIR += pserv
     SUBDIR += pubcookie-login-server
     SUBDIR += publicfile
-    SUBDIR += pumperweb
     SUBDIR += punbb
     SUBDIR += pwebstats
     SUBDIR += py-GinGin
@@ -1500,7 +1495,6 @@
     SUBDIR += py-djblets
     SUBDIR += py-dojango
     SUBDIR += py-dtflickr
-    SUBDIR += py-ez_web
     SUBDIR += py-fcgi
     SUBDIR += py-feedfinder
     SUBDIR += py-flask
@@ -1531,7 +1525,6 @@
     SUBDIR += py-poster
     SUBDIR += py-postmarkup
     SUBDIR += py-prewikka
-    SUBDIR += py-pullparser
     SUBDIR += py-py-restclient
     SUBDIR += py-pylons
     SUBDIR += py-pyquery
@@ -1692,7 +1685,6 @@
     SUBDIR += session2
     SUBDIR += shellinabox
     SUBDIR += shttpd
-    SUBDIR += sidplug
     SUBDIR += simplog
     SUBDIR += sit
     SUBDIR += siteatschool
@@ -1827,7 +1819,6 @@
     SUBDIR += transproxy
     SUBDIR += tt-rss
     SUBDIR += ttf2eot
-    SUBDIR += twhttpd
     SUBDIR += twig
     SUBDIR += twiki
     SUBDIR += twiki-BehaviourContrib
@@ -1927,7 +1918,6 @@
     SUBDIR += wikindx
     SUBDIR += wiliki
     SUBDIR += wml
-    SUBDIR += wnews
     SUBDIR += woof
     SUBDIR += wordpress
     SUBDIR += wsdlpull
@@ -1944,7 +1934,6 @@
     SUBDIR += xist
     SUBDIR += xitami
     SUBDIR += xoops
-    SUBDIR += xpath2rss
     SUBDIR += xpi-adblock
     SUBDIR += xpi-adblock_plus
     SUBDIR += xpi-autobrowse

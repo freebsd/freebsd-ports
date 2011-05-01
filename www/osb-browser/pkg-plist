@@ -1,5 +1,0 @@
-bin/osb-browser
-%%DATADIR%%/default-location-icon.png
-%%DATADIR%%/index.html
-%%DATADIR%%/osb-browser.glade
-@dirrm %%DATADIR%%
