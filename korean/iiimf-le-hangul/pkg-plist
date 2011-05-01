@@ -1,6 +1,0 @@
-lib/iiim/le/hangul/hangul.so
-lib/iiim/le/hangul/hangul.conf
-lib/iiim/le/hangul/tables/candidate.txt
-@dirrm lib/iiim/le/hangul/tables
-@dirrm lib/iiim/le/hangul
-@dirrmtry lib/iiim/le

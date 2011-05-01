@@ -1,5 +1,0 @@
-lib/iiim/le/ude/ude.so
-lib/iiim/le/ude/data/pinyin.mb
-@dirrm lib/iiim/le/ude/data
-@dirrm lib/iiim/le/ude
-@dirrmtry lib/iiim/le
