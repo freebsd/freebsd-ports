@@ -54,6 +54,10 @@ INFO=		gauche-refe gauche-refj
 BROKEN=		Does not compile on ${ARCH}
 .endif
 
+.if ${ARCH} == "amd64" && ${OSVERSION} >= 900000
+MANUAL_PACKAGE_BUILD=	segfaults on pointyhat
+.endif
+
 post-patch:
 .if defined(NOPORTDOCS)
 	@${REINPLACE_CMD} -e 's|all: info|all:|' ${WRKSRC}/doc/Makefile.in
