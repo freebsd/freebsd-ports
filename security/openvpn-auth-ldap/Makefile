@@ -33,6 +33,10 @@ PLIST_FILES=	lib/openvpn-auth-ldap.so
 BUILD_DEPENDS+=	${LOCALBASE}/bin/xz:${PORTSDIR}/archivers/xz
 .endif
 
+.if ${OSVERSION} >= 900000
+BROKEN=		does not configure on FreeBSD 9.X
+.endif
+
 post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
