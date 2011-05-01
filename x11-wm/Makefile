@@ -115,7 +115,6 @@
     SUBDIR += ion
     SUBDIR += jewel
     SUBDIR += jwm
-    SUBDIR += kappdock
     SUBDIR += kompmgr
     SUBDIR += larswm
     SUBDIR += libcompizconfig
@@ -133,7 +132,6 @@
     SUBDIR += obconf
     SUBDIR += obmenu
     SUBDIR += obpager
-    SUBDIR += olvwm
     SUBDIR += openbox
     SUBDIR += oroborus
     SUBDIR += pager
@@ -178,7 +176,6 @@
     SUBDIR += wmconfig
     SUBDIR += wmcp
     SUBDIR += wmfs
-    SUBDIR += wmg
     SUBDIR += wmii
     SUBDIR += wmii-devel
     SUBDIR += wmname
