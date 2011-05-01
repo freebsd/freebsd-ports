@@ -1,5 +1,0 @@
-@comment $FreeBSD$
-sbin/rid
-etc/rid.conf.sample
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

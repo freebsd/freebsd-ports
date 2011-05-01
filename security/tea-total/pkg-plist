@@ -1,5 +1,0 @@
-@comment $FreeBSD$
-bin/teatotal
-bin/tea
-bin/tea-kgen
-bin/untea
