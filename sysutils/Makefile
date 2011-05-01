@@ -13,7 +13,6 @@
     SUBDIR += abck
     SUBDIR += abgx360
     SUBDIR += abgx360gui
-    SUBDIR += acidlaunch
     SUBDIR += adtool
     SUBDIR += afbinit
     SUBDIR += afflib
@@ -124,7 +123,6 @@
     SUBDIR += copytape
     SUBDIR += coreutils
     SUBDIR += cotty
-    SUBDIR += cpbk
     SUBDIR += cpdup
     SUBDIR += cpu
     SUBDIR += cpuburn
@@ -145,13 +143,11 @@
     SUBDIR += daemontools53
     SUBDIR += dar
     SUBDIR += dc3dd
-    SUBDIR += dc42wrap
     SUBDIR += dcfldd
     SUBDIR += dd_rescue
     SUBDIR += ddrescue
     SUBDIR += debootstrap
     SUBDIR += decomment
-    SUBDIR += deleted
     SUBDIR += deltup
     SUBDIR += desktop-installer
     SUBDIR += desktopbsd-tools
@@ -175,7 +171,6 @@
     SUBDIR += dmidecode
     SUBDIR += doinkd
     SUBDIR += dolly
-    SUBDIR += dolly+
     SUBDIR += downtime
     SUBDIR += downtimed
     SUBDIR += dt
@@ -190,12 +185,10 @@
     SUBDIR += duplicity-devel
     SUBDIR += duply
     SUBDIR += dupmerge
-    SUBDIR += durep
     SUBDIR += dvd+rw-tools
     SUBDIR += dvdbackup
     SUBDIR += dvdimagecmp
     SUBDIR += dvdisaster
-    SUBDIR += dvdtape
     SUBDIR += dvtm
     SUBDIR += dwatch
     SUBDIR += e2fsprogs
@@ -239,10 +232,8 @@
     SUBDIR += flasher
     SUBDIR += flashrom
     SUBDIR += flexbackup
-    SUBDIR += flock
     SUBDIR += flog
     SUBDIR += flyback
-    SUBDIR += fontedit
     SUBDIR += fonteditfs
     SUBDIR += foremost
     SUBDIR += fortunelock
@@ -260,7 +251,6 @@
     SUBDIR += froxlor
     SUBDIR += fsbackup
     SUBDIR += fstyp
-    SUBDIR += ftrace
     SUBDIR += ftwin
     SUBDIR += fusefs-afuse
     SUBDIR += fusefs-chironfs
@@ -304,8 +294,6 @@
     SUBDIR += geomgui
     SUBDIR += getdelta
     SUBDIR += geteltorito
-    SUBDIR += gfslicer
-    SUBDIR += ghasher
     SUBDIR += gkfreq
     SUBDIR += gkleds2
     SUBDIR += gkrellfire
@@ -313,12 +301,9 @@
     SUBDIR += gkrellm
     SUBDIR += gkrellm-trayicons
     SUBDIR += gkrellm2
-    SUBDIR += gkrellmouse
-    SUBDIR += gkrellmwho
     SUBDIR += gkrellmwho2
     SUBDIR += gkrelltop
     SUBDIR += gksu
-    SUBDIR += glload
     SUBDIR += gnome-control-center
     SUBDIR += gnome-device-manager
     SUBDIR += gnome-mount
@@ -330,19 +315,16 @@
     SUBDIR += gnome-system-tools
     SUBDIR += gnome_subr
     SUBDIR += gnomebaker
-    SUBDIR += gnomefind
     SUBDIR += goaccess
     SUBDIR += googlog
     SUBDIR += gosa
     SUBDIR += gpart
     SUBDIR += gpkgdep
     SUBDIR += gpte
-    SUBDIR += graft
     SUBDIR += graid5
     SUBDIR += graphicboot
     SUBDIR += graveman
     SUBDIR += grok
-    SUBDIR += growspd
     SUBDIR += grub
     SUBDIR += grub2
     SUBDIR += gsmartcontrol
@@ -351,7 +333,6 @@
     SUBDIR += gstreamer-plugins-hal
     SUBDIR += gtk-imonc
     SUBDIR += gtk-send-pr
-    SUBDIR += gtoaster
     SUBDIR += gupsc
     SUBDIR += hachoir-metadata
     SUBDIR += hachoir-subfile
@@ -381,7 +362,6 @@
     SUBDIR += hyperic-sigar
     SUBDIR += i855vidctl10
     SUBDIR += iat
-    SUBDIR += idled
     SUBDIR += iextract
     SUBDIR += installwatch
     SUBDIR += iograph
@@ -487,7 +467,6 @@
     SUBDIR += lxtask
     SUBDIR += lxterminal
     SUBDIR += magicrescue
-    SUBDIR += maint
     SUBDIR += makefs
     SUBDIR += manck
     SUBDIR += mapchan
@@ -544,7 +523,6 @@
     SUBDIR += nbosd
     SUBDIR += ncdu
     SUBDIR += nctop
-    SUBDIR += ndir
     SUBDIR += netdump-server
     SUBDIR += netident
     SUBDIR += nitrogen
@@ -586,8 +564,6 @@
     SUBDIR += p5-Fuse
     SUBDIR += p5-Fuse-Simple
     SUBDIR += p5-Iterator-File
-    SUBDIR += p5-LJ-Cache
-    SUBDIR += p5-LJ-TextMessage
     SUBDIR += p5-Lchown
     SUBDIR += p5-MogileFS-Client
     SUBDIR += p5-MogileFS-Utils
@@ -719,7 +695,6 @@
     SUBDIR += rdiff-backup10
     SUBDIR += rdup
     SUBDIR += readlink
-    SUBDIR += reclinker
     SUBDIR += recoverdm
     SUBDIR += reed
     SUBDIR += rej
@@ -732,7 +707,6 @@
     SUBDIR += rfstool
     SUBDIR += rmonitor
     SUBDIR += roottail
-    SUBDIR += rotate
     SUBDIR += rsnapshot
     SUBDIR += rsyncbackup
     SUBDIR += rsyncmanager
@@ -881,7 +855,6 @@
     SUBDIR += thefish
     SUBDIR += throttle
     SUBDIR += thunar-volman-plugin
-    SUBDIR += ticker.app
     SUBDIR += timelimit
     SUBDIR += timemon
     SUBDIR += titlefix
@@ -924,10 +897,8 @@
     SUBDIR += upower
     SUBDIR += upsd
     SUBDIR += upsdaemon
-    SUBDIR += upsmon
     SUBDIR += uptimed
     SUBDIR += usbhotkey
-    SUBDIR += usbutil
     SUBDIR += usbutils
     SUBDIR += uschedule
     SUBDIR += userinfo
@@ -938,7 +909,6 @@
     SUBDIR += userneu-devel
     SUBDIR += usrinfo
     SUBDIR += utcount
-    SUBDIR += uwatch
     SUBDIR += vbetool
     SUBDIR += vcp
     SUBDIR += videogen
@@ -961,7 +931,6 @@
     SUBDIR += whowatch
     SUBDIR += wmapm
     SUBDIR += wmapmload
-    SUBDIR += wmavgload
     SUBDIR += wmbattery
     SUBDIR += wmbluecpu
     SUBDIR += wmbsdbatt
@@ -971,20 +940,10 @@
     SUBDIR += wmdiskmon
     SUBDIR += wmfire
     SUBDIR += wmflame
-    SUBDIR += wmfsm
-    SUBDIR += wmhm
-    SUBDIR += wminet
-    SUBDIR += wmlmmon
-    SUBDIR += wmlongrun
     SUBDIR += wmmemfree
     SUBDIR += wmmemload
-    SUBDIR += wmmemmon
-    SUBDIR += wmmount
-    SUBDIR += wmpccard
-    SUBDIR += wmshutdown
     SUBDIR += wmtop
     SUBDIR += wmupmon
-    SUBDIR += wmzazof
     SUBDIR += worldtools
     SUBDIR += wots
     SUBDIR += wtail

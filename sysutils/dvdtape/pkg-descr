@@ -1,3 +1,0 @@
-dvdtape is a DVD filesystem pre-mastering program that generates
-an iso9660 filesystem, writing it directly to a DLT drive in the
-format required by a DVD manufacturing plant.

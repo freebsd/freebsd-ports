@@ -1,5 +1,0 @@
-bin/upsstat
-sbin/upsmond
-etc/rc.d/upsmon.sh
-%%PORTDOCS%%share/doc/upsmon/INSTALL
-%%PORTDOCS%%@dirrm share/doc/upsmon

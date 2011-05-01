@@ -1,4 +1,0 @@
-This daemon deletes old files, directories and other objects from
-directory for temporary files.  It can be invoked by mkinittmpdir
-or directly from shell start script.  Works in safe and efficient
-manner.
