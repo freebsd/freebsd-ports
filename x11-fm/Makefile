@@ -6,7 +6,6 @@
     SUBDIR += FSViewer
     SUBDIR += asfiles
     SUBDIR += catseye-fm
-    SUBDIR += cfm
     SUBDIR += dfm
     SUBDIR += dolphin
     SUBDIR += emelfm2
@@ -15,10 +14,8 @@
     SUBDIR += filerunner
     SUBDIR += fsv
     SUBDIR += gentoo
-    SUBDIR += gnome-commander
     SUBDIR += gnome-commander2
     SUBDIR += gprename
-    SUBDIR += jaffm
     SUBDIR += krusader
     SUBDIR += krusader2
     SUBDIR += mtoolsfm
@@ -37,7 +34,6 @@
     SUBDIR += tkdesk
     SUBDIR += twander
     SUBDIR += worker
-    SUBDIR += workplace
     SUBDIR += x-files
     SUBDIR += xcruise
     SUBDIR += xdiskusage
