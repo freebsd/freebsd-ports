@@ -1,8 +1,0 @@
-This is the DocBook DSSSL stylesheets of Cygnus Slution which based on Norman
-Walsh's DocBook style sheets with version 1.44. This package contains print
-style sheet (bosak-db3.dsl), HTML style sheet (dbtohtml.dsl) and
-both (cygnus-both.dsl). These dsls refer including Walsh's DocBook style
-sheets in default but these ones are too obsoleted so I changed to
-ports-current ones (dsssl-docbook-modular). For more infomation see below:
-
-WWW: http://nis-www.lanl.gov/~rosalia/mydocs/docbook-intro.html
