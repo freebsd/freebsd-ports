@@ -19,6 +19,12 @@ CONFIGURE_ARGS=	--enable-shared=yes
 USE_LDCONFIG=	yes
 PORTDOCS=	README.html
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 900000
+BROKEN=		does not compile on FreeBSD 9.X
+.endif
+
 post-patch: .SILENT
 # Adjust some paths for FreeBSD, respect CFLAGS, and get rid of GPL
 	${FIND} ${WRKSRC} -name Makefile.in | ${XARGS} ${REINPLACE_CMD} -E \
@@ -33,4 +39,4 @@ post-patch: .SILENT
 		${WRKSRC}/Makefile.in
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
