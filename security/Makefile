@@ -6,7 +6,6 @@
     SUBDIR += ADMsmb
     SUBDIR += ADMsnmp
     SUBDIR += IMHear
-    SUBDIR += aafid2
     SUBDIR += aescrypt
     SUBDIR += aespipe
     SUBDIR += afterglow
@@ -37,10 +36,8 @@
     SUBDIR += beecrypt
     SUBDIR += bfbtester
     SUBDIR += bioapi
-    SUBDIR += bjorb
     SUBDIR += blindelephant
     SUBDIR += blocksshd
-    SUBDIR += borzoi
     SUBDIR += botan
     SUBDIR += bro
     SUBDIR += bruteblock
@@ -78,8 +75,6 @@
     SUBDIR += clamsmtp
     SUBDIR += clamtk
     SUBDIR += clusterssh
-    SUBDIR += cmd5checkpw
-    SUBDIR += cops
     SUBDIR += courier-authlib
     SUBDIR += courier-authlib-base
     SUBDIR += courierpassd
@@ -133,7 +128,6 @@
     SUBDIR += fcrackzip
     SUBDIR += fiked
     SUBDIR += find-zlib
-    SUBDIR += find_ddos
     SUBDIR += firewalk
     SUBDIR += fl0p
     SUBDIR += flawfinder
@@ -148,7 +142,6 @@
     SUBDIR += fsh
     SUBDIR += fswatch
     SUBDIR += ftimes
-    SUBDIR += ftpmap
     SUBDIR += fuzz
     SUBDIR += fuzzdb
     SUBDIR += fwanalog
@@ -186,7 +179,6 @@
     SUBDIR += gtkportscan
     SUBDIR += gwee
     SUBDIR += hackbot
-    SUBDIR += hafiye
     SUBDIR += hamachi
     SUBDIR += heimdal
     SUBDIR += hlfl
@@ -201,7 +193,6 @@
     SUBDIR += hydra
     SUBDIR += iaikpkcs11wrapper
     SUBDIR += idea
-    SUBDIR += ident2
     SUBDIR += identify
     SUBDIR += ifd-devkit
     SUBDIR += ifd-gempc410
@@ -271,7 +262,6 @@
     SUBDIR += libtasn1
     SUBDIR += libtomcrypt
     SUBDIR += libwhisker
-    SUBDIR += liedentd
     SUBDIR += linux-f10-cyrus-sasl2
     SUBDIR += linux-f10-libssh2
     SUBDIR += linux-f10-nss
@@ -580,7 +570,6 @@
     SUBDIR += pam_p11
     SUBDIR += pam_per_user
     SUBDIR += pam_pgina
-    SUBDIR += pam_pop3
     SUBDIR += pam_pseudo
     SUBDIR += pam_pwdfile
     SUBDIR += pam_require
@@ -661,13 +650,10 @@
     SUBDIR += pkcs11-helper
     SUBDIR += pks
     SUBDIR += pktsuckers
-    SUBDIR += poc
     SUBDIR += polarssl
     SUBDIR += poly1305aes
-    SUBDIR += portscanner
     SUBDIR += portsentry
     SUBDIR += ppars
-    SUBDIR += ppgen
     SUBDIR += prelude-lml
     SUBDIR += prelude-manager
     SUBDIR += prelude-pflogger
@@ -720,11 +706,9 @@
     SUBDIR += qca-gnupg
     SUBDIR += qca-ossl
     SUBDIR += qca-tls
-    SUBDIR += qident
     SUBDIR += qtfw
     SUBDIR += quantis
     SUBDIR += quantis-kmod
-    SUBDIR += quintuple-agent
     SUBDIR += racoon2
     SUBDIR += radiusniff
     SUBDIR += rain
@@ -733,11 +717,9 @@
     SUBDIR += rarcrack
     SUBDIR += ratproxy
     SUBDIR += rats
-    SUBDIR += rc5pipe
     SUBDIR += rdigest
     SUBDIR += retranslator
     SUBDIR += revelation
-    SUBDIR += rid
     SUBDIR += rkhunter
     SUBDIR += ruby-acl
     SUBDIR += ruby-aes
@@ -818,7 +800,6 @@
     SUBDIR += srp
     SUBDIR += sscep
     SUBDIR += ssdeep
-    SUBDIR += ssh
     SUBDIR += ssh-copy-id
     SUBDIR += ssh-gui
     SUBDIR += ssh-multiadd
@@ -854,7 +835,6 @@
     SUBDIR += switzerland
     SUBDIR += symbion-sslproxy
     SUBDIR += tclsasl
-    SUBDIR += tea-total
     SUBDIR += termlog
     SUBDIR += tinc
     SUBDIR += tinyca
@@ -871,7 +851,6 @@
     SUBDIR += trousers
     SUBDIR += tthsum
     SUBDIR += tuntun
-    SUBDIR += uberkey
     SUBDIR += umit
     SUBDIR += unhide
     SUBDIR += unicornscan
