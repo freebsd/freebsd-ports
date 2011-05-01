@@ -6,6 +6,7 @@ bin/screen
 %%DATADIR%%/utf8encodings/18
 %%DATADIR%%/utf8encodings/19
 %%DATADIR%%/utf8encodings/a1
+%%DATADIR%%/utf8encodings/a3
 %%DATADIR%%/utf8encodings/bf
 %%DATADIR%%/utf8encodings/c2
 %%DATADIR%%/utf8encodings/c3

@@ -7,7 +7,7 @@
 
 PORTNAME=	screen
 PORTVERSION=	4.0.3
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://ftp.uni-erlangen.de/pub/utilities/screen/ \
 		http://komquats.com/distfiles/ \
@@ -74,6 +74,7 @@ EXTRA_PATCHES+=	${FILESDIR}/opt-showencoding
 post-patch:
 	@${RM} ${WRKSRC}/doc/screen.info*
 	@${REINPLACE_CMD} -e 's|/dev/ptmx|/nonexistent|' ${WRKSRC}/configure
+	uudecode -o ${WRKSRC}/utf8encodings/a3 ${FILESDIR}/uue-utf8encodings_a3
 
 post-install:
 	@${MKDIR} ${EXAMPLESDIR}
