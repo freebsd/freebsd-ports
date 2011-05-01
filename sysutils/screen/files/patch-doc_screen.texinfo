@@ -1,0 +1,13 @@
+diff -u -rNu doc/screen.texinfo doc/screen.texinfo
+--- doc/screen.texinfo	2003-12-05 15:51:46.000000000 +0200
++++ doc/screen.texinfo	2011-03-29 11:22:30.536269863 +0300
+@@ -2726,7 +2726,8 @@
+ 
+ Supported encodings are
+ @code{eucJP}, @code{SJIS}, @code{eucKR},
+-@code{eucCN}, @code{Big5}, @code{GBK}, @code{KOI8-R}, @code{CP1251},
++@code{eucCN}, @code{Big5}, @code{GBK},
++@code{KOI8-R}, @code{KOI8-U}, @code{CP1251},
+ @code{UTF-8}, @code{ISO8859-2}, @code{ISO8859-3},
+ @code{ISO8859-4}, @code{ISO8859-5}, @code{ISO8859-6},
+ @code{ISO8859-7}, @code{ISO8859-8}, @code{ISO8859-9},
