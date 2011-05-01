@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	geneweb
-PORTVERSION=	5.01
+PORTVERSION=	5.02
 CATEGORIES=	www
 MASTER_SITES=	ftp://ftp.inria.fr/INRIA/Projects/cristal/geneweb/Src/
 EXTRACT_SUFX=	.tgz
@@ -16,8 +16,6 @@ COMMENT=	An advanced genealogy software
 
 BUILD_DEPENDS=	ocamlc:${PORTSDIR}/lang/ocaml \
 		camlp5:${PORTSDIR}/devel/ocaml-camlp5
-
-BROKEN=		does not build
 
 HAS_CONFIGURE=	yes
 
